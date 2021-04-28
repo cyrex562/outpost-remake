@@ -161,7 +161,7 @@ use util::CONCAT22;
 //   } while( true );
 // }
 
-pub fn entry(
+pub unsafe fn entry(
     param_1: &mut string,
     param_2: u16,
     param_3: u16,
@@ -177,7 +177,7 @@ pub fn entry(
     let pi32_g: *mut i32;
     let mut i32_h: i32;
     let pu8_j: *mut u8;
-    let pc_k: *mut char;
+    let pc_k: *mut libc::c_char;
     let pu8_m: *mut u8;
     let mut string_n: u16;
     let pu8_p: *mut u8;
@@ -299,15 +299,15 @@ fn CONCAT11(a: u8, b: u8) -> u16 {
 // WARNING: Removing unreachable block (ram,0x10002513)
 // WARNING: Removing unreachable block (ram,0x10002557)
 
-pub fn exit_1000_25cc() -> *mut i32 {
+pub unsafe fn exit_1000_25cc() -> *mut i32 {
     let piVar1: *mut i32;
-    let pcVar2: *mut char;
+    let pcVar2: *mut libc::c_char;
     let iVar3: i32;
     let piVar4: *mut i32;
     let piVar5: *mut i32;
-    let pcVar6: *mut char;
+    let pcVar6: *mut libc::c_char;
     let mut in_stack_00000008: i32;
-    let pcVar7: *mut char;
+    let pcVar7: *mut libc::c_char;
 
     pcVar7 = &dos_alloc_addr_1050_0002;
     pass1_fn_1000_25a8();
@@ -372,18 +372,18 @@ Low-level Error: Overlapping input varnodes
 
 // WARNING: Restarted to delay deadcode elimination for space: ram
 
-pub fn exit_1000_2950(param_1: i32) -> *mut i32 {
+pub unsafe fn exit_1000_2950(param_1: i32) -> *mut i32 {
     let piVar1: *mut i32;
-    let pcVar2: *mut char;
+    let pcVar2: *mut libc::c_char;
     let puVar3: *mut u8;
-    let pcVar4: *mut char;
+    let pcVar4: *mut libc::c_char;
     let mut iVar5: i32;
     let piVar6: *mut i32;
     let mut in_AX: u16;
     let piVar7: *mut i32;
-    let in_CX: *mut char;
+    let in_CX: *mut libc::c_char;
     let mut in_DX: i32;
-    let pcVar8: *mut char;
+    let pcVar8: *mut libc::c_char;
 
     puVar3 = PTR_LOOP_1050_6066;
     PTR_LOOP_1050_6066 = &PTR_LOOP_1050_1000;
@@ -473,52 +473,48 @@ pub fn fatal_app_exit_1000_3e9e() {
     return;
 }
 
-fn ZEXT24(pustruct_f: ()) -> () {
-    todo!()
-}
-
 // WARNING: Instruction at (ram,0x10083e27) overlaps instruction at (ram,0x10083e24)
 //
 // WARNING: Removing unreachable block (ram,0x10083e1f)
 
-pub fn loop_1010_11c6(param_1: &mut astruct_365) {
+pub fn loop_1010_11c6(param_1: &mut AStruct365) {
     let pi32_1: *mut i32;
     let ppcVar2: *mut fn();
     let mut uVar3: u32;
     let mut uVar4: u32;
-    let local_AX__1: *mut astruct_366;
+    let local_AX__1: *mut AStruct366;
     let mut iVar5: i32;
-    let local_AX_179: *mut astruct_367;
-    let paVar6: *mut astruct_367;
+    let local_AX_179: *mut AStruct367;
+    let paVar6: *mut AStruct367;
     let mut uVar7: i32;
     let mut uVar8: u16;
-    let in_DX: *mut astruct_199;
+    let in_DX: *mut AStruct199;
     let mut uVar9: u16;
-    let struct_a: *mut astruct_199;
-    let struct_a_00: *mut astruct_199;
-    let paVar10: *mut astruct_199;
-    let paVar11: *mut astruct_199;
-    let paVar12: *mut astruct_199;
-    let extraout_DX: *mut astruct_199;
+    let struct_a: *mut AStruct199;
+    let struct_a_00: *mut AStruct199;
+    let paVar10: *mut AStruct199;
+    let paVar11: *mut AStruct199;
+    let paVar12: *mut AStruct199;
+    let extraout_DX: *mut AStruct199;
     let mut uVar13: u16;
-    let extraout_DX_00: *mut astruct_199;
+    let extraout_DX_00: *mut AStruct199;
     let mut extraout_DX_01: u16;
     let mut extraout_DX_02: u16;
     let ppcVar14: *mut *mut libc::c_char;
-    let mut pustruct_a: &mut astruct_365;
+    let mut pustruct_a: &mut AStruct365;
     let mut iVar15: i32;
     let mut iVar16: i32;
     let mut uVar17: u16;
     let mut uVar18: u16;
     let pu16_19: *mut u16;
-    let paVar20: *mut astruct_367;
+    let paVar20: *mut AStruct367;
     let mut uVar21: u16;
     let mut local_36: u16;
     let mut local_32: u16;
     let mut local_30: u16;
     let mut local_2c: u16;
     let mut local_2a: u16;
-    let local_28: *mut astruct_368;
+    let local_28: *mut AStruct368;
     let mut local_26: u16;
     let mut local_24: u16;
     let mut local_22: u16;
@@ -753,10 +749,10 @@ Unable to decompile 'window_msg_func_1010_7300'
 
 pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
     let mut u_var1: u32;
-    let local_BX_20: *mut astruct_449;
+    let local_BX_20: *mut AStruct449;
     let mut iVar2: i32;
     let mut unaff_SS: u16;
-    let in_struct_a: *mut astruct_103;
+    let in_struct_a: *mut AStruct103;
     let mut uvar3: u16;
     let mut local_32: u16;
     let mut local_30: u16;
@@ -840,32 +836,32 @@ Low-level Error: Symbol $$undef0000000c extends beyond the end of the address sp
 //
 
 pub fn infinite_loop_1020_7bba() {
-    let pcVar1: *mut char;
-    let pbVar2: *mut byte;
-    let paVar3: *mut astruct_676;
+    let pcVar1: *mut libc::c_char;
+    let pbVar2: *mut u8;
+    let paVar3: *mut AStruct676;
     let puVar4: *mut u16;
     let mut cVar5: u8;
     let mut bVar6: u8;
     let mut in_AL: u8;
     let mut bVar7: u8;
     let mut bVar8: u8;
-    let mut paVar9: *mut astruct_676;
+    let mut paVar9: *mut AStruct676;
     let mut iVar10: u16;
-    let in_CX: *mut astruct_677;
+    let in_CX: *mut AStruct677;
     let mut uVar11: i32;
-    let local_CX_56: *mut astruct_677;
+    let local_CX_56: *mut AStruct677;
     let mut in_DX: i32;
     let mut uVar12: i32;
     let mut in_BX: i32;
-    let local_BX_59: *mut astruct_678;
-    let local_BX_110: *mut astruct_679;
+    let local_BX_59: *mut AStruct678;
+    let local_BX_110: *mut AStruct679;
     let ppuVar13: *mut *mut u16;
     let unaff_BP: *mut *mut u16;
-    let unaff_SI: *mut astruct_676;
-    let local_SI_28: *mut astruct_676;
-    let paVar14: *mut astruct_676;
-    let unaff_DI: *mut astruct_676;
-    let paVar15: *mut astruct_676;
+    let unaff_SI: *mut AStruct676;
+    let local_SI_28: *mut AStruct676;
+    let paVar14: *mut AStruct676;
+    let unaff_DI: *mut AStruct676;
+    let paVar15: *mut AStruct676;
     let mut unaff_ES: u16;
     let mut uVar16: u16;
     let mut uVar17: u16;
@@ -880,13 +876,13 @@ pub fn infinite_loop_1020_7bba() {
     let mut uStack2269: u16;
     let mut uStack2257: i32;
     let ppuStack2255: *mut *mut u16;
-    let paStack2251: *mut astruct_676;
+    let paStack2251: *mut AStruct676;
     let puStack2249: *mut u16;
     let mut uStack2245: u32;
     let mut uStack2241: i32;
-    let paStack2239: *mut astruct_677;
-    let paStack2237: *mut astruct_676;
-    let apaStack2235: *mut astruct_676;
+    let paStack2239: *mut AStruct677;
+    let paStack2237: *mut AStruct676;
+    let apaStack2235: *mut AStruct676;
     let ppuStack34: *mut *mut u16;
     let puStack2: *mut u16;
 

@@ -261,12 +261,7 @@ pub fn ret_1040_78de() -> u8 {
     return in_AL;
 }
 
-pub fn destroy_win_1040_52c0(
-    param_1: *mut astruct_124,
-    param_2: u16_00,
-    param_3: u16,
-    param_4: u32,
-) {
+pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u16, param_4: u32) {
     let mut uVar1: u16;
     let ppcVar2: fn();
     let mut uVar3: u32;

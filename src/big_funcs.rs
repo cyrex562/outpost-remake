@@ -1,10 +1,9 @@
-
-pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut astruct_345, in_u32_b: u32) {
+pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut AStruct345, in_u32_b: u32) {
     let mut u32_a: u32;
     let pu16_b: *mut u16;
     let mut u16_c: u16;
     let mut u16_d: u16;
-    let pstruct_e: *mut astruct_345;
+    let pstruct_e: *mut AStruct345;
     let mut u16_f: u16;
     let mut u16_g: u16;
     let pustruct_h: *mut pass1_struct_1;
@@ -25,7 +24,7 @@ pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut astruct_345, in_u32_b: u32) {
         (u16_n * 10 + uVar1 + 4) = (u16_n * 2 + in_u32_b);
         u16_n = u16_n + 1;
     }
-    pustruct_h = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(u16_f, 3));
+    pustruct_h = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(u16_f, 3));
     puVar2 = pstruct_e.field_0x90;
     u32_j = (puVar2 + 2);
     u16_n = 0;
@@ -43,7 +42,6 @@ pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut astruct_345, in_u32_b: u32) {
     return;
 }
 
-
 // WARNING: Removing unreachable block (ram,0x10004090)
 // WARNING: Removing unreachable block (ram,0x1000409a)
 // WARNING: Removing unreachable block (ram,0x10004311)
@@ -60,13 +58,13 @@ pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut astruct_345, in_u32_b: u32) {
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
+pub fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
     let mut string_d: *mut libc::c_char;
     let mut i32_e: i32;
-    let pustruct_f: *mut astruct_199;
+    let pustruct_f: *mut AStruct199;
     let mut i32_g: i32;
     let mut extraout_DX_00: i32;
     let mut extraout_DX_01: i32;
@@ -76,7 +74,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
     let mut extraout_DX_05: i32;
     let mut extraout_DX_06: i32;
     let mut extraout_DX_07: i32;
-    let pustruct_h: *mut astruct_199;
+    let pustruct_h: *mut AStruct199;
     let mut extraout_DX_08: i32;
     let mut extraout_DX_09: i32;
     let mut extraout_DX_10: i32;
@@ -173,7 +171,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
     let mut i32_k: i32;
     let mut i32_m: i32;
     let mut stack_seg_n: u16;
-    let pustruct_p: *mut astruct_65;
+    let pustruct_p: *mut AStruct65;
     let mut param_1_hi: u16;
     let mut u32_r: u32;
     let mut u32_s: u32;
@@ -191,7 +189,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
     let mut broke = false;
     while {
         string_d = string_w;
-        let in_1: *mut astruct_306 = CONCAT22(stack_seg_n, string_d);
+        let in_1: *mut AStruct306 = CONCAT22(stack_seg_n, string_d);
         pass1_1008_5b12(in_1);
         pustruct_f = (i32_e | string_d);
         if (pustruct_f == 0) {
@@ -216,7 +214,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
             process_struct_1000_179c(0xec, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut astruct_675 = param_1;
+                let mut input_a: *mut AStruct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -229,7 +227,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
             process_struct_1000_179c(0xfa, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut astruct_675 = param_1;
+                let mut input_a: *mut AStruct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -238,7 +236,7 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
             unsafe {
                 *pi32_a = *pi32_a + 1;
             }
-            let input_a: *mut astruct_65 = CONCAT22(pustruct_f, i32_k);
+            let input_a: *mut AStruct65 = CONCAT22(pustruct_f, i32_k);
             process_struct_1018_e91e(input_a, (i32_c + 0xcc), param_1);
             i32_j = extraout_DX_05;
         }
@@ -1664,7 +1662,6 @@ pub fn big_fn_1008_15d4(param_1: *mut astruct_657, param_2: u16) {
     return;
 }
 
-
 pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
     let uVar1: u8;
     let ppVar2: *mut pass1_struct_1;
@@ -1673,7 +1670,7 @@ pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
     let mut local_4: u16;
 
     ppVar2 = process_struct_1010_20ba(
-        _g_astruct_372_1050_0ed0,
+        _g_AStruct372_1050_0ed0,
         CONCAT22((in_stack_0000fff4 >> 0x10), 3),
     );
     uVar1 = pass1_1028_b58e(param_1_00);
@@ -1690,7 +1687,6 @@ pub fn call_big_fn_1010_1c16(param_1: u32, param_2: u32) {
     pass1_fn_1008_60e8();
     return;
 }
-
 
 pub fn call_big_fn_1010_c7e2(param_1: u32, param_2: u32, param_3: u32) {
     let mut u_var1: u32;

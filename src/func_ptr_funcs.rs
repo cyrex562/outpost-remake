@@ -184,8 +184,8 @@ pub fn call_fn_ptr_1008_64a2(param_1: *mut u32) {
     }
 }
 
-pub fn call_fn_ptr_1008_6b2e(param_1: *mut astruct_202) {
-    let local_BX_3: *mut astruct_202;
+pub fn call_fn_ptr_1008_6b2e(param_1: *mut AStruct202) {
+    let local_BX_3: *mut AStruct202;
     let mut local_ES_3: u16;
     let fn_ptr_1: *mut *mut u8;
 
@@ -268,9 +268,9 @@ pub fn call_fn_ptr_1020_8106(param_1: *mut u8) {
     return;
 }
 
-pub fn call_fn_ptr_1_1020_6746(param_1: *mut astruct_672, param_2: u16, param_3: u16) {
-    let local_struct_1: *mut astruct_672;
-    let local_struct_1_hi: *mut astruct_672;
+pub fn call_fn_ptr_1_1020_6746(param_1: *mut AStruct672, param_2: u16, param_3: u16) {
+    let local_struct_1: *mut AStruct672;
+    let local_struct_1_hi: *mut AStruct672;
     let mut temp_5f3de8bd2d: u32;
     let fn_ptr_1: fn();
 
@@ -290,9 +290,9 @@ pub fn call_fn_ptr_1_1020_6746(param_1: *mut astruct_672, param_2: u16, param_3:
     return;
 }
 
-pub fn call_fn_ptr_1020_44b0(in_struct_1: *mut astruct_662) {
-    let local_struct_1: *mut astruct_662;
-    let local_struct_1_hi: *mut astruct_662;
+pub fn call_fn_ptr_1020_44b0(in_struct_1: *mut AStruct662) {
+    let local_struct_1: *mut AStruct662;
+    let local_struct_1_hi: *mut AStruct662;
     let fn_ptr_1: fn();
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
@@ -307,9 +307,7 @@ pub fn call_fn_ptr_1020_44b0(in_struct_1: *mut astruct_662) {
     return;
 }
 
-pub fn  call_fn_ptr_1020_1bb6(param_1: *mut void) -> bool
-
-{
+pub fn call_fn_ptr_1020_1bb6(param_1: *mut void) -> bool {
     let fn_ptr_1: fn();
 
     fn_ptr_1 = ((param_1 + 0x92) + 8);

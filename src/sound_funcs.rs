@@ -63,7 +63,7 @@ pub fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
     return;
 }
 
-pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut astruct_13) {
+pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut AStruct13) {
     let mut u_var1: u32;
 
     uVar1 = set_error_mode_1010_85be(_g_struct_73_1050_14cc, in_struct_1, (in_struct_1 >> 0x10));
@@ -71,13 +71,13 @@ pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut astru
     return;
 }
 
-pub fn mci_send_command_1008_5c9e(in_char_buff: *mut u8, in_struct_1: *mut astruct_13) {
+pub fn mci_send_command_1008_5c9e(in_char_buff: *mut u8, in_struct_1: *mut AStruct13) {
     mci_send_command_1008_5c7c(in_char_buff, in_struct_1);
     return;
 }
 
-pub fn mci_send_command_1008_5cb6(param_1: *mut astruct_318, dev_id: u16) {
-    let local_BX_23: *mut astruct_75;
+pub fn mci_send_command_1008_5cb6(param_1: *mut AStruct318, dev_id: u16) {
+    let local_BX_23: *mut AStruct75;
     let mut uVar1: u16;
     let mut uVar2: u16;
 
@@ -177,14 +177,14 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
     return;
 }
 
-pub fn mci_fn_1018_e2cc(in_astruct_620_ptr_1: *mut astruct_620) {
+pub fn mci_fn_1018_e2cc(in_AStruct620_ptr_1: *mut AStruct620) {
     let piVar1: *mut i32;
     let mut uVar2: i32;
     let mut uVar3: u32;
-    let struct_a: *mut astruct_199;
-    let paVar4: *mut astruct_199;
+    let struct_a: *mut AStruct199;
+    let paVar4: *mut AStruct199;
     let mut extraout_DX: i32;
-    let local_astruct_620_ptr_1: *mut astruct_620;
+    let local_AStruct620_ptr_1: *mut AStruct620;
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let mut local_e: u16;
@@ -194,47 +194,47 @@ pub fn mci_fn_1018_e2cc(in_astruct_620_ptr_1: *mut astruct_620) {
     let mut local_6: [u8; 4];
     let fn_ptr_1: fn();
 
-    uVar5 = (in_astruct_620_ptr_1 >> 0x10);
-    local_astruct_620_ptr_1 = in_astruct_620_ptr_1;
-    if (local_astruct_620_ptr_1.field_0xee != 0) {
-        fn_ptr_1 = (local_astruct_620_ptr_1.field_0xee + 8);
+    uVar5 = (in_AStruct620_ptr_1 >> 0x10);
+    local_AStruct620_ptr_1 = in_AStruct620_ptr_1;
+    if (local_AStruct620_ptr_1.field_0xee != 0) {
+        fn_ptr_1 = (local_AStruct620_ptr_1.field_0xee + 8);
         (**fn_ptr_1)();
     }
-    if (local_astruct_620_ptr_1.field_0xea == 0) {
-        local_astruct_620_ptr_1.field_0xea = 1;
+    if (local_AStruct620_ptr_1.field_0xea == 0) {
+        local_AStruct620_ptr_1.field_0xea = 1;
         pass1_1008_941a(CONCAT22(unaff_SS, local_6), 1, 0x7a);
         uVar3 = ZEXT24(local_6);
         mci_send_command_1008_5c9e(_g_struct_ptr_1050_02a0, CONCAT22(unaff_SS, local_6));
-        local_astruct_620_ptr_1.field_0xec = uVar3;
+        local_AStruct620_ptr_1.field_0xec = uVar3;
         paVar4 = struct_a;
         process_struct_1000_179c(0x112, struct_a);
         if ((paVar4 | uVar3) == 0) {
             uVar2 = 0;
             _local_a = 0x0;
         } else {
-            piVar1 = &local_astruct_620_ptr_1.field_0xcc;
+            piVar1 = &local_AStruct620_ptr_1.field_0xcc;
             unsafe {
                 *piVar1 = *piVar1 + 1;
             }
             win_gui_fn_1020_3644(
                 uVar3,
                 paVar4,
-                local_astruct_620_ptr_1.field_0xcc,
-                in_astruct_620_ptr_1,
+                local_AStruct620_ptr_1.field_0xcc,
+                in_AStruct620_ptr_1,
             );
             uVar2 = uVar3;
             _local_a = (uVar3 & 0xffff | extraout_DX << 0x10);
         }
-        pass1_1008_6978(in_astruct_620_ptr_1, 0, _local_a & 0xffff0000 | uVar2);
+        pass1_1008_6978(in_AStruct620_ptr_1, 0, _local_a & 0xffff0000 | uVar2);
         fn_ptr_1 = (*_local_a + 0xc);
         (**fn_ptr_1)(8, _local_a, local_8, 5);
     }
     return;
 }
 
-pub fn win_and_mci_fn_1018_ea66(param_1: *mut astruct_626) {
+pub fn win_and_mci_fn_1018_ea66(param_1: *mut AStruct626) {
     let mut local_AX_77: u16;
-    let local_struct_1: *mut astruct_626;
+    let local_struct_1: *mut AStruct626;
     let mut local_struct_1_hi: u16;
     let mut local_SS__1: u16;
     let mut char_buf_1: [u8; 4];
@@ -257,9 +257,9 @@ pub fn win_and_mci_fn_1018_ea66(param_1: *mut astruct_626) {
     return;
 }
 
-pub fn mci_cmd_fn_1020_07aa(in_struct_1: *mut astruct_13) {
-    let local_struct_1: *mut astruct_13;
-    let local_struct_1_hi: *mut astruct_13;
+pub fn mci_cmd_fn_1020_07aa(in_struct_1: *mut AStruct13) {
+    let local_struct_1: *mut AStruct13;
+    let local_struct_1_hi: *mut AStruct13;
     let mut unaff_SS: u16;
     let mut char_buff_1: [u8; 20];
 
@@ -278,7 +278,7 @@ pub fn mci_cmd_fn_1020_07aa(in_struct_1: *mut astruct_13) {
     return;
 }
 
-pub fn mci_fn_1020_08b6(param_1: *mut astruct_65, param_2: u16, param_3: *mut void) {
+pub fn mci_fn_1020_08b6(param_1: *mut AStruct65, param_2: u16, param_3: *mut void) {
     let mut iVar1: i32;
     let mut local_ES_21: u16;
 
@@ -298,7 +298,9 @@ pub fn sound_fn_1040_8978(param_1: *mut u32, param_2: u16) {
 
     process_win_msg_1008_9510();
     mci_send_cmd_1008_5c5c(_g_struct_ptr_1050_02a0, param_2);
-    unsafe{fn_ptr_1 = (*param_1 + 0x74);
-    (**fn_ptr_1)(&PTR_LOOP_1050_1008, param_1);}
+    unsafe {
+        fn_ptr_1 = (*param_1 + 0x74);
+        (**fn_ptr_1)(&PTR_LOOP_1050_1008, param_1);
+    }
     return;
 }

@@ -1,7 +1,7 @@
 // typedef unsigned char u8;
 
 // typedef unsigned char bool;
-// typedef unsigned char byte;
+// typedef unsigned char u8;
 // typedef unsigned dword: libc::c_long;
 pub type dword = u32;
 
@@ -4540,7 +4540,7 @@ pub const WM_SYSTIMER: u32 = 280;
 pub const DF_END: u32 = 1;
 
 pub const DF_OWNERENABLED: u32 = 2;
-pub struct astruct_283 {
+pub struct AStruct283 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -4911,27 +4911,27 @@ pub struct astruct_283 {
     pub field_0x170: u16,
 }
 
-// //pub typedef struct astruct_1067 astruct_1067, *Pastruct_1067;
+// //pub typedef struct AStruct1067 AStruct1067, *PAStruct1067;
 
-// //pub typedef struct astruct_1065 astruct_1065, *Pastruct_1065;
+// //pub typedef struct AStruct1065 AStruct1065, *PAStruct1065;
 
-struct astruct_1065 {}
+pub struct AStruct1065 {}
 
-struct astruct_1067 {
+pub struct AStruct1067 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub field_0x4: u16,
-    pub field_0x6: *mut astruct_1065,
+    pub field_0x6: *mut AStruct1065,
     pub field_0x8: u16,
     pub field_0xa: u16,
     pub field_0xc: i32,
 }
 
-// //pub typedef struct astruct_358 astruct_358, *Pastruct_358;
+// //pub typedef struct AStruct358 AStruct358, *PAStruct358;
 
-struct astruct_358 {
+pub struct AStruct358 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -4975,13 +4975,13 @@ struct astruct_358 {
     pub field_0x36: i32,
 }
 
-// //pub typedef struct astruct_995 astruct_995, *Pastruct_995;
+// //pub typedef struct AStruct995 AStruct995, *PAStruct995;
 
-struct astruct_995 {}
+pub struct AStruct995 {}
 
-// //pub typedef struct astruct_742 astruct_742, *Pastruct_742;
+// //pub typedef struct AStruct742 AStruct742, *PAStruct742;
 
-struct astruct_742 {
+pub struct AStruct742 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -5015,13 +5015,13 @@ struct astruct_742 {
     pub field_0x20: u16,
 }
 
-// //pub typedef struct astruct_1130 astruct_1130, *Pastruct_1130;
+// //pub typedef struct AStruct1130 AStruct1130, *PAStruct1130;
 
-struct astruct_1130 {}
+pub struct AStruct1130 {}
 
-// //pub typedef struct astruct_455 astruct_455, *Pastruct_455;
+// //pub typedef struct AStruct455 AStruct455, *PAStruct455;
 
-struct astruct_455 {
+pub struct AStruct455 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -5029,9 +5029,9 @@ struct astruct_455 {
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_552 astruct_552, *Pastruct_552;
+//pub typedef struct AStruct552 AStruct552, *PAStruct552;
 
-struct astruct_552 {
+pub struct AStruct552 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5340,9 +5340,9 @@ struct astruct_552 {
     pub field_0x134: u16,
 }
 
-//pub typedef struct astruct_691 astruct_691, *Pastruct_691;
+//pub typedef struct AStruct691 AStruct691, *PAStruct691;
 
-struct astruct_691 {
+pub struct AStruct691 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5351,9 +5351,9 @@ struct astruct_691 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_690 astruct_690, *Pastruct_690;
+//pub typedef struct AStruct690 AStruct690, *PAStruct690;
 
-struct astruct_690 {
+pub struct AStruct690 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5406,15 +5406,15 @@ struct astruct_690 {
     pub field_0x38: u32,
 }
 
-//pub typedef struct astruct_693 astruct_693, *Pastruct_693;
+//pub typedef struct AStruct693 AStruct693, *PAStruct693;
 
-//pub typedef struct astruct_197 astruct_197, *Pastruct_197;
+//pub typedef struct AStruct197 AStruct197, *PAStruct197;
 
-//pub typedef struct astruct_538 astruct_538, *Pastruct_538;
+//pub typedef struct AStruct538 AStruct538, *PAStruct538;
 
-//pub typedef struct astruct_104 astruct_104, *Pastruct_104;
+//pub typedef struct AStruct104 AStruct104, *PAStruct104;
 
-struct astruct_693 {
+pub struct AStruct693 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5426,7 +5426,7 @@ struct astruct_693 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: *mut astruct_197,
+    pub field_0xc: *mut AStruct197,
     pub field_0x10: u8,
     pub field_0x11: u8,
     pub field_0x12: u8,
@@ -5445,10 +5445,10 @@ struct astruct_693 {
     pub field_0x1f: u8,
     pub field_0x20: u8,
     pub field_0x21: u8,
-    pub struct538_ptr_0x22: *mut astruct_538,
+    pub struct538_ptr_0x22: *mut AStruct538,
 }
 
-struct astruct_197 {
+pub struct AStruct197 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -5456,12 +5456,12 @@ struct astruct_197 {
     pub field_0x6: i32,
     pub field_0x8: i32,
     pub field_0xa: i32,
-    pub field_0xc: *mut astruct_104,
+    pub field_0xc: *mut AStruct104,
     pub field_0x10: i32,
     pub field_0x12: i32,
 }
 
-struct astruct_538 {
+pub struct AStruct538 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5532,7 +5532,7 @@ struct astruct_538 {
     pub field_0x47: u8,
 }
 
-struct astruct_104 {
+pub struct AStruct104 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5564,15 +5564,15 @@ struct astruct_104 {
     pub field_0x24: u8,
 }
 
-//pub typedef struct astruct_692 astruct_692, *Pastruct_692;
+//pub typedef struct AStruct692 AStruct692, *PAStruct692;
 
-struct astruct_692 {
+pub struct AStruct692 {
     pub field_0x0: u32,
 }
 
-//pub typedef struct astruct_699 astruct_699, *Pastruct_699;
+//pub typedef struct AStruct699 AStruct699, *PAStruct699;
 
-struct astruct_699 {
+pub struct AStruct699 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -5580,9 +5580,9 @@ struct astruct_699 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_698 astruct_698, *Pastruct_698;
+//pub typedef struct AStruct698 AStruct698, *PAStruct698;
 
-struct astruct_698 {
+pub struct AStruct698 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -6095,11 +6095,11 @@ struct astruct_698 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_695 astruct_695, *Pastruct_695;
+//pub typedef struct AStruct695 AStruct695, *PAStruct695;
 
-//pub typedef struct astruct_393 astruct_393, *Pastruct_393;
+//pub typedef struct AStruct393 AStruct393, *PAStruct393;
 
-struct astruct_393 {
+pub struct AStruct393 {
     pub field_0x0: u16,
     pub u16_0x2: u16,
     pub u16_0x4: u16,
@@ -6452,7 +6452,7 @@ struct astruct_393 {
     pub field_0x18a: u16,
 }
 
-struct astruct_695 {
+pub struct AStruct695 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -6630,13 +6630,13 @@ struct astruct_695 {
     pub field_0xb4: u16,
     pub field_0xb6: u16,
     pub field_0xb8: u16,
-    pub field_0xba: *mut astruct_393,
+    pub field_0xba: *mut AStruct393,
     pub field_0xbc: u16,
 }
 
-//pub typedef struct astruct_694 astruct_694, *Pastruct_694;
+//pub typedef struct AStruct694 AStruct694, *PAStruct694;
 
-struct astruct_694 {
+pub struct AStruct694 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -6645,9 +6645,9 @@ struct astruct_694 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_546 astruct_546, *Pastruct_546;
+//pub typedef struct AStruct546 AStruct546, *PAStruct546;
 
-struct astruct_546 {
+pub struct AStruct546 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7036,9 +7036,9 @@ struct astruct_546 {
     pub char_ptr_186: *mut libc::c_char,
 }
 
-//pub typedef struct astruct_697 astruct_697, *Pastruct_697;
+//pub typedef struct AStruct697 AStruct697, *PAStruct697;
 
-struct astruct_697 {
+pub struct AStruct697 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7224,11 +7224,11 @@ struct astruct_697 {
     pub field_0xb8: i32,
 }
 
-//pub typedef struct astruct_696 astruct_696, *Pastruct_696;
+//pub typedef struct AStruct696 AStruct696, *PAStruct696;
 
-//pub typedef struct astruct_318 astruct_318, *Pastruct_318;
+//pub typedef struct AStruct318 AStruct318, *PAStruct318;
 
-struct astruct_318 {
+pub struct AStruct318 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7290,7 +7290,7 @@ struct astruct_318 {
     pub f: u16,
 }
 
-struct astruct_696 {
+pub struct AStruct696 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7310,7 +7310,7 @@ struct astruct_696 {
     pub field_0x13: u8,
     pub field_0x14: u8,
     pub field_0x15: u8,
-    pub struct318_ptr_0x16: *mut astruct_318,
+    pub struct318_ptr_0x16: *mut AStruct318,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
     pub field_0x1c: u8,
@@ -7467,13 +7467,13 @@ struct astruct_696 {
     pub field_0xb4: u32,
 }
 
-//pub typedef struct astruct_117 astruct_117, *Pastruct_117;
+//pub typedef struct AStruct117 AStruct117, *PAStruct117;
 
-//pub typedef struct astruct_7 astruct_7, *Pastruct_7;
+//pub typedef struct AStruct7 AStruct7, *PAStruct7;
 
-//pub typedef struct astruct_131 astruct_131, *Pastruct_131;
+//pub typedef struct AStruct131 AStruct131, *PAStruct131;
 
-struct astruct_131 {
+pub struct AStruct131 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7500,15 +7500,15 @@ struct astruct_131 {
     pub field_0x18: u32,
 }
 
-struct astruct_117 {
+pub struct AStruct117 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
-    pub field_0x4: *mut astruct_7,
+    pub field_0x4: *mut AStruct7,
     pub field_0x6: u16,
 }
 
-struct astruct_7 {
+pub struct AStruct7 {
     pub u16_field_0: u16,
     pub u16_field_2: u16,
     pub func_ptr_0x4: *mut libc::c_void,
@@ -7516,7 +7516,7 @@ struct astruct_7 {
     pub file_path: String,
     pub file: HFILE16,
     pub pv_field_0xe: *mut libc::c_void,
-    pub pv_field_0x12: *mut astruct_131,
+    pub pv_field_0x12: *mut AStruct131,
     pub u32_field_0x16: u32,
     pub pv_buffer_0x1a: *mut libc::c_void,
     pub u16_field_0x1c: i32,
@@ -7528,9 +7528,9 @@ struct astruct_7 {
     pub u16_field_0x28: u16,
 }
 
-//pub typedef struct astruct_862 astruct_862, *Pastruct_862;
+//pub typedef struct AStruct862 AStruct862, *PAStruct862;
 
-struct astruct_862 {
+pub struct AStruct862 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -7553,9 +7553,9 @@ struct astruct_862 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_390 astruct_390, *Pastruct_390;
+//pub typedef struct AStruct390 AStruct390, *PAStruct390;
 
-struct astruct_390 {
+pub struct AStruct390 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -7683,9 +7683,9 @@ struct astruct_390 {
     pub string_buf_ptr_3: *mut libc::c_char,
 }
 
-//pub typedef struct astruct_293 astruct_293, *Pastruct_293;
+//pub typedef struct AStruct293 AStruct293, *PAStruct293;
 
-struct astruct_293 {
+pub struct AStruct293 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -7699,9 +7699,9 @@ struct astruct_293 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_679 astruct_679, *Pastruct_679;
+//pub typedef struct AStruct679 AStruct679, *PAStruct679;
 
-struct astruct_679 {
+pub struct AStruct679 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -7713,22 +7713,22 @@ struct astruct_679 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_306 astruct_306, *Pastruct_306;
+//pub typedef struct AStruct306 AStruct306, *PAStruct306;
 
-struct astruct_306 {
+pub struct AStruct306 {
     pub field_0x0: i32,
     pub field_0x4: u32,
     pub field_0x8: u32,
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_413 astruct_413, *Pastruct_413;
+//pub typedef struct AStruct413 AStruct413, *PAStruct413;
 
-struct astruct_413 {}
+pub struct AStruct413 {}
 
-//pub typedef struct astruct_955 astruct_955, *Pastruct_955;
+//pub typedef struct AStruct955 AStruct955, *PAStruct955;
 
-struct astruct_955 {
+pub struct AStruct955 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -7745,9 +7745,9 @@ struct astruct_955 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_666 astruct_666, *Pastruct_666;
+//pub typedef struct AStruct666 AStruct666, *PAStruct666;
 
-struct astruct_666 {
+pub struct AStruct666 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -8000,9 +8000,9 @@ struct astruct_666 {
     pub field_0xfa: u32,
 }
 
-//pub typedef struct astruct_875 astruct_875, *Pastruct_875;
+//pub typedef struct AStruct875 AStruct875, *PAStruct875;
 
-struct astruct_875 {
+pub struct AStruct875 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -8391,9 +8391,9 @@ struct astruct_875 {
     pub field_0x18a: u16,
 }
 
-//pub typedef struct astruct_1054 astruct_1054, *Pastruct_1054;
+//pub typedef struct AStruct1054 AStruct1054, *PAStruct1054;
 
-struct astruct_1054 {
+pub struct AStruct1054 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -8655,9 +8655,9 @@ struct astruct_1054 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_599 astruct_599, *Pastruct_599;
+//pub typedef struct AStruct599 AStruct599, *PAStruct599;
 
-struct astruct_599 {
+pub struct AStruct599 {
     pub field_0x0: u16,
     pub field_0x2: *mut u8,
     pub field_0x4: u8,
@@ -8665,9 +8665,9 @@ struct astruct_599 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_799 astruct_799, *Pastruct_799;
+//pub typedef struct AStruct799 AStruct799, *PAStruct799;
 
-struct astruct_799 {
+pub struct AStruct799 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -8929,13 +8929,13 @@ struct astruct_799 {
     pub field_0x10c: u32,
 }
 
-//pub typedef struct astruct_163 astruct_163, *Pastruct_163;
+//pub typedef struct AStruct163 AStruct163, *PAStruct163;
 
-struct astruct_163 {}
+pub struct AStruct163 {}
 
-//pub typedef struct astruct_223 astruct_223, *Pastruct_223;
+//pub typedef struct AStruct223 AStruct223, *PAStruct223;
 
-struct astruct_223 {
+pub struct AStruct223 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -8949,11 +8949,11 @@ struct astruct_223 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_296 astruct_296, *Pastruct_296;
+//pub typedef struct AStruct296 AStruct296, *PAStruct296;
 
-//pub typedef struct astruct_199 astruct_199, *Pastruct_199;
+//pub typedef struct AStruct199 AStruct199, *PAStruct199;
 
-struct astruct_296 {
+pub struct AStruct296 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -8984,11 +8984,11 @@ struct astruct_296 {
     pub field_0x1b: u8,
     pub field_0x1c: u8,
     pub field_0x1d: u8,
-    pub field_0x1e: *mut astruct_199,
-    pub field_0x20: *mut astruct_199,
+    pub field_0x1e: *mut AStruct199,
+    pub field_0x20: *mut AStruct199,
 }
 
-struct astruct_199 {
+pub struct AStruct199 {
     pub field_0x0: *mut u8,
     pub field_0x2: u16,
     pub field_0x4: u32,
@@ -8996,9 +8996,9 @@ struct astruct_199 {
     pub field_0xa: u16,
 }
 
-//pub typedef struct astruct_660 astruct_660, *Pastruct_660;
+//pub typedef struct AStruct660 AStruct660, *PAStruct660;
 
-struct astruct_660 {
+pub struct AStruct660 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9012,9 +9012,9 @@ struct astruct_660 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_608 astruct_608, *Pastruct_608;
+//pub typedef struct AStruct608 AStruct608, *PAStruct608;
 
-struct astruct_608 {
+pub struct AStruct608 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9256,9 +9256,9 @@ struct astruct_608 {
     pub field_0xf0: i32,
 }
 
-//pub typedef struct astruct_492 astruct_492, *Pastruct_492;
+//pub typedef struct AStruct492 AStruct492, *PAStruct492;
 
-struct astruct_492 {
+pub struct AStruct492 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9274,9 +9274,9 @@ struct astruct_492 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_665 astruct_665, *Pastruct_665;
+//pub typedef struct AStruct665 AStruct665, *PAStruct665;
 
-struct astruct_665 {
+pub struct AStruct665 {
     pub field_0x0: POINT16,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -9345,9 +9345,9 @@ struct astruct_665 {
     pub field_0x45: u8,
 }
 
-//pub typedef struct astruct_668 astruct_668, *Pastruct_668;
+//pub typedef struct AStruct668 AStruct668, *PAStruct668;
 
-struct astruct_668 {
+pub struct AStruct668 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -9381,9 +9381,9 @@ struct astruct_668 {
     pub field_0x2e: u16,
 }
 
-//pub typedef struct astruct_667 astruct_667, *Pastruct_667;
+//pub typedef struct AStruct667 AStruct667, *PAStruct667;
 
-struct astruct_667 {
+pub struct AStruct667 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9418,9 +9418,9 @@ struct astruct_667 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_705 astruct_705, *Pastruct_705;
+//pub typedef struct AStruct705 AStruct705, *PAStruct705;
 
-struct astruct_705 {
+pub struct AStruct705 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9430,9 +9430,9 @@ struct astruct_705 {
     pub field_0x8: i32,
 }
 
-//pub typedef struct astruct_662 astruct_662, *Pastruct_662;
+//pub typedef struct AStruct662 AStruct662, *PAStruct662;
 
-struct astruct_662 {
+pub struct AStruct662 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9707,9 +9707,9 @@ struct astruct_662 {
     pub field_0x112: u16,
 }
 
-//pub typedef struct astruct_661 astruct_661, *Pastruct_661;
+//pub typedef struct AStruct661 AStruct661, *PAStruct661;
 
-struct astruct_661 {
+pub struct AStruct661 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -9977,9 +9977,9 @@ struct astruct_661 {
     pub field_0x10c: u16,
 }
 
-//pub typedef struct astruct_664 astruct_664, *Pastruct_664;
+//pub typedef struct AStruct664 AStruct664, *PAStruct664;
 
-struct astruct_664 {
+pub struct AStruct664 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -10226,9 +10226,9 @@ struct astruct_664 {
     pub field_0xf4: u16,
 }
 
-//pub typedef struct astruct_663 astruct_663, *Pastruct_663;
+//pub typedef struct AStruct663 AStruct663, *PAStruct663;
 
-struct astruct_663 {
+pub struct AStruct663 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -10473,10 +10473,10 @@ struct astruct_663 {
     pub field_0xf4: i32,
 }
 
-//pub typedef struct astruct_446 astruct_446, *Pastruct_446;
+//pub typedef struct AStruct446 AStruct446, *PAStruct446;
 
-struct astruct_446 {
-    pub field_0x0: *mut astruct_117,
+pub struct AStruct446 {
+    pub field_0x0: *mut AStruct117,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub field_0x6: u8,
@@ -12136,9 +12136,9 @@ struct astruct_446 {
     pub field_0x67c: *mut libc::c_char,
 }
 
-//pub typedef struct astruct_669 astruct_669, *Pastruct_669;
+//pub typedef struct AStruct669 AStruct669, *PAStruct669;
 
-struct astruct_669 {
+pub struct AStruct669 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -12151,9 +12151,9 @@ struct astruct_669 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_543 astruct_543, *Pastruct_543;
+//pub typedef struct AStruct543 AStruct543, *PAStruct543;
 
-struct astruct_543 {
+pub struct AStruct543 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -12525,24 +12525,24 @@ struct astruct_543 {
     pub field_0x186: u32,
 }
 
-//pub typedef struct astruct_1174 astruct_1174, *Pastruct_1174;
+//pub typedef struct AStruct1174 AStruct1174, *PAStruct1174;
 
-struct astruct_1174 {
+pub struct AStruct1174 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: *mut u8,
 }
 
-//pub typedef struct astruct_951 astruct_951, *Pastruct_951;
+//pub typedef struct AStruct951 AStruct951, *PAStruct951;
 
-struct astruct_951 {
+pub struct AStruct951 {
     pub field_0x0: u32,
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_439 astruct_439, *Pastruct_439;
+//pub typedef struct AStruct439 AStruct439, *PAStruct439;
 
-struct astruct_439 {
+pub struct AStruct439 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -12573,9 +12573,9 @@ struct astruct_439 {
     pub field_0x22: u32,
 }
 
-//pub typedef struct astruct_270 astruct_270, *Pastruct_270;
+//pub typedef struct AStruct270 AStruct270, *PAStruct270;
 
-struct astruct_270 {
+pub struct AStruct270 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -12862,16 +12862,16 @@ struct astruct_270 {
     pub field_0x11c: u16,
 }
 
-//pub typedef struct astruct_655 astruct_655, *Pastruct_655;
+//pub typedef struct AStruct655 AStruct655, *PAStruct655;
 
-struct astruct_655 {
+pub struct AStruct655 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_831 astruct_831, *Pastruct_831;
+//pub typedef struct AStruct831 AStruct831, *PAStruct831;
 
-struct astruct_831 {
+pub struct AStruct831 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -12894,13 +12894,13 @@ struct astruct_831 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_654 astruct_654, *Pastruct_654;
+//pub typedef struct AStruct654 AStruct654, *PAStruct654;
 
-struct astruct_654 {}
+pub struct AStruct654 {}
 
-//pub typedef struct astruct_657 astruct_657, *Pastruct_657;
+//pub typedef struct AStruct657 AStruct657, *PAStruct657;
 
-struct astruct_657 {
+pub struct AStruct657 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13167,9 +13167,9 @@ struct astruct_657 {
     pub field_0x110: i32,
 }
 
-//pub typedef struct astruct_656 astruct_656, *Pastruct_656;
+//pub typedef struct AStruct656 AStruct656, *PAStruct656;
 
-struct astruct_656 {
+pub struct AStruct656 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13436,9 +13436,9 @@ struct astruct_656 {
     pub field_0x10e: u32,
 }
 
-//pub typedef struct astruct_502 astruct_502, *Pastruct_502;
+//pub typedef struct AStruct502 AStruct502, *PAStruct502;
 
-struct astruct_502 {
+pub struct AStruct502 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13448,9 +13448,9 @@ struct astruct_502 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_651 astruct_651, *Pastruct_651;
+//pub typedef struct AStruct651 AStruct651, *PAStruct651;
 
-struct astruct_651 {
+pub struct AStruct651 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13703,9 +13703,9 @@ struct astruct_651 {
     pub field_0xfc: u16,
 }
 
-//pub typedef struct astruct_650 astruct_650, *Pastruct_650;
+//pub typedef struct AStruct650 AStruct650, *PAStruct650;
 
-struct astruct_650 {
+pub struct AStruct650 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -13727,11 +13727,11 @@ struct astruct_650 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_653 astruct_653, *Pastruct_653;
+//pub typedef struct AStruct653 AStruct653, *PAStruct653;
 
-//pub typedef struct astruct_510 astruct_510, *Pastruct_510;
+//pub typedef struct AStruct510 AStruct510, *PAStruct510;
 
-struct astruct_653 {
+pub struct AStruct653 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13751,10 +13751,10 @@ struct astruct_653 {
     pub field_0x11: u8,
     pub field_0x12: u8,
     pub field_0x13: u8,
-    pub struct_ptr_0x14: *mut astruct_510,
+    pub struct_ptr_0x14: *mut AStruct510,
 }
 
-struct astruct_510 {
+pub struct AStruct510 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -13886,9 +13886,9 @@ struct astruct_510 {
     pub field_0x84: i32,
 }
 
-//pub typedef struct astruct_652 astruct_652, *Pastruct_652;
+//pub typedef struct AStruct652 AStruct652, *PAStruct652;
 
-struct astruct_652 {
+pub struct AStruct652 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -14134,9 +14134,9 @@ struct astruct_652 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_626 astruct_626, *Pastruct_626;
+//pub typedef struct AStruct626 AStruct626, *PAStruct626;
 
-struct astruct_626 {
+pub struct AStruct626 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -14381,9 +14381,9 @@ struct astruct_626 {
     pub field_0xf6: u32,
 }
 
-//pub typedef struct astruct_217 astruct_217, *Pastruct_217;
+//pub typedef struct AStruct217 AStruct217, *PAStruct217;
 
-struct astruct_217 {
+pub struct AStruct217 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -15329,17 +15329,17 @@ struct astruct_217 {
     pub field_0x41e: u16,
 }
 
-//pub typedef struct astruct_659 astruct_659, *Pastruct_659;
+//pub typedef struct AStruct659 AStruct659, *PAStruct659;
 
-struct astruct_659 {
+pub struct AStruct659 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_658 astruct_658, *Pastruct_658;
+//pub typedef struct AStruct658 AStruct658, *PAStruct658;
 
-struct astruct_658 {
+pub struct AStruct658 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -15593,9 +15593,9 @@ struct astruct_658 {
     pub field_0xfa: u32,
 }
 
-//pub typedef struct astruct_635 astruct_635, *Pastruct_635;
+//pub typedef struct AStruct635 AStruct635, *PAStruct635;
 
-struct astruct_635 {
+pub struct AStruct635 {
     pub u16_0x0: u16,
     pub u16_0x02: u16,
     pub field_0x4: u8,
@@ -15829,11 +15829,11 @@ struct astruct_635 {
     pub field_0xe8: u32,
 }
 
-//pub typedef struct astruct_881 astruct_881, *Pastruct_881;
+//pub typedef struct AStruct881 AStruct881, *PAStruct881;
 
-//pub typedef struct astruct_469 astruct_469, *Pastruct_469;
+//pub typedef struct AStruct469 AStruct469, *PAStruct469;
 
-struct astruct_469 {
+pub struct AStruct469 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -15856,7 +15856,7 @@ struct astruct_469 {
     pub field_0x16: u16,
 }
 
-struct astruct_881 {
+pub struct AStruct881 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -17221,12 +17221,12 @@ struct astruct_881 {
     pub field_0x565: u8,
     pub field_0x566: u8,
     pub field_0x567: u8,
-    pub field_0x568: *mut astruct_469,
+    pub field_0x568: *mut AStruct469,
 }
 
-//pub typedef struct astruct_680 astruct_680, *Pastruct_680;
+//pub typedef struct AStruct680 AStruct680, *PAStruct680;
 
-struct astruct_680 {
+pub struct AStruct680 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -17255,13 +17255,13 @@ struct astruct_680 {
     pub field_0x1f: u8,
 }
 
-//pub typedef struct astruct_682 astruct_682, *Pastruct_682;
+//pub typedef struct AStruct682 AStruct682, *PAStruct682;
 
-struct astruct_682 {}
+pub struct AStruct682 {}
 
-//pub typedef struct astruct_681 astruct_681, *Pastruct_681;
+//pub typedef struct AStruct681 AStruct681, *PAStruct681;
 
-struct astruct_681 {
+pub struct AStruct681 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -17276,9 +17276,9 @@ struct astruct_681 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_1 astruct_1, *Pastruct_1;
+//pub typedef struct AStruct1 AStruct1, *PAStruct1;
 
-struct astruct_1 {
+pub struct AStruct1 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -17314,27 +17314,27 @@ struct astruct_1 {
     pub field_0x40: u16,
 }
 
-//pub typedef struct astruct_688 astruct_688, *Pastruct_688;
+//pub typedef struct AStruct688 AStruct688, *PAStruct688;
 
-struct astruct_688 {}
+pub struct AStruct688 {}
 
-//pub typedef struct astruct_687 astruct_687, *Pastruct_687;
+//pub typedef struct AStruct687 AStruct687, *PAStruct687;
 
-struct astruct_687 {
+pub struct AStruct687 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_689 astruct_689, *Pastruct_689;
+//pub typedef struct AStruct689 AStruct689, *PAStruct689;
 
-struct astruct_689 {
+pub struct AStruct689 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_93 astruct_93, *Pastruct_93;
+//pub typedef struct AStruct93 AStruct93, *PAStruct93;
 
-struct astruct_93 {
+pub struct AStruct93 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -17383,9 +17383,9 @@ struct astruct_93 {
     pub field_0x32: *mut u8,
 }
 
-//pub typedef struct astruct_684 astruct_684, *Pastruct_684;
+//pub typedef struct AStruct684 AStruct684, *PAStruct684;
 
-struct astruct_684 {
+pub struct AStruct684 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -17398,9 +17398,9 @@ struct astruct_684 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_559 astruct_559, *Pastruct_559;
+//pub typedef struct AStruct559 AStruct559, *PAStruct559;
 
-struct astruct_559 {
+pub struct AStruct559 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -17701,13 +17701,13 @@ struct astruct_559 {
     pub field_0x12c: u16,
 }
 
-//pub typedef struct astruct_683 astruct_683, *Pastruct_683;
+//pub typedef struct AStruct683 AStruct683, *PAStruct683;
 
-struct astruct_683 {}
+pub struct AStruct683 {}
 
-//pub typedef struct astruct_686 astruct_686, *Pastruct_686;
+//pub typedef struct AStruct686 AStruct686, *PAStruct686;
 
-struct astruct_686 {
+pub struct AStruct686 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
@@ -17715,13 +17715,13 @@ struct astruct_686 {
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_685 astruct_685, *Pastruct_685;
+//pub typedef struct AStruct685 AStruct685, *PAStruct685;
 
-struct astruct_685 {}
+pub struct AStruct685 {}
 
-//pub typedef struct astruct_150 astruct_150, *Pastruct_150;
+//pub typedef struct AStruct150 AStruct150, *PAStruct150;
 
-struct astruct_150 {
+pub struct AStruct150 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -17969,9 +17969,9 @@ struct astruct_150 {
     pub field_0xf4: i32,
 }
 
-//pub typedef struct astruct_858 astruct_858, *Pastruct_858;
+//pub typedef struct AStruct858 AStruct858, *PAStruct858;
 
-struct astruct_858 {
+pub struct AStruct858 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -18396,9 +18396,9 @@ struct astruct_858 {
     pub field_0x1a5: u8,
 }
 
-//pub typedef struct astruct_622 astruct_622, *Pastruct_622;
+//pub typedef struct AStruct622 AStruct622, *PAStruct622;
 
-struct astruct_622 {
+pub struct AStruct622 {
     pub u16_0x0: u16,
     pub u16_0x2: u16,
     pub window_handle_0x4: HWND16,
@@ -18426,9 +18426,9 @@ struct astruct_622 {
     pub field_0x26: u16,
 }
 
-//pub typedef struct astruct_1041 astruct_1041, *Pastruct_1041;
+//pub typedef struct AStruct1041 AStruct1041, *PAStruct1041;
 
-struct astruct_1041 {
+pub struct AStruct1041 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -18436,9 +18436,9 @@ struct astruct_1041 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_671 astruct_671, *Pastruct_671;
+//pub typedef struct AStruct671 AStruct671, *PAStruct671;
 
-struct astruct_671 {
+pub struct AStruct671 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -18461,9 +18461,9 @@ struct astruct_671 {
     pub field_0x14: *mut u8,
 }
 
-//pub typedef struct astruct_670 astruct_670, *Pastruct_670;
+//pub typedef struct AStruct670 AStruct670, *PAStruct670;
 
-struct astruct_670 {
+pub struct AStruct670 {
     pub dev_ctx_handle_0: HDC16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -18477,9 +18477,9 @@ struct astruct_670 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_937 astruct_937, *Pastruct_937;
+//pub typedef struct AStruct937 AStruct937, *PAStruct937;
 
-struct astruct_937 {
+pub struct AStruct937 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -18506,13 +18506,13 @@ struct astruct_937 {
     pub field_0x1a: u32,
 }
 
-//pub typedef struct astruct_677 astruct_677, *Pastruct_677;
+//pub typedef struct AStruct677 AStruct677, *PAStruct677;
 
-struct astruct_677 {}
+pub struct AStruct677 {}
 
-//pub typedef struct astruct_676 astruct_676, *Pastruct_676;
+//pub typedef struct AStruct676 AStruct676, *PAStruct676;
 
-struct astruct_676 {
+pub struct AStruct676 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -18571,13 +18571,13 @@ struct astruct_676 {
     pub field_0x37: u8,
 }
 
-//pub typedef struct astruct_1098 astruct_1098, *Pastruct_1098;
+//pub typedef struct AStruct1098 AStruct1098, *PAStruct1098;
 
-struct astruct_1098 {}
+pub struct AStruct1098 {}
 
-//pub typedef struct astruct_755 astruct_755, *Pastruct_755;
+//pub typedef struct AStruct755 AStruct755, *PAStruct755;
 
-struct astruct_755 {
+pub struct AStruct755 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -18596,13 +18596,13 @@ struct astruct_755 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_678 astruct_678, *Pastruct_678;
+//pub typedef struct AStruct678 AStruct678, *PAStruct678;
 
-struct astruct_678 {}
+pub struct AStruct678 {}
 
-//pub typedef struct astruct_673 astruct_673, *Pastruct_673;
+//pub typedef struct AStruct673 AStruct673, *PAStruct673;
 
-struct astruct_673 {
+pub struct AStruct673 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -18867,9 +18867,9 @@ struct astruct_673 {
     pub field_0x116: u16,
 }
 
-//pub typedef struct astruct_672 astruct_672, *Pastruct_672;
+//pub typedef struct AStruct672 AStruct672, *PAStruct672;
 
-struct astruct_672 {
+pub struct AStruct672 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -18895,9 +18895,9 @@ struct astruct_672 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_675 astruct_675, *Pastruct_675;
+//pub typedef struct AStruct675 AStruct675, *PAStruct675;
 
-struct astruct_675 {
+pub struct AStruct675 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -19136,9 +19136,9 @@ struct astruct_675 {
     pub field_0xee: u32,
 }
 
-//pub typedef struct astruct_674 astruct_674, *Pastruct_674;
+//pub typedef struct AStruct674 AStruct674, *PAStruct674;
 
-struct astruct_674 {
+pub struct AStruct674 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -19378,9 +19378,9 @@ struct astruct_674 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_888 astruct_888, *Pastruct_888;
+//pub typedef struct AStruct888 AStruct888, *PAStruct888;
 
-struct astruct_888 {
+pub struct AStruct888 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -19732,9 +19732,9 @@ struct astruct_888 {
     pub field_0x15e: u16,
 }
 
-//pub typedef struct astruct_426 astruct_426, *Pastruct_426;
+//pub typedef struct AStruct426 AStruct426, *PAStruct426;
 
-struct astruct_426 {
+pub struct AStruct426 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -19762,9 +19762,9 @@ struct astruct_426 {
     pub field_0x18: u16,
 }
 
-//pub typedef struct astruct_621 astruct_621, *Pastruct_621;
+//pub typedef struct AStruct621 AStruct621, *PAStruct621;
 
-struct astruct_621 {
+pub struct AStruct621 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -20007,9 +20007,9 @@ struct astruct_621 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_624 astruct_624, *Pastruct_624;
+//pub typedef struct AStruct624 AStruct624, *PAStruct624;
 
-struct astruct_624 {
+pub struct AStruct624 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -20031,9 +20031,9 @@ struct astruct_624 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_385 astruct_385, *Pastruct_385;
+//pub typedef struct AStruct385 AStruct385, *PAStruct385;
 
-struct astruct_385 {
+pub struct AStruct385 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub a: u16,
@@ -20103,16 +20103,16 @@ struct astruct_385 {
     pub u: u16,
 }
 
-//pub typedef struct astruct_473 astruct_473, *Pastruct_473;
+//pub typedef struct AStruct473 AStruct473, *PAStruct473;
 
-struct astruct_473 {
+pub struct AStruct473 {
     pub field_0x0: *mut u8,
     pub field_0x4: bool,
 }
 
-//pub typedef struct astruct_623 astruct_623, *Pastruct_623;
+//pub typedef struct AStruct623 AStruct623, *PAStruct623;
 
-struct astruct_623 {
+pub struct AStruct623 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -20353,13 +20353,13 @@ struct astruct_623 {
     pub field_0xf0: *mut u8,
 }
 
-//pub typedef struct astruct_132 astruct_132, *Pastruct_132;
+//pub typedef struct AStruct132 AStruct132, *PAStruct132;
 
-struct astruct_132 {}
+pub struct AStruct132 {}
 
-//pub typedef struct astruct_620 astruct_620, *Pastruct_620;
+//pub typedef struct AStruct620 AStruct620, *PAStruct620;
 
-struct astruct_620 {
+pub struct AStruct620 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -20598,9 +20598,9 @@ struct astruct_620 {
     pub field_0xee: u32,
 }
 
-//pub typedef struct astruct_629 astruct_629, *Pastruct_629;
+//pub typedef struct AStruct629 AStruct629, *PAStruct629;
 
-struct astruct_629 {
+pub struct AStruct629 {
     pub u16_x00: u16,
     pub u16_x02: u16,
     pub u16_x04: u16,
@@ -20612,13 +20612,13 @@ struct astruct_629 {
     pub u16_x10: u16,
 }
 
-//pub typedef struct astruct_31 astruct_31, *Pastruct_31;
+//pub typedef struct AStruct31 AStruct31, *PAStruct31;
 
-struct astruct_31 {}
+pub struct AStruct31 {}
 
-//pub typedef struct astruct_625 astruct_625, *Pastruct_625;
+//pub typedef struct AStruct625 AStruct625, *PAStruct625;
 
-struct astruct_625 {
+pub struct AStruct625 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -20642,9 +20642,9 @@ struct astruct_625 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_628 astruct_628, *Pastruct_628;
+//pub typedef struct AStruct628 AStruct628, *PAStruct628;
 
-struct astruct_628 {
+pub struct AStruct628 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -20887,9 +20887,9 @@ struct astruct_628 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_627 astruct_627, *Pastruct_627;
+//pub typedef struct AStruct627 AStruct627, *PAStruct627;
 
-struct astruct_627 {
+pub struct AStruct627 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -20912,9 +20912,9 @@ struct astruct_627 {
     pub field_0x14: *mut u8,
 }
 
-//pub typedef struct astruct_648 astruct_648, *Pastruct_648;
+//pub typedef struct AStruct648 AStruct648, *PAStruct648;
 
-struct astruct_648 {
+pub struct AStruct648 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -21144,9 +21144,9 @@ struct astruct_648 {
     pub field_0xe4: u16,
 }
 
-//pub typedef struct astruct_135 astruct_135, *Pastruct_135;
+//pub typedef struct AStruct135 AStruct135, *PAStruct135;
 
-struct astruct_135 {
+pub struct AStruct135 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -21156,11 +21156,11 @@ struct astruct_135 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_631 astruct_631, *Pastruct_631;
+//pub typedef struct AStruct631 AStruct631, *PAStruct631;
 
-//pub typedef struct astruct_632 astruct_632, *Pastruct_632;
+//pub typedef struct AStruct632 AStruct632, *PAStruct632;
 
-struct astruct_632 {
+pub struct AStruct632 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -21171,21 +21171,21 @@ struct astruct_632 {
     pub field_0xc: u16,
 }
 
-struct astruct_631 {
+pub struct AStruct631 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub hwnd_0x4: HWND16,
-    pub astruct_632_0x6: *mut astruct_632,
+    pub AStruct632_0x6: *mut AStruct632,
     pub field_0xa: i32,
     pub field_0xc: u8,
     pub field_0xd: u8,
 }
 
-//pub typedef struct astruct_611 astruct_611, *Pastruct_611;
+//pub typedef struct AStruct611 AStruct611, *PAStruct611;
 
-struct astruct_611 {
+pub struct AStruct611 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -21419,9 +21419,9 @@ struct astruct_611 {
     pub field_0xf0: u16,
 }
 
-//pub typedef struct astruct_610 astruct_610, *Pastruct_610;
+//pub typedef struct AStruct610 AStruct610, *PAStruct610;
 
-struct astruct_610 {
+pub struct AStruct610 {
     pub u16_x00: u16,
     pub u16_x02: u16,
     pub field_0x4: u8,
@@ -21443,9 +21443,9 @@ struct astruct_610 {
     pub u32_x14: u32,
 }
 
-//pub typedef struct astruct_613 astruct_613, *Pastruct_613;
+//pub typedef struct AStruct613 AStruct613, *PAStruct613;
 
-struct astruct_613 {
+pub struct AStruct613 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -21460,9 +21460,9 @@ struct astruct_613 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_612 astruct_612, *Pastruct_612;
+//pub typedef struct AStruct612 AStruct612, *PAStruct612;
 
-struct astruct_612 {
+pub struct AStruct612 {
     pub u16_x00: u16,
     pub u16_x02: u16,
     pub field_0x4: u8,
@@ -21724,9 +21724,9 @@ struct astruct_612 {
     pub field_0x112: u16,
 }
 
-//pub typedef struct astruct_372 astruct_372, *Pastruct_372;
+//pub typedef struct AStruct372 AStruct372, *PAStruct372;
 
-struct astruct_372 {
+pub struct AStruct372 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -22022,9 +22022,9 @@ struct astruct_372 {
     pub field_0x124: u16,
 }
 
-//pub typedef struct astruct_1161 astruct_1161, *Pastruct_1161;
+//pub typedef struct AStruct1161 AStruct1161, *PAStruct1161;
 
-struct astruct_1161 {
+pub struct AStruct1161 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -22038,9 +22038,9 @@ struct astruct_1161 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_189 astruct_189, *Pastruct_189;
+//pub typedef struct AStruct189 AStruct189, *PAStruct189;
 
-struct astruct_189 {
+pub struct AStruct189 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -22072,9 +22072,9 @@ struct astruct_189 {
     pub field_0x1e: i32,
 }
 
-//pub typedef struct astruct_619 astruct_619, *Pastruct_619;
+//pub typedef struct AStruct619 AStruct619, *PAStruct619;
 
-struct astruct_619 {
+pub struct AStruct619 {
     pub u16_x00: u16,
     pub u16_x02: u16,
     pub u16_x04: u16,
@@ -22082,9 +22082,9 @@ struct astruct_619 {
     pub u16_x08: u16,
 }
 
-//pub typedef struct astruct_618 astruct_618, *Pastruct_618;
+//pub typedef struct AStruct618 AStruct618, *PAStruct618;
 
-struct astruct_618 {
+pub struct AStruct618 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -22314,9 +22314,9 @@ struct astruct_618 {
     pub field_0xe6: u16,
 }
 
-//pub typedef struct astruct_615 astruct_615, *Pastruct_615;
+//pub typedef struct AStruct615 AStruct615, *PAStruct615;
 
-struct astruct_615 {
+pub struct AStruct615 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -22349,15 +22349,15 @@ struct astruct_615 {
     pub field_0x1e: i32,
 }
 
-//pub typedef struct astruct_614 astruct_614, *Pastruct_614;
+//pub typedef struct AStruct614 AStruct614, *PAStruct614;
 
-//pub typedef struct astruct_376 astruct_376, *Pastruct_376;
+//pub typedef struct AStruct376 AStruct376, *PAStruct376;
 
-//pub typedef struct astruct_215 astruct_215, *Pastruct_215;
+//pub typedef struct AStruct215 AStruct215, *PAStruct215;
 
-//pub typedef struct astruct_44 astruct_44, *Pastruct_44;
+//pub typedef struct AStruct44 AStruct44, *PAStruct44;
 
-struct astruct_614 {
+pub struct AStruct614 {
     pub u16_x0: u16,
     pub u16_x2: u16,
     pub field_0x4: u8,
@@ -22620,7 +22620,7 @@ struct astruct_614 {
     pub field_0x105: u8,
     pub field_0x106: u8,
     pub field_0x107: u8,
-    pub struct_376_x108: *mut astruct_376,
+    pub struct_376_x108: *mut AStruct376,
     pub field_0x10c: u8,
     pub field_0x10d: u8,
     pub field_0x10e: u8,
@@ -22630,7 +22630,7 @@ struct astruct_614 {
     pub wnd_handle_x112: HWND16,
 }
 
-struct astruct_215 {
+pub struct AStruct215 {
     pub ptr_a_lo: u16,
     pub ptr_a_hi: u16,
     pub field_0x4: u8,
@@ -22839,7 +22839,7 @@ struct astruct_215 {
     pub field_0xcf: u8,
     pub field_0xd0: u8,
     pub field_0xd1: u8,
-    pub field_0xd2: *mut astruct_215,
+    pub field_0xd2: *mut AStruct215,
     pub field_0xd4: u8,
     pub field_0xd5: u8,
     pub field_0xd6: u8,
@@ -22865,10 +22865,10 @@ struct astruct_215 {
     pub field_0xec: u16,
 }
 
-struct astruct_44 {
+pub struct AStruct44 {
     pub ptr_a_lo: u16,
     pub ptr_a_hi: u16,
-    pub struct_ptr_1_0x4: *mut astruct_659,
+    pub struct_ptr_1_0x4: *mut AStruct659,
     pub field_0x6: u8,
     pub field_0x7: u8,
     pub field_0x8: u8,
@@ -23039,7 +23039,7 @@ struct astruct_44 {
     pub field_0xb6: i32,
 }
 
-struct astruct_376 {
+pub struct AStruct376 {
     pub ptr_a_lo: u16,
     pub ptr_a_hi: u16,
     pub u16_x4: u16,
@@ -23210,7 +23210,7 @@ struct astruct_376 {
     pub field_0xcf: u8,
     pub field_0xd0: u8,
     pub field_0xd1: u8,
-    pub struct_215_ptr_0xd2: *mut astruct_215,
+    pub struct_215_ptr_0xd2: *mut AStruct215,
     pub field_0xd4: u8,
     pub field_0xd5: u8,
     pub field_0xd6: u8,
@@ -23261,7 +23261,7 @@ struct astruct_376 {
     pub field_0x105: u8,
     pub field_0x106: u8,
     pub field_0x107: u8,
-    pub struct_44_a: *mut astruct_44,
+    pub struct_44_a: *mut AStruct44,
     pub field_0x10a: u8,
     pub field_0x10b: u8,
     pub field_0x10c: u8,
@@ -23382,12 +23382,12 @@ struct astruct_376 {
     pub field_0x180: u8,
     pub field_0x181: u8,
     ptr_3: *mut u8,
-    pub u32_x186: *mut astruct_44,
+    pub u32_x186: *mut AStruct44,
 }
 
-//pub typedef struct astruct_88 astruct_88, *Pastruct_88;
+//pub typedef struct AStruct88 AStruct88, *PAStruct88;
 
-struct astruct_88 {
+pub struct AStruct88 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -23424,9 +23424,9 @@ struct astruct_88 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_617 astruct_617, *Pastruct_617;
+//pub typedef struct AStruct617 AStruct617, *PAStruct617;
 
-struct astruct_617 {
+pub struct AStruct617 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -23477,9 +23477,9 @@ struct astruct_617 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_616 astruct_616, *Pastruct_616;
+//pub typedef struct AStruct616 AStruct616, *PAStruct616;
 
-struct astruct_616 {
+pub struct AStruct616 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -23995,9 +23995,9 @@ struct astruct_616 {
     pub field_0x200: u32,
 }
 
-//pub typedef struct astruct_964 astruct_964, *Pastruct_964;
+//pub typedef struct AStruct964 AStruct964, *PAStruct964;
 
-struct astruct_964 {
+pub struct AStruct964 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -24015,13 +24015,13 @@ struct astruct_964 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_1108 astruct_1108, *Pastruct_1108;
+//pub typedef struct AStruct1108 AStruct1108, *PAStruct1108;
 
-struct astruct_1108 {}
+pub struct AStruct1108 {}
 
-//pub typedef struct astruct_302 astruct_302, *Pastruct_302;
+//pub typedef struct AStruct302 AStruct302, *PAStruct302;
 
-struct astruct_302 {
+pub struct AStruct302 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -24032,9 +24032,9 @@ struct astruct_302 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_108 astruct_108, *Pastruct_108;
+//pub typedef struct AStruct108 AStruct108, *PAStruct108;
 
-struct astruct_108 {
+pub struct AStruct108 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24052,9 +24052,9 @@ struct astruct_108 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_644 astruct_644, *Pastruct_644;
+//pub typedef struct AStruct644 AStruct644, *PAStruct644;
 
-struct astruct_644 {
+pub struct AStruct644 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -24065,9 +24065,9 @@ struct astruct_644 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_768 astruct_768, *Pastruct_768;
+//pub typedef struct AStruct768 AStruct768, *PAStruct768;
 
-struct astruct_768 {
+pub struct AStruct768 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24116,9 +24116,9 @@ struct astruct_768 {
     pub field_0x2e: u32,
 }
 
-//pub typedef struct astruct_643 astruct_643, *Pastruct_643;
+//pub typedef struct AStruct643 AStruct643, *PAStruct643;
 
-struct astruct_643 {
+pub struct AStruct643 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24264,20 +24264,20 @@ struct astruct_643 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_646 astruct_646, *Pastruct_646;
+//pub typedef struct AStruct646 AStruct646, *PAStruct646;
 
-struct astruct_646 {
+pub struct AStruct646 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_645 astruct_645, *Pastruct_645;
+//pub typedef struct AStruct645 AStruct645, *PAStruct645;
 
-struct astruct_645 {}
+pub struct AStruct645 {}
 
-//pub typedef struct astruct_640 astruct_640, *Pastruct_640;
+//pub typedef struct AStruct640 AStruct640, *PAStruct640;
 
-struct astruct_640 {
+pub struct AStruct640 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -24424,9 +24424,9 @@ struct astruct_640 {
     pub field_0x96: u16,
 }
 
-//pub typedef struct astruct_642 astruct_642, *Pastruct_642;
+//pub typedef struct AStruct642 AStruct642, *PAStruct642;
 
-pub struct astruct_642 {
+pub struct AStruct642 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24473,9 +24473,9 @@ pub struct astruct_642 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_515 astruct_515, *Pastruct_515;
+//pub typedef struct AStruct515 AStruct515, *PAStruct515;
 
-struct astruct_515 {
+pub struct AStruct515 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24483,9 +24483,9 @@ struct astruct_515 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_641 astruct_641, *Pastruct_641;
+//pub typedef struct AStruct641 AStruct641, *PAStruct641;
 
-struct astruct_641 {
+pub struct AStruct641 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24633,11 +24633,11 @@ struct astruct_641 {
     field_0x94: *mut libc::c_void,
 }
 
-//pub typedef struct astruct_647 astruct_647, *Pastruct_647;
+//pub typedef struct AStruct647 AStruct647, *PAStruct647;
 
-//pub typedef struct astruct_60 astruct_60, *Pastruct_60;
+//pub typedef struct AStruct60 AStruct60, *PAStruct60;
 
-struct astruct_60 {
+pub struct AStruct60 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -24679,20 +24679,20 @@ struct astruct_60 {
     pub resource_handle: i32,
 }
 
-struct astruct_647 {
+pub struct AStruct647 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub field_0x4: u8,
     pub field_0x5: u8,
-    pub struct_ptr_0x6: *mut astruct_60,
+    pub struct_ptr_0x6: *mut AStruct60,
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_977 astruct_977, *Pastruct_977;
+//pub typedef struct AStruct977 AStruct977, *PAStruct977;
 
-struct astruct_977 {
+pub struct AStruct977 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -24812,9 +24812,9 @@ struct astruct_977 {
     pub field_0x8c: u16,
 }
 
-//pub typedef struct astruct_649 astruct_649, *Pastruct_649;
+//pub typedef struct AStruct649 AStruct649, *PAStruct649;
 
-struct astruct_649 {
+pub struct AStruct649 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -25054,9 +25054,9 @@ struct astruct_649 {
     pub field_0xee: u32,
 }
 
-//pub typedef struct astruct_1085 astruct_1085, *Pastruct_1085;
+//pub typedef struct AStruct1085 AStruct1085, *PAStruct1085;
 
-struct astruct_1085 {
+pub struct AStruct1085 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -25558,7 +25558,7 @@ struct astruct_1085 {
     pub field_0x1f5: u8,
     pub field_0x1f6: i32,
     pub field_0x1f8: i32,
-    pub field_0x1fa: *mut astruct_44,
+    pub field_0x1fa: *mut AStruct44,
     pub field_0x1fe: u8,
     pub field_0x1ff: u8,
     pub field_0x200: u8,
@@ -25585,12 +25585,12 @@ struct astruct_1085 {
     pub field_0x217: u8,
     pub field_0x218: u8,
     pub field_0x219: u8,
-    pub field_0x21a: *mut astruct_44,
+    pub field_0x21a: *mut AStruct44,
 }
 
-//pub typedef struct astruct_265 astruct_265, *Pastruct_265;
+//pub typedef struct AStruct265 AStruct265, *PAStruct265;
 
-struct astruct_265 {
+pub struct AStruct265 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -25841,9 +25841,9 @@ struct astruct_265 {
     pub field_0xf8: u16,
 }
 
-//pub typedef struct astruct_68 astruct_68, *Pastruct_68;
+//pub typedef struct AStruct68 AStruct68, *PAStruct68;
 
-struct astruct_68 {
+pub struct AStruct68 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -25942,12 +25942,12 @@ struct astruct_68 {
     pub field_0x74: u16,
     pub field_0x76: u16,
     pub field_0x78: u16,
-    pub struct_ptr_0x7a: *mut astruct_393,
+    pub struct_ptr_0x7a: *mut AStruct393,
     pub field_0x7e: u8,
     pub field_0x7f: u8,
     pub field_0x80: u8,
     pub field_0x81: u8,
-    pub struct_ptr_0x82: *mut astruct_393,
+    pub struct_ptr_0x82: *mut AStruct393,
     pub field_0x86: u8,
     pub field_0x87: u8,
     pub field_0x88: u8,
@@ -25959,20 +25959,20 @@ struct astruct_68 {
     pub field_0x96: u16,
 }
 
-//pub typedef struct astruct_633 astruct_633, *Pastruct_633;
+//pub typedef struct AStruct633 AStruct633, *PAStruct633;
 
-//pub typedef struct astruct_634 astruct_634, *Pastruct_634;
+//pub typedef struct AStruct634 AStruct634, *PAStruct634;
 
-struct astruct_633 {
+pub struct AStruct633 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub win_handle_0x4: HWND16,
-    pub field_0x6: *mut astruct_634,
+    pub field_0x6: *mut AStruct634,
 }
 
-struct astruct_634 {
+pub struct AStruct634 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -25988,9 +25988,9 @@ struct astruct_634 {
     pub field_0xd: u8,
 }
 
-//pub typedef struct astruct_398 astruct_398, *Pastruct_398;
+//pub typedef struct AStruct398 AStruct398, *PAStruct398;
 
-struct astruct_398 {
+pub struct AStruct398 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -26006,9 +26006,9 @@ struct astruct_398 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_711 astruct_711, *Pastruct_711;
+//pub typedef struct AStruct711 AStruct711, *PAStruct711;
 
-struct astruct_711 {
+pub struct AStruct711 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -26033,9 +26033,9 @@ struct astruct_711 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_630 astruct_630, *Pastruct_630;
+//pub typedef struct AStruct630 AStruct630, *PAStruct630;
 
-struct astruct_630 {
+pub struct AStruct630 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -26267,9 +26267,9 @@ struct astruct_630 {
     pub field_0xea: i32,
 }
 
-//pub typedef struct astruct_637 astruct_637, *Pastruct_637;
+//pub typedef struct AStruct637 AStruct637, *PAStruct637;
 
-struct astruct_637 {
+pub struct AStruct637 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -26277,9 +26277,9 @@ struct astruct_637 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_636 astruct_636, *Pastruct_636;
+//pub typedef struct AStruct636 AStruct636, *PAStruct636;
 
-struct astruct_636 {
+pub struct AStruct636 {
     pub u16_0x0: u16,
     pub u16_0x02: u16,
     pub u16_0x04: u16,
@@ -26301,9 +26301,9 @@ struct astruct_636 {
     pub field_0x19: u8,
 }
 
-//pub typedef struct astruct_639 astruct_639, *Pastruct_639;
+//pub typedef struct AStruct639 AStruct639, *PAStruct639;
 
-struct astruct_639 {
+pub struct AStruct639 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -26331,9 +26331,9 @@ struct astruct_639 {
     pub palette_handle_0x1c: HPALETTE16,
 }
 
-//pub typedef struct astruct_872 astruct_872, *Pastruct_872;
+//pub typedef struct AStruct872 AStruct872, *PAStruct872;
 
-struct astruct_872 {
+pub struct AStruct872 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -26764,9 +26764,9 @@ struct astruct_872 {
     pub field_0x1ac: u16,
 }
 
-//pub typedef struct astruct_638 astruct_638, *Pastruct_638;
+//pub typedef struct AStruct638 AStruct638, *PAStruct638;
 
-struct astruct_638 {
+pub struct AStruct638 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -27005,9 +27005,9 @@ struct astruct_638 {
     pub field_0xec: i32,
 }
 
-//pub typedef struct astruct_844 astruct_844, *Pastruct_844;
+//pub typedef struct AStruct844 AStruct844, *PAStruct844;
 
-struct astruct_844 {
+pub struct AStruct844 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27022,9 +27022,9 @@ struct astruct_844 {
     pub field_0x16: i32,
 }
 
-//pub typedef struct astruct_800 astruct_800, *Pastruct_800;
+//pub typedef struct AStruct800 AStruct800, *PAStruct800;
 
-struct astruct_800 {
+pub struct AStruct800 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27287,9 +27287,9 @@ struct astruct_800 {
     pub field_0x10c: u32,
 }
 
-//pub typedef struct astruct_594 astruct_594, *Pastruct_594;
+//pub typedef struct AStruct594 AStruct594, *PAStruct594;
 
-struct astruct_594 {
+pub struct AStruct594 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27534,9 +27534,9 @@ struct astruct_594 {
     u8_ptr_32_0xfa: *mut u8,
 }
 
-//pub typedef struct astruct_209 astruct_209, *Pastruct_209;
+//pub typedef struct AStruct209 AStruct209, *PAStruct209;
 
-struct astruct_209 {
+pub struct AStruct209 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27599,9 +27599,9 @@ struct astruct_209 {
     pub field_0x3d: u8,
 }
 
-//pub typedef struct astruct_176 astruct_176, *Pastruct_176;
+//pub typedef struct AStruct176 AStruct176, *PAStruct176;
 
-struct astruct_176 {
+pub struct AStruct176 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27627,9 +27627,9 @@ struct astruct_176 {
     pub field_0x18: *mut u8,
 }
 
-//pub typedef struct astruct_75 astruct_75, *Pastruct_75;
+//pub typedef struct AStruct75 AStruct75, *PAStruct75;
 
-struct astruct_75 {
+pub struct AStruct75 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -27649,22 +27649,22 @@ struct astruct_75 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_604 astruct_604, *Pastruct_604;
+//pub typedef struct AStruct604 AStruct604, *PAStruct604;
 
-struct astruct_604 {
+pub struct AStruct604 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub field_0x4: u8,
     pub field_0x5: u8,
-    pub astruct_60_ptr: *mut astruct_60,
+    pub AStruct60_ptr: *mut AStruct60,
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_857 astruct_857, *Pastruct_857;
+//pub typedef struct AStruct857 AStruct857, *PAStruct857;
 
-struct astruct_857 {
+pub struct AStruct857 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28089,9 +28089,9 @@ struct astruct_857 {
     pub field_0x1a6: u16,
 }
 
-//pub typedef struct astruct_319 astruct_319, *Pastruct_319;
+//pub typedef struct AStruct319 AStruct319, *PAStruct319;
 
-struct astruct_319 {
+pub struct AStruct319 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28107,9 +28107,9 @@ struct astruct_319 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_737 astruct_737, *Pastruct_737;
+//pub typedef struct AStruct737 AStruct737, *PAStruct737;
 
-struct astruct_737 {
+pub struct AStruct737 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28123,13 +28123,13 @@ struct astruct_737 {
     pub field_0xc: *mut u16,
 }
 
-//pub typedef struct astruct_1019 astruct_1019, *Pastruct_1019;
+//pub typedef struct AStruct1019 AStruct1019, *PAStruct1019;
 
-struct astruct_1019 {}
+pub struct AStruct1019 {}
 
-//pub typedef struct astruct_920 astruct_920, *Pastruct_920;
+//pub typedef struct AStruct920 AStruct920, *PAStruct920;
 
-struct astruct_920 {
+pub struct AStruct920 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28141,9 +28141,9 @@ struct astruct_920 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_408 astruct_408, *Pastruct_408;
+//pub typedef struct AStruct408 AStruct408, *PAStruct408;
 
-struct astruct_408 {
+pub struct AStruct408 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28259,23 +28259,23 @@ struct astruct_408 {
     pub field_0x74: u16,
 }
 
-//pub typedef struct astruct_461 astruct_461, *Pastruct_461;
+//pub typedef struct AStruct461 AStruct461, *PAStruct461;
 
-struct astruct_461 {
+pub struct AStruct461 {
     pub field_0x0: u8,
 }
 
-//pub typedef struct astruct_1072 astruct_1072, *Pastruct_1072;
+//pub typedef struct AStruct1072 AStruct1072, *PAStruct1072;
 
-struct astruct_1072 {}
+pub struct AStruct1072 {}
 
-//pub typedef struct astruct_790 astruct_790, *Pastruct_790;
+//pub typedef struct AStruct790 AStruct790, *PAStruct790;
 
-struct astruct_790 {}
+pub struct AStruct790 {}
 
-//pub typedef struct astruct_723 astruct_723, *Pastruct_723;
+//pub typedef struct AStruct723 AStruct723, *PAStruct723;
 
-struct astruct_723 {
+pub struct AStruct723 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -28316,9 +28316,9 @@ struct astruct_723 {
     pub field_0x2a: i32,
 }
 
-//pub typedef struct astruct_600 astruct_600, *Pastruct_600;
+//pub typedef struct AStruct600 AStruct600, *PAStruct600;
 
-struct astruct_600 {
+pub struct AStruct600 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -28467,16 +28467,16 @@ struct astruct_600 {
     pub field_0x95: u8,
 }
 
-//pub typedef struct astruct_602 astruct_602, *Pastruct_602;
+//pub typedef struct AStruct602 AStruct602, *PAStruct602;
 
-struct astruct_602 {
+pub struct AStruct602 {
     pub u16_x00: u16,
     pub u16_x01: u16,
 }
 
-//pub typedef struct astruct_601 astruct_601, *Pastruct_601;
+//pub typedef struct AStruct601 AStruct601, *PAStruct601;
 
-struct astruct_601 {
+pub struct AStruct601 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -28486,9 +28486,9 @@ struct astruct_601 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_724 astruct_724, *Pastruct_724;
+//pub typedef struct AStruct724 AStruct724, *PAStruct724;
 
-struct astruct_724 {
+pub struct AStruct724 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -28529,9 +28529,9 @@ struct astruct_724 {
     pub field_0x2a: i32,
 }
 
-//pub typedef struct astruct_607 astruct_607, *Pastruct_607;
+//pub typedef struct AStruct607 AStruct607, *PAStruct607;
 
-struct astruct_607 {
+pub struct AStruct607 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -28761,9 +28761,9 @@ struct astruct_607 {
     pub field_0xe4: u16,
 }
 
-//pub typedef struct astruct_609 astruct_609, *Pastruct_609;
+//pub typedef struct AStruct609 AStruct609, *PAStruct609;
 
-struct astruct_609 {
+pub struct AStruct609 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -29006,17 +29006,17 @@ struct astruct_609 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_603 astruct_603, *Pastruct_603;
+//pub typedef struct AStruct603 AStruct603, *PAStruct603;
 
-struct astruct_603 {}
+pub struct AStruct603 {}
 
-//pub typedef struct astruct_606 astruct_606, *Pastruct_606;
+//pub typedef struct AStruct606 AStruct606, *PAStruct606;
 
-struct astruct_606 {}
+pub struct AStruct606 {}
 
-//pub typedef struct astruct_605 astruct_605, *Pastruct_605;
+//pub typedef struct AStruct605 AStruct605, *PAStruct605;
 
-struct astruct_605 {
+pub struct AStruct605 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -29230,9 +29230,9 @@ struct astruct_605 {
     pub field_0xe0: u16,
 }
 
-//pub typedef struct astruct_933 astruct_933, *Pastruct_933;
+//pub typedef struct AStruct933 AStruct933, *PAStruct933;
 
-struct astruct_933 {
+pub struct AStruct933 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -29344,9 +29344,9 @@ struct astruct_933 {
     pub field_0x75: u8,
 }
 
-//pub typedef struct astruct_1139 astruct_1139, *Pastruct_1139;
+//pub typedef struct AStruct1139 AStruct1139, *PAStruct1139;
 
-struct astruct_1139 {
+pub struct AStruct1139 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -29374,9 +29374,9 @@ struct astruct_1139 {
     pub field_0x1a: i32,
 }
 
-//pub typedef struct astruct_73 astruct_73, *Pastruct_73;
+//pub typedef struct AStruct73 AStruct73, *PAStruct73;
 
-struct astruct_73 {
+pub struct AStruct73 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31045,9 +31045,9 @@ struct astruct_73 {
     pub field_0x681: u8,
 }
 
-//pub typedef struct astruct_946 astruct_946, *Pastruct_946;
+//pub typedef struct AStruct946 AStruct946, *PAStruct946;
 
-struct astruct_946 {
+pub struct AStruct946 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -31064,9 +31064,9 @@ struct astruct_946 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_528 astruct_528, *Pastruct_528;
+//pub typedef struct AStruct528 AStruct528, *PAStruct528;
 
-struct astruct_528 {
+pub struct AStruct528 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31135,15 +31135,15 @@ struct astruct_528 {
     pub field_0x44: u16,
 }
 
-//pub typedef struct astruct_62 astruct_62, *Pastruct_62;
+//pub typedef struct AStruct62 AStruct62, *PAStruct62;
 
-struct astruct_62 {
+pub struct AStruct62 {
     pub field_0x0: u8,
 }
 
-//pub typedef struct astruct_581 astruct_581, *Pastruct_581;
+//pub typedef struct AStruct581 AStruct581, *PAStruct581;
 
-struct astruct_581 {
+pub struct AStruct581 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31157,9 +31157,9 @@ struct astruct_581 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_252 astruct_252, *Pastruct_252;
+//pub typedef struct AStruct252 AStruct252, *PAStruct252;
 
-struct astruct_252 {
+pub struct AStruct252 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31332,9 +31332,9 @@ struct astruct_252 {
     pub field_0xaa: u16,
 }
 
-//pub typedef struct astruct_788 astruct_788, *Pastruct_788;
+//pub typedef struct AStruct788 AStruct788, *PAStruct788;
 
-struct astruct_788 {
+pub struct AStruct788 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31597,9 +31597,9 @@ struct astruct_788 {
     pub field_0x10c: u16,
 }
 
-//pub typedef struct astruct_159 astruct_159, *Pastruct_159;
+//pub typedef struct AStruct159 AStruct159, *PAStruct159;
 
-struct astruct_159 {
+pub struct AStruct159 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -31619,9 +31619,9 @@ struct astruct_159 {
     pub field_0x11: u8,
 }
 
-//pub typedef struct astruct_218 astruct_218, *Pastruct_218;
+//pub typedef struct AStruct218 AStruct218, *PAStruct218;
 
-struct astruct_218 {
+pub struct AStruct218 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -32666,9 +32666,9 @@ struct astruct_218 {
     pub field_0x414: u16,
 }
 
-//pub typedef struct astruct_95 astruct_95, *Pastruct_95;
+//pub typedef struct AStruct95 AStruct95, *PAStruct95;
 
-struct astruct_95 {
+pub struct AStruct95 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
@@ -32695,9 +32695,9 @@ struct astruct_95 {
     pub field_0x1a: i32,
 }
 
-//pub typedef struct astruct_934 astruct_934, *Pastruct_934;
+//pub typedef struct AStruct934 AStruct934, *PAStruct934;
 
-struct astruct_934 {
+pub struct AStruct934 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -32708,9 +32708,9 @@ struct astruct_934 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_222 astruct_222, *Pastruct_222;
+//pub typedef struct AStruct222 AStruct222, *PAStruct222;
 
-struct astruct_222 {
+pub struct AStruct222 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -32728,9 +32728,9 @@ struct astruct_222 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_475 astruct_475, *Pastruct_475;
+//pub typedef struct AStruct475 AStruct475, *PAStruct475;
 
-struct astruct_475 {
+pub struct AStruct475 {
     pub field_0x0: *mut u8,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -33013,13 +33013,13 @@ struct astruct_475 {
     pub field_0x139: u8,
 }
 
-//pub typedef struct astruct_1138 astruct_1138, *Pastruct_1138;
+//pub typedef struct AStruct1138 AStruct1138, *PAStruct1138;
 
-struct astruct_1138 {}
+pub struct AStruct1138 {}
 
-//pub typedef struct astruct_814 astruct_814, *Pastruct_814;
+//pub typedef struct AStruct814 AStruct814, *PAStruct814;
 
-struct astruct_814 {
+pub struct AStruct814 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -33537,9 +33537,9 @@ struct astruct_814 {
     pub field_0x208: u16,
 }
 
-//pub typedef struct astruct_706 astruct_706, *Pastruct_706;
+//pub typedef struct AStruct706 AStruct706, *PAStruct706;
 
-struct astruct_706 {
+pub struct AStruct706 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -33567,9 +33567,9 @@ struct astruct_706 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_419 astruct_419, *Pastruct_419;
+//pub typedef struct AStruct419 AStruct419, *PAStruct419;
 
-struct astruct_419 {
+pub struct AStruct419 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -33698,9 +33698,9 @@ struct astruct_419 {
     pub field_0x7e: u16,
 }
 
-//pub typedef struct astruct_355 astruct_355, *Pastruct_355;
+//pub typedef struct AStruct355 AStruct355, *PAStruct355;
 
-struct astruct_355 {
+pub struct AStruct355 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -33791,13 +33791,13 @@ struct astruct_355 {
     pub field_0x5c: u16,
 }
 
-//pub typedef struct astruct_1005 astruct_1005, *Pastruct_1005;
+//pub typedef struct AStruct1005 AStruct1005, *PAStruct1005;
 
-struct astruct_1005 {}
+pub struct AStruct1005 {}
 
-//pub typedef struct astruct_801 astruct_801, *Pastruct_801;
+//pub typedef struct AStruct801 AStruct801, *PAStruct801;
 
-struct astruct_801 {
+pub struct AStruct801 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -34087,9 +34087,9 @@ struct astruct_801 {
     pub field_0x120: u16,
 }
 
-//pub typedef struct astruct_595 astruct_595, *Pastruct_595;
+//pub typedef struct AStruct595 AStruct595, *PAStruct595;
 
-struct astruct_595 {
+pub struct AStruct595 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -34119,9 +34119,9 @@ struct astruct_595 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_57 astruct_57, *Pastruct_57;
+//pub typedef struct AStruct57 AStruct57, *PAStruct57;
 
-struct astruct_57 {
+pub struct AStruct57 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -34270,9 +34270,9 @@ struct astruct_57 {
     pub field_0x98: u32,
 }
 
-//pub typedef struct astruct_460 astruct_460, *Pastruct_460;
+//pub typedef struct AStruct460 AStruct460, *PAStruct460;
 
-struct astruct_460 {
+pub struct AStruct460 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -34298,9 +34298,9 @@ struct astruct_460 {
     pub c: u16,
 }
 
-//pub typedef struct astruct_806 astruct_806, *Pastruct_806;
+//pub typedef struct AStruct806 AStruct806, *PAStruct806;
 
-struct astruct_806 {
+pub struct AStruct806 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -34575,9 +34575,9 @@ struct astruct_806 {
     pub field_0x116: u16,
 }
 
-//pub typedef struct astruct_791 astruct_791, *Pastruct_791;
+//pub typedef struct AStruct791 AStruct791, *PAStruct791;
 
-struct astruct_791 {
+pub struct AStruct791 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -34589,9 +34589,9 @@ struct astruct_791 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_750 astruct_750, *Pastruct_750;
+//pub typedef struct AStruct750 AStruct750, *PAStruct750;
 
-struct astruct_750 {
+pub struct AStruct750 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -34627,9 +34627,9 @@ struct astruct_750 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_738 astruct_738, *Pastruct_738;
+//pub typedef struct AStruct738 AStruct738, *PAStruct738;
 
-struct astruct_738 {
+pub struct AStruct738 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35129,9 +35129,9 @@ struct astruct_738 {
     pub field_0x1f6: u32,
 }
 
-//pub typedef struct astruct_102 astruct_102, *Pastruct_102;
+//pub typedef struct AStruct102 AStruct102, *PAStruct102;
 
-struct astruct_102 {
+pub struct AStruct102 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -35146,9 +35146,9 @@ struct astruct_102 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_462 astruct_462, *Pastruct_462;
+//pub typedef struct AStruct462 AStruct462, *PAStruct462;
 
-struct astruct_462 {
+pub struct AStruct462 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35239,9 +35239,9 @@ struct astruct_462 {
     pub field_0x58: i32,
 }
 
-//pub typedef struct astruct_409 astruct_409, *Pastruct_409;
+//pub typedef struct AStruct409 AStruct409, *PAStruct409;
 
-struct astruct_409 {
+pub struct AStruct409 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35285,9 +35285,9 @@ struct astruct_409 {
     pub field_0x32: u32,
 }
 
-//pub typedef struct astruct_235 astruct_235, *Pastruct_235;
+//pub typedef struct AStruct235 AStruct235, *PAStruct235;
 
-struct astruct_235 {
+pub struct AStruct235 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35358,9 +35358,9 @@ struct astruct_235 {
     pub field_0x44: u16,
 }
 
-//pub typedef struct astruct_827 astruct_827, *Pastruct_827;
+//pub typedef struct AStruct827 AStruct827, *PAStruct827;
 
-struct astruct_827 {
+pub struct AStruct827 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -35622,9 +35622,9 @@ struct astruct_827 {
     pub field_0x10c: u32,
 }
 
-//pub typedef struct astruct_960 astruct_960, *Pastruct_960;
+//pub typedef struct AStruct960 AStruct960, *PAStruct960;
 
-struct astruct_960 {
+pub struct AStruct960 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35644,9 +35644,9 @@ struct astruct_960 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_431 astruct_431, *Pastruct_431;
+//pub typedef struct AStruct431 AStruct431, *PAStruct431;
 
-struct astruct_431 {
+pub struct AStruct431 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -35760,9 +35760,9 @@ struct astruct_431 {
     pub field_0x6e: u16,
 }
 
-//pub typedef struct astruct_266 astruct_266, *Pastruct_266;
+//pub typedef struct AStruct266 AStruct266, *PAStruct266;
 
-struct astruct_266 {
+pub struct AStruct266 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -36019,13 +36019,13 @@ struct astruct_266 {
     pub field_0xfe: u16,
 }
 
-//pub typedef struct astruct_403 astruct_403, *Pastruct_403;
+//pub typedef struct AStruct403 AStruct403, *PAStruct403;
 
-struct astruct_403 {}
+pub struct AStruct403 {}
 
-//pub typedef struct astruct_547 astruct_547, *Pastruct_547;
+//pub typedef struct AStruct547 AStruct547, *PAStruct547;
 
-struct astruct_547 {
+pub struct AStruct547 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -36421,9 +36421,9 @@ struct astruct_547 {
     pub field_0x188: u16,
 }
 
-//pub typedef struct astruct_399 astruct_399, *Pastruct_399;
+//pub typedef struct AStruct399 AStruct399, *PAStruct399;
 
-struct astruct_399 {
+pub struct AStruct399 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -36441,11 +36441,11 @@ struct astruct_399 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_947 astruct_947, *Pastruct_947;
+//pub typedef struct AStruct947 AStruct947, *PAStruct947;
 
-//pub typedef struct astruct_94 astruct_94, *Pastruct_94;
+//pub typedef struct AStruct94 AStruct94, *PAStruct94;
 
-struct astruct_94 {
+pub struct AStruct94 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -36471,7 +36471,7 @@ struct astruct_94 {
     pub field_0x24: u16,
     pub field_0x26: u16,
     pub field_0x28: u16,
-    astruct_94_ptr_0x2a: *mut u8,
+    AStruct94_ptr_0x2a: *mut u8,
     alloc_addr: *mut u8,
     pub field_0x2e: u16,
     pub field_0x30: u16,
@@ -36489,31 +36489,31 @@ struct astruct_94 {
     pub field_0x40: u16,
 }
 
-struct astruct_947 {
+pub struct AStruct947 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut astruct_94,
-    pub field_0x6: *mut astruct_94,
+    pub field_0x4: *mut AStruct94,
+    pub field_0x6: *mut AStruct94,
     pub field_0x8: i32,
 }
 
-//pub typedef struct astruct_1125 astruct_1125, *Pastruct_1125;
+//pub typedef struct AStruct1125 AStruct1125, *PAStruct1125;
 
-struct astruct_1125 {}
+pub struct AStruct1125 {}
 
-//pub typedef struct astruct_488 astruct_488, *Pastruct_488;
+//pub typedef struct AStruct488 AStruct488, *PAStruct488;
 
-struct astruct_488 {
+pub struct AStruct488 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
 
-//pub typedef struct astruct_1049 astruct_1049, *Pastruct_1049;
+//pub typedef struct AStruct1049 AStruct1049, *PAStruct1049;
 
-struct astruct_1049 {
+pub struct AStruct1049 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -36521,9 +36521,9 @@ struct astruct_1049 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_551 astruct_551, *Pastruct_551;
+//pub typedef struct AStruct551 AStruct551, *PAStruct551;
 
-struct astruct_551 {
+pub struct AStruct551 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37039,9 +37039,9 @@ struct astruct_551 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_342 astruct_342, *Pastruct_342;
+//pub typedef struct AStruct342 AStruct342, *PAStruct342;
 
-struct astruct_342 {
+pub struct AStruct342 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -37216,9 +37216,9 @@ struct astruct_342 {
     pub field_0xb6: u16,
 }
 
-//pub typedef struct astruct_363 astruct_363, *Pastruct_363;
+//pub typedef struct AStruct363 AStruct363, *PAStruct363;
 
-struct astruct_363 {
+pub struct AStruct363 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -37366,9 +37366,9 @@ struct astruct_363 {
     pub field_0x94: u32,
 }
 
-//pub typedef struct astruct_1112 astruct_1112, *Pastruct_1112;
+//pub typedef struct AStruct1112 AStruct1112, *PAStruct1112;
 
-struct astruct_1112 {
+pub struct AStruct1112 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37384,9 +37384,9 @@ struct astruct_1112 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_146 astruct_146, *Pastruct_146;
+//pub typedef struct AStruct146 AStruct146, *PAStruct146;
 
-struct astruct_146 {
+pub struct AStruct146 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37395,9 +37395,9 @@ struct astruct_146 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_709 astruct_709, *Pastruct_709;
+//pub typedef struct AStruct709 AStruct709, *PAStruct709;
 
-struct astruct_709 {
+pub struct AStruct709 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37426,9 +37426,9 @@ struct astruct_709 {
     pub field_0x1c: i32,
 }
 
-//pub typedef struct astruct_880 astruct_880, *Pastruct_880;
+//pub typedef struct AStruct880 AStruct880, *PAStruct880;
 
-struct astruct_880 {
+pub struct AStruct880 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37438,9 +37438,9 @@ struct astruct_880 {
     pub field_0x8: u16,
 }
 
-//pub typedef struct astruct_279 astruct_279, *Pastruct_279;
+//pub typedef struct AStruct279 AStruct279, *PAStruct279;
 
-struct astruct_279 {
+pub struct AStruct279 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -37781,9 +37781,9 @@ struct astruct_279 {
     pub field_0x152: u16,
 }
 
-//pub typedef struct astruct_577 astruct_577, *Pastruct_577;
+//pub typedef struct AStruct577 AStruct577, *PAStruct577;
 
-struct astruct_577 {
+pub struct AStruct577 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -37799,9 +37799,9 @@ struct astruct_577 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_92 astruct_92, *Pastruct_92;
+//pub typedef struct AStruct92 AStruct92, *PAStruct92;
 
-struct astruct_92 {
+pub struct AStruct92 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -41900,9 +41900,9 @@ struct astruct_92 {
     pub field_0xfff: u8,
 }
 
-//pub typedef struct astruct_324 astruct_324, *Pastruct_324;
+//pub typedef struct AStruct324 AStruct324, *PAStruct324;
 
-struct astruct_324 {
+pub struct AStruct324 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -43784,9 +43784,9 @@ struct astruct_324 {
     pub field_0x756: u8,
 }
 
-//pub typedef struct astruct_893 astruct_893, *Pastruct_893;
+//pub typedef struct AStruct893 AStruct893, *PAStruct893;
 
-struct astruct_893 {
+pub struct AStruct893 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -43958,9 +43958,9 @@ struct astruct_893 {
     pub field_0xac: u16,
 }
 
-//pub typedef struct astruct_39 astruct_39, *Pastruct_39;
+//pub typedef struct AStruct39 AStruct39, *PAStruct39;
 
-struct astruct_39 {
+pub struct AStruct39 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i16,
@@ -43968,9 +43968,9 @@ struct astruct_39 {
     pub field_0x6: i16,
 }
 
-//pub typedef struct astruct_1036 astruct_1036, *Pastruct_1036;
+//pub typedef struct AStruct1036 AStruct1036, *PAStruct1036;
 
-struct astruct_1036 {
+pub struct AStruct1036 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -44242,9 +44242,9 @@ struct astruct_1036 {
     pub field_0x110: i32,
 }
 
-//pub typedef struct astruct_128 astruct_128, *Pastruct_128;
+//pub typedef struct AStruct128 AStruct128, *PAStruct128;
 
-struct astruct_128 {
+pub struct AStruct128 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -44273,9 +44273,9 @@ struct astruct_128 {
     pub field_0x1c: i32,
 }
 
-//pub typedef struct astruct_773 astruct_773, *Pastruct_773;
+//pub typedef struct AStruct773 AStruct773, *PAStruct773;
 
-struct astruct_773 {
+pub struct AStruct773 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -44310,9 +44310,9 @@ struct astruct_773 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_903 astruct_903, *Pastruct_903;
+//pub typedef struct AStruct903 AStruct903, *PAStruct903;
 
-struct astruct_903 {
+pub struct AStruct903 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -44574,9 +44574,9 @@ struct astruct_903 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_444 astruct_444, *Pastruct_444;
+//pub typedef struct AStruct444 AStruct444, *PAStruct444;
 
-struct astruct_444 {
+pub struct AStruct444 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46241,19 +46241,19 @@ struct astruct_444 {
     pub field_0x67e: i32,
 }
 
-//pub typedef struct astruct_1169 astruct_1169, *Pastruct_1169;
+//pub typedef struct AStruct1169 AStruct1169, *PAStruct1169;
 
-struct astruct_1169 {
+pub struct AStruct1169 {
     pub field_0x0: u8,
     pub field_0x1: u8,
-    pub field_0x2: *mut astruct_199,
-    pub field_0x4: *mut astruct_199,
+    pub field_0x2: *mut AStruct199,
+    pub field_0x4: *mut AStruct199,
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_181 astruct_181, *Pastruct_181;
+//pub typedef struct AStruct181 AStruct181, *PAStruct181;
 
-struct astruct_181 {
+pub struct AStruct181 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -46464,17 +46464,17 @@ struct astruct_181 {
     pub field_0xd1: u8,
 }
 
-//pub typedef struct astruct_760 astruct_760, *Pastruct_760;
+//pub typedef struct AStruct760 AStruct760, *PAStruct760;
 
-struct astruct_760 {
+pub struct AStruct760 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_833 astruct_833, *Pastruct_833;
+//pub typedef struct AStruct833 AStruct833, *PAStruct833;
 
-struct astruct_833 {
+pub struct AStruct833 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46494,7 +46494,7 @@ struct astruct_833 {
     pub field_0x10: u8,
     pub field_0x11: u8,
     pub field_0x12: u16,
-    pub field_0x14: *mut astruct_44,
+    pub field_0x14: *mut AStruct44,
     pub field_0x18: u16,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
@@ -46505,9 +46505,9 @@ struct astruct_833 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_921 astruct_921, *Pastruct_921;
+//pub typedef struct AStruct921 AStruct921, *PAStruct921;
 
-struct astruct_921 {
+pub struct AStruct921 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46574,9 +46574,9 @@ struct astruct_921 {
     pub field_0x40: i32,
 }
 
-//pub typedef struct astruct_707 astruct_707, *Pastruct_707;
+//pub typedef struct AStruct707 AStruct707, *PAStruct707;
 
-struct astruct_707 {
+pub struct AStruct707 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -46587,9 +46587,9 @@ struct astruct_707 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_1156 astruct_1156, *Pastruct_1156;
+//pub typedef struct AStruct1156 AStruct1156, *PAStruct1156;
 
-struct astruct_1156 {
+pub struct AStruct1156 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46609,9 +46609,9 @@ struct astruct_1156 {
     pub field_0x16: i32,
 }
 
-//pub typedef struct astruct_194 astruct_194, *Pastruct_194;
+//pub typedef struct AStruct194 AStruct194, *PAStruct194;
 
-struct astruct_194 {
+pub struct AStruct194 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46631,9 +46631,9 @@ struct astruct_194 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_916 astruct_916, *Pastruct_916;
+//pub typedef struct AStruct916 AStruct916, *PAStruct916;
 
-struct astruct_916 {
+pub struct AStruct916 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -46663,13 +46663,13 @@ struct astruct_916 {
     pub field_0x3e: u32,
 }
 
-//pub typedef struct astruct_204 astruct_204, *Pastruct_204;
+//pub typedef struct AStruct204 AStruct204, *PAStruct204;
 
-struct astruct_204 {
+pub struct AStruct204 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
-    pub field_0x4: *mut astruct_104,
+    pub field_0x4: *mut AStruct104,
     pub field_0x8: u16,
     pub field_0xa: u8,
     pub field_0xb: u8,
@@ -46711,9 +46711,9 @@ struct astruct_204 {
     pub field_0x42: u32,
 }
 
-//pub typedef struct astruct_337 astruct_337, *Pastruct_337;
+//pub typedef struct AStruct337 AStruct337, *PAStruct337;
 
-struct astruct_337 {
+pub struct AStruct337 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -46727,9 +46727,9 @@ struct astruct_337 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_564 astruct_564, *Pastruct_564;
+//pub typedef struct AStruct564 AStruct564, *PAStruct564;
 
-struct astruct_564 {
+pub struct AStruct564 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -46747,9 +46747,9 @@ struct astruct_564 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_26 astruct_26, *Pastruct_26;
+//pub typedef struct AStruct26 AStruct26, *PAStruct26;
 
-struct astruct_26 {
+pub struct AStruct26 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -47014,9 +47014,9 @@ struct astruct_26 {
     pub field_0x10b: u8,
 }
 
-//pub typedef struct astruct_507 astruct_507, *Pastruct_507;
+//pub typedef struct AStruct507 AStruct507, *PAStruct507;
 
-struct astruct_507 {
+pub struct AStruct507 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -47068,9 +47068,9 @@ struct astruct_507 {
     pub field_0x32: u16,
 }
 
-//pub typedef struct astruct_174 astruct_174, *Pastruct_174;
+//pub typedef struct AStruct174 AStruct174, *PAStruct174;
 
-struct astruct_174 {
+pub struct AStruct174 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -47289,9 +47289,9 @@ struct astruct_174 {
     pub field_0xd7: u8,
 }
 
-//pub typedef struct astruct_533 astruct_533, *Pastruct_533;
+//pub typedef struct AStruct533 AStruct533, *PAStruct533;
 
-struct astruct_533 {
+pub struct AStruct533 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -47306,9 +47306,9 @@ struct astruct_533 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_786 astruct_786, *Pastruct_786;
+//pub typedef struct AStruct786 AStruct786, *PAStruct786;
 
-struct astruct_786 {
+pub struct AStruct786 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -47344,11 +47344,11 @@ struct astruct_786 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_1088 astruct_1088, *Pastruct_1088;
+//pub typedef struct AStruct1088 AStruct1088, *PAStruct1088;
 
-//pub typedef struct astruct_493 astruct_493, *Pastruct_493;
+//pub typedef struct AStruct493 AStruct493, *PAStruct493;
 
-struct astruct_493 {
+pub struct AStruct493 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -47376,7 +47376,7 @@ struct astruct_493 {
     pub field_0x1c: u16,
 }
 
-struct astruct_1088 {
+pub struct AStruct1088 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -47915,14 +47915,14 @@ struct astruct_1088 {
     pub field_0x217: u8,
     pub field_0x218: u8,
     pub field_0x219: u8,
-    pub field_0x21a: *mut astruct_493,
+    pub field_0x21a: *mut AStruct493,
     pub field_0x21c: u8,
     pub field_0x21d: u8,
 }
 
-//pub typedef struct astruct_1023 astruct_1023, *Pastruct_1023;
+//pub typedef struct AStruct1023 AStruct1023, *PAStruct1023;
 
-struct astruct_1023 {
+pub struct AStruct1023 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -48185,9 +48185,9 @@ struct astruct_1023 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_115 astruct_115, *Pastruct_115;
+//pub typedef struct AStruct115 AStruct115, *PAStruct115;
 
-struct astruct_115 {
+pub struct AStruct115 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48213,16 +48213,16 @@ struct astruct_115 {
     pub field_0x1a: i32,
 }
 
-//pub typedef struct astruct_368 astruct_368, *Pastruct_368;
+//pub typedef struct AStruct368 AStruct368, *PAStruct368;
 
-struct astruct_368 {
+pub struct AStruct368 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_929 astruct_929, *Pastruct_929;
+//pub typedef struct AStruct929 AStruct929, *PAStruct929;
 
-struct astruct_929 {
+pub struct AStruct929 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48266,9 +48266,9 @@ struct astruct_929 {
     pub field_0x29: u8,
 }
 
-//pub typedef struct astruct_311 astruct_311, *Pastruct_311;
+//pub typedef struct AStruct311 AStruct311, *PAStruct311;
 
-struct astruct_311 {
+pub struct AStruct311 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48287,9 +48287,9 @@ struct astruct_311 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_400 astruct_400, *Pastruct_400;
+//pub typedef struct AStruct400 AStruct400, *PAStruct400;
 
-struct astruct_400 {
+pub struct AStruct400 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48305,9 +48305,9 @@ struct astruct_400 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1118 astruct_1118, *Pastruct_1118;
+//pub typedef struct AStruct1118 AStruct1118, *PAStruct1118;
 
-struct astruct_1118 {
+pub struct AStruct1118 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48323,9 +48323,9 @@ struct astruct_1118 {
     field_0xc: *mut u32,
 }
 
-//pub typedef struct astruct_809 astruct_809, *Pastruct_809;
+//pub typedef struct AStruct809 AStruct809, *PAStruct809;
 
-struct astruct_809 {
+pub struct AStruct809 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -48589,9 +48589,9 @@ struct astruct_809 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_433 astruct_433, *Pastruct_433;
+//pub typedef struct AStruct433 AStruct433, *PAStruct433;
 
-struct astruct_433 {
+pub struct AStruct433 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48623,9 +48623,9 @@ struct astruct_433 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_13 astruct_13, *Pastruct_13;
+//pub typedef struct AStruct13 AStruct13, *PAStruct13;
 
-struct astruct_13 {
+pub struct AStruct13 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -48861,9 +48861,9 @@ struct astruct_13 {
     pub field_0xf0: u16,
 }
 
-//pub typedef struct astruct_248 astruct_248, *Pastruct_248;
+//pub typedef struct AStruct248 AStruct248, *PAStruct248;
 
-struct astruct_248 {
+pub struct AStruct248 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49012,9 +49012,9 @@ struct astruct_248 {
     pub field_0x92: u16,
 }
 
-//pub typedef struct astruct_457 astruct_457, *Pastruct_457;
+//pub typedef struct AStruct457 AStruct457, *PAStruct457;
 
-struct astruct_457 {
+pub struct AStruct457 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49024,9 +49024,9 @@ struct astruct_457 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_520 astruct_520, *Pastruct_520;
+//pub typedef struct AStruct520 AStruct520, *PAStruct520;
 
-struct astruct_520 {
+pub struct AStruct520 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49036,9 +49036,9 @@ struct astruct_520 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_1010 astruct_1010, *Pastruct_1010;
+//pub typedef struct AStruct1010 AStruct1010, *PAStruct1010;
 
-struct astruct_1010 {
+pub struct AStruct1010 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49061,28 +49061,28 @@ struct astruct_1010 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_1143 astruct_1143, *Pastruct_1143;
+//pub typedef struct AStruct1143 AStruct1143, *PAStruct1143;
 
-struct astruct_1143 {
+pub struct AStruct1143 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_762 astruct_762, *Pastruct_762;
+//pub typedef struct AStruct762 AStruct762, *PAStruct762;
 
-struct astruct_762 {
+pub struct AStruct762 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_982 astruct_982, *Pastruct_982;
+//pub typedef struct AStruct982 AStruct982, *PAStruct982;
 
-struct astruct_982 {}
+pub struct AStruct982 {}
 
-//pub typedef struct astruct_580 astruct_580, *Pastruct_580;
+//pub typedef struct AStruct580 AStruct580, *PAStruct580;
 
-struct astruct_580 {
+pub struct AStruct580 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49093,9 +49093,9 @@ struct astruct_580 {
     pub field_0xa: u16,
 }
 
-//pub typedef struct astruct_583 astruct_583, *Pastruct_583;
+//pub typedef struct AStruct583 AStruct583, *PAStruct583;
 
-struct astruct_583 {
+pub struct AStruct583 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49111,9 +49111,9 @@ struct astruct_583 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_582 astruct_582, *Pastruct_582;
+//pub typedef struct AStruct582 AStruct582, *PAStruct582;
 
-struct astruct_582 {
+pub struct AStruct582 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49133,9 +49133,9 @@ struct astruct_582 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_589 astruct_589, *Pastruct_589;
+//pub typedef struct AStruct589 AStruct589, *PAStruct589;
 
-struct astruct_589 {
+pub struct AStruct589 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49295,9 +49295,9 @@ struct astruct_589 {
     pub field_0xa0: i32,
 }
 
-//pub typedef struct astruct_588 astruct_588, *Pastruct_588;
+//pub typedef struct AStruct588 AStruct588, *PAStruct588;
 
-struct astruct_588 {
+pub struct AStruct588 {
     pub i16_x00: i32,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -49456,9 +49456,9 @@ struct astruct_588 {
     pub field_0xa0: i32,
 }
 
-//pub typedef struct astruct_585 astruct_585, *Pastruct_585;
+//pub typedef struct AStruct585 AStruct585, *PAStruct585;
 
-struct astruct_585 {
+pub struct AStruct585 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49478,9 +49478,9 @@ struct astruct_585 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_584 astruct_584, *Pastruct_584;
+//pub typedef struct AStruct584 AStruct584, *PAStruct584;
 
-struct astruct_584 {
+pub struct AStruct584 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49499,9 +49499,9 @@ struct astruct_584 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_587 astruct_587, *Pastruct_587;
+//pub typedef struct AStruct587 AStruct587, *PAStruct587;
 
-struct astruct_587 {
+pub struct AStruct587 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -49514,9 +49514,9 @@ struct astruct_587 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_586 astruct_586, *Pastruct_586;
+//pub typedef struct AStruct586 AStruct586, *PAStruct586;
 
-struct astruct_586 {
+pub struct AStruct586 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -49527,9 +49527,9 @@ struct astruct_586 {
     pub field_0xa: i32,
 }
 
-//pub typedef struct astruct_151 astruct_151, *Pastruct_151;
+//pub typedef struct AStruct151 AStruct151, *PAStruct151;
 
-struct astruct_151 {
+pub struct AStruct151 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -49538,9 +49538,9 @@ struct astruct_151 {
     pub field_0xa: u8,
 }
 
-//pub typedef struct astruct_1097 astruct_1097, *Pastruct_1097;
+//pub typedef struct AStruct1097 AStruct1097, *PAStruct1097;
 
-struct astruct_1097 {
+pub struct AStruct1097 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -50074,9 +50074,9 @@ struct astruct_1097 {
     pub field_0x213: u8,
 }
 
-//pub typedef struct astruct_414 astruct_414, *Pastruct_414;
+//pub typedef struct AStruct414 AStruct414, *PAStruct414;
 
-struct astruct_414 {
+pub struct AStruct414 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -50122,9 +50122,9 @@ struct astruct_414 {
     pub field_0x32: u32,
 }
 
-//pub typedef struct astruct_570 astruct_570, *Pastruct_570;
+//pub typedef struct AStruct570 AStruct570, *PAStruct570;
 
-struct astruct_570 {
+pub struct AStruct570 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50140,9 +50140,9 @@ struct astruct_570 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_572 astruct_572, *Pastruct_572;
+//pub typedef struct AStruct572 AStruct572, *PAStruct572;
 
-struct astruct_572 {
+pub struct AStruct572 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50158,9 +50158,9 @@ struct astruct_572 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_571 astruct_571, *Pastruct_571;
+//pub typedef struct AStruct571 AStruct571, *PAStruct571;
 
-struct astruct_571 {
+pub struct AStruct571 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50177,9 +50177,9 @@ struct astruct_571 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_1055 astruct_1055, *Pastruct_1055;
+//pub typedef struct AStruct1055 AStruct1055, *PAStruct1055;
 
-struct astruct_1055 {
+pub struct AStruct1055 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50440,9 +50440,9 @@ struct astruct_1055 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_578 astruct_578, *Pastruct_578;
+//pub typedef struct AStruct578 AStruct578, *PAStruct578;
 
-struct astruct_578 {
+pub struct AStruct578 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50460,9 +50460,9 @@ struct astruct_578 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_579 astruct_579, *Pastruct_579;
+//pub typedef struct AStruct579 AStruct579, *PAStruct579;
 
-struct astruct_579 {
+pub struct AStruct579 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50473,9 +50473,9 @@ struct astruct_579 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_61 astruct_61, *Pastruct_61;
+//pub typedef struct AStruct61 AStruct61, *PAStruct61;
 
-struct astruct_61 {
+pub struct AStruct61 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50499,9 +50499,9 @@ struct astruct_61 {
     pub field_0x1a: *mut u8,
 }
 
-//pub typedef struct astruct_574 astruct_574, *Pastruct_574;
+//pub typedef struct AStruct574 AStruct574, *PAStruct574;
 
-struct astruct_574 {
+pub struct AStruct574 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50517,9 +50517,9 @@ struct astruct_574 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_573 astruct_573, *Pastruct_573;
+//pub typedef struct AStruct573 AStruct573, *PAStruct573;
 
-struct astruct_573 {
+pub struct AStruct573 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50536,9 +50536,9 @@ struct astruct_573 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_576 astruct_576, *Pastruct_576;
+//pub typedef struct AStruct576 AStruct576, *PAStruct576;
 
-struct astruct_576 {
+pub struct AStruct576 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50554,9 +50554,9 @@ struct astruct_576 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_1026 astruct_1026, *Pastruct_1026;
+//pub typedef struct AStruct1026 AStruct1026, *PAStruct1026;
 
-struct astruct_1026 {
+pub struct AStruct1026 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -50818,9 +50818,9 @@ struct astruct_1026 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_575 astruct_575, *Pastruct_575;
+//pub typedef struct AStruct575 AStruct575, *PAStruct575;
 
-struct astruct_575 {
+pub struct AStruct575 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -50836,16 +50836,16 @@ struct astruct_575 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_983 astruct_983, *Pastruct_983;
+//pub typedef struct AStruct983 AStruct983, *PAStruct983;
 
-struct astruct_983 {
+pub struct AStruct983 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_284 astruct_284, *Pastruct_284;
+//pub typedef struct AStruct284 AStruct284, *PAStruct284;
 
-struct astruct_284 {
+pub struct AStruct284 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51222,9 +51222,9 @@ struct astruct_284 {
     pub field_0x176: u16,
 }
 
-//pub typedef struct astruct_534 astruct_534, *Pastruct_534;
+//pub typedef struct AStruct534 AStruct534, *PAStruct534;
 
-struct astruct_534 {
+pub struct AStruct534 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub u16_x02: u16,
@@ -51330,9 +51330,9 @@ struct astruct_534 {
     pub field_0x8b: u8,
 }
 
-//pub typedef struct astruct_787 astruct_787, *Pastruct_787;
+//pub typedef struct AStruct787 AStruct787, *PAStruct787;
 
-struct astruct_787 {
+pub struct AStruct787 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -51594,9 +51594,9 @@ struct astruct_787 {
     pub field_0x10c: u16,
 }
 
-//pub typedef struct astruct_996 astruct_996, *Pastruct_996;
+//pub typedef struct AStruct996 AStruct996, *PAStruct996;
 
-struct astruct_996 {
+pub struct AStruct996 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51635,9 +51635,9 @@ struct astruct_996 {
     pub field_0x26: i32,
 }
 
-//pub typedef struct astruct_850 astruct_850, *Pastruct_850;
+//pub typedef struct AStruct850 AStruct850, *PAStruct850;
 
-struct astruct_850 {
+pub struct AStruct850 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -51650,12 +51650,12 @@ struct astruct_850 {
     pub field_0xb: u8,
     pub field_0xc: i32,
     pub field_0xe: i32,
-    pub field_0x10: *mut astruct_44,
+    pub field_0x10: *mut AStruct44,
 }
 
-//pub typedef struct astruct_513 astruct_513, *Pastruct_513;
+//pub typedef struct AStruct513 AStruct513, *PAStruct513;
 
-struct astruct_513 {
+pub struct AStruct513 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51818,9 +51818,9 @@ struct astruct_513 {
     pub field_0xa8: i32,
 }
 
-//pub typedef struct astruct_1175 astruct_1175, *Pastruct_1175;
+//pub typedef struct AStruct1175 AStruct1175, *PAStruct1175;
 
-struct astruct_1175 {
+pub struct AStruct1175 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51839,9 +51839,9 @@ struct astruct_1175 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_424 astruct_424, *Pastruct_424;
+//pub typedef struct AStruct424 AStruct424, *PAStruct424;
 
-struct astruct_424 {
+pub struct AStruct424 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51860,9 +51860,9 @@ struct astruct_424 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_407 astruct_407, *Pastruct_407;
+//pub typedef struct AStruct407 AStruct407, *PAStruct407;
 
-struct astruct_407 {
+pub struct AStruct407 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -51990,9 +51990,9 @@ struct astruct_407 {
     pub field_0x7d: u8,
 }
 
-//pub typedef struct astruct_592 astruct_592, *Pastruct_592;
+//pub typedef struct AStruct592 AStruct592, *PAStruct592;
 
-struct astruct_592 {
+pub struct AStruct592 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52239,9 +52239,9 @@ struct astruct_592 {
     pub field_0xf6: i32,
 }
 
-//pub typedef struct astruct_591 astruct_591, *Pastruct_591;
+//pub typedef struct AStruct591 AStruct591, *PAStruct591;
 
-struct astruct_591 {
+pub struct AStruct591 {
     pub u16_x00: u16,
     pub u16_x02: u16,
     pub field_0x4: u8,
@@ -52470,15 +52470,15 @@ struct astruct_591 {
     pub u16_xe4: u16,
 }
 
-//pub typedef struct astruct_593 astruct_593, *Pastruct_593;
+//pub typedef struct AStruct593 AStruct593, *PAStruct593;
 
-struct astruct_593 {
+pub struct AStruct593 {
     pub field_0x0: u32,
 }
 
-//pub typedef struct astruct_730 astruct_730, *Pastruct_730;
+//pub typedef struct AStruct730 AStruct730, *PAStruct730;
 
-struct astruct_730 {
+pub struct AStruct730 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52649,9 +52649,9 @@ struct astruct_730 {
     pub field_0xa8: i32,
 }
 
-//pub typedef struct astruct_590 astruct_590, *Pastruct_590;
+//pub typedef struct AStruct590 AStruct590, *PAStruct590;
 
-struct astruct_590 {
+pub struct AStruct590 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52666,9 +52666,9 @@ struct astruct_590 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1115 astruct_1115, *Pastruct_1115;
+//pub typedef struct AStruct1115 AStruct1115, *PAStruct1115;
 
-struct astruct_1115 {
+pub struct AStruct1115 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52684,9 +52684,9 @@ struct astruct_1115 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_596 astruct_596, *Pastruct_596;
+//pub typedef struct AStruct596 AStruct596, *PAStruct596;
 
-struct astruct_596 {
+pub struct AStruct596 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52699,9 +52699,9 @@ struct astruct_596 {
     pub field_0xb: u8,
 }
 
-//pub typedef struct astruct_598 astruct_598, *Pastruct_598;
+//pub typedef struct AStruct598 AStruct598, *PAStruct598;
 
-struct astruct_598 {
+pub struct AStruct598 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -52722,14 +52722,14 @@ struct astruct_598 {
     pub field_0x12: u8,
     pub field_0x13: u8,
     pub field_0x14: u32,
-    pub astruct_376_ptr_x18: *mut astruct_376,
+    pub AStruct376_ptr_x18: *mut AStruct376,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
 }
 
-//pub typedef struct astruct_597 astruct_597, *Pastruct_597;
+//pub typedef struct AStruct597 AStruct597, *PAStruct597;
 
-struct astruct_597 {
+pub struct AStruct597 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -52742,9 +52742,9 @@ struct astruct_597 {
     pub field_0xb: u8,
 }
 
-//pub typedef struct astruct_401 astruct_401, *Pastruct_401;
+//pub typedef struct AStruct401 AStruct401, *PAStruct401;
 
-struct astruct_401 {
+pub struct AStruct401 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -52769,9 +52769,9 @@ struct astruct_401 {
     pub field_0x16: u32,
 }
 
-//pub typedef struct astruct_863 astruct_863, *Pastruct_863;
+//pub typedef struct AStruct863 AStruct863, *PAStruct863;
 
-struct astruct_863 {
+pub struct AStruct863 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -52794,9 +52794,9 @@ struct astruct_863 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_1042 astruct_1042, *Pastruct_1042;
+//pub typedef struct AStruct1042 AStruct1042, *PAStruct1042;
 
-struct astruct_1042 {
+pub struct AStruct1042 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -52804,9 +52804,9 @@ struct astruct_1042 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_545 astruct_545, *Pastruct_545;
+//pub typedef struct AStruct545 AStruct545, *PAStruct545;
 
-struct astruct_545 {
+pub struct AStruct545 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -53188,9 +53188,9 @@ struct astruct_545 {
     pub field_0x180: i32,
 }
 
-//pub typedef struct astruct_544 astruct_544, *Pastruct_544;
+//pub typedef struct AStruct544 AStruct544, *PAStruct544;
 
-struct astruct_544 {
+pub struct AStruct544 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -53576,9 +53576,9 @@ struct astruct_544 {
     pub field_0x186: u32,
 }
 
-//pub typedef struct astruct_541 astruct_541, *Pastruct_541;
+//pub typedef struct AStruct541 AStruct541, *PAStruct541;
 
-struct astruct_541 {
+pub struct AStruct541 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -53617,9 +53617,9 @@ struct astruct_541 {
     pub field_0x26: u32,
 }
 
-//pub typedef struct astruct_540 astruct_540, *Pastruct_540;
+//pub typedef struct AStruct540 AStruct540, *PAStruct540;
 
-struct astruct_540 {
+pub struct AStruct540 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -53657,9 +53657,9 @@ struct astruct_540 {
     pub field_0x26: u32,
 }
 
-//pub typedef struct astruct_542 astruct_542, *Pastruct_542;
+//pub typedef struct AStruct542 AStruct542, *PAStruct542;
 
-struct astruct_542 {
+pub struct AStruct542 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -53727,9 +53727,9 @@ struct astruct_542 {
     pub field_0x42: u16,
 }
 
-//pub typedef struct astruct_195 astruct_195, *Pastruct_195;
+//pub typedef struct AStruct195 AStruct195, *PAStruct195;
 
-struct astruct_195 {
+pub struct AStruct195 {
     pub field_0x0: i32,
     pub field_0x2: u16,
     pub field_0x4: u32,
@@ -53738,9 +53738,9 @@ struct astruct_195 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_205 astruct_205, *Pastruct_205;
+//pub typedef struct AStruct205 AStruct205, *PAStruct205;
 
-struct astruct_205 {
+pub struct AStruct205 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -53757,9 +53757,9 @@ struct astruct_205 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_549 astruct_549, *Pastruct_549;
+//pub typedef struct AStruct549 AStruct549, *PAStruct549;
 
-struct astruct_549 {
+pub struct AStruct549 {
     pub u16_x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -54052,8 +54052,8 @@ struct astruct_549 {
     pub field_0x123: u8,
     pub field_0x124: u8,
     pub field_0x125: u8,
-    pub field_0x126: *mut astruct_376,
-    pub field_0x12a: *mut astruct_376,
+    pub field_0x126: *mut AStruct376,
+    pub field_0x12a: *mut AStruct376,
     pub field_0x12e: u8,
     pub field_0x12f: u8,
     pub field_0x130: u8,
@@ -54067,9 +54067,9 @@ struct astruct_549 {
     pub field_0x139: u8,
 }
 
-//pub typedef struct astruct_548 astruct_548, *Pastruct_548;
+//pub typedef struct AStruct548 AStruct548, *PAStruct548;
 
-struct astruct_548 {
+pub struct AStruct548 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54077,13 +54077,13 @@ struct astruct_548 {
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_876 astruct_876, *Pastruct_876;
+//pub typedef struct AStruct876 AStruct876, *PAStruct876;
 
-struct astruct_876 {}
+pub struct AStruct876 {}
 
-//pub typedef struct astruct_180 astruct_180, *Pastruct_180;
+//pub typedef struct AStruct180 AStruct180, *PAStruct180;
 
-struct astruct_180 {
+pub struct AStruct180 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -54308,9 +54308,9 @@ struct astruct_180 {
     pub field_0xde: u16,
 }
 
-//pub typedef struct astruct_338 astruct_338, *Pastruct_338;
+//pub typedef struct AStruct338 AStruct338, *PAStruct338;
 
-struct astruct_338 {
+pub struct AStruct338 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54319,9 +54319,9 @@ struct astruct_338 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_480 astruct_480, *Pastruct_480;
+//pub typedef struct AStruct480 AStruct480, *PAStruct480;
 
-struct astruct_480 {
+pub struct AStruct480 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54359,9 +54359,9 @@ struct astruct_480 {
     pub field_0x23: u8,
 }
 
-//pub typedef struct astruct_504 astruct_504, *Pastruct_504;
+//pub typedef struct AStruct504 AStruct504, *PAStruct504;
 
-struct astruct_504 {
+pub struct AStruct504 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54369,9 +54369,9 @@ struct astruct_504 {
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_754 astruct_754, *Pastruct_754;
+//pub typedef struct AStruct754 AStruct754, *PAStruct754;
 
-struct astruct_754 {
+pub struct AStruct754 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54405,9 +54405,9 @@ struct astruct_754 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_536 astruct_536, *Pastruct_536;
+//pub typedef struct AStruct536 AStruct536, *PAStruct536;
 
-struct astruct_536 {
+pub struct AStruct536 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54443,13 +54443,13 @@ struct astruct_536 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_1099 astruct_1099, *Pastruct_1099;
+//pub typedef struct AStruct1099 AStruct1099, *PAStruct1099;
 
-struct astruct_1099 {}
+pub struct AStruct1099 {}
 
-//pub typedef struct astruct_535 astruct_535, *Pastruct_535;
+//pub typedef struct AStruct535 AStruct535, *PAStruct535;
 
-struct astruct_535 {
+pub struct AStruct535 {
     pub a: u16,
     pub b: u16,
     pub field_0x4: u8,
@@ -54558,9 +54558,9 @@ struct astruct_535 {
     pub h: i32,
 }
 
-//pub typedef struct astruct_756 astruct_756, *Pastruct_756;
+//pub typedef struct AStruct756 AStruct756, *PAStruct756;
 
-struct astruct_756 {
+pub struct AStruct756 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -54598,9 +54598,9 @@ struct astruct_756 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_530 astruct_530, *Pastruct_530;
+//pub typedef struct AStruct530 AStruct530, *PAStruct530;
 
-struct astruct_530 {
+pub struct AStruct530 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54674,16 +54674,16 @@ struct astruct_530 {
     pub field_0x46: u32,
 }
 
-//pub typedef struct astruct_532 astruct_532, *Pastruct_532;
+//pub typedef struct AStruct532 AStruct532, *PAStruct532;
 
-struct astruct_532 {
+pub struct AStruct532 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_531 astruct_531, *Pastruct_531;
+//pub typedef struct AStruct531 AStruct531, *PAStruct531;
 
-struct astruct_531 {
+pub struct AStruct531 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54773,13 +54773,13 @@ struct astruct_531 {
     pub field_0x56: u16,
 }
 
-//pub typedef struct astruct_537 astruct_537, *Pastruct_537;
+//pub typedef struct AStruct537 AStruct537, *PAStruct537;
 
-struct astruct_537 {}
+pub struct AStruct537 {}
 
-//pub typedef struct astruct_539 astruct_539, *Pastruct_539;
+//pub typedef struct AStruct539 AStruct539, *PAStruct539;
 
-struct astruct_539 {
+pub struct AStruct539 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54818,17 +54818,17 @@ struct astruct_539 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_391 astruct_391, *Pastruct_391;
+//pub typedef struct AStruct391 AStruct391, *PAStruct391;
 
-struct astruct_391 {
+pub struct AStruct391 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_427 astruct_427, *Pastruct_427;
+//pub typedef struct AStruct427 AStruct427, *PAStruct427;
 
-struct astruct_427 {
+pub struct AStruct427 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -54852,13 +54852,13 @@ struct astruct_427 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_561 astruct_561, *Pastruct_561;
+//pub typedef struct AStruct561 AStruct561, *PAStruct561;
 
-struct astruct_561 {}
+pub struct AStruct561 {}
 
-//pub typedef struct astruct_560 astruct_560, *Pastruct_560;
+//pub typedef struct AStruct560 AStruct560, *PAStruct560;
 
-struct astruct_560 {
+pub struct AStruct560 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -55174,9 +55174,9 @@ struct astruct_560 {
     pub field_0x139: u8,
 }
 
-//pub typedef struct astruct_743 astruct_743, *Pastruct_743;
+//pub typedef struct AStruct743 AStruct743, *PAStruct743;
 
-struct astruct_743 {
+pub struct AStruct743 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -55209,27 +55209,27 @@ struct astruct_743 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_567 astruct_567, *Pastruct_567;
+//pub typedef struct AStruct567 AStruct567, *PAStruct567;
 
-struct astruct_567 {}
+pub struct AStruct567 {}
 
-//pub typedef struct astruct_566 astruct_566, *Pastruct_566;
+//pub typedef struct AStruct566 AStruct566, *PAStruct566;
 
-struct astruct_566 {
+pub struct AStruct566 {
     pub field_0x0: u16,
 }
 
-//pub typedef struct astruct_569 astruct_569, *Pastruct_569;
+//pub typedef struct AStruct569 AStruct569, *PAStruct569;
 
-struct astruct_569 {
+pub struct AStruct569 {
     pub u16_x0: u16,
     pub u16_x2: u16,
-    pub astruct_376_ptr_x4: *mut astruct_376,
+    pub AStruct376_ptr_x4: *mut AStruct376,
 }
 
-//pub typedef struct astruct_568 astruct_568, *Pastruct_568;
+//pub typedef struct AStruct568 AStruct568, *PAStruct568;
 
-struct astruct_568 {
+pub struct AStruct568 {
     pub u16_x0: u16,
     pub u16_x2: u16,
     pub u32_x4: u32,
@@ -55239,9 +55239,9 @@ struct astruct_568 {
     pub u16_x12: u16,
 }
 
-//pub typedef struct astruct_563 astruct_563, *Pastruct_563;
+//pub typedef struct AStruct563 AStruct563, *PAStruct563;
 
-struct astruct_563 {
+pub struct AStruct563 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -55259,9 +55259,9 @@ struct astruct_563 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_562 astruct_562, *Pastruct_562;
+//pub typedef struct AStruct562 AStruct562, *PAStruct562;
 
-struct astruct_562 {
+pub struct AStruct562 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -55568,9 +55568,9 @@ struct astruct_562 {
     pub field_0x130: u16,
 }
 
-//pub typedef struct astruct_565 astruct_565, *Pastruct_565;
+//pub typedef struct AStruct565 AStruct565, *PAStruct565;
 
-struct astruct_565 {
+pub struct AStruct565 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -55588,18 +55588,18 @@ struct astruct_565 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_952 astruct_952, *Pastruct_952;
+//pub typedef struct AStruct952 AStruct952, *PAStruct952;
 
-struct astruct_952 {
+pub struct AStruct952 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_271 astruct_271, *Pastruct_271;
+//pub typedef struct AStruct271 AStruct271, *PAStruct271;
 
-struct astruct_271 {
+pub struct AStruct271 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -55892,9 +55892,9 @@ struct astruct_271 {
     pub field_0x122: u16,
 }
 
-//pub typedef struct astruct_550 astruct_550, *Pastruct_550;
+//pub typedef struct AStruct550 AStruct550, *PAStruct550;
 
-struct astruct_550 {
+pub struct AStruct550 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56190,9 +56190,9 @@ struct astruct_550 {
     pub field_0x12a: u32,
 }
 
-//pub typedef struct astruct_556 astruct_556, *Pastruct_556;
+//pub typedef struct AStruct556 AStruct556, *PAStruct556;
 
-struct astruct_556 {
+pub struct AStruct556 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56210,9 +56210,9 @@ struct astruct_556 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_555 astruct_555, *Pastruct_555;
+//pub typedef struct AStruct555 AStruct555, *PAStruct555;
 
-struct astruct_555 {
+pub struct AStruct555 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56230,9 +56230,9 @@ struct astruct_555 {
     pub field_0xe: u32,
 }
 
-//pub typedef struct astruct_1050 astruct_1050, *Pastruct_1050;
+//pub typedef struct AStruct1050 AStruct1050, *PAStruct1050;
 
-struct astruct_1050 {
+pub struct AStruct1050 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56257,9 +56257,9 @@ struct astruct_1050 {
     pub field_0x18: i32,
 }
 
-//pub typedef struct astruct_558 astruct_558, *Pastruct_558;
+//pub typedef struct AStruct558 AStruct558, *PAStruct558;
 
-struct astruct_558 {
+pub struct AStruct558 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56542,9 +56542,9 @@ struct astruct_558 {
     pub field_0x126: u32,
 }
 
-//pub typedef struct astruct_1162 astruct_1162, *Pastruct_1162;
+//pub typedef struct AStruct1162 AStruct1162, *PAStruct1162;
 
-struct astruct_1162 {
+pub struct AStruct1162 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -56555,9 +56555,9 @@ struct astruct_1162 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_557 astruct_557, *Pastruct_557;
+//pub typedef struct AStruct557 AStruct557, *PAStruct557;
 
-struct astruct_557 {
+pub struct AStruct557 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56582,9 +56582,9 @@ struct astruct_557 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_554 astruct_554, *Pastruct_554;
+//pub typedef struct AStruct554 AStruct554, *PAStruct554;
 
-struct astruct_554 {
+pub struct AStruct554 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56603,9 +56603,9 @@ struct astruct_554 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_553 astruct_553, *Pastruct_553;
+//pub typedef struct AStruct553 AStruct553, *PAStruct553;
 
-struct astruct_553 {
+pub struct AStruct553 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -56904,9 +56904,9 @@ struct astruct_553 {
     pub field_0x136: u32,
 }
 
-//pub typedef struct astruct_1109 astruct_1109, *Pastruct_1109;
+//pub typedef struct AStruct1109 AStruct1109, *PAStruct1109;
 
-struct astruct_1109 {
+pub struct AStruct1109 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -57411,9 +57411,9 @@ struct astruct_1109 {
     pub field_0x1f6: u32,
 }
 
-//pub typedef struct astruct_1086 astruct_1086, *Pastruct_1086;
+//pub typedef struct AStruct1086 AStruct1086, *PAStruct1086;
 
-struct astruct_1086 {
+pub struct AStruct1086 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -57928,9 +57928,9 @@ struct astruct_1086 {
     pub field_0x206: u16,
 }
 
-//pub typedef struct astruct_501 astruct_501, *Pastruct_501;
+//pub typedef struct AStruct501 AStruct501, *PAStruct501;
 
-struct astruct_501 {
+pub struct AStruct501 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -57940,9 +57940,9 @@ struct astruct_501 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_500 astruct_500, *Pastruct_500;
+//pub typedef struct AStruct500 AStruct500, *PAStruct500;
 
-struct astruct_500 {
+pub struct AStruct500 {
     pub a: u16,
     pub b: u16,
     pub c: u16,
@@ -58214,9 +58214,9 @@ struct astruct_500 {
     pub field_0x122: u16,
 }
 
-//pub typedef struct astruct_769 astruct_769, *Pastruct_769;
+//pub typedef struct AStruct769 AStruct769, *PAStruct769;
 
-struct astruct_769 {
+pub struct AStruct769 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58235,9 +58235,9 @@ struct astruct_769 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_503 astruct_503, *Pastruct_503;
+//pub typedef struct AStruct503 AStruct503, *PAStruct503;
 
-struct astruct_503 {
+pub struct AStruct503 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -58245,9 +58245,9 @@ struct astruct_503 {
     pub field_0x5: u8,
 }
 
-//pub typedef struct astruct_516 astruct_516, *Pastruct_516;
+//pub typedef struct AStruct516 AStruct516, *PAStruct516;
 
-struct astruct_516 {
+pub struct AStruct516 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58398,9 +58398,9 @@ struct astruct_516 {
     pub field_0x94: u32,
 }
 
-//pub typedef struct astruct_509 astruct_509, *Pastruct_509;
+//pub typedef struct AStruct509 AStruct509, *PAStruct509;
 
-struct astruct_509 {
+pub struct AStruct509 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -58538,9 +58538,9 @@ struct astruct_509 {
     pub field_0x9e: u32,
 }
 
-//pub typedef struct astruct_508 astruct_508, *Pastruct_508;
+//pub typedef struct AStruct508 AStruct508, *PAStruct508;
 
-struct astruct_508 {
+pub struct AStruct508 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -58647,9 +58647,9 @@ struct astruct_508 {
     pub field_0xa8: u16,
 }
 
-//pub typedef struct astruct_505 astruct_505, *Pastruct_505;
+//pub typedef struct AStruct505 AStruct505, *PAStruct505;
 
-struct astruct_505 {
+pub struct AStruct505 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58699,9 +58699,9 @@ struct astruct_505 {
     pub field_0x2e: u32,
 }
 
-//pub typedef struct astruct_506 astruct_506, *Pastruct_506;
+//pub typedef struct AStruct506 AStruct506, *PAStruct506;
 
-struct astruct_506 {
+pub struct AStruct506 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58740,9 +58740,9 @@ struct astruct_506 {
     pub field_0x32: i32,
 }
 
-//pub typedef struct astruct_771 astruct_771, *Pastruct_771;
+//pub typedef struct AStruct771 AStruct771, *PAStruct771;
 
-struct astruct_771 {
+pub struct AStruct771 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58755,7 +58755,7 @@ struct astruct_771 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: *mut astruct_771,
+    pub field_0xc: *mut AStruct771,
     pub field_0xe: u8,
     pub field_0xf: u8,
     pub field_0x10: u8,
@@ -58778,13 +58778,13 @@ struct astruct_771 {
     pub field_0x28: u32,
 }
 
-//pub typedef struct astruct_712 astruct_712, *Pastruct_712;
+//pub typedef struct AStruct712 AStruct712, *PAStruct712;
 
-struct astruct_712 {}
+pub struct AStruct712 {}
 
-//pub typedef struct astruct_309 astruct_309, *Pastruct_309;
+//pub typedef struct AStruct309 AStruct309, *PAStruct309;
 
-struct astruct_309 {
+pub struct AStruct309 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58819,9 +58819,9 @@ struct astruct_309 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_120 astruct_120, *Pastruct_120;
+//pub typedef struct AStruct120 AStruct120, *PAStruct120;
 
-struct astruct_120 {
+pub struct AStruct120 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -58852,9 +58852,9 @@ struct astruct_120 {
     pub field_0x21: u8,
 }
 
-//pub typedef struct astruct_253 astruct_253, *Pastruct_253;
+//pub typedef struct AStruct253 AStruct253, *PAStruct253;
 
-struct astruct_253 {
+pub struct AStruct253 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59033,16 +59033,16 @@ struct astruct_253 {
     pub field_0xb0: u16,
 }
 
-//pub typedef struct astruct_889 astruct_889, *Pastruct_889;
+//pub typedef struct AStruct889 AStruct889, *PAStruct889;
 
-struct astruct_889 {
+pub struct AStruct889 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_345 astruct_345, *Pastruct_345;
+//pub typedef struct AStruct345 AStruct345, *PAStruct345;
 
-struct astruct_345 {
+pub struct AStruct345 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59190,9 +59190,9 @@ struct astruct_345 {
     pub field_0x90: *mut u16,
 }
 
-//pub typedef struct astruct_523 astruct_523, *Pastruct_523;
+//pub typedef struct AStruct523 AStruct523, *PAStruct523;
 
-struct astruct_523 {
+pub struct AStruct523 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -59255,9 +59255,9 @@ struct astruct_523 {
     pub field_0x40: u32,
 }
 
-//pub typedef struct astruct_522 astruct_522, *Pastruct_522;
+//pub typedef struct AStruct522 AStruct522, *PAStruct522;
 
-struct astruct_522 {
+pub struct AStruct522 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59280,13 +59280,13 @@ struct astruct_522 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_386 astruct_386, *Pastruct_386;
+//pub typedef struct AStruct386 AStruct386, *PAStruct386;
 
-struct astruct_386 {}
+pub struct AStruct386 {}
 
-//pub typedef struct astruct_525 astruct_525, *Pastruct_525;
+//pub typedef struct AStruct525 AStruct525, *PAStruct525;
 
-struct astruct_525 {
+pub struct AStruct525 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59309,9 +59309,9 @@ struct astruct_525 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_524 astruct_524, *Pastruct_524;
+//pub typedef struct AStruct524 AStruct524, *PAStruct524;
 
-struct astruct_524 {
+pub struct AStruct524 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59382,9 +59382,9 @@ struct astruct_524 {
     pub field_0x4a: i32,
 }
 
-//pub typedef struct astruct_521 astruct_521, *Pastruct_521;
+//pub typedef struct AStruct521 AStruct521, *PAStruct521;
 
-struct astruct_521 {
+pub struct AStruct521 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -59456,13 +59456,13 @@ struct astruct_521 {
     pub field_0x56: u16,
 }
 
-//pub typedef struct astruct_133 astruct_133, *Pastruct_133;
+//pub typedef struct AStruct133 AStruct133, *PAStruct133;
 
-struct astruct_133 {}
+pub struct AStruct133 {}
 
-//pub typedef struct astruct_30 astruct_30, *Pastruct_30;
+//pub typedef struct AStruct30 AStruct30, *PAStruct30;
 
-struct astruct_30 {
+pub struct AStruct30 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59726,9 +59726,9 @@ struct astruct_30 {
     pub field_0x104: u8,
 }
 
-//pub typedef struct astruct_527 astruct_527, *Pastruct_527;
+//pub typedef struct AStruct527 AStruct527, *PAStruct527;
 
-struct astruct_527 {
+pub struct AStruct527 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59744,9 +59744,9 @@ struct astruct_527 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_526 astruct_526, *Pastruct_526;
+//pub typedef struct AStruct526 AStruct526, *PAStruct526;
 
-struct astruct_526 {
+pub struct AStruct526 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59817,9 +59817,9 @@ struct astruct_526 {
     pub field_0x44: u16,
 }
 
-//pub typedef struct astruct_529 astruct_529, *Pastruct_529;
+//pub typedef struct AStruct529 AStruct529, *PAStruct529;
 
-struct astruct_529 {
+pub struct AStruct529 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59831,9 +59831,9 @@ struct astruct_529 {
     pub field_0xa: u16,
 }
 
-//pub typedef struct astruct_388 astruct_388, *Pastruct_388;
+//pub typedef struct AStruct388 AStruct388, *PAStruct388;
 
-struct astruct_388 {
+pub struct AStruct388 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59924,9 +59924,9 @@ struct astruct_388 {
     pub field_0x5a: i32,
 }
 
-//pub typedef struct astruct_832 astruct_832, *Pastruct_832;
+//pub typedef struct AStruct832 AStruct832, *PAStruct832;
 
-struct astruct_832 {
+pub struct AStruct832 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59945,9 +59945,9 @@ struct astruct_832 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_512 astruct_512, *Pastruct_512;
+//pub typedef struct AStruct512 AStruct512, *PAStruct512;
 
-struct astruct_512 {
+pub struct AStruct512 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -59956,9 +59956,9 @@ struct astruct_512 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_511 astruct_511, *Pastruct_511;
+//pub typedef struct AStruct511 AStruct511, *PAStruct511;
 
-struct astruct_511 {
+pub struct AStruct511 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60018,9 +60018,9 @@ struct astruct_511 {
     pub field_0x3c: u32,
 }
 
-//pub typedef struct astruct_514 astruct_514, *Pastruct_514;
+//pub typedef struct AStruct514 AStruct514, *PAStruct514;
 
-struct astruct_514 {
+pub struct AStruct514 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -60525,9 +60525,9 @@ struct astruct_514 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_519 astruct_519, *Pastruct_519;
+//pub typedef struct AStruct519 AStruct519, *PAStruct519;
 
-struct astruct_519 {
+pub struct AStruct519 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60547,9 +60547,9 @@ struct astruct_519 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_87 astruct_87, *Pastruct_87;
+//pub typedef struct AStruct87 AStruct87, *PAStruct87;
 
-struct astruct_87 {
+pub struct AStruct87 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60560,9 +60560,9 @@ struct astruct_87 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_518 astruct_518, *Pastruct_518;
+//pub typedef struct AStruct518 AStruct518, *PAStruct518;
 
-struct astruct_518 {
+pub struct AStruct518 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60704,9 +60704,9 @@ struct astruct_518 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_965 astruct_965, *Pastruct_965;
+//pub typedef struct AStruct965 AStruct965, *PAStruct965;
 
-struct astruct_965 {
+pub struct AStruct965 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60724,9 +60724,9 @@ struct astruct_965 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_517 astruct_517, *Pastruct_517;
+//pub typedef struct AStruct517 AStruct517, *PAStruct517;
 
-struct astruct_517 {
+pub struct AStruct517 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60883,9 +60883,9 @@ struct astruct_517 {
     pub field_0x9a: u32,
 }
 
-//pub typedef struct astruct_1073 astruct_1073, *Pastruct_1073;
+//pub typedef struct AStruct1073 AStruct1073, *PAStruct1073;
 
-struct astruct_1073 {
+pub struct AStruct1073 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -60893,9 +60893,9 @@ struct astruct_1073 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_725 astruct_725, *Pastruct_725;
+//pub typedef struct AStruct725 AStruct725, *PAStruct725;
 
-struct astruct_725 {
+pub struct AStruct725 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60937,9 +60937,9 @@ struct astruct_725 {
     pub field_0x28: u32,
 }
 
-//pub typedef struct astruct_307 astruct_307, *Pastruct_307;
+//pub typedef struct AStruct307 AStruct307, *PAStruct307;
 
-struct astruct_307 {
+pub struct AStruct307 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -60957,17 +60957,17 @@ struct astruct_307 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_360 astruct_360, *Pastruct_360;
+//pub typedef struct AStruct360 AStruct360, *PAStruct360;
 
-struct astruct_360 {
+pub struct AStruct360 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_978 astruct_978, *Pastruct_978;
+//pub typedef struct AStruct978 AStruct978, *PAStruct978;
 
-struct astruct_978 {
+pub struct AStruct978 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61122,9 +61122,9 @@ struct astruct_978 {
     pub field_0x9b: u8,
 }
 
-//pub typedef struct astruct_25 astruct_25, *Pastruct_25;
+//pub typedef struct AStruct25 AStruct25, *PAStruct25;
 
-struct astruct_25 {
+pub struct AStruct25 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61285,9 +61285,9 @@ struct astruct_25 {
     pub field_0xa4: u16,
 }
 
-//pub typedef struct astruct_164 astruct_164, *Pastruct_164;
+//pub typedef struct AStruct164 AStruct164, *PAStruct164;
 
-struct astruct_164 {
+pub struct AStruct164 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -61309,9 +61309,9 @@ struct astruct_164 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_845 astruct_845, *Pastruct_845;
+//pub typedef struct AStruct845 AStruct845, *PAStruct845;
 
-struct astruct_845 {
+pub struct AStruct845 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61330,9 +61330,9 @@ struct astruct_845 {
     pub field_0x15: u8,
 }
 
-//pub typedef struct astruct_297 astruct_297, *Pastruct_297;
+//pub typedef struct AStruct297 AStruct297, *PAStruct297;
 
-struct astruct_297 {
+pub struct AStruct297 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61363,9 +61363,9 @@ struct astruct_297 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_240 astruct_240, *Pastruct_240;
+//pub typedef struct AStruct240 AStruct240, *PAStruct240;
 
-struct astruct_240 {
+pub struct AStruct240 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61466,9 +61466,9 @@ struct astruct_240 {
     pub field_0x62: u16,
 }
 
-//pub typedef struct astruct_177 astruct_177, *Pastruct_177;
+//pub typedef struct AStruct177 AStruct177, *PAStruct177;
 
-struct astruct_177 {
+pub struct AStruct177 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61494,9 +61494,9 @@ struct astruct_177 {
     pub field_0x18: *mut u8,
 }
 
-//pub typedef struct astruct_930 astruct_930, *Pastruct_930;
+//pub typedef struct AStruct930 AStruct930, *PAStruct930;
 
-struct astruct_930 {
+pub struct AStruct930 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61532,9 +61532,9 @@ struct astruct_930 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_1007 astruct_1007, *Pastruct_1007;
+//pub typedef struct AStruct1007 AStruct1007, *PAStruct1007;
 
-struct astruct_1007 {
+pub struct AStruct1007 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -61690,9 +61690,9 @@ struct astruct_1007 {
     pub field_0x98: u16,
 }
 
-//pub typedef struct astruct_74 astruct_74, *Pastruct_74;
+//pub typedef struct AStruct74 AStruct74, *PAStruct74;
 
-struct astruct_74 {
+pub struct AStruct74 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -61726,9 +61726,9 @@ struct astruct_74 {
     pub field_0x40: u16,
 }
 
-//pub typedef struct astruct_1060 astruct_1060, *Pastruct_1060;
+//pub typedef struct AStruct1060 AStruct1060, *PAStruct1060;
 
-struct astruct_1060 {
+pub struct AStruct1060 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -61739,9 +61739,9 @@ struct astruct_1060 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1120 astruct_1120, *Pastruct_1120;
+//pub typedef struct AStruct1120 AStruct1120, *PAStruct1120;
 
-struct astruct_1120 {
+pub struct AStruct1120 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -62259,9 +62259,9 @@ struct astruct_1120 {
     pub field_0x206: i32,
 }
 
-//pub typedef struct astruct_924 astruct_924, *Pastruct_924;
+//pub typedef struct AStruct924 AStruct924, *PAStruct924;
 
-struct astruct_924 {
+pub struct AStruct924 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -62316,9 +62316,9 @@ struct astruct_924 {
     pub field_0x34: i32,
 }
 
-//pub typedef struct astruct_967 astruct_967, *Pastruct_967;
+//pub typedef struct AStruct967 AStruct967, *PAStruct967;
 
-struct astruct_967 {
+pub struct AStruct967 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -62332,13 +62332,13 @@ struct astruct_967 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_373 astruct_373, *Pastruct_373;
+//pub typedef struct AStruct373 AStruct373, *PAStruct373;
 
-struct astruct_373 {}
+pub struct AStruct373 {}
 
-//pub typedef struct astruct_1078 astruct_1078, *Pastruct_1078;
+//pub typedef struct AStruct1078 AStruct1078, *PAStruct1078;
 
-struct astruct_1078 {
+pub struct AStruct1078 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -62609,9 +62609,9 @@ struct astruct_1078 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_350 astruct_350, *Pastruct_350;
+//pub typedef struct AStruct350 AStruct350, *PAStruct350;
 
-struct astruct_350 {
+pub struct AStruct350 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -62764,9 +62764,9 @@ struct astruct_350 {
     pub field_0x9a: u16,
 }
 
-//pub typedef struct astruct_745 astruct_745, *Pastruct_745;
+//pub typedef struct AStruct745 AStruct745, *PAStruct745;
 
-struct astruct_745 {
+pub struct AStruct745 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -62802,9 +62802,9 @@ struct astruct_745 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_854 astruct_854, *Pastruct_854;
+//pub typedef struct AStruct854 AStruct854, *PAStruct854;
 
-struct astruct_854 {
+pub struct AStruct854 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -63490,9 +63490,9 @@ struct astruct_854 {
     pub field_0x2ab: u8,
 }
 
-//pub typedef struct astruct_943 astruct_943, *Pastruct_943;
+//pub typedef struct AStruct943 AStruct943, *PAStruct943;
 
-struct astruct_943 {
+pub struct AStruct943 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -63510,9 +63510,9 @@ struct astruct_943 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_802 astruct_802, *Pastruct_802;
+//pub typedef struct AStruct802 AStruct802, *PAStruct802;
 
-struct astruct_802 {
+pub struct AStruct802 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -63781,9 +63781,9 @@ struct astruct_802 {
     pub field_0x122: u16,
 }
 
-//pub typedef struct astruct_343 astruct_343, *Pastruct_343;
+//pub typedef struct AStruct343 AStruct343, *PAStruct343;
 
-struct astruct_343 {
+pub struct AStruct343 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -63958,16 +63958,16 @@ struct astruct_343 {
     pub field_0xb6: u16,
 }
 
-//pub typedef struct astruct_1006 astruct_1006, *Pastruct_1006;
+//pub typedef struct AStruct1006 AStruct1006, *PAStruct1006;
 
-struct astruct_1006 {
+pub struct AStruct1006 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_12 astruct_12, *Pastruct_12;
+//pub typedef struct AStruct12 AStruct12, *PAStruct12;
 
-struct astruct_12 {
+pub struct AStruct12 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -63975,9 +63975,9 @@ struct astruct_12 {
     pub h_window: HWND16,
 }
 
-//pub typedef struct astruct_859 astruct_859, *Pastruct_859;
+//pub typedef struct AStruct859 AStruct859, *PAStruct859;
 
-struct astruct_859 {
+pub struct AStruct859 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -64663,9 +64663,9 @@ struct astruct_859 {
     pub field_0x2ab: u8,
 }
 
-//pub typedef struct astruct_792 astruct_792, *Pastruct_792;
+//pub typedef struct AStruct792 AStruct792, *PAStruct792;
 
-struct astruct_792 {
+pub struct AStruct792 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -64941,9 +64941,9 @@ struct astruct_792 {
     pub field_0x122: u16,
 }
 
-//pub typedef struct astruct_147 astruct_147, *Pastruct_147;
+//pub typedef struct AStruct147 AStruct147, *PAStruct147;
 
-struct astruct_147 {
+pub struct AStruct147 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -64990,9 +64990,9 @@ struct astruct_147 {
     pub field_0x2c: u16,
 }
 
-//pub typedef struct astruct_467 astruct_467, *Pastruct_467;
+//pub typedef struct AStruct467 AStruct467, *PAStruct467;
 
-struct astruct_467 {
+pub struct AStruct467 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -65024,9 +65024,9 @@ struct astruct_467 {
     pub c: i32,
 }
 
-//pub typedef struct astruct_739 astruct_739, *Pastruct_739;
+//pub typedef struct AStruct739 AStruct739, *PAStruct739;
 
-struct astruct_739 {
+pub struct AStruct739 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -65035,9 +65035,9 @@ struct astruct_739 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_69 astruct_69, *Pastruct_69;
+//pub typedef struct AStruct69 AStruct69, *PAStruct69;
 
-struct astruct_69 {
+pub struct AStruct69 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -65166,9 +65166,9 @@ struct astruct_69 {
     pub field_0x81: u8,
 }
 
-//pub typedef struct astruct_922 astruct_922, *Pastruct_922;
+//pub typedef struct AStruct922 AStruct922, *PAStruct922;
 
-struct astruct_922 {
+pub struct AStruct922 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -65232,9 +65232,9 @@ struct astruct_922 {
     pub field_0x3d: u8,
 }
 
-//pub typedef struct astruct_463 astruct_463, *Pastruct_463;
+//pub typedef struct AStruct463 AStruct463, *PAStruct463;
 
-struct astruct_463 {
+pub struct AStruct463 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -65324,9 +65324,9 @@ struct astruct_463 {
     pub field_0x56: i32,
 }
 
-//pub typedef struct astruct_443 astruct_443, *Pastruct_443;
+//pub typedef struct AStruct443 AStruct443, *PAStruct443;
 
-struct astruct_443 {
+pub struct AStruct443 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69044,9 +69044,9 @@ struct astruct_443 {
     pub field_0xe8b: u8,
 }
 
-//pub typedef struct astruct_726 astruct_726, *Pastruct_726;
+//pub typedef struct AStruct726 AStruct726, *PAStruct726;
 
-struct astruct_726 {
+pub struct AStruct726 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69083,9 +69083,9 @@ struct astruct_726 {
     pub field_0x26: i32,
 }
 
-//pub typedef struct astruct_935 astruct_935, *Pastruct_935;
+//pub typedef struct AStruct935 AStruct935, *PAStruct935;
 
-struct astruct_935 {
+pub struct AStruct935 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69097,9 +69097,9 @@ struct astruct_935 {
     pub field_0xb: u8,
 }
 
-//pub typedef struct astruct_1111 astruct_1111, *Pastruct_1111;
+//pub typedef struct AStruct1111 AStruct1111, *PAStruct1111;
 
-struct astruct_1111 {
+pub struct AStruct1111 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69115,9 +69115,9 @@ struct astruct_1111 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_193 astruct_193, *Pastruct_193;
+//pub typedef struct AStruct193 AStruct193, *PAStruct193;
 
-struct astruct_193 {
+pub struct AStruct193 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69130,9 +69130,9 @@ struct astruct_193 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_458 astruct_458, *Pastruct_458;
+//pub typedef struct AStruct458 AStruct458, *PAStruct458;
 
-struct astruct_458 {
+pub struct AStruct458 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69142,7 +69142,7 @@ struct astruct_458 {
 
 //pub typedef struct win_struct_42 win_struct_42, *Pwin_struct_42;
 
-struct win_struct_42 {
+pub struct win_struct_42 {
     pub u16_x0: u16,
     pub u16_x2: u16,
     pub field_0x4: u8,
@@ -69382,9 +69382,9 @@ struct win_struct_42 {
     pub field_0x10e: u32,
 }
 
-//pub typedef struct astruct_356 astruct_356, *Pastruct_356;
+//pub typedef struct AStruct356 AStruct356, *PAStruct356;
 
-struct astruct_356 {
+pub struct AStruct356 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -69430,9 +69430,9 @@ struct astruct_356 {
     pub field_0x38: i32,
 }
 
-//pub typedef struct astruct_1126 astruct_1126, *Pastruct_1126;
+//pub typedef struct AStruct1126 AStruct1126, *PAStruct1126;
 
-struct astruct_1126 {
+pub struct AStruct1126 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69804,9 +69804,9 @@ struct astruct_1126 {
     pub field_0x173: u8,
 }
 
-//pub typedef struct astruct_1150 astruct_1150, *Pastruct_1150;
+//pub typedef struct AStruct1150 AStruct1150, *PAStruct1150;
 
-struct astruct_1150 {
+pub struct AStruct1150 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69825,9 +69825,9 @@ struct astruct_1150 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_387 astruct_387, *Pastruct_387;
+//pub typedef struct AStruct387 AStruct387, *PAStruct387;
 
-struct astruct_387 {
+pub struct AStruct387 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69907,13 +69907,13 @@ struct astruct_387 {
     pub field_0x55: u8,
 }
 
-//pub typedef struct astruct_134 astruct_134, *Pastruct_134;
+//pub typedef struct AStruct134 AStruct134, *PAStruct134;
 
-struct astruct_134 {}
+pub struct AStruct134 {}
 
-//pub typedef struct astruct_56 astruct_56, *Pastruct_56;
+//pub typedef struct AStruct56 AStruct56, *PAStruct56;
 
-struct astruct_56 {
+pub struct AStruct56 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -69973,9 +69973,9 @@ struct astruct_56 {
     pub field_0x3c: u16,
 }
 
-//pub typedef struct astruct_1113 astruct_1113, *Pastruct_1113;
+//pub typedef struct AStruct1113 AStruct1113, *PAStruct1113;
 
-struct astruct_1113 {
+pub struct AStruct1113 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -70004,9 +70004,9 @@ struct astruct_1113 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_330 astruct_330, *Pastruct_330;
+//pub typedef struct AStruct330 AStruct330, *PAStruct330;
 
-struct astruct_330 {
+pub struct AStruct330 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -70160,9 +70160,9 @@ struct astruct_330 {
     pub field_0x9c: u32,
 }
 
-//pub typedef struct astruct_1149 astruct_1149, *Pastruct_1149;
+//pub typedef struct AStruct1149 AStruct1149, *PAStruct1149;
 
-struct astruct_1149 {
+pub struct AStruct1149 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -70179,9 +70179,9 @@ struct astruct_1149 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_184 astruct_184, *Pastruct_184;
+//pub typedef struct AStruct184 AStruct184, *PAStruct184;
 
-struct astruct_184 {
+pub struct AStruct184 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -70199,9 +70199,9 @@ struct astruct_184 {
     pub field_0x16: i32,
 }
 
-//pub typedef struct astruct_1022 astruct_1022, *Pastruct_1022;
+//pub typedef struct AStruct1022 AStruct1022, *PAStruct1022;
 
-struct astruct_1022 {
+pub struct AStruct1022 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -70465,9 +70465,9 @@ struct astruct_1022 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_267 astruct_267, *Pastruct_267;
+//pub typedef struct AStruct267 AStruct267, *PAStruct267;
 
-struct astruct_267 {
+pub struct AStruct267 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -70730,9 +70730,9 @@ struct astruct_267 {
     pub field_0x104: u16,
 }
 
-//pub typedef struct astruct_476 astruct_476, *Pastruct_476;
+//pub typedef struct AStruct476 AStruct476, *PAStruct476;
 
-struct astruct_476 {
+pub struct AStruct476 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71045,9 +71045,9 @@ struct astruct_476 {
     pub field_0x138: u32,
 }
 
-//pub typedef struct astruct_815 astruct_815, *Pastruct_815;
+//pub typedef struct AStruct815 AStruct815, *PAStruct815;
 
-struct astruct_815 {
+pub struct AStruct815 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71059,9 +71059,9 @@ struct astruct_815 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_1037 astruct_1037, *Pastruct_1037;
+//pub typedef struct AStruct1037 AStruct1037, *PAStruct1037;
 
-struct astruct_1037 {
+pub struct AStruct1037 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -71325,9 +71325,9 @@ struct astruct_1037 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_948 astruct_948, *Pastruct_948;
+//pub typedef struct AStruct948 AStruct948, *PAStruct948;
 
-struct astruct_948 {
+pub struct AStruct948 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71345,7 +71345,7 @@ struct astruct_948 {
     pub field_0xf: u8,
     pub field_0x10: u8,
     pub field_0x11: u8,
-    pub field_0x12: *mut astruct_104,
+    pub field_0x12: *mut AStruct104,
     pub field_0x16: u8,
     pub field_0x17: u8,
     pub field_0x18: u8,
@@ -71374,14 +71374,14 @@ struct astruct_948 {
     pub field_0x32: u8,
     pub field_0x33: u8,
     pub field_0x34: i32,
-    pub field_0x36: *mut astruct_199,
+    pub field_0x36: *mut AStruct199,
     pub field_0x38: u8,
     pub field_0x39: u8,
 }
 
-//pub typedef struct astruct_1090 astruct_1090, *Pastruct_1090;
+//pub typedef struct AStruct1090 AStruct1090, *PAStruct1090;
 
-struct astruct_1090 {
+pub struct AStruct1090 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -71915,9 +71915,9 @@ struct astruct_1090 {
     pub field_0x216: u32,
 }
 
-//pub typedef struct astruct_43 astruct_43, *Pastruct_43;
+//pub typedef struct AStruct43 AStruct43, *PAStruct43;
 
-struct astruct_43 {
+pub struct AStruct43 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71941,9 +71941,9 @@ struct astruct_43 {
     pub palette: HPALETTE16,
 }
 
-//pub typedef struct astruct_210 astruct_210, *Pastruct_210;
+//pub typedef struct AStruct210 AStruct210, *PAStruct210;
 
-struct astruct_210 {
+pub struct AStruct210 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71956,9 +71956,9 @@ struct astruct_210 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_1160 astruct_1160, *Pastruct_1160;
+//pub typedef struct AStruct1160 AStruct1160, *PAStruct1160;
 
-struct astruct_1160 {
+pub struct AStruct1160 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -71969,16 +71969,16 @@ struct astruct_1160 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_761 astruct_761, *Pastruct_761;
+//pub typedef struct AStruct761 AStruct761, *PAStruct761;
 
-struct astruct_761 {
+pub struct AStruct761 {
     pub field_0x0: u16,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_1163 astruct_1163, *Pastruct_1163;
+//pub typedef struct AStruct1163 AStruct1163, *PAStruct1163;
 
-struct astruct_1163 {
+pub struct AStruct1163 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -71992,9 +71992,9 @@ struct astruct_1163 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1164 astruct_1164, *Pastruct_1164;
+//pub typedef struct AStruct1164 AStruct1164, *PAStruct1164;
 
-struct astruct_1164 {
+pub struct AStruct1164 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72028,9 +72028,9 @@ struct astruct_1164 {
     pub field_0x26: i32,
 }
 
-//pub typedef struct astruct_1148 astruct_1148, *Pastruct_1148;
+//pub typedef struct AStruct1148 AStruct1148, *PAStruct1148;
 
-struct astruct_1148 {
+pub struct AStruct1148 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72056,9 +72056,9 @@ struct astruct_1148 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_1167 astruct_1167, *Pastruct_1167;
+//pub typedef struct AStruct1167 AStruct1167, *PAStruct1167;
 
-struct astruct_1167 {
+pub struct AStruct1167 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72082,9 +72082,9 @@ struct astruct_1167 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_1168 astruct_1168, *Pastruct_1168;
+//pub typedef struct AStruct1168 AStruct1168, *PAStruct1168;
 
-struct astruct_1168 {
+pub struct AStruct1168 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72128,9 +72128,9 @@ struct astruct_1168 {
     pub field_0x2b: u8,
 }
 
-//pub typedef struct astruct_341 astruct_341, *Pastruct_341;
+//pub typedef struct AStruct341 AStruct341, *PAStruct341;
 
-struct astruct_341 {
+pub struct AStruct341 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72138,9 +72138,9 @@ struct astruct_341 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_1165 astruct_1165, *Pastruct_1165;
+//pub typedef struct AStruct1165 AStruct1165, *PAStruct1165;
 
-struct astruct_1165 {
+pub struct AStruct1165 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72151,9 +72151,9 @@ struct astruct_1165 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1166 astruct_1166, *Pastruct_1166;
+//pub typedef struct AStruct1166 AStruct1166, *PAStruct1166;
 
-struct astruct_1166 {
+pub struct AStruct1166 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72166,9 +72166,9 @@ struct astruct_1166 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_1157 astruct_1157, *Pastruct_1157;
+//pub typedef struct AStruct1157 AStruct1157, *PAStruct1157;
 
-struct astruct_1157 {
+pub struct AStruct1157 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72179,9 +72179,9 @@ struct astruct_1157 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_249 astruct_249, *Pastruct_249;
+//pub typedef struct AStruct249 AStruct249, *PAStruct249;
 
-struct astruct_249 {
+pub struct AStruct249 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72336,9 +72336,9 @@ struct astruct_249 {
     pub field_0x98: u16,
 }
 
-//pub typedef struct astruct_384 astruct_384, *Pastruct_384;
+//pub typedef struct AStruct384 AStruct384, *PAStruct384;
 
-struct astruct_384 {
+pub struct AStruct384 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72354,24 +72354,24 @@ struct astruct_384 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_1170 astruct_1170, *Pastruct_1170;
+//pub typedef struct AStruct1170 AStruct1170, *PAStruct1170;
 
-struct astruct_1170 {
+pub struct AStruct1170 {
     pub field_0x0: u16,
     pub field_0x2: i32,
     pub field_0x4: i32,
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_1171 astruct_1171, *Pastruct_1171;
+//pub typedef struct AStruct1171 AStruct1171, *PAStruct1171;
 
-struct astruct_1171 {}
+pub struct AStruct1171 {}
 
-//pub typedef struct astruct_1172 astruct_1172, *Pastruct_1172;
+//pub typedef struct AStruct1172 AStruct1172, *PAStruct1172;
 
 //pub typedef struct pass1_struct_1 pass1_struct_1, *Ppass1_struct_1;
 
-struct astruct_1172 {
+pub struct AStruct1172 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -72522,7 +72522,7 @@ struct astruct_1172 {
     pub field_0x94: *mut pass1_struct_1,
 }
 
-struct pass1_struct_1 {
+pub struct pass1_struct_1 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72533,8 +72533,8 @@ struct pass1_struct_1 {
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,
-    pub field_0xa: *mut astruct_199,
-    pub field_0xc: *mut astruct_199,
+    pub field_0xa: *mut AStruct199,
+    pub field_0xc: *mut AStruct199,
     pub field_0xe: u8,
     pub field_0xf: u8,
     pub field_0x10: u8,
@@ -72555,9 +72555,9 @@ struct pass1_struct_1 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_1173 astruct_1173, *Pastruct_1173;
+//pub typedef struct AStruct1173 AStruct1173, *PAStruct1173;
 
-struct astruct_1173 {
+pub struct AStruct1173 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: *mut u8,
@@ -72702,9 +72702,9 @@ struct astruct_1173 {
     pub field_0x8e: u16,
 }
 
-//pub typedef struct astruct_1176 astruct_1176, *Pastruct_1176;
+//pub typedef struct AStruct1176 AStruct1176, *PAStruct1176;
 
-struct astruct_1176 {
+pub struct AStruct1176 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72742,13 +72742,13 @@ struct astruct_1176 {
     pub field_0x23: u8,
 }
 
-//pub typedef struct astruct_1100 astruct_1100, *Pastruct_1100;
+//pub typedef struct AStruct1100 AStruct1100, *PAStruct1100;
 
-struct astruct_1100 {}
+pub struct AStruct1100 {}
 
 //pub typedef struct pass1_struct_3 pass1_struct_3, *Ppass1_struct_3;
 
-struct pass1_struct_3 {
+pub struct pass1_struct_3 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -72767,8 +72767,8 @@ struct pass1_struct_3 {
     pub field_0xf: u8,
     pub field_0x10: u8,
     pub field_0x11: u8,
-    pub field_0x12: *mut astruct_199,
-    pub field_0x14: *mut astruct_199,
+    pub field_0x12: *mut AStruct199,
+    pub field_0x14: *mut AStruct199,
     pub field_0x16: u8,
     pub field_0x17: u8,
     pub field_0x18: u8,
@@ -72783,9 +72783,9 @@ struct pass1_struct_3 {
     pub field_0x21: u8,
 }
 
-//pub typedef struct astruct_828 astruct_828, *Pastruct_828;
+//pub typedef struct AStruct828 AStruct828, *PAStruct828;
 
-struct astruct_828 {
+pub struct AStruct828 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73048,9 +73048,9 @@ struct astruct_828 {
     pub field_0x10c: u32,
 }
 
-//pub typedef struct astruct_1024 astruct_1024, *Pastruct_1024;
+//pub typedef struct AStruct1024 AStruct1024, *PAStruct1024;
 
-struct astruct_1024 {
+pub struct AStruct1024 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -73317,9 +73317,9 @@ struct astruct_1024 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_91 astruct_91, *Pastruct_91;
+//pub typedef struct AStruct91 AStruct91, *PAStruct91;
 
-struct astruct_91 {
+pub struct AStruct91 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     field_0x2: *mut i32,
@@ -73357,9 +73357,9 @@ struct astruct_91 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_325 astruct_325, *Pastruct_325;
+//pub typedef struct AStruct325 AStruct325, *PAStruct325;
 
-struct astruct_325 {
+pub struct AStruct325 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73379,9 +73379,9 @@ struct astruct_325 {
     pub field_0x18: i32,
 }
 
-//pub typedef struct astruct_432 astruct_432, *Pastruct_432;
+//pub typedef struct AStruct432 AStruct432, *PAStruct432;
 
-struct astruct_432 {
+pub struct AStruct432 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73494,9 +73494,9 @@ struct astruct_432 {
     pub field_0x74: u16,
 }
 
-//pub typedef struct astruct_894 astruct_894, *Pastruct_894;
+//pub typedef struct AStruct894 AStruct894, *PAStruct894;
 
-struct astruct_894 {
+pub struct AStruct894 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -73763,9 +73763,9 @@ struct astruct_894 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_38 astruct_38, *Pastruct_38;
+//pub typedef struct AStruct38 AStruct38, *PAStruct38;
 
-struct astruct_38 {
+pub struct AStruct38 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i16,
@@ -73773,9 +73773,9 @@ struct astruct_38 {
     pub field_0x6: i16,
 }
 
-//pub typedef struct astruct_129 astruct_129, *Pastruct_129;
+//pub typedef struct AStruct129 AStruct129, *PAStruct129;
 
-struct astruct_129 {
+pub struct AStruct129 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73787,22 +73787,22 @@ struct astruct_129 {
     pub h_wnd_0x8: HWND16,
 }
 
-//pub typedef struct astruct_708 astruct_708, *Pastruct_708;
+//pub typedef struct AStruct708 AStruct708, *PAStruct708;
 
-struct astruct_708 {
+pub struct AStruct708 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
-    pub field_0x4: *mut astruct_44,
+    pub field_0x4: *mut AStruct44,
 }
 
-//pub typedef struct astruct_904 astruct_904, *Pastruct_904;
+//pub typedef struct AStruct904 AStruct904, *PAStruct904;
 
-struct astruct_904 {}
+pub struct AStruct904 {}
 
-//pub typedef struct astruct_182 astruct_182, *Pastruct_182;
+//pub typedef struct AStruct182 AStruct182, *PAStruct182;
 
-struct astruct_182 {
+pub struct AStruct182 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -73813,22 +73813,22 @@ struct astruct_182 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_489 astruct_489, *Pastruct_489;
+//pub typedef struct AStruct489 AStruct489, *PAStruct489;
 
-struct astruct_489 {
+pub struct AStruct489 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
 //pub typedef struct astruct astruct, *Pastruct;
 
-struct astruct {
+pub struct astruct {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub field_0x4: i32,
-    pub field_0x6: *mut astruct_199,
+    pub field_0x6: *mut AStruct199,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
@@ -73850,9 +73850,9 @@ struct astruct {
     pub field_0x1c: i32,
 }
 
-//pub typedef struct astruct_1124 astruct_1124, *Pastruct_1124;
+//pub typedef struct AStruct1124 AStruct1124, *PAStruct1124;
 
-struct astruct_1124 {
+pub struct AStruct1124 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73874,9 +73874,9 @@ struct astruct_1124 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_970 astruct_970, *Pastruct_970;
+//pub typedef struct AStruct970 AStruct970, *PAStruct970;
 
-struct astruct_970 {
+pub struct AStruct970 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74050,9 +74050,9 @@ struct astruct_970 {
     pub field_0xaa: i32,
 }
 
-//pub typedef struct astruct_1011 astruct_1011, *Pastruct_1011;
+//pub typedef struct AStruct1011 AStruct1011, *PAStruct1011;
 
-struct astruct_1011 {
+pub struct AStruct1011 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -74087,9 +74087,9 @@ struct astruct_1011 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_928 astruct_928, *Pastruct_928;
+//pub typedef struct AStruct928 AStruct928, *PAStruct928;
 
-struct astruct_928 {
+pub struct AStruct928 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74129,9 +74129,9 @@ struct astruct_928 {
     pub field_0x25: u8,
 }
 
-//pub typedef struct astruct_917 astruct_917, *Pastruct_917;
+//pub typedef struct AStruct917 AStruct917, *PAStruct917;
 
-struct astruct_917 {
+pub struct AStruct917 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -74188,9 +74188,9 @@ struct astruct_917 {
     pub field_0x40: i32,
 }
 
-//pub typedef struct astruct_8 astruct_8, *Pastruct_8;
+//pub typedef struct AStruct8 AStruct8, *PAStruct8;
 
-struct astruct_8 {
+pub struct AStruct8 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74211,9 +74211,9 @@ struct astruct_8 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_103 astruct_103, *Pastruct_103;
+//pub typedef struct AStruct103 AStruct103, *PAStruct103;
 
-struct astruct_103 {
+pub struct AStruct103 {
     ptr_1_lo: *mut u8,
     ptr_1_hi: *mut u8,
     pub field_0x4: u16,
@@ -74226,9 +74226,9 @@ struct astruct_103 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_482 astruct_482, *Pastruct_482;
+//pub typedef struct AStruct482 AStruct482, *PAStruct482;
 
-struct astruct_482 {
+pub struct AStruct482 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -74237,9 +74237,9 @@ struct astruct_482 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_1144 astruct_1144, *Pastruct_1144;
+//pub typedef struct AStruct1144 AStruct1144, *PAStruct1144;
 
-struct astruct_1144 {
+pub struct AStruct1144 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: *mut u8,
@@ -74261,9 +74261,9 @@ struct astruct_1144 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_236 astruct_236, *Pastruct_236;
+//pub typedef struct AStruct236 AStruct236, *PAStruct236;
 
-struct astruct_236 {
+pub struct AStruct236 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74340,9 +74340,9 @@ struct astruct_236 {
     pub field_0x4a: u16,
 }
 
-//pub typedef struct astruct_1068 astruct_1068, *Pastruct_1068;
+//pub typedef struct AStruct1068 AStruct1068, *PAStruct1068;
 
-struct astruct_1068 {
+pub struct AStruct1068 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74395,9 +74395,9 @@ struct astruct_1068 {
     pub field_0x34: u16,
 }
 
-//pub typedef struct astruct_397 astruct_397, *Pastruct_397;
+//pub typedef struct AStruct397 AStruct397, *PAStruct397;
 
-struct astruct_397 {
+pub struct AStruct397 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74419,9 +74419,9 @@ struct astruct_397 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_354 astruct_354, *Pastruct_354;
+//pub typedef struct AStruct354 AStruct354, *PAStruct354;
 
-struct astruct_354 {
+pub struct AStruct354 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u32,
@@ -74434,9 +74434,9 @@ struct astruct_354 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_116 astruct_116, *Pastruct_116;
+//pub typedef struct AStruct116 AStruct116, *PAStruct116;
 
-struct astruct_116 {
+pub struct AStruct116 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74464,9 +74464,9 @@ struct astruct_116 {
     pub field_0x18: u16,
 }
 
-//pub typedef struct astruct_369 astruct_369, *Pastruct_369;
+//pub typedef struct AStruct369 AStruct369, *PAStruct369;
 
-struct astruct_369 {
+pub struct AStruct369 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74492,9 +74492,9 @@ struct astruct_369 {
     pub field_0x16: u32,
 }
 
-//pub typedef struct astruct_841 astruct_841, *Pastruct_841;
+//pub typedef struct AStruct841 AStruct841, *PAStruct841;
 
-struct astruct_841 {
+pub struct AStruct841 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74546,9 +74546,9 @@ struct astruct_841 {
     pub field_0x54: *mut u16,
 }
 
-//pub typedef struct astruct_6 astruct_6, *Pastruct_6;
+//pub typedef struct AStruct6 AStruct6, *PAStruct6;
 
-struct astruct_6 {
+pub struct AStruct6 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74689,9 +74689,9 @@ struct astruct_6 {
     pub field_0x8a: i32,
 }
 
-//pub typedef struct astruct_1131 astruct_1131, *Pastruct_1131;
+//pub typedef struct AStruct1131 AStruct1131, *PAStruct1131;
 
-struct astruct_1131 {
+pub struct AStruct1131 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -74717,9 +74717,9 @@ struct astruct_1131 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_211 astruct_211, *Pastruct_211;
+//pub typedef struct AStruct211 AStruct211, *PAStruct211;
 
-struct astruct_211 {
+pub struct AStruct211 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -74742,9 +74742,9 @@ struct astruct_211 {
     pub field_0x1a: i32,
 }
 
-//pub typedef struct astruct_774 astruct_774, *Pastruct_774;
+//pub typedef struct AStruct774 AStruct774, *PAStruct774;
 
-struct astruct_774 {
+pub struct AStruct774 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -74779,9 +74779,9 @@ struct astruct_774 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_312 astruct_312, *Pastruct_312;
+//pub typedef struct AStruct312 AStruct312, *PAStruct312;
 
-struct astruct_312 {
+pub struct AStruct312 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -74794,9 +74794,9 @@ struct astruct_312 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_445 astruct_445, *Pastruct_445;
+//pub typedef struct AStruct445 AStruct445, *PAStruct445;
 
-struct astruct_445 {
+pub struct AStruct445 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -76463,9 +76463,9 @@ struct astruct_445 {
     pub field_0x680: u16,
 }
 
-//pub typedef struct astruct_900 astruct_900, *Pastruct_900;
+//pub typedef struct AStruct900 AStruct900, *PAStruct900;
 
-struct astruct_900 {
+pub struct AStruct900 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -76733,9 +76733,9 @@ struct astruct_900 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_1021 astruct_1021, *Pastruct_1021;
+//pub typedef struct AStruct1021 AStruct1021, *PAStruct1021;
 
-struct astruct_1021 {
+pub struct AStruct1021 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77011,11 +77011,11 @@ struct astruct_1021 {
     pub field_0x110: i32,
 }
 
-//pub typedef struct astruct_80 astruct_80, *Pastruct_80;
+//pub typedef struct AStruct80 AStruct80, *PAStruct80;
 
-//pub typedef struct astruct_81 astruct_81, *Pastruct_81;
+//pub typedef struct AStruct81 AStruct81, *PAStruct81;
 
-struct astruct_80 {
+pub struct AStruct80 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77030,11 +77030,11 @@ struct astruct_80 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: *mut astruct_81,
+    pub field_0xe: *mut AStruct81,
     pub field_0x10: i32,
 }
 
-struct astruct_81 {
+pub struct AStruct81 {
     pub field_0x0: *mut u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -77048,13 +77048,13 @@ struct astruct_81 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: *mut astruct_81,
+    pub field_0xe: *mut AStruct81,
     pub field_0x10: *mut u16,
 }
 
-//pub typedef struct astruct_82 astruct_82, *Pastruct_82;
+//pub typedef struct AStruct82 AStruct82, *PAStruct82;
 
-struct astruct_82 {
+pub struct AStruct82 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77073,17 +77073,17 @@ struct astruct_82 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_83 astruct_83, *Pastruct_83;
+//pub typedef struct AStruct83 AStruct83, *PAStruct83;
 
-struct astruct_83 {
+pub struct AStruct83 {
     pub field_0x0: u16,
     field_0x2: *mut u32,
     pub field_0x4: *mut u16,
 }
 
-//pub typedef struct astruct_84 astruct_84, *Pastruct_84;
+//pub typedef struct AStruct84 AStruct84, *PAStruct84;
 
-struct astruct_84 {
+pub struct AStruct84 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -77095,16 +77095,16 @@ struct astruct_84 {
     pub field_0xc: u8,
     pub field_0xd: u8,
     field_0xe: *mut u32,
-    pub field_0x10: *mut astruct_83,
+    pub field_0x10: *mut AStruct83,
     pub field_0x12: u16,
     pub field_0x14: i32,
     field_0x16: *mut u32,
-    pub field_0x18: *mut astruct_83,
+    pub field_0x18: *mut AStruct83,
 }
 
-//pub typedef struct astruct_851 astruct_851, *Pastruct_851;
+//pub typedef struct AStruct851 AStruct851, *PAStruct851;
 
-struct astruct_851 {
+pub struct AStruct851 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77123,17 +77123,17 @@ struct astruct_851 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_85 astruct_85, *Pastruct_85;
+//pub typedef struct AStruct85 AStruct85, *PAStruct85;
 
-struct astruct_85 {
+pub struct AStruct85 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
 }
 
-//pub typedef struct astruct_86 astruct_86, *Pastruct_86;
+//pub typedef struct AStruct86 AStruct86, *PAStruct86;
 
-struct astruct_86 {
+pub struct AStruct86 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77185,9 +77185,9 @@ struct astruct_86 {
     pub field_0x32: *mut u8,
 }
 
-//pub typedef struct astruct_89 astruct_89, *Pastruct_89;
+//pub typedef struct AStruct89 AStruct89, *PAStruct89;
 
-struct astruct_89 {
+pub struct AStruct89 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77210,9 +77210,9 @@ struct astruct_89 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_9 astruct_9, *Pastruct_9;
+//pub typedef struct AStruct9 AStruct9, *PAStruct9;
 
-struct astruct_9 {
+pub struct AStruct9 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77220,9 +77220,9 @@ struct astruct_9 {
     pub file: u16,
 }
 
-//pub typedef struct astruct_272 astruct_272, *Pastruct_272;
+//pub typedef struct AStruct272 AStruct272, *PAStruct272;
 
-struct astruct_272 {
+pub struct AStruct272 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77503,9 +77503,9 @@ struct astruct_272 {
     pub field_0x116: u16,
 }
 
-//pub typedef struct astruct_731 astruct_731, *Pastruct_731;
+//pub typedef struct AStruct731 AStruct731, *PAStruct731;
 
-struct astruct_731 {
+pub struct AStruct731 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77542,9 +77542,9 @@ struct astruct_731 {
     pub field_0x22: u32,
 }
 
-//pub typedef struct astruct_882 astruct_882, *Pastruct_882;
+//pub typedef struct AStruct882 AStruct882, *PAStruct882;
 
-struct astruct_882 {
+pub struct AStruct882 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -77562,9 +77562,9 @@ struct astruct_882 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_219 astruct_219, *Pastruct_219;
+//pub typedef struct AStruct219 AStruct219, *PAStruct219;
 
-struct astruct_219 {
+pub struct AStruct219 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -78609,9 +78609,9 @@ struct astruct_219 {
     pub field_0x414: u16,
 }
 
-//pub typedef struct astruct_70 astruct_70, *Pastruct_70;
+//pub typedef struct AStruct70 AStruct70, *PAStruct70;
 
-struct astruct_70 {
+pub struct AStruct70 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -78757,9 +78757,9 @@ struct astruct_70 {
     pub field_0x92: u16,
 }
 
-//pub typedef struct astruct_402 astruct_402, *Pastruct_402;
+//pub typedef struct AStruct402 AStruct402, *PAStruct402;
 
-struct astruct_402 {
+pub struct AStruct402 {
     pub a: u16,
     pub b: u16,
     pub c: u16,
@@ -78772,9 +78772,9 @@ struct astruct_402 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_71 astruct_71, *Pastruct_71;
+//pub typedef struct AStruct71 AStruct71, *PAStruct71;
 
-struct astruct_71 {
+pub struct AStruct71 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -79018,9 +79018,9 @@ struct astruct_71 {
     pub field_0xf9: u8,
 }
 
-//pub typedef struct astruct_72 astruct_72, *Pastruct_72;
+//pub typedef struct AStruct72 AStruct72, *PAStruct72;
 
-struct astruct_72 {
+pub struct AStruct72 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -80689,18 +80689,18 @@ struct astruct_72 {
     pub field_0x681: u8,
 }
 
-//pub typedef struct astruct_76 astruct_76, *Pastruct_76;
+//pub typedef struct AStruct76 AStruct76, *PAStruct76;
 
-struct astruct_76 {
+pub struct AStruct76 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_77 astruct_77, *Pastruct_77;
+//pub typedef struct AStruct77 AStruct77, *PAStruct77;
 
-struct astruct_77 {
+pub struct AStruct77 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -80799,9 +80799,9 @@ struct astruct_77 {
     pub field_0x80: i32,
 }
 
-//pub typedef struct astruct_78 astruct_78, *Pastruct_78;
+//pub typedef struct AStruct78 AStruct78, *PAStruct78;
 
-struct astruct_78 {
+pub struct AStruct78 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -80841,9 +80841,9 @@ struct astruct_78 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_803 astruct_803, *Pastruct_803;
+//pub typedef struct AStruct803 AStruct803, *PAStruct803;
 
-struct astruct_803 {
+pub struct AStruct803 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -81113,9 +81113,9 @@ struct astruct_803 {
     pub field_0x122: u16,
 }
 
-//pub typedef struct astruct_79 astruct_79, *Pastruct_79;
+//pub typedef struct AStruct79 AStruct79, *PAStruct79;
 
-struct astruct_79 {
+pub struct AStruct79 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -81135,9 +81135,9 @@ struct astruct_79 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_1101 astruct_1101, *Pastruct_1101;
+//pub typedef struct AStruct1101 AStruct1101, *PAStruct1101;
 
-struct astruct_1101 {
+pub struct AStruct1101 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -81651,17 +81651,17 @@ struct astruct_1101 {
     pub field_0x204: u16,
 }
 
-//pub typedef struct astruct_1102 astruct_1102, *Pastruct_1102;
+//pub typedef struct AStruct1102 AStruct1102, *PAStruct1102;
 
-struct astruct_1102 {}
+pub struct AStruct1102 {}
 
-//pub typedef struct astruct_1105 astruct_1105, *Pastruct_1105;
+//pub typedef struct AStruct1105 AStruct1105, *PAStruct1105;
 
-struct astruct_1105 {}
+pub struct AStruct1105 {}
 
-//pub typedef struct astruct_1106 astruct_1106, *Pastruct_1106;
+//pub typedef struct AStruct1106 AStruct1106, *PAStruct1106;
 
-struct astruct_1106 {
+pub struct AStruct1106 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -82000,13 +82000,13 @@ struct astruct_1106 {
     pub field_0x14f: u8,
 }
 
-//pub typedef struct astruct_1103 astruct_1103, *Pastruct_1103;
+//pub typedef struct AStruct1103 AStruct1103, *PAStruct1103;
 
-struct astruct_1103 {}
+pub struct AStruct1103 {}
 
-//pub typedef struct astruct_1104 astruct_1104, *Pastruct_1104;
+//pub typedef struct AStruct1104 AStruct1104, *PAStruct1104;
 
-struct astruct_1104 {
+pub struct AStruct1104 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -82509,12 +82509,12 @@ struct astruct_1104 {
     pub field_0x1f3: u8,
     pub field_0x1f4: u8,
     pub field_0x1f5: u8,
-    pub field_0x1f6: *mut astruct_872,
+    pub field_0x1f6: *mut AStruct872,
 }
 
-//pub typedef struct astruct_459 astruct_459, *Pastruct_459;
+//pub typedef struct AStruct459 AStruct459, *PAStruct459;
 
-struct astruct_459 {
+pub struct AStruct459 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -82523,13 +82523,13 @@ struct astruct_459 {
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_1107 astruct_1107, *Pastruct_1107;
+//pub typedef struct AStruct1107 AStruct1107, *PAStruct1107;
 
-struct astruct_1107 {}
+pub struct AStruct1107 {}
 
-//pub typedef struct astruct_152 astruct_152, *Pastruct_152;
+//pub typedef struct AStruct152 AStruct152, *PAStruct152;
 
-struct astruct_152 {
+pub struct AStruct152 {
     pub field_0x0: i32,
     pub field_0x2: u16,
     pub field_0x4: i32,
@@ -82770,9 +82770,9 @@ struct astruct_152 {
     pub field_0xf2: i32,
 }
 
-//pub typedef struct astruct_63 astruct_63, *Pastruct_63;
+//pub typedef struct AStruct63 AStruct63, *PAStruct63;
 
-struct astruct_63 {
+pub struct AStruct63 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -82813,9 +82813,9 @@ struct astruct_63 {
     pub field_0x2c: u32,
 }
 
-//pub typedef struct astruct_64 astruct_64, *Pastruct_64;
+//pub typedef struct AStruct64 AStruct64, *PAStruct64;
 
-struct astruct_64 {
+pub struct AStruct64 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -82921,9 +82921,9 @@ struct astruct_64 {
     pub field_0x82: u16,
 }
 
-//pub typedef struct astruct_65 astruct_65, *Pastruct_65;
+//pub typedef struct AStruct65 AStruct65, *PAStruct65;
 
-struct astruct_65 {
+pub struct AStruct65 {
     pub ptr_a_lo: u16,
     pub ptr_a_hi: u16,
     pub u16_x04: u16,
@@ -83098,7 +83098,7 @@ struct astruct_65 {
     pub u16_xb6: u16,
     pub u16_xb8: u16,
     pub u16_xba: u16,
-    pub astruct_590_ptr_xbc: *mut astruct_590,
+    pub AStruct590_ptr_xbc: *mut AStruct590,
     pub field_0xbe: u8,
     pub field_0xbf: u8,
     pub field_0xc0: u8,
@@ -83137,8 +83137,8 @@ struct astruct_65 {
     pub u16_xf0: u16,
     pub u16_xf2: u16,
     pub u16_xf4: u16,
-    pub field_0xf6: *mut astruct_199,
-    pub field_0xf8: *mut astruct_199,
+    pub field_0xf6: *mut AStruct199,
+    pub field_0xf8: *mut AStruct199,
     pub field_0xfa: *mut u8,
     pub field_0xfc: *mut u8,
     pub field_0xfe: u16,
@@ -83150,16 +83150,16 @@ struct astruct_65 {
     pub field_0x105: u8,
     pub field_0x106: u8,
     pub field_0x107: u8,
-    pub field_0x108: *mut astruct_613,
+    pub field_0x108: *mut AStruct613,
     pub field_0x10a: u16,
     pub field_0x10c: u16,
     pub field_0x10e: u32,
     pub field_0x112: u16,
 }
 
-//pub typedef struct astruct_66 astruct_66, *Pastruct_66;
+//pub typedef struct AStruct66 AStruct66, *PAStruct66;
 
-struct astruct_66 {
+pub struct AStruct66 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -84181,9 +84181,9 @@ struct astruct_66 {
     pub field_0x3fa: u8,
 }
 
-//pub typedef struct astruct_67 astruct_67, *Pastruct_67;
+//pub typedef struct AStruct67 AStruct67, *PAStruct67;
 
-struct astruct_67 {
+pub struct AStruct67 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -84437,9 +84437,9 @@ struct astruct_67 {
     pub field_0xfb: u8,
 }
 
-//pub typedef struct astruct_1110 astruct_1110, *Pastruct_1110;
+//pub typedef struct AStruct1110 AStruct1110, *PAStruct1110;
 
-struct astruct_1110 {
+pub struct AStruct1110 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -84963,9 +84963,9 @@ struct astruct_1110 {
     pub field_0x20e: u16,
 }
 
-//pub typedef struct astruct_1116 astruct_1116, *Pastruct_1116;
+//pub typedef struct AStruct1116 AStruct1116, *PAStruct1116;
 
-struct astruct_1116 {
+pub struct AStruct1116 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -84981,9 +84981,9 @@ struct astruct_1116 {
     field_0xc: *mut u32,
 }
 
-//pub typedef struct astruct_1117 astruct_1117, *Pastruct_1117;
+//pub typedef struct AStruct1117 AStruct1117, *PAStruct1117;
 
-struct astruct_1117 {
+pub struct AStruct1117 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -84999,9 +84999,9 @@ struct astruct_1117 {
     field_0xc: *mut u32,
 }
 
-//pub typedef struct astruct_1114 astruct_1114, *Pastruct_1114;
+//pub typedef struct AStruct1114 AStruct1114, *PAStruct1114;
 
-struct astruct_1114 {
+pub struct AStruct1114 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -85508,13 +85508,13 @@ struct astruct_1114 {
     pub field_0x1f7: u8,
     pub field_0x1f8: u8,
     pub field_0x1f9: u8,
-    pub field_0x1fa: *mut astruct_44,
+    pub field_0x1fa: *mut AStruct44,
     pub field_0x1fc: u16,
 }
 
-//pub typedef struct astruct_1119 astruct_1119, *Pastruct_1119;
+//pub typedef struct AStruct1119 AStruct1119, *PAStruct1119;
 
-struct astruct_1119 {
+pub struct AStruct1119 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -85530,9 +85530,9 @@ struct astruct_1119 {
     field_0xc: *mut u32,
 }
 
-//pub typedef struct astruct_50 astruct_50, *Pastruct_50;
+//pub typedef struct AStruct50 AStruct50, *PAStruct50;
 
-struct astruct_50 {
+pub struct AStruct50 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -85679,9 +85679,9 @@ struct astruct_50 {
     pub field_0x94: i32,
 }
 
-//pub typedef struct astruct_1141 astruct_1141, *Pastruct_1141;
+//pub typedef struct AStruct1141 AStruct1141, *PAStruct1141;
 
-struct astruct_1141 {
+pub struct AStruct1141 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -86182,7 +86182,7 @@ struct astruct_1141 {
     pub field_0x1f5: u8,
     pub field_0x1f6: u32,
     pub field_0x1fa: *mut u8,
-    pub field_0x1fc: *mut astruct_199,
+    pub field_0x1fc: *mut AStruct199,
     pub field_0x1fe: u8,
     pub field_0x1ff: u8,
     pub field_0x200: u8,
@@ -86209,9 +86209,9 @@ struct astruct_1141 {
     pub field_0x215: u8,
 }
 
-//pub typedef struct astruct_51 astruct_51, *Pastruct_51;
+//pub typedef struct AStruct51 AStruct51, *PAStruct51;
 
-struct astruct_51 {
+pub struct AStruct51 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -86357,9 +86357,9 @@ struct astruct_51 {
     pub field_0x92: u32,
 }
 
-//pub typedef struct astruct_52 astruct_52, *Pastruct_52;
+//pub typedef struct AStruct52 AStruct52, *PAStruct52;
 
-struct astruct_52 {
+pub struct AStruct52 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -86541,9 +86541,9 @@ struct astruct_52 {
     pub h_wnd: u16,
 }
 
-//pub typedef struct astruct_53 astruct_53, *Pastruct_53;
+//pub typedef struct AStruct53 AStruct53, *PAStruct53;
 
-struct astruct_53 {
+pub struct AStruct53 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -86684,9 +86684,9 @@ struct astruct_53 {
     pub win_handle_0x8c: HWND16,
 }
 
-//pub typedef struct astruct_54 astruct_54, *Pastruct_54;
+//pub typedef struct AStruct54 AStruct54, *PAStruct54;
 
-struct astruct_54 {
+pub struct AStruct54 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -86950,9 +86950,9 @@ struct astruct_54 {
     pub field_0x10f: u8,
 }
 
-//pub typedef struct astruct_55 astruct_55, *Pastruct_55;
+//pub typedef struct AStruct55 AStruct55, *PAStruct55;
 
-struct astruct_55 {
+pub struct AStruct55 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87111,9 +87111,9 @@ struct astruct_55 {
     pub field_0xa0: u16,
 }
 
-//pub typedef struct astruct_984 astruct_984, *Pastruct_984;
+//pub typedef struct AStruct984 AStruct984, *PAStruct984;
 
-struct astruct_984 {
+pub struct AStruct984 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87155,13 +87155,13 @@ struct astruct_984 {
     pub field_0x28: u32,
 }
 
-//pub typedef struct astruct_58 astruct_58, *Pastruct_58;
+//pub typedef struct AStruct58 AStruct58, *PAStruct58;
 
-struct astruct_58 {}
+pub struct AStruct58 {}
 
-//pub typedef struct astruct_59 astruct_59, *Pastruct_59;
+//pub typedef struct AStruct59 AStruct59, *PAStruct59;
 
-struct astruct_59 {
+pub struct AStruct59 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87171,9 +87171,9 @@ struct astruct_59 {
     pub field_0x6: HWND16,
 }
 
-//pub typedef struct astruct_206 astruct_206, *Pastruct_206;
+//pub typedef struct AStruct206 AStruct206, *PAStruct206;
 
-struct astruct_206 {
+pub struct AStruct206 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87234,9 +87234,9 @@ struct astruct_206 {
     pub field_0x40: u16,
 }
 
-//pub typedef struct astruct_326 astruct_326, *Pastruct_326;
+//pub typedef struct AStruct326 AStruct326, *PAStruct326;
 
-struct astruct_326 {
+pub struct AStruct326 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -87311,9 +87311,9 @@ struct astruct_326 {
     pub field_0x6c: u16,
 }
 
-//pub typedef struct astruct_1123 astruct_1123, *Pastruct_1123;
+//pub typedef struct AStruct1123 AStruct1123, *PAStruct1123;
 
-struct astruct_1123 {
+pub struct AStruct1123 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87816,20 +87816,20 @@ struct astruct_1123 {
     pub field_0x1f6: u32,
 }
 
-//pub typedef struct astruct_997 astruct_997, *Pastruct_997;
+//pub typedef struct AStruct997 AStruct997, *PAStruct997;
 
-struct astruct_997 {}
+pub struct AStruct997 {}
 
-//pub typedef struct astruct_744 astruct_744, *Pastruct_744;
+//pub typedef struct AStruct744 AStruct744, *PAStruct744;
 
-struct astruct_744 {
+pub struct AStruct744 {
     pub field_0x0: u16,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_1121 astruct_1121, *Pastruct_1121;
+//pub typedef struct AStruct1121 AStruct1121, *PAStruct1121;
 
-struct astruct_1121 {
+pub struct AStruct1121 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87845,21 +87845,21 @@ struct astruct_1121 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_1122 astruct_1122, *Pastruct_1122;
+//pub typedef struct AStruct1122 AStruct1122, *PAStruct1122;
 
-struct astruct_1122 {}
+pub struct AStruct1122 {}
 
-//pub typedef struct astruct_1127 astruct_1127, *Pastruct_1127;
+//pub typedef struct AStruct1127 AStruct1127, *PAStruct1127;
 
-struct astruct_1127 {}
+pub struct AStruct1127 {}
 
-//pub typedef struct astruct_1128 astruct_1128, *Pastruct_1128;
+//pub typedef struct AStruct1128 AStruct1128, *PAStruct1128;
 
-struct astruct_1128 {}
+pub struct AStruct1128 {}
 
-//pub typedef struct astruct_456 astruct_456, *Pastruct_456;
+//pub typedef struct AStruct456 AStruct456, *PAStruct456;
 
-struct astruct_456 {
+pub struct AStruct456 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -87867,13 +87867,13 @@ struct astruct_456 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_1129 astruct_1129, *Pastruct_1129;
+//pub typedef struct AStruct1129 AStruct1129, *PAStruct1129;
 
-struct astruct_1129 {}
+pub struct AStruct1129 {}
 
-//pub typedef struct astruct_891 astruct_891, *Pastruct_891;
+//pub typedef struct AStruct891 AStruct891, *PAStruct891;
 
-struct astruct_891 {
+pub struct AStruct891 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -88232,9 +88232,9 @@ struct astruct_891 {
     pub field_0x164: i32,
 }
 
-//pub typedef struct astruct_890 astruct_890, *Pastruct_890;
+//pub typedef struct AStruct890 AStruct890, *PAStruct890;
 
-struct astruct_890 {
+pub struct AStruct890 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -88393,9 +88393,9 @@ struct astruct_890 {
     pub field_0xa2: u16,
 }
 
-//pub typedef struct astruct_897 astruct_897, *Pastruct_897;
+//pub typedef struct AStruct897 AStruct897, *PAStruct897;
 
-struct astruct_897 {
+pub struct AStruct897 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -88403,9 +88403,9 @@ struct astruct_897 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1134 astruct_1134, *Pastruct_1134;
+//pub typedef struct AStruct1134 AStruct1134, *PAStruct1134;
 
-struct astruct_1134 {
+pub struct AStruct1134 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -88422,9 +88422,9 @@ struct astruct_1134 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_896 astruct_896, *Pastruct_896;
+//pub typedef struct AStruct896 AStruct896, *PAStruct896;
 
-struct astruct_896 {
+pub struct AStruct896 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -88685,13 +88685,13 @@ struct astruct_896 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_1135 astruct_1135, *Pastruct_1135;
+//pub typedef struct AStruct1135 AStruct1135, *PAStruct1135;
 
-struct astruct_1135 {}
+pub struct AStruct1135 {}
 
-//pub typedef struct astruct_899 astruct_899, *Pastruct_899;
+//pub typedef struct AStruct899 AStruct899, *PAStruct899;
 
-struct astruct_899 {
+pub struct AStruct899 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -88961,9 +88961,9 @@ struct astruct_899 {
     pub field_0x10b: u8,
 }
 
-//pub typedef struct astruct_1132 astruct_1132, *Pastruct_1132;
+//pub typedef struct AStruct1132 AStruct1132, *PAStruct1132;
 
-struct astruct_1132 {
+pub struct AStruct1132 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -88979,9 +88979,9 @@ struct astruct_1132 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_898 astruct_898, *Pastruct_898;
+//pub typedef struct AStruct898 AStruct898, *PAStruct898;
 
-struct astruct_898 {
+pub struct AStruct898 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -88989,13 +88989,13 @@ struct astruct_898 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1133 astruct_1133, *Pastruct_1133;
+//pub typedef struct AStruct1133 AStruct1133, *PAStruct1133;
 
-struct astruct_1133 {}
+pub struct AStruct1133 {}
 
-//pub typedef struct astruct_892 astruct_892, *Pastruct_892;
+//pub typedef struct AStruct892 AStruct892, *PAStruct892;
 
-struct astruct_892 {
+pub struct AStruct892 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -89018,9 +89018,9 @@ struct astruct_892 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_895 astruct_895, *Pastruct_895;
+//pub typedef struct AStruct895 AStruct895, *PAStruct895;
 
-struct astruct_895 {
+pub struct AStruct895 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -89282,17 +89282,17 @@ struct astruct_895 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_1136 astruct_1136, *Pastruct_1136;
+//pub typedef struct AStruct1136 AStruct1136, *PAStruct1136;
 
-struct astruct_1136 {}
+pub struct AStruct1136 {}
 
-//pub typedef struct astruct_1137 astruct_1137, *Pastruct_1137;
+//pub typedef struct AStruct1137 AStruct1137, *PAStruct1137;
 
-struct astruct_1137 {}
+pub struct AStruct1137 {}
 
-//pub typedef struct astruct_183 astruct_183, *Pastruct_183;
+//pub typedef struct AStruct183 AStruct183, *PAStruct183;
 
-struct astruct_183 {
+pub struct AStruct183 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -89310,9 +89310,9 @@ struct astruct_183 {
     pub field_0x1e: u16,
 }
 
-//pub typedef struct astruct_864 astruct_864, *Pastruct_864;
+//pub typedef struct AStruct864 AStruct864, *PAStruct864;
 
-struct astruct_864 {
+pub struct AStruct864 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -89333,13 +89333,13 @@ struct astruct_864 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_1142 astruct_1142, *Pastruct_1142;
+//pub typedef struct AStruct1142 AStruct1142, *PAStruct1142;
 
-struct astruct_1142 {}
+pub struct AStruct1142 {}
 
-//pub typedef struct astruct_1140 astruct_1140, *Pastruct_1140;
+//pub typedef struct AStruct1140 AStruct1140, *PAStruct1140;
 
-struct astruct_1140 {
+pub struct AStruct1140 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -89846,9 +89846,9 @@ struct astruct_1140 {
     pub field_0x216: u32,
 }
 
-//pub typedef struct astruct_1145 astruct_1145, *Pastruct_1145;
+//pub typedef struct AStruct1145 AStruct1145, *PAStruct1145;
 
-struct astruct_1145 {
+pub struct AStruct1145 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -89875,9 +89875,9 @@ struct astruct_1145 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_1146 astruct_1146, *Pastruct_1146;
+//pub typedef struct AStruct1146 AStruct1146, *PAStruct1146;
 
-struct astruct_1146 {
+pub struct AStruct1146 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -89904,9 +89904,9 @@ struct astruct_1146 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_1147 astruct_1147, *Pastruct_1147;
+//pub typedef struct AStruct1147 AStruct1147, *PAStruct1147;
 
-struct astruct_1147 {
+pub struct AStruct1147 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -89932,9 +89932,9 @@ struct astruct_1147 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_22 astruct_22, *Pastruct_22;
+//pub typedef struct AStruct22 AStruct22, *PAStruct22;
 
-struct astruct_22 {
+pub struct AStruct22 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -90076,9 +90076,9 @@ struct astruct_22 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_196 astruct_196, *Pastruct_196;
+//pub typedef struct AStruct196 AStruct196, *PAStruct196;
 
-struct astruct_196 {
+pub struct AStruct196 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -90086,18 +90086,18 @@ struct astruct_196 {
     pub field_0x6: i32,
     pub field_0x8: i32,
     pub field_0xa: i32,
-    pub field_0xc: *mut astruct_104,
+    pub field_0xc: *mut AStruct104,
     pub field_0x10: i32,
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_877 astruct_877, *Pastruct_877;
+//pub typedef struct AStruct877 AStruct877, *PAStruct877;
 
-struct astruct_877 {}
+pub struct AStruct877 {}
 
-//pub typedef struct astruct_415 astruct_415, *Pastruct_415;
+//pub typedef struct AStruct415 AStruct415, *PAStruct415;
 
-struct astruct_415 {
+pub struct AStruct415 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90106,11 +90106,11 @@ struct astruct_415 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_339 astruct_339, *Pastruct_339;
+//pub typedef struct AStruct339 AStruct339, *PAStruct339;
 
-//pub typedef struct astruct_340 astruct_340, *Pastruct_340;
+//pub typedef struct AStruct340 AStruct340, *PAStruct340;
 
-struct astruct_340 {
+pub struct AStruct340 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90196,18 +90196,18 @@ struct astruct_340 {
     pub field_0x55: u8,
 }
 
-struct astruct_339 {
+pub struct AStruct339 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u8,
     pub field_0x5: u8,
-    pub field_0x6: *mut astruct_340,
+    pub field_0x6: *mut AStruct340,
 }
 
-//pub typedef struct astruct_1152 astruct_1152, *Pastruct_1152;
+//pub typedef struct AStruct1152 AStruct1152, *PAStruct1152;
 
-struct astruct_1152 {
+pub struct AStruct1152 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90227,9 +90227,9 @@ struct astruct_1152 {
     pub field_0x16: i32,
 }
 
-//pub typedef struct astruct_1153 astruct_1153, *Pastruct_1153;
+//pub typedef struct AStruct1153 AStruct1153, *PAStruct1153;
 
-struct astruct_1153 {
+pub struct AStruct1153 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90263,14 +90263,14 @@ struct astruct_1153 {
     pub field_0x1e: i32,
 }
 
-//pub typedef struct astruct_1151 astruct_1151, *Pastruct_1151;
+//pub typedef struct AStruct1151 AStruct1151, *PAStruct1151;
 
-struct astruct_1151 {
+pub struct AStruct1151 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut astruct_456,
+    pub field_0x4: *mut AStruct456,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
@@ -90302,9 +90302,9 @@ struct astruct_1151 {
     pub field_0x28: u16,
 }
 
-//pub typedef struct astruct_1154 astruct_1154, *Pastruct_1154;
+//pub typedef struct AStruct1154 AStruct1154, *PAStruct1154;
 
-struct astruct_1154 {
+pub struct AStruct1154 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90321,13 +90321,13 @@ struct astruct_1154 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_1155 astruct_1155, *Pastruct_1155;
+//pub typedef struct AStruct1155 AStruct1155, *PAStruct1155;
 
-struct astruct_1155 {}
+pub struct AStruct1155 {}
 
-//pub typedef struct astruct_1158 astruct_1158, *Pastruct_1158;
+//pub typedef struct AStruct1158 AStruct1158, *PAStruct1158;
 
-struct astruct_1158 {
+pub struct AStruct1158 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -90338,9 +90338,9 @@ struct astruct_1158 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1159 astruct_1159, *Pastruct_1159;
+//pub typedef struct AStruct1159 AStruct1159, *PAStruct1159;
 
-struct astruct_1159 {
+pub struct AStruct1159 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90364,9 +90364,9 @@ struct astruct_1159 {
     pub field_0x19: u8,
 }
 
-//pub typedef struct astruct_90 astruct_90, *Pastruct_90;
+//pub typedef struct AStruct90 AStruct90, *PAStruct90;
 
-struct astruct_90 {
+pub struct AStruct90 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90407,15 +90407,15 @@ struct astruct_90 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_96 astruct_96, *Pastruct_96;
+//pub typedef struct AStruct96 AStruct96, *PAStruct96;
 
-struct astruct_96 {
+pub struct AStruct96 {
     pub field_0x0: u8,
 }
 
-//pub typedef struct astruct_392 astruct_392, *Pastruct_392;
+//pub typedef struct AStruct392 AStruct392, *PAStruct392;
 
-struct astruct_392 {
+pub struct AStruct392 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -90526,9 +90526,9 @@ struct astruct_392 {
     pub field_0x70: u32,
 }
 
-//pub typedef struct astruct_97 astruct_97, *Pastruct_97;
+//pub typedef struct AStruct97 AStruct97, *PAStruct97;
 
-struct astruct_97 {
+pub struct AStruct97 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -90536,9 +90536,9 @@ struct astruct_97 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_98 astruct_98, *Pastruct_98;
+//pub typedef struct AStruct98 AStruct98, *PAStruct98;
 
-struct astruct_98 {
+pub struct AStruct98 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90562,9 +90562,9 @@ struct astruct_98 {
     pub field_0x14: i32,
 }
 
-//pub typedef struct astruct_940 astruct_940, *Pastruct_940;
+//pub typedef struct AStruct940 AStruct940, *PAStruct940;
 
-struct astruct_940 {
+pub struct AStruct940 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90599,14 +90599,14 @@ struct astruct_940 {
     pub field_0x1f: u8,
     pub field_0x20: u8,
     pub field_0x21: u8,
-    pub field_0x22: *mut astruct_199,
+    pub field_0x22: *mut AStruct199,
     pub field_0x24: u8,
     pub field_0x25: u8,
 }
 
-//pub typedef struct astruct_99 astruct_99, *Pastruct_99;
+//pub typedef struct AStruct99 AStruct99, *PAStruct99;
 
-struct astruct_99 {
+pub struct AStruct99 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -90628,13 +90628,13 @@ struct astruct_99 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_1052 astruct_1052, *Pastruct_1052;
+//pub typedef struct AStruct1052 AStruct1052, *PAStruct1052;
 
-struct astruct_1052 {}
+pub struct AStruct1052 {}
 
-//pub typedef struct astruct_700 astruct_700, *Pastruct_700;
+//pub typedef struct AStruct700 AStruct700, *PAStruct700;
 
-struct astruct_700 {
+pub struct AStruct700 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91147,9 +91147,9 @@ struct astruct_700 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_866 astruct_866, *Pastruct_866;
+//pub typedef struct AStruct866 AStruct866, *PAStruct866;
 
-struct astruct_866 {
+pub struct AStruct866 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91172,9 +91172,9 @@ struct astruct_866 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_865 astruct_865, *Pastruct_865;
+//pub typedef struct AStruct865 AStruct865, *PAStruct865;
 
-struct astruct_865 {
+pub struct AStruct865 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91202,21 +91202,21 @@ struct astruct_865 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_860 astruct_860, *Pastruct_860;
+//pub typedef struct AStruct860 AStruct860, *PAStruct860;
 
-struct astruct_860 {}
+pub struct AStruct860 {}
 
-//pub typedef struct astruct_178 astruct_178, *Pastruct_178;
+//pub typedef struct AStruct178 AStruct178, *PAStruct178;
 
-struct astruct_178 {}
+pub struct AStruct178 {}
 
-//pub typedef struct astruct_861 astruct_861, *Pastruct_861;
+//pub typedef struct AStruct861 AStruct861, *PAStruct861;
 
-struct astruct_861 {}
+pub struct AStruct861 {}
 
-//pub typedef struct astruct_704 astruct_704, *Pastruct_704;
+//pub typedef struct AStruct704 AStruct704, *PAStruct704;
 
-struct astruct_704 {
+pub struct AStruct704 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91226,9 +91226,9 @@ struct astruct_704 {
     pub field_0x8: u16,
 }
 
-//pub typedef struct astruct_868 astruct_868, *Pastruct_868;
+//pub typedef struct AStruct868 AStruct868, *PAStruct868;
 
-struct astruct_868 {
+pub struct AStruct868 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91236,9 +91236,9 @@ struct astruct_868 {
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_867 astruct_867, *Pastruct_867;
+//pub typedef struct AStruct867 AStruct867, *PAStruct867;
 
-struct astruct_867 {
+pub struct AStruct867 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91258,9 +91258,9 @@ struct astruct_867 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_953 astruct_953, *Pastruct_953;
+//pub typedef struct AStruct953 AStruct953, *PAStruct953;
 
-struct astruct_953 {
+pub struct AStruct953 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91268,9 +91268,9 @@ struct astruct_953 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_869 astruct_869, *Pastruct_869;
+//pub typedef struct AStruct869 AStruct869, *PAStruct869;
 
-struct astruct_869 {
+pub struct AStruct869 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91290,9 +91290,9 @@ struct astruct_869 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_494 astruct_494, *Pastruct_494;
+//pub typedef struct AStruct494 AStruct494, *PAStruct494;
 
-struct astruct_494 {
+pub struct AStruct494 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91308,9 +91308,9 @@ struct astruct_494 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_241 astruct_241, *Pastruct_241;
+//pub typedef struct AStruct241 AStruct241, *PAStruct241;
 
-struct astruct_241 {
+pub struct AStruct241 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91417,9 +91417,9 @@ struct astruct_241 {
     pub field_0x68: u16,
 }
 
-//pub typedef struct astruct_853 astruct_853, *Pastruct_853;
+//pub typedef struct AStruct853 AStruct853, *PAStruct853;
 
-struct astruct_853 {
+pub struct AStruct853 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91435,13 +91435,13 @@ struct astruct_853 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_852 astruct_852, *Pastruct_852;
+//pub typedef struct AStruct852 AStruct852, *PAStruct852;
 
-struct astruct_852 {}
+pub struct AStruct852 {}
 
-//pub typedef struct astruct_855 astruct_855, *Pastruct_855;
+//pub typedef struct AStruct855 AStruct855, *PAStruct855;
 
-struct astruct_855 {
+pub struct AStruct855 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -91866,9 +91866,9 @@ struct astruct_855 {
     pub field_0x1a6: u16,
 }
 
-//pub typedef struct astruct_374 astruct_374, *Pastruct_374;
+//pub typedef struct AStruct374 AStruct374, *PAStruct374;
 
-struct astruct_374 {
+pub struct AStruct374 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -91878,9 +91878,9 @@ struct astruct_374 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_856 astruct_856, *Pastruct_856;
+//pub typedef struct AStruct856 AStruct856, *PAStruct856;
 
-struct astruct_856 {
+pub struct AStruct856 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -92536,11 +92536,11 @@ struct astruct_856 {
     pub field_0x2ab: u8,
 }
 
-//pub typedef struct astruct_42 astruct_42, *Pastruct_42;
+//pub typedef struct AStruct42 AStruct42, *PAStruct42;
 
-//pub typedef struct astruct_167 astruct_167, *Pastruct_167;
+//pub typedef struct AStruct167 AStruct167, *PAStruct167;
 
-struct astruct_42 {
+pub struct AStruct42 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -92566,16 +92566,16 @@ struct astruct_42 {
     pub field_0x17: u8,
     pub field_0x18: u8,
     pub field_0x19: u8,
-    pub field_0x1a: *mut astruct_167,
+    pub field_0x1a: *mut AStruct167,
 }
 
-struct astruct_167 {
+pub struct AStruct167 {
     pub field_0x0: [u8; 6],
 }
 
-//pub typedef struct astruct_886 astruct_886, *Pastruct_886;
+//pub typedef struct AStruct886 AStruct886, *PAStruct886;
 
-struct astruct_886 {
+pub struct AStruct886 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -92584,9 +92584,9 @@ struct astruct_886 {
     pub field_0x5: u8,
 }
 
-//pub typedef struct astruct_820 astruct_820, *Pastruct_820;
+//pub typedef struct AStruct820 AStruct820, *PAStruct820;
 
-struct astruct_820 {
+pub struct AStruct820 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -92598,13 +92598,13 @@ struct astruct_820 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_885 astruct_885, *Pastruct_885;
+//pub typedef struct AStruct885 AStruct885, *PAStruct885;
 
-struct astruct_885 {}
+pub struct AStruct885 {}
 
-//pub typedef struct astruct_887 astruct_887, *Pastruct_887;
+//pub typedef struct AStruct887 AStruct887, *PAStruct887;
 
-struct astruct_887 {
+pub struct AStruct887 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -92632,9 +92632,9 @@ struct astruct_887 {
     pub field_0x1d: u8,
 }
 
-//pub typedef struct astruct_884 astruct_884, *Pastruct_884;
+//pub typedef struct AStruct884 AStruct884, *PAStruct884;
 
-struct astruct_884 {
+pub struct AStruct884 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u32,
@@ -92668,22 +92668,22 @@ struct astruct_884 {
     pub field_0x27: u8,
 }
 
-//pub typedef struct astruct_883 astruct_883, *Pastruct_883;
+//pub typedef struct AStruct883 AStruct883, *PAStruct883;
 
-struct astruct_883 {}
+pub struct AStruct883 {}
 
-//pub typedef struct astruct_481 astruct_481, *Pastruct_481;
+//pub typedef struct AStruct481 AStruct481, *PAStruct481;
 
-struct astruct_481 {
+pub struct AStruct481 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: *mut u8,
-    pub field_0x6: *mut astruct_493,
+    pub field_0x6: *mut AStruct493,
 }
 
-//pub typedef struct astruct_757 astruct_757, *Pastruct_757;
+//pub typedef struct AStruct757 AStruct757, *PAStruct757;
 
-struct astruct_757 {
+pub struct AStruct757 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -92720,9 +92720,9 @@ struct astruct_757 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_874 astruct_874, *Pastruct_874;
+//pub typedef struct AStruct874 AStruct874, *PAStruct874;
 
-struct astruct_874 {
+pub struct AStruct874 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -93155,9 +93155,9 @@ struct astruct_874 {
     pub field_0x1ad: u8,
 }
 
-//pub typedef struct astruct_871 astruct_871, *Pastruct_871;
+//pub typedef struct AStruct871 AStruct871, *PAStruct871;
 
-struct astruct_871 {
+pub struct AStruct871 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -93574,9 +93574,9 @@ struct astruct_871 {
     pub field_0x1ae: u16,
 }
 
-//pub typedef struct astruct_870 astruct_870, *Pastruct_870;
+//pub typedef struct AStruct870 AStruct870, *PAStruct870;
 
-struct astruct_870 {
+pub struct AStruct870 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -93595,9 +93595,9 @@ struct astruct_870 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_121 astruct_121, *Pastruct_121;
+//pub typedef struct AStruct121 AStruct121, *PAStruct121;
 
-struct astruct_121 {
+pub struct AStruct121 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -93608,9 +93608,9 @@ struct astruct_121 {
     pub two_file_bytes_0xe: [u8; 2],
 }
 
-//pub typedef struct astruct_873 astruct_873, *Pastruct_873;
+//pub typedef struct AStruct873 AStruct873, *PAStruct873;
 
-struct astruct_873 {
+pub struct AStruct873 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94037,13 +94037,13 @@ struct astruct_873 {
     pub field_0x1ae: u16,
 }
 
-//pub typedef struct astruct_879 astruct_879, *Pastruct_879;
+//pub typedef struct AStruct879 AStruct879, *PAStruct879;
 
-struct astruct_879 {}
+pub struct AStruct879 {}
 
-//pub typedef struct astruct_878 astruct_878, *Pastruct_878;
+//pub typedef struct AStruct878 AStruct878, *PAStruct878;
 
-struct astruct_878 {
+pub struct AStruct878 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94052,9 +94052,9 @@ struct astruct_878 {
     pub field_0x5: u8,
 }
 
-//pub typedef struct astruct_1096 astruct_1096, *Pastruct_1096;
+//pub typedef struct AStruct1096 AStruct1096, *PAStruct1096;
 
-struct astruct_1096 {
+pub struct AStruct1096 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94583,9 +94583,9 @@ struct astruct_1096 {
     pub field_0x210: u32,
 }
 
-//pub typedef struct astruct_254 astruct_254, *Pastruct_254;
+//pub typedef struct AStruct254 AStruct254, *PAStruct254;
 
-struct astruct_254 {
+pub struct AStruct254 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94770,9 +94770,9 @@ struct astruct_254 {
     pub field_0xb6: u16,
 }
 
-//pub typedef struct astruct_364 astruct_364, *Pastruct_364;
+//pub typedef struct AStruct364 AStruct364, *PAStruct364;
 
-struct astruct_364 {
+pub struct AStruct364 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94863,9 +94863,9 @@ struct astruct_364 {
     pub field_0x58: i32,
 }
 
-//pub typedef struct astruct_428 astruct_428, *Pastruct_428;
+//pub typedef struct AStruct428 AStruct428, *PAStruct428;
 
-struct astruct_428 {
+pub struct AStruct428 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -94908,9 +94908,9 @@ struct astruct_428 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_822 astruct_822, *Pastruct_822;
+//pub typedef struct AStruct822 AStruct822, *PAStruct822;
 
-struct astruct_822 {
+pub struct AStruct822 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -94922,9 +94922,9 @@ struct astruct_822 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_821 astruct_821, *Pastruct_821;
+//pub typedef struct AStruct821 AStruct821, *PAStruct821;
 
-struct astruct_821 {
+pub struct AStruct821 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -94936,9 +94936,9 @@ struct astruct_821 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_829 astruct_829, *Pastruct_829;
+//pub typedef struct AStruct829 AStruct829, *PAStruct829;
 
-struct astruct_829 {
+pub struct AStruct829 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -94961,9 +94961,9 @@ struct astruct_829 {
     pub field_0x1c: u32,
 }
 
-//pub typedef struct astruct_824 astruct_824, *Pastruct_824;
+//pub typedef struct AStruct824 AStruct824, *PAStruct824;
 
-struct astruct_824 {
+pub struct AStruct824 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -95240,9 +95240,9 @@ struct astruct_824 {
     pub field_0x114: u16,
 }
 
-//pub typedef struct astruct_823 astruct_823, *Pastruct_823;
+//pub typedef struct AStruct823 AStruct823, *PAStruct823;
 
-struct astruct_823 {
+pub struct AStruct823 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -95512,9 +95512,9 @@ struct astruct_823 {
     pub field_0x114: u16,
 }
 
-//pub typedef struct astruct_826 astruct_826, *Pastruct_826;
+//pub typedef struct AStruct826 AStruct826, *PAStruct826;
 
-struct astruct_826 {
+pub struct AStruct826 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -95779,9 +95779,9 @@ struct astruct_826 {
     pub field_0x114: u16,
 }
 
-//pub typedef struct astruct_825 astruct_825, *Pastruct_825;
+//pub typedef struct AStruct825 AStruct825, *PAStruct825;
 
-struct astruct_825 {
+pub struct AStruct825 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -96045,9 +96045,9 @@ struct astruct_825 {
     pub field_0x114: u16,
 }
 
-//pub typedef struct astruct_450 astruct_450, *Pastruct_450;
+//pub typedef struct AStruct450 AStruct450, *PAStruct450;
 
-struct astruct_450 {
+pub struct AStruct450 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -96060,9 +96060,9 @@ struct astruct_450 {
     pub field_0xb: u8,
 }
 
-//pub typedef struct astruct_285 astruct_285, *Pastruct_285;
+//pub typedef struct AStruct285 AStruct285, *PAStruct285;
 
-struct astruct_285 {
+pub struct AStruct285 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -96445,9 +96445,9 @@ struct astruct_285 {
     pub field_0x17c: u16,
 }
 
-//pub typedef struct astruct_811 astruct_811, *Pastruct_811;
+//pub typedef struct AStruct811 AStruct811, *PAStruct811;
 
-struct astruct_811 {
+pub struct AStruct811 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -96714,9 +96714,9 @@ struct astruct_811 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_810 astruct_810, *Pastruct_810;
+//pub typedef struct AStruct810 AStruct810, *PAStruct810;
 
-struct astruct_810 {
+pub struct AStruct810 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -96983,9 +96983,9 @@ struct astruct_810 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_817 astruct_817, *Pastruct_817;
+//pub typedef struct AStruct817 AStruct817, *PAStruct817;
 
-struct astruct_817 {
+pub struct AStruct817 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -97509,9 +97509,9 @@ struct astruct_817 {
     pub field_0x20c: u16,
 }
 
-//pub typedef struct astruct_816 astruct_816, *Pastruct_816;
+//pub typedef struct AStruct816 AStruct816, *PAStruct816;
 
-struct astruct_816 {
+pub struct AStruct816 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -98028,9 +98028,9 @@ struct astruct_816 {
     pub field_0x208: u16,
 }
 
-//pub typedef struct astruct_819 astruct_819, *Pastruct_819;
+//pub typedef struct AStruct819 AStruct819, *PAStruct819;
 
-struct astruct_819 {
+pub struct AStruct819 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -98042,9 +98042,9 @@ struct astruct_819 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_818 astruct_818, *Pastruct_818;
+//pub typedef struct AStruct818 AStruct818, *PAStruct818;
 
-struct astruct_818 {
+pub struct AStruct818 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -98472,9 +98472,9 @@ struct astruct_818 {
     pub field_0x1a8: u16,
 }
 
-//pub typedef struct astruct_813 astruct_813, *Pastruct_813;
+//pub typedef struct AStruct813 AStruct813, *PAStruct813;
 
-struct astruct_813 {
+pub struct AStruct813 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -98735,9 +98735,9 @@ struct astruct_813 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_812 astruct_812, *Pastruct_812;
+//pub typedef struct AStruct812 AStruct812, *PAStruct812;
 
-struct astruct_812 {
+pub struct AStruct812 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -98999,9 +98999,9 @@ struct astruct_812 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_966 astruct_966, *Pastruct_966;
+//pub typedef struct AStruct966 AStruct966, *PAStruct966;
 
-struct astruct_966 {
+pub struct AStruct966 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99015,9 +99015,9 @@ struct astruct_966 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_842 astruct_842, *Pastruct_842;
+//pub typedef struct AStruct842 AStruct842, *PAStruct842;
 
-struct astruct_842 {
+pub struct AStruct842 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99088,9 +99088,9 @@ struct astruct_842 {
     pub field_0x54: i32,
 }
 
-//pub typedef struct astruct_843 astruct_843, *Pastruct_843;
+//pub typedef struct AStruct843 AStruct843, *PAStruct843;
 
-struct astruct_843 {
+pub struct AStruct843 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99103,9 +99103,9 @@ struct astruct_843 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_308 astruct_308, *Pastruct_308;
+//pub typedef struct AStruct308 AStruct308, *PAStruct308;
 
-struct astruct_308 {
+pub struct AStruct308 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99129,9 +99129,9 @@ struct astruct_308 {
     pub field_0x1a: u32,
 }
 
-//pub typedef struct astruct_840 astruct_840, *Pastruct_840;
+//pub typedef struct AStruct840 AStruct840, *PAStruct840;
 
-struct astruct_840 {
+pub struct AStruct840 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99183,9 +99183,9 @@ struct astruct_840 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_849 astruct_849, *Pastruct_849;
+//pub typedef struct AStruct849 AStruct849, *PAStruct849;
 
-struct astruct_849 {
+pub struct AStruct849 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99201,9 +99201,9 @@ struct astruct_849 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_301 astruct_301, *Pastruct_301;
+//pub typedef struct AStruct301 AStruct301, *PAStruct301;
 
-struct astruct_301 {
+pub struct AStruct301 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99214,9 +99214,9 @@ struct astruct_301 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_979 astruct_979, *Pastruct_979;
+//pub typedef struct AStruct979 AStruct979, *PAStruct979;
 
-struct astruct_979 {
+pub struct AStruct979 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99251,9 +99251,9 @@ struct astruct_979 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_846 astruct_846, *Pastruct_846;
+//pub typedef struct AStruct846 AStruct846, *PAStruct846;
 
-struct astruct_846 {
+pub struct AStruct846 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -99265,7 +99265,7 @@ struct astruct_846 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: *mut astruct_94,
+    pub field_0xe: *mut AStruct94,
     pub field_0x10: *mut u16,
     pub field_0x12: u16,
     pub field_0x14: i32,
@@ -99273,9 +99273,9 @@ struct astruct_846 {
     pub field_0x18: i32,
 }
 
-//pub typedef struct astruct_361 astruct_361, *Pastruct_361;
+//pub typedef struct AStruct361 AStruct361, *PAStruct361;
 
-struct astruct_361 {
+pub struct AStruct361 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99443,9 +99443,9 @@ struct astruct_361 {
     pub field_0xb2: u16,
 }
 
-//pub typedef struct astruct_848 astruct_848, *Pastruct_848;
+//pub typedef struct AStruct848 AStruct848, *PAStruct848;
 
-struct astruct_848 {
+pub struct AStruct848 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -99462,9 +99462,9 @@ struct astruct_848 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_847 astruct_847, *Pastruct_847;
+//pub typedef struct AStruct847 AStruct847, *PAStruct847;
 
-struct astruct_847 {
+pub struct AStruct847 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99472,9 +99472,9 @@ struct astruct_847 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_1083 astruct_1083, *Pastruct_1083;
+//pub typedef struct AStruct1083 AStruct1083, *PAStruct1083;
 
-struct astruct_1083 {
+pub struct AStruct1083 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -99958,7 +99958,7 @@ struct astruct_1083 {
     pub field_0x1f4: u8,
     pub field_0x1f5: u8,
     pub field_0x1f6: i32,
-    pub field_0x1f8: *mut astruct_199,
+    pub field_0x1f8: *mut AStruct199,
     pub field_0x1fa: u32,
     pub field_0x1fe: u16,
     pub field_0x200: u32,
@@ -99974,9 +99974,9 @@ struct astruct_1083 {
     pub field_0x21a: u32,
 }
 
-//pub typedef struct astruct_830 astruct_830, *Pastruct_830;
+//pub typedef struct AStruct830 AStruct830, *PAStruct830;
 
-struct astruct_830 {
+pub struct AStruct830 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100000,9 +100000,9 @@ struct astruct_830 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_186 astruct_186, *Pastruct_186;
+//pub typedef struct AStruct186 AStruct186, *PAStruct186;
 
-struct astruct_186 {
+pub struct AStruct186 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100013,9 +100013,9 @@ struct astruct_186 {
     pub field_0xa: i32,
 }
 
-//pub typedef struct astruct_713 astruct_713, *Pastruct_713;
+//pub typedef struct AStruct713 AStruct713, *PAStruct713;
 
-struct astruct_713 {
+pub struct AStruct713 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100041,9 +100041,9 @@ struct astruct_713 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_165 astruct_165, *Pastruct_165;
+//pub typedef struct AStruct165 AStruct165, *PAStruct165;
 
-struct astruct_165 {
+pub struct AStruct165 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100057,9 +100057,9 @@ struct astruct_165 {
     field_0xc: *mut u32,
 }
 
-//pub typedef struct astruct_839 astruct_839, *Pastruct_839;
+//pub typedef struct AStruct839 AStruct839, *PAStruct839;
 
-struct astruct_839 {
+pub struct AStruct839 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100204,9 +100204,9 @@ struct astruct_839 {
     pub field_0x90: u32,
 }
 
-//pub typedef struct astruct_838 astruct_838, *Pastruct_838;
+//pub typedef struct AStruct838 AStruct838, *PAStruct838;
 
-struct astruct_838 {
+pub struct AStruct838 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100231,9 +100231,9 @@ struct astruct_838 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_835 astruct_835, *Pastruct_835;
+//pub typedef struct AStruct835 AStruct835, *PAStruct835;
 
-struct astruct_835 {
+pub struct AStruct835 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100257,9 +100257,9 @@ struct astruct_835 {
     pub field_0x17: u8,
 }
 
-//pub typedef struct astruct_834 astruct_834, *Pastruct_834;
+//pub typedef struct AStruct834 AStruct834, *PAStruct834;
 
-struct astruct_834 {
+pub struct AStruct834 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100282,9 +100282,9 @@ struct astruct_834 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_837 astruct_837, *Pastruct_837;
+//pub typedef struct AStruct837 AStruct837, *PAStruct837;
 
-struct Astruct837 {
+pub struct Astruct837 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100431,9 +100431,9 @@ struct Astruct837 {
     pub field_0x92: i32,
 }
 
-//pub typedef struct astruct_836 astruct_836, *Pastruct_836;
+//pub typedef struct AStruct836 AStruct836, *PAStruct836;
 
-struct astruct_836 {
+pub struct AStruct836 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100453,9 +100453,9 @@ struct astruct_836 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_298 astruct_298, *Pastruct_298;
+//pub typedef struct AStruct298 AStruct298, *PAStruct298;
 
-struct astruct_298 {
+pub struct AStruct298 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100734,19 +100734,19 @@ struct astruct_298 {
     pub field_0x11f: u8,
     pub field_0x120: u8,
     pub field_0x121: u8,
-    pub astruct_199_ptr_x122: *mut astruct_199,
+    pub AStruct199_ptr_x122: *mut AStruct199,
     pub u32_x126: u32,
     pub field_0x12a: u8,
     pub field_0x12b: u8,
     pub field_0x12c: u8,
     pub field_0x12d: u8,
-    pub astruct_566_ptr_x12e: *mut astruct_566,
+    pub AStruct566_ptr_x12e: *mut AStruct566,
     pub field_0x130: u16,
 }
 
-//pub typedef struct astruct_780 astruct_780, *Pastruct_780;
+//pub typedef struct AStruct780 AStruct780, *PAStruct780;
 
-struct astruct_780 {
+pub struct AStruct780 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -100761,9 +100761,9 @@ struct astruct_780 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_727 astruct_727, *Pastruct_727;
+//pub typedef struct AStruct727 AStruct727, *PAStruct727;
 
-struct astruct_727 {
+pub struct AStruct727 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -100800,9 +100800,9 @@ struct astruct_727 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_1029 astruct_1029, *Pastruct_1029;
+//pub typedef struct AStruct1029 AStruct1029, *PAStruct1029;
 
-struct astruct_1029 {
+pub struct AStruct1029 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -101063,9 +101063,9 @@ struct astruct_1029 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_905 astruct_905, *Pastruct_905;
+//pub typedef struct AStruct905 AStruct905, *PAStruct905;
 
-struct astruct_905 {
+pub struct AStruct905 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -101092,9 +101092,9 @@ struct astruct_905 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_907 astruct_907, *Pastruct_907;
+//pub typedef struct AStruct907 AStruct907, *PAStruct907;
 
-struct astruct_907 {
+pub struct AStruct907 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -101115,9 +101115,9 @@ struct astruct_907 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_906 astruct_906, *Pastruct_906;
+//pub typedef struct AStruct906 AStruct906, *PAStruct906;
 
-struct astruct_906 {
+pub struct AStruct906 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -101144,9 +101144,9 @@ struct astruct_906 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_901 astruct_901, *Pastruct_901;
+//pub typedef struct AStruct901 AStruct901, *PAStruct901;
 
-struct astruct_901 {
+pub struct AStruct901 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -101166,9 +101166,9 @@ struct astruct_901 {
     pub field_0x10: *mut u16,
 }
 
-//pub typedef struct astruct_902 astruct_902, *Pastruct_902;
+//pub typedef struct AStruct902 AStruct902, *PAStruct902;
 
-struct astruct_902 {
+pub struct AStruct902 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -101429,9 +101429,9 @@ struct astruct_902 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_268 astruct_268, *Pastruct_268;
+//pub typedef struct AStruct268 AStruct268, *PAStruct268;
 
-struct astruct_268 {
+pub struct AStruct268 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -101700,24 +101700,24 @@ struct astruct_268 {
     pub field_0x10a: u16,
 }
 
-//pub typedef struct astruct_1082 astruct_1082, *Pastruct_1082;
+//pub typedef struct AStruct1082 AStruct1082, *PAStruct1082;
 
-struct astruct_1082 {}
+pub struct AStruct1082 {}
 
-//pub typedef struct astruct_909 astruct_909, *Pastruct_909;
+//pub typedef struct AStruct909 AStruct909, *PAStruct909;
 
-struct astruct_909 {
+pub struct AStruct909 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_908 astruct_908, *Pastruct_908;
+//pub typedef struct AStruct908 AStruct908, *PAStruct908;
 
-struct astruct_908 {}
+pub struct AStruct908 {}
 
 //pub typedef struct pass1_struct_2 pass1_struct_2, *Ppass1_struct_2;
 
-struct pass1_struct_2 {
+pub struct pass1_struct_2 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102073,9 +102073,9 @@ struct pass1_struct_2 {
     pub field_0x160: i32,
 }
 
-//pub typedef struct astruct_974 astruct_974, *Pastruct_974;
+//pub typedef struct AStruct974 AStruct974, *PAStruct974;
 
-struct astruct_974 {
+pub struct AStruct974 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102113,9 +102113,9 @@ struct astruct_974 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_749 astruct_749, *Pastruct_749;
+//pub typedef struct AStruct749 AStruct749, *PAStruct749;
 
-struct astruct_749 {
+pub struct AStruct749 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102151,9 +102151,9 @@ struct astruct_749 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_344 astruct_344, *Pastruct_344;
+//pub typedef struct AStruct344 AStruct344, *PAStruct344;
 
-struct astruct_344 {
+pub struct AStruct344 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -102299,9 +102299,9 @@ struct astruct_344 {
     pub field_0x90: u32,
 }
 
-//pub typedef struct astruct_927 astruct_927, *Pastruct_927;
+//pub typedef struct AStruct927 AStruct927, *PAStruct927;
 
-struct astruct_927 {
+pub struct AStruct927 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102337,9 +102337,9 @@ struct astruct_927 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_926 astruct_926, *Pastruct_926;
+//pub typedef struct AStruct926 AStruct926, *PAStruct926;
 
-struct astruct_926 {
+pub struct AStruct926 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102399,9 +102399,9 @@ struct astruct_926 {
     pub field_0x39: u8,
 }
 
-//pub typedef struct astruct_11 astruct_11, *Pastruct_11;
+//pub typedef struct AStruct11 AStruct11, *PAStruct11;
 
-struct astruct_11 {
+pub struct AStruct11 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102409,9 +102409,9 @@ struct astruct_11 {
     pub file: u16,
 }
 
-//pub typedef struct astruct_923 astruct_923, *Pastruct_923;
+//pub typedef struct AStruct923 AStruct923, *PAStruct923;
 
-struct astruct_923 {
+pub struct AStruct923 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102445,9 +102445,9 @@ struct astruct_923 {
     pub field_0x1e: u32,
 }
 
-//pub typedef struct astruct_925 astruct_925, *Pastruct_925;
+//pub typedef struct AStruct925 AStruct925, *PAStruct925;
 
-struct astruct_925 {
+pub struct AStruct925 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -102508,9 +102508,9 @@ struct astruct_925 {
     pub field_0x3d: u8,
 }
 
-//pub typedef struct astruct_451 astruct_451, *Pastruct_451;
+//pub typedef struct AStruct451 AStruct451, *PAStruct451;
 
-struct astruct_451 {
+pub struct AStruct451 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106226,13 +106226,13 @@ struct astruct_451 {
     pub field_0xe82: i32,
 }
 
-//pub typedef struct astruct_1016 astruct_1016, *Pastruct_1016;
+//pub typedef struct AStruct1016 AStruct1016, *PAStruct1016;
 
-struct astruct_1016 {}
+pub struct AStruct1016 {}
 
-//pub typedef struct astruct_40 astruct_40, *Pastruct_40;
+//pub typedef struct AStruct40 AStruct40, *PAStruct40;
 
-struct astruct_40 {
+pub struct AStruct40 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106351,9 +106351,9 @@ struct astruct_40 {
     pub field_0x74: i32,
 }
 
-//pub typedef struct astruct_910 astruct_910, *Pastruct_910;
+//pub typedef struct AStruct910 AStruct910, *PAStruct910;
 
-struct astruct_910 {
+pub struct AStruct910 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106361,9 +106361,9 @@ struct astruct_910 {
     pub field_0x4: i32,
 }
 
-//pub typedef struct astruct_148 astruct_148, *Pastruct_148;
+//pub typedef struct AStruct148 AStruct148, *PAStruct148;
 
-struct astruct_148 {
+pub struct AStruct148 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106387,9 +106387,9 @@ struct astruct_148 {
     pub field_0x14: i32,
 }
 
-//pub typedef struct astruct_915 astruct_915, *Pastruct_915;
+//pub typedef struct AStruct915 AStruct915, *PAStruct915;
 
-struct astruct_915 {
+pub struct AStruct915 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106398,9 +106398,9 @@ struct astruct_915 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_918 astruct_918, *Pastruct_918;
+//pub typedef struct AStruct918 AStruct918, *PAStruct918;
 
-struct astruct_918 {
+pub struct AStruct918 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106460,9 +106460,9 @@ struct astruct_918 {
     pub field_0x3e: i32,
 }
 
-//pub typedef struct astruct_912 astruct_912, *Pastruct_912;
+//pub typedef struct AStruct912 AStruct912, *PAStruct912;
 
-struct astruct_912 {
+pub struct AStruct912 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106481,9 +106481,9 @@ struct astruct_912 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_911 astruct_911, *Pastruct_911;
+//pub typedef struct AStruct911 AStruct911, *PAStruct911;
 
-struct astruct_911 {
+pub struct AStruct911 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -106504,27 +106504,27 @@ struct astruct_911 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_914 astruct_914, *Pastruct_914;
+//pub typedef struct AStruct914 AStruct914, *PAStruct914;
 
-struct astruct_914 {
+pub struct AStruct914 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut astruct_199,
+    pub field_0x4: *mut AStruct199,
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_913 astruct_913, *Pastruct_913;
+//pub typedef struct AStruct913 AStruct913, *PAStruct913;
 
-struct astruct_913 {
+pub struct AStruct913 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_919 astruct_919, *Pastruct_919;
+//pub typedef struct AStruct919 AStruct919, *PAStruct919;
 
-struct astruct_919 {
+pub struct AStruct919 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106536,9 +106536,9 @@ struct astruct_919 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_377 astruct_377, *Pastruct_377;
+//pub typedef struct AStruct377 AStruct377, *PAStruct377;
 
-struct astruct_377 {
+pub struct AStruct377 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106548,9 +106548,9 @@ struct astruct_377 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_936 astruct_936, *Pastruct_936;
+//pub typedef struct AStruct936 AStruct936, *PAStruct936;
 
-struct astruct_936 {
+pub struct AStruct936 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -106561,9 +106561,9 @@ struct astruct_936 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_477 astruct_477, *Pastruct_477;
+//pub typedef struct AStruct477 AStruct477, *PAStruct477;
 
-struct astruct_477 {
+pub struct AStruct477 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106730,9 +106730,9 @@ struct astruct_477 {
     pub field_0xa3: u8,
 }
 
-//pub typedef struct astruct_122 astruct_122, *Pastruct_122;
+//pub typedef struct AStruct122 AStruct122, *PAStruct122;
 
-struct astruct_122 {
+pub struct AStruct122 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -106877,9 +106877,9 @@ struct astruct_122 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_255 astruct_255, *Pastruct_255;
+//pub typedef struct AStruct255 AStruct255, *PAStruct255;
 
-struct astruct_255 {
+pub struct AStruct255 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -107070,9 +107070,9 @@ struct astruct_255 {
     pub field_0xbc: u16,
 }
 
-//pub typedef struct astruct_202 astruct_202, *Pastruct_202;
+//pub typedef struct AStruct202 AStruct202, *PAStruct202;
 
-struct astruct_202 {
+pub struct AStruct202 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -107284,16 +107284,16 @@ struct astruct_202 {
     pub field_0xd0: i32,
 }
 
-//pub typedef struct astruct_1003 astruct_1003, *Pastruct_1003;
+//pub typedef struct AStruct1003 AStruct1003, *PAStruct1003;
 
-struct astruct_1003 {
+pub struct AStruct1003 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_346 astruct_346, *Pastruct_346;
+//pub typedef struct AStruct346 AStruct346, *PAStruct346;
 
-struct astruct_346 {
+pub struct AStruct346 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -107439,9 +107439,9 @@ struct astruct_346 {
     pub field_0x90: u32,
 }
 
-//pub typedef struct astruct_793 astruct_793, *Pastruct_793;
+//pub typedef struct AStruct793 AStruct793, *PAStruct793;
 
-struct astruct_793 {
+pub struct AStruct793 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -107710,9 +107710,9 @@ struct astruct_793 {
     pub field_0x120: u32,
 }
 
-//pub typedef struct astruct_331 astruct_331, *Pastruct_331;
+//pub typedef struct AStruct331 AStruct331, *PAStruct331;
 
-struct astruct_331 {
+pub struct AStruct331 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -107866,9 +107866,9 @@ struct astruct_331 {
     pub field_0x9e: u16,
 }
 
-//pub typedef struct astruct_464 astruct_464, *Pastruct_464;
+//pub typedef struct AStruct464 AStruct464, *PAStruct464;
 
-struct astruct_464 {
+pub struct AStruct464 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub a: u16,
@@ -107888,9 +107888,9 @@ struct astruct_464 {
     pub j: u16,
 }
 
-//pub typedef struct astruct_1043 astruct_1043, *Pastruct_1043;
+//pub typedef struct AStruct1043 AStruct1043, *PAStruct1043;
 
-struct astruct_1043 {
+pub struct AStruct1043 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -107898,9 +107898,9 @@ struct astruct_1043 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1040 astruct_1040, *Pastruct_1040;
+//pub typedef struct AStruct1040 AStruct1040, *PAStruct1040;
 
-struct astruct_1040 {
+pub struct AStruct1040 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -107908,9 +107908,9 @@ struct astruct_1040 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1046 astruct_1046, *Pastruct_1046;
+//pub typedef struct AStruct1046 AStruct1046, *PAStruct1046;
 
-struct astruct_1046 {
+pub struct AStruct1046 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -107922,13 +107922,13 @@ struct astruct_1046 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_1047 astruct_1047, *Pastruct_1047;
+//pub typedef struct AStruct1047 AStruct1047, *PAStruct1047;
 
-struct astruct_1047 {}
+pub struct AStruct1047 {}
 
-//pub typedef struct astruct_1044 astruct_1044, *Pastruct_1044;
+//pub typedef struct AStruct1044 AStruct1044, *PAStruct1044;
 
-struct astruct_1044 {
+pub struct AStruct1044 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -107940,9 +107940,9 @@ struct astruct_1044 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_1045 astruct_1045, *Pastruct_1045;
+//pub typedef struct AStruct1045 AStruct1045, *PAStruct1045;
 
-struct astruct_1045 {
+pub struct AStruct1045 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108456,9 +108456,9 @@ struct astruct_1045 {
     pub field_0x20a: u16,
 }
 
-//pub typedef struct astruct_1048 astruct_1048, *Pastruct_1048;
+//pub typedef struct AStruct1048 AStruct1048, *PAStruct1048;
 
-struct astruct_1048 {
+pub struct AStruct1048 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -108466,9 +108466,9 @@ struct astruct_1048 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_170 astruct_170, *Pastruct_170;
+//pub typedef struct AStruct170 AStruct170, *PAStruct170;
 
-struct astruct_170 {
+pub struct AStruct170 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108483,9 +108483,9 @@ struct astruct_170 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_1053 astruct_1053, *Pastruct_1053;
+//pub typedef struct AStruct1053 AStruct1053, *PAStruct1053;
 
-struct astruct_1053 {
+pub struct AStruct1053 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -108753,9 +108753,9 @@ struct astruct_1053 {
     pub field_0x10a: i32,
 }
 
-//pub typedef struct astruct_1051 astruct_1051, *Pastruct_1051;
+//pub typedef struct AStruct1051 AStruct1051, *PAStruct1051;
 
-struct astruct_1051 {
+pub struct AStruct1051 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108771,9 +108771,9 @@ struct astruct_1051 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_1057 astruct_1057, *Pastruct_1057;
+//pub typedef struct AStruct1057 AStruct1057, *PAStruct1057;
 
-struct astruct_1057 {
+pub struct AStruct1057 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -108781,13 +108781,13 @@ struct astruct_1057 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1058 astruct_1058, *Pastruct_1058;
+//pub typedef struct AStruct1058 AStruct1058, *PAStruct1058;
 
-struct astruct_1058 {}
+pub struct AStruct1058 {}
 
-//pub typedef struct astruct_1056 astruct_1056, *Pastruct_1056;
+//pub typedef struct AStruct1056 AStruct1056, *PAStruct1056;
 
-struct astruct_1056 {
+pub struct AStruct1056 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -108795,9 +108795,9 @@ struct astruct_1056 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1059 astruct_1059, *Pastruct_1059;
+//pub typedef struct AStruct1059 AStruct1059, *PAStruct1059;
 
-struct astruct_1059 {
+pub struct AStruct1059 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108809,17 +108809,17 @@ struct astruct_1059 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_313 astruct_313, *Pastruct_313;
+//pub typedef struct AStruct313 AStruct313, *PAStruct313;
 
-struct astruct_313 {
+pub struct AStruct313 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_949 astruct_949, *Pastruct_949;
+//pub typedef struct AStruct949 AStruct949, *PAStruct949;
 
-struct astruct_949 {
+pub struct AStruct949 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -108879,9 +108879,9 @@ struct astruct_949 {
     pub field_0x39: u8,
 }
 
-//pub typedef struct astruct_961 astruct_961, *Pastruct_961;
+//pub typedef struct AStruct961 AStruct961, *PAStruct961;
 
-struct astruct_961 {
+pub struct AStruct961 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108897,9 +108897,9 @@ struct astruct_961 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_1061 astruct_1061, *Pastruct_1061;
+//pub typedef struct AStruct1061 AStruct1061, *PAStruct1061;
 
-struct astruct_1061 {
+pub struct AStruct1061 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -108911,9 +108911,9 @@ struct astruct_1061 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_434 astruct_434, *Pastruct_434;
+//pub typedef struct AStruct434 AStruct434, *PAStruct434;
 
-struct astruct_434 {
+pub struct AStruct434 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -109041,9 +109041,9 @@ struct astruct_434 {
     pub field_0x7e: u16,
 }
 
-//pub typedef struct astruct_1064 astruct_1064, *Pastruct_1064;
+//pub typedef struct AStruct1064 AStruct1064, *PAStruct1064;
 
-struct astruct_1064 {
+pub struct AStruct1064 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -109055,17 +109055,17 @@ struct astruct_1064 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1062 astruct_1062, *Pastruct_1062;
+//pub typedef struct AStruct1062 AStruct1062, *PAStruct1062;
 
-struct astruct_1062 {}
+pub struct AStruct1062 {}
 
-//pub typedef struct astruct_1063 astruct_1063, *Pastruct_1063;
+//pub typedef struct AStruct1063 AStruct1063, *PAStruct1063;
 
-struct astruct_1063 {}
+pub struct AStruct1063 {}
 
-//pub typedef struct astruct_1069 astruct_1069, *Pastruct_1069;
+//pub typedef struct AStruct1069 AStruct1069, *PAStruct1069;
 
-struct astruct_1069 {
+pub struct AStruct1069 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -109118,9 +109118,9 @@ struct astruct_1069 {
     pub field_0x34: u16,
 }
 
-//pub typedef struct astruct_1066 astruct_1066, *Pastruct_1066;
+//pub typedef struct AStruct1066 AStruct1066, *PAStruct1066;
 
-struct astruct_1066 {
+pub struct AStruct1066 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -109131,9 +109131,9 @@ struct astruct_1066 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1071 astruct_1071, *Pastruct_1071;
+//pub typedef struct AStruct1071 AStruct1071, *PAStruct1071;
 
-struct astruct_1071 {
+pub struct AStruct1071 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -109145,9 +109145,9 @@ struct astruct_1071 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_1070 astruct_1070, *Pastruct_1070;
+//pub typedef struct AStruct1070 AStruct1070, *PAStruct1070;
 
-struct astruct_1070 {
+pub struct AStruct1070 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -109200,9 +109200,9 @@ struct astruct_1070 {
     pub field_0x34: u16,
 }
 
-//pub typedef struct astruct_1075 astruct_1075, *Pastruct_1075;
+//pub typedef struct AStruct1075 AStruct1075, *PAStruct1075;
 
-struct astruct_1075 {
+pub struct AStruct1075 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -109472,9 +109472,9 @@ struct astruct_1075 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_1076 astruct_1076, *Pastruct_1076;
+//pub typedef struct AStruct1076 AStruct1076, *PAStruct1076;
 
-struct astruct_1076 {
+pub struct AStruct1076 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -109752,9 +109752,9 @@ struct astruct_1076 {
     pub field_0x116: i32,
 }
 
-//pub typedef struct astruct_1074 astruct_1074, *Pastruct_1074;
+//pub typedef struct AStruct1074 AStruct1074, *PAStruct1074;
 
-struct astruct_1074 {
+pub struct AStruct1074 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -109762,9 +109762,9 @@ struct astruct_1074 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_1079 astruct_1079, *Pastruct_1079;
+//pub typedef struct AStruct1079 AStruct1079, *PAStruct1079;
 
-struct astruct_1079 {
+pub struct AStruct1079 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -110277,9 +110277,9 @@ struct astruct_1079 {
     pub field_0x200: u32,
 }
 
-//pub typedef struct astruct_1077 astruct_1077, *Pastruct_1077;
+//pub typedef struct AStruct1077 AStruct1077, *PAStruct1077;
 
-struct astruct_1077 {
+pub struct AStruct1077 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -110550,9 +110550,9 @@ struct astruct_1077 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_420 astruct_420, *Pastruct_420;
+//pub typedef struct AStruct420 AStruct420, *PAStruct420;
 
-struct astruct_420 {
+pub struct AStruct420 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -110589,7 +110589,7 @@ struct astruct_420 {
     pub field_0x21: u8,
     pub field_0x22: u8,
     pub field_0x23: u8,
-    pub astruct_30_field_0x24: *mut astruct_30,
+    pub AStruct30_field_0x24: *mut AStruct30,
     pub field_0x26: u8,
     pub field_0x27: u8,
     pub field_0x28: u8,
@@ -110661,9 +110661,9 @@ struct astruct_420 {
     pub field_0x6a: i32,
 }
 
-//pub typedef struct astruct_1080 astruct_1080, *Pastruct_1080;
+//pub typedef struct AStruct1080 AStruct1080, *PAStruct1080;
 
-struct astruct_1080 {
+pub struct AStruct1080 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -110681,9 +110681,9 @@ struct astruct_1080 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_1081 astruct_1081, *Pastruct_1081;
+//pub typedef struct AStruct1081 AStruct1081, *PAStruct1081;
 
-struct astruct_1081 {
+pub struct AStruct1081 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -111056,13 +111056,13 @@ struct astruct_1081 {
     pub field_0x172: i32,
 }
 
-//pub typedef struct astruct_1087 astruct_1087, *Pastruct_1087;
+//pub typedef struct AStruct1087 AStruct1087, *PAStruct1087;
 
-struct astruct_1087 {}
+pub struct AStruct1087 {}
 
-//pub typedef struct astruct_1084 astruct_1084, *Pastruct_1084;
+//pub typedef struct AStruct1084 AStruct1084, *PAStruct1084;
 
-struct astruct_1084 {
+pub struct AStruct1084 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -111550,7 +111550,7 @@ struct astruct_1084 {
     pub field_0x1f6: i32,
     pub field_0x1f8: i32,
     pub field_0x1fa: *mut u8,
-    pub field_0x1fc: *mut astruct_199,
+    pub field_0x1fc: *mut AStruct199,
     pub field_0x1fe: u16,
     pub field_0x200: u32,
     pub field_0x204: u16,
@@ -111565,9 +111565,9 @@ struct astruct_1084 {
     pub field_0x21a: u32,
 }
 
-//pub typedef struct astruct_1089 astruct_1089, *Pastruct_1089;
+//pub typedef struct AStruct1089 AStruct1089, *PAStruct1089;
 
-struct astruct_1089 {
+pub struct AStruct1089 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112111,9 +112111,9 @@ struct astruct_1089 {
     pub field_0x21d: u8,
 }
 
-//pub typedef struct astruct_37 astruct_37, *Pastruct_37;
+//pub typedef struct AStruct37 AStruct37, *PAStruct37;
 
-struct astruct_37 {
+pub struct AStruct37 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112358,9 +112358,9 @@ struct astruct_37 {
     pub field_0xf2: u32,
 }
 
-//pub typedef struct astruct_224 astruct_224, *Pastruct_224;
+//pub typedef struct AStruct224 AStruct224, *PAStruct224;
 
-struct astruct_224 {
+pub struct AStruct224 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112386,17 +112386,17 @@ struct astruct_224 {
     pub field_0x16: u32,
 }
 
-//pub typedef struct astruct_1093 astruct_1093, *Pastruct_1093;
+//pub typedef struct AStruct1093 AStruct1093, *PAStruct1093;
 
-struct astruct_1093 {}
+pub struct AStruct1093 {}
 
-//pub typedef struct astruct_1094 astruct_1094, *Pastruct_1094;
+//pub typedef struct AStruct1094 AStruct1094, *PAStruct1094;
 
-struct astruct_1094 {}
+pub struct AStruct1094 {}
 
-//pub typedef struct astruct_1091 astruct_1091, *Pastruct_1091;
+//pub typedef struct AStruct1091 AStruct1091, *PAStruct1091;
 
-struct astruct_1091 {
+pub struct AStruct1091 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112924,14 +112924,14 @@ struct astruct_1091 {
     pub field_0x212: u8,
     pub field_0x213: u8,
     pub field_0x214: i32,
-    pub field_0x216: *mut astruct_1093,
+    pub field_0x216: *mut AStruct1093,
     pub field_0x218: u8,
     pub field_0x219: u8,
 }
 
-//pub typedef struct astruct_1092 astruct_1092, *Pastruct_1092;
+//pub typedef struct AStruct1092 AStruct1092, *PAStruct1092;
 
-struct astruct_1092 {
+pub struct AStruct1092 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112947,9 +112947,9 @@ struct astruct_1092 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_775 astruct_775, *Pastruct_775;
+//pub typedef struct AStruct775 AStruct775, *PAStruct775;
 
-struct astruct_775 {
+pub struct AStruct775 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -112985,9 +112985,9 @@ struct astruct_775 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_1095 astruct_1095, *Pastruct_1095;
+//pub typedef struct AStruct1095 AStruct1095, *PAStruct1095;
 
-struct astruct_1095 {
+pub struct AStruct1095 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -113516,9 +113516,9 @@ struct astruct_1095 {
     pub field_0x210: u32,
 }
 
-//pub typedef struct astruct_1034 astruct_1034, *Pastruct_1034;
+//pub typedef struct AStruct1034 AStruct1034, *PAStruct1034;
 
-struct astruct_1034 {
+pub struct AStruct1034 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -113526,9 +113526,9 @@ struct astruct_1034 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_357 astruct_357, *Pastruct_357;
+//pub typedef struct AStruct357 AStruct357, *PAStruct357;
 
-struct astruct_357 {
+pub struct AStruct357 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -113537,7 +113537,7 @@ struct astruct_357 {
     pub field_0x5: u8,
     pub field_0x6: u8,
     pub field_0x7: u8,
-    pub field_0x8: *mut astruct_104,
+    pub field_0x8: *mut AStruct104,
     pub field_0xc: u8,
     pub field_0xd: u8,
     pub field_0xe: u8,
@@ -113572,9 +113572,9 @@ struct astruct_357 {
     pub field_0x2c: u16,
 }
 
-//pub typedef struct astruct_300 astruct_300, *Pastruct_300;
+//pub typedef struct AStruct300 AStruct300, *PAStruct300;
 
-struct astruct_300 {
+pub struct AStruct300 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -113592,9 +113592,9 @@ struct astruct_300 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_971 astruct_971, *Pastruct_971;
+//pub typedef struct AStruct971 AStruct971, *PAStruct971;
 
-struct astruct_971 {
+pub struct AStruct971 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -113630,9 +113630,9 @@ struct astruct_971 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_290 astruct_290, *Pastruct_290;
+//pub typedef struct AStruct290 AStruct290, *PAStruct290;
 
-struct astruct_290 {
+pub struct AStruct290 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114045,18 +114045,18 @@ struct astruct_290 {
     pub field_0x19a: u16,
 }
 
-//pub typedef struct astruct_24 astruct_24, *Pastruct_24;
+//pub typedef struct AStruct24 AStruct24, *PAStruct24;
 
-struct astruct_24 {
+pub struct AStruct24 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub h_window: HWND16,
 }
 
-//pub typedef struct astruct_237 astruct_237, *Pastruct_237;
+//pub typedef struct AStruct237 AStruct237, *PAStruct237;
 
-struct astruct_237 {
+pub struct AStruct237 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114139,9 +114139,9 @@ struct astruct_237 {
     pub field_0x50: u16,
 }
 
-//pub typedef struct astruct_260 astruct_260, *Pastruct_260;
+//pub typedef struct AStruct260 AStruct260, *PAStruct260;
 
-struct astruct_260 {
+pub struct AStruct260 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114362,14 +114362,14 @@ struct astruct_260 {
     pub field_0xda: u16,
 }
 
-//pub typedef struct astruct_207 astruct_207, *Pastruct_207;
+//pub typedef struct AStruct207 AStruct207, *PAStruct207;
 
-struct astruct_207 {
+pub struct AStruct207 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub astruct_104_field_4: *mut astruct_104,
+    pub AStruct104_field_4: *mut AStruct104,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
@@ -114390,9 +114390,9 @@ struct astruct_207 {
     pub field_0x1b: u8,
 }
 
-//pub typedef struct astruct_972 astruct_972, *Pastruct_972;
+//pub typedef struct AStruct972 AStruct972, *PAStruct972;
 
-struct astruct_972 {
+pub struct AStruct972 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114431,9 +114431,9 @@ struct astruct_972 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_440 astruct_440, *Pastruct_440;
+//pub typedef struct AStruct440 AStruct440, *PAStruct440;
 
-struct astruct_440 {
+pub struct AStruct440 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114469,14 +114469,14 @@ struct astruct_440 {
 
 //pub typedef struct file_object file_object, *Pfile_object;
 
-struct file_object {
+pub struct file_object {
     pub path: String,
     pub file: HFILE16,
 }
 
-//pub typedef struct astruct_19 astruct_19, *Pastruct_19;
+//pub typedef struct AStruct19 AStruct19, *PAStruct19;
 
-struct astruct_19 {
+pub struct AStruct19 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -114624,9 +114624,9 @@ struct astruct_19 {
     pub field_0x95: u8,
 }
 
-//pub typedef struct astruct_351 astruct_351, *Pastruct_351;
+//pub typedef struct AStruct351 AStruct351, *PAStruct351;
 
-struct astruct_351 {
+pub struct AStruct351 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -114859,9 +114859,9 @@ struct astruct_351 {
     pub field_0xea: i32,
 }
 
-//pub typedef struct astruct_273 astruct_273, *Pastruct_273;
+//pub typedef struct AStruct273 AStruct273, *PAStruct273;
 
-struct astruct_273 {
+pub struct AStruct273 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115160,9 +115160,9 @@ struct astruct_273 {
     pub field_0x128: u16,
 }
 
-//pub typedef struct astruct_776 astruct_776, *Pastruct_776;
+//pub typedef struct AStruct776 AStruct776, *PAStruct776;
 
-struct astruct_776 {
+pub struct AStruct776 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115179,18 +115179,18 @@ struct astruct_776 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_140 astruct_140, *Pastruct_140;
+//pub typedef struct AStruct140 AStruct140, *PAStruct140;
 
-struct astruct_140 {
+pub struct AStruct140 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
 
-//pub typedef struct astruct_447 astruct_447, *Pastruct_447;
+//pub typedef struct AStruct447 AStruct447, *PAStruct447;
 
-struct astruct_447 {
+pub struct AStruct447 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115216,9 +115216,9 @@ struct astruct_447 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_781 astruct_781, *Pastruct_781;
+//pub typedef struct AStruct781 AStruct781, *PAStruct781;
 
-struct astruct_781 {
+pub struct AStruct781 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115256,13 +115256,13 @@ struct astruct_781 {
     pub field_0x23: u8,
 }
 
-//pub typedef struct astruct_1002 astruct_1002, *Pastruct_1002;
+//pub typedef struct AStruct1002 AStruct1002, *PAStruct1002;
 
-struct astruct_1002 {}
+pub struct AStruct1002 {}
 
-//pub typedef struct astruct_789 astruct_789, *Pastruct_789;
+//pub typedef struct AStruct789 AStruct789, *PAStruct789;
 
-struct astruct_789 {
+pub struct AStruct789 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115530,9 +115530,9 @@ struct astruct_789 {
     pub field_0x10c: u32,
 }
 
-//pub typedef struct astruct_1000 astruct_1000, *Pastruct_1000;
+//pub typedef struct AStruct1000 AStruct1000, *PAStruct1000;
 
-struct astruct_1000 {
+pub struct AStruct1000 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115735,9 +115735,9 @@ struct astruct_1000 {
     pub field_0xc7: u8,
 }
 
-//pub typedef struct astruct_1001 astruct_1001, *Pastruct_1001;
+//pub typedef struct AStruct1001 AStruct1001, *PAStruct1001;
 
-struct astruct_1001 {
+pub struct AStruct1001 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115770,14 +115770,14 @@ struct astruct_1001 {
     pub field_0x1d: u8,
     pub field_0x1e: u8,
     pub field_0x1f: u8,
-    pub field_0x20: *mut astruct_1000,
+    pub field_0x20: *mut AStruct1000,
     pub field_0x22: *mut u8,
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_783 astruct_783, *Pastruct_783;
+//pub typedef struct AStruct783 AStruct783, *PAStruct783;
 
-struct astruct_783 {
+pub struct AStruct783 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115813,9 +115813,9 @@ struct astruct_783 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_782 astruct_782, *Pastruct_782;
+//pub typedef struct AStruct782 AStruct782, *PAStruct782;
 
-struct astruct_782 {
+pub struct AStruct782 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115850,9 +115850,9 @@ struct astruct_782 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_785 astruct_785, *Pastruct_785;
+//pub typedef struct AStruct785 AStruct785, *PAStruct785;
 
-struct astruct_785 {
+pub struct AStruct785 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115888,9 +115888,9 @@ struct astruct_785 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_1004 astruct_1004, *Pastruct_1004;
+//pub typedef struct AStruct1004 AStruct1004, *PAStruct1004;
 
-struct astruct_1004 {
+pub struct AStruct1004 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -115929,9 +115929,9 @@ struct astruct_1004 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_784 astruct_784, *Pastruct_784;
+//pub typedef struct AStruct784 AStruct784, *PAStruct784;
 
-struct astruct_784 {
+pub struct AStruct784 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115967,9 +115967,9 @@ struct astruct_784 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_1008 astruct_1008, *Pastruct_1008;
+//pub typedef struct AStruct1008 AStruct1008, *PAStruct1008;
 
-struct astruct_1008 {
+pub struct AStruct1008 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -115985,9 +115985,9 @@ struct astruct_1008 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_1009 astruct_1009, *Pastruct_1009;
+//pub typedef struct AStruct1009 AStruct1009, *PAStruct1009;
 
-struct astruct_1009 {
+pub struct AStruct1009 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116003,13 +116003,13 @@ struct astruct_1009 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_416 astruct_416, *Pastruct_416;
+//pub typedef struct AStruct416 AStruct416, *PAStruct416;
 
-struct astruct_416 {}
+pub struct AStruct416 {}
 
-//pub typedef struct astruct_770 astruct_770, *Pastruct_770;
+//pub typedef struct AStruct770 AStruct770, *PAStruct770;
 
-struct astruct_770 {
+pub struct AStruct770 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116053,9 +116053,9 @@ struct astruct_770 {
     pub field_0x28: *mut *mut u8,
 }
 
-//pub typedef struct astruct_1013 astruct_1013, *Pastruct_1013;
+//pub typedef struct AStruct1013 AStruct1013, *PAStruct1013;
 
-struct astruct_1013 {
+pub struct AStruct1013 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116106,13 +116106,13 @@ struct astruct_1013 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_1014 astruct_1014, *Pastruct_1014;
+//pub typedef struct AStruct1014 AStruct1014, *PAStruct1014;
 
-struct astruct_1014 {}
+pub struct AStruct1014 {}
 
-//pub typedef struct astruct_778 astruct_778, *Pastruct_778;
+//pub typedef struct AStruct778 AStruct778, *PAStruct778;
 
-struct astruct_778 {
+pub struct AStruct778 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116129,9 +116129,9 @@ struct astruct_778 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_777 astruct_777, *Pastruct_777;
+//pub typedef struct AStruct777 AStruct777, *PAStruct777;
 
-struct astruct_777 {
+pub struct AStruct777 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116148,9 +116148,9 @@ struct astruct_777 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_1012 astruct_1012, *Pastruct_1012;
+//pub typedef struct AStruct1012 AStruct1012, *PAStruct1012;
 
-struct astruct_1012 {
+pub struct AStruct1012 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116185,9 +116185,9 @@ struct astruct_1012 {
     pub field_0x20: u32,
 }
 
-//pub typedef struct astruct_772 astruct_772, *Pastruct_772;
+//pub typedef struct AStruct772 AStruct772, *PAStruct772;
 
-struct astruct_772 {
+pub struct AStruct772 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116231,9 +116231,9 @@ struct astruct_772 {
     pub field_0x28: u32,
 }
 
-//pub typedef struct astruct_1017 astruct_1017, *Pastruct_1017;
+//pub typedef struct AStruct1017 AStruct1017, *PAStruct1017;
 
-struct astruct_1017 {
+pub struct AStruct1017 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116246,13 +116246,13 @@ struct astruct_1017 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_1018 astruct_1018, *Pastruct_1018;
+//pub typedef struct AStruct1018 AStruct1018, *PAStruct1018;
 
-struct astruct_1018 {}
+pub struct AStruct1018 {}
 
-//pub typedef struct astruct_1015 astruct_1015, *Pastruct_1015;
+//pub typedef struct AStruct1015 AStruct1015, *PAStruct1015;
 
-struct astruct_1015 {
+pub struct AStruct1015 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116304,9 +116304,9 @@ struct astruct_1015 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_779 astruct_779, *Pastruct_779;
+//pub typedef struct AStruct779 AStruct779, *PAStruct779;
 
-struct astruct_779 {
+pub struct AStruct779 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116317,16 +116317,16 @@ struct astruct_779 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_985 astruct_985, *Pastruct_985;
+//pub typedef struct AStruct985 AStruct985, *PAStruct985;
 
-struct astruct_985 {
+pub struct AStruct985 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_327 astruct_327, *Pastruct_327;
+//pub typedef struct AStruct327 AStruct327, *PAStruct327;
 
-struct astruct_327 {
+pub struct AStruct327 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -116441,9 +116441,9 @@ struct astruct_327 {
     pub field_0x6f: u8,
 }
 
-//pub typedef struct astruct_1020 astruct_1020, *Pastruct_1020;
+//pub typedef struct AStruct1020 AStruct1020, *PAStruct1020;
 
-struct astruct_1020 {
+pub struct AStruct1020 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116712,17 +116712,17 @@ struct astruct_1020 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_1025 astruct_1025, *Pastruct_1025;
+//pub typedef struct AStruct1025 AStruct1025, *PAStruct1025;
 
-struct astruct_1025 {}
+pub struct AStruct1025 {}
 
-//pub typedef struct astruct_998 astruct_998, *Pastruct_998;
+//pub typedef struct AStruct998 AStruct998, *PAStruct998;
 
-struct astruct_998 {}
+pub struct AStruct998 {}
 
-//pub typedef struct astruct_1028 astruct_1028, *Pastruct_1028;
+//pub typedef struct AStruct1028 AStruct1028, *PAStruct1028;
 
-struct astruct_1028 {
+pub struct AStruct1028 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -116989,9 +116989,9 @@ struct astruct_1028 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_1027 astruct_1027, *Pastruct_1027;
+//pub typedef struct AStruct1027 AStruct1027, *PAStruct1027;
 
-struct astruct_1027 {
+pub struct AStruct1027 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -117252,9 +117252,9 @@ struct astruct_1027 {
     pub field_0x108: u32,
 }
 
-//pub typedef struct astruct_380 astruct_380, *Pastruct_380;
+//pub typedef struct AStruct380 AStruct380, *PAStruct380;
 
-struct astruct_380 {
+pub struct AStruct380 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -117337,9 +117337,9 @@ struct astruct_380 {
     pub field_0x56: u32,
 }
 
-//pub typedef struct astruct_425 astruct_425, *Pastruct_425;
+//pub typedef struct AStruct425 AStruct425, *PAStruct425;
 
-struct astruct_425 {
+pub struct AStruct425 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -117467,9 +117467,9 @@ struct astruct_425 {
     pub field_0x82: u16,
 }
 
-//pub typedef struct astruct_485 astruct_485, *Pastruct_485;
+//pub typedef struct AStruct485 AStruct485, *PAStruct485;
 
-struct astruct_485 {
+pub struct AStruct485 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u32,
@@ -117489,9 +117489,9 @@ struct astruct_485 {
     pub field_0x16: u16,
 }
 
-//pub typedef struct astruct_1031 astruct_1031, *Pastruct_1031;
+//pub typedef struct AStruct1031 AStruct1031, *PAStruct1031;
 
-struct astruct_1031 {
+pub struct AStruct1031 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -117503,13 +117503,13 @@ struct astruct_1031 {
     pub field_0xf: u8,
 }
 
-//pub typedef struct astruct_1032 astruct_1032, *Pastruct_1032;
+//pub typedef struct AStruct1032 AStruct1032, *PAStruct1032;
 
-struct astruct_1032 {}
+pub struct AStruct1032 {}
 
-//pub typedef struct astruct_732 astruct_732, *Pastruct_732;
+//pub typedef struct AStruct732 AStruct732, *PAStruct732;
 
-struct astruct_732 {
+pub struct AStruct732 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -117520,9 +117520,9 @@ struct astruct_732 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_1030 astruct_1030, *Pastruct_1030;
+//pub typedef struct AStruct1030 AStruct1030, *PAStruct1030;
 
-struct astruct_1030 {
+pub struct AStruct1030 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -117784,9 +117784,9 @@ struct astruct_1030 {
     pub field_0x108: u16,
 }
 
-//pub typedef struct astruct_798 astruct_798, *Pastruct_798;
+//pub typedef struct AStruct798 AStruct798, *PAStruct798;
 
-struct astruct_798 {
+pub struct AStruct798 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -118051,9 +118051,9 @@ struct astruct_798 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_1035 astruct_1035, *Pastruct_1035;
+//pub typedef struct AStruct1035 AStruct1035, *PAStruct1035;
 
-struct astruct_1035 {
+pub struct AStruct1035 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -118322,9 +118322,9 @@ struct astruct_1035 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_797 astruct_797, *Pastruct_797;
+//pub typedef struct AStruct797 AStruct797, *PAStruct797;
 
-struct astruct_797 {
+pub struct AStruct797 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -118588,9 +118588,9 @@ struct astruct_797 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_1033 astruct_1033, *Pastruct_1033;
+//pub typedef struct AStruct1033 AStruct1033, *PAStruct1033;
 
-struct astruct_1033 {
+pub struct AStruct1033 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -118598,9 +118598,9 @@ struct astruct_1033 {
     pub field_0x7: u8,
 }
 
-//pub typedef struct astruct_794 astruct_794, *Pastruct_794;
+//pub typedef struct AStruct794 AStruct794, *PAStruct794;
 
-struct astruct_794 {
+pub struct AStruct794 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -118870,13 +118870,13 @@ struct astruct_794 {
     pub field_0x120: u32,
 }
 
-//pub typedef struct astruct_1039 astruct_1039, *Pastruct_1039;
+//pub typedef struct AStruct1039 AStruct1039, *PAStruct1039;
 
-struct astruct_1039 {}
+pub struct AStruct1039 {}
 
-//pub typedef struct astruct_796 astruct_796, *Pastruct_796;
+//pub typedef struct AStruct796 AStruct796, *PAStruct796;
 
-struct astruct_796 {
+pub struct AStruct796 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -119152,12 +119152,12 @@ struct astruct_796 {
     pub field_0x111: u8,
     pub field_0x112: u8,
     pub field_0x113: u8,
-    pub field_0x114: *mut astruct_44,
+    pub field_0x114: *mut AStruct44,
 }
 
-//pub typedef struct astruct_795 astruct_795, *Pastruct_795;
+//pub typedef struct AStruct795 AStruct795, *PAStruct795;
 
-struct astruct_795 {
+pub struct AStruct795 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -119427,9 +119427,9 @@ struct astruct_795 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_1038 astruct_1038, *Pastruct_1038;
+//pub typedef struct AStruct1038 AStruct1038, *PAStruct1038;
 
-struct astruct_1038 {
+pub struct AStruct1038 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -119692,9 +119692,9 @@ struct astruct_1038 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_362 astruct_362, *Pastruct_362;
+//pub typedef struct AStruct362 AStruct362, *PAStruct362;
 
-struct astruct_362 {
+pub struct AStruct362 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -119862,9 +119862,9 @@ struct astruct_362 {
     pub field_0xb2: u16,
 }
 
-//pub typedef struct astruct_741 astruct_741, *Pastruct_741;
+//pub typedef struct AStruct741 AStruct741, *PAStruct741;
 
-struct astruct_741 {
+pub struct AStruct741 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -119900,9 +119900,9 @@ struct astruct_741 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_740 astruct_740, *Pastruct_740;
+//pub typedef struct AStruct740 AStruct740, *PAStruct740;
 
-struct astruct_740 {
+pub struct AStruct740 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -119952,9 +119952,9 @@ struct astruct_740 {
     pub field_0x2e: u32,
 }
 
-//pub typedef struct astruct_968 astruct_968, *Pastruct_968;
+//pub typedef struct AStruct968 AStruct968, *PAStruct968;
 
-struct astruct_968 {
+pub struct AStruct968 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -119968,9 +119968,9 @@ struct astruct_968 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_747 astruct_747, *Pastruct_747;
+//pub typedef struct AStruct747 AStruct747, *PAStruct747;
 
-struct astruct_747 {
+pub struct AStruct747 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -119987,9 +119987,9 @@ struct astruct_747 {
     pub field_0x10: i32,
 }
 
-//pub typedef struct astruct_746 astruct_746, *Pastruct_746;
+//pub typedef struct AStruct746 AStruct746, *PAStruct746;
 
-struct astruct_746 {
+pub struct AStruct746 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -120024,9 +120024,9 @@ struct astruct_746 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_748 astruct_748, *Pastruct_748;
+//pub typedef struct AStruct748 AStruct748, *PAStruct748;
 
-struct astruct_748 {
+pub struct AStruct748 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120059,9 +120059,9 @@ struct astruct_748 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_758 astruct_758, *Pastruct_758;
+//pub typedef struct AStruct758 AStruct758, *PAStruct758;
 
-struct astruct_758 {
+pub struct AStruct758 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120097,9 +120097,9 @@ struct astruct_758 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_734 astruct_734, *Pastruct_734;
+//pub typedef struct AStruct734 AStruct734, *PAStruct734;
 
-struct astruct_734 {
+pub struct AStruct734 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120132,9 +120132,9 @@ struct astruct_734 {
     pub field_0x22: u32,
 }
 
-//pub typedef struct astruct_733 astruct_733, *Pastruct_733;
+//pub typedef struct AStruct733 AStruct733, *PAStruct733;
 
-struct astruct_733 {
+pub struct AStruct733 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120145,17 +120145,17 @@ struct astruct_733 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_166 astruct_166, *Pastruct_166;
+//pub typedef struct AStruct166 AStruct166, *PAStruct166;
 
-struct astruct_166 {
+pub struct AStruct166 {
     pub field_0x0: u8,
     pub field_0x1: u8,
-    pub field_0x2: *mut astruct_166,
+    pub field_0x2: *mut AStruct166,
 }
 
-//pub typedef struct astruct_736 astruct_736, *Pastruct_736;
+//pub typedef struct AStruct736 AStruct736, *PAStruct736;
 
-struct astruct_736 {
+pub struct AStruct736 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120166,18 +120166,18 @@ struct astruct_736 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_735 astruct_735, *Pastruct_735;
+//pub typedef struct AStruct735 AStruct735, *PAStruct735;
 
-struct astruct_735 {}
+pub struct AStruct735 {}
 
-//pub typedef struct astruct_941 astruct_941, *Pastruct_941;
+//pub typedef struct AStruct941 AStruct941, *PAStruct941;
 
-struct astruct_941 {
+pub struct AStruct941 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut astruct_44,
+    pub field_0x4: *mut AStruct44,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
@@ -120188,7 +120188,7 @@ struct astruct_941 {
     pub field_0x10: i32,
     pub field_0x12: i32,
     pub field_0x14: i32,
-    pub field_0x16: *mut astruct_44,
+    pub field_0x16: *mut AStruct44,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
     pub field_0x1c: u8,
@@ -120196,9 +120196,9 @@ struct astruct_941 {
     pub field_0x1e: i32,
 }
 
-//pub typedef struct astruct_429 astruct_429, *Pastruct_429;
+//pub typedef struct AStruct429 AStruct429, *PAStruct429;
 
-struct astruct_429 {
+pub struct AStruct429 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120237,9 +120237,9 @@ struct astruct_429 {
     pub field_0x26: u32,
 }
 
-//pub typedef struct astruct_299 astruct_299, *Pastruct_299;
+//pub typedef struct AStruct299 AStruct299, *PAStruct299;
 
-struct astruct_299 {
+pub struct AStruct299 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -120253,9 +120253,9 @@ struct astruct_299 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_765 astruct_765, *Pastruct_765;
+//pub typedef struct AStruct765 AStruct765, *PAStruct765;
 
-struct astruct_765 {
+pub struct AStruct765 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120300,9 +120300,9 @@ struct astruct_765 {
     pub field_0x2b: u8,
 }
 
-//pub typedef struct astruct_764 astruct_764, *Pastruct_764;
+//pub typedef struct AStruct764 AStruct764, *PAStruct764;
 
-struct astruct_764 {
+pub struct AStruct764 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -120448,9 +120448,9 @@ struct astruct_764 {
     pub field_0x98: u16,
 }
 
-//pub typedef struct astruct_767 astruct_767, *Pastruct_767;
+//pub typedef struct AStruct767 AStruct767, *PAStruct767;
 
-struct astruct_767 {
+pub struct AStruct767 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120472,9 +120472,9 @@ struct astruct_767 {
     pub field_0x1c: u32,
 }
 
-//pub typedef struct astruct_179 astruct_179, *Pastruct_179;
+//pub typedef struct AStruct179 AStruct179, *PAStruct179;
 
-struct astruct_179 {
+pub struct AStruct179 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120500,12 +120500,12 @@ struct astruct_179 {
     pub field_0x17: u8,
     pub field_0x18: u8,
     pub field_0x19: u8,
-    pub field_0x1a: *mut astruct_167,
+    pub field_0x1a: *mut AStruct167,
 }
 
-//pub typedef struct astruct_766 astruct_766, *Pastruct_766;
+//pub typedef struct AStruct766 AStruct766, *PAStruct766;
 
-struct astruct_766 {
+pub struct AStruct766 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120528,9 +120528,9 @@ struct astruct_766 {
     pub field_0x1c: u32,
 }
 
-//pub typedef struct astruct_763 astruct_763, *Pastruct_763;
+//pub typedef struct AStruct763 AStruct763, *PAStruct763;
 
-struct astruct_763 {
+pub struct AStruct763 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -120566,9 +120566,9 @@ struct astruct_763 {
     pub field_0x2a: u16,
 }
 
-//pub typedef struct astruct_954 astruct_954, *Pastruct_954;
+//pub typedef struct AStruct954 AStruct954, *PAStruct954;
 
-struct astruct_954 {
+pub struct AStruct954 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120576,9 +120576,9 @@ struct astruct_954 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_242 astruct_242, *Pastruct_242;
+//pub typedef struct AStruct242 AStruct242, *PAStruct242;
 
-struct astruct_242 {
+pub struct AStruct242 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120691,9 +120691,9 @@ struct astruct_242 {
     pub field_0x6e: u16,
 }
 
-//pub typedef struct astruct_336 astruct_336, *Pastruct_336;
+//pub typedef struct AStruct336 AStruct336, *PAStruct336;
 
-struct astruct_336 {
+pub struct AStruct336 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120744,9 +120744,9 @@ struct astruct_336 {
     pub field_0x42: u32,
 }
 
-//pub typedef struct astruct_375 astruct_375, *Pastruct_375;
+//pub typedef struct AStruct375 AStruct375, *PAStruct375;
 
-struct astruct_375 {
+pub struct AStruct375 {
     pub ptr_1_lo: u16,
     pub ptr_1_hi: u16,
     pub u32_x04: u32,
@@ -120785,9 +120785,9 @@ struct astruct_375 {
     pub field_0x56: u16,
 }
 
-//pub typedef struct astruct_753 astruct_753, *Pastruct_753;
+//pub typedef struct AStruct753 AStruct753, *PAStruct753;
 
-struct astruct_753 {
+pub struct AStruct753 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -120822,9 +120822,9 @@ struct astruct_753 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_101 astruct_101, *Pastruct_101;
+//pub typedef struct AStruct101 AStruct101, *PAStruct101;
 
-struct astruct_101 {
+pub struct AStruct101 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120834,9 +120834,9 @@ struct astruct_101 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_752 astruct_752, *Pastruct_752;
+//pub typedef struct AStruct752 AStruct752, *PAStruct752;
 
-struct astruct_752 {
+pub struct AStruct752 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -120872,9 +120872,9 @@ struct astruct_752 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_751 astruct_751, *Pastruct_751;
+//pub typedef struct AStruct751 AStruct751, *PAStruct751;
 
-struct astruct_751 {
+pub struct AStruct751 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120920,9 +120920,9 @@ struct astruct_751 {
     pub field_0x2e: u32,
 }
 
-//pub typedef struct astruct_41 astruct_41, *Pastruct_41;
+//pub typedef struct AStruct41 AStruct41, *PAStruct41;
 
-struct astruct_41 {
+pub struct AStruct41 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -120983,9 +120983,9 @@ struct astruct_41 {
     pub field_0x40: i32,
 }
 
-//pub typedef struct astruct_759 astruct_759, *Pastruct_759;
+//pub typedef struct AStruct759 AStruct759, *PAStruct759;
 
-struct astruct_759 {
+pub struct AStruct759 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -121000,9 +121000,9 @@ struct astruct_759 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_701 astruct_701, *Pastruct_701;
+//pub typedef struct AStruct701 AStruct701, *PAStruct701;
 
-struct astruct_701 {
+pub struct AStruct701 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121040,9 +121040,9 @@ struct astruct_701 {
     pub field_0x23: u8,
 }
 
-//pub typedef struct astruct_153 astruct_153, *Pastruct_153;
+//pub typedef struct AStruct153 AStruct153, *PAStruct153;
 
-struct astruct_153 {
+pub struct AStruct153 {
     pub field_0x0: i32,
     pub field_0x2: i32,
     pub field_0x4: i32,
@@ -121285,9 +121285,9 @@ struct astruct_153 {
     pub field_0xf4: i32,
 }
 
-//pub typedef struct astruct_703 astruct_703, *Pastruct_703;
+//pub typedef struct AStruct703 AStruct703, *PAStruct703;
 
-struct astruct_703 {
+pub struct AStruct703 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121303,9 +121303,9 @@ struct astruct_703 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_702 astruct_702, *Pastruct_702;
+//pub typedef struct AStruct702 AStruct702, *PAStruct702;
 
-struct astruct_702 {
+pub struct AStruct702 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121321,9 +121321,9 @@ struct astruct_702 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_714 astruct_714, *Pastruct_714;
+//pub typedef struct AStruct714 AStruct714, *PAStruct714;
 
-struct astruct_714 {
+pub struct AStruct714 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121331,13 +121331,13 @@ struct astruct_714 {
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_721 astruct_721, *Pastruct_721;
+//pub typedef struct AStruct721 AStruct721, *PAStruct721;
 
-struct astruct_721 {}
+pub struct AStruct721 {}
 
-//pub typedef struct astruct_720 astruct_720, *Pastruct_720;
+//pub typedef struct AStruct720 AStruct720, *PAStruct720;
 
-struct astruct_720 {
+pub struct AStruct720 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121574,9 +121574,9 @@ struct astruct_720 {
     pub field_0xf2: i32,
 }
 
-//pub typedef struct astruct_192 astruct_192, *Pastruct_192;
+//pub typedef struct AStruct192 AStruct192, *PAStruct192;
 
-struct astruct_192 {
+pub struct AStruct192 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -121591,13 +121591,13 @@ struct astruct_192 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_722 astruct_722, *Pastruct_722;
+//pub typedef struct AStruct722 AStruct722, *PAStruct722;
 
-struct astruct_722 {}
+pub struct AStruct722 {}
 
-//pub typedef struct astruct_729 astruct_729, *Pastruct_729;
+//pub typedef struct AStruct729 AStruct729, *PAStruct729;
 
-struct astruct_729 {
+pub struct AStruct729 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -121620,9 +121620,9 @@ struct astruct_729 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_728 astruct_728, *Pastruct_728;
+//pub typedef struct AStruct728 AStruct728, *PAStruct728;
 
-struct astruct_728 {
+pub struct AStruct728 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -121658,9 +121658,9 @@ struct astruct_728 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_495 astruct_495, *Pastruct_495;
+//pub typedef struct AStruct495 AStruct495, *PAStruct495;
 
-struct astruct_495 {
+pub struct AStruct495 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -121699,9 +121699,9 @@ struct astruct_495 {
     pub field_0x56: u16,
 }
 
-//pub typedef struct astruct_286 astruct_286, *Pastruct_286;
+//pub typedef struct AStruct286 AStruct286, *PAStruct286;
 
-struct astruct_286 {
+pub struct AStruct286 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122090,16 +122090,16 @@ struct astruct_286 {
     pub field_0x182: u16,
 }
 
-//pub typedef struct astruct_710 astruct_710, *Pastruct_710;
+//pub typedef struct AStruct710 AStruct710, *PAStruct710;
 
-struct astruct_710 {
+pub struct AStruct710 {
     pub field_0x0: u32,
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_718 astruct_718, *Pastruct_718;
+//pub typedef struct AStruct718 AStruct718, *PAStruct718;
 
-struct astruct_718 {
+pub struct AStruct718 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122108,13 +122108,13 @@ struct astruct_718 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_717 astruct_717, *Pastruct_717;
+//pub typedef struct AStruct717 AStruct717, *PAStruct717;
 
-struct astruct_717 {}
+pub struct AStruct717 {}
 
-//pub typedef struct astruct_719 astruct_719, *Pastruct_719;
+//pub typedef struct AStruct719 AStruct719, *PAStruct719;
 
-struct astruct_719 {
+pub struct AStruct719 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122143,9 +122143,9 @@ struct astruct_719 {
     pub field_0x1a: u8,
 }
 
-//pub typedef struct astruct_716 astruct_716, *Pastruct_716;
+//pub typedef struct AStruct716 AStruct716, *PAStruct716;
 
-struct astruct_716 {
+pub struct AStruct716 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122158,7 +122158,7 @@ struct astruct_716 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: *mut astruct_94,
+    pub field_0xc: *mut AStruct94,
     pub field_0xe: *mut u16,
     pub field_0x10: u16,
     pub field_0x12: i32,
@@ -122170,9 +122170,9 @@ struct astruct_716 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_715 astruct_715, *Pastruct_715;
+//pub typedef struct AStruct715 AStruct715, *PAStruct715;
 
-struct astruct_715 {
+pub struct AStruct715 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122198,13 +122198,13 @@ struct astruct_715 {
     pub field_0x1c: i32,
 }
 
-//pub typedef struct astruct_136 astruct_136, *Pastruct_136;
+//pub typedef struct AStruct136 AStruct136, *PAStruct136;
 
-struct astruct_136 {}
+pub struct AStruct136 {}
 
-//pub typedef struct astruct_389 astruct_389, *Pastruct_389;
+//pub typedef struct AStruct389 AStruct389, *PAStruct389;
 
-struct astruct_389 {
+pub struct AStruct389 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -122217,9 +122217,9 @@ struct astruct_389 {
     pub field_0xa: *mut u8,
 }
 
-//pub typedef struct astruct_412 astruct_412, *Pastruct_412;
+//pub typedef struct AStruct412 AStruct412, *PAStruct412;
 
-struct astruct_412 {
+pub struct AStruct412 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122270,13 +122270,13 @@ struct astruct_412 {
     pub field_0x30: i32,
 }
 
-//pub typedef struct astruct_452 astruct_452, *Pastruct_452;
+//pub typedef struct AStruct452 AStruct452, *PAStruct452;
 
-struct astruct_452 {}
+pub struct AStruct452 {}
 
-//pub typedef struct astruct_332 astruct_332, *Pastruct_332;
+//pub typedef struct AStruct332 AStruct332, *PAStruct332;
 
-struct astruct_332 {
+pub struct AStruct332 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -122430,13 +122430,13 @@ struct astruct_332 {
     pub field_0x9e: u16,
 }
 
-//pub typedef struct astruct_23 astruct_23, *Pastruct_23;
+//pub typedef struct AStruct23 AStruct23, *PAStruct23;
 
-struct astruct_23 {}
+pub struct AStruct23 {}
 
-//pub typedef struct astruct_805 astruct_805, *Pastruct_805;
+//pub typedef struct AStruct805 AStruct805, *PAStruct805;
 
-struct astruct_805 {
+pub struct AStruct805 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -122712,12 +122712,12 @@ struct astruct_805 {
     pub field_0x111: u8,
     pub field_0x112: u8,
     pub field_0x113: u8,
-    pub field_0x114: *mut astruct_44,
+    pub field_0x114: *mut AStruct44,
 }
 
-//pub typedef struct astruct_808 astruct_808, *Pastruct_808;
+//pub typedef struct AStruct808 AStruct808, *PAStruct808;
 
-struct astruct_808 {
+pub struct AStruct808 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -122982,9 +122982,9 @@ struct astruct_808 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_807 astruct_807, *Pastruct_807;
+//pub typedef struct AStruct807 AStruct807, *PAStruct807;
 
-struct astruct_807 {
+pub struct AStruct807 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -123494,9 +123494,9 @@ struct astruct_807 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_804 astruct_804, *Pastruct_804;
+//pub typedef struct AStruct804 AStruct804, *PAStruct804;
 
-struct astruct_804 {
+pub struct AStruct804 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -123766,9 +123766,9 @@ struct astruct_804 {
     pub field_0x114: u32,
 }
 
-//pub typedef struct astruct_269 astruct_269, *Pastruct_269;
+//pub typedef struct AStruct269 AStruct269, *PAStruct269;
 
-struct astruct_269 {
+pub struct AStruct269 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124043,9 +124043,9 @@ struct astruct_269 {
     pub field_0x110: u16,
 }
 
-//pub typedef struct astruct_114 astruct_114, *Pastruct_114;
+//pub typedef struct AStruct114 AStruct114, *PAStruct114;
 
-struct astruct_114 {
+pub struct AStruct114 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124067,20 +124067,20 @@ struct astruct_114 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_212 astruct_212, *Pastruct_212;
+//pub typedef struct AStruct212 AStruct212, *PAStruct212;
 
-struct astruct_212 {}
+pub struct AStruct212 {}
 
-//pub typedef struct astruct_10 astruct_10, *Pastruct_10;
+//pub typedef struct AStruct10 AStruct10, *PAStruct10;
 
-struct astruct_10 {
+pub struct AStruct10 {
     pub path: String,
     pub file: HFILE16,
 }
 
-//pub typedef struct astruct_243 astruct_243, *Pastruct_243;
+//pub typedef struct AStruct243 AStruct243, *PAStruct243;
 
-struct astruct_243 {
+pub struct AStruct243 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124199,9 +124199,9 @@ struct astruct_243 {
     pub field_0x74: u16,
 }
 
-//pub typedef struct astruct_959 astruct_959, *Pastruct_959;
+//pub typedef struct AStruct959 AStruct959, *PAStruct959;
 
-struct astruct_959 {
+pub struct AStruct959 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124219,9 +124219,9 @@ struct astruct_959 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_123 astruct_123, *Pastruct_123;
+//pub typedef struct AStruct123 AStruct123, *PAStruct123;
 
-struct astruct_123 {
+pub struct AStruct123 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124373,9 +124373,9 @@ struct astruct_123 {
     pub field_0x98: u32,
 }
 
-//pub typedef struct astruct_465 astruct_465, *Pastruct_465;
+//pub typedef struct AStruct465 AStruct465, *PAStruct465;
 
-struct astruct_465 {
+pub struct AStruct465 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -124393,13 +124393,13 @@ struct astruct_465 {
     pub field_0x14: i32,
 }
 
-//pub typedef struct astruct_990 astruct_990, *Pastruct_990;
+//pub typedef struct AStruct990 AStruct990, *PAStruct990;
 
-struct astruct_990 {}
+pub struct AStruct990 {}
 
-//pub typedef struct astruct_48 astruct_48, *Pastruct_48;
+//pub typedef struct AStruct48 AStruct48, *PAStruct48;
 
-struct astruct_48 {
+pub struct AStruct48 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124646,9 +124646,9 @@ struct astruct_48 {
     pub field_0xf9: u8,
 }
 
-//pub typedef struct astruct_256 astruct_256, *Pastruct_256;
+//pub typedef struct AStruct256 AStruct256, *PAStruct256;
 
-struct astruct_256 {
+pub struct AStruct256 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -124845,9 +124845,9 @@ struct astruct_256 {
     pub field_0xc2: u16,
 }
 
-//pub typedef struct astruct_291 astruct_291, *Pastruct_291;
+//pub typedef struct AStruct291 AStruct291, *PAStruct291;
 
-struct astruct_291 {
+pub struct AStruct291 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125266,9 +125266,9 @@ struct astruct_291 {
     pub field_0x1a0: u16,
 }
 
-//pub typedef struct astruct_105 astruct_105, *Pastruct_105;
+//pub typedef struct AStruct105 AStruct105, *PAStruct105;
 
-struct astruct_105 {
+pub struct AStruct105 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125283,9 +125283,9 @@ struct astruct_105 {
     pub field_0xe: i32,
 }
 
-//pub typedef struct astruct_421 astruct_421, *Pastruct_421;
+//pub typedef struct AStruct421 AStruct421, *PAStruct421;
 
-struct astruct_421 {
+pub struct AStruct421 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -125302,9 +125302,9 @@ struct astruct_421 {
     pub field_0x16: u32,
 }
 
-//pub typedef struct astruct_238 astruct_238, *Pastruct_238;
+//pub typedef struct AStruct238 AStruct238, *PAStruct238;
 
-struct astruct_238 {
+pub struct AStruct238 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125393,9 +125393,9 @@ struct astruct_238 {
     pub field_0x56: u16,
 }
 
-//pub typedef struct astruct_118 astruct_118, *Pastruct_118;
+//pub typedef struct AStruct118 AStruct118, *PAStruct118;
 
-struct astruct_118 {
+pub struct AStruct118 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125403,13 +125403,13 @@ struct astruct_118 {
     pub field_0x4: u8,
 }
 
-//pub typedef struct astruct_171 astruct_171, *Pastruct_171;
+//pub typedef struct AStruct171 AStruct171, *PAStruct171;
 
-struct astruct_171 {}
+pub struct AStruct171 {}
 
-//pub typedef struct astruct_310 astruct_310, *Pastruct_310;
+//pub typedef struct AStruct310 AStruct310, *PAStruct310;
 
-struct astruct_310 {
+pub struct AStruct310 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u16,
@@ -125423,9 +125423,9 @@ struct astruct_310 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_478 astruct_478, *Pastruct_478;
+//pub typedef struct AStruct478 AStruct478, *PAStruct478;
 
-struct astruct_478 {
+pub struct AStruct478 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125444,9 +125444,9 @@ struct astruct_478 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_314 astruct_314, *Pastruct_314;
+//pub typedef struct AStruct314 AStruct314, *PAStruct314;
 
-struct astruct_314 {
+pub struct AStruct314 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -125521,9 +125521,9 @@ struct astruct_314 {
     pub field_0x6c: i32,
 }
 
-//pub typedef struct astruct_49 astruct_49, *Pastruct_49;
+//pub typedef struct AStruct49 AStruct49, *PAStruct49;
 
-struct astruct_49 {
+pub struct AStruct49 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125533,9 +125533,9 @@ struct astruct_49 {
     pub h_win: HWND16,
 }
 
-//pub typedef struct astruct_942 astruct_942, *Pastruct_942;
+//pub typedef struct AStruct942 AStruct942, *PAStruct942;
 
-struct astruct_942 {
+pub struct AStruct942 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u32,
@@ -125570,18 +125570,18 @@ struct astruct_942 {
     pub field_0x32: u8,
     pub field_0x33: u8,
     pub field_0x34: i32,
-    pub field_0x36: *mut astruct_199,
+    pub field_0x36: *mut AStruct199,
     pub field_0x38: u8,
     pub field_0x39: u8,
 }
 
-//pub typedef struct astruct_149 astruct_149, *Pastruct_149;
+//pub typedef struct AStruct149 AStruct149, *PAStruct149;
 
-struct astruct_149 {}
+pub struct AStruct149 {}
 
-//pub typedef struct astruct_36 astruct_36, *Pastruct_36;
+//pub typedef struct AStruct36 AStruct36, *PAStruct36;
 
-struct astruct_36 {
+pub struct AStruct36 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125818,9 +125818,9 @@ struct astruct_36 {
     pub field_0xea: i32,
 }
 
-//pub typedef struct astruct_225 astruct_225, *Pastruct_225;
+//pub typedef struct AStruct225 AStruct225, *PAStruct225;
 
-struct astruct_225 {
+pub struct AStruct225 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125831,13 +125831,13 @@ struct astruct_225 {
     pub field_0x8: u16,
 }
 
-//pub typedef struct astruct_220 astruct_220, *Pastruct_220;
+//pub typedef struct AStruct220 AStruct220, *PAStruct220;
 
-struct astruct_220 {}
+pub struct AStruct220 {}
 
-//pub typedef struct astruct_328 astruct_328, *Pastruct_328;
+//pub typedef struct AStruct328 AStruct328, *PAStruct328;
 
-struct astruct_328 {
+pub struct AStruct328 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125884,9 +125884,9 @@ struct astruct_328 {
     pub field_0x2b: u8,
 }
 
-//pub typedef struct astruct_226 astruct_226, *Pastruct_226;
+//pub typedef struct AStruct226 AStruct226, *PAStruct226;
 
-struct astruct_226 {
+pub struct AStruct226 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125903,9 +125903,9 @@ struct astruct_226 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_228 astruct_228, *Pastruct_228;
+//pub typedef struct AStruct228 AStruct228, *PAStruct228;
 
-struct astruct_228 {
+pub struct AStruct228 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125934,9 +125934,9 @@ struct astruct_228 {
     pub field_0x1a: u16,
 }
 
-//pub typedef struct astruct_227 astruct_227, *Pastruct_227;
+//pub typedef struct AStruct227 AStruct227, *PAStruct227;
 
-struct astruct_227 {
+pub struct AStruct227 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -125959,18 +125959,18 @@ struct astruct_227 {
     pub field_0x14: u16,
 }
 
-//pub typedef struct astruct_221 astruct_221, *Pastruct_221;
+//pub typedef struct AStruct221 AStruct221, *PAStruct221;
 
-struct astruct_221 {
+pub struct AStruct221 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: i32,
 }
 
-//pub typedef struct astruct_229 astruct_229, *Pastruct_229;
+//pub typedef struct AStruct229 AStruct229, *PAStruct229;
 
-struct astruct_229 {
+pub struct AStruct229 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126005,9 +126005,9 @@ struct astruct_229 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_381 astruct_381, *Pastruct_381;
+//pub typedef struct AStruct381 AStruct381, *PAStruct381;
 
-struct astruct_381 {
+pub struct AStruct381 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126029,9 +126029,9 @@ struct astruct_381 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_214 astruct_214, *Pastruct_214;
+//pub typedef struct AStruct214 AStruct214, *PAStruct214;
 
-struct astruct_214 {
+pub struct AStruct214 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -126041,9 +126041,9 @@ struct astruct_214 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_216 astruct_216, *Pastruct_216;
+//pub typedef struct AStruct216 AStruct216, *PAStruct216;
 
-struct astruct_216 {
+pub struct AStruct216 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -126226,16 +126226,16 @@ struct astruct_216 {
     pub field_0xca: u16,
 }
 
-//pub typedef struct astruct_213 astruct_213, *Pastruct_213;
+//pub typedef struct AStruct213 AStruct213, *PAStruct213;
 
-struct astruct_213 {
+pub struct AStruct213 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_185 astruct_185, *Pastruct_185;
+//pub typedef struct AStruct185 AStruct185, *PAStruct185;
 
-struct astruct_185 {
+pub struct AStruct185 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126248,9 +126248,9 @@ struct astruct_185 {
     pub field_0xd: u8,
 }
 
-//pub typedef struct astruct_448 astruct_448, *Pastruct_448;
+//pub typedef struct AStruct448 AStruct448, *PAStruct448;
 
-struct astruct_448 {
+pub struct AStruct448 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126274,9 +126274,9 @@ struct astruct_448 {
     pub field_0x14: i32,
 }
 
-//pub typedef struct astruct_261 astruct_261, *Pastruct_261;
+//pub typedef struct AStruct261 AStruct261, *PAStruct261;
 
-struct astruct_261 {
+pub struct AStruct261 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126503,9 +126503,9 @@ struct astruct_261 {
     pub field_0xe0: u16,
 }
 
-//pub typedef struct astruct_247 astruct_247, *Pastruct_247;
+//pub typedef struct AStruct247 AStruct247, *PAStruct247;
 
-struct astruct_247 {
+pub struct AStruct247 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126648,9 +126648,9 @@ struct astruct_247 {
     pub field_0x8c: u16,
 }
 
-//pub typedef struct astruct_244 astruct_244, *Pastruct_244;
+//pub typedef struct AStruct244 AStruct244, *PAStruct244;
 
-struct astruct_244 {
+pub struct AStruct244 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126775,9 +126775,9 @@ struct astruct_244 {
     pub field_0x7a: u16,
 }
 
-//pub typedef struct astruct_246 astruct_246, *Pastruct_246;
+//pub typedef struct AStruct246 AStruct246, *PAStruct246;
 
-struct astruct_246 {
+pub struct AStruct246 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -126914,9 +126914,9 @@ struct astruct_246 {
     pub field_0x86: u16,
 }
 
-//pub typedef struct astruct_198 astruct_198, *Pastruct_198;
+//pub typedef struct AStruct198 AStruct198, *PAStruct198;
 
-struct astruct_198 {
+pub struct AStruct198 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
@@ -126924,12 +126924,12 @@ struct astruct_198 {
     pub field_0x6: i32,
     pub field_0x8: i32,
     pub field_0xa: i32,
-    pub field_0xc: *mut astruct_104,
+    pub field_0xc: *mut AStruct104,
 }
 
-//pub typedef struct astruct_245 astruct_245, *Pastruct_245;
+//pub typedef struct AStruct245 AStruct245, *PAStruct245;
 
-struct astruct_245 {
+pub struct AStruct245 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127060,9 +127060,9 @@ struct astruct_245 {
     pub field_0x80: u16,
 }
 
-//pub typedef struct astruct_208 astruct_208, *Pastruct_208;
+//pub typedef struct AStruct208 AStruct208, *PAStruct208;
 
-struct astruct_208 {
+pub struct AStruct208 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127080,9 +127080,9 @@ struct astruct_208 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_973 astruct_973, *Pastruct_973;
+//pub typedef struct AStruct973 AStruct973, *PAStruct973;
 
-struct astruct_973 {
+pub struct AStruct973 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127122,9 +127122,9 @@ struct astruct_973 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_231 astruct_231, *Pastruct_231;
+//pub typedef struct AStruct231 AStruct231, *PAStruct231;
 
-struct astruct_231 {
+pub struct AStruct231 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127171,9 +127171,9 @@ struct astruct_231 {
     pub field_0x2c: u16,
 }
 
-//pub typedef struct astruct_230 astruct_230, *Pastruct_230;
+//pub typedef struct AStruct230 AStruct230, *PAStruct230;
 
-struct astruct_230 {
+pub struct AStruct230 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127214,9 +127214,9 @@ struct astruct_230 {
     pub field_0x26: u16,
 }
 
-//pub typedef struct astruct_304 astruct_304, *Pastruct_304;
+//pub typedef struct AStruct304 AStruct304, *PAStruct304;
 
-struct astruct_304 {
+pub struct AStruct304 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -127243,9 +127243,9 @@ struct astruct_304 {
     pub field_0x1e: u32,
 }
 
-//pub typedef struct astruct_239 astruct_239, *Pastruct_239;
+//pub typedef struct AStruct239 AStruct239, *PAStruct239;
 
-struct astruct_239 {
+pub struct AStruct239 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127340,9 +127340,9 @@ struct astruct_239 {
     pub field_0x5c: u16,
 }
 
-//pub typedef struct astruct_233 astruct_233, *Pastruct_233;
+//pub typedef struct AStruct233 AStruct233, *PAStruct233;
 
-struct astruct_233 {
+pub struct AStruct233 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127401,9 +127401,9 @@ struct astruct_233 {
     pub field_0x38: u16,
 }
 
-//pub typedef struct astruct_232 astruct_232, *Pastruct_232;
+//pub typedef struct AStruct232 AStruct232, *PAStruct232;
 
-struct astruct_232 {
+pub struct AStruct232 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127456,9 +127456,9 @@ struct astruct_232 {
     pub field_0x32: u16,
 }
 
-//pub typedef struct astruct_234 astruct_234, *Pastruct_234;
+//pub typedef struct AStruct234 AStruct234, *PAStruct234;
 
-struct astruct_234 {
+pub struct AStruct234 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127523,9 +127523,9 @@ struct astruct_234 {
     pub field_0x3e: u16,
 }
 
-//pub typedef struct astruct_394 astruct_394, *Pastruct_394;
+//pub typedef struct AStruct394 AStruct394, *PAStruct394;
 
-struct astruct_394 {
+pub struct AStruct394 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -127639,9 +127639,9 @@ struct astruct_394 {
     pub field_0x7c: u32,
 }
 
-//pub typedef struct astruct_119 astruct_119, *Pastruct_119;
+//pub typedef struct AStruct119 AStruct119, *PAStruct119;
 
-struct astruct_119 {
+pub struct AStruct119 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -127868,9 +127868,9 @@ struct astruct_119 {
     pub field_0xe8: u32,
 }
 
-//pub typedef struct astruct_172 astruct_172, *Pastruct_172;
+//pub typedef struct AStruct172 AStruct172, *PAStruct172;
 
-struct astruct_172 {
+pub struct AStruct172 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -128089,9 +128089,9 @@ struct astruct_172 {
     pub field_0xd7: u8,
 }
 
-//pub typedef struct astruct_18 astruct_18, *Pastruct_18;
+//pub typedef struct AStruct18 AStruct18, *PAStruct18;
 
-struct astruct_18 {
+pub struct AStruct18 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -128350,9 +128350,9 @@ struct astruct_18 {
     pub field_0x105: u8,
 }
 
-//pub typedef struct astruct_315 astruct_315, *Pastruct_315;
+//pub typedef struct AStruct315 AStruct315, *PAStruct315;
 
-struct astruct_315 {
+pub struct AStruct315 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -131935,9 +131935,9 @@ struct astruct_315 {
     pub field_0xdfc: i32,
 }
 
-//pub typedef struct astruct_404 astruct_404, *Pastruct_404;
+//pub typedef struct AStruct404 AStruct404, *PAStruct404;
 
-struct astruct_404 {
+pub struct AStruct404 {
     pub a: u16,
     pub b: u16,
     pub field_0x4: u8,
@@ -131952,9 +131952,9 @@ struct astruct_404 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_203 astruct_203, *Pastruct_203;
+//pub typedef struct AStruct203 AStruct203, *PAStruct203;
 
-struct astruct_203 {
+pub struct AStruct203 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -132166,9 +132166,9 @@ struct astruct_203 {
     pub field_0xd1: u8,
 }
 
-//pub typedef struct astruct_200 astruct_200, *Pastruct_200;
+//pub typedef struct AStruct200 AStruct200, *PAStruct200;
 
-struct astruct_200 {
+pub struct AStruct200 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132178,9 +132178,9 @@ struct astruct_200 {
     pub field_0xa: i32,
 }
 
-//pub typedef struct astruct_201 astruct_201, *Pastruct_201;
+//pub typedef struct AStruct201 AStruct201, *PAStruct201;
 
-struct astruct_201 {
+pub struct AStruct201 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -132188,9 +132188,9 @@ struct astruct_201 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_986 astruct_986, *Pastruct_986;
+//pub typedef struct AStruct986 AStruct986, *PAStruct986;
 
-struct astruct_986 {
+pub struct AStruct986 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132230,13 +132230,13 @@ struct astruct_986 {
     pub field_0x2a: i32,
 }
 
-//pub typedef struct astruct_999 astruct_999, *Pastruct_999;
+//pub typedef struct AStruct999 AStruct999, *PAStruct999;
 
-struct astruct_999 {}
+pub struct AStruct999 {}
 
-//pub typedef struct astruct_287 astruct_287, *Pastruct_287;
+//pub typedef struct AStruct287 AStruct287, *PAStruct287;
 
-struct astruct_287 {
+pub struct AStruct287 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132631,9 +132631,9 @@ struct astruct_287 {
     pub field_0x188: u16,
 }
 
-//pub typedef struct astruct_470 astruct_470, *Pastruct_470;
+//pub typedef struct AStruct470 AStruct470, *PAStruct470;
 
-struct astruct_470 {
+pub struct AStruct470 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132656,9 +132656,9 @@ struct astruct_470 {
     pub field_0x1e: u16,
 }
 
-//pub typedef struct astruct_110 astruct_110, *Pastruct_110;
+//pub typedef struct AStruct110 AStruct110, *PAStruct110;
 
-struct astruct_110 {
+pub struct AStruct110 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132669,9 +132669,9 @@ struct astruct_110 {
     pub field_0x8: u16,
 }
 
-//pub typedef struct astruct_417 astruct_417, *Pastruct_417;
+//pub typedef struct AStruct417 AStruct417, *PAStruct417;
 
-struct astruct_417 {
+pub struct AStruct417 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132713,13 +132713,13 @@ struct astruct_417 {
     pub field_0x27: u8,
 }
 
-//pub typedef struct astruct_496 astruct_496, *Pastruct_496;
+//pub typedef struct AStruct496 AStruct496, *PAStruct496;
 
-struct astruct_496 {}
+pub struct AStruct496 {}
 
-//pub typedef struct astruct_141 astruct_141, *Pastruct_141;
+//pub typedef struct AStruct141 AStruct141, *PAStruct141;
 
-struct astruct_141 {
+pub struct AStruct141 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -132759,9 +132759,9 @@ struct astruct_141 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_274 astruct_274, *Pastruct_274;
+//pub typedef struct AStruct274 AStruct274, *PAStruct274;
 
-struct astruct_274 {
+pub struct AStruct274 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133066,9 +133066,9 @@ struct astruct_274 {
     pub field_0x12e: u16,
 }
 
-//pub typedef struct astruct_939 astruct_939, *Pastruct_939;
+//pub typedef struct AStruct939 AStruct939, *PAStruct939;
 
-struct astruct_939 {
+pub struct AStruct939 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133112,9 +133112,9 @@ struct astruct_939 {
     pub field_0x29: u8,
 }
 
-//pub typedef struct astruct_154 astruct_154, *Pastruct_154;
+//pub typedef struct AStruct154 AStruct154, *PAStruct154;
 
-struct astruct_154 {
+pub struct AStruct154 {
     pub field_0x0: i32,
     pub field_0x2: i32,
     pub field_0x4: i32,
@@ -133355,9 +133355,9 @@ struct astruct_154 {
     pub field_0xf2: i32,
 }
 
-//pub typedef struct astruct_365 astruct_365, *Pastruct_365;
+//pub typedef struct AStruct365 AStruct365, *PAStruct365;
 
-struct astruct_365 {
+pub struct AStruct365 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133462,9 +133462,9 @@ struct astruct_365 {
     pub field_0x68: u16,
 }
 
-//pub typedef struct astruct_483 astruct_483, *Pastruct_483;
+//pub typedef struct AStruct483 AStruct483, *PAStruct483;
 
-struct astruct_483 {
+pub struct AStruct483 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133492,9 +133492,9 @@ struct astruct_483 {
     pub field_0x18: *mut u8,
 }
 
-//pub typedef struct astruct_320 astruct_320, *Pastruct_320;
+//pub typedef struct AStruct320 AStruct320, *PAStruct320;
 
-struct astruct_320 {
+pub struct AStruct320 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -133502,9 +133502,9 @@ struct astruct_320 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_35 astruct_35, *Pastruct_35;
+//pub typedef struct AStruct35 AStruct35, *PAStruct35;
 
-struct astruct_35 {
+pub struct AStruct35 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133635,9 +133635,9 @@ struct astruct_35 {
     pub field_0x88: i32,
 }
 
-//pub typedef struct astruct_124 astruct_124, *Pastruct_124;
+//pub typedef struct AStruct124 AStruct124, *PAStruct124;
 
-struct astruct_124 {
+pub struct AStruct124 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133787,9 +133787,9 @@ struct astruct_124 {
     pub field_0x93: u8,
 }
 
-//pub typedef struct astruct_435 astruct_435, *Pastruct_435;
+//pub typedef struct AStruct435 AStruct435, *PAStruct435;
 
-struct astruct_435 {
+pub struct AStruct435 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -133917,9 +133917,9 @@ struct astruct_435 {
     pub field_0x7e: i32,
 }
 
-//pub typedef struct astruct_257 astruct_257, *Pastruct_257;
+//pub typedef struct AStruct257 AStruct257, *PAStruct257;
 
-struct astruct_257 {
+pub struct AStruct257 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -134122,9 +134122,9 @@ struct astruct_257 {
     pub field_0xc8: u16,
 }
 
-//pub typedef struct astruct_137 astruct_137, *Pastruct_137;
+//pub typedef struct AStruct137 AStruct137, *PAStruct137;
 
-struct astruct_137 {
+pub struct AStruct137 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -134162,9 +134162,9 @@ struct astruct_137 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_190 astruct_190, *Pastruct_190;
+//pub typedef struct AStruct190 AStruct190, *PAStruct190;
 
-struct astruct_190 {
+pub struct AStruct190 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -134178,9 +134178,9 @@ struct astruct_190 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_497 astruct_497, *Pastruct_497;
+//pub typedef struct AStruct497 AStruct497, *PAStruct497;
 
-struct astruct_497 {
+pub struct AStruct497 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -134223,9 +134223,9 @@ struct astruct_497 {
     pub field_0x2c: u32,
 }
 
-//pub typedef struct astruct_333 astruct_333, *Pastruct_333;
+//pub typedef struct AStruct333 AStruct333, *PAStruct333;
 
-struct astruct_333 {
+pub struct AStruct333 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -134382,9 +134382,9 @@ struct astruct_333 {
     pub field_0x9a: u16,
 }
 
-//pub typedef struct astruct_969 astruct_969, *Pastruct_969;
+//pub typedef struct AStruct969 AStruct969, *PAStruct969;
 
-struct astruct_969 {
+pub struct AStruct969 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -134406,9 +134406,9 @@ struct astruct_969 {
     pub field_0x14: u32,
 }
 
-//pub typedef struct astruct_347 astruct_347, *Pastruct_347;
+//pub typedef struct AStruct347 AStruct347, *PAStruct347;
 
-struct astruct_347 {
+pub struct AStruct347 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -134560,9 +134560,9 @@ struct astruct_347 {
     pub field_0x98: u32,
 }
 
-//pub typedef struct astruct_111 astruct_111, *Pastruct_111;
+//pub typedef struct AStruct111 AStruct111, *PAStruct111;
 
-struct astruct_111 {
+pub struct AStruct111 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -134590,9 +134590,9 @@ struct astruct_111 {
     pub field_0x1c: u16,
 }
 
-//pub typedef struct astruct_3 astruct_3, *Pastruct_3;
+//pub typedef struct AStruct3 AStruct3, *PAStruct3;
 
-struct astruct_3 {
+pub struct AStruct3 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -135107,16 +135107,16 @@ struct astruct_3 {
     pub field_0x200: i32,
 }
 
-//pub typedef struct astruct_168 astruct_168, *Pastruct_168;
+//pub typedef struct AStruct168 AStruct168, *PAStruct168;
 
-struct astruct_168 {
+pub struct AStruct168 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_453 astruct_453, *Pastruct_453;
+//pub typedef struct AStruct453 AStruct453, *PAStruct453;
 
-struct astruct_453 {
+pub struct AStruct453 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -135130,9 +135130,9 @@ struct astruct_453 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_991 astruct_991, *Pastruct_991;
+//pub typedef struct AStruct991 AStruct991, *PAStruct991;
 
-struct astruct_991 {
+pub struct AStruct991 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -135170,9 +135170,9 @@ struct astruct_991 {
     pub field_0x26: u16,
 }
 
-//pub typedef struct astruct_938 astruct_938, *Pastruct_938;
+//pub typedef struct AStruct938 AStruct938, *PAStruct938;
 
-struct astruct_938 {
+pub struct AStruct938 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -135212,9 +135212,9 @@ struct astruct_938 {
     pub field_0x25: u8,
 }
 
-//pub typedef struct astruct_479 astruct_479, *Pastruct_479;
+//pub typedef struct AStruct479 AStruct479, *PAStruct479;
 
-struct astruct_479 {
+pub struct AStruct479 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
@@ -135230,9 +135230,9 @@ struct astruct_479 {
     pub field_0x12: u32,
 }
 
-//pub typedef struct astruct_295 astruct_295, *Pastruct_295;
+//pub typedef struct AStruct295 AStruct295, *PAStruct295;
 
-struct astruct_295 {
+pub struct AStruct295 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -135517,9 +135517,9 @@ struct astruct_295 {
     pub field_0x142: u32,
 }
 
-//pub typedef struct astruct_294 astruct_294, *Pastruct_294;
+//pub typedef struct AStruct294 AStruct294, *PAStruct294;
 
-struct astruct_294 {
+pub struct AStruct294 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -135534,9 +135534,9 @@ struct astruct_294 {
     pub field_0xc: u16,
 }
 
-//pub typedef struct astruct_359 astruct_359, *Pastruct_359;
+//pub typedef struct AStruct359 AStruct359, *PAStruct359;
 
-struct astruct_359 {
+pub struct AStruct359 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -135589,9 +135589,9 @@ struct astruct_359 {
     pub field_0x36: u16,
 }
 
-//pub typedef struct astruct_292 astruct_292, *Pastruct_292;
+//pub typedef struct AStruct292 AStruct292, *PAStruct292;
 
-struct astruct_292 {
+pub struct AStruct292 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -136016,9 +136016,9 @@ struct astruct_292 {
     pub field_0x1a6: u16,
 }
 
-//pub typedef struct astruct_14 astruct_14, *Pastruct_14;
+//pub typedef struct AStruct14 AStruct14, *PAStruct14;
 
-struct astruct_14 {
+pub struct AStruct14 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -136038,13 +136038,13 @@ struct astruct_14 {
     pub field_0x11: u8,
     pub field_0x12: u8,
     pub field_0x13: u8,
-    pub struct_ptr_0x14: *mut astruct_417,
+    pub struct_ptr_0x14: *mut AStruct417,
     field_0x18: *mut libc::c_void,
 }
 
-//pub typedef struct astruct_106 astruct_106, *Pastruct_106;
+//pub typedef struct AStruct106 AStruct106, *PAStruct106;
 
-struct astruct_106 {
+pub struct AStruct106 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -137139,9 +137139,9 @@ struct astruct_106 {
     pub field_0x443: u8,
 }
 
-//pub typedef struct astruct_466 astruct_466, *Pastruct_466;
+//pub typedef struct AStruct466 AStruct466, *PAStruct466;
 
-struct astruct_466 {
+pub struct AStruct466 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -137165,9 +137165,9 @@ struct astruct_466 {
     pub field_0x15: u8,
 }
 
-//pub typedef struct astruct_262 astruct_262, *Pastruct_262;
+//pub typedef struct AStruct262 AStruct262, *PAStruct262;
 
-struct astruct_262 {
+pub struct AStruct262 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -137400,9 +137400,9 @@ struct astruct_262 {
     pub field_0xe6: u16,
 }
 
-//pub typedef struct astruct_264 astruct_264, *Pastruct_264;
+//pub typedef struct AStruct264 AStruct264, *PAStruct264;
 
-struct astruct_264 {
+pub struct AStruct264 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -137647,9 +137647,9 @@ struct astruct_264 {
     pub field_0xf2: u16,
 }
 
-//pub typedef struct astruct_263 astruct_263, *Pastruct_263;
+//pub typedef struct AStruct263 AStruct263, *PAStruct263;
 
-struct astruct_263 {
+pub struct AStruct263 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -137888,9 +137888,9 @@ struct astruct_263 {
     pub field_0xec: u16,
 }
 
-//pub typedef struct astruct_251 astruct_251, *Pastruct_251;
+//pub typedef struct AStruct251 AStruct251, *PAStruct251;
 
-struct astruct_251 {
+pub struct AStruct251 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138057,9 +138057,9 @@ struct astruct_251 {
     pub field_0xa4: u16,
 }
 
-//pub typedef struct astruct_250 astruct_250, *Pastruct_250;
+//pub typedef struct AStruct250 AStruct250, *PAStruct250;
 
-struct astruct_250 {
+pub struct AStruct250 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138220,9 +138220,9 @@ struct astruct_250 {
     pub field_0x9e: u16,
 }
 
-//pub typedef struct astruct_962 astruct_962, *Pastruct_962;
+//pub typedef struct AStruct962 AStruct962, *PAStruct962;
 
-struct astruct_962 {
+pub struct AStruct962 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138241,9 +138241,9 @@ struct astruct_962 {
     pub field_0x10: u32,
 }
 
-//pub typedef struct astruct_259 astruct_259, *Pastruct_259;
+//pub typedef struct AStruct259 AStruct259, *PAStruct259;
 
-struct astruct_259 {
+pub struct AStruct259 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138458,9 +138458,9 @@ struct astruct_259 {
     pub field_0xd4: u16,
 }
 
-//pub typedef struct astruct_258 astruct_258, *Pastruct_258;
+//pub typedef struct AStruct258 AStruct258, *PAStruct258;
 
-struct astruct_258 {
+pub struct AStruct258 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138669,9 +138669,9 @@ struct astruct_258 {
     pub field_0xce: u16,
 }
 
-//pub typedef struct astruct_405 astruct_405, *Pastruct_405;
+//pub typedef struct AStruct405 AStruct405, *PAStruct405;
 
-struct astruct_405 {
+pub struct AStruct405 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -138684,9 +138684,9 @@ struct astruct_405 {
     pub field_0xa: *mut u16,
 }
 
-//pub typedef struct astruct_280 astruct_280, *Pastruct_280;
+//pub typedef struct AStruct280 AStruct280, *PAStruct280;
 
-struct astruct_280 {
+pub struct AStruct280 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -139033,9 +139033,9 @@ struct astruct_280 {
     pub field_0x158: u16,
 }
 
-//pub typedef struct astruct_282 astruct_282, *Pastruct_282;
+//pub typedef struct AStruct282 AStruct282, *PAStruct282;
 
-struct astruct_282 {
+pub struct AStruct282 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -139400,9 +139400,9 @@ struct astruct_282 {
     pub field_0x16a: u16,
 }
 
-//pub typedef struct astruct_281 astruct_281, *Pastruct_281;
+//pub typedef struct AStruct281 AStruct281, *PAStruct281;
 
-struct astruct_281 {
+pub struct AStruct281 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -139755,9 +139755,9 @@ struct astruct_281 {
     pub field_0x15e: u16,
 }
 
-//pub typedef struct astruct_288 astruct_288, *Pastruct_288;
+//pub typedef struct AStruct288 AStruct288, *PAStruct288;
 
-struct astruct_288 {
+pub struct AStruct288 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -140158,9 +140158,9 @@ struct astruct_288 {
     pub field_0x18e: u16,
 }
 
-//pub typedef struct astruct_289 astruct_289, *Pastruct_289;
+//pub typedef struct AStruct289 AStruct289, *PAStruct289;
 
-struct astruct_289 {
+pub struct AStruct289 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -140567,9 +140567,9 @@ struct astruct_289 {
     pub field_0x194: u16,
 }
 
-//pub typedef struct astruct_275 astruct_275, *Pastruct_275;
+//pub typedef struct AStruct275 AStruct275, *PAStruct275;
 
-struct astruct_275 {
+pub struct AStruct275 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -140880,9 +140880,9 @@ struct astruct_275 {
     pub field_0x134: u16,
 }
 
-//pub typedef struct astruct_277 astruct_277, *Pastruct_277;
+//pub typedef struct AStruct277 AStruct277, *PAStruct277;
 
-struct astruct_277 {
+pub struct AStruct277 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141211,9 +141211,9 @@ struct astruct_277 {
     pub field_0x146: u16,
 }
 
-//pub typedef struct astruct_276 astruct_276, *Pastruct_276;
+//pub typedef struct AStruct276 AStruct276, *PAStruct276;
 
-struct astruct_276 {
+pub struct AStruct276 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141530,9 +141530,9 @@ struct astruct_276 {
     pub field_0x13a: u16,
 }
 
-//pub typedef struct astruct_278 astruct_278, *Pastruct_278;
+//pub typedef struct AStruct278 AStruct278, *PAStruct278;
 
-struct astruct_278 {
+pub struct AStruct278 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141867,9 +141867,9 @@ struct astruct_278 {
     pub field_0x14c: u16,
 }
 
-//pub typedef struct astruct_422 astruct_422, *Pastruct_422;
+//pub typedef struct AStruct422 AStruct422, *PAStruct422;
 
-struct astruct_422 {
+pub struct AStruct422 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141894,13 +141894,13 @@ struct astruct_422 {
     pub field_0x16: u32,
 }
 
-//pub typedef struct astruct_107 astruct_107, *Pastruct_107;
+//pub typedef struct AStruct107 AStruct107, *PAStruct107;
 
-struct astruct_107 {}
+pub struct AStruct107 {}
 
-//pub typedef struct astruct_100 astruct_100, *Pastruct_100;
+//pub typedef struct AStruct100 AStruct100, *PAStruct100;
 
-struct astruct_100 {
+pub struct AStruct100 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141912,9 +141912,9 @@ struct astruct_100 {
     pub field_0xa: u16,
 }
 
-//pub typedef struct astruct_109 astruct_109, *Pastruct_109;
+//pub typedef struct AStruct109 AStruct109, *PAStruct109;
 
-struct astruct_109 {
+pub struct AStruct109 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -141936,9 +141936,9 @@ struct astruct_109 {
     pub field_0x18: i32,
 }
 
-//pub typedef struct astruct_329 astruct_329, *Pastruct_329;
+//pub typedef struct AStruct329 AStruct329, *PAStruct329;
 
-struct astruct_329 {
+pub struct AStruct329 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142017,13 +142017,13 @@ struct astruct_329 {
     pub field_0x4b: u8,
 }
 
-//pub typedef struct astruct_127 astruct_127, *Pastruct_127;
+//pub typedef struct AStruct127 AStruct127, *PAStruct127;
 
-struct astruct_127 {}
+pub struct AStruct127 {}
 
-//pub typedef struct astruct_126 astruct_126, *Pastruct_126;
+//pub typedef struct AStruct126 AStruct126, *PAStruct126;
 
-struct astruct_126 {
+pub struct AStruct126 {
     pub field_0x0: u32,
     pub field_0x4: u32,
     pub field_0x8: u8,
@@ -142037,9 +142037,9 @@ struct astruct_126 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_125 astruct_125, *Pastruct_125;
+//pub typedef struct AStruct125 AStruct125, *PAStruct125;
 
-struct astruct_125 {
+pub struct AStruct125 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142048,9 +142048,9 @@ struct astruct_125 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_382 astruct_382, *Pastruct_382;
+//pub typedef struct AStruct382 AStruct382, *PAStruct382;
 
-struct astruct_382 {
+pub struct AStruct382 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142068,9 +142068,9 @@ struct astruct_382 {
     field_0x10: *mut u32,
 }
 
-//pub typedef struct astruct_436 astruct_436, *Pastruct_436;
+//pub typedef struct AStruct436 AStruct436, *PAStruct436;
 
-struct astruct_436 {
+pub struct AStruct436 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -142089,13 +142089,13 @@ struct astruct_436 {
     pub field_0x22: u32,
 }
 
-//pub typedef struct astruct_112 astruct_112, *Pastruct_112;
+//pub typedef struct AStruct112 AStruct112, *PAStruct112;
 
-struct astruct_112 {}
+pub struct AStruct112 {}
 
-//pub typedef struct astruct_113 astruct_113, *Pastruct_113;
+//pub typedef struct AStruct113 AStruct113, *PAStruct113;
 
-struct astruct_113 {
+pub struct AStruct113 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -142166,9 +142166,9 @@ struct astruct_113 {
     pub field_0x48: u16,
 }
 
-//pub typedef struct astruct_303 astruct_303, *Pastruct_303;
+//pub typedef struct AStruct303 AStruct303, *PAStruct303;
 
-struct astruct_303 {
+pub struct AStruct303 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -142186,13 +142186,13 @@ struct astruct_303 {
     pub field_0x1e: u32,
 }
 
-//pub typedef struct astruct_160 astruct_160, *Pastruct_160;
+//pub typedef struct AStruct160 AStruct160, *PAStruct160;
 
-struct astruct_160 {}
+pub struct AStruct160 {}
 
-//pub typedef struct astruct_173 astruct_173, *Pastruct_173;
+//pub typedef struct AStruct173 AStruct173, *PAStruct173;
 
-struct astruct_173 {
+pub struct AStruct173 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142411,17 +142411,17 @@ struct astruct_173 {
     pub field_0xd7: u8,
 }
 
-//pub typedef struct astruct_17 astruct_17, *Pastruct_17;
+//pub typedef struct AStruct17 AStruct17, *PAStruct17;
 
-struct astruct_17 {
+pub struct AStruct17 {
     pub field_0x0: i32,
     pub field_0x4: i32,
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_316 astruct_316, *Pastruct_316;
+//pub typedef struct AStruct316 AStruct316, *PAStruct316;
 
-struct astruct_316 {
+pub struct AStruct316 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -142443,9 +142443,9 @@ struct astruct_316 {
     pub field_0x18: u16,
 }
 
-//pub typedef struct astruct_335 astruct_335, *Pastruct_335;
+//pub typedef struct AStruct335 AStruct335, *PAStruct335;
 
-struct astruct_335 {
+pub struct AStruct335 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142491,9 +142491,9 @@ struct astruct_335 {
     pub field_0x2c: i32,
 }
 
-//pub typedef struct astruct_352 astruct_352, *Pastruct_352;
+//pub typedef struct AStruct352 AStruct352, *PAStruct352;
 
-struct astruct_352 {
+pub struct AStruct352 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -142726,9 +142726,9 @@ struct astruct_352 {
     pub field_0xea: u16,
 }
 
-//pub typedef struct astruct_449 astruct_449, *Pastruct_449;
+//pub typedef struct AStruct449 AStruct449, *PAStruct449;
 
-struct astruct_449 {
+pub struct AStruct449 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142750,9 +142750,9 @@ struct astruct_449 {
     pub field_0x14: i32,
 }
 
-//pub typedef struct astruct_471 astruct_471, *Pastruct_471;
+//pub typedef struct AStruct471 AStruct471, *PAStruct471;
 
-struct astruct_471 {
+pub struct AStruct471 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142782,13 +142782,13 @@ struct astruct_471 {
     pub field_0x1d: u8,
 }
 
-//pub typedef struct astruct_987 astruct_987, *Pastruct_987;
+//pub typedef struct AStruct987 AStruct987, *PAStruct987;
 
-struct astruct_987 {}
+pub struct AStruct987 {}
 
-//pub typedef struct astruct_981 astruct_981, *Pastruct_981;
+//pub typedef struct AStruct981 AStruct981, *PAStruct981;
 
-struct astruct_981 {
+pub struct AStruct981 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -142826,9 +142826,9 @@ struct astruct_981 {
     pub field_0x26: u16,
 }
 
-//pub typedef struct astruct_980 astruct_980, *Pastruct_980;
+//pub typedef struct AStruct980 AStruct980, *PAStruct980;
 
-struct astruct_980 {
+pub struct AStruct980 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -142983,9 +142983,9 @@ struct astruct_980 {
     pub field_0x98: u16,
 }
 
-//pub typedef struct astruct_155 astruct_155, *Pastruct_155;
+//pub typedef struct AStruct155 AStruct155, *PAStruct155;
 
-struct astruct_155 {
+pub struct AStruct155 {
     pub field_0x0: i32,
     pub field_0x2: i32,
     pub field_0x4: i32,
@@ -143226,20 +143226,20 @@ struct astruct_155 {
     pub field_0xf2: u16,
 }
 
-//pub typedef struct astruct_989 astruct_989, *Pastruct_989;
+//pub typedef struct AStruct989 AStruct989, *PAStruct989;
 
-struct astruct_989 {}
+pub struct AStruct989 {}
 
-//pub typedef struct astruct_988 astruct_988, *Pastruct_988;
+//pub typedef struct AStruct988 AStruct988, *PAStruct988;
 
-struct astruct_988 {
+pub struct AStruct988 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_418 astruct_418, *Pastruct_418;
+//pub typedef struct AStruct418 AStruct418, *PAStruct418;
 
-struct astruct_418 {
+pub struct AStruct418 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143348,9 +143348,9 @@ struct astruct_418 {
     pub field_0x6a: i32,
 }
 
-//pub typedef struct astruct_976 astruct_976, *Pastruct_976;
+//pub typedef struct AStruct976 AStruct976, *PAStruct976;
 
-struct astruct_976 {
+pub struct AStruct976 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143385,9 +143385,9 @@ struct astruct_976 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_975 astruct_975, *Pastruct_975;
+//pub typedef struct AStruct975 AStruct975, *PAStruct975;
 
-struct astruct_975 {
+pub struct AStruct975 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143422,23 +143422,23 @@ struct astruct_975 {
     pub field_0x20: u16,
 }
 
-//pub typedef struct astruct_992 astruct_992, *Pastruct_992;
+//pub typedef struct AStruct992 AStruct992, *PAStruct992;
 
-struct astruct_992 {
+pub struct AStruct992 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_994 astruct_994, *Pastruct_994;
+//pub typedef struct AStruct994 AStruct994, *PAStruct994;
 
-struct astruct_994 {
+pub struct AStruct994 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-//pub typedef struct astruct_993 astruct_993, *Pastruct_993;
+//pub typedef struct AStruct993 AStruct993, *PAStruct993;
 
-struct astruct_993 {
+pub struct AStruct993 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143476,9 +143476,9 @@ struct astruct_993 {
     pub field_0x26: u16,
 }
 
-//pub typedef struct astruct_317 astruct_317, *Pastruct_317;
+//pub typedef struct AStruct317 AStruct317, *PAStruct317;
 
-struct astruct_317 {
+pub struct AStruct317 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143492,9 +143492,9 @@ struct astruct_317 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_191 astruct_191, *Pastruct_191;
+//pub typedef struct AStruct191 AStruct191, *PAStruct191;
 
-struct astruct_191 {
+pub struct AStruct191 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143508,9 +143508,9 @@ struct astruct_191 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_945 astruct_945, *Pastruct_945;
+//pub typedef struct AStruct945 AStruct945, *PAStruct945;
 
-struct astruct_945 {
+pub struct AStruct945 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143526,9 +143526,9 @@ struct astruct_945 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_944 astruct_944, *Pastruct_944;
+//pub typedef struct AStruct944 AStruct944, *PAStruct944;
 
-struct astruct_944 {
+pub struct AStruct944 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143543,9 +143543,9 @@ struct astruct_944 {
     pub field_0xe: u16,
 }
 
-//pub typedef struct astruct_45 astruct_45, *Pastruct_45;
+//pub typedef struct AStruct45 AStruct45, *PAStruct45;
 
-struct astruct_45 {
+pub struct AStruct45 {
     pub u16_0x0: u16,
     pub u16_0x2: u16,
     pub field_0x4: u8,
@@ -143571,9 +143571,9 @@ struct astruct_45 {
     pub mode: i16,
 }
 
-//pub typedef struct astruct_932 astruct_932, *Pastruct_932;
+//pub typedef struct AStruct932 AStruct932, *PAStruct932;
 
-struct astruct_932 {
+pub struct AStruct932 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143622,9 +143622,9 @@ struct astruct_932 {
     pub field_0x49: u8,
 }
 
-//pub typedef struct astruct_931 astruct_931, *Pastruct_931;
+//pub typedef struct AStruct931 AStruct931, *PAStruct931;
 
-struct astruct_931 {
+pub struct AStruct931 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143672,9 +143672,9 @@ struct astruct_931 {
     pub field_0x30: u16,
 }
 
-//pub typedef struct astruct_395 astruct_395, *Pastruct_395;
+//pub typedef struct AStruct395 AStruct395, *PAStruct395;
 
-struct astruct_395 {
+pub struct AStruct395 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143688,9 +143688,9 @@ struct astruct_395 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_484 astruct_484, *Pastruct_484;
+//pub typedef struct AStruct484 AStruct484, *PAStruct484;
 
-struct astruct_484 {
+pub struct AStruct484 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143708,9 +143708,9 @@ struct astruct_484 {
     pub field_0xe: *mut u8,
 }
 
-//pub typedef struct astruct_963 astruct_963, *Pastruct_963;
+//pub typedef struct AStruct963 AStruct963, *PAStruct963;
 
-struct astruct_963 {
+pub struct AStruct963 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143728,9 +143728,9 @@ struct astruct_963 {
     pub field_0x12: u32,
 }
 
-//pub typedef struct astruct_956 astruct_956, *Pastruct_956;
+//pub typedef struct AStruct956 AStruct956, *PAStruct956;
 
-struct astruct_956 {
+pub struct AStruct956 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143750,13 +143750,13 @@ struct astruct_956 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_142 astruct_142, *Pastruct_142;
+//pub typedef struct AStruct142 AStruct142, *PAStruct142;
 
-//pub typedef struct astruct_143 astruct_143, *Pastruct_143;
+//pub typedef struct AStruct143 AStruct143, *PAStruct143;
 
-struct astruct_143 {}
+pub struct AStruct143 {}
 
-struct astruct_142 {
+pub struct AStruct142 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     field_0x2: *mut i32,
@@ -143783,7 +143783,7 @@ struct astruct_142 {
     pub field_0x1a: i32,
     pub field_0x1c: u8,
     pub field_0x1d: u8,
-    pub field_0x1e: *mut astruct_143,
+    pub field_0x1e: *mut AStruct143,
     pub field_0x20: i32,
     pub field_0x22: u8,
     pub field_0x23: u8,
@@ -143793,18 +143793,18 @@ struct astruct_142 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_950 astruct_950, *Pastruct_950;
+//pub typedef struct AStruct950 AStruct950, *PAStruct950;
 
-struct astruct_950 {
+pub struct AStruct950 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_958 astruct_958, *Pastruct_958;
+//pub typedef struct AStruct958 AStruct958, *PAStruct958;
 
-struct astruct_958 {
+pub struct AStruct958 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143842,13 +143842,13 @@ struct astruct_958 {
     pub field_0x24: u16,
 }
 
-//pub typedef struct astruct_957 astruct_957, *Pastruct_957;
+//pub typedef struct AStruct957 AStruct957, *PAStruct957;
 
-struct astruct_957 {}
+pub struct AStruct957 {}
 
-//pub typedef struct astruct_498 astruct_498, *Pastruct_498;
+//pub typedef struct AStruct498 AStruct498, *PAStruct498;
 
-struct astruct_498 {
+pub struct AStruct498 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143872,9 +143872,9 @@ struct astruct_498 {
     pub field_0x15: u8,
 }
 
-//pub typedef struct astruct_32 astruct_32, *Pastruct_32;
+//pub typedef struct AStruct32 AStruct32, *PAStruct32;
 
-struct astruct_32 {
+pub struct AStruct32 {
     pub field_0x0: HANDLE16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -143887,9 +143887,9 @@ struct astruct_32 {
     pub field_0xe: HWND16,
 }
 
-//pub typedef struct astruct_378 astruct_378, *Pastruct_378;
+//pub typedef struct AStruct378 AStruct378, *PAStruct378;
 
-struct astruct_378 {
+pub struct AStruct378 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143917,9 +143917,9 @@ struct astruct_378 {
     pub field_0x2b: u8,
 }
 
-//pub typedef struct astruct_321 astruct_321, *Pastruct_321;
+//pub typedef struct AStruct321 AStruct321, *PAStruct321;
 
-struct astruct_321 {
+pub struct AStruct321 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143928,9 +143928,9 @@ struct astruct_321 {
     pub field_0x6: u32,
 }
 
-//pub typedef struct astruct_34 astruct_34, *Pastruct_34;
+//pub typedef struct AStruct34 AStruct34, *PAStruct34;
 
-struct astruct_34 {
+pub struct AStruct34 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -143947,9 +143947,9 @@ struct astruct_34 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_454 astruct_454, *Pastruct_454;
+//pub typedef struct AStruct454 AStruct454, *PAStruct454;
 
-struct astruct_454 {
+pub struct AStruct454 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -143959,9 +143959,9 @@ struct astruct_454 {
     pub field_0xa: u16,
 }
 
-//pub typedef struct astruct_21 astruct_21, *Pastruct_21;
+//pub typedef struct AStruct21 AStruct21, *PAStruct21;
 
-struct astruct_21 {
+pub struct AStruct21 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144106,9 +144106,9 @@ struct astruct_21 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_2 astruct_2, *Pastruct_2;
+//pub typedef struct AStruct2 AStruct2, *PAStruct2;
 
-struct astruct_2 {
+pub struct AStruct2 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144143,18 +144143,18 @@ struct astruct_2 {
     pub field_0x21: u8,
 }
 
-//pub typedef struct astruct_169 astruct_169, *Pastruct_169;
+//pub typedef struct AStruct169 AStruct169, *PAStruct169;
 
-struct astruct_169 {
+pub struct AStruct169 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
 
-//pub typedef struct astruct_441 astruct_441, *Pastruct_441;
+//pub typedef struct AStruct441 AStruct441, *PAStruct441;
 
-struct astruct_441 {
+pub struct AStruct441 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144166,9 +144166,9 @@ struct astruct_441 {
     pub field_0x8: u32,
 }
 
-//pub typedef struct astruct_187 astruct_187, *Pastruct_187;
+//pub typedef struct AStruct187 AStruct187, *PAStruct187;
 
-struct astruct_187 {
+pub struct AStruct187 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144183,9 +144183,9 @@ struct astruct_187 {
     pub field_0x12: u16,
 }
 
-//pub typedef struct astruct_188 astruct_188, *Pastruct_188;
+//pub typedef struct AStruct188 AStruct188, *PAStruct188;
 
-struct astruct_188 {
+pub struct AStruct188 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -144203,9 +144203,9 @@ struct astruct_188 {
     pub field_0x22: u16,
 }
 
-//pub typedef struct astruct_410 astruct_410, *Pastruct_410;
+//pub typedef struct AStruct410 AStruct410, *PAStruct410;
 
-struct astruct_410 {
+pub struct AStruct410 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144213,9 +144213,9 @@ struct astruct_410 {
     pub field_0x4: u32,
 }
 
-//pub typedef struct astruct_16 astruct_16, *Pastruct_16;
+//pub typedef struct AStruct16 AStruct16, *PAStruct16;
 
-struct astruct_16 {
+pub struct AStruct16 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144458,9 +144458,9 @@ struct astruct_16 {
     pub field_0xf4: u32,
 }
 
-//pub typedef struct astruct_175 astruct_175, *Pastruct_175;
+//pub typedef struct AStruct175 AStruct175, *PAStruct175;
 
-struct astruct_175 {
+pub struct AStruct175 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144679,9 +144679,9 @@ struct astruct_175 {
     pub field_0xd7: u8,
 }
 
-//pub typedef struct astruct_138 astruct_138, *Pastruct_138;
+//pub typedef struct AStruct138 AStruct138, *PAStruct138;
 
-struct astruct_138 {
+pub struct AStruct138 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144719,18 +144719,18 @@ struct astruct_138 {
     pub field_0x24: i32,
 }
 
-//pub typedef struct astruct_145 astruct_145, *Pastruct_145;
+//pub typedef struct AStruct145 AStruct145, *PAStruct145;
 
-struct astruct_145 {
+pub struct AStruct145 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
     pub field_0x4: i32,
 }
 
-//pub typedef struct astruct_144 astruct_144, *Pastruct_144;
+//pub typedef struct AStruct144 AStruct144, *PAStruct144;
 
-struct astruct_144 {
+pub struct AStruct144 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -144770,9 +144770,9 @@ struct astruct_144 {
     pub field_0x28: i32,
 }
 
-//pub typedef struct astruct_46 astruct_46, *Pastruct_46;
+//pub typedef struct AStruct46 AStruct46, *PAStruct46;
 
-struct astruct_46 {
+pub struct AStruct46 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -144885,9 +144885,9 @@ struct astruct_46 {
     pub field_0x72: i32,
 }
 
-//pub typedef struct astruct_47 astruct_47, *Pastruct_47;
+//pub typedef struct AStruct47 AStruct47, *PAStruct47;
 
-struct astruct_47 {
+pub struct AStruct47 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -145134,9 +145134,9 @@ struct astruct_47 {
     pub field_0xf8: u32,
 }
 
-//pub typedef struct astruct_130 astruct_130, *Pastruct_130;
+//pub typedef struct AStruct130 AStruct130, *PAStruct130;
 
-struct astruct_130 {
+pub struct AStruct130 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145145,9 +145145,9 @@ struct astruct_130 {
     pub field_0x6: i32,
 }
 
-//pub typedef struct astruct_139 astruct_139, *Pastruct_139;
+//pub typedef struct AStruct139 AStruct139, *PAStruct139;
 
-struct astruct_139 {
+pub struct AStruct139 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145184,9 +145184,9 @@ struct astruct_139 {
     pub field_0x22: i32,
 }
 
-//pub typedef struct astruct_334 astruct_334, *Pastruct_334;
+//pub typedef struct AStruct334 AStruct334, *PAStruct334;
 
-struct astruct_334 {
+pub struct AStruct334 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145258,9 +145258,9 @@ struct astruct_334 {
     pub field_0x48: i32,
 }
 
-//pub typedef struct astruct_423 astruct_423, *Pastruct_423;
+//pub typedef struct AStruct423 AStruct423, *PAStruct423;
 
-struct astruct_423 {
+pub struct AStruct423 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145766,9 +145766,9 @@ struct astruct_423 {
     pub field_0x1f6: u32,
 }
 
-//pub typedef struct astruct_33 astruct_33, *Pastruct_33;
+//pub typedef struct AStruct33 AStruct33, *PAStruct33;
 
-struct astruct_33 {
+pub struct AStruct33 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145784,9 +145784,9 @@ struct astruct_33 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_29 astruct_29, *Pastruct_29;
+//pub typedef struct AStruct29 AStruct29, *PAStruct29;
 
-struct astruct_29 {
+pub struct AStruct29 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145903,9 +145903,9 @@ struct astruct_29 {
     pub field_0x74: i32,
 }
 
-//pub typedef struct astruct_162 astruct_162, *Pastruct_162;
+//pub typedef struct AStruct162 AStruct162, *PAStruct162;
 
-struct astruct_162 {
+pub struct AStruct162 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -145915,17 +145915,17 @@ struct astruct_162 {
     field_0x6: *mut i32,
 }
 
-//pub typedef struct astruct_161 astruct_161, *Pastruct_161;
+//pub typedef struct AStruct161 AStruct161, *PAStruct161;
 
-struct astruct_161 {
+pub struct AStruct161 {
     pub field_0x0: i32,
     pub field_0x2: u16,
     pub field_0x4: i32,
 }
 
-//pub typedef struct astruct_20 astruct_20, *Pastruct_20;
+//pub typedef struct AStruct20 AStruct20, *PAStruct20;
 
-struct astruct_20 {
+pub struct AStruct20 {
     pub handle_0: HANDLE16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -146066,9 +146066,9 @@ struct astruct_20 {
     pub field_0x8e: u32,
 }
 
-//pub typedef struct astruct_27 astruct_27, *Pastruct_27;
+//pub typedef struct AStruct27 AStruct27, *PAStruct27;
 
-struct astruct_27 {
+pub struct AStruct27 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -146176,9 +146176,9 @@ struct astruct_27 {
     pub menu_name: String,
 }
 
-//pub typedef struct astruct_28 astruct_28, *Pastruct_28;
+//pub typedef struct AStruct28 AStruct28, *PAStruct28;
 
-struct astruct_28 {
+pub struct AStruct28 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i16,
@@ -146186,9 +146186,9 @@ struct astruct_28 {
     pub field_0x6: i16,
 }
 
-//pub typedef struct astruct_156 astruct_156, *Pastruct_156;
+//pub typedef struct AStruct156 AStruct156, *PAStruct156;
 
-struct astruct_156 {
+pub struct AStruct156 {
     pub field_0x0: i32,
     pub field_0x2: i32,
     pub field_0x4: i32,
@@ -146427,9 +146427,9 @@ struct astruct_156 {
     pub field_0xf0: u8,
 }
 
-//pub typedef struct astruct_158 astruct_158, *Pastruct_158;
+//pub typedef struct AStruct158 AStruct158, *PAStruct158;
 
-struct astruct_158 {
+pub struct AStruct158 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -146449,9 +146449,9 @@ struct astruct_158 {
     pub field_0x11: u8,
 }
 
-//pub typedef struct astruct_157 astruct_157, *Pastruct_157;
+//pub typedef struct AStruct157 AStruct157, *PAStruct157;
 
-struct astruct_157 {
+pub struct AStruct157 {
     pub field_0x0: i32,
     pub field_0x2: i32,
     pub field_0x4: i32,
@@ -146690,9 +146690,9 @@ struct astruct_157 {
     pub field_0xf0: u8,
 }
 
-//pub typedef struct astruct_15 astruct_15, *Pastruct_15;
+//pub typedef struct AStruct15 AStruct15, *PAStruct15;
 
-struct astruct_15 {
+pub struct AStruct15 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -146718,9 +146718,9 @@ struct astruct_15 {
     pub field_0x1c: u32,
 }
 
-//pub typedef struct astruct_490 astruct_490, *Pastruct_490;
+//pub typedef struct AStruct490 AStruct490, *PAStruct490;
 
-struct astruct_490 {
+pub struct AStruct490 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -146742,9 +146742,9 @@ struct astruct_490 {
     pub field_0x12: i32,
 }
 
-//pub typedef struct astruct_468 astruct_468, *Pastruct_468;
+//pub typedef struct AStruct468 AStruct468, *PAStruct468;
 
-struct astruct_468 {
+pub struct AStruct468 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -146764,9 +146764,9 @@ struct astruct_468 {
     pub c: u16,
 }
 
-//pub typedef struct astruct_437 astruct_437, *Pastruct_437;
+//pub typedef struct AStruct437 AStruct437, *PAStruct437;
 
-struct astruct_437 {
+pub struct AStruct437 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -147058,9 +147058,9 @@ struct astruct_437 {
     pub field_0x148: u16,
 }
 
-//pub typedef struct astruct_370 astruct_370, *Pastruct_370;
+//pub typedef struct AStruct370 AStruct370, *PAStruct370;
 
-struct astruct_370 {
+pub struct AStruct370 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147113,35 +147113,35 @@ struct astruct_370 {
     pub field_0x32: u32,
 }
 
-//pub typedef struct astruct_486 astruct_486, *Pastruct_486;
+//pub typedef struct AStruct486 AStruct486, *PAStruct486;
 
-struct astruct_486 {
+pub struct AStruct486 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
     pub field_0x4: u16,
 }
 
-//pub typedef struct astruct_487 astruct_487, *Pastruct_487;
+//pub typedef struct AStruct487 AStruct487, *PAStruct487;
 
-struct astruct_487 {
+pub struct AStruct487 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
 
-//pub typedef struct astruct_472 astruct_472, *Pastruct_472;
+//pub typedef struct AStruct472 AStruct472, *PAStruct472;
 
-struct astruct_472 {
+pub struct AStruct472 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
 
-//pub typedef struct astruct_474 astruct_474, *Pastruct_474;
+//pub typedef struct AStruct474 AStruct474, *PAStruct474;
 
-struct astruct_474 {
+pub struct AStruct474 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147165,9 +147165,9 @@ struct astruct_474 {
     pub field_0x15: u8,
 }
 
-//pub typedef struct astruct_411 astruct_411, *Pastruct_411;
+//pub typedef struct AStruct411 AStruct411, *PAStruct411;
 
-struct astruct_411 {
+pub struct AStruct411 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147201,9 +147201,9 @@ struct astruct_411 {
     pub field_0x20: i32,
 }
 
-//pub typedef struct astruct_442 astruct_442, *Pastruct_442;
+//pub typedef struct AStruct442 AStruct442, *PAStruct442;
 
-struct astruct_442 {
+pub struct AStruct442 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147220,9 +147220,9 @@ struct astruct_442 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_430 astruct_430, *Pastruct_430;
+//pub typedef struct AStruct430 AStruct430, *PAStruct430;
 
-struct astruct_430 {
+pub struct AStruct430 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147332,9 +147332,9 @@ struct astruct_430 {
     pub field_0x6a: u16,
 }
 
-//pub typedef struct astruct_438 astruct_438, *Pastruct_438;
+//pub typedef struct AStruct438 AStruct438, *PAStruct438;
 
-struct astruct_438 {
+pub struct AStruct438 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -147362,9 +147362,9 @@ struct astruct_438 {
     pub field_0x25: u8,
 }
 
-//pub typedef struct astruct_406 astruct_406, *Pastruct_406;
+//pub typedef struct AStruct406 AStruct406, *PAStruct406;
 
-struct astruct_406 {
+pub struct AStruct406 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -147381,9 +147381,9 @@ struct astruct_406 {
     pub field_0x10: *mut u8,
 }
 
-//pub typedef struct astruct_383 astruct_383, *Pastruct_383;
+//pub typedef struct AStruct383 AStruct383, *PAStruct383;
 
-struct astruct_383 {
+pub struct AStruct383 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -147418,9 +147418,9 @@ struct astruct_383 {
     pub field_0x32: u32,
 }
 
-//pub typedef struct astruct_396 astruct_396, *Pastruct_396;
+//pub typedef struct AStruct396 AStruct396, *PAStruct396;
 
-struct astruct_396 {
+pub struct AStruct396 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -147434,9 +147434,9 @@ struct astruct_396 {
     pub field_0xc: i32,
 }
 
-//pub typedef struct astruct_366 astruct_366, *Pastruct_366;
+//pub typedef struct AStruct366 AStruct366, *PAStruct366;
 
-struct astruct_366 {
+pub struct AStruct366 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -147454,9 +147454,9 @@ struct astruct_366 {
     pub field_0x13: u8,
 }
 
-//pub typedef struct astruct_379 astruct_379, *Pastruct_379;
+//pub typedef struct AStruct379 AStruct379, *PAStruct379;
 
-struct astruct_379 {
+pub struct AStruct379 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -147495,12 +147495,12 @@ struct astruct_379 {
     pub field_0x25: u8,
     pub field_0x26: u8,
     pub field_0x27: u8,
-    pub field_0x28: *mut astruct_44,
+    pub field_0x28: *mut AStruct44,
 }
 
-//pub typedef struct astruct_353 astruct_353, *Pastruct_353;
+//pub typedef struct AStruct353 AStruct353, *PAStruct353;
 
-struct astruct_353 {
+pub struct AStruct353 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
@@ -147514,9 +147514,9 @@ struct astruct_353 {
     pub field_0xc: u32,
 }
 
-//pub typedef struct astruct_499 astruct_499, *Pastruct_499;
+//pub typedef struct AStruct499 AStruct499, *PAStruct499;
 
-struct astruct_499 {
+pub struct AStruct499 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub a: u16,
@@ -147782,9 +147782,9 @@ struct astruct_499 {
     pub field_0x10b: u8,
 }
 
-//pub typedef struct astruct_5 astruct_5, *Pastruct_5;
+//pub typedef struct AStruct5 AStruct5, *PAStruct5;
 
-struct astruct_5 {
+pub struct AStruct5 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148030,9 +148030,9 @@ struct astruct_5 {
     pub field_0xf6: u32,
 }
 
-//pub typedef struct astruct_348 astruct_348, *Pastruct_348;
+//pub typedef struct AStruct348 AStruct348, *PAStruct348;
 
-struct astruct_348 {
+pub struct AStruct348 {
     pub field_0x0: u16,
     pub field_0x2: u16,
     pub field_0x4: u8,
@@ -148040,9 +148040,9 @@ struct astruct_348 {
     pub field_0x6: u16,
 }
 
-//pub typedef struct astruct_322 astruct_322, *Pastruct_322;
+//pub typedef struct AStruct322 AStruct322, *PAStruct322;
 
-struct astruct_322 {
+pub struct AStruct322 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148056,9 +148056,9 @@ struct astruct_322 {
     pub field_0xa: u32,
 }
 
-//pub typedef struct astruct_491 astruct_491, *Pastruct_491;
+//pub typedef struct AStruct491 AStruct491, *PAStruct491;
 
-struct astruct_491 {
+pub struct AStruct491 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148375,9 +148375,9 @@ struct astruct_491 {
     pub field_0x13c: u8,
 }
 
-//pub typedef struct astruct_349 astruct_349, *Pastruct_349;
+//pub typedef struct AStruct349 AStruct349, *PAStruct349;
 
-struct astruct_349 {
+pub struct AStruct349 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
@@ -148523,9 +148523,9 @@ struct astruct_349 {
     pub field_0x92: i32,
 }
 
-//pub typedef struct astruct_305 astruct_305, *Pastruct_305;
+//pub typedef struct AStruct305 AStruct305, *PAStruct305;
 
-struct astruct_305 {
+pub struct AStruct305 {
     pub field_0x0: i32,
     pub field_0x4: u32,
     pub field_0x8: u32,
@@ -148534,9 +148534,9 @@ struct astruct_305 {
     pub field_0x10: u16,
 }
 
-//pub typedef struct astruct_4 astruct_4, *Pastruct_4;
+//pub typedef struct AStruct4 AStruct4, *PAStruct4;
 
-struct astruct_4 {
+pub struct AStruct4 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148782,13 +148782,13 @@ struct astruct_4 {
     pub field_0xf6: u32,
 }
 
-//pub typedef struct astruct_367 astruct_367, *Pastruct_367;
+//pub typedef struct AStruct367 AStruct367, *PAStruct367;
 
-struct astruct_367 {}
+pub struct AStruct367 {}
 
-//pub typedef struct astruct_371 astruct_371, *Pastruct_371;
+//pub typedef struct AStruct371 AStruct371, *PAStruct371;
 
-struct astruct_371 {
+pub struct AStruct371 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148889,7 +148889,7 @@ struct astruct_371 {
     pub field_0x68: i32,
 }
 
-struct astruct_323 {
+pub struct AStruct323 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -148897,3 +148897,5 @@ struct astruct_323 {
     pub field_0x4: i32,
     pub field_0x6: u32,
 }
+
+pub type code = libc::c_void;

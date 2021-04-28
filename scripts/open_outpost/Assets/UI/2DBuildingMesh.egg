@@ -1,0 +1,52 @@
+<CoordinateSystem> { Y-up }
+
+<Comment> { "Egg laid by Chicken for Blender, version R52" }
+<Texture> AgroDome0.png {
+  "/home/croxis/src/Outpost/Assets/Structures/AgroDome0/Texture/AgroDome0.png"
+  <Scalar> envtype { modulate }
+  <Scalar> minfilter { LINEAR }
+  <Scalar> magfilter { LINEAR }
+}
+<Group> Plane {
+  <VertexPool> Plane {
+    <Vertex> 0 {
+      1.0 1.0 0.0
+       <UV>  {
+        1.000000 1.000000
+        <Tangent> { 1.000000 -0.000000 -0.000000 }
+        <Binormal> { -0.000000 -0.000000 -1.000000 }
+      }
+    }
+    <Vertex> 1 {
+      -1.0 1.0 0.0
+      <UV>  {
+        0.000000 1.000000
+        <Tangent> { 1.000000 0.000000 0.000000 }
+        <Binormal> { 0.000000 -0.000000 -1.000000 }
+      }
+      
+    }
+    <Vertex> 2 {
+      -1.0 -1.0 0.0
+      <UV>  {
+        0.000000 0.000000
+        <Tangent> { 1.000000 -0.000000 -0.000000 }
+        <Binormal> { -0.000000 -0.000000 -1.000000 }
+      }
+     
+    }
+    <Vertex> 3 {
+      1.0 -1.0 0.0
+       <UV>  {
+        1.000000 0.000000
+        <Tangent> { 1.000000 -0.000000 -0.000000 }
+        <Binormal> { -0.000000 -0.000000 -1.000000 }
+      }
+     
+    }
+  }
+  <Polygon> {
+    <Normal> { 0.000000 -0.000000 1.000000 }
+    <VertexRef> { 0 1 2 3 <Ref> { Plane } }
+  }
+}
