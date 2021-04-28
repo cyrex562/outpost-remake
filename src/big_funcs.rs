@@ -1,4 +1,19 @@
-pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut AStruct345, in_u32_b: u32) {
+use crate::{
+    defines::{
+        pass1_struct_1, AStruct199, AStruct306, AStruct345, AStruct65, AStruct657, AppContext,
+    },
+    other_funcs::big_fn_1010_b038,
+    pass7_funcs::pass1_1040_a626,
+    pass_funcs::{pass1_1008_57a4, pass1_1008_5b12},
+    struct_funcs::process_struct_1010_20ba,
+    util::CONCAT22,
+};
+
+pub unsafe fn call_big_fn_1040_b17c(
+    ctx: &mut AppContext,
+    in_pustruct_a: &mut AStruct345,
+    in_u32_b: u32,
+) {
     let mut u32_a: u32;
     let pu16_b: *mut u16;
     let mut u16_c: u16;
@@ -11,31 +26,34 @@ pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut AStruct345, in_u32_b: u32) {
     let mut u16_k: u16;
     let mut u16_m: u16;
     let mut u16_n: u16;
+    let pu_var2: *mut u16;
+    let u_var1: u16;
+    let u_var3: u16;
 
     u16_n = 0;
     loop {
         // uVar4 = (param_1 >> 0x10);
         let pustruct_p = in_pustruct_a;
-        puVar2 = pustruct_p.field_0x90;
-        if (*puVar2 == u16_n || *puVar2 < u16_n) {
+        pu_var2 = pustruct_p.field_0x90;
+        if (*pu_var2 == u16_n || *pu_var2 < u16_n) {
             break;
         }
-        uVar1 = (puVar2 + 2);
-        (u16_n * 10 + uVar1 + 4) = (u16_n * 2 + in_u32_b);
+        u_var1 = pu_var2.offset(2);
+        (u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
         u16_n = u16_n + 1;
     }
-    pustruct_h = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(u16_f, 3));
-    puVar2 = pstruct_e.field_0x90;
-    u32_j = (puVar2 + 2);
+    pustruct_h = process_struct_1010_20ba(ctx._g_AStruct372_1050_0ed0, CONCAT22(u16_f, 3));
+    pu_var2 = pstruct_e.field_0x90;
+    u32_j = (pu_var2 + 2);
     u16_n = 0;
     while (
-        puVar2 = pstruct_e.field_0x90,
-        *puVar2 != u16_n && u16_n <= *puVar2,
+        pu_var2 = pstruct_e.field_0x90,
+        *pu_var2 != u16_n && u16_n <= *pu_var2,
     ) {
-        puVar2 = pstruct_e.field_0x90;
-        uVar3 = u16_n;
-        big_fn_1010_b038(pustruct_h, (puVar2 + 6));
-        pass1_1040_a626(u32_j, CONCAT22(u16_d, uVar3));
+        pu_var2 = pstruct_e.field_0x90;
+        u_var3 = u16_n;
+        big_fn_1010_b038(pustruct_h, (pu_var2 + 6));
+        pass1_1040_a626(u32_j, CONCAT22(u16_d, u_var3));
         u32_j = u32_j & 0xffff0000 | (u32_j + 10);
         u16_n = u16_n + 1;
     }
@@ -58,7 +76,7 @@ pub fn call_big_fn_1040_b17c(in_pustruct_a: &mut AStruct345, in_u32_b: u32) {
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
+pub unsafe fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
@@ -1663,7 +1681,7 @@ pub fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
 }
 
 pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
-    let uVar1: u8;
+    let u_var1: u8;
     let ppVar2: *mut pass1_struct_1;
     let mut in_stack_0000fff4: u32;
     let mut local_6: u16;
@@ -1673,17 +1691,17 @@ pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
         _g_AStruct372_1050_0ed0,
         CONCAT22((in_stack_0000fff4 >> 0x10), 3),
     );
-    uVar1 = pass1_1028_b58e(param_1_00);
-    big_fn_1010_b038(ppVar2, uVar1);
+    u_var1 = pass1_1028_b58e(param_1_00);
+    big_fn_1010_b038(ppVar2, u_var1);
     pass1_fn_1008_60e8();
     return;
 }
 
 pub fn call_big_fn_1010_1c16(param_1: u32, param_2: u32) {
-    let uVar1: u8;
+    let u_var1: u8;
 
-    uVar1 = pass1_1028_b58e(param_2);
-    big_fn_1010_b038((param_1 + 0x6e), uVar1);
+    u_var1 = pass1_1028_b58e(param_2);
+    big_fn_1010_b038((param_1 + 0x6e), u_var1);
     pass1_fn_1008_60e8();
     return;
 }
@@ -1704,8 +1722,8 @@ pub fn call_big_fn_1010_c7e2(param_1: u32, param_2: u32, param_3: u32) {
         if (param_3 == local_4 || param_3 < local_4) {
             break;
         }
-        uVar1 = (iVar3 + 2);
-        (local_4 * 10 + uVar1 + 4) = (local_4 * 2 + param_2);
+        u_var1 = (iVar3 + 2);
+        (local_4 * 10 + u_var1 + 4) = (local_4 * 2 + param_2);
         local_4 = local_4 + 1;
     }
     local_8 = (iVar3 + 2);

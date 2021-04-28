@@ -2842,7 +2842,7 @@ pub fn win_fn_1010_0242(param_1: u16, param_2: u16, param_3: HWND16) -> u16 {
     return 1;
 }
 
-pub fn win_fn_1010_1656(param_1: *mut AStruct370, param_2: u16, param_3: u16, param_3: u16) {
+pub fn win_fn_1010_1656(param_1: *mut AStruct370, param_2: u16, param_3: u16, param_4: u16) {
     let mut u_var1: u32;
     let mut iVar2: i32;
     let mut iVar3: i32;
@@ -3521,7 +3521,7 @@ pub fn send_win_msg_1008_9640(param_1: u32, param_2: WPARAM16) {
     return;
 }
 
-pub fn send_win_msg_1008_84ba(param_1: u16, param_1: *mut HWND16) {
+pub fn send_win_msg_1008_84ba(param_1: u16, param_2: *mut HWND16) {
     let mut iVar1: i32;
     let mut uVar2: u16;
     let mut local_4: u16;
@@ -3599,7 +3599,7 @@ pub fn process_win_msg_1008_54aa(
     in_AStruct97_1: u16,
     param_2: u16,
     param_3: u16,
-    param_3: u16,
+    param_4: u16,
     in_h_instance: u16,
 ) {
     let ppcVar1: fn();
@@ -4094,7 +4094,7 @@ pub fn post_win_msg_1040_7f56(param_1: u32, param_2: *mut char) {
     return;
 }
 
-pub fn post_win_msg_1040_7b3c(param_1: *mut u32, param_2: u16, param_3: u16, param_2: i32) -> u16 {
+pub fn post_win_msg_1040_7b3c(param_1: *mut u32, param_2: u16, param_3: u16, param_4: i32) -> u16 {
     let ppcVar1: fn();
 
     if ((param_2 == 1) || (param_2 == 2)) {
@@ -4118,7 +4118,7 @@ pub fn post_win_msg_1040_7b3c(param_1: *mut u32, param_2: u16, param_3: u16, par
     return 1;
 }
 
-pub fn post_win_msg_1040_672e(param_1: i32, param_2: u16, param_3: u16, param_3: u32) {
+pub fn post_win_msg_1040_672e(param_1: i32, param_2: u16, param_3: u16, param_4: u32) {
     let mut uVar1: u16;
 
     if (param_3._2_2_ == (s_vrpal_bmp_1050_183a + 7)) {
@@ -5124,7 +5124,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: *mut u16) {
     return;
 }
 
-pub fn destroy_win_1038_cc00(param_1: i32, param_2: u16, param_3: u16, param_3: u32) {
+pub fn destroy_win_1038_cc00(param_1: i32, param_2: u16, param_3: u16, param_4: u32) {
     let mut iVar1: i32;
     let mut uVar2: u16;
 
@@ -5163,7 +5163,7 @@ pub fn destroy_win_1038_cc00(param_1: i32, param_2: u16, param_3: u16, param_3: 
     return;
 }
 
-pub fn destroy_win_1038_c836(param_1: i32, param_2: u16, param_3: u16, param_2: u32) {
+pub fn destroy_win_1038_c836(param_1: i32, param_2: u16, param_3: u16, param_4: u32) {
     let mut u_var1: u32;
     let mut unaff_SS: u16;
     let mut local_6: [u8; 4];

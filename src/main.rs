@@ -28,6 +28,7 @@ mod sys_funcs;
 mod ui_funcs;
 mod util;
 
+use defines::code;
 use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
 use mem_funcs::alloc_mem_1000_167a;
 use other_funcs::{big_fn_1010_b038, empty_fn_1000_55ac};
@@ -40,129 +41,9 @@ use struct_funcs::{process_struct_1000_179c, process_struct_1010_20ba, process_s
 use sys_funcs::{dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
 use util::CONCAT22;
 
-// WARNING: Removing unreachable block (ram,0x1000234c)
-// int * entry(LPSTR param_1,u16 param_2,u16 param_3,u16 param_4,u16 param_5)
-
-// {
-//   int *piVar1;
-//   code *pcVar2;
-//   undefined uVar5;
-//   undefined2 uVar3;
-//   func_ptr_1: u16;
-//   string_1: u16;
-//   offset_1: u16;
-//   int *piVar4;
-//   int iVar6;
-//   undefined *unaff_SI;
-//   char *local_SI_1517;
-//   undefined *unaff_DI;
-//   string_2: u16;
-//   undefined *unaff_ES;
-//   let bVar7: bool;
-//   ulet win_version: u32;
-//   ulet u32_ptr_12: u32;
-//   ulet uVar8: u32;
-//   int in_stack_00000014;
-//   ulet fn_ptr_3: u32;
-//   ulet string_3: u32;
-
-//   u32_ptr_12 = CONCAT22(param_5,g_u16_ptr_1050_5f84);
-//   do {
-//     InitTask16(0x0);
-//     g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//     if ((param_2 != 0) &&
-//        (bVar7 = param_4 < (undefined *)0xff00, param_4 = param_4 + 0x100,
-//        PTR_LOOP_1050_5f7e = unaff_ES, bVar7)) {
-//       PTR_LOOP_1050_5f48 = (undefined *)param_4;
-//       PTR_LOOP_1050_5f4a = unaff_SI;
-//       g_h_instance = unaff_DI;
-//       PTR_LOOP_1050_5f4e = (undefined *)param_3;
-//       PTR_LOOP_1050_5f50 = unaff_ES;
-//       LockSegment16(0xffff);
-//       PTR_LOOP_1050_5f52 = (undefined *)(u32_ptr_12 >> 0x10);
-//       g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//       win_version = GetVersion16();
-//       PTR_LOOP_1050_5f52 = (undefined *)(u32_ptr_12 >> 0x10);
-//       g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//       win_version._2_2_ = (undefined2)(win_version >> 0x10);
-//       uVar5 = (undefined)(win_version >> 8);
-//       PTR_LOOP_1050_5f80 = (undefined *)CONCAT11((char)win_version,uVar5);
-//       uVar3 = CONCAT11(0x30,uVar5);
-//       if ((u16_1000_22f6 & 1) == 0) {
-//         pcVar2 = (code *)swi(0x21);
-//         uVar8 = u32_ptr_12;
-//         u32_ptr_12 = (*pcVar2)();
-//         PTR_LOOP_1050_5f52 = (undefined *)(uVar8 >> 0x10);
-//         g_u16_ptr_1050_5f84 = (u16 *)uVar8;
-//       }
-//       else {
-//         DOS3Call(param_1._2_2_);
-//         PTR_LOOP_1050_5f52 = (undefined *)(u32_ptr_12 >> 0x10);
-//         g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//         u32_ptr_12 = CONCAT22(win_version._2_2_,uVar3);
-//       }
-//       _u8_1050_5f82 = CONCAT11((char)u32_ptr_12,(char)(u32_ptr_12 >> 8));
-//       if ((u16_1000_22f6 & 1) == 0) {
-//         u8_1050_5f87 = '\0';
-//       }
-//       WaitEvent16(0);
-//       g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//       param_1 = 0x237c2373;
-//       param_2 = InitApp16((HINSTANCE16)g_h_instance);
-//       g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//       if (param_2 != 0) break;
-//     }
-//     param_2 = call_fn_ptr_1000_24db(CONCAT11((char)(param_2 >> 8),0xff));
-//     g_u16_ptr_1050_5f84 = (u16 *)u32_ptr_12;
-//   } while( true );
-//   dos3_call_1000_23ea(param_2,(u16 *)param_3);
-//   get_module_file_name_1000_262c((undefined *)offset,(int)offset);
-//   get_dos_env_1000_27d6();
-//   empty_fn_1000_55ac();
-//   func_ptr_1 = func_0x100023be();
-//   call_fn_ptr_1000_24cd(func_ptr_1);
-//   pass1_fn_1000_25a8();
-//   pass1_fn_1000_2913((char *)(s_version_%d_%d_1050_0012 + 3));
-//   string_1 = process_string_1000_28dc((char *)(s_version_%d_%d_1050_0012 + 3));
-//   if (string_1 != 0) {
-//     offset_1 = 9;
-//     if (*(char *)string_1 == 'M') {
-//       offset_1 = 0xf;
-//     }
-//     string_1 = string_1 + offset_1;
-//     iVar6 = 0x22;
-//     string_2 = string_1;
-//     do {
-//       if (iVar6 == 0) break;
-//       iVar6 = iVar6 + -1;
-//       string_3 = (ulong)string_2;
-//       string_2 = string_2 + 1;
-//     } while (*(char *)string_3 != '\r');
-//     *(undefined *)(string_2 - 1) = 0;
-//   }
-//   FatalAppExit16(CONCAT22(0x1050,string_1),0);
-//   FatalExit(0xff);
-//   local_SI_1517 = (char *)(s_<<NMSG>>_1050_63f6 + 8);
-//   do {
-//     piVar1 = (int *)local_SI_1517;
-//     local_SI_1517 = (char *)((int)local_SI_1517 + 2);
-//     iVar6 = *piVar1;
-//     piVar4 = (int *)local_SI_1517;
-//     if ((iVar6 == in_stack_00000014) || (piVar4 = (int *)(iVar6 + 1), piVar4 == (int *)0x0)) {
-//       return piVar4;
-//     }
-//     iVar6 = -1;
-//     do {
-//       if (iVar6 == 0) break;
-//       iVar6 = iVar6 + -1;
-//       piVar1 = (int *)local_SI_1517;
-//       local_SI_1517 = (char *)((int)local_SI_1517 + 1);
-//     } while (*(char *)piVar1 != '\0');
-//   } while( true );
-// }
-
 pub unsafe fn entry(
-    param_1: &mut string,
+    context: &mut AppContext,
+    param_1: &mut String,
     param_2: u16,
     param_3: u16,
     param_4: u16,
@@ -189,7 +70,7 @@ pub unsafe fn entry(
     let mut fn_ptr_w: u32;
     let mut string_x: u32;
 
-    u32_s = CONCAT22(param_5, g_u16_ptr_1050_5f84);
+    u32_s = CONCAT22(param_5, context.g_u16_ptr_1050_5f84);
     loop {
         InitTask16(0);
         g_u16_ptr_1050_5f84 = u32_s;
@@ -197,15 +78,15 @@ pub unsafe fn entry(
             && (
                 b_q = param_4 < 0xff00,
                 param_4 = param_4 + 0x100,
-                PTR_LOOP_1050_5f7e = pu8_p,
+                context.PTR_LOOP_1050_5f7e = pu8_p,
                 b_q,
             ))
         {
-            PTR_LOOP_1050_5f48 = param_4;
-            PTR_LOOP_1050_5f4a = pu8_j;
-            g_h_instance = pu8_m;
-            PTR_LOOP_1050_5f4e = param_3;
-            PTR_LOOP_1050_5f50 = pu8_p;
+            context.PTR_LOOP_1050_5f48 = param_4;
+            context.PTR_LOOP_1050_5f4a = pu8_j;
+            context.g_h_instance = pu8_m;
+            contextPTR_LOOP_1050_5f4e = param_3;
+            context.PTR_LOOP_1050_5f50 = pu8_p;
             LockSegment16(0xffff);
             PTR_LOOP_1050_5f52 = (u32_s >> 0x10);
             g_u16_ptr_1050_5f84 = u32_s;
