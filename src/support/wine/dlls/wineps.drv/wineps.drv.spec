@@ -1,0 +1,1 @@
+@ cdecl wine_get_gdi_driver PSDRV_get_gdi_driver
