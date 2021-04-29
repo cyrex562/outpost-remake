@@ -49,8 +49,8 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
     let pc_var23: *mut u8;
     let pi_var24: *mut i32;
     let mut iVar25: i32;
-    let unaff_si: *mut u32;
-    let pu_var26: *mut u32;
+    let unaff_si: *mut u16;
+    let pu_var26: *mut u16;
     let unaff_di: *mut u8;
     let pc_var27: *mut u8;
     let mut unaff_ES: u16;
@@ -76,7 +76,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
         } else {
             unsafe {
                 pu_var26 = unaff_si.offset(1);
-                out(*unaff_si, 0);
+                out(*unaff_si as u32, 0);
                 pb_var3 = in_bx.offset(0x66);
                 b_var28 = CARRY1(*pb_var3, in_cl) == 0;
                 *pb_var3 = *pb_var3 + in_cl;

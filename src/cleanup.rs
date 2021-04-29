@@ -1,4 +1,4 @@
-use crate::{defines::{HWND16, Struct44}, err_funcs::error_check_1000_17ce, sys_funcs::win_cleanup_func_1040_b0f8};
+use crate::{defines::{AStruct340, HWND16, Struct44}, err_funcs::error_check_1000_17ce, sys_funcs::win_cleanup_func_1040_b0f8, ui_funcs::win_cleanup_1018_4d22};
 
 pub fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
@@ -16,10 +16,10 @@ pub fn win_cleanup_1010_0ee6(param_1: u32, param_2: u8) {
     return param_1;
 }
 
-pub fn cleanup_1010_17c0(param_1: *mut astruct_340) {
+pub fn cleanup_1010_17c0(param_1: *mut AStruct340) {
     let puVar1: *mut u32;
     let mut uVar2: i32;
-    let local_BX_14: *mut astruct_371;
+    let local_BX_14: *mut Struct371;
     let mut uvar3: u16;
     let fn_ptr_1: fn();
 

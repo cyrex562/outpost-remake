@@ -68,7 +68,8 @@ pub unsafe fn call_big_fn_1040_b17c(
             break;
         }
         u_var1 = *pu_var2.offset(2);
-        (u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
+        //(u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
+        todo!();
         u16_n = u16_n + 1;
     }
     pustruct_h = process_struct_1010_20ba(ctx._g_AStruct372_1050_0ed0, CONCAT22(u16_f, 3));
