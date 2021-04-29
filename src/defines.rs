@@ -148905,4 +148905,6 @@ pub struct AppContext {
     pub s__s___lu_1050_38c5: String,
     pub PTR_LOOP_1050_1038: u32,
     pub _g_astruct_372_1050_0ed0: *mut AStruct372,
+    pub _g_struct_ptr_1050_02a0: *mut u8,
+    pub s_OpWnd__getKid__Unknown_target_mo_1050_01a3: String,
 }

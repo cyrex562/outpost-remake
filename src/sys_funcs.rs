@@ -6824,7 +6824,7 @@ pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16, param_2: u32) {
     return;
 }
 
-pub fn post_win_msg_1020_79fc(param_1: u32, param_2: u16, param_3: u16, param_2: i32) {
+pub fn post_win_msg_1020_79fc(param_1: u32, param_2: u16, param_3: u16, param_4: i32) {
     let mut u_var1: u32;
     let ppcVar2: fn();
     let mut iVar3: i32;

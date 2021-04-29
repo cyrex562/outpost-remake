@@ -1,6 +1,6 @@
-use crate::defines::HWND16;
+use crate::{defines::{HWND16, Struct44}, err_funcs::error_check_1000_17ce, sys_funcs::win_cleanup_func_1040_b0f8};
 
-pub fn cleanup_1040_abe2(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -184,7 +184,7 @@ pub fn destroy_win_1010_3202(param_1: *mut astruct_387, param_2: i32) {
     return;
 }
 
-pub fn cleanup_1040_97da(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn cleanup_1040_97da(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     free_proc_inst_1040_911e(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -483,7 +483,7 @@ pub fn pass1_1040_2f32(param_1: *mut u8, param_2: *mut u8) {
     return;
 }
 
-pub fn pass1_1040_2a22(param_1: *mut astruct_44) {
+pub fn pass1_1040_2a22(param_1: *mut Struct44) {
     let mut iVar1: i32;
     let mut uVar2: u16;
 
@@ -581,7 +581,7 @@ pub fn pass1_1040_1152(param_1: i32, param_2: *mut u8, param_3: *mut u8) {
 
 pub fn pass1_1040_0e86(param_1: *mut astruct_599) {
     let mut uVar1: i32;
-    let in_struct_1: *mut astruct_44;
+    let in_struct_1: *mut Struct44;
     let mut iVar2: i32;
     let mut uvar3: u16;
     let ppVar4: *mut pass1_struct_1;
@@ -632,7 +632,7 @@ pub fn pass1_1040_073a(param_1: *mut astruct_599) {
     return;
 }
 
-pub fn pass1_1040_0656(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn pass1_1040_0656(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_1038_ef3a(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -729,7 +729,7 @@ pub fn pass1_1038_d276(param_1: *mut astruct_599) {
     return;
 }
 
-pub fn pass1_1038_d218(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn pass1_1038_d218(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     free_proc_inst_1038_cfda(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -782,7 +782,7 @@ pub fn cleanup_fn_1020_0e2c(param_1: *mut astruct_48) {
     return;
 }
 
-pub fn pass1_1038_ae08(param_1: *mut astruct_44) {
+pub fn pass1_1038_ae08(param_1: *mut Struct44) {
     param_1.ptr_a_lo = 0xae4e;
     (param_1 + 2) = &PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
@@ -803,7 +803,7 @@ pub fn destroy_win_1038_a072(param_1: u32, param_2: i32) {
     return;
 }
 
-pub fn pass1_1038_9ed4(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn pass1_1038_9ed4(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -811,14 +811,14 @@ pub fn pass1_1038_9ed4(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44
     return param_1;
 }
 
-pub fn pass1_1038_9a48(param_1: *mut astruct_44) {
+pub fn pass1_1038_9a48(param_1: *mut Struct44) {
     param_1.ptr_a_lo = 0x9af6;
     (param_1 + 2) = &PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
 
-pub fn pass1_1038_997c(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn pass1_1038_997c(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -826,7 +826,7 @@ pub fn pass1_1038_997c(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44
     return param_1;
 }
 
-pub fn pass1_1038_7d5c(param_1: *mut astruct_44) {
+pub fn pass1_1038_7d5c(param_1: *mut Struct44) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -846,7 +846,7 @@ pub fn destroy_win_1038_7d88(param_1: u32, param_2: i32) {
     return;
 }
 
-pub fn cleanup_fn_1020_96a2(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn cleanup_fn_1020_96a2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     select_and_delete_palette_1020_92c4(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -854,7 +854,7 @@ pub fn cleanup_fn_1020_96a2(param_1: *mut astruct_44, param_2: u8) -> *mut astru
     return param_1;
 }
 
-pub fn cleanup_fn_1020_7b60(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn cleanup_fn_1020_7b60(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     destroy_menu_func_1020_795c(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -862,9 +862,9 @@ pub fn cleanup_fn_1020_7b60(param_1: *mut astruct_44, param_2: u8) -> *mut astru
     return param_1;
 }
 
-pub fn cleanup_fn_1020_78ac(param_1: *mut astruct_44) {
-    let local_struct_1: *mut astruct_44;
-    let local_struct_1_hi: *mut astruct_44;
+pub fn cleanup_fn_1020_78ac(param_1: *mut Struct44) {
+    let local_struct_1: *mut Struct44;
+    let local_struct_1_hi: *mut Struct44;
 
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;
@@ -877,7 +877,7 @@ pub fn cleanup_fn_1020_78ac(param_1: *mut astruct_44) {
     return;
 }
 
-pub fn cleanup_fn_1020_78dc(param_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn cleanup_fn_1020_78dc(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     cleanup_fn_1020_78ac(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -911,7 +911,7 @@ pub fn win_cleanup_fn_1020_770e(in_struct_1: *mut astruct_594) {
     return;
 }
 
-pub fn call_win_cleanup_fn_1020_3616(in_struct_1: *mut astruct_44, param_2: u8) -> *mut astruct_44 {
+pub fn call_win_cleanup_fn_1020_3616(in_struct_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1020_2fea(in_struct_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_struct_1);

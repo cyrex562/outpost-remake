@@ -77,13 +77,13 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
             unsafe {
                 pu_var26 = unaff_si.offset(1);
                 out(*unaff_si, 0);
-                pb_var3 = (in_bx + 0x66);
-                b_var28 = CARRY1(*pb_var3, in_cl);
+                pb_var3 = in_bx.offset(0x66);
+                b_var28 = CARRY1(*pb_var3, in_cl) == 0;
                 *pb_var3 = *pb_var3 + in_cl;
                 b_var15 = *pb_var3;
                 if (b_var28) {
                     // code_r0x1138006f:
-                    pu_var8 = (pu_var26 + 1);
+                    pu_var8 = (pu_var26.offset(1));
                     out(*pu_var26, u_var21);
                     pu_var7 = (pc_var27 + 0x6c);
                     *pu_var7 = *pu_var7 + b_var28 * -(*pu_var7 & 3);

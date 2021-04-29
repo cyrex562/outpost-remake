@@ -1,13 +1,42 @@
-use crate::{
-    defines::{
-        pass1_struct_1, AStruct199, AStruct306, AStruct345, AStruct65, AStruct657, AppContext,
-    },
-    other_funcs::big_fn_1010_b038,
-    pass7_funcs::pass1_1040_a626,
-    pass_funcs::{pass1_1008_57a4, pass1_1008_5b12},
-    struct_funcs::process_struct_1010_20ba,
-    util::CONCAT22,
-};
+use crate::{defines::{
+        pass1_struct_1, AStruct199, AStruct306, AStruct345, AStruct65, AStruct657, AStruct675,
+        AppContext,
+    }, draw::{
+        call_load_cursor_fn_1020_7554, load_cursor_1018_7248, load_cursor_1018_72b4,
+        load_cursor_1018_75d8, load_cursor_1018_782a, load_cursor_fn, load_cursor_fn_1018_6d02,
+        load_cursor_fn_1018_6d38, load_cursor_fn_1018_6d6e, load_cursor_fn_1018_6da4,
+        load_cursor_fn_1018_6dda, load_cursor_fn_1018_6e10, load_cursor_fn_1018_6e46,
+        load_cursor_fn_1018_6e7c, load_cursor_fn_1018_6eb2, load_cursor_fn_1018_6ee8,
+        load_cursor_fn_1018_6f1e, load_cursor_fn_1018_6f54, load_cursor_fn_1018_6f8a,
+        load_cursor_fn_1018_6fc0, load_cursor_fn_1018_6ff6, load_cursor_fn_1018_702c,
+        load_cursor_fn_1018_7062, load_cursor_fn_1018_7098, load_cursor_fn_1018_70ce,
+        load_cursor_fn_1018_7104, load_cursor_fn_1018_713a, load_cursor_fn_1018_7170,
+        load_cursor_fn_1018_71a6, load_cursor_fn_1018_71dc, load_cursor_fn_1018_7212,
+        load_cursor_fn_1018_727e, load_cursor_fn_1018_72ea, load_cursor_fn_1018_7320,
+        load_cursor_fn_1018_7356, load_cursor_fn_1018_738c, load_cursor_fn_1018_73c2,
+        load_cursor_fn_1018_73f8, load_cursor_fn_1018_745e, load_cursor_fn_1018_7494,
+        load_cursor_fn_1018_74ca, load_cursor_fn_1018_7500, load_cursor_fn_1018_7536,
+        load_cursor_fn_1018_756c, load_cursor_fn_1018_75a2, load_cursor_fn_1018_760e,
+        load_cursor_fn_1018_7644, load_cursor_fn_1018_767a, load_cursor_fn_1018_76b0,
+        load_cursor_fn_1018_76e6, load_cursor_fn_1018_771c, load_cursor_fn_1018_7752,
+        load_cursor_fn_1018_7788, load_cursor_fn_1018_77be, load_cursor_fn_1018_77f4,
+        load_cursor_fn_1018_7896, load_cursor_fn_1018_78cc, load_cursor_fn_1018_7902,
+        load_cursor_fn_1018_7938, load_cursor_fn_1018_796e, load_cursor_fn_1018_79a4,
+        load_cursor_fn_1018_79da, load_cursor_fn_1018_7a10, load_cursor_fn_1018_7a46,
+        load_cursor_fn_1018_7a7c, load_cursor_fn_1018_7ab2, load_cursor_fn_1018_7ae8,
+        load_cursor_fn_1018_7b1e, load_cursor_fn_1018_7b54, load_cursor_fn_1018_7b8a,
+        load_cursor_fn_1018_7bc0, load_cursor_fn_1018_7bf6, load_cursor_fn_1018_7c2c,
+        load_cursor_fn_1018_7c62, load_cursor_fn_1018_7c98, load_cursor_fn_1018_7cce,
+        load_cursor_fn_1018_7d04, load_cursor_fn_1018_7d3a, load_cursor_fn_1018_7d70,
+    }, func_ptr_funcs::call_fn_ptr_1000_24cd, other_funcs::big_fn_1010_b038, pass4_funcs::pass1_1028_b58e, pass7_funcs::{
+        pass1_1018_66cc, pass1_1018_c958, pass1_1018_c9a6, pass1_1018_c9f4, pass1_1018_ca48,
+        pass1_1018_ca96, pass1_1018_caea, pass1_1018_cb38, pass1_1018_cb86, pass1_1018_cbda,
+        pass1_1018_cc28, pass1_1018_cc76, pass1_1018_ccc4, pass1_1018_cd12, pass1_1018_cd60,
+        pass1_1018_cf74, pass1_1018_e230, pass1_1040_a626,
+    }, pass_funcs::{pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1008_60e8}, sound_funcs::{mci_fn_1020_08b6, mci_send_cmd_1008_5c5c}, string_funcs::fn_1008_6048, struct_funcs::{
+        process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e5dc,
+        process_struct_1018_e91e,
+    }, ui_funcs::{call_load_cursor_1020_2524, load_cursor_1018_5840}, util::{CONCAT22, SUB21, ZEXT24}};
 
 pub unsafe fn call_big_fn_1040_b17c(
     ctx: &mut AppContext,
@@ -38,7 +67,7 @@ pub unsafe fn call_big_fn_1040_b17c(
         if (*pu_var2 == u16_n || *pu_var2 < u16_n) {
             break;
         }
-        u_var1 = pu_var2.offset(2);
+        u_var1 = *pu_var2.offset(2);
         (u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
         u16_n = u16_n + 1;
     }
@@ -76,7 +105,7 @@ pub unsafe fn call_big_fn_1040_b17c(
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub unsafe fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
+pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
@@ -358,7 +387,7 @@ pub unsafe fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
             i32_j = extraout_DX_00;
         }
         10 => {
-            mci_send_cmd_1008_5c5c(_g_struct_ptr_1050_02a0, 0x1d3);
+            mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, 0x1d3);
             pustruct_f = pustruct_h;
             process_struct_1000_179c(0xf2, pustruct_h);
             if ((pustruct_f | i32_k) == 0) {
@@ -782,7 +811,7 @@ pub unsafe fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
         }
         _ => {
             fn_1008_6048(
-                s_OpWnd__getKid__Unknown_target_mo_1050_01a3,
+                ctx.s_OpWnd__getKid__Unknown_target_mo_1050_01a3,
                 pustruct_f,
                 SUB21(i32_k, 0),
             );
@@ -1680,7 +1709,21 @@ pub unsafe fn big_fn_1008_15d4(param_1: *mut AStruct657, param_2: u16) {
     return;
 }
 
-pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
+fn load_accelerators_1020_41c8(
+    i32_k: i32,
+    pustruct_f: *mut AStruct199,
+    i32_c: i32,
+    param_1: *mut AStruct657,
+) -> () {
+    todo!()
+}
+
+pub unsafe fn call_big_fn_1010_1788(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u16,
+    param_1_00: u32,
+) {
     let u_var1: u8;
     let ppVar2: *mut pass1_struct_1;
     let mut in_stack_0000fff4: u32;
@@ -1688,7 +1731,7 @@ pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
     let mut local_4: u16;
 
     ppVar2 = process_struct_1010_20ba(
-        _g_AStruct372_1050_0ed0,
+        ctx._g_AStruct372_1050_0ed0,
         CONCAT22((in_stack_0000fff4 >> 0x10), 3),
     );
     u_var1 = pass1_1028_b58e(param_1_00);
@@ -1697,12 +1740,12 @@ pub fn call_big_fn_1010_1788(param_1: u16, param_2: u16, param_1_00: u32) {
     return;
 }
 
-pub fn call_big_fn_1010_1c16(param_1: u32, param_2: u32) {
+pub unsafe fn call_big_fn_1010_1c16(param_1: u32, param_2: u32) {
     let u_var1: u8;
 
     u_var1 = pass1_1028_b58e(param_2);
     big_fn_1010_b038((param_1 + 0x6e), u_var1);
-    pass1_fn_1008_60e8();
+    pass1_fn_1008_60e8(0);
     return;
 }
 

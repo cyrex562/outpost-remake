@@ -2419,7 +2419,7 @@ pub fn set_dialog_item_txt_1040_ad14(in_struct_1: *mut AStruct347) {
     return;
 }
 
-pub fn win_gui_fn_1040_ad24(param_1: *mut AStruct124, param_2: u16, param_3: u16, param_3: u32) {
+pub fn win_gui_fn_1040_ad24(param_1: *mut AStruct124, param_2: u16, param_3: u16, param_4: u32) {
     if (param_3._2_2_ == 0xeb) {
         set_dialog_item_text_1040_ae04(CONCAT22(param_2, param_1));
     } else {

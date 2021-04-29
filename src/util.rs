@@ -24,6 +24,10 @@ pub fn CARRY1(a: u8, b: u8) -> u16 {
     0
 }
 
+pub fn SUB21(a: u16, b: u8) -> u16 {
+    todo!();
+    0
+}
 pub fn SCARRY1(a: i8, b: i8) -> i16 {
     todo!();
     0
