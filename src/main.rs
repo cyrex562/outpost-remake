@@ -358,44 +358,44 @@ pub fn fatal_app_exit_1000_3e9e() {
 //
 // WARNING: Removing unreachable block (ram,0x10083e1f)
 
-pub fn loop_1010_11c6(param_1: &mut AStruct365) {
+pub fn loop_1010_11c6(param_1: &mut Struct365) {
     let pi32_1: *mut i32;
     let ppcVar2: *mut fn();
     let mut uVar3: u32;
     let mut uVar4: u32;
-    let local_AX__1: *mut AStruct366;
+    let local_AX__1: *mut Struct366;
     let mut iVar5: i32;
-    let local_AX_179: *mut AStruct367;
-    let paVar6: *mut AStruct367;
+    let local_AX_179: *mut Struct367;
+    let paVar6: *mut Struct367;
     let mut uVar7: i32;
     let mut uVar8: u16;
-    let in_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
     let mut uVar9: u16;
-    let struct_a: *mut AStruct199;
-    let struct_a_00: *mut AStruct199;
-    let paVar10: *mut AStruct199;
-    let paVar11: *mut AStruct199;
-    let paVar12: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
+    let struct_a: *mut Struct199;
+    let struct_a_00: *mut Struct199;
+    let paVar10: *mut Struct199;
+    let paVar11: *mut Struct199;
+    let paVar12: *mut Struct199;
+    let extraout_DX: *mut Struct199;
     let mut uVar13: u16;
-    let extraout_DX_00: *mut AStruct199;
+    let extraout_DX_00: *mut Struct199;
     let mut extraout_DX_01: u16;
     let mut extraout_DX_02: u16;
     let ppcVar14: *mut *mut libc::c_char;
-    let mut pustruct_a: &mut AStruct365;
+    let mut pustruct_a: &mut Struct365;
     let mut iVar15: i32;
     let mut iVar16: i32;
     let mut uVar17: u16;
     let mut uVar18: u16;
     let pu16_19: *mut u16;
-    let paVar20: *mut AStruct367;
+    let paVar20: *mut Struct367;
     let mut uVar21: u16;
     let mut local_36: u16;
     let mut local_32: u16;
     let mut local_30: u16;
     let mut local_2c: u16;
     let mut local_2a: u16;
-    let local_28: *mut AStruct368;
+    let local_28: *mut Struct368;
     let mut local_26: u16;
     let mut local_24: u16;
     let mut local_22: u16;
@@ -630,10 +630,10 @@ Unable to decompile 'window_msg_func_1010_7300'
 
 pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
     let mut u_var1: u32;
-    let local_BX_20: *mut AStruct449;
+    let local_BX_20: *mut Struct449;
     let mut iVar2: i32;
     let mut unaff_SS: u16;
-    let in_struct_a: *mut AStruct103;
+    let in_struct_a: *mut Struct103;
     let mut uvar3: u16;
     let mut local_32: u16;
     let mut local_30: u16;
@@ -719,30 +719,30 @@ Low-level Error: Symbol $$undef0000000c extends beyond the end of the address sp
 pub fn infinite_loop_1020_7bba() {
     let pcVar1: *mut libc::c_char;
     let pbVar2: *mut u8;
-    let paVar3: *mut AStruct676;
+    let paVar3: *mut Struct676;
     let puVar4: *mut u16;
     let mut cVar5: u8;
     let mut bVar6: u8;
     let mut in_AL: u8;
     let mut bVar7: u8;
     let mut bVar8: u8;
-    let mut paVar9: *mut AStruct676;
+    let mut paVar9: *mut Struct676;
     let mut iVar10: u16;
-    let in_CX: *mut AStruct677;
+    let in_CX: *mut Struct677;
     let mut uVar11: i32;
-    let local_CX_56: *mut AStruct677;
+    let local_CX_56: *mut Struct677;
     let mut in_DX: i32;
     let mut uVar12: i32;
     let mut in_BX: i32;
-    let local_BX_59: *mut AStruct678;
-    let local_BX_110: *mut AStruct679;
+    let local_BX_59: *mut Struct678;
+    let local_BX_110: *mut Struct679;
     let ppuVar13: *mut *mut u16;
     let unaff_BP: *mut *mut u16;
-    let unaff_SI: *mut AStruct676;
-    let local_SI_28: *mut AStruct676;
-    let paVar14: *mut AStruct676;
-    let unaff_DI: *mut AStruct676;
-    let paVar15: *mut AStruct676;
+    let unaff_SI: *mut Struct676;
+    let local_SI_28: *mut Struct676;
+    let paVar14: *mut Struct676;
+    let unaff_DI: *mut Struct676;
+    let paVar15: *mut Struct676;
     let mut unaff_ES: u16;
     let mut uVar16: u16;
     let mut uVar17: u16;
@@ -757,13 +757,13 @@ pub fn infinite_loop_1020_7bba() {
     let mut uStack2269: u16;
     let mut uStack2257: i32;
     let ppuStack2255: *mut *mut u16;
-    let paStack2251: *mut AStruct676;
+    let paStack2251: *mut Struct676;
     let puStack2249: *mut u16;
     let mut uStack2245: u32;
     let mut uStack2241: i32;
-    let paStack2239: *mut AStruct677;
-    let paStack2237: *mut AStruct676;
-    let apaStack2235: *mut AStruct676;
+    let paStack2239: *mut Struct677;
+    let paStack2237: *mut Struct676;
+    let apaStack2235: *mut Struct676;
     let ppuStack34: *mut *mut u16;
     let puStack2: *mut u16;
 

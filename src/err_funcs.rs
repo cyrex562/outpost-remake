@@ -25,7 +25,7 @@ pub fn error_check_1000_16ee(uparam_1: i32, uparam_2: i32)
 }
 
 
-pub fn  error_check_1000_17ce(in_struct_1: *mut AStruct44) -> u8
+pub fn  error_check_1000_17ce(in_struct_1: *mut Struct44) -> u8
 
 {
     let mut bVar1: u8;
@@ -120,8 +120,8 @@ pub fn handle_error_1008_0036(param_1: *mut u16)
 {
     let mut uVar1: i32;
     let puVar2: *mut u32;
-    let paVar3: *mut AStruct44;
-    let in_struct_1: *mut AStruct444;
+    let paVar3: *mut Struct44;
+    let in_struct_1: *mut Struct444;
     let mut iVar4: i32;
     let mut local_ES_4: u16;
     let mut local_CS__1: u16;
@@ -153,10 +153,10 @@ pub fn handle_error_1008_0036(param_1: *mut u16)
         local_CS__1 = 0x1000;
         error_check_1000_17ce(paVar3);
     }
-    paVar3 = _g_AStruct372_1050_0ed0;
-    if (_g_AStruct372_1050_0ed0 != 0x0)
+    paVar3 = _g_Struct372_1050_0ed0;
+    if (_g_Struct372_1050_0ed0 != 0x0)
     {
-        pass1_1010_2050(_g_AStruct372_1050_0ed0, (_g_AStruct372_1050_0ed0 >> 0x10));
+        pass1_1010_2050(_g_Struct372_1050_0ed0, (_g_Struct372_1050_0ed0 >> 0x10));
         local_CS__1 = 0x1000;
         error_check_1000_17ce(paVar3);
     }
@@ -167,10 +167,10 @@ pub fn handle_error_1008_0036(param_1: *mut u16)
         local_CS__1 = 0x1000;
         error_check_1000_17ce(in_struct_1);
     }
-    paVar3 = _g_AStruct112_a;
-    if (_g_AStruct112_a != 0x0)
+    paVar3 = _g_Struct112_a;
+    if (_g_Struct112_a != 0x0)
     {
-        pass1_1038_af34(_g_AStruct112_a, (_g_AStruct112_a >> 0x10));
+        pass1_1038_af34(_g_Struct112_a, (_g_Struct112_a >> 0x10));
         local_CS__1 = 0x1000;
         error_check_1000_17ce(paVar3);
     }
@@ -196,7 +196,7 @@ pub fn handle_error_1008_0036(param_1: *mut u16)
     return;
 }
 
-pub fn handle_error_1008_04f8(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn handle_error_1008_04f8(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     handle_error_1008_0036(param_1);
@@ -243,7 +243,7 @@ pub fn check_error_1008_087e(param_1: u16, param_2: *mut u16)
     return;
 }
 
-pub fn error_check_1008_3a7a(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn error_check_1008_3a7a(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     pass1_1008_397a(param_1);
@@ -255,7 +255,7 @@ pub fn error_check_1008_3a7a(param_1: *mut AStruct44, param_2: u8) -> *mut AStru
 }
 
 
-pub fn error_check_1008_5fa2(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn error_check_1008_5fa2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     modify_u16_list_1008_5c34(param_1);
@@ -268,7 +268,7 @@ pub fn error_check_1008_5fa2(param_1: *mut AStruct44, param_2: u8) -> *mut AStru
 
 
 
-pub fn error_check_1008_8e74(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn error_check_1008_8e74(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     pass1_1008_8aa2(param_1);
@@ -341,7 +341,7 @@ pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mu
 
 
 pub fn 
-set_error_mode_1010_85be(param_1: u32, in_struct_1: *mut AStruct13, in_struct_1_hi: *mut AStruct13)
+set_error_mode_1010_85be(param_1: u32, in_struct_1: *mut Struct13, in_struct_1_hi: *mut Struct13)
 
 {
     let mut u_var1: u32;
@@ -377,7 +377,7 @@ pub fn error_check_1040_a582(param_1: *mut u32)
     return;
 }
 
-pub fn cleanup_1040_a4c2(param_1: *mut AStruct348, param_2: u8) -> *mut AStruct348
+pub fn cleanup_1040_a4c2(param_1: *mut Struct348, param_2: u8) -> *mut Struct348
 
 {
     win_cleanup_fn_1040_a294(param_1);
@@ -389,7 +389,7 @@ pub fn cleanup_1040_a4c2(param_1: *mut AStruct348, param_2: u8) -> *mut AStruct3
 }
 
 
-pub fn error_check_1040_8db6(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn error_check_1040_8db6(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     error_check_1040_869a(param_1);
@@ -401,10 +401,10 @@ pub fn error_check_1040_8db6(param_1: *mut AStruct44, param_2: u8) -> *mut AStru
 }
 
 
-pub fn error_check_1040_869a(param_1: *mut AStruct363)
+pub fn error_check_1040_869a(param_1: *mut Struct363)
 
 {
-    let local_BX_4: *mut AStruct363;
+    let local_BX_4: *mut Struct363;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -418,7 +418,7 @@ pub fn error_check_1040_869a(param_1: *mut AStruct363)
 }
 
 
-pub fn pass1_1030_e4be(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn pass1_1030_e4be(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     param_1.ptr_a_lo = s_1_1050_389a;
@@ -431,7 +431,7 @@ pub fn pass1_1030_e4be(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
 }
 
 
-pub fn pass1_1030_e282(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
+pub fn pass1_1030_e282(param_1: *mut Struct44, param_2: u8) -> *mut Struct44
 
 {
     param_1.ptr_a_lo = s_1_1050_389a;
@@ -445,7 +445,7 @@ pub fn pass1_1030_e282(param_1: *mut AStruct44, param_2: u8) -> *mut AStruct44
 
 
 
-pub fn pass1_1030_4538(param_1: *mut *mut AStruct44)
+pub fn pass1_1030_4538(param_1: *mut *mut Struct44)
 
 {
     let mut uVar1: u16;

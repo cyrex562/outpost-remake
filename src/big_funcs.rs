@@ -1,7 +1,8 @@
-use crate::{defines::{
-        pass1_struct_1, AStruct199, AStruct306, AStruct345, AStruct65, AStruct657, AStruct675,
-        AppContext,
-    }, draw::{
+use crate::{
+    defines::{
+        pass1_struct_1, AppContext, Struct199, Struct306, Struct345, Struct65, Struct657, Struct675,
+    },
+    draw::{
         call_load_cursor_fn_1020_7554, load_cursor_1018_7248, load_cursor_1018_72b4,
         load_cursor_1018_75d8, load_cursor_1018_782a, load_cursor_fn, load_cursor_fn_1018_6d02,
         load_cursor_fn_1018_6d38, load_cursor_fn_1018_6d6e, load_cursor_fn_1018_6da4,
@@ -28,26 +29,37 @@ use crate::{defines::{
         load_cursor_fn_1018_7bc0, load_cursor_fn_1018_7bf6, load_cursor_fn_1018_7c2c,
         load_cursor_fn_1018_7c62, load_cursor_fn_1018_7c98, load_cursor_fn_1018_7cce,
         load_cursor_fn_1018_7d04, load_cursor_fn_1018_7d3a, load_cursor_fn_1018_7d70,
-    }, func_ptr_funcs::call_fn_ptr_1000_24cd, other_funcs::big_fn_1010_b038, pass4_funcs::pass1_1028_b58e, pass7_funcs::{
+    },
+    func_ptr_funcs::call_fn_ptr_1000_24cd,
+    other_funcs::big_fn_1010_b038,
+    pass4_funcs::pass1_1028_b58e,
+    pass7_funcs::{
         pass1_1018_66cc, pass1_1018_c958, pass1_1018_c9a6, pass1_1018_c9f4, pass1_1018_ca48,
         pass1_1018_ca96, pass1_1018_caea, pass1_1018_cb38, pass1_1018_cb86, pass1_1018_cbda,
         pass1_1018_cc28, pass1_1018_cc76, pass1_1018_ccc4, pass1_1018_cd12, pass1_1018_cd60,
         pass1_1018_cf74, pass1_1018_e230, pass1_1040_a626,
-    }, pass_funcs::{pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1008_60e8}, sound_funcs::{mci_fn_1020_08b6, mci_send_cmd_1008_5c5c}, string_funcs::fn_1008_6048, struct_funcs::{
+    },
+    pass_funcs::{pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1008_60e8},
+    sound_funcs::{mci_fn_1020_08b6, mci_send_cmd_1008_5c5c},
+    string_funcs::fn_1008_6048,
+    struct_funcs::{
         process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e5dc,
         process_struct_1018_e91e,
-    }, ui_funcs::{call_load_cursor_1020_2524, load_cursor_1018_5840}, util::{CONCAT22, SUB21, ZEXT24}};
+    },
+    ui_funcs::{call_load_cursor_1020_2524, load_cursor_1018_5840},
+    util::{CONCAT22, SUB21, ZEXT24},
+};
 
 pub unsafe fn call_big_fn_1040_b17c(
     ctx: &mut AppContext,
-    in_pustruct_a: &mut AStruct345,
+    in_pustruct_a: &mut Struct345,
     in_u32_b: u32,
 ) {
     let mut u32_a: u32;
     let pu16_b: *mut u16;
     let mut u16_c: u16;
     let mut u16_d: u16;
-    let pstruct_e: *mut AStruct345;
+    let pstruct_e: *mut Struct345;
     let mut u16_f: u16;
     let mut u16_g: u16;
     let pustruct_h: *mut pass1_struct_1;
@@ -72,7 +84,7 @@ pub unsafe fn call_big_fn_1040_b17c(
         todo!();
         u16_n = u16_n + 1;
     }
-    pustruct_h = process_struct_1010_20ba(ctx._g_AStruct372_1050_0ed0, CONCAT22(u16_f, 3));
+    pustruct_h = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u16_f, 3));
     pu_var2 = pstruct_e.field_0x90;
     u32_j = (pu_var2 + 2);
     u16_n = 0;
@@ -106,13 +118,13 @@ pub unsafe fn call_big_fn_1040_b17c(
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, param_2: u16) {
+pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
     let mut string_d: *mut libc::c_char;
     let mut i32_e: i32;
-    let pustruct_f: *mut AStruct199;
+    let pustruct_f: *mut Struct199;
     let mut i32_g: i32;
     let mut extraout_DX_00: i32;
     let mut extraout_DX_01: i32;
@@ -122,7 +134,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
     let mut extraout_DX_05: i32;
     let mut extraout_DX_06: i32;
     let mut extraout_DX_07: i32;
-    let pustruct_h: *mut AStruct199;
+    let pustruct_h: *mut Struct199;
     let mut extraout_DX_08: i32;
     let mut extraout_DX_09: i32;
     let mut extraout_DX_10: i32;
@@ -219,7 +231,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
     let mut i32_k: i32;
     let mut i32_m: i32;
     let mut stack_seg_n: u16;
-    let pustruct_p: *mut AStruct65;
+    let pustruct_p: *mut Struct65;
     let mut param_1_hi: u16;
     let mut u32_r: u32;
     let mut u32_s: u32;
@@ -237,7 +249,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
     let mut broke = false;
     while {
         string_d = string_w;
-        let in_1: *mut AStruct306 = CONCAT22(stack_seg_n, string_d);
+        let in_1: *mut Struct306 = CONCAT22(stack_seg_n, string_d);
         pass1_1008_5b12(in_1);
         pustruct_f = (i32_e | string_d);
         if (pustruct_f == 0) {
@@ -262,7 +274,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
             process_struct_1000_179c(0xec, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut AStruct675 = param_1;
+                let mut input_a: *mut Struct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -275,7 +287,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
             process_struct_1000_179c(0xfa, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut AStruct675 = param_1;
+                let mut input_a: *mut Struct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -284,7 +296,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
             unsafe {
                 *pi32_a = *pi32_a + 1;
             }
-            let input_a: *mut AStruct65 = CONCAT22(pustruct_f, i32_k);
+            let input_a: *mut Struct65 = CONCAT22(pustruct_f, i32_k);
             process_struct_1018_e91e(input_a, (i32_c + 0xcc), param_1);
             i32_j = extraout_DX_05;
         }
@@ -1712,9 +1724,9 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut AStruct657, p
 
 fn load_accelerators_1020_41c8(
     i32_k: i32,
-    pustruct_f: *mut AStruct199,
+    pustruct_f: *mut Struct199,
     i32_c: i32,
-    param_1: *mut AStruct657,
+    param_1: *mut Struct657,
 ) -> () {
     todo!()
 }
@@ -1732,7 +1744,7 @@ pub unsafe fn call_big_fn_1010_1788(
     let mut local_4: u16;
 
     ppVar2 = process_struct_1010_20ba(
-        ctx._g_AStruct372_1050_0ed0,
+        ctx._g_Struct372_1050_0ed0,
         CONCAT22((in_stack_0000fff4 >> 0x10), 3),
     );
     u_var1 = pass1_1028_b58e(param_1_00);

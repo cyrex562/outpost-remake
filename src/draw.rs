@@ -1,6 +1,6 @@
-use crate::defines::{AStruct642, POINT16};
+use crate::defines::{Struct642, POINT16};
 
-pub fn draw_1018_623e(param_1: *mut AStruct604) {
+pub fn draw_1018_623e(param_1: *mut Struct604) {
     let ppcVar1: fn();
     let mut uVar2: u32;
     let mut iVar3: i32;
@@ -174,11 +174,11 @@ pub fn draw_func_1018_4f18(param_1: u32, param_2: u16) {
     let mut iVar6: i32;
     let mut in_EAX: u32;
     let mut extraout_DX: i32;
-    let extraout_DX_00: *mut AStruct199;
-    let paVar7: *mut AStruct199;
-    let extraout_DX_01: *mut AStruct199;
+    let extraout_DX_00: *mut Struct199;
+    let paVar7: *mut Struct199;
+    let extraout_DX_01: *mut Struct199;
     let mut extraout_DX_02: u16;
-    let extraout_DX_03: *mut AStruct199;
+    let extraout_DX_03: *mut Struct199;
     let mut extraout_DX_04: u16;
     let mut iVar8: i32;
     let mut uVar9: u16;
@@ -259,11 +259,11 @@ pub fn draw_func_1018_4f18(param_1: u32, param_2: u16) {
     return;
 }
 
-pub fn pt_in_rect_1018_1bda(param_1: *mut AStruct318, param_2: u16, param_3: u16) {
+pub fn pt_in_rect_1018_1bda(param_1: *mut Struct318, param_2: u16, param_3: u16) {
     let puVar1: *mut u16;
     let mut iVar2: i32;
     let b_var3: bool;
-    let paVar4: *mut AStruct199;
+    let paVar4: *mut Struct199;
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let mut local_1a: u16;
@@ -316,8 +316,8 @@ pub fn pt_in_rect_1018_1bda(param_1: *mut AStruct318, param_2: u16, param_3: u16
     return;
 }
 
-pub fn get_gui_dc_1018_4db0(in_struct_1: *mut u8, in_win_handle: HWND16) -> *mut AStruct199 {
-    let dev_ctx_handle: *mut AStruct199;
+pub fn get_gui_dc_1018_4db0(in_struct_1: *mut u8, in_win_handle: HWND16) -> *mut Struct199 {
+    let dev_ctx_handle: *mut Struct199;
     let local_struct_1_hi: *mut void;
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
@@ -328,7 +328,7 @@ pub fn get_gui_dc_1018_4db0(in_struct_1: *mut u8, in_win_handle: HWND16) -> *mut
 }
 
 pub fn create_drawing_dc_1018_4e04(
-    param_1: *mut AStruct115,
+    param_1: *mut Struct115,
     param_2: u16,
     param_3: u16,
     param_4: u16,
@@ -336,7 +336,7 @@ pub fn create_drawing_dc_1018_4e04(
     let ppcVar1: fn();
     let mut dc_handle: u16;
     let mut hdc_ptr: u16;
-    let local_BX_8: *mut AStruct115;
+    let local_BX_8: *mut Struct115;
     let mut uVar2: u16;
     let mut uVar3: u32;
     let mut local_10: u16;
@@ -411,7 +411,7 @@ pub fn pt_in_rect_1010_40f8(param_1: u32, param_2: *mut POINT16) -> u16 {
             // LAB_1010_413e:
             if ((local_6._2_2_ != 0) && (3 < PTR_LOOP_1050_3960)) {
                 ppVar8 = process_struct_1010_20ba(
-                    _g_AStruct372_1050_0ed0,
+                    _g_Struct372_1050_0ed0,
                     CONCAT22(in_stack_0000ffec, local_6 + 0xc),
                 );
                 puVar9 = pass1_1018_0afa(ppVar8);
@@ -430,7 +430,7 @@ pub fn pt_in_rect_1010_40f8(param_1: u32, param_2: *mut POINT16) -> u16 {
                     _local_10 = CONCAT22(uVar5, uVar4);
                     ppcVar2 = (*_local_10 + 0x74);
                     ppcVar2(uVar7, uVar4, uVar5);
-                    pass1_1010_209e(_g_AStruct372_1050_0ed0, local_6 + 0xc);
+                    pass1_1010_209e(_g_Struct372_1050_0ed0, local_6 + 0xc);
                 }
             }
             if (local_6._2_2_ != 0) {
@@ -452,7 +452,7 @@ pub fn pt_in_rect_1010_40f8(param_1: u32, param_2: *mut POINT16) -> u16 {
 }
 
 pub fn draw_1010_47ae(param_1: u32) {
-    let local_struct_1: *mut AStruct30;
+    let local_struct_1: *mut Struct30;
     local_struct_1 = 0x0;
     while {
         draw_1010_47d0(param_1, local_struct_1);
@@ -461,13 +461,13 @@ pub fn draw_1010_47ae(param_1: u32) {
     } {}
 }
 
-pub fn draw_1010_47d0(param_1: u32, param_2: *mut AStruct30) {
+pub fn draw_1010_47d0(param_1: u32, param_2: *mut Struct30) {
     let pu_var1: *mut u16;
     let pu_var2: *mut u32;
     let mut u_var3: i32;
     let mut u_var4: u32;
     let ppc_var5: fn();
-    let pa_var6: *mut AStruct30;
+    let pa_var6: *mut Struct30;
     let h_palette: *mut u16;
     let mut obj_handle: HGDIOBJ16;
     let mut obj_handle_00: HGDIOBJ16;
@@ -475,10 +475,10 @@ pub fn draw_1010_47d0(param_1: u32, param_2: *mut AStruct30) {
     let pu_var8: *mut u16;
     let mut h_gdi_obj: HPALETTE16;
     let mut extraout_d_x: u16;
-    let local_b_x_49: *mut AStruct29;
+    let local_b_x_49: *mut Struct29;
     let mut i_var9: i32;
-    let local_s_i_120: *mut AStruct31;
-    let local_s_i_293: *mut AStruct28;
+    let local_s_i_120: *mut Struct31;
+    let local_s_i_293: *mut Struct28;
     let mut u_var10: u16;
     let mut u_var11: u16;
     let mut unaff_s_s: u16;
@@ -595,12 +595,12 @@ pub fn draw_1010_47d0(param_1: u32, param_2: *mut AStruct30) {
     return;
 }
 
-pub fn pt_in_rect_1010_4e08(in_struct_1: *mut AStruct642, param_2: u16, param_3: u16) {
+pub fn pt_in_rect_1010_4e08(in_struct_1: *mut Struct642, param_2: u16, param_3: u16) {
     let pi_var1: *mut i32;
     let mut b_var2: bool;
     let mut point_in_rect_result: bool;
-    let local_struct_1: *mut AStruct642;
-    let local_struct_1_hi: *mut AStruct642;
+    let local_struct_1: *mut Struct642;
+    let local_struct_1_hi: *mut Struct642;
     let mut local_c: u32;
     let mut point_1: POINT16;
     let mut local_4: u16;
@@ -684,7 +684,7 @@ pub fn draw_1040_b372(param_1: u32, param_2: HWND16, uparam_3: i32, param_4: HDC
     return;
 }
 
-pub fn draw_text_1040_c94a(param_1: *mut AStruct334, param_2: u16, param_3: u16) {
+pub fn draw_text_1040_c94a(param_1: *mut Struct334, param_2: u16, param_3: u16) {
     let mut uVar1: u16;
     let mut uVar2: u32;
     let mut iVar3: i32;
@@ -694,7 +694,7 @@ pub fn draw_text_1040_c94a(param_1: *mut AStruct334, param_2: u16, param_3: u16)
     let mut local_6: u16;
 
     if (param_1.field_0x48 != 0) {
-        ppVar4 = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(in_stack_0000fff0, 3));
+        ppVar4 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(in_stack_0000fff0, 3));
         uVar2 = param_1.field_0x42;
         uVar1 = (uVar2 + 0x12);
         iVar3 = pass1_1010_a5ca(ppVar4, (ppVar4 >> 0x10), uVar1);
@@ -766,16 +766,16 @@ pub fn draw_1040_c74c(param_1: *mut u32, param_2: u32) {
     return;
 }
 
-pub fn draw_lines_1040_c38e(in_AStruct135: *mut AStruct135, in_hdc_2: u16) {
+pub fn draw_lines_1040_c38e(in_Struct135: *mut Struct135, in_hdc_2: u16) {
     let mut i_var1: i32;
     let mut u_var2: u32;
     let mut u_var3: u32;
     let mut i_var4: i32;
     let mut i_var5: i32;
-    let local_a_x_262: *mut AStruct137;
+    let local_a_x_262: *mut Struct137;
     let pi_var6: *mut u16;
     let mut extraout_d_x: u16;
-    let local_AStruct135: *mut AStruct135;
+    let local_Struct135: *mut Struct135;
     let mut u_var7: u16;
     let mut u_var8: u16;
     let mut d_var9: u32;
@@ -786,19 +786,19 @@ pub fn draw_lines_1040_c38e(in_AStruct135: *mut AStruct135, in_hdc_2: u16) {
     let mut x_coord: u16;
     let mut y_coord: u16;
     let mut local_10: u16;
-    let local_e: *mut AStruct136;
+    let local_e: *mut Struct136;
     let mut local_c: u32;
     let mut local_8: u16;
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var7 = (in_AStruct135 >> 0x10);
-    local_AStruct135 = in_AStruct135;
-    u_var2 = local_AStruct135.field_0x6;
+    u_var7 = (in_Struct135 >> 0x10);
+    local_Struct135 = in_Struct135;
+    u_var2 = local_Struct135.field_0x6;
     i_var1 = (u_var2 + 0x18);
-    if ((i_var1 != 0) && (u_var2 = local_AStruct135.field_0x6, (u_var2 + 0x16) != 0)) {
+    if ((i_var1 != 0) && (u_var2 = local_Struct135.field_0x6, (u_var2 + 0x16) != 0)) {
         i_var4 = i_var1;
-        pass1_1010_2ee2(local_AStruct135.field_0x6);
+        pass1_1010_2ee2(local_Struct135.field_0x6);
         counter = 0;
         while (counter < i_var1) {
             u_var2 = (counter * 4 + i_var4);
@@ -819,16 +819,16 @@ pub fn draw_lines_1040_c38e(in_AStruct135: *mut AStruct135, in_hdc_2: u16) {
             }
             counter = counter + 1;
         }
-        u_var2 = local_AStruct135.field_0x6;
+        u_var2 = local_Struct135.field_0x6;
         if ((u_var2 + 0x24) != 0) {
             local_e = local_e + -0xd;
         }
-        u_var2 = local_AStruct135.field_0x6;
+        u_var2 = local_Struct135.field_0x6;
         if ((u_var2 + 0x26) != 0) {
             y_coord = y_coord + 0xd;
         }
-        u_var2 = local_AStruct135.field_0x6;
-        u_var3 = local_AStruct135.field_0x6;
+        u_var2 = local_Struct135.field_0x6;
+        u_var3 = local_Struct135.field_0x6;
         u_var2 = (u_var2 + (u_var3 + 0x16) * 4 + 0x26);
         local_a_x_262 = u_var2;
         local_a_x_262 = &local_a_x_262.field_0x1e;
@@ -864,8 +864,8 @@ pub fn draw_lines_1040_c302(param_1: u32, in_hdc_2: HDC16) {
     let mut uVar3: u32;
     let mut uVar4: u32;
     let mut uVar5: i32;
-    let local_AX_46: *mut AStruct138;
-    let local_AX_100: *mut AStruct139;
+    let local_AX_46: *mut Struct138;
+    let local_AX_100: *mut Struct139;
     let mut uVar6: u16;
     let mut local_c: u32;
     let mut local_8: u32;
@@ -902,7 +902,7 @@ pub fn draw_lines_1040_c302(param_1: u32, in_hdc_2: HDC16) {
     return;
 }
 
-pub fn draw_1040_c226(param_1: *mut AStruct135) {
+pub fn draw_1040_c226(param_1: *mut Struct135) {
     let mut u_var1: u32;
     let mut obj_handle: HPEN16;
     let mut HVar2: HGDIOBJ16;
@@ -1172,8 +1172,8 @@ pub fn create_palette_1008_4e38(param_1: u32) {
     let mut uVar2: u32;
     let mut uVar3: u32;
     let mut uVar4: u16;
-    let in_DX: *mut AStruct199;
-    let local_BX_4: *mut AStruct33;
+    let in_DX: *mut Struct199;
+    let local_BX_4: *mut Struct33;
     let mut iVar5: i32;
     let mut iVar6: i32;
     let mut uVar7: u16;
@@ -1221,7 +1221,7 @@ pub fn create_palette_1008_4e38(param_1: u32) {
     return;
 }
 
-pub fn draw_1008_4f20(param_1: *mut AStruct104, param_2: u32, param_3: u16, param_4: u32) {
+pub fn draw_1008_4f20(param_1: *mut Struct104, param_2: u32, param_3: u16, param_4: u32) {
     let mut palette: u16;
     let mut count: i32;
     let mut palette_1: u16;
@@ -1235,7 +1235,7 @@ pub fn draw_1008_4f20(param_1: *mut AStruct104, param_2: u32, param_3: u16, para
     let mut uVar4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
-    let paVar7: *mut AStruct102;
+    let paVar7: *mut Struct102;
     let mut uVar8: u16;
     let mut uVar9: u16;
     let mut local_38: u16;
@@ -1247,7 +1247,7 @@ pub fn draw_1008_4f20(param_1: *mut AStruct104, param_2: u32, param_3: u16, para
     let mut local_2c: u16;
     let mut local_2a: u16;
     let mut local_28: u16;
-    let a_struct_7_26: *mut AStruct7;
+    let a_struct_7_26: *mut Struct7;
 
     paVar7 = param_1;
     uVar9 = (param_1 >> 0x10);
@@ -1297,40 +1297,40 @@ pub fn draw_1008_4f20(param_1: *mut AStruct104, param_2: u32, param_3: u16, para
     return;
 }
 
-pub fn set_palette_fn_1018_69ac(in_AStruct376: *mut AStruct376) {
-    let local_AStruct376: *mut AStruct376;
+pub fn set_palette_fn_1018_69ac(in_Struct376: *mut Struct376) {
+    let local_Struct376: *mut Struct376;
     let mut u16_1: u16;
 
-    u16_1 = (in_AStruct376 >> 0x10);
-    local_AStruct376 = in_AStruct376;
-    in_AStruct376.ptr_a_lo = 0x6a02;
-    local_AStruct376.ptr_a_hi = 0x1018;
-    if (&local_AStruct376.u8_ptr_x14 != 0) {
+    u16_1 = (in_Struct376 >> 0x10);
+    local_Struct376 = in_Struct376;
+    in_Struct376.ptr_a_lo = 0x6a02;
+    local_Struct376.ptr_a_hi = 0x1018;
+    if (&local_Struct376.u8_ptr_x14 != 0) {
         // WARNING: Load size is inaccurate
-        pass1_1010_1dda(local_AStruct376.u8_ptr_x14);
+        pass1_1010_1dda(local_Struct376.u8_ptr_x14);
     }
-    select_and_delete_palette_1020_92c4(in_AStruct376);
+    select_and_delete_palette_1020_92c4(in_Struct376);
     return;
 }
 
-pub fn set_palette_fn_1018_69dc(in_AStruct376: *mut AStruct376, param_2: u8) -> *mut AStruct376 {
-    set_palette_fn_1018_69ac(in_AStruct376);
+pub fn set_palette_fn_1018_69dc(in_Struct376: *mut Struct376, param_2: u8) -> *mut Struct376 {
+    set_palette_fn_1018_69ac(in_Struct376);
     if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(in_AStruct376);
+        error_check_1000_17ce(in_Struct376);
     }
-    return in_AStruct376;
+    return in_Struct376;
 }
 
 pub fn load_cursor_fn_1018_6a0e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: u16,
     param_4: u16,
     param_5: u16,
     param_6: u16,
     param_7: *mut libc::c_void,
-) -> *mut AStruct65 {
-    let local_BX_25: *mut AStruct65;
+) -> *mut Struct65 {
+    let local_BX_25: *mut Struct65;
     let mut local_ES_25: u16;
 
     load_cursor_1008_61b2(param_1, param_3, param_6, param_7);
@@ -1349,8 +1349,8 @@ pub fn load_cursor_fn_1018_6a0e(
     return param_1;
 }
 
-pub fn begin_end_Paint_1018_6a7a(param_1: *mut AStruct129) {
-    let local_p_AStruct129: *mut AStruct129;
+pub fn begin_end_Paint_1018_6a7a(param_1: *mut Struct129) {
+    let local_p_Struct129: *mut Struct129;
     let mut uVar1: u16;
     let mut unaff_SS: HWND16;
     let ppVar2: *mut pass1_struct_1;
@@ -1361,11 +1361,11 @@ pub fn begin_end_Paint_1018_6a7a(param_1: *mut AStruct129) {
     let mut string_22: [u8; 32];
 
     uVar1 = (param_1 >> 0x10);
-    local_p_AStruct129 = param_1;
-    BeginPaint16(CONCAT22(unaff_SS, string_22), local_p_AStruct129.h_wnd_0x8);
-    HVar3 = local_p_AStruct129.h_wnd_0x8;
+    local_p_Struct129 = param_1;
+    BeginPaint16(CONCAT22(unaff_SS, string_22), local_p_Struct129.h_wnd_0x8);
+    HVar3 = local_p_Struct129.h_wnd_0x8;
     EndPaint16(string_22, unaff_SS);
-    ppVar2 = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(HVar3, 2));
+    ppVar2 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(HVar3, 2));
     if ((ppVar2 + 0x20) == 0) {
         win_func_1018_6bb6(param_1);
         return;
@@ -1375,10 +1375,10 @@ pub fn begin_end_Paint_1018_6a7a(param_1: *mut AStruct129) {
 }
 
 pub fn load_cursor_fn_1018_6d02(
-    in_struct_65: *mut AStruct65,
+    in_struct_65: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(in_struct_65, 0, 0xb, 0x9c, 0x8b, param_2, param_3);
     in_struct_65.ptr_a_lo = 0xa27e;
     (in_struct_65 + 2) = 0x1018;
@@ -1386,10 +1386,10 @@ pub fn load_cursor_fn_1018_6d02(
 }
 
 pub fn load_cursor_fn_1018_6d38(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0xc, 0x9d, 0xd0, param_2, param_3);
     param_1.ptr_a_lo = 0xb562;
     (param_1 + 2) = 0x1018;
@@ -1397,10 +1397,10 @@ pub fn load_cursor_fn_1018_6d38(
 }
 
 pub fn load_cursor_fn_1018_6d6e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0xd, 0x9e, 0xd1, param_2, param_3);
     param_1.ptr_a_lo = 0x9822;
     (param_1 + 2) = 0x1018;
@@ -1408,10 +1408,10 @@ pub fn load_cursor_fn_1018_6d6e(
 }
 
 pub fn load_cursor_fn_1018_6da4(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0xe, 0x9f, 0xd2, param_2, param_3);
     param_1.ptr_a_lo = 0xab06;
     (param_1 + 2) = 0x1018;
@@ -1419,10 +1419,10 @@ pub fn load_cursor_fn_1018_6da4(
 }
 
 pub fn load_cursor_fn_1018_6dda(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0xf, 0xa0, 0xd4, param_2, param_3);
     param_1.ptr_a_lo = 0xbdea;
     (param_1 + 2) = 0x1018;
@@ -1430,10 +1430,10 @@ pub fn load_cursor_fn_1018_6dda(
 }
 
 pub fn load_cursor_fn_1018_6e10(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x10, 0xa1, 0xda, param_2, param_3);
     param_1.ptr_a_lo = 0xa0aa;
     (param_1 + 2) = 0x1018;
@@ -1441,10 +1441,10 @@ pub fn load_cursor_fn_1018_6e10(
 }
 
 pub fn load_cursor_fn_1018_6e46(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x11, 0xa2, 0xdc, param_2, param_3);
     param_1.ptr_a_lo = 0xb38e;
     (param_1 + 2) = 0x1018;
@@ -1452,10 +1452,10 @@ pub fn load_cursor_fn_1018_6e46(
 }
 
 pub fn load_cursor_fn_1018_6e7c(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x12, 0xa3, 0xd3, param_2, param_3);
     param_1.ptr_a_lo = 0x964e;
     (param_1 + 2) = 0x1018;
@@ -1463,10 +1463,10 @@ pub fn load_cursor_fn_1018_6e7c(
 }
 
 pub fn load_cursor_fn_1018_6eb2(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x13, 0xa4, 0xdb, param_2, param_3);
     param_1.ptr_a_lo = 0xa932;
     (param_1 + 2) = 0x1018;
@@ -1474,10 +1474,10 @@ pub fn load_cursor_fn_1018_6eb2(
 }
 
 pub fn load_cursor_fn_1018_6ee8(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x14, 0xa5, 0xa5, param_2, param_3);
     param_1.ptr_a_lo = 0xbc16;
     (param_1 + 2) = 0x1018;
@@ -1485,10 +1485,10 @@ pub fn load_cursor_fn_1018_6ee8(
 }
 
 pub fn load_cursor_fn_1018_6f1e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x15, 0xa7, 0xb2, param_2, param_3);
     param_1.ptr_a_lo = 0x9e3a;
     (param_1 + 2) = 0x1018;
@@ -1496,10 +1496,10 @@ pub fn load_cursor_fn_1018_6f1e(
 }
 
 pub fn load_cursor_fn_1018_6f54(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x16, 0xa8, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xb11e;
     (param_1 + 2) = 0x1018;
@@ -1507,10 +1507,10 @@ pub fn load_cursor_fn_1018_6f54(
 }
 
 pub fn load_cursor_fn_1018_6f8a(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x17, 0xaf, 0xc0, param_2, param_3);
     param_1.ptr_a_lo = 0x93de;
     (param_1 + 2) = 0x1018;
@@ -1518,10 +1518,10 @@ pub fn load_cursor_fn_1018_6f8a(
 }
 
 pub fn load_cursor_fn_1018_6fc0(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x18, 0xb0, 0xc1, param_2, param_3);
     param_1.ptr_a_lo = 0xa6c2;
     (param_1 + 2) = 0x1018;
@@ -1529,10 +1529,10 @@ pub fn load_cursor_fn_1018_6fc0(
 }
 
 pub fn load_cursor_fn_1018_6ff6(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x19, 0xb1, 0x80, param_2, param_3);
     param_1.ptr_a_lo = 0xb9a6;
     (param_1 + 2) = 0x1018;
@@ -1540,10 +1540,10 @@ pub fn load_cursor_fn_1018_6ff6(
 }
 
 pub fn load_cursor_fn_1018_702c(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0x1ec, 0x1a, 0xb2, 0xc3, param_2, param_3);
     param_1.ptr_a_lo = 0x9c66;
     (param_1 + 2) = 0x1018;
@@ -1551,10 +1551,10 @@ pub fn load_cursor_fn_1018_702c(
 }
 
 pub fn load_cursor_fn_1018_7062(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x1b, 0xb3, 0xc4, param_2, param_3);
     param_1.ptr_a_lo = 0xaf4a;
     (param_1 + 2) = 0x1018;
@@ -1562,10 +1562,10 @@ pub fn load_cursor_fn_1018_7062(
 }
 
 pub fn load_cursor_fn_1018_7098(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x1c, 0xb4, 0xd8, param_2, param_3);
     param_1.ptr_a_lo = 0xc22e;
     (param_1 + 2) = 0x1018;
@@ -1573,10 +1573,10 @@ pub fn load_cursor_fn_1018_7098(
 }
 
 pub fn load_cursor_fn_1018_70ce(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x1d, 0xb5, 0x7b, param_2, param_3);
     param_1.ptr_a_lo = 0xa4ee;
     (param_1 + 2) = 0x1018;
@@ -1584,10 +1584,10 @@ pub fn load_cursor_fn_1018_70ce(
 }
 
 pub fn load_cursor_fn_1018_7104(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x1e, 0xb6, 0xd9, param_2, param_3);
     param_1.ptr_a_lo = 0xb7d2;
     (param_1 + 2) = 0x1018;
@@ -1595,10 +1595,10 @@ pub fn load_cursor_fn_1018_7104(
 }
 
 pub fn load_cursor_fn_1018_713a(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x1f, 0xb7, 0x7d, param_2, param_3);
     param_1.ptr_a_lo = 0x9a92;
     (param_1 + 2) = 0x1018;
@@ -1606,10 +1606,10 @@ pub fn load_cursor_fn_1018_713a(
 }
 
 pub fn load_cursor_fn_1018_7170(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x21, 0xb9, 0xdd, param_2, param_3);
     param_1.ptr_a_lo = 0xad76;
     (param_1 + 2) = 0x1018;
@@ -1617,10 +1617,10 @@ pub fn load_cursor_fn_1018_7170(
 }
 
 pub fn load_cursor_fn_1018_71a6(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x23, 0xd3, 0xd6, param_2, param_3);
     param_1.ptr_a_lo = 0xb69a;
     (param_1 + 2) = 0x1018;
@@ -1628,10 +1628,10 @@ pub fn load_cursor_fn_1018_71a6(
 }
 
 pub fn load_cursor_fn_1018_71dc(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0x1ed, 0x24, 0xd4, 0xd7, param_2, param_3);
     param_1.ptr_a_lo = 0x995a;
     (param_1 + 2) = 0x1018;
@@ -1639,10 +1639,10 @@ pub fn load_cursor_fn_1018_71dc(
 }
 
 pub fn load_cursor_fn_1018_7212(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x25, 0xe9, 0xee, param_2, param_3);
     param_1.ptr_a_lo = 0xa452;
     (param_1 + 2) = 0x1018;
@@ -1650,10 +1650,10 @@ pub fn load_cursor_fn_1018_7212(
 }
 
 pub fn load_cursor_1018_7248(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 99, 0xa6, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xc05a;
     (param_1 + 2) = 0x1018;
@@ -1661,10 +1661,10 @@ pub fn load_cursor_1018_7248(
 }
 
 pub fn load_cursor_fn_1018_727e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 100, 0xa9, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xa31a;
     (param_1 + 2) = 0x1018;
@@ -1672,10 +1672,10 @@ pub fn load_cursor_fn_1018_727e(
 }
 
 pub fn load_cursor_1018_72b4(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x65, 0xaa, 0xbb, param_2, param_3);
     param_1.ptr_a_lo = 0xb5fe;
     (param_1 + 2) = 0x1018;
@@ -1683,10 +1683,10 @@ pub fn load_cursor_1018_72b4(
 }
 
 pub fn load_cursor_fn_1018_72ea(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x66, 0xab, 0, param_2, param_3);
     param_1.ptr_a_lo = 0x98be;
     (param_1 + 2) = 0x1018;
@@ -1694,10 +1694,10 @@ pub fn load_cursor_fn_1018_72ea(
 }
 
 pub fn load_cursor_fn_1018_7320(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x67, 0xac, 0xbd, param_2, param_3);
     param_1.ptr_a_lo = 0xaba2;
     (param_1 + 2) = 0x1018;
@@ -1705,10 +1705,10 @@ pub fn load_cursor_fn_1018_7320(
 }
 
 pub fn load_cursor_fn_1018_7356(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x68, 0xad, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xbe86;
     (param_1 + 2) = 0x1018;
@@ -1716,10 +1716,10 @@ pub fn load_cursor_fn_1018_7356(
 }
 
 pub fn load_cursor_fn_1018_738c(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x69, 0xae, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xac3e;
     (param_1 + 2) = 0x1018;
@@ -1727,10 +1727,10 @@ pub fn load_cursor_fn_1018_738c(
 }
 
 pub fn load_cursor_fn_1018_73c2(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x35, 0xba, 0x81, param_2, param_3);
     param_1.ptr_a_lo = 0xbf22;
     (param_1 + 2) = 0x1018;
@@ -1738,10 +1738,10 @@ pub fn load_cursor_fn_1018_73c2(
 }
 
 pub fn load_cursor_fn_1018_73f8(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x39, 0xbb, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xa146;
     (param_1 + 2) = 0x1018;
@@ -1750,7 +1750,7 @@ pub fn load_cursor_fn_1018_73f8(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn drawing_and_sound_fn_1018_742e(in_struct_129: *mut AStruct129) {
+pub fn drawing_and_sound_fn_1018_742e(in_struct_129: *mut Struct129) {
     let mut iVar1: i32;
 
     begin_end_Paint_1018_6a7a(in_struct_129);
@@ -1764,10 +1764,10 @@ pub fn drawing_and_sound_fn_1018_742e(in_struct_129: *mut AStruct129) {
 }
 
 pub fn load_cursor_fn_1018_745e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x22, 0xbc, 0xd5, param_2, param_3);
     param_1.ptr_a_lo = 0xb42a;
     (param_1 + 2) = 0x1018;
@@ -1775,10 +1775,10 @@ pub fn load_cursor_fn_1018_745e(
 }
 
 pub fn load_cursor_fn_1018_7494(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x36, 0xbd, 0xcd, param_2, param_3);
     param_1.ptr_a_lo = 0x96ea;
     (param_1 + 2) = 0x1018;
@@ -1786,10 +1786,10 @@ pub fn load_cursor_fn_1018_7494(
 }
 
 pub fn load_cursor_fn_1018_74ca(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x37, 0xbe, 0x83, param_2, param_3);
     param_1.ptr_a_lo = 0xa9ce;
     (param_1 + 2) = 0x1018;
@@ -1797,10 +1797,10 @@ pub fn load_cursor_fn_1018_74ca(
 }
 
 pub fn load_cursor_fn_1018_7500(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x38, 0xbf, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xbcb2;
     (param_1 + 2) = 0x1018;
@@ -1808,10 +1808,10 @@ pub fn load_cursor_fn_1018_7500(
 }
 
 pub fn load_cursor_fn_1018_7536(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x3a, 0xc0, 0x85, param_2, param_3);
     param_1.ptr_a_lo = 0x9f72;
     (param_1 + 2) = 0x1018;
@@ -1819,10 +1819,10 @@ pub fn load_cursor_fn_1018_7536(
 }
 
 pub fn load_cursor_fn_1018_756c(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0x1e2, 0x3b, 0xc1, 0x86, param_2, param_3);
     param_1.ptr_a_lo = 0xb256;
     (param_1 + 2) = 0x1018;
@@ -1830,10 +1830,10 @@ pub fn load_cursor_fn_1018_756c(
 }
 
 pub fn load_cursor_fn_1018_75a2(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x3c, 0xc2, 0x87, param_2, param_3);
     param_1.ptr_a_lo = 0x9516;
     (param_1 + 2) = 0x1018;
@@ -1841,10 +1841,10 @@ pub fn load_cursor_fn_1018_75a2(
 }
 
 pub fn load_cursor_1018_75d8(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x3d, 0xc3, 0x88, param_2, param_3);
     param_1.ptr_a_lo = 0xa7fa;
     (param_1 + 2) = 0x1018;
@@ -1852,10 +1852,10 @@ pub fn load_cursor_1018_75d8(
 }
 
 pub fn load_cursor_fn_1018_760e(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x3e, 0xc4, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xbade;
     (param_1 + 2) = 0x1018;
@@ -1863,10 +1863,10 @@ pub fn load_cursor_fn_1018_760e(
 }
 
 pub fn load_cursor_fn_1018_7644(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x3f, 0xc5, 0, param_2, param_3);
     param_1.ptr_a_lo = 0x9d02;
     (param_1 + 2) = 0x1018;
@@ -1874,10 +1874,10 @@ pub fn load_cursor_fn_1018_7644(
 }
 
 pub fn load_cursor_fn_1018_767a(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x40, 0xc6, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xafe6;
     (param_1 + 2) = 0x1018;
@@ -1885,10 +1885,10 @@ pub fn load_cursor_fn_1018_767a(
 }
 
 pub fn load_cursor_fn_1018_76b0(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x41, 199, 0x8d, param_2, param_3);
     param_1.ptr_a_lo = 0xc2ca;
     (param_1 + 2) = 0x1018;
@@ -1896,10 +1896,10 @@ pub fn load_cursor_fn_1018_76b0(
 }
 
 pub fn load_cursor_fn_1018_76e6(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x42, 200, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xa58a;
     (param_1 + 2) = 0x1018;
@@ -1907,10 +1907,10 @@ pub fn load_cursor_fn_1018_76e6(
 }
 
 pub fn load_cursor_fn_1018_771c(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x43, 0xc9, 0, param_2, param_3);
     param_1.ptr_a_lo = 0xb86e;
     (param_1 + 2) = 0x1018;
@@ -1918,10 +1918,10 @@ pub fn load_cursor_fn_1018_771c(
 }
 
 pub fn load_cursor_fn_1018_7752(
-    param_1: *mut AStruct65,
+    param_1: *mut Struct65,
     param_2: u16,
     param_3: *mut void,
-) -> *mut AStruct65 {
+) -> *mut Struct65 {
     load_cursor_fn_1018_6a0e(param_1, 0, 0x44, 0xcc, 0, param_2, param_3);
     param_1.ptr_a_lo = 0x9b2e;
     (param_1 + 2) = 0x1018;

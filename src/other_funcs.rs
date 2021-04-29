@@ -14,7 +14,7 @@ pub fn empty_fn_1000_55ac() {
     return;
 }
 
-pub fn zero_list_1008_3e38(param_1: *mut AStruct1) -> u8 {
+pub fn zero_list_1008_3e38(param_1: *mut Struct1) -> u8 {
     let mut local_ES_5: u16;
 
     local_ES_5 = (param_1 >> 0x10);
@@ -92,7 +92,7 @@ pub fn switch_statement_1008_73ea(param_1: u16, param_2: u16, param_3: u16) -> u
 
 pub fn set_timer_1008_91ba(param_1: *mut u16) -> *mut u16 {
     let mut uVar1: u16;
-    let local_BX_4: *mut AStruct76;
+    let local_BX_4: *mut Struct76;
     let puVar2: *mut u8;
 
     puVar2 = (param_1 >> 0x10);
@@ -112,8 +112,8 @@ pub fn set_timer_1008_91ba(param_1: *mut u16) -> *mut u16 {
     return param_1;
 }
 
-pub fn kill_timer_1008_921c(param_1: *mut AStruct215) {
-    let local_BX_4: *mut AStruct215;
+pub fn kill_timer_1008_921c(param_1: *mut Struct215) {
+    let local_BX_4: *mut Struct215;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -128,7 +128,7 @@ pub fn kill_timer_1008_921c(param_1: *mut AStruct215) {
     return;
 }
 
-pub fn kill_timer_1008_93ec(in_struct_1: *mut AStruct215, param_2: u8) -> *mut AStruct215 {
+pub fn kill_timer_1008_93ec(in_struct_1: *mut Struct215, param_2: u8) -> *mut Struct215 {
     kill_timer_1008_921c(in_struct_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_struct_1);
@@ -199,8 +199,8 @@ pub fn switch_stmt_1008_ab80(param_1: u16, param_2: u16, param_3: u16) -> u16 {
     return local_4;
 }
 
-pub fn switch_stmt_1008_d818(in_struct_1: *mut AStruct300, switch_param: u16) {
-    let local_struct: *mut AStruct300;
+pub fn switch_stmt_1008_d818(in_struct_1: *mut Struct300, switch_param: u16) {
+    let local_struct: *mut Struct300;
     let mut uVar1: u16;
 
     if (switch_param - 0x1a0 < 0x15) {

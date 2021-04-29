@@ -1,48 +1,48 @@
-pub fn close_file_1008_496c(in_AStruct7: *mut AStruct7) {
+pub fn close_file_1008_496c(in_Struct7: *mut Struct7) {
     let puVar1: *mut u32;
     let mut uVar2: i32;
-    let local_BX_5: *mut AStruct7;
+    let local_BX_5: *mut Struct7;
     let mut local_res6: u16;
     let temp_86216c208fd: *mut u32;
     let mut func_ptr: u32;
     let mut temp_5f096a4ace: u32;
 
-    *_in_AStruct7 = &PTR_LOOP_1050_4c4c;
-    in_AStruct7.u16_field_2 = &PTR_LOOP_1050_1008;
-    puVar1 = in_AStruct7.func_ptr_0x4;
-    uVar2 = in_AStruct7.i_field_4;
+    *_in_Struct7 = &PTR_LOOP_1050_4c4c;
+    in_Struct7.u16_field_2 = &PTR_LOOP_1050_1008;
+    puVar1 = in_Struct7.func_ptr_0x4;
+    uVar2 = in_Struct7.i_field_4;
     if ((uVar2 | puVar1) != 0) {
         unsafe {
             func_ptr = *puVar1;
             (**func_ptr)();
         }
     }
-    error_check_1000_17ce(in_AStruct7.file_path);
-    if (&in_AStruct7.pv_buffer_0x1a != 0) {
-        temp_5f096a4ace = &in_AStruct7.pv_buffer_0x1a;
+    error_check_1000_17ce(in_Struct7.file_path);
+    if (&in_Struct7.pv_buffer_0x1a != 0) {
+        temp_5f096a4ace = &in_Struct7.pv_buffer_0x1a;
         error_check_1000_0dc6(temp_5f096a4ace, (temp_5f096a4ace >> 0x10));
     }
-    if (in_AStruct7.file != 0xffff) {
-        _lclose16(in_AStruct7.file);
+    if (in_Struct7.file != 0xffff) {
+        _lclose16(in_Struct7.file);
     }
-    *_in_AStruct7 = s_1_1050_389a;
-    in_AStruct7.u16_field_2 = &PTR_LOOP_1050_1008;
+    *_in_Struct7 = s_1_1050_389a;
+    in_Struct7.u16_field_2 = &PTR_LOOP_1050_1008;
     return;
 }
 
-pub fn read_from_file_1008_49e8(in_AStruct7: *mut AStruct7) {
-    let paVar1: *mut AStruct131;
+pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
+    let paVar1: *mut Struct131;
     let mut uVar2: u32;
     let mut file_handle: u16;
     let pvVar3: *mut void;
     let mut iVar4: i32;
-    let paVar5: *mut AStruct131;
-    let mut AStruct131_4: u16;
+    let paVar5: *mut Struct131;
+    let mut Struct131_4: u16;
     let mut uVar6: u32;
     let mut extraout_DX: i32;
-    let struct_a: *mut AStruct199;
+    let struct_a: *mut Struct199;
     let mut extraout_DX_00: i32;
-    let local_BX_4: *mut AStruct8;
+    let local_BX_4: *mut Struct8;
     let mut unaff_SS: u16;
     let mut bytes_read: u32;
     let lVar8: u32;
@@ -56,84 +56,84 @@ pub fn read_from_file_1008_49e8(in_AStruct7: *mut AStruct7) {
     let mut read_count: u32;
     let mut uVar7: u32;
 
-    if (in_AStruct7.file_path != 0x0) {
-        if (in_AStruct7.u16_field_0x1e != 0) {
+    if (in_Struct7.file_path != 0x0) {
+        if (in_Struct7.u16_field_0x1e != 0) {
             return;
         }
-        if (in_AStruct7.file == 0xffff) {
-            file_handle = _lopen16(0, in_AStruct7.file_path);
-            in_AStruct7.file = file_handle;
+        if (in_Struct7.file == 0xffff) {
+            file_handle = _lopen16(0, in_Struct7.file_path);
+            in_Struct7.file = file_handle;
             if (file_handle == 0xffff) {
                 return;
             }
         }
         read_count = 0;
-        bytes_read = _hread(0xe, CONCAT22(unaff_SS, &local_18), in_AStruct7.file);
+        bytes_read = _hread(0xe, CONCAT22(unaff_SS, &local_18), in_Struct7.file);
         if ((bytes_read == 0xe) && ((bytes_read >> 0x10) == 0)) {
             read_count = local_16;
             if (local_18 == &PTR_LOOP_1050_4d42) {
-                lVar8 = _llseek16(0, 0, in_AStruct7.file);
+                lVar8 = _llseek16(0, 0, in_Struct7.file);
                 pvVar3 = lVar8;
-                local_1c = __g_AStruct94_ptr_1;
-                local_1a = (__g_AStruct94_ptr_1 >> 0x10);
+                local_1c = __g_Struct94_ptr_1;
+                local_1a = (__g_Struct94_ptr_1 >> 0x10);
                 alloc_mem_1000_0a48(1, read_count, (read_count >> 0x10), local_1c, local_1a);
-                in_AStruct7.pv_buffer_0x1a = pvVar3;
-                in_AStruct7.u16_field_0x1c = extraout_DX;
-                if ((extraout_DX | in_AStruct7.pv_buffer_0x1a) == 0) {
+                in_Struct7.pv_buffer_0x1a = pvVar3;
+                in_Struct7.u16_field_0x1c = extraout_DX;
+                if ((extraout_DX | in_Struct7.pv_buffer_0x1a) == 0) {
                     return;
                 }
                 // WARNING: Load size is inaccurate
-                lVar8 = _hread(read_count, in_AStruct7.pv_buffer_0x1a, in_AStruct7.file);
+                lVar8 = _hread(read_count, in_Struct7.pv_buffer_0x1a, in_Struct7.file);
                 struct_a = (lVar8 >> 0x10);
                 local_a = lVar8;
-                local_18 = in_AStruct7.file;
+                local_18 = in_Struct7.file;
                 local_8 = struct_a;
                 _lclose16(local_18);
-                in_AStruct7.file = 0xffff;
-                in_AStruct7.u16_field_0x1e = 1;
+                in_Struct7.file = 0xffff;
+                in_Struct7.u16_field_0x1e = 1;
                 // WARNING: Load size is inaccurate
-                in_AStruct7.pv_field_0xe = in_AStruct7.pv_buffer_0x1a;
-                uVar6 = &in_AStruct7.pv_buffer_0x1a;
+                in_Struct7.pv_field_0xe = in_Struct7.pv_buffer_0x1a;
+                uVar6 = &in_Struct7.pv_buffer_0x1a;
                 iVar4 = uVar6;
                 uVar6 = uVar6 & 0xffff0000;
-                in_AStruct7.pv_field_0x12 = (uVar6 | iVar4 + 0xe);
+                in_Struct7.pv_field_0x12 = (uVar6 | iVar4 + 0xe);
                 uVar6 = uVar6 | iVar4 + 0x436;
-                in_AStruct7.u32_field_0x16 = uVar6;
+                in_Struct7.u32_field_0x16 = uVar6;
                 local_16 = CONCAT22(local_16._2_2_, 0x14);
                 local_18 = offset;
                 process_struct_1000_179c(0x14, struct_a);
                 paVar5 = uVar6;
                 if ((struct_a | paVar5) == 0) {
-                    &in_AStruct7.func_ptr_0x4 = 0;
+                    &in_Struct7.func_ptr_0x4 = 0;
                 } else {
                     local_16 = CONCAT22(local_16._2_2_, 0x100);
-                    paVar1 = in_AStruct7.pv_field_0x12;
-                    AStruct131_4 = paVar1;
-                    AStruct131_4 = AStruct131_4 + 0x28;
+                    paVar1 = in_Struct7.pv_field_0x12;
+                    Struct131_4 = paVar1;
+                    Struct131_4 = Struct131_4 + 0x28;
                     uVar2 = paVar1 & 0xffff0000;
-                    uVar7 = uVar2 | AStruct131_4;
+                    uVar7 = uVar2 | Struct131_4;
                     local_18 = (uVar2 >> 0x10);
-                    process_struct_1008_4c98((uVar6 & 0xffff | AStruct131_4 << 0x10), uVar7, 0x100);
+                    process_struct_1008_4c98((uVar6 & 0xffff | Struct131_4 << 0x10), uVar7, 0x100);
                     paVar5 = uVar7;
-                    in_AStruct7.func_ptr_0x4 = paVar5;
-                    in_AStruct7.i_field_4 = extraout_DX_00;
+                    in_Struct7.func_ptr_0x4 = paVar5;
+                    in_Struct7.i_field_4 = extraout_DX_00;
                 }
-                if (in_AStruct7.pv_field_0x22 != 0) {
+                if (in_Struct7.pv_field_0x22 != 0) {
                     local_16 = local_16 & 0xffff0000 | in_stack_00000006;
-                    local_18 = in_AStruct7;
-                    pass1_1008_4b8e(in_AStruct7, paVar5);
+                    local_18 = in_Struct7;
+                    pass1_1008_4b8e(in_Struct7, paVar5);
                     return;
                 }
                 return;
             }
         }
-        _lclose16(in_AStruct7.file);
-        in_AStruct7.file = 0xffff;
+        _lclose16(in_Struct7.file);
+        in_Struct7.file = 0xffff;
     }
     return;
 }
 
-pub fn close_file_1008_4c26(param_1: *mut AStruct7, param_2: u8) -> *mut AStruct7 {
+pub fn close_file_1008_4c26(param_1: *mut Struct7, param_2: u8) -> *mut Struct7 {
     close_file_1008_496c(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -141,25 +141,25 @@ pub fn close_file_1008_4c26(param_1: *mut AStruct7, param_2: u8) -> *mut AStruct
     return param_1;
 }
 
-pub fn file_fn_1008_6414(in_AStruct117: *mut AStruct117, param_2: u32) {
+pub fn file_fn_1008_6414(in_Struct117: *mut Struct117, param_2: u32) {
     let ppcVar1: fn();
-    let in_struct_a: *mut AStruct103;
-    let paVar2: *mut AStruct7;
-    let struct_a: *mut AStruct199;
-    let paVar3: *mut AStruct199;
+    let in_struct_a: *mut Struct103;
+    let paVar2: *mut Struct7;
+    let struct_a: *mut Struct199;
+    let paVar3: *mut Struct199;
     let mut extraout_DX: u16;
     let mut extraout_DX_00: u16;
-    let local_AStruct117: *mut AStruct117;
+    let local_Struct117: *mut Struct117;
     let mut local_ES_4: u16;
     let mut local_SS__1: u16;
     let mut local_2a: u16;
     let mut local_28: u16;
     let local_26: u8;
 
-    local_ES_4 = (in_AStruct117 >> 0x10);
-    local_AStruct117 = in_AStruct117;
-    in_AStruct117 = 0;
-    &local_AStruct117.field_0x4 = 0;
+    local_ES_4 = (in_Struct117 >> 0x10);
+    local_Struct117 = in_Struct117;
+    in_Struct117 = 0;
+    &local_Struct117.field_0x4 = 0;
     paVar2 = &local_26;
     process_struct_1008_48fe(
         CONCAT13((local_SS__1 >> 8), CONCAT12(local_SS__1, paVar2)),
@@ -169,24 +169,24 @@ pub fn file_fn_1008_6414(in_AStruct117: *mut AStruct117, param_2: u32) {
     paVar3 = struct_a;
     process_struct_1000_179c(0x1e, struct_a);
     if ((paVar3 | paVar2) == 0) {
-        in_AStruct117 = 0;
+        in_Struct117 = 0;
     } else {
         in_struct_a = CONCAT22(paVar3, paVar2);
         paVar2 = &local_26;
         pass1_1008_3f92(in_struct_a, CONCAT22(local_SS__1, &local_26));
-        in_AStruct117 = paVar2;
-        local_AStruct117.field_0x2 = extraout_DX;
+        in_Struct117 = paVar2;
+        local_Struct117.field_0x2 = extraout_DX;
     }
-    ppcVar1 = (in_AStruct117 + 0x14);
-    (**ppcVar1)(0x1000, in_AStruct117);
-    local_AStruct117.field_0x4 = paVar2;
-    local_AStruct117.field_0x6 = extraout_DX_00;
+    ppcVar1 = (in_Struct117 + 0x14);
+    (**ppcVar1)(0x1000, in_Struct117);
+    local_Struct117.field_0x4 = paVar2;
+    local_Struct117.field_0x6 = extraout_DX_00;
     close_file_1008_496c(&local_26);
     return;
 }
 
-pub fn close_file_1008_6dd0(param_1: *mut AStruct9) {
-    let local_BX_4: *mut AStruct9;
+pub fn close_file_1008_6dd0(param_1: *mut Struct9) {
+    let local_BX_4: *mut Struct9;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -381,9 +381,9 @@ pub fn read_file_func_1008_71a0(in_file_object: *mut file_object) -> bool {
     return local_4;
 }
 
-pub fn close_file_1008_726c(param_1: *mut AStruct11) -> bool {
+pub fn close_file_1008_726c(param_1: *mut Struct11) -> bool {
     let mut file_handle: u16;
-    let local_BX_4: *mut AStruct11;
+    let local_BX_4: *mut Struct11;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -490,7 +490,7 @@ pub fn read_file_1008_76e4(param_1: *mut HFILE16, param_2: *mut long) {
     let ppcVar1: fn();
     let mut uVar2: i32;
     let BVar3: bool;
-    let in_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
     let mut local_DX_93: u16;
     let mut local_SS__1: u16;
     let mut local_1c: u16;
@@ -542,7 +542,7 @@ pub fn read_file_1008_76e4(param_1: *mut HFILE16, param_2: *mut long) {
 pub fn read_file_1008_77cc(in_hfile: *mut HFILE16, param_2: *mut long) -> u16 {
     let mut uVar1: i32;
     let BVar2: bool;
-    let in_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
     let mut local_SS__1: u16;
     let mut local_DXAX_90: u32;
     let mut local_18: u16;
@@ -1000,24 +1000,24 @@ pub fn write_to_file_1008_7e1c(
     return 0;
 }
 
-pub fn read_file_1008_bb5e(in_AStruct120: &mut AStruct120, file_handle_ptr: &mut HFILE16) {
+pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut HFILE16) {
     let ppcVar1: fn();
     let mut b_read_result_1: u16;
     let b_read_result_2: bool;
-    let paVar3: *mut AStruct199;
-    let local_AX_168: *mut AStruct121;
+    let paVar3: *mut Struct199;
+    let local_AX_168: *mut Struct121;
     let local_AX_189: *mut libc::c_char;
     let uVar2: u8;
     let BVar4: bool;
     let pcVar5: *mut libc::c_char;
     let mut uVar6: i32;
     let extraout_var: u32;
-    let local_AStruct120: *mut AStruct120;
+    let local_Struct120: *mut Struct120;
     let extraout_var_00: u32;
-    let in_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
+    let in_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
     let mut uVar7: u16;
-    let extraout_DX: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
     let mut uVar8: u16;
     let mut uVar9: u16;
     let mut unaff_SS: u16;
@@ -1051,12 +1051,12 @@ pub fn read_file_1008_bb5e(in_AStruct120: &mut AStruct120, file_handle_ptr: &mut
     if (CONCAT31(extraout_var, uVar2) == 0) {
         g_u16_1050_0310 = 0x6d4;
     } else {
-        local_AStruct120._0_2_ = in_AStruct120;
-        local_AStruct120._0_2_ = local_AStruct120 + 0x22;
+        local_Struct120._0_2_ = in_Struct120;
+        local_Struct120._0_2_ = local_Struct120 + 0x22;
         // read two bytes from the file i32o the structure passed in by param_1
         b_read_result_1 = read_file_1008_7dee(
             _file_handle_ptr,
-            (in_AStruct120 & 0xffff0000 | local_AStruct120),
+            (in_Struct120 & 0xffff0000 | local_Struct120),
             2,
         );
     }
@@ -1080,9 +1080,9 @@ pub fn read_file_1008_bb5e(in_AStruct120: &mut AStruct120, file_handle_ptr: &mut
         } else {
             paVar3 = process_struct_1008_574a(CONCAT22(in_DX, b_read_result_2));
         }
-        uVar9 = (in_AStruct120 >> 0x10);
-        (local_AStruct120 + 10) = paVar3;
-        (local_AStruct120 + 0xc) = struct_a;
+        uVar9 = (in_Struct120 >> 0x10);
+        (local_Struct120 + 10) = paVar3;
+        (local_Struct120 + 0xc) = struct_a;
         local_11e = 0;
         while (true) {
             if (buffer_1._0_2_ <= local_11e) {
@@ -1133,7 +1133,7 @@ pub fn read_file_1008_bb5e(in_AStruct120: &mut AStruct120, file_handle_ptr: &mut
             local_AX_168.two_file_bytes_0x8 = two_file_bytes;
             local_AX_168.four_file_bytes_0xa = four_file_bytes;
             local_AX_168.two_file_bytes_0xe = two_file_bytes_2;
-            func_ptr_1 = ((local_AStruct120 + 10) + 8);
+            func_ptr_1 = ((local_Struct120 + 10) + 8);
             (**func_ptr_1)();
             local_11e = local_11e + 1;
             struct_a = extraout_DX;
@@ -1268,9 +1268,9 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
     let BVar3: bool;
     let mut uVar4: u16;
     let extraout_var: u32;
-    let in_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
     let mut uVar5: u16;
-    let extraout_DX: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
     let mut extraout_DX_00: u16;
     let mut unaff_SS: u16;
     let mut local_38: u32;
@@ -1355,14 +1355,14 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
     return;
 }
 
-pub fn write_file_1010_0ad2(in_struct_1: *mut AStruct235, param_2: u32) {
+pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
     let mut u_var1: u32;
     let uVar2: u8;
     let BVar3: bool;
     let pcVar4: *mut libc::c_char;
     let extraout_var: u32;
     let mut extraout_DX: i32;
-    let local_BX_26: *mut AStruct325;
+    let local_BX_26: *mut Struct325;
     let local_ES_26: *mut u8;
     let local_SS__1: *mut u8;
     let mut local_2a: u32;
@@ -1472,8 +1472,8 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
     let mut uVar4: u16;
     let BVar5: bool;
     let extraout_var: u32;
-    let in_DX: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
+    let extraout_DX: *mut Struct199;
     let mut iVar6: i32;
     let mut unaff_SS: u16;
     let mut local_2e: u32;
@@ -1573,12 +1573,12 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1010_3fc2(in_struct_1: *mut AStruct390, in_file: *mut HFILE16) -> bool {
+pub fn write_to_file_1010_3fc2(in_struct_1: *mut Struct390, in_file: *mut HFILE16) -> bool {
     let uVar1: u8;
     let extraout_AH: u8;
     let bool_rc: bool;
-    let struct_a_lo: *mut AStruct390;
-    let struct_a_hi: *mut AStruct390;
+    let struct_a_lo: *mut Struct390;
+    let struct_a_hi: *mut Struct390;
     let string_base: *mut libc::c_char;
     let string_offset_a: *mut libc::c_char;
     let string_offset_b: *mut libc::c_char;
@@ -1606,9 +1606,9 @@ pub fn write_to_file_1010_3fc2(in_struct_1: *mut AStruct390, in_file: *mut HFILE
     return 0;
 }
 
-pub fn read_file_1010_404a(param_1: *mut AStruct407, param_2: u32) {
+pub fn read_file_1010_404a(param_1: *mut Struct407, param_2: u32) {
     let uVar1: u8;
-    let local_AX_39: *mut AStruct407;
+    let local_AX_39: *mut Struct407;
     let BVar2: bool;
     let extraout_var: u32;
     let mut unaff_SS: u16;
@@ -1640,13 +1640,13 @@ pub fn read_file_1010_404a(param_1: *mut AStruct407, param_2: u32) {
     return;
 }
 
-pub fn write_to_file_1010_5dc6(in_struct_1: *mut AStruct425, in_file_1: *mut HFILE16) -> bool {
+pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFILE16) -> bool {
     let mut u_var1: u32;
     let uVar2: u8;
     let extraout_AH: u8;
     let mut iVar3: i32;
     let BVar4: bool;
-    let local_BX_26: *mut AStruct425;
+    let local_BX_26: *mut Struct425;
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let mut local_c: u16;
@@ -1870,8 +1870,8 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     let BVar6: bool;
     let extraout_var: u32;
     let extraout_var_00: u32;
-    let in_DX: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
+    let extraout_DX: *mut Struct199;
     let mut uVar7: u16;
     let mut unaff_SS: u16;
     let mut uVar8: u16;
@@ -1968,7 +1968,7 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
     let extraout_AH: u8;
     let BVar3: bool;
     let mut uVar4: u16;
-    let local_BX_26: *mut AStruct470;
+    let local_BX_26: *mut Struct470;
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let lVar6: u32;
@@ -2106,21 +2106,21 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
 pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
     let ppcVar1: fn();
     let uVar2: u8;
-    let struct_a_2: *mut AStruct199;
-    let paVar3: *mut AStruct199;
+    let struct_a_2: *mut Struct199;
+    let paVar3: *mut Struct199;
     let b_result: bool;
-    let local_AX_165: *mut AStruct473;
-    let struct_b: *mut AStruct1174;
+    let local_AX_165: *mut Struct473;
+    let struct_b: *mut Struct1174;
     let mut uVar4: i32;
-    let local_AX_571: *mut AStruct472;
+    let local_AX_571: *mut Struct472;
     let mut uVar5: u16;
     let extraout_var: u32;
-    let struct_a_1: *mut AStruct199;
-    let paVar6: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
-    let extraout_DX_00: *mut AStruct199;
-    let extraout_DX_01: *mut AStruct199;
-    let local_BX_60: *mut AStruct471;
+    let struct_a_1: *mut Struct199;
+    let paVar6: *mut Struct199;
+    let extraout_DX: *mut Struct199;
+    let extraout_DX_00: *mut Struct199;
+    let extraout_DX_01: *mut Struct199;
+    let local_BX_60: *mut Struct471;
     let puVar7: *mut u32;
     let local_ES_60: *mut u8;
     let local_ES_165: *mut u8;
@@ -2131,14 +2131,14 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
     let mut local_36: u16;
     let mut local_2e: u32;
     let mut local_2a: u16;
-    let paStack38: *mut AStruct473;
+    let paStack38: *mut Struct473;
     let mut local_22: u16;
     let mut local_1e: u32;
     let mut local_1a: u16;
     let mut local_16: u16;
     let mut local_14: u16;
     let mut local_12: u16;
-    let local_e: *mut AStruct473;
+    let local_e: *mut Struct473;
     let string_a_2: *mut libc::c_char;
     let mut local_4: u16;
 
@@ -2354,7 +2354,7 @@ pub fn write_to_file_1010_ed58(param_1: u32, in_file: *mut HFILE16) {
     let BVar3: bool;
     let extraout_var: u32;
     // ppuVar4: *mut *mut u8;
-    let local_BX_30: *mut AStruct506;
+    let local_BX_30: *mut Struct506;
     let local_ES_30: *mut u8;
     let string_base_a: *mut u8;
     let local_22: *mut u8;
@@ -2492,14 +2492,14 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
         {
             uVar7 = (param_1 >> 0x10);
             if ((iVar4 + 0x30) != 0) {
-                _g_AStruct94_ptr_1 = ((iVar4 + 0x32) * 6);
-                if (__g_AStruct94_ptr_1 == 0) {
+                _g_Struct94_ptr_1 = ((iVar4 + 0x32) * 6);
+                if (__g_Struct94_ptr_1 == 0) {
                     struct_fn_1000_160a();
                     g_u16_ptr_1050_5f2e = in_DX;
                 } else {
                 }
                 alloc_mem_1000_1708();
-                (iVar4 + 0x2c) = _g_AStruct94_ptr_1;
+                (iVar4 + 0x2c) = _g_Struct94_ptr_1;
                 (iVar4 + 0x2e) = g_u16_ptr_1050_5f2e;
                 zero_list_1008_3e38(CONCAT22(unaff_SS, local_20));
                 local_10 = 0;
@@ -2538,7 +2538,7 @@ pub fn write_to_file_1038_7b20(param_1: *mut u32, param_2: *mut HFILE16) -> u16 
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let lVar6: u32;
-    let paVar7: *mut AStruct961;
+    let paVar7: *mut Struct961;
     let mut local_1c: u16;
     let mut local_1a: u16;
     let mut local_18: u16;
@@ -2594,10 +2594,10 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
     let bool_a: bool;
     let mut uVar1: u16;
     let mut iVar2: i32;
-    let in_DX: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
+    let in_DX: *mut Struct199;
+    let extraout_DX: *mut Struct199;
     let mut uVar3: i32;
-    let extraout_DX_00: *mut AStruct199;
+    let extraout_DX_00: *mut Struct199;
     let mut unaff_SS: u16;
     let pHVar4: *mut HFILE16;
     let mut local_1a: u16;
@@ -2674,7 +2674,7 @@ pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar1: bool;
     let puVar2: *mut u8;
-    let local_BX_4: *mut AStruct1167;
+    let local_BX_4: *mut Struct1167;
     let mut uvar3: u16;
     let mut base: u16;
     let mut offset_2: u32;
@@ -2754,7 +2754,7 @@ pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
 
 pub fn read_from_file_1038_774e(param_1: u32, param_2: *mut HFILE16) {
     let mut uVar1: u16;
-    let local_AX_22: *mut AStruct1168;
+    let local_AX_22: *mut Struct1168;
     let BVar2: bool;
     let mut iVar3: i32;
     let mut unaff_SS: u16;
@@ -2852,18 +2852,18 @@ pub fn read_from_file_1038_774e(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn read_from_file_1038_6118(param_1: *mut AStruct933, param_2: *mut HFILE16) {
+pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) {
     let BVar1: bool;
     let uVar2: u8;
     let puVar3: *mut u32;
     let BVar4: bool;
-    let local_AX_307: *mut AStruct1142;
+    let local_AX_307: *mut Struct1142;
     let puVar5: *mut u8;
     let extraout_var: u32;
-    let extraout_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
-    let paVar6: *mut AStruct199;
-    let local_BX_68: *mut AStruct1141;
+    let extraout_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
+    let paVar6: *mut Struct199;
+    let local_BX_68: *mut Struct1141;
     let mut uVar7: u16;
     let mut unaff_SS: u16;
     let mut uVar8: u16;
@@ -2872,7 +2872,7 @@ pub fn read_from_file_1038_6118(param_1: *mut AStruct933, param_2: *mut HFILE16)
     let mut local_426: u32;
     let mut local_416: u16;
     let mut local_414: u16;
-    let local_412: *mut AStruct1143;
+    let local_412: *mut Struct1143;
     let mut local_40e: u32;
     let mut local_408: [u8; 1024];
     let mut local_8: u16;
@@ -3105,11 +3105,11 @@ pub fn read_from_file_1038_6118(param_1: *mut AStruct933, param_2: *mut HFILE16)
     return;
 }
 
-pub fn write_to_file_1038_5e16(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1038_5e16(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar1: bool;
     let puVar2: *mut u32;
-    let local_BX_28: *mut AStruct1140;
+    let local_BX_28: *mut Struct1140;
     let mut uvar3: u16;
     let mut string_base: u16;
     let mut offset_1: u32;
@@ -3308,7 +3308,7 @@ pub fn read_from_file_1030_dec4(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_de7c(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_de7c(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar1: bool;
     let mut unaff_SS: u16;
@@ -3326,7 +3326,7 @@ pub fn write_to_file_1030_de7c(param_1: *mut AStruct771, param_2: *mut HFILE16) 
     return;
 }
 
-pub fn write_to_file_1030_d61c(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_d61c(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let b_success: bool;
     let mut iVar1: i32;
@@ -3440,7 +3440,7 @@ pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn pass1_1030_c84e(param_1: *mut AStruct771, param_2: *mut HFILE16) -> bool {
+pub fn pass1_1030_c84e(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
     let BVar1: bool;
     let mut unaff_SS: u16;
     let mut local_c: u16;
@@ -3476,7 +3476,7 @@ pub fn read_from_file_1030_c894(param_1: u32, param_2: *mut HFILE16) -> bool {
     return BVar1;
 }
 
-pub fn write_to_file_1030_c230(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_c230(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar1: bool;
     let mut uVar2: u16;
@@ -3519,13 +3519,13 @@ pub fn read_from_file_1030_c29c(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_b768(param_1: *mut AStruct961, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let BVar2: bool;
     let puVar3: *mut u8;
     let puVar4: *mut u8;
     let mut extraout_DX: i32;
-    let local_BX_4: *mut AStruct961;
+    let local_BX_4: *mut Struct961;
     let mut uVar5: u16;
     let mut unaff_SS: u16;
     let mut local_22: u16;
@@ -3573,17 +3573,17 @@ pub fn write_to_file_1030_b768(param_1: *mut AStruct961, param_2: *mut HFILE16) 
     return;
 }
 
-pub fn pass1_1030_b836(struct_b: *mut AStruct962, file_a: *mut HFILE16) {
+pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
     let ppcVar1: fn();
-    let local_AX_11: *mut AStruct962;
+    let local_AX_11: *mut Struct962;
     let BVar2: bool;
     let mut uvar3: u16;
     let mut uVar4: u32;
-    let extraout_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
     let mut extraout_DX_00: u16;
     let mut uVar5: u16;
-    let extraout_DX_01: *mut AStruct199;
+    let extraout_DX_01: *mut Struct199;
     let mut uVar6: u16;
     let mut unaff_SS: u16;
     let pHVar7: *mut HFILE16;
@@ -3643,10 +3643,10 @@ pub fn pass1_1030_b836(struct_b: *mut AStruct962, file_a: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_7418(struct_a: *mut AStruct771, file_a: *mut HFILE16) {
+pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     let mut u_var1: u32;
     let mut in_AX: i32;
-    let struct_b: *mut AStruct771;
+    let struct_b: *mut Struct771;
     let b_success: bool;
     let pcVar2: *mut libc::c_char;
     let mut extraout_DX: i32;
@@ -3845,21 +3845,21 @@ pub fn write_to_file_1030_7418(struct_a: *mut AStruct771, file_a: *mut HFILE16) 
     return;
 }
 
-pub fn read_from_file_1030_778c(struct_b: *mut AStruct933, file_a: u32) {
+pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
     let mut u_var1: u32;
     let uVar2: u8;
-    let local_AX_32: *mut AStruct933;
+    let local_AX_32: *mut Struct933;
     let BVar3: bool;
-    let paVar4: *mut AStruct493;
-    let local_AX_482: *mut AStruct935;
+    let paVar4: *mut Struct493;
+    let local_AX_482: *mut Struct935;
     let mut uVar5: u16;
-    let local_AX_662: *mut AStruct934;
-    let local_AX_1036: *mut AStruct936;
+    let local_AX_662: *mut Struct934;
+    let local_AX_1036: *mut Struct936;
     let extraout_var: u32;
     let mut extraout_DX: u16;
     let mut uVar8: i32;
     let mut extraout_DX_00: i32;
-    let paVar9: *mut AStruct199;
+    let paVar9: *mut Struct199;
     let mut extraout_DX_01: i32;
     let mut iVar10: i32;
     let mut uVar11: u16;
@@ -4170,7 +4170,7 @@ pub fn read_from_file_1030_778c(struct_b: *mut AStruct933, file_a: u32) {
     return;
 }
 
-pub fn write_to_file_1030_5dbe(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut uVar2: u32;
     let mut iVar3: i32;
@@ -4218,15 +4218,15 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut uVar2: u32;
     let piVar3: *mut i32;
-    let in_AX: *mut AStruct94;
+    let in_AX: *mut Struct94;
     let puVar4: *mut u8;
     let mut iVar5: i32;
     let BVar6: bool;
     let mut uVar7: i32;
     let in_DX: *mut u16;
     let puVar8: *mut u16;
-    let extraout_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
     let mut iVar9: i32;
     let mut uVar10: u16;
     let mut unaff_SS: u16;
@@ -4244,20 +4244,20 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
     uVar12 = (param_1 >> 0x10);
     pass1_1030_19b4(param_1, param_2);
     if (in_AX != 0x0) {
-        if (__g_AStruct94_ptr_1 == 0) {
-            _g_AStruct94_ptr_1 = in_AX;
+        if (__g_Struct94_ptr_1 == 0) {
+            _g_Struct94_ptr_1 = in_AX;
             struct_fn_1000_160a();
             g_u16_ptr_1050_5f2e = in_DX;
         } else {
         }
         alloc_mem_1000_1708();
-        _local_40a = CONCAT22(g_u16_ptr_1050_5f2e, _g_AStruct94_ptr_1);
-        puVar8 = (g_u16_ptr_1050_5f2e | _g_AStruct94_ptr_1);
+        _local_40a = CONCAT22(g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
+        puVar8 = (g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
         iVar9 = param_1;
         if (puVar8 == 0x0) {
             (iVar9 + 0x10) = 0;
         } else {
-            zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_AStruct94_ptr_1.field_0x4));
+            zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_Struct94_ptr_1.field_0x4));
             (iVar9 + 0x10) = _local_40a;
             puVar8 = g_u16_ptr_1050_5f2e;
         }
@@ -4285,7 +4285,7 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
                     if ((iVar5 + 10) == 0) {
                         // LAB_1030_5fb7:
                         ppVar11 = process_struct_1010_20ba(
-                            _g_AStruct372_1050_0ed0,
+                            _g_Struct372_1050_0ed0,
                             CONCAT22(local_420, 0x2f),
                         );
                         pass1_1018_04ca(ppVar11, (iVar9 + 4));
@@ -4347,7 +4347,7 @@ pub fn read_file_1030_5c52(buf_a: *mut u8, file_a: *mut HFILE16) -> bool {
     return BVar2;
 }
 
-pub fn write_to_file_1030_56f6(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let puVar1: *mut u16;
     let mut uVar2: u32;
     let mut uVar3: u32;
@@ -4418,14 +4418,14 @@ pub fn write_to_file_1030_56f6(param_1: *mut AStruct771, param_2: *mut HFILE16) 
 pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
     let puVar1: *mut u16;
     let mut uVar2: u32;
-    let in_AX: *mut AStruct94;
+    let in_AX: *mut Struct94;
     let BVar3: bool;
     let puVar4: *mut u8;
     let mut in_i16_5: u16;
     let mut uVar5: u32;
     let in_DX: *mut u16;
-    let extraout_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
     let mut iVar6: i32;
     let mut iVar7: i32;
     let mut uVar8: u16;
@@ -4448,22 +4448,22 @@ pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
     uVar9 = (param_1 >> 0x10);
     pass1_1030_19b4(param_1, param_2);
     if (in_AX != 0x0) {
-        if (__g_AStruct94_ptr_1 == 0) {
-            _g_AStruct94_ptr_1 = in_AX;
+        if (__g_Struct94_ptr_1 == 0) {
+            _g_Struct94_ptr_1 = in_AX;
             struct_fn_1000_160a();
             g_u16_ptr_1050_5f2e = in_DX;
         } else {
         }
-        alloc_mem_1000_1708(0x20, 0, 1, _g_AStruct94_ptr_1, g_u16_ptr_1050_5f2e);
-        if ((g_u16_ptr_1050_5f2e | _g_AStruct94_ptr_1) == 0) {
-            _g_AStruct94_ptr_1 = 0x0;
+        alloc_mem_1000_1708(0x20, 0, 1, _g_Struct94_ptr_1, g_u16_ptr_1050_5f2e);
+        if ((g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1) == 0) {
+            _g_Struct94_ptr_1 = 0x0;
             struct_a = 0x0;
         } else {
-            pass1_1030_84ae(_g_AStruct94_ptr_1, g_u16_ptr_1050_5f2e);
+            pass1_1030_84ae(_g_Struct94_ptr_1, g_u16_ptr_1050_5f2e);
             struct_a = extraout_DX;
         }
         iVar6 = param_1;
-        (iVar6 + 0x10) = _g_AStruct94_ptr_1;
+        (iVar6 + 0x10) = _g_Struct94_ptr_1;
         (iVar6 + 0x12) = struct_a;
         BVar3 = read_file_1008_7dee(param_2, CONCAT22(unaff_SS, &local_4), 2);
         if (BVar3 != 0) {
@@ -4591,8 +4591,8 @@ pub fn read_from_file_1030_4e70(
                     1,
                     param_2_val,
                     (param_2_val >> 0x10),
-                    __g_AStruct94_ptr_1,
-                    (__g_AStruct94_ptr_1 >> 0x10),
+                    __g_Struct94_ptr_1,
+                    (__g_Struct94_ptr_1 >> 0x10),
                 );
                 param_3 = iVar1;
                 (param_3 + 2) = extraout_DX;
@@ -4616,7 +4616,7 @@ pub fn read_from_file_1030_4e70(
 }
 
 pub fn read_from_file_1030_33f0(param_1: u32, param_2: *mut HFILE16) {
-    let local_AX_14: *mut AStruct874;
+    let local_AX_14: *mut Struct874;
     let BVar1: bool;
 
     local_AX_14 = param_1;
@@ -4690,7 +4690,7 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: *mut HFILE16) {
 }
 
 pub fn write_to_file_1030_32e4(param_1: u32, param_2: *mut HFILE16) {
-    let local_AX_14: *mut AStruct873;
+    let local_AX_14: *mut Struct873;
     let BVar1: bool;
     let mut uVar2: u16;
     let mut unaff_SS: u16;
@@ -4751,7 +4751,7 @@ pub fn write_to_file_1030_32e4(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_2aca(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut uVar2: u32;
     let mut iVar3: i32;
@@ -4859,16 +4859,16 @@ pub fn write_to_file_1030_2aca(param_1: *mut AStruct771, param_2: *mut HFILE16) 
 
 pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
     let puVar1: *mut u16;
-    let in_AX: *mut AStruct94;
+    let in_AX: *mut Struct94;
     let BVar2: bool;
     let local_AX_184: *mut u8;
     let puVar3: *mut u8;
     let mut uVar4: u16;
     let in_DX: *mut u16;
     let puVar5: *mut u16;
-    let extraout_DX: *mut AStruct199;
-    let struct_a: *mut AStruct199;
-    let local_BX_91: *mut AStruct866;
+    let extraout_DX: *mut Struct199;
+    let struct_a: *mut Struct199;
+    let local_BX_91: *mut Struct866;
     let mut iVar6: i32;
     let mut local_SI__1: u16;
     let mut local_ES_210: u16;
@@ -4892,20 +4892,20 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
     if (in_AX == 0x0) {
         return;
     }
-    if (__g_AStruct94_ptr_1 == 0) {
-        _g_AStruct94_ptr_1 = in_AX;
+    if (__g_Struct94_ptr_1 == 0) {
+        _g_Struct94_ptr_1 = in_AX;
         struct_fn_1000_160a();
         g_u16_ptr_1050_5f2e = in_DX;
     } else {
     }
     alloc_mem_1000_1708();
-    _local_40e = CONCAT22(g_u16_ptr_1050_5f2e, _g_AStruct94_ptr_1);
-    puVar5 = (g_u16_ptr_1050_5f2e | _g_AStruct94_ptr_1);
+    _local_40e = CONCAT22(g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
+    puVar5 = (g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
     local_BX_91 = param_1;
     if (puVar5 == 0x0) {
         local_BX_91.field_0x10 = 0x0;
     } else {
-        zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_AStruct94_ptr_1.field_0x6));
+        zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_Struct94_ptr_1.field_0x6));
         local_BX_91.field_0x10 = _local_40e;
         puVar5 = g_u16_ptr_1050_5f2e;
     }
@@ -4997,7 +4997,7 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
                     local_BX_91.field_0x16 = local_404;
                     local_BX_91.field_0x1a = local_406;
                     ppVar8 = process_struct_1010_20ba(
-                        _g_AStruct372_1050_0ed0,
+                        _g_Struct372_1050_0ed0,
                         CONCAT22(local_SI__1, 0x2f),
                     );
                     pass1_1018_04a4(ppVar8, local_BX_91.field_0x4);
@@ -5011,7 +5011,7 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn pass1_1030_227a(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn pass1_1030_227a(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut iVar1: i32;
     let BVar2: bool;
 
@@ -5086,7 +5086,7 @@ pub fn read_file_1030_232e(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_1a9c(param_1: *mut AStruct771, param_2: *mut HFILE16) -> bool {
+pub fn write_to_file_1030_1a9c(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
     let piVar1: *mut i32;
     let mut iVar2: i32;
     let BVar3: bool;
@@ -5125,7 +5125,7 @@ pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
     let BVar5: bool;
     let mut uVar6: i32;
     let in_DX: *mut u16;
-    let struct_a: *mut AStruct199;
+    let struct_a: *mut Struct199;
     let mut iVar7: i32;
     let mut iVar8: i32;
     let mut uVar9: u16;
@@ -5133,7 +5133,7 @@ pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
 
     pass1_1030_19b4(param_1, param_2);
     if (in_AX != 0) {
-        if (__g_AStruct94_ptr_1 == 0) {
+        if (__g_Struct94_ptr_1 == 0) {
             struct_fn_1000_160a();
             g_u16_ptr_1050_5f2e = in_DX;
         } else {
@@ -5170,7 +5170,7 @@ pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
     return 0;
 }
 
-pub fn write_to_file_1030_1978(param_1: *mut AStruct771, param_2: *mut HFILE16) -> i32 {
+pub fn write_to_file_1030_1978(param_1: *mut Struct771, param_2: *mut HFILE16) -> i32 {
     let mut iVar1: i32;
 
     iVar1 = write_to_file_1030_16d6(param_1, param_2);
@@ -5202,7 +5202,7 @@ pub fn pass1_1030_19b4(param_1: u32, param_2: u32) {
     return;
 }
 
-pub fn write_to_file_1030_16d6(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_to_file_1030_16d6(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let BVar1: bool;
     let mut uVar2: u16;
     let mut unaff_SS: u16;
@@ -5223,7 +5223,7 @@ pub fn write_to_file_1030_16d6(param_1: *mut AStruct771, param_2: *mut HFILE16) 
     return;
 }
 
-pub fn pass1_1030_1730(param_1: *mut AStruct933, param_2: *mut HFILE16) -> u8 {
+pub fn pass1_1030_1730(param_1: *mut Struct933, param_2: *mut HFILE16) -> u8 {
     let BVar1: bool;
 
     BVar1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 4)), 4);
@@ -5244,7 +5244,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     let mut cVar4: u8;
     let puVar5: *mut u32;
     let mut uVar6: u32;
-    let paVar7: *mut AStruct844;
+    let paVar7: *mut Struct844;
     let mut uVar8: u32;
     let lVar9: u32;
     let ppcVar10: fn();
@@ -5255,27 +5255,27 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     let uVar15: u8;
     let uVar16: u8;
     let uVar17: u8;
-    let paVar18: *mut AStruct493;
+    let paVar18: *mut Struct493;
     let puVar19: *mut u16;
     let mut uVar20: u16;
     let BVar21: bool;
     let mut uVar22: i32;
     let puVar23: *mut u8;
     let mut uVar24: u32;
-    let extraout_DX: *mut AStruct199;
+    let extraout_DX: *mut Struct199;
     let mut iVar25: i32;
-    let extraout_DX_00: *mut AStruct199;
-    let extraout_DX_01: *mut AStruct199;
-    let extraout_DX_02: *mut AStruct199;
+    let extraout_DX_00: *mut Struct199;
+    let extraout_DX_01: *mut Struct199;
+    let extraout_DX_02: *mut Struct199;
     let mut extraout_DX_03: u16;
     let mut extraout_DX_04: u16;
     let mut extraout_DX_05: u16;
     let mut extraout_DX_06: u16;
     let mut extraout_DX_07: u16;
-    let extraout_DX_08: *mut AStruct199;
+    let extraout_DX_08: *mut Struct199;
     let mut extraout_DX_09: u16;
     let mut extraout_DX_10: u16;
-    let paVar26: *mut AStruct199;
+    let paVar26: *mut Struct199;
     let mut uVar27: u16;
     let mut unaff_SI: u16;
     let unaff_DI: *mut u8;
@@ -5289,7 +5289,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     let mut bVar32: bool;
     let ppVar33: *mut pass1_struct_1;
     let puVar34: *mut u16;
-    let paVar35: *mut AStruct763;
+    let paVar35: *mut Struct763;
     let mut local_154: u16;
     let mut local_152: u16;
     let mut local_14c: u16;
@@ -6090,13 +6090,13 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                 local_46._0_1_ = 0x2b;
                 local_46._1_1_ = 0;
                 local_44 = 1;
-                local_4a._0_1_ = SUB41(_g_AStruct372_1050_0ed0, 0);
-                local_4a._1_1_ = (_g_AStruct372_1050_0ed0 >> 8);
-                local_48 = (_g_AStruct372_1050_0ed0 >> 0x10);
+                local_4a._0_1_ = SUB41(_g_Struct372_1050_0ed0, 0);
+                local_4a._1_1_ = (_g_Struct372_1050_0ed0 >> 8);
+                local_48 = (_g_Struct372_1050_0ed0 >> 0x10);
                 uStack76 = 0x28;
                 uStack75 = 0x10;
                 uStack78 = 0x7b0a;
-                ppVar33 = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, 0x1002b);
+                ppVar33 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, 0x1002b);
                 local_44 = (ppVar33 >> 0x10);
                 local_48 = ppVar33;
                 local_46._0_1_ = (ppVar33 >> 0x10);
@@ -6134,25 +6134,25 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                 local_40 = paVar26;
                 pass1_1028_780c(uVar27, uVar28, CONCAT22(paVar26, paVar18));
                 local_40 = 2;
-                local_44 = _g_AStruct372_1050_0ed0;
-                local_42._0_1_ = (_g_AStruct372_1050_0ed0 >> 0x10);
-                local_42._1_1_ = (_g_AStruct372_1050_0ed0 >> 0x18);
+                local_44 = _g_Struct372_1050_0ed0;
+                local_42._0_1_ = (_g_Struct372_1050_0ed0 >> 0x10);
+                local_42._1_1_ = (_g_Struct372_1050_0ed0 >> 0x18);
                 local_46._0_1_ = uVar30;
                 local_46._1_1_ = (uVar30 >> 8);
                 local_48 = 0x7b44;
-                local_a = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(uVar36, 2));
+                local_a = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(uVar36, 2));
                 local_c = u16_1050_13ae;
                 if (2 < u16_1050_13ae) {
                     local_40 = 0x2f;
-                    local_44 = _g_AStruct372_1050_0ed0;
-                    local_42._0_1_ = (_g_AStruct372_1050_0ed0 >> 0x10);
-                    local_42._1_1_ = (_g_AStruct372_1050_0ed0 >> 0x18);
+                    local_44 = _g_Struct372_1050_0ed0;
+                    local_42._0_1_ = (_g_Struct372_1050_0ed0 >> 0x10);
+                    local_42._1_1_ = (_g_Struct372_1050_0ed0 >> 0x18);
                     local_46._0_1_ = 0x10;
                     local_46._1_1_ = 0x10;
                     uVar29 = 0x1010;
                     local_48 = 0x7b63;
                     ppVar33 =
-                        process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(uVar36, 0x2f));
+                        process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(uVar36, 0x2f));
                     local_48 = (ppVar33 >> 0x10);
                     local_4a._0_1_ = SUB41(ppVar33, 0);
                     local_4a._1_1_ = (ppVar33 >> 8);
@@ -6877,7 +6877,7 @@ pub fn read_file_1028_d7ba(param_1: u16, param_2: u16, param_1_00: *mut HFILE16)
     return 1;
 }
 
-pub fn write_to_file_1028_b5ec(in_struct_1: *mut AStruct771, in_file_handle: *mut HFILE16) -> u16 {
+pub fn write_to_file_1028_b5ec(in_struct_1: *mut Struct771, in_file_handle: *mut HFILE16) -> u16 {
     let mut u_var1: u32;
     let BVar2: bool;
     let mut iVar3: i32;
@@ -7161,7 +7161,7 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
     }
 }
 
-pub fn pass1_1028_b282(param_1: *mut AStruct771, param_2: *mut HFILE16) -> bool {
+pub fn pass1_1028_b282(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
     let BVar1: bool;
     let mut unaff_SS: u16;
     let mut local_c: u16;
@@ -7284,7 +7284,7 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1028_64d6(param_1: *mut AStruct771, param_2: *mut HFILE16) -> u16 {
+pub fn write_to_file_1028_64d6(param_1: *mut Struct771, param_2: *mut HFILE16) -> u16 {
     let mut u_var1: u32;
     let mut iVar2: i32;
     let puVar3: *mut u16;
@@ -7347,7 +7347,7 @@ pub fn write_to_file_1028_64d6(param_1: *mut AStruct771, param_2: *mut HFILE16) 
     return 0;
 }
 
-pub fn write_to_file_1028_5f82(param_1: *mut AStruct771, param_2: *mut HFILE16) -> bool {
+pub fn write_to_file_1028_5f82(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
     let BVar1: bool;
     let mut unaff_SS: u16;
     let mut local_c: u16;
@@ -7382,7 +7382,7 @@ pub fn read_from_file_1028_5fc8(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_file_func_1028_4a1a(param_1: *mut AStruct771, param_2: *mut HFILE16) {
+pub fn write_file_func_1028_4a1a(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar1: bool;
 
@@ -7416,10 +7416,10 @@ pub fn pass1_1028_4a5a(param_1: u32, in_file_1: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1028_3d0e(in_struct_1: *mut AStruct771, in_file_handle: *mut HFILE16) {
+pub fn write_to_file_1028_3d0e(in_struct_1: *mut Struct771, in_file_handle: *mut HFILE16) {
     let mut in_AX: i32;
     let bool_res: bool;
-    let local_struct_1: *mut AStruct771;
+    let local_struct_1: *mut Struct771;
     let mut local_struct_1_hi: u16;
     let mut local_SS__1: u16;
     let local_10: *mut u8;
@@ -7446,9 +7446,9 @@ pub fn write_to_file_1028_3d0e(in_struct_1: *mut AStruct771, in_file_handle: *mu
     return;
 }
 
-pub fn read_file_1028_3d92(in_struct: *mut AStruct772, in_file_handle: *mut HFILE16) {
+pub fn read_file_1028_3d92(in_struct: *mut Struct772, in_file_handle: *mut HFILE16) {
     let mut in_AX: i32;
-    let local_struct_1: *mut AStruct772;
+    let local_struct_1: *mut Struct772;
     let BVar1: bool;
     let mut uVar2: u16;
 
@@ -7524,8 +7524,8 @@ pub fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
     let BVar2: bool;
     let mut iVar3: i32;
     let mut uVar4: u16;
-    let struct_a: *mut AStruct199;
-    let extraout_DX: *mut AStruct199;
+    let struct_a: *mut Struct199;
+    let extraout_DX: *mut Struct199;
     let mut unaff_SS: u16;
     let mut uVar5: u32;
     let pHVar6: *mut HFILE16;
@@ -7628,11 +7628,11 @@ pub fn read_file_fn_1028_14d8(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn file_write_fn_1028_0234(param_1: *mut AStruct731, param_2: u32) -> bool {
+pub fn file_write_fn_1028_0234(param_1: *mut Struct731, param_2: u32) -> bool {
     let mut u_var1: u32;
     let mut iVar2: i32;
     let BVar3: bool;
-    let local_BX_28: *mut AStruct731;
+    let local_BX_28: *mut Struct731;
     let mut uVar4: u16;
     let mut unaff_SS: u16;
     let mut local_1a: u16;
@@ -7693,7 +7693,7 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: *mut HFILE16) {
     let mut in_AX: i32;
     let BVar2: bool;
     let mut uvar3: u16;
-    let local_AX_291: *mut AStruct732;
+    let local_AX_291: *mut Struct732;
     let mut uVar4: i32;
     let mut extraout_DX: i32;
     let mut uVar6: u16;
@@ -7937,7 +7937,7 @@ pub fn call_read_file_1020_a65e(param_1: u32, in_file_handle: *mut HFILE16) -> u
     return 0;
 }
 
-pub fn pass1_1020_8a9c(param_1: *mut AStruct393) {
+pub fn pass1_1020_8a9c(param_1: *mut Struct393) {
     let mut u_var1: u32;
     let mut uVar2: i32;
     let mut uvar3: u16;
@@ -7945,16 +7945,16 @@ pub fn pass1_1020_8a9c(param_1: *mut AStruct393) {
     let mut unaff_SI: u16;
     let mut unaff_SS: u16;
     let ppVar4: *mut pass1_struct_1;
-    let paVar5: *mut AStruct104;
-    let local_struct_1: *mut AStruct393;
-    let local_struct_1_hi: *mut AStruct393;
+    let paVar5: *mut Struct104;
+    let local_struct_1: *mut Struct393;
+    let local_struct_1_hi: *mut Struct393;
     let mut local_4c: u16;
     let mut local_4a: u16;
     let mut local_48: [u8; 30];
     let mut local_2a: [u8; 36];
     let mut local_6: u16;
     let mut local_4: u16;
-    let local_struct_1_1: *mut AStruct393;
+    let local_struct_1_1: *mut Struct393;
 
     local_struct_1 = param_1;
     local_struct_1_1 = local_struct_1;
@@ -7967,7 +7967,7 @@ pub fn pass1_1020_8a9c(param_1: *mut AStruct393) {
     &local_struct_1.field_0x22 = 0;
     param_1.field_0x0 = 0x8e92;
     local_struct_1.u16_0x2 = 0x1020;
-    ppVar4 = process_struct_1010_20ba(_g_AStruct372_1050_0ed0, CONCAT22(unaff_SI, 0x29));
+    ppVar4 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(unaff_SI, 0x29));
     uVar3 = (ppVar4 >> 0x10);
     local_struct_1.field_0x22 = ppVar4;
     local_struct_1.field_0x24 = uVar3;

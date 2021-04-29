@@ -1,5 +1,5 @@
 use crate::{
-    defines::{code, pass1_struct_1, AStruct68, AppContext, Struct44},
+    defines::{code, pass1_struct_1, AppContext, Struct44, Struct68},
     err_funcs::error_check_1000_17ce,
     struct_funcs::{process_struct_1010_20ba, process_struct_1040_7728},
     util::{
@@ -83,9 +83,9 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                 b_var15 = *pb_var3;
                 if (b_var28) {
                     // code_r0x1138006f:
-                    pu_var8 = (pu_var26.offset(1));
-                    out(*pu_var26, u_var21);
-                    pu_var7 = (pc_var27 + 0x6c);
+                    pu_var8 = pu_var26.offset(1);
+                    out(*pu_var26 as u32, u_var21);
+                    pu_var7 = pc_var27.offset(0x6c);
                     *pu_var7 = *pu_var7 + b_var28 * -(*pu_var7 & 3);
                     pc_var2 = in_bx + pu_var8;
                     *pc_var2 = *pc_var2 + unaff_CS;
@@ -7110,7 +7110,7 @@ pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: *mut Struct44) -> *
     let in_stack_00000068: *mut u8;
     let mut in_stack_0000407f: u8;
     let mut in_stack_0000efc4: u32;
-    let in_struct_1: *mut AStruct68;
+    let in_struct_1: *mut Struct68;
     let in_stack_0000efc8: *mut u8;
     let mut in_stack_0000efca: u32;
     let mut in_stack_0000efce: u32;
@@ -7263,7 +7263,7 @@ pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: *mut Struct44) -> *
     func_0x47c726cc();
     pc_var2 = &stack0x002a + unaff_si;
     unsafe { *pc_var2 = *pc_var2 + c_var8 + CARRY1((in_bx >> 8), unaff_si[in_bx]) };
-    ppVar18 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, in_stack_0000efd2);
+    ppVar18 = process_struct_1010_20ba(ctx._g_struct_372_1050_0ed0, in_stack_0000efd2);
     (u_var13 + 0x8e) = ppVar18;
     (u_var13 + 0x90) = (ppVar18 >> 0x10);
     (u_var13 + 0x74) = 0;

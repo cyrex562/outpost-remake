@@ -1,4 +1,14 @@
-use crate::{defines::{AStruct340, HWND16, Struct44}, err_funcs::error_check_1000_17ce, sys_funcs::win_cleanup_func_1040_b0f8, ui_funcs::win_cleanup_1018_4d22};
+use crate::{
+    defines::{Struct318, Struct340, Struct371, Struct387, Struct44, HWND16},
+    err_funcs::error_check_1000_17ce,
+    pass8_funcs::{pass1_1010_1f62, pass1_1010_32da},
+    pass_funcs::{pass1_1000_4906, pass1_1040_c60e},
+    sys_funcs::{win_cleanup_func_1040_b0f8, DestroyWindow16, IsWindow16},
+    ui_funcs::{
+        destroy_win_1010_2fa0, free_proc_inst_1040_911e, update_window_1040_93aa,
+        win_cleanup_1018_4d22, win_gui_fn_1010_32f4,
+    },
+};
 
 pub fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
@@ -16,23 +26,21 @@ pub fn win_cleanup_1010_0ee6(param_1: u32, param_2: u8) {
     return param_1;
 }
 
-pub fn cleanup_1010_17c0(param_1: *mut AStruct340) {
+pub unsafe fn cleanup_1010_17c0(param_1: *mut Struct340) {
     let puVar1: *mut u32;
-    let mut uVar2: i32;
+    let mut u_var2: i32;
     let local_BX_14: *mut Struct371;
-    let mut uvar3: u16;
+    let mut u_var3: u16;
     let fn_ptr_1: fn();
 
     destroy_win_1010_2fa0(param_1);
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     local_BX_14 = param_1;
     puVar1 = local_BX_14.field_0x56;
-    uVar2 = &local_BX_14.field_0x58;
-    if ((uVar2 | puVar1) != 0) {
-        unsafe {
-            fn_ptr_1 = *puVar1;
-            (**fn_ptr_1)();
-        }
+    u_var2 = &local_BX_14.field_0x58;
+    if ((u_var2 | puVar1) != 0) {
+        fn_ptr_1 = *puVar1;
+        (**fn_ptr_1)();
     }
     &local_BX_14.field_0x56 = 0;
     error_check_1000_17ce(local_BX_14.field_0x60);
@@ -43,10 +51,10 @@ pub fn cleanup_1010_17c0(param_1: *mut AStruct340) {
     return;
 }
 
-pub fn win_cleanup_1010_305a(param_1: *mut astruct_318, param_2: i32, param_3: u32) {
+pub unsafe fn win_cleanup_1010_305a(param_1: *mut Struct318, param_2: i32, param_3: u32) {
     let puVar1: *mut u16;
     let piVar2: *mut i32;
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut bVar4: bool;
     let mut uVar5: u16;
     let mut uVar6: u16;
@@ -81,8 +89,8 @@ pub fn win_cleanup_1010_305a(param_1: *mut astruct_318, param_2: i32, param_3: u
                         puVar1 = (iVar7 + 0x16),
                         *puVar1 != local_8 && local_8 <= *puVar1,
                     ) {
-                        uVar3 = (iVar7 + 0x2a + local_8 * 4);
-                        DestroyWindow16((uVar3 + 0x18));
+                        u_var3 = (iVar7 + 0x2a + local_8 * 4);
+                        DestroyWindow16((u_var3 + 0x18));
                         (iVar7 + local_8 * 4 + 0x2a) = 0;
                     }
                     (iVar7 + 0x16) = local_6 + 1;
@@ -95,9 +103,9 @@ pub fn win_cleanup_1010_305a(param_1: *mut astruct_318, param_2: i32, param_3: u
                     piVar2 = (iVar7 + 0x16);
                     *piVar2 = *piVar2 + 1;
                     if (1 < (iVar7 + 0x16)) {
-                        uVar3 = (iVar7 + (iVar7 + 0x16) * 4 + 0x22);
-                        iVar8 = uVar3;
-                        uVar5 = (uVar3 >> 0x10);
+                        u_var3 = (iVar7 + (iVar7 + 0x16) * 4 + 0x22);
+                        iVar8 = u_var3;
+                        uVar5 = (u_var3 >> 0x10);
                         local_a = (iVar8 + 0x20) + (iVar8 + 0x24) + 8;
                     }
                     update_window_1040_93aa(param_3, uVar10, local_a, (iVar7 + 0x1a));
@@ -109,17 +117,17 @@ pub fn win_cleanup_1010_305a(param_1: *mut astruct_318, param_2: i32, param_3: u
                     if ((iVar7 + 0x52) != 0) {
                         local_8 = 0;
                         while {
-                            uVar3 = (iVar7 + 0x52);
-                            uVar10 = (uVar3 >> 0x10);
-                            iVar8 = uVar3;
+                            u_var3 = (iVar7 + 0x52);
+                            uVar10 = (u_var3 >> 0x10);
+                            iVar8 = u_var3;
                             if (((iVar8 + local_8 * 4) != 0) && ((iVar8 + local_8 * 4) != param_3))
                             {
-                                uVar3 = (iVar7 + 0x52);
-                                uVar3 = (uVar3 + local_8 * 4);
-                                DestroyWindow16((uVar3 + 0x18));
+                                u_var3 = (iVar7 + 0x52);
+                                u_var3 = (u_var3 + local_8 * 4);
+                                DestroyWindow16((u_var3 + 0x18));
                             }
-                            uVar3 = (iVar7 + 0x52);
-                            (uVar3 + local_8 * 4) = 0;
+                            u_var3 = (iVar7 + 0x52);
+                            (u_var3 + local_8 * 4) = 0;
                             local_8 = local_8 + 1;
                             local_8 < 10
                         } {}
@@ -139,9 +147,9 @@ pub fn win_cleanup_1010_305a(param_1: *mut astruct_318, param_2: i32, param_3: u
     }
 }
 
-pub fn destroy_win_1010_3202(param_1: *mut astruct_387, param_2: i32) {
+pub unsafe fn destroy_win_1010_3202(param_1: *mut Struct387, param_2: i32) {
     let piVar1: *mut i32;
-    let mut uVar2: u32;
+    let mut u_var2: u32;
     let mut iVar3: i32;
     let mut uVar4: u16;
     let mut local_4: u16;
@@ -162,13 +170,13 @@ pub fn destroy_win_1010_3202(param_1: *mut astruct_387, param_2: i32) {
         if ((iVar3 + 0x52) != 0) {
             local_4 = 0;
             while {
-                uVar2 = (iVar3 + 0x52);
-                if ((uVar2 + local_4 * 4) != 0) {
-                    uVar2 = (iVar3 + 0x52);
-                    uVar2 = (uVar2 + local_4 * 4);
-                    DestroyWindow16((uVar2 + 0x18));
-                    uVar2 = (iVar3 + 0x52);
-                    (uVar2 + local_4 * 4) = 0;
+                u_var2 = (iVar3 + 0x52);
+                if ((u_var2 + local_4 * 4) != 0) {
+                    u_var2 = (iVar3 + 0x52);
+                    u_var2 = (u_var2 + local_4 * 4);
+                    DestroyWindow16((u_var2 + 0x18));
+                    u_var2 = (iVar3 + 0x52);
+                    (u_var2 + local_4 * 4) = 0;
                 }
                 local_4 = local_4 + 1;
                 local_4 < 10
@@ -200,10 +208,10 @@ pub fn pass1_1040_83e6(param_1: u32, param_2: u8) {
     return param_1;
 }
 
-pub fn destroy_window_1040_8212(param_1: *mut astruct_53) {
+pub fn destroy_window_1040_8212(param_1: *mut Struct53) {
     let is_window_result: bool;
-    let local_struct_1: *mut astruct_53;
-    let local_struct_1_hi: *mut astruct_53;
+    let local_struct_1: *mut Struct53;
+    let local_struct_1_hi: *mut Struct53;
 
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;
@@ -219,7 +227,7 @@ pub fn destroy_window_1040_8212(param_1: *mut astruct_53) {
 
 pub fn win_cleanup_func_1040_782c(param_1: *mut astruct_599) -> u8 {
     let puVar1: *mut u32;
-    let mut uVar2: i32;
+    let mut u_var2: i32;
     let ppcVar3: fn();
     let HVar4: HANDLE16;
     let local_BX_5: *mut astruct_46;
@@ -231,8 +239,8 @@ pub fn win_cleanup_func_1040_782c(param_1: *mut astruct_599) -> u8 {
     param_1.field_0x0 = 0x840c;
     local_BX_5.field_0x2 = &PTR_LOOP_1050_1040;
     puVar1 = local_BX_5.field_0x70;
-    uVar2 = local_BX_5.field_0x72;
-    if ((uVar2 | puVar1) != 0) {
+    u_var2 = local_BX_5.field_0x72;
+    if ((u_var2 | puVar1) != 0) {
         unsafe {
             ppcVar3 = *puVar1;
             (**ppcVar3)();
@@ -264,7 +272,7 @@ pub fn ret_1040_78de() -> u8 {
 pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u16, param_4: u32) {
     let mut uVar1: u16;
     let ppcVar2: fn();
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut iVar4: i32;
     let BVar5: bool;
     let mut uVar6: u16;
@@ -299,17 +307,17 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
             }
             if (param_2._2_2_ == 0x10a) {
                 GetClientRect16(CONCAT22(unaff_SS, &local_a), &param_1.field_0x6);
-                uVar3 = &param_1[1].field_0x4;
+                u_var3 = &param_1[1].field_0x4;
                 local_8 = local_8 + 3;
-                local_a = (uVar3 + 0x1a) - 9;
+                local_a = (u_var3 + 0x1a) - 9;
                 local_6 = local_6 - 3;
                 local_4 = local_4 - 3;
                 InvalidateRect16(1, &local_a, unaff_SS);
                 destroy_win_1010_2fa0(&param_1[1].field_0x4);
                 pass1_1010_32c0(&param_1[1].field_0x4, 0);
-                uVar3 = &param_1[1].field_0x4;
-                local_22 = (uVar3 >> 0x10);
-                pass1_1010_2ee2(uVar3, local_22);
+                u_var3 = &param_1[1].field_0x4;
+                local_22 = (u_var3 >> 0x10);
+                pass1_1010_2ee2(u_var3, local_22);
                 return;
             }
             if (param_2._2_2_ != 0x10b) {
@@ -317,8 +325,8 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
                 win_gui_fn_1040_b54a(param_1, param_2_00, param_3, param_2);
                 return;
             }
-            uVar3 = &param_1[1].field_0x4;
-            uVar6 = (uVar3 + 0x12);
+            u_var3 = &param_1[1].field_0x4;
+            uVar6 = (u_var3 + 0x12);
             uVar7 = uVar6;
             ppVar9 = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(uVar6, 3));
             uVar8 = (ppVar9 >> 0x10);
@@ -326,11 +334,11 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
             if ((uVar6 != 0x70) && (iVar4 == 0)) {
                 return;
             }
-            uVar3 = &param_1[1].field_0x1c;
-            uVar13 = uVar3;
-            uVar14 = (uVar3 >> 0x10);
-            uVar3 = &param_1[1].field_0x4;
-            uVar1 = (uVar3 + 0x12);
+            u_var3 = &param_1[1].field_0x1c;
+            uVar13 = u_var3;
+            uVar14 = (u_var3 >> 0x10);
+            u_var3 = &param_1[1].field_0x4;
+            uVar1 = (u_var3 + 0x12);
             uVar11 = uVar1;
             uVar12 = (uVar1 >> 8);
         } else {
@@ -344,8 +352,8 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
                     if (iVar4 != 0) {
                         return;
                     }
-                    uVar3 = &param_1[1].field_0x1c;
-                    window_msg_func_1010_7300(ppVar9, 0, 0, 0x13, uVar3, (uVar3 >> 0x10));
+                    u_var3 = &param_1[1].field_0x1c;
+                    window_msg_func_1010_7300(ppVar9, 0, 0, 0x13, u_var3, (u_var3 >> 0x10));
                     return;
                 }
                 if (param_2._2_2_ != 0xbbb) {
@@ -381,9 +389,9 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
             }
             ppVar9 = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(local_22, 3));
             uVar8 = (ppVar9 >> 0x10);
-            uVar3 = &param_1[1].field_0x1c;
-            uVar13 = uVar3;
-            uVar14 = (uVar3 >> 0x10);
+            u_var3 = &param_1[1].field_0x1c;
+            uVar13 = u_var3;
+            uVar14 = (u_var3 >> 0x10);
             uVar11 = 0x71;
             uVar12 = 0;
         }
@@ -408,7 +416,7 @@ pub fn destroy_win_1040_52c0(param_1: *mut astruct_124, param_2: u16, param_3: u
 
 pub fn destroy_win_1040_5256(param_1: u32) {
     let puVar1: *mut u32;
-    let mut uVar2: i32;
+    let mut u_var2: i32;
     let ppcVar3: fn();
     let BVar4: bool;
     let local_BX_5: *mut astruct_52;
@@ -427,11 +435,11 @@ pub fn destroy_win_1040_5256(param_1: u32) {
     }
     local_BX_5.h_wnd = 0;
     puVar1 = local_BX_5.field_0x94;
-    uVar2 = &local_BX_5.field_0x96;
-    if ((uVar2 | puVar1) != 0) {
+    u_var2 = &local_BX_5.field_0x96;
+    if ((u_var2 | puVar1) != 0) {
         unsafe {
             ppcVar3 = *puVar1;
-            (**ppcVar3)(unaff_CS, puVar1, uVar2, 1);
+            (**ppcVar3)(unaff_CS, puVar1, u_var2, 1);
         }
     }
     &local_BX_5.field_0x94 = 0;
@@ -485,9 +493,9 @@ pub fn pass1_1040_2f32(param_1: *mut u8, param_2: *mut u8) {
 
 pub fn pass1_1040_2a22(param_1: *mut Struct44) {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     param_1.ptr_a_lo = (s_add74_wav_1050_2e20 + 6);
     (iVar1 + 2) = &PTR_LOOP_1050_1040;
@@ -510,7 +518,7 @@ pub fn pass1_1040_2464(param_1: *mut astruct_599) {
 
 pub fn pass1_1040_205e(param_1: *mut astruct_599) {
     let puVar1: *mut u32;
-    let mut uVar2: i32;
+    let mut u_var2: i32;
     let ppcVar3: fn();
     let mut iVar4: i32;
     let mut uVar5: u16;
@@ -520,8 +528,8 @@ pub fn pass1_1040_205e(param_1: *mut astruct_599) {
     param_1.field_0x0 = (s_alarm_m_1050_2377 + 7);
     (iVar4 + 2) = &PTR_LOOP_1050_1040;
     puVar1 = (iVar4 + 0x8e);
-    uVar2 = (iVar4 + 0x90);
-    if ((uVar2 | puVar1) != 0) {
+    u_var2 = (iVar4 + 0x90);
+    if ((u_var2 | puVar1) != 0) {
         unsafe {
             ppcVar3 = *puVar1;
             (**ppcVar3)();
@@ -558,7 +566,7 @@ pub fn pass1_1040_1290(param_1: *mut astruct_599) {
 
 pub fn pass1_1040_1152(param_1: i32, param_2: *mut u8, param_3: *mut u8) {
     let mut uVar1: u16;
-    let mut uVar2: u32;
+    let mut u_var2: u32;
     let mut iVar3: i32;
     let mut uVar4: u16;
     let ppVar5: *mut pass1_struct_1;
@@ -566,12 +574,12 @@ pub fn pass1_1040_1152(param_1: i32, param_2: *mut u8, param_3: *mut u8) {
     let mut local_4: u16;
 
     if ((param_1 + 0x92) != 0) {
-        uVar2 = (param_1 + 0x8e);
-        uVar1 = (uVar2 + 10);
+        u_var2 = (param_1 + 0x8e);
+        uVar1 = (u_var2 + 10);
         ppVar5 = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(in_stack_0000fff4, 3));
-        uVar2 = (param_1 + 0x92);
-        uVar4 = (uVar2 >> 0x10);
-        iVar3 = uVar2;
+        u_var2 = (param_1 + 0x92);
+        uVar4 = (u_var2 >> 0x10);
+        iVar3 = u_var2;
         pass1_1010_ae92(ppVar5, uVar1, (iVar3 + 10), (iVar3 + 6));
     }
     destroy_win_1040_7b98(param_1, param_2, param_3);
@@ -583,12 +591,12 @@ pub fn pass1_1040_0e86(param_1: *mut astruct_599) {
     let mut uVar1: i32;
     let in_struct_1: *mut Struct44;
     let mut iVar2: i32;
-    let mut uvar3: u16;
+    let mut u_var3: u16;
     let ppVar4: *mut pass1_struct_1;
     let mut in_stack_0000ffee: u16;
     let mut local_6: u32;
 
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     iVar2 = param_1;
     param_1.field_0x0 = (s_overflow_on_node__d_1050_11ca + 8);
     (iVar2 + 2) = &PTR_LOOP_1050_1040;
@@ -643,9 +651,9 @@ pub fn pass1_1040_0656(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
 pub fn win_cleanup_1038_ef3a(param_1: *mut astruct_599) {
     let mut u_var1: u32;
     let mut iVar2: i32;
-    let mut uvar3: u16;
+    let mut u_var3: u16;
 
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     iVar2 = param_1;
     param_1.field_0x0 = 0x67c;
     (iVar2 + 2) = &PTR_LOOP_1050_1040;
@@ -661,9 +669,9 @@ pub fn win_cleanup_1038_ef3a(param_1: *mut astruct_599) {
 
 pub fn pass1_1038_ebd6(param_1: *mut astruct_599) {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     param_1.field_0x0 = 0xee6e;
     (iVar1 + 2) = &PTR_LOOP_1050_1038;
@@ -675,9 +683,9 @@ pub fn pass1_1038_ebd6(param_1: *mut astruct_599) {
 
 pub fn pass1_1038_e308(param_1: *mut astruct_599) {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     param_1.field_0x0 = 0xe62e;
     (iVar1 + 2) = &PTR_LOOP_1050_1038;
@@ -700,9 +708,9 @@ pub fn pass1_1038_e16e(param_1: *mut astruct_599) {
 
 pub fn pass1_1038_d7d0(param_1: *mut astruct_45) {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     param_1.u16_0x0 = 0xe0d4;
     (iVar1 + 2) = &PTR_LOOP_1050_1038;
@@ -739,10 +747,10 @@ pub fn pass1_1038_d218(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
 
 pub fn free_proc_inst_1038_cfda(param_1: *mut u16) {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
     let mut unaff_CS: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     unsafe { *param_1 = 0xd23e };
     (iVar1 + 2) = &PTR_LOOP_1050_1038;
@@ -887,7 +895,7 @@ pub fn cleanup_fn_1020_78dc(param_1: *mut Struct44, param_2: u8) -> *mut Struct4
 
 pub fn win_cleanup_fn_1020_770e(in_struct_1: *mut astruct_594) {
     let puVar1: *mut u32;
-    let mut uVar2: i32;
+    let mut u_var2: i32;
     let local_struct_1: *mut astruct_594;
     let local_struct_1_hi: *mut astruct_594;
     let mut in_stack_0000fff6: u16;
@@ -896,8 +904,8 @@ pub fn win_cleanup_fn_1020_770e(in_struct_1: *mut astruct_594) {
     local_struct_1_hi = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
     puVar1 = local_struct_1.u8_ptr_16_xee;
-    uVar2 = local_struct_1.field_0xf0;
-    if ((uVar2 | puVar1) != 0) {
+    u_var2 = local_struct_1.field_0xf0;
+    if ((u_var2 | puVar1) != 0) {
         unsafe {
             fn_ptr_1_1 = *puVar1;
             (**fn_ptr_1_1)();
