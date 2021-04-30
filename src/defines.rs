@@ -5025,7 +5025,6 @@ pub struct Struct455 {
     pub field_0x6: i32,
 }
 
-
 pub struct Struct552 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -5335,8 +5334,6 @@ pub struct Struct552 {
     pub field_0x134: u16,
 }
 
-
-
 pub struct Struct691 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -5345,8 +5342,6 @@ pub struct Struct691 {
     pub field_0x4: u32,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct690 {
     pub field_0x0: u8,
@@ -5400,14 +5395,6 @@ pub struct Struct690 {
     pub field_0x37: u8,
     pub field_0x38: u32,
 }
-
-
-
-
-
-
-
-
 
 pub struct Struct693 {
     pub field_0x0: u8,
@@ -5559,13 +5546,9 @@ pub struct Struct104 {
     pub field_0x24: u8,
 }
 
-
-
 pub struct Struct692 {
     pub field_0x0: u32,
 }
-
-
 
 pub struct Struct699 {
     pub field_0x0: u8,
@@ -5574,8 +5557,6 @@ pub struct Struct699 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct698 {
     pub field_0x0: u8,
@@ -6089,10 +6070,6 @@ pub struct Struct698 {
     pub field_0x1ff: u8,
     pub field_0x200: i32,
 }
-
-
-
-
 
 pub struct Struct393 {
     pub field_0x0: u16,
@@ -6629,8 +6606,6 @@ pub struct Struct695 {
     pub field_0xbc: u16,
 }
 
-
-
 pub struct Struct694 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -6639,8 +6614,6 @@ pub struct Struct694 {
     pub field_0x4: i32,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct546 {
     pub field_0x0: u8,
@@ -7031,8 +7004,6 @@ pub struct Struct546 {
     pub char_ptr_186: *mut libc::c_char,
 }
 
-
-
 pub struct Struct697 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -7218,10 +7189,6 @@ pub struct Struct697 {
     pub field_0xb6: i32,
     pub field_0xb8: i32,
 }
-
-
-
-
 
 pub struct Struct318 {
     pub field_0x0: u8,
@@ -7462,12 +7429,6 @@ pub struct Struct696 {
     pub field_0xb4: u32,
 }
 
-
-
-
-
-
-
 pub struct Struct131 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -7523,8 +7484,6 @@ pub struct Struct7 {
     pub u16_field_0x28: u16,
 }
 
-
-
 pub struct Struct862 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -7547,8 +7506,6 @@ pub struct Struct862 {
     pub field_0x18: u16,
     pub field_0x1a: u16,
 }
-
-
 
 pub struct Struct390 {
     pub field_0x0: u8,
@@ -7678,8 +7635,6 @@ pub struct Struct390 {
     pub string_buf_ptr_3: *mut libc::c_char,
 }
 
-
-
 pub struct Struct293 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -7694,8 +7649,6 @@ pub struct Struct293 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct679 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -7708,8 +7661,6 @@ pub struct Struct679 {
     pub field_0x12: u16,
 }
 
-
-
 pub struct Struct306 {
     pub field_0x0: i32,
     pub field_0x4: u32,
@@ -7717,11 +7668,7 @@ pub struct Struct306 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct413 {}
-
-
 
 pub struct Struct955 {
     pub field_0x0: u8,
@@ -7739,8 +7686,6 @@ pub struct Struct955 {
     pub field_0x12: u8,
     pub field_0x13: u8,
 }
-
-
 
 pub struct Struct666 {
     pub field_0x0: u8,
@@ -7994,8 +7939,6 @@ pub struct Struct666 {
     pub field_0xf9: u8,
     pub field_0xfa: u32,
 }
-
-
 
 pub struct Struct875 {
     pub field_0x0: u8,
@@ -8386,8 +8329,6 @@ pub struct Struct875 {
     pub field_0x18a: u16,
 }
 
-
-
 pub struct Struct1054 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -8650,8 +8591,6 @@ pub struct Struct1054 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct599 {
     pub field_0x0: u16,
     pub field_0x2: *mut u8,
@@ -8659,8 +8598,6 @@ pub struct Struct599 {
     pub field_0x5: u8,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct799 {
     pub field_0x0: u8,
@@ -8924,11 +8861,7 @@ pub struct Struct799 {
     pub field_0x10c: u32,
 }
 
-
-
 pub struct Struct163 {}
-
-
 
 pub struct Struct223 {
     pub field_0x0: u8,
@@ -8943,10 +8876,6 @@ pub struct Struct223 {
     pub field_0xe: u16,
     pub field_0x10: u16,
 }
-
-
-
-
 
 pub struct Struct296 {
     pub field_0x0: u8,
@@ -8991,8 +8920,6 @@ pub struct Struct199 {
     pub field_0xa: u16,
 }
 
-
-
 pub struct Struct660 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -9006,8 +8933,6 @@ pub struct Struct660 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct608 {
     pub field_0x0: u8,
@@ -9251,8 +9176,6 @@ pub struct Struct608 {
     pub field_0xf0: i32,
 }
 
-
-
 pub struct Struct492 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -9268,8 +9191,6 @@ pub struct Struct492 {
     pub field_0xb: u8,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct665 {
     pub field_0x0: POINT16,
@@ -9340,8 +9261,6 @@ pub struct Struct665 {
     pub field_0x45: u8,
 }
 
-
-
 pub struct Struct668 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -9375,8 +9294,6 @@ pub struct Struct668 {
     pub field_0x2c: i32,
     pub field_0x2e: u16,
 }
-
-
 
 pub struct Struct667 {
     pub field_0x0: u8,
@@ -9413,8 +9330,6 @@ pub struct Struct667 {
     pub field_0x20: u32,
 }
 
-
-
 pub struct Struct705 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -9424,8 +9339,6 @@ pub struct Struct705 {
     pub field_0x6: i32,
     pub field_0x8: i32,
 }
-
-
 
 pub struct Struct662 {
     pub field_0x0: u8,
@@ -9702,8 +9615,6 @@ pub struct Struct662 {
     pub field_0x112: u16,
 }
 
-
-
 pub struct Struct661 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -9972,8 +9883,6 @@ pub struct Struct661 {
     pub field_0x10c: u16,
 }
 
-
-
 pub struct Struct664 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -10221,8 +10130,6 @@ pub struct Struct664 {
     pub field_0xf4: u16,
 }
 
-
-
 pub struct Struct663 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -10467,8 +10374,6 @@ pub struct Struct663 {
     pub field_0xf3: u8,
     pub field_0xf4: i32,
 }
-
-
 
 pub struct Struct446 {
     pub field_0x0: *mut Struct117,
@@ -12131,8 +12036,6 @@ pub struct Struct446 {
     pub field_0x67c: *mut libc::c_char,
 }
 
-
-
 pub struct Struct669 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -12145,8 +12048,6 @@ pub struct Struct669 {
     pub field_0x10: u16,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct543 {
     pub field_0x0: u16,
@@ -12520,22 +12421,16 @@ pub struct Struct543 {
     pub field_0x186: u32,
 }
 
-
-
 pub struct Struct1174 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: *mut u8,
 }
 
-
-
 pub struct Struct951 {
     pub field_0x0: u32,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct439 {
     pub field_0x0: u8,
@@ -12567,8 +12462,6 @@ pub struct Struct439 {
     pub field_0x21: u8,
     pub field_0x22: u32,
 }
-
-
 
 pub struct Struct270 {
     pub field_0x0: u8,
@@ -12857,14 +12750,10 @@ pub struct Struct270 {
     pub field_0x11c: u16,
 }
 
-
-
 pub struct Struct655 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct831 {
     pub field_0x0: u8,
@@ -12889,11 +12778,7 @@ pub struct Struct831 {
     pub field_0x14: u32,
 }
 
-
-
 pub struct Struct654 {}
-
-
 
 pub struct Struct657 {
     pub field_0x0: u8,
@@ -13162,8 +13047,6 @@ pub struct Struct657 {
     pub field_0x110: i32,
 }
 
-
-
 pub struct Struct656 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -13431,8 +13314,6 @@ pub struct Struct656 {
     pub field_0x10e: u32,
 }
 
-
-
 pub struct Struct502 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -13442,8 +13323,6 @@ pub struct Struct502 {
     pub field_0x8: u32,
     pub field_0xc: u32,
 }
-
-
 
 pub struct Struct651 {
     pub field_0x0: u8,
@@ -13698,8 +13577,6 @@ pub struct Struct651 {
     pub field_0xfc: u16,
 }
 
-
-
 pub struct Struct650 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -13721,10 +13598,6 @@ pub struct Struct650 {
     pub field_0x16: u8,
     pub field_0x17: u8,
 }
-
-
-
-
 
 pub struct Struct653 {
     pub field_0x0: u8,
@@ -13880,8 +13753,6 @@ pub struct Struct510 {
     pub field_0x83: u8,
     pub field_0x84: i32,
 }
-
-
 
 pub struct Struct652 {
     pub field_0x0: u8,
@@ -14129,8 +14000,6 @@ pub struct Struct652 {
     pub field_0xf2: u32,
 }
 
-
-
 pub struct Struct626 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -14375,8 +14244,6 @@ pub struct Struct626 {
     pub field_0xf5: u8,
     pub field_0xf6: u32,
 }
-
-
 
 pub struct Struct217 {
     pub field_0x0: u16,
@@ -15324,15 +15191,11 @@ pub struct Struct217 {
     pub field_0x41e: u16,
 }
 
-
-
 pub struct Struct659 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct658 {
     pub field_0x0: u8,
@@ -15588,8 +15451,6 @@ pub struct Struct658 {
     pub field_0xfa: u32,
 }
 
-
-
 pub struct Struct635 {
     pub u16_0x0: u16,
     pub u16_0x02: u16,
@@ -15823,10 +15684,6 @@ pub struct Struct635 {
     pub field_0xe7: u8,
     pub field_0xe8: u32,
 }
-
-
-
-
 
 pub struct Struct469 {
     pub field_0x0: u8,
@@ -17219,8 +17076,6 @@ pub struct Struct881 {
     pub field_0x568: *mut Struct469,
 }
 
-
-
 pub struct Struct680 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -17250,11 +17105,7 @@ pub struct Struct680 {
     pub field_0x1f: u8,
 }
 
-
-
 pub struct Struct682 {}
-
-
 
 pub struct Struct681 {
     pub field_0x0: u8,
@@ -17270,8 +17121,6 @@ pub struct Struct681 {
     pub field_0xb: u8,
     pub field_0xc: u32,
 }
-
-
 
 pub struct Struct1 {
     pub field_0x0: u16,
@@ -17309,25 +17158,17 @@ pub struct Struct1 {
     pub field_0x40: u16,
 }
 
-
-
 pub struct Struct688 {}
-
-
 
 pub struct Struct687 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-
-
 pub struct Struct689 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct93 {
     pub field_0x0: u8,
@@ -17378,8 +17219,6 @@ pub struct Struct93 {
     pub field_0x32: *mut u8,
 }
 
-
-
 pub struct Struct684 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -17392,8 +17231,6 @@ pub struct Struct684 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct559 {
     pub field_0x0: u8,
@@ -17696,11 +17533,7 @@ pub struct Struct559 {
     pub field_0x12c: u16,
 }
 
-
-
 pub struct Struct683 {}
-
-
 
 pub struct Struct686 {
     pub field_0x0: u8,
@@ -17710,11 +17543,7 @@ pub struct Struct686 {
     pub field_0x6: i32,
 }
 
-
-
 pub struct Struct685 {}
-
-
 
 pub struct Struct150 {
     pub field_0x0: u8,
@@ -17963,8 +17792,6 @@ pub struct Struct150 {
     pub field_0xf3: u8,
     pub field_0xf4: i32,
 }
-
-
 
 pub struct Struct858 {
     pub field_0x0: u8,
@@ -18391,8 +18218,6 @@ pub struct Struct858 {
     pub field_0x1a5: u8,
 }
 
-
-
 pub struct Struct622 {
     pub u16_0x0: u16,
     pub u16_0x2: u16,
@@ -18421,8 +18246,6 @@ pub struct Struct622 {
     pub field_0x26: u16,
 }
 
-
-
 pub struct Struct1041 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -18430,8 +18253,6 @@ pub struct Struct1041 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct671 {
     pub field_0x0: u8,
@@ -18456,8 +18277,6 @@ pub struct Struct671 {
     pub field_0x14: *mut u8,
 }
 
-
-
 pub struct Struct670 {
     pub dev_ctx_handle_0: HDC16,
     pub field_0x2: u8,
@@ -18471,8 +18290,6 @@ pub struct Struct670 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct937 {
     pub field_0x0: u8,
@@ -18501,11 +18318,7 @@ pub struct Struct937 {
     pub field_0x1a: u32,
 }
 
-
-
 pub struct Struct677 {}
-
-
 
 pub struct Struct676 {
     pub field_0x0: u8,
@@ -18566,11 +18379,7 @@ pub struct Struct676 {
     pub field_0x37: u8,
 }
 
-
-
 pub struct Struct1098 {}
-
-
 
 pub struct Struct755 {
     pub field_0x0: u32,
@@ -18591,11 +18400,7 @@ pub struct Struct755 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct678 {}
-
-
 
 pub struct Struct673 {
     pub field_0x0: u8,
@@ -18862,8 +18667,6 @@ pub struct Struct673 {
     pub field_0x116: u16,
 }
 
-
-
 pub struct Struct672 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -18889,8 +18692,6 @@ pub struct Struct672 {
     pub field_0x16: u8,
     pub field_0x17: u8,
 }
-
-
 
 pub struct Struct675 {
     pub field_0x0: u8,
@@ -19131,8 +18932,6 @@ pub struct Struct675 {
     pub field_0xee: u32,
 }
 
-
-
 pub struct Struct674 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -19372,8 +19171,6 @@ pub struct Struct674 {
     pub field_0xf1: u8,
     pub field_0xf2: u32,
 }
-
-
 
 pub struct Struct888 {
     pub field_0x0: u8,
@@ -19727,8 +19524,6 @@ pub struct Struct888 {
     pub field_0x15e: u16,
 }
 
-
-
 pub struct Struct426 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -19756,8 +19551,6 @@ pub struct Struct426 {
     pub field_0x17: u8,
     pub field_0x18: u16,
 }
-
-
 
 pub struct Struct621 {
     pub field_0x0: u8,
@@ -20002,8 +19795,6 @@ pub struct Struct621 {
     pub field_0xf2: u32,
 }
 
-
-
 pub struct Struct624 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -20025,8 +19816,6 @@ pub struct Struct624 {
     pub field_0x16: u8,
     pub field_0x17: u8,
 }
-
-
 
 pub struct Struct385 {
     pub field_0x0: u8,
@@ -20098,14 +19887,10 @@ pub struct Struct385 {
     pub u: u16,
 }
 
-
-
 pub struct Struct473 {
     pub field_0x0: *mut u8,
     pub field_0x4: bool,
 }
-
-
 
 pub struct Struct623 {
     pub field_0x0: u8,
@@ -20348,11 +20133,7 @@ pub struct Struct623 {
     pub field_0xf0: *mut u8,
 }
 
-
-
 pub struct Struct132 {}
-
-
 
 pub struct Struct620 {
     pub field_0x0: u8,
@@ -20593,8 +20374,6 @@ pub struct Struct620 {
     pub field_0xee: u32,
 }
 
-
-
 pub struct Struct629 {
     pub u16_x00: u16,
     pub u16_x02: u16,
@@ -20607,11 +20386,7 @@ pub struct Struct629 {
     pub u16_x10: u16,
 }
 
-
-
 pub struct Struct31 {}
-
-
 
 pub struct Struct625 {
     pub field_0x0: u8,
@@ -20636,8 +20411,6 @@ pub struct Struct625 {
     pub field_0x13: u8,
     pub field_0x14: u32,
 }
-
-
 
 pub struct Struct628 {
     pub field_0x0: u8,
@@ -20882,8 +20655,6 @@ pub struct Struct628 {
     pub field_0xf2: u32,
 }
 
-
-
 pub struct Struct627 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -20906,8 +20677,6 @@ pub struct Struct627 {
     pub field_0x13: u8,
     pub field_0x14: *mut u8,
 }
-
-
 
 pub struct Struct648 {
     pub field_0x0: u8,
@@ -21139,8 +20908,6 @@ pub struct Struct648 {
     pub field_0xe4: u16,
 }
 
-
-
 pub struct Struct135 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -21150,10 +20917,6 @@ pub struct Struct135 {
     pub field_0x5: u8,
     pub field_0x6: u32,
 }
-
-
-
-
 
 pub struct Struct632 {
     pub field_0x0: u8,
@@ -21177,8 +20940,6 @@ pub struct Struct631 {
     pub field_0xc: u8,
     pub field_0xd: u8,
 }
-
-
 
 pub struct Struct611 {
     pub field_0x0: u8,
@@ -21414,8 +21175,6 @@ pub struct Struct611 {
     pub field_0xf0: u16,
 }
 
-
-
 pub struct Struct610 {
     pub u16_x00: u16,
     pub u16_x02: u16,
@@ -21438,8 +21197,6 @@ pub struct Struct610 {
     pub u32_x14: u32,
 }
 
-
-
 pub struct Struct613 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -21454,8 +21211,6 @@ pub struct Struct613 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct612 {
     pub u16_x00: u16,
@@ -21718,8 +21473,6 @@ pub struct Struct612 {
     i32_ptr32_x10e: *mut i32,
     pub field_0x112: u16,
 }
-
-
 
 pub struct Struct372 {
     pub field_0x0: u8,
@@ -22017,8 +21770,6 @@ pub struct Struct372 {
     pub field_0x124: u16,
 }
 
-
-
 pub struct Struct1161 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -22032,8 +21783,6 @@ pub struct Struct1161 {
     pub field_0xa: i32,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct189 {
     pub field_0x0: u8,
@@ -22067,8 +21816,6 @@ pub struct Struct189 {
     pub field_0x1e: i32,
 }
 
-
-
 pub struct Struct619 {
     pub u16_x00: u16,
     pub u16_x02: u16,
@@ -22076,8 +21823,6 @@ pub struct Struct619 {
     pub u16_x06: u16,
     pub u16_x08: u16,
 }
-
-
 
 pub struct Struct618 {
     pub field_0x0: u8,
@@ -22309,8 +22054,6 @@ pub struct Struct618 {
     pub field_0xe6: u16,
 }
 
-
-
 pub struct Struct615 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -22343,14 +22086,6 @@ pub struct Struct615 {
     pub field_0x1c: i32,
     pub field_0x1e: i32,
 }
-
-
-
-
-
-
-
-
 
 pub struct Struct614 {
     pub u16_x0: u16,
@@ -23380,8 +23115,6 @@ pub struct Struct376 {
     pub u32_x186: *mut Struct44,
 }
 
-
-
 pub struct Struct88 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -23418,8 +23151,6 @@ pub struct Struct88 {
     pub field_0x22: i32,
     pub field_0x24: i32,
 }
-
-
 
 pub struct Struct617 {
     pub field_0x0: u8,
@@ -23471,8 +23202,6 @@ pub struct Struct617 {
     pub field_0x2f: u8,
     pub field_0x30: i32,
 }
-
-
 
 pub struct Struct616 {
     pub field_0x0: u8,
@@ -23990,8 +23719,6 @@ pub struct Struct616 {
     pub field_0x200: u32,
 }
 
-
-
 pub struct Struct964 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -24010,11 +23737,7 @@ pub struct Struct964 {
     pub field_0x10: i32,
 }
 
-
-
 pub struct Struct1108 {}
-
-
 
 pub struct Struct302 {
     pub field_0x0: u8,
@@ -24026,8 +23749,6 @@ pub struct Struct302 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct108 {
     pub field_0x0: u8,
@@ -24047,8 +23768,6 @@ pub struct Struct108 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct644 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -24059,8 +23778,6 @@ pub struct Struct644 {
     pub field_0x9: u8,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct768 {
     pub field_0x0: u8,
@@ -24110,8 +23827,6 @@ pub struct Struct768 {
     pub field_0x2d: u8,
     pub field_0x2e: u32,
 }
-
-
 
 pub struct Struct643 {
     pub field_0x0: u8,
@@ -24259,18 +23974,12 @@ pub struct Struct643 {
     pub field_0x8e: u32,
 }
 
-
-
 pub struct Struct646 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-
-
 pub struct Struct645 {}
-
-
 
 pub struct Struct640 {
     pub field_0x0: u8,
@@ -24419,8 +24128,6 @@ pub struct Struct640 {
     pub field_0x96: u16,
 }
 
-
-
 pub struct Struct642 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -24468,8 +24175,6 @@ pub struct Struct642 {
     pub field_0x30: i32,
 }
 
-
-
 pub struct Struct515 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -24477,8 +24182,6 @@ pub struct Struct515 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct641 {
     pub field_0x0: u8,
@@ -24628,10 +24331,6 @@ pub struct Struct641 {
     field_0x94: *mut libc::c_void,
 }
 
-
-
-
-
 pub struct Struct60 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -24684,8 +24383,6 @@ pub struct Struct647 {
     pub struct_ptr_0x6: *mut Struct60,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct977 {
     pub field_0x0: u8,
@@ -24806,8 +24503,6 @@ pub struct Struct977 {
     pub field_0x8a: u16,
     pub field_0x8c: u16,
 }
-
-
 
 pub struct Struct649 {
     pub field_0x0: u8,
@@ -25048,8 +24743,6 @@ pub struct Struct649 {
     pub field_0xed: u8,
     pub field_0xee: u32,
 }
-
-
 
 pub struct Struct1085 {
     pub field_0x0: u8,
@@ -25583,8 +25276,6 @@ pub struct Struct1085 {
     pub field_0x21a: *mut Struct44,
 }
 
-
-
 pub struct Struct265 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -25836,8 +25527,6 @@ pub struct Struct265 {
     pub field_0xf8: u16,
 }
 
-
-
 pub struct Struct68 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -25954,10 +25643,6 @@ pub struct Struct68 {
     pub field_0x96: u16,
 }
 
-
-
-
-
 pub struct Struct633 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -25983,8 +25668,6 @@ pub struct Struct634 {
     pub field_0xd: u8,
 }
 
-
-
 pub struct Struct398 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -26000,8 +25683,6 @@ pub struct Struct398 {
     pub field_0xe: i32,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct711 {
     pub field_0x0: u8,
@@ -26027,8 +25708,6 @@ pub struct Struct711 {
     pub field_0x18: u32,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct630 {
     pub field_0x0: u8,
@@ -26262,8 +25941,6 @@ pub struct Struct630 {
     pub field_0xea: i32,
 }
 
-
-
 pub struct Struct637 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -26271,8 +25948,6 @@ pub struct Struct637 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct636 {
     pub u16_0x0: u16,
@@ -26295,8 +25970,6 @@ pub struct Struct636 {
     pub field_0x18: u8,
     pub field_0x19: u8,
 }
-
-
 
 pub struct Struct639 {
     pub field_0x0: u8,
@@ -26325,8 +25998,6 @@ pub struct Struct639 {
     pub field_0x1b: u8,
     pub palette_handle_0x1c: HPALETTE16,
 }
-
-
 
 pub struct Struct872 {
     pub field_0x0: u8,
@@ -26759,8 +26430,6 @@ pub struct Struct872 {
     pub field_0x1ac: u16,
 }
 
-
-
 pub struct Struct638 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27000,8 +26669,6 @@ pub struct Struct638 {
     pub field_0xec: i32,
 }
 
-
-
 pub struct Struct844 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27016,8 +26683,6 @@ pub struct Struct844 {
     pub field_0x12: u32,
     pub field_0x16: i32,
 }
-
-
 
 pub struct Struct800 {
     pub field_0x0: u8,
@@ -27282,8 +26947,6 @@ pub struct Struct800 {
     pub field_0x10c: u32,
 }
 
-
-
 pub struct Struct594 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27529,8 +27192,6 @@ pub struct Struct594 {
     u8_ptr_32_0xfa: *mut u8,
 }
 
-
-
 pub struct Struct209 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27594,8 +27255,6 @@ pub struct Struct209 {
     pub field_0x3d: u8,
 }
 
-
-
 pub struct Struct176 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27622,8 +27281,6 @@ pub struct Struct176 {
     pub field_0x18: *mut u8,
 }
 
-
-
 pub struct Struct75 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27644,8 +27301,6 @@ pub struct Struct75 {
     pub field_0x12: u16,
 }
 
-
-
 pub struct Struct604 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -27656,8 +27311,6 @@ pub struct Struct604 {
     pub Struct60_ptr: *mut Struct60,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct857 {
     pub field_0x0: u8,
@@ -28084,8 +27737,6 @@ pub struct Struct857 {
     pub field_0x1a6: u16,
 }
 
-
-
 pub struct Struct319 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -28102,8 +27753,6 @@ pub struct Struct319 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct737 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -28118,11 +27767,7 @@ pub struct Struct737 {
     pub field_0xc: *mut u16,
 }
 
-
-
 pub struct Struct1019 {}
-
-
 
 pub struct Struct920 {
     pub field_0x0: u8,
@@ -28135,8 +27780,6 @@ pub struct Struct920 {
     pub field_0xa: i32,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct408 {
     pub field_0x0: u8,
@@ -28254,21 +27897,13 @@ pub struct Struct408 {
     pub field_0x74: u16,
 }
 
-
-
 pub struct Struct461 {
     pub field_0x0: u8,
 }
 
-
-
 pub struct Struct1072 {}
 
-
-
 pub struct Struct790 {}
-
-
 
 pub struct Struct723 {
     pub field_0x0: u16,
@@ -28310,8 +27945,6 @@ pub struct Struct723 {
     pub field_0x28: i32,
     pub field_0x2a: i32,
 }
-
-
 
 pub struct Struct600 {
     pub field_0x0: u8,
@@ -28462,14 +28095,10 @@ pub struct Struct600 {
     pub field_0x95: u8,
 }
 
-
-
 pub struct Struct602 {
     pub u16_x00: u16,
     pub u16_x01: u16,
 }
-
-
 
 pub struct Struct601 {
     pub field_0x0: u8,
@@ -28480,8 +28109,6 @@ pub struct Struct601 {
     pub field_0x8: u16,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct724 {
     pub field_0x0: u8,
@@ -28523,8 +28150,6 @@ pub struct Struct724 {
     pub field_0x28: i32,
     pub field_0x2a: i32,
 }
-
-
 
 pub struct Struct607 {
     pub field_0x0: u8,
@@ -28755,8 +28380,6 @@ pub struct Struct607 {
     pub field_0xe2: u16,
     pub field_0xe4: u16,
 }
-
-
 
 pub struct Struct609 {
     pub field_0x0: u8,
@@ -29001,15 +28624,9 @@ pub struct Struct609 {
     pub field_0xf2: u32,
 }
 
-
-
 pub struct Struct603 {}
 
-
-
 pub struct Struct606 {}
-
-
 
 pub struct Struct605 {
     pub field_0x0: u8,
@@ -29225,8 +28842,6 @@ pub struct Struct605 {
     pub field_0xe0: u16,
 }
 
-
-
 pub struct Struct933 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -29339,8 +28954,6 @@ pub struct Struct933 {
     pub field_0x75: u8,
 }
 
-
-
 pub struct Struct1139 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -29368,8 +28981,6 @@ pub struct Struct1139 {
     pub field_0x19: u8,
     pub field_0x1a: i32,
 }
-
-
 
 pub struct Struct73 {
     pub field_0x0: u8,
@@ -31040,8 +30651,6 @@ pub struct Struct73 {
     pub field_0x681: u8,
 }
 
-
-
 pub struct Struct946 {
     pub field_0x0: u16,
     pub field_0x2: u8,
@@ -31058,8 +30667,6 @@ pub struct Struct946 {
     pub field_0xd: u8,
     pub field_0xe: i32,
 }
-
-
 
 pub struct Struct528 {
     pub field_0x0: u8,
@@ -31130,13 +30737,9 @@ pub struct Struct528 {
     pub field_0x44: u16,
 }
 
-
-
 pub struct Struct62 {
     pub field_0x0: u8,
 }
-
-
 
 pub struct Struct581 {
     pub field_0x0: u8,
@@ -31151,8 +30754,6 @@ pub struct Struct581 {
     pub field_0x9: u8,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct252 {
     pub field_0x0: u8,
@@ -31326,8 +30927,6 @@ pub struct Struct252 {
     pub field_0xa8: u16,
     pub field_0xaa: u16,
 }
-
-
 
 pub struct Struct788 {
     pub field_0x0: u8,
@@ -31592,8 +31191,6 @@ pub struct Struct788 {
     pub field_0x10c: u16,
 }
 
-
-
 pub struct Struct159 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -31613,8 +31210,6 @@ pub struct Struct159 {
     pub field_0x10: u8,
     pub field_0x11: u8,
 }
-
-
 
 pub struct Struct218 {
     pub field_0x0: u8,
@@ -32661,8 +32256,6 @@ pub struct Struct218 {
     pub field_0x414: u16,
 }
 
-
-
 pub struct Struct95 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -32690,8 +32283,6 @@ pub struct Struct95 {
     pub field_0x1a: i32,
 }
 
-
-
 pub struct Struct934 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -32702,8 +32293,6 @@ pub struct Struct934 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct222 {
     pub field_0x0: u16,
@@ -32722,8 +32311,6 @@ pub struct Struct222 {
     pub field_0x1e: u32,
     pub field_0x22: u16,
 }
-
-
 
 pub struct Struct475 {
     pub field_0x0: *mut u8,
@@ -33008,11 +32595,7 @@ pub struct Struct475 {
     pub field_0x139: u8,
 }
 
-
-
 pub struct Struct1138 {}
-
-
 
 pub struct Struct814 {
     pub field_0x0: u8,
@@ -33532,8 +33115,6 @@ pub struct Struct814 {
     pub field_0x208: u16,
 }
 
-
-
 pub struct Struct706 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -33561,8 +33142,6 @@ pub struct Struct706 {
     pub field_0x18: u32,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct419 {
     pub field_0x0: u8,
@@ -33693,8 +33272,6 @@ pub struct Struct419 {
     pub field_0x7e: u16,
 }
 
-
-
 pub struct Struct355 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -33786,11 +33363,7 @@ pub struct Struct355 {
     pub field_0x5c: u16,
 }
 
-
-
 pub struct Struct1005 {}
-
-
 
 pub struct Struct801 {
     pub field_0x0: u8,
@@ -34082,8 +33655,6 @@ pub struct Struct801 {
     pub field_0x120: u16,
 }
 
-
-
 pub struct Struct595 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -34113,8 +33684,6 @@ pub struct Struct595 {
     pub field_0x26: i32,
     pub field_0x28: i32,
 }
-
-
 
 pub struct Struct57 {
     pub field_0x0: u32,
@@ -34265,8 +33834,6 @@ pub struct Struct57 {
     pub field_0x98: u32,
 }
 
-
-
 pub struct Struct460 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -34292,8 +33859,6 @@ pub struct Struct460 {
     pub b: u16,
     pub c: u16,
 }
-
-
 
 pub struct Struct806 {
     pub field_0x0: u8,
@@ -34570,8 +34135,6 @@ pub struct Struct806 {
     pub field_0x116: u16,
 }
 
-
-
 pub struct Struct791 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -34583,8 +34146,6 @@ pub struct Struct791 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct750 {
     pub field_0x0: u8,
@@ -34621,8 +34182,6 @@ pub struct Struct750 {
     pub field_0x1f: u8,
     pub field_0x20: u16,
 }
-
-
 
 pub struct Struct738 {
     pub field_0x0: u8,
@@ -35124,8 +34683,6 @@ pub struct Struct738 {
     pub field_0x1f6: u32,
 }
 
-
-
 pub struct Struct102 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -35140,8 +34697,6 @@ pub struct Struct102 {
     pub field_0x18: u32,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct462 {
     pub field_0x0: u8,
@@ -35234,8 +34789,6 @@ pub struct Struct462 {
     pub field_0x58: i32,
 }
 
-
-
 pub struct Struct409 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -35279,8 +34832,6 @@ pub struct Struct409 {
     pub field_0x30: u16,
     pub field_0x32: u32,
 }
-
-
 
 pub struct Struct235 {
     pub field_0x0: u8,
@@ -35352,8 +34903,6 @@ pub struct Struct235 {
     pub field_0x42: u16,
     pub field_0x44: u16,
 }
-
-
 
 pub struct Struct827 {
     pub field_0x0: u8,
@@ -35617,8 +35166,6 @@ pub struct Struct827 {
     pub field_0x10c: u32,
 }
 
-
-
 pub struct Struct960 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -35638,8 +35185,6 @@ pub struct Struct960 {
     pub field_0xf: u8,
     pub field_0x10: u32,
 }
-
-
 
 pub struct Struct431 {
     pub field_0x0: u8,
@@ -35754,8 +35299,6 @@ pub struct Struct431 {
     pub field_0x6d: u8,
     pub field_0x6e: u16,
 }
-
-
 
 pub struct Struct266 {
     pub field_0x0: u8,
@@ -36014,11 +35557,7 @@ pub struct Struct266 {
     pub field_0xfe: u16,
 }
 
-
-
 pub struct Struct403 {}
-
-
 
 pub struct Struct547 {
     pub field_0x0: u8,
@@ -36416,8 +35955,6 @@ pub struct Struct547 {
     pub field_0x188: u16,
 }
 
-
-
 pub struct Struct399 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -36435,10 +35972,6 @@ pub struct Struct399 {
     pub field_0x14: u16,
     pub field_0x16: u16,
 }
-
-
-
-
 
 pub struct Struct94 {
     pub field_0x0: u16,
@@ -36493,11 +36026,7 @@ pub struct Struct947 {
     pub field_0x8: i32,
 }
 
-
-
 pub struct Struct1125 {}
-
-
 
 pub struct Struct488 {
     pub field_0x0: u8,
@@ -36506,8 +36035,6 @@ pub struct Struct488 {
     pub field_0x3: u8,
 }
 
-
-
 pub struct Struct1049 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -36515,8 +36042,6 @@ pub struct Struct1049 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct551 {
     pub field_0x0: u8,
@@ -37034,8 +36559,6 @@ pub struct Struct551 {
     pub field_0x200: i32,
 }
 
-
-
 pub struct Struct342 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37211,8 +36734,6 @@ pub struct Struct342 {
     pub field_0xb6: u16,
 }
 
-
-
 pub struct Struct363 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37361,8 +36882,6 @@ pub struct Struct363 {
     pub field_0x94: u32,
 }
 
-
-
 pub struct Struct1112 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37379,8 +36898,6 @@ pub struct Struct1112 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct146 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37389,8 +36906,6 @@ pub struct Struct146 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct709 {
     pub field_0x0: u8,
@@ -37421,8 +36936,6 @@ pub struct Struct709 {
     pub field_0x1c: i32,
 }
 
-
-
 pub struct Struct880 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37432,8 +36945,6 @@ pub struct Struct880 {
     pub field_0x6: u16,
     pub field_0x8: u16,
 }
-
-
 
 pub struct Struct279 {
     pub field_0x0: u8,
@@ -37776,8 +37287,6 @@ pub struct Struct279 {
     pub field_0x152: u16,
 }
 
-
-
 pub struct Struct577 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -37793,8 +37302,6 @@ pub struct Struct577 {
     pub field_0x12: u32,
     pub field_0x16: u16,
 }
-
-
 
 pub struct Struct92 {
     pub field_0x0: u8,
@@ -41895,8 +41402,6 @@ pub struct Struct92 {
     pub field_0xfff: u8,
 }
 
-
-
 pub struct Struct324 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -43779,8 +43284,6 @@ pub struct Struct324 {
     pub field_0x756: u8,
 }
 
-
-
 pub struct Struct893 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -43953,8 +43456,6 @@ pub struct Struct893 {
     pub field_0xac: u16,
 }
 
-
-
 pub struct Struct39 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -43962,8 +43463,6 @@ pub struct Struct39 {
     pub field_0x4: i16,
     pub field_0x6: i16,
 }
-
-
 
 pub struct Struct1036 {
     pub field_0x0: u8,
@@ -44237,8 +43736,6 @@ pub struct Struct1036 {
     pub field_0x110: i32,
 }
 
-
-
 pub struct Struct128 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -44267,8 +43764,6 @@ pub struct Struct128 {
     pub field_0x1a: i32,
     pub field_0x1c: i32,
 }
-
-
 
 pub struct Struct773 {
     pub field_0x0: u8,
@@ -44304,8 +43799,6 @@ pub struct Struct773 {
     pub field_0x1f: u8,
     pub field_0x20: u32,
 }
-
-
 
 pub struct Struct903 {
     pub field_0x0: u8,
@@ -44568,8 +44061,6 @@ pub struct Struct903 {
     pub field_0x107: u8,
     pub field_0x108: u32,
 }
-
-
 
 pub struct Struct444 {
     pub field_0x0: u8,
@@ -46236,8 +45727,6 @@ pub struct Struct444 {
     pub field_0x67e: i32,
 }
 
-
-
 pub struct Struct1169 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -46245,8 +45734,6 @@ pub struct Struct1169 {
     pub field_0x4: *mut Struct199,
     pub field_0x6: i32,
 }
-
-
 
 pub struct Struct181 {
     pub field_0x0: u16,
@@ -46459,15 +45946,11 @@ pub struct Struct181 {
     pub field_0xd1: u8,
 }
 
-
-
 pub struct Struct760 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct833 {
     pub field_0x0: u8,
@@ -46499,8 +45982,6 @@ pub struct Struct833 {
     pub field_0x1f: u8,
     pub field_0x20: i32,
 }
-
-
 
 pub struct Struct921 {
     pub field_0x0: u8,
@@ -46569,8 +46050,6 @@ pub struct Struct921 {
     pub field_0x40: i32,
 }
 
-
-
 pub struct Struct707 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -46581,8 +46060,6 @@ pub struct Struct707 {
     pub field_0x10: u32,
     pub field_0x14: u32,
 }
-
-
 
 pub struct Struct1156 {
     pub field_0x0: u8,
@@ -46604,8 +46081,6 @@ pub struct Struct1156 {
     pub field_0x16: i32,
 }
 
-
-
 pub struct Struct194 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -46625,8 +46100,6 @@ pub struct Struct194 {
     pub field_0x11: u8,
     pub field_0x12: i32,
 }
-
-
 
 pub struct Struct916 {
     pub field_0x0: u8,
@@ -46657,8 +46130,6 @@ pub struct Struct916 {
     pub field_0x3a: u32,
     pub field_0x3e: u32,
 }
-
-
 
 pub struct Struct204 {
     pub field_0x0: u8,
@@ -46706,8 +46177,6 @@ pub struct Struct204 {
     pub field_0x42: u32,
 }
 
-
-
 pub struct Struct337 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -46721,8 +46190,6 @@ pub struct Struct337 {
     pub field_0xc: i32,
     pub field_0xe: i32,
 }
-
-
 
 pub struct Struct564 {
     pub field_0x0: u8,
@@ -46741,8 +46208,6 @@ pub struct Struct564 {
     pub field_0xd: u8,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct26 {
     pub field_0x0: u8,
@@ -47009,8 +46474,6 @@ pub struct Struct26 {
     pub field_0x10b: u8,
 }
 
-
-
 pub struct Struct507 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -47062,8 +46525,6 @@ pub struct Struct507 {
     pub field_0x30: i32,
     pub field_0x32: u16,
 }
-
-
 
 pub struct Struct174 {
     pub field_0x0: u8,
@@ -47284,8 +46745,6 @@ pub struct Struct174 {
     pub field_0xd7: u8,
 }
 
-
-
 pub struct Struct533 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -47300,8 +46759,6 @@ pub struct Struct533 {
     pub field_0xc: u16,
     pub field_0xe: u32,
 }
-
-
 
 pub struct Struct786 {
     pub field_0x0: u8,
@@ -47338,10 +46795,6 @@ pub struct Struct786 {
     pub field_0x20: i32,
     pub field_0x22: i32,
 }
-
-
-
-
 
 pub struct Struct493 {
     pub field_0x0: u8,
@@ -47915,8 +47368,6 @@ pub struct Struct1088 {
     pub field_0x21d: u8,
 }
 
-
-
 pub struct Struct1023 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48180,8 +47631,6 @@ pub struct Struct1023 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct115 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48208,14 +47657,10 @@ pub struct Struct115 {
     pub field_0x1a: i32,
 }
 
-
-
 pub struct Struct368 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct929 {
     pub field_0x0: u8,
@@ -48261,8 +47706,6 @@ pub struct Struct929 {
     pub field_0x29: u8,
 }
 
-
-
 pub struct Struct311 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48282,8 +47725,6 @@ pub struct Struct311 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct400 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48300,8 +47741,6 @@ pub struct Struct400 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct1118 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48317,8 +47756,6 @@ pub struct Struct1118 {
     pub field_0xb: u8,
     field_0xc: *mut u32,
 }
-
-
 
 pub struct Struct809 {
     pub field_0x0: u8,
@@ -48584,8 +48021,6 @@ pub struct Struct809 {
     pub field_0x114: u32,
 }
 
-
-
 pub struct Struct433 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -48617,8 +48052,6 @@ pub struct Struct433 {
     pub field_0x1b: u8,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct13 {
     pub field_0x0: u8,
@@ -48856,8 +48289,6 @@ pub struct Struct13 {
     pub field_0xf0: u16,
 }
 
-
-
 pub struct Struct248 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49007,8 +48438,6 @@ pub struct Struct248 {
     pub field_0x92: u16,
 }
 
-
-
 pub struct Struct457 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49019,8 +48448,6 @@ pub struct Struct457 {
     pub field_0x7: u8,
 }
 
-
-
 pub struct Struct520 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49030,8 +48457,6 @@ pub struct Struct520 {
     pub field_0x5: u8,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct1010 {
     pub field_0x0: u8,
@@ -49056,14 +48481,10 @@ pub struct Struct1010 {
     pub field_0x14: u32,
 }
 
-
-
 pub struct Struct1143 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct762 {
     pub field_0x0: u8,
@@ -49071,11 +48492,7 @@ pub struct Struct762 {
     pub field_0x2: u16,
 }
 
-
-
 pub struct Struct982 {}
-
-
 
 pub struct Struct580 {
     pub field_0x0: u8,
@@ -49087,8 +48504,6 @@ pub struct Struct580 {
     pub field_0x8: u16,
     pub field_0xa: u16,
 }
-
-
 
 pub struct Struct583 {
     pub field_0x0: u8,
@@ -49105,8 +48520,6 @@ pub struct Struct583 {
     pub field_0xc: u16,
     pub field_0xe: u32,
 }
-
-
 
 pub struct Struct582 {
     pub field_0x0: u8,
@@ -49127,8 +48540,6 @@ pub struct Struct582 {
     pub field_0xf: u8,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct589 {
     pub field_0x0: u8,
@@ -49290,8 +48701,6 @@ pub struct Struct589 {
     pub field_0xa0: i32,
 }
 
-
-
 pub struct Struct588 {
     pub i16_x00: i32,
     pub field_0x2: u8,
@@ -49451,8 +48860,6 @@ pub struct Struct588 {
     pub field_0xa0: i32,
 }
 
-
-
 pub struct Struct585 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49473,8 +48880,6 @@ pub struct Struct585 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct584 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49494,8 +48899,6 @@ pub struct Struct584 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct587 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49509,8 +48912,6 @@ pub struct Struct587 {
     pub field_0xa: u32,
 }
 
-
-
 pub struct Struct586 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -49522,8 +48923,6 @@ pub struct Struct586 {
     pub field_0xa: i32,
 }
 
-
-
 pub struct Struct151 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -49532,8 +48931,6 @@ pub struct Struct151 {
     pub field_0x8: u16,
     pub field_0xa: u8,
 }
-
-
 
 pub struct Struct1097 {
     pub field_0x0: u8,
@@ -50069,8 +49466,6 @@ pub struct Struct1097 {
     pub field_0x213: u8,
 }
 
-
-
 pub struct Struct414 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50117,8 +49512,6 @@ pub struct Struct414 {
     pub field_0x32: u32,
 }
 
-
-
 pub struct Struct570 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50134,8 +49527,6 @@ pub struct Struct570 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct572 {
     pub field_0x0: u8,
@@ -50153,8 +49544,6 @@ pub struct Struct572 {
     pub field_0xe: u32,
 }
 
-
-
 pub struct Struct571 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50171,8 +49560,6 @@ pub struct Struct571 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct1055 {
     pub field_0x0: u8,
@@ -50435,8 +49822,6 @@ pub struct Struct1055 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct578 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50455,8 +49840,6 @@ pub struct Struct578 {
     pub field_0x10: i32,
 }
 
-
-
 pub struct Struct579 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50467,8 +49850,6 @@ pub struct Struct579 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct61 {
     pub field_0x0: u8,
@@ -50494,8 +49875,6 @@ pub struct Struct61 {
     pub field_0x1a: *mut u8,
 }
 
-
-
 pub struct Struct574 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50511,8 +49890,6 @@ pub struct Struct574 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct573 {
     pub field_0x0: u8,
@@ -50531,8 +49908,6 @@ pub struct Struct573 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct576 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50548,8 +49923,6 @@ pub struct Struct576 {
     pub field_0xc: u16,
     pub field_0xe: u32,
 }
-
-
 
 pub struct Struct1026 {
     pub field_0x0: u8,
@@ -50813,8 +50186,6 @@ pub struct Struct1026 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct575 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -50831,14 +50202,10 @@ pub struct Struct575 {
     pub field_0xe: u16,
 }
 
-
-
 pub struct Struct983 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct284 {
     pub field_0x0: u8,
@@ -51217,8 +50584,6 @@ pub struct Struct284 {
     pub field_0x176: u16,
 }
 
-
-
 pub struct Struct534 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -51324,8 +50689,6 @@ pub struct Struct534 {
     pub field_0x8a: u8,
     pub field_0x8b: u8,
 }
-
-
 
 pub struct Struct787 {
     pub field_0x0: u8,
@@ -51589,8 +50952,6 @@ pub struct Struct787 {
     pub field_0x10c: u16,
 }
 
-
-
 pub struct Struct996 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -51630,8 +50991,6 @@ pub struct Struct996 {
     pub field_0x26: i32,
 }
 
-
-
 pub struct Struct850 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -51647,8 +51006,6 @@ pub struct Struct850 {
     pub field_0xe: i32,
     pub field_0x10: *mut Struct44,
 }
-
-
 
 pub struct Struct513 {
     pub field_0x0: u8,
@@ -51813,8 +51170,6 @@ pub struct Struct513 {
     pub field_0xa8: i32,
 }
 
-
-
 pub struct Struct1175 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -51834,8 +51189,6 @@ pub struct Struct1175 {
     pub field_0x12: u16,
 }
 
-
-
 pub struct Struct424 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -51854,8 +51207,6 @@ pub struct Struct424 {
     pub field_0xf: u8,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct407 {
     pub field_0x0: u8,
@@ -51984,8 +51335,6 @@ pub struct Struct407 {
     pub field_0x7c: u8,
     pub field_0x7d: u8,
 }
-
-
 
 pub struct Struct592 {
     pub field_0x0: u8,
@@ -52234,8 +51583,6 @@ pub struct Struct592 {
     pub field_0xf6: i32,
 }
 
-
-
 pub struct Struct591 {
     pub u16_x00: u16,
     pub u16_x02: u16,
@@ -52465,13 +51812,9 @@ pub struct Struct591 {
     pub u16_xe4: u16,
 }
 
-
-
 pub struct Struct593 {
     pub field_0x0: u32,
 }
-
-
 
 pub struct Struct730 {
     pub field_0x0: u8,
@@ -52644,8 +51987,6 @@ pub struct Struct730 {
     pub field_0xa8: i32,
 }
 
-
-
 pub struct Struct590 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -52660,8 +52001,6 @@ pub struct Struct590 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1115 {
     pub field_0x0: u8,
@@ -52679,8 +52018,6 @@ pub struct Struct1115 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct596 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -52693,8 +52030,6 @@ pub struct Struct596 {
     pub field_0xa: u8,
     pub field_0xb: u8,
 }
-
-
 
 pub struct Struct598 {
     pub field_0x0: u8,
@@ -52722,8 +52057,6 @@ pub struct Struct598 {
     pub field_0x1b: u8,
 }
 
-
-
 pub struct Struct597 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -52736,8 +52069,6 @@ pub struct Struct597 {
     pub field_0xa: u8,
     pub field_0xb: u8,
 }
-
-
 
 pub struct Struct401 {
     pub field_0x0: u8,
@@ -52764,8 +52095,6 @@ pub struct Struct401 {
     pub field_0x16: u32,
 }
 
-
-
 pub struct Struct863 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -52789,8 +52118,6 @@ pub struct Struct863 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct1042 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -52798,8 +52125,6 @@ pub struct Struct1042 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct545 {
     pub field_0x0: u8,
@@ -53182,8 +52507,6 @@ pub struct Struct545 {
     pub field_0x17e: *mut u8,
     pub field_0x180: i32,
 }
-
-
 
 pub struct Struct544 {
     pub field_0x0: u8,
@@ -53571,8 +52894,6 @@ pub struct Struct544 {
     pub field_0x186: u32,
 }
 
-
-
 pub struct Struct541 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -53612,8 +52933,6 @@ pub struct Struct541 {
     pub field_0x26: u32,
 }
 
-
-
 pub struct Struct540 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -53651,8 +52970,6 @@ pub struct Struct540 {
     pub field_0x24: u16,
     pub field_0x26: u32,
 }
-
-
 
 pub struct Struct542 {
     pub field_0x0: u8,
@@ -53722,8 +53039,6 @@ pub struct Struct542 {
     pub field_0x42: u16,
 }
 
-
-
 pub struct Struct195 {
     pub field_0x0: i32,
     pub field_0x2: u16,
@@ -53732,8 +53047,6 @@ pub struct Struct195 {
     pub field_0xc: u32,
     pub field_0x10: u32,
 }
-
-
 
 pub struct Struct205 {
     pub field_0x0: u8,
@@ -53751,8 +53064,6 @@ pub struct Struct205 {
     pub field_0xe: i32,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct549 {
     pub u16_x0: u16,
@@ -54062,8 +53373,6 @@ pub struct Struct549 {
     pub field_0x139: u8,
 }
 
-
-
 pub struct Struct548 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -54072,11 +53381,7 @@ pub struct Struct548 {
     pub field_0x4: u16,
 }
 
-
-
 pub struct Struct876 {}
-
-
 
 pub struct Struct180 {
     pub field_0x0: u8,
@@ -54303,8 +53608,6 @@ pub struct Struct180 {
     pub field_0xde: u16,
 }
 
-
-
 pub struct Struct338 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -54313,8 +53616,6 @@ pub struct Struct338 {
     pub field_0x4: u16,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct480 {
     pub field_0x0: u8,
@@ -54354,8 +53655,6 @@ pub struct Struct480 {
     pub field_0x23: u8,
 }
 
-
-
 pub struct Struct504 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -54363,8 +53662,6 @@ pub struct Struct504 {
     pub field_0x3: u8,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct754 {
     pub field_0x0: u8,
@@ -54399,8 +53696,6 @@ pub struct Struct754 {
     pub field_0x1f: u8,
     pub field_0x20: i32,
 }
-
-
 
 pub struct Struct536 {
     pub field_0x0: u8,
@@ -54438,11 +53733,7 @@ pub struct Struct536 {
     pub field_0x20: u32,
 }
 
-
-
 pub struct Struct1099 {}
-
-
 
 pub struct Struct535 {
     pub a: u16,
@@ -54553,8 +53844,6 @@ pub struct Struct535 {
     pub h: i32,
 }
 
-
-
 pub struct Struct756 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -54592,8 +53881,6 @@ pub struct Struct756 {
     pub field_0x23: u8,
     pub field_0x24: u16,
 }
-
-
 
 pub struct Struct530 {
     pub field_0x0: u8,
@@ -54669,14 +53956,10 @@ pub struct Struct530 {
     pub field_0x46: u32,
 }
 
-
-
 pub struct Struct532 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct531 {
     pub field_0x0: u8,
@@ -54768,11 +54051,7 @@ pub struct Struct531 {
     pub field_0x56: u16,
 }
 
-
-
 pub struct Struct537 {}
-
-
 
 pub struct Struct539 {
     pub field_0x0: u8,
@@ -54813,15 +54092,11 @@ pub struct Struct539 {
     pub field_0x24: u16,
 }
 
-
-
 pub struct Struct391 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct427 {
     pub field_0x0: u8,
@@ -54847,11 +54122,7 @@ pub struct Struct427 {
     pub field_0x14: u16,
 }
 
-
-
 pub struct Struct561 {}
-
-
 
 pub struct Struct560 {
     pub field_0x0: u8,
@@ -55169,8 +54440,6 @@ pub struct Struct560 {
     pub field_0x139: u8,
 }
 
-
-
 pub struct Struct743 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -55204,25 +54473,17 @@ pub struct Struct743 {
     pub field_0x20: u16,
 }
 
-
-
 pub struct Struct567 {}
-
-
 
 pub struct Struct566 {
     pub field_0x0: u16,
 }
-
-
 
 pub struct Struct569 {
     pub u16_x0: u16,
     pub u16_x2: u16,
     pub Struct376_ptr_x4: *mut Struct376,
 }
-
-
 
 pub struct Struct568 {
     pub u16_x0: u16,
@@ -55233,8 +54494,6 @@ pub struct Struct568 {
     pub u32_xe: u32,
     pub u16_x12: u16,
 }
-
-
 
 pub struct Struct563 {
     pub field_0x0: u8,
@@ -55253,8 +54512,6 @@ pub struct Struct563 {
     pub field_0xd: u8,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct562 {
     pub field_0x0: u8,
@@ -55563,8 +54820,6 @@ pub struct Struct562 {
     pub field_0x130: u16,
 }
 
-
-
 pub struct Struct565 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -55583,16 +54838,12 @@ pub struct Struct565 {
     pub field_0xe: u16,
 }
 
-
-
 pub struct Struct952 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct271 {
     pub field_0x0: u8,
@@ -55886,8 +55137,6 @@ pub struct Struct271 {
     pub field_0x120: u16,
     pub field_0x122: u16,
 }
-
-
 
 pub struct Struct550 {
     pub field_0x0: u8,
@@ -56185,8 +55434,6 @@ pub struct Struct550 {
     pub field_0x12a: u32,
 }
 
-
-
 pub struct Struct556 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -56205,8 +55452,6 @@ pub struct Struct556 {
     pub field_0xe: u32,
 }
 
-
-
 pub struct Struct555 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -56224,8 +55469,6 @@ pub struct Struct555 {
     pub field_0xd: u8,
     pub field_0xe: u32,
 }
-
-
 
 pub struct Struct1050 {
     pub field_0x0: u8,
@@ -56251,8 +55494,6 @@ pub struct Struct1050 {
     pub field_0x17: u8,
     pub field_0x18: i32,
 }
-
-
 
 pub struct Struct558 {
     pub field_0x0: u8,
@@ -56537,8 +55778,6 @@ pub struct Struct558 {
     pub field_0x126: u32,
 }
 
-
-
 pub struct Struct1162 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -56549,8 +55788,6 @@ pub struct Struct1162 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct557 {
     pub field_0x0: u8,
@@ -56577,8 +55814,6 @@ pub struct Struct557 {
     pub field_0x20: u16,
 }
 
-
-
 pub struct Struct554 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -56597,8 +55832,6 @@ pub struct Struct554 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct553 {
     pub field_0x0: u8,
@@ -56898,8 +56131,6 @@ pub struct Struct553 {
     pub field_0x132: u32,
     pub field_0x136: u32,
 }
-
-
 
 pub struct Struct1109 {
     pub field_0x0: u8,
@@ -57405,8 +56636,6 @@ pub struct Struct1109 {
     pub field_0x1f5: u8,
     pub field_0x1f6: u32,
 }
-
-
 
 pub struct Struct1086 {
     pub field_0x0: u8,
@@ -57923,8 +57152,6 @@ pub struct Struct1086 {
     pub field_0x206: u16,
 }
 
-
-
 pub struct Struct501 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -57934,8 +57161,6 @@ pub struct Struct501 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct500 {
     pub a: u16,
@@ -58209,8 +57434,6 @@ pub struct Struct500 {
     pub field_0x122: u16,
 }
 
-
-
 pub struct Struct769 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58230,8 +57453,6 @@ pub struct Struct769 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct503 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58239,8 +57460,6 @@ pub struct Struct503 {
     pub field_0x4: u8,
     pub field_0x5: u8,
 }
-
-
 
 pub struct Struct516 {
     pub field_0x0: u8,
@@ -58393,8 +57612,6 @@ pub struct Struct516 {
     pub field_0x94: u32,
 }
 
-
-
 pub struct Struct509 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58533,8 +57750,6 @@ pub struct Struct509 {
     pub field_0x9e: u32,
 }
 
-
-
 pub struct Struct508 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58642,8 +57857,6 @@ pub struct Struct508 {
     pub field_0xa8: u16,
 }
 
-
-
 pub struct Struct505 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58694,8 +57907,6 @@ pub struct Struct505 {
     pub field_0x2e: u32,
 }
 
-
-
 pub struct Struct506 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58735,8 +57946,6 @@ pub struct Struct506 {
     pub field_0x32: i32,
 }
 
-
-
 pub struct Struct771 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58773,11 +57982,7 @@ pub struct Struct771 {
     pub field_0x28: u32,
 }
 
-
-
 pub struct Struct712 {}
-
-
 
 pub struct Struct309 {
     pub field_0x0: u8,
@@ -58814,8 +58019,6 @@ pub struct Struct309 {
     pub field_0x20: u16,
 }
 
-
-
 pub struct Struct120 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -58846,8 +58049,6 @@ pub struct Struct120 {
     pub field_0x20: u8,
     pub field_0x21: u8,
 }
-
-
 
 pub struct Struct253 {
     pub field_0x0: u8,
@@ -59028,14 +58229,10 @@ pub struct Struct253 {
     pub field_0xb0: u16,
 }
 
-
-
 pub struct Struct889 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct345 {
     pub field_0x0: u8,
@@ -59185,8 +58382,6 @@ pub struct Struct345 {
     pub field_0x90: *mut u16,
 }
 
-
-
 pub struct Struct523 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59250,8 +58445,6 @@ pub struct Struct523 {
     pub field_0x40: u32,
 }
 
-
-
 pub struct Struct522 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59275,11 +58468,7 @@ pub struct Struct522 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct386 {}
-
-
 
 pub struct Struct525 {
     pub field_0x0: u8,
@@ -59303,8 +58492,6 @@ pub struct Struct525 {
     pub field_0x15: u8,
     pub field_0x16: u16,
 }
-
-
 
 pub struct Struct524 {
     pub field_0x0: u8,
@@ -59376,8 +58563,6 @@ pub struct Struct524 {
     pub field_0x46: u32,
     pub field_0x4a: i32,
 }
-
-
 
 pub struct Struct521 {
     pub field_0x0: u8,
@@ -59451,11 +58636,7 @@ pub struct Struct521 {
     pub field_0x56: u16,
 }
 
-
-
 pub struct Struct133 {}
-
-
 
 pub struct Struct30 {
     pub field_0x0: u8,
@@ -59721,8 +58902,6 @@ pub struct Struct30 {
     pub field_0x104: u8,
 }
 
-
-
 pub struct Struct527 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59738,8 +58917,6 @@ pub struct Struct527 {
     pub field_0xb: u8,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct526 {
     pub field_0x0: u8,
@@ -59812,8 +58989,6 @@ pub struct Struct526 {
     pub field_0x44: u16,
 }
 
-
-
 pub struct Struct529 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59825,8 +59000,6 @@ pub struct Struct529 {
     pub field_0x8: u16,
     pub field_0xa: u16,
 }
-
-
 
 pub struct Struct388 {
     pub field_0x0: u8,
@@ -59919,8 +59092,6 @@ pub struct Struct388 {
     pub field_0x5a: i32,
 }
 
-
-
 pub struct Struct832 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59940,8 +59111,6 @@ pub struct Struct832 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct512 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -59950,8 +59119,6 @@ pub struct Struct512 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct511 {
     pub field_0x0: u8,
@@ -60012,8 +59179,6 @@ pub struct Struct511 {
     pub field_0x3b: u8,
     pub field_0x3c: u32,
 }
-
-
 
 pub struct Struct514 {
     pub field_0x0: u16,
@@ -60520,8 +59685,6 @@ pub struct Struct514 {
     pub field_0x200: i32,
 }
 
-
-
 pub struct Struct519 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -60542,8 +59705,6 @@ pub struct Struct519 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct87 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -60554,8 +59715,6 @@ pub struct Struct87 {
     pub field_0x7: u8,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct518 {
     pub field_0x0: u8,
@@ -60699,8 +59858,6 @@ pub struct Struct518 {
     pub field_0x8e: u32,
 }
 
-
-
 pub struct Struct965 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -60718,8 +59875,6 @@ pub struct Struct965 {
     pub field_0x10: i32,
     pub field_0x12: i32,
 }
-
-
 
 pub struct Struct517 {
     pub field_0x0: u8,
@@ -60878,8 +60033,6 @@ pub struct Struct517 {
     pub field_0x9a: u32,
 }
 
-
-
 pub struct Struct1073 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -60887,8 +60040,6 @@ pub struct Struct1073 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct725 {
     pub field_0x0: u8,
@@ -60932,8 +60083,6 @@ pub struct Struct725 {
     pub field_0x28: u32,
 }
 
-
-
 pub struct Struct307 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -60952,15 +60101,11 @@ pub struct Struct307 {
     pub field_0x10: i32,
 }
 
-
-
 pub struct Struct360 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct978 {
     pub field_0x0: u8,
@@ -61116,8 +60261,6 @@ pub struct Struct978 {
     pub field_0x9a: u8,
     pub field_0x9b: u8,
 }
-
-
 
 pub struct Struct25 {
     pub field_0x0: u8,
@@ -61280,8 +60423,6 @@ pub struct Struct25 {
     pub field_0xa4: u16,
 }
 
-
-
 pub struct Struct164 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -61304,8 +60445,6 @@ pub struct Struct164 {
     pub field_0x17: u8,
 }
 
-
-
 pub struct Struct845 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -61324,8 +60463,6 @@ pub struct Struct845 {
     pub field_0x14: u8,
     pub field_0x15: u8,
 }
-
-
 
 pub struct Struct297 {
     pub field_0x0: u8,
@@ -61357,8 +60494,6 @@ pub struct Struct297 {
     field_0x1a: *mut u32,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct240 {
     pub field_0x0: u8,
@@ -61461,8 +60596,6 @@ pub struct Struct240 {
     pub field_0x62: u16,
 }
 
-
-
 pub struct Struct177 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -61488,8 +60621,6 @@ pub struct Struct177 {
     pub field_0x16: *mut u8,
     pub field_0x18: *mut u8,
 }
-
-
 
 pub struct Struct930 {
     pub field_0x0: u8,
@@ -61526,8 +60657,6 @@ pub struct Struct930 {
     pub field_0x1f: u8,
     pub field_0x20: i32,
 }
-
-
 
 pub struct Struct1007 {
     pub field_0x0: u8,
@@ -61685,8 +60814,6 @@ pub struct Struct1007 {
     pub field_0x98: u16,
 }
 
-
-
 pub struct Struct74 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -61721,8 +60848,6 @@ pub struct Struct74 {
     pub field_0x40: u16,
 }
 
-
-
 pub struct Struct1060 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -61733,8 +60858,6 @@ pub struct Struct1060 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1120 {
     pub field_0x0: u8,
@@ -62254,8 +61377,6 @@ pub struct Struct1120 {
     pub field_0x206: i32,
 }
 
-
-
 pub struct Struct924 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -62311,8 +61432,6 @@ pub struct Struct924 {
     pub field_0x34: i32,
 }
 
-
-
 pub struct Struct967 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -62327,11 +61446,7 @@ pub struct Struct967 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct373 {}
-
-
 
 pub struct Struct1078 {
     pub field_0x0: u8,
@@ -62604,8 +61719,6 @@ pub struct Struct1078 {
     pub field_0x114: u32,
 }
 
-
-
 pub struct Struct350 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -62759,8 +61872,6 @@ pub struct Struct350 {
     pub field_0x9a: u16,
 }
 
-
-
 pub struct Struct745 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -62796,8 +61907,6 @@ pub struct Struct745 {
     pub field_0x20: u16,
     pub field_0x22: u16,
 }
-
-
 
 pub struct Struct854 {
     pub field_0x0: u8,
@@ -63485,8 +62594,6 @@ pub struct Struct854 {
     pub field_0x2ab: u8,
 }
 
-
-
 pub struct Struct943 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -63504,8 +62611,6 @@ pub struct Struct943 {
     pub field_0x16: u32,
     pub field_0x1a: u16,
 }
-
-
 
 pub struct Struct802 {
     pub field_0x0: u8,
@@ -63776,8 +62881,6 @@ pub struct Struct802 {
     pub field_0x122: u16,
 }
 
-
-
 pub struct Struct343 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -63953,14 +63056,10 @@ pub struct Struct343 {
     pub field_0xb6: u16,
 }
 
-
-
 pub struct Struct1006 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct12 {
     pub field_0x0: u8,
@@ -63969,8 +63068,6 @@ pub struct Struct12 {
     pub field_0x3: u8,
     pub h_window: HWND16,
 }
-
-
 
 pub struct Struct859 {
     pub field_0x0: u8,
@@ -64658,8 +63755,6 @@ pub struct Struct859 {
     pub field_0x2ab: u8,
 }
 
-
-
 pub struct Struct792 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -64936,8 +64031,6 @@ pub struct Struct792 {
     pub field_0x122: u16,
 }
 
-
-
 pub struct Struct147 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -64985,8 +64078,6 @@ pub struct Struct147 {
     pub field_0x2c: u16,
 }
 
-
-
 pub struct Struct467 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -65019,8 +64110,6 @@ pub struct Struct467 {
     pub c: i32,
 }
 
-
-
 pub struct Struct739 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -65029,8 +64118,6 @@ pub struct Struct739 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct69 {
     pub field_0x0: u8,
@@ -65161,8 +64248,6 @@ pub struct Struct69 {
     pub field_0x81: u8,
 }
 
-
-
 pub struct Struct922 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -65226,8 +64311,6 @@ pub struct Struct922 {
     pub field_0x3c: u8,
     pub field_0x3d: u8,
 }
-
-
 
 pub struct Struct463 {
     pub field_0x0: u8,
@@ -65318,8 +64401,6 @@ pub struct Struct463 {
     pub field_0x55: u8,
     pub field_0x56: i32,
 }
-
-
 
 pub struct Struct443 {
     pub field_0x0: u8,
@@ -69039,8 +68120,6 @@ pub struct Struct443 {
     pub field_0xe8b: u8,
 }
 
-
-
 pub struct Struct726 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69078,8 +68157,6 @@ pub struct Struct726 {
     pub field_0x26: i32,
 }
 
-
-
 pub struct Struct935 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69091,8 +68168,6 @@ pub struct Struct935 {
     pub field_0xa: u8,
     pub field_0xb: u8,
 }
-
-
 
 pub struct Struct1111 {
     pub field_0x0: u8,
@@ -69110,8 +68185,6 @@ pub struct Struct1111 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct193 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69125,8 +68198,6 @@ pub struct Struct193 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct458 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69134,8 +68205,6 @@ pub struct Struct458 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct win_struct_42 {
     pub u16_x0: u16,
@@ -69377,8 +68446,6 @@ pub struct win_struct_42 {
     pub field_0x10e: u32,
 }
 
-
-
 pub struct Struct356 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69424,8 +68491,6 @@ pub struct Struct356 {
     pub field_0x37: u8,
     pub field_0x38: i32,
 }
-
-
 
 pub struct Struct1126 {
     pub field_0x0: u8,
@@ -69799,8 +68864,6 @@ pub struct Struct1126 {
     pub field_0x173: u8,
 }
 
-
-
 pub struct Struct1150 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69819,8 +68882,6 @@ pub struct Struct1150 {
     pub field_0x12: u16,
     pub field_0x14: u16,
 }
-
-
 
 pub struct Struct387 {
     pub field_0x0: u8,
@@ -69902,11 +68963,7 @@ pub struct Struct387 {
     pub field_0x55: u8,
 }
 
-
-
 pub struct Struct134 {}
-
-
 
 pub struct Struct56 {
     pub field_0x0: u8,
@@ -69968,8 +69025,6 @@ pub struct Struct56 {
     pub field_0x3c: u16,
 }
 
-
-
 pub struct Struct1113 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -69998,8 +69053,6 @@ pub struct Struct1113 {
     pub field_0x18: u16,
     pub field_0x1a: u16,
 }
-
-
 
 pub struct Struct330 {
     pub field_0x0: u8,
@@ -70155,8 +69208,6 @@ pub struct Struct330 {
     pub field_0x9c: u32,
 }
 
-
-
 pub struct Struct1149 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -70173,8 +69224,6 @@ pub struct Struct1149 {
     pub field_0xe: i32,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct184 {
     pub field_0x0: u8,
@@ -70193,8 +69242,6 @@ pub struct Struct184 {
     pub field_0x14: i32,
     pub field_0x16: i32,
 }
-
-
 
 pub struct Struct1022 {
     pub field_0x0: u8,
@@ -70460,8 +69507,6 @@ pub struct Struct1022 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct267 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -70724,8 +69769,6 @@ pub struct Struct267 {
     pub field_0x102: u16,
     pub field_0x104: u16,
 }
-
-
 
 pub struct Struct476 {
     pub field_0x0: u8,
@@ -71040,8 +70083,6 @@ pub struct Struct476 {
     pub field_0x138: u32,
 }
 
-
-
 pub struct Struct815 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -71053,8 +70094,6 @@ pub struct Struct815 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct1037 {
     pub field_0x0: u8,
@@ -71320,8 +70359,6 @@ pub struct Struct1037 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct948 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -71373,8 +70410,6 @@ pub struct Struct948 {
     pub field_0x38: u8,
     pub field_0x39: u8,
 }
-
-
 
 pub struct Struct1090 {
     pub field_0x0: u8,
@@ -71910,8 +70945,6 @@ pub struct Struct1090 {
     pub field_0x216: u32,
 }
 
-
-
 pub struct Struct43 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -71936,8 +70969,6 @@ pub struct Struct43 {
     pub palette: HPALETTE16,
 }
 
-
-
 pub struct Struct210 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -71951,8 +70982,6 @@ pub struct Struct210 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct1160 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -71964,14 +70993,10 @@ pub struct Struct1160 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct761 {
     pub field_0x0: u16,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct1163 {
     pub field_0x0: u8,
@@ -71986,8 +71011,6 @@ pub struct Struct1163 {
     pub field_0xa: i32,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1164 {
     pub field_0x0: u8,
@@ -72023,8 +71046,6 @@ pub struct Struct1164 {
     pub field_0x26: i32,
 }
 
-
-
 pub struct Struct1148 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72051,8 +71072,6 @@ pub struct Struct1148 {
     pub field_0x28: u16,
 }
 
-
-
 pub struct Struct1167 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72076,8 +71095,6 @@ pub struct Struct1167 {
     pub field_0x26: i32,
     pub field_0x28: i32,
 }
-
-
 
 pub struct Struct1168 {
     pub field_0x0: u8,
@@ -72123,8 +71140,6 @@ pub struct Struct1168 {
     pub field_0x2b: u8,
 }
 
-
-
 pub struct Struct341 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72132,8 +71147,6 @@ pub struct Struct341 {
     pub field_0x4: u16,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct1165 {
     pub field_0x0: u8,
@@ -72145,8 +71158,6 @@ pub struct Struct1165 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1166 {
     pub field_0x0: u8,
@@ -72161,8 +71172,6 @@ pub struct Struct1166 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct1157 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72173,8 +71182,6 @@ pub struct Struct1157 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct249 {
     pub field_0x0: u8,
@@ -72331,8 +71338,6 @@ pub struct Struct249 {
     pub field_0x98: u16,
 }
 
-
-
 pub struct Struct384 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72349,8 +71354,6 @@ pub struct Struct384 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct1170 {
     pub field_0x0: u16,
     pub field_0x2: i32,
@@ -72358,13 +71361,7 @@ pub struct Struct1170 {
     pub field_0x6: i32,
 }
 
-
-
 pub struct Struct1171 {}
-
-
-
-
 
 pub struct Struct1172 {
     pub field_0x0: u8,
@@ -72550,8 +71547,6 @@ pub struct pass1_struct_1 {
     pub field_0x22: u16,
 }
 
-
-
 pub struct Struct1173 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72697,8 +71692,6 @@ pub struct Struct1173 {
     pub field_0x8e: u16,
 }
 
-
-
 pub struct Struct1176 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -72737,11 +71730,7 @@ pub struct Struct1176 {
     pub field_0x23: u8,
 }
 
-
-
 pub struct Struct1100 {}
-
-
 
 pub struct pass1_struct_3 {
     pub field_0x0: u8,
@@ -72777,8 +71766,6 @@ pub struct pass1_struct_3 {
     pub field_0x20: u8,
     pub field_0x21: u8,
 }
-
-
 
 pub struct Struct828 {
     pub field_0x0: u8,
@@ -73042,8 +72029,6 @@ pub struct Struct828 {
     pub field_0x108: u32,
     pub field_0x10c: u32,
 }
-
-
 
 pub struct Struct1024 {
     pub field_0x0: u8,
@@ -73312,8 +72297,6 @@ pub struct Struct1024 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct91 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -73352,8 +72335,6 @@ pub struct Struct91 {
     pub field_0x28: i32,
 }
 
-
-
 pub struct Struct325 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -73373,8 +72354,6 @@ pub struct Struct325 {
     pub field_0x16: u16,
     pub field_0x18: i32,
 }
-
-
 
 pub struct Struct432 {
     pub field_0x0: u8,
@@ -73488,8 +72467,6 @@ pub struct Struct432 {
     pub field_0x72: u16,
     pub field_0x74: u16,
 }
-
-
 
 pub struct Struct894 {
     pub field_0x0: u8,
@@ -73758,8 +72735,6 @@ pub struct Struct894 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct38 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -73767,8 +72742,6 @@ pub struct Struct38 {
     pub field_0x4: i16,
     pub field_0x6: i16,
 }
-
-
 
 pub struct Struct129 {
     pub field_0x0: u8,
@@ -73782,8 +72755,6 @@ pub struct Struct129 {
     pub h_wnd_0x8: HWND16,
 }
 
-
-
 pub struct Struct708 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -73791,11 +72762,7 @@ pub struct Struct708 {
     pub field_0x4: *mut Struct44,
 }
 
-
-
 pub struct Struct904 {}
-
-
 
 pub struct Struct182 {
     pub field_0x0: u8,
@@ -73808,13 +72775,11 @@ pub struct Struct182 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct489 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-pub struct Struct1 {
+pub struct Struct {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -73842,8 +72807,6 @@ pub struct Struct1 {
     pub field_0x1c: i32,
 }
 
-
-
 pub struct Struct1124 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -73865,8 +72828,6 @@ pub struct Struct1124 {
     pub field_0x14: u16,
     pub field_0x16: u16,
 }
-
-
 
 pub struct Struct970 {
     pub field_0x0: u8,
@@ -74042,8 +73003,6 @@ pub struct Struct970 {
     pub field_0xaa: i32,
 }
 
-
-
 pub struct Struct1011 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74078,8 +73037,6 @@ pub struct Struct1011 {
     pub field_0x1f: u8,
     pub field_0x20: u32,
 }
-
-
 
 pub struct Struct928 {
     pub field_0x0: u8,
@@ -74120,8 +73077,6 @@ pub struct Struct928 {
     pub field_0x24: u8,
     pub field_0x25: u8,
 }
-
-
 
 pub struct Struct917 {
     pub field_0x0: u8,
@@ -74180,8 +73135,6 @@ pub struct Struct917 {
     pub field_0x40: i32,
 }
 
-
-
 pub struct Struct8 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74203,8 +73156,6 @@ pub struct Struct8 {
     pub field_0x22: i32,
 }
 
-
-
 pub struct Struct103 {
     ptr_1_lo: *mut u8,
     ptr_1_hi: *mut u8,
@@ -74218,8 +73169,6 @@ pub struct Struct103 {
     pub field_0x1c: u16,
 }
 
-
-
 pub struct Struct482 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74228,8 +73177,6 @@ pub struct Struct482 {
     pub field_0x5: u8,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct1144 {
     pub field_0x0: u16,
@@ -74252,8 +73199,6 @@ pub struct Struct1144 {
     pub field_0x26: u16,
     pub field_0x28: u16,
 }
-
-
 
 pub struct Struct236 {
     pub field_0x0: u8,
@@ -74332,8 +73277,6 @@ pub struct Struct236 {
     pub field_0x4a: u16,
 }
 
-
-
 pub struct Struct1068 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74387,8 +73330,6 @@ pub struct Struct1068 {
     pub field_0x34: u16,
 }
 
-
-
 pub struct Struct397 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74411,8 +73352,6 @@ pub struct Struct397 {
     pub field_0x14: u16,
 }
 
-
-
 pub struct Struct354 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74425,8 +73364,6 @@ pub struct Struct354 {
     pub field_0x14: u16,
     pub field_0x16: u16,
 }
-
-
 
 pub struct Struct116 {
     pub field_0x0: u8,
@@ -74456,8 +73393,6 @@ pub struct Struct116 {
     pub field_0x18: u16,
 }
 
-
-
 pub struct Struct369 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74483,8 +73418,6 @@ pub struct Struct369 {
     pub field_0x15: u8,
     pub field_0x16: u32,
 }
-
-
 
 pub struct Struct841 {
     pub field_0x0: u8,
@@ -74537,8 +73470,6 @@ pub struct Struct841 {
     pub field_0x52: i32,
     pub field_0x54: *mut u16,
 }
-
-
 
 pub struct Struct6 {
     pub field_0x0: u8,
@@ -74681,8 +73612,6 @@ pub struct Struct6 {
     pub field_0x8a: i32,
 }
 
-
-
 pub struct Struct1131 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74709,8 +73638,6 @@ pub struct Struct1131 {
     pub field_0x17: u8,
 }
 
-
-
 pub struct Struct211 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -74733,8 +73660,6 @@ pub struct Struct211 {
     pub field_0x19: u8,
     pub field_0x1a: i32,
 }
-
-
 
 pub struct Struct774 {
     pub field_0x0: u8,
@@ -74771,8 +73696,6 @@ pub struct Struct774 {
     pub field_0x20: u32,
 }
 
-
-
 pub struct Struct312 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -74785,8 +73708,6 @@ pub struct Struct312 {
     pub field_0xa: u16,
     pub field_0xc: u32,
 }
-
-
 
 pub struct Struct445 {
     pub field_0x0: u8,
@@ -76455,8 +75376,6 @@ pub struct Struct445 {
     pub field_0x680: u16,
 }
 
-
-
 pub struct Struct900 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -76724,8 +75643,6 @@ pub struct Struct900 {
     pub field_0x107: u8,
     pub field_0x108: u32,
 }
-
-
 
 pub struct Struct1021 {
     pub field_0x0: u8,
@@ -77003,10 +75920,6 @@ pub struct Struct1021 {
     pub field_0x110: i32,
 }
 
-
-
-
-
 pub struct Struct80 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77044,8 +75957,6 @@ pub struct Struct81 {
     pub field_0x10: *mut u16,
 }
 
-
-
 pub struct Struct82 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77065,15 +75976,11 @@ pub struct Struct82 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct83 {
     pub field_0x0: u16,
     field_0x2: *mut u32,
     pub field_0x4: *mut u16,
 }
-
-
 
 pub struct Struct84 {
     pub field_0x0: u32,
@@ -77094,8 +76001,6 @@ pub struct Struct84 {
     pub field_0x18: *mut Struct83,
 }
 
-
-
 pub struct Struct851 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77115,15 +76020,11 @@ pub struct Struct851 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct85 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
 }
-
-
 
 pub struct Struct86 {
     pub field_0x0: u8,
@@ -77177,8 +76078,6 @@ pub struct Struct86 {
     pub field_0x32: *mut u8,
 }
 
-
-
 pub struct Struct89 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77202,8 +76101,6 @@ pub struct Struct89 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct9 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77211,8 +76108,6 @@ pub struct Struct9 {
     pub field_0x3: u8,
     pub file: u16,
 }
-
-
 
 pub struct Struct272 {
     pub field_0x0: u8,
@@ -77495,8 +76390,6 @@ pub struct Struct272 {
     pub field_0x116: u16,
 }
 
-
-
 pub struct Struct731 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77534,8 +76427,6 @@ pub struct Struct731 {
     pub field_0x22: u32,
 }
 
-
-
 pub struct Struct882 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -77553,8 +76444,6 @@ pub struct Struct882 {
     pub field_0xe: u16,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct219 {
     pub field_0x0: u8,
@@ -78601,8 +77490,6 @@ pub struct Struct219 {
     pub field_0x414: u16,
 }
 
-
-
 pub struct Struct70 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -78749,8 +77636,6 @@ pub struct Struct70 {
     pub field_0x92: u16,
 }
 
-
-
 pub struct Struct402 {
     pub a: u16,
     pub b: u16,
@@ -78763,8 +77648,6 @@ pub struct Struct402 {
     pub field_0x12: u16,
     pub field_0x14: u16,
 }
-
-
 
 pub struct Struct71 {
     pub field_0x0: u8,
@@ -79009,8 +77892,6 @@ pub struct Struct71 {
     pub field_0xf8: u8,
     pub field_0xf9: u8,
 }
-
-
 
 pub struct Struct72 {
     pub field_0x0: u8,
@@ -80681,16 +79562,12 @@ pub struct Struct72 {
     pub field_0x681: u8,
 }
 
-
-
 pub struct Struct76 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct77 {
     pub field_0x0: u16,
@@ -80791,8 +79668,6 @@ pub struct Struct77 {
     pub field_0x80: i32,
 }
 
-
-
 pub struct Struct78 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -80832,8 +79707,6 @@ pub struct Struct78 {
     pub field_0x26: i32,
     pub field_0x28: i32,
 }
-
-
 
 pub struct Struct803 {
     pub field_0x0: u8,
@@ -81105,8 +79978,6 @@ pub struct Struct803 {
     pub field_0x122: u16,
 }
 
-
-
 pub struct Struct79 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -81126,8 +79997,6 @@ pub struct Struct79 {
     pub field_0x12: u8,
     pub field_0x13: u8,
 }
-
-
 
 pub struct Struct1101 {
     pub field_0x0: u8,
@@ -81643,15 +80512,9 @@ pub struct Struct1101 {
     pub field_0x204: u16,
 }
 
-
-
 pub struct Struct1102 {}
 
-
-
 pub struct Struct1105 {}
-
-
 
 pub struct Struct1106 {
     pub field_0x0: u8,
@@ -81992,11 +80855,7 @@ pub struct Struct1106 {
     pub field_0x14f: u8,
 }
 
-
-
 pub struct Struct1103 {}
-
-
 
 pub struct Struct1104 {
     pub field_0x0: u8,
@@ -82504,8 +81363,6 @@ pub struct Struct1104 {
     pub field_0x1f6: *mut Struct872,
 }
 
-
-
 pub struct Struct459 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -82515,11 +81372,7 @@ pub struct Struct459 {
     pub field_0x6: i32,
 }
 
-
-
 pub struct Struct1107 {}
-
-
 
 pub struct Struct152 {
     pub field_0x0: i32,
@@ -82762,8 +81615,6 @@ pub struct Struct152 {
     pub field_0xf2: i32,
 }
 
-
-
 pub struct Struct63 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -82804,8 +81655,6 @@ pub struct Struct63 {
     pub field_0x2b: u8,
     pub field_0x2c: u32,
 }
-
-
 
 pub struct Struct64 {
     pub field_0x0: u8,
@@ -82912,8 +81761,6 @@ pub struct Struct64 {
     pub field_0x80: u16,
     pub field_0x82: u16,
 }
-
-
 
 pub struct Struct65 {
     pub ptr_a_lo: u16,
@@ -83148,8 +81995,6 @@ pub struct Struct65 {
     pub field_0x10e: u32,
     pub field_0x112: u16,
 }
-
-
 
 pub struct Struct66 {
     pub field_0x0: u8,
@@ -84173,8 +83018,6 @@ pub struct Struct66 {
     pub field_0x3fa: u8,
 }
 
-
-
 pub struct Struct67 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -84428,8 +83271,6 @@ pub struct Struct67 {
     pub field_0xfa: u8,
     pub field_0xfb: u8,
 }
-
-
 
 pub struct Struct1110 {
     pub field_0x0: u8,
@@ -84955,8 +83796,6 @@ pub struct Struct1110 {
     pub field_0x20e: u16,
 }
 
-
-
 pub struct Struct1116 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -84973,8 +83812,6 @@ pub struct Struct1116 {
     field_0xc: *mut u32,
 }
 
-
-
 pub struct Struct1117 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -84990,8 +83827,6 @@ pub struct Struct1117 {
     pub field_0xb: u8,
     field_0xc: *mut u32,
 }
-
-
 
 pub struct Struct1114 {
     pub field_0x0: u8,
@@ -85504,8 +84339,6 @@ pub struct Struct1114 {
     pub field_0x1fc: u16,
 }
 
-
-
 pub struct Struct1119 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -85521,8 +84354,6 @@ pub struct Struct1119 {
     pub field_0xb: u8,
     field_0xc: *mut u32,
 }
-
-
 
 pub struct Struct50 {
     pub field_0x0: u8,
@@ -85670,8 +84501,6 @@ pub struct Struct50 {
     pub field_0x92: i32,
     pub field_0x94: i32,
 }
-
-
 
 pub struct Struct1141 {
     pub field_0x0: u8,
@@ -86201,8 +85030,6 @@ pub struct Struct1141 {
     pub field_0x215: u8,
 }
 
-
-
 pub struct Struct51 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -86348,8 +85175,6 @@ pub struct Struct51 {
     pub field_0x8e: u32,
     pub field_0x92: u32,
 }
-
-
 
 pub struct Struct52 {
     pub field_0x0: u8,
@@ -86533,8 +85358,6 @@ pub struct Struct52 {
     pub h_wnd: u16,
 }
 
-
-
 pub struct Struct53 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -86675,8 +85498,6 @@ pub struct Struct53 {
     pub field_0x8b: u8,
     pub win_handle_0x8c: HWND16,
 }
-
-
 
 pub struct Struct54 {
     pub field_0x0: u8,
@@ -86942,8 +85763,6 @@ pub struct Struct54 {
     pub field_0x10f: u8,
 }
 
-
-
 pub struct Struct55 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -87103,8 +85922,6 @@ pub struct Struct55 {
     pub field_0xa0: u16,
 }
 
-
-
 pub struct Struct984 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -87147,11 +85964,7 @@ pub struct Struct984 {
     pub field_0x28: u32,
 }
 
-
-
 pub struct Struct58 {}
-
-
 
 pub struct Struct59 {
     pub field_0x0: u8,
@@ -87162,8 +85975,6 @@ pub struct Struct59 {
     pub field_0x5: u8,
     pub field_0x6: HWND16,
 }
-
-
 
 pub struct Struct206 {
     pub field_0x0: u8,
@@ -87225,8 +86036,6 @@ pub struct Struct206 {
     pub field_0x3e: i32,
     pub field_0x40: u16,
 }
-
-
 
 pub struct Struct326 {
     pub field_0x0: u8,
@@ -87302,8 +86111,6 @@ pub struct Struct326 {
     pub field_0x6a: u16,
     pub field_0x6c: u16,
 }
-
-
 
 pub struct Struct1123 {
     pub field_0x0: u8,
@@ -87808,18 +86615,12 @@ pub struct Struct1123 {
     pub field_0x1f6: u32,
 }
 
-
-
 pub struct Struct997 {}
-
-
 
 pub struct Struct744 {
     pub field_0x0: u16,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct1121 {
     pub field_0x0: u8,
@@ -87837,19 +86638,11 @@ pub struct Struct1121 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct1122 {}
-
-
 
 pub struct Struct1127 {}
 
-
-
 pub struct Struct1128 {}
-
-
 
 pub struct Struct456 {
     pub field_0x0: u8,
@@ -87859,11 +86652,7 @@ pub struct Struct456 {
     pub field_0x4: u32,
 }
 
-
-
 pub struct Struct1129 {}
-
-
 
 pub struct Struct891 {
     pub field_0x0: u8,
@@ -88224,8 +87013,6 @@ pub struct Struct891 {
     pub field_0x164: i32,
 }
 
-
-
 pub struct Struct890 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -88385,8 +87172,6 @@ pub struct Struct890 {
     pub field_0xa2: u16,
 }
 
-
-
 pub struct Struct897 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -88394,8 +87179,6 @@ pub struct Struct897 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct1134 {
     pub field_0x0: u8,
@@ -88413,8 +87196,6 @@ pub struct Struct1134 {
     pub field_0xc: u32,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct896 {
     pub field_0x0: u8,
@@ -88677,11 +87458,7 @@ pub struct Struct896 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct1135 {}
-
-
 
 pub struct Struct899 {
     pub field_0x0: u8,
@@ -88953,8 +87730,6 @@ pub struct Struct899 {
     pub field_0x10b: u8,
 }
 
-
-
 pub struct Struct1132 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -88971,8 +87746,6 @@ pub struct Struct1132 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct898 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -88981,11 +87754,7 @@ pub struct Struct898 {
     pub field_0x7: u8,
 }
 
-
-
 pub struct Struct1133 {}
-
-
 
 pub struct Struct892 {
     pub field_0x0: u8,
@@ -89009,8 +87778,6 @@ pub struct Struct892 {
     pub field_0x12: i32,
     pub field_0x14: u16,
 }
-
-
 
 pub struct Struct895 {
     pub field_0x0: u8,
@@ -89274,15 +88041,9 @@ pub struct Struct895 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct1136 {}
 
-
-
 pub struct Struct1137 {}
-
-
 
 pub struct Struct183 {
     pub field_0x0: u8,
@@ -89301,8 +88062,6 @@ pub struct Struct183 {
     pub field_0x1a: u32,
     pub field_0x1e: u16,
 }
-
-
 
 pub struct Struct864 {
     pub field_0x0: u8,
@@ -89325,11 +88084,7 @@ pub struct Struct864 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct1142 {}
-
-
 
 pub struct Struct1140 {
     pub field_0x0: u8,
@@ -89838,8 +88593,6 @@ pub struct Struct1140 {
     pub field_0x216: u32,
 }
 
-
-
 pub struct Struct1145 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -89866,8 +88619,6 @@ pub struct Struct1145 {
     pub field_0x26: u16,
     pub field_0x28: u16,
 }
-
-
 
 pub struct Struct1146 {
     pub field_0x0: u8,
@@ -89896,8 +88647,6 @@ pub struct Struct1146 {
     pub field_0x28: u16,
 }
 
-
-
 pub struct Struct1147 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -89923,8 +88672,6 @@ pub struct Struct1147 {
     pub field_0x26: u16,
     pub field_0x28: u16,
 }
-
-
 
 pub struct Struct22 {
     pub field_0x0: u32,
@@ -90068,8 +88815,6 @@ pub struct Struct22 {
     pub field_0x8e: u32,
 }
 
-
-
 pub struct Struct196 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -90083,11 +88828,7 @@ pub struct Struct196 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct877 {}
-
-
 
 pub struct Struct415 {
     pub field_0x0: u8,
@@ -90097,10 +88838,6 @@ pub struct Struct415 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
-
-
 
 pub struct Struct340 {
     pub field_0x0: u8,
@@ -90197,8 +88934,6 @@ pub struct Struct339 {
     pub field_0x6: *mut Struct340,
 }
 
-
-
 pub struct Struct1152 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -90218,8 +88953,6 @@ pub struct Struct1152 {
     pub field_0x14: i32,
     pub field_0x16: i32,
 }
-
-
 
 pub struct Struct1153 {
     pub field_0x0: u8,
@@ -90254,8 +88987,6 @@ pub struct Struct1153 {
     pub field_0x1d: u8,
     pub field_0x1e: i32,
 }
-
-
 
 pub struct Struct1151 {
     pub field_0x0: u8,
@@ -90294,8 +89025,6 @@ pub struct Struct1151 {
     pub field_0x28: u16,
 }
 
-
-
 pub struct Struct1154 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -90313,11 +89042,7 @@ pub struct Struct1154 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct1155 {}
-
-
 
 pub struct Struct1158 {
     pub field_0x0: u8,
@@ -90329,8 +89054,6 @@ pub struct Struct1158 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1159 {
     pub field_0x0: u8,
@@ -90355,8 +89078,6 @@ pub struct Struct1159 {
     pub field_0x18: u8,
     pub field_0x19: u8,
 }
-
-
 
 pub struct Struct90 {
     pub field_0x0: u8,
@@ -90399,13 +89120,9 @@ pub struct Struct90 {
     pub field_0x28: i32,
 }
 
-
-
 pub struct Struct96 {
     pub field_0x0: u8,
 }
-
-
 
 pub struct Struct392 {
     pub field_0x0: u8,
@@ -90518,8 +89235,6 @@ pub struct Struct392 {
     pub field_0x70: u32,
 }
 
-
-
 pub struct Struct97 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -90527,8 +89242,6 @@ pub struct Struct97 {
     pub field_0x4: u32,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct98 {
     pub field_0x0: u8,
@@ -90553,8 +89266,6 @@ pub struct Struct98 {
     pub field_0x13: u8,
     pub field_0x14: i32,
 }
-
-
 
 pub struct Struct940 {
     pub field_0x0: u8,
@@ -90596,8 +89307,6 @@ pub struct Struct940 {
     pub field_0x25: u8,
 }
 
-
-
 pub struct Struct99 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -90620,11 +89329,7 @@ pub struct Struct99 {
     pub field_0x14: u16,
 }
 
-
-
 pub struct Struct1052 {}
-
-
 
 pub struct Struct700 {
     pub field_0x0: u8,
@@ -91139,8 +89844,6 @@ pub struct Struct700 {
     pub field_0x200: i32,
 }
 
-
-
 pub struct Struct866 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91163,8 +89866,6 @@ pub struct Struct866 {
     pub field_0x19: u8,
     pub field_0x1a: u16,
 }
-
-
 
 pub struct Struct865 {
     pub field_0x0: u8,
@@ -91194,19 +89895,11 @@ pub struct Struct865 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct860 {}
-
-
 
 pub struct Struct178 {}
 
-
-
 pub struct Struct861 {}
-
-
 
 pub struct Struct704 {
     pub field_0x0: u8,
@@ -91218,8 +89911,6 @@ pub struct Struct704 {
     pub field_0x8: u16,
 }
 
-
-
 pub struct Struct868 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91227,8 +89918,6 @@ pub struct Struct868 {
     pub field_0x3: u8,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct867 {
     pub field_0x0: u8,
@@ -91250,8 +89939,6 @@ pub struct Struct867 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct953 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91259,8 +89946,6 @@ pub struct Struct953 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct869 {
     pub field_0x0: u8,
@@ -91282,8 +89967,6 @@ pub struct Struct869 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct494 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91299,8 +89982,6 @@ pub struct Struct494 {
     pub field_0xb: u8,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct241 {
     pub field_0x0: u8,
@@ -91409,8 +90090,6 @@ pub struct Struct241 {
     pub field_0x68: u16,
 }
 
-
-
 pub struct Struct853 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91427,11 +90106,7 @@ pub struct Struct853 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct852 {}
-
-
 
 pub struct Struct855 {
     pub field_0x0: u8,
@@ -91858,8 +90533,6 @@ pub struct Struct855 {
     pub field_0x1a6: u16,
 }
 
-
-
 pub struct Struct374 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -91869,8 +90542,6 @@ pub struct Struct374 {
     pub field_0xc: u32,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct856 {
     pub field_0x0: u8,
@@ -92528,10 +91199,6 @@ pub struct Struct856 {
     pub field_0x2ab: u8,
 }
 
-
-
-
-
 pub struct Struct42 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -92565,8 +91232,6 @@ pub struct Struct167 {
     pub field_0x0: [u8; 6],
 }
 
-
-
 pub struct Struct886 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -92575,8 +91240,6 @@ pub struct Struct886 {
     pub field_0x4: u8,
     pub field_0x5: u8,
 }
-
-
 
 pub struct Struct820 {
     pub field_0x0: u8,
@@ -92590,11 +91253,7 @@ pub struct Struct820 {
     pub field_0xf: u8,
 }
 
-
-
 pub struct Struct885 {}
-
-
 
 pub struct Struct887 {
     pub field_0x0: u8,
@@ -92623,8 +91282,6 @@ pub struct Struct887 {
     pub field_0x1c: u8,
     pub field_0x1d: u8,
 }
-
-
 
 pub struct Struct884 {
     pub field_0x0: u8,
@@ -92660,11 +91317,7 @@ pub struct Struct884 {
     pub field_0x27: u8,
 }
 
-
-
 pub struct Struct883 {}
-
-
 
 pub struct Struct481 {
     pub field_0x0: u8,
@@ -92672,8 +91325,6 @@ pub struct Struct481 {
     pub field_0x2: *mut u8,
     pub field_0x6: *mut Struct493,
 }
-
-
 
 pub struct Struct757 {
     pub field_0x0: u16,
@@ -92711,8 +91362,6 @@ pub struct Struct757 {
     pub field_0x23: u8,
     pub field_0x24: u16,
 }
-
-
 
 pub struct Struct874 {
     pub field_0x0: u8,
@@ -93147,8 +91796,6 @@ pub struct Struct874 {
     pub field_0x1ad: u8,
 }
 
-
-
 pub struct Struct871 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -93566,8 +92213,6 @@ pub struct Struct871 {
     pub field_0x1ae: u16,
 }
 
-
-
 pub struct Struct870 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -93587,8 +92232,6 @@ pub struct Struct870 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct121 {
     pub field_0x0: u16,
     pub field_0x2: u8,
@@ -93599,8 +92242,6 @@ pub struct Struct121 {
     pub four_file_bytes_0xa: [u8; 4],
     pub two_file_bytes_0xe: [u8; 2],
 }
-
-
 
 pub struct Struct873 {
     pub field_0x0: u8,
@@ -94029,11 +92670,7 @@ pub struct Struct873 {
     pub field_0x1ae: u16,
 }
 
-
-
 pub struct Struct879 {}
-
-
 
 pub struct Struct878 {
     pub field_0x0: u8,
@@ -94043,8 +92680,6 @@ pub struct Struct878 {
     pub field_0x4: u8,
     pub field_0x5: u8,
 }
-
-
 
 pub struct Struct1096 {
     pub field_0x0: u8,
@@ -94575,8 +93210,6 @@ pub struct Struct1096 {
     pub field_0x210: u32,
 }
 
-
-
 pub struct Struct254 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -94762,8 +93395,6 @@ pub struct Struct254 {
     pub field_0xb6: u16,
 }
 
-
-
 pub struct Struct364 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -94855,8 +93486,6 @@ pub struct Struct364 {
     pub field_0x58: i32,
 }
 
-
-
 pub struct Struct428 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -94900,8 +93529,6 @@ pub struct Struct428 {
     pub field_0x28: i32,
 }
 
-
-
 pub struct Struct822 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -94914,8 +93541,6 @@ pub struct Struct822 {
     pub field_0xf: u8,
 }
 
-
-
 pub struct Struct821 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -94927,8 +93552,6 @@ pub struct Struct821 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct829 {
     pub field_0x0: u8,
@@ -94952,8 +93575,6 @@ pub struct Struct829 {
     pub field_0x1a: u16,
     pub field_0x1c: u32,
 }
-
-
 
 pub struct Struct824 {
     pub field_0x0: u8,
@@ -95232,8 +93853,6 @@ pub struct Struct824 {
     pub field_0x114: u16,
 }
 
-
-
 pub struct Struct823 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -95504,8 +94123,6 @@ pub struct Struct823 {
     pub field_0x114: u16,
 }
 
-
-
 pub struct Struct826 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -95771,8 +94388,6 @@ pub struct Struct826 {
     pub field_0x114: u16,
 }
 
-
-
 pub struct Struct825 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -96037,8 +94652,6 @@ pub struct Struct825 {
     pub field_0x114: u16,
 }
 
-
-
 pub struct Struct450 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -96051,8 +94664,6 @@ pub struct Struct450 {
     pub field_0xa: u8,
     pub field_0xb: u8,
 }
-
-
 
 pub struct Struct285 {
     pub field_0x0: u8,
@@ -96437,8 +95048,6 @@ pub struct Struct285 {
     pub field_0x17c: u16,
 }
 
-
-
 pub struct Struct811 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -96706,8 +95315,6 @@ pub struct Struct811 {
     pub field_0x108: u16,
 }
 
-
-
 pub struct Struct810 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -96974,8 +95581,6 @@ pub struct Struct810 {
     pub field_0x107: u8,
     pub field_0x108: u16,
 }
-
-
 
 pub struct Struct817 {
     pub field_0x0: u8,
@@ -97501,8 +96106,6 @@ pub struct Struct817 {
     pub field_0x20c: u16,
 }
 
-
-
 pub struct Struct816 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -98020,8 +96623,6 @@ pub struct Struct816 {
     pub field_0x208: u16,
 }
 
-
-
 pub struct Struct819 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -98033,8 +96634,6 @@ pub struct Struct819 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct818 {
     pub field_0x0: u8,
@@ -98464,8 +97063,6 @@ pub struct Struct818 {
     pub field_0x1a8: u16,
 }
 
-
-
 pub struct Struct813 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -98726,8 +97323,6 @@ pub struct Struct813 {
     pub field_0x107: u8,
     pub field_0x108: u16,
 }
-
-
 
 pub struct Struct812 {
     pub field_0x0: u8,
@@ -98991,8 +97586,6 @@ pub struct Struct812 {
     pub field_0x108: u16,
 }
 
-
-
 pub struct Struct966 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99006,8 +97599,6 @@ pub struct Struct966 {
     pub field_0xc: u32,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct842 {
     pub field_0x0: u8,
@@ -99080,8 +97671,6 @@ pub struct Struct842 {
     pub field_0x54: i32,
 }
 
-
-
 pub struct Struct843 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99094,8 +97683,6 @@ pub struct Struct843 {
     pub field_0x16: u32,
     pub field_0x1a: u16,
 }
-
-
 
 pub struct Struct308 {
     pub field_0x0: u8,
@@ -99120,8 +97707,6 @@ pub struct Struct308 {
     pub field_0x16: u32,
     pub field_0x1a: u32,
 }
-
-
 
 pub struct Struct840 {
     pub field_0x0: u8,
@@ -99175,8 +97760,6 @@ pub struct Struct840 {
     pub field_0x30: i32,
 }
 
-
-
 pub struct Struct849 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99193,8 +97776,6 @@ pub struct Struct849 {
     pub field_0xe: i32,
 }
 
-
-
 pub struct Struct301 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99205,8 +97786,6 @@ pub struct Struct301 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct979 {
     pub field_0x0: u8,
@@ -99243,8 +97822,6 @@ pub struct Struct979 {
     pub field_0x20: i32,
 }
 
-
-
 pub struct Struct846 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99264,8 +97841,6 @@ pub struct Struct846 {
     pub field_0x16: i32,
     pub field_0x18: i32,
 }
-
-
 
 pub struct Struct361 {
     pub field_0x0: u8,
@@ -99435,8 +98010,6 @@ pub struct Struct361 {
     pub field_0xb2: u16,
 }
 
-
-
 pub struct Struct848 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -99454,8 +98027,6 @@ pub struct Struct848 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct847 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99463,8 +98034,6 @@ pub struct Struct847 {
     pub field_0x4: u32,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct1083 {
     pub field_0x0: u8,
@@ -99966,8 +98535,6 @@ pub struct Struct1083 {
     pub field_0x21a: u32,
 }
 
-
-
 pub struct Struct830 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -99992,8 +98559,6 @@ pub struct Struct830 {
     pub field_0x16: u16,
 }
 
-
-
 pub struct Struct186 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100004,8 +98569,6 @@ pub struct Struct186 {
     pub field_0x6: i32,
     pub field_0xa: i32,
 }
-
-
 
 pub struct Struct713 {
     pub field_0x0: u8,
@@ -100033,8 +98596,6 @@ pub struct Struct713 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct165 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100048,8 +98609,6 @@ pub struct Struct165 {
     field_0xa: *mut u32,
     field_0xc: *mut u32,
 }
-
-
 
 pub struct Struct839 {
     pub field_0x0: u8,
@@ -100196,8 +98755,6 @@ pub struct Struct839 {
     pub field_0x90: u32,
 }
 
-
-
 pub struct Struct838 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100223,8 +98780,6 @@ pub struct Struct838 {
     pub field_0x17: u8,
 }
 
-
-
 pub struct Struct835 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100249,8 +98804,6 @@ pub struct Struct835 {
     pub field_0x17: u8,
 }
 
-
-
 pub struct Struct834 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100273,8 +98826,6 @@ pub struct Struct834 {
     pub field_0x12: i32,
     pub field_0x14: u32,
 }
-
-
 
 pub struct Astruct837 {
     pub field_0x0: u8,
@@ -100423,8 +98974,6 @@ pub struct Astruct837 {
     pub field_0x92: i32,
 }
 
-
-
 pub struct Struct836 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100444,8 +98993,6 @@ pub struct Struct836 {
     pub field_0xf: u8,
     pub field_0x10: u32,
 }
-
-
 
 pub struct Struct298 {
     pub field_0x0: u8,
@@ -100736,8 +99283,6 @@ pub struct Struct298 {
     pub field_0x130: u16,
 }
 
-
-
 pub struct Struct780 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -100752,8 +99297,6 @@ pub struct Struct780 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct727 {
     pub field_0x0: u8,
@@ -100791,8 +99334,6 @@ pub struct Struct727 {
     pub field_0x22: i32,
     pub field_0x24: u16,
 }
-
-
 
 pub struct Struct1029 {
     pub field_0x0: u8,
@@ -101055,8 +99596,6 @@ pub struct Struct1029 {
     pub field_0x108: u16,
 }
 
-
-
 pub struct Struct905 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -101084,8 +99623,6 @@ pub struct Struct905 {
     pub field_0x1c: u16,
 }
 
-
-
 pub struct Struct907 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -101106,8 +99643,6 @@ pub struct Struct907 {
     pub field_0x12: u8,
     pub field_0x13: u8,
 }
-
-
 
 pub struct Struct906 {
     pub field_0x0: u8,
@@ -101136,8 +99671,6 @@ pub struct Struct906 {
     pub field_0x1c: u16,
 }
 
-
-
 pub struct Struct901 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -101157,8 +99690,6 @@ pub struct Struct901 {
     pub field_0xf: u8,
     pub field_0x10: *mut u16,
 }
-
-
 
 pub struct Struct902 {
     pub field_0x0: u8,
@@ -101420,8 +99951,6 @@ pub struct Struct902 {
     pub field_0x107: u8,
     pub field_0x108: u32,
 }
-
-
 
 pub struct Struct268 {
     pub field_0x0: u8,
@@ -101692,22 +100221,14 @@ pub struct Struct268 {
     pub field_0x10a: u16,
 }
 
-
-
 pub struct Struct1082 {}
-
-
 
 pub struct Struct909 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-
-
 pub struct Struct908 {}
-
-
 
 pub struct pass1_struct_2 {
     pub field_0x0: u8,
@@ -102065,8 +100586,6 @@ pub struct pass1_struct_2 {
     pub field_0x160: i32,
 }
 
-
-
 pub struct Struct974 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -102105,8 +100624,6 @@ pub struct Struct974 {
     pub field_0x24: i32,
 }
 
-
-
 pub struct Struct749 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -102142,8 +100659,6 @@ pub struct Struct749 {
     pub field_0x21: u8,
     pub field_0x22: u16,
 }
-
-
 
 pub struct Struct344 {
     pub field_0x0: u8,
@@ -102291,8 +100806,6 @@ pub struct Struct344 {
     pub field_0x90: u32,
 }
 
-
-
 pub struct Struct927 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -102328,8 +100841,6 @@ pub struct Struct927 {
     pub field_0x1f: u8,
     pub field_0x20: i32,
 }
-
-
 
 pub struct Struct926 {
     pub field_0x0: u8,
@@ -102391,8 +100902,6 @@ pub struct Struct926 {
     pub field_0x39: u8,
 }
 
-
-
 pub struct Struct11 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -102400,8 +100909,6 @@ pub struct Struct11 {
     pub field_0x3: u8,
     pub file: u16,
 }
-
-
 
 pub struct Struct923 {
     pub field_0x0: u8,
@@ -102436,8 +100943,6 @@ pub struct Struct923 {
     pub field_0x1d: u8,
     pub field_0x1e: u32,
 }
-
-
 
 pub struct Struct925 {
     pub field_0x0: u8,
@@ -102499,8 +101004,6 @@ pub struct Struct925 {
     pub field_0x3c: u8,
     pub field_0x3d: u8,
 }
-
-
 
 pub struct Struct451 {
     pub field_0x0: u8,
@@ -106218,11 +104721,7 @@ pub struct Struct451 {
     pub field_0xe82: i32,
 }
 
-
-
 pub struct Struct1016 {}
-
-
 
 pub struct Struct40 {
     pub field_0x0: u8,
@@ -106343,8 +104842,6 @@ pub struct Struct40 {
     pub field_0x74: i32,
 }
 
-
-
 pub struct Struct910 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106352,8 +104849,6 @@ pub struct Struct910 {
     pub field_0x3: u8,
     pub field_0x4: i32,
 }
-
-
 
 pub struct Struct148 {
     pub field_0x0: u8,
@@ -106379,8 +104874,6 @@ pub struct Struct148 {
     pub field_0x14: i32,
 }
 
-
-
 pub struct Struct915 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106389,8 +104882,6 @@ pub struct Struct915 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct918 {
     pub field_0x0: u8,
@@ -106452,8 +104943,6 @@ pub struct Struct918 {
     pub field_0x3e: i32,
 }
 
-
-
 pub struct Struct912 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106472,8 +104961,6 @@ pub struct Struct912 {
     pub field_0xf: u8,
     pub field_0x10: u32,
 }
-
-
 
 pub struct Struct911 {
     pub field_0x0: u8,
@@ -106496,8 +104983,6 @@ pub struct Struct911 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct914 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106507,14 +104992,10 @@ pub struct Struct914 {
     pub field_0x6: u16,
 }
 
-
-
 pub struct Struct913 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct919 {
     pub field_0x0: u8,
@@ -106528,8 +105009,6 @@ pub struct Struct919 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct377 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106539,8 +105018,6 @@ pub struct Struct377 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct936 {
     pub field_0x0: u8,
@@ -106552,8 +105029,6 @@ pub struct Struct936 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct477 {
     pub field_0x0: u8,
@@ -106722,8 +105197,6 @@ pub struct Struct477 {
     pub field_0xa3: u8,
 }
 
-
-
 pub struct Struct122 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -106868,8 +105341,6 @@ pub struct Struct122 {
     pub field_0x8d: u8,
     pub field_0x8e: u32,
 }
-
-
 
 pub struct Struct255 {
     pub field_0x0: u8,
@@ -107061,8 +105532,6 @@ pub struct Struct255 {
     pub field_0xba: u16,
     pub field_0xbc: u16,
 }
-
-
 
 pub struct Struct202 {
     pub field_0x0: u8,
@@ -107276,14 +105745,10 @@ pub struct Struct202 {
     pub field_0xd0: i32,
 }
 
-
-
 pub struct Struct1003 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct346 {
     pub field_0x0: u8,
@@ -107430,8 +105895,6 @@ pub struct Struct346 {
     pub field_0x8e: u16,
     pub field_0x90: u32,
 }
-
-
 
 pub struct Struct793 {
     pub field_0x0: u8,
@@ -107702,8 +106165,6 @@ pub struct Struct793 {
     pub field_0x120: u32,
 }
 
-
-
 pub struct Struct331 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -107858,8 +106319,6 @@ pub struct Struct331 {
     pub field_0x9e: u16,
 }
 
-
-
 pub struct Struct464 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -107880,8 +106339,6 @@ pub struct Struct464 {
     pub j: u16,
 }
 
-
-
 pub struct Struct1043 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -107890,8 +106347,6 @@ pub struct Struct1043 {
     pub field_0x7: u8,
 }
 
-
-
 pub struct Struct1040 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -107899,8 +106354,6 @@ pub struct Struct1040 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct1046 {
     pub field_0x0: u8,
@@ -107914,11 +106367,7 @@ pub struct Struct1046 {
     pub field_0xf: u8,
 }
 
-
-
 pub struct Struct1047 {}
-
-
 
 pub struct Struct1044 {
     pub field_0x0: u8,
@@ -107931,8 +106380,6 @@ pub struct Struct1044 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct1045 {
     pub field_0x0: u8,
@@ -108448,8 +106895,6 @@ pub struct Struct1045 {
     pub field_0x20a: u16,
 }
 
-
-
 pub struct Struct1048 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -108457,8 +106902,6 @@ pub struct Struct1048 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct170 {
     pub field_0x0: u8,
@@ -108474,8 +106917,6 @@ pub struct Struct170 {
     pub field_0xd: u8,
     pub field_0xe: i32,
 }
-
-
 
 pub struct Struct1053 {
     pub field_0x0: u8,
@@ -108745,8 +107186,6 @@ pub struct Struct1053 {
     pub field_0x10a: i32,
 }
 
-
-
 pub struct Struct1051 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -108763,8 +107202,6 @@ pub struct Struct1051 {
     pub field_0xe: i32,
 }
 
-
-
 pub struct Struct1057 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -108773,11 +107210,7 @@ pub struct Struct1057 {
     pub field_0x7: u8,
 }
 
-
-
 pub struct Struct1058 {}
-
-
 
 pub struct Struct1056 {
     pub field_0x0: u32,
@@ -108786,8 +107219,6 @@ pub struct Struct1056 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct1059 {
     pub field_0x0: u8,
@@ -108801,15 +107232,11 @@ pub struct Struct1059 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct313 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct949 {
     pub field_0x0: u8,
@@ -108871,8 +107298,6 @@ pub struct Struct949 {
     pub field_0x39: u8,
 }
 
-
-
 pub struct Struct961 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -108889,8 +107314,6 @@ pub struct Struct961 {
     pub field_0x10: u32,
 }
 
-
-
 pub struct Struct1061 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -108902,8 +107325,6 @@ pub struct Struct1061 {
     pub field_0xa: u16,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct434 {
     pub field_0x0: u8,
@@ -109033,8 +107454,6 @@ pub struct Struct434 {
     pub field_0x7e: u16,
 }
 
-
-
 pub struct Struct1064 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -109047,15 +107466,9 @@ pub struct Struct1064 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct1062 {}
 
-
-
 pub struct Struct1063 {}
-
-
 
 pub struct Struct1069 {
     pub field_0x0: u8,
@@ -109110,8 +107523,6 @@ pub struct Struct1069 {
     pub field_0x34: u16,
 }
 
-
-
 pub struct Struct1066 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -109122,8 +107533,6 @@ pub struct Struct1066 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1071 {
     pub field_0x0: u8,
@@ -109136,8 +107545,6 @@ pub struct Struct1071 {
     pub field_0xe: u8,
     pub field_0xf: u8,
 }
-
-
 
 pub struct Struct1070 {
     pub field_0x0: u8,
@@ -109191,8 +107598,6 @@ pub struct Struct1070 {
     pub field_0x33: u8,
     pub field_0x34: u16,
 }
-
-
 
 pub struct Struct1075 {
     pub field_0x0: u8,
@@ -109463,8 +107868,6 @@ pub struct Struct1075 {
     pub field_0x110: u32,
     pub field_0x114: u32,
 }
-
-
 
 pub struct Struct1076 {
     pub field_0x0: u8,
@@ -109744,8 +108147,6 @@ pub struct Struct1076 {
     pub field_0x116: i32,
 }
 
-
-
 pub struct Struct1074 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -109753,8 +108154,6 @@ pub struct Struct1074 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct1079 {
     pub field_0x0: u8,
@@ -110269,8 +108668,6 @@ pub struct Struct1079 {
     pub field_0x200: u32,
 }
 
-
-
 pub struct Struct1077 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -110542,8 +108939,6 @@ pub struct Struct1077 {
     pub field_0x114: u32,
 }
 
-
-
 pub struct Struct420 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -110653,8 +109048,6 @@ pub struct Struct420 {
     pub field_0x6a: i32,
 }
 
-
-
 pub struct Struct1080 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -110672,8 +109065,6 @@ pub struct Struct1080 {
     pub field_0x10: u16,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct1081 {
     pub field_0x0: u8,
@@ -111048,11 +109439,7 @@ pub struct Struct1081 {
     pub field_0x172: i32,
 }
 
-
-
 pub struct Struct1087 {}
-
-
 
 pub struct Struct1084 {
     pub field_0x0: u8,
@@ -111556,8 +109943,6 @@ pub struct Struct1084 {
     pub field_0x216: u32,
     pub field_0x21a: u32,
 }
-
-
 
 pub struct Struct1089 {
     pub field_0x0: u8,
@@ -112103,8 +110488,6 @@ pub struct Struct1089 {
     pub field_0x21d: u8,
 }
 
-
-
 pub struct Struct37 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -112350,8 +110733,6 @@ pub struct Struct37 {
     pub field_0xf2: u32,
 }
 
-
-
 pub struct Struct224 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -112378,15 +110759,9 @@ pub struct Struct224 {
     pub field_0x16: u32,
 }
 
-
-
 pub struct Struct1093 {}
 
-
-
 pub struct Struct1094 {}
-
-
 
 pub struct Struct1091 {
     pub field_0x0: u8,
@@ -112921,8 +111296,6 @@ pub struct Struct1091 {
     pub field_0x219: u8,
 }
 
-
-
 pub struct Struct1092 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -112938,8 +111311,6 @@ pub struct Struct1092 {
     pub field_0xb: u8,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct775 {
     pub field_0x0: u8,
@@ -112976,8 +111347,6 @@ pub struct Struct775 {
     pub field_0x20: i32,
     pub field_0x22: i32,
 }
-
-
 
 pub struct Struct1095 {
     pub field_0x0: u8,
@@ -113508,8 +111877,6 @@ pub struct Struct1095 {
     pub field_0x210: u32,
 }
 
-
-
 pub struct Struct1034 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -113517,8 +111884,6 @@ pub struct Struct1034 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct357 {
     pub field_0x0: u8,
@@ -113564,8 +111929,6 @@ pub struct Struct357 {
     pub field_0x2c: u16,
 }
 
-
-
 pub struct Struct300 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -113583,8 +111946,6 @@ pub struct Struct300 {
     pub field_0xd: u8,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct971 {
     pub field_0x0: u8,
@@ -113621,8 +111982,6 @@ pub struct Struct971 {
     pub field_0x20: u32,
     pub field_0x24: u16,
 }
-
-
 
 pub struct Struct290 {
     pub field_0x0: u8,
@@ -114037,16 +112396,12 @@ pub struct Struct290 {
     pub field_0x19a: u16,
 }
 
-
-
 pub struct Struct24 {
     pub field_0x0: u32,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub h_window: HWND16,
 }
-
-
 
 pub struct Struct237 {
     pub field_0x0: u8,
@@ -114130,8 +112485,6 @@ pub struct Struct237 {
     pub field_0x4e: u16,
     pub field_0x50: u16,
 }
-
-
 
 pub struct Struct260 {
     pub field_0x0: u8,
@@ -114354,8 +112707,6 @@ pub struct Struct260 {
     pub field_0xda: u16,
 }
 
-
-
 pub struct Struct207 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -114381,8 +112732,6 @@ pub struct Struct207 {
     pub field_0x1a: u8,
     pub field_0x1b: u8,
 }
-
-
 
 pub struct Struct972 {
     pub field_0x0: u8,
@@ -114423,8 +112772,6 @@ pub struct Struct972 {
     pub field_0x24: i32,
 }
 
-
-
 pub struct Struct440 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -114459,14 +112806,10 @@ pub struct Struct440 {
     pub field_0x1f: u8,
 }
 
-
-
 pub struct file_object {
     pub path: String,
     pub file: HFILE16,
 }
-
-
 
 pub struct Struct19 {
     pub field_0x0: u32,
@@ -114615,8 +112958,6 @@ pub struct Struct19 {
     pub field_0x94: u8,
     pub field_0x95: u8,
 }
-
-
 
 pub struct Struct351 {
     pub field_0x0: u8,
@@ -114850,8 +113191,6 @@ pub struct Struct351 {
     pub field_0xe9: u8,
     pub field_0xea: i32,
 }
-
-
 
 pub struct Struct273 {
     pub field_0x0: u8,
@@ -115152,8 +113491,6 @@ pub struct Struct273 {
     pub field_0x128: u16,
 }
 
-
-
 pub struct Struct776 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115171,16 +113508,12 @@ pub struct Struct776 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct140 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
-
-
 
 pub struct Struct447 {
     pub field_0x0: u8,
@@ -115207,8 +113540,6 @@ pub struct Struct447 {
     pub field_0x15: u8,
     pub field_0x16: u16,
 }
-
-
 
 pub struct Struct781 {
     pub field_0x0: u8,
@@ -115248,11 +113579,7 @@ pub struct Struct781 {
     pub field_0x23: u8,
 }
 
-
-
 pub struct Struct1002 {}
-
-
 
 pub struct Struct789 {
     pub field_0x0: u8,
@@ -115522,8 +113849,6 @@ pub struct Struct789 {
     pub field_0x10c: u32,
 }
 
-
-
 pub struct Struct1000 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115727,8 +114052,6 @@ pub struct Struct1000 {
     pub field_0xc7: u8,
 }
 
-
-
 pub struct Struct1001 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115767,8 +114090,6 @@ pub struct Struct1001 {
     pub field_0x24: u16,
 }
 
-
-
 pub struct Struct783 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115805,8 +114126,6 @@ pub struct Struct783 {
     pub field_0x22: i32,
 }
 
-
-
 pub struct Struct782 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115841,8 +114160,6 @@ pub struct Struct782 {
     pub field_0x1f: u8,
     pub field_0x20: u32,
 }
-
-
 
 pub struct Struct785 {
     pub field_0x0: u8,
@@ -115879,8 +114196,6 @@ pub struct Struct785 {
     pub field_0x20: i32,
     pub field_0x22: i32,
 }
-
-
 
 pub struct Struct1004 {
     pub field_0x0: u8,
@@ -115921,8 +114236,6 @@ pub struct Struct1004 {
     pub field_0x24: i32,
 }
 
-
-
 pub struct Struct784 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115959,8 +114272,6 @@ pub struct Struct784 {
     pub field_0x22: i32,
 }
 
-
-
 pub struct Struct1008 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -115976,8 +114287,6 @@ pub struct Struct1008 {
     pub field_0xc: i32,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct1009 {
     pub field_0x0: u8,
@@ -115995,11 +114304,7 @@ pub struct Struct1009 {
     pub field_0xe: u16,
 }
 
-
-
 pub struct Struct416 {}
-
-
 
 pub struct Struct770 {
     pub field_0x0: u8,
@@ -116044,8 +114349,6 @@ pub struct Struct770 {
     pub field_0x27: u8,
     pub field_0x28: *mut *mut u8,
 }
-
-
 
 pub struct Struct1013 {
     pub field_0x0: u8,
@@ -116098,11 +114401,7 @@ pub struct Struct1013 {
     pub field_0x30: i32,
 }
 
-
-
 pub struct Struct1014 {}
-
-
 
 pub struct Struct778 {
     pub field_0x0: u8,
@@ -116121,8 +114420,6 @@ pub struct Struct778 {
     pub field_0x10: u16,
 }
 
-
-
 pub struct Struct777 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -116139,8 +114436,6 @@ pub struct Struct777 {
     pub field_0xe: u16,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct1012 {
     pub field_0x0: u8,
@@ -116176,8 +114471,6 @@ pub struct Struct1012 {
     pub field_0x1f: u8,
     pub field_0x20: u32,
 }
-
-
 
 pub struct Struct772 {
     pub field_0x0: u8,
@@ -116223,8 +114516,6 @@ pub struct Struct772 {
     pub field_0x28: u32,
 }
 
-
-
 pub struct Struct1017 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -116238,11 +114529,7 @@ pub struct Struct1017 {
     pub field_0xa: u32,
 }
 
-
-
 pub struct Struct1018 {}
-
-
 
 pub struct Struct1015 {
     pub field_0x0: u8,
@@ -116296,8 +114583,6 @@ pub struct Struct1015 {
     pub field_0x30: i32,
 }
 
-
-
 pub struct Struct779 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -116309,14 +114594,10 @@ pub struct Struct779 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct985 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct327 {
     pub field_0x0: u8,
@@ -116432,8 +114713,6 @@ pub struct Struct327 {
     pub field_0x6e: u8,
     pub field_0x6f: u8,
 }
-
-
 
 pub struct Struct1020 {
     pub field_0x0: u8,
@@ -116704,15 +114983,9 @@ pub struct Struct1020 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct1025 {}
 
-
-
 pub struct Struct998 {}
-
-
 
 pub struct Struct1028 {
     pub field_0x0: u8,
@@ -116981,8 +115254,6 @@ pub struct Struct1028 {
     pub field_0x108: u16,
 }
 
-
-
 pub struct Struct1027 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -117244,8 +115515,6 @@ pub struct Struct1027 {
     pub field_0x108: u32,
 }
 
-
-
 pub struct Struct380 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -117328,8 +115597,6 @@ pub struct Struct380 {
     pub field_0x52: i32,
     pub field_0x56: u32,
 }
-
-
 
 pub struct Struct425 {
     pub field_0x0: u8,
@@ -117459,8 +115726,6 @@ pub struct Struct425 {
     pub field_0x82: u16,
 }
 
-
-
 pub struct Struct485 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -117481,8 +115746,6 @@ pub struct Struct485 {
     pub field_0x16: u16,
 }
 
-
-
 pub struct Struct1031 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -117495,11 +115758,7 @@ pub struct Struct1031 {
     pub field_0xf: u8,
 }
 
-
-
 pub struct Struct1032 {}
-
-
 
 pub struct Struct732 {
     pub field_0x0: u8,
@@ -117511,8 +115770,6 @@ pub struct Struct732 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct1030 {
     pub field_0x0: u8,
@@ -117775,8 +116032,6 @@ pub struct Struct1030 {
     pub field_0x107: u8,
     pub field_0x108: u16,
 }
-
-
 
 pub struct Struct798 {
     pub field_0x0: u8,
@@ -118042,8 +116297,6 @@ pub struct Struct798 {
     pub field_0x110: u32,
     pub field_0x114: u32,
 }
-
-
 
 pub struct Struct1035 {
     pub field_0x0: u8,
@@ -118314,8 +116567,6 @@ pub struct Struct1035 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct797 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -118580,8 +116831,6 @@ pub struct Struct797 {
     pub field_0x114: u32,
 }
 
-
-
 pub struct Struct1033 {
     pub field_0x0: u32,
     pub field_0x4: u8,
@@ -118589,8 +116838,6 @@ pub struct Struct1033 {
     pub field_0x6: u8,
     pub field_0x7: u8,
 }
-
-
 
 pub struct Struct794 {
     pub field_0x0: u8,
@@ -118862,11 +117109,7 @@ pub struct Struct794 {
     pub field_0x120: u32,
 }
 
-
-
 pub struct Struct1039 {}
-
-
 
 pub struct Struct796 {
     pub field_0x0: u8,
@@ -119147,8 +117390,6 @@ pub struct Struct796 {
     pub field_0x114: *mut Struct44,
 }
 
-
-
 pub struct Struct795 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -119419,8 +117660,6 @@ pub struct Struct795 {
     pub field_0x114: u32,
 }
 
-
-
 pub struct Struct1038 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -119684,8 +117923,6 @@ pub struct Struct1038 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct362 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -119854,8 +118091,6 @@ pub struct Struct362 {
     pub field_0xb2: u16,
 }
 
-
-
 pub struct Struct741 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -119891,8 +118126,6 @@ pub struct Struct741 {
     pub field_0x1f: u8,
     pub field_0x20: i32,
 }
-
-
 
 pub struct Struct740 {
     pub field_0x0: u8,
@@ -119944,8 +118177,6 @@ pub struct Struct740 {
     pub field_0x2e: u32,
 }
 
-
-
 pub struct Struct968 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -119959,8 +118190,6 @@ pub struct Struct968 {
     pub field_0xc: u32,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct747 {
     pub field_0x0: u8,
@@ -119978,8 +118207,6 @@ pub struct Struct747 {
     pub field_0xc: u32,
     pub field_0x10: i32,
 }
-
-
 
 pub struct Struct746 {
     pub field_0x0: u16,
@@ -120016,8 +118243,6 @@ pub struct Struct746 {
     pub field_0x22: u16,
 }
 
-
-
 pub struct Struct748 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120050,8 +118275,6 @@ pub struct Struct748 {
     pub field_0x21: u8,
     pub field_0x22: i32,
 }
-
-
 
 pub struct Struct758 {
     pub field_0x0: u8,
@@ -120089,8 +118312,6 @@ pub struct Struct758 {
     pub field_0x22: i32,
 }
 
-
-
 pub struct Struct734 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120124,8 +118345,6 @@ pub struct Struct734 {
     pub field_0x22: u32,
 }
 
-
-
 pub struct Struct733 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120137,15 +118356,11 @@ pub struct Struct733 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct166 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: *mut Struct166,
 }
-
-
 
 pub struct Struct736 {
     pub field_0x0: u8,
@@ -120158,11 +118373,7 @@ pub struct Struct736 {
     pub field_0xc: u16,
 }
 
-
-
 pub struct Struct735 {}
-
-
 
 pub struct Struct941 {
     pub field_0x0: u8,
@@ -120187,8 +118398,6 @@ pub struct Struct941 {
     pub field_0x1d: u8,
     pub field_0x1e: i32,
 }
-
-
 
 pub struct Struct429 {
     pub field_0x0: u8,
@@ -120229,8 +118438,6 @@ pub struct Struct429 {
     pub field_0x26: u32,
 }
 
-
-
 pub struct Struct299 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -120244,8 +118451,6 @@ pub struct Struct299 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct765 {
     pub field_0x0: u8,
@@ -120291,8 +118496,6 @@ pub struct Struct765 {
     pub field_0x2a: u8,
     pub field_0x2b: u8,
 }
-
-
 
 pub struct Struct764 {
     pub field_0x0: u16,
@@ -120440,8 +118643,6 @@ pub struct Struct764 {
     pub field_0x98: u16,
 }
 
-
-
 pub struct Struct767 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120463,8 +118664,6 @@ pub struct Struct767 {
     pub field_0x1a: u16,
     pub field_0x1c: u32,
 }
-
-
 
 pub struct Struct179 {
     pub field_0x0: u8,
@@ -120495,8 +118694,6 @@ pub struct Struct179 {
     pub field_0x1a: *mut Struct167,
 }
 
-
-
 pub struct Struct766 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120519,8 +118716,6 @@ pub struct Struct766 {
     pub field_0x1a: u16,
     pub field_0x1c: u32,
 }
-
-
 
 pub struct Struct763 {
     pub field_0x0: u16,
@@ -120558,8 +118753,6 @@ pub struct Struct763 {
     pub field_0x2a: u16,
 }
 
-
-
 pub struct Struct954 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120567,8 +118760,6 @@ pub struct Struct954 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct242 {
     pub field_0x0: u8,
@@ -120683,8 +118874,6 @@ pub struct Struct242 {
     pub field_0x6e: u16,
 }
 
-
-
 pub struct Struct336 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120736,8 +118925,6 @@ pub struct Struct336 {
     pub field_0x42: u32,
 }
 
-
-
 pub struct Struct375 {
     pub ptr_1_lo: u16,
     pub ptr_1_hi: u16,
@@ -120777,8 +118964,6 @@ pub struct Struct375 {
     pub field_0x56: u16,
 }
 
-
-
 pub struct Struct753 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -120814,8 +118999,6 @@ pub struct Struct753 {
     pub field_0x22: u16,
 }
 
-
-
 pub struct Struct101 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -120825,8 +119008,6 @@ pub struct Struct101 {
     pub field_0x5: u8,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct752 {
     pub field_0x0: u8,
@@ -120863,8 +119044,6 @@ pub struct Struct752 {
     pub field_0x20: u16,
     pub field_0x22: u16,
 }
-
-
 
 pub struct Struct751 {
     pub field_0x0: u8,
@@ -120911,8 +119090,6 @@ pub struct Struct751 {
     pub field_0x2d: u8,
     pub field_0x2e: u32,
 }
-
-
 
 pub struct Struct41 {
     pub field_0x0: u8,
@@ -120975,8 +119152,6 @@ pub struct Struct41 {
     pub field_0x40: i32,
 }
 
-
-
 pub struct Struct759 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -120991,8 +119166,6 @@ pub struct Struct759 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct701 {
     pub field_0x0: u8,
@@ -121031,8 +119204,6 @@ pub struct Struct701 {
     pub field_0x22: u8,
     pub field_0x23: u8,
 }
-
-
 
 pub struct Struct153 {
     pub field_0x0: i32,
@@ -121277,8 +119448,6 @@ pub struct Struct153 {
     pub field_0xf4: i32,
 }
 
-
-
 pub struct Struct703 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -121294,8 +119463,6 @@ pub struct Struct703 {
     pub field_0xb: u8,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct702 {
     pub field_0x0: u8,
@@ -121313,8 +119480,6 @@ pub struct Struct702 {
     pub field_0xc: u32,
 }
 
-
-
 pub struct Struct714 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -121323,11 +119488,7 @@ pub struct Struct714 {
     pub field_0x4: u16,
 }
 
-
-
 pub struct Struct721 {}
-
-
 
 pub struct Struct720 {
     pub field_0x0: u8,
@@ -121566,8 +119727,6 @@ pub struct Struct720 {
     pub field_0xf2: i32,
 }
 
-
-
 pub struct Struct192 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -121583,11 +119742,7 @@ pub struct Struct192 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct722 {}
-
-
 
 pub struct Struct729 {
     pub field_0x0: u8,
@@ -121611,8 +119766,6 @@ pub struct Struct729 {
     pub field_0x12: i32,
     pub field_0x14: u32,
 }
-
-
 
 pub struct Struct728 {
     pub field_0x0: u16,
@@ -121649,8 +119802,6 @@ pub struct Struct728 {
     pub field_0x22: i32,
     pub field_0x24: u16,
 }
-
-
 
 pub struct Struct495 {
     pub field_0x0: u8,
@@ -121690,8 +119841,6 @@ pub struct Struct495 {
     pub field_0x52: u32,
     pub field_0x56: u16,
 }
-
-
 
 pub struct Struct286 {
     pub field_0x0: u8,
@@ -122082,14 +120231,10 @@ pub struct Struct286 {
     pub field_0x182: u16,
 }
 
-
-
 pub struct Struct710 {
     pub field_0x0: u32,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct718 {
     pub field_0x0: u8,
@@ -122100,11 +120245,7 @@ pub struct Struct718 {
     pub field_0x6: u16,
 }
 
-
-
 pub struct Struct717 {}
-
-
 
 pub struct Struct719 {
     pub field_0x0: u8,
@@ -122135,8 +120276,6 @@ pub struct Struct719 {
     pub field_0x1a: u8,
 }
 
-
-
 pub struct Struct716 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -122161,8 +120300,6 @@ pub struct Struct716 {
     pub field_0x1b: u8,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct715 {
     pub field_0x0: u8,
@@ -122190,11 +120327,7 @@ pub struct Struct715 {
     pub field_0x1c: i32,
 }
 
-
-
 pub struct Struct136 {}
-
-
 
 pub struct Struct389 {
     pub field_0x0: u8,
@@ -122208,8 +120341,6 @@ pub struct Struct389 {
     pub field_0x9: u8,
     pub field_0xa: *mut u8,
 }
-
-
 
 pub struct Struct412 {
     pub field_0x0: u8,
@@ -122262,11 +120393,7 @@ pub struct Struct412 {
     pub field_0x30: i32,
 }
 
-
-
 pub struct Struct452 {}
-
-
 
 pub struct Struct332 {
     pub field_0x0: u8,
@@ -122422,11 +120549,7 @@ pub struct Struct332 {
     pub field_0x9e: u16,
 }
 
-
-
 pub struct Struct23 {}
-
-
 
 pub struct Struct805 {
     pub field_0x0: u8,
@@ -122707,8 +120830,6 @@ pub struct Struct805 {
     pub field_0x114: *mut Struct44,
 }
 
-
-
 pub struct Struct808 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -122973,8 +121094,6 @@ pub struct Struct808 {
     pub field_0x110: u32,
     pub field_0x114: u32,
 }
-
-
 
 pub struct Struct807 {
     pub field_0x0: u8,
@@ -123486,8 +121605,6 @@ pub struct Struct807 {
     pub field_0x200: i32,
 }
 
-
-
 pub struct Struct804 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -123757,8 +121874,6 @@ pub struct Struct804 {
     pub field_0x110: u32,
     pub field_0x114: u32,
 }
-
-
 
 pub struct Struct269 {
     pub field_0x0: u8,
@@ -124035,8 +122150,6 @@ pub struct Struct269 {
     pub field_0x110: u16,
 }
 
-
-
 pub struct Struct114 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -124059,18 +122172,12 @@ pub struct Struct114 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct212 {}
-
-
 
 pub struct Struct10 {
     pub path: String,
     pub file: HFILE16,
 }
-
-
 
 pub struct Struct243 {
     pub field_0x0: u8,
@@ -124191,8 +122298,6 @@ pub struct Struct243 {
     pub field_0x74: u16,
 }
 
-
-
 pub struct Struct959 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -124210,8 +122315,6 @@ pub struct Struct959 {
     pub field_0xd: u8,
     pub field_0xe: i32,
 }
-
-
 
 pub struct Struct123 {
     pub field_0x0: u8,
@@ -124365,8 +122468,6 @@ pub struct Struct123 {
     pub field_0x98: u32,
 }
 
-
-
 pub struct Struct465 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -124385,11 +122486,7 @@ pub struct Struct465 {
     pub field_0x14: i32,
 }
 
-
-
 pub struct Struct990 {}
-
-
 
 pub struct Struct48 {
     pub field_0x0: u8,
@@ -124638,8 +122735,6 @@ pub struct Struct48 {
     pub field_0xf9: u8,
 }
 
-
-
 pub struct Struct256 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -124836,8 +122931,6 @@ pub struct Struct256 {
     pub field_0xc0: u16,
     pub field_0xc2: u16,
 }
-
-
 
 pub struct Struct291 {
     pub field_0x0: u8,
@@ -125258,8 +123351,6 @@ pub struct Struct291 {
     pub field_0x1a0: u16,
 }
 
-
-
 pub struct Struct105 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125274,8 +123365,6 @@ pub struct Struct105 {
     pub field_0xd: u8,
     pub field_0xe: i32,
 }
-
-
 
 pub struct Struct421 {
     pub field_0x0: u8,
@@ -125293,8 +123382,6 @@ pub struct Struct421 {
     pub field_0x12: u32,
     pub field_0x16: u32,
 }
-
-
 
 pub struct Struct238 {
     pub field_0x0: u8,
@@ -125385,8 +123472,6 @@ pub struct Struct238 {
     pub field_0x56: u16,
 }
 
-
-
 pub struct Struct118 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125395,11 +123480,7 @@ pub struct Struct118 {
     pub field_0x4: u8,
 }
 
-
-
 pub struct Struct171 {}
-
-
 
 pub struct Struct310 {
     pub field_0x0: u16,
@@ -125414,8 +123495,6 @@ pub struct Struct310 {
     pub field_0x12: *mut u8,
     pub field_0x14: u16,
 }
-
-
 
 pub struct Struct478 {
     pub field_0x0: u8,
@@ -125435,8 +123514,6 @@ pub struct Struct478 {
     pub field_0xe: u32,
     pub field_0x12: i32,
 }
-
-
 
 pub struct Struct314 {
     pub field_0x0: u8,
@@ -125513,8 +123590,6 @@ pub struct Struct314 {
     pub field_0x6c: i32,
 }
 
-
-
 pub struct Struct49 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125524,8 +123599,6 @@ pub struct Struct49 {
     pub field_0x5: u8,
     pub h_win: HWND16,
 }
-
-
 
 pub struct Struct942 {
     pub field_0x0: u16,
@@ -125567,11 +123640,7 @@ pub struct Struct942 {
     pub field_0x39: u8,
 }
 
-
-
 pub struct Struct149 {}
-
-
 
 pub struct Struct36 {
     pub field_0x0: u8,
@@ -125810,8 +123879,6 @@ pub struct Struct36 {
     pub field_0xea: i32,
 }
 
-
-
 pub struct Struct225 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125823,11 +123890,7 @@ pub struct Struct225 {
     pub field_0x8: u16,
 }
 
-
-
 pub struct Struct220 {}
-
-
 
 pub struct Struct328 {
     pub field_0x0: u8,
@@ -125876,8 +123939,6 @@ pub struct Struct328 {
     pub field_0x2b: u8,
 }
 
-
-
 pub struct Struct226 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125894,8 +123955,6 @@ pub struct Struct226 {
     pub field_0xc: u16,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct228 {
     pub field_0x0: u8,
@@ -125926,8 +123985,6 @@ pub struct Struct228 {
     pub field_0x1a: u16,
 }
 
-
-
 pub struct Struct227 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -125951,16 +124008,12 @@ pub struct Struct227 {
     pub field_0x14: u16,
 }
 
-
-
 pub struct Struct221 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: i32,
 }
-
-
 
 pub struct Struct229 {
     pub field_0x0: u8,
@@ -125997,8 +124050,6 @@ pub struct Struct229 {
     pub field_0x20: u16,
 }
 
-
-
 pub struct Struct381 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -126021,8 +124072,6 @@ pub struct Struct381 {
     pub field_0x12: u16,
 }
 
-
-
 pub struct Struct214 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -126032,8 +124081,6 @@ pub struct Struct214 {
     pub field_0xc: u32,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct216 {
     pub field_0x0: u8,
@@ -126218,14 +124265,10 @@ pub struct Struct216 {
     pub field_0xca: u16,
 }
 
-
-
 pub struct Struct213 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct185 {
     pub field_0x0: u8,
@@ -126239,8 +124282,6 @@ pub struct Struct185 {
     pub field_0xc: u8,
     pub field_0xd: u8,
 }
-
-
 
 pub struct Struct448 {
     pub field_0x0: u8,
@@ -126265,8 +124306,6 @@ pub struct Struct448 {
     pub field_0x13: u8,
     pub field_0x14: i32,
 }
-
-
 
 pub struct Struct261 {
     pub field_0x0: u8,
@@ -126495,8 +124534,6 @@ pub struct Struct261 {
     pub field_0xe0: u16,
 }
 
-
-
 pub struct Struct247 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -126640,8 +124677,6 @@ pub struct Struct247 {
     pub field_0x8c: u16,
 }
 
-
-
 pub struct Struct244 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -126766,8 +124801,6 @@ pub struct Struct244 {
     pub field_0x78: u16,
     pub field_0x7a: u16,
 }
-
-
 
 pub struct Struct246 {
     pub field_0x0: u8,
@@ -126906,8 +124939,6 @@ pub struct Struct246 {
     pub field_0x86: u16,
 }
 
-
-
 pub struct Struct198 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -126918,8 +124949,6 @@ pub struct Struct198 {
     pub field_0xa: i32,
     pub field_0xc: *mut Struct104,
 }
-
-
 
 pub struct Struct245 {
     pub field_0x0: u8,
@@ -127052,8 +125081,6 @@ pub struct Struct245 {
     pub field_0x80: u16,
 }
 
-
-
 pub struct Struct208 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -127071,8 +125098,6 @@ pub struct Struct208 {
     pub field_0x10: u16,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct973 {
     pub field_0x0: u8,
@@ -127113,8 +125138,6 @@ pub struct Struct973 {
     pub field_0x23: u8,
     pub field_0x24: i32,
 }
-
-
 
 pub struct Struct231 {
     pub field_0x0: u8,
@@ -127163,8 +125186,6 @@ pub struct Struct231 {
     pub field_0x2c: u16,
 }
 
-
-
 pub struct Struct230 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -127206,8 +125227,6 @@ pub struct Struct230 {
     pub field_0x26: u16,
 }
 
-
-
 pub struct Struct304 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -127234,8 +125253,6 @@ pub struct Struct304 {
     pub field_0x1d: u8,
     pub field_0x1e: u32,
 }
-
-
 
 pub struct Struct239 {
     pub field_0x0: u8,
@@ -127332,8 +125349,6 @@ pub struct Struct239 {
     pub field_0x5c: u16,
 }
 
-
-
 pub struct Struct233 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -127393,8 +125408,6 @@ pub struct Struct233 {
     pub field_0x38: u16,
 }
 
-
-
 pub struct Struct232 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -127447,8 +125460,6 @@ pub struct Struct232 {
     pub field_0x30: u16,
     pub field_0x32: u16,
 }
-
-
 
 pub struct Struct234 {
     pub field_0x0: u8,
@@ -127514,8 +125525,6 @@ pub struct Struct234 {
     pub field_0x3c: u16,
     pub field_0x3e: u16,
 }
-
-
 
 pub struct Struct394 {
     pub field_0x0: u8,
@@ -127630,8 +125639,6 @@ pub struct Struct394 {
     pub field_0x7b: u8,
     pub field_0x7c: u32,
 }
-
-
 
 pub struct Struct119 {
     pub field_0x0: u8,
@@ -127860,8 +125867,6 @@ pub struct Struct119 {
     pub field_0xe8: u32,
 }
 
-
-
 pub struct Struct172 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -128080,8 +126085,6 @@ pub struct Struct172 {
     pub field_0xd6: u8,
     pub field_0xd7: u8,
 }
-
-
 
 pub struct Struct18 {
     pub field_0x0: u8,
@@ -128341,8 +126344,6 @@ pub struct Struct18 {
     pub field_0x104: u8,
     pub field_0x105: u8,
 }
-
-
 
 pub struct Struct315 {
     pub field_0x0: u8,
@@ -131927,8 +129928,6 @@ pub struct Struct315 {
     pub field_0xdfc: i32,
 }
 
-
-
 pub struct Struct404 {
     pub a: u16,
     pub b: u16,
@@ -131943,8 +129942,6 @@ pub struct Struct404 {
     pub field_0xf: u8,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct203 {
     pub field_0x0: u8,
@@ -132158,8 +130155,6 @@ pub struct Struct203 {
     pub field_0xd1: u8,
 }
 
-
-
 pub struct Struct200 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -132170,8 +130165,6 @@ pub struct Struct200 {
     pub field_0xa: i32,
 }
 
-
-
 pub struct Struct201 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -132179,8 +130172,6 @@ pub struct Struct201 {
     pub field_0x4: u32,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct986 {
     pub field_0x0: u8,
@@ -132222,11 +130213,7 @@ pub struct Struct986 {
     pub field_0x2a: i32,
 }
 
-
-
 pub struct Struct999 {}
-
-
 
 pub struct Struct287 {
     pub field_0x0: u8,
@@ -132623,8 +130610,6 @@ pub struct Struct287 {
     pub field_0x188: u16,
 }
 
-
-
 pub struct Struct470 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -132648,8 +130633,6 @@ pub struct Struct470 {
     pub field_0x1e: u16,
 }
 
-
-
 pub struct Struct110 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -132660,8 +130643,6 @@ pub struct Struct110 {
     pub field_0x7: u8,
     pub field_0x8: u16,
 }
-
-
 
 pub struct Struct417 {
     pub field_0x0: u8,
@@ -132705,11 +130686,7 @@ pub struct Struct417 {
     pub field_0x27: u8,
 }
 
-
-
 pub struct Struct496 {}
-
-
 
 pub struct Struct141 {
     pub field_0x0: u8,
@@ -132750,8 +130727,6 @@ pub struct Struct141 {
     pub field_0x26: i32,
     pub field_0x28: i32,
 }
-
-
 
 pub struct Struct274 {
     pub field_0x0: u8,
@@ -133058,8 +131033,6 @@ pub struct Struct274 {
     pub field_0x12e: u16,
 }
 
-
-
 pub struct Struct939 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -133103,8 +131076,6 @@ pub struct Struct939 {
     pub field_0x28: u8,
     pub field_0x29: u8,
 }
-
-
 
 pub struct Struct154 {
     pub field_0x0: i32,
@@ -133347,8 +131318,6 @@ pub struct Struct154 {
     pub field_0xf2: i32,
 }
 
-
-
 pub struct Struct365 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -133454,8 +131423,6 @@ pub struct Struct365 {
     pub field_0x68: u16,
 }
 
-
-
 pub struct Struct483 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -133484,8 +131451,6 @@ pub struct Struct483 {
     pub field_0x18: *mut u8,
 }
 
-
-
 pub struct Struct320 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -133493,8 +131458,6 @@ pub struct Struct320 {
     pub field_0x4: u16,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct35 {
     pub field_0x0: u8,
@@ -133626,8 +131589,6 @@ pub struct Struct35 {
     pub field_0x86: i32,
     pub field_0x88: i32,
 }
-
-
 
 pub struct Struct124 {
     pub field_0x0: u8,
@@ -133779,8 +131740,6 @@ pub struct Struct124 {
     pub field_0x93: u8,
 }
 
-
-
 pub struct Struct435 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -133908,8 +131867,6 @@ pub struct Struct435 {
     pub field_0x7c: u16,
     pub field_0x7e: i32,
 }
-
-
 
 pub struct Struct257 {
     pub field_0x0: u8,
@@ -134114,8 +132071,6 @@ pub struct Struct257 {
     pub field_0xc8: u16,
 }
 
-
-
 pub struct Struct137 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -134154,8 +132109,6 @@ pub struct Struct137 {
     pub field_0x24: i32,
 }
 
-
-
 pub struct Struct190 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -134169,8 +132122,6 @@ pub struct Struct190 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct497 {
     pub field_0x0: u8,
@@ -134214,8 +132165,6 @@ pub struct Struct497 {
     pub field_0x2b: u8,
     pub field_0x2c: u32,
 }
-
-
 
 pub struct Struct333 {
     pub field_0x0: u8,
@@ -134374,8 +132323,6 @@ pub struct Struct333 {
     pub field_0x9a: u16,
 }
 
-
-
 pub struct Struct969 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -134397,8 +132344,6 @@ pub struct Struct969 {
     pub field_0x12: i32,
     pub field_0x14: u32,
 }
-
-
 
 pub struct Struct347 {
     pub field_0x0: u8,
@@ -134552,8 +132497,6 @@ pub struct Struct347 {
     pub field_0x98: u32,
 }
 
-
-
 pub struct Struct111 {
     pub field_0x0: u16,
     pub field_0x2: u8,
@@ -134581,8 +132524,6 @@ pub struct Struct111 {
     pub field_0x1b: u8,
     pub field_0x1c: u16,
 }
-
-
 
 pub struct Struct3 {
     pub field_0x0: u8,
@@ -135099,14 +133040,10 @@ pub struct Struct3 {
     pub field_0x200: i32,
 }
 
-
-
 pub struct Struct168 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct453 {
     pub field_0x0: u8,
@@ -135121,8 +133058,6 @@ pub struct Struct453 {
     pub field_0xa: i32,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct991 {
     pub field_0x0: u8,
@@ -135161,8 +133096,6 @@ pub struct Struct991 {
     pub field_0x24: u16,
     pub field_0x26: u16,
 }
-
-
 
 pub struct Struct938 {
     pub field_0x0: u8,
@@ -135204,8 +133137,6 @@ pub struct Struct938 {
     pub field_0x25: u8,
 }
 
-
-
 pub struct Struct479 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -135221,8 +133152,6 @@ pub struct Struct479 {
     pub field_0x11: u8,
     pub field_0x12: u32,
 }
-
-
 
 pub struct Struct295 {
     pub field_0x0: u16,
@@ -135509,8 +133438,6 @@ pub struct Struct295 {
     pub field_0x142: u32,
 }
 
-
-
 pub struct Struct294 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -135525,8 +133452,6 @@ pub struct Struct294 {
     pub field_0xa: u16,
     pub field_0xc: u16,
 }
-
-
 
 pub struct Struct359 {
     pub field_0x0: u8,
@@ -135580,8 +133505,6 @@ pub struct Struct359 {
     pub field_0x32: u32,
     pub field_0x36: u16,
 }
-
-
 
 pub struct Struct292 {
     pub field_0x0: u8,
@@ -136008,8 +133931,6 @@ pub struct Struct292 {
     pub field_0x1a6: u16,
 }
 
-
-
 pub struct Struct14 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -136033,8 +133954,6 @@ pub struct Struct14 {
     pub struct_ptr_0x14: *mut Struct417,
     field_0x18: *mut libc::c_void,
 }
-
-
 
 pub struct Struct106 {
     pub field_0x0: u8,
@@ -137131,8 +135050,6 @@ pub struct Struct106 {
     pub field_0x443: u8,
 }
 
-
-
 pub struct Struct466 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -137156,8 +135073,6 @@ pub struct Struct466 {
     pub field_0x14: u8,
     pub field_0x15: u8,
 }
-
-
 
 pub struct Struct262 {
     pub field_0x0: u8,
@@ -137391,8 +135306,6 @@ pub struct Struct262 {
     pub field_0xe4: u16,
     pub field_0xe6: u16,
 }
-
-
 
 pub struct Struct264 {
     pub field_0x0: u8,
@@ -137639,8 +135552,6 @@ pub struct Struct264 {
     pub field_0xf2: u16,
 }
 
-
-
 pub struct Struct263 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -137880,8 +135791,6 @@ pub struct Struct263 {
     pub field_0xec: u16,
 }
 
-
-
 pub struct Struct251 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -138049,8 +135958,6 @@ pub struct Struct251 {
     pub field_0xa4: u16,
 }
 
-
-
 pub struct Struct250 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -138212,8 +136119,6 @@ pub struct Struct250 {
     pub field_0x9e: u16,
 }
 
-
-
 pub struct Struct962 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -138232,8 +136137,6 @@ pub struct Struct962 {
     pub field_0xe: u16,
     pub field_0x10: u32,
 }
-
-
 
 pub struct Struct259 {
     pub field_0x0: u8,
@@ -138450,8 +136353,6 @@ pub struct Struct259 {
     pub field_0xd4: u16,
 }
 
-
-
 pub struct Struct258 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -138661,8 +136562,6 @@ pub struct Struct258 {
     pub field_0xce: u16,
 }
 
-
-
 pub struct Struct405 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -138675,8 +136574,6 @@ pub struct Struct405 {
     pub field_0x8: u16,
     pub field_0xa: *mut u16,
 }
-
-
 
 pub struct Struct280 {
     pub field_0x0: u8,
@@ -139024,8 +136921,6 @@ pub struct Struct280 {
     pub field_0x156: u16,
     pub field_0x158: u16,
 }
-
-
 
 pub struct Struct282 {
     pub field_0x0: u8,
@@ -139392,8 +137287,6 @@ pub struct Struct282 {
     pub field_0x16a: u16,
 }
 
-
-
 pub struct Struct281 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -139746,8 +137639,6 @@ pub struct Struct281 {
     pub field_0x15c: u16,
     pub field_0x15e: u16,
 }
-
-
 
 pub struct Struct288 {
     pub field_0x0: u8,
@@ -140149,8 +138040,6 @@ pub struct Struct288 {
     pub field_0x18c: u16,
     pub field_0x18e: u16,
 }
-
-
 
 pub struct Struct289 {
     pub field_0x0: u8,
@@ -140559,8 +138448,6 @@ pub struct Struct289 {
     pub field_0x194: u16,
 }
 
-
-
 pub struct Struct275 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -140871,8 +138758,6 @@ pub struct Struct275 {
     pub field_0x132: u16,
     pub field_0x134: u16,
 }
-
-
 
 pub struct Struct277 {
     pub field_0x0: u8,
@@ -141203,8 +139088,6 @@ pub struct Struct277 {
     pub field_0x146: u16,
 }
 
-
-
 pub struct Struct276 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -141521,8 +139404,6 @@ pub struct Struct276 {
     pub field_0x138: u16,
     pub field_0x13a: u16,
 }
-
-
 
 pub struct Struct278 {
     pub field_0x0: u8,
@@ -141859,8 +139740,6 @@ pub struct Struct278 {
     pub field_0x14c: u16,
 }
 
-
-
 pub struct Struct422 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -141886,11 +139765,7 @@ pub struct Struct422 {
     pub field_0x16: u32,
 }
 
-
-
 pub struct Struct107 {}
-
-
 
 pub struct Struct100 {
     pub field_0x0: u8,
@@ -141903,8 +139778,6 @@ pub struct Struct100 {
     pub field_0x8: u16,
     pub field_0xa: u16,
 }
-
-
 
 pub struct Struct109 {
     pub field_0x0: u8,
@@ -141927,8 +139800,6 @@ pub struct Struct109 {
     pub field_0x17: u8,
     pub field_0x18: i32,
 }
-
-
 
 pub struct Struct329 {
     pub field_0x0: u8,
@@ -142009,11 +139880,7 @@ pub struct Struct329 {
     pub field_0x4b: u8,
 }
 
-
-
 pub struct Struct127 {}
-
-
 
 pub struct Struct126 {
     pub field_0x0: u32,
@@ -142029,8 +139896,6 @@ pub struct Struct126 {
     pub field_0x13: u8,
 }
 
-
-
 pub struct Struct125 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -142039,8 +139904,6 @@ pub struct Struct125 {
     pub field_0x4: u16,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct382 {
     pub field_0x0: u8,
@@ -142059,8 +139922,6 @@ pub struct Struct382 {
     pub field_0xf: u8,
     field_0x10: *mut u32,
 }
-
-
 
 pub struct Struct436 {
     pub field_0x0: u8,
@@ -142081,11 +139942,7 @@ pub struct Struct436 {
     pub field_0x22: u32,
 }
 
-
-
 pub struct Struct112 {}
-
-
 
 pub struct Struct113 {
     pub field_0x0: u8,
@@ -142158,8 +140015,6 @@ pub struct Struct113 {
     pub field_0x48: u16,
 }
 
-
-
 pub struct Struct303 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -142178,11 +140033,7 @@ pub struct Struct303 {
     pub field_0x1e: u32,
 }
 
-
-
 pub struct Struct160 {}
-
-
 
 pub struct Struct173 {
     pub field_0x0: u8,
@@ -142403,15 +140254,11 @@ pub struct Struct173 {
     pub field_0xd7: u8,
 }
 
-
-
 pub struct Struct17 {
     pub field_0x0: i32,
     pub field_0x4: i32,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct316 {
     pub field_0x0: u16,
@@ -142434,8 +140281,6 @@ pub struct Struct316 {
     pub field_0x17: u8,
     pub field_0x18: u16,
 }
-
-
 
 pub struct Struct335 {
     pub field_0x0: u8,
@@ -142482,8 +140327,6 @@ pub struct Struct335 {
     pub field_0x2b: u8,
     pub field_0x2c: i32,
 }
-
-
 
 pub struct Struct352 {
     pub field_0x0: u8,
@@ -142718,8 +140561,6 @@ pub struct Struct352 {
     pub field_0xea: u16,
 }
 
-
-
 pub struct Struct449 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -142741,8 +140582,6 @@ pub struct Struct449 {
     pub field_0x12: i32,
     pub field_0x14: i32,
 }
-
-
 
 pub struct Struct471 {
     pub field_0x0: u8,
@@ -142774,11 +140613,7 @@ pub struct Struct471 {
     pub field_0x1d: u8,
 }
 
-
-
 pub struct Struct987 {}
-
-
 
 pub struct Struct981 {
     pub field_0x0: u8,
@@ -142817,8 +140652,6 @@ pub struct Struct981 {
     pub field_0x24: u16,
     pub field_0x26: u16,
 }
-
-
 
 pub struct Struct980 {
     pub field_0x0: u8,
@@ -142974,8 +140807,6 @@ pub struct Struct980 {
     pub field_0x97: u8,
     pub field_0x98: u16,
 }
-
-
 
 pub struct Struct155 {
     pub field_0x0: i32,
@@ -143218,18 +141049,12 @@ pub struct Struct155 {
     pub field_0xf2: u16,
 }
 
-
-
 pub struct Struct989 {}
-
-
 
 pub struct Struct988 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct418 {
     pub field_0x0: u8,
@@ -143340,8 +141165,6 @@ pub struct Struct418 {
     pub field_0x6a: i32,
 }
 
-
-
 pub struct Struct976 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143376,8 +141199,6 @@ pub struct Struct976 {
     pub field_0x1f: u8,
     pub field_0x20: u16,
 }
-
-
 
 pub struct Struct975 {
     pub field_0x0: u8,
@@ -143414,21 +141235,15 @@ pub struct Struct975 {
     pub field_0x20: u16,
 }
 
-
-
 pub struct Struct992 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
 
-
-
 pub struct Struct994 {
     pub field_0x0: u8,
     pub field_0x1: u8,
 }
-
-
 
 pub struct Struct993 {
     pub field_0x0: u8,
@@ -143468,8 +141283,6 @@ pub struct Struct993 {
     pub field_0x26: u16,
 }
 
-
-
 pub struct Struct317 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143484,8 +141297,6 @@ pub struct Struct317 {
     pub field_0xc: i32,
 }
 
-
-
 pub struct Struct191 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143499,8 +141310,6 @@ pub struct Struct191 {
     pub field_0xe: u32,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct945 {
     pub field_0x0: u8,
@@ -143518,8 +141327,6 @@ pub struct Struct945 {
     pub field_0xe: u16,
 }
 
-
-
 pub struct Struct944 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143534,8 +141341,6 @@ pub struct Struct944 {
     pub field_0xd: u8,
     pub field_0xe: u16,
 }
-
-
 
 pub struct Struct45 {
     pub u16_0x0: u16,
@@ -143562,8 +141367,6 @@ pub struct Struct45 {
     pub palette: HPALETTE16,
     pub mode: i16,
 }
-
-
 
 pub struct Struct932 {
     pub field_0x0: u8,
@@ -143614,8 +141417,6 @@ pub struct Struct932 {
     pub field_0x49: u8,
 }
 
-
-
 pub struct Struct931 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143664,8 +141465,6 @@ pub struct Struct931 {
     pub field_0x30: u16,
 }
 
-
-
 pub struct Struct395 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143679,8 +141478,6 @@ pub struct Struct395 {
     pub field_0xa: i32,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct484 {
     pub field_0x0: u8,
@@ -143700,8 +141497,6 @@ pub struct Struct484 {
     pub field_0xe: *mut u8,
 }
 
-
-
 pub struct Struct963 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143719,8 +141514,6 @@ pub struct Struct963 {
     pub field_0xe: u32,
     pub field_0x12: u32,
 }
-
-
 
 pub struct Struct956 {
     pub field_0x0: u8,
@@ -143741,10 +141534,6 @@ pub struct Struct956 {
     pub field_0x10: i32,
     pub field_0x12: i32,
 }
-
-
-
-
 
 pub struct Struct143 {}
 
@@ -143785,16 +141574,12 @@ pub struct Struct142 {
     pub field_0x28: i32,
 }
 
-
-
 pub struct Struct950 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct958 {
     pub field_0x0: u8,
@@ -143834,11 +141619,7 @@ pub struct Struct958 {
     pub field_0x24: u16,
 }
 
-
-
 pub struct Struct957 {}
-
-
 
 pub struct Struct498 {
     pub field_0x0: u8,
@@ -143864,8 +141645,6 @@ pub struct Struct498 {
     pub field_0x15: u8,
 }
 
-
-
 pub struct Struct32 {
     pub field_0x0: HANDLE16,
     pub field_0x2: u8,
@@ -143878,8 +141657,6 @@ pub struct Struct32 {
     pub field_0xc: DLGPROC16,
     pub field_0xe: HWND16,
 }
-
-
 
 pub struct Struct378 {
     pub field_0x0: u8,
@@ -143909,8 +141686,6 @@ pub struct Struct378 {
     pub field_0x2b: u8,
 }
 
-
-
 pub struct Struct321 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143919,8 +141694,6 @@ pub struct Struct321 {
     pub field_0x4: u16,
     pub field_0x6: u32,
 }
-
-
 
 pub struct Struct34 {
     pub field_0x0: u8,
@@ -143939,8 +141712,6 @@ pub struct Struct34 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct454 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -143950,8 +141721,6 @@ pub struct Struct454 {
     pub field_0x8: i32,
     pub field_0xa: u16,
 }
-
-
 
 pub struct Struct21 {
     pub field_0x0: u8,
@@ -144098,8 +141867,6 @@ pub struct Struct21 {
     pub field_0x8e: u32,
 }
 
-
-
 pub struct Struct2 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -144135,16 +141902,12 @@ pub struct Struct2 {
     pub field_0x21: u8,
 }
 
-
-
 pub struct Struct169 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
 }
-
-
 
 pub struct Struct441 {
     pub field_0x0: u8,
@@ -144157,8 +141920,6 @@ pub struct Struct441 {
     pub field_0x7: u8,
     pub field_0x8: u32,
 }
-
-
 
 pub struct Struct187 {
     pub field_0x0: u8,
@@ -144174,8 +141935,6 @@ pub struct Struct187 {
     pub field_0x10: u16,
     pub field_0x12: u16,
 }
-
-
 
 pub struct Struct188 {
     pub field_0x0: u8,
@@ -144195,8 +141954,6 @@ pub struct Struct188 {
     pub field_0x22: u16,
 }
 
-
-
 pub struct Struct410 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -144204,8 +141961,6 @@ pub struct Struct410 {
     pub field_0x3: u8,
     pub field_0x4: u32,
 }
-
-
 
 pub struct Struct16 {
     pub field_0x0: u8,
@@ -144450,8 +142205,6 @@ pub struct Struct16 {
     pub field_0xf4: u32,
 }
 
-
-
 pub struct Struct175 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -144671,8 +142424,6 @@ pub struct Struct175 {
     pub field_0xd7: u8,
 }
 
-
-
 pub struct Struct138 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -144711,16 +142462,12 @@ pub struct Struct138 {
     pub field_0x24: i32,
 }
 
-
-
 pub struct Struct145 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
     pub field_0x4: i32,
 }
-
-
 
 pub struct Struct144 {
     pub field_0x0: u8,
@@ -144761,8 +142508,6 @@ pub struct Struct144 {
     pub field_0x26: i32,
     pub field_0x28: i32,
 }
-
-
 
 pub struct Struct46 {
     pub field_0x0: u8,
@@ -144876,8 +142621,6 @@ pub struct Struct46 {
     pub field_0x70: i32,
     pub field_0x72: i32,
 }
-
-
 
 pub struct Struct47 {
     pub field_0x0: u8,
@@ -145126,8 +142869,6 @@ pub struct Struct47 {
     pub field_0xf8: u32,
 }
 
-
-
 pub struct Struct130 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -145136,8 +142877,6 @@ pub struct Struct130 {
     fn_ptr_0x4: *mut libc::c_void,
     pub field_0x6: i32,
 }
-
-
 
 pub struct Struct139 {
     pub field_0x0: u8,
@@ -145175,8 +142914,6 @@ pub struct Struct139 {
     pub field_0x20: i16,
     pub field_0x22: i32,
 }
-
-
 
 pub struct Struct334 {
     pub field_0x0: u8,
@@ -145249,8 +142986,6 @@ pub struct Struct334 {
     pub field_0x47: u8,
     pub field_0x48: i32,
 }
-
-
 
 pub struct Struct423 {
     pub field_0x0: u8,
@@ -145758,8 +143493,6 @@ pub struct Struct423 {
     pub field_0x1f6: u32,
 }
 
-
-
 pub struct Struct33 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -145775,8 +143508,6 @@ pub struct Struct33 {
     pub field_0xf: u8,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct29 {
     pub field_0x0: u8,
@@ -145895,8 +143626,6 @@ pub struct Struct29 {
     pub field_0x74: i32,
 }
 
-
-
 pub struct Struct162 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -145907,15 +143636,11 @@ pub struct Struct162 {
     field_0x6: *mut i32,
 }
 
-
-
 pub struct Struct161 {
     pub field_0x0: i32,
     pub field_0x2: u16,
     pub field_0x4: i32,
 }
-
-
 
 pub struct Struct20 {
     pub handle_0: HANDLE16,
@@ -146058,8 +143783,6 @@ pub struct Struct20 {
     pub field_0x8e: u32,
 }
 
-
-
 pub struct Struct27 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146168,8 +143891,6 @@ pub struct Struct27 {
     pub menu_name: String,
 }
 
-
-
 pub struct Struct28 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146177,8 +143898,6 @@ pub struct Struct28 {
     pub field_0x4: i16,
     pub field_0x6: i16,
 }
-
-
 
 pub struct Struct156 {
     pub field_0x0: i32,
@@ -146419,8 +144138,6 @@ pub struct Struct156 {
     pub field_0xf0: u8,
 }
 
-
-
 pub struct Struct158 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146440,8 +144157,6 @@ pub struct Struct158 {
     pub field_0x10: u8,
     pub field_0x11: u8,
 }
-
-
 
 pub struct Struct157 {
     pub field_0x0: i32,
@@ -146682,8 +144397,6 @@ pub struct Struct157 {
     pub field_0xf0: u8,
 }
 
-
-
 pub struct Struct15 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146710,8 +144423,6 @@ pub struct Struct15 {
     pub field_0x1c: u32,
 }
 
-
-
 pub struct Struct490 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146734,8 +144445,6 @@ pub struct Struct490 {
     pub field_0x12: i32,
 }
 
-
-
 pub struct Struct468 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -146755,8 +144464,6 @@ pub struct Struct468 {
     pub g: u16,
     pub c: u16,
 }
-
-
 
 pub struct Struct437 {
     pub field_0x0: u8,
@@ -147050,8 +144757,6 @@ pub struct Struct437 {
     pub field_0x148: u16,
 }
 
-
-
 pub struct Struct370 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147105,16 +144810,12 @@ pub struct Struct370 {
     pub field_0x32: u32,
 }
 
-
-
 pub struct Struct486 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: i32,
     pub field_0x4: u16,
 }
-
-
 
 pub struct Struct487 {
     pub field_0x0: u8,
@@ -147123,15 +144824,11 @@ pub struct Struct487 {
     pub field_0x3: u8,
 }
 
-
-
 pub struct Struct472 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
 }
-
-
 
 pub struct Struct474 {
     pub field_0x0: u8,
@@ -147156,8 +144853,6 @@ pub struct Struct474 {
     pub field_0x14: u8,
     pub field_0x15: u8,
 }
-
-
 
 pub struct Struct411 {
     pub field_0x0: u8,
@@ -147193,8 +144888,6 @@ pub struct Struct411 {
     pub field_0x20: i32,
 }
 
-
-
 pub struct Struct442 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147211,8 +144904,6 @@ pub struct Struct442 {
     pub field_0xc: u32,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct430 {
     pub field_0x0: u8,
@@ -147324,8 +145015,6 @@ pub struct Struct430 {
     pub field_0x6a: u16,
 }
 
-
-
 pub struct Struct438 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147354,8 +145043,6 @@ pub struct Struct438 {
     pub field_0x25: u8,
 }
 
-
-
 pub struct Struct406 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147372,8 +145059,6 @@ pub struct Struct406 {
     pub field_0xe: *mut u8,
     pub field_0x10: *mut u8,
 }
-
-
 
 pub struct Struct383 {
     pub field_0x0: u8,
@@ -147410,8 +145095,6 @@ pub struct Struct383 {
     pub field_0x32: u32,
 }
 
-
-
 pub struct Struct396 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147425,8 +145108,6 @@ pub struct Struct396 {
     pub field_0xa: i32,
     pub field_0xc: i32,
 }
-
-
 
 pub struct Struct366 {
     pub field_0x0: u16,
@@ -147445,8 +145126,6 @@ pub struct Struct366 {
     pub field_0x12: u8,
     pub field_0x13: u8,
 }
-
-
 
 pub struct Struct379 {
     pub field_0x0: u8,
@@ -147490,8 +145169,6 @@ pub struct Struct379 {
     pub field_0x28: *mut Struct44,
 }
 
-
-
 pub struct Struct353 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -147505,8 +145182,6 @@ pub struct Struct353 {
     pub field_0xb: u8,
     pub field_0xc: u32,
 }
-
-
 
 pub struct Struct499 {
     pub field_0x0: u8,
@@ -147774,8 +145449,6 @@ pub struct Struct499 {
     pub field_0x10b: u8,
 }
 
-
-
 pub struct Struct5 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -148022,8 +145695,6 @@ pub struct Struct5 {
     pub field_0xf6: u32,
 }
 
-
-
 pub struct Struct348 {
     pub field_0x0: u16,
     pub field_0x2: u16,
@@ -148031,8 +145702,6 @@ pub struct Struct348 {
     pub field_0x5: u8,
     pub field_0x6: u16,
 }
-
-
 
 pub struct Struct322 {
     pub field_0x0: u8,
@@ -148047,8 +145716,6 @@ pub struct Struct322 {
     pub field_0x9: u8,
     pub field_0xa: u32,
 }
-
-
 
 pub struct Struct491 {
     pub field_0x0: u8,
@@ -148367,8 +146034,6 @@ pub struct Struct491 {
     pub field_0x13c: u8,
 }
 
-
-
 pub struct Struct349 {
     pub field_0x0: u8,
     pub field_0x1: u8,
@@ -148515,8 +146180,6 @@ pub struct Struct349 {
     pub field_0x92: i32,
 }
 
-
-
 pub struct Struct305 {
     pub field_0x0: i32,
     pub field_0x4: u32,
@@ -148525,8 +146188,6 @@ pub struct Struct305 {
     pub field_0xe: *mut u8,
     pub field_0x10: u16,
 }
-
-
 
 pub struct Struct4 {
     pub field_0x0: u8,
@@ -148774,11 +146435,7 @@ pub struct Struct4 {
     pub field_0xf6: u32,
 }
 
-
-
 pub struct Struct367 {}
-
-
 
 pub struct Struct371 {
     pub field_0x0: u8,

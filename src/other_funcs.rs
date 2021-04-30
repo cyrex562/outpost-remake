@@ -254,13 +254,13 @@ pub fn get_private_profile_str_1010_6132(param_1: u32, param_2: i32) {
     let mut uVar2: u32;
     let mut uVar3: u32;
     let mut uVar4: i32;
-    let mut uVar5: u16;
+    let mut u_var5: u16;
     let mut in_DX: i32;
     let mut uVar6: i32;
     let mut uVar7: i32;
     let mut iVar8: i32;
     let mut uVar9: u16;
-    let mut unaff_CS: u16;
+    let mut unaff_cs: u16;
     let mut local_4: u16;
 
     uVar1 = (param_2 * 4 + 0x1446);
@@ -269,7 +269,7 @@ pub fn get_private_profile_str_1010_6132(param_1: u32, param_2: i32) {
     uVar2 = (iVar8 + 0xe);
     uVar3 = (iVar8 + 10);
     GetPrivateProfileString16(
-        CONCAT22(uVar3, unaff_CS),
+        CONCAT22(uVar3, unaff_cs),
         (uVar3 >> 0x10),
         CONCAT22(uVar2, 0x100),
         CONCAT22(0x149a, (uVar2 >> 0x10)),
@@ -280,23 +280,23 @@ pub fn get_private_profile_str_1010_6132(param_1: u32, param_2: i32) {
         uVar4 = pass1_fn_1000_47a4((iVar8 + 0xe), 0x105014a6);
         uVar6 = in_DX | uVar4;
         if (uVar6 != 0) {
-            uVar5 = pass1_fn_1000_3e2c(CONCAT22(in_DX, uVar4));
+            u_var5 = pass1_fn_1000_3e2c(CONCAT22(in_DX, uVar4));
             iVar8 = param_2 * 8 + iVar8;
-            (iVar8 + 0x22) = uVar5;
+            (iVar8 + 0x22) = u_var5;
             uVar4 = pass1_fn_1000_47a4(0, 0x105014a8);
             uVar7 = uVar6 | uVar4;
             if (uVar7 != 0) {
-                uVar5 = pass1_fn_1000_3e2c(CONCAT22(uVar6, uVar4));
-                (iVar8 + 0x24) = uVar5;
+                u_var5 = pass1_fn_1000_3e2c(CONCAT22(uVar6, uVar4));
+                (iVar8 + 0x24) = u_var5;
                 uVar4 = pass1_fn_1000_47a4(0, 0x105014aa);
                 uVar6 = uVar7 | uVar4;
                 if (uVar6 != 0) {
-                    uVar5 = pass1_fn_1000_3e2c(CONCAT22(uVar7, uVar4));
-                    (iVar8 + 0x26) = uVar5;
+                    u_var5 = pass1_fn_1000_3e2c(CONCAT22(uVar7, uVar4));
+                    (iVar8 + 0x26) = u_var5;
                     uVar4 = pass1_fn_1000_47a4(0, 0x105014ac);
                     if ((uVar6 | uVar4) != 0) {
-                        uVar5 = pass1_fn_1000_3e2c(CONCAT22(uVar6, uVar4));
-                        (iVar8 + 0x28) = uVar5;
+                        u_var5 = pass1_fn_1000_3e2c(CONCAT22(uVar6, uVar4));
+                        (iVar8 + 0x28) = u_var5;
                     }
                 }
             }

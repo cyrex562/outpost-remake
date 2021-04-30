@@ -16,17 +16,17 @@ pub fn call_fn_ptr_1000_24cd(a: u16) {
     let mut iVar2: i32;
     let mut uvar3: u16;
     let mut cVar4: u8;
-    let mut uVar5: u16;
+    let mut u_var5: u16;
     let mut fn_ptr_1: u32;
 
     iVar2 = unaff_BP + 1;
-    uVar5 = SUB42(&g_alloc_addr_1050_1050, 0);
+    u_var5 = SUB42(&g_alloc_addr_1050_1050, 0);
     PTR_LOOP_1050_5fc9._0_1_ = 0;
     uVar3 = 0;
     call_fn_ptr_1000_2594(0, &g_alloc_addr_1050_1050, iVar2);
     call_fn_ptr_1000_2594();
     empty_fn_1000_55ac(a);
-    call_fn_ptr_1000_2594(uVar3, uVar5, iVar2);
+    call_fn_ptr_1000_2594(uVar3, u_var5, iVar2);
     cVar4 = (uVar3 >> 8);
     call_fn_ptr_1000_2594();
     call_fn_ptr_1000_256b();

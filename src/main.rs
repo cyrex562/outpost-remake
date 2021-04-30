@@ -736,7 +736,7 @@ pub fn infinite_loop_1020_7bba() {
     let mut in_BX: i32;
     let local_BX_59: *mut Struct678;
     let local_BX_110: *mut Struct679;
-    let ppuVar13: *mut *mut u16;
+    let ppu_var13: *mut *mut u16;
     let unaff_BP: *mut *mut u16;
     let unaff_SI: *mut Struct676;
     let local_SI_28: *mut Struct676;
@@ -769,14 +769,14 @@ pub fn infinite_loop_1020_7bba() {
 
     loop {
         ppuStack34 = &puStack2;
-        ppuVar13 = &puStack2;
+        ppu_var13 = &puStack2;
         ppuStack2255 = &puStack2;
         cVar5 = '\x0f';
         puVar4 = unaff_BP;
         while {
             puVar4 = puVar4 + -1;
-            ppuVar13 = ppuVar13 + -1;
-            unsafe { *ppuVar13 = *puVar4 };
+            ppu_var13 = ppu_var13 + -1;
+            unsafe { *ppu_var13 = *puVar4 };
             cVar5 = cVar5 + -1;
             '\0' < cVar5
         } {}
@@ -971,7 +971,7 @@ pub fn infinite_loop_1020_7bba() {
 }
 
 pub fn init_globals_1020_9826() {
-    let puVar1: *mut u16;
+    let pu_var1: *mut u16;
     let mut cVar2: u8;
     let pcVar3: *mut code;
     let mut in_EAX: u32;
@@ -1204,9 +1204,9 @@ pub fn init_globals_1020_9826() {
     PTR_LOOP_1050_46e2 = i32_k;
     while (iVar4 != 0) {
         iVar4 = iVar4 + -1;
-        puVar1 = puVar5;
+        pu_var1 = puVar5;
         puVar5 = puVar5 + 1;
-        unsafe { *puVar1 = 0 };
+        unsafe { *pu_var1 = 0 };
     }
     _PTR_LOOP_1050_4850 = 0;
     _PTR_LOOP_1050_4856 = 0;
@@ -1494,9 +1494,9 @@ pub fn init_globals_1020_9826() {
     puVar5 = 0x4af6;
     while (iVar4 != 0) {
         iVar4 = iVar4 + -1;
-        puVar1 = puVar5;
+        pu_var1 = puVar5;
         puVar5 = puVar5 + 1;
-        unsafe { *puVar1 = 0 };
+        unsafe { *pu_var1 = 0 };
     }
     PTR_LOOP_1050_4b9c = PTR_LOOP_1050_4434;
     _PTR_LOOP_1050_4b9e = 0;
@@ -1767,9 +1767,9 @@ pub fn init_globals_1020_9826() {
     puVar5 = 0x4e32;
     while (iVar4 != 0) {
         iVar4 = iVar4 + -1;
-        puVar1 = puVar5;
+        pu_var1 = puVar5;
         puVar5 = puVar5 + 1;
-        unsafe { *puVar1 = 0 };
+        unsafe { *pu_var1 = 0 };
     }
     return;
 }

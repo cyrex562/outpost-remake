@@ -25,7 +25,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
     let pi_var4: *mut i32;
     let pu_var5: *mut u8;
     let mut u_var6: u16;
-    let pu_var7: *mut u32;
+    let pu_var7: *mut u8;
     let pu_var8: *mut u16;
     let pu_var9: *mut u32;
     let pc_var10: *mut u8;
@@ -54,11 +54,11 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
     let unaff_di: *mut u8;
     let pc_var27: *mut u8;
     let mut unaff_ES: u16;
-    let mut unaff_CS: i32;
+    let mut unaff_cs: i32;
     let mut unaff_ss: u16;
     let mut unaff_ds: u16;
     let mut in_GS: u16 = param4;
-    let mut b_var28: bool;
+    let mut b_var28: u8;
     let ac_stack3: *mut u8;
     let local_1: u8;
 
@@ -78,20 +78,20 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                 pu_var26 = unaff_si.offset(1);
                 out(*unaff_si as u32, 0);
                 pb_var3 = in_bx.offset(0x66);
-                b_var28 = CARRY1(*pb_var3, in_cl) == 0;
+                b_var28 = (CARRY1(*pb_var3, in_cl) == 0).into();
                 *pb_var3 = *pb_var3 + in_cl;
                 b_var15 = *pb_var3;
-                if (b_var28) {
+                if (b_var28 > 0) {
                     // code_r0x1138006f:
                     pu_var8 = pu_var26.offset(1);
-                    out(*pu_var26 as u32, u_var21);
+                    out((*pu_var26) as u32, u_var21);
                     pu_var7 = pc_var27.offset(0x6c);
                     *pu_var7 = *pu_var7 + b_var28 * -(*pu_var7 & 3);
                     pc_var2 = in_bx + pu_var8;
-                    *pc_var2 = *pc_var2 + unaff_CS;
-                    b_var19 = (unaff_CS + 0x400 >> 8) + (u_var21 >> 8);
-                    u_var22 = unaff_CS + 0x400 & 0xff;
-                    unaff_CS = u_var22 | b_var19 << 8;
+                    *pc_var2 = *pc_var2 + unaff_cs;
+                    b_var19 = (unaff_cs + 0x400 >> 8) + (u_var21 >> 8);
+                    u_var22 = unaff_cs + 0x400 & 0xff;
+                    unaff_cs = u_var22 | b_var19 << 8;
                     pc_var2 = in_bx;
                     *pc_var2 = *pc_var2 + in_bx;
                     pc_var2 = in_bx + 1;
@@ -138,17 +138,17 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                     pb_var3 = (in_bx + pc_var27 + 0x73);
                     *pb_var3 = *pb_var3 + 0x73;
                     b_var15 = *pb_var3;
-                    u_var21 = unaff_CS;
+                    u_var21 = unaff_cs;
                     pu_var26 = pu_var9;
                 } else {
                     if (!b_var28) {
                         pc_var2 = in_bx + pu_var26;
-                        *pc_var2 = *pc_var2 + unaff_CS;
-                        unaff_CS = unaff_CS & (in_bx + pu_var26);
+                        *pc_var2 = *pc_var2 + unaff_cs;
+                        unaff_cs = unaff_cs & (in_bx + pu_var26);
                         pc_var2 = 0x200;
                         *pc_var2 = *pc_var2 + in_cl;
                         pc_var2 = in_bx + (unaff_di + 1);
-                        b_var15 = unaff_CS;
+                        b_var15 = unaff_cs;
                         *pc_var2 = *pc_var2 + b_var15;
                         pc_var2 = unaff_di + 1 + (ac_stack3 + 1);
                         *pc_var2 = *pc_var2 + b_var15;
@@ -158,7 +158,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                         }
 
                         if (u_var21 == 0) {
-                            0x8350 = unaff_CS;
+                            0x8350 = unaff_cs;
                             // goto code_r0x113800dd;
                         }
                         pu_var7 = pu_var26;
@@ -172,7 +172,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                     }
                 }
                 unaff_si = pu_var26;
-                c_var18 = unaff_CS;
+                c_var18 = unaff_cs;
                 if (b_var15 == 0) {
                     pc_var2 = (register0x00000010 + -2 + unaff_si);
                     *pc_var2 = *pc_var2 + c_var18;
@@ -186,7 +186,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
                 *pc_var2 = *pc_var2 + c_var18;
                 pu_var7 = unaff_si;
                 unaff_si = unaff_si + 1;
-                unaff_CS = *pu_var7;
+                unaff_cs = *pu_var7;
                 pc_var2 = in_bx + unaff_si;
                 *pc_var2 = *pc_var2 + (u_var21 >> 8);
             }
@@ -194,10 +194,10 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
     } else {
         unsafe {
             pb_var3 = (in_bx + unaff_si);
-            *pb_var3 = *pb_var3 ^ unaff_CS;
-            unaff_CS = (in_bx + pc_var27);
+            *pb_var3 = *pb_var3 ^ unaff_cs;
+            unaff_cs = (in_bx + pc_var27);
             pu_var7 = (in_bx + unaff_si);
-            *pu_var7 = *pu_var7 | unaff_CS;
+            *pu_var7 = *pu_var7 | unaff_cs;
             pc_var2 = (in_bx + unaff_si + -0x80);
             *pc_var2 = *pc_var2 + u_var21;
             pu_var7 = unaff_si;
@@ -206,7 +206,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
         }
     }
     pc_var2 = (register0x00000010 + -2 + unaff_si);
-    c_var20 = (unaff_CS >> 8);
+    c_var20 = (unaff_cs >> 8);
     unsafe {
         *pc_var2 = *pc_var2 + c_var20;
         pc_var2 = (register0x00000010 + -2 + unaff_si);
@@ -215,7 +215,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
         *pc_var2 = *pc_var2 + in_cl;
         pb_var3 = (in_bx + unaff_si);
         b_var15 = *pb_var3;
-        b_var17 = unaff_CS;
+        b_var17 = unaff_cs;
         *pb_var3 = *pb_var3 + b_var17;
         pc_var2 = (in_bx + unaff_si + 0x65);
         c_var18 = *pc_var2;
@@ -233,16 +233,16 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
             pc_var2 = unaff_di + (ac_stack3 + 1);
             *pc_var2 = *pc_var2 + in_cl;
             pi_var4 = (in_bx + unaff_di);
-            *pi_var4 = *pi_var4 + unaff_CS;
+            *pi_var4 = *pi_var4 + unaff_cs;
             pc_var2 = &stack0x834e + unaff_di;
             *pc_var2 = *pc_var2 + c_var20;
             pu_var26 = unaff_si;
             // code_r0x113800dd:
             pc_var2 = in_bx + pu_var26;
-            c_var18 = unaff_CS;
+            c_var18 = unaff_cs;
             *pc_var2 = *pc_var2 + c_var18;
             pc_var2 = (in_bx + unaff_di + 0x1f00);
-            *pc_var2 = *pc_var2 + (unaff_CS >> 8);
+            *pc_var2 = *pc_var2 + (unaff_cs >> 8);
             pc_var2 = in_bx + pu_var26;
             *pc_var2 = *pc_var2 + in_cl;
             u_var22 = in_bx & 0xff | ((in_bx >> 8) * 0x2) << 8;
@@ -280,7 +280,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
     unsafe {
         *pc_var2 = *pc_var2 + in_cl;
         pc_var2 = in_bx + unaff_si;
-        b_var15 = unaff_CS;
+        b_var15 = unaff_cs;
         *pc_var2 = *pc_var2 + b_var15;
     }
     lVar14 = (&stack0x006f + pc_var27) * 0x536f;
@@ -318,7 +318,7 @@ pub unsafe fn bad_fn_1138_0034(param1: u8, param2: u8, param3: u16, param4: u16,
         pb_var3 = (pi_var24 + pu_var26);
         b_var17 = *pb_var3;
         *pb_var3 = *pb_var3 + b_var15;
-        (iVar25 + -2) = unaff_CS;
+        (iVar25 + -2) = unaff_cs;
         pc_var2 = (pi_var24 + pc_var10 + 0x75);
         *pc_var2 = *pc_var2 + 'a' + CARRY1(b_var17, b_var15);
         out(*pu_var26, u_var21);

@@ -185,7 +185,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     let paVar4: *mut Struct199;
     let mut extraout_DX: i32;
     let local_Struct620_ptr_1: *mut Struct620;
-    let mut uVar5: u16;
+    let mut u_var5: u16;
     let mut unaff_SS: u16;
     let mut local_e: u16;
     let mut local_c: u16;
@@ -194,7 +194,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     let mut local_6: [u8; 4];
     let fn_ptr_1: fn();
 
-    uVar5 = (in_Struct620_ptr_1 >> 0x10);
+    u_var5 = (in_Struct620_ptr_1 >> 0x10);
     local_Struct620_ptr_1 = in_Struct620_ptr_1;
     if (local_Struct620_ptr_1.field_0xee != 0) {
         fn_ptr_1 = (local_Struct620_ptr_1.field_0xee + 8);
