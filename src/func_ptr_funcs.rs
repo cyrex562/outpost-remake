@@ -22,12 +22,12 @@ pub fn call_fn_ptr_1000_24cd(a: u16) {
     i_var2 = unaff_BP + 1;
     u_var5 = SUB42(&g_alloc_addr_1050_1050, 0);
     PTR_LOOP_1050_5fc9._0_1_ = 0;
-    uVar3 = 0;
+    u_var3 = 0;
     call_fn_ptr_1000_2594(0, &g_alloc_addr_1050_1050, i_var2);
     call_fn_ptr_1000_2594();
     empty_fn_1000_55ac(a);
-    call_fn_ptr_1000_2594(uVar3, u_var5, i_var2);
-    cVar4 = (uVar3 >> 8);
+    call_fn_ptr_1000_2594(u_var3, u_var5, i_var2);
+    cVar4 = (u_var3 >> 8);
     call_fn_ptr_1000_2594();
     call_fn_ptr_1000_256b();
     if (cVar4 == '\0') {

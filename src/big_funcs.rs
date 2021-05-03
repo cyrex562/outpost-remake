@@ -76,9 +76,11 @@ pub unsafe fn call_big_fn_1040_b17c(
         // u_var4 = (param_1 >> 0x10);
         let pustruct_p = in_pustruct_a;
         pu_var2 = pustruct_p.field_0x90;
-        if *pu_var2 == u16_n || *pu_var2 < u16_n {
-            break;
-        }
+        // if *pu_var2 == u16_n || *pu_var2 < u16_n {
+        //     break;
+        // }
+        // todo: get value at address 
+        if pu_var2 == u16_n || pu_var2 < u16_n { break; }
         u_var1 = pu_var2 + 2; // value at address + offset
         //(u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
         todo!();

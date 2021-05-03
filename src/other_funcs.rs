@@ -252,7 +252,7 @@ pub fn return3_1010_0898() -> u16 {
 pub fn get_private_profile_str_1010_6132(param_1: u32, param_2: i32) {
     let mut u_var1: u32;
     let mut u_var2: u32;
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut u_var4: i32;
     let mut u_var5: u16;
     let mut in_dx: i32;
@@ -267,10 +267,10 @@ pub fn get_private_profile_str_1010_6132(param_1: u32, param_2: i32) {
     u_var9 = (param_1 >> 0x10);
     i_var8 = param_1;
     u_var2 = (i_var8 + 0xe);
-    uVar3 = (i_var8 + 10);
+    u_var3 = (i_var8 + 10);
     GetPrivateProfileString16(
-        CONCAT22(uVar3, unaff_cs),
-        (uVar3 >> 0x10),
+        CONCAT22(u_var3, unaff_cs),
+        (u_var3 >> 0x10),
         CONCAT22(u_var2, 0x100),
         CONCAT22(0x149a, (u_var2 >> 0x10)),
         CONCAT22(u_var1, 0x1050),

@@ -361,7 +361,7 @@ pub fn fatal_app_exit_1000_3e9e() {
 pub fn loop_1010_11c6(param_1: &mut Struct365) {
     let pi32_1: *mut i32;
     let ppc_var2: *mut fn();
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut u_var4: u32;
     let local_AX__1: *mut Struct366;
     let mut i_var5: i32;
@@ -433,9 +433,9 @@ pub fn loop_1010_11c6(param_1: &mut Struct365) {
             break;
         }
         u_var4 = pustruct_a.field_0x64;
-        uVar3 = (u_var4 + local_e * 4);
-        pp_var14 = (uVar3 + u16_1050_0ecc * 8);
-        _local_32 = (uVar3 & 0xffff0000 | ZEXT24(pp_var14));
+        u_var3 = (u_var4 + local_e * 4);
+        pp_var14 = (u_var3 + u16_1050_0ecc * 8);
+        _local_32 = (u_var3 & 0xffff0000 | ZEXT24(pp_var14));
         iVar16 = unsafe { process_string_1000_475e(_local_a, *pp_var14) };
         if (iVar16 != 0) {
             _local_a = *_local_32;
@@ -649,7 +649,7 @@ pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
 
     local_6 = 0;
     local_bx_20 = (param_2 * 0x10);
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     if (local_bx_20.field_0x10 == 1) {
         u_var1 = &local_bx_20.field_0x12;
         _local_a = set_error_mode_1010_8b14(param_1, u_var1, (u_var1 >> 0x10));

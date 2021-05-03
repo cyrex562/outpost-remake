@@ -71,16 +71,16 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16 {
     if ((local_4 | local_6) != 0) {
         i_var2 = msg_box_1000_1f24(&PTR_s__1050_1f7e_1050_5f1a, &g_alloc_addr_1050_1050);
         if (i_var2 == 0) {
-            uVar3 = (*local_6)();
+            u_var3 = (*local_6)();
         } else {
             local_4 = 0;
             local_6 = 0;
-            uVar3 = 0;
+            u_var3 = 0;
         }
         if ((local_4 | local_6) != 0) {
             check_and_clear_global_1000_1f68(u_var4);
         }
-        return uVar3;
+        return u_var3;
     }
     return 0;
 }
@@ -263,7 +263,7 @@ pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mu
     let mut local_c: u16;
     let mut local_a: [u8; 8];
 
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     pass1_1008_5784(CONCAT22(unaff_ss, local_a), (param_1 + 0xe84));
     mode = SetErrorMode16(1);
     while {
@@ -275,7 +275,7 @@ pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mu
         u_var1 = param_1 + 0xa82;
         copy_string_1000_3d3e((param_1 & 0xffff0000 | u_var1), *(_local_e + 4));
         process_string_1000_3cea((param_1 & 0xffff0000 | u_var1), param_2);
-        i_var2 = dos3_call_1000_51aa(u_var1, uVar3, 1, local_3a);
+        i_var2 = dos3_call_1000_51aa(u_var1, u_var3, 1, local_3a);
         i_var2 != 0
     } {}
     SetErrorMode16(mode);

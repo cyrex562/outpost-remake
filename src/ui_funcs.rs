@@ -16920,7 +16920,7 @@ pub fn palette_func_1020_2992(param_1: u32, param_2: i32) {
     return;
 }
 
-pub fn send_win_msg_1020_29d8(param_1: i32, param_2: u16, param_3: u16, param_3: u32) {
+pub fn send_win_msg_1020_29d8(param_1: i32, param_2: u16, param_3: u16, param_4: u32) {
     let mut u_var1: u32;
     let ppVar2: *mut pass1_struct_1;
     let mut i_var3: i32;

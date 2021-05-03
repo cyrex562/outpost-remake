@@ -228,7 +228,7 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
 pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
     let mut iVar1: i32;
     let ppc_var2: fn();
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let b_var4: bool;
     let pu_var5: *mut u32;
     let mut extraout_dx: i32;
@@ -267,7 +267,7 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
             pu_var5 >> 0xf,
         );
         u_var6 = extraout_dx_01 | pu_var5;
-        uVar3 = extraout_dx_01;
+        u_var3 = extraout_dx_01;
     } else {
         pp_var9 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(local_12, 0x41));
         ppc_var2 = (pp_var9 + 0x14);
@@ -279,7 +279,7 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
             pu_var5 >> 0xf,
         );
         u_var6 = extraout_dx | pu_var5;
-        uVar3 = extraout_dx;
+        u_var3 = extraout_dx;
     }
     if (u_var6 == 0) {
         load_string_1010_84e0(
@@ -291,7 +291,7 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
         );
     } else {
         unsafe { ppc_var2 = (*pu_var5 + 0x14) };
-        ppc_var2(&PTR_LOOP_1050_1008, pu_var5, uVar3);
+        ppc_var2(&PTR_LOOP_1050_1008, pu_var5, u_var3);
         copy_string_1000_3d3e(
             (param_1 & 0xffff0000 | (i_var7 + 0x13c)),
             CONCAT22(extraout_dx_00, pu_var5),
@@ -496,13 +496,13 @@ pub unsafe fn pass1_1010_e8f6(param_1: u16, param_2: u16, in_struct_1: u32) {
         }
         pass1_1028_4faa(u_var4);
         local_struct_1 = u_var4;
-        uVar3 = extraout_dx_00;
+        u_var3 = extraout_dx_00;
     } else {
         pass1_1028_121e(u_var4);
         local_struct_1 = u_var4;
-        uVar3 = extraout_dx;
+        u_var3 = extraout_dx;
     }
-    pass1_1028_b58e(CONCAT22(uVar3, local_struct_1));
+    pass1_1028_b58e(CONCAT22(u_var3, local_struct_1));
     return;
 }
 
@@ -518,10 +518,10 @@ pub unsafe fn pass1_1010_e964() {
     let mut local_4: u16;
 
     ppVar4 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffea, 0x2f));
-    uVar3 = (ppVar4 >> 0x10);
+    u_var3 = (ppVar4 >> 0x10);
     u_var1 = (ppVar4 + 0x24);
     paVar2 = pass1_1028_e1ec(_PTR_LOOP_1050_65e2, u_var1, (u_var1 >> 0x10));
-    pass1_1038_4d28(CONCAT22(uVar3, paVar2));
+    pass1_1038_4d28(CONCAT22(u_var3, paVar2));
     return;
 }
 

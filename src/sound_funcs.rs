@@ -180,7 +180,7 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
 pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     let piVar1: *mut i32;
     let mut u_var2: i32;
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let struct_a: *mut Struct199;
     let paVar4: *mut Struct199;
     let mut extraout_dx: i32;
@@ -203,12 +203,12 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     if (local_Struct620_ptr_1.field_0xea == 0) {
         local_Struct620_ptr_1.field_0xea = 1;
         pass1_1008_941a(CONCAT22(unaff_ss, local_6), 1, 0x7a);
-        uVar3 = ZEXT24(local_6);
+        u_var3 = ZEXT24(local_6);
         mci_send_command_1008_5c9e(_g_struct_ptr_1050_02a0, CONCAT22(unaff_ss, local_6));
-        local_Struct620_ptr_1.field_0xec = uVar3;
+        local_Struct620_ptr_1.field_0xec = u_var3;
         paVar4 = struct_a;
         process_struct_1000_179c(0x112, struct_a);
-        if ((paVar4 | uVar3) == 0) {
+        if ((paVar4 | u_var3) == 0) {
             u_var2 = 0;
             _local_a = 0x0;
         } else {
@@ -217,13 +217,13 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
                 *piVar1 = *piVar1 + 1;
             }
             win_gui_fn_1020_3644(
-                uVar3,
+                u_var3,
                 paVar4,
                 local_Struct620_ptr_1.field_0xcc,
                 in_Struct620_ptr_1,
             );
-            u_var2 = uVar3;
-            _local_a = (uVar3 & 0xffff | extraout_dx << 0x10);
+            u_var2 = u_var3;
+            _local_a = (u_var3 & 0xffff | extraout_dx << 0x10);
         }
         pass1_1008_6978(in_Struct620_ptr_1, 0, _local_a & 0xffff0000 | u_var2);
         fn_ptr_1 = (*_local_a + 0xc);

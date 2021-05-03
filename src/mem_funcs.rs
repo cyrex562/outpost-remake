@@ -314,7 +314,7 @@ pub fn alloc_mem_1000_03c6(
 ) -> *mut libc::c_void {
     let pu_var1: *mut u32;
     let pi_var2: *mut i32;
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let mut u_var4: i32;
     let local_AX_131: *mut u16;
     let mut u_var5: u16;
@@ -338,19 +338,19 @@ pub fn alloc_mem_1000_03c6(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    uVar3 = in_alloc_size + 0xfff & 0xf000;
+    u_var3 = in_alloc_size + 0xfff & 0xf000;
     pu_var1 = &param_3.field_0x1e;
     let pu_var1_val = unsafe { *pu_var1 };
-    u_var4 = uVar3 + pu_var1_val;
-    uVar3 = in_alloc_size._2_2_
+    u_var4 = u_var3 + pu_var1_val;
+    u_var3 = in_alloc_size._2_2_
         + (0xf000 < in_alloc_size)
         + param_3.field_0x20
-        + CARRY2(uVar3, pu_var1_val);
+        + CARRY2(u_var3, pu_var1_val);
     pu_var1 = &param_3.field_0x28;
-    bVar6 = uVar3 < pu_var1_val;
+    bVar6 = u_var3 < pu_var1_val;
     if ((bVar6)
         || (bVar6
-            || uVar3 == pu_var1_val
+            || u_var3 == pu_var1_val
                 && (
                     pu_var1 = &param_3.field_0x26,
                     u_var4 < pu_var1_val || u_var4 == pu_var1_val,
@@ -388,10 +388,10 @@ pub fn alloc_mem_1000_03c6(
                 local_AX_131[1] = 0x8000;
                 pu_var1 = &param_3.field_0x1e;
                 unsafe {
-                    uVar3 = *pu_var1;
+                    u_var3 = *pu_var1;
                     *pu_var1 = *pu_var1 + alloc_size;
                     pi_var2 = &param_3.field_0x20;
-                    *pi_var2 = *pi_var2 + (alloc_size >> 0x10) + CARRY2(uVar3, alloc_size);
+                    *pi_var2 = *pi_var2 + (alloc_size >> 0x10) + CARRY2(u_var3, alloc_size);
                 }
                 return alloc_addr;
             }
@@ -482,7 +482,7 @@ pub fn set_struct_1000_05b4() {
 pub fn alloc_mem_1000_05e2(param_1: *mut Struct89, param_2: u16, param_3: *mut Struct144) {
     let pu_var1: *mut u32;
     let mut i_var2: i32;
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let mut u_var4: i32;
     let mut i_var5: i32;
     let local_BX__1: *mut Struct90;
@@ -500,16 +500,16 @@ pub fn alloc_mem_1000_05e2(param_1: *mut Struct89, param_2: u16, param_3: *mut S
             return pvVar7 & 0xffff0000 | (pvVar7 + 0x14);
         }
         lVar8 = free_mem_1000_0052();
-        uVar3 = &param_1[0xcd].field_0xf & 0xf000;
+        u_var3 = &param_1[0xcd].field_0xf & 0xf000;
         pu_var1 = &local_BX__1.field_0x1e;
 
         let pu_var1_val = unsafe { *pu_var1 };
-        u_var4 = uVar3 + pu_var1_val;
-        uVar3 =
-            i_var2 + (0xf000 < param_1 + 1) + local_BX__1.field_0x20 + CARRY2(uVar3, pu_var1_val);
+        u_var4 = u_var3 + pu_var1_val;
+        u_var3 =
+            i_var2 + (0xf000 < param_1 + 1) + local_BX__1.field_0x20 + CARRY2(u_var3, pu_var1_val);
         pu_var1 = &local_BX__1.field_0x28;
-        bVar6 = uVar3 < pu_var1_val;
-        ((bVar6 || uVar3 == pu_var1_val)
+        bVar6 = u_var3 < pu_var1_val;
+        ((bVar6 || u_var3 == pu_var1_val)
             && (bVar6
                 || (
                     pu_var1 = &local_BX__1.field_0x26,
@@ -736,7 +736,7 @@ pub fn alloc_mem_1000_0a48(uparam_1: i32, param_2: *mut Struct89, param_3: u16, 
     let paVar1: *mut Struct140;
     let mut u_var2: i32;
     let in_CX: *mut Struct92;
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let mut u_var4: u16;
     let local_DI_113: *mut Struct140;
     let mut u_var5: u16;
@@ -757,9 +757,9 @@ pub fn alloc_mem_1000_0a48(uparam_1: i32, param_2: *mut Struct89, param_3: u16, 
                 local_DI_113 = u_var6;
                 if ((u_var6 != 0) && ((param_1 & 1) != 0)) {
                     u_var2 = (s_version__d__d_1050_0012 + 6);
-                    uVar3 = u_var2 >> 1;
-                    while (uVar3 != 0) {
-                        uVar3 = uVar3 - 1;
+                    u_var3 = u_var2 >> 1;
+                    while (u_var3 != 0) {
+                        u_var3 = u_var3 - 1;
                         paVar1 = local_DI_113;
                         local_DI_113 = &local_DI_113.field_0x2;
                         paVar1 = 0;
@@ -963,7 +963,7 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
     let pu_var1: *mut u16;
     let mut b_var2: u8;
     let mut in_AX: i32;
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let mut u_var4: u16;
     let mut i_var5: i32;
     let mut u_var6: i32;
@@ -994,14 +994,14 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
     u_var8 = (_PTR_LOOP_1050_0000 >> 0x10);
     if ((PTR_LOOP_1050_000c & 7) != 0) {
         if (b_var2 == 1) {
-            uVar3 = (PTR_LOOP_1050_0000 + 0x18);
+            u_var3 = (PTR_LOOP_1050_0000 + 0x18);
             if (in_dx != 0) {
-                return uVar3;
+                return u_var3;
             }
-            if (in_AX <= uVar3) {
+            if (in_AX <= u_var3) {
                 return 0;
             }
-            return uVar3;
+            return u_var3;
         }
         if (b_var2 != 2) {
             if (b_var2 != 3) {
@@ -1031,10 +1031,10 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
             return 1;
         }
     }
-    uVar3 = (in_BX + -2) & 0x7ffc;
-    local_4 = uVar3 - 2;
+    u_var3 = (in_BX + -2) & 0x7ffc;
+    local_4 = u_var3 - 2;
     if ((*(in_BX + -1) & 0x80) != 0) {
-        local_4 = uVar3 - 6;
+        local_4 = u_var3 - 6;
     }
     if ((((in_dx == 0) && (in_AX <= local_4))
         || (in_dx == 0 && (in_AX <= (PTR_LOOP_1050_0000 + 0x1c))))
@@ -1044,19 +1044,19 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
         ))
     {
         if ((param_1 & 1) != 0) {
-            uVar3 = ((in_BX + -2) & 0x7ffc) - 2;
+            u_var3 = ((in_BX + -2) & 0x7ffc) - 2;
             if (local_4 < in_AX) {
                 pu_var7 = (local_4 + in_BX);
                 i_var5 = -local_4;
             } else {
-                if (uVar3 <= in_AX) {
+                if (u_var3 <= in_AX) {
                     return 0;
                 }
                 pu_var7 = (in_AX + in_BX);
                 i_var5 = -in_AX;
             }
-            uVar3 = uVar3 + i_var5;
-            u_var6 = uVar3 >> 1;
+            u_var3 = u_var3 + i_var5;
+            u_var6 = u_var3 >> 1;
             while (u_var6 != 0) {
                 u_var6 = u_var6 - 1;
                 pu_var1 = pu_var7;
@@ -1065,7 +1065,7 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
                     *pu_var1 = 0;
                 }
             }
-            if ((uVar3 & 1) != 0) {
+            if ((u_var3 & 1) != 0) {
                 unsafe {
                     *pu_var7 = 0;
                 }
@@ -1079,7 +1079,7 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
 pub fn get_mem_sz_1000_1284(param_1: u32) {
     let mut bVar1: u8;
     let mut u_var2: i32;
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut bVar4: u8;
     let mut u_var5: i32;
     let mut unaff_cs: u16;
@@ -1097,8 +1097,8 @@ pub fn get_mem_sz_1000_1284(param_1: u32) {
     bVar4 = bVar1 & 7;
     if ((bVar1 & 7) != 0) {
         if (bVar4 == 1) {
-            uVar3 = 0x0;
-            return *(uVar3 + 0x18);
+            u_var3 = 0x0;
+            return *(u_var3 + 0x18);
         }
         if (bVar4 != 2) {
             if (bVar4 != 3) {
@@ -1322,16 +1322,16 @@ pub fn alloc_dos_mem_1000_1558() -> libc::c_long {
 pub fn free_mem_1000_15ce(param_1: *mut u32, param_2: u16) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
-    let mut uVar3: i32;
+    let mut u_var3: i32;
     let mut local_8: u16;
     let mut local_4: u16;
 
-    uVar3 = param_2 | param_1;
-    while (uVar3 != 0) {
+    u_var3 = param_2 | param_1;
+    while (u_var3 != 0) {
         unsafe { pu_var1 = *param_1 };
         u_var2 = param_1[1];
         GlobalDOSFree16(param_2);
-        uVar3 = u_var2 | pu_var1;
+        u_var3 = u_var2 | pu_var1;
         param_2 = u_var2;
         param_1 = pu_var1;
     }
@@ -1484,7 +1484,7 @@ pub fn free_mem_1000_1b68(param_1: *mut Struct98, param_2: u16) -> bool {
 pub fn free_mem_1000_1b9a(param_1: u16, param_1_00: *mut Struct99) -> bool {
     let mut u_var1: i32;
     let mut u_var2: i32;
-    let mut uVar3: u32;
+    let mut u_var3: u32;
     let mut u_var4: i32;
     let mut u_var5: i32;
     let local_bx_5: *mut Struct99;
@@ -1504,8 +1504,8 @@ pub fn free_mem_1000_1b9a(param_1: u16, param_1_00: *mut Struct99) -> bool {
         local_SI_34 = (local_4 * 2);
         if (local_SI_34 != 0x0) {
             while {
-                uVar3 = &local_SI_34.field_0x8;
-                (uVar3 + 0xc) = 0;
+                u_var3 = &local_SI_34.field_0x8;
+                (u_var3 + 0xc) = 0;
                 free_mem_1000_13ce(CONCAT22(local_SI_34.field_0xa, local_SI_34.field_0x8));
                 local_SI_34 = local_SI_34.field_0x4;
                 (local_4 * 2) != local_SI_34
@@ -1841,7 +1841,7 @@ pub fn copy_mem_1008_676e(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    uVar3 = (param_1 >> 0x10);
+    u_var3 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     if (local_bx_4.field_0x6 == 0) {
         return;

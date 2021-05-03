@@ -22770,8 +22770,8 @@ pub struct Struct44 {
 }
 
 pub struct Struct376 {
-    pub ptr_a_lo: u16,
-    pub ptr_a_hi: u16,
+    pub offset: u16,
+    pub segment: u16,
     pub u16_x4: u16,
     pub u16_x6: u16,
     pub field_0x8: u8,
