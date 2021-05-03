@@ -8592,7 +8592,7 @@ pub struct Struct1054 {
 }
 
 pub struct Struct599 {
-    pub field_0x0: u16,
+    pub offset_1: u16,
     pub field_0x2: *mut u8,
     pub field_0x4: u8,
     pub field_0x5: u8,
@@ -22596,7 +22596,7 @@ pub struct Struct215 {
 }
 
 pub struct Struct44 {
-    pub ptr_a_lo: u16,
+    pub offset: u16,
     pub ptr_a_hi: u16,
     pub struct_ptr_1_0x4: *mut Struct659,
     pub field_0x6: u8,
@@ -58379,7 +58379,7 @@ pub struct Struct345 {
     pub field_0x8d: u8,
     pub field_0x8e: u8,
     pub field_0x8f: u8,
-    pub field_0x90: *mut u16,
+    pub field_0x90: u16,
 }
 
 pub struct Struct523 {
@@ -146553,7 +146553,16 @@ pub struct AppContext {
     pub g_u16_ptr_1050_5f84: u32,
     pub s__s___lu_1050_38c5: String,
     pub PTR_LOOP_1050_1038: u32,
+    pub PTR_LOOP_1050_1040: u32,
     pub _g_struct_372_1050_0ed0: *mut Struct372,
     pub _g_struct_ptr_1050_02a0: *mut u8,
     pub s_OpWnd__getKid__Unknown_target_mo_1050_01a3: String,
+    pub s_thisLo_1050_5db1: String,
+    pub s_thisHi_1050_5db8: String,
+    pub s_procLo_1050_5dbf: String,
+    pub s_procHi_1050_5dc6: String,
+    pub PTR_LOOP_1050_1008: u16,
+    pub s_1_1050_389a: String,
+    pub _g_astruct_112_a: *mut u8,
+    pub s_Null_Ptr_1050_38f3: String,
 }

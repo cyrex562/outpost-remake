@@ -67,26 +67,26 @@ pub unsafe fn call_big_fn_1040_b17c(
     let mut u16_k: u16;
     let mut u16_m: u16;
     let mut u16_n: u16;
-    let pu_var2: *mut u16;
+    let pu_var2: u16;
     let u_var1: u16;
     let u_var3: u16;
 
     u16_n = 0;
     loop {
-        // uVar4 = (param_1 >> 0x10);
+        // u_var4 = (param_1 >> 0x10);
         let pustruct_p = in_pustruct_a;
         pu_var2 = pustruct_p.field_0x90;
-        if (*pu_var2 == u16_n || *pu_var2 < u16_n) {
+        if *pu_var2 == u16_n || *pu_var2 < u16_n {
             break;
         }
-        u_var1 = *pu_var2.offset(2);
+        u_var1 = pu_var2 + 2; // value at address + offset
         //(u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
         todo!();
         u16_n = u16_n + 1;
     }
-    pustruct_h = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u16_f, 3));
-    pu_var2 = pstruct_e.field_0x90;
-    u32_j = (pu_var2 + 2);
+    pustruct_h = process_struct_1010_20ba(ctx._g_struct_372_1050_0ed0, CONCAT22(u16_f, 3));
+    pu_var2 = (*pstruct_e).field_0x90;
+    u32_j = (pu_var2 + 2) as u32;
     u16_n = 0;
     while (
         pu_var2 = pstruct_e.field_0x90,
@@ -118,7 +118,10 @@ pub unsafe fn call_big_fn_1040_b17c(
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, param_2: u16) {
+pub unsafe fn big_fn_1008_15d4(
+    ctx: &mut AppContext, 
+    param_1: *mut Struct657, 
+    param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
@@ -126,108 +129,108 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
     let mut i32_e: i32;
     let pustruct_f: *mut Struct199;
     let mut i32_g: i32;
-    let mut extraout_DX_00: i32;
-    let mut extraout_DX_01: i32;
-    let mut extraout_DX_02: i32;
-    let mut extraout_DX_03: i32;
-    let mut extraout_DX_04: i32;
-    let mut extraout_DX_05: i32;
-    let mut extraout_DX_06: i32;
-    let mut extraout_DX_07: i32;
+    let mut extraout_dx_00: i32;
+    let mut extraout_dx_01: i32;
+    let mut extraout_dx_02: i32;
+    let mut extraout_dx_03: i32;
+    let mut extraout_dx_04: i32;
+    let mut extraout_dx_05: i32;
+    let mut extraout_dx_06: i32;
+    let mut extraout_dx_07: i32;
     let pustruct_h: *mut Struct199;
-    let mut extraout_DX_08: i32;
-    let mut extraout_DX_09: i32;
-    let mut extraout_DX_10: i32;
-    let mut extraout_DX_11: i32;
-    let mut extraout_DX_12: i32;
-    let mut extraout_DX_13: i32;
-    let mut extraout_DX_14: i32;
-    let mut extraout_DX_15: i32;
-    let mut extraout_DX_16: i32;
-    let mut extraout_DX_17: i32;
-    let mut extraout_DX_18: i32;
-    let mut extraout_DX_19: i32;
-    let mut extraout_DX_20: i32;
-    let mut extraout_DX_21: i32;
-    let mut extraout_DX_22: i32;
-    let mut extraout_DX_23: i32;
-    let mut extraout_DX_24: i32;
-    let mut extraout_DX_25: i32;
-    let mut extraout_DX_26: i32;
-    let mut extraout_DX_27: i32;
-    let mut extraout_DX_28: i32;
-    let mut extraout_DX_29: i32;
-    let mut extraout_DX_30: i32;
-    let mut extraout_DX_31: i32;
-    let mut extraout_DX_32: i32;
-    let mut extraout_DX_33: i32;
-    let mut extraout_DX_34: i32;
-    let mut extraout_DX_35: i32;
-    let mut extraout_DX_36: i32;
-    let mut extraout_DX_37: i32;
-    let mut extraout_DX_38: i32;
-    let mut extraout_DX_39: i32;
-    let mut extraout_DX_40: i32;
-    let mut extraout_DX_41: i32;
-    let mut extraout_DX_42: i32;
-    let mut extraout_DX_43: i32;
-    let mut extraout_DX_44: i32;
-    let mut extraout_DX_45: i32;
-    let mut extraout_DX_46: i32;
-    let mut extraout_DX_47: i32;
-    let mut extraout_DX_48: i32;
-    let mut extraout_DX_49: i32;
-    let mut extraout_DX_50: i32;
-    let mut extraout_DX_51: i32;
-    let mut extraout_DX_52: i32;
-    let mut extraout_DX_53: i32;
-    let mut extraout_DX_54: i32;
-    let mut extraout_DX_55: i32;
-    let mut extraout_DX_56: i32;
-    let mut extraout_DX_57: i32;
-    let mut extraout_DX_58: i32;
-    let mut extraout_DX_59: i32;
-    let mut extraout_DX_60: i32;
-    let mut extraout_DX_61: i32;
-    let mut extraout_DX_62: i32;
-    let mut extraout_DX_63: i32;
-    let mut extraout_DX_64: i32;
-    let mut extraout_DX_65: i32;
-    let mut extraout_DX_66: i32;
-    let mut extraout_DX_67: i32;
-    let mut extraout_DX_68: i32;
-    let mut extraout_DX_69: i32;
-    let mut extraout_DX_70: i32;
-    let mut extraout_DX_71: i32;
-    let mut extraout_DX_72: i32;
-    let mut extraout_DX_73: i32;
-    let mut extraout_DX_74: i32;
-    let mut extraout_DX_75: i32;
-    let mut extraout_DX_76: i32;
-    let mut extraout_DX_77: i32;
-    let mut extraout_DX_78: i32;
-    let mut extraout_DX_79: i32;
-    let mut extraout_DX_80: i32;
-    let mut extraout_DX_81: i32;
-    let mut extraout_DX_82: i32;
-    let mut extraout_DX_83: i32;
-    let mut extraout_DX_84: i32;
-    let mut extraout_DX_85: i32;
-    let mut extraout_DX_86: i32;
-    let mut extraout_DX_87: i32;
-    let mut extraout_DX_88: i32;
-    let mut extraout_DX_89: i32;
-    let mut extraout_DX_90: i32;
-    let mut extraout_DX_91: i32;
-    let mut extraout_DX_92: i32;
-    let mut extraout_DX_93: i32;
+    let mut extraout_dx_08: i32;
+    let mut extraout_dx_09: i32;
+    let mut extraout_dx_10: i32;
+    let mut extraout_dx_11: i32;
+    let mut extraout_dx_12: i32;
+    let mut extraout_dx_13: i32;
+    let mut extraout_dx_14: i32;
+    let mut extraout_dx_15: i32;
+    let mut extraout_dx_16: i32;
+    let mut extraout_dx_17: i32;
+    let mut extraout_dx_18: i32;
+    let mut extraout_dx_19: i32;
+    let mut extraout_dx_20: i32;
+    let mut extraout_dx_21: i32;
+    let mut extraout_dx_22: i32;
+    let mut extraout_dx_23: i32;
+    let mut extraout_dx_24: i32;
+    let mut extraout_dx_25: i32;
+    let mut extraout_dx_26: i32;
+    let mut extraout_dx_27: i32;
+    let mut extraout_dx_28: i32;
+    let mut extraout_dx_29: i32;
+    let mut extraout_dx_30: i32;
+    let mut extraout_dx_31: i32;
+    let mut extraout_dx_32: i32;
+    let mut extraout_dx_33: i32;
+    let mut extraout_dx_34: i32;
+    let mut extraout_dx_35: i32;
+    let mut extraout_dx_36: i32;
+    let mut extraout_dx_37: i32;
+    let mut extraout_dx_38: i32;
+    let mut extraout_dx_39: i32;
+    let mut extraout_dx_40: i32;
+    let mut extraout_dx_41: i32;
+    let mut extraout_dx_42: i32;
+    let mut extraout_dx_43: i32;
+    let mut extraout_dx_44: i32;
+    let mut extraout_dx_45: i32;
+    let mut extraout_dx_46: i32;
+    let mut extraout_dx_47: i32;
+    let mut extraout_dx_48: i32;
+    let mut extraout_dx_49: i32;
+    let mut extraout_dx_50: i32;
+    let mut extraout_dx_51: i32;
+    let mut extraout_dx_52: i32;
+    let mut extraout_dx_53: i32;
+    let mut extraout_dx_54: i32;
+    let mut extraout_dx_55: i32;
+    let mut extraout_dx_56: i32;
+    let mut extraout_dx_57: i32;
+    let mut extraout_dx_58: i32;
+    let mut extraout_dx_59: i32;
+    let mut extraout_dx_60: i32;
+    let mut extraout_dx_61: i32;
+    let mut extraout_dx_62: i32;
+    let mut extraout_dx_63: i32;
+    let mut extraout_dx_64: i32;
+    let mut extraout_dx_65: i32;
+    let mut extraout_dx_66: i32;
+    let mut extraout_dx_67: i32;
+    let mut extraout_dx_68: i32;
+    let mut extraout_dx_69: i32;
+    let mut extraout_dx_70: i32;
+    let mut extraout_dx_71: i32;
+    let mut extraout_dx_72: i32;
+    let mut extraout_dx_73: i32;
+    let mut extraout_dx_74: i32;
+    let mut extraout_dx_75: i32;
+    let mut extraout_dx_76: i32;
+    let mut extraout_dx_77: i32;
+    let mut extraout_dx_78: i32;
+    let mut extraout_dx_79: i32;
+    let mut extraout_dx_80: i32;
+    let mut extraout_dx_81: i32;
+    let mut extraout_dx_82: i32;
+    let mut extraout_dx_83: i32;
+    let mut extraout_dx_84: i32;
+    let mut extraout_dx_85: i32;
+    let mut extraout_dx_86: i32;
+    let mut extraout_dx_87: i32;
+    let mut extraout_dx_88: i32;
+    let mut extraout_dx_89: i32;
+    let mut extraout_dx_90: i32;
+    let mut extraout_dx_91: i32;
+    let mut extraout_dx_92: i32;
+    let mut extraout_dx_93: i32;
     let mut i32_j: i32;
-    let mut extraout_DX_94: i32;
-    let mut extraout_DX_95: i32;
-    let mut extraout_DX_96: i32;
-    let mut extraout_DX_97: i32;
-    let mut extraout_DX_98: i32;
-    let mut extraout_DX_99: i32;
+    let mut extraout_dx_94: i32;
+    let mut extraout_dx_95: i32;
+    let mut extraout_dx_96: i32;
+    let mut extraout_dx_97: i32;
+    let mut extraout_dx_98: i32;
+    let mut extraout_dx_99: i32;
     let mut i32_k: i32;
     let mut i32_m: i32;
     let mut stack_seg_n: u16;
@@ -281,7 +284,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
             pi32_a = (i32_c + 0xcc);
             unsafe { *pi32_a = *pi32_a + 1 };
             mci_fn_1020_08b6(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_07;
+            i32_j = extraout_dx_07;
         }
         2 => {
             process_struct_1000_179c(0xfa, pustruct_f);
@@ -298,7 +301,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
             }
             let input_a: *mut Struct65 = CONCAT22(pustruct_f, i32_k);
             process_struct_1018_e91e(input_a, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_05;
+            i32_j = extraout_dx_05;
         }
         3 => {
             process_struct_1000_179c(0xf6, pustruct_f);
@@ -313,7 +316,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_e230(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_03;
+            i32_j = extraout_dx_03;
         }
         4 => {
             process_struct_1000_179c(0xf6, pustruct_f);
@@ -327,7 +330,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             call_load_cursor_fn_1020_7554(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_04;
+            i32_j = extraout_dx_04;
         }
         5 => {
             process_struct_1000_179c(0xf8, pustruct_f);
@@ -341,7 +344,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_1018_5840(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_06;
+            i32_j = extraout_dx_06;
         }
         6 => {
             process_struct_1000_179c(0xf6, pustruct_f);
@@ -355,7 +358,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             call_load_cursor_1020_2524(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_02;
+            i32_j = extraout_dx_02;
         }
         7 => {
             process_struct_1000_179c(0x118, pustruct_f);
@@ -369,7 +372,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_accelerators_1020_41c8(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_01;
+            i32_j = extraout_dx_01;
         }
         8 => {
             process_struct_1000_179c(0xf6, pustruct_f);
@@ -397,7 +400,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_66cc(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_00;
+            i32_j = extraout_dx_00;
         }
         10 => {
             mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, 0x1d3);
@@ -413,7 +416,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6d02(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_08;
+            i32_j = extraout_dx_08;
         }
         0xb => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -427,7 +430,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6d38(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_09;
+            i32_j = extraout_dx_09;
         }
         0xc => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -441,7 +444,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6d6e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_10;
+            i32_j = extraout_dx_10;
         }
         0xd => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -455,7 +458,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6da4(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_11;
+            i32_j = extraout_dx_11;
         }
         0xe => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -469,7 +472,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6dda(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_12;
+            i32_j = extraout_dx_12;
         }
         0xf => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -483,7 +486,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6e10(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_13;
+            i32_j = extraout_dx_13;
         }
         0x10 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -497,7 +500,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6e46(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_14;
+            i32_j = extraout_dx_14;
         }
         0x11 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -511,7 +514,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6e7c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_15;
+            i32_j = extraout_dx_15;
         }
         0x12 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -525,7 +528,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6eb2(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_16;
+            i32_j = extraout_dx_16;
         }
         0x13 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -539,7 +542,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6ee8(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_17;
+            i32_j = extraout_dx_17;
         }
         0x14 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -553,7 +556,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6f1e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_18;
+            i32_j = extraout_dx_18;
         }
         0x15 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -567,7 +570,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6f54(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_19;
+            i32_j = extraout_dx_19;
         }
         0x16 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -581,7 +584,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6f8a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_20;
+            i32_j = extraout_dx_20;
         }
         0x17 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -595,7 +598,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6fc0(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_21;
+            i32_j = extraout_dx_21;
         }
         0x18 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -609,7 +612,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_6ff6(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_22;
+            i32_j = extraout_dx_22;
         }
         0x19 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -623,7 +626,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_702c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_23;
+            i32_j = extraout_dx_23;
         }
         0x1a => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -637,7 +640,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7062(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_24;
+            i32_j = extraout_dx_24;
         }
         0x1b => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -651,7 +654,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7098(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_25;
+            i32_j = extraout_dx_25;
         }
         0x1c => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -665,7 +668,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_70ce(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_26;
+            i32_j = extraout_dx_26;
         }
         0x1d => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -679,7 +682,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7104(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_27;
+            i32_j = extraout_dx_27;
         }
         0x1e => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -693,7 +696,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_713a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_28;
+            i32_j = extraout_dx_28;
         }
         0x20 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -707,7 +710,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7170(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_29;
+            i32_j = extraout_dx_29;
         }
         0x21 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -721,7 +724,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_745e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_31;
+            i32_j = extraout_dx_31;
         }
         0x22 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -735,7 +738,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_71a6(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_32;
+            i32_j = extraout_dx_32;
         }
         0x23 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -749,7 +752,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_71dc(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_33;
+            i32_j = extraout_dx_33;
         }
         0x24 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -763,7 +766,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7212(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_34;
+            i32_j = extraout_dx_34;
         }
         0x25 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -778,7 +781,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_c958(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_86;
+            i32_j = extraout_dx_86;
         }
         0x26 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -792,7 +795,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_c9a6(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_87;
+            i32_j = extraout_dx_87;
         }
         0x27 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -806,7 +809,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_c9f4(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_88;
+            i32_j = extraout_dx_88;
         }
         0x28 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -820,7 +823,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_ca48(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_89;
+            i32_j = extraout_dx_89;
         }
         _ => {
             fn_1008_6048(
@@ -845,7 +848,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_ca96(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_90;
+            i32_j = extraout_dx_90;
         }
         0x2a => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -859,7 +862,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_caea(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_91;
+            i32_j = extraout_dx_91;
         }
         0x2b => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -873,7 +876,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cb38(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_92;
+            i32_j = extraout_dx_92;
         }
         0x2c => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -887,7 +890,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cb86(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_93;
+            i32_j = extraout_dx_93;
         }
         0x2d => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -916,7 +919,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cc28(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_94;
+            i32_j = extraout_dx_94;
         }
         0x2f => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -930,7 +933,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cc76(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_95;
+            i32_j = extraout_dx_95;
         }
         0x30 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -944,7 +947,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_ccc4(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_96;
+            i32_j = extraout_dx_96;
         }
         0x31 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -958,7 +961,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cd12(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_97;
+            i32_j = extraout_dx_97;
         }
         0x32 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -972,7 +975,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cd60(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_98;
+            i32_j = extraout_dx_98;
         }
         0x33 => {
             process_struct_1000_179c(0x114, pustruct_f);
@@ -986,7 +989,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pass1_1018_cf74(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_99;
+            i32_j = extraout_dx_99;
         }
         0x34 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1000,7 +1003,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_73c2(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_30;
+            i32_j = extraout_dx_30;
         }
         0x35 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1014,7 +1017,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7494(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_36;
+            i32_j = extraout_dx_36;
         }
         0x36 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1028,7 +1031,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_74ca(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_37;
+            i32_j = extraout_dx_37;
         }
         0x37 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1042,7 +1045,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7500(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_38;
+            i32_j = extraout_dx_38;
         }
         0x38 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1056,7 +1059,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_73f8(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_39;
+            i32_j = extraout_dx_39;
         }
         0x39 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1070,7 +1073,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7536(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_40;
+            i32_j = extraout_dx_40;
         }
         0x3a => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1084,7 +1087,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_756c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_41;
+            i32_j = extraout_dx_41;
         }
         0x3b => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1098,7 +1101,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_75a2(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_42;
+            i32_j = extraout_dx_42;
         }
         0x3c => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1112,7 +1115,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_1018_75d8(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_43;
+            i32_j = extraout_dx_43;
         }
         0x3d => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1126,7 +1129,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_760e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_44;
+            i32_j = extraout_dx_44;
         }
         0x3e => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1140,7 +1143,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7644(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_45;
+            i32_j = extraout_dx_45;
         }
         0x3f => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1154,7 +1157,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_767a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_46;
+            i32_j = extraout_dx_46;
         }
         0x40 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1168,7 +1171,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_76b0(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_47;
+            i32_j = extraout_dx_47;
         }
         0x41 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1182,7 +1185,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_76e6(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_48;
+            i32_j = extraout_dx_48;
         }
         0x42 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1196,7 +1199,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_771c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_49;
+            i32_j = extraout_dx_49;
         }
         0x43 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1210,7 +1213,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7752(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_50;
+            i32_j = extraout_dx_50;
         }
         0x44 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1224,7 +1227,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7788(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_51;
+            i32_j = extraout_dx_51;
         }
         0x45 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1238,7 +1241,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_77be(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_52;
+            i32_j = extraout_dx_52;
         }
         0x46 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1252,7 +1255,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_77f4(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_53;
+            i32_j = extraout_dx_53;
         }
         0x47 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1266,7 +1269,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_1018_782a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_54;
+            i32_j = extraout_dx_54;
         }
         0x48 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1280,7 +1283,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_55;
+            i32_j = extraout_dx_55;
         }
         0x49 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1294,7 +1297,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7896(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_56;
+            i32_j = extraout_dx_56;
         }
         0x4a => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1308,7 +1311,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_78cc(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_57;
+            i32_j = extraout_dx_57;
         }
         0x4b => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1322,7 +1325,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7902(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_58;
+            i32_j = extraout_dx_58;
         }
         0x4c => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1336,7 +1339,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7938(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_59;
+            i32_j = extraout_dx_59;
         }
         0x4d => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1350,7 +1353,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_796e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_60;
+            i32_j = extraout_dx_60;
         }
         0x4e => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1364,7 +1367,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_79a4(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_61;
+            i32_j = extraout_dx_61;
         }
         0x4f => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1378,7 +1381,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_79da(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_62;
+            i32_j = extraout_dx_62;
         }
         0x50 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1392,7 +1395,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7a10(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_63;
+            i32_j = extraout_dx_63;
         }
         0x51 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1406,7 +1409,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7a46(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_64;
+            i32_j = extraout_dx_64;
         }
         0x52 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1420,7 +1423,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7a7c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_65;
+            i32_j = extraout_dx_65;
         }
         0x54 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1434,7 +1437,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7ab2(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_66;
+            i32_j = extraout_dx_66;
         }
         0x55 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1448,7 +1451,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7ae8(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_67;
+            i32_j = extraout_dx_67;
         }
         0x56 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1462,7 +1465,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7b1e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_68;
+            i32_j = extraout_dx_68;
         }
         0x57 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1476,7 +1479,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7b54(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_69;
+            i32_j = extraout_dx_69;
         }
         0x58 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1490,7 +1493,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7b8a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_70;
+            i32_j = extraout_dx_70;
         }
         0x59 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1504,7 +1507,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7bc0(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_71;
+            i32_j = extraout_dx_71;
         }
         0x5a => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1518,7 +1521,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7bf6(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_72;
+            i32_j = extraout_dx_72;
         }
         0x5b => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1532,7 +1535,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7c2c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_73;
+            i32_j = extraout_dx_73;
         }
         0x5c => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1546,7 +1549,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7c62(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_74;
+            i32_j = extraout_dx_74;
         }
         0x5d => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1560,7 +1563,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7c98(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_35;
+            i32_j = extraout_dx_35;
         }
         0x5e => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1574,7 +1577,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7cce(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_75;
+            i32_j = extraout_dx_75;
         }
         0x5f => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1588,7 +1591,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7d04(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_76;
+            i32_j = extraout_dx_76;
         }
         0x60 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1602,7 +1605,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7d3a(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_77;
+            i32_j = extraout_dx_77;
         }
         0x61 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1616,7 +1619,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7d70(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_78;
+            i32_j = extraout_dx_78;
         }
         0x62 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1630,7 +1633,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_1018_7248(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_79;
+            i32_j = extraout_dx_79;
         }
         99 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1644,7 +1647,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_727e(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_80;
+            i32_j = extraout_dx_80;
         }
         100 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1658,7 +1661,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_1018_72b4(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_81;
+            i32_j = extraout_dx_81;
         }
         0x65 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1672,7 +1675,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_72ea(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_82;
+            i32_j = extraout_dx_82;
         }
         0x66 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1686,7 +1689,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7320(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_83;
+            i32_j = extraout_dx_83;
         }
         0x67 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1700,7 +1703,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_7356(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_84;
+            i32_j = extraout_dx_84;
         }
         0x68 => {
             process_struct_1000_179c(0xf2, pustruct_f);
@@ -1714,7 +1717,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             load_cursor_fn_1018_738c(i32_k, pustruct_f, (i32_c + 0xcc), param_1);
-            i32_j = extraout_DX_85;
+            i32_j = extraout_dx_85;
         }
     };
     u32_x = CONCAT22(i32_j, i32_k);
@@ -1764,30 +1767,30 @@ pub unsafe fn call_big_fn_1010_1c16(param_1: u32, param_2: u32) {
 
 pub fn call_big_fn_1010_c7e2(param_1: u32, param_2: u32, param_3: u32) {
     let mut u_var1: u32;
-    let mut uVar2: u16;
-    let mut extraout_DX: u16;
-    let mut iVar3: i32;
-    let mut uVar4: u16;
+    let mut u_var2: u16;
+    let mut extraout_dx: u16;
+    let mut i_var3: i32;
+    let mut u_var4: u16;
     let mut local_8: u32;
     let mut local_4: u16;
 
     local_4 = 0;
     while (true) {
-        uVar4 = (param_3 >> 0x10);
-        iVar3 = param_3;
+        u_var4 = (param_3 >> 0x10);
+        i_var3 = param_3;
         if (param_3 == local_4 || param_3 < local_4) {
             break;
         }
-        u_var1 = (iVar3 + 2);
+        u_var1 = (i_var3 + 2);
         (local_4 * 10 + u_var1 + 4) = (local_4 * 2 + param_2);
         local_4 = local_4 + 1;
     }
-    local_8 = (iVar3 + 2);
+    local_8 = (i_var3 + 2);
     local_4 = 0;
     while (param_3 != local_4 && local_4 <= param_3) {
-        uVar2 = local_4;
-        big_fn_1010_b038(param_1, (iVar3 + 6));
-        pass1_1040_a626(local_8, CONCAT22(extraout_DX, uVar2));
+        u_var2 = local_4;
+        big_fn_1010_b038(param_1, (i_var3 + 6));
+        pass1_1040_a626(local_8, CONCAT22(extraout_dx, u_var2));
         local_4 = local_4 + 1;
         local_8 = local_8 & 0xffff0000 | (local_8 + 10);
     }

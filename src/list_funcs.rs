@@ -54,9 +54,9 @@ pub fn modify_list_1008_6cb4(
     param_5: u16,
 ) -> *mut u32 {
     let mut iVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var2: u16;
 
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     unsafe {
         *param_1 = param_4;
@@ -97,9 +97,9 @@ pub fn clear_list_elements_1008_80d2(in_u32: *mut u32) -> *mut u32 {
 }
 
 pub fn modify_list_1008_8168(in_list: *mut u16) {
-    let mut local_ES_4: u16;
+    let mut local_es_4: u16;
 
-    local_ES_4 = (in_list >> 0x10);
+    local_es_4 = (in_list >> 0x10);
     unsafe {
         *in_list = 0x87c8;
         (in_list + 2) = &PTR_LOOP_1050_1008;
@@ -129,22 +129,22 @@ pub fn pass1_1008_87cc(
     param_6: u32,
 ) {
     let mut local_AX_174: u16;
-    let mut uVar1: i32;
-    let mut uVar2: u16;
+    let mut u_var1: i32;
+    let mut u_var2: u16;
     let mut local_AX_507: u16;
-    let mut iVar3: i32;
+    let mut i_var3: i32;
     let mut local_DX_174: u16;
     let mut local_DX_196: u16;
     let struct_a: *mut Struct199;
-    let paVar5: *mut Struct199;
+    let pa_var5: *mut Struct199;
     let mut local_DX_401: u16;
     let mut local_DX_507: u16;
     let struct_204_1: *mut Struct204;
-    let local_BX_223: *mut Struct205;
-    let mut unaff_SI: u16;
-    let mut local_ES_6: u16;
-    let mut local_ES_223: u16;
-    let mut local_ES_653: u16;
+    let local_bx_223: *mut Struct205;
+    let mut unaff_si: u16;
+    let mut local_es_6: u16;
+    let mut local_es_223: u16;
+    let mut local_es_653: u16;
     let mut local_SS__1: u16;
     let puVar6: *mut u16;
     let mut local_34: u32;
@@ -165,9 +165,9 @@ pub fn pass1_1008_87cc(
     let mut local_4: u16;
     let mut temp_5fa25672bf: u32;
     let mut temp_7ffcbc94a91: u16;
-    let mut uVar4: u32;
+    let mut u_var4: u32;
 
-    local_ES_6 = (param_1 >> 0x10);
+    local_es_6 = (param_1 >> 0x10);
     struct_204_1 = param_1;
     param_1 = s_1_1050_389a;
     struct_204_1.field_0x2 = &PTR_LOOP_1050_1008;
@@ -190,50 +190,50 @@ pub fn pass1_1008_87cc(
     struct_204_1.field_0x2 = &PTR_LOOP_1050_1008;
     if (_PTR_LOOP_1050_0382 == 0x0) {
         _PTR_LOOP_1050_0382 =
-            process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(unaff_SI, 0x2e));
+            process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x2e));
     }
     _local_6 = process_struct_1008_4772(struct_204_1.field_0x4);
     local_DX_196 = (_local_6 >> 0x10);
     struct_204_1.field_0x12 = 0x2f - (_local_6 + 8);
-    local_ES_223 = (_PTR_LOOP_1050_0382 >> 0x10);
-    local_BX_223 = _PTR_LOOP_1050_0382;
-    local_8 = local_BX_223.field_0xa;
-    local_a = local_BX_223.field_0xc;
-    local_c = local_BX_223.field_0xe;
-    local_e = local_BX_223.field_0x10;
-    iVar3 = struct_204_1.field_0xc;
+    local_es_223 = (_PTR_LOOP_1050_0382 >> 0x10);
+    local_bx_223 = _PTR_LOOP_1050_0382;
+    local_8 = local_bx_223.field_0xa;
+    local_a = local_bx_223.field_0xc;
+    local_c = local_bx_223.field_0xe;
+    local_e = local_bx_223.field_0x10;
+    i_var3 = struct_204_1.field_0xc;
     pass1_1008_3e76(
         (param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10), &struct_204_1.field_0x1c)),
         0,
-        (iVar3 + struct_204_1.field_0xe) * local_e + struct_204_1.field_0x12 + local_a,
-        (iVar3 - struct_204_1.field_0xe) * local_c + struct_204_1.field_0x10 + local_8,
+        (i_var3 + struct_204_1.field_0xe) * local_e + struct_204_1.field_0x12 + local_a,
+        (i_var3 - struct_204_1.field_0xe) * local_c + struct_204_1.field_0x10 + local_8,
     );
     struct_204_1.field_0x14 = struct_204_1.field_0x1c + 0x20;
     struct_204_1.field_0x16 = (_local_6 + 8) + &struct_204_1.field_0x1e + -0x25;
     struct_204_1.field_0x18 = struct_204_1.field_0x14 + 0x32;
-    uVar1 = struct_204_1.field_0x16 + 0x19;
-    struct_204_1.field_0x1a = uVar1;
-    paVar5 = struct_a;
+    u_var1 = struct_204_1.field_0x16 + 0x19;
+    struct_204_1.field_0x1a = u_var1;
+    pa_var5 = struct_a;
     process_struct_1000_179c(6, struct_a);
-    _local_1a = CONCAT22(paVar5, uVar1);
-    if ((paVar5 | uVar1) == 0) {
+    _local_1a = CONCAT22(pa_var5, u_var1);
+    if ((pa_var5 | u_var1) == 0) {
         &struct_204_1.field_0x8 = 0;
     } else {
-        puVar6 = pass1_1008_ada2(CONCAT22(paVar5, uVar1), struct_204_1.field_0x2e);
+        puVar6 = pass1_1008_ada2(CONCAT22(pa_var5, u_var1), struct_204_1.field_0x2e);
         local_DX_401 = (puVar6 >> 0x10);
         struct_204_1.field_0x8 = puVar6;
         &struct_204_1.field_0xa = local_DX_401;
     }
-    uVar2 = pass1_1008_aed8(&struct_204_1.field_0x8);
-    if (uVar2 == 0) {
+    u_var2 = pass1_1008_aed8(&struct_204_1.field_0x8);
+    if (u_var2 == 0) {
         _local_1a = &struct_204_1.field_0x8;
         local_12 = _local_1a;
         error_check_1000_17ce(_local_1a);
         &struct_204_1.field_0x8 = 0;
     } else {
-        uVar4 = &struct_204_1.field_0x8;
-        pass1_1018_20ee(_PTR_LOOP_1050_0382, uVar4);
-        local_12 = uVar4 & 0xffff | local_DX_507 << 0x10;
+        u_var4 = &struct_204_1.field_0x8;
+        pass1_1018_20ee(_PTR_LOOP_1050_0382, u_var4);
+        local_12 = u_var4 & 0xffff | local_DX_507 << 0x10;
         pass1_1008_add2(&struct_204_1.field_0x8);
         _local_1e = process_struct_1008_4772(local_12);
         pass1_1018_214e(
@@ -244,7 +244,7 @@ pub fn pass1_1008_87cc(
         );
         local_24 = &struct_204_1.field_0x1c;
         uStack32 = &struct_204_1.field_0x20;
-        pass1_1008_3f32(0xdc, local_SS__1, &struct_204_1.field_0x28, local_ES_6);
+        pass1_1008_3f32(0xdc, local_SS__1, &struct_204_1.field_0x28, local_es_6);
         _local_30 = (param_1 & 0xffff0000 | &struct_204_1.field_0x32);
         pass1_1008_3e94(
             &local_24,
@@ -253,10 +253,10 @@ pub fn pass1_1008_87cc(
         );
         temp_7ffcbc94a91 = (_local_1e >> 0x10);
         struct_204_1.field_0x36 = (_local_1e + 4) + *_local_30;
-        iVar3 = (_local_1e + 8) + struct_204_1.field_0x34;
-        struct_204_1.field_0x38 = iVar3;
+        i_var3 = (_local_1e + 8) + struct_204_1.field_0x34;
+        struct_204_1.field_0x38 = i_var3;
         pass1_fn_1008_612e(2, 5);
-        struct_204_1.field_0x3e = iVar3;
+        struct_204_1.field_0x3e = i_var3;
     }
     return;
 }
