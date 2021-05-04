@@ -1,12 +1,8 @@
-use crate::{defines::{AppContext, COLORREF, HANDLE16, HBRUSH16, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, HWND16, PAINTSTRUCT16, POINT16, RECT16, Struct102, Struct104, Struct115, Struct129, Struct13, Struct135, Struct136, Struct137, Struct138, Struct139, Struct14, Struct199, Struct28, Struct29, Struct30, Struct31, Struct318, Struct33, Struct334, Struct35, Struct357, Struct36, Struct376, Struct44, Struct54, Struct55, Struct56, Struct604, Struct618, Struct622, Struct630, Struct631, Struct632, Struct633, Struct634, Struct642, Struct65, Struct69, Struct7, pass1_struct_1}, err_funcs::error_check_1000_17ce, file_funcs::{close_file_1008_496c, read_from_file_1008_49e8}, list_funcs::modify_list_1010_2b50, mixed_fn_1010_830a, other_funcs::{modify_list_1008_3f62, zero_list_1008_3e38}, pass7_funcs::{draw_1018_6444, pass1_1018_1eda, pass1_1018_642e, pass1_1018_6544}, pass8_funcs::{
+use crate::{defines::{AppContext, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, HWND16, PAINTSTRUCT16, POINT16, RECT16, Struct102, Struct104, Struct115, Struct129, Struct13, Struct135, Struct136, Struct137, Struct138, Struct139, Struct14, Struct197, Struct199, Struct28, Struct29, Struct30, Struct31, Struct318, Struct33, Struct334, Struct34, Struct35, Struct357, Struct36, Struct376, Struct44, Struct538, Struct54, Struct55, Struct56, Struct590, Struct604, Struct618, Struct622, Struct630, Struct631, Struct632, Struct633, Struct634, Struct642, Struct65, Struct670, Struct69, Struct693, Struct694, Struct7, pass1_struct_1}, err_funcs::error_check_1000_17ce, file_funcs::{close_file_1008_496c, read_from_file_1008_49e8}, list_funcs::modify_list_1010_2b50, mixed_fn_1010_830a, other_funcs::{modify_list_1008_3f62, zero_list_1008_3e38}, pass7_funcs::{draw_1018_6444, pass1_1018_1eda, pass1_1018_265c, pass1_1018_266a, pass1_1018_268e, pass1_1018_642e, pass1_1018_6544}, pass8_funcs::{
         pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_209e, pass1_1010_2b66, pass1_1010_2b78,
         pass1_1010_2b98, pass1_1010_2ee2, pass1_1010_4c2c, pass1_1010_4dc8, pass1_1010_a5ca,
         pass1_1018_0afa, process_struct_1010_20ba,
-    }, pass_funcs::{
-        pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3f32, pass1_1008_405c,
-        pass1_1008_43cc, pass1_1008_4480, pass1_1008_4d72, pass1_1008_4d84, pass1_1008_5068,
-        pass1_1008_5236, pass1_1008_9f48, pass1_fn_1000_484c,
-    }, sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c9e}, string_funcs::get_string_index_1000_3da4, struct_funcs::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1010_4d5c, process_struct_1040_9618, set_struct_1008_4016}, sys_funcs::{BeginPaint16, CreateDC16, CreatePalette16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawText16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetCurrentPosition16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, LineTo16, MoveTo16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseDC16, ScreenToClient16, SelectObject16, SelectPalette16, SetBkColor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, lstrlen16, win_func_1018_6bb6}, ui_funcs::{
+    }, pass_funcs::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3f32, pass1_1008_3f92, pass1_1008_405c, pass1_1008_43cc, pass1_1008_4480, pass1_1008_4d72, pass1_1008_4d84, pass1_1008_5068, pass1_1008_5134, pass1_1008_5236, pass1_1008_57a4, pass1_1008_5b12, pass1_1008_9f48, pass1_fn_1000_484c}, sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c9e}, string_funcs::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c}, struct_funcs::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1008_50c2, process_struct_1010_4d5c, process_struct_1040_9618, set_struct_1008_4016}, sys_funcs::{BeginPaint16, CreateDC16, CreatePalette16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DestroyWindow16, DrawText16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetCurrentPosition16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, IsWindow16, LineTo16, LoadCursor16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseDC16, ScreenToClient16, SelectObject16, SelectPalette16, SetBkColor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, lstrlen16, reg_class_1008_96d2, win_func_1018_6bb6}, ui_funcs::{
         load_cursor_1008_61b2, mixed_1040_8520, pass1_1038_af40, set_window_text_1018_6630,
         win_fn_1018_6adc, win_gui_fn_1010_8170,
     }, util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24}};
@@ -3775,7 +3771,13 @@ pub fn pt_in_rect_1040_8158(param_1: *mut Struct69, param_2: u32, param_3: u16) 
     return;
 }
 
-pub unsafe fn draw_fn_1040_7e5e(ctx: &mut AppContext, param_1: *mut u32, param_2: HWND16, param_3: i32, param_4: HDC16) {
+pub unsafe fn draw_fn_1040_7e5e(
+    ctx: &mut AppContext,
+    param_1: *mut u32,
+    param_2: HWND16,
+    param_3: i32,
+    param_4: HDC16,
+) {
     let pp_var1: fn();
     let mut HVar2: HGDIOBJ16;
     let mut i_var3: i32;
@@ -3996,6 +3998,7 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
     let mut local_2c: u16;
     let mut local_2a: PAINTSTRUCT16;
     let mut local_a: [u8; 8];
+    let mut offset: u16;
 
     u_var10 = (param_1 >> 0x10);
     i_var9 = param_1;
@@ -4117,7 +4120,13 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
     return;
 }
 
-pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, param_4: HDC16) {
+pub unsafe fn draw_1040_27cc(
+    ctx: &mut AppContext,
+    param_1: *mut u32,
+    param_2: HWND16,
+    param_3: i32,
+    param_4: HDC16,
+) {
     let pp_var1: fn();
     let mut i_var2: i32;
     let mut HVar3: HBRUSH16;
@@ -4131,6 +4140,7 @@ pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, p
     let mut hdc: HDC16;
     let mut local_a: u16;
     let mut local_8: u16;
+    let mut offset: u16;
 
     u_var6 = (param_1 >> 0x10);
     i_var5 = param_1;
@@ -4139,14 +4149,14 @@ pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, p
         HVar3 = CreateSolidBrush16(0);
         (i_var5 + 4) = HVar3;
     }
-    if (_PTR_LOOP_1050_5cf8 == 0) {
+    if (ctx._PTR_LOOP_1050_5cf8 == 0) {
         let param_1_val = unsafe { *param_1 };
         pp_var1 = (param_1_val + 0x68);
         u_var7 = (**pp_var1)(unaff_cs, i_var5, u_var6, (i_var5 + 0x6e));
         u_var7 = pass1_1008_4d72(u_var7);
         u_var8 = (u_var7 >> 0x10);
         i_var2 = u_var7;
-        _PTR_LOOP_1050_5cf8 = CONCAT22(
+        ctx._PTR_LOOP_1050_5cf8 = CONCAT22(
             CONCAT11(2, *(i_var2 + 0x94)),
             CONCAT11(*(i_var2 + 0x95), *(i_var2 + 0x96)),
         );
@@ -4155,7 +4165,7 @@ pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, p
         if (param_3 != 6) {
             return 0;
         }
-        u_var8 = SUB42(s_fem67_wav_1050_2842 + 8, 0);
+        u_var8 = SUB42(ctx.s_fem67_wav_1050_2842 + 8, 0);
         i_var4 = GetDlgCtrlID16(param_2);
         if (((i_var5 + 0x94) != 0) && (i_var4 == 0xfb2)) {
             u_var9 = 0xff;
@@ -4163,8 +4173,8 @@ pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, p
             // goto LAB_1040_286e;
         }
     }
-    u_var8 = _PTR_LOOP_1050_5cf8;
-    u_var9 = (_PTR_LOOP_1050_5cf8 >> 0x10);
+    u_var8 = ctx._PTR_LOOP_1050_5cf8;
+    u_var9 = (ctx._PTR_LOOP_1050_5cf8 >> 0x10);
     hdc = param_4;
     // LAB_1040_286e:
     SetTextColor16(CONCAT22(u_var9, u_var8), hdc);
@@ -4172,7 +4182,7 @@ pub unsafe fn draw_1040_27cc(param_1: *mut u32, param_2: HWND16, param_3: i32, p
     return CONCAT22(0x1050, (i_var5 + 4));
 }
 
-pub unsafe fn draw_1040_21d6(param_1: u32) {
+pub unsafe fn draw_1040_21d6(ctx: &mut AppContext, param_1: u32) {
     let u_var1: u8;
     let u_var2: u8;
     let u_var3: u8;
@@ -4207,13 +4217,13 @@ pub unsafe fn draw_1040_21d6(param_1: u32) {
     count = (param_1 >> 0x10);
     i_var8 = param_1;
     local_24 = BeginPaint16(CONCAT22(unaff_ss, &local_22), (i_var8 + 6));
-    u_var9 = (_PTR_LOOP_1050_4230 + 0xe);
+    u_var9 = (ctx._PTR_LOOP_1050_4230 + 0xe);
     h_palette = &local_24;
     realize_palette_1008_4e08(u_var9, h_palette, unaff_ss);
     u_var4 = (i_var8 + 0x8e);
     ppcVar5 = ((i_var8 + 0x8e) + 4);
     (**ppcVar5)(
-        &PTR_LOOP_1050_1008,
+        &ctx.PTR_LOOP_1050_1008,
         u_var4,
         (u_var4 >> 0x10),
         0xffffffff,
@@ -4231,7 +4241,7 @@ pub unsafe fn draw_1040_21d6(param_1: u32) {
         local_24,
     );
     local_3e = 0;
-    obj_handle = GetProp16(s_hfont_1050_5ced, (i_var8 + 6));
+    obj_handle = GetProp16(ctx.s_hfont_1050_5ced, (i_var8 + 6));
     if (obj_handle != 0) {
         local_3e = SelectObject16(obj_handle, local_24);
     }
@@ -4272,7 +4282,13 @@ pub unsafe fn draw_1040_21d6(param_1: u32) {
     return;
 }
 
-pub unsafe fn draw_1038_9dcc(param_1: u32, param_2: i32, param_3: i32, param_4: HDC16) {
+pub unsafe fn draw_1038_9dcc(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i32,
+    param_3: i32,
+    param_4: HDC16,
+) {
     let pu_var1: *mut u32;
     let mut b_var2: bool;
     let mut u_var3: u16;
@@ -4292,16 +4308,16 @@ pub unsafe fn draw_1038_9dcc(param_1: u32, param_2: i32, param_3: i32, param_4: 
         solid_brush = CreateSolidBrush16(0);
         (i_var5 + 0x8e) = solid_brush;
     }
-    if (_PTR_LOOP_1050_5b64 == 0) {
-        u_var7 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
+    if (ctx._PTR_LOOP_1050_5b64 == 0) {
+        u_var7 = pass1_1008_4d72((ctx._PTR_LOOP_1050_4230 + 0xe));
         u_var3 = (u_var7 >> 0x10);
         i_var4 = u_var7;
-        _PTR_LOOP_1050_5b64 = CONCAT12(
+        ctx._PTR_LOOP_1050_5b64 = CONCAT12(
             *(i_var4 + 0x94),
             CONCAT11(*(i_var4 + 0x95), *(i_var4 + 0x96)),
         );
-        PTR_LOOP_1050_5b68 = CONCAT11(*(i_var4 + 0x3e5), *(i_var4 + 0x3e6));
-        PTR_LOOP_1050_5b6a = *(i_var4 + 0x3e4);
+        ctx.PTR_LOOP_1050_5b68 = CONCAT11(*(i_var4 + 0x3e5), *(i_var4 + 0x3e6));
+        ctx.PTR_LOOP_1050_5b6a = *(i_var4 + 0x3e4);
     }
     if (5 < param_3) {
         if (param_3 != 6) {
@@ -4321,16 +4337,19 @@ pub unsafe fn draw_1038_9dcc(param_1: u32, param_2: i32, param_3: i32, param_4: 
             local_e = local_e + 1;
         }
         if (b_var2) {
-            PTR_LOOP_1050_5b64 = PTR_LOOP_1050_5b68;
-            PTR_LOOP_1050_5b66 = PTR_LOOP_1050_5b6a;
+            ctx.PTR_LOOP_1050_5b64 = ctx.PTR_LOOP_1050_5b68;
+            ctx.PTR_LOOP_1050_5b66 = ctx.PTR_LOOP_1050_5b6a;
         }
     }
-    SetTextColor16(CONCAT22(PTR_LOOP_1050_5b66, PTR_LOOP_1050_5b64), param_4);
+    SetTextColor16(
+        CONCAT22(ctx.PTR_LOOP_1050_5b66, ctx.PTR_LOOP_1050_5b64),
+        param_4,
+    );
     SetBkColor16(0x1000000, param_4);
     return;
 }
 
-pub unsafe fn get_dc_1020_921c(param_1: *mut Struct622, param_2: u16) {
+pub unsafe fn get_dc_1020_921c(ctx: &mut AppContext, param_1: *mut Struct622, param_2: u16) {
     let local_AX_99: *mut Struct670;
     let mut u_var1: u16;
     let local_struct_1: *mut Struct622;
@@ -4343,13 +4362,13 @@ pub unsafe fn get_dc_1020_921c(param_1: *mut Struct622, param_2: u16) {
     u_var1 = (in_stack_0000ffe2 >> 0x10);
     local_es_4 = (param_1 >> 0x10);
     local_struct_1 = param_1;
-    param_1.u16_0x0 = s_1_1050_389a;
-    local_struct_1.u16_0x2 = &PTR_LOOP_1050_1008;
-    param_1.u16_0x0 = (s_18_2_1050_3aa5 + 3);
-    local_struct_1.u16_0x2 = &PTR_LOOP_1050_1008;
+    param_1.u16_0x0 = ctx.s_1_1050_389a;
+    local_struct_1.u16_0x2 = &ctx.PTR_LOOP_1050_1008;
+    param_1.u16_0x0 = (ctx.s_18_2_1050_3aa5 + 3);
+    local_struct_1.u16_0x2 = &ctx.PTR_LOOP_1050_1008;
     local_struct_1.window_handle_0x4 = param_2;
-    param_1.u16_0x0 = s_0_020_1050_3ab0;
-    local_struct_1.u16_0x2 = &PTR_LOOP_1050_1008;
+    param_1.u16_0x0 = ctx.s_0_020_1050_3ab0;
+    local_struct_1.u16_0x2 = &ctx.PTR_LOOP_1050_1008;
     &local_struct_1.u16_0x6 = 0;
     local_struct_1.field_0xa = 0;
     local_struct_1.field_0xc = 0;
@@ -4360,14 +4379,14 @@ pub unsafe fn get_dc_1020_921c(param_1: *mut Struct622, param_2: u16) {
     local_struct_1.u16_0x2 = 0x1020;
     local_AX_99 = GetDC16(local_struct_1.window_handle_0x4);
     local_struct_1.field_0xa = local_AX_99;
-    ppVar2 = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(u_var1, 0x48));
+    ppVar2 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, CONCAT22(u_var1, 0x48));
     u_var1 = (ppVar2 >> 0x10);
     local_struct_1.field_0xc = (ppVar2 + 10);
     local_struct_1.field_0xe = (ppVar2 + 0xc);
     return;
 }
 
-pub fn select_and_delete_palette_1020_92c4(in_astruct_1: *mut Struct44) {
+pub fn select_and_delete_palette_1020_92c4(ctx: &mut AppContext, in_astruct_1: *mut Struct44) {
     let mut h_gdi_obj: HPALETTE16;
     let local_Struct376: *mut Struct376;
     let local_struct_376_hi: *mut Struct376;
@@ -4384,10 +4403,10 @@ pub fn select_and_delete_palette_1020_92c4(in_astruct_1: *mut Struct44) {
         );
         DeleteObject16(h_gdi_obj);
     }
-    in_astruct_1.ptr_a_lo = s_0_020_1050_3ab0;
-    local_Struct376.segment = &PTR_LOOP_1050_1008;
-    in_astruct_1.ptr_a_lo = s_1_1050_389a;
-    local_Struct376.segment = &PTR_LOOP_1050_1008;
+    in_astruct_1.ptr_a_lo = ctx.s_0_020_1050_3ab0;
+    local_Struct376.segment = &ctx.PTR_LOOP_1050_1008;
+    in_astruct_1.ptr_a_lo = ctx.s_1_1050_389a;
+    local_Struct376.segment = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 
@@ -4400,6 +4419,7 @@ pub fn draw_1020_9312(param_1: u32) {
     let mut unaff_ss: HWND16;
     let mut local_26: u32;
     let mut local_22: PAINTSTRUCT16;
+    let mut offset: u16;
 
     u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
@@ -4419,7 +4439,7 @@ pub fn draw_1020_9312(param_1: u32) {
     return;
 }
 
-pub fn draw_1020_9364(param_1: *mut Struct622) {
+pub fn draw_1020_9364(ctx: &mut AppContext, param_1: *mut Struct622) {
     let pi_var1: *mut i32;
     let mut u_var2: i32;
     let mut u_var3: u32;
@@ -4459,14 +4479,14 @@ pub fn draw_1020_9364(param_1: *mut Struct622) {
     GetClientRect16(CONCAT22(unaff_ss, &local_a), (i_var6 + 4));
     local_12 = local_a;
     local_e = local_6;
-    local_14 = u16_1050_4216;
-    local_16 = WORD_1050_422c;
-    local_1a = _PTR_PTR_BYTE_1050_0009_1050_4172_1050_4212;
-    local_1e = _PTR_PTR_s_ibr_1050_004f_1050_41b2_1050_4218;
-    local_22 = _PTR_PTR_s_ew_failed_in_Op_Op_1050_0021_1050_41da_1050_421c;
-    local_26 = _PTR_PTR_s_n_Op_Op__ResLibr_1050_0041_1050_4202_1050_4220;
-    local_2a = _PTR_WORD_1050_419a_1050_4224;
-    local_2e = _PTR_PTR_1050_4228;
+    local_14 = ctx.u16_1050_4216;
+    local_16 = ctx.WORD_1050_422c;
+    local_1a = ctx._PTR_PTR_BYTE_1050_0009_1050_4172_1050_4212;
+    local_1e = ctx._PTR_PTR_s_ibr_1050_004f_1050_41b2_1050_4218;
+    local_22 = ctx._PTR_PTR_s_ew_failed_in_Op_Op_1050_0021_1050_41da_1050_421c;
+    local_26 = ctx._PTR_PTR_s_n_Op_Op__ResLibr_1050_0041_1050_4202_1050_4220;
+    local_2a = ctx._PTR_WORD_1050_419a_1050_4224;
+    local_2e = ctx._PTR_PTR_1050_4228;
     u_var3 = (i_var6 + 6);
     local_30 = (u_var3 + 0x12);
     local_3a = 9;
@@ -4541,7 +4561,7 @@ pub fn draw_1020_9364(param_1: *mut Struct622) {
             local_30,
         );
         let pi_var1_val = unsafe { *pi_var1 };
-        LineTo16((local_14 - pi_var1_valv) * 2 + local_1a, x, local_30);
+        LineTo16((local_14 - pi_var1) * 2 + local_1a, x, local_30);
         i_var5 = ((local_16 - local_3a) * 2 + local_2a) + local_a;
         MoveToEx16(
             CONCAT22(unaff_ss, local_38),
@@ -4558,7 +4578,7 @@ pub fn draw_1020_9364(param_1: *mut Struct622) {
     (i_var6 + 0x10) = 0;
 }
 
-pub unsafe fn call_invalidate_rect_1020_8bcc(in_struct_1: *mut Struct693) {
+pub unsafe fn call_invalidate_rect_1020_8bcc(ctx: &mut AppContext, in_struct_1: *mut Struct693) {
     let paVar1: *mut Struct197;
     let mut u_var2: i32;
     let mut u_var3: u32;
@@ -4592,54 +4612,42 @@ pub unsafe fn call_invalidate_rect_1020_8bcc(in_struct_1: *mut Struct693) {
         local_struct_2 = local_struct_1.struct538_ptr_0x22;
         local_c = (local_struct_2 + 0x16);
         if (local_struct_1.field_0xc == 0) {
-            _local_14 = process_struct_1008_4772(local_a);
-            paVar4 = (_local_14 >> 0x10);
-            u_var2 = _local_14;
+            local_14 = process_struct_1008_4772(local_a);
+            paVar4 = (local_14 >> 0x10);
+            u_var2 = local_14;
             process_struct_1000_179c(0x14, paVar4);
-            _local_5c = CONCAT22(paVar4, u_var2);
+            local_5c = CONCAT22(paVar4, u_var2);
             if ((paVar4 | u_var2) == 0) {
                 local_struct_1.field_0xc = 0;
             } else {
                 u_var3 = in_struct_1 & 0xffff0000 | &local_struct_1.field_0x16;
-                u_var5 = (_local_14 >> 0x10);
-                process_struct_1008_50c2(
-                    _local_5c,
-                    (_local_14 + 8),
-                    (_local_14 + 4),
-                    u_var3,
-                    local_6,
-                );
+                u_var5 = (local_14 >> 0x10);
+                process_struct_1008_50c2(local_5c, (local_14 + 8), (local_14 + 4), u_var3, local_6);
                 paVar1 = local_struct_1.field_0xc;
                 u_var2 = u_var3;
                 paVar1 = u_var2;
                 (paVar1 + 2) = extraout_dx;
             }
             pass1_1008_5134(local_struct_1.field_0xc);
-            mixed_fn_1010_830a(_g_struct_73_1050_14cc, 2);
+            mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 2);
             process_struct_1008_48fe(
                 CONCAT22(unaff_ss, local_3a),
                 1,
                 CONCAT22(extraout_dx_00, u_var2),
             );
             pass1_1008_3f92(CONCAT22(unaff_ss, local_58), CONCAT22(unaff_ss, local_3a));
-            _local_14 = process_struct_1008_4772(CONCAT22(unaff_ss, local_58));
-            paVar4 = (_local_14 >> 0x10);
-            u_var2 = _local_14;
+            local_14 = process_struct_1008_4772(CONCAT22(unaff_ss, local_58));
+            paVar4 = (local_14 >> 0x10);
+            u_var2 = local_14;
             process_struct_1000_179c(0x14, paVar4);
-            _local_5c = CONCAT22(paVar4, u_var2);
+            local_5c = CONCAT22(paVar4, u_var2);
             if ((paVar4 | u_var2) == 0) {
                 paVar1 = local_struct_1.field_0xc;
                 (paVar1 + 4) = 0;
             } else {
                 u_var3 = in_struct_1 & 0xffff0000 | &local_struct_1.field_0x16;
-                u_var5 = (_local_14 >> 0x10);
-                process_struct_1008_50c2(
-                    _local_5c,
-                    (_local_14 + 8),
-                    (_local_14 + 4),
-                    u_var3,
-                    local_6,
-                );
+                u_var5 = (local_14 >> 0x10);
+                process_struct_1008_50c2(local_5c, (local_14 + 8), (local_14 + 4), u_var3, local_6);
                 paVar1 = local_struct_1.field_0xc;
                 u_var5 = (paVar1 >> 0x10);
                 local_bx_310 = paVar1;
@@ -4664,7 +4672,7 @@ pub unsafe fn call_invalidate_rect_1020_8bcc(in_struct_1: *mut Struct693) {
     return;
 }
 
-pub unsafe fn invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32) {
+pub unsafe fn invalidate_rect_1020_8d90(ctx: &mut AppContext, param_1: u32, param_2: u16, param_3: u32) {
     let mut u_var1: u32;
     let mut in_dx: i32;
     let mut i_var2: i32;
@@ -4692,8 +4700,8 @@ pub unsafe fn invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32
             string_fn_1000_3f9c(
                 local_10,
                 unaff_ss,
-                s__03ld_1050_442a,
-                &g_alloc_addr_1050_1050,
+                ctx.s__03ld_1050_442a,
+                &ctx.g_alloc_addr_1050_1050,
                 local_6,
             );
             u_var1 = (i_var2 + 0x22);
@@ -4712,7 +4720,7 @@ pub unsafe fn invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32
                 (param_1 & 0xffff0000 | (i_var2 + 0x1c)),
                 CONCAT22(unaff_ss, local_38),
             );
-            _local_3c = process_struct_1008_4772(CONCAT22(unaff_ss, local_38));
+            local_3c = process_struct_1008_4772(CONCAT22(unaff_ss, local_38));
             pass1_1008_3e94(
                 (i_var2 + 0x1c),
                 CONCAT22(unaff_ss, &local_40),
@@ -4720,9 +4728,9 @@ pub unsafe fn invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32
             );
             local_48 = local_3e;
             local_46 = local_40;
-            u_var3 = (_local_3c >> 0x10);
-            local_44 = local_3e + (_local_3c + 4);
-            local_42 = local_40 + (_local_3c + 8);
+            u_var3 = (local_3c >> 0x10);
+            local_44 = local_3e + (local_3c + 4);
+            local_42 = local_40 + (local_3c + 8);
             InvalidateRect16(0, &local_48, unaff_ss);
             process_struct_1008_41bc(CONCAT22(unaff_ss, local_38));
         }
@@ -4730,7 +4738,7 @@ pub unsafe fn invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32
     return;
 }
 
-pub fn realize_palette_1020_8128(param_1: u32, param_2: i32) {
+pub unsafe fn realize_palette_1020_8128(ctx: &mut AppContext, param_1: u32, param_2: i32) {
     let pp_var1: fn();
     let mut u_var2: u32;
     let pu_var3: *mut u8;
@@ -4777,13 +4785,13 @@ pub fn realize_palette_1020_8128(param_1: u32, param_2: i32) {
             pu_var4 = u_var2;
             let pu_var4_1 = unsafe { *pu_var4 };
             pp_var1 = (pu_var4_1 + 0x90);
-            (**pp_var1)(&PTR_LOOP_1050_1008, pu_var4, u_var7, 1, u_var2);
+            (**pp_var1)(&ctx.PTR_LOOP_1050_1008, pu_var4, u_var7, 1, u_var2);
         }
     }
     return;
 }
 
-pub fn draw_func_1020_81c0(param_1: u32) {
+pub fn draw_func_1020_81c0(ctx: &mut AppContext, param_1: u32) {
     let mut u_var1: u32;
     let mut hdc: HDC16;
     let mut h_palette: HDC16;
@@ -4796,10 +4804,10 @@ pub fn draw_func_1020_81c0(param_1: u32) {
     let mut local_8: u16;
     let mut local_6: u32;
 
-    u_var2 = (_PTR_LOOP_1050_4230 >> 0x10);
-    u_var1 = (_PTR_LOOP_1050_4230 + 0xe);
+    u_var2 = (ctx._PTR_LOOP_1050_4230 >> 0x10);
+    u_var1 = (ctx._PTR_LOOP_1050_4230 + 0xe);
     local_6._0_2_ = u_var1;
-    if (((_PTR_LOOP_1050_4230 + 0x10) | local_6) == 0) {
+    if (((ctx._PTR_LOOP_1050_4230 + 0x10) | local_6) == 0) {
         return;
     }
     hdc = GetDC16((param_1 + 8));
@@ -4834,7 +4842,7 @@ pub fn destroy_win_1020_8250(param_1: u32) {
     return;
 }
 
-pub unsafe fn load_cursor_1020_7f7a(in_struct_65_1: *mut Struct65, param_2: u32, param_3: u32) {
+pub unsafe fn load_cursor_1020_7f7a(ctx: &mut AppContext, in_struct_65_1: *mut Struct65, param_2: u32, param_3: u32) {
     let mut u_var1: u16;
     let mut h_gdi_obj: HGDIOBJ16;
     let mut h_cursor: HCURSOR16;
@@ -4851,10 +4859,10 @@ pub unsafe fn load_cursor_1020_7f7a(in_struct_65_1: *mut Struct65, param_2: u32,
     load_cursor_1008_61b2(in_struct_65_1, param_2, u_var4, param_3);
     u_var2 = (in_struct_65_1 >> 0x10);
     struct_65_1 = in_struct_65_1;
-    struct_65_1.ptr_b_lo = s_1_1050_389a;
-    struct_65_1.ptr_b_hi = &PTR_LOOP_1050_1008;
-    struct_65_1.ptr_b_lo = (s_18_2_1050_3aa5 + 3);
-    struct_65_1.ptr_b_hi = &PTR_LOOP_1050_1008;
+    struct_65_1.ptr_b_lo = ctx.s_1_1050_389a;
+    struct_65_1.ptr_b_hi = &ctx.PTR_LOOP_1050_1008;
+    struct_65_1.ptr_b_lo = (ctx.s_18_2_1050_3aa5 + 3);
+    struct_65_1.ptr_b_hi = &ctx.PTR_LOOP_1050_1008;
     &struct_65_1.u16_xe6 = 0;
     struct_65_1.u16_xea = 0;
     struct_65_1.u16_xec = 0;
@@ -4864,16 +4872,16 @@ pub unsafe fn load_cursor_1020_7f7a(in_struct_65_1: *mut Struct65, param_2: u32,
     struct_65_1.ptr_b_hi = 0x1020;
     copy_string_1000_3d3e(
         (in_struct_65_1 & 0xffff0000 | ZEXT24(&struct_65_1.char_ptr_x5b)),
-        s_VrMode_1050_4422,
+        ctx.s_VrMode_1050_4422,
     );
     h_gdi_obj = GetStockObject16(5);
     struct_65_1.h_gdi_obj_xc6 = h_gdi_obj;
     h_cursor = LoadCursor16(0x7f00, 0);
     struct_65_1.h_cursor_xc4 = h_cursor;
-    struct_65_1.u16_xc8 = (s_576_bmp_1050_2027 + 1);
+    struct_65_1.u16_xc8 = (ctx.s_576_bmp_1050_2027 + 1);
     struct_65_1.u32_xac = 0x47000000;
     struct_65_1.astruct_590_ptr_xbc = (param_3 + 8);
-    ppVar3 = process_struct_1010_20ba(_g_astruct_372_1050_0ed0, CONCAT22(in_stack_0000ffe8, 0x48));
+    ppVar3 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, CONCAT22(in_stack_0000ffe8, 0x48));
     u_var1 = (ppVar3 >> 0x10);
     struct_65_1.u16_xb4 = 0;
     struct_65_1.u16_xb6 = 0;
@@ -4884,7 +4892,7 @@ pub unsafe fn load_cursor_1020_7f7a(in_struct_65_1: *mut Struct65, param_2: u32,
     return;
 }
 
-pub fn draw_1020_7cc8(param_1: *mut u8) {
+pub fn draw_1020_7cc8(ctx: &mut AppContext, param_1: *mut u8) {
     let mut iVar1: i32;
     let ppc_var2: fn();
     let mut u_var3: u32;
@@ -4935,13 +4943,14 @@ pub fn draw_1020_7cc8(param_1: *mut u8) {
     let mut local_a: u32;
     let mut window_dc: u16;
     let mut b_result: u16;
+    let mut offset: u16;
 
     u_var9 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     b_result = IsIconic16(local_bx_4.h_window);
-    if ((b_result == 0) || (PTR_LOOP_1050_0010 != 0x0)) {
+    if ((b_result == 0) || (ctx.PTR_LOOP_1050_0010 != 0x0)) {
         window_dc = GetWindowDC16(local_bx_4.h_window);
-        local_a = (_PTR_LOOP_1050_4230 + 0xe);
+        local_a = (ctx._PTR_LOOP_1050_4230 + 0xe);
         local_c = &window_dc;
         realize_palette_1008_4e08(local_a, (local_a >> 0x10), local_c, h_wnd);
         GetWindowRect16(CONCAT22(&local_14, 0x1008), h_wnd);
@@ -5092,8 +5101,8 @@ pub fn call_draw_fn_1020_79b4(param_1: *mut Struct674, param_2: u16, param_3: *m
     return;
 }
 
-pub fn call_draw_fn_1020_79e4(param_1: *mut u8) {
-    draw_1020_7cc8(*(param_1 + 0xe8));
+pub fn call_draw_fn_1020_79e4(ctx: &mut AppContext, param_1: *mut u8) {
+    draw_1020_7cc8(ctx, *(param_1 + 0xe8));
     return;
 }
 
@@ -8984,7 +8993,7 @@ pub unsafe fn win_fn_1020_179c(param_1: *mut Struct20) {
             );
             SetWindowText16(CONCAT22(unaff_ss, &stack0xfe88), local_66);
         }
-        _local_3c = MakeProcInstance16(offset, CONCAT22(0x1e1e, g_h_instance_1050_038c));
+        local_3c = MakeProcInstance16(offset, CONCAT22(0x1e1e, g_h_instance_1050_038c));
         GetWindowRect16(
             CONCAT13((&local_6e >> 8), CONCAT12(&local_6e, 0x1538)),
             unaff_ss,
@@ -9008,13 +9017,13 @@ pub unsafe fn win_fn_1020_179c(param_1: *mut Struct20) {
     } else {
         mci_send_command_1008_5c7c(_g_struct_ptr_1050_02a0, 0x9d0001);
         (i_var8 + 0x8c) = BVar7;
-        _local_3c = MakeProcInstance16(
+        local_3c = MakeProcInstance16(
             &PTR_LOOP_1050_1008,
             CONCAT22(0x1dea, g_h_instance_1050_038c),
         );
     }
-    EnumChildWindows16(0, _local_3c, (_local_3c >> 0x10));
-    FreeProcInstance16(CONCAT13((_local_3c >> 8), CONCAT12(_local_3c, 0x1538)));
+    EnumChildWindows16(0, local_3c, (local_3c >> 0x10));
+    FreeProcInstance16(CONCAT13((local_3c >> 8), CONCAT12(local_3c, 0x1538)));
     local_46 = GetDlgItem16(1, (i_var8 + 6));
     GetWindowRect16(CONCAT22(&local_1c, 0x1538), unaff_ss);
     local_40 = local_18;

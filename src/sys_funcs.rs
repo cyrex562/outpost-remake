@@ -23,12 +23,12 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: *mut
     let apu_stack4: [u8; 2];
 
     ctx.PTR_LOOP_1050_5fd4 = param_1;
-    param_1 = (s_fem15_wav_1050_263a + 3);
+    param_1 = (ctx.s_fem15_wav_1050_263a + 3);
     ctx.PTR_LOOP_1050_5fd2 = in_stack_00000000;
     u_var13 = exit_1000_2950();
     apu_stack4[1] = g_h_instance;
     i_stack8 = 0x104;
-    u_stack12 = SUB42(s_fem17_wav_1050_264e + 7, 0);
+    u_stack12 = SUB42(ctx.s_fem17_wav_1050_264e + 7, 0);
     ctx.PTR_LOOP_1050_5fc4 = (u_var13 >> 0x10);
     u_var14 = u_var13;
     i_var4 = GetModuleFileName16();
@@ -52,7 +52,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: *mut
         c_var2 == '\t'
     } {}
     if ((c_var2 != '\r') && (c_var2 != '\0')) {
-        PTR_LOOP_1050_5fb8 = PTR_LOOP_1050_5fb8 + 1;
+        ctx.PTR_LOOP_1050_5fb8 = ctx.PTR_LOOP_1050_5fb8 + 1;
         loop {
             pc_var9 = pc_var9 + -1;
             // LAB_1000_267f:
@@ -152,14 +152,14 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: *mut
     if ((c_var2 == '\r') || (c_var2 == '\0')) {
         // LAB_1000_27c1:
         *(&pc_stack6 + i_var4) = offset;
-        (&i_stack8 + i_var4) = (s_fem54_wav_1050_27c0 + 5);
+        (&i_stack8 + i_var4) = (ctx.s_fem54_wav_1050_27c0 + 5);
         u_var5 = exported_stub_1000_29dc();
         *ppc_var8 = 0x0;
         ppc_var8[1] = 0x0;
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
-        (**&PTR_LOOP_1050_5fd2)();
-        _PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4, PTR_LOOP_1050_5fc2);
+        (**&ctx.PTR_LOOP_1050_5fd2)();
+        ctx._PTR_LOOP_1050_5fc2 = CONCAT22(ctx.PTR_LOOP_1050_5fc4, ctx.PTR_LOOP_1050_5fc2);
         return;
     }
     *ppc_var8 = pc_var11;
@@ -7180,5 +7180,15 @@ pub fn lstrlen16(_str: &String) -> i16 {
 
 // DWORD WINAPI GetTextExtent16( HDC16 hdc, LPCSTR str, INT16 count )
 pub fn GetTextExtent16(hdc: HDC16, _str: &String, count: i16) -> u32 {
+    unimplemented!()
+}
+
+// BOOL16 WINAPI MoveToEx16( HDC16 hdc, INT16 x, INT16 y, LPPOINT16 pt )
+pub fn MoveToEx16(hdc: HDC16, x: i16, y: i16, pt: &POINT16) -> bool {
+    unimplemented!()
+}
+
+// HCURSOR16 WINAPI LoadCursor16(HINSTANCE16 hInstance, LPCSTR name)
+pub fn LoadCursor16(hinstance: HINSTANCE16, name: &String) -> HCURSOR16 {
     unimplemented!()
 }
