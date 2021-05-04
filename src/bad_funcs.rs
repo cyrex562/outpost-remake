@@ -372,8 +372,8 @@ pub unsafe fn bad_fn_1050_525e() {
     let mut u_var20: u32;
     let mut u_var21: u32;
     let pc_var22: u16;
-    let mut in_cx: i32;
-    let mut i_var25: i32;
+    let mut in_cx: u16;
+    let mut i_var25: u16;
     let pi_var26: *mut u16;
     let mut u_var27: i32;
     let mut u_var28: i32;
@@ -414,8 +414,8 @@ pub unsafe fn bad_fn_1050_525e() {
     let mut in_esi: u32;
     let pu_var60: *mut u16;
     let mut unaff_di: u16;
-    let pi_var61: *mut i32;
-    let pi_var62: *mut i32;
+    let pi_var61: u16;
+    let pi_var62: u16;
     let mut u_var63: i32;
     let pu_var64: *mut u32;
     let pu_var65: *mut u32;
@@ -507,7 +507,7 @@ pub unsafe fn bad_fn_1050_525e() {
     u_var16 = i_var15 + 2;
     // set one pointer to another
     pi_var4 = pi_var61;
-    c_var12 = u_var16;
+    c_var12 = u_var16 as u8;
     // *pi_var4 = *pi_var4 + c_var12;
     pc_var22 = (in_bx + pi_var61);
     // *pc_var22 = *pc_var22 + c_var12;
@@ -521,7 +521,7 @@ pub unsafe fn bad_fn_1050_525e() {
     // *pc_var22 = *pc_var22 + c_var36;
     pc_var22 = 0x7300;
     // *pc_var22 = *pc_var22 + (in_bx >> 8);
-    c_var29 = in_edx;
+    c_var29 = in_edx as u8;
     u_var34 = in_edx & 0xffff0000;
     pi_var4 = pi_var61;
     // *pi_var4 = *pi_var4 + 1;
@@ -532,9 +532,10 @@ pub unsafe fn bad_fn_1050_525e() {
     pi_var4 = in_bx + 0x3980;
     // *pi_var4 = *pi_var4 + c_var12;
     pc_var22 = (in_bx + pi_var61 + 0x105);
-    *pc_var22 = *pc_var22 + c_var36 * 0x2;
+    // todo: port value
+    pc_var22 = pc_var22 + c_var36 as u16 * 0x2;
     pc_var22 = 0xaf00;
-    b_var24 = i_var25;
+    b_var24 = i_var25 as u8;
     *pc_var22 = *pc_var22 + b_var24;
     pc_var22 = 0x7300;
     *pc_var22 = *pc_var22 + c_var29;

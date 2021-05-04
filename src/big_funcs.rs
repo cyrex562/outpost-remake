@@ -257,7 +257,7 @@ pub unsafe fn big_fn_1008_15d4(
         let in_1: *mut Struct306 = CONCAT22(stack_seg_n, string_d);
         pass1_1008_5b12(in_1);
         pustruct_f = (i32_e | string_d);
-        if (pustruct_f == 0) {
+        if pustruct_f == 0 {
             broke = true;
             break;
         }

@@ -7142,3 +7142,43 @@ pub fn GrayString16(
 pub fn GetSystemMetrics16(index: i16) -> i16 {
     unimplemented!()
 }
+
+// HANDLE16 WINAPI GetProp16( HWND16 hwnd, LPCSTR str )
+pub fn GetProp16(hwnd: HWND16, str: &String) -> HANDLE16 {
+    unimplemented!()
+}
+
+// void WINAPI ScreenToClient16( HWND16 hwnd, LPPOINT16 lppnt )
+pub fn ScreenToClient16(hwnd: HWND16, lppnt: &POINT16) {
+    unimplemented!()
+}
+
+// BOOL16 WINAPI IsIconic16(HWND16 hwnd)
+pub fn IsIconic16(hwnd: HWND16) -> bool {
+    unimplemented!()
+}
+
+// HDC16 WINAPI GetWindowDC16( HWND16 hwnd )
+pub fn GetWindowDC16(hwnd: HWND16) -> HDC16 {
+    unimplemented!()
+}
+
+// void WINAPI GetWindowRect16( HWND16 hwnd, LPRECT16 rect )
+pub fn GetWindowRect16(hwnd: HWND16, rect: &RECT16) {
+    unimplemented!()
+}
+
+// LONG WINAPI GetWindowLong16( HWND16 hwnd16, INT16 offset )'
+pub fn GetWindowLong16(hwnd16: HWND16, offset: i16) -> libc::c_long {
+    unimplemented!()
+}
+
+// INT16 WINAPI lstrlen16( LPCSTR str )
+pub fn lstrlen16(_str: &String) -> i16 {
+    unimplemented!()
+}
+
+// DWORD WINAPI GetTextExtent16( HDC16 hdc, LPCSTR str, INT16 count )
+pub fn GetTextExtent16(hdc: HDC16, _str: &String, count: i16) -> u32 {
+    unimplemented!()
+}
