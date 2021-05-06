@@ -6,7 +6,7 @@ pub fn return_1000_214a() {
     return;
 }
 
-pub fn xor_1000_49b2(uparam_1: i32) -> i32 {
+pub fn xor_1000_49b2(param_1: i32) -> i32 {
     return (param_1 ^ param_1 >> 0xf) - (param_1 >> 0xf);
 }
 
@@ -97,12 +97,12 @@ pub fn set_timer_1008_91ba(param_1: *mut u16) -> *mut u16 {
 
     pu_var2 = (param_1 >> 0x10);
     local_bx_4 = param_1;
-    unsafe { *param_1 = s_1_1050_389a };
-    local_bx_4.field_0x2 = &PTR_LOOP_1050_1008;
+    unsafe { *param_1 = ctx.s_1_1050_389a };
+    local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     local_bx_4.field_0x4 = 0;
     process_struct_1008_574a((param_1 & 0xffff0000 | ZEXT24(local_bx_4 + 1)));
     unsafe { *param_1 = 0x9416 };
-    local_bx_4.field_0x2 = &PTR_LOOP_1050_1008;
+    local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     PTR_LOOP_1050_0388 = local_bx_4;
     PTR_LOOP_1050_038a = pu_var2;
     u_var1 = SetTimer16(0, 0, 1, 1);
@@ -119,12 +119,12 @@ pub fn kill_timer_1008_921c(param_1: *mut Struct215) {
     u_var1 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     param_1.ptr_a_lo = 0x9416;
-    local_bx_4.ptr_a_hi = &PTR_LOOP_1050_1008;
-    KillTimer16(1, g_h_window);
+    local_bx_4.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
+    KillTimer16(1, ctx.g_h_window);
     _PTR_LOOP_1050_0388 = 0;
     pass1_1008_57c4((param_1 & 0xffff0000 | &local_bx_4.field_0x6));
-    param_1.ptr_a_lo = s_1_1050_389a;
-    local_bx_4.ptr_a_hi = &PTR_LOOP_1050_1008;
+    param_1.ptr_a_lo = ctx.s_1_1050_389a;
+    local_bx_4.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 
@@ -318,7 +318,7 @@ pub fn write_private_profile_str_1010_622a(param_1: u32, param_3: i32) {
             u_var1,
             (u_var1 >> 0x10),
             s__d__d__d__d_1050_14ae,
-            &g_alloc_addr_1050_1050,
+            &ctx.g_alloc_addr_1050_1050,
             (param_3 * 8 + param_1 + 0x22),
         );
         WritePrivateProfileString(

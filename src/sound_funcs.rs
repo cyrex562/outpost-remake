@@ -20,7 +20,7 @@ pub fn sound_fn_1008_53ae(param_1: u32, param_2: u16) {
 
     local_1e = 0;
     local_16 = 0x28c;
-    local_14 = &g_alloc_addr_1050_1050;
+    local_14 = &ctx.g_alloc_addr_1050_1050;
     local_12 = param_1;
     local_e = 0;
     local_a = 0;
@@ -58,7 +58,7 @@ pub fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
     let mut u_var1: u32;
     let mut local_DXAX_12: u32;
 
-    u_var1 = pass1_1010_84f8(_g_struct_73_1050_14cc, param_2);
+    u_var1 = pass1_1010_84f8(ctx._g_struct_73_1050_14cc, param_2);
     mci_send_command_1008_5cfe(param_1, u_var1);
     return;
 }
@@ -66,7 +66,11 @@ pub fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
 pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut Struct13) {
     let mut u_var1: u32;
 
-    u_var1 = set_error_mode_1010_85be(_g_struct_73_1050_14cc, in_struct_1, (in_struct_1 >> 0x10));
+    u_var1 = set_error_mode_1010_85be(
+        ctx._g_struct_73_1050_14cc,
+        in_struct_1,
+        (in_struct_1 >> 0x10),
+    );
     mci_send_command_1008_5cfe(in_char_buff, u_var1);
     return;
 }
@@ -204,7 +208,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
         local_Struct620_ptr_1.field_0xea = 1;
         pass1_1008_941a(CONCAT22(unaff_ss, local_6), 1, 0x7a);
         u_var3 = ZEXT24(local_6);
-        mci_send_command_1008_5c9e(_g_struct_ptr_1050_02a0, CONCAT22(unaff_ss, local_6));
+        mci_send_command_1008_5c9e(ctx._g_struct_ptr_1050_02a0, CONCAT22(unaff_ss, local_6));
         local_Struct620_ptr_1.field_0xec = u_var3;
         paVar4 = struct_a;
         process_struct_1000_179c(0x112, struct_a);
@@ -249,8 +253,10 @@ pub fn win_and_mci_fn_1018_ea66(param_1: *mut Struct626) {
     if (local_struct_1.bool_xEA == 0) {
         local_struct_1.bool_xEA = 1;
         pass1_1008_941a(CONCAT22(local_SS__1, char_buf_1), 1, 0x95);
-        local_AX_77 =
-            mci_send_command_1008_5c9e(_g_struct_ptr_1050_02a0, CONCAT22(local_SS__1, char_buf_1));
+        local_AX_77 = mci_send_command_1008_5c9e(
+            ctx._g_struct_ptr_1050_02a0,
+            CONCAT22(local_SS__1, char_buf_1),
+        );
         local_struct_1.field_0xec = local_AX_77;
         window_msg_func_1010_7300(local_struct_1.field_0xf6, 0, 0x80000, 0);
     }
@@ -289,7 +295,7 @@ pub fn mci_fn_1020_08b6(param_1: *mut Struct65, param_2: u16, param_3: &mut Vec<
     (iVar1 + 0xe8) = 0;
     param_1.ptr_a_lo = 0xb0e;
     (iVar1 + 2) = 0x1020;
-    mci_send_cmd_1008_5c5c(_g_struct_ptr_1050_02a0, 0x1d4);
+    mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, 0x1d4);
     return;
 }
 
@@ -297,10 +303,10 @@ pub fn sound_fn_1040_8978(param_1: *mut u32, param_2: u16) {
     let fn_ptr_1: fn();
 
     process_win_msg_1008_9510();
-    mci_send_cmd_1008_5c5c(_g_struct_ptr_1050_02a0, param_2);
+    mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, param_2);
     unsafe {
         fn_ptr_1 = (*param_1 + 0x74);
-        (**fn_ptr_1)(&PTR_LOOP_1050_1008, param_1);
+        (**fn_ptr_1)(&ctx.PTR_LOOP_1050_1008, param_1);
     }
     return;
 }

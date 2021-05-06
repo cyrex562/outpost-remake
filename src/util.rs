@@ -83,3 +83,37 @@ pub fn SBORROW2(a: u16, b: u16) -> u32 {
     todo!();
     0
 }
+
+pub fn CONCAT210(local_3a: u16, u_stack68: ()) -> () {
+    todo!()
+}
+
+pub fn CONCAT212(local_38: u16, u_stack68: ()) -> () {
+    todo!()
+}
+
+pub fn CONCAT214(local_36: u16, u_stack68: ()) -> () {
+    todo!()
+}
+
+pub fn CONCAT24(b_result_2: u16, arg: i32) -> () {
+    todo!()
+}
+
+
+
+pub fn CONCAT26(local_4e: u16, b_result_2: ()) -> () {
+    todo!()
+}
+
+pub fn CONCAT28(local_4c: u16, b_result_2: ()) -> () {
+    todo!()
+}
+
+pub fn CONCAT610(u_stack74: (), b_result_2: ()) -> () {
+    todo!()
+}
+
+fn CONCAT66(u_stack34: (), u_var1: ()) -> () {
+    todo!()
+}

@@ -79,10 +79,12 @@ pub unsafe fn call_big_fn_1040_b17c(
         // if *pu_var2 == u16_n || *pu_var2 < u16_n {
         //     break;
         // }
-        // todo: get value at address 
-        if pu_var2 == u16_n || pu_var2 < u16_n { break; }
+        // todo: get value at address
+        if pu_var2 == u16_n || pu_var2 < u16_n {
+            break;
+        }
         u_var1 = pu_var2 + 2; // value at address + offset
-        //(u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
+                              //(u16_n * 10 + u_var1 + 4) = (u16_n * 2 + in_u32_b);
         todo!();
         u16_n = u16_n + 1;
     }
@@ -90,17 +92,15 @@ pub unsafe fn call_big_fn_1040_b17c(
     pu_var2 = (*pstruct_e).field_0x90;
     u32_j = (pu_var2 + 2) as u32;
     u16_n = 0;
-    while (
-        pu_var2 = pstruct_e.field_0x90,
-        *pu_var2 != u16_n && u16_n <= *pu_var2,
-    ) {
-        pu_var2 = pstruct_e.field_0x90;
-        u_var3 = u16_n;
-        big_fn_1010_b038(pustruct_h, (pu_var2 + 6));
-        pass1_1040_a626(u32_j, CONCAT22(u16_d, u_var3));
-        u32_j = u32_j & 0xffff0000 | (u32_j + 10);
-        u16_n = u16_n + 1;
-    }
+    // TODO
+    // while (*pu_var2 != u16_n && u16_n <= *pu_var2) {
+    //     pu_var2 = (*pstruct_e).field_0x90;
+    //     u_var3 = u16_n;
+    //     big_fn_1010_b038(pustruct_h, (pu_var2 + 6));
+    //     pass1_1040_a626(u32_j, CONCAT22(u16_d, u_var3));
+    //     u32_j = u32_j & 0xffff0000 | (u32_j + 10);
+    //     u16_n = u16_n + 1;
+    // }
     return;
 }
 
@@ -120,14 +120,11 @@ pub unsafe fn call_big_fn_1040_b17c(
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub unsafe fn big_fn_1008_15d4(
-    ctx: &mut AppContext, 
-    param_1: *mut Struct657, 
-    param_2: u16) {
+pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, param_2: u16) {
     let pi32_a: *mut i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
-    let mut string_d: *mut libc::c_char;
+    let mut string_d: String;
     let mut i32_e: i32;
     let pustruct_f: *mut Struct199;
     let mut i32_g: i32;
@@ -242,21 +239,25 @@ pub unsafe fn big_fn_1008_15d4(
     let mut u32_s: u32;
     let mut u16_t: u16;
     let mut u16_v: u16;
-    let mut string_w: [u8; 8];
+    let mut string_w: String;
     let mut u32_x: u32;
+    let mut in_1: u16;
 
     u32_x = 0;
-    i32_c = param_1;
-    pass1_1008_57a4(
-        CONCAT22(stack_seg_n, string_w),
-        param_1 & 0xffff0000 | (i32_c + 0xd2),
-    );
+    // TODO
+    // i32_c = param_1;
+    // TODO
+    // pass1_1008_57a4(
+    //     CONCAT22(stack_seg_n, string_w),
+    //     param_1 & 0xffff0000 | (i32_c + 0xd2),
+    // );
     let mut broke = false;
     while {
         string_d = string_w;
-        let in_1: *mut Struct306 = CONCAT22(stack_seg_n, string_d);
+        // TODO
+        //let in_1: *mut Struct306 = CONCAT22(stack_seg_n, string_d);
         pass1_1008_5b12(in_1);
-        pustruct_f = (i32_e | string_d);
+        pustruct_f = i32_e | string_d;
         if pustruct_f == 0 {
             broke = true;
             break;

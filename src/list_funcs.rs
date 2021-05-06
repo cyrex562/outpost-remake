@@ -1,6 +1,6 @@
 pub fn modify_list_1008_5b6e(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    unsafe { *param_1 = s_1_1050_389a };
-    (param_1 + 2) = &PTR_LOOP_1050_1008;
+    unsafe { *param_1 = ctx.s_1_1050_389a };
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {
         free_mem_1000_093a(param_1);
     }
@@ -23,9 +23,9 @@ pub fn modify_u16_list_1008_5bdc(in_struct_a: *mut Struct375) {
     struct_a.field_0x10 = 0;
     &struct_a.u32_x12 = 0;
     in_struct_a.ptr_1_lo = 0x5fc8;
-    struct_a.ptr_1_hi = &PTR_LOOP_1050_1008;
-    _g_struct_ptr_1050_02a0 = in_struct_a;
-    ppVar1 = process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(local_BP__1, 2));
+    struct_a.ptr_1_hi = &ctx.PTR_LOOP_1050_1008;
+    ctx._g_struct_ptr_1050_02a0 = in_struct_a;
+    ppVar1 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_BP__1, 2));
     local_DX_63 = (ppVar1 >> 0x10);
     struct_a.ptr_2_hi = ppVar1;
     struct_a.u32_x0e = local_DX_63;
@@ -34,8 +34,8 @@ pub fn modify_u16_list_1008_5bdc(in_struct_a: *mut Struct375) {
 
 pub fn modify_u16_list_1008_5c34(in_u16_list: *mut u16) {
     unsafe { *in_u16_list = 0x5fc8 };
-    (in_u16_list + 2) = &PTR_LOOP_1050_1008;
-    _g_struct_ptr_1050_02a0 = 0;
+    (in_u16_list + 2) = &ctx.PTR_LOOP_1050_1008;
+    ctx._g_struct_ptr_1050_02a0 = 0;
     pass1_1010_1d80(in_u16_list);
     return;
 }
@@ -102,9 +102,9 @@ pub fn modify_list_1008_8168(in_list: *mut u16) {
     local_es_4 = (in_list >> 0x10);
     unsafe {
         *in_list = 0x87c8;
-        (in_list + 2) = &PTR_LOOP_1050_1008;
-        *in_list = s_1_1050_389a;
-        (in_list + 2) = &PTR_LOOP_1050_1008;
+        (in_list + 2) = &ctx.PTR_LOOP_1050_1008;
+        *in_list = ctx.s_1_1050_389a;
+        (in_list + 2) = &ctx.PTR_LOOP_1050_1008;
     }
     return;
 }
@@ -169,8 +169,8 @@ pub fn pass1_1008_87cc(
 
     local_es_6 = (param_1 >> 0x10);
     struct_204_1 = param_1;
-    param_1 = s_1_1050_389a;
-    struct_204_1.field_0x2 = &PTR_LOOP_1050_1008;
+    param_1 = ctx.s_1_1050_389a;
+    struct_204_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     struct_204_1.field_0x4 = param_5;
     &struct_204_1.field_0x8 = 0;
     struct_204_1.field_0xc = param_3;
@@ -187,10 +187,10 @@ pub fn pass1_1008_87cc(
     struct_204_1.field_0x40 = 1;
     struct_204_1.field_0x42 = param_6;
     param_1 = 0x8e9a;
-    struct_204_1.field_0x2 = &PTR_LOOP_1050_1008;
+    struct_204_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     if (_PTR_LOOP_1050_0382 == 0x0) {
         _PTR_LOOP_1050_0382 =
-            process_struct_1010_20ba(_g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x2e));
+            process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x2e));
     }
     _local_6 = process_struct_1008_4772(struct_204_1.field_0x4);
     local_DX_196 = (_local_6 >> 0x10);

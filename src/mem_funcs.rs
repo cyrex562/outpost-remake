@@ -13,7 +13,7 @@ pub fn free_mem_1000_0016(param_1: u32) -> u32 {
         invoke_error_handler_1000_1e61(unaff_cs, 10, 0);
         return 0xffffffff;
     }
-    u_var1 = free_mem_1000_0052(&g_alloc_addr_1050_1050);
+    u_var1 = free_mem_1000_0052(&ctx.g_alloc_addr_1050_1050);
     return u_var1;
 }
 
@@ -167,10 +167,10 @@ pub fn get_mem_sz_1000_01b0() -> bool {
     local_e = 0;
     if (((in_BX + 0x40) | (in_BX + 0x3e)) == 0) {
         u_var5 = in_BX + 0x36;
-        lVar8 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+        lVar8 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
         lVar7 = lVar8;
     } else {
-        lVar7 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+        lVar7 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
         u_var5 = lVar7;
         if (((lVar7 >> 0x10) != 0) || (0xffef < u_var5)) {
             invoke_error_handler_1000_1e61(unaff_cs, 8, in_BX);
@@ -191,7 +191,7 @@ pub fn get_mem_sz_1000_01b0() -> bool {
                 (in_BX + 0x16) | 0x1000,
                 lVar8,
                 in_BX,
-                &g_alloc_addr_1050_1050,
+                &ctx.g_alloc_addr_1050_1050,
             );
             if (i_var3 != 0) {
                 break;
@@ -202,7 +202,7 @@ pub fn get_mem_sz_1000_01b0() -> bool {
                 if (i_var3 == 0) {
                     return (in_BX + 10) != 0;
                 }
-                lVar7 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+                lVar7 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
                 u_var5 = u_var4 & 0xfffe;
             }
         }
@@ -219,7 +219,7 @@ pub fn get_mem_sz_1000_01b0() -> bool {
     if (u_var5 != 0) {
         u_var10 = 0;
         u_var9 = 0xc;
-        lVar8 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+        lVar8 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
         i_var3 = pass1_fn_1000_5390(
             lVar8 - 0x42,
             (lVar8 >> 0x10) - (lVar8 < 0x42),
@@ -370,13 +370,13 @@ pub fn alloc_mem_1000_03c6(
                 local_AX_131[5] = alloc_addr._2_2_;
                 &PTR_LOOP_1050_000c = param_2 | 0xcad0;
                 0x0 = param_3;
-                &dos_alloc_addr_1050_0002 = &g_alloc_addr_1050_1050;
+                &dos_alloc_addr_1050_0002 = &ctx.g_alloc_addr_1050_1050;
                 &PTR_DAT_0005_0000_1050_0004 = local_AX_131;
-                (&PTR_DAT_0005_0000_1050_0004 + 2) = &g_alloc_addr_1050_1050;
+                (&PTR_DAT_0005_0000_1050_0004 + 2) = &ctx.g_alloc_addr_1050_1050;
                 &PTR_LOOP_1050_000a = 0;
                 alloc_size = get_mem_sz_1000_1532(alloc_addr._2_2_);
                 if (param_2 == 1) {
-                    u_var5 = set_struct_1000_0782(param_3, &g_alloc_addr_1050_1050);
+                    u_var5 = set_struct_1000_0782(param_3, &ctx.g_alloc_addr_1050_1050);
                 } else {
                     if (param_2 == 3) {
                         u_var5 = set_struct_1000_05b4();
@@ -430,10 +430,10 @@ pub fn free_mem_1000_0510() {
 
     temp_5f5b47e88b = *in_BX;
     paVar3 = in_BX[1];
-    u_var8 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+    u_var8 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
     trunc_alloc_size = (u_var8 >> 0x10);
     u_var5 = u_var8;
-    ppu_var9 = &PTR_LOOP_1050_0000;
+    ppu_var9 = &ctx.PTR_LOOP_1050_0000;
     if (in_AX != 0) {
         u_var4 = temp_5f5b47e88b.field_0x1e;
         u_var6 = (temp_5f5b47e88b.field_0x20 - trunc_alloc_size) - (u_var4 < u_var5);
@@ -524,7 +524,7 @@ pub fn alloc_mem_1000_05e2(param_1: *mut Struct89, param_2: u16, param_3: *mut S
     return 0;
 }
 
-pub fn alloc_mem_1000_0670(uparam_1: i32, param_2: *mut i32) -> u16 {
+pub fn alloc_mem_1000_0670(param_1: i32, param_2: *mut i32) -> u16 {
     let pu_var1: *mut u32;
     let pi_var2: *mut i32;
     let mut i_var3: i32;
@@ -554,7 +554,7 @@ pub fn alloc_mem_1000_0670(uparam_1: i32, param_2: *mut i32) -> u16 {
 
     i_var3 = in_BX;
     i_var4 = (in_BX + 2);
-    lVar12 = get_mem_sz_1000_1532(&g_alloc_addr_1050_1050);
+    lVar12 = get_mem_sz_1000_1532(&ctx.g_alloc_addr_1050_1050);
     iVar10 = in_dx + (0xffeb < in_AX);
     u_var7 = unsafe { *in_BX };
     u_var8 = -((param_1 & 1) != 0) & 0x100 | -((param_1 & 4) != 0) & 0x400 | (u_var7 + 0x16);
@@ -564,12 +564,12 @@ pub fn alloc_mem_1000_0670(uparam_1: i32, param_2: *mut i32) -> u16 {
             in_AX + 0x14,
             iVar10,
             in_BX,
-            &g_alloc_addr_1050_1050,
+            &ctx.g_alloc_addr_1050_1050,
         );
         if (iVar10 == 0) {
             return 0;
         }
-        local_10 = &g_alloc_addr_1050_1050;
+        local_10 = &ctx.g_alloc_addr_1050_1050;
     } else {
         i_var5 = (in_BX + 1);
         i_var6 = (in_BX + 6);
@@ -579,7 +579,7 @@ pub fn alloc_mem_1000_0670(uparam_1: i32, param_2: *mut i32) -> u16 {
                 in_AX + 0x14,
                 iVar10,
                 in_BX,
-                &g_alloc_addr_1050_1050,
+                &ctx.g_alloc_addr_1050_1050,
             );
             local_10 = (lVar13 >> 0x10);
             if (lVar13 != 0) {
@@ -732,7 +732,7 @@ pub fn free_mem_1000_093a(param_1: *mut i32, param_2: u16) -> u16 {
     return 1;
 }
 
-pub fn alloc_mem_1000_0a48(uparam_1: i32, param_2: *mut Struct89, param_3: u16, param_4: u32) {
+pub fn alloc_mem_1000_0a48(param_1: i32, param_2: *mut Struct89, param_3: u16, param_4: u32) {
     let paVar1: *mut Struct140;
     let mut u_var2: i32;
     let in_CX: *mut Struct92;
@@ -812,7 +812,7 @@ pub fn alloc_mem_1000_0b20(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var6 = SUB42(&g_alloc_addr_1050_1050, 0);
+    u_var6 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
     u_var2 = param_1 & 2;
     u_var4 = param_4 + 5 & 0xfffc;
     // local_CX_30 = (u_var4 - 8 & ~(-(u_var4 < 8)));
@@ -881,8 +881,8 @@ pub fn alloc_mem_1000_0b20(
 // WARNING: Could not reconcile some variable overlaps
 
 pub fn alloc_mem_1000_0ed4(
-    uparam_1: i32,
-    uparam_2: i32,
+    param_1: i32,
+    param_2: i32,
     uparam_3: i32,
     param_4: *mut u16,
     param_5: u16,
@@ -959,7 +959,7 @@ pub fn alloc_mem_1000_0ed4(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u32 {
+pub fn alloc_mem_1000_0fb8(param_1: i32, param_2: *mut u16, uparam_3: i32) -> u32 {
     let pu_var1: *mut u16;
     let mut b_var2: u8;
     let mut in_AX: i32;
@@ -1015,7 +1015,7 @@ pub fn alloc_mem_1000_0fb8(uparam_1: i32, param_2: *mut u16, uparam_3: i32) -> u
             if ((((param_3 | param_2) != 0) && (in_dx == 0))
                 && (in_AX <= (PTR_LOOP_1050_0000 + 0x1c)))
             {
-                u_var9 = get_mem_sz_1000_1284(in_BX, &g_alloc_addr_1050_1050);
+                u_var9 = get_mem_sz_1000_1284(in_BX, &ctx.g_alloc_addr_1050_1050);
                 if (((u_var9 >> 0x10) == 0) && (u_var9 <= in_AX)) {
                     return u_var9;
                 }
@@ -1192,8 +1192,8 @@ pub fn free_mem_1000_13ce(alloc_addr: u32) -> bool {
 }
 
 pub fn alloc_mem_1000_1408(
-    uparam_1: i32,
-    uparam_2: i32,
+    param_1: i32,
+    param_2: i32,
     param_3: i32,
     param_4: u16,
     param_5: u16,
@@ -1250,8 +1250,8 @@ pub fn alloc_mem_1000_1408(
 }
 
 pub fn alloc_mem_1000_14f2(
-    uparam_1: i32,
-    uparam_2: i32,
+    param_1: i32,
+    param_2: i32,
     param_3: i32,
     param_4: u16,
     param_5: u16,
@@ -1352,7 +1352,7 @@ pub fn alloc_mem_1000_167a(param_1: u16, param_2: u16) -> *mut u8 {
     return mem_buf;
 }
 
-pub fn alloc_mem_1000_16aa(uparam_1: i32, uparam_2: i32, param_3: u16) -> *mut libc::c_void {
+pub fn alloc_mem_1000_16aa(param_1: i32, param_2: i32, param_3: u16) -> *mut libc::c_void {
     let pvVar1: &mut Vec<u8>;
     let mut in_dx: u16;
 
@@ -1369,10 +1369,10 @@ pub fn alloc_mem_1000_16aa(uparam_1: i32, uparam_2: i32, param_3: u16) -> *mut l
 }
 
 pub fn alloc_mem_1000_1708(
-    uparam_1: i32,
-    uparam_2: i32,
+    param_1: i32,
+    param_2: i32,
     uparam_3: i32,
-    uparam_4: i32,
+    param_4: i32,
     uparam_5: i32,
 ) -> u16 {
     let mut iVar1: i32;
@@ -1428,7 +1428,7 @@ pub fn alloc_mem_1000_180c(param_1: u16) -> u16 {
 
 // WARNING: Variable defined which should be unmapped: local_6
 
-pub fn alloc_mem_1000_183c(uparam_1: i32, uparam_2: i32) -> u16 {
+pub fn alloc_mem_1000_183c(param_1: i32, param_2: i32) -> u16 {
     let mut u_var1: u16;
     let pu_var2: *mut u16;
     let mut local_6: u16;
@@ -1452,7 +1452,7 @@ pub fn alloc_mem_1000_183c(uparam_1: i32, uparam_2: i32) -> u16 {
     return u_var1;
 }
 
-pub fn alloc_mem_1000_188e(uparam_1: i32, uparam_2: i32, param_3: i32) -> u16 {
+pub fn alloc_mem_1000_188e(param_1: i32, param_2: i32, param_3: i32) -> u16 {
     let mut u_var1: u16;
 
     if ((param_2 | param_1) == 0) {
@@ -1625,11 +1625,11 @@ pub fn unlock_mem_1000_3cd8(param_1: u16, param_2: u16) {
 }
 
 pub fn unlock_mem_1000_407a(a: u16, b: u16) {
-    GlobalFree16(&g_alloc_addr_1050_1050);
+    GlobalFree16(&ctx.g_alloc_addr_1050_1050);
     return;
 }
 
-pub fn alloc_mem_func_1000_40af(uparam_1: i32, param_2: i32, uparam_3: i32) -> *mut u16 {
+pub fn alloc_mem_func_1000_40af(param_1: i32, param_2: i32, uparam_3: i32) -> *mut u16 {
     let pu_var1: *mut u16;
     let mut u_var2: u16;
     let pcVar3: *mut libc::c_char;
@@ -1931,8 +1931,8 @@ pub fn free_mem_1008_ad0c(param_1: u16, param_2: u8) {
     let mut in_stack_00000008: u8;
 
     _param_1 = CONCAT13(in_stack_00000007, CONCAT12(param_2, param_1));
-    *_param_1 = s_1_1050_389a;
-    (param_1 + 2) = &PTR_LOOP_1050_1008;
+    *_param_1 = ctx.s_1_1050_389a;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((in_stack_00000008 & 1) != 0) {
         free_mem_1000_093a(_param_1);
     }
@@ -1940,8 +1940,8 @@ pub fn free_mem_1008_ad0c(param_1: u16, param_2: u8) {
 }
 
 pub fn pass1_1030_9e9c(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    unsafe { *param_1 = s_1_1050_389a };
-    (param_1 + 2) = &PTR_LOOP_1050_1008;
+    unsafe { *param_1 = ctx.s_1_1050_389a };
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {
         free_mem_1000_093a(param_1);
     }

@@ -392,7 +392,7 @@ pub unsafe fn bad_fn_1050_525e() {
     let in_bx: u16;
     let pi_var40: u16;
     let mut b_var43: u8;
-    let pi_var41: *mut i32;
+    let mut pi_var41: u16;
     let mut u_var42: i32;
     let pu_var44: *mut u8;
     let pu_var45: *mut u16;
@@ -403,7 +403,7 @@ pub unsafe fn bad_fn_1050_525e() {
     let mut in_ebp: u32;
     let mut u_var50: u32;
     let mut i_var51: u16;
-    let pi_var52: *mut i32;
+    let pi_var52: u16;
     let pi_var53: *mut i32;
     let pc_var54: *mut libc::c_char;
     let pu_var55: *mut u16;
@@ -739,9 +739,9 @@ pub unsafe fn bad_fn_1050_525e() {
     // u_var16 = CONCAT11(c_var23, c_var12 + b_var14) + pi_var40[0x3980];
     // u_var16 = u_var16 & 0xff00 | (u_var16 + *(pi_var40 + 0x3980));
     pu_var5 = (pi_var40 + 0x3980);
-    u_var17 = u_var16 + *pu_var5;
-    b_var11 = (u_var17 - *(pi_var40 + 0x3980)) - CARRY2(u_var16, *pu_var5);
-    u_var16 = u_var17 & 0xff00 | b_var11;
+    //u_var17 = u_var16 + *pu_var5;
+    // b_var11 = (u_var17 - *(pi_var40 + 0x3980)) - CARRY2(u_var16, *pu_var5);
+    u_var16 = u_var17 & 0xff00 | b_var11 as u16;
     pi_var4 = pi_var40 + 0x3980;
     // *pi_var4 = *pi_var4 + b_var11;
     pi_var4 = pi_var40 + 0x3980;
@@ -809,7 +809,7 @@ pub unsafe fn bad_fn_1050_525e() {
     pi_var4 = pi_var40 + 0x3980;
     // *pi_var4 = *pi_var4 + b_var11;
     u_var16 = u_var16 + 0x700;
-    b_var13 = u_var16;
+    b_var13 = u_var16 as u8;
     pi_var4 = pi_var40 + 0x3980;
     // *pi_var4 = *pi_var4 + b_var13;
     pi_var4 = pi_var40 + 0x3980;
@@ -909,7 +909,7 @@ pub unsafe fn bad_fn_1050_525e() {
     pc_var22 = (pi_var40 + pi_var61);
     //*pc_var22 = *pc_var22 + b_var13;
     pi_var4 = pi_var40 + 0x3980;
-    b_var11 = *pi_var4;
+    //b_var11 = *pi_var4;
     // *pi_var4 = *pi_var4 + b_var14;
     pi_var4 = pi_var40 + 0x3980;
     // *pi_var4 = *pi_var4 + u_var16 + CARRY1(b_var11, b_var14);
@@ -1087,11 +1087,11 @@ pub unsafe fn bad_fn_1050_525e() {
     // *pi_var4 = *pi_var4 + b_var13;
     pi_var4 = pi_var40 + 0x3980;
     // *pi_var4 = *pi_var4 + b_var13;
-    b_var13 = b_var13 | *(pi_var40 + 0x3980);
-    b_var11 = (u_var16 >> 8);
+    //b_var13 = b_var13 | *(pi_var40 + 0x3980);
+    b_var11 = (u_var16 >> 8) as u8;
     pi_var52 = 0x7301;
     pi_var41 = 0x7301;
-    out(*0x7300, in_stack_0000a0fe);
+    //out(*0x7300, in_stack_0000a0fe);
     pc_var22 = (pi_var40 + 0x7301);
     //*pc_var22 = *pc_var22 + b_var13;
     pc_var22 = (pi_var40 + 0x7301);
@@ -3700,7 +3700,7 @@ pub unsafe fn bad_fn_1050_525e() {
                     c_var12 = *pc_var6;
                     *pc_var6 = *pc_var6 + pc_var22;
                     if (*pc_var6 != '\0' && SCARRY1(c_var12, pc_var22) == (*pc_var6 < '\0')) {
-                        // goto PTR_LOOP_1050_5f1c;
+                        // goto ctx.PTR_LOOP_1050_5f1c;
                     }
 
                     // goto code_r0x10505f3b;
@@ -3876,7 +3876,7 @@ pub unsafe fn bad_fn_1050_525e() {
     *pc_var22 = *pc_var22 + u_var16;
     pc_var22 = (i_var25 + 0x1f);
     *pc_var22 = *pc_var22 + (pi_var26 >> 8);
-    // PTR_LOOP_1050_5f1c:
+    // ctx.PTR_LOOP_1050_5f1c:
     pc_var22 = (pi_var26 + pu_var58);
     *pc_var22 = *pc_var22 + u_var34;
     pc_var22 = (pi_var26 + pu_var58);

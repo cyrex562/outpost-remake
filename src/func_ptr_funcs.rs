@@ -20,10 +20,10 @@ pub fn call_fn_ptr_1000_24cd(a: u16) {
     let mut fn_ptr_1: u32;
 
     i_var2 = unaff_BP + 1;
-    u_var5 = SUB42(&g_alloc_addr_1050_1050, 0);
+    u_var5 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
     PTR_LOOP_1050_5fc9._0_1_ = 0;
     u_var3 = 0;
-    call_fn_ptr_1000_2594(0, &g_alloc_addr_1050_1050, i_var2);
+    call_fn_ptr_1000_2594(0, &ctx.g_alloc_addr_1050_1050, i_var2);
     call_fn_ptr_1000_2594();
     empty_fn_1000_55ac(a);
     call_fn_ptr_1000_2594(u_var3, u_var5, i_var2);
@@ -48,7 +48,7 @@ pub fn call_fn_ptr_1000_24db() {
 
     PTR_LOOP_1050_5fc9._0_1_ = 0;
     c_var2 = '\0';
-    call_fn_ptr_1000_2594(1, &g_alloc_addr_1050_1050, unaff_BP + 1);
+    call_fn_ptr_1000_2594(1, &ctx.g_alloc_addr_1050_1050, unaff_BP + 1);
     call_fn_ptr_1000_2594();
     call_fn_ptr_1000_256b();
     if (c_var2 == '\0') {
