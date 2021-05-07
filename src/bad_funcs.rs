@@ -1448,7 +1448,7 @@ pub unsafe fn bad_fn_1050_525e() {
     pc_var22 = (&uStack2 + pi_var61);
     //*pc_var22 = *pc_var22 + c_var12;
     b_var11 = (u_var16 >> 8);
-    u_var21 = (u_var16 & 0xff | (b_var11 + b_var24) << 8);
+    u_var21 = (u_var16 & 0xff | (b_var11 + b_var24) << 8) as u16;
     u_var20 = u_var10 | u_var21;
     pc_var22 = (pi_var40 + 0x7301);
     c_var12 = (u_var16 & 0xff);

@@ -2,9 +2,9 @@ pub fn set_fn_ptr_1000_17e8(param_1: *mut u8, param_2: *mut u8) -> *mut u8 {
     let pu_var1: *mut u8;
     let mut local_4: u16;
 
-    pu_var1 = func_ptr_1050_5f34;
-    func_ptr_1050_5f34 = param_1;
-    PTR_LOOP_1050_5f36 = param_2;
+    pu_var1 = ctx.func_ptr_1050_5f34;
+    ctx.func_ptr_1050_5f34 = param_1;
+    ctx.PTR_LOOP_1050_5f36 = param_2;
     return pu_var1;
 }
 

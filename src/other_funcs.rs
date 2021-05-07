@@ -1,3 +1,5 @@
+use crate::defines::Struct1;
+
 pub fn return_one_1000_2146() -> u16 {
     return 1;
 }

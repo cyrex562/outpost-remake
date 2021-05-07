@@ -1,4 +1,6 @@
-pub fn close_file_1008_496c(in_Struct7: *mut Struct7) {
+use crate::defines::Struct7;
+
+pub fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let local_bx_5: *mut Struct7;
@@ -7,7 +9,7 @@ pub fn close_file_1008_496c(in_Struct7: *mut Struct7) {
     let mut func_ptr: u32;
     let mut temp_5f096a4ace: u32;
 
-    *_in_Struct7 = &PTR_LOOP_1050_4c4c;
+    *_in_Struct7 = &ctx.PTR_LOOP_1050_4c4c;
     in_Struct7.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     pu_var1 = in_Struct7.func_ptr_0x4;
     u_var2 = in_Struct7.i_field_4;
@@ -5655,15 +5657,15 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                 local_40 = paVar26;
                 local_18 = paVar26;
                 pass1_1030_73ee(CONCAT22(paVar26, local_1a), (u_var27 + 0x10c));
-                local_42._0_1_ = _PTR_LOOP_1050_06e0;
-                local_42._1_1_ = (_PTR_LOOP_1050_06e0 >> 8);
-                local_40 = (_PTR_LOOP_1050_06e0 >> 0x10);
+                local_42._0_1_ = ctx._PTR_LOOP_1050_06e0;
+                local_42._1_1_ = (ctx._PTR_LOOP_1050_06e0 >> 8);
+                local_40 = (ctx._PTR_LOOP_1050_06e0 >> 0x10);
                 local_44 = 0x1030;
                 u_var29 = &ctx.PTR_LOOP_1050_1008;
                 local_46._0_1_ = 0x3f;
                 local_46._1_1_ = 0x98;
                 local_20 = extraout_dx_03;
-                BVar21 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (u_var27 + 0x11a), 0x31);
+                BVar21 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var27 + 0x11a), 0x31);
                 if ((BVar21 == 0) && ((u_var27 + 0x122) == 0)) {
                     uVar36 = (*(local_1a + 0xc) >> 0x10);
                     local_3a = (local_1a + 0x10);

@@ -1394,14 +1394,14 @@ pub fn alloc_mem_1000_1708(
             }
         }
         if (((param_3 & 0x8000) == 0) || ((PTR_LOOP_1050_5f3a | func_ptr_1050_5f38) == 0)) {
-            if ((PTR_LOOP_1050_5f36 | func_ptr_1050_5f34) == 0) {
+            if ((ctx.PTR_LOOP_1050_5f36 | ctx.func_ptr_1050_5f34) == 0) {
                 if ((PTR_LOOP_1050_5f3e | func_ptr_1050_5f3c) == 0) {
                     return 0;
                 }
                 (*func_ptr_1050_5f3c)();
                 // goto LAB_1000_1724;
             }
-            iVar1 = (*func_ptr_1050_5f34)();
+            iVar1 = (*ctx.func_ptr_1050_5f34)();
         } else {
             iVar1 = (*func_ptr_1050_5f38)();
         }

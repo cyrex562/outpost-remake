@@ -1,3 +1,5 @@
+use crate::defines::{Struct126, Struct145};
+
 pub unsafe fn pass1_fn_1000_0c32(param_1: u16, Struct126_: *mut Struct126, param_3: u16) -> u16 {
     let pu_var1: *mut u32;
     let paVar2: *mut Struct145;
@@ -6477,7 +6479,7 @@ pub unsafe fn pass1_1008_bde0(param_1: u32) {
     let local_bx_2080: *mut Struct292;
     let mut u_var2: u16;
 
-    _PTR_LOOP_1050_06e0 = param_1;
+    ctx._PTR_LOOP_1050_06e0 = param_1;
     if (__g_Struct94_ptr_1 == 0) {
         u_var1 = param_1;
         struct_fn_1000_160a();
@@ -6834,7 +6836,7 @@ pub unsafe fn pass1_1008_bde0(param_1: u32) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn pass1_1008_c626(param_1: *mut u32) {
-    _PTR_LOOP_1050_06e0 = 0;
+    ctx._PTR_LOOP_1050_06e0 = 0;
     let param_1_val = unsafe { *param_1 };
     error_check_1000_17ce(param_1_val);
     return;

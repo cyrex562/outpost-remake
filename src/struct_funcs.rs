@@ -679,7 +679,7 @@ pub fn process_struct_1008_48fe(param_1: *mut Struct188, param_2: u16, param_3: 
     local_bx_4.field_0x1a = 0;
     local_bx_4.field_0x1e = 0;
     local_bx_4.field_0x22 = param_2;
-    param_1 = &PTR_LOOP_1050_4c4c;
+    param_1 = &ctx.PTR_LOOP_1050_4c4c;
     local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     pass1_fn_1008_60e8(param_3);
     local_bx_4.field_0x8 = param_2;
@@ -1110,7 +1110,7 @@ pub fn process_struct_1008_c882(param_1: u32) {
     ppVar16 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x35));
     pa_var10 = (ppVar16 >> 0x10);
     pa_var5 = pa_var10;
-    puVar8 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x44);
+    puVar8 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 0x44);
     local_10 = 0;
     struct_a = pa_var5;
     while (true) {

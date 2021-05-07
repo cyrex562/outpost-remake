@@ -114,6 +114,6 @@ pub fn CONCAT610(u_stack74: (), b_result_2: ()) -> () {
     todo!()
 }
 
-fn CONCAT66(u_stack34: (), u_var1: ()) -> () {
+pub(crate) fn CONCAT66(u_stack34: (), u_var1: ()) -> () {
     todo!()
 }

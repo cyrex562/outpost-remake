@@ -372,7 +372,7 @@ pub fn pass1_1018_10c4(param_1: *mut Struct318) {
             break;
         }
         if ((i_var11 + 0x3c) == (pu_var4 + 4)) {
-            pu_var8 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 2);
+            pu_var8 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
             u_var5 = pu_var8;
             pass1_1038_4e78(
                 CONCAT22(extraout_dx, pu_var4),
@@ -426,7 +426,7 @@ pub fn pass1_1018_10c4(param_1: *mut Struct318) {
                 break;
             }
             if ((i_var11 + 0x3c) == (pu_var4 + 4)) {
-                pu_var8 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 2);
+                pu_var8 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
                 u_var6 = SUB42(pu_var8, 0);
                 u_var13 = 0x38;
                 pass1_1038_4e78(
@@ -544,7 +544,7 @@ pub fn pass1_1018_1346(param_1: *mut Struct318) {
             break;
         }
         if (local_bx_4.field_0x3c == (pu_var2 + 4)) {
-            pu_var5 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 2);
+            pu_var5 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
             u_var3 = SUB42(pu_var5, 0);
             u_var9 = 0x38;
             pass1_1038_4e78(
@@ -605,7 +605,7 @@ pub fn pass1_1018_1346(param_1: *mut Struct318) {
                 break;
             }
             if (local_bx_4.field_0x3c == (pu_var2 + 4)) {
-                pu_var5 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 2);
+                pu_var5 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
                 u_var3 = SUB42(pu_var5, 0);
                 u_var9 = 0x38;
                 pass1_1038_4e78(
@@ -3016,8 +3016,8 @@ pub fn pass1_1018_3ee6(
         } else {
             if (iVar1 == 3) {
                 u_var5 = pass1_1008_c646(
-                    _PTR_LOOP_1050_06e0,
-                    CONCAT22((i_var2 + 2), (_PTR_LOOP_1050_06e0 >> 0x10)),
+                    ctx._PTR_LOOP_1050_06e0,
+                    CONCAT22((i_var2 + 2), (ctx._PTR_LOOP_1050_06e0 >> 0x10)),
                 );
                 switch_var = u_var5;
                 if (u_var5 == 0) {
@@ -3966,7 +3966,7 @@ pub fn pass1_1018_5292(param_1: *mut Struct585, param_2: u32) {
     }
     _local_8 = pass1_1030_73a8(param_2);
     local_a = (_local_8 + 0xc);
-    b_var6 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_a, 4);
+    b_var6 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_a, 4);
     if (b_var6 != 0) {
         _local_1e = _local_8;
         _local_1a = (_local_8 + 0x20);

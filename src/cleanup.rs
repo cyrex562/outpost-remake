@@ -31,7 +31,7 @@ use crate::{
     CONCAT11,
 };
 
-pub fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -39,7 +39,7 @@ pub fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
     return param_1;
 }
 
-pub fn win_cleanup_1010_0ee6(param_1: u32, param_2: u8) {
+pub unsafe fn win_cleanup_1010_0ee6(param_1: u32, param_2: u8) {
     win_cleanup_1018_4d22(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -529,7 +529,7 @@ pub unsafe fn pass1_1040_2f32(ctx: &mut AppContext, param_1: *mut u8, param_2: *
     return;
 }
 
-pub fn pass1_1040_2a22(ctx: &mut AppContext, param_1: *mut Struct44) {
+pub unsafe fn pass1_1040_2a22(ctx: &mut AppContext, param_1: *mut Struct44) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 

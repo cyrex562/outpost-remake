@@ -1,4 +1,4 @@
-pub fn modify_list_1008_5b6e(param_1: *mut u16, param_2: u8) -> *mut u16 {
+pub fn modify_list_1008_5b6e(ctx: &mut AppContext, param_1: *mut u16, param_2: u8) -> *mut u16 {
     unsafe { *param_1 = ctx.s_1_1050_389a };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {

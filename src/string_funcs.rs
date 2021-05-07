@@ -1911,7 +1911,7 @@ pub fn wsprintf_1008_d1c6(in_struct_a: *mut pass1_struct_3, param_2: u32) {
     }
     struct_b.field_0x12 = pa_var5;
     struct_b.field_0x14 = struct_g;
-    puVar6 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 2);
+    puVar6 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
     struct_d = puVar6;
     u_var8 = &PTR_LOOP_1050_1038;
     pass1_1038_4e78(param_2, puVar6 & 0xffff | ZEXT24(struct_g) << 0x10);
@@ -2090,7 +2090,7 @@ pub fn wsprintf_1008_d4f6(param_1: *mut Struct298, in_struct_b: *mut Struct298) 
             && ((iVar1 = (uVar15 + 0x12), iVar1 == 5 || (iVar1 == 6))))
         {
             switch_var = (uVar15 + 0xc);
-            BVar9 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, switch_var, 0x34);
+            BVar9 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, switch_var, 0x34);
             if ((BVar9 == 0) && ((uVar15 + 0x1c) != lVar2)) {
                 uVar18 = (uVar15 + 4);
                 big_switch_statement_1020_bd80(switch_var);

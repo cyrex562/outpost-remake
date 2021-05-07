@@ -15,6 +15,7 @@ use crate::{
     sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e},
     ui_funcs::{msg_box_1000_1f24, pass1_1038_af34, win_cleanup_fn_1040_a294},
     util::{CONCAT22, SUB42},
+    bool_funcs::{check_and_clear_global_1000_1f68}
 };
 
 pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext, param_1: u16, param_2: u16) -> bool {
@@ -204,7 +205,7 @@ pub unsafe fn check_error_1008_087e(param_1: u16, param_2: *mut u16) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    process_struct_1000_179c(10, param_2);
+    process_struct_1000_179c(ctx: &mut AppContext, 10, param_2);
     u_var1 = param_2 | param_1;
     local_6 = param_1;
     local_4 = param_2;

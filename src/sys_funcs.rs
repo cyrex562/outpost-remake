@@ -2100,7 +2100,7 @@ pub fn send_win_msg_1010_7c9e(param_1: u32, param_2: u16) {
             }
             if ((i_var3 + 4) != 0) {
                 u_var6 = pass1_1030_73a8((i_var3 + 4));
-                BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (u_var6 + 0xc), param_2);
+                BVar2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var6 + 0xc), param_2);
                 if (BVar2 != 0) {
                     u_var1 = (i_var3 + 8);
                     SendMessage16(0, 0xeb, 0x111, (u_var1 + 6));
@@ -4583,7 +4583,7 @@ pub fn pass1_1038_e4bc(param_1: *mut u8, param_2: *mut u8, param_3: *mut u8) {
             paVar3 = pass1_1028_e1ec(ctx._PTR_LOOP_1050_65e2, u_var7, u_var6);
             u_var7 = u_var6 | paVar3;
             if (u_var7 != 0) {
-                pu_var5 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x20);
+                pu_var5 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 0x20);
                 u_var4 = pu_var5;
                 pass1_1038_4e78(CONCAT22(u_var6, paVar3), pu_var5 & 0xffff | u_var7 << 0x10);
                 _local_16 = CONCAT22(extraout_dx, u_var4);
@@ -5705,11 +5705,11 @@ pub fn pass1_1038_7356(param_1: *mut Struct1159, param_2: *mut Struct921) {
     u_var12 = pass1_1030_73a8(param_2);
     u_var8 = (u_var12 >> 0x10);
     u_var5 = u_var8;
-    b_var4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (u_var12 + 0xc), 4);
+    b_var4 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var12 + 0xc), 4);
     local_bx_40 = param_1;
     u_var9 = (param_1 >> 0x10);
     if (b_var4 == 0) {
-        b_var4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (u_var12 + 0xc), 3);
+        b_var4 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var12 + 0xc), 3);
         if (b_var4 == 0) {
             // code_r0x10387545:
             pass1_1038_6f5a(param_1, param_2);
@@ -6158,11 +6158,11 @@ pub fn pass1_1038_095e(param_1: u16, param_2: u16, param_1_00: i32, param_2_00: 
     }
     // LAB_1038_0a1c:
     if (local_e != 0) {
-        pu_var5 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0xf);
+        pu_var5 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 0xf);
         u_var9 = SUB42(pu_var5, 0);
         pass1_1038_4e78(param_2_00, pu_var5 & 0xffff | u_var7 << 0x10);
         _local_16 = CONCAT22(u_var7, u_var9);
-        pu_var5 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x1a);
+        pu_var5 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 0x1a);
         u_var11 = pu_var5;
         local_1a = u_var11;
         local_18 = u_var7;

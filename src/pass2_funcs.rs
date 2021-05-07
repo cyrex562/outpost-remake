@@ -1,4 +1,4 @@
-use crate::pass_funcs::pass1_1008_c6ae;
+use crate::{pass5_funcs::pass1_1030_73a8, pass_funcs::pass1_1008_c6ae};
 
 pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
     let mut u_var1: i32;
@@ -20,85 +20,85 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
     u_var7 = pass1_1030_73a8(param_2);
     u_var5 = (u_var7 >> 0x10);
     u_var1 = (u_var7 + 0xc);
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0xc);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0xc);
     if ((BVar3 != 0)
         || (
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x14),
+            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x14),
             BVar3 != 0,
         ))
     {
         u_var8 = 0x5d7;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 10);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 10);
     if (BVar3 != 0) {
         u_var8 = 0x657;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x15);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x15);
     if (BVar3 != 0) {
         u_var8 = 0x4f8;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0xb);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0xb);
     if (BVar3 != 0) {
         u_var8 = 0x658;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x16);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x16);
     if (BVar3 != 0) {
         u_var8 = 0x659;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x17);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x17);
     if (BVar3 != 0) {
         u_var8 = 0x65a;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x21);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x21);
     if (BVar3 != 0) {
         u_var8 = 0x65b;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x1c);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x1c);
     if (BVar3 != 0) {
         u_var8 = 0x65c;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x1d);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x1d);
     if (BVar3 != 0) {
         u_var8 = 0x65d;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x18);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x18);
     if (BVar3 != 0) {
         u_var8 = 0x65e;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x19);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x19);
     if (BVar3 != 0) {
         u_var8 = 0x65f;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 4);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 4);
     if ((BVar3 != 0)
         || (
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 3),
+            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 3),
             BVar3 != 0,
         ))
     {
         u_var8 = 0x660;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x1e);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x1e);
     if (BVar3 != 0) {
         u_var8 = 0x662;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x23);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x23);
     if ((BVar3 != 0)
         || (
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x1b),
+            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x1b),
             BVar3 != 0,
         ))
     {
@@ -106,45 +106,45 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
         u_var8 = 0x663;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x1f);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x1f);
     if (BVar3 != 0) {
         u_var8 = 0x42e;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 1);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 1);
     if (BVar3 != 0) {
         u_var8 = 0x5df;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 2);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 2);
     if ((BVar3 != 0)
         || (
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x13),
+            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x13),
             BVar3 != 0,
         ))
     {
         u_var8 = 0x42f;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x20);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x20);
     if (BVar3 != 0) {
         u_var8 = 0x632;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0xe);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0xe);
     if (BVar3 != 0) {
         u_var8 = 0x5e5;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x10);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x10);
     if (BVar3 != 0) {
         u_var8 = 0x5d4;
         // goto LAB_1010_e241;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x12);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x12);
     if ((BVar3 != 0)
         || (
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x11),
+            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x11),
             BVar3 != 0,
         ))
     {
@@ -157,20 +157,20 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
         );
         return;
     }
-    pu_var4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 6);
+    pu_var4 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 6);
     if (pu_var4 != 0x0) {
         pass1_1030_7f5a(param_2);
         u_var5 = extraout_dx_00;
         BVar3 = big_switch_statement_1020_c2f8(pu_var4);
         // goto LAB_1010_e4a9;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 5);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 5);
     if (BVar3 != 0) {
         u_var8 = pass1_1030_7f98(param_2);
         BVar3 = big_switch_statement_1020_c222(u_var8);
         // goto LAB_1010_e4a9;
     }
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var1, 0x40);
+    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var1, 0x40);
     if (BVar3 != 0) {}
     // goto LAB_1010_e3c2;
     if (u_var1 == 0x6a) {
@@ -251,9 +251,9 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
     u_var8 = (param_2 >> 0x10);
     pu_var5 = (param_2 + 0x20);
     iVar1 = (param_2 + 0xc);
-    b_var4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar1, 0x11);
+    b_var4 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x11);
     if (b_var4 == 0) {
-        b_var4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar1, 0x12);
+        b_var4 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x12);
         if (b_var4 == 0) {
             return;
         }
@@ -338,18 +338,18 @@ pub unsafe fn pass1_1010_e682(param_1: u32, param_2: *mut Struct493) {
     _local_6 = pass1_1030_73a8(param_2);
     u_var5 = (_local_6 >> 0x10);
     local_8 = (_local_6 + 0xc);
-    pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 1);
+    pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 1);
     if (((pc_var2 == 0x0)
         && (
-            pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0x13),
+            pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x13),
             pc_var2 == 0x0,
         ))
         && (
-            pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 2),
+            pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 2),
             pc_var2 == 0x0,
         ))
     {
-        BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0xe);
+        BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0xe);
         if (BVar3 != 0) {
             u_var1 = local_bx_4.field_0x138;
             _local_10 = (u_var1 + 0x24);
@@ -369,25 +369,25 @@ pub unsafe fn pass1_1010_e682(param_1: u32, param_2: *mut Struct493) {
             );
             return;
         }
-        BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 5);
+        BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 5);
         if ((BVar3 == 0)
             && (
-                BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 6),
+                BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 6),
                 BVar3 == 0,
             ))
         {
-            pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0x10);
+            pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x10);
             if (pc_var2 == 0x0) {
-                pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0xc);
+                pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0xc);
                 if ((pc_var2 == 0x0)
                     && (
-                        pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0x14),
+                        pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x14),
                         pc_var2 == 0x0,
                     ))
                 {
-                    pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 10);
+                    pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 10);
                     if (pc_var2 == 0x0) {
-                        pc_var2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, local_8, 0x1e);
+                        pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x1e);
                         if (pc_var2 == 0x0) {
                             load_string_1010_84e0(
                                 ctx._g_struct_73_1050_14cc,
@@ -488,9 +488,9 @@ pub unsafe fn pass1_1010_e8f6(param_1: u16, param_2: u16, in_struct_1: u32) {
 
     u_var4 = pass1_1030_73a8(in_struct_1);
     iVar1 = (u_var4 + 0xc);
-    BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar1, 0x13);
+    BVar2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x13);
     if (BVar2 == 0) {
-        BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar1, 0x14);
+        BVar2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x14);
         if (BVar2 == 0) {
             return;
         }

@@ -7286,7 +7286,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
             if (pu_var5 != 0xffff) {
                 DeleteMenu16(0x38, 0, 0x13c, (i_var8 + 0x106));
             }
-            b_var6 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x20);
+            b_var6 = pass1_1008_c6ae(ctx.ctx._PTR_LOOP_1050_06e0, local_8, 0x20);
             if (b_var6 != 0) {
                 load_string_1010_847e(
                     ctx._g_struct_73_1050_14cc,
@@ -7358,8 +7358,8 @@ pub unsafe fn enable_menu_item_1020_44ec(
             u_var2 = pass1_1030_6fa0(local_11e);
             pp_stack_310 = CONCAT31(extraout_var, u_var2);
             local_134 = 0x3f;
-            local_138 = (ctx._PTR_LOOP_1050_06e0 >> 0x10);
-            b_var6 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, pp_stack_310, 0x3f);
+            local_138 = (ctx.ctx._PTR_LOOP_1050_06e0 >> 0x10);
+            b_var6 = pass1_1008_c6ae(ctx.ctx._PTR_LOOP_1050_06e0, pp_stack_310, 0x3f);
             if (b_var6 != 0) {
                 local_134 = local_128;
                 local_138 = 0;
