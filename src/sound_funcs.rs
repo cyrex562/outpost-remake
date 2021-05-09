@@ -1,4 +1,9 @@
-pub fn sound_fn_1008_53ae(param_1: u32, param_2: u16) {
+use crate::{
+    defines::{Struct199, Struct620},
+    util::CONCAT22,
+};
+
+pub fn sound_fn_1008_53ae(ctx: &mut AppContext, param_1: u32, param_2: u16) {
     let mut unaff_ss: u16;
     let dVar1: u32;
     let mut local_432: [u8; 1024];
@@ -108,7 +113,7 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
     let mut i_var2: i32;
     let mut i_var3: i32;
     let mut local_es_31: u16;
-    let mut local_SS__1: u16;
+
     let dVar4: u32;
     let mut local_132: u16;
     let mut local_12c: u16;
@@ -125,7 +130,7 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
     let mut local_a: u32;
     let mut temp_5f24728895: u32;
 
-    pass1_1000_4906(CONCAT22(local_SS__1, local_16), 0, 0x14);
+    pass1_1000_4906(CONCAT22(ctx.stack_seg_reg, local_16), 0, 0x14);
     local_a = param_2;
     local_es_31 = (param_1 >> 0x10);
     i_var3 = param_1;
@@ -134,7 +139,7 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
     local_1a = 1;
     _local_1e = s_waveaudio_1050_02a4;
     process_string_1000_4d58(param_2, 0, 0, 0, 0, &local_11e);
-    i_var2 = process_string_1000_475e(CONCAT22(local_SS__1, &local_11e), s__mid_1050_02ae);
+    i_var2 = process_string_1000_475e(CONCAT22(ctx.stack_seg_reg, &local_11e), s__mid_1050_02ae);
     if (i_var2 == 0) {
         u_var1 = (i_var3 + 0xc);
         local_18 = (u_var1 + 0x74);
@@ -149,7 +154,7 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
             return;
         }
         local_e = _local_1e;
-        dVar4 = mciSendCommand16(CONCAT22(local_SS__1, local_16), 0x2200, 0x803, 0);
+        dVar4 = mciSendCommand16(CONCAT22(ctx.stack_seg_reg, local_16), 0x2200, 0x803, 0);
         local_120 = dVar4;
         if (((dVar4 >> 0x10) | local_120) == 0) {
             if (local_1a == 0) {
@@ -164,10 +169,10 @@ pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
                 mci_send_command_1008_5cb6(param_1, local_12);
                 return;
             }
-            pass1_1000_4906(CONCAT22(local_SS__1, &local_12c), 0, 0xc);
+            pass1_1000_4906(CONCAT22(ctx.stack_seg_reg, &local_12c), 0, 0xc);
             local_12c = local_120;
             local_12a = 0;
-            mciSendCommand16(CONCAT22(local_SS__1, &local_12c), 1, 0x806, local_12);
+            mciSendCommand16(CONCAT22(ctx.stack_seg_reg, &local_12c), 1, 0x806, local_12);
             SetWindowWord16(0x38, local_12, 0, local_120);
             return;
         }
@@ -187,7 +192,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     let mut u_var3: u32;
     let struct_a: *mut Struct199;
     let paVar4: *mut Struct199;
-    let mut extraout_dx: i32;
+
     let local_Struct620_ptr_1: *mut Struct620;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
@@ -202,7 +207,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
     local_Struct620_ptr_1 = in_Struct620_ptr_1;
     if (local_Struct620_ptr_1.field_0xee != 0) {
         fn_ptr_1 = (local_Struct620_ptr_1.field_0xee + 8);
-        (**fn_ptr_1)();
+        fn_ptr_1();
     }
     if (local_Struct620_ptr_1.field_0xea == 0) {
         local_Struct620_ptr_1.field_0xea = 1;
@@ -227,7 +232,7 @@ pub fn mci_fn_1018_e2cc(in_Struct620_ptr_1: *mut Struct620) {
                 in_Struct620_ptr_1,
             );
             u_var2 = u_var3;
-            _local_a = (u_var3 & 0xffff | extraout_dx << 0x10);
+            _local_a = (u_var3 & 0xffff | ctx.dx_reg << 0x10);
         }
         pass1_1008_6978(in_Struct620_ptr_1, 0, _local_a & 0xffff0000 | u_var2);
         fn_ptr_1 = (*_local_a + 0xc);
@@ -240,7 +245,7 @@ pub fn win_and_mci_fn_1018_ea66(param_1: *mut Struct626) {
     let mut local_AX_77: u16;
     let local_struct_1: *mut Struct626;
     let mut local_struct_1_hi: u16;
-    let mut local_SS__1: u16;
+
     let mut char_buf_1: [u8; 4];
     // fn_ptr_1: *mut *mut u8;
 
@@ -252,10 +257,10 @@ pub fn win_and_mci_fn_1018_ea66(param_1: *mut Struct626) {
     }
     if (local_struct_1.bool_xEA == 0) {
         local_struct_1.bool_xEA = 1;
-        pass1_1008_941a(CONCAT22(local_SS__1, char_buf_1), 1, 0x95);
+        pass1_1008_941a(CONCAT22(ctx.stack_seg_reg, char_buf_1), 1, 0x95);
         local_AX_77 = mci_send_command_1008_5c9e(
             ctx._g_struct_ptr_1050_02a0,
-            CONCAT22(local_SS__1, char_buf_1),
+            CONCAT22(ctx.stack_seg_reg, char_buf_1),
         );
         local_struct_1.field_0xec = local_AX_77;
         window_msg_func_1010_7300(local_struct_1.field_0xf6, 0, 0x80000, 0);

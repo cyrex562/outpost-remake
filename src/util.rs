@@ -2,10 +2,6 @@ pub fn CONCAT22(a: u16, b: u16) -> u32 {
     (a << 16) | b
 }
 
-pub fn CONCAT11(a: u8, b: u8) -> u16 {
-    (a << 8) | b
-}
-
 pub fn CONCAT12(a: u8, b: u16) -> u32 {
     (a << 16) | b
 }
@@ -17,6 +13,10 @@ pub fn CONCAT21(a: u16, b: u8) -> u32 {
 pub fn CONCAT31(a: u32, b: u8) -> u32 {
     todo!();
     0
+}
+
+pub fn get_vec_u8(base: u16, offset: u16) -> Vec<u8> {
+    unimplemented!()
 }
 
 pub fn CONCAT13(a: u8, b: u32) -> u32 {
@@ -100,8 +100,6 @@ pub fn CONCAT24(b_result_2: u16, arg: i32) -> () {
     todo!()
 }
 
-
-
 pub fn CONCAT26(local_4e: u16, b_result_2: ()) -> () {
     todo!()
 }
@@ -116,4 +114,12 @@ pub fn CONCAT610(u_stack74: (), b_result_2: ()) -> () {
 
 pub(crate) fn CONCAT66(u_stack34: (), u_var1: ()) -> () {
     todo!()
+}
+
+pub(crate) fn CONCAT11(a: u8, b: u8) -> u16 {
+    a << 8 | b
+}
+
+pub fn LOCK() {
+    unimplemented!()
 }

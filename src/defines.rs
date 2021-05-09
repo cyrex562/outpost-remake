@@ -22955,8 +22955,8 @@ pub struct Struct376 {
     pub field_0xdf: u8,
     pub field_0xe0: u8,
     pub field_0xe1: u8,
-    pub u16_xe2: u16,
-    pub u16_xe4: u16,
+    pub offset_xe2: u16,
+    pub segment_xe4: u16,
     pub field_0xe6: u8,
     pub field_0xe7: u8,
     pub field_0xe8: u8,
@@ -146550,7 +146550,7 @@ pub struct Struct323 {
 pub type code = libc::c_void;
 
 pub struct AppContext {
-    pub g_u16_ptr_1050_5f84: u32,
+    pub g_u16_ptr_1050_5f84: u16,
     pub s__s___lu_1050_38c5: String,
     pub PTR_LOOP_1050_1038: u32,
     pub PTR_LOOP_1050_1040: u32,
@@ -146565,4 +146565,6 @@ pub struct AppContext {
     pub s_1_1050_389a: String,
     pub _g_astruct_112_a: *mut u8,
     pub s_Null_Ptr_1050_38f3: String,
+    pub s___NMSG___1050_63f6: String,
+    pub PTR_LOOP_1050_5f80: u16,
 }

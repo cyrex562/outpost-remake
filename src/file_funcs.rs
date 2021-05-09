@@ -1,6 +1,12 @@
-use crate::defines::Struct7;
+use crate::{defines::{
+        file_object, AppContext, Struct103, Struct11, Struct117, Struct131, Struct199, Struct7,
+        Struct771, Struct8, Struct9, HFILE16,
+    }, err_funcs::{error_check_1000_0dc6, error_check_1000_17ce}, list_funcs::set_array_val_1008_72a8, mem_funcs::{alloc_mem_1000_0a48, alloc_mem_1000_1708}, pass3_funcs::{pass1_1020_ba3e, pass1_1020_bb8a, pass1_1020_c444, pass1_1020_c4a8}, pass5_funcs::pass1_1030_1cd8, pass_funcs::{pass1_1008_3e76, pass1_1008_3f92, pass1_1008_4b8e, pass1_1008_6eee, pass1_1008_6f7a, pass1_1008_7006, pass1_1008_7056}, string_funcs::{get_string_index_1000_3da4, string_fn_1000_3f9c}, struct_funcs::{
+        process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98,
+        struct_fn_1000_160a,
+    }, sys_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16}, util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, ZEXT24}};
 
-pub fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
+pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let local_bx_5: *mut Struct7;
@@ -9,7 +15,7 @@ pub fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
     let mut func_ptr: u32;
     let mut temp_5f096a4ace: u32;
 
-    *_in_Struct7 = &ctx.PTR_LOOP_1050_4c4c;
+    *in_Struct7 = &ctx.PTR_LOOP_1050_4c4c;
     in_Struct7.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     pu_var1 = in_Struct7.func_ptr_0x4;
     u_var2 = in_Struct7.i_field_4;
@@ -27,12 +33,12 @@ pub fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
     if (in_Struct7.file != 0xffff) {
         _lclose16(in_Struct7.file);
     }
-    *_in_Struct7 = ctx.s_1_1050_389a;
+    *in_Struct7 = ctx.s_1_1050_389a;
     in_Struct7.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 
-pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
+pub unsafe fn read_from_file_1008_49e8(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
     let paVar1: *mut Struct131;
     let mut u_var2: u32;
     let mut file_handle: u16;
@@ -41,9 +47,9 @@ pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
     let pa_var5: *mut Struct131;
     let mut Struct131_4: u16;
     let mut u_var6: u32;
-    let mut extraout_dx: i32;
+    
     let struct_a: *mut Struct199;
-    let mut extraout_dx_00: i32;
+    
     let local_bx_4: *mut Struct8;
     let mut unaff_ss: u16;
     let mut bytes_read: u32;
@@ -57,6 +63,7 @@ pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
     let mut local_8: u16;
     let mut read_count: u32;
     let mut u_var7: u32;
+    let mut offset: u16;
 
     if (in_Struct7.file_path != 0x0) {
         if (in_Struct7.u16_field_0x1e != 0) {
@@ -73,15 +80,15 @@ pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
         bytes_read = _hread(0xe, CONCAT22(unaff_ss, &local_18), in_Struct7.file);
         if ((bytes_read == 0xe) && ((bytes_read >> 0x10) == 0)) {
             read_count = local_16;
-            if (local_18 == &PTR_LOOP_1050_4d42) {
+            if (local_18 == &ctx.PTR_LOOP_1050_4d42) {
                 lVar8 = _llseek16(0, 0, in_Struct7.file);
                 pvVar3 = lVar8;
-                local_1c = __g_Struct94_ptr_1;
-                local_1a = (__g_Struct94_ptr_1 >> 0x10);
+                local_1c = ctx.__g_Struct94_ptr_1;
+                local_1a = (ctx.__g_Struct94_ptr_1 >> 0x10);
                 alloc_mem_1000_0a48(1, read_count, (read_count >> 0x10), local_1c, local_1a);
                 in_Struct7.pv_buffer_0x1a = pvVar3;
-                in_Struct7.u16_field_0x1c = extraout_dx;
-                if ((extraout_dx | in_Struct7.pv_buffer_0x1a) == 0) {
+                in_Struct7.u16_field_0x1c = ctx.dx_reg;
+                if ((ctx.dx_reg | in_Struct7.pv_buffer_0x1a) == 0) {
                     return;
                 }
                 // WARNING: Load size is inaccurate
@@ -122,7 +129,7 @@ pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
                     );
                     pa_var5 = u_var7;
                     in_Struct7.func_ptr_0x4 = pa_var5;
-                    in_Struct7.i_field_4 = extraout_dx_00;
+                    in_Struct7.i_field_4 = ctx.dx_reg;
                 }
                 if (in_Struct7.pv_field_0x22 != 0) {
                     local_16 = local_16 & 0xffff0000 | in_stack_00000006;
@@ -139,7 +146,7 @@ pub fn read_from_file_1008_49e8(in_Struct7: *mut Struct7) {
     return;
 }
 
-pub fn close_file_1008_4c26(param_1: *mut Struct7, param_2: u8) -> *mut Struct7 {
+pub unsafe fn close_file_1008_4c26(param_1: *mut Struct7, param_2: u8) -> *mut Struct7 {
     close_file_1008_496c(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -147,17 +154,17 @@ pub fn close_file_1008_4c26(param_1: *mut Struct7, param_2: u8) -> *mut Struct7 
     return param_1;
 }
 
-pub fn file_fn_1008_6414(in_Struct117: *mut Struct117, param_2: u32) {
+pub unsafe fn file_fn_1008_6414(ctx: &mut AppContext, in_Struct117: *mut Struct117, param_2: u32) {
     let pp_var1: fn();
     let in_struct_a: *mut Struct103;
     let paVar2: *mut Struct7;
     let struct_a: *mut Struct199;
     let paVar3: *mut Struct199;
-    let mut extraout_dx: u16;
-    let mut extraout_dx_00: u16;
+    
+    
     let local_Struct117: *mut Struct117;
     let mut local_es_4: u16;
-    let mut local_SS__1: u16;
+    
     let mut local_2a: u16;
     let mut local_28: u16;
     let local_26: u8;
@@ -168,7 +175,7 @@ pub fn file_fn_1008_6414(in_Struct117: *mut Struct117, param_2: u32) {
     &local_Struct117.field_0x4 = 0;
     paVar2 = &local_26;
     process_struct_1008_48fe(
-        CONCAT13((local_SS__1 >> 8), CONCAT12(local_SS__1, paVar2)),
+        CONCAT13((ctx.stack_seg_reg >> 8), CONCAT12(ctx.stack_seg_reg, paVar2)),
         1,
         param_2,
     );
@@ -179,19 +186,19 @@ pub fn file_fn_1008_6414(in_Struct117: *mut Struct117, param_2: u32) {
     } else {
         in_struct_a = CONCAT22(paVar3, paVar2);
         paVar2 = &local_26;
-        pass1_1008_3f92(in_struct_a, CONCAT22(local_SS__1, &local_26));
+        pass1_1008_3f92(in_struct_a, CONCAT22(ctx.stack_seg_reg, &local_26));
         in_Struct117 = paVar2;
-        local_Struct117.field_0x2 = extraout_dx;
+        local_Struct117.field_0x2 = ctx.dx_reg;
     }
     pp_var1 = (in_Struct117 + 0x14);
     (**pp_var1)(0x1000, in_Struct117);
     local_Struct117.field_0x4 = paVar2;
-    local_Struct117.field_0x6 = extraout_dx_00;
-    close_file_1008_496c(&local_26);
+    local_Struct117.field_0x6 = ctx.dx_reg;
+    close_file_1008_496c(ctx, &local_26);
     return;
 }
 
-pub fn close_file_1008_6dd0(param_1: *mut Struct9) {
+pub unsafe fn close_file_1008_6dd0(param_1: *mut Struct9) {
     let local_bx_4: *mut Struct9;
     let mut u_var1: u16;
 
@@ -204,7 +211,7 @@ pub fn close_file_1008_6dd0(param_1: *mut Struct9) {
     error_check_1000_17ce(param_1);
     return;
 }
-pub fn write_to_file_1008_6e02(param_1: *mut file_object) -> u16 {
+pub unsafe fn write_to_file_1008_6e02(ctx: &mut AppContext, param_1: *mut file_object) -> u16 {
     let b_var1: bool;
     let mut i_var2: i32;
     let mut u_var3: u16;
@@ -212,7 +219,7 @@ pub fn write_to_file_1008_6e02(param_1: *mut file_object) -> u16 {
     let mut unaff_ss: u16;
     let mut local_4: [u8; 2];
 
-    g_u16_1050_0310 = 0;
+    ctx.g_u16_1050_0310 = 0;
     b_var1 = write_to_file_1008_70a6(param_1);
     if (b_var1 != 0) {
         u_var4 = (param_1 >> 0x10);
@@ -236,7 +243,7 @@ pub fn write_to_file_1008_6e02(param_1: *mut file_object) -> u16 {
     return 0;
 }
 
-pub fn close_file_1008_6e78(param_1: &mut Vec<u8>) -> bool {
+pub unsafe fn close_file_1008_6e78(ctx: &mut AppContext, param_1: &mut Vec<u8>) -> bool {
     let b_var1: bool;
     let mut i_var2: i32;
     let mut u_var3: u16;
@@ -244,7 +251,7 @@ pub fn close_file_1008_6e78(param_1: &mut Vec<u8>) -> bool {
     let mut unaff_ss: u16;
     let mut local_4: [u8; 2];
 
-    g_u16_1050_0310 = 0;
+    ctx.g_u16_1050_0310 = 0;
     b_var1 = read_from_file_1008_7146(param_1);
     if (b_var1 != 0) {
         u_var4 = (param_1 >> 0x10);
@@ -267,7 +274,7 @@ pub fn close_file_1008_6e78(param_1: &mut Vec<u8>) -> bool {
     }
     return 0;
 }
-pub fn write_to_file_1008_70a6(param_1: *mut file_object) -> bool {
+pub fn write_to_file_1008_70a6(ctx: &mut AppContext, param_1: *mut file_object) -> bool {
     let mut local_file: u16;
     let mut count: u16;
     let local_bx_6: *mut file_object;
@@ -284,29 +291,29 @@ pub fn write_to_file_1008_70a6(param_1: *mut file_object) -> bool {
     local_file = _lcreat16(0, param_1.path);
     local_bx_6.file = local_file;
     if (local_file == 0xffff) {
-        g_u16_1050_0310 = 0x6cf;
+        ctx.g_u16_1050_0310 = 0x6cf;
     } else {
-        PTR_LOOP_1050_0312 = &PTR_DAT_0005_0000_1050_0004;
+        ctx.PTR_LOOP_1050_0312 = &ctx.PTR_DAT_0005_0000_1050_0004;
         string_fn_1000_3f9c(
-            s__1050_65a0,
+            ctx.s__1050_65a0,
             &ctx.g_alloc_addr_1050_1050,
-            _PTR_s_SC_03d_1050_0314_1050_031c,
-            (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),
-            &PTR_DAT_0005_0000_1050_0004,
+            ctx._PTR_s_SC_03d_1050_0314_1050_031c,
+            (ctx._PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),
+            &ctx.PTR_DAT_0005_0000_1050_0004,
         );
-        count = get_string_index_1000_3da4(s__1050_65a0);
-        bytes_written = _hwrite16(count, s__1050_65a0, local_bx_6.file);
+        count = get_string_index_1000_3da4(ctx.s__1050_65a0);
+        bytes_written = _hwrite16(count, ctx.s__1050_65a0, local_bx_6.file);
         if (bytes_written == count) {
             return 1;
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
 
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
-pub fn read_from_file_1008_7146(param_1: *mut file_object) -> bool {
+pub fn read_from_file_1008_7146(ctx: &mut AppContext, param_1: *mut file_object) -> bool {
     let mut file: u16;
     let b_var1: bool;
     let local_file_obj: *mut file_object;
@@ -321,20 +328,20 @@ pub fn read_from_file_1008_7146(param_1: *mut file_object) -> bool {
     file = _lopen16(0, param_1.path);
     local_file_obj.file = file;
     if (file == 0xffff) {
-        g_u16_1050_0310 = 0x6cf;
+        ctx.g_u16_1050_0310 = 0x6cf;
     } else {
         b_var1 = read_file_func_1008_71a0((param_1 & 0xffff));
         if (b_var1 != 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // WARNING: Removing unreachable block (ram,0x100871e6)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn read_file_func_1008_71a0(in_file_object: *mut file_object) -> bool {
+pub fn read_file_func_1008_71a0(ctx: &mut AppContext, in_file_object: *mut file_object) -> bool {
     let mut count: u16;
     let mut unaff_ss: u16;
     let mut bytes_read: u32;
@@ -349,7 +356,7 @@ pub fn read_file_func_1008_71a0(in_file_object: *mut file_object) -> bool {
     let mut local_4: u16;
 
     local_4 = 1;
-    count = get_string_index_1000_3da4(s__1050_65a0);
+    count = get_string_index_1000_3da4(ctx.s__1050_65a0);
     local_16 = 0;
     bytes_read = _hread(count, CONCAT22(unaff_ss, local_e), (in_file_object + 4));
     bytes_read._0_2_ = bytes_read;
@@ -367,27 +374,27 @@ pub fn read_file_func_1008_71a0(in_file_object: *mut file_object) -> bool {
         local_18 = local_18 - 1;
     }
     if (local_16 == 1) {
-        PTR_LOOP_1050_0312 = (&ctx.PTR_LOOP_1050_0000 + 1);
+        ctx.PTR_LOOP_1050_0312 = (&ctx.PTR_LOOP_1050_0000 + 1);
     } else {
         if (local_16 == 4) {
-            PTR_LOOP_1050_0312 = &PTR_DAT_0005_0000_1050_0004;
+            ctx.PTR_LOOP_1050_0312 = &ctx.PTR_DAT_0005_0000_1050_0004;
         } else {
             local_5 = '\0';
-            PTR_LOOP_1050_0312 = (&ctx.PTR_LOOP_1050_0000 + 1);
+            ctx.PTR_LOOP_1050_0312 = (&ctx.PTR_LOOP_1050_0000 + 1);
             local_4 = 0;
         }
     }
     string_fn_1000_3f9c(
-        s__1050_65a0,
+        ctx.s__1050_65a0,
         &ctx.g_alloc_addr_1050_1050,
-        _PTR_s_SC_03d_1050_0314_1050_031c,
-        (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),
-        PTR_LOOP_1050_0312,
+        ctx._PTR_s_SC_03d_1050_0314_1050_031c,
+        (ctx._PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),
+        ctx.PTR_LOOP_1050_0312,
     );
     return local_4;
 }
 
-pub fn close_file_1008_726c(param_1: *mut Struct11) -> bool {
+pub fn close_file_1008_726c(ctx: &mut AppContext, param_1: *mut Struct11) -> bool {
     let mut file_handle: u16;
     let local_bx_4: *mut Struct11;
     let mut u_var1: u16;
@@ -397,23 +404,26 @@ pub fn close_file_1008_726c(param_1: *mut Struct11) -> bool {
     if (local_bx_4.file != 0xffff) {
         file_handle = _lclose16(local_bx_4.file);
         if (file_handle == 0xffff) {
-            g_u16_1050_0310 = 0x6d1;
+            ctx.g_u16_1050_0310 = 0x6d1;
             return 0;
         }
         local_bx_4.file = 0xffff;
-        g_u16_1050_0310 = 0;
+        ctx.g_u16_1050_0310 = 0;
     }
     return 1;
 }
 
-pub fn read_file_1008_7548(param_1: *mut HFILE16, param_2: *mut long) {
+pub unsafe fn read_file_1008_7548(
+    ctx: &mut AppContext,
+    in_file_handle: &mut HFILE16,
+    param_2: &mut usize,
+) {
     let pp_var1: fn();
-    let BVar2: bool;
+    let was_file_read: bool;
     let mut u_var3: i32;
     let mut u_var4: u32;
     let mut local_DX_119: u16;
     let mut local_CS__1: u16;
-    let mut local_SS__1: u16;
     let lVar5: u32;
     let mut local_20: u16;
     let mut local_1e: u16;
@@ -425,8 +435,8 @@ pub fn read_file_1008_7548(param_1: *mut HFILE16, param_2: *mut long) {
     let mut local_6: u32;
 
     local_6 = 0;
-    BVar2 = read_file_1008_7dee(param_1, CONCAT22(local_SS__1, &local_6), 4);
-    if (BVar2 == 0) {
+    was_file_read = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_6), 4);
+    if !was_file_read {
         return;
     }
     if (local_6 != 0) {
@@ -436,32 +446,37 @@ pub fn read_file_1008_7548(param_1: *mut HFILE16, param_2: *mut long) {
             u_var4 = 200;
         }
         u_var3 = u_var4;
-        _local_a = u_var4 & 0xffff | ZEXT24(local_6._2_2_) << 0x10;
-        let param_2_val = unsafe { *param_2 };
+        local_a = u_var4 & 0xffff | ZEXT24(local_6._2_2_) << 0x10;
+        let param_2_val = *param_2;
         if (param_2_val == 0) {
-            local_CS__1 = 0x1000;
+            ctx.code_seg_reg = 0x1000;
             process_struct_1000_179c(0x1e, local_6._2_2_);
             if ((local_6._2_2_ | u_var3) == 0) {
-                unsafe { *param_2 = 0 };
+                *param_2 = 0;
             } else {
-                local_CS__1 = 0x1020;
-                pass1_1020_c444(CONCAT22(local_6._2_2_, u_var3), 100, _local_a);
+                ctx.code_seg_reg = 0x1020;
+                pass1_1020_c444(CONCAT22(local_6._2_2_, u_var3), 100, local_a);
                 param_2 = u_var3;
                 (param_2 + 2) = local_DX_119;
             }
         }
-        unsafe {
-            lVar5 = *param_2;
-            pp_var1 = (*param_2 + 0x24);
-            (**pp_var1)();
-        }
+
+        lVar5 = *param_2;
+        pp_var1 = (*param_2 + 0x24);
+        (**pp_var1)();
+
         local_e = 0;
         while (local_e < local_6) {
-            BVar2 = read_file_1008_7dee(param_1, CONCAT22(local_SS__1, &local_1c), 4);
-            if ((BVar2 == 0)
+            was_file_read =
+                read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_1c), 4);
+            if ((was_file_read == 0)
                 || (
-                    BVar2 = read_file_1008_7dee(param_1, CONCAT22(local_SS__1, &local_18), 2),
-                    BVar2 == 0,
+                    was_file_read = read_file_1008_7dee(
+                        in_file_handle,
+                        CONCAT22(ctx.stack_seg_reg, &local_18),
+                        2,
+                    ),
+                    was_file_read == 0,
                 ))
             {
                 unsafe {
@@ -492,27 +507,32 @@ pub fn read_file_1008_7548(param_1: *mut HFILE16, param_2: *mut long) {
     return;
 }
 
-pub fn read_file_1008_76e4(param_1: *mut HFILE16, param_2: *mut long) {
+pub unsafe fn read_file_1008_76e4(
+    ctx: &mut AppContext,
+    param_1: *mut HFILE16,
+    param_2: &mut usize,
+) {
     let pp_var1: fn();
     let mut u_var2: i32;
     let BVar3: bool;
     let in_dx: *mut Struct199;
     let mut local_DX_93: u16;
-    let mut local_SS__1: u16;
+    // 
     let mut local_1c: u16;
     let mut local_1a: u16;
     let mut local_18: u32;
     let mut local_a: u32;
     let mut local_6: u32;
+    let mut val: u16;
 
     local_6 = 0;
-    u_var2 = read_file_1008_7dee(param_1, CONCAT22(local_SS__1, &local_6), 4);
+    u_var2 = read_file_1008_7dee(param_1, CONCAT22(ctx.stack_seg_reg, &local_6), 4);
     if (u_var2 == 0) {
         return;
     }
     if (local_6 != 0) {
         let param_2_val = unsafe { *param_2 };
-        if (val == 0) {
+        if (param_2_val == 0) {
             process_struct_1000_179c(0x18, in_dx);
             if ((in_dx | u_var2) == 0) {
                 unsafe {
@@ -529,7 +549,7 @@ pub fn read_file_1008_76e4(param_1: *mut HFILE16, param_2: *mut long) {
         (**pp_var1)();
         local_a = 0;
         while (local_a < local_6) {
-            BVar3 = read_file_1008_7dee(param_1, CONCAT22(local_SS__1, &local_18), 4);
+            BVar3 = read_file_1008_7dee(param_1, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
             if (BVar3 == 0) {
                 return;
             }
@@ -545,11 +565,15 @@ pub fn read_file_1008_76e4(param_1: *mut HFILE16, param_2: *mut long) {
     return;
 }
 
-pub fn read_file_1008_77cc(in_hfile: *mut HFILE16, param_2: *mut long) -> u16 {
+pub fn read_file_1008_77cc(
+    ctx: &mut AppContext,
+    in_hfile: &mut HFILE16,
+    param_2: &mut usize,
+) -> u16 {
     let mut u_var1: i32;
     let BVar2: bool;
     let in_dx: *mut Struct199;
-    let mut local_SS__1: u16;
+    // 
     let mut local_DXAX_90: u32;
     let mut local_18: u16;
     let mut local_16: u16;
@@ -559,7 +583,7 @@ pub fn read_file_1008_77cc(in_hfile: *mut HFILE16, param_2: *mut long) -> u16 {
     let mut local_4: u16;
 
     local_4 = 0;
-    u_var1 = read_file_1008_7dee(in_hfile, CONCAT22(local_SS__1, &local_4), 2);
+    u_var1 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_4), 2);
     if (u_var1 == 0) {
         return 0;
     }
@@ -577,11 +601,11 @@ pub fn read_file_1008_77cc(in_hfile: *mut HFILE16, param_2: *mut long) -> u16 {
         }
         local_6 = 0;
         while (local_6 < local_4) {
-            BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(local_SS__1, &local_14), 2);
+            BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_14), 2);
             if (BVar2 == 0) {
                 return 0;
             }
-            BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(local_SS__1, &local_10), 4);
+            BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_10), 4);
             if (BVar2 == 0) {
                 return 0;
             }
@@ -601,13 +625,13 @@ pub fn read_file_1008_77cc(in_hfile: *mut HFILE16, param_2: *mut long) -> u16 {
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn write_to_file_1008_7898(in_file: u32, param_2: *mut u32) {
+pub fn write_to_file_1008_7898(ctx: &mut AppContext, in_file: &mut HFILE16, param_2: *mut u32) {
     let pp_var1: fn();
-    let mut local_AX__1: u16;
+    // 
     let BVar2: bool;
-    let mut local_DX_19: u16;
+    // 
     let mut u_var3: u16;
-    let mut local_SS__1: u16;
+    // 
     let mut local_26: u16;
     let mut local_24: u32;
     let mut local_18: u16;
@@ -618,57 +642,57 @@ pub fn write_to_file_1008_7898(in_file: u32, param_2: *mut u32) {
     let mut local_4: u16;
 
     if (param_2 == 0x0) {
-        local_AX__1 = 0;
+        ctx.ax_reg = 0;
         u_var3 = 0;
     } else {
         let param_2_val = unsafe { *param_2 };
         pp_var1 = (param_2_val + 0x10);
         (**pp_var1)();
-        u_var3 = local_DX_19;
+        u_var3 = ctx.dx_reg;
     }
-    _local_6 = CONCAT22(u_var3, local_AX__1);
-    _local_18 = CONCAT22(u_var3, local_AX__1);
-    BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(local_SS__1, &local_18), 4);
+    local_6 = CONCAT22(u_var3, ctx.ax_reg);
+    local_18 = CONCAT22(u_var3, ctx.ax_reg);
+    BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
     if (BVar2 != 0) {
         local_a = 0;
         while (true) {
-            if (_local_6 <= local_a) {
+            if (local_6 <= local_a) {
                 return;
             }
             pass1_1020_c4a8(
                 param_2,
-                CONCAT22(local_SS__1, &local_14),
-                CONCAT22(local_SS__1, &local_18),
+                CONCAT22(ctx.stack_seg_reg, &local_14),
+                CONCAT22(ctx.stack_seg_reg, &local_18),
                 local_a,
             );
-            local_24 = _local_18;
-            BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(local_SS__1, &local_24), 4);
+            local_24 = local_18;
+            BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(ctx.stack_seg_reg, &local_24), 4);
             if (BVar2 == 0) {
                 break;
             }
             local_26 = local_14;
-            BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(local_SS__1, &local_26), 2);
+            BVar2 = write_to_file_1008_7e1c(in_file, CONCAT22(ctx.stack_seg_reg, &local_26), 2);
             if (BVar2 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return;
             }
             local_a = local_a + 1;
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn write_to_file_1008_7954(param_1: u32, param_2: *mut u32) {
+pub fn write_to_file_1008_7954(ctx: &mut AppContext, param_1: &mut HFILE16, param_2: *mut u32) {
     let pp_var1: fn();
-    let mut in_AX: u16;
+    // 
     let BVar2: bool;
     let mut u_var3: u32;
-    let mut local_DX_19: u16;
-    let mut extraout_dx: u16;
-    let mut local_SS__1: u16;
+    //
+    // 
+    //
     let mut local_20: u16;
     let mut local_1e: u16;
     let mut local_18: u16;
@@ -678,64 +702,63 @@ pub fn write_to_file_1008_7954(param_1: u32, param_2: *mut u32) {
     let mut local_4: u16;
 
     if (param_2 == 0x0) {
-        in_AX = 0;
+        ctx.ax_reg = 0;
         local_16 = 0;
     } else {
         let param_2_val = unsafe { *param_2 };
         pp_var1 = (param_2_val + 0x10);
         (**pp_var1)();
-        local_16 = local_DX_19;
+        local_16 = ctx.dx_reg;
     }
-    _local_6 = CONCAT22(local_16, in_AX);
-    local_18 = in_AX;
-    BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_18), 4);
+    local_6 = CONCAT22(local_16, ctx.ax_reg);
+    local_18 = ctx.ax_reg;
+    BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
     if (BVar2 != 0) {
         local_a = 0;
         while (true) {
-            if (_local_6 <= local_a) {
+            if (local_6 <= local_a) {
                 return;
             }
             let param_2_val = unsafe { *param_2 };
             pp_var1 = (param_2_val + 4);
-            u_var3 = _local_6;
+            u_var3 = local_6;
             (**pp_var1)();
             local_20 = u_var3;
-            local_1e = extraout_dx;
+            local_1e = ctx.dx_reg;
             local_18 = local_20;
-            local_16 = extraout_dx;
-            BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_20), 4);
+            local_16 = ctx.dx_reg;
+            BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_20), 4);
             if (BVar2 == 0) {
                 break;
             }
-
             local_a = local_a + 1;
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
-pub fn write_to_file_1008_79f0(in_file: u32, param_2: libc::c_long) {
-    let mut local_AX_28: u16;
+pub fn write_to_file_1008_79f0(ctx: &mut AppContext, in_file: u32, param_2: libc::c_long) {
+    // 
     let mut local_es_11: u16;
     let mut local_4: u16;
 
     if (param_2 == 0) {
-        local_AX_28 = 0;
+        ctx.ax_reg = 0;
         local_4 = 0;
     } else {
         local_es_11 = (param_2 >> 0x10);
-        local_AX_28 = (param_2 + 4);
+        ctx.ax_reg = (param_2 + 4);
         local_4 = (param_2 + 6);
     }
-    write_to_file_1008_7954(in_file, CONCAT22(local_4, local_AX_28));
+    write_to_file_1008_7954(ctx, in_file, CONCAT22(local_4, ctx.ax_reg));
     return;
 }
 
-pub fn write_to_file_1008_7a22(param_1: *mut HFILE16, param_2: *mut *mut u8) {
+pub fn write_to_file_1008_7a22(param_1: &mut HFILE16, param_2: *mut *mut u8) {
     let b_var1: bool;
     let mut local_es_9: u16;
-    let mut local_SS__1: u16;
+    
     let mut local_24: u32;
     let mut local_1c: u16;
     let mut local_12: u16;
@@ -750,9 +773,9 @@ pub fn write_to_file_1008_7a22(param_1: *mut HFILE16, param_2: *mut *mut u8) {
         local_4 = (param_2 + 4);
     }
     local_12 = local_4;
-    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_12), 2);
+    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_12), 2);
     if (b_var1 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     } else {
         local_6 = 0;
         while (true) {
@@ -761,18 +784,18 @@ pub fn write_to_file_1008_7a22(param_1: *mut HFILE16, param_2: *mut *mut u8) {
             }
             pass1_1020_bb16(
                 param_2,
-                CONCAT22(local_SS__1, &local_10),
-                CONCAT22(local_SS__1, &local_12),
+                CONCAT22(ctx.stack_seg_reg, &local_10),
+                CONCAT22(ctx.stack_seg_reg, &local_12),
                 local_6,
             );
             local_a = local_12;
             local_1c = local_12;
-            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_1c), 2);
+            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_1c), 2);
             if (b_var1 == 0) {
                 break;
             }
             local_24 = local_10;
-            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_24), 4);
+            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_24), 4);
             if (b_var1 == 0) {
                 return;
             }
@@ -782,25 +805,25 @@ pub fn write_to_file_1008_7a22(param_1: *mut HFILE16, param_2: *mut *mut u8) {
     return;
 }
 
-pub fn read_file_1008_7ad4(in_file: *mut HFILE16, param_2: u32) -> u16 {
+pub fn read_file_1008_7ad4(in_file: &mut HFILE16, param_2: u32) -> u16 {
     let b_var1: bool;
-    let mut local_SS__1: u16;
+    
     let mut local_14: u16;
     let mut local_10: u32;
     let mut local_6: u16;
     let mut local_4: u16;
 
-    b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_4), 2);
+    b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_4), 2);
     if (b_var1 != 0) {
         local_6 = 0;
         while (true) {
             if (local_4 <= local_6) {
                 return 1;
             }
-            b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_14), 2);
+            b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_14), 2);
             if ((b_var1 == 0)
                 || (
-                    b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_10), 4),
+                    b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_10), 4),
                     b_var1 == 0,
                 ))
             {
@@ -813,9 +836,9 @@ pub fn read_file_1008_7ad4(in_file: *mut HFILE16, param_2: u32) -> u16 {
     return 0;
 }
 
-pub fn write_file_1008_7b4c(param_1: *mut HFILE16, param_2: *mut u8) -> u16 {
+pub fn write_file_1008_7b4c(param_1: &mut HFILE16, param_2: *mut u8) -> u16 {
     let b_var1: bool;
-    let mut local_SS__1: u16;
+    
     let mut local_12: u16;
     let mut local_c: u16;
     let mut local_8: u16;
@@ -824,18 +847,18 @@ pub fn write_file_1008_7b4c(param_1: *mut HFILE16, param_2: *mut u8) -> u16 {
 
     pass1_1008_3eb4(
         param_2,
-        CONCAT22(local_SS__1, &local_8),
-        CONCAT22(local_SS__1, &local_6),
-        CONCAT22(local_SS__1, &local_4),
+        CONCAT22(ctx.stack_seg_reg, &local_8),
+        CONCAT22(ctx.stack_seg_reg, &local_6),
+        CONCAT22(ctx.stack_seg_reg, &local_4),
     );
     local_12 = local_4;
-    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_12), 2);
+    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_12), 2);
     if (b_var1 != 0) {
         local_c = local_6;
-        b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_c), 2);
+        b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_c), 2);
         if (b_var1 != 0) {
             local_c = local_8;
-            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, &local_c), 2);
+            b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_c), 2);
             if (b_var1 != 0) {
                 return 1;
             }
@@ -844,17 +867,17 @@ pub fn write_file_1008_7b4c(param_1: *mut HFILE16, param_2: *mut u8) -> u16 {
     return 0;
 }
 
-pub fn read_file_1008_7bc8(in_file: *mut HFILE16, param_2: *mut u16) -> u16 {
+pub unsafe fn read_file_1008_7bc8(ctx: &mut AppContext, in_file: &mut HFILE16, param_2: *mut u16) -> u16 {
     let b_var1: bool;
-    let mut local_SS__1: u16;
+    
     let mut local_8: u16;
     let mut local_6: u32;
 
-    b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_6 + 2), 2);
+    b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_6 + 2), 2);
     if (b_var1 != 0) {
-        b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_6), 2);
+        b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_6), 2);
         if (b_var1 != 0) {
-            b_var1 = read_file_1008_7dee(in_file, CONCAT22(local_SS__1, &local_8), 2);
+            b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_8), 2);
             if (b_var1 != 0) {
                 pass1_1008_3e76(param_2, local_8, local_6, (local_6 >> 0x10));
                 return 1;
@@ -907,20 +930,20 @@ pub fn read_file_into_str_1008_7c6e(p_file_handle: *mut HFILE16, out_str: *mut c
 pub fn write_to_file_1008_7cac(param_1: *mut HFILE16, param_2: u16) -> u8 {
     let mut buf_size: i32;
     let b_var1: bool;
-    let local_SS__1: *mut libc::c_char;
+    let ctx.stack_seg_reg: *mut libc::c_char;
     let mut char_buf: [u8; 10];
 
     string_fn_1000_3f9c(
         char_buf,
-        local_SS__1,
+        ctx.stack_seg_reg,
         s__s_02x_1050_0340,
         &ctx.g_alloc_addr_1050_1050,
         _PTR_s_dcbSC_1050_0336_1050_033c,
     );
-    buf_size = get_string_index_1000_3da4(CONCAT22(local_SS__1, char_buf));
-    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(local_SS__1, char_buf), buf_size);
+    buf_size = get_string_index_1000_3da4(CONCAT22(ctx.stack_seg_reg, char_buf));
+    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, char_buf), buf_size);
     if (b_var1 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return '\0';
     }
     return 0x1;
@@ -979,13 +1002,13 @@ pub fn read_file_1008_7cfe(param_1: *mut HFILE16) -> u8 {
 }
 
 pub fn read_file_1008_7dee(
-    p_in_file_handle: *mut HFILE16,
-    buffer: *mut char,
-    count: libc::c_long,
+    p_in_file_handle: &mut HFILE16,
+    buffer: &mut Vec<u8>,
+    count: usize,
 ) -> bool {
     let mut bytes_read: u32;
-    let p_in_file_handle_val = unsafe { *p_in_file_handle };
-    bytes_read = _hread(count, buffer, p_in_file_handle_val);
+    // let p_in_file_handle_val = unsafe { *p_in_file_handle };
+    bytes_read = _hread(p_in_file_handle, buffer, count);
     if ((bytes_read == count) && ((bytes_read >> 0x10) == count._2_2_)) {
         return 1;
     }
@@ -1023,7 +1046,7 @@ pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut H
     let in_dx: *mut Struct199;
     let struct_a: *mut Struct199;
     let mut u_var7: u16;
-    let extraout_dx: *mut Struct199;
+    
     let mut u_var8: u16;
     let mut u_var9: u16;
     let mut unaff_ss: u16;
@@ -1055,7 +1078,7 @@ pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut H
     }
     u_var2 = read_file_1008_7cfe(CONCAT22(in_stack_0000000a, file_handle_ptr));
     if (CONCAT31(extraout_var, u_var2) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
     } else {
         local_Struct120._0_2_ = in_Struct120;
         local_Struct120._0_2_ = local_Struct120 + 0x22;
@@ -1142,14 +1165,14 @@ pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut H
             func_ptr_1 = ((local_Struct120 + 10) + 8);
             (**func_ptr_1)();
             local_11e = local_11e + 1;
-            struct_a = extraout_dx;
+            struct_a = ctx.dx_reg;
         }
         if (_local_11c != 0x0) {
             pp_var1 = *_local_11c;
             (**pp_var1)(0, local_AX_168, u_var8, 1, _local_11c);
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
 
     return;
 }
@@ -1166,7 +1189,7 @@ pub fn write_to_file_1008_c98e(param_1: u32, param_2: u32) {
         local_10 = (param_1 + 0xe);
         BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 4);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
     }
@@ -1181,12 +1204,12 @@ pub fn read_file_1008_c9d4(param_1: u32, in_file: *mut HFILE16) {
     if (1 < PTR_LOOP_1050_0312) {
         u_var1 = read_file_1008_7cfe(in_file);
         if (CONCAT31(extraout_var, u_var1) == 0) {
-            g_u16_1050_0310 = 0x6d4;
+            ctx.g_u16_1050_0310 = 0x6d4;
             return;
         }
         BVar2 = read_file_1008_7dee(in_file, (param_1 & 0xffff0000 | (param_1 + 0xe)), 4);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return;
         }
     }
@@ -1199,7 +1222,7 @@ pub fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
     let BVar3: bool;
     let pu_var4: *mut u8;
     let extraout_var: u32;
-    let mut extraout_dx: i32;
+    
     let mut i_var5: i32;
     let mut u_var6: u16;
     let mut unaff_ss: u16;
@@ -1231,8 +1254,8 @@ pub fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
             while {
                 pu_var4 = local_c;
                 pass1_1008_5b12(CONCAT22(unaff_ss, pu_var4));
-                _local_10 = CONCAT22(extraout_dx, pu_var4);
-                if ((extraout_dx | pu_var4) == 0) {
+                _local_10 = CONCAT22(ctx.dx_reg, pu_var4);
+                if ((ctx.dx_reg | pu_var4) == 0) {
                     return;
                 }
                 local_24 = (pu_var4 + 4);
@@ -1260,7 +1283,7 @@ pub fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
                 BVar3 != 0
             } {}
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
@@ -1276,8 +1299,8 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
     let extraout_var: u32;
     let in_dx: *mut Struct199;
     let mut u_var5: u16;
-    let extraout_dx: *mut Struct199;
-    let mut extraout_dx_00: u16;
+    
+    
     let mut unaff_ss: u16;
     let mut local_38: u32;
     let mut local_16: u32;
@@ -1309,7 +1332,7 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
                     u_var5 = 0;
                 } else {
                     process_struct_1008_dcdc(CONCAT22(in_dx, u_var4));
-                    u_var5 = extraout_dx_00;
+                    u_var5 = ctx.dx_reg;
                 }
                 _local_e = CONCAT22(u_var5, u_var4);
                 BVar3 = read_file_1008_7dee(in_file_1, CONCAT22(u_var5, u_var4 + 4), 4);
@@ -1349,28 +1372,24 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
                 pp_var1 = ((param_1 + 10) + 4);
                 (**pp_var1)();
                 local_a = local_a + 1;
-                in_dx = extraout_dx;
+                in_dx = ctx.dx_reg;
             }
             if (_local_e != 0x0) {
                 pp_var1 = *_local_e;
                 (**pp_var1)(0x1000, _local_e, (_local_e >> 0x10), 1, _local_e);
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
 
-pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
+pub fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: *mut Struct235, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
     let BVar3: bool;
     let pcVar4: *mut libc::c_char;
     let extraout_var: u32;
-    let mut extraout_dx: i32;
-    let local_bx_26: *mut Struct325;
-    let local_es_26: *mut u8;
-    let local_SS__1: *mut u8;
     let mut local_2a: u32;
     let mut local_22: u16;
     let mut local_1e: u16;
@@ -1385,39 +1404,39 @@ pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
     if (CONCAT31(extraout_var, u_var2) == 0) {
         return;
     }
-    local_es_26 = (in_struct_1 >> 0x10);
-    local_bx_26 = in_struct_1;
-    if (local_bx_26.field_0xa == 0) {
+    ctx.es_reg = (in_struct_1 >> 0x10);
+    ctx.bx_reg = in_struct_1;
+    if (ctx.bx_reg.field_0xa == 0) {
         local_6 = 0;
     } else {
-        u_var1 = local_bx_26.field_0xa;
+        u_var1 = ctx.bx_reg.field_0xa;
         local_6 = (u_var1 + 8);
     }
     local_1e = local_6;
-    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_1e), 2);
+    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
     if (BVar3 != 0) {
-        pass1_1008_5784(CONCAT22(local_SS__1, local_e), local_bx_26.field_0xa);
+        pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_e), ctx.bx_reg.field_0xa);
         while {
             pcVar4 = local_e;
-            pass1_1008_5b12(CONCAT22(local_SS__1, pcVar4));
-            _local_12 = CONCAT22(extraout_dx, pcVar4);
-            if ((extraout_dx | pcVar4) == 0) {
-                local_22 = local_bx_26.field_0xe;
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_22), 2);
+            pass1_1008_5b12(CONCAT22(ctx.stack_seg_reg, pcVar4));
+            _local_12 = CONCAT22(ctx.dx_reg, pcVar4);
+            if ((ctx.dx_reg | pcVar4) == 0) {
+                local_22 = ctx.bx_reg.field_0xe;
+                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
                 if (BVar3 == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
-                local_22 = local_bx_26.field_0x10;
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_22), 2);
+                local_22 = ctx.bx_reg.field_0x10;
+                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
                 if (BVar3 == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
-                if (local_bx_26.field_0x18 != 0) {
-                    u16_1050_0e28 = local_bx_26.field_0x12;
-                    PTR_LOOP_1050_0e30 = local_bx_26.field_0x14;
-                    PTR_LOOP_1050_0ea8 = local_bx_26.field_0x16;
+                if (ctx.bx_reg.field_0x18 != 0) {
+                    u16_1050_0e28 = ctx.bx_reg.field_0x12;
+                    PTR_LOOP_1050_0e30 = ctx.bx_reg.field_0x14;
+                    PTR_LOOP_1050_0ea8 = ctx.bx_reg.field_0x16;
                 }
                 local_4 = 0;
                 while (true) {
@@ -1425,7 +1444,7 @@ pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
                         local_4 = 0;
                         while (true) {
                             if (2 < local_4) {
-                                if (local_bx_26.field_0x18 != 0) {
+                                if (ctx.bx_reg.field_0x18 != 0) {
                                     u16_1050_0e28 = 0;
                                     PTR_LOOP_1050_0e30 = 0x0;
                                     PTR_LOOP_1050_0ea8 = 0x0;
@@ -1435,7 +1454,7 @@ pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
                             local_1e = (local_4 * 8 + 0xea8);
                             BVar3 = write_to_file_1008_7e1c(
                                 param_2,
-                                CONCAT22(local_SS__1, &local_1e),
+                                CONCAT22(ctx.stack_seg_reg, &local_1e),
                                 2,
                             );
                             if (BVar3 == 0) {
@@ -1443,31 +1462,31 @@ pub fn write_file_1010_0ad2(in_struct_1: *mut Struct235, param_2: u32) {
                             }
                             local_4 = local_4 + 1;
                         }
-                        g_u16_1050_0310 = 0x6d0;
+                        ctx.g_u16_1050_0310 = 0x6d0;
                         return;
                     }
                     local_1e = (local_4 * 8 + 0xe28);
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_1e), 2);
+                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
                     if (BVar3 == 0) {
                         break;
                     }
                     local_4 = local_4 + 1;
                 }
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return;
             }
             local_18 = (pcVar4 + 4);
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_18), 2);
+            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_18), 2);
             if (BVar3 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return;
             }
             local_2a = (_local_12 + 6);
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(local_SS__1, &local_2a), 4);
+            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_2a), 4);
             BVar3 != 0
         } {}
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
@@ -1479,8 +1498,8 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
     let b_var5: bool;
     let extraout_var: u32;
     let in_dx: *mut Struct199;
-    let extraout_dx: *mut Struct199;
-    let mut i_var6: i32;
+    
+    let mut i32_var6: i32;
     let mut unaff_ss: u16;
     let mut local_2e: u32;
     let mut local_2a: u16;
@@ -1494,12 +1513,12 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
 
     u_var2 = read_file_1008_7cfe(param_2);
     if (CONCAT31(extraout_var, u_var2) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
     } else {
         BVar3 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_6), 2);
         if (BVar3 != 0) {
             local_8 = 0;
-            while (i_var6 = param_1, local_8 < local_6) {
+            while (i32_var6 = param_1, local_8 < local_6) {
                 u_var4 = local_6;
                 process_struct_1000_179c(10, in_dx);
                 local_1a = CONCAT22(in_dx, u_var4);
@@ -1531,16 +1550,16 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
                     // goto LAB_1010_0cb1;
                 }
                 (local_16 + 4) = local_12;
-                pp_var1 = ((i_var6 + 10) + 8);
+                pp_var1 = ((i32_var6 + 10) + 8);
                 (**pp_var1)();
                 local_8 = local_8 + 1;
-                in_dx = extraout_dx;
+                in_dx = ctx.dx_reg;
             }
-            BVar3 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var6 + 0xe)), 2);
+            BVar3 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i32_var6 + 0xe)), 2);
             if ((BVar3 != 0)
                 && (
                     BVar3 =
-                        read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var6 + 0x10)), 2),
+                        read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i32_var6 + 0x10)), 2),
                     BVar3 != 0,
                 ))
             {
@@ -1574,7 +1593,7 @@ pub fn read_file_1010_0c7c(param_1: u32, param_2: *mut HFILE16) {
             }
         }
         // LAB_1010_0cb1:
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -1607,7 +1626,7 @@ pub fn write_to_file_1010_3fc2(in_struct_1: *mut Struct390, in_file: *mut HFILE1
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
@@ -1622,7 +1641,7 @@ pub fn read_file_1010_404a(param_1: *mut Struct407, param_2: u32) {
 
     u_var1 = read_file_1008_7cfe(param_2);
     if (CONCAT31(extraout_var, u_var1) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
     } else {
         local_AX_39 = param_1;
         local_AX_39 = &local_AX_39.field_0x24;
@@ -1641,7 +1660,7 @@ pub fn read_file_1010_404a(param_1: *mut Struct407, param_2: u32) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
@@ -1652,7 +1671,7 @@ pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFIL
     let extraout_AH: u8;
     let mut i_var3: i32;
     let b_var4: bool;
-    let local_bx_26: *mut Struct425;
+    let ctx.bx_reg: *mut Struct425;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
     let mut local_c: u16;
@@ -1661,17 +1680,17 @@ pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFIL
     u_var2 = write_to_file_1008_7cac(in_file_1, 4);
     if (CONCAT11(extraout_AH, u_var2) != 0) {
         u_var5 = (in_struct_1 >> 0x10);
-        local_bx_26 = in_struct_1;
-        u_var1 = local_bx_26.field_0x68;
+        ctx.bx_reg = in_struct_1;
+        u_var1 = ctx.bx_reg.field_0x68;
         i_var3 = write_to_file_1008_7c2a(in_file_1, u_var1, (u_var1 >> 0x10));
         if (i_var3 != 0) {
-            u_var1 = local_bx_26.field_0x6c;
+            u_var1 = ctx.bx_reg.field_0x6c;
             i_var3 = write_to_file_1008_7c2a(in_file_1, u_var1, (u_var1 >> 0x10));
             if (i_var3 != 0) {
                 local_c = u16_1050_13ae;
                 b_var4 = write_to_file_1008_7e1c(in_file_1, CONCAT22(unaff_ss, &local_c), 2);
                 if (b_var4 != 0) {
-                    local_6 = local_bx_26.field_0x82;
+                    local_6 = ctx.bx_reg.field_0x82;
                     b_var4 = write_to_file_1008_7e1c(in_file_1, CONCAT22(unaff_ss, &local_6), 2);
                     if (b_var4 != 0) {
                         return 1;
@@ -1679,7 +1698,7 @@ pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFIL
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
@@ -1698,7 +1717,7 @@ pub fn read_file_1010_5e56(param_1: u32, param_2: *mut HFILE16) {
 
     u_var1 = read_file_1008_7cfe(param_2);
     if (CONCAT31(extraout_var, u_var1) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
     } else {
         pu_var2 = local_402;
         read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, pu_var2));
@@ -1730,7 +1749,7 @@ pub fn read_file_1010_5e56(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -1783,7 +1802,7 @@ pub fn write_file_1010_6372(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
@@ -1832,7 +1851,7 @@ pub fn read_file_1010_648a(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -1860,14 +1879,14 @@ pub fn write_to_file_1010_6846(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     let b_var1: bool;
     let u_var2: u8;
     let mut i_var3: i32;
@@ -1877,7 +1896,7 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     let extraout_var: u32;
     let extraout_var_00: u32;
     let in_dx: *mut Struct199;
-    let extraout_dx: *mut Struct199;
+    
     let mut u_var7: u16;
     let mut unaff_ss: u16;
     let mut u_var8: u16;
@@ -1894,7 +1913,7 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     u_var2 = read_file_1008_7cfe(param_2);
     i_var3 = CONCAT31(extraout_var, u_var2);
     if (i_var3 == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
         return;
     }
     i_var4 = param_1;
@@ -1905,9 +1924,9 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
         u_var10 = 0x102;
         u_var11 = 0;
         process_struct_1000_179c(0x102, in_dx);
-        _local_a = CONCAT22(in_dx, i_var3);
+        local_a = CONCAT22(in_dx, i_var3);
         b_var5 = read_file_1008_7dee(param_2, CONCAT22(in_dx, i_var3), CONCAT22(u_var11, u_var10));
-        local_12 = _local_a;
+        local_12 = local_a;
         if (b_var5 == 0) {}
         // goto LAB_1010_692c;
         local_4 = 1;
@@ -1919,13 +1938,13 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
             b_var5 = b_var6;
             local_4 < 0x81
         } {}
-        in_dx = extraout_dx;
-        u_var2 = error_check_1000_17ce(_local_a);
+        in_dx = ctx.dx_reg;
+        u_var2 = error_check_1000_17ce(local_a);
         b_var5 = CONCAT31(extraout_var_00, u_var2);
     } else {
         b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 10)), 0x114);
         if (b_var5 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return;
         }
     }
@@ -1937,7 +1956,7 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
         b_var6 = read_file_1008_7dee(param_2, CONCAT22(in_dx, b_var5), CONCAT22(u_var11, u_var10));
         if (b_var6 == 0) {
             // LAB_1010_692c:
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             error_check_1000_17ce((local_12 & 0xffff | ZEXT24(in_dx) << 0x10));
             return;
         }
@@ -1954,13 +1973,13 @@ pub fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     } else {
         b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x11e)), 0x2a);
         if (b_var5 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return;
         }
     }
     b_var5 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_6), 2);
     if (b_var5 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     switch_statement_1008_73ea(u_var8, u_var9, local_6);
@@ -1974,7 +1993,7 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
     let extraout_AH: u8;
     let BVar3: bool;
     let mut u_var4: u16;
-    let local_bx_26: *mut Struct470;
+    let ctx.bx_reg: *mut Struct470;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
     let lVar6: u32;
@@ -1993,76 +2012,76 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
         return 0;
     }
     u_var5 = (param_1 >> 0x10);
-    local_bx_26 = param_1;
-    if (local_bx_26.field_0xa == 0) {
+    ctx.bx_reg = param_1;
+    if (ctx.bx_reg.field_0xa == 0) {
         local_4 = 0;
     } else {
-        u_var1 = local_bx_26.field_0xa;
+        u_var1 = ctx.bx_reg.field_0xa;
         local_4 = (u_var1 + 8);
     }
     local_1c = local_4;
     BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
     if (BVar3 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
-    pass1_1008_5784(CONCAT22(unaff_ss, local_c), local_bx_26.field_0xa);
+    pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0xa);
     while {
         _local_10 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
         if (_local_10 == 0) {
-            if (local_bx_26.field_0xe == 0) {
+            if (ctx.bx_reg.field_0xe == 0) {
                 local_24 = 0;
             } else {
-                u_var1 = local_bx_26.field_0xe;
+                u_var1 = ctx.bx_reg.field_0xe;
                 local_24 = (u_var1 + 8);
             }
             local_16 = local_24;
             BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
             if (BVar3 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return 0;
             }
-            pass1_1008_5784(CONCAT22(unaff_ss, local_c), local_bx_26.field_0xe);
+            pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0xe);
             while {
                 lVar6 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
                 u_var4 = (lVar6 >> 0x10);
                 if (lVar6 == 0) {
-                    if (local_bx_26.field_0x12 == 0) {
+                    if (ctx.bx_reg.field_0x12 == 0) {
                         local_24 = 0;
                     } else {
-                        u_var1 = local_bx_26.field_0x12;
+                        u_var1 = ctx.bx_reg.field_0x12;
                         local_24 = (u_var1 + 8);
                     }
                     local_16 = local_24;
                     BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
                     if (BVar3 == 0) {
-                        g_u16_1050_0310 = 0x6d0;
+                        ctx.g_u16_1050_0310 = 0x6d0;
                         return 0;
                     }
-                    pass1_1008_5784(CONCAT22(unaff_ss, local_c), local_bx_26.field_0x12);
+                    pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0x12);
                     while {
                         lVar6 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
                         u_var4 = (lVar6 >> 0x10);
                         if (lVar6 == 0) {
-                            local_1c = local_bx_26.field_0x1a;
+                            local_1c = ctx.bx_reg.field_0x1a;
                             BVar3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
                             if (BVar3 == 0) {
-                                g_u16_1050_0310 = 0x6d0;
+                                ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
-                            local_1c = local_bx_26.field_0x1c;
+                            local_1c = ctx.bx_reg.field_0x1c;
                             BVar3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
                             if (BVar3 == 0) {
-                                g_u16_1050_0310 = 0x6d0;
+                                ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
-                            local_1c = local_bx_26.field_0x1e;
+                            local_1c = ctx.bx_reg.field_0x1e;
                             BVar3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
                             if (BVar3 == 0) {
-                                g_u16_1050_0310 = 0x6d0;
+                                ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
                             return 1;
@@ -2070,40 +2089,40 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
                         _local_10 = _local_10 & 0xffff0000 | *(lVar6 + 4);
                         BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
                         if (BVar3 == 0) {
-                            g_u16_1050_0310 = 0x6d0;
+                            ctx.g_u16_1050_0310 = 0x6d0;
                             return 0;
                         }
                         local_4 = (lVar6 + 6);
                         BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
                         BVar3 != 0
                     } {}
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return 0;
                 }
                 _local_10 = _local_10 & 0xffff0000 | *(lVar6 + 4);
                 BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
                 if (BVar3 == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return 0;
                 }
                 local_4 = (lVar6 + 6);
                 BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
                 BVar3 != 0
             } {}
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return 0;
         }
         local_16 = (_local_10 + 4);
         BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
         if (BVar3 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return 0;
         }
         local_16 = (_local_10 + 6);
         BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
         BVar3 != 0
     } {}
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return 0;
 }
 
@@ -2123,9 +2142,9 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
     let extraout_var: u32;
     let struct_a_1: *mut Struct199;
     let paVar6: *mut Struct199;
-    let extraout_dx: *mut Struct199;
-    let extraout_dx_00: *mut Struct199;
-    let extraout_dx_01: *mut Struct199;
+    
+    let ctx.dx_reg: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
     let local_bx_60: *mut Struct471;
     let pu_var7: *mut u32;
     let local_es_60: *mut u8;
@@ -2204,7 +2223,7 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
                     pp_var1 = (&local_bx_60.field_0xa + 4);
                     (**pp_var1)();
                     local_12 = local_12 + 1;
-                    struct_a_1 = extraout_dx;
+                    struct_a_1 = ctx.dx_reg;
                 }
             }
             u_var4 = read_file_1008_7dee(param_2, CONCAT22(string_a_1, &local_2a), 2);
@@ -2260,7 +2279,7 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
                         pp_var1 = (&local_bx_60.field_0xe + 4);
                         (**pp_var1)();
                         local_22 = local_22 + 1;
-                        struct_a_1 = extraout_dx_00;
+                        struct_a_1 = ctx.dx_reg;
                     }
                 }
                 u_var4 = read_file_1008_7dee(param_2, CONCAT22(string_a_1, &local_36), 2);
@@ -2320,7 +2339,7 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
                             pp_var1 = (&local_bx_60.field_0x12 + 4);
                             (**pp_var1)();
                             local_2a = local_2a + 1;
-                            paVar6 = extraout_dx_01;
+                            paVar6 = ctx.dx_reg;
                         }
                     }
                     b_result = read_file_1008_7dee(
@@ -2349,7 +2368,7 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
             }
         }
         // LAB_1010_9ba1:
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -2434,7 +2453,7 @@ pub fn write_to_file_1010_ed58(param_1: u32, in_file: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
@@ -2470,7 +2489,7 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
     //
     u_var3 = read_file_1008_7cfe(param_2);
     if (CONCAT31(extraout_var, u_var3) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
     } else {
         i_var4 = param_1;
         b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x16)), 4);
@@ -2502,14 +2521,14 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
             u_var7 = (param_1 >> 0x10);
             if ((i_var4 + 0x30) != 0) {
                 _g_Struct94_ptr_1 = ((i_var4 + 0x32) * 6);
-                if (__g_Struct94_ptr_1 == 0) {
+                if (ctx.__g_Struct94_ptr_1 == 0) {
                     struct_fn_1000_160a();
-                    g_u16_ptr_1050_5f2e = in_dx;
+                    ctx.g_u16_ptr_1050_5f2e = in_dx;
                 } else {
                 }
                 alloc_mem_1000_1708();
                 (i_var4 + 0x2c) = _g_Struct94_ptr_1;
-                (i_var4 + 0x2e) = g_u16_ptr_1050_5f2e;
+                (i_var4 + 0x2e) = ctx.g_u16_ptr_1050_5f2e;
                 zero_list_1008_3e38(CONCAT22(unaff_ss, local_20));
                 local_10 = 0;
                 let pu_var1_val = unsafe { *pu_var1 };
@@ -2520,7 +2539,7 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
                     puVar6 = local_20;
                     read_file_1008_7bc8(param_2, (param_2 >> 0x10), puVar6, unaff_ss);
                     if (puVar6 == 0x0) {
-                        g_u16_1050_0310 = 0x6d0;
+                        ctx.g_u16_1050_0310 = 0x6d0;
                         return;
                     }
                     u_var2 = (i_var4 + 0x2c);
@@ -2533,7 +2552,7 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
             }
             return;
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -2604,9 +2623,9 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
     let mut u_var1: u16;
     let mut i_var2: i32;
     let in_dx: *mut Struct199;
-    let extraout_dx: *mut Struct199;
+    
     let mut u_var3: i32;
-    let extraout_dx_00: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
     let mut unaff_ss: u16;
     let ph_var4: *mut HFILE16;
     let mut local_1a: u16;
@@ -2645,7 +2664,7 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
             }
             fn_ptr_a = (param_1 + 4);
             (**fn_ptr_a)();
-            in_dx = extraout_dx;
+            in_dx = ctx.dx_reg;
         }
         local_4 = local_4 - 1;
         bool_a = read_file_1008_7dee(file_b, CONCAT22(unaff_ss, &local_12), 2);
@@ -2671,7 +2690,7 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
                 }
                 fn_ptr_a = ((param_1 + 4) + 4);
                 (**fn_ptr_a)();
-                in_dx = extraout_dx_00;
+                in_dx = ctx.dx_reg;
             }
             return 0;
         }
@@ -2680,7 +2699,7 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
 }
 
 pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let pu_var2: *mut u8;
     let local_bx_4: *mut Struct1167;
@@ -2692,7 +2711,7 @@ pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
     u_var3 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     write_to_file_1008_79f0(file_handle, local_bx_4.field_0x4);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         offset_2 = local_bx_4.field_0x8;
         b_var1 = write_to_file_1008_7e1c(file_handle, CONCAT22(base, &offset_2), 4);
         if (b_var1 != 0) {
@@ -2757,7 +2776,7 @@ pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
             }
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
@@ -2857,11 +2876,11 @@ pub fn read_from_file_1038_774e(param_1: u32, param_2: *mut HFILE16) {
             }
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
-pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) {
+pub unsafe fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) {
     let b_var1: bool;
     let u_var2: u8;
     let pu_var3: *mut u32;
@@ -2869,7 +2888,7 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
     let local_AX_307: *mut Struct1142;
     let pu_var5: *mut u8;
     let extraout_var: u32;
-    let extraout_dx: *mut Struct199;
+    
     let struct_a: *mut Struct199;
     let paVar6: *mut Struct199;
     let local_bx_68: *mut Struct1141;
@@ -2899,7 +2918,7 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
         u_var7 = (param_1 >> 0x10);
         local_bx_68 = param_1;
         local_bx_68.field_0xc = local_6;
-        struct_a = extraout_dx;
+        struct_a = ctx.dx_reg;
         b_var4 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | &local_bx_68.field_0x10), 4);
         if (((((b_var4 != 0)
             && (
@@ -2964,7 +2983,7 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
                     );
                     if (b_var4 == 0) {
                         // LAB_1038_626a:
-                        g_u16_1050_0310 = 0x6d2;
+                        ctx.g_u16_1050_0310 = 0x6d2;
                         error_check_1000_17ce(_local_416);
                         return;
                     }
@@ -3002,7 +3021,7 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
                         0x54,
                     );
                     if (b_var4 == 0) {
-                        g_u16_1050_0310 = 0x6d2;
+                        ctx.g_u16_1050_0310 = 0x6d2;
                         return;
                     }
                     b_var4 = read_file_1008_7dee(
@@ -3011,7 +3030,7 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
                         0x54,
                     );
                     if (b_var4 == 0) {
-                        g_u16_1050_0310 = 0x6d2;
+                        ctx.g_u16_1050_0310 = 0x6d2;
                         return;
                     }
                 }
@@ -3104,18 +3123,18 @@ pub fn read_from_file_1038_6118(param_1: *mut Struct933, param_2: *mut HFILE16) 
                     {
                         return;
                     }
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
             }
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
 pub fn write_to_file_1038_5e16(param_1: *mut Struct771, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let pu_var2: *mut u32;
     let local_bx_28: *mut Struct1140;
@@ -3126,7 +3145,7 @@ pub fn write_to_file_1038_5e16(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut local_6: u32;
 
     write_to_file_1030_16d6(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         u_var3 = (param_1 >> 0x10);
         local_bx_28 = param_1;
         pu_var2 = local_bx_28.field_0xc;
@@ -3296,40 +3315,40 @@ pub fn write_to_file_1038_5e16(param_1: *mut Struct771, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
 pub fn read_from_file_1030_dec4(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (((in_AX != 0) && (1 < PTR_LOOP_1050_0312))
+    if (((in_ax != 0) && (1 < PTR_LOOP_1050_0312))
         && (
             b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 4),
             b_var1 == 0,
         ))
     {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
 pub fn write_to_file_1030_de7c(param_1: *mut Struct771, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let mut unaff_ss: u16;
     let mut local_10: u32;
 
     write_to_file_1028_b5ec(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         local_10 = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 4);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
     }
@@ -3337,7 +3356,7 @@ pub fn write_to_file_1030_de7c(param_1: *mut Struct771, param_2: *mut HFILE16) {
 }
 
 pub fn write_to_file_1030_d61c(param_1: *mut Struct771, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_success: bool;
     let mut i_var1: i32;
     let mut local_es_61: u16;
@@ -3349,7 +3368,7 @@ pub fn write_to_file_1030_d61c(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut local_4: u16;
 
     write_to_file_1028_b5ec(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         local_4 = 0;
         while (local_4 < 10) {
             local_es_61 = (param_1 >> 0x10);
@@ -3378,13 +3397,13 @@ pub fn write_to_file_1030_d61c(param_1: *mut Struct771, param_2: *mut HFILE16) {
             return;
         }
         // LAB_1030_d701:
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
 pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let mut i_var2: i32;
     let mut unaff_ss: u16;
@@ -3394,7 +3413,7 @@ pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
     let mut local_4: u16;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (in_AX == 0) {
+    if (in_ax == 0) {
         return;
     }
     local_a = 0;
@@ -3406,14 +3425,14 @@ pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
                     b_var1 == 0,
                 ))
             {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             return;
         }
         b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_8), 4);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return;
         }
         b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
@@ -3432,12 +3451,12 @@ pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
         } else {
             b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
             if (b_var1 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_8), 4);
             if (b_var1 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             i_var2 = local_a * 0xc + param_1;
@@ -3446,7 +3465,7 @@ pub fn pass1_1030_d72e(param_1: u32, param_2: *mut HFILE16) {
         }
         local_a = local_a + 1;
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
@@ -3460,7 +3479,7 @@ pub fn pass1_1030_c84e(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
         local_c = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
         b_var1 = 1;
@@ -3477,7 +3496,7 @@ pub fn read_from_file_1030_c894(param_1: u32, param_2: *mut HFILE16) -> bool {
     if (b_var1 != 0) {
         b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return b_var1;
         }
         (param_1 + 0x20) = local_4;
@@ -3487,7 +3506,7 @@ pub fn read_from_file_1030_c894(param_1: u32, param_2: *mut HFILE16) -> bool {
 }
 
 pub fn write_to_file_1030_c230(param_1: *mut Struct771, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let mut u_var2: u16;
     let mut unaff_ss: u16;
@@ -3495,7 +3514,7 @@ pub fn write_to_file_1030_c230(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut local_8: u16;
 
     write_to_file_1028_b5ec(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         u_var2 = (param_1 >> 0x10);
         local_10 = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 4);
@@ -3506,17 +3525,17 @@ pub fn write_to_file_1030_c230(param_1: *mut Struct771, param_2: *mut HFILE16) {
                 return;
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
 pub fn read_from_file_1030_c29c(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 4);
         if (b_var1 != 0) {
             b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x24)), 2);
@@ -3524,7 +3543,7 @@ pub fn read_from_file_1030_c29c(param_1: u32, param_2: *mut HFILE16) {
                 return;
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -3534,7 +3553,7 @@ pub fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
     let BVar2: bool;
     let pu_var3: *mut u8;
     let pu_var4: *mut u8;
-    let mut extraout_dx: i32;
+    
     let local_bx_4: *mut Struct961;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
@@ -3567,19 +3586,19 @@ pub fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
                 while {
                     pu_var3 = local_1a;
                     pass1_1008_5b12(CONCAT22(unaff_ss, pu_var3));
-                    if ((extraout_dx | pu_var3) == 0) {
+                    if ((ctx.dx_reg | pu_var3) == 0) {
                         return;
                     }
                     local_c = pu_var3;
-                    local_a = extraout_dx;
-                    write_to_file_1038_75ca(pu_var3, extraout_dx, param_2);
+                    local_a = ctx.dx_reg;
+                    write_to_file_1038_75ca(pu_var3, ctx.dx_reg, param_2);
                     pu_var3 != 0x0
                 } {}
                 return;
             }
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
@@ -3589,11 +3608,11 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
     let BVar2: bool;
     let mut u_var3: u16;
     let mut u_var4: u32;
-    let extraout_dx: *mut Struct199;
+    
     let struct_a: *mut Struct199;
-    let mut extraout_dx_00: u16;
+    
     let mut u_var5: u16;
-    let extraout_dx_01: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
     let mut u_var6: u16;
     let mut unaff_ss: u16;
     let pHVar7: *mut HFILE16;
@@ -3612,7 +3631,7 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
         read_file_1008_7bc8(file_a, u_var4);
         if ((u_var4 != 0)
             && (
-                struct_a = extraout_dx,
+                struct_a = ctx.dx_reg,
                 BVar2 = read_file_1008_7dee(file_a, CONCAT22(unaff_ss, &local_4), 2),
                 BVar2 != 0,
             ))
@@ -3636,7 +3655,7 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
                     u_var5 = 0;
                 } else {
                     pass1_1038_6520(CONCAT22(struct_a, u_var3));
-                    u_var5 = extraout_dx_00;
+                    u_var5 = ctx.dx_reg;
                 }
                 read_from_file_1038_774e(u_var3, u_var5, pHVar7);
                 if (u_var3 == 0) {
@@ -3644,23 +3663,23 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
                 }
                 pp_var1 = (local_AX_11.field_0x10 + 4);
                 (**pp_var1)();
-                struct_a = extraout_dx_01;
+                struct_a = ctx.dx_reg;
             }
             return;
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
 pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     let mut u_var1: u32;
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let struct_b: *mut Struct771;
     let b_success: bool;
     let pc_var2: *mut libc::c_char;
-    let mut extraout_dx: i32;
-    let mut extraout_dx_00: i32;
+    
+    
     let mut local_es_52: u16;
     let char_ptr_a: *mut libc::c_char;
     let mut local_3e: u16;
@@ -3677,7 +3696,7 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     let pu_var3: *mut u8;
 
     write_to_file_1030_16d6(struct_a, file_a);
-    if (in_AX == 0) {
+    if (in_ax == 0) {
         return;
     }
     struct_b = struct_a;
@@ -3685,64 +3704,64 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     pu_var3 = (struct_a & 0xffff0000 | ZEXT24(struct_b));
     write_file_1008_7b4c(file_a, pu_var3);
     if (pu_var3 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     local_es_52 = (struct_a >> 0x10);
     char_ptr_a_2 = struct_b.field_0x12;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_2), 2);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     char_ptr_a_3 = *&struct_b.field_0x14;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     char_ptr_a_4 = *&struct_b.field_0x16;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_4), 4);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     write_to_file_1008_7954(file_a, &struct_b.field_0x1e);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     write_to_file_1008_7a22(file_a, (&struct_b.field_0x20 + 2));
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     write_to_file_1008_7a22(file_a, (&struct_b.field_0x24 + 2));
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     char_ptr_a_5 = *(&struct_b.field_0x28 + 2);
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_5), 4);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     char_ptr_a_2 = *&struct_b[1].field_0x6;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_2), 2);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     char_ptr_a_2 = *&struct_b[1].field_0x8;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_2), 2);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     write_to_file_1008_79f0(file_a, &struct_b[1].field_0xa);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     if (&struct_b[1].field_0xe == 0) {
@@ -3754,7 +3773,7 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     char_ptr_a_3 = char_ptr_a_4;
     b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
     if (b_success == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     pass1_1008_5784(
@@ -3764,8 +3783,8 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     while (true) {
         pc_var2 = char_array_14_a;
         pass1_1008_5b12(CONCAT22(char_ptr_a, pc_var2));
-        _local_14 = CONCAT22(extraout_dx, pc_var2);
-        if ((extraout_dx | pc_var2) == 0) {
+        _local_14 = CONCAT22(ctx.dx_reg, pc_var2);
+        if ((ctx.dx_reg | pc_var2) == 0) {
             if (&struct_b[1].field_0x12 == 0) {
                 local_3e = 0;
             } else {
@@ -3775,7 +3794,7 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
             local_2a = local_3e;
             b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &local_2a), 2);
             if (b_success == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return;
             }
             pass1_1008_5784(
@@ -3785,19 +3804,19 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
             while (true) {
                 pc_var2 = char_array_14_a;
                 pass1_1008_5b12(CONCAT22(char_ptr_a, pc_var2));
-                if ((extraout_dx_00 | pc_var2) == 0) {
+                if ((ctx.dx_reg | pc_var2) == 0) {
                     return;
                 }
                 char_ptr_a_4 = (char_ptr_a_4 & 0xffff0000 | *(pc_var2 + 4));
                 b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_4), 2);
                 if (b_success == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
                 _local_14 = _local_14 & 0xffff0000 | *(pc_var2 + 6);
                 b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &local_14), 2);
                 if (b_success == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
                 char_ptr_a_2 = *(pc_var2 + 8);
@@ -3808,23 +3827,23 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
                 char_ptr_a_2 = *(pc_var2 + 10);
                 b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_2), 2);
                 if (b_success == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
                 char_ptr_a_3 = *(pc_var2 + 0xc);
                 b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
                 if (b_success == 0) {
-                    g_u16_1050_0310 = 0x6d0;
+                    ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
             }
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
         char_ptr_a_3 = *(pc_var2 + 4);
         b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
         if (b_success == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
         char_ptr_a_3 = *(_local_14 + 6);
@@ -3835,27 +3854,27 @@ pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
         char_ptr_a_3 = *(_local_14 + 8);
         b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
         if (b_success == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
         char_ptr_a_3 = *(_local_14 + 10);
         b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
         if (b_success == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
         char_ptr_a_3 = *(_local_14 + 0xc);
         b_success = write_to_file_1008_7e1c(file_a, CONCAT22(char_ptr_a, &char_ptr_a_3), 2);
         if (b_success == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
-pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
+pub unsafe fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
     let local_AX_32: *mut Struct933;
@@ -3866,11 +3885,11 @@ pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
     let local_AX_662: *mut Struct934;
     let local_AX_1036: *mut Struct936;
     let extraout_var: u32;
-    let mut extraout_dx: u16;
+    
     let mut u_var8: i32;
-    let mut extraout_dx_00: i32;
+    
     let paVar9: *mut Struct199;
-    let mut extraout_dx_01: i32;
+    
     let mut i_var10: i32;
     let mut u_var11: u16;
     let mut u_var12: u16;
@@ -3927,7 +3946,7 @@ pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
                             read_file_1008_77cc(file_a, u_var6);
                             if ((u_var6 != 0)
                                 && (
-                                    u_var12 = extraout_dx,
+                                    u_var12 = ctx.dx_reg,
                                     BVar3 = read_file_1008_7dee(
                                         file_a,
                                         (struct_b & 0xffff0000 | ZEXT24(&local_AX_32.field_0x2a)),
@@ -3982,8 +4001,8 @@ pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
                                             pu_var7 = _PTR_LOOP_1050_68a2;
                                             alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
                                             u_var8 = pu_var7;
-                                            _local_32 = (pu_var7 & 0xffff | extraout_dx_00 << 0x10);
-                                            paVar9 = (extraout_dx_00 | u_var8);
+                                            _local_32 = (pu_var7 & 0xffff | ctx.dx_reg << 0x10);
+                                            paVar9 = (ctx.dx_reg | u_var8);
                                             if (paVar9 == 0x0) {
                                                 local_2c = 0x0;
                                             } else {
@@ -4083,8 +4102,8 @@ pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
                                                 alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
                                                 u_var8 = pu_var7;
                                                 _local_32 =
-                                                    (pu_var7 & 0xffff | extraout_dx_01 << 0x10);
-                                                paVar9 = (extraout_dx_01 | u_var8);
+                                                    (pu_var7 & 0xffff | ctx.dx_reg << 0x10);
+                                                paVar9 = (ctx.dx_reg | u_var8);
                                                 if (paVar9 == 0x0) {
                                                     local_4a = 0;
                                                 } else {
@@ -4175,7 +4194,7 @@ pub fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
             }
         }
         // LAB_1030_77be:
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -4186,7 +4205,7 @@ pub fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut i_var3: i32;
     let b_var4: bool;
     let pu_var5: *mut u8;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let mut u_var7: u16;
     let mut unaff_ss: u16;
     let mut local_c: u16;
@@ -4194,22 +4213,22 @@ pub fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
     i_var3 = write_to_file_1030_1978(param_1, param_2);
     if (i_var3 != 0) {
         u_var7 = (param_1 >> 0x10);
-        i_var6 = param_1;
-        write_to_file_1008_7c2a(param_2, (i_var6 + 0x10));
+        i32_var6 = param_1;
+        write_to_file_1008_7c2a(param_2, (i32_var6 + 0x10));
         if (i_var3 != 0) {
-            u_var1 = (i_var6 + 0x10);
+            u_var1 = (i32_var6 + 0x10);
             pu_var5 = (u_var1 & 0xffff0000 | (u_var1 + 4));
             write_file_1008_7b4c(param_2, pu_var5);
             if (pu_var5 != 0) {
-                u_var2 = (i_var6 + 0x10);
+                u_var2 = (i32_var6 + 0x10);
                 local_c = (u_var2 + 10);
                 b_var4 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
                 if (b_var4 != 0) {
-                    u_var2 = (i_var6 + 0x10);
+                    u_var2 = (i32_var6 + 0x10);
                     if ((u_var2 + 10) == 0) {
                         return;
                     }
-                    u_var2 = (i_var6 + 0x10);
+                    u_var2 = (i32_var6 + 0x10);
                     u_var7 = (u_var2 >> 0x10);
                     i_var3 = u_var2;
                     b_var4 = write_to_file_1008_7e1c(param_2, (i_var3 + 0xc), ((i_var3 + 10) * 2));
@@ -4219,23 +4238,23 @@ pub fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
-pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut u_var2: u32;
     let pi_var3: *mut i32;
-    let in_AX: *mut Struct94;
+    let in_ax: *mut Struct94;
     let pu_var4: *mut u8;
     let mut i_var5: i32;
     let b_var6: bool;
     let mut u_var7: i32;
     let in_dx: *mut u16;
     let puVar8: *mut u16;
-    let extraout_dx: *mut Struct199;
+    
     let struct_a: *mut Struct199;
     let mut i_var9: i32;
     let mut u_var10: u16;
@@ -4253,23 +4272,26 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
 
     u_var12 = (param_1 >> 0x10);
     pass1_1030_19b4(param_1, param_2);
-    if (in_AX != 0x0) {
-        if (__g_Struct94_ptr_1 == 0) {
-            _g_Struct94_ptr_1 = in_AX;
+    if (in_ax != 0x0) {
+        if (ctx.__g_Struct94_ptr_1 == 0) {
+            _g_Struct94_ptr_1 = in_ax;
             struct_fn_1000_160a();
-            g_u16_ptr_1050_5f2e = in_dx;
+            ctx.g_u16_ptr_1050_5f2e = in_dx;
         } else {
         }
         alloc_mem_1000_1708();
-        _local_40a = CONCAT22(g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
-        puVar8 = (g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
+        _local_40a = CONCAT22(ctx.g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
+        puVar8 = (ctx.g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
         i_var9 = param_1;
         if (puVar8 == 0x0) {
             (i_var9 + 0x10) = 0;
         } else {
-            zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_Struct94_ptr_1.field_0x4));
+            zero_list_1008_3e38(CONCAT22(
+                ctx.g_u16_ptr_1050_5f2e,
+                &_g_Struct94_ptr_1.field_0x4,
+            ));
             (i_var9 + 0x10) = _local_40a;
-            puVar8 = g_u16_ptr_1050_5f2e;
+            puVar8 = ctx.g_u16_ptr_1050_5f2e;
         }
         pu_var4 = local_402;
         read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, pu_var4));
@@ -4286,7 +4308,7 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
             if (i_var5 != 0) {
                 u_var2 = (i_var9 + 0x10);
                 local_420._0_2_ = u_var2 + 10;
-                struct_a = extraout_dx;
+                struct_a = ctx.dx_reg;
                 b_var6 = read_file_1008_7dee(param_2, (u_var2 & 0xffff0000 | local_420), 2);
                 if (b_var6 != 0) {
                     u_var1 = (i_var9 + 0x10);
@@ -4316,7 +4338,7 @@ pub fn read_from_file_1030_5e70(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -4331,7 +4353,7 @@ pub fn write_to_file_1030_5c1a(param_1: &mut string, param_2: *mut HFILE16) -> b
     if (BVar2 != 0) {
         BVar2 = write_to_file_1008_7e1c(param_2, param_1, 0x24);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return BVar2;
         }
         BVar2 = 1;
@@ -4349,7 +4371,7 @@ pub fn read_file_1030_5c52(buf_a: *mut u8, file_a: *mut HFILE16) -> bool {
     if (BVar2 != 0) {
         BVar2 = read_file_1008_7dee(file_a, buf_a, 0x24);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return BVar2;
         }
         BVar2 = 1;
@@ -4363,7 +4385,7 @@ pub fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut u_var3: u32;
     let mut i_var4: i32;
     let b_var5: bool;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let pu_var7: *mut u8;
     let mut u_var8: u16;
     let mut unaff_ss: u16;
@@ -4399,11 +4421,11 @@ pub fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
                         pu_var1 = (u_var3 + 0x1a),
                         pu_var1_val != local_4 && local_4 <= pu_var1_val,
                     ) {
-                        i_var6 = local_4 * 6;
+                        i32_var6 = local_4 * 6;
                         u_var3 = (i_var4 + 0x10);
                         u_var2 = (u_var3 + 0x16);
-                        write_file_1008_7b4c(param_2, (u_var2 & 0xffff0000 | (u_var2 + i_var6)));
-                        if (i_var6 == 0) {}
+                        write_file_1008_7b4c(param_2, (u_var2 & 0xffff0000 | (u_var2 + i32_var6)));
+                        if (i32_var6 == 0) {}
                         // goto LAB_1030_5734;
                         local_4 = local_4 + 1;
                     }
@@ -4420,23 +4442,23 @@ pub fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
             }
         }
         // LAB_1030_5734:
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
-pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
     let pu_var1: *mut u16;
     let mut u_var2: u32;
-    let in_AX: *mut Struct94;
+    let in_ax: *mut Struct94;
     let BVar3: bool;
     let pu_var4: *mut u8;
     let mut in_i16_5: u16;
     let mut u_var5: u32;
     let in_dx: *mut u16;
-    let extraout_dx: *mut Struct199;
+    
     let struct_a: *mut Struct199;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let mut i_var7: i32;
     let mut u_var8: u16;
     let mut unaff_ss: u16;
@@ -4457,56 +4479,56 @@ pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
     u_var10 = (param_2 >> 0x10);
     u_var9 = (param_1 >> 0x10);
     pass1_1030_19b4(param_1, param_2);
-    if (in_AX != 0x0) {
-        if (__g_Struct94_ptr_1 == 0) {
-            _g_Struct94_ptr_1 = in_AX;
+    if (in_ax != 0x0) {
+        if (ctx.__g_Struct94_ptr_1 == 0) {
+            _g_Struct94_ptr_1 = in_ax;
             struct_fn_1000_160a();
-            g_u16_ptr_1050_5f2e = in_dx;
+            ctx.g_u16_ptr_1050_5f2e = in_dx;
         } else {
         }
-        alloc_mem_1000_1708(0x20, 0, 1, _g_Struct94_ptr_1, g_u16_ptr_1050_5f2e);
-        if ((g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1) == 0) {
+        alloc_mem_1000_1708(0x20, 0, 1, _g_Struct94_ptr_1, ctx.g_u16_ptr_1050_5f2e);
+        if ((ctx.g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1) == 0) {
             _g_Struct94_ptr_1 = 0x0;
             struct_a = 0x0;
         } else {
-            pass1_1030_84ae(_g_Struct94_ptr_1, g_u16_ptr_1050_5f2e);
-            struct_a = extraout_dx;
+            pass1_1030_84ae(_g_Struct94_ptr_1, ctx.g_u16_ptr_1050_5f2e);
+            struct_a = ctx.dx_reg;
         }
-        i_var6 = param_1;
-        (i_var6 + 0x10) = _g_Struct94_ptr_1;
-        (i_var6 + 0x12) = struct_a;
+        i32_var6 = param_1;
+        (i32_var6 + 0x10) = _g_Struct94_ptr_1;
+        (i32_var6 + 0x12) = struct_a;
         BVar3 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (BVar3 != 0) {
             u_var5 = (ctx._PTR_LOOP_1050_65e2 + 0x52);
             local_8 = u_var5;
             pass1_1030_4782(u_var5, (u_var5 >> 0x10), 0, 1, local_4);
-            (i_var6 + 0x10) = u_var5;
-            (i_var6 + 0x12) = struct_a;
-            BVar3 = read_file_1008_7dee(param_2, CONCAT22(struct_a, (i_var6 + 0x10) + 2), 2);
+            (i32_var6 + 0x10) = u_var5;
+            (i32_var6 + 0x12) = struct_a;
+            BVar3 = read_file_1008_7dee(param_2, CONCAT22(struct_a, (i32_var6 + 0x10) + 2), 2);
             if (BVar3 != 0) {
                 pu_var4 = local_408;
                 read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, pu_var4));
                 if (pu_var4 != 0x0) {
-                    u_var2 = (i_var6 + 0x10);
+                    u_var2 = (i32_var6 + 0x10);
                     error_check_1000_17ce((u_var2 + 4));
                     pu_var4 = local_408;
                     pass1_fn_1008_60e8(pu_var4);
-                    u_var2 = (i_var6 + 0x10);
+                    u_var2 = (i32_var6 + 0x10);
                     u_var8 = (u_var2 >> 0x10);
                     i_var7 = u_var2;
                     (i_var7 + 4) = pu_var4;
                     (i_var7 + 6) = struct_a;
-                    u_var5 = (i_var6 + 0x10);
+                    u_var5 = (i32_var6 + 0x10);
                     BVar3 =
                         read_file_1008_7dee(param_2, (u_var5 & 0xffff0000 | (u_var5 + 0x1a)), 2);
                     if (BVar3 != 0) {
-                        u_var2 = (i_var6 + 0x10);
+                        u_var2 = (i32_var6 + 0x10);
                         i_var7 = (u_var2 + 0x1a);
                         in_i16_5 = i_var7 * 6;
                         process_struct_1000_179c(in_i16_5, struct_a);
                         _local_410 = CONCAT22(struct_a, in_i16_5);
                         if ((struct_a | in_i16_5) == 0) {
-                            u_var2 = (i_var6 + 0x10);
+                            u_var2 = (i32_var6 + 0x10);
                             (u_var2 + 0x16) = 0;
                         } else {
                             call_fn_ptr_1000_5586(
@@ -4517,18 +4539,18 @@ pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
                                 in_i16_5,
                                 struct_a,
                             );
-                            u_var2 = (i_var6 + 0x10);
+                            u_var2 = (i32_var6 + 0x10);
                             (u_var2 + 0x16) = _local_410;
                         }
                         local_40c = 0;
                         let pu_var1_val = unsafe { *pu_var1 };
                         while (
-                            u_var2 = (i_var6 + 0x10),
+                            u_var2 = (i32_var6 + 0x10),
                             pu_var1 = (u_var2 + 0x1a),
                             pu_var1_val != local_40c && local_40c <= pu_var1_val,
                         ) {
                             i_var7 = local_40c * 6;
-                            u_var2 = (i_var6 + 0x10);
+                            u_var2 = (i32_var6 + 0x10);
                             u_var2 = (u_var2 + 0x16);
                             read_file_1008_7bc8(
                                 param_2,
@@ -4540,13 +4562,13 @@ pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
                             // goto LAB_1030_58a7;
                             local_40c = local_40c + 1;
                         }
-                        i_var7 = i_var6 + 0x14;
+                        i_var7 = i32_var6 + 0x14;
                         read_file_1008_7bc8(param_2, u_var10, i_var7, u_var9);
                         if ((i_var7 != 0)
                             && (
                                 BVar3 = read_file_1008_7dee(
                                     param_2,
-                                    (param_1 & 0xffff0000 | (i_var6 + 0x1c)),
+                                    (param_1 & 0xffff0000 | (i32_var6 + 0x1c)),
                                     2,
                                 ),
                                 BVar3 != 0,
@@ -4559,7 +4581,7 @@ pub fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
             }
         }
         // LAB_1030_58a7:
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -4572,7 +4594,7 @@ pub fn read_from_file_1030_4e70(
 ) {
     let file: HFILE16;
     let mut i_var1: i32;
-    let mut extraout_dx: i32;
+    
     let path: *mut libc::c_char;
     let mut u_var2: u16;
     let pu_var3: *mut u8;
@@ -4607,12 +4629,12 @@ pub fn read_from_file_1030_4e70(
                     1,
                     param_2_val,
                     (param_2_val >> 0x10),
-                    __g_Struct94_ptr_1,
-                    (__g_Struct94_ptr_1 >> 0x10),
+                    ctx.__g_Struct94_ptr_1,
+                    (ctx.__g_Struct94_ptr_1 >> 0x10),
                 );
                 param_3 = i_var1;
-                (param_3 + 2) = extraout_dx;
-                if ((extraout_dx | param_3) != 0) {
+                (param_3 + 2) = ctx.dx_reg;
+                if ((ctx.dx_reg | param_3) != 0) {
                     _local_38 = _hread(param_2_val, param_3_val, file);
                     _lclose16(file);
                     local_3c = param_3_val;
@@ -4701,7 +4723,7 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: *mut HFILE16) {
             return;
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
@@ -4763,7 +4785,7 @@ pub fn write_to_file_1030_32e4(param_1: u32, param_2: *mut HFILE16) {
             }
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
@@ -4773,7 +4795,7 @@ pub fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut i_var3: i32;
     let b_var4: bool;
     let pu_var5: *mut u8;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let mut u_var7: u16;
     let mut u_var8: u16;
     let mut unaff_ss: u16;
@@ -4828,11 +4850,11 @@ pub fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
                                 || (
                                     u_var2 = (i_var3 + 0x10),
                                     u_var8 = (u_var2 >> 0x10),
-                                    i_var6 = u_var2,
+                                    i32_var6 = u_var2,
                                     b_var4 = write_to_file_1008_7e1c(
                                         param_2,
-                                        (i_var6 + 0x24),
-                                        ((i_var6 + 0x22) * 2),
+                                        (i32_var6 + 0x24),
+                                        ((i32_var6 + 0x22) * 2),
                                     ),
                                     b_var4 != 0,
                                 ),
@@ -4869,23 +4891,23 @@ pub fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
             }
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
-pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
     let pu_var1: *mut u16;
-    let in_AX: *mut Struct94;
+    let in_ax: *mut Struct94;
     let BVar2: bool;
     let local_AX_184: *mut u8;
     let pu_var3: *mut u8;
     let mut u_var4: u16;
     let in_dx: *mut u16;
     let pu_var5: *mut u16;
-    let extraout_dx: *mut Struct199;
+    
     let struct_a: *mut Struct199;
     let local_bx_91: *mut Struct866;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let mut local_SI__1: u16;
     let mut local_es_210: u16;
     let mut u_var7: u16;
@@ -4905,25 +4927,28 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
 
     u_var9 = (param_1 >> 0x10);
     pass1_1030_19b4(param_1, param_2);
-    if (in_AX == 0x0) {
+    if (in_ax == 0x0) {
         return;
     }
-    if (__g_Struct94_ptr_1 == 0) {
-        _g_Struct94_ptr_1 = in_AX;
+    if (ctx.__g_Struct94_ptr_1 == 0) {
+        _g_Struct94_ptr_1 = in_ax;
         struct_fn_1000_160a();
-        g_u16_ptr_1050_5f2e = in_dx;
+        ctx.g_u16_ptr_1050_5f2e = in_dx;
     } else {
     }
     alloc_mem_1000_1708();
-    _local_40e = CONCAT22(g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
-    pu_var5 = (g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
+    _local_40e = CONCAT22(ctx.g_u16_ptr_1050_5f2e, _g_Struct94_ptr_1);
+    pu_var5 = (ctx.g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1);
     local_bx_91 = param_1;
     if (pu_var5 == 0x0) {
         local_bx_91.field_0x10 = 0x0;
     } else {
-        zero_list_1008_3e38(CONCAT22(g_u16_ptr_1050_5f2e, &_g_Struct94_ptr_1.field_0x6));
+        zero_list_1008_3e38(CONCAT22(
+            ctx.g_u16_ptr_1050_5f2e,
+            &_g_Struct94_ptr_1.field_0x6,
+        ));
         local_bx_91.field_0x10 = _local_40e;
-        pu_var5 = g_u16_ptr_1050_5f2e;
+        pu_var5 = ctx.g_u16_ptr_1050_5f2e;
     }
     BVar2 = read_file_1008_7dee(param_2, local_bx_91.field_0x10, 2);
     if (BVar2 != 0) {
@@ -4934,16 +4959,16 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
             pass1_fn_1008_60e8(pu_var3);
             pu_var1 = local_bx_91.field_0x10;
             local_es_210 = (pu_var1 >> 0x10);
-            i_var6 = pu_var1;
-            *(i_var6 + 2) = pu_var3;
-            (i_var6 + 4) = pu_var5;
+            i32_var6 = pu_var1;
+            *(i32_var6 + 2) = pu_var3;
+            (i32_var6 + 4) = pu_var5;
             pu_var1 = local_bx_91.field_0x10;
-            i_var6 = pu_var1 + 6;
-            read_file_1008_7bc8(param_2, (param_2 >> 0x10), i_var6, (pu_var1 >> 0x10));
-            if ((((i_var6 != 0)
+            i32_var6 = pu_var1 + 6;
+            read_file_1008_7bc8(param_2, (param_2 >> 0x10), i32_var6, (pu_var1 >> 0x10));
+            if ((((i32_var6 != 0)
                 && (
                     pu_var1 = local_bx_91.field_0x10,
-                    struct_a = extraout_dx,
+                    struct_a = ctx.dx_reg,
                     BVar2 =
                         read_file_1008_7dee(param_2, (pu_var1 & 0xffff0000 | (pu_var1 + 0xc)), 2),
                     BVar2 != 0,
@@ -4977,17 +5002,18 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
                 if ((pu_var1 + 0x22) != 0) {
                     pu_var1 = local_bx_91.field_0x10;
                     u_var7 = (pu_var1 >> 0x10);
-                    i_var6 = pu_var1;
-                    u_var4 = (i_var6 + 0x22) * 2;
+                    i32_var6 = pu_var1;
+                    u_var4 = (i32_var6 + 0x22) * 2;
                     process_struct_1000_179c(u_var4, struct_a);
-                    (i_var6 + 0x24) = u_var4;
-                    (i_var6 + 0x26) = struct_a;
+                    (i32_var6 + 0x24) = u_var4;
+                    (i32_var6 + 0x26) = struct_a;
                     pu_var1 = local_bx_91.field_0x10;
                     u_var7 = (pu_var1 >> 0x10);
-                    i_var6 = pu_var1;
-                    BVar2 = read_file_1008_7dee(param_2, *(i_var6 + 0x24), ((i_var6 + 0x22) * 2));
+                    i32_var6 = pu_var1;
+                    BVar2 =
+                        read_file_1008_7dee(param_2, *(i32_var6 + 0x24), ((i32_var6 + 0x22) * 2));
                     if (BVar2 == 0) {
-                        g_u16_1050_0310 = 0x6d2;
+                        ctx.g_u16_1050_0310 = 0x6d2;
                         return;
                     }
                 }
@@ -5028,7 +5054,7 @@ pub fn read_file_1030_2c8a(param_1: u32, param_2: *mut HFILE16) {
             }
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return;
 }
 
@@ -5065,18 +5091,18 @@ pub fn pass1_1030_227a(param_1: *mut Struct771, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
-pub fn read_file_1030_232e(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+pub unsafe fn read_file_1030_232e(param_1: u32, param_2: *mut HFILE16) {
+    let mut in_ax: i32;
     let mut i_var1: i32;
     let BVar2: bool;
 
     pass1_1030_19b4(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         i_var1 = param_1;
         BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var1 + 0x10)), 0x106);
         if (BVar2 != 0) {
@@ -5102,12 +5128,16 @@ pub fn read_file_1030_232e(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
 
-pub fn write_to_file_1030_1a9c(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
+pub fn write_to_file_1030_1a9c(
+    ctx: &mut AppContext,
+    param_1: *mut Struct771,
+    param_2: *mut HFILE16,
+) -> bool {
     let pi_var1: *mut i32;
     let mut i_var2: i32;
     let BVar3: bool;
@@ -5132,16 +5162,16 @@ pub fn write_to_file_1030_1a9c(param_1: *mut Struct771, param_2: *mut HFILE16) -
                 return 1;
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
 
-pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
+pub unsafe fn pass1_1030_1b18(ctx: &mut AppContext, param_1: u32, param_2: &mut HFILE16) -> u16 {
     let pi_var1: *mut i32;
     let mut u_var2: u32;
     let mut u_var3: i32;
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let mut u_var4: u16;
     let b_var5: bool;
     let mut u_var6: i32;
@@ -5153,17 +5183,17 @@ pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
     let mut local_18: u16;
 
     pass1_1030_19b4(param_1, param_2);
-    if (in_AX != 0) {
-        if (__g_Struct94_ptr_1 == 0) {
+    if (in_ax != 0) {
+        if (ctx.__g_Struct94_ptr_1 == 0) {
             struct_fn_1000_160a();
-            g_u16_ptr_1050_5f2e = in_dx;
+            ctx.g_u16_ptr_1050_5f2e = in_dx;
         } else {
         }
         u_var4 = alloc_mem_1000_1708();
         u_var9 = (param_1 >> 0x10);
         i_var7 = param_1;
         (i_var7 + 0x10) = u_var4;
-        (i_var7 + 0x12) = g_u16_ptr_1050_5f2e;
+        (i_var7 + 0x12) = ctx.g_u16_ptr_1050_5f2e;
         struct_a = (i_var7 + 0x12);
         b_var5 = read_file_1008_7dee(param_2, CONCAT22(struct_a, (i_var7 + 0x10)), 2);
         if (b_var5 != 0) {
@@ -5186,7 +5216,7 @@ pub fn pass1_1030_1b18(param_1: u32, param_2: *mut HFILE16) -> u16 {
                 return 1;
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return 0;
 }
@@ -5198,7 +5228,7 @@ pub fn write_to_file_1030_1978(param_1: *mut Struct771, param_2: *mut HFILE16) -
     if (i_var1 != 0) {
         i_var1 = write_to_file_1008_7954(param_2, (param_1 + 0xc));
         if (i_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return i_var1;
         }
         i_var1 = 1;
@@ -5206,7 +5236,7 @@ pub fn write_to_file_1030_1978(param_1: *mut Struct771, param_2: *mut HFILE16) -
     return i_var1;
 }
 
-pub fn pass1_1030_19b4(param_1: u32, param_2: u32) {
+pub unsafe fn pass1_1030_19b4(param_1: u32, param_2: u32) {
     let u_var1: u8;
     let extraout_var: u32;
     let mut u_var2: u32;
@@ -5216,7 +5246,7 @@ pub fn pass1_1030_19b4(param_1: u32, param_2: u32) {
         u_var2 = param_1 & 0xffff0000 | (param_1 + 0xc);
         read_file_1008_76e4(param_2, u_var2);
         if (u_var2 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return;
         }
     }
@@ -5240,7 +5270,7 @@ pub fn write_to_file_1030_16d6(param_1: *mut Struct771, param_2: *mut HFILE16) {
             return;
         }
     }
-    g_u16_1050_0310 = 0x6d0;
+    ctx.g_u16_1050_0310 = 0x6d0;
     return;
 }
 
@@ -5254,7 +5284,7 @@ pub fn pass1_1030_1730(param_1: *mut Struct933, param_2: *mut HFILE16) -> u8 {
             return 0x1;
         }
     }
-    g_u16_1050_0310 = 0x6d2;
+    ctx.g_u16_1050_0310 = 0x6d2;
     return '\0';
 }
 
@@ -5283,12 +5313,12 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     let mut u_var22: i32;
     let pu_var23: *mut u8;
     let mut u_var24: u32;
-    let extraout_dx: *mut Struct199;
+    
     let mut i_var25: i32;
-    let extraout_dx_00: *mut Struct199;
-    let extraout_dx_01: *mut Struct199;
-    let extraout_dx_02: *mut Struct199;
-    let mut extraout_dx_03: u16;
+    let ctx.dx_reg: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
+    
     let mut extraout_dx_04: u16;
     let mut extraout_dx_05: u16;
     let mut extraout_dx_06: u16;
@@ -5367,7 +5397,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     uVar16 = local_46._1_1_;
     u_var13 = local_46;
     if (BVar21 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     local_a = 0;
@@ -5604,7 +5634,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                     local_4a._1_1_ = 0x97;
                     local_40 = paVar26;
                     pass1_1018_0196(local_6, CONCAT22(paVar26, u_var20), (u_var27 + 0x108));
-                    paVar26 = extraout_dx_00;
+                    paVar26 = ctx.dx_reg;
                     if ((u_var27 + 0x11a) == 10) {
                         local_42._0_1_ = local_6;
                         local_42._1_1_ = (local_6 >> 8);
@@ -5614,7 +5644,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                         local_46._0_1_ = 0xc4;
                         local_46._1_1_ = 0x97;
                         pass1_1010_ed22(local_6, (u_var27 + 0x10c));
-                        paVar26 = extraout_dx_01;
+                        paVar26 = ctx.dx_reg;
                     }
                 }
                 u_var3 = (u_var27 + 0x10c);
@@ -5640,7 +5670,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                     local_48 = u_var29;
                     local_44 = paVar26;
                     (**pp_var10)();
-                    paVar26 = extraout_dx_02;
+                    paVar26 = ctx.dx_reg;
                 }
                 local_42._0_1_ = ctx._PTR_LOOP_1050_65e2;
                 local_42._1_1_ = (ctx._PTR_LOOP_1050_65e2 >> 8);
@@ -5664,7 +5694,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                 u_var29 = &ctx.PTR_LOOP_1050_1008;
                 local_46._0_1_ = 0x3f;
                 local_46._1_1_ = 0x98;
-                local_20 = extraout_dx_03;
+                local_20 = ctx.dx_reg;
                 BVar21 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var27 + 0x11a), 0x31);
                 if ((BVar21 == 0) && ((u_var27 + 0x122) == 0)) {
                     uVar36 = (*(local_1a + 0xc) >> 0x10);
@@ -6132,7 +6162,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                     CONCAT13(local_42._1_1_, CONCAT12(local_42, local_44)),
                     local_40,
                 );
-                paVar26 = extraout_dx;
+                paVar26 = ctx.dx_reg;
                 // code_r0x10287b17:
                 local_42._0_1_ = 2;
                 local_42._1_1_ = 0;
@@ -6321,7 +6351,7 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
                         2,
                     );
                     if (u_var29 == 0) {
-                        g_u16_1050_0310 = 0x6d2;
+                        ctx.g_u16_1050_0310 = 0x6d2;
                         return;
                     }
                     local_40 = param_2;
@@ -6554,8 +6584,8 @@ pub fn write_to_file_1028_e56c(
     let pp_var1: fn();
     let p_uvar2: *mut u16;
     let BVar3: bool;
-    let mut extraout_dx: i32;
-    let mut extraout_dx_00: i32;
+    
+    
     let mut unaff_ss: u16;
     let mut local_2c: u16;
     let mut local_2a: u32;
@@ -6580,8 +6610,8 @@ pub fn write_to_file_1028_e56c(
     while (true) {
         pu_var2 = &local_14;
         pass1_1028_e4ec(CONCAT22(unaff_ss, pu_var2));
-        _local_1c = CONCAT22(extraout_dx, pu_var2);
-        if ((extraout_dx | pu_var2) == 0) {
+        _local_1c = CONCAT22(ctx.dx_reg, pu_var2);
+        if ((ctx.dx_reg | pu_var2) == 0) {
             break;
         }
         local_18 = local_18 + 1;
@@ -6589,7 +6619,7 @@ pub fn write_to_file_1028_e56c(
     local_2a = local_18;
     BVar3 = write_to_file_1008_7e1c(param_1_00, CONCAT22(unaff_ss, &local_2a), 4);
     if (BVar3 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     } else {
         local_c = local_8;
         local_a = local_6;
@@ -6600,12 +6630,12 @@ pub fn write_to_file_1028_e56c(
         while {
             pu_var2 = &local_14;
             pass1_1028_e4ec(CONCAT22(unaff_ss, pu_var2));
-            _local_1c = CONCAT22(extraout_dx_00, pu_var2);
-            if ((extraout_dx_00 | pu_var2) == 0) {
+            _local_1c = CONCAT22(ctx.dx_reg, pu_var2);
+            if ((ctx.dx_reg | pu_var2) == 0) {
                 return;
             }
             pp_var1 = (*_local_1c + 0xc);
-            (**pp_var1)(&ctx.PTR_LOOP_1050_1008, pu_var2, extraout_dx_00);
+            (**pp_var1)(&ctx.PTR_LOOP_1050_1008, pu_var2, ctx.dx_reg);
             local_2a = local_2a & 0xffff0000 | ZEXT24(pu_var2);
             pu_var2 != 0x0
         } {}
@@ -6628,7 +6658,7 @@ pub fn write_to_file_1028_dce2(param_1: *mut u32, param_2: *mut HFILE16) {
     let extraout_var_05: u32;
     let extraout_var_06: u32;
     let extraout_var_07: u32;
-    let mut extraout_dx: i32;
+    
     let mut u_var6: u16;
     let mut u_var7: u16;
     let mut unaff_ss: u16;
@@ -6728,14 +6758,14 @@ pub fn write_to_file_1028_dce2(param_1: *mut u32, param_2: *mut HFILE16) {
                                                                                     while (true) {
                                                                                         pu_var5 = &local_14;
                                                                                         pass1_1028_e4ec(CONCAT22(unaff_ss, pu_var5));
-                                                                                        _local_18 = CONCAT22(extraout_dx, pu_var5);
-                                                                                        if ((extraout_dx | pu_var5) == 0) {
+                                                                                        local_18 = CONCAT22(ctx.dx_reg, pu_var5);
+                                                                                        if ((ctx.dx_reg | pu_var5) == 0) {
                                                                                             break;
                                                                                         }
                                                                                         if ((pu_var5 + 0x100) != 0x8000002)
                                                                                         {
                                                                                             pass1_1038_3ba0(
-                                                                                                                CONCAT22(extraout_dx, pu_var5));
+                                                                                                                CONCAT22(ctx.dx_reg, pu_var5));
                                                                                         }
                                                                                     }
                                                                                     return;
@@ -6903,7 +6933,7 @@ pub fn read_file_1028_d7ba(param_1: u16, param_2: u16, param_1_00: *mut HFILE16)
 
     u_var1 = read_file_1008_7cfe(param_1_00);
     if (CONCAT11(extraout_AH, u_var1) == 0) {
-        g_u16_1050_0310 = 0x6d4;
+        ctx.g_u16_1050_0310 = 0x6d4;
         return CONCAT11(extraout_AH, u_var1);
     }
     return 1;
@@ -6925,7 +6955,7 @@ pub fn write_to_file_1028_b5ec(in_struct_1: *mut Struct771, in_file_handle: *mut
     local_e = (i_var4 + 0xc);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_e), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     i_var3 = write_to_file_1030_16d6(in_struct_1, in_file_handle);
@@ -6935,37 +6965,37 @@ pub fn write_to_file_1028_b5ec(in_struct_1: *mut Struct771, in_file_handle: *mut
     local_8 = (i_var4 + 0xc);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_8 = (i_var4 + 0xe);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_8 = (i_var4 + 0x10);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_8 = (i_var4 + 0x12);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_8 = (i_var4 + 0x18);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_8 = (i_var4 + 0x1a);
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     local_4 = (i_var4 + 0x12);
@@ -6997,28 +7027,28 @@ pub fn write_to_file_1028_b5ec(in_struct_1: *mut Struct771, in_file_handle: *mut
             local_8 = (u_var1 + 0xa4);
             BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
             if (BVar2 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return 0;
             }
             u_var1 = (i_var4 + 0x14);
             local_8 = (u_var1 + 0xa6);
             BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
             if (BVar2 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return 0;
             }
             u_var1 = (i_var4 + 0x14);
             local_8 = (u_var1 + 0xa8);
             BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
             if (BVar2 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return 0;
             }
             u_var1 = (i_var4 + 0x14);
             local_8 = (u_var1 + 0xaa);
             BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
             if (BVar2 == 0) {
-                g_u16_1050_0310 = 0x6d0;
+                ctx.g_u16_1050_0310 = 0x6d0;
                 return 0;
             }
             u_var1 = (i_var4 + 0x14);
@@ -7028,7 +7058,7 @@ pub fn write_to_file_1028_b5ec(in_struct_1: *mut Struct771, in_file_handle: *mut
     BVar2 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_8), 2);
     // joined_r0x1028b766:
     if (BVar2 == 0) {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return 0;
     }
     return 1;
@@ -7040,9 +7070,9 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
     let u_var3: u8;
     let b_var4: bool;
     let mut u_var5: u16;
-    let mut i_var6: i32;
+    let mut i32_var6: i32;
     let extraout_var: u32;
-    let mut extraout_dx: u16;
+    
     let mut u_var7: i32;
     let mut unaff_ss: u16;
     let mut u_var8: u32;
@@ -7069,17 +7099,17 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
     }
     b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_4), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_6), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_8), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     u_var10 = in_file_1;
@@ -7090,20 +7120,20 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
     (i_var9 + 0xe) = b_var4;
     switch_statement_1008_73ea(u_var10, u_var11, local_8);
     (i_var9 + 0x10) = b_var4;
-    u_var5 = extraout_dx;
+    u_var5 = ctx.dx_reg;
     b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_4), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_6), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     b_var4 = read_file_1008_7dee(in_file_1, (param_1 & 0xffff0000 | (i_var9 + 0x1a)), 2);
     if (b_var4 == 0) {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     (i_var9 + 0x12) = local_4;
@@ -7132,38 +7162,38 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
             b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, local_26), 2);
         }
         5 => {
-            i_var6 = i_var9;
+            i32_var6 = i_var9;
             pass1_1028_e100(ctx._PTR_LOOP_1050_65e2, (i_var9 + 0xc));
-            (i_var9 + 0x14) = i_var6;
+            (i_var9 + 0x14) = i32_var6;
             (i_var9 + 0x16) = u_var5;
             local_10 = (i_var9 + 0x14) + 0xa4;
             local_e = u_var5;
             b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(u_var5, local_10), 2);
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             b_var4 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_2a), 2);
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             u_var1 = (i_var9 + 0x14);
             b_var4 = read_file_1008_7dee(in_file_1, (u_var1 & 0xffff0000 | (u_var1 + 0xa8)), 2);
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             u_var1 = (i_var9 + 0x14);
             b_var4 = read_file_1008_7dee(in_file_1, (u_var1 & 0xffff0000 | (u_var1 + 0xaa)), 2);
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             u_var1 = (i_var9 + 0x14);
             b_var4 = read_file_1008_7dee(in_file_1, (u_var1 & 0xffff0000 | (u_var1 + 0xac)), 2);
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
             set_param_3_with_switch_1008_72bc(u_var10, u_var11, local_2a);
@@ -7175,14 +7205,14 @@ pub fn read_file_fn_1028_b81a(param_1: u32, in_file_1: *mut HFILE16) {
         // default:
         // goto switchD_1028_ba97_caseD_6;
         9 => {
-            i_var6 = i_var9;
+            i32_var6 = i_var9;
             pass1_1028_e100(ctx._PTR_LOOP_1050_65e2, (i_var9 + 0xc));
-            (i_var9 + 0x14) = i_var6;
+            (i_var9 + 0x14) = i32_var6;
             (i_var9 + 0x16) = u_var5;
             // goto switchD_1028_ba97_caseD_6;
 
             if (b_var4 == 0) {
-                g_u16_1050_0310 = 0x6d2;
+                ctx.g_u16_1050_0310 = 0x6d2;
                 return;
             }
         }
@@ -7203,7 +7233,7 @@ pub fn pass1_1028_b282(param_1: *mut Struct771, param_2: *mut HFILE16) -> bool {
         local_c = (param_1 + 0xc);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
         b_var1 = 1;
@@ -7224,7 +7254,7 @@ pub fn pass1_1028_b2c8(param_1: u32, param_2: *mut HFILE16) -> bool {
     if (BVar2 != 0) {
         BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return BVar2;
         }
         u_var3 = set_param_3_with_switch_1008_72bc(param_2, (param_2 >> 0x10), local_4);
@@ -7236,12 +7266,12 @@ pub fn pass1_1028_b2c8(param_1: u32, param_2: *mut HFILE16) -> bool {
 
 pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
     let pp_var1: fn();
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let BVar2: bool;
     let mut u_var3: u16;
     let mut u_var4: i32;
     let pu_var5: *mut u8;
-    let mut extraout_dx: i32;
+    
     let mut u_var6: u16;
     let mut unaff_ss: u16;
     let mut local_26: u32;
@@ -7255,7 +7285,7 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
     let mut local_4: u16;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (BVar2 != 0) {
             local_6 = 0;
@@ -7266,8 +7296,8 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
                 pu_var5 = _PTR_LOOP_1050_68a2;
                 alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
                 u_var4 = pu_var5;
-                local_14 = pu_var5 & 0xffff | extraout_dx << 0x10;
-                if ((extraout_dx | u_var4) == 0) {
+                local_14 = pu_var5 & 0xffff | ctx.dx_reg << 0x10;
+                if ((ctx.dx_reg | u_var4) == 0) {
                     local_14 = 0;
                 } else {
                     local_14 = ctx.s_1_1050_389a;
@@ -7311,7 +7341,7 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
                 local_6 = local_6 + 1;
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -7374,7 +7404,7 @@ pub fn write_to_file_1028_64d6(param_1: *mut Struct771, param_2: *mut HFILE16) -
             local_26 = (_local_e + 0xc);
             pu_var3 = &local_26;
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
@@ -7389,7 +7419,7 @@ pub fn write_to_file_1028_5f82(param_1: *mut Struct771, param_2: *mut HFILE16) -
         local_c = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
         b_var1 = 1;
@@ -7398,75 +7428,75 @@ pub fn write_to_file_1028_5f82(param_1: *mut Struct771, param_2: *mut HFILE16) -
 }
 
 pub fn read_from_file_1028_5fc8(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if ((in_AX != 0)
+    if ((in_ax != 0)
         && (
             b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 2),
             b_var1 == 0,
         ))
     {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
 pub fn write_file_func_1028_4a1a(param_1: *mut Struct771, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     write_to_file_1028_b5ec(param_1, param_2);
-    if ((in_AX != 0)
+    if ((in_ax != 0)
         && (
             b_var1 =
                 write_to_file_1008_7e1c(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 10),
             b_var1 == 0,
         ))
     {
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
     return;
 }
 
 pub fn pass1_1028_4a5a(param_1: u32, in_file_1: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_file_fn_1028_b81a(param_1, in_file_1);
-    if ((in_AX != 0)
+    if ((in_ax != 0)
         && (
             b_var1 = read_file_1008_7dee(in_file_1, (param_1 & 0xffff0000 | (param_1 + 0x20)), 10),
             b_var1 == 0,
         ))
     {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
 pub fn write_to_file_1028_3d0e(in_struct_1: *mut Struct771, in_file_handle: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let bool_res: bool;
     let local_struct_1: *mut Struct771;
     let mut local_struct_1_hi: u16;
-    let mut local_SS__1: u16;
+    
     let local_10: *mut u8;
     let local_8: *mut u8;
 
     write_to_file_1028_b5ec(in_struct_1, in_file_handle);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         local_struct_1_hi = (in_struct_1 >> 0x10);
         local_struct_1 = in_struct_1;
         local_10 = local_struct_1.field_0x20;
-        bool_res = write_to_file_1008_7e1c(in_file_handle, CONCAT22(local_SS__1, &local_10), 4);
+        bool_res = write_to_file_1008_7e1c(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_10), 4);
         if (bool_res != 0) {
             local_8 = local_struct_1.field_0x24;
-            bool_res = write_to_file_1008_7e1c(in_file_handle, CONCAT22(local_SS__1, &local_8), 4);
+            bool_res = write_to_file_1008_7e1c(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_8), 4);
             if (bool_res != 0) {
                 write_to_file_1008_7a22(in_file_handle, local_struct_1.field_0x28);
                 if (bool_res != 0) {
@@ -7474,19 +7504,19 @@ pub fn write_to_file_1028_3d0e(in_struct_1: *mut Struct771, in_file_handle: *mut
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return;
 }
 
 pub fn read_file_1028_3d92(in_struct: *mut Struct772, in_file_handle: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let local_struct_1: *mut Struct772;
     let b_var1: bool;
     let mut u_var2: u16;
 
     read_file_fn_1028_b81a(in_struct, in_file_handle);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         local_struct_1 = in_struct;
         local_struct_1 = &local_struct_1.field_0x20;
         b_var1 = read_file_1008_7dee(
@@ -7507,7 +7537,7 @@ pub fn read_file_1028_3d92(in_struct: *mut Struct772, in_file_handle: *mut HFILE
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -7533,7 +7563,7 @@ pub fn write_file_fn_1028_2418(param_1: u32, param_2: *mut HFILE16) -> bool {
         local_10 = local_1c;
         BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return BVar2;
         }
         while (true) {
@@ -7558,7 +7588,7 @@ pub fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
     let mut i_var3: i32;
     let mut u_var4: u16;
     let struct_a: *mut Struct199;
-    let extraout_dx: *mut Struct199;
+    
     let mut unaff_ss: u16;
     let mut u_var5: u32;
     let ph_var6: *mut HFILE16;
@@ -7577,7 +7607,7 @@ pub fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
     if (1 < PTR_LOOP_1050_0312) {
         BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (BVar2 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return 0;
         }
         local_6 = 0;
@@ -7597,7 +7627,7 @@ pub fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
             pp_var1 = ((param_1 + 0x20) + 8);
             (**pp_var1)();
             local_6 = local_6 + 1;
-            struct_a = extraout_dx;
+            struct_a = ctx.dx_reg;
         }
     }
     return 1;
@@ -7627,19 +7657,19 @@ pub fn file_write_fn_1028_1452(param_1: u32, param_2: *mut HFILE16) -> bool {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
 
 pub fn read_file_fn_1028_14d8(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
     let mut unaff_ss: u16;
     let mut local_4: u16;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x22)), 2);
         if ((b_var1 != 0)
             && (
@@ -7656,7 +7686,7 @@ pub fn read_file_fn_1028_14d8(param_1: u32, param_2: *mut HFILE16) {
                 return;
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -7716,19 +7746,19 @@ pub fn file_write_fn_1028_0234(param_1: *mut Struct731, param_2: u32) -> bool {
                 BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
 
 pub fn file_read_fn_1028_0374(param_1: u32, param_2: *mut HFILE16) {
     let pp_var1: fn();
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let BVar2: bool;
     let mut u_var3: u16;
     let local_AX_291: *mut Struct732;
     let mut u_var4: i32;
-    let mut extraout_dx: i32;
+    
     let mut u_var6: u16;
     let mut unaff_ss: u16;
     let mut local_28: u32;
@@ -7743,7 +7773,7 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: *mut HFILE16) {
     let pu_var5: *mut u8;
 
     read_file_fn_1028_b81a(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 2);
         if (BVar2 != 0) {
             BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
@@ -7756,8 +7786,8 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: *mut HFILE16) {
                     pu_var5 = _PTR_LOOP_1050_68a2;
                     alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
                     u_var4 = pu_var5;
-                    local_14 = pu_var5 & 0xffff | extraout_dx << 0x10;
-                    if ((extraout_dx | u_var4) == 0) {
+                    local_14 = pu_var5 & 0xffff | ctx.dx_reg << 0x10;
+                    if ((ctx.dx_reg | u_var4) == 0) {
                         local_14 = 0;
                     } else {
                         local_14 = ctx.s_1_1050_389a;
@@ -7804,7 +7834,7 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: *mut HFILE16) {
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -7819,7 +7849,7 @@ pub fn file_write_fn_1020_e94e(param_1: u32, param_2: *mut HFILE16) -> bool {
         local_c = (param_1 + 0x24);
         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
         b_var1 = 1;
@@ -7828,17 +7858,17 @@ pub fn file_write_fn_1020_e94e(param_1: u32, param_2: *mut HFILE16) -> bool {
 }
 
 pub fn file_read_fn_1020_e994(param_1: u32, param_2: *mut HFILE16) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_from_file_1030_dec4(param_1, param_2);
-    if ((in_AX != 0)
+    if ((in_ax != 0)
         && (
             b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x24)), 2),
             b_var1 == 0,
         ))
     {
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
     return;
@@ -7864,17 +7894,17 @@ pub fn file_write_fn_1020_e6a4(param_1: u32, param_2: *mut HFILE16) -> u16 {
                 return 1;
             }
         }
-        g_u16_1050_0310 = 0x6d0;
+        ctx.g_u16_1050_0310 = 0x6d0;
     }
     return 0;
 }
 
 pub fn file_read_fn_1020_e70e(param_1: *mut u8, param_2: u32) {
-    let mut in_AX: i32;
+    let mut in_ax: i32;
     let b_var1: bool;
 
     read_from_file_1030_dec4(param_1, param_2);
-    if (in_AX != 0) {
+    if (in_ax != 0) {
         b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x24)), 2);
         if (b_var1 != 0) {
             b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x26)), 2);
@@ -7882,7 +7912,7 @@ pub fn file_read_fn_1020_e70e(param_1: *mut u8, param_2: u32) {
                 return;
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
@@ -7897,7 +7927,7 @@ pub fn call_write_to_file_1020_d3d4(param_1: *mut u8, in_file_handle: *mut HFILE
         local_c = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(in_file_handle, CONCAT22(unaff_ss, &local_c), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d0;
+            ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
         b_var1 = 1;
@@ -7914,7 +7944,7 @@ pub fn call_read_file_1020_d41a(param_1: *mut u8, param_2: *mut HFILE16) -> bool
     if (b_var1 != 0) {
         b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
         if (b_var1 == 0) {
-            g_u16_1050_0310 = 0x6d2;
+            ctx.g_u16_1050_0310 = 0x6d2;
             return b_var1;
         }
         *(param_1 + 0x20) = local_4;
@@ -7940,7 +7970,7 @@ pub fn call_read_file_1020_a65e(param_1: u32, in_file_handle: *mut HFILE16) -> u
     let u_var1: u8;
     let extraout_AH: u8;
     let BVar2: bool;
-    let mut local_SS__1: u16;
+    
     let mut local_a: [u8; 2];
     let mut local_8: [u8; 2];
     let mut local_6: [u8; 2];
@@ -7953,28 +7983,28 @@ pub fn call_read_file_1020_a65e(param_1: u32, in_file_handle: *mut HFILE16) -> u
             pass1_1020_b97e(param_1, (param_1 >> 0x10), 0);
             return 1;
         }
-        BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(local_SS__1, local_4), 2);
+        BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_4), 2);
         if (BVar2 != 0) {
-            BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(local_SS__1, local_8), 2);
+            BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_8), 2);
             if (BVar2 != 0) {
-                BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(local_SS__1, local_6), 2);
+                BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_6), 2);
                 if (BVar2 != 0) {
-                    BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(local_SS__1, local_a), 2);
+                    BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_a), 2);
                     if (BVar2 != 0) {}
                     // goto LAB_1020_a6dc;
                 }
             }
         }
-        g_u16_1050_0310 = 0x6d2;
+        ctx.g_u16_1050_0310 = 0x6d2;
     }
     return 0;
 }
 
-pub fn pass1_1020_8a9c(param_1: *mut Struct393) {
+pub unsafe fn pass1_1020_8a9c(param_1: *mut Struct393) {
     let mut u_var1: u32;
     let mut u_var2: i32;
     let mut u_var3: u16;
-    let mut extraout_dx: u16;
+    
     let mut unaff_si: u16;
     let mut unaff_ss: u16;
     let ppVar4: *mut pass1_struct_1;
@@ -8028,7 +8058,7 @@ pub fn pass1_1020_8a9c(param_1: *mut Struct393) {
     process_struct_1008_48fe(
         CONCAT22(unaff_ss, local_2a),
         1,
-        CONCAT22(extraout_dx, u_var3),
+        CONCAT22(ctx.dx_reg, u_var3),
     );
     pass1_1008_3f92(CONCAT22(unaff_ss, local_48), CONCAT22(unaff_ss, local_2a));
     u_var1 = &local_struct_1_1.field_0x8;

@@ -12,14 +12,14 @@ pub fn set_fn_ptr_1000_17e8(param_1: *mut u8, param_2: *mut u8) -> *mut u8 {
 
 pub fn call_fn_ptr_1000_24cd(a: u16) {
     let pc_var1: *mut code;
-    let mut unaff_BP: i32;
+    let mut unaff_bp: i32;
     let mut i_var2: i32;
     let mut u_var3: u16;
     let mut cVar4: u8;
     let mut u_var5: u16;
     let mut fn_ptr_1: u32;
 
-    i_var2 = unaff_BP + 1;
+    i_var2 = unaff_bp + 1;
     u_var5 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
     PTR_LOOP_1050_5fc9._0_1_ = 0;
     u_var3 = 0;
@@ -41,20 +41,21 @@ pub fn call_fn_ptr_1000_24cd(a: u16) {
 // WARNING: Removing unreachable block (ram,0x10002513)
 // WARNING: Removing unreachable block (ram,0x10002557)
 
-pub fn call_fn_ptr_1000_24db() {
+pub fn call_fn_ptr_1000_24db(ctx: &mut AppContext) {
     let pc_var1: *mut fn();
-    let mut unaff_BP: i32;
+    let mut unaff_bp: u16;
     let mut c_var2: u8;
 
-    PTR_LOOP_1050_5fc9._0_1_ = 0;
+    ctx.PTR_LOOP_1050_5fc9 = 0;
     c_var2 = '\0';
-    call_fn_ptr_1000_2594(1, &ctx.g_alloc_addr_1050_1050, unaff_BP + 1);
+    call_fn_ptr_1000_2594(1, &ctx.g_alloc_addr_1050_1050, unaff_bp + 1);
     call_fn_ptr_1000_2594();
     call_fn_ptr_1000_256b();
     if (c_var2 == '\0') {
         unsafe {
+            // DOS API call
             pc_var1 = swi(0x21);
-            (*pc_var1)();
+            pc_var1();
         }
     }
 }

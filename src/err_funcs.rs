@@ -1,21 +1,25 @@
 use crate::{
+    bool_funcs::check_and_clear_global_1000_1f68,
     cleanup::win_cleanup_func_1040_782c,
-    defines::{AppContext, Struct44, Struct444},
+    defines::{AppContext, Struct13, Struct348, Struct363, Struct44, Struct444},
+    func_ptr_funcs::call_fn_ptr_1000_24cd,
     list_funcs::modify_u16_list_1008_5c34,
     other_funcs::return_1008_53aa,
     pass4_funcs::pass1_1028_e2e0,
     pass5_funcs::{pass1_1030_8128, pass1_1030_8210, pass1_1030_8334, pass1_1030_835a},
     pass8_funcs::{pass1_1010_2050, pass1_1010_7efc},
-    pass_funcs::{pass1_1008_397a, pass1_1008_8aa2, pass1_fn_1000_21b6},
+    pass_funcs::{
+        pass1_1008_397a, pass1_1008_5784, pass1_1008_5b12, pass1_1008_8aa2, pass1_1008_a086,
+        pass1_fn_1000_21b6,
+    },
     string_funcs::{
         copy_string_1000_3d3e, fn_1008_6048, pass1_1030_532e, process_string_1000_3cea,
         process_string_1000_4d58,
     },
     struct_funcs::process_struct_1000_179c,
-    sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e},
+    sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e, SetErrorMode16},
     ui_funcs::{msg_box_1000_1f24, pass1_1038_af34, win_cleanup_fn_1040_a294},
-    util::{CONCAT22, SUB42},
-    bool_funcs::{check_and_clear_global_1000_1f68}
+    util::{CONCAT22, SUB21, SUB42},
 };
 
 pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext, param_1: u16, param_2: u16) -> bool {
@@ -196,16 +200,16 @@ pub unsafe fn handle_error_1008_04f8(param_1: *mut Struct44, param_2: u8) -> *mu
     return param_1;
 }
 
-pub unsafe fn check_error_1008_087e(param_1: u16, param_2: *mut u16) {
+pub unsafe fn check_error_1008_087e(ctx: &mut AppContext, param_1: u16, param_2: *mut u16) {
     let bool_1: u8;
     let mut u_var1: u16;
-    let mut local_SS__1: u16;
+
     let mut local_112: u16;
     let mut local_110: u16;
     let mut local_6: u16;
     let mut local_4: u16;
 
-    process_struct_1000_179c(ctx: &mut AppContext, 10, param_2);
+    process_struct_1000_179c(ctx, 10, param_2);
     u_var1 = param_2 | param_1;
     local_6 = param_1;
     local_4 = param_2;
@@ -223,8 +227,11 @@ pub unsafe fn check_error_1008_087e(param_1: u16, param_2: *mut u16) {
     }
     pass1_1028_e2e0(ctx._PTR_LOOP_1050_65e2);
     pass1_1028_e2e0(ctx._PTR_LOOP_1050_65e2);
-    pass1_1030_532e(CONCAT22(local_SS__1, &local_112), 0xff000000);
-    pass1_1030_835a(ctx._g_bool_1050_5748, CONCAT22(local_SS__1, &local_112));
+    pass1_1030_532e(CONCAT22(ctx.stack_seg_reg, &local_112), 0xff000000);
+    pass1_1030_835a(
+        ctx._g_bool_1050_5748,
+        CONCAT22(ctx.stack_seg_reg, &local_112),
+    );
     pass1_1030_838e(ctx._g_bool_1050_5748);
     local_112 = ctx.s_1_1050_389a;
     local_110 = &ctx.PTR_LOOP_1050_1008;
@@ -258,7 +265,7 @@ pub unsafe fn error_check_1008_8e74(param_1: *mut Struct44, param_2: u8) -> *mut
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn handle_error_1008_9466(param_1: *mut u16) {
+pub unsafe fn handle_error_1008_9466(ctx: &mut AppContext, param_1: *mut u16) {
     unsafe { *param_1 = 0x52a };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     error_check_1000_17ce(ctx._PTR_LOOP_1050_0392);
@@ -274,7 +281,10 @@ pub unsafe fn error_check_1008_ad64(param_1: u32, param_2: u8) {
     return param_1;
 }
 
-pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mut libc::c_char {
+pub unsafe fn set_error_mode_1010_8b14(
+    param_1: u32,
+    param_2: *mut libc::c_char,
+) -> *mut libc::c_char {
     let mut mode: u16;
     let mut u_var1: i32;
     let mut i_var2: i32;
@@ -290,13 +300,13 @@ pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mu
     pass1_1008_5784(CONCAT22(unaff_ss, local_a), (param_1 + 0xe84));
     mode = SetErrorMode16(1);
     while {
-        _local_e = pass1_1008_5b12(CONCAT22(unaff_ss, local_a));
-        if (_local_e == 0) {
+        local_e = pass1_1008_5b12(CONCAT22(unaff_ss, local_a));
+        if (local_e == 0) {
             SetErrorMode16(mode);
             return param_2;
         }
         u_var1 = param_1 + 0xa82;
-        copy_string_1000_3d3e((param_1 & 0xffff0000 | u_var1), *(_local_e + 4));
+        copy_string_1000_3d3e((param_1 & 0xffff0000 | u_var1), *(local_e + 4));
         process_string_1000_3cea((param_1 & 0xffff0000 | u_var1), param_2);
         i_var2 = dos3_call_1000_51aa(u_var1, u_var3, 1, local_3a);
         i_var2 != 0
@@ -305,7 +315,8 @@ pub fn set_error_mode_1010_8b14(param_1: u32, param_2: *mut libc::c_char) -> *mu
     return (param_1 & 0xffff0000 | u_var1);
 }
 
-pub fn set_error_mode_1010_85be(
+pub unsafe fn set_error_mode_1010_85be(
+    ctx: &mut AppContext,
     param_1: u32,
     in_struct_1: *mut Struct13,
     in_struct_1_hi: *mut Struct13,
@@ -320,10 +331,10 @@ pub fn set_error_mode_1010_85be(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if (in_struct_1 == &dos_alloc_addr_1050_0002) {
+    if (in_struct_1 == &ctx.dos_alloc_addr_1050_0002) {
         u_var1 = (in_struct_1_hi * 4 + 0x2e34);
         process_string_1000_4d58(u_var1 & 0xffff0000 | (u_var1 + 3), 0, 0);
-        copy_string_1000_3d3e(CONCAT22(unaff_ss, string_3), s_male_1050_14c6);
+        copy_string_1000_3d3e(CONCAT22(unaff_ss, string_3), ctx.s_male_1050_14c6);
         process_string_1000_3cea(CONCAT22(unaff_ss, string_3), CONCAT22(unaff_ss, string_2));
         process_string_1000_3cea(CONCAT22(unaff_ss, string_3), CONCAT22(unaff_ss, string_1));
         set_error_mode_1010_8b14(param_1, string_3, unaff_ss);
@@ -355,21 +366,22 @@ pub unsafe fn error_check_1040_8db6(param_1: *mut Struct44, param_2: u8) -> *mut
     return param_1;
 }
 
-pub unsafe fn error_check_1040_869a(param_1: *mut Struct363) {
+pub unsafe fn error_check_1040_869a(ctx: &mut AppContext, param_1: *mut Struct363) {
     let local_bx_4: *mut Struct363;
-    let mut u_var1: u16;
-
-    u_var1 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     param_1 = 0x8ddc;
     local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1040;
     error_check_1000_17ce(local_bx_4.field_0x90);
     error_check_1000_17ce(local_bx_4.field_0x94);
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1030_e4be(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1030_e4be(
+    ctx: &mut AppContext,
+    param_1: *mut Struct44,
+    param_2: u8,
+) -> *mut Struct44 {
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {
@@ -378,7 +390,11 @@ pub unsafe fn pass1_1030_e4be(param_1: *mut Struct44, param_2: u8) -> *mut Struc
     return param_1;
 }
 
-pub unsafe fn pass1_1030_e282(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1030_e282(
+    ctx: &mut AppContext,
+    param_1: *mut Struct44,
+    param_2: u8,
+) -> *mut Struct44 {
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {

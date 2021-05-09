@@ -145,7 +145,7 @@ pub fn pass1_1008_87cc(
     let mut local_es_6: u16;
     let mut local_es_223: u16;
     let mut local_es_653: u16;
-    let mut local_SS__1: u16;
+
     let puVar6: *mut u16;
     let mut local_34: u32;
     let mut local_30: u16;
@@ -244,7 +244,12 @@ pub fn pass1_1008_87cc(
         );
         local_24 = &struct_204_1.field_0x1c;
         uStack32 = &struct_204_1.field_0x20;
-        pass1_1008_3f32(0xdc, local_SS__1, &struct_204_1.field_0x28, local_es_6);
+        pass1_1008_3f32(
+            0xdc,
+            ctx.stack_seg_reg,
+            &struct_204_1.field_0x28,
+            local_es_6,
+        );
         _local_30 = (param_1 & 0xffff0000 | &struct_204_1.field_0x32);
         pass1_1008_3e94(
             &local_24,
