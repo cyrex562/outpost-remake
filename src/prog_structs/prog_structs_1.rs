@@ -2648,3 +2648,9 @@ pub struct Struct697 {
     pub field_0xb6: i32,
     pub field_0xb8: i32,
 }
+
+pub struct StructA {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: u16,
+}

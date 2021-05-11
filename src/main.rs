@@ -33,6 +33,7 @@ mod constants;
 mod prog_structs;
 mod app_context;
 mod typedefs;
+mod sys_structs;
 
 use defines::{code, AppContext};
 use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};

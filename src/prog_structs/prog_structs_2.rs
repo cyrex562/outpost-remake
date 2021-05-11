@@ -1,3 +1,4 @@
+use crate::mem_funcs::Address;
 
 pub struct Struct318 {
     pub field_0x0: u8,
@@ -1402,7 +1403,7 @@ pub struct Struct1054 {
 
 pub struct Struct599 {
     pub offset_1: u16,
-    pub field_0x2: *mut u8,
+    pub field_0x2: Address<u32>,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub field_0x6: u16,

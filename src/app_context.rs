@@ -5,9 +5,9 @@ use crate::prog_structs::prog_structs_31::Struct112;
 pub struct AppContext {
     pub g_u16_ptr_1050_5f84: u16,
     pub s__s___lu_1050_38c5: String,
-    pub PTR_LOOP_1050_1038: u32,
-    pub PTR_LOOP_1050_1040: u32,
-    pub _g_struct_372_1050_0ed0: *mut Struct372,
+    pub PTR_LOOP_1050_1038: Address<u32>,
+    pub PTR_LOOP_1050_1040: Address<u32>,
+    pub _g_struct_372_1050_0ed0: Address<Struct372>,
     pub _g_struct_ptr_1050_02a0: *mut u8,
     pub s_OpWnd__getKid__Unknown_target_mo_1050_01a3: String,
     pub s_thisLo_1050_5db1: String,
@@ -15,7 +15,7 @@ pub struct AppContext {
     pub s_procLo_1050_5dbf: String,
     pub s_procHi_1050_5dc6: String,
     pub PTR_LOOP_1050_1008: u16,
-    pub s_1_1050_389a: String,
+    pub s_1_1050_389a: Address<String>,
     pub g_addr_1050_5b7c: Address<Struct112>,
     pub s_Null_Ptr_1050_38f3: String,
     pub s___NMSG___1050_63f6: String,
@@ -50,6 +50,7 @@ pub struct AppContext {
     pub esi_reg: u32,
     pub ebp_reg: u32,
     pub esp_reg: u32,
+    pub dx_ax_reg: u32,
 }
 
 impl AppContext {

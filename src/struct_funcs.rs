@@ -14,6 +14,8 @@ use crate::{
 };
 use crate::app_context::AppContext;
 use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
+use crate::prog_structs::prog_structs_24::pass1_struct_1;
+use crate::mem_funcs::Address;
 
 // WARNING: Variable defined which should be unmapped: local_4
 
@@ -5628,10 +5630,17 @@ pub fn pass1_1020_25c0(in_struct_1_1: *mut Struct649) {
 }
 
 // pass1_struct_1 *32 process_struct_1010_20ba (Struct372 *32 in_struct_372_ptr, char *32 in_string_1)
-pub fn process_struct_1010_20ba(a: *mut Struct372, b: u32) -> *mut pass1_struct1 {
+pub fn process_struct_1010_20ba(a: Address<Struct372>, b: u32) -> Address<pass1_struct1> {
     let mut out: pass1_struct1 = pass1_struct1 {};
 
-    &out
+    Address {
+        full_addr: 0,
+        base: 0,
+        offset: 0,
+        len: 0,
+        buffer: Vec::new(),
+        _type: out,
+    }
 }
 
 pub unsafe fn process_struct_1020_808e(ctx: &mut AppContext, in_struct_1: &mut Struct44) {

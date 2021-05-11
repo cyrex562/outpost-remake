@@ -29,6 +29,14 @@ impl Address<T> {
     }
 }
 
+pub fn get_fn_ptr_at_address(address: u32) -> fn() {
+    unimplemented!()
+}
+
+pub fn get_type_at_address<T>(address: u32) -> Address<T> {
+    unimplemented!()
+}
+
 // u32  free_mem_1000_0016(param_1: u32)
 pub fn free_mem_1000_0016(param_1: u32) -> u32 {
     let mut u_var1: u32;

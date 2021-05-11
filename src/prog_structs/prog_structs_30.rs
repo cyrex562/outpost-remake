@@ -1,3 +1,4 @@
+use crate::typedefs::HWND16;
 
 pub struct Struct448 {
     pub field_0x0: u8,
@@ -7313,7 +7314,7 @@ pub struct Struct124 {
     pub field_0x3: u8,
     pub field_0x4: u8,
     pub field_0x5: u8,
-    pub field_0x6: u8,
+    pub field_0x6: HWND16,
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,
