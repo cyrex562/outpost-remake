@@ -25,27 +25,48 @@ use crate::sound_funcs::{mci_send_command_1008_5c7c, mci_send_command_1008_5c9e,
 use crate::func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_256b};
 use crate::bool_funcs::check_and_set_global_1000_1fea;
 use crate::exit::{exit_1000_25cc, return_1000_39e1, exit_1000_2950};
+use crate::typedefs::{HFILE16, HINSTANCE16, HTASK16, HGLOBAL16, HWND16, SEGPTR, LPARAM, HANDLE16, HDC16, HMENU16, HCURSOR16, HICON16, HBRUSH16, HGDIOBJ16, WPARAM16, HPALETTE16, COLORREF, HPEN16, LRESULT, ATOM};
+use crate::sys_structs::{RECT16, POINT16, LOGPALETTE, PAINTSTRUCT16};
+use crate::prog_structs::prog_structs_7::{Struct376, Struct44, Struct1161};
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct369};
+use crate::prog_structs::prog_structs_16::Struct493;
+use crate::prog_structs::prog_structs_12::Struct806;
+use crate::prog_structs::prog_structs_29::{Struct807, Struct375};
+use crate::prog_structs::prog_structs_27::{Struct816, Struct361};
+use crate::prog_structs::prog_structs_26::{Struct824, Struct1159, Struct1158};
+use crate::prog_structs::prog_structs_17::Struct1115;
+use crate::prog_structs::prog_structs_23::{Struct1090, Struct1157, Struct1163, Struct1160, Struct1166, Struct1164, Struct1165, win_struct_42};
+use crate::prog_structs::prog_structs_15::{Struct1156, Struct921};
+use crate::prog_structs::prog_structs_19::Struct1162;
+use crate::prog_structs::prog_structs_2::Struct199;
+use crate::prog_structs::prog_structs_28::Struct300;
+use crate::prog_structs::prog_structs_30::Struct359;
+use crate::prog_structs::prog_structs_21::Struct74;
+use crate::prog_structs::prog_structs_8::Struct60;
+use crate::prog_structs::prog_structs_31::{Struct370, Struct348, Struct130};
+use crate::prog_structs::prog_structs_25::{Struct64, Struct77, Struct65, Struct152};
+use crate::prog_structs::prog_structs_9::Struct637;
 
 pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut String) {
-    let pc_var1: *mut libc::c_char;
-    let mut c_var2: u8;
-    let pu_var3: *mut u8;
+    let pc_var1: String;
+    let mut c_var2: char;
+    let pu_var3: Vec<u8>;
     let mut i_var4: i32;
     let mut u_var5: u16;
     let mut u_var6: i32;
     let mut u_var7: i32;
-    let mut ppc_var8: *mut *mut libc::c_char;
-    let pc_var9: *mut libc::c_char;
-    let pc_var10: *mut libc::c_char;
-    let pc_var11: *mut libc::c_char;
+    let mut ppc_var8: Vec<String>;
+    let pc_var9: String;
+    let pc_var10: String;
+    let pc_var11: String;
     let mut u_var12: u16;
-    let unaff_ss: *mut libc::c_char;
+    // let unaff_ss: String;
     let mut u_var13: u32;
     let mut u_var14: u32;
     let mut in_stack_00000000: u16 = 0;
     let mut u_stack12: u16;
     let mut i_stack8: i32;
-    let pc_stack6: *mut libc::c_char;
+    let pc_stack6: String;
     let apu_stack4: [u8; 2];
 
     ctx.PTR_LOOP_1050_5fd4 = param_1;
@@ -54,7 +75,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     u_var13 = exit_1000_2950();
     apu_stack4[1] = g_h_instance;
     i_stack8 = 0x104;
-    u_stack12 = SUB42(ctx.s_fem17_wav_1050_264e + 7, 0);
+    u_stack12 = ctx.s_fem17_wav_1050_264e + 7;
     ctx.PTR_LOOP_1050_5fc4 = (u_var13 >> 0x10);
     u_var14 = u_var13;
     i_var4 = GetModuleFileName16();
@@ -70,14 +91,13 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     while {
         while {
             pc_var1 = pc_var9;
-            pc_var9 = pc_var9 + 1;
-            c_var2 = *pc_var1;
-
+            pc_var9 = pc_var9[1..];
+            c_var2 = pc_var1[0];
             Var2 == ' '
         } {}
         c_var2 == '\t'
     } {}
-    if ((c_var2 != '\r') && (c_var2 != '\0')) {
+    if (c_var2 != '\r') && (c_var2 != '\0') {
         ctx.PTR_LOOP_1050_5fb8 = ctx.PTR_LOOP_1050_5fb8 + 1;
         loop {
             pc_var9 = pc_var9 + -1;
@@ -6971,28 +6991,23 @@ pub fn post_win_msg_1020_1ca4(param_1: u32) -> u16 {
 }
 
 pub fn DestroyWindow16(handle: HWND16) -> bool {
-    todo!();
-    false
+    todo!()
 }
 
 pub fn IsWindow16(handle: HWND16) -> bool {
-    todo!();
-    false
+    todo!()
 }
 
 pub fn DeleteObject16(obj: HGDIOBJ16) -> bool {
-    todo!();
-    false
+    todo!()
 }
 
 pub fn DestroyMenu16(hmenu: HMENU16) -> bool {
-    todo!();
-    false
+    todo!()
 }
 
 pub fn RemoveProp16(hwnd: HWND16, str: &String) -> HANDLE16 {
-    todo!();
-    false
+    todo!()
 }
 
 pub fn GetClientRect16(hwnd: HWND16, rect: &mut RECT16) {

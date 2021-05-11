@@ -1,4 +1,5 @@
 use crate::err_funcs::invoke_error_handler_1000_1e61;
+use crate::struct_funcs::struct_fn_1000_160a;
 
 pub enum AddressType {
     NotSet,
@@ -27,6 +28,40 @@ impl Address<T> {
             _type: T,
         }
     }
+
+    pub fn get_u32(self, offset: usize) -> Result<u32, String> {
+        if offset > self.buffer.len() {
+            return Err(format!("offset {} greater than buffer length {}", offset, self.buffer.len()));
+        }
+        let mut tmp_buf: [u8;4] = [0;4];
+        tmp_buf.copy_from_slice(&self.buffer[offset..offset+4]);
+        Ok(u32::from_le_bytes(tmp_buf))
+    }
+
+    pub fn set_u32(mut self, offset: usize, val: u32) -> Result<(), String> {
+        if offset > self.buffer.len() {
+            return Err(format!("offset {} greater than buffer length {}", offset, self.buffer.len()));
+        }
+
+        let mut tmp_buf: [u8;4] = [0;4];
+        tmp_buf = val.to_le_bytes();
+        let mut offset = 0;
+        for b in tmp_buf {
+            self.buffer[offset] = b;
+            offset += 1;
+        }
+
+        Ok(())
+    }
+
+    pub fn get_u16(self, offset: usize) -> Result<u16, String> {
+        if offset > self.buffer.len() {
+            return Err(format!("offset {} greater than buffer length {}", offset, self.buffer.len()));
+        }
+        let mut tmp_buf: [u8;2] = [0;2];
+        tmp_buf.copy_from_slice(&self.buffer[offset..offset+2]);
+        Ok(u16::from_le_bytes(tmp_buf))
+    }
 }
 
 pub fn get_fn_ptr_at_address(address: u32) -> fn() {
@@ -43,7 +78,7 @@ pub fn free_mem_1000_0016(param_1: u32) -> u32 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if ((param_1 + 0x14) != -0x4153) {
+    if (param_1 + 0x14) != -0x4153 {
         invoke_error_handler_1000_1e61(ctx, ctx.code_seg_reg, 10, 0);
         return 0xffffffff;
     }
@@ -1375,13 +1410,13 @@ pub fn free_mem_1000_15ce(param_1: *mut u32, param_2: u16) {
     return;
 }
 
-pub fn alloc_mem_1000_167a(param_1: u16, param_2: u16) -> Vec<u8> {
+pub fn alloc_mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16) -> Vec<u8> {
     let mut u_var1: i32;
     let mut mem_buf: u16;
 
-    if ((ctx.g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1) == 0) {
+    if (ctx.g_u16_ptr_1050_5f2e | ctx._g_Struct94_ptr_1) == 0 {
         u_var1 = struct_fn_1000_160a();
-        if ((param_2 | u_var1) == 0) {
+        if (param_2 | u_var1) == 0 {
             return 0;
         }
     }

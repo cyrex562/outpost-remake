@@ -45,7 +45,7 @@ pub unsafe fn error_check_1000_16ee(ctx: &mut AppContext, param_1: u16, param_2:
     return;
 }
 
-pub unsafe fn error_check_1000_17ce(ctx: &mut AppContext, in_struct_1:u32) -> bool {
+pub unsafe fn error_check_1000_17ce(ctx: &mut AppContext, in_struct_1: &mut Address<Struct44>) -> bool {
     let mut b_var1 = ((in_struct_1 >> 0x10) | in_struct_1) != 0;
     // let mut b_var1 = in_struct_1.is_some();
     if in_struct_1 != 0 {

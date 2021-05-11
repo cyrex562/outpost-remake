@@ -45,25 +45,23 @@ use crate::typedefs::{HANDLE16, HWND16};
 use crate::prog_structs::prog_structs_1::StructA;
 use crate::sys_structs::RECT16;
 
-pub unsafe fn cleanup_1040_abe2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {
     win_cleanup_func_1040_b0f8(param_1);
     if (param_2 & 1) != 0 {
         error_check_1000_17ce(ctx, param_1);
     }
-    return param_1;
 }
 
-pub unsafe fn win_cleanup_1010_0ee6(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn win_cleanup_1010_0ee6(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {
     win_cleanup_1018_4d22(param_1);
-    if ((param_2 & 1) != 0) {
+    if (param_2 & 1) != 0 {
         error_check_1000_17ce(ctx, param_1);
     }
-    return param_1;
 }
 
-pub unsafe fn cleanup_1010_17c0(param_1: &mut Struct340) {
-    let pu_var1: *mut u32;
-    let mut u_var2: i32;
+pub unsafe fn cleanup_1010_17c0(ctx: &mut AppContext, param_1: &mut Address<Struct340>) {
+    let pu_var1: u32;
+    let mut u_var2: u32;
     let local_bx_14: *mut Struct371;
     let mut u_var3: u16;
     let fn_ptr_1: fn();
@@ -71,28 +69,28 @@ pub unsafe fn cleanup_1010_17c0(param_1: &mut Struct340) {
     destroy_win_1010_2fa0(param_1);
     // u_var3 = (param_1 >> 0x10);
     // local_bx_14 = param_1;
-    pu_var1 = param_1.field_0x56;
-    u_var2 = &param_1.field_0x58;
-    if ((u_var2 | pu_var1) != 0) {
-        fn_ptr_1 = *pu_var1;
+    pu_var1 = param_1._type.field_0x56;
+    u_var2 = param_1._type.field_0x58;
+    if (u_var2 | pu_var1) != 0 {
+        fn_ptr_1 = get_fn_ptr_at_address(pu_var1);
         (**fn_ptr_1)();
     }
     param_1.field_0x56 = 0;
-    error_check_1000_17ce(param_1.field_0x60);
+    error_check_1000_17ce(ctx, param_1.field_0x60);
     pass1_1000_4906(param_1.field_0x64, 0, param_1.field_0x68 << 2);
-    error_check_1000_17ce(param_1.field_0x64);
+    error_check_1000_17ce(ctx, param_1.field_0x64);
     param_1.field_0x60 = 0;
     param_1.field_0x64 = 0;
     return;
 }
 
-pub unsafe fn win_cleanup_1010_305a(param_1: *mut Struct318, param_2: i32, param_3: u32) {
-    let pu_var1: *mut u16;
+pub unsafe fn win_cleanup_1010_305a(param_1: &mut Address<Struct318>, param_2: i32, param_3: &mut Address<u8>) {
+    let pu_var1: u32;
     let pi_var2: *mut i32;
     let mut u_var3: u32;
     let mut u8_var4: bool;
     let mut u_var5: u16;
-    let mut u_var6: u16;
+    let mut u_var6: u32;
     let mut i_var7: i32;
     let mut i_var8: i32;
     let mut u_var9: u16;
@@ -100,28 +98,33 @@ pub unsafe fn win_cleanup_1010_305a(param_1: *mut Struct318, param_2: i32, param
     let mut local_e: u32;
     let mut local_a: u16;
     let mut local_8: u16;
-    let mut local_6: u32;
+    let mut local_6: u16 = 0;
 
     u_var10 = (param_3 >> 0x10) as u16;
     u_var6 = pass1_1040_c60e(param_3);
-    u_var9 = (param_1 >> 0x10);
-    i_var7 = param_1;
-    (i_var7 + 0x12) = u_var6;
-    (i_var7 + 0x14) = 0;
-    local_6._0_2_ = 0;
+    // u_var9 = (param_1 >> 0x10);
+    // i_var7 = param_1;
+    // (i_var7 + 0x12) = u_var6;
+    param_1._type.field_0x12 = u_var6;
+    // (i_var7 + 0x14) = 0;
+    param_1._type.field_0x14 = 0;
+    local_6 = 0;
     u8_var4 = false;
-    (i_var7 + 0x28) = 0;
+    // (i_var7 + 0x28) = 0;
+    param_1._type.field_0x28 = 0;
     local_8 = 0;
     loop {
-        pu_var1 = (i_var7 + 0x16);
+        // pu_var1 = (i_var7 + 0x16);
+        pu_var1 = param_1._type.field_0x16;
         unsafe {
-            if (*pu_var1 == local_8 || *pu_var1 < local_8) {
+            if *pu_var1 == local_8 || *pu_var1 < local_8 {
                 // LAB_1010_30ad:
                 local_8 = local_6;
                 if (u8_var4) {
                     while (
                         local_8 = local_8 + 1,
-                        pu_var1 = (i_var7 + 0x16),
+                        // pu_var1 = (i_var7 + 0x16),
+                        pu_var1 = param_1._type.field_0x16;
                         *pu_var1 != local_8 && local_8 <= *pu_var1,
                     ) {
                         u_var3 = (i_var7 + 0x2a + local_8 * 4);

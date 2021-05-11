@@ -1,70 +1,109 @@
-use crate::{
-    defines::{
-        AppContext, Struct304, Struct376, Struct44, Struct79, Struct80, Struct81, Struct83,
-        Struct84, Struct85,
-    },
-    err_funcs::error_check_1000_17ce,
-    pass4_funcs::pass1_1030_1312,
-    pass5_funcs::pass1_1030_ce2e,
-    pass8_funcs::pass1_1010_1d80,
-    pass_funcs::{
-        pass1_1008_4cdc, pass1_1008_52fc, pass1_1008_5784, pass1_1008_57c4, pass1_fn_1008_60e8,
-    },
-    util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, ZEXT24},
-};
+use crate::{defines::{
+    AppContext, Struct304, Struct376, Struct44, Struct79, Struct80, Struct81, Struct83,
+    Struct84, Struct85,
+}, err_funcs::error_check_1000_17ce, pass4_funcs::pass1_1030_1312, pass5_funcs::pass1_1030_ce2e, pass8_funcs::pass1_1010_1d80, pass_funcs::{
+    pass1_1008_4cdc, pass1_1008_52fc, pass1_1008_5784, pass1_1008_57c4, pass1_fn_1008_60e8,
+}, util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, ZEXT24}, mixed_fn_1010_830a};
 use crate::app_context::AppContext;
 use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
-use crate::prog_structs::prog_structs_24::pass1_struct_1;
-use crate::mem_funcs::Address;
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct1144, Struct1172, Struct354, Struct384, Struct103, Struct182};
+use crate::mem_funcs::{Address, alloc_mem_1008_909c, alloc_mem_1000_167a, free_mem_1000_1b9a, alloc_mem_1000_010c, get_mem_sz_1000_1532, alloc_mem_1000_131c, alloc_mem_1000_1708};
+use crate::prog_structs::prog_structs_7::{Struct376, Struct44, Struct372, Struct629};
+use crate::draw::{process_struct_1020_1738, load_cursor_1020_7f7a};
+use crate::prog_structs::prog_structs_8::{Struct649, Struct68, Struct302, Struct108};
+use crate::other_funcs::{zero_list_1008_3e38, return_1000_214a, return_one_1000_2146};
+use crate::prog_structs::prog_structs_2::{Struct660, Struct199, Struct1054, Struct413, Struct296};
+use crate::prog_structs::prog_structs_13::{Struct880, Struct342};
+use crate::prog_structs::prog_structs_5::Struct881;
+use crate::prog_structs::prog_structs_25::{Struct882, Struct65, Struct64, Struct402, Struct152, Struct85, Struct83, Struct84, Struct81, Struct80, Struct79};
+use crate::prog_structs::prog_structs_14::Struct893;
+use crate::util::{SBORROW2, CARRY1, SBORROW1, SUB42, CONCAT31, LOCK};
+use crate::prog_structs::prog_structs_1::{Struct104, Struct552, Struct393};
+use crate::prog_structs::prog_structs_9::{Struct1019, Struct1072, Struct636, Struct209};
+use crate::prog_structs::prog_structs_23::{Struct1022, Struct1037, Struct341, Struct210};
+use crate::prog_structs::prog_structs_16::{Struct1023, Struct493, Struct151};
+use crate::prog_structs::prog_structs_17::{Struct1026, Struct1055, Struct1175};
+use crate::prog_structs::prog_structs_29::{Struct1025, Struct1027, Struct1030, Struct1033, Struct1032, Struct1031, Struct1039, Struct1038, Struct310, Struct314, Struct412, Struct375, Struct114, Struct336, Struct216, Struct214, Struct105};
+use crate::prog_structs::prog_structs_27::{Struct1029, Struct344, Struct298, Struct186};
+use crate::prog_structs::prog_structs_28::{Struct1034, Struct1040, Struct1043, Struct1044, Struct1048, Struct1047, Struct1046, Struct1056, Struct1057, Struct1074, Struct1071, Struct346, Struct357, Struct464, Struct434, Struct377};
+use crate::prog_structs::prog_structs_6::Struct1041;
+use crate::prog_structs::prog_structs_18::{Struct1042, Struct391, Struct568, Struct195, Struct180};
+use crate::prog_structs::prog_structs_12::{Struct1049, Struct460, Struct102, Struct94};
+use crate::prog_structs::prog_structs_20::{Struct1073, Struct508, Struct388, Struct514};
+use crate::prog_structs::prog_structs_15::Struct1169;
+use crate::sys_funcs::{process_struct_1040_8478, GetSystemMetrics16, get_sys_metrics_1018_4b1e, swi};
+use crate::string_funcs::{load_string_1010_847e, copy_string_1000_3d3e, load_str_1010_84ac, pass1_1020_c0ca, big_switch_statement_1020_c222, big_switch_statement_1020_bd80};
+use crate::ui_funcs::pass1_1038_af40;
+use crate::pass8_funcs::{pass1_1010_038e, pass1_1010_041a, pass1_1010_0538, pass1_1010_65d0, pass1_1010_d710, pass1_1010_d5ae, pass1_1010_d448, pass1_1010_d24a, pass1_1010_cf36, pass1_1010_cc56, pass1_1010_c864, pass1_1008_ec72, pass1_1010_383a, pass1_1010_37d4};
+use crate::pass_funcs::{pass1_1008_4d84, pass1_1000_4906, pass1_1008_3e94, pass1_1008_3e54, pass1_1040_c54a, pass1_1008_5b12, pass1_1008_c6fa, pass1_1008_3e76, pass1_1008_5236, pass1_1008_5134, pass1_1008_687a, pass1_fn_1000_2fa4, pass1_fn_1000_52be};
+use crate::pass7_funcs::{pass1_1040_5d12, pass1_1018_209c, pass1_1018_4b78, pass1_1018_4790, pass1_1018_48b0, pass1_1018_4920, pass1_1018_47c8, pass1_1018_4dce, pass1_1018_4cda};
+use crate::prog_structs::prog_structs_11::{Struct355, Struct475, Struct95};
+use crate::prog_structs::prog_structs_31::{Struct352, Struct474, Struct438, Struct437, Struct436, Struct405, Struct316, Struct303, Struct191, Struct188, Struct107, Struct155, Struct127};
+use crate::list_funcs::zero_list_1008_6c90;
+use crate::big_funcs::call_big_fn_1010_c7e2;
+use crate::pass6_funcs::{pass1_1038_4d28, pass1_1038_540a};
+use crate::pass4_funcs::{pass1_1028_e1ec, pass1_1028_e4ec, pass1_1028_dc52};
+use crate::pass5_funcs::pass1_1030_1cd8;
+use crate::prog_structs::prog_structs_30::{Struct435, Struct304, Struct190, Struct106, Struct154};
+use crate::prog_structs::prog_structs_26::{Struct392, Struct97, Struct96};
+use crate::prog_structs::prog_structs_21::Struct297;
+use crate::prog_structs::prog_structs_4::Struct217;
+use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_16ee, invoke_error_handler_1000_1e61, _SHI_INVOKEERRORHANDLER1};
+use crate::bool_funcs::check_flag_1000_1ab0;
 
 // WARNING: Variable defined which should be unmapped: local_4
 
-pub fn set_struct_1000_0782() -> u16 {
-    let in_ax: *mut Struct81;
-    let local_BX__1: *mut Struct79;
-    let mut unaff_bp: u16;
-    let mut unaff_si: u16;
-    let mut in_stack_00000000: u16;
+pub fn set_struct_1000_0782(ctx: &mut AppContext, param_1: u16) -> u16 {
+    // let in_ax: *mut Struct81;
+    // let local_BX__1: *mut Struct79;
+    // let mut unaff_bp: u16;
+    // let mut unaff_si: u16;
+    // let mut in_stack_00000000: u16;
     let mut local_4: u16;
 
     local_BX__1.field_0xe = 0;
     local_BX__1.field_0x10 = (local_BX__1 + 1);
     local_BX__1.field_0x8 = 0x9a0;
-    struct_fn_1000_07ac(unaff_si, in_ax, unaff_bp, in_stack_00000000);
+    struct_fn_1000_07ac(ctx, ctx.si_reg, ctx.ax_reg, ctx.bp_reg, param_1);
     return 1;
 }
 
-pub fn struct_fn_1000_07ac(a: u16, in_Struct81: *mut Struct81, param_3: u16, param_4: u16) {
-    let mut in_ax: i32;
-    let paVar1: *mut Struct81;
-    let mut i_var2: i32;
-    let mut in_dx: i32;
-    let local_BX__1: *mut Struct80;
-    let mut u_var3: i32;
+pub fn struct_fn_1000_07ac(ctx: &mut AppContext,
+                           param_1: u16,
+                           param_2: u16,
+                           param_3: u16,
+                           param_4: u16) {
+    // let mut in_ax: i32;
+    let mut pstruct_var1: Address<Struct81>;
+    let mut i_var2: u32;
+    // let mut in_dx: i32;
+    // let local_BX__1: *mut Struct80;
+    let mut u_var3: u32 = 0;
     let mut local_a: u16;
     let mut local_8: u16;
-    let temp_79f3d97cb82: *mut Struct81;
+    // let mut temp_79f3d97cb82: Address<Struct81>;
+    let mut temp_79f3d97cb82: u32;
 
-    temp_79f3d97cb82 = local_BX__1.field_0x10;
-    local_BX__1.field_0xe = temp_79f3d97cb82;
-    u_var3 = local_BX__1 + (in_dx - temp_79f3d97cb82);
-    i_var2 = temp_79f3d97cb82 + (u_var3 - u_var3 % in_ax);
-    local_BX__1.field_0x10 = i_var2;
-    while (temp_79f3d97cb82 < (i_var2 - in_ax)) {
-        paVar1 = (&temp_79f3d97cb82.field_0x0 + in_ax);
-        (temp_79f3d97cb82).field_0x0 = paVar1;
-        temp_79f3d97cb82 = paVar1;
+    temp_79f3d97cb82 = ctx.bx_reg.field_0x10;
+    ctx.bx_reg.field_0xe = temp_79f3d97cb82;
+    // u_var3 = ctx.bx_reg + (ctx.dx_reg - temp_79f3d97cb82);
+    i_var2 = temp_79f3d97cb82 + (u_var3 - u_var3 % ctx.ax_reg);
+    ctx.bx_reg.field_0x10 = i_var2;
+    while temp_79f3d97cb82 < (i_var2 - ctx.ax_reg) {
+        pstruct_var1 = (&temp_79f3d97cb82.field_0x0 + ctx.ax_reg);
+        (temp_79f3d97cb82).field_0x0 = pstruct_var1;
+        temp_79f3d97cb82 = pstruct_var1.clone();
     }
     (temp_79f3d97cb82).field_0x0 = 0x0;
     return;
 }
 
-pub fn set_struct_1000_09ca() -> u32 {
+pub fn set_struct_1000_09ca(ctx: &mut AppContext) -> u32 {
     let pu_var1: *mut u32;
     let mut u_var2: u32;
-    let mut in_ax: i32;
-    let local_BX__1: *mut Struct84;
-    let local_bx_17: *mut Struct83;
+    // let mut in_ax: i32;
+    // let local_BX__1: *mut Struct84;
+    // let local_bx_17: *mut Struct83;
     let temp_5f585a33fd: *mut Struct85;
 
     pu_var1 = &local_BX__1.field_0x14;
@@ -164,35 +203,31 @@ pub fn struct_fn_1000_115c(param_1: u16, param_2: u16) -> u16 {
     }
     return 1;
 }
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-pub fn struct_fn_1000_160a() -> *mut Struct94 {
-    let paVar1: *mut Struct94;
-
-    paVar1 = return_one_1000_2146();
-    if (paVar1 == 0x0) {
-        return paVar1;
+.
+pub fn struct_fn_1000_160a(ctx: &mut AppContext) -> Address<Struct94> {
+    // let mut paVar1: Address<Struct94> = return_one_1000_2146();
+    let mut pstruct_var1: Address<Struct94> = Address::new();
+    if pstruct_var1.full_addr == 0x0 {
+        return pstruct_var1;
     }
-    if ((ctx.g_u16_ptr_1050_5f2e | _g_Struct94_ptr_1) == 0) {
-        WORD_1050_5f30 = 1;
-        u16_1050_5f32 = 1;
-        ctx.__g_Struct94_ptr_1 = init_struct_1000_18ec(0);
-        if (ctx.__g_Struct94_ptr_1 != 0x0) {
-            if (PTR_LOOP_1050_5f42 != 0x0) {
+    if (ctx.g_u16_ptr_1050_5f2e | ctx._g_Struct94_ptr_1) == 0 {
+        ctx.WORD_1050_5f30 = 1;
+        ctx.u16_1050_5f32 = 1;
+        ctx.__g_Struct94_ptr_1 = init_struct_1000_18ec(None);
+        if ctx.__g_Struct94_ptr_1 != 0x0 {
+            if ctx.PTR_LOOP_1050_5f42 != 0x0 {
                 process_struct_1000_1a54(
-                    PTR_LOOP_1050_5f42,
+                    ctx.PTR_LOOP_1050_5f42,
                     ctx.__g_Struct94_ptr_1,
                     (ctx.__g_Struct94_ptr_1 >> 0x10),
                 );
             }
-            if (u16_1050_5f44 != 0xffff) {
-                check_structs_1000_1afe(u16_1050_5f44, ctx.__g_Struct94_ptr_1);
+            if ctx.u16_1050_5f44 != 0xffff {
+                check_structs_1000_1afe(ctx.u16_1050_5f44, ctx.__g_Struct94_ptr_1);
             }
         }
     }
-    return_1000_214a();
-    return _g_Struct94_ptr_1;
+    return ctx._g_Struct94_ptr_1;
 }
 
 pub fn process_struct_1000_179c(param_1: u16, struct_a: *mut Struct199) {
@@ -210,14 +245,13 @@ pub fn process_struct_1000_179c(param_1: u16, struct_a: *mut Struct199) {
     return;
 }
 
-pub fn init_struct_1000_18ec(param_1: *mut Struct94) {
+pub fn init_struct_1000_18ec(param_1: Option<&mut Address<Struct94>>) {
     init_struct_1000_1902(param_1, 0, 0, 0xc);
-    return;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn init_struct_1000_1902(param_1: *mut Struct94, param_2: u16, param_3: u16, param_4: u16) {
+pub fn init_struct_1000_1902(param_1: Option<&mut Address<Struct94>>, param_2: u16, param_3: u16, param_4: u16) {
     let paVar1: *mut Struct94;
     let u_var2: u8;
     let local_struct: *mut Struct94;
@@ -229,17 +263,17 @@ pub fn init_struct_1000_1902(param_1: *mut Struct94, param_2: u16, param_3: u16,
     
     let mut u_var6: u16;
     let pa_var7: *mut Struct94;
-    let mut unaff_cs: u16;
+    // let mut unaff_cs: u16;
     let mut u_var8: u32;
     let mut local_4: u16;
 
-    if (((param_1 & 0x8000) != 0) && (_SHI_INVOKEERRORHANDLER1 != -0x6f70)) {
+    if ((param_1 & 0x8000) != 0) && (_SHI_INVOKEERRORHANDLER1 != -0x6f70) {
         param_1 = (param_1 | 1);
     }
     while {
         local_struct = (param_1 & 0xfffb | 0x1000);
         alloc_mem_1000_131c(local_struct, 0x100, 0);
-        if ((alloc_addr | local_struct) != 0) {
+        if (alloc_addr | local_struct) != 0 {
             break;
         }
         pa_var7 = local_struct;

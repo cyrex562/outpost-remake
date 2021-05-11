@@ -1,9 +1,53 @@
-use crate::{
-    defines::{Struct126, Struct145},
-    string_funcs::{process_string_1000_28dc, process_string_1000_55b1},
-    util::CONCAT22,
-};
+use crate::{defines::{Struct126, Struct145}, string_funcs::{process_string_1000_28dc, process_string_1000_55b1}, util::CONCAT22, mixed_fn_1010_830a};
 use crate::app_context::AppContext;
+use crate::prog_structs::prog_structs_2::{Struct306, Struct199, Struct293, Struct223, Struct131, Struct7, Struct163};
+use crate::pass8_funcs::{pass1_1008_e9a4, pass1_1010_2ee2, pass1_1010_8ef2, pass1_1010_1d80, pass1_1010_1f62, pass1_1010_905e};
+use crate::pass5_funcs::{pass1_1030_8326, pass1_1030_38f2, pass1_1030_4bbe, pass1_1030_8344, pass1_1030_8334, pass1_1030_8128};
+use crate::struct_funcs::{process_struct_1000_179c, process_struct_1040_b082, process_struct_1040_7728, process_struct_1040_b0bc, process_struct_1040_c630, process_struct_1010_1d48, process_struct_1008_574a, process_struct_1008_c882, struct_fn_1000_160a, process_struct_1008_50c2, process_struct_1008_4772, process_struct_1008_8d8a, set_struct_1008_9584, process_struct_1008_41bc, set_struct_1008_4016, process_struct_1008_4544, process_struct_1008_4834, process_struct_1008_47cc, set_struct_1008_56b4, process_struct_1000_2f00, process_struct_1000_2e74};
+use crate::prog_structs::prog_structs_31::{Struct305, Struct348, Struct113, Struct335, Struct329, Struct289, Struct288, Struct282, Struct281, Struct280, Struct278, Struct277, Struct276, Struct275, Struct264, Struct263, Struct262, Struct259, Struct258, Struct251, Struct250, Struct175, Struct173, Struct169, Struct162, Struct161, Struct160, Struct158, Struct156, Struct157, Struct145, Struct126};
+use crate::sys_funcs::{win_cleanup_func_1040_b0f8, get_prop_1040_9566, make_proc_inst_1040_8fb8, reg_class_1008_96d2, LoadCursor16, GetStockObject16, pass1_1030_838e, dos3_call_1000_42de, dos3_call_1000_4f94, dos3_call_1000_5174, dos3_call_1000_2bb6, dos3_call_1000_39f2, dos3_call_1000_370a, swi, process_win_msg_1008_54aa};
+use crate::pass6_funcs::{pass1_1038_b6e0, pass1_1038_3608, pass1_1038_4d28};
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct249, Struct236, Struct182, Struct103};
+use crate::prog_structs::prog_structs_21::{Struct350, Struct343, Struct74, Struct240, Struct164};
+use crate::err_funcs::{error_check_1000_17ce, error_check_1000_0dc6, handle_error_1008_9466};
+use crate::util::{CARRY1, SBORROW1, CONCAT11, SUB42, CONCAT31, CONCAT12, CONCAT13, ZEXT24, POPCOUNT, SBORROW2, CARRY2, SUB21};
+use crate::prog_structs::prog_structs_8::{Struct68, Struct265};
+use crate::pass7_funcs::{pass1_1040_79c0, pass1_1018_5732, pass1_1018_5742, pass1_1018_4dce, pass1_1018_4cda, pass1_1018_4842, pass1_1018_20ee};
+use crate::prog_structs::prog_structs_28::{Struct346, Struct331, Struct327, Struct290, Struct273, Struct260, Struct255, Struct237, Struct224, Struct207, Struct170, Struct148};
+use crate::prog_structs::prog_structs_18::{Struct338, Struct195};
+use crate::mem_funcs::{Address, alloc_mem_1000_1708, alloc_mem_1008_909c, alloc_mem_1000_0a48, alloc_mem_1000_07fc, alloc_mem_1000_167a, alloc_mem_1000_16aa};
+use crate::ui_funcs::{free_proc_inst_1040_911e, win_cleanup_1040_d1bc, win_cleanup_1018_4d22, win_cleanup_1008_0618, post_quit_msg_1008_3af4};
+use crate::prog_structs::prog_structs_15::{Struct337, Struct194, Struct181};
+use crate::prog_structs::prog_structs_29::{Struct114, Struct332, Struct328, Struct299, Struct291, Struct286, Struct269, Struct256, Struct243, Struct242, Struct238, Struct229, Struct228, Struct227, Struct226, Struct225, Struct221, Struct220, Struct213, Struct212, Struct192, Struct149, Struct153};
+use crate::draw::process_struct_1040_9252;
+use crate::prog_structs::prog_structs_30::{Struct333, Struct295, Struct294, Struct292, Struct287, Struct274, Struct261, Struct257, Struct247, Struct246, Struct245, Struct244, Struct239, Struct234, Struct233, Struct232, Struct231, Struct230, Struct203, Struct201, Struct200, Struct417, Struct172, Struct168};
+use crate::prog_structs::prog_structs_23::{Struct330, Struct267, Struct193, Struct184};
+use crate::bad_funcs::{halt_baddata, bad_fn_1050_335f};
+use crate::prog_structs::prog_structs_27::{Struct301, Struct298, Struct285, Struct268, pass1_struct_2, Struct165};
+use crate::prog_structs::prog_structs_7::{Struct44, Struct376, Struct189};
+use crate::prog_structs::prog_structs_17::{Struct534, Struct284};
+use crate::string_funcs::{load_str_1010_84ac, copy_string_1000_3d3e, string_fn_1000_3f9c, get_string_index_1000_3da4, fn_1008_6048, process_string_1000_440c, process_string_1000_2a00};
+use crate::pass3_funcs::{pass1_1020_a6ee, pass1_1020_a43e};
+use crate::prog_structs::prog_structs_1::{Struct283, Struct104, Struct197};
+use crate::prog_structs::prog_structs_13::{Struct279, Struct146};
+use crate::prog_structs::prog_structs_25::{Struct272, Struct219, Struct211, Struct65};
+use crate::prog_structs::prog_structs_19::Struct271;
+use crate::prog_structs::prog_structs_4::Struct270;
+use crate::prog_structs::prog_structs_12::{Struct266, Struct235, Struct102};
+use crate::prog_structs::prog_structs_26::{Struct254, Struct241, Struct206, Struct196, Struct183};
+use crate::prog_structs::prog_structs_20::Struct253;
+use crate::prog_structs::prog_structs_10::Struct252;
+use crate::prog_structs::prog_structs_16::{Struct248, Struct174};
+use crate::file_funcs::{write_to_file_1008_7e1c, write_to_file_1008_7c2a, write_to_file_1008_7cac, read_file_1008_76e4, call_read_file_1020_a65e, read_from_file_1038_7c02, read_file_1028_def2, read_file_1030_5c52, read_file_1028_d7ba, call_write_to_file_1020_a644, write_to_file_1038_7b20, write_to_file_1028_dce2, write_to_file_1030_5c1a, write_to_file_1028_d7a0};
+use crate::pass4_funcs::{pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_e2e0};
+use crate::prog_structs::prog_structs_11::{Struct222, Struct218, Struct159};
+use crate::sound_funcs::mci_send_cmd_1008_5c5c;
+use crate::typedefs::{HCURSOR16, HGDIOBJ16};
+use crate::other_funcs::{zero_list_1008_3e38, empty_fn_1000_55ac};
+use crate::prog_structs::prog_structs_5::{Struct1, Struct150};
+use crate::prog_structs::prog_structs_6::Struct675;
+use crate::func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_256b, call_fn_ptr_1000_2594};
+use crate::prog_structs::prog_structs_22::Struct147;
 
 pub unsafe fn pass1_fn_1000_0c32(param_1: u16, Struct126_: *mut Struct126, param_3: u16) -> u16 {
     let pu_var1: *mut u32;
@@ -8661,14 +8705,10 @@ pub unsafe fn pass1_1040_c5ac(param_1: *mut Struct337) {
     return;
 }
 
-pub unsafe fn pass1_1040_c60e(param_1: u32) {
-    let mut u_var1: u32;
-    let mut u_var2: u16;
-
-    u_var2 = (param_1 >> 0x10);
-    if ((param_1 + 0x42) != 0) {
-        u_var1 = (param_1 + 0x42);
-        return (u_var1 + 0x12);
+pub unsafe fn pass1_1040_c60e(param_1: &mut Address<u8>) -> u32 {
+    let mut u_var1  = param_1.get_u32(0x42).unwrap();
+    if (u_var1) != 0 {
+        return u_var1 + 0x12;
     }
     return 0;
 }
