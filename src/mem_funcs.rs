@@ -1,21 +1,50 @@
+use crate::err_funcs::invoke_error_handler_1000_1e61;
+
+pub enum AddressType {
+    NotSet,
+    Invalid,
+    Unknown,
+    Struct112,
+}
+
+pub struct Address<T> {
+    pub full_addr: u32,
+    pub base: u16,
+    pub offset: u16,
+    pub len: usize,
+    pub buffer: Vec<u8>,
+    pub _type: T
+}
+
+impl Address<T> {
+    pub fn new() -> Address<T> {
+        Address {
+            full_addr: 0,
+            base: 0,
+            offset: 0,
+            len: 0,
+            buffer: Vec::new(),
+            _type: T,
+        }
+    }
+}
+
 // u32  free_mem_1000_0016(param_1: u32)
 pub fn free_mem_1000_0016(param_1: u32) -> u32 {
-    // let mut unaff_cs: u16;
-    let mut unaff_cs: u16;
-    // let mut u_var1: u32;
     let mut u_var1: u32;
-    // let mut local_6: u16;
     let mut local_6: u16;
-    // let mut local_4: u16;
     let mut local_4: u16;
 
     if ((param_1 + 0x14) != -0x4153) {
-        invoke_error_handler_1000_1e61(unaff_cs, 10, 0);
+        invoke_error_handler_1000_1e61(ctx, ctx.code_seg_reg, 10, 0);
         return 0xffffffff;
     }
     u_var1 = free_mem_1000_0052(&ctx.g_alloc_addr_1050_1050);
     return u_var1;
 }
+
+
+
 
 // u32  free_mem_1000_0052()
 pub fn free_mem_1000_0052(param_1: *mut u32) -> u32 {
@@ -1338,7 +1367,7 @@ pub fn free_mem_1000_15ce(param_1: *mut u32, param_2: u16) {
     return;
 }
 
-pub fn alloc_mem_1000_167a(param_1: u16, param_2: u16) -> *mut u8 {
+pub fn alloc_mem_1000_167a(param_1: u16, param_2: u16) -> Vec<u8> {
     let mut u_var1: i32;
     let mut mem_buf: u16;
 

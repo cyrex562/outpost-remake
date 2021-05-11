@@ -3,20 +3,24 @@ use crate::{
     string_funcs::load_string_1010_847e,
     sys_funcs::{dos3_call_1000_51aa, LoadString16},
 };
+use crate::sys_funcs::{MessageBox16, PostMessage16};
+use crate::util::CONCAT22;
+use crate::app_context::AppContext;
+use crate::string_funcs::{copy_string_1000_3d3e, process_string_1000_3cea};
 
-pub fn msg_box_1000_1f24(ctx: &mut AppContext, param_1: i32, param_2: u16) -> u16 {
+pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
+                         param_1: &String,
+                         param_2: &mut Vec<u8>) -> bool {
     let pi_var1: *mut i32;
     let mut in_ax: i32;
 
-    if (in_ax < (param_1 + 0xc)) {
+    if in_ax < (param_1 + 0xc) {
         msg_box_1000_214c(0, 0, 0xd940, &ctx.PTR_LOOP_1050_1040);
-        return 1;
+        return true;
     }
     pi_var1 = (param_1 + 0xc);
-    unsafe {
-        *pi_var1 = *pi_var1 + 1;
-    }
-    return 0;
+    *pi_var1 = *pi_var1 + 1;
+    return false;
 }
 
 // WARNING: Removing unreachable block (ram,0x10001f92)
@@ -4004,27 +4008,30 @@ pub fn win_gui_fn_1010_8170(param_1: *mut u32, param_2: i32) {
     return;
 }
 
-pub fn msg_box_1010_8bb4(param_1: u16, param_2: u16, param_3: *mut char) {
-    let mut title: string;
-    let in_string_2: *mut libc::c_char;
-    let mut unaff_ss: u16;
+pub fn msg_box_1010_8bb4(ctx: &mut AppContext,
+                         param_1: u16,
+                         param_2: u16,
+                         param_3: &String) {
+    let mut title: String;
+    let in_string_2: String;
+    // let mut unaff_ss: u16;
     let mut w_param: u32;
-    let mut local_402: [u8; 1024];
+    let mut local_402: u16;
 
     in_string_2 = load_string_1010_847e(
         ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
         0x3fa,
     );
-    copy_string_1000_3d3e(CONCAT22(unaff_ss, local_402), in_string_2);
-    process_string_1000_3cea(CONCAT22(unaff_ss, local_402), param_1);
+    copy_string_1000_3d3e(CONCAT22(ctx.stack_seg_reg, local_402), in_string_2);
+    process_string_1000_3cea(CONCAT22(ctx.stack_seg_reg, local_402), param_1);
     title = load_string_1010_847e(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx._g_struct_73_1050_14cc
         0x57b,
     );
-    MessageBox16(0x1010, title, CONCAT22(unaff_ss, local_402), ctx.g_h_window);
-    PostMessage16(0, 0xee, 0x111, ctx.g_h_window);
+    // MessageBox16(0x1010, title, CONCAT22(unaff_ss, local_402), ctx.g_h_window);
+    MessageBox16(ctx.g_h_window,  CONCAT22(ctx.stack_seg_reg, local_402), &title, 0x1010);
+    // PostMessage16(0, 0xee, 0x111, ctx.g_h_window);
+    PostMessage16(ctx.g_h_window, 0x111, 0xee, 0);
     return;
 }
 

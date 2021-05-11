@@ -1,12 +1,10 @@
-use crate::{defines::{
-        file_object, AppContext, Struct103, Struct11, Struct117, Struct131, Struct199, Struct7,
-        Struct771, Struct8, Struct9, HFILE16,
-    }, err_funcs::{error_check_1000_0dc6, error_check_1000_17ce}, list_funcs::set_array_val_1008_72a8, mem_funcs::{alloc_mem_1000_0a48, alloc_mem_1000_1708}, pass3_funcs::{pass1_1020_ba3e, pass1_1020_bb8a, pass1_1020_c444, pass1_1020_c4a8}, pass5_funcs::pass1_1030_1cd8, pass_funcs::{pass1_1008_3e76, pass1_1008_3f92, pass1_1008_4b8e, pass1_1008_6eee, pass1_1008_6f7a, pass1_1008_7006, pass1_1008_7056}, string_funcs::{get_string_index_1000_3da4, string_fn_1000_3f9c}, struct_funcs::{
+use crate::{err_funcs::{error_check_1000_0dc6, error_check_1000_17ce}, list_funcs::set_array_val_1008_72a8, mem_funcs::{alloc_mem_1000_0a48, alloc_mem_1000_1708}, pass3_funcs::{pass1_1020_ba3e, pass1_1020_bb8a, pass1_1020_c444, pass1_1020_c4a8}, pass5_funcs::pass1_1030_1cd8, pass_funcs::{pass1_1008_3e76, pass1_1008_3f92, pass1_1008_4b8e, pass1_1008_6eee, pass1_1008_6f7a, pass1_1008_7006, pass1_1008_7056}, string_funcs::{get_string_index_1000_3da4, string_fn_1000_3f9c}, struct_funcs::{
         process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98,
         struct_fn_1000_160a,
     }, sys_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16}, util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, ZEXT24}};
+use crate::app_context::AppContext;
 
-pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct7) {
+pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, param_2: &mut Struct7) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let local_bx_5: *mut Struct7;
@@ -15,26 +13,26 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, in_Struct7: *mut Struct
     let mut func_ptr: u32;
     let mut temp_5f096a4ace: u32;
 
-    *in_Struct7 = &ctx.PTR_LOOP_1050_4c4c;
-    in_Struct7.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
-    pu_var1 = in_Struct7.func_ptr_0x4;
-    u_var2 = in_Struct7.i_field_4;
+    param_2. = &ctx.PTR_LOOP_1050_4c4c;
+    param_2.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
+    pu_var1 = param_2.func_ptr_0x4;
+    u_var2 = param_2.i_field_4;
     if ((u_var2 | pu_var1) != 0) {
         unsafe {
             func_ptr = *pu_var1;
             (**func_ptr)();
         }
     }
-    error_check_1000_17ce(in_Struct7.file_path);
-    if (&in_Struct7.pv_buffer_0x1a != 0) {
-        temp_5f096a4ace = &in_Struct7.pv_buffer_0x1a;
-        error_check_1000_0dc6(temp_5f096a4ace, (temp_5f096a4ace >> 0x10));
+    error_check_1000_17ce(param_2.file_path);
+    if (&param_2.pv_buffer_0x1a != 0) {
+        temp_5f096a4ace = &param_2.pv_buffer_0x1a;
+        error_check_1000_0dc6(temp_5f096a4ace);
     }
-    if (in_Struct7.file != 0xffff) {
-        _lclose16(in_Struct7.file);
+    if (param_2.file != 0xffff) {
+        _lclose16(param_2.file);
     }
-    *in_Struct7 = ctx.s_1_1050_389a;
-    in_Struct7.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
+    *param_2 = ctx.s_1_1050_389a;
+    param_2.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 

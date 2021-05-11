@@ -1,16 +1,32 @@
-use crate::{
-    defines::{
-        AppContext, ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16,
-        HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LOGPALETTE,
-        LPARAM, LRESULT, PAINTSTRUCT16, POINT16, RECT16, SEGPTR, WPARAM16,
-    },
-    func_ptr_funcs::call_fn_ptr_1000_2594,
-    mem_funcs::free_mem_1000_1b68,
-    struct_funcs::process_struct_1010_20ba,
-    util::SUB42,
-};
+use crate::{defines::{
+    AppContext, ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16,
+    HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LOGPALETTE,
+    LPARAM, LRESULT, PAINTSTRUCT16, POINT16, RECT16, SEGPTR, WPARAM16,
+}, func_ptr_funcs::call_fn_ptr_1000_2594, mem_funcs::free_mem_1000_1b68, struct_funcs::process_struct_1010_20ba, util::SUB42, mixed_fn_1010_830a, exported_stub_1000_29dc};
+use crate::util::{CONCAT22, CONCAT12, CONCAT13, CONCAT11, SBORROW2, CONCAT31, SUB21, CARRY1, SBORROW1, ZEXT24, SUB41, POPCOUNT, CARRY2};
+use crate::ui_funcs::{mixed_1040_8520, destroy_menu_func_1020_795c, pass1_1038_af40, send_dialog_item_msg_1038_844a, send_dlg_item_msg_1038_8164, win_fn_1038_8f74, destroy_win_1040_7b98, set_cursor_1038_bc30, pass1_1038_e03e, win_fn_1010_71d6, msg_box_1040_64ca, win_fn_1040_8b92, free_proc_inst_1040_911e, win_gui_fn_1010_79aa, win_fn_1020_1294};
+use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_e586, pass1_1038_df86, process_struct_1040_7728, set_struct_1008_0000, init_struct_1000_1902, process_struct_1008_574a, process_struct_1010_1d48, process_struct_1008_4772, process_struct_1000_2ce8};
+use crate::pass8_funcs::{pass1_1010_4df0, pass1_1010_089e, pass1_1010_043a, pass1_1008_eb74, pass1_1010_1ea6, pass1_1018_0ad4, pass1_1010_5120, pass1_1010_52fc, pass1_1010_531c, pass1_1010_519a, pass1_1010_ae92, pass1_1010_ae12, pass1_1010_1d80, pass1_1010_7818, pass1_1010_7b8c, pass1_1010_4674, pass1_1010_3770, pass1_1010_4788, pass1_1010_375e, pass1_1010_ac92};
+use crate::app_context::AppContext;
+use crate::err_funcs::error_check_1000_17ce;
+use crate::draw::win_fn_1020_7270;
+use std::intrinsics::offset;
+use crate::pass4_funcs::{pass1_1028_bc90, pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_740c, pass1_1028_78b8, pass1_1028_75bc, post_msg_1028_76da, pass1_1028_7dfc, pass1_1028_7c4e, pass1_1028_7fb6, pass1_1028_d01a, pass1_1028_d2b0, pass1_1028_6408, pass1_1028_62c8, pass1_1028_8dec, pass1_1028_8d9e};
+use crate::pass6_funcs::{pass1_1038_3ba0, pass1_1038_349e, pass1_1038_4d6e, pass1_1038_4e78, pass1_1038_4f54, pass1_1038_387e};
+use crate::pass7_funcs::{pass1_1018_34a6, pass1_1018_1e78, pass1_1018_1c9a, pass1_1038_df5c, pass1_1018_3a7a, pass1_1040_a5d0};
+use crate::pass_funcs::{pass1_1008_df4a, pass1_fn_1008_612e, pass1_1008_c6fa, pass1_1008_c6ae, pass1_1008_5b12, pass1_1008_5784, pass1_1008_b47a, pass1_1008_b38c, pass1_1008_b366, pass1_1008_b200, pass1_1008_b4a0, pass1_1008_b820, pass1_1008_b61a, pass1_1008_b63a, pass1_1008_941a, pass1_1000_3d7a, pass1_fn_1000_3e2c, pass1_fn_1008_60e8, pass1_1008_932a, pass1_fn_1000_47a4, pass1_fn_1000_5008, pass1_1000_4906, pass1_1008_57c4, pass1_1008_3e94, pass1_fn_1000_29b5, pass1_fn_1000_462e, pass1_fn_1000_29af, pass1_fn_1000_3bac};
+use crate::pass5_funcs::{pass1_1030_2242, pass1_1030_38b8, pass1_1030_3694, pass1_1030_375a, pass1_1030_38f2, pass1_1030_73a8, pass1_1030_bd74, pass1_1030_1d58, pass1_1030_bcae, pass1_1030_7ddc, pass1_1030_6a2c, pass1_1030_7c50, pass1_1030_6c4c, pass1_1030_6c1a, pass1_1030_5b00, pass1_1030_835a};
+use crate::string_funcs::{pass1_1028_767e, load_string_1008_b1f0, load_string_1010_847e, load_string_1010_84e0, str_fn_1010_5286, copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_475e, process_string_1000_3cea, str_fn_1010_6034, string_fn_1000_3f9c, process_string_1000_55b1};
+use crate::other_funcs::{switch_stmt_1008_aaa8, switch_stmt_1008_d818, get_private_profile_str_1010_6132, write_private_profile_str_1010_622a};
+use crate::pass3_funcs::{pass1_1028_5ca0, pass1_1020_bb16, pass1_1020_c42e, ret_one_1020_c3ae, switch_statement_1020_c3b4, pass1_1020_ba7e, pass1_1028_45e2};
+use crate::mem_funcs::alloc_mem_1000_07fc;
+use crate::cleanup::{ret_1040_78de, window_msg_func_1010_7300, win_cleanup_1010_305a, win_cleanup_func_1040_782c};
+use crate::sound_funcs::{mci_send_command_1008_5c7c, mci_send_command_1008_5c9e, mci_send_cmd_1008_5c5c};
+use crate::func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_256b};
+use crate::bool_funcs::check_and_set_global_1000_1fea;
+use crate::exit::{exit_1000_25cc, return_1000_39e1, exit_1000_2950};
 
-pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: *mut u8) {
+pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut String) {
     let pc_var1: *mut libc::c_char;
     let mut c_var2: u8;
     let pu_var3: *mut u8;
@@ -26,7 +42,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: *mut
     let unaff_ss: *mut libc::c_char;
     let mut u_var13: u32;
     let mut u_var14: u32;
-    let in_stack_00000000: *mut u8;
+    let mut in_stack_00000000: u16 = 0;
     let mut u_stack12: u16;
     let mut i_stack8: i32;
     let pc_stack6: *mut libc::c_char;
@@ -1423,7 +1439,7 @@ pub fn dos3_call_1000_51aa(param_1: u16, uparam_2_00: i32, param_2: u16) -> u32 
     return param_2 & 0xff;
 }
 
-pub unsafe fn dos3_call_1000_23ea(ctx: &mut AppContext, a: u16, b: *mut u16) {
+pub unsafe fn dos3_call_1000_23ea(ctx: &mut AppContext, a: i16, b: u16) {
     let pu8_var1: *mut u8;
     let pu8_var2: *mut u8;
     let mut u8_var3: u8;

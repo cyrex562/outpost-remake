@@ -43,7 +43,7 @@ pub fn zero_array_val_1008_5394(param_1: *mut u32) {
     return param_1;
 }
 
-pub fn return_1008_53aa() {
+pub fn return_1008_53aa(a: u16, b: u16) {
     return;
 }
 

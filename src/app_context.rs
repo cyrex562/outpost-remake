@@ -1,0 +1,57 @@
+use crate::prog_structs::prog_structs_7::Struct372;
+use crate::mem_funcs::Address;
+use crate::prog_structs::prog_structs_31::Struct112;
+
+pub struct AppContext {
+    pub g_u16_ptr_1050_5f84: u16,
+    pub s__s___lu_1050_38c5: String,
+    pub PTR_LOOP_1050_1038: u32,
+    pub PTR_LOOP_1050_1040: u32,
+    pub _g_struct_372_1050_0ed0: *mut Struct372,
+    pub _g_struct_ptr_1050_02a0: *mut u8,
+    pub s_OpWnd__getKid__Unknown_target_mo_1050_01a3: String,
+    pub s_thisLo_1050_5db1: String,
+    pub s_thisHi_1050_5db8: String,
+    pub s_procLo_1050_5dbf: String,
+    pub s_procHi_1050_5dc6: String,
+    pub PTR_LOOP_1050_1008: u16,
+    pub s_1_1050_389a: String,
+    pub g_addr_1050_5b7c: Address<Struct112>,
+    pub s_Null_Ptr_1050_38f3: String,
+    pub s___NMSG___1050_63f6: String,
+    pub PTR_LOOP_1050_5f80: u16,
+    pub dos_alloc_addr_1050_0002: Vec<u8>,
+    pub g_alloc_addr_1050_1050: Vec<u8>,
+    pub ax_reg: u16,
+    pub bx_reg: u16,
+    pub cx_reg: u16,
+    pub dx_reg: u16,
+    pub es_reg: u16,
+    pub ds_reg: u16,
+    pub si_reg: u16,
+    pub di_reg: u16,
+    pub sp_reg: u16,
+    pub bp_reg: u16,
+    pub stack_seg_reg: u16,
+    pub code_seg_reg: u16,
+    pub ah_reg: u8,
+    pub al_reg: u8,
+    pub bh_reg: u8,
+    pub bl_reg: u8,
+    pub ch_reg: u8,
+    pub cl_reg: u8,
+    pub dh_reg: u8,
+    pub dl_reg: u8,
+    pub eax_reg: u32,
+    pub ebx_reg: u32,
+    pub ecx_reg: u32,
+    pub edx_reg: u32,
+    pub edi_reg: u32,
+    pub esi_reg: u32,
+    pub ebp_reg: u32,
+    pub esp_reg: u32,
+}
+
+impl AppContext {
+
+}

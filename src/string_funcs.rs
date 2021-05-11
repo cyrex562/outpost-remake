@@ -2,86 +2,93 @@ use crate::{
     defines::{AppContext, Struct150},
     util::CONCAT22,
 };
+use crate::app_context::AppContext;
+use crate::sys_funcs::{LoadString16, FatalAppExit16, FatalExit};
+use crate::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913};
+use crate::prog_structs::prog_structs_5::Struct150;
 
-pub unsafe fn process_string_1000_28dc(ctx: &mut AppContext, in_string_1: &mut String) -> String {
+pub unsafe fn process_string_1000_28dc(ctx: &mut AppContext, in_string_1: &String) -> String {
     let mut i32_1: i32;
-    let mut pch_2: u16;
-    let out_string_1: *mut libc::c_char;
-    let string_1: *mut libc::c_char;
-    let string_2: *mut libc::c_char;
-    let mut string_4: u32;
+    let mut pch_2: String;
+    let out_string_1: String;
+    let string_1: String;
+    let string_2: String;
+    let mut string_4: String;
 
-    pch_2 = (ctx.s___NMSG___1050_63f6 + 8);
+    pch_2 = (ctx.s___NMSG___1050_63f6[8..].clone());
     loop {
-        string_2 = pch_2;
-        pch_2 = pch_2 + 2;
-        string_1 = *string_2;
+        string_2 = pch_2.clone();
+        pch_2 = pch_2[2..].clone();
+        string_1 = string_2[0];
         out_string_1 = pch_2;
-        if ((string_1 == in_string_1) || (out_string_1 = string_1 + 1, out_string_1 == 0x0)) {
-            return out_string_1;
-        }
+        // TODO
+        // if (string_1 == in_string_1) || (out_string_1 = string_1 + 1, out_string_1 == 0x0) {
+        //     return out_string_1;
+        // }
         i32_1 = -1;
         while {
-            if (i32_1 == 0) {
+            if i32_1 == 0 {
                 break;
             }
             i32_1 = i32_1 + -1;
-            string_4 = pch_2;
-            pch_2 = pch_2 + 1;
+            string_4 = pch_2.clone();
+            pch_2 = pch_2[1..].clone();
             *string_4 != '\0'
         } {}
     }
 }
 
 pub unsafe fn str_fn_1000_28e0(ctx: &mut AppContext, param_1: i32, param_2: u16) -> String {
-    let piVar1: *mut i32;
+    let string_4: String;
     let mut i_var2: i32;
-    let string_1: *mut libc::c_char;
-    let string_2: *mut libc::c_char;
-    let string_3: *mut libc::c_char;
+    let string_1: String;
+    let string_2: String;
+    let string_3: String;
 
-    string_1 = (ctx.s___NMSG___1050_63f6 + 8);
+    string_1 = ctx.s___NMSG___1050_63f6[8..].clone();
     loop {
-        piVar1 = string_1;
-        string_1 = (string_1 + 2);
-        i_var2 = *piVar1;
+        string_4 = string_1.clone();
+        string_1 = string_1[2..].clone();
+        i_var2 = string_4[0];
         string_2 = string_1;
-        if ((i_var2 == param_1) || (string_2 = (i_var2 + 1), string_2 == 0x0)) {
-            return string_2;
-        }
+        // TODO
+        // if (i_var2 == param_1) || (string_2 = (i_var2 + 1), string_2 == 0x0) {
+        //     return string_2;
+        // }
         i_var2 = -1;
         while {
-            if (i_var2 == 0) {
+            if i_var2 == 0 {
                 break;
             }
             i_var2 = i_var2 + -1;
-            piVar1 = string_1;
-            string_1 = (string_1 + 1);
-            *piVar1 != '\0'
+            string_4 = string_1.clone();
+            string_1 = string_1[1..].clone();
+            string_4[0] != '\0'
         } {}
     }
 }
 
-pub unsafe fn process_string_1000_2917(param_1: *mut libc::c_char, param_2: u16) {
-    let mut string2: u16;
+pub unsafe fn process_string_1000_2917(ctx: &mut AppContext, param_1: &String, param_2: u16) {
+    let mut string2: String;
     let mut iVar1: i32;
-    let mut unaff_es: u16;
-    let mut string1: u32;
+    let mut string1: String;
+    let mut string2_res: String;
 
-    if (&PTR_LOOP_1050_61ec != 0) {
-        string2 = process_string_1000_28dc(ctx, param_1);
-        if (string2 != 0) {
+    if &ctx.PTR_LOOP_1050_61ec != 0 {
+        string2_res = process_string_1000_28dc(ctx, param_1);
+        if string2_res.is_some() {
+            let string_2 = string2_res.unwrap();
             iVar1 = -1;
             while {
-                if (iVar1 == 0) {
+                if iVar1 == 0 {
                     break;
                 }
                 iVar1 = iVar1 + -1;
-                string1 = string2;
-                string2 = string2 + 1;
-                *string1 != '\0'
+                string1 = string2.clone();
+                string2 = string2[1..].clone();
+                string1[0] != '\0'
             } {}
-            process_string_1000_55b1();
+            process_string_1000_55b1(ctx);
         }
     }
     return;
@@ -92,9 +99,7 @@ pub unsafe fn process_string_1000_2917(param_1: *mut libc::c_char, param_2: u16)
 pub unsafe fn process_string_1000_2a00(ctx: &mut AppContext, param_1: *mut Struct150) -> u16 {
     let mut bVar1: bool;
     let mut i_var2: i32;
-    let mut unaff_bp: i32;
     let mut u_var3: u16;
-    let mut unaff_ss: u16;
     let mut local_18: u16;
     let mut local_16: u16;
     let mut local_14: u16;
@@ -106,8 +111,9 @@ pub unsafe fn process_string_1000_2a00(ctx: &mut AppContext, param_1: *mut Struc
     let mut local_4: u16;
     let mut iStack2: i32;
 
-    iStack2 = unaff_bp + 1;
-    local_4 = &ctx.g_alloc_addr_1050_1050;
+    iStack2 = ctx.bp_reg + 1;
+    // TODO
+    //local_4 = &ctx.g_alloc_addr_1050_1050;
     u_var3 = 0xffff;
     if ((*&param_1.field_0xa & 0x40) != 0) {
         *&param_1.field_0xa = 0;
@@ -134,12 +140,12 @@ pub unsafe fn process_string_1000_2a00(ctx: &mut AppContext, param_1: *mut Struc
     if (!bVar1) {
         if (local_6 == 0) {}
         // goto LAB_1000_2af2;
-        copy_string_1000_3d3e(CONCAT22(unaff_ss, &local_10), ctx.s___1050_5fea);
+        copy_string_1000_3d3e(CONCAT22(ctx.stack_seg_reg, local_10), ctx.s___1050_5fea);
         local_14 = local_e;
         if (local_10 == '\\') {
             local_14 = &uStack15;
         } else {
-            process_string_1000_3cea(CONCAT22(unaff_ss, &local_10), ctx.s___1050_5fec);
+            process_string_1000_3cea(CONCAT22(ctx.stack_seg_reg, local_10), ctx.s___1050_5fec);
         }
         pass1_fn_1000_3e82(local_6, local_14, unaff_ss, 10);
         i_var2 = dos3_call_1000_514e(&local_10, unaff_ss);
@@ -886,60 +892,62 @@ pub fn process_string_1000_545a(
     return (string_1 < char_3) * -2 + 0x1;
 }
 
-pub unsafe fn process_string_1000_55b1() -> u16 {
-    let pc_var1: *mut libc::c_char;
-    let mut string_2: u16;
+pub unsafe fn process_string_1000_55b1(ctx: &mut AppContext) -> String {
+    let pc_var1: String;
+    let mut string_2: String;
     let mut i16_1: u16;
     let mut i_var2: i32;
-    let mut p_i16_1: u16;
-    let mut p_i16_2: u16;
-    let mut string_3: u16;
+    let mut string_6: String;
+    let mut string_7: String;
+    let mut string_3: String;
     let mut in_stack_00000008: i32;
-    let mut string_4: u16;
-    let mut string_1: u32;
-    let string_5: *mut libc::c_char;
+    let mut string_4: String;
+    let mut string_1: String;
+    let string_5: String;
+    let string_2_res: Option<String>;
 
-    pass1_fn_1000_25a8();
-    pass1_fn_1000_2913();
-    string_2 = process_string_1000_28dc(ctx, (ctx.s_version__d__d_1050_0012 + 2));
-    if (string_2 != 0) {
+    pass1_fn_1000_25a8(ctx);
+    pass1_fn_1000_2913(ctx, 0);
+    string_2_res = process_string_1000_28dc(ctx, ctx.s_version__d__d_1050_0012[2..]);
+    if string_2_res.is_some() {
+        let mut string_2 = string_2_res.unwrap();
         i16_1 = 9;
-        if (*string_2 == 'M') {
+        if string_2[0] == 'M' {
             i16_1 = 0xf;
         }
-        string_2 = string_2 + i16_1;
+        string_2 = string_2[i16_1..].clone();
         i_var2 = 0x22;
-        string_3 = string_2;
+        string_3 = string_2.clone();
         while {
-            if (i_var2 == 0) {
+            if i_var2 == 0 {
                 break;
             }
-            i_var2 = i_var2 + -1;
-            string_1 = string_3;
-            string_3 = string_3 + 1;
-            *string_1 != '\r'
+            i_var2 = i_var2 - 1;
+            string_1 = string_3.clone();
+            string_3 = string_3[1..].clone();
+            string_1[0] != '\r'
         } {}
-        *(string_3 - 1) = 0;
+        // *(string_3 - 1) = 0;
     }
-    FatalAppExit16(CONCAT22(0x1050, string_2), 0);
+    //FatalAppExit16(0, CONCAT22(0x1050, string_2));
     FatalExit(0xff);
-    p_i16_1 = (ctx.s___NMSG___1050_63f6 + 8);
+    string_6 = ctx.s___NMSG___1050_63f6[8..].clone();
     loop {
-        string_5 = p_i16_1;
-        p_i16_1 = p_i16_1 + 2;
-        p_i16_2 = p_i16_1;
-        if ((string_5 == in_stack_00000008) || (p_i16_2 = string_5 + 1, p_i16_2 == 0)) {
-            return p_i16_2;
+        string_5 = string_6.clone();
+        string_6 = string_6[2..].clone();
+        string_7 = string_6.clone();
+        if (string_5 == in_stack_00000008) || (string_7 = string_5 + 1, string_7 == 0) {
+            return string_7;
         }
         i_var2 = -1;
         while {
-            if (i_var2 == 0) {
+            if i_var2 == 0 {
                 break;
             }
             i_var2 = i_var2 + -1;
-            pc_var1 = p_i16_1;
-            p_i16_1 = p_i16_1 + 1;
-            *pc_var1 != '\0'
+            pc_var1 = string_6;
+            string_6 = string_6[1..].clone();
+            pc_var1[0] != '\0'
         } {}
     }
 }
@@ -2778,14 +2786,22 @@ pub fn string_fn_1010_8018(param_1: *mut Struct446, param_2: u16) {
     return;
 }
 
-pub fn load_string_1010_847e(param_1: i32, param_2: u16, resource_id: u16) {
+/*
+
+u32 __stdcall16far load_string_1010_847e(u16 offset_base,u16 segment,u16 resource_id)
+{
+  LoadString16(0x3ff,(LPSTR)CONCAT22(segment,offset_base + 0x682),resource_id,g_h_instance_1050_038c);
+  return CONCAT22(segment,offset_base + 0x682);
+}
+*/
+pub fn load_string_1010_847e(ctx: &mut AppContext, offset_base: u16, segment: u16, resource_id: u16) -> String {
     LoadString16(
-        0x3ff,
-        CONCAT22(param_2, param_1 + 0x682),
-        resource_id,
         ctx.g_h_instance_1050_038c,
+        resource_id,
+        CONCAT22(segment, offset_base + 0x682),
+        0x3ff
     );
-    return CONCAT22(param_2, param_1 + 0x682);
+    return CONCAT22(segment, offset_base + 0x682);
 }
 
 pub fn load_str_1010_84ac(

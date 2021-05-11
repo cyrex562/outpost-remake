@@ -4,7 +4,6 @@ mod bad_funcs;
 mod big_funcs;
 mod bool_funcs;
 mod cleanup;
-mod defines;
 mod draw;
 mod err_funcs;
 mod exit;
@@ -30,6 +29,10 @@ mod sys_funcs;
 mod ui_funcs;
 mod util;
 mod loops;
+mod constants;
+mod prog_structs;
+mod app_context;
+mod typedefs;
 
 use defines::{code, AppContext};
 use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
@@ -43,47 +46,61 @@ use string_funcs::process_string_1000_28dc;
 use struct_funcs::{process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e91e};
 use sys_funcs::{FatalAppExit16, FatalExit, GetVersion16, LockSegment16, WaitEvent16, dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
 use util::{CONCAT11, CONCAT22};
+use crate::app_context::AppContext;
+use crate::sys_funcs::{InitTask16, swi, InitApp16, make_htask};
+use crate::err_funcs::set_error_mode_1010_8b14;
+use crate::ui_funcs::msg_box_1010_8bb4;
+use crate::pass_funcs::{pass1_1008_6562, pass1_1008_3f92};
+use crate::pass8_funcs::pass1_1010_878c;
+use crate::file_funcs::close_file_1008_496c;
+use crate::struct_funcs::process_struct_1008_48fe;
+use std::intrinsics::offset;
+use crate::prog_structs::prog_structs_31::Struct449;
+use crate::prog_structs::prog_structs_24::Struct103;
+
+const INT_21: u16 = 0x21;
 
 pub unsafe fn entry(
     ctx: &mut AppContext,
-    param_1: &String,
-    param_2: u16,
+    param_1: &mut String,
+    param_2: &mut u16,
     param_3: u16,
     param_4: u16,
     param_5: u16,
 ) -> i32 {
-    let pi32_a: *mut i32;
+    let pi32_a: String;
     let fn_ptr_b: fn();
-    let mut u16_c: u16;
-    let mut fn_ptr_d: u16;
-    let mut string_e: u16;
+    let mut i16_a: i16;
+    let mut fn_ptr_d: fn();
+    // let mut string_e: u16;
     let mut offset_f: u16;
-    let pi32_g: *mut i32;
+    let mut pi32_g: String;
     let mut i32_h: i32;
-    let pu8_j: *mut u8;
-    let pc_k: *mut libc::c_char;
-    let pu8_m: *mut u8;
-    let mut string_n: u16;
-    let pu8_p: *mut u8;
+    let mut pu8_j: u16 = 0;
+    let mut pc_k: String;
+    let mut pu8_m: u16 = 0;
+    // let mut string_n: u16;
+    let mut pu8_p: u16 = 0;
     let mut b_q: bool;
     let mut win_version_r: u32;
     let mut u32_s: u32;
     let mut u32_t: u32;
     let mut i32_v: i32;
     let mut fn_ptr_w: u32;
-    let mut string_x: u32;
+    let mut string_x: String;
 
     u32_s = CONCAT22(param_5, ctx.g_u16_ptr_1050_5f84);
     loop {
         InitTask16(None);
-        ctx.g_u16_ptr_1050_5f84 = u32_s;
-        if ((param_2 != 0)
-            && (
-                b_q = param_4 < 0xff00,
-                param_4 = param_4 + 0x100,
-                ctx.PTR_LOOP_1050_5f7e = pu8_p,
-                b_q,
-            ))
+        ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
+        if param_2 != 0
+            // TODO
+            // && (
+            //     b_q = param_4 < 0xff00,
+            //     param_4 = param_4 + 0x100,
+            //     ctx.PTR_LOOP_1050_5f7e = pu8_p,
+            //     b_q,
+            // )
         {
             ctx.PTR_LOOP_1050_5f48 = param_4;
             ctx.PTR_LOOP_1050_5f4a = pu8_j;
@@ -91,84 +108,85 @@ pub unsafe fn entry(
             ctx.PTR_LOOP_1050_5f4e = param_3;
             ctx.PTR_LOOP_1050_5f50 = pu8_p;
             LockSegment16(0xffff);
-            ctx.PTR_LOOP_1050_5f52 = (u32_s >> 0x10);
-            ctx.g_u16_ptr_1050_5f84 = u32_s;
+            ctx.PTR_LOOP_1050_5f52 = (u32_s >> 0x10) as u16;
+            ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
             win_version_r = GetVersion16();
             ctx.PTR_LOOP_1050_5f52 = (u32_s >> 0x10);
-            ctx.g_u16_ptr_1050_5f84 = u32_s;
-            ctx.PTR_LOOP_1050_5f80 = win_version_r;
-            fn_ptr_d = swi(0x21);
+            ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
+            ctx.PTR_LOOP_1050_5f80 = win_version_r as u16;
+            fn_ptr_d = swi(INT_21);
             u32_t = u32_s;
-            u32_s = (fn_ptr_d)();
-            ctx.PTR_LOOP_1050_5f52 = (u32_t >> 0x10);
-            ctx.g_u16_ptr_1050_5f84 = u32_t;
+            // TODO
+            //u32_s = fn_ptr_d();
+            ctx.PTR_LOOP_1050_5f52 = (u32_t >> 0x10) as u16;
+            ctx.g_u16_ptr_1050_5f84 = u32_t as u16;
             ctx._u8_1050_5f82 = u32_s;
             ctx.u8_1050_5f87 = '\0';
             WaitEvent16(make_htask(0));
-            ctx.g_u16_ptr_1050_5f84 = u32_s;
-            u16_c = InitApp16(ctx.g_h_instance);
-            ctx.g_u16_ptr_1050_5f84 = u32_s;
-            if (u16_c != 0) {
+            ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
+            i16_a = InitApp16(ctx.g_h_instance);
+            ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
+            if i16_a != 0 {
                 break;
             }
         }
-        param_2 = call_fn_ptr_1000_24db(ctx);
-        ctx.g_u16_ptr_1050_5f84 = u32_s;
+        *param_2 = call_fn_ptr_1000_24db(ctx);
+        ctx.g_u16_ptr_1050_5f84 = u32_s as u16;
     }
-    dos3_call_1000_23ea(ctx, u16_c, param_3);
-    let mut param_1: *mut u8;
+    dos3_call_1000_23ea(ctx, i16_a, param_3);
     get_module_file_name_1000_262c(ctx, param_1);
     get_dos_env_1000_27d6(ctx);
     // empty_fn_1000_55ac();
     fn_ptr_d = func_0x100023be(offset);
-    call_fn_ptr_1000_24cd(fn_ptr_d);
+    call_fn_ptr_1000_24cd(&fn_ptr_d);
     pass1_fn_1000_25a8(ctx);
     pass1_fn_1000_2913(ctx, 0);
-    string_e = process_string_1000_28dc(ctx, (ctx.s_version__d__d_1050_0012 + 3));
-    if (string_e != 0) {
+    let mut string_e = process_string_1000_28dc(ctx, (ctx.s_version__d__d_1050_0012 + 3));
+    if !string_e.is_empty() {
         offset_f = 9;
-        if (*string_e == 'M') {
+        if string_e[0] == 'M' {
             offset_f = 0xf;
         }
-        string_e = string_e + offset_f;
+        string_e = string_e[offset_f..];
         i32_h = 0x22;
-        string_n = string_e;
+        let mut string_n = string_e.clone();
         while {
             if i32_h == 0 {
                 break;
             }
             i32_h = i32_h - 1;
             string_x = string_n;
-            string_n = string_n + 1;
+            string_n = string_n[1..].clone();
             *string_x != '\r'
         } {}
         *(string_n - 1) = 0;
     }
     // TODO: make sure we're referencing
     // param_1 = CONCAT22(0x1050, string_1);
-    param_1 = string_e;
-    FatalAppExit16(param_1, 0);
+    *param_1 = string_e;
+    FatalAppExit16(0, param_1);
     FatalExit(0xff);
-    pc_k = (ctx.s___NMSG___1050_63f6 + 8);
+    pc_k = ctx.s___NMSG___1050_63f6[8..].clone();
     loop {
-        pi32_a = pc_k;
-        pc_k = (pc_k + 2);
-        let var_name = *pi32_a;
+        pi32_a = pc_k.clone();
+        pc_k = pc_k[2..].clone();
+        let var_name = pi32_a[0];
         i32_h = var_name;
         pi32_g = pc_k;
-        if ((i32_h == i32_v) || (pi32_g = (i32_h + 1), pi32_g == 0x0)) {
-            return pi32_g;
-        }
+        // TODO
+        // if (i32_h == i32_v) || (pi32_g = (i32_h + 1), pi32_g == 0x0) {
+        //     return pi32_g;
+        // }
         i32_h = -1;
         while {
-            if (i32_h == 0) {
+            if i32_h == 0 {
                 break;
             }
 
-            i32_h = i32_h + -1;
-            pi32_a = pc_k;
-            pc_k = (pc_k + 1);
-            let val = *pi32_a;
+            i32_h = i32_h - 1;
+            pi32_a = pc_k.clone();
+            pc_k = pc_k[1..].clone();
+            let val = pi32_a[0];
             val != '\0'
         } {}
     }
@@ -192,10 +210,8 @@ Low-level Error: Overlapping input varnodes
 // WARNING: Restarted to delay deadcode elimination for space: ram
 
 pub fn exported_stub_1000_29dc() -> u16 {
-    let mut unaff_ss: u16;
-
     if (___EXPORTEDSTUB != 0xb8) {
-        return unaff_ss;
+        return ctx.stack_seg_reg;
     }
     return uRam100029ed;
 }
@@ -214,35 +230,37 @@ Unable to decompile 'window_msg_func_1010_7300'
 
 */
 
-pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
-    let mut u_var1: u32;
-    let local_bx_20: *mut Struct449;
+pub unsafe fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
+    let mut string_1: String;
+    let mut local_bx_20: Struct449;
     let mut i_var2: i32;
-    let mut unaff_ss: u16;
+    // let mut unaff_ss: u16;
     let in_struct_a: *mut Struct103;
-    let mut u_var3: u16;
+    let mut u_var3: String;
     let mut local_32: u16;
     let mut local_30: u16;
     let mut local_2e: u16;
     let mut local_2c: u16;
-    let mut local_a: u16;
+    let mut local_a: String;
     let mut local_8: u16;
     let mut local_6: u32;
 
     local_6 = 0;
-    local_bx_20 = (param_2 * 0x10);
-    u_var3 = (param_1 >> 0x10);
-    if (local_bx_20.field_0x10 == 1) {
-        u_var1 = &local_bx_20.field_0x12;
-        _local_a = set_error_mode_1010_8b14(param_1, u_var1, (u_var1 >> 0x10));
-        if ((local_bx_20.field_0x12 == _local_a) && (local_bx_20.field_0x14 == (_local_a >> 0x10)))
+    // TODO
+    // local_bx_20 = (param_2 * 0x10); equiv to param_2 << 4
+    // u_var3 = (param_1 >> 0x10);
+    if local_bx_20.field_0x10 == 1 {
+        // TODO
+        //u_var1 = &local_bx_20.field_0x12;
+        local_a = set_error_mode_1010_8b14(param_1, &string_1);
+        if (local_bx_20.field_0x12 == _local_a) && (local_bx_20.field_0x14 == (_local_a >> 0x10))
         {
-            msg_box_1010_8bb4(param_1, _local_a);
+            msg_box_1010_8bb4(ctx, param_1, local_a);
             return 0;
         }
-        in_struct_a = process_struct_1008_48fe(CONCAT22(unaff_ss, &local_2e), 1, _local_a);
+        in_struct_a = process_struct_1008_48fe(ctx, CONCAT22(ctx.stack_seg_reg, local_2e), 1, local_a as u32);
         process_struct_1000_179c(0x1e, (in_struct_a >> 0x10));
-        if (in_struct_a == 0x0) {
+        if in_struct_a == 0x0 {
             local_6 = 0;
         } else {
             local_6 = pass1_1008_3f92(in_struct_a, CONCAT22(unaff_ss, &local_2e));
@@ -266,8 +284,8 @@ pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
         } else {
             i_var2 = param_2 * 0x10;
             if ((i_var2 + 0x10) == 3) {
-                u_var1 = (i_var2 + 0x12);
-                _local_2e = set_error_mode_1010_8b14(param_1, u_var1, (u_var1 >> 0x10));
+                string_1 = (i_var2 + 0x12);
+                _local_2e = set_error_mode_1010_8b14(param_1, string_1, (string_1 >> 0x10));
                 if (((i_var2 + 0x12) == _local_2e) && ((i_var2 + 0x14) == (_local_2e >> 0x10))) {
                     msg_box_1010_8bb4(param_1, _local_2e);
                     _local_2e = _local_2e;
@@ -275,8 +293,8 @@ pub fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
             } else {
                 _local_2e = local_6;
                 if ((param_2 * 0x10 + 0x10) == 4) {
-                    u_var1 = (param_2 * 0x10 + 0x12);
-                    _local_2e = set_error_mode_1010_8b14(param_1, u_var1, (u_var1 >> 0x10));
+                    string_1 = (param_2 * 0x10 + 0x12);
+                    _local_2e = set_error_mode_1010_8b14(param_1, string_1, (string_1 >> 0x10));
                 }
             }
         }

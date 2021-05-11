@@ -12,6 +12,8 @@ use crate::{
     },
     util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, ZEXT24},
 };
+use crate::app_context::AppContext;
+use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
 
 // WARNING: Variable defined which should be unmapped: local_4
 
@@ -676,7 +678,7 @@ pub unsafe fn process_struct_1008_48b8(param_1: *mut Struct44, param_2: u8) -> *
 
 pub unsafe fn process_struct_1008_48fe(
     ctx: &mut AppContext,
-    param_1: *mut Struct188,
+    param_1: u32,
     param_2: u16,
     param_3: u32,
 ) {

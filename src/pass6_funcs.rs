@@ -8,6 +8,47 @@ use crate::{
     pass_funcs::pass1_1008_c6fa,
     util::{CONCAT22, SUB42},
 };
+use crate::pass4_funcs::{pass1_1028_b46e, pass1_1028_b58e, pass1_1028_b39e, pass1_1028_b354, pass1_1028_b418, pass1_1028_6744, pass1_1028_b4f2, pass1_1028_6228, pass1_1028_bdac, pass1_1028_c952, pass1_1028_cb04, pass1_1030_1312, pass1_1028_d1dc, pass1_1028_e332, pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_9992, pass1_1028_9944, pass1_1028_6408, pass1_1028_62c8, pass1_1028_d52c, pass1_1030_1358, pass1_1030_11aa, pass1_1028_6356, pass1_1028_678c, pass1_1028_bb24};
+use crate::util::{CONCAT31, CONCAT12, CONCAT13, ZEXT24, SBORROW2, SUB41, CARRY2, CONCAT11, SUB21, CARRY1, SBORROW1, POPCOUNT, SCARRY1};
+use crate::pass5_funcs::{pass1_1030_6e9c, ret_1030_178e, pass1_1030_bcde, pass1_1030_bcae, pass1_1030_cc44, pass1_1030_cbf0, pass1_1030_cef8, pass1_1030_cde8, pass1_1030_73a8, pass1_1030_7ddc, pass1_1030_2aaa, pass1_1030_835a, pass1_1030_bd74, pass1_1030_1d58, pass1_1030_6c4c, pass1_1030_7d1c, pass1_1030_7c28, pass1_1030_6c66, pass1_1030_6b16, pass1_1030_d0a8, pass1_1030_d180, pass1_1030_d144, pass1_1030_314c, pass1_1030_17ce, pass1_1030_355c, pass1_1030_5b00, pass1_1030_8344, pass1_1030_3694, pass1_1030_9f40, pass1_1030_9ecc, pass1_1030_9ef2, pass1_1030_18b2, pass1_1030_183c, pass1_1030_bfb8, pass1_1030_ce2e, pass1_1030_6b86, pass1_1030_6fa0, pass1_1030_ce72, pass1_1030_7c50, pass1_1030_375a, pass1_1030_5b1c, pass1_1030_73ee, pass1_1030_1cd8, pass1_1030_64ce, pass1_1030_3258, pass1_1030_38f2, pass1_1030_72d0, pass1_1030_8e3c, pass1_1030_627e, pass1_1030_6d4e};
+use crate::prog_structs::prog_structs_17::{Struct983, Struct850, Struct1115};
+use crate::prog_structs::prog_structs_16::{Struct982, Struct1010, Struct493, Struct1088, Struct1097, Struct1118};
+use crate::prog_structs::prog_structs_31::{Struct981, Struct987, Struct348, Struct112};
+use crate::prog_structs::prog_structs_7::Struct44;
+use crate::pass_funcs::{pass1_1000_4906, pass1_1008_c6ae, pass1_1008_5b12, pass1_1008_5784, pass1_1008_b820, pass1_1008_3e76, pass1_1008_3e54, pass1_fn_1008_612e, pass1_1008_de58, pass1_fn_1008_60e8, pass1_1008_3eb4, pass1_1008_b340, pass1_1040_b040, pass1_1008_4d84};
+use crate::prog_structs::prog_structs_29::{Struct764, Struct763, Struct990, Struct998};
+use crate::bad_funcs::halt_baddata;
+use crate::prog_structs::prog_structs_28::{Struct1009, Struct1008, Struct1013, Struct1014, Struct1012, Struct1015, Struct1018, Struct1017, Struct1045, Struct1070, Struct1069, Struct918, Struct1066, Struct1064, Struct1063, Struct1062, Struct1061, Struct1059, Struct1058, Struct1077, Struct1076, Struct1081, Struct1080, Struct1079, Struct1089, Struct1087, Struct1084, Struct1095, Struct1091, Struct1093, Struct1094, Struct1092};
+use crate::string_funcs::{pass1_1030_dfcc, copy_string_1000_3d3e, pas1_1030_e8a0, wvsprintf_FUN_1030_840a, string_fn_1000_3f9c, pass1_1028_87f0};
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct1068, Struct1100, Struct1124, Struct1131, Struct1170};
+use crate::other_funcs::{ret_1030_e4ba, modify_list_1008_3f62, zero_list_1008_3e38};
+use crate::prog_structs::prog_structs_25::{Struct1021, Struct1107, Struct1105, Struct1106, Struct1104, Struct1101, Struct1102, Struct1103};
+use crate::pass8_funcs::{pass1_1010_089e, pass1_1010_ed3e, pass1_1008_eb74, pass1_1010_043a, pass1_1010_8fba, pass1_1010_3770, pass1_1010_038e};
+use crate::prog_structs::prog_structs_19::{Struct500, Struct1050, Struct1086, Struct1109};
+use crate::pass3_funcs::{pass1_1020_a49a, pass1_1020_a43e, pass1_1020_ba7e, pass1_1020_bb16, pass1_1028_45e2, infinite_loop_1020_ba94, pass1_1028_0d80, pass1_1020_ba3e, pass1_1020_bb70, pass1_1020_bb8a, switch_statement_1020_c3b4, pass1_1020_c42e, pass1_1020_bae6, pass1_1028_3c32, pass1_1020_c444, pass1_1020_a6ee, pass1_1020_c4f4, pass1_1028_5a94, ret_one_1020_c3ae};
+use crate::prog_structs::prog_structs_14::Struct1036;
+use crate::sys_funcs::{pass1_1038_095e, pass1_1038_7356, win_cleanup_func_1040_b0f8};
+use crate::prog_structs::prog_structs_26::{Struct1052, Struct1096, Struct1121, Struct1119, Struct1117, Struct1116, Struct1114, Struct1110, Struct1123, Struct1122, Struct1128, Struct1127, Struct1129, Struct1132, Struct1134, Struct1133, Struct1135, Struct1136, Struct1137, Struct1147, Struct1146, Struct1145, Struct1151, Struct1153, Struct1152, Struct1154, Struct1155};
+use crate::func_ptr_funcs::pass1_1038_7a5a;
+use crate::struct_funcs::{process_struct_1000_179c, struct_fn_1000_160a, process_struct_1040_b082, process_struct_1040_7728, pass1_1038_a122, process_struct_1008_4c58};
+use crate::prog_structs::prog_structs_2::{Struct199, Struct306, Struct599, Struct318};
+use crate::prog_structs::prog_structs_22::Struct922;
+use crate::mem_funcs::{alloc_mem_1000_07fc, alloc_mem_1000_1708, Address};
+use crate::prog_structs::prog_structs_1::{Struct1065, Struct1067, Struct393, Struct1130};
+use crate::prog_structs::prog_structs_21::{Struct1060, Struct1078, Struct1120};
+use crate::prog_structs::prog_structs_27::{Struct1083, Struct1082, pass1_struct_2, Struct848};
+use crate::prog_structs::prog_structs_6::Struct1098;
+use crate::prog_structs::prog_structs_18::Struct1099;
+use crate::prog_structs::prog_structs_8::{Struct1108, Struct515, Struct68};
+use crate::prog_structs::prog_structs_9::Struct872;
+use crate::prog_structs::prog_structs_12::Struct1125;
+use crate::prog_structs::prog_structs_23::{Struct1113, Struct1111, Struct1126, Struct1148, Struct1150, Struct1149};
+use crate::prog_structs::prog_structs_13::Struct1112;
+use crate::prog_structs::prog_structs_10::Struct1139;
+use crate::prog_structs::prog_structs_11::Struct1138;
+use crate::ui_funcs::{pass1_1038_af40, destroy_win_1040_7b98};
+use crate::cleanup::{pass1_1038_7d5c, pass1_1038_9a48, win_cleanup_func_1040_782c, pass1_1038_a156, pass1_1038_ae08};
+use crate::app_context::AppContext;
 
 pub unsafe fn pass1_1038_c410(
     ctx: &mut AppContext,
@@ -118,35 +159,36 @@ pub unsafe fn pass1_1038_b7f0(param_1: *mut Struct599) {
     return;
 }
 
-pub unsafe fn pass1_1038_b6e0(in_astruct: *mut Struct112, param_2: *mut u8) {
+pub unsafe fn pass1_1038_b6e0(ctx: &mut AppContext,
+                              param_1: &mut Address<Struct112>,
+                              param_2: &mut Vec<u8>) -> u16 {
     let mut u_var1: u32;
-    let in_ax: *mut u8;
     let local_astruct: *mut Struct112;
     let mut u_var2: u16;
-    let mut local_4: u16;
+    let mut u16_var3: u16;
 
-    local_4 = 1;
+    u16_var3 = 1;
     loop {
-        if (0x2a < local_4) {
-            return in_ax;
+        if 0x2a < u16_var3 {
+            return ctx.ax_reg;
         }
-        u_var2 = (in_astruct >> 0x10);
-        local_astruct = in_astruct;
-        in_ax = ((local_astruct + local_4 * 4 + 2) | (local_astruct + local_4 * 4));
-        let uvar1_6_val = unsafe { *(u_var1 + 6) };
-        if ((in_ax != 0x0)
+        u_var2 = (param_1 >> 0x10);
+        local_astruct = param_1;
+        in_ax = ((local_astruct + u16_var3 * 4 + 2) | (local_astruct + u16_var3 * 4));
+        let uvar1_6_val = *(u_var1 + 6);
+        if (ctx.ax_reg != 0x0)
             && (
-                u_var1 = (local_astruct + local_4 * 4),
-                in_ax = param_2,
-                uvar1_6_val == param_2,
-            ))
+            u_var1 = (local_astruct + u16_var3 * 4),
+            ctx.ax_reg = param_2,
+            uvar1_6_val == param_2,
+            )
         {
             break;
         }
-        local_4 = local_4 + 1;
+        u16_var3 = u16_var3 + 1;
     }
-    (local_astruct + local_4 * 4) = 0;
-    return '\0';
+    (local_astruct + u16_var3 * 4) = 0;
+    return 0;
 }
 
 pub unsafe fn pass1_1038_ae28(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {

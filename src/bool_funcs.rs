@@ -1,29 +1,29 @@
 use crate::defines::AppContext;
+use crate::app_context::AppContext;
 
-pub fn check_flag_1000_1ab0(ctx: &mut AppContext, param_1: u16) -> u32 {
-    let mut in_ax: i32;
-    let mut u_var1: i32;
-    let mut u_var2: i32;
+pub fn check_flag_1000_1ab0(ctx: &mut AppContext, param_1: u16) -> u16 {
+    let mut u_var1: u16;
+    let mut u_var2: u16;
 
-    if (in_ax == 0x2000) {
+    if ctx.ax_reg == 0x2000 {
         return 0x2000;
     }
-    if (in_ax < 0xfff0) {
-        if (in_ax < 0x1001) {
+    if in_ax < 0xfff0 {
+        if ctx.ax_reg < 0x1001 {
             return 0x1000;
         }
         u_var1 = 0x2000;
-        if (in_ax < (ctx.s_571_bmp_1050_1fff + 2)) {
+        if ctx.ax_reg < (ctx.s_571_bmp_1050_1fff[2..]) {
             while {
                 u_var2 = u_var1;
                 u_var1 = u_var2 >> 1;
-                in_ax <= u_var1
+                ctx.ax_reg <= u_var1
             } {}
             return u_var2 & 0xfffe;
         }
         while (u_var1 = u_var1 * 2, u_var1 != 0) {
-            if (in_ax <= u_var1) {
-                return (u_var1 + 0x10 & -(u_var1 < 0xfff0)) - 0x10;
+            if in_ax <= u_var1 {
+                return (u_var1 + 0x10 & !(u_var1 < 0xfff0)) - 0x10;
             }
         }
     }

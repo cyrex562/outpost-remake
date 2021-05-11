@@ -3,6 +3,7 @@ use crate::{
     string_funcs::{process_string_1000_28dc, process_string_1000_55b1},
     util::CONCAT22,
 };
+use crate::app_context::AppContext;
 
 pub unsafe fn pass1_fn_1000_0c32(param_1: u16, Struct126_: *mut Struct126, param_3: u16) -> u16 {
     let pu_var1: *mut u32;
