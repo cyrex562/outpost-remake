@@ -266,7 +266,7 @@ pub unsafe fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
         } else {
             local_6 = pass1_1008_3f92(in_struct_a, CONCAT22(unaff_ss, &local_2e));
         }
-        close_file_1008_496c(&local_2e);
+        close_file_1008_496c(ctx, &local_2e);
         _local_2e = local_6;
     } else {
         if ((param_2 * 0x10 + 0x10) == 2) {
@@ -397,12 +397,11 @@ Unable to decompile 'bad1_1038_de20'
 // WARNING: Removing unreachable block (ram,0x11d804b0)
 
 fn main() {
-    let ctx: AppContext = AppContext::new();
-    let param_1: String = String::new();
-    let param_2: u16 = 0;
-    let param_3: u16 = 0;
-    let param_4: u16 = 0;
-    let param_5: u16 = 0;
-    let result = unsafe { entry(&mut ctx, &param_1, param_2, param_3, param_4, param_5) };
-    return 0;
+    let mut ctx: AppContext = AppContext::new();
+    let mut param_1: String = String::new();
+    let mut param_2: u16 = 0;
+    let mut param_3: u16 = 0;
+    let mut param_4: u16 = 0;
+    let mut param_5: u16 = 0;
+    let result = unsafe { entry(&mut ctx, &mut param_1, &mut param_2, param_3, param_4, param_5) };
 }

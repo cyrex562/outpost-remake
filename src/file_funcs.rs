@@ -1,10 +1,47 @@
 use crate::{err_funcs::{error_check_1000_0dc6, error_check_1000_17ce}, list_funcs::set_array_val_1008_72a8, mem_funcs::{alloc_mem_1000_0a48, alloc_mem_1000_1708}, pass3_funcs::{pass1_1020_ba3e, pass1_1020_bb8a, pass1_1020_c444, pass1_1020_c4a8}, pass5_funcs::pass1_1030_1cd8, pass_funcs::{pass1_1008_3e76, pass1_1008_3f92, pass1_1008_4b8e, pass1_1008_6eee, pass1_1008_6f7a, pass1_1008_7006, pass1_1008_7056}, string_funcs::{get_string_index_1000_3da4, string_fn_1000_3f9c}, struct_funcs::{
-        process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98,
-        struct_fn_1000_160a,
-    }, sys_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16}, util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, ZEXT24}};
+    process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98,
+    struct_fn_1000_160a,
+}, sys_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16}, util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, ZEXT24}, mixed_fn_1010_830a};
 use crate::app_context::AppContext;
+use crate::struct_funcs::{process_struct_1008_41bc, pass1_1038_6520, process_struct_1008_574a, process_struct_1008_dcdc};
+use crate::pass3_funcs::{pass1_1020_8712, process_struct_1020_847a, pass1_1020_b97e, pass1_1028_21ba, pass1_1020_bb16};
+use crate::pass7_funcs::{pass1_1018_26c2, pass1_1018_268e, pass1_1018_2678};
+use crate::other_funcs::{zero_list_1008_3e38, set_param_3_with_switch_1008_72bc, switch_statement_1008_73ea, modify_list_1008_3f62, switch_statement_1008_738c};
+use crate::prog_structs::prog_structs_1::{Struct393, Struct104};
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct103, Struct8};
+use crate::util::{CONCAT11, SBORROW2, SUB41, SUB21, SUB42, CARRY2};
+use crate::typedefs::HFILE16;
+use crate::mem_funcs::{alloc_mem_1000_07fc, Address};
+use crate::prog_structs::prog_structs_29::{Struct732, Struct763, Struct425};
+use crate::pass_funcs::{pass1_1008_5b12, pass1_1008_5784, pass1_1008_3eb4, pass1_fn_1008_612e, pass1_1008_c6ae, pass1_fn_1008_60e8, pass1_1008_766e, pass1_1008_b0bc};
+use crate::prog_structs::prog_structs_25::{Struct731, Struct9};
+use crate::prog_structs::prog_structs_2::{Struct199, Struct390, Struct117, Struct7, Struct131};
+use crate::prog_structs::prog_structs_28::{Struct772, Struct936, Struct961, file_object};
+use crate::prog_structs::prog_structs_20::{Struct771, Struct506, Struct120};
+use crate::pass4_funcs::{pass1_1028_e100, pass1_1028_e0bc, pass1_1028_e4ec, pass1_1028_dc52, ret_1030_154c, pass1_1030_14b4, pass1_1030_145a, pass1_1030_0000, pass1_1028_90e6, pass1_1028_780c, pass1_1028_e1ec, pass1_1028_b204, pass1_1028_e2ac};
+use crate::pass6_funcs::{pass1_1038_3ba0, pass1_1038_79b2, pass1_1038_30aa};
+use crate::pass5_funcs::{pass1_1030_2068, pass1_1030_835a, pass1_1030_671c, pass1_1030_67cc, pass1_1030_6740, pass1_1030_66de, pass1_1030_6222, pass1_1030_560e, pass1_1030_7e5a, pass1_1030_73ee, pass1_1030_61fe, pass1_1030_2958, pass1_1030_5d0a, pass1_1030_4782, pass1_1030_84ae};
+use crate::pass2_funcs::pass1_1010_ebf8;
+use crate::pass8_funcs::{pass1_1010_043a, pass1_1010_ed22, pass1_1018_0196, pass1_1010_82f8, pass1_1018_04a4, pass1_1018_04ca};
+use crate::string_funcs::{pass1_1030_e4fa, pass1_1030_5164, process_string_1008_7e4a};
+use crate::bad_funcs::halt_baddata;
+use crate::prog_structs::prog_structs_16::{Struct493, Struct1143};
+use crate::prog_structs::prog_structs_9::Struct844;
+use crate::prog_structs::prog_structs_10::Struct933;
+use crate::prog_structs::prog_structs_26::{Struct866, Struct873, Struct874, Struct1140, Struct1141, Struct1142, Struct121};
+use crate::prog_structs::prog_structs_12::{Struct94, Struct235};
+use crate::sys_funcs::dos3_call_1000_51aa;
+use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
+use crate::prog_structs::prog_structs_11::Struct934;
+use crate::prog_structs::prog_structs_23::{Struct935, Struct1168, Struct1167};
+use crate::prog_structs::prog_structs_31::{Struct962, Struct471, Struct472};
+use crate::prog_structs::prog_structs_6::Struct473;
+use crate::prog_structs::prog_structs_5::Struct1174;
+use crate::prog_structs::prog_structs_30::Struct470;
+use crate::prog_structs::prog_structs_17::Struct407;
+use crate::prog_structs::prog_structs_27::Struct11;
 
-pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, param_2: &mut Struct7) {
+pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, param_2: &mut Address<Struct7>) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let local_bx_5: *mut Struct7;
@@ -885,17 +922,16 @@ pub unsafe fn read_file_1008_7bc8(ctx: &mut AppContext, in_file: &mut HFILE16, p
     return 0;
 }
 
-pub fn write_to_file_1008_7c2a(param_1: *mut HFILE16, param_2: *mut char) -> bool {
-    let mut u_var1: i32;
-    let BVar2: bool;
-
-    if (param_2 != 0x0) {
-        u_var1 = get_string_index_1000_3da4(param_2);
-        BVar2 = write_to_file_1008_7e1c(param_1, param_2, (u_var1 + 1));
-        return BVar2;
+pub fn write_to_file_1008_7c2a(ctx: &mut AppContext,
+                               param_1: &mut Address<HFILE16>,
+                               param_2: &mut String) -> bool {
+    if param_2 != 0x0 {
+        let u_var1 = get_string_index_1000_3da4(param_2);
+        let write_file_result = write_to_file_1008_7e1c(param_1, param_2, (u_var1 + 1) as usize);
+        return write_file_result;
     }
-    write_to_file_1008_7e1c(param_1, s_playerName_1050_148e + 0xc, 1);
-    return 1;
+    write_to_file_1008_7e1c(param_1, &ctx.s_playerName_1050_148e[0xc..], 1);
+    return true;
 }
 
 pub fn read_file_into_str_1008_7c6e(p_file_handle: *mut HFILE16, out_str: *mut char) {
@@ -925,26 +961,24 @@ pub fn read_file_into_str_1008_7c6e(p_file_handle: *mut HFILE16, out_str: *mut c
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn write_to_file_1008_7cac(param_1: *mut HFILE16, param_2: u16) -> u8 {
-    let mut buf_size: i32;
-    let b_var1: bool;
-    let ctx.stack_seg_reg: *mut libc::c_char;
-    let mut char_buf: [u8; 10];
+pub fn write_to_file_1008_7cac(param_1: &mut Address<HFILE16>, param_2: u16) -> bool {
+    let mut b_var1: bool;
+    let mut char_buf: String;
 
     string_fn_1000_3f9c(
-        char_buf,
-        ctx.stack_seg_reg,
-        s__s_02x_1050_0340,
+        &mut char_buf,
+        &ctx.stack_seg_reg,
+        &ctx.s__s_02x_1050_0340,
         &ctx.g_alloc_addr_1050_1050,
-        _PTR_s_dcbSC_1050_0336_1050_033c,
+        &ctx._PTR_s_dcbSC_1050_0336_1050_033c,
     );
-    buf_size = get_string_index_1000_3da4(CONCAT22(ctx.stack_seg_reg, char_buf));
-    b_var1 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, char_buf), buf_size);
-    if (b_var1 == 0) {
+    let mut buf_size = get_string_index_1000_3da4(&mut char_buf);
+    b_var1 = write_to_file_1008_7e1c(&param_1, &mut char_buf, &buf_size);
+    if b_var1 == false {
         ctx.g_u16_1050_0310 = 0x6d0;
-        return '\0';
+        return false;
     }
-    return 0x1;
+    return true;
 }
 
 // WARNING: Could not reconcile some variable overlaps
@@ -1000,31 +1034,27 @@ pub fn read_file_1008_7cfe(param_1: *mut HFILE16) -> u8 {
 }
 
 pub fn read_file_1008_7dee(
-    p_in_file_handle: &mut HFILE16,
+    file_handle: &mut Address<HFILE16>,
     buffer: &mut Vec<u8>,
     count: usize,
 ) -> bool {
-    let mut bytes_read: u32;
-    // let p_in_file_handle_val = unsafe { *p_in_file_handle };
-    bytes_read = _hread(p_in_file_handle, buffer, count);
-    if ((bytes_read == count) && ((bytes_read >> 0x10) == count._2_2_)) {
-        return 1;
+    let bytes_read = _hread(&mut file_handle._type, buffer, count);
+    if bytes_read == count {
+        return true;
     }
-    return 0;
+    return false;
 }
 
 pub fn write_to_file_1008_7e1c(
-    file: *mut HFILE16,
-    buffer: &mut string,
-    count: libc::c_long,
+    file: &mut Address<HFILE16>,
+    buffer: &String,
+    count: usize,
 ) -> bool {
-    let mut bytes_written: u32;
-    let file_val = unsafe { *file };
-    bytes_written = _hwrite16(count, buffer, file_val);
-    if ((bytes_written == count) && ((bytes_written >> 0x10) == count._2_2_)) {
-        return 1;
+    let bytes_written = _hwrite16(file._type, buffer, count);
+    if bytes_written == count {
+        return true;
     }
-    return 0;
+    return false;
 }
 
 pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut HFILE16) {
@@ -1663,23 +1693,24 @@ pub fn read_file_1010_404a(param_1: *mut Struct407, param_2: u32) {
     return;
 }
 
-pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFILE16) -> bool {
+pub fn write_to_file_1010_5dc6(
+    in_struct_1: &mut Address<Struct425>,
+    in_file_1: &mut Address<HFILE16>) -> bool {
     let mut u_var1: u32;
     let u_var2: u8;
-    let extraout_AH: u8;
+    // let extraout_AH: u8;
     let mut i_var3: i32;
     let b_var4: bool;
-    let ctx.bx_reg: *mut Struct425;
+    // let ctx.bx_reg: *mut Struct425;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
     let mut local_c: u16;
     let mut local_6: u16;
 
-    u_var2 = write_to_file_1008_7cac(in_file_1, 4);
-    if (CONCAT11(extraout_AH, u_var2) != 0) {
-        u_var5 = (in_struct_1 >> 0x10);
+    let u_var2 = write_to_file_1008_7cac(in_file_1, 4);
+    if u_var2 != false {
         ctx.bx_reg = in_struct_1;
-        u_var1 = ctx.bx_reg.field_0x68;
+        let u_var1 = ctx.bx_reg.field_0x68;
         i_var3 = write_to_file_1008_7c2a(in_file_1, u_var1, (u_var1 >> 0x10));
         if (i_var3 != 0) {
             u_var1 = ctx.bx_reg.field_0x6c;
@@ -1691,14 +1722,14 @@ pub fn write_to_file_1010_5dc6(in_struct_1: *mut Struct425, in_file_1: *mut HFIL
                     local_6 = ctx.bx_reg.field_0x82;
                     b_var4 = write_to_file_1008_7e1c(in_file_1, CONCAT22(unaff_ss, &local_6), 2);
                     if (b_var4 != 0) {
-                        return 1;
+                        return true;
                     }
                 }
             }
         }
         ctx.g_u16_1050_0310 = 0x6d0;
     }
-    return 0;
+    return false;
 }
 
 pub fn read_file_1010_5e56(param_1: u32, param_2: *mut HFILE16) {
@@ -1985,15 +2016,15 @@ pub unsafe fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
+pub fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_2: &mut Address<HFILE16>) -> bool {
     let mut u_var1: u32;
     let u_var2: u8;
-    let extraout_AH: u8;
+    // let extraout_AH: u8;
     let BVar3: bool;
     let mut u_var4: u16;
-    let ctx.bx_reg: *mut Struct470;
+    // let ctx.bx_reg: *mut Struct470;
     let mut u_var5: u16;
-    let mut unaff_ss: u16;
+    // let mut unaff_ss: u16;
     let lVar6: u32;
     let mut local_24: u16;
     let mut local_20: u16;
@@ -2002,44 +2033,44 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
     let mut local_16: u16;
     let mut local_10: u16;
     let mut local_e: u16;
-    let mut local_c: [u8; 8];
+    let mut local_c: String;
     let mut local_4: u16;
 
-    u_var2 = write_to_file_1008_7cac(param_2, 1);
-    if (CONCAT11(extraout_AH, u_var2) == 0) {
-        return 0;
+    let b_var2 = write_to_file_1008_7cac(param_2, 1);
+    if CONCAT11(ctx.ah_reg, b_var2) == 0 {
+        return false;
     }
-    u_var5 = (param_1 >> 0x10);
+    // u_var5 = (param_1 >> 0x10);
     ctx.bx_reg = param_1;
-    if (ctx.bx_reg.field_0xa == 0) {
+    if ctx.bx_reg.field_0xa == 0 {
         local_4 = 0;
     } else {
         u_var1 = ctx.bx_reg.field_0xa;
         local_4 = (u_var1 + 8);
     }
     local_1c = local_4;
-    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-    if (BVar3 == 0) {
+    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1c), 2);
+    if BVar3 == 0 {
         ctx.g_u16_1050_0310 = 0x6d0;
-        return 0;
+        return false;
     }
-    pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0xa);
+    pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_c), ctx.bx_reg.field_0xa);
     while {
-        _local_10 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
-        if (_local_10 == 0) {
-            if (ctx.bx_reg.field_0xe == 0) {
+        _local_10 = pass1_1008_5b12(CONCAT22(ctx.stack_seg_reg, local_c));
+        if _local_10 == 0 {
+            if ctx.bx_reg.field_0xe == 0 {
                 local_24 = 0;
             } else {
                 u_var1 = ctx.bx_reg.field_0xe;
                 local_24 = (u_var1 + 8);
             }
             local_16 = local_24;
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-            if (BVar3 == 0) {
+            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_16), 2);
+            if BVar3 == 0 {
                 ctx.g_u16_1050_0310 = 0x6d0;
-                return 0;
+                return false;
             }
-            pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0xe);
+            pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_c), ctx.bx_reg.field_0xe);
             while {
                 lVar6 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
                 u_var4 = (lVar6 >> 0x10);
@@ -2052,19 +2083,19 @@ pub fn write_to_file_1010_9900(param_1: u32, param_2: *mut HFILE16) -> bool {
                     }
                     local_16 = local_24;
                     BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-                    if (BVar3 == 0) {
+                    if BVar3 == 0 {
                         ctx.g_u16_1050_0310 = 0x6d0;
                         return 0;
                     }
-                    pass1_1008_5784(CONCAT22(unaff_ss, local_c), ctx.bx_reg.field_0x12);
+                    pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_c), ctx.bx_reg.field_0x12);
                     while {
-                        lVar6 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
+                        lVar6 = pass1_1008_5b12(CONCAT22(ctx.stack_seg_reg, local_c));
                         u_var4 = (lVar6 >> 0x10);
-                        if (lVar6 == 0) {
+                        if lVar6 == 0 {
                             local_1c = ctx.bx_reg.field_0x1a;
                             BVar3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-                            if (BVar3 == 0) {
+                            if BVar3 == 0 {
                                 ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }

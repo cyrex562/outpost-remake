@@ -342,29 +342,25 @@ pub fn copy_string_1000_3d3e(
     return ctx.es_reg;
 }
 
-pub fn get_string_index_1000_3da4(in_string_1: *mut libc::c_char) -> u32 {
-    let mut u_var1: i32;
-    let mut string3: u16;
-    let bool2: u8;
-    let mut string1: u32;
-
-    string3 = in_string_1;
-    bool2 = 0x1;
-    u_var1 = 0xffff;
+pub fn get_string_index_1000_3da4(in_string_1: &mut String) -> u16 {
+    let mut string3 = in_string_1.clone();
+    let mut string1: String = String::new();
+    let mut bool2 = true;
+    let mut u_var1: u16 = 0xffff;
     while {
-        if (u_var1 == 0) {
+        if u_var1 == 0 {
             break;
         }
         u_var1 = u_var1 - 1;
-        string1 = string3;
-        string3 = string3 + 1;
+        string1 = string3.clone();
+        string3 = string3[1..].clone();
         unsafe {
-            bool2 = *string1 == '\0';
+            bool2 = string1[0] == '\0';
         }
         !bool2
     } {}
-    // u_var1 = ~u_var1;
-    if (bool2) {
+    u_var1 = !u_var1;
+    if bool2 {
         u_var1 = u_var1 - 1;
     }
     return u_var1;
