@@ -66,23 +66,23 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     let mut in_stack_00000000: u16 = 0;
     let mut u_stack12: u16;
     let mut i_stack8: i32;
-    let pc_stack6: String;
-    let apu_stack4: [u8; 2];
+    let mut pc_stack6: String;
+    let mut apu_stack4: [HINSTANCE16; 2] = [0;2];
 
-    ctx.PTR_LOOP_1050_5fd4 = param_1;
-    param_1 = (ctx.s_fem15_wav_1050_263a + 3);
+    ctx.PTR_LOOP_1050_5fd4 = param_1.clone();
+    *param_1 = ctx.s_fem15_wav_1050_263a[3..];
     ctx.PTR_LOOP_1050_5fd2 = in_stack_00000000;
-    u_var13 = exit_1000_2950();
-    apu_stack4[1] = g_h_instance;
-    i_stack8 = 0x104;
-    u_stack12 = ctx.s_fem17_wav_1050_264e + 7;
-    ctx.PTR_LOOP_1050_5fc4 = (u_var13 >> 0x10);
-    u_var14 = u_var13;
-    i_var4 = GetModuleFileName16();
-    u_var14._2_2_ = (u_var14 >> 0x10);
-    ctx.PTR_LOOP_1050_5fc2 = u_var14;
-    param_1 = (u_var13 >> 0x10);
-    pc_stack6 = u_var13;
+    let u_var13 = exit_1000_2950(ctx, 0);
+    apu_stack4[1] = ctx.g_h_instance;
+    let i_stack8 = 0x104;
+    let u_stack12 = ctx.s_fem17_wav_1050_264e[7..];
+    ctx.PTR_LOOP_1050_5fc4 = u_var13.clone();
+    let u_var14 = u_var13.clone();
+    let mut i_var4 = GetModuleFileName16(&ctx.g_h_instance, u_stack12, u_stack12.len());
+    // u_var14._2_2_ = (u_var14 >> 0x10);
+    ctx.PTR_LOOP_1050_5fc2 = u_var14.clone();
+    // param_1 = (u_var13 >> 0x10);
+    let pc_stack6 = u_var13;
     *(i_stack8 + i_var4) = 0;
     i_var4 = 1;
     ctx.PTR_LOOP_1050_5fb8 = (&ctx.PTR_LOOP_1050_0000 + 1);
@@ -91,7 +91,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     while {
         while {
             pc_var1 = pc_var9;
-            pc_var9 = pc_var9[1..];
+            pc_var9 = String::from(pc_var9[1..].clone());
             c_var2 = pc_var1[0];
             Var2 == ' '
         } {}
@@ -103,11 +103,11 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
             pc_var9 = pc_var9 + -1;
             // LAB_1000_267f:
             pc_var1 = pc_var9;
-            pc_var9 = pc_var9 + 1;
-            c_var2 = *pc_var1;
-            if ((c_var2 == ' ') || (c_var2 == '\t')) {}
+            pc_var9 = pc_var9[1..].clone();
+            c_var2 = pc_var1[0];
+            if (c_var2 == ' ') || (c_var2 == '\t') {}
             // goto LAB_1000_266c;
-            if ((c_var2 == '\r') || (c_var2 == '\0')) {
+            if (c_var2 == '\r') || (c_var2 == '\0') {
                 break;
             }
             if (c_var2 == '\"') {
@@ -7589,5 +7589,14 @@ pub fn _lcreat16(path: &String, attr: i16) -> HFILE16 {
 LONG WINAPI _hwrite16( HFILE16 hFile, LPCSTR buffer, LONG count )
 */
 pub fn _hwrite16(h_file: HFILE16, buffer: &String, count: usize) -> usize {
+    unimplemented!()
+}
+
+
+/*
+INT16 WINAPI GetModuleFileName16( HINSTANCE16 hModule, LPSTR lpFileName,
+                                  INT16 nSize )
+ */
+pub fn GetModuleFileName16(h_module: &HINSTANCE16, lp_file_name: &String, n_size: i16) -> i16 {
     unimplemented!()
 }
