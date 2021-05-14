@@ -19,7 +19,7 @@ use crate::pass5_funcs::{pass1_1030_2242, pass1_1030_38b8, pass1_1030_3694, pass
 use crate::string_funcs::{pass1_1028_767e, load_string_1008_b1f0, load_string_1010_847e, load_string_1010_84e0, str_fn_1010_5286, copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_475e, process_string_1000_3cea, str_fn_1010_6034, string_fn_1000_3f9c, process_string_1000_55b1};
 use crate::other_funcs::{switch_stmt_1008_aaa8, switch_stmt_1008_d818, get_private_profile_str_1010_6132, write_private_profile_str_1010_622a};
 use crate::pass3_funcs::{pass1_1028_5ca0, pass1_1020_bb16, pass1_1020_c42e, ret_one_1020_c3ae, switch_statement_1020_c3b4, pass1_1020_ba7e, pass1_1028_45e2};
-use crate::mem_funcs::alloc_mem_1000_07fc;
+use crate::mem_funcs::{alloc_mem_1000_07fc, Address};
 use crate::cleanup::{ret_1040_78de, window_msg_func_1010_7300, win_cleanup_1010_305a, win_cleanup_func_1040_782c};
 use crate::sound_funcs::{mci_send_command_1008_5c7c, mci_send_command_1008_5c9e, mci_send_cmd_1008_5c5c};
 use crate::func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_256b};
@@ -547,7 +547,7 @@ pub fn get_dos_env_1000_27da() {
     }
 }
 
-pub fn dos3_call_1000_2bb6(param_1: i32, param_2: *mut Struct152) -> u32 {
+pub fn dos3_call_1000_2bb6(param_1: i32, param_2: Option<&mut Address<Struct152>>) -> u32 {
     let pu8_var1: *mut u8;
     let paVar2: *mut Struct152;
     let mut u8_var3: u8;
@@ -561,19 +561,19 @@ pub fn dos3_call_1000_2bb6(param_1: i32, param_2: *mut Struct152) -> u32 {
 
     paVar2 = param_2;
     iStack2 = unaff_bp + 1;
-    uStack4 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
+    uStack4 = &ctx.g_alloc_addr_1050_1050;
     u8_var3 = param_2.field_0xa;
-    if (((u8_var3 & 0x82) != 0) && ((u8_var3 & 0x40) == 0)) {
+    if ((u8_var3 & 0x82) != 0) && ((u8_var3 & 0x40) == 0) {
         param_2.field_0x4 = 0;
-        if ((u8_var3 & 1) != 0) {
-            if ((u8_var3 & 0x10) == 0) {}
+        if (u8_var3 & 1) != 0 {
+            if (u8_var3 & 0x10) == 0 {}
             // goto LAB_1000_2c37;
             param_2.field_0x0 = param_2.field_0x6;
             u8_var3 = u8_var3 & 0xfe;
         }
         param_2.field_0xa = u8_var3 & 0xef | 2;
         u_var6 = *&param_2.field_0xb;
-        if (((u8_var3 & 8) == 0)
+        if ((u8_var3 & 8) == 0)
             && ((u8_var3 & 4) != 0
                 || ((*&param_2.field_0xf0 & 1) == 0
                     && ((PTR_LOOP_1050_61ec != 0x0
@@ -582,7 +582,7 @@ pub fn dos3_call_1000_2bb6(param_1: i32, param_2: *mut Struct152) -> u32 {
                         || (
                             process_struct_1000_2ce8(param_2, in_dx),
                             (paVar2.field_0xa & 8) == 0,
-                        )))))
+                        ))))
         {
             i_var4 = dos3_call_1000_39f2(u_var6, &param_1);
             i_var5 = 1;
@@ -591,9 +591,9 @@ pub fn dos3_call_1000_2bb6(param_1: i32, param_2: *mut Struct152) -> u32 {
             i_var5 = (paVar2).field_0x0 - i_var4;
             (paVar2).field_0x0 = i_var4 + 1;
             paVar2.field_0x4 = paVar2.field_0xf2 + -1;
-            if (i_var5 == 0) {
+            if i_var5 == 0 {
                 i_var4 = 0;
-                if ((*(u_var6 + 0x5f90) & 0x20) != 0) {
+                if (*(u_var6 + 0x5f90) & 0x20) != 0 {
                     dos3_call_1000_3636(u_var6, 0, 0, 2);
                     i_var4 = 0;
                     i_var5 = i_var4;
@@ -603,7 +603,7 @@ pub fn dos3_call_1000_2bb6(param_1: i32, param_2: *mut Struct152) -> u32 {
             }
             **&paVar2.field_0x6 = param_1;
         }
-        if (i_var4 == i_var5) {
+        if i_var4 == i_var5 {
             return param_1 & 0xff;
         }
     }
@@ -7598,5 +7598,13 @@ INT16 WINAPI GetModuleFileName16( HINSTANCE16 hModule, LPSTR lpFileName,
                                   INT16 nSize )
  */
 pub fn GetModuleFileName16(h_module: &HINSTANCE16, lp_file_name: &String, n_size: i16) -> i16 {
+    unimplemented!()
+}
+
+
+/*
+void WINAPI OutputDebugString16( LPCSTR str )
+ */
+pub fn OutputDebugString16(in_str: &String) {
     unimplemented!()
 }

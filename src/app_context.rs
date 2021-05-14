@@ -22,6 +22,8 @@ pub struct AppContext {
     pub PTR_LOOP_1050_5f80: u16,
     pub dos_alloc_addr_1050_0002: Vec<u8>,
     pub g_alloc_addr_1050_1050: Vec<u8>,
+    pub _PTR_LOOP_1050_68a8: String,
+    pub PTR_LOOP_1050_68ac: u16,
     pub ax_reg: u16,
     pub bx_reg: u16,
     pub cx_reg: u16,
