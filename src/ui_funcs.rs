@@ -4,9 +4,11 @@ use crate::{
     sys_funcs::{dos3_call_1000_51aa, LoadString16},
 };
 use crate::sys_funcs::{MessageBox16, PostMessage16};
-use crate::util::CONCAT22;
+use crate::util::{CONCAT22, SBORROW2};
 use crate::app_context::AppContext;
 use crate::string_funcs::{copy_string_1000_3d3e, process_string_1000_3cea};
+use crate::exit::fatal_app_exit_1000_3e9e;
+use crate::mem_funcs::Address;
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
                          param_1: &String,
@@ -67,7 +69,7 @@ pub fn out_of_mem_msg_1000_1fd2() -> String {
     return CONCAT22(0x1000, (s_242_flc_1050_1c76 + 4) + in_ax * 0x17);
 }
 
-pub fn msg_box_1000_214c(param_1: u16, param_4: i32, param_2: u16, param_3: u16) -> u16 {
+pub fn msg_box_1000_214c(param_1: u16, param_4: i32, param_2: u16, param_3: &mut Address<u32>) -> u16 {
     let i_var1: u16;
     let mut i_var2: i32;
     let mut _type: i32;
@@ -75,13 +77,13 @@ pub fn msg_box_1000_214c(param_1: u16, param_4: i32, param_2: u16, param_3: u16)
     _type = 2 - (param_1 == 0) | 0x2110;
     MessageBeep16(0);
     loop {
-        i_var1 = MessageBox16(_type, "SmartHeap Library", CONCAT22(param_3, param_2), 0);
-        i_var2 = i_var1 + -1;
-        if (i_var2 == 0) {
+        i_var1 = MessageBox16(_type, &String::from("SmartHeap Library"), CONCAT22(param_3, param_2), 0);
+        i_var2 = i_var1 - 1;
+        if i_var2 == 0 {
             return 0;
         }
-        if ((0 < i_var2) && (!SBORROW2(i_var2, 1))) {
-            if (i_var1 == 3 || i_var1 + -2 < 1) {
+        if (0 < i_var2) && (!SBORROW2(i_var2, 1)) {
+            if i_var1 == 3 || i_var1 + -2 < 1 {
                 fatal_app_exit_1000_3e9e();
                 return 0;
             }

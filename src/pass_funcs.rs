@@ -3707,30 +3707,30 @@ pub unsafe fn pass1_fn_1008_5ab8(param_1: u32) {
     return;
 }
 
-pub unsafe fn pass1_1008_5b12(param_1: *mut Struct306) {
-    let mut i_var1: i32;
-    let mut i_var2: i32;
-    let mut local_es_23: u16;
-    let mut local_es_34: u16;
+pub unsafe fn pass1_1008_5b12(param_1: &mut Address<Struct306>) -> u32 {
+    // let mut i_var1: u32;
+    let mut i_var2: u32;
+    // let mut local_es_23: u16;
+    // let mut local_es_34: u16;
     let mut temp_5fb237ca1c: u32;
 
-    if ((param_1.field_0x0 != 0) && ((param_1.field_0x0 + 8) != 0)) {
+    if (param_1.field_0x0 != 0) && ((param_1.field_0x0 + 8) != 0) {
         local_es_23 = (param_1 >> 0x10);
-        i_var1 = param_1;
-        if ((i_var1 + 4) == 0) {
-            local_es_34 = (param_1.field_0x0 >> 0x10);
+        // i_var1 = param_1;
+        if (param_1._type.field_0x4) == 0 {
+            ctx.es_reg = (param_1.field_0x0 >> 0x10);
             i_var2 = param_1.field_0x0;
         } else {
-            temp_5fb237ca1c = (i_var1 + 4);
-            local_es_34 = (temp_5fb237ca1c >> 0x10);
+            temp_5fb237ca1c = param_1._type.field_0x4;
+            // local_es_34 = (temp_5fb237ca1c >> 0x10);
             i_var2 = temp_5fb237ca1c;
         }
-        (i_var1 + 4) = (i_var2 + 4);
-        if ((i_var1 + 4) != 0) {
-            return;
+        param_1._type.field_0x4 = (i_var2 + 4);
+        if param_1._type.field_0x4 != 0 {
+            return 0;
         }
     }
-    return;
+    return 0;
 }
 
 pub unsafe fn pass1_fn_1008_5b9a(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {

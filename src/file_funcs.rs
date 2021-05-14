@@ -50,7 +50,7 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, param_2: &mut Address<S
     let mut func_ptr: u32;
     let mut temp_5f096a4ace: u32;
 
-    param_2. = &ctx.PTR_LOOP_1050_4c4c;
+    // param_2 = &ctx.PTR_LOOP_1050_4c4c;
     param_2.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     pu_var1 = param_2.func_ptr_0x4;
     u_var2 = param_2.i_field_4;
@@ -60,15 +60,15 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, param_2: &mut Address<S
             (**func_ptr)();
         }
     }
-    error_check_1000_17ce(param_2.file_path);
+    error_check_1000_17ce(ctx, param_2.file_path);
     if (&param_2.pv_buffer_0x1a != 0) {
         temp_5f096a4ace = &param_2.pv_buffer_0x1a;
-        error_check_1000_0dc6(temp_5f096a4ace);
+        error_check_1000_0dc6(ctx, temp_5f096a4ace);
     }
     if (param_2.file != 0xffff) {
         _lclose16(param_2.file);
     }
-    *param_2 = ctx.s_1_1050_389a;
+    param_2._type.u16_field_0 = ctx.s_1_1050_389a.clone();
     param_2.u16_field_2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
@@ -189,7 +189,7 @@ pub unsafe fn close_file_1008_4c26(param_1: *mut Struct7, param_2: u8) -> *mut S
     return param_1;
 }
 
-pub unsafe fn file_fn_1008_6414(ctx: &mut AppContext, in_Struct117: *mut Struct117, param_2: u32) {
+pub unsafe fn file_fn_1008_6414(ctx: &mut AppContext, param_1: *mut Struct7, param_2: u32) {
     let pp_var1: fn();
     let in_struct_a: *mut Struct103;
     let paVar2: *mut Struct7;
@@ -197,36 +197,35 @@ pub unsafe fn file_fn_1008_6414(ctx: &mut AppContext, in_Struct117: *mut Struct1
     let paVar3: *mut Struct199;
     
     
-    let local_Struct117: *mut Struct117;
+    let local_Struct117: *mut Struct7;
     let mut local_es_4: u16;
     
     let mut local_2a: u16;
     let mut local_28: u16;
     let local_26: u8;
 
-    local_es_4 = (in_Struct117 >> 0x10);
-    local_Struct117 = in_Struct117;
-    in_Struct117 = 0;
+    // local_es_4 = (param_1 >> 0x10);
+    local_Struct117 = param_1;
+    // param_1 = 0;
     &local_Struct117.field_0x4 = 0;
     paVar2 = &local_26;
-    process_struct_1008_48fe(
-        CONCAT13((ctx.stack_seg_reg >> 8), CONCAT12(ctx.stack_seg_reg, paVar2)),
+    process_struct_1008_48fe(ctx, paVar2,
         1,
         param_2,
     );
     paVar3 = struct_a;
     process_struct_1000_179c(0x1e, struct_a);
     if ((paVar3 | paVar2) == 0) {
-        in_Struct117 = 0;
+        // param_1 = 0;
     } else {
         in_struct_a = CONCAT22(paVar3, paVar2);
         paVar2 = &local_26;
         pass1_1008_3f92(in_struct_a, CONCAT22(ctx.stack_seg_reg, &local_26));
-        in_Struct117 = paVar2;
+        *param_1 = paVar2;
         local_Struct117.field_0x2 = ctx.dx_reg;
     }
-    pp_var1 = (in_Struct117 + 0x14);
-    (**pp_var1)(0x1000, in_Struct117);
+    pp_var1 = (param_1 + 0x14);
+    (**pp_var1)(0x1000, param_1);
     local_Struct117.field_0x4 = paVar2;
     local_Struct117.field_0x6 = ctx.dx_reg;
     close_file_1008_496c(ctx, &local_26);
@@ -450,16 +449,16 @@ pub fn close_file_1008_726c(ctx: &mut AppContext, param_1: *mut Struct11) -> boo
 
 pub unsafe fn read_file_1008_7548(
     ctx: &mut AppContext,
-    in_file_handle: &mut HFILE16,
+    in_file_handle: &mut Address<HFILE16>,
     param_2: &mut usize,
 ) {
     let pp_var1: fn();
     let was_file_read: bool;
     let mut u_var3: i32;
     let mut u_var4: u32;
-    let mut local_DX_119: u16;
-    let mut local_CS__1: u16;
-    let lVar5: u32;
+    // let mut local_DX_119: u16;
+    // let mut local_CS__1: u16;
+    let mut lVar5: u32;
     let mut local_20: u16;
     let mut local_1e: u16;
     let mut local_1c: u32;
@@ -467,31 +466,31 @@ pub unsafe fn read_file_1008_7548(
     let mut local_e: u32;
     let mut local_a: u16;
     let mut local_8: u16;
-    let mut local_6: u32;
+    let mut local_6: u16;
 
     local_6 = 0;
     was_file_read = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_6), 4);
     if !was_file_read {
         return;
     }
-    if (local_6 != 0) {
-        u_var4 = local_6;
+    if local_6 != 0 {
+        let mut u_var4 = local_6;
         if (local_6 < 200) {
-            local_6._2_2_ = 0x0;
+            local_6 = 0x0;
             u_var4 = 200;
         }
-        u_var3 = u_var4;
-        local_a = u_var4 & 0xffff | ZEXT24(local_6._2_2_) << 0x10;
+        let u_var3 = u_var4;
+        local_a = u_var4 & 0xffff | local_6 << 0x10;
         let param_2_val = *param_2;
-        if (param_2_val == 0) {
+        if param_2_val == 0 {
             ctx.code_seg_reg = 0x1000;
-            process_struct_1000_179c(0x1e, local_6._2_2_);
+            process_struct_1000_179c(0x1e, local_6);
             if ((local_6._2_2_ | u_var3) == 0) {
                 *param_2 = 0;
             } else {
                 ctx.code_seg_reg = 0x1020;
-                pass1_1020_c444(CONCAT22(local_6._2_2_, u_var3), 100, local_a);
-                param_2 = u_var3;
+                pass1_1020_c444(CONCAT22(local_6, u_var3), 100, local_a);
+                *param_2 = u_var3;
                 (param_2 + 2) = local_DX_119;
             }
         }
@@ -544,38 +543,39 @@ pub unsafe fn read_file_1008_7548(
 
 pub unsafe fn read_file_1008_76e4(
     ctx: &mut AppContext,
-    param_1: *mut HFILE16,
+    param_1: &mut Address<HFILE16>,
     param_2: &mut usize,
 ) {
     let pp_var1: fn();
-    let mut u_var2: i32;
-    let BVar3: bool;
-    let in_dx: *mut Struct199;
-    let mut local_DX_93: u16;
-    // 
+    let mut b_var3: bool = false;
+    // let in_dx: *mut Struct199;
     let mut local_1c: u16;
     let mut local_1a: u16;
-    let mut local_18: u32;
+    // let mut local_18: u32;
     let mut local_a: u32;
-    let mut local_6: u32;
     let mut val: u16;
 
-    local_6 = 0;
-    u_var2 = read_file_1008_7dee(param_1, CONCAT22(ctx.stack_seg_reg, &local_6), 4);
-    if (u_var2 == 0) {
+    // let mut local_6: u32 = 0;
+    let mut local_6: Vec<u8> = Vec::new();
+    // CONCAT22(ctx.stack_seg_reg, &local_6)
+    let mut u_var2 = read_file_1008_7dee(
+        param_1,
+        &mut local_6,
+        4);
+    if u_var2 == 0 {
         return;
     }
-    if (local_6 != 0) {
+    if local_6 != 0 {
         let param_2_val = unsafe { *param_2 };
-        if (param_2_val == 0) {
+        if param_2_val == 0 {
             process_struct_1000_179c(0x18, in_dx);
-            if ((in_dx | u_var2) == 0) {
+            if (ctx.dx_reg | u_var2) == 0 {
                 unsafe {
                     *param_2 = 0;
                 }
             } else {
                 pass1_1030_1cd8(CONCAT22(in_dx, u_var2), 5, local_6);
-                param_2 = u_var2;
+                *param_2 = u_var2;
                 (param_2 + 2) = local_DX_93;
             }
         }
@@ -584,8 +584,8 @@ pub unsafe fn read_file_1008_76e4(
         (**pp_var1)();
         local_a = 0;
         while (local_a < local_6) {
-            BVar3 = read_file_1008_7dee(param_1, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
-            if (BVar3 == 0) {
+            b_var3 = read_file_1008_7dee(param_1, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
+            if (b_var3 == 0) {
                 return;
             }
             let param_2_val = unsafe { *param_2 };
@@ -619,25 +619,25 @@ pub fn read_file_1008_77cc(
 
     local_4 = 0;
     u_var1 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_4), 2);
-    if (u_var1 == 0) {
+    if u_var1 == 0 {
         return 0;
     }
-    if (local_4 != 0) {
+    if local_4 != 0 {
         let param_2_val = unsafe { *param_2 };
-        if (param_2_val == 0) {
-            process_struct_1000_179c(10, in_dx);
-            if ((in_dx | u_var1) == 0) {
+        if param_2_val == 0 {
+            process_struct_1000_179c(10, ctx.dx_reg);
+            if (ctx.dx_reg | u_var1) == 0 {
                 unsafe { *param_2 = 0 };
             } else {
-                local_DXAX_90 = pass1_1020_ba3e(CONCAT22(in_dx, u_var1), 5, 5);
-                param_2 = local_DXAX_90;
-                (param_2 + 2) = (local_DXAX_90 >> 0x10);
+                ctx.dx_ax_reg = pass1_1020_ba3e(CONCAT22(ctx.dx_reg, u_var1), 5, 5);
+                *param_2 = ctx.dx_ax_reg;
+                (param_2 + 2) = (ctx.dx_ax_reg >> 0x10);
             }
         }
         local_6 = 0;
-        while (local_6 < local_4) {
+        while local_6 < local_4 {
             BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_14), 2);
-            if (BVar2 == 0) {
+            if BVar2 == 0 {
                 return 0;
             }
             BVar2 = read_file_1008_7dee(in_hfile, CONCAT22(ctx.stack_seg_reg, &local_10), 4);
@@ -871,7 +871,7 @@ pub fn read_file_1008_7ad4(in_file: &mut HFILE16, param_2: u32) -> u16 {
     return 0;
 }
 
-pub fn write_file_1008_7b4c(param_1: &mut HFILE16, param_2: *mut u8) -> u16 {
+pub unsafe fn write_file_1008_7b4c(param_1: &mut HFILE16, param_2: *mut u8) -> u16 {
     let b_var1: bool;
     
     let mut local_12: u16;
@@ -934,28 +934,31 @@ pub fn write_to_file_1008_7c2a(ctx: &mut AppContext,
     return true;
 }
 
-pub fn read_file_into_str_1008_7c6e(p_file_handle: *mut HFILE16, out_str: *mut char) {
-    let pc_var1: *mut libc::c_char;
-    let mut unaff_ss: u16;
+pub unsafe fn read_file_into_str_1008_7c6e(p_file_handle: &mut Address<HFILE16>, out_str: &mut String) {
+    let mut pc_var1: String = String::new();
+    // let mut unaff_ss: u16;
     let mut local_10: u16;
     let mut local_e: u16;
-    let local_c: u8;
+    let local_c: u8 = 0;
 
-    while (true) {
-        pc_var1 = out_str;
+    loop {
+        pc_var1 = out_str.clone();
         // read 1 byte i32o a stack buffer
-        let p_file_handle_val = unsafe { *p_file_handle };
-        _hread(1, CONCAT22(unaff_ss, &local_c), p_file_handle_val);
+        let mut p_file_handle_val = p_file_handle._type;
+        let mut buffer: Vec<u8> = Vec::new();
+        // CONCAT22(unaff_ss, &local_c)
+        let bytes_read = _hread(&mut p_file_handle_val, &mut buffer, 1);
         // read until the terminator is reached; this might overflow if the string is
         // longer than 9 bytes
-        if (local_c == '\0') {
+        if local_c == 0 {
             break;
         }
         // advance the p i32er param2 by 1
-        out_str = (out_str & 0xffff0000 | (out_str + 1));
-        unsafe { *pc_var1 = local_c };
+        // TODO
+        // out_str = (out_str & 0xffff0000 | (out_str + 1));
+        pc_var1[0] = local_c;
     }
-    unsafe { *out_str = '\0' };
+    out_str[0] = 0;
     return;
 }
 
@@ -1057,7 +1060,7 @@ pub fn write_to_file_1008_7e1c(
     return false;
 }
 
-pub fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut HFILE16) {
+pub unsafe fn read_file_1008_bb5e(in_Struct120: &mut Struct120, file_handle_ptr: &mut HFILE16) {
     let pp_var1: fn();
     let mut b_read_result_1: u16;
     let b_read_result_2: bool;
@@ -1244,7 +1247,7 @@ pub fn read_file_1008_c9d4(param_1: u32, in_file: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
+pub unsafe fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
     let BVar3: bool;
@@ -1412,7 +1415,7 @@ pub fn read_file_1008_e70e(param_1: u32, in_file_1: *mut HFILE16) {
     return;
 }
 
-pub fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: *mut Struct235, param_2: u32) {
+pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: *mut Struct235, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
     let BVar3: bool;
@@ -1732,7 +1735,7 @@ pub fn write_to_file_1010_5dc6(
     return false;
 }
 
-pub fn read_file_1010_5e56(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_file_1010_5e56(param_1: u32, param_2: *mut HFILE16) {
     let u_var1: u8;
     let pu_var2: *mut u8;
     let BVar3: bool;
@@ -2016,7 +2019,7 @@ pub unsafe fn read_file_1010_68c6(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_2: &mut Address<HFILE16>) -> bool {
+pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_2: &mut Address<HFILE16>) -> bool {
     let mut u_var1: u32;
     let u_var2: u8;
     // let extraout_AH: u8;
@@ -2163,17 +2166,17 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
     let struct_a_2: *mut Struct199;
     let paVar3: *mut Struct199;
     let b_result: bool;
-    let local_AX_165: *mut Struct473;
+    // let local_AX_165: *mut Struct473;
     let struct_b: *mut Struct1174;
     let mut u_var4: i32;
-    let local_AX_571: *mut Struct472;
+    // let local_AX_571: *mut Struct472;
     let mut u_var5: u16;
     let extraout_var: u32;
     let struct_a_1: *mut Struct199;
     let paVar6: *mut Struct199;
     
-    let ctx.dx_reg: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
     let local_bx_60: *mut Struct471;
     let pu_var7: *mut u32;
     let local_es_60: *mut u8;
@@ -2402,7 +2405,7 @@ pub fn read_file_1010_9b72(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1010_ed58(param_1: u32, in_file: *mut HFILE16) {
+pub unsafe fn write_to_file_1010_ed58(param_1: u32, in_file: *mut HFILE16) {
     let pu_var1: *mut u16;
     let u_var2: u8;
     let BVar3: bool;
@@ -2489,7 +2492,7 @@ pub fn write_to_file_1010_ed58(param_1: u32, in_file: *mut HFILE16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
     let pu_var1: *mut u16;
     let mut u_var2: u32;
     let u_var3: u8;
@@ -2586,7 +2589,7 @@ pub fn read_file_1018_0000(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1038_7b20(param_1: *mut u32, param_2: *mut HFILE16) -> u16 {
+pub unsafe fn write_to_file_1038_7b20(param_1: *mut u32, param_2: *mut HFILE16) -> u16 {
     let mut u_var1: u32;
     let u_var2: u8;
     let extraout_AH: u8;
@@ -2645,17 +2648,17 @@ pub fn write_to_file_1038_7b20(param_1: *mut u32, param_2: *mut HFILE16) -> u16 
     return 0;
 }
 
-pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> u16 {
+pub unsafe fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> u16 {
     let u8_a: u8;
-    let extraout_AH: u8;
+    // let extraout_AH: u8;
     let bool_a: bool;
     let mut u_var1: u16;
     let mut i_var2: i32;
-    let in_dx: *mut Struct199;
+    // let in_dx: *mut Struct199;
     
     let mut u_var3: i32;
-    let ctx.dx_reg: *mut Struct199;
-    let mut unaff_ss: u16;
+    // let ctx.dx_reg: *mut Struct199;
+    // let mut unaff_ss: u16;
     let ph_var4: *mut HFILE16;
     let mut local_1a: u16;
     let mut local_18: u16;
@@ -2727,7 +2730,7 @@ pub fn read_from_file_1038_7c02(param_1: *mut *mut u8, file_b: *mut HFILE16) -> 
     return 0;
 }
 
-pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
+pub unsafe fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
     let mut in_ax: i32;
     let b_var1: bool;
     let pu_var2: *mut u8;
@@ -2809,7 +2812,7 @@ pub fn write_to_file_1038_75ca(param_1: u32, file_handle: *mut HFILE16) {
     return;
 }
 
-pub fn read_from_file_1038_774e(param_1: u32, param_2: *mut HFILE16) {
+pub unsafe fn read_from_file_1038_774e(param_1: u32, param_2: *mut HFILE16) {
     let mut u_var1: u16;
     let local_AX_22: *mut Struct1168;
     let BVar2: bool;
@@ -3577,7 +3580,7 @@ pub fn read_from_file_1030_c29c(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
+pub unsafe fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let BVar2: bool;
     let pu_var3: *mut u8;
@@ -3631,9 +3634,9 @@ pub fn write_to_file_1030_b768(param_1: *mut Struct961, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
+pub unsafe fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
     let pp_var1: fn();
-    let local_AX_11: *mut Struct962;
+    // let local_AX_11: *mut Struct962;
     let BVar2: bool;
     let mut u_var3: u16;
     let mut u_var4: u32;
@@ -3641,9 +3644,9 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
     let struct_a: *mut Struct199;
     
     let mut u_var5: u16;
-    let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
     let mut u_var6: u16;
-    let mut unaff_ss: u16;
+    // let mut unaff_ss: u16;
     let pHVar7: *mut HFILE16;
     let mut local_20: u16;
     let mut local_1e: u16;
@@ -3701,7 +3704,7 @@ pub fn pass1_1030_b836(struct_b: *mut Struct962, file_a: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
+pub unsafe fn write_to_file_1030_7418(struct_a: *mut Struct771, file_a: *mut HFILE16) {
     let mut u_var1: u32;
     let mut in_ax: i32;
     let struct_b: *mut Struct771;
@@ -4228,7 +4231,7 @@ pub unsafe fn read_from_file_1030_778c(struct_b: *mut Struct933, file_a: u32) {
     return;
 }
 
-pub fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
+pub unsafe fn write_to_file_1030_5dbe(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut u_var2: u32;
     let mut i_var3: i32;
@@ -4408,7 +4411,7 @@ pub fn read_file_1030_5c52(buf_a: *mut u8, file_a: *mut HFILE16) -> bool {
     return BVar2;
 }
 
-pub fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
+pub unsafe fn write_to_file_1030_56f6(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let pu_var1: *mut u16;
     let mut u_var2: u32;
     let mut u_var3: u32;
@@ -4615,42 +4618,37 @@ pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn read_from_file_1030_4e70(
-    param_1: *mut char,
-    param_2: *mut u32,
-    param_3: *mut *mut libc::c_void,
-    param_4: *mut char,
+pub unsafe fn read_from_file_1030_4e70(
+    param_1: &mut String,
+    param_2: &mut u32,
+    param_3: &mut Vec<u8>,
+    param_4: &mut String,
 ) {
-    let file: HFILE16;
-    let mut i_var1: i32;
-    
-    let path: *mut libc::c_char;
-    let mut u_var2: u16;
-    let pu_var3: *mut u8;
+    let _file: HFILE16;
+    let mut var1: String = String::new();
+    // let mut path: String = String::new();
+    // let mut u_var2: u16;
+    // let mut pu_var3: Vec<u8> = Vec::new();
     let mut local_3c: u32;
     let mut local_38: u16;
     let mut local_36: u16;
     let mut local_34: u16;
     let mut local_32: u16;
     let mut local_30: u16;
-    let mut local_2e: [u8; 26];
+    // let mut local_2e: Vec<u8> = Vec::new();
     let mut local_14: u32;
 
-    unsafe {
-        *param_3 = 0;
-        *param_2 = 0;
-    }
-    if (param_4 != 0x0) {
-        pu_var3 = local_2e;
-        u_var2 = 0;
-        path = pass1_1030_5164(param_1, param_4);
-        i_var1 = path;
-        dos3_call_1000_51aa(i_var1, (path >> 0x10), u_var2, pu_var3);
-        if (i_var1 == 0) {
-            unsafe { *param_2 = local_14 };
-            file = _lopen16(0, path);
-            i_var1 = file + 1;
-            if (i_var1 != 0) {
+    if param_4 != 0x0 {
+        let mut pu_var3 = local_2e;
+        let mut u_var2 = 0;
+        let mut path = pass1_1030_5164(param_1, param_4);
+        var1 = path;
+        dos3_call_1000_51aa(&mut var1, &path, pu_var3);
+        if var1.is_empty() == false {
+            *param_2 = local_14;
+            _file = _lopen16(path, 0);
+            var1 = _file + 1;
+            if (var1 != 0) {
                 let param_2_val = unsafe { *param_2 };
                 let param_3_val = unsafe { *param_3 };
 
@@ -4661,11 +4659,11 @@ pub fn read_from_file_1030_4e70(
                     ctx.__g_Struct94_ptr_1,
                     (ctx.__g_Struct94_ptr_1 >> 0x10),
                 );
-                param_3 = i_var1;
+                *param_3 = var1;
                 (param_3 + 2) = ctx.dx_reg;
                 if ((ctx.dx_reg | param_3) != 0) {
-                    _local_38 = _hread(param_2_val, param_3_val, file);
-                    _lclose16(file);
+                    _local_38 = _hread(param_2_val, param_3_val, _file);
+                    _lclose16(_file);
                     local_3c = param_3_val;
                     while (_local_38 != 0) {
                         if ((*(*local_3c + 0x608b) & 0x20) == 0) {
@@ -4818,7 +4816,7 @@ pub fn write_to_file_1030_32e4(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
+pub unsafe fn write_to_file_1030_2aca(param_1: *mut Struct771, param_2: *mut HFILE16) {
     let mut u_var1: u32;
     let mut u_var2: u32;
     let mut i_var3: i32;
@@ -5317,7 +5315,7 @@ pub fn pass1_1030_1730(param_1: *mut Struct933, param_2: *mut HFILE16) -> u8 {
     return '\0';
 }
 
-pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32, param_5: i32) {
+pub unsafe fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32, param_5: i32) {
     let pc_var1: *mut libc::c_char;
     let pi_var2: *mut i32;
     let mut u_var3: u32;
@@ -5344,27 +5342,27 @@ pub fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_00: i32
     let mut u_var24: u32;
     
     let mut i_var25: i32;
-    let ctx.dx_reg: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
+    // let ctx.dx_reg: *mut Struct199;
     
-    let mut extraout_dx_04: u16;
-    let mut extraout_dx_05: u16;
-    let mut extraout_dx_06: u16;
-    let mut extraout_dx_07: u16;
-    let extraout_dx_08: *mut Struct199;
-    let mut extraout_dx_09: u16;
-    let mut extraout_dx_10: u16;
+    // let mut extraout_dx_04: u16;
+    // let mut extraout_dx_05: u16;
+    // let mut extraout_dx_06: u16;
+    // let mut extraout_dx_07: u16;
+    // let extraout_dx_08: *mut Struct199;
+    // let mut extraout_dx_09: u16;
+    // let mut extraout_dx_10: u16;
     let paVar26: *mut Struct199;
     let mut u_var27: u16;
-    let mut unaff_si: u16;
-    let unaff_DI: *mut u8;
-    let mut unaff_es: u16;
+    // let mut unaff_si: u16;
+    // let unaff_DI: *mut u8;
+    // let mut unaff_es: u16;
     let mut u_var28: u16;
-    let mut unaff_cs: u16;
+    // let mut unaff_cs: u16;
     let mut u_var29: u16;
     let mut uVar30: u16;
-    let mut unaff_ss: u16;
+    // let mut unaff_ss: u16;
     let mut bVar31: bool;
     let mut bVar32: bool;
     let ppVar33: *mut pass1_struct_1;
@@ -6672,7 +6670,7 @@ pub fn write_to_file_1028_e56c(
     return;
 }
 
-pub fn write_to_file_1028_dce2(param_1: *mut u32, param_2: *mut HFILE16) {
+pub unsafe fn write_to_file_1028_dce2(param_1: *mut u32, param_2: *mut HFILE16) {
     let pp_var1: fn();
     let u_var2: u8;
     let BVar3: bool;
@@ -6821,7 +6819,7 @@ pub fn write_to_file_1028_dce2(param_1: *mut u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn read_file_1028_def2(param_1: *mut u8, file_handle_1: *mut HFILE16) {
+pub unsafe fn read_file_1028_def2(param_1: *mut u8, file_handle_1: *mut HFILE16) {
     let pp_var1: fn();
     let u_var2: u8;
     let BVar3: bool;
@@ -7375,7 +7373,7 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn write_to_file_1028_64d6(param_1: *mut Struct771, param_2: *mut HFILE16) -> u16 {
+pub unsafe fn write_to_file_1028_64d6(param_1: *mut Struct771, param_2: *mut HFILE16) -> u16 {
     let mut u_var1: u32;
     let mut i_var2: i32;
     let pu_var3: *mut u16;
@@ -7571,7 +7569,7 @@ pub fn read_file_1028_3d92(in_struct: *mut Struct772, in_file_handle: *mut HFILE
     return;
 }
 
-pub fn write_file_fn_1028_2418(param_1: u32, param_2: *mut HFILE16) -> bool {
+pub unsafe fn write_file_fn_1028_2418(param_1: u32, param_2: *mut HFILE16) -> bool {
     let mut u_var1: u32;
     let BVar2: bool;
     let mut u_var3: u16;
@@ -7611,7 +7609,7 @@ pub fn write_file_fn_1028_2418(param_1: u32, param_2: *mut HFILE16) -> bool {
     return BVar2;
 }
 
-pub fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
+pub unsafe fn read_file_fn_1028_24a2(param_1: u32, param_2: *mut HFILE16) -> bool {
     let pp_var1: fn();
     let BVar2: bool;
     let mut i_var3: i32;
@@ -7720,7 +7718,7 @@ pub fn read_file_fn_1028_14d8(param_1: u32, param_2: *mut HFILE16) {
     return;
 }
 
-pub fn file_write_fn_1028_0234(param_1: *mut Struct731, param_2: u32) -> bool {
+pub unsafe fn file_write_fn_1028_0234(param_1: *mut Struct731, param_2: u32) -> bool {
     let mut u_var1: u32;
     let mut i_var2: i32;
     let BVar3: bool;

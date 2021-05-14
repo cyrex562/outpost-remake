@@ -1421,7 +1421,7 @@ pub fn dos3_call_1000_514e() -> u16 {
     return 0;
 }
 
-pub fn dos3_call_1000_5174() -> u32 {
+pub unsafe fn dos3_call_1000_5174() -> u32 {
     let pc_var1: *mut code;
     let mut u_var2: u16;
     let mut unaff_bp: i32;
@@ -1439,7 +1439,7 @@ pub fn dos3_call_1000_5174() -> u32 {
     return u_var2 & 0xff;
 }
 
-pub fn dos3_call_1000_51aa(param_1: u16, uparam_2_00: i32, param_2: u16) -> u32 {
+pub unsafe fn dos3_call_1000_51aa(param_1: &mut String, uparam_2_00: &String, param_2: u16) -> u32 {
     let pc_var1: *mut code;
 
     pc_var1 = swi(0x21);
@@ -1452,7 +1452,7 @@ pub fn dos3_call_1000_51aa(param_1: u16, uparam_2_00: i32, param_2: u16) -> u32 
         pc_var1 = swi(0x21);
         (*pc_var1)();
     }
-    if ((param_2_00 & 0x100) == 0) {
+    if (param_2_00 & 0x100) == 0 {
         return 0;
     }
     pass1_fn_1000_29b5(param_2);

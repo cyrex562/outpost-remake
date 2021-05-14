@@ -3,9 +3,38 @@ use crate::{
     util::CONCAT22,
 };
 use crate::app_context::AppContext;
-use crate::sys_funcs::{LoadString16, FatalAppExit16, FatalExit};
-use crate::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913};
+use crate::sys_funcs::{LoadString16, FatalAppExit16, FatalExit, dos3_call_1000_51aa, MessageBox16, write_private_profile_str_1010_5b10, swi, dos3_call_1000_2bb6, dos3_call_1000_514e, dos3_call_1000_35fe};
+use crate::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_1008_3e76, pass1_1008_5b12, pass1_1008_5784, pass1_fn_1008_60e8, pass1_fn_1000_2f48, pass1_fn_1000_2b5c, pass1_fn_1000_2b3c, pass1_1008_cfa0, pass1_fn_1008_612e, pass1_1000_4906, pass1_1000_3d7a, pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_b0bc, pass1_1008_b9ce, pass1_1008_944e, pass1_fn_1000_48a8, pass1_1008_6604, pass1_fn_1000_3e2c, pass1_fn_1000_52be, pass1_fn_1000_30b4, pass1_fn_1000_3f5c, pass1_fn_1000_3024, pass1_fn_1000_3e82, pass1_fn_1000_2fa4};
 use crate::prog_structs::prog_structs_5::Struct150;
+use crate::pass4_funcs::{pass1_1028_d1dc, pass1_1028_e1ec, pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_e2e0, pass1_1028_bb24};
+use crate::prog_structs::prog_structs_19::Struct500;
+use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct894, Struct432, pass1_struct_3};
+use crate::prog_structs::prog_structs_16::Struct493;
+use crate::pass5_funcs::{pass1_1030_2690, pass1_1030_8344, pass1_1030_1cd8, pass1_1030_7bee, pass1_1030_7ddc, pass1_1030_b9b2, pass1_1030_7d1c, pass1_1030_7c28, pass1_1030_8326, pass1_1030_809c, pass1_1030_73a8, pass1_1030_627e, pass1_1030_1d7c};
+use crate::pass6_funcs::{pass1_1038_56d6, pass1_1038_5464, pass1_1038_4d28, pass1_1038_4e78};
+use crate::prog_structs::prog_structs_1::Struct393;
+use crate::prog_structs::prog_structs_26::{Struct1123, Struct883, Struct891};
+use crate::util::{ZEXT24, CONCAT12, CONCAT13, CONCAT31, SUB42, SBORROW2, CARRY1, CONCAT11, CARRY2, CONCAT21};
+use crate::other_funcs::{zero_list_1008_3e38, switch_stmt_1008_ab80};
+use crate::struct_funcs::{process_struct_1000_179c, process_struct_1040_b0bc, process_struct_1008_cbc4, process_struct_1008_cda2, process_struct_1008_d3ae, process_struct_1008_574a, process_struct_1008_4544, process_struct_1000_2cb0};
+use crate::prog_structs::prog_structs_2::Struct199;
+use crate::prog_structs::prog_structs_28::{Struct913, Struct912, Struct1016, Struct1053, Struct346, Struct915};
+use crate::prog_structs::prog_structs_27::{pass1_struct_2, Struct298};
+use crate::err_funcs::error_check_1000_17ce;
+use crate::pass3_funcs::{pass1_1020_ba7e, pass1_1020_bb8a, pass1_1020_bae6, pass1_1020_ba3e};
+use crate::prog_structs::prog_structs_20::Struct965;
+use crate::prog_structs::prog_structs_29::{Struct1035, Struct166};
+use crate::pass8_funcs::{pass1_1008_e852, pass1_1010_dd5e, pass1_1010_c3c2, pass1_1010_878c, pass1_1010_60a0, pass1_1008_e8cc, pass1_1010_089e};
+use crate::prog_structs::prog_structs_18::Struct566;
+use crate::pass7_funcs::{pass1_1018_435e, pass1_1018_3e8c, pass1_1018_427c, pass1_1018_47c8, pass1_1018_4808};
+use crate::prog_structs::prog_structs_10::Struct73;
+use crate::prog_structs::prog_structs_3::Struct446;
+use crate::pass2_funcs::pass1_1010_e964;
+use crate::bad_funcs::halt_baddata;
+use crate::prog_structs::prog_structs_31::Struct2;
+use crate::prog_structs::prog_structs_30::Struct3;
+use std::intrinsics::offset;
+use crate::prog_structs::prog_structs_7::Struct613;
 
 pub unsafe fn process_string_1000_28dc(ctx: &mut AppContext, in_string_1: &String) -> String {
     let mut i32_1: i32;
@@ -3857,23 +3886,23 @@ pub fn pass1_1030_521c(struct_a: *mut Struct500, param_2: u32) {
     return;
 }
 
-pub fn pass1_1030_5164(
-    string_a: *mut libc::c_char,
-    string_b: *mut libc::c_char,
-) -> *mut libc::c_char {
-    let mut u_var1: i32;
-    let mut i_var2: i32;
-    
-    let lVar3: u32;
-    let mut local_e: u16;
-    let mut local_c: u16;
-    let mut array_a: [u8; 8];
+pub unsafe fn pass1_1030_5164(
+    string_a: &mut String,
+    string_b: &mut String,
+) -> String {
+    let mut u_var1: i32 = 0;
+    let mut i_var2: i32 = 0;
+    let mut lVar3: u32 = 0;
+    let mut local_e: u16 = 0;
+    let mut local_c: u16 = 0;
+    let mut array_a: Vec<u8> = Vec::new();
 
     pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, array_a), (string_a + 0x568));
     while {
-        lVar3 = pass1_1008_5b12(CONCAT22(ctx.stack_seg_reg, array_a));
+        let var7 = CONCAT(ctx.stack_seg_reg, array_a);
+        lVar3 = pass1_1008_5b12(var7);
         if (lVar3 == 0) {
-            return string_b;
+            return string_b.clone();
         }
         u_var1 = string_a + 0x168;
         copy_string_1000_3d3e((string_a & 0xffff0000 | u_var1), *(lVar3 + 4));

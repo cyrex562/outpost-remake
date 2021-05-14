@@ -275,7 +275,7 @@ pub struct Struct117 {
 }
 
 pub struct Struct7 {
-    pub u16_field_0: u16,
+    pub u16_field_0: Address<String>,
     pub u16_field_2: u16,
     pub func_ptr_0x4: *mut libc::c_void,
     pub i_field_4: i32,
@@ -472,7 +472,7 @@ pub struct Struct679 {
 }
 
 pub struct Struct306 {
-    pub field_0x0: i32,
+    pub field_0x0: Address<u8>,
     pub field_0x4: u32,
     pub field_0x8: u32,
     pub field_0xc: i32,

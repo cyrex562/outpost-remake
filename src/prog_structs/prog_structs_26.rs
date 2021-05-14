@@ -4826,7 +4826,7 @@ pub struct Struct1140 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    field_0xc: *mut u32,
+    pub(crate) field_0xc: *mut u32,
     pub field_0x10: u32,
     pub field_0x14: u8,
     pub field_0x15: u8,
