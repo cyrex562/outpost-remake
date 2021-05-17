@@ -11,13 +11,13 @@ use crate::util::{CONCAT22, SBORROW2};
 use crate::winapi_funcs::{LoadString16, MessageBox16, PostMessage16};
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
-                         param_1: &String,
-                         param_2: &mut Vec<u8>) -> bool {
+                                param_1: &String,
+                                param_2: &mut Vec<u8>) -> bool {
     let pi_var1: *mut i32;
     let mut in_ax: i32;
 
     if in_ax < (param_1 + 0xc) {
-        msg_box_1000_214c(0, 0, 0xd940, &ctx.PTR_LOOP_1050_1040);
+        msg_box_1000_214c(0, 0, 0xd940, &mut ctx.PTR_LOOP_1050_1040);
         return true;
     }
     pi_var1 = (param_1 + 0xc);
@@ -4011,8 +4011,7 @@ pub fn win_gui_fn_1010_8170(param_1: *mut u32, param_2: i32) {
 }
 
 pub fn msg_box_1010_8bb4(ctx: &mut AppContext,
-                         param_1: u16,
-                         param_2: u16,
+                         param_1: u32,
                          param_3: &String) {
     let mut title: String;
     // let mut in_string_2: String;

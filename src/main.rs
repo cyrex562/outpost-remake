@@ -245,7 +245,7 @@ pub unsafe fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
     let mut local_30: u16;
     let mut local_2e: u16;
     let mut local_2c: u16;
-    let mut local_a: String;
+    let mut string_2: String;
     let mut local_8: u16;
     let mut local_6: u32;
 
@@ -256,13 +256,14 @@ pub unsafe fn mixed_fn_1010_830a(param_1: u32, param_2: u16) -> u32 {
     if local_bx_20.field_0x10 == 1 {
         // TODO
         //u_var1 = &local_bx_20.field_0x12;
-        local_a = set_error_mode_1010_8b14(param_1, &string_1);
+        string_2 = set_error_mode_1010_8b14(ctx, param_1, &string_1);
         if (local_bx_20.field_0x12 == _local_a) && (local_bx_20.field_0x14 == (_local_a >> 0x10))
         {
-            msg_box_1010_8bb4(ctx, param_1, local_a);
+            msg_box_1010_8bb4(ctx, param_1, &string_2);
             return 0;
         }
-        in_struct_a = process_struct_1008_48fe(ctx, CONCAT22(ctx.stack_seg_reg, local_2e), 1, local_a as u32);
+        let input_2 = CONCAT22(ctx.stack_seg_reg, local_2e);
+        in_struct_a = process_struct_1008_48fe(ctx, input_2, 1, string_2);
         process_struct_1000_179c(0x1e, (in_struct_a >> 0x10));
         if in_struct_a == 0x0 {
             local_6 = 0;

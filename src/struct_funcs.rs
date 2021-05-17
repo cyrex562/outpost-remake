@@ -715,20 +715,20 @@ pub unsafe fn process_struct_1008_48b8(param_1: &mut Struct44, param_2: u8) -> &
 
 pub unsafe fn process_struct_1008_48fe(
     ctx: &mut AppContext,
-    param_1: u32,
+    param_1: &mut String,
     param_2: u16,
-    param_3: u32,
+    param_3: &String,
 ) {
-    let mut local_DX__1: u16;
-    let local_bx_4: *mut Struct188;
-    let mut local_es_4: u16;
+    // let mut local_DX__1: u16;
+    // let local_bx_4: *mut Struct188;
+    // let mut local_es_4: u16;
 
     local_es_4 = (param_1 >> 0x10);
     local_bx_4 = param_1;
-    param_1 = ctx.s_1_1050_389a;
+    *param_1 = ctx.s_1_1050_389a._type.clone();
     local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     local_bx_4.field_0x4 = 0;
-    &local_bx_4.field_0x8 = 0;
+    local_bx_4.field_0x8 = 0;
     local_bx_4.field_0xc = 0xffff;
     local_bx_4.field_0xe = 0;
     local_bx_4.field_0x12 = 0;

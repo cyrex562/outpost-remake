@@ -562,7 +562,7 @@ pub unsafe fn dos3_call_1000_2bb6(param_1: i32, param_2: &mut Struct152) -> u32 
 
     paVar2 = param_2;
     iStack2 = unaff_bp + 1;
-    uStack4 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
+    uStack4 = &ctx.g_alloc_addr_1050_1050;
     u8_var3 = param_2.field_0xa;
     if ((u8_var3 & 0x82) != 0) && ((u8_var3 & 0x40) == 0) {
         param_2.field_0x4 = 0;
