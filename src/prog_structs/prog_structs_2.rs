@@ -242,15 +242,15 @@ pub struct Struct696 {
 }
 
 pub struct Struct131 {
-    pub field_0x0: u8,
+    pub field_0x0: u16,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: u8,
+    pub field_0x4: Struct7,
     pub field_0x5: u8,
     pub field_0x6: u8,
     pub field_0x7: u8,
-    pub field_0x8: u8,
+    pub field_0x8: u16,
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
@@ -286,7 +286,7 @@ pub struct Struct7 {
     pub pv_field_0xe: u32,
     pub struct_field_0x12: Struct131,
     pub u32_field_0x16: u32,
-    pub pv_buffer_0x1a: u32,
+    pub pv_buffer_0x1a: Struct131,
     pub u16_field_0x1c: i32,
     pub u16_field_0x1e: i32,
     pub u16_field_0x20: i32,
@@ -294,6 +294,7 @@ pub struct Struct7 {
     pub u16_field_0x24: u16,
     pub u16_field_0x26: u16,
     pub u16_field_0x28: u16,
+    pub u16_field_0x2a: u16,
 }
 
 pub struct Struct862 {
