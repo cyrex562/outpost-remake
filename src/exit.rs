@@ -71,7 +71,7 @@ pub unsafe fn exit_1000_25cc(ctx: &mut AppContext) -> *mut i32 {
     }
 }
 
-pub unsafe fn exit_1000_2950(ctx: &mut AppContext, param_1: u32) -> Vec<u8> {
+pub unsafe fn exit_1000_2950(ctx: &mut AppContext, param_1: &Vec<u8>) -> Vec<u8> {
     let mut p_var1: Vec<u8>;
     let string_2: String;
     let mut i_var5: u32;
@@ -80,7 +80,7 @@ pub unsafe fn exit_1000_2950(ctx: &mut AppContext, param_1: u32) -> Vec<u8> {
 
     let pu_var3 = ctx.PTR_LOOP_1050_6066;
     ctx.PTR_LOOP_1050_6066 = &ctx.PTR_LOOP_1050_1000;
-    let mut p_var7 = alloc_mem_1000_167a(ctx.ax_reg, in_dx);
+    let mut p_var7 = alloc_mem_1000_167a(ctx, ctx.ax_reg, in_dx);
     ctx.PTR_LOOP_1050_6066 = pu_var3;
     if (ctx.dx_reg | p_var7) != 0 {
         return p_var7.clone();

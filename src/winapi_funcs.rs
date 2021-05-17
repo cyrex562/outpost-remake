@@ -680,3 +680,11 @@ BOOL16 WINAPI GetClassInfo16( HINSTANCE16 hInst16, SEGPTR name, WNDCLASS16 *wc )
 pub fn GetClassInfo16(h_inst: HINSTANCE16, name: SEGPTR, wc: &WNDCLASS16) -> bool {
     unimplemented!()
 }
+
+/*
+GetDOSEnviornment16
+ */
+pub fn GetDOSEnviornment16() -> u32 {
+    unimplemented!()
+}
+

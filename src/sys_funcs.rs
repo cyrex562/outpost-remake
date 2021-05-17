@@ -48,7 +48,7 @@ use crate::sys_structs::{LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16}
 use crate::typedefs::{ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16};
 use crate::ui_funcs::{destroy_menu_func_1020_795c, destroy_win_1040_7b98, free_proc_inst_1040_911e, mixed_1040_8520, msg_box_1040_64ca, pass1_1038_af40, pass1_1038_e03e, send_dialog_item_msg_1038_844a, send_dlg_item_msg_1038_8164, set_cursor_1038_bc30, win_fn_1010_71d6, win_fn_1020_1294, win_fn_1038_8f74, win_fn_1040_8b92, win_gui_fn_1010_79aa};
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, POPCOUNT, SBORROW1, SBORROW2, SUB21, SUB41, ZEXT24};
-use crate::winapi_funcs::{RegisterClass16, CreateWindowEx16, GetClassInfo16};
+use crate::winapi_funcs::{RegisterClass16, CreateWindowEx16, GetClassInfo16, GetDOSEnviornment16};
 
 pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut String) {
     let pc_var1: String;
@@ -103,7 +103,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     if (c_var2 != '\r') && (c_var2 != '\0') {
         ctx.PTR_LOOP_1050_5fb8 = ctx.PTR_LOOP_1050_5fb8 + 1;
         loop {
-            pc_var9 = pc_var9 + -1;
+            pc_var9 = pc_var9  - 1;
             // LAB_1000_267f:
             pc_var1 = pc_var9;
             pc_var9 = pc_var9[1..].clone();
@@ -113,19 +113,19 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
             if (c_var2 == '\r') || (c_var2 == '\0') {
                 break;
             }
-            if (c_var2 == '\"') {
+            if c_var2 == '\"' {
                 // LAB_1000_26b8:
                 while {
                     loop {
                         loop {
                             pc_var1 = pc_var9;
-                            pc_var9 = pc_var9 + 1;
-                            c_var2 = *pc_var1;
-                            if ((c_var2 == '\r') || (c_var2 == '\0')) {}
-                            // goto LAB_1000_26e8;
-                            if (c_var2 == '\"') {}
+                            pc_var9 = pc_var9[1..].clone();
+                            c_var2 = pc_var1[0];
+                            if (c_var2 == '\r') || (c_var2 == '\0') {}
+                            /* goto LAB_1000_26e8; */
+                            if c_var2 == '\"' {}
                             // goto LAB_1000_267f;
-                            if (c_var2 == '\\') {
+                            if c_var2 == '\\' {
                                 break;
                             }
                             i_var4 = i_var4 + 1;
@@ -134,11 +134,11 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
                         while {
                             pc_var11 = pc_var9;
                             u_var6 = u_var6 + 1;
-                            pc_var9 = pc_var11 + 1;
-                            c_var2 = *pc_var11;
+                            pc_var9 = pc_var11[1..].clone();
+                            c_var2 = pc_var11[0];
                             c_var2 == '\\'
                         } {}
-                        if (c_var2 == '\"') {
+                        if c_var2 == '\"' {
                             break;
                         }
                         i_var4 = i_var4 + u_var6;
@@ -149,7 +149,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
                 } {}
                 // goto LAB_1000_267f;
             }
-            if (c_var2 != '\\') {
+            if c_var2 != '\\' {
                 i_var4 = i_var4 + 1;
                 // goto LAB_1000_267f;
             }
@@ -157,13 +157,13 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
             while {
                 u_var6 = u_var6 + 1;
                 pc_var1 = pc_var9;
-                pc_var9 = pc_var9 + 1;
-                c_var2 = *pc_var1;
+                pc_var9 = pc_var9[1..].clone();
+                c_var2 = pc_var1[0];
                 c_var2 == '\\'
             } {}
-            if (c_var2 == '\"') {
+            if c_var2 == '\"' {
                 i_var4 = i_var4 + (u_var6 >> 1) + ((u_var6 & 1) != 0);
-                if ((u_var6 & 1) == 0) {}
+                if (u_var6 & 1) == 0 {}
                 // goto LAB_1000_26b8;
                 // goto LAB_1000_267f;
             }
@@ -183,17 +183,19 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     (&pc_stack6 + i_var4 + 4) = pu_var3;
     ppc_var8 = (&stack0x0000 + i_var4);
     *(&pc_stack6 + i_var4) = (&pc_stack6 + i_var4 + 2);
-    (&i_stack8 + i_var4) = offset;
+
+    // TODO
+    //(&i_stack8 + i_var4) = offset;
     (&stack0xfff6 + i_var4) = (ctx.s_fem37_wav_1050_2716 + 9);
     u_var5 = exported_stub_1000_29dc();
-    u_var5 = &ctx.PTR_LOOP_1050_5f7e;
+    u_var5 = ctx.PTR_LOOP_1050_5f7e;
     pc_var9 = (ctx.s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);
     // LAB_1000_272e:
     while {
         while {
             pc_var1 = pc_var9;
-            pc_var9 = pc_var9 + 1;
-            c_var2 = *pc_var1;
+            pc_var9 = pc_var9[1..].clone();
+            c_var2 = pc_var1[0];
             c_var2 == ' '
         } {}
         c_var2 == '\t'
@@ -203,123 +205,126 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
         *(&pc_stack6 + i_var4) = offset;
         (&i_stack8 + i_var4) = (ctx.s_fem54_wav_1050_27c0 + 5);
         u_var5 = exported_stub_1000_29dc();
-        *ppc_var8 = 0x0;
-        ppc_var8[1] = 0x0;
+        ppc_var8[0].clear();
+        ppc_var8[1].clear();
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
         (*&ctx.PTR_LOOP_1050_5fd2)();
         ctx._PTR_LOOP_1050_5fc2 = CONCAT22(ctx.PTR_LOOP_1050_5fc4, ctx.PTR_LOOP_1050_5fc2);
         return;
     }
-    *ppc_var8 = pc_var11;
-    ppc_var8[1] = unaff_ss;
-    ppc_var8 = ppc_var8 + 2;
+    ppc_var8[0] = pc_var11;
+    // TODO: assign string from correct location on stack
+    //ppc_var8[1] = ctx.stack_seg_reg;
+    // TODO: update/use index into list of strings differently
+    //ppc_var8 = ppc_var8 + 2;
     loop {
-        pc_var9 = pc_var9 + -1;
+        // TODO:
+        // pc_var9 = pc_var9 + -1;
         // LAB_1000_274f:
-        pc_var1 = pc_var9;
-        pc_var9 = pc_var9 + 1;
-        c_var2 = *pc_var1;
-        if ((c_var2 == ' ') || (c_var2 == '\t')) {
-            pc_var1 = pc_var11;
-            pc_var11 = pc_var11 + 1;
-            *pc_var1 = '\0';
+        pc_var1 = pc_var9.clone();
+        pc_var9 = pc_var9[1..].clone();
+        c_var2 = pc_var1[0];
+        if (c_var2 == ' ') || (c_var2 == '\t') {
+            pc_var1 = pc_var11.clone();
+            pc_var11 = pc_var11[1..].clone();
+            pc_var1[0] = '\0';
             // goto LAB_1000_272e;
         }
-        if ((c_var2 == '\r') || (c_var2 == '\0')) {
+        if (c_var2 == '\r') || (c_var2 == '\0') {
             // LAB_1000_27be:
-            *pc_var11 = '\0';
+            pc_var11[0] = '\0';
             // goto LAB_1000_27c1;
         }
         pc_var10 = pc_var9;
-        if (c_var2 == '\"') {
+        if c_var2 == '\"' {
             // LAB_1000_278b:
             loop {
-                pc_var9 = pc_var10 + 1;
-                c_var2 = *pc_var10;
-                if ((c_var2 == '\r') || (c_var2 == '\0')) {}
+                pc_var9 = pc_var10[1..].clone();
+                c_var2 = pc_var10[0];
+                if (c_var2 == '\r') || (c_var2 == '\0') {}
                 // goto LAB_1000_27be;
-                if (c_var2 == '\"') {
+                if c_var2 == '\"' {
                     break;
                 }
-                if (c_var2 == '\\') {
+                if c_var2 == '\\' {
                     u_var6 = 0;
                     while {
                         pc_var10 = pc_var9;
                         u_var6 = u_var6 + 1;
-                        pc_var9 = pc_var10 + 1;
-                        c_var2 = *pc_var10;
+                        pc_var9 = pc_var10[1..].clone();
+                        c_var2 = pc_var10[0];
                         c_var2 == '\\'
                     } {}
-                    if (c_var2 == '\"') {
+                    if c_var2 == '\"' {
                         u_var7 = u_var6 >> 1;
-                        while (u_var7 != 0) {
+                        while u_var7 != 0 {
                             u_var7 = u_var7 - 1;
-                            pc_var1 = pc_var11;
-                            pc_var11 = pc_var11 + 1;
-                            *pc_var1 = '\\';
+                            pc_var1 = pc_var11.clone();
+                            pc_var11 = pc_var11[1..].clone();
+                            pc_var1[0] = '\\';
                         }
                         {}
-                        if ((u_var6 & 1) == 0) {
+                        if (u_var6 & 1) == 0 {
                             break;
                         }
-                        pc_var1 = pc_var11;
-                        pc_var11 = pc_var11 + 1;
-                        *pc_var1 = '\"';
+                        pc_var1 = pc_var11.clone();
+                        pc_var11 = pc_var11[1..].clone();
+                        pc_var1[0] = '\"';
                         pc_var10 = pc_var9;
                     } else {
-                        while (u_var6 != 0) {
+                        while u_var6 != 0 {
                             u_var6 = u_var6 - 1;
-                            pc_var1 = pc_var11;
-                            pc_var11 = pc_var11 + 1;
-                            *pc_var1 = '\\';
+                            pc_var1 = pc_var11.clone();
+                            pc_var11 = pc_var11[1..].clone();
+                            pc_var1[0] = '\\';
                         }
                         {}
                     }
                 } else {
-                    pc_var1 = pc_var11;
-                    pc_var11 = pc_var11 + 1;
-                    *pc_var1 = c_var2;
+                    pc_var1 = pc_var11.clone();
+                    pc_var11 = pc_var11[1..].clone();
+                    pc_var1[0] = c_var2;
                     pc_var10 = pc_var9;
                 }
             }
             // goto LAB_1000_274f;
         }
-        if (c_var2 != '\\') {
-            pc_var1 = pc_var11;
-            pc_var11 = pc_var11 + 1;
-            *pc_var1 = c_var2;
+        if c_var2 != '\\' {
+            pc_var1 = pc_var11.clone();
+            pc_var11 = pc_var11[1..].clone();
+            pc_var1[0] = c_var2;
             // goto LAB_1000_274f;
         }
         u_var6 = 0;
         while {
             u_var6 = u_var6 + 1;
-            pc_var1 = pc_var9;
-            pc_var9 = pc_var9 + 1;
-            c_var2 = *pc_var1;
+            pc_var1 = pc_var9.clone();
+            pc_var9 = pc_var9[1..].clone();
+            c_var2 = pc_var1[0];
             c_var2 == '\\'
         } {}
-        if (c_var2 == '\"') {
+        if c_var2 == '\"' {
             u_var7 = u_var6 >> 1;
-            while (u_var7 != 0) {
+            while u_var7 != 0 {
                 u_var7 = u_var7 - 1;
-                pc_var1 = pc_var11;
-                pc_var11 = pc_var11 + 1;
-                *pc_var1 = '\\';
+                pc_var1 = pc_var11.clone();
+                pc_var11 = pc_var11[1..].clone();
+                pc_var1[0] = '\\';
             }
             pc_var10 = pc_var9;
-            if ((u_var6 & 1) == 0) {}
+            if (u_var6 & 1) == 0 {}
             // goto LAB_1000_278b;
-            pc_var1 = pc_var11;
-            pc_var11 = pc_var11 + 1;
-            *pc_var1 = '\"';
+            pc_var1 = pc_var11.clone();
+            pc_var11 = pc_var11[1..].clone();
+            pc_var1[0] = '\"';
             // goto LAB_1000_274f;
         }
-        while (u_var6 != 0) {
+        while u_var6 != 0 {
             u_var6 = u_var6 - 1;
-            pc_var1 = pc_var11;
-            pc_var11 = pc_var11 + 1;
-            *pc_var1 = '\\';
+            pc_var1 = pc_var11.clone();
+            pc_var11 = pc_var11[1..].clone();
+            pc_var1[0] = '\\';
         }
     }
 }
@@ -334,44 +339,44 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let mut i_var7: i32;
     let pi_var8: i32;
     let pi_var9: i32;
-    let pc_var10: String;
+    let mut pc_var10: String;
     let pi_var11: i32;
     let mut bVar12: bool;
     let mut dos_env: u32;
     let mut u_var13: u32;
     let mut u_var14: u32;
     let pc_var15: String;
-    let mut uVar16: u16;
+    let mut uVar16: &Vec<u8>;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_6: u16;
 
-    uVar16 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
+    uVar16 = &ctx.g_alloc_addr_1050_1050;
     dos_env = GetDOSEnviornment16();
-    dos_env._2_2_ = (dos_env >> 0x10);
-    if (dos_env != 0) {
-        dos_env._2_2_ = 0;
-    }
+    // dos_env._2_2_ = (dos_env >> 0x10);
+    // if dos_env != 0 {
+    //     dos_env._2_2_ = 0;
+    // }
     i_var7 = 0;
-    pc_var10 = 0x0;
+    pc_var10 = String::new();
     i32_var6 = -1;
-    if (dos_env._2_2_ != 0) {
+    if dos_env != 0 {
         cVar4 = *0x0;
-        while (cVar4 != '\0') {
+        while cVar4 != '\0' {
             while {
-                if (i32_var6 == 0) {
+                if i32_var6 == 0 {
                     break;
                 }
                 i32_var6 = i32_var6 + -1;
                 pc_var2 = pc_var10;
-                pc_var10 = pc_var10 + 1;
-                unsafe { *pc_var2 != '\0' }
+                pc_var10 = pc_var10[1..].clone();
+                pc_var2[0] != '\0'
             } {}
             i_var7 = i_var7 + 1;
             pc_var2 = pc_var10;
-            pc_var10 = pc_var10 + 1;
+            pc_var10 = pc_var10[1..].clone();
             unsafe {
-                cVar4 = *pc_var2;
+                cVar4 = pc_var2[0];
             }
         }
     }
