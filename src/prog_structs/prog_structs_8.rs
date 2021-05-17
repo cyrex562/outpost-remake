@@ -2130,7 +2130,7 @@ pub struct Struct1085 {
     pub field_0x1f5: u8,
     pub field_0x1f6: i32,
     pub field_0x1f8: i32,
-    pub field_0x1fa: *mut Struct44,
+    pub field_0x1fa: &mut Struct44,
     pub field_0x1fe: u8,
     pub field_0x1ff: u8,
     pub field_0x200: u8,
@@ -2157,7 +2157,7 @@ pub struct Struct1085 {
     pub field_0x217: u8,
     pub field_0x218: u8,
     pub field_0x219: u8,
-    pub field_0x21a: *mut Struct44,
+    pub field_0x21a: &mut Struct44,
 }
 
 pub struct Struct265 {

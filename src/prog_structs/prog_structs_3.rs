@@ -2418,7 +2418,7 @@ pub struct Struct446 {
     pub field_0x679: u8,
     pub field_0x67a: u8,
     pub field_0x67b: u8,
-    pub field_0x67c: *mut libc::c_char,
+    pub field_0x67c: String,
 }
 
 pub struct Struct669 {

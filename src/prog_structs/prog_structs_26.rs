@@ -1062,7 +1062,7 @@ pub struct Struct1114 {
     pub field_0x1f7: u8,
     pub field_0x1f8: u8,
     pub field_0x1f9: u8,
-    pub field_0x1fa: *mut Struct44,
+    pub field_0x1fa: &mut Struct44,
     pub field_0x1fc: u16,
 }
 
@@ -1729,7 +1729,7 @@ pub struct Struct1141 {
     pub field_0x1f4: u8,
     pub field_0x1f5: u8,
     pub field_0x1f6: u32,
-    pub field_0x1fa: *mut u8,
+    pub field_0x1fa: Vec<u8>,
     pub field_0x1fc: *mut Struct199,
     pub field_0x1fe: u8,
     pub field_0x1ff: u8,
@@ -5303,7 +5303,7 @@ pub struct Struct1140 {
     pub field_0x1f4: u8,
     pub field_0x1f5: u8,
     pub field_0x1f6: u32,
-    pub field_0x1fa: u32,
+    pub field_0x1fa: String,
     pub field_0x1fe: i32,
     pub field_0x200: u32,
     pub field_0x204: i32,
@@ -8049,7 +8049,7 @@ pub struct Struct883 {}
 pub struct Struct481 {
     pub field_0x0: u8,
     pub field_0x1: u8,
-    pub field_0x2: *mut u8,
+    pub field_0x2: Vec<u8>,
     pub field_0x6: *mut Struct493,
 }
 
@@ -8963,7 +8963,7 @@ pub struct Struct121 {
     pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut libc::c_char,
+    pub field_0x4: String,
     pub field_0x6: u16,
     pub two_file_bytes_0x8: [u8; 2],
     pub four_file_bytes_0xa: [u8; 4],

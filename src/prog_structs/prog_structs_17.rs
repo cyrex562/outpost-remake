@@ -404,8 +404,8 @@ pub struct Struct61 {
     pub field_0x13: u8,
     pub field_0x14: i32,
     pub field_0x16: i32,
-    pub field_0x18: *mut u8,
-    pub field_0x1a: *mut u8,
+    pub field_0x18: Vec<u8>,
+    pub field_0x1a: Vec<u8>,
 }
 
 pub struct Struct574 {
@@ -1141,13 +1141,13 @@ pub struct Struct534 {
     pub u16_x26: u32,
     pub u16_x2a: u16,
     pub u16_x2c: u16,
-    u8_ptr_x2e: *mut u8,
+    u8_ptr_x2e: Vec<u8>,
     pub u16_x30: u16,
-    u8_ptr_x32: *mut u8,
+    u8_ptr_x32: Vec<u8>,
     pub u16_x34: u16,
-    u8_ptr_x36: *mut u8,
+    u8_ptr_x36: Vec<u8>,
     pub u16_x38: u16,
-    u8_ptr_x3a: *mut u8,
+    u8_ptr_x3a: Vec<u8>,
     pub u16_x3c: u16,
     pub u16_x3e: u16,
     pub u16_x40: u16,
@@ -1193,7 +1193,7 @@ pub struct Struct534 {
     pub field_0x6b: u8,
     pub field_0x6c: u8,
     pub field_0x6d: u8,
-    u8_ptr_x6e: *mut u8,
+    u8_ptr_x6e: Vec<u8>,
     pub u16_x70: u16,
     pub field_0x72: u8,
     pub field_0x73: u8,
@@ -1537,7 +1537,7 @@ pub struct Struct850 {
     pub field_0xb: u8,
     pub field_0xc: i32,
     pub field_0xe: i32,
-    pub field_0x10: *mut Struct44,
+    pub field_0x10: &mut Struct44,
 }
 
 pub struct Struct513 {
@@ -1718,7 +1718,7 @@ pub struct Struct1175 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: *mut u8,
+    pub field_0xe: Vec<u8>,
     pub field_0x12: u16,
 }
 

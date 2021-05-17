@@ -37,7 +37,7 @@ pub struct PALETTEENTRY {
 
 // typedef short i16;
 
-// typedef pub LPSTR: *mut libc::c_char,
+// typedef pub LPSTR: String,
 
 // typedef struct RECT16 RECT16, *PRECT16;
 
@@ -48,6 +48,17 @@ pub struct RECT16 {
     pub top: i16,
     pub right: i16,
     pub bottom: i16,
+}
+
+impl RECT16 {
+    pub fn new() -> RECT16 {
+        RECT16 {
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0
+        }
+    }
 }
 
 // typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
@@ -110,6 +121,19 @@ pub struct PAINTSTRUCT16 {
     pub f_restore: bool,
     pub f_inc_update: bool,
     pub rgb_reserved: [u8; 16],
+}
+
+impl PAINTSTRUCT16 {
+    pub fn new() -> PAINTSTRUCT16 {
+        PAINTSTRUCT16 {
+            hdc: 0xffff,
+            f_erase: false,
+            rc_paint: RECT16::new(),
+            f_restore: false,
+            f_inc_update: false,
+            rgb_reserved: [0;16]
+        }
+    }
 }
 
 // typedef struct RGBQUAD RGBQUAD, *PRGBQUAD;

@@ -2455,12 +2455,12 @@ pub struct Struct546 {
     pub field_0x17b: u8,
     pub field_0x17c: u8,
     pub field_0x17d: u8,
-    pub field_0x17e: *mut u8,
+    pub field_0x17e: Vec<u8>,
     pub field_0x182: u8,
     pub field_0x183: u8,
     pub field_0x184: u8,
     pub field_0x185: u8,
-    pub char_ptr_186: *mut libc::c_char,
+    pub char_ptr_186: String,
 }
 
 pub struct Struct697 {

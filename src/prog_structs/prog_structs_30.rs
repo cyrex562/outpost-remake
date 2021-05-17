@@ -1577,9 +1577,9 @@ pub struct Struct119 {
     pub field_0xdd: u8,
     pub field_0xde: u8,
     pub field_0xdf: u8,
-    pub field_0xe0: *mut u8,
+    pub field_0xe0: Vec<u8>,
     pub field_0xe2: u16,
-    pub field_0xe4: *mut u8,
+    pub field_0xe4: Vec<u8>,
     pub field_0xe6: u16,
     pub field_0xe8: u32,
 }
@@ -7165,7 +7165,7 @@ pub struct Struct483 {
     pub field_0x15: u8,
     pub field_0x16: u8,
     pub field_0x17: u8,
-    pub field_0x18: *mut u8,
+    pub field_0x18: Vec<u8>,
 }
 
 pub struct Struct320 {

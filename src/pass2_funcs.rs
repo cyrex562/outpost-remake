@@ -4,7 +4,7 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
     let mut u_var1: i32;
     let mut c_var2: u8;
     let BVar3: bool;
-    let pu_var4: *mut u8;
+    let pu_var4: Vec<u8>;
     let mut u_var5: u16;
     
     
@@ -306,7 +306,7 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
 pub unsafe fn pass1_1010_e682(param_1: u32, param_2: *mut Struct493) {
     let mut u_var1: u32;
     let ctx.ax_reg: *mut Struct492;
-    let pc_var2: *mut libc::c_char;
+    let pc_var2: String;
     let BVar3: bool;
     let paVar4: *mut Struct493;
     let mut u_var5: u16;
@@ -314,10 +314,10 @@ pub unsafe fn pass1_1010_e682(param_1: u32, param_2: *mut Struct493) {
     
     
     let local_bx_4: *mut Struct491;
-    let pcVar6: *mut libc::c_char;
+    let pcVar6: String;
     let mut unaff_ss: u16;
     let u_var7: u8;
-    let pcVar8: *mut libc::c_char;
+    let pcVar8: String;
     let mut local_1e: u16;
     let mut local_1c: u16;
     let mut local_1a: u16;
@@ -622,7 +622,7 @@ pub unsafe fn pass1_1010_eb66(in_struct_1: *mut Struct376) {
     let local_struct_1: *mut Struct376;
     let mut u_var4: u16;
     let mut local_e: u32;
-    let temp_8628aef2705: *mut u8;
+    let temp_8628aef2705: Vec<u8>;
     let fn_ptr_1: fn();
 
     u_var4 = (in_struct_1 >> 0x10);

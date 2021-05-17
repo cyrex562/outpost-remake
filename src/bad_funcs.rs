@@ -19,16 +19,16 @@ pub unsafe fn halt_baddata() {
 //     let stack0x005f: u16;
 //     let stack0x006f: u16;
 //     let stack0x08ff: u16;
-//     let pu_var1: *mut u8;
-//     let pc_var2: *mut u8;
-//     let pb_var3: *mut u8;
+//     let pu_var1: Vec<u8>;
+//     let pc_var2: Vec<u8>;
+//     let pb_var3: Vec<u8>;
 //     let pi_var4: *mut i32;
-//     let pu_var5: *mut u8;
+//     let pu_var5: Vec<u8>;
 //     let mut u_var6: u16;
-//     let pu_var7: *mut u8;
-//     let pu_var8: *mut u8;
+//     let pu_var7: Vec<u8>;
+//     let pu_var8: Vec<u8>;
 //     let pu_var9: *mut u32;
-//     let pc_var10: *mut u8;
+//     let pc_var10: Vec<u8>;
 //     let mut b_var11: u8;
 //     let mut c_var12: u8;
 //     let mut i_var13: i32;
@@ -44,22 +44,22 @@ pub unsafe fn halt_baddata() {
 //     let mut in_ch: u8 = param2;
 //     let mut in_dx: u16 = param3;
 //     let mut u_var21: u16;
-//     let in_bx: *mut u8;
+//     let in_bx: Vec<u8>;
 //     let mut u_var22: u16;
-//     let pc_var23: *mut u8;
+//     let pc_var23: Vec<u8>;
 //     let pi_var24: *mut i32;
 //     let mut i_var25: i32;
-//     let unaff_si: *mut u8;
-//     let pu_var26: *mut u8;
-//     let unaff_di: *mut u8;
-//     let pc_var27: *mut u8;
+//     let unaff_si: Vec<u8>;
+//     let pu_var26: Vec<u8>;
+//     let unaff_di: Vec<u8>;
+//     let pc_var27: Vec<u8>;
 //     let mut unaff_es: u16;
 //     let mut unaff_cs: u16;
 //     let mut unaff_ss: u16;
 //     let mut unaff_ds: u16;
 //     let mut in_gs: u16 = param4;
 //     let mut b_var28: u8;
-//     let ac_stack3: *mut u8;
+//     let ac_stack3: Vec<u8>;
 //     let local_1: u8;
 
 //     pc_var2 = unaff_di.offset(*ac_stack3.offset(1) as isize);
@@ -348,11 +348,11 @@ fn out(unaff_s_i: u32, arg: u32) -> () {
 
 pub unsafe fn bad_fn_1050_525e() {
     let pb_var1: u16;
-    let pu_var2: *mut u8;
+    let pu_var2: Vec<u8>;
     let pu_var3: *mut u32;
     let pi_var4: u16;
     let pu_var5: u16;
-    let pc_var6: *mut libc::c_char;
+    let pc_var6: String;
     let pu_var7: *mut u32;
     let u_var8: u8;
     let lVar9;
@@ -394,7 +394,7 @@ pub unsafe fn bad_fn_1050_525e() {
     let mut b_var43: u8;
     let mut pi_var41: u16;
     let mut u_var42: i32;
-    let pu_var44: *mut u8;
+    let pu_var44: Vec<u8>;
     let pu_var45: *mut u16;
     let ppu_var46: *mut *mut u32;
     let ppu_var47: *mut *mut u32;
@@ -405,12 +405,12 @@ pub unsafe fn bad_fn_1050_525e() {
     let mut i_var51: u16;
     let pi_var52: u16;
     let pi_var53: *mut i32;
-    let pc_var54: *mut libc::c_char;
+    let pc_var54: String;
     let pu_var55: *mut u16;
-    let pu_var56: *mut u8;
+    let pu_var56: Vec<u8>;
     let pu_var57: *mut u16;
     let pu_var58: *mut u32;
-    let pu_var59: *mut u8;
+    let pu_var59: Vec<u8>;
     let mut in_esi: u32;
     let pu_var60: *mut u16;
     let mut unaff_di: u16;
@@ -3924,7 +3924,7 @@ pub unsafe fn bad_fn_1050_525e() {
 }
 
 pub unsafe fn bad_fn_10d0_02c2() {
-    let pb_var1: *mut u8;
+    let pb_var1: Vec<u8>;
     let mut in_al: u8;
     let mut in_bx: i32;
     let mut unaff_si: i32;
@@ -3939,15 +3939,15 @@ pub unsafe fn bad_fn_10d0_02c2() {
 // WARNING: Unable to track spacebase fully for stack
 
 pub unsafe fn bad_fn_1110_029e() {
-    let pc_var1: *mut libc::c_char;
-    let pu8_var2: *mut u8;
+    let pc_var1: String;
+    let pu8_var2: Vec<u8>;
     let pi_var3: *mut i32;
-    let ppc_var4: *mut *mut libc::c_char;
+    let ppc_var4: *mut String;
     let pu_var5: *mut u32;
-    let pu_var6: *mut u8;
-    let pc_var7: *mut libc::c_char;
+    let pu_var6: Vec<u8>;
+    let pc_var7: String;
     let pu_var8: *mut u16;
-    let ppc_var9: *mut *mut libc::c_char;
+    let ppc_var9: *mut String;
     let mut c_var10: u8;
     let pc_var11: *mut code;
     let mut in_al: u8;
@@ -3970,9 +3970,9 @@ pub unsafe fn bad_fn_1110_029e() {
     let pu_var26: *mut u32;
     let pi_var27: *mut i32;
     let mut unaff_bp: u16;
-    let unaff_si: *mut libc::c_char;
-    let pc_var29: *mut libc::c_char;
-    let unaff_di: *mut libc::c_char;
+    let unaff_si: String;
+    let pc_var29: String;
+    let unaff_di: String;
     let mut unaff_es: u16;
     let mut unaff_ds: u16;
     let mut in_fs: u16;
@@ -4318,7 +4318,7 @@ pub unsafe fn bad_fn_1050_3d38() {
     let mut unaff_ds: u16;
     let mut in_OF: u8;
     let in_ST0: [u8; 10];
-    let puStack34: *mut u8;
+    let puStack34: Vec<u8>;
     let stack0x0000: u16;
     let stack0xfffe: u16;
 
@@ -4349,11 +4349,11 @@ fn swi(arg: i32) -> () {
 }
 
 pub unsafe fn bad_fn_1050_335f() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut in_al: u8;
     let mut in_AH: u8;
     let mut in_bx: i32;
-    let unaff_si: *mut libc::c_char;
+    let unaff_si: String;
     let mut unaff_ds: u16;
 
     pc_var1 = unaff_si;
@@ -4370,8 +4370,8 @@ pub unsafe fn bad_fn_1050_335f() {
 //}
 
 pub unsafe fn bad_fn_1050_180a() {
-    let pb_var1: *mut u8;
-    let pc_var2: *mut libc::c_char;
+    let pb_var1: Vec<u8>;
+    let pc_var2: String;
     let pu_var3: *mut u16;
     let pu_var4: *mut u32;
     let pi_var5: *mut i32;
@@ -4400,13 +4400,13 @@ pub unsafe fn bad_fn_1050_180a() {
     let mut in_dx: u16;
     let mut b_var27: u8;
     let mut u_var26: i32;
-    let in_bx: *mut u8;
-    let pu8_var28: *mut u8;
+    let in_bx: Vec<u8>;
+    let pu8_var28: Vec<u8>;
     let pi_var29: *mut i32;
     let mut u_var30: i32;
-    let ppc_var31: *mut *mut libc::c_char;
-    let ppc_var32: *mut *mut libc::c_char;
-    let ppc_var33: *mut *mut libc::c_char;
+    let ppc_var31: *mut String;
+    let ppc_var32: *mut String;
+    let ppc_var33: *mut String;
     let ppi_var34: *mut *mut i32;
     let ppi_var35: *mut *mut i32;
     let ppi_var36: *mut *mut i32;
@@ -4427,12 +4427,12 @@ pub unsafe fn bad_fn_1050_180a() {
     let in_esi: *mut u16;
     let unaff_di: *mut u16;
     let pu_var50: *mut u16;
-    let pu_var51: *mut u8;
-    let pu_var52: *mut u8;
+    let pu_var51: Vec<u8>;
+    let pu_var52: Vec<u8>;
     let pu_var53: *mut u16;
     let mut i_var54: i32;
     let pu_var55: *mut u16;
-    let pc_var56: *mut libc::c_char;
+    let pc_var56: String;
     let pi_var57: *mut i32;
     let pi_var58: *mut i32;
     let pi_var59: *mut i32;
@@ -4451,8 +4451,8 @@ pub unsafe fn bad_fn_1050_180a() {
     let mut in_stack_0000afbc: i32;
     let mut in_stack_0000afc2: i32;
     let mut in_stack_0000afc4: i32;
-    let in_stack_0000afca: *mut u8;
-    let in_stack_0000afcc: *mut u8;
+    let in_stack_0000afca: Vec<u8>;
+    let in_stack_0000afcc: Vec<u8>;
     let mut in_stack_0000afce: i32;
     let in_stack_0000afd2: *mut u32;
     let mut in_stack_0000afd4: i32;
@@ -6430,16 +6430,16 @@ pub unsafe fn bad_fn_1050_180a() {
 }
 
 pub unsafe fn bad_fn_1050_1312() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut c_var2: u8;
     let mut extraout_AH: u8;
     let mut extraout_dl: u8;
     let mut extraout_dh: u8;
-    let in_bx: *mut libc::c_char;
+    let in_bx: String;
     let pu_var3: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut libc::c_char;
-    let unaff_di: *mut libc::c_char;
+    let unaff_si: String;
+    let unaff_di: String;
     let mut unaff_ss: u16;
     let mut unaff_ds: u16;
     let mut stack0xfffe: u16;
@@ -6495,7 +6495,7 @@ pub unsafe fn bad_fn_1050_12ee() {
 }
 
 pub unsafe fn bad_fn_1050_1234() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let ppc_var2: fn();
     let mut c_var3: u8;
     let mut in_cl: u8;
@@ -6504,7 +6504,7 @@ pub unsafe fn bad_fn_1050_1234() {
     let mut in_bx: i32;
     let pu_var4: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut libc::c_char;
+    let unaff_si: String;
     let unaff_di: fn();
     let mut unaff_ss: u16;
     let mut unaff_ds: u16;
@@ -6537,7 +6537,7 @@ pub unsafe fn bad_fn_1050_1234() {
 }
 
 pub unsafe fn bad_fn_1050_1214() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let ppc_var2: fn();
     let mut c_var3: u8;
     let mut in_cl: u8;
@@ -6579,8 +6579,8 @@ pub unsafe fn bad_fn_1050_1214() {
 }
 
 pub unsafe fn bad_fn_1050_0e8e() {
-    let pc_var1: *mut libc::c_char;
-    let pu8_var2: *mut u8;
+    let pc_var1: String;
+    let pu8_var2: Vec<u8>;
     let pi_var3: *mut i32;
     let mut u_var4: i32;
     let mut c_var5: u8;
@@ -6591,7 +6591,7 @@ pub unsafe fn bad_fn_1050_0e8e() {
     let mut u_var9: i32;
     let mut in_cl: u8;
     let mut in_DL: u8;
-    let in_bx: *mut libc::c_char;
+    let in_bx: String;
     let mut unaff_si: i32;
     let mut unaff_di: i32;
     let mut unaff_ss: u16;
@@ -6654,13 +6654,13 @@ pub unsafe fn bad_fn_1050_0e8e() {
 }
 
 pub unsafe fn bad_fn_1050_11f4() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut c_var2: u8;
     let mut in_ch: u8;
-    let in_bx: *mut libc::c_char;
+    let in_bx: String;
     let pu_var3: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut libc::c_char;
+    let unaff_si: String;
     let unaff_di: fn();
     let mut unaff_ss: u16;
     let mut unaff_ds: u16;
@@ -6690,9 +6690,9 @@ pub unsafe fn bad_fn_1050_11f4() {
 }
 
 pub unsafe fn bad_fn_1050_0daa() {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let pi_var2: *mut i32;
-    let pb_var3: *mut u8;
+    let pb_var3: Vec<u8>;
     let mut b_var4: u8;
     let mut b_var5: u8;
     let mut in_ax: i32;
@@ -6705,11 +6705,11 @@ pub unsafe fn bad_fn_1050_0daa() {
     let mut in_cl: u8;
     let mut in_DL: u8;
     let mut in_DH: u8;
-    let in_bx: *mut libc::c_char;
-    let pc_var13: *mut libc::c_char;
+    let in_bx: String;
+    let pc_var13: String;
     let mut b_var14: u8;
     let mut unaff_bp: u8;
-    let unaff_si: *mut libc::c_char;
+    let unaff_si: String;
     let unaff_di: *mut i32;
     let mut unaff_es: u16;
     let mut unaff_ss: u16;
@@ -6947,8 +6947,8 @@ pub unsafe fn bad_fn_1050_0daa() {
 }
 
 pub unsafe fn bad_fn_1040_d920(param_1: u32) {
-    let pc_var1: *mut libc::c_char;
-    let pu8_var2: *mut u8;
+    let pc_var1: String;
+    let pu8_var2: Vec<u8>;
     let pu_var3: *mut u16;
     let u_var4: u8;
     let mut b_var5: u8;
@@ -6962,13 +6962,13 @@ pub unsafe fn bad_fn_1040_d920(param_1: u32) {
     let mut b_var9: u8;
     let pu_var10: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut u8;
+    let unaff_si: Vec<u8>;
     let mut unaff_es: u16;
     let mut unaff_ss: u16;
     let mut in_CF: u8;
     let mut b_var11: bool;
     let mut b_var12: bool;
-    let in_stack_0000bf2a: *mut u8;
+    let in_stack_0000bf2a: Vec<u8>;
     let in_stack_0000bf2c: *mut u16;
     let mut in_stack_0000bf32: i32;
     let mut in_stack_0000bf34: u16;
@@ -7084,10 +7084,10 @@ pub unsafe fn bad_fn_1018_d46e() {
     halt_baddata();
 }
 
-pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: *mut Struct44) -> *mut Struct44 {
-    let pu_var1: *mut u8;
-    let pc_var2: *mut libc::c_char;
-    let pb_var3: *mut u8;
+pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: &mut Struct44) -> &mut Struct44 {
+    let pu_var1: Vec<u8>;
+    let pc_var2: String;
+    let pb_var3: Vec<u8>;
     let pu_var4: *mut u32;
     let mut b_var5: u8;
     let mut u_var6: i32;
@@ -7104,8 +7104,8 @@ pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: *mut Struct44) -> *
     let mut u_var13: i32;
     let mut b_var14: u8;
     let mut unaff_bp: u16;
-    let unaff_si: *mut u8;
-    let unaff_di: *mut u8;
+    let unaff_si: Vec<u8>;
+    let unaff_di: Vec<u8>;
     let mut unaff_es: i32;
     let mut u_var15: u16;
     let mut unaff_ss: u16;
@@ -7114,14 +7114,14 @@ pub unsafe fn pass1_1038_ca75(ctx: &mut AppContext, param_1: *mut Struct44) -> *
     let mut b_var17: bool;
     let mut in_SF: bool;
     let ppVar18: *mut pass1_struct_1;
-    let in_stack_00000068: *mut u8;
+    let in_stack_00000068: Vec<u8>;
     let mut in_stack_0000407f: u8;
     let mut in_stack_0000efc4: u32;
     let in_struct_1: *mut Struct68;
-    let in_stack_0000efc8: *mut u8;
+    let in_stack_0000efc8: Vec<u8>;
     let mut in_stack_0000efca: u32;
     let mut in_stack_0000efce: u32;
-    let in_stack_0000efd2: *mut u8;
+    let in_stack_0000efd2: Vec<u8>;
     let local_39: u8;
     let local_38: u8;
     let _uStack3: u8;

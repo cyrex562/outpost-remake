@@ -355,8 +355,8 @@ pub struct Struct177 {
     pub field_0x12: u8,
     pub field_0x13: u8,
     pub field_0x14: i32,
-    pub field_0x16: *mut u8,
-    pub field_0x18: *mut u8,
+    pub field_0x16: Vec<u8>,
+    pub field_0x18: Vec<u8>,
 }
 
 pub struct Struct930 {

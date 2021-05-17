@@ -2,7 +2,7 @@
 pub struct Struct1174 {
     pub field_0x0: u8,
     pub field_0x1: u8,
-    pub field_0x2: *mut u8,
+    pub base_field_0x2: Vec<u8>,
 }
 
 pub struct Struct951 {
@@ -2036,7 +2036,7 @@ pub struct Struct93 {
     pub field_0x2f: u8,
     pub field_0x30: u8,
     pub field_0x31: u8,
-    pub field_0x32: *mut u8,
+    pub field_0x32: Vec<u8>,
 }
 
 pub struct Struct684 {

@@ -68,7 +68,7 @@ pub fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
     return;
 }
 
-pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut Struct13) {
+pub fn mci_send_command_1008_5c7c(in_char_buff: Vec<u8>, in_struct_1: *mut Struct13) {
     let mut u_var1: u32;
 
     u_var1 = set_error_mode_1010_85be(
@@ -80,7 +80,7 @@ pub fn mci_send_command_1008_5c7c(in_char_buff: *mut u8, in_struct_1: *mut Struc
     return;
 }
 
-pub fn mci_send_command_1008_5c9e(in_char_buff: *mut u8, in_struct_1: *mut Struct13) {
+pub fn mci_send_command_1008_5c9e(in_char_buff: Vec<u8>, in_struct_1: *mut Struct13) {
     mci_send_command_1008_5c7c(in_char_buff, in_struct_1);
     return;
 }
@@ -247,7 +247,7 @@ pub fn win_and_mci_fn_1018_ea66(param_1: *mut Struct626) {
     let mut local_struct_1_hi: u16;
 
     let mut char_buf_1: [u8; 4];
-    // fn_ptr_1: *mut *mut u8;
+    // fn_ptr_1: *mut Vec<u8>;
 
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;

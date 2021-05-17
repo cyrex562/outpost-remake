@@ -21,7 +21,7 @@ pub fn loop_1010_11c6(param_1: &mut Struct365) {
     let ctx.dx_reg: *mut Struct199;
     
     
-    let pp_var14: *mut *mut libc::c_char;
+    let pp_var14: *mut String;
     let mut pustruct_a: &mut Struct365;
     let mut iVar15: i32;
     let mut iVar16: i32;
@@ -267,8 +267,8 @@ pub fn loop_1010_11c6(param_1: &mut Struct365) {
 }
 
 pub unsafe fn infinite_loop_1020_7bba(ctx: &mut AppContext) {
-    let pc_var1: *mut libc::c_char;
-    let pu8_var2: *mut u8;
+    let pc_var1: String;
+    let pu8_var2: Vec<u8>;
     let paVar3: *mut Struct676;
     let pu_var4: *mut u16;
     let mut cVar5: u8;

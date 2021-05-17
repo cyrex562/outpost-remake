@@ -1,40 +1,42 @@
+use std::intrinsics::offset;
+
 use crate::{
     defines::{AppContext, Struct150},
     util::CONCAT22,
 };
 use crate::app_context::AppContext;
-use crate::sys_funcs::{LoadString16, FatalAppExit16, FatalExit, dos3_call_1000_51aa, MessageBox16, write_private_profile_str_1010_5b10, swi, dos3_call_1000_2bb6, dos3_call_1000_514e, dos3_call_1000_35fe};
-use crate::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_1008_3e76, pass1_1008_5b12, pass1_1008_5784, pass1_fn_1008_60e8, pass1_fn_1000_2f48, pass1_fn_1000_2b5c, pass1_fn_1000_2b3c, pass1_1008_cfa0, pass1_fn_1008_612e, pass1_1000_4906, pass1_1000_3d7a, pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_b0bc, pass1_1008_b9ce, pass1_1008_944e, pass1_fn_1000_48a8, pass1_1008_6604, pass1_fn_1000_3e2c, pass1_fn_1000_52be, pass1_fn_1000_30b4, pass1_fn_1000_3f5c, pass1_fn_1000_3024, pass1_fn_1000_3e82, pass1_fn_1000_2fa4};
-use crate::prog_structs::prog_structs_5::Struct150;
-use crate::pass4_funcs::{pass1_1028_d1dc, pass1_1028_e1ec, pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_e2e0, pass1_1028_bb24};
-use crate::prog_structs::prog_structs_19::Struct500;
-use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct894, Struct432, pass1_struct_3};
-use crate::prog_structs::prog_structs_16::Struct493;
-use crate::pass5_funcs::{pass1_1030_2690, pass1_1030_8344, pass1_1030_1cd8, pass1_1030_7bee, pass1_1030_7ddc, pass1_1030_b9b2, pass1_1030_7d1c, pass1_1030_7c28, pass1_1030_8326, pass1_1030_809c, pass1_1030_73a8, pass1_1030_627e, pass1_1030_1d7c};
-use crate::pass6_funcs::{pass1_1038_56d6, pass1_1038_5464, pass1_1038_4d28, pass1_1038_4e78};
-use crate::prog_structs::prog_structs_1::Struct393;
-use crate::prog_structs::prog_structs_26::{Struct1123, Struct883, Struct891};
-use crate::util::{ZEXT24, CONCAT12, CONCAT13, CONCAT31, SUB42, SBORROW2, CARRY1, CONCAT11, CARRY2, CONCAT21};
-use crate::other_funcs::{zero_list_1008_3e38, switch_stmt_1008_ab80};
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1040_b0bc, process_struct_1008_cbc4, process_struct_1008_cda2, process_struct_1008_d3ae, process_struct_1008_574a, process_struct_1008_4544, process_struct_1000_2cb0};
-use crate::prog_structs::prog_structs_2::Struct199;
-use crate::prog_structs::prog_structs_28::{Struct913, Struct912, Struct1016, Struct1053, Struct346, Struct915};
-use crate::prog_structs::prog_structs_27::{pass1_struct_2, Struct298};
-use crate::err_funcs::error_check_1000_17ce;
-use crate::pass3_funcs::{pass1_1020_ba7e, pass1_1020_bb8a, pass1_1020_bae6, pass1_1020_ba3e};
-use crate::prog_structs::prog_structs_20::Struct965;
-use crate::prog_structs::prog_structs_29::{Struct1035, Struct166};
-use crate::pass8_funcs::{pass1_1008_e852, pass1_1010_dd5e, pass1_1010_c3c2, pass1_1010_878c, pass1_1010_60a0, pass1_1008_e8cc, pass1_1010_089e};
-use crate::prog_structs::prog_structs_18::Struct566;
-use crate::pass7_funcs::{pass1_1018_435e, pass1_1018_3e8c, pass1_1018_427c, pass1_1018_47c8, pass1_1018_4808};
-use crate::prog_structs::prog_structs_10::Struct73;
-use crate::prog_structs::prog_structs_3::Struct446;
-use crate::pass2_funcs::pass1_1010_e964;
 use crate::bad_funcs::halt_baddata;
-use crate::prog_structs::prog_structs_31::Struct2;
+use crate::err_funcs::error_check_1000_17ce;
+use crate::other_funcs::{switch_stmt_1008_ab80, zero_list_1008_3e38};
+use crate::pass2_funcs::pass1_1010_e964;
+use crate::pass3_funcs::{pass1_1020_ba3e, pass1_1020_ba7e, pass1_1020_bae6, pass1_1020_bb8a};
+use crate::pass4_funcs::{pass1_1028_bb24, pass1_1028_d1dc, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e2e0, pass1_1028_e4ec};
+use crate::pass5_funcs::{pass1_1030_1cd8, pass1_1030_1d7c, pass1_1030_2690, pass1_1030_627e, pass1_1030_73a8, pass1_1030_7bee, pass1_1030_7c28, pass1_1030_7d1c, pass1_1030_7ddc, pass1_1030_809c, pass1_1030_8326, pass1_1030_8344, pass1_1030_b9b2};
+use crate::pass6_funcs::{pass1_1038_4d28, pass1_1038_4e78, pass1_1038_5464, pass1_1038_56d6};
+use crate::pass7_funcs::{pass1_1018_3e8c, pass1_1018_427c, pass1_1018_435e, pass1_1018_47c8, pass1_1018_4808};
+use crate::pass8_funcs::{pass1_1008_e852, pass1_1008_e8cc, pass1_1010_089e, pass1_1010_60a0, pass1_1010_878c, pass1_1010_c3c2, pass1_1010_dd5e};
+use crate::pass_funcs::{pass1_1000_3d7a, pass1_1000_4906, pass1_1008_3e76, pass1_1008_5784, pass1_1008_5b12, pass1_1008_6604, pass1_1008_944e, pass1_1008_b0bc, pass1_1008_b9ce, pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_cfa0, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_2b3c, pass1_fn_1000_2b5c, pass1_fn_1000_2f48, pass1_fn_1000_2fa4, pass1_fn_1000_3024, pass1_fn_1000_30b4, pass1_fn_1000_3e2c, pass1_fn_1000_3e82, pass1_fn_1000_3f5c, pass1_fn_1000_48a8, pass1_fn_1000_52be, pass1_fn_1008_60e8, pass1_fn_1008_612e};
+use crate::prog_structs::prog_structs_10::Struct73;
+use crate::prog_structs::prog_structs_16::Struct493;
+use crate::prog_structs::prog_structs_18::Struct566;
+use crate::prog_structs::prog_structs_19::Struct500;
+use crate::prog_structs::prog_structs_1::Struct393;
+use crate::prog_structs::prog_structs_20::Struct965;
+use crate::prog_structs::prog_structs_24::{Struct2111, pass1_struct_3, Struct432, Struct894};
+use crate::prog_structs::prog_structs_26::{Struct1123, Struct883, Struct891};
+use crate::prog_structs::prog_structs_27::{pass1_struct_2, Struct298};
+use crate::prog_structs::prog_structs_28::{Struct1016, Struct1053, Struct346, Struct912, Struct913, Struct915};
+use crate::prog_structs::prog_structs_29::{Struct1035, Struct166};
+use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_30::Struct3;
-use std::intrinsics::offset;
+use crate::prog_structs::prog_structs_31::Struct2;
+use crate::prog_structs::prog_structs_3::Struct446;
+use crate::prog_structs::prog_structs_5::Struct150;
 use crate::prog_structs::prog_structs_7::Struct613;
+use crate::struct_funcs::{process_struct_1000_179c, process_struct_1000_2cb0, process_struct_1008_4544, process_struct_1008_574a, process_struct_1008_cbc4, process_struct_1008_cda2, process_struct_1008_d3ae, process_struct_1040_b0bc};
+use crate::sys_funcs::{dos3_call_1000_2bb6, dos3_call_1000_35fe, dos3_call_1000_514e, dos3_call_1000_51aa, write_private_profile_str_1010_5b10};
+use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT21, CONCAT31, SBORROW2, SUB42, ZEXT24};
+use crate::winapi_funcs::{FatalAppExit16, FatalExit, LoadString16, MessageBox16, swi};
 
 pub unsafe fn process_string_1000_28dc(ctx: &mut AppContext, in_string_1: &String) -> String {
     let mut i32_1: i32;
@@ -195,21 +197,21 @@ pub fn process_string_1000_2ba0() {
     return;
 }
 
-pub fn process_string_1000_3cea(string_a: *mut libc::c_char, string_b: *mut libc::c_char) {
+pub fn process_string_1000_3cea(string_a: String, string_b: String) {
     let pu_var1: *mut u16;
-    let pc_var2: *mut libc::c_char;
+    let pc_var2: String;
     let pu_var3: *mut u16;
     let mut i_var4: i32;
     let mut u_var5: i32;
     let mut u_var6: i32;
-    let local_str_1_1: *mut libc::c_char;
-    let pcVar7: *mut libc::c_char;
+    let local_str_1_1: String;
+    let pcVar7: String;
     let puVar8: *mut u16;
     let pu_var9: *mut u16;
-    let local_str_1: *mut libc::c_char;
+    let local_str_1: String;
     let mut local_es_21: u16;
     let mut bVar10: bool;
-    let temp_1087f15098c83: *mut libc::c_char;
+    let temp_1087f15098c83: String;
     let temp_87f9662d6e1: *mut u16;
 
     local_str_1 = (string_a >> 0x10);
@@ -294,78 +296,73 @@ pub fn process_string_1000_3cea(string_a: *mut libc::c_char, string_b: *mut libc
     return;
 }
 
-pub fn copy_string_1000_3d3e(
-    in_string_1: *mut libc::c_char,
-    in_string_2: *mut libc::c_char,
+pub unsafe fn copy_string_1000_3d3e(
+    in_string_1: &mut String,
+    in_string_2: &String,
 ) -> u16 {
-    let pu_var1: *mut u16;
-    let paVar2: *mut Struct166;
+    let string_var1: String;
+    let struct_var2: Struct166;
     let mut u_var3: i32;
     let mut u_var4: i32;
-    let local_string_list_1: *mut libc::c_char;
-    let local_string_list_2: *mut libc::c_char;
-    let local_DI_26: *mut Struct166;
-    let mut ctx.es_reg: u16;
-    let mut local_DS_8: u16;
-    let mut bool_1: bool;
-    // temp_1087faeaca0cc: *mut *mut u8;
-    let string_3: *mut libc::c_char;
+    let string_var4: String;
+    let string_var5: String;
+    let mut b_var6: bool;
+    // temp_1087faeaca0cc: *mut Vec<u8>;
+    let string_var7: String;
 
-    local_DS_8 = (in_string_2 >> 0x10);
-    local_string_list_1 = in_string_2;
-    bool_1 = true;
+    // local_DS_8 = (in_string_2 >> 0x10);
+    // string_var4 = in_string_2;
+    b_var6 = true;
     u_var3 = 0xffff;
-    local_string_list_2 = local_string_list_1;
+    // string_var5 = string_var4;
     while {
-        if (u_var3 == 0) {
+        if u_var3 == 0 {
             break;
         }
         u_var3 = u_var3 - 1;
-        string_3 = local_string_list_2;
-        local_string_list_2 = local_string_list_2 + 1;
+        string_var7 = in_string_2.clone();
+        string_var5 = in_string_2[1..].clone();
         unsafe {
-            bool_1 = *string_3 == '\0';
+            b_var6 = *string_var7 == '\0';
         }
-        !bool_1
+        !b_var6
     } {}
     //u_var3 = ~u_var3;
     ctx.es_reg = (in_string_1 >> 0x10);
     local_DI_26 = in_string_1;
-    if (bool_1) {
-        if ((in_string_1 & 1) != 0) {
+    if b_var6 {
+        if (in_string_1 & 1) != 0 {
             local_DI_26 = &local_DI_26.field_0x1;
-            local_string_list_1 = local_string_list_1 + 1;
-            unsafe {
-                *in_string_1 = *in_string_2;
-            }
+            string_var4 = in_string_2[1..].clone();
+            in_string_1[0] = in_string_2[0];
             u_var3 = u_var3 - 1;
         }
     } else {
         local_DI_26 = &local_DI_26.field_0x2;
-        local_string_list_1 = local_string_list_1 + 2;
-        in_string_1 = in_string_2;
+        string_var4 = string_var4[2..].clone();
+        in_string_1 = in_string_2.clone();
         u_var3 = u_var3 - 1;
     }
     u_var4 = u_var3 >> 1;
-    while (u_var4 != 0) {
+    while u_var4 != 0 {
         u_var4 = u_var4 - 1;
-        paVar2 = local_DI_26;
+        struct_var2 = local_DI_26;
         local_DI_26 = &local_DI_26.field_0x2;
-        pu_var1 = local_string_list_1;
-        local_string_list_1 = (local_string_list_1 + 2);
+        string_var1 = string_var4.clone();
+        string_var4 = string_var4[2..].clone();
         unsafe {
-            paVar2 = *pu_var1;
+            struct_var2 = *string_var1;
         }
     }
     u_var3 = ((u_var3 & 1) != 0);
     while (u_var3 != 0) {
         u_var3 = u_var3 - 1;
-        paVar2 = local_DI_26;
+        struct_var2 = local_DI_26;
         local_DI_26 = &local_DI_26.field_0x1;
-        pu_var1 = local_string_list_1;
-        local_string_list_1 = (local_string_list_1 + 1);
+        string_var1 = string_var4;
+        string_var4 = (string_var4 + 1);
         unsafe {
-            *paVar2 = *pu_var1;
+            *struct_var2 = *string_var1;
         }
     }
     return ctx.es_reg;
@@ -396,12 +393,12 @@ pub fn get_string_index_1000_3da4(in_string_1: &mut String) -> u16 {
 }
 
 pub fn process_string_1000_3dbe(
-    in_string_1: *mut libc::c_char,
-    in_string_2: *mut libc::c_char,
+    in_string_1: String,
+    in_string_2: String,
     param_3: u16,
-) -> *mut u8 {
-    let pu_var1: *mut u8;
-    let pu_var2: *mut u8;
+) -> Vec<u8> {
+    let pu_var1: Vec<u8>;
+    let pu_var2: Vec<u8>;
     let mut string2: u16;
     let mut string3: u16;
     let mut u_var3: u16;
@@ -440,12 +437,12 @@ pub fn process_string_1000_3dbe(
 }
 
 pub fn process_string_1000_3de8(
-    in_string_1: *mut libc::c_char,
-    param_2: *mut libc::c_char,
+    in_string_1: String,
+    param_2: String,
     param_3: u16,
 ) -> u8 {
-    let pu8_var1: *mut u8;
-    let pc_var2: *mut libc::c_char;
+    let pu8_var1: Vec<u8>;
+    let pc_var2: String;
     let mut u8_var3: u8;
     let mut u_var4: u16;
     let mut i_var5: i32;
@@ -504,27 +501,27 @@ pub fn process_string_1000_3de8(
     return param_3;
 }
 
-pub fn process_string_1000_3ec0(param_1: i32, param_2: *mut libc::c_char) -> u8 {
+pub fn process_string_1000_3ec0(ctx: &mut AppContext, param_1: i32, param_2: &String) -> u8 {
     let u_var1: u8;
     let mut str_index: u16;
     let mut u_var2: i32;
-    let extraout_AH: u8;
+    // let extraout_AH: u8;
     let mut i_var3: i32;
     let mut u_var4: u16;
     let mut local_8: u16;
     let mut local_6: u16;
 
-    _local_8 = CONCAT22(PTR_LOOP_1050_5fc0, PTR_LOOP_1050_5fbe);
-    if (((PTR_LOOP_1050_5fc0 | PTR_LOOP_1050_5fbe) != 0) && ((param_2 | param_1) != 0)) {
+    let _local_8 = CONCAT22(ctx.PTR_LOOP_1050_5fc0, PTR_LOOP_1050_5fbe);
+    if ((PTR_LOOP_1050_5fc0 | PTR_LOOP_1050_5fbe) != 0) && ((param_2 | param_1) != 0) {
         str_index = get_string_index_1000_3da4(CONCAT22(param_2, param_1));
         loop {
-            u_var4 = (_local_8 >> 0x10);
-            i_var3 = _local_8;
-            if (((i_var3 + 2) | _local_8) == 0) {
+            // u_var4 = (_local_8 >> 0x10);
+            // i_var3 = _local_8;
+            if ((_local_8 + 2) | _local_8) == 0 {
                 break;
             }
             u_var2 = get_string_index_1000_3da4(CONCAT22((i_var3 + 2), _local_8));
-            if (((str_index < u_var2) && (*(*_local_8 + str_index) == '='))
+            if ((str_index < u_var2) && (*(*_local_8 + str_index) == '='))
                 && (
                     u_var1 = process_string_1000_3de8(
                         CONCAT22((i_var3 + 2), _local_8),
@@ -532,24 +529,24 @@ pub fn process_string_1000_3ec0(param_1: i32, param_2: *mut libc::c_char) -> u8 
                         str_index,
                     ),
                     CONCAT11(extraout_AH, u_var1) == 0,
-                ))
+                )
             {
                 return _local_8 + str_index + 0x1;
             }
             _local_8 = (_local_8 & 0xffff0000 | (i_var3 + 4));
         }
     }
-    return '\0';
+    return 0;
 }
 
 pub fn string_fn_1000_3f9c(
-    param_1: *mut libc::c_char,
-    param_2: *mut libc::c_char,
-    param_3: *mut libc::c_char,
-    param_4: *mut libc::c_char,
-    param_5: *mut libc::c_char,
+    param_1: String,
+    param_2: String,
+    param_3: String,
+    param_4: String,
+    param_5: String,
 ) -> u8 {
-    let pu_var1: *mut u8;
+    let pu_var1: Vec<u8>;
     let mut u_var2: u16;
     let mut unaff_bp: i32;
     char * *ppcStack16;
@@ -584,7 +581,7 @@ pub fn string_fn_1000_3f9c(
 }
 
 pub fn process_string_1000_440c(param_1: u16) {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut c_var2: u8;
     let u_var3: u8;
     let extraout_AH: u8;
@@ -592,7 +589,7 @@ pub fn process_string_1000_440c(param_1: u16) {
     let extraout_AH_00: u8;
     let extraout_AH_01: u8;
     let mut u_var5: i32;
-    let in_i16_2: *mut u8;
+    let in_i16_2: Vec<u8>;
     let mut in_i16_2_00: i32;
     let mut bVar6: bool;
     let mut u_var7: u16;
@@ -669,8 +666,8 @@ pub fn process_string_1000_440c(param_1: u16) {
     return;
 }
 
-pub fn process_string_1000_472c(in_string_1: *mut libc::c_char, in_char_2: u8) -> *mut u8 {
-    let pu_var1: *mut u8;
+pub fn process_string_1000_472c(in_string_1: String, in_char_2: u8) -> Vec<u8> {
+    let pu_var1: Vec<u8>;
     let mut u_var2: i32;
     let mut string2: u16;
     let mut string3: u16;
@@ -718,13 +715,13 @@ pub fn process_string_1000_472c(in_string_1: *mut libc::c_char, in_char_2: u8) -
 }
 
 pub fn process_string_1000_475e(
-    in_string_1: *mut libc::c_char,
-    in_string_2: *mut libc::c_char,
+    in_string_1: String,
+    in_string_2: String,
 ) -> i32 {
     let u_var1: u8;
     let char_2: u8;
     let byte_1: u8;
-    let string_1: *mut libc::c_char;
+    let string_1: String;
     let mut string_3: u16;
     let mut string_4: u16;
     let mut string_2: u32;
@@ -757,11 +754,11 @@ pub fn process_string_1000_475e(
 }
 
 pub fn process_string_1000_4d58(
-    in_string_1: *mut libc::c_char,
-    in_string_2: *mut libc::c_char,
-    param_3: *mut u8,
+    in_string_1: String,
+    in_string_2: String,
+    param_3: Vec<u8>,
     param_4: u32,
-    param_5: *mut u8,
+    param_5: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut u_var2: u16;
@@ -882,11 +879,11 @@ pub fn process_string_1000_4d58(
 }
 
 pub fn process_string_1000_545a(
-    in_string_1: *mut libc::c_char,
-    in_string_2: *mut libc::c_char,
+    in_string_1: String,
+    in_string_2: String,
 ) -> u8 {
     let mut char_3: u8;
-    let string_1: *mut libc::c_char;
+    let string_1: String;
     let mut string_2: u16;
     let mut string_3: u16;
     let mut string_4: u32;
@@ -977,10 +974,10 @@ pub unsafe fn process_string_1000_55b1(ctx: &mut AppContext) -> String {
     }
 }
 
-pub fn process_string_1008_049c(param_1: u16, param_2: u16, in_string_1: *mut libc::c_char) {
+pub fn process_string_1008_049c(param_1: u16, param_2: u16, in_string_1: String) {
     let mut str_index: u16;
-    let string_1: *mut libc::c_char;
-    let string_2: *mut libc::c_char;
+    let string_1: String;
+    let string_2: String;
     let extraout_var: u32;
 
     if (in_string_1 != 0x0) {
@@ -1000,7 +997,7 @@ pub fn process_string_1008_049c(param_1: u16, param_2: u16, in_string_1: *mut li
 }
 
 pub fn string_fn_1008_5fd8(param_1: *mut Struct613, param_2: u8) -> u8 {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let pi_var2: *mut i32;
     let in_dx: *mut Struct199;
     let mut unaff_ss: u16;
@@ -1036,36 +1033,32 @@ pub fn string_fn_1008_5fd8(param_1: *mut Struct613, param_2: u8) -> u8 {
     return local_a;
 }
 
-pub fn fn_1008_6048(in_string_1: *mut libc::c_char, param_2: u16, param_3: bool) -> u8 {
-    let mut cVar1: u8;
-    let mut local_AH_33: u8;
-    let pu_var2: *mut u8;
-    let i_var3: u16;
-    let mut i_var4: i32;
-    let mut ctx.stack_seg_reg: i32;
-    let mut local_10a: u16;
-    let mut local_108: u16;
-    let mut local_string_buf: [u8; 256];
-    // va_list va_args;
-    let mut local_4: i32;
+pub fn fn_1008_6048(ctx: &mut AppContext, in_string_1: String, param_2: u16, param_3: bool) -> u8 {
+    let mut c_var1: u8 = 0;
+    let mut pu_var2: Vec<u8> = Vec::new();
+    let mut i_var3: u16 = 0;
+    let mut i_var4: i32 = 0;
+    let mut u16_var5: u16 = 0;
+    let mut u16_var6: u16 = 0;
+    let mut string_var7: String = String::new();
 
-    if (g_string_1050_02ec != 0x0) {
-        pu_var2 = &stack0x0008;
-        if (u16_1050_02ee == 0xffff) {
-            cVar1 = process_string_1000_3ec0(0x2f4, &ctx.g_alloc_addr_1050_1050);
-            local_10a = CONCAT11(local_AH_33, cVar1);
-            pu_var2 = ((param_2 | local_10a) != 0);
+    if ctx.g_string_1050_02ec != 0x0 {
+        pu_var2 = stack0x0008;
+        if u16_1050_02ee == 0xffff {
+            c_var1 = process_string_1000_3ec0(ctx, 0x2f4, &ctx.g_alloc_addr_1050_1050);
+            u16_var5 = CONCAT11(ctx.ah_reg, c_var1);
+            pu_var2 = ((param_2 | u16_var5) != 0);
             u16_1050_02ee = pu_var2;
-            local_108 = param_2;
+            u16_var6 = param_2;
         }
         param_3 = pu_var2;
-        if (u16_1050_02ee != 0) {
+        if u16_1050_02ee != 0 {
             wvsprintf16(
                 &stack0x0008,
                 CONCAT22(in_string_1, ctx.stack_seg_reg),
-                CONCAT22(local_string_buf, (in_string_1 >> 0x10)),
+                CONCAT22(string_var7, (in_string_1 >> 0x10)),
             );
-            OutputDebugString16(CONCAT22(ctx.stack_seg_reg, local_string_buf));
+            OutputDebugString16(CONCAT22(ctx.stack_seg_reg, string_var7));
             i_var3 = OutputDebugString16(0x105002fa);
             param_3 = i_var3;
             if (_PTR_LOOP_1050_02f0 != 0) {
@@ -1084,12 +1077,12 @@ pub fn fn_1008_6048(in_string_1: *mut libc::c_char, param_2: u16, param_3: bool)
 }
 
 pub fn string_fn_1008_64c8(
-    param_1: *mut libc::c_char,
-    param_2: *mut libc::c_char,
-    param_3: *mut libc::c_char,
-    param_4: *mut libc::c_char,
+    param_1: String,
+    param_2: String,
+    param_3: String,
+    param_4: String,
 ) {
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut in_ax: i32;
     let in_dx: *mut Struct199;
     let mut local_DX_49: u16;
@@ -1140,7 +1133,7 @@ pub fn process_string_1008_7e4a() -> bool {
     let mut buf_size: i32;
     let local_AH_52: u8;
     
-    let in_stack_0000000a: *mut libc::c_char;
+    let in_stack_0000000a: String;
     let mut char_buf: u8;
 
     string_fn_1000_3f9c(
@@ -1162,7 +1155,7 @@ pub fn process_string_1008_7e4a() -> bool {
     return 0;
 }
 
-pub fn process_string_1008_9c86(param_1: u32, param_2: *mut libc::c_char, param_3: i32) {
+pub fn process_string_1008_9c86(param_1: u32, param_2: String, param_3: i32) {
     let mut u_var1: u16;
     let mut local_4: u16;
 
@@ -1175,7 +1168,7 @@ pub fn process_string_1008_9c86(param_1: u32, param_2: *mut libc::c_char, param_
 }
 
 pub fn load_string_switch_1008_a1f0(
-    str_buffer_1: *mut libc::c_char,
+    str_buffer_1: String,
     param_2: *mut u16,
     param_3: u32,
     param_4: u32,
@@ -1186,21 +1179,21 @@ pub fn load_string_switch_1008_a1f0(
     let mut u_var2: i32;
     let mut u_var3: u16;
     let paVar4: *mut Struct493;
-    let pcVar5: *mut libc::c_char;
-    let pcVar6: *mut libc::c_char;
+    let pcVar5: String;
+    let pcVar6: String;
     let local_DL_217: u8;
     
     
     let mut local_DX_469: u16;
     let mut local_DX_507: u16;
     let mut local_DX_1061: u16;
-    let string_base: *mut libc::c_char;
+    let string_base: String;
     let mut local_es_32: u16;
     let mut local_es_121: u16;
     let mut local_CS_1605: u16;
     
     let mut u_var7: u32;
-    let pp_var8: *mut pass1_struct_1;
+    let pp_var8: *mut Struct2111;
     let mut a: u16;
     let local_11e: u8;
     let local_11d: u8;
@@ -1687,7 +1680,7 @@ pub fn load_string_switch_1008_a1f0(
 }
 
 pub fn load_string_1008_a8f4(
-    param_1: *mut libc::c_char,
+    param_1: String,
     param_2: *mut u16,
     param_3: *mut u16,
     param_4: u32,
@@ -1740,7 +1733,7 @@ pub fn load_string_1008_b65a(param_1: u32, param_2: &mut string, param_3: u32) {
 // WARNING: Variable defined which should be unmapped: u16_d
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn wsprintf_func_1008_b69c(struct_a: *mut pass1_struct_1) {
+pub fn wsprintf_func_1008_b69c(struct_a: *mut Struct2111) {
     let struct_e_lo: *mut Struct199;
     let struct_e_a: *mut Struct199;
     let struct_c: *mut Struct915;
@@ -1749,8 +1742,8 @@ pub fn wsprintf_func_1008_b69c(struct_a: *mut pass1_struct_1) {
     let struct_e_b: *mut Struct199;
     let mut u16_a: u16;
     let mut u16_b: u16;
-    let struct_b: *mut pass1_struct_1;
-    let struct_b_hi: *mut pass1_struct_1;
+    let struct_b: *mut Struct2111;
+    let struct_b_hi: *mut Struct2111;
     let mut u16_c: u16;
     let struct_d: *mut Struct199;
     let mut u32_a: u32;
@@ -1834,7 +1827,7 @@ pub fn wsprintf_FUN_1008_b78a(param_1: u32) {
     let mut local_20a: u16;
     let mut local_208: u16;
     let mut local_206: u32;
-    let puStack514: *mut u8;
+    let puStack514: Vec<u8>;
     let mut va_args: [u8; 256];
     let mut local_6: u16;
     let mut local_4: u16;
@@ -1922,7 +1915,7 @@ pub fn wsprintf_1008_d1c6(in_struct_a: *mut pass1_struct_3, param_2: u32) {
     let mut local_8: u16;
     let mut temp_5fd6f85ef2: u32;
     u16 * *fn_ptr_1;
-    let puVar6: *mut u8;
+    let puVar6: Vec<u8>;
     let mut u_var7: u32;
     let mut bool_a: bool;
 
@@ -2192,13 +2185,13 @@ pub fn wsprintf_1008_d4f6(param_1: *mut Struct298, in_struct_b: *mut Struct298) 
 }
 
 pub fn modify_string_11d8_024f(param_1: u8, param_2: u16, param_3: u16) {
-    let pu8_var1: *mut u8;
+    let pu8_var1: Vec<u8>;
     let pi_var2: *mut i32;
     char * *ppc_var3;
     let pu_var4: *mut u32;
-    let pu_var5: *mut u8;
+    let pu_var5: Vec<u8>;
     byte * *ppbVar6;
-    let pcVar7: *mut libc::c_char;
+    let pcVar7: String;
     let puVar8: *mut u16;
     char * *ppc_var9;
     let mut cVar10: u8;
@@ -2221,9 +2214,9 @@ pub fn modify_string_11d8_024f(param_1: u8, param_2: u16, param_3: u16) {
     let pu_var26: *mut u32;
     let pi_var27: *mut i32;
     let mut local_BP__1: u16;
-    let unaff_si: *mut libc::c_char;
-    let pc_var29: *mut libc::c_char;
-    let unaff_DI: *mut libc::c_char;
+    let unaff_si: String;
+    let pc_var29: String;
+    let unaff_DI: String;
     let mut local_ES__1: u16;
     let mut local_DS__1: u16;
     let mut local_FS__1: u16;
@@ -2240,7 +2233,7 @@ pub fn modify_string_11d8_024f(param_1: u8, param_2: u16, param_3: u16) {
     let mut u_var24: i32;
     let mut b_var28: u8;
     let mut uVar30: u32;
-    let string_1: *mut libc::c_char;
+    let string_1: String;
 
     _local_3 = CONCAT21(local_BP__1, local_3);
     uVar30 = _local_3;
@@ -2582,12 +2575,12 @@ pub fn modify_string_11b8_02b9(param_1: u8, param_2: u16, param_3: u16) {
     let mut unaff_bp: i32;
     let mut unaff_si: i32;
     let mut unaff_DI: i32;
-    let local_DS__1: *mut u8;
-    let local_res0: *mut u8;
+    let local_DS__1: Vec<u8>;
+    let local_res0: Vec<u8>;
     let mut byte_1: u8;
-    let bytes_1: *mut u8;
+    let bytes_1: Vec<u8>;
     let mut char_3: u8;
-    let string_1: *mut libc::c_char;
+    let string_1: String;
 
     byte_3 = param_2 + *(param_3 + unaff_si + -0x7e);
     string_1 = (param_3 + unaff_si);
@@ -2684,11 +2677,11 @@ pub fn process_string_1010_184a(param_1: *mut u32, param_2: u32) {
     return;
 }
 
-pub fn string_fn_1010_2c34() -> *mut pass1_struct_1 {
-    let string_b: *mut libc::c_char;
+pub fn string_fn_1010_2c34() -> *mut Struct2111 {
+    let string_b: String;
     let mut u_var1: u16;
     let struct_a: *mut Struct199;
-    let out_buffer: *mut pass1_struct_1;
+    let out_buffer: *mut Struct2111;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_6: u16;
@@ -2716,7 +2709,7 @@ pub fn str_fn_1010_5286(param_1: u16, param_2: u16, param_1_00: u32) {
     let paVar2: *mut Struct493;
     let mut in_dx: i32;
     let struct_a: *mut Struct199;
-    let string_b: *mut libc::c_char;
+    let string_b: String;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_6: u16;
@@ -2785,9 +2778,9 @@ pub fn write_private_profile_str_1010_62ec(param_1: u32, param_2: u8) {
     return param_1;
 }
 
-pub fn string_fn_1010_8018(param_1: *mut Struct446, param_2: u16) {
+pub fn string_fn_1010_8018(param_1: &mut Struct446, param_2: u16) {
     let mut iVar1: i32;
-    let local_c: *mut Struct446;
+    let local_c: &mut Struct446;
     let mut uStack10: u16;
 
     if (((s_559_bmp_1050_1f9f + 1) + param_2 * 10) != 0) {
@@ -2819,14 +2812,16 @@ u32 __stdcall16far load_string_1010_847e(u16 offset_base,u16 segment,u16 resourc
   return CONCAT22(segment,offset_base + 0x682);
 }
 */
-pub fn load_string_1010_847e(ctx: &mut AppContext, offset_base: u16, segment: u16, resource_id: u16) -> String {
+pub fn load_string_1010_847e(ctx: &mut AppContext, address: &u32, resource_id: u16) -> String {
+    let mut buffer: String = String::new();
+    // address + 0x682
     LoadString16(
         ctx.g_h_instance_1050_038c,
         resource_id,
-        CONCAT22(segment, offset_base + 0x682),
+        &buffer,
         0x3ff
     );
-    return CONCAT22(segment, offset_base + 0x682);
+    return buffer;
 }
 
 pub fn load_str_1010_84ac(
@@ -2874,7 +2869,7 @@ pub fn wsprintf_1010_8c96(param_1: u32, param_2: &mut string, param_3: u32) {
     let mut u_var8: u16;
     let mut u_var9: u16;
     let mut unaff_ss: u16;
-    let pu_var10: *mut u8;
+    let pu_var10: Vec<u8>;
     let mut u_var11: u32;
     // va_list valist;
     let mut u_var12: u16;
@@ -3019,10 +3014,10 @@ pub fn wsprintf_1010_8c96(param_1: u32, param_2: &mut string, param_3: u32) {
 
 pub fn str_fn_1010_c446(param_1: u32, param_2: u32, param_3: u32) {
     let mut iVar1: i32;
-    let pc_var2: *mut libc::c_char;
+    let pc_var2: String;
     let in_dx: *mut Struct199;
     let mut u_var3: u32;
-    let pcVar4: *mut libc::c_char;
+    let pcVar4: String;
     let mut a: u16;
     let mut b: u16;
     let mut in_resource_id: u16;
@@ -3089,7 +3084,7 @@ pub fn str_fn_1010_c446(param_1: u32, param_2: u32, param_3: u32) {
     return;
 }
 
-pub fn load_string_1010_de78(param_1: *mut libc::c_char, param_2: u32) {
+pub fn load_string_1010_de78(param_1: String, param_2: u32) {
     let mut in_ax: i32;
     let mut in_resource_id: u16;
 
@@ -3209,8 +3204,8 @@ pub fn wsprintf_1018_35b0(param_1: *mut Struct298) {
 
 pub fn string_fn_1018_3b9e(in_struct_a: *mut Struct298, in_struct_b: *mut Struct566) {
     let ppVar1: *mut pass1_struct_2;
-    let local_AX_89: *mut u8;
-    let ptr_a_1: *mut u8;
+    let local_AX_89: Vec<u8>;
+    let ptr_a_1: Vec<u8>;
     let mut u_var2: u16;
     let struct_a_2: *mut Struct298;
     let struct_a_1: *mut Struct298;
@@ -3300,7 +3295,7 @@ pub fn string_fn_1018_3b9e(in_struct_a: *mut Struct298, in_struct_b: *mut Struct
     return local_6;
 }
 
-pub fn pass1_1040_29c2(param_1: *mut Struct346, param_2: u32, param_3: *mut u8) -> *mut Struct346 {
+pub fn pass1_1040_29c2(param_1: *mut Struct346, param_2: u32, param_3: Vec<u8>) -> *mut Struct346 {
     let mut iVar1: i32;
     let mut u_var2: u16;
     let mut u_var3: u32;
@@ -3430,7 +3425,7 @@ pub fn pass1_1038_0ba6(param_1: *mut Struct500) -> *mut Struct500 {
     let local_bx_15: *mut Struct1053;
     let mut unaff_bp: u16;
     let mut u_var1: u16;
-    let ppVar2: *mut pass1_struct_1;
+    let ppVar2: *mut Struct2111;
 
     pass1_1028_d1dc(param_1, (s_fem36_wav_1050_270c + 3));
     u_var1 = (param_1 >> 0x10);
@@ -3461,7 +3456,7 @@ pub fn pass1_1030_eb50(struct_a: *mut Struct500) -> *mut Struct500 {
 
 pub fn pas1_1030_e8a0(param_1: *mut Struct500, param_2: u32, param_3: u16, param_4: u32) {
     let local_bx_19: *mut Struct1035;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
 
     pass1_1028_d1dc(param_1, (s_fem36_wav_1050_270c + 4));
     pc_var1 = (param_1 >> 0x10);
@@ -3511,7 +3506,7 @@ pub fn pass1_1030_e63e(param_1: *mut Struct500, param_2: u16) -> *mut Struct500 
 
 pub fn pass1_1030_e4fa(param_1: *mut Struct500, param_2: u32) {
     let local_bx_19: *mut Struct500;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
 
     pass1_1028_d1dc(param_1, 0x3e80);
     pc_var1 = (param_1 >> 0x10);
@@ -3540,7 +3535,7 @@ pub fn pass1_1030_e09e(param_1: *mut Struct500) -> *mut Struct500 {
     return param_1;
 }
 
-pub fn pass1_1030_dfcc(param_1: *mut u8) -> u16 {
+pub fn pass1_1030_dfcc(param_1: Vec<u8>) -> u16 {
     let mut local_4: u16;
     let temp_5f890d5eff: *mut Struct1016;
 
@@ -3719,7 +3714,7 @@ pub fn pass1_1030_bb0e(param_1: u32, param_2: *mut Struct493) {
 }
 
 pub fn wvsprintf_FUN_1030_840a(param_1: u32) {
-    let pu_var1: *mut u8;
+    let pu_var1: Vec<u8>;
     let mut in_dx: u16;
     let mut unaff_ss: u16;
     let mut local_106: [u8; 256];
@@ -3763,16 +3758,13 @@ pub fn pass1_1030_5ff6(struct_a: *mut Struct912) {
     let mut u_var3: u32;
     let in_ax: *mut u16;
     let ppVar4: *mut pass1_struct_2;
-    let pcVar5: *mut libc::c_char;
+    let pcVar5: String;
     let mut u_var6: u32;
-    let in_dx: *mut Struct199;
     let pa_var7: *mut Struct199;
     
-    let ctx.dx_reg: *mut Struct199;
     let struct_b: *mut Struct912;
     let struct_b_hi: *mut Struct912;
     let mut u_var8: u16;
-    let unaff_ss: *mut libc::c_char;
     let mut local_6c: [u8; 88];
     let mut local_14: u32;
     let mut local_10: u16;
@@ -3847,7 +3839,7 @@ pub fn pass1_1030_5ff6(struct_a: *mut Struct912) {
 
 pub fn pass1_1030_532e(param_1: *mut Struct500, param_2: u32) {
     let local_struct_1: *mut Struct500;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
     let mut local_a: u16;
 
     pass1_1028_d1dc(param_1, 0x32c7);
@@ -3867,8 +3859,8 @@ pub fn pass1_1030_532e(param_1: *mut Struct500, param_2: u32) {
 }
 
 pub fn pass1_1030_521c(struct_a: *mut Struct500, param_2: u32) {
-    let struct_b: *mut Struct894;
-    let pc_var1: *mut libc::c_char;
+    let struct_b: &Struct894;
+    let pc_var1: String;
 
     pass1_1028_d1dc(struct_a, 0x32c7);
     pc_var1 = (struct_a >> 0x10);
@@ -3918,7 +3910,7 @@ pub fn pass1_1030_4dbc(param_1: u32, param_2: u32, param_3: libc::c_long) {
     let pu_var2: *mut u32;
     let lVar3: u32;
     let mut u_var4: i32;
-    let local_bx_9: *mut Struct891;
+    let local_bx_9: &Struct891;
     let mut u_var5: u16;
     let mut local_6: u32;
 
@@ -4129,7 +4121,7 @@ pub fn pass1_1028_933c(
     param_8: u32,
 ) {
     let local_bx_24: *mut Struct500;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
 
     pass1_1028_d1dc(param_1, 0x3e8);
     pc_var1 = (param_1 >> 0x10);
@@ -4169,7 +4161,7 @@ pub fn pass1_1028_87f0(
     param_8: u32,
 ) {
     let local_bx_24: *mut Struct500;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
 
     pass1_1028_d1dc(param_1, 0x3e8);
     pc_var1 = (param_1 >> 0x10);
@@ -4209,7 +4201,7 @@ pub fn pass1_1028_8888(
     param_8: u32,
 ) {
     let local_bx_24: *mut Struct500;
-    let pc_var1: *mut libc::c_char;
+    let pc_var1: String;
 
     pass1_1028_d1dc(param_1, 0x3e8);
     pc_var1 = (param_1 >> 0x10);
@@ -4263,7 +4255,7 @@ pub fn pass1_1028_81aa(param_1: *mut Struct500) -> *mut Struct500 {
 pub fn pass1_1028_767e() {
     let paVar1: *mut Struct493;
     let mut in_dx: u16;
-    let ppVar2: *mut pass1_struct_1;
+    let ppVar2: *mut Struct2111;
     let mut in_stack_0000ffec: u16;
     let mut local_6: u16;
     let mut local_4: u16;

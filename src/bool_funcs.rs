@@ -41,7 +41,7 @@ pub fn check_and_clear_global_1000_1f68(ctx: &mut AppContext) {
 // WARNING: Removing unreachable block (ram,0x10002018)
 
 pub fn check_and_set_global_1000_1fea(ctx: &mut AppContext) -> u16 {
-    let pu_var1: *mut u8;
+    let pu_var1: Vec<u8>;
     let mut b_var2: bool;
 
     pu_var1 = ctx.PTR_LOOP_1050_5f22 + 1;

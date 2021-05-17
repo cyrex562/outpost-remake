@@ -8542,7 +8542,7 @@ pub struct Struct451 {
     pub field_0x679: u8,
     pub field_0x67a: u8,
     pub field_0x67b: u8,
-    pub field_0x67c: *mut libc::c_char,
+    pub field_0x67c: String,
     pub field_0x67e: u8,
     pub field_0x67f: u8,
     pub field_0x680: u16,

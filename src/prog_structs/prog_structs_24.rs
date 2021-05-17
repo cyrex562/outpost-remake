@@ -327,10 +327,10 @@ pub struct Struct1172 {
     pub field_0x91: u8,
     pub field_0x92: u8,
     pub field_0x93: u8,
-    pub field_0x94: *mut pass1_struct_1,
+    pub field_0x94: *mut Struct2111,
 }
 
-pub struct pass1_struct_1 {
+pub struct Struct2111 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u8,
@@ -366,7 +366,7 @@ pub struct pass1_struct_1 {
 pub struct Struct1173 {
     pub field_0x0: u8,
     pub field_0x1: u8,
-    pub field_0x2: *mut u8,
+    pub field_0x2: Vec<u8>,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub field_0x6: u8,
@@ -1575,7 +1575,7 @@ pub struct Struct708 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
-    pub field_0x4: *mut Struct44,
+    pub field_0x4: &mut Struct44,
 }
 
 pub struct Struct904 {}
@@ -1973,8 +1973,8 @@ pub struct Struct8 {
 }
 
 pub struct Struct103 {
-    ptr_1_lo: *mut u8,
-    ptr_1_hi: *mut u8,
+    ptr_1_lo: Vec<u8>,
+    ptr_1_hi: Vec<u8>,
     pub field_0x4: u16,
     pub field_0x6: u32,
     pub field_0xa: u32,
@@ -1997,10 +1997,10 @@ pub struct Struct482 {
 pub struct Struct1144 {
     pub field_0x0: u16,
     pub field_0x2: u16,
-    pub field_0x4: *mut u8,
-    pub field_0x8: *mut u8,
+    pub field_0x4: Vec<u8>,
+    pub field_0x8: Vec<u8>,
     pub field_0xc: u16,
-    pub field_0xe: *mut u8,
+    pub field_0xe: Vec<u8>,
     pub field_0x12: u16,
     pub field_0x14: u16,
     pub field_0x16: u32,

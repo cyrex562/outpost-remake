@@ -95,7 +95,7 @@ pub fn switch_statement_1008_73ea(param_1: u16, param_2: u16, param_3: u16) -> u
 pub fn set_timer_1008_91ba(param_1: *mut u16) -> *mut u16 {
     let mut u_var1: u16;
     let local_bx_4: *mut Struct76;
-    let pu_var2: *mut u8;
+    let pu_var2: Vec<u8>;
 
     pu_var2 = (param_1 >> 0x10);
     local_bx_4 = param_1;

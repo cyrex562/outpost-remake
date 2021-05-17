@@ -109,7 +109,7 @@ pub fn modify_list_1008_8168(in_list: *mut u16) {
     return;
 }
 
-pub fn modify_list_1008_87a2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub fn modify_list_1008_87a2(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     modify_list_1008_8168(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);

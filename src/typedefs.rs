@@ -1,3 +1,5 @@
+use std::convert::From;
+
 // typedef UINT16 HANDLE16;
 pub type HANDLE16 = u16;
 
@@ -15,6 +17,9 @@ pub type WPARAM16 = u16;
 
 //typedef pub HWND16: HANDLE16,
 pub type HWND16 = HANDLE16;
+pub fn hwnd16_from_le_bytes(bytes: [u8;2]) -> HWND16 {
+    u16::from_le_bytes(bytes) as HWND16
+}
 
 // typedef pub HMODULE16: HANDLE16,
 pub type HMODULE16 = HANDLE16;

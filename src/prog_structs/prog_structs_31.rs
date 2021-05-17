@@ -6310,7 +6310,7 @@ pub struct Struct45 {
     pub field_0x11: u8,
     pub field_0x12: u8,
     pub field_0x13: u8,
-    pub field_0x14: *mut u8,
+    pub field_0x14: Vec<u8>,
     pub object_0x18: HGDIOBJ16,
     pub object_0x1a: HGDIOBJ16,
     pub palette: HPALETTE16,
@@ -6336,9 +6336,9 @@ pub struct Struct932 {
     pub field_0xf: u8,
     pub field_0x10: u8,
     pub field_0x11: u8,
-    pub field_0x12: *mut libc::c_char,
-    pub field_0x14: *mut libc::c_char,
-    pub field_0x16: *mut libc::c_char,
+    pub field_0x12: String,
+    pub field_0x14: String,
+    pub field_0x16: String,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
     pub field_0x1c: u8,
@@ -6346,13 +6346,13 @@ pub struct Struct932 {
     field_0x1e: *mut u32,
     pub field_0x22: u32,
     pub field_0x26: u32,
-    pub field_0x2a: *mut libc::c_char,
+    pub field_0x2a: String,
     pub field_0x2e: u8,
     pub field_0x2f: u8,
     pub field_0x30: u8,
     pub field_0x31: u8,
-    pub field_0x32: *mut libc::c_char,
-    pub field_0x34: *mut libc::c_char,
+    pub field_0x32: String,
+    pub field_0x34: String,
     pub field_0x36: u32,
     pub field_0x3a: u32,
     pub field_0x3e: u32,
@@ -6443,7 +6443,7 @@ pub struct Struct484 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: *mut u8,
+    pub field_0xe: Vec<u8>,
 }
 
 pub struct Struct963 {
@@ -7823,7 +7823,7 @@ pub struct Struct130 {
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    fn_ptr_0x4: *mut libc::c_void,
+    pub(crate) fn_ptr_0x4: *mut libc::c_void,
     pub field_0x6: i32,
 }
 
@@ -9366,7 +9366,7 @@ pub struct Struct15 {
     pub field_0x11: u8,
     pub field_0x12: u8,
     pub field_0x13: u8,
-    pub field_0x14: *mut u8,
+    pub field_0x14: Vec<u8>,
     pub field_0x16: u16,
     pub field_0x18: u32,
     pub field_0x1c: u32,
@@ -9997,16 +9997,16 @@ pub struct Struct406 {
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut u8,
+    pub field_0x4: Vec<u8>,
     pub field_0x6: u8,
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: *mut u8,
-    pub field_0xe: *mut u8,
-    pub field_0x10: *mut u8,
+    pub field_0xc: Vec<u8>,
+    pub field_0xe: Vec<u8>,
+    pub field_0x10: Vec<u8>,
 }
 
 pub struct Struct383 {
@@ -10115,7 +10115,7 @@ pub struct Struct379 {
     pub field_0x25: u8,
     pub field_0x26: u8,
     pub field_0x27: u8,
-    pub field_0x28: *mut Struct44,
+    pub field_0x28: &mut Struct44,
 }
 
 pub struct Struct353 {
@@ -11134,7 +11134,7 @@ pub struct Struct305 {
     pub field_0x4: u32,
     pub field_0x8: u32,
     pub field_0xc: u16,
-    pub field_0xe: *mut u8,
+    pub field_0xe: Vec<u8>,
     pub field_0x10: u16,
 }
 

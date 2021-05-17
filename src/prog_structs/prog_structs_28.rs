@@ -4730,7 +4730,7 @@ pub struct Struct1084 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: *mut u8,
+    pub field_0xc: Vec<u8>,
     pub field_0xe: u16,
     pub field_0x10: u32,
     pub field_0x14: u32,
@@ -5206,7 +5206,7 @@ pub struct Struct1084 {
     pub field_0x1f5: u8,
     pub field_0x1f6: i32,
     pub field_0x1f8: i32,
-    pub field_0x1fa: *mut u8,
+    pub field_0x1fa: Vec<u8>,
     pub field_0x1fc: *mut Struct199,
     pub field_0x1fe: u16,
     pub field_0x200: u32,
@@ -8084,7 +8084,7 @@ pub struct Struct440 {
     pub field_0x1f: u8,
 }
 
-pub struct file_object {
+pub struct FileObject {
     pub path: String,
     pub file: HFILE16,
 }
@@ -9364,7 +9364,7 @@ pub struct Struct1001 {
     pub field_0x1e: u8,
     pub field_0x1f: u8,
     pub field_0x20: *mut Struct1000,
-    pub field_0x22: *mut u8,
+    pub field_0x22: Vec<u8>,
     pub field_0x24: u16,
 }
 
@@ -9625,7 +9625,7 @@ pub struct Struct770 {
     pub field_0x25: u8,
     pub field_0x26: u8,
     pub field_0x27: u8,
-    pub field_0x28: *mut *mut u8,
+    pub field_0x28: *mut Vec<u8>,
 }
 
 pub struct Struct1013 {

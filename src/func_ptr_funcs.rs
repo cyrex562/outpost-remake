@@ -1,9 +1,14 @@
 use crate::other_funcs::empty_fn_1000_55ac;
-use crate::sys_funcs::swi;
+use crate::winapi_funcs::swi;
 use crate::util::SUB42;
+use crate::prog_structs::prog_structs_2::Struct662;
+use crate::prog_structs::prog_structs_6::Struct672;
+use crate::prog_structs::prog_structs_28::Struct202;
+use crate::pass_funcs::pass1_fn_1000_52be;
+use crate::app_context::AppContext;
 
-pub fn set_fn_ptr_1000_17e8(param_1: *mut u8, param_2: *mut u8) -> *mut u8 {
-    let pu_var1: *mut u8;
+pub fn set_fn_ptr_1000_17e8(param_1: Vec<u8>, param_2: Vec<u8>) -> Vec<u8> {
+    let pu_var1: Vec<u8>;
     let mut local_4: u16;
 
     pu_var1 = ctx.func_ptr_1050_5f34;
@@ -14,7 +19,7 @@ pub fn set_fn_ptr_1000_17e8(param_1: *mut u8, param_2: *mut u8) -> *mut u8 {
 
 // WARNING: Removing unreachable block (ram,0x10002557)
 
-pub fn call_fn_ptr_1000_24cd(a: &fn()) {
+pub fn call_fn_ptr_1000_24cd(ctx: &mut AppContext, fn_ptr_param_1: Option<&fn()>) {
     // let pc_var1: *mut code;
     // let mut unaff_bp: i32;
     let mut i_var2: i32;
@@ -28,9 +33,9 @@ pub fn call_fn_ptr_1000_24cd(a: &fn()) {
     // u_var5 = &ctx.g_alloc_addr_1050_1050;
     ctx.PTR_LOOP_1050_5fc9 = 0;
     u_var3 = 0;
-    call_fn_ptr_1000_2594(0, &ctx.g_alloc_addr_1050_1050, i_var2);
+    call_fn_ptr_1000_2594(ctx, 0, &ctx.g_alloc_addr_1050_1050, i_var2);
     call_fn_ptr_1000_2594();
-    empty_fn_1000_55ac(a);
+    empty_fn_1000_55ac(fn_ptr_param_1);
     call_fn_ptr_1000_2594(u_var3, u_var5, i_var2);
     cVar4 = (u_var3 >> 8) as u8;
     call_fn_ptr_1000_2594();
@@ -78,7 +83,7 @@ pub fn call_fn_ptr_1000_256b() {
     }
 }
 
-pub fn call_fn_ptr_1000_2594(ctx: &mut AppContext, a: u16, b: u16, c: 16) {
+pub fn call_fn_ptr_1000_2594(ctx: &mut AppContext, a: u16, b: u16, c: u16) {
     let pu_var1: *mut u32;
     //let unaff_si: *mut u32;
     //let unaff_DI: *mut u32;
@@ -177,7 +182,7 @@ pub fn call_fn_ptr_1000_5586(// in_fn_ptr_1: &mut Vec<u8>,
 
 pub fn call_fn_ptr_1008_64a2(param_1: *mut u32) {
     let mut u_var1: i32;
-    let fn_ptr_1: fn() -> *mut u8;
+    let fn_ptr_1: fn() -> Vec<u8>;
 
     u_var1 = (param_1 + 2);
     unsafe {
@@ -191,7 +196,7 @@ pub fn call_fn_ptr_1008_64a2(param_1: *mut u32) {
 pub fn call_fn_ptr_1008_6b2e(param_1: *mut Struct202) {
     let local_bx_3: *mut Struct202;
     let mut local_es_3: u16;
-    let fn_ptr_1: *mut *mut u8;
+    let fn_ptr_1: *mut Vec<u8>;
 
     local_es_3 = (param_1 >> 0x10);
     local_bx_3 = param_1;
@@ -248,7 +253,7 @@ pub fn pass1_1040_692e(param_1: *mut u32) {
     }
 }
 
-pub fn pass1_1038_927c(param_1: *mut *mut u8) {
+pub fn pass1_1038_927c(param_1: *mut Vec<u8>) {
     let pp_var1: fn();
 
     pp_var1 = (param_1 + 0x74);
@@ -256,7 +261,7 @@ pub fn pass1_1038_927c(param_1: *mut *mut u8) {
     return;
 }
 
-pub fn pass1_1038_7a5a(param_1: *mut *mut u8) {
+pub fn pass1_1038_7a5a(param_1: *mut Vec<u8>) {
     let pp_var1: fn();
 
     pp_var1 = (param_1 + 4);
@@ -264,7 +269,7 @@ pub fn pass1_1038_7a5a(param_1: *mut *mut u8) {
     return;
 }
 
-pub fn call_fn_ptr_1020_8106(param_1: *mut u8) {
+pub fn call_fn_ptr_1020_8106(param_1: Vec<u8>) {
     let fn_ptr_1_1: fn();
 
     fn_ptr_1_1 = ((param_1 + 4) + 0x60);

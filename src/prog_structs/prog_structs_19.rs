@@ -2345,7 +2345,7 @@ pub struct Struct500 {
     pub b: u16,
     pub c: u16,
     pub d: u16,
-    pub field_0x8: *mut libc::c_char,
+    pub field_0x8: String,
     pub field_0xa: u8,
     pub field_0xb: u8,
     pub field_0xc: u8,

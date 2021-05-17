@@ -1,55 +1,56 @@
 use crate::{defines::{
     AppContext, Struct304, Struct376, Struct44, Struct79, Struct80, Struct81, Struct83,
     Struct84, Struct85,
-}, err_funcs::error_check_1000_17ce, pass4_funcs::pass1_1030_1312, pass5_funcs::pass1_1030_ce2e, pass8_funcs::pass1_1010_1d80, pass_funcs::{
+}, err_funcs::error_check_1000_17ce, mixed_fn_1010_830a, pass4_funcs::pass1_1030_1312, pass5_funcs::pass1_1030_ce2e, pass8_funcs::pass1_1010_1d80, pass_funcs::{
     pass1_1008_4cdc, pass1_1008_52fc, pass1_1008_5784, pass1_1008_57c4, pass1_fn_1008_60e8,
-}, util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, ZEXT24}, mixed_fn_1010_830a};
+}, util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, ZEXT24}};
 use crate::app_context::AppContext;
-use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
-use crate::prog_structs::prog_structs_24::{pass1_struct_1, Struct1144, Struct1172, Struct354, Struct384, Struct103, Struct182};
-use crate::mem_funcs::{Address, alloc_mem_1008_909c, alloc_mem_1000_167a, free_mem_1000_1b9a, alloc_mem_1000_010c, get_mem_sz_1000_1532, alloc_mem_1000_131c, alloc_mem_1000_1708};
-use crate::prog_structs::prog_structs_7::{Struct376, Struct44, Struct372, Struct629};
-use crate::draw::{process_struct_1020_1738, load_cursor_1020_7f7a};
-use crate::prog_structs::prog_structs_8::{Struct649, Struct68, Struct302, Struct108};
-use crate::other_funcs::{zero_list_1008_3e38, return_1000_214a, return_one_1000_2146};
-use crate::prog_structs::prog_structs_2::{Struct660, Struct199, Struct1054, Struct413, Struct296};
-use crate::prog_structs::prog_structs_13::{Struct880, Struct342};
-use crate::prog_structs::prog_structs_5::Struct881;
-use crate::prog_structs::prog_structs_25::{Struct882, Struct65, Struct64, Struct402, Struct152, Struct85, Struct83, Struct84, Struct81, Struct80, Struct79};
-use crate::prog_structs::prog_structs_14::Struct893;
-use crate::util::{SBORROW2, CARRY1, SBORROW1, SUB42, CONCAT31, LOCK};
-use crate::prog_structs::prog_structs_1::{Struct104, Struct552, Struct393};
-use crate::prog_structs::prog_structs_9::{Struct1019, Struct1072, Struct636, Struct209};
-use crate::prog_structs::prog_structs_23::{Struct1022, Struct1037, Struct341, Struct210};
-use crate::prog_structs::prog_structs_16::{Struct1023, Struct493, Struct151};
-use crate::prog_structs::prog_structs_17::{Struct1026, Struct1055, Struct1175};
-use crate::prog_structs::prog_structs_29::{Struct1025, Struct1027, Struct1030, Struct1033, Struct1032, Struct1031, Struct1039, Struct1038, Struct310, Struct314, Struct412, Struct375, Struct114, Struct336, Struct216, Struct214, Struct105};
-use crate::prog_structs::prog_structs_27::{Struct1029, Struct344, Struct298, Struct186};
-use crate::prog_structs::prog_structs_28::{Struct1034, Struct1040, Struct1043, Struct1044, Struct1048, Struct1047, Struct1046, Struct1056, Struct1057, Struct1074, Struct1071, Struct346, Struct357, Struct464, Struct434, Struct377};
-use crate::prog_structs::prog_structs_6::Struct1041;
-use crate::prog_structs::prog_structs_18::{Struct1042, Struct391, Struct568, Struct195, Struct180};
-use crate::prog_structs::prog_structs_12::{Struct1049, Struct460, Struct102, Struct94};
-use crate::prog_structs::prog_structs_20::{Struct1073, Struct508, Struct388, Struct514};
-use crate::prog_structs::prog_structs_15::Struct1169;
-use crate::sys_funcs::{process_struct_1040_8478, GetSystemMetrics16, get_sys_metrics_1018_4b1e, swi};
-use crate::string_funcs::{load_string_1010_847e, copy_string_1000_3d3e, load_str_1010_84ac, pass1_1020_c0ca, big_switch_statement_1020_c222, big_switch_statement_1020_bd80};
-use crate::ui_funcs::pass1_1038_af40;
-use crate::pass8_funcs::{pass1_1010_038e, pass1_1010_041a, pass1_1010_0538, pass1_1010_65d0, pass1_1010_d710, pass1_1010_d5ae, pass1_1010_d448, pass1_1010_d24a, pass1_1010_cf36, pass1_1010_cc56, pass1_1010_c864, pass1_1008_ec72, pass1_1010_383a, pass1_1010_37d4};
-use crate::pass_funcs::{pass1_1008_4d84, pass1_1000_4906, pass1_1008_3e94, pass1_1008_3e54, pass1_1040_c54a, pass1_1008_5b12, pass1_1008_c6fa, pass1_1008_3e76, pass1_1008_5236, pass1_1008_5134, pass1_1008_687a, pass1_fn_1000_2fa4, pass1_fn_1000_52be};
-use crate::pass7_funcs::{pass1_1040_5d12, pass1_1018_209c, pass1_1018_4b78, pass1_1018_4790, pass1_1018_48b0, pass1_1018_4920, pass1_1018_47c8, pass1_1018_4dce, pass1_1018_4cda};
-use crate::prog_structs::prog_structs_11::{Struct355, Struct475, Struct95};
-use crate::prog_structs::prog_structs_31::{Struct352, Struct474, Struct438, Struct437, Struct436, Struct405, Struct316, Struct303, Struct191, Struct188, Struct107, Struct155, Struct127};
-use crate::list_funcs::zero_list_1008_6c90;
 use crate::big_funcs::call_big_fn_1010_c7e2;
-use crate::pass6_funcs::{pass1_1038_4d28, pass1_1038_540a};
-use crate::pass4_funcs::{pass1_1028_e1ec, pass1_1028_e4ec, pass1_1028_dc52};
-use crate::pass5_funcs::pass1_1030_1cd8;
-use crate::prog_structs::prog_structs_30::{Struct435, Struct304, Struct190, Struct106, Struct154};
-use crate::prog_structs::prog_structs_26::{Struct392, Struct97, Struct96};
-use crate::prog_structs::prog_structs_21::Struct297;
-use crate::prog_structs::prog_structs_4::Struct217;
-use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_16ee, invoke_error_handler_1000_1e61, _SHI_INVOKEERRORHANDLER1};
 use crate::bool_funcs::check_flag_1000_1ab0;
+use crate::draw::{load_cursor_1020_7f7a, process_struct_1020_1738};
+use crate::err_funcs::{_SHI_INVOKEERRORHANDLER1, error_check_1000_0dc6, error_check_1000_16ee, invoke_error_handler_1000_1e61};
+use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
+use crate::list_funcs::zero_list_1008_6c90;
+use crate::mem_funcs::{Address, alloc_mem_1000_010c, alloc_mem_1000_131c, alloc_mem_1000_167a, alloc_mem_1000_1708, alloc_mem_1008_909c, free_mem_1000_1b9a, get_mem_sz_1000_1532};
+use crate::other_funcs::{return_1000_214a, return_one_1000_2146, zero_list_1008_3e38};
+use crate::pass4_funcs::{pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e4ec};
+use crate::pass5_funcs::pass1_1030_1cd8;
+use crate::pass6_funcs::{pass1_1038_4d28, pass1_1038_540a};
+use crate::pass7_funcs::{pass1_1018_209c, pass1_1018_4790, pass1_1018_47c8, pass1_1018_48b0, pass1_1018_4920, pass1_1018_4b78, pass1_1018_4cda, pass1_1018_4dce, pass1_1040_5d12};
+use crate::pass8_funcs::{pass1_1008_ec72, pass1_1010_038e, pass1_1010_041a, pass1_1010_0538, pass1_1010_37d4, pass1_1010_383a, pass1_1010_65d0, pass1_1010_c864, pass1_1010_cc56, pass1_1010_cf36, pass1_1010_d24a, pass1_1010_d448, pass1_1010_d5ae, pass1_1010_d710};
+use crate::pass_funcs::{pass1_1000_4906, pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_4d84, pass1_1008_5134, pass1_1008_5236, pass1_1008_5b12, pass1_1008_687a, pass1_1008_c6fa, pass1_1040_c54a, pass1_fn_1000_2fa4, pass1_fn_1000_52be};
+use crate::prog_structs::prog_structs_1::{Struct104, Struct393, Struct552};
+use crate::prog_structs::prog_structs_11::{Struct355, Struct475, Struct95};
+use crate::prog_structs::prog_structs_12::{Struct102, Struct1049, Struct460, Struct94};
+use crate::prog_structs::prog_structs_13::{Struct342, Struct880};
+use crate::prog_structs::prog_structs_14::Struct893;
+use crate::prog_structs::prog_structs_15::Struct1169;
+use crate::prog_structs::prog_structs_16::{Struct1023, Struct151, Struct493};
+use crate::prog_structs::prog_structs_17::{Struct1026, Struct1055, Struct1175};
+use crate::prog_structs::prog_structs_18::{Struct1042, Struct180, Struct195, Struct391, Struct568};
+use crate::prog_structs::prog_structs_2::{Struct1054, Struct199, Struct296, Struct413, Struct660};
+use crate::prog_structs::prog_structs_20::{Struct1073, Struct388, Struct508, Struct514};
+use crate::prog_structs::prog_structs_21::Struct297;
+use crate::prog_structs::prog_structs_23::{Struct1022, Struct1037, Struct210, Struct341};
+use crate::prog_structs::prog_structs_24::{Struct2111, Struct103, Struct1144, Struct1172, Struct182, Struct354, Struct384};
+use crate::prog_structs::prog_structs_25::{Struct152, Struct402, Struct64, Struct65, Struct79, Struct80, Struct81, Struct83, Struct84, Struct85, Struct882};
+use crate::prog_structs::prog_structs_26::{Struct392, Struct96, Struct97};
+use crate::prog_structs::prog_structs_27::{Struct1029, Struct186, Struct298, Struct344};
+use crate::prog_structs::prog_structs_28::{Struct1034, Struct1040, Struct1043, Struct1044, Struct1046, Struct1047, Struct1048, Struct1056, Struct1057, Struct1071, Struct1074, Struct346, Struct357, Struct377, Struct434, Struct464};
+use crate::prog_structs::prog_structs_29::{Struct1025, Struct1027, Struct1030, Struct1031, Struct1032, Struct1033, Struct1038, Struct1039, Struct105, Struct114, Struct214, Struct216, Struct310, Struct314, Struct336, Struct375, Struct412};
+use crate::prog_structs::prog_structs_30::{Struct106, Struct154, Struct190, Struct304, Struct435};
+use crate::prog_structs::prog_structs_31::{Struct107, Struct127, Struct155, Struct188, Struct191, Struct303, Struct316, Struct352, Struct405, Struct436, Struct437, Struct438, Struct474};
+use crate::prog_structs::prog_structs_4::Struct217;
+use crate::prog_structs::prog_structs_5::Struct881;
+use crate::prog_structs::prog_structs_6::Struct1041;
+use crate::prog_structs::prog_structs_7::{Struct372, Struct376, Struct44, Struct629};
+use crate::prog_structs::prog_structs_8::{Struct108, Struct302, Struct649, Struct68};
+use crate::prog_structs::prog_structs_9::{Struct1019, Struct1072, Struct209, Struct636};
+use crate::string_funcs::{big_switch_statement_1020_bd80, big_switch_statement_1020_c222, copy_string_1000_3d3e, load_str_1010_84ac, load_string_1010_847e, pass1_1020_c0ca};
+use crate::sys_funcs::{get_sys_metrics_1018_4b1e, process_struct_1040_8478};
+use crate::ui_funcs::pass1_1038_af40;
+use crate::util::{CARRY1, CONCAT31, LOCK, SBORROW1, SBORROW2, SUB42};
+use crate::winapi_funcs::{GetSystemMetrics16, swi};
 
 // WARNING: Variable defined which should be unmapped: local_4
 
@@ -136,7 +137,7 @@ pub fn set_struct_1000_09ca(ctx: &mut AppContext) -> u32 {
 pub fn struct_fn_1000_115c(param_1: u16, param_2: u16) -> u16 {
     let paVar1: *mut Struct127;
     let pu_var2: *mut u32;
-    let pbVar3: *mut u8;
+    let pbVar3: Vec<u8>;
     let paVar4: *mut Struct127;
     let in_bx: *mut u32;
     let pu_var5: *mut u32;
@@ -230,7 +231,7 @@ pub fn struct_fn_1000_160a(ctx: &mut AppContext) -> Address<Struct94> {
     return ctx._g_Struct94_ptr_1;
 }
 
-pub fn process_struct_1000_179c(param_1: u16, struct_a: *mut Struct199) {
+pub fn process_struct_1000_179c(param_1: u16, struct_a: &mut Struct199) {
     let u16_ptr_1: *mut u16;
     let mut u16_ptr_2: u16;
     let mut local_4: u16;
@@ -259,7 +260,7 @@ pub fn init_struct_1000_1902(param_1: Option<&mut Address<Struct94>>, param_2: u
     let b_var4: bool;
     let extraout_var: u32;
     let mut i_var5: i32;
-    let alloc_addr: *mut u8;
+    let alloc_addr: Vec<u8>;
     
     let mut u_var6: u16;
     let pa_var7: *mut Struct94;
@@ -382,7 +383,7 @@ pub fn check_structs_1000_1afe(param_1: *mut Struct96, param_2: *mut Struct95) -
 }
 
 pub fn process_struct_1000_2cb0(param_1: *mut Struct151) {
-    let pu8_var1: *mut u8;
+    let pu8_var1: Vec<u8>;
     let mut b_var2: u8;
 
     b_var2 = param_1.field_0xa;
@@ -402,7 +403,7 @@ pub fn process_struct_1000_2cb0(param_1: *mut Struct151) {
 }
 
 pub fn process_struct_1000_2ce8(param_1: *mut Struct152, param_2: u16) {
-    let pu8_var1: *mut u8;
+    let pu8_var1: Vec<u8>;
     let pvVar2: &mut Vec<u8>;
 
     pvVar2 = alloc_mem_1000_167a(0x200, param_2);
@@ -430,11 +431,11 @@ pub fn process_struct_1000_2ce8(param_1: *mut Struct152, param_2: u16) {
 }
 
 pub fn process_struct_1000_2e74(param_1: *mut Struct154) -> bool {
-    let pu8_var1: *mut u8;
+    let pu8_var1: Vec<u8>;
     let pvVar2: &mut Vec<u8>;
     let pvVar3: &mut Vec<u8>;
     let mut ppvVar4: Vec<u8>;
-    let pu8_var5: *mut u8;
+    let pu8_var5: Vec<u8>;
 
     if (PTR_LOOP_1050_61ec != 0x0) {
         pu8_var5 = &param_1.field_0xf0;
@@ -492,7 +493,7 @@ pub fn process_struct_1000_2f00(param_1: u16, param_2: *mut Struct155) {
     return;
 }
 
-pub fn set_struct_1008_0000(param_1: *mut Struct97) {
+pub fn set_struct_1008_0000(param_1: &mut Struct97) {
     let local_bx_4: *mut Struct97;
     let mut in_stack_00000006: u16;
 
@@ -556,7 +557,7 @@ pub fn process_struct_1008_41bc(param_1: *mut Struct182) {
     let mut local_es_5: u16;
     let temp_862134eb919: *mut u32;
     let mut temp_5f500f05be: u32;
-    // fn_ptr_1: *mut *mut u8;
+    // fn_ptr_1: *mut Vec<u8>;
 
     local_es_5 = (param_1 >> 0x10);
     local_Struct182 = param_1;
@@ -704,7 +705,7 @@ pub fn get_struct_field_1008_48aa(param_1: u32) -> u16 {
     return (param_1 + 0xe);
 }
 
-pub unsafe fn process_struct_1008_48b8(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn process_struct_1008_48b8(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     process_struct_1008_41bc(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -780,7 +781,7 @@ pub fn process_struct_1008_4c98(
     return;
 }
 
-pub unsafe fn process_struct_1008_4ef6(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn process_struct_1008_4ef6(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     pass1_1008_4cdc(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -1015,9 +1016,9 @@ pub fn set_struct_1008_9584(param_1: *mut Struct216, param_2: u32) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn process_struct_1008_9d36(param_1: *mut u8, param_2: *mut u8, param_3: u16) {
+pub fn process_struct_1008_9d36(param_1: Vec<u8>, param_2: Vec<u8>, param_3: u16) {
     let mut u_var1: u16;
-    let pu_var2: *mut u8;
+    let pu_var2: Vec<u8>;
     
     let mut u_var3: u16;
     let mut u_var4: u32;
@@ -1124,7 +1125,7 @@ pub unsafe fn process_struct_1008_c882(param_1: u32) {
     let pa_var5: *mut Struct199;
     let mut u_var6: u16;
     let mut u_var7: u16;
-    let puVar8: *mut u8;
+    let puVar8: Vec<u8>;
     
     let mut u_var9: i32;
     let pa_var10: *mut Struct199;
@@ -1137,7 +1138,7 @@ pub unsafe fn process_struct_1008_c882(param_1: u32) {
     let mut unaff_si: u16;
     let mut u_var14: u16;
     let uVar15: u8;
-    let ppVar16: *mut pass1_struct_1;
+    let ppVar16: *mut Struct2111;
     let mut local_24: u16;
     let mut local_22: u16;
     let mut local_20: u16;
@@ -1216,7 +1217,7 @@ pub unsafe fn process_struct_1008_c882(param_1: u32) {
     return;
 }
 
-pub unsafe fn process_struct_1008_cbc4(param_1: *mut Struct296, param_2: *mut u8) {
+pub unsafe fn process_struct_1008_cbc4(param_1: *mut Struct296, param_2: Vec<u8>) {
     let mut u_var1: u32;
     let u_var2: u8;
     let mut u_var3: u16;
@@ -1228,7 +1229,7 @@ pub unsafe fn process_struct_1008_cbc4(param_1: *mut Struct296, param_2: *mut u8
     let struct_c: *mut Struct199;
     let pa_var8: *mut Struct199;
     let struct_a: *mut Struct199;
-    let pu_var9: *mut u8;
+    let pu_var9: Vec<u8>;
     let struct_b: *mut Struct296;
     let struct_b_hi: *mut Struct296;
     let mut u_var10: u32;
@@ -1257,7 +1258,7 @@ pub unsafe fn process_struct_1008_cbc4(param_1: *mut Struct296, param_2: *mut u8
     let mut local_8: u16;
     let mut local_6: u32;
     let mut temp_5fe001fdd0: u32;
-    let temp_5ff61a9dbc: *mut u8;
+    let temp_5ff61a9dbc: Vec<u8>;
     let fn_ptr_a: fn();
 
     struct_b_hi = (param_1 >> 0x10);
@@ -1392,7 +1393,7 @@ pub unsafe fn process_struct_1008_cda2(ctx: &mut AppContext, param_1: *mut Struc
     let pa_var5: *mut Struct199;
     let mut u_var6: u16;
     let mut u_var7: u16;
-    let puVar8: *mut u8;
+    let puVar8: Vec<u8>;
     let mut u_var9: i32;
     let mut u_var10: u32;
     
@@ -1757,24 +1758,24 @@ pub unsafe fn process_struct_1008_ddca(ctx: &mut AppContext, in_struct_1: *mut S
 }
 
 pub fn process_string_14f0_01d8(param_1: u8, param_2: u8, param_3: u8, param_4: u16) {
-    let pu8_var1: *mut u8;
+    let pu8_var1: Vec<u8>;
     let pc_var2: *mut code;
     let mut u8_var3: u8;
     let mut i_var4: i32;
     let local_SP: *mut u16;
     let local_BP__1: *mut u16;
-    let unaff_si: *mut libc::c_char;
+    let unaff_si: String;
     let mut unaff_DI: i32;
     
     let mut local_DS__1: u16;
     let mut local_7790: u16;
     let mut uStack9930: u16;
     let puStack64: *mut u16;
-    let temp_87f6a135679: *mut u8;
-    let temp_87fd3b67608: *mut libc::c_char;
-    let temp_2030414afc22f7: *mut libc::c_char;
+    let temp_87f6a135679: Vec<u8>;
+    let temp_87fd3b67608: String;
+    let temp_2030414afc22f7: String;
     let mut char_2: u8;
-    let string_1: *mut libc::c_char;
+    let string_1: String;
 
     local_SP = &stack0xfffe;
     local_SP = &stack0xfffe;
@@ -2010,9 +2011,9 @@ pub fn process_struct_1010_02e0(param_1: *mut Struct316, param_2: u16, param_3: 
     return;
 }
 
-pub fn modify_struct_1010_0f24(param_1: *mut Struct314, param_2: *mut Struct314, param_3: *mut u8) {
+pub fn modify_struct_1010_0f24(param_1: *mut Struct314, param_2: *mut Struct314, param_3: Vec<u8>) {
     let mut unaff_bp: u16;
-    let ppVar1: *mut pass1_struct_1;
+    let ppVar1: *mut Struct2111;
 
     process_struct_1010_2cd2(param_1, param_2, param_3);
     param_1.field_0x60 = 0;
@@ -2027,9 +2028,9 @@ pub fn modify_struct_1010_0f24(param_1: *mut Struct314, param_2: *mut Struct314,
     return;
 }
 
-pub fn modify_struct_1010_195e(param_1: *mut Struct314, param_2: *mut Struct314, param_3: *mut u8) {
+pub fn modify_struct_1010_195e(param_1: *mut Struct314, param_2: *mut Struct314, param_3: Vec<u8>) {
     let mut unaff_bp: u16;
-    let ppVar1: *mut pass1_struct_1;
+    let ppVar1: *mut Struct2111;
 
     modify_struct_1010_0f24(param_1, param_2, param_3);
     (param_1 + 1) = 0;
@@ -2120,10 +2121,10 @@ pub fn process_struct_1010_2bfc(param_1: *mut Struct384, param_2: u32) -> *mut S
 pub fn process_struct_1010_2cd2(
     param_1: *mut Struct314,
     param_2: *mut Struct314,
-    param_3: *mut u8,
+    param_3: Vec<u8>,
 ) -> u8 {
     let mut unaff_ss: u16;
-    let ppVar1: *mut pass1_struct_1;
+    let ppVar1: *mut Struct2111;
     let p_uvar2: *mut u16;
     let pu_var3: *mut u16;
     let mut u_var4: u16;
@@ -2290,7 +2291,7 @@ pub fn process_struct_1010_3b7a(param_1: *mut Struct64, param_2: u32) {
     &param_1.field_0xc = &ctx.PTR_LOOP_1050_1008;
     param_1.field_0xa = (ctx.s_18_2_1050_3aa5 + 3);
     &param_1.field_0xc = &ctx.PTR_LOOP_1050_1008;
-    &param_1.field_0xe = 0;
+    &param_1.str_field_0xe = 0;
     &param_1.field_0x12 = 0;
     (&param_1.field_0x12 + 2) = 0;
     &param_1.field_0x16 = 0;
@@ -2400,10 +2401,10 @@ pub unsafe fn pass1_1010_3f00(param_1: *mut Struct376) {
 }
 
 pub fn process_struct_1010_4a8a(param_1: *mut Struct375, param_2: *mut Struct375, param_3: u16) {
-    let local_AX_19: *mut u8;
-    let local_DX_102: *mut u8;
-    let ppVar1: *mut pass1_struct_1;
-    let local_6: *mut u8;
+    let local_AX_19: Vec<u8>;
+    let local_DX_102: Vec<u8>;
+    let ppVar1: *mut Struct2111;
+    let local_6: Vec<u8>;
 
     process_struct_1010_1d48(CONCAT22(param_2, param_1), param_3);
     local_AX_19 = 0x0;
@@ -2471,7 +2472,7 @@ pub fn process_struct_1010_4d5c(
 }
 
 pub fn process_struct_1010_5d9c(param_1: u32, button_state: u16) {
-    let ppVar1: *mut pass1_struct_1;
+    let ppVar1: *mut Struct2111;
     let mut in_stack_0000fffa: u16;
 
     (param_1 + 0x1e) = button_state;
@@ -2581,7 +2582,7 @@ pub fn modify_struct_1010_6700(param_1: *mut Struct437, param_2: u32) {
 
 pub fn process_struct_1010_6abc(param_1: *mut Struct438, param_2: u32) {
     let pp_var1: fn();
-    let ppVar2: *mut pass1_struct_1;
+    let ppVar2: *mut Struct2111;
     let mut u_var3: u16;
     let mut u_var4: u16;
     let mut in_stack_0000fff6: u16;
@@ -2685,12 +2686,12 @@ pub fn process_struct_1008_e3ec(in_struct_a: *mut Struct310, param_2: u32, param
     let p_uvar2: *mut u16;
     let struct_c_lo: *mut Struct199;
     
-    let local_DX_78: *mut u8;
+    let local_DX_78: Vec<u8>;
     
     let paVar3: *mut Struct199;
     let ctx.dx_reg: *mut Struct199;
-    let local_DX_273: *mut u8;
-    let pu_var4: *mut u8;
+    let local_DX_273: Vec<u8>;
+    let pu_var4: Vec<u8>;
     
     let struct_b: *mut Struct310;
     let struct_b_hi: *mut Struct310;
@@ -2792,11 +2793,11 @@ pub fn process_struct_1008_e3ec(in_struct_a: *mut Struct310, param_2: u32, param
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn process_struct_1008_e586(param_1: *mut u8, param_2: u16, param_1_00: u32) {
+pub fn process_struct_1008_e586(param_1: Vec<u8>, param_2: u16, param_1_00: u32) {
     let paVar1: *mut Struct493;
     let mut in_dx: i32;
     let struct_a: *mut Struct199;
-    let in_string_2: *mut libc::c_char;
+    let in_string_2: String;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_6: u16;
@@ -2815,7 +2816,7 @@ pub fn process_struct_1008_e586(param_1: *mut u8, param_2: u16, param_1_00: u32)
     return CONCAT22(struct_a, paVar1);
 }
 
-pub unsafe fn process_struct_1008_ea86(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn process_struct_1008_ea86(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     process_struct_1008_ddca(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -2924,8 +2925,8 @@ pub fn process_struct_1010_a1d8(
     param_3: u16,
 ) {
     let pp_var1: fn();
-    let string_ptr_base: *mut libc::c_char;
-    let struct_a: *mut pass1_struct_1;
+    let string_ptr_base: String;
+    let struct_a: *mut Struct2111;
     let mut local_56: u16;
     let mut local_54: u16;
     let mut local_52: u32;
@@ -3014,7 +3015,7 @@ pub fn process_struct_1018_0570(param_1: *mut u16, param_2: u16) {
     let pa_var5: *mut Struct199;
     let mut u_var6: u16;
     let local_bx_18: *mut Struct508;
-    let pp_var7: *mut pass1_struct_1;
+    let pp_var7: *mut Struct2111;
     let mut u_var8: u16;
     let mut u_var9: u16;
     let mut in_stack_0000fff0: u16;
@@ -3151,7 +3152,7 @@ pub fn process_struct_1018_e5dc(in_struct_1: *mut Struct65, param_2: u16, param_
     let mut i_var2: i32;
     let mut unaff_bp: u16;
     let local_struct_1: *mut Struct65;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     load_cursor_1020_7f7a(in_struct_1, CONCAT22(param_2, 9), param_3);
     local_struct_1 = (in_struct_1 >> 0x10);
@@ -3171,7 +3172,7 @@ pub fn process_struct_1018_e5dc(in_struct_1: *mut Struct65, param_2: u16, param_
     return;
 }
 
-pub unsafe fn process_struct_1018_e64c(param_1: *mut Struct44) {
+pub unsafe fn process_struct_1018_e64c(param_1: &mut Struct44) {
     let local_bx_3: *mut Struct376;
     let mut u_var1: u16;
 
@@ -3199,12 +3200,12 @@ pub fn process_struct_1018_e91e(in_struct_a: *mut Struct65, param_2: u16, param_
     let pu_var3: *mut u16;
     let mut u_var4: u16;
     let pa_var5: *mut Struct65;
-    let ppVar6: *mut pass1_struct_1;
+    let ppVar6: *mut Struct2111;
     let struct_a_1: *mut Struct65;
     let struct_a_2: *mut Struct65;
     let mut uStack14: u16;
-    let char_ptr_1: *mut libc::c_char;
-    // fn_ptr_1: *mut *mut u8;
+    let char_ptr_1: String;
+    // fn_ptr_1: *mut Vec<u8>;
 
     struct_a_1 = in_struct_a;
     struct_a_2 = (in_struct_a >> 0x10);
@@ -3248,10 +3249,10 @@ pub fn process_struct_1020_04f6(in_struct_1: *mut Struct629, param_2: u16) {
     let mut u_var4: u16;
     let local_struct_1: *mut Struct629;
     let mut local_struct_1_hi: u16;
-    let ppVar5: *mut pass1_struct_1;
+    let ppVar5: *mut Struct2111;
     let mut u_var6: u16;
-    let local_1e: *mut libc::c_char;
-    let pcStack32: *mut libc::c_char;
+    let local_1e: String;
+    let pcStack32: String;
     let mut local_6: u16;
     let mut local_4: u16;
 
@@ -3296,11 +3297,11 @@ pub fn process_struct_1020_0baa(in_struct_1: *mut Struct636, param_2: u16) {
     let mut local_DX_123: u16;
     let local_struct_1: *mut Struct636;
     let local_struct_1_hi: *mut Struct636;
-    let ppVar1: *mut pass1_struct_1;
+    let ppVar1: *mut Struct2111;
     let p_uvar2: *mut u16;
     let pu_var3: *mut u16;
     let paVar4: *mut Struct636;
-    let local_string_1: *mut libc::c_char;
+    let local_string_1: String;
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
@@ -3466,10 +3467,10 @@ pub fn process_struct_1040_807e(param_1: u32, param_2: u16) {
 
 pub fn process_struct_1040_7728(
     in_struct_1: *mut Struct68,
-    param_2: *mut u8,
+    param_2: Vec<u8>,
     param_3: u32,
-    param_4: *mut u8,
-    param_5: *mut u8,
+    param_4: Vec<u8>,
+    param_5: Vec<u8>,
 ) -> u8 {
     let iVar1: u16;
     let local_struct_1: *mut Struct68;
@@ -3524,7 +3525,7 @@ pub fn process_struct_1040_7728(
     return in_struct_1;
 }
 
-pub fn pass1_1040_6fb6(param_1: *mut Struct346, param_2: *mut u8) {
+pub fn pass1_1040_6fb6(param_1: *mut Struct346, param_2: Vec<u8>) {
     let mut iVar1: i32;
     let mut u_var2: u16;
 
@@ -3538,7 +3539,7 @@ pub fn pass1_1040_6fb6(param_1: *mut Struct346, param_2: *mut u8) {
     return;
 }
 
-pub fn pass1_1040_5626(param_1: *mut u16, param_2: *mut u8, param_3: u16) {
+pub fn pass1_1040_5626(param_1: *mut u16, param_2: Vec<u8>, param_3: u16) {
     let mut u_var1: u32;
     let mut u_var2: i32;
     let struct_a: *mut Struct199;
@@ -3619,7 +3620,7 @@ pub fn pass1_1040_5626(param_1: *mut u16, param_2: *mut u8, param_3: u16) {
     return;
 }
 
-pub fn pass1_1040_44d2(param_1: *mut u16, param_2: *mut u8, param_3: *mut u8) {
+pub fn pass1_1040_44d2(param_1: *mut u16, param_2: Vec<u8>, param_3: Vec<u8>) {
     let mut u_var1: u32;
     let mut in_ax: i32;
     let mut u_var2: i32;
@@ -3689,14 +3690,14 @@ pub fn pass1_1040_44d2(param_1: *mut u16, param_2: *mut u8, param_3: *mut u8) {
 pub fn pass1_1040_34a2(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3723,14 +3724,14 @@ pub fn pass1_1040_34a2(
 pub fn pass1_1040_2ea2(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3754,7 +3755,7 @@ pub fn pass1_1040_2ea2(
     return;
 }
 
-pub fn pass1_1040_1f5a(param_1: *mut Struct68, param_2: *mut u8) {
+pub fn pass1_1040_1f5a(param_1: *mut Struct68, param_2: Vec<u8>) {
     let piVar1: *mut i32;
     let mut u_var2: u16;
     
@@ -3808,15 +3809,15 @@ pub fn pass1_1040_1f5a(param_1: *mut Struct68, param_2: *mut u8) {
 pub fn pass1_1040_1cb4(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
-    let in_string_1: *mut libc::c_char;
+    let ppVar3: *mut Struct2111;
+    let in_string_1: String;
 
     process_struct_1040_7728(
         param_1,
@@ -3847,14 +3848,14 @@ pub fn pass1_1040_1cb4(
 pub fn pass1_1040_181c(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3879,14 +3880,14 @@ pub fn pass1_1040_181c(
 pub fn pass1_1040_123e(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3908,14 +3909,14 @@ pub fn pass1_1040_123e(
 
 pub fn pass1_1040_0e1c(
     param_1: *mut Struct68,
-    param_2: *mut u8,
-    param_3: *mut u8,
-    param_4: *mut u8,
+    param_2: Vec<u8>,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3941,14 +3942,14 @@ pub fn pass1_1040_0e1c(
 pub fn pass1_1040_0bfc(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -3969,7 +3970,7 @@ pub fn pass1_1040_0bfc(
     return param_1;
 }
 
-pub fn pass1_1040_0a1a(param_1: *mut u8) {
+pub fn pass1_1040_0a1a(param_1: Vec<u8>) {
     let mut u_var1: i32;
     let pu_var2: *mut u32;
     let ppc_var3: fn();
@@ -4035,14 +4036,14 @@ pub fn pass1_1040_0a1a(param_1: *mut u8) {
 pub fn pass1_1040_06e8(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4062,11 +4063,11 @@ pub fn pass1_1040_06e8(
     return param_1;
 }
 
-pub fn pass1_1038_eeda(param_1: *mut Struct68, param_2: *mut u8) {
+pub fn pass1_1038_eeda(param_1: *mut Struct68, param_2: Vec<u8>) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4089,7 +4090,7 @@ pub fn pass1_1038_eeda(param_1: *mut Struct68, param_2: *mut u8) {
     return;
 }
 
-pub fn pass1_1038_eb9e(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct68 {
+pub fn pass1_1038_eb9e(param_1: *mut Struct68, param_2: Vec<u8>) -> *mut Struct68 {
     let mut u_var1: u16;
 
     process_struct_1040_7728(
@@ -4109,14 +4110,14 @@ pub fn pass1_1038_eb9e(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct6
 pub fn pass1_1038_e99a(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4139,14 +4140,14 @@ pub fn pass1_1038_e99a(
 pub fn pass1_1038_e69a(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4167,7 +4168,7 @@ pub fn pass1_1038_e69a(
     return;
 }
 
-pub fn pass1_1038_e2d0(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct68 {
+pub fn pass1_1038_e2d0(param_1: *mut Struct68, param_2: Vec<u8>) -> *mut Struct68 {
     let mut u_var1: u16;
 
     process_struct_1040_7728(
@@ -4187,9 +4188,9 @@ pub fn pass1_1038_e2d0(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct6
 pub fn pass1_1038_e140(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     process_struct_1040_7728(
         param_1,
@@ -4203,7 +4204,7 @@ pub fn pass1_1038_e140(
     return param_1;
 }
 
-pub fn pass1_1038_df86(param_1: *mut u8) {
+pub fn pass1_1038_df86(param_1: Vec<u8>) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let BVar3: bool;
@@ -4215,7 +4216,7 @@ pub fn pass1_1038_df86(param_1: *mut u8) {
     let mut i_var8: i32;
     let mut u_var9: u16;
     let mut u_var10: u16;
-    let pp_var11: *mut pass1_struct_1;
+    let pp_var11: *mut Struct2111;
     let mut in_stack_0000ffe6: u16;
     let mut local_18: u16;
     let mut local_16: u16;
@@ -4266,12 +4267,12 @@ pub fn pass1_1038_df86(param_1: *mut u8) {
     return;
 }
 
-pub fn pass1_1038_d756(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct68 {
+pub fn pass1_1038_d756(param_1: *mut Struct68, param_2: Vec<u8>) -> *mut Struct68 {
     let pp_var1: fn();
     let mut i_var2: i32;
     let mut unaff_bp: u16;
     let mut u_var3: u16;
-    let ppVar4: *mut pass1_struct_1;
+    let ppVar4: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4296,7 +4297,7 @@ pub fn pass1_1038_d756(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct6
     return param_1;
 }
 
-pub fn pass1_1038_d242(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct68 {
+pub fn pass1_1038_d242(param_1: *mut Struct68, param_2: Vec<u8>) -> *mut Struct68 {
     let mut u_var1: u16;
 
     process_struct_1040_7728(
@@ -4316,14 +4317,14 @@ pub fn pass1_1038_d242(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct6
 pub fn pass1_1038_cd06(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4344,11 +4345,11 @@ pub fn pass1_1038_cd06(
     return;
 }
 
-pub fn pass1_1038_cad8(param_1: u32, param_2: *mut u8) -> u8 {
+pub fn pass1_1038_cad8(param_1: u32, param_2: Vec<u8>) -> u8 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4372,14 +4373,14 @@ pub fn pass1_1038_cad8(param_1: u32, param_2: *mut u8) -> u8 {
 pub fn pass1_1038_c7b8(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4402,14 +4403,14 @@ pub fn pass1_1038_c7b8(
 pub fn pass1_1038_c4a2(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4434,14 +4435,14 @@ pub fn pass1_1038_c4a2(
 pub fn pass1_1038_bddc(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_7728(
         param_1,
@@ -4471,9 +4472,9 @@ pub fn pass1_1038_b772(param_1: *mut Struct68) {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
-    let in_stack_00000010: *mut u8;
-    let in_string_1: *mut libc::c_char;
+    let ppVar3: *mut Struct2111;
+    let in_stack_00000010: Vec<u8>;
+    let in_string_1: String;
 
     process_struct_1040_7728(
         param_1,
@@ -4503,7 +4504,7 @@ pub fn pass1_1038_b772(param_1: *mut Struct68) {
     return;
 }
 
-pub fn pass1_1038_ab82(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct68 {
+pub fn pass1_1038_ab82(param_1: *mut Struct68, param_2: Vec<u8>) -> *mut Struct68 {
     process_struct_1040_7728(param_1, (&ctx.PTR_LOOP_1050_0000 + 1), 0, 0xfd3, param_2);
     param_1.field_0x0 = 0xad72;
     (param_1 + 2) = &PTR_LOOP_1050_1038;
@@ -4512,14 +4513,14 @@ pub fn pass1_1038_ab82(param_1: *mut Struct68, param_2: *mut u8) -> *mut Struct6
 
 pub fn pass1_1038_a122(
     param_1: i32,
-    param_2: *mut u8,
-    param_3: *mut u8,
+    param_2: Vec<u8>,
+    param_3: Vec<u8>,
     param_3_00: u32,
     param_5: u32,
-) -> *mut *mut u8 {
-    let local_e: *mut u8;
-    let puStack6: *mut u8;
-    let puStack4: *mut u8;
+) -> *mut Vec<u8> {
+    let local_e: Vec<u8>;
+    let puStack6: Vec<u8>;
+    let puStack4: Vec<u8>;
 
     puStack6 = param_5;
     puStack4 = (param_5 >> 0x10);
@@ -4539,9 +4540,9 @@ pub fn pass1_1038_a122(
 pub fn pass1_1038_9f76(
     param_1: *mut Struct68,
     param_2: u32,
-    param_3: *mut u8,
-    param_4: *mut u8,
-    param_3_00: *mut u8,
+    param_3: Vec<u8>,
+    param_4: Vec<u8>,
+    param_3_00: Vec<u8>,
 ) -> *mut Struct68 {
     process_struct_1040_7728(
         param_1,
@@ -4555,7 +4556,7 @@ pub fn pass1_1038_9f76(
     return param_1;
 }
 
-pub fn pass1_1038_9144(ctx: &mut AppContext, param_1: *mut u8, param_2: *mut u8) {
+pub fn pass1_1038_9144(ctx: &mut AppContext, param_1: Vec<u8>, param_2: Vec<u8>) {
     let mut u_var1: u32;
     let mut u_var2: i32;
     let struct_a: *mut Struct199;
@@ -4565,7 +4566,7 @@ pub fn pass1_1038_9144(ctx: &mut AppContext, param_1: *mut u8, param_2: *mut u8)
     let mut unaff_si: u16;
     let mut u_var5: u16;
     let mut u_var6: u16;
-    let pp_var7: *mut pass1_struct_1;
+    let pp_var7: *mut Struct2111;
     let mut local_8: u16;
     let mut local_6: u16;
     let mut local_4: u16;
@@ -4625,8 +4626,8 @@ pub fn pass1_1038_9144(ctx: &mut AppContext, param_1: *mut u8, param_2: *mut u8)
     return;
 }
 
-pub unsafe fn pass1_1038_9124(param_1: *mut Struct44, param_2: *mut u8) {
-    let pu8_var1: *mut u8;
+pub unsafe fn pass1_1038_9124(param_1: &mut Struct44, param_2: Vec<u8>) {
+    let pu8_var1: Vec<u8>;
     let mut b_var2: u8;
     let mut cVar3: u8;
     let mut u_var4: u32;
@@ -4645,14 +4646,14 @@ pub unsafe fn pass1_1038_9124(param_1: *mut Struct44, param_2: *mut u8) {
     let mut i_var9: i32;
     let pu_var11: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut u8;
+    let unaff_si: Vec<u8>;
     let mut u_var12: u16;
     let mut u_var13: u16;
     let mut unaff_ss: u16;
     let mut in_CF: u8;
     let mut b_var14: bool;
     let mut bVar15: bool;
-    let ppVar16: *mut pass1_struct_1;
+    let ppVar16: *mut Struct2111;
     let local_4e: u8;
     let pi_stack8: *mut i32;
 
@@ -4764,11 +4765,11 @@ pub unsafe fn pass1_1038_9124(param_1: *mut Struct44, param_2: *mut u8) {
     return;
 }
 
-pub fn pass1_1038_8caa(param_1: *mut *mut u8, param_2: *mut u8) -> *mut *mut u8 {
+pub fn pass1_1038_8caa(param_1: *mut Vec<u8>, param_2: Vec<u8>) -> *mut Vec<u8> {
     let mut iVar1: i32;
     let mut unaff_bp: u16;
     let mut u_var2: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: *mut Struct2111;
 
     process_struct_1040_b082(param_1, CONCAT22(param_2, 0x185a));
     u_var2 = (param_1 >> 0x10);
@@ -4784,7 +4785,7 @@ pub fn pass1_1038_8caa(param_1: *mut *mut u8, param_2: *mut u8) -> *mut *mut u8 
     return param_1;
 }
 
-pub fn pass1_1038_88f2(param_1: *mut *mut u8, param_2: *mut u8) {
+pub fn pass1_1038_88f2(param_1: *mut Vec<u8>, param_2: Vec<u8>) {
     let mut iVar1: i32;
     let mut u_var2: u16;
 
@@ -4803,8 +4804,8 @@ pub fn pass1_1038_88f2(param_1: *mut *mut u8, param_2: *mut u8) {
     return;
 }
 
-pub fn pass1_1038_88d2(param_1: *mut Struct44) {
-    let pu8_var1: *mut u8;
+pub fn pass1_1038_88d2(param_1: &mut Struct44) {
+    let pu8_var1: Vec<u8>;
     let mut b_var2: u8;
     let mut cVar3: u8;
     let mut u8_var4: u8;
@@ -4816,7 +4817,7 @@ pub fn pass1_1038_88d2(param_1: *mut Struct44) {
     let mut i32_var6: i32;
     let puVar8: *mut u16;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut u8;
+    let unaff_si: Vec<u8>;
     let mut u_var9: u16;
     let mut unaff_ss: u16;
     let mut in_CF: u8;
@@ -4824,7 +4825,7 @@ pub fn pass1_1038_88d2(param_1: *mut Struct44) {
     let mut bVar11: bool;
     let pu_var12: *mut u16;
     let local_4e: u8;
-    let puStack34: *mut u8;
+    let puStack34: Vec<u8>;
 
     puStack34 = &stack0xfffe;
     puVar8 = &stack0xfffe;
@@ -4886,11 +4887,11 @@ pub fn pass1_1038_88d2(param_1: *mut Struct44) {
     return;
 }
 
-pub fn pass1_1038_7d10(param_1: u32, param_2: *mut u8) {
+pub fn pass1_1038_7d10(param_1: u32, param_2: Vec<u8>) {
     let local_bx_18: *mut Struct1172;
     let mut unaff_bp: u16;
     let mut u_var1: u16;
-    let struct_a: *mut pass1_struct_1;
+    let struct_a: *mut Struct2111;
 
     process_struct_1040_b082(param_1, CONCAT22(param_2, 0x1853));
     u_var1 = (param_1 >> 0x10);
@@ -4904,7 +4905,7 @@ pub fn pass1_1038_7d10(param_1: u32, param_2: *mut u8) {
     return param_1;
 }
 
-pub fn pass1_1038_78e2(param_1: *mut *mut u8) {
+pub fn pass1_1038_78e2(param_1: *mut Vec<u8>) {
     let paVar1: *mut Struct199;
     let in_dx: *mut Struct199;
     let struct_a: *mut Struct199;
@@ -4970,7 +4971,7 @@ pub fn pass1_1038_6520(param_1: *mut Struct1144) {
     return;
 }
 
-pub fn pass1_1038_2b9a(param_1: *mut u8) {
+pub fn pass1_1038_2b9a(param_1: Vec<u8>) {
     let pu_var1: *mut u32;
     let pu_var2: *mut u32;
     let mut in_ax: i32;
@@ -5100,7 +5101,7 @@ pub fn pass1_1038_0cf0(param_1: *mut Struct1054) {
     return;
 }
 
-pub fn pass1_1038_0000(param_1: *mut u8) {
+pub fn pass1_1038_0000(param_1: Vec<u8>) {
     let paVar1: *mut Struct1049;
     let paVar2: *mut Struct1048;
     let ctx.ax_reg: *mut Struct1046;
@@ -5149,7 +5150,7 @@ pub fn pass1_1038_0000(param_1: *mut u8) {
     return;
 }
 
-pub fn pass1_1030_ebf8(param_1: *mut u8) {
+pub fn pass1_1030_ebf8(param_1: Vec<u8>) {
     let paVar1: *mut Struct1042;
     let paVar2: *mut Struct1043;
     let ctx.ax_reg: *mut Struct1044;
@@ -5232,7 +5233,7 @@ pub fn pass1_1030_e98e(param_1: *mut Struct1037) {
     return;
 }
 
-pub fn pass1_1030_e7d6(param_1: *mut u8) {
+pub fn pass1_1030_e7d6(param_1: Vec<u8>) {
     let paVar1: *mut Struct1034;
     let paVar2: *mut Struct1033;
     let ctx.ax_reg: *mut Struct1031;
@@ -5478,8 +5479,8 @@ pub fn pass1_1030_8c66(
     return;
 }
 
-pub fn pass1_1030_51f0(struct_a: *mut Struct893) -> *mut Struct893 {
-    let local_bx_6: *mut Struct893;
+pub fn pass1_1030_51f0(struct_a: &Struct893) -> &Struct893 {
+    let local_bx_6: &Struct893;
     let mut u_var1: u16;
 
     u_var1 = (struct_a >> 0x10);
@@ -5507,7 +5508,7 @@ pub fn pass1_1030_4574(param_1: *mut Struct882) {
 pub fn pass1_1030_44be(struct_a: *mut Struct881) {
     let struct_b: *mut Struct881;
     let struct_b_hi: *mut Struct881;
-    let struct_c: *mut pass1_struct_1;
+    let struct_c: *mut Struct2111;
     let mut in_stack_0000ffec: u32;
     let mut local_6: u16;
     let mut local_4: u16;
@@ -5555,7 +5556,7 @@ pub fn pass1_1030_3af6(
     return param_1;
 }
 
-pub unsafe fn process_struct_1020_7f38(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn process_struct_1020_7f38(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -5569,7 +5570,7 @@ pub unsafe fn process_struct_1020_7f38(param_1: *mut Struct44, param_2: u8) -> *
     return param_1;
 }
 
-pub unsafe fn process_struct_1020_775a(in_struct_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn process_struct_1020_775a(in_struct_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     process_struct_1020_75c4(in_struct_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_struct_1);
@@ -5577,7 +5578,7 @@ pub unsafe fn process_struct_1020_775a(in_struct_1: *mut Struct44, param_2: u8) 
     return in_struct_1;
 }
 
-pub unsafe fn process_struct_1020_75c4(param_1: *mut Struct44) {
+pub unsafe fn process_struct_1020_75c4(param_1: &mut Struct44) {
     let local_struct_1: *mut Struct376;
     let local_struct_1_hi: *mut Struct376;
 
@@ -5607,7 +5608,7 @@ pub fn process_struct_1020_4092(in_struct_1: *mut Struct660) -> *mut Struct660 {
     return in_struct_1;
 }
 
-pub unsafe fn process_struct_1020_2594(param_1: *mut Struct44) {
+pub unsafe fn process_struct_1020_2594(param_1: &mut Struct44) {
     let local_struct_1: *mut Struct376;
     let mut u_var1: u16;
 
@@ -5664,17 +5665,40 @@ pub fn pass1_1020_25c0(in_struct_1_1: *mut Struct649) {
 }
 
 // pass1_struct_1 *32 process_struct_1010_20ba (Struct372 *32 in_struct_372_ptr, char *32 in_string_1)
-pub fn process_struct_1010_20ba(a: Address<Struct372>, b: u32) -> Address<pass1_struct1> {
-    let mut out: pass1_struct1 = pass1_struct1 {};
-
-    Address {
-        full_addr: 0,
-        base: 0,
-        offset: 0,
-        len: 0,
-        buffer: Vec::new(),
-        _type: out,
-    }
+pub fn process_struct_1010_20ba(a: Address<Struct372>, b: u32) -> Struct2111 {
+    let mut out: Struct2111 = Struct2111 {
+        field_0x0: 0,
+        field_0x1: 0,
+        field_0x2: 0,
+        field_0x3: 0,
+        field_0x4: 0,
+        field_0x5: 0,
+        field_0x6: 0,
+        field_0x7: 0,
+        field_0x8: 0,
+        field_0x9: 0,
+        field_0xa: (),
+        field_0xc: (),
+        field_0xe: 0,
+        field_0xf: 0,
+        field_0x10: 0,
+        field_0x11: 0,
+        field_0x12: 0,
+        field_0x13: 0,
+        field_0x14: (),
+        field_0x18: 0,
+        field_0x19: 0,
+        field_0x1a: 0,
+        field_0x1b: 0,
+        field_0x1c: 0,
+        field_0x1d: 0,
+        field_0x1e: 0,
+        field_0x1f: 0,
+        field_0x20: 0,
+        field_0x21: 0,
+        field_0x22: 0
+    };
+    out
 }
 
 pub unsafe fn process_struct_1020_808e(ctx: &mut AppContext, in_struct_1: &mut Struct44) {

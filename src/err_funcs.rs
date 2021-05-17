@@ -17,14 +17,19 @@ use crate::{
         process_string_1000_4d58,
     },
     struct_funcs::process_struct_1000_179c,
-    sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e, SetErrorMode16},
+    sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e},
     ui_funcs::{msg_box_1000_1f24, pass1_1038_af34, win_cleanup_fn_1040_a294},
     util::{CONCAT22, SUB21, SUB42},
 };
 use crate::app_context::AppContext;
+use crate::mem_funcs::get_fn_ptr_at_address;
 use crate::prog_structs::prog_structs_13::Struct363;
-use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_15::Struct444;
+use crate::prog_structs::prog_structs_16::Struct13;
+use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
+use crate::prog_structs::prog_structs_31::Struct348;
+use crate::prog_structs::prog_structs_7::Struct44;
+use crate::winapi_funcs::SetErrorMode16;
 
 pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext) -> bool {
     // let mut unaff_cs: u16;
@@ -45,10 +50,10 @@ pub unsafe fn error_check_1000_16ee(ctx: &mut AppContext, param_1: u16, param_2:
     return;
 }
 
-pub unsafe fn error_check_1000_17ce(ctx: &mut AppContext, in_struct_1: &mut Address<Struct44>) -> bool {
-    let mut b_var1 = ((in_struct_1 >> 0x10) | in_struct_1) != 0;
+pub unsafe fn error_check_1000_17ce(ctx: &mut AppContext, struct_param_1: &mut Struct7) -> bool {
+    let mut b_var1 = ((struct_param_1 >> 0x10) | struct_param_1) != 0;
     // let mut b_var1 = in_struct_1.is_some();
-    if in_struct_1 != 0 {
+    if struct_param_1 != 0 {
         // let param_1_val = in_struct_1.unwrap();
         let b_var2 = error_check_1000_0dc6(ctx);
         b_var1 = b_var2;
@@ -177,8 +182,8 @@ pub unsafe fn handle_error_1008_0036(ctx: &mut AppContext, param_1: u32) {
             1,
         );
     }
-    if (ctx._g_struct_ptr_1050_02a0 != 0x0) {
-        fn_ptr_2 = ctx._g_struct_ptr_1050_02a0;
+    if ctx._g_struct_ptr_1050_02a0 != 0x0 {
+        fn_ptr_2 = get_fn_ptr_at_address(ctx._g_struct_ptr_1050_02a0);
         (**fn_ptr_2)(
             local_CS__1,
             ctx._g_struct_ptr_1050_02a0,
@@ -196,7 +201,7 @@ pub unsafe fn handle_error_1008_0036(ctx: &mut AppContext, param_1: u32) {
     return;
 }
 
-pub unsafe fn handle_error_1008_04f8(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn handle_error_1008_04f8(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     handle_error_1008_0036(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -204,46 +209,48 @@ pub unsafe fn handle_error_1008_04f8(param_1: *mut Struct44, param_2: u8) -> *mu
     return param_1;
 }
 
-pub unsafe fn check_error_1008_087e(ctx: &mut AppContext, param_1: u16, param_2: *mut u16) {
+pub unsafe fn check_error_1008_087e(ctx: &mut AppContext, u16_param_1: &mut Struct199) {
     let bool_1: u8;
-    let mut u_var1: u16;
+    // let mut u_var1: u16;
 
-    let mut local_112: u16;
+    let mut local_112: Struct500;
     let mut local_110: u16;
-    let mut local_6: u16;
-    let mut local_4: u16;
+    // let mut local_6: u16;
+    // let mut local_4: u16;
 
-    process_struct_1000_179c(ctx, 10, param_2);
-    u_var1 = param_2 | param_1;
-    local_6 = param_1;
-    local_4 = param_2;
-    if (u_var1 != 0) {
-        bool_1 = pass1_1030_8128(CONCAT22(param_2, param_1));
-        param_1 = bool_1;
-    }
-    if (ctx._g_bool_1050_5748 == 0x0) {
+    process_struct_1000_179c( 10, u16_param_1);
+    // u_var1 = u16_param_2 | u16_param_1;
+    // local_6 = u16_param_1;
+    // local_4 = u16_param_2;
+    // if (u_var1 != 0) {
+    //     bool_1 = pass1_1030_8128(u16_param_1);
+    //     u16_param_1 = bool_1;
+    // }
+    bool_1 = pass1_1030_8128(u16_param_1);
+    // u16_param_1 = bool_1;
+    if ctx._g_bool_1050_5748 == 0x0 {
         fn_1008_6048(
             ctx.s_New_failed_in_Op__Op__Simulator_1050_0130,
             u_var1,
-            SUB21(param_1, 0),
+            u16_param_1,
         );
         call_fn_ptr_1000_24cd(1);
     }
     pass1_1028_e2e0(ctx._PTR_LOOP_1050_65e2);
     pass1_1028_e2e0(ctx._PTR_LOOP_1050_65e2);
-    pass1_1030_532e(CONCAT22(ctx.stack_seg_reg, &local_112), 0xff000000);
+    pass1_1030_532e(&local_112, 0xff000000);
     pass1_1030_835a(
         ctx._g_bool_1050_5748,
-        CONCAT22(ctx.stack_seg_reg, &local_112),
+        &local_112,
     );
     pass1_1030_838e(ctx._g_bool_1050_5748);
-    local_112 = ctx.s_1_1050_389a;
-    local_110 = &ctx.PTR_LOOP_1050_1008;
+    local_112 = ctx.s_1_1050_389a.clone();
+    local_110 = ctx.PTR_LOOP_1050_1008.clone();
     pass1_1030_8334();
     return;
 }
 
-pub unsafe fn error_check_1008_3a7a(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn error_check_1008_3a7a(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     pass1_1008_397a(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -251,7 +258,7 @@ pub unsafe fn error_check_1008_3a7a(param_1: *mut Struct44, param_2: u8) -> *mut
     return param_1;
 }
 
-pub unsafe fn error_check_1008_5fa2(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn error_check_1008_5fa2(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     modify_u16_list_1008_5c34(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -259,7 +266,7 @@ pub unsafe fn error_check_1008_5fa2(param_1: *mut Struct44, param_2: u8) -> *mut
     return param_1;
 }
 
-pub unsafe fn error_check_1008_8e74(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn error_check_1008_8e74(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     pass1_1008_8aa2(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -363,7 +370,7 @@ pub unsafe fn cleanup_1040_a4c2(param_1: *mut Struct348, param_2: u8) -> *mut St
     return param_1;
 }
 
-pub unsafe fn error_check_1040_8db6(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn error_check_1040_8db6(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     error_check_1040_869a(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -387,7 +394,7 @@ pub unsafe fn pass1_1030_e4be(
     ctx: &mut AppContext,
     param_1: &mut Struct44,
     param_2: u8,
-) -> *mut Struct44 {
+) -> &mut Struct44 {
     param_1.ptr_a_lo = ctx.s_1_1050_389a.clone();
     // TODO
     // param_1.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
@@ -399,9 +406,9 @@ pub unsafe fn pass1_1030_e4be(
 
 pub unsafe fn pass1_1030_e282(
     ctx: &mut AppContext,
-    param_1: *mut Struct44,
+    param_1: &mut Struct44,
     param_2: u8,
-) -> *mut Struct44 {
+) -> &mut Struct44 {
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     if ((param_2 & 1) != 0) {
@@ -410,7 +417,7 @@ pub unsafe fn pass1_1030_e282(
     return param_1;
 }
 
-pub unsafe fn pass1_1030_4538(param_1: *mut *mut Struct44) {
+pub unsafe fn pass1_1030_4538(param_1: *mut &mut Struct44) {
     let mut u_var1: u16;
 
     let param_1_val = unsafe { *param_1 };

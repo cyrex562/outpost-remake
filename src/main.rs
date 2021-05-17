@@ -1,5 +1,31 @@
 extern crate libc;
 
+use std::intrinsics::offset;
+
+use defines::{AppContext, code};
+use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
+use mem_funcs::alloc_mem_1000_167a;
+use other_funcs::{big_fn_1010_b038, empty_fn_1000_55ac};
+use pass_funcs::{
+    pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1000_25a8, pass1_fn_1000_2913,
+};
+use sound_funcs::mci_fn_1020_08b6;
+use string_funcs::process_string_1000_28dc;
+use struct_funcs::{process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e91e};
+use sys_funcs::{dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
+use util::{CONCAT11, CONCAT22};
+use winapi_funcs::{FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, make_htask, swi, WaitEvent16};
+
+use crate::app_context::AppContext;
+use crate::err_funcs::set_error_mode_1010_8b14;
+use crate::file_funcs::close_file_1008_496c;
+use crate::pass8_funcs::pass1_1010_878c;
+use crate::pass_funcs::{pass1_1008_3f92, pass1_1008_6562};
+use crate::prog_structs::prog_structs_24::Struct103;
+use crate::prog_structs::prog_structs_31::Struct449;
+use crate::struct_funcs::process_struct_1008_48fe;
+use crate::ui_funcs::msg_box_1010_8bb4;
+
 mod bad_funcs;
 mod big_funcs;
 mod bool_funcs;
@@ -34,30 +60,7 @@ mod prog_structs;
 mod app_context;
 mod typedefs;
 mod sys_structs;
-
-use defines::{code, AppContext};
-use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
-use mem_funcs::alloc_mem_1000_167a;
-use other_funcs::{big_fn_1010_b038, empty_fn_1000_55ac};
-use pass_funcs::{
-    pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1000_25a8, pass1_fn_1000_2913,
-};
-use sound_funcs::mci_fn_1020_08b6;
-use string_funcs::process_string_1000_28dc;
-use struct_funcs::{process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e91e};
-use sys_funcs::{FatalAppExit16, FatalExit, GetVersion16, LockSegment16, WaitEvent16, dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
-use util::{CONCAT11, CONCAT22};
-use crate::app_context::AppContext;
-use crate::sys_funcs::{InitTask16, swi, InitApp16, make_htask};
-use crate::err_funcs::set_error_mode_1010_8b14;
-use crate::ui_funcs::msg_box_1010_8bb4;
-use crate::pass_funcs::{pass1_1008_6562, pass1_1008_3f92};
-use crate::pass8_funcs::pass1_1010_878c;
-use crate::file_funcs::close_file_1008_496c;
-use crate::struct_funcs::process_struct_1008_48fe;
-use std::intrinsics::offset;
-use crate::prog_structs::prog_structs_31::Struct449;
-use crate::prog_structs::prog_structs_24::Struct103;
+mod winapi_funcs;
 
 const INT_21: u16 = 0x21;
 

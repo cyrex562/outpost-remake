@@ -485,7 +485,7 @@ pub struct Struct545 {
     pub field_0x178: u8,
     pub field_0x179: u8,
     pub field_0x17a: u32,
-    pub field_0x17e: *mut u8,
+    pub field_0x17e: Vec<u8>,
     pub field_0x180: i32,
 }
 

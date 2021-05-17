@@ -171,7 +171,7 @@ pub struct win_struct_42 {
     pub field_0x58: u8,
     pub field_0x59: u8,
     pub field_0x5a: u8,
-    pub class_name_0x5b: u8, // Created by retype action
+    pub class_name_0x5b: String, // Created by retype action
     pub field_0x5c: u8,
     pub field_0x5d: u8,
     pub field_0x5e: u8,
@@ -304,7 +304,7 @@ pub struct win_struct_42 {
     pub field_0xeb: u8,
     pub field_0xec: u8,
     pub field_0xed: u8,
-    pub char_ptr_16_0xee: *mut libc::c_char,
+    pub char_ptr_16_0xee: String,
     pub field_0xf0: i32,
     pub u32_xf2: u16,
     pub field_0xf4: u16,
@@ -323,6 +323,12 @@ pub struct win_struct_42 {
     pub field_0x109: u8,
     pub field_0x10a: u32,
     pub field_0x10e: u32,
+}
+
+impl win_struct_42 {
+    pub fn to_le_bytes_vec(&self) -> Vec<u8> {
+        unimplemented!()
+    }
 }
 
 pub struct Struct356 {

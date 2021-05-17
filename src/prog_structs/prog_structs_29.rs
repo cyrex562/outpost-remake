@@ -2672,7 +2672,7 @@ pub struct Struct796 {
     pub field_0x111: u8,
     pub field_0x112: u8,
     pub field_0x113: u8,
-    pub field_0x114: *mut Struct44,
+    pub field_0x114: &mut Struct44,
 }
 
 pub struct Struct795 {
@@ -3665,7 +3665,7 @@ pub struct Struct941 {
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: *mut Struct44,
+    pub field_0x4: &mut Struct44,
     pub field_0x8: u8,
     pub field_0x9: u8,
     pub field_0xa: u8,
@@ -3676,7 +3676,7 @@ pub struct Struct941 {
     pub field_0x10: i32,
     pub field_0x12: i32,
     pub field_0x14: i32,
-    pub field_0x16: *mut Struct44,
+    pub field_0x16: &mut Struct44,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
     pub field_0x1c: u8,
@@ -5624,7 +5624,7 @@ pub struct Struct389 {
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,
-    pub field_0xa: *mut u8,
+    pub field_0xa: Vec<u8>,
 }
 
 pub struct Struct412 {
@@ -6112,7 +6112,7 @@ pub struct Struct805 {
     pub field_0x111: u8,
     pub field_0x112: u8,
     pub field_0x113: u8,
-    pub field_0x114: *mut Struct44,
+    pub field_0x114: &mut Struct44,
 }
 
 pub struct Struct808 {
@@ -8777,7 +8777,7 @@ pub struct Struct310 {
     pub field_0xc: u16,
     field_0xe: *mut libc::c_void,
     pub field_0x10: u16,
-    pub field_0x12: *mut u8,
+    pub field_0x12: Vec<u8>,
     pub field_0x14: u16,
 }
 

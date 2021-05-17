@@ -1,4 +1,6 @@
 use crate::mem_funcs::Address;
+use crate::sys_structs::POINT16;
+use crate::typedefs::HFILE16;
 
 pub struct Struct318 {
     pub field_0x0: u8,
@@ -270,25 +272,25 @@ pub struct Struct117 {
     pub field_0x0: u8,
     pub field_0x1: u8,
     pub field_0x2: u16,
-    pub field_0x4: *mut Struct7,
+    pub field_0x4: Struct7,
     pub field_0x6: u16,
 }
 
 pub struct Struct7 {
-    pub u16_field_0: Address<String>,
-    pub u16_field_2: u16,
-    pub func_ptr_0x4: *mut libc::c_void,
-    pub i_field_4: i32,
-    pub file_path: String,
-    pub file: HFILE16,
-    pub pv_field_0xe: *mut libc::c_void,
-    pub pv_field_0x12: *mut Struct131,
+    pub u16_field_0: String,
+    pub u16_field_1: u16,
+    pub func_ptr_2: u32,
+    pub u32_field_3: u32,
+    pub file_path_field_4: String,
+    pub hfile_field_5: HFILE16,
+    pub pv_field_0xe: u32,
+    pub struct_field_0x12: Struct131,
     pub u32_field_0x16: u32,
-    pub pv_buffer_0x1a: *mut libc::c_void,
+    pub pv_buffer_0x1a: u32,
     pub u16_field_0x1c: i32,
     pub u16_field_0x1e: i32,
     pub u16_field_0x20: i32,
-    pub pv_field_0x22: *mut libc::c_void,
+    pub pv_field_0x22: u32,
     pub u16_field_0x24: u16,
     pub u16_field_0x26: u16,
     pub u16_field_0x28: u16,
@@ -423,7 +425,7 @@ pub struct Struct390 {
     pub field_0x67: u8,
     pub field_0x68: u8,
     pub field_0x69: u8,
-    pub string_buf_ptr_2: *mut libc::c_char,
+    pub string_buf_ptr_2: String,
     pub field_0x6c: u8,
     pub field_0x6d: u8,
     pub field_0x6e: u8,
@@ -442,7 +444,7 @@ pub struct Struct390 {
     pub field_0x7b: u8,
     pub field_0x7c: u8,
     pub field_0x7d: u8,
-    pub string_buf_ptr_3: *mut libc::c_char,
+    pub string_buf_ptr_3: String,
 }
 
 pub struct Struct293 {
@@ -1723,7 +1725,7 @@ pub struct Struct296 {
 }
 
 pub struct Struct199 {
-    pub field_0x0: *mut u8,
+    pub field_0x0: Vec<u8>,
     pub field_0x2: u16,
     pub field_0x4: u32,
     pub field_0x8: u16,

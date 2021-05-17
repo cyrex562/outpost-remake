@@ -1,8 +1,9 @@
 use crate::{
+    CONCAT11,
     defines::{
-        pass1_struct_1, AppContext, Struct124, Struct318, Struct340, Struct371, Struct387,
-        Struct44, Struct45, Struct46, Struct48, Struct52, Struct53, Struct594, Struct599, HANDLE16,
-        HWND16,
+        AppContext, HANDLE16, HWND16, pass1_struct_1, Struct124, Struct318, Struct340,
+        Struct371, Struct387, Struct44, Struct45, Struct46, Struct48, Struct52, Struct53, Struct594,
+        Struct599,
     },
     draw::{get_sys_metrics_1020_7a50, select_and_delete_palette_1020_92c4},
     err_funcs::error_check_1000_17ce,
@@ -15,11 +16,7 @@ use crate::{
     },
     pass_funcs::{pass1_1000_4906, pass1_1008_b544, pass1_1040_c60e},
     struct_funcs::process_struct_1010_20ba,
-    sys_funcs::{
-        win_cleanup_func_1040_b0f8, DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16,
-        FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16,
-        RemoveProp16, SendMessage16, ShowWindow16,
-    },
+    sys_funcs::win_cleanup_func_1040_b0f8,
     ui_funcs::{
         destroy_icon_func_1020_1038, destroy_menu_func_1020_795c, destroy_win_1008_628e,
         destroy_win_1010_2fa0, destroy_win_1040_7b98, free_proc_inst_1040_911e, pass1_1038_af40,
@@ -28,22 +25,22 @@ use crate::{
         win_gui_fn_1040_b54a,
     },
     util::{CONCAT22, SUB42, ZEXT24},
-    CONCAT11,
 };
+use crate::app_context::AppContext;
+use crate::mem_funcs::{Address, get_fn_ptr_at_address, get_type_at_address, StructuredData};
+use crate::prog_structs::prog_structs_1::StructA;
+use crate::prog_structs::prog_structs_2::{Struct318, Struct599};
+use crate::prog_structs::prog_structs_23::Struct387;
+use crate::prog_structs::prog_structs_24::Struct2111;
+use crate::prog_structs::prog_structs_26::{Struct340, Struct52, Struct53};
+use crate::prog_structs::prog_structs_29::Struct48;
+use crate::prog_structs::prog_structs_30::Struct124;
+use crate::prog_structs::prog_structs_31::{Struct371, Struct45, Struct46};
 use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_9::Struct594;
-use crate::app_context::AppContext;
-use crate::prog_structs::prog_structs_2::{Struct599, Struct318};
-use crate::prog_structs::prog_structs_29::Struct48;
-use crate::prog_structs::prog_structs_31::{Struct45, Struct46, Struct371};
-use crate::prog_structs::prog_structs_24::pass1_struct_1;
-use crate::prog_structs::prog_structs_26::{Struct52, Struct53, Struct340};
-use crate::prog_structs::prog_structs_30::Struct124;
-use crate::prog_structs::prog_structs_23::Struct387;
-use crate::mem_funcs::{Address, get_fn_ptr_at_address, get_type_at_address};
-use crate::typedefs::{HANDLE16, HWND16};
-use crate::prog_structs::prog_structs_1::StructA;
 use crate::sys_structs::RECT16;
+use crate::typedefs::{HANDLE16, HWND16};
+use crate::winapi_funcs::{DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
 
 pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {
     win_cleanup_func_1040_b0f8(param_1);
@@ -84,7 +81,7 @@ pub unsafe fn cleanup_1010_17c0(ctx: &mut AppContext, param_1: &mut Address<Stru
     return;
 }
 
-pub unsafe fn win_cleanup_1010_305a(param_1: &mut Address<Struct318>, param_2: i32, param_3: &mut Address<u8>) {
+pub unsafe fn win_cleanup_1010_305a(param_1: &mut Struct318, param_2: i32, param_3: &mut StructuredData) {
     let pu_var1: u32;
     let pi_var2: *mut i32;
     let mut u_var3: u32;
@@ -124,7 +121,7 @@ pub unsafe fn win_cleanup_1010_305a(param_1: &mut Address<Struct318>, param_2: i
                     while (
                         local_8 = local_8 + 1,
                         // pu_var1 = (i_var7 + 0x16),
-                        pu_var1 = param_1._type.field_0x16;
+                        pu_var1 = param_1._type.field_0x16,
                         *pu_var1 != local_8 && local_8 <= *pu_var1,
                     ) {
                         u_var3 = (i_var7 + 0x2a + local_8 * 4);
@@ -231,7 +228,7 @@ pub unsafe fn destroy_win_1010_3202(param_1: *mut Struct387, param_2: i32) {
     return;
 }
 
-pub unsafe fn cleanup_1040_97da(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_1040_97da(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     free_proc_inst_1040_911e(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -264,8 +261,8 @@ pub fn destroy_window_1040_8212(param_1: *mut Struct53) {
     return;
 }
 
-pub unsafe fn win_cleanup_func_1040_782c(ctx: &mut AppContext, param_1: &mut Address<Struct599>) -> u8 {
-    let pu_var1: *mut u8;
+pub unsafe fn win_cleanup_func_1040_782c(ctx: &mut AppContext, param_1: &mut Struct44) -> u8 {
+    let pu_var1: Vec<u8>;
     let mut u_var2: i32;
     let ppc_var3: fn();
     let h_var4: HANDLE16;
@@ -323,8 +320,8 @@ pub unsafe fn destroy_win_1040_52c0(
     let mut u_var7: u16;
     let mut h_wnd: HWND16;
     let mut u_var8: u16;
-    let pp_var9: *mut pass1_struct_1;
-    let pu_var10: *mut u8;
+    let pp_var9: *mut Struct2111;
+    let pu_var10: Vec<u8>;
     let u_var11: u8;
     let u_var12: u8;
     let mut u_var13: u16;
@@ -459,7 +456,7 @@ pub unsafe fn destroy_win_1040_52c0(
 }
 
 pub(crate) fn window_msg_func_1010_7300(
-    pp_var9: *mut pass1_struct_1,
+    pp_var9: *mut Struct2111,
     arg_1: i32,
     arg_2: i32,
     arg_3: i32,
@@ -514,7 +511,7 @@ pub unsafe fn pass1_1040_3506(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub unsafe fn pass1_1040_3532(ctx: &mut AppContext, param_1: *mut u8, param_2: *mut u8) {
+pub unsafe fn pass1_1040_3532(ctx: &mut AppContext, param_1: Vec<u8>, param_2: Vec<u8>) {
     let mut b_var1: bool = false;
     ctx.dx_ax_reg = process_struct_1010_20ba(&mut ctx._g_struct_372_1050_0ed0, 0x2b);
     pass1_1010_038e(ctx.dx_ax_reg, b_var1);
@@ -535,7 +532,7 @@ pub unsafe fn pass1_1040_2f06(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub unsafe fn pass1_1040_2f32(ctx: &mut AppContext, param_1: *mut u8, param_2: *mut u8) {
+pub unsafe fn pass1_1040_2f32(ctx: &mut AppContext, param_1: Vec<u8>, param_2: Vec<u8>) {
     let paVar1: *mut Struct318;
     let BVar2: bool;
 
@@ -546,7 +543,7 @@ pub unsafe fn pass1_1040_2f32(ctx: &mut AppContext, param_1: *mut u8, param_2: *
     return;
 }
 
-pub unsafe fn pass1_1040_2a22(ctx: &mut AppContext, param_1: *mut Struct44) {
+pub unsafe fn pass1_1040_2a22(ctx: &mut AppContext, param_1: &mut Struct44) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
@@ -616,14 +613,14 @@ pub unsafe fn pass1_1040_1290(ctx: &mut AppContext, param_1: &mut Address<Struct
 pub unsafe fn pass1_1040_1152(
     ctx: &mut AppContext,
     param_1: i32,
-    param_2: *mut u8,
-    param_3: *mut u8,
+    param_2: Vec<u8>,
+    param_3: Vec<u8>,
 ) {
     let mut u_var1: u16;
     let mut u_var2: u32;
     let mut i_var3: i32;
     let mut u_var4: u16;
-    let ppVar5: *mut pass1_struct_1;
+    let ppVar5: *mut Struct2111;
     let mut in_stack_0000fff4: u16;
     let mut local_4: u16;
 
@@ -644,10 +641,10 @@ pub unsafe fn pass1_1040_1152(
 
 pub unsafe fn pass1_1040_0e86(ctx: &mut AppContext, param_1: *mut Struct599) {
     let mut u_var1: i32;
-    let in_struct_1: *mut Struct44;
+    let in_struct_1: &mut Struct44;
     let mut i_var2: i32;
     let mut u_var3: u16;
-    let ppVar4: *mut pass1_struct_1;
+    let ppVar4: *mut Struct2111;
     let mut in_stack_0000ffee: u16;
     let mut local_6: u32;
 
@@ -697,7 +694,7 @@ pub unsafe fn pass1_1040_073a(ctx: &mut AppContext, param_1: *mut Struct599) {
     return;
 }
 
-pub unsafe fn pass1_1040_0656(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1040_0656(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     win_cleanup_1038_ef3a(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -794,7 +791,7 @@ pub unsafe fn pass1_1038_d276(ctx: &mut AppContext, param_1: *mut Struct599) {
     return;
 }
 
-pub unsafe fn pass1_1038_d218(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1038_d218(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     free_proc_inst_1038_cfda(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -844,7 +841,7 @@ pub fn cleanup_fn_1020_0e2c(param_1: *mut Struct48) {
     return;
 }
 
-pub fn pass1_1038_ae08(ctx: &mut AppContext, param_1: *mut Struct44) {
+pub unsafe fn pass1_1038_ae08(ctx: &mut AppContext, param_1: &mut Struct44) {
     param_1.offset = 0xae4e;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
@@ -865,7 +862,7 @@ pub fn destroy_win_1038_a072(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn pass1_1038_9ed4(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1038_9ed4(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -873,14 +870,14 @@ pub unsafe fn pass1_1038_9ed4(param_1: *mut Struct44, param_2: u8) -> *mut Struc
     return param_1;
 }
 
-pub fn pass1_1038_9a48(ctx: &mut AppContext, param_1: *mut Struct44) {
+pub unsafe fn pass1_1038_9a48(ctx: &mut AppContext, param_1: &mut Struct44) {
     param_1.offset = 0x9af6;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_997c(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn pass1_1038_997c(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -888,7 +885,7 @@ pub unsafe fn pass1_1038_997c(param_1: *mut Struct44, param_2: u8) -> *mut Struc
     return param_1;
 }
 
-pub unsafe fn pass1_1038_7d5c(ctx: &mut AppContext, param_1: *mut Struct44) {
+pub unsafe fn pass1_1038_7d5c(ctx: &mut AppContext, param_1: &mut Struct44) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -908,7 +905,7 @@ pub unsafe fn destroy_win_1038_7d88(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn cleanup_fn_1020_96a2(param_1: &mut Address<Struct44>, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_fn_1020_96a2(param_1: &mut Address<Struct44>, param_2: u8) -> &mut Struct44 {
     select_and_delete_palette_1020_92c4(ctx, param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -916,7 +913,7 @@ pub unsafe fn cleanup_fn_1020_96a2(param_1: &mut Address<Struct44>, param_2: u8)
     return param_1;
 }
 
-pub unsafe fn cleanup_fn_1020_7b60(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_fn_1020_7b60(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     destroy_menu_func_1020_795c(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -924,9 +921,9 @@ pub unsafe fn cleanup_fn_1020_7b60(param_1: *mut Struct44, param_2: u8) -> *mut 
     return param_1;
 }
 
-pub unsafe fn cleanup_fn_1020_78ac(param_1: *mut Struct44) {
-    let local_struct_1: *mut Struct44;
-    let local_struct_1_hi: *mut Struct44;
+pub unsafe fn cleanup_fn_1020_78ac(param_1: &mut Struct44) {
+    let local_struct_1: &mut Struct44;
+    let local_struct_1_hi: &mut Struct44;
 
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;
@@ -939,7 +936,7 @@ pub unsafe fn cleanup_fn_1020_78ac(param_1: *mut Struct44) {
     return;
 }
 
-pub unsafe fn cleanup_fn_1020_78dc(param_1: *mut Struct44, param_2: u8) -> *mut Struct44 {
+pub unsafe fn cleanup_fn_1020_78dc(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     cleanup_fn_1020_78ac(param_1);
     if (param_2 & 1) != 0 {
         error_check_1000_17ce(param_1);
@@ -974,9 +971,9 @@ pub fn win_cleanup_fn_1020_770e(in_struct_1: *mut Struct594) {
 }
 
 pub unsafe fn call_win_cleanup_fn_1020_3616(
-    in_struct_1: *mut Struct44,
+    in_struct_1: &mut Struct44,
     param_2: u8,
-) -> *mut Struct44 {
+) -> &mut Struct44 {
     win_cleanup_func_1020_2fea(in_struct_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_struct_1);

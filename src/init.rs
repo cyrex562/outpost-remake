@@ -4,10 +4,10 @@ pub fn init_globals_1020_9826() {
     let pcVar3: *mut code;
     let mut in_eax: u32;
     let mut i_var4: i32;
-    let i32_k: *mut u8;
+    let i32_k: Vec<u8>;
     let unaff_bp: *mut u16;
-    let unaff_si: *mut u8;
-    let unaff_DI: *mut u8;
+    let unaff_si: Vec<u8>;
+    let unaff_DI: Vec<u8>;
     let pu_var5: *mut u16;
     let mut unaff_ss: u16;
     let mut in_OF: u8;
