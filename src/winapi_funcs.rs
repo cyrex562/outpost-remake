@@ -684,7 +684,7 @@ pub fn GetClassInfo16(h_inst: HINSTANCE16, name: SEGPTR, wc: &WNDCLASS16) -> boo
 /*
 GetDOSEnviornment16
  */
-pub fn GetDOSEnviornment16() -> u32 {
+pub fn GetDOSEnviornment16() -> SEGPTR {
     unimplemented!()
 }
 

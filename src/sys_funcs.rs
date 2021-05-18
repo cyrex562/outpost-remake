@@ -61,7 +61,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     let mut ppc_var8: Vec<String>;
     let pc_var9: String;
     let pc_var10: String;
-    let pc_var11: String;
+    let mut pc_var11: String;
     let mut u_var12: u16;
     // let unaff_ss: String;
     let mut u_var13: u32;
@@ -75,7 +75,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     ctx.PTR_LOOP_1050_5fd4 = param_1.clone();
     *param_1 = ctx.s_fem15_wav_1050_263a[3..];
     ctx.PTR_LOOP_1050_5fd2 = in_stack_00000000;
-    let u_var13 = exit_1000_2950(ctx, 0);
+    let u_var13 = exit_1000_2950(ctx, None);
     apu_stack4[1] = ctx.g_h_instance;
     let i_stack8 = 0x104;
     let u_stack12 = ctx.s_fem17_wav_1050_264e[7..];
@@ -200,7 +200,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
         } {}
         c_var2 == '\t'
     } {}
-    if ((c_var2 == '\r') || (c_var2 == '\0')) {
+    if (c_var2 == '\r') || (c_var2 == '\0') {
         // LAB_1000_27c1:
         *(&pc_stack6 + i_var4) = offset;
         (&i_stack8 + i_var4) = (ctx.s_fem54_wav_1050_27c0 + 5);
@@ -333,25 +333,25 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let pi_var1: i32;
     let pc_var2: String;
     let pi_var3: i32;
-    let mut cVar4: u8;
+    let mut c_var4: char;
     char * *ppcVar5;
     let mut i32_var6: i32;
     let mut i_var7: i32;
-    let pi_var8: i32;
-    let pi_var9: i32;
+    let mut pi_var8: i32;
+    let mut pi_var9: i32;
     let mut pc_var10: String;
-    let pi_var11: i32;
-    let mut bVar12: bool;
-    let mut dos_env: u32;
-    let mut u_var13: u32;
+    let mut pi_var11: i32;
+    let mut b_var12: bool;
+    let mut dos_env: SEGPTR;
+    let mut u_var13: String;
     let mut u_var14: u32;
-    let pc_var15: String;
-    let mut uVar16: &Vec<u8>;
+    let mut pc_var15: String;
+    let mut u_var16: &Vec<u8>;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_6: u16;
 
-    uVar16 = &ctx.g_alloc_addr_1050_1050;
+    u_var16 = &ctx.g_alloc_addr_1050_1050;
     dos_env = GetDOSEnviornment16();
     // dos_env._2_2_ = (dos_env >> 0x10);
     // if dos_env != 0 {
@@ -361,8 +361,8 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     pc_var10 = String::new();
     i32_var6 = -1;
     if dos_env != 0 {
-        cVar4 = *0x0;
-        while cVar4 != '\0' {
+        c_var4 = *0x0;
+        while c_var4 != '\0' {
             while {
                 if i32_var6 == 0 {
                     break;
@@ -376,34 +376,34 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
             pc_var2 = pc_var10;
             pc_var10 = pc_var10[1..].clone();
             unsafe {
-                cVar4 = pc_var2[0];
+                c_var4 = pc_var2[0];
             }
         }
     }
-    u_var13 = exit_1000_2950(ctx, uVar16);
-    u_var14 = exit_1000_2950(ctx, 0);
-    pc_var15 = (u_var13 >> 0x10);
+    u_var13 = exit_1000_2950(ctx, u_var16);
+    u_var14 = exit_1000_2950(ctx, None);
+    // pc_var15 = (u_var13 >> 0x10);
     pc_var10 = u_var13;
-    uVar16 = (u_var14 >> 0x10);
-    PTR_LOOP_1050_5fbe = u_var14;
+    // uVar16 = (u_var14 >> 0x10);
+    ctx.PTR_LOOP_1050_5fbe = u_var14;
     pi_var8 = 0x0;
     loop {
         PTR_LOOP_1050_5fc0 = (u_var14 >> 0x10);
         ppcVar5 = u_var14;
-        if (i_var7 == 0) {
+        if i_var7 == 0 {
             *ppcVar5 = 0x0;
             ppcVar5[1] = 0x0;
             return;
         }
         unsafe {
-            bVar12 = *pi_var8 == s__C_FILE_INFO__1050_5f5c._0_2_;
+            b_var12 = *pi_var8 == s__C_FILE_INFO__1050_5f5c._0_2_;
         }
-        if (bVar12) {
+        if b_var12 {
             pi_var11 = s__C_FILE_INFO__1050_5f5c;
             i32_var6 = 6;
             pi_var9 = pi_var8;
             while {
-                if (i32_var6 == 0) {
+                if i32_var6 == 0 {
                     break;
                 }
                 i32_var6 = i32_var6 + -1;
@@ -412,32 +412,28 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
                 pi_var1 = pi_var9;
                 pi_var9 = pi_var9 + 1;
                 unsafe {
-                    bVar12 = *pi_var1 == *pi_var3;
+                    b_var12 = *pi_var1 == *pi_var3;
                 }
-                bVar12
+                b_var12
             } {}
-            if (!bVar12) {}
+            if (!b_var12) {}
             // goto LAB_1000_2867;
         } else {
             // LAB_1000_2867:
             *ppcVar5 = pc_var10;
-            ppcVar5[1] = pc_var15;
-            u_var14 = CONCAT22(PTR_LOOP_1050_5fc0, ppcVar5 + 2);
+            ppcVar5[1] = pc_var15.clone();
+            u_var14 = CONCAT22(ctx.PTR_LOOP_1050_5fc0, ppcVar5 + 2);
         }
         while {
-            PTR_LOOP_1050_5fc0 = (u_var14 >> 0x10);
+            ctx.PTR_LOOP_1050_5fc0 = (u_var14 >> 0x10);
             pi_var1 = pi_var8;
             pi_var8 = (pi_var8 + 1);
-            unsafe {
-                cVar4 = *pi_var1;
-            }
-            pc_var2 = pc_var10;
-            pc_var10 = pc_var10 + 1;
-            unsafe {
-                *pc_var2 = cVar4;
-            }
-            u_var14 = u_var14 & 0xffff | ZEXT24(PTR_LOOP_1050_5fc0) << 0x10;
-            cVar4 != '\0'
+            c_var4 = *pi_var1;
+            pc_var2 = pc_var10.clone();
+            pc_var10 = pc_var10[1..].clone();
+            pc_var2[0] = c_var4;
+            u_var14 = u_var14 & 0xffff | ZEXT24(ctx.PTR_LOOP_1050_5fc0) << 0x10;
+            c_var4 != '\0'
         } {}
         i_var7 = i_var7 + -1;
     }
@@ -447,7 +443,7 @@ pub unsafe fn get_dos_env_1000_27da() {
     let pi_var1: i32;
     let pc_var2: String;
     let pi_var3: i32;
-    let mut cVar4: u8;
+    let mut c_var4: char;
     
     let mut i_var5: i32;
     let mut i32_var6: i32;
@@ -459,49 +455,46 @@ pub unsafe fn get_dos_env_1000_27da() {
     let pc_var12: String;
     let pi_var13: i32;
     let mut b_var14: bool;
-    let SVar15: SEGPTR;
-    let mut uVar16: u32;
-    let pc_var17: String;
-    let mut local_a: u16;
-    let mut local_8: u16;
-    let mut local_6: u16;
+    let s_var15: SEGPTR;
+    let mut u_var16: u32;
+    let mut pc_var17: String = String::new();
 
-    SVar15 = GetDOSEnviornment16();
-    i32_var6 = (SVar15 >> 0x10);
-    if (SVar15 != 0) {
-        i32_var6 = 0;
-    }
+    s_var15 = GetDOSEnviornment16();
+    // i32_var6 = (s_var15 >> 0x10);
+    // if s_var15 != 0 {
+    //     i32_var6 = 0;
+    // }
     i_var9 = 0;
-    pc_var12 = 0x0;
+    pc_var12 = String::new();
     i_var5 = -1;
-    if (i32_var6 != 0) {
-        cVar4 = *0x0;
-        while (cVar4 != '\0') {
+    if i32_var6 != 0 {
+        c_var4 = *0x0;
+        while c_var4 != '\0' {
             while {
-                if (i_var5 == 0) {
+                if i_var5 == 0 {
                     break;
                 }
                 i_var5 = i_var5 + -1;
                 pc_var2 = pc_var12;
-                pc_var12 = pc_var12 + 1;
-                unsafe { *pc_var2 != '\0' }
+                pc_var12 = pc_var12[1..].clone();
+                pc_var2[0] != '\0'
             } {}
             i_var9 = i_var9 + 1;
             pc_var2 = pc_var12;
-            pc_var12 = pc_var12 + 1;
+            pc_var12 = pc_var12[1..].clone();
             unsafe {
-                cVar4 = *pc_var2;
+                c_var4 = pc_var2[0];
             }
         }
     }
-    uVar16 = exit_1000_2950(ctx, 0);
-    pc_var17 = (uVar16 >> 0x10);
-    pc_var12 = uVar16;
-    uVar16 = exit_1000_2950(ctx, 0);
-    u_var7 = (uVar16 >> 0x10);
-    ppc_var8 = uVar16;
-    0x5fbe = ppc_var8;
-    ctx.PTR_LOOP_1050_5fc0 = u_var7;
+    u_var16 = exit_1000_2950(ctx, None);
+    // pc_var17 = (u_var16 >> 0x10);
+    pc_var12 = u_var16;
+    u_var16 = exit_1000_2950(ctx, None);
+    // u_var7 = (u_var16 >> 0x10);
+    ppc_var8 = u_var16;
+    // 0x5fbe = ppc_var8;
+    // ctx.PTR_LOOP_1050_5fc0 = u_var7;
     pi_var10 = 0x0;
     loop {
         if i_var9 == 0 {
@@ -530,49 +523,48 @@ pub unsafe fn get_dos_env_1000_27da() {
                 }
                 b_var14
             } {}
-            if (!b_var14) {}
+            if !b_var14 {}
             // goto LAB_1000_2867;
         } else {
             // LAB_1000_2867:
-            *ppc_var8 = pc_var12;
-            ppc_var8[1] = pc_var17;
+            ppc_var8 = pc_var12[0];
+            ppc_var8[1] = u_var16;
             ppc_var8 = ppc_var8 + 2;
         }
         while {
             pi_var1 = pi_var10;
             pi_var10 = (pi_var10 + 1);
-            unsafe {
-                cVar4 = *pi_var1;
-            }
+
+                c_var4 = *pi_var1;
+
             pc_var2 = pc_var12;
-            pc_var12 = pc_var12 + 1;
-            unsafe {
-                *pc_var2 = cVar4;
-            }
-            cVar4 != '\0'
+            pc_var12 = pc_var12[1..].clone();
+
+                pc_var2[0] = c_var4;
+            c_var4 != '\0'
         } {}
         i_var9 = i_var9 + -1;
     }
 }
 
-pub unsafe fn dos3_call_1000_2bb6(param_1: i32, param_2: &mut Struct152) -> u32 {
-    let pu8_var1: Vec<u8>;
-    let mut paVar2: Struct152;
+pub unsafe fn dos3_call_1000_2bb6(ctx: &mut AppContext, param_1: &String, param_2: &mut Struct152) -> u32 {
+    let mut pu8_var1: &Vec<u8>;
+    let mut struct_var2: Struct152;
     let mut u8_var3: u8;
-    let mut i_var4: i32;
-    let mut i_var5: i32;
-    let mut str_var6: String;
-    let mut uStack4: u16;
-    let mut iStack2: i32;
+    let mut i_var4: &String;
+    let mut i_var5: &String;
+    let mut str_var6: &String;
+    let mut u16_var7: &Vec<u8>;
+    let mut i32_var8: i32;
 
-    paVar2 = param_2;
-    iStack2 = unaff_bp + 1;
-    uStack4 = &ctx.g_alloc_addr_1050_1050;
+    // struct_var2 = param_2;
+    i32_var8 = unaff_bp + 1;
+    u16_var7 = &ctx.g_alloc_addr_1050_1050;
     u8_var3 = param_2.field_0xa;
     if ((u8_var3 & 0x82) != 0) && ((u8_var3 & 0x40) == 0) {
         param_2.field_0x4 = 0;
         if (u8_var3 & 1) != 0 {
-            if ((u8_var3 & 0x10) == 0) {}
+            if (u8_var3 & 0x10) == 0 {}
             // goto LAB_1000_2c37;
             param_2.field_0x0 = param_2.field_0x6.clone();
             u8_var3 = u8_var3 & 0xfe;
@@ -582,42 +574,45 @@ pub unsafe fn dos3_call_1000_2bb6(param_1: i32, param_2: &mut Struct152) -> u32 
         if ((u8_var3 & 8) == 0)
             && ((u8_var3 & 4) != 0
                 || ((&param_2.field_0xf0 & 1) == 0
-                    && ((PTR_LOOP_1050_61ec != 0x0
+                    && (PTR_LOOP_1050_61ec != 0x0
                         && ((param_2 == 0x621c || (param_2 == 0x6228))
-                            && ((*(str_var6 + 0x5f90) & 0x40) != 0)))
-                        || (
-                            process_struct_1000_2ce8(param_2, ctx.dx_reg),
-                            (paVar2.field_0xa & 8) == 0,
-                        ))))
+                            && ((*(str_var6 + 0x5f90) & 0x40) != 0))
+            //             || (
+            // process_struct_1000_2ce8(param_2, ctx.dx_reg),
+            // (struct_var2.field_0xa & 8) == 0,
+            //             )
+        )))
         {
-            i_var4 = dos3_call_1000_39f2(&mut str_var6, &param_1);
+            i_var4 = dos3_call_1000_39f2(
+                &mut str_var6,
+                &param_1,
+                None
+            );
             i_var5 = 1;
         } else {
-            i_var4 = paVar2.field_0x6;
-            i_var5 = paVar2.field_0x0 - i_var4;
-            paVar2.field_0x0 = i_var4 + 1;
-            paVar2.field_0x4 = paVar2.field_0xf2 + -1;
+            i_var4 = &param_2.field_0x6;
+            // i_var5 = &param_2.field_0x0 - i_var4;
+            param_2.field_0x0 = i_var4[1..].clone();
+            param_2.field_0x4 = param_2.field_0xf2  - 1;
             if i_var5 == 0 {
-                i_var4 = 0;
+                // i_var4 = 0;
                 if (*(str_var6 + 0x5f90) & 0x20) != 0 {
                     dos3_call_1000_3636(&str_var6, 0, 0, 2);
-                    i_var4 = 0;
+                    // i_var4 = 0;
                     i_var5 = i_var4;
                 }
             } else {
-                i_var4 = dos3_call_1000_39f2(&mut str_var6, &paVar2.field_0x6, paVar2.field_0x8, i_var5);
+                i_var4 = dos3_call_1000_39f2(&mut str_var6, &struct_var2.field_0x6, Some(&mut struct_var2.field_0x8), i_var5);
             }
-           paVar2.field_0x6 = param_1;
+           struct_var2.field_0x6 = param_1.clone();
         }
         if i_var4 == i_var5 {
             return param_1 & 0xff;
         }
     }
     // LAB_1000_2c37:
-    pu8_var1 = &paVar2.field_0xa;
-    unsafe {
-        *pu8_var1 = *pu8_var1 | 0x20;
-    }
+    pu8_var1 = &struct_var2.field_0xa;
+    pu8_var1[0] = pu8_var1[0] | 0x20;
     return 0xffff;
 }
 
@@ -898,7 +893,7 @@ pub unsafe fn dos3_call_1000_370a(
     return u_var3;
 }
 
-pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_3: &mut u16) -> u16 {
+pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_3: Option<&mut u16>) -> u16 {
     let pc_var1: String;
     let mut u_var2: i32;
     let pcVar3: code;

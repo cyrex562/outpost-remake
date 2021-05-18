@@ -71,7 +71,7 @@ pub unsafe fn exit_1000_25cc(ctx: &mut AppContext) -> *mut i32 {
     }
 }
 
-pub unsafe fn exit_1000_2950(ctx: &mut AppContext, param_1: &Vec<u8>) -> Vec<u8> {
+pub unsafe fn exit_1000_2950(ctx: &mut AppContext, param_1: Optional<&Vec<u8>>) -> Vec<u8> {
     let mut p_var1: Vec<u8>;
     let string_2: String;
     let mut i_var5: u32;

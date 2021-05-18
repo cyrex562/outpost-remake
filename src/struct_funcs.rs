@@ -402,12 +402,12 @@ pub fn process_struct_1000_2cb0(param_1: *mut Struct151) {
     return;
 }
 
-pub fn process_struct_1000_2ce8(param_1: *mut Struct152, param_2: u16) {
+pub unsafe fn process_struct_1000_2ce8(ctx: &mut AppContext, param_1: *mut Struct152, param_2: u16) {
     let pu8_var1: Vec<u8>;
     let pvVar2: &mut Vec<u8>;
 
-    pvVar2 = alloc_mem_1000_167a(0x200, param_2);
-    if (param_2 == 0) {
+    pvVar2 = alloc_mem_1000_167a(ctx, 0x200, param_2);
+    if param_2 == 0 {
         pu8_var1 = &param_1.field_0xa;
         unsafe {
             *pu8_var1 = *pu8_var1 | 4;
