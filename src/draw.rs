@@ -83,13 +83,40 @@ use crate::{
     },
 };
 use crate::winapi_funcs::{BeginPaint16, BringWindowToTop16, CheckMenuItem16, ClientToScreen16, CreateDC16, CreatePalette16, CreatePen16, CreateSolidBrush16, CreateWindow16, DeleteDC16, DeleteMenu16, DeleteObject16, DestroyIcon16, DestroyWindow16, DrawIcon16, DrawText16, Ellipse16, EnableMenuItem16, EnableWindow16, EndPaint16, EnumChildWindows16, FillRect16, FrameRect16, FreeProcInstance16, GetClientRect16, GetCurrentPosition16, GetDC16, GetDlgCtrlID16, GetDlgItem16, GetMenuState16, GetProp16, GetStockObject16, GetSubMenu16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GetWindowWord16, GrayString16, InsertMenu16, InvalidateRect16, IsIconic16, IsWindow16, LineTo16, LoadCursor16, LoadIcon16, LoadMenu16, lstrlen16, MakeProcInstance16, ModifyMenu16, MoveTo16, MoveToEx16, MoveWindow16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, ScreenToClient16, SelectObject16, SelectPalette16, SendMessage16, SetBkColor16, SetCapture16, SetCursor16, SetFocus16, SetMapMode16, SetTextColor16, SetWindowPos16, SetWindowText16, ShowWindow16, TextOut16, TrackPopupMenu16, UnrealizeObject16, UpdateWindow16, ValidateRect16, WinHelp16};
+use crate::prog_structs::prog_structs_8::{Struct646, Struct645, Struct647, Struct644, Struct643, Struct641, Struct68, Struct60, Struct642};
+use crate::app_context::AppContext;
+use crate::typedefs::{HDC16, HWND16, HPALETTE16, HGDIOBJ16, HBRUSH16, HPEN16, SEGPTR, HANDLE16, HICON16, HCURSOR16, HMENU16, WPARAM16, COLORREF, LRESULT};
+use crate::sys_structs::{PAINTSTRUCT16, RECT16, POINT16};
+use crate::prog_structs::prog_structs_7::{Struct376, Struct44, Struct632, Struct631, Struct618, Struct135, Struct31};
+use crate::prog_structs::prog_structs_12::{Struct409, Struct102};
+use crate::prog_structs::prog_structs_2::{Struct199, Struct665, Struct668, Struct7, Struct318};
+use crate::prog_structs::prog_structs_31::{Struct20, Struct45, Struct15, Struct5, Struct34, Struct33, Struct139, Struct138, Struct334, Struct28, Struct29};
+use crate::prog_structs::prog_structs_26::{Struct53, Struct55, Struct54};
+use crate::prog_structs::prog_structs_30::{Struct417, Struct14, Struct18, Struct35, Struct137};
+use crate::prog_structs::prog_structs_4::{Struct650, Struct656, Struct651, Struct652};
+use crate::prog_structs::prog_structs_23::{win_struct_42, Struct134, Struct56};
+use crate::prog_structs::prog_structs_5::Struct659;
+use crate::prog_structs::prog_structs_20::{Struct133, Struct30};
+use crate::prog_structs::prog_structs_6::{Struct132, Struct675, Struct673, Struct672, Struct622, Struct674, Struct670};
+use crate::prog_structs::prog_structs_9::{Struct594, Struct634, Struct633, Struct630, Struct604};
+use crate::prog_structs::prog_structs_3::{Struct663, Struct664, Struct661};
+use crate::prog_structs::prog_structs_27::pass1_struct_2;
+use crate::prog_structs::prog_structs_15::Struct26;
+use crate::prog_structs::prog_structs_28::{Struct37, Struct357};
+use crate::prog_structs::prog_structs_25::Struct65;
+use crate::prog_structs::prog_structs_17::Struct590;
+use crate::prog_structs::prog_structs_1::{Struct538, Struct693, Struct694, Struct197, Struct104};
+use crate::prog_structs::prog_structs_22::Struct69;
+use crate::prog_structs::prog_structs_29::{Struct36, Struct136};
+use crate::prog_structs::prog_structs_16::{Struct13, Struct115};
+use crate::prog_structs::prog_structs_24::Struct129;
 
-pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: *mut Struct604) {
+pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     let pp_var1: fn();
     let mut u_var2: u32;
     let mut i_var3: i32;
     let mut h_var4: HDC16;
-    let pu_var5: *mut u16;
+    let pu_var5: &u16;
     let mut obj_handle: HPEN16;
     let mut h_var6: HGDIOBJ16;
     let mut obj_handle_00: HBRUSH16;
@@ -122,10 +149,10 @@ pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: *mut Struct604) {
     let mut local_22: PAINTSTRUCT16;
 
     // u_var9 = (param_1 >> 0x10);
-    u_var8 = param_1;
-    h_var4 = BeginPaint16(CONCAT22(unaff_ss, &local_22), (u_var8 + 4));
+    // u_var8 = param_1;
+    h_var4 = BeginPaint16(&local_22, param_1.field_0x4);
     local_24 = h_var4;
-    pass1_1010_4c2c((u_var8 + 6));
+    pass1_1010_4c2c(param_1.field_0x6);
     let local_28 = CONCAT22(ctx.dx_reg, h_var4);
     pu_var5 = &local_24;
     // pp_var1 = (*local_28 + 8);
@@ -4780,7 +4807,7 @@ pub unsafe fn invalidate_rect_1020_8d90(
     local_6 = pass1_1018_266a((i_var2 + 0x22));
     if (local_6 != 0x0) {
         pass1_1018_265c((i_var2 + 0x22));
-        if ((in_dx | local_6) != 0) {
+        if (in_dx | local_6) != 0 {
             string_fn_1000_3f9c(
                 local_10,
                 unaff_ss,

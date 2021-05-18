@@ -540,29 +540,24 @@ pub fn process_string_1000_3ec0(ctx: &mut AppContext, param_1: i32, param_2: &St
 }
 
 pub fn string_fn_1000_3f9c(
-    param_1: String,
-    param_2: String,
-    param_3: String,
-    param_4: String,
-    param_5: String,
+    ctx: &mut AppContext,
+    param_1: &String,
+    param_2: &String,
+    param_3: &String,
+    param_4: &String,
+    param_5: &String,
 ) -> u8 {
-    let pu_var1: Vec<u8>;
-    let mut u_var2: u16;
-    let mut unaff_bp: i32;
-    char * *ppcStack16;
-    let mut local_4: u16;
-    let mut iStack2: i32;
-
-    iStack2 = unaff_bp + 1;
-    local_4 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
-    PTR_LOOP_1050_68b2._0_1_ = 0x42;
-    PTR_LOOP_1050_68ae = param_1;
-    PTR_LOOP_1050_68b0 = param_2;
-    _PTR_LOOP_1050_68a8 = CONCAT22(param_2, param_1);
-    PTR_LOOP_1050_68ac = 0x7fff;
-    ppcStack16 = &param_5;
-    u_var2 = pass1_fn_1000_30b4(
-        &PTR_LOOP_1050_68a8,
+    let iStack2 = ctx.bp_reg + 1;
+    let local_4 = &ctx.g_alloc_addr_1050_1050;
+    ctx.PTR_LOOP_1050_68b2._0_1_ = 0x42;
+    ctx.PTR_LOOP_1050_68ae = param_1;
+    ctx.PTR_LOOP_1050_68b0 = param_2;
+    ctx._PTR_LOOP_1050_68a8 = param_1;
+    ctx.PTR_LOOP_1050_68ac = 0x7fff;
+    let ppcStack16 = param_5;
+    let u_var2 = pass1_fn_1000_30b4(
+        ctx,
+        &ctx.PTR_LOOP_1050_68a8,
         &ctx.g_alloc_addr_1050_1050,
         &param_3,
     );

@@ -688,3 +688,9 @@ pub fn GetDOSEnviornment16() -> SEGPTR {
     unimplemented!()
 }
 
+/*
+void WINAPI MessageBeep16( UINT16 i )
+ */
+pub fn MessageBeep16(i: u16) {
+    unimplemented!()
+}

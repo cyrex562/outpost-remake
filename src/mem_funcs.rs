@@ -92,21 +92,27 @@ pub fn get_type_at_address<T>(address: u32) -> Address<T> {
     unimplemented!()
 }
 
-// u32  free_mem_1000_0016(param_1: u32)
-pub unsafe fn free_mem_1000_0016(param_1: u32) -> u32 {
-    let mut u_var1: u32;
-    let mut local_6: u16;
-    let mut local_4: u16;
 
-    if (param_1 + 0x14) != -0x4153 {
+/*
+get_struct_from_address<Struct84>(ctx.bx_reg);
+
+ */
+pub fn get_struct_from_address<T>(address: u32) -> T {
+    unimplemented!()
+}
+
+// u32  free_mem_1000_0016(param_1: u32)
+pub unsafe fn free_mem_1000_0016(ctx: &mut AppContext, param_1: &mut StructuredData) -> u32 {
+    let mut u_var1: u32;
+    // param_1 + 0x14
+    let var_2 = param_1::get_u16(0x14);
+    if var_2 != -0x4153 {
         invoke_error_handler_1000_1e61(ctx, ctx.code_seg_reg, 10, 0);
         return 0xffffffff;
     }
     u_var1 = free_mem_1000_0052(&ctx.g_alloc_addr_1050_1050);
     return u_var1;
 }
-
-
 
 
 // u32  free_mem_1000_0052()

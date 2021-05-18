@@ -8,15 +8,14 @@ use crate::exit::fatal_app_exit_1000_3e9e;
 use crate::mem_funcs::Address;
 use crate::string_funcs::{copy_string_1000_3d3e, process_string_1000_3cea};
 use crate::util::{CONCAT22, SBORROW2};
-use crate::winapi_funcs::{LoadString16, MessageBox16, PostMessage16};
+use crate::winapi_funcs::{LoadString16, MessageBox16, PostMessage16, MessageBeep16};
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
                                 param_1: &String,
-                                param_2: &mut Vec<u8>) -> bool {
+                                param_2: &String) -> bool {
     let pi_var1: *mut i32;
-    let mut in_ax: i32;
 
-    if in_ax < (param_1 + 0xc) {
+    if ctx.ax_reg < (param_1 + 0xc) {
         msg_box_1000_214c(0, 0, 0xd940, &mut ctx.PTR_LOOP_1050_1040);
         return true;
     }
@@ -26,26 +25,26 @@ pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
 }
 
 // WARNING: Removing unreachable block (ram,0x10001f92)
-pub fn out_of_mem_msg_box_1000_1f7e(param_1: &[u32]) -> u16 {
+pub fn out_of_mem_msg_box_1000_1f7e(param_1: &String) -> u16 {
     // let mut u_var1: i32;
-    let mut u_var1: u32;
+    let mut u_var1: char;
     // let mut c_var2: u8;
-    let mut c_var2: i8;
+    let mut c_var2: char;
     // let mut u_var3: u16;
     let mut u_var3: u16;
     // let mut u_var4: u32;
-    let mut u_var4: u32;
+    let mut u_var4: String;
 
-    u_var1 = *param_1;
-    if (u_var1 == 0xf) {
+    u_var1 = param_1[0];
+    if u_var1 == 0xf as char {
         // LAB_1000_1fb6:
         u_var3 = 1;
     } else {
-        if (u_var1 < 0x10) {
+        if u_var1 < '\x10' {
             c_var2 = u_var1;
-            if (c_var2 == 0x2) {}
+            if c_var2 == 0x2 as char {}
             // goto LAB_1000_1fb6;
-            if ((0 < (c_var2 + -2)) && ((c_var2 + -3) < 0xc)) {
+            if (0 < (c_var2 + -2)) && ((c_var2 + -3) < 0xc) {
                 u_var3 = 0;
                 // goto LAB_1000_1fbe;
             }
@@ -54,7 +53,7 @@ pub fn out_of_mem_msg_box_1000_1f7e(param_1: &[u32]) -> u16 {
     }
     // LAB_1000_1fbe:
     u_var4 = out_of_mem_msg_1000_1fd2();
-    u_var3 = msg_box_1000_214c(0, u_var3, u_var4, 0);
+    u_var3 = msg_box_1000_214c(0, u_var3, &u_var4, 0);
     return u_var3;
 }
 
@@ -69,15 +68,14 @@ pub fn out_of_mem_msg_1000_1fd2() -> String {
     return CONCAT22(0x1000, (s_242_flc_1050_1c76 + 4) + in_ax * 0x17);
 }
 
-pub fn msg_box_1000_214c(param_1: u16, param_4: i32, param_2: u16, param_3: &mut Address<u32>) -> u16 {
+pub fn msg_box_1000_214c(param_1: u16, param_4: u16, param_2: &String) -> u16 {
     let i_var1: u16;
     let mut i_var2: i32;
-    let mut _type: i32;
-
-    _type = 2 - (param_1 == 0) | 0x2110;
+    let mut _type: u16 = 2 - (param_1 == 0) | 0x2110;
     MessageBeep16(0);
     loop {
-        i_var1 = MessageBox16(_type, &String::from("SmartHeap Library"), CONCAT22(param_3, param_2), 0);
+        // i_var1 = MessageBox16(_type, &String::from("SmartHeap Library"), param_2, 0);
+        i_var1 = MessageBox16(0, param_2, &String::from("SmartHeap Library"), _type);
         i_var2 = i_var1 - 1;
         if i_var2 == 0 {
             return 0;

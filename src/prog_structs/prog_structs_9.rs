@@ -1664,6 +1664,7 @@ pub struct Struct604 {
     pub field_0x3: u8,
     pub field_0x4: u8,
     pub field_0x5: u8,
+    pub field_0x6: u8,
     pub Struct60_ptr: *mut Struct60,
     pub field_0xa: u32,
 }

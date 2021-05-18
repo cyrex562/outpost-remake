@@ -107,6 +107,9 @@ pub fn set_struct_1000_09ca(ctx: &mut AppContext) -> u32 {
     // let local_bx_17: *mut Struct83;
     let temp_5f585a33fd: *mut Struct85;
 
+    let mut struct_var_3: Struct84 = get_struct_from_address<Struct84>(ctx.bx_reg);
+
+
     pu_var1 = &local_BX__1.field_0x14;
     local_bx_17 = ((local_BX__1 + (in_ax - pu_var1) + -6 & 0xfffc) + pu_var1);
     (local_bx_17).field_0x0 = 1;

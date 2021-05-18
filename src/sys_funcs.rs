@@ -342,32 +342,28 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let mut pc_var10: String;
     let mut pi_var11: i32;
     let mut b_var12: bool;
-    let mut dos_env: SEGPTR;
     let mut u_var13: String;
     let mut u_var14: u32;
     let mut pc_var15: String;
-    let mut u_var16: &Vec<u8>;
-    let mut local_a: u16;
-    let mut local_8: u16;
-    let mut local_6: u16;
 
-    u_var16 = &ctx.g_alloc_addr_1050_1050;
-    dos_env = GetDOSEnviornment16();
+
+    let mut u_var16 = &ctx.g_alloc_addr_1050_1050;
+    let mut dos_env = GetDOSEnviornment16();
     // dos_env._2_2_ = (dos_env >> 0x10);
     // if dos_env != 0 {
     //     dos_env._2_2_ = 0;
     // }
-    i_var7 = 0;
-    pc_var10 = String::new();
-    i32_var6 = -1;
+    let mut i_var7 = 0;
+    let mut pc_var10 = String::new();
+    let mut i32_var6 = -1;
     if dos_env != 0 {
-        c_var4 = *0x0;
+        c_var4 = '\0';
         while c_var4 != '\0' {
             while {
                 if i32_var6 == 0 {
                     break;
                 }
-                i32_var6 = i32_var6 + -1;
+                i32_var6 = i32_var6 - 1;
                 pc_var2 = pc_var10;
                 pc_var10 = pc_var10[1..].clone();
                 pc_var2[0] != '\0'
