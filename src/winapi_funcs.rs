@@ -694,3 +694,11 @@ void WINAPI MessageBeep16( UINT16 i )
 pub fn MessageBeep16(i: u16) {
     unimplemented!()
 }
+
+/*
+BOOL16 WINAPI WritePrivateProfileString16( LPCSTR section, LPCSTR entry,
+                                           LPCSTR string, LPCSTR filename )
+ */
+pub fn WritePrivateProfileString16(section: &String, entry: &String, _string: &String, filename: &String) -> bool {
+    unimplemented!()
+}

@@ -5,29 +5,25 @@ use crate::{
         Struct371, Struct387, Struct44, Struct45, Struct46, Struct48, Struct52, Struct53, Struct594,
         Struct599,
     },
-    draw::{get_sys_metrics_1020_7a50, select_and_delete_palette_1020_92c4},
     err_funcs::error_check_1000_17ce,
-    pass6_funcs::pass1_1038_b6e0,
-    pass7_funcs::pass1_1040_a5d0,
-    pass8_funcs::{
-        pass1_1010_038e, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2ee2,
-        pass1_1010_32c0, pass1_1010_32da, pass1_1010_7b8c, pass1_1010_a568, pass1_1010_a58a,
-        pass1_1010_a5ac, pass1_1010_a5ca, pass1_1010_a5ec, pass1_1010_ae92,
-    },
-    pass_funcs::{pass1_1000_4906, pass1_1008_b544, pass1_1040_c60e},
     struct_funcs::process_struct_1010_20ba,
     sys_funcs::win_cleanup_func_1040_b0f8,
-    ui_funcs::{
-        destroy_icon_func_1020_1038, destroy_menu_func_1020_795c, destroy_win_1008_628e,
-        destroy_win_1010_2fa0, destroy_win_1040_7b98, free_proc_inst_1040_911e, pass1_1038_af40,
-        set_window_pos_1038_abdc, update_window_1040_93aa, win_cleanup_1018_4d22,
-        win_cleanup_func_1020_2fea, win_gui_fn_1010_32f4, win_gui_fn_1010_79aa,
-        win_gui_fn_1040_b54a,
-    },
     util::{CONCAT22, SUB42, ZEXT24},
 };
 use crate::app_context::AppContext;
+use crate::draw::draw1::select_and_delete_palette_1020_92c4;
+use crate::draw::draw2::get_sys_metrics_1020_7a50;
 use crate::mem_funcs::{Address, get_fn_ptr_at_address, get_type_at_address, StructuredData};
+use crate::pass::pass10_funcs::pass1_1040_c60e;
+use crate::pass::pass12_funcs::pass1_1008_b544;
+use crate::pass::pass19_funcs::pass1_1040_a5d0;
+use crate::pass::pass20_funcs::{pass1_1010_a568, pass1_1010_a58a, pass1_1010_a5ac, pass1_1010_a5ca, pass1_1010_a5ec, pass1_1010_ae92};
+use crate::pass::pass6_funcs::pass1_1038_b6e0;
+use crate::pass::pass8_funcs::{
+    pass1_1010_038e, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2ee2,
+    pass1_1010_32c0, pass1_1010_32da, pass1_1010_7b8c,
+};
+use crate::pass::pass_funcs::pass1_1000_4906;
 use crate::prog_structs::prog_structs_1::StructA;
 use crate::prog_structs::prog_structs_2::{Struct318, Struct599};
 use crate::prog_structs::prog_structs_23::Struct387;
@@ -40,6 +36,8 @@ use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_9::Struct594;
 use crate::sys_structs::RECT16;
 use crate::typedefs::{HANDLE16, HWND16};
+use crate::ui_funcs::ui1::{destroy_icon_func_1020_1038, destroy_win_1008_628e, destroy_win_1010_2fa0, destroy_win_1040_7b98, free_proc_inst_1040_911e, update_window_1040_93aa, win_cleanup_1018_4d22, win_gui_fn_1010_32f4, win_gui_fn_1010_79aa, win_gui_fn_1040_b54a};
+use crate::ui_funcs::ui2::{destroy_menu_func_1020_795c, pass1_1038_af40, set_window_pos_1038_abdc, win_cleanup_func_1020_2fea};
 use crate::winapi_funcs::{DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
 
 pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {

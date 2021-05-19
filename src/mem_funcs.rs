@@ -1,6 +1,7 @@
 use crate::app_context::AppContext;
 use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_16ee, error_check_1000_18d2, invoke_error_handler_1000_1e61};
-use crate::pass_funcs::{pass1_1008_6604, pass1_fn_1000_0c32, pass1_fn_1000_20a2, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_422a, pass1_fn_1000_48a8, pass1_fn_1000_5390};
+use crate::pass::pass14_funcs::pass1_1008_6604;
+use crate::pass::pass_funcs::{pass1_fn_1000_0c32, pass1_fn_1000_20a2, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_422a, pass1_fn_1000_48a8, pass1_fn_1000_5390};
 use crate::prog_structs::prog_structs_12::Struct102;
 use crate::prog_structs::prog_structs_13::Struct92;
 use crate::prog_structs::prog_structs_20::Struct87;
@@ -88,7 +89,7 @@ pub fn get_fn_ptr_at_address(address: u32) -> fn() {
     unimplemented!()
 }
 
-pub fn get_type_at_address<T>(address: u32) -> Address<T> {
+pub fn get_type_at_address<T>(address: u32) -> T {
     unimplemented!()
 }
 
@@ -2057,4 +2058,8 @@ impl StructuredData {
     pub fn get_u16(offset: Option<usize>) -> u16 {
         unimplemented!()
     }
+}
+
+pub fn get_string_from_address(address: u32) -> String {
+    unimplemented!()
 }

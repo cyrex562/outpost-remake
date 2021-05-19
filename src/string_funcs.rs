@@ -5,24 +5,30 @@ use crate::{
     util::CONCAT22,
 };
 use crate::app_context::AppContext;
-use crate::bad_funcs::halt_baddata;
+use crate::bad_funcs::bad1::halt_baddata;
 use crate::err_funcs::error_check_1000_17ce;
 use crate::other_funcs::{switch_stmt_1008_ab80, zero_list_1008_3e38};
-use crate::pass2_funcs::pass1_1010_e964;
-use crate::pass3_funcs::{pass1_1020_ba3e, pass1_1020_ba7e, pass1_1020_bae6, pass1_1020_bb8a};
-use crate::pass4_funcs::{pass1_1028_bb24, pass1_1028_d1dc, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e2e0, pass1_1028_e4ec};
-use crate::pass5_funcs::{pass1_1030_1cd8, pass1_1030_1d7c, pass1_1030_2690, pass1_1030_627e, pass1_1030_73a8, pass1_1030_7bee, pass1_1030_7c28, pass1_1030_7d1c, pass1_1030_7ddc, pass1_1030_809c, pass1_1030_8326, pass1_1030_8344, pass1_1030_b9b2};
-use crate::pass6_funcs::{pass1_1038_4d28, pass1_1038_4e78, pass1_1038_5464, pass1_1038_56d6};
-use crate::pass7_funcs::{pass1_1018_3e8c, pass1_1018_427c, pass1_1018_435e, pass1_1018_47c8, pass1_1018_4808};
-use crate::pass8_funcs::{pass1_1008_e852, pass1_1008_e8cc, pass1_1010_089e, pass1_1010_60a0, pass1_1010_878c, pass1_1010_c3c2, pass1_1010_dd5e};
-use crate::pass_funcs::{pass1_1000_3d7a, pass1_1000_4906, pass1_1008_3e76, pass1_1008_5784, pass1_1008_5b12, pass1_1008_6604, pass1_1008_944e, pass1_1008_b0bc, pass1_1008_b9ce, pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_cfa0, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_2b3c, pass1_fn_1000_2b5c, pass1_fn_1000_2f48, pass1_fn_1000_2fa4, pass1_fn_1000_3024, pass1_fn_1000_30b4, pass1_fn_1000_3e2c, pass1_fn_1000_3e82, pass1_fn_1000_3f5c, pass1_fn_1000_48a8, pass1_fn_1000_52be, pass1_fn_1008_60e8, pass1_fn_1008_612e};
+use crate::pass::pass11_funcs::pass1_1008_cfa0;
+use crate::pass::pass12_funcs::{pass1_1008_b9ce, pass1_1008_c6ae, pass1_1008_c6fa};
+use crate::pass::pass13_funcs::{pass1_1008_944e, pass1_1008_b0bc};
+use crate::pass::pass14_funcs::{pass1_1008_3e76, pass1_1008_5784, pass1_1008_5b12, pass1_1008_6604, pass1_fn_1008_60e8, pass1_fn_1008_612e};
+use crate::pass::pass15_funcs::{pass1_1020_ba3e, pass1_1020_ba7e, pass1_1020_bae6, pass1_1020_bb8a};
+use crate::pass::pass17_funcs::{pass1_1030_1cd8, pass1_1030_1d7c, pass1_1030_2690, pass1_1030_627e, pass1_1030_73a8, pass1_1030_7bee, pass1_1030_7c28, pass1_1030_7d1c, pass1_1030_7ddc, pass1_1030_809c, pass1_1030_8326, pass1_1030_8344};
+use crate::pass::pass20_funcs::{pass1_1010_c3c2, pass1_1010_dd5e};
+use crate::pass::pass2_funcs::pass1_1010_e964;
+use crate::pass::pass4_funcs::{pass1_1028_bb24, pass1_1028_d1dc, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e2e0, pass1_1028_e4ec};
+use crate::pass::pass5_funcs::pass1_1030_b9b2;
+use crate::pass::pass6_funcs::{pass1_1038_4d28, pass1_1038_4e78, pass1_1038_5464, pass1_1038_56d6};
+use crate::pass::pass7_funcs::{pass1_1018_3e8c, pass1_1018_427c, pass1_1018_435e, pass1_1018_47c8, pass1_1018_4808};
+use crate::pass::pass8_funcs::{pass1_1008_e852, pass1_1008_e8cc, pass1_1010_089e, pass1_1010_60a0, pass1_1010_878c};
+use crate::pass::pass_funcs::{pass1_1000_3d7a, pass1_1000_4906, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_2b3c, pass1_fn_1000_2b5c, pass1_fn_1000_2f48, pass1_fn_1000_2fa4, pass1_fn_1000_3024, pass1_fn_1000_30b4, pass1_fn_1000_3e2c, pass1_fn_1000_3e82, pass1_fn_1000_3f5c, pass1_fn_1000_48a8, pass1_fn_1000_52be};
 use crate::prog_structs::prog_structs_10::Struct73;
 use crate::prog_structs::prog_structs_16::Struct493;
 use crate::prog_structs::prog_structs_18::Struct566;
 use crate::prog_structs::prog_structs_19::Struct500;
 use crate::prog_structs::prog_structs_1::Struct393;
 use crate::prog_structs::prog_structs_20::Struct965;
-use crate::prog_structs::prog_structs_24::{Struct2111, pass1_struct_3, Struct432, Struct894};
+use crate::prog_structs::prog_structs_24::{pass1_struct_3, Struct2111, Struct432, Struct894};
 use crate::prog_structs::prog_structs_26::{Struct1123, Struct883, Struct891};
 use crate::prog_structs::prog_structs_27::{pass1_struct_2, Struct298};
 use crate::prog_structs::prog_structs_28::{Struct1016, Struct1053, Struct346, Struct912, Struct913, Struct915};
@@ -542,7 +548,6 @@ pub fn process_string_1000_3ec0(ctx: &mut AppContext, param_1: i32, param_2: &St
 pub fn string_fn_1000_3f9c(
     ctx: &mut AppContext,
     param_1: &String,
-    param_2: &String,
     param_3: &String,
     param_4: &String,
     param_5: &String,

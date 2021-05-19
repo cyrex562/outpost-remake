@@ -1,4 +1,5 @@
-use crate::{pass5_funcs::pass1_1030_73a8, pass_funcs::pass1_1008_c6ae};
+use crate::pass::pass17_funcs::pass1_1030_73a8;
+use crate::pass::pass12_funcs::pass1_1008_c6ae;
 
 pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: u32) {
     let mut u_var1: i32;

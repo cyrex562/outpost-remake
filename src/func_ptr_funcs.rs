@@ -4,7 +4,7 @@ use crate::util::SUB42;
 use crate::prog_structs::prog_structs_2::Struct662;
 use crate::prog_structs::prog_structs_6::Struct672;
 use crate::prog_structs::prog_structs_28::Struct202;
-use crate::pass_funcs::pass1_fn_1000_52be;
+use crate::pass::pass_funcs::pass1_fn_1000_52be;
 use crate::app_context::AppContext;
 
 pub fn set_fn_ptr_1000_17e8(param_1: Vec<u8>, param_2: Vec<u8>) -> Vec<u8> {

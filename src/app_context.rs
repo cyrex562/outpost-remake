@@ -24,6 +24,8 @@ pub struct AppContext {
     pub g_alloc_addr_1050_1050: String,
     pub _PTR_LOOP_1050_68a8: String,
     pub PTR_LOOP_1050_68ac: u16,
+    pub PTR_LOOP_1050_4c4c: String,
+    pub PTR_LOOP_1050_5fc0: String,
     pub ax_reg: u16,
     pub bx_reg: u16,
     pub cx_reg: u16,

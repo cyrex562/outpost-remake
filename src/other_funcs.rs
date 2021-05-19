@@ -323,7 +323,7 @@ pub fn write_private_profile_str_1010_622a(param_1: u32, param_3: i32) {
             &ctx.g_alloc_addr_1050_1050,
             (param_3 * 8 + param_1 + 0x22),
         );
-        WritePrivateProfileString(
+        WritePrivateProfileString16(
             (param_1 + 10),
             (param_1 + 0xe),
             (param_3 * 4 + 0x1446),
