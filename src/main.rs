@@ -3,6 +3,7 @@ extern crate libc;
 use std::intrinsics::offset;
 
 use defines::{AppContext, code};
+use file_funcs::file1::close_file_1008_496c;
 use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
 use mem_funcs::alloc_mem_1000_167a;
 use other_funcs::{big_fn_1010_b038, empty_fn_1000_55ac};
@@ -12,22 +13,22 @@ use pass::pass_funcs::{
     pass1_fn_1000_25a8, pass1_fn_1000_2913,
 };
 use sound_funcs::mci_fn_1020_08b6;
-use string_funcs::process_string_1000_28dc;
-use struct_funcs::{process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e91e};
-use sys_funcs::{dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
+use string_ops1::process_string_1000_28dc;
+use struct_ops1::process_struct_1000_179c;
+use struct_ops2::{process_struct_1010_20ba, process_struct_1018_e91e};
+use sys1::{dos3_call_1000_23ea, get_dos_env_1000_27d6, get_module_file_name_1000_262c};
+use ui_funcs::ui1::msg_box_1010_8bb4;
 use util::{CONCAT11, CONCAT22};
 use winapi_funcs::{FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, make_htask, swi, WaitEvent16};
 
 use crate::app_context::AppContext;
 use crate::err_funcs::set_error_mode_1010_8b14;
-use file_funcs::file1::close_file_1008_496c;
 use crate::mem_funcs::{get_string_from_address, get_type_at_address};
 use crate::prog_structs::prog_structs_24::Struct103;
 use crate::prog_structs::prog_structs_26::Struct183;
 use crate::prog_structs::prog_structs_2::Struct7;
 use crate::prog_structs::prog_structs_31::Struct449;
-use crate::struct_funcs::process_struct_1008_48fe;
-use ui_funcs::ui1::msg_box_1010_8bb4;
+use crate::struct_ops1::process_struct_1008_48fe;
 
 mod bad_funcs;
 mod big_funcs;
@@ -44,9 +45,9 @@ mod list_funcs;
 mod mem_funcs;
 mod other_funcs;
 mod sound_funcs;
-mod string_funcs;
-mod struct_funcs;
-mod sys_funcs;
+mod string_ops1;
+mod struct_ops1;
+mod sys1;
 mod ui_funcs;
 mod util;
 mod loops;
@@ -57,6 +58,9 @@ mod typedefs;
 mod sys_structs;
 mod winapi_funcs;
 mod pass;
+mod sys2;
+mod struct_ops2;
+mod string_ops2;
 
 const INT_21: u16 = 0x21;
 

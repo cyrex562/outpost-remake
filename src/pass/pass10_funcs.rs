@@ -1,8 +1,8 @@
-use crate::bad_funcs::bad1::halt_baddata;
+use crate::bad_funcs::bad1::{halt_baddata, _in, out};
 use crate::bad_funcs::bad2::bad_fn_1050_335f;
 use crate::draw::draw1::process_struct_1040_9252;
 use crate::err_funcs::error_check_1000_17ce;
-use crate::mem_funcs::Address;
+use crate::mem_funcs::{Address, StructuredData};
 use crate::pass::pass19_funcs::pass1_1040_79c0;
 use crate::pass::pass20_funcs::pass1_1010_8ef2;
 use crate::pass::pass6_funcs::pass1_1038_b6e0;
@@ -20,8 +20,10 @@ use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_30::Struct333;
 use crate::prog_structs::prog_structs_31::{Struct113, Struct329, Struct335};
 use crate::prog_structs::prog_structs_8::Struct68;
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1040_7728, process_struct_1040_b082, process_struct_1040_b0bc, process_struct_1040_c630};
-use crate::sys_funcs::{get_prop_1040_9566, make_proc_inst_1040_8fb8, win_cleanup_func_1040_b0f8};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1040_b082, process_struct_1040_b0bc, process_struct_1040_c630};
+use crate::struct_ops2::process_struct_1040_7728;
+use crate::sys1::win_cleanup_func_1040_b0f8;
+use crate::sys2::{get_prop_1040_9566, make_proc_inst_1040_8fb8};
 use crate::ui_funcs::ui1::{free_proc_inst_1040_911e, win_cleanup_1040_d1bc};
 use crate::util::{CARRY1, CONCAT11, CONCAT22, SBORROW1, SUB42};
 
@@ -981,10 +983,11 @@ pub unsafe fn pass1_1040_c5ac(param_1: *mut Struct337) {
     return;
 }
 
-pub unsafe fn pass1_1040_c60e(param_1: &mut Address<u8>) -> u32 {
+pub unsafe fn pass1_1040_c60e(param_1: &mut StructuredData) -> u32 {
     let mut u_var1  = param_1.get_u32(0x42).unwrap();
     if (u_var1) != 0 {
-        return u_var1 + 0x12;
+        // return u_var1 + 0x12;
+        return
     }
     return 0;
 }

@@ -1,3 +1,5 @@
+use crate::typedefs::{HGDIOBJ16, HWND16, HMENU16, DLGPROC16, HANDLE16, HPALETTE16};
+use crate::prog_structs::prog_structs_7::Struct44;
 
 pub struct Struct466 {
     pub field_0x0: u8,
@@ -6292,8 +6294,8 @@ pub struct Struct944 {
 }
 
 pub struct Struct45 {
-    pub u16_0x0: u16,
-    pub u16_0x2: u16,
+    pub u16_fld_0: u16,
+    pub u16_fld_2: u16,
     pub field_0x4: u8,
     pub field_0x5: u8,
     pub field_0x6: u8,
@@ -6315,6 +6317,7 @@ pub struct Struct45 {
     pub object_0x1a: HGDIOBJ16,
     pub palette: HPALETTE16,
     pub mode: i16,
+    pub u16_fld_90: u16
 }
 
 pub struct Struct932 {

@@ -23,9 +23,9 @@ use crate::prog_structs::prog_structs_30::{Struct200, Struct201, Struct203, Stru
 use crate::prog_structs::prog_structs_5::Struct1;
 use crate::prog_structs::prog_structs_6::Struct675;
 use crate::prog_structs::prog_structs_7::{Struct189, Struct376, Struct44};
-use crate::string_funcs::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4544, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1008_8d8a, set_struct_1008_4016, set_struct_1008_56b4, set_struct_1008_9584};
-use crate::sys_funcs::reg_class_1008_96d2;
+use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4544, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1008_8d8a, set_struct_1008_4016, set_struct_1008_56b4, set_struct_1008_9584};
+use crate::sys1::reg_class_1008_96d2;
 use crate::typedefs::{HCURSOR16, HGDIOBJ16};
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, POPCOUNT, SBORROW2, ZEXT24};
 use crate::winapi_funcs::{GetStockObject16, LoadCursor16};

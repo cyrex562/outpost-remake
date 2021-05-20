@@ -5,12 +5,12 @@ use crate::{
     func_ptr_funcs::call_fn_ptr_1000_24cd,
     list_funcs::modify_u16_list_1008_5c34,
     other_funcs::return_1008_53aa,
-    string_funcs::{
+    string_ops1::{
         copy_string_1000_3d3e, fn_1008_6048, pass1_1030_532e, process_string_1000_3cea,
         process_string_1000_4d58,
     },
-    struct_funcs::process_struct_1000_179c,
-    sys_funcs::{dos3_call_1000_51aa, pass1_1030_838e},
+    struct_ops1::process_struct_1000_179c,
+    sys1::dos3_call_1000_51aa,
     util::{CONCAT22, SUB21, SUB42},
 };
 use crate::app_context::AppContext;
@@ -30,6 +30,7 @@ use crate::prog_structs::prog_structs_16::Struct13;
 use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
 use crate::prog_structs::prog_structs_31::Struct348;
 use crate::prog_structs::prog_structs_7::Struct44;
+use crate::sys2::pass1_1030_838e;
 use crate::ui_funcs::ui1::{msg_box_1000_1f24, win_cleanup_fn_1040_a294};
 use crate::ui_funcs::ui2::pass1_1038_af34;
 use crate::winapi_funcs::SetErrorMode16;

@@ -32,9 +32,9 @@ use crate::prog_structs::prog_structs_29::{Struct763, Struct764, Struct990};
 use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_31::Struct981;
 use crate::prog_structs::prog_structs_7::Struct44;
-use crate::string_funcs::copy_string_1000_3d3e;
-use crate::struct_funcs::{process_struct_1000_179c, struct_fn_1000_160a};
-use crate::sys_funcs::pass1_1038_095e;
+use crate::string_ops1::copy_string_1000_3d3e;
+use crate::struct_ops1::{process_struct_1000_179c, struct_fn_1000_160a};
+use crate::sys2::pass1_1038_095e;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB41, SUB42, ZEXT24};
 
 pub unsafe fn pass1_1038_3608(param_1: Vec<u8>) {

@@ -25,8 +25,9 @@ use crate::prog_structs::prog_structs_29::Struct425;
 use crate::prog_structs::prog_structs_31::Struct962;
 use crate::prog_structs::prog_structs_5::Struct1174;
 use crate::prog_structs::prog_structs_6::Struct473;
-use crate::string_funcs::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
-use crate::struct_funcs::{pass1_1038_6520, process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
+use crate::string_ops1::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_48fe, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
+use crate::struct_ops2::pass1_1038_6520;
 use crate::typedefs::HFILE16;
 use crate::util::{CONCAT11, CONCAT22, CONCAT31, ZEXT24};
 use crate::winapi_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16};
@@ -41,7 +42,7 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, struct_param_2: &mut St
     let mut temp_5f096a4ace: u32;
 
     param_2.u16_field_0 = ctx.PTR_LOOP_1050_4c4c;
-    struct_param_2.u16_field_1 = ctx.PTR_LOOP_1050_1008;
+    struct_param_2.u16_fld_1 = ctx.PTR_LOOP_1050_1008;
     pu_var1 = struct_param_2.func_ptr_2;
     u_var2 = struct_param_2.u32_field_3;
     if (u_var2 | pu_var1) != 0 {
@@ -57,7 +58,7 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, struct_param_2: &mut St
         _lclose16(struct_param_2.hfile_field_5);
     }
     struct_param_2._type.u16_field_0 = ctx.s_1_1050_389a.clone();
-    struct_param_2.u16_field_1 = &ctx.PTR_LOOP_1050_1008;
+    struct_param_2.u16_fld_1 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 

@@ -53,11 +53,13 @@ use crate::prog_structs::prog_structs_6::Struct1098;
 use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_8::{Struct1108, Struct515, Struct68};
 use crate::prog_structs::prog_structs_9::Struct872;
-use crate::string_funcs::{copy_string_1000_3d3e, pas1_1030_e8a0, pass1_1028_87f0, pass1_1030_dfcc, string_fn_1000_3f9c, wvsprintf_FUN_1030_840a};
-use crate::struct_funcs::{pass1_1038_a122, process_struct_1000_179c, process_struct_1008_4c58, process_struct_1040_7728, process_struct_1040_b082, struct_fn_1000_160a};
-use crate::sys_funcs::{pass1_1038_095e, pass1_1038_7356, win_cleanup_func_1040_b0f8};
-use crate::ui_funcs::ui2::pass1_1038_af40;
+use crate::string_ops1::{copy_string_1000_3d3e, pas1_1030_e8a0, pass1_1028_87f0, pass1_1030_dfcc, string_fn_1000_3f9c, wvsprintf_FUN_1030_840a};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4c58, process_struct_1040_b082, struct_fn_1000_160a};
+use crate::struct_ops2::{pass1_1038_a122, process_struct_1040_7728};
+use crate::sys1::win_cleanup_func_1040_b0f8;
+use crate::sys2::{pass1_1038_095e, pass1_1038_7356};
 use crate::ui_funcs::ui1::destroy_win_1040_7b98;
+use crate::ui_funcs::ui2::pass1_1038_af40;
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT31, POPCOUNT, SBORROW1, SBORROW2, SCARRY1, SUB21, SUB41, ZEXT24};
 
 pub unsafe fn pass1_1038_c410(
@@ -170,10 +172,10 @@ pub unsafe fn pass1_1038_b7f0(param_1: *mut Struct599) {
 }
 
 pub unsafe fn pass1_1038_b6e0(ctx: &mut AppContext,
-                              param_1: &mut Address<Struct112>,
+                              param_1: &mut Struct112,
                               param_2: &mut Vec<u8>) -> u16 {
     let mut u_var1: u32;
-    let local_astruct: *mut Struct112;
+    let mut local_astruct: Struct112;
     let mut u_var2: u16;
     let mut u16_var3: u16;
 

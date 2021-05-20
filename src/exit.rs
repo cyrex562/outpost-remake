@@ -1,7 +1,7 @@
 use crate::{
     defines::AppContext,
     mem_funcs::alloc_mem_1000_167a,
-    string_funcs::process_string_1000_28dc,
+    string_ops1::process_string_1000_28dc,
 };
 use crate::app_context::AppContext;
 use crate::pass::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913};

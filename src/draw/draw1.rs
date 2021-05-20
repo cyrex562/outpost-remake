@@ -31,13 +31,14 @@ use crate::prog_structs::prog_structs_7::{Struct135, Struct31, Struct376, Struct
 use crate::prog_structs::prog_structs_8::Struct642;
 use crate::prog_structs::prog_structs_9::{Struct604, Struct630, Struct633, Struct634};
 use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c9e};
-use crate::string_funcs::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1008_50c2, process_struct_1010_4d5c, process_struct_1040_9618, set_struct_1008_4016};
-use crate::sys_funcs::{reg_class_1008_96d2, win_func_1018_6bb6};
+use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1008_50c2, process_struct_1010_4d5c, set_struct_1008_4016};
+use crate::struct_ops2::process_struct_1040_9618;
+use crate::sys1::{reg_class_1008_96d2, win_func_1018_6bb6};
 use crate::sys_structs::{PAINTSTRUCT16, POINT16, RECT16};
 use crate::typedefs::{COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, HWND16};
-use crate::ui_funcs::ui2::pass1_1038_af40;
 use crate::ui_funcs::ui1::{load_cursor_1008_61b2, mixed_1040_8520, set_window_text_1018_6630, win_fn_1018_6adc, win_gui_fn_1010_8170};
+use crate::ui_funcs::ui2::pass1_1038_af40;
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::winapi_funcs::{BeginPaint16, CreateDC16, CreatePalette16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DestroyWindow16, DrawText16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetCurrentPosition16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, IsWindow16, LineTo16, LoadCursor16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseDC16, ScreenToClient16, SelectObject16, SelectPalette16, SetBkColor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16};
 
@@ -4410,14 +4411,14 @@ pub unsafe fn get_dc_1020_921c(ctx: &mut AppContext, param_1: *mut Struct622, pa
     return;
 }
 
-pub fn select_and_delete_palette_1020_92c4(ctx: &mut AppContext, in_astruct_1: &mut Struct44) {
+pub fn select_and_delete_palette_1020_92c4(ctx: &mut AppContext, struct_param_1: &mut Struct7) {
     let mut h_gdi_obj: HPALETTE16;
     let local_Struct376: *mut Struct376;
     let local_struct_376_hi: *mut Struct376;
 
-    local_struct_376_hi = (in_astruct_1 >> 0x10);
-    local_Struct376 = in_astruct_1;
-    in_astruct_1.ptr_a_lo = 0x96c8;
+    local_struct_376_hi = (struct_param_1 >> 0x10);
+    local_Struct376 = struct_param_1;
+    struct_param_1.ptr_a_lo = 0x96c8;
     local_Struct376.segment = 0x1020;
     if (local_Struct376.palette_handle_x12 != 0) {
         h_gdi_obj = SelectPalette16(
@@ -4427,9 +4428,9 @@ pub fn select_and_delete_palette_1020_92c4(ctx: &mut AppContext, in_astruct_1: &
         );
         DeleteObject16(h_gdi_obj);
     }
-    in_astruct_1.ptr_a_lo = ctx.s_0_020_1050_3ab0;
+    struct_param_1.ptr_a_lo = ctx.s_0_020_1050_3ab0;
     local_Struct376.segment = &ctx.PTR_LOOP_1050_1008;
-    in_astruct_1.ptr_a_lo = ctx.s_1_1050_389a;
+    struct_param_1.ptr_a_lo = ctx.s_1_1050_389a;
     local_Struct376.segment = &ctx.PTR_LOOP_1050_1008;
     return;
 }

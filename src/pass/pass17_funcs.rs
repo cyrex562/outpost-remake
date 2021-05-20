@@ -41,9 +41,10 @@ use crate::prog_structs::prog_structs_5::Struct1;
 use crate::prog_structs::prog_structs_6::{Struct858, Struct888};
 use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_9::{Struct857, Struct872, Struct920};
-use crate::string_funcs::{fn_1008_6048, string_fn_1000_3f9c};
-use crate::struct_funcs::{pass1_1030_3af6, pass1_1030_4574, pass1_1030_8c66, pass1_1038_78e2, process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_574a, struct_fn_1000_160a};
-use crate::sys_funcs::post_win_msg_1008_a0e4;
+use crate::string_ops1::{fn_1008_6048, string_fn_1000_3f9c};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_574a, struct_fn_1000_160a};
+use crate::struct_ops2::{pass1_1030_3af6, pass1_1030_4574, pass1_1030_8c66, pass1_1038_78e2};
+use crate::sys1::post_win_msg_1008_a0e4;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB21, SUB41, SUB42, ZEXT24};
 
 pub unsafe fn pass1_1030_888e(param_1: u32, param_2: u32) {

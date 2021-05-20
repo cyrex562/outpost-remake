@@ -27,7 +27,7 @@ use crate::prog_structs::prog_structs_31::{Struct250, Struct251, Struct258, Stru
 use crate::prog_structs::prog_structs_4::Struct270;
 use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_8::Struct265;
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48, struct_fn_1000_160a};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48, struct_fn_1000_160a};
 use crate::util::{CONCAT22, CONCAT31, SUB42};
 
 pub unsafe fn pass1_1008_b38c(param_1: u32) {

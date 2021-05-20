@@ -44,9 +44,11 @@ use crate::prog_structs::prog_structs_6::Struct755;
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_8::Struct768;
 use crate::prog_structs::prog_structs_9::{Struct723, Struct724, Struct737};
-use crate::string_funcs::{pass1_1028_68de, pass1_1028_87f0, pass1_1028_8888, pass1_1030_e4fa};
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1020_2594, process_struct_1020_808e, struct_fn_1000_160a};
-use crate::sys_funcs::{post_win_msg_1008_a0e4, process_win_msg_1008_9510};
+use crate::string_ops1::{pass1_1028_68de, pass1_1028_87f0, pass1_1028_8888, pass1_1030_e4fa};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, struct_fn_1000_160a};
+use crate::struct_ops2::{process_struct_1020_2594, process_struct_1020_808e};
+use crate::sys1::post_win_msg_1008_a0e4;
+use crate::sys2::process_win_msg_1008_9510;
 use crate::sys_structs::RECT16;
 use crate::ui_funcs::ui1::mixed_1040_8520;
 use crate::ui_funcs::ui2::{gui_window_func_1038_b72e, pass1_1038_af40};
@@ -884,7 +886,7 @@ pub fn pass1_1028_4530(param_1: &mut Struct44) {
     u_var4 = (param_1 >> 0x10);
     local_struct_1 = param_1;
     param_1.ptr_a_lo = 0x4836;
-    local_struct_1.ptr_a_hi = &PTR_LOOP_1050_1028;
+    local_struct_1.base_fld_2 = &PTR_LOOP_1050_1028;
     pu_var1 = local_struct_1.field_0x20;
     u_var2 = &local_struct_1.field_0x22;
     if ((u_var2 | pu_var1) != 0) {
@@ -2093,7 +2095,7 @@ pub fn pass1_1028_388e(param_1: &mut Struct44) {
     u_var2 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     param_1.ptr_a_lo = 0x3e2c;
-    local_bx_4.ptr_a_hi = &PTR_LOOP_1050_1028;
+    local_bx_4.base_fld_2 = &PTR_LOOP_1050_1028;
     in_struct_1 = &local_bx_4.field_0x28;
     u_var1 = &local_bx_4.field_0x2a;
     if ((u_var1 | in_struct_1) != 0) {
@@ -3189,7 +3191,7 @@ pub fn pass1_1028_2042(param_1: &mut Struct44) {
     local_es_4 = (param_1 >> 0x10);
     local_bx_4 = param_1;
     param_1.ptr_a_lo = 0x2572;
-    local_bx_4.ptr_a_hi = &PTR_LOOP_1050_1028;
+    local_bx_4.base_fld_2 = &PTR_LOOP_1050_1028;
     temp_5f32db2c2f = &local_bx_4.field_0x20;
     (temp_5f32db2c2f + 10) = 1;
     pu_var1 = local_bx_4.field_0x20;

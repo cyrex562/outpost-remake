@@ -12,7 +12,7 @@ use crate::prog_structs::prog_structs_29::Struct299;
 use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_30::{Struct294, Struct295};
 use crate::prog_structs::prog_structs_7::Struct44;
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1008_c882, process_struct_1010_1d48};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1008_c882, process_struct_1010_1d48};
 use crate::ui_funcs::ui1::win_cleanup_1018_4d22;
 use crate::util::{CARRY1, CONCAT22};
 

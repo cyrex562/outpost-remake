@@ -36,9 +36,11 @@ use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_8::{Struct60, Struct641, Struct643, Struct644, Struct645, Struct646, Struct647, Struct68};
 use crate::prog_structs::prog_structs_9::Struct594;
 use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c7c, mci_send_command_1008_5c9e};
-use crate::string_funcs::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_a8f4, process_string_1000_3cea, string_fn_1000_3f9c};
-use crate::struct_funcs::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1010_4d5c, process_struct_1040_7728};
-use crate::sys_funcs::{create_win_1008_9760, get_sys_metrics_1020_7c1a, load_rsrc_1010_4e9e, post_win_msg_1020_1ca4, process_struct_1040_8478, reg_class_1008_96d2};
+use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_a8f4, process_string_1000_3cea, string_fn_1000_3f9c};
+use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1010_4d5c};
+use crate::struct_ops2::process_struct_1040_7728;
+use crate::sys1::{create_win_1008_9760, load_rsrc_1010_4e9e, reg_class_1008_96d2};
+use crate::sys2::{get_sys_metrics_1020_7c1a, post_win_msg_1020_1ca4, process_struct_1040_8478};
 use crate::sys_structs::{PAINTSTRUCT16, POINT16, RECT16};
 use crate::typedefs::{COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HICON16, HMENU16, HPALETTE16, HPEN16, HWND16, LRESULT, SEGPTR, WPARAM16};
 use crate::ui_funcs::ui1::{destroy_win_1008_628e, enum_child_windows_1010_01be, mixed_1040_8520, win_fn_1008_3bd6, win_fn_1020_0dc4, win_gui_func_1040_78e2};
@@ -963,7 +965,7 @@ pub unsafe fn win_fn_1020_7270(ctx: &mut AppContext, param_1: &mut Struct7) {
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;
     param_1.ptr_a_lo = 0x754c;
-    local_struct_1.ptr_a_hi = 0x1020;
+    local_struct_1.base_fld_2 = 0x1020;
     if (&local_struct_1.field_0x1c != 0) {
         pass1_1010_1ea6(
             *&local_struct_1.field_0x1c,
@@ -982,9 +984,9 @@ pub unsafe fn win_fn_1020_7270(ctx: &mut AppContext, param_1: &mut Struct7) {
     local_struct_1.field_0x20 = h_gdi_obj;
     DeleteObject16(h_gdi_obj);
     param_1.ptr_a_lo = ctx.s_0_020_1050_3ab0;
-    local_struct_1.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
+    local_struct_1.base_fld_2 = &ctx.PTR_LOOP_1050_1008;
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
-    local_struct_1.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
+    local_struct_1.base_fld_2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 
@@ -1265,7 +1267,7 @@ pub unsafe fn call_palette_fn_1020_6466(in_struct_1: &mut Struct44) {
     local_struct_1_hi = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1.ptr_a_lo = 0x67c2;
-    local_struct_1.ptr_a_hi = 0x1020;
+    local_struct_1.base_fld_2 = 0x1020;
     if (local_struct_1.field_0x14 != 0) {
         pass1_1010_1ea6(
             local_struct_1.field_0x14,
@@ -3519,8 +3521,8 @@ pub unsafe fn draw_1020_3e84(ctx: &mut AppContext, in_struct_1: *mut Struct45) {
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
-    in_struct_1.u16_0x0 = 0x408a;
-    local_struct_1.u16_0x2 = 0x1020;
+    in_struct_1.u16_fld_0 = 0x408a;
+    local_struct_1.u16_fld_2 = 0x1020;
     pass1_1010_1ea6(
         local_struct_1.field_0x14,
         (in_struct_1 & 0xffff | ZEXT24(local_struct_1_hi) << 0x10),
@@ -3532,10 +3534,10 @@ pub unsafe fn draw_1020_3e84(ctx: &mut AppContext, in_struct_1: *mut Struct45) {
     h_gdi_obj = SelectPalette16(0, local_struct_1.palette, h_dc);
     DeleteObject16(h_gdi_obj);
     SetMapMode16(local_struct_1.mode, h_dc);
-    in_struct_1.u16_0x0 = ctx.s_0_020_1050_3ab0;
-    local_struct_1.u16_0x2 = &ctx.PTR_LOOP_1050_1008;
-    in_struct_1.u16_0x0 = ctx.s_1_1050_389a;
-    local_struct_1.u16_0x2 = &ctx.PTR_LOOP_1050_1008;
+    in_struct_1.u16_fld_0 = ctx.s_0_020_1050_3ab0;
+    local_struct_1.u16_fld_2 = &ctx.PTR_LOOP_1050_1008;
+    in_struct_1.u16_fld_0 = ctx.s_1_1050_389a;
+    local_struct_1.u16_fld_2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }
 

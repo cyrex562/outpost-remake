@@ -1,3 +1,5 @@
+use crate::typedefs::{HWND16, HPALETTE16, HDC16, HGDIOBJ16};
+use crate::prog_structs::prog_structs_5::Struct659;
 
 pub struct Struct629 {
     pub u16_x00: u16,
@@ -2221,9 +2223,9 @@ pub struct Struct215 {
 }
 
 pub struct Struct44 {
-    pub offset: u16,
-    pub ptr_a_hi: u16,
-    pub struct_ptr_1_0x4: *mut Struct659,
+    pub offset_fld_2: u16,
+    pub base_fld_2: u16,
+    pub struct_fld_4: Struct659,
     pub field_0x6: u8,
     pub field_0x7: u8,
     pub field_0x8: u8,
@@ -2239,7 +2241,7 @@ pub struct Struct44 {
     pub field_0x12: u8,
     pub field_0x13: u8,
     pub field_0x14: u32,
-    pub field_0x18: HDC16,
+    pub hdc_fld_18: HDC16,
     pub field_0x1a: HGDIOBJ16,
     pub field_0x1c: HGDIOBJ16,
     pub field_0x1e: HGDIOBJ16,

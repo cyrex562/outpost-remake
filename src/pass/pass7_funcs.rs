@@ -1,12 +1,12 @@
 use crate::{
     defines::Struct513,
     other_funcs::modify_list_1008_3f62,
-    struct_funcs::process_struct_1010_20ba,
     util::CONCAT22,
 };
 use crate::pass::pass14_funcs::{pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3eb4};
 use crate::pass::pass20_funcs::pass1_1010_bf1e;
 use crate::pass::pass8_funcs::pass1_1010_1f62;
+use crate::struct_ops2::process_struct_1010_20ba;
 
 pub unsafe fn pass1_1018_0bf4(param_1: *mut Struct513, param_2: u16) {
     let mut u_var1: u32;

@@ -1537,7 +1537,7 @@ pub struct Struct594 {
     pub field_0xeb: u8,
     pub field_0xec: u8,
     pub field_0xed: u8,
-    pub u8_ptr_16_xee: Vec<u8>,
+    pub u8_ptr_16_xee: u32,
     pub field_0xf0: i32,
     pub field_0xf2: u8,
     pub field_0xf3: u8,

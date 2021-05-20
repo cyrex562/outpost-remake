@@ -6,8 +6,7 @@ use crate::{
         Struct599,
     },
     err_funcs::error_check_1000_17ce,
-    struct_funcs::process_struct_1010_20ba,
-    sys_funcs::win_cleanup_func_1040_b0f8,
+    sys1::win_cleanup_func_1040_b0f8,
     util::{CONCAT22, SUB42, ZEXT24},
 };
 use crate::app_context::AppContext;
@@ -25,7 +24,7 @@ use crate::pass::pass8_funcs::{
 };
 use crate::pass::pass_funcs::pass1_1000_4906;
 use crate::prog_structs::prog_structs_1::StructA;
-use crate::prog_structs::prog_structs_2::{Struct318, Struct599};
+use crate::prog_structs::prog_structs_2::{Struct318, Struct599, Struct7};
 use crate::prog_structs::prog_structs_23::Struct387;
 use crate::prog_structs::prog_structs_24::Struct2111;
 use crate::prog_structs::prog_structs_26::{Struct340, Struct52, Struct53};
@@ -34,20 +33,21 @@ use crate::prog_structs::prog_structs_30::Struct124;
 use crate::prog_structs::prog_structs_31::{Struct371, Struct45, Struct46};
 use crate::prog_structs::prog_structs_7::Struct44;
 use crate::prog_structs::prog_structs_9::Struct594;
+use crate::struct_ops2::process_struct_1010_20ba;
 use crate::sys_structs::RECT16;
 use crate::typedefs::{HANDLE16, HWND16};
 use crate::ui_funcs::ui1::{destroy_icon_func_1020_1038, destroy_win_1008_628e, destroy_win_1010_2fa0, destroy_win_1040_7b98, free_proc_inst_1040_911e, update_window_1040_93aa, win_cleanup_1018_4d22, win_gui_fn_1010_32f4, win_gui_fn_1010_79aa, win_gui_fn_1040_b54a};
 use crate::ui_funcs::ui2::{destroy_menu_func_1020_795c, pass1_1038_af40, set_window_pos_1038_abdc, win_cleanup_func_1020_2fea};
 use crate::winapi_funcs::{DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
 
-pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {
+pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) {
     win_cleanup_func_1040_b0f8(param_1);
     if (param_2 & 1) != 0 {
         error_check_1000_17ce(ctx, param_1);
     }
 }
 
-pub unsafe fn win_cleanup_1010_0ee6(ctx: &mut AppContext, param_1: &mut Address<Struct44>, param_2: u8) {
+pub unsafe fn win_cleanup_1010_0ee6(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) {
     win_cleanup_1018_4d22(param_1);
     if (param_2 & 1) != 0 {
         error_check_1000_17ce(ctx, param_1);
@@ -79,7 +79,7 @@ pub unsafe fn cleanup_1010_17c0(ctx: &mut AppContext, param_1: &mut Address<Stru
     return;
 }
 
-pub unsafe fn win_cleanup_1010_305a(param_1: &mut Struct318, param_2: i32, param_3: &mut StructuredData) {
+pub unsafe fn win_cleanup_1010_305a(param_1: &mut Struct318, param_2: u16, param_3: &mut StructuredData) {
     let pu_var1: u32;
     let pi_var2: *mut i32;
     let mut u_var3: u32;
@@ -95,7 +95,6 @@ pub unsafe fn win_cleanup_1010_305a(param_1: &mut Struct318, param_2: i32, param
     let mut local_8: u16;
     let mut local_6: u16 = 0;
 
-    u_var10 = (param_3 >> 0x10) as u16;
     u_var6 = pass1_1040_c60e(param_3);
     // u_var9 = (param_1 >> 0x10);
     // i_var7 = param_1;
@@ -181,7 +180,7 @@ pub unsafe fn win_cleanup_1010_305a(param_1: &mut Struct318, param_2: i32, param
     }
 }
 
-pub unsafe fn destroy_win_1010_3202(param_1: *mut Struct387, param_2: i32) {
+pub unsafe fn destroy_win_1010_3202(param_1: &mut Struct387, param_2: i32) {
     let pi_var1: *mut i32;
     let mut u_var2: u32;
     let mut i_var3: i32;
@@ -226,75 +225,62 @@ pub unsafe fn destroy_win_1010_3202(param_1: *mut Struct387, param_2: i32) {
     return;
 }
 
-pub unsafe fn cleanup_1040_97da(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+pub unsafe fn cleanup_1040_97da(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
     free_proc_inst_1040_911e(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn pass1_1040_83e6(param_1: u32, param_2: u8) {
-    win_cleanup_func_1040_782c(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+pub unsafe fn pass1_1040_83e6(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
+    win_cleanup_func_1040_782c(ctx, param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub fn destroy_window_1040_8212(param_1: *mut Struct53) {
-    let is_window_result: bool;
-    let local_struct_1: *mut Struct53;
-    let local_struct_1_hi: *mut Struct53;
+pub fn destroy_window_1040_8212(param_1: &mut Struct53) {
+    let mut is_window_result: bool;
 
-    local_struct_1_hi = (param_1 >> 0x10);
-    local_struct_1 = param_1;
-    if (local_struct_1.win_handle_0x8c != 0) {
-        is_window_result = IsWindow16(local_struct_1.win_handle_0x8c);
-        if (is_window_result != 0) {
-            DestroyWindow16(local_struct_1.win_handle_0x8c);
-            local_struct_1.win_handle_0x8c = 0;
+    if param_1.win_handle_0x8c != 0 {
+        is_window_result = IsWindow16(param_1.win_handle_0x8c);
+        if is_window_result != false {
+            DestroyWindow16(param_1.win_handle_0x8c);
+            param_1.win_handle_0x8c = 0;
         }
     }
     return;
 }
 
-pub unsafe fn win_cleanup_func_1040_782c(ctx: &mut AppContext, param_1: &mut Struct44) -> u8 {
+pub unsafe fn win_cleanup_func_1040_782c(ctx: &mut AppContext, param_1: &mut Struct7) -> u8 {
     let pu_var1: Vec<u8>;
     let mut u_var2: i32;
     let ppc_var3: fn();
     let h_var4: HANDLE16;
-    let local_bx_5: *mut Struct46;
-    let mut u_var5: u16;
-    let mut unaff_cs: u16;
 
-    u_var5 = (param_1 >> 0x10);
-    local_bx_5 = param_1;
     param_1.offset_1 = 0x840c;
-    // TODO
-    //local_bx_5.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-    pu_var1 = local_bx_5.field_0x70;
-    u_var2 = local_bx_5.field_0x72;
+    param_1.u16_fld_1 = ctx.PTR_LOOP_1050_1040;
+    pu_var1 = param_1.field_0x70;
+    u_var2 = param_1.field_0x72;
     if (u_var2 | pu_var1) != 0 {
         ppc_var3 = *pu_var1;
         (**ppc_var3)();
     }
-    if local_bx_5.field_0x4 != 0 {
-        // unaff_cs = offset;
-        DeleteObject16(local_bx_5.field_0x4);
-        local_bx_5.field_0x4 = 0;
+    if param_1.field_0x4 != 0 {
+        DeleteObject16(param_1.field_0x4);
+        param_1.field_0x4 = 0;
     }
-    if local_bx_5.field_0x68 != 0 {
+    if param_1.field_0x68 != 0 {
         DestroyMenu16(ctx.code_seg_reg);
     }
-    RemoveProp16(local_bx_5.window_handle, &ctx.s_thisLo_1050_5db1);
-    RemoveProp16(local_bx_5.window_handle, &ctx.s_thisHi_1050_5db8);
-    RemoveProp16(local_bx_5.window_handle, &ctx.s_procLo_1050_5dbf);
-    h_var4 = RemoveProp16(local_bx_5.window_handle, &ctx.s_procHi_1050_5dc6);
-    // TODO
-    //param_1.offset_1 = ctx.s_1_1050_389a;
-    // TODO
-    //local_bx_5.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    RemoveProp16(param_1.window_handle, &ctx.s_thisLo_1050_5db1);
+    RemoveProp16(param_1.window_handle, &ctx.s_thisHi_1050_5db8);
+    RemoveProp16(param_1.window_handle, &ctx.s_procLo_1050_5dbf);
+    h_var4 = RemoveProp16(param_1.window_handle, &ctx.s_procHi_1050_5dc6);
+    param_1.u16_fld_0 = ctx.s_1_1050_389a.clone();
+    param_1.u16_fld_1 = ctx.PTR_LOOP_1050_1008 as u32;
     return h_var4;
 }
 
@@ -318,7 +304,7 @@ pub unsafe fn destroy_win_1040_52c0(
     let mut u_var7: u16;
     let mut h_wnd: HWND16;
     let mut u_var8: u16;
-    let pp_var9: *mut Struct2111;
+    let mut pp_var9: Struct2111;
     let pu_var10: Vec<u8>;
     let u_var11: u8;
     let u_var12: u8;
@@ -331,14 +317,14 @@ pub unsafe fn destroy_win_1040_52c0(
     let mut local_1a: u16;
     let mut local_e: u16;
     let mut local_c: u16;
-    let mut local_a: u16 = 0;
+    let mut local_a: RECT16 = RECT16::new();
     let mut local_8: u16;
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if (param_2._2_2_ != 0x10c) {
-        if (param_2._2_2_ < 0x10d) {
-            if (param_2._2_2_ == 0xfa) {
+    if param_2._2_2_ != 0x10c {
+        if param_2._2_2_ < 0x10d {
+            if param_2._2_2_ == 0xfa {
                 ppc_var2 = (&param_1[1].field_0x4 + 0x18);
                 ppc_var2();
                 return;
@@ -387,12 +373,12 @@ pub unsafe fn destroy_win_1040_52c0(
                         ctx._g_astruct_372_1050_0ed0,
                         CONCAT22(local_22, 0x32),
                     );
-                    i_var4 = win_gui_fn_1010_79aa(pp_var9, 0xfc6, &param_1[1].field_0x1c);
-                    if (i_var4 != 0) {
+                    i_var4 = win_gui_fn_1010_79aa(&mut pp_var9, 0xfc6, &param_1[1].field_0x1c);
+                    if i_var4 != 0 {
                         return;
                     }
                     u_var3 = &param_1[1].field_0x1c;
-                    window_msg_func_1010_7300(pp_var9, 0, 0, 0x13, u_var3, (u_var3 >> 0x10));
+                    window_msg_func_1010_7300(&mut pp_var9, 0, 0, 0x13, u_var3, (u_var3 >> 0x10));
                     return;
                 }
                 if (param_2._2_2_ != 0xbbb) {
@@ -454,7 +440,7 @@ pub unsafe fn destroy_win_1040_52c0(
 }
 
 pub(crate) fn window_msg_func_1010_7300(
-    pp_var9: *mut Struct2111,
+    pp_var9: &mut Struct2111,
     arg_1: i32,
     arg_2: i32,
     arg_3: i32,
@@ -498,7 +484,7 @@ pub fn destroy_win_1040_5256(ctx: &mut AppContext, param_1: u32) {
     return;
 }
 
-pub unsafe fn pass1_1040_3506(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_3506(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -517,7 +503,7 @@ pub unsafe fn pass1_1040_3532(ctx: &mut AppContext, param_1: Vec<u8>, param_2: V
     return;
 }
 
-pub unsafe fn pass1_1040_2f06(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_2f06(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -541,21 +527,21 @@ pub unsafe fn pass1_1040_2f32(ctx: &mut AppContext, param_1: Vec<u8>, param_2: V
     return;
 }
 
-pub unsafe fn pass1_1040_2a22(ctx: &mut AppContext, param_1: &mut Struct44) {
+pub unsafe fn pass1_1040_2a22(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
-    u_var2 = (param_1 >> 0x10);
-    i_var1 = param_1;
-    param_1.offset = (ctx.s_add74_wav_1050_2e20 + 6);
+    // u_var2 = (param_1 >> 0x10);
+    // i_var1 = param_1;
+    param_1.offset_fld_2 = (ctx.s_add74_wav_1050_2e20 + 6);
     (i_var1 + 2) = &ctx.PTR_LOOP_1050_1040;
-    error_check_1000_17ce((i_var1 + 0x94));
-    error_check_1000_17ce((i_var1 + 0x98));
+    error_check_1000_17ce(ctx,(param_1 + 0x94));
+    error_check_1000_17ce(ctx,(param_1 + 0x98));
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
 
-pub unsafe fn pass1_1040_2464(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_2464(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
     u_var1 = (param_1 >> 0x10);
     param_1.offset_1 = (ctx.s_fem94_wav_1050_2950 + 6);
@@ -565,31 +551,31 @@ pub unsafe fn pass1_1040_2464(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub unsafe fn pass1_1040_205e(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_205e(ctx: &mut AppContext, param_1: &mut Struct7) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let ppc_var3: fn();
     let mut i_var4: i32;
     let mut u_var5: u16;
 
-    u_var5 = (param_1 >> 0x10);
-    i_var4 = param_1;
+    // u_var5 = (param_1 >> 0x10);
+    // i_var4 = param_1;
     param_1.offset_1 = (ctx.s_alarm_m_1050_2377 + 7);
-    (i_var4 + 2) = &ctx.PTR_LOOP_1050_1040;
-    pu_var1 = (i_var4 + 0x8e);
-    u_var2 = (i_var4 + 0x90);
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
+    pu_var1 = (param_1 + 0x8e);
+    u_var2 = (param_1 + 0x90);
     if (u_var2 | pu_var1) != 0 {
         ppc_var3 = *pu_var1;
         (**ppc_var3)();
     }
-    error_check_1000_17ce(ctx, (i_var4 + 0xa2));
-    error_check_1000_17ce(ctx, (i_var4 + 0xa6));
-    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var4 + 6));
+    error_check_1000_17ce(ctx, (param_1 + 0xa2));
+    error_check_1000_17ce(ctx, (param_1 + 0xa6));
+    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
     win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1040_1876(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_1876(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -600,7 +586,7 @@ pub unsafe fn pass1_1040_1876(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub unsafe fn pass1_1040_1290(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1040_1290(ctx: &mut AppContext, param_1: &mut Struct7) {
     param_1._type.offset_1 = 0x17b0;
     param_1._type.field_0x2.full_addr = ctx.PTR_LOOP_1050_1040.full_addr;
     pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, param_1._type.field_0x6);
@@ -637,51 +623,50 @@ pub unsafe fn pass1_1040_1152(
     return;
 }
 
-pub unsafe fn pass1_1040_0e86(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1040_0e86(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u16) {
     let mut u_var1: i32;
-    let in_struct_1: &mut Struct44;
+    let in_struct_1: &mut Struct7;
     let mut i_var2: i32;
     let mut u_var3: u16;
-    let ppVar4: *mut Struct2111;
-    let mut in_stack_0000ffee: u16;
+    let mut struct_var4: Struct2111;
     let mut local_6: u32;
 
-    u_var3 = (param_1 >> 0x10);
-    i_var2 = param_1;
+    // u_var3 = (param_1 >> 0x10);
+    // i_var2 = param_1;
     param_1.offset_1 = (ctx.s_overflow_on_node__d_1050_11ca + 8);
-    (i_var2 + 2) = &ctx.PTR_LOOP_1050_1040;
-    in_struct_1 = (i_var2 + 0x92);
-    u_var1 = (i_var2 + 0x94);
-    if ((u_var1 | in_struct_1) != 0) {
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
+    in_struct_1 = (param_1 + 0x92);
+    u_var1 = (param_1 + 0x94);
+    if (u_var1 | in_struct_1) != 0 {
         pass1_1040_a5d0((in_struct_1 & 0xffff | u_var1 << 0x10));
-        error_check_1000_17ce(in_struct_1);
+        error_check_1000_17ce(ctx, in_struct_1);
     }
-    ctx.PTR_LOOP_1050_5b82 = (i_var2 + 0x96);
-    if ((i_var2 + 0x92) == 0) {
-        pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var2 + 6));
+    ctx.PTR_LOOP_1050_5b82 = (param_1 + 0x96);
+    if (param_1 + 0x92) == 0 {
+        pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
     } else {
-        ppVar4 = process_struct_1010_20ba(
+        struct_var4 = process_struct_1010_20ba(
             ctx._g_astruct_372_1050_0ed0,
             CONCAT22(in_stack_0000ffee, 0x32),
         );
-        pass1_1010_7b8c(ppVar4, (i_var2 + 6));
+        pass1_1010_7b8c(&mut struct_var4, (param_1 + 6));
     }
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1040_0c54(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1040_0c54(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
     param_1.offset_1 = 0xdb0;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
     (param_1 + 0x8e) = 0;
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1040_073a(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1040_073a(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -692,112 +677,113 @@ pub unsafe fn pass1_1040_073a(ctx: &mut AppContext, param_1: *mut Struct599) {
     return;
 }
 
-pub unsafe fn pass1_1040_0656(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
-    win_cleanup_1038_ef3a(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+pub unsafe fn pass1_1040_0656(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
+    win_cleanup_1038_ef3a(ctx, param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn win_cleanup_1038_ef3a(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn win_cleanup_1038_ef3a(ctx: &mut AppContext, param_1:&mut Struct7) {
     let mut u_var1: u32;
     let mut i_var2: i32;
     let mut u_var3: u16;
 
-    u_var3 = (param_1 >> 0x10);
-    i_var2 = param_1;
+    // u_var3 = (param_1 >> 0x10);
+    // i_var2 = param_1;
     param_1.offset_1 = 0x67c;
     (i_var2 + 2) = &ctx.PTR_LOOP_1050_1040;
-    if ((i_var2 + 0x96) != 0) {
+    if (i_var2 + 0x96) != 0 {
         u_var1 = (i_var2 + 0x96);
         DestroyWindow16((u_var1 + 6));
         (i_var2 + 0x96) = 0;
     }
     pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var2 + 6));
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_ebd6(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1038_ebd6(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
-    u_var2 = (param_1 >> 0x10);
-    i_var1 = param_1;
+    // u_var2 = (param_1 >> 0x10);
+    // i_var1 = param_1;
     param_1.offset_1 = 0xee6e;
-    (i_var1 + 2) = &ctx.PTR_LOOP_1050_1038;
-    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var1 + 6));
-    error_check_1000_17ce((i_var1 + 0x8e));
-    win_cleanup_func_1040_782c(param_1);
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
+    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
+    error_check_1000_17ce(ctx, (param_1 + 0x8e));
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_e308(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1038_e308(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
-    u_var2 = (param_1 >> 0x10);
-    i_var1 = param_1;
+    // u_var2 = (param_1 >> 0x10);
+    // i_var1 = param_1;
     param_1.offset_1 = 0xe62e;
-    (i_var1 + 2) = &ctx.PTR_LOOP_1050_1038;
-    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var1 + 6));
-    error_check_1000_17ce((i_var1 + 0x8e));
-    win_cleanup_func_1040_782c(param_1);
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
+    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
+    error_check_1000_17ce(ctx, (param_1 + 0x8e));
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_e16e(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1038_e16e(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
     param_1.offset_1 = 0xe264;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
-    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
-    win_cleanup_func_1040_782c(param_1);
+    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *param_1.field_0x6);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_d7d0(ctx: &mut AppContext, param_1: *mut Struct45) {
+pub unsafe fn pass1_1038_d7d0(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
-    u_var2 = (param_1 >> 0x10);
-    i_var1 = param_1;
-    param_1.u16_0x0 = 0xe0d4;
-    (i_var1 + 2) = &ctx.PTR_LOOP_1050_1038;
-    if ((i_var1 + 0x90) != 0) {
-        pass1_1010_1ea6(ctx._g_struct_ptr_1050_02a0, param_1);
+    // u_var2 = (param_1 >> 0x10);
+    // i_var1 = param_1;
+    param_1.u16_fld_0 = 0xe0d4;
+    // (i_var1 + 2)
+    param_1.u16_fld_2 = &ctx.PTR_LOOP_1050_1038;
+    if param_1.u16_fld_90 != 0 {
+        pass1_1010_1ea6(&ctx._g_struct_ptr_1050_02a0, param_1);
     }
     if ((i_var1 + 0x92) != 0) {
         pass1_1010_1ea6(*(i_var1 + 0x92), param_1);
     }
-    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(i_var1 + 6));
-    error_check_1000_17ce((i_var1 + 0x96));
-    win_cleanup_func_1040_782c(param_1);
+    pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
+    error_check_1000_17ce(ctx, (param_1 + 0x96));
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_d276(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1038_d276(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
     param_1.offset_1 = 0xd6ea;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx, param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_d218(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
-    free_proc_inst_1038_cfda(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+pub unsafe fn pass1_1038_d218(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
+    free_proc_inst_1038_cfda(ctx, param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub fn free_proc_inst_1038_cfda(ctx: &mut AppContext, param_1: &mut Address<StructA>) {
+pub fn free_proc_inst_1038_cfda(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut i_var1: u16;
     i_var1 = param_1.offset;
     param_1._type.field_0x0 = 0xd23e;
@@ -812,7 +798,7 @@ pub fn free_proc_inst_1038_cfda(ctx: &mut AppContext, param_1: &mut Address<Stru
     return;
 }
 
-pub unsafe fn pass1_1038_cd5c(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1038_cd5c(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
     u_var1 = (param_1 >> 0x10);
     param_1.offset_1 = 0xcf00;
@@ -822,7 +808,7 @@ pub unsafe fn pass1_1038_cd5c(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub unsafe fn pass1_1038_cb30(ctx: &mut AppContext, param_1: &mut Address<Struct599>) {
+pub unsafe fn pass1_1038_cb30(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
@@ -833,23 +819,23 @@ pub unsafe fn pass1_1038_cb30(ctx: &mut AppContext, param_1: &mut Address<Struct
     return;
 }
 
-pub fn cleanup_fn_1020_0e2c(param_1: *mut Struct48) {
+pub fn cleanup_fn_1020_0e2c(param_1: &mut Struct48) {
     get_sys_metrics_1020_7a50(param_1);
     destroy_icon_func_1020_1038(param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_ae08(ctx: &mut AppContext, param_1: &mut Struct44) {
-    param_1.offset = 0xae4e;
+pub unsafe fn pass1_1038_ae08(ctx: &mut AppContext, param_1: &mut Struct7) {
+    param_1.offset_fld_2 = 0xae4e;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_a156(ctx: &mut AppContext, param_1: *mut Struct599) {
+pub unsafe fn pass1_1038_a156(ctx: &mut AppContext, param_1: &mut Struct7) {
     param_1.offset_1 = 0xa2d0;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
-    win_cleanup_func_1040_782c(param_1);
+    win_cleanup_func_1040_782c(ctx,param_1);
     return;
 }
 
@@ -860,34 +846,34 @@ pub fn destroy_win_1038_a072(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn pass1_1038_9ed4(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+pub unsafe fn pass1_1038_9ed4(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
     win_cleanup_func_1040_b0f8(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn pass1_1038_9a48(ctx: &mut AppContext, param_1: &mut Struct44) {
-    param_1.offset = 0x9af6;
+pub unsafe fn pass1_1038_9a48(ctx: &mut AppContext, param_1: &mut Struct7) {
+    param_1.offset_fld_2 = 0x9af6;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
 
-pub unsafe fn pass1_1038_997c(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+pub unsafe fn pass1_1038_997c(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
     win_cleanup_func_1040_b0f8(param_1);
     if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn pass1_1038_7d5c(ctx: &mut AppContext, param_1: &mut Struct44) {
+pub unsafe fn pass1_1038_7d5c(ctx: &mut AppContext, param_1: &mut Struct7) {
     let mut u_var1: u16;
 
     u_var1 = (param_1 >> 0x10);
-    param_1.offset = 0x8876;
+    param_1.offset_fld_2 = 0x8876;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx, &mut ctx.g_addr_1050_5b7c, *(param_1 + 6));
     win_cleanup_func_1040_b0f8(param_1);
@@ -903,30 +889,30 @@ pub unsafe fn destroy_win_1038_7d88(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn cleanup_fn_1020_96a2(param_1: &mut Address<Struct44>, param_2: u8) -> &mut Struct44 {
+pub unsafe fn cleanup_fn_1020_96a2(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) -> &mut Struct7  {
     select_and_delete_palette_1020_92c4(ctx, param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn cleanup_fn_1020_7b60(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+pub unsafe fn cleanup_fn_1020_7b60(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
     destroy_menu_func_1020_795c(param_1);
     if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub unsafe fn cleanup_fn_1020_78ac(param_1: &mut Struct44) {
-    let local_struct_1: &mut Struct44;
-    let local_struct_1_hi: &mut Struct44;
+pub unsafe fn cleanup_fn_1020_78ac(param_1: &mut Struct7) {
+    let local_struct_1: &mut Struct7;
+    let local_struct_1_hi: &mut Struct7;
 
     local_struct_1_hi = (param_1 >> 0x10);
     local_struct_1 = param_1;
-    param_1.offset = 0x7902;
-    local_struct_1.ptr_a_hi = 0x1020;
+    param_1.offset_fld_2 = 0x7902;
+    local_struct_1.base_fld_2 = 0x1020;
     if local_struct_1.field_0x14 != 0 {
         pass1_1010_1dda(local_struct_1.field_0x14);
     }
@@ -934,47 +920,37 @@ pub unsafe fn cleanup_fn_1020_78ac(param_1: &mut Struct44) {
     return;
 }
 
-pub unsafe fn cleanup_fn_1020_78dc(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+pub unsafe fn cleanup_fn_1020_78dc(param_1: &mut Struct7, param_2: u8) -> &mut Struct7 {
     cleanup_fn_1020_78ac(param_1);
     if (param_2 & 1) != 0 {
-        error_check_1000_17ce(param_1);
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }
 
-pub fn win_cleanup_fn_1020_770e(in_struct_1: *mut Struct594) {
-    let pu_var1: *mut u32;
-    let mut u_var2: i32;
-    let local_struct_1: *mut Struct594;
-    let local_struct_1_hi: *mut Struct594;
-    let mut in_stack_0000fff6: u16;
-    let fn_ptr_1_1: fn();
-
-    local_struct_1_hi = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
-    pu_var1 = local_struct_1.u8_ptr_16_xee;
-    u_var2 = local_struct_1.field_0xf0;
-    if ((u_var2 | pu_var1) != 0) {
-        unsafe {
-            fn_ptr_1_1 = *pu_var1;
-            (**fn_ptr_1_1)();
-        }
+pub fn win_cleanup_fn_1020_770e(struct_param_1: &mut Struct594, param_2: u16) {
+    let mut local_struct_1: Struct594;
+    let pu_var1 = &struct_param_1.u8_ptr_16_xee;
+    let u_var2 = struct_param_1.field_0xf0;
+    if (u_var2 | pu_var1) != 0 {
+        let fn_ptr = get_fn_ptr_at_address(*pu_var1);
+        fn_ptr();
     }
     local_struct_1.u8_ptr_16_xee = 0;
     destroy_win_1008_628e(
-        (in_struct_1 & 0xffff | ZEXT24(local_struct_1_hi) << 0x10),
-        in_stack_0000fff6,
+        struct_param_1,
+        param_2,
     );
     return;
 }
 
 pub unsafe fn call_win_cleanup_fn_1020_3616(
-    in_struct_1: &mut Struct44,
+    in_struct_1: &mut Struct7,
     param_2: u8,
-) -> &mut Struct44 {
+) -> &mut Struct7 {
     win_cleanup_func_1020_2fea(in_struct_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(in_struct_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx,in_struct_1);
     }
     return in_struct_1;
 }

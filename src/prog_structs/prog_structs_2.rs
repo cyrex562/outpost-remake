@@ -277,8 +277,8 @@ pub struct Struct117 {
 }
 
 pub struct Struct7 {
-    pub u16_field_0: String,
-    pub u16_field_1: u16,
+    pub u16_fld_0: String,
+    pub u16_fld_1: u32,
     pub func_ptr_2: u32,
     pub u32_field_3: u32,
     pub file_path_field_4: String,
