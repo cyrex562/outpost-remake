@@ -3,7 +3,7 @@ use crate::string_ops1::{copy_string_1000_3d3e, process_string_1000_3cea, proces
 use crate::ui_funcs::ui1;
 use crate::util::{CONCAT22, SBORROW2, CONCAT11, ZEXT24, CONCAT12, CONCAT13, SUB42, CONCAT24, CONCAT26, CONCAT28, CONCAT210, CONCAT212, CONCAT214, SUB21, CARRY1, SBORROW1, SCARRY1, CONCAT31, SUB41};
 use crate::winapi_funcs::{MessageBox16, PostMessage16, InvalidateRect16, SetFocus16, GetDlgItem16, SetDlgItemText16, SendMessage16, RealizePalette16, GetDC16, UnrealizeObject16, DeleteObject16, SelectObject16, Rectangle16, GetStockObject16, CreatePen16, CreateSolidBrush16, DeleteDC16, SelectPalette16, CreateDC16, DrawIcon16, FillRect16, GetClientRect16, IsIconic16, BeginPaint16, UpdateWindow16, MoveWindow16, LoadIcon16, DestroyIcon16, EnableMenuItem16, WinHelp16, BringWindowToTop16, DestroyMenu16, EnableWindow16, SetWindowText16, SetWindowPos16, ReleaseDC16, GetWindowRect16, GetSystemMetrics16, ShowWindow16, GetWindowWord16, SetBkColor16, SetTextColor16, GetDlgCtrlID16, SetCursor16, LoadCursor16, DestroyWindow16, IsWindow16, CreateWindow16, GetTextExtent16};
-use crate::prog_structs::prog_structs_2::{Struct199, Struct318};
+use crate::prog_structs::prog_structs_2::{Struct199, Struct318, Struct7};
 use crate::pass::pass7_funcs::{pass1_1018_1f1a, pass1_1018_1e78, pass1_1018_270e, pass1_1018_108c, pass1_1018_15f6, pass1_1018_1320, pass1_1018_1054, pass1_1018_0d9a, pass1_1018_181c, pass1_1018_169e, pass1_1018_5e26, pass1_1018_1c9a, pass1_1018_3a7a, pass1_1018_3a94, pass1_1018_3a42, pass1_1018_3424, pass1_1018_3cda, pass1_1018_39d8, pass1_1018_3a5c, wsprintf_1018_34b6, pass1_1018_3d44, pass1_1018_3710, pass1_1018_3ab2, pass1_1018_2678};
 use crate::typedefs::{HWND16, HDC16, HGDIOBJ16, COLORREF, HPALETTE16, HPEN16, WPARAM16, LRESULT, SEGPTR, LPARAM};
 use crate::draw::draw2::{set_window_pos_1020_38aa, call_draw_fn_1020_27b0, get_sys_metrics_1020_7a50, polygon_1020_3602, gui_window_func_1020_536e, set_capture_1020_6184, process_struct_1020_62e0};
@@ -27,7 +27,7 @@ use crate::prog_structs::prog_structs_1::Struct104;
 use crate::mixed_fn_1010_830a;
 use crate::prog_structs::prog_structs_31::{Struct4, Struct20, Struct112, Struct21};
 use crate::prog_structs::prog_structs_3::Struct661;
-use crate::struct_ops2::{process_struct_1020_808e, process_struct_1040_a598, pass1_1038_8caa, pass1_1038_7d10, pass1_1038_88f2, pass1_1040_34a2, pass1_1040_2ea2, pass1_1038_c4a2, pass1_1038_bddc, pass1_1038_eb9e, pass1_1038_e2d0, pass1_1038_ab82, pass1_1040_123e, pass1_1040_1cb4, pass1_1038_eeda, pass1_1038_d242, pass1_1040_1f5a, pass1_1038_cad8, pass1_1038_d756, pass1_1040_0e1c, pass1_1040_0bfc, pass1_1038_cd06, pass1_1038_e69a, pass1_1038_e140, pass1_1038_b772, pass1_1040_06e8, pass1_1038_c7b8, pass1_1038_e99a, pass1_1040_181c, pass1_1038_9f76, set_struct_1018_36e6};
+use crate::struct_ops2::{process_struct_1020_808e, process_struct_1040_a598, pass1_1038_8caa, pass1_1038_7d10, pass1_1038_88f2, pass1_1040_34a2, pass1_1040_2ea2, pass1_1038_c4a2, pass1_1038_bddc, pass1_1038_eb9e, pass1_1038_e2d0, pass1_1038_ab82, pass1_1040_123e, pass1_1040_1cb4, pass1_1038_eeda, pass1_1038_d242, pass1_1040_1f5a, pass1_1038_cad8, pass1_1038_d756, pass1_1040_0e1c, pass1_1040_0bfc, pass1_1038_cd06, pass1_1038_e69a, pass1_1038_e140, pass1_1038_b772, pass1_1040_06e8, pass1_1038_c7b8, pass1_1038_e99a, pass1_1040_181c, pass1_1038_9f76, set_struct_1018_36e6, process_struct_1010_20ba};
 use crate::sound_funcs::{mci_send_command_1008_5c9e, mci_send_command_1008_5c7c, mci_send_cmd_1008_5c5c};
 use crate::pass::pass13_funcs::{pass1_1008_941a, pass1_1008_b146, pass1_1008_b1a6, pass1_1008_b366, pass1_1008_b340, pass1_1008_a930};
 use crate::prog_structs::prog_structs_6::{Struct675, Struct622};
@@ -5311,7 +5311,7 @@ pub fn pass1_1038_af40(param_1: &mut Struct112, param_2: Vec<u8>, param_3: u16) 
     let pp_var1: fn();
     let mut u_var2: u32;
     let u_var3: u8;
-    let extraout_AH: u8;
+    let extraout_ah: u8;
     let struct_a: &mut Struct199;
     let mut u_var4: i32;
     let mut in_bx: i32;
@@ -5506,7 +5506,7 @@ pub fn pass1_1038_af40(param_1: &mut Struct112, param_2: Vec<u8>, param_3: u16) 
             if (u_var4 == 0) {}
             // goto LAB_1038_afa0;
             u_var3 = pass1_1038_cad8(u_var6 & 0xffff0000 | in_bx, param_2);
-            pa_var7 = CONCAT22(u_var4, CONCAT11(extraout_AH, u_var3))
+            pa_var7 = CONCAT22(u_var4, CONCAT11(extraout_ah, u_var3))
         }
         0x14 => {
             process_struct_1000_179c(0xaa, struct_a);
@@ -7610,15 +7610,15 @@ pub fn call_load_cursor_1020_790e(
     return;
 }
 
-pub fn destroy_menu_func_1020_795c(in_struct_1: &mut Struct44) {
+pub fn destroy_menu_func_1020_795c(in_struct_1: &mut Struct7) {
     let local_struct_1: &mut Struct215;
     let local_struct_1_hi: &mut Struct215;
     let mut menu_handle: u16;
 
-    local_struct_1_hi = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
+    // local_struct_1_hi = (in_struct_1 >> 0x10);
+    // local_struct_1 = in_struct_1;
     in_struct_1.ptr_a_lo = 0x7b86;
-    local_struct_1.ptr_a_hi = 0x1020;
+    in_struct_1.ptr_a_hi = 0x1020;
     if (local_struct_1.field_0xec != 0) {
         DestroyMenu16(menu_handle);
     }
