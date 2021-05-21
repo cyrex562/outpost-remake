@@ -1,8 +1,10 @@
 use crate::prog_structs::prog_structs_7::Struct372;
 use crate::mem_funcs::Address;
 use crate::prog_structs::prog_structs_31::Struct112;
+use crate::typedefs::HINSTANCE16;
 
 pub struct AppContext {
+    pub g_h_instance_1050_038c: HINSTANCE16,
     pub g_u16_ptr_1050_5f84: u16,
     pub s__s___lu_1050_38c5: String,
     pub PTR_LOOP_1050_1038: u32,

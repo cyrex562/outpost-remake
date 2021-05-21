@@ -14,13 +14,13 @@ use crate::prog_structs::prog_structs_22::Struct69;
 use crate::prog_structs::prog_structs_3::Struct664;
 use crate::prog_structs::prog_structs_4::Struct653;
 use crate::prog_structs::prog_structs_8::Struct642;
-use crate::string_ops1::string_fn_1000_3f9c;
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4772, process_struct_1008_48fe, process_struct_1008_50c2};
+use crate::string_ops::string_fn_1000_3f9c;
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4772, process_struct_1008_48fe, process_struct_1008_50c2};
 use crate::sys_structs::{PAINTSTRUCT16, POINT16, RECT16};
 use crate::typedefs::{HGDIOBJ16, HWND16};
 use crate::ui_ops::misc::mixed_1040_8520;
 use crate::util::{CONCAT22, SUB42, ZEXT24};
-use crate::winapi_funcs::{BeginPaint16, CreatePen16, CreateSolidBrush16, DeleteObject16, EndPaint16, FillRect16, GetClientRect16, GetStockObject16, GetSystemMetrics16, GetWindowRect16, InvalidateRect16, PtInRect16, Rectangle16, ScreenToClient16, SelectObject16, SelectPalette16, ValidateRect16};
+use crate::winapi::{BeginPaint16, CreatePen16, CreateSolidBrush16, DeleteObject16, EndPaint16, FillRect16, GetClientRect16, GetStockObject16, GetSystemMetrics16, GetWindowRect16, InvalidateRect16, PtInRect16, Rectangle16, ScreenToClient16, SelectObject16, SelectPalette16, ValidateRect16};
 
 pub fn invalidate_rect_1018_5d32(param_1: u32, param_2: i32) {
     let mut hwnd: HWND16;
@@ -605,7 +605,7 @@ pub fn invalidate_rect_1020_735a(param_1: u32) {
     return;
 }
 
-pub unsafe fn pt_in_rect_1020_5856(in_struct_1: *mut Struct664, in_struct_2: *mut Struct665) {
+pub unsafe fn pt_in_rect_1020_5856(in_struct_1: &mut Struct26, in_struct_2: *mut Struct665) {
     let pu_var1: *mut u32;
     let mut in_a_x: i32;
     let b_var2: bool;

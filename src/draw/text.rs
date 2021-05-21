@@ -6,7 +6,7 @@ use crate::prog_structs::prog_structs_26::{Struct54, Struct55};
 use crate::prog_structs::prog_structs_31::Struct334;
 use crate::typedefs::{COLORREF, HANDLE16, HDC16, HGDIOBJ16};
 use crate::util::CONCAT22;
-use crate::winapi_funcs::{DrawText16, GetDC16, GetProp16, GetSystemMetrics16, ReleaseDC16, SelectObject16, SetBkColor16, SetTextColor16};
+use crate::winapi::{DrawText16, GetDC16, GetProp16, GetSystemMetrics16, ReleaseDC16, SelectObject16, SetBkColor16, SetTextColor16};
 
 pub unsafe fn draw_text_1040_c94a(
     ctx: &mut AppContext,

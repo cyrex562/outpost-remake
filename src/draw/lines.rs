@@ -5,7 +5,7 @@ use crate::prog_structs::prog_structs_31::{Struct138, Struct139};
 use crate::prog_structs::prog_structs_7::Struct135;
 use crate::typedefs::HDC16;
 use crate::util::ZEXT24;
-use crate::winapi_funcs::{GetCurrentPosition16, LineTo16, MoveTo16};
+use crate::winapi::{GetCurrentPosition16, LineTo16, MoveTo16};
 
 pub unsafe fn draw_lines_1040_c38e(in_Struct135: *mut Struct135, in_hdc_2: u16) {
     let mut i_var1: i32;

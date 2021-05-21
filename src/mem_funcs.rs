@@ -1,5 +1,5 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_16ee, error_check_1000_18d2, invoke_error_handler_1000_1e61};
+use crate::err_ops::{error_check_1000_0dc6, error_check_1000_16ee, error_check_1000_18d2, invoke_error_handler_1000_1e61};
 use crate::pass::pass14_funcs::pass1_1008_6604;
 use crate::pass::pass_funcs::{pass1_fn_1000_0c32, pass1_fn_1000_20a2, pass1_fn_1000_25a8, pass1_fn_1000_2913, pass1_fn_1000_422a, pass1_fn_1000_48a8, pass1_fn_1000_5390};
 use crate::prog_structs::prog_structs_12::Struct102;
@@ -16,11 +16,11 @@ use crate::prog_structs::prog_structs_30::{Struct110, Struct111};
 use crate::prog_structs::prog_structs_31::{Struct100, Struct109, Struct125, Struct142, Struct143, Struct144};
 use crate::prog_structs::prog_structs_5::Struct93;
 use crate::prog_structs::prog_structs_8::Struct88;
-use crate::string_ops1::process_string_1000_28dc;
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834, set_struct_1000_0782, set_struct_1000_09ca, set_struct_1008_4016, struct_fn_1000_115c, struct_fn_1000_160a};
+use crate::string_ops::process_string_1000_28dc;
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834, set_struct_1000_0782, set_struct_1000_09ca, set_struct_1008_4016, struct_fn_1000_115c, struct_fn_1000_160a};
 use crate::typedefs::{HGLOBAL16, SEGPTR};
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
-use crate::winapi_funcs::{FatalAppExit16, FatalExit};
+use crate::winapi::{FatalAppExit16, FatalExit};
 
 pub enum AddressType {
     NotSet,

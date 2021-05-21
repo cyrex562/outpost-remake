@@ -1,18 +1,18 @@
 use std::intrinsics::offset;
 
-use crate::{mixed_fn_1010_830a, winapi_funcs};
-use crate::err_funcs::error_check_1000_17ce;
+use crate::{mixed_fn_1010_830a, winapi};
+use crate::err_ops::error_check_1000_17ce;
 use crate::pass::pass10_funcs::pass1_1040_b040;
 use crate::pass::pass14_funcs::pass1_fn_1008_60e8;
 use crate::prog_structs::prog_structs_21::Struct74;
 use crate::prog_structs::prog_structs_23::Struct356;
 use crate::prog_structs::prog_structs_2::Struct7;
-use crate::string_ops1::fn_1008_6048;
+use crate::string_ops::fn_1008_6048;
 use crate::sys_ops::win_msg;
 use crate::sys_structs::RECT16;
 use crate::typedefs::{HANDLE16, LRESULT, WPARAM16};
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB21};
-use crate::winapi_funcs::{FreeProcInstance16, GetClientRect16, GetProp16, MakeProcInstance16, PtInRect16, RemoveProp16};
+use crate::winapi::{FreeProcInstance16, GetClientRect16, GetProp16, MakeProcInstance16, PtInRect16, RemoveProp16};
 
 pub unsafe fn call_win_proc_1040_a410(param_1: u16, param_2: u32, param_3: u32) {
     let win_proc: &mut Vec<u8>;
@@ -160,7 +160,7 @@ pub unsafe fn make_proc_inst_1040_8fb8(
     in_Struct1.field_0x20 = 0;
     if (_g_proc_inst_1050_5e18 == 0) {
         _g_proc_inst_1050_5e18 =
-            winapi_funcs::MakeProcInstance16(hinstance, CONCAT22(0x9684, ctx.g_h_instance_1050_038c));
+            winapi::MakeProcInstance16(hinstance, CONCAT22(0x9684, ctx.g_h_instance_1050_038c));
     }
     PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + 1;
     return;
@@ -186,10 +186,10 @@ pub fn make_proc_inst_1038_cf6c(param_1: &mut u16) {
     (pu_var1 + 2) = &PTR_LOOP_1050_1038;
     PTR_LOOP_1050_5bc8 = pu_var1;
     PTR_LOOP_1050_5bca = pu_var2;
-    pvVar3 = winapi_funcs::MakeProcInstance16(unaff_cs, CONCAT22(0xd116, ctx.g_h_instance_1050_038c));
+    pvVar3 = winapi::MakeProcInstance16(unaff_cs, CONCAT22(0xd116, ctx.g_h_instance_1050_038c));
     (pu_var1 + 4) = pvVar3;
     (pu_var1 + 6) = (pvVar3 >> 0x10);
-    pvVar3 = winapi_funcs::MakeProcInstance16(offset, CONCAT22(0xd01e, ctx.g_h_instance_1050_038c));
+    pvVar3 = winapi::MakeProcInstance16(offset, CONCAT22(0xd01e, ctx.g_h_instance_1050_038c));
     PTR_LOOP_1050_5bcc = pvVar3;
     PTR_LOOP_1050_5bce = (pvVar3 >> 0x10);
     return;

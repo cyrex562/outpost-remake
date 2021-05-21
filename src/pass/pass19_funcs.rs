@@ -1,5 +1,5 @@
 use crate::pass::pass14_funcs::pass1_1008_3e94;
-use crate::struct_ops2::process_struct_1010_20ba;
+use crate::struct_ops::process_struct_1010_20ba;
 use crate::util::CONCAT22;
 
 pub fn pass1_1018_7ec6(param_1: *mut Struct376, param_2: u8) {

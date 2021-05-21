@@ -5,11 +5,11 @@ use crate::pass::pass14_funcs::pass1_1008_4d72;
 use crate::pass::pass20_funcs::pass1_1018_0a50;
 use crate::prog_structs::prog_structs_24::Struct103;
 use crate::prog_structs::prog_structs_25::{Struct66, Struct67};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
 use crate::sys_structs::BITMAPINFO;
 use crate::typedefs::{COLORREF, HDC16, HGDIOBJ16, HPALETTE16, HWND16};
 use crate::util::{CONCAT11, CONCAT12, CONCAT22};
-use crate::winapi_funcs::{DeleteObject16, GetDC16, GetDlgCtrlID16, GetStockObject16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, UnrealizeObject16};
+use crate::winapi::{DeleteObject16, GetDC16, GetDlgCtrlID16, GetStockObject16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, UnrealizeObject16};
 
 pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
     let mut u_var1: u32;

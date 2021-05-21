@@ -9,7 +9,7 @@ use crate::sys_ops::win::win_func_1018_6bb6;
 use crate::sys_structs::PAINTSTRUCT16;
 use crate::typedefs::HWND16;
 use crate::util::{CONCAT22, SUB42};
-use crate::winapi_funcs::{BeginPaint16, EndPaint16, IsIconic16};
+use crate::winapi::{BeginPaint16, EndPaint16, IsIconic16};
 
 pub unsafe fn begin_end_Paint_1018_6a7a(ctx: &mut AppContext, param_1: *mut Struct129) {
     let local_p_Struct129: *mut Struct129;

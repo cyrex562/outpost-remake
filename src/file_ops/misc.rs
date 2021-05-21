@@ -1,6 +1,6 @@
 use crate::app_context::AppContext;
 use crate::bad_funcs::bad1::halt_baddata;
-use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_17ce};
+use crate::err_ops::{error_check_1000_0dc6, error_check_1000_17ce};
 use crate::file_ops::{close, file2, read, write};
 use crate::list_funcs::set_array_val_1008_72a8;
 use crate::mem_funcs::{Address, alloc_mem_1000_07fc, alloc_mem_1000_0a48, alloc_mem_1000_1708, get_fn_ptr_at_address};
@@ -38,12 +38,12 @@ use crate::prog_structs::prog_structs_31::Struct962;
 use crate::prog_structs::prog_structs_5::Struct1174;
 use crate::prog_structs::prog_structs_6::Struct473;
 use crate::prog_structs::prog_structs_9::Struct844;
-use crate::string_ops1::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_48fe, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
-use crate::struct_ops2::pass1_1038_6520;
+use crate::string_ops::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_48fe, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
+use crate::struct_ops::pass1_1038_6520;
 use crate::typedefs::HFILE16;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB21, SUB41, SUB42, ZEXT24};
-use crate::winapi_funcs::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16};
+use crate::winapi::{_hread, _hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16};
 
 pub unsafe fn file_fn_1008_6414(ctx: &mut AppContext, param_1: *mut Struct7, param_2: u32) {
     let pp_var1: fn();

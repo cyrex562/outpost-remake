@@ -1,6 +1,6 @@
 use crate::bad_funcs::bad1;
-use crate::err_funcs::error_check_1000_17ce;
-use crate::struct_ops2::{process_struct_1010_20ba, process_struct_1040_7728};
+use crate::err_ops::error_check_1000_17ce;
+use crate::struct_ops::{process_struct_1010_20ba, process_struct_1040_7728};
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT21, SBORROW1, SBORROW2, SCARRY1, ZEXT24};
 
 pub unsafe fn bad_fn_10d0_02c2() {

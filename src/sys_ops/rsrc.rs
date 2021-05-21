@@ -1,5 +1,5 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::mem_funcs::get_fn_ptr_at_address;
 use crate::pass::pass8_funcs::pass1_1010_1d80;
 use crate::prog_structs::prog_structs_2::{Struct131, Struct7};

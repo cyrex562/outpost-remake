@@ -1,12 +1,12 @@
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::pass::pass14_funcs::{pass1_1008_5784, pass1_1008_5b12, pass1_fn_1008_60e8};
 use crate::pass::pass8_funcs::{pass1_1010_5f4c, pass1_1010_60cc, process_struct_1010_20ba};
 use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_5008};
-use crate::string_ops1::{copy_string_1000_3d3e, fn_1008_6048, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_3dbe, process_string_1000_4d58};
+use crate::string_ops::{copy_string_1000_3d3e, fn_1008_6048, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_3dbe, process_string_1000_4d58};
 use crate::sys_ops::dos_ops::dos3_call_1000_4f2e;
 use crate::ui_ops::misc;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB21, ZEXT24};
-use crate::winapi_funcs::MessageBox16;
+use crate::winapi::MessageBox16;
 
 pub fn open_save_1008_30cc(param_1: u32) {
     let mut ctx.stack_seg_reg: i32;

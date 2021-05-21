@@ -7,7 +7,7 @@ use crate::prog_structs::prog_structs_6::Struct672;
 use crate::prog_structs::prog_structs_9::Struct594;
 use crate::ui_ops::window;
 use crate::util::SUB42;
-use crate::winapi_funcs::swi;
+use crate::winapi::swi;
 
 pub fn set_fn_ptr_1000_17e8(param_1: Vec<u8>, param_2: Vec<u8>) -> Vec<u8> {
     let pu_var1: Vec<u8>;

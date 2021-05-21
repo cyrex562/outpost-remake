@@ -1,4 +1,4 @@
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::pass::{pass11_funcs, pass14_funcs, pass_funcs};
 use crate::pass::pass17_funcs::pass1_1030_8326;
 use crate::pass::pass6_funcs::pass1_1038_b6e0;
@@ -7,7 +7,7 @@ use crate::prog_structs::prog_structs_2::{Struct199, Struct306};
 use crate::prog_structs::prog_structs_21::Struct350;
 use crate::prog_structs::prog_structs_24::Struct2111;
 use crate::prog_structs::prog_structs_31::{Struct305, Struct348};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1040_b082};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1040_b082};
 use crate::sys_ops::win::win_cleanup_func_1040_b0f8;
 use crate::util::{CARRY1, CONCAT22, SBORROW1};
 

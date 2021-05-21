@@ -6,13 +6,12 @@ use crate::{defines::{
     AppContext, ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16,
     HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LOGPALETTE,
     LPARAM, LRESULT, PAINTSTRUCT16, POINT16, RECT16, SEGPTR, WPARAM16,
-}, exported_stub_1000_29dc, func_ptr_funcs::call_fn_ptr_1000_2594, mem_funcs::free_mem_1000_1b68, mixed_fn_1010_830a, sys2, util::SUB42, winapi_funcs};
+}, exported_stub_1000_29dc, func_ptr_funcs::call_fn_ptr_1000_2594, mem_funcs::free_mem_1000_1b68, mixed_fn_1010_830a, sys2, util::SUB42, winapi};
 use crate::app_context::AppContext;
 use crate::bool_funcs::check_and_set_global_1000_1fea;
 use crate::cleanup::{ret_1040_78de, win_cleanup_1010_305a, win_cleanup_func_1040_782c, window_msg_func_1010_7300};
 use crate::constants::PF_ALPHA_BYTE_INSTRUCTIONS;
-use crate::ui_ops::window::win_fn_1020_7270;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::exit::{exit_1000_25cc, exit_1000_2950, return_1000_39e1};
 use crate::func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_256b};
 use crate::mem_funcs::{alloc_mem_1000_07fc, get_fn_ptr_at_address, get_type_at_address, StructuredData};
@@ -53,19 +52,19 @@ use crate::prog_structs::prog_structs_7::{Struct1161, Struct376, Struct44};
 use crate::prog_structs::prog_structs_8::Struct60;
 use crate::prog_structs::prog_structs_9::Struct637;
 use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c7c, mci_send_command_1008_5c9e};
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_b1f0, load_string_1010_847e, load_string_1010_84e0, pass1_1028_767e, process_string_1000_3cea, process_string_1000_475e, process_string_1000_55b1, str_fn_1010_5286, str_fn_1010_6034, string_fn_1000_3f9c};
-use crate::struct_ops1::{init_struct_1000_1902, process_struct_1000_179c, process_struct_1000_2ce8, process_struct_1008_4772, process_struct_1008_574a, process_struct_1008_e586, process_struct_1010_1d48, set_struct_1008_0000};
-use crate::struct_ops2::{pass1_1038_df86, process_struct_1010_20ba, process_struct_1040_7728};
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_b1f0, load_string_1010_847e, load_string_1010_84e0, pass1_1028_767e, process_string_1000_3cea, process_string_1000_475e, process_string_1000_55b1, str_fn_1010_5286, str_fn_1010_6034, string_fn_1000_3f9c};
+use crate::struct_ops::{init_struct_1000_1902, pass1_1038_df86, process_struct_1000_179c, process_struct_1000_2ce8, process_struct_1008_4772, process_struct_1008_574a, process_struct_1008_e586, process_struct_1010_1d48, process_struct_1010_20ba, process_struct_1040_7728, set_struct_1008_0000};
 use crate::sys_structs::{LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
 use crate::typedefs::{ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16};
+use crate::ui_ops::cursor::set_cursor_1038_bc30;
 use crate::ui_ops::dialog::{send_dialog_item_msg_1038_844a, send_dlg_item_msg_1038_8164};
 use crate::ui_ops::menu::destroy_menu_func_1020_795c;
 use crate::ui_ops::misc::{mixed_1040_8520, pass1_1038_af40, pass1_1038_e03e, win_fn_1010_71d6, win_fn_1020_1294, win_fn_1038_8f74, win_fn_1040_8b92, win_gui_fn_1010_79aa};
 use crate::ui_ops::msg_box::msg_box_1040_64ca;
-use crate::ui_ops::cursor::set_cursor_1038_bc30;
 use crate::ui_ops::window::destroy_win_1040_7b98;
+use crate::ui_ops::window::win_fn_1020_7270;
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, POPCOUNT, SBORROW1, SBORROW2, SUB21, SUB41, ZEXT24};
-use crate::winapi_funcs::{CreateWindowEx16, GetClassInfo16, GetDOSEnviornment16, RegisterClass16, WritePrivateProfileString16};
+use crate::winapi::{CreateWindowEx16, GetClassInfo16, GetDOSEnviornment16, RegisterClass16, WritePrivateProfileString16};
 
 pub mod dos_ops;
 pub mod metrics;
@@ -106,7 +105,7 @@ pub unsafe fn get_module_file_name_1000_262c(ctx: &mut AppContext, param_1: &mut
     let u_stack12 = ctx.s_fem17_wav_1050_264e[7..];
     ctx.PTR_LOOP_1050_5fc4 = u_var13.clone();
     let u_var14 = u_var13.clone();
-    let mut i_var4 = winapi_funcs::GetModuleFileName16(&ctx.g_h_instance, u_stack12, u_stack12.len());
+    let mut i_var4 = winapi::GetModuleFileName16(&ctx.g_h_instance, u_stack12, u_stack12.len());
     // u_var14._2_2_ = (u_var14 >> 0x10);
     ctx.PTR_LOOP_1050_5fc2 = u_var14.clone();
     // param_1 = (u_var13 >> 0x10);
@@ -413,7 +412,7 @@ pub fn print_fn_1008_97c8(param_1: StructuredData) {
     let mut u_var1: u16;
     let mut paint_struct_1: PAINTSTRUCT16 = PAINTSTRUCT16::new();
     let wnd_handle = param_1.buffer[8..10];
-    winapi_funcs::BeginPaint16(wnd_handle, paint_struct_1);
+    winapi::BeginPaint16(wnd_handle, paint_struct_1);
     paint_struct_1.hdc = (param_1 + 8);
     EndPaint(&paint_struct_1, unaff_ss);
     return;
@@ -516,8 +515,8 @@ pub fn get_prop_1040_9566(param_1: &mut i32) {
     i32_var6 = param_1;
     if (unsafe { *param_1 == 4 }) {
         u_var1 = (i32_var6 + 0xc);
-        h_var4 = winapi_funcs::GetProp16(s_thisHi_1050_5e6f, (i32_var6 + 10));
-        HVar5 = winapi_funcs::GetProp16(s_thisLo_1050_5e68, (i32_var6 + 10));
+        h_var4 = winapi::GetProp16(s_thisHi_1050_5e6f, (i32_var6 + 10));
+        HVar5 = winapi::GetProp16(s_thisLo_1050_5e68, (i32_var6 + 10));
         if ((h_var4 | HVar5) != 0) {
             i_var2 = (i32_var6 + 6);
             if (i_var2 == 1) {
@@ -689,7 +688,7 @@ pub fn pass1_1040_8f98(param_1: &mut Struct7) {
             if ctx._g_proc_inst_1050_5e18 == 0 {
                 let hinst: HINSTANCE16 = CONCAT22(0x9684, ctx.g_h_instance_1050_038c) as HINSTANCE16;
                 ctx._g_proc_inst_1050_5e18 =
-                    winapi_funcs::MakeProcInstance16(ctx.code_seg_reg, hinst);
+                    winapi::MakeProcInstance16(ctx.code_seg_reg, hinst);
             }
             ctx.PTR_LOOP_1050_5e16 = ctx.PTR_LOOP_1050_5e16 + 1;
             return;
@@ -1929,11 +1928,11 @@ pub fn get_sys_metrics_1020_7c1a(param_1: &mut u16, param_2: u32) {
     }
     (i_var3 + 2) = 0x1020;
     (i_var3 + 10) = (param_2 + 0xe4);
-    i_var2 = winapi_funcs::GetSystemMetrics16(4);
+    i_var2 = winapi::GetSystemMetrics16(4);
     (i_var3 + 0xe) = i_var2;
-    i_var2 = winapi_funcs::GetSystemMetrics16(5);
+    i_var2 = winapi::GetSystemMetrics16(5);
     (i_var3 + 0x10) = i_var2;
-    i_var2 = winapi_funcs::GetSystemMetrics16(6);
+    i_var2 = winapi::GetSystemMetrics16(6);
     (i_var3 + 0x12) = i_var2;
     return;
 }

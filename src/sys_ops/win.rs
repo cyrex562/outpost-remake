@@ -1,10 +1,9 @@
 use std::intrinsics::offset;
 
-use crate::{mixed_fn_1010_830a, winapi_funcs};
+use crate::{mixed_fn_1010_830a, winapi};
 use crate::app_context::AppContext;
 use crate::cleanup::{win_cleanup_1010_305a, win_cleanup_func_1040_782c, window_msg_func_1010_7300};
-use crate::ui_ops::window::win_fn_1020_7270;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::mem_funcs::StructuredData;
 use crate::other_funcs::switch_stmt_1008_aaa8;
 use crate::pass::pass13_funcs::pass1_1008_941a;
@@ -20,14 +19,14 @@ use crate::prog_structs::prog_structs_23::{Struct1090, win_struct_42};
 use crate::prog_structs::prog_structs_24::{Struct103, Struct2111, Struct369};
 use crate::prog_structs::prog_structs_9::Struct637;
 use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c7c, mci_send_command_1008_5c9e};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_e586};
-use crate::struct_ops2::{pass1_1038_df86, process_struct_1010_20ba};
+use crate::struct_ops::{pass1_1038_df86, process_struct_1000_179c, process_struct_1008_e586, process_struct_1010_20ba};
 use crate::sys_ops::win_msg;
 use crate::typedefs::{HANDLE16, HWND16, LRESULT, WPARAM16};
 use crate::ui_ops::misc::{mixed_1040_8520, win_fn_1020_1294, win_gui_fn_1010_79aa};
 use crate::ui_ops::misc::pass1_1038_af40;
+use crate::ui_ops::window::win_fn_1020_7270;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, SUB21, SUB42};
-use crate::winapi_funcs::CreateWindowEx16;
+use crate::winapi::CreateWindowEx16;
 
 pub unsafe fn win_fn_1040_3374(param_1: u32, param_2: &mut u32, param_3: HWND16) {
     let pp_var1: fn();
@@ -45,7 +44,7 @@ pub unsafe fn win_fn_1040_3374(param_1: u32, param_2: &mut u32, param_3: HWND16)
     let mut local_4: u16;
 
     u_var5 = SUB42(offset, 0);
-    LVar6 = winapi_funcs::SendMessage16(0, 0, 0x40b, param_3);
+    LVar6 = winapi::SendMessage16(0, 0, 0x40b, param_3);
     u_var2 = LVar6;
     u_var4 = (param_2 >> 0x10);
     unsafe {
@@ -68,7 +67,7 @@ pub unsafe fn win_fn_1040_3374(param_1: u32, param_2: &mut u32, param_3: HWND16)
             *(param_1 + 0x96),
             CONCAT13((ctx.dx_reg >> 8), CONCAT12(ctx.dx_reg, u_var2)),
         );
-        LVar6 = winapi_funcs::SendMessage16(CONCAT22(ctx.dx_reg, u_var2), 0, 0x403, param_3);
+        LVar6 = winapi::SendMessage16(CONCAT22(ctx.dx_reg, u_var2), 0, 0x403, param_3);
         u_var5 = 0x1000;
         error_check_1000_17ce(ctx, &mut u_var2);
         if LVar6 == -1 {
@@ -121,25 +120,25 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
     i32_var6 = param_1;
     u_var8 = (param_1 >> 0x10);
     if (param_2 != 0) {
-        local_56 = winapi_funcs::GetDlgItem16(0xfd2, (i32_var6 + 6));
-        winapi_funcs::SendMessage16(CONCAT22(unaff_ss, local_54), 0x51, 0xd, local_56);
+        local_56 = winapi::GetDlgItem16(0xfd2, (i32_var6 + 6));
+        winapi::SendMessage16(CONCAT22(unaff_ss, local_54), 0x51, 0xd, local_56);
         local_58 = local_54;
         local_232._0_1_ = unaff_ss;
         local_232._1_1_ = (unaff_ss >> 8);
         pass1_fn_1000_3e2c(CONCAT13(local_232._1_1_, CONCAT12(local_232, local_58)));
-        local_ac = winapi_funcs::GetDlgItem16((s_vrpal_bmp_1050_183a + 4), (i32_var6 + 6));
-        LVar10 = winapi_funcs::SendMessage16(0, 0, 0x407, local_ac);
+        local_ac = winapi::GetDlgItem16((s_vrpal_bmp_1050_183a + 4), (i32_var6 + 6));
+        LVar10 = winapi::SendMessage16(0, 0, 0x407, local_ac);
         local_ae = LVar10;
         if (local_ae != 0xffff) {
-            winapi_funcs::SendMessage16(CONCAT22(unaff_ss, local_aa), local_ae, 0x408, local_ac);
+            winapi::SendMessage16(CONCAT22(unaff_ss, local_aa), local_ae, 0x408, local_ac);
         }
-        local_ac = winapi_funcs::GetDlgItem16((s_vrpal_bmp_1050_183a + 5), (i32_var6 + 6));
-        LVar10 = winapi_funcs::SendMessage16(0, 0, 0x407, local_ac);
+        local_ac = winapi::GetDlgItem16((s_vrpal_bmp_1050_183a + 5), (i32_var6 + 6));
+        LVar10 = winapi::SendMessage16(0, 0, 0x407, local_ac);
         paVar4 = LVar10;
         local_ae = paVar4;
         if (paVar4 != 0xffff) {
             paStack556 = local_ac;
-            LVar10 = winapi_funcs::SendMessage16(
+            LVar10 = winapi::SendMessage16(
                 CONCAT13(local_232._1_1_, CONCAT12(local_232, local_100)),
                 paVar4,
                 0x408,
@@ -251,7 +250,7 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
     }
     // LAB_1040_1619:
     paStack556 = unaff_cs;
-    winapi_funcs::DestroyWindow16((i32_var6 + 6));
+    winapi::DestroyWindow16((i32_var6 + 6));
     return;
 }
 
@@ -311,7 +310,7 @@ pub unsafe fn win_fn_1038_da68(param_1: &mut u32, param_2: u16, param_3_00: &mut
                             ctx.dx_reg = ctx.dx_reg;
                             param_3._2_2_ =
                                 // winapi_funcs::WinHelp16(0, 3, CONCAT22(ctx.dx_reg, pu_var3), (param_1 + 6));
-                            winapi_funcs::WinHelp(param_1 + 6, pu_var3, CONCAT22(ctx.dx_reg, pu_var3), 3, 0);
+                            winapi::WinHelp(param_1 + 6, pu_var3, CONCAT22(ctx.dx_reg, pu_var3), 3, 0);
                         } else {
                             if (param_3._2_2_ + -0x127 != 0x0) {}
                             // goto LAB_1038_dc20;
@@ -444,8 +443,8 @@ pub fn win_fn_1038_d118(param_1: u32, param_2: u32, param_3: HWND16) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    h_var4 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5bf3), param_3);
-    HVar5 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5bec), param_3);
+    h_var4 = winapi::GetProp16(CONCAT22(in_ax, 0x5bf3), param_3);
+    HVar5 = winapi::GetProp16(CONCAT22(in_ax, 0x5bec), param_3);
     _local_6 = CONCAT22(h_var4, HVar5);
     if (param_2._2_2_ == 0x30) {
         if (param_2 == 0) {
@@ -475,12 +474,12 @@ pub fn win_fn_1038_d118(param_1: u32, param_2: u32, param_3: HWND16) {
                     (**pp_var1)(offset, HVar5, h_var4, 1);
                 }
             }
-            h_var4 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5bfa), param_3);
+            h_var4 = winapi::GetProp16(CONCAT22(in_ax, 0x5bfa), param_3);
             if (h_var4 == 0) {
                 return;
             }
-            winapi_funcs::DeleteObject16(h_var4);
-            winapi_funcs::RemoveProp16(CONCAT22(in_ax, 0x5c00), param_3);
+            winapi::DeleteObject16(h_var4);
+            winapi::RemoveProp16(CONCAT22(in_ax, 0x5c00), param_3);
             return;
         }
         if (cVar3 == '\x06') {
@@ -524,14 +523,14 @@ pub fn call_win_proc_1038_d020(param_1: u16, param_2: u32, param_3: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    HVar2 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5bd7), param_3._2_2_);
-    win_proc = winapi_funcs::GetProp16(
+    HVar2 = winapi::GetProp16(CONCAT22(in_ax, 0x5bd7), param_3._2_2_);
+    win_proc = winapi::GetProp16(
         CONCAT13((in_ax >> 8), CONCAT12(in_ax, 0x5bd0)),
         param_3._2_2_,
     );
     _local_6 = CONCAT22(HVar2, win_proc);
-    HVar2 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5be5), param_3._2_2_);
-    HVar3 = winapi_funcs::GetProp16(CONCAT22(in_ax, 0x5bde), param_3._2_2_);
+    HVar2 = winapi::GetProp16(CONCAT22(in_ax, 0x5be5), param_3._2_2_);
+    HVar3 = winapi::GetProp16(CONCAT22(in_ax, 0x5bde), param_3._2_2_);
     _local_a = CONCAT22(HVar2, HVar3);
     if ((HVar2 | HVar3) != 0) {
         local_e = 0;
@@ -545,7 +544,7 @@ pub fn call_win_proc_1038_d020(param_1: u16, param_2: u32, param_3: u32) {
                 // goto LAB_1038_d10e;
             }
             if ((param_3 == 0x112) && ((param_2._2_2_ & 0xfff0) == 0xf140)) {
-                LVar5 = winapi_funcs::SendMessage16(0, 0xf140, 0x112, &ctx.g_h_window);
+                LVar5 = winapi::SendMessage16(0, 0xf140, 0x112, &ctx.g_h_window);
                 u_var4 = (LVar5 == 0);
                 // goto LAB_1038_d10e;
             }
@@ -603,7 +602,7 @@ pub unsafe fn destroy_win_1038_cc00(param_1: &mut u32, param_2: u16, param_3: u1
     i_var1 = pass1_1008_eb74((param_1 + 0x8e), u_var2);
     if (i_var1 != 0) {
         mci_send_command_1008_5c7c(ctx._g_struct_ptr_1050_02a0, CONCAT22(i_var1, 1));
-        winapi_funcs::DestroyWindow16((param_1 + 6));
+        winapi::DestroyWindow16((param_1 + 6));
     }
     return;
 }
@@ -617,7 +616,7 @@ pub unsafe fn destroy_win_1038_c836(param_1: &mut u32, param_2: &mut String, par
         mci_send_command_1008_5c9e(ctx._g_struct_ptr_1050_02a0, CONCAT22(unaff_ss, local_6));
         u_var1 = (param_1 + 0x8e);
         (u_var1 + 10) = 6;
-        winapi_funcs::DestroyWindow16((param_1 + 6));
+        winapi::DestroyWindow16((param_1 + 6));
         PTR_LOOP_1050_5b80 = 0x0;
         return;
     }
@@ -643,7 +642,7 @@ pub unsafe fn win_fn_1038_c374(ctx: &mut AppContext, param_1: u32, param_2: &mut
     let mut local_4: u16;
 
     u_var6 = SUB42(offset, 0);
-    LVar7 = winapi_funcs::SendMessage16(0, 0, 0x40b, param_3);
+    LVar7 = winapi::SendMessage16(0, 0, 0x40b, param_3);
     u_var3 = LVar7;
     u_var5 = (param_2 >> 0x10);
     unsafe {
@@ -667,7 +666,7 @@ pub unsafe fn win_fn_1038_c374(ctx: &mut AppContext, param_1: u32, param_2: &mut
             (u_var1 >> 0x10),
             CONCAT13((ctx.dx_reg >> 8), CONCAT12(ctx.dx_reg, u_var4)),
         );
-        LVar7 = winapi_funcs::SendMessage16(struct_var8, 0, 0x403, param_3);
+        LVar7 = winapi::SendMessage16(struct_var8, 0, 0x403, param_3);
         u_var6 = 0x1000;
         error_check_1000_17ce(ctx, struct_var8);
         if (LVar7 == -1) {
@@ -777,7 +776,7 @@ pub unsafe fn win_fn_1020_0ec4(param_1: &mut u32, param_2: i32) {
                 w_param = 0xf020;
             }
         }
-        winapi_funcs::PostMessage16(0, w_param, 0x112, h_wnd);
+        winapi::PostMessage16(0, w_param, 0x112, h_wnd);
         return;
     }
     if (param_2 == 0xf3) {
@@ -791,7 +790,7 @@ pub unsafe fn win_fn_1020_0ec4(param_1: &mut u32, param_2: i32) {
         if ((cVar3 + 0x91) == 0) {
             mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x1f8);
             // winapi_funcs::WinHelp16(0x28, 1, CONCAT22(ctx.dx_reg, u_var6), (i_var4 + 8));
-            winapi_funcs::WinHelp16(i_var4 + 8, CONCAT22(ctx.dx_reg, u_var6), 1, 0x28);
+            winapi::WinHelp16(i_var4 + 8, CONCAT22(ctx.dx_reg, u_var6), 1, 0x28);
             return;
         }
         if (cVar3 == 'r') {
@@ -836,13 +835,13 @@ pub fn win_func_1018_6bb6(param_1: u32) {
     u_var3 = (param_1 >> 0x10);
     i_var2 = param_1;
     if ((i_var2 + 0xea) != 0) {
-        winapi_funcs::PostMessage16(0, (i_var2 + 0xea), 0x111, ctx.g_h_window);
+        winapi::PostMessage16(0, (i_var2 + 0xea), 0x111, ctx.g_h_window);
     }
-    winapi_funcs::PostMessage16(0, 0x79, 0x111, ctx.g_h_window);
+    winapi::PostMessage16(0, 0x79, 0x111, ctx.g_h_window);
     if ((i_var2 + 0xf0) != 0) {
-        b_var1 = winapi_funcs::IsWindow16((i_var2 + 0xf0));
+        b_var1 = winapi::IsWindow16((i_var2 + 0xf0));
         if (b_var1 != 0) {
-            winapi_funcs::DestroyWindow16((i_var2 + 0xf0));
+            winapi::DestroyWindow16((i_var2 + 0xf0));
             (i_var2 + 0xf0) = 0;
         }
     }
@@ -869,7 +868,7 @@ pub unsafe fn win_cleanup_func_1040_b0f8(param_1: &mut Struct7) -> u8 {
     );
     pass1_1010_7b8c(&mut ppVar5, local_bx_4.field_0x6);
     if local_bx_4[0x11].field_0x6 != 0 {
-        winapi_funcs::DeleteObject16(local_bx_4[0x11].field_0x6);
+        winapi::DeleteObject16(local_bx_4[0x11].field_0x6);
         local_bx_4[0x11].field_0x6 = 0;
     }
     u_var1 = (local_bx_4 + 0x12).field_0x0;
@@ -893,11 +892,11 @@ pub fn win_fn_1010_0242(param_1: u16, param_2: u16, param_3: HWND16) -> u16 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    BVar2 = winapi_funcs::IsWindow16(param_1);
+    BVar2 = winapi::IsWindow16(param_1);
     if (BVar2 != 0) {
-        wVar3 = winapi_funcs::GetWindowWord16(-6, param_1);
+        wVar3 = winapi::GetWindowWord16(-6, param_1);
         if (wVar3 == &ctx.g_h_instance_1050_038c) {
-            BVar2 = winapi_funcs::IsIconic16(param_1);
+            BVar2 = winapi::IsIconic16(param_1);
             if (BVar2 != 0) {
                 _local_8 = CONCAT22(local_6, 0x45);
                 ppVar4 = process_struct_1010_20ba(&g_Struct372_1050_0ed0, _local_8);

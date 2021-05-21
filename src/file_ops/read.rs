@@ -1,5 +1,5 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::file_ops::{file2, misc};
 use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
 use crate::mem_funcs::{Address, alloc_mem_1000_07fc, alloc_mem_1000_0a48, alloc_mem_1000_1708};
@@ -25,13 +25,13 @@ use crate::prog_structs::prog_structs_28::{FileObject, Struct772, Struct936};
 use crate::prog_structs::prog_structs_29::Struct732;
 use crate::prog_structs::prog_structs_5::Struct1174;
 use crate::prog_structs::prog_structs_6::Struct473;
-use crate::string_ops1::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
-use crate::struct_ops2::pass1_1038_6520;
+use crate::string_ops::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
+use crate::struct_ops::pass1_1038_6520;
 use crate::sys_ops::dos_ops::dos3_call_1000_51aa;
 use crate::typedefs::HFILE16;
 use crate::util::{CONCAT11, CONCAT22, CONCAT31, ZEXT24};
-use crate::winapi_funcs::{_hread, _lclose16, _llseek16, _lopen16};
+use crate::winapi::{_hread, _lclose16, _llseek16, _lopen16};
 
 pub unsafe fn read_from_file_1008_49e8(ctx: &mut AppContext, param_1: &mut Address<Struct7>) {
     let paVar1: *mut Struct131;

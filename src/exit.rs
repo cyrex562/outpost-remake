@@ -1,11 +1,11 @@
 use crate::{
     defines::AppContext,
     mem_funcs::alloc_mem_1000_167a,
-    string_ops1::process_string_1000_28dc,
+    string_ops::process_string_1000_28dc,
 };
 use crate::app_context::AppContext;
 use crate::pass::pass_funcs::{pass1_fn_1000_25a8, pass1_fn_1000_2913};
-use crate::winapi_funcs::{FatalAppExit16, FatalExit};
+use crate::winapi::{FatalAppExit16, FatalExit};
 
 pub unsafe fn exit_1000_25cc(ctx: &mut AppContext) -> *mut i32 {
     let mut p_var1: u32 = 0;

@@ -15,13 +15,13 @@ use crate::prog_structs::prog_structs_2::Struct665;
 use crate::prog_structs::prog_structs_31::Struct16;
 use crate::prog_structs::prog_structs_3::Struct664;
 use crate::prog_structs::prog_structs_6::Struct673;
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_4d58};
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_4d58};
 use crate::sys_ops::{pass1_1030_838e, reg_class_1008_818c, reg_class_1008_96d2, reg_class_1040_98c0};
 use crate::sys_ops::win_msg::send_win_msg_1020_097e;
 use crate::typedefs::{HCURSOR16, HGDIOBJ16, HWND16};
 use crate::ui_ops::{file_menu, misc, window};
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, ZEXT24};
-use crate::winapi_funcs::{GetStockObject16, LoadCursor16, PostMessage16, ReleaseCapture16, SetCursor16, UpdateWindow16};
+use crate::winapi::{GetStockObject16, LoadCursor16, PostMessage16, ReleaseCapture16, SetCursor16, UpdateWindow16};
 
 pub fn set_cursor_1008_2dcc(param_1: *mut Struct16, param_2: u16, param_3: u16) {
     let mut u_var1: u32;

@@ -3,7 +3,7 @@ use std::intrinsics::offset;
 use crate::app_context::AppContext;
 use crate::draw::{draw1, draw2, drawing_context, lines, paint, palette, polygon, rect, text};
 use crate::draw::polygon::polygon_1020_3602;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::file_ops::close::close_file_1008_496c;
 use crate::file_ops::read::read_from_file_1008_49e8;
 use crate::list_funcs::modify_list_1010_2b50;
@@ -33,9 +33,9 @@ use crate::prog_structs::prog_structs_7::{Struct135, Struct31, Struct376, Struct
 use crate::prog_structs::prog_structs_8::{Struct641, Struct643, Struct645, Struct646, Struct647};
 use crate::prog_structs::prog_structs_9::{Struct594, Struct604, Struct630};
 use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c9e};
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1010_4d5c, set_struct_1008_4016};
-use crate::struct_ops2::process_struct_1040_9618;
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_48fe, process_struct_1008_4c58, process_struct_1010_4d5c, set_struct_1008_4016};
+use crate::struct_ops::process_struct_1040_9618;
 use crate::sys_ops::get_sys_metrics_1020_7c1a;
 use crate::sys_structs::{PAINTSTRUCT16, RECT16};
 use crate::typedefs::{COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HICON16, HPALETTE16, HPEN16, HWND16};
@@ -43,7 +43,7 @@ use crate::ui_ops::misc::{pass1_1038_af40, win_gui_fn_1010_8170};
 use crate::ui_ops::window;
 use crate::ui_ops::window::{destroy_win_1008_628e, set_window_text_1018_6630};
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT210, CONCAT212, CONCAT214, CONCAT22, CONCAT24, CONCAT26, CONCAT28, CONCAT66, SUB42, ZEXT24};
-use crate::winapi_funcs::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, DrawText16, Ellipse16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, LineTo16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, RealizePalette16, Rectangle16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCapture16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16};
+use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, DrawText16, Ellipse16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, LineTo16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, RealizePalette16, Rectangle16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCapture16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16};
 
 pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     let pp_var1: fn();

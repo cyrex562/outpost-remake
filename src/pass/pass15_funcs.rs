@@ -1,6 +1,6 @@
 use crate::bad_funcs::bad1::halt_baddata;
 use crate::draw::misc::draw_1020_3fa0;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::list_funcs::zero_list_1008_6c90;
 use crate::mem_funcs::{alloc_mem_1000_07fc, alloc_mem_1000_0ed4, alloc_mem_1000_1708, free_mem_1000_093a};
 use crate::mixed_fn_1010_830a;
@@ -38,15 +38,14 @@ use crate::prog_structs::prog_structs_4::{Struct502, Struct651, Struct654, Struc
 use crate::prog_structs::prog_structs_5::{Struct658, Struct680, Struct681, Struct682, Struct683, Struct684, Struct685, Struct687, Struct688, Struct689};
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_9::{Struct723, Struct724};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, struct_fn_1000_160a};
-use crate::struct_ops2::{process_struct_1020_2594, process_struct_1020_808e};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1020_2594, process_struct_1020_808e, struct_fn_1000_160a};
 use crate::sys_ops::win_msg::post_win_msg_1008_a0e4;
 use crate::sys_ops::win_msg::process_win_msg_1008_9510;
 use crate::sys_structs::RECT16;
 use crate::ui_ops::misc::pass1_1038_af40;
 use crate::ui_ops::window::gui_window_func_1038_b72e;
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB42, ZEXT24};
-use crate::winapi_funcs::InvalidateRect16;
+use crate::winapi::InvalidateRect16;
 
 pub fn pass1_1020_e76c(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
     pass1_1030_dcf4(param_1);

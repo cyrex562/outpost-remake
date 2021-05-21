@@ -1,15 +1,15 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::pass::pass14_funcs::{pass1_1008_57a4, pass1_1008_5b12};
 use crate::pass::pass8_funcs::{pass1_1010_1dda, pass1_1010_1ea6};
 use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
 use crate::prog_structs::prog_structs_31::Struct33;
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_9::{Struct633, Struct634};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
 use crate::typedefs::{HDC16, HPALETTE16};
 use crate::util::{CONCAT22, ZEXT24};
-use crate::winapi_funcs::{CreatePalette16, DeleteObject16, GetDC16, InvalidateRect16, RealizePalette16, ReleaseDC16, SelectPalette16, UnrealizeObject16};
+use crate::winapi::{CreatePalette16, DeleteObject16, GetDC16, InvalidateRect16, RealizePalette16, ReleaseDC16, SelectPalette16, UnrealizeObject16};
 
 pub fn realize_palette_1008_46e4(param_1: u32, param_2: *mut HDC16) -> u16 {
     let mut bVar1: bool;

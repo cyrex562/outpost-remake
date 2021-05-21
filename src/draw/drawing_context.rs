@@ -5,16 +5,15 @@ use crate::pass::pass8_funcs::process_struct_1010_20ba;
 use crate::prog_structs::prog_structs_16::Struct115;
 use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_6::{Struct622, Struct670};
-use crate::struct_ops1::process_struct_1008_4772;
+use crate::struct_ops::process_struct_1008_4772;
 use crate::sys_ops::get_sys_metrics_1020_7c1a;
 use crate::typedefs::HWND16;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB41};
-use crate::winapi_funcs::{CreateDC16, GetDC16};
+use crate::winapi::{CreateDC16, GetDC16};
 
 pub fn get_gui_dc_1018_4db0(in_struct_1: Vec<u8>, in_win_handle: HWND16) -> *mut Struct199 {
     let dev_ctx_handle: *mut Struct199;
     let local_struct_1_hi: Vec<u8>;
-
     local_struct_1_hi = (in_struct_1 >> 0x10);
     (in_struct_1 + 0x16) = in_win_handle;
     dev_ctx_handle = GetDC16(in_win_handle);
@@ -63,15 +62,15 @@ pub unsafe fn create_drawing_dc_1018_4e04(
         param_2,
     );
     local_bx_8.field_0x1a = hdc_ptr;
-    if ((ctx.WORD_1050_422e != 0) && (0x280 < param_4)) {
+    if (ctx.WORD_1050_422e != 0) && (0x280 < param_4) {
         local_10 = 0;
-        while (local_10 < (ctx.u16_1050_4216 + 1)) {
+        while local_10 < (ctx.u16_1050_4216 + 1) {
             (&ctx.PTR_BYTE_1050_0009_1050_4172 + local_10 * 2) =
                 (((&ctx.PTR_BYTE_1050_0009_1050_4172 + local_10 * 2) * (param_4 + 1)) / 0x280);
             local_10 = local_10 + 1;
         }
         local_10 = 0;
-        while (local_10 < (ctx.WORD_1050_422c + 1)) {
+        while local_10 < (ctx.WORD_1050_422c + 1) {
             (&ctx.WORD_1050_419a + local_10 * 2) =
                 (((&ctx.WORD_1050_419a + local_10 * 2) * (param_3 + 1)) / 0x1e0);
             local_10 = local_10 + 1;

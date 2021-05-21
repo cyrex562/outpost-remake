@@ -1,10 +1,10 @@
 use std::intrinsics::offset;
 
-use crate::{draw, mixed_fn_1010_830a, struct_ops1, struct_ops2};
+use crate::{draw, mixed_fn_1010_830a, struct_ops, struct_ops2};
 use crate::app_context::AppContext;
 use crate::cleanup::{destroy_win_1010_3202, destroy_window_1040_8212, window_msg_func_1010_7300};
 use crate::draw::{draw2, drawing_context, rect};
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
 use crate::other_funcs::{set_timer_1008_91ba, zero_list_1008_3e38};
 use crate::pass::pass10_funcs::pass1_1040_bfde;
@@ -42,43 +42,42 @@ use crate::prog_structs::prog_structs_7::{Struct376, Struct44, Struct628, Struct
 use crate::prog_structs::prog_structs_8::{Struct60, Struct647};
 use crate::prog_structs::prog_structs_9::{Struct594, Struct604};
 use crate::sound_funcs::{mci_fn_1020_08b6, mci_send_cmd_1008_5c5c, mci_send_command_1008_5c7c, mci_send_command_1008_5c9e};
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_b65a, process_string_1000_3cea, string_fn_1000_3f9c};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1010_6118, process_struct_1040_bf3e};
-use crate::struct_ops2::{process_struct_1020_04f6, process_struct_1020_808e, process_struct_1040_7728, process_struct_1040_a598};
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, load_string_1008_b65a, process_string_1000_3cea, string_fn_1000_3f9c};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1010_6118, process_struct_1020_04f6, process_struct_1020_808e, process_struct_1040_7728, process_struct_1040_a598, process_struct_1040_bf3e};
 use crate::sys_ops::{metrics, pass1_1030_838e, process_struct_1040_8478, win_msg};
 use crate::sys_ops::metrics::get_sys_metrics_1020_7a50;
 use crate::sys_ops::rsrc::load_rsrc_1010_4e9e;
 use crate::sys_ops::win::{create_win_1008_9760, win_cleanup_func_1040_b0f8};
 use crate::sys_ops::win_msg::{post_win_msg_1020_1ca4, post_win_msg_1040_7b3c, process_win_msg_1008_9510};
 use crate::sys_structs::{PAINTSTRUCT16, RECT16};
-use crate::typedefs::{ATOM, HANDLE16, HCURSOR16, HINSTANCE16, HPALETTE16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16};
+use crate::typedefs::{ATOM, HANDLE16, HCURSOR16, HINSTANCE16, HPALETTE16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16, HDC16, HBRUSH16};
 use crate::ui_ops::{color, cursor, dialog, icon, menu, misc, msg_box, ui2};
 use crate::ui_ops::misc::{mixed_1040_8520, pass1_1020_289a, pass1_1038_af40, win_fn_1008_3bd6, win_fn_1020_0dc4, win_gui_func_1040_78e2};
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT210, CONCAT212, CONCAT214, CONCAT22, CONCAT24, CONCAT26, CONCAT28, CONCAT31, CONCAT610, SBORROW2, SUB21, SUB41, SUB42, ZEXT24};
-use crate::winapi_funcs::{BeginPaint16, BringWindowToTop16, CreateSolidBrush16, CreateWindow16, DeleteDC16, DeleteObject16, DestroyIcon16, DestroyMenu16, DestroyWindow16, DrawIcon16, EnableWindow16, EndPaint16, EnumChildWindows16, FillRect16, FreeProcInstance16, GetClassInfo16, GetClientRect16, GetDC16, GetDlgItem16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowLong16, GetWindowRect16, GetWindowWord16, InvalidateRect16, IsIconic16, IsWindow16, LoadCursor16, LoadIcon16, MakeProcInstance16, MoveWindow16, PostMessage16, PtInRect16, RegisterClass16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16, WinHelp16};
+use crate::winapi::{BeginPaint16, BringWindowToTop16, CreateSolidBrush16, CreateWindow16, DeleteDC16, DeleteObject16, DestroyIcon16, DestroyMenu16, DestroyWindow16, DrawIcon16, EnableWindow16, EndPaint16, EnumChildWindows16, FillRect16, FreeProcInstance16, GetClassInfo16, GetClientRect16, GetDC16, GetDlgItem16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowLong16, GetWindowRect16, GetWindowWord16, InvalidateRect16, IsIconic16, IsWindow16, LoadCursor16, LoadIcon16, MakeProcInstance16, MoveWindow16, PostMessage16, PtInRect16, RegisterClass16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16, WinHelp16};
 
-pub fn fill_client_window_1008_39ac(in_struct_12: *mut Struct12) {
-    let local_bx_4: *mut Struct12;
-    let unaff_ss: HWND16;
-    let mut in_stack_00000006: u16;
-    let HStack44: HWND16;
-    let mut brush: u16;
-    let mut b_result: u16;
-    let paint_struct: [u8; 32];
+use crate::winapi;
 
-    b_result = BeginPaint(CONCAT22(unaff_ss, paint_struct), in_struct_12.h_window);
+pub fn fill_client_window_1008_39ac(ctx: &mut AppContext, struct_param1: &mut Struct12) {
+    let mut unaff_ss: HWND16;
+    let mut window_handle_44: HWND16;
+    let mut brush: HBRUSH16;
+    let mut hdc_var21: HDC16;
+    let mut paint_struct: PAINTSTRUCT16 = PAINTSTRUCT16::new();
+    let mut rect_var20: RECT16 = RECT16::new();
+    hdc_var21 = winapi::BeginPaint(struct_param1.h_window, paint_struct);
     brush = CreateSolidBrush16(0x210070b);
-    GetClientRect16(CONCAT22(unaff_ss, &stack0xffd2), in_struct_12.h_window);
-    HStack44 = b_result;
-    FillRect16(brush, &stack0xffd2, unaff_ss);
-    HStack44 = in_struct_12.h_window;
-    EndPaint(paint_struct, unaff_ss);
+    GetClientRect16(struct_param1.h_window, &mut rect_var20);
+    window_handle_44 = hdc_var21;
+    FillRect16(  unaff_ss, &rect_var20,brush);
+    window_handle_44 = struct_param1.h_window;
+    EndPaint16(unaff_ss, &mut paint_struct);
     DeleteObject16(brush);
     return;
 }
 
 pub fn set_win_1008_5634(
-    param_1: *mut u32,
+    param_1: &mut u32,
     param_2: u16,
     param_3_00: WPARAM16,
     param_3: u16,
@@ -196,7 +195,7 @@ pub fn create_win_1008_5e7e() -> u16 {
     return window_handle;
 }
 
-pub fn destroy_win_1008_628e(param_1: *mut Struct594, param_2: u16) {
+pub fn destroy_win_1008_628e(param_1: &mut Struct594, param_2: u16) {
     let pp_var1: fn();
 
     pp_var1 = ((param_1 + 0xd2) + 0x14);
@@ -206,7 +205,7 @@ pub fn destroy_win_1008_628e(param_1: *mut Struct594, param_2: u16) {
     return;
 }
 
-pub fn show_window_1008_68c6(param_1: *mut Struct628, param_2: u16, param_3: u16) -> u16 {
+pub fn show_window_1008_68c6(param_1: &mut Struct628, param_2: u16, param_3: u16) -> u16 {
     let mut local_AX_13: u16;
     let mut local_4: u16;
 
@@ -263,7 +262,7 @@ pub fn enable_window_1040_d6be(param_1: u32) {
     return;
 }
 
-pub fn enable_window_1040_d60e(in_Struct588_ptr_1: *mut Struct588) -> u8 {
+pub fn enable_window_1040_d60e(in_Struct588_ptr_1: &mut Struct588) -> u8 {
     let HVar1: HWND16;
     let BVar2: bool;
     let mut i_var3: i32;
@@ -289,9 +288,9 @@ pub fn enable_window_1040_d60e(in_Struct588_ptr_1: *mut Struct588) -> u8 {
     return BVar2;
 }
 
-pub fn enable_window_1040_cf1c(in_Struct123: *mut Struct123) -> LRESULT {
+pub fn enable_window_1040_cf1c(in_Struct123: &mut Struct123) -> LRESULT {
     let h_wnd: HWND16;
-    let local_Struct123: *mut Struct123;
+    let local_Struct123: Struct123;
     let mut u_var1: u16;
     let mut unaff_ss: u16;
     let ppVar2: *mut pass1_struct_1;
@@ -388,7 +387,7 @@ pub fn enable_window_1040_cf1c(in_Struct123: *mut Struct123) -> LRESULT {
     return LVar4;
 }
 
-pub fn enable_window_1040_cc66(param_1: *mut Struct123) {
+pub fn enable_window_1040_cc66(param_1: &mut Struct123) {
     let pp_var1: fn();
 
     pp_var1 = ((param_1 + 0x98) + 0x10);
@@ -397,7 +396,7 @@ pub fn enable_window_1040_cc66(param_1: *mut Struct123) {
     return;
 }
 
-pub fn win_gui_fn_1040_cc8c(param_1: *mut Struct124, param_2: u16, param_3: u16, param4: u32) {
+pub fn win_gui_fn_1040_cc8c(param_1: &mut Struct124, param_2: u16, param_3: u16, param4: u32) {
     if (param_3._2_2_ == 0xeb) {
         enable_window_1040_cf1c(CONCAT22(param_2, param_1));
     } else {
@@ -416,7 +415,7 @@ pub fn win_gui_fn_1040_cc8c(param_1: *mut Struct124, param_2: u16, param_3: u16,
     return;
 }
 
-pub fn win_fn_1040_bbe2(param_1: *mut Struct124, param_2: u16, param_3: u16, param_4: u32) {
+pub fn win_fn_1040_bbe2(param_1: &mut Struct124, param_2: u16, param_3: u16, param_4: u32) {
     let mut u_var1: u16;
     let ppc_var2: fn();
     let mut u_var3: u32;
@@ -591,7 +590,7 @@ pub fn destroy_window_1040_bb78(param_1: u32) {
     return;
 }
 
-pub fn set_window_pos_1040_b8d2(param_1: *mut Struct20) {
+pub fn set_window_pos_1040_b8d2(ctx: &mut AppContext, param_1: &mut Struct20) {
     let mut u_var1: u32;
     let mut u_var2: u16;
     let mut u_var3: i32;
@@ -599,21 +598,21 @@ pub fn set_window_pos_1040_b8d2(param_1: *mut Struct20) {
     let mut u_var5: u16;
     let mut i32_var6: i32;
 
-    let struct_a: *mut Struct199;
-    let pa_var7: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let pa_var8: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let extraout_dx_04: *mut Struct199;
-    let extraout_dx_05: *mut Struct199;
+    let struct_a: Struct199;
+    let pa_var7: Struct199;
+    // let ctx.dx_reg: Struct199;
+    let pa_var8: Struct199;
+    // let ctx.dx_reg: Struct199;
+    // let ctx.dx_reg: Struct199;
+    // let ctx.dx_reg: Struct199;
+    let extraout_dx_04: Struct199;
+    let extraout_dx_05: Struct199;
     let mut extraout_dx_06: u16;
     let mut u_var9: u16;
     let mut i_var10: i32;
     let mut u_var11: u16;
     let mut u_var12: u16;
-    let ppVar13: *mut pass1_struct_1;
+    let ppVar13: pass1_struct_1;
     let mut in_stack_0000ffe4: u16;
     let mut local_12: u16;
     let mut local_10: u32;
@@ -635,7 +634,7 @@ pub fn set_window_pos_1040_b8d2(param_1: *mut Struct20) {
     (i_var10 + 0x98) = u_var3;
     (i_var10 + 0x9a) = pa_var8;
     process_struct_1000_179c(10, pa_var8);
-    if ((pa_var8 | u_var3) == 0) {
+    if (pa_var8 | u_var3) == 0 {
         (i_var10 + 0x94) = 0;
     } else {
         process_struct_1040_bf3e(CONCAT22(pa_var8, u_var3), (i_var10 + 6));
@@ -646,7 +645,7 @@ pub fn set_window_pos_1040_b8d2(param_1: *mut Struct20) {
     pa_var8 = struct_a;
     process_struct_1000_179c(0x42, struct_a);
     pa_var7 = (pa_var8 | u_var3);
-    if (pa_var7 != 0x0) {
+    if pa_var7 != 0x0 {
         misc::win_fn_1008_3bd6(
             u_var3,
             pa_var8,
@@ -775,7 +774,7 @@ pub fn set_window_pos_1040_b8d2(param_1: *mut Struct20) {
     return;
 }
 
-pub fn destroy_window_1040_b726(param_1: *mut u32, param_2: i32) {
+pub fn destroy_window_1040_b726(param_1: &mut u32, param_2: i32) {
     let pp_var1: fn();
 
     if (param_2 != 0) {
@@ -788,7 +787,7 @@ pub fn destroy_window_1040_b726(param_1: *mut u32, param_2: i32) {
     return;
 }
 
-pub fn win_gui_fn_1040_b54a(param_1: *mut Struct124, param_2: u16, param_3: u16, param_2_00: u32) {
+pub fn win_gui_fn_1040_b54a(param_1: &mut Struct124, param_2: u16, param_3: u16, param_2_00: u32) {
     let in_struct_1: &mut Struct44;
     let pp_var1: fn();
     let mut u_var2: u32;
@@ -925,7 +924,7 @@ pub fn win_gui_fn_1040_b54a(param_1: *mut Struct124, param_2: u16, param_3: u16,
     return;
 }
 
-pub fn show_win_1040_b43c(param_1: *mut u32) {
+pub fn show_win_1040_b43c(param_1: &mut u32) {
     let pp_var1: fn();
 
     unsafe {
@@ -970,7 +969,7 @@ pub fn win_gui_fn_1040_b4c8(param_1: u32) {
     return;
 }
 
-pub fn set_window_pos_1040_b230(param_1: *mut Struct20) {
+pub fn set_window_pos_1040_b230(param_1: &mut Struct20) {
     let pp_var1: fn();
     let i_var2: u16;
     let mut i_var3: i32;
@@ -1146,10 +1145,10 @@ pub fn set_win_placement_1010_010e(param_1: u16, param_2: u16, param_3: HWND16) 
     return;
 }
 
-pub fn destroy_win_1010_2fa0(param_1: *mut Struct340) {
+pub fn destroy_win_1010_2fa0(param_1: &mut Struct340) {
     let pu_var1: *mut u16;
     let mut u_var2: u32;
-    let local_bx_7: *mut Struct340;
+    let local_bx_7: Struct340;
     let mut u_var3: u16;
     let mut local_4: u16;
 
@@ -1277,15 +1276,15 @@ pub fn set_window_text_1018_6066(param_1: u32, in_window_text: u32, in_dlg_item_
     return;
 }
 
-pub fn set_window_text_1018_6630(in_struct_604_ptr: *mut Struct604) {
+pub fn set_window_text_1018_6630(in_struct_604_ptr: &mut Struct604) {
     let mut in_dlg_item_id: u16;
     let mut u_var1: i32;
-    let struct_604_ptr_1: *mut Struct604;
-    let struct_60_ptr_hi: *mut Struct604;
+    let struct_604_ptr_1: Struct604;
+    let struct_60_ptr_hi: Struct604;
     let mut local_c: u16;
     let window_text: SEGPTR;
     let mut local_4: u16;
-    let struct_60_ptr_1: *mut Struct60;
+    let struct_60_ptr_1: Struct60;
 
     struct_60_ptr_hi = (in_struct_604_ptr >> 0x10);
     struct_604_ptr_1 = in_struct_604_ptr;
@@ -1304,11 +1303,11 @@ pub fn set_window_text_1018_6630(in_struct_604_ptr: *mut Struct604) {
     return;
 }
 
-pub fn destroy_win_1018_c518(in_struct_376_1: *mut Struct376) {
+pub fn destroy_win_1018_c518(in_struct_376_1: &mut Struct376) {
     let b_rc: bool;
-    let struct_a_1: *mut Struct376;
-    let struct_a_2: *mut Struct376;
-    let temp_5fa5d31fd0: *mut Struct376;
+    let struct_a_1: Struct376;
+    let struct_a_2: Struct376;
+    let temp_5fa5d31fd0: Struct376;
 
     struct_a_2 = (in_struct_376_1 >> 0x10);
     struct_a_1 = in_struct_376_1;
@@ -1326,7 +1325,7 @@ pub fn destroy_win_1018_c518(in_struct_376_1: *mut Struct376) {
     return;
 }
 
-pub fn destroy_win_fn_1018_c896(param_1: *mut Struct376, param_2: u8) -> *mut Struct376 {
+pub fn destroy_win_fn_1018_c896(param_1: &mut Struct376, param_2: u8) -> &mut Struct376 {
     destroy_win_1018_c518(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -1334,10 +1333,10 @@ pub fn destroy_win_fn_1018_c896(param_1: *mut Struct376, param_2: u8) -> *mut St
     return param_1;
 }
 
-pub fn create_win_fn_1018_df40(in_struct_42_ptr_1: *mut win_struct_42) {
+pub fn create_win_fn_1018_df40(in_struct_42_ptr_1: &mut win_struct_42) {
     let local_struct_42_1: *mut win_struct_42;
     let mut local_struct_42_hi_1: u16;
-    let create_win_result: *mut Struct199;
+    let create_win_result: Struct199;
     let mut local_u32_43: u32;
     let mut local_4: u16;
 
@@ -1355,10 +1354,10 @@ pub fn create_win_fn_1018_df40(in_struct_42_ptr_1: *mut win_struct_42) {
     return;
 }
 
-pub fn destroy_win_fn_1018_df92(param_1: *mut Struct594) {
+pub fn destroy_win_fn_1018_df92(param_1: &mut Struct594) {
     let pu_var1: *mut u32;
     let pvVar2: &mut Vec<u8>;
-    let local_struct_594_ptr_1: *mut Struct594;
+    let local_struct_594_ptr_1: Struct594;
     let mut unaff_si: u16;
     let mut u_var3: u16;
     let temp_862fc4681f0: *mut u32;
@@ -1379,7 +1378,7 @@ pub fn destroy_win_fn_1018_df92(param_1: *mut Struct594) {
     return;
 }
 
-pub fn destroy_win_fn_1018_e72a(param_1: *mut Struct594) {
+pub fn destroy_win_fn_1018_e72a(param_1: &mut Struct594) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let mut u_var3: u16;
@@ -1400,26 +1399,26 @@ pub fn destroy_win_fn_1018_e72a(param_1: *mut Struct594) {
     return;
 }
 
-pub fn update_window_1020_10a0(param_1: *mut win_struct_42) {
+pub fn update_window_1020_10a0(param_1: &mut win_struct_42) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let mut u_var3: i32;
     let pi_var4: *mut u16;
-    let pa_var5: *mut Struct199;
+    let pa_var5: Struct199;
 
-    let paVar6: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
-    let struct_a: *mut Struct199;
+    let paVar6: Struct199;
+    let ctx.dx_reg: Struct199;
+    let struct_a: Struct199;
 
 
     let mut i_var7: i32;
     let mut unaff_si: u16;
     let mut u_var8: u16;
-    let paVar9: *mut Struct199;
+    let paVar9: Struct199;
     let ppVar10: *mut pass1_struct_1;
     let mut u_var11: u32;
     let mut u_var12: u16;
-    let local_3a: *mut Struct71;
+    let local_3a: Struct71;
     let mut local_8: u16;
 
     paVar9 = create_win_1008_9760(param_1);
@@ -1521,21 +1520,21 @@ pub fn update_window_1020_10a0(param_1: *mut win_struct_42) {
     return;
 }
 
-pub fn create_window_1008_0af8(in_win_struct: *mut win_struct_42) -> u16 {
+pub fn create_window_1008_0af8(in_win_struct: &mut win_struct_42) -> u16 {
     let pu_var1: *mut u16;
     let ppc_var2: fn();
     let local_win_handle: HANDLE16;
-    let struct_a: *mut Struct199;
-    let paVar3: *mut Struct199;
+    let struct_a: Struct199;
+    let paVar3: Struct199;
 
     let mut local_DX_85: i32;
-    let struct_a_00: *mut Struct199;
+    let struct_a_00: Struct199;
     let mut local_DX_175: i32;
 
-    let local_win_struct_42: *mut Struct119;
+    let local_win_struct_42: Struct119;
     let mut local_es_13: u16;
     let mut local_CS_138: u16;
-    let paVar4: *mut Struct199;
+    let paVar4: Struct199;
     let local_16: u32;
     let mut local_6: u16;
     let mut temp_5fdbebe016: i32;
@@ -1636,10 +1635,10 @@ pub fn update_window_1040_93aa(param_1: u32, param_2: u16, param_3: u16) {
     return;
 }
 
-pub fn create_win_1040_92dc(param_1: *mut Struct41) {
+pub fn create_win_1040_92dc(param_1: &mut Struct41) {
     let mut window: u16;
     let handle: HANDLE16;
-    let local_bx_4: *mut Struct41;
+    let local_bx_4: Struct41;
     let handle_00: HANDLE16;
     let lVar1: u32;
 
@@ -1690,7 +1689,7 @@ pub fn enable_window_1040_9234(param_1: u32, param_2: bool) {
     return;
 }
 
-pub fn enable_window_1040_8ea0(param_1: *mut Struct59, param_2: u32, param_3: u32) {
+pub fn enable_window_1040_8ea0(param_1: &mut Struct59, param_2: u32, param_3: u32) {
     let enable: bool;
     let h_wnd: HWND16;
 
@@ -1732,7 +1731,7 @@ pub fn destroy_window_1040_8b7e(param_1: u32) {
 }
 
 pub fn create_win_1040_8bea(
-    param_1: *mut Struct40,
+    param_1: &mut Struct40,
     param_2: u16,
     menu: u16,
     x_coord: u16,
@@ -1741,7 +1740,7 @@ pub fn create_win_1040_8bea(
 ) -> HANDLE16 {
     let mut window_1: u16;
     let w_param: HANDLE16;
-    let ctx.bx_reg: *mut Struct40;
+    let ctx.bx_reg: Struct40;
     let mut u_var1: u16;
     let LVar2: LRESULT;
     let mut local_8: u16;
@@ -1829,8 +1828,8 @@ pub fn move_window_1040_826c(param_1: u32, param_2: u16, param_3: u16) {
     return;
 }
 
-pub fn destroy_win_1040_bf92(param_1: *mut Struct339) {
-    let local_bx_4: *mut Struct339;
+pub fn destroy_win_1040_bf92(param_1: &mut Struct339) {
+    let local_bx_4: Struct339;
     let mut u_var1: i32;
 
     u_var1 = (param_1 >> 0x10);
@@ -1860,10 +1859,10 @@ pub fn enum_child_windows_1010_01be() {
     return;
 }
 
-pub fn pass1_1020_02ae(in_struct_1: *mut Struct594) {
-    let local_struct_1: *mut Struct594;
+pub fn pass1_1020_02ae(in_struct_1: &mut Struct594) {
+    let local_struct_1: Struct594;
     let mut unaff_si: u16;
-    let local_struct_1_hi: *mut Struct594;
+    let local_struct_1_hi: Struct594;
     let temp_5f77ded944: Vec<u8>;
     let temp_5f51233cf1: Vec<u8>;
     // fn_ptr_1: *mut Vec<u8>;
@@ -1886,11 +1885,11 @@ pub fn pass1_1020_02ae(in_struct_1: *mut Struct594) {
     return;
 }
 
-pub fn create_win_fn_1020_0316(in_struct_1: *mut win_struct_42) {
+pub fn create_win_fn_1020_0316(in_struct_1: &mut win_struct_42) {
     let local_struct_1: *mut win_struct_42;
     let local_struct_1_hi: *mut win_struct_42;
     let ppVar1: *mut pass1_struct_1;
-    let in_struct_1_00: *mut Struct629;
+    let in_struct_1_00: Struct629;
     let mut u_var2: u32;
     let mut in_stack_0000fff2: u16;
     let mut local_c: u16;
@@ -1942,7 +1941,7 @@ pub fn win_cleanup_1040_d1bc(param_1: &mut Struct44) {
 }
 
 pub fn destroy_win_1040_caa6(param_1: u16, param_2: u32) {
-    let paVar1: *mut Struct318;
+    let paVar1: Struct318;
     let BVar2: bool;
 
     BVar2 = 0;
@@ -1960,7 +1959,7 @@ pub fn win_cleanup_1008_0618(param_1: u32) {
     let extraout_var: u32;
     let mut u_var5: i32;
 
-    let local_bx_5: *mut Struct47;
+    let local_bx_5: Struct47;
     let mut u_var6: u16;
 
     u_var6 = (param_1 >> 0x10);
@@ -2100,7 +2099,7 @@ pub fn create_win_1040_70b4(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    ppVar10 = struct_ops2::process_struct_1010_20ba(
+    ppVar10 = struct_ops::process_struct_1010_20ba(
         ctx._g_Struct372_1050_0ed0,
         CONCAT22(in_stack_0000ff8a, 0x34),
     );
@@ -2485,7 +2484,7 @@ pub fn create_win_1040_6942(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    ppVar10 = struct_ops2::process_struct_1010_20ba(
+    ppVar10 = struct_ops::process_struct_1010_20ba(
         ctx._g_Struct372_1050_0ed0,
         CONCAT22(in_stack_0000ff8a, 0x33),
     );
@@ -2717,7 +2716,7 @@ pub fn enable_window_1040_5780(param_1: &mut u32) {
     }
     i_var7 = i_var4;
     (**pp_var1)();
-    ppVar6 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(i_var7, 3));
+    ppVar6 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(i_var7, 3));
     u_var2 = (i_var4 + 0x90);
     u_var3 = pass1_1010_acc0(ppVar6, (ppVar6 >> 0x10), (u_var2 + 6));
     if (u_var3 != 0) {
@@ -2764,7 +2763,7 @@ pub fn set_window_pos_1040_4f96(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    ppVar16 = struct_ops2::process_struct_1010_20ba(
+    ppVar16 = struct_ops::process_struct_1010_20ba(
         ctx._g_Struct372_1050_0ed0,
         CONCAT22(in_stack_0000ffe4, 0x41),
     );
@@ -2893,7 +2892,7 @@ pub fn set_window_pos_1040_4f96(param_1: &mut Struct20) {
         u_var8 = extraout_DL;
     }
     enable_window_1040_9234(u_var4, u_var8, u_var9);
-    ppVar16 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u_var15, 3));
+    ppVar16 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u_var15, 3));
     u_var12 = (ppVar16 >> 0x10);
     u_var3 = ppVar16;
     u_var5 = pass1_1010_a5ac(u_var3, u_var12, (i_var13 + 0xb0));
@@ -2946,7 +2945,7 @@ pub fn set_win_pos_1040_4ae4(param_1: &mut Struct124, param_2: u16, param_3: u16
     let mut local_4: u16;
 
     if (param_3._2_2_ == 0xeb) {
-        _local_6 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 3));
+        _local_6 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 3));
         pa_var5 = (_local_6 >> 0x10);
         u_var4 = &param_1.field_0x90;
         if (u_var4 != 0) {
@@ -3294,7 +3293,7 @@ pub fn create_win_1040_20d4(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    ppVar4 = struct_ops2::process_struct_1010_20ba(
+    ppVar4 = struct_ops::process_struct_1010_20ba(
         ctx._g_Struct372_1050_0ed0,
         CONCAT22(in_stack_0000ffca, 0x48),
     );
@@ -3448,7 +3447,7 @@ pub fn set_win_pos_1040_0f0c(param_1: &mut Struct20) {
     local_10 = -(local_14 / 2 - local_6);
     local_16 = local_8 - local_c;
     local_12 = -(local_16 / 2 - local_4);
-    _local_1e = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u_var3, 0x48));
+    _local_1e = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u_var3, 0x48));
     u_var3 = (_local_1e >> 0x10);
     local_18 = (_local_1e + 10);
     local_1a = (_local_1e + 0xc);
@@ -3525,12 +3524,12 @@ pub fn show_win_1040_0766(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    _local_6 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffde, 2));
+    _local_6 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffde, 2));
     process_struct_1010_6118(_local_6);
     pu_var4 = &local_8;
     pu_var2 = &local_a;
     u_var3 = unaff_ss;
-    ppVar1 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(pu_var2, 0x48));
+    ppVar1 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(pu_var2, 0x48));
     pass1_1008_3e94(
         (ppVar1 + 0xe),
         CONCAT22(unaff_ss, pu_var2),
@@ -3709,7 +3708,7 @@ pub fn destroy_win_1040_0170(param_1: i32, param_2: u16, param_3: u16, param_4: 
             }
             enable_window_1040_0558(param_1, param_2_00, 5);
             _local_c =
-                struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x39));
+                struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x39));
             local_10 = (_local_c + 0x20);
             u_var11 = SUB21(&local_16, 0);
             u_var12 = (&local_16 >> 8);
@@ -3739,7 +3738,7 @@ pub fn destroy_win_1040_0170(param_1: i32, param_2: u16, param_3: u16, param_4: 
         }
         0x16e => {
             _local_1e =
-                struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x39));
+                struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x39));
             local_1a = (_local_1e + 0x20);
             local_18 = LoadCursor16(0x7f02, 0);
             local_16 = SetCursor16(local_18);
@@ -3797,7 +3796,7 @@ pub fn destroy_win_1040_0170(param_1: i32, param_2: u16, param_3: u16, param_4: 
         local_128 = ctx._g_Struct372_1050_0ed0;
         HStack294 = (ctx._g_Struct372_1050_0ed0 >> 0x10);
         local_12a = u_var7;
-        pp_var8 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, uStack292);
+        pp_var8 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, uStack292);
         u_var1 = (pp_var8 + 0x20);
         _local_1e = (_local_1e & 0xffff0000 | u_var1);
         if (u_var1 != 0) {
@@ -4144,7 +4143,7 @@ pub fn show_window_1038_a6f4(param_1: &mut Struct20) {
     let mut local_4: u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    ppVar4 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffec, 2));
+    ppVar4 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffec, 2));
     lp_string = (ppVar4 + 0x68);
     u_var3 = (param_1 >> 0x10);
     i_var2 = param_1;
@@ -4178,7 +4177,7 @@ pub fn show_window_1038_a4ee(param_1: &mut Struct20) {
     u_var2 = (param_1 >> 0x10);
     i_var1 = param_1;
     (i_var1 + 0x8c) = in_ax;
-    ppVar3 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffec, 2));
+    ppVar3 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000ffec, 2));
     lp_string = (ppVar3 + 0x6c);
     hwnd = GetDlgItem16(0x114, (i_var1 + 6));
     SetWindowText16(lp_string, hwnd);
@@ -4230,7 +4229,7 @@ pub fn enable_window_1038_9cec(
 
     if (param_5 == 0xeb) {
         win_gui_fn_1040_b54a(param_1, param_2, param_3_00, CONCAT22(0xeb, param_3));
-        ppVar5 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 3));
+        ppVar5 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 3));
         i_var4 = ppVar5 + 0xa4;
         u_var3 = (ppVar5 >> 0x10);
         local_c = 0;
@@ -4612,12 +4611,12 @@ pub fn destroy_win_1020_8250(param_1: u32) {
     return;
 }
 
-pub unsafe fn win_fn_1020_694c(ctx: &mut AppContext, param_1: *mut Struct37, param_2: i32) -> u32 {
+pub unsafe fn win_fn_1020_694c(ctx: &mut AppContext, param_1: &mut Struct37, param_2: i32) -> u32 {
     let mut u_var1: u32;
     let mut lp_help_file: String;
     let mut u_var2: i32;
     let mut HVar3: HWND16;
-    let local_bx_14: *mut Struct5;
+    let local_bx_14: Struct5;
     let mut u_var4: u16;
     let u_var5: u8;
 
@@ -4709,7 +4708,7 @@ pub unsafe fn win_fn_1020_694c(ctx: &mut AppContext, param_1: *mut Struct37, par
     return u_var2;
 }
 
-pub fn destroy_win_1020_6ae6(param_1: *mut u32, param_2: u16, param_4: i32, param_3: i32) {
+pub fn destroy_win_1020_6ae6(param_1: &mut u32, param_2: u16, param_4: i32, param_3: i32) {
     let pp_var1: fn();
     let mut i_var2: i32;
     let mut i_var3: i32;
@@ -4759,7 +4758,7 @@ pub unsafe fn call_win_fn_1020_6bbc(in_struct_1: Vec<u8>) {
     return;
 }
 
-pub unsafe fn update_window_1020_6c3a(ctx: &mut AppContext, param_1: *mut win_struct_42) {
+pub unsafe fn update_window_1020_6c3a(ctx: &mut AppContext, param_1: &mut win_struct_42) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let mut u_var3: u16;
@@ -4767,11 +4766,11 @@ pub unsafe fn update_window_1020_6c3a(ctx: &mut AppContext, param_1: *mut win_st
     let pi_var5: *mut u16;
     let mut u_var6: u32;
     let mut u_var7: u16;
-    let struct_a: *mut Struct199;
-    let pa_var8: *mut Struct199;
-    let struct_a_00: *mut Struct199;
-    let struct_a_01: *mut Struct199;
-    let struct_a_02: *mut Struct199;
+    let struct_a: Struct199;
+    let pa_var8: Struct199;
+    let struct_a_00: Struct199;
+    let struct_a_01: Struct199;
+    let struct_a_02: Struct199;
 
 
 
@@ -4910,7 +4909,7 @@ pub unsafe fn update_window_1020_6c3a(ctx: &mut AppContext, param_1: *mut win_st
     return;
 }
 
-pub unsafe fn create_win_1020_6e98(ctx: &mut AppContext, param_1: *mut Struct37) {
+pub unsafe fn create_win_1020_6e98(ctx: &mut AppContext, param_1: &mut Struct37) {
     let pu_var1: *mut u16;
     let w_param: WPARAM16;
     let mut in_struct_1: u32;
@@ -4919,7 +4918,7 @@ pub unsafe fn create_win_1020_6e98(ctx: &mut AppContext, param_1: *mut Struct37)
     let mut i_var4: i32;
     let mut extraout_d_x: u16;
 
-    let local_bx_5: *mut Struct37;
+    let local_bx_5: Struct37;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
     let mut send_msg_result: u32;
@@ -5010,7 +5009,7 @@ pub unsafe fn create_win_1020_6e98(ctx: &mut AppContext, param_1: *mut Struct37)
     return;
 }
 
-pub unsafe fn win_fn_1020_737a(ctx: &mut AppContext, in_struct_1: *mut Struct15) {
+pub unsafe fn win_fn_1020_737a(ctx: &mut AppContext, in_struct_1: &mut Struct15) {
     let mut u_var1: i32;
     let mut u_var2: u32;
     let ppc_var3: fn();
@@ -5019,7 +5018,7 @@ pub unsafe fn win_fn_1020_737a(ctx: &mut AppContext, in_struct_1: *mut Struct15)
     let mut u_var5: u32;
 
 
-    let local_bx_4: *mut Struct15;
+    let local_bx_4: Struct15;
     let mut u_var6: u16;
     let mut unaff_ss: HWND16;
     let u_var7: u8;
@@ -5138,7 +5137,7 @@ pub unsafe fn win_fn_1020_737a(ctx: &mut AppContext, in_struct_1: *mut Struct15)
 
 pub unsafe fn win_fn_1020_5e76(
     ctx: &mut AppContext,
-    in_struct_1: *mut Struct663,
+    in_struct_1: &mut Struct663,
     param_2: u16,
     param_3: u16,
 ) {
@@ -5149,7 +5148,7 @@ pub unsafe fn win_fn_1020_5e76(
     let extraout_var;
     let pu_var5: *mut u16;
 
-    let struct_a: *mut Struct199;
+    let struct_a: Struct199;
     let mut u_var6: i32;
     let mut u_var7: i32;
     let mut i_var8: i32;
@@ -5413,7 +5412,7 @@ pub unsafe fn win_fn_1020_5e76(
 
 pub unsafe fn win_fn_1020_58ce(
     ctx: &mut AppContext,
-    in_struct_1: *mut Struct663,
+    in_struct_1: &mut Struct663,
     param_2: u16,
     param_3: u16,
     param_4: u8,
@@ -5615,7 +5614,7 @@ pub unsafe fn win_fn_1020_58ce(
     return;
 }
 
-pub unsafe fn win_fn_1020_493c(ctx: &mut AppContext, in_struct_1: *mut Struct673, param_2: u16) {
+pub unsafe fn win_fn_1020_493c(ctx: &mut AppContext, in_struct_1: &mut Struct673, param_2: u16) {
     let pp_var1: fn();
     let mut u_var2: u32;
     let in_bool_1: bool;
@@ -5623,16 +5622,16 @@ pub unsafe fn win_fn_1020_493c(ctx: &mut AppContext, in_struct_1: *mut Struct673
     let pu_var4: *mut u32;
     let mut u_var5: i32;
     let mut i32_var6: i32;
-    let in_dx: *mut Struct199;
+    let in_dx: Struct199;
     let pu_var7: Vec<u8>;
 
-    let struct_a: *mut Struct199;
+    let struct_a: Struct199;
     let mut u_var8: i32;
 
 
     let mut in_bx: i32;
-    let local_struct_1: *mut Struct673;
-    let local_struct_1_hi: *mut Struct673;
+    let local_struct_1: Struct673;
+    let local_struct_1_hi: Struct673;
     let mut u_var9: u16;
     let mut unaff_ss: u16;
     let ppVar10: *mut pass1_struct_1;
@@ -6189,11 +6188,11 @@ pub unsafe fn win_fn_1020_493c(ctx: &mut AppContext, in_struct_1: *mut Struct673
     return;
 }
 
-pub unsafe fn win_fn_1020_51c6(in_struct_1: *mut Struct663, param_2: u16, param_3: u32) {
+pub unsafe fn win_fn_1020_51c6(in_struct_1: &mut Struct663, param_2: u16, param_3: u32) {
     let mut iVar1: i32;
-    let local_struct_1: *mut Struct663;
-    let local_struct_1_hi: *mut Struct663;
-    let in_struct_2: *mut Struct665;
+    let local_struct_1: Struct663;
+    let local_struct_1_hi: Struct663;
+    let in_struct_2: Struct665;
     let fn_ptr_1: fn();
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
@@ -6273,7 +6272,7 @@ pub unsafe fn win_func_1020_522e(ctx: &mut AppContext, param_1: u32, param_2: u1
 
 pub unsafe fn gui_window_func_1020_536e(
     ctx: &mut AppContext,
-    param_1: *mut Struct675,
+    param_1: &mut Struct675,
     param_2: u32,
     param_3: i32,
     param_4: i32,
@@ -6284,14 +6283,14 @@ pub unsafe fn gui_window_func_1020_536e(
     let mut u_var4: u16;
     let mut u_var5: u16;
     let mut u_var6: i32;
-    let in_dx: *mut Struct199;
-    let struct_a: *mut Struct199;
+    let in_dx: Struct199;
+    let struct_a: Struct199;
     let pu_var7: *mut u32;
-    let local_bx_557: *mut Struct18;
+    let local_bx_557: Struct18;
     let mut unaff_si: u16;
     let mut u_var8: u16;
     let pp_var9: *mut pass1_struct_1;
-    let in_struct_1: *mut Struct651;
+    let in_struct_1: Struct651;
     // ppu_var10: *mut Vec<u8>;
     let mut ppu_var10: u16;
     let mut u_var11: u32;
@@ -6414,7 +6413,7 @@ pub unsafe fn gui_window_func_1020_536e(
     return;
 }
 
-pub unsafe fn set_window_pos_1020_38aa(ctx: &mut AppContext, param_1: *mut win_struct_42) {
+pub unsafe fn set_window_pos_1020_38aa(ctx: &mut AppContext, param_1: &mut win_struct_42) {
     let mut hwnd: HWND16;
     let pp_var1: fn();
     let u_var2: u8;
@@ -6423,11 +6422,11 @@ pub unsafe fn set_window_pos_1020_38aa(ctx: &mut AppContext, param_1: *mut win_s
     let mut u_var5: i32;
     let mut u_var6: u32;
     let mut extraout_var;
-    let struct_a: *mut Struct199;
-    let struct_a_00: *mut Struct199;
+    let struct_a: Struct199;
+    let struct_a_00: Struct199;
 
-    let pa_var7: *mut Struct199;
-    let ctx.dx_reg: *mut Struct199;
+    let pa_var7: Struct199;
+    let ctx.dx_reg: Struct199;
 
 
     let mut unaff_si: u16;
@@ -6569,13 +6568,13 @@ pub unsafe fn set_window_pos_1020_38aa(ctx: &mut AppContext, param_1: *mut win_s
     return;
 }
 
-pub unsafe fn destroy_win_1020_3b3e(in_struct_1: *mut Struct656) {
+pub unsafe fn destroy_win_1020_3b3e(in_struct_1: &mut Struct656) {
     let pu_var1: *mut u32;
     let mut u_var2: i32;
     let ppc_var3: fn();
     let mut i_var4: i32;
     let mut u_var5: u16;
-    let local_struct_1: *mut Struct656;
+    let local_struct_1: Struct656;
     let mut local_es_4: u16;
     let mut local_CS__1: u16;
     let mut temp_5f994c26c9: u32;
@@ -6611,17 +6610,17 @@ pub unsafe fn destroy_win_1020_3b3e(in_struct_1: *mut Struct656) {
     return;
 }
 
-pub unsafe fn win_gui_fn_1020_2488(in_struct_1: *mut Struct647) {
+pub unsafe fn win_gui_fn_1020_2488(in_struct_1: &mut Struct647) {
     let mut u_var1: u16;
     let mut u_var2: i32;
-    let local_struct_1: *mut Struct647;
-    let local_struct_1_hi: *mut Struct647;
+    let local_struct_1: Struct647;
+    let local_struct_1_hi: Struct647;
     let mut u_var3: u32;
     let mut local_c: u16;
     let mut local_a: u16;
     let mut local_8: u16;
     let mut local_4: u16;
-    let temp_5f808f12c5: *mut Struct60;
+    let temp_5f808f12c5: Struct60;
 
     local_struct_1_hi = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
@@ -6669,7 +6668,7 @@ pub fn win_fn_1020_157c(param_1: u32, param_2: i32) {
     return;
 }
 
-pub fn call_destroy_win_fn_1020_1780(param_1: *mut Struct53) {
+pub fn call_destroy_win_fn_1020_1780(param_1: &mut Struct53) {
     let fn_ptr_1: fn();
 
     fn_ptr_1 = (param_1 + 0x6c);
@@ -6678,7 +6677,7 @@ pub fn call_destroy_win_fn_1020_1780(param_1: *mut Struct53) {
     return;
 }
 
-pub unsafe fn win_fn_1020_179c(ctx: &mut AppContext, param_1: *mut Struct20) {
+pub unsafe fn win_fn_1020_179c(ctx: &mut AppContext, param_1: &mut Struct20) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let mut u_var3: u32;
@@ -6687,7 +6686,7 @@ pub unsafe fn win_fn_1020_179c(ctx: &mut AppContext, param_1: *mut Struct20) {
     let puVar6: *mut u16;
     let BVar7: bool;
     let mut hwnd: HWND16;
-    let struct_a: *mut Struct199;
+    let struct_a: Struct199;
 
 
     let mut i_var8: i32;
@@ -6769,7 +6768,7 @@ pub unsafe fn win_fn_1020_179c(ctx: &mut AppContext, param_1: *mut Struct20) {
     if ((local_4c | u_var4) == 0) {
         (i_var8 + 0x92) = 0;
     } else {
-        struct_ops1::process_struct_1020_1eea(CONCAT22(local_4c, u_var4), param_1, (i_var8 + 6));
+        struct_ops::process_struct_1020_1eea(CONCAT22(local_4c, u_var4), param_1, (i_var8 + 6));
         (i_var8 + 0x92) = u_var4;
         (i_var8 + 0x94) = ctx.dx_reg;
     }

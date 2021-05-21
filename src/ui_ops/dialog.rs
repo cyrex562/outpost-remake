@@ -1,6 +1,6 @@
 use std::intrinsics::offset;
 
-use crate::{struct_ops2, sys_ops, winapi_funcs};
+use crate::{struct_ops, struct_ops2, sys_ops, winapi};
 use crate::app_context::AppContext;
 use crate::other_funcs::switch_stmt_1008_d818;
 use crate::pass::pass11_funcs::pass1_1008_c79a;
@@ -24,14 +24,14 @@ use crate::prog_structs::prog_structs_29::Struct49;
 use crate::prog_structs::prog_structs_30::Struct347;
 use crate::prog_structs::prog_structs_31::{Struct20, Struct21};
 use crate::sound_funcs::mci_send_command_1008_5c7c;
-use crate::string_ops1::load_string_1008_b1f0;
-use crate::struct_ops1::process_struct_1000_179c;
+use crate::string_ops::load_string_1008_b1f0;
+use crate::struct_ops::process_struct_1000_179c;
 use crate::sys_ops::win_msg;
 use crate::typedefs::{HANDLE16, HWND16, LPARAM, LRESULT};
 use crate::ui_ops::{misc, ui2, window};
 use crate::ui_ops::cursor::set_cursor_1038_bc30;
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
-use crate::winapi_funcs::{DestroyWindow16, EnableWindow16, GetDlgItem16, SendMessage16, SetDlgItemText16, SetFocus16, SetWindowText16, ShowWindow16};
+use crate::winapi::{DestroyWindow16, EnableWindow16, GetDlgItem16, SendMessage16, SetDlgItemText16, SetFocus16, SetWindowText16, ShowWindow16};
 
 pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
     let lVar1: u32;
@@ -607,25 +607,25 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
     u_var13 = (param_1 >> 0x10);
     if (param_3 < 0x1b5) {
         if (0x19f < param_3) {
-            local_8 = winapi_funcs::GetDlgItem16(param_3, (i_var12 + 6));
-            LVar15 = winapi_funcs::SendMessage16(0, 0, 0x400, local_8);
+            local_8 = winapi::GetDlgItem16(param_3, (i_var12 + 6));
+            LVar15 = winapi::SendMessage16(0, 0, 0x400, local_8);
             local_a = LVar15;
             if (local_a == 2) {
                 return;
             }
-            winapi_funcs::SendMessage16(0, (local_a == 0), 0x401, local_8);
+            winapi::SendMessage16(0, (local_a == 0), 0x401, local_8);
             u_var5 = IsDlgButtonChecked16(param_3, (i_var12 + 6));
             if (u_var5 != 0) {
                 pi_var1 = (i_var12 + 0x96);
                 unsafe {
                     *pi_var1 = *pi_var1 + -1;
                 }
-                h_var6 = winapi_funcs::GetDlgItem16(0xfb1, (i_var12 + 6));
+                h_var6 = winapi::GetDlgItem16(0xfb1, (i_var12 + 6));
                 IsWindowEnabled16(offset, h_var6);
                 u_var7 = ctx.dx_reg;
                 if (h_var6 == 0) {
-                    h_var6 = winapi_funcs::GetDlgItem16(0xfb1, (i_var12 + 6));
-                    winapi_funcs::EnableWindow16(1, h_var6);
+                    h_var6 = winapi::GetDlgItem16(0xfb1, (i_var12 + 6));
+                    winapi::EnableWindow16(1, h_var6);
                 }
                 if ((i_var12 + 0x96) < 0) {
                     CheckDlgButton16(0, (i_var12 + 0x98), (i_var12 + 6));
@@ -650,8 +650,8 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
             if ((i_var12 + 0x96) != 1) {
                 return;
             }
-            h_var6 = winapi_funcs::GetDlgItem16(0xfb1, (i_var12 + 6));
-            winapi_funcs::EnableWindow16(0, h_var6);
+            h_var6 = winapi::GetDlgItem16(0xfb1, (i_var12 + 6));
+            winapi::EnableWindow16(0, h_var6);
             return;
         }
         if (param_3 == 2) {
@@ -678,7 +678,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
         } else {
             if (param_3 != 0xfbe) {}
             // goto LAB_1038_bc20;
-            local_e = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_470, 2));
+            local_e = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_470, 2));
             u_var7 = (local_e >> 0x10);
             local_10 = u16_1050_13ae;
             if (u16_1050_13ae == 1) {
@@ -740,7 +740,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
             // LAB_1038_bba2:
             set_cursor_1038_bc30(param_1, u_var13, uVar16);
         }
-        winapi_funcs::PostMessage16(0, 0xce, 0x111, ctx.g_h_window);
+        winapi::PostMessage16(0, 0xce, 0x111, ctx.g_h_window);
         uVar16 = 1;
     }
     win_msg::post_win_msg_1040_7b3c(
@@ -1223,7 +1223,7 @@ pub fn gui_dialog_1038_b81c(param_1: &mut Struct20) {
     let pu_var5: &mut u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    pp_var8 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 6));
+    pp_var8 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 6));
     u_var7 = (param_1 >> 0x10);
     i32_var6 = param_1;
     (i32_var6 + 0x92) = pp_var8;
@@ -1430,7 +1430,7 @@ pub fn send_dlg_item_msg_1038_8b58(param_1: Vec<u8>) -> u8 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    _local_6 = struct_ops2::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000feee, 3));
+    _local_6 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000feee, 3));
     u_var4 = (param_1 >> 0x10);
     i_var3 = param_1;
     pass1_1010_c3c2(
@@ -1612,7 +1612,7 @@ pub fn send_dlg_item_msg_1038_7eac(param_1: u32) -> LRESULT {
     let mut local_a: u16;
     let mut local_8: u16;
 
-    ppVar3 = struct_ops2::process_struct_1010_20ba(
+    ppVar3 = struct_ops::process_struct_1010_20ba(
         ctx._g_Struct372_1050_0ed0,
         CONCAT22(in_stack_0000fff2, 0x30),
     );

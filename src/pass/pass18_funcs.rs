@@ -1,5 +1,5 @@
 use crate::bad_funcs::bad1::halt_baddata;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::func_ptr_funcs::pass1_1038_7a5a;
 use crate::mem_funcs::{alloc_mem_1000_07fc, alloc_mem_1000_1708};
 use crate::other_funcs::ret_1030_e4ba;
@@ -32,8 +32,8 @@ use crate::prog_structs::prog_structs_29::{Struct763, Struct764, Struct990};
 use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_31::Struct981;
 use crate::prog_structs::prog_structs_7::Struct44;
-use crate::string_ops1::copy_string_1000_3d3e;
-use crate::struct_ops1::{process_struct_1000_179c, struct_fn_1000_160a};
+use crate::string_ops::copy_string_1000_3d3e;
+use crate::struct_ops::{process_struct_1000_179c, struct_fn_1000_160a};
 use crate::sys_ops::pass1_1038_095e;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB41, SUB42, ZEXT24};
 

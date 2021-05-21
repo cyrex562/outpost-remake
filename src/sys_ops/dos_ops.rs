@@ -1,13 +1,13 @@
-use crate::{exported_stub_1000_29dc, winapi_funcs};
+use crate::{exported_stub_1000_29dc, winapi};
 use crate::app_context::AppContext;
 use crate::exit::{exit_1000_25cc, exit_1000_2950, return_1000_39e1};
 use crate::func_ptr_funcs::{call_fn_ptr_1000_256b, call_fn_ptr_1000_2594};
 use crate::pass::pass_funcs::{pass1_fn_1000_29af, pass1_fn_1000_29b5, pass1_fn_1000_3bac, pass1_fn_1000_462e};
 use crate::prog_structs::prog_structs_25::Struct152;
-use crate::string_ops1::process_string_1000_55b1;
+use crate::string_ops::process_string_1000_55b1;
 use crate::typedefs::SEGPTR;
 use crate::util::{CARRY2, CONCAT11, POPCOUNT, SUB42};
-use crate::winapi_funcs::GetDOSEnviornment16;
+use crate::winapi::GetDOSEnviornment16;
 
 pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let pi_var1: i32;
@@ -290,7 +290,7 @@ pub unsafe fn dos3_call_1000_35fe(ctx: &mut AppContext, param_1: i32) -> u16 {
 
     if param_1 < u16_1050_5f8a {
         u8_var3 = false;
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         unsafe {
             u_var2 = (*pc_var1)(ctx.bp_reg + 1);
         }
@@ -324,7 +324,7 @@ pub unsafe fn dos3_call_1000_3636(param_1: &String, param_2: i32, uparam_3: i32,
         if (param_4 == 0) {}
         // goto LAB_1000_369b;
         u8_var4 = false;
-        pc_var2 = winapi_funcs::swi(0x21);
+        pc_var2 = winapi::swi(0x21);
         unsafe {
             u_var5 = (*pc_var2)();
         }
@@ -335,7 +335,7 @@ pub unsafe fn dos3_call_1000_3636(param_1: &String, param_2: i32, uparam_3: i32,
             if (-1 < ((u_var5 >> 0x10) + param_3 + CARRY2(u_var3, param_2))) {
                 // LAB_1000_36e3:
                 u8_var4 = false;
-                pc_var2 = winapi_funcs::swi(0x21);
+                pc_var2 = winapi::swi(0x21);
                 unsafe {
                     u_var3 = (*pc_var2)();
                 }
@@ -349,13 +349,13 @@ pub unsafe fn dos3_call_1000_3636(param_1: &String, param_2: i32, uparam_3: i32,
                 // goto LAB_1000_299d;
             }
         } else {
-            pc_var2 = winapi_funcs::swi(0x21);
+            pc_var2 = winapi::swi(0x21);
             unsafe {
                 u_var5 = (*pc_var2)(unaff_bp + 1);
             }
             if (-1 < ((u_var5 >> 0x10) + param_3 + CARRY2(u_var5, param_2))) {}
             // goto LAB_1000_36e3;
-            pc_var2 = winapi_funcs::swi(0x21);
+            pc_var2 = winapi::swi(0x21);
             unsafe {
                 (*pc_var2)();
             }
@@ -405,7 +405,7 @@ pub unsafe fn dos3_call_1000_370a(
         b_var5 = 0x80;
     }
     bVar9 = false;
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     u_var6 = param_2;
     unsafe {
         u_var3 = (*pc_var1)();
@@ -419,7 +419,7 @@ pub unsafe fn dos3_call_1000_370a(
             _param_3 = param_4;
             // LAB_1000_38e3:
             bVar9 = false;
-            pc_var1 = winapi_funcs::swi(0x21);
+            pc_var1 = winapi::swi(0x21);
             unsafe {
                 u_var3 = (*pc_var1)();
             }
@@ -432,12 +432,12 @@ pub unsafe fn dos3_call_1000_370a(
                     (param_2 & 2) == 0,
                 ))
             {
-                pc_var1 = winapi_funcs::swi(0x21);
+                pc_var1 = winapi::swi(0x21);
                 unsafe {
                     (*pc_var1)();
                 }
                 bVar9 = false;
-                pc_var1 = winapi_funcs::swi(0x21);
+                pc_var1 = winapi::swi(0x21);
                 unsafe {
                     u_var3 = (*pc_var1)();
                 }
@@ -448,7 +448,7 @@ pub unsafe fn dos3_call_1000_370a(
                 if (((_local_8 & 0x100) == 0) && ((_param_3 & 1) != 0)) {
                     u_var6 = (u_var6 | 1);
                     bVar9 = false;
-                    pc_var1 = winapi_funcs::swi(0x21);
+                    pc_var1 = winapi::swi(0x21);
                     unsafe {
                         u_var3 = (*pc_var1)();
                     }
@@ -459,7 +459,7 @@ pub unsafe fn dos3_call_1000_370a(
             }
             // LAB_1000_3973:
             if ((_local_8 & 0x40) == 0) {
-                pc_var1 = winapi_funcs::swi(0x21);
+                pc_var1 = winapi::swi(0x21);
                 unsafe {
                     (*pc_var1)();
                 }
@@ -477,7 +477,7 @@ pub unsafe fn dos3_call_1000_370a(
                 *(u_var7 + 0x5f90) = b_var5 | local_8 | 1;
                 return u_var7;
             }
-            pc_var1 = winapi_funcs::swi(0x21);
+            pc_var1 = winapi::swi(0x21);
             unsafe {
                 (*pc_var1)();
             }
@@ -486,7 +486,7 @@ pub unsafe fn dos3_call_1000_370a(
     } else {
         if ((u_var6 & 0x500) != 0x500) {
             _local_8 = CONCAT11(1, b_var5);
-            pc_var1 = winapi_funcs::swi(0x21);
+            pc_var1 = winapi::swi(0x21);
             unsafe {
                 (*pc_var1)();
             }
@@ -498,26 +498,26 @@ pub unsafe fn dos3_call_1000_370a(
             if ((_local_8 & 0x40) == 0) {
                 if ((param_2 & 0x200) == 0) {
                     if (((_local_8 & 0x80) != 0) && ((param_2 & 2) != 0)) {
-                        pc_var1 = winapi_funcs::swi(0x21);
+                        pc_var1 = winapi::swi(0x21);
                         unsafe {
                             (*pc_var1)();
                         }
-                        pc_var1 = winapi_funcs::swi(0x21);
+                        pc_var1 = winapi::swi(0x21);
                         unsafe {
                             i_var4 = (*pc_var1)();
                         }
                         if ((i_var4 != 0) && (local_5 = (u_var2 >> 8), local_5 == '\x1a')) {
-                            pc_var1 = winapi_funcs::swi(0x21);
+                            pc_var1 = winapi::swi(0x21);
                             unsafe {
                                 (*pc_var1)(unaff_bp + 1);
                             }
-                            pc_var1 = winapi_funcs::swi(0x21);
+                            pc_var1 = winapi::swi(0x21);
                             unsafe {
                                 (*pc_var1)();
                             }
                         }
                         u_var6 = 0;
-                        pc_var1 = winapi_funcs::swi(0x21);
+                        pc_var1 = winapi::swi(0x21);
                         unsafe {
                             (*pc_var1)();
                         }
@@ -527,15 +527,15 @@ pub unsafe fn dos3_call_1000_370a(
                 } else {
                     if ((param_2 & 3) == 0) {
                         unsafe {
-                            pc_var1 = winapi_funcs::swi(0x21);
+                            pc_var1 = winapi::swi(0x21);
                             (*pc_var1)();
-                            pc_var1 = winapi_funcs::swi(0x21);
+                            pc_var1 = winapi::swi(0x21);
                             (*pc_var1)();
                         }
                         // goto LAB_1000_38e3;
                     }
                     u_var6 = 0;
-                    pc_var1 = winapi_funcs::swi(0x21);
+                    pc_var1 = winapi::swi(0x21);
                     unsafe {
                         (*pc_var1)();
                     }
@@ -544,7 +544,7 @@ pub unsafe fn dos3_call_1000_370a(
             }
             // goto LAB_1000_3973;
         }
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         unsafe {
             (*pc_var1)();
         }
@@ -615,7 +615,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
     pcVar7 = param_1;
     if (param_1[0x5f90] & 0x20) != 0 {
         uVar15 = false;
-        pcVar3 = winapi_funcs::swi(0x21);
+        pcVar3 = winapi::swi(0x21);
         unsafe {
             u_var6 = (*pcVar3)();
         }
@@ -633,7 +633,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
             uVar15 = pcVar7 < local_e;
             if (uVar15) {
                 uVar15 = 0;
-                pcVar3 = winapi_funcs::swi(0x21);
+                pcVar3 = winapi::swi(0x21);
                 unsafe {
                     u_var20 = (*pcVar3)();
                 }
@@ -703,7 +703,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
                     cVar19 = '\0';
                     cVar18 = 0x1;
                     cVar5 = 0x1;
-                    pcVar3 = winapi_funcs::swi(0x21);
+                    pcVar3 = winapi::swi(0x21);
                     unsafe {
                         u_var8 = (*pcVar3)(&ctx.g_alloc_addr_1050_1050, u_var6, pcVar7);
                     }
@@ -832,7 +832,7 @@ pub unsafe fn dos3_call_1000_3ad9(param_1: u16) -> u16 {
         cVar13 = '\0';
         cVar12 = 0x1;
         cVar11 = 0x1;
-        pcVar5 = winapi_funcs::swi(0x21);
+        pcVar5 = winapi::swi(0x21);
         unsafe {
             u_var7 = (*pcVar5)(&ctx.g_alloc_addr_1050_1050);
         }
@@ -916,7 +916,7 @@ pub unsafe fn dos3_call_1000_42de(param_1: u32, param_2: &mut u16, param_3: &mut
     }
     u_var2 = (param_3 + 6);
     bVar11 = false;
-    pcVar3 = winapi_funcs::swi(0x21);
+    pcVar3 = winapi::swi(0x21);
     unsafe {
         u_var12 = (*pcVar3)();
     }
@@ -952,18 +952,18 @@ pub unsafe fn dos3_call_1000_435c(ctx: &mut AppContext, param_1: Option<&mut u16
     let mut u_var5: i32;
     let mut cVar6: u8;
 
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         (*pc_var1)(&ctx.g_alloc_addr_1050_1050);
     }
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     u_var3 = in_cx;
     u_var5 = ctx.dx_reg;
     unsafe {
         (*pc_var1)();
     }
     cVar6 = u_var3;
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         (*pc_var1)(u_var3 >> 8);
     }
@@ -989,7 +989,7 @@ pub unsafe fn dos3_call_1000_4f2e() -> u16 {
     let mut u8_var3: bool;
 
     u8_var3 = false;
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         u_var2 = (*pc_var1)(&ctx.g_alloc_addr_1050_1050, unaff_bp + 1);
     }
@@ -1005,7 +1005,7 @@ pub fn dos3_call_1000_4f94() -> i32 {
     let mut b_var2: u8;
     let mut unaff_bp: i32;
 
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         b_var2 = (*pc_var1)(unaff_bp + 1);
     }
@@ -1018,11 +1018,11 @@ pub fn dos3_call_1000_4fbe(param_1: u8) -> u16 {
     let mut u_var3: u16;
     let mut unaff_bp: i32;
 
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         (*pc_var1)(unaff_bp + 1);
     }
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         c_var2 = (*pc_var1)();
     }
@@ -1040,7 +1040,7 @@ pub unsafe fn dos3_call_1000_514e() -> u16 {
     let mut u8_var3: bool;
 
     u8_var3 = false;
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         u_var2 = (*pc_var1)(&ctx.g_alloc_addr_1050_1050, unaff_bp + 1);
     }
@@ -1058,7 +1058,7 @@ pub unsafe fn dos3_call_1000_5174() -> u32 {
     let mut u8_var3: bool;
 
     u8_var3 = false;
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         u_var2 = (*pc_var1)(unaff_bp + 1);
     }
@@ -1072,14 +1072,14 @@ pub unsafe fn dos3_call_1000_5174() -> u32 {
 pub unsafe fn dos3_call_1000_51aa(param_1: &mut String, uparam_2_00: &String, param_2: u16) -> u32 {
     let pc_var1: code;
 
-    pc_var1 = winapi_funcs::swi(0x21);
+    pc_var1 = winapi::swi(0x21);
     unsafe {
         (*pc_var1)(&ctx.g_alloc_addr_1050_1050);
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         (*pc_var1)();
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         (*pc_var1)();
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         (*pc_var1)();
     }
     if (param_2_00 & 0x100) == 0 {
@@ -1109,10 +1109,10 @@ pub unsafe fn dos3_call_1000_23ea(ctx: &mut AppContext, a: i16, b: u16) {
     let mut pfn_var16: u32;
 
     // DOS API
-    pfn_var8 = winapi_funcs::swi(0x21);
+    pfn_var8 = winapi::swi(0x21);
     pfn_var8(ctx.bp_reg + 1);
     // DOS API
-    pfn_var8 = winapi_funcs::swi(0x21);
+    pfn_var8 = winapi::swi(0x21);
     g_u16_ptr_1050_5f6a = b;
     ctx.PTR_LOOP_1050_5f6c = ctx.es_reg;
     pfn_var8();
@@ -1212,7 +1212,7 @@ pub fn dos_api_call_1000_24ff(ctx: &mut AppContext, dos_api_val: u16) {
     call_fn_ptr_1000_2594();
     call_fn_ptr_1000_256b();
     if c_var2 == '\0' {
-        pc_var1 = winapi_funcs::swi(0x21);
+        pc_var1 = winapi::swi(0x21);
         unsafe {
             (*pc_var1)();
         }

@@ -1,4 +1,4 @@
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::mem_funcs::alloc_mem_1008_909c;
 use crate::pass::{pass14_funcs, pass_funcs};
 use crate::pass::pass17_funcs::pass1_1030_8344;
@@ -16,7 +16,7 @@ use crate::prog_structs::prog_structs_28::{Struct207, Struct224};
 use crate::prog_structs::prog_structs_29::{Struct212, Struct213, Struct220, Struct221};
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::sound_funcs::mci_send_cmd_1008_5c5c;
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1010_1d48};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1010_1d48};
 use crate::ui_ops::misc::win_cleanup_1018_4d22;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31};
 

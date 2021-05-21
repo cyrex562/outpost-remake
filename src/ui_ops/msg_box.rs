@@ -1,11 +1,11 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::exit::fatal_app_exit_1000_3e9e;
 use crate::prog_structs::prog_structs_2::Struct199;
-use crate::string_ops1::{copy_string_1000_3d3e, process_string_1000_3cea};
-use crate::struct_ops1::process_struct_1000_179c;
+use crate::string_ops::{copy_string_1000_3d3e, process_string_1000_3cea};
+use crate::struct_ops::process_struct_1000_179c;
 use crate::util::{CONCAT22, SBORROW2};
-use crate::winapi_funcs::{MessageBeep16, MessageBox16, PostMessage16};
+use crate::winapi::{MessageBeep16, MessageBox16, PostMessage16};
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
                                 param_1: &String,

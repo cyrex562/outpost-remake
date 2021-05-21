@@ -1,7 +1,7 @@
 use std::intrinsics::offset;
 
 use crate::app_context::AppContext;
-use crate::err_funcs::error_check_1000_17ce;
+use crate::err_ops::error_check_1000_17ce;
 use crate::other_funcs::{get_private_profile_str_1010_6132, write_private_profile_str_1010_622a};
 use crate::pass::pass14_funcs::pass1_fn_1008_60e8;
 use crate::pass::pass8_funcs::pass1_1010_1d80;
@@ -9,12 +9,12 @@ use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_3e2c, pass1_fn_1000
 use crate::prog_structs::prog_structs_24::{Struct103, Struct2111};
 use crate::prog_structs::prog_structs_25::Struct64;
 use crate::prog_structs::prog_structs_7::Struct376;
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_475e, string_fn_1000_3f9c};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48};
-use crate::struct_ops2::process_struct_1010_20ba;
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_475e, string_fn_1000_3f9c};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48};
+use crate::struct_ops::process_struct_1010_20ba;
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SUB42, ZEXT24};
-use crate::winapi_funcs;
-use crate::winapi_funcs::WritePrivateProfileString16;
+use crate::winapi;
+use crate::winapi::WritePrivateProfileString16;
 
 pub unsafe fn write_private_profile_str_1010_5b10(param_1: &mut Struct376) {
     let pu_var1: u32;
@@ -474,7 +474,7 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
         param_1.field_0x6e = pa_var11;
     }
     if (param_1.field_0x62 == 0) {
-        local_2e = winapi_funcs::GetSystemMetrics16(4);
+        local_2e = winapi::GetSystemMetrics16(4);
         local_2a = 1;
         while {
             get_private_profile_str_1010_6132(param_1, u_var22, local_2a);

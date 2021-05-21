@@ -1,6 +1,6 @@
 use crate::sys_structs::POINT16;
 use crate::typedefs::HDC16;
-use crate::winapi_funcs::Polygon16;
+use crate::winapi::Polygon16;
 
 pub fn polygon_1018_661c(param_1: u16, param_2: u16, in_count: u16, in_Paint16: *mut POINT16) {
     let mut hdc: HDC16;

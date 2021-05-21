@@ -5,7 +5,7 @@ use crate::{
         Struct371, Struct387, Struct44, Struct45, Struct46, Struct48, Struct52, Struct53, Struct594,
         Struct599,
     },
-    err_funcs::error_check_1000_17ce,
+    err_ops::error_check_1000_17ce,
     util::{CONCAT22, SUB42, ZEXT24},
 };
 use crate::app_context::AppContext;
@@ -34,7 +34,7 @@ use crate::prog_structs::prog_structs_4::{Struct652, Struct656};
 use crate::prog_structs::prog_structs_5::Struct659;
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_9::Struct594;
-use crate::struct_ops2::process_struct_1010_20ba;
+use crate::struct_ops::process_struct_1010_20ba;
 use crate::sys_ops::metrics;
 use crate::sys_ops::metrics::get_sys_metrics_1020_7a50;
 use crate::sys_ops::proc::free_proc_inst_1040_911e;
@@ -47,7 +47,7 @@ use crate::ui_ops::misc::{win_cleanup_1018_4d22, win_gui_fn_1010_32f4, win_gui_f
 use crate::ui_ops::misc::pass1_1038_af40;
 use crate::ui_ops::window::{destroy_win_1008_628e, destroy_win_1010_2fa0, destroy_win_1020_42f4, destroy_win_1040_7b98, set_window_pos_1038_abdc, update_window_1040_93aa, win_cleanup_func_1020_2fea, win_gui_fn_1040_b54a};
 use crate::ui_ops::window;
-use crate::winapi_funcs::{DeleteObject16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
+use crate::winapi::{DeleteObject16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
 
 pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) {
     win_cleanup_func_1040_b0f8(param_1);

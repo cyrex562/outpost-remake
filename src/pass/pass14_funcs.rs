@@ -1,5 +1,5 @@
 use crate::app_context::AppContext;
-use crate::err_funcs::{error_check_1000_0dc6, error_check_1000_17ce};
+use crate::err_ops::{error_check_1000_0dc6, error_check_1000_17ce};
 use crate::file_ops::read::{call_read_file_1020_a65e, read_file_1008_76e4, read_file_1028_d7ba, read_file_1028_def2, read_file_1030_5c52, read_from_file_1038_7c02};
 use crate::file_ops::write::{call_write_to_file_1020_a644, write_to_file_1028_d7a0, write_to_file_1028_dce2, write_to_file_1030_5c1a, write_to_file_1038_7b20};
 use crate::mem_funcs::{Address, alloc_mem_1000_07fc, alloc_mem_1000_0a48};
@@ -23,12 +23,12 @@ use crate::prog_structs::prog_structs_30::{Struct200, Struct201, Struct203, Stru
 use crate::prog_structs::prog_structs_5::Struct1;
 use crate::prog_structs::prog_structs_6::Struct675;
 use crate::prog_structs::prog_structs_7::{Struct189, Struct376, Struct44};
-use crate::string_ops1::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
-use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4544, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1008_8d8a, set_struct_1008_4016, set_struct_1008_56b4, set_struct_1008_9584};
+use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, string_fn_1000_3f9c};
+use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_41bc, process_struct_1008_4544, process_struct_1008_4772, process_struct_1008_47cc, process_struct_1008_4834, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1008_8d8a, set_struct_1008_4016, set_struct_1008_56b4, set_struct_1008_9584};
 use crate::sys_ops::reg_class_1008_96d2;
 use crate::typedefs::{HCURSOR16, HGDIOBJ16};
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, POPCOUNT, SBORROW2, ZEXT24};
-use crate::winapi_funcs::{GetStockObject16, LoadCursor16};
+use crate::winapi::{GetStockObject16, LoadCursor16};
 
 pub unsafe fn pass1_1008_3d44(param_1: u16, param_2: u8) {
     let mut u_var1: u16;

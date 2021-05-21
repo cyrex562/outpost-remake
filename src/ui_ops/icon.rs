@@ -5,9 +5,9 @@ use crate::pass::pass8_funcs::pass1_1010_1dda;
 use crate::prog_structs::prog_structs_25::Struct65;
 use crate::prog_structs::prog_structs_29::Struct48;
 use crate::prog_structs::prog_structs_4::Struct652;
-use crate::struct_ops2::process_struct_1010_20ba;
+use crate::struct_ops::process_struct_1010_20ba;
 use crate::util::CONCAT22;
-use crate::winapi_funcs::DestroyIcon16;
+use crate::winapi::DestroyIcon16;
 
 pub fn destroy_icon_func_1020_1038(in_struct_1: *mut Struct48) {
     let pu_var1: *mut u32;

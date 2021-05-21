@@ -14,10 +14,10 @@ use crate::prog_structs::prog_structs_26::{Struct1140, Struct873};
 use crate::prog_structs::prog_structs_28::{FileObject, Struct961};
 use crate::prog_structs::prog_structs_29::Struct425;
 use crate::prog_structs::prog_structs_2::Struct390;
-use crate::string_ops1::{get_string_index_1000_3da4, string_fn_1000_3f9c};
+use crate::string_ops::{get_string_index_1000_3da4, string_fn_1000_3f9c};
 use crate::typedefs::HFILE16;
 use crate::util::{CONCAT11, CONCAT22, CONCAT31, SBORROW2, ZEXT24};
-use crate::winapi_funcs::{_hwrite16, _lclose16, _lcreat16};
+use crate::winapi::{_hwrite16, _lclose16, _lcreat16};
 
 pub unsafe fn write_to_file_1008_6e02(ctx: &mut AppContext, param_1: &mut FileObject) -> bool {
     let mut local_4: [u8; 2];

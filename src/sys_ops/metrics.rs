@@ -1,4 +1,4 @@
-use crate::{mixed_fn_1010_830a, winapi_funcs};
+use crate::{mixed_fn_1010_830a, winapi};
 use crate::draw::text;
 use crate::other_funcs::{modify_list_1008_3f62, zero_list_1008_3e38};
 use crate::pass::pass14_funcs::pass1_1008_3e94;
@@ -6,12 +6,12 @@ use crate::prog_structs::prog_structs_24::Struct2111;
 use crate::prog_structs::prog_structs_29::Struct375;
 use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_4::Struct652;
-use crate::struct_ops1::{process_struct_1008_4772, process_struct_1010_1d48};
-use crate::struct_ops2::process_struct_1010_20ba;
+use crate::struct_ops::{process_struct_1008_4772, process_struct_1010_1d48};
+use crate::struct_ops::process_struct_1010_20ba;
 use crate::typedefs::{HDC16, HWND16};
 use crate::ui_ops::window;
 use crate::util::{CONCAT22, SUB42};
-use crate::winapi_funcs::{GetDC16, GetSystemMetrics16, GetWindowRect16, IsIconic16, ReleaseDC16};
+use crate::winapi::{GetDC16, GetSystemMetrics16, GetWindowRect16, IsIconic16, ReleaseDC16};
 
 pub unsafe fn get_sys_metrics_1010_46f6(param_1: u32) {
     let mut u_var1: u16;
@@ -41,10 +41,10 @@ pub unsafe fn get_sys_metrics_1010_46f6(param_1: u32) {
     u_var1 = (u_var7 >> 0x10);
     (i_var4 + 0x18) = local_4 + 8;
     (i_var4 + 0x1a) = local_6 + 9;
-    i_var2 = winapi_funcs::GetSystemMetrics16(5);
+    i_var2 = winapi::GetSystemMetrics16(5);
     (i_var4 + 0x1c) = i_var2 * 2 + (u_var7 + 4);
-    i_var2 = winapi_funcs::GetSystemMetrics16(4);
-    i_var3 = winapi_funcs::GetSystemMetrics16(6);
+    i_var2 = winapi::GetSystemMetrics16(4);
+    i_var3 = winapi::GetSystemMetrics16(6);
     (i_var4 + 0x1e) = i_var3 + i_var2 + (u_var7 + 8);
     return;
 }
@@ -66,7 +66,7 @@ pub unsafe fn get_sys_metrics_1018_09a8(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    local_4 = winapi_funcs::GetSystemMetrics16(4);
+    local_4 = winapi::GetSystemMetrics16(4);
     u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
     local_6 = (i_var4 + 0x12) - 2;
@@ -76,11 +76,11 @@ pub unsafe fn get_sys_metrics_1018_09a8(param_1: u32) {
     pass1_1008_3e94((ppVar6 + 0xe), CONCAT22(unaff_ss, pu_var7), puVar8);
     (i_var4 + 0x18) = local_6 * local_4 + local_8 + 0x146;
     (i_var4 + 0x1a) = local_6 * local_4 + local_a + 9;
-    i_var2 = winapi_funcs::GetSystemMetrics16(5);
+    i_var2 = winapi::GetSystemMetrics16(5);
     u_var1 = (i_var4 + 0x5a);
     (i_var4 + 0x1c) = i_var2 * 2 + (u_var1 + 4);
-    i_var2 = winapi_funcs::GetSystemMetrics16(4);
-    i_var3 = winapi_funcs::GetSystemMetrics16(6);
+    i_var2 = winapi::GetSystemMetrics16(4);
+    i_var3 = winapi::GetSystemMetrics16(6);
     u_var1 = (i_var4 + 0x5a);
     (i_var4 + 0x1e) = i_var3 + i_var2 + (u_var1 + 8);
     return;
@@ -92,12 +92,12 @@ pub fn get_sys_metrics_1018_1ea0(param_1: u32) {
     let mut i_var3: i32;
     let mut u_var4: u16;
 
-    i_var1 = winapi_funcs::GetSystemMetrics16(5);
+    i_var1 = winapi::GetSystemMetrics16(5);
     u_var4 = (param_1 >> 0x10);
     i_var3 = param_1;
     (i_var3 + 0x2e) = i_var1 * 2 + (i_var3 + 0x36);
-    i_var1 = winapi_funcs::GetSystemMetrics16(4);
-    i_var2 = winapi_funcs::GetSystemMetrics16(6);
+    i_var1 = winapi::GetSystemMetrics16(4);
+    i_var2 = winapi::GetSystemMetrics16(6);
     (i_var3 + 0x30) = i_var1 + (i_var3 + 0x38) + i_var2;
     return;
 }
@@ -130,10 +130,10 @@ pub unsafe fn get_sys_metrics_1018_2f56(param_1: u32) {
     u_var1 = (u_var7 >> 0x10);
     (i_var4 + 0x18) = local_4 + 0xb5;
     (i_var4 + 0x1a) = local_6 + 9;
-    i_var2 = winapi_funcs::GetSystemMetrics16(5);
+    i_var2 = winapi::GetSystemMetrics16(5);
     (i_var4 + 0x1c) = i_var2 * 2 + (u_var7 + 4);
-    i_var2 = winapi_funcs::GetSystemMetrics16(4);
-    i_var3 = winapi_funcs::GetSystemMetrics16(6);
+    i_var2 = winapi::GetSystemMetrics16(4);
+    i_var3 = winapi::GetSystemMetrics16(6);
     (i_var4 + 0x1e) = i_var3 + i_var2 + (u_var7 + 8);
     return;
 }
@@ -154,9 +154,9 @@ pub fn get_sys_metrics_1018_4b1e(
     param_1.ptr_1_lo = &PTR_LOOP_1050_4c9e;
     (i_var1 + 2) = 0x1018;
     if (PTR_LOOP_1050_416c == 0x0) {
-        PTR_LOOP_1050_416c = winapi_funcs::GetSystemMetrics16(4);
-        PTR_LOOP_1050_416e = winapi_funcs::GetSystemMetrics16(5);
-        PTR_LOOP_1050_4170 = winapi_funcs::GetSystemMetrics16(6);
+        PTR_LOOP_1050_416c = winapi::GetSystemMetrics16(4);
+        PTR_LOOP_1050_416e = winapi::GetSystemMetrics16(5);
+        PTR_LOOP_1050_4170 = winapi::GetSystemMetrics16(6);
     }
     return param_1;
 }
