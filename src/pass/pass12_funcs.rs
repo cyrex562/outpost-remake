@@ -1,5 +1,5 @@
 use crate::err_funcs::error_check_1000_17ce;
-use crate::file_funcs::file1::{write_to_file_1008_7c2a, write_to_file_1008_7cac, write_to_file_1008_7e1c};
+use crate::file_ops::write::{write_to_file_1008_7c2a, write_to_file_1008_7cac, write_to_file_1008_7e1c};
 use crate::mem_funcs::alloc_mem_1000_1708;
 use crate::pass::{pass13_funcs, pass14_funcs, pass_funcs};
 use crate::pass::pass17_funcs::pass1_1030_8344;

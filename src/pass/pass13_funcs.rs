@@ -17,7 +17,7 @@ use crate::prog_structs::prog_structs_29::{Struct212, Struct213, Struct220, Stru
 use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::sound_funcs::mci_send_cmd_1008_5c5c;
 use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1010_1d48};
-use crate::ui_funcs::ui1::win_cleanup_1018_4d22;
+use crate::ui_ops::misc::win_cleanup_1018_4d22;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31};
 
 pub unsafe fn pass1_1008_8ce4(param_1: *mut Struct207, param_2: u32, param_3: u32) {

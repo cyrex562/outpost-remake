@@ -1,6 +1,6 @@
-use crate::bad_funcs::bad1::{halt_baddata, _in, out};
+use crate::bad_funcs::bad1::{_in, halt_baddata, out};
 use crate::bad_funcs::bad2::bad_fn_1050_335f;
-use crate::draw::draw1::process_struct_1040_9252;
+use crate::draw::misc::process_struct_1040_9252;
 use crate::err_funcs::error_check_1000_17ce;
 use crate::mem_funcs::{Address, StructuredData};
 use crate::pass::pass19_funcs::pass1_1040_79c0;
@@ -22,9 +22,11 @@ use crate::prog_structs::prog_structs_31::{Struct113, Struct329, Struct335};
 use crate::prog_structs::prog_structs_8::Struct68;
 use crate::struct_ops1::{process_struct_1000_179c, process_struct_1040_b082, process_struct_1040_b0bc, process_struct_1040_c630};
 use crate::struct_ops2::process_struct_1040_7728;
-use crate::sys1::win_cleanup_func_1040_b0f8;
-use crate::sys2::{get_prop_1040_9566, make_proc_inst_1040_8fb8};
-use crate::ui_funcs::ui1::{free_proc_inst_1040_911e, win_cleanup_1040_d1bc};
+use crate::sys_ops::get_prop_1040_9566;
+use crate::sys_ops::proc::make_proc_inst_1040_8fb8;
+use crate::sys_ops::win::win_cleanup_func_1040_b0f8;
+use crate::sys_ops::proc::free_proc_inst_1040_911e;
+use crate::ui_ops::window::win_cleanup_1040_d1bc;
 use crate::util::{CARRY1, CONCAT11, CONCAT22, SBORROW1, SUB42};
 
 pub unsafe fn pass1_1050_309c() {

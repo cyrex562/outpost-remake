@@ -1,8 +1,8 @@
 use crate::{mixed_fn_1010_830a, struct_ops1};
 use crate::app_context::AppContext;
 use crate::big_funcs::call_big_fn_1010_c7e2;
-use crate::draw::draw1::load_cursor_1020_7f7a;
-use crate::draw::draw2::process_struct_1020_1738;
+use crate::ui_ops::cursor::load_cursor_1020_7f7a;
+use crate::struct_ops1::process_struct_1020_1738;
 use crate::err_funcs::error_check_1000_17ce;
 use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
 use crate::list_funcs::zero_list_1008_6c90;
@@ -37,9 +37,9 @@ use crate::prog_structs::prog_structs_7::{Struct372, Struct376, Struct44, Struct
 use crate::prog_structs::prog_structs_8::{Struct649, Struct68};
 use crate::prog_structs::prog_structs_9::{Struct1019, Struct1072, Struct636};
 use crate::string_ops1::copy_string_1000_3d3e;
-use crate::sys1::get_sys_metrics_1018_4b1e;
-use crate::sys2::process_struct_1040_8478;
-use crate::ui_funcs::ui2::pass1_1038_af40;
+use crate::sys_ops::metrics::get_sys_metrics_1018_4b1e;
+use crate::sys_ops::process_struct_1040_8478;
+use crate::ui_ops::misc::pass1_1038_af40;
 use crate::util::{CARRY1, CONCAT11, CONCAT22, SBORROW1, SBORROW2, SUB42, ZEXT24};
 use crate::winapi_funcs::GetSystemMetrics16;
 

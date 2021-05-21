@@ -8,7 +8,7 @@ use crate::prog_structs::prog_structs_21::Struct350;
 use crate::prog_structs::prog_structs_24::Struct2111;
 use crate::prog_structs::prog_structs_31::{Struct305, Struct348};
 use crate::struct_ops1::{process_struct_1000_179c, process_struct_1040_b082};
-use crate::sys1::win_cleanup_func_1040_b0f8;
+use crate::sys_ops::win::win_cleanup_func_1040_b0f8;
 use crate::util::{CARRY1, CONCAT22, SBORROW1};
 
 pub unsafe fn pass1_1040_ac64(param_1: u32) {

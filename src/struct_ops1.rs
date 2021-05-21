@@ -5,16 +5,17 @@ use crate::{defines::{
 use crate::app_context::AppContext;
 use crate::big_funcs::call_big_fn_1010_c7e2;
 use crate::bool_funcs::check_flag_1000_1ab0;
-use crate::draw::draw1::load_cursor_1020_7f7a;
-use crate::draw::draw2::process_struct_1020_1738;
+use crate::draw::drawing_context;
 use crate::err_funcs::{_SHI_INVOKEERRORHANDLER1, error_check_1000_0dc6, error_check_1000_16ee, invoke_error_handler_1000_1e61};
-use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
+use crate::file_ops::misc::pass1_1020_8a9c;
+use crate::func_ptr_funcs::{call_fn_ptr_1000_5586, call_fn_ptr_1_1020_6746};
 use crate::list_funcs::zero_list_1008_6c90;
 use crate::mem_funcs::{Address, alloc_mem_1000_010c, alloc_mem_1000_131c, alloc_mem_1000_167a, alloc_mem_1000_1708, alloc_mem_1008_909c, free_mem_1000_1b9a, get_mem_sz_1000_1532};
 use crate::other_funcs::{return_1000_214a, return_one_1000_2146, zero_list_1008_3e38};
 use crate::pass::pass10_funcs::pass1_1040_c54a;
 use crate::pass::pass12_funcs::pass1_1008_c6fa;
 use crate::pass::pass14_funcs::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_4cdc, pass1_1008_4d84, pass1_1008_5134, pass1_1008_5236, pass1_1008_52fc, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_687a, pass1_fn_1008_60e8};
+use crate::pass::pass15_funcs::{pass1_1020_87c2, pass1_1020_8eaa, process_struct_1020_8360};
 use crate::pass::pass17_funcs::pass1_1030_1cd8;
 use crate::pass::pass19_funcs::pass1_1040_5d12;
 use crate::pass::pass20_funcs::{pass1_1010_c864, pass1_1010_cc56, pass1_1010_cf36, pass1_1010_d24a, pass1_1010_d448, pass1_1010_d5ae, pass1_1010_d710};
@@ -23,7 +24,7 @@ use crate::pass::pass4_funcs::pass1_1030_1312;
 use crate::pass::pass5_funcs::pass1_1030_ce2e;
 use crate::pass::pass6_funcs::{pass1_1038_4d28, pass1_1038_540a};
 use crate::pass::pass7_funcs::{pass1_1018_209c, pass1_1018_4790, pass1_1018_47c8, pass1_1018_48b0, pass1_1018_4920, pass1_1018_4b78, pass1_1018_4cda, pass1_1018_4dce};
-use crate::pass::pass8_funcs::{pass1_1008_ec72, pass1_1010_038e, pass1_1010_041a, pass1_1010_0538, pass1_1010_37d4, pass1_1010_383a, pass1_1010_65d0};
+use crate::pass::pass8_funcs::{pass1_1008_ec72, pass1_1010_038e, pass1_1010_041a, pass1_1010_0538, pass1_1010_37d4, pass1_1010_383a, pass1_1010_65d0, process_struct_1010_20ba};
 use crate::pass::pass8_funcs::pass1_1010_1d80;
 use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_2fa4, pass1_fn_1000_52be};
 use crate::prog_structs::prog_structs_1::{Struct104, Struct393, Struct552};
@@ -35,7 +36,7 @@ use crate::prog_structs::prog_structs_15::Struct1169;
 use crate::prog_structs::prog_structs_16::{Struct1023, Struct151, Struct493};
 use crate::prog_structs::prog_structs_17::{Struct1026, Struct1055, Struct1175};
 use crate::prog_structs::prog_structs_18::{Struct1042, Struct180, Struct195, Struct391, Struct568};
-use crate::prog_structs::prog_structs_2::{Struct1054, Struct199, Struct296, Struct413, Struct660};
+use crate::prog_structs::prog_structs_2::{Struct1054, Struct199, Struct296, Struct413, Struct660, Struct668};
 use crate::prog_structs::prog_structs_20::{Struct1073, Struct388, Struct508, Struct514};
 use crate::prog_structs::prog_structs_21::Struct297;
 use crate::prog_structs::prog_structs_23::{Struct1022, Struct1037, Struct210, Struct341};
@@ -51,12 +52,14 @@ use crate::prog_structs::prog_structs_4::Struct217;
 use crate::prog_structs::prog_structs_5::Struct881;
 use crate::prog_structs::prog_structs_6::Struct1041;
 use crate::prog_structs::prog_structs_7::{Struct372, Struct376, Struct44, Struct629};
-use crate::prog_structs::prog_structs_8::{Struct108, Struct302, Struct649, Struct68};
+use crate::prog_structs::prog_structs_8::{Struct108, Struct302, Struct644, Struct649, Struct68};
 use crate::prog_structs::prog_structs_9::{Struct1019, Struct1072, Struct209, Struct636};
 use crate::string_ops1::{big_switch_statement_1020_bd80, big_switch_statement_1020_c222, copy_string_1000_3d3e, load_str_1010_84ac, load_string_1010_847e, pass1_1020_c0ca};
-use crate::sys1::get_sys_metrics_1018_4b1e;
-use crate::sys2::process_struct_1040_8478;
-use crate::ui_funcs::ui2::pass1_1038_af40;
+use crate::struct_ops2::process_struct_1040_7728;
+use crate::sys_ops::metrics::get_sys_metrics_1018_4b1e;
+use crate::sys_ops::process_struct_1040_8478;
+use crate::ui_ops::cursor::load_cursor_1020_7f7a;
+use crate::ui_ops::misc::pass1_1038_af40;
 use crate::util::{CARRY1, CONCAT31, LOCK, SBORROW1, SBORROW2, SUB42};
 use crate::winapi_funcs::{GetSystemMetrics16, swi};
 
@@ -2862,5 +2865,199 @@ pub fn process_struct_1010_9348(in_struct_1: *mut Struct460, param_2: u16) {
     local_struct_1.b = param_2 * 8 + 0x3198;
     local_struct_1.c = &ctx.g_alloc_addr_1050_1050;
     local_struct_1.a = param_2;
+    return;
+}
+
+pub unsafe fn process_struct_1020_62e0(
+    ctx: &mut AppContext,
+    in_struct_1: *mut Struct668,
+    param_2: u32,
+) {
+    let pu_var1: *mut u32;
+    let mut u_var2: u32;
+    let u_var3: u8;
+    let mut u_var4: i32;
+    let mut extraout_var;
+    let mut u_var5: u32;
+
+    let struct_a: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
+    let ctx.dx_reg: *mut Struct199;
+    let paVar6: *mut Struct199;
+
+    let mut u_var7: u16;
+    let pp_var8: *mut pass1_struct_1;
+    // ppu_var9: *mut Vec<u8>;
+    let ppu_var9: u16;
+    let u_var10: u8;
+    let mut u_var11: u16;
+    let mut u_var12: u16;
+    let paVar13: *mut Struct668;
+    let mut u_var14: u16;
+    let mut in_stack_0000ffee: u16;
+    let mut local_8: u16;
+    let mut local_6: u32;
+    // fn_ptr_3: *mut Vec<u8>;
+    let fn_ptr_3: fn();
+    // fn_ptr_1: *mut Vec<u8>;
+    let fn_ptr_1: fn();
+
+    u_var12 = param_2;
+    drawing_context::get_dc_1020_921c(CONCAT22(u_var12, in_struct_1), (param_2 >> 0x10));
+    &in_struct_1.fn_ptr_1_0x14 = 0;
+    &in_struct_1.field_0x2c = 0;
+    CONCAT22(u_var12, in_struct_1) = 0x67c2;
+    in_struct_1.field_0x2 = 0x1020;
+    paVar6 = ctx.dx_reg;
+    u_var3 = pass1_1000_4906(CONCAT22(u_var12, &in_struct_1.field_0x18), 0, 0x14);
+    u_var4 = CONCAT31(extraout_var, u_var3);
+    process_struct_1000_179c(0x3c, paVar6);
+    struct_a = (paVar6 | u_var4);
+    if (struct_a == 0x0) {
+        &in_struct_1.field_0x1c = 0;
+    } else {
+        pass1_1020_87c2(u_var4, paVar6);
+        in_struct_1.field_0x1c = u_var4;
+        in_struct_1.field_0x1e = ctx.dx_reg;
+        struct_a = ctx.dx_reg;
+    }
+    process_struct_1000_179c(0x26, struct_a);
+    if ((struct_a | u_var4) == 0) {
+        u_var4 = 0;
+        paVar6 = 0x0;
+    } else {
+        pass1_1020_8a9c(u_var4, struct_a);
+        paVar6 = ctx.dx_reg;
+    }
+    in_struct_1.field_0x20 = u_var4;
+    in_struct_1.field_0x22 = paVar6;
+    process_struct_1000_179c(0xbe, paVar6);
+    if ((paVar6 | u_var4) == 0) {
+        u_var4 = 0;
+        paVar6 = 0x0;
+    } else {
+        pass1_1020_8eaa(u_var4, paVar6);
+        paVar6 = ctx.dx_reg;
+    }
+    in_struct_1.field_0x24 = u_var4;
+    in_struct_1.field_0x26 = paVar6;
+    process_struct_1000_179c(0x20, paVar6);
+    if ((paVar6 | u_var4) == 0) {
+        u_var4 = 0;
+        u_var7 = 0;
+    } else {
+        process_struct_1020_8360(CONCAT22(paVar6, u_var4));
+        u_var7 = ctx.dx_reg;
+    }
+    in_struct_1.field_0x28 = u_var4;
+    in_struct_1.field_0x2a = u_var7;
+    call_fn_ptr_1_1020_6746(CONCAT22(u_var12, in_struct_1), 1, 4);
+    pp_var8 = process_struct_1010_20ba(
+        ctx._g_astruct_372_1050_0ed0,
+        CONCAT22(in_stack_0000ffee, 0x29),
+    );
+    in_struct_1.fn_ptr_1_0x14 = pp_var8;
+    &in_struct_1.field_0x16 = (pp_var8 >> 0x10);
+    u_var11 = 0;
+    u_var10 = (pp_var8 >> 0x10);
+    ppu_var9 = in_struct_1.fn_ptr_1_0x14;
+    fn_ptr_1 = (&in_struct_1.fn_ptr_1_0x14 + 4);
+    paVar13 = in_struct_1;
+    u_var14 = u_var12;
+    (**fn_ptr_1)();
+    in_struct_1.field_0x6 = &in_struct_1.fn_ptr_1_0x14;
+    u_var2 = &in_struct_1.fn_ptr_1_0x14;
+    pu_var1 = (u_var2 + 10);
+    u_var5 = param_2 << 0x10 | &in_struct_1.field_0xa;
+    u_var7 = SUB42(pu_var1, 0);
+    let pu_var1_val = unsafe { *pu_var1 };
+    fn_ptr_3 = (pu_var1_val + 8);
+    (**fn_ptr_3)(
+        0x1010,
+        u_var7,
+        (pu_var1 >> 0x10),
+        u_var5,
+        ppu_var9,
+        u_var10,
+        u_var11,
+        paVar13,
+        u_var14,
+    );
+    in_struct_1.field_0x12 = u_var5;
+    in_struct_1.field_0x10 = 1;
+    pp_var8 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, CONCAT22(u_var7, 2));
+    in_struct_1.field_0x2c = pp_var8;
+    in_struct_1.field_0x2e = (pp_var8 >> 0x10);
+    return;
+}
+
+pub fn process_struct_1020_1738(
+    ctx: &mut AppContext,
+    in_struct_1: *mut Struct68,
+    param_2: u16,
+    param_2_00: u32,
+) {
+    let local_struct_1: *mut Struct68;
+    let local_struct_1_hi: *mut Struct68;
+
+    process_struct_1040_7728(
+        in_struct_1,
+        (&ctx.PTR_LOOP_1050_0000 + 1),
+        0,
+        0xfcd,
+        *(param_2_00 + 8),
+    );
+    local_struct_1_hi = (in_struct_1 >> 0x10);
+    local_struct_1 = in_struct_1;
+    local_struct_1.field_0x8e = 0;
+    local_struct_1.field_0x92 = 0;
+    local_struct_1.field_0x96 = 0;
+    in_struct_1.field_0x0 = (ctx.s_512_bmp_1050_1e77 + 3);
+    local_struct_1.field_0x2 = 0x1020;
+    return;
+}
+
+pub unsafe fn process_struct_1020_1eea(
+    ctx: &mut AppContext,
+    in_struct_1: *mut Struct644,
+    param_2: u32,
+    param_3: u16,
+) {
+    let pp_var1: fn();
+    let mut local_AX_92: u16;
+    let mut local_DX_92: u16;
+    let local_bx_4: *mut Struct644;
+    let mut local_es_4: u16;
+    let ppVar2: *mut pass1_struct_1;
+    let string_1: String;
+
+    local_es_4 = (in_struct_1 >> 0x10);
+    local_bx_4 = in_struct_1;
+    in_struct_1 = ctx.s_1_1050_389a;
+    local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    in_struct_1 = (ctx.s_18_2_1050_3aa5 + 3);
+    local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    local_bx_4.field_0x4 = param_3;
+    in_struct_1 = ctx.s_0_020_1050_3ab0;
+    local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    &local_bx_4.field_0x6 = 0;
+    local_bx_4.field_0xa = param_2;
+    in_struct_1 = (ctx.s_218_bmp_1050_2516 + 2);
+    local_bx_4.field_0x2 = 0x1020;
+    string_1 = CONCAT22(string_1._2_2_, 0x39);
+    ppVar2 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, string_1);
+    local_DX_92 = (ppVar2 >> 0x10);
+    local_bx_4.field_0x6 = ppVar2;
+    &local_bx_4.field_0x8 = local_DX_92;
+    pp_var1 = (&local_bx_4.field_0x6 + 4);
+    (**pp_var1)(
+        0x1010,
+        local_bx_4.field_0x6,
+        local_DX_92,
+        0,
+        in_struct_1,
+        string_1._2_2_,
+    );
     return;
 }

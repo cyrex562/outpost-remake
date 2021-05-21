@@ -1,11 +1,13 @@
+use crate::app_context::AppContext;
 use crate::other_funcs::empty_fn_1000_55ac;
-use crate::winapi_funcs::swi;
-use crate::util::SUB42;
+use crate::pass::pass_funcs::pass1_fn_1000_52be;
+use crate::prog_structs::prog_structs_28::Struct202;
 use crate::prog_structs::prog_structs_2::Struct662;
 use crate::prog_structs::prog_structs_6::Struct672;
-use crate::prog_structs::prog_structs_28::Struct202;
-use crate::pass::pass_funcs::pass1_fn_1000_52be;
-use crate::app_context::AppContext;
+use crate::prog_structs::prog_structs_9::Struct594;
+use crate::ui_ops::window;
+use crate::util::SUB42;
+use crate::winapi_funcs::swi;
 
 pub fn set_fn_ptr_1000_17e8(param_1: Vec<u8>, param_2: Vec<u8>) -> Vec<u8> {
     let pu_var1: Vec<u8>;
@@ -322,4 +324,24 @@ pub fn call_fn_ptr_1020_1bb6(param_1: &mut Vec<u8>) -> bool {
     fn_ptr_1 = ((param_1 + 0x92) + 8);
     (**fn_ptr_1)();
     return 0;
+}
+
+pub fn call_fn_ptr_1020_26a6(in_struct_1: &mut Struct594) {
+    let pu_var1: &mut u32;
+    let mut u_var2: i32;
+    let mut u_var3: u16;
+    let mut in_stack_0000fff6: u16;
+    let fn_ptr_1: fn();
+
+    u_var3 = (in_struct_1 >> 0x10);
+    pu_var1 = (in_struct_1 + 0xee);
+    u_var2 = (in_struct_1 + 0xf0);
+    if ((u_var2 | pu_var1) != 0) {
+        unsafe {
+            fn_ptr_1 = *pu_var1;
+        }
+        (**fn_ptr_1)();
+    }
+    window::destroy_win_1008_628e(in_struct_1, in_stack_0000fff6);
+    return;
 }

@@ -6,12 +6,11 @@ use crate::{
         Struct599,
     },
     err_funcs::error_check_1000_17ce,
-    sys1::win_cleanup_func_1040_b0f8,
     util::{CONCAT22, SUB42, ZEXT24},
 };
 use crate::app_context::AppContext;
-use crate::draw::draw1::select_and_delete_palette_1020_92c4;
-use crate::draw::draw2::get_sys_metrics_1020_7a50;
+use crate::draw::{draw2, palette};
+use crate::draw::palette::select_and_delete_palette_1020_92c4;
 use crate::mem_funcs::{Address, get_fn_ptr_at_address, get_type_at_address, StructuredData};
 use crate::pass::pass10_funcs::pass1_1040_c60e;
 use crate::pass::pass12_funcs::pass1_1008_b544;
@@ -31,14 +30,24 @@ use crate::prog_structs::prog_structs_26::{Struct340, Struct52, Struct53};
 use crate::prog_structs::prog_structs_29::Struct48;
 use crate::prog_structs::prog_structs_30::Struct124;
 use crate::prog_structs::prog_structs_31::{Struct371, Struct45, Struct46};
-use crate::prog_structs::prog_structs_7::Struct44;
+use crate::prog_structs::prog_structs_4::{Struct652, Struct656};
+use crate::prog_structs::prog_structs_5::Struct659;
+use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
 use crate::prog_structs::prog_structs_9::Struct594;
 use crate::struct_ops2::process_struct_1010_20ba;
+use crate::sys_ops::metrics;
+use crate::sys_ops::metrics::get_sys_metrics_1020_7a50;
+use crate::sys_ops::proc::free_proc_inst_1040_911e;
+use crate::sys_ops::win::win_cleanup_func_1040_b0f8;
 use crate::sys_structs::RECT16;
 use crate::typedefs::{HANDLE16, HWND16};
-use crate::ui_funcs::ui1::{destroy_icon_func_1020_1038, destroy_win_1008_628e, destroy_win_1010_2fa0, destroy_win_1040_7b98, free_proc_inst_1040_911e, update_window_1040_93aa, win_cleanup_1018_4d22, win_gui_fn_1010_32f4, win_gui_fn_1010_79aa, win_gui_fn_1040_b54a};
-use crate::ui_funcs::ui2::{destroy_menu_func_1020_795c, pass1_1038_af40, set_window_pos_1038_abdc, win_cleanup_func_1020_2fea};
-use crate::winapi_funcs::{DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
+use crate::ui_ops::icon::destroy_icon_func_1020_1038;
+use crate::ui_ops::menu::destroy_menu_func_1020_795c;
+use crate::ui_ops::misc::{win_cleanup_1018_4d22, win_gui_fn_1010_32f4, win_gui_fn_1010_79aa};
+use crate::ui_ops::misc::pass1_1038_af40;
+use crate::ui_ops::window::{destroy_win_1008_628e, destroy_win_1010_2fa0, destroy_win_1020_42f4, destroy_win_1040_7b98, set_window_pos_1038_abdc, update_window_1040_93aa, win_cleanup_func_1020_2fea, win_gui_fn_1040_b54a};
+use crate::ui_ops::window;
+use crate::winapi_funcs::{DeleteObject16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetDlgItem16, InvalidateRect16, IsWindow16, RemoveProp16, SendMessage16, ShowWindow16};
 
 pub unsafe fn cleanup_1040_abe2(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) {
     win_cleanup_func_1040_b0f8(param_1);
@@ -953,4 +962,116 @@ pub unsafe fn call_win_cleanup_fn_1020_3616(
         error_check_1000_17ce(ctx,in_struct_1);
     }
     return in_struct_1;
+}
+
+pub unsafe fn cleanup_fn_1020_687c(param_1: *mut Struct652) {
+    metrics::get_sys_metrics_1020_7a50(param_1);
+    destroy_icon_1020_6bd2(param_1);
+    return;
+}
+
+pub unsafe fn destroy_icon_1020_6bd2(param_1: u32) {
+    let pu_var1: *mut u32;
+    let mut u_var2: i32;
+    let ppc_var3: fn();
+    let mut i_var4: i32;
+    let mut u_var5: u16;
+    let mut offset: u16;
+
+    u_var5 = (param_1 >> 0x10);
+    i_var4 = param_1;
+    DestroyIcon16((i_var4 + 0xc2));
+    (i_var4 + 0xc2) = 0;
+    (i_var4 + 8) = 0;
+    pu_var1 = (i_var4 + 0xf6);
+    u_var2 = (i_var4 + 0xf8);
+    if ((u_var2 | pu_var1) != 0) {
+        let pu_var1_val = unsafe { *pu_var1 };
+        ppc_var3 = pu_var1_val;
+        (**ppc_var3)(offset, pu_var1, u_var2, 1);
+    }
+    (i_var4 + 0xf6) = 0;
+    pass1_1010_1dda(*(i_var4 + 0xf2));
+    (i_var4 + 0xf2) = 0;
+    return;
+}
+
+pub unsafe fn cleanup_fn_1020_70c0(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+    destroy_menu_func_1020_795c(param_1);
+    if ((param_2 & 1) != 0) {
+        error_check_1000_17ce(param_1);
+    }
+    return param_1;
+}
+
+pub unsafe fn cleanup_fn_1020_6216(in_struct_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+    destroy_win_1020_42f4(in_struct_1);
+    if ((param_2 & 1) != 0) {
+        error_check_1000_17ce(in_struct_1);
+    }
+    return in_struct_1;
+}
+
+pub unsafe fn cleanup_fn_1020_3cb8(
+    ctx: &mut AppContext,
+    param_1: &mut Struct44,
+    param_2: u8,
+) -> &mut Struct44 {
+    let local_struct_1: *mut Struct659;
+    let mut local_a: u16;
+    let mut local_8: u16;
+
+    if (param_1 == 0x0) {
+        local_struct_1 = 0x0;
+        param_1._2_2_ = 0;
+    } else {
+        local_struct_1 = (param_1 + 0xf2);
+    }
+    local_a = CONCAT22(param_1._2_2_, local_struct_1);
+    *local_a = ctx.s_1_1050_389a;
+    local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    destroy_menu_func_1020_795c(param_1);
+    if ((param_2 & 1) != 0) {
+        error_check_1000_17ce(param_1);
+    }
+    return param_1;
+}
+
+pub unsafe fn cleanup_fn_1020_3898(param_1: *mut Struct656) {
+    window::destroy_win_1020_3b3e(param_1);
+    return;
+}
+
+pub unsafe fn cleanup_fn_1020_2838(ctx: &mut AppContext, param_1: &mut Struct44) {
+    let mut iVar1: i32;
+    let mut u_var2: u16;
+
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    param_1.ptr_a_lo = (ctx.s_fem74_wav_1050_2888 + 6);
+    (iVar1 + 2) = 0x1020;
+    if ((iVar1 + 0x14) != 0) {
+        pass1_1010_1dda(*(iVar1 + 0x14));
+    }
+    palette::select_and_delete_palette_1020_92c4(param_1);
+    return;
+}
+
+pub unsafe fn call_cleanup_fn_1020_2868(
+    in_struct_1: *mut Struct376,
+    param_2: u8,
+) -> *mut Struct376 {
+    cleanup_fn_1020_2838(in_struct_1);
+    if ((param_2 & 1) != 0) {
+        error_check_1000_17ce(in_struct_1);
+    }
+    return in_struct_1;
+}
+
+pub unsafe fn call_cleanup_fn_1020_1e54(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
+    win_cleanup_func_1040_782c(param_1);
+    if ((param_2 & 1) != 0) {
+        error_check_1000_17ce(param_1);
+    }
+    return param_1;
 }

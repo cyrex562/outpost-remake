@@ -28,7 +28,8 @@ use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_3::Struct446;
 use crate::string_ops1;
 use crate::struct_ops1::{process_struct_1000_179c, process_struct_1008_cbc4, process_struct_1008_cda2, process_struct_1008_d3ae, process_struct_1040_b0bc};
-use crate::sys1::{dos3_call_1000_51aa, write_private_profile_str_1010_5b10};
+use crate::sys_ops::dos_ops::dos3_call_1000_51aa;
+use crate::sys_ops::private_profile_str::write_private_profile_str_1010_5b10;
 use crate::util::{CARRY1, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB42, ZEXT24};
 use crate::winapi_funcs::{LoadString16, MessageBox16};
 

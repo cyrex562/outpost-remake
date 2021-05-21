@@ -10,7 +10,6 @@ use crate::{
         process_string_1000_4d58,
     },
     struct_ops1::process_struct_1000_179c,
-    sys1::dos3_call_1000_51aa,
     util::{CONCAT22, SUB21, SUB42},
 };
 use crate::app_context::AppContext;
@@ -30,9 +29,11 @@ use crate::prog_structs::prog_structs_16::Struct13;
 use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
 use crate::prog_structs::prog_structs_31::Struct348;
 use crate::prog_structs::prog_structs_7::Struct44;
-use crate::sys2::pass1_1030_838e;
-use crate::ui_funcs::ui1::{msg_box_1000_1f24, win_cleanup_fn_1040_a294};
-use crate::ui_funcs::ui2::pass1_1038_af34;
+use crate::sys_ops::dos_ops::dos3_call_1000_51aa;
+use crate::sys_ops::pass1_1030_838e;
+use crate::ui_ops::msg_box::msg_box_1000_1f24;
+use crate::ui_ops::window::win_cleanup_fn_1040_a294;
+use crate::ui_ops::misc::pass1_1038_af34;
 use crate::winapi_funcs::SetErrorMode16;
 
 pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext) -> bool {

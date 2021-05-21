@@ -40,7 +40,8 @@ use crate::prog_structs::prog_structs_3::Struct446;
 use crate::prog_structs::prog_structs_5::Struct150;
 use crate::prog_structs::prog_structs_7::Struct613;
 use crate::struct_ops1::{process_struct_1000_179c, process_struct_1000_2cb0, process_struct_1008_4544, process_struct_1008_574a, process_struct_1008_cbc4, process_struct_1008_cda2, process_struct_1008_d3ae, process_struct_1040_b0bc};
-use crate::sys1::{dos3_call_1000_2bb6, dos3_call_1000_35fe, dos3_call_1000_514e, dos3_call_1000_51aa, write_private_profile_str_1010_5b10};
+use crate::sys_ops::dos_ops::{dos3_call_1000_2bb6, dos3_call_1000_35fe, dos3_call_1000_514e, dos3_call_1000_51aa};
+use crate::sys_ops::private_profile_str::write_private_profile_str_1010_5b10;
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT21, CONCAT31, SBORROW2, SUB42, ZEXT24};
 use crate::winapi_funcs::{FatalAppExit16, FatalExit, LoadString16, MessageBox16, swi};
 
@@ -2179,4 +2180,103 @@ pub unsafe fn wsprintf_1008_d4f6(param_1: *mut Struct298, in_struct_b: *mut Stru
         (**ppcVar5)(uVar18, u_var4, (u_var4 >> 0x10), u_var14, uVar17);
     }
     return u_var14;
+}
+
+pub fn load_Str_1038_8dda(param_1: u32) {
+
+    let in_dx: &mut Struct199;
+    let mut u_var1: u16;
+    let mut unaff_ss: u16;
+    let mut local_212: u32;
+    let mut local_20e: u32;
+    let mut local_20a: u16;
+    let mut local_208: u16;
+    let mut local_206: [u8; 258];
+    let mut local_104: [u8; 258];
+
+    process_struct_1000_179c(0x1000, in_dx);
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x100,
+        CONCAT22(unaff_ss, local_206),
+        0x57b,
+    );
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(in_dx, in_ax),
+        0x803,
+    );
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x804,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x805,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x806,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x807,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x808,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    u_var1 = (param_1 >> 0x10);
+    MessageBox16(
+        0,
+        CONCAT22(unaff_ss, local_206),
+        CONCAT22(in_dx, in_ax),
+        (param_1 + 6),
+    );
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(in_dx, in_ax),
+        0x809,
+    );
+    load_string_1010_84e0(
+        ctx._g_struct_73_1050_14cc,
+        (ctx._g_struct_73_1050_14cc >> 0x10),
+        0x3ff,
+        CONCAT22(unaff_ss, local_104),
+        0x80a,
+    );
+    process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
+    MessageBox16(
+        0,
+        CONCAT22(unaff_ss, local_206),
+        CONCAT22(in_dx, in_ax),
+        (param_1 + 6),
+    );
+    error_check_1000_17ce(CONCAT22(in_dx, in_ax));
+    return;
 }

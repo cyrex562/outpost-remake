@@ -1,7 +1,6 @@
-use crate::{
-    defines::{Struct199, Struct620},
-    util::CONCAT22,
-};
+use crate::{defines::{Struct199, Struct620}, mixed_fn_1010_830a, util::CONCAT22};
+use crate::pass::pass8_funcs::process_struct_1010_20ba;
+use crate::sys_ops::win::win_func_1018_6bb6;
 
 pub fn sound_fn_1008_53ae(ctx: &mut AppContext, param_1: u32, param_2: u16) {
     let mut unaff_ss: u16;
@@ -313,5 +312,44 @@ pub fn sound_fn_1040_8978(param_1: *mut u32, param_2: u16) {
         fn_ptr_1 = (*param_1 + 0x74);
         (**fn_ptr_1)(&ctx.PTR_LOOP_1050_1008, param_1);
     }
+    return;
+}
+
+pub fn win_fn_1018_6adc(param_1: u32) {
+    let mut i_var1: i32;
+    let mut i_var2: i32;
+    let u_var3: u8;
+    let mut u_var4: u16;
+    let extraout_DL: u8;
+    let mut i_var5: i32;
+    let mut u_var6: u16;
+    let pp_var7: *mut pass1_struct_1;
+    let mut in_stack_0000ffdc: u32;
+    let in_string_1: String;
+    let mut local_6: u16;
+    let mut local_4: u16;
+
+    in_string_1 = CONCAT22((in_stack_0000ffdc >> 0x10), 0x48);
+    pp_var7 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, in_string_1);
+    u_var6 = (pp_var7 >> 0x10);
+    i_var1 = (pp_var7 + 10);
+    i_var2 = (pp_var7 + 0xc);
+    u_var6 = (param_1 >> 0x10);
+    i_var5 = param_1;
+    if (1 < i_var1 - (i_var5 + 0xe6)) {
+        (i_var5 + 0xe2) = i_var1 / 2 - ((i_var5 + 0xe6) + 1) / 2;
+    }
+    if (1 < i_var2 - (i_var5 + 0xe8)) {
+        (i_var5 + 0xe4) = i_var2 / 2 - ((i_var5 + 0xe8) + 1) / 2;
+    }
+    ShowCursor16(0x1010, 0, (in_string_1 >> 0x10));
+    if ((i_var5 + 0xee) != 0) {
+        u_var4 = mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, (i_var5 + 0xee));
+        (i_var5 + 0xf0) = u_var4;
+    }
+    u_var3 = mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, (i_var5 + 0xec));
+    sound_fn_1008_53ae(u_var3, extraout_DL, (i_var5 + 8));
+    ShowCursor16(8, 1);
+    win_func_1018_6bb6(param_1, (param_1 >> 0x10));
     return;
 }
