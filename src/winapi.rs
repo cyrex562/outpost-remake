@@ -218,7 +218,7 @@ pub fn FreeProcInstance16(func: fn() -> LRESULT) {
     todo!()
 }
 
-pub fn BeginPaint16(hwnd: HWND16, lps: PAINTSTRUCT16) -> HDC16 {
+pub fn BeginPaint16(hwnd: HWND16, lps: &PAINTSTRUCT16) -> HDC16 {
     todo!()
 }
 
@@ -250,7 +250,7 @@ pub fn EndPaint16(hwnd: HWND16, lps: &mut PAINTSTRUCT16) -> bool {
 }
 
 // BOOL16 WINAPI Polygon16( HDC16 hdc, const POINT16* pt, INT16 count )
-pub fn Polygon16(hdc: HDC16, pt: POINT16, count: i16) -> bool {
+pub fn Polygon16(hdc: &HDC16, pt: &POINT16, count: i16) -> bool {
     unimplemented!()
 }
 

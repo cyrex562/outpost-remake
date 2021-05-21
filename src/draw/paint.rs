@@ -11,22 +11,22 @@ use crate::typedefs::HWND16;
 use crate::util::{CONCAT22, SUB42};
 use crate::winapi::{BeginPaint16, EndPaint16, IsIconic16};
 
-pub unsafe fn begin_end_Paint_1018_6a7a(ctx: &mut AppContext, param_1: *mut Struct129) {
-    let local_p_Struct129: *mut Struct129;
-    let mut u_var1: u16;
+pub unsafe fn begin_end_Paint_1018_6a7a(ctx: &mut AppContext, param_1: &mut Struct129) {
+    // let local_p_Struct129: *mut Struct129;
+    // let mut u_var1: u16;
     let mut unaff_ss: HWND16;
     let ppVar2: *mut pass1_struct_1;
     let mut HVar3: HWND16;
     let mut local_28: u16;
     let mut local_26: u16;
     let mut local_24: u16;
-    let mut string_22: [u8; 32];
+    let mut struct_var_1: PAINTSTRUCT16 = PAINTSTRUCT16::new();
 
-    u_var1 = (param_1 >> 0x10);
-    local_p_Struct129 = param_1;
-    BeginPaint16(CONCAT22(unaff_ss, string_22), local_p_Struct129.h_wnd_0x8);
-    HVar3 = local_p_Struct129.h_wnd_0x8;
-    EndPaint16(string_22, unaff_ss);
+    // u_var1 = (param_1 >> 0x10);
+    // local_p_Struct129 = param_1;
+    BeginPaint16(param_1.h_wnd_0x8, &struct_var_1);
+    HVar3 = param_1.h_wnd_0x8;
+    EndPaint16(struct_var_1, unaff_ss);
     ppVar2 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(HVar3, 2));
     if ((ppVar2 + 0x20) == 0) {
         win_func_1018_6bb6(param_1);

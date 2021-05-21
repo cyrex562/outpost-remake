@@ -10,7 +10,7 @@ use crate::winapi::{DrawText16, GetDC16, GetProp16, GetSystemMetrics16, ReleaseD
 
 pub unsafe fn draw_text_1040_c94a(
     ctx: &mut AppContext,
-    param_1: *mut Struct334,
+    param_1: &mut Struct334,
     param_2: u16,
     param_3: u16,
 ) {

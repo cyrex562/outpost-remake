@@ -1,3 +1,5 @@
+use crate::prog_structs::prog_structs_8::Struct60;
+use crate::typedefs::{HWND16, HPALETTE16};
 
 pub struct Struct633 {
     pub field_0x0: u8,
@@ -5,7 +7,7 @@ pub struct Struct633 {
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub win_handle_0x4: HWND16,
-    pub field_0x6: *mut Struct634,
+    pub field_0x6:  Struct634,
 }
 
 pub struct Struct634 {
@@ -1531,7 +1533,7 @@ pub struct Struct594 {
     pub field_0xe0: u8,
     pub field_0xe1: u8,
     pub u32_xE2: Vec<u8>,
-    pub vptr_xE4: *mut libc::c_void,
+    pub vptr_xE4:  libc::c_void,
     pub u8_ptr_32_xE6: Vec<u8>,
     pub field_0xea: u8,
     pub field_0xeb: u8,
@@ -1543,7 +1545,7 @@ pub struct Struct594 {
     pub field_0xf3: u8,
     pub field_0xf4: u8,
     pub field_0xf5: u8,
-    pub field_0xf6: *mut u32,
+    pub field_0xf6:  u32,
     pub field_0xf8: i32,
     pub u8_ptr_32_0xfa: Vec<u8>,
 }
@@ -1662,10 +1664,10 @@ pub struct Struct604 {
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: u8,
+    pub field_0x4: HWND16,
     pub field_0x5: u8,
-    pub field_0x6: u8,
-    pub Struct60_ptr: *mut Struct60,
+    pub field_0x6: u32,
+    pub Struct60_ptr: Struct60,
     pub field_0xa: u32,
 }
 
@@ -2121,7 +2123,7 @@ pub struct Struct737 {
     pub field_0x7: u8,
     pub field_0x8: u16,
     pub field_0xa: u16,
-    pub field_0xc: *mut u16,
+    pub field_0xc:  u16,
 }
 
 pub struct Struct1019 {}
@@ -2248,7 +2250,7 @@ pub struct Struct408 {
     pub field_0x6a: u8,
     pub field_0x6b: u8,
     pub field_0x6c: u32,
-    pub field_0x70: *mut u16,
+    pub field_0x70:  u16,
     pub field_0x72: u8,
     pub field_0x73: u8,
     pub field_0x74: u16,

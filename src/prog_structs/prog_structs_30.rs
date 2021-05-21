@@ -7789,7 +7789,7 @@ pub struct Struct257 {
 }
 
 pub struct Struct137 {
-    pub field_0x0: u8,
+    pub field_0x0: i32,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -7813,7 +7813,7 @@ pub struct Struct137 {
     pub field_0x15: u8,
     pub field_0x16: u8,
     pub field_0x17: u8,
-    pub field_0x18: u8,
+    pub field_0x18: i32,
     pub field_0x19: u8,
     pub field_0x1a: u8,
     pub field_0x1b: u8,

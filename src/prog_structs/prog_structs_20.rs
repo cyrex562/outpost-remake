@@ -1567,7 +1567,7 @@ pub struct Struct529 {
 }
 
 pub struct Struct388 {
-    pub field_0x0: u8,
+    pub field_0x0: i32,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -1591,7 +1591,7 @@ pub struct Struct388 {
     pub field_0x15: u8,
     pub field_0x16: u8,
     pub field_0x17: u8,
-    pub field_0x18: u8,
+    pub field_0x18: i32,
     pub field_0x19: u8,
     pub field_0x1a: u8,
     pub field_0x1b: u8,
@@ -1599,11 +1599,11 @@ pub struct Struct388 {
     pub field_0x1d: u8,
     pub field_0x1e: u8,
     pub field_0x1f: u8,
-    pub field_0x20: u8,
+    pub field_0x20: i32,
     pub field_0x21: u8,
     pub field_0x22: u8,
     pub field_0x23: u8,
-    pub field_0x24: u8,
+    pub field_0x24: i32,
     pub field_0x25: u8,
     pub field_0x26: u8,
     pub field_0x27: u8,

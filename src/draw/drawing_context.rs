@@ -7,17 +7,19 @@ use crate::prog_structs::prog_structs_2::Struct199;
 use crate::prog_structs::prog_structs_6::{Struct622, Struct670};
 use crate::struct_ops::process_struct_1008_4772;
 use crate::sys_ops::get_sys_metrics_1020_7c1a;
-use crate::typedefs::HWND16;
+use crate::typedefs::{HWND16, HDC16};
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB41};
 use crate::winapi::{CreateDC16, GetDC16};
 
-pub fn get_gui_dc_1018_4db0(in_struct_1: Vec<u8>, in_win_handle: HWND16) -> *mut Struct199 {
-    let dev_ctx_handle: *mut Struct199;
+pub fn get_gui_dc_1018_4db0(struct_param_1: &mut Struct199, in_win_handle: HWND16) -> HDC16 {
+    let dev_ctx_handle: HDC16;
     let local_struct_1_hi: Vec<u8>;
-    local_struct_1_hi = (in_struct_1 >> 0x10);
-    (in_struct_1 + 0x16) = in_win_handle;
+    // local_struct_1_hi = (in_struct_1 >> 0x10);
+    // (in_struct_1 + 0x16) = in_win_handle;
+    struct_param_1.field_0x16 = in_win_handle;
     dev_ctx_handle = GetDC16(in_win_handle);
-    (in_struct_1 + 0x14) = dev_ctx_handle;
+    // (struct_param_1 + 0x14) = dev_ctx_handle;
+    struct_param_1.field_0x14 = dev_ctx_handle;
     return dev_ctx_handle;
 }
 

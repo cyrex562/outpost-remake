@@ -44,6 +44,7 @@ use crate::ui_ops::window;
 use crate::ui_ops::window::{destroy_win_1008_628e, set_window_text_1018_6630};
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT210, CONCAT212, CONCAT214, CONCAT22, CONCAT24, CONCAT26, CONCAT28, CONCAT66, SUB42, ZEXT24};
 use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, DrawText16, Ellipse16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16, GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16, LineTo16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, RealizePalette16, Rectangle16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCapture16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16};
+use crate::mem_funcs::get_fn_ptr_at_address;
 
 pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     let pp_var1: fn();
@@ -56,7 +57,6 @@ pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     let mut obj_handle_00: HBRUSH16;
     let mut obj_handle_01: HGDIOBJ16;
     let mut h_gdi_obj: HPALETTE16;
-
     let mut u_var7: u16;
     let mut u_var8: u16;
     let mut u_var9: u16;
@@ -80,32 +80,30 @@ pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     let mut local_28: u16;
     let mut local_26: u16;
     let mut local_24: u16;
-    let mut local_22: PAINTSTRUCT16;
+    let mut local_22: PAINTSTRUCT16 = PAINTSTRUCT16::new();
 
-    // u_var9 = (param_1 >> 0x10);
-    // u_var8 = param_1;
-    h_var4 = BeginPaint16(&local_22, param_1.field_0x4);
-    local_24 = h_var4;
+    let mut hdc_var4: HDC16 = BeginPaint16(param_1.field_0x4, &local_22);
+    let mut hdc_var24 = hdc_var4;
     pass1_1010_4c2c(param_1.field_0x6);
-    let local_28 = CONCAT22(ctx.dx_reg, h_var4);
-    pu_var5 = &local_24;
-    // pp_var1 = (*local_28 + 8);
-    pp_var1(0x1010, h_var4, ctx.dx_reg, pu_var5, unaff_ss);
-    (u_var8 + 0x10) = pu_var5;
-    u_var2 = (u_var8 + 6);
-    local_2a = (u_var2 + 0x30);
-    u_var2 = (u_var8 + 6);
-    local_2e = (u_var2 + 0x12);
-    let local_32 = 0x140000;
-    u_var10 = SUB42(&ctx.PTR_LOOP_1050_1008, 0);
+    let mut local_28 = CONCAT22(ctx.dx_reg, hdc_var4);
+    let mut pu_var5 = &hdc_var24;
+    let pp_var1 = get_fn_ptr_at_address(local_28 + 8);
+    pp_var1(0x1010, hdc_var4, ctx.dx_reg, pu_var5, unaff_ss);
+    (param_1 + 0x10) = pu_var5;
+    let mut u_var2 = (param_1 + 6);
+    let mut local_2a = (u_var2 + 0x30);
+    u_var2 = (param_1 + 6);
+    let mut local_2e = (u_var2 + 0x12);
+    let mut local_32 = 0x140000;
+    let mut u_var10 = &ctx.PTR_LOOP_1050_1008;
     zero_list_1008_3e38(CONCAT22(unaff_ss, local_38));
-    local_3a = 0;
-    while (local_3a < local_2a) {
+    let mut local_3a = 0;
+    while local_3a < local_2a {
         u_var11 = process_struct_1008_4772((local_3a * 4 + local_2e));
-        u_var7 = (u_var11 >> 0x10);
+        // u_var7 = (u_var11 >> 0x10);
         i_var3 = u_var11;
         pass1_1018_642e(
-            u_var8,
+            param_1,
             u_var9,
             CONCAT13((unaff_ss >> 8), CONCAT12(unaff_ss, &local_32)),
             (i_var3 + 8),
@@ -137,19 +135,19 @@ pub unsafe fn draw_1018_623e(ctx: &mut AppContext, param_1: &mut Struct604) {
     pp_var1 = (*local_28 + 4);
     (**pp_var1)(u_var10, local_28, (local_28 >> 0x10), 0, 0, 0xdc);
     obj_handle = CreatePen16(0x1000025, 1, 0);
-    h_var6 = SelectObject16(obj_handle, local_24);
+    h_var6 = SelectObject16(obj_handle, hdc_var24);
     obj_handle_00 = CreateSolidBrush16(0x1000025);
-    obj_handle_01 = SelectObject16(obj_handle_00, local_24);
-    draw_1018_6444(u_var8, (param_1 >> 0x10), local_24);
-    u_var13 = local_24;
+    obj_handle_01 = SelectObject16(obj_handle_00, hdc_var24);
+    draw_1018_6444(u_var8, (param_1 >> 0x10), hdc_var24);
+    u_var13 = hdc_var24;
     u_var12 = pass1_1010_4dc8((u_var8 + 6));
     pass1_1018_6544(param_1, u_var12, u_var13);
     set_window_text_1018_6630(param_1);
-    h_gdi_obj = SelectPalette16(0, (u_var8 + 0x10), local_24);
+    h_gdi_obj = SelectPalette16(0, (u_var8 + 0x10), hdc_var24);
     DeleteObject16(h_gdi_obj);
-    h_var6 = SelectObject16(h_var6, local_24);
+    h_var6 = SelectObject16(h_var6, hdc_var24);
     DeleteObject16(h_var6);
-    h_var6 = SelectObject16(obj_handle_01, local_24);
+    h_var6 = SelectObject16(obj_handle_01, hdc_var24);
     DeleteObject16(h_var6);
     EndPaint16(&local_22, unaff_ss);
     return;
@@ -535,52 +533,51 @@ pub fn draw_1040_c74c(ctx: &mut AppContext, param_1: *mut u32, param_2: u32) {
     return;
 }
 
-pub unsafe fn draw_1040_c226(param_1: *mut Struct135) {
-    let mut u_var1: u32;
-    let mut obj_handle: HPEN16;
-    let mut HVar2: HGDIOBJ16;
+pub unsafe fn draw_1040_c226(ctx: &mut AppContext, struct_param_1: &mut Struct135) {
+    let mut u_var1: Struct137;
+    let mut hpen_var1: HPEN16;
+    let mut hgdi_obj_var3: HGDIOBJ16;
     let mut i_var3: i32;
     let mut u_var4: u16;
     let mut unaff_ss: HWND16;
     let mut h_dc: u16;
     let mut local_36: u16;
     let mut local_34: u16;
-    let mut local_32: u16;
+    let mut struct_var_32: RECT16 = RECT16::new();
     let mut local_30: u16;
     let mut local_2e: u16;
     let mut local_2c: u16;
     let mut local_2a: u16;
     let mut local_28: u16;
-    let mut local_26: u16;
-    let mut local_24: u16;
-    let mut local_22: PAINTSTRUCT16;
+    let mut hbrush_var_22: HBRUSH16;
+    let mut hdc_var_24: HDC16;
+    let mut struct_var_26: PAINTSTRUCT16;
 
-    u_var4 = (param_1 >> 0x10);
-    i_var3 = param_1;
-    local_24 = BeginPaint16(
-        CONCAT13((unaff_ss >> 8), CONCAT12(unaff_ss, &local_22)),
-        (i_var3 + 4),
-    );
-    local_26 = CreateSolidBrush16(0x8000);
-    GetClientRect16(CONCAT22(unaff_ss, &local_32), (i_var3 + 4));
-    u_var1 = (i_var3 + 6);
+    hdc_var_24 = BeginPaint16(
+        struct_param_1.field_0x4,
+        &struct_var_26);
+    hbrush_var_22 = CreateSolidBrush16(0x8000);
+    GetClientRect16(
+        struct_param_1.field_0x4,
+        &mut struct_var_32);
+    u_var1 = (struct_param_1.field_0x6);
     local_28 = (u_var1 + 0x1a);
-    u_var1 = (i_var3 + 6);
+    u_var1 = (struct_param_1 + 6);
     local_2a = (u_var1 + 0x1c);
     local_30 = local_30 + 2;
-    local_32 = local_28 - 10;
+    struct_var_32 = local_28 - 10;
     local_2e = local_2e - 2;
     local_2c = local_2c - 2;
-    FrameRect16(local_26, &local_32, unaff_ss);
-    DeleteObject16(local_26);
-    h_dc = local_24;
-    obj_handle = CreatePen16(0x8080, 2, 0);
-    HVar2 = SelectObject16(obj_handle, h_dc);
-    lines::draw_lines_1040_c302(i_var3, u_var4, local_24);
-    lines::draw_lines_1040_c38e(param_1, local_24);
-    HVar2 = SelectObject16(HVar2, local_24);
-    DeleteObject16(HVar2);
-    EndPaint16(&local_22, unaff_ss);
+    FrameRect16(hbrush_var_22, &struct_var_32, unaff_ss);
+    DeleteObject16(hbrush_var_22);
+    h_dc = hdc_var_24;
+    hpen_var1 = CreatePen16(0x8080, 2, 0);
+    hgdi_obj_var3 = SelectObject16(hpen_var1, h_dc);
+    lines::draw_lines_1040_c302(struct_param_1, u_var4, hdc_var_24);
+    lines::draw_lines_1040_c38e(struct_param_1, hdc_var_24);
+    hgdi_obj_var3 = SelectObject16(hgdi_obj_var3, hdc_var_24);
+    DeleteObject16(hgdi_obj_var3);
+    EndPaint16(&struct_var_26, unaff_ss);
     return;
 }
 

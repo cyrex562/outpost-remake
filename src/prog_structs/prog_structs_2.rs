@@ -1,6 +1,6 @@
 use crate::mem_funcs::Address;
 use crate::sys_structs::POINT16;
-use crate::typedefs::HFILE16;
+use crate::typedefs::{HFILE16, HWND16};
 
 pub struct Struct318 {
     pub field_0x0: u8,
@@ -1731,6 +1731,7 @@ pub struct Struct199 {
     pub field_0x4: u32,
     pub field_0x8: u16,
     pub field_0xa: u16,
+    pub field_0x16: HWND16,
 }
 
 pub struct Struct660 {

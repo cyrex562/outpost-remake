@@ -16,10 +16,10 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, struct_param_2: &mut St
     let mut local_res6: u16;
     let temp_86216c208fd: u32;
     let mut func_ptr: u32;
-    let mut temp_5f096a4ace: u32;
+    let mut temp_5f096a4ace: Struct7;
 
-    param_2.u16_field_0 = ctx.PTR_LOOP_1050_4c4c;
-    struct_param_2.u16_fld_1 = ctx.PTR_LOOP_1050_1008;
+    param_2.u16_field_0 = ctx.PTR_LOOP_1050_4c4c.clone();
+    struct_param_2.u16_fld_1 = ctx.PTR_LOOP_1050_1008 as u32;
     pu_var1 = struct_param_2.func_ptr_2;
     u_var2 = struct_param_2.u32_field_3;
     if (u_var2 | pu_var1) != 0 {
@@ -29,13 +29,13 @@ pub unsafe fn close_file_1008_496c(ctx: &mut AppContext, struct_param_2: &mut St
     error_check_1000_17ce(ctx, struct_param_2);
     if &struct_param_2.pv_buffer_0x1a != 0 {
         temp_5f096a4ace = struct_param_2.pv_buffer_0x1a;
-        error_check_1000_0dc6(ctx, temp_5f096a4ace);
+        error_check_1000_0dc6(ctx);
     }
-    if (struct_param_2.hfile_field_5 != 0xffff) {
+    if struct_param_2.hfile_field_5 != 0xffff {
         _lclose16(struct_param_2.hfile_field_5);
     }
     struct_param_2._type.u16_field_0 = ctx.s_1_1050_389a.clone();
-    struct_param_2.u16_fld_1 = &ctx.PTR_LOOP_1050_1008;
+    struct_param_2.u16_fld_1 = ctx.PTR_LOOP_1050_1008 as u32;
     return;
 }
 
