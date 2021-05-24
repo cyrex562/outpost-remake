@@ -13,19 +13,19 @@ use crate::pass::pass20_funcs::{pass1_1010_9044, pass1_1010_9130, pass1_1010_921
 use crate::pass::pass6_funcs::{pass1_1038_387e, pass1_1038_3aa6, pass1_1038_993a};
 use crate::pass::pass7_funcs::{pass1_1018_1c9a, pass1_1018_1e78, pass1_1018_3ab2, pass1_1018_5206};
 use crate::pass::pass8_funcs::{pass1_1010_375e, process_struct_1010_20ba, return_1_1010_60b4, return_1_1010_60ba, return_1_1010_60c0, return_1_1010_60c6};
-use crate::prog_structs::prog_structs_16::Struct588;
-use crate::prog_structs::prog_structs_21::Struct25;
-use crate::prog_structs::prog_structs_24::Struct103;
-use crate::prog_structs::prog_structs_25::Struct70;
-use crate::prog_structs::prog_structs_26::{Struct1096, Struct51};
-use crate::prog_structs::prog_structs_27::pass1_struct_2;
-use crate::prog_structs::prog_structs_28::{Struct19, Struct300, Struct351};
-use crate::prog_structs::prog_structs_29::Struct49;
-use crate::prog_structs::prog_structs_30::Struct347;
-use crate::prog_structs::prog_structs_31::{Struct20, Struct21};
+use crate::structs::prog_structs_16::Struct588;
+use crate::structs::prog_structs_21::Struct25;
+use crate::structs::prog_structs_24::Struct103;
+use crate::structs::prog_structs_25::Struct70;
+use crate::structs::prog_structs_26::{Struct1096, Struct51};
+use crate::structs::prog_structs_27::pass1_struct_2;
+use crate::structs::prog_structs_28::{Struct19, Struct300, Struct351};
+use crate::structs::prog_structs_29::Struct49;
+use crate::structs::prog_structs_30::Struct347;
+use crate::structs::prog_structs_31::{Struct20, Struct21};
 use crate::sound_funcs::mci_send_command_1008_5c7c;
-use crate::string_ops::load_string_1008_b1f0;
-use crate::struct_ops::process_struct_1000_179c;
+use crate::string_ops::misc::load_string_1008_b1f0;
+use crate::struct_ops::struct_ops_2::process_struct_1000_179c;
 use crate::sys_ops::win_msg;
 use crate::typedefs::{HANDLE16, HWND16, LPARAM, LRESULT};
 use crate::ui_ops::{misc, ui2, window};
@@ -48,8 +48,8 @@ pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    _local_6 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_10e, 3));
-    u_var4 = (param_1 >> 0x10);
+    _local_6 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_10e, 3));
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     pass1_1010_c3c2(
         _local_6,
@@ -90,16 +90,16 @@ pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
     return;
 }
 
-pub fn send_dialog_item_msg_1040_d20c(in_struct_588_ptr_1: *mut Struct588, param_2: u32) {
-    let ppVar1: *mut pass1_struct_2;
+pub fn send_dialog_item_msg_1040_d20c(in_struct_588_ptr_1: &mut  Struct588, param_2: u32) {
+    let ppVar1: &mut  pass1_struct_2;
     let mut in_dx: u16;
-    let struct_588_ptr_2: *mut Struct588;
+    let struct_588_ptr_2: &mut  Struct588;
     let mut u_var2: u16;
     let mut unaff_ss: u16;
-    let ppVar3: *mut pass1_struct_1;
+    let ppVar3: &mut  Struct2551;
     let pu_var4: Vec<u8>;
     let mut u_var5: u16;
-    let struct_588_ptr_1: *mut Struct588;
+    let struct_588_ptr_1: &mut  Struct588;
     let mut local_10a: u16;
     let mut local_108: u16;
     let mut local_106: [u8; 256];
@@ -110,7 +110,7 @@ pub fn send_dialog_item_msg_1040_d20c(in_struct_588_ptr_1: *mut Struct588, param
         window::enable_window_1040_d60e(in_struct_588_ptr_1);
         return;
     }
-    u_var2 = (in_struct_588_ptr_1 >> 0x10);
+  // u_var2 = (in_struct_588_ptr_1  >> 0x10);
     struct_588_ptr_2 = in_struct_588_ptr_1;
     if (struct_588_ptr_2.field_0xa0 != 0) {
         pass1_1010_9210(struct_588_ptr_2.field_0x9c);
@@ -123,7 +123,7 @@ pub fn send_dialog_item_msg_1040_d20c(in_struct_588_ptr_1: *mut Struct588, param
         pu_var4 = local_106;
         u_var5 = unaff_ss;
         local_6 = ppVar1;
-        ppVar3 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(pu_var4, 3));
+        ppVar3 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(pu_var4, 3));
         pass1_1010_c3c2(
             ppVar3,
             (ppVar3 >> 0x10),
@@ -147,7 +147,7 @@ pub fn send_dlg_item_msg_1040_d29c(param_1: u32) {
 }
 
 pub fn send_dlg_item_int_1040_cdac(param_1: u32, param_2: u16, param_3: u16, param_4: i32) -> u16 {
-    let pi_var1: *mut i32;
+    let pi_var1: &mut  i32;
     let mut i_var2: i32;
     let mut u8_var3: bool;
     let mut i_var4: i32;
@@ -156,7 +156,7 @@ pub fn send_dlg_item_int_1040_cdac(param_1: u32, param_2: u16, param_3: u16, par
 
     u8_var3 = false;
     i_var4 = param_1;
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     if (param_2 == 0) {
         i_var2 = (i_var4 + 0x9e);
         pi_var1 = (i_var4 + 0x9c);
@@ -226,7 +226,7 @@ pub fn send_dlg_item_msg_1040_ce76(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     i_var1 = param_1;
     LVar3 = SendDlgItemMessage16(0, 0, 0x409, (s_vrpal_bmp_1050_183a + 8), (i_var1 + 6));
     local_6 = LVar3;
@@ -252,13 +252,13 @@ pub fn send_dlg_item_msg_1040_ce76(param_1: u32) {
 
 pub fn set_dlg_item_txt_1040_b45e(param_1: u32) {
     let mut u_var1: u32;
-    let p_uvar2: *mut u16;
+    let p_uvar2: &mut  u16;
     let mut i_var3: i32;
     let mut u_var4: u16;
     let mut local_8: u16;
     let mut local_6: u32;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     if ((i_var3 + 0x90) != 0) {
         u_var1 = (i_var3 + 0x90);
@@ -279,12 +279,12 @@ pub fn set_dlg_item_txt_1040_b45e(param_1: u32) {
     return;
 }
 
-pub fn set_dialog_item_txt_1040_ad14(in_struct_1: *mut Struct347) {
+pub fn set_dialog_item_txt_1040_ad14(in_struct_1: &mut  Struct347) {
     set_dialog_item_text_1040_ae04(in_struct_1);
     return;
 }
 
-pub fn set_dialog_item_text_1040_ae04(param_1: *mut Struct347) {
+pub fn set_dialog_item_text_1040_ae04(param_1: &mut  Struct347) {
     let mut u_var1: u32;
     let mut b_var2: bool;
     let mut u_var3: u16;
@@ -299,13 +299,13 @@ pub fn set_dialog_item_text_1040_ae04(param_1: *mut Struct347) {
     let mut local_DX_110: u16;
 
     let mut local_DX_373: u16;
-    let local_struct_1: *mut Struct347;
-    let plVar7: *mut long;
+    let local_struct_1: &mut  Struct347;
+    let plVar7: &mut  long;
     let mut local_SI__1: u16;
     let mut local_DI__1: u16;
     let mut ctx.es_reg: u16;
 
-    let pp_var8: *mut pass1_struct_1;
+    let pp_var8: &mut  Struct2551;
     let mut u_var9: u32;
     let mut u_var10: u32;
     let mut local_124: u32;
@@ -324,7 +324,7 @@ pub fn set_dialog_item_text_1040_ae04(param_1: *mut Struct347) {
     let mut string_1: [u8; 256];
     let mut temp_5f97b0c4d6: u32;
 
-    pp_var8 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_SI__1, 3));
+    pp_var8 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_SI__1, 3));
     ctx.es_reg = (param_1 >> 0x10);
     local_struct_1 = param_1;
     pass1_1010_c3c2(
@@ -340,9 +340,9 @@ pub fn set_dialog_item_text_1040_ae04(param_1: *mut Struct347) {
     );
     u_var9 = pass1_1030_73a8(local_struct_1.field_0x94);
     string_3 = (u_var9 + 0x20);
-    u_var3 = (u_var9 >> 0x10);
+  // u_var3 = (u_var9  >> 0x10);
     u_var10 = pass1_1030_8326();
-    local_DX_110 = (u_var10 >> 0x10);
+  // local_DX_110 = (u_var10  >> 0x10);
     u_var9 = 0;
     local_116 = 0;
     b_var2 = false;
@@ -407,8 +407,8 @@ pub fn set_dialog_item_text_1040_ae04(param_1: *mut Struct347) {
     return;
 }
 
-pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
-    let pi_var1: *mut i32;
+pub fn set_dialog_item_1040_a94a(in_struct_1: &mut  Struct351) {
+    let pi_var1: &mut  i32;
     let mut u_var2: u32;
     let lVar3: u32;
     let mut u_var4: u16;
@@ -420,14 +420,14 @@ pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
     let mut value_00: u16;
 
     let mut u_var10: i32;
-    let local_struct_1: *mut Struct351;
+    let local_struct_1: &mut  Struct351;
     let mut i_var11: i32;
     let mut unaff_si: u16;
     let mut u_var12: u16;
     let mut u_var13: u16;
     let mut unaff_ss: u16;
     let mut b_var14: bool;
-    let ppVar15: *mut pass1_struct_1;
+    let ppVar15: &mut  Struct2551;
     let mut local_128: u16;
     let mut local_126: u16;
     let mut local_120: u16;
@@ -446,10 +446,10 @@ pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
     let mut local_102: [u8; 256];
     let mut u_var9: u32;
 
-    ppVar15 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 3));
-    u_var5 = (ppVar15 >> 0x10);
+    ppVar15 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 3));
+  // u_var5 = (ppVar15  >> 0x10);
     u_var4 = ppVar15;
-    u_var12 = (in_struct_1 >> 0x10);
+  // u_var12 = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     pass1_1010_c3c2(
         u_var4,
@@ -489,7 +489,7 @@ pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
         pass1_1010_dd5e(u_var4, u_var5, local_struct_1.field_0x94);
         if ((ctx.dx_reg | value) != 0) {
             u_var2 = local_struct_1.field_0x94;
-            u_var13 = (u_var2 >> 0x10);
+          // u_var13 = (u_var2  >> 0x10);
             i_var11 = u_var2;
             lVar3 = (i_var11 + 0x26);
             u_var10 = (i_var11 + 0x28);
@@ -502,7 +502,7 @@ pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
                     value_00 = 0;
                     u_var7 = 0;
                 } else {
-                    u_var9 = pass1_1020_bae6(lVar3, CONCAT22(local_120, (lVar3 >> 0x10)));
+                  // u_var9 = pass1_1020_bae6(lVar3, CONCAT22(local_120, (lVar3  >> 0x10)));
                     value_00 = u_var9;
                     u_var7 = u_var10;
                 }
@@ -561,7 +561,7 @@ pub fn set_dialog_item_1040_a94a(in_struct_1: *mut Struct351) {
     return;
 }
 
-pub fn set_dialog_item_1040_a84a(param_1: *mut Struct351) {
+pub fn set_dialog_item_1040_a84a(param_1: &mut  Struct351) {
     set_dialog_item_1040_a94a(param_1);
     return;
 }
@@ -604,7 +604,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
 
     local_6 = 0;
     i_var12 = param_1;
-    u_var13 = (param_1 >> 0x10);
+  // u_var13 = (param_1  >> 0x10);
     if (param_3 < 0x1b5) {
         if (0x19f < param_3) {
             local_8 = winapi::GetDlgItem16(param_3, (i_var12 + 6));
@@ -640,7 +640,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
                 } else {
                     local_10 = (u_var9 + 0x1c);
                 }
-                mci_send_command_1008_5c7c(&ctx._g_struct_ptr_1050_02a0, CONCAT22(local_10, 1));
+                mci_send_command_1008_5c7c(&ctx.g_struct_1050_02a0, CONCAT22(local_10, 1));
                 return;
             }
             pi_var1 = (i_var12 + 0x96);
@@ -667,7 +667,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
                 u_var5 = IsDlgButtonChecked16(CONCAT11(local_46c._1_1_, local_46c), (i_var12 + 6));
                 if (u_var5 == 1) {
                     in_struct_1 = (i_var12 + 0x8e);
-                    uVar16 = (in_struct_1 >> 0x10);
+                  // uVar16 = (in_struct_1  >> 0x10);
                     switch_stmt_1008_d818(in_struct_1, CONCAT11(local_46c._1_1_, local_46c));
                     // goto LAB_1038_bba2;
                 }
@@ -678,8 +678,8 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
         } else {
             if (param_3 != 0xfbe) {}
             // goto LAB_1038_bc20;
-            local_e = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_470, 2));
-            u_var7 = (local_e >> 0x10);
+            local_e = struct_ops::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_470, 2));
+          // u_var7 = (local_e  >> 0x10);
             local_10 = u16_1050_13ae;
             if (u16_1050_13ae == 1) {
                 local_10 = 2;
@@ -714,7 +714,7 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
                 u_var11 = 0;
             } else {
                 local_470 = ctx._g_struct_73_1050_14cc;
-                local_46e = (ctx._g_struct_73_1050_14cc >> 0x10);
+              // local_46e = (ctx._g_struct_73_1050_14cc  >> 0x10);
                 puVar8 = local_414;
                 load_string_1010_847e(ctx, local_470, local_46e, 0x7b);
                 local_46c._0_1_ = ctx.dx_reg;
@@ -762,7 +762,7 @@ pub unsafe fn get_dlg_item_int_1038_8afe(param_1: u32) {
     let mut local_6: u16;
     let local_4: bool;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     u_var2 = GetDlgItemInt16(0, &local_4, unaff_ss, (s_dibtext_bmp_1050_1844 + 9));
     pass1_1030_6c1a((i_var3 + 0x94), u_var2);
@@ -788,11 +788,11 @@ pub unsafe fn send_dlg_item_msg_1038_87b2(param_1: Vec<u8>) -> i32 {
         (s_logo_bmp_1050_1850 + 5),
     );
     if (i_var2 != 0) {
-        u_var3 = (param_1 >> 0x10);
+      // u_var3 = (param_1  >> 0x10);
         i_var2 = param_1;
         pass1_1008_b61a((i_var2 + 0x94), CONCAT22(unaff_ss, local_102));
         u_var1 = (i_var2 + 0x94);
-        l_param = load_string_1008_b1f0(u_var1, (u_var1 >> 0x10));
+      // l_param = load_string_1008_b1f0(u_var1, (u_var1  >> 0x10));
         LVar4 = SendDlgItemMessage16(
             l_param,
             0xffff,
@@ -824,7 +824,7 @@ pub unsafe fn send_dlg_item_msg_1038_8618(param_1: Vec<u8>) -> i32 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     _local_6 = pass1_1008_b820((i_var3 + 0x94));
     i_var2 = _local_6;
@@ -840,7 +840,7 @@ pub unsafe fn send_dlg_item_msg_1038_8618(param_1: Vec<u8>) -> i32 {
             SendDlgItemMessage16(0, 0, 0x405, (s_logo_bmp_1050_1850 + 5), (i_var3 + 6));
             SendDlgItemMessage16(0, 0, 0x405, (s_logo_bmp_1050_1850 + 6), (i_var3 + 6));
             u_var1 = (i_var3 + 0x94);
-            lVar5 = pass1_1008_b4a0(u_var1, (u_var1 >> 0x10), local_106, unaff_ss);
+          // lVar5 = pass1_1008_b4a0(u_var1, (u_var1  >> 0x10), local_106, unaff_ss);
             pass1_1008_b200((i_var3 + 0x94));
             if (lVar5 != 0) {
                 send_dialog_item_msg_1038_8400(i_var3, u_var4, lVar5, (s_logo_bmp_1050_1850 + 5));
@@ -910,7 +910,7 @@ pub fn send_dialog_item_msg_1040_3f12(param_1: u32, param_2: u32) {
     let mut local_c: u16;
     let mut local_a: [u8; 8];
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     SendDlgItemMessage16(0, 0, 0xb, 400, (i_var3 + 6));
     SendDlgItemMessage16(0, 0, 0x405, 400, (i_var3 + 6));
@@ -922,7 +922,7 @@ pub fn send_dialog_item_msg_1040_3f12(param_1: u32, param_2: u32) {
             break;
         }
         LVar5 = SendDlgItemMessage16((pu_var1 + 4), 0, 0x401, 400, (i_var3 + 6));
-        i_var2 = (LVar5 >> 0x10);
+      // i_var2 = (LVar5  >> 0x10);
         if (((LVar5 == -1) && (i_var2 == -1)) || (LVar5 == -2 && (i_var2 == -1))) {
             break;
         }
@@ -938,7 +938,7 @@ pub fn win_gui_dialog_func_1040_3e08(param_1: &mut Struct25) {
     let mut u_var2: u16;
     let LVar3: LRESULT;
 
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     CheckRadioButton16(local_bx_4.check_id, 0x18d, 0x188, local_bx_4.h_wnd);
     local_bx_4.dlg_item_id = 0;
@@ -971,7 +971,7 @@ pub fn check_dialog_btn_1040_1d7a(param_1: u32, param_2: i32) {
     let mut u_var3: u16;
 
     local_bx_8 = param_1;
-    u_var3 = (param_1 >> 0x10);
+  // u_var3 = (param_1  >> 0x10);
     if ((param_2 != 0) && (u_var1 = local_bx_8.field_0x8e, (u_var1 + 0x72) != 0)) {
         u_var2 = IsDlgButtonChecked16(0xe1, local_bx_8.field_0x6);
         if (u_var2 != 0) {
@@ -1016,7 +1016,7 @@ pub fn check_dialog_func_1040_1afe(param_1: &mut Struct20) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    local_es_4 = (param_1 >> 0x10);
+  // local_es_4 = (param_1  >> 0x10);
     local_Struct20 = param_1;
     u_var1 = local_Struct20.field_0x8e;
     u_var2 = local_Struct20.field_0x8e;
@@ -1042,7 +1042,7 @@ pub fn check_dialog_func_1040_1b8a(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     u_var1 = return_1_1010_60b4(local_bx_4.field_0x8e);
     return_1_1010_60c6(local_bx_4.field_0x8e);
@@ -1063,7 +1063,7 @@ pub fn dialog_button_checked_1038_e7a0(param_1: u32, param_2: i32) {
     let mut u_var4: u16;
 
     i_var3 = param_1;
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     if (param_2 == 0) {
         u_var1 = (i_var3 + 0x8e);
         (u_var1 + 0x10) = 1;
@@ -1130,7 +1130,7 @@ pub fn check_dlg_btn_1038_e1dc(in_struct_1: &mut Struct49, param_2: u16) {
     let mut w_param: u32;
 
     local_bx_7 = in_struct_1;
-    u_var2 = (in_struct_1 >> 0x10);
+  // u_var2 = (in_struct_1  >> 0x10);
     if (param_2 != 0) {
         u_var1 = IsDlgButtonChecked16(0x1807, local_bx_7.h_win);
         if (u_var1 == 0) {
@@ -1155,7 +1155,7 @@ pub fn dialog_button_checked_1038_cdd6(param_1: u32, param_2: i32) {
     let mut u_var3: u16;
 
     local_bx_8 = param_1;
-    u_var3 = (param_1 >> 0x10);
+  // u_var3 = (param_1  >> 0x10);
     if (param_2 == 0) {
         u_var1 = local_bx_8.field_0x8e;
         (u_var1 + 10) = 0;
@@ -1212,7 +1212,7 @@ pub fn gui_dialog_1038_b81c(param_1: &mut Struct20) {
     let mut i32_var6: i32;
     let mut unaff_si: u16;
     let mut u_var7: u16;
-    let pp_var8: &mut pass1_struct_1;
+    let pp_var8: &mut Struct2551;
     let local_1e: &mut Struct19;
     let mut uStack28: u16;
     let mut local_10: u16;
@@ -1223,8 +1223,8 @@ pub fn gui_dialog_1038_b81c(param_1: &mut Struct20) {
     let pu_var5: &mut u16;
 
     misc::win_gui_func_1040_78e2(param_1);
-    pp_var8 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 6));
-    u_var7 = (param_1 >> 0x10);
+    pp_var8 = struct_ops::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 6));
+  // u_var7 = (param_1  >> 0x10);
     i32_var6 = param_1;
     (i32_var6 + 0x92) = pp_var8;
     (i32_var6 + 0x94) = (pp_var8 >> 0x10);
@@ -1246,7 +1246,7 @@ pub fn gui_dialog_1038_b81c(param_1: &mut Struct20) {
     b_result = EnableWindow16(0, h_dialog);
     u_var2 = (i32_var6 + 0x92);
     local_1e = u_var2;
-    uStack28 = (u_var2 >> 0x10);
+  // uStack28 = (u_var2  >> 0x10);
     ppc_var3 = ((i32_var6 + 0x92) + 0x10);
     (**ppc_var3)(offset, local_1e, uStack28);
     _local_10 = CONCAT22(ctx.dx_reg, b_result);
@@ -1289,13 +1289,13 @@ pub fn get_dialog_int_1038_9820(
     let local_6: bool;
     let local_4: bool;
 
-    u_var8 = (param_1 >> 0x10);
+  // u_var8 = (param_1  >> 0x10);
     i_var7 = param_1;
     u_var3 = GetDlgItemInt16(1, &local_4, unaff_ss, (param_4 * 0xe + 0x5a74));
     i_var4 = u_var3 * param_2 * param_3;
     u_var3 = GetDlgItemInt16(1, &local_6, unaff_ss, (param_4 * 0xe + 0x5a76));
     lVar2 = (u_var3 * param_2) * param_3;
-    u_var6 = (lVar2 >> 0x10);
+  // u_var6 = (lVar2  >> 0x10);
     i_var5 = lVar2;
     if ((i_var4 - (i_var7 + 0x94) < 1) && (-1 < (i_var7 + 0x96) - i_var5)) {
         pi_var1 = (i_var7 + 0x94);
@@ -1323,7 +1323,7 @@ pub fn dialog_item_func_1038_98b4(param_1: u32) {
 
     local_4 = 0;
     local_8 = 0;
-    while (i_var2 = param_1, u_var3 = (param_1 >> 0x10), local_8 < 0xf) {
+    while// i_var2 = param_1, u_var3 = (param_1  >> 0x10), local_8 < 0xf) {
         u_var4 = 1;
         u_var3 = (i_var2 + 6);
         u_var1 = GetDlgItemInt16(1, &local_4, unaff_ss, (local_8 * 0xe + 0x5a72));
@@ -1400,7 +1400,7 @@ pub fn send_dlg_item_msg_1038_8d22(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     i_var1 = param_1;
     LVar3 = SendDlgItemMessage16(0, 0, 0x409, (s_650_bmp_1050_1859 + 2), (i_var1 + 6));
     local_6 = LVar3;
@@ -1430,8 +1430,8 @@ pub fn send_dlg_item_msg_1038_8b58(param_1: Vec<u8>) -> u8 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    _local_6 = struct_ops::process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000feee, 3));
-    u_var4 = (param_1 >> 0x10);
+    _local_6 = struct_ops::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(in_stack_0000feee, 3));
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     pass1_1010_c3c2(
         _local_6,
@@ -1472,7 +1472,7 @@ pub fn set_dialog_item_1038_8966(param_1: u32, param_2: u16, param_3: u16, param
 
     b_var2 = false;
     i_var3 = param_1;
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     if (param_2 == 0) {
         if ((i_var3 + 0x98) < 1) {}
         // goto LAB_1038_89af;
@@ -1530,7 +1530,7 @@ pub fn send_dialog_item_msg_1038_844a(param_1: u32) -> LRESULT {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     SendDlgItemMessage16(0, 0, 0xb, (s_logo_bmp_1050_1850 + 4), (i_var3 + 6));
     SendDlgItemMessage16(0, 0, 0xb, (s_logo_bmp_1050_1850 + 5), (i_var3 + 6));
@@ -1557,7 +1557,7 @@ pub fn send_dialog_item_msg_1038_844a(param_1: u32) -> LRESULT {
         SendDlgItemMessage16(0, 1, 0xb, (s_logo_bmp_1050_1850 + 4), (i_var3 + 6));
         SendDlgItemMessage16(0, 1, 0xb, (s_logo_bmp_1050_1850 + 5), (i_var3 + 6));
         LVar5 = SendDlgItemMessage16(0, 1, 0xb, (s_logo_bmp_1050_1850 + 6), (i_var3 + 6));
-        u_var2 = (LVar5 >> 0x10);
+      // u_var2 = (LVar5  >> 0x10);
         hwnd = GetDlgItem16((s_logo_bmp_1050_1850 + 7), (i_var3 + 6));
         load_string_1010_84e0(
             ctx._g_struct_73_1050_14cc,
@@ -1589,7 +1589,7 @@ pub fn send_dlg_item_msg_1038_8164(param_1: Vec<u8>, param_2: Vec<u8>, param_3: 
     unsafe {
         *param_2 = '\0';
     }
-    u_var1 = (param_1 >> 0x10);
+  // u_var1 = (param_1  >> 0x10);
     LVar2 = SendDlgItemMessage16(0, 0, 0x409, param_3, (param_1 + 6));
     if ((LVar2 != -1)
         && (
@@ -1605,7 +1605,7 @@ pub fn send_dlg_item_msg_1038_8164(param_1: Vec<u8>, param_2: Vec<u8>, param_3: 
 pub fn send_dlg_item_msg_1038_7eac(param_1: u32) -> LRESULT {
     let mut i_var1: i32;
     let mut u_var2: u16;
-    let ppVar3: &mut pass1_struct_1;
+    let ppVar3: &mut Struct2551;
     let mut l_param: u32;
     let LVar4: LRESULT;
     let mut in_stack_0000fff2: u16;
@@ -1613,11 +1613,11 @@ pub fn send_dlg_item_msg_1038_7eac(param_1: u32) -> LRESULT {
     let mut local_8: u16;
 
     ppVar3 = struct_ops::process_struct_1010_20ba(
-        ctx._g_Struct372_1050_0ed0,
+        ctx.g_struct_var_1050_0ed0,
         CONCAT22(in_stack_0000fff2, 0x30),
     );
     l_param = pass1_1010_375e(ppVar3);
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     i_var1 = param_1;
     pass1_1008_b1a6((i_var1 + 0x94), l_param);
     SendDlgItemMessage16(0, 0, 0xb, (s_logo_bmp_1050_1850 + 4), (i_var1 + 6));
@@ -1638,7 +1638,7 @@ pub fn send_dlg_item_msg_1038_7fae(param_1: u32) {
     let mut i_var1: i32;
     let mut u_var2: u16;
 
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     i_var1 = param_1;
     pass1_1008_b146((i_var1 + 0x94));
     SendDlgItemMessage16(0, 0xffff, 0x407, (s_logo_bmp_1050_1850 + 5), (i_var1 + 6));

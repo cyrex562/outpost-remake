@@ -2,16 +2,17 @@ use crate::app_context::AppContext;
 use crate::err_ops::error_check_1000_17ce;
 use crate::pass::pass14_funcs::{pass1_1008_57a4, pass1_1008_5b12};
 use crate::pass::pass8_funcs::{pass1_1010_1dda, pass1_1010_1ea6};
-use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
-use crate::prog_structs::prog_structs_31::Struct33;
-use crate::prog_structs::prog_structs_7::{Struct376, Struct44};
-use crate::prog_structs::prog_structs_9::{Struct633, Struct634};
-use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::structs::prog_structs_2::{Struct199, Struct7};
+use crate::structs::prog_structs_24::Struct103;
+use crate::structs::prog_structs_31::Struct33;
+use crate::structs::prog_structs_7::{Struct376, Struct44};
+use crate::structs::prog_structs_9::{Struct633, Struct634};
 use crate::typedefs::{HDC16, HPALETTE16};
 use crate::util::{CONCAT22, ZEXT24};
 use crate::winapi::{CreatePalette16, DeleteObject16, GetDC16, InvalidateRect16, RealizePalette16, ReleaseDC16, SelectPalette16, UnrealizeObject16};
 
-pub fn realize_palette_1008_46e4(param_1: u32, param_2: *mut HDC16) -> u16 {
+pub fn realize_palette_1008_46e4(param_1: &mut Struct103, param_2: &mut  HDC16) -> u16 {
     let mut bVar1: bool;
     let mut u_var2: u16;
     let mut HVar3: HPALETTE16;
@@ -19,7 +20,7 @@ pub fn realize_palette_1008_46e4(param_1: u32, param_2: *mut HDC16) -> u16 {
     let mut u_var5: i32;
     let mut local_4: u16;
 
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     i_var4 = param_1;
     if ((i_var4 + 6) == 0) {
         process_struct_1008_47cc((param_1 & 0xffff | u_var5 << 0x10));
@@ -44,7 +45,7 @@ pub fn realize_palette_1008_46e4(param_1: u32, param_2: *mut HDC16) -> u16 {
     return (i_var4 + 4);
 }
 
-pub fn realize_palette_1008_4e08(param_1: u32, param_2: *mut HDC16) -> HDC16 {
+pub fn realize_palette_1008_4e08(param_1: u32, param_2: &mut  HDC16) -> HDC16 {
     let mut h_palette: HPALETTE16;
     let mut HVar1: HDC16;
     let mut local_4: u16;
@@ -58,12 +59,12 @@ pub fn realize_palette_1008_4e08(param_1: u32, param_2: *mut HDC16) -> HDC16 {
 }
 
 pub fn create_palette_1008_4e38(param_1: u32) {
-    let pu_var1: *mut u16;
+    let pu_var1: &mut  u16;
     let mut u_var2: u32;
     let mut u_var3: u32;
     let mut u_var4: u16;
-    let in_dx: *mut Struct199;
-    let local_bx_4: *mut Struct33;
+    let in_dx: &mut  Struct199;
+    let local_bx_4: &mut  Struct33;
     let mut i_var5: i32;
     let mut i32_var6: i32;
     let mut u_var7: u16;
@@ -74,7 +75,7 @@ pub fn create_palette_1008_4e38(param_1: u32) {
     let mut local_8: u32;
     let mut local_4: u16;
 
-    u_var7 = (param_1 >> 0x10);
+  // u_var7 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     u_var4 = (local_bx_4.field_0xc + 2) * 4;
     if (&local_bx_4.palette == 0) {
@@ -94,10 +95,10 @@ pub fn create_palette_1008_4e38(param_1: u32) {
             if (pu_var_1_val == local_e || pu_var_1_val < local_e) {
                 break;
             }
-            u_var8 = (local_c >> 0x10);
+          // u_var8 = (local_c  >> 0x10);
             i_var5 = local_c;
             *local_8 = *(i_var5 + 2);
-            u_var9 = (local_8 >> 0x10);
+          // u_var9 = (local_8  >> 0x10);
             i32_var6 = local_8;
             *(i32_var6 + 1) = *(i_var5 + 1);
             *(i32_var6 + 2) = *local_c;
@@ -111,11 +112,11 @@ pub fn create_palette_1008_4e38(param_1: u32) {
     return;
 }
 
-pub unsafe fn set_palette_fn_1018_69ac(in_Struct376: *mut Struct376) {
-    let local_Struct376: *mut Struct376;
+pub unsafe fn set_palette_fn_1018_69ac(in_Struct376: &mut  Struct376) {
+    let local_Struct376: &mut  Struct376;
     let mut u16_1: u16;
 
-    u16_1 = (in_Struct376 >> 0x10);
+  // u16_1 = (in_Struct376  >> 0x10);
     local_Struct376 = in_Struct376;
     in_Struct376.offset = 0x6a02;
     local_Struct376.segment = 0x1018;
@@ -128,9 +129,9 @@ pub unsafe fn set_palette_fn_1018_69ac(in_Struct376: *mut Struct376) {
 }
 
 pub unsafe fn set_palette_fn_1018_69dc(
-    in_Struct376: *mut Struct376,
+    in_Struct376: &mut  Struct376,
     param_2: u8,
-) -> *mut Struct376 {
+) -> &mut  Struct376 {
     set_palette_fn_1018_69ac(in_Struct376);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_Struct376);
@@ -143,18 +144,18 @@ pub fn palette_fn_1020_0aa6(param_1: &mut Vec<u8>) {
     return;
 }
 
-pub fn palette_fn_1020_0cd2(ctx: &mut AppContext, in_struct_1: *mut Struct633) {
-    let paVar1: *mut Struct634;
+pub fn palette_fn_1020_0cd2(ctx: &mut AppContext, in_struct_1: &mut  Struct633) {
+    let paVar1: &mut  Struct634;
     let mut u_var2: i32;
     let mut hdc: HDC16;
     let mut h_palette: HDC16;
     let mut h_palette_00: HPALETTE16;
     let mut u_var3: u16;
 
-    let local_struct_1: *mut Struct633;
-    let local_struct_2: *mut Struct634;
-    let local_struct_1_hi: *mut Struct633;
-    let local_struct_2_hi: *mut Struct634;
+    let local_struct_1: &mut  Struct633;
+    let local_struct_2: &mut  Struct634;
+    let local_struct_1_hi: &mut  Struct633;
+    let local_struct_2_hi: &mut  Struct634;
     let mut h_dc: HDC16;
     let mut local_12: u16;
     let mut local_10: u16;
@@ -164,13 +165,13 @@ pub fn palette_fn_1020_0cd2(ctx: &mut AppContext, in_struct_1: *mut Struct633) {
     let mut local_8: u16;
     let mut local_6: u32;
     let mut local_a: u32;
-    let temp_5f7b277b00: *mut u32;
+    let temp_5f7b277b00: &mut  u32;
     let fn_ptr_1: fn();
 
-    local_struct_1_hi = (in_struct_1 >> 0x10);
+  // local_struct_1_hi = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     paVar1 = local_struct_1.field_0x6;
-    local_struct_2_hi = (paVar1 >> 0x10);
+  // local_struct_2_hi = (paVar1  >> 0x10);
     local_struct_2 = paVar1;
     temp_5f7b277b00 = &local_struct_2.field_0xa;
     local_6._0_2_ = temp_5f7b277b00;
@@ -202,12 +203,12 @@ pub fn palette_fn_1020_0cd2(ctx: &mut AppContext, in_struct_1: *mut Struct633) {
 pub fn realize_palette_1020_0e46(param_1: u32, param_2: i32) {
     let pp_var1: fn();
     let mut u_var2: u32;
-    let pu_var3: *mut u32;
+    let pu_var3: &mut  u32;
     let mut u_var4: u16;
     let mut local_6: u32;
 
     if (param_2 != 0) {
-        u_var4 = (param_1 >> 0x10);
+      // u_var4 = (param_1  >> 0x10);
         u_var2 = (param_1 + 0xf2);
         pu_var3 = (u_var2 + 0x66);
         let pu_var3_val = unsafe { *pu_var3 };
@@ -220,13 +221,13 @@ pub fn realize_palette_1020_0e46(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn palette_func_1020_150e(ctx: &mut AppContext, in_struct_1: *mut Struct376) {
+pub unsafe fn palette_func_1020_150e(ctx: &mut AppContext, in_struct_1: &mut  Struct376) {
     let mut u_var1: u32;
     let mut h_gdi_obj: HPALETTE16;
-    let local_struct_1_low: *mut Struct376;
-    let local_struct_1: *mut Struct376;
+    let local_struct_1_low: &mut  Struct376;
+    let local_struct_1: &mut  Struct376;
 
-    local_struct_1 = (in_struct_1 >> 0x10);
+  // local_struct_1 = (in_struct_1  >> 0x10);
     local_struct_1_low = in_struct_1;
     in_struct_1.offset = 0x1730;
     local_struct_1_low.segment = 0x1020;
@@ -256,14 +257,14 @@ pub fn delete_palette_func_1040_9458(param_1: u32, param_2: u8, param_3: HDC16) 
     let mut u_var4: u16;
     let mut uStack28: u16;
     let mut uStack26: u16;
-    let puStack24: *mut u16;
+    let puStack24: &mut  u16;
     let mut uStack20: u16;
     let mut uStack18: u16;
-    let puStack16: *mut u16;
+    let puStack16: &mut  u16;
     let mut local_8: u16;
     let mut local_6: u32;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     if ((i_var3 + 8) != 0) {
         local_6 = (i_var3 + 8);
@@ -296,10 +297,10 @@ pub fn delete_palette_func_1040_9458(param_1: u32, param_2: u8, param_3: HDC16) 
 
 pub fn select_and_delete_palette_1020_92c4(ctx: &mut AppContext, struct_param_1: &mut Struct7) {
     let mut h_gdi_obj: HPALETTE16;
-    let local_Struct376: *mut Struct376;
-    let local_struct_376_hi: *mut Struct376;
+    let local_Struct376: &mut  Struct376;
+    let local_struct_376_hi: &mut  Struct376;
 
-    local_struct_376_hi = (struct_param_1 >> 0x10);
+  // local_struct_376_hi = (struct_param_1  >> 0x10);
     local_Struct376 = struct_param_1;
     struct_param_1.ptr_a_lo = 0x96c8;
     local_Struct376.segment = 0x1020;
@@ -322,8 +323,8 @@ pub unsafe fn realize_palette_1020_8128(ctx: &mut AppContext, param_1: u32, para
     let pp_var1: fn();
     let mut u_var2: u32;
     let pu_var3: Vec<u8>;
-    let pu_var4: *mut u32;
-    let pu_var5: *mut u32;
+    let pu_var4: &mut  u32;
+    let pu_var5: &mut  u32;
 
     let mut i32_var6: i32;
     let mut u_var7: u16;
@@ -337,7 +338,7 @@ pub unsafe fn realize_palette_1020_8128(ctx: &mut AppContext, param_1: u32, para
     let mut local_6: u32;
 
     if (param_2 != 0) {
-        u_var7 = (param_1 >> 0x10);
+      // u_var7 = (param_1  >> 0x10);
         i32_var6 = param_1;
         u_var2 = (i32_var6 + 0xe6);
         pu_var5 = (u_var2 + 10);
@@ -373,12 +374,12 @@ pub unsafe fn realize_palette_1020_8128(ctx: &mut AppContext, param_1: u32, para
 
 pub unsafe fn select_and_delete_palette_fn_1018_e57a(
     ctx: &mut AppContext,
-    in_struct_ptr_1: &mut Struct44,
+    in_struct_ptr_1: &mut Struct7,
 ) {
-    let local_struct_ptr_1: *mut Struct376;
+    let local_struct_ptr_1: &mut  Struct376;
     let mut u_var1: u16;
 
-    u_var1 = (in_struct_ptr_1 >> 0x10);
+  // u_var1 = (in_struct_ptr_1  >> 0x10);
     local_struct_ptr_1 = in_struct_ptr_1;
     in_struct_ptr_1.ptr_a_lo = 0xe5d0;
     local_struct_ptr_1.segment = 0x1018;
@@ -401,12 +402,12 @@ pub unsafe fn call_palette_fn_1020_679c(param_1: &mut Struct44, param_2: u8) -> 
 pub fn realize_palette_1020_6896(param_1: u32, param_2: i32) {
     let pp_var1: fn();
     let mut u_var2: u32;
-    let pu_var3: *mut u32;
+    let pu_var3: &mut  u32;
     let mut u_var4: u16;
     let mut local_6: u32;
 
     if (param_2 != 0) {
-        u_var4 = (param_1 >> 0x10);
+      // u_var4 = (param_1  >> 0x10);
         u_var2 = (param_1 + 0xf2);
         pu_var3 = (u_var2 + 0x24);
         let pu_var3_val = unsafe { *pu_var3 };
@@ -423,7 +424,7 @@ pub unsafe fn call_palette_fn_1020_6466(in_struct_1: &mut Struct44) {
     let local_struct_1: &mut Struct44;
     let local_struct_1_hi: &mut Struct44;
 
-    local_struct_1_hi = (in_struct_1 >> 0x10);
+  // local_struct_1_hi = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1.ptr_a_lo = 0x67c2;
     local_struct_1.base_fld_2 = 0x1020;
@@ -438,9 +439,9 @@ pub unsafe fn call_palette_fn_1020_6466(in_struct_1: &mut Struct44) {
 }
 
 pub unsafe fn call_palette_fn_1020_170a(
-    in_struct_1: *mut Struct376,
+    in_struct_1: &mut  Struct376,
     param_2: u8,
-) -> *mut Struct376 {
+) -> &mut  Struct376 {
     palette_func_1020_150e(in_struct_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(in_struct_1);

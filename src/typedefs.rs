@@ -66,8 +66,8 @@ pub type HTASK16 = HANDLE16;
 // pub typedef pub HPALETTE16: HANDLE16,
 pub type HPALETTE16 = HANDLE16;
 
-// pub typedef DLGPROC16: *mut libc::c_void,
-pub type DLGPROC16 = *mut libc::c_void;
+// pub typedef DLGPROC16: &mut  libc::c_void,
+pub type DLGPROC16 = &mut  libc::c_void;
 
 // pub typedef pub HRSRC16: HANDLE16,
 pub type HRSRC16 = HANDLE16;

@@ -5,7 +5,8 @@ use std::intrinsics::offset;
 use defines::{AppContext, code};
 use file_ops::close::close_file_1008_496c;
 use func_ptr_funcs::{call_fn_ptr_1000_24cd, call_fn_ptr_1000_24db};
-use mem_funcs::alloc_mem_1000_167a;
+use mem_funcs::alloc_mem::alloc_mem_1000_167a;
+use mem_funcs::mem_ops_1::{get_string_from_address, get_type_at_address};
 use other_funcs::{big_fn_1010_b038, empty_fn_1000_55ac};
 use pass::pass14_funcs::{pass1_1008_3f92, pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6562, pass1_1008_6978};
 use pass::pass8_funcs::pass1_1010_878c;
@@ -13,8 +14,10 @@ use pass::pass_funcs::{
     pass1_fn_1000_25a8, pass1_fn_1000_2913,
 };
 use sound_funcs::mci_fn_1020_08b6;
-use string_ops::process_string_1000_28dc;
-use struct_ops::{process_struct_1000_179c, process_struct_1010_20ba, process_struct_1018_e91e};
+use string_ops::misc::process_string_1000_28dc;
+use struct_ops::process_struct_1010_20ba;
+use struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1018_e91e};
+use struct_ops::struct_ops_2::process_struct_1008_48fe;
 use sys_ops::dos_ops::{dos3_call_1000_23ea, get_dos_env_1000_27d6};
 use sys_ops::get_module_file_name_1000_262c;
 use ui_ops::msg_box::msg_box_1010_8bb4;
@@ -23,12 +26,10 @@ use winapi::{FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, Loc
 
 use crate::app_context::AppContext;
 use crate::err_ops::set_error_mode_1010_8b14;
-use crate::mem_funcs::{get_string_from_address, get_type_at_address};
-use crate::prog_structs::prog_structs_24::Struct103;
-use crate::prog_structs::prog_structs_26::Struct183;
-use crate::prog_structs::prog_structs_2::Struct7;
-use crate::prog_structs::prog_structs_31::Struct449;
-use crate::struct_ops::process_struct_1008_48fe;
+use crate::structs::prog_structs_24::Struct103;
+use crate::structs::prog_structs_26::Struct183;
+use crate::structs::prog_structs_2::Struct7;
+use crate::structs::prog_structs_31::Struct449;
 
 mod bad_funcs;
 mod big_funcs;
@@ -45,22 +46,19 @@ mod list_funcs;
 mod mem_funcs;
 mod other_funcs;
 mod sound_funcs;
-mod string_ops;
-mod struct_ops;
-mod sys_ops;
 mod ui_ops;
 mod util;
 mod loops;
 mod constants;
-mod prog_structs;
+mod structs;
 mod app_context;
 mod typedefs;
 mod sys_structs;
 mod winapi;
 mod pass;
-mod sys2;
-mod struct_ops2;
-mod string_ops2;
+mod sys_ops;
+mod struct_ops;
+mod string_ops;
 
 const INT_21: u16 = 0x21;
 
@@ -145,7 +143,8 @@ pub unsafe fn entry(
     call_fn_ptr_1000_24cd(ctx, Some(&fn_ptr_d));
     pass1_fn_1000_25a8(ctx);
     pass1_fn_1000_2913(ctx, 0);
-    let mut string_e = process_string_1000_28dc(ctx, (ctx.s_version__d__d_1050_0012 + 3));
+    let in_str_1 = ctx.s_version__d__d_1050_0012[3..].clone();
+    let mut string_e = process_string_1000_28dc(ctx, &in_str_1);
     if !string_e.is_empty() {
         offset_f = 9;
         if string_e[0] == 'M' {
@@ -195,213 +194,6 @@ pub unsafe fn entry(
         } {}
     }
 }
-
-// WARNING: Removing unreachable block (ram,0x10002400)
-// WARNING: Removing unreachable block (ram,0x10002422)
-
-// WARNING: Removing unreachable block (ram,0x10002513)
-// WARNING: Removing unreachable block (ram,0x10002557)
-
-/*
-Unable to decompile 'bad_1000_25f2'
-// Cause:
-Low-level Error: Overlapping input varnodes
-*/
-
-// WARNING (jumptable): Unable to track spacebase fully for stack
-// WARNING (jumptable): Heritage AFTER dead removal. Example location: r0x10505fc2 : 0x1000270c
-
-// WARNING: Restarted to delay deadcode elimination for space: ram
-
-pub fn exported_stub_1000_29dc() -> u16 {
-    if (___EXPORTEDSTUB != 0xb8) {
-        return ctx.stack_seg_reg;
-    }
-    return uRam100029ed;
-}
-
-pub fn ___EXPORTEDSTUB() -> u16 {
-    return 0;
-}
-
-// WARNING: Instruction at (ram,0x10083e27) overlaps instruction at (ram,0x10083e24)
-//
-// WARNING: Removing unreachable block (ram,0x10083e1f)
-
-/*
-Unable to decompile 'window_msg_func_1010_7300'
-// Cause: Exception while decompiling 1010:7300: The pipe is being closed
-
-*/
-
-pub unsafe fn mixed_fn_1010_830a(ctx: &mut AppContext, param_1: u32, param_2: u16) -> u32 {
-    let mut string_1: String;
-    let mut local_bx_20: Struct449;
-    let mut i_var2: u16;
-    // let mut unaff_ss: u16;
-    let mut struct_var3: Struct103;
-    let mut u_var3: String;
-    let mut local_32: u16;
-    let mut local_30: u16;
-    let mut local_2e: Struct7 = Struct7::new();
-    let mut local_2c: u16;
-    let mut string_2: String;
-    let mut local_8: u16;
-    let mut local_6: u32;
-
-    local_6 = 0;
-    // TODO
-    // local_bx_20 = (param_2 * 0x10); equiv to param_2 << 4
-    // u_var3 = (param_1 >> 0x10);
-    if local_bx_20.field_0x10 == 1 {
-        // TODO
-        //u_var1 = &local_bx_20.field_0x12;
-        string_2 = set_error_mode_1010_8b14(ctx, param_1, &string_1);
-        if (local_bx_20.field_0x12 == _local_a) && (local_bx_20.field_0x14 == (_local_a >> 0x10))
-        {
-            msg_box_1010_8bb4(ctx, param_1, &string_2);
-            return 0;
-        }
-        // let mut input_2 = get_string_from_address(CONCAT22(ctx.stack_seg_reg, ));
-        // in_struct_a = process_struct_1008_48fe(ctx, &mut input_2, 1, &string_2);
-        process_struct_1000_179c(0x1e, &mut struct_var3);
-        if struct_var3 == 0x0 {
-            local_6 = 0;
-        } else {
-            // let mut struct_var4: Struct183 = get_type_at_address::<Struct183>(CONCAT22(ctx.stack_seg_reg, local_2e));
-            //local_6 = pass1_1008_3f92(&mut struct_var3, &mut struct_var4);
-            pass1_1008_3f92(&mut struct_var3, &mut struct_var4);
-        }
-        close_file_1008_496c(ctx, &mut local_2e);
-        _local_2e = local_6;
-    } else {
-        if (param_2 * 0x10 + 0x10) == 2 {
-            _local_2e = pass1_1010_878c(param_1, (param_2 * 0x10 + 0x16));
-            if (param_1 + 0x67c) == 0 {
-                return 0;
-            }
-            i_var2 = param_2 * 0x10;
-            // pass1_1008_6562(
-            //     ctx,
-            //     (param_1 + 0x67c),
-            //     CONCAT22((i_var2 + 0x1c), (i_var2 + 0x1e)),
-            //     (i_var2 + 0x1a),
-            //     _local_2e,
-            //     (_local_2e >> 0x10),
-            // );
-        } else {
-            i_var2 = param_2 * 0x10;
-            if (i_var2 + 0x10) == 3 {
-                // string_1 = (i_var2 + 0x12);
-                _local_2e = set_error_mode_1010_8b14(ctx, param_1, &string_1);
-                if ((i_var2 + 0x12) == _local_2e) && ((i_var2 + 0x14) == (_local_2e >> 0x10)) {
-                    msg_box_1010_8bb4(ctx, param_1, _local_2e);
-                    _local_2e = _local_2e;
-                }
-            } else {
-                _local_2e = local_6;
-                if (param_2 * 0x10 + 0x10) == 4 {
-                    // string_1 = (param_2 * 0x10 + 0x12);
-                    _local_2e = set_error_mode_1010_8b14(ctx, param_1, &string_1);
-                }
-            }
-        }
-    }
-    local_6 = _local_2e;
-    return local_6;
-}
-
-/*
-Unable to decompile 'win_fn_1018_6086'
-// Cause:
-Low-level Error: Symbol $$undef00000006 extends beyond the end of the address space
-*/
-
-// WARNI
-
-/*
-Unable to decompile 'load_accelerators_1020_41c8'
-// Cause:
-Low-level Error: Symbol $$undef0000000c extends beyond the end of the address space
-*/
-
-// WARNING: Instruction at (ram,0x10207c29) overlaps instruction at (ram,0x10207c28)
-//
-
-/*
-Unable to decompile 'big_switch_statement_1020_c2f8'
-// Cause: Exception while decompiling 1020:c2f8: The pipe is being closed
-
-*/
-
-// Unable to decompile 'bad_1028_e28a'
-// WARNING: Instruction at (ram,0x10287af1) overlaps instruction at (ram,0x10287af0)
-// WARNING: Instruction at (ram,0x10389f8e) overlaps instruction at (ram,0x10389f8d)
-// WARNING: Instruction at (ram,0x1038aee3) overlaps instruction at (ram,0x1038aee2)
-// WARNING: Instruction at (ram,0x1038cb02) overlaps instruction at (ram,0x1038cb00)
-/*
-Unable to decompile 'bad1_1038_de20'
-// Cause: Exception while decompiling 1038:de20: The pipe is being closed
-*/
-// WARNING: Instruction at (ram,0x10407763) overlaps instruction at (ram,0x10407760)
-// Unable to decompile 'pass1_1040_805a'
-// WARNING: Instruction at (ram,0x1040d972) overlaps instruction at (ram,0x1040d96f)
-// WARNING: Removing unreachable block (ram,0x1040d9cd)
-// WARNING: Removing unreachable block (ram,0x1040d961)
-// WARNING: Removing unreachable block (ram,0x1040d9c8)
-// WARNING: Removing unreachable block (ram,0x1040d963)
-// WARNING: Removing unreachable block (ram,0x1040d986)
-// WARNING: Removing unreachable block (ram,0x1040d966)
-// WARNING: Removing unreachable block (ram,0x1040d968)
-// WARNING: Removing unreachable block (ram,0x1040d9d2)
-// WARNING: Removing unreachable block (ram,0x1040d96d)
-// WARNING: Removing unreachable block (ram,0x1040d9d4)
-// WARNING: Removing unreachable block (ram,0x1040d97a)
-// WARNING: Removing unreachable block (ram,0x1040d972)
-// WARNING: Removing unreachable block (ram,0x1040d9c1)
-// WARNING: Removing unreachable block (ram,0x1040d9bb)
-// WARNING: Instruction at (ram,0x105024ee) overlaps instruction at (ram,0x105024ed)
-// WARNING: Removing unreachable block (ram,0x105024ab)
-// WARNING: Instruction at (ram,0x10505f2b) overlaps instruction at (ram,0x10505f2a)
-// WARNING: Removing unreachable block (ram,0x10505a36)
-// WARNING: Removing unreachable block (ram,0x1050578b)
-// WARNING: Removing unreachable block (ram,0x1050571e)
-// WARNING: Removing unreachable block (ram,0x105057b9)
-// WARNING: Removing unreachable block (ram,0x1050582a)
-// WARNING: Removing unreachable block (ram,0x10505a0b)
-// WARNING: Removing unreachable block (ram,0x10505ce9)
-// WARNING: Removing unreachable block (ram,0x10505ceb)
-// WARNING: Removing unreachable block (ram,0x10505cf3)
-// WARNING: Removing unreachable block (ram,0x10505d30)
-// WARNING: Removing unreachable block (ram,0x10505d50)
-// WARNING: Removing unreachable block (ram,0x10505d52)
-// WARNING: Removing unreachable block (ram,0x10505d6b)
-// WARNING: Removing unreachable block (ram,0x10505d54)
-// WARNING: Removing unreachable block (ram,0x10505d6d)
-// WARNING: Removing unreachable block (ram,0x10505d56)
-// WARNING: Removing unreachable block (ram,0x10505d6f)
-// WARNING: Removing unreachable block (ram,0x10505d58)
-// WARNING: Removing unreachable block (ram,0x10505d5a)
-// WARNING: Removing unreachable block (ram,0x10505d75)
-// WARNING: Removing unreachable block (ram,0x10505d71)
-// WARNING: Removing unreachable block (ram,0x10505d67)
-// WARNING: Removing unreachable block (ram,0x10505d83)
-// WARNING: Heritage AFTER dead removal. Example location: s0xfffe : 0x105056f7
-// WARNING: Instruction at (ram,0x113800da) overlaps instruction at (ram,0x113800d9)
-// WARNING: Instruction at (ram,0x11a004b9) overlaps instruction at (ram,0x11a004b7)
-// WARNING: Removing unreachable block (ram,0x11a004a2)
-// WARNING: Removing unreachable block (ram,0x11a00452)
-// WARNING: Removing unreachable block (ram,0x11a00506)
-// WARNING: Removing unreachable block (ram,0x11a00508)
-// WARNING: Removing unreachable block (ram,0x11a0056f)
-// WARNING: Removing unreachable block (ram,0x11a0050e)
-// WARNING: Removing unreachable block (ram,0x11a00577)
-// WARNING: Removing unreachable block (ram,0x11d80447)
-// WARNING: Removing unreachable block (ram,0x11d80449)
-// WARNING: Removing unreachable block (ram,0x11d804bb)
-// WARNING: Removing unreachable block (ram,0x11d8043f)
-// WARNING: Removing unreachable block (ram,0x11d80441)
-// WARNING: Removing unreachable block (ram,0x11d804b0)
 
 fn main() {
     let mut ctx: AppContext = AppContext::new();

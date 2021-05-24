@@ -1,12 +1,13 @@
-use crate::{exported_stub_1000_29dc, winapi};
 use crate::app_context::AppContext;
 use crate::exit::{exit_1000_25cc, exit_1000_2950, return_1000_39e1};
 use crate::func_ptr_funcs::{call_fn_ptr_1000_256b, call_fn_ptr_1000_2594};
+use crate::other_funcs::exported_stub_1000_29dc;
 use crate::pass::pass_funcs::{pass1_fn_1000_29af, pass1_fn_1000_29b5, pass1_fn_1000_3bac, pass1_fn_1000_462e};
-use crate::prog_structs::prog_structs_25::Struct152;
-use crate::string_ops::process_string_1000_55b1;
+use crate::string_ops::misc::process_string_1000_55b1;
+use crate::structs::prog_structs_25::Struct152;
 use crate::typedefs::SEGPTR;
 use crate::util::{CARRY2, CONCAT11, POPCOUNT, SUB42};
+use crate::winapi;
 use crate::winapi::GetDOSEnviornment16;
 
 pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
@@ -14,7 +15,7 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let pc_var2: String;
     let pi_var3: i32;
     let mut c_var4: char;
-    let mut ppcVar5: String;
+    let mut string_var5: String;
     let mut i32_var6: i32;
     let mut i_var7: i32;
     let mut pi_var8: i32;
@@ -54,17 +55,17 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     }
     u_var13 = exit_1000_2950(ctx, u_var16);
     u_var14 = exit_1000_2950(ctx, None);
-    // pc_var15 = (u_var13 >> 0x10);
+    //// c_var15 = (u_var13  >> 0x10);
     pc_var10 = u_var13;
-    // uVar16 = (u_var14 >> 0x10);
+    //// Var16 = (u_var14  >> 0x10);
     ctx.PTR_LOOP_1050_5fbe = u_var14;
     pi_var8 = 0x0;
     loop {
         ctx.PTR_LOOP_1050_5fc0 = u_var14.clone();
-        ppcVar5 = u_var14.clone();
+        string_var5 = u_var14.clone();
         if i_var7 == 0 {
-            ppcVar5[0] = 0x0;
-            ppcVar5[1] = 0x0;
+            string_var5[0] = 0x0;
+            string_var5[1] = 0x0;
             return;
         }
         b_var12 = pi_var8 == ctx.s__C_FILE_INFO__1050_5f5c[0];
@@ -88,8 +89,8 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
             // goto LAB_1000_2867;
         } else {
             // LAB_1000_2867:
-            ppcVar5[0] = pc_var10;
-            ppcVar5[1] = pc_var15.clone();
+            string_var5[0] = pc_var10;
+            string_var5[1] = pc_var15.clone();
             // u_var14 = CONCAT22(ctx.PTR_LOOP_1050_5fc0, ppcVar5 + 2);
         }
         while {
@@ -127,7 +128,7 @@ pub unsafe fn get_dos_env_1000_27da() {
     let mut pc_var17: String = String::new();
 
     s_var15 = GetDOSEnviornment16();
-    // i32_var6 = (s_var15 >> 0x10);
+    //// 32_var6 = (s_var15  >> 0x10);
     // if s_var15 != 0 {
     //     i32_var6 = 0;
     // }
@@ -155,10 +156,10 @@ pub unsafe fn get_dos_env_1000_27da() {
         }
     }
     u_var16 = exit_1000_2950(ctx, None);
-    // pc_var17 = (u_var16 >> 0x10);
+    //// c_var17 = (u_var16  >> 0x10);
     pc_var12 = u_var16;
     u_var16 = exit_1000_2950(ctx, None);
-    // u_var7 = (u_var16 >> 0x10);
+    //// _var7 = (u_var16  >> 0x10);
     ppc_var8 = u_var16;
     // 0x5fbe = ppc_var8;
     // ctx.PTR_LOOP_1050_5fc0 = u_var7;
@@ -904,13 +905,13 @@ pub unsafe fn dos3_call_1000_42de(param_1: u32, param_2: &mut u16, param_3: &mut
 
     i32_var6 = unaff_bp + 1;
     u_var13 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
-    u_var8 = (param_1 >> 0x10);
+  // u_var8 = (param_1  >> 0x10);
     i_var7 = param_1;
     u_var5 = (i_var7 + 2);
     u_var4 = (i_var7 + 4);
     u_var1 = (i_var7 + 8);
     u_var8 = (i_var7 + 10);
-    u_var9 = (param_3 >> 0x10);
+  // u_var9 = (param_3  >> 0x10);
     unsafe {
         u_var10 = *param_3;
     }
@@ -924,7 +925,7 @@ pub unsafe fn dos3_call_1000_42de(param_1: u32, param_2: &mut u16, param_3: &mut
         *param_3 = u_var10;
     }
     (param_3 + 6) = u_var2;
-    u_var10 = (param_2 >> 0x10);
+  // u_var10 = (param_2  >> 0x10);
     i_var7 = param_2;
     unsafe {
         *param_2 = u_var12;

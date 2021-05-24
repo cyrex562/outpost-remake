@@ -1,16 +1,17 @@
-use crate::{mixed_fn_1010_830a, winapi};
 use crate::draw::text;
-use crate::other_funcs::{modify_list_1008_3f62, zero_list_1008_3e38};
+use crate::other_funcs::{mixed_fn_1010_830a, modify_list_1008_3f62, zero_list_1008_3e38};
 use crate::pass::pass14_funcs::pass1_1008_3e94;
-use crate::prog_structs::prog_structs_24::Struct2111;
-use crate::prog_structs::prog_structs_29::Struct375;
-use crate::prog_structs::prog_structs_2::Struct199;
-use crate::prog_structs::prog_structs_4::Struct652;
-use crate::struct_ops::{process_struct_1008_4772, process_struct_1010_1d48};
 use crate::struct_ops::process_struct_1010_20ba;
+use crate::struct_ops::struct_ops_2;
+use crate::struct_ops::struct_ops_2::{process_struct_1008_4772, process_struct_1010_1d48};
+use crate::structs::prog_structs_24::Struct2111;
+use crate::structs::prog_structs_29::Struct375;
+use crate::structs::prog_structs_2::Struct199;
+use crate::structs::prog_structs_4::Struct652;
 use crate::typedefs::{HDC16, HWND16};
 use crate::ui_ops::window;
 use crate::util::{CONCAT22, SUB42};
+use crate::winapi;
 use crate::winapi::{GetDC16, GetSystemMetrics16, GetWindowRect16, IsIconic16, ReleaseDC16};
 
 pub unsafe fn get_sys_metrics_1010_46f6(param_1: u32) {
@@ -33,12 +34,12 @@ pub unsafe fn get_sys_metrics_1010_46f6(param_1: u32) {
 
     pu_var9 = CONCAT22(unaff_ss, &local_4);
     puVar8 = &local_6;
-    ppVar6 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(puVar8, 0x48));
+    ppVar6 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(puVar8, 0x48));
     pass1_1008_3e94((ppVar6 + 0xe), CONCAT22(unaff_ss, puVar8), pu_var9);
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     i_var4 = param_1;
     u_var7 = process_struct_1008_4772((i_var4 + 0x66));
-    u_var1 = (u_var7 >> 0x10);
+  // u_var1 = (u_var7  >> 0x10);
     (i_var4 + 0x18) = local_4 + 8;
     (i_var4 + 0x1a) = local_6 + 9;
     i_var2 = winapi::GetSystemMetrics16(5);
@@ -67,12 +68,12 @@ pub unsafe fn get_sys_metrics_1018_09a8(param_1: u32) {
     let mut local_4: u16;
 
     local_4 = winapi::GetSystemMetrics16(4);
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     i_var4 = param_1;
     local_6 = (i_var4 + 0x12) - 2;
     puVar8 = CONCAT22(unaff_ss, &local_8);
     pu_var7 = &local_a;
-    ppVar6 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(pu_var7, 0x48));
+    ppVar6 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(pu_var7, 0x48));
     pass1_1008_3e94((ppVar6 + 0xe), CONCAT22(unaff_ss, pu_var7), puVar8);
     (i_var4 + 0x18) = local_6 * local_4 + local_8 + 0x146;
     (i_var4 + 0x1a) = local_6 * local_4 + local_a + 9;
@@ -93,7 +94,7 @@ pub fn get_sys_metrics_1018_1ea0(param_1: u32) {
     let mut u_var4: u16;
 
     i_var1 = winapi::GetSystemMetrics16(5);
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     (i_var3 + 0x2e) = i_var1 * 2 + (i_var3 + 0x36);
     i_var1 = winapi::GetSystemMetrics16(4);
@@ -122,12 +123,12 @@ pub unsafe fn get_sys_metrics_1018_2f56(param_1: u32) {
 
     pu_var9 = CONCAT22(unaff_ss, &local_4);
     puVar8 = &local_6;
-    ppVar6 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(puVar8, 0x48));
+    ppVar6 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(puVar8, 0x48));
     pass1_1008_3e94((ppVar6 + 0xe), CONCAT22(unaff_ss, puVar8), pu_var9);
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     i_var4 = param_1;
     u_var7 = process_struct_1008_4772((i_var4 + 0x24));
-    u_var1 = (u_var7 >> 0x10);
+  // u_var1 = (u_var7  >> 0x10);
     (i_var4 + 0x18) = local_4 + 0xb5;
     (i_var4 + 0x1a) = local_6 + 9;
     i_var2 = winapi::GetSystemMetrics16(5);
@@ -147,7 +148,7 @@ pub fn get_sys_metrics_1018_4b1e(
     let mut u_var2: u16;
 
     process_struct_1010_1d48(param_1, param_3);
-    u_var2 = (param_1 >> 0x10);
+  // u_var2 = (param_1  >> 0x10);
     i_var1 = param_1;
     (i_var1 + 0x12) = param_2;
     (i_var1 + 0x14) = 0;
@@ -194,7 +195,7 @@ pub fn get_system_metrics_1038_a18c(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    _local_6 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_4c, 0x27));
+    _local_6 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_4c, 0x27));
     zero_list_1008_3e38(CONCAT22(unaff_ss, local_c));
     modify_list_1008_3f62(
         CONCAT22(unaff_ss, local_c),
@@ -213,13 +214,13 @@ pub fn get_system_metrics_1038_a18c(param_1: u32) {
     pu_var5 = &local_1c;
     h_var6 = unaff_ss;
     HVar8 = unaff_ss;
-    _local_24 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(pu_var5, 0x48));
+    _local_24 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(pu_var5, 0x48));
     pass1_1008_3e94(
         (_local_24 + 0xe),
         CONCAT22(h_var6, pu_var5),
         CONCAT22(HVar8, pu_var7),
     );
-    u_var4 = (_local_24 >> 0x10);
+  // u_var4 = (_local_24  >> 0x10);
     local_1e = (_local_24 + 10);
     local_20 = (_local_24 + 0xc);
     local_10 = local_10 + (local_20 * 10) / 600 + (_local_18 + 8) + local_1c;
@@ -245,7 +246,7 @@ pub fn get_system_metrics_1038_a18c(param_1: u32) {
 }
 
 pub fn get_sys_metrics_1040_8c66(param_1: u32) {
-    let pi_var1: *mut i32;
+    let pi_var1: &mut  i32;
     let mut b_var2: u8;
     let mut HVar3: HDC16;
     let mut i_var4: u16;
@@ -253,7 +254,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: u32) {
     let mut u_var6: u16;
     let mut local_4: u16;
 
-    u_var6 = (param_1 >> 0x10);
+  // u_var6 = (param_1  >> 0x10);
     i_var5 = param_1;
     HVar3 = GetDC16((i_var5 + 6));
     text::draw_text_1040_8d14(param_1, HVar3);
@@ -284,7 +285,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: u32) {
     return;
 }
 
-pub fn get_sys_metrics_1020_7a50(param_1: *mut Struct652) {
+pub fn get_sys_metrics_1020_7a50(param_1: &mut  Struct652) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let b_var3: bool;
@@ -305,7 +306,7 @@ pub fn get_sys_metrics_1020_7a50(param_1: *mut Struct652) {
     local_8 = 0;
     local_6 = 0;
     local_4 = 0;
-    u_var7 = (param_1 >> 0x10);
+  // u_var7 = (param_1  >> 0x10);
     i32_var6 = param_1;
     b_var3 = IsIconic16((i32_var6 + 8));
     if (b_var3 == 0) {

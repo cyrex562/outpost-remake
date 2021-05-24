@@ -5,15 +5,11 @@ use crate::{
     func_ptr_funcs::call_fn_ptr_1000_24cd,
     list_funcs::modify_u16_list_1008_5c34,
     other_funcs::return_1008_53aa,
-    string_ops::{
-        copy_string_1000_3d3e, fn_1008_6048, pass1_1030_532e, process_string_1000_3cea,
-        process_string_1000_4d58,
-    },
-    struct_ops::process_struct_1000_179c,
+    string_ops::pass1_1030_532e,
     util::{CONCAT22, SUB21, SUB42},
 };
 use crate::app_context::AppContext;
-use crate::mem_funcs::get_fn_ptr_at_address;
+use crate::mem_funcs::mem_ops_1::get_fn_ptr_at_address;
 use crate::pass::pass13_funcs::pass1_1008_a086;
 use crate::pass::pass14_funcs::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_8aa2};
 use crate::pass::pass17_funcs::{pass1_1030_8128, pass1_1030_8210, pass1_1030_8334, pass1_1030_835a};
@@ -23,17 +19,19 @@ use crate::pass::pass_funcs::{
     pass1_1008_397a,
     pass1_fn_1000_21b6,
 };
-use crate::prog_structs::prog_structs_13::Struct363;
-use crate::prog_structs::prog_structs_15::Struct444;
-use crate::prog_structs::prog_structs_16::Struct13;
-use crate::prog_structs::prog_structs_2::{Struct199, Struct7};
-use crate::prog_structs::prog_structs_31::Struct348;
-use crate::prog_structs::prog_structs_7::Struct44;
+use crate::string_ops::misc::{copy_string_1000_3d3e, fn_1008_6048, process_string_1000_3cea, process_string_1000_4d58};
+use crate::struct_ops::struct_ops_2::process_struct_1000_179c;
+use crate::structs::prog_structs_13::Struct363;
+use crate::structs::prog_structs_15::Struct444;
+use crate::structs::prog_structs_16::Struct13;
+use crate::structs::prog_structs_2::{Struct199, Struct7};
+use crate::structs::prog_structs_31::Struct348;
+use crate::structs::prog_structs_7::Struct44;
 use crate::sys_ops::dos_ops::dos3_call_1000_51aa;
 use crate::sys_ops::pass1_1030_838e;
+use crate::ui_ops::misc::pass1_1038_af34;
 use crate::ui_ops::msg_box::msg_box_1000_1f24;
 use crate::ui_ops::window::win_cleanup_fn_1040_a294;
-use crate::ui_ops::misc::pass1_1038_af34;
 use crate::winapi::SetErrorMode16;
 
 pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext) -> bool {
@@ -56,7 +54,7 @@ pub unsafe fn error_check_1000_16ee(ctx: &mut AppContext, param_1: u16, param_2:
 }
 
 pub unsafe fn error_check_1000_17ce(ctx: &mut AppContext, struct_param_1: &mut Struct7) -> bool {
-    let mut b_var1 = ((struct_param_1 >> 0x10) | struct_param_1) != 0;
+    let mut// _var1 = ((struct_param_1  >> 0x10) | struct_param_1) != 0;
     // let mut b_var1 = in_struct_1.is_some();
     if struct_param_1 != 0 {
         // let param_1_val = in_struct_1.unwrap();
@@ -73,7 +71,7 @@ pub unsafe fn error_check_1000_18d2(ctx: &mut AppContext, param_1: i32, param_2:
     return;
 }
 
-pub unsafe fn invoke_error_handler_1000_1e61(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: u16) {
+pub unsafe fn invoke_error_handler_1000_1e61(ctx: &mut AppContext, param_1: u16, param_2: u32) {
     _SHI_INVOKEERRORHANDLER1(ctx);
     return;
 }
@@ -157,11 +155,11 @@ pub unsafe fn handle_error_1008_0036(ctx: &mut AppContext, param_1: u32) {
         local_CS__1 = 0x1000;
         error_check_1000_17ce(pa_var3);
     }
-    pa_var3 = ctx._g_Struct372_1050_0ed0;
-    if (ctx._g_Struct372_1050_0ed0 != 0x0) {
+    pa_var3 = ctx.g_struct_var_1050_0ed0;
+    if (ctx.g_struct_var_1050_0ed0 != 0x0) {
         pass1_1010_2050(
-            ctx._g_Struct372_1050_0ed0,
-            (ctx._g_Struct372_1050_0ed0 >> 0x10),
+            ctx.g_struct_var_1050_0ed0,
+            (ctx.g_struct_var_1050_0ed0 >> 0x10),
         );
         local_CS__1 = 0x1000;
         error_check_1000_17ce(pa_var3);
@@ -187,12 +185,12 @@ pub unsafe fn handle_error_1008_0036(ctx: &mut AppContext, param_1: u32) {
             1,
         );
     }
-    if ctx._g_struct_ptr_1050_02a0 != 0x0 {
-        fn_ptr_2 = get_fn_ptr_at_address(ctx._g_struct_ptr_1050_02a0);
+    if ctx.g_struct_1050_02a0 != 0x0 {
+        fn_ptr_2 = get_fn_ptr_at_address(ctx.g_struct_1050_02a0);
         (**fn_ptr_2)(
             local_CS__1,
-            ctx._g_struct_ptr_1050_02a0,
-            (ctx._g_struct_ptr_1050_02a0 >> 0x10),
+            ctx.g_struct_1050_02a0,
+            (ctx.g_struct_1050_02a0 >> 0x10),
             1,
         );
     }
@@ -281,7 +279,7 @@ pub unsafe fn error_check_1008_8e74(param_1: &mut Struct44, param_2: u8) -> &mut
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn handle_error_1008_9466(ctx: &mut AppContext, param_1: *mut u16) {
+pub unsafe fn handle_error_1008_9466(ctx: &mut AppContext, param_1: &mut  u16) {
     unsafe { *param_1 = 0x52a };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
     error_check_1000_17ce(ctx._PTR_LOOP_1050_0392);
@@ -313,7 +311,7 @@ pub unsafe fn set_error_mode_1010_8b14(
     let mut local_c: u16;
     let mut local_a: [u8; 8];
 
-    u_var3 = (param_1 >> 0x10);
+  // u_var3 = (param_1  >> 0x10);
     pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_a), (param_1 + 0xe84));
     mode = SetErrorMode16(1);
     while {
@@ -335,8 +333,8 @@ pub unsafe fn set_error_mode_1010_8b14(
 pub unsafe fn set_error_mode_1010_85be(
     ctx: &mut AppContext,
     param_1: u32,
-    in_struct_1: *mut Struct13,
-    in_struct_1_hi: *mut Struct13,
+    in_struct_1: &mut  Struct13,
+    in_struct_1_hi: &mut  Struct13,
 ) {
     let mut u_var1: u32;
     let mut unaff_ss: u16;
@@ -348,7 +346,7 @@ pub unsafe fn set_error_mode_1010_85be(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if (in_struct_1 == &ctx.dos_alloc_addr_1050_0002) {
+    if in_struct_1 == ctx.dos_alloc_addr_1050_0002 {
         u_var1 = (in_struct_1_hi * 4 + 0x2e34);
         process_string_1000_4d58(u_var1 & 0xffff0000 | (u_var1 + 3), 0, 0);
         copy_string_1000_3d3e(CONCAT22(unaff_ss, string_3), ctx.s_male_1050_14c6);
@@ -361,13 +359,13 @@ pub unsafe fn set_error_mode_1010_85be(
     return;
 }
 
-pub unsafe fn error_check_1040_a582(param_1: *mut u32) {
+pub unsafe fn error_check_1040_a582(param_1: &mut  u32) {
     let param_1_val = unsafe { *param_1 };
     error_check_1000_17ce(param_1_val);
     return;
 }
 
-pub unsafe fn cleanup_1040_a4c2(param_1: *mut Struct348, param_2: u8) -> *mut Struct348 {
+pub unsafe fn cleanup_1040_a4c2(param_1: &mut  Struct348, param_2: u8) -> &mut  Struct348 {
     win_cleanup_fn_1040_a294(param_1);
     if ((param_2 & 1) != 0) {
         error_check_1000_17ce(param_1);
@@ -384,7 +382,7 @@ pub unsafe fn error_check_1040_8db6(param_1: &mut Struct44, param_2: u8) -> &mut
 }
 
 pub unsafe fn error_check_1040_869a(ctx: &mut AppContext, param_1: &mut Struct363) {
-    let local_bx_4: *mut Struct363;
+    let local_bx_4: &mut  Struct363;
     local_bx_4 = param_1;
     param_1.u16_field_0x0 = 0x8ddc;
     // TODO
@@ -422,13 +420,13 @@ pub unsafe fn pass1_1030_e282(
     return param_1;
 }
 
-pub unsafe fn pass1_1030_4538(param_1: *mut &mut Struct44) {
+pub unsafe fn pass1_1030_4538(param_1: &mut  &mut Struct44) {
     let mut u_var1: u16;
 
     let param_1_val = unsafe { *param_1 };
 
     error_check_1000_17ce(param_1_val);
-    u_var1 = (param_1 >> 0x10);
+  // u_var1 = (param_1  >> 0x10);
     error_check_1000_17ce((param_1 + 0x12));
     error_check_1000_17ce((param_1 + 0x15c));
     return;

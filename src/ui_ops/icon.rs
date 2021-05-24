@@ -1,22 +1,22 @@
 use std::intrinsics::offset;
 
-use crate::ui_ops::cursor::load_cursor_1020_7f7a;
 use crate::pass::pass8_funcs::pass1_1010_1dda;
-use crate::prog_structs::prog_structs_25::Struct65;
-use crate::prog_structs::prog_structs_29::Struct48;
-use crate::prog_structs::prog_structs_4::Struct652;
-use crate::struct_ops::process_struct_1010_20ba;
+use crate::struct_ops::{process_struct_1010_20ba, struct_ops_2};
+use crate::structs::prog_structs_25::Struct65;
+use crate::structs::prog_structs_29::Struct48;
+use crate::structs::prog_structs_4::Struct652;
+use crate::ui_ops::cursor::load_cursor_1020_7f7a;
 use crate::util::CONCAT22;
 use crate::winapi::DestroyIcon16;
 
-pub fn destroy_icon_func_1020_1038(in_struct_1: *mut Struct48) {
-    let pu_var1: *mut u32;
+pub fn destroy_icon_func_1020_1038(in_struct_1: &mut  Struct48) {
+    let pu_var1: &mut  u32;
     let mut u_var2: i32;
-    let local_struct_1: *mut Struct48;
-    let local_struct_1_hi: *mut Struct48;
+    let local_struct_1: &mut  Struct48;
+    let local_struct_1_hi: &mut  Struct48;
     let fn_ptr_1: fn();
 
-    local_struct_1_hi = (in_struct_1 >> 0x10);
+  // local_struct_1_hi = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     DestroyIcon16(local_struct_1.handle_0xc2);
     local_struct_1.handle_0xc2 = 0;
@@ -42,7 +42,7 @@ pub fn destroy_icon_1020_2c88(param_1: &mut Struct652) {
     let mut i_var4: i32;
     let mut u_var5: u16;
 
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     i_var4 = param_1;
     DestroyIcon16((i_var4 + 0xc2));
     (i_var4 + 0xc2) = 0;
@@ -67,10 +67,10 @@ pub fn call_load_cursor_1020_2524(in_struct_1: &mut Struct65, param_2: u16, para
     let mut i_var1: i32;
     let mut local_BP__1: u16;
     let mut local_es_21: u16;
-    let ppVar2: &mut pass1_struct_1;
+    let ppVar2: &mut Struct2551;
 
     load_cursor_1020_7f7a(in_struct_1, CONCAT22(param_2, 7), param_3);
-    local_es_21 = (in_struct_1 >> 0x10);
+  // local_es_21 = (in_struct_1  >> 0x10);
     i_var1 = in_struct_1;
     (i_var1 + 0xee) = 0;
     (i_var1 + 0xf2) = 0;
@@ -78,8 +78,8 @@ pub fn call_load_cursor_1020_2524(in_struct_1: &mut Struct65, param_2: u16, para
     (i_var1 + 2) = 0x1020;
     (i_var1 + 0xe2) = (s_fem51_wav_1050_27a2 + 6);
     (i_var1 + 0xe4) = 0x1020;
-    ppVar2 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(local_BP__1, 0x2a));
-    local_DX_71 = (ppVar2 >> 0x10);
+    ppVar2 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_BP__1, 0x2a));
+  // local_DX_71 = (ppVar2  >> 0x10);
     (i_var1 + 0xf2) = ppVar2;
     (i_var1 + 0xf4) = local_DX_71;
     (i_var1 + 0xe6) = (i_var1 + 0xf2);

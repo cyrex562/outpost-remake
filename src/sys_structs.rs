@@ -10,7 +10,7 @@
 
 
 
-// typedef PDEVMODEA: *mut libc::c_void,
+// typedef PDEVMODEA: &mut  libc::c_void,
 // type PDEVMODEA = mut ptr libc::c_libc::c_void,
 
 
@@ -64,7 +64,7 @@ impl RECT16 {
 // typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
 pub struct WNDCLASS16 {
     pub style: u16,
-    pub lp_fn_wnd_proc: *mut libc::c_void,
+    pub lp_fn_wnd_proc: &mut  libc::c_void,
     pub cb_cls_extra: i16,
     pub cb_wnd_extra: i16,
     pub h_instance: HINSTANCE16,

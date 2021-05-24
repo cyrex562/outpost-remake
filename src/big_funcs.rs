@@ -1,19 +1,25 @@
 use crate::{
     defines::{
-        AppContext, pass1_struct_1, Struct199, Struct306, Struct345, Struct65, Struct657, Struct675,
+        AppContext, Struct199, Struct2551, Struct306, Struct345, Struct65, Struct657, Struct675,
     },
     func_ptr_funcs::call_fn_ptr_1000_24cd,
     other_funcs::big_fn_1010_b038,
     sound_funcs::{mci_fn_1020_08b6, mci_send_cmd_1008_5c5c},
-    string_ops::fn_1008_6048,
-    struct_ops::process_struct_1000_179c,
     util::{CONCAT22, SUB21, ZEXT24},
 };
+use crate::app_context::AppContext;
 use crate::pass::pass14_funcs::{pass1_1008_57a4, pass1_1008_5b12, pass1_1008_6978, pass1_fn_1008_60e8};
 use crate::pass::pass19_funcs::{pass1_1018_c958, pass1_1018_c9a6, pass1_1018_c9f4, pass1_1018_ca48, pass1_1018_ca96, pass1_1018_caea, pass1_1018_cb38, pass1_1018_cb86, pass1_1018_cbda, pass1_1018_cc28, pass1_1018_cc76, pass1_1018_ccc4, pass1_1018_cd12, pass1_1018_cd60, pass1_1018_cf74, pass1_1018_e230, pass1_1040_a626};
 use crate::pass::pass4_funcs::pass1_1028_b58e;
 use crate::pass::pass7_funcs::pass1_1018_66cc;
-use crate::struct_ops::{process_struct_1010_20ba, process_struct_1018_e5dc, process_struct_1018_e91e};
+use crate::string_ops::misc::fn_1008_6048;
+use crate::struct_ops::{process_struct_1010_20ba, struct_ops_2};
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1018_e5dc, process_struct_1018_e91e};
+use crate::structs::prog_structs_20::Struct345;
+use crate::structs::prog_structs_25::Struct65;
+use crate::structs::prog_structs_2::Struct199;
+use crate::structs::prog_structs_4::Struct657;
+use crate::structs::prog_structs_6::Struct675;
 use crate::ui_ops::cursor::{load_cursor_1018_5840, load_cursor_1018_7248, load_cursor_1018_72b4, load_cursor_1018_75d8, load_cursor_1018_782a, load_cursor_fn, load_cursor_fn_1018_6d02, load_cursor_fn_1018_6d38, load_cursor_fn_1018_6d6e, load_cursor_fn_1018_6da4, load_cursor_fn_1018_6dda, load_cursor_fn_1018_6e10, load_cursor_fn_1018_6e46, load_cursor_fn_1018_6e7c, load_cursor_fn_1018_6eb2, load_cursor_fn_1018_6ee8, load_cursor_fn_1018_6f1e, load_cursor_fn_1018_6f54, load_cursor_fn_1018_6f8a, load_cursor_fn_1018_6fc0, load_cursor_fn_1018_6ff6, load_cursor_fn_1018_702c, load_cursor_fn_1018_7062, load_cursor_fn_1018_7098, load_cursor_fn_1018_70ce, load_cursor_fn_1018_7104, load_cursor_fn_1018_713a, load_cursor_fn_1018_7170, load_cursor_fn_1018_71a6, load_cursor_fn_1018_71dc, load_cursor_fn_1018_7212, load_cursor_fn_1018_727e, load_cursor_fn_1018_72ea, load_cursor_fn_1018_7320, load_cursor_fn_1018_7356, load_cursor_fn_1018_738c, load_cursor_fn_1018_73c2, load_cursor_fn_1018_73f8, load_cursor_fn_1018_745e, load_cursor_fn_1018_7494, load_cursor_fn_1018_74ca, load_cursor_fn_1018_7500, load_cursor_fn_1018_7536, load_cursor_fn_1018_756c, load_cursor_fn_1018_75a2, load_cursor_fn_1018_760e, load_cursor_fn_1018_7644, load_cursor_fn_1018_767a, load_cursor_fn_1018_76b0, load_cursor_fn_1018_76e6, load_cursor_fn_1018_771c, load_cursor_fn_1018_7752, load_cursor_fn_1018_7788, load_cursor_fn_1018_77be, load_cursor_fn_1018_77f4, load_cursor_fn_1018_7896, load_cursor_fn_1018_78cc, load_cursor_fn_1018_7902, load_cursor_fn_1018_7938, load_cursor_fn_1018_796e, load_cursor_fn_1018_79a4, load_cursor_fn_1018_79da, load_cursor_fn_1018_7a10, load_cursor_fn_1018_7a46, load_cursor_fn_1018_7a7c, load_cursor_fn_1018_7ab2, load_cursor_fn_1018_7ae8, load_cursor_fn_1018_7b1e, load_cursor_fn_1018_7b54, load_cursor_fn_1018_7b8a, load_cursor_fn_1018_7bc0, load_cursor_fn_1018_7bf6, load_cursor_fn_1018_7c2c, load_cursor_fn_1018_7c62, load_cursor_fn_1018_7c98, load_cursor_fn_1018_7cce, load_cursor_fn_1018_7d04, load_cursor_fn_1018_7d3a, load_cursor_fn_1018_7d70};
 use crate::ui_ops::cursor::call_load_cursor_fn_1020_7554;
 use crate::ui_ops::icon::call_load_cursor_1020_2524;
@@ -24,13 +30,13 @@ pub unsafe fn call_big_fn_1040_b17c(
     in_u32_b: u32,
 ) {
     let mut u32_a: u32;
-    let pu16_b: *mut u16;
+    let pu16_b: &mut  u16;
     let mut u16_c: u16;
     let mut u16_d: u16;
-    let pstruct_e: *mut Struct345;
+    let pstruct_e: &mut  Struct345;
     let mut u16_f: u16;
     let mut u16_g: u16;
-    let pustruct_h: *mut pass1_struct_1;
+    let pustruct_h: &mut  Struct2551;
     let mut u32_j: u32;
     let mut u16_k: u16;
     let mut u16_m: u16;
@@ -41,7 +47,7 @@ pub unsafe fn call_big_fn_1040_b17c(
 
     u16_n = 0;
     loop {
-        // u_var4 = (param_1 >> 0x10);
+        //// _var4 = (param_1  >> 0x10);
         let pustruct_p = in_pustruct_a;
         pu_var2 = pustruct_p.field_0x90;
         // if *pu_var2 == u16_n || *pu_var2 < u16_n {
@@ -56,7 +62,7 @@ pub unsafe fn call_big_fn_1040_b17c(
         todo!();
         u16_n = u16_n + 1;
     }
-    pustruct_h = process_struct_1010_20ba(ctx._g_struct_372_1050_0ed0, CONCAT22(u16_f, 3));
+    pustruct_h = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_1050_0ed0, CONCAT22(u16_f, 3));
     pu_var2 = (*pstruct_e).field_0x90;
     u32_j = (pu_var2 + 2) as u32;
     u16_n = 0;
@@ -88,20 +94,20 @@ pub unsafe fn call_big_fn_1040_b17c(
 // WARNING: Removing unreachable block (ram,0x100051c5)
 // WARNING: Removing unreachable block (ram,0x100051d9)
 // WARNING: Removing unreachable block (ram,0x10005214)
-pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, param_2: u16) {
-    let pi32_a: *mut i32;
+pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: &mut  Struct657, param_2: u16) {
+    let pi32_a: &mut  i32;
     let mut u32_b: u32;
     let mut i32_c: i32;
     let mut string_d: String;
     let mut i32_e: i32;
-    let pustruct_f: *mut Struct199;
+    let pustruct_f: Struct199;
     let mut i32_g: i32;
 
     let mut extraout_dx_04: i32;
     let mut extraout_dx_05: i32;
     let mut extraout_dx_06: i32;
     let mut extraout_dx_07: i32;
-    let pustruct_h: *mut Struct199;
+    let pustruct_h: Struct199;
     let mut extraout_dx_08: i32;
     let mut extraout_dx_09: i32;
     let mut extraout_dx_10: i32;
@@ -198,8 +204,8 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
     let mut i32_k: i32;
     let mut i32_m: i32;
     let mut stack_seg_n: u16;
-    let pustruct_p: *mut Struct65;
-    let mut param_1_hi: u16;
+    let pustruct_p: &mut  Struct65;
+    // let mut param_1_hi: u16;
     let mut u32_r: u32;
     let mut u32_s: u32;
     let mut u16_t: u16;
@@ -220,7 +226,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
     while {
         string_d = string_w;
         // TODO
-        //let in_1: *mut Struct306 = CONCAT22(stack_seg_n, string_d);
+        //let in_1: &mut  Struct306 = CONCAT22(stack_seg_n, string_d);
         pass1_1008_5b12(in_1);
         // pustruct_f = i32_e | string_d;
         if pustruct_f == 0 {
@@ -239,13 +245,13 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
     if (u32_x != 0) {
         return;
     }
-    param_1_hi = (param_1 >> 0x10);
+    //// aram_1_hi = (param_1  >> 0x10);
     match param_2 - 1 {
         0 => {
             process_struct_1000_179c(0xec, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut Struct675 = param_1;
+                let mut input_a: &mut  Struct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -258,7 +264,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
             process_struct_1000_179c(0xfa, pustruct_f);
             if ((pustruct_f | i32_k) == 0) {
                 u32_x = 0;
-                let mut input_a: *mut Struct675 = param_1;
+                let mut input_a: &mut  Struct675 = param_1;
                 pass1_1008_6978(input_a, 0, u32_x);
                 return;
             }
@@ -267,7 +273,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
             unsafe {
                 *pi32_a = *pi32_a + 1;
             }
-            let input_a: *mut Struct65 = CONCAT22(pustruct_f, i32_k);
+            let input_a: &mut  Struct65 = CONCAT22(pustruct_f, i32_k);
             process_struct_1018_e91e(input_a, (i32_c + 0xcc), param_1);
             i32_j = extraout_dx_05;
         }
@@ -371,7 +377,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
             i32_j = ctx.dx_reg;
         }
         10 => {
-            mci_send_cmd_1008_5c5c(ctx._g_struct_ptr_1050_02a0, 0x1d3);
+            mci_send_cmd_1008_5c5c(ctx.g_struct_1050_02a0, 0x1d3);
             pustruct_f = pustruct_h;
             process_struct_1000_179c(0xf2, pustruct_h);
             if ((pustruct_f | i32_k) == 0) {
@@ -872,7 +878,7 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
                 *pi32_a = *pi32_a + 1;
             }
             pustruct_p = pass1_1018_cbda(CONCAT22(pustruct_f, i32_k), (i32_c + 0xcc), param_1);
-            i32_j = (pustruct_p >> 0x10);
+            //// 32_j = (pustruct_p  >> 0x10);
             i32_k = pustruct_p;
         }
         0x2e => {
@@ -1695,9 +1701,9 @@ pub unsafe fn big_fn_1008_15d4(ctx: &mut AppContext, param_1: *mut Struct657, pa
 
 fn load_accelerators_1020_41c8(
     i32_k: i32,
-    pustruct_f: *mut Struct199,
+    pustruct_f: &mut  Struct199,
     i32_c: i32,
-    param_1: *mut Struct657,
+    param_1: &mut  Struct657,
 ) -> () {
     todo!()
 }
@@ -1709,13 +1715,13 @@ pub unsafe fn call_big_fn_1010_1788(
     param_1_00: u32,
 ) {
     let u_var1: u8;
-    let ppVar2: *mut pass1_struct_1;
+    let ppVar2: &mut  Struct2551;
     let mut in_stack_0000fff4: u32;
     let mut local_6: u16;
     let mut local_4: u16;
 
-    ppVar2 = process_struct_1010_20ba(
-        ctx._g_Struct372_1050_0ed0,
+    ppVar2 = struct_ops_2::process_struct_1010_20ba(
+        ctx.g_struct_var_1050_0ed0,
         CONCAT22((in_stack_0000fff4 >> 0x10), 3),
     );
     u_var1 = pass1_1028_b58e(param_1_00);
@@ -1743,7 +1749,7 @@ pub fn call_big_fn_1010_c7e2(ctx: &mut AppContext, param_1: u32, param_2: u32, p
 
     local_4 = 0;
     while (true) {
-        u_var4 = (param_3 >> 0x10);
+        //// _var4 = (param_3  >> 0x10);
         i_var3 = param_3;
         if (param_3 == local_4 || param_3 < local_4) {
             break;

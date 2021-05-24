@@ -10,18 +10,18 @@ use crate::pass::pass17_funcs::{pass1_1030_69cc, pass1_1030_6fa0, pass1_1030_73a
 use crate::pass::pass20_funcs::pass1_1010_c3c2;
 use crate::pass::pass7_funcs::pass1_1018_2504;
 use crate::pass::pass8_funcs::process_struct_1010_20ba;
-use crate::prog_structs::prog_structs_15::Struct26;
-use crate::prog_structs::prog_structs_27::pass1_struct_2;
-use crate::prog_structs::prog_structs_2::Struct7;
-use crate::prog_structs::prog_structs_31::Struct27;
-use crate::prog_structs::prog_structs_7::{Struct215, Struct44};
+use crate::structs::prog_structs_15::Struct26;
+use crate::structs::prog_structs_27::pass1_struct_2;
+use crate::structs::prog_structs_2::Struct7;
+use crate::structs::prog_structs_31::Struct27;
+use crate::structs::prog_structs_7::{Struct215, Struct44};
 use crate::sound_funcs::mci_send_command_1008_5c7c;
-use crate::string_ops::copy_string_1000_3d3e;
+use crate::string_ops::misc::copy_string_1000_3d3e;
 use crate::typedefs::{HMENU16, HWND16};
 use crate::ui_ops::ui2;
 use crate::util::{CONCAT22, CONCAT31, SUB42, ZEXT24};
 use crate::winapi::{CheckMenuItem16, ClientToScreen16, DeleteMenu16, DestroyMenu16, EnableMenuItem16, GetMenuState16, GetSubMenu16, InsertMenu16, LoadMenu16, ModifyMenu16, PostMessage16, PtInRect16, TrackPopupMenu16};
-use crate::mem_funcs::StructuredData;
+use crate::mem_funcs::mem_ops_1::StructuredData;
 
 pub fn enable_menu_item_1020_1000(param_1: u16, param_2: HMENU16) {
     if param_1 != 0 {
@@ -101,7 +101,7 @@ pub fn destroy_menu_func_1020_795c(struct_param_1: &mut Struct7) {
     // let local_struct_1_hi: Struct215;
     let mut menu_handle: HMENU16;
 
-    // local_struct_1_hi = (in_struct_1 >> 0x10);
+    //// ocal_struct_1_hi = (in_struct_1  >> 0x10);
     // local_struct_1 = in_struct_1;
     struct_param_1.ptr_a_lo = 0x7b86;
     struct_param_1.ptr_a_hi = 0x1020;
@@ -145,7 +145,7 @@ pub fn track_popup_menu_1020_7ad2(ctx: &mut AppContext, param_1: &mut Structured
     let mut local_4: u16;
     let mut offset: u16;
 
-    // u_var3 = (param_1 >> 0x10);
+    //// _var3 = (param_1  >> 0x10);
     // i_var2 = param_1;
     if ((param_1 + 0xee) != 0) && ((param_1 + 0xec) == 0) {
         menu_handle_var1 = LoadMenu16(ctx.g_h_instance_1050_038c, (param_1 + 0xee));
@@ -189,7 +189,7 @@ pub unsafe fn track_popup_menu_1020_5bf2(
     let mut tile_menu_handle: u16;
     let mut HVar2: HMENU16;
     let mut u_var3: i32;
-    let local_bx_18: *mut Struct26;
+    let local_bx_18: &mut  Struct26;
     let mut u_var4: u16;
     let mut unaff_cs: u16;
     let mut h_window: u16;
@@ -205,7 +205,7 @@ pub unsafe fn track_popup_menu_1020_5bf2(
 
     local_6 = param_3;
     local_4 = param_2;
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     local_bx_18 = param_1;
     iVar1 = pass1_1020_64d4(local_bx_18.field_0xf6, 2);
     if (iVar1 != 0) {
@@ -222,7 +222,7 @@ pub unsafe fn track_popup_menu_1020_5bf2(
         return 0;
     }
     u_var5 = rect::pt_in_rect_1020_5856(param_1, CONCAT22(h_window, &local_6));
-    u_var3 = (u_var5 >> 0x10);
+  // u_var3 = (u_var5  >> 0x10);
     local_bx_18.field_0x108 = u_var5;
     &local_bx_18.field_0x10a = u_var3;
     if (u_var3 | local_bx_18.field_0x108) == 0 {
@@ -253,7 +253,7 @@ pub unsafe fn track_popup_menu_1020_5bf2(
     }
     if (local_c != 0) {
         unaff_cs = SUB42(&ctx.PTR_LOOP_1050_1008, 0);
-        mci_send_command_1008_5c7c(ctx._g_struct_ptr_1050_02a0, CONCAT22(local_c, 1));
+        mci_send_command_1008_5c7c(ctx.g_struct_1050_02a0, CONCAT22(local_c, 1));
     }
     local_10 = param_3;
     local_e = param_2;
@@ -272,8 +272,8 @@ pub unsafe fn enable_menu_item_1020_44ec(
     let mut u_var1: u32;
     let u_var2: u8;
     let mut u_var3: i32;
-    let ppVar4: *mut pass1_struct_2;
-    let pu_var5: *mut u16;
+    let ppVar4: &mut  pass1_struct_2;
+    let pu_var5: &mut  u16;
     let b_var6: bool;
     let extraout_var;
     let mut in_dx: i32;
@@ -288,7 +288,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
     let mut h_var13: HMENU16;
     let mut h_menu: u16;
     let mut local_138: u16;
-    let pp_stack_310: *mut pass1_struct_2;
+    let pp_stack_310: &mut  pass1_struct_2;
     let mut local_134: u16;
     let mut local_130: u16;
     let mut local_12e: u16;
@@ -306,7 +306,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
     let mut local_4: u16;
     let mut offset: u16;
 
-    u_var10 = (param_1 >> 0x10);
+  // u_var10 = (param_1  >> 0x10);
     i_var8 = param_1;
     if ((i_var8 + 0x106) != 0) {
         if (*(i_var8 + 0x106) == param_3) {
@@ -315,7 +315,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
             u_var1 = (i_var8 + 0x108);
             local_8 = (u_var1 + 0x2e);
             u_var1 = (i_var8 + 0x108);
-            u_var11 = (u_var1 >> 0x10);
+          // u_var11 = (u_var1  >> 0x10);
             i_var9 = u_var1;
             local_128 = (i_var9 + 0x42);
             u_var7 = (i_var9 + 0x44);
@@ -389,8 +389,8 @@ pub unsafe fn enable_menu_item_1020_44ec(
             u_var1 = (i_var8 + 0x108);
             local_124 = (u_var1 + 0x42);
             pp_stack_310 = local_124;
-            local_134 = (local_124 >> 0x10);
-            local_138 = (ctx._g_bool_1050_5748 >> 0x10);
+          // local_134 = (local_124  >> 0x10);
+          // local_138 = (ctx._g_bool_1050_5748  >> 0x10);
             pp_stack_310 = pass1_1030_8344(ctx._g_bool_1050_5748, local_138, local_124);
             local_11e = CONCAT22(in_dx, pp_stack_310);
             if ((in_dx | pp_stack_310) == 0) {
@@ -403,7 +403,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
             local_10c = (local_116 + 0x200);
             local_138 = 0x1030;
             local_108 = pass1_1030_73a8(CONCAT22(in_dx, pp_stack_310));
-            u_var10 = (local_108 >> 0x10);
+          // u_var10 = (local_108  >> 0x10);
             local_6 = (local_108 + 0x1c);
             u_var7 = (local_108 + 0x1e);
             if ((u_var7 | local_6) != 0) {
@@ -416,12 +416,12 @@ pub unsafe fn enable_menu_item_1020_44ec(
                 return;
             }
             pp_stack_310 = local_11e;
-            local_134 = (local_11e >> 0x10);
+          // local_134 = (local_11e  >> 0x10);
             local_138 = 0x1030;
             u_var2 = pass1_1030_6fa0(local_11e);
             pp_stack_310 = CONCAT31(extraout_var, u_var2);
             local_134 = 0x3f;
-            local_138 = (ctx.ctx._PTR_LOOP_1050_06e0 >> 0x10);
+          // local_138 = (ctx.ctx._PTR_LOOP_1050_06e0  >> 0x10);
             b_var6 = pass1_1008_c6ae(ctx.ctx._PTR_LOOP_1050_06e0, pp_stack_310, 0x3f);
             if (b_var6 != 0) {
                 local_134 = local_128;
@@ -486,7 +486,7 @@ pub unsafe fn enable_menu_item_1020_44ec(
                 local_134 = 0;
                 u_var12 = 0x10;
                 local_130 = process_struct_1010_20ba(ctx._g_astruct_372_1050_0ed0, 0x2f);
-                u_var10 = (local_130 >> 0x10);
+              // u_var10 = (local_130  >> 0x10);
                 local_12c = (local_130 + 0x20);
                 u_var7 = (local_130 + 0x22);
                 if ((u_var7 | local_12c) != 0) {

@@ -1,16 +1,20 @@
-use crate::prog_structs::prog_structs_7::Struct372;
+use crate::structs::prog_structs_7::Struct372;
 use crate::mem_funcs::Address;
-use crate::prog_structs::prog_structs_31::Struct112;
-use crate::typedefs::HINSTANCE16;
+use crate::structs::prog_structs_31::Struct112;
+use crate::typedefs::{HINSTANCE16, HWND16};
+use crate::mem_funcs::mem_ops_1::StructuredData;
 
 pub struct AppContext {
+    pub _g_bool_1050_5748: bool,
+    pub g_u16_1050_0310: u16,
+    pub g_h_instance: HINSTANCE16,
     pub g_h_instance_1050_038c: HINSTANCE16,
     pub g_u16_ptr_1050_5f84: u16,
     pub s__s___lu_1050_38c5: String,
     pub PTR_LOOP_1050_1038: u32,
     pub PTR_LOOP_1050_1040:u32,
-    pub _g_struct_372_1050_0ed0: Struct372,
-    pub _g_struct_ptr_1050_02a0: Vec<u8>,
+    pub g_struct_1050_0ed0: Struct372,
+    pub g_struct_1050_02a0: Vec<u8>,
     pub s_OpWnd__getKid__Unknown_target_mo_1050_01a3: String,
     pub s_thisLo_1050_5db1: String,
     pub s_thisHi_1050_5db8: String,
@@ -26,8 +30,32 @@ pub struct AppContext {
     pub g_alloc_addr_1050_1050: String,
     pub _PTR_LOOP_1050_68a8: String,
     pub PTR_LOOP_1050_68ac: u16,
+    pub PTR_LOOP_1050_5f48: u16,
+    pub PTR_LOOP_1050_5f4a: u16,
     pub PTR_LOOP_1050_4c4c: String,
     pub PTR_LOOP_1050_5fc0: String,
+    pub PTR_LOOP_1050_4d42: StructuredData,
+    pub s_SinternalPutBldg2_site_0x_08lx__1050_5099: String,
+    pub _PTR_s_SC_03d_1050_0314_1050_031c: String,
+    pub PTR_LOOP_1050_0312: String,
+    pub s__1050_65a0: String,
+    pub _PTR_LOOP_1050_5736: Vec<u8>,
+    pub _PTR_LOOP_1050_65e2: Vec<u8>,
+    pub _PTR_LOOP_1050_5a64: Vec<u8>,
+    pub PTR_DAT_0005_0000_1050_0004: String,
+    pub _g_struct_73_1050_14cc: Vec<u8>,
+    pub PTR_LOOP_1050_5f4e: u16,
+    pub PTR_LOOP_1050_5f50: u16,
+    pub PTR_LOOP_1050_5f52: u16,
+    pub _u8_1050_5f82: u16,
+    pub u8_1050_5f87: u16,
+    pub s_version__d__d_1050_0012: String,
+    pub PTR_LOOP_1050_5fc9: u16,
+    pub s_MciSoundWindow_1050_02bd: String,
+    pub u16_1050_5f44: u16,
+    pub s_MciSound_registerClass_failed_1050_02cc: String,
+    pub g_h_window: HWND16,
+    pub g_string_1050_039e: String,
     pub ax_reg: u16,
     pub bx_reg: u16,
     pub cx_reg: u16,

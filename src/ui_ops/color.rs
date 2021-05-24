@@ -3,9 +3,9 @@ use std::intrinsics::offset;
 use crate::app_context::AppContext;
 use crate::pass::pass14_funcs::pass1_1008_4d72;
 use crate::pass::pass20_funcs::pass1_1018_0a50;
-use crate::prog_structs::prog_structs_24::Struct103;
-use crate::prog_structs::prog_structs_25::{Struct66, Struct67};
-use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_47cc, process_struct_1008_4834};
+use crate::structs::prog_structs_24::Struct103;
+use crate::structs::prog_structs_25::{Struct66, Struct67};
 use crate::sys_structs::BITMAPINFO;
 use crate::typedefs::{COLORREF, HDC16, HGDIOBJ16, HPALETTE16, HWND16};
 use crate::util::{CONCAT11, CONCAT12, CONCAT22};
@@ -15,13 +15,13 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
     let mut u_var1: u32;
     let mut u_var2: u16;
     let mut u_var3: u16;
-    let local_bx_221: *mut Struct67;
+    let local_bx_221: &mut  Struct67;
     let mut i_var4: i32;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
     let CVar6: COLORREF;
     let mut color_ref: u32;
-    let puStack140: *mut u32;
+    let puStack140: &mut  u32;
     let mut local_84: u16;
     let mut local_82: u16;
     let mut local_80: u32;
@@ -107,7 +107,7 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
     local_3c = 0x8000;
     local_38 = 0x8000;
     local_30 = 0x8000;
-    u_var5 = (param_1 >> 0x10);
+  // u_var5 = (param_1  >> 0x10);
     local_bx_221 = param_1;
     if (&local_bx_221.field_0xf8 == 0) {
         process_struct_1000_179c(0x54, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21));
@@ -117,7 +117,7 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
         while (local_84 < 0x15) {
             CVar6 = GetSysColor16(&count + local_84 * 2);
             u_var1 = &local_bx_221.field_0xf8;
-            u_var3 = (u_var1 >> 0x10);
+          // u_var3 = (u_var1  >> 0x10);
             i_var4 = u_var1;
             (i_var4 + local_84 * 4) = CVar6;
             (i_var4 + local_84 * 4 + 2) = (CVar6 >> 0x10);
@@ -143,18 +143,18 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
     return;
 }
 
-pub fn stretch_di_bits_1008_465a(param_1: *mut Struct103, param_2: HDC16) {
+pub fn stretch_di_bits_1008_465a(param_1: &mut  Struct103, param_2: HDC16) {
     let x_src: u16;
     let y_src: u16;
     let mut u_var1: u32;
     let mut b_var2: bool;
     let mut i_var3: i32;
-    let info: *mut BITMAPINFO;
+    let info: &mut  BITMAPINFO;
     let mut u_var4: u16;
     let bits: &mut Vec<u8>;
     let mut local_4: u16;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     i_var3 = param_1;
     if ((i_var3 + 6) == 0) {
         process_struct_1008_47cc(param_1);
@@ -171,7 +171,7 @@ pub fn stretch_di_bits_1008_465a(param_1: *mut Struct103, param_2: HDC16) {
         return;
     }
     u_var1 = (i_var3 + 0x10);
-    bits = (u_var1 >> 0x10);
+  // bits = (u_var1  >> 0x10);
     info = u_var1;
     x_src = &(info.bmi_header).bi_width;
     y_src = &(info.bmi_header).bi_height;
@@ -194,23 +194,23 @@ pub fn stretch_di_bits_1008_465a(param_1: *mut Struct103, param_2: HDC16) {
     return;
 }
 
-pub fn cleanup_palette_1008_56e2(param_1: u32, param_2: *mut HDC16) -> u16 {
+pub fn cleanup_palette_1008_56e2(param_1: u32, param_2: &mut  HDC16) -> u16 {
     let h_gdi_obj: HPALETTE16;
     let mut u_var1: u16;
-    u_var1 = (param_1 >> 0x10);
+  // u_var1 = (param_1  >> 0x10);
     h_gdi_obj = SelectPalette16(0, (param_1 + 4), unsafe { *param_2 });
     (param_1 + 4) = h_gdi_obj;
     DeleteObject16(h_gdi_obj);
     return 1;
 }
 
-pub fn set_di_bits_to_dev_1008_45d6(param_1: *mut Struct103) {
+pub fn set_di_bits_to_dev_1008_45d6(param_1: &mut  Struct103) {
     let mut bVar1: bool;
     let mut i_var2: i32;
     let mut u_var3: u16;
     let mut local_6: u16;
 
-    u_var3 = (param_1 >> 0x10);
+  // u_var3 = (param_1  >> 0x10);
     i_var2 = param_1;
     if ((i_var2 + 6) == 0) {
         process_struct_1008_47cc(param_1);
@@ -241,13 +241,13 @@ pub fn set_colors_1040_0cc0(param_1: &mut u32, param_2: u16, param_3: i32, param
 
     local_4 = GetStockObject16(4);
     if (_PTR_LOOP_1050_5cd0 == 0) {
-        u_var3 = (param_1 >> 0x10);
+      // u_var3 = (param_1  >> 0x10);
         unsafe {
             pp_var1 = (*param_1 + 0x68);
         }
         u_var4 = (**pp_var1)(offset, param_1, u_var3, (param_1 + 0x6e));
         u_var4 = pass1_1008_4d72(u_var4);
-        u_var3 = (u_var4 >> 0x10);
+      // u_var3 = (u_var4  >> 0x10);
         i_var2 = u_var4;
         _PTR_LOOP_1050_5cd0 = CONCAT22(
             CONCAT11(2, *(i_var2 + 0x94)),
@@ -288,7 +288,7 @@ pub fn set_colors_1038_ac38(
     GetStockObject16(4);
     if (_PTR_LOOP_1050_5b78 == 0) {
         u_var3 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
-        u_var4 = (u_var3 >> 0x10);
+      // u_var4 = (u_var3  >> 0x10);
         i_var1 = u_var3;
         _PTR_LOOP_1050_5b6c = CONCAT12(
             *(i_var1 + 0x3ec),
@@ -312,18 +312,18 @@ pub fn set_colors_1038_ac38(
         i_var2 = GetDlgCtrlID16(dialog_handle);
         if (i_var2 == 0xfd4) {
             u_var4 = _PTR_LOOP_1050_5b70;
-            u_var5 = (_PTR_LOOP_1050_5b70 >> 0x10);
+          // u_var5 = (_PTR_LOOP_1050_5b70  >> 0x10);
             // goto LAB_1038_ad0e;
         }
         if (i_var2 != 0xfd5) {
             if (i_var2 == 0xfd6) {
                 u_var4 = _PTR_LOOP_1050_5b6c;
-                u_var5 = (_PTR_LOOP_1050_5b6c >> 0x10);
+              // u_var5 = (_PTR_LOOP_1050_5b6c  >> 0x10);
                 // goto LAB_1038_ad0e;
             }
             if (i_var2 == 0xfd7) {
                 u_var4 = _PTR_LOOP_1050_5b74;
-                u_var5 = (_PTR_LOOP_1050_5b74 >> 0x10);
+              // u_var5 = (_PTR_LOOP_1050_5b74  >> 0x10);
                 // goto LAB_1038_ad0e;
             }
         }
@@ -336,7 +336,7 @@ pub fn set_colors_1038_ac38(
         }
     }
     u_var4 = _PTR_LOOP_1050_5b78;
-    u_var5 = (_PTR_LOOP_1050_5b78 >> 0x10);
+  // u_var5 = (_PTR_LOOP_1050_5b78  >> 0x10);
     // LAB_1038_ad0e:
     SetTextColor16(CONCAT22(u_var5, u_var4), param_5);
     SetBkColor16(0x1000000, param_5);
@@ -353,7 +353,7 @@ pub fn palette_func_1020_2992(param_1: u32, param_2: i32) {
     let mut local_4: u16;
 
     if (param_2 != 0) {
-        u_var2 = (param_1 >> 0x10);
+      // u_var2 = (param_1  >> 0x10);
         pu_var3 = pass1_1018_0a50((param_1 + 0xf2));
         unsafe {
             pp_var1 = (*pu_var3 + 0x18);

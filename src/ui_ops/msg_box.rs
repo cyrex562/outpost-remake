@@ -1,16 +1,16 @@
 use crate::app_context::AppContext;
 use crate::err_ops::error_check_1000_17ce;
 use crate::exit::fatal_app_exit_1000_3e9e;
-use crate::prog_structs::prog_structs_2::Struct199;
-use crate::string_ops::{copy_string_1000_3d3e, process_string_1000_3cea};
-use crate::struct_ops::process_struct_1000_179c;
+use crate::string_ops::misc::{copy_string_1000_3d3e, process_string_1000_3cea};
+use crate::struct_ops::struct_ops_2::process_struct_1000_179c;
+use crate::structs::prog_structs_2::Struct199;
 use crate::util::{CONCAT22, SBORROW2};
 use crate::winapi::{MessageBeep16, MessageBox16, PostMessage16};
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
                                 param_1: &String,
                                 param_2: &String) -> bool {
-    let pi_var1: *mut i32;
+    let pi_var1: &mut  i32;
 
     if ctx.ax_reg < (param_1 + 0xc) {
         msg_box_1000_214c(0, 0, 0xd940, &mut ctx.PTR_LOOP_1050_1040);
@@ -98,7 +98,7 @@ pub fn msg_box_1000_214c(param_1: u16, param_4: u16, param_2: &String) -> u16 {
 
 pub fn msg_box_1040_d3d0(param_1: u32) {
 
-    let in_dx: *mut Struct199;
+    let in_dx: &mut  Struct199;
     let mut u_var1: u16;
     let mut unaff_ss: u16;
     let mut local_212: u32;
@@ -163,7 +163,7 @@ pub fn msg_box_1040_d3d0(param_1: u32) {
         0x7df,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
-    u_var1 = (param_1 >> 0x10);
+  // u_var1 = (param_1  >> 0x10);
     MessageBox16(
         0,
         CONCAT22(unaff_ss, local_206),
@@ -229,7 +229,7 @@ pub fn msg_box_1040_d3d0(param_1: u32) {
 
 pub fn display_msg_box_1040_cce4(param_1: &mut Vec<u8>) {
     let msg_box_text: String;
-    let in_dx: *mut Struct199;
+    let in_dx: &mut  Struct199;
     let mut unaff_ss: u16;
     let mut local_212: u32;
     let mut local_20e: u32;
@@ -283,7 +283,7 @@ pub fn display_msg_box_1040_cce4(param_1: &mut Vec<u8>) {
 
 pub fn msg_box_1040_ad66(param_1: u32) {
 
-    let in_dx: *mut Struct199;
+    let in_dx: &mut  Struct199;
     let mut unaff_ss: u16;
     let mut local_212: u32;
     let mut local_20e: u32;
@@ -355,7 +355,7 @@ pub fn msg_box_1010_8bb4(ctx: &mut AppContext,
 
 pub fn msg_box_1040_a85a(param_1: u32) {
 
-    let in_dx: *mut Struct199;
+    let in_dx: &mut  Struct199;
     let mut unaff_ss: u16;
     let mut local_212: u32;
     let mut local_20e: u32;

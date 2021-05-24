@@ -1,9 +1,9 @@
 use crate::app_context::AppContext;
 use crate::pass::pass20_funcs::pass1_1010_a5ca;
 use crate::pass::pass8_funcs::process_struct_1010_20ba;
-use crate::prog_structs::prog_structs_23::Struct56;
-use crate::prog_structs::prog_structs_26::{Struct54, Struct55};
-use crate::prog_structs::prog_structs_31::Struct334;
+use crate::structs::prog_structs_23::Struct56;
+use crate::structs::prog_structs_26::{Struct54, Struct55};
+use crate::structs::prog_structs_31::Struct334;
 use crate::typedefs::{COLORREF, HANDLE16, HDC16, HGDIOBJ16};
 use crate::util::CONCAT22;
 use crate::winapi::{DrawText16, GetDC16, GetProp16, GetSystemMetrics16, ReleaseDC16, SelectObject16, SetBkColor16, SetTextColor16};
@@ -17,17 +17,17 @@ pub unsafe fn draw_text_1040_c94a(
     let mut u_var1: u16;
     let mut u_var2: u32;
     let mut i_var3: i32;
-    let ppVar4: *mut pass1_struct_1;
+    let ppVar4: &mut  Struct2551;
     let mut in_stack_0000fff0: u16;
     let mut local_8: u16;
     let mut local_6: u16;
 
     if (param_1.field_0x48 != 0) {
         ppVar4 =
-            process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(in_stack_0000fff0, 3));
+            process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(in_stack_0000fff0, 3));
         u_var2 = param_1.field_0x42;
         u_var1 = (u_var2 + 0x12);
-        i_var3 = pass1_1010_a5ca(ppVar4, (ppVar4 >> 0x10), u_var1);
+      // i_var3 = pass1_1010_a5ca(ppVar4, (ppVar4  >> 0x10), u_var1);
         if (i_var3 == -1) {
             param_1.field_0x3c = 0xf9;
         } else {
@@ -52,7 +52,7 @@ pub fn draw_text_1040_9650(param_1: u32) {
     let mut local_4: u16;
 
     hdc = GetDC16(0);
-    count = (param_1 >> 0x10);
+  // count = (param_1  >> 0x10);
     u_var1 = (param_1 + 4);
     DrawText16(
         0x410,
@@ -67,7 +67,7 @@ pub fn draw_text_1040_9650(param_1: u32) {
 
 pub fn draw_text_1040_94fc(param_1: u32, param_2: HDC16) -> COLORREF {
     let mut u_var1: u32;
-    let local_bx_7: *mut Struct56;
+    let local_bx_7: &mut  Struct56;
     let mut count: u16;
     let mut CVar2: COLORREF;
     let mut local_a: u16;
@@ -75,12 +75,12 @@ pub fn draw_text_1040_94fc(param_1: u32, param_2: HDC16) -> COLORREF {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    count = (param_1 >> 0x10);
+  // count = (param_1  >> 0x10);
     local_bx_7 = param_1;
     CVar2 = SetBkColor16(CONCAT22(0x100, local_bx_7.field_0x3a), param_2);
     SetTextColor16(CONCAT22(0x100, local_bx_7.field_0x3c), param_2);
     u_var1 = local_bx_7.field_0x4;
-    local_a = (u_var1 >> 0x10);
+  // local_a = (u_var1  >> 0x10);
     DrawText16(
         0x10,
         &local_bx_7.field_0x2e,
@@ -98,11 +98,11 @@ pub fn draw_text_1040_8d14(ctx: &mut AppContext, param_1: u32, param_2: HGDIOBJ1
     let mut b_var2: u8;
     let mut i_var3: u16;
     let mut obj_handle: HANDLE16;
-    let local_bx_4: *mut Struct55;
+    let local_bx_4: &mut  Struct55;
     let mut count: u16;
     let mut local_8: u16;
 
-    count = (param_1 >> 0x10);
+  // count = (param_1  >> 0x10);
     local_bx_4 = param_1;
     b_var2 = local_bx_4.field_0x98 & 0xf0;
     if ((((b_var2 == 0x30) || (b_var2 == 0x10)) || (b_var2 == 0x40)) || (b_var2 == 0x20)) {
@@ -118,7 +118,7 @@ pub fn draw_text_1040_8d14(ctx: &mut AppContext, param_1: u32, param_2: HGDIOBJ1
         SelectObject16(obj_handle, param_2);
     }
     u_var1 = local_bx_4.field_0x90;
-    local_8 = (u_var1 >> 0x10);
+  // local_8 = (u_var1  >> 0x10);
     DrawText16(
         0x410,
         &local_bx_4.field_0x9e,
@@ -132,11 +132,11 @@ pub fn draw_text_1040_8d14(ctx: &mut AppContext, param_1: u32, param_2: HGDIOBJ1
     return;
 }
 
-pub unsafe fn draw_text_1018_c742(param_1: u32, param_2: *mut HDC16, param_3: &u16) {
-    let pi_var1: *mut i32;
+pub unsafe fn draw_text_1018_c742(param_1: u32, param_2: &mut  HDC16, param_3: &u16) {
+    let pi_var1: &mut  i32;
     let mut u_var2: u32;
     let mut i_var3: i32;
-    let local_bx_4: *mut Struct54;
+    let local_bx_4: &mut  Struct54;
     let mut u_var4: u16;
     let mut unaf_SS: u16;
     let mut local_1c: u16;
@@ -156,7 +156,7 @@ pub unsafe fn draw_text_1018_c742(param_1: u32, param_2: *mut HDC16, param_3: &u
     let mut local_a: u16;
     let mut unaff_ss: u16;
 
-    u_var4 = (param_1 >> 0x10);
+  // u_var4 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     if ((local_bx_4.field_0x108 != 0) && (*local_bx_4.field_0x108 != '\0')) {
         let param_2_val = *param_2;
@@ -169,7 +169,7 @@ pub unsafe fn draw_text_1018_c742(param_1: u32, param_2: *mut HDC16, param_3: &u
             local_14 = 0;
             local_1a = param_2_val;
             u_var2 = local_bx_4.field_0x108;
-            local_1c = (u_var2 >> 0x10);
+          // local_1c = (u_var2  >> 0x10);
             DrawText16(
                 0x410,
                 &local_1a,

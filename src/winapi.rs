@@ -1,5 +1,6 @@
 use crate::sys_structs::{LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
-use crate::typedefs::{ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16};
+use crate::typedefs::{ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16, HMODULE16, HRSRC16};
+use crate::mem_funcs::mem_ops_1::StructuredData;
 
 /*
 ATOM WINAPI RegisterClass16( const WNDCLASS16 *wc )
@@ -644,11 +645,11 @@ pub fn _lopen16(path: &String, mode: i16) -> HFILE16 {
     unimplemented!()
 }
 
-pub fn _hread(h_file: &HFILE16, buffer: &mut Vec<u8>, count: usize) -> usize {
+pub fn _hread(h_file: &HFILE16, buffer: &mut Vec<u8>, count: u32) -> u32 {
     unimplemented!()
 }
 
-pub fn _llseek16(h_file: &HFILE16, offset: usize, origin: i16) -> usize {
+pub fn _llseek16(h_file: &HFILE16, offset: u32, origin: i16) -> u32 {
     unimplemented!()
 }
 
@@ -702,5 +703,120 @@ BOOL16 WINAPI WritePrivateProfileString16( LPCSTR section, LPCSTR entry,
                                            LPCSTR string, LPCSTR filename )
  */
 pub fn WritePrivateProfileString16(section: &String, entry: &String, _string: &String, filename: &String) -> bool {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI GlobalUnlock16(
+              HGLOBAL16 handle /* [in] Handle of global memory object */
+)
+ */
+pub fn GlobalUnlock16(handle: &HGLOBAL16) -> bool {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI FreeResource16( HGLOBAL16 handle )
+ */
+pub fn FreeResource16(handle: &HGLOBAL16) -> bool {
+    unimplemented!()
+}
+
+/*
+HGLOBAL16 WINAPI LoadResource16( HMODULE16 hModule, HRSRC16 hRsrc )
+ */
+pub fn LoadResource16(h_module: &HMODULE16, h_rsrc: &HRSRC16) -> HGLOBAL16 {
+    unimplemented!()
+}
+
+/*
+DWORD WINAPI GlobalDOSAlloc16(
+             DWORD size /* [in] Number of bytes to be allocated */
+ */
+pub fn GlobalDOSAlloc16(size: u32) -> u32 {
+    unimplemented!()
+}
+
+/*
+HGLOBAL16 WINAPI GlobalAlloc16(
+                 UINT16 flags, /* [in] Object allocation attributes */
+                 DWORD size    /* [in] Number of bytes to allocate */
+ */
+pub fn GlobalAlloc16(flags: u16, size: u32) -> HGLOBAL16 {
+    unimplemented!()
+}
+
+/*
+HGLOBAL16 WINAPI GlobalReAlloc16(
+                 HGLOBAL16 handle, /* [in] Handle of global memory object */
+                 DWORD size,       /* [in] New size of block */
+                 UINT16 flags      /* [in] How to reallocate object */
+)
+ */
+pub fn GlobalReAlloc16(
+    handle: HGLOBAL16,
+    size: u32,
+    flags: u16
+) -> HGLOBAL16 {
+    unimplemented!()
+}
+
+/*
+WORD WINAPI GlobalPageUnlock16( HGLOBAL16 handle )
+ */
+pub fn GlobalPageUnlock16(handle: HGLOBAL16) {
+    unimplemented!()
+}
+
+/*
+WORD WINAPI GlobalPageLock16( HGLOBAL16 handle )
+ */
+pub fn GlobalPageLock16(handle: HGLOBAL16) -> u16 {
+    unimplemented!()
+}
+
+/*
+LPVOID WINAPI GlobalLock16(
+              HGLOBAL16 handle /* [in] Handle of global memory object */
+)
+ */
+pub fn GlobalLock16(handle: HGLOBAL16) -> SEGPTR {
+    unimplemented!()
+}
+
+/*
+DWORD WINAPI GlobalHandle16(
+             WORD sel /* [in] Address of global memory block */
+)
+ */
+pub fn GlobalHandle16(sel: u16) -> u32 {
+    unimplemented!()
+}
+
+/*
+DWORD WINAPI mciSendCommand16(UINT16 wDevID, UINT16 wMsg, DWORD dwParam1, DWORD p2)
+ */
+pub fn mciSendCommand16(w_dev_id: u16, w_msg: u16, dw_param_1: u32, p2: u32) -> u32 {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI mciGetErrorString16(DWORD wError, LPSTR lpstrBuffer, UINT16 uLength)
+ */
+pub fn mciGetErrorString16(w_error: u32, buffer: &mut String, u_length: u16) -> bool {
+    unimplemented!()
+}
+
+/*
+void WINAPI OutputDebugString16( LPCSTR str )
+ */
+pub fn OutputDebugString16(str: &String) {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI SetProp16( HWND16 hwnd, LPCSTR str, HANDLE16 handle )
+ */
+pub fn SetProp16(hwnd: HWND16, str: &String, handle: HANDLE16) -> bool {
     unimplemented!()
 }

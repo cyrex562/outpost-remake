@@ -2,62 +2,65 @@ use std::intrinsics::offset;
 
 use crate::app_context::AppContext;
 use crate::err_ops::error_check_1000_17ce;
+use crate::mem_funcs::mem_ops_1::get_string_from_address;
 use crate::other_funcs::{get_private_profile_str_1010_6132, write_private_profile_str_1010_622a};
 use crate::pass::pass14_funcs::pass1_fn_1008_60e8;
 use crate::pass::pass8_funcs::pass1_1010_1d80;
 use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_3e2c, pass1_fn_1000_47a4, pass1_fn_1000_5008};
-use crate::prog_structs::prog_structs_24::{Struct103, Struct2111};
-use crate::prog_structs::prog_structs_25::Struct64;
-use crate::prog_structs::prog_structs_7::Struct376;
-use crate::string_ops::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_475e, string_fn_1000_3f9c};
-use crate::struct_ops::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48};
+use crate::string_ops::misc::{copy_string_1000_3d3e, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_475e, string_fn_1000_3f9c};
+use crate::struct_ops::struct_ops_2;
 use crate::struct_ops::process_struct_1010_20ba;
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_574a, process_struct_1010_1d48};
+use crate::structs::prog_structs_24::{Struct103, Struct2111};
+use crate::structs::prog_structs_25::Struct64;
+use crate::structs::prog_structs_7::Struct376;
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SUB42, ZEXT24};
 use crate::winapi;
 use crate::winapi::WritePrivateProfileString16;
 
-pub unsafe fn write_private_profile_str_1010_5b10(param_1: &mut Struct376) {
+pub unsafe fn write_private_profile_str_1010_5b10(ctx: &mut AppContext, param_1: &mut Struct376) {
     let pu_var1: u32;
     let mut u_var2: i32;
     let mut u_var3: u32;
     let ppcVar4: fn();
     let mut u_var5: u16;
-    let mut u_var6: u16;
+    // let mut u_var6: u16;
     let pp_var7: Struct2111;
     let mut local_c: u16;
     let mut local_8: u16;
 
-    u_var6 = (param_1 >> 0x10);
-    local_bx_5 = param_1;
+    //// _var6 = (param_1  >> 0x10);
+    // local_bx_5 = param_1;
     param_1.ptr_a_lo = 0x6312;
-    local_bx_5.field_0x2 = 0x1010;
-    pp_var7 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 0x48));
-    u_var3 = local_bx_5.field_0xe;
+    param_1.field_0x2 = 0x1010;
+    pp_var7 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 0x48));
+    u_var3 = param_1.field_0xe;
     string_fn_1000_3f9c(ctx,
-        u_var3,
-        (u_var3 >> 0x10),
-        s__d__d_1050_149c,
+        param_1,
+        &ctx.s__d__d_1050_149c,
         &ctx.g_alloc_addr_1050_1050,
-        *(pp_var7 + 10),
+        pp_var7.field_0xa // *(pp_var7 + 10),
     );
-    if (local_bx_5.field_0x80 == 0) {
-        u_var5 = SUB42(s_off_1050_13c8, 0);
+    if local_bx_5.field_0x80 == 0 {
+        u_var5 = ctx.s_off_1050_13c8;
     } else {
-        u_var5 = SUB42(s_on_1050_13c4, 0);
+        u_var5 = ctx.s_on_1050_13c4;
     }
+    let entry_addr: u32 = CONCAT22(0x0105, u_var5);
+    let entry_str: String = get_string_from_address(entry_addr);
     WritePrivateProfileString16(
-        local_bx_5.field_0xa,
-        CONCAT22(0x1050, u_var5),
-        s_falseMap_1050_13de,
-        s_general_1050_13b0,
+        param_1.field_0xa,
+        &entry_str,
+        ctx.s_falseMap_1050_13de,
+        ctx.s_general_1050_13b0,
     );
     WritePrivateProfileString16(
-        local_bx_5.field_0xa,
-        local_bx_5.field_0xe,
-        s_rez_1050_13c0,
-        s_general_1050_13b0,
+        param_1.field_0xa,
+        param_1.field_0xe,
+        ctx.s_rez_1050_13c0,
+        ctx.s_general_1050_13b0,
     );
-    if (local_bx_5.field_0x1e == 0) {
+    if local_bx_5.field_0x1e == 0 {
         u_var5 = SUB42(s_off_1050_13c8, 0);
     } else {
         u_var5 = SUB42(s_on_1050_13c4, 0);
@@ -239,7 +242,7 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
     pass1_fn_1000_5008(ctx, &param_1.str_field_0xe, &pa_var14, 0x100);
     u_var7 = get_string_index_1000_3da4(&mut param_1.str_field_0xe);
     u_var5 = &param_1.str_field_0xe;
-    u_var16 = (u_var5 >> 0x10);
+  // u_var16 = (u_var5  >> 0x10);
     pu_var15 = (u_var5 + u_var7);
     if pu_var15[-1] != '\\' {
         unsafe {
@@ -277,8 +280,8 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
         u_var16 = 0x1000;
         pass1_fn_1000_3e2c(&param_1.str_field_0xe);
         local_16 = u_var8;
-        pp_var17 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(u_var23, 0x48));
-        pa_var14 = (pp_var17 >> 0x10);
+        pp_var17 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(u_var23, 0x48));
+      // pa_var14 = (pp_var17  >> 0x10);
         local_1a = pp_var17;
         local_a = (local_1a + 10);
         local_c = (local_1a + 0xc);
@@ -523,7 +526,7 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
     pass1_fn_1000_5008(ctx, u_var5, (u_var5 >> 0x10), 0x100);
     u_var7 = get_string_index_1000_3da4(&mut param_1.str_field_0xe);
     u_var5 = &param_1.str_field_0xe;
-    u_var16 = (u_var5 >> 0x10);
+  // u_var16 = (u_var5  >> 0x10);
     pu_var15 = (u_var5 + u_var7);
     if (pu_var15[-1] != '\\') {
         unsafe {
@@ -567,7 +570,7 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
         u_var5 = &param_1.str_field_0xe;
         u_var18 = u_var5;
         u_var19 = (u_var5 >> 8);
-        u_var16 = (u_var5 >> 0x10);
+      // u_var16 = (u_var5  >> 0x10);
         while (true) {
             u_var12 = pu_var13;
             pass1_fn_1000_47a4(CONCAT22(u_var16, CONCAT11(u_var19, u_var18)), s___1050_13f8);

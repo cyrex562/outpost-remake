@@ -2,7 +2,7 @@ use crate::err_ops::error_check_1000_17ce;
 use crate::pass::pass14_funcs::{pass1_1008_5784, pass1_1008_5b12, pass1_fn_1008_60e8};
 use crate::pass::pass8_funcs::{pass1_1010_5f4c, pass1_1010_60cc, process_struct_1010_20ba};
 use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_5008};
-use crate::string_ops::{copy_string_1000_3d3e, fn_1008_6048, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_3dbe, process_string_1000_4d58};
+use crate::string_ops::misc::{copy_string_1000_3d3e, fn_1008_6048, get_string_index_1000_3da4, process_string_1000_3cea, process_string_1000_3dbe, process_string_1000_4d58};
 use crate::sys_ops::dos_ops::dos3_call_1000_4f2e;
 use crate::ui_ops::misc;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB21, ZEXT24};
@@ -34,7 +34,7 @@ pub fn open_save_1008_30cc(param_1: u32) {
             );
         }
         local_DXAX_125 =
-            process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(string_2, 2));
+            process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(string_2, 2));
         pass1_1010_5f4c(local_DXAX_125, CONCAT22(ctx.stack_seg_reg, string_2));
         if (string_3[0] != '\0') {
             misc::win_fn_1008_12dc(param_1, string_3, ctx.stack_seg_reg);
@@ -45,10 +45,10 @@ pub fn open_save_1008_30cc(param_1: u32) {
 
 pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     let mut u_var1: u32;
-    let p_uvar2: *mut u16;
+    let p_uvar2: &mut  u16;
     let pu_var3: Vec<u8>;
     let mut i_var4: i32;
-    let pu_var5: *mut u32;
+    let pu_var5: &mut  u32;
     let mut u_var6: u32;
 
 
@@ -110,8 +110,8 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     local_102 = '\0';
     local_302 = '\0';
     local_202 = '\0';
-    _local_306 = process_struct_1010_20ba(ctx._g_Struct372_1050_0ed0, CONCAT22(unaff_si, 2));
-    u_var9 = (_local_306 >> 0x10);
+    _local_306 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 2));
+  // u_var9 = (_local_306  >> 0x10);
     i_var4 = _local_306;
     local_30a = (i_var4 + 0x1a);
     u_var10 = (i_var4 + 0x1c);
@@ -129,7 +129,7 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
             if ((ctx.dx_reg | pu_var2) != 0) {
                 u_var1 = (pu_var2 + 2);
                 local_30a._0_2_ = u_var1;
-                u_var10 = (u_var1 >> 0x10);
+              // u_var10 = (u_var1  >> 0x10);
                 // goto LAB_1008_3206;
             }
         }
@@ -147,7 +147,7 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
         (&local_103)[local_40e] = '\0';
     }
     dos3_call_1000_4f2e(&local_102);
-    u_var9 = (_local_306 >> 0x10);
+  // u_var9 = (_local_306  >> 0x10);
     local_30a = (_local_306 + 0x12);
     u_var10 = (_local_306 + 0x14);
     pu_var3 = (u_var10 | local_30a);
@@ -206,7 +206,7 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     }
     pass1_1000_4906(CONCAT22(unaff_ss, &local_562), 0, 0x48);
     local_562 = 0x48;
-    u_var9 = (param_1 >> 0x10);
+  // u_var9 = (param_1  >> 0x10);
     local_55e = (param_1 + 8);
     local_55a = &local_518;
     _local_54a = CONCAT22(unaff_ss, &local_202);
@@ -218,7 +218,7 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     local_566 = 0;
     local_666 = '\0';
     i_var4 = param_2 + -1;
-    u_var8 = (ctx._g_struct_73_1050_14cc >> 0x10);
+  // u_var8 = (ctx._g_struct_73_1050_14cc  >> 0x10);
     if (i_var4 == 0) {
         local_532 = 0x1804;
         load_string_1010_847e(ctx._g_struct_73_1050_14cc, u_var8, 0x74d);

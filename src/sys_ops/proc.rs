@@ -1,17 +1,18 @@
 use std::intrinsics::offset;
 
-use crate::{mixed_fn_1010_830a, winapi};
 use crate::err_ops::error_check_1000_17ce;
+use crate::other_funcs::mixed_fn_1010_830a;
 use crate::pass::pass10_funcs::pass1_1040_b040;
 use crate::pass::pass14_funcs::pass1_fn_1008_60e8;
-use crate::prog_structs::prog_structs_21::Struct74;
-use crate::prog_structs::prog_structs_23::Struct356;
-use crate::prog_structs::prog_structs_2::Struct7;
-use crate::string_ops::fn_1008_6048;
+use crate::string_ops::misc::fn_1008_6048;
+use crate::structs::prog_structs_21::Struct74;
+use crate::structs::prog_structs_23::Struct356;
+use crate::structs::prog_structs_2::Struct7;
 use crate::sys_ops::win_msg;
 use crate::sys_structs::RECT16;
 use crate::typedefs::{HANDLE16, LRESULT, WPARAM16};
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB21};
+use crate::winapi;
 use crate::winapi::{FreeProcInstance16, GetClientRect16, GetProp16, MakeProcInstance16, PtInRect16, RemoveProp16};
 
 pub unsafe fn call_win_proc_1040_a410(param_1: u16, param_2: u32, param_3: u32) {
@@ -37,7 +38,7 @@ pub unsafe fn call_win_proc_1040_a410(param_1: u16, param_2: u32, param_3: u32) 
         }
         if (param_3 == 0x110) {
             u_var3 = &PTR_LOOP_1050_5ee0;
-            u_var5 = win_msg::send_win_msg_1040_a308(u_var3, (u_var3 >> 0x10), param_1, param_2);
+          // u_var5 = win_msg::send_win_msg_1040_a308(u_var3, (u_var3  >> 0x10), param_1, param_2);
             return u_var5;
         }
     }
@@ -45,7 +46,7 @@ pub unsafe fn call_win_proc_1040_a410(param_1: u16, param_2: u32, param_3: u32) 
         return local_6 & 0xffff | ctx.dx_reg << 0x10;
     }
     u_var3 = PTR_LOOP_1050_5bc8;
-    // u_var4 = (u_var3 >> 0x10);
+    //// _var4 = (u_var3  >> 0x10);
     local_bx_122 = u_var3;
     win_proc = local_bx_122.fn_ptr_0x4;
     u_var1 = local_bx_122.field_0x6;
@@ -74,7 +75,7 @@ pub fn def_wn_proc_1008_9c30(param_1: u16, param_2: u32, param_3: u32) {
 pub fn def_wnd_proc_func_1008_9ce6(param_1: &mut Vec<u8>, param_2: u32, param_3: u32) -> LRESULT {
     let LVar1: LRESULT;
 
-    LVar1 = DefWindowProc16(param_2, param_3, (param_3 >> 0x10), (param_1 + 8));
+  // LVar1 = DefWindowProc16(param_2, param_3, (param_3  >> 0x10), (param_1 + 8));
     return LVar1;
 }
 
@@ -172,7 +173,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: &mut u16) {
     let unaff_cs: HANDLE16;
     let pvVar3: &mut Vec<u8>;
 
-    pu_var2 = (param_1 >> 0x10);
+  // pu_var2 = (param_1  >> 0x10);
     pu_var1 = param_1;
     unsafe {
         *param_1 = ctx.s_1_1050_389a;
@@ -191,7 +192,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: &mut u16) {
     (pu_var1 + 6) = (pvVar3 >> 0x10);
     pvVar3 = winapi::MakeProcInstance16(offset, CONCAT22(0xd01e, ctx.g_h_instance_1050_038c));
     PTR_LOOP_1050_5bcc = pvVar3;
-    PTR_LOOP_1050_5bce = (pvVar3 >> 0x10);
+  // PTR_LOOP_1050_5bce = (pvVar3  >> 0x10);
     return;
 }
 
@@ -304,14 +305,14 @@ pub fn call_win_proc_1040_9686(param_1: u16, param_2: u16, param_3_00: WPARAM16,
 }
 
 pub fn free_proc_inst_1040_911e(in_struct_1: &mut Struct7) {
-    let pu_var1: *mut u32;
+    let pu_var1: &mut  u32;
     let mut u_var2: i32;
     let mut u_var3: u32;
     let ppcVar4: fn();
-    let local_struct_1: *mut Struct356;
+    let local_struct_1: &mut  Struct356;
     let mut u_var5: u16;
 
-    u_var5 = (in_struct_1 >> 0x10);
+  // u_var5 = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1 = 0x9800;
     local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
