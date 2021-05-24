@@ -142,7 +142,7 @@ pub struct Struct1139 {
 }
 
 pub struct Struct73 {
-    pub field_0x0: u8,
+    pub field_0x0: String,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,

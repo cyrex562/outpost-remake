@@ -332,14 +332,14 @@ pub unsafe fn destroy_win_1040_52c0(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if param_2._2_2_ != 0x10c {
-        if param_2._2_2_ < 0x10d {
-            if param_2._2_2_ == 0xfa {
+    if param_2 != 0x10c {
+        if param_2 < 0x10d {
+            if param_2 == 0xfa {
                 ppc_var2 = (&param_1[1].field_0x4 + 0x18);
                 ppc_var2();
                 return;
             }
-            if param_2._2_2_ == 0x10a {
+            if param_2 == 0x10a {
                 let mut rect: Address<RECT16> = get_type_at_address(CONCAT22(ctx.stack_seg_reg, local_a));
                 GetClientRect16(param_1.field_0x6, &mut rect._type);
                 u_var3 = &param_1[1].field_0x4;
@@ -355,7 +355,7 @@ pub unsafe fn destroy_win_1040_52c0(
                 pass1_1010_2ee2(u_var3, local_22);
                 return;
             }
-            if (param_2._2_2_ != 0x10b) {
+            if (param_2 != 0x10b) {
                 // LAB_1040_5560:
                 win_gui_fn_1040_b54a(param_1, param_4, param_3, param_2);
                 return;
@@ -377,8 +377,8 @@ pub unsafe fn destroy_win_1040_52c0(
             u_var11 = u_var1;
             u_var12 = (u_var1 >> 8);
         } else {
-            if (param_2._2_2_ != 0x10d) {
-                if (param_2._2_2_ == 0x10e) {
+            if (param_2 != 0x10d) {
+                if (param_2 == 0x10e) {
                     pp_var9 = struct_ops_2::process_struct_1010_20ba(
                         ctx._g_astruct_372_1050_0ed0,
                         CONCAT22(local_22, 0x32),
@@ -391,8 +391,8 @@ pub unsafe fn destroy_win_1040_52c0(
                     window_msg_func_1010_7300(&mut pp_var9, 0, 0, 0x13, u_var3);
                     return;
                 }
-                if (param_2._2_2_ != 0xbbb) {
-                    if (param_2._2_2_ == 0xbbc) {
+                if (param_2 != 0xbbb) {
+                    if (param_2 == 0xbbc) {
                         pp_var9 = struct_ops_2::process_struct_1010_20ba(
                             ctx._g_astruct_372_1050_0ed0,
                             CONCAT22(local_22, 3),
@@ -1023,11 +1023,11 @@ pub unsafe fn cleanup_fn_1020_3cb8(
 
     if (param_1 == 0x0) {
         local_struct_1 = 0x0;
-        param_1._2_2_ = 0;
+        param_1 = 0;
     } else {
         local_struct_1 = (param_1 + 0xf2);
     }
-    local_a = CONCAT22(param_1._2_2_, local_struct_1);
+    local_a = CONCAT22(param_1, local_struct_1);
     *local_a = ctx.s_1_1050_389a;
     local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     destroy_menu_func_1020_795c(param_1);

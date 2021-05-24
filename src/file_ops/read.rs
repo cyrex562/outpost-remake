@@ -119,14 +119,14 @@ pub unsafe fn read_from_file_1008_49e8(
                 struct_param_1.pv_field_0x12 = (u32_var7 | struct_var4 + 0xe);
                 u32_var7 = u32_var7 | struct_var4 + 0x436;
                 struct_param_1.u32_field_0x16 = u32_var7.clone();
-                // local_16 = CONCAT22(local_16._2_2_, 0x14);
+                // local_16 = CONCAT22(local_16, 0x14);
                 // local_18 = offset;
                 process_struct_1000_179c(ctx, 0x14, &mut struct_var8);
                 struct_var5 = u32_var7;
                 if (struct_var8 | struct_var5) == 0 {
                     struct_param_1.func_ptr_0x4 = 0;
                 } else {
-                    local_16 = CONCAT22(local_16._2_2_, 0x100);
+                    local_16 = CONCAT22(local_16, 0x100);
                     struct_var1 = struct_param_1.pv_field_0x12;
                     u16_var6 = struct_var1;
                     u16_var6 = u16_var6 + 0x28;
@@ -557,7 +557,7 @@ pub unsafe fn read_file_1008_7cfe(ctx: &mut AppContext, param_1: &HFILE16) -> u8
                 if !b_var1 {
                     b_var1 = true;
                     // seek_offset = CONCAT22(
-                    //     (seek_offset >> 0x10) + local_410._2_2_ + CARRY2(seek_offset, local_410),
+                    //     (seek_offset >> 0x10) + local_410 + CARRY2(seek_offset, local_410),
                     //     seek_offset + local_410,
                     // );
                     seek_offset = seek_offset + local_410;
@@ -576,8 +576,8 @@ pub unsafe fn read_file_1008_7cfe(ctx: &mut AppContext, param_1: &HFILE16) -> u8
             if bytes_read < 0x400 {
                 return 0;
             }
-            // seek_offset._0_2_ = CONCAT11(seek_offset._1_1_ + 4, seek_offset);
-            //// eek_offset = CONCAT22((seek_offset  >> 0x10) + (0xfb < seek_offset._1_1_), seek_offset);
+            // seek_offset._0_2_ = CONCAT11(seek_offset + 4, seek_offset);
+            //// eek_offset = CONCAT22((seek_offset  >> 0x10) + (0xfb < seek_offset), seek_offset);
             seek_offset = seek_offset + 4;
         }
     }
@@ -2900,7 +2900,7 @@ pub unsafe fn read_file_1030_2c8a(param_1: u32, param_2: &HFILE16) {
                         CONCAT22(local_SI__1, 0x2f),
                     );
                     pass1_1018_04a4(pp_var8, local_bx_91.field_0x4);
-                    pass1_1010_82f8(ctx._g_struct_73_1050_14cc, *local_bx_91.field_0x10);
+                    pass1_1010_82f8(ctx.g_struct_73_1050_14cc, *local_bx_91.field_0x10);
                     return;
                 }
             }

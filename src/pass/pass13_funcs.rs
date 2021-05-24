@@ -10,7 +10,7 @@ use crate::pass::pass8_funcs::{pass1_1010_1d80, pass1_1010_1f62};
 use crate::sound_funcs::mci_send_cmd_1008_5c5c;
 use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_50c2, process_struct_1008_574a, process_struct_1010_1d48};
 use crate::structs::prog_structs_11::{Struct218, Struct222};
-use crate::structs::prog_structs_2::{Struct199, Struct223};
+use crate::structs::prog_structs_2::{Struct199, Struct223, Struct7};
 use crate::structs::prog_structs_24::Struct2111;
 use crate::structs::prog_structs_25::{Struct211, Struct219};
 use crate::structs::prog_structs_27::pass1_struct_2;
@@ -19,6 +19,7 @@ use crate::structs::prog_structs_29::{Struct212, Struct213, Struct220, Struct221
 use crate::structs::prog_structs_7::{Struct376, Struct44};
 use crate::ui_ops::misc::win_cleanup_1018_4d22;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31};
+use crate::app_context::AppContext;
 
 pub unsafe fn pass1_1008_8ce4(param_1: &mut  Struct207, param_2: u32, param_3: u32) {
     let local_AX_120: Vec<u8>;
@@ -28,16 +29,14 @@ pub unsafe fn pass1_1008_8ce4(param_1: &mut  Struct207, param_2: u32, param_3: u
     let mut u_var2: u16;
     let local_bx_4: &mut  Struct207;
     let mut local_es_4: u16;
-
     let mut local_14: u16;
     let mut local_12: u16;
-    let mut local_10: [u8; 6];
+    let mut local_10: Vec<u8>;
     let mut local_a: u32;
     let mut local_6: u16;
     let mut local_4: u16;
     let mut temp_7ffc9379903: u16;
 
-  // local_es_4 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     _local_6 = process_struct_1008_4772(local_bx_4.Struct104_field_4);
     local_a = 0;
@@ -50,8 +49,8 @@ pub unsafe fn pass1_1008_8ce4(param_1: &mut  Struct207, param_2: u32, param_3: u
     local_AX_120 = local_10;
     pass14_funcs::pass1_1008_3f32(param_2, local_AX_120, ctx.stack_seg_reg);
     paVar1 = struct_a;
-    process_struct_1000_179c(0x14, struct_a);
-    if ((paVar1 | local_AX_120) == 0) {
+    process_struct_1000_179c(ctx, 0x14, struct_a);
+    if (paVar1 | local_AX_120) == 0 {
         local_AX_120 = 0x0;
         u_var2 = 0;
     } else {
@@ -149,9 +148,9 @@ pub unsafe fn pass1_1008_9004(param_1: u32, param_2: u16, param_3: u16, param_4:
     let pu_var1_val = unsafe { *pu_var1 };
     if ((pu_var1_val < param_4 || pu_var1_val == param_4) || ((i_var3 + 6) == 0)) {
         pu_var2 = (i_var3 + 0x14);
-        unsafe { b_var5 = *pu_var2 < param_4._2_2_ };
+        unsafe { b_var5 = *pu_var2 < param_4 };
         let pu_var2_val = unsafe { *pu_var2 };
-        if ((b_var5 || pu_var2_val == param_4._2_2_)
+        if ((b_var5 || pu_var2_val == param_4)
             && (b_var5
                 || (
                     pu_var2 = (i_var3 + 0x12),
@@ -166,9 +165,9 @@ pub unsafe fn pass1_1008_9004(param_1: u32, param_2: u16, param_3: u16, param_4:
             return;
         }
         pu_var2 = (i_var3 + 0xc);
-        unsafe { b_var5 = *pu_var2 < param_4._2_2_ };
+        unsafe { b_var5 = *pu_var2 < param_4 };
         let pu_var2_val = unsafe { *pu_var2 };
-        if ((b_var5 || pu_var2_val == param_4._2_2_)
+        if ((b_var5 || pu_var2_val == param_4)
             && (b_var5
                 || (
                     pu_var2 = (i_var3 + 10),
@@ -287,22 +286,19 @@ pub unsafe fn pass1_1008_941a(param_1: &mut  u16, param_2: u16, param_3: u16) {
 }
 
 pub unsafe fn pass1_1008_9436(param_1: &mut  u16) {
-    unsafe { *param_1 = 0 };
+    *param_1 = 0;
     (param_1 + 2) = 0;
     return param_1;
 }
 
-pub unsafe fn pass1_1008_944e(param_1: &mut  u16, param_2: u16, param_3: u16) {
+pub unsafe fn pass1_1008_944e(param_1: &mut  u16, param_2: u16) {
     (param_1 + 2) = param_3;
-    unsafe { *param_1 = param_2 };
+    *param_1 = param_2;
     return;
 }
 
 pub unsafe fn pass1_1008_9628(param_1: u32, param_2: u16) {
-    let mut local_es_3: u16;
-
-  // local_es_3 = (param_1  >> 0x10);
-    if ((param_1 + 8) == 0) {
+    if (param_1 + 8) == 0 {
         (param_1 + 8) = param_2;
     }
     return;
@@ -311,29 +307,29 @@ pub unsafe fn pass1_1008_9628(param_1: u32, param_2: u16) {
 pub unsafe fn pass1_1008_9c60(param_1: u16, param_2: u16, param_1_00: &mut  u32, param_2_00: i32) {
     let fn_ptr_1: fn();
 
-    if ((param_2_00 == 199) && (param_1_00 != 0x0)) {
-        unsafe { fn_ptr_1 = *param_1_00 };
+    if (param_2_00 == 199) && (param_1_00 != 0x0) {
+        fn_ptr_1 = *param_1_00;
         (**fn_ptr_1)();
     }
     return;
 }
 
-pub unsafe fn pass1_1008_9cc4(param_1: u32, param_2: u16) {
-    if ((param_1 + 8) != param_2) {
-        return 1;
+pub unsafe fn pass1_1008_9cc4(param_1: u32, param_2: u16) -> bool {
+    if (param_1 + 8) != param_2 {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-pub unsafe fn pass1_1008_9ce0() {
-    return 0;
+pub unsafe fn pass1_1008_9ce0() -> bool {
+    return false;
 }
 
-pub unsafe fn pass1_1008_9d02(param_1: &mut  u16, param_2: u8) {
-    unsafe { *param_1 = ctx.s_1_1050_389a };
-    (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+pub unsafe fn pass1_1008_9d02(ctx: &mut AppContext, param_1: &mut  Struct7, param_2: u8) -> &mut Struct7 {
+    param_1.field_0 = ctx.s_1_1050_389a.clone();
+    param_1.field_2 = ctx.PTR_LOOP_1050_1008 as u32;
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
     return param_1;
 }

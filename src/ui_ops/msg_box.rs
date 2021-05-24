@@ -1,11 +1,12 @@
 use crate::app_context::AppContext;
 use crate::err_ops::error_check_1000_17ce;
 use crate::exit::fatal_app_exit_1000_3e9e;
-use crate::string_ops::misc::{copy_string_1000_3d3e, process_string_1000_3cea};
+use crate::string_ops::misc::{copy_string_1000_3d3e, process_string_1000_3cea, load_string_1010_847e};
 use crate::struct_ops::struct_ops_2::process_struct_1000_179c;
 use crate::structs::prog_structs_2::Struct199;
 use crate::util::{CONCAT22, SBORROW2};
 use crate::winapi::{MessageBeep16, MessageBox16, PostMessage16};
+use crate::string_ops::load::load_string_1010_84e0;
 
 pub unsafe fn msg_box_1000_1f24(ctx: &mut AppContext,
                                 param_1: &String,
@@ -110,54 +111,54 @@ pub fn msg_box_1040_d3d0(param_1: u32) {
 
     process_struct_1000_179c(0x1000, in_dx);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, local_206),
         0x57b,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7da,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7db,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7dc,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7dd,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7de,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7df,
@@ -171,47 +172,47 @@ pub fn msg_box_1040_d3d0(param_1: u32) {
         (param_1 + 6),
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7e0,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e1,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e2,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e3,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e4,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e5,
@@ -240,30 +241,30 @@ pub fn display_msg_box_1040_cce4(param_1: &mut Vec<u8>) {
 
     process_struct_1000_179c(0x1000, in_dx);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, msg_box_title),
         0x57b,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, msg_box_text),
         0x7e9,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, string_3),
         0x7ea,
     );
     process_string_1000_3cea(CONCAT22(in_dx, msg_box_text), CONCAT22(unaff_ss, string_3));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, string_3),
         0x7eb,
@@ -294,22 +295,22 @@ pub fn msg_box_1040_ad66(param_1: u32) {
 
     process_struct_1000_179c(0x1000, in_dx);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, local_206),
         0x57b,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7f3,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7f4,
@@ -336,14 +337,14 @@ pub fn msg_box_1010_8bb4(ctx: &mut AppContext,
 
     let mut in_string_2 = load_string_1010_847e(
         ctx,
-        ctx._g_struct_73_1050_14cc,
+        ctx.g_struct_73_1050_14cc,
         0x3fa,
     );
     copy_string_1000_3d3e(local_402, in_string_2);
     process_string_1000_3cea(local_402, param_1);
     title = load_string_1010_847e(
         ctx,
-        ctx._g_struct_73_1050_14cc,
+        ctx.g_struct_73_1050_14cc,
         0x57b,
     );
     // MessageBox16(0x1010, title, CONCAT22(unaff_ss, local_402), ctx.g_h_window);
@@ -366,38 +367,38 @@ pub fn msg_box_1040_a85a(param_1: u32) {
 
     process_struct_1000_179c(0x1000, in_dx);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, local_206),
         0x57b,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7ef,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7f0,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7f1,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7f2,
@@ -426,38 +427,38 @@ pub fn msg_box_1040_64ca(param_1: u32) {
 
     process_struct_1000_179c(0x1000, in_dx);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, local_206),
         0x57b,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7ff,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x800,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x801,
     );
     process_string_1000_3cea(CONCAT22(in_dx, in_ax), CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x802,
@@ -487,31 +488,31 @@ pub fn msg_box_1038_8a3a(param_1: u32) {
     process_struct_1000_179c(0x1000, in_dx);
     _local_108 = CONCAT22(in_dx, in_ax);
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(in_dx, in_ax),
         0x7e6,
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e7,
     );
     process_string_1000_3cea(_local_108, CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         CONCAT22(unaff_ss, local_104),
         0x7e8,
     );
     process_string_1000_3cea(_local_108, CONCAT22(unaff_ss, local_104));
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x101,
         CONCAT22(unaff_ss, local_20a),
         0x57b,

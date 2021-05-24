@@ -70,12 +70,12 @@ pub unsafe fn draw_lines_1040_c38e(struct_param_1:  &mut Struct135, hdc_param_1:
             (local_a_x_262.field_0x24 / 2 + local_a_x_262.field_0x20) as i16
         );
         curr_pos_10 = GetCurrentPosition16(hdc_param_1);
-        curr_pos_10._2_2_ = (curr_pos_10 >> 0x10);
-        if curr_pos_10._2_2_ < y_coord_2 {
-            y_coord_2 = curr_pos_10._2_2_;
+        curr_pos_10 = (curr_pos_10 >> 0x10);
+        if curr_pos_10 < y_coord_2 {
+            y_coord_2 = curr_pos_10;
         }
-        if y_coord_1 < curr_pos_10._2_2_ {
-            y_coord_1 = curr_pos_10._2_2_;
+        if y_coord_1 < curr_pos_10 {
+            y_coord_1 = curr_pos_10;
         }
         MoveTo16(hdc_param_1, x_coord_2, y_coord_2);
         LineTo16(hdc_param_1, x_coord_1, y_coord_1);

@@ -20,9 +20,10 @@ use crate::pass::pass4_funcs::{pass1_1028_bc90, pass1_1028_e1ec};
 use crate::pass::pass7_funcs::{pass1_1018_255e, pass1_1018_270e, pass1_1018_3a7a, pass1_1018_57d2};
 use crate::pass::pass8_funcs::{pass1_1010_4df0, pass1_1010_519a};
 use crate::pass::pass8_funcs;
-use crate::string_ops::misc::{copy_string_1000_3d3e, load_string_1008_a8f4};
-use crate::struct_ops::struct_ops_2;
+use crate::string_ops::load::{load_string_1008_a8f4, load_string_1010_84e0};
+use crate::string_ops::misc::{copy_string_1000_3d3e, load_string_1010_847e, str_fn_1010_5286};
 use crate::struct_ops::process_struct_1010_20ba;
+use crate::struct_ops::struct_ops_2;
 use crate::struct_ops::struct_ops_2::{init_struct_1000_1902, process_struct_1000_179c, set_struct_1008_0000};
 use crate::structs::prog_structs_16::Struct493;
 use crate::structs::prog_structs_2::{Struct199, Struct7};
@@ -36,7 +37,8 @@ use crate::ui_ops::misc::{mixed_1040_8520, pass1_1038_af40, pass1_1038_e03e};
 use crate::ui_ops::msg_box::msg_box_1040_64ca;
 use crate::ui_ops::window::destroy_win_1040_7b98;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SBORROW2, SUB42, ZEXT24};
-use crate::winapi::{GetDlgItem16, GetWindowWord16, InvalidateRect16, IsIconic16, IsWindow16, PostMessage16, SendMessage16};
+use crate::winapi::{GetDlgItem16, GetWindowWord16, InvalidateRect16, IsIconic16, IsWindow16, PostMessage16, SendMessage16, SendDlgItemMessage16};
+use crate::structs::prog_structs_26::Struct97;
 
 pub unsafe fn send_win_msg_1040_a3d0(param_1: u32) {
     let mut u_var1: u32;
@@ -80,8 +82,8 @@ pub unsafe fn send_win_msg_1040_a308(param_1: u32, param_2: HWND16, param_3: u16
         u_var8 = 0x401;
         hwnd_var9 = param_2;
         lparam_var3 = load_string_1010_847e(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x531,
         );
         // winapi::SendMessage16(lparam_var3, wparam_var7, u_var8, hwnd_var9);
@@ -912,7 +914,7 @@ pub fn post_win_msg_1040_672e(ctx: &mut AppContext, param_1: &mut u32, param_2: 
             }
             u_var1 = 0x29;
         }
-        pass1_1038_af40(ctx._g_Struct112_a, *(param_1 + 8), u_var1);
+        pass1_1038_af40(ctx.g_struct_112_001, *(param_1 + 8), u_var1);
         winapi::PostMessage16(0, 2, 0x111, (param_1 + 6));
     }
     return;
@@ -1036,8 +1038,8 @@ pub unsafe fn send_msg_1040_1696(param_1: u32, param_2: HWND16) {
     u_var7 = 0x40a;
     u_var3 = local_4;
     load_string_1010_847e(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x531,
     );
     winapi::SendMessage16(CONCAT22(ctx.dx_reg, u_var3), w_var6, u_var7, param_2);
@@ -1071,8 +1073,8 @@ pub unsafe fn send_win_msg_1038_ed8a(param_1: &mut u32, param_2: &mut String, pa
     let mut local_4: u16;
 
     h_wnd = ctx.g_h_window;
-    if (param_3._2_2_ != 0x1c8) {
-        if (param_3._2_2_ == 0x1c9) {
+    if (param_3 != 0x1c8) {
+        if (param_3 == 0x1c9) {
             ppVar6 = struct_ops_2::process_struct_1010_20ba(
                 ctx.g_struct_var_1050_0ed0,
                 CONCAT22(in_stack_0000ffe2, 0x2f),
@@ -1099,20 +1101,20 @@ pub unsafe fn send_win_msg_1038_ed8a(param_1: &mut u32, param_2: &mut String, pa
             if (lVar7 == 0) {
                 return;
             }
-            param_3._2_2_ = 0x72;
+            param_3 = 0x72;
             h_wnd = (lVar7 + 8);
         } else {
-            if (param_3._2_2_ != 0x1ca) {
-                post_win_msg_1040_7b3c(param_1, param_2, param_2, param_3, param_3._2_2_);
+            if (param_3 != 0x1ca) {
+                post_win_msg_1040_7b3c(param_1, param_2, param_2, param_3, param_3);
                 return;
             }
         }
     }
-    winapi::SendMessage16(0, param_3._2_2_, 0x111, h_wnd);
+    winapi::SendMessage16(0, param_3, 0x111, h_wnd);
     return;
 }
 
-pub unsafe fn post_win_msg_1038_dcb0(param_1: u32) {
+pub unsafe fn post_win_msg_1038_dcb0(param_1: &mut u32) {
     let pp_var1: fn();
     let mut in_ax: i32;
     let mut u_var2: u16;
@@ -1330,7 +1332,7 @@ pub fn win_msg_fn_1020_d460(ctx: &mut AppContext, param_1: &mut Vec<u8>, param_2
 
     u_var1 = pass1_1028_bc90(param_1, param_2, param_3, param_4);
     if (u_var1 != 0) {
-        pass1_1038_af40(ctx._g_Struct112_a, *(_PTR_LOOP_1050_4230 + 0x16), 0x11);
+        pass1_1038_af40(ctx.g_struct_112_001, *(_PTR_LOOP_1050_4230 + 0x16), 0x11);
         ctx.PTR_LOOP_1050_5b80 = (&ctx.PTR_LOOP_1050_0000 + 1);
         process_win_msg_1008_9510(&mut ctx.PTR_LOOP_1050_5b80, &mut ctx.g_alloc_addr_1050_1050);
         let struct_var2 = struct_ops_2::process_struct_1010_20ba(
@@ -1437,7 +1439,7 @@ pub unsafe fn post_win_msg_1020_1ca4(param_1: u32) -> u16 {
 pub fn post_win_msg_1040_d2ac(param_1: &mut  Struct124, param_2: u16, param_3: u16, param_4: u32) {
     let LVar1: LRESULT;
 
-    if (param_2._2_2_ == (s_dibtext_bmp_1050_1844 + 4)) {
+    if (param_2 == (s_dibtext_bmp_1050_1844 + 4)) {
         SendDlgItemMessage16(
             0,
             0,
@@ -1447,8 +1449,8 @@ pub fn post_win_msg_1040_d2ac(param_1: &mut  Struct124, param_2: u16, param_3: u
         );
         pass1_1010_9172(&param_1[1].field_0x8);
     } else {
-        if ((s_dibtext_bmp_1050_1844 + 4) < param_2._2_2_) {
-            if (param_2._2_2_ == (s_dibtext_bmp_1050_1844 + 5)) {
+        if ((s_dibtext_bmp_1050_1844 + 4) < param_2) {
+            if (param_2 == (s_dibtext_bmp_1050_1844 + 5)) {
                 LVar1 = SendDlgItemMessage16(
                     0,
                     0,
@@ -1467,22 +1469,22 @@ pub fn post_win_msg_1040_d2ac(param_1: &mut  Struct124, param_2: u16, param_3: u
                     pass1_1010_91cc(&param_1[1].field_0x8);
                 }
             } else {
-                if (param_2._2_2_ == (s_dibtext_bmp_1050_1844 + 6)) {
+                if (param_2 == (s_dibtext_bmp_1050_1844 + 6)) {
                     window::enable_window_1040_d6be(param_1, param_2_00);
                     pass1_1018_57d2((param_1 + 1), CONCAT22(param_2_00, param_1));
                     PostMessage16(0, 0x203, 0x111, ctx.g_h_window);
                 } else {
-                    if (param_2._2_2_ != (s_dibtext_bmp_1050_1844 + 7)) {}
+                    if (param_2 != (s_dibtext_bmp_1050_1844 + 7)) {}
                     // goto LAB_1040_d3b3;
                     _ctx.PTR_LOOP_1050_5a68 = &param_1[1].field_0x4;
-                    misc::pass1_1038_af40(ctx._g_Struct112_a, *&param_1.field_0x6, 0x27);
+                    misc::pass1_1038_af40(ctx.g_struct_112_001, *&param_1.field_0x6, 0x27);
                 }
             }
         } else {
-            if (param_2._2_2_ == 0xeb) {
+            if (param_2 == 0xeb) {
                 dialog::send_dialog_item_msg_1040_d79c(CONCAT22(param_2_00, param_1));
             } else {
-                if (param_2._2_2_ != (s_vrpal_bmp_1050_183a + 7)) {
+                if (param_2 != (s_vrpal_bmp_1050_183a + 7)) {
                     // LAB_1040_d3b3:
                     window::win_gui_fn_1040_b54a(param_1, param_2_00, param_3, param_2);
                     return;
@@ -1733,7 +1735,6 @@ pub unsafe fn post_msg_1020_55b0(ctx: &mut AppContext, param_1: u32) {
     let pu_var3: &mut  u16;
     let mut u_var4: u16;
     let pu_var5: &mut  u16;
-
     let struct_a: &mut  Struct199;
     let mut u_var6: i32;
     let mut u_var7: u16;
@@ -1768,8 +1769,8 @@ pub unsafe fn post_msg_1020_55b0(ctx: &mut AppContext, param_1: u32) {
         CONCAT22(in_stack_0000fed8, 0x37),
     );
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x100,
         CONCAT22(unaff_ss, local_10c),
         0x59c,

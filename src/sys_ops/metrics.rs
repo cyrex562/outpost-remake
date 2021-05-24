@@ -207,7 +207,7 @@ pub fn get_system_metrics_1038_a18c(param_1: u32) {
         CONCAT22(unaff_ss, &local_10),
         CONCAT22(unaff_ss, &local_e),
     );
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x1c0);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 0x1c0);
     _local_14 = CONCAT22(ctx.dx_reg, paVar2);
     _local_18 = process_struct_1008_4772(CONCAT22(ctx.dx_reg, paVar2));
     pu_var7 = local_1a;
@@ -229,16 +229,16 @@ pub fn get_system_metrics_1038_a18c(param_1: u32) {
     local_e = (i_var3 - (local_28 - local_2c)) / 2;
     window::move_window_1040_826c(param_1, (param_1 >> 0x10), local_10, local_e);
     local_4c._0_2_ = SUB42(_local_14, 0);
-    local_4c._2_2_ = (_local_14 >> 0x10);
+    local_4c = (_local_14 >> 0x10);
     if (_local_14 != 0x0) {
         pp_var1 = *_local_14;
         (**pp_var1)(
             &ctx.PTR_LOOP_1050_1040,
             local_4c,
-            local_4c._2_2_,
+            local_4c,
             1,
             local_4c,
-            local_4c._2_2_,
+            local_4c,
             _local_14,
         );
     }

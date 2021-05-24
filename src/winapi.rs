@@ -820,3 +820,11 @@ BOOL16 WINAPI SetProp16( HWND16 hwnd, LPCSTR str, HANDLE16 handle )
 pub fn SetProp16(hwnd: HWND16, str: &String, handle: HANDLE16) -> bool {
     unimplemented!()
 }
+
+/*
+LRESULT WINAPI SendDlgItemMessage16( HWND16 hwnd, INT16 id, UINT16 msg,
+                                     WPARAM16 wParam, LPARAM lParam )
+ */
+pub fn SendDlgItemMessage16(hwnd: HWND16, id: i16, msg: u16, w_param: WPARAM16, l_param: LPARAM) -> LRESULT {
+    unimplemented!()
+}

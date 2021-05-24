@@ -128,11 +128,11 @@ pub unsafe fn make_proc_inst_1040_8fb8(
     in_Struct1.field_0x2a = 0;
     if ((param_6 != 0) && (param_5 != 0)) {
         in_Struct1.field_0x38 = 1;
-        mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, param_6);
+        mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, param_6);
         in_Struct1.field_0x8 = u_var1;
         in_Struct1.field_0xa = ctx.dx_reg;
         hinstance = 0x1010;
-        mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, param_5);
+        mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, param_5);
         in_Struct1.field_0xc = u_var1;
         in_Struct1.field_0xe = ctx.dx_reg;
         if (param_4 == 0) {
@@ -140,7 +140,7 @@ pub unsafe fn make_proc_inst_1040_8fb8(
             ctx.dx_reg = ctx.dx_reg;
         } else {
             hinstance = 0x1010;
-            mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, param_4);
+            mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, param_4);
             in_Struct1.field_0x10 = u_var1;
             in_Struct1.field_0x12 = ctx.dx_reg;
             ctx.dx_reg = ctx.dx_reg;
@@ -235,11 +235,11 @@ pub fn call_win_proc_1040_9686(param_1: u16, param_2: u16, param_3_00: WPARAM16,
     let mut local_4: u16;
 
     u_var5 = (in_ax >> 8);
-    HVar2 = GetProp16(CONCAT13(u_var5, CONCAT12(in_ax, 0x5e7d)), param_3._2_2_);
-    HVar3 = GetProp16(CONCAT13(u_var5, CONCAT12(in_ax, 0x5e76)), param_3._2_2_);
+    HVar2 = GetProp16(CONCAT13(u_var5, CONCAT12(in_ax, 0x5e7d)), param_3);
+    HVar3 = GetProp16(CONCAT13(u_var5, CONCAT12(in_ax, 0x5e76)), param_3);
     _local_6 = CONCAT22(HVar2, HVar3);
-    HVar2 = GetProp16(CONCAT22(in_ax, 0x5e8b), param_3._2_2_);
-    HVar3 = GetProp16(CONCAT22(in_ax, 0x5e84), param_3._2_2_);
+    HVar2 = GetProp16(CONCAT22(in_ax, 0x5e8b), param_3);
+    HVar3 = GetProp16(CONCAT22(in_ax, 0x5e84), param_3);
     _local_a = CONCAT22(HVar2, HVar3);
     if ((HVar2 | HVar3) != 0) {
         if (param_3 == 2) {
@@ -251,7 +251,7 @@ pub fn call_win_proc_1040_9686(param_1: u16, param_2: u16, param_3_00: WPARAM16,
             }
         } else {
             if (param_3 == 0x201) {
-                HVar2 = GetProp16(CONCAT22(in_ax, 0x5e92), param_3._2_2_);
+                HVar2 = GetProp16(CONCAT22(in_ax, 0x5e92), param_3);
                 if (HVar2 == 0) {
                     GetClientRect16(CONCAT22(unaff_ss, &local_1a), (_local_a + 0x18));
                     b_var4 = PtInRect16(CONCAT22(param_2, param_1), &local_1a);
@@ -297,7 +297,7 @@ pub fn call_win_proc_1040_9686(param_1: u16, param_2: u16, param_3_00: WPARAM16,
             CONCAT13((param_2 >> 8), CONCAT12(param_2, param_1)),
             param_3_00,
             param_3,
-            param_3._2_2_,
+            param_3,
             _local_6,
         );
     }

@@ -197,7 +197,7 @@ pub fn pass1_1020_d5f2(param_1: Vec<u8>, param_2: Vec<u8>) {
     local_14 = pass1_1030_2fac(CONCAT22(in_dx, local_12));
     local_1a = local_c;
     local_16 = local_8;
-    local_24 = CONCAT22(local_24._2_2_, &local_1a);
+    local_24 = CONCAT22(local_24, &local_1a);
     local_e = local_e + 1;
     if (local_e < local_14) {
         u_var8 = CONCAT22(unaff_ss, local_32);
@@ -269,7 +269,7 @@ pub fn pass1_1020_d6e6(param_1: &mut Struct44) {
     pass1_1028_bab6(param_1);
     local_14 = pass1_1030_2fac(CONCAT22(in_dx, local_12));
     local_1a = local_c;
-    local_24 = CONCAT22(local_24._2_2_, &local_1a);
+    local_24 = CONCAT22(local_24, &local_1a);
     local_16 = local_e + 1;
     if (local_16 < local_14) {
         u_var8 = CONCAT22(unaff_ss, local_32);
@@ -629,10 +629,10 @@ pub fn pass1_1020_dca8(param_1: &mut Struct44) {
         &local_4,
         ctx.stack_seg_reg,
     );
-    local_DXAX_29._2_2_ = ctx.dx_reg;
+    local_DXAX_29 = ctx.dx_reg;
     local_DXAX_29._0_1_ = pass1_1028_b58e(param_1);
-    u_var2 = (CONCAT11(local_DXAX_29._1_1_, local_DXAX_29) + 0xc);
-    u_var1 = (CONCAT11(local_DXAX_29._1_1_, local_DXAX_29) + 0x10);
+    u_var2 = (CONCAT11(local_DXAX_29, local_DXAX_29) + 0xc);
+    u_var1 = (CONCAT11(local_DXAX_29, local_DXAX_29) + 0x10);
     local_10 = u_var2;
   // u_var3 = (u_var2  >> 0x10);
     u_var4 = local_10 - 1;
@@ -686,9 +686,9 @@ pub fn win_fn_1020_de32(param_1: u32, param_2: u16) {
   // u_var2 = (ppVar4  >> 0x10);
     (ppVar4 + 0x12) = param_2;
   // u_var3 = (in_string_1  >> 0x10);
-  // i_var1 = gui_window_func_1038_b72e(ctx._g_Struct112_a, (ctx._g_Struct112_a  >> 0x10), 4);
+  // i_var1 = gui_window_func_1038_b72e(ctx.g_struct_112_001, (ctx.g_struct_112_001  >> 0x10), 4);
     if (i_var1 == 0) {
-        pass1_1038_af40(ctx._g_Struct112_a, *(_PTR_LOOP_1050_4230 + 0x16), 4);
+        pass1_1038_af40(ctx.g_struct_112_001, *(_PTR_LOOP_1050_4230 + 0x16), 4);
     }
     PTR_LOOP_1050_5b80 = (&ctx.PTR_LOOP_1050_0000 + 1);
     process_win_msg_1008_9510(&PTR_LOOP_1050_5b80, &ctx.g_alloc_addr_1050_1050, u_var3);
@@ -1197,7 +1197,7 @@ pub fn pass1_1020_e558(param_1: &mut Struct44) {
         pass1_1020_e4fa(param_1, local_a);
         local_10 = (local_6 + 0xc);
         u_stack12 = (local_6 + 0x10);
-        local_18 = CONCAT22(local_18._2_2_, &local_10);
+        local_18 = CONCAT22(local_18, &local_10);
         pass1_1028_c8ee(
             u_var5,
             u_var6,
@@ -1340,7 +1340,7 @@ pub fn pass1_1020_c4f4(param_1: u32, param_2: u16, param_3: u16, param_2_00: u32
     if (lVar4 != 0) {
       // paVar1 = pass1_1028_e1ec(ctx._PTR_LOOP_1050_65e2, param_2_00, (param_2_00  >> 0x10));
         local_AX_43._0_1_ = pass1_1030_6fa0(CONCAT22(u_var3, paVar1));
-        local_AX_43 = CONCAT11(local_AX_43._1_1_, local_AX_43);
+        local_AX_43 = CONCAT11(local_AX_43, local_AX_43);
         (lVar4 + 4) = (local_AX_43 * 2 + 0x4ea4);
     }
     return;
@@ -1673,8 +1673,8 @@ pub fn pass1_1020_c872(param_1: u32, param_2: u32, param_3: u32) {
     } else {
         pu_var1 = (local_e + 0xe);
         unsafe {
-            bVar10 = *pu_var1 < param_2._2_2_;
-            if ((bVar10 || *pu_var1 == param_2._2_2_)
+            bVar10 = *pu_var1 < param_2;
+            if ((bVar10 || *pu_var1 == param_2)
                 && (bVar10
                     || (
                         pu_var1 = (local_e + 0xc),
@@ -3650,8 +3650,8 @@ pub fn pass1_1020_bae6(param_1: u16, param_2: u32) {
     let mut local_4: u16;
 
     pass1_1020_bc92(param_1, param_2);
-    if ((local_DXAX_13._2_2_ | in_eax) != 0) {
-        return in_eax & 0xffff0000 | *(in_eax & 0xffff | local_DXAX_13._2_2_ << 0x10);
+    if ((local_DXAX_13 | in_eax) != 0) {
+        return in_eax & 0xffff0000 | *(in_eax & 0xffff | local_DXAX_13 << 0x10);
     }
     return in_eax & 0xffff0000;
 }
@@ -3684,7 +3684,7 @@ pub fn pass1_1020_bba4(param_1: Vec<u8>, param_2: u16, param_3: u16, param_4: Ve
     let mut local_6: u16;
     let mut local_4: u16;
 
-    pu_var3 = pass1_1020_bc92(param_1, param_4._2_2_);
+    pu_var3 = pass1_1020_bc92(param_1, param_4);
   // u_var1 = (pu_var3  >> 0x10);
     if (pu_var3 == 0x0) {
         pu_var3 = pass1_1020_bc92(param_1, 0);
@@ -3694,9 +3694,9 @@ pub fn pass1_1020_bba4(param_1: Vec<u8>, param_2: u16, param_3: u16, param_4: Ve
             if (pu_var3 == 0x0) {
                 return 0;
             }
-            (pu_var3 + 4) = param_4._2_2_;
+            (pu_var3 + 4) = param_4;
         } else {
-            (pu_var3 + 4) = param_4._2_2_;
+            (pu_var3 + 4) = param_4;
         }
       // u_var1 = (pu_var3  >> 0x10);
         if (param_2 != 0) {
@@ -3992,7 +3992,7 @@ pub fn pass1_1020_8eaa(param_1: &mut  Struct393) {
         u_var3,
         param_1 & 0xffff0000 | u_var1,
     );
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x1ce);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 0x1ce);
     local_bx_17.field_0xb4 = u_var2;
     local_bx_17.field_0xb6 = ctx.dx_reg;
     pass1_1020_8712(
@@ -4177,7 +4177,7 @@ pub fn pass1_1020_915a(param_1: &mut  Struct697) {
                 }
             }
         }
-        u_var3 = mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, local_c);
+        u_var3 = mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, local_c);
         local_struct_1.field_0xb4 = u_var3;
         local_struct_1.field_0xb6 = (u_var3 >> 0x10);
         local_struct_1.field_0xb8 = i_var1;
@@ -4771,7 +4771,7 @@ pub fn pass1_1020_5d56(param_1: &mut  u32, param_2: u32) -> bool {
             return 1;
         }
     }
-    pass1_1038_af40(ctx._g_Struct112_a, *(u_var2 + 8), 9);
+    pass1_1038_af40(ctx.g_struct_112_001, *(u_var2 + 8), 9);
     return 1;
 }
 
@@ -4793,7 +4793,7 @@ pub fn call_draw_fn_1020_3bd6(in_struct_1: &mut  Struct657) {
         } else {
             u_var2 = 8;
         }
-        pu_var3 = pass1_1038_af40(ctx._g_Struct112_a, local_struct_1.field_0x8, u_var2);
+        pu_var3 = pass1_1038_af40(ctx.g_struct_112_001, local_struct_1.field_0x8, u_var2);
         local_struct_1.field_0x10e = pu_var3;
         local_struct_1.field_0x110 = (pu_var3 >> 0x10);
     }

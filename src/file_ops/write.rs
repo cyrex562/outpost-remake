@@ -963,7 +963,7 @@ pub unsafe fn write_to_file_1038_75ca(ctx: &mut AppContext, param_1: &mut Struct
         if b_var1 != 0 {
             write_to_file_1008_7a22(file_handle, param_1.field_0xe);
             if b_var1 != 0 {
-                offset_1 = CONCAT22(offset_1._2_2_, param_1.field_0xc);
+                offset_1 = CONCAT22(offset_1, param_1.field_0xc);
                 b_var1 = write_to_file_1008_7e1c(file_handle, CONCAT22(base, &offset_1), 2);
                 if b_var1 != 0 {
                     offset_1 = offset_1 & 0xffff0000 | param_1.field_0x12;
@@ -1048,7 +1048,7 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
             offset_1 = local_bx_28.field_0x10;
             b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_1), 4);
             if (b_var1 != 0) {
-                offset_2 = CONCAT22(offset_2._2_2_, local_bx_28.field_0x18);
+                offset_2 = CONCAT22(offset_2, local_bx_28.field_0x18);
                 b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
                 if (b_var1 != 0) {
                     offset_2 = offset_2 & 0xffff0000 | local_bx_28.field_0x1a;

@@ -352,8 +352,8 @@ pub unsafe fn enable_menu_item_1020_44ec(
             b_var6 = pass1_1008_c6ae(ctx.ctx._PTR_LOOP_1050_06e0, local_8, 0x20);
             if (b_var6 != 0) {
                 load_string_1010_847e(
-                    ctx._g_struct_73_1050_14cc,
-                    (ctx._g_struct_73_1050_14cc >> 0x10),
+                    ctx.g_struct_73_1050_14cc,
+                    (ctx.g_struct_73_1050_14cc >> 0x10),
                     0x74b,
                 );
                 local_128 = CONCAT22(ctx.dx_reg, b_var6);

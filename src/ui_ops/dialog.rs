@@ -24,14 +24,15 @@ use crate::structs::prog_structs_29::Struct49;
 use crate::structs::prog_structs_30::Struct347;
 use crate::structs::prog_structs_31::{Struct20, Struct21};
 use crate::sound_funcs::mci_send_command_1008_5c7c;
-use crate::string_ops::misc::load_string_1008_b1f0;
+use crate::string_ops::load::{load_string_1008_b1f0, load_string_1010_84e0};
 use crate::struct_ops::struct_ops_2::process_struct_1000_179c;
 use crate::sys_ops::win_msg;
 use crate::typedefs::{HANDLE16, HWND16, LPARAM, LRESULT};
 use crate::ui_ops::{misc, ui2, window};
 use crate::ui_ops::cursor::set_cursor_1038_bc30;
 use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
-use crate::winapi::{DestroyWindow16, EnableWindow16, GetDlgItem16, SendMessage16, SetDlgItemText16, SetFocus16, SetWindowText16, ShowWindow16};
+use crate::winapi::{DestroyWindow16, EnableWindow16, GetDlgItem16, SendMessage16, SetDlgItemText16, SetFocus16, SetWindowText16, ShowWindow16, SendDlgItemMessage16};
+use crate::string_ops::misc::{load_string_1010_847e, big_switch_statement_1020_c0d8, str_fn_1010_c446, wsprintf_1010_8c96, big_switch_statement_1020_c222};
 
 pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
     let lVar1: u32;
@@ -70,8 +71,8 @@ pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
     pass1_1010_9044((i_var3 + 0x9c));
     _local_10a = CONCAT22(ctx.dx_reg, u_var2);
     local_10e._0_2_ = 0;
-    local_10e._2_2_ = 0;
-    while (CONCAT22(local_10e._2_2_, local_10e) < _local_10a) {
+    local_10e = 0;
+    while (CONCAT22(local_10e, local_10e) < _local_10a) {
         pass1_1010_9130((i_var3 + 0x9c), CONCAT22(unaff_ss, local_106), local_10e);
         if (local_106[0] != '\0') {
             SendDlgItemMessage16(
@@ -82,9 +83,9 @@ pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
                 (i_var3 + 6),
             );
         }
-        lVar1 = CONCAT22(local_10e._2_2_, local_10e) + 1;
+        lVar1 = CONCAT22(local_10e, local_10e) + 1;
         local_10e._0_2_ = lVar1;
-        local_10e._2_2_ = (lVar1 >> 0x10);
+        local_10e = (lVar1 >> 0x10);
     }
     SendDlgItemMessage16(0, 1, 0xb, (s_dibtext_bmp_1050_1844 + 3), (i_var3 + 6));
     return;
@@ -374,10 +375,10 @@ pub fn set_dialog_item_text_1040_ae04(param_1: &mut  Struct347) {
             SetDlgItemText16(_local_120, local_116 + 0x1dc, local_struct_1.window_handle);
             u_var1 = local_struct_1.field_0x98;
             local_124._0_2_ = u_var1;
-            local_124._2_2_ = (u_var1 >> 0x10);
+            local_124 = (u_var1 >> 0x10);
             wsprintf_1010_8c96(
                 local_124,
-                local_124._2_2_,
+                local_124,
                 string_1,
                 ctx.stack_seg_reg,
                 plVar7,
@@ -394,8 +395,8 @@ pub fn set_dialog_item_text_1040_ae04(param_1: &mut  Struct347) {
     }
     if (!b_var2) {
         load_string_1010_847e(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x531,
         );
         SetDlgItemText16(
@@ -662,18 +663,18 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
     } else {
         if (param_3 == 0xfb1) {
             local_46c._0_1_ = 0xa0;
-            local_46c._1_1_ = 1;
-            while (CONCAT11(local_46c._1_1_, local_46c) < 0x1b5) {
-                u_var5 = IsDlgButtonChecked16(CONCAT11(local_46c._1_1_, local_46c), (i_var12 + 6));
+            local_46c = 1;
+            while (CONCAT11(local_46c, local_46c) < 0x1b5) {
+                u_var5 = IsDlgButtonChecked16(CONCAT11(local_46c, local_46c), (i_var12 + 6));
                 if (u_var5 == 1) {
                     in_struct_1 = (i_var12 + 0x8e);
                   // uVar16 = (in_struct_1  >> 0x10);
-                    switch_stmt_1008_d818(in_struct_1, CONCAT11(local_46c._1_1_, local_46c));
+                    switch_stmt_1008_d818(in_struct_1, CONCAT11(local_46c, local_46c));
                     // goto LAB_1038_bba2;
                 }
-                i_var2 = CONCAT11(local_46c._1_1_, local_46c) + 1;
+                i_var2 = CONCAT11(local_46c, local_46c) + 1;
                 local_46c._0_1_ = i_var2;
-                local_46c._1_1_ = (i_var2 >> 8);
+                local_46c = (i_var2 >> 8);
             }
         } else {
             if (param_3 != 0xfbe) {}
@@ -689,15 +690,15 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
             u_var9 = pass1_1018_1e78((i_var12 + 0x92), ((local_10 * 6 + local_a) * 2 + 0x5b86));
             _local_14 = (u_var9 & 0xffff | u_var7 << 0x10);
             load_string_1010_84e0(
-                ctx._g_struct_73_1050_14cc,
-                (ctx._g_struct_73_1050_14cc >> 0x10),
+                ctx.g_struct_73_1050_14cc,
+                (ctx.g_struct_73_1050_14cc >> 0x10),
                 0x50,
                 CONCAT13((unaff_ss >> 8), CONCAT12(unaff_ss, local_464)),
                 0x5f1,
             );
             load_string_1010_847e(
-                ctx._g_struct_73_1050_14cc,
-                (ctx._g_struct_73_1050_14cc >> 0x10),
+                ctx.g_struct_73_1050_14cc,
+                (ctx.g_struct_73_1050_14cc >> 0x10),
                 *_local_14,
             );
             struct_a = ctx.dx_reg;
@@ -713,18 +714,18 @@ pub unsafe fn check_gui_dlg_1038_b922(ctx: &mut AppContext, param_1: &mut u32, p
                 local_8 = 0;
                 u_var11 = 0;
             } else {
-                local_470 = ctx._g_struct_73_1050_14cc;
-              // local_46e = (ctx._g_struct_73_1050_14cc  >> 0x10);
+                local_470 = ctx.g_struct_73_1050_14cc;
+              // local_46e = (ctx.g_struct_73_1050_14cc  >> 0x10);
                 puVar8 = local_414;
                 load_string_1010_847e(ctx, local_470, local_46e, 0x7b);
                 local_46c._0_1_ = ctx.dx_reg;
-                local_46c._1_1_ = (ctx.dx_reg >> 8);
+                local_46c = (ctx.dx_reg >> 8);
                 u_var14 = SUB42(&ctx.PTR_LOOP_1050_1040, 0);
                 u_var11 = ctx.dx_reg;
                 pu_var10 = sys_ops::process_struct_1040_8478(
                     CONCAT13((puVar8 >> 8), CONCAT12(puVar8, 0x41)),
                     0x41,
-                    CONCAT13(local_46c._1_1_, CONCAT12(local_46c, puVar8)),
+                    CONCAT13(local_46c, CONCAT12(local_46c, puVar8)),
                     CONCAT22(unaff_ss, local_414),
                     h_var4,
                 );
@@ -1141,7 +1142,7 @@ pub fn check_dlg_btn_1038_e1dc(in_struct_1: &mut Struct49, param_2: u16) {
         } else {
             w_param = 0x111012f;
         }
-        SendMessage16(0, w_param, w_param._2_2_, ctx.g_h_window);
+        SendMessage16(0, w_param, w_param, ctx.g_h_window);
     }
     // LAB_1038_e229:
     DestroyWindow16(local_bx_7.h_win);
@@ -1541,8 +1542,8 @@ pub fn send_dialog_item_msg_1038_844a(param_1: u32) -> LRESULT {
     _local_6 = pass1_1008_b820((i_var3 + 0x94));
     if (_local_6 == 0) {
         load_string_1010_84e0(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x100,
             CONCAT22(unaff_ss, local_108),
             0x448,
@@ -1560,8 +1561,8 @@ pub fn send_dialog_item_msg_1038_844a(param_1: u32) -> LRESULT {
       // u_var2 = (LVar5  >> 0x10);
         hwnd = GetDlgItem16((s_logo_bmp_1050_1850 + 7), (i_var3 + 6));
         load_string_1010_84e0(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x100,
             CONCAT22(unaff_ss, local_108),
             0x449,

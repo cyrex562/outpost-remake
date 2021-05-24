@@ -91,13 +91,13 @@ pub unsafe fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
     let mut u_var1: u32;
     let mut local_DXAX_12: u32;
 
-    u_var1 = pass1_1010_84f8(ctx._g_struct_73_1050_14cc, param_2);
+    u_var1 = pass1_1010_84f8(ctx.g_struct_73_1050_14cc, param_2);
     mci_send_command_1008_5cfe(param_1, u_var1);
     return;
 }
 
 pub fn mci_send_command_1008_5c7c(ctx:&mut AppContext, in_char_buff: Vec<u8>, struct_param_2: &mut  Struct13) {
-    let mut u_var1 = set_error_mode_1010_85be(ctx, ctx._g_struct_73_1050_14cc, struct_param_2);
+    let mut u_var1 = set_error_mode_1010_85be(ctx, ctx.g_struct_73_1050_14cc, struct_param_2);
     mci_send_command_1008_5cfe(in_char_buff, u_var1);
     return;
 }
@@ -370,7 +370,7 @@ pub unsafe fn win_fn_1018_6adc(ctx: &mut AppContext, param_1: u32, param_2: &mut
         u_var4 = mci_send_cmd_1008_5c5c(ctx.g_struct_1050_02a0, (i_var5 + 0xee));
         (i_var5 + 0xf0) = u_var4;
     }
-    u_var3 = mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, (i_var5 + 0xec));
+    u_var3 = mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, (i_var5 + 0xec));
     sound_fn_1008_53ae(ctx, u_var3, extraout_DL, (i_var5 + 8));
     ShowCursor16(8, 1);
     win_func_1018_6bb6(param_1, (param_1 >> 0x10));

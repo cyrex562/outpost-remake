@@ -293,7 +293,7 @@ pub unsafe fn pass1_fn_1000_21d2(
                 }
             }
         } else {
-            BVar2 = pass1_fn_1000_22c0(param_3, param_4, param_2, param_1, param_2._2_2_);
+            BVar2 = pass1_fn_1000_22c0(param_3, param_4, param_2, param_1, param_2);
             if (BVar2 != 0) {
                 return 1;
             }

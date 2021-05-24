@@ -164,15 +164,15 @@ pub unsafe fn handle_error_1008_0036(ctx: &mut AppContext, param_1: u32) {
         local_CS__1 = 0x1000;
         error_check_1000_17ce(pa_var3);
     }
-    in_struct_1 = ctx._g_struct_73_1050_14cc;
-    if (ctx._g_struct_73_1050_14cc != 0x0) {
-        pass1_1010_7efc(ctx._g_struct_73_1050_14cc);
+    in_struct_1 = ctx.g_struct_73_1050_14cc;
+    if (ctx.g_struct_73_1050_14cc != 0x0) {
+        pass1_1010_7efc(ctx.g_struct_73_1050_14cc);
         local_CS__1 = 0x1000;
         error_check_1000_17ce(in_struct_1);
     }
-    pa_var3 = ctx._g_Struct112_a;
-    if (ctx._g_Struct112_a != 0x0) {
-        pass1_1038_af34(ctx._g_Struct112_a, (ctx._g_Struct112_a >> 0x10));
+    pa_var3 = ctx.g_struct_112_001;
+    if (ctx.g_struct_112_001 != 0x0) {
+        pass1_1038_af34(ctx.g_struct_112_001, (ctx.g_struct_112_001 >> 0x10));
         local_CS__1 = 0x1000;
         error_check_1000_17ce(pa_var3);
     }

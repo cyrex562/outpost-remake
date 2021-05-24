@@ -231,8 +231,8 @@ pub unsafe fn pass1_1008_cfa0(param_1: &mut  Struct298, param_2: u32) {
     if ((-1 < ctx.dx_reg) && (0 < ctx.dx_reg || (u_var9 != 0))) {
         u_var7 = u_var9;
         load_str_1010_84ac(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x430,
         );
         u_var14 = 0;
@@ -261,8 +261,8 @@ pub unsafe fn pass1_1008_cfa0(param_1: &mut  Struct298, param_2: u32) {
     if ((-1 < ctx.dx_reg) && (0 < ctx.dx_reg || (u_var9 != 0))) {
         u_var6 = u_var9;
         load_str_1010_84ac(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x431,
         );
         u_var14 = 0;
@@ -293,8 +293,8 @@ pub unsafe fn pass1_1008_cfa0(param_1: &mut  Struct298, param_2: u32) {
     if ((-1 < extraout_dx_04) && (0 < extraout_dx_04 || (u_var9 != 0))) {
         u_var6 = u_var9;
         load_str_1010_84ac(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x432,
         );
         u_var14 = 0;
@@ -323,8 +323,8 @@ pub unsafe fn pass1_1008_cfa0(param_1: &mut  Struct298, param_2: u32) {
     }
     if (!b_var3) {
         load_str_1010_84ac(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x440,
         );
         u_var14 = 0;
@@ -389,7 +389,7 @@ pub unsafe fn pass1_1008_d790(in_struct_1: &mut  Struct299, param_2: u32) {
     in_struct_1.field_0xe = 0;
     CONCAT22(local_6, in_struct_1) = 0xd98e;
     in_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x9b);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 0x9b);
     in_struct_1.field_0xa = local_AX_18;
     in_struct_1.field_0xc = local_DX_49;
     return;

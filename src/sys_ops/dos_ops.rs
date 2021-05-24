@@ -28,9 +28,9 @@ pub unsafe fn get_dos_env_1000_27d6(ctx: &mut AppContext) {
     let mut pc_var15: String;
     let mut u_var16 = &ctx.g_alloc_addr_1050_1050;
     let mut dos_env = GetDOSEnviornment16();
-    // dos_env._2_2_ = (dos_env >> 0x10);
+    // dos_env = (dos_env >> 0x10);
     // if dos_env != 0 {
-    //     dos_env._2_2_ = 0;
+    //     dos_env = 0;
     // }
     let mut i_var7 = 0;
     let mut pc_var10 = String::new();
@@ -643,7 +643,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
                 u_var20 = process_string_1000_55b1(ctx);
             }
             u_var6 = u_var20;
-            local_a = param_2._2_2_;
+            local_a = param_2;
             if (uVar15) {
                 u_var6 = CONCAT11(9, u_var20);
             } else {
@@ -684,7 +684,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
             // goto LAB_1000_3acf;
             pc_var9 = pc_var12;
             uStack18 = unaff_cs;
-            uStack16 = param_2._2_2_;
+            uStack16 = param_2;
             u_var8 = pass1_fn_1000_3bac();
             u_var4 = uStack16;
             if (u_var8 < 0xa9) {
@@ -974,7 +974,7 @@ pub unsafe fn dos3_call_1000_435c(ctx: &mut AppContext, param_1: Option<&mut u16
         u_var4 = u_var5;
     }
     u_var2 = pass1_fn_1000_462e(u_var3 - 0x7bc, u_var4 >> 8, u_var4 & 0xff);
-    if (param_1._2_2_ != 0) {
+    if (param_1 != 0) {
         (param_1 + 2) = u_var4;
         unsafe {
             *param_1 = u_var2;

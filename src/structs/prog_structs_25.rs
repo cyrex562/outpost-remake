@@ -1,3 +1,8 @@
+use crate::structs::prog_structs_7::Struct613;
+use crate::structs::prog_structs_2::Struct199;
+use crate::typedefs::{HGDIOBJ16, HCURSOR16, HDC16, HWND16};
+use crate::structs::prog_structs_17::Struct590;
+use crate::structs::prog_structs_9::Struct872;
 
 pub struct Struct211 {
     pub field_0x0: u8,
@@ -2261,12 +2266,12 @@ pub struct Struct80 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: &mut  Struct81,
+    pub field_0xe: Struct81,
     pub field_0x10: i32,
 }
 
 pub struct Struct81 {
-    pub field_0x0: &mut  u16,
+    pub field_0x0: u16,
     pub field_0x2: u8,
     pub field_0x3: u8,
     pub field_0x4: u8,
@@ -2279,14 +2284,14 @@ pub struct Struct81 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    pub field_0xe: &mut  Struct81,
-    pub field_0x10: &mut  u16,
+    pub field_0xe:   Struct81,
+    pub field_0x10:   u16,
 }
 
 pub struct Struct83 {
     pub field_0x0: u16,
-    field_0x2: &mut  u32,
-    pub field_0x4: &mut  u16,
+    field_0x2:   u32,
+    pub field_0x4:   u16,
 }
 
 pub struct Struct84 {
@@ -2300,12 +2305,12 @@ pub struct Struct84 {
     pub field_0xb: u8,
     pub field_0xc: u8,
     pub field_0xd: u8,
-    field_0xe: &mut  u32,
-    pub field_0x10: &mut  Struct83,
+    field_0xe:   u32,
+    pub field_0x10:   Struct83,
     pub field_0x12: u16,
     pub field_0x14: i32,
-    field_0x16: &mut  u32,
-    pub field_0x18: &mut  Struct83,
+    field_0x16:   u32,
+    pub field_0x18:   Struct83,
 }
 
 pub struct Struct851 {
@@ -2321,7 +2326,7 @@ pub struct Struct851 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: &mut  u16,
+    pub field_0xc:   u16,
     pub field_0xe: u8,
     pub field_0xf: u8,
     pub field_0x10: u32,
@@ -3944,9 +3949,9 @@ pub struct Struct70 {
 }
 
 pub struct Struct402 {
-    pub a: u16,
-    pub b: u16,
-    pub c: u16,
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: u16,
     pub field_0x6: u8,
     pub field_0x7: u8,
     pub field_0x8: u32,
@@ -5859,7 +5864,7 @@ pub struct Struct1104 {
     pub field_0x1f3: u8,
     pub field_0x1f4: u8,
     pub field_0x1f5: u8,
-    pub field_0x1f6: &mut  Struct872,
+    pub field_0x1f6:   Struct872,
 }
 
 pub struct Struct459 {
@@ -6137,7 +6142,7 @@ pub struct Struct63 {
     pub field_0x16: u8,
     pub field_0x17: u8,
     pub field_0x18: u32,
-    pub field_0x1c: &mut  HDC16,
+    pub field_0x1c:   HDC16,
     pub field_0x1e: u8,
     pub field_0x1f: u8,
     pub field_0x20: u8,
@@ -6436,7 +6441,7 @@ pub struct Struct65 {
     pub u16_xb6: u16,
     pub u16_xb8: u16,
     pub u16_xba: u16,
-    pub Struct590_ptr_xbc: &mut  Struct590,
+    pub Struct590_ptr_xbc:   Struct590,
     pub field_0xbe: u8,
     pub field_0xbf: u8,
     pub field_0xc0: u8,
@@ -6475,8 +6480,8 @@ pub struct Struct65 {
     pub u16_xf0: u16,
     pub u16_xf2: u16,
     pub u16_xf4: u16,
-    pub field_0xf6: &mut  Struct199,
-    pub field_0xf8: &mut  Struct199,
+    pub field_0xf6:   Struct199,
+    pub field_0xf8:   Struct199,
     pub field_0xfa: Vec<u8>,
     pub field_0xfc: Vec<u8>,
     pub field_0xfe: u16,
@@ -6488,7 +6493,7 @@ pub struct Struct65 {
     pub field_0x105: u8,
     pub field_0x106: u8,
     pub field_0x107: u8,
-    pub field_0x108: &mut  Struct613,
+    pub field_0x108:   Struct613,
     pub field_0x10a: u16,
     pub field_0x10c: u16,
     pub field_0x10e: u32,

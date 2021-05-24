@@ -794,7 +794,7 @@ pub unsafe fn pass1_1040_ca74(param_1: &mut  u16) {
   // u_var1 = (param_1  >> 0x10);
     unsafe { *param_1 = 0xd07c };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
-    pass1_1038_b6e0(ctx._g_Struct112_a, *(param_1 + 6));
+    pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
     PTR_LOOP_1050_5f10 = 0x0;
     win_cleanup_func_1040_b0f8(param_1);
     return;

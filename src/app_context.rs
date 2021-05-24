@@ -3,6 +3,8 @@ use crate::mem_funcs::Address;
 use crate::structs::prog_structs_31::Struct112;
 use crate::typedefs::{HINSTANCE16, HWND16};
 use crate::mem_funcs::mem_ops_1::StructuredData;
+use crate::structs::prog_structs_10::Struct73;
+use crate::structs::prog_structs_16::Struct493;
 
 pub struct AppContext {
     pub _g_bool_1050_5748: bool,
@@ -40,10 +42,10 @@ pub struct AppContext {
     pub PTR_LOOP_1050_0312: String,
     pub s__1050_65a0: String,
     pub _PTR_LOOP_1050_5736: Vec<u8>,
-    pub _PTR_LOOP_1050_65e2: Vec<u8>,
+    pub _PTR_LOOP_1050_65e2: Struct493,
     pub _PTR_LOOP_1050_5a64: Vec<u8>,
     pub PTR_DAT_0005_0000_1050_0004: String,
-    pub _g_struct_73_1050_14cc: Vec<u8>,
+    pub g_struct_73_1050_14cc: Struct73,
     pub PTR_LOOP_1050_5f4e: u16,
     pub PTR_LOOP_1050_5f50: u16,
     pub PTR_LOOP_1050_5f52: u16,
@@ -56,6 +58,10 @@ pub struct AppContext {
     pub s_MciSound_registerClass_failed_1050_02cc: String,
     pub g_h_window: HWND16,
     pub g_string_1050_039e: String,
+    pub s_SOLDefaultWindowClass_1050_01fe: String,
+    pub s_New_failed_in_Op__Op__Simulator_1050_0110: String,
+    pub g_struct_112_001: Struct112,
+    pub g_struct_var_1050_0ed0: Struct372,
     pub ax_reg: u16,
     pub bx_reg: u16,
     pub cx_reg: u16,

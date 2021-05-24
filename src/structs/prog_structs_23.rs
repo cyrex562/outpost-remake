@@ -1,3 +1,5 @@
+use crate::structs::prog_structs_2::Struct199;
+use crate::typedefs::{HPALETTE16, HDC16, HWND16, HMENU16, HANDLE16};
 
 pub struct Struct726 {
     pub field_0x0: u8,
@@ -306,7 +308,7 @@ pub struct WinStruct42 {
     pub field_0xed: u8,
     pub char_ptr_16_0xee: String,
     pub field_0xf0: i32,
-    pub u32_xf2: u16,
+    pub u32_xf2: Struct199,
     pub field_0xf4: u16,
     pub u32_xf6: u32,
     pub u32_xfa: u32,

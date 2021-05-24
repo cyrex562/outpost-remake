@@ -123,7 +123,7 @@ pub unsafe fn pt_in_rect_1010_40f8(
         let pi_var1_val = unsafe { *pi_var1 };
         if (pi_var1_val == local_6 || pi_var1_val < local_6) {
             // LAB_1010_413e:
-            if ((local_6._2_2_ != 0) && (3 < ctx.PTR_LOOP_1050_3960)) {
+            if ((local_6 != 0) && (3 < ctx.PTR_LOOP_1050_3960)) {
                 pp_var8 = process_struct_1010_20ba(
                     ctx.g_struct_var_1050_0ed0,
                     CONCAT22(in_stack_0000ffec, local_6 + 0xc),
@@ -147,7 +147,7 @@ pub unsafe fn pt_in_rect_1010_40f8(
                     pass1_1010_209e(ctx.g_struct_var_1050_0ed0, local_6 + 0xc);
                 }
             }
-            if (local_6._2_2_ != 0) {
+            if (local_6 != 0) {
                 return local_6;
             }
             return 0xffff;
@@ -186,8 +186,8 @@ pub fn pt_in_rect_1010_4e08(in_struct_1: &mut  Struct642, param_2: u16, param_3:
         pi_var1 = local_struct_1.field_0x30;
         if (pi_var1 == local_c || pi_var1 < local_c) {
             // LAB_1010_4e67:
-            if (local_c._2_2_ != 0) {
-                local_struct_1.field_0x20 = local_c._2_2_;
+            if (local_c != 0) {
+                local_struct_1.field_0x20 = local_c;
             }
             if (b_var2) {
                 return;
@@ -313,7 +313,7 @@ pub fn pt_in_rect_1040_8158(param_1: &mut  Struct69, param_2: u32, param_3: u16)
             local_6 = param_2;
             ScreenToClient16(CONCAT22(&local_6, unaff_cs), unaff_ss);
             i_var2 = GetSystemMetrics16(4);
-            local_6 = local_6 & 0xffff | (local_6._2_2_ + i_var2) << 0x10;
+            local_6 = local_6 & 0xffff | (local_6 + i_var2) << 0x10;
             b_var3 = PtInRect16(local_6, (local_bx_10 + 1));
             if (b_var3 != 0) {
                 pp_var1 = (param_1 + 0x14);
@@ -375,7 +375,7 @@ pub unsafe fn call_invalidate_rect_1020_8bcc(ctx: &mut AppContext, in_struct_1: 
                 (paVar1 + 2) = ctx.dx_reg;
             }
             pass1_1008_5134(local_struct_1.field_0xc);
-            mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 2);
+            mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 2);
             process_struct_1008_48fe(
                 CONCAT22(unaff_ss, local_3a),
                 1,

@@ -184,7 +184,7 @@ pub fn free_mem_1000_13ce(alloc_addr: u32) -> bool {
     let mut alloc_handle: u32;
     let mut local_4: u16;
 
-    alloc_handle = GlobalHandle16(alloc_addr._2_2_);
+    alloc_handle = GlobalHandle16(alloc_addr);
     if (alloc_handle != 0) {
         out_handle = GlobalFree16(alloc_handle);
         return (out_handle == 0);

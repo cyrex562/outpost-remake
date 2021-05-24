@@ -129,7 +129,7 @@ pub unsafe fn pass1_1040_ace8(in_struct_1: &mut  Struct348) {
     local_struct_1 = in_struct_1;
     in_struct_1.field_0x0 = 0xafc4;
     local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-    pass1_1038_b6e0(ctx._g_Struct112_a, local_struct_1.field_0x6);
+    pass1_1038_b6e0(ctx.g_struct_112_001, local_struct_1.field_0x6);
     win_cleanup_func_1040_b0f8(in_struct_1);
     return;
 }

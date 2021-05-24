@@ -253,8 +253,8 @@ pub unsafe fn get_private_profile_str_1010_5404(ctx: &mut AppContext, param_1: &
     }
     local_4 = u_var7;
     load_string_1010_847e(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x578,
     );
     pa_var14 = ctx.dx_reg;

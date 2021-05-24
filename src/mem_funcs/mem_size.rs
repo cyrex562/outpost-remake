@@ -167,7 +167,7 @@ pub unsafe fn get_mem_sz_1000_1284(param_1: u32) -> u32 {
             if (u8_var4 != 3) {
                 return 0xffffffff;
             }
-            alloc_size = get_mem_sz_1000_1532(param_1._2_2_);
+            alloc_size = get_mem_sz_1000_1532(param_1);
             return CONCAT22(
                 (alloc_size >> 0x10) - (alloc_size < 0x14),
                 alloc_size - 0x14,

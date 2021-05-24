@@ -126,7 +126,7 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
     }
     if (param_2 != 0) {
         CVar6 = GetSysColor16(count);
-        if ((CVar6 == local_80) && ((CVar6 >> 0x10) == local_80._2_2_)) {
+        if ((CVar6 == local_80) && ((CVar6 >> 0x10) == local_80)) {
             return;
         }
     }
@@ -139,7 +139,7 @@ pub fn sys_color_func_1008_357e(param_1: u32, param_2: i32) {
         color_ref = CONCAT22(unaff_ss, &local_80);
     }
     puStack140 = &count;
-    SetSysColors16(color_ref, color_ref._2_2_, puStack140);
+    SetSysColors16(color_ref, color_ref, puStack140);
     return;
 }
 

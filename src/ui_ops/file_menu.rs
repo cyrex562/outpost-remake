@@ -160,8 +160,8 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     }
     local_416 = '\0';
     load_string_1010_847e(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x579,
     );
     copy_string_1000_3d3e(
@@ -187,8 +187,8 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     }
     local_518 = '\0';
     load_string_1010_847e(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x74c,
     );
     u_var7 = copy_string_1000_3d3e(
@@ -218,10 +218,10 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
     local_566 = 0;
     local_666 = '\0';
     i_var4 = param_2 + -1;
-  // u_var8 = (ctx._g_struct_73_1050_14cc  >> 0x10);
+  // u_var8 = (ctx.g_struct_73_1050_14cc  >> 0x10);
     if (i_var4 == 0) {
         local_532 = 0x1804;
-        load_string_1010_847e(ctx._g_struct_73_1050_14cc, u_var8, 0x74d);
+        load_string_1010_847e(ctx.g_struct_73_1050_14cc, u_var8, 0x74d);
         copy_string_1000_3d3e(
             CONCAT22(unaff_ss, &local_666),
             CONCAT22(ctx.dx_reg, i_var4),
@@ -240,7 +240,7 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
             // goto LAB_1008_3461;
         }
         local_532 = 6;
-        load_string_1010_847e(ctx._g_struct_73_1050_14cc, u_var8, 0x74e);
+        load_string_1010_847e(ctx.g_struct_73_1050_14cc, u_var8, 0x74e);
         copy_string_1000_3d3e(
             CONCAT22(unaff_ss, &local_666),
             CONCAT22(extraout_dx_05, param_2),
@@ -257,8 +257,8 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
         local_67e = local_52e;
         if (local_52e < 0) {
             load_string_1010_847e(
-                ctx._g_struct_73_1050_14cc,
-                (ctx._g_struct_73_1050_14cc >> 0x10),
+                ctx.g_struct_73_1050_14cc,
+                (ctx.g_struct_73_1050_14cc >> 0x10),
                 0x3fd,
             );
             _local_676 = CONCAT22(ctx.dx_reg, local_52e);
@@ -266,8 +266,8 @@ pub fn open_save_fn_1008_3178(param_1: u32, param_2: i32) {
             pass1_fn_1008_60e8(local_52e, ctx.dx_reg);
             _local_676 = CONCAT22(u_var8, local_52e);
             load_string_1010_847e(
-                ctx._g_struct_73_1050_14cc,
-                (ctx._g_struct_73_1050_14cc >> 0x10),
+                ctx.g_struct_73_1050_14cc,
+                (ctx.g_struct_73_1050_14cc >> 0x10),
                 0x57b,
             );
             local_670 = extraout_dx_04;

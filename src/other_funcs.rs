@@ -165,7 +165,7 @@ pub fn switch_stmt_1008_aaa8(param_1: u16, param_2: u16, param_3: u16) -> u16 {
     return local_4;
 }
 
-pub fn switch_stmt_1008_ab80(param_1: u16, param_2: u16, param_3: u16) -> u16 {
+pub fn switch_stmt_1008_ab80(param_1: &mut String, param_2: &mut String, param_3: &mut u32) -> u16 {
     let mut local_4: u16;
 
     local_4 = 0;

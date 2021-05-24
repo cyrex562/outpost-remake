@@ -129,19 +129,19 @@ pub unsafe fn alloc_mem_1000_03c6(ctx: &mut AppContext,
             local_alloc_flags = 0x1000;
         }
         alloc_addr = alloc_mem_1000_131c(&param_3.field_0x16 | local_alloc_flags, in_alloc_size);
-        alloc_addr._2_2_ = (alloc_addr >> 0x10);
+        alloc_addr = (alloc_addr >> 0x10);
         if alloc_addr != 0 {
             local_AX_131 = mem_size::get_mem_sz_1000_0308();
             if local_AX_131 != 0x0 {
                 local_AX_131[4] = alloc_addr;
-                local_AX_131[5] = alloc_addr._2_2_;
+                local_AX_131[5] = alloc_addr;
                 ctx.PTR_LOOP_1050_000c = param_2 | 0xcad0;
                 // 0x0 = param_3;
                 ctx.dos_alloc_addr_1050_0002 = ctx.g_alloc_addr_1050_1050.clone().into_bytes();
                 ctx.PTR_DAT_0005_0000_1050_0004 = local_AX_131;
                 (ctx.PTR_DAT_0005_0000_1050_0004 + 2) = ctx.g_alloc_addr_1050_1050.clone();
                 ctx.PTR_LOOP_1050_000a = 0;
-                alloc_size = mem_size::get_mem_sz_1000_1532(alloc_addr._2_2_);
+                alloc_size = mem_size::get_mem_sz_1000_1532(alloc_addr);
                 if param_2 == 1 {
                     u_var5 = set_struct_1000_0782(ctx, param_3, ctx.g_alloc_addr_1050_1050);
                 } else {
@@ -248,7 +248,7 @@ pub unsafe fn alloc_mem_1000_0670(param_1: i32, param_2: &mut  i32) -> u16 {
     iVar10 = in_dx + (0xffeb < in_ax);
     u_var7 = unsafe { *in_bx };
     u_var8 = -((param_1 & 1) != 0) & 0x100 | -((param_1 & 4) != 0) & 0x400 | (u_var7 + 0x16);
-    if ((param_2._2_2_ | param_2) == 0) {
+    if ((param_2 | param_2) == 0) {
         iVar10 = alloc_mem_1000_14f2(
             u_var8 | 0x2000,
             in_ax + 0x14,

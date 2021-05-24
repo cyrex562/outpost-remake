@@ -890,15 +890,15 @@ pub unsafe fn pass1_1008_52fc(param_1: &mut  Struct195) {
     u_var2 = local_bx_5.field_0x2;
     pu_var1 = &local_bx_5.field_0x8;
     i_var5 = (u_var2 >> 0xf) + (&local_bx_5.field_0x8 + 2) + CARRY2(u_var2, pu_var1);
-    local_e._2_2_ = (lVar4 >> 0x10);
-    if ((local_e._2_2_ <= i_var5)
+    local_e = (lVar4 >> 0x10);
+    if ((local_e <= i_var5)
         && ((
             local_e._0_2_ = lVar4,
-            local_e._2_2_ < i_var5 || (local_e < u_var2 + pu_var1),
+            local_e < i_var5 || (local_e < u_var2 + pu_var1),
         )))
     {
         &local_bx_5.field_0x8 = local_e - u_var2;
-        (&local_bx_5.field_0x8 + 2) = (local_e._2_2_ - (u_var2 >> 0xf)) - (local_e < u_var2);
+        (&local_bx_5.field_0x8 + 2) = (local_e - (u_var2 >> 0xf)) - (local_e < u_var2);
     }
     return;
 }
@@ -1350,7 +1350,7 @@ pub unsafe fn pass1_1008_6562(
         pass_funcs::pass1_fn_1000_48a8(
             CONCAT22(local_DX_129, local_8),
             CONCAT22(u_var3, param_3),
-            param_2._2_2_,
+            param_2,
         );
         param_3 = i_var1;
         local_8 = u_var2;
@@ -1511,7 +1511,7 @@ pub unsafe fn pass1_1008_6978(param_1: &mut  Struct675, param_2: u16, param_3: u
         local_6 = _local_a;
     }
     func_ptr_1 = ((param_1 + 0xd2) + 4);
-    (**func_ptr_1)(0x1000, (param_1 + 0xd2), param_1._2_2_, local_6);
+    (**func_ptr_1)(0x1000, (param_1 + 0xd2), param_1, local_6);
     return;
 }
 

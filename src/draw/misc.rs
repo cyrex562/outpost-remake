@@ -216,7 +216,7 @@ pub unsafe fn draw_func_1018_4f18(ctx: &mut AppContext, param_1: u32, param_2: u
     let mut local_6: u16;
     let mut local_4: u16;
 
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, param_2);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, param_2);
     let local_6 = (in_eax & 0xffff | ctx.dx_reg << 0x10);
     ppc_var3 = (*local_6 + 0x14);
     (**ppc_var3)(0x1010, in_eax, ctx.dx_reg);
@@ -355,8 +355,8 @@ pub unsafe fn draw_1010_47d0(ctx: &mut AppContext, param_1: u32, param_2: &mut  
     }
     pa_var6 = param_2 + 1;
     win_gui_fn_1010_8170(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         pa_var6,
     );
     local_s_i_120 = (param_2 * 4);
@@ -510,25 +510,25 @@ pub fn draw_1040_c74c(ctx: &mut AppContext, param_1: &mut  u32, param_2: u32) {
     (i_var3 + 0x46) = 1;
     local_a = GetStockObject16(4);
     local_c = CreatePen16(0x1000002, 1, 0);
-    local_e = SelectObject16(local_a, param_2._2_2_);
-    local_10 = SelectObject16(local_c, param_2._2_2_);
-    Rectangle16((i_var3 + 0x24), (i_var3 + 0x22), 0, 0, param_2._2_2_);
-    MoveTo16(0, (i_var3 + 0x36) * 2 + (i_var3 + 0x2a), param_2._2_2_);
+    local_e = SelectObject16(local_a, param_2);
+    local_10 = SelectObject16(local_c, param_2);
+    Rectangle16((i_var3 + 0x24), (i_var3 + 0x22), 0, 0, param_2);
+    MoveTo16(0, (i_var3 + 0x36) * 2 + (i_var3 + 0x2a), param_2);
     LineTo16(
         (i_var3 + 0x24),
         (i_var3 + 0x36) * 2 + (i_var3 + 0x2a),
-        param_2._2_2_,
+        param_2,
     );
-    SelectObject16(local_e, param_2._2_2_);
-    h_gdi_obj = SelectObject16(local_10, param_2._2_2_);
+    SelectObject16(local_e, param_2);
+    h_gdi_obj = SelectObject16(local_10, param_2);
     DeleteObject16(h_gdi_obj);
     u_var2 = unsafe { *param_1 };
     pp_var1 = (u_var2 + 0x10);
     (**pp_var1)(offset, i_var3, u_var4, param_2);
     pp_var1 = (u_var2 + 0x14);
-    (**pp_var1)(offset, i_var3, (param_1 >> 0x10), param_2._2_2_);
+    (**pp_var1)(offset, i_var3, (param_1 >> 0x10), param_2);
     (i_var3 + 0x46) = 0;
-    h_gdi_obj_00 = SelectPalette16(0, local_8, param_2._2_2_);
+    h_gdi_obj_00 = SelectPalette16(0, local_8, param_2);
     DeleteObject16(h_gdi_obj_00);
     return;
 }
@@ -795,7 +795,7 @@ pub unsafe fn draw_1008_4f20(
     pa_var7[1].field_0x6 = param_2;
     param_1.field_0x0 = (ctx.s_SinternalPutBldg2_site_0x_08lx__1050_5099 + 9);
     pa_var7.field_0x2 = ctx.PTR_LOOP_1050_1008;
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 2);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 2);
     process_struct_1008_48fe(
         ctx,
         &mut a_struct_7_26.field_0,
@@ -1642,7 +1642,7 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
     u_var8 = 0;
     local_36 = 0;
     if ((i_var9 + 0x98) != 0) {
-        mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, (i_var9 + 0x98));
+        mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, (i_var9 + 0x98));
         local_36 = CONCAT22(ctx.dx_reg, u_var8);
         u_var7 = process_struct_1008_4772(CONCAT22(ctx.dx_reg, u_var8));
         if (((u_var7 >> 0x10) | (u_var7 & 0xffff)) == 0) {
@@ -1656,7 +1656,7 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
                 }
             }
             u_var8 = u_var7;
-            mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x4d);
+            mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 0x4d);
             local_36 = CONCAT22(ctx.dx_reg, u_var8);
         }
         pu_var12 = &local_2c;
@@ -1681,7 +1681,7 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
         }
     }
     u_var8 = u_var7;
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, (i_var9 + 0x96));
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, (i_var9 + 0x96));
     local_36 = CONCAT22(ctx.dx_reg, u_var8);
     pu_var12 = &local_2c;
     i_var5 = GetSystemMetrics16(4);
@@ -1697,7 +1697,7 @@ pub fn draw_1040_5a06(ctx: &mut AppContext, param_1: u32) {
     obj_handle = CreatePen16(0x1000025, 0, 0);
     obj_handle_00 = SelectObject16(obj_handle, local_2c);
     h_var6 = obj_handle_00;
-    mixed_fn_1010_830a(ctx._g_struct_73_1050_14cc, 0x4f);
+    mixed_fn_1010_830a(ctx.g_struct_73_1050_14cc, 0x4f);
     local_36 = CONCAT22(ctx.dx_reg, h_var6);
     u_var7 = process_struct_1008_4772(CONCAT13(
         (ctx.dx_reg >> 8),
@@ -2089,8 +2089,8 @@ pub fn draw_1020_9364(ctx: &mut AppContext, param_1: &mut  Struct622) {
     local_3e = 8;
     while (local_3a < 10) {
         h_var4 = CreateSolidBrush16((local_1e + local_3e * 4 + 4));
-        local_6 = local_6 & 0xffff | (local_a._2_2_ - 1) << 0x10;
-        local_12 = local_12 & 0xffff | (local_e._2_2_ + 1) << 0x10;
+        local_6 = local_6 & 0xffff | (local_a - 1) << 0x10;
+        local_12 = local_12 & 0xffff | (local_e + 1) << 0x10;
       // u_var8 = (local_1a  >> 0x10);
         local_a = local_a & 0xffff | ((local_3e * 2 + local_1a) + 1) << 0x10;
         local_e = local_e & 0xffff | *(local_3a * 2 + local_1a + 0x14) << 0x10;
@@ -2211,9 +2211,9 @@ pub fn draw_1040_8a06(param_1: u32) {
     local_24 = BeginPaint16(CONCAT22(unaff_ss, &local_22), (i_var4 + 6));
     u_var5 = (_PTR_LOOP_1050_4230 + 0xe);
     local_28._0_2_ = u_var5;
-    local_28._2_2_ = (u_var5 >> 0x10);
+    local_28 = (u_var5 >> 0x10);
     dev_ctx_handle = &local_24;
-    palette::realize_palette_1008_4e08(local_28, local_28._2_2_, dev_ctx_handle, unaff_ss);
+    palette::realize_palette_1008_4e08(local_28, local_28, dev_ctx_handle, unaff_ss);
     u_var5 = pass1_1008_4d72(u_var5);
   // u_var3 = (u_var5  >> 0x10);
     i_var2 = u_var5;
@@ -2247,13 +2247,13 @@ pub fn draw_1040_8a06(param_1: u32) {
     }
     u_var1 = (i_var4 + 0x90);
     local_28._0_2_ = u_var1;
-    local_28._2_2_ = (u_var1 >> 0x10);
+    local_28 = (u_var1 >> 0x10);
     DrawText16(
         0x10,
         (i_var4 + 0x9e),
         count,
         CONCAT22(local_28, 0xffff),
-        local_28._2_2_,
+        local_28,
     );
     if (obj_handle != 0) {
         SelectObject16(local_3e, local_24);
@@ -2846,11 +2846,11 @@ pub fn draw_1040_9948(ctx: &mut AppContext, param_1: HWND16, param_2: u32) {
     local_e = CONCAT22(iVar1, local_e - 1);
     if (local_22 != 0) {
         local_1a._0_2_ = local_12;
-        local_1a._2_2_ = (local_12 >> 0x10);
-        local_12 = CONCAT22(local_1a._2_2_ + 2, local_1a + 2);
+        local_1a = (local_12 >> 0x10);
+        local_12 = CONCAT22(local_1a + 2, local_1a + 2);
         local_e = CONCAT22(i_var2 + -3, local_e - 3);
         local_16._0_2_ = local_e - 1;
-        local_16._2_2_ = iVar1;
+        local_16 = iVar1;
     }
     if (*(i_var8 + 6) != '\0') {
         local_1c = 1;
@@ -2860,7 +2860,7 @@ pub fn draw_1040_9948(ctx: &mut AppContext, param_1: HWND16, param_2: u32) {
         u_var3 = i_var8 + 6;
         u_var4 = get_string_index_1000_3da4((param_2 & 0xffff0000 | u_var3));
         DrawText16(0x400, &local_a, unaff_ss, CONCAT22(u_var3, u_var4), hdc_00);
-        local_8 = ((local_c - local_4) + local_8) / 2 + local_12._2_2_;
+        local_8 = ((local_c - local_4) + local_8) / 2 + local_12;
         local_4 = local_4 + local_8;
         local_a = ((local_e - local_6) + local_a) / 2 + local_12;
         local_6 = local_6 + local_a;
@@ -2871,47 +2871,47 @@ pub fn draw_1040_9948(ctx: &mut AppContext, param_1: HWND16, param_2: u32) {
     if (local_22 != 0) {
         local_4e = 0;
         while {
-            MoveTo16(local_16._2_2_, local_1a, hdc);
-            LineTo16(local_16._2_2_, local_16, hdc);
-            LineTo16(local_1a._2_2_, local_16, hdc);
-            LineTo16(local_1a._2_2_, local_1a, hdc);
-            LineTo16(local_16._2_2_, local_1a, hdc);
-            local_1a._2_2_ = local_1a._2_2_ + 1;
+            MoveTo16(local_16, local_1a, hdc);
+            LineTo16(local_16, local_16, hdc);
+            LineTo16(local_1a, local_16, hdc);
+            LineTo16(local_1a, local_1a, hdc);
+            LineTo16(local_16, local_1a, hdc);
+            local_1a = local_1a + 1;
             local_1a._0_2_ = local_1a + 1;
             local_16._0_2_ = local_16 + -1;
-            local_16._2_2_ = local_16._2_2_ + -1;
+            local_16 = local_16 + -1;
             local_4e = local_4e + 1;
             local_4e < 1
         } {}
     }
     if ((*(i_var8 + 4) & 2) == 0) {
-        local_56._2_2_ = (local_12 >> 0x10);
+        local_56 = (local_12 >> 0x10);
         local_52._0_2_ = local_e;
         local_4e = 0;
         local_56._0_2_ = local_12;
-        local_52._2_2_ = local_c;
+        local_52 = local_c;
         while {
             SelectObject16(obj_handle, hdc);
-            MoveTo16(local_52._2_2_, local_56, hdc);
-            LineTo16(local_52._2_2_, local_52, hdc);
-            LineTo16(local_56._2_2_, local_52, hdc);
+            MoveTo16(local_52, local_56, hdc);
+            LineTo16(local_52, local_52, hdc);
+            LineTo16(local_56, local_52, hdc);
             while {
                 SelectObject16(obj_handle_00, hdc);
-                LineTo16(local_56._2_2_, local_56, hdc);
-                LineTo16(local_52._2_2_, local_56, hdc);
+                LineTo16(local_56, local_56, hdc);
+                LineTo16(local_52, local_56, hdc);
                 (hdc + 1) < 2
             } {}
-            local_56._2_2_ = local_56._2_2_ + 1;
+            local_56 = local_56 + 1;
             local_56._0_2_ = local_56 + 1;
             local_52._0_2_ = local_52 + -1;
-            local_52._2_2_ = local_52._2_2_ - 1;
+            local_52 = local_52 - 1;
             local_4e = local_4e + 1;
             local_4e < 2
         } {}
     } else {
         MoveTo16(local_c, local_12, hdc);
-        LineTo16(local_12._2_2_, local_12, hdc);
-        LineTo16(local_12._2_2_, local_e + 1, hdc);
+        LineTo16(local_12, local_12, hdc);
+        LineTo16(local_12, local_e + 1, hdc);
         if (local_1c != 0) {
             local_8 = local_8 + 2;
             local_a = local_a + 2;
@@ -3131,10 +3131,10 @@ pub fn draw_1020_7cc8(ctx: &mut AppContext, param_1: Vec<u8>) {
                 h_dc = 2;
             }
             local_3e._0_1_ = ctx.dx_reg;
-            local_3e._1_1_ = (ctx.dx_reg >> 8);
+            local_3e = (ctx.dx_reg >> 8);
             TextOut16(
                 local_42,
-                CONCAT13(local_3e._1_1_, CONCAT12(local_3e, pcVar5)),
+                CONCAT13(local_3e, CONCAT12(local_3e, pcVar5)),
                 local_42,
                 h_dc,
                 window_dc,
@@ -3719,8 +3719,8 @@ pub fn pass1_1020_6e52(ctx: &mut AppContext, param_1: &mut  Struct674, param_2: 
   // lVar2 = pass1_1018_2e5e(u_var1, (u_var1  >> 0x10));
     if (lVar2 == 0) {
         pcVar3 = load_string_1010_847e(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x5a1,
         );
     } else {

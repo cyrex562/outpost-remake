@@ -86,8 +86,8 @@ pub unsafe fn pass1_1008_b38c(param_1: u32) {
               // u_var5 = (u_var10  >> 0x10);
                 i_var2 = u_var10;
                 u_var8 = load_str_1010_84ac(
-                    ctx._g_struct_73_1050_14cc,
-                    (ctx._g_struct_73_1050_14cc >> 0x10),
+                    ctx.g_struct_73_1050_14cc,
+                    (ctx.g_struct_73_1050_14cc >> 0x10),
                     local_4,
                 );
                 (i_var2 + 4) = u_var8;
@@ -935,7 +935,7 @@ pub unsafe fn pass1_1008_c646(param_1: u16, param_2: u32) -> i32 {
         let pi_var1_val = unsafe { *pi_var1 };
         if (pi_var1_val == local_12 || pi_var1_val < local_12) {
             // LAB_1008_c6a5:
-            return local_12._2_2_;
+            return local_12;
         }
         u_var3 = (pu_var4 & 0xffff | in_dx << 0x10);
         u_var2 = (u_var3 + local_12 * 2);

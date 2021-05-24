@@ -1,8 +1,28 @@
-use crate::pass::pass17_funcs::pass1_1030_73a8;
+use crate::pass::pass17_funcs::{pass1_1030_73a8, pass1_1030_70ac, pass1_1030_7064, pass1_1030_70f4, pass1_1030_7c28, pass1_1030_6ddc, pass1_1030_7f98, pass1_1030_7f5a};
 use crate::pass::pass12_funcs::pass1_1008_c6ae;
 use crate::structs::prog_structs_16::Struct493;
 use crate::app_context::AppContext;
-use crate::structs::prog_structs_2::Struct492;
+use crate::structs::prog_structs_2::{Struct492, Struct199};
+use crate::pass::pass8_funcs::pass1_1010_1d80;
+use crate::util::{CONCAT22, CARRY2, CONCAT11};
+use crate::err_ops::error_check_1000_17ce;
+use crate::pass::pass20_funcs::{pass1_1018_04f2, pass1_1010_a478};
+use crate::structs::prog_structs_7::Struct376;
+use crate::typedefs::HDC16;
+use crate::pass::pass14_funcs::pass1_fn_1008_612e;
+use crate::pass::pass_funcs::pass1_1000_4906;
+use crate::pass::pass19_funcs::pass1_1018_dcf6;
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1010_1d48};
+use crate::structs::prog_structs_30::Struct496;
+use crate::structs::prog_structs_29::Struct375;
+use crate::pass::pass6_funcs::pass1_1038_4d28;
+use crate::pass::pass4_funcs::pass1_1028_b58e;
+use crate::pass::pass3_funcs::pass1_1028_121e;
+use crate::pass::pass16_funcs::pass1_1028_4faa;
+use crate::structs::prog_structs_26::Struct494;
+use crate::string_ops::misc::{string_fn_1000_3f9c, copy_string_1000_3d3e, big_switch_statement_1020_c222};
+use crate::string_ops::load::load_string_1010_84e0;
+use crate::structs::prog_structs_31::Struct491;
 
 pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: &mut Struct493) {
     let mut u_var1: i32;
@@ -217,8 +237,8 @@ pub unsafe fn pass1_1010_e1f4(param_1: u32, param_2: &mut Struct493) {
     u_var8 = 0x5ea;
     // LAB_1010_e241:
     load_string_1010_84e0(
-        ctx._g_struct_73_1050_14cc,
-        (ctx._g_struct_73_1050_14cc >> 0x10),
+        ctx.g_struct_73_1050_14cc,
+        (ctx.g_struct_73_1050_14cc >> 0x10),
         0x3ff,
         (param_1 & 0xffff0000 | (i32_var6 + 0x13c)),
         u_var8,
@@ -287,8 +307,8 @@ pub unsafe fn pass1_1010_e58a(param_1: u32, param_2: u32) {
     }
     if (u_var6 == 0) {
         load_string_1010_84e0(
-            ctx._g_struct_73_1050_14cc,
-            (ctx._g_struct_73_1050_14cc >> 0x10),
+            ctx.g_struct_73_1050_14cc,
+            (ctx.g_struct_73_1050_14cc >> 0x10),
             0x3ff,
             (param_1 & 0xffff0000 | (i_var7 + 0x13c)),
             0x531,
@@ -390,8 +410,8 @@ pub unsafe fn pass1_1010_e682(ctx: &mut AppContext, param_1: u32, param_2: &mut 
                         pc_var2 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, local_8, 0x1e);
                         if (pc_var2 == 0x0) {
                             load_string_1010_84e0(
-                                ctx._g_struct_73_1050_14cc,
-                                (ctx._g_struct_73_1050_14cc >> 0x10),
+                                ctx.g_struct_73_1050_14cc,
+                                (ctx.g_struct_73_1050_14cc >> 0x10),
                                 0x3ff,
                                 (param_1 & 0xffff0000 | &local_bx_4.field_0x13c),
                                 0x598,
