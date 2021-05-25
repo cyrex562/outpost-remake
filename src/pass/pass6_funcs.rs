@@ -2042,7 +2042,7 @@ pub unsafe fn pass1_1038_5a96(
 ) {
     let pp_var1: fn();
     let mut u_var2: u32;
-    let BVar3: bool;
+    let b_var3: bool;
     let local_SI_146: &mut  Struct1137;
     let mut local_es_146: u16;
     let mut local_6: u32;
@@ -2055,13 +2055,13 @@ pub unsafe fn pass1_1038_5a96(
         if (((local_SI_146 + local_6 * 4) != 0)
             && (
                 temp_5fa6353e1c = (local_SI_146 + local_6 * 4),
-                BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (temp_5fa6353e1c + 0xc), 0x2c),
-                BVar3 != 0,
+                b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (temp_5fa6353e1c + 0xc), 0x2c),
+                b_var3 != 0,
             ))
         {
             pp_var1 = ((local_SI_146 + local_6 * 4) + 0x54);
             (**pp_var1)();
-            if (BVar3 != 0) {
+            if (b_var3 != 0) {
                 u_var2 = (local_SI_146 + local_6 * 4);
                 (u_var2 + 0x1a) = 3;
                 pp_var1 = ((local_SI_146 + local_6 * 4) + 0x28);
@@ -3269,7 +3269,7 @@ pub unsafe fn pass1_1038_4f54(param_1: &mut  Struct1116, param_2: u16) {
     let pp_var1: fn();
     let u_var2: u8;
 
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u32;
     let extraout_var: u32;
 
@@ -3302,12 +3302,12 @@ pub unsafe fn pass1_1038_4f54(param_1: &mut  Struct1116, param_2: u16) {
         pass1_1030_1d58(local_bx_4.field_0xc);
         if ((ctx.dx_reg | u_var4) != 0) {
             u_var2 = pass1_1030_6fa0((u_var4 & 0xffff | ctx.dx_reg << 0x10));
-            BVar3 = pass1_1008_c6ae(
+            b_var3 = pass1_1008_c6ae(
                 ctx._PTR_LOOP_1050_06e0,
                 CONCAT31(extraout_var, u_var2),
                 param_2,
             );
-            if (BVar3 != 0) {
+            if (b_var3 != 0) {
                 return;
             }
         }
@@ -3408,7 +3408,7 @@ pub unsafe fn pass1_1038_50e0(param_1: &mut  Struct1119, param_2: u16) {
     let pp_var1: fn();
     let u_var2: u8;
 
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u32;
     let extraout_var: u32;
 
@@ -3442,12 +3442,12 @@ pub unsafe fn pass1_1038_50e0(param_1: &mut  Struct1119, param_2: u16) {
         pass1_1030_1d58(local_bx_12.field_0xc);
         if ((ctx.dx_reg | u_var4) != 0) {
             u_var2 = pass1_1030_6fa0((u_var4 & 0xffff | ctx.dx_reg << 0x10));
-            BVar3 = pass1_1008_c6ae(
+            b_var3 = pass1_1008_c6ae(
                 ctx._PTR_LOOP_1050_06e0,
                 CONCAT31(extraout_var, u_var2),
                 param_2,
             );
-            if (BVar3 != 0) {
+            if (b_var3 != 0) {
                 pass1_1030_73a8((u_var4 & 0xffff | ctx.dx_reg << 0x10));
             }
         }

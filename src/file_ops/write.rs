@@ -20,18 +20,18 @@ use crate::util::{CONCAT11, CONCAT22, CONCAT31, SBORROW2, ZEXT24};
 use crate::winapi::{_hwrite16, _lclose16, _lcreat16};
 
 pub unsafe fn write_to_file_1008_6e02(ctx: &mut AppContext, param_1: &mut FileObject) -> bool {
-    let mut local_4: [u8; 2];
+    let mut local_4: u32 = 0;
 
     ctx.g_u16_1050_0310 = 0;
     let mut b_var1 = write_to_file_1008_70a6(ctx,param_1);
     if b_var1 != false {
         //// _var4 = (param_1  >> 0x10);
         // u_var3 = param_1;
-        set_array_val_1008_72a8(&local_4, param_1.file);
-        let mut i_var2 = pass1_1008_7006(param_1, &local_4);
+        set_array_val_1008_72a8(&mut local_4, param_1.file);
+        let mut i_var2 = pass1_1008_7006(param_1, &mut local_4);
         if (i_var2 != 0)
             && (
-                i_var2 = pass1_1008_6eee(param_1, &local_4),
+                i_var2 = pass1_1008_6eee(param_1, &mut local_4),
                 i_var2 != 0,
             )
         {
@@ -42,7 +42,7 @@ pub unsafe fn write_to_file_1008_6e02(ctx: &mut AppContext, param_1: &mut FileOb
     return false;
 }
 
-pub fn write_to_file_1008_70a6(ctx: &mut AppContext,
+pub unsafe fn write_to_file_1008_70a6(ctx: &mut AppContext,
                                param_1: &mut FileObject) -> bool {
     let mut local_file: HFILE16;
     if param_1._type.file != 0xffff {
@@ -54,16 +54,15 @@ pub fn write_to_file_1008_70a6(ctx: &mut AppContext,
     if local_file == 0xffff {
         ctx.g_u16_1050_0310 = 0x6cf;
     } else {
-        ctx.PTR_LOOP_1050_0312 = &ctx.PTR_DAT_0005_0000_1050_0004;
-        string_fn_1000_3f9c(
-            ctx.s__1050_65a0,
+        ctx.PTR_LOOP_1050_0312 = ctx.PTR_DAT_0005_0000_1050_0004.clone();
+        let rc = string_fn_1000_3f9c(ctx,
+            &ctx.s__1050_65a0,
             &ctx.g_alloc_addr_1050_1050,
-            ctx._PTR_s_SC_03d_1050_0314_1050_031c,
-            (ctx._PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),
+            &ctx._PTR_s_SC_03d_1050_0314_1050_031c,
             &ctx.PTR_DAT_0005_0000_1050_0004,
         );
-        let count = get_string_index_1000_3da4(ctx.s__1050_65a0);
-        let bytes_written = _hwrite16(param_1.file, ctx.s__1050_65a0, count as usize);
+        let count = get_string_index_1000_3da4(&ctx.s__1050_65a0);
+        let bytes_written = _hwrite16(param_1.file,  ctx.s__1050_65a0.as_mut_vec(), count as usize);
         if bytes_written == count as usize {
             return true;
         }
@@ -72,7 +71,7 @@ pub fn write_to_file_1008_70a6(ctx: &mut AppContext,
     return false;
 }
 
-pub fn write_to_file_1008_7898(ctx: &mut AppContext, in_file: &mut HFILE16, param_2: &mut  u32) {
+pub fn write_to_file_1008_7898(ctx: &mut AppContext, in_file: &HFILE16, param_2: &mut  u32) {
     let pp_var1: fn();
     //
     let BVar2: bool;
@@ -343,7 +342,7 @@ pub fn write_to_file_1008_c98e(param_1: u32, param_2: u32) {
 pub unsafe fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let pu_var4: Vec<u8>;
     let extraout_var: u32;
 
@@ -372,8 +371,8 @@ pub unsafe fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
             local_4 = (u_var1 + 8);
         }
         local_1c = local_4;
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
+        if (b_var3 != 0) {
             pass1_1008_5784(CONCAT22(unaff_ss, local_c), (i_var5 + 10));
             while {
                 pu_var4 = local_c;
@@ -383,28 +382,28 @@ pub unsafe fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
                     return;
                 }
                 local_24 = (pu_var4 + 4);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_24), 4);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_24), 4);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_28 = (_local_10 + 8);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_28), 4);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_28), 4);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_16 = (_local_10 + 0xc);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_30 = (_local_10 + 0xe);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_30), 4);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_30), 4);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_16 = (_local_10 + 0x12);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-                BVar3 != 0
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
+                b_var3 != 0
             } {}
         }
         ctx.g_u16_1050_0310 = 0x6d0;
@@ -415,7 +414,7 @@ pub unsafe fn write_to_file_1008_e5da(param_1: u32, param_2: u32) {
 pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Struct235, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let pcVar4: String;
     let extraout_var: u32;
     let mut local_2a: u32;
@@ -441,8 +440,8 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
         local_6 = (u_var1 + 8);
     }
     local_1e = local_6;
-    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
-    if (BVar3 != 0) {
+    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
+    if (b_var3 != 0) {
         pass1_1008_5784(CONCAT22(ctx.stack_seg_reg, local_e), ctx.bx_reg.field_0xa);
         while {
             pcVar4 = local_e;
@@ -450,14 +449,14 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
             _local_12 = CONCAT22(ctx.dx_reg, pcVar4);
             if ((ctx.dx_reg | pcVar4) == 0) {
                 local_22 = ctx.bx_reg.field_0xe;
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
+                if (b_var3 == 0) {
                     ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
                 local_22 = ctx.bx_reg.field_0x10;
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_22), 2);
+                if (b_var3 == 0) {
                     ctx.g_u16_1050_0310 = 0x6d0;
                     return;
                 }
@@ -480,12 +479,12 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
                                 return;
                             }
                             local_1e = (local_4 * 8 + 0xea8);
-                            BVar3 = write_to_file_1008_7e1c(
+                            b_var3 = write_to_file_1008_7e1c(
                                 param_2,
                                 CONCAT22(ctx.stack_seg_reg, &local_1e),
                                 2,
                             );
-                            if (BVar3 == 0) {
+                            if (b_var3 == 0) {
                                 break;
                             }
                             local_4 = local_4 + 1;
@@ -494,8 +493,8 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
                         return;
                     }
                     local_1e = (local_4 * 8 + 0xe28);
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
-                    if (BVar3 == 0) {
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1e), 2);
+                    if (b_var3 == 0) {
                         break;
                     }
                     local_4 = local_4 + 1;
@@ -504,14 +503,14 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
                 return;
             }
             local_18 = (pcVar4 + 4);
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_18), 2);
-            if (BVar3 == 0) {
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_18), 2);
+            if (b_var3 == 0) {
                 ctx.g_u16_1050_0310 = 0x6d0;
                 return;
             }
             local_2a = (_local_12 + 6);
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_2a), 4);
-            BVar3 != false
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_2a), 4);
+            b_var3 != false
         } {}
     }
     ctx.g_u16_1050_0310 = 0x6d0;
@@ -638,7 +637,7 @@ pub fn write_file_1010_6372(param_1: u32, hfile_param2: &HFILE16) {
 pub fn write_to_file_1010_6846(param_1: u32, param_2: &HFILE16) {
     let u_var1: u8;
     let mut i_var2: i32;
-    let BVar3: bool;
+    let b_var3: bool;
     let extraout_var: u32;
     let mut unaff_ss: u16;
     let mut local_c: u16;
@@ -646,14 +645,14 @@ pub fn write_to_file_1010_6846(param_1: u32, param_2: &HFILE16) {
     u_var1 = write_to_file_1008_7cac(param_2, 3);
     if (CONCAT31(extraout_var, u_var1) != 0) {
         i_var2 = param_1;
-        BVar3 = write_to_file_1008_7e1c(param_2, (param_1 & 0xffff0000 | (i_var2 + 10)), 0x114);
-        if (BVar3 != 0) {
-            BVar3 =
+        b_var3 = write_to_file_1008_7e1c(param_2, (param_1 & 0xffff0000 | (i_var2 + 10)), 0x114);
+        if (b_var3 != 0) {
+            b_var3 =
                 write_to_file_1008_7e1c(param_2, (param_1 & 0xffff0000 | (i_var2 + 0x11e)), 0x2a);
-            if (BVar3 != 0) {
+            if (b_var3 != 0) {
                 local_c = (i_var2 + 0x148);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-                if (BVar3 != 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
+                if (b_var3 != 0) {
                     return;
                 }
             }
@@ -667,7 +666,7 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
     let mut u_var1: u32;
     let u_var2: u8;
     // let extraout_AH: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u16;
     // let ctx.bx_reg: &mut  Struct470;
     let mut u_var5: u16;
@@ -696,8 +695,8 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
         local_4 = (u_var1 + 8);
     }
     local_1c = local_4;
-    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1c), 2);
-    if BVar3 == 0 {
+    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_1c), 2);
+    if b_var3 == 0 {
         ctx.g_u16_1050_0310 = 0x6d0;
         return false;
     }
@@ -712,8 +711,8 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
                 local_24 = (u_var1 + 8);
             }
             local_16 = local_24;
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_16), 2);
-            if BVar3 == 0 {
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(ctx.stack_seg_reg, &local_16), 2);
+            if b_var3 == 0 {
                 ctx.g_u16_1050_0310 = 0x6d0;
                 return false;
             }
@@ -729,8 +728,8 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
                         local_24 = (u_var1 + 8);
                     }
                     local_16 = local_24;
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-                    if BVar3 == 0 {
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
+                    if b_var3 == 0 {
                         ctx.g_u16_1050_0310 = 0x6d0;
                         return 0;
                     }
@@ -740,63 +739,63 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
                       // u_var4 = (lVar6  >> 0x10);
                         if lVar6 == 0 {
                             local_1c = ctx.bx_reg.field_0x1a;
-                            BVar3 =
+                            b_var3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-                            if BVar3 == 0 {
+                            if b_var3 == 0 {
                                 ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
                             local_1c = ctx.bx_reg.field_0x1c;
-                            BVar3 =
+                            b_var3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-                            if (BVar3 == 0) {
+                            if (b_var3 == 0) {
                                 ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
                             local_1c = ctx.bx_reg.field_0x1e;
-                            BVar3 =
+                            b_var3 =
                                 write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-                            if (BVar3 == 0) {
+                            if (b_var3 == 0) {
                                 ctx.g_u16_1050_0310 = 0x6d0;
                                 return 0;
                             }
                             return 1;
                         }
                         _local_10 = _local_10 & 0xffff0000 | *(lVar6 + 4);
-                        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
-                        if (BVar3 == 0) {
+                        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
+                        if (b_var3 == 0) {
                             ctx.g_u16_1050_0310 = 0x6d0;
                             return 0;
                         }
                         local_4 = (lVar6 + 6);
-                        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
-                        BVar3 != 0
+                        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
+                        b_var3 != 0
                     } {}
                     ctx.g_u16_1050_0310 = 0x6d0;
                     return 0;
                 }
                 _local_10 = _local_10 & 0xffff0000 | *(lVar6 + 4);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 2);
+                if (b_var3 == 0) {
                     ctx.g_u16_1050_0310 = 0x6d0;
                     return 0;
                 }
                 local_4 = (lVar6 + 6);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
-                BVar3 != 0
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
+                b_var3 != 0
             } {}
             ctx.g_u16_1050_0310 = 0x6d0;
             return 0;
         }
         local_16 = (_local_10 + 4);
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-        if (BVar3 == 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
+        if (b_var3 == 0) {
             ctx.g_u16_1050_0310 = 0x6d0;
             return 0;
         }
         local_16 = (_local_10 + 6);
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
-        BVar3 != 0
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_16), 2);
+        b_var3 != 0
     } {}
     ctx.g_u16_1050_0310 = 0x6d0;
     return 0;
@@ -805,7 +804,7 @@ pub unsafe fn write_to_file_1010_9900(ctx: &mut AppContext, param_1: u16, param_
 pub unsafe fn write_to_file_1010_ed58(param_1: u32, in_file: &HFILE16) {
     let pu_var1: &mut  u16;
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let extraout_var: u32;
     // ppu_var4: &mut  Vec<u8>;
     let local_bx_30: &mut  Struct506;
@@ -823,36 +822,36 @@ pub unsafe fn write_to_file_1010_ed58(param_1: u32, in_file: &HFILE16) {
       // local_es_30 = (param_1  >> 0x10);
         local_bx_30 = param_1;
         string_offset_a = local_bx_30.field_0x16;
-        BVar3 = write_to_file_1008_7e1c(in_file, CONCAT22(string_base_a, &string_offset_a), 4);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(in_file, CONCAT22(string_base_a, &string_offset_a), 4);
+        if (b_var3 != 0) {
             string_offset_b = local_bx_30.field_0x1a;
-            BVar3 = write_to_file_1008_7e1c(in_file, CONCAT22(string_base_a, &string_offset_b), 4);
-            if (BVar3 != 0) {
+            b_var3 = write_to_file_1008_7e1c(in_file, CONCAT22(string_base_a, &string_offset_b), 4);
+            if (b_var3 != 0) {
                 string_offset_b = local_bx_30.field_0x20;
-                BVar3 =
+                b_var3 =
                     write_to_file_1008_7e1c(in_file, CONCAT22(string_base_a, &string_offset_b), 4);
-                if (BVar3 != 0) {
+                if (b_var3 != 0) {
                     string_offset_b = local_bx_30.field_0x24;
-                    BVar3 = write_to_file_1008_7e1c(
+                    b_var3 = write_to_file_1008_7e1c(
                         in_file,
                         CONCAT22(string_base_a, &string_offset_b),
                         4,
                     );
-                    if (BVar3 != 0) {
+                    if (b_var3 != 0) {
                         string_offset_b = string_offset_b & 0xffff0000 | local_bx_30.field_0x30;
-                        BVar3 = write_to_file_1008_7e1c(
+                        b_var3 = write_to_file_1008_7e1c(
                             in_file,
                             CONCAT22(string_base_a, &string_offset_b),
                             2,
                         );
-                        if (BVar3 != 0) {
+                        if (b_var3 != 0) {
                             string_offset_b = string_offset_b & 0xffff0000 | local_bx_30.field_0x32;
-                            BVar3 = write_to_file_1008_7e1c(
+                            b_var3 = write_to_file_1008_7e1c(
                                 in_file,
                                 CONCAT22(string_base_a, &string_offset_b),
                                 2,
                             );
-                            if (BVar3 != 0) {
+                            if (b_var3 != 0) {
                                 local_4 = 0;
                                 while (true) {
                                     pu_var1 = &local_bx_30.field_0x30;
@@ -891,7 +890,7 @@ pub unsafe fn write_to_file_1038_7b20(param_1: &mut  u32, param_2: &HFILE16) -> 
     let mut u_var1: u32;
     let u_var2: u8;
     let extraout_AH: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut i_var4: i32;
     let mut u_var5: u16;
     let mut unaff_ss: u16;
@@ -910,8 +909,8 @@ pub unsafe fn write_to_file_1038_7b20(param_1: &mut  u32, param_2: &HFILE16) -> 
         let param_1_val = unsafe { *param_1 };
         local_1c = (param_1_val + 8);
         local_4 = local_1c;
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1c), 2);
+        if (b_var3 != 0) {
             pass1_1008_5784(CONCAT22(unaff_ss, local_c), param_1_val);
             while {
                 lVar6 = pass1_1008_5b12(CONCAT22(unaff_ss, local_c));
@@ -921,8 +920,8 @@ pub unsafe fn write_to_file_1038_7b20(param_1: &mut  u32, param_2: &HFILE16) -> 
                     u_var1 = (param_1 + 4);
                     local_1c = (u_var1 + 8);
                     local_4 = local_1c;
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
-                    if (BVar3 == 0) {
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_4), 2);
+                    if (b_var3 == 0) {
                         return 0;
                     }
                     pass1_1008_5784(CONCAT22(unaff_ss, local_c), (param_1 + 4));
@@ -1038,92 +1037,92 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
     let mut local_6: u32;
 
     write_to_file_1030_16d6(param_1, param_2);
-    if (ctx.ax_reg != 0) {
+    if ctx.ax_reg != 0 {
       // u_var3 = (param_1  >> 0x10);
-        local_bx_28 = param_1;
-        pu_var2 = local_bx_28.field_0xc;
+      //   local_bx_28 = param_1;
+        pu_var2 = param_1.field_0xc;
         local_6 = pu_var2;
         write_to_file_1008_7898(ctx,param_2, pu_var2);
-        if (pu_var2 != 0) {
-            offset_1 = local_bx_28.field_0x10;
+        if pu_var2 != false {
+            offset_1 = param_1.field_0x10;
             b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_1), 4);
-            if (b_var1 != 0) {
-                offset_2 = CONCAT22(offset_2, local_bx_28.field_0x18);
+            if b_var1 != false {
+                offset_2 = CONCAT22(offset_2, param_1.field_0x18);
                 b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
-                if (b_var1 != 0) {
-                    offset_2 = offset_2 & 0xffff0000 | local_bx_28.field_0x1a;
+                if b_var1 != false {
+                    offset_2 = offset_2 & 0xffff0000 | param_1.field_0x1a;
                     b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
-                    if (b_var1 != 0) {
-                        offset_2 = offset_2 & 0xffff0000 | local_bx_28.field_0x1c;
+                    if b_var1 != false {
+                        offset_2 = offset_2 & 0xffff0000 | param_1.field_0x1c;
                         b_var1 =
                             write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
-                        if (b_var1 != 0) {
-                            offset_2 = local_bx_28.field_0x1e;
+                        if b_var1 != false {
+                            offset_2 = param_1.field_0x1e;
                             b_var1 = write_to_file_1008_7e1c(
                                 param_2,
                                 CONCAT22(string_base, &offset_2),
                                 4,
                             );
-                            if (b_var1 != 0) {
-                                offset_2 = offset_2 & 0xffff0000 | local_bx_28.field_0x22;
+                            if b_var1 != false {
+                                offset_2 = offset_2 & 0xffff0000 | param_1.field_0x22;
                                 b_var1 = write_to_file_1008_7e1c(
                                     param_2,
                                     CONCAT22(string_base, &offset_2),
                                     2,
                                 );
-                                if (b_var1 != 0) {
-                                    offset_2 = offset_2 & 0xffff0000 | local_bx_28.field_0x24;
+                                if b_var1 != false {
+                                    offset_2 = offset_2 & 0xffff0000 | param_1.field_0x24;
                                     b_var1 = write_to_file_1008_7e1c(
                                         param_2,
                                         CONCAT22(string_base, &offset_2),
                                         2,
                                     );
-                                    if (b_var1 != 0) {
+                                    if b_var1 != false {
                                         b_var1 = write_to_file_1008_7e1c(
                                             param_2,
-                                            (param_1 & 0xffff0000 | &local_bx_28.field_0x26),
+                                            (param_1 & 0xffff0000 | &param_1.field_0x26),
                                             0x94,
                                         );
-                                        if (b_var1 != 0) {
+                                        if b_var1 != false {
                                             b_var1 = write_to_file_1008_7e1c(
                                                 param_2,
-                                                (param_1 & 0xffff0000 | &local_bx_28.field_0x14e),
+                                                (param_1 & 0xffff0000 | &param_1.field_0x14e),
                                                 0x54,
                                             );
-                                            if (b_var1 != 0) {
+                                            if b_var1 != false {
                                                 b_var1 = write_to_file_1008_7e1c(
                                                     param_2,
                                                     (param_1 & 0xffff0000
-                                                        | &local_bx_28.field_0x1a2),
+                                                        | &param_1.field_0x1a2),
                                                     0x54,
                                                 );
-                                                if (b_var1 != 0) {
+                                                if b_var1 != false {
                                                     write_to_file_1030_32e4(
-                                                        local_bx_28.field_0x1f6,
+                                                        param_1.field_0x1f6,
                                                         param_2,
                                                     );
                                                     write_to_file_1008_7c2a(
                                                         ctx,param_2,
-                                                        local_bx_28.field_0x1fa,
+                                                        &mut param_1.field_0x1fa,
                                                     );
-                                                    if (b_var1 != 0) {
+                                                    if b_var1 != false {
                                                         offset_2 = offset_2 & 0xffff0000
-                                                            | local_bx_28.field_0x1fe;
+                                                            | param_1.field_0x1fe;
                                                         b_var1 = write_to_file_1008_7e1c(
                                                             param_2,
                                                             CONCAT22(string_base, &offset_2),
                                                             2,
                                                         );
-                                                        if (b_var1 != 0) {
-                                                            offset_2 = local_bx_28.field_0x200;
+                                                        if b_var1 != false {
+                                                            offset_2 = param_1.field_0x200;
                                                             b_var1 = write_to_file_1008_7e1c(
                                                                 param_2,
                                                                 CONCAT22(string_base, &offset_2),
                                                                 4,
                                                             );
-                                                            if (b_var1 != 0) {
+                                                            if b_var1 != false {
                                                                 offset_2 = offset_2 & 0xffff0000
-                                                                    | local_bx_28.field_0x204;
+                                                                    | param_1.field_0x204;
                                                                 b_var1 = write_to_file_1008_7e1c(
                                                                     param_2,
                                                                     CONCAT22(
@@ -1135,7 +1134,7 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
                                                                 if (b_var1 != 0) {
                                                                     offset_2 = offset_2
                                                                         & 0xffff0000
-                                                                        | local_bx_28.field_0x206;
+                                                                        | param_1.field_0x206;
                                                                     b_var1 =
                                                                         write_to_file_1008_7e1c(
                                                                             param_2,
@@ -1148,7 +1147,7 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
                                                                     if (b_var1 != 0) {
                                                                         offset_2 = offset_2
                                                                             & 0xffff0000
-                                                                            | local_bx_28
+                                                                            | param_1
                                                                                 .field_0x208;
                                                                         b_var1 =
                                                                             write_to_file_1008_7e1c(
@@ -1162,26 +1161,26 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
                                                                         if (b_var1 != 0) {
                                                                             offset_2 = offset_2
                                                                                 & 0xffff0000
-                                                                                | local_bx_28
+                                                                                | param_1
                                                                                     .field_0x20a;
                                                                             b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
                                                                             if (b_var1 != 0) {
                                                                                 offset_2 = offset_2 & 0xffff0000 |
-                                                                                           local_bx_28.field_0x20c;
+                                                                                           param_1.field_0x20c;
                                                                                 b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
                                                                                 if (b_var1 != 0) {
                                                                                     offset_2 = offset_2 & 0xffff0000 |
-                                                                                               local_bx_28.field_0x20e;
+                                                                                               param_1.field_0x20e;
                                                                                     b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
                                                                                     if (b_var1 != 0)
                                                                                     {
                                                                                         offset_2 = offset_2 & 0xffff0000 |
-                                                                                                   local_bx_28.field_0x214;
+                                                                                                   param_1.field_0x214;
                                                                                         b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 2);
                                                                                         if (b_var1
                                                                                             != 0)
                                                                                         {
-                                                                                            offset_2 = local_bx_28.field_0x216;
+                                                                                            offset_2 = param_1.field_0x216;
                                                                                             b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(string_base, &offset_2), 4);
                                                                                             if (b_var1 != 0)
                                                                                             {
@@ -1901,7 +1900,7 @@ pub fn write_to_file_1028_e56c(
 ) {
     let pp_var1: fn();
     let p_uvar2: &mut  u16;
-    let BVar3: bool;
+    let b_var3: bool;
 
 
     let mut unaff_ss: u16;
@@ -1935,8 +1934,8 @@ pub fn write_to_file_1028_e56c(
         local_18 = local_18 + 1;
     }
     local_2a = local_18;
-    BVar3 = write_to_file_1008_7e1c(param_1_00, CONCAT22(unaff_ss, &local_2a), 4);
-    if (BVar3 == 0) {
+    b_var3 = write_to_file_1008_7e1c(param_1_00, CONCAT22(unaff_ss, &local_2a), 4);
+    if (b_var3 == 0) {
         ctx.g_u16_1050_0310 = 0x6d0;
     } else {
         local_c = local_8;
@@ -1964,7 +1963,7 @@ pub fn write_to_file_1028_e56c(
 pub unsafe fn write_to_file_1028_dce2(param_1: &mut  u32, param_2: &HFILE16) {
     let pp_var1: fn();
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut i_var4: i32;
     let pu_var5: &mut  u16;
     let extraout_var: u32;
@@ -1992,13 +1991,13 @@ pub unsafe fn write_to_file_1028_dce2(param_1: &mut  u32, param_2: &HFILE16) {
     if (CONCAT31(extraout_var, u_var2) != 0) {
         let param1_val = unsafe { *param_1 };
         local_26 = param1_val;
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_26), 4);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_26), 4);
+        if (b_var3 != 0) {
           // u_var7 = (param_1  >> 0x10);
             u_var6 = param_1;
             local_1e = (u_var6 + 8);
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1e), 2);
-            if (BVar3 != 0) {
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1e), 2);
+            if (b_var3 != 0) {
                 pp_var1 = (*_PTR_LOOP_1050_5166 + 0xc);
                 (**pp_var1)(
                     &ctx.PTR_LOOP_1050_1008,
@@ -2006,7 +2005,7 @@ pub unsafe fn write_to_file_1028_dce2(param_1: &mut  u32, param_2: &HFILE16) {
                     (_PTR_LOOP_1050_5166 >> 0x10),
                     param_2,
                 );
-                if (BVar3 != 0) {
+                if (b_var3 != 0) {
                     u_var2 = write_to_file_1008_7cac(param_2, 0xc);
                     i_var4 = CONCAT31(extraout_var_00, u_var2);
                     if (i_var4 != 0) {
@@ -2387,12 +2386,12 @@ pub unsafe fn write_file_fn_1028_2418(param_1: &mut FileObject, param_2: &HFILE1
     let mut local_10: u16;
     let mut local_e: u16;
     let mut local_c: u16;
-    let mut local_a: [u8; 8];
+    let mut local_a: Vec<u8> = Vec::new();
 
     b_var2 = write_to_file_1028_b5ec(param_1, param_2);
-    if b_var2 != 0 {
+    if b_var2 != false {
         //// _var3 = (param_1  >> 0x10);
-        pass1_1008_5784(local_a, (param_1 + 0x20));
+        pass1_1008_5784(&mut local_a, (param_1 + 0x20));
         u_var1 = (param_1 + 0x20);
         local_1c = (u_var1 + 8);
         local_10 = local_1c;
@@ -2412,52 +2411,47 @@ pub unsafe fn write_file_fn_1028_2418(param_1: &mut FileObject, param_2: &HFILE1
                 return b_var2;
             }
         }
-        b_var2 = 1;
+        b_var2 = true;
     }
     return b_var2;
 }
 
-pub fn file_write_fn_1028_1452(param_1: &mut FileObject, param_2: &HFILE16) -> bool {
-    let mut i_var1: i32;
-    let BVar2: bool;
-    let mut u_var3: u16;
+pub fn file_write_fn_1028_1452(ctx: &mut AppContext,
+                               param_1: &mut FileObject,
+                               in_hfile: &HFILE16) -> bool {
+    let b_var2: bool;
     let mut unaff_ss: u16;
-    let mut local_c: u16;
-    let mut local_6: u16;
+    let mut local_c: Vec<u8> = Vec::new();
+    let mut local_6: Vec<u8> = Vec::new();
 
-    i_var1 = write_to_file_1028_b5ec(param_1, param_2);
-    if (i_var1 != 0) {
+    let mut i_var1 = write_to_file_1028_b5ec(param_1, in_hfile);
+    if i_var1 != false {
       // u_var3 = (param_1  >> 0x10);
         local_c = (param_1 + 0x22);
-        BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-        if (BVar2 != 0) {
+        b_var2 = write_to_file_1008_7e1c(in_hfile, &local_c, 2);
+        if b_var2 != false {
             local_6 = (param_1 + 0x20);
-            BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
-            if (BVar2 != 0) {
+            b_var2 = write_to_file_1008_7e1c(in_hfile, &local_6, 2);
+            if b_var2 != false {
                 local_6 = PTR_LOOP_1050_4fbc;
-                BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
-                if (BVar2 != 0) {
-                    return 1;
+                b_var2 = write_to_file_1008_7e1c(in_hfile, &local_6, 2);
+                if b_var2 != false {
+                    return true;
                 }
             }
         }
         ctx.g_u16_1050_0310 = 0x6d0;
     }
-    return 0;
+    return false;
 }
 
 pub unsafe fn file_write_fn_1028_0234(param_1: &mut Struct731, param_2: u32) -> bool {
     let mut u_var1: u32;
     let mut i_var2: i32;
-    let BVar3: bool;
-    // let local_bx_28: Struct731;
-    let mut u_var4: u16;
-    // let mut unaff_ss: u16;
+    let b_var3: bool;
     let mut local_1a: u16;
     let mut local_14: u16;
     let mut local_10: u16;
-    let mut local_e: u16;
-    let mut local_c: u16;
     let mut local_a: [u8; 8];
 
     i_var2 = write_to_file_1028_b5ec(param_1, param_2);
@@ -2465,40 +2459,40 @@ pub unsafe fn file_write_fn_1028_0234(param_1: &mut Struct731, param_2: u32) -> 
       // u_var4 = (param_1  >> 0x10);
         local_bx_28 = param_1;
         local_1a = local_bx_28.field_0x20;
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1a), 2);
-        if BVar3 != 0 {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1a), 2);
+        if b_var3 != 0 {
             pass1_1008_5784(CONCAT22(unaff_ss, local_a), local_bx_28.field_0x22);
             u_var1 = local_bx_28.field_0x22;
             local_14 = (u_var1 + 8);
             local_10 = local_14;
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
-            while (BVar3 != 0) {
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+            while (b_var3 != 0) {
                 _local_e = pass1_1008_5b12(CONCAT22(unaff_ss, local_a));
                 if (_local_e == 0) {
                     return 1;
                 }
                 local_14 = (_local_e + 4);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_14 = (_local_e + 6);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_14 = (_local_e + 8);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_14 = (_local_e + 10);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
-                if (BVar3 == 0) {
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+                if (b_var3 == 0) {
                     break;
                 }
                 local_14 = (_local_e + 0xc);
-                BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
+                b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_14), 2);
             }
         }
         ctx.g_u16_1050_0310 = 0x6d0;
@@ -2588,7 +2582,7 @@ pub fn write_to_file_1030_1a9c(
 ) -> bool {
     let pi_var1: &mut  i32;
     let mut i_var2: i32;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u16;
     let mut unaff_ss: u16;
     let mut local_c: u16;
@@ -2598,15 +2592,15 @@ pub fn write_to_file_1030_1a9c(
       // u_var4 = (param_1  >> 0x10);
         i_var2 = param_1;
         local_c = *(i_var2 + 0x10);
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
+        if (b_var3 != 0) {
             if ((i_var2 + 0x10) == 0) {
                 return 1;
             }
             pi_var1 = (i_var2 + 0x10);
             let pi_var1_val = unsafe { *pi_var1 };
-            BVar3 = write_to_file_1008_7e1c(param_2, (pi_var1 + 2), (pi_var1_val * 2));
-            if (BVar3 != 0) {
+            b_var3 = write_to_file_1008_7e1c(param_2, (pi_var1 + 2), (pi_var1_val * 2));
+            if (b_var3 != 0) {
                 return 1;
             }
         }

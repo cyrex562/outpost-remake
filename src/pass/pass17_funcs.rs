@@ -4,13 +4,13 @@ use crate::func_ptr_funcs::call_fn_ptr_1000_5586;
 use crate::list_funcs::{modify_list_1008_6cb4, modify_list_1008_6d18, modify_list_1008_6d3e, modify_list_1008_6d64, zero_list_1008_6c90};
 use crate::mem_funcs::alloc_mem::{alloc_mem_1000_0ed4, alloc_mem_1000_1708};
 use crate::mem_funcs::free_mem::free_mem_1000_093a;
-use crate::other_funcs::mixed_fn_1010_830a;
 use crate::other_funcs::{modify_list_1008_3f62, process_switch_stmt_1010_6cf8, zero_list_1008_3e38};
+use crate::other_funcs::mixed_fn_1010_830a;
 use crate::pass::pass12_funcs::pass1_1008_c6ae;
 use crate::pass::pass14_funcs::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3eb4, pass1_1008_5784, pass1_1008_5b12, pass1_fn_1008_60e8, pass1_fn_1008_612e};
 use crate::pass::pass15_funcs::{infinite_loop_1020_ba94, pass1_1020_ba3e, pass1_1020_ba7e, pass1_1020_bae6, pass1_1020_bb16, pass1_1020_bb8a};
 use crate::pass::pass16_funcs::{pass1_1028_6302, pass1_1028_6356, pass1_1028_67d4};
-use crate::pass::pass20_funcs::{pass1_1010_9092, pass1_1010_ed3e, pass1_1018_04a4, pass1_1018_04b8, pass1_1018_04ca};
+use crate::pass::pass20_funcs::{pass1_1010_9092, pass1_1010_ed3e, pass1_1018_04a4, pass1_1018_04b8};
 use crate::pass::pass3_funcs::{pass1_1028_1106, pass1_1028_1416};
 use crate::pass::pass4_funcs::{pass1_1028_bb6a, pass1_1028_bb96, pass1_1028_cfd2, pass1_1028_cff2, pass1_1028_d078, pass1_1028_d22e, pass1_1028_d282, pass1_1028_d52c, pass1_1028_d566, pass1_1028_d81c, pass1_1028_daba, pass1_1028_dc52, pass1_1028_e198, pass1_1028_e1ec, pass1_1028_e2e0, pass1_1028_e332, pass1_1028_e372, pass1_1028_e44a, pass1_1028_e4ec, pass1_1030_12ca, pass1_1030_1358, pass1_1030_1628, pass1_1030_165e, pass1_1030_16b2};
 use crate::pass::pass5_funcs;
@@ -18,7 +18,7 @@ use crate::pass::pass6_funcs::{pass1_1038_4b20, pass1_1038_4d0e, pass1_1038_7964
 use crate::pass::pass8_funcs::{pass1_1010_65d0, pass1_1010_82f8};
 use crate::pass::pass_funcs::{pass1_1000_4906, pass1_fn_1000_3e2c, pass1_fn_1000_47a4, pass1_fn_1000_54a0};
 use crate::string_ops::misc::{fn_1008_6048, string_fn_1000_3f9c};
-use crate::struct_ops::struct_ops_2::{pass1_1030_3af6, pass1_1030_4574, pass1_1030_8c66, pass1_1038_78e2, process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_574a, struct_fn_1000_160a};
+use crate::struct_ops::struct_ops_2::{pass1_1030_3af6, pass1_1030_4574, pass1_1030_8c66, pass1_1038_78e2, process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_574a, set_struct_field_1018_04ca, struct_fn_1000_160a};
 use crate::structs::prog_structs_1::{Struct104, Struct393};
 use crate::structs::prog_structs_11::Struct706;
 use crate::structs::prog_structs_12::Struct94;
@@ -546,18 +546,18 @@ pub unsafe fn pass1_1030_7ea0(param_1: &mut  Struct918) -> bool {
     let mut u_var1: u32;
     let u_var2: u8;
     let extraout_AH: u8;
-    let BVar3: bool;
+    let b_var3: bool;
 
     u_var2 = pass1_1030_6fa0(param_1);
-    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, CONCAT11(extraout_AH, u_var2), 0xb);
-    if (BVar3 != 0) {
+    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, CONCAT11(extraout_AH, u_var2), 0xb);
+    if (b_var3 != 0) {
         u_var1 = (param_1 + 0x1a);
         if ((u_var1 + 0x12) == 5) {
             return 1;
         }
-        BVar3 = 0;
+        b_var3 = 0;
     }
-    return BVar3;
+    return b_var3;
 }
 
 pub unsafe fn pass1_1030_7eda(param_1: u32, param_2: u16) {
@@ -2054,7 +2054,7 @@ pub unsafe fn pass1_1030_7176(param_1: &mut  Struct493) {
 pub unsafe fn pass1_1030_7226(param_1: &mut  Struct493) {
     let mut u_var1: u32;
     let mut u_var2: u32;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut i_var4: i32;
     let mut u_var5: i32;
     let mut local_a: u32;
@@ -2065,8 +2065,8 @@ pub unsafe fn pass1_1030_7226(param_1: &mut  Struct493) {
         pass1_1030_73a8((param_1 & 0xffff | u_var5 << 0x10));
     }
     u_var2 = (i_var4 + 0x1a);
-    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var2 + 0xc), 0x10);
-    if (((BVar3 != 0) && (u_var2 = (i_var4 + 0x1a), (u_var2 + 0x12) == 5))
+    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, (u_var2 + 0xc), 0x10);
+    if (((b_var3 != 0) && (u_var2 = (i_var4 + 0x1a), (u_var2 + 0x12) == 5))
         && (
             u_var1 = (i_var4 + 0x1a),
             u_var2 = (u_var1 & 0xffff0000 | (u_var1 + 0x14)),
@@ -2427,7 +2427,7 @@ pub unsafe fn pass1_1030_538a(struct_a: &Struct899) {
         CONCAT22(in_stack_0000fff0, 0x2f),
     );
     if (u_var1 == 1) {
-        pass1_1018_04ca(ppVar2, &struct_b.field_0x108);
+        set_struct_field_1018_04ca(ppVar2, &struct_b.field_0x108);
     } else {
         if (u_var1 == 2) {
             pass1_1018_04a4(ppVar2, &struct_b.field_0x108);

@@ -1,3 +1,7 @@
+use crate::typedefs::{HWND16, HFILE16};
+use crate::structs::prog_structs_1::Struct104;
+use crate::structs::prog_structs_2::Struct199;
+use crate::structs::prog_structs_20::Struct30;
 
 pub struct Struct1016 {}
 

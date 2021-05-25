@@ -1,3 +1,5 @@
+use crate::typedefs::HFILE16;
+
 pub fn modify_list_1008_5b6e(ctx: &mut AppContext, param_1: &mut  u16, param_2: u8) -> &mut  u16 {
     unsafe { *param_1 = ctx.s_1_1050_389a };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
@@ -85,7 +87,7 @@ pub fn modify_list_1008_6d64(param_1: u32, param_2: &mut  u16) {
     return;
 }
 
-pub fn set_array_val_1008_72a8(param_1: &mut  u16, param_2: u16) -> &mut  u16 {
+pub fn set_array_val_1008_72a8(param_1: &mut  u16, param_2: HFILE16) -> &mut  u16 {
     unsafe { *param_1 = param_2 };
     return param_1;
 }

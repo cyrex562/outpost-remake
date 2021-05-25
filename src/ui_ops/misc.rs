@@ -83,7 +83,7 @@ use crate::winapi::{BeginPaint16, BringWindowToTop16, ClientToScreen16, CreateDC
 // {
 //     let mut u_var1: u32;
 //     let ppc_var2: fn();
-//     let BVar3: bool;
+//     let b_var3: bool;
 //     let mut u_var4: u16;
 //     let mut u_var5: u16;
 //     let ppVar6: &mut  pass1_struct_2;
@@ -126,10 +126,10 @@ use crate::winapi::{BeginPaint16, BringWindowToTop16, ClientToScreen16, CreateDC
 //     let mut local_8: [u8;6];
 
 //     pass1_1008_6d8a(CONCAT22(unaff_ss, local_8), param_2);
-//     BVar3 = close_file_1008_6e78(CONCAT22(unaff_ss, local_8));
+//     b_var3 = close_file_1008_6e78(CONCAT22(unaff_ss, local_8));
 //     i_var7 = param_1;
 //   // u_var10 = (param_1  >> 0x10);
-//     if (BVar3 == 0)
+//     if (b_var3 == 0)
 //     {
 //         if (ctx.g_u16_1050_0310 == 0)
 //         {
@@ -369,7 +369,7 @@ pub fn win_gui_fn_1040_ad24(param_1: &mut  Struct124, param_2: u16, param_3: u16
 pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFILE16) {
     let pi_var1: &mut  i32;
     let pc_var2: String;
-    let pbVar3: Vec<u8>;
+    let pb_var3: Vec<u8>;
     let left: u16;
     let top: u16;
     let right: u16;
@@ -408,8 +408,8 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
     let h_gdi_obj_00: HPALETTE16;
     let pu_var29: &mut  u32;
     let mut u_var30: u16;
-    let BVar31: bool;
-    let mut bVar32: u8;
+    let b_var31: bool;
+    let mut b_var32: u8;
     let mut in_dx: i32;
 
 
@@ -425,8 +425,8 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
     let mut unaff_cs: u16;
     let mut u_var35: u16;
     let mut unaff_ss: u16;
-    let mut bVar36: bool;
-    let mut bVar37: u8;
+    let mut b_var36: bool;
+    let mut b_var37: u8;
     let mut u_var38: u32;
     let mut in_stack_00000000: i32;
     let mut in_stack_00000002: u16;
@@ -479,7 +479,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
     if ((param_2 + 0xec76 & 3) != 0) {}
     // goto LAB_1010_2ad8;
     local_AX_123 = (param_2 + 0xec76 >> 1);
-    bVar36 = local_AX_123 < (s_version__d__d_1050_0012 + 10);
+    b_var36 = local_AX_123 < (s_version__d__d_1050_0012 + 10);
     if ((s_version__d__d_1050_0012 + 10) < local_AX_123) {}
     // goto LAB_1010_2ad8;
     unaff_cs = 0x1010;
@@ -518,7 +518,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
             uStack11 = 0x10;
             uStack14 = 0x35;
             uStack13 = 0x40;
-            BVar31 = write_to_file_1008_7e1c(
+            b_var31 = write_to_file_1008_7e1c(
                 param_2,
                 ZEXT24(in_bx),
                 CONCAT13(
@@ -526,7 +526,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                     CONCAT12(in_stack_00000000, unaff_bp),
                 ),
             );
-            if (BVar31 != 0) {
+            if (b_var31 != 0) {
                 return;
             }
             ctx.g_u16_1050_0310 = 0x6d0;
@@ -764,15 +764,15 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
             // goto LAB_1010_2ad8;
         }
         0xd => {
-            pbVar3 = (&local_AX_123.field_0x0 + unaff_si);
+            pb_var3 = (&local_AX_123.field_0x0 + unaff_si);
             unsafe {
-                bVar37 = *pbVar3;
-                bVar6 = *pbVar3 + in_dx;
-                *pbVar3 = bVar6 + bVar36;
+                b_var37 = *pb_var3;
+                bVar6 = *pb_var3 + in_dx;
+                *pb_var3 = bVar6 + b_var36;
             }
-            pu_var7 = (CARRY1(bVar37, in_dx) || CARRY1(bVar6, bVar36));
+            pu_var7 = (CARRY1(b_var37, in_dx) || CARRY1(bVar6, b_var36));
             pu_var8 = in_bx + -0x404;
-            bVar37 = in_bx < 0x1010 || pu_var8 < pu_var7;
+            b_var37 = in_bx < 0x1010 || pu_var8 < pu_var7;
             pu_var29 = (pu_var8 - pu_var7);
             pc_var10 = swi(4);
             if (SBORROW2(in_bx, 0x1010) != SBORROW2(pu_var8, pu_var7)) {
@@ -781,16 +781,16 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                 }
                 in_dx = ctx.dx_reg;
             }
-            bVar36 = pu_var29 < 0x1010 || pu_var29 + -0x404 < bVar37;
-            pbVar3 = (&local_AX_123.field_0x0 + unaff_si);
+            b_var36 = pu_var29 < 0x1010 || pu_var29 + -0x404 < b_var37;
+            pb_var3 = (&local_AX_123.field_0x0 + unaff_si);
             unsafe {
-                bVar37 = *pbVar3;
-                bVar32 = in_dx;
-                bVar6 = *pbVar3;
-                *pbVar3 = bVar6 + bVar32 + bVar36;
+                b_var37 = *pb_var3;
+                b_var32 = in_dx;
+                bVar6 = *pb_var3;
+                *pb_var3 = bVar6 + b_var32 + b_var36;
                 pc_var2 = (&local_AX_123.field_0x0 + unaff_si);
                 *pc_var2 =
-                    *pc_var2 + bVar32 + (CARRY1(bVar37, bVar32) || CARRY1(bVar6 + bVar32, bVar36));
+                    *pc_var2 + b_var32 + (CARRY1(b_var37, b_var32) || CARRY1(bVar6 + b_var32, b_var36));
             }
             bStack8 = (&uStack2 >> 8);
             u_stack12 = in_stack_00000000;
@@ -901,9 +901,9 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
             struct_a = (in_dx + -1);
             uStack6 = unaff_DI;
             uStack5 = (unaff_DI >> 8);
-            pbVar3 = (&local_AX_123.field_0x0 + unaff_si);
+            pb_var3 = (&local_AX_123.field_0x0 + unaff_si);
             unsafe {
-                *pbVar3 = *pbVar3 | struct_a;
+                *pb_var3 = *pb_var3 | struct_a;
             }
             (param_1 + 0x12) = in_bx;
             (param_1 + 0x14) = struct_a;
@@ -930,12 +930,12 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                     uStack16 = u_var19;
                     uStack15 = u_var20;
                     u_stack12 = u_var18;
-                    BVar31 = read_file_1008_7dee(
+                    b_var31 = read_file_1008_7dee(
                         param_2,
                         ((param_2_00 & 0xff00) << 0x10 | CONCAT12(u_var18, u_var26)),
                         2,
                     );
-                    if (BVar31 != 0) {
+                    if (b_var31 != 0) {
                         uStack10 = 2;
                         uStack9 = 0;
                         bStack8 = 0;
@@ -952,12 +952,12 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                         uStack16 = u_var19;
                         uStack15 = u_var20;
                         u_stack12 = u_var18;
-                        BVar31 = read_file_1008_7dee(
+                        b_var31 = read_file_1008_7dee(
                             param_2,
                             ((param_2_00 & 0xff00) << 0x10 | CONCAT12(u_var18, u_var26)),
                             2,
                         );
-                        if (BVar31 != 0) {
+                        if (b_var31 != 0) {
                             uStack10 = 2;
                             uStack9 = 0;
                             bStack8 = 0;
@@ -974,12 +974,12 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                             uStack16 = u_var19;
                             uStack15 = u_var20;
                             u_stack12 = u_var18;
-                            BVar31 = read_file_1008_7dee(
+                            b_var31 = read_file_1008_7dee(
                                 param_2,
                                 ((param_2_00 & 0xff00) << 0x10 | CONCAT12(u_var18, u_var26)),
                                 2,
                             );
-                            if (BVar31 != 0) {
+                            if (b_var31 != 0) {
                                 return;
                             }
                         }
@@ -1018,7 +1018,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                 uStack15 = u_var20;
                 u_stack12 = u_var23;
                 uStack11 = u_var25;
-                BVar31 = read_file_1008_7dee(
+                b_var31 = read_file_1008_7dee(
                     param_2,
                     CONCAT13(u_var25, CONCAT12(u_var23, &local_22)),
                     2,
@@ -1032,7 +1032,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                 u_var12 = u_stack12;
                 uStack11 = (local_26 >> 8);
                 u_var13 = uStack11;
-                if (BVar31 == 0) {
+                if (b_var31 == 0) {
                     break;
                 }
                 uStack10 = 2;
@@ -1051,12 +1051,12 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                 uStack17 = u_var16;
                 uStack16 = u_var19;
                 uStack15 = u_var20;
-                BVar31 = read_file_1008_7dee(
+                b_var31 = read_file_1008_7dee(
                     param_2,
                     (local_26 & 0xff000000 | CONCAT12(u_stack12, u_var26)),
                     2,
                 );
-                if (BVar31 == 0) {
+                if (b_var31 == 0) {
                     break;
                 }
                 bStack8 = local_22;
@@ -1071,7 +1071,7 @@ pub unsafe fn win_gui_fn_1010_2a32(param_1: i32, uparam_2_00: i32, param_2: &HFI
                 uStack10 = u_var19;
                 uStack9 = u_var20;
                 switch_statement_1008_73ea(param_2, param_2, local_22);
-                (i_var33 + 4) = BVar31;
+                (i_var33 + 4) = b_var31;
                 u_var5 = (param_1 + 0x12);
                 uStack14 = u_var5;
                 uStack13 = (u_var5 >> 8);

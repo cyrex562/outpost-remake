@@ -927,12 +927,12 @@ pub unsafe fn alloc_mem_1000_16aa(param_1: i32, param_2: i32, param_3: u16) -> &
 }
 
 pub unsafe fn alloc_mem_1000_1708(
-    param_1: &mut i32,
+    param_1: &mut Struct89,
     param_2: &mut i32,
     uparam_3: i32,
     param_4: i32,
     uparam_5: i32,
-) -> u16 {
+) -> u32 {
     let mut iVar1: i32;
     let mut b_var2: bool;
     let lVar3: u32;
@@ -959,7 +959,7 @@ pub unsafe fn alloc_mem_1000_1708(
                 get_fn_ptr_at_address(ctx.func_ptr_1050_5f3c)();
                 // goto LAB_1000_1724;
             }
-            iVar1 = get_fn_ptr_at_address(ctx.func_ptr_1050_5f34)();
+            // iVar1 = get_fn_ptr_at_address(ctx.func_ptr_1050_5f34)();
         } else {
             iVar1 = (*func_ptr_1050_5f38)();
         }

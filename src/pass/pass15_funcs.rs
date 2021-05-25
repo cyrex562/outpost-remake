@@ -3050,7 +3050,7 @@ pub fn pass1_1020_b1ae(param_1: Vec<u8>, param_1_00: Vec<u8>, param_2_00: Vec<u8
 pub fn pass1_1020_b240(param_1: Vec<u8>, param_2: Vec<u8>, param_3: Vec<u8>) {
     let pu_var1: &mut  u32;
     let paVar2: &mut  Struct493;
-    let BVar3: bool;
+    let b_var3: bool;
 
     let mut u_var4: u16;
     let mut u_var5: i32;
@@ -3085,8 +3085,8 @@ pub fn pass1_1020_b240(param_1: Vec<u8>, param_2: Vec<u8>, param_3: Vec<u8>) {
             return;
         }
     }
-    BVar3 = pass1_1020_b1ae(param_1, param_2, *(param_3 + 4));
-    if (BVar3 == 0) {
+    b_var3 = pass1_1020_b1ae(param_1, param_2, *(param_3 + 4));
+    if (b_var3 == 0) {
         return;
     }
     return;
@@ -3095,7 +3095,7 @@ pub fn pass1_1020_b240(param_1: Vec<u8>, param_2: Vec<u8>, param_3: Vec<u8>) {
 pub fn pass1_1020_b2da(param_1: Vec<u8>, param_2: u16, param_3: u32, param_4: u32) {
     let mut u_var1: u16;
     let mut u_var2: u16;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut i_var4: i32;
     let mut unaff_ss: u16;
     word * *ppwVar5;
@@ -3155,8 +3155,8 @@ pub fn pass1_1020_b2da(param_1: Vec<u8>, param_2: u16, param_3: u32, param_4: u3
             (_local_6 >> 0x10),
         );
       // u_var2 = (param_4  >> 0x10);
-        BVar3 = pass1_1020_b1ae(param_1, CONCAT22(unaff_ss, local_1a), *(param_4 + 4));
-        if (BVar3 != 0) {
+        b_var3 = pass1_1020_b1ae(param_1, CONCAT22(unaff_ss, local_1a), *(param_4 + 4));
+        if (b_var3 != 0) {
             i_var4 = pass1_1020_b240(param_1, CONCAT22(unaff_ss, local_1a), param_4);
             if (i_var4 != 0) {
                 // LAB_1020_b46e:
@@ -3182,8 +3182,8 @@ pub fn pass1_1020_b2da(param_1: Vec<u8>, param_2: u16, param_3: u32, param_4: u3
             _local_6,
             (_local_6 >> 0x10),
         );
-        BVar3 = pass1_1020_b1ae(param_1, CONCAT22(unaff_ss, local_1a), *(param_4 + 4));
-        if (BVar3 != 0) {
+        b_var3 = pass1_1020_b1ae(param_1, CONCAT22(unaff_ss, local_1a), *(param_4 + 4));
+        if (b_var3 != 0) {
             i_var4 = pass1_1020_b240(param_1, CONCAT22(unaff_ss, local_1a), param_4);
             if (i_var4 != 0) {}
             // goto LAB_1020_b46e;

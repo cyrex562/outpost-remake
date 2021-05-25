@@ -3225,7 +3225,7 @@ pub fn return_false_1028_20b0() -> bool {
 pub fn pass1_1028_20b6(param_1: &mut Struct44) {
     let u_var1: u8;
     let local_AH_46: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut local_DX_31: u16;
     let mut u_var4: u16;
     let mut u_var5: i32;
@@ -3258,18 +3258,18 @@ pub fn pass1_1028_20b6(param_1: &mut Struct44) {
             CONCAT22(ctx.stack_seg_reg, &iStack18),
         );
         uStack16 = uStack16 & 0xffff | (iStack20 - 1) << 0x10;
-        BVar3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
-        if (BVar3 == 0) {
+        b_var3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
+        if (b_var3 == 0) {
             uStack16 = uStack16 & 0xffff | (iStack20 + 1) << 0x10;
-            BVar3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
-            if (BVar3 == 0) {
+            b_var3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
+            if (b_var3 == 0) {
                 uStack16 = CONCAT22(iStack20, iStack18 + -1);
-                BVar3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
-                if (BVar3 == 0) {
+                b_var3 = pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
+                if (b_var3 == 0) {
                     uStack16 = uStack16 & 0xffff0000 | (iStack18 + 1);
-                    BVar3 =
+                    b_var3 =
                         pass1_1028_21ba(u_var4, u_var5, CONCAT22(ctx.stack_seg_reg, &uStack16), _local_6);
-                    if (BVar3 == 0) {
+                    if (b_var3 == 0) {
                         return;
                     }
                 }

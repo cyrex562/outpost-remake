@@ -284,26 +284,28 @@ pub fn pass1_1030_227a(param_1: &mut FileObject, param_2: &HFILE16) {
     return;
 }
 
-pub unsafe fn pass1_1030_1b18(ctx: &mut AppContext, param_1: u32, param_2: &mut HFILE16) -> u16 {
+
+pub unsafe fn pass1_1030_1b18(ctx: &mut AppContext,
+                              param_1: &mut Struct933,
+                              param_2: &mut HFILE16,
+                              param_3: u32,
+                              param_4: u32) -> u16 {
     let pi_var1: &mut  i32;
     let mut u_var2: u32;
     let mut u_var3: i32;
-
     let mut u_var4: u16;
     let b_var5: bool;
     let mut u_var6: i32;
-    let in_dx: &mut  u16;
+    // let in_dx: &mut  u16;
     let struct_a: &mut  Struct199;
     let mut i_var7: i32;
     let mut i_var8: i32;
-    let mut u_var9: u16;
-    let mut local_18: u16;
 
-    pass1_1030_19b4(param_1, param_2);
-    if (ctx.ax_reg != 0) {
-        if (ctx.g_struct_ptr_1 == 0) {
-            struct_fn_1000_160a();
-            ctx.g_u16_ptr_1050_5f2e = in_dx;
+    pass1_1030_19b4(ctx, param_1, param_2);
+    if ctx.ax_reg != 0 {
+        if ctx.g_struct_ptr_1 == 0 {
+            struct_fn_1000_160a(ctx);
+            ctx.g_u16_ptr_1050_5f2e = param_4;
         } else {
         }
         u_var4 = alloc_mem_1000_1708();
@@ -313,7 +315,7 @@ pub unsafe fn pass1_1030_1b18(ctx: &mut AppContext, param_1: u32, param_2: &mut 
         (i_var7 + 0x12) = ctx.g_u16_ptr_1050_5f2e;
         struct_a = (i_var7 + 0x12);
         b_var5 = read::read_file_1008_7dee(param_2, CONCAT22(struct_a, (i_var7 + 0x10)), 2);
-        if (b_var5 != 0) {
+        if b_var5 != 0 {
             pi_var1 = (i_var7 + 0x10);
             let pi_var1_val = unsafe { *pi_var1 };
             if (pi_var1_val == 0) {
@@ -338,6 +340,9 @@ pub unsafe fn pass1_1030_1b18(ctx: &mut AppContext, param_1: u32, param_2: &mut 
     return 0;
 }
 
+/*
+5 references
+ */
 pub unsafe fn pass1_1030_19b4(ctx: &mut AppContext, param_1: &mut Struct933, param_2: &HFILE16) {
     let u_var1: u8;
     let extraout_var: u32;
@@ -403,8 +408,8 @@ pub unsafe fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_
     let mut u_var29: u16;
     let mut uVar30: u16;
     // let mut unaff_ss: u16;
-    let mut bVar31: bool;
-    let mut bVar32: bool;
+    let mut b_var31: bool;
+    let mut b_var32: bool;
     let ppVar33: &mut  Struct2111;
     let pu_var34: &mut  u16;
     let paVar35: &mut  Struct763;
@@ -1296,19 +1301,19 @@ pub unsafe fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_
                             pass1_fn_1008_612e();
                             pu_var19 = (CONCAT11(local_46, local_46) - 7);
                             if (pu_var19 == 0x0) {
-                                bVar32 = SBORROW2(paVar26, 0x32);
+                                b_var32 = SBORROW2(paVar26, 0x32);
                                 pu_var11 = &paVar26[-5].field_0xa;
-                                bVar31 = paVar26 == (s_New_failed_in_Op__Op_1050_0020 + 0x12);
+                                b_var31 = paVar26 == (s_New_failed_in_Op__Op_1050_0020 + 0x12);
                                 // LAB_1028_7b74:
-                                if ((!bVar31 && bVar32) == (pu_var11 < 0)) {
+                                if ((!b_var31 && b_var32) == (pu_var11 < 0)) {
                                     local_30 = local_30 & 0xffff0000;
                                 }
                             } else {
                                 pu_var19 = (CONCAT11(local_46, local_46) - 8);
                                 if (pu_var19 == 0x0) {
-                                    bVar32 = SBORROW2(paVar26, 0x19);
+                                    b_var32 = SBORROW2(paVar26, 0x19);
                                     pu_var11 = (&paVar26[-3].field_0xa + 1);
-                                    bVar31 = pu_var11 == 0x0;
+                                    b_var31 = pu_var11 == 0x0;
                                     // goto LAB_1028_7b74;
                                 }
                             }

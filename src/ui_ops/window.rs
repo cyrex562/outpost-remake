@@ -175,7 +175,7 @@ pub fn create_win_1008_5e7e(ctx: &mut AppContext) -> u16 {
     stock_obj = GetStockObject16(0);
     local_1a = 0;
     local_16 = local_12;
-    // BVar3 = GetClassInfo16(&local_2c, CONCAT22(local_16, unaff_ss), unaff_ss);
+    // b_var3 = GetClassInfo16(&local_2c, CONCAT22(local_16, unaff_ss), unaff_ss);
     success = GetClassInfo16(unaff_ss, local_16, &wnd_class);
     if success == false {
         AVar4 = RegisterClass16(&wnd_class);

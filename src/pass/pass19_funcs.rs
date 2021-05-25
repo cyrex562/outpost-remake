@@ -2796,7 +2796,7 @@ pub fn pass1_1040_79c0(
 pub fn pass1_1040_7700(param_1: &mut Struct44) {
     let pu_var1: &mut  u16;
     byte * *ppu8_var2;
-    let pbVar3: Vec<u8>;
+    let pb_var3: Vec<u8>;
     let u_var4: u8;
     let mut u_var5: u32;
     let mut bVar6: u8;
@@ -2846,10 +2846,10 @@ pub fn pass1_1040_7700(param_1: &mut Struct44) {
     }
     bVar11 = in_edx;
     if (in_ZF) {
-        pbVar3 = (in_bx + unaff_si);
+        pb_var3 = (in_bx + unaff_si);
         bVar17 = false;
         unsafe {
-            *pbVar3 = *pbVar3 | bVar11;
+            *pb_var3 = *pb_var3 | bVar11;
         }
         cVar9 = in_AL;
     } else {
@@ -2857,54 +2857,54 @@ pub fn pass1_1040_7700(param_1: &mut Struct44) {
         bVar13 = (in_bx >> 8);
         bVar17 = CARRY1(bVar12, bVar13) || CARRY1(bVar12 + bVar13, in_CF);
         in_edx = in_edx & 0xff;
-        pbVar3 = (in_bx + unaff_si);
+        pb_var3 = (in_bx + unaff_si);
         unsafe {
-            bVar12 = *pbVar3;
-            bVar6 = *pbVar3 - bVar11;
-            bVar18 = *pbVar3 < bVar11 || bVar6 < bVar17;
-            *pbVar3 = bVar6 - bVar17;
-            if ((*pbVar3 == 0)
-                || (SBORROW1(bVar12, bVar11) != SBORROW1(bVar6, bVar17)) != (*pbVar3 < '\0'))
+            bVar12 = *pb_var3;
+            bVar6 = *pb_var3 - bVar11;
+            bVar18 = *pb_var3 < bVar11 || bVar6 < bVar17;
+            *pb_var3 = bVar6 - bVar17;
+            if ((*pb_var3 == 0)
+                || (SBORROW1(bVar12, bVar11) != SBORROW1(bVar6, bVar17)) != (*pb_var3 < '\0'))
             {
                 ppu8_var2 = (unaff_si + 9);
                 *ppu8_var2 = unaff_si + *ppu8_var2;
                 error_check_1000_17ce(param_1);
                 return;
             }
-            pbVar3 = unaff_si;
-            bVar12 = *pbVar3;
-            bVar6 = *pbVar3;
-            *pbVar3 = bVar6 + bVar13 + bVar18;
+            pb_var3 = unaff_si;
+            bVar12 = *pb_var3;
+            bVar6 = *pb_var3;
+            *pb_var3 = bVar6 + bVar13 + bVar18;
             bVar17 = CARRY1(local_4e, in_bx)
                 || CARRY1(
                     local_4e + in_bx,
                     CARRY1(bVar12, bVar13) || CARRY1(bVar6 + bVar13, bVar18),
                 );
-            pbVar3 = unaff_si + -0x4f;
-            bVar12 = *pbVar3;
-            bVar6 = *pbVar3;
-            *pbVar3 = bVar6 + bVar13 + bVar17;
-            pbVar3 = unaff_si + -0x78;
-            *pbVar3 = *pbVar3 + in_CL + (CARRY1(bVar12, bVar13) || CARRY1(bVar6 + bVar13, bVar17));
-            pbVar3 = (in_bx + unaff_si);
-            bVar17 = *pbVar3 < bVar11;
+            pb_var3 = unaff_si + -0x4f;
+            bVar12 = *pb_var3;
+            bVar6 = *pb_var3;
+            *pb_var3 = bVar6 + bVar13 + bVar17;
+            pb_var3 = unaff_si + -0x78;
+            *pb_var3 = *pb_var3 + in_CL + (CARRY1(bVar12, bVar13) || CARRY1(bVar6 + bVar13, bVar17));
+            pb_var3 = (in_bx + unaff_si);
+            bVar17 = *pb_var3 < bVar11;
             pu_var15 = &stack0xfffe;
             cVar9 = in_AL + '\x03';
-            if (*pbVar3 == bVar11) {
+            if (*pb_var3 == bVar11) {
                 bVar17 = false;
                 pu_var15 = unaff_bp;
                 cVar9 = in_AL + '\x03';
             }
         }
     }
-    pbVar3 = unaff_si + 0x4074;
+    pb_var3 = unaff_si + 0x4074;
     unsafe {
-        bVar11 = *pbVar3;
-        bVar12 = *pbVar3;
-        *pbVar3 = bVar12 + in_CL + bVar17;
-        pbVar3 = (in_bx + unaff_si);
-        *pbVar3 =
-            *pbVar3 | cVar9 + in_CL + (CARRY1(bVar11, in_CL) || CARRY1(bVar12 + in_CL, bVar17));
+        bVar11 = *pb_var3;
+        bVar12 = *pb_var3;
+        *pb_var3 = bVar12 + in_CL + bVar17;
+        pb_var3 = (in_bx + unaff_si);
+        *pb_var3 =
+            *pb_var3 | cVar9 + in_CL + (CARRY1(bVar11, in_CL) || CARRY1(bVar12 + in_CL, bVar17));
         pu_var1 = pu_var15 + -0x1e;
         *pu_var1 = *pu_var1 + in_edx;
         *in_bx = ctx.s_1_1050_389a;

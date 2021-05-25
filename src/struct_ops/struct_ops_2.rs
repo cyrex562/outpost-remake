@@ -144,7 +144,7 @@ pub fn set_struct_1000_09ca(ctx: &mut AppContext) -> u32 {
 pub fn struct_fn_1000_115c(param_1: u16, param_2: u16) -> u16 {
     let paVar1: &mut  Struct127;
     let pu_var2: &mut  u32;
-    let pbVar3: Vec<u8>;
+    let pb_var3: Vec<u8>;
     let paVar4: &mut  Struct127;
     let in_bx: &mut  u32;
     let pu_var5: &mut  u32;
@@ -172,8 +172,8 @@ pub fn struct_fn_1000_115c(param_1: u16, param_2: u16) -> u16 {
             if (local_4 < s_version__d__d_1050_0012._0_2_) {
                 pu_var2 = in_bx;
                 *pu_var2 = *pu_var2 + (*pu_var5 & 0xfffc);
-                pbVar3 = (pu_var5 + (*pu_var5 & 0xfffc));
-                *pbVar3 = *pbVar3 | 2;
+                pb_var3 = (pu_var5 + (*pu_var5 & 0xfffc));
+                *pb_var3 = *pb_var3 | 2;
                 return 1;
             }
         }
@@ -4395,7 +4395,7 @@ pub fn pass1_1038_e140(
 pub fn pass1_1038_df86(param_1: Vec<u8>) {
     let mut u_var1: u32;
     let ppc_var2: fn();
-    let BVar3: bool;
+    let b_var3: bool;
     let b_var4: bool;
     let pu_var5: &mut  u16;
     let struct_a: &mut  Struct199;
@@ -4419,8 +4419,8 @@ pub fn pass1_1038_df86(param_1: Vec<u8>) {
     u_var1 = (pp_var11 + 0x68);
   // u_var9 = (param_1  >> 0x10);
     i_var8 = param_1;
-    BVar3 = pass1_1010_041a();
-    if (BVar3 != 0) {
+    b_var3 = pass1_1010_041a();
+    if (b_var3 != 0) {
         pass1_1010_038e((i_var8 + 0x92), 1);
         pass1_1038_af40(ctx.g_struct_112_001, *(i_var8 + 8), 0x1e);
         return;
@@ -4432,7 +4432,7 @@ pub fn pass1_1038_df86(param_1: Vec<u8>) {
     );
     u_var10 = 0x1000;
     paVar6 = struct_a;
-    b_var4 = BVar3;
+    b_var4 = b_var3;
     process_struct_1000_179c(0xb4, struct_a);
     u_var7 = paVar6 | b_var4;
     if (u_var7 == 0) {
@@ -4444,7 +4444,7 @@ pub fn pass1_1038_df86(param_1: Vec<u8>) {
             CONCAT22(paVar6, b_var4),
             0x20,
             u_var1,
-            CONCAT22(struct_a, BVar3),
+            CONCAT22(struct_a, b_var3),
             (i_var8 + 6),
         );
         u_var9 = SUB42(pu_var5, 0);
@@ -5892,5 +5892,10 @@ pub unsafe fn process_struct_1020_808e(ctx: &mut AppContext, in_struct_1: &mut S
 
 pub unsafe fn pass1_1008_5068(param_1: &mut  Struct103, param_3: &mut  Struct7) {
     pass14_funcs::pass1_1008_4214(param_1, param_3);
+    return;
+}
+
+pub unsafe fn set_struct_field_1018_04ca(param_1: &mut Struct2111, param_2: u32) {
+    (param_1.field_0x1a) = param_2;
     return;
 }

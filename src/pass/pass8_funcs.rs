@@ -4455,7 +4455,7 @@ pub unsafe fn pass1_1010_715c(param_1: u32, param_2: u16) {
 pub unsafe fn pass1_1010_7818(param_1: u32, param_2: u32) {
     let mut u_var1: u32;
     let mut u_var2: u16;
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u16;
     let mut local_6: u16;
     let mut local_4: u16;
@@ -4463,63 +4463,63 @@ pub unsafe fn pass1_1010_7818(param_1: u32, param_2: u32) {
     //// _var4 = (param_1  >> 0x10);
     u_var1 = (param_1 + 0x14);
   // u_var2 = pass20_funcs::pass1_1010_b028(u_var1, (u_var1  >> 0x10), param_2);
-    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1e);
-    if (BVar3 == 0) {
-        BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0xb);
-        if (((BVar3 == 0)
+    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1e);
+    if (b_var3 == 0) {
+        b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0xb);
+        if (((b_var3 == 0)
             && (
-                BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x20),
-                BVar3 == 0,
+                b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x20),
+                b_var3 == 0,
             ))
             && (
-                BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1c),
-                BVar3 == 0,
+                b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1c),
+                b_var3 == 0,
             ))
         {
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 2);
-            if ((BVar3 != 0)
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 2);
+            if ((b_var3 != 0)
                 || (
-                    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x13),
-                    BVar3 != 0,
+                    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x13),
+                    b_var3 != 0,
                 ))
             {
                 return 5;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x11);
-            if ((BVar3 != 0)
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x11);
+            if ((b_var3 != 0)
                 || (
-                    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x12),
-                    BVar3 != 0,
+                    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x12),
+                    b_var3 != 0,
                 ))
             {
                 return 4;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 5);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 5);
+            if (b_var3 != 0) {
                 return 6;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 6);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 6);
+            if (b_var3 != 0) {
                 return 7;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 4);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 4);
+            if (b_var3 != 0) {
                 return 0x10;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 3);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 3);
+            if (b_var3 != 0) {
                 return 0x11;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x19);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x19);
+            if (b_var3 != 0) {
                 return 0x15;
             }
-            BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1d);
-            if (BVar3 != 0) {
+            b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, u_var2, 0x1d);
+            if (b_var3 != 0) {
                 return 0x16;
             }
-            BVar3 = pass1_1010_7d7e(param_1, u_var4, 1, u_var2);
-            if (BVar3 == 0) {
+            b_var3 = pass1_1010_7d7e(param_1, u_var4, 1, u_var2);
+            if (b_var3 == 0) {
                 return 0;
             }
             return 0xc;

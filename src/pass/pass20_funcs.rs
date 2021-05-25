@@ -4,8 +4,8 @@ use crate::file_ops::misc::file_fn_1008_6414;
 use crate::func_ptr_funcs::{call_fn_ptr_1000_5586, call_fn_ptr_1008_64a2};
 use crate::list_funcs::zero_list_1008_6c90;
 use crate::mem_funcs::alloc_mem::{alloc_mem_1000_0ed4, alloc_mem_1000_1708};
-use crate::other_funcs::mixed_fn_1010_830a;
 use crate::other_funcs::{big_fn_1010_b038, modify_list_1008_3f62};
+use crate::other_funcs::mixed_fn_1010_830a;
 use crate::pass::pass12_funcs::pass1_1008_c6fa;
 use crate::pass::pass13_funcs::{pass1_1008_8faa, pass1_1008_ab12};
 use crate::pass::pass14_funcs::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3eb4, pass1_1008_431c, pass1_1008_4480, pass1_1008_5118, pass1_1008_5784, pass1_1008_5b12, pass1_1008_6562, pass1_1008_6604, pass1_1008_6cec, pass1_fn_1008_60e8};
@@ -20,7 +20,8 @@ use crate::pass::pass6_funcs::{pass1_1038_4d28, pass1_1038_4d3c, pass1_1038_4e78
 use crate::pass::pass7_funcs::pass1_1018_17f0;
 use crate::pass::pass8_funcs;
 use crate::pass::pass_funcs::{pass1_1000_3d7a, pass1_1000_4906};
-use crate::string_ops::misc::{copy_string_1000_3d3e, string_fn_1000_3f9c, string_fn_1008_64c8, wsprintf_func_1008_b69c, pass1_1028_933c, pass1_1030_532e, load_string_1010_847e, big_switch_statement_1020_c0d8, big_switch_statement_1020_c222, big_switch_statement_1020_bd80};
+use crate::string_ops::load::load_string_1010_84e0;
+use crate::string_ops::misc::{big_switch_statement_1020_bd80, big_switch_statement_1020_c0d8, big_switch_statement_1020_c222, copy_string_1000_3d3e, load_string_1010_847e, pass1_1028_933c, pass1_1030_532e, string_fn_1000_3f9c, string_fn_1008_64c8, wsprintf_func_1008_b69c};
 use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_4772, process_struct_1008_574a, process_struct_1008_8e9e, process_struct_1010_1d48, process_struct_1010_9fee, process_struct_1040_a598, struct_fn_1000_160a};
 use crate::structs::prog_structs_11::Struct706;
 use crate::structs::prog_structs_12::Struct462;
@@ -47,7 +48,6 @@ use crate::sys_ops::win_msg::post_win_msg_1008_a0e4;
 use crate::typedefs::HDC16;
 use crate::ui_ops::msg_box::msg_box_1010_8bb4;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, CONCAT31, SBORROW2, SUB42, ZEXT24};
-use crate::string_ops::load::load_string_1010_84e0;
 
 pub unsafe fn pass1_1010_887a(ctx: &mut AppContext, param_1: u32, param_2: u32, param_3: u16) {
     let mut u_var1: u16;
@@ -4064,11 +4064,6 @@ pub unsafe fn pass1_1018_04b8(param_1: u32) {
 
   // u_var1 = (param_1  >> 0x10);
     return CONCAT22((param_1 + 0x18), (param_1 + 0x16));
-}
-
-pub unsafe fn pass1_1018_04ca(param_1: u32, param_2: u32) {
-    (param_1 + 0x1a) = param_2;
-    return;
 }
 
 pub unsafe fn pass1_1018_04de(param_1: u32, param_2: u32) {

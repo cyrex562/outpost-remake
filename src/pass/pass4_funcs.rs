@@ -4434,7 +4434,7 @@ pub fn pass1_1028_b1c8(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
 pub fn pass1_1028_b1f4() -> &mut  u16 {
     let pc_var1: String;
     let pu_var2: Vec<u8>;
-    let pbVar3: Vec<u8>;
+    let pb_var3: Vec<u8>;
     let mut cVar4: u8;
     let mut in_dx: u16;
     let mut in_bx: i32;
@@ -4460,8 +4460,8 @@ pub fn pass1_1028_b1f4() -> &mut  u16 {
         *pc_var1 = *pc_var1 - in_dx;
         pu_var2 = (in_bx + unaff_si);
         *pu_var2 = *pu_var2;
-        pbVar3 = (&PTR_LOOP_1050_1028 + in_bx + unaff_DI);
-        *pbVar3 = *pbVar3 | (in_dx >> 8);
+        pb_var3 = (&PTR_LOOP_1050_1028 + in_bx + unaff_DI);
+        *pb_var3 = *pb_var3 | (in_dx >> 8);
     }
     pass1_1030_1628(in_stack_0000d731);
   // u_var6 = (in_stack_0000d731  >> 0x10);
@@ -4573,7 +4573,7 @@ pub fn pass1_1028_ae2a(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
 pub fn pass1_1028_ab68() {
     let mut iVar1: i32;
     let ppc_var2: fn();
-    let BVar3: bool;
+    let b_var3: bool;
     let mut u_var4: u16;
     let mut unaff_ss: u16;
     let pu_var5: &mut  u32;
@@ -4597,13 +4597,13 @@ pub fn pass1_1028_ab68() {
         return 1;
     }
     iVar1 = (pu_var5 + 0xc);
-    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x11);
-    if (BVar3 == 0) {}
+    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x11);
+    if (b_var3 == 0) {}
     // goto code_r0x1028abad;
     // goto LAB_1028_abc0;
     // code_r0x1028abad:
-    BVar3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x12);
-    if (BVar3 != 0) {
+    b_var3 = pass1_1008_c6ae(ctx._PTR_LOOP_1050_06e0, iVar1, 0x12);
+    if (b_var3 != 0) {
         // LAB_1028_abc0:
         if ((pu_var5 + 0x12) == 5) {
             unsafe { ppc_var2 = (*pu_var5 + 0x30) };

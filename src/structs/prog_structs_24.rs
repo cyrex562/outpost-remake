@@ -352,7 +352,7 @@ pub struct Struct2111 {
     pub field_0x14: u32,
     pub field_0x18: u8,
     pub field_0x19: u8,
-    pub field_0x1a: u8,
+    pub field_0x1a: u32,
     pub field_0x1b: u8,
     pub field_0x1c: u8,
     pub field_0x1d: u8,

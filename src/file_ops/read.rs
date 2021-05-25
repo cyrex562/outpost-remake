@@ -1,3 +1,5 @@
+use misc::pass1_1030_19b4;
+
 use crate::app_context::AppContext;
 use crate::err_ops::error_check_1000_17ce;
 use crate::file_ops::{close, file2, misc};
@@ -13,12 +15,12 @@ use crate::pass::pass13_funcs::pass1_1008_b0bc;
 use crate::pass::pass14_funcs::{pass1_1008_3e76, pass1_1008_4b8e, pass1_1008_7056, pass1_1008_766e, pass1_fn_1008_60e8};
 use crate::pass::pass15_funcs::{pass1_1020_a43e, pass1_1020_b97e, pass1_1020_ba3e, pass1_1020_bb8a, pass1_1020_c444};
 use crate::pass::pass17_funcs::{pass1_1030_1cd8, pass1_1030_4782};
-use crate::pass::pass20_funcs::{pass1_1018_04a4, pass1_1018_04ca};
+use crate::pass::pass20_funcs::pass1_1018_04a4;
 use crate::pass::pass4_funcs::{pass1_1028_e0bc, pass1_1028_e100, pass1_1028_e1ec};
 use crate::pass::pass5_funcs::pass1_1030_84ae;
 use crate::pass::pass8_funcs::pass1_1010_82f8;
-use crate::string_ops::misc::{get_string_index_1000_3da4, process_string_1008_7e4a, string_fn_1000_3f9c};
-use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, struct_fn_1000_160a};
+use crate::string_ops::misc::{get_string_index_1000_3da4, pass1_1030_5164, process_string_1008_7e4a, string_fn_1000_3f9c};
+use crate::struct_ops::struct_ops_2::{process_struct_1000_179c, process_struct_1008_4c98, process_struct_1008_574a, process_struct_1008_dcdc, process_struct_1010_20ba, set_struct_field_1018_04ca, struct_fn_1000_160a};
 use crate::struct_ops::struct_ops_2::pass1_1038_6520;
 use crate::structs::prog_structs_10::Struct933;
 use crate::structs::prog_structs_11::Struct934;
@@ -297,18 +299,15 @@ pub unsafe fn read_file_1008_7548(
 
         local_e = 0;
         while (local_e < local_6) {
-            was_file_read =
-                read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_1c), 4);
-            if ((was_file_read == 0)
-                || (
-                    was_file_read = read_file_1008_7dee(
-                        in_file_handle,
-                        CONCAT22(ctx.stack_seg_reg, &local_18),
-                        2,
-                    ),
-                    was_file_read == 0,
-                ))
-            {
+            was_file_read = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, &local_1c), 4);
+            if ((was_file_read == 0) || (
+                was_file_read = read_file_1008_7dee(
+                    in_file_handle,
+                    CONCAT22(ctx.stack_seg_reg, &local_18),
+                    2,
+                ),
+                was_file_read == 0,
+            )) {
                 unsafe {
                     pp_var1 = (*param_2 + 0x1c);
                     (**pp_var1)(local_CS__1, *param_2);
@@ -340,21 +339,15 @@ pub unsafe fn read_file_1008_7548(
 /*
 referenced by outside functions
  */
-pub unsafe fn read_file_1008_76e4(ctx: &mut AppContext, param_1: &HFILE16, param_2: &mut u32) {
+pub unsafe fn read_file_1008_76e4(ctx: &mut AppContext,
+                                  param_1: &HFILE16,
+                                  param_2: &mut u32) {
     let pp_var1: fn();
     let mut b_var3: bool = false;
-    // let in_dx: &mut  Struct199;
-    let mut local_1c: u16;
-    let mut local_1a: u16;
-    // let mut local_18: u32;
     let mut local_a: u32;
-    let mut val: u16;
-
-    // let mut local_6: u32 = 0;
     let mut local_6: Vec<u8> = Vec::new();
-    // CONCAT22(ctx.stack_seg_reg, &local_6)
     let mut u_var2 = read_file_1008_7dee(param_1, &mut local_6, 4);
-    if u_var2 == 0 {
+    if u_var2 == false {
         return;
     }
     if local_6 != 0 {
@@ -466,13 +459,10 @@ pub fn read_file_1008_7ad4(in_file: &mut HFILE16, param_2: u32) -> u16 {
                 return 1;
             }
             b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_14), 2);
-            if ((b_var1 == 0)
-                || (
-                    b_var1 =
-                        read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_10), 4),
-                    b_var1 == 0,
-                ))
-            {
+            if ((b_var1 == 0) || (
+                b_var1 = read_file_1008_7dee(in_file, CONCAT22(ctx.stack_seg_reg, &local_10), 4),
+                b_var1 == 0,
+            )) {
                 break;
             }
             pass1_1020_bb8a(param_2, local_10, (local_10 >> 0x10), local_14);
@@ -679,27 +669,22 @@ pub unsafe fn read_file_1008_bb5e(param_1: &mut Struct120, param_2: &HFILE16) {
             local_AX_189 = local_118;
             u_var7 = u_var8;
             read_file_into_str_1008_7c6e(_file_handle_ptr, CONCAT22(unaff_ss, local_AX_189));
-            if (((local_AX_189 == 0x0)
-                || (
-                    b_var4 = read_file_1008_7dee(
-                        _file_handle_ptr,
-                        CONCAT22(unaff_ss, two_file_bytes),
-                        2,
-                    ),
-                    b_var4 == 0,
-                ))
-                || (
-                    b_var4 = read_file_1008_7dee(
-                        _file_handle_ptr,
-                        CONCAT22(unaff_ss, four_file_bytes),
-                        4,
-                    ),
-                    b_var4
-                        == 0
-                    // read four bytes from file i32o stack buffer)) ||
-           (b_var4 = read_file_1008_7dee(_file_handle_ptr,CONCAT22(unaff_ss,two_file_bytes_2) ,2), b_var4 == 0),
-                ))
-            {
+            if (((local_AX_189 == 0x0) || (
+                b_var4 = read_file_1008_7dee(
+                    _file_handle_ptr,
+                    CONCAT22(unaff_ss, two_file_bytes),
+                    2,
+                ),
+                b_var4 == 0,
+            )) || (
+                b_var4 = read_file_1008_7dee(
+                    _file_handle_ptr,
+                    CONCAT22(unaff_ss, four_file_bytes),
+                    4,
+                ),
+                b_var4 == 0
+                    // read four bytes from file i32o stack buffer)) ||(b_var4 = read_file_1008_7dee(_file_handle_ptr, CONCAT22(unaff_ss, two_file_bytes_2), 2), b_var4 == 0),
+            )) {
                 // read two bytes from file i32o local buffer))
                 break;
             }
@@ -783,36 +768,31 @@ pub unsafe fn read_file_1008_e70e(ctx: &mut AppContext, param_1: u32, in_file_1:
                 }
                 _local_e = CONCAT22(u_var5, u_var4);
                 b_var3 = read_file_1008_7dee(in_file_1, CONCAT22(u_var5, u_var4 + 4), 4);
-                if ((((b_var3 == 0)
-                    || (
+                if ((((b_var3 == 0) || (
+                    b_var3 = read_file_1008_7dee(
+                        in_file_1,
+                        (_local_e & 0xffff0000 | (_local_e + 8)),
+                        4,
+                    ),
+                    b_var3 == 0,
+                )) || (
+                    b_var3 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_12), 2),
+                    b_var3 == 0,
+                )) || ((
+                    b_var3 = read_file_1008_7dee(
+                        in_file_1,
+                        (_local_e & 0xffff0000 | (_local_e + 0xe)),
+                        4,
+                    ),
+                    b_var3 == 0 || (
                         b_var3 = read_file_1008_7dee(
                             in_file_1,
-                            (_local_e & 0xffff0000 | (_local_e + 8)),
-                            4,
+                            (_local_e & 0xffff0000 | (_local_e + 0x12)),
+                            2,
                         ),
                         b_var3 == 0,
-                    ))
-                    || (
-                        b_var3 = read_file_1008_7dee(in_file_1, CONCAT22(unaff_ss, &local_12), 2),
-                        b_var3 == 0,
-                    ))
-                    || ((
-                        b_var3 = read_file_1008_7dee(
-                            in_file_1,
-                            (_local_e & 0xffff0000 | (_local_e + 0xe)),
-                            4,
-                        ),
-                        b_var3 == 0
-                            || (
-                                b_var3 = read_file_1008_7dee(
-                                    in_file_1,
-                                    (_local_e & 0xffff0000 | (_local_e + 0x12)),
-                                    2,
-                                ),
-                                b_var3 == 0,
-                            ),
-                    )))
-                {
+                    ),
+                ))) {
                     break;
                 }
                 (_local_e + 0xc) = local_12;
@@ -874,12 +854,10 @@ pub unsafe fn read_file_1010_0c7c(ctx: &mut AppContext, param_1: u32, in_file_ha
                     local_16 = local_1a;
                 }
                 b_var3 = read_file_1008_7dee(in_file_handle_2, &mut buffer_12, 2);
-                if (b_var3 == false)
-                    || (
-                        b_var3 = read_file_1008_7dee(in_file_handle_2, &local_16[6..], 4),
-                        b_var3 == false,
-                    )
-                {
+                if (b_var3 == false) || (
+                    b_var3 = read_file_1008_7dee(in_file_handle_2, &local_16[6..], 4),
+                    b_var3 == false,
+                ) {
                     local_1a = local_16.clone();
                     if local_16 != 0 {
                         pp_var1 = local_16;
@@ -898,20 +876,17 @@ pub unsafe fn read_file_1010_0c7c(ctx: &mut AppContext, param_1: u32, in_file_ha
                 (param_1 & 0xffff0000 | (i32_var6 + 0xe)),
                 2,
             );
-            if ((b_var3 != 0)
-                && (
-                    b_var3 = read_file_1008_7dee(
-                        in_file_handle_2,
-                        (param_1 & 0xffff0000 | (i32_var6 + 0x10)),
-                        2,
-                    ),
-                    b_var3 != 0,
-                ))
-            {
+            if ((b_var3 != 0) && (
+                b_var3 = read_file_1008_7dee(
+                    in_file_handle_2,
+                    (param_1 & 0xffff0000 | (i32_var6 + 0x10)),
+                    2,
+                ),
+                b_var3 != 0,
+            )) {
                 local_4 = 0;
                 while (local_4 < 10) {
-                    b_var3 =
-                        read_file_1008_7dee(in_file_handle_2, CONCAT22(unaff_ss, &local_2a), 2);
+                    b_var3 = read_file_1008_7dee(in_file_handle_2, CONCAT22(unaff_ss, &local_2a), 2);
                     if (b_var3 == 0) {
                         // goto LAB_1010_0cb1;
                     }
@@ -931,8 +906,7 @@ pub unsafe fn read_file_1010_0c7c(ctx: &mut AppContext, param_1: u32, in_file_ha
                 if (2 < PTR_LOOP_1050_0312) {
                     local_4 = 0;
                     while {
-                        b_var3 =
-                            read_file_1008_7dee(in_file_handle_2, CONCAT22(unaff_ss, &local_2a), 2);
+                        b_var3 = read_file_1008_7dee(in_file_handle_2, CONCAT22(unaff_ss, &local_2a), 2);
                         if (b_var3 == 0) {}
                         // goto LAB_1010_0cb1;
                         (local_4 * 8 + 0xea8) = local_2a;
@@ -1052,8 +1026,7 @@ pub unsafe fn read_file_1010_648a(ctx: &mut AppContext, param_1: u32, param_2: &
             if (b_var3 != 0) {
                 b_var3 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var2 + 0x12)), 4);
                 if (b_var3 != 0) {
-                    b_var3 =
-                        read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var2 + 0x16)), 4);
+                    b_var3 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var2 + 0x16)), 4);
                     if (b_var3 != 0) {
                         b_var3 = read_file_1008_7dee(
                             param_2,
@@ -1263,8 +1236,7 @@ pub unsafe fn read_file_1010_9b72(param_1: u32, hfile_param_2: &HFILE16) {
                         struct_b.base_field_0x2 = 0x1010;
                         local_e = _local_16;
                     }
-                    b_result =
-                        read_file_1008_7dee(hfile_param_2, CONCAT22(string_a_1, &string_a_2), 2);
+                    b_result = read_file_1008_7dee(hfile_param_2, CONCAT22(string_a_1, &string_a_2), 2);
                     if b_result == 0 {
                         // LAB_1010_9c32:
                         _local_16 = local_e;
@@ -1320,8 +1292,7 @@ pub unsafe fn read_file_1010_9b72(param_1: u32, hfile_param_2: &HFILE16) {
                             local_AX_571.field_0x2 = 0x1010;
                             local_1e = _local_16;
                         }
-                        b_result =
-                            read_file_1008_7dee(hfile_param_2, CONCAT22(string_a_1, &local_1a), 2);
+                        b_result = read_file_1008_7dee(hfile_param_2, CONCAT22(string_a_1, &local_1a), 2);
                         if b_result == 0 {
                             // LAB_1010_9d5c:
                             _local_16 = local_1e;
@@ -1473,39 +1444,33 @@ pub unsafe fn read_file_1018_0000(param_1: u32, param_2: &HFILE16) {
     } else {
         i_var4 = param_1;
         b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x16)), 4);
-        if ((((b_var5 != 0)
-            && (
-                b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x1a)), 4),
+        if ((((b_var5 != 0) && (
+            b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x1a)), 4),
+            b_var5 != 0,
+        )) && (
+            b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x20)), 4),
+            b_var5 != 0,
+        )) && ((
+            b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x24)), 4),
+            b_var5 != 0 && (
+                b_var5 = read_file_1008_7dee(
+                    param_2,
+                    (param_1 & 0xffff0000 | (i_var4 + 0x30)),
+                    2,
+                ),
                 b_var5 != 0,
-            ))
-            && (
-                b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x20)), 4),
-                b_var5 != 0,
-            ))
-            && ((
-                b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x24)), 4),
-                b_var5 != 0
-                    && (
-                        b_var5 = read_file_1008_7dee(
-                            param_2,
-                            (param_1 & 0xffff0000 | (i_var4 + 0x30)),
-                            2,
-                        ),
-                        b_var5 != 0,
-                    ),
-            ) && (
-                b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x32)), 2),
-                b_var5 != 0,
-            )))
-        {
+            ),
+        ) && (
+            b_var5 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var4 + 0x32)), 2),
+            b_var5 != 0,
+        ))) {
             // u_var7 = (param_1  >> 0x10);
             if ((i_var4 + 0x30) != 0) {
                 g_struct_ptr_1 = ((i_var4 + 0x32) * 6);
                 if (ctx.g_struct_ptr_1 == 0) {
                     struct_fn_1000_160a();
                     ctx.g_u16_ptr_1050_5f2e = in_dx;
-                } else {
-                }
+                } else {}
                 alloc_mem_1000_1708();
                 (i_var4 + 0x2c) = g_struct_ptr_1;
                 (i_var4 + 0x2e) = ctx.g_u16_ptr_1050_5f2e;
@@ -1563,12 +1528,10 @@ pub unsafe fn read_from_file_1038_7c02(param_1: &mut Vec<u8>, file_b: &HFILE16) 
         return 1;
     }
     u8_a = read_file_1008_7cfe(ctx, file_b);
-    if ((CONCAT11(extraout_AH, u8_a) != 0)
-        && (
-            bool_a = read_file_1008_7dee(file_b, CONCAT22(unaff_ss, &local_4), 2),
-            bool_a != 0,
-        ))
-    {
+    if ((CONCAT11(extraout_AH, u8_a) != 0) && (
+        bool_a = read_file_1008_7dee(file_b, CONCAT22(unaff_ss, &local_4), 2),
+        bool_a != 0,
+    )) {
         while (local_4 != 0) {
             u_var1 = local_4;
             local_4 = local_4 - 1;
@@ -1639,74 +1602,63 @@ pub unsafe fn read_from_file_1038_774e(param_1: u32, param_2: &HFILE16) {
     local_AX_22 = &local_AX_22.field_0x4;
     u_var4 = param_1 & 0xffff0000 | ZEXT24(local_AX_22);
     pass1_1008_766e(param_2, u_var4);
-    if ((u_var4 != 0)
-        && (
-            BVar2 =
-                read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | &local_AX_22.field_0x8), 4),
-            BVar2 != 0,
-        ))
-    {
+    if ((u_var4 != 0) && (
+        BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | &local_AX_22.field_0x8), 4),
+        BVar2 != 0,
+    )) {
         i_var3 = &local_AX_22.field_0xe;
         // u_var1 = (param_1  >> 0x10);
         u_var5 = param_2;
         // u_var6 = (param_2  >> 0x10);
         read_file_1008_77cc(ctx, u_var5, u_var6, i_var3, u_var1);
-        if ((i_var3 != 0)
-            && (((
-                BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2),
-                BVar2 != 0
-                    && (
-                        BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_6), 2),
-                        BVar2 != 0,
-                    ),
-            ) && (
-                BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_8), 2),
+        if ((i_var3 != 0) && (((
+            BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2),
+            BVar2 != 0 && (
+                BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_6), 2),
+                BVar2 != 0,
+            ),
+        ) && (
+            BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_8), 2),
+            BVar2 != 0,
+        )) && (
+            BVar2 = read_file_1008_7dee(
+                param_2,
+                (param_1 & 0xffff0000 | &local_AX_22.field_0x16),
+                4,
+            ),
+            BVar2 != 0,
+        ))) {
+            i_var3 = &local_AX_22.field_0x1a;
+            read_file_1008_7bc8(ctx, u_var5, u_var6, i_var3, u_var1);
+            if ((((i_var3 != 0) && (
+                BVar2 = read_file_1008_7dee(
+                    param_2,
+                    (param_1 & 0xffff0000 | &local_AX_22.field_0x20),
+                    4,
+                ),
                 BVar2 != 0,
             )) && (
                 BVar2 = read_file_1008_7dee(
                     param_2,
-                    (param_1 & 0xffff0000 | &local_AX_22.field_0x16),
-                    4,
+                    (param_1 & 0xffff0000 | &local_AX_22.field_0x24),
+                    2,
                 ),
                 BVar2 != 0,
-            )))
-        {
-            i_var3 = &local_AX_22.field_0x1a;
-            read_file_1008_7bc8(ctx, u_var5, u_var6, i_var3, u_var1);
-            if ((((i_var3 != 0)
-                && (
+            )) && ((
+                BVar2 = read_file_1008_7dee(
+                    param_2,
+                    (param_1 & 0xffff0000 | &local_AX_22.field_0x26),
+                    2,
+                ),
+                BVar2 != 0 && (
                     BVar2 = read_file_1008_7dee(
                         param_2,
-                        (param_1 & 0xffff0000 | &local_AX_22.field_0x20),
-                        4,
-                    ),
-                    BVar2 != 0,
-                ))
-                && (
-                    BVar2 = read_file_1008_7dee(
-                        param_2,
-                        (param_1 & 0xffff0000 | &local_AX_22.field_0x24),
+                        (param_1 & 0xffff0000 | &local_AX_22.field_0x28),
                         2,
                     ),
                     BVar2 != 0,
-                ))
-                && ((
-                    BVar2 = read_file_1008_7dee(
-                        param_2,
-                        (param_1 & 0xffff0000 | &local_AX_22.field_0x26),
-                        2,
-                    ),
-                    BVar2 != 0
-                        && (
-                            BVar2 = read_file_1008_7dee(
-                                param_2,
-                                (param_1 & 0xffff0000 | &local_AX_22.field_0x28),
-                                2,
-                            ),
-                            BVar2 != 0,
-                        ),
-                )))
-            {
+                ),
+            ))) {
                 local_AX_22.field_0xc = local_4;
                 set_param_3_with_switch_1008_72bc(u_var5, u_var6, local_6);
                 local_AX_22.field_0x12 = local_4;
@@ -1741,7 +1693,7 @@ pub unsafe fn read_from_file_1038_6118(param_1: &mut Struct933, hfile_param_2: &
     let mut local_414: u16;
     let local_412: &mut Struct1143;
     let mut local_40e: u32;
-    let mut local_408: [u8; 1024] = [0;1024];
+    let mut local_408: [u8; 1024] = [0; 1024];
     let mut local_8: u16;
     let mut local_6: u32;
 
@@ -1794,7 +1746,6 @@ pub unsafe fn read_from_file_1038_6118(param_1: &mut Struct933, hfile_param_2: &
                     2,
                 )
             }
-
         }
 
         if b_var4 != false {
@@ -1882,102 +1833,89 @@ pub unsafe fn read_from_file_1038_6118(param_1: &mut Struct933, hfile_param_2: &
         }
 
 
-
-                if pu_var5 != 0x0 {
-                    pu_var5 = local_408;
-                    pass1_fn_1008_60e8(pu_var5);
-                    local_bx_68.field_0x1fa = pu_var5;
-                    local_bx_68.field_0x1fc = struct_a;
+        if pu_var5 != 0x0 {
+            pu_var5 = local_408;
+            pass1_fn_1008_60e8(pu_var5);
+            local_bx_68.field_0x1fa = pu_var5;
+            local_bx_68.field_0x1fc = struct_a;
+            b_var4 = read_file_1008_7dee(
+                hfile_param_2,
+                (param_1 & 0xffff0000 | &local_bx_68.field_0x1fe),
+                2,
+            );
+            if ((((b_var4 != 0) && (
+                b_var4 = read_file_1008_7dee(
+                    hfile_param_2,
+                    (param_1 & 0xffff0000 | CONCAT11((param_1 >> 8) + 0x2, param_1)),
+                    4,
+                ),
+                b_var4 != 0,
+            )) && (
+                b_var4 = read_file_1008_7dee(
+                    hfile_param_2,
+                    (param_1 & 0xffff0000 | &local_bx_68.field_0x204),
+                    2,
+                ),
+                b_var4 != 0,
+            )) && ((
+                b_var4 = read_file_1008_7dee(
+                    hfile_param_2,
+                    (param_1 & 0xffff0000 | &local_bx_68.field_0x206),
+                    2,
+                ),
+                b_var4 != 0 && (
                     b_var4 = read_file_1008_7dee(
                         hfile_param_2,
-                        (param_1 & 0xffff0000 | &local_bx_68.field_0x1fe),
+                        (param_1 & 0xffff0000 | &local_bx_68.field_0x208),
                         2,
-                    );
-                    if ((((b_var4 != 0)
-                        && (
-                            b_var4 = read_file_1008_7dee(
-                                hfile_param_2,
-                                (param_1 & 0xffff0000 | CONCAT11((param_1 >> 8) + 0x2, param_1)),
-                                4,
-                            ),
-                            b_var4 != 0,
-                        ))
-                        && (
-                            b_var4 = read_file_1008_7dee(
-                                hfile_param_2,
-                                (param_1 & 0xffff0000 | &local_bx_68.field_0x204),
-                                2,
-                            ),
-                            b_var4 != 0,
-                        ))
-                        && ((
-                            b_var4 = read_file_1008_7dee(
-                                hfile_param_2,
-                                (param_1 & 0xffff0000 | &local_bx_68.field_0x206),
-                                2,
-                            ),
-                            b_var4 != 0
-                                && (
-                                    b_var4 = read_file_1008_7dee(
-                                        hfile_param_2,
-                                        (param_1 & 0xffff0000 | &local_bx_68.field_0x208),
-                                        2,
-                                    ),
-                                    b_var4 != 0,
-                                ),
-                        ) && ((
-                            b_var4 = read_file_1008_7dee(
-                                hfile_param_2,
-                                (param_1 & 0xffff0000 | &local_bx_68.field_0x20a),
-                                2,
-                            ),
-                            b_var4 != 0
-                                && ((
-                                    b_var4 = read_file_1008_7dee(
-                                        hfile_param_2,
-                                        (param_1 & 0xffff0000 | &local_bx_68.field_0x20c),
-                                        2,
-                                    ),
-                                    b_var4 != 0
-                                        && (
-                                            b_var4 = read_file_1008_7dee(
-                                                hfile_param_2,
-                                                (param_1 & 0xffff0000 | &local_bx_68.field_0x20e),
-                                                2,
-                                            ),
-                                            b_var4 != 0,
-                                        ),
-                                )),
-                        ))))
-                        && (PTR_LOOP_1050_0312 < 2
-                            || ((
-                                b_var4 = read_file_1008_7dee(
-                                    hfile_param_2,
-                                    (param_1 & 0xffff0000 | &local_bx_68.field_0x214),
-                                    2,
-                                ),
-                                b_var4 != 0
-                                    && (
-                                        b_var4 = read_file_1008_7dee(
-                                            hfile_param_2,
-                                            (param_1 & 0xffff0000 | ZEXT24(local_bx_68 + 1)),
-                                            4,
-                                        ),
-                                        b_var4 != 0,
-                                    ),
-                            )))
-                    {
-                        return;
-                    }
-                    ctx.g_u16_1050_0310 = 0x6d0;
-                    return;
-                }
+                    ),
+                    b_var4 != 0,
+                ),
+            ) && ((
+                b_var4 = read_file_1008_7dee(
+                    hfile_param_2,
+                    (param_1 & 0xffff0000 | &local_bx_68.field_0x20a),
+                    2,
+                ),
+                b_var4 != 0 && ((
+                    b_var4 = read_file_1008_7dee(
+                        hfile_param_2,
+                        (param_1 & 0xffff0000 | &local_bx_68.field_0x20c),
+                        2,
+                    ),
+                    b_var4 != 0 && (
+                        b_var4 = read_file_1008_7dee(
+                            hfile_param_2,
+                            (param_1 & 0xffff0000 | &local_bx_68.field_0x20e),
+                            2,
+                        ),
+                        b_var4 != 0,
+                    ),
+                )),
+            )))) && (PTR_LOOP_1050_0312 < 2 || ((
+                b_var4 = read_file_1008_7dee(
+                    hfile_param_2,
+                    (param_1 & 0xffff0000 | &local_bx_68.field_0x214),
+                    2,
+                ),
+                b_var4 != 0 && (
+                    b_var4 = read_file_1008_7dee(
+                        hfile_param_2,
+                        (param_1 & 0xffff0000 | ZEXT24(local_bx_68 + 1)),
+                        4,
+                    ),
+                    b_var4 != 0,
+                ),
+            ))) {
+                return;
             }
+            ctx.g_u16_1050_0310 = 0x6d0;
+            return;
         }
     }
-    ctx.g_u16_1050_0310 = 0x6d2;
-    return;
 }
+}
+ctx.g_u16_1050_0310 = 0x6d2; return; }
 
 pub fn read_from_file_1030_dec4(ctx: &mut AppContext, param_1: u32, param_2: &HFILE16) {
     let b_var1: bool;
@@ -2034,7 +1972,7 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
     let mut u_var1: u32;
     let u_var2: u8;
     let local_AX_32: &mut Struct933;
-    let BVar3: bool;
+    let b_var3: bool;
     let paVar4: &mut Struct493;
     let local_AX_482: Struct935;
     let mut u_var5: u16;
@@ -2076,19 +2014,19 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
         u_var6 = struct_b & 0xffff0000 | local_AX_32;
         read_file_1008_7bc8(ctx, file_a, u_var6);
         if (u_var6 != 0) {
-            BVar3 = read_file_1008_7dee(file_a, CONCAT22(base_ptr, &offset_ptr), 2)
-            if BVar3 != false {
+            b_var3 = read_file_1008_7dee(file_a, CONCAT22(base_ptr, &offset_ptr), 2)
+            if b_var3 != false {
                 // u_var11 = (struct_b  >> 0x10);
                 local_AX_32.field_0x12 = offset_ptr;
-                BVar3 = read_file_1008_7dee(file_a, CONCAT22(base_ptr, &offset_ptr), 2);
-                if (BVar3 != 0) {
+                b_var3 = read_file_1008_7dee(file_a, CONCAT22(base_ptr, &offset_ptr), 2);
+                if (b_var3 != 0) {
                     local_AX_32.field_0x14 = offset_ptr;
-                    BVar3 = read_file_1008_7dee(
+                    b_var3 = read_file_1008_7dee(
                         file_a,
                         (struct_b & 0xffff0000 | &local_AX_32.field_0x16),
                         4,
                     );
-                    if (BVar3 != 0) {
+                    if (b_var3 != 0) {
                         u_var6 = struct_b & 0xffff0000 | &local_AX_32.field_0x1e;
                         read_file_1008_76e4(ctx, file_a, u_var6);
                         if (u_var6 != 0) {
@@ -2097,17 +2035,15 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                             if (u_var6 != 0) {
                                 u_var6 = struct_b & 0xffff0000 | &local_AX_32.field_0x26;
                                 read_file_1008_77cc(ctx, file_a, u_var6);
-                                if ((u_var6 != 0)
-                                    && (
+                                if ((u_var6 != 0) && (
                                     u_var12 = ctx.dx_reg,
-                                    BVar3 = read_file_1008_7dee(
+                                    b_var3 = read_file_1008_7dee(
                                         file_a,
                                         (struct_b & 0xffff0000 | ZEXT24(&local_AX_32.field_0x2a)),
                                         4,
                                     ),
-                                    BVar3 != 0,
-                                ))
-                                {
+                                    b_var3 != 0,
+                                )) {
                                     if (local_AX_32.field_0x2a != 0) {
                                         u_var1 = local_AX_32.field_0x2a;
                                         paVar4 = pass1_1028_e1ec(
@@ -2121,33 +2057,29 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                     if (PTR_LOOP_1050_0312 < 2) {
                                         return;
                                     }
-                                    BVar3 = read_file_1008_7dee(
+                                    b_var3 = read_file_1008_7dee(
                                         file_a,
                                         (struct_b & 0xffff0000 | &local_AX_32.field_0x32),
                                         2,
                                     );
-                                    if ((BVar3 != 0)
-                                        && (
-                                        BVar3 = read_file_1008_7dee(
+                                    if ((b_var3 != 0) && (
+                                        b_var3 = read_file_1008_7dee(
                                             file_a,
                                             (struct_b & 0xffff0000 | &local_AX_32.field_0x34),
                                             2,
                                         ),
-                                        BVar3 != 0,
-                                    ))
-                                    {
+                                        b_var3 != 0,
+                                    )) {
                                         u_var6 = struct_b & 0xffff0000 | &local_AX_32.field_0x36;
                                         pass1_1008_766e(file_a, u_var6);
-                                        if ((u_var6 != 0)
-                                            && (
-                                            BVar3 = read_file_1008_7dee(
+                                        if ((u_var6 != 0) && (
+                                            b_var3 = read_file_1008_7dee(
                                                 file_a,
                                                 CONCAT22(base_ptr, &local_20),
                                                 2,
                                             ),
-                                            BVar3 != 0,
-                                        ))
-                                        {
+                                            b_var3 != 0,
+                                        )) {
                                             local_e = 0;
                                             while (local_e < local_20) {
                                                 local_3e = _PTR_LOOP_1050_68a2;
@@ -2170,49 +2102,42 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                                     (u_var8 + 2) = 0x1018;
                                                     local_2c = _local_32;
                                                 }
-                                                BVar3 = read_file_1008_7dee(
+                                                b_var3 = read_file_1008_7dee(
                                                     file_a,
                                                     CONCAT22(base_ptr, &local_28),
                                                     2,
                                                 );
-                                                if ((((BVar3 == 0)
-                                                    || (
-                                                    BVar3 = read_file_1008_7dee(
+                                                if ((((b_var3 == 0) || (
+                                                    b_var3 = read_file_1008_7dee(
                                                         file_a,
                                                         CONCAT22(base_ptr, &local_24),
                                                         2,
                                                     ),
-                                                    BVar3 == 0,
-                                                ))
-                                                    || (
-                                                    BVar3 = read_file_1008_7dee(
+                                                    b_var3 == 0,
+                                                )) || (
+                                                    b_var3 = read_file_1008_7dee(
                                                         file_a,
                                                         CONCAT22(base_ptr, &local_2e),
                                                         2,
                                                     ),
-                                                    BVar3 == 0,
-                                                ))
-                                                    || ((
+                                                    b_var3 == 0,
+                                                )) || ((
                                                     local_AX_482 = local_2c,
                                                     local_AX_482 = &local_AX_482.field_0xa,
-                                                    BVar3 = read_file_1008_7dee(
+                                                    b_var3 = read_file_1008_7dee(
                                                         file_a,
-                                                        (local_2c & 0xffff0000
-                                                            | ZEXT24(local_AX_482)),
+                                                        (local_2c & 0xffff0000 | ZEXT24(local_AX_482)),
                                                         2,
                                                     ),
-                                                    BVar3 == 0
-                                                        || (
-                                                        BVar3 = read_file_1008_7dee(
+                                                    b_var3 == 0 || (
+                                                        b_var3 = read_file_1008_7dee(
                                                             file_a,
-                                                            (local_2c & 0xffff0000
-                                                                | (local_2c + 0xc)),
+                                                            (local_2c & 0xffff0000 | (local_2c + 0xc)),
                                                             2,
                                                         ),
-                                                        BVar3 == 0,
+                                                        b_var3 == 0,
                                                     ),
-                                                )))
-                                                {
+                                                ))) {
                                                     // goto LAB_1030_77be;
                                                 }
                                                 // u_var12 = (local_2c  >> 0x10);
@@ -2239,12 +2164,12 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                                 (**fn_ptr_a)();
                                                 local_e = local_e + 1;
                                             }
-                                            BVar3 = read_file_1008_7dee(
+                                            b_var3 = read_file_1008_7dee(
                                                 file_a,
                                                 CONCAT22(base_ptr, &local_56),
                                                 2,
                                             );
-                                            if (BVar3 != 0) {
+                                            if (b_var3 != 0) {
                                                 local_52 = 0;
                                                 while (true) {
                                                     if (local_56 <= local_52) {
@@ -2270,47 +2195,40 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                                         (u_var8 + 2) = 0x1018;
                                                         local_4a = _local_32;
                                                     }
-                                                    BVar3 = read_file_1008_7dee(
+                                                    b_var3 = read_file_1008_7dee(
                                                         file_a,
                                                         CONCAT22(base_ptr, &local_46),
                                                         2,
                                                     );
-                                                    if (((BVar3 == 0)
-                                                        || (
-                                                        BVar3 = read_file_1008_7dee(
+                                                    if (((b_var3 == 0) || (
+                                                        b_var3 = read_file_1008_7dee(
                                                             file_a,
                                                             CONCAT22(base_ptr, &local_42),
                                                             2,
                                                         ),
-                                                        BVar3 == 0,
-                                                    ))
-                                                        || ((
-                                                        BVar3 = read_file_1008_7dee(
+                                                        b_var3 == 0,
+                                                    )) || ((
+                                                        b_var3 = read_file_1008_7dee(
                                                             file_a,
                                                             CONCAT22(base_ptr, &local_3e),
                                                             2,
                                                         ),
-                                                        BVar3 == 0
-                                                            || ((
-                                                            BVar3 = read_file_1008_7dee(
+                                                        b_var3 == 0 || ((
+                                                            b_var3 = read_file_1008_7dee(
                                                                 file_a,
-                                                                (local_4a & 0xffff0000
-                                                                    | (local_4a + 10)),
+                                                                (local_4a & 0xffff0000 | (local_4a + 10)),
                                                                 2,
                                                             ),
-                                                            BVar3 == 0
-                                                                || (
-                                                                BVar3 = read_file_1008_7dee(
+                                                            b_var3 == 0 || (
+                                                                b_var3 = read_file_1008_7dee(
                                                                     file_a,
-                                                                    (local_4a & 0xffff0000
-                                                                        | (local_4a + 0xc)),
+                                                                    (local_4a & 0xffff0000 | (local_4a + 0xc)),
                                                                     2,
                                                                 ),
-                                                                BVar3 == 0,
+                                                                b_var3 == 0,
                                                             ),
                                                         )),
-                                                    )))
-                                                    {
+                                                    ))) {
                                                         break;
                                                     }
                                                     // u_var12 = (local_4a  >> 0x10);
@@ -2346,31 +2264,26 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                 }
             }
         }
-            && (
-                ,
-                BVar3 != false,
-            )
-        {
-
-        }
+        &&(,
+           b_var3 != false,
+        )
+        {}
         // LAB_1030_77be:
         ctx.g_u16_1050_0310 = 0x6d2;
     }
     return;
 }
 
-pub unsafe fn read_from_file_1030_5e70(ctx: &mut AppContext, param_1: u32, param_2: &HFILE16) {
+pub unsafe fn read_from_file_1030_5e70(ctx: &mut AppContext, param_1: &mut Struct933, param_2: &HFILE16) {
     let mut u_var1: u32;
     let mut u_var2: u32;
     let pi_var3: &mut i32;
-
-    let pu_var4: Vec<u8>;
-    let mut i_var5: i32;
+    let pu_var4: &mut String;
+    let mut i_var5: u32;
     let b_var6: bool;
     let mut u_var7: i32;
     let in_dx: &mut u16;
     let puVar8: &mut u16;
-
     let struct_a: &mut Struct199;
     let mut i_var9: i32;
     let mut u_var10: u16;
@@ -2384,67 +2297,64 @@ pub unsafe fn read_from_file_1030_5e70(ctx: &mut AppContext, param_1: u32, param
     let mut local_408: u16;
     let mut local_406: u16;
     let mut local_404: u16;
-    let mut local_402: [u8; 1024];
-
-    // u_var12 = (param_1  >> 0x10);
-    misc::pass1_1030_19b4(param_1, param_2);
-    if (ctx.ax_reg != 0x0) {
-        if (ctx.g_struct_ptr_1 == 0) {
-            g_struct_ptr_1 = ctx.ax_reg;
-            struct_fn_1000_160a();
-            ctx.g_u16_ptr_1050_5f2e = in_dx;
-        } else {
-        }
+    let mut local_402: String = String::new();
+    pass1_1030_19b4(ctx, param_1, param_2);
+    if ctx.ax_reg != 0x0 {
+        if ctx.g_struct_ptr_1 == 0 {
+            ctx.g_struct_ptr_1 = param_3;
+            struct_fn_1000_160a(ctx);
+            ctx.g_u16_ptr_1050_5f2e = param_4;
+        } else {}
         alloc_mem_1000_1708();
-        _local_40a = CONCAT22(ctx.g_u16_ptr_1050_5f2e, g_struct_ptr_1);
+        _local_40a = CONCAT22(ctx.g_u16_ptr_1050_5f2e, ctx.g_struct_ptr_1);
         puVar8 = (ctx.g_u16_ptr_1050_5f2e | g_struct_ptr_1);
-        i_var9 = param_1;
-        if (puVar8 == 0x0) {
-            (i_var9 + 0x10) = 0;
+        // i_var9 = param_1;
+        if puVar8 == 0x0 {
+            (param_1 + 0x10) = 0;
         } else {
-            zero_list_1008_3e38(CONCAT22(ctx.g_u16_ptr_1050_5f2e, &g_struct_ptr_1.field_0x4));
-            (i_var9 + 0x10) = _local_40a;
+            zero_list_1008_3e38(CONCAT22(ctx.g_u16_ptr_1050_5f2e, &ctx.g_struct_ptr_1.field_0x4));
+            (param_1 + 0x10) = _local_40a;
             puVar8 = ctx.g_u16_ptr_1050_5f2e;
         }
         pu_var4 = local_402;
-        read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, pu_var4));
-        if (pu_var4 != 0x0) {
+        read_file_into_str_1008_7c6e(param_2, pu_var4);
+        if pu_var4 != 0x0 {
             pu_var4 = local_402;
             pass1_fn_1008_60e8(pu_var4);
-            pi_var3 = (i_var9 + 0x10);
-            let pi_var3_val = unsafe { *pi_var3 };
-            unsafe { *pi_var3 = pu_var4 };
+            pi_var3 = (param_1 + 0x10);
+            let pi_var3_val = *pi_var3;
+            *pi_var3 = pu_var4;
             (pi_var3 + 2) = puVar8;
-            u_var1 = (i_var9 + 0x10);
+            u_var1 = (param_1 + 0x10);
             i_var5 = u_var1 + 4;
-            read_file_1008_7bc8(ctx, param_2, (param_2 >> 0x10), i_var5, (u_var1 >> 0x10));
-            if (i_var5 != 0) {
-                u_var2 = (i_var9 + 0x10);
+            read_file_1008_7bc8(ctx, param_2, i_var5);
+            if i_var5 != 0 {
+                u_var2 = (param_1 + 0x10);
                 local_420._0_2_ = u_var2 + 10;
-                struct_a = ctx.dx_reg;
+                struct_a = param_4;
                 b_var6 = read_file_1008_7dee(param_2, (u_var2 & 0xffff0000 | local_420), 2);
-                if (b_var6 != 0) {
-                    u_var1 = (i_var9 + 0x10);
+                if b_var6 != 0 {
+                    u_var1 = (param_1 + 0x10);
                     // u_var10 = (u_var1  >> 0x10);
                     i_var5 = u_var1;
-                    if ((i_var5 + 10) == 0) {
+                    if (i_var5 + 10) == 0 {
                         // LAB_1030_5fb7:
                         pp_var11 = process_struct_1010_20ba(
-                            ctx.g_struct_var_1050_0ed0,
+                            &mut ctx.g_struct_var_1050_0ed0,
                             CONCAT22(local_420, 0x2f),
                         );
-                        pass1_1018_04ca(pp_var11, (i_var9 + 4));
+                        set_struct_field_1018_04ca(pp_var11, (param_1 + 4));
                         return;
                     }
                     local_420._0_2_ = (i_var5 + 10) * 2;
                     u_var7 = local_420;
                     process_struct_1000_179c(local_420, struct_a);
-                    u_var1 = (i_var9 + 0x10);
+                    u_var1 = (param_1 + 0x10);
                     // u_var10 = (u_var1  >> 0x10);
                     i_var5 = u_var1;
                     (i_var5 + 0xc) = u_var7;
                     (i_var5 + 0xe) = struct_a;
-                    u_var1 = (i_var9 + 0x10);
+                    u_var1 = (param_1 + 0x10);
                     b_var6 = read_file_1008_7dee(param_2, *(u_var1 + 0xc), local_420);
                     if (b_var6 != 0) {}
                     // goto LAB_1030_5fb7;
@@ -2474,16 +2384,15 @@ pub unsafe fn read_file_1030_5c52(buf_a: Vec<u8>, hfile_param_2: &HFILE16) -> bo
     return BVar2;
 }
 
-pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: &HFILE16) {
+pub unsafe fn read_from_file_1030_581e(ctx: &mut AppContext, param_1: &mut Struct933, param_2: &HFILE16, param_3: &mut u32, param_4: &mut u32) {
     let pu_var1: &mut u16;
     let mut u_var2: u32;
 
-    let BVar3: bool;
+    let b_var3: bool;
     let pu_var4: Vec<u8>;
     let mut in_i16_5: u16;
     let mut u_var5: u32;
     let in_dx: &mut u16;
-
     let struct_a: &mut Struct199;
     let mut i32_var6: i32;
     let mut i_var7: i32;
@@ -2505,57 +2414,55 @@ pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: &HFILE16) {
 
     // u_var10 = (param_2  >> 0x10);
     // u_var9 = (param_1  >> 0x10);
-    misc::pass1_1030_19b4(param_1, param_2);
-    if (ctx.ax_reg != 0x0) {
-        if (ctx.g_struct_ptr_1 == 0) {
+    pass1_1030_19b4(ctx, param_1, param_2);
+    if param_3 != 0x0 {
+        if ctx.g_struct_ptr_1 == 0 {
             g_struct_ptr_1 = ctx.ax_reg;
             struct_fn_1000_160a();
-            ctx.g_u16_ptr_1050_5f2e = in_dx;
-        } else {
-        }
+            ctx.g_u16_ptr_1050_5f2e = param_4;
+        } else {}
         alloc_mem_1000_1708(0x20, 0, 1, g_struct_ptr_1, ctx.g_u16_ptr_1050_5f2e);
-        if ((ctx.g_u16_ptr_1050_5f2e | g_struct_ptr_1) == 0) {
+        if (ctx.g_u16_ptr_1050_5f2e | ctx.g_struct_ptr_1) == 0 {
             g_struct_ptr_1 = 0x0;
             struct_a = 0x0;
         } else {
-            pass1_1030_84ae(g_struct_ptr_1, ctx.g_u16_ptr_1050_5f2e);
-            struct_a = ctx.dx_reg;
+            pass1_1030_84ae(ctx.g_struct_ptr_1, ctx.g_u16_ptr_1050_5f2e);
+            struct_a = param_4;
         }
-        i32_var6 = param_1;
-        (i32_var6 + 0x10) = g_struct_ptr_1;
-        (i32_var6 + 0x12) = struct_a;
-        BVar3 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
-        if (BVar3 != 0) {
+        // i32_var6 = param_1;
+        (param_1 + 0x10) = g_struct_ptr_1;
+        (param_1 + 0x12) = struct_a;
+        b_var3 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2);
+        if (b_var3 != 0) {
             u_var5 = (ctx._PTR_LOOP_1050_65e2 + 0x52);
             local_8 = u_var5;
             pass1_1030_4782(u_var5, (u_var5 >> 0x10), 0, 1, local_4);
-            (i32_var6 + 0x10) = u_var5;
-            (i32_var6 + 0x12) = struct_a;
-            BVar3 = read_file_1008_7dee(param_2, CONCAT22(struct_a, (i32_var6 + 0x10) + 2), 2);
-            if (BVar3 != 0) {
+            (param_1 + 0x10) = u_var5;
+            (param_1 + 0x12) = struct_a;
+            b_var3 = read_file_1008_7dee(param_2, CONCAT22(struct_a, (param_1 + 0x10) + 2), 2);
+            if (b_var3 != 0) {
                 pu_var4 = local_408;
                 read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, pu_var4));
                 if (pu_var4 != 0x0) {
-                    u_var2 = (i32_var6 + 0x10);
+                    u_var2 = (param_1 + 0x10);
                     error_check_1000_17ce(ctx, (u_var2 + 4));
                     pu_var4 = local_408;
                     pass1_fn_1008_60e8(pu_var4);
-                    u_var2 = (i32_var6 + 0x10);
+                    u_var2 = (param_1 + 0x10);
                     // u_var8 = (u_var2  >> 0x10);
                     i_var7 = u_var2;
                     (i_var7 + 4) = pu_var4;
                     (i_var7 + 6) = struct_a;
-                    u_var5 = (i32_var6 + 0x10);
-                    BVar3 =
-                        read_file_1008_7dee(param_2, (u_var5 & 0xffff0000 | (u_var5 + 0x1a)), 2);
-                    if (BVar3 != 0) {
-                        u_var2 = (i32_var6 + 0x10);
+                    u_var5 = (param_1 + 0x10);
+                    b_var3 = read_file_1008_7dee(param_2, (u_var5 & 0xffff0000 | (u_var5 + 0x1a)), 2);
+                    if (b_var3 != 0) {
+                        u_var2 = (param_1 + 0x10);
                         i_var7 = (u_var2 + 0x1a);
                         in_i16_5 = i_var7 * 6;
                         process_struct_1000_179c(in_i16_5, struct_a);
                         _local_410 = CONCAT22(struct_a, in_i16_5);
                         if ((struct_a | in_i16_5) == 0) {
-                            u_var2 = (i32_var6 + 0x10);
+                            u_var2 = (param_1 + 0x10);
                             (u_var2 + 0x16) = 0;
                         } else {
                             call_fn_ptr_1000_5586(
@@ -2566,18 +2473,18 @@ pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: &HFILE16) {
                                 in_i16_5,
                                 struct_a,
                             );
-                            u_var2 = (i32_var6 + 0x10);
+                            u_var2 = (param_1 + 0x10);
                             (u_var2 + 0x16) = _local_410;
                         }
                         local_40c = 0;
                         let pu_var1_val = unsafe { *pu_var1 };
                         while (
-                            u_var2 = (i32_var6 + 0x10),
+                            u_var2 = (param_1 + 0x10),
                             pu_var1 = (u_var2 + 0x1a),
                             pu_var1_val != local_40c && local_40c <= pu_var1_val,
                         ) {
                             i_var7 = local_40c * 6;
-                            u_var2 = (i32_var6 + 0x10);
+                            u_var2 = (param_1 + 0x10);
                             u_var2 = (u_var2 + 0x16);
                             read_file_1008_7bc8(
                                 ctx,
@@ -2590,18 +2497,16 @@ pub unsafe fn read_from_file_1030_581e(param_1: u32, param_2: &HFILE16) {
                             // goto LAB_1030_58a7;
                             local_40c = local_40c + 1;
                         }
-                        i_var7 = i32_var6 + 0x14;
+                        i_var7 = param_1 + 0x14;
                         read_file_1008_7bc8(ctx, param_2, u_var10, i_var7, u_var9);
-                        if ((i_var7 != 0)
-                            && (
-                                BVar3 = read_file_1008_7dee(
-                                    param_2,
-                                    (param_1 & 0xffff0000 | (i32_var6 + 0x1c)),
-                                    2,
-                                ),
-                                BVar3 != 0,
-                            ))
-                        {
+                        if ((i_var7 != 0) && (
+                            b_var3 = read_file_1008_7dee(
+                                param_2,
+                                (param_1 & 0xffff0000 | (param_1 + 0x1c)),
+                                2,
+                            ),
+                            b_var3 != 0,
+                        )) {
                             return;
                         }
                     }
@@ -2683,48 +2588,42 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: &HFILE16) {
     local_AX_14 = param_1;
     local_AX_14 = &local_AX_14.field_0x4;
     b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | ZEXT24(local_AX_14)), 0x16c);
-    if (((((b_var1 != 0)
-        && (
+    if (((((b_var1 != 0) && (
+        b_var1 = read_file_1008_7dee(
+            param_2,
+            (param_1 & 0xffff0000 | &local_AX_14.field_0x174),
+            0xc,
+        ),
+        b_var1 != 0,
+    )) && (
+        b_var1 = read_file_1008_7dee(
+            param_2,
+            (param_1 & 0xffff0000 | &local_AX_14.field_0x180),
+            0xc,
+        ),
+        b_var1 != 0,
+    )) && ((
+        b_var1 = read_file_1008_7dee(
+            param_2,
+            (param_1 & 0xffff0000 | &local_AX_14.field_0x18c),
+            0x18,
+        ),
+        b_var1 != 0 && (
             b_var1 = read_file_1008_7dee(
                 param_2,
-                (param_1 & 0xffff0000 | &local_AX_14.field_0x174),
-                0xc,
+                (param_1 & 0xffff0000 | &local_AX_14.field_0x1a8),
+                2,
             ),
             b_var1 != 0,
-        ))
-        && (
-            b_var1 = read_file_1008_7dee(
-                param_2,
-                (param_1 & 0xffff0000 | &local_AX_14.field_0x180),
-                0xc,
-            ),
-            b_var1 != 0,
-        ))
-        && ((
-            b_var1 = read_file_1008_7dee(
-                param_2,
-                (param_1 & 0xffff0000 | &local_AX_14.field_0x18c),
-                0x18,
-            ),
-            b_var1 != 0
-                && (
-                    b_var1 = read_file_1008_7dee(
-                        param_2,
-                        (param_1 & 0xffff0000 | &local_AX_14.field_0x1a8),
-                        2,
-                    ),
-                    b_var1 != 0,
-                ),
-        )))
-        && (
-            b_var1 = read_file_1008_7dee(
-                param_2,
-                (param_1 & 0xffff0000 | &local_AX_14.field_0x1aa),
-                4,
-            ),
-            b_var1 != 0,
-        ))
-    {
+        ),
+    ))) && (
+        b_var1 = read_file_1008_7dee(
+            param_2,
+            (param_1 & 0xffff0000 | &local_AX_14.field_0x1aa),
+            4,
+        ),
+        b_var1 != 0,
+    )) {
         if (PTR_LOOP_1050_0312 < 2) {
             return;
         }
@@ -2733,16 +2632,14 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: &HFILE16) {
             (param_1 & 0xffff0000 | &local_AX_14.field_0x170),
             4,
         );
-        if ((b_var1 != 0)
-            && (
-                b_var1 = read_file_1008_7dee(
-                    param_2,
-                    (param_1 & 0xffff0000 | ZEXT24(local_AX_14 + 1)),
-                    2,
-                ),
-                b_var1 != 0,
-            ))
-        {
+        if (b_var1 != 0) && (
+            b_var1 = read_file_1008_7dee(
+                param_2,
+                (param_1 & 0xffff0000 | ZEXT24(local_AX_14 + 1)),
+                2,
+            ),
+            b_var1 != 0,
+        ) {
             return;
         }
     }
@@ -2750,17 +2647,15 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: &HFILE16) {
     return;
 }
 
-pub unsafe fn read_file_1030_2c8a(param_1: u32, param_2: &HFILE16) {
+pub unsafe fn read_file_1030_2c8a(ctx: &mut AppContext, param_1: &mut Struct933, param_2: &HFILE16, param_3: &mut StructuredData, param_4: &mut Struct7) {
     let pu_var1: &mut u16;
-
-    let BVar2: bool;
+    let b_var2: bool;
     let local_AX_184: Vec<u8>;
     let pu_var3: Vec<u8>;
     let mut u_var4: u16;
     let in_dx: &mut u16;
     let pu_var5: &mut u16;
-
-    let struct_a: &mut Struct199;
+    let struct_a: &mut Struct7;
     let local_bx_91: &mut Struct866;
     let mut i32_var6: i32;
     let mut local_SI__1: u16;
@@ -2781,126 +2676,112 @@ pub unsafe fn read_file_1030_2c8a(param_1: u32, param_2: &HFILE16) {
     let mut local_402: [u8; 1024];
 
     // u_var9 = (param_1  >> 0x10);
-    misc::pass1_1030_19b4(param_1, param_2);
-    if (ctx.ax_reg == 0x0) {
+    pass1_1030_19b4(ctx, param_1, param_2);
+    if *param_3 == 0x0 {
         return;
     }
-    if (ctx.g_struct_ptr_1 == 0) {
-        g_struct_ptr_1 = ctx.ax_reg;
-        struct_fn_1000_160a();
-        ctx.g_u16_ptr_1050_5f2e = in_dx;
-    } else {
-    }
+    if ctx.g_struct_ptr_1 == 0 {
+        ctx.g_struct_ptr_1 = *param_3.clone();
+        struct_fn_1000_160a(ctx);
+        ctx.g_u16_ptr_1050_5f2e = *param_4;
+    } else {}
     alloc_mem_1000_1708();
-    _local_40e = CONCAT22(ctx.g_u16_ptr_1050_5f2e, g_struct_ptr_1);
-    pu_var5 = (ctx.g_u16_ptr_1050_5f2e | g_struct_ptr_1);
-    local_bx_91 = param_1;
-    if (pu_var5 == 0x0) {
-        local_bx_91.field_0x10 = 0x0;
+    _local_40e = CONCAT22(ctx.g_u16_ptr_1050_5f2e, ctx.g_struct_ptr_1);
+    pu_var5 = (ctx.g_u16_ptr_1050_5f2e | ctx.g_struct_ptr_1);
+    // local_bx_91 = param_1;
+    if pu_var5 == 0x0 {
+        param_1.field_0x10 = 0x0;
     } else {
-        zero_list_1008_3e38(CONCAT22(ctx.g_u16_ptr_1050_5f2e, &g_struct_ptr_1.field_0x6));
-        local_bx_91.field_0x10 = _local_40e;
+        zero_list_1008_3e38(CONCAT22(ctx.g_u16_ptr_1050_5f2e, ctx.g_struct_ptr_1.field_0x6));
+        param_1.field_0x10 = _local_40e;
         pu_var5 = ctx.g_u16_ptr_1050_5f2e;
     }
-    BVar2 = read_file_1008_7dee(param_2, local_bx_91.field_0x10, 2);
-    if (BVar2 != 0) {
+    b_var2 = read_file_1008_7dee(param_2, param_1.field_0x10, 2);
+    if b_var2 != 0 {
         local_AX_184 = local_402;
         read_file_into_str_1008_7c6e(param_2, CONCAT22(unaff_ss, local_AX_184));
-        if (local_AX_184 != 0x0) {
+        if local_AX_184 != 0x0 {
             pu_var3 = local_402;
             pass1_fn_1008_60e8(pu_var3);
-            pu_var1 = local_bx_91.field_0x10;
+            pu_var1 = param_1.field_0x10;
             // local_es_210 = (pu_var1  >> 0x10);
             i32_var6 = pu_var1;
             *(i32_var6 + 2) = pu_var3;
             (i32_var6 + 4) = pu_var5;
-            pu_var1 = local_bx_91.field_0x10;
+            pu_var1 = param_1.field_0x10;
             i32_var6 = pu_var1 + 6;
             read_file_1008_7bc8(ctx, param_2, (param_2 >> 0x10), i32_var6, (pu_var1 >> 0x10));
-            if ((((i32_var6 != 0)
-                && (
-                    pu_var1 = local_bx_91.field_0x10,
-                    struct_a = ctx.dx_reg,
-                    BVar2 =
-                        read_file_1008_7dee(param_2, (pu_var1 & 0xffff0000 | (pu_var1 + 0xc)), 2),
-                    BVar2 != 0,
-                ))
-                && (
-                    pu_var1 = local_bx_91.field_0x10,
-                    BVar2 =
-                        read_file_1008_7dee(param_2, (pu_var1 & 0xffff0000 | (pu_var1 + 0xe)), 4),
-                    BVar2 != 0,
-                ))
-                && ((
-                    pu_var1 = local_bx_91.field_0x10,
-                    BVar2 = read_file_1008_7dee(
+            if (((i32_var6 != 0) && (
+                pu_var1 = param_1.field_0x10,
+                struct_a = param_4,
+                b_var2 = read_file_1008_7dee(param_2, (pu_var1 & 0xffff0000 | (pu_var1 + 0xc)), 2),
+                b_var2 != false,
+            )) && (
+                pu_var1 = param_1.field_0x10,
+                b_var2 = read_file_1008_7dee(param_2, (pu_var1 & 0xffff0000 | (pu_var1 + 0xe)), 4),
+                b_var2 != false,
+            )) && ((
+                pu_var1 = param_1.field_0x10,
+                b_var2 = read_file_1008_7dee(
+                    param_2,
+                    pu_var1 + 0x12,
+                    0x10,
+                ),
+                b_var2 != false && (
+                    pu_var1 = param_1.field_0x10,
+                    b_var2 = read_file_1008_7dee(
                         param_2,
-                        (pu_var1 & 0xffff0000 | (pu_var1 + 0x12)),
-                        0x10,
+                        pu_var1 + 0x22,
+                        2,
                     ),
-                    BVar2 != 0
-                        && (
-                            pu_var1 = local_bx_91.field_0x10,
-                            BVar2 = read_file_1008_7dee(
-                                param_2,
-                                (pu_var1 & 0xffff0000 | (pu_var1 + 0x22)),
-                                2,
-                            ),
-                            BVar2 != 0,
-                        ),
-                )))
-            {
-                pu_var1 = local_bx_91.field_0x10;
-                if ((pu_var1 + 0x22) != 0) {
-                    pu_var1 = local_bx_91.field_0x10;
+                    b_var2 != false,
+                ),
+            )) {
+                pu_var1 = param_1.field_0x10;
+                if (pu_var1 + 0x22) != 0 {
+                    pu_var1 = param_1.field_0x10;
                     // u_var7 = (pu_var1  >> 0x10);
                     i32_var6 = pu_var1;
                     u_var4 = (i32_var6 + 0x22) * 2;
-                    process_struct_1000_179c(u_var4, struct_a);
+                    process_struct_1000_179c(ctx, u_var4, struct_a);
                     (i32_var6 + 0x24) = u_var4;
                     (i32_var6 + 0x26) = struct_a;
-                    pu_var1 = local_bx_91.field_0x10;
+                    pu_var1 = param_1.field_0x10;
                     // u_var7 = (pu_var1  >> 0x10);
                     i32_var6 = pu_var1;
-                    BVar2 =
-                        read_file_1008_7dee(param_2, *(i32_var6 + 0x24), ((i32_var6 + 0x22) * 2));
-                    if (BVar2 == 0) {
+                    b_var2 = read_file_1008_7dee(param_2, *(i32_var6 + 0x24), ((i32_var6 + 0x22) * 2));
+                    if (b_var2 == 0) {
                         ctx.g_u16_1050_0310 = 0x6d2;
                         return;
                     }
                 }
-                BVar2 = read_file_1008_7dee(
+                b_var2 = read_file_1008_7dee(
                     param_2,
-                    (param_1 & 0xffff0000 | &local_bx_91.field_0x14),
+                    (param_1 & 0xffff0000 | &param_1.field_0x14),
                     2,
                 );
-                if (((BVar2 != 0)
-                    && (
-                        BVar2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_404), 2),
-                        BVar2 != 0,
-                    ))
-                    && ((
-                        BVar2 = read_file_1008_7dee(
-                            param_2,
-                            (param_1 & 0xffff0000 | &local_bx_91.field_0x18),
-                            2,
-                        ),
-                        BVar2 != 0
-                            && (
-                                BVar2 =
-                                    read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_406), 2),
-                                BVar2 != 0,
-                            ),
-                    )))
-                {
-                    local_bx_91.field_0x16 = local_404;
-                    local_bx_91.field_0x1a = local_406;
+                if (((b_var2 != 0) && (
+                    b_var2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_404), 2),
+                    b_var2 != 0,
+                )) && ((
+                    b_var2 = read_file_1008_7dee(
+                        param_2,
+                        (param_1 & 0xffff0000 | &param_1.field_0x18),
+                        2,
+                    ),
+                    b_var2 != 0 && (
+                        b_var2 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_406), 2),
+                        b_var2 != 0,
+                    ),
+                ))) {
+                    param_1.field_0x16 = local_404;
+                    param_1.field_0x1a = local_406;
                     pp_var8 = process_struct_1010_20ba(
                         ctx.g_struct_var_1050_0ed0,
                         CONCAT22(local_SI__1, 0x2f),
                     );
-                    pass1_1018_04a4(pp_var8, local_bx_91.field_0x4);
-                    pass1_1010_82f8(ctx.g_struct_73_1050_14cc, *local_bx_91.field_0x10);
+                    pass1_1018_04a4(pp_var8, param_1.field_0x4);
+                    pass1_1010_82f8(ctx.g_struct_73_1050_14cc, *param_1.field_0x10);
                     return;
                 }
             }
@@ -2910,31 +2791,30 @@ pub unsafe fn read_file_1030_2c8a(param_1: u32, param_2: &HFILE16) {
     return;
 }
 
-pub unsafe fn read_file_1030_232e(param_1: u32, param_2: &HFILE16) {
-    let mut i_var1: i32;
-    let BVar2: bool;
+pub unsafe fn read_file_into_struct_1030_232e(ctx: &mut AppContext, param_1: &mut Struct933, in_file: &HFILE16) {
+    let b_var: bool;
 
-    misc::pass1_1030_19b4(param_1, param_2);
-    if (ctx.ax_reg != 0) {
-        i_var1 = param_1;
-        BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var1 + 0x10)), 0x106);
-        if (BVar2 != 0) {
-            BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var1 + 0x116)), 0x86);
-            if (BVar2 != 0) {
-                BVar2 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (i_var1 + 0x19c)), 10);
-                if (BVar2 != 0) {
-                    BVar2 = read_file_1008_7dee(
-                        param_2,
-                        (param_1 & 0xffff0000 | (i_var1 + 0x1a6)),
+    pass1_1030_19b4(ctx, param_1, in_file);
+    if ctx.ax_reg != 0 {
+        // i_var1 = param_1;
+        b_var = read_file_1008_7dee(in_file, param_1 + 0x10, 0x106);
+        if b_var != false {
+            b_var = read_file_1008_7dee(in_file, param_1 + 0x116, 0x86);
+            if b_var != false {
+                b_var = read_file_1008_7dee(in_file, param_1 + 0x19c, 10);
+                if b_var != false {
+                    b_var = read_file_1008_7dee(
+                        in_file,
+                        param_1 + 0x1a6,
                         0x106,
                     );
-                    if (BVar2 != 0) {
-                        BVar2 = read_file_1008_7dee(
-                            param_2,
-                            (param_1 & 0xffff0000 | (i_var1 + 0x2ac)),
+                    if b_var != false {
+                        b_var = read_file_1008_7dee(
+                            in_file,
+                            param_1 + 0x2ac,
                             0x106,
                         );
-                        if (BVar2 != 0) {
+                        if b_var != false {
                             return;
                         }
                     }
@@ -2949,7 +2829,7 @@ pub unsafe fn read_file_1030_232e(param_1: u32, param_2: &HFILE16) {
 pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
     let pp_var1: fn();
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var: bool;
     let mut i_var4: i32;
     let extraout_var: u32;
     let extraout_var_00: u32;
@@ -2966,10 +2846,10 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
     // u_var5 = (file_handle_1  >> 0x10);
     u_var2 = read_file_1008_7cfe(ctx, file_handle_1);
     if (CONCAT31(extraout_var, u_var2) != 0) {
-        BVar3 = read_file_1008_7dee(file_handle_1, param_1, 4);
-        if (BVar3 != 0) {
-            BVar3 = read_file_1008_7dee(file_handle_1, (param_1 & 0xffff0000 | (param_1 + 8)), 2);
-            if (BVar3 != 0) {
+        b_var = read_file_1008_7dee(file_handle_1, param_1, 4);
+        if (b_var != 0) {
+            b_var = read_file_1008_7dee(file_handle_1, (param_1 & 0xffff0000 | (param_1 + 8)), 2);
+            if (b_var != 0) {
                 u_var6 = file_handle_1;
                 pp_var1 = (*_PTR_LOOP_1050_5166 + 0x10);
                 (**pp_var1)(
@@ -2978,7 +2858,7 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
                     (_PTR_LOOP_1050_5166 >> 0x10),
                     file_handle_1,
                 );
-                if (BVar3 != 0) {
+                if (b_var != 0) {
                     u_var2 = read_file_1008_7cfe(ctx, file_handle_1);
                     i_var4 = CONCAT31(extraout_var_00, u_var2);
                     if (i_var4 != 0) {
@@ -3001,8 +2881,7 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
                                                     param_1, u_var6, u_var5, 0, 0x400,
                                                 );
                                                 if (i_var4 != 0) {
-                                                    u_var2 =
-                                                        read_file_1008_7cfe(ctx, file_handle_1);
+                                                    u_var2 = read_file_1008_7cfe(ctx, file_handle_1);
                                                     i_var4 = CONCAT31(extraout_var_04, u_var2);
                                                     if (i_var4 != 0) {
                                                         misc::pass1_1028_e628(
@@ -3013,8 +2892,7 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
                                                                 ctx,
                                                                 file_handle_1,
                                                             );
-                                                            i_var4 =
-                                                                CONCAT31(extraout_var_05, u_var2);
+                                                            i_var4 = CONCAT31(extraout_var_05, u_var2);
                                                             if (i_var4 != 0) {
                                                                 misc::pass1_1028_e628(
                                                                     param_1, u_var6, u_var5, 0,
@@ -3035,11 +2913,10 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
                                                                             u_var5, 0, 0x700,
                                                                         );
                                                                         if (i_var4 != 0) {
-                                                                            u_var2 =
-                                                                                read_file_1008_7cfe(
-                                                                                    ctx,
-                                                                                    file_handle_1,
-                                                                                );
+                                                                            u_var2 = read_file_1008_7cfe(
+                                                                                ctx,
+                                                                                file_handle_1,
+                                                                            );
                                                                             i_var4 = CONCAT31(
                                                                                 extraout_var_07,
                                                                                 u_var2,
@@ -3332,12 +3209,10 @@ pub fn read_from_file_1028_5fc8(param_1: u32, param_2: &HFILE16) {
     let b_var1: bool;
 
     read_from_file_1028_b81a(param_1, param_2);
-    if ((ctx.ax_reg != 0)
-        && (
-            b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 2),
-            b_var1 == 0,
-        ))
-    {
+    if ((ctx.ax_reg != 0) && (
+        b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x20)), 2),
+        b_var1 == 0,
+    )) {
         ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
@@ -3435,12 +3310,10 @@ pub fn read_file_fn_1028_14d8(param_1: u32, param_2: &HFILE16) {
     read_from_file_1028_b81a(param_1, param_2);
     if (ctx.ax_reg != 0) {
         b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x22)), 2);
-        if ((b_var1 != 0)
-            && (
-                b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2),
-                b_var1 != 0,
-            ))
-        {
+        if ((b_var1 != 0) && (
+            b_var1 = read_file_1008_7dee(param_2, CONCAT22(unaff_ss, &local_4), 2),
+            b_var1 != 0,
+        )) {
             (param_1 + 0x20) = local_4;
             if (PTR_LOOP_1050_0312 < 2) {
                 return;
@@ -3516,13 +3389,11 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: &HFILE16) {
                     if (BVar2 == 0) {
                         break;
                     }
-                    BVar2 =
-                        read_file_1008_7dee(param_2, (local_14 & 0xffff0000 | (local_14 + 10)), 2);
+                    BVar2 = read_file_1008_7dee(param_2, (local_14 & 0xffff0000 | (local_14 + 10)), 2);
                     if (BVar2 == 0) {
                         break;
                     }
-                    BVar2 =
-                        read_file_1008_7dee(param_2, (local_14 & 0xffff0000 | (local_14 + 0xc)), 2);
+                    BVar2 = read_file_1008_7dee(param_2, (local_14 & 0xffff0000 | (local_14 + 0xc)), 2);
                     if (BVar2 == 0) {
                         break;
                     }
@@ -3547,12 +3418,10 @@ pub fn file_read_fn_1020_e994(param_1: u32, param_2: &HFILE16) {
     let b_var1: bool;
 
     read_from_file_1030_dec4(param_1, param_2);
-    if ((ctx.ax_reg != 0)
-        && (
-            b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x24)), 2),
-            b_var1 == 0,
-        ))
-    {
+    if ((ctx.ax_reg != 0) && (
+        b_var1 = read_file_1008_7dee(param_2, (param_1 & 0xffff0000 | (param_1 + 0x24)), 2),
+        b_var1 == 0,
+    )) {
         ctx.g_u16_1050_0310 = 0x6d2;
         return;
     }
@@ -3615,8 +3484,7 @@ pub unsafe fn call_read_file_1020_a65e(param_1: u32, in_file_handle: &HFILE16) -
         if (BVar2 != 0) {
             BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_8), 2);
             if (BVar2 != 0) {
-                BVar2 =
-                    read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_6), 2);
+                BVar2 = read_file_1008_7dee(in_file_handle, CONCAT22(ctx.stack_seg_reg, local_6), 2);
                 if (BVar2 != 0) {
                     BVar2 = read_file_1008_7dee(
                         in_file_handle,
@@ -3661,7 +3529,7 @@ pub unsafe fn read_from_file_1008_6f7a(ctx: &mut AppContext,
     local_6 = ctx._g_bool_1050_5748;
     local_a = local_6;
     pass1_1020_a43e(local_e);
-  // local_AX_45 = read_file_1028_d7ba(local_a, (local_a  >> 0x10), param_1_00);
+    // local_AX_45 = read_file_1028_d7ba(local_a, (local_a  >> 0x10), param_1_00);
     if local_AX_45 != 0x0 {
         b_var1 = read_file_1030_5c52(&mut ctx._PTR_LOOP_1050_5736, hfile_param_3);
         if b_var1 != false {
@@ -3699,12 +3567,10 @@ pub unsafe fn read_from_file_1008_6e78(ctx: &mut AppContext, struct_param_1: &mu
         // set_array_val_1008_72a8(local_4, struct_param_1 );
         // CONCAT22(unaff_ss, local_4)
         i_var2 = pass1_1008_7056(struct_param_1, &mut local_4);
-        if (i_var2 != 0)
-            && (
+        if (i_var2 != 0) && (
             i_var2 = read_from_file_1008_6f7a(ctx, struct_param_1, &mut local_4),
             i_var2 != 0,
-            )
-        {
+        ) {
             b_var1 = close::close_file_1008_726c(ctx, struct_param_1);
             if b_var1 == 0 {
                 return false;

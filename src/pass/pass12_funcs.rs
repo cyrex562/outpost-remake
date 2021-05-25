@@ -372,7 +372,7 @@ pub unsafe fn pass1_1008_b9ce(param_1: u32, param_2: libc::c_long) {
 pub unsafe fn pass1_1008_ba38(param_1: u32, param_2: u32) {
     let mut u_var1: u32;
     let u_var2: u8;
-    let BVar3: bool;
+    let b_var3: bool;
     let pu_var4: Vec<u8>;
     let extraout_var: u32;
 
@@ -392,8 +392,8 @@ pub unsafe fn pass1_1008_ba38(param_1: u32, param_2: u32) {
       // u_var6 = (param_1  >> 0x10);
         i_var5 = param_1;
         local_c = (i_var5 + 0x22);
-        BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-        if (BVar3 != 0) {
+        b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
+        if (b_var3 != 0) {
             if ((i_var5 + 10) == 0) {
                 local_c = 0;
             } else {
@@ -401,8 +401,8 @@ pub unsafe fn pass1_1008_ba38(param_1: u32, param_2: u32) {
                 local_c = (u_var1 + 8);
             }
             local_1e = local_c;
-            BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1e), 2);
-            if (BVar3 != 0) {
+            b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_1e), 2);
+            if (b_var3 != 0) {
                 pass14_funcs::pass1_1008_5784(CONCAT22(unaff_ss, local_14), (i_var5 + 10));
                 while {
                     pu_var4 = local_14;
@@ -417,18 +417,18 @@ pub unsafe fn pass1_1008_ba38(param_1: u32, param_2: u32) {
                         break;
                     }
                     local_6 = (_local_a + 8);
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
-                    if (BVar3 == 0) {
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
+                    if (b_var3 == 0) {
                         break;
                     }
                     local_2a = (_local_a + 10);
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_2a), 4);
-                    if (BVar3 == 0) {
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_2a), 4);
+                    if (b_var3 == 0) {
                         break;
                     }
                     local_6 = (_local_a + 0xe);
-                    BVar3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
-                    BVar3 != 0
+                    b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
+                    b_var3 != 0
                 } {}
             }
         }

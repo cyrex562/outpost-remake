@@ -62,6 +62,8 @@ pub struct AppContext {
     pub s_New_failed_in_Op__Op__Simulator_1050_0110: String,
     pub g_struct_112_001: Struct112,
     pub g_struct_var_1050_0ed0: Struct372,
+    pub g_struct_ptr_1: StructuredData,
+    pub g_u16_ptr_1050_5f2e: StructuredData,
     pub ax_reg: u16,
     pub bx_reg: u16,
     pub cx_reg: u16,
