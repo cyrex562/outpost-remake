@@ -1072,10 +1072,10 @@ pub fn fn_1008_6048(ctx: &mut AppContext, in_string_1: String, param_2: u16, par
 }
 
 pub fn string_fn_1008_64c8(
-    param_1: String,
-    param_2: String,
-    param_3: String,
-    param_4: String,
+    param_1: &mut String,
+    param_2: &mut String,
+    param_3: &mut String,
+    param_4: &mut String,
 ) {
     let pc_var1: String;
     let mut in_ax: i32;

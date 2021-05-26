@@ -1193,7 +1193,7 @@ pub unsafe fn pass1_fn_1008_5ab8(param_1: u32) {
     return;
 }
 
-pub unsafe fn pass1_1008_5b12(param_1: &mut Address<Struct306>) -> u32 {
+pub unsafe fn pass1_1008_5b12(param_1: &mut Struct306) -> u32 {
     // let mut i_var1: u32;
     let mut i_var2: u32;
     // let mut local_es_23: u16;

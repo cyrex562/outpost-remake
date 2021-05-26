@@ -426,11 +426,12 @@ pub struct Struct742 {
 pub struct Struct1130 {}
 
 pub struct Struct455 {
-    pub field_0x0: u8,
-    pub field_0x1: u8,
+    pub field_0x0: u16,
     pub field_0x2: u16,
-    pub field_0x4: i32,
+    pub field_0x4: u32,
     pub field_0x6: i32,
+    pub field_0xa: String,
+    pub field_0xe: u32
 }
 
 pub struct Struct552 {

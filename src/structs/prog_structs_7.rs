@@ -1862,7 +1862,7 @@ pub struct Struct376 {
     pub field_0x135: u8,
     pub field_0x136: u8,
     pub field_0x137: u8,
-    pub field_0x138: u8,
+    pub field_0x138: Vec<u8>,
     pub field_0x139: u8,
     pub field_0x13a: u8,
     pub field_0x13b: u8,

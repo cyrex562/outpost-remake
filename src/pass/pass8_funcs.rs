@@ -473,7 +473,8 @@ pub unsafe fn pass1_1008_eb74(param_1: u32, param_2: u16) {
     (param_1 + 10) = param_2;
     if (param_2 != 0) {
         process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 3));
-        pass20_funcs::pass1_1010_c312();
+        //pass20_funcs::pass1_1010_c312();
+        // ctx._PTR_LOOP_1050_65e2;
     }
     return;
 }
@@ -2694,7 +2695,7 @@ pub unsafe fn pass1_1010_2c9c(param_1: &mut  Struct376, param_2: u8) -> &mut  St
     return param_1;
 }
 
-pub unsafe fn pass1_1010_2db2(param_1: &mut  Struct376) {
+pub unsafe fn pass1_1010_2db2(param_1: &mut  Struct7) {
     let pu_var1: &mut  u32;
     let mut u_var2: i32;
     let mut i_var3: i32;
@@ -2927,7 +2928,7 @@ pub unsafe fn pass1_1010_383a(param_1: &mut  Struct402) {
     return;
 }
 
-pub unsafe fn pass1_1010_3880(param_1: &mut  Struct404) {
+pub unsafe fn pass1_1010_3880(param_1: &mut  Struct7) {
     let pu_var1: &mut  u16;
     let pu_var2: &mut  u32;
     let mut u_var3: i32;
