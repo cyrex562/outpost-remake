@@ -3,6 +3,7 @@ use crate::structs::prog_structs_2::Struct199;
 use crate::typedefs::{HGDIOBJ16, HCURSOR16, HDC16, HWND16};
 use crate::structs::prog_structs_17::Struct590;
 use crate::structs::prog_structs_9::Struct872;
+use crate::mem_funcs::mem_ops_1::StructuredData;
 
 pub struct Struct211 {
     pub field_0x0: u8,
@@ -2707,19 +2708,19 @@ pub struct Struct731 {
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
-    pub field_0x4: u8,
+    pub field_0x4: StructuredData,
     pub field_0x5: u8,
     pub field_0x6: u8,
     pub field_0x7: u8,
-    pub field_0x8: u8,
+    pub field_0x8: Vec<u8>,
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    pub field_0xc: u8,
+    pub field_0xc: u32,
     pub field_0xd: u8,
     pub field_0xe: u8,
     pub field_0xf: u8,
-    pub field_0x10: u8,
+    pub field_0x10: u32,
     pub field_0x11: u8,
     pub field_0x12: u8,
     pub field_0x13: u8,
@@ -2735,8 +2736,9 @@ pub struct Struct731 {
     pub field_0x1d: u8,
     pub field_0x1e: u8,
     pub field_0x1f: u8,
-    pub field_0x20: u16,
+    pub field_0x20: StructuredData,
     pub field_0x22: u32,
+    pub field_0x24: StructuredData,
 }
 
 pub struct Struct882 {

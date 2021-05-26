@@ -18,6 +18,7 @@ use crate::structs::prog_structs_2::{Struct390, Struct306};
 use crate::typedefs::HFILE16;
 use crate::util::{CONCAT11, CONCAT22, CONCAT31, SBORROW2, ZEXT24};
 use crate::winapi::{_hwrite16, _lclose16, _lcreat16};
+use crate::mem_funcs::mem_ops_1::{get_fn_ptr_at_address, StructuredData};
 
 pub unsafe fn write_to_file_1008_6e02(ctx: &mut AppContext, param_1: &mut FileObject) -> bool {
     let mut local_4: u32 = 0;
@@ -129,10 +130,10 @@ pub fn write_to_file_1008_7898(ctx: &mut AppContext, in_file: &HFILE16, param_2:
     return;
 }
 
-pub fn write_to_file_1008_7954(ctx: &mut AppContext, param_1: &mut HFILE16, param_2: &mut  u32) {
+pub fn write_to_file_1008_7954(ctx: &mut AppContext, param_1: &mut HFILE16, param_2: &mut  Struct731) {
     let pp_var1: fn();
     //
-    let BVar2: bool;
+    let b_result: bool;
     let mut u_var3: u32;
     //
     //
@@ -145,34 +146,34 @@ pub fn write_to_file_1008_7954(ctx: &mut AppContext, param_1: &mut HFILE16, para
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if (param_2 == 0x0) {
+    if param_2 == 0x0 {
         ctx.ax_reg = 0;
         local_16 = 0;
     } else {
-        let param_2_val = unsafe { *param_2 };
-        pp_var1 = (param_2_val + 0x10);
-        (**pp_var1)();
+        // let param_2_val = *param_2;
+        // pp_var1 = param_2.field_0x10;
+        // (**pp_var1)();
+        get_fn_ptr_at_address(param_2.field_0x10)();
         local_16 = ctx.dx_reg;
     }
     local_6 = CONCAT22(local_16, ctx.ax_reg);
     local_18 = ctx.ax_reg;
-    BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_18), 4);
-    if (BVar2 != 0) {
+    b_result = write_to_file_1008_7e1c(param_1, local_18, 4);
+    if b_result != false {
         local_a = 0;
-        while (true) {
-            if (local_6 <= local_a) {
+        loop {
+            if local_6 <= local_a {
                 return;
             }
-            let param_2_val = unsafe { *param_2 };
-            pp_var1 = (param_2_val + 4);
+            pp_var1 = get_fn_ptr_at_address(param_2.field_0x4.full_address);
             u_var3 = local_6;
-            (**pp_var1)();
+            pp_var1();
             local_20 = u_var3;
             local_1e = ctx.dx_reg;
             local_18 = local_20;
             local_16 = ctx.dx_reg;
-            BVar2 = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_20), 4);
-            if (BVar2 == 0) {
+            b_result = write_to_file_1008_7e1c(param_1, CONCAT22(ctx.stack_seg_reg, &local_20), 4);
+            if b_result == 0 {
                 break;
             }
             local_a = local_a + 1;
@@ -1024,7 +1025,7 @@ pub unsafe fn write_to_file_1038_75ca(ctx: &mut AppContext, param_1: &mut Struct
     return;
 }
 
-pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, param_2: &HFILE16) {
+pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut Struct731, param_2: &HFILE16) {
 
     let b_var1: bool;
     let pu_var2: &mut  u32;
@@ -1033,13 +1034,13 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
     let mut string_base: u16;
     let mut offset_1: u32;
     let mut offset_2: u32;
-    let mut local_6: u32;
+    let mut local_6: &mut u32;
 
     write_to_file_1030_16d6(ctx, param_1, param_2);
     if ctx.ax_reg != 0 {
       // u_var3 = (param_1  >> 0x10);
       //   local_bx_28 = param_1;
-        pu_var2 = param_1.field_0xc;
+        pu_var2 = &mut param_1.field_0xc;
         local_6 = pu_var2;
         write_to_file_1008_7898(ctx,param_2, pu_var2);
         if pu_var2 != false {
@@ -1211,17 +1212,17 @@ pub fn write_to_file_1038_5e16(ctx: &mut AppContext, param_1: &mut FileObject, p
     return;
 }
 
-pub fn write_to_file_1030_de7c(param_1: &mut FileObject, param_2: &HFILE16) {
+pub fn write_to_file_1030_de7c(ctx: &mut AppContext, param_1: &mut Struct731, param_2: &HFILE16, param_3: u16) {
 
     let b_var1: bool;
     let mut unaff_ss: u16;
-    let mut local_10: u32;
+    let mut local_10: &mut StructuredData;
 
     write_to_file_1028_b5ec(param_1, param_2);
-    if (ctx.ax_reg != 0) {
-        local_10 = (param_1 + 0x20);
-        b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_10), 4);
-        if (b_var1 == 0) {
+    if param_3 != 0 {
+        local_10 = &mut param_1.field_0x20;
+        b_var1 = write_to_file_1008_7e1c(param_2, local_10.buffer.as_mut(), 4);
+        if b_var1 == true {
             ctx.g_u16_1050_0310 = 0x6d0;
             return;
         }
@@ -1229,7 +1230,7 @@ pub fn write_to_file_1030_de7c(param_1: &mut FileObject, param_2: &HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_d61c(param_1: &mut FileObject, param_2: &HFILE16) {
+pub fn write_to_file_1030_d61c(param_1: &mut Struct731, param_2: &HFILE16) {
 
     let b_success: bool;
     let mut i_var1: i32;
@@ -1276,7 +1277,7 @@ pub fn write_to_file_1030_d61c(param_1: &mut FileObject, param_2: &HFILE16) {
     return;
 }
 
-pub fn write_to_file_1030_c230(param_1: &mut FileObject, param_2: &HFILE16) {
+pub fn write_to_file_1030_c230(param_1: &mut Struct731, param_2: &HFILE16) {
 
     let b_var1: bool;
     let mut u_var2: u16;
@@ -1403,13 +1404,13 @@ pub unsafe fn write_to_file_1030_7418(struct_param_1: &mut FileObject, hfile_par
         ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
-    char_ptr_a_4 = *&struct_b.field_0x16;
+    char_ptr_a_4 = struct_b.field_0x16;
     b_success = write_to_file_1008_7e1c(hfile_param_2, CONCAT22(char_ptr_a, &char_ptr_a_4), 4);
     if (b_success == 0) {
         ctx.g_u16_1050_0310 = 0x6d0;
         return;
     }
-    write_to_file_1008_7954(ctx, hfile_param_2, &struct_b.field_0x1e);
+    write_to_file_1008_7954(ctx, hfile_param_2, struct_b.field_0x1e);
     if (b_success == 0) {
         ctx.g_u16_1050_0310 = 0x6d0;
         return;
@@ -1620,7 +1621,8 @@ pub unsafe fn write_to_file_1030_5c1a(param_1: &mut string, param_2: &HFILE16) -
     return BVar2;
 }
 
-pub unsafe fn write_to_file_1030_56f6(struct_param_1: &mut FileObject, hfile_param_2: &HFILE16) {
+pub unsafe fn write_to_file_1030_56f6(struct_param_1: &mut Struct731,
+                                      hfile_param_2: &HFILE16) {
     let pu_var1: &mut  u16;
     let mut u_var2: u32;
     let mut u_var3: u32;
@@ -1637,24 +1639,24 @@ pub unsafe fn write_to_file_1030_56f6(struct_param_1: &mut FileObject, hfile_par
     i_var4 = write_to_file_1030_1978(ctx, struct_param_1, hfile_param_2);
     if i_var4 != 0 {
       // u_var8 = (struct_param_1  >> 0x10);
-        i_var4 = struct_param_1;
-        local_e = *(i_var4 + 0x10);
+        i_var4 = struct_param_1.field_0x0;
+        local_e = (i_var4 + 0x10);
         b_var5 = write_to_file_1008_7e1c(hfile_param_2, &local_e, 2);
-        if (b_var5 != 0) {
-            u_var3 = (i_var4 + 0x10);
-            local_8 = (u_var3 + 2);
+        if b_var5 != false {
+            u_var3 = i_var4 + 0x10;
+            local_8 = u_var3 + 2;
             b_var5 = write_to_file_1008_7e1c(hfile_param_2, &local_e, 2);
-            if ((b_var5 != 0)
+            if b_var5 != false
                 && (
-                u_var3 = (i_var4 + 0x10),
-                write_to_file_1008_7c2a(ctx, hfile_param_2, (u_var3 + 4)),
-                b_var5 != 0,
-                ))
+                u_var3 = i_var4 + 0x10,
+                write_to_file_1008_7c2a(ctx, hfile_param_2, u_var3 + 4),
+                b_var5 != false,
+                )
             {
-                u_var3 = (i_var4 + 0x10);
-                local_8 = (u_var3 + 0x1a);
-                b_var5 = write_to_file_1008_7e1c(hfile_param_2, CONCAT22(unaff_ss, &local_8), 2);
-                if (b_var5 != 0) {
+                u_var3 = i_var4 + 0x10;
+                local_8 = u_var3 + 0x1a;
+                b_var5 = write_to_file_1008_7e1c(hfile_param_2, &local_8, 2);
+                if b_var5 != false {
                     local_4 = 0;
                     let pu_var1_val = unsafe { *pu_var1 };
                     while (
@@ -1856,7 +1858,7 @@ pub unsafe fn write_to_file_1030_2aca(param_1: &mut FileObject, param_2: &HFILE1
     return;
 }
 
-pub fn write_to_file_1030_1978(ctx: &mut AppContext, param_1: &mut FileObject, param_2: &HFILE16) -> i32 {
+pub fn write_to_file_1030_1978(ctx: &mut AppContext, param_1: &mut Struct731, param_2: &HFILE16) -> i32 {
     let mut i_var1: i32;
 
     i_var1 = write_to_file_1030_16d6(ctx, param_1, param_2);
@@ -1871,16 +1873,16 @@ pub fn write_to_file_1030_1978(ctx: &mut AppContext, param_1: &mut FileObject, p
     return i_var1;
 }
 
-pub fn write_to_file_1030_16d6(ctx: &mut AppContext, param_1: &mut FileObject, param_2: &HFILE16) {
+pub fn write_to_file_1030_16d6(ctx: &mut AppContext, param_1: &mut Struct731, param_2: &HFILE16) {
     let b_var1: bool;
-    let mut local_10: u32;
-    let mut local_8: u32;
+    let mut local_10: &mut Vec<u8>;
+    let mut local_8: &mut Vec<u8>;
 
-    local_10 = (param_1 + 4);
-    b_var1 = write_to_file_1008_7e1c(param_2, &local_10, 4);
+    local_10 = &mut param_1.field_0x4;
+    b_var1 = write_to_file_1008_7e1c(param_2, local_10, 4);
     if b_var1 != false {
-        local_8 = (param_1 + 8);
-        b_var1 = write_to_file_1008_7e1c(param_2, &local_8, 4);
+        local_8 = &mut param_1.field_0x8;
+        b_var1 = write_to_file_1008_7e1c(param_2, local_8, 4);
         if b_var1 != false {
             return;
         }
@@ -2455,7 +2457,7 @@ pub unsafe fn file_write_fn_1028_0234(ctx: &mut AppContext, param_1: &mut Struct
       //   local_bx_28 = param_1;
         local_1a = local_bx_28.field_0x20;
         b_var3 = write_to_file_1008_7e1c(param_2, &local_1a, 2);
-        if b_var3 != 0 {
+        if b_var3 != false {
             pass1_1008_5784(CONCAT22(unaff_ss, local_a), param_1.field_0x22);
             u_var1 = param_1.field_0x22;
             local_14 = (u_var1 + 8);
@@ -2495,20 +2497,19 @@ pub unsafe fn file_write_fn_1028_0234(ctx: &mut AppContext, param_1: &mut Struct
     return 0;
 }
 
-pub fn file_write_fn_1020_e94e(param_1: &mut FileObject, param_2: &HFILE16) -> bool {
+pub fn file_write_fn_1020_e94e(param_1: &mut Struct731, param_2: &HFILE16) -> bool {
     let b_var1: bool;
-    let mut unaff_ss: u16;
-    let mut local_c: u16;
+    let mut local_c: &mut StructuredData;
 
-    b_var1 = write_to_file_1030_de7c(param_1, param_2);
-    if (b_var1 != 0) {
-        local_c = (param_1 + 0x24);
-        b_var1 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-        if (b_var1 == 0) {
+    b_var1 = write_to_file_1030_de7c(ctx, param_1, param_2);
+    if b_var1 != false {
+        local_c = &mut param_1.field_0x24;
+        b_var1 = write_to_file_1008_7e1c(param_2, local_c.buffer.as_ref(), 2);
+        if b_var1 == false {
             ctx.g_u16_1050_0310 = 0x6d0;
             return b_var1;
         }
-        b_var1 = 1;
+        b_var1 = true;
     }
     return b_var1;
 }
@@ -2572,7 +2573,7 @@ pub unsafe fn call_write_to_file_1020_a644(param_1: u16, param_2: u16, param_1_0
 
 pub fn write_to_file_1030_1a9c(
     ctx: &mut AppContext,
-    param_1: &mut FileObject,
+    param_1: &mut Struct731,
     param_2: &HFILE16,
 ) -> bool {
     let pi_var1: &mut  i32;
@@ -2585,14 +2586,14 @@ pub fn write_to_file_1030_1a9c(
     i_var2 = write_to_file_1030_1978(ctx, param_1, param_2);
     if i_var2 != 0 {
       // u_var4 = (param_1  >> 0x10);
-        i_var2 = param_1;
-        local_c = *(i_var2 + 0x10);
+        i_var2 = param_1.field_0x0 as i32;
+        local_c = param_1.field_0x10;
         b_var3 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
         if b_var3 != 0 {
-            if (i_var2 + 0x10) == 0 {
+            if (param_1 + 0x10) == 0 {
                 return 1;
             }
-            pi_var1 = (i_var2 + 0x10);
+            pi_var1 = (param_1 + 0x10);
             let pi_var1_val = unsafe { *pi_var1 };
             b_var3 = write_to_file_1008_7e1c(param_2, (pi_var1 + 2), (pi_var1_val * 2));
             if b_var3 != 0 {
