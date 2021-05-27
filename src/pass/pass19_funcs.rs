@@ -1930,7 +1930,7 @@ pub fn pass1_1018_d3ac(param_1: &mut  Struct376, param_2: u8) -> &mut  Struct376
     return param_1;
 }
 
-pub fn pass1_1018_dcf6(param_1: &mut  u16) {
+pub fn pass1_1018_dcf6(param_1: &mut  Struct7) {
     let mut u_var1: u16;
 
   // u_var1 = (param_1  >> 0x10);

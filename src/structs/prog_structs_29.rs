@@ -1,3 +1,9 @@
+use crate::typedefs::{HBRUSH16, HWND16, HANDLE16, HFILE16, HMENU16};
+use crate::structs::prog_structs_2::Struct199;
+use crate::structs::prog_structs_7::Struct44;
+use crate::structs::prog_structs_12::Struct94;
+use crate::structs::prog_structs_25::Struct65;
+use crate::structs::prog_structs_26::Struct167;
 
 pub struct Struct1020 {
     pub field_0x0: u8,
@@ -4234,7 +4240,7 @@ pub struct Struct375 {
     pub field_0x2e: u16,
     pub field_0x30: u16,
     pub field_0x32: u16,
-    pub field_0x34: u8,
+    pub field_0x34: Struct65,
     pub field_0x35: u8,
     pub field_0x36: u8,
     pub field_0x37: u8,

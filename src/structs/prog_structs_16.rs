@@ -234,7 +234,7 @@ pub struct Struct533 {
 }
 
 pub struct Struct493 {
-    pub field_0x0: u8,
+    pub field_0x0: String,
     pub field_0x1: u8,
     pub field_0x2: u8,
     pub field_0x3: u8,
@@ -257,7 +257,7 @@ pub struct Struct493 {
     pub field_0x14: u8,
     pub field_0x15: u8,
     pub field_0x16: u32,
-    pub field_0x1a: u16,
+    pub field_0x1a: Struct493,
     pub field_0x1c: u16,
 }
 

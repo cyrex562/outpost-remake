@@ -2,6 +2,7 @@ use crate::typedefs::{HWND16, HPALETTE16, HDC16, HGDIOBJ16};
 use crate::structs::prog_structs_5::Struct659;
 use crate::mem_funcs::mem_ops_1::StructuredData;
 use crate::structs::prog_structs_30::Struct137;
+use crate::structs::prog_structs_2::Struct7;
 
 pub struct Struct629 {
     pub u16_x00: u16,
@@ -1622,7 +1623,7 @@ pub struct Struct376 {
     pub field_0x29: u8,
     pub field_0x2a: u8,
     pub field_0x2b: u8,
-    pub u32_x2c: u32,
+    pub u32_x2c: Struct7,
     pub field_0x30: u8,
     pub field_0x31: u8,
     pub field_0x32: u8,
