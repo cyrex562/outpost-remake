@@ -2514,23 +2514,23 @@ pub fn file_write_fn_1020_e94e(param_1: &mut Struct731, param_2: &HFILE16) -> bo
     return b_var1;
 }
 
-pub fn file_write_fn_1020_e6a4(param_1: &mut FileObject, param_2: &HFILE16) -> u16 {
+pub fn file_write_fn_1020_e6a4(param_1: &mut Struct731, param_2: &HFILE16) -> u16 {
     let mut i_var1: i32;
-    let BVar2: bool;
+    let mut b_var2: bool;
     let mut u_var3: u16;
     let mut unaff_ss: u16;
     let mut local_c: u16;
     let mut local_6: u16;
 
-    i_var1 = write_to_file_1030_de7c(param_1, param_2);
-    if (i_var1 != 0) {
+    i_var1 = write_to_file_1030_de7c(ctx, param_1, param_2);
+    if i_var1 != 0 {
       // u_var3 = (param_1  >> 0x10);
         local_c = (param_1 + 0x24);
-        BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_c), 2);
-        if (BVar2 != 0) {
+        b_var2 = write_to_file_1008_7e1c(param_2, &local_c, 2);
+        if b_var2 != false {
             local_6 = (param_1 + 0x26);
-            BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(unaff_ss, &local_6), 2);
-            if (BVar2 != 0) {
+            b_var2 = write_to_file_1008_7e1c(param_2, &local_6, 2);
+            if b_var2 != false {
                 return 1;
             }
         }

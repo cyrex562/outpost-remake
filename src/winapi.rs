@@ -1,4 +1,4 @@
-use crate::sys_structs::{LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
+use crate::sys_structs::{LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16, MSG16};
 use crate::typedefs::{ATOM, COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HPEN16, HTASK16, HWND16, LPARAM, LRESULT, SEGPTR, WPARAM16, HMODULE16, HRSRC16};
 use crate::mem_funcs::mem_ops_1::StructuredData;
 
@@ -826,5 +826,26 @@ LRESULT WINAPI SendDlgItemMessage16( HWND16 hwnd, INT16 id, UINT16 msg,
                                      WPARAM16 wParam, LPARAM lParam )
  */
 pub fn SendDlgItemMessage16(hwnd: HWND16, id: i16, msg: u16, w_param: WPARAM16, l_param: LPARAM) -> LRESULT {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI GetMessage16( MSG16 *msg, HWND16 hwnd, UINT16 first, UINT16 last )
+ */
+pub fn GetMessage16(msg: &MSG16, hwnd: &HWND16, first: u16, last: u16) -> bool {
+    unimplemented!()
+}
+
+/*
+BOOL16 WINAPI IsDialogMessage16( HWND16 hwndDlg, MSG16 *msg16 )
+ */
+pub fn IsDialogMessage16(hwnd_dlg: HWND16, msg: &MSG16) -> bool {
+    unimplemented!()
+}
+
+/*
+void WINAPI PostQuitMessage16( INT16 exitCode )
+ */
+pub fn PostQuitMessage16(exit_code: u16) {
     unimplemented!()
 }

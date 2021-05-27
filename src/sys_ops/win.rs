@@ -1,53 +1,48 @@
-use std::intrinsics::offset;
-
-use crate::app_context::AppContext;
-use crate::cleanup::{win_cleanup_1010_305a, win_cleanup_func_1040_782c, window_msg_func_1010_7300};
-use crate::err_ops::error_check_1000_17ce;
+use crate::string_ops::misc::load_string_1010_847e;
 use crate::func_ptr_funcs::call_fn_ptr_1000_24cd;
-use crate::mem_funcs::mem_ops_1::StructuredData;
-use crate::other_funcs::{mixed_fn_1010_830a, switch_stmt_1008_aaa8};
-use crate::pass::pass13_funcs::pass1_1008_941a;
-use crate::pass::pass16_funcs::{pass1_1028_8d9e, pass1_1028_8dec};
-use crate::pass::pass17_funcs::{pass1_1030_73a8, pass1_1030_835a};
-use crate::pass::pass19_funcs::{pass1_1038_df5c, pass1_1040_a5d0};
-use crate::pass::pass6_funcs::pass1_1038_4f54;
-use crate::pass::pass7_funcs::pass1_1018_3a7a;
-use crate::pass::pass8_funcs::{pass1_1008_eb74, pass1_1010_1ea6, pass1_1010_375e, pass1_1010_3770, pass1_1010_4674, pass1_1010_4788, pass1_1010_5120, pass1_1010_52fc, pass1_1010_531c, pass1_1010_7818, pass1_1010_7b8c};
-use crate::pass::pass_funcs::{pass1_1000_3d7a, pass1_fn_1000_3e2c};
-use crate::sound_funcs::{mci_send_cmd_1008_5c5c, mci_send_command_1008_5c7c, mci_send_command_1008_5c9e};
-use crate::struct_ops::{process_struct_1010_20ba, struct_ops_2};
-use crate::struct_ops::struct_ops_2::{pass1_1038_df86, process_struct_1000_179c, process_struct_1008_e586};
+use crate::winapi::{CreateWindowEx16, SetProp16};
 use crate::structs::prog_structs_2::{Struct199, Struct318, Struct7};
-use crate::structs::prog_structs_23::{Struct1090, WinStruct42};
-use crate::structs::prog_structs_24::{Struct103, Struct2111, Struct369};
-use crate::structs::prog_structs_9::Struct637;
-use crate::sys_ops::win_msg;
-use crate::typedefs::{HANDLE16, HWND16, LRESULT, WPARAM16};
-use crate::ui_ops::misc::{mixed_1040_8520, win_fn_1020_1294, win_gui_fn_1010_79aa};
-use crate::ui_ops::misc::pass1_1038_af40;
-use crate::ui_ops::window::win_fn_1020_7270;
-use crate::util::{CONCAT12, CONCAT13, CONCAT22, CONCAT31, SUB21, SUB42};
+use crate::structs::prog_structs_23::{WinStruct42, Struct1090};
+use crate::typedefs::{HWND16, WPARAM16, LRESULT, HANDLE16};
+use crate::app_context::AppContext;
+use crate::cleanup::{window_msg_func_1010_7300, win_cleanup_1010_305a, win_cleanup_func_1040_782c};
+use crate::ui_ops::misc::{win_gui_fn_1010_79aa, pass1_1038_af40, mixed_1040_8520};
+use crate::pass::pass8_funcs::{pass1_1010_7818, pass1_1010_7b8c, pass1_1010_4674, pass1_1010_3770, pass1_1010_4788, pass1_1010_375e, pass1_1008_eb74, pass1_1010_1ea6, pass1_1010_5120, pass1_1010_52fc, pass1_1010_531c};
+use crate::pass::pass17_funcs::{pass1_1030_73a8, pass1_1030_835a};
+use crate::util::{CONCAT22, SUB42, CONCAT12, CONCAT13, CONCAT31, SUB21};
+use crate::struct_ops::struct_ops_2;
+use crate::structs::prog_structs_24::{Struct369, Struct2111, Struct103};
+use crate::mem_funcs::mem_ops_1::StructuredData;
+use std::intrinsics::offset;
 use crate::winapi;
-use crate::winapi::CreateWindowEx16;
+use crate::err_ops::error_check_1000_17ce;
+use crate::pass::pass19_funcs::{pass1_1040_a5d0, pass1_1038_df5c};
+use crate::other_funcs::mixed_fn_1010_830a;
+use crate::ui_ops::window::win_fn_1020_7270;
+use crate::sys_ops::win_msg;
+use crate::pass::pass6_funcs::pass1_1038_4f54;
+use crate::struct_ops::struct_ops_2::{process_struct_1008_e586, process_struct_1000_179c, pass1_1038_df86};
+use crate::sound_funcs::{mci_send_command_1008_5c9e, mci_send_command_1008_5c7c, mci_send_cmd_1008_5c5c};
+use crate::pass::pass13_funcs::pass1_1008_941a;
+use crate::pass::pass16_funcs::{pass1_1028_8dec, pass1_1028_8d9e};
+use crate::pass::pass_funcs::{pass1_1000_3d7a, pass1_fn_1000_3e2c};
 
 pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
     let mut u_var1: u32;
     let ppc_var2: fn();
     let mut u_var3: u32;
-    let struct_var4: Struct199;
-    let struct_var5: Struct103;
+    let mut struct_var4: Struct7;
+    let mut struct_var5: Struct7;
     let mut i_var6: i32;
-    let struct_var7: Struct103;
+    let mut struct_var7: Struct7;
     let mut i_var8: i32;
     let mut i_var9: i32;
     let mut u_var10: u16;
     let mut u_var11: u16;
-    // let mut unaff_cs: u16;
-    // let mut unaff_ss: u16;
-    let l_var10: LRESULT;
+    let mut l_var10: LRESULT;
     let mut local_232: u16;
     let mut local_230: u16;
-    let paStack556: Struct199;
+    let mut paStack556: Struct7;
     let mut local_116: u32;
     let mut local_112: u32;
     let mut local_10e: u16;
@@ -65,8 +60,6 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
     let mut local_56: HWND16;
     let mut local_54: Vec<u8> = Vec::new();
 
-    // i_var8 = param_1;
-  // u_var8 = (param_1  >> 0x10);
     if param_2 != 0 {
         // local_56 = winapi::GetDlgItem16(0xfd2, (param_1 + 6));
         local_56 = winapi::GetDlgItem16((param_1 + 6), 0xfd2);
@@ -99,11 +92,14 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
             //     0x408,
             //     local_ac,
             // );
-            l_var10 = winapi::SendMessage16(local_ac, 0x408, struct_var4, CONCAT22(local_232, local_100));
+            l_var10 = winapi::SendMessage16(local_ac,
+                                            0x408,
+                                            struct_var4,
+                                            CONCAT22(local_232, local_100));
             struct_var4 = l_var10;
         }
       // paStack556 = (ctx.g_struct_73_1050_14cc  >> 0x10);
-        load_string_1010_847e();
+        load_string_1010_847e(ctx, 0, 0);
         _local_104 = CONCAT22(ctx.dx_reg, struct_var4);
         paStack556 = local_100;
         struct_var5 = local_aa;
@@ -128,10 +124,10 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
                   // paStack556 = (u_var1  >> 0x10);
                     pass1_1010_5120(u_var1, local_58);
                     _local_10a = CONCAT22(local_108, struct_var4);
-                    if (struct_var4 == 0x0) {
+                    if struct_var4 == 0x0 {
                         paStack556 = 0x1010;
                         local_10c = struct_var7;
-                        process_struct_1000_179c(0xb4, &mut struct_var7);
+                        process_struct_1000_179c(ctx,0xb4, &mut struct_var7);
                         i_var6 = local_10c | struct_var4;
                         local_10e = struct_var4;
                         if (i_var6 == 0) {
@@ -140,7 +136,7 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
                         } else {
                             paStack556 = 0x57b;
                             mixed_1040_8520(
-                                CONCAT13((local_10c >> 8), CONCAT12(local_10c, struct_var4)),
+                                struct_var4,
                                 ctx.g_h_window,
                                 0x30,
                                 2,
@@ -181,7 +177,7 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
         }
         paStack556 = 0x1000;
         unaff_cs = 0x1000;
-        process_struct_1000_179c(0xb4, &mut struct_var5);
+        process_struct_1000_179c(ctx,0xb4, &mut struct_var5);
         i_var6 = struct_var5 | struct_var4;
         local_10c = struct_var5;
         local_10e = struct_var4;
@@ -210,7 +206,11 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn win_fn_1038_da68(ctx: &mut AppContext, param_1: &mut u32, param_2: u16, param_3_00: &mut String, param_3: &mut Struct103) {
+pub unsafe fn win_fn_1038_da68(ctx: &mut AppContext,
+                               param_1: &mut u32,
+                               param_2: u16,
+                               param_3_00: &mut String,
+                               param_3: &mut Struct103) {
     let pp_var1: fn();
     let u_var2: u8;
     let pu_var3: Vec<u8>;
@@ -308,10 +308,9 @@ pub unsafe fn win_fn_1038_da68(ctx: &mut AppContext, param_1: &mut u32, param_2:
                             {
                                 // LAB_1038_dc20:
                                 win_msg::post_win_msg_1040_7b3c(
-                                    &mut param_1,
+                                    param_1,
                                     param_2,
                                     param_3_00,
-                                    param_3,
                                     param_3,
                                 );
                                 return;
@@ -320,7 +319,7 @@ pub unsafe fn win_fn_1038_da68(ctx: &mut AppContext, param_1: &mut u32, param_2:
                         }
                         // goto LAB_1038_db1c;
                     }
-                    *param_3 = param_3 + -0x11d;
+                    *param_3 = param_3 - 0x11d;
                     pass1_1038_df5c(CONCAT22(param_2, param_1));
                     ctx.dx_reg = ctx.dx_reg;
                 }
@@ -556,7 +555,7 @@ pub unsafe fn destroy_win_1038_cc00(ctx: &mut AppContext, param_1: &mut u32, par
     }
     i_var1 = pass1_1008_eb74((param_1 + 0x8e), u_var2);
     if i_var1 != 0 {
-        mci_send_command_1008_5c7c(ctx.g_struct_1050_02a0, CONCAT22(i_var1, 1));
+        mci_send_command_1008_5c7c(ctx,ctx.g_struct_1050_02a0, CONCAT22(i_var1, 1));
         winapi::DestroyWindow16((param_1 + 6));
     }
     return;
@@ -618,8 +617,7 @@ pub unsafe fn win_fn_1038_c374(ctx: &mut AppContext, param_1: u32, param_2: &mut
         ppc_var2(u_var6, param_2, u_var5, local_a, (local_a >> 0x10));
         u_var1 = (param_1 + 0x8e);
         struct_var8 = process_struct_1008_e586(
-            u_var1,
-            (u_var1 >> 0x10),
+            ctx,u_var1,
             CONCAT13((ctx.dx_reg >> 8), CONCAT12(ctx.dx_reg, u_var4)),
         );
         // l_var7 = winapi::SendMessage16(struct_var8, 0, 0x403, hwnd_param_3);
@@ -866,13 +864,16 @@ pub fn win_fn_1010_0242(param_1: u16, param_2: u16, param_3: HWND16) -> u16 {
     return 1;
 }
 
-pub unsafe fn win_fn_1010_1656(param_1: &mut Struct318, param_2: u16, param_3: &mut StructuredData, param_4: u16) {
+pub unsafe fn win_fn_1010_1656(param_1: &mut Struct318,
+                               param_2: u16,
+                               param_3: &mut StructuredData,
+                               param_4: u16) {
     let mut u_var1: u32;
     let mut i_var2: i32;
     let mut i_var3: i32;
     let mut i_var4: i32;
     let mut u_var5: u16;
-    let struct_var6: Struct2111;
+    let mut struct_var6: Struct2111;
     let mut u_var7: u32;
     let mut in_stack_0000000c: u16;
     let mut in_stack_0000ffe0: u16;
@@ -880,7 +881,7 @@ pub unsafe fn win_fn_1010_1656(param_1: &mut Struct318, param_2: u16, param_3: &
     let mut local_a: u32;
     let mut local_6: u16;
     let mut local_4: u16;
-    let temp_7ff6e820591: Struct369;
+    let mut temp_7ff6e820591: Struct369;
 
     win_cleanup_1010_305a(param_1, param_2, param_3);
     if param_1.field_0x16 == 3 {
@@ -910,26 +911,31 @@ pub unsafe fn win_fn_1010_1656(param_1: &mut Struct318, param_2: u16, param_3: &
 
 pub fn create_win_1008_9760(ctx: &mut AppContext, struct_param_1: &mut WinStruct42) -> Struct199 {
     let mut win_handle_1: HWND16 = 0;
-    let win_struct: WinStruct42;
+    let mut win_struct: WinStruct42 = WinStruct42::new();
     let mut u_var1: i32;
     let mut out: Struct199 = Struct199::new();
 
     if win_struct.win_handle_0x8 == 0 {
         let data: Vec<u8> = in_win_struct::to_le_bytes_vec();
-        win_handle_1 = CreateWindowEx16(struct_param_1.style_0xb0, &struct_param_1.class_name_0x5b, &ctx.g_string_1050_039e, struct_param_1.style_0xac, struct_param_1.x_0xb4, struct_param_1.y_0xb6, struct_param_1.width_0xb8, struct_param_1.height_0xba, struct_param_1.parent_window_0xbc, struct_param_1.menu_handle_0xca, ctx.g_h_instance_1050_038c, &data);
-        // win_handle_1 = CreateWindowEx16(&data, ctx.g_h_instance_1050_038c, struct_param_1.menu_handle_0xca, struct_param_1.parent_window_0xbc, struct_param_1.height_0xba, struct_param_1.width_0xb8, struct_param_1.y_0xb6, struct_param_1.x_0xb4, struct_param_1.style_0xac, &ctx.g_string_1050_039e, &struct_param_1.class_name_0x5b, struct_param_1.style_0xb0)'
+        win_handle_1 = CreateWindowEx16(struct_param_1.style_0xb0,
+                                        &struct_param_1.class_name_0x5b,
+                                        &ctx.g_string_1050_039e,
+                                        struct_param_1.style_0xac,
+                                        struct_param_1.x_0xb4,
+                                        struct_param_1.y_0xb6,
+                                        struct_param_1.width_0xb8,
+                                        struct_param_1.height_0xba,
+                                        struct_param_1.parent_window_0xbc,
+                                        struct_param_1.menu_handle_0xca,
+                                        ctx.g_h_instance_1050_038c,
+                                        &data);
 
         struct_param_1.win_handle_0x8 = win_handle_1;
     }
-    // if in_win_struct.win_handle_0x8 == 0 {
-    //     win_handle_1 = call_fn_ptr_1000_24cd(0);
-    // }
+
     if struct_param_1.win_handle_0x8 == 0 {
         win_handle_1 = call_fn_ptr_1000_24cd(ctx, None);
     }
-    // let mut out: StructuredData = StructuredData::new();
-    out.
-
     out.field_0x2 = ctx.dx_reg;
     out.field_0x16 = win_handle_1;
     return out;

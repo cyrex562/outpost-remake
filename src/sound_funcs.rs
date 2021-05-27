@@ -96,7 +96,9 @@ pub unsafe fn mci_send_cmd_1008_5c5c(param_1: u32, param_2: u16) {
     return;
 }
 
-pub fn mci_send_command_1008_5c7c(ctx:&mut AppContext, in_char_buff: Vec<u8>, struct_param_2: &mut  Struct13) {
+pub unsafe fn mci_send_command_1008_5c7c(ctx:&mut AppContext,
+                                         in_char_buff: &Vec<u8>,
+                                         struct_param_2: &mut  Struct13) {
     let mut u_var1 = set_error_mode_1010_85be(ctx, ctx.g_struct_73_1050_14cc, struct_param_2);
     mci_send_command_1008_5cfe(in_char_buff, u_var1);
     return;
@@ -130,7 +132,7 @@ pub fn mci_send_command_1008_5cb6(param_1: &mut  Struct318, dev_id: u16) {
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn mci_send_command_1008_5cfe(param_1: u32, param_2: u32) {
+pub fn mci_send_command_1008_5cfe(param_1: &Vec<u8>, param_2: u32) {
     let mut u_var1: u32;
     let mut i_var2: i32;
     let mut i_var3: i32;

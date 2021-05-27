@@ -1,47 +1,11 @@
-
-
-
-
-// typedef uchar uint8_t;
-
-// typedef uint8_t u8;
-
-// typedef pub u32: u32,
-
-
-
-// typedef PDEVMODEA: &mut  libc::c_void,
-// type PDEVMODEA = mut ptr libc::c_libc::c_void,
-
-
-
-
-
 use crate::typedefs::{HDC16, LPARAM, WPARAM16, HWND16, SEGPTR, HBRUSH16, HCURSOR16, HANDLE16, HINSTANCE16};
 
-// typedef struct PALETTEENTRY PALETTEENTRY, *PPALETTEENTRY;
 pub struct PALETTEENTRY {
     pub pe_red: u8,
     pub pe_green: u8,
     pub pe_blue: u8,
     pub pe_flags: u8,
 }
-
-// typedef ushort u16;
-
-// typedef pub u16: u16,
-
-//typedef i32: libc::c_long;
-
-
-
-// typedef short i16;
-
-// typedef pub LPSTR: String,
-
-// typedef struct RECT16 RECT16, *PRECT16;
-
-// typedef short int16_t;
 
 pub struct RECT16 {
     pub left: i16,
@@ -61,10 +25,9 @@ impl RECT16 {
     }
 }
 
-// typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
 pub struct WNDCLASS16 {
     pub style: u16,
-    pub lp_fn_wnd_proc: &mut  libc::c_void,
+    pub lp_fn_wnd_proc: fn(),
     pub cb_cls_extra: i16,
     pub cb_wnd_extra: i16,
     pub h_instance: HINSTANCE16,

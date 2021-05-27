@@ -1914,8 +1914,8 @@ pub unsafe fn read_from_file_1038_6118(param_1: &mut Struct933, hfile_param_2: &
         }
     }
 }
+ctx.g_u16_1050_0310 = 0x6d2; return;
 }
-ctx.g_u16_1050_0310 = 0x6d2; return; }
 
 pub fn read_from_file_1030_dec4(ctx: &mut AppContext, param_1: u32, param_2: &HFILE16) {
     let b_var1: bool;

@@ -50,8 +50,10 @@ pub unsafe fn free_rsrc_1010_4b3e(ctx: &mut AppContext, param_1: &mut Struct7) {
     }
     // u_var6 = (i_var8 + 0x12);
     let mut u_var6 = &mut param_1.struct_field_0x12;
-    error_check_1000_17ce(ctx, &mut u_var6.field_0x4);
-    error_check_1000_17ce(ctx, &mut param_1.struct_field_0x12);
+    error_check_1000_17ce(ctx,
+                          &mut u_var6.field_0x4);
+    error_check_1000_17ce(ctx,
+                          &mut param_1.struct_field_0x12);
     pu_var2 = param_1.u32_field_0x16;
     // u_var3 = (i_var8 + 0x18);
     if (pu_var2) != 0 {

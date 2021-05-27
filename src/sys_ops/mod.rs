@@ -364,7 +364,7 @@ pub fn set_global_uint_1000_4d0c(ctx: &mut AppContext, param_1: Option<u32>) {
     ctx.PTR_LOOP_1050_61ea = 0;
 }
 
-pub fn reg_class_1008_96d2(param_1: &mut Struct65, param_2: u16) {
+pub fn reg_class_1008_96d2(ctx: &mut AppContext, param_1: &mut Struct65, param_2: u16) {
     let b_var1: bool;
     let AVar2: ATOM;
     let mut unaff_ss: u16;
@@ -381,8 +381,9 @@ pub fn reg_class_1008_96d2(param_1: &mut Struct65, param_2: u16) {
     let mut local_4: u16;
 
     local_6 = param_1 + 0x5b;
-    b_var1 = GetClassInfo16(&local_1c, CONCAT22(local_6, unaff_ss), param_1);
-    if (b_var1 == 0) {
+    // b_var1 = GetClassInfo16(&local_1c, CONCAT22(local_6, unaff_ss), param_1);
+    b_var1 = GetClassInfo16(param_1, local_6, &local_1c);
+    if b_var1 == 0 {
         local_1c = (param_1 + 200);
         local_1a = 0x5632;
         local_18 = ctx.PTR_LOOP_1050_1008;
