@@ -1888,7 +1888,7 @@ pub unsafe fn win_fn_1018_e384(ctx: &mut AppContext, struct_param_1: &mut WinStr
     //// truct_a = (paVar1  >> 0x10);
     //// ocal_WinStruct42_ptr_1_hi = (struct_param_1  >> 0x10);
     // local_WinStruct42_ptr_1 = struct_param_1;
-    struct_var_1.u16_0x0 = get_gui_dc_1018_4db0(
+    struct_var_1.field_0x0 = get_gui_dc_1018_4db0(
         &struct_param_1.u32_xf2,
         local_WinStruct42_ptr_1.win_handle_0x8,
     );
@@ -8105,7 +8105,7 @@ pub unsafe fn win_gui_fn_1020_7824(param_1: &mut Struct622, param_2: u16) {
 
     get_dc_1020_921c(param_1, param_2);
     (param_1 + 0x14) = 0;
-    param_1.u16_0x0 = 0x7902;
+    param_1.field_0x0 = 0x7902;
     (param_1 + 2) = 0x1020;
     ppVar2 = struct_ops::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(local_e, 0x25));
     ctx.dx_reg = (ppVar2 >> 0x10);

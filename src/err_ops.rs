@@ -36,7 +36,7 @@ use crate::winapi::SetErrorMode16;
 use crate::structs::prog_structs_10::Struct73;
 use crate::structs::prog_structs_19::Struct500;
 
-pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext) -> bool {
+pub unsafe fn error_check_1000_0dc6(ctx: &mut AppContext, param_1: u32) -> bool {
     // let mut unaff_cs: u16;
     let mut local_8: u16;
 

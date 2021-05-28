@@ -1,3 +1,4 @@
+use crate::typedefs::{HCURSOR16, HDC16, HWND16};
 
 pub struct Struct858 {
     pub field_0x0: u8,
@@ -425,12 +426,13 @@ pub struct Struct858 {
 }
 
 pub struct Struct622 {
-    pub u16_0x0: u16,
-    pub u16_0x2: u16,
-    pub window_handle_0x4: HWND16,
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    // pub window_handle_0x4: HWND16,
+    pub field_0x4: Struct670,
     pub u16_0x6: u16,
     pub u16_0x8: u16,
-    pub field_0xa: u16,
+    pub field_0xa: HDC16,
     pub field_0xc: u16,
     pub field_0xe: u16,
     pub field_0x10: u16,

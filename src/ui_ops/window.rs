@@ -7052,7 +7052,7 @@ pub unsafe fn win_fn_1020_7270(ctx: &mut AppContext, param_1: &mut Struct7) {
   // local_struct_1_hi = (param_1  >> 0x10);
     local_struct_1 = param_1;
     param_1.ptr_a_lo = 0x754c;
-    local_struct_1.base_fld_2 = 0x1020;
+    local_struct_1.field_0x2 = 0x1020;
     if (&local_struct_1.field_0x1c != 0) {
         pass1_1010_1ea6(
             *&local_struct_1.field_0x1c,
@@ -7071,8 +7071,8 @@ pub unsafe fn win_fn_1020_7270(ctx: &mut AppContext, param_1: &mut Struct7) {
     local_struct_1.field_0x20 = h_gdi_obj;
     DeleteObject16(h_gdi_obj);
     param_1.ptr_a_lo = ctx.s_0_020_1050_3ab0;
-    local_struct_1.base_fld_2 = &ctx.PTR_LOOP_1050_1008;
+    local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
-    local_struct_1.base_fld_2 = &ctx.PTR_LOOP_1050_1008;
+    local_struct_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
     return;
 }

@@ -59,6 +59,7 @@ mod pass;
 mod sys_ops;
 mod struct_ops;
 mod string_ops;
+mod struct_ops2;
 
 const INT_21: u16 = 0x21;
 

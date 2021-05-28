@@ -427,7 +427,7 @@ pub unsafe fn call_palette_fn_1020_6466(in_struct_1: &mut Struct44) {
   // local_struct_1_hi = (in_struct_1  >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1.ptr_a_lo = 0x67c2;
-    local_struct_1.base_fld_2 = 0x1020;
+    local_struct_1.field_0x2 = 0x1020;
     if (local_struct_1.field_0x14 != 0) {
         pass1_1010_1ea6(
             local_struct_1.field_0x14,

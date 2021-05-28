@@ -1511,6 +1511,7 @@ pub struct Struct103 {
     ptr_1_hi: Vec<u8>,
     pub field_0x4: u16,
     pub field_0x6: u32,
+    pub field_0x8: u32,
     pub field_0xa: u32,
     pub field_0xe: u16,
     pub field_0x10: u32,

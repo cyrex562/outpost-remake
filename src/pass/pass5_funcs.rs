@@ -4829,7 +4829,7 @@ pub unsafe fn pass1_1030_86ec(param_1: &mut Struct44, param_2: u16) {
   // u_var1 = (param_1  >> 0x10);
     local_bx_18 = param_1;
     param_1 = 0;
-    local_bx_18.struct_fld_4 = 0x0;
+    local_bx_18.field_0x4 = 0x0;
     &local_bx_18.field_0x6 = param_2;
     &local_bx_18.field_0xe = 0;
     return;

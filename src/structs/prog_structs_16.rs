@@ -1,3 +1,6 @@
+use crate::typedefs::{HWND16, HDC16};
+use crate::structs::prog_structs_1::Struct104;
+use crate::structs::prog_structs_24::Struct103;
 
 pub struct Struct174 {
     pub field_0x0: u8,
@@ -800,7 +803,7 @@ pub struct Struct1088 {
     pub field_0x217: u8,
     pub field_0x218: u8,
     pub field_0x219: u8,
-    pub field_0x21a: &mut  Struct493,
+    pub field_0x21a: Struct493,
     pub field_0x21c: u8,
     pub field_0x21d: u8,
 }
@@ -1079,7 +1082,7 @@ pub struct Struct115 {
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,
-    pub field_0xa: u32,
+    pub field_0xa: Struct103,
     pub field_0xe: u8,
     pub field_0xf: u8,
     pub field_0x10: u8,
@@ -1091,7 +1094,7 @@ pub struct Struct115 {
     pub field_0x17: u8,
     pub field_0x18: u8,
     pub field_0x19: u8,
-    pub field_0x1a: i32,
+    pub field_0x1a: HDC16,
 }
 
 pub struct Struct368 {
@@ -1191,7 +1194,7 @@ pub struct Struct1118 {
     pub field_0x9: u8,
     pub field_0xa: u8,
     pub field_0xb: u8,
-    field_0xc: &mut  u32,
+    field_0xc: u32,
 }
 
 pub struct Struct809 {

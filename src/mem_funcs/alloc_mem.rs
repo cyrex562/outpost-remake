@@ -18,7 +18,11 @@ use crate::typedefs::{HGLOBAL16, SEGPTR};
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42};
 use crate::winapi::{FatalAppExit16, FatalExit, GlobalDOSAlloc16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16};
 
-pub unsafe fn alloc_mem_1000_010c(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: u16, param_4: u32) -> u32 {
+pub unsafe fn alloc_mem_1000_010c(ctx: &mut AppContext,
+                                  param_1: u16,
+                                  param_2: u16,
+                                  param_3: u16,
+                                  param_4: u32) -> u32 {
     let mut u_var1: i32;
     // let mut in_eax: u32;
     // let mut u_var2: u16;
@@ -48,7 +52,10 @@ pub unsafe fn alloc_mem_1000_010c(ctx: &mut AppContext, param_1: u16, param_2: u
                 // LAB_1000_016d:
                 while local_6 <= param_3 && (local_6 < param_3 || (local_8 < param_2)) {
                     alloc_addr =
-                        alloc_mem_1000_03c6(ctx, *(ctx.s_version__d__d_1050_0012 + 8), local_4, None);
+                        alloc_mem_1000_03c6(ctx,
+                                            (ctx.s_version__d__d_1050_0012 + 8),
+                                            local_4,
+                                            None);
                     alloc_addr = alloc_addr & 0xffff0000;
                     if alloc_addr.full_address == 0 {
                         break;
@@ -148,7 +155,7 @@ pub unsafe fn alloc_mem_1000_03c6(ctx: &mut AppContext,
                     if param_2 == 3 {
                         u_var5 = struct_ops_1::set_struct_1000_05b4();
                     } else {
-                        u_var5 = set_struct_1000_09ca();
+                        u_var5 = set_struct_1000_09ca(ctx);
                     }
                 }
                 unsafe { *local_AX_131 = u_var5 };
@@ -185,7 +192,7 @@ pub unsafe fn alloc_mem_1000_05e2(ctx: &mut AppContext,
 
     i_var2 = param_2 + (0xffeb < struct_param_1);
     while {
-        vec_var7 = alloc_mem_1000_03c6(struct_param_1.field_0x1, 3, local_BX__1);
+        vec_var7 = alloc_mem_1000_03c6(ctx,struct_param_1.field_0x1, 3, local_BX__1);
         if vec_var7 != 0 {
             return vec_var7 & 0xffff0000 | (vec_var7 + 0x14);
         }
@@ -207,7 +214,7 @@ pub unsafe fn alloc_mem_1000_05e2(ctx: &mut AppContext,
                 )))
             && (lVar8 != 0
                 || (
-                    i_var5 = invoke_error_handler_1000_1e61(ctx.code_seg_reg, 2, local_BX__1),
+                    i_var5 = invoke_error_handler_1000_1e61(ctx,ctx.code_seg_reg, 2, local_BX__1),
                     i_var5 != 0,
                 ))
     } {}
@@ -275,7 +282,7 @@ pub unsafe fn alloc_mem_1000_0670(param_1: i32, param_2: &mut  i32) -> u16 {
             if (lVar13 != 0) {
                 break;
             }
-            i_var9 = invoke_error_handler_1000_1e61(unaff_cs, 2, i_var3);
+            i_var9 = invoke_error_handler_1000_1e61(ctx,unaff_cs, 2, i_var3);
             i_var9 != 0
         } {}
         if (lVar13 == 0) {
@@ -305,7 +312,7 @@ pub unsafe fn alloc_mem_1000_07fc(param_1: Vec<u8>) {
     let mut local_4: u16;
 
     if ((param_1 + 0x14) != -0x4153) {
-        invoke_error_handler_1000_1e61(unaff_cs, 10, 0);
+        invoke_error_handler_1000_1e61(ctx,unaff_cs, 10, 0);
         return 0;
     }
     u_var1 = alloc_mem_1000_0838(0x0);
@@ -360,13 +367,13 @@ pub unsafe fn alloc_mem_1000_0838(param_1: &mut Struct142) {
         } {}
         // LAB_1000_085b:
         if param_1.field_0x18 == 0 {
-            invoke_error_handler_1000_1e61(unaff_cs, 4, param_1);
+            invoke_error_handler_1000_1e61(ctx,unaff_cs, 4, param_1);
             return 0;
         }
         u_var6 = param_1.field_0x1a;
         while (
             local_6 = u_var6,
-            pvVar9 = alloc_mem_1000_03c6(local_6, 1, param_1),
+            pvVar9 = alloc_mem_1000_03c6(ctx,local_6, 1, param_1),
             pvVar9 == 0,
         ) {
             temp_5f1305d326 = param_1.field_0x1e;
@@ -386,7 +393,7 @@ pub unsafe fn alloc_mem_1000_0838(param_1: &mut Struct142) {
             }
             u_var6 = local_6 >> 1;
             if (local_6 >> 1 < param_1.field_0x18 + 0x14) {
-                i_var5 = invoke_error_handler_1000_1e61(unaff_cs, 2, param_1);
+                i_var5 = invoke_error_handler_1000_1e61(ctx,unaff_cs, 2, param_1);
                 u_var6 = local_6 & 0xfffe;
                 if (i_var5 == 0) {
                     return 0;
@@ -413,38 +420,38 @@ pub unsafe fn alloc_mem_1000_0a48(param_1: i32, param_2: &Struct89, param_3: u16
 
   // u_var5 = (param_4  >> 0x10);
     if ((param_4 + 0x14) == -0x4153) {
-        if ((param_3 == 0) && (param_2 <= (s_version__d__d_1050_0012 + 6))) {
+        if (param_3 == 0) && (param_2 <= (s_version__d__d_1050_0012 + 6)) {
             if (param_2 == 0x0) {
-                invoke_error_handler_1000_1e61(unaff_cs, 4, param_4);
+                invoke_error_handler_1000_1e61(ctx,unaff_cs, 4, param_4);
                 u_var6 = 0;
             } else {
                 u_var6 = alloc_mem_1000_0838(0x0);
               // u_var4 = (u_var6  >> 0x10);
                 local_DI_113 = u_var6;
-                if ((u_var6 != 0) && ((param_1 & 1) != 0)) {
+                if (u_var6 != 0) && ((param_1 & 1) != 0) {
                     u_var2 = (s_version__d__d_1050_0012 + 6);
                     u_var3 = u_var2 >> 1;
-                    while (u_var3 != 0) {
+                    while u_var3 != 0 {
                         u_var3 = u_var3 - 1;
                         paVar1 = local_DI_113;
-                        local_DI_113 = &local_DI_113.field_0x2;
+                        local_DI_113 = local_DI_113.field_0x2;
                         paVar1 = 0;
                     }
-                    if ((u_var2 & 1) != 0) {
+                    if (u_var2 & 1) != 0 {
                         unsafe { *local_DI_113 = 0 };
                     }
                 }
             }
         } else {
-            if ((param_3 == 0) && (param_2 <= (s_version__d__d_1050_0012 + 10))) {
+            if (param_3 == 0) && (param_2 <= (ctx.s_version__d__d_1050_0012 + 10)) {
                 u_var6 = alloc_mem_1000_0b20(param_1 & 0xfffd, 0x0, in_cx, param_2);
             } else {
-                u_var6 = alloc_mem_1000_05e2(param_2, param_3, 0x0);
+                u_var6 = alloc_mem_1000_05e2(ctx,param_2, param_3, 0x0);
             }
         }
         return u_var6;
     }
-    invoke_error_handler_1000_1e61(unaff_cs, 10, 0);
+    invoke_error_handler_1000_1e61(ctx,unaff_cs, 10, 0);
     return 0;
 }
 
@@ -488,11 +495,11 @@ pub unsafe fn alloc_mem_1000_0b20(
     // goto LAB_1000_0b64;
     loop {
         while {
-            if ((pa_var5 <= paVar3)
+            if (pa_var5 <= paVar3)
                 && (
-                    pvVar9 = pass1_fn_1000_0c32(pa_var5, 0x0, local_14),
+                    pvVar9 = pass1_fn_1000_0c32(pa_var5, None, local_14),
                     pvVar9 != 0,
-                ))
+                )
             {
                 (&local_BX__1.field_0x0 + u_var2 * 2) = paVar3;
                 return pvVar9;
@@ -501,17 +508,17 @@ pub unsafe fn alloc_mem_1000_0b20(
             paVar3 != local_6
         } {}
         // LAB_1000_0b64:
-        if (((((local_14 & 2) == 0) || ((local_14 & 0x40) != 0))
+        if ((((local_14 & 2) == 0) || ((local_14 & 0x40) != 0))
             || (local_BX__1.field_0x32 == 0x0))
-            || (paVar3 = (*local_BX__1.field_0x32)(), paVar3 < pa_var5))
+            || (paVar3 = (*local_BX__1.field_0x32)(), paVar3 < pa_var5)
         {
-            if (((local_14 & 0x10) != 0)
+            if ((local_14 & 0x10) != 0)
                 || (
-                    pvVar9 = alloc_mem_1000_03c6(local_BX__1.field_0x1a, u_var2, local_BX__1),
+                    pvVar9 = alloc_mem_1000_03c6(ctx,local_BX__1.field_0x1a, u_var2, local_BX__1),
                     pvVar9 == 0,
-                ))
+                )
             {
-                if ((local_14 & 0x20) == 0) {
+                if (local_14 & 0x20) == 0 {
                     u_var2 = &local_CX_30[1].field_0x7 & 0xf000;
                     pu_var1 = &local_BX__1.field_0x1e;
                     unsafe {
@@ -526,7 +533,7 @@ pub unsafe fn alloc_mem_1000_0b20(
                                     u_var4 < *pu_var1 || u_var4 == *pu_var1,
                                 )))
                         {
-                            u_var8 = alloc_mem_1000_05e2(pa_var5, 0, local_BX__1);
+                            u_var8 = alloc_mem_1000_05e2(ctx,pa_var5, 0, local_BX__1);
                             return u_var8;
                         }
                     }
@@ -594,7 +601,7 @@ pub unsafe fn alloc_mem_1000_0ed4(
                     unsafe { *pu_var2 = *pu_var1 };
                 }
                 u_var4 = ((local_8 & 1) != 0);
-                while (u_var4 != 0) {
+                while u_var4 != 0 {
                     u_var4 = u_var4 - 1;
                     pu_var2 = pu_var3;
                     pu_var3 = (pu_var3 + 1);
@@ -602,11 +609,11 @@ pub unsafe fn alloc_mem_1000_0ed4(
                     pu_var5 = (pu_var5 + 1);
                     unsafe { *pu_var2 = *pu_var1 };
                 }
-                error_check_1000_0dc6(param_4, param_5);
+                error_check_1000_0dc6(ctx, param_4, param_5);
             }
             return _local_c;
         }
-        if ((param_3 | param_2) == 0) {
+        if (param_3 | param_2) == 0 {
             return 0;
         }
         u_var6 = 5;
@@ -615,7 +622,7 @@ pub unsafe fn alloc_mem_1000_0ed4(
         u_var6 = 0xe;
         u_var7 = 0;
     }
-    invoke_error_handler_1000_1e61(unaff_cs, u_var6, u_var7);
+    invoke_error_handler_1000_1e61(ctx,unaff_cs, u_var6, u_var7);
     return 0;
 }
 
@@ -642,7 +649,7 @@ pub unsafe fn alloc_mem_1000_0fb8(param_1: i32, param_2: &mut  u16, uparam_3: i3
     let mut local_4: u16;
 
     if ((in_dx | in_ax) == 0) {
-        invoke_error_handler_1000_1e61(unaff_cs, 4, PTR_LOOP_1050_0000);
+        invoke_error_handler_1000_1e61(ctx,unaff_cs, 4, PTR_LOOP_1050_0000);
         if ((param_3 | param_2) != 0) {
             param_2[1] = 0;
             unsafe { *param_2 = 0 };
@@ -901,7 +908,7 @@ pub unsafe fn alloc_mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u
     let mut mem_buf: u16;
 
     if (ctx.g_u16_ptr_1050_5f2e | ctx.g_struct_ptr_1) == 0 {
-        u_var1 = struct_fn_1000_160a();
+        u_var1 = struct_fn_1000_160a(ctx);
         if (param_2 | u_var1) == 0 {
             return 0;
         }
@@ -915,11 +922,11 @@ pub unsafe fn alloc_mem_1000_16aa(param_1: i32, param_2: i32, param_3: u16) -> &
     let mut in_dx: u16;
 
     if (param_2 | param_1) == 0 {
-        pvVar1 = alloc_mem_1000_167a(param_3, in_dx);
+        pvVar1 = alloc_mem_1000_167a(ctx,param_3, in_dx);
         return pvVar1;
     }
     if param_3 == 0 {
-        error_check_1000_16ee(param_1, param_2);
+        error_check_1000_16ee(ctx,param_1, param_2);
         return 0;
     }
     pvVar1 = alloc_mem_1000_0ed4(0, param_3, 0, param_1, param_2);
@@ -997,7 +1004,7 @@ pub unsafe fn alloc_mem_1000_183c(param_1: i32, param_2: i32) -> u16 {
     }
     if (((ctx.g_u16_ptr_1050_5f2e | g_struct_ptr_1) == 0)
         && (
-            g_struct_ptr_1 = struct_fn_1000_160a(u_var1, 0),
+            g_struct_ptr_1 = struct_fn_1000_160a(ctx,u_var1, 0),
             ctx.g_u16_ptr_1050_5f2e = pu_var2,
             (pu_var2 | g_struct_ptr_1) == 0,
         ))
@@ -1016,7 +1023,7 @@ pub unsafe fn alloc_mem_1000_188e(param_1: i32, param_2: i32, param_3: i32) -> u
         return u_var1;
     }
     if (param_3 == 0) {
-        error_check_1000_18d2(param_1, param_2);
+        error_check_1000_18d2(ctx,param_1, param_2);
         return 0;
     }
     u_var1 = alloc_mem_1000_0ed4(0, param_3, 0, param_1, param_2);
@@ -1064,7 +1071,7 @@ pub unsafe fn alloc_mem_1000_3c51() {
     pc_var9 = s_version__d__d_1050_0012;
     pass1_fn_1000_25a8();
     pass1_fn_1000_2913();
-    pc_var9 = process_string_1000_28dc(pc_var9);
+    pc_var9 = process_string_1000_28dc(ctx,pc_var9);
     if (pc_var9 != 0x0) {
         i_var3 = 9;
         if (unsafe { *pc_var9 } == 'M') {
@@ -1163,9 +1170,9 @@ pub unsafe fn alloc_mem_func_1000_40af(param_1: i32, param_2: i32, uparam_3: i32
                 if ((SVar12 != 0) || (SVar12 == 0)) {
                     pc_var14 = s_version__d__d_1050_0012;
                     u_var13 = 0x12;
-                    pass1_fn_1000_25a8(0x12);
-                    pass1_fn_1000_2913(u_var13);
-                    pc_var14 = process_string_1000_28dc(pc_var14);
+                    pass1_fn_1000_25a8(ctx,0x12);
+                    pass1_fn_1000_2913(ctx,u_var13);
+                    pc_var14 = process_string_1000_28dc(ctx,pc_var14);
                     if (pc_var14 == 0x0) {}
                     // goto LAB_1000_28cb;
                     i_var7 = 9;
@@ -1260,7 +1267,7 @@ pub unsafe fn alloc_mem_func_1000_40af(param_1: i32, param_2: i32, uparam_3: i32
 
 pub unsafe fn alloc_mem_1008_909c(struct_param_1: &mut Struct210) {
     let pu_var1: &mut  u32;
-    let mut u_var2: i32;
+    let mut var2: &mut Struct89;
     // let mut i_var3: i32;
     let mut local_a: u32;
     let mut local_6: u16;
@@ -1272,11 +1279,11 @@ pub unsafe fn alloc_mem_1008_909c(struct_param_1: &mut Struct210) {
         local_AX_23 = (i_var3 + 0xe);
         ctx.g_u16_ptr_1050_5f2e = (i_var3 + 0x10);
     } else {
-        u_var2 = (struct_param_1.field_0x12);
-        pu_var1 = (struct_param_1.field_0x16);
+        var2 = &mut struct_param_1.field_0x12;
+        pu_var1 = &mut struct_param_1.field_0x16;
         let pu_var1_val = *pu_var1;
-        local_AX_23 = (u_var2 + pu_var1_val);
-        ctx.g_u16_ptr_1050_5f2e = ((struct_param_1 + 0x14) + (struct_param_1 + 0x18) + CARRY2(u_var2, pu_var1_val));
+        local_AX_23 = (var2 + pu_var1_val);
+        ctx.g_u16_ptr_1050_5f2e = ((struct_param_1 + 0x14) + (struct_param_1 + 0x18) + CARRY2(var2, pu_var1_val));
     }
     _local_6 = CONCAT22(ctx.g_u16_ptr_1050_5f2e, local_AX_23);
     if (i_var3 + 6) == 0 {
@@ -1285,10 +1292,10 @@ pub unsafe fn alloc_mem_1008_909c(struct_param_1: &mut Struct210) {
             struct_fn_1000_160a();
         } else {
         }
-        u_var2 = local_AX_23 << 2;
-        alloc_mem_1000_1708(&mut u_var2, 0, 1, g_struct_ptr_1, ctx.g_u16_ptr_1050_5f2e);
+        var2 = local_AX_23 << 2;
+        alloc_mem_1000_1708(var2, 0, 1, g_struct_ptr_1, ctx.g_u16_ptr_1050_5f2e);
     } else {
-        u_var2 = local_AX_23 * 4;
+        var2 = local_AX_23 * 4;
         // alloc_mem_1000_0ed4(
         //     1,
         //     u_var2,
@@ -1298,8 +1305,8 @@ pub unsafe fn alloc_mem_1008_909c(struct_param_1: &mut Struct210) {
         // );
         ctx.g_u16_ptr_1050_5f2e = ctx.dx_reg;
     }
-    local_a = CONCAT22(ctx.g_u16_ptr_1050_5f2e, u_var2 as u16);
-    if (ctx.g_u16_ptr_1050_5f2e | u_var2) != 0 {
+    local_a = CONCAT22(ctx.g_u16_ptr_1050_5f2e, var2 as u16);
+    if (ctx.g_u16_ptr_1050_5f2e | var2) != 0 {
         (i_var3 + 0x12) = _local_6;
         (i_var3 + 6) = local_a as i32;
     }

@@ -1,15 +1,31 @@
 use crate::typedefs::HFILE16;
+use crate::other_funcs::{modify_list_1008_3f62, zero_list_1008_3e38};
+use crate::pass::pass14_funcs::{pass1_fn_1008_612e, pass1_1008_3e94, pass1_1008_3f32, pass1_1008_3e76, pass1_1008_3ee2};
+use crate::util::{ZEXT24, CONCAT22, CONCAT12};
+use crate::pass::pass7_funcs::{pass1_1018_214e, pass1_1018_20ee};
+use crate::struct_ops::struct_ops_2::{process_struct_1008_4772, process_struct_1000_179c, process_struct_1010_1d48, process_struct_1010_20ba};
+use crate::pass::pass13_funcs::{pass1_1008_add2, pass1_1008_aed8, pass1_1008_ada2};
+use crate::err_ops::error_check_1000_17ce;
+use crate::structs::prog_structs_18::Struct205;
+use crate::structs::prog_structs_15::Struct204;
+use crate::structs::prog_structs_2::{Struct199, Struct7};
+use crate::structs::prog_structs_7::Struct44;
+use crate::structs::prog_structs_5::Struct1;
+use crate::pass::pass8_funcs::pass1_1010_1d80;
+use crate::structs::prog_structs_29::Struct375;
+use crate::mem_funcs::free_mem::free_mem_1000_093a;
+use crate::app_context::AppContext;
+use crate::structs::my_structs::Pass110309e9cInput;
 
-pub fn modify_list_1008_5b6e(ctx: &mut AppContext, param_1: &mut  u16, param_2: u8) -> &mut  u16 {
-    unsafe { *param_1 = ctx.s_1_1050_389a };
-    (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
-    if ((param_2 & 1) != 0) {
-        free_mem_1000_093a(param_1);
+pub unsafe fn modify_list_1008_5b6e(ctx: &mut AppContext, param_1: &mut  Pass110309e9cInput, param_2: u8) -> {
+    param_1.field_0x0 = ctx.s_1_1050_389a.clone();
+    param_1.field_0x2 = ctx.PTR_LOOP_1050_1008;
+    if (param_2 & 1) != 0 {
+        free_mem_1000_093a(ctx, param_1);
     }
-    return param_1;
 }
 
-pub fn modify_u16_list_1008_5bdc(in_struct_a: &mut  Struct375) {
+pub fn modify_u16_list_1008_5bdc(ctx: &mut AppContext, in_struct_a: &mut  Struct375) {
     let mut local_AX_17: u16;
     let mut local_DX_63: u16;
     let struct_a: &mut  Struct375;
@@ -34,7 +50,7 @@ pub fn modify_u16_list_1008_5bdc(in_struct_a: &mut  Struct375) {
     return;
 }
 
-pub fn modify_u16_list_1008_5c34(in_u16_list: &mut  u16) {
+pub unsafe fn modify_u16_list_1008_5c34(ctx: &mut AppContext, in_u16_list: &mut  u16) {
     unsafe { *in_u16_list = 0x5fc8 };
     (in_u16_list + 2) = &ctx.PTR_LOOP_1050_1008;
     ctx.g_struct_1050_02a0 = 0;
@@ -81,7 +97,7 @@ pub fn modify_list_1008_6d3e(param_1: u32, param_2: &mut  u16, param_3: &mut  u1
     return;
 }
 
-pub fn modify_list_1008_6d64(param_1: u32, param_2: &mut  u16) {
+pub unsafe fn modify_list_1008_6d64(param_1: u32, param_2: &mut  u16) {
     modify_list_1008_3f62(param_2, param_1);
     pass1_1008_3ee2(param_2, param_1 & 0xffff0000 | (param_1 + 6));
     return;
@@ -98,7 +114,7 @@ pub fn clear_list_elements_1008_80d2(in_u32: &mut  u32) -> &mut  u32 {
     return in_u32;
 }
 
-pub fn modify_list_1008_8168(in_list: &mut  u16) {
+pub fn modify_list_1008_8168(ctx: &mut AppContext, in_list: &mut  Struct7) {
     let mut local_es_4: u16;
 
   // local_es_4 = (in_list  >> 0x10);
@@ -111,16 +127,12 @@ pub fn modify_list_1008_8168(in_list: &mut  u16) {
     return;
 }
 
-pub fn modify_list_1008_87a2(param_1: &mut Struct44, param_2: u8) -> &mut Struct44 {
-    modify_list_1008_8168(param_1);
-    if ((param_2 & 1) != 0) {
-        error_check_1000_17ce(param_1);
+pub unsafe fn modify_list_1008_87a2(ctx: &mut AppContext, param_1: &mut Struct7, param_2: u8) {
+    modify_list_1008_8168(ctx, param_1);
+    if (param_2 & 1) != 0 {
+        error_check_1000_17ce(ctx, param_1);
     }
-    return param_1;
 }
-
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pass1_1008_87cc(
     param_1: &mut  Struct204,
@@ -172,16 +184,16 @@ pub fn pass1_1008_87cc(
   // local_es_6 = (param_1  >> 0x10);
     struct_204_1 = param_1;
     param_1 = ctx.s_1_1050_389a;
-    struct_204_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    struct_204_1.field_0x2 = ctx.PTR_LOOP_1050_1008;
     struct_204_1.field_0x4 = param_5;
     &struct_204_1.field_0x8 = 0;
     struct_204_1.field_0xc = param_3;
     struct_204_1.field_0xe = param_2;
     struct_204_1.field_0x10 = 0;
     struct_204_1.field_0x12 = 0;
-    zero_list_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&struct_204_1.field_0x1c)));
-    zero_list_1008_3e38((param_1 & 0xffff0000 | &struct_204_1.field_0x22));
-    zero_list_1008_3e38((param_1 & 0xffff0000 | &struct_204_1.field_0x28));
+    zero_list_1008_3e38(&struct_204_1.field_0x1c);
+    zero_list_1008_3e38(&struct_204_1.field_0x22);
+    zero_list_1008_3e38(&struct_204_1.field_0x28);
     struct_204_1.field_0x2e = param_4;
     struct_204_1.field_0x30 = 0xffff;
     struct_204_1.field_0x3a = 0;

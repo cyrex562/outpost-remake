@@ -1421,10 +1421,10 @@ pub struct Struct215 {
 }
 
 pub struct Struct44 {
-    pub offset_fld_2: u16,
-    pub base_fld_2: u16,
-    pub struct_fld_4: Struct659,
-    pub field_0x6: u8,
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: Struct659,
+    pub field_0x6: u32,
     pub field_0x7: u8,
     pub field_0x8: u8,
     pub field_0x9: u8,

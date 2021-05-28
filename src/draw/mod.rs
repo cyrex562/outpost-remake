@@ -1,5 +1,3 @@
-pub mod draw1;
-pub mod draw2;
 pub mod palette;
 pub mod misc;
 pub mod drawing_context;

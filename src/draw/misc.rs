@@ -2663,8 +2663,8 @@ pub unsafe fn draw_fn_1018_e4f2(
     //// Stack16 = (in_handle_ptr  >> 0x10);
     drawing_context::get_dc_1020_921c(ctx, param_1);
     param_1.u32_0x14 = 0;
-    param_1.u16_0x0 = 0xe5d0;
-    param_1.u16_0x2 = 0x1018;
+    param_1.field_0x0 = 0xe5d0;
+    param_1.field_0x2 = 0x1018;
     process_struct_1010_20ba(&mut ctx.g_struct_1050_0ed0, &local_char_ptr);
     // ctx.dx_reg = (ppVar2 >> 0x10);
     param_1.u32_0x14 = ctx._g_struct_371_1050_0ed0;
@@ -2707,7 +2707,7 @@ pub unsafe fn draw_fn_1018_ec74(
     zero_list_1008_3e38(CONCAT22(in_struct_1_hi, &in_struct_1.field_0x1e));
     &in_struct_1.field_0x24 = 0;
     CONCAT22(in_struct_1_hi, in_struct_1) = 0x1cc;
-    in_struct_1.u16_0x2 = 0x1020;
+    in_struct_1.field_0x2 = 0x1020;
     pp_var7 = process_struct_1010_20ba(ctx.g_struct_1050_0ed0, CONCAT22(unaff_si, 0x28));
   // u_var5 = (pp_var7  >> 0x10);
     &in_struct_1.u32_0x14 = pp_var7;

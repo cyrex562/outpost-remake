@@ -35,7 +35,7 @@ use crate::structs::prog_structs_17::{Struct414, Struct424, Struct534};
 use crate::structs::prog_structs_18::{Struct401, Struct427};
 use crate::structs::prog_structs_2::{Struct117, Struct199, Struct318, Struct7};
 use crate::structs::prog_structs_20::{Struct30, Struct307, Struct309, Struct386, Struct388};
-use crate::structs::prog_structs_21::Struct373;
+use crate::structs::prog_structs_21::Struct372;
 use crate::structs::prog_structs_22::Struct443;
 use crate::structs::prog_structs_24::{Struct2111, Struct384, Struct397};
 use crate::structs::prog_structs_25::{Struct312, Struct402, Struct445, Struct64, Struct211};
@@ -2049,19 +2049,14 @@ pub unsafe fn pass1_1010_209e(param_1: &mut  Struct372, param_2: u16) {
 }
 
 pub unsafe fn process_struct_1010_20ba(
-    in_struct_372_ptr: &mut Struct372,
-    in_string_1: &String,
-) {
-    let local_Struct64_ptr: &mut  Struct64;
-    let pu_var1: &mut  u16;
-    let paVar2: &mut  Struct384;
-    let struct_a: &mut  Struct475;
-    
-    
-    let mut u_var3: i32;
-    
-    
-    
+    param_1: &mut Struct372,
+    param_2: &String,
+) -> u32 {
+    let var_1: &mut  Struct64;
+    let var_2: &mut  u16;
+    let var_3: &mut  Struct384;
+    let var_4: &mut  Struct7;
+    let mut var_5: i32;
     let mut extraout_dx_04: i32;
     let mut extraout_dx_05: i32;
     let mut extraout_dx_06: i32;
@@ -2090,440 +2085,441 @@ pub unsafe fn process_struct_1010_20ba(
     let mut extraout_dx_26: i32;
     let mut extraout_dx_27: i32;
     let mut extraout_dx_28: i32;
-    let struct_373_ptr: &mut  Struct373;
+    let var_6: &mut Struct372;
     let mut local_es_20: u16;
     let mut local_CS_1470: u16;
     let paVar6: &mut  Struct375;
-    let mut u_var7: u32;
+    let mut var7: u32;
     let mut local_e: u16;
     let mut local_c: u16;
     let mut local_8: u16;
     let mut local_6: u32;
     let fn_ptr_1: fn();
 
-    pass1_1010_2816(in_struct_372_ptr);
-    local_Struct64_ptr = (in_string_1 * 4);
+    pass1_1010_2816(param_1);
+    var_1 = (param_2 * 4);
   // local_es_20 = (in_struct_372_ptr  >> 0x10);
-    struct_373_ptr = in_struct_372_ptr;
-    local_6 = (struct_373_ptr + &(local_Struct64_ptr).field_0x0);
-    if (local_6 != 0x0) {
+    var_6 = param_1;
+    local_6 = (var_6 + &(var_1).field_0x0);
+    if local_6 != 0x0 {
         return local_6;
     }
-    match (in_string_1) {
+    match param_2 {
         1 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x18, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {
+            paVar4 = var_4;
+            process_struct_1000_179c(ctx, 0x18, var_4);
+            if (paVar4 | var_1) == 0 {
                 // LAB_1010_2126:
-                local_Struct64_ptr = 0x0;
-                u_var3 = 0;
+                var_1 = 0x0;
+                var_5 = 0;
             } else {
-                process_struct_1010_3b7a(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-                u_var3 = extraout_dx_14;
+                process_struct_1010_3b7a(var_1, CONCAT22(param_2, paVar4));
+                var_5 = extraout_dx_14;
             }
         }
         2 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x84, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x84, var_4);
+            if (paVar4 | var_1) == 0 {}
             // goto LAB_1010_2126;
-            get_private_profile_str_1010_5404(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_11
+            get_private_profile_str_1010_5404(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_11
         }
         3 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x53c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x53c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_a1d8(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_13
+            process_struct_1010_a1d8(var_1, paVar4, param_2);
+            var_5 = extraout_dx_13
         }
         4 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x18a, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x18a, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_2b10(CONCAT22(paVar4, local_Struct64_ptr), in_string_1);
-            u_var3 = extraout_dx_12
+            pass1_1018_2b10(CONCAT22(paVar4, var_1), param_2);
+            var_5 = extraout_dx_12
         }
         5 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x14, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x14, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pu_var1 = pass1_1008_eabc(local_Struct64_ptr, paVar4, in_string_1);
+            var_2 = pass1_1008_eabc(var_1, paVar4, param_2);
           // u_var3 = (pu_var1  >> 0x10);
-            local_Struct64_ptr = pu_var1
+            var_1 = var_2
         }
         6 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x58, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x58, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_18b8(CONCAT22(paVar4, local_Struct64_ptr), in_string_1);
-            u_var3 = extraout_dx_08
+            pass1_1018_18b8(CONCAT22(paVar4, var_1), param_2);
+            var_5 = extraout_dx_08
         }
         7 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xe, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xe, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1010_3d82(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_07
+            pass1_1010_3d82(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_07
         }
         8 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x20, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x20, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_95aa(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_05
+            process_struct_1010_95aa(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_05
         }
         9 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x26, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x26, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            modify_struct_1010_6326(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_06
+            modify_struct_1010_6326(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_06
         }
         10 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = pass1_1010_0eac(local_Struct64_ptr, paVar4, in_string_1);
+            var7 = pass1_1010_0eac(var_1, paVar4, param_2);
           // u_var3 = (u_var7  >> 0x10);
-            local_Struct64_ptr = u_var7
+            var_1 = var7
         }
         0xb => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = pass1_1008_aefe(local_Struct64_ptr, paVar4, in_string_1);
+            var7 = pass1_1008_aefe(var_1, paVar4, param_2);
           // u_var3 = (u_var7  >> 0x10);
-            local_Struct64_ptr = u_var7
+            var_1 = var7
         }
         0xc | 0xd | 0xe | 0xf | 0x10 | 0x11 | 0x12 | 0x13 | 0x14 | 0x15 | 0x16 | 0x17 | 0x18
         | 0x19 | 0x1a | 0x1b | 0x1c | 0x1d | 0x1e | 0x1f | 0x20 | 0x21 | 0x22 | 0x23 | 0x24 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xaa, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xaa, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1018_0570(CONCAT22(paVar4, local_Struct64_ptr), in_string_1);
-            u_var3 = extraout_dx_09
+            process_struct_1018_0570(CONCAT22(paVar4, var_1), param_2);
+            var_5 = extraout_dx_09
         }
         0x25 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_4aaa(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_18
+            pass1_1018_4aaa(var_1, paVar4, param_2);
+            var_5 = extraout_dx_18
         }
         0x26 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1008_d99e(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_19
+            pass1_1008_d99e(var_1, paVar4, param_2);
+            var_5 = extraout_dx_19
         }
         0x27 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x58, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x58, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1008_9d36(local_Struct64_ptr, paVar4, in_string_1)
+            process_struct_1008_9d36(var_1, paVar4, param_2)
         }
         0x28 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x2c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x2c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1010_28e6(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_16
+            pass1_1010_28e6(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_16
         }
         0x29 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x72, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x72, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_229c(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_17
+            pass1_1018_229c(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_17
         }
         0x2a => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1010_503e(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_20
+            pass1_1010_503e(var_1, paVar4, param_2);
+            var_5 = extraout_dx_20
         }
         0x2b => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1a, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1a, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_02e0(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_04
+            process_struct_1010_02e0(var_1, paVar4, param_2);
+            var_5 = extraout_dx_04
         }
         0x2c => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x10, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x10, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1008_eb2a(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_28
+            pass1_1008_eb2a(var_1, paVar4, param_2);
+            var_5 = extraout_dx_28
         }
         0x2d => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x80, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x80, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_3e3c(CONCAT22(paVar4, local_Struct64_ptr), in_string_1);
-            u_var3 = extraout_dx_10
+            process_struct_1010_3e3c(CONCAT22(paVar4, var_1), param_2);
+            var_5 = extraout_dx_10
         }
         0x2e => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x806, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x806, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = pass1_1018_1ff4(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            local_Struct64_ptr = u_var7
+            var7 = pass1_1018_1ff4(var_1, CONCAT22(param_2, paVar4));
+            var_1 = var7
         }
         0x2f => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x58, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x58, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1010_e9e4(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_21
+            pass1_1010_e9e4(var_1, paVar4, param_2);
+            var_5 = extraout_dx_21
         }
         0x30 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xe, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xe, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            paVar6 = pass1_1010_3702(local_Struct64_ptr, paVar4, in_string_1);
+            paVar6 = pass1_1010_3702(var_1, paVar4, param_2);
           // u_var3 = (paVar6  >> 0x10);
-            local_Struct64_ptr = paVar6
+            var_1 = paVar6
         }
         0x31 => {
             local_CS_1470 = 0x1000;
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x60, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {
+            paVar4 = var_4;
+            process_struct_1000_179c(0x60, var_4);
+            if ((paVar4 | var_1) == 0) {
                 local_CS_1470 = 0x1000;
-                local_Struct64_ptr = 0x0;
-                u_var3 = 0;
+                var_1 = 0x0;
+                var_5 = 0;
             } else {
-                u_var7 = process_struct_1010_9298(local_Struct64_ptr, paVar4, in_string_1);
+                var7 = process_struct_1010_9298(var_1, paVar4, param_2);
               // u_var3 = (u_var7  >> 0x10);
-                local_Struct64_ptr = u_var7;
+                var_1 = var7;
             }
         }
         // goto LAB_1010_2683;
         0x32 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x26, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x26, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_6abc(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_22
+            process_struct_1010_6abc(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_22
         }
         0x33 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x72, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {
+            paVar4 = var_4;
+            process_struct_1000_179c(0x72, var_4);
+            if ((paVar4 | var_1) == 0) {
                 // LAB_1010_25b8:
-                local_Struct64_ptr = 0x0;
+                var_1 = 0x0;
                 u_var5 = 0;
             } else {
-                modify_struct_1010_195e(local_Struct64_ptr, paVar4, in_string_1);
+                modify_struct_1010_195e(var_1, paVar4, param_2);
                 u_var5 = local_DX_1240;
             }
         }
         // goto LAB_1010_25bb;
         0x34 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x72, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x72, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_25b8;
-            pass1_1010_1b6e(local_Struct64_ptr, paVar4, in_string_1);
+            pass1_1010_1b6e(var_1, paVar4, param_2);
             u_var5 = extraout_dx_23;
             // LAB_1010_25bb:
-            local_6 = CONCAT22(u_var5, local_Struct64_ptr);
-            pass1_1010_1146(CONCAT22(u_var5, local_Struct64_ptr), 0);
+            local_6 = CONCAT22(u_var5, var_1);
+            pass1_1010_1146(CONCAT22(u_var5, var_1), 0);
         }
         // goto switchD_1010_2765_caseD_38;
         0x35 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x14a, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x14a, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = modify_struct_1010_6700(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            local_Struct64_ptr = u_var7
+            var7 = modify_struct_1010_6700(var_1, CONCAT22(param_2, paVar4));
+            var_1 = var7
         }
         0x36 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x10, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x10, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1008_d790(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_24
+            pass1_1008_d790(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_24
         }
         0x37 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x420, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x420, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1008_9fd2(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_25
+            process_struct_1008_9fd2(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_25
         }
         // default:
         // goto switchD_1010_2765_caseD_38;
         0x39 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x36, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x36, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            process_struct_1010_4a8a(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = extraout_dx_26
+            process_struct_1010_4a8a(var_1, paVar4, param_2);
+            var_5 = extraout_dx_26
         }
         0x3a => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xc, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xc, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pu_var1 = pass1_1008_d72e(local_Struct64_ptr, paVar4, in_string_1);
+            var_2 = pass1_1008_d72e(var_1, paVar4, param_2);
           // u_var3 = (pu_var1  >> 0x10);
-            local_Struct64_ptr = pu_var1
+            var_1 = var_2
         }
         0x3b => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x22, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x22, var_4);
+            if (paVar4 | var_1) == 0 {}
             // goto LAB_1010_2126;
-            process_struct_1008_dd4e(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = ctx.dx_reg
+            process_struct_1008_dd4e(var_1, CONCAT22(param_2, paVar4));
+            var_5 = ctx.dx_reg
         }
         0x3c => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x146, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x146, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_331c(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = ctx.dx_reg
+            pass1_1018_331c(var_1, CONCAT22(param_2, paVar4));
+            var_5 = ctx.dx_reg
         }
         0x3d => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xe, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xe, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = pass20_funcs::pass1_1010_8c32(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            local_Struct64_ptr = u_var7
+            var7 = pass20_funcs::pass1_1010_8c32(var_1, CONCAT22(param_2, paVar4));
+            var_1 = var7
         }
         0x3e => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x18, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x18, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1018_5070(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = ctx.dx_reg
+            pass1_1018_5070(var_1, CONCAT22(param_2, paVar4));
+            var_5 = ctx.dx_reg
         }
         0x3f => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x12, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x12, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1008_c72a(local_Struct64_ptr, paVar4, in_string_1);
-            u_var3 = ctx.dx_reg
+            pass1_1008_c72a(var_1, paVar4, param_2);
+            var_5 = ctx.dx_reg
         }
         0x40 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x24, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x24, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1008_af94(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = ctx.dx_reg
+            pass1_1008_af94(var_1, CONCAT22(param_2, paVar4));
+            var_5 = ctx.dx_reg
         }
         0x41 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x60, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x60, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2680;
             local_CS_1470 = &ctx.PTR_LOOP_1050_1008;
-            u_var7 = pass1_1008_ecb2(local_Struct64_ptr, paVar4);
+            var7 = pass1_1008_ecb2(var_1, paVar4);
           // u_var3 = (u_var7  >> 0x10);
-            local_Struct64_ptr = u_var7;
+            var_1 = var7;
             // LAB_1010_2683:
-            (struct_373_ptr + in_string_1 * 4) = local_Struct64_ptr;
-            (struct_373_ptr + in_string_1 * 4 + 2) = u_var3;
-            fn_ptr_1 = (local_Struct64_ptr + 0x10);
-            (**fn_ptr_1)(local_CS_1470, local_Struct64_ptr, u_var3)
+            (var_6 + param_2 * 4) = var_1;
+            (var_6 + param_2 * 4 + 2) = var_5;
+            fn_ptr_1 = (var_1 + 0x10);
+            (**fn_ptr_1)(local_CS_1470, var_1, var_5)
         }
         0x42 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xc, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xc, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pu_var1 = pass1_1008_ec10(local_Struct64_ptr, paVar4, in_string_1);
+            var_2 = pass1_1008_ec10(var_1, paVar4, param_2);
           // u_var3 = (pu_var1  >> 0x10);
-            local_Struct64_ptr = pu_var1
+            var_1 = var_2
         }
         0x43 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x12, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x12, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            paVar2 = process_struct_1010_2bfc(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            local_Struct64_ptr = paVar2
+            var_3 = process_struct_1010_2bfc(var_1, CONCAT22(param_2, paVar4));
+            var_1 = var_3
         }
         0x45 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xe, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xe, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            u_var7 = pass1_1010_0000(local_Struct64_ptr, paVar4);
+            var7 = pass1_1010_0000(var_1, paVar4);
           // u_var3 = (u_var7  >> 0x10);
-            local_Struct64_ptr = u_var7
+            var_1 = var7
         }
         0x46 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1a, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1a, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            pass1_1010_50b2(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_27
+            pass1_1010_50b2(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_27
         }
         0x47 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0xe, struct_a);
-            u_var3 = paVar4 | local_Struct64_ptr;
-            if (u_var3 == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0xe, var_4);
+            var_5 = paVar4 | var_1;
+            if (var_5 == 0) {}
             // goto LAB_1010_2126;
-            pu_var1 = pass1_1018_56e6(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            local_Struct64_ptr = pu_var1
+            var_2 = pass1_1018_56e6(var_1, CONCAT22(param_2, paVar4));
+            var_1 = var_2
         }
         0x48 => {
-            paVar4 = struct_a;
-            process_struct_1000_179c(0x1c, struct_a);
-            if ((paVar4 | local_Struct64_ptr) == 0) {}
+            paVar4 = var_4;
+            process_struct_1000_179c(0x1c, var_4);
+            if ((paVar4 | var_1) == 0) {}
             // goto LAB_1010_2126;
-            gui_get_info_func_1008_da12(local_Struct64_ptr, CONCAT22(in_string_1, paVar4));
-            u_var3 = extraout_dx_15;
+            gui_get_info_func_1008_da12(var_1, CONCAT22(param_2, paVar4));
+            var_5 = extraout_dx_15;
         }
+        _ => {}
     }
-    local_6 = CONCAT22(u_var3, local_Struct64_ptr);
+    local_6 = CONCAT22(var_5, var_1);
     // switchD_1010_2765_caseD_38:
-    (struct_373_ptr + in_string_1 * 4) = local_6;
+    (var_6 + param_2 * 4) = local_6;
     return local_6;
 }
 
@@ -2537,7 +2533,7 @@ pub unsafe fn pass1_1010_2816(in_struct: &mut  Struct372) {
 
   // u_var5 = (in_struct  >> 0x10);
     local_bx_5 = in_struct;
-    if (local_bx_5.field_0x124 != 0) {
+    if local_bx_5.field_0x124 != 0 {
         i_var4 = local_bx_5.field_0x124 * 4;
         pu_var1 = (&local_bx_5.field_0x0 + i_var4);
         u_var2 = (&local_bx_5.field_0x2 + i_var4);

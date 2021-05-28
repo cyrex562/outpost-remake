@@ -64,7 +64,7 @@ use crate::ui_ops::window::{win_cleanup_1008_0618, win_cleanup_1040_d1bc};
 use crate::util::{CARRY1, CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT31, POPCOUNT, SBORROW1, SBORROW2, SUB21, SUB42, ZEXT24};
 use crate::winapi::{GetStockObject16, LoadCursor16, swi};
 
-pub unsafe fn pass1_fn_1000_0c32(param_1: u16, struct_param_2: &mut Struct126, param_3: u16) -> u16 {
+pub unsafe fn pass1_fn_1000_0c32(param_1: u16, param_2: Option<&mut Struct126>, param_3: u16) -> u16 {
     let pu_var1: &mut  u32;
     let paVar2: &mut  Struct145;
     let pb_var3: Vec<u8>;

@@ -887,7 +887,7 @@ pub fn pass1_1028_4530(param_1: &mut Struct44) {
   // u_var4 = (param_1  >> 0x10);
     local_struct_1 = param_1;
     param_1.ptr_a_lo = 0x4836;
-    local_struct_1.base_fld_2 = &PTR_LOOP_1050_1028;
+    local_struct_1.field_0x2 = &PTR_LOOP_1050_1028;
     pu_var1 = local_struct_1.field_0x20;
     u_var2 = &local_struct_1.field_0x22;
     if ((u_var2 | pu_var1) != 0) {
@@ -2096,7 +2096,7 @@ pub fn pass1_1028_388e(param_1: &mut Struct44) {
   // u_var2 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     param_1.ptr_a_lo = 0x3e2c;
-    local_bx_4.base_fld_2 = &PTR_LOOP_1050_1028;
+    local_bx_4.field_0x2 = &PTR_LOOP_1050_1028;
     in_struct_1 = &local_bx_4.field_0x28;
     u_var1 = &local_bx_4.field_0x2a;
     if ((u_var1 | in_struct_1) != 0) {
@@ -3192,7 +3192,7 @@ pub fn pass1_1028_2042(param_1: &mut Struct44) {
   // local_es_4 = (param_1  >> 0x10);
     local_bx_4 = param_1;
     param_1.ptr_a_lo = 0x2572;
-    local_bx_4.base_fld_2 = &PTR_LOOP_1050_1028;
+    local_bx_4.field_0x2 = &PTR_LOOP_1050_1028;
     temp_5f32db2c2f = &local_bx_4.field_0x20;
     (temp_5f32db2c2f + 10) = 1;
     pu_var1 = local_bx_4.field_0x20;

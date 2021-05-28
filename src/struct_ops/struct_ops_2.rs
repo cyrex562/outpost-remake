@@ -538,11 +538,11 @@ pub fn process_struct_1008_3ab8(in_Struct180: &mut  Struct180) -> &mut  Struct18
     return in_Struct180;
 }
 
-pub fn set_struct_1008_4016(param_1: &mut  Struct102) {
+pub fn set_struct_1008_4016(ctx: &mut AppContext, param_1: &mut  Struct102) {
     let local_bx_12: &mut  Struct102;
     let mut in_stack_00000006: u16;
 
-    set_struct_1008_56b4(param_1);
+    set_struct_1008_56b4(ctx, param_1);
     param_1.field_0x6 = 0;
     param_1.field_0xa = 0;
     param_1.field_0xe = 0;
@@ -550,92 +550,85 @@ pub fn set_struct_1008_4016(param_1: &mut  Struct102) {
     param_1.field_0x14 = 0;
     param_1.field_0x18 = 0;
     param_1.field_0x1c = 0;
-    *_param_1 = &PTR_LOOP_1050_48de;
-    param_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    _param_1 = ctx.PTR_LOOP_1050_48de;
+    param_1.field_0x2 = ctx.PTR_LOOP_1050_1008;
     return;
 }
 
-pub fn process_struct_1008_41bc(param_1: &mut  Struct182) {
-    let pu_var1: &mut  u32;
-    let mut u_var2: i32;
-    let local_Struct182: &mut  Struct182;
-    let mut local_es_5: u16;
-    let temp_862134eb919: &mut  u32;
-    let mut temp_5f500f05be: u32;
-    // fn_ptr_1: &mut  Vec<u8>;
+pub unsafe fn process_struct_1008_41bc(ctx: &mut AppContext, param_1: &mut  Struct44) {
+    let var1: u32;
+    let mut var2: i32;
+    let var3: Struct182;
+    let mut var4: u16;
+    let var5: u32;
+    let mut var6: u32;
 
-  // local_es_5 = (param_1  >> 0x10);
-    local_Struct182 = param_1;
-    param_1 = &PTR_LOOP_1050_48de;
-    local_Struct182.field_0x2 = &ctx.PTR_LOOP_1050_1008;
-    pu_var1 = local_Struct182.field_0xa;
-    u_var2 = local_Struct182.field_0xc;
-    if ((u_var2 | pu_var1) != 0) {
-        unsafe {
-            fn_ptr_1 = *pu_var1;
-            (**fn_ptr_1)();
-        }
+    param_1.field_0x0 = ctx.PTR_LOOP_1050_48de;
+    param_1.field_0x2 = ctx.PTR_LOOP_1050_1008;
+    var1 = param_1.field_0xa;
+    var2 = param_1.field_0xc;
+    if (var2 | var1) != 0 {
+        fn_ptr_1 = *var1;
+        (**fn_ptr_1)();
     }
-    if (local_Struct182.field_0x6 != 0) {
-        temp_5f500f05be = local_Struct182.field_0x6;
-        error_check_1000_0dc6(temp_5f500f05be, (temp_5f500f05be >> 0x10));
+    if param_1.field_0x6 != 0 {
+        var6 = param_1.field_0x6;
+        error_check_1000_0dc6(ctx, var6);
     }
     param_1 = ctx.s_1_1050_389a;
-    local_Struct182.field_0x2 = &ctx.PTR_LOOP_1050_1008;
+    param_1.field_0x2 = ctx.PTR_LOOP_1050_1008;
     return;
 }
 
-pub fn process_struct_1008_4544(param_1: &mut  Struct104) {
-    let mut bVar1: bool;
-    let local_Struct104: &mut  Struct186;
-    let mut u_var2: i32;
-    let mut local_8: u16;
+pub fn process_struct_1008_4544(param_1: &mut  Struct103) {
+    let mut var1: bool;
+    let var3: &mut  Struct104;
+    let mut var2: i32;
 
-  // u_var2 = (param_1  >> 0x10);
-    local_Struct104 = param_1;
-    if (local_Struct104.field_0x6 == 0) {
-        process_struct_1008_47cc((param_1 & 0xffff | u_var2 << 0x10));
+    var3 = param_1;
+    if var3.field_0x6 == 0 {
+        process_struct_1008_47cc(param_1);
     }
-    if (local_Struct104.field_0x6 == 0) {
-        bVar1 = false;
+    if var3.field_0x6 == 0 {
+        var1 = false;
     } else {
-        if (local_Struct104.field_0xa == 0) {
-            process_struct_1008_4834((param_1 & 0xffff | u_var2 << 0x10));
+        if var3.field_0xa == 0 {
+            process_struct_1008_4834(param_1);
         }
-        bVar1 = true;
+        var1 = true;
     }
-    if (!bVar1) {
+    if !var1 {
         return;
     }
     return;
 }
 
-pub fn process_struct_1008_4772(in_struct_104_ptr: &mut  Struct104) {
-    let mut bVar1: bool;
-    let local_bx_4: &mut  Struct104;
-    let mut u_var2: i32;
-    let mut local_4: u16;
+pub fn process_struct_1008_4772(param_1: &mut  Struct103) -> u32 {
+    let mut var1: bool;
+    // let var3: &mut  Struct104;
+    let mut var2: i32;
+    let mut var4: u16;
 
   // u_var2 = (in_struct_104_ptr  >> 0x10);
-    local_bx_4 = in_struct_104_ptr;
-    if (&local_bx_4.a == 0) {
-        process_struct_1008_47cc((in_struct_104_ptr & 0xffff | u_var2 << 0x10));
+  //   var3 = param_1;
+    if &param_1.a == 0 {
+        process_struct_1008_47cc(param_1);
     }
-    if (&local_bx_4.a == 0) {
-        bVar1 = false;
+    if &param_1.a == 0 {
+        var1 = false;
     } else {
-        if (&local_bx_4.field_0xa == 0) {
-            process_struct_1008_4834((in_struct_104_ptr & 0xffff | u_var2 << 0x10));
+        if &param_1.field_0xa == 0 {
+            process_struct_1008_4834(param_1);
         }
-        bVar1 = true;
+        var1 = true;
     }
-    if (!bVar1) {
+    if !var1 {
         return 0;
     }
-    return CONCAT22(local_bx_4.c, local_bx_4.b);
+    return CONCAT22(param_1.c, param_1.b);
 }
 
-pub fn process_struct_1008_47cc(in_Struct104: &mut  Struct103) -> u8 {
+pub fn process_struct_1008_47cc(param_1: &mut  Struct103) -> u8 {
     let mut u_var1: u32;
     let mut u_var2: u32;
     let local_AX_23: &mut  Struct106;
@@ -648,7 +641,7 @@ pub fn process_struct_1008_47cc(in_Struct104: &mut  Struct103) -> u8 {
     let temp_5f4c330c45: &mut  Struct107;
 
   // u_var3 = (in_Struct104  >> 0x10);
-    local_Struct104 = in_Struct104;
+    local_Struct104 = param_1;
     if (&local_Struct104.a != 0) {
         u_var1 = &local_Struct104.a;
         temp_5f4c330c45 = &local_Struct104.field_0x8;
@@ -814,7 +807,7 @@ pub unsafe fn process_struct_1008_50c2(
     return;
 }
 
-pub fn set_struct_1008_56b4(ctx: &mut AppContext, param_1: &mut  Struct103) -> &mut  Struct103 {
+pub fn set_struct_1008_56b4(ctx: &mut AppContext, param_1: &mut  Struct102) -> &mut  Struct103 {
     let local_bx_4: &mut  Struct103;
     let mut in_stack_00000006: u16;
 

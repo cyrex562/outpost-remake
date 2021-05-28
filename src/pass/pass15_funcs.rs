@@ -4018,7 +4018,7 @@ pub fn pass1_1020_8f74(param_1: &mut Struct44) {
   // local_es_5 = (param_1  >> 0x10);
     local_bx_5 = param_1;
     param_1.ptr_a_lo = 0x9204;
-    local_bx_5.base_fld_2 = 0x1020;
+    local_bx_5.field_0x2 = 0x1020;
     pu_var1 = local_bx_5.field_0xb4;
     u_var2 = local_bx_5.field_0xb6;
     if ((u_var2 | pu_var1) != 0) {

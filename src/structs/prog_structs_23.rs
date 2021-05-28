@@ -1,5 +1,6 @@
 use crate::structs::prog_structs_2::Struct199;
 use crate::typedefs::{HPALETTE16, HDC16, HWND16, HMENU16, HANDLE16};
+use crate::structs::prog_structs_25::Struct89;
 
 pub struct Struct726 {
     pub field_0x0: u8,
@@ -2812,7 +2813,7 @@ pub struct Struct210 {
     pub field_0x6: u32,
     pub field_0xa: u32,
     pub field_0xe: u32,
-    pub field_0x12: u32,
+    pub field_0x12: Struct89,
     pub field_0x16: u32,
     pub field_0x1a: u16,
 }

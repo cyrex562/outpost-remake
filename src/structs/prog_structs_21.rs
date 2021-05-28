@@ -1157,7 +1157,7 @@ pub struct Struct967 {
     pub field_0x10: u16,
 }
 
-pub struct Struct373 {}
+pub struct Struct372 {}
 
 pub struct Struct1078 {
     pub field_0x0: u8,
