@@ -434,12 +434,12 @@ pub fn LoadCursor16(hinstance: HINSTANCE16, name: &String) -> HCURSOR16 {
     unimplemented!()
 }
 
-// HMENWINAPI: u16 LoadMenu16( HINSTANCE16 instance, LPCSTR name )
+// HMENU16 WINAPI: u16 LoadMenu16( HINSTANCE16 instance, LPCSTR name )
 pub fn LoadMenu16(instance: HINSTANCE16, name: &String) -> HMENU16 {
     unimplemented!()
 }
 
-// HMENWINAPI: u16 GetSubMenu16( HMENhMenu: u16, INT16 nPos )
+// HMENU16 WINAPI: u16 GetSubMenu16( HMENhMenu: u16, INT16 nPos )
 pub fn GetSubMenu16(hmenu: HMENU16, npos: i16) -> HMENU16 {
     unimplemented!()
 }
