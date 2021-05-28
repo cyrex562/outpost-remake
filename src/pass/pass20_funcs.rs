@@ -4033,7 +4033,7 @@ pub unsafe fn pass1_1018_04de(param_1: u32, param_2: u32) {
     return;
 }
 
-pub unsafe fn pass1_1018_04f2(param_1: u32) {
+pub unsafe fn pass1_1018_04f2(param_1: &mut Struct7) {
     let pu_var1: &mut  u32;
     let mut u_var2: i32;
     let ppc_var3: fn();

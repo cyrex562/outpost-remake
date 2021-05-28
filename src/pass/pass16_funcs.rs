@@ -1,4 +1,39 @@
 use crate::pass::pass4_funcs;
+use crate::util::{CONCAT22, CONCAT31, CONCAT11, CARRY2, LOCK, CARRY1, SBORROW2, CONCAT13, SUB42, CONCAT12, ZEXT24};
+use crate::pass::pass17_funcs::{pass1_1030_835a, pass1_1030_5b1c, pass1_1030_5b3e, pass1_1030_73a8, pass1_1030_627e, pass1_1030_7d1c, pass1_1030_6fa0, pass1_1030_64ce, pass1_1030_2a2c, pass1_1030_5b5c, pass1_1030_7ddc, pass1_1030_1d7c, pass1_1030_34da, pass1_1030_1d58, pass1_1030_35a4, pass1_1030_355c, pass1_1030_7e5a, pass1_1030_73ee, pass1_1030_61fe, pass1_1030_38b8, pass1_1030_3534, pass1_1030_38f2};
+use crate::string_ops::misc::{pass1_1028_87f0, string_fn_1000_3f9c, pass1_1030_e4fa};
+use crate::pass::pass14_funcs::{pass1_1008_3eb4, pass1_1008_5b12, pass1_1008_5784, pass1_1008_3e94, pass1_1008_3e54, pass1_fn_1008_612e};
+use crate::structs::prog_structs_29::{Struct763, Struct798, Struct797, Struct796, Struct795, Struct794, Struct805, Struct808};
+use crate::err_ops::error_check_1000_17ce;
+use crate::structs::prog_structs_7::Struct44;
+use crate::structs::prog_structs_16::{Struct493, Struct809};
+use crate::app_context::AppContext;
+use crate::pass::pass20_funcs::{pass1_1010_988c, pass1_1010_ed3e, pass1_1018_0196, pass1_1010_ed22, pass1_1010_96d0, pass1_1010_9f72};
+use crate::pass::pass12_funcs::{pass1_1008_c6ae, pass1_1008_c6fa};
+use crate::structs::prog_structs_26::Struct865;
+use crate::struct_ops::struct_ops_2::{process_struct_1008_574a, process_struct_1000_179c};
+use crate::structs::prog_structs_2::{Struct199, Struct799};
+use crate::structs::prog_structs_28::{Struct781, Struct784, Struct793};
+use crate::structs::prog_structs_9::{Struct790, Struct800};
+use crate::structs::prog_structs_19::Struct500;
+use crate::structs::prog_structs_10::Struct788;
+use crate::structs::prog_structs_17::{Struct787, Struct1115};
+use crate::pass::pass6_funcs::{pass1_1038_4d6e, pass1_1038_3698, pass1_1038_4d3c, pass1_1038_43cc, pass1_1038_4f54, pass1_1038_4e78, pass1_1038_4d0e, pass1_1038_4900, pass1_1038_42cc};
+use crate::sys_ops::win::win_fn_1038_362e;
+use crate::structs::prog_structs_12::Struct791;
+use crate::pass::pass2_funcs::pass1_1010_ebf8;
+use crate::pass::pass8_funcs::pass1_1010_043a;
+use crate::pass::pass15_funcs::{pass1_1020_a54c, pass1_1020_a43e, pass1_1020_a49a, pass1_1020_a80e};
+use crate::other_funcs::zero_list_1008_3e38;
+use crate::structs::prog_structs_25::{Struct1106, Struct803};
+use crate::pass::pass5_funcs::{pass1_1030_bd74, pass1_1030_bcae};
+use crate::winapi::PostMessage16;
+use crate::sys_ops::win_msg::post_win_msg_1008_a0e4;
+use crate::structs::prog_structs_1::Struct393;
+use crate::structs::prog_structs_21::Struct802;
+use crate::structs::prog_structs_11::{Struct801, Struct814};
+use crate::structs::prog_structs_27::{Struct812, Struct813, Struct811, Struct818};
+use crate::structs::prog_structs_23::Struct815;
 
 pub fn pass1_1028_a61e(param_1: u16, param_2: u16, param_1_00: u32, param_2_00: u32) {
     let mut in_ax: i32;
@@ -3856,15 +3891,15 @@ pub fn pass1_1028_4f62(param_1: u32) -> bool {
     let mut local_4: u16;
 
     u_var1 = pass4_funcs::pass1_1028_b58e(param_1);
-    if ((CONCAT11(extraout_ah, u_var1) + 0x10) == 0) {
+    if (CONCAT11(extraout_ah, u_var1) + 0x10) == 0 {
         return 1;
     }
     return 0;
 }
 
-pub fn pass1_1028_4faa(param_1: u32) {
+pub fn pass1_1028_4faa(ctx: &mut AppContext, param_1: &mut Struct44) {
     let u_var1: u8;
-    let BVar2: bool;
+    let b_var2: bool;
     let extraout_ah: u8;
     let paVar3: &mut  Struct493;
     let mut in_dx: u16;
@@ -3884,8 +3919,8 @@ pub fn pass1_1028_4faa(param_1: u32) {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    BVar2 = pass1_1028_4f62(param_1);
-    if (BVar2 != 0) {
+    b_var2 = pass1_1028_4f62(param_1);
+    if (b_var2 != 0) {
         return param_1;
     }
     u_var1 = pass4_funcs::pass1_1028_b58e(param_1);
