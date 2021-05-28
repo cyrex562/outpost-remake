@@ -891,7 +891,7 @@ pub unsafe fn read_file_1010_0c7c(ctx: &mut AppContext, param_1: u32, in_file_ha
                         // goto LAB_1010_0cb1;
                     }
                     b_var5 = local_4;
-                    if (PTR_LOOP_1050_0312 < 2) {
+                    if (ctx.PTR_LOOP_1050_0312 < 2) {
                         switch_statement_1008_738c(
                             in_file_handle_2,
                             (in_file_handle_2 >> 0x10),
@@ -993,7 +993,7 @@ pub unsafe fn read_file_1010_5e56(ctx: &mut AppContext, param_1: u32, hfile_para
                 b_var3 = read_file_1008_7dee(hfile_param_2, CONCAT22(unaff_ss, &local_404), 2);
                 if (b_var3 != 0) {
                     u16_1050_13ae = local_404;
-                    if (PTR_LOOP_1050_0312 < 2) {
+                    if (ctx.PTR_LOOP_1050_0312 < 2) {
                         return;
                     }
                     b_var3 = read_file_1008_7dee(
@@ -1093,7 +1093,7 @@ pub unsafe fn read_file_1010_68c6(param_1: u32, param_2: &HFILE16) {
     u_var8 = param_2;
     // u_var9 = (param_2  >> 0x10);
     // u_var7 = (param_1  >> 0x10);
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         u_var10 = 0x102;
         u_var11 = 0;
         process_struct_1000_179c(0x102, in_dx);
@@ -1121,7 +1121,7 @@ pub unsafe fn read_file_1010_68c6(param_1: u32, param_2: &HFILE16) {
             return;
         }
     }
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         u_var10 = 0x2a;
         u_var11 = 0;
         process_struct_1000_179c(0x2a, in_dx);
@@ -1524,7 +1524,7 @@ pub unsafe fn read_from_file_1038_7c02(param_1: &mut Vec<u8>, file_b: &HFILE16) 
     let mut local_4: u16;
     let fn_ptr_a: fn();
 
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         return 1;
     }
     u8_a = read_file_1008_7cfe(ctx, file_b);
@@ -1595,7 +1595,7 @@ pub unsafe fn read_from_file_1038_774e(param_1: u32, param_2: &HFILE16) {
     let mut local_4: u16;
     let mut u_var4: u32;
 
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         return;
     }
     local_AX_22 = param_1;
@@ -1892,7 +1892,7 @@ pub unsafe fn read_from_file_1038_6118(param_1: &mut Struct933, hfile_param_2: &
                         b_var4 != 0,
                     ),
                 )),
-            )))) && (PTR_LOOP_1050_0312 < 2 || ((
+            )))) && (ctx.PTR_LOOP_1050_0312 < 2 || ((
                 b_var4 = read_file_1008_7dee(
                     hfile_param_2,
                     (param_1 & 0xffff0000 | &local_bx_68.field_0x214),
@@ -2054,7 +2054,7 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                         local_AX_32.field_0x2e = paVar4;
                                         local_AX_32.field_0x30 = u_var12;
                                     }
-                                    if (PTR_LOOP_1050_0312 < 2) {
+                                    if (ctx.PTR_LOOP_1050_0312 < 2) {
                                         return;
                                     }
                                     b_var3 = read_file_1008_7dee(
@@ -2084,7 +2084,7 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                             while (local_e < local_20) {
                                                 local_3e = _PTR_LOOP_1050_68a2;
                                                 pu_var7 = _PTR_LOOP_1050_68a2;
-                                                alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
+                                                alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_68a2);
                                                 u_var8 = pu_var7;
                                                 _local_32 = (pu_var7 & 0xffff | ctx.dx_reg << 0x10);
                                                 paVar9 = (ctx.dx_reg | u_var8);
@@ -2177,7 +2177,7 @@ pub unsafe fn read_from_file_1030_778c(struct_b: &mut Struct933, file_a: &HFILE1
                                                     }
                                                     local_2c = _PTR_LOOP_1050_68a2;
                                                     pu_var7 = _PTR_LOOP_1050_68a2;
-                                                    alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
+                                                    alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_68a2);
                                                     u_var8 = pu_var7;
                                                     _local_32 = (pu_var7 & 0xffff | ctx.dx_reg << 0x10);
                                                     paVar9 = (ctx.dx_reg | u_var8);
@@ -2624,7 +2624,7 @@ pub fn read_from_file_1030_33f0(param_1: u32, param_2: &HFILE16) {
         ),
         b_var1 != 0,
     )) {
-        if (PTR_LOOP_1050_0312 < 2) {
+        if (ctx.PTR_LOOP_1050_0312 < 2) {
             return;
         }
         b_var1 = read_file_1008_7dee(
@@ -2854,8 +2854,8 @@ pub unsafe fn read_file_1028_def2(param_1: Vec<u8>, file_handle_1: &HFILE16) {
                 pp_var1 = (*_PTR_LOOP_1050_5166 + 0x10);
                 (**pp_var1)(
                     &ctx.PTR_LOOP_1050_1008,
-                    _PTR_LOOP_1050_5166,
-                    (_PTR_LOOP_1050_5166 >> 0x10),
+                  ctx._PTR_LOOP_1050_5166,
+                    (ctx._PTR_LOOP_1050_5166 >> 0x10),
                     file_handle_1,
                 );
                 if (b_var != 0) {
@@ -3153,7 +3153,7 @@ pub fn read_from_file_1028_65e2(param_1: u32, param_2: &HFILE16) {
                     return;
                 }
                 pu_var5 = _PTR_LOOP_1050_68a2;
-                alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
+                alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_68a2);
                 u_var4 = pu_var5;
                 local_14 = pu_var5 & 0xffff | ctx.dx_reg << 0x10;
                 if ((ctx.dx_reg | u_var4) == 0) {
@@ -3315,10 +3315,10 @@ pub fn read_file_fn_1028_14d8(param_1: u32, param_2: &HFILE16) {
             b_var1 != 0,
         )) {
             (param_1 + 0x20) = local_4;
-            if (PTR_LOOP_1050_0312 < 2) {
+            if (ctx.PTR_LOOP_1050_0312 < 2) {
                 return;
             }
-            b_var1 = read_file_1008_7dee(param_2, &PTR_LOOP_1050_4fbc, 2);
+            b_var1 = read_file_1008_7dee(param_2, &ctx.PTR_LOOP_1050_4fbc, 2);
             if (b_var1 != 0) {
                 return;
             }
@@ -3361,7 +3361,7 @@ pub fn file_read_fn_1028_0374(param_1: u32, param_2: &HFILE16) {
                         return;
                     }
                     pu_var5 = _PTR_LOOP_1050_68a2;
-                    alloc_mem_1000_07fc(_PTR_LOOP_1050_68a2);
+                    alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_68a2);
                     u_var4 = pu_var5;
                     local_14 = pu_var5 & 0xffff | ctx.dx_reg << 0x10;
                     if ((ctx.dx_reg | u_var4) == 0) {

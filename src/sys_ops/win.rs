@@ -169,7 +169,7 @@ pub unsafe fn destroy_win_1040_13b2(param_1: u32, param_2: i32) {
                     paStack556 = &stack0xfdd2;
                     pass1_1030_835a(ctx._g_bool_1050_5748, CONCAT22(unaff_ss, paStack556));
                     paStack556 = &stack0xfdd2;
-                    unaff_cs = SUB42(&PTR_LOOP_1050_1028, 0);
+                    unaff_cs = SUB42(&ctx.PTR_LOOP_1050_1028, 0);
                     pass1_1028_8dec(CONCAT22(unaff_ss, paStack556));
                     // goto LAB_1040_1619;
                 }
@@ -438,11 +438,11 @@ pub fn win_fn_1038_d118(param_1: u32, param_2: u32, param_3: HWND16) {
         }
         if (cVar3 == '\x06') {
             if ((param_2 != 1) && (param_2 != 2)) {
-                u_var2 = &PTR_LOOP_1050_5bc8;
+                u_var2 = &ctx.PTR_LOOP_1050_5bc8;
                 (u_var2 + 8) = 0;
                 return;
             }
-            u_var2 = &PTR_LOOP_1050_5bc8;
+            u_var2 = &ctx.PTR_LOOP_1050_5bc8;
             (u_var2 + 8) = param_3;
             return;
         }
@@ -571,7 +571,7 @@ pub unsafe fn destroy_win_1038_c836(ctx: &mut AppContext, param_1: &mut u32, par
         u_var1 = (param_1 + 0x8e);
         (u_var1 + 10) = 6;
         winapi::DestroyWindow16((param_1 + 6));
-        PTR_LOOP_1050_5b80 = 0x0;
+      ctx.PTR_LOOP_1050_5b80 = 0x0;
         return;
     }
     win_msg::post_win_msg_1040_7b3c(param_1, CONCAT22(param_3, param_2_00), param_2);

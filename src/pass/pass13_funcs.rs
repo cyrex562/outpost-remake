@@ -353,7 +353,7 @@ pub unsafe fn pass1_1008_9e5a(param_1: &mut  u16) {
     (i_var5 + 2) = &ctx.PTR_LOOP_1050_1008;
     (i_var5 + 0x1c) = 0x9fca;
     (i_var5 + 0x1e) = &ctx.PTR_LOOP_1050_1008;
-    if (_PTR_LOOP_1050_0388 != 0) {
+    if (ctx._PTR_LOOP_1050_0388 != 0) {
         if (param_1 == 0x0) {
             i_var4 = 0;
             local_DX_58 = 0;
@@ -361,7 +361,7 @@ pub unsafe fn pass1_1008_9e5a(param_1: &mut  u16) {
             i_var4 = i_var5 + 0x1c;
             local_DX_58 = u_var6;
         }
-        pass1_1008_92b2(_PTR_LOOP_1050_0388, 0x50, i_var4, local_DX_58);
+        pass1_1008_92b2(ctx._PTR_LOOP_1050_0388, 0x50, i_var4, local_DX_58);
     }
     local_4 = 0;
     while {
@@ -677,8 +677,8 @@ pub unsafe fn pass1_1008_aefe(param_1: Vec<u8>, param_2: Vec<u8>, param_3: u16) 
     pass1_1018_4cda(param_1, CONCAT22(param_3, param_2));
     CONCAT22(param_2, param_1) = 0xaf7c;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1008;
-    PTR_LOOP_1050_4230 = param_1;
-    PTR_LOOP_1050_4232 = param_2;
+  ctx.PTR_LOOP_1050_4230 = param_1;
+  ctx.PTR_LOOP_1050_4232 = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3);
     return CONCAT22(param_2, param_1);
 }

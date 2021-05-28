@@ -313,7 +313,7 @@ pub unsafe fn pass1_1008_3f92(in_struct_a: &mut Struct103, param_2: &mut Struct1
     struct_a.field_0x14 = 0;
     struct_a.field_0x18 = 0;
     struct_a.field_0x1c = 0;
-    in_struct_a.ptr_1_lo = &PTR_LOOP_1050_48de;
+    in_struct_a.ptr_1_lo = &ctx.PTR_LOOP_1050_48de;
     struct_a.ptr_1_hi = &ctx.PTR_LOOP_1050_1008;
     if (param_2 == 0x0) {
         return;
@@ -354,7 +354,7 @@ pub unsafe fn pass1_1008_405c(
     paVar6.field_0x14 = 0;
     paVar6.field_0x18 = 0;
     paVar6.field_0x1c = 0;
-    param_1.ptr_1_lo = &PTR_LOOP_1050_48de;
+    param_1.ptr_1_lo = &ctx.PTR_LOOP_1050_48de;
     paVar6.ptr_1_hi = &ctx.PTR_LOOP_1050_1008;
     i_var2 = param_4 * 8 + 0x1f;
     i_var2 = ((i_var2 + (i_var2 >> 0xf & 0x1f)) >> 5) << 2;
@@ -1020,7 +1020,7 @@ pub unsafe fn pass1_fn_1008_58a6(param_1: u32, param_2: u32) {
     let pu_var3: Vec<u8>;
 
     pu_var3 = _PTR_LOOP_1050_029c;
-    alloc_mem_1000_07fc(_PTR_LOOP_1050_029c);
+    alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_029c);
     u_var2 = pu_var3;
     local_6 = pu_var3 & 0xffff | ctx.dx_reg << 0x10;
     if ((ctx.dx_reg | u_var2) == 0) {
@@ -1071,7 +1071,7 @@ pub unsafe fn pass1_1008_593c(param_1: &mut  u32, param_2: u32) {
         return;
     }
     pu_var4 = _PTR_LOOP_1050_029c;
-    alloc_mem_1000_07fc(_PTR_LOOP_1050_029c);
+    alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_029c);
     u_var3 = pu_var4;
     local_6 = pu_var4 & 0xffff | ctx.dx_reg << 0x10;
     if ((ctx.dx_reg | u_var3) == 0) {
@@ -1840,11 +1840,11 @@ pub unsafe fn pass1_1008_6eee(param_1: &mut FileObject, param_1_00: u32) {
     pass1_1020_a43e(CONCAT22(ctx.stack_seg_reg, local_e));
   // local_AX_45 = write_to_file_1028_d7a0(local_a, (local_a  >> 0x10), param_1_00);
     if (local_AX_45 != 0x0) {
-        b_var1 = write_to_file_1030_5c1a(_PTR_LOOP_1050_5736, param_1_00);
+        b_var1 = write_to_file_1030_5c1a(ctx._PTR_LOOP_1050_5736, param_1_00);
         if (b_var1 != 0) {
             write_to_file_1028_dce2(ctx._PTR_LOOP_1050_65e2, param_1_00);
             if (b_var1 != 0) {
-                write_to_file_1038_7b20(_PTR_LOOP_1050_5a64, param_1_00);
+                write_to_file_1038_7b20(ctx._PTR_LOOP_1050_5a64, param_1_00);
                 if (b_var1 != 0) {
                     pu_var2 = local_e;
                     call_write_to_file_1020_a644(pu_var2, ctx.stack_seg_reg, param_1_00);
@@ -1868,7 +1868,7 @@ pub unsafe fn pass1_1008_7006(param_1: &mut FileObject, param_1_00: u32) -> i32 
 
     local_4 = 0;
     while (true) {
-        if (PTR_LOOP_1050_0334 <= local_4) {
+        if (ctx.PTR_LOOP_1050_0334 <= local_4) {
             return 1;
         }
         local_DXAX_37 = process_struct_1010_20ba(
@@ -1896,7 +1896,7 @@ pub unsafe fn pass1_1008_7056(param_1: &mut FileObject, param_1_00: u32) -> i32 
 
     local_4 = 0;
     while (true) {
-        if (PTR_LOOP_1050_0334 <= local_4) {
+        if (ctx.PTR_LOOP_1050_0334 <= local_4) {
             return 1;
         }
         local_DXAX_37 = process_struct_1010_20ba(
@@ -2307,7 +2307,7 @@ pub unsafe fn pass1_1008_8b20(param_1: &mut  Struct206) {
         if (i_var2 % local_struct_1.field_0x3e == 0) {
             local_struct_1.field_0x40 = 1;
             u_var3 = local_struct_1.field_0x8;
-            pass1_1018_20ee(_PTR_LOOP_1050_0382, u_var3);
+            pass1_1018_20ee(ctx._PTR_LOOP_1050_0382, u_var3);
             u_var3 = u_var3 & 0xffff | local_DX_71 << 0x10;
             pass1_1008_3e94(
                 &local_struct_1.field_0x28,
@@ -2350,7 +2350,7 @@ pub unsafe fn pass1_1008_8bc6(param_1: u32) {
         return;
     }
     u_var1 = (i_var2 + 8);
-    pass1_1018_20ee(_PTR_LOOP_1050_0382, u_var1);
+    pass1_1018_20ee(ctx._PTR_LOOP_1050_0382, u_var1);
     u_var1 = u_var1 & 0xffff | local_DX_42 << 0x10;
     pass1_1008_3e94(
         (i_var2 + 0x28),

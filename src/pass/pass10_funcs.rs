@@ -795,7 +795,7 @@ pub unsafe fn pass1_1040_ca74(param_1: &mut  u16) {
     unsafe { *param_1 = 0xd07c };
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
     pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
-    PTR_LOOP_1050_5f10 = 0x0;
+  ctx.PTR_LOOP_1050_5f10 = 0x0;
     win_cleanup_func_1040_b0f8(param_1);
     return;
 }
@@ -967,8 +967,8 @@ pub unsafe fn pass1_1040_c5ac(param_1: &mut  Struct337) {
     local_b_x_5 = param_1;
     param_1 = 0xc9f2;
     local_b_x_5.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-    PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + -1;
-    if (PTR_LOOP_1050_5f02 == 0x0) {
+  ctx.PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + -1;
+    if (ctx.PTR_LOOP_1050_5f02 == 0x0) {
         pu_var1 = local_b_x_5.field_0x8;
         u_var2 = local_b_x_5.field_0xa;
         if ((u_var2 | pu_var1) != 0) {
@@ -1169,7 +1169,7 @@ pub unsafe fn pass1_1040_b316(
     let mut u_var2: u16;
     let mut local_4: u16;
 
-    if (param_5 == (&PTR_LOOP_1050_000e + 1)) {
+    if (param_5 == (&ctx.PTR_LOOP_1050_000e + 1)) {
         let param_1_val = unsafe { *param_1 };
         pp_var1 = (param_1_val + 0x60);
         local_4._0_1_ = (**pp_var1)();

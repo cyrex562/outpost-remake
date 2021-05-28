@@ -202,15 +202,15 @@ pub fn pass1_1008_87cc(
     struct_204_1.field_0x42 = param_6;
     param_1 = 0x8e9a;
     struct_204_1.field_0x2 = &ctx.PTR_LOOP_1050_1008;
-    if (_PTR_LOOP_1050_0382 == 0x0) {
-        _PTR_LOOP_1050_0382 =
+    if (ctx._PTR_LOOP_1050_0382 == 0x0) {
+        ctx._PTR_LOOP_1050_0382 =
             process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 0x2e));
     }
     _local_6 = process_struct_1008_4772(struct_204_1.field_0x4);
   // local_DX_196 = (_local_6  >> 0x10);
     struct_204_1.field_0x12 = 0x2f - (_local_6 + 8);
-  // local_es_223 = (_PTR_LOOP_1050_0382  >> 0x10);
-    local_bx_223 = _PTR_LOOP_1050_0382;
+  // local_es_223 = (ctx._PTR_LOOP_1050_0382  >> 0x10);
+    local_bx_223 = ctx._PTR_LOOP_1050_0382;
     local_8 = local_bx_223.field_0xa;
     local_a = local_bx_223.field_0xc;
     local_c = local_bx_223.field_0xe;
@@ -246,13 +246,13 @@ pub fn pass1_1008_87cc(
         &struct_204_1.field_0x8 = 0;
     } else {
         u_var4 = &struct_204_1.field_0x8;
-        pass1_1018_20ee(_PTR_LOOP_1050_0382, u_var4);
+        pass1_1018_20ee(ctx._PTR_LOOP_1050_0382, u_var4);
         local_12 = u_var4 & 0xffff | local_DX_507 << 0x10;
         pass1_1008_add2(&struct_204_1.field_0x8);
         _local_1e = process_struct_1008_4772(local_12);
         pass1_1018_214e(
-            _PTR_LOOP_1050_0382,
-            (_PTR_LOOP_1050_0382 >> 0x10),
+            ctx._PTR_LOOP_1050_0382,
+            (ctx._PTR_LOOP_1050_0382 >> 0x10),
             param_1 & 0xffff0000 | &struct_204_1.field_0x28,
             struct_204_1.field_0x2e,
         );
@@ -281,6 +281,6 @@ pub fn pass1_1008_87cc(
 }
 
 pub fn modify_list_1010_2b50(param_1: &mut  u16, param_2: u16, param_1_00: &mut  u16) {
-    modify_list_1008_3f62(param_1_00, &PTR_LOOP_1048_0000);
+    modify_list_1008_3f62(param_1_00, &ctx.PTR_LOOP_1048_0000);
     return;
 }

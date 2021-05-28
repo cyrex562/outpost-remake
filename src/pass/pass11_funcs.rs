@@ -429,7 +429,7 @@ pub unsafe fn pass1_1008_d99e(param_1: &mut  Struct534, param_2: u16, param_3: u
     CONCAT22(param_2, param_1) = 0xd9fa;
     param_1.u16_x02 = &ctx.PTR_LOOP_1050_1008;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x9a);
-    _PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
+  ctx._PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
     return;
 }
 

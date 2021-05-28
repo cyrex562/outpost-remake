@@ -189,7 +189,7 @@ pub unsafe fn pass1_1008_b544(param_1: u32, param_2: i32) {
                 (ctx._g_bool_1050_5748 >> 0x10),
                 (u_var4 + 10),
             );
-            unaff_cs = SUB42(&PTR_LOOP_1050_1038, 0);
+            unaff_cs = SUB42(&ctx.PTR_LOOP_1050_1038, 0);
             pass1_1038_3608(CONCAT22(in_dx, ppVar6));
         }
     }

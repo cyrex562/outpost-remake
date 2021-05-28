@@ -27,17 +27,17 @@ pub unsafe fn call_win_proc_1040_a410(param_1: u16, param_2: u32, param_3: u32) 
 
     local_6 = 0;
     if (param_3 == 0x19) {
-        ppc_var2 = (&PTR_LOOP_1050_5ee0 + 0x34);
+        ppc_var2 = (&ctx.PTR_LOOP_1050_5ee0 + 0x34);
         local_6 = ppc_var2();
         ctx.dx_reg = (local_6 >> 0x10);
     } else {
         if (param_3 == 0x86) {
-            ppc_var2 = (&PTR_LOOP_1050_5ee0 + 0x20);
+            ppc_var2 = (&ctx.PTR_LOOP_1050_5ee0 + 0x20);
             u_var5 = ppc_var2();
             return u_var5;
         }
         if (param_3 == 0x110) {
-            u_var3 = &PTR_LOOP_1050_5ee0;
+            u_var3 = &ctx.PTR_LOOP_1050_5ee0;
           // u_var5 = win_msg::send_win_msg_1040_a308(u_var3, (u_var3  >> 0x10), param_1, param_2);
             return u_var5;
         }
@@ -163,7 +163,7 @@ pub unsafe fn make_proc_inst_1040_8fb8(
         _g_proc_inst_1050_5e18 =
             winapi::MakeProcInstance16(hinstance, CONCAT22(0x9684, ctx.g_h_instance_1050_038c));
     }
-    PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + 1;
+  ctx.PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + 1;
     return;
 }
 
@@ -184,14 +184,14 @@ pub fn make_proc_inst_1038_cf6c(param_1: &mut u16) {
     unsafe {
         *param_1 = 0xd23e;
     }
-    (pu_var1 + 2) = &PTR_LOOP_1050_1038;
-    PTR_LOOP_1050_5bc8 = pu_var1;
-    PTR_LOOP_1050_5bca = pu_var2;
+    (pu_var1 + 2) = &ctx.PTR_LOOP_1050_1038;
+  ctx.PTR_LOOP_1050_5bc8 = pu_var1;
+  ctx.PTR_LOOP_1050_5bca = pu_var2;
     pvVar3 = winapi::MakeProcInstance16(unaff_cs, CONCAT22(0xd116, ctx.g_h_instance_1050_038c));
     (pu_var1 + 4) = pvVar3;
     (pu_var1 + 6) = (pvVar3 >> 0x10);
     pvVar3 = winapi::MakeProcInstance16(offset, CONCAT22(0xd01e, ctx.g_h_instance_1050_038c));
-    PTR_LOOP_1050_5bcc = pvVar3;
+  ctx.PTR_LOOP_1050_5bcc = pvVar3;
   // PTR_LOOP_1050_5bce = (pvVar3  >> 0x10);
     return;
 }
@@ -206,14 +206,14 @@ pub fn make_proc_inst_1040_a234(param_1: Vec<u8>, param_2: Vec<u8>, param_3: u16
     );
     CONCAT22(param_2, param_1) = 0xa4e8;
     (param_1 + 2) = &ctx.PTR_LOOP_1050_1040;
-    if (_PTR_LOOP_1050_5edc == 0) {
-        _PTR_LOOP_1050_5edc =
+    if (ctx._PTR_LOOP_1050_5edc == 0) {
+      ctx._PTR_LOOP_1050_5edc =
             MakeProcInstance16(unaff_cs, CONCAT22(0xa40e, ctx.g_h_instance_1050_038c));
     }
     (param_1 + 0xc) = _PTR_LOOP_1050_5edc;
-    PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + 1;
-    PTR_LOOP_1050_5ee0 = param_1;
-    PTR_LOOP_1050_5ee2 = param_2;
+  ctx.PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + 1;
+  ctx.PTR_LOOP_1050_5ee0 = param_1;
+  ctx.PTR_LOOP_1050_5ee2 = param_2;
     return;
 }
 
@@ -350,8 +350,8 @@ pub fn free_proc_inst_1040_911e(in_struct_1: &mut Struct7) {
     RemoveProp16(s_procLo_1050_5e2a, local_struct_1.field_0x18);
     RemoveProp16(s_procHi_1050_5e31, local_struct_1.field_0x18);
     RemoveProp16(s_IsDlg_1050_5e38, local_struct_1.field_0x18);
-    PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + -1;
-    if (PTR_LOOP_1050_5e16 == 0x0) {
+  ctx.PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + -1;
+    if (ctx.PTR_LOOP_1050_5e16 == 0x0) {
         FreeProcInstance16(CONCAT22(_g_proc_inst_1050_5e18, 0x1538));
         _g_proc_inst_1050_5e18 = 0;
     }

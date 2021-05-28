@@ -2209,7 +2209,7 @@ pub fn draw_1040_8a06(param_1: u32) {
   // count = (param_1  >> 0x10);
     i_var4 = param_1;
     local_24 = BeginPaint16(CONCAT22(unaff_ss, &local_22), (i_var4 + 6));
-    u_var5 = (_PTR_LOOP_1050_4230 + 0xe);
+    u_var5 = (ctx._PTR_LOOP_1050_4230 + 0xe);
     local_28._0_2_ = u_var5;
     local_28 = (u_var5 >> 0x10);
     dev_ctx_handle = &local_24;

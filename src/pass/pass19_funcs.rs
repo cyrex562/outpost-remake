@@ -2546,7 +2546,7 @@ pub fn pass1_1040_a544(param_1: u32) {
         bVar11 = bVar6 + u8_var3;
         bVar16 = CARRY1(bVar6, u8_var3) || CARRY1(bVar11, bVar15);
         bVar7 = bVar11 + bVar15;
-        PTR_LOOP_1050_1040 = (bVar7 | 0x4000);
+      ctx.PTR_LOOP_1050_1040 = (bVar7 | 0x4000);
         if ((SCARRY1(bVar6, u8_var3) != SCARRY1(bVar11, bVar15)) == (bVar7 < '\0')) {
             pu8_var2 = unaff_si + -0x78;
             *pu8_var2 = *pu8_var2 + in_cx + bVar16;
@@ -4048,7 +4048,7 @@ pub fn pass1_1040_4880(param_1: &mut Struct44) {
             process_struct_1040_b082(CONCAT22(&stack0xbf2a, &stack0xfffe), CONCAT22(in_ax, 0xfa1));
           // u_var13 = (pu_var18  >> 0x10);
             (pu_var18 + 0x94) = 0;
-            *pu_var18 = &PTR_LOOP_1050_4e18;
+            *pu_var18 = &ctx.PTR_LOOP_1050_4e18;
             (pu_var18 + 2) = &ctx.PTR_LOOP_1050_1040;
             ppVar17 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 3));
           // struct_a = (ppVar17  >> 0x10);
@@ -4138,7 +4138,7 @@ pub fn pass1_1040_48a0(param_1: &mut  u16, param_2: Vec<u8>, param_3: u32, param
     i_var3 = param_1;
     (i_var3 + 0x94) = 0;
     unsafe {
-        *param_1 = &PTR_LOOP_1050_4e18;
+        *param_1 = &ctx.PTR_LOOP_1050_4e18;
     }
     (i_var3 + 2) = &ctx.PTR_LOOP_1050_1040;
     pp_var7 = struct_ops_2::process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_si, 3));
@@ -4471,7 +4471,7 @@ pub fn pass1_1040_2dac(param_1: Vec<u8>) {
     while (local_a < 5) {
         pass1_1028_4ab2(
             u_var2,
-            (&PTR_LOOP_1050_5d04 + local_a * 0xc),
+            (&ctx.PTR_LOOP_1050_5d04 + local_a * 0xc),
             (local_a * 0xc + 0x5d02),
         );
         local_a = local_a + 1;
@@ -4694,7 +4694,7 @@ pub fn pass1_1040_1eee(param_1: &mut Struct44, param_2: Vec<u8>) {
     b_var25 = (cVar11 >> 0xf & 1) != 0;
     b_var24 = PTR_LOOP_1050_1040 < 0x7a;
     bVar12 = PTR_LOOP_1050_1040 + 0x86;
-    PTR_LOOP_1050_1040._0_1_ = bVar12 - b_var25;
+  ctx.PTR_LOOP_1050_1040._0_1_ = bVar12 - b_var25;
     u_var8 = (b_var24 || bVar12 < b_var25);
     u_var10 = in_eax + 0xdf80;
     b_var25 = u_var9 < &ctx.PTR_LOOP_1050_1040 || u_var10 < u_var8;
@@ -4709,7 +4709,7 @@ pub fn pass1_1040_1eee(param_1: &mut Struct44, param_2: Vec<u8>) {
                 - (CARRY1(bVar16, b_var21) || CARRY1(bVar16 + b_var21, b_var25));
             *unaff_DI = *unaff_si;
         }
-        PTR_LOOP_1050_1038._0_1_ = bVar12;
+      ctx.PTR_LOOP_1050_1038._0_1_ = bVar12;
         // WARNING: Bad instruction - Truncating control flow here
         halt_baddata();
     }
@@ -4917,7 +4917,7 @@ pub fn pass1_1038_e9ec(param_1: &mut  Struct599) {
 
   // u_var1 = (param_1  >> 0x10);
     param_1.field_0x0 = 0xeb32;
-    (param_1 + 2) = &PTR_LOOP_1050_1038;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
     win_cleanup_func_1040_782c(param_1);
     return;
@@ -4936,7 +4936,7 @@ pub fn pass1_1038_e6f0(param_1: &mut  Struct599) {
 
   // u_var1 = (param_1  >> 0x10);
     param_1.field_0x0 = 0xe92e;
-    (param_1 + 2) = &PTR_LOOP_1050_1038;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
     win_cleanup_func_1040_782c(param_1);
     return;
@@ -5013,7 +5013,7 @@ pub fn pass1_1038_c80a(param_1: &mut  Struct599) {
 
   // u_var1 = (param_1  >> 0x10);
     param_1.field_0x0 = 0xca6c;
-    (param_1 + 2) = &PTR_LOOP_1050_1038;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
     win_cleanup_func_1040_782c(param_1);
     return;
@@ -5056,7 +5056,7 @@ pub fn pass1_1038_c4fe(param_1: &mut  Struct599) {
 
   // u_var1 = (param_1  >> 0x10);
     param_1.field_0x0 = 0xc74c;
-    (param_1 + 2) = &PTR_LOOP_1050_1038;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_b6e0(ctx.g_struct_112_001, *(param_1 + 6));
     win_cleanup_func_1040_782c(param_1);
     return;

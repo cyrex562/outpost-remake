@@ -240,7 +240,7 @@ pub fn set_colors_1040_0cc0(param_1: &mut u32, param_2: u16, param_3: i32, param
     let mut local_4: u16;
 
     local_4 = GetStockObject16(4);
-    if (_PTR_LOOP_1050_5cd0 == 0) {
+    if (ctx._PTR_LOOP_1050_5cd0 == 0) {
       // u_var3 = (param_1  >> 0x10);
         unsafe {
             pp_var1 = (*param_1 + 0x68);
@@ -249,7 +249,7 @@ pub fn set_colors_1040_0cc0(param_1: &mut u32, param_2: u16, param_3: i32, param
         u_var4 = pass1_1008_4d72(u_var4);
       // u_var3 = (u_var4  >> 0x10);
         i_var2 = u_var4;
-        _PTR_LOOP_1050_5cd0 = CONCAT22(
+      ctx._PTR_LOOP_1050_5cd0 = CONCAT22(
             CONCAT11(2, *(i_var2 + 0x94)),
             CONCAT11(*(i_var2 + 0x95), *(i_var2 + 0x96)),
         );
@@ -263,7 +263,7 @@ pub fn set_colors_1040_0cc0(param_1: &mut u32, param_2: u16, param_3: i32, param
             }
         }
     }
-    SetTextColor16(_PTR_LOOP_1050_5cd0, param_3);
+    SetTextColor16(ctx._PTR_LOOP_1050_5cd0, param_3);
     SetBkColor16(0x1000000, param_3);
     return CONCAT22(0x1050, local_4);
 }
@@ -286,23 +286,23 @@ pub fn set_colors_1038_ac38(
     let mut local_4: u16;
 
     GetStockObject16(4);
-    if (_PTR_LOOP_1050_5b78 == 0) {
-        u_var3 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
+    if (ctx._PTR_LOOP_1050_5b78 == 0) {
+        u_var3 = pass1_1008_4d72((ctx._PTR_LOOP_1050_4230 + 0xe));
       // u_var4 = (u_var3  >> 0x10);
         i_var1 = u_var3;
-        _PTR_LOOP_1050_5b6c = CONCAT12(
+      ctx._PTR_LOOP_1050_5b6c = CONCAT12(
             *(i_var1 + 0x3ec),
             CONCAT11(*(i_var1 + 0x3ed), *(i_var1 + 0x3ee)),
         );
-        _PTR_LOOP_1050_5b70 = CONCAT12(
+      ctx._PTR_LOOP_1050_5b70 = CONCAT12(
             *(i_var1 + 0x3e4),
             CONCAT11(*(i_var1 + 0x3e5), *(i_var1 + 0x3e6)),
         );
-        _PTR_LOOP_1050_5b74 = CONCAT12(
+      ctx._PTR_LOOP_1050_5b74 = CONCAT12(
             *(i_var1 + 0x3f8),
             CONCAT11(*(i_var1 + 0x3f9), *(i_var1 + 0x3fa)),
         );
-        _PTR_LOOP_1050_5b78 = CONCAT12(
+      ctx._PTR_LOOP_1050_5b78 = CONCAT12(
             *(i_var1 + 0x94),
             CONCAT11(*(i_var1 + 0x95), *(i_var1 + 0x96)),
         );
@@ -312,18 +312,18 @@ pub fn set_colors_1038_ac38(
         i_var2 = GetDlgCtrlID16(dialog_handle);
         if (i_var2 == 0xfd4) {
             u_var4 = _PTR_LOOP_1050_5b70;
-          // u_var5 = (_PTR_LOOP_1050_5b70  >> 0x10);
+          // u_var5 = (ctx._PTR_LOOP_1050_5b70  >> 0x10);
             // goto LAB_1038_ad0e;
         }
         if (i_var2 != 0xfd5) {
             if (i_var2 == 0xfd6) {
                 u_var4 = _PTR_LOOP_1050_5b6c;
-              // u_var5 = (_PTR_LOOP_1050_5b6c  >> 0x10);
+              // u_var5 = (ctx._PTR_LOOP_1050_5b6c  >> 0x10);
                 // goto LAB_1038_ad0e;
             }
             if (i_var2 == 0xfd7) {
                 u_var4 = _PTR_LOOP_1050_5b74;
-              // u_var5 = (_PTR_LOOP_1050_5b74  >> 0x10);
+              // u_var5 = (ctx._PTR_LOOP_1050_5b74  >> 0x10);
                 // goto LAB_1038_ad0e;
             }
         }
@@ -336,7 +336,7 @@ pub fn set_colors_1038_ac38(
         }
     }
     u_var4 = _PTR_LOOP_1050_5b78;
-  // u_var5 = (_PTR_LOOP_1050_5b78  >> 0x10);
+  // u_var5 = (ctx._PTR_LOOP_1050_5b78  >> 0x10);
     // LAB_1038_ad0e:
     SetTextColor16(CONCAT22(u_var5, u_var4), param_5);
     SetBkColor16(0x1000000, param_5);

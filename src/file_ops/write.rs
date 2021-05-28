@@ -462,8 +462,8 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
                 }
                 if (ctx.bx_reg.field_0x18 != 0) {
                     u16_1050_0e28 = ctx.bx_reg.field_0x12;
-                    PTR_LOOP_1050_0e30 = ctx.bx_reg.field_0x14;
-                    PTR_LOOP_1050_0ea8 = ctx.bx_reg.field_0x16;
+                  ctx.PTR_LOOP_1050_0e30 = ctx.bx_reg.field_0x14;
+                  ctx.PTR_LOOP_1050_0ea8 = ctx.bx_reg.field_0x16;
                 }
                 local_4 = 0;
                 while (true) {
@@ -473,8 +473,8 @@ pub unsafe fn write_file_1010_0ad2(ctx: &mut AppContext, in_struct_1: &mut  Stru
                             if (2 < local_4) {
                                 if (ctx.bx_reg.field_0x18 != 0) {
                                     u16_1050_0e28 = 0;
-                                    PTR_LOOP_1050_0e30 = 0x0;
-                                    PTR_LOOP_1050_0ea8 = 0x0;
+                                  ctx.PTR_LOOP_1050_0e30 = 0x0;
+                                  ctx.PTR_LOOP_1050_0ea8 = 0x0;
                                 }
                                 return;
                             }
@@ -2000,8 +2000,8 @@ pub unsafe fn write_to_file_1028_dce2(param_1: &mut  u32, param_2: &HFILE16) {
                 pp_var1 = (*_PTR_LOOP_1050_5166 + 0xc);
                 (**pp_var1)(
                     &ctx.PTR_LOOP_1050_1008,
-                    _PTR_LOOP_1050_5166,
-                    (_PTR_LOOP_1050_5166 >> 0x10),
+                  ctx._PTR_LOOP_1050_5166,
+                    (ctx._PTR_LOOP_1050_5166 >> 0x10),
                     param_2,
                 );
                 if (b_var3 != 0) {

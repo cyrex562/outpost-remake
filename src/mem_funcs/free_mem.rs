@@ -160,7 +160,7 @@ pub fn free_mem_1000_0510() {
 pub unsafe fn free_mem_1000_093a(ctx: &mut AppContext, param_1: &mut Pass110309e9cInput) -> bool {
     let var1: i32;
 
-    if &PTR_LOOP_1050_000c != -0x352f {
+    if &ctx.PTR_LOOP_1050_000c != -0x352f {
         invoke_error_handler_1000_1e61(ctx, ctx.code_seg_reg, 0xe, 0);
         return false;
     }

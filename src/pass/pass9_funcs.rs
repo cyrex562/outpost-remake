@@ -87,7 +87,7 @@ pub unsafe fn pass1_1040_ac64(param_1: u32) {
         unsafe { *pu_var15 = 0xafc4 };
         (i_var7 + 2) = &ctx.PTR_LOOP_1050_1040;
         (i_var7 + 0x94) = _PTR_LOOP_1050_5ef0;
-        _PTR_LOOP_1050_5ef0 = 0;
+      ctx._PTR_LOOP_1050_5ef0 = 0;
         ppVar13 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(pu_var14, 0x3d));
       // u_var10 = (pu_var15  >> 0x10);
         (pu_var15 + 0x98) = ppVar13;
@@ -114,7 +114,7 @@ pub unsafe fn pass1_1040_ac84(param_1: &mut  Struct350, param_2: u16) {
     param_1 = 0xafc4;
     local_bx_18.field_0x2 = &ctx.PTR_LOOP_1050_1040;
     local_bx_18.field_0x94 = _PTR_LOOP_1050_5ef0;
-    _PTR_LOOP_1050_5ef0 = 0;
+  ctx._PTR_LOOP_1050_5ef0 = 0;
     ppVar2 = process_struct_1010_20ba(ctx.g_struct_var_1050_0ed0, CONCAT22(unaff_bp, 0x3d));
     local_bx_18.field_0x98 = ppVar2;
     local_bx_18.field_0x9a = (ppVar2 >> 0x10);

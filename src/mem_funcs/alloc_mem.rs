@@ -571,7 +571,7 @@ pub unsafe fn alloc_mem_1000_0ed4(
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if ((&PTR_LOOP_1050_000c & 0xfff8) == 0xcad0) {
+    if ((&ctx.PTR_LOOP_1050_000c & 0xfff8) == 0xcad0) {
         local_6 = 0x0;
         local_4 = &dos_alloc_addr_1050_0002;
         if ((param_1 & 8) == 0) {
@@ -658,10 +658,10 @@ pub unsafe fn alloc_mem_1000_0fb8(param_1: i32, param_2: &mut  u16, uparam_3: i3
         return 1;
     }
     b_var2 = PTR_LOOP_1050_000c & 7;
-  // u_var8 = (_PTR_LOOP_1050_0000  >> 0x10);
-    if ((PTR_LOOP_1050_000c & 7) != 0) {
+  // u_var8 = (ctx._PTR_LOOP_1050_0000  >> 0x10);
+    if ((ctx.PTR_LOOP_1050_000c & 7) != 0) {
         if (b_var2 == 1) {
-            u_var3 = (PTR_LOOP_1050_0000 + 0x18);
+            u_var3 = (ctx.PTR_LOOP_1050_0000 + 0x18);
             if (in_dx != 0) {
                 return u_var3;
             }
@@ -680,7 +680,7 @@ pub unsafe fn alloc_mem_1000_0fb8(param_1: i32, param_2: &mut  u16, uparam_3: i3
                 return 1;
             }
             if ((((param_3 | param_2) != 0) && (in_dx == 0))
-                && (in_ax <= (PTR_LOOP_1050_0000 + 0x1c)))
+                && (in_ax <= (ctx.PTR_LOOP_1050_0000 + 0x1c)))
             {
                 u_var9 = mem_size::get_mem_sz_1000_1284(in_bx, &ctx.g_alloc_addr_1050_1050);
                 if (((u_var9 >> 0x10) == 0) && (u_var9 <= in_ax)) {
@@ -704,7 +704,7 @@ pub unsafe fn alloc_mem_1000_0fb8(param_1: i32, param_2: &mut  u16, uparam_3: i3
         local_4 = u_var3 - 6;
     }
     if ((((in_dx == 0) && (in_ax <= local_4))
-        || (in_dx == 0 && (in_ax <= (PTR_LOOP_1050_0000 + 0x1c))))
+        || (in_dx == 0 && (in_ax <= (ctx.PTR_LOOP_1050_0000 + 0x1c))))
         && (
             u_var4 = struct_fn_1000_115c(unaff_si, unaff_DI),
             u_var4 != 0,
@@ -1218,10 +1218,10 @@ pub unsafe fn alloc_mem_func_1000_40af(param_1: i32, param_2: i32, uparam_3: i32
             }
         }
         // LAB_1000_41aa:
-        if ((PTR_LOOP_1050_618e | PTR_LOOP_1050_618c) == 0) {
+        if ((ctx.PTR_LOOP_1050_618e | ctx.PTR_LOOP_1050_618c) == 0) {
             return 0x0;
         }
-        i_var7 = (*PTR_LOOP_1050_618c)(unaff_cs, param_3, param_1, param_2);
+        i_var7 = (*ctx.PTR_LOOP_1050_618c)(unaff_cs, param_3, param_1, param_2);
         if (i_var7 == 0) {
             return 0x0;
         }

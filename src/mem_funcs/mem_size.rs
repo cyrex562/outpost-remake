@@ -152,11 +152,11 @@ pub unsafe fn get_mem_sz_1000_1284(param_1: u32) -> u32 {
     let mut local_6: u16;
     let mut local_4: u16;
 
-    if (&PTR_LOOP_1050_000c & 0xfff8) != 0xcad0 {
+    if (&ctx.PTR_LOOP_1050_000c & 0xfff8) != 0xcad0 {
         invoke_error_handler_1000_1e61(unaff_cs, 0xe, 0);
         return 0xffffffff;
     }
-    bVar1 = *&PTR_LOOP_1050_000c;
+    bVar1 = *&ctx.PTR_LOOP_1050_000c;
     u8_var4 = bVar1 & 7;
     if ((bVar1 & 7) != 0) {
         if (u8_var4 == 1) {

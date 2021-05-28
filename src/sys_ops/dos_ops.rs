@@ -242,7 +242,7 @@ pub unsafe fn dos3_call_1000_2bb6(ctx: &mut AppContext, param_1: &String, param_
         if ((u8_var3 & 8) == 0)
             && ((u8_var3 & 4) != 0
                 || ((&param_2.field_0xf0 & 1) == 0
-                    && (PTR_LOOP_1050_61ec != 0x0
+                    && (ctx.PTR_LOOP_1050_61ec != 0x0
                         && ((param_2 == 0x621c || (param_2 == 0x6228))
                             && ((*(str_var6 + 0x5f90) & 0x40) != 0))
             //             || (
@@ -319,8 +319,8 @@ pub unsafe fn dos3_call_1000_3636(param_1: &String, param_2: i32, uparam_3: i32,
     let mut local_8: u16;
     let mut local_6: u16;
 
-    if (((param_1 < u16_1050_5f8a) || (PTR_LOOP_1050_61ec == 0x0)) || (2 < param_1)) {
-        if ((PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0)) {}
+    if (((param_1 < u16_1050_5f8a) || (ctx.PTR_LOOP_1050_61ec == 0x0)) || (2 < param_1)) {
+        if ((ctx.PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0)) {}
         // goto LAB_1000_36e3;
         if (param_4 == 0) {}
         // goto LAB_1000_369b;
@@ -600,7 +600,7 @@ pub unsafe fn dos3_call_1000_39f2(param_1: &mut String, param_2: &String, param_
     uStack4 = SUB42(&ctx.g_alloc_addr_1050_1050, 0);
     local_e = u16_1050_5f8a;
     pcVar7 = u16_1050_5f8a;
-    if ((PTR_LOOP_1050_61ec != 0x0)
+    if ((ctx.PTR_LOOP_1050_61ec != 0x0)
         && (
             pcVar7 = PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e,
             param_1 < (&dos_alloc_addr_1050_0002 + 1),

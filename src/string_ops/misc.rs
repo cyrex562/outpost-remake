@@ -515,8 +515,8 @@ pub fn process_string_1000_3ec0(ctx: &mut AppContext, param_1: i32, param_2: &St
     // let mut local_8: u16;
     let mut local_6: u16;
 
-    let _local_8 = CONCAT22(ctx.PTR_LOOP_1050_5fc0, PTR_LOOP_1050_5fbe);
-    if ((PTR_LOOP_1050_5fc0 | PTR_LOOP_1050_5fbe) != 0) && ((param_2 | param_1) != 0) {
+    let _local_8 = CONCAT22(ctx.PTR_LOOP_1050_5fc0, ctx.PTR_LOOP_1050_5fbe);
+    if ((ctx.PTR_LOOP_1050_5fc0 | ctx.PTR_LOOP_1050_5fbe) != 0) && ((param_2 | param_1) != 0) {
         str_index = get_string_index_1000_3da4(CONCAT22(param_2, param_1));
         loop {
             //// _var4 = (_local_8  >> 0x10);
@@ -621,7 +621,7 @@ pub fn process_string_1000_440c(param_1: u16) {
         ) {
             _local_8 = (_local_8 & 0xffff0000 | (local_8 + 1));
         }
-        PTR_LOOP_1050_61d0 = in_i16_2;
+      ctx.PTR_LOOP_1050_61d0 = in_i16_2;
         if *_local_8 == ':' {
             in_i16_2_00 = 0;
             u_var8 = 0;
@@ -631,7 +631,7 @@ pub fn process_string_1000_440c(param_1: u16) {
             u_var3 = pass1_fn_1000_52be(i_var4, in_i16_2_00, u_var7, u_var8);
             b_var6 = CARRY2(u16_1050_61ce, CONCAT11(extraout_AH_01, u_var3));
             u16_1050_61ce = u16_1050_61ce + CONCAT11(extraout_AH_01, u_var3);
-            PTR_LOOP_1050_61d0 = PTR_LOOP_1050_61d0 + b_var6 + in_i16_2_00;
+          ctx.PTR_LOOP_1050_61d0 = PTR_LOOP_1050_61d0 + b_var6 + in_i16_2_00;
             while ((pc_var1 = _local_8, '/' < *_local_8 && (*_local_8 < ':'))) {
                 _local_8 = (_local_8 & 0xffff0000 | (local_8 + 1));
             }
@@ -640,7 +640,7 @@ pub fn process_string_1000_440c(param_1: u16) {
                 u_var5 = pass1_fn_1000_3e2c((pc_var1 & 0xffff0000 | (local_8 + 1)));
                 b_var6 = CARRY2(u16_1050_61ce, u_var5);
                 u16_1050_61ce = u16_1050_61ce + u_var5;
-                PTR_LOOP_1050_61d0 = PTR_LOOP_1050_61d0 + b_var6 + in_i16_2_00;
+              ctx.PTR_LOOP_1050_61d0 = PTR_LOOP_1050_61d0 + b_var6 + in_i16_2_00;
                 while ('/' < *_local_8 && (*_local_8 < ':')) {
                     _local_8 = (_local_8 & 0xffff0000 | (local_8 + 1));
                 }
@@ -649,13 +649,13 @@ pub fn process_string_1000_440c(param_1: u16) {
         if (c_var2 == '-') {
             b_var6 = u16_1050_61ce != 0;
             u16_1050_61ce = -u16_1050_61ce;
-            PTR_LOOP_1050_61d0 = -(PTR_LOOP_1050_61d0 + b_var6);
+          ctx.PTR_LOOP_1050_61d0 = -(ctx.PTR_LOOP_1050_61d0 + b_var6);
         }
         u16_1050_61d2 = SEXT12(*_local_8);
         if (u16_1050_61d2 == 0) {
             *_PTR_PTR_1050_61e0 = '\0';
         } else {
-            process_string_1000_3dbe(_PTR_PTR_1050_61e0, _local_8, 3);
+            process_string_1000_3dbe(ctx._PTR_PTR_1050_61e0, _local_8, 3);
         }
     }
     return;
@@ -1056,7 +1056,7 @@ pub fn fn_1008_6048(ctx: &mut AppContext, in_string_1: String, param_2: u16, par
             OutputDebugString16(CONCAT22(ctx.stack_seg_reg, string_var7));
             i_var3 = OutputDebugString16(0x105002fa);
             param_3 = i_var3;
-            if (_PTR_LOOP_1050_02f0 != 0) {
+            if (ctx._PTR_LOOP_1050_02f0 != 0) {
                 pass1_fn_1000_2b5c(
                     ctx._PTR_LOOP_1050_02f0,
                     (ctx._PTR_LOOP_1050_02f0 >> 0x10),
@@ -1136,7 +1136,7 @@ pub unsafe fn process_string_1008_7e4a() -> bool {
         ctx.stack_seg_reg,
         s__s_02x_1050_0347,
         &ctx.g_alloc_addr_1050_1050,
-        _PTR_s_dcbSC_1050_0336_1050_033c,
+      ctx._PTR_s_dcbSC_1050_0336_1050_033c,
     );
     buf_size = get_string_index_1000_3da4(CONCAT22(ctx.stack_seg_reg, &char_buf));
     u_var1 = process_string_1000_3de8(
@@ -1366,14 +1366,14 @@ pub unsafe fn wsprintf_1008_d1c6(in_struct_a: &mut  pass1_struct_3, param_2: u32
     struct_b.field_0x14 = struct_g;
     puVar6 = pass1_1008_c6fa(ctx._PTR_LOOP_1050_06e0, 2);
     struct_d = puVar6;
-    u_var8 = &PTR_LOOP_1050_1038;
+    u_var8 = &ctx.PTR_LOOP_1050_1038;
     pass1_1038_4e78(param_2, puVar6 & 0xffff | ZEXT24(struct_g) << 0x10);
     _local_a = CONCAT22(ctx.dx_reg, struct_d);
     local_46 = struct_d;
     u_var4 = local_46;
     ppc_var2 = (*_local_a + 0x10);
     struct_e = struct_d;
-    ppc_var2(&PTR_LOOP_1050_1038, local_46, ctx.dx_reg);
+    ppc_var2(&ctx.PTR_LOOP_1050_1038, local_46, ctx.dx_reg);
     _local_e = CONCAT22(local_DX_121, struct_e);
     bool_a = false;
     local_14 = 0;
@@ -2037,7 +2037,7 @@ pub unsafe fn wsprintf_1010_8c96(param_1: u32, param_2: &mut string, param_3: u3
                         // local_8 = (u_var11  >> 0x10);
                         local_a = u_var11;
                         pu_var5 = &local_10;
-                        pass1_1030_627e(_PTR_LOOP_1050_5740, CONCAT22(unaff_ss, pu_var5), u_var11);
+                        pass1_1030_627e(ctx._PTR_LOOP_1050_5740, CONCAT22(unaff_ss, pu_var5), u_var11);
                         u_var12 = ctx.dx_reg;
                         local_6 = pass1_1028_e1ec(ctx._PTR_LOOP_1050_65e2, pu_var5, ctx.dx_reg);
                         u_var2 = (param_1 + 10);
@@ -2413,7 +2413,7 @@ pub unsafe fn pass1_1038_0ba6(param_1: &mut Struct500) -> &mut Struct500 {
     local_bx_15 = param_1;
     local_bx_15.field_0x108 = 0;
     param_1.a = s_198_flc_1050_1c2e;
-    local_bx_15.field_0x2 = &PTR_LOOP_1050_1038;
+    local_bx_15.field_0x2 = &ctx.PTR_LOOP_1050_1038;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | &local_bx_15.field_0x8),
         s_SCMove_1050_59d8,
@@ -2706,7 +2706,7 @@ pub unsafe fn wvsprintf_FUN_1030_840a(param_1: u32) {
         pu_var1 = &stack0x0008;
         local_6 = pu_var1;
         local_4 = ctx.stack_seg_reg;
-        if (PTR_LOOP_1050_5750 == 0x0) {
+        if (ctx.PTR_LOOP_1050_5750 == 0x0) {
             pass1_fn_1000_2b3c(
                 ctx.s_simres_out_1050_5758,
                 &ctx.g_alloc_addr_1050_1050,
@@ -2783,7 +2783,7 @@ pub unsafe fn pass1_1030_5ff6(struct_a: &mut Address<Struct912>) {
         _local_c = u_var6 & 0xffff | ZEXT24(pa_var7) << 0x10;
         ppc_var2 = (&struct_b.field_0xc + 8);
         ppc_var2(
-            &PTR_LOOP_1050_1028,
+            &ctx.PTR_LOOP_1050_1028,
             &struct_b.field_0xc,
             u_var6,
             pa_var7,
@@ -2967,7 +2967,7 @@ pub unsafe fn pass1_1028_ae66(param_1: &mut Struct500, param_2: u32, param_3: u3
     local_bx_19.field_0x110 = param_2;
     &local_bx_19.field_0x114 = 0;
     param_1.a = 0xb0ce;
-    local_bx_19.b = &PTR_LOOP_1050_1028;
+    local_bx_19.b = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | ZEXT24(&local_bx_19.field_0x8)),
         s_SCStarve_1050_5156,
@@ -2978,7 +2978,7 @@ pub unsafe fn pass1_1028_ae66(param_1: &mut Struct500, param_2: u32, param_3: u3
 pub unsafe fn pass1_1028_acb6(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x3e7f);
     param_1.a = 0xae56;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 8)), s_SCSetup_1050_5124);
     return param_1;
 }
@@ -3035,7 +3035,7 @@ pub unsafe fn pass1_1028_ab32(param_1: &mut Struct500) -> &mut Struct500 {
         (s__P__P__P__P__P__P__P__P__P__P__P_1050_2e35 + 0xaa),
     );
     param_1.a = 0xaca6;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCRchSched_1050_5118,
@@ -3046,7 +3046,7 @@ pub unsafe fn pass1_1028_ab32(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_a9be(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x176f);
     param_1.a = 0xab22;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 8)), s_SCPower_1050_5110);
     return param_1;
 }
@@ -3054,7 +3054,7 @@ pub unsafe fn pass1_1028_a9be(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_a866(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x36af);
     param_1.a = 0xa9ae;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCProdSched_1050_5104,
@@ -3065,7 +3065,7 @@ pub unsafe fn pass1_1028_a866(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_a706(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0xbb7);
     param_1.a = 0xa856;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCPrelimAlloc_1050_50f6,
@@ -3076,7 +3076,7 @@ pub unsafe fn pass1_1028_a706(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_9ec6(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, (s_noth_bmp_1050_2321 + 6));
     param_1.a = 0xa6f6;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 8)), s_SCPop_1050_50f0);
     return param_1;
 }
@@ -3110,7 +3110,7 @@ pub unsafe fn pass1_1028_933c(
     local_bx_24.field_0x11e = 0;
     local_bx_24.field_0x122 = param_3;
     param_1.a = 0x9934;
-    local_bx_24.b = &PTR_LOOP_1050_1028;
+    local_bx_24.b = &ctx.PTR_LOOP_1050_1028;
     string_fn_1000_3f9c(
         &local_bx_24.field_0x8,
         pc_var1,
@@ -3150,7 +3150,7 @@ pub unsafe fn pass1_1028_87f0(
     local_bx_24.field_0x122 = 0;
     local_bx_24.field_0x120 = 0;
     param_1.a = 0x8d8e;
-    local_bx_24.b = &PTR_LOOP_1050_1028;
+    local_bx_24.b = &ctx.PTR_LOOP_1050_1028;
     string_fn_1000_3f9c(
         &local_bx_24.field_0x8,
         pc_var1,
@@ -3190,7 +3190,7 @@ pub unsafe fn pass1_1028_8888(
     local_bx_24.field_0x122 = 0;
     local_bx_24.field_0x120 = 0;
     param_1.a = 0x8d8e;
-    local_bx_24.b = &PTR_LOOP_1050_1028;
+    local_bx_24.b = &ctx.PTR_LOOP_1050_1028;
     string_fn_1000_3f9c(
         &local_bx_24.field_0x8,
         pc_var1,
@@ -3204,7 +3204,7 @@ pub unsafe fn pass1_1028_8888(
 pub unsafe fn pass1_1028_837e(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0xf9f);
     param_1.a = 0x84ba;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCFillResources_1050_500c,
@@ -3215,7 +3215,7 @@ pub unsafe fn pass1_1028_837e(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_81aa(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, (s_42_flc_1050_1b54 + 3));
     param_1.a = 0x836e;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCFactory_1050_5002,
@@ -3245,7 +3245,7 @@ pub unsafe fn pass1_1028_767e() {
 pub unsafe fn pass1_1028_74ae(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x1387);
     param_1.a = 0x819a;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 8)), s_SCEvent_1050_4ff4);
     return param_1;
 }
@@ -3253,7 +3253,7 @@ pub unsafe fn pass1_1028_74ae(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_6fc0(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x3e7);
     param_1.a = 0x749e;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 8)), s_SCEndSim_1050_4fea);
     return param_1;
 }
@@ -3261,7 +3261,7 @@ pub unsafe fn pass1_1028_6fc0(param_1: &mut Struct500) -> &mut Struct500 {
 pub unsafe fn pass1_1028_6e60(param_1: &mut Struct500) -> &mut Struct500 {
     pass1_1028_d1dc(param_1, 0x32c7);
     param_1.a = 0x6fb0;
-    (param_1 + 2) = &PTR_LOOP_1050_1028;
+    (param_1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e(
         (param_1 & 0xffff0000 | (param_1 + 8)),
         s_SCConstruct_1050_4fdc,
@@ -3279,7 +3279,7 @@ pub unsafe fn pass1_1028_68de(param_1: &mut Struct500, param_2: u16, param_3: u3
     (iVar1 + 0x108) = param_3;
     (iVar1 + 0x10c) = param_2;
     param_1.a = 0x6ae2;
-    (iVar1 + 2) = &PTR_LOOP_1050_1028;
+    (iVar1 + 2) = &ctx.PTR_LOOP_1050_1028;
     copy_string_1000_3d3e((param_1 & 0xffff0000 | (iVar1 + 8)), s_SCAddSpew_1050_4fd2);
     return;
 }

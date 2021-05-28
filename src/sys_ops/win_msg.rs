@@ -270,7 +270,7 @@ pub unsafe fn send_msg_1010_7c42(param_1: u32) {
 }
 
 pub fn send_msg_1040_c85a(param_1: u32) {
-    _PTR_LOOP_1050_5efe = param_1;
+  ctx._PTR_LOOP_1050_5efe = param_1;
     winapi::SendMessage16(0, 0xfa, 0x111, (param_1 + 0x1a));
     return;
 }
@@ -397,7 +397,7 @@ pub unsafe fn window_msg_func_1008_97f2(
     } else {
         cVar9 = param_4;
         if (param_4 == 0x112) {
-            if ((PTR_LOOP_1050_039a == 0x0)
+            if ((ctx.PTR_LOOP_1050_039a == 0x0)
                 && (
                     unsafe { pp_var1 = (*param_1 + 0x48) },
                     unsafe { i_var4 = (**pp_var1)() },
@@ -461,7 +461,7 @@ pub unsafe fn window_msg_func_1008_97f2(
                     );
                 } else {
                     if (param_4 == 0x100) {
-                        if (PTR_LOOP_1050_039a == 0x0) {
+                        if (ctx.PTR_LOOP_1050_039a == 0x0) {
                             unsafe {
                                 pp_var1 = (*param_1 + 0x6c);
                             }
@@ -469,7 +469,7 @@ pub unsafe fn window_msg_func_1008_97f2(
                         }
                     } else {
                         if (param_4 == 0x102) {
-                            if (PTR_LOOP_1050_039a == 0x0) {
+                            if (ctx.PTR_LOOP_1050_039a == 0x0) {
                                 unsafe {
                                     pp_var1 = (*param_1 + 0x68);
                                 }
@@ -478,7 +478,7 @@ pub unsafe fn window_msg_func_1008_97f2(
                         } else {
                             if (param_4 != 0x111) {}
                             // goto switchD_1008_9b30_caseD_4;
-                            if ((param_4_00 != PTR_LOOP_1050_039c) && (PTR_LOOP_1050_039a == 0x0)) {
+                            if ((param_4_00 != PTR_LOOP_1050_039c) && (ctx.PTR_LOOP_1050_039a == 0x0)) {
                                 if (param_2 == 0x0) {
                                     unsafe {
                                         pp_var1 = (*param_1 + 0x40);
@@ -496,7 +496,7 @@ pub unsafe fn window_msg_func_1008_97f2(
                 }
             } else {
                 if (param_4 == 0x204) {
-                    if (PTR_LOOP_1050_039a == 0x0) {
+                    if (ctx.PTR_LOOP_1050_039a == 0x0) {
                         unsafe {
                             pp_var1 = (*param_1 + 0x60);
                         }
@@ -505,8 +505,8 @@ pub unsafe fn window_msg_func_1008_97f2(
                 } else {
                     if (param_4 < 0x205) {
                         if (param_4 == 0x113) {
-                            if (_PTR_LOOP_1050_0388 != 0) {
-                                pass1_1008_932a(_PTR_LOOP_1050_0388);
+                            if (ctx._PTR_LOOP_1050_0388 != 0) {
+                                pass1_1008_932a(ctx._PTR_LOOP_1050_0388);
                             }
                         } else {
                             if (param_4 == 0x117) {
@@ -524,7 +524,7 @@ pub unsafe fn window_msg_func_1008_97f2(
                             } else {
                                 if (param_4 != 0x201) {}
                                 // goto switchD_1008_9b30_caseD_4;
-                                if (PTR_LOOP_1050_039a == 0x0) {
+                                if (ctx.PTR_LOOP_1050_039a == 0x0) {
                                     unsafe {
                                         pp_var1 = (*param_1 + 0x5c);
                                     }
@@ -623,7 +623,7 @@ pub unsafe fn post_win_msg_1008_a0e4(
     u_var4 = u_var7;
     if (!u8_var3) {
         puVar8 = _PTR_LOOP_1050_03a0;
-        alloc_mem_1000_07fc(_PTR_LOOP_1050_03a0);
+        alloc_mem_1000_07fc(ctx._PTR_LOOP_1050_03a0);
         u_var5 = puVar8;
         local_e = puVar8 & 0xffff | ctx.dx_reg << 0x10;
         if ((ctx.dx_reg | u_var5) == 0) {
@@ -782,15 +782,15 @@ pub unsafe fn process_win_msg_1008_54aa(
     sys_ops::set_global_uint_1000_4d0c(ctx, None);
     check_and_set_global_1000_1fea(ctx);
     init_struct_1000_1902(None, 0x32, 0, 0x12);
-    _PTR_LOOP_1050_03a0 = CONCAT22(local_DX_57, ctx.ax_reg);
+  ctx._PTR_LOOP_1050_03a0 = CONCAT22(local_DX_57, ctx.ax_reg);
     init_struct_1000_1902(None, 100, 0, 0xc);
-    _PTR_LOOP_1050_029c = CONCAT22(local_DX_81, ctx.ax_reg);
+  ctx._PTR_LOOP_1050_029c = CONCAT22(local_DX_81, ctx.ax_reg);
     init_struct_1000_1902(None, 100, 0, 0x10);
-    _PTR_LOOP_1050_4fb8 = CONCAT22(local_DX_105, ctx.ax_reg);
+  ctx._PTR_LOOP_1050_4fb8 = CONCAT22(local_DX_105, ctx.ax_reg);
     init_struct_1000_1902(None, 100, 0, 0xe);
-    _PTR_LOOP_1050_68a2 = CONCAT22(local_DX_129, ctx.ax_reg);
+  ctx._PTR_LOOP_1050_68a2 = CONCAT22(local_DX_129, ctx.ax_reg);
     init_struct_1000_1902(None, 500, 0, 0x42);
-    _PTR_LOOP_1050_5744 = CONCAT22(local_DX_153, ctx.ax_reg);
+  ctx._PTR_LOOP_1050_5744 = CONCAT22(local_DX_153, ctx.ax_reg);
     init_struct_1000_1902(None, 0x32, 0, 6);
     ctx.g_h_instance_1050_038c = in_h_instance;
     ctx.PTR_LOOP_1050_038e = param_3_00;
@@ -1332,7 +1332,7 @@ pub unsafe fn win_msg_fn_1020_d460(ctx: &mut AppContext, param_1: &mut Vec<u8>, 
 
     u_var1 = pass1_1028_bc90(param_1, param_2, param_3, param_4);
     if (u_var1 != 0) {
-        pass1_1038_af40(ctx.g_struct_112_001, *(_PTR_LOOP_1050_4230 + 0x16), 0x11);
+        pass1_1038_af40(ctx.g_struct_112_001, *(ctx._PTR_LOOP_1050_4230 + 0x16), 0x11);
         ctx.PTR_LOOP_1050_5b80 = (&ctx.PTR_LOOP_1050_0000 + 1);
         process_win_msg_1008_9510(&mut ctx.PTR_LOOP_1050_5b80, &mut ctx.g_alloc_addr_1050_1050);
         let struct_var2 = struct_ops_2::process_struct_1010_20ba(

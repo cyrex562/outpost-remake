@@ -152,12 +152,12 @@ pub fn get_sys_metrics_1018_4b1e(
     i_var1 = param_1;
     (i_var1 + 0x12) = param_2;
     (i_var1 + 0x14) = 0;
-    param_1.ptr_1_lo = &PTR_LOOP_1050_4c9e;
+    param_1.ptr_1_lo = &ctx.PTR_LOOP_1050_4c9e;
     (i_var1 + 2) = 0x1018;
-    if (PTR_LOOP_1050_416c == 0x0) {
-        PTR_LOOP_1050_416c = winapi::GetSystemMetrics16(4);
-        PTR_LOOP_1050_416e = winapi::GetSystemMetrics16(5);
-        PTR_LOOP_1050_4170 = winapi::GetSystemMetrics16(6);
+    if (ctx.PTR_LOOP_1050_416c == 0x0) {
+      ctx.PTR_LOOP_1050_416c = winapi::GetSystemMetrics16(4);
+      ctx.PTR_LOOP_1050_416e = winapi::GetSystemMetrics16(5);
+      ctx.PTR_LOOP_1050_4170 = winapi::GetSystemMetrics16(6);
     }
     return param_1;
 }

@@ -58,7 +58,7 @@ pub fn return_1008_53aa(a: u16, b: u16) {
 }
 
 pub fn set_param_3_with_switch_1008_72bc(param_1: u16, param_2: u16, param_3: u16) -> u16 {
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         if param_1 > 0x13 {
             return 0;
         }
@@ -90,7 +90,7 @@ pub fn switch_statement_1008_73ea(param_1: u16, param_2: u16, param_3: u16) -> u
     let mut local_4: u16;
 
     local_4 = param_1_00;
-    if (PTR_LOOP_1050_0312 < 2) {
+    if (ctx.PTR_LOOP_1050_0312 < 2) {
         if param_1 >= 0x18 || param_1 <= 0x3e {
             local_4 = param_1_00 + 3;
         } else if param_1 >= 0x3f || param_1 <= 0x66 {
@@ -115,8 +115,8 @@ pub fn set_timer_1008_91ba(param_1: &mut  u16) -> &mut  u16 {
     process_struct_1008_574a((param_1 & 0xffff0000 | ZEXT24(local_bx_4 + 1)));
     unsafe { *param_1 = 0x9416 };
     local_bx_4.field_0x2 = &ctx.PTR_LOOP_1050_1008;
-    PTR_LOOP_1050_0388 = local_bx_4;
-    PTR_LOOP_1050_038a = pu_var2;
+    ctx.PTR_LOOP_1050_0388 = local_bx_4;
+    ctx.PTR_LOOP_1050_038a = pu_var2;
     u_var1 = SetTimer16(0, 0, 1, 1);
     if (u_var1 == 0) {
         call_fn_ptr_1000_24cd(1);
@@ -133,7 +133,7 @@ pub fn kill_timer_1008_921c(param_1: &mut  Struct215) {
     param_1.ptr_a_lo = 0x9416;
     local_bx_4.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
     KillTimer16(1, ctx.g_h_window);
-    _PTR_LOOP_1050_0388 = 0;
+  ctx._PTR_LOOP_1050_0388 = 0;
     pass1_1008_57c4((param_1 & 0xffff0000 | &local_bx_4.field_0x6));
     param_1.ptr_a_lo = ctx.s_1_1050_389a;
     local_bx_4.ptr_a_hi = &ctx.PTR_LOOP_1050_1008;
