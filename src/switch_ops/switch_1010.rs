@@ -11,7 +11,7 @@ void  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
   if (((((iVar2 + 0x22) != 0x0) || ((iVar2 + 0x24) != 0x0)) ||
       ((iVar2 + 0x26) != 0x0)) || ((iVar2 + 0x28) != 0x0)) {
     uVar1 = (param_1 + 0xe);
-    sys_1000_3f9c((uchar *)uVar1,(uchar *)(uVar1 >> 0x10),
+    sys_1000_3f9c((uchar *)uVar1,(uVar1 >> 0x10),
                   s__d__d__d__d_1050_14ae,&USHORT_1050_1050,
                   (param_2 * 0x8 + param_1 + 0x22),
                   &stack0xfffe,param_1._2_2_,0x1000,unaff_SS,in_AF);

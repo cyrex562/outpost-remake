@@ -30,10 +30,10 @@ fn send_msg_1028_e242(param_1: *mut u32,param_2: i16,HWND16 param_3)
   let unaff_SS: u16;
   LRESULT LVar2;
   
-  puVar1 = (uchar *)(*param_1 % 0x64);
+  puVar1 = (*param_1 % 0x64);
   if (*param_1 % 0x64 == 0x0) {
     LVar2 = SendMessage16(param_3,0x0,0x0,0x410000);
-    puVar1 = (uchar *)(LVar2 >> 0x10);
+    puVar1 = (LVar2 >> 0x10);
   }
   *param_1 = *param_1 + 0x1;
   if (param_2 != 0x0) {

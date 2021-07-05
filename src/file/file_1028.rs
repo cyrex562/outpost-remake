@@ -133,10 +133,10 @@ fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
       uVar6 = local_4;
       uVar9 = param_2;
       mem_op_1000_179c(0x2a,param_4,0x1000);
-      puVar7 = (uchar *)(param_4 | uVar6);
-      if (puVar7 == (uchar *)0x0) {
+      puVar7 = (param_4 | uVar6);
+      if (puVar7 == 0x0) {
         uVar4 = 0x0;
-        puVar7 = (uchar *)0x0;
+        puVar7 = 0x0;
       }
       else {
         uVar5 = uVar6;
@@ -489,7 +489,7 @@ LAB_1028_b968:
   case 0x4:
     uVar7 = pass1_1028_e0bc(_PTR_LOOP_1050_65e2,(puVar3 + 0x3),puVar3,param_5,
                             param_4);
-    puStack14 = (uchar *)(uVar7 >> 0x10);
+    puStack14 = (uVar7 >> 0x10);
     (puVar3 + 0x5) = uVar7;
     (puVar3 + 0x16) = puStack14;
     if ((puStack14 | (puVar3 + 0x5)) != 0x0) {

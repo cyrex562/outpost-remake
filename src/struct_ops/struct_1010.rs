@@ -8,7 +8,7 @@ fn struct_1010_02e0(astruct_79 *param_1,astruct_79 *param_2,param_3: u16)
   astruct_79 *paVar3;
   
   paVar3 = struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2,param_1),param_3);
-  puVar2 = (uchar *)(paVar3 >> 0x10);
+  puVar2 = (paVar3 >> 0x10);
   uVar1 = 0x0;
   (param_1 + 0x1) = 0x0;
   &param_1[0x1].field_0x4 = 0x0;
@@ -78,7 +78,7 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
   mem_op_1000_179c(uVar2,puVar7,0x1000);
   iVar8->field_0x60 = uVar2;
   iVar8->field_0x62 = puVar7;
-  puStack28 = (u16 *)CONCAT22(puVar7,iVar8->field_0x60);
+  puStack28 = CONCAT22(puVar7,iVar8->field_0x60);
   uStack30 = iVar8->field_0x68;
   do {
     do {
@@ -86,8 +86,8 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
       puVar3 = local_14;
       pass1_1028_e4ec(CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,puVar3)));
       uStack24 = CONCAT22(puVar6,puVar3);
-      puVar7 = (uchar *)(puVar6 | puVar3);
-      if (puVar7 == (uchar *)0x0) goto LAB_1010_10ca;
+      puVar7 = (puVar6 | puVar3);
+      if (puVar7 == 0x0) goto LAB_1010_10ca;
       iVar9 = (astruct_231 *)*param_1;
       ppcVar1 = (code **)&iVar9->field_0x40;
       puVar4 = puVar3;
@@ -118,7 +118,7 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
     iVar10->field_0x10 = uVar5;
     iVar10->field_0x12 = extraout_DX_04;
     iVar10->field_0x14 = uStack36;
-    puStack28 = (u16 *)(puStack28 & 0xffff0000 | ZEXT24(iVar10 + 0x1));
+    puStack28 = (puStack28 & 0xffff0000 | ZEXT24(iVar10 + 0x1));
     uStack30 -= 0x1;
     puVar7 = extraout_DX_04;
   } while (uStack30 != 0x0);
@@ -192,9 +192,9 @@ fn struct_1010_2cd2(astruct_79 *param_1,astruct_79 *param_2,param_3: u16,param_4
   piVar3 = &local_6;
   uVar5 = param_4;
   puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x48,param_4,
-                           (uchar *)(paVar1 >> 0x10),unaff_DI);
+                           (paVar1 >> 0x10),unaff_DI);
   pass1_1008_3e94((u16 *)(puVar2 & 0xffff0000 | (puVar2 + 0xe)),
-                  (u16 *)CONCAT22(param_4,piVar3),(u16 *)CONCAT22(uVar5,piVar4));
+                  CONCAT22(param_4,piVar3),CONCAT22(uVar5,piVar4));
   param_1[0x1].field_0x4 = 0x19001db;
   ((astruct_79 *)(param_1 + 0x1))->field_0x0 =
        0x140 - (&param_1[0x1].field_0x4 / 0x2 - local_4);
@@ -244,14 +244,14 @@ fn struct_1010_38f8(param_1: u32,param_2: i16,param_3: u16,uchar *param_4) -> u1
     iVar2 = (astruct_240 *)param_1;
     iVar2->field_0x8 = uVar1;
     iVar2->field_0xa = param_4;
-    return (u16 *)CONCAT22(param_4,iVar2->field_0x8);
+    return CONCAT22(param_4,iVar2->field_0x8);
   }
   mem_op_1000_179c(0x1a,param_4,0x1000);
   if ((param_4 | param_3) != 0x0) {
     puVar3 = pass1_1010_37d4((u16 *)CONCAT22(param_4,param_3));
     return puVar3;
   }
-  return (u16 *)0x0;
+  return 0x0;
 }
 
 
@@ -397,7 +397,7 @@ fn struct_1010_9172(param_1: u32)
     ppcVar3 = (code **)*puVar1;
     paVar5 = (astruct_75 *)(**ppcVar3)();
   }
-  mem_op_1000_179c(0x18,(uchar *)(paVar5 >> 0x10),0x1000);
+  mem_op_1000_179c(0x18,(paVar5 >> 0x10),0x1000);
   if (paVar5 == (astruct_75 *)0x0) {
     uVar6 = 0x0;
   }
@@ -447,7 +447,7 @@ fn struct_1010_a1d8(astruct_627 *param_1,param_2: u16,param_3: u16,param_4: u16)
   param_1->field_0xa = 0xe9dc;
   param_1->field_0xc = 0x1010;
   puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2f,param_4,
-                           (uchar *)(paVar3 >> 0x10),unaff_DI);
+                           (paVar3 >> 0x10),unaff_DI);
   &param_1->field_0x138 = puVar4;
   (&param_1->field_0x138 + 0x2) = (puVar4 >> 0x10);
   ppcVar2 = (code **)(*param_1->field_0x138 + 0x4);
@@ -524,7 +524,7 @@ fn struct_1010_e9e4(astruct_261 *param_1,param_2: u16,param_3: u16)
   let iStack4: i16;
   
   paVar9 = struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2,param_1),param_3);
-  puVar7 = (uchar *)(paVar9 >> 0x10);
+  puVar7 = (paVar9 >> 0x10);
   param_1->field_0xa = 0x389a;
   param_1->field_0xc = 0x1008;
   param_1->field_0xa = 0x3aa8;
@@ -574,7 +574,7 @@ fn struct_1010_e9e4(astruct_261 *param_1,param_2: u16,param_3: u16)
       uVar5 = -uVar5;
     }
     iVar8 = iStack4 * 0x4;
-    puVar1 = (u16 *)(&param_1->field_0x34 + iVar8);
+    puVar1 = (&param_1->field_0x34 + iVar8);
     uVar2 = *puVar1;
     uVar4 = uVar5 + *puVar1;
     uVar6 = uVar4;

@@ -36,7 +36,7 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
                                       ), BVar2 != 0x0)))) &&
         ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x16,0x0,uVar1,0x4,0x1008)
          , BVar2 != 0x0 &&
-         ((BVar2 = read_file_1008_7bc8(param_2,(u16 *)
+         ((BVar2 = read_file_1008_7bc8(param_2,
                                                (param_1 & 0xffff0000 |
                                                &iVar2->field_0x1a),0x1008,
                                        param_4), BVar2 != 0x0 &&
@@ -95,11 +95,11 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
       uVar3 = local_4;
       local_4 = local_4 - 0x1;
       uVar9 = param_2;
-      mem_op_1000_179c(0x2a,(uchar *)param_4,0x1000);
-      puVar5 = (uchar *)(param_4 | uVar3);
-      if (puVar5 == (uchar *)0x0) {
+      mem_op_1000_179c(0x2a,param_4,0x1000);
+      puVar5 = (param_4 | uVar3);
+      if (puVar5 == 0x0) {
         uVar3 = 0x0;
-        puVar5 = (uchar *)0x0;
+        puVar5 = 0x0;
       }
       else {
         struct_1038_6520((u16 *)CONCAT22(param_4,uVar3));
@@ -126,11 +126,11 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         uVar3 = local_12[0];
         local_12[0] = local_12[0] - 0x1;
         uVar9 = param_2;
-        mem_op_1000_179c(0x14,(uchar *)param_4,0x1000);
-        puVar5 = (uchar *)(param_4 | uVar3);
-        if (puVar5 == (uchar *)0x0) {
+        mem_op_1000_179c(0x14,param_4,0x1000);
+        puVar5 = (param_4 | uVar3);
+        if (puVar5 == 0x0) {
           uVar3 = 0x0;
-          puVar5 = (uchar *)0x0;
+          puVar5 = 0x0;
         }
         else {
           pass1_1030_ae6c((u16 *)CONCAT22(param_4,uVar3));

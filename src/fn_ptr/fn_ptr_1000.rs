@@ -66,7 +66,7 @@ fn fn_ptr_1000_17ce(astruct_18 *param_1,param_2: u16)
 }
 
 
-fn fn_ptr_op_1000_24cd(param_1: u16,param_2: i16)
+pub fn fn_ptr_op_1000_24cd(param_1: i16,param_2: i16)
 {
   code *pcVar1;
   let iVar2: i16;
@@ -84,7 +84,7 @@ fn fn_ptr_op_1000_24cd(param_1: u16,param_2: i16)
     fn_ptr_op_1000_2594(&PTR_LOOP_1050_6210,0x620c);
     ret_op_1000_55ac(param_1,uVar3,uVar5,iVar2);
   }
-  cVar3 = (char)(uVar3 >> 0x8);
+  cVar3 = (uVar3 >> 0x8);
   fn_ptr_op_1000_2594(&PTR_LOOP_1050_6210,&PTR_LOOP_1050_6210);
   fn_ptr_op_1000_2594(&PTR_LOOP_1050_6210,&PTR_LOOP_1050_6210);
   dos3_op_1000_256b();

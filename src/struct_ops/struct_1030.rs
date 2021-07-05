@@ -69,7 +69,7 @@ fn struct_1030_1550(param_1: u32,param_2: u16)
     lVar5 = iVar5->field_0x6;
     lVar5 = pass1_1000_0ed4(0x1000,param_2,0x1,uVar3 * 0x4,
                             (PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar3,uVar3)) *
-                            0x2 + CARRY2(uVar3 * 0x2,uVar3 * 0x2),(u16 *)lVar5,
+                            0x2 + CARRY2(uVar3 * 0x2,uVar3 * 0x2),lVar5,
                             (lVar5 >> 0x10));
     PTR_LOOP_1050_5f2e = (lVar5 >> 0x10);
     uVar3 = lVar5;
@@ -115,7 +115,7 @@ fn struct_1030_17ce(param_1: *mut u16,param_2: u32,param_3: u32) -> u16
   *param_1 = 0x1a16;
   iVar3->field_0x2 = 0x1030;
   if ((param_3 != 0x0) || (param_2 != 0x0)) {
-    mem_op_1000_179c(0x18,(uchar *)(paVar1 >> 0x10),0x1000);
+    mem_op_1000_179c(0x18,(paVar1 >> 0x10),0x1000);
     if (paVar1 == (astruct_75 *)0x0) {
       uVar2 = 0x0;
     }
@@ -252,7 +252,7 @@ fn struct_1030_44be(param_1: *mut u32,param_2: u16)
   iVar1->field_0x160 = 0x0;
   iVar1->field_0x164 = 0x0;
   iVar1->field_0x568 = 0x0;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,unaff_SS,(uchar *)param_2,unaff_DI);
+  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,unaff_SS,param_2,unaff_DI);
   iVar1->field_0x568 = (puVar2 + 0x64);
   return;
 }
@@ -331,7 +331,7 @@ fn struct_1030_8544(param_1: *mut u16,param_2: *mut u16)
   iVar2 = (astruct_355 *)param_1;
   iVar2->field_0x4 = iVar1->field_0x4;
   pass1_1008_3f62((u16 *)(param_1 & 0xffff0000 | &iVar2->field_0x8)
-                  ,(u16 *)
+                  ,
                    (param_2 & 0xffff0000 | &iVar1->field_0x8));
   iVar2->field_0xe = iVar1->field_0xe;
   iVar2->field_0x12 = iVar1->field_0x12;
@@ -439,7 +439,7 @@ fn struct_1030_e4fa(astruct_100 *param_1,param_2: u32,param_3: u16,param_4: u8)
   let puVar1: *mut u8
   
   struct_op_1028_d1dc(param_3,param_4,param_1,0x3e80);
-  puVar1 = (uchar *)(param_1 >> 0x10);
+  puVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_289 *)param_1;
   iVar1->field_0x108 = param_2;
   param_1->field_0x0 = 0xe62e;

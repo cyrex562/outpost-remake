@@ -170,7 +170,7 @@ fn win_ui_op_1010_3202(param_1: u32,param_2: i16,HWND16 param_3)
       uVar2 = (iVar3 + 0x52);
       param_3 = hwnd;
       if (*(long *)(uVar2 + iStack4 * 0x4) != 0x0) {
-        param_3 = (HWND16)s_tile2_bmp_1050_1538;
+        param_3 = s_tile2_bmp_1050_1538;
         DestroyWindow16(hwnd);
         uVar2 = (iVar3 + 0x52);
         (uVar2 + iStack4 * 0x4) = 0x0;
@@ -341,12 +341,12 @@ msg_box_op_1010_8bb4
   let local_402: [u8;400];
   
   pcVar1 = load_string_1010_847e
-                     (_PTR_LOOP_1050_14cc,(INT16)(_PTR_LOOP_1050_14cc >> 0x10)
+                     (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10)
                       ,param_4);
   unk_str_op_1000_3d3e(CONCAT22(param_5,local_402),pcVar1);
   pass1_1000_3cea(CONCAT22(param_5,local_402),param_3);
   pcVar1 = load_string_1010_847e
-                     (_PTR_LOOP_1050_14cc,(INT16)(_PTR_LOOP_1050_14cc >> 0x10)
+                     (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10)
                       ,0x1000);
   MessageBox16(0x1000,(LPCSTR)0x1010,(LPCSTR)pcVar1,(pcVar1 >> 0x10));
   PostMessage16((HWND16)s_tile2_bmp_1050_1538,0x0,0x0,0x11100ee);

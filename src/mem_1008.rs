@@ -17,8 +17,8 @@ fn memcpy_op_1008_4274(param_1: u32,param_2: u16)
     iVar1 = (uVar7 >> 0x10);
     lVar8 = mem_op_1000_0a48(0x1,(LPCVOID)uVar7,iVar1,_PTR_LOOP_1050_5f2c,0x1000);
     uVar5 = lVar8;
-    puVar2 = (uchar *)((lVar8 >> 0x10) | uVar5);
-    if (puVar2 != (uchar *)0x0) {
+    puVar2 = ((lVar8 >> 0x10) | uVar5);
+    if (puVar2 != 0x0) {
       hmemcpy16((LPVOID)&PTR_LOOP_1050_1000,(LPCVOID)uVar7,
                 CONCAT22((iVar4 + 0x6),iVar1));
       mem_op_1000_179c(0x1e,puVar2,0x1000);

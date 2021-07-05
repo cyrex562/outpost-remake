@@ -1,7 +1,7 @@
 
 
 
-fn ret_true_1000_2146(void) -> u16
+pub fn ret_true_1000_2146() -> u16
 
 {
   return 0x1;
@@ -9,19 +9,19 @@ fn ret_true_1000_2146(void) -> u16
 
 
 
-fn empty_fn_1000_214a()
+pub fn empty_fn_1000_214a()
 {
   return;
 }
 
 
-fn ret_op_1000_55ac(void)
+pub fn ret_op_1000_55ac(param_1: *mut u8) -> u32
 {
-  return;
+  unimplemented!()
 }
 
 
-fn empty_1008_8fc4(void)
+pub fn empty_1008_8fc4()
 {
   return;
 }

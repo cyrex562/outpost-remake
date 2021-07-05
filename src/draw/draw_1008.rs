@@ -41,7 +41,7 @@ unk_draw_op_1008_61b2
   iVar1->field_0xac = 0x45000000;
   iVar1->field_0xbc = (param_4 + 0x8);
   l_struct_2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x48,param_5,puVar1,unaff_DI);
-  uVar1 = (u16 *)(l_struct_2 >> 0x10);
+  uVar1 = (l_struct_2 >> 0x10);
   iVar1->field_0xb4 = 0x0;
   iVar1->field_0xb6 = 0x0;
   iVar1->field_0xb8 = (l_struct_2 + 0xa);
@@ -168,9 +168,9 @@ fn draw_op_1008_8288(param_1: u16,param_2: u32,HWND16 param_3)
   
   HStack74 = BeginPaint16(param_3,&local_3c);
   uStack4 = 0x0;
-  HStack76 = CreatePen16((INT16)s_tile2_bmp_1050_1538,(INT16)_PTR_LOOP_1050_0368,
+  HStack76 = CreatePen16((INT16)s_tile2_bmp_1050_1538,_PTR_LOOP_1050_0368,
                          (COLORREF)(_PTR_LOOP_1050_0368 >> 0x10));
-  HStack78 = CreatePen16((INT16)s_tile2_bmp_1050_1538,(INT16)DAT_1050_0364,
+  HStack78 = CreatePen16((INT16)s_tile2_bmp_1050_1538,DAT_1050_0364,
                          (COLORREF)(DAT_1050_0364 >> 0x10));
   HStack80 = CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
   GetClientRect16((HWND16)s_tile2_bmp_1050_1538,&local_58);
@@ -220,9 +220,9 @@ fn draw_op_1008_8288(param_1: u16,param_2: u32,HWND16 param_3)
   SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack78);
   SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack80);
   Polygon16((HDC16)s_tile2_bmp_1050_1538,(POINT16 *)(&PTR_LOOP_1050_0002 + 0x1),
-            (INT16)&local_10);
+            &local_10);
   Polygon16((HDC16)s_tile2_bmp_1050_1538,(POINT16 *)(&PTR_LOOP_1050_0002 + 0x1),
-            (INT16)&local_1c);
+            &local_1c);
   SelectObject16((HDC16)s_tile2_bmp_1050_1538,HVar2);
   SelectObject16((HDC16)s_tile2_bmp_1050_1538,HVar1);
   DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
@@ -260,7 +260,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
   pass1_1008_3e38((u16 *)CONCAT22(param_2,&param_1->field_0xe));
   param_1->field_0x14 = 0x0;
   param_1->field_0x16 = 0x0;
-  param_1->field_0x18 = (u16 *)0x0;
+  param_1->field_0x18 = 0x0;
   CONCAT22(param_2,param_1) = 0xdc80;
   param_1->field_0x2 = 0x1008;
   hdc = GetDC16(0x1010);
@@ -272,13 +272,13 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
   count = (iVar7 >> 0xf);
   pass1_1008_3e76((u16 *)CONCAT22(param_2,&param_1->field_0xe),0x0,iVar7 / 0x2,
                   (param_1->field_0xa + -0x280) / 0x2);
-  hwnd = (HWND16)s_tile2_bmp_1050_1538;
+  hwnd = s_tile2_bmp_1050_1538;
   uVar8 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x26);
   if ((uVar8 & 0x100) != 0x0) {
     IVar6 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x68);
     param_1->field_0x14 = IVar6;
     IVar5 = (astruct_80 *)GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x6a);
-    param_1->field_0x16 = (INT16)IVar5;
+    param_1->field_0x16 = IVar5;
     if (_PTR_LOOP_1050_5f2c == 0x0) {
       PTR_LOOP_1050_5f2c = mem_op_1000_160a(count,0x1000);
     }
@@ -300,7 +300,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
     &param_1->field_0x18 = uVar9;
     (&param_1->field_0x18 + 0x2) = PTR_LOOP_1050_5f2e;
     if (lStack8 != 0x0) {
-      if (param_1->field_0x18 != (u16 *)0x0) {
+      if (param_1->field_0x18 != 0x0) {
         entries = (PALETTEENTRY *)(param_1->field_0x16 / 0x2);
         GetSystemPaletteEntries(0x1000,start,count,entries);
         GetSystemPaletteEntries
@@ -313,7 +313,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
           iVar7 = iStack16 * 0x4 + start;
           uVar3 = puStack32 >> 0x10;
           iVar10 = puStack32;
-          puStack32 = (u16 *)
+          puStack32 =
                       (puStack32 & 0xffff0000 | (iVar10 + 0x4));
           *puVar4 = CONCAT11(*(iVar7 + 0x1),*(iVar7 + 0x2));
           (iVar10 + 0x2) = bVar2;

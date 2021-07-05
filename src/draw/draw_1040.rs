@@ -95,7 +95,7 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
     if (param_3 != 0x6) {
       return 0x0;
     }
-    hdc = (HWND16)s_tile2_bmp_1050_1538;
+    hdc = s_tile2_bmp_1050_1538;
     IVar5 = GetDlgCtrlID16(CVar8);
     if (((iVar6 + 0x94) != 0x0) && (IVar5 == 0xfb2)) {
       CVar8 = 0x0;
@@ -229,7 +229,7 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   LineTo16((HDC16)s_tile2_bmp_1050_1538,x,0x82);
   HVar16 = local_2c;
   LineTo16((HDC16)s_tile2_bmp_1050_1538,iVar5,0x82);
-  for (uStack82 = 0x0; puVar1 = (u16 *)(iVar6 + 0x94),
+  for (uStack82 = 0x0; puVar1 = (iVar6 + 0x94),
       uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
     pHVar14 = &local_2c;
     iVar5 = iStack68 * uStack82 + 0x84;
@@ -338,8 +338,8 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
           SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
           SetTextColor16((HDC16)s_tile2_bmp_1050_1538,color);
           str = (LPCSTR)lstrlen16((LPCSTR)s_tile2_bmp_1050_1538);
-          DVar5 = GetTextExtent16((HDC16)s_tile2_bmp_1050_1538,str,(INT16)count);
-          TextOut16((HDC16)s_tile2_bmp_1050_1538,(INT16)str,(INT16)count,str_00,
+          DVar5 = GetTextExtent16((HDC16)s_tile2_bmp_1050_1538,str,count);
+          TextOut16((HDC16)s_tile2_bmp_1050_1538,str,count,str_00,
                     (iVar4->field_0x80 - iVar4->field_0x7c) / 0x2 -
                     (DVar5 >> 0x10) / 0x2);
           if (handle_01 != 0x0) {
@@ -378,7 +378,7 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
   let uVar6: u16;
   
   uVar6 = 0x4;
-  hwnd = (HWND16)s_tile2_bmp_1050_1538;
+  hwnd = s_tile2_bmp_1050_1538;
   HVar3 = GetStockObject16(param_4);
   if (_PTR_LOOP_1050_5df0 == 0x0) {
     ppcVar1 = (code **)(*param_1 + 0x68);
@@ -400,7 +400,7 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
     if (param_3 != 0x6) {
       return 0x0;
     }
-    hdc = (HWND16)s_tile2_bmp_1050_1538;
+    hdc = s_tile2_bmp_1050_1538;
     IVar4 = GetDlgCtrlID16(hwnd);
     if (IVar4 == 0x14c) {
       color = 0x0;
@@ -556,7 +556,7 @@ fn draw_text_1040_8d14(astruct_37 *param_1,HWND16 param_2)
     iVar3->field_0xa0 = 0xa;
     IVar2 = GetSystemMetrics16(param_2);
     iVar3->field_0x9e = IVar2 + 0x28;
-    param_2 = (HWND16)s_tile2_bmp_1050_1538;
+    param_2 = s_tile2_bmp_1050_1538;
   }
   else {
     iVar3->field_0xa0 = 0xa;
@@ -567,7 +567,7 @@ fn draw_text_1040_8d14(astruct_37 *param_1,HWND16 param_2)
   if (handle != 0x0) {
     HStack8 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)0x410,(INT16)&iVar3->field_0x9e,rect,
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)0x410,&iVar3->field_0x9e,rect,
              0xffff);
   if (HStack8 != 0x0) {
     SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack8);
@@ -696,7 +696,7 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
   iStack8 = 0x0;
   iStack28 = 0x0;
   HStack30 = 0x0;
-  y = (INT16)(param_2 >> 0x10);
+  y = (param_2 >> 0x10);
   iVar4 = (astruct_71 *)param_2;
   uStack32 = iVar4->field_0x4 & 0x8;
   uStack34 = iVar4->field_0x56 & 0x1;
@@ -720,15 +720,15 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
       HStack30 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,iVar4->field_0x5a);
     }
     uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4->field_0x6)));
-    DrawText16(0x1000,(LPCSTR)0x400,(INT16)&local_a,param_4,uVar3);
+    DrawText16(0x1000,(LPCSTR)0x400,&local_a,param_4,uVar3);
     iStack8 = ((uStack14._2_2_ - iStack4) + iStack8) / 0x2 + local_12.y;
     iStack4 += iStack8;
     local_a = ((uStack14 - iStack6) + local_a) / 0x2 + local_12.x;
     iStack6 += local_a;
   }
-  handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,(INT16)DAT_1050_5ec2,
+  handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,DAT_1050_5ec2,
                        (COLORREF)(DAT_1050_5ec2 >> 0x10));
-  handle_00 = CreatePen16((INT16)s_tile2_bmp_1050_1538,(INT16)DAT_1050_5ebe,
+  handle_00 = CreatePen16((INT16)s_tile2_bmp_1050_1538,DAT_1050_5ebe,
                           (COLORREF)(DAT_1050_5ebe >> 0x10));
   handle_01 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
   if (uStack34 != 0x0) {
@@ -793,7 +793,7 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
       color_01 = SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
       uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4->field_0x6)))
       ;
-      DrawText16(0x1000,(LPCSTR)(&PTR_LOOP_1050_0000 + 0x1),(INT16)&local_a,param_4,
+      DrawText16(0x1000,(LPCSTR)(&PTR_LOOP_1050_0000 + 0x1),&local_a,param_4,
                  uVar3);
       SetTextColor16((HDC16)s_tile2_bmp_1050_1538,color_00);
       SetBkColor16((HDC16)s_tile2_bmp_1050_1538,color_01);
@@ -805,7 +805,7 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
       x = &iVar4->field_0x6;
       uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(x)));
       GrayString16(0x1000,iStack4 - iStack8,(LPVOID)(iStack6 - local_a),
-                   CONCAT22(local_a,iStack8),uVar3,(INT16)x,y,cx,cy);
+                   CONCAT22(local_a,iStack8),uVar3,x,y,cx,cy);
     }
     if (HStack30 != 0x0) {
       SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack30);
@@ -1005,7 +1005,7 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
       local_a.y = (iVar7 + 0x20) + (iVar7 + 0x24);
     }
   }
-  param_3 = (HWND16)s_tile2_bmp_1050_1538;
+  param_3 = s_tile2_bmp_1050_1538;
   rect = &local_a;
 LAB_1040_c19d:
   InvalidateRect16(param_3,rect,(bool)param_4);
@@ -1133,7 +1133,7 @@ fn draw_op_1040_c38e(param_1: u32)
       hdc = (HDC16)s_tile2_bmp_1050_1538;
       DVar11 = GetCurrentPosition16((HDC16)s_tile2_bmp_1050_1538);
       iStack18 = (DVar11 >> 0x10);
-      IStack20 = (INT16)DVar11;
+      IStack20 = DVar11;
       if (iStack26 == 0x0) {
         IStack16 = IStack20;
         iStack14 = iStack18;

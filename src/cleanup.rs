@@ -83,7 +83,7 @@ fn unk_destroy_win_op_1010_2fa0(Uparam_1: i32,HWND16 param_2)
     if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
     DestroyWindow16(param_2);
     iStack4 += 0x1;
-    param_2 = (HWND16)s_tile2_bmp_1050_1538;
+    param_2 = s_tile2_bmp_1050_1538;
   }
   (iVar3 + 0x16) = 0x0;
   if (((iVar3 + 0x54) | (iVar3 + 0x52)) != 0x0) {
@@ -92,7 +92,7 @@ fn unk_destroy_win_op_1010_2fa0(Uparam_1: i32,HWND16 param_2)
       uVar2 = (iVar3 + 0x52);
       HVar5 = param_2;
       if (*(long *)(uVar2 + iStack4 * 0x4) != 0x0) {
-        HVar5 = (HWND16)s_tile2_bmp_1050_1538;
+        HVar5 = s_tile2_bmp_1050_1538;
         DestroyWindow16(param_2);
         uVar2 = (iVar3 + 0x52);
         (uVar2 + iStack4 * 0x4) = 0x0;
@@ -129,7 +129,7 @@ unk_destroy_win_op_1010_305a
   let iStack8: i16;
   let iStack6: i16;
   
-  hwnd = (HWND16)&PTR_LOOP_1050_1040;
+  hwnd = &PTR_LOOP_1050_1040;
   uVar5 = pass1_1040_c60e(param_3);
   uVar7 = (astruct_27 *)(param_1 >> 0x10);
   iVar4 = (astruct_27 *)param_1;
@@ -149,7 +149,7 @@ LAB_1010_30ad:
               *piVar1 != iStack8 && iStack8 <= *piVar1) {
           DestroyWindow16(hwnd);
           (&iVar4->field_0x2e)[iVar6] = 0x0;
-          hwnd = (HWND16)s_tile2_bmp_1050_1538;
+          hwnd = s_tile2_bmp_1050_1538;
           iVar6 = iStack8;
         }
         iVar4->field_0x16 = iStack6 + 0x1;
@@ -168,7 +168,7 @@ LAB_1010_30ad:
           uVar8 = (UVar2 >> 0x10);
           iStack10 = (iVar6 + 0x20) + (iVar6 + 0x24) + 0x8;
         }
-        hwnd = (HWND16)&PTR_LOOP_1050_1040;
+        hwnd = &PTR_LOOP_1050_1040;
         mov_update_win_1040_93aa
                   (param_3,iStack10,iVar4->field_0x1a,&PTR_LOOP_1050_1040);
       }
@@ -186,7 +186,7 @@ LAB_1010_30ad:
             hwnd = hwnd_00;
             if ((*(long *)(iVar6 + iStack8 * 0x4) != 0x0) &&
                (*(astruct_65 **)(iVar6 + iStack8 * 0x4) != param_3)) {
-              hwnd = (HWND16)s_tile2_bmp_1050_1538;
+              hwnd = s_tile2_bmp_1050_1538;
               DestroyWindow16(hwnd_00);
             }
             lVar3 = iVar4->field_0x52;
@@ -289,7 +289,7 @@ fn unk_destroy_window_op_1018_6bb6(astruct_28 *param_1,HWND16 param_2)
   iVar2 = (astruct_28 *)param_1;
   hwnd = param_2;
   if (iVar2->field_0xea != 0x0) {
-    hwnd = (HWND16)s_tile2_bmp_1050_1538;
+    hwnd = s_tile2_bmp_1050_1538;
     PostMessage16(param_2,0x0,0x0,CONCAT22(0x111,iVar2->field_0xea));
   }
   PostMessage16(hwnd,0x0,0x0,0x1110079);
@@ -392,7 +392,7 @@ fn destroy_window_1020_1d4a(Uparam_1: i32,param_2: i16,HWND16 param_3)
     if (BVar1 != 0x0) {
       hwnd = param_3;
       if ((param_1 + 0x96) != 0x0) {
-        hwnd = (HWND16)s_tile2_bmp_1050_1538;
+        hwnd = s_tile2_bmp_1050_1538;
         PostMessage16(param_3,0x0,0x0,0x11100ee);
       }
       DestroyWindow16(hwnd);
@@ -511,7 +511,7 @@ fn destroy_window_1020_3b3e(astruct_30 *param_1,HWND16 param_2)
   uVar5->field_0x10e = 0x0;
   HVar5 = param_2;
   if (uVar5->field_0x10a != 0x0) {
-    HVar5 = (HWND16)s_tile2_bmp_1050_1538;
+    HVar5 = s_tile2_bmp_1050_1538;
     DestroyWindow16(param_2);
   }
   puVar1 = uVar5->field_0xf6;
@@ -587,7 +587,7 @@ fn unk_destroy_win_op_1020_694c(Uparam_1: i32,param_2: u16,HWND16 param_3,param_
         uVar2 = GetDlgItem16(param_3,0x1797);
         if (uVar2 != 0x0) {
 LAB_1020_6a6f:
-          win_ui_fn_1020_6e98(param_1,(HWND16)s_tile2_bmp_1050_1538,param_4);
+          win_ui_fn_1020_6e98(param_1,s_tile2_bmp_1050_1538,param_4);
           return uVar2;
         }
       }
@@ -835,7 +835,7 @@ fn destroy_win_1038_e1dc(param_1: u16,param_2: u16,param_3: i16,HWND16 param_4)
   if (param_3 != 0x0) {
     UVar1 = IsDlgButtonChecked(param_4,0x1807);
     if (UVar1 == 0x0) {
-      param_4 = (HWND16)s_tile2_bmp_1050_1538;
+      param_4 = s_tile2_bmp_1050_1538;
       UVar1 = IsDlgButtonChecked((HWND16)s_tile2_bmp_1050_1538,0x1806);
       if (UVar1 == 0x0) goto LAB_1038_e229;
       lparam = 0x1110130;
@@ -843,7 +843,7 @@ fn destroy_win_1038_e1dc(param_1: u16,param_2: u16,param_3: i16,HWND16 param_4)
     else {
       lparam = 0x111012f;
     }
-    param_4 = (HWND16)s_tile2_bmp_1050_1538;
+    param_4 = s_tile2_bmp_1050_1538;
     SendMessage16((HWND16)s_tile2_bmp_1050_1538,0x0,0x0,lparam);
   }
 LAB_1038_e229:
@@ -885,10 +885,10 @@ fn destroy_win_1040_5256(astruct_34 *param_1,HWND16 param_2)
   iVar5 = (astruct_34 *)param_1;
   HVar6 = param_2;
   if (iVar5->field_0xb6 != 0x0) {
-    HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+    HVar6 = s_tile2_bmp_1050_1538;
     BVar4 = IsWindow16(param_2);
     if (BVar4 != 0x0) {
-      HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+      HVar6 = s_tile2_bmp_1050_1538;
       DestroyWindow16((HWND16)s_tile2_bmp_1050_1538);
     }
   }
@@ -966,10 +966,10 @@ fn destroy_win_1040_bb78(astruct_35 *param_1,HWND16 param_2)
   iVar5 = (astruct_35 *)param_1;
   HVar6 = param_2;
   if (iVar5->field_0xb6 != 0x0) {
-    HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+    HVar6 = s_tile2_bmp_1050_1538;
     BVar4 = IsWindow16(param_2);
     if (BVar4 != 0x0) {
-      HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+      HVar6 = s_tile2_bmp_1050_1538;
       DestroyWindow16((HWND16)s_tile2_bmp_1050_1538);
     }
   }

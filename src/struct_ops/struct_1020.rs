@@ -148,10 +148,10 @@ fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
   *param_1 = 0x87aa;
   iVar3->field_0x2 = 0x1020;
   puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x48,param_3,
-                           (uchar *)(puVar5 >> 0x10),iVar4);
-  puVar2 = (uchar *)(puVar5 >> 0x10);
+                           (puVar5 >> 0x10),iVar4);
+  puVar2 = (puVar5 >> 0x10);
   pass1_1008_3f62((u16 *)(param_1 & 0xffff0000 | ZEXT24(iVar3 + 0x1)),
-                  (u16 *)(puVar5 & 0xffff0000 | (puVar5 + 0xe)));
+                  (puVar5 & 0xffff0000 | (puVar5 + 0xe)));
   uVar1 = iVar3->field_0x6 << 0x3;
   mem_op_1000_179c(uVar1,puVar2,0x1000);
   &iVar3->field_0x8 = uVar1;
@@ -347,7 +347,7 @@ struct_1020_d99e(param_1: *mut u16,param_2: u16,param_3: i16,param_4: u32,param_
   *param_1 = 0xe792;
   iVar2->field_0x2 = 0x1020;
   puVar1 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2f,param_6,
-                           (uchar *)(puVar1 >> 0x10),unaff_DI);
+                           (puVar1 >> 0x10),unaff_DI);
   iVar2->field_0x28 = puVar1;
   iVar2->field_0x2a = (puVar1 >> 0x10);
   iVar2->field_0x10 = 0x49;

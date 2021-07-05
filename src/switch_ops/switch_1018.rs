@@ -146,7 +146,7 @@ switchD_1018_3f8b_caseD_2:
     puVar8 = param_5;
     uVar13 = uVar3;
     mem_op_1000_179c(0x10,param_5,0x1000);
-    puStack22 = (u16 *)CONCAT22(puVar8,uVar13);
+    puStack22 = CONCAT22(puVar8,uVar13);
     if ((puVar8 | uVar13) != 0x0) {
       lVar10 = param_2 / lStack14;
       uStack8 = (param_2 % lStack14);
@@ -164,7 +164,7 @@ switchD_1018_3f8b_caseD_2:
       puVar8 = param_5;
       uVar13 = uVar3;
       mem_op_1000_179c(0x10,param_5,0x1000);
-      puStack22 = (u16 *)CONCAT22(puVar8,uVar13);
+      puStack22 = CONCAT22(puVar8,uVar13);
       if ((puVar8 | uVar13) != 0x0) {
         puVar9 = struct_1018_48b0(puStack22,param_2 / lStack18,CONCAT22(param_5,uVar3),
                                   (iVar1 + 0x2));
@@ -179,13 +179,13 @@ switchD_1018_3f8b_caseD_2:
         iVar1 = (iVar1 + 0x2);
         uVar5 = iVar1 - 0x1;
         iVar11 = _PTR_LOOP_1050_14cc;
-        IVar12 = (INT16)(_PTR_LOOP_1050_14cc >> 0x10);
+        IVar12 = (_PTR_LOOP_1050_14cc >> 0x10);
         if (uVar5 == 0x0) {
           load_string_1010_84ac(iVar11,IVar12,0x1010);
           uVar6 = uVar5;
           puVar8 = param_5;
           mem_op_1000_179c(0x14,param_5,0x1000);
-          puStack22 = (u16 *)CONCAT22(puVar8,uVar6);
+          puStack22 = CONCAT22(puVar8,uVar6);
           if ((puVar8 | uVar6) == 0x0) goto LAB_1018_40bc;
           uVar13 = 0x2;
           lVar10 = 0x14;
@@ -197,7 +197,7 @@ switchD_1018_3f8b_caseD_2:
             uVar6 = uVar5;
             puVar8 = param_5;
             mem_op_1000_179c(0x14,param_5,0x1000);
-            puStack22 = (u16 *)CONCAT22(puVar8,uVar6);
+            puStack22 = CONCAT22(puVar8,uVar6);
             if ((puVar8 | uVar6) == 0x0) goto LAB_1018_40bc;
             uVar13 = 0x3;
             lVar10 = 0x16;
@@ -209,7 +209,7 @@ switchD_1018_3f8b_caseD_2:
               uVar6 = uVar5;
               puVar8 = param_5;
               mem_op_1000_179c(0x14,param_5,0x1000);
-              puStack22 = (u16 *)CONCAT22(puVar8,uVar6);
+              puStack22 = CONCAT22(puVar8,uVar6);
               if ((puVar8 | uVar6) == 0x0) goto LAB_1018_40bc;
               uVar13 = 0x4;
               lVar10 = 0x17;
@@ -221,7 +221,7 @@ switchD_1018_3f8b_caseD_2:
               uVar6 = uVar5;
               puVar8 = param_5;
               mem_op_1000_179c(0x14,param_5,0x1000);
-              puStack22 = (u16 *)CONCAT22(puVar8,uVar6);
+              puStack22 = CONCAT22(puVar8,uVar6);
               if ((puVar8 | uVar6) == 0x0) goto LAB_1018_40bc;
               uVar13 = 0x4;
               lVar10 = 0xa;
@@ -247,7 +247,7 @@ switchD_1018_3f8b_caseD_2:
       uVar5 = str_op_1008_60e8(CONCAT22(param_5,uVar13),param_5);
       uStack26 = CONCAT22(param_5,uVar5);
       mem_op_1000_179c(0x14,param_5,0x1000);
-      puStack22 = (u16 *)CONCAT22(param_5,uVar5);
+      puStack22 = CONCAT22(param_5,uVar5);
       if ((param_5 | uVar5) != 0x0) {
         uVar7 = param_2 / lStack14;
         uStack8 = (param_2 % lStack14);

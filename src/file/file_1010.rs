@@ -229,7 +229,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
     puVar1 = &local_2e;
     struct_op_1008_48fe((astruct_81 *)CONCAT22(param_3,puVar1),0x1,uStack10,uStack10._2_2_
                        );
-    mem_op_1000_179c(0x1e,(uchar *)(uStack10 >> 0x10),0x1000);
+    mem_op_1000_179c(0x1e,(uStack10 >> 0x10),0x1000);
     uVar3 = (uStack10 >> 0x10) | puVar1;
     if (uVar3 == 0x0) {
       puVar2 = 0x0;

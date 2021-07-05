@@ -1,4 +1,4 @@
-fn  poss_str_op_1000_28dc(param_1: i16) -> *mut u8
+pub fn  poss_str_op_1000_28dc(param_1: i16) -> String
 
 {
   let piVar1: *mut i16;
@@ -6,21 +6,21 @@ fn  poss_str_op_1000_28dc(param_1: i16) -> *mut u8
   let iVar2: i16;
   *mut let piVar3: u8;
   
-  piVar3 = (*mut u8)&PTR_LOOP_1050_63fe;
+  piVar3 = &PTR_LOOP_1050_63fe;
   do {
     piVar1 = (i16 *)piVar3;
-    piVar3 = (*mut u8)(piVar3 + 0x2);
+    piVar3 = (piVar3 + 0x2);
     iVar2 = *piVar1;
     piVar2 = piVar3;
-    if ((iVar2 == param_1) || (piVar2 = (*mut u8)(iVar2 + 0x1), piVar2 == (*mut u8)0x0)) {
-      return (*mut u8)(i16 *)piVar2;
+    if ((iVar2 == param_1) || (piVar2 = (iVar2 + 0x1), piVar2 == 0x0)) {
+      return (i16 *)piVar2;
     }
     iVar2 = -0x1;
     do {
       if (iVar2 == 0x0) break;
       iVar2 += -0x1;
       piVar1 = (i16 *)piVar3;
-      piVar3 = (*mut u8)(piVar3 + 0x1);
+      piVar3 = (piVar3 + 0x1);
     } while (*piVar1 != '\0');
   } while( true );
 }
@@ -72,16 +72,16 @@ fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
     uVar6 -= 0x1;
   }
   for (uVar7 = uVar6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
-    puVar5 = (u16 *)puVar7;
+    puVar5 = puVar7;
     puVar7 = (puVar7 + 0x2);
-    puVar4 = (u16 *)l_string_2;
+    puVar4 = l_string_2;
     l_string_2 = (l_string_2 + 0x2);
     *puVar5 = *puVar4;
   }
   for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
-    puVar5 = (u16 *)puVar7;
+    puVar5 = puVar7;
     puVar7 = (puVar7 + 0x1);
-    puVar4 = (u16 *)l_string_2;
+    puVar4 = l_string_2;
     l_string_2 = (l_string_2 + 0x1);
     *puVar5 = *puVar4;
   }

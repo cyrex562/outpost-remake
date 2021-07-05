@@ -18,7 +18,7 @@ fn exit_1000_25cc(param_1: i16,param_2: u16,param_3: u16) -> *mut i16
   pass1_1000_25a8(param_2,param_3);
   pass1_1000_2913(iVar6,param_2,param_3);
   str = poss_str_op_1000_28dc(iVar7);
-  if (str != (*mut u8)0x0) {
+  if (str != 0x0) {
     iVar6 = 0x9;
     if (*str == 'M') {
       iVar6 = 0xf;
@@ -100,7 +100,7 @@ exit_1000_25f2(param_1: u16,param_2: u16,param_3: i16,param_4: i16,param_5: u16,
   pass1_1000_25a8(param_5,param_6);
   pass1_1000_2913(0x0,param_5,param_6);
   str = poss_str_op_1000_28dc(0x0);
-  if (str != (*mut u8)0x0) {
+  if (str != 0x0) {
     iVar7 = 0x9;
     if (*str == 'M') {
       iVar7 = 0xf;

@@ -420,7 +420,7 @@ struct_op_1028_87f0(param_1: u16,param_2: u8,astruct_97 *param_3,param_4: u16,
   iVar1->field_0x120 = 0x0;
   param_3 = 0x8d8e;
   iVar1->field_0x2 = &USHORT_1050_1028;
-  sys_1000_3f9c(&iVar1->field_0x8,(uchar *)puVar1,
+  sys_1000_3f9c(&iVar1->field_0x8,puVar1,
                 s_SCInternalPutBldg_site_0x_08lx__b_1050_5046,
                 &USHORT_1050_1050,param_10,&stack0xfffe,puVar1,0x1000,
                 param_1,param_2);
@@ -439,7 +439,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16,
   let puVar1: *mut u8
   
   struct_op_1028_d1dc(param_1,param_2,param_3,0x3e8);
-  puVar1 = (uchar *)(param_3 >> 0x10);
+  puVar1 = (param_3 >> 0x10);
   iVar1 = (astruct_100 *)param_3;
   iVar1->field_0x108 = param_10;
   iVar1->field_0x10c = param_9;
@@ -471,7 +471,7 @@ struct_op_1028_933c(astruct_100 *param_1,param_2: u16,param_3: u16,param_4: u16,
   let puVar2: *mut u8
   
   struct_op_1028_d1dc(param_9,param_10,param_1,0x3e8);
-  puVar2 = (uchar *)(param_1 >> 0x10);
+  puVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 0x108) = param_8;
   (iVar1 + 0x10c) = param_7;
@@ -500,7 +500,7 @@ fn struct_1028_9c62(param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5:
   (param_1 + 0x108) = param_3;
   CONCAT22(param_2,param_1) = 0x9eb6;
   (param_1 + 0x2) = &USHORT_1050_1028;
-  return (u16 *)CONCAT22(param_2,param_1);
+  return CONCAT22(param_2,param_1);
 }
 
 
@@ -512,7 +512,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16)
   let puVar1: *mut u8
   let in_stack_0000fffa: u16;
   
-  puVar1 = (uchar *)(param_3 >> 0x10);
+  puVar1 = (param_3 >> 0x10);
   iVar1 = (astruct_101 *)param_3;
   param_3->field_0x0 = 0x389a;
   iVar1->field_0x2 = 0x1008;
@@ -536,10 +536,10 @@ fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
   uVar3 = (param_1 >> 0x10);
   *param_1 = 0x0;
   (param_1 + 0x4) = param_2;
-  mem_op_1000_179c(0xc,(uchar *)param_3,0x1000);
+  mem_op_1000_179c(0xc,param_3,0x1000);
   uVar1 = param_2;
-  puVar2 = (uchar *)(param_3 | uVar1);
-  if (puVar2 == (uchar *)0x0) {
+  puVar2 = (param_3 | uVar1);
+  if (puVar2 == 0x0) {
     *param_1 = 0x0;
   }
   else {
@@ -636,15 +636,15 @@ fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
   uVar5 = (param_1 >> 0x10);
   iVar5 = (astruct_158 *)param_1;
   *param_1 = 0x0;
-  iVar5->field_0x4 = (u16 *)0x0;
-  iVar5->field_0x8 = (u16 *)0x0;
-  puVar3 = (u16 *)*_PTR_LOOP_1050_5748;
+  iVar5->field_0x4 = 0x0;
+  iVar5->field_0x8 = 0x0;
+  puVar3 = *_PTR_LOOP_1050_5748;
   *param_1 = puVar3;
   mem_op_1000_179c(0xc,param_2,0x1000);
-  puVar1 = (u16 *)(puVar3 & 0xffff | ZEXT24(param_2) << 0x10);
-  puVar4 = (uchar *)(param_2 | puVar3);
-  if (puVar4 == (uchar *)0x0) {
-    iVar5->field_0x4 = (u16 *)0x0;
+  puVar1 = (puVar3 & 0xffff | ZEXT24(param_2) << 0x10);
+  puVar4 = (param_2 | puVar3);
+  if (puVar4 == 0x0) {
+    iVar5->field_0x4 = 0x0;
   }
   else {
     set_struct_1008_574a((astruct_21 *)(puVar3 & 0xffff | ZEXT24(param_2) << 0x10))
@@ -657,9 +657,9 @@ fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
   }
   uVar2 = puVar3;
   mem_op_1000_179c(0xc,puVar4,0x1000);
-  puStack14 = (u16 *)CONCAT22(puVar4,uVar2);
+  puStack14 = CONCAT22(puVar4,uVar2);
   if ((puVar4 | uVar2) == 0x0) {
-    iVar5->field_0x8 = (u16 *)0x0;
+    iVar5->field_0x8 = 0x0;
   }
   else {
     set_struct_1008_574a((astruct_21 *)CONCAT22(puVar4,uVar2));

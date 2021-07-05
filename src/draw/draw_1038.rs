@@ -25,17 +25,17 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
   if (param_4._2_2_ == 0xeb) {
     paStack6 = (astruct_20 *)
                mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,in_DX,unaff_DI);
-    puVar6 = (uchar *)(paStack6 >> 0x10);
+    puVar6 = (paStack6 >> 0x10);
     paVar5 = *(astruct_18 **)(param_1 + 0x90);
     if (paVar5 != (astruct_18 *)0x0) {
       paStack10 = paVar5;
       mem_op_1000_179c(0x18,puVar6,0x1000);
       uVar3 = paVar5;
       paStack16 = (astruct_18 *)(paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
-      puVar7 = (uchar *)(puVar6 | uVar3);
-      if (puVar7 == (uchar *)0x0) {
+      puVar7 = (puVar6 | uVar3);
+      if (puVar7 == 0x0) {
         uVar3 = 0x0;
-        puVar7 = (uchar *)0x0;
+        puVar7 = 0x0;
       }
       else {
         struct_1040_a598((u16 *)(paVar5 & 0xffff | ZEXT24(puVar6) << 0x10));
@@ -93,7 +93,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
       UStack22 = GetDlgItemInt16(param_5,0x1,local_1a,param_6);
       if (local_1a[0] != 0x0) {
         uVar1 = (param_1 + 0x98);
-        draw_fn_1010_2a32(0x94be,(u16_t)s_tile2_bmp_1050_1538,(u16 *)uVar1,
+        draw_fn_1010_2a32(0x94be,(u16_t)s_tile2_bmp_1050_1538,uVar1,
                           (uVar1 >> 0x10),UStack22,
                           CONCAT22(uVar8,(iVar4 * 0xe + 0x5a72)),
                           (u16_t)in_DX,param_1,(u16_t)&stack0xfffe,param_2);

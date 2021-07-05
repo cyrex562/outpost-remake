@@ -21,8 +21,8 @@ fn pt_in_rect_1018_1bda(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
   uStack14 = 0x0;
   iVar3 = param_1;
   pass1_1008_3e94((u16 *)(param_1 & 0xffff0000 | (iVar3 + 0x3a)),
-                  (u16 *)CONCAT22(param_4,&local_14),
-                  (u16 *)CONCAT22(param_4,&local_12));
+                  CONCAT22(param_4,&local_14),
+                  CONCAT22(param_4,&local_12));
   PStack24 = (POINT16)CONCAT22(param_2,param_3);
   uStack16 = 0x0;
   iStack26 = 0x0;
@@ -35,8 +35,8 @@ fn pt_in_rect_1018_1bda(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
     uVar2 = (iVar3 + 0x42);
     iVar5 = (iVar3 + 0x40) + iStack26 * 0x18;
     uStack14 = CONCAT22(uVar2,iVar5);
-    pass1_1008_3e94((u16 *)CONCAT22(uVar2,iVar5),(u16 *)CONCAT22(param_4,&local_8),
-                    (u16 *)CONCAT22(param_4,&local_a));
+    pass1_1008_3e94((u16 *)CONCAT22(uVar2,iVar5),CONCAT22(param_4,&local_8),
+                    CONCAT22(param_4,&local_a));
     local_a += local_12 + -0x6;
     iStack6 = local_a + 0xc;
     local_8 += local_14 + -0x6;
@@ -163,7 +163,7 @@ fn misc_draw_op_1018_5d6c(param_1: u32,HWND16 param_2)
   puVar1 = (uVar3 + 0xa);
   paVar6 = (astruct_76 *)pass1_1008_9f48((iVar4 + 0x14));
   pass1_1008_5236((iVar4 + 0x18));
-  pass1_1008_4480(puVar1,(u16 *)(param_1 & 0xffff0000 | (iVar4 + 0x1c)),
+  pass1_1008_4480(puVar1,(param_1 & 0xffff0000 | (iVar4 + 0x1c)),
                   paVar6,unaff_SS);
   ppcVar2 = (code **)(*puVar1 + 0x4);
   (**ppcVar2)(0x1008,puVar1,(puVar1 >> 0x10),0x0,
@@ -231,7 +231,7 @@ fn unk_draw_op_1018_623e(param_1: u32,HWND16 param_2,param_3: u16)
     iVar11 = (puVar13 + -0x38) * 0x4;
     uVar3 = (puVar13 + -0x2c);
     uVar16 = pass1_1008_4772(*(astruct_76 **)(iVar11 + uVar3));
-    puVar9 = (uchar *)(uVar16 >> 0x10);
+    puVar9 = (uVar16 >> 0x10);
     (puVar13 + -0x44) = uVar16;
     *(uchar **)(puVar13 + -0x42) = puVar9;
     uVar3 = (puVar13 + 0x6);
@@ -244,7 +244,7 @@ fn unk_draw_op_1018_623e(param_1: u32,HWND16 param_2,param_3: u16)
                     (uVar3 >> 0x10));
     uVar3 = (puVar13 + -0x2c);
     pass1_1008_4480((puVar13 + -0x26),
-                    (u16 *)CONCAT22(param_3,puVar13 + -0x36),
+                    CONCAT22(param_3,puVar13 + -0x36),
                     *(astruct_76 **)(uVar3 + iVar11),param_3);
     iVar11 = (puVar13 + -0x38);
     uVar3 = (puVar13 + -0x30);
@@ -287,7 +287,7 @@ fn unk_draw_op_1018_623e(param_1: u32,HWND16 param_2,param_3: u16)
   }
   puVar4 = *(u32 **)(puVar13 + -0x26);
   ppcVar2 = (code **)(*puVar4 + 0x4);
-  (**ppcVar2)(style,puVar4,(puVar4 >> 0x10),0x0,0x0,(char)puVar13 + -0x22
+  (**ppcVar2)(style,puVar4,(puVar4 >> 0x10),0x0,0x0,puVar13 + -0x22
               ,param_3);
   handle = CreatePen16(style,0x25,0x100);
   *(HPEN16 *)(puVar13 + -0x3a) = handle;
@@ -368,8 +368,8 @@ fn draw_op_1018_6544(param_1: u32,i16 *param_2,param_3: u16)
     uStack4 = ((param_2 + 0x4) - *param_2 >> 0x1) + *param_2;
     puVar1 = pass1_1008_3e54((u16 *)CONCAT22(param_3,local_a),0x0,0x57,uStack4);
     uVar3 = (param_1 >> 0x10);
-    uVar2 = pass1_1018_659a(param_1,uVar3,(u16 *)CONCAT22(param_3,local_a),
-                            (uchar *)(puVar1 >> 0x10),param_3);
+    uVar2 = pass1_1018_659a(param_1,uVar3,CONCAT22(param_3,local_a),
+                            (puVar1 >> 0x10),param_3);
     draw_polygon_1018_661c(param_1,uVar3,CONCAT22(uVar2,0x3),0x1008);
   }
   return;
@@ -378,7 +378,7 @@ fn draw_op_1018_6544(param_1: u32,i16 *param_2,param_3: u16)
 
 fn draw_polygon_1018_661c(param_1: u16,param_2: u16,param_3: u32,HDC16 param_4)
 {
-  Polygon16(param_4,(POINT16 *)param_3,(INT16)(param_3 >> 0x10));
+  Polygon16(param_4,(POINT16 *)param_3,(param_3 >> 0x10));
   return;
 }
 
@@ -535,7 +535,7 @@ fn draw_text_1018_c742(astruct_36 *param_1,HDC16 param_2,RECT16 *param_3,param_4
       uStack24 = 0x0;
       iStack22 = iVar4->field_0x10e;
       iStack20 = 0x0;
-      DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)0x410,(INT16)&local_1a,param_3,
+      DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)0x410,&local_1a,param_3,
                  0xffff);
       iVar4->field_0x100 = (0x280 - iStack22) / 0x2;
       iVar4->field_0x102 = iVar4->field_0x10c;
@@ -555,7 +555,7 @@ fn draw_text_1018_c742(astruct_36 *param_1,HDC16 param_2,RECT16 *param_3,param_4
     iStack16 = iVar4->field_0xfc + iVar4->field_0x102;
     iStack14 = iVar4->field_0xfa + iVar4->field_0x104;
     iStack12 = iVar4->field_0xfc + iVar4->field_0x106;
-    DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,(INT16)&local_12,
+    DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,&local_12,
                param_3,0xffff);
     SetTextColor16((HDC16)s_tile2_bmp_1050_1538,(COLORREF)uStack6);
     SetBkColor16((HDC16)s_tile2_bmp_1050_1538,CStack10);
@@ -793,8 +793,8 @@ fn invalidate_rect_1018_edd8(param_1: u32,param_2: i16,param_3: u16)
     return;
   }
   pass1_1008_3e94((u16 *)(param_1 & 0xffff0000 | (iVar1 + 0x18)),
-                  (u16 *)CONCAT22(param_3,&local_6),
-                  (u16 *)CONCAT22(param_3,&local_4));
+                  CONCAT22(param_3,&local_6),
+                  CONCAT22(param_3,&local_4));
   uVar3 = pass1_1010_2b66((iVar1 + 0x14));
   uStack8 = (uVar3 >> 0x10);
   uStack10 = uVar3;

@@ -74,7 +74,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     *(u16_t *)(uVar11 + 0xa) = param_8;
     *(u16_t *)(uVar11 + 0x10) = param_8;
     *(u16_t *)(uVar11 + 0xc) = param_8;
-    return (u16_t)(uchar *)param_10;
+    return (u16_t)param_10;
   case 0x5:
     BVar14 = write_to_file_1008_7e1c
                        (param_5,param_6,param_8,0x0,
@@ -100,7 +100,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     HVar29 = (HGDIOBJ16)&USHORT_1050_1050;
     uVar25 = pass1_1008_4772(*(astruct_76 **)(__return_storage_ptr__ + iVar20 + 0x26)
                             );
-    puVar17 = (uchar *)(uVar25 >> 0x10);
+    puVar17 = (uVar25 >> 0x10);
     CreateDC16((LPCSTR)0x1008,(LPCSTR)uVar25,(LPCSTR)puVar17,(DEVMODEA *)puVar17);
     b_force_background =
          palette_op_1008_4e08
@@ -167,14 +167,14 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     struct_op_1018_4cda(CONCAT11(uVar31,uVar30),CONCAT11((u8)param_1,uVar32),
                         CONCAT11((u8)param_2,param_1._1_1_));
     iVar15 = CONCAT11(uVar31,uVar30);
-    puVar9 = (u16 *)CONCAT13((u8)param_1,CONCAT12(uVar32,iVar15));
+    puVar9 = CONCAT13((u8)param_1,CONCAT12(uVar32,iVar15));
     *puVar9 = (s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
     (iVar15 + 0x2) = 0x1010;
     pass1_1018_4dce(CONCAT13((u8)param_1,CONCAT12(uVar32,iVar15)),0x1b3,
-                    (uchar *)param_7,unaff_SS);
+                    param_7,unaff_SS);
     _PTR_LOOP_1050_4230 =
          CONCAT13((u8)param_1,CONCAT12(uVar32,CONCAT11(uVar31,uVar30)));
-    return (u16_t)(uchar *)CONCAT11((u8)param_1,uVar32);
+    return (u16_t)CONCAT11((u8)param_1,uVar32);
   case 0xe:
     (__return_storage_ptr__ + 0x2) = param_5;
     break;
@@ -191,7 +191,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     if ((((iVar15 + 0x22) != 0x0) || ((iVar15 + 0x24) != 0x0)) ||
        (((iVar15 + 0x26) != 0x0 || ((iVar15 + 0x28) != 0x0)))) {
       uVar4 = (param_1 + 0xe);
-      sys_1000_3f9c((uchar *)uVar4,(uchar *)(uVar4 >> 0x10),
+      sys_1000_3f9c((uchar *)uVar4,(uVar4 >> 0x10),
                     s__d__d__d__d_1050_14ae,&USHORT_1050_1050,
                     
                              (__return_storage_ptr__ * 0x8 + param_1 + 0x22),
@@ -206,7 +206,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     (__return_storage_ptr__ + 0x24) = param_5;
     break;
   case 0x17:
-    puVar17 = (uchar *)(param_7 - 0x1);
+    puVar17 = (param_7 - 0x1);
     pbVar3 = (byte *)(uVar11 + unaff_SI);
     *pbVar3 = *pbVar3 | (byte)puVar17;
     *(u16_t *)(__return_storage_ptr__ + 0x12) = param_8;
@@ -232,8 +232,8 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
       uVar26 = in_stack_0000ffca;
       mem_op_1000_179c(0x8,puVar17,0x1000);
       puVar27 = CONCAT22(puVar17,in_stack_0000ffca);
-      puVar18 = (uchar *)(puVar17 | in_stack_0000ffca);
-      if (puVar18 == (uchar *)0x0) {
+      puVar18 = (puVar17 | in_stack_0000ffca);
+      if (puVar18 == 0x0) {
         puVar27 = 0x0;
       }
       else {
@@ -273,7 +273,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     uVar13 = pass1_1010_6ca2(CONCAT13(uVar28,CONCAT12((char)param_4,__return_storage_ptr__
                                                      )),0x8,param_7,unaff_SS);
     if (uVar13 != 0x0) {
-      __return_storage_ptr__ = (u16 *)(s_version__d__d_1050_0012 + 0x8);
+      __return_storage_ptr__ = (s_version__d__d_1050_0012 + 0x8);
       pass1_1010_715c(CONCAT22(0x1a,puVar10),0x1a,uVar13,param_7,unaff_DI,unaff_SS);
     }
     if (param_5 == 0x2c) {
@@ -347,16 +347,16 @@ LAB_1010_413e:
       if ((uStack4 != 0x0) && (0x3 < PTR_LOOP_1050_3960)) {
         puVar10 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,iStack6 + 0xcU,unaff_SS,in_DX,
                                   unaff_DI);
-        puVar7 = (uchar *)(puVar10 >> 0x10);
+        puVar7 = (puVar10 >> 0x10);
         uVar4 = pass1_1018_0afa(puVar10);
         if (uVar4 == 0x0) {
           uVar9 = 0x1000;
           uVar5 = uVar4;
           mem_op_1000_179c(0xb4,puVar7,0x1000);
-          puVar8 = (uchar *)(puVar7 | uVar5);
-          if (puVar8 == (uchar *)0x0) {
+          puVar8 = (puVar7 | uVar5);
+          if (puVar8 == 0x0) {
             iVar6 = 0x0;
-            puVar8 = (uchar *)0x0;
+            puVar8 = 0x0;
           }
           else {
             uVar9 = SUB42(&PTR_LOOP_1050_1040,0x0);

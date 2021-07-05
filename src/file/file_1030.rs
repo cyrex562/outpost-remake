@@ -288,10 +288,10 @@ fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
     }
     uVar4 = fn_ptr_op_1000_1708(0x20,0x0,0x1,PTR_LOOP_1050_5f2c,
                                 PTR_LOOP_1050_5f2e,0x1000);
-    puVar9 = (uchar *)(PTR_LOOP_1050_5f2e | uVar4);
-    if (puVar9 == (uchar *)0x0) {
+    puVar9 = (PTR_LOOP_1050_5f2e | uVar4);
+    if (puVar9 == 0x0) {
       uVar4 = 0x0;
-      puVar9 = (uchar *)0x0;
+      puVar9 = 0x0;
     }
     else {
       pass1_1030_84ae(CONCAT22(PTR_LOOP_1050_5f2e,uVar4));
@@ -345,14 +345,14 @@ fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
                 *piVar1 != iStack1036 && iStack1036 <= *piVar1; iStack1036 += 0x1) {
               uVar8 = &iVar12->field_0x10;
               uVar3 = (uVar8 + 0x16);
-              BVar5 = read_file_1008_7bc8(param_2,(u16 *)
+              BVar5 = read_file_1008_7bc8(param_2,
                                                   (uVar3 & 0xffff0000 |
                                                   (uVar3 +
                                                                iStack1036 * 0x6)),0x1008,
                                           param_5);
               if (BVar5 == 0x0) goto LAB_1030_58a7;
             }
-            BVar5 = read_file_1008_7bc8(param_2,(u16 *)
+            BVar5 = read_file_1008_7bc8(param_2,
                                                 (param_1 & 0xffff0000 |
                                                 &iVar12->field_0x14),0x1008,
                                         param_5);
@@ -435,7 +435,7 @@ fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
   if (param_3 != 0x0) {
     iVar3 = (astruct_387 *)param_1;
     iVar3 = (astruct_387 *)&iVar3->field_0xc;
-    BVar3 = read_file_1008_7bc8(param_2,(u16 *)(param_1 & 0xffff0000 | ZEXT24(iVar3)),
+    BVar3 = read_file_1008_7bc8(param_2,(param_1 & 0xffff0000 | ZEXT24(iVar3)),
                                 0x1008,param_5);
     if (BVar3 != 0x0) {
       uVar13 = param_2;
@@ -488,8 +488,8 @@ fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
                     paStack50 = pass1_1000_07fc(0x1000,_PTR_LOOP_1050_68a2);
                     uVar9 = (paStack50 >> 0x10);
                     uVar5 = (astruct_388 *)paStack50;
-                    puVar10 = (uchar *)(uVar9 | uVar5);
-                    if (puVar10 == (uchar *)0x0) {
+                    puVar10 = (uVar9 | uVar5);
+                    if (puVar10 == 0x0) {
                       paStack44 = (astruct_99 *)0x0;
                     }
                     else {
@@ -555,8 +555,8 @@ fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
                       paStack50 = pass1_1000_07fc(0x1000,_PTR_LOOP_1050_68a2);
                       uVar9 = (paStack50 >> 0x10);
                       uVar8 = (astruct_390 *)paStack50;
-                      puVar10 = (uchar *)(uVar9 | uVar8);
-                      if (puVar10 == (uchar *)0x0) {
+                      puVar10 = (uVar9 | uVar8);
+                      if (puVar10 == 0x0) {
                         paStack74 = (astruct_99 *)0x0;
                       }
                       else {
