@@ -2744,3 +2744,413 @@ fn get_sys_metrics_1020_7c1a(param_1: *mut u16,param_2: u32,INT16 param_3)
   return;
 }
 
+
+fn make_proc_inst_1038_cf6c(param_1: *mut u16,uchar *param_2,LPVOID param_3)
+{
+  LPVOID pvVar1;
+  let iVar2: i16;
+  let uVar3: u16;
+  
+  uVar3 = (param_1 >> 0x10);
+  iVar2 = param_1;
+  *param_1 = 0x389a;
+  (iVar2 + 0x2) = 0x1008;
+  (iVar2 + 0x4) = 0x0;
+  (iVar2 + 0x8) = 0x0;
+  *param_1 = 0xd23e;
+  (iVar2 + 0x2) = &PTR_LOOP_1050_1038;
+  _PTR_LOOP_1050_5bc8 = param_1;
+  pvVar1 = MakeProcInstance16(param_3,(HANDLE16)PTR_LOOP_1050_038c);
+  *(LPVOID *)(iVar2 + 0x4) = pvVar1;
+  *(uchar **)(iVar2 + 0x6) = param_2;
+  PTR_LOOP_1050_5bcc =
+       
+       MakeProcInstance16((LPVOID)s_tile2_bmp_1050_1538,(HANDLE16)PTR_LOOP_1050_038c);
+  PTR_LOOP_1050_5bce = param_2;
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+fn free_proc_inst_1038_cfda(param_1: *mut u16,LPVOID param_2)
+{
+  let iVar1: i16;
+  let uVar2: u16;
+  
+  uVar2 = (param_1 >> 0x10);
+  iVar1 = param_1;
+  *param_1 = 0xd23e;
+  (iVar1 + 0x2) = &PTR_LOOP_1050_1038;
+  FreeProcInstance16(param_2);
+  FreeProcInstance16((LPVOID)s_tile2_bmp_1050_1538);
+  (iVar1 + 0x4) = 0x0;
+  *param_1 = 0x389a;
+  (iVar1 + 0x2) = 0x1008;
+  return;
+}
+
+
+
+long 
+call_win_proc_1038_d020
+          (HWND16 param_1,param_2: u32,LPARAM param_3,param_4: u16,HWND16 param_5)
+
+{
+  code **ppcVar1;
+  WPARAM16 wparam;
+  HANDLE16 HVar2;
+  HANDLE16 HVar3;
+  let uVar4: u16;
+  LRESULT LVar5;
+  let uVar6: u16;
+  let uVar7: u16;
+  let uVar8: u16;
+  let uVar9: u16;
+  let lStack14: i32;
+  let puStack10: u32;
+  let lStack6: i32;
+  
+  uVar9 = SUB42(&USHORT_1050_1050,0x0);
+  uVar8 = param_3._2_2_;
+  HVar2 = GetProp16(param_5,(LPCSTR)s_procHi_1050_5bd7);
+  uVar7 = param_3._2_2_;
+  HVar3 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_procLo_1050_5bd0);
+  lStack6 = CONCAT22(HVar2,HVar3);
+  uVar6 = param_3._2_2_;
+  HVar2 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_thisHi_1050_5be5);
+  HVar3 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_thisLo_1050_5bde);
+  puStack10 = CONCAT22(HVar2,HVar3);
+  wparam = (WPARAM16)(param_2 >> 0x10);
+  if ((HVar2 | HVar3) != 0x0) {
+    lStack14 = 0x0;
+    if (param_3 == 0x19) {
+      ppcVar1 = (code **)(*puStack10 + 0x34);
+      lStack14 = (**ppcVar1)(s_tile2_bmp_1050_1538,(char)HVar3,HVar2,param_1,param_2,
+                             param_3._2_2_,uVar6,uVar7,uVar8,uVar9);
+    }
+    else {
+      if (param_3 == 0x86) {
+        ppcVar1 = (code **)(*puStack10 + 0x20);
+        uVar4 = (**ppcVar1)(s_tile2_bmp_1050_1538,HVar3,HVar2,wparam);
+        goto LAB_1038_d10e;
+      }
+      if ((param_3 == 0x112) && ((wparam & 0xfff0) == 0xf140)) {
+        LVar5 = SendMessage16((HWND16)s_tile2_bmp_1050_1538,0x0,0x0,0x112f140);
+        uVar4 = (LVar5 == 0x0);
+        goto LAB_1038_d10e;
+      }
+    }
+    if (lStack14 != 0x0) {
+      return lStack14;
+    }
+  }
+  if (lStack6 != 0x0) {
+    LVar5 = CallWindowProc16((LPVOID)s_tile2_bmp_1050_1538,param_1,param_2,wparam,
+                             param_3);
+    return LVar5;
+  }
+  uVar4 = 0x0;
+LAB_1038_d10e:
+  return (long)uVar4;
+}
+
+
+
+void 
+win_prop_op_1038_d118
+          (param_1: u32,param_2: u32,param_3: u16,param_4: u16,HWND16 param_5)
+
+{
+  code **ppcVar1;
+  let uVar2: u32;
+  let cVar3: u8;
+  HANDLE16 HVar4;
+  HANDLE16 HVar5;
+  let uVar6: u16;
+  let uVar7: u16;
+  let uVar8: u16;
+  let puStack6: u32;
+  
+  uVar8 = SUB42(&USHORT_1050_1050,0x0);
+  uVar7 = param_3;
+  HVar4 = GetProp16(param_5,(LPCSTR)s_thisHi_1050_5bf3);
+  uVar6 = param_3;
+  HVar5 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_thisLo_1050_5bec);
+  puStack6 = CONCAT22(HVar4,HVar5);
+  if (param_2._2_2_ == 0x30) {
+    if ((LPCSTR)param_2 == (LPCSTR)0x0) {
+      return;
+    }
+    SetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)param_2,0x5c06);
+    return;
+  }
+  if (param_2 < 0x310000) {
+    cVar3 = (char)(param_2 >> 0x10);
+    if (cVar3 == '\x02') {
+      if ((HVar4 | HVar5) != 0x0) {
+        uVar2 = *puStack6;
+        ppcVar1 = (code **)uVar2 + 0x6;
+        (**ppcVar1)(s_tile2_bmp_1050_1538,HVar5,HVar4,param_1,param_2,uVar6,uVar7,
+                    uVar8);
+        if (puStack6 != 0x0) {
+          ppcVar1 = (code **)uVar2;
+          (**ppcVar1)(s_tile2_bmp_1050_1538,HVar5,HVar4,0x1);
+        }
+      }
+      HVar4 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5bfa);
+      if (HVar4 == 0x0) {
+        return;
+      }
+      DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+      RemoveProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5c00);
+      return;
+    }
+    if (cVar3 == '\x06') {
+      if (((LPCSTR)param_2 != (LPCSTR)(&PTR_LOOP_1050_0000 + 0x1)) &&
+         ((LPCSTR)param_2 != (LPCSTR)&PTR_LOOP_1050_0002)) {
+        uVar2 = &PTR_LOOP_1050_5bc8;
+        (uVar2 + 0x8) = 0x0;
+        return;
+      }
+      uVar2 = &PTR_LOOP_1050_5bc8;
+      (uVar2 + 0x8) = param_3;
+      return;
+    }
+  }
+  if ((HVar4 | HVar5) != 0x0) {
+    ppcVar1 = (code **)(*puStack6 + 0xc);
+    (**ppcVar1)(s_tile2_bmp_1050_1538,HVar5,HVar4,param_1,param_2);
+  }
+  return;
+}
+
+
+void 
+get_sys_metrics_1040_7728
+          (astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,param_5: u16)
+
+{
+  let IVar1: i16;
+  astruct_57 *iVar2;
+  let uVar2: u16;
+  
+  uVar2 = (param_1 >> 0x10);
+  iVar2 = (astruct_57 *)param_1;
+  param_1 = 0x389a;
+  iVar2->field_0x2 = 0x1008;
+  param_1 = 0x3aa8;
+  iVar2->field_0x2 = 0x1008;
+  iVar2->field_0x4 = 0x0;
+  iVar2->field_0x6 = 0x0;
+  iVar2->field_0x8 = param_5;
+  iVar2->field_0xa = param_4;
+  iVar2->field_0xc = 0x0;
+  iVar2->field_0x60 = 0x0;
+  iVar2->field_0x62 = 0x0;
+  iVar2->field_0x64 = 0x0;
+  iVar2->field_0x66 = 0x0;
+  iVar2->field_0x68 = 0x0;
+  iVar2->field_0x6a = param_3;
+  iVar2->field_0x6e = param_2;
+  iVar2->field_0x70 = 0x0;
+  iVar2->field_0x74 = 0x0;
+  iVar2->field_0x76 = 0x0;
+  iVar2->field_0x78 = 0x0;
+  iVar2->field_0x8a = 0x0;
+  iVar2->field_0x8c = 0x0;
+  param_1 = 0x840c;
+  iVar2->field_0x2 = &PTR_LOOP_1050_1040;
+  unk_str_op_1000_3d3e
+            ((param_1 & 0xffff0000 | &iVar2->field_0x10),
+             0x10505db0);
+  pass1_1000_4906((astruct_20 *)
+                  (param_1 & 0xffff0000 | &iVar2->field_0x7a),
+                  (WNDCLASS16 *)0x0,0x8);
+  pass1_1000_4906((astruct_20 *)
+                  (param_1 & 0xffff0000 | &iVar2->field_0x82),
+                  (WNDCLASS16 *)0x0,0x8);
+  IVar1 = GetSystemMetrics16(0x1000);
+  iVar2->field_0x62 = IVar1;
+  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  iVar2->field_0x64 = IVar1;
+  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  iVar2->field_0x66 = IVar1;
+  return;
+}
+
+
+fn get_sys_metrics_1040_8c66(astruct_37 *param_1,HWND16 param_2)
+{
+  let piVar1: *mut i16;
+  let bVar2: u8;
+  HDC16 hdc;
+  let IVar3: i16;
+  let iVar4: i16;
+  let uVar5: u16;
+  
+  uVar5 = (param_1 >> 0x10);
+  iVar4 = param_1;
+  hdc = GetDC16(param_2);
+  draw_text_1040_8d14(param_1,s_tile2_bmp_1050_1538);
+  (iVar4 + 0xa6) = (iVar4 + 0x9e);
+  (iVar4 + 0xaa) = (iVar4 + 0xa2);
+  IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  piVar1 = (i16 *)(iVar4 + 0xac);
+  *piVar1 = *piVar1 + IVar3;
+  bVar2 = *(byte *)(iVar4 + 0x98) & 0xf0;
+  if ((((bVar2 == 0x30) || (bVar2 == 0x10)) || (bVar2 == 0x40)) || (bVar2 == 0x20)) {
+    IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+    if ((iVar4 + 0xac) < IVar3) {
+      IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+      *(INT16 *)(iVar4 + 0xac) = IVar3;
+    }
+  }
+  piVar1 = (i16 *)(iVar4 + 0xaa);
+  *piVar1 = *piVar1 + 0x14;
+  piVar1 = (i16 *)(iVar4 + 0xac);
+  *piVar1 = *piVar1 + 0xa;
+  (iVar4 + 0xb0) = (iVar4 + 0xac);
+  piVar1 = (i16 *)(iVar4 + 0xac);
+  *piVar1 = *piVar1 + 0x30;
+  ReleaseDC16((HWND16)s_tile2_bmp_1050_1538,hdc);
+  return;
+}
+
+
+fn reg_class_1040_98c0(Uparam_1: i32,HINSTANCE16 param_2,WNDCLASS16 *in_wnd_class_3)
+{
+  let BVar1: bool;
+  ATOM AVar2;
+  let l_name: u16;
+  let uStack26: u16;
+  let uStack24: u16;
+  let uStack22: u32;
+  let puStack18: *mut u8;
+  let uStack16: u16;
+  let uStack14: u16;
+  let uStack12: u16;
+  let uStack10: u32;
+  let iStack6: i16;
+  let uStack4: u16;
+  
+  iStack6 = param_1 + 0x4;
+  BVar1 = GetClassInfo16(param_2,(SEGPTR)&l_name,in_wnd_class_3);
+  if (BVar1 == 0x0) {
+    l_name = (param_1 + 0x54);
+    uStack26 = 0x9cde;
+    uStack24 = SUB42(&PTR_LOOP_1050_1040,0x0);
+    uStack22 = 0x40000;
+    puStack18 = PTR_LOOP_1050_038c;
+    uStack16 = 0x0;
+    uStack14 = (param_1 + 0x58);
+    uStack12 = (param_1 + 0x56);
+    uStack10 = 0x0;
+    uStack4 = param_1._2_2_;
+    AVar2 = RegisterClass16((WNDCLASS16 *)s_tile2_bmp_1050_1538);
+    if (AVar2 == 0x0) {
+      fn_ptr_op_1000_24cd(0x0,&stack0xfffe);
+    }
+  }
+  return;
+}
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void 
+make_proc_inst_1040_a234
+          (uchar *param_1,uchar *param_2,param_3: u16,param_4: u32,LPVOID param_5)
+
+{
+  LPVOID pvVar1;
+  let in_DX: u16;
+  
+  pass1_1040_b040((astruct_57 *)CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),
+                  (param_4 >> 0x10));
+  CONCAT22(param_2,param_1) = 0xa4e8;
+  (param_1 + 0x2) = &PTR_LOOP_1050_1040;
+  if (_PTR_LOOP_1050_5edc == 0x0) {
+    pvVar1 = MakeProcInstance16(param_5,(HANDLE16)PTR_LOOP_1050_038c);
+    _PTR_LOOP_1050_5edc = CONCAT22(in_DX,pvVar1);
+  }
+  *(long *)(param_1 + 0xc) = _PTR_LOOP_1050_5edc;
+  PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + 0x1;
+  PTR_LOOP_1050_5ee0 = param_1;
+  PTR_LOOP_1050_5ee2 = param_2;
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+fn free_proc_inst_1040_a294(astruct_18 *param_1,param_2: u16)
+{
+  param_1->field_0x0 = 0xa4e8;
+  (param_1 + 0x2) = &PTR_LOOP_1050_1040;
+  PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + -0x1;
+  if (PTR_LOOP_1050_5eda == 0x0) {
+    FreeProcInstance16((LPVOID)param_2);
+    _PTR_LOOP_1050_5edc = 0x0;
+  }
+  unk_draw_op_1040_b0f8(param_1);
+  return;
+}
+
+
+u32 
+call_win_proc_1040_a40e
+          (HWND16 param_1,param_2: u32,LPARAM param_3,param_4: u16,LPVOID param_5,
+          param_6: u16)
+
+{
+  let uVar1: u16;
+  code **ppcVar2;
+  let puVar4: u32;
+  WPARAM16 wparam;
+  let iVar5: i16;
+  let unaff_DI: i16;
+  let uVar6: u16;
+  let uVar7: u32;
+  let uStack6: u32;
+  let puVar3: u32;
+  let uVar5: u32;
+  
+  uStack6 = 0x0;
+  wparam = (WPARAM16)(param_2 >> 0x10);
+  if (param_3 == 0x19) {
+    puVar4 = &PTR_LOOP_1050_5ee0;
+    ppcVar2 = (code **)(*puVar4 + 0x34);
+    uStack6 = (**ppcVar2)(param_5,(char)puVar4,(puVar4 >> 0x10),param_1,
+                          param_2,&USHORT_1050_1050);
+    param_4 = (uStack6 >> 0x10);
+  }
+  else {
+    if (param_3 == 0x86) {
+      puVar4 = &PTR_LOOP_1050_5ee0;
+      ppcVar2 = (code **)(*puVar4 + 0x20);
+      uVar7 = (**ppcVar2)(param_5,puVar4,(puVar4 >> 0x10),wparam);
+      return uVar7;
+    }
+    if (param_3 == 0x110) {
+      uVar7 = win_msg_1040_a308(&PTR_LOOP_1050_5ee0,unaff_DI,(HWND16)param_5,
+                                param_6);
+      return uVar7;
+    }
+  }
+  if (uStack6 != 0x0) {
+    return uStack6 & 0xffff | param_4 << 0x10;
+  }
+  uVar5 = &PTR_LOOP_1050_5bc8;
+  uVar6 = (uVar5 >> 0x10);
+  iVar5 = uVar5;
+  uVar1 = (iVar5 + 0x6);
+  if ((uVar1 | (iVar5 + 0x4)) == 0x0) {
+    return uVar1 << 0x10;
+  }
+  uVar7 = CallWindowProc16(param_5,param_1,param_2,wparam,param_3);
+  return uVar7;
+}
+

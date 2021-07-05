@@ -735,4 +735,252 @@ fn destroy_window_1020_8250(param_1: u32,HWND16 param_2)
 }
 
 
+fn destroy_window_1038_7d88(Uparam_1: i32,param_2: u16)
+{
+  let in_DX: u16;
+  
+  pass1_1008_b544((param_1 + 0x94),param_2,in_DX,0x1008);
+  DestroyWindow16(0x1008);
+  return;
+}
 
+fn destroy_window_1038_a072(param_1: u16,param_2: u16,param_3: i16,HWND16 param_4)
+{
+  if (param_3 != 0x0) {
+    DestroyWindow16(param_4);
+  }
+  return;
+}
+
+
+fn destroy_win_1038_a3d2(Uparam_1: i32,HWND16 param_2)
+{
+  GetWindowWord16(param_2,-0x8);
+  PostMessage16((HWND16)s_tile2_bmp_1050_1538,0x0,0x0,0x1110105);
+  destroy_win_1040_7b98(param_1,&PTR_LOOP_1050_1040);
+  return;
+}
+
+
+fn destroy_window_1038_cc00(param_1: i16,param_2: u16,param_3: u16,Uparam_4: i32)
+{
+  let uVar1: u16;
+  let in_DX: *mut u8
+  let unaff_DI: i16;
+  WNDCLASS16 *unaff_SS;
+  let iVar2: i16;
+  
+  uVar1 = param_4._2_2_ - 0x1cd;
+  if (uVar1 == 0x0) {
+    iVar2 = 0x1;
+  }
+  else {
+    uVar1 = param_4._2_2_ - 0x1ce;
+    if (uVar1 == 0x0) {
+      iVar2 = 0x2;
+    }
+    else {
+      uVar1 = param_4._2_2_ - 0x1cf;
+      if (uVar1 == 0x0) {
+        iVar2 = 0x3;
+      }
+      else {
+        uVar1 = param_4._2_2_ - 0x1d0;
+        if (uVar1 == 0x0) {
+          iVar2 = 0x4;
+        }
+        else {
+          uVar1 = param_4._2_2_ - 0x1d1;
+          if (uVar1 != 0x0) {
+            post_win_msg_1040_7b3c
+                      (CONCAT22(param_2,param_1),param_3,param_4,
+                       param_4._2_2_,&PTR_LOOP_1050_1040);
+            return;
+          }
+          iVar2 = 0x5;
+        }
+      }
+    }
+  }
+  pass1_1008_eb74((param_1 + 0x8e),iVar2,in_DX,unaff_DI,unaff_SS);
+  if (uVar1 != 0x0) {
+    win_1008_5c7c(_PTR_LOOP_1050_02a0,CONCAT22(uVar1,0x1),unaff_SS,uVar1,in_DX);
+    DestroyWindow16(0x1008);
+  }
+  return;
+}
+
+
+fn destroy_window_1038_cd88(astruct_1 *param_1)
+{
+  let unaff_SS: u16;
+  
+  dialog_ui_fn_1040_78e2(param_1,&PTR_LOOP_1050_1040);
+  move_win_1040_826c(param_1,-0x1,0xffff);
+  ShowWindow16((HWND16)&PTR_LOOP_1050_1040,0x5);
+  (param_1 + 0x92) = 0x1;
+  unk_win_msg_op_1008_9510
+            ((i16 *)(param_1 & 0xffff0000 | (param_1 + 0x92)),0x1008,
+             unaff_SS);
+  DestroyWindow16(0x1008);
+  return;
+}
+
+
+fn destroy_win_1038_e1dc(param_1: u16,param_2: u16,param_3: i16,HWND16 param_4)
+{
+  let UVar1: u16;
+  LPARAM lparam;
+  
+  if (param_3 != 0x0) {
+    UVar1 = IsDlgButtonChecked(param_4,0x1807);
+    if (UVar1 == 0x0) {
+      param_4 = (HWND16)s_tile2_bmp_1050_1538;
+      UVar1 = IsDlgButtonChecked((HWND16)s_tile2_bmp_1050_1538,0x1806);
+      if (UVar1 == 0x0) goto LAB_1038_e229;
+      lparam = 0x1110130;
+    }
+    else {
+      lparam = 0x111012f;
+    }
+    param_4 = (HWND16)s_tile2_bmp_1050_1538;
+    SendMessage16((HWND16)s_tile2_bmp_1050_1538,0x0,0x0,lparam);
+  }
+LAB_1038_e229:
+  DestroyWindow16(param_4);
+  return;
+}
+
+
+fn destroy_win_1038_ef3a(astruct_31 *param_1,HWND16 param_2)
+{
+  astruct_31 *iVar1;
+  astruct_31 *uVar1;
+  
+  uVar1 = (astruct_31 *)(param_1 >> 0x10);
+  iVar1 = (astruct_31 *)param_1;
+  param_1 = 0x67c;
+  iVar1->field_0x2 = &PTR_LOOP_1050_1040;
+  if (iVar1->field_0x96 != 0x0) {
+    DestroyWindow16(param_2);
+    iVar1->field_0x96 = 0x0;
+  }
+  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,iVar1->field_0x6);
+  ui_cleanup_op_1040_782c((astruct_18 *)param_1,&PTR_LOOP_1050_1040);
+  return;
+}
+
+
+fn destroy_win_1040_5256(astruct_34 *param_1,HWND16 param_2)
+{
+  ULONG *pUVar1;
+  let uVar2: u16;
+  code **ppcVar3;
+  let Bvar4: bool;
+  astruct_34 *iVar5;
+  let uVar5: u16;
+  HWND16 HVar6;
+  
+  uVar5 = (param_1 >> 0x10);
+  iVar5 = (astruct_34 *)param_1;
+  HVar6 = param_2;
+  if (iVar5->field_0xb6 != 0x0) {
+    HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+    BVar4 = IsWindow16(param_2);
+    if (BVar4 != 0x0) {
+      HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+      DestroyWindow16((HWND16)s_tile2_bmp_1050_1538);
+    }
+  }
+  iVar5->field_0xb6 = 0x0;
+  pUVar1 = iVar5->field_0x94;
+  uVar2 = iVar5->field_0x96;
+  if ((uVar2 | pUVar1) != 0x0) {
+    ppcVar3 = (code **)*pUVar1;
+    (**ppcVar3)(HVar6,pUVar1,uVar2,0x1);
+  }
+  &iVar5->field_0x94 = 0x0;
+  iVar5->field_0x98 = 0x0;
+  return;
+}
+
+
+fn destroy_win_1040_7b98(Uparam_1: i32,HWND16 param_2)
+{
+  if ((param_1 + 0x74) == 0x0) {
+    DestroyWindow16(param_2);
+  }
+  return;
+}
+
+
+
+fn destroy_win_1040_8212(Uparam_1: i32,HWND16 param_2)
+{
+  let is_window: bool;
+  let uVar1: u16;
+  
+  uVar1 = (param_1 >> 0x10);
+  if ((param_1 + 0x8c) != 0x0) {
+    is_window = IsWindow16(param_2);
+    if (is_window != 0x0) {
+      DestroyWindow16((HWND16)s_tile2_bmp_1050_1538);
+      (param_1 + 0x8c) = 0x0;
+    }
+  }
+  return;
+}
+
+
+fn destroy_win_1040_8b7e(HWND16 param_1)
+{
+  DestroyWindow16(param_1);
+  return;
+}
+
+
+fn destroy_window_1040_b726(ULONG *param_1,param_2: i16,HWND16 in_win_handle_3)
+{
+  code **ppcVar1;
+  
+  if (param_2 != 0x0) {
+    ppcVar1 = (code **)(*param_1 + 0x78);
+    (**ppcVar1)(in_win_handle_3,param_1);
+  }
+  DestroyWindow16(in_win_handle_3);
+  return;
+}
+
+
+fn destroy_win_1040_bb78(astruct_35 *param_1,HWND16 param_2)
+{
+  let puVar1: u32;
+  let uVar2: u16;
+  code **ppcVar3;
+  let Bvar4: bool;
+  astruct_35 *iVar5;
+  let uVar5: u16;
+  HWND16 HVar6;
+  
+  uVar5 = (param_1 >> 0x10);
+  iVar5 = (astruct_35 *)param_1;
+  HVar6 = param_2;
+  if (iVar5->field_0xb6 != 0x0) {
+    HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+    BVar4 = IsWindow16(param_2);
+    if (BVar4 != 0x0) {
+      HVar6 = (HWND16)s_tile2_bmp_1050_1538;
+      DestroyWindow16((HWND16)s_tile2_bmp_1050_1538);
+    }
+  }
+  iVar5->field_0xb6 = 0x0;
+  puVar1 = iVar5->field_0x94;
+  uVar2 = iVar5->field_0x96;
+  if ((uVar2 | puVar1) != 0x0) {
+    ppcVar3 = (code **)*puVar1;
+    (**ppcVar3)(HVar6,puVar1,uVar2,0x1);
+  }
+  &iVar5->field_0x94 = 0x0;
+  iVar5->field_0x98 = 0x0;
+  return;
+}
