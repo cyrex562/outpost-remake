@@ -19,7 +19,7 @@ fn memcpy_op_1008_4274(param_1: u32,param_2: u16)
     uVar5 = lVar8;
     puVar2 = ((lVar8 >> 0x10) | uVar5);
     if (puVar2 != 0x0) {
-      hmemcpy16((LPVOID)&PTR_LOOP_1050_1000,(LPCVOID)uVar7,
+      hmemcpy16((LPVOID)&ctx.PTR_LOOP_1050_1000,(LPCVOID)uVar7,
                 CONCAT22((iVar4 + 0x6),iVar1));
       mem_op_1000_179c(0x1e,puVar2,0x1000);
       uVar3 = puVar2 | uVar5;
@@ -74,7 +74,7 @@ fn memcpy_op_1008_676e(param_1: u32,param_2: u16,uchar *param_3)
   pass1_1000_48a8((param_2 + 0x10),(iVar4 + 0x10),0x28);
   uVar1 = (param_2 + 0x10);
   lVar2 = *(long *)(uVar1 + 0x8) * *(long *)(iVar4 + 0x18);
-  hmemcpy16((LPVOID)&PTR_LOOP_1050_1000,(LPCVOID)lVar2,
+  hmemcpy16((LPVOID)&ctx.PTR_LOOP_1050_1000,(LPCVOID)lVar2,
             CONCAT22((iVar4 + 0x6),(lVar2 >> 0x10)));
   (param_2 + 0x1c) = 0x1;
   return;

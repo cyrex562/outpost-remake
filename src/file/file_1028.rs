@@ -56,7 +56,7 @@ fn write_to_file_1028_0234(param_1: u32,param_2: u32,param_3: u16) -> u16
                           (uVar5,uVar6,local_14,param_3,0x2,0x1008);
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return 0x0;
 }
@@ -85,7 +85,7 @@ fn write_to_file_1028_1452(param_1: u32,param_2: u32,param_3: u16) -> u16
       BVar1 = write_to_file_1008_7e1c
                         (uVar3,uVar4,local_6,param_3,0x2,0x1008);
       if (BVar1 != 0x0) {
-        local_6[0] = PTR_LOOP_1050_4fbc;
+        local_6[0] = ctx.PTR_LOOP_1050_4fbc;
         BVar1 = write_to_file_1008_7e1c
                           (uVar3,uVar4,local_6,param_3,0x2,0x1008);
         if (BVar1 != 0x0) {
@@ -93,7 +93,7 @@ fn write_to_file_1028_1452(param_1: u32,param_2: u32,param_3: u16) -> u16
         }
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return 0x0;
 }
@@ -121,11 +121,11 @@ fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
   if (param_3 == 0x0) {
     return 0x0;
   }
-  if (0x1 < PTR_LOOP_1050_0312) {
+  if (0x1 < ctx.PTR_LOOP_1050_0312) {
     BVar3 = read_file_1008_7dee(param_2,(param_2 >> 0x10),&local_4
                                 ,0x0,param_5,0x2,0x1008);
     if (BVar3 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return 0x0;
     }
     for (uStack6 = 0x0; uStack6 < local_4; uStack6 += 0x1) {
@@ -153,7 +153,7 @@ fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
       uVar8 = (param_1 >> 0x10);
       uVar1 = (param_1 + 0x20);
       ppcVar2 = (code **)((param_1 + 0x20) + 0x8);
-      (**ppcVar2)(&PTR_LOOP_1050_1038,uVar1,(uVar1 >> 0x10),uVar4,
+      (**ppcVar2)(&ctx.PTR_LOOP_1050_1038,uVar1,(uVar1 >> 0x10),uVar4,
                   puVar7,uVar10,uVar6);
       param_4 = extraout_DX;
     }
@@ -191,7 +191,7 @@ fn write_to_file_1028_3d0e(param_1: u32,param_2: u32,param_3: u16,param_4: u16)
         }
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return;
 }
@@ -210,7 +210,7 @@ fn write_to_file_1028_5f82(param_1: u32,param_2: u32,param_3: u16) -> bool
                       (param_2,(param_2 >> 0x10),local_c,param_3,
                        0x2,0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d0;
+      ctx.PTR_LOOP_1050_0310 = 0x6d0;
       return BVar1;
     }
     BVar1 = 0x1;
@@ -233,7 +233,7 @@ fn pass1_1028_5fcc(param_1: i16,uchar *param_2,param_3: i16,param_4: u16)
      BVar3 = read_file_1008_7dee(uVar2,(uVar2 >> 0x10),
                                  uVar1 + 0x20,0x0,(uVar1 >> 0x10),0x2,
                                  0x1008), BVar3 == 0x0)) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   return;
@@ -256,7 +256,7 @@ fn write_to_file_1028_b286(param_1: i16,param_2: u16) -> bool
                       (uVar1,(uVar1 >> 0x10),param_1 - 0xa,param_2,
                        0x2,0x1008);
     if (BVar2 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d0;
+      ctx.PTR_LOOP_1050_0310 = 0x6d0;
       return BVar2;
     }
     in_AX = 0x1;
@@ -285,7 +285,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
   uVar6 = (param_2 >> 0x10);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_e,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   pass1_1030_16d6(param_1,param_2,param_3);
@@ -295,37 +295,37 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
   local_8[0] = (iVar3 + 0xc);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   local_8[0] = (iVar3 + 0xe);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   local_8[0] = (iVar3 + 0x10);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   local_8[0] = (iVar3 + 0x12);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   local_8[0] = (iVar3 + 0x18);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   local_8[0] = (iVar3 + 0x1a);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   iStack4 = (iVar3 + 0x12);
@@ -361,7 +361,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
       BVar2 = write_to_file_1008_7e1c
                         (uVar5,uVar6,local_8,param_3,0x2,0x1008);
       if (BVar2 == 0x0) {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        ctx.PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
       }
       uVar1 = (iVar3 + 0x14);
@@ -369,7 +369,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
       BVar2 = write_to_file_1008_7e1c
                         (uVar5,uVar6,local_8,param_3,0x2,0x1008);
       if (BVar2 == 0x0) {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        ctx.PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
       }
       uVar1 = (iVar3 + 0x14);
@@ -377,7 +377,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
       BVar2 = write_to_file_1008_7e1c
                         (uVar5,uVar6,local_8,param_3,0x2,0x1008);
       if (BVar2 == 0x0) {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        ctx.PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
       }
       uVar1 = (iVar3 + 0x14);
@@ -385,7 +385,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
       BVar2 = write_to_file_1008_7e1c
                         (uVar5,uVar6,local_8,param_3,0x2,0x1008);
       if (BVar2 == 0x0) {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        ctx.PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
       }
       uVar1 = (iVar3 + 0x14);
@@ -395,7 +395,7 @@ fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
 joined_r0x1028b766:
   if (BVar2 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;
   }
   return 0x1;
@@ -435,17 +435,17 @@ fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,uchar *par
   uVar8 = (param_2 >> 0x10);
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_4,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_6,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_8,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   iVar2 = switch_1008_73ea(uVar5,uVar8,local_4);
@@ -456,17 +456,17 @@ fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,uchar *par
   (puVar3 + 0x4) = iVar2;
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_4,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_6,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   BVar1 = read_file_1008_7dee(uVar5,uVar8,puVar3 + 0x1a,0x0,uVar6,0x2,0x1008);
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
   (puVar3 + 0x12) = local_4;
@@ -483,7 +483,7 @@ fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,uchar *par
   case 0x2:
   case 0x3:
     puVar4 = puVar3 + 0x5;
-LAB_1028_b968:
+//LAB_1028_b968:
     BVar1 = read_file_1008_7dee(uVar5,uVar8,puVar4,0x0,uVar6,0x2,0x1008);
     break;
   case 0x4:
@@ -510,33 +510,33 @@ LAB_1028_b968:
     BVar1 = read_file_1008_7dee(uVar5,uVar8,puStack16,0x0,param_5,0x2,
                                 0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return;
     }
     BVar1 = read_file_1008_7dee(uVar5,uVar8,local_2a,0x0,param_4,0x2,0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return;
     }
     uVar7 = puVar3[0x5];
     BVar1 = read_file_1008_7dee(uVar5,uVar8,uVar7 + 0xa8,0x0,(uVar7 >> 0x10),
                                 0x2,0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return;
     }
     uVar7 = puVar3[0x5];
     BVar1 = read_file_1008_7dee(uVar5,uVar8,uVar7 + 0xaa,0x0,(uVar7 >> 0x10),
                                 0x2,0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return;
     }
     uVar7 = puVar3[0x5];
     BVar1 = read_file_1008_7dee(uVar5,uVar8,uVar7 + 0xac,0x0,(uVar7 >> 0x10),
                                 0x2,0x1008);
     if (BVar1 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return;
     }
     uVar5 = switch_1008_72bc(uVar5,uVar8,local_2a[0]);
@@ -553,7 +553,7 @@ LAB_1028_b968:
     goto switchD_1028_ba97_caseD_6;
   }
   if (BVar1 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
 switchD_1028_ba97_caseD_6:
@@ -569,7 +569,7 @@ read_file_1028_d7ba(param_1: u16,param_2: u16,param_3: u32,
 {
   read_file_1008_7cfe(param_3,(param_3 >> 0x10),0x8,0x1008,param_4);
   if (param_5 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d4;
+    ctx.PTR_LOOP_1050_0310 = 0x6d4;
     return param_5;
   }
   return 0x1;
@@ -818,7 +818,7 @@ write_file_fn_1028_e56c
                     (param_3,(param_3 >> 0x10),local_2a,
                      param_4,0x4,0x1008);
   if (BVar3 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   else {
     uStack12 = uStack8;

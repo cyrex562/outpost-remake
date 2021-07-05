@@ -59,7 +59,7 @@ fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
       pass1_1018_435e(param_1,lStack14,local_12,local_10,uVar9,param_2);
       (uVar10 + 0x136) = puVar7;
       (uVar10 + 0x138) = uVar9;
-      piVar2 = (i16 *)(uVar10 + 0x13a);
+      piVar2 = (uVar10 + 0x13a);
       *piVar2 = *piVar2 + 0x1;
       wsprintf16((LPSTR)0x1030,(LPCSTR)(uVar10 + 0x22),valist);
       return;

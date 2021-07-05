@@ -41,6 +41,7 @@ mod ui;
 mod util;
 mod win_struct;
 mod winapi;
+mod defines;
 
 fn main() {
     let mut ctx = AppContext::new();

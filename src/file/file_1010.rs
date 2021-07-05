@@ -24,7 +24,7 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
   uVar8 = (param_2 >> 0x10);
   read_file_1008_7cfe(uVar7,uVar8,0x6,0x1008,param_5);
   if (param_3 == 0x0) {
-    PTR_LOOP_1050_0310 = 0x6d4;
+    ctx.PTR_LOOP_1050_0310 = 0x6d4;
   }
   else {
     BVar3 = read_file_1008_7dee(uVar7,uVar8,&local_6,0x0,param_5,0x2,0x1008);
@@ -76,13 +76,13 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
           ;
           if (BVar3 == 0x0) goto LAB_1010_0cb1;
           uVar5 = uStack4;
-          if (PTR_LOOP_1050_0312 < 0x2) {
+          if (ctx.PTR_LOOP_1050_0312 < 0x2) {
             uVar5 = pass1_1008_738c(uVar7,uVar8,uStack4);
           }
           (uVar5 * 0x8 + 0xe28) = local_2a[0];
           uStack38 = uVar5;
         }
-        if (0x2 < PTR_LOOP_1050_0312) {
+        if (0x2 < ctx.PTR_LOOP_1050_0312) {
           uStack4 = 0x0;
           do {
             BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,
@@ -95,8 +95,8 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         return;
       }
     }
-LAB_1010_0cb1:
-    PTR_LOOP_1050_0310 = 0x6d2;
+//LAB_1010_0cb1:
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
   }
   return;
 }
@@ -155,7 +155,7 @@ fn write_to_file_1010_6372(param_1: u32,param_2: u32,param_3: u16)
         }
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return;
 }
@@ -189,7 +189,7 @@ fn write_to_file_1010_6846(param_1: u32,param_2: u32,param_3: u16)
         }
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return;
 }
@@ -331,7 +331,7 @@ fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
               if (BVar3 != 0x0) {
                 iStack4 = 0x0;
                 while( true ) {
-                  piVar1 = (i16 *)(iVar6 + 0x30);
+                  piVar1 = (iVar6 + 0x30);
                   if (*piVar1 == iStack4 || *piVar1 < iStack4) {
                     return;
                   }
@@ -351,7 +351,7 @@ fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
         }
       }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
   }
   return;
 }

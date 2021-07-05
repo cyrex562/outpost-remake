@@ -84,7 +84,7 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
     do {
       puVar6 = puVar7;
       puVar3 = local_14;
-      pass1_1028_e4ec(CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,puVar3)));
+      pass1_1028_e4ec(CONCAT13((param_3 >> 0x8),CONCAT12(param_3,puVar3)));
       uStack24 = CONCAT22(puVar6,puVar3);
       puVar7 = (puVar6 | puVar3);
       if (puVar7 == 0x0) goto LAB_1010_10ca;
@@ -95,7 +95,7 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
       puVar7 = extraout_DX_00;
     } while (puVar4 == 0x0);
     uVar13 = SUB21(puVar6,0x0);
-    pass1_1028_b58e(CONCAT13((char)(puVar6 >> 0x8),CONCAT12(uVar13,puVar3)));
+    pass1_1028_b58e(CONCAT13((puVar6 >> 0x8),CONCAT12(uVar13,puVar3)));
     uStack36 = CONCAT22(extraout_DX_01,puVar4);
     ppcVar1 = (code **)&iVar9->field_0x2c;
     puVar12 = param_1;
@@ -122,7 +122,7 @@ fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
     uStack30 -= 0x1;
     puVar7 = extraout_DX_04;
   } while (uStack30 != 0x0);
-LAB_1010_10ca:
+//LAB_1010_10ca:
   uVar2 = iVar8->field_0x68 << 0x2;
   mem_op_1000_179c(uVar2,puVar7,0x1000);
   iVar8->field_0x64 = uVar2;
@@ -493,8 +493,8 @@ fn struct_1010_dd5e(param_1: u16,param_2: u16,param_3: u32)
     uVar4 = struct_op_1030_73a8(param_3);
     uVar3 = (uVar4 >> 0x10);
     iVar2 = uVar4;
-    plStack16 = (long *)(uVar4 & 0xffff0000 | (iVar2 + 0x14U));
-    if ((uVar3 | iVar2 + 0x14U) != 0x0) {
+    plStack16 = (long *)(uVar4 & 0xffff0000 | (iVar2 + 0x14));
+    if ((uVar3 | iVar2 + 0x14) != 0x0) {
       iVar1 = (iVar2 + 0x12);
       iVar2 = (iVar2 + 0x18);
       if (((((iVar1 == 0x4) ||

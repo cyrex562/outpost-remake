@@ -6,10 +6,10 @@ fn msg_box_op_1000_1f24(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> 
   let unaff_CS: u16;
   
   if (param_3 < (param_1 + 0xc)) {
-    msg_box_op_1000_214c(0x0,0x0,0xd940,&PTR_LOOP_1050_1040,param_4);
+    msg_box_op_1000_214c(0x0,0x0,0xd940,&ctx.PTR_LOOP_1050_1040,param_4);
     return 0x1;
   }
-  piVar1 = (i16 *)(param_1 + 0xc);
+  piVar1 = (param_1 + 0xc);
   *piVar1 = *piVar1 + 0x1;
   return 0x0;
 }

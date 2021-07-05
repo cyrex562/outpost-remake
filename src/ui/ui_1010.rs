@@ -78,7 +78,7 @@ fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,HWND16 par
     (**ppcVar1)(s_tile2_bmp_1050_1538,puVar5,(lVar6 + 0xe2),
                 param_3);
     iVar2 = puVar5;
-    piVar3 = (i16 *)(puVar5 & 0xffff | extraout_DX << 0x10);
+    piVar3 = (puVar5 & 0xffff | extraout_DX << 0x10);
     local_18.show_cmd = 0x9;
     local_18.rc_normal_position.x = *piVar3;
     local_18.rc_normal_position.y = *(INT16 *)(iVar2 + 0x2);
@@ -95,7 +95,7 @@ fn enum_child_windows_1010_01be(LPVOID param_1)
 {
   LPVOID pvVar1;
   
-  if (PTR_LOOP_1050_0010 == 0x0) {
+  if (ctx.PTR_LOOP_1050_0010 == 0x0) {
     pvVar1 = MakeProcInstance16(param_1,(HANDLE16)PTR_LOOP_1050_038c);
     EnumChildWindows1((HWND16)s_tile2_bmp_1050_1538,(LPVOID)0x0,ZEXT24(pvVar1) << 0x10);
     FreeProcInstance16((LPVOID)s_tile2_bmp_1050_1538);
@@ -119,17 +119,17 @@ win_ui_op_1010_0240(param_1: u16,param_2: u16,param_3: u16,HWND16 param_4,
   let uVar6: u16;
   let uVar7: u16;
   
-  uVar7 = SUB42(&USHORT_1050_1050,0x0);
+  uVar7 = SUB42(ctx.data_seg,0x0);
   uVar6 = param_3;
   BVar2 = IsWindow16(param_4);
   if (BVar2 != 0x0) {
     WVar3 = GetWindowWord16((HWND16)s_tile2_bmp_1050_1538,-0x6);
-    if (WVar3 == &PTR_LOOP_1050_038c) {
+    if (WVar3 == &ctx.PTR_LOOP_1050_038c) {
       uVar5 = param_3;
       BVar2 = IsIconic16((HWND16)s_tile2_bmp_1050_1538);
       if (BVar2 != 0x0) {
         puVar4 = 
-                 mixed_1010_20ba(&PTR_LOOP_1050_0ed0,0x45,param_5,in_DX,unaff_DI
+                 mixed_1010_20ba(&ctx.PTR_LOOP_1050_0ed0,0x45,param_5,in_DX,unaff_DI
                                 );
         ppcVar1 = (code **)(*puVar4 + 0x10);
         (**ppcVar1)(s_tile2_bmp_1050_1538,puVar4,0x1,param_3,uVar5,uVar6,uVar7);
@@ -153,14 +153,14 @@ fn win_ui_op_1010_3202(param_1: u32,param_2: i16,HWND16 param_3)
   iVar3 = param_1;
   uVar4 = (param_1 >> 0x10);
   if (param_2 == 0x0) {
-    piVar1 = (i16 *)(iVar3 + 0x28);
+    piVar1 = (iVar3 + 0x28);
     *piVar1 = *piVar1 + -0xa;
     if (*piVar1 < 0x0) {
       (iVar3 + 0x28) = 0x0;
     }
   }
   else {
-    piVar1 = (i16 *)(iVar3 + 0x28);
+    piVar1 = (iVar3 + 0x28);
     *piVar1 = *piVar1 + (iVar3 + 0x18);
   }
   if (*(long *)(iVar3 + 0x52) != 0x0) {
@@ -219,7 +219,7 @@ fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
             (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) != param_2)
             );
     lStack18 = lStack14;
-LAB_1010_7a49:
+//LAB_1010_7a49:
     if (lStack18 != 0x0) {
       SetFocus16(0x1008);
       BringWindowToTop16((HWND16)s_tile2_bmp_1050_1538);

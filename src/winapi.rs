@@ -43,6 +43,9 @@ pub fn InitTask16(context: &mut CONTEXT) {
     unimplemented!()
 }
 // void DOS3Call(CONTEXT * context)
+pub fn DOS3Call(context: &mut CONTEXT) {
+    unimplemented!()
+}
 // UINT16 SetErrorMode16(UINT16 mode)
 // void __AHSHIFT(void)
 // void __AHINCR(void)

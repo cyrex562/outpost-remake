@@ -36,7 +36,7 @@ mixed_struct_op_1040_8fb8
   (iVar4 + 0x3e) = 0x0;
   (iVar4 + 0x40) = param_2;
   *param_1 = 0x9800;
-  (iVar4 + 0x2) = &PTR_LOOP_1050_1040;
+  (iVar4 + 0x2) = &ctx.PTR_LOOP_1050_1040;
   uVar1 = (iVar4 + 0x36);
   (iVar4 + 0x28) = uVar1;
   (iVar4 + 0x26) = uVar1;
@@ -80,7 +80,7 @@ mixed_struct_op_1040_8fb8
     pvVar3 = MakeProcInstance16(param_10,(HANDLE16)PTR_LOOP_1050_038c);
     _PTR_LOOP_1050_5e18 = CONCAT22(param_9,pvVar3);
   }
-  PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + 0x1;
+  ctx.PTR_LOOP_1050_5e16 = ctx.PTR_LOOP_1050_5e16 + 0x1;
   return;
 }
 
@@ -118,7 +118,7 @@ fn struct_1040_b082(astruct_57 *param_1,param_2: u32)
   iVar1->field_0x8e = 0x0;
   iVar1->field_0x90 = 0x0;
   param_1 = 0xb772;
-  iVar1->field_0x2 = &PTR_LOOP_1050_1040;
+  iVar1->field_0x2 = &ctx.PTR_LOOP_1050_1040;
   return;
 }
 

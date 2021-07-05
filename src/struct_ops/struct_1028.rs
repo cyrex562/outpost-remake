@@ -247,7 +247,7 @@ fn struct_1028_489e(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
-  *param_1 = &PTR_LOOP_1050_4942;
+  *param_1 = &ctx.PTR_LOOP_1050_4942;
   (param_1 + 0x2) = &USHORT_1050_1028;
   return param_1;
 }
@@ -422,7 +422,7 @@ struct_op_1028_87f0(param_1: u16,param_2: u8,astruct_97 *param_3,param_4: u16,
   iVar1->field_0x2 = &USHORT_1050_1028;
   sys_1000_3f9c(&iVar1->field_0x8,puVar1,
                 s_SCInternalPutBldg_site_0x_08lx__b_1050_5046,
-                &USHORT_1050_1050,param_10,&stack0xfffe,puVar1,0x1000,
+                ctx.data_seg,param_10,&stack0xfffe,puVar1,0x1000,
                 param_1,param_2);
   return;
 }
@@ -455,7 +455,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16,
   iVar1->field_0x2 = &USHORT_1050_1028;
   sys_1000_3f9c(&iVar1->field_0x8,puVar1,
                 s_SCInternalPutBldg2_site_0x_08lx__1050_506f,
-                &USHORT_1050_1050,param_10,&stack0xfffe,puVar1,0x1000,
+                ctx.data_seg,param_10,&stack0xfffe,puVar1,0x1000,
                 param_1,param_2);
   return;
 }
@@ -487,7 +487,7 @@ struct_op_1028_933c(astruct_100 *param_1,param_2: u16,param_3: u16,param_4: u16,
   (iVar1 + 0x2) = &USHORT_1050_1028;
   sys_1000_3f9c((uchar *)(iVar1 + 0x8),puVar2,
                 s_SCPutBldg_site_0x_08lx__bldg__u__1050_50ce,
-                &USHORT_1050_1050,param_8,&stack0xfffe,puVar2,0x1000,
+                ctx.data_seg,param_8,&stack0xfffe,puVar2,0x1000,
                 param_9,param_10);
   return;
 }
@@ -520,7 +520,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16)
   iVar1->field_0x6 = 0x0;
   param_3->field_0x0 = 0x6ad2;
   iVar1->field_0x2 = &USHORT_1050_1028;
-  sys_1000_3f9c(&iVar1->field_0x8,puVar1,0x5160,&USHORT_1050_1050,
+  sys_1000_3f9c(&iVar1->field_0x8,puVar1,0x5160,ctx.data_seg,
                 in_stack_0000fffa,&stack0xfffe,puVar1,0x1000,param_1,param_2);
   return param_3;
 }

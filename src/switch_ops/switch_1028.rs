@@ -20,7 +20,7 @@ switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,uchar *param_4,param_5: 
                     //     Impure (Non-shareable)
                     // 
   puVar4 = CONCAT22(param_4,param_5);
-  uVar2 = param_3 - 0x1U;
+  uVar2 = param_3 - 0x1;
   if (false) {
 switchD_1030_069f_caseD_19:
     mem_op_1000_179c(0x20,param_4,0x1000);
@@ -32,7 +32,7 @@ switchD_1030_069f_caseD_19:
     return CONCAT22(uVar3,uVar2);
   }
   uVar2 = param_5;
-  switch(param_3 - 0x1U) {
+  switch(param_3 - 0x1) {
   case 0x0:
   case 0x1:
   case 0x2:

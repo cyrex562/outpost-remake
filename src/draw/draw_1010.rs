@@ -83,7 +83,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     if (BVar14 != 0x0) {
       return param_7;
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return param_7;
   case 0x6:
     bVar23 = 0x0;
@@ -97,7 +97,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     iVar20 = param_5 * 0x4;
     (__return_storage_ptr__ + iVar20 + 0x26) = iVar15;
     *(uchar **)(__return_storage_ptr__ + iVar20 + 0x28) = puVar17;
-    HVar29 = (HGDIOBJ16)&USHORT_1050_1050;
+    HVar29 = (HGDIOBJ16)ctx.data_seg;
     uVar25 = pass1_1008_4772(*(astruct_76 **)(__return_storage_ptr__ + iVar20 + 0x26)
                             );
     puVar17 = (uVar25 >> 0x10);
@@ -109,16 +109,16 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     handle = SelectObject16(0x1008,CONCAT11(uVar30,bVar23));
     hdc = (HDC16)s_tile2_bmp_1050_1538;
     HVar29 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,HVar29);
-    for (iVar15 = 0x0; piVar1 = (i16 *)(__return_storage_ptr__ + 0x74),
+    for (iVar15 = 0x0; piVar1 = (__return_storage_ptr__ + 0x74),
         *piVar1 != iVar15 && iVar15 <= *piVar1; iVar15 += 0x1) {
       iVar20 = (iVar15 * 0x10 + param_5) * 0x8;
       puVar17 = *(uchar **)(__return_storage_ptr__ + 0x72);
       hdc = 0x1000;
       b_force_background = 0x48e1;
-      uVar11 = pass1_1000_484c(CONCAT13((char)(unaff_SS >> 0x8),
-                                        CONCAT12((char)unaff_SS,&stack0xfff2)),
-                               CONCAT13((char)(puVar17 >> 0x8),
-                                        CONCAT12((char)puVar17,
+      uVar11 = pass1_1000_484c(CONCAT13((unaff_SS >> 0x8),
+                                        CONCAT12(unaff_SS,&stack0xfff2)),
+                               CONCAT13((puVar17 >> 0x8),
+                                        CONCAT12(puVar17,
                                                  iVar20 + (__return_storage_ptr__
                                                                   + 0x7))),0x8);
       if (uVar11 != 0x0) {
@@ -127,7 +127,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
         iVar19 = uVar4;
         iVar21 = iVar20 + iVar19;
         hdc = (HDC16)s_tile2_bmp_1050_1538;
-        b_force_background = (HPALETTE16)&PTR_LOOP_1050_4908;
+        b_force_background = (HPALETTE16)&ctx.PTR_LOOP_1050_4908;
         Rectangle16(0x1000,*(INT16 *)(iVar21 + 0x6),*(INT16 *)(iVar21 + 0x4),
                     *(INT16 *)(iVar21 + 0x2),*(INT16 *)(iVar19 + iVar20));
       }
@@ -143,23 +143,23 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     bVar23 = 0x3;
     goto LAB_1010_2ad8;
   case 0xd:
-    pbVar3 = (byte *)(uVar11 + unaff_SI);
+    pbVar3 = (uVar11 + unaff_SI);
     bVar23 = *pbVar3;
-    bVar5 = *pbVar3 + (byte)param_7;
+    bVar5 = *pbVar3 + param_7;
     *pbVar3 = bVar5 + (uVar11 < 0x1c);
-    uVar26 = (CARRY1(bVar23,(byte)param_7) || CARRY1(bVar5,uVar11 < 0x1c));
+    uVar26 = (CARRY1(bVar23,param_7) || CARRY1(bVar5,uVar11 < 0x1c));
     uVar6 = param_8 + 0xeff0;
     bVar23 = param_8 < 0x1010 || uVar6 < uVar26;
     uVar12 = uVar6 - uVar26;
-    pcVar8 = (code *)swi(0x4);
+    pcVar8 = swi(0x4);
     if (SBORROW2(param_8,0x1010) != SBORROW2(uVar6,uVar26)) {
       (*pcVar8)();
       param_7 = (u16_t)extraout_DX_00;
     }
     bVar24 = uVar12 < 0x1010 || uVar12 + 0xeff0 < bVar23;
-    pbVar3 = (byte *)(uVar11 + unaff_SI);
+    pbVar3 = (uVar11 + unaff_SI);
     bVar23 = *pbVar3;
-    bVar16 = (byte)param_7;
+    bVar16 = param_7;
     bVar5 = *pbVar3;
     *pbVar3 = bVar5 + bVar16 + bVar24;
     pcVar2 = (uVar11 + unaff_SI);
@@ -183,8 +183,8 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
                     // WARNING: Do nothing block with infinite loop
     } while( true );
   case 0x12:
-    PTR_LOOP_1050_10c6 = (0x0 < param_5);
-    PTR_LOOP_1050_1142 = (0x2 < param_5);
+    ctx.PTR_LOOP_1050_10c6 = (0x0 < param_5);
+    ctx.PTR_LOOP_1050_1142 = (0x2 < param_5);
     break;
   case 0x13:
     iVar15 = __return_storage_ptr__ * 0x8 + param_1;
@@ -192,13 +192,13 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
        (((iVar15 + 0x26) != 0x0 || ((iVar15 + 0x28) != 0x0)))) {
       uVar4 = (param_1 + 0xe);
       sys_1000_3f9c((uchar *)uVar4,(uVar4 >> 0x10),
-                    s__d__d__d__d_1050_14ae,&USHORT_1050_1050,
+                    s__d__d__d__d_1050_14ae,ctx.data_seg,
                     
                              (__return_storage_ptr__ * 0x8 + param_1 + 0x22),
                     &stack0xfffa,param_2,0x1000,unaff_SS,in_AF);
       uVar4 = (param_1 + 0xa);
       WritePrivateProfileString16
-                ((LPCSTR)&PTR_LOOP_1050_1000,(LPCSTR)uVar4,(LPCSTR)(uVar4 >> 0x10),
+                ((LPCSTR)&ctx.PTR_LOOP_1050_1000,(LPCSTR)uVar4,(LPCSTR)(uVar4 >> 0x10),
                  (LPCSTR)(param_1 + 0xe));
     }
     return param_7;
@@ -207,8 +207,8 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     break;
   case 0x17:
     puVar17 = (param_7 - 0x1);
-    pbVar3 = (byte *)(uVar11 + unaff_SI);
-    *pbVar3 = *pbVar3 | (byte)puVar17;
+    pbVar3 = (uVar11 + unaff_SI);
+    *pbVar3 = *pbVar3 | puVar17;
     *(u16_t *)(__return_storage_ptr__ + 0x12) = param_8;
     *(uchar **)(__return_storage_ptr__ + 0x14) = puVar17;
     uVar11 = 0x0;
@@ -226,7 +226,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
                                          0x2,0x1008), BVar14 != 0x0)) {
           return (u16_t)puVar17;
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return (u16_t)puVar17;
       }
       uVar26 = in_stack_0000ffca;
@@ -259,18 +259,18 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
       in_stack_0000ffca = uVar26;
     }
     if (puVar27 == 0x0) {
-      PTR_LOOP_1050_0310 = 0x6d2;
+      ctx.PTR_LOOP_1050_0310 = 0x6d2;
       return (u16_t)puVar18;
     }
     ppcVar7 = (code **)*puVar27;
     (**ppcVar7)();
-    PTR_LOOP_1050_0310 = 0x6d2;
+    ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return (u16_t)extraout_DX_01;
   case 0x18:
     bVar23 = 0x2;
     goto LAB_1010_2ad8;
   case 0x19:
-    uVar13 = pass1_1010_6ca2(CONCAT13(uVar28,CONCAT12((char)param_4,__return_storage_ptr__
+    uVar13 = pass1_1010_6ca2(CONCAT13(uVar28,CONCAT12(param_4,__return_storage_ptr__
                                                      )),0x8,param_7,unaff_SS);
     if (uVar13 != 0x0) {
       __return_storage_ptr__ = (s_version__d__d_1050_0012 + 0x8);
@@ -289,7 +289,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     (__return_storage_ptr__ + 0x26) = param_5;
   }
   bVar23 = 0x1;
-LAB_1010_2ad8:
+//LAB_1010_2ad8:
   if ((bVar23 == 0x1) || (bVar23 == 0x2)) {
     if (bVar23 == 0x1) {
       param_5 = (__return_storage_ptr__ + 0x2) +
@@ -303,14 +303,14 @@ LAB_1010_2ad8:
       if (0x5 < param_5) {
         param_5 = 0x5;
       }
-      if (((bVar23 == 0x1) && (PTR_LOOP_1050_10c6 != 0x0)) &&
+      if (((bVar23 == 0x1) && (ctx.PTR_LOOP_1050_10c6 != 0x0)) &&
          (0x4 < param_5)) {
         param_5 = 0x4;
       }
     }
   }
   (bVar23 * 0x7c + 0xed6) = param_5;
-  pass1_1010_1f62(unaff_SS,CONCAT13(uVar28,CONCAT12((char)param_4,__return_storage_ptr__))
+  pass1_1010_1f62(unaff_SS,CONCAT13(uVar28,CONCAT12(param_4,__return_storage_ptr__))
                   ,0xc);
 switchD_1010_2ab5_caseD_0:
   return param_7;
@@ -341,11 +341,11 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
   uStack4 = 0x0;
   do {
     uVar9 = (param_1 >> 0x10);
-    piVar1 = (i16 *)(param_1 + 0x74);
+    piVar1 = (param_1 + 0x74);
     if (*piVar1 == iStack6 || *piVar1 < iStack6) {
-LAB_1010_413e:
-      if ((uStack4 != 0x0) && (0x3 < PTR_LOOP_1050_3960)) {
-        puVar10 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,iStack6 + 0xcU,unaff_SS,in_DX,
+//LAB_1010_413e:
+      if ((uStack4 != 0x0) && (0x3 < ctx.PTR_LOOP_1050_3960)) {
+        puVar10 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,iStack6 + 0xc,unaff_SS,in_DX,
                                   unaff_DI);
         puVar7 = (puVar10 >> 0x10);
         uVar4 = pass1_1018_0afa(puVar10);
@@ -359,15 +359,15 @@ LAB_1010_413e:
             puVar8 = 0x0;
           }
           else {
-            uVar9 = SUB42(&PTR_LOOP_1050_1040,0x0);
+            uVar9 = SUB42(&ctx.PTR_LOOP_1050_1040,0x0);
             iVar6 = string_1040_8520((astruct_57 *)CONCAT22(puVar7,uVar5),
-                                     PTR_LOOP_1050_0396,0x30,0x2,0x643,0x645,
+                                     ctx.PTR_LOOP_1050_0396,0x30,0x2,0x643,0x645,
                                      puVar8,unaff_SS);
           }
           puStack16 = CONCAT22(puVar8,iVar6);
           ppcVar2 = (code **)(*puStack16 + 0x74);
           (**ppcVar2)(uVar9,iVar6,puVar8);
-          pass1_1010_209e(_PTR_LOOP_1050_0ed0,iStack6 + 0xcU);
+          pass1_1010_209e(_PTR_LOOP_1050_0ed0,iStack6 + 0xc);
           uStack4 = uVar4;
         }
       }
@@ -475,7 +475,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   handle_00 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,stock_obj_handle);
   iStack32 = 0x0;
   while( true ) {
-    piVar1 = (i16 *)(param_1 + 0x74);
+    piVar1 = (param_1 + 0x74);
     if (*piVar1 == iStack32 || *piVar1 < iStack32) break;
     iVar4 = (iStack32 * 0x10 + param_3) * 0x8;
     hdc = 0x1000;
@@ -523,9 +523,9 @@ fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,RECT16 *param_4)
   iStack12 = 0x0;
   iStack10 = 0x0;
   do {
-    piVar1 = (i16 *)(iVar4 + 0x30);
+    piVar1 = (iVar4 + 0x30);
     if (*piVar1 == iStack12 || *piVar1 < iStack12) {
-LAB_1010_4e67:
+//LAB_1010_4e67:
       if (iStack10 != 0x0) {
         (iVar4 + 0x20) = iStack10;
       }

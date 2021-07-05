@@ -129,8 +129,8 @@ switchD_1018_3f8b_caseD_2:
       iVar1 = param_3 * 0x4 + 0x411a;
     }
   }
-  piStack6 = (i16 *)CONCAT22(0x1050,iVar1);
-  if (piStack6 == (i16 *)0x0) {
+  piStack6 = CONCAT22(0x1050,iVar1);
+  if (piStack6 == 0x0) {
     return;
   }
   iStack10 = 0x0;
@@ -257,10 +257,10 @@ switchD_1018_3f8b_caseD_2:
       }
     }
   }
-LAB_1018_40bc:
+//LAB_1018_40bc:
   iStack10 = 0x0;
   uStack8 = 0x0;
-LAB_1018_425e:
+//LAB_1018_425e:
   if (*(long *)(iStack10 + 0x8) == 0x0) {
     (iStack10 + 0x8) = 0x1;
   }

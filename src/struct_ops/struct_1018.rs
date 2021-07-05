@@ -61,12 +61,12 @@ fn struct_1018_0570(astruct_55 *param_1,param_2: u16,param_3: u16)
   uVar9->field_0x2 = 0x1018;
   uVar9->field_0x20 = 0x18b0;
   uVar9->field_0x22 = 0x1018;
-  if ((PTR_LOOP_1050_3960 == 0x0) && (_PTR_LOOP_1050_3962 == 0x0)) {
+  if ((ctx.PTR_LOOP_1050_3960 == 0x0) && (_PTR_LOOP_1050_3962 == 0x0)) {
     mem_op_1000_179c(0x8,puVar5,0x1000);
     _PTR_LOOP_1050_3962 = CONCAT22(puVar5,uVar6);
     pass1_1000_4906((astruct_20 *)CONCAT22(puVar5,uVar6),(WNDCLASS16 *)0x0,0x8);
   }
-  PTR_LOOP_1050_3960 = PTR_LOOP_1050_3960 + 0x1;
+  ctx.PTR_LOOP_1050_3960 = ctx.PTR_LOOP_1050_3960 + 0x1;
   puVar7 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2f,param_3,puVar5,unaff_DI);
   &uVar9->field_0x2c = puVar7;
   (&uVar9->field_0x2c + 0x2) = (puVar7 >> 0x10);
@@ -129,8 +129,8 @@ struct_1018_229c(astruct_632 *param_1,uchar *param_2,param_3: u16,uchar *param_4
   param_1->field_0x2 = 0x1018;
   param_1->field_0x1c = (s_fem132_wav_1050_2aec + 0x6);
   param_1->field_0x1e = 0x1018;
-  PTR_LOOP_1050_4230 = param_1;
-  PTR_LOOP_1050_4232 = param_2;
+  ctx.PTR_LOOP_1050_4230 = param_1;
+  ctx.PTR_LOOP_1050_4232 = param_2;
   pass1_1018_4dce(CONCAT22(param_2,param_1),0x105,param_4,param_5);
   paVar2 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x1a8,param_5);
   param_1->field_0x2a = paVar2;
@@ -162,7 +162,7 @@ struct_1018_229c(astruct_632 *param_1,uchar *param_2,param_3: u16,uchar *param_4
     iStack4 += 0x1;
   } while (iStack4 < 0xa);
   if (CONCAT22(param_2,param_1) == 0x0) {
-    piVar1 = (i16 *)0x0;
+    piVar1 = 0x0;
     param_2 = 0x0;
   }
   else {
@@ -250,7 +250,7 @@ fn struct_1018_4720(param_1: *mut u16,param_2: u32,param_3: u32)
   iVar1->field_0x4 = param_3;
   iVar1->field_0x8 = param_2;
   iVar1->field_0xc = 0x0;
-  *param_1 = &PTR_LOOP_1050_4aa6;
+  *param_1 = &ctx.PTR_LOOP_1050_4aa6;
   iVar1->field_0x2 = 0x1018;
   return;
 }
@@ -284,7 +284,7 @@ fn struct_1018_47c8(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16,par
   iVar1 = (astruct_264 *)param_1;
   iVar1->field_0xe = param_5;
   iVar1->field_0x12 = param_4;
-  *param_1 = &PTR_LOOP_1050_4a9a;
+  *param_1 = &ctx.PTR_LOOP_1050_4a9a;
   iVar1->field_0x2 = 0x1018;
   iVar1->field_0xc = 0x2;
   return;
@@ -302,7 +302,7 @@ fn struct_1018_4842(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) ->
   iVar1 = (astruct_265 *)param_1;
   iVar1->field_0xe = param_4;
   iVar1->field_0x10 = 0x0;
-  *param_1 = &PTR_LOOP_1050_4a8e;
+  *param_1 = &ctx.PTR_LOOP_1050_4a8e;
   iVar1->field_0x2 = 0x1018;
   iVar1->field_0xc = 0x4;
   return param_1;
@@ -319,7 +319,7 @@ fn struct_1018_48b0(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) ->
   uVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_207 *)param_1;
   iVar1->field_0xe = param_4;
-  *param_1 = &PTR_LOOP_1050_4a96;
+  *param_1 = &ctx.PTR_LOOP_1050_4a96;
   iVar1->field_0x2 = 0x1018;
   iVar1->field_0xc = 0x5;
   return param_1;
@@ -354,7 +354,7 @@ fn struct_1018_4920(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u32)
   uVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_203 *)param_1;
   iVar1->field_0xe = param_4;
-  *param_1 = &PTR_LOOP_1050_4a8a;
+  *param_1 = &ctx.PTR_LOOP_1050_4a8a;
   iVar1->field_0x2 = 0x1018;
   iVar1->field_0xc = 0x7;
   return;

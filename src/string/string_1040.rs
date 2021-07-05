@@ -30,7 +30,7 @@ string_1040_8520(astruct_57 *param_1,param_2: u16,param_3: u16,param_4: i16,
   iVar5->field_0x9a = 0x0;
   iVar5->field_0xb2 = 0x0;
   param_1 = 0x8ddc;
-  iVar5->field_0x2 = &PTR_LOOP_1050_1040;
+  iVar5->field_0x2 = &ctx.PTR_LOOP_1050_1040;
   local_a = 0x0;
   uStack6 = 0x12c;
   iVar5->field_0x9e = 0x0;
@@ -93,7 +93,7 @@ string_1040_8520(astruct_57 *param_1,param_2: u16,param_3: u16,param_4: i16,
   }
   iStack16 = iStack16 + -0x1;
   load_icon_1040_8b92(param_1,uVar6);
-  PTR_LOOP_1050_5df8 = 0x0;
+  ctx.PTR_LOOP_1050_5df8 = 0x0;
   return iVar5;
 }
 

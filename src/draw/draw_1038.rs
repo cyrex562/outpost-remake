@@ -43,7 +43,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
       (param_1 + 0x90) = uVar3;
       *(uchar **)(param_1 + 0x92) = puVar7;
       (param_1 + 0x90) = 0x11;
-      iStack12 = **(i16 **)(param_1 + 0x90);
+      iStack12 = *(param_1 + 0x90);
       uVar3 = iStack12 * 0xa + 0x2;
       mem_op_1000_179c(uVar3,puVar7,0x1000);
       paStack16 = (astruct_18 *)CONCAT22(puVar7,uVar3);
@@ -53,7 +53,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
       }
       else {
         paStack16 = iStack12;
-        pass1_1000_5586((uchar *)0xa564,&PTR_LOOP_1050_1040,iStack12,0xa,
+        pass1_1000_5586((uchar *)0xa564,&ctx.PTR_LOOP_1050_1040,iStack12,0xa,
                         uVar3 + 0x2,puVar7);
         uVar1 = (param_1 + 0x90);
         uVar8 = (uVar1 >> 0x10);
@@ -83,7 +83,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
   }
   else {
     if (param_4._2_2_ != 0xf9) {
-      pass1_1040_b54a(param_1,param_2,param_3,param_4,in_DX,&PTR_LOOP_1050_1040,
+      pass1_1040_b54a(param_1,param_2,param_3,param_4,in_DX,&ctx.PTR_LOOP_1050_1040,
                       param_6);
       return;
     }
@@ -139,10 +139,10 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
          CONCAT12(*(iVar4 + 0x94),
                          CONCAT11(*(iVar4 + 0x95),
                                   *(iVar4 + 0x96)));
-    PTR_LOOP_1050_5b68 =
+    ctx.PTR_LOOP_1050_5b68 =
          
          CONCAT11(*(iVar4 + 0x3e5),*(iVar4 + 0x3e6));
-    PTR_LOOP_1050_5b6a = *(byte *)(iVar4 + 0x3e4);
+    ctx.PTR_LOOP_1050_5b6a = (iVar4 + 0x3e4);
   }
   if (0x5 < param_3) {
     if (param_3 != 0x6) {
@@ -157,7 +157,7 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
       }
     }
     if (bVar2) {
-      PTR_LOOP_1050_5b64 = PTR_LOOP_1050_5b68;
+      ctx.PTR_LOOP_1050_5b64 = ctx.PTR_LOOP_1050_5b68;
     }
   }
   SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5b64);

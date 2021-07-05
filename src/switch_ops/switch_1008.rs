@@ -25,7 +25,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
   uVar9 = (param_1 >> 0x10);
   iVar8 = param_1;
   puVar4 = (iVar8 + 0x8);
-  PTR_LOOP_1050_0396 = puVar4;
+  ctx.PTR_LOOP_1050_0396 = puVar4;
   mem_op_1000_179c(0x12,param_2,0x1000);
   puVar6 = (param_2 | puVar4);
   if (puVar6 != 0x0) {
@@ -43,7 +43,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
     (iVar8 + 0xe2) = extraout_DX;
   }
   ppcVar3 = (code **)(param_1 + 0x14);
-  (**ppcVar3)(0x1000,param_1,0x0,0x15a,&USHORT_1050_1050);
+  (**ppcVar3)(0x1000,param_1,0x0,0x15a,ctx.data_seg);
   uVar10 = 0x1000;
   puVar6 = extraout_DX_00;
   mem_op_1000_179c(0xec,extraout_DX_00,0x1000);
@@ -53,7 +53,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
     (iVar8 + 0xe4) = 0x0;
   }
   else {
-    piVar1 = (i16 *)(iVar8 + 0xcc);
+    piVar1 = (iVar8 + 0xcc);
     *piVar1 = *piVar1 + 0x1;
     uVar10 = 0x1020;
     pass1_1020_08b6(unaff_SS,paStack6,(iVar8 + 0xcc),(ULONG)param_1);
@@ -128,7 +128,7 @@ switchD_1008_1091_caseD_69:
     }
     uVar5 = (uVar9 + 0xe8);
     ppcVar1 = (code **)((uVar9 + 0xe8) + 0x40);
-    BVar3 = (**ppcVar1)((char)param_4,uVar5,(uVar5 >> 0x10),param_2);
+    BVar3 = (**ppcVar1)(param_4,uVar5,(uVar5 >> 0x10),param_2);
     return BVar3;
   }
   param_4 = 0x1008;
@@ -159,11 +159,11 @@ switchD_1008_1091_caseD_69:
     if (puVar4 == 0x0) {
       return param_3;
     }
-    if (PTR_LOOP_1050_4fe8 != 0x0) {
+    if (ctx.PTR_LOOP_1050_4fe8 != 0x0) {
       pcVar7 = load_string_1010_847e
                          (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10),
                           0x1010);
-      BVar3 = MessageBox16(0x1010,(LPCSTR)&PTR_LOOP_1050_0010,(LPCSTR)pcVar7,
+      BVar3 = MessageBox16(0x1010,(LPCSTR)&ctx.PTR_LOOP_1050_0010,(LPCSTR)pcVar7,
                            (pcVar7 >> 0x10));
       return BVar3;
     }
@@ -178,7 +178,7 @@ switchD_1008_1091_caseD_69:
     pcVar7 = load_string_1010_847e
                        (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10),
                         0x1010);
-    sys_1000_3f9c(local_64,param_5,0x19c,&USHORT_1050_1050,pcVar7
+    sys_1000_3f9c(local_64,param_5,0x19c,ctx.data_seg,pcVar7
                   ,&stack0xfffe,uVar13,0x1000,param_5,in_AF);
     ppcVar1 = (code **)(*param_1 + 0x14);
     (**ppcVar1)(0x1000,param_1,0x0,0x9c,param_5);
@@ -200,10 +200,10 @@ switchD_1008_1091_caseD_69:
     return BVar3;
   case 0x70:
     iVar11 = 0x1;
-LAB_1008_0cba:
+//LAB_1008_0cba:
     uVar5 = pass1_1038_af40(_PTR_LOOP_1050_5b7c,(uVar9 + 0x8),iVar11,param_6,
-                            uVar9,&PTR_LOOP_1050_1038,param_5);
-    return (bool)uVar5;
+                            uVar9,&ctx.PTR_LOOP_1050_1038,param_5);
+    return uVar5;
   case 0x71:
     HVar2 = WinExec16((LPCSTR)0x1008,0x3);
     return HVar2;
@@ -510,7 +510,7 @@ LAB_1008_0cba:
     goto LAB_1008_0f3e;
   case 0xde:
     uVar12 = 0x34;
-LAB_1008_0f3e:
+//LAB_1008_0f3e:
     cursor_op_1008_2dcc(uVar9,(u16_t)struct_var15,uVar12,0x1008);
     return param_3;
   case 0xdf:
@@ -525,13 +525,13 @@ LAB_1008_0f3e:
   case 0x12c:
     uVar13 = 0xf020;
     uVar10 = 0x112;
-LAB_1008_0d18:
+//LAB_1008_0d18:
     LVar6 = SendMessage16(0x1008,0x0,0x0,CONCAT22(uVar10,uVar13));
-    return (bool)LVar6;
+    return LVar6;
   case 0x12e:
     uVar13 = 0xf060;
     uVar10 = 0x112;
-LAB_1008_0e3d:
+//LAB_1008_0e3d:
     BVar3 = PostMessage16(param_4,0x0,0x0,CONCAT22(uVar10,uVar13));
     return BVar3;
   }
@@ -676,11 +676,11 @@ big_switch_1008_15d4
     param_1 = uVar2;
   } while ((param_1 + 0xde) != param_5);
   uStack6 = uVar2 & 0xffff | ZEXT24(puVar6) << 0x10;
-LAB_1008_162a:
+//LAB_1008_162a:
   if (uStack6 != 0x0) {
     return;
   }
-  uVar3 = param_5 - 0x1U;
+  uVar3 = param_5 - 0x1;
   if (false) {
 switchD_1008_2a63_caseD_2:
     param_1 = uVar3;
@@ -692,16 +692,16 @@ switchD_1008_2a63_caseD_2:
     param_2 = 0x1008;
     uVar7 = (param_4 >> 0x10);
     uVar3 = param_1;
-    switch(param_5 - 0x1U) {
+    switch(param_5 - 0x1) {
     case 0x0:
       mem_op_1000_179c(0xec,puVar6,0x1000);
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         pass1_1020_08b6(param_3,paStack32,(uVar4 + 0xcc),param_4);
-LAB_1008_2a35:
+//LAB_1008_2a35:
         uStack6 = CONCAT22(puVar6,param_1);
         goto LAB_1008_2b3a;
       }
@@ -713,7 +713,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         pass1_1018_e91e(paStack32,(uVar4 + 0xcc),uVar4,param_3);
         goto LAB_1008_2a35;
@@ -724,7 +724,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         pass1_1018_e230(param_3,paStack32,(uVar4 + 0xcc),uVar4);
         goto LAB_1008_2a35;
@@ -735,7 +735,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         struct_1020_7554(param_3,paStack32,(uVar4 + 0xcc),uVar4);
         goto LAB_1008_2a35;
@@ -746,7 +746,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         struct_1018_5840(paStack32,(uVar4 + 0xcc),uVar4,param_3);
         goto LAB_1008_2a35;
@@ -757,7 +757,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         struct_1020_2524(paStack32,(uVar4 + 0xcc),uVar4,param_3);
         goto LAB_1008_2a35;
@@ -768,7 +768,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         unk_draw_op_1020_41c8(paStack32,(uVar4 + 0xcc),uVar4,0x1020);
         goto LAB_1008_2a35;
@@ -779,7 +779,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         pass1_1018_e5dc(param_3,paStack32,(uVar4 + 0xcc),uVar4);
         goto LAB_1008_2a35;
@@ -790,7 +790,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         struct_1018_66cc(paStack32,(uVar4 + 0xcc),uVar4,param_3);
         goto LAB_1008_2a35;
@@ -802,7 +802,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6d02(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -816,7 +816,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6d38(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -830,7 +830,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6d6e(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -844,7 +844,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6da4(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -858,7 +858,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6dda(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -872,7 +872,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6e10(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -886,7 +886,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6e46(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -900,7 +900,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6e7c(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -914,7 +914,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6eb2(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -928,7 +928,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6ee8(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -942,7 +942,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6f1e(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -956,7 +956,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6f54(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -970,7 +970,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6f8a(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -984,7 +984,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6fc0(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -998,7 +998,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_6ff6(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1012,7 +1012,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_702c(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1026,7 +1026,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7062(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1040,7 +1040,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7098(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1054,7 +1054,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_70ce(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1067,7 +1067,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7104(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1081,7 +1081,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_713a(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1095,7 +1095,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7170(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1109,7 +1109,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_745e(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1122,7 +1122,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_71a6(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1135,7 +1135,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_71dc(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1149,7 +1149,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7212(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1163,7 +1163,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_c958(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1177,7 +1177,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_c9a6(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1191,7 +1191,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_c9f4(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1205,7 +1205,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_ca48(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1219,7 +1219,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_ca96(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1233,7 +1233,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_caea(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1247,7 +1247,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cb38(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1261,7 +1261,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cb86(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1275,7 +1275,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cbda(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1289,7 +1289,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cc28(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1303,7 +1303,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cc76(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1317,7 +1317,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_ccc4(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1331,7 +1331,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cd12(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1345,7 +1345,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cd60(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1359,7 +1359,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_cf74(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1373,7 +1373,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_73c2(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1386,7 +1386,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7494(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1399,7 +1399,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_74ca(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1412,7 +1412,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7500(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1425,7 +1425,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_73f8(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1438,7 +1438,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7536(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1451,7 +1451,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_756c(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1464,7 +1464,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_75a2(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1478,7 +1478,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = pass1_1018_75d8(paStack32,(uVar4 + 0xcc),param_4,
                                  param_3);
@@ -1492,7 +1492,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_760e(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1505,7 +1505,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7644(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1518,7 +1518,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_767a(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1531,7 +1531,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_76b0(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1544,7 +1544,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_76e6(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1557,7 +1557,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_771c(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1570,7 +1570,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7752(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1583,7 +1583,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7788(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1596,7 +1596,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_77be(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1609,7 +1609,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_77f4(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1622,7 +1622,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_782a(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1635,7 +1635,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7860(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1648,7 +1648,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7896(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1661,7 +1661,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_78cc(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1674,7 +1674,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7902(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1687,7 +1687,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7938(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1700,7 +1700,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_796e(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1713,7 +1713,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_79a4(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1726,7 +1726,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_79da(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1739,7 +1739,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7a10(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1752,7 +1752,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7a46(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1765,7 +1765,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7a7c(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1778,7 +1778,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7ab2(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1791,7 +1791,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7ae8(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1804,7 +1804,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7b1e(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1817,7 +1817,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7b54(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1830,7 +1830,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7b8a(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1843,7 +1843,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7bc0(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1856,7 +1856,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7bf6(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1869,7 +1869,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7c2c(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1882,7 +1882,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7c62(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1895,7 +1895,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7c98(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1908,7 +1908,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7cce(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1921,7 +1921,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7d04(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1934,7 +1934,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7d3a(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1947,7 +1947,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7d70(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1960,7 +1960,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7248(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -1973,7 +1973,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_727e(paStack32,(uVar4 + 0xcc),param_4,
                                   param_3);
@@ -1987,7 +1987,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_72b4(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -2000,7 +2000,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_72ea(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -2013,7 +2013,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7320(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -2026,7 +2026,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_7356(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -2039,7 +2039,7 @@ LAB_1008_2a35:
       paStack32 = (astruct_20 *)CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
       if (puVar6 != 0x0) {
-        piVar1 = (i16 *)(uVar4 + 0xcc);
+        piVar1 = (uVar4 + 0xcc);
         *piVar1 = *piVar1 + 0x1;
         paVar8 = struct_1018_738c(paStack32,(uVar4 + 0xcc),param_4,param_3);
         puVar6 = (paVar8 >> 0x10);
@@ -2049,7 +2049,7 @@ LAB_1008_2a35:
     }
     uStack6 = 0x0;
   }
-LAB_1008_2b3a:
+//LAB_1008_2b3a:
   pass1_1008_6978(param_4,0x0,uStack6,param_1,puVar6);
   return;
 }
@@ -2103,9 +2103,9 @@ i16  win_ui_op_1008_2b54(param_1: u16,uchar *param_2,param_3: u16)
       puVar4 = 0x0;
     }
     else {
-      hwnd = &PTR_LOOP_1050_1040;
+      hwnd = &ctx.PTR_LOOP_1050_1040;
       iVar3 = string_1040_8520((astruct_57 *)CONCAT22(param_2,param_1),
-                               PTR_LOOP_1050_0396,0x21,0x2,0x57b,0x5f2,puVar4,
+                               ctx.PTR_LOOP_1050_0396,0x21,0x2,0x57b,0x5f2,puVar4,
                                param_3);
     }
     local_a6[0] = CONCAT22(puVar4,iVar3);
@@ -2147,7 +2147,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
   uVar7 = uVar7 & 0xffff0000 | HVar3;
   HVar3 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
   uVar6 = CONCAT22(in_DX,HVar3);
-  piVar1 = (i16 *)(param_1 + 0xf2);
+  piVar1 = (param_1 + 0xf2);
   *piVar1 = *piVar1 + 0x1;
   iVar5 = param_1;
   if (*(long *)(param_1 + 0xee) != 0x0) {
@@ -2170,7 +2170,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
     ppcVar2 = (code **)((param_1 + 0xe8) + 0xc);
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar6,(uVar6 >> 0x10),0x0);
   }
-  show_win_1038_b634(_PTR_LOOP_1050_5b7c,&PTR_LOOP_1050_1038);
+  show_win_1038_b634(_PTR_LOOP_1050_5b7c,&ctx.PTR_LOOP_1050_1038);
   show_win_1010_7a76((param_1 + 0xf4),0x1010);
   uVar6 = (param_1 + 0xee);
   ppcVar2 = (code **)((param_1 + 0xee) + 0xc);
@@ -2184,7 +2184,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
 fn switch_1008_72bc(param_1: u16,param_2: u16,param_3: u16) -> u16
 
 {
-  if (PTR_LOOP_1050_0312 < 0x2) {
+  if (ctx.PTR_LOOP_1050_0312 < 0x2) {
     switch(param_3) {
     case 0x1:
       param_3 = 0x1;
@@ -2285,7 +2285,7 @@ i16  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16)
   
   iStack4 = 0x0;
   iVar1 = param_3;
-  if ((PTR_LOOP_1050_0312 < 0x2) && (iVar1 = iStack4, true)) {
+  if ((ctx.PTR_LOOP_1050_0312 < 0x2) && (iVar1 = iStack4, true)) {
     iVar1 = param_3;
     switch(param_3) {
     case 0x18:

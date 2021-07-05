@@ -39,11 +39,11 @@ fn mix_draw_op_1040_21d6(param_1: u32,HWND16 param_2,param_3: u16)
   if (handle != 0x0) {
     HStack62 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,iVar6 + 0x92,rect,
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,iVar6 + 0x92,rect,
              0xffff);
   SetTextColor16((HDC16)s_tile2_bmp_1050_1538,
                  CONCAT11(*(iVar5 + 0x95),*(iVar5 + 0x96)));
-  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,iVar6 + 0x9a,rect,
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,iVar6 + 0x9a,rect,
              0xffff);
   if (handle != 0x0) {
     SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack62);
@@ -103,7 +103,7 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
     }
   }
   CVar8 = (COLORREF)_PTR_LOOP_1050_5cf8;
-LAB_1040_286e:
+//LAB_1040_286e:
   SetTextColor16(hdc,CVar8);
   SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
   return CONCAT22(0x1050,(iVar6 + 0x4));
@@ -412,7 +412,7 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
     }
   }
   color = (COLORREF)_PTR_LOOP_1050_5df0;
-LAB_1040_7f00:
+//LAB_1040_7f00:
   SetTextColor16(hdc,color);
   SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
   return CONCAT22(0x1050,HVar3);
@@ -491,7 +491,7 @@ fn mixed_draw_op_1040_8a06(param_1: u32,HWND16 param_2,param_3: u16)
   if (handle != 0x0) {
     HStack62 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,param_1 + 0x9e,
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,param_1 + 0x9e,
              rect,0xffff);
   if (handle != 0x0) {
     SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack62);
@@ -513,7 +513,7 @@ fn load_icon_1040_8b92(param_1: u32,HINSTANCE16 param_2)
   LPCSTR name;
   
   uVar3 = (param_1 >> 0x10);
-  bVar1 = *(byte *)(param_1 + 0x98) & 0xf0;
+  bVar1 = (param_1 + 0x98) & 0xf0;
   if (bVar1 == 0x30) {
     name = (LPCSTR)0x7f03;
   }
@@ -607,7 +607,7 @@ fn unk_draw_op_1040_9458(astruct_17 *param_1,param_2: u8,param_3: u16,HDC16 para
     (**ppcVar1)(param_4,puStack6,uVar3,puStack8);
     ppcVar1 = (code **)(UVar2 + 0x4);
     (**ppcVar1)(param_4,puStack6,iVar4->field_0x28,iVar4->field_0x26,&param_3);
-    SelectPalette16(param_4,0x0,(bool)puStack8);
+    SelectPalette16(param_4,0x0,puStack8);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
   }
   return;
@@ -626,7 +626,7 @@ fn draw_text_1040_94fc(astruct_37 *param_1,HDC16 param_2)
   iVar1 = (astruct_38 *)param_1;
   color = SetBkColor16(param_2,iVar1->field_0x3a);
   color_00 = SetTextColor16((HDC16)s_tile2_bmp_1050_1538,iVar1->field_0x3c);
-  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,&iVar1->field_0x2e,
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,&iVar1->field_0x2e,
              rect,0xffff);
   SetBkColor16((HDC16)s_tile2_bmp_1050_1538,color);
   SetTextColor16((HDC16)s_tile2_bmp_1050_1538,color_00);
@@ -785,7 +785,7 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
   MoveTo16((HDC16)s_tile2_bmp_1050_1538,0x0,0x0);
   if (iStack28 != 0x0) {
     if ((iVar4->field_0x4 & 0x4) == 0x0) {
-      color = PTR_LOOP_1050_5ec6;
+      color = ctx.PTR_LOOP_1050_5ec6;
       if (uStack32 != 0x0) {
         color = DAT_1050_5eca;
       }
@@ -793,7 +793,7 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
       color_01 = SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
       uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4->field_0x6)))
       ;
-      DrawText16(0x1000,(LPCSTR)(&PTR_LOOP_1050_0000 + 0x1),&local_a,param_4,
+      DrawText16(0x1000,(LPCSTR)(&ctx.PTR_LOOP_1050_0000 + 0x1),&local_a,param_4,
                  uVar3);
       SetTextColor16((HDC16)s_tile2_bmp_1050_1538,color_00);
       SetBkColor16((HDC16)s_tile2_bmp_1050_1538,color_01);
@@ -850,17 +850,17 @@ fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
          CONCAT12(*(iVar4 + 0x94),
                          CONCAT11(*(iVar4 + 0x95),
                                   *(iVar4 + 0x96)));
-    PTR_LOOP_1050_5eec =
+    ctx.PTR_LOOP_1050_5eec =
          
          CONCAT11(*(iVar4 + 0x3e5),*(iVar4 + 0x3e6));
-    PTR_LOOP_1050_5eee = *(byte *)(iVar4 + 0x3e4);
+    ctx.PTR_LOOP_1050_5eee = (iVar4 + 0x3e4);
   }
   if (0x5 < param_3) {
     if (param_3 != 0x6) {
       return;
     }
     bVar2 = false;
-    for (iStack14 = 0x0; piVar1 = (i16 *)(iVar6 + 0xea),
+    for (iStack14 = 0x0; piVar1 = (iVar6 + 0xea),
         *piVar1 != iStack14 && iStack14 <= *piVar1; iStack14 += 0x1) {
       if ((iVar6 + 0x9a + iStack14 * 0x2) == param_2) {
         bVar2 = true;
@@ -868,7 +868,7 @@ fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
       }
     }
     if (bVar2) {
-      PTR_LOOP_1050_5ee8 = PTR_LOOP_1050_5eec;
+      ctx.PTR_LOOP_1050_5ee8 = ctx.PTR_LOOP_1050_5eec;
     }
   }
   SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5ee8);
@@ -896,7 +896,7 @@ fn unk_draw_op_1040_b0f8(astruct_18 *param_1)
   uVar3 = (param_1 >> 0x10);
   iVar3 = (astruct_18 *)param_1;
   param_1->field_0x0 = 0xb772;
-  iVar3->field_0x2 = &PTR_LOOP_1050_1040;
+  iVar3->field_0x2 = &ctx.PTR_LOOP_1050_1040;
   puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,unaff_SS,in_DX,unaff_DI);
   uVar4 = 0x1010;
   pass1_1010_7b8c(puVar5,iVar3->field_0x6,unaff_SS);
@@ -975,7 +975,7 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
       uVar2 = (((uVar3 + 0x16) + -0x1) * 0x4 + uVar6);
       iVar7 = uVar2;
       uVar2 &= 0xffff0000;
-      piVar8 = (i16 *)(uVar2 | iVar7 + 0x1e);
+      piVar8 = (uVar2 | iVar7 + 0x1e);
       uVar9 = (uVar2 >> 0x10);
       local_a.y = (iVar7 + 0x20) + -0x8;
       local_a.x = *piVar8;
@@ -1007,8 +1007,8 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
   }
   param_3 = s_tile2_bmp_1050_1538;
   rect = &local_a;
-LAB_1040_c19d:
-  InvalidateRect16(param_3,rect,(bool)param_4);
+//LAB_1040_c19d:
+  InvalidateRect16(param_3,rect,param_4);
   return;
 }
 

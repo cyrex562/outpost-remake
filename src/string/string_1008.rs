@@ -26,8 +26,8 @@ fn str_1008_6d8a(param_1: *mut u32,char *param_2,param_3: u16,param_4: u16,param
   uVar2 = (param_1 >> 0x10);
   *param_1 = 0x0;
   (param_1 + 0x4) = 0xffff;
-  PTR_LOOP_1050_0312 = &DAT_1050_0004;
-  sys_1000_3f9c((uchar *)0x65a0,&USHORT_1050_1050,
+  ctx.PTR_LOOP_1050_0312 = &DAT_1050_0004;
+  sys_1000_3f9c((uchar *)0x65a0,ctx.data_seg,
                 _PTR_s_SC_03d_1050_0314_1050_031c,
                 (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10),0x4,
                 &stack0xfffe,uVar2,0x1000,param_4,param_5);
@@ -109,7 +109,7 @@ fn load_str_and_sprintf_1008_b69c(astruct_25 *param_1,param_2: *mut u16,uchar *p
       }
       uVar3 = (uVar7 >> 0x10);
       uVar4 = uVar3;
-      wsprintf16((LPSTR)&PTR_LOOP_1050_1000,local_102,param_2);
+      wsprintf16((LPSTR)&ctx.PTR_LOOP_1050_1000,local_102,param_2);
       uVar2 = str_op_1008_60e8(CONCAT22(param_2,local_102),uVar4);
       (uVar7 + 0x4) = uVar2;
       (uVar7 + 0x6) = uVar4;
@@ -152,7 +152,7 @@ fn load_str_and_sprintf_1008_b78a(Uparam_1: i32,param_2: *mut u16,uchar *param_3
   iStack6 = uVar6;
   uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
-  piVar1 = (i16 *)(iVar4 + 0x22);
+  piVar1 = (iVar4 + 0x22);
   *piVar1 = *piVar1 + 0x1;
   wsprintf16((LPSTR)0x1010,local_106,param_2);
   iStack6 = uVar6;
@@ -221,12 +221,12 @@ fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   puVar18 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0,0x2);
   puVar11 = (puVar18 >> 0x10);
   uVar6 = puVar18;
-  uVar17 = SUB42(&PTR_LOOP_1050_1038,0x0);
+  uVar17 = SUB42(&ctx.PTR_LOOP_1050_1038,0x0);
   pass1_1038_4e78(uVar6,puVar11,param_2,puVar18);
   puStack10 = CONCAT22(puVar11,uVar6);
   ppcVar3 = (code **)(*puStack10 + 0x10);
   uVar9 = uVar6;
-  (**ppcVar3)(&PTR_LOOP_1050_1038,uVar6,puVar11);
+  (**ppcVar3)(&ctx.PTR_LOOP_1050_1038,uVar6,puVar11);
   uStack14 = CONCAT22(extraout_DX_01,uVar9);
   bVar4 = false;
   puVar13 = extraout_DX_01;
@@ -255,8 +255,8 @@ fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
       else {
         uVar17 = 0x1018;
         pass1_1018_4808((u16 *)CONCAT22(puVar14,uVar8),0x1,
-                        CONCAT13((char)(puVar13 >> 0x8),
-                                 CONCAT12((char)puVar13,uVar7)),(uVar15 + 0x4));
+                        CONCAT13((puVar13 >> 0x8),
+                                 CONCAT12(puVar13,uVar7)),(uVar15 + 0x4));
       }
       uVar2 = (iVar16 + 0x12);
       ppcVar3 = (code **)((iVar16 + 0x12) + 0x4);
@@ -410,8 +410,8 @@ fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
     else {
       uVar22 = 0x1018;
       struct_1018_47c8((u16 *)CONCAT22(puVar18,uVar10),0x0,
-                       CONCAT13((char)(puVar14 >> 0x8),
-                                CONCAT12((char)puVar14,uVar12)),0x0,0x0);
+                       CONCAT13((puVar14 >> 0x8),
+                                CONCAT12(puVar14,uVar12)),0x0,0x0);
       uVar13 = (u8)uVar19;
     }
     uVar3 = (iVar21 + 0xe);
@@ -515,18 +515,18 @@ pass1_1008_eeac(param_1: u16,param_2: u16,param_3: u32,uchar *param_4,param_5: i
     if (uVar7 < 0x7e) {
       cVar2 = uVar7;
       uVar3 = uVar7 & 0xff00;
-      if ((byte)(cVar2 + 0x8dU) == 0x0) {
+      if ((cVar2 + 0x8d) == 0x0) {
         uVar7 = 0x9;
-        uVar3 = uVar3 | (byte)(cVar2 + 0x8dU);
+        uVar3 = uVar3 | (cVar2 + 0x8d);
       }
       else {
-        if ((byte)(cVar2 + 0x89U) == 0x0) {
+        if ((cVar2 + 0x89) == 0x0) {
           uVar7 = 0x2e;
-          uVar3 = uVar3 | (byte)(cVar2 + 0x89U);
+          uVar3 = uVar3 | (cVar2 + 0x89);
         }
         else {
-          uVar3 |= (byte)(cVar2 + 0x87U);
-          if ((byte)(cVar2 + 0x87U) == 0x0) {
+          uVar3 |= (cVar2 + 0x87);
+          if ((cVar2 + 0x87) == 0x0) {
             uVar7 = 0x5b;
           }
         }

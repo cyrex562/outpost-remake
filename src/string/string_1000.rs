@@ -6,20 +6,20 @@ pub fn  poss_str_op_1000_28dc(param_1: i16) -> String
   let iVar2: i16;
   *mut let piVar3: u8;
   
-  piVar3 = &PTR_LOOP_1050_63fe;
+  piVar3 = &ctx.PTR_LOOP_1050_63fe;
   do {
-    piVar1 = (i16 *)piVar3;
+    piVar1 = piVar3;
     piVar3 = (piVar3 + 0x2);
     iVar2 = *piVar1;
     piVar2 = piVar3;
     if ((iVar2 == param_1) || (piVar2 = (iVar2 + 0x1), piVar2 == 0x0)) {
-      return (i16 *)piVar2;
+      return piVar2;
     }
     iVar2 = -0x1;
     do {
       if (iVar2 == 0x0) break;
       iVar2 += -0x1;
-      piVar1 = (i16 *)piVar3;
+      piVar1 = piVar3;
       piVar3 = (piVar3 + 0x1);
     } while (*piVar1 != '\0');
   } while( true );

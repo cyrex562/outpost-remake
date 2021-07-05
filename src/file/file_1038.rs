@@ -12,7 +12,7 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
   let local_4: u16;
   let puVar5: u32;
   
-  if (PTR_LOOP_1050_0312 < 0x2) {
+  if (ctx.PTR_LOOP_1050_0312 < 0x2) {
     return;
   }
   iVar2 = (astruct_307 *)param_1;
@@ -55,7 +55,7 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
       return;
     }
   }
-  PTR_LOOP_1050_0310 = 0x6d2;
+  ctx.PTR_LOOP_1050_0310 = 0x6d2;
   return;
 }
 
@@ -81,7 +81,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
   let uStack14: u32;
   let local_4: u16;
   
-  if (PTR_LOOP_1050_0312 < 0x2) {
+  if (ctx.PTR_LOOP_1050_0312 < 0x2) {
     return 0x1;
   }
   uVar6 = param_2;

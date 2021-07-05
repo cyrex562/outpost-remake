@@ -45,37 +45,37 @@ fn struct_1030_1550(param_1: u32,param_2: u16)
   iVar5 = (astruct_157 *)param_1;
   if (*(long *)&iVar5->field_0x12 == 0x0) {
     uVar3 = iVar5->field_0xe;
-    PTR_LOOP_1050_5f2e = iVar5->field_0x10;
+    ctx.PTR_LOOP_1050_5f2e = iVar5->field_0x10;
   }
   else {
     uVar2 = &iVar5->field_0x12;
     puVar1 = &iVar5->field_0x16;
     uVar3 = uVar2 + *puVar1;
-    PTR_LOOP_1050_5f2e =
+    ctx.PTR_LOOP_1050_5f2e =
          
          (iVar5->field_0x14 + iVar5->field_0x18 + CARRY2(uVar2,*puVar1));
   }
-  uStack6 = CONCAT22(PTR_LOOP_1050_5f2e,uVar3);
+  uStack6 = CONCAT22(ctx.PTR_LOOP_1050_5f2e,uVar3);
   if (iVar5->field_0x6 == 0x0) {
     if (_PTR_LOOP_1050_5f2c == 0x0) {
-      PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e,0x1000);
+      ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx.PTR_LOOP_1050_5f2e,0x1000);
     }
     else {
     }
     uVar3 = fn_ptr_op_1000_1708(uVar3 << 0x2,0x0,0x1,PTR_LOOP_1050_5f2c,
-                                PTR_LOOP_1050_5f2e,0x1000);
+                                ctx.PTR_LOOP_1050_5f2e,0x1000);
   }
   else {
     lVar5 = iVar5->field_0x6;
     lVar5 = pass1_1000_0ed4(0x1000,param_2,0x1,uVar3 * 0x4,
-                            (PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar3,uVar3)) *
+                            (ctx.PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar3,uVar3)) *
                             0x2 + CARRY2(uVar3 * 0x2,uVar3 * 0x2),lVar5,
                             (lVar5 >> 0x10));
-    PTR_LOOP_1050_5f2e = (lVar5 >> 0x10);
+    ctx.PTR_LOOP_1050_5f2e = (lVar5 >> 0x10);
     uVar3 = lVar5;
   }
-  lStack10 = CONCAT22(PTR_LOOP_1050_5f2e,uVar3);
-  if ((PTR_LOOP_1050_5f2e | uVar3) != 0x0) {
+  lStack10 = CONCAT22(ctx.PTR_LOOP_1050_5f2e,uVar3);
+  if ((ctx.PTR_LOOP_1050_5f2e | uVar3) != 0x0) {
     &iVar5->field_0x12 = uStack6;
     iVar5->field_0x6 = lStack10;
   }
@@ -268,7 +268,7 @@ fn struct_1030_4574(param_1: u32) -> u32
   iVar1 = (astruct_159 *)param_1;
   iVar1->field_0xc = DAT_1050_518c;
   iVar1->field_0xe = 0x518e;
-  iVar1->field_0x10 = &USHORT_1050_1050;
+  iVar1->field_0x10 = ctx.data_seg;
   return param_1 & 0xffff0000 | ZEXT24(&iVar1->field_0xc);
 }
 
@@ -445,7 +445,7 @@ fn struct_1030_e4fa(astruct_100 *param_1,param_2: u32,param_3: u16,param_4: u8)
   param_1->field_0x0 = 0xe62e;
   iVar1->field_0x2 = 0x1030;
   sys_1000_3f9c(&iVar1->field_0x8,puVar1,s_SCKillBldg__0x_08lx_1050_597c,
-                &USHORT_1050_1050,iVar1->field_0x108,&stack0xfffe,puVar1,
+                ctx.data_seg,iVar1->field_0x108,&stack0xfffe,puVar1,
                 0x1000,param_3,param_4);
   return;
 }

@@ -36,13 +36,13 @@ fn exit_1000_25cc(param_1: i16,param_2: u16,param_3: u16) -> *mut i16
   }
   FatalAppExit16(param_3,str);
   FatalExit();
-  piVar4 = (i16 *)&PTR_LOOP_1050_63fe;
+  piVar4 = &ctx.PTR_LOOP_1050_63fe;
   do {
     piVar1 = piVar4;
     piVar4 = piVar4 + 0x1;
     iVar6 = *piVar1;
     piVar3 = piVar4;
-    if ((iVar6 == param_1) || (piVar3 = (i16 *)(iVar6 + 0x1), piVar3 == (i16 *)0x0)) {
+    if ((iVar6 == param_1) || (piVar3 = (iVar6 + 0x1), piVar3 == 0x0)) {
       return piVar3;
     }
     iVar6 = -0x1;
@@ -50,7 +50,7 @@ fn exit_1000_25cc(param_1: i16,param_2: u16,param_3: u16) -> *mut i16
       if (iVar6 == 0x0) break;
       iVar6 += -0x1;
       piVar1 = piVar4;
-      piVar4 = (i16 *)(piVar4 + 0x1);
+      piVar4 = (piVar4 + 0x1);
     } while (*piVar1 != '\0');
   } while( true );
 }
@@ -77,13 +77,13 @@ exit_1000_25f2(param_1: u16,param_2: u16,param_3: i16,param_4: i16,param_5: u16,
   let piVar8: *mut i16;
   char *pcVar9;
   
-  puVar4 = (param_4 + 0x1U & 0xfffe);
+  puVar4 = (param_4 + 0x1 & 0xfffe);
   if ((puVar4 < &param_3) &&
-     (piVar5 = (i16 *)-(puVar4 + -&param_3),
-     ppiVar1 = (i16 **)&PTR_LOOP_1050_000a, *ppiVar1 < piVar5 || *ppiVar1 == piVar5)) {
-    ppiVar1 = (i16 **)&PTR_LOOP_1050_000c;
+     (piVar5 = -(puVar4 + -&param_3),
+     ppiVar1 = (i16 **)&ctx.PTR_LOOP_1050_000a, *ppiVar1 < piVar5 || *ppiVar1 == piVar5)) {
+    ppiVar1 = (i16 **)&ctx.PTR_LOOP_1050_000c;
     if (piVar5 <= *ppiVar1 && *ppiVar1 != piVar5) {
-      *(i16 **)&PTR_LOOP_1050_000c = piVar5;
+      &ctx.PTR_LOOP_1050_000c = piVar5;
     }
     piVar5[-0x1] = param_2;
     piVar5[-0x2] = param_1;
@@ -94,7 +94,7 @@ exit_1000_25f2(param_1: u16,param_2: u16,param_3: i16,param_4: i16,param_5: u16,
                     // WARNING: Could not recover jumptable at 0x10002622. Too many
                     // branches
                     // WARNING: Treating indirect jump as call
-    piVar5 = (i16 *)(*(code *)0x5fce)();
+    piVar5 = (*0x5fce)();
     return piVar5;
   }
   pass1_1000_25a8(param_5,param_6);
@@ -118,13 +118,13 @@ exit_1000_25f2(param_1: u16,param_2: u16,param_3: i16,param_4: i16,param_5: u16,
   }
   FatalAppExit16(param_6,str);
   FatalExit();
-  piVar5 = (i16 *)&PTR_LOOP_1050_63fe;
+  piVar5 = &ctx.PTR_LOOP_1050_63fe;
   do {
     piVar2 = piVar5;
     piVar5 = piVar5 + 0x1;
     iVar7 = *piVar2;
     piVar8 = piVar5;
-    if ((iVar7 == param_3) || (piVar8 = (i16 *)(iVar7 + 0x1), piVar8 == (i16 *)0x0)) {
+    if ((iVar7 == param_3) || (piVar8 = (iVar7 + 0x1), piVar8 == 0x0)) {
       return piVar8;
     }
     iVar7 = -0x1;
@@ -132,7 +132,7 @@ exit_1000_25f2(param_1: u16,param_2: u16,param_3: i16,param_4: i16,param_5: u16,
       if (iVar7 == 0x0) break;
       iVar7 += -0x1;
       piVar2 = piVar5;
-      piVar5 = (i16 *)(piVar5 + 0x1);
+      piVar5 = (piVar5 + 0x1);
     } while (*piVar2 != '\0');
   } while( true );
 }
