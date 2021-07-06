@@ -23,9 +23,9 @@ pub unsafe fn init_1000_23be(ctx: &mut AppContext, param_1: u16, param_2: u16, p
 
 pub fn init_globals_1020_96d4()
 {
-  let puVar1: *mut u16;
-  let iVar2: i16;
-  let puVar3: *mut u16;
+  let pu_var1: *mut u16;
+  let i_var2: i16;
+  let pu_var3: *mut u16;
   
   _PTR_LOOP_1050_4514 = 0x0;
   _PTR_LOOP_1050_451a = 0x0;
@@ -308,12 +308,12 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_47ac = 0x0;
   ctx.PTR_LOOP_1050_47b2 = 0x0;
   ctx.PTR_LOOP_1050_47b8 = 0x0;
-  puVar3 = 0x47ba;
-  for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
-    puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
-  }
+  pu_var3 = 0x47ba;
+  // for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  //   pu_var1 = puVar3;
+  //   puVar3 = puVar3 + 0x1;
+  //   *pu_var1 = 0x0;
+  // }
   _PTR_LOOP_1050_4850 = 0x0;
   _PTR_LOOP_1050_4856 = 0x0;
   ctx.PTR_LOOP_1050_484e = ctx.PTR_LOOP_1050_4468;
@@ -596,11 +596,11 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_4ae8 = 0x0;
   ctx.PTR_LOOP_1050_4aee = 0x0;
   ctx.PTR_LOOP_1050_4af4 = 0x0;
-  puVar3 = 0x4af6;
+  pu_var3 = 0x4af6;
   for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
-    puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
+    pu_var1 = pu_var3;
+    pu_var3 = pu_var3 + 0x1;
+    *pu_var1 = 0x0;
   }
   ctx.PTR_LOOP_1050_4b9c = ctx.PTR_LOOP_1050_4434;
   _PTR_LOOP_1050_4b9e = 0x0;
@@ -867,11 +867,11 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_4e24 = 0x0;
   ctx.PTR_LOOP_1050_4e2a = 0x0;
   ctx.PTR_LOOP_1050_4e30 = 0x0;
-  puVar3 = 0x4e32;
+  pu_var3 = 0x4e32;
   for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
-    puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
+    pu_var1 = pu_var3;
+    pu_var3 = pu_var3 + 0x1;
+    *pu_var1 = 0x0;
   }
   return;
 }
