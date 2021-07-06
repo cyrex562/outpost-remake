@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{CONTEXT, HGLOBAL16, HTASK16};
+use crate::win_struct::{CONTEXT, HDC16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HTASK16, HWND16, LPARAM, LRESULT, WPARAM16};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)
@@ -76,11 +76,20 @@ pub fn FatalAppExit16(action: u16, reason: &str) {
 // BOOL16 TextOut16(HDC16 hdc, INT16 x, INT16 y, char * str, INT16 count)
 // BOOL16 Polygon16(HDC16 hdc, POINT16 * pt, INT16 count)
 // HGDIOBJ16 SelectObject16(HDC16 hdc, HGDIOBJ16 handle)
+pub fn SelectObject16(hdc: HDC16, handle: HGDIOBJ16) -> HGDIOBJ16 {
+    unimplemented!()
+}
 // HDC16 CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output, DEVMODEA * init_data)
 // HPEN16 CreatePen16(INT16 style, INT16 width, COLORREF color)
 // HBRUSH16 CreateSolidBrush16(COLORREF color)
 // BOOL16 DeleteDC16(HDC16 hdc)
+pub fn DeleteDC16(hdc: HDC16) -> bool {
+    unimplemented!()
+}
 // BOOL16 DeleteObject16(HGDIOBJ16 obj)
+pub fn DeleteObject16(obj: HGDIOBJ16) -> bool {
+    unimplemented!()
+}
 // DWORD GetCurrentPosition16(HDC16 hdc)
 // INT16 GetDeviceCaps16(HDC16 hdc, INT16 cap)
 // HGDIOBJ16 GetStockObject16(INT16 obj)
@@ -119,9 +128,16 @@ pub fn InitApp16(h_inst: HINSTANCE16) -> i16 {
 // BOOL16 EndPaint16(HWND16 hwnd, PAINTSTRUCT16 * lps)
 // HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, INT16 x, INT16 y, INT16 width, INT16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
 // BOOL16 ShowWindow16(HWND16 hwnd, INT16 cmd)
+pub fn ShowWindow16(hwnd: HWND16, cmd: i16) -> bool {
+    unimplemented!()
+}
 // BOOL16 BringWindowToTop16(HWND16 hwnd)
 // BOOL16 IsWindow16(HWND16 hwnd)
+pub fn IsWindow16(hwnd: HWND16) -> bool {
+    unimplemented!()
+}
 // BOOL16 DestroyWindow16(HWND16 hwnd)
+pub fn DestroyWindow16(hwnd: HWND16) -> bool {}
 // BOOL16 EnumChildWindows1(HWND16 parent, LPVOID func, LPARAM lparam)
 // BOOL16 MoveWindow16(HWND16 hwnd, INT16 x, INT16 y, INT16 cx, INT16 cy, BOOL16 repaint)
 // ATOM RegisterClass16(WNDCLASS16 * wc)
@@ -138,19 +154,31 @@ pub fn InitApp16(h_inst: HINSTANCE16) -> i16 {
 // HWND16 CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template, HWND16 owner, LPVOID dlg_proc)
 // BOOL16 IsDialogMessage16(HWND16 hwnd_dlg, MSG16 * msg16)
 // HWND16 GetDlgItem16(HWND16 hwnd_dlg, INT16 id)
+pub fn GetDlgItem16(hwnd_dlg: HWND16, id: i16) -> HWND16 {
+    unimplemented!()
+}
 // void SetDlgItemText16(HWND16 hwnd, INT16 id, SEGPTR lp_string)
 // void SetDlgItemInt16(HWND16 hwnd, INT16 id, UINT16 value, BOOL16 f_signed)
 // UINT16 GetDlgItemInt16(HWND16 hwnd, INT16 id, BOOL16 * translated, BOOL16 f_signed)
 // BOOL16 CheckRadioButton16(HWND16 hwnd_dlg, UINT16 first_id, UINT16 last_id, UINT16 check_id)
 // BOOL16 CheckDlgButton16(HWND16 hwnd, INT16 id, UINT16 check)
 // UINT16 IsDlgButtonChecked(HWND16 hwnd, UINT16 id)
+pub fn IsDlgButtonChecked(hwnd: HWND16, id: u16) -> u16 {
+    unimplemented!()
+}
 // LRESULT SendDlgItemMessage16(HWND16 hwnd, INT16 id, UINT16 msg, WPARAM16 w_param, LPARAM l_param)
 // void MapDialogRect16(HWND16 hwnd, RECT16 * rect)
 // void MessageBeep16(UINT16 i)
 // LRESULT DefWindowProc16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
 // BOOL16 GetMessage16(MSG16 * msg, HWND16 hwnd, UINT16 first, UINT16 last)
 // BOOL16 PostMessage16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
+pub fn PostMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> bool {
+    unimplemented!()
+}
 // LRESULT SendMessage16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
+pub fn SendMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> LRESULT {
+    unimplemented!()
+}
 // BOOL16 TranslateMessage16(MSG16 * msg)
 // long DispatchMessage16(MSG16 * msg)
 // LRESULT CallWindowProc16(LPVOID func, HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
@@ -158,6 +186,9 @@ pub fn InitApp16(h_inst: HINSTANCE16) -> i16 {
 // void InvalidateRect16(HWND16 hwnd, RECT16 * rect, BOOL16 erase)
 // void ValidateRect16(HWND16 hwnd, RECT16 * rect)
 // WORD GetWindowWord16(HWND16 hwnd, INT16 offset)
+pub fn GetWindowWord16(hwnd: HWND16, offset: i16) -> i16 {
+    unimplemented!()
+}
 // WORD SetWindowWord16(HWND16 hwnd, INT16 offset, WORD newval)
 // long GetWindowLong16(HWND16 hwnd, INT16 offset)
 pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
@@ -166,6 +197,9 @@ pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
 // long SetWindowLong16(HWND16 hwnd, INT16 offset, long newval)
 // HMENU16 LoadMenu16(HINSTANCE16 instance, LPCSTR name)
 // BOOL16 DestroyMenu16(HMENU16 menu)
+pub fn DestroyMenu16(menu: HMENU16) -> bool {
+    unimplemented!()
+}
 // BOOL16 CheckMenuItem16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
 // BOOL16 EnableMenuItem16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
 // HMENU16 GetSubMenu16(HMENU16 h_menu, INT16 n_pos)
@@ -185,6 +219,9 @@ pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
 // UINT16 GetMenuState16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
 // INT16 GetDlgCtrlID16(HWND16 hwnd)
 // HPALETTE16 SelectPalette16(HDC16 hdc, HPALETTE16 hpal, BOOL16 b_force_background)
+pub fn SelectPalette16(hdc: HDC16, hpal: HPALETTE16, b_force_background: bool) -> HPALETTE16 {
+    unimplemented!()
+}
 // UINT16 RealizePalette16(HDC16 hdc)
 // BOOL16 GetWindowPlacement16(HWND16 hwnd, WINDOWPLACEMENT16 * wp16)
 // BOOL16 SetWindowPlacement16(HWND16 hwnd, WINDOWPLACEMENT16 * wp16)
@@ -197,6 +234,9 @@ pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
 // INT16 wvsprintf16(LPSTR buffer, LPCSTR spec, WORD * args)
 // HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, INT16 x, INT16 y, INT16 width, INT16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
 // BOOL16 DestroyIcon16(HICON16 h_icon)
+pub fn DestroyIcon16(h_icon: HICON16) -> bool {
+    unimplemented!()
+}
 // BOOL16 DestroyCursor16(HCURSOR16 h_cursor)
 // DWORD mciSendCommand16(UINT16 w_dev_id, UINT16 w_msg, DWORD dw_param1, DWORD p2)
 // BOOL16 mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, UINT16 u_length)

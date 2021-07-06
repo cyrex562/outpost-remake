@@ -1942,7 +1942,7 @@ pub fn pass1_1000_2b5c(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param
   let iStack2: i16;
   
   iStack2 = param_6 + 0x1;
-  uVar1 = pass1_1000_2e74((u16 *)param_1,param_7);
+  uVar1 = pass1_1000_2e74(param_1,param_7);
   uVar2 = sys_1000_30b4(param_1,ctx.data_seg,
                         CONCAT22(param_4,param_3),&iStack2,param_1,param_5,
                         param_7,param_8);
@@ -3749,7 +3749,7 @@ pub fn pass1_1000_422a(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> i
       puVar2 = ctx.PTR_LOOP_1050_6194 + 0x28;
       puVar4 = ctx.PTR_LOOP_1050_6192;
       puVar3 = 
-               pass1_1000_16aa((u16 *)PTR_LOOP_1050_6190,PTR_LOOP_1050_6192,
+               pass1_1000_16aa(PTR_LOOP_1050_6190,PTR_LOOP_1050_6192,
                                puVar2,PTR_LOOP_1050_6192,param_3,param_4);
       if ((puVar4 | puVar3) == 0x0) {
         param_1 = 0x0;
@@ -4449,7 +4449,7 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
             param_1 += *puVar1;
             param_2 += -bVar13 & 0x6c;
             if ((param_1 != uVar18) || (param_2 != uVar19)) {
-              ppcVar2 = (code **)&puVar11->field_0x16;
+              ppcVar2 = &puVar11->field_0x16;
               iVar8 = (**ppcVar2)(param_9,param_1,param_2,uVar7,uVar11);
               if (iVar8 < 0x1) {
                 if (iVar8 != 0x0) {
@@ -4466,7 +4466,7 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
               bVar13 = uVar10 < *puVar1;
               uVar10 -= *puVar1;
               uVar9 -= -bVar13 & 0x6c;
-              ppcVar2 = (code **)&puVar11->field_0x16;
+              ppcVar2 = &puVar11->field_0x16;
               iVar8 = (**ppcVar2)(param_9,uVar7,uVar11,uVar10,uVar9);
               if (0x0 < iVar8) break;
               uVar5 = uVar10;

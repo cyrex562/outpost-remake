@@ -283,7 +283,7 @@ fn struct_1030_565a(param_1: *mut u16,param_2: u32,param_3: u16,uchar *param_4) 
   uVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_353 *)param_1;
   iVar1->field_0x10 = 0x0;
-  pass1_1008_3e38((u16 *)
+  pass1_1008_3e38(
                   (param_1 & 0xffff0000 | &iVar1->field_0x14));
   iVar1->field_0x1a = 0x0;
   iVar1->field_0x1c = 0x0;
@@ -330,7 +330,7 @@ fn struct_1030_8544(param_1: *mut u16,param_2: *mut u16)
   uVar2 = (param_1 >> 0x10);
   iVar2 = (astruct_355 *)param_1;
   iVar2->field_0x4 = iVar1->field_0x4;
-  pass1_1008_3f62((u16 *)(param_1 & 0xffff0000 | &iVar2->field_0x8)
+  pass1_1008_3f62((param_1 & 0xffff0000 | &iVar2->field_0x8)
                   ,
                    (param_2 & 0xffff0000 | &iVar1->field_0x8));
   iVar2->field_0xe = iVar1->field_0xe;

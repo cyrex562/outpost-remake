@@ -337,7 +337,7 @@ fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,uchar *param_4,param_5
 //LAB_1010_2683:
     *(astruct_636 **)(param_2 * 0x4 + iVar5) = paVar4;
     *(uchar **)(param_2 * 0x4 + iVar5 + 0x2) = puVar3;
-    ppcVar1 = (code **)(paVar4 + 0x10);
+    ppcVar1 = (paVar4 + 0x10);
     (**ppcVar1)(uVar7,paVar4,puVar3,uVar2);
     break;
   case 0x42:

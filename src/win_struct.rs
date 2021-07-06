@@ -27,6 +27,20 @@ pub type HPEN16 = HANDLE16;
 // typedef HANDLE16 HINSTANCE16;
 pub type HINSTANCE16 = HANDLE16;
 
+pub type HICON16 = HANDLE16;
+
+// typedef long LONG_PTR;
+pub type LONG_PTR = libc::c_long;
+// typedef LONG_PTR LPARAM;
+pub type LPARAM = LONG_PTR;
+
+pub type HGDIOBJ16 = HANDLE16;
+
+pub type HPALETTE16 = HANDLE16;
+
+// typedef LONG_PTR LRESULT;
+pub type LRESULT = LONG_PTR;
+
 pub struct FLOATING_SAVE_AREA {
     // DWORD ControlWord;
     control_word: u32,
@@ -201,13 +215,11 @@ struct LOGPALETTE {
     WORD pal_num_entries;
 };
 
-typedef struct MSG16 MSG16, *PMSG16;
+// typedef struct MSG16 MSG16, *PMSG16;
 
-typedef long LONG_PTR;
 
-typedef LONG_PTR LPARAM;
 
-typedef ulong DWORD;
+// typedef ulong DWORD;
 
 struct MSG16 {
     HWND16 hwnd;
@@ -449,6 +461,6 @@ typedef uchar UCHAR;
 
 typedef WORD ATOM;
 
-typedef LONG_PTR LRESULT;
+
 
 typedef void * LPCVOID;

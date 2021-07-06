@@ -140,7 +140,7 @@ fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
       }
       else {
         uVar5 = uVar6;
-        struct_1038_6520((u16 *)CONCAT22(param_4,uVar6));
+        struct_1038_6520(CONCAT22(param_4,uVar6));
         uVar4 = uVar6;
         uVar6 = uVar5;
       }
@@ -152,7 +152,7 @@ fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
       }
       uVar8 = (param_1 >> 0x10);
       uVar1 = (param_1 + 0x20);
-      ppcVar2 = (code **)((param_1 + 0x20) + 0x8);
+      ppcVar2 = ((param_1 + 0x20) + 0x8);
       (**ppcVar2)(&ctx.PTR_LOOP_1050_1038,uVar1,(uVar1 >> 0x10),uVar4,
                   puVar7,uVar10,uVar6);
       param_4 = extraout_DX;
@@ -607,7 +607,7 @@ fn write_to_file_1028_dce2(param_1: *mut u32,param_2: u32,param_3: u16) -> u32
                         (param_2,uVar7,local_1e,param_3,0x2,0x1008
                         );
       if (BVar2 != 0x0) {
-        ppcVar1 = (code **)(*_PTR_LOOP_1050_5166 + 0xc);
+        ppcVar1 = (*_PTR_LOOP_1050_5166 + 0xc);
         (**ppcVar1)(0x1008,_PTR_LOOP_1050_5166,
                     (_PTR_LOOP_1050_5166 >> 0x10),param_2);
         in_DX = extraout_DX;
@@ -710,7 +710,7 @@ fn read_file_1028_def2(param_1: u32,param_2: u32,param_3: u16,param_4: u16)
       BVar2 = read_file_1008_7dee(uVar4,uVar5,param_1 + 0x8,0x0,uVar3,0x2,0x1008);
       if (BVar2 != 0x0) {
         uVar3 = (*_PTR_LOOP_1050_5166 >> 0x10);
-        ppcVar1 = (code **)(*_PTR_LOOP_1050_5166 + 0x10);
+        ppcVar1 = (*_PTR_LOOP_1050_5166 + 0x10);
         (**ppcVar1)(0x1008,_PTR_LOOP_1050_5166,
                     (_PTR_LOOP_1050_5166 >> 0x10),param_2);
         if (BVar2 != 0x0) {
@@ -835,7 +835,7 @@ write_file_fn_1028_e56c
       if ((uStack6 | puVar2) == 0x0) {
         return 0x0;
       }
-      ppcVar1 = (code **)(*puStack28 + 0xc);
+      ppcVar1 = (*puStack28 + 0xc);
       (**ppcVar1)(0x1008,puVar2,uStack6);
       local_2a[0] = local_2a[0] & 0xffff0000 | ZEXT24(puVar2);
       uStack6 = extraout_DX;

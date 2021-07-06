@@ -26,7 +26,7 @@ fn msg_box_op_1000_214c
   text = (LPCSTR)(0x2 - (param_2 == 0x0) | 0x2110);
   MessageBeep16(param_5);
   do {
-    IVar1 = MessageBox16((HWND16)s_tile2_bmp_1050_1538,text,(LPCSTR)0x1de8,0x1000);
+    IVar1 = MessageBox16(s_tile2_bmp_1050_1538,text,(LPCSTR)0x1de8,0x1000);
     iVar2 = IVar1 + -0x1;
     if (iVar2 == 0x0) {
       return 0x0;

@@ -29,7 +29,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
   mem_op_1000_179c(0x12,param_2,0x1000);
   puVar6 = (param_2 | puVar4);
   if (puVar6 != 0x0) {
-    puVar11 = pass1_1008_91ba((u16 *)CONCAT22(param_2,puVar4),0x1000);
+    puVar11 = pass1_1008_91ba(CONCAT22(param_2,puVar4),0x1000);
     puVar6 = (puVar11 >> 0x10);
     puVar4 = puVar11;
   }
@@ -38,11 +38,11 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
     (iVar8 + 0xe0) = 0x0;
   }
   else {
-    pass1_1008_392e((u16 *)CONCAT22(puVar6,puVar4),(iVar8 + 0x8));
+    pass1_1008_392e(CONCAT22(puVar6,puVar4),(iVar8 + 0x8));
     (iVar8 + 0xe0) = puVar4;
     (iVar8 + 0xe2) = extraout_DX;
   }
-  ppcVar3 = (code **)(param_1 + 0x14);
+  ppcVar3 = (param_1 + 0x14);
   (**ppcVar3)(0x1000,param_1,0x0,0x15a,ctx.data_seg);
   uVar10 = 0x1000;
   puVar6 = extraout_DX_00;
@@ -61,7 +61,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
     (iVar8 + 0xe6) = uVar7;
   }
   if (*(long *)(iVar8 + 0xce) != 0x0) {
-    ppcVar3 = (code **)((iVar8 + 0xce) + 0x10);
+    ppcVar3 = ((iVar8 + 0xce) + 0x10);
     (**ppcVar3)();
   }
   (iVar8 + 0xce) = (iVar8 + 0xe4);
@@ -69,15 +69,15 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
   uVar5 = (iVar8 + 0xe4);
   uVar12 = uVar5;
   uVar13 = (uVar5 >> 0x10);
-  ppcVar3 = (code **)((iVar8 + 0xe4) + 0x10);
+  ppcVar3 = ((iVar8 + 0xe4) + 0x10);
   (**ppcVar3)();
   uVar5 = (iVar8 + 0xe4);
   uVar2 = (iVar8 + 0xe6);
   (iVar8 + 0xe8) = uVar5;
-  ppcVar3 = (code **)((iVar8 + 0xe8) + 0x8);
+  ppcVar3 = ((iVar8 + 0xe8) + 0x8);
   (**ppcVar3)(uVar10,(iVar8 + 0xe8),uVar2,uVar12,uVar13,uVar14);
   uVar7 = uVar5;
-  ppcVar3 = (code **)((iVar8 + 0xe8) + 0xc);
+  ppcVar3 = ((iVar8 + 0xe8) + 0xc);
   (**ppcVar3)();
   pass1_1008_6978(param_1 & 0xffff | uVar9 << 0x10,0x0,
                   (iVar8 + 0xe8),uVar7,extraout_DX_01);
@@ -127,7 +127,7 @@ switchD_1008_1091_caseD_69:
       return 0x0;
     }
     uVar5 = (uVar9 + 0xe8);
-    ppcVar1 = (code **)((uVar9 + 0xe8) + 0x40);
+    ppcVar1 = ((uVar9 + 0xe8) + 0x40);
     BVar3 = (**ppcVar1)(param_4,uVar5,(uVar5 >> 0x10),param_2);
     return BVar3;
   }
@@ -180,7 +180,7 @@ switchD_1008_1091_caseD_69:
                         0x1010);
     sys_1000_3f9c(local_64,param_5,0x19c,ctx.data_seg,pcVar7
                   ,&stack0xfffe,uVar13,0x1000,param_5,in_AF);
-    ppcVar1 = (code **)(*param_1 + 0x14);
+    ppcVar1 = (*param_1 + 0x14);
     (**ppcVar1)(0x1000,param_1,0x0,0x9c,param_5);
     puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x37,param_5,extraout_DX,unaff_DI);
     pass1_1008_a9ec(puVar8);
@@ -2109,7 +2109,7 @@ i16  win_ui_op_1008_2b54(param_1: u16,uchar *param_2,param_3: u16)
                                param_3);
     }
     local_a6[0] = CONCAT22(puVar4,iVar3);
-    ppcVar2 = (code **)(*local_a6[0] + 0x74);
+    ppcVar2 = (*local_a6[0] + 0x74);
     iStack4 = (**ppcVar2)(hwnd,iVar3,puVar4,uVar6,param_1);
   }
   iStack6 = iStack4;
@@ -2153,7 +2153,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
   if (*(long *)(param_1 + 0xee) != 0x0) {
     uVar6 = (param_1 + 0xee);
     iVar5 = (param_1 + 0xee);
-    ppcVar2 = (code **)(iVar5 + 0x90);
+    ppcVar2 = (iVar5 + 0x90);
     uVar6 = (**ppcVar2)(s_tile2_bmp_1050_1538,uVar6,(uVar6 >> 0x10),
                         uVar7);
   }
@@ -2163,17 +2163,17 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
   uVar4 = (uVar6 >> 0x10);
   (param_1 + 0xee) = uVar6;
   (param_1 + 0xf0) = uVar4;
-  ppcVar2 = (code **)((param_1 + 0xee) + 0x8);
+  ppcVar2 = ((param_1 + 0xee) + 0x8);
   (**ppcVar2)(s_tile2_bmp_1050_1538,(param_1 + 0xee),uVar4);
   if (*(long *)(param_1 + 0xe8) != 0x0) {
     uVar6 = (param_1 + 0xe8);
-    ppcVar2 = (code **)((param_1 + 0xe8) + 0xc);
+    ppcVar2 = ((param_1 + 0xe8) + 0xc);
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar6,(uVar6 >> 0x10),0x0);
   }
   show_win_1038_b634(_PTR_LOOP_1050_5b7c,&ctx.PTR_LOOP_1050_1038);
   show_win_1010_7a76((param_1 + 0xf4),0x1010);
   uVar6 = (param_1 + 0xee);
-  ppcVar2 = (code **)((param_1 + 0xee) + 0xc);
+  ppcVar2 = ((param_1 + 0xee) + 0xc);
   (**ppcVar2)(0x1010,uVar6,(uVar6 >> 0x10),0x5);
   BringWindowToTop16(0x1010);
   SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);

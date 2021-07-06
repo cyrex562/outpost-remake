@@ -236,7 +236,7 @@ unk_load_str_op_1010_8c96
         uStack6 = SUB42(pcVar10,0x0);
         wsprintf16((LPSTR)&USHORT_1050_1028,spec,valist);
 //LAB_1010_8def:
-        fn_ptr_1000_17ce((astruct_18 *)(uStack46 & 0xffff | ZEXT24(in_DX) << 0x10),0x1000)
+        fn_ptr_1000_17ce((uStack46 & 0xffff | ZEXT24(in_DX) << 0x10),0x1000)
         ;
         return CONCAT22(uStack46,in_DX);
       }
@@ -400,13 +400,13 @@ string_1010_dcac(param_1: u16,param_2: u16,param_3: u16,param_4: i16,param_5: u3
   iVar2 = (astruct_105 *)(&iVar5->field_0x2 + param_4 * 0xa);
   uVar7 = (param_5 >> 0x10);
   iVar2->field_0x4 = (param_4 * 0x2 + param_5);
-  string_1040_a626((u16 *)CONCAT22(uVar2,iVar2),pcVar4,uVar2);
+  string_1040_a626(CONCAT22(uVar2,iVar2),pcVar4,uVar2);
   unk_str_op_1000_3d3e(pcVar4,0x10503941);
   uVar2 = param_4 + 0x1;
   uVar1 = iVar5->field_0x2;
   uVar3 = uVar1 + uVar2 * 0xa;
   (uVar3 + 0x4) = (uVar2 * 0x2 + param_5);
-  string_1040_a626((u16 *)(uVar1 & 0xffff0000 | uVar3),pcVar4,uVar2);
+  string_1040_a626((uVar1 & 0xffff0000 | uVar3),pcVar4,uVar2);
   return uVar2;
 }
 

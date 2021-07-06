@@ -28,7 +28,7 @@ switchD_1030_069f_caseD_19:
     if (uVar3 == 0x0) {
       return 0x0;
     }
-    struct_1028_b354((u16 *)CONCAT22(param_4,uVar2));
+    struct_1028_b354(CONCAT22(param_4,uVar2));
     return CONCAT22(uVar3,uVar2);
   }
   uVar2 = param_5;
@@ -44,14 +44,14 @@ switchD_1030_069f_caseD_19:
   case 0x8:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_489e((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_489e(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x9:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_2bdc((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_2bdc(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -62,7 +62,7 @@ switchD_1030_069f_caseD_19:
   case 0xb:
     mem_op_1000_179c(0x2c,param_4,0x1000);
     if ((uchar *)(param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_3670((u16 *)CONCAT22(param_4,param_5),
+      puVar4 = struct_1028_3670(CONCAT22(param_4,param_5),
                                 (param_4 | param_5),param_6,param_7);
       return puVar4;
     }
@@ -70,21 +70,21 @@ switchD_1030_069f_caseD_19:
   case 0xc:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_355e((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_355e(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0xd:
     mem_op_1000_179c(0x26,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_3484((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_3484(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0xe:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_406c((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_406c(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -95,21 +95,21 @@ switchD_1030_069f_caseD_19:
   case 0x60:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_0c24((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_0c24(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x10:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_0b42((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_0b42(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x11:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_4354((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_4354(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -120,7 +120,7 @@ switchD_1030_069f_caseD_19:
   case 0x62:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_4b84((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_4b84(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -129,7 +129,7 @@ switchD_1030_069f_caseD_19:
   case 0x17:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_1bbc((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_1bbc(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -140,7 +140,7 @@ switchD_1030_069f_caseD_19:
   case 0x1c:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1030_be34((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1030_be34(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -150,14 +150,14 @@ switchD_1030_069f_caseD_19:
     mem_op_1000_179c(0x26,param_4,0x1000);
     puVar1 = (param_4 | param_5);
     if (puVar1 != 0x0) {
-      struct_1028_0068((u16 *)CONCAT22(param_4,param_5),puVar1);
+      struct_1028_0068(CONCAT22(param_4,param_5),puVar1);
       return CONCAT22(puVar1,param_5);
     }
     break;
   case 0x20:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_50d8((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_50d8(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -166,7 +166,7 @@ switchD_1030_069f_caseD_19:
   case 0x23:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_3e94((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_3e94(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -175,7 +175,7 @@ switchD_1030_069f_caseD_19:
   case 0x26:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_d06c((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_d06c(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -186,7 +186,7 @@ switchD_1030_069f_caseD_19:
   case 0x5e:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1030_c6f6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1030_c6f6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -194,14 +194,14 @@ switchD_1030_069f_caseD_19:
   case 0x2a:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_cce4((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_cce4(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x2b:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_26b4((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_26b4(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -209,7 +209,7 @@ switchD_1030_069f_caseD_19:
   case 0x2d:
     mem_op_1000_179c(0x2a,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_49aa((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_49aa(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -217,7 +217,7 @@ switchD_1030_069f_caseD_19:
   case 0x2f:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_e7fa((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_e7fa(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -227,7 +227,7 @@ switchD_1030_069f_caseD_19:
   case 0x6c:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_d37c((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_d37c(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -236,7 +236,7 @@ switchD_1030_069f_caseD_19:
     mem_op_1000_179c(0x2c,param_4,0x1000);
     puVar1 = (param_4 | param_5);
     if (puVar1 != 0x0) {
-      struct_1028_37a6((u16 *)CONCAT22(param_4,param_5),puVar1,param_6,param_7);
+      struct_1028_37a6(CONCAT22(param_4,param_5),puVar1,param_6,param_7);
       return CONCAT22(puVar1,param_5);
     }
     break;
@@ -245,7 +245,7 @@ switchD_1030_069f_caseD_19:
     uVar2 = param_4 | param_5;
 joined_r0x103002a1:
     if (uVar2 != 0x0) {
-      struct_1030_c06e((u16 *)CONCAT22(param_4,param_5));
+      struct_1030_c06e(CONCAT22(param_4,param_5));
       return CONCAT22(uVar2,param_5);
     }
     break;
@@ -253,7 +253,7 @@ joined_r0x103002a1:
   case 0x38:
     mem_op_1000_179c(0x9a,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1030_c9a8((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1030_c9a8(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -261,7 +261,7 @@ joined_r0x103002a1:
   case 0x3a:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((uchar *)(param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_60bc((u16 *)CONCAT22(param_4,param_5),param_5,
+      puVar4 = struct_1028_60bc(CONCAT22(param_4,param_5),param_5,
                                 (param_4 | param_5));
       return puVar4;
     }
@@ -270,14 +270,14 @@ joined_r0x103002a1:
   case 0x3c:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_44d2((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_44d2(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x3d:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_cde6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_cde6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -285,21 +285,21 @@ joined_r0x103002a1:
     mem_op_1000_179c(0x26,param_4,0x1000);
     puVar1 = (param_4 | param_5);
     if (puVar1 != 0x0) {
-      struct_1028_1f56((u16 *)CONCAT22(param_4,param_5),puVar1);
+      struct_1028_1f56(CONCAT22(param_4,param_5),puVar1);
       return CONCAT22(puVar1,param_5);
     }
     break;
   case 0x3f:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_25da((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_25da(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x40:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_c9ea((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_c9ea(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -307,7 +307,7 @@ joined_r0x103002a1:
   case 0x69:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_d5a6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_d5a6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -316,7 +316,7 @@ joined_r0x103002a1:
   case 0x49:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1020_d866((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_d866(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -325,7 +325,7 @@ joined_r0x103002a1:
   case 0x4d:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1030_d8f6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1030_d8f6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -334,7 +334,7 @@ joined_r0x103002a1:
   case 0x50:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_5c54((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_5c54(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -342,7 +342,7 @@ joined_r0x103002a1:
   case 0x52:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_5966((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_5966(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -351,7 +351,7 @@ joined_r0x103002a1:
   case 0x55:
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_5ed8((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_5ed8(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -360,14 +360,14 @@ joined_r0x103002a1:
   case 0x58:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_53c6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_53c6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x59:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = pass1_1028_5884((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = pass1_1028_5884(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -375,7 +375,7 @@ joined_r0x103002a1:
   case 0x5b:
     mem_op_1000_179c(0x26,param_4,0x1000);
     if ((uchar *)(param_4 | param_5) != 0x0) {
-      puVar4 = pass1_1028_5524((u16 *)CONCAT22(param_4,param_5),
+      puVar4 = pass1_1028_5524(CONCAT22(param_4,param_5),
                                (param_4 | param_5));
       return puVar4;
     }
@@ -383,14 +383,14 @@ joined_r0x103002a1:
   case 0x63:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = pass1_1028_5df6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = pass1_1028_5df6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x64:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_5a48((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_5a48(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -406,14 +406,14 @@ joined_r0x103002a1:
   case 0x68:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_57a6((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_57a6(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x6d:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_5630((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_5630(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -425,7 +425,7 @@ joined_r0x103002a1:
       puVar4 = 0x0;
     }
     else {
-      puVar4 = struct_1020_d866((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1020_d866(CONCAT22(param_4,param_5));
     }
   case 0x72:
   case 0x76:
@@ -441,21 +441,21 @@ joined_r0x103002a1:
     mem_op_1000_179c(0x2c,param_4,0x1000);
     uVar2 = param_4 | param_5;
     if (uVar2 != 0x0) {
-      struct_1020_d954((u16 *)CONCAT22(param_4,param_5));
+      struct_1020_d954(CONCAT22(param_4,param_5));
       return CONCAT22(uVar2,param_5);
     }
     break;
   case 0x74:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_178c((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_178c(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
   case 0x75:
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_2afa((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_2afa(CONCAT22(param_4,param_5));
       return puVar4;
     }
     break;
@@ -467,7 +467,7 @@ joined_r0x103002a1:
   case 0x7e:
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
-      puVar4 = struct_1028_27f0((u16 *)CONCAT22(param_4,param_5));
+      puVar4 = struct_1028_27f0(CONCAT22(param_4,param_5));
       return puVar4;
     }
   }
@@ -497,7 +497,7 @@ switchD_1030_0fa3_caseD_19:
     if (uVar4 == 0x0) {
       return 0x0;
     }
-    pass1_1028_b39e((u16 *)CONCAT22(param_7,paVar1),param_4,param_6,uVar4);
+    pass1_1028_b39e(CONCAT22(param_7,paVar1),param_4,param_6,uVar4);
     return CONCAT22(uVar4,paVar1);
   }
   paVar1 = param_8;
@@ -717,7 +717,7 @@ switchD_1030_0fa3_caseD_19:
   case (astruct_179 *)0x6c:
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_d3a4((u16 *)CONCAT22(param_7,param_8),param_3,param_4,param_6
+      puVar5 = pass1_1020_d3a4(CONCAT22(param_7,param_8),param_3,param_4,param_6
                                ,param_7 | param_8);
       return puVar5;
     }
@@ -955,7 +955,7 @@ joined_r0x10300adb:
   case (astruct_179 *)0x78:
     mem_op_1000_179c(0x2c,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = struct_1020_d99e((u16 *)CONCAT22(param_7,param_8),param_3,param_4,
+      puVar5 = struct_1020_d99e(CONCAT22(param_7,param_8),param_3,param_4,
                                 param_6,param_7 | param_8,param_11);
       return puVar5;
     }

@@ -52,7 +52,7 @@ fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
       puVar7 = (uVar10 + 0x136);
       uVar9 = uVar4 | puVar7;
       if (uVar9 != 0x0) {
-        ppcVar5 = (code **)*puVar7;
+        ppcVar5 = *puVar7;
         (**ppcVar5)(0x30,puVar7,uVar4,0x1);
         uVar9 = extraout_DX;
       }

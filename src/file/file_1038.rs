@@ -102,7 +102,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         puVar5 = 0x0;
       }
       else {
-        struct_1038_6520((u16 *)CONCAT22(param_4,uVar3));
+        struct_1038_6520(CONCAT22(param_4,uVar3));
       }
       uVar10 = (uVar9 >> 0x10);
       uStack14 = CONCAT22(puVar5,uVar3);
@@ -110,7 +110,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
       if (uVar3 == 0x0) {
         return 0x0;
       }
-      ppcVar1 = (code **)(*param_1 + 0x4);
+      ppcVar1 = (*param_1 + 0x4);
       (**ppcVar1)(0x1000,*param_1,(*param_1 >> 0x10),uStack14,
                   (uStack14 >> 0x10),uVar10);
       param_4 = (u16_t)extraout_DX;
@@ -133,7 +133,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
           puVar5 = 0x0;
         }
         else {
-          pass1_1030_ae6c((u16 *)CONCAT22(param_4,uVar3));
+          pass1_1030_ae6c(CONCAT22(param_4,uVar3));
         }
         uVar10 = (uVar9 >> 0x10);
         uVar4 = uVar3;
@@ -141,7 +141,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         if (uVar4 == 0x0) break;
         uVar7 = (param_1 >> 0x10);
         uVar9 = (param_1 + 0x4);
-        ppcVar1 = (code **)((param_1 + 0x4) + 0x4)
+        ppcVar1 = ((param_1 + 0x4) + 0x4)
         ;
         (**ppcVar1)(0x1030,uVar9,(uVar9 >> 0x10),uVar3,puVar5,uVar10);
         param_4 = (u16_t)extraout_DX_00;

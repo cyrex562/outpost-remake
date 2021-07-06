@@ -257,7 +257,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
   struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2,param_1),param_3);
   param_1->field_0xa = 0x0;
   param_1->field_0xc = 0x0;
-  pass1_1008_3e38((u16 *)CONCAT22(param_2,&param_1->field_0xe));
+  pass1_1008_3e38(CONCAT22(param_2,&param_1->field_0xe));
   param_1->field_0x14 = 0x0;
   param_1->field_0x16 = 0x0;
   param_1->field_0x18 = 0x0;
@@ -270,7 +270,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
   param_1->field_0xc = IVar6;
   iVar7 = param_1->field_0xc + -0x1e0;
   count = (iVar7 >> 0xf);
-  pass1_1008_3e76((u16 *)CONCAT22(param_2,&param_1->field_0xe),0x0,iVar7 / 0x2,
+  pass1_1008_3e76(CONCAT22(param_2,&param_1->field_0xe),0x0,iVar7 / 0x2,
                   (param_1->field_0xa + -0x280) / 0x2);
   hwnd = s_tile2_bmp_1050_1538;
   uVar8 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x26);
@@ -321,7 +321,7 @@ fn unk_draw_op_1008_da12(astruct_19 *param_1,param_2: u16,param_3: u16)
       }
     }
     hwnd = 0x1000;
-    fn_ptr_1000_17ce((astruct_18 *)CONCAT22(count,start),0x1000);
+    fn_ptr_1000_17ce(CONCAT22(count,start),0x1000);
   }
   ReleaseDC16(hwnd,hdc);
   return;

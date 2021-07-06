@@ -25,7 +25,7 @@ fn mix_draw_op_1040_21d6(param_1: u32,HWND16 param_2,param_3: u16)
   local_24 = BeginPaint16(param_2,&local_22);
   paVar3 = *(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe);
   b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
-  ppcVar4 = (code **)((iVar6 + 0x8e) + 0x4);
+  ppcVar4 = ((iVar6 + 0x8e) + 0x4);
   (**ppcVar4)(0x1008,(iVar6 + 0x8e),0xffffffff,&local_24,param_3,uVar8);
   uVar7 = pass1_1008_4d72(paVar3);
   uVar8 = (uVar7 >> 0x10);
@@ -80,7 +80,7 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
     *(HBRUSH16 *)(iVar6 + 0x4) = HVar4;
   }
   if (_PTR_LOOP_1050_5cf8 == 0x0) {
-    ppcVar1 = (code **)(*param_1 + 0x68);
+    ppcVar1 = (*param_1 + 0x68);
     uVar9 = (**ppcVar1)(CVar8,param_1,(iVar6 + 0x6e));
     CVar8 = 0x1008;
     uVar9 = pass1_1008_4d72(uVar9);
@@ -168,7 +168,7 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
     if (((uVar10 >> 0x10) | uVar10) == 0x0) {
       if (paStack54 != (astruct_76 *)0x0) {
         if (paStack54 != (astruct_76 *)0x0) {
-          ppcVar3 = (code **)paStack54;
+          ppcVar3 = paStack54;
           (**ppcVar3)(0x1008,paStack54,(paStack54 >> 0x10),0x1,uVar13);
         }
       }
@@ -177,12 +177,12 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
     }
     uVar8 = SUB42(s_tile2_bmp_1050_1538,0x0);
     GetSystemMetrics16(IVar9);
-    ppcVar3 = (code **)(paStack54 + 0x4);
+    ppcVar3 = (paStack54 + 0x4);
     (**ppcVar3)();
   }
   if (paStack54 != (astruct_76 *)0x0) {
     if (paStack54 != (astruct_76 *)0x0) {
-      ppcVar3 = (code **)paStack54;
+      ppcVar3 = paStack54;
       (**ppcVar3)(uVar8,paStack54,(paStack54 >> 0x10),0x1,uVar13,uVar21);
     }
   }
@@ -195,13 +195,13 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   IVar9 = GetSystemMetrics16(0x1010);
   iVar5 = -(IVar9 + -0x23);
   uVar4 = paVar11;
-  ppcVar3 = (code **)uVar4 + 0x2;
+  ppcVar3 = uVar4 + 0x2;
   uVar13 = paVar11;
   uVar8 = uVar21;
   (**ppcVar3)();
   if (paVar11 != (astruct_43 *)0x0) {
     if (paVar11 != (astruct_43 *)0x0) {
-      ppcVar3 = (code **)uVar4;
+      ppcVar3 = uVar4;
       (**ppcVar3)(s_tile2_bmp_1050_1538,paVar11,uVar21,0x1,uVar13,uVar8,iVar5,
                   uVar19,uVar20,pHVar14,uVar15);
     }
@@ -236,13 +236,13 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
     uVar13 = 0x4;
     uVar15 = param_3;
     IVar9 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-    ppcVar3 = (code **)(paVar12 + 0x4);
+    ppcVar3 = (paVar12 + 0x4);
     (**ppcVar3)(s_tile2_bmp_1050_1538,paVar12,uVar21,-(IVar9 + -0xc4),uVar13,
                 iVar5,pHVar14,uVar15,HVar16,HVar17);
   }
   if (paVar12 != (astruct_76 *)0x0) {
     if (paVar12 != (astruct_76 *)0x0) {
-      ppcVar3 = (code **)paVar12;
+      ppcVar3 = paVar12;
       (**ppcVar3)(s_tile2_bmp_1050_1538,paVar12,uVar21,0x1,HVar16,HVar17,HVar18)
       ;
     }
@@ -294,7 +294,7 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
   if (BVar2 == 0x0) {
     uVar6 = iVar4->field_0x6;
     local_hdc_4 = GetWindowDC16((HWND16)s_tile2_bmp_1050_1538);
-    ppcVar1 = (code **)(in_struct_1 + 0x68);
+    ppcVar1 = (in_struct_1 + 0x68);
     uStack8 = (astruct_13 *)
               (**ppcVar1)(s_tile2_bmp_1050_1538,in_struct_1,iVar4->field_0x6e,uVar6,
                           uVar7);
@@ -347,7 +347,7 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
           }
         }
       }
-      ppcVar1 = (code **)(in_struct_1 + 0x64);
+      ppcVar1 = (in_struct_1 + 0x64);
       (**ppcVar1)(s_tile2_bmp_1050_1538,in_struct_1,uStack8,local_hdc_4);
       HStack10 = SelectPalette16((HDC16)s_tile2_bmp_1050_1538,0x0,HStack10);
       DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
@@ -381,7 +381,7 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
   hwnd = s_tile2_bmp_1050_1538;
   HVar3 = GetStockObject16(param_4);
   if (_PTR_LOOP_1050_5df0 == 0x0) {
-    ppcVar1 = (code **)(*param_1 + 0x68);
+    ppcVar1 = (*param_1 + 0x68);
     uVar5 = (**ppcVar1)(s_tile2_bmp_1050_1538,param_1,
                         (param_1 + 0x6e),uVar6);
     if (uVar5 == 0x0) {
@@ -603,9 +603,9 @@ fn unk_draw_op_1040_9458(astruct_17 *param_1,param_2: u8,param_3: u16,HDC16 para
     }
     puStack8 = &param_3;
     UVar2 = *puStack6;
-    ppcVar1 = (code **)(UVar2 + 0x8);
+    ppcVar1 = (UVar2 + 0x8);
     (**ppcVar1)(param_4,puStack6,uVar3,puStack8);
-    ppcVar1 = (code **)(UVar2 + 0x4);
+    ppcVar1 = (UVar2 + 0x4);
     (**ppcVar1)(param_4,puStack6,iVar4->field_0x28,iVar4->field_0x26,&param_3);
     SelectPalette16(param_4,0x0,puStack8);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
@@ -894,7 +894,7 @@ fn unk_draw_op_1040_b0f8(astruct_18 *param_1)
   astruct_18 *paStack10;
   
   uVar3 = (param_1 >> 0x10);
-  iVar3 = (astruct_18 *)param_1;
+  iVar3 = param_1;
   param_1->field_0x0 = 0xb772;
   iVar3->field_0x2 = &ctx.PTR_LOOP_1050_1040;
   puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,unaff_SS,in_DX,unaff_DI);
@@ -907,7 +907,7 @@ fn unk_draw_op_1040_b0f8(astruct_18 *param_1)
   }
   uVar1 = iVar3->field_0x90;
   uVar2 = iVar3->field_0x92;
-  paStack10 = (astruct_18 *)CONCAT22(uVar2,uVar1);
+  paStack10 = CONCAT22(uVar2,uVar1);
   if ((uVar2 | uVar1) != 0x0) {
     pass1_1040_a5d0(CONCAT22(uVar2,uVar1));
     uVar4 = 0x1000;
@@ -1210,9 +1210,9 @@ fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
   HVar4 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack16);
   DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
   uVar3 = *param_1;
-  ppcVar2 = (code **)(uVar3 + 0x10);
+  ppcVar2 = (uVar3 + 0x10);
   (**ppcVar2)(s_tile2_bmp_1050_1538,param_1,param_2,HVar4,param_2._2_2_);
-  ppcVar2 = (code **)(uVar3 + 0x14);
+  ppcVar2 = (uVar3 + 0x14);
   (**ppcVar2)(s_tile2_bmp_1050_1538,param_1,param_2._2_2_);
   (iVar5 + 0x46) = 0x0;
   SelectPalette16((HDC16)s_tile2_bmp_1050_1538,0x0,HStack8);
@@ -1255,7 +1255,7 @@ fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
       puStack8 = (iVar3 + 0x10);
       uVar5 = (iVar3 + 0x12);
     }
-    ppcVar2 = (code **)(*puStack8 + 0x4);
+    ppcVar2 = (*puStack8 + 0x4);
     (**ppcVar2)(param_4,puStack8,uVar5,(iVar3 + 0x28),
                 (iVar3 + 0x26),&param_3);
     if ((iVar3 + 0x46) == 0x0) {

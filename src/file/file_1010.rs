@@ -54,7 +54,7 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
            BVar3 == 0x0)) {
           puStack26 = puStack22;
           if (puStack22 != 0x0) {
-            ppcVar2 = (code **)*puStack22;
+            ppcVar2 = *puStack22;
             (**ppcVar2)(0x1008,puStack22,(puStack22 >> 0x10),0x1);
           }
           goto LAB_1010_0cb1;
@@ -62,7 +62,7 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         uVar6 = (puStack22 >> 0x10);
         (puStack22 + 0x4) = local_12[0];
         puVar1 = iVar6->field_0xa;
-        ppcVar2 = (code **)(*iVar6->field_0xa + 0x8);
+        ppcVar2 = (*iVar6->field_0xa + 0x8);
         (**ppcVar2)(0x8,puVar1,(puVar1 >> 0x10),puStack22,uVar6);
         paStack8 = (astruct_229 *)&paStack8->field_0x1;
         param_4 = extraout_DX;

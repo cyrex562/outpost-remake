@@ -614,7 +614,7 @@ pub fn  mem_op_1000_131c(param_1: *mut u16,param_2: u16,param_3: i16,param_4: u1
     if (HVar1 != 0x0) {
       GlobalPageLock16((HGLOBAL16)s_tile2_bmp_1050_1538);
     }
-    pass1_1000_15ce((u16 *)uStack10,(lVar3 >> 0x10),
+    pass1_1000_15ce(uStack10,(lVar3 >> 0x10),
                     s_tile2_bmp_1050_1538);
   }
   if (HVar1 != 0x0) {

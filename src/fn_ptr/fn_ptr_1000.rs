@@ -1,5 +1,7 @@
+use crate::defines::Struct18;
 
-fn  call_fn_ptr_1000_0dc6(param_1: u16,param_2: u16,param_3: u16) -> bool
+
+pub fn  call_fn_ptr_1000_0dc6(param_1: u16,param_2: u16,param_3: u16) -> bool
 
 {
   if ((&ctx.PTR_LOOP_1050_000c & 0xfff8) != 0xcad0) {
@@ -12,7 +14,7 @@ fn  call_fn_ptr_1000_0dc6(param_1: u16,param_2: u16,param_3: u16) -> bool
 
 
 
-fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16,
+pub fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16,
                    param_6: u16) -> u16
 
 {
@@ -56,13 +58,12 @@ fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param
 
 
 
-fn fn_ptr_1000_17ce(astruct_18 *param_1,param_2: u16)
+pub fn fn_ptr_1000_17ce(param_1: &mut Struct18,param_2: u16)
 
 {
-  if (param_1 != (astruct_18 *)0x0) {
+  if (param_1 != 0x0) {
     call_fn_ptr_1000_0dc6(param_1,param_1._2_2_,param_2);
   }
-  return;
 }
 
 
@@ -102,7 +103,7 @@ pub fn fn_ptr_op_1000_24cd(param_1: i16,param_2: i16)
 
 
 
-fn fn_ptr_op_1000_2594(code **param_1,code **param_2)
+pub fn fn_ptr_op_1000_2594(code **param_1,code **param_2)
 {
   code **ppcVar1;
   code **ppcVar2;

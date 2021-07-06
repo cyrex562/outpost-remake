@@ -90,7 +90,7 @@ fn mem_1008_ed1e(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *para
   }
   mem_op_1000_179c(0x1a,param_5,0x1000);
   if ((param_5 | param_4) != 0x0) {
-    struct_1008_ec72((u16 *)CONCAT22(param_5,param_4));
+    struct_1008_ec72(CONCAT22(param_5,param_4));
     return;
   }
   return;

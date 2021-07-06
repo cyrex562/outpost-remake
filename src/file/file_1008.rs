@@ -15,10 +15,10 @@ fn close_file_1008_496c(param_1: *mut u16)
   puVar1 = (iVar5 + 0x4);
   uVar2 = (iVar5 + 0x6);
   if ((uVar2 | puVar1) != 0x0) {
-    ppcVar4 = (code **)*puVar1;
+    ppcVar4 = *puVar1;
     (**ppcVar4)();
   }
-  fn_ptr_1000_17ce(*(astruct_18 **)(iVar5 + 0x8),0x1000);
+  fn_ptr_1000_17ce((iVar5 + 0x8),0x1000);
   if (*(long *)(iVar5 + 0x1a) != 0x0) {
     uVar3 = (iVar5 + 0x1a);
     call_fn_ptr_1000_0dc6(uVar3,(uVar3 >> 0x10),0x1000);
@@ -136,7 +136,7 @@ fn file_1008_4c26(param_1: u32,param_2: u8) -> u32
 {
   close_file_1008_496c(param_1);
   if ((param_2 & 0x1) != 0x0) {
-    fn_ptr_1000_17ce((astruct_18 *)param_1,0x1000);
+    fn_ptr_1000_17ce(param_1,0x1000);
   }
   return param_1;
 }
@@ -172,7 +172,7 @@ fn file_1008_6414(param_1: *mut u32,param_2: u32,param_3: u16,uchar *param_4)
     param_1 = puVar2;
     (iVar4 + 0x2) = uVar3;
   }
-  ppcVar1 = (code **)(*param_1 + 0x14);
+  ppcVar1 = (*param_1 + 0x14);
   (**ppcVar1)();
   (iVar4 + 0x4) = puVar2;
   (iVar4 + 0x6) = extraout_DX;
@@ -190,7 +190,7 @@ fn close_file_1008_6dd0(param_1: *mut u32,param_2: HFILE16)
     _lclose16(param_2);
     (param_1 + 0x4) = 0xffff;
   }
-  fn_ptr_1000_17ce((astruct_18 *)*param_1,0x1000);
+  fn_ptr_1000_17ce(*param_1,0x1000);
   return;
 }
 
@@ -533,22 +533,22 @@ fn file_1008_7548(param_1: u32,long *param_2,param_3: HFILE16,param_4: u16)
         (param_2 + 0x2) = uVar6;
       }
     }
-    ppcVar1 = (code **)(*param_2 + 0x24);
+    ppcVar1 = (*param_2 + 0x24);
     (**ppcVar1)(param_3,*param_2);
     for (uStack14 = 0x0; uStack14 < local_6; uStack14 += 0x1) {
       BVar3 = read_file_1008_7dee(uVar7,uVar2,&local_1c,0x0,param_4,0x4,param_3);
       if ((BVar3 == 0x0) ||
          (BVar3 = read_file_1008_7dee(uVar7,uVar2,local_18,0x0,param_4,0x2,param_3
                                      ), BVar3 == 0x0)) {
-        ppcVar1 = (code **)(*param_2 + 0x1c);
+        ppcVar1 = (*param_2 + 0x1c);
         (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10));
         return;
       }
-      ppcVar1 = (code **)(*param_2 + 0x28);
+      ppcVar1 = (*param_2 + 0x28);
       (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10),local_18[0],
                   local_1c,(local_1c >> 0x10));
     }
-    ppcVar1 = (code **)(*param_2 + 0x1c);
+    ppcVar1 = (*param_2 + 0x1c);
     (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10));
   }
   return;
@@ -587,7 +587,7 @@ fn file_1008_76e4(param_1: u32,long *param_2,param_3: u16,param_4: u16,param_5: 
         (param_2 + 0x2) = extraout_DX;
       }
     }
-    ppcVar1 = (code **)(*param_2 + 0x14);
+    ppcVar1 = (*param_2 + 0x14);
     (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10),local_6);
     for (uStack10 = 0x0; uStack10 < local_6; uStack10 += 0x1) {
       BVar3 = read_file_1008_7dee(param_1,uVar4,local_18,0x0,param_4,0x4,
@@ -595,10 +595,10 @@ fn file_1008_76e4(param_1: u32,long *param_2,param_3: u16,param_4: u16,param_5: 
       if (BVar3 == 0x0) {
         return;
       }
-      ppcVar1 = (code **)(*param_2 + 0x18);
+      ppcVar1 = (*param_2 + 0x18);
       (**ppcVar1)();
     }
-    ppcVar1 = (code **)(*param_2 + 0x1c);
+    ppcVar1 = (*param_2 + 0x1c);
     (**ppcVar1)();
   }
   return;
@@ -687,7 +687,7 @@ write_to_file_1008_7954
     uVar4 = 0x0;
   }
   else {
-    ppcVar1 = (code **)(*param_2 + 0x10);
+    ppcVar1 = (*param_2 + 0x10);
     (**ppcVar1)(param_4,param_2);
     uVar4 = extraout_DX;
   }
@@ -703,7 +703,7 @@ write_to_file_1008_7954
       if (uStack6 <= uStack10) {
         return uVar4;
       }
-      ppcVar1 = (code **)(*param_2 + 0x4);
+      ppcVar1 = (*param_2 + 0x4);
       uVar3 = uStack6;
       (**ppcVar1)();
       local_20 = (u16_t)uVar3;
@@ -1075,13 +1075,13 @@ fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         uVar4->field_0x8 = local_14[0];
         uVar4->field_0xa = local_8;
         uVar4->field_0xe = local_18[0];
-        ppcVar1 = (code **)(*iVar3->field_0xa + 0x8);
+        ppcVar1 = (*iVar3->field_0xa + 0x8);
         (**ppcVar1)();
         paStack286 = (astruct_200 *)&paStack286->field_0x1;
         puVar8 = extraout_DX_00;
       }
       if (puStack284 != 0x0) {
-        ppcVar1 = (code **)*puStack284;
+        ppcVar1 = *puStack284;
         (**ppcVar1)(0x1000,uVar4,uVar9,0x1,uVar13,uVar14,puStack284);
       }
     }
@@ -1137,7 +1137,7 @@ file_1008_e70e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5: u1
           uVar5 = 0x0;
         }
         else {
-          struct_1008_dcdc((u16 *)CONCAT22(param_4,uVar4));
+          struct_1008_dcdc(CONCAT22(param_4,uVar4));
         }
         puStack14 = CONCAT22(uVar5,uVar4);
         BVar3 = read_file_1008_7dee(uVar7,uVar8,uVar4 + 0x4,0x0,uVar5,0x4,0x1000);
@@ -1157,14 +1157,14 @@ file_1008_e70e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5: u1
         (puStack14 + 0xc) = local_12[0];
         uVar6 = (param_1 >> 0x10);
         uVar1 = (param_1 + 0xa);
-        ppcVar2 = (code **)((param_1 + 0xa) + 0x4)
+        ppcVar2 = ((param_1 + 0xa) + 0x4)
         ;
         (**ppcVar2)(0x0,uVar1,(uVar1 >> 0x10),puStack14,uVar9);
         uStack10 += 0x1;
         param_4 = extraout_DX;
       }
       if (puStack14 != 0x0) {
-        ppcVar2 = (code **)*puStack14;
+        ppcVar2 = *puStack14;
         (**ppcVar2)(0x1000,puStack14,(puStack14 >> 0x10),0x1,uVar9,
                     puStack14);
       }
