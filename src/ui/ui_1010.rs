@@ -163,13 +163,13 @@ fn win_ui_op_1010_3202(param_1: u32,param_2: i16,HWND16 param_3)
     piVar1 = (iVar3 + 0x28);
     *piVar1 = *piVar1 + (iVar3 + 0x18);
   }
-  if (*(long *)(iVar3 + 0x52) != 0x0) {
+  if ((iVar3 + 0x52) != 0x0) {
     iStack4 = 0x0;
     hwnd = param_3;
     do {
       uVar2 = (iVar3 + 0x52);
       param_3 = hwnd;
-      if (*(long *)(uVar2 + iStack4 * 0x4) != 0x0) {
+      if ((uVar2 + iStack4 * 0x4) != 0x0) {
         param_3 = s_tile2_bmp_1050_1538;
         DestroyWindow16(hwnd);
         uVar2 = (iVar3 + 0x52);
@@ -203,7 +203,7 @@ fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
   let local_a: [u8;8];
   
   uVar3 = (param_1 >> 0x10);
-  if ((*(long *)(param_1 + 0x1c) != 0x0) && ((param_3 != 0x0 || (param_2 != 0x0)))) {
+  if (((param_1 + 0x1c) != 0x0) && ((param_3 != 0x0 || (param_2 != 0x0)))) {
     pass1_1008_5784(CONCAT22(param_4,local_a),(param_1 + 0x1c));
     lStack18 = 0x0;
     do {
@@ -211,11 +211,11 @@ fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
       pass1_1008_5b12(puVar2,param_4);
       lStack14 = CONCAT22(extraout_DX,puVar2);
       if ((extraout_DX | puVar2) == 0x0) goto LAB_1010_7a49;
-      if (((param_2 == 0x0) && (*(long *)(puVar2 + 0x4) == param_3)) ||
+      if (((param_2 == 0x0) && ((puVar2 + 0x4) == param_3)) ||
          ((param_3 == 0x0 &&
           (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) == param_2)))
          ) break;
-    } while ((*(long *)(puVar2 + 0x4) != param_3) ||
+    } while (((puVar2 + 0x4) != param_3) ||
             (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) != param_2)
             );
     lStack18 = lStack14;
@@ -318,7 +318,7 @@ fn send_msg_1010_7c9e(param_1: u32,param_2: i16,param_3: u16)
       lVar4 = pass1_1008_5b12(local_a,param_3);
       uVar3 = (lVar4 >> 0x10);
       if (lVar4 == 0x0) break;
-      if (*(long *)(lVar4 + 0x4) != 0x0) {
+      if ((lVar4 + 0x4) != 0x0) {
         uVar5 = struct_op_1030_73a8((lVar4 + 0x4));
         BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0,(uVar5 + 0xc),
                                 param_2);

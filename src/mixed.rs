@@ -20,7 +20,7 @@ fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,uchar *param_4,param_5
   paVar4 = (astruct_636 *)(param_2 * 0x4);
   uVar6 = (param_1 >> 0x10);
   iVar5 = param_1;
-  puStack6 = (&paVar4->field_0x0 + iVar5);
+  puStack6 = (&paVar4.field_0x0 + iVar5);
   if (puStack6 != 0x0) {
     return puStack6;
   }

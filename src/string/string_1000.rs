@@ -253,7 +253,7 @@ str_1000_4d58(char *in_string_1,char *in_string_2,param_3: u32,param_4: u32,
     *(param_4 + uVar1) = 0x0;
   }
   if (param_5 != (WNDCLASS16 *)0x0) {
-    *&param_5->style = 0x0;
+    *&param_5.style = 0x0;
   }
   return;
 }

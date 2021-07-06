@@ -16,17 +16,17 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
     return;
   }
   iVar2 = (astruct_307 *)param_1;
-  iVar2 = (astruct_307 *)&iVar2->field_0x4;
+  iVar2 = (astruct_307 *)&iVar2.field_0x4;
   puVar5 = (param_1 & 0xffff0000 | ZEXT24(iVar2));
   pass1_1008_766e(param_2,puVar5,param_4,0x1008,param_3);
   if (puVar5 != 0x0) {
     uVar1 = (param_1 >> 0x10);
     uVar4 = param_2;
     uVar6 = (param_2 >> 0x10);
-    BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x8,0x0,uVar1,0x4,0x1008);
+    BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x8,0x0,uVar1,0x4,0x1008);
     if ((((((BVar2 != 0x0) &&
            (iVar3 = file_1008_77cc(param_2,(long *)(param_1 & 0xffff0000 |
-                                                   &iVar2->field_0xe),param_3
+                                                   &iVar2.field_0xe),param_3
                                    ,0x1008,param_4), iVar3 != 0x0)) &&
           (BVar2 = read_file_1008_7dee(uVar4,uVar6,&local_4,0x0,param_4,0x2,0x1008
                                       ), BVar2 != 0x0)) &&
@@ -34,24 +34,24 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
                                       ), BVar2 != 0x0 &&
           (BVar2 = read_file_1008_7dee(uVar4,uVar6,&local_8,0x0,param_4,0x2,0x1008
                                       ), BVar2 != 0x0)))) &&
-        ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x16,0x0,uVar1,0x4,0x1008)
+        ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x16,0x0,uVar1,0x4,0x1008)
          , BVar2 != 0x0 &&
          ((BVar2 = read_file_1008_7bc8(param_2,
                                                (param_1 & 0xffff0000 |
-                                               &iVar2->field_0x1a),0x1008,
+                                               &iVar2.field_0x1a),0x1008,
                                        param_4), BVar2 != 0x0 &&
-          (BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x20,0x0,uVar1,0x4,0x1008
+          (BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x20,0x0,uVar1,0x4,0x1008
                                       ), BVar2 != 0x0)))))) &&
-       ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x24,0x0,uVar1,0x2,0x1008),
+       ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x24,0x0,uVar1,0x2,0x1008),
         BVar2 != 0x0 &&
-        ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x26,0x0,uVar1,0x2,0x1008)
+        ((BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x26,0x0,uVar1,0x2,0x1008)
          , BVar2 != 0x0 &&
-         (BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2->field_0x28,0x0,uVar1,0x2,0x1008)
+         (BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x28,0x0,uVar1,0x2,0x1008)
          , BVar2 != 0x0)))))) {
-      iVar2->field_0xc = local_4;
+      iVar2.field_0xc = local_4;
       uVar4 = switch_1008_72bc(uVar4,uVar6,local_6);
-      iVar2->field_0x12 = uVar4;
-      iVar2->field_0x14 = local_8;
+      iVar2.field_0x12 = uVar4;
+      iVar2.field_0x14 = local_8;
       return;
     }
   }

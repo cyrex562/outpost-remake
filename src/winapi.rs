@@ -1,6 +1,9 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{CONTEXT, HDC16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HTASK16, HWND16, LPARAM, LRESULT, WPARAM16};
+use crate::win_struct::{
+    CONTEXT, HDC16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HTASK16,
+    HWND16, LPARAM, LRESULT, WPARAM16,
+};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)

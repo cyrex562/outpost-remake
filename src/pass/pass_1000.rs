@@ -4433,7 +4433,7 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
         }
 //LAB_1000_4b81:
         if ((param_2 < uVar6) || ((param_2 <= uVar6 && (param_1 < uVar5)))) {
-          puVar1 = &puVar11->field_0x14;
+          puVar1 = &puVar11.field_0x14;
           uVar10 = uVar5 + *puVar1;
           uVar9 = uVar6 + (-CARRY2(uVar5,*puVar1) & 0x6c);
           uVar14 = param_1;
@@ -4444,12 +4444,12 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
           uVar11 = param_2;
 //LAB_1000_4bbc:
           do {
-            puVar1 = &puVar11->field_0x14;
+            puVar1 = &puVar11.field_0x14;
             bVar13 = CARRY2(param_1,*puVar1);
             param_1 += *puVar1;
             param_2 += -bVar13 & 0x6c;
             if ((param_1 != uVar18) || (param_2 != uVar19)) {
-              ppcVar2 = &puVar11->field_0x16;
+              ppcVar2 = &puVar11.field_0x16;
               iVar8 = (**ppcVar2)(param_9,param_1,param_2,uVar7,uVar11);
               if (iVar8 < 0x1) {
                 if (iVar8 != 0x0) {
@@ -4462,11 +4462,11 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
             do {
               uVar17 = uVar6;
               uVar16 = uVar5;
-              puVar1 = &puVar11->field_0x14;
+              puVar1 = &puVar11.field_0x14;
               bVar13 = uVar10 < *puVar1;
               uVar10 -= *puVar1;
               uVar9 -= -bVar13 & 0x6c;
-              ppcVar2 = &puVar11->field_0x16;
+              ppcVar2 = &puVar11.field_0x16;
               iVar8 = (**ppcVar2)(param_9,uVar7,uVar11,uVar10,uVar9);
               if (0x0 < iVar8) break;
               uVar5 = uVar10;
@@ -4475,7 +4475,7 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
                     || (uVar9 != uVar11));
             if ((uVar9 < param_2) || ((uVar9 <= param_2 && (uVar10 <= param_1))))
             goto LAB_1000_4c58;
-            pass1_1000_4ceb(puVar11->field_0x14,param_1,uVar10,uVar9);
+            pass1_1000_4ceb(puVar11.field_0x14,param_1,uVar10,uVar9);
             uVar14 = param_1;
             uVar15 = param_2;
             uVar5 = uVar10;
@@ -4490,7 +4490,7 @@ pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param
 //LAB_1000_4c58:
   param_1 = uVar7;
   param_2 = uVar11;
-  pass1_1000_4ceb(puVar11->field_0x14,uVar7,uVar10,uVar9);
+  pass1_1000_4ceb(puVar11.field_0x14,uVar7,uVar10,uVar9);
   uVar11 = ((uVar19 - (-(uVar18 < uVar16) & 0x6c)) - uVar17) +
            (-CARRY2(uVar18 - uVar16,param_1) & 0x6c) + param_2;
   uVar7 = -((uVar18 - uVar16) + param_1 < uVar14) & 0x6c;

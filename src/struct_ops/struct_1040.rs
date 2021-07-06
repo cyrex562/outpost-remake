@@ -94,14 +94,14 @@ fn struct_1040_a598(param_1: *mut u16)
   uVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_259 *)param_1;
   *param_1 = 0x0;
-  iVar1->field_0x2 = 0x0;
-  iVar1->field_0x6 = 0x0;
-  iVar1->field_0xa = 0x0;
-  iVar1->field_0xc = 0x0;
-  iVar1->field_0x10 = 0x0;
-  iVar1->field_0x12 = 0x0;
-  iVar1->field_0x14 = 0x0;
-  iVar1->field_0x16 = 0x0;
+  iVar1.field_0x2 = 0x0;
+  iVar1.field_0x6 = 0x0;
+  iVar1.field_0xa = 0x0;
+  iVar1.field_0xc = 0x0;
+  iVar1.field_0x10 = 0x0;
+  iVar1.field_0x12 = 0x0;
+  iVar1.field_0x14 = 0x0;
+  iVar1.field_0x16 = 0x0;
   return;
 }
 
@@ -115,10 +115,10 @@ fn struct_1040_b082(astruct_57 *param_1,param_2: u32)
   get_sys_metrics_1040_7728(param_1,0x1,0x0,param_2,(param_2 >> 0x10));
   uVar1 = (param_1 >> 0x10);
   iVar1 = (astruct_437 *)param_1;
-  iVar1->field_0x8e = 0x0;
-  iVar1->field_0x90 = 0x0;
+  iVar1.field_0x8e = 0x0;
+  iVar1.field_0x90 = 0x0;
   param_1 = 0xb772;
-  iVar1->field_0x2 = &ctx.PTR_LOOP_1050_1040;
+  iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   return;
 }
 

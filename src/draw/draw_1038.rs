@@ -125,10 +125,10 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
   var5 = (astruct_10 *)(in_struct_1 >> 0x10);
   local_struct_5 = (astruct_10 *)in_struct_1;
   hdc = in_colorref_4;
-  if (local_struct_5->brush_handle_field_0x8e == 0x0) {
+  if (local_struct_5.brush_handle_field_0x8e == 0x0) {
     hdc = (COLORREF)s_tile2_bmp_1050_1538;
     local_brush_handle = CreateSolidBrush16(in_colorref_4);
-    local_struct_5->brush_handle_field_0x8e = local_brush_handle;
+    local_struct_5.brush_handle_field_0x8e = local_brush_handle;
   }
   if (_PTR_LOOP_1050_5b64 == 0x0) {
     hdc = 0x1008;
@@ -149,9 +149,9 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
       return;
     }
     bVar2 = false;
-    for (uStack14 = 0x0; puVar1 = &local_struct_5->field_0x128,
+    for (uStack14 = 0x0; puVar1 = &local_struct_5.field_0x128,
         uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 += 0x1) {
-      if ((&local_struct_5->field_0x94 + uStack14 * 0x2) == param_2) {
+      if ((&local_struct_5.field_0x94 + uStack14 * 0x2) == param_2) {
         bVar2 = true;
         break;
       }
@@ -161,7 +161,7 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
     }
   }
   SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5b64);
-  SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
   return;
 }
 

@@ -396,14 +396,14 @@ string_1010_dcac(param_1: u16,param_2: u16,param_3: u16,param_4: i16,param_5: u3
                       ,param_1);
   uVar6 = (param_6 >> 0x10);
   iVar5 = (astruct_104 *)param_6;
-  uVar2 = (&iVar5->field_0x2 + 0x2);
-  iVar2 = (astruct_105 *)(&iVar5->field_0x2 + param_4 * 0xa);
+  uVar2 = (&iVar5.field_0x2 + 0x2);
+  iVar2 = (astruct_105 *)(&iVar5.field_0x2 + param_4 * 0xa);
   uVar7 = (param_5 >> 0x10);
-  iVar2->field_0x4 = (param_4 * 0x2 + param_5);
+  iVar2.field_0x4 = (param_4 * 0x2 + param_5);
   string_1040_a626(CONCAT22(uVar2,iVar2),pcVar4,uVar2);
   unk_str_op_1000_3d3e(pcVar4,0x10503941);
   uVar2 = param_4 + 0x1;
-  uVar1 = iVar5->field_0x2;
+  uVar1 = iVar5.field_0x2;
   uVar3 = uVar1 + uVar2 * 0xa;
   (uVar3 + 0x4) = (uVar2 * 0x2 + param_5);
   string_1040_a626((uVar1 & 0xffff0000 | uVar3),pcVar4,uVar2);

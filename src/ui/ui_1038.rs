@@ -429,10 +429,10 @@ fn unk_win_ui_op_1038_8afe(astruct_50 *param_1,HWND16 param_2,bool param_3)
   uVar4 = (astruct_50 *)(param_1 >> 0x10);
   iVar4 = (astruct_50 *)param_1;
   dlg_item = GetDlgItemInt16(param_2,0x0,&local_4,param_3);
-  pass1_1030_6c1a(iVar4->field_0x94,dlg_item);
-  uVar1 = iVar4->field_0x94;
-  pass1_1038_387e((uVar1 + 0x2e),dlg_item,iVar4->field_0x9c,
-                  iVar4->field_0x94,in_DX);
+  pass1_1030_6c1a(iVar4.field_0x94,dlg_item);
+  uVar1 = iVar4.field_0x94;
+  pass1_1038_387e((uVar1 + 0x2e),dlg_item,iVar4.field_0x9c,
+                  iVar4.field_0x94,in_DX);
   return;
 }
 
@@ -843,10 +843,10 @@ unk_win_ui_op_1038_9820
   lVar2 = (long)(UVar3 * param_2) * (long)param_3;
   uVar6 = (lVar2 >> 0x10);
   iVar5 = lVar2;
-  if ((iVar4 - iVar7->field_0x94 < 0x1) && (-0x1 < iVar7->field_0x96 - iVar5)) {
-    piVar1 = &iVar7->field_0x94;
+  if ((iVar4 - iVar7.field_0x94 < 0x1) && (-0x1 < iVar7.field_0x96 - iVar5)) {
+    piVar1 = &iVar7.field_0x94;
     *piVar1 = *piVar1 - iVar4;
-    piVar1 = &iVar7->field_0x96;
+    piVar1 = &iVar7.field_0x96;
     *piVar1 = *piVar1 - iVar5;
     return CONCAT22(uVar6,0x1);
   }
@@ -951,7 +951,7 @@ fn unk_win_ui_op_1038_9bc8(astruct_1 *param_1)
   GetWindowRect16(s_tile2_bmp_1050_1538,&local_16);
   uVar12 = 0x0;
   hdc = GetDC16(s_tile2_bmp_1050_1538);
-  IVar4 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0xa);
+  IVar4 = GetDeviceCaps16(s_tile2_bmp_1050_1538,0xa);
   ReleaseDC16(s_tile2_bmp_1050_1538,hdc);
   if (IVar4 < iStack16) {
     iStack14 = (local_16.y - (iStack16 - IVar4)) + 0x1;
@@ -971,7 +971,7 @@ fn unk_win_ui_op_1038_9bc8(astruct_1 *param_1)
     *piVar1 = *piVar1 + 0x1;
     HVar6 = s_tile2_bmp_1050_1538;
   }
-  ppcVar2 = (param_1->field_0x0 + 0x6c);
+  ppcVar2 = (param_1.field_0x0 + 0x6c);
   (**ppcVar2)(HVar6,iVar8,uVar9,uVar11);
   return;
 }
@@ -1418,7 +1418,7 @@ fn unk_win_ui_op_1038_ac38(INT16 param_1,param_2: u16)
   color = (COLORREF)_PTR_LOOP_1050_5b78;
 //LAB_1038_ad0e:
   SetTextColor16(hdc,color);
-  SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
   return;
 }
 
@@ -1477,7 +1477,7 @@ fn show_win_1038_b68a(param_1: u32,HWND16 param_2)
 fn bring_win_to_top_1038_b72e(param_1: u32,param_2: i16,HWND16 in_win_handle_3) -> bool
 
 {
-  if (*(long *)(param_2 * 0x4 + param_1) != 0x0) {
+  if ((param_2 * 0x4 + param_1) != 0x0) {
     SetFocus16(in_win_handle_3);
     BringWindowToTop16(s_tile2_bmp_1050_1538);
     return 0x1;
@@ -2278,7 +2278,7 @@ fn check_dlg_btn_checked_1038_cdd6(param_1: u32,param_2: i16,HWND16 param_3)
   iVar3 = (astruct_61 *)param_1;
   uVar3 = (param_1 >> 0x10);
   if (param_2 == 0x0) {
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0xa) = 0x0;
   }
   else {
@@ -2294,36 +2294,36 @@ fn check_dlg_btn_checked_1038_cdd6(param_1: u32,param_2: i16,HWND16 param_3)
             if (UVar2 == 0x0) {
               UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,0x182d);
               if (UVar2 != 0x0) {
-                uVar1 = iVar3->field_0x8e;
+                uVar1 = iVar3.field_0x8e;
                 (uVar1 + 0xa) = 0x7;
               }
             }
             else {
-              uVar1 = iVar3->field_0x8e;
+              uVar1 = iVar3.field_0x8e;
               (uVar1 + 0xa) = 0x6;
             }
           }
           else {
-            uVar1 = iVar3->field_0x8e;
+            uVar1 = iVar3.field_0x8e;
             (uVar1 + 0xa) = 0x4;
           }
         }
         else {
-          uVar1 = iVar3->field_0x8e;
+          uVar1 = iVar3.field_0x8e;
           (uVar1 + 0xa) = 0x3;
         }
       }
       else {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xa) = 0x2;
       }
     }
     else {
-      uVar1 = iVar3->field_0x8e;
+      uVar1 = iVar3.field_0x8e;
       (uVar1 + 0xa) = 0x1;
     }
   }
-  iVar3->field_0x92 = 0x0;
+  iVar3.field_0x92 = 0x0;
   return;
 }
 
@@ -2574,17 +2574,17 @@ fn post_win_msg_1038_d840(astruct_70 *param_1,param_2: u16,HWND16 param_3)
   iVar1 = (astruct_70 *)param_1;
   uVar1 = (astruct_70 *)(param_1 >> 0x10);
   if (param_2 == 0x10) {
-    if (iVar1->field_0x8e != 0x0) {
-      PostMessage16(param_3,0x0,0x0,CONCAT22(0x111,iVar1->field_0x8e));
-      iVar1->field_0x8e = 0x0;
+    if (iVar1.field_0x8e != 0x0) {
+      PostMessage16(param_3,0x0,0x0,CONCAT22(0x111,iVar1.field_0x8e));
+      iVar1.field_0x8e = 0x0;
       return;
     }
   }
   else {
     if (param_2 < 0x11) {
       if (param_2 == '\x01') {
-        iVar1->field_0x90 = 0x0;
-        iVar1->field_0x92 = 0x0;
+        iVar1.field_0x90 = 0x0;
+        iVar1.field_0x92 = 0x0;
         return;
       }
       if (param_2 == '\x03') {
@@ -2687,7 +2687,7 @@ fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
     uVar9 = (uVar2 >> 0x10);
     iVar7 = uVar2;
     iVar8 = (param_1 + -0x8) * 0x4;
-    if (*(long *)(iVar7 + iVar8) != 0x0) {
+    if ((iVar7 + iVar8) != 0x0) {
       uVar2 = (iVar7 + iVar8);
       (uVar2 + 0x3e) = 0x1;
       uVar2 = (param_1 + -0x1c);
@@ -3063,7 +3063,7 @@ fn win_ui_op_1038_e348(astruct_1 *param_1)
     uVar1 = (iVar5 + 0x8e);
     uVar8 = (uVar1 >> 0x10);
     iVar6 = uVar1;
-    if (*(long *)(iVar6 + iStack10 * 0x4) != 0x0) {
+    if ((iVar6 + iStack10 * 0x4) != 0x0) {
       enable_win_1040_9234
                 ((iVar6 + iStack10 * 0x4),*(bool *)(puStack26 + 0x6),
                  &ctx.PTR_LOOP_1050_1040);
@@ -3115,13 +3115,13 @@ fn chk_is_dlg_btn_checked_1038_e7a0(param_1: u32,param_2: i16)
   iVar3 = (astruct_62 *)param_1;
   uVar3 = (param_1 >> 0x10);
   if (param_2 == 0x0) {
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0x10) = 0x1;
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0xa) = 0x0;
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0xc) = 0x0;
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0xe) = 0x0;
   }
   else {
@@ -3129,16 +3129,16 @@ fn chk_is_dlg_btn_checked_1038_e7a0(param_1: u32,param_2: i16)
     if (UVar2 == 0x0) {
       UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,0x1828);
       if (UVar2 == 0x0) {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xa) = 0x0;
       }
       else {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xa) = 0x2;
       }
     }
     else {
-      uVar1 = iVar3->field_0x8e;
+      uVar1 = iVar3.field_0x8e;
       (uVar1 + 0xa) = 0x1;
     }
     UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,s_vrpal_bmp_1050_183a
@@ -3147,16 +3147,16 @@ fn chk_is_dlg_btn_checked_1038_e7a0(param_1: u32,param_2: i16)
       UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,
                                  (s_vrpal_bmp_1050_183a + 0x1));
       if (UVar2 == 0x0) {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xc) = 0x0;
       }
       else {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xc) = 0x2;
       }
     }
     else {
-      uVar1 = iVar3->field_0x8e;
+      uVar1 = iVar3.field_0x8e;
       (uVar1 + 0xc) = 0x1;
     }
     UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,
@@ -3165,22 +3165,22 @@ fn chk_is_dlg_btn_checked_1038_e7a0(param_1: u32,param_2: i16)
       UVar2 = IsDlgButtonChecked(s_tile2_bmp_1050_1538,
                                  (s_vrpal_bmp_1050_183a + 0x3));
       if (UVar2 == 0x0) {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xe) = 0x0;
       }
       else {
-        uVar1 = iVar3->field_0x8e;
+        uVar1 = iVar3.field_0x8e;
         (uVar1 + 0xe) = 0x2;
       }
     }
     else {
-      uVar1 = iVar3->field_0x8e;
+      uVar1 = iVar3.field_0x8e;
       (uVar1 + 0xe) = 0x1;
     }
-    uVar1 = iVar3->field_0x8e;
+    uVar1 = iVar3.field_0x8e;
     (uVar1 + 0x10) = 0x0;
   }
-  iVar3->field_0x92 = 0x0;
+  iVar3.field_0x92 = 0x0;
   return;
 }
 
@@ -3310,7 +3310,7 @@ fn win_ui_op_1038_ec1a(param_1: u16,param_2: i16)
     uVar9 = (uVar2 >> 0x10);
     iVar7 = uVar2;
     iVar8 = (param_2 + -0x8) * 0x4;
-    if (*(long *)(iVar7 + iVar8) != 0x0) {
+    if ((iVar7 + iVar8) != 0x0) {
       uVar2 = (param_2 + -0x18);
       enable_win_1040_9234
                 ((iVar7 + iVar8),*(bool *)(uVar2 + 0x6),

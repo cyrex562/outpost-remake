@@ -97,7 +97,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     iVar20 = param_5 * 0x4;
     (__return_storage_ptr__ + iVar20 + 0x26) = iVar15;
     *(uchar **)(__return_storage_ptr__ + iVar20 + 0x28) = puVar17;
-    HVar29 = (HGDIOBJ16)ctx.data_seg;
+    HVar29 = ctx.data_seg;
     uVar25 = pass1_1008_4772(*(astruct_76 **)(__return_storage_ptr__ + iVar20 + 0x26)
                             );
     puVar17 = (uVar25 >> 0x10);
@@ -107,8 +107,8 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
                    (*(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe),&stack0xffec,
                     puVar17,0x1008);
     handle = SelectObject16(0x1008,CONCAT11(uVar30,bVar23));
-    hdc = (HDC16)s_tile2_bmp_1050_1538;
-    HVar29 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,HVar29);
+    hdc = s_tile2_bmp_1050_1538;
+    HVar29 = SelectObject16(s_tile2_bmp_1050_1538,HVar29);
     for (iVar15 = 0x0; piVar1 = (__return_storage_ptr__ + 0x74),
         *piVar1 != iVar15 && iVar15 <= *piVar1; iVar15 += 0x1) {
       iVar20 = (iVar15 * 0x10 + param_5) * 0x8;
@@ -126,18 +126,18 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
         uVar22 = (uVar4 >> 0x10);
         iVar19 = uVar4;
         iVar21 = iVar20 + iVar19;
-        hdc = (HDC16)s_tile2_bmp_1050_1538;
+        hdc = s_tile2_bmp_1050_1538;
         b_force_background = (HPALETTE16)&ctx.PTR_LOOP_1050_4908;
         Rectangle16(0x1000,*(INT16 *)(iVar21 + 0x6),*(INT16 *)(iVar21 + 0x4),
                     *(INT16 *)(iVar21 + 0x2),*(INT16 *)(iVar19 + iVar20));
       }
     }
     SelectPalette16(hdc,0x0,b_force_background);
-    DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
-    SelectObject16((HDC16)s_tile2_bmp_1050_1538,HVar29);
-    DeleteDC16((HDC16)s_tile2_bmp_1050_1538);
-    DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+    DeleteObject16(s_tile2_bmp_1050_1538);
+    SelectObject16(s_tile2_bmp_1050_1538,handle);
+    SelectObject16(s_tile2_bmp_1050_1538,HVar29);
+    DeleteDC16(s_tile2_bmp_1050_1538);
+    DeleteObject16(s_tile2_bmp_1050_1538);
     return (u16_t)puVar17;
   case 0x8:
     bVar23 = 0x3;
@@ -471,8 +471,8 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
                  (*(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe),&local_14,
                   output,0x1008);
   handle = SelectObject16(0x1008,pen_handle);
-  hdc = (HDC16)s_tile2_bmp_1050_1538;
-  handle_00 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,stock_obj_handle);
+  hdc = s_tile2_bmp_1050_1538;
+  handle_00 = SelectObject16(s_tile2_bmp_1050_1538,stock_obj_handle);
   iStack32 = 0x0;
   while( true ) {
     piVar1 = (param_1 + 0x74);
@@ -487,18 +487,18 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
       uVar8 = (uVar10 >> 0x10);
       iVar7 = uVar10;
       iVar9 = (astruct_4 *)(iVar4 + iVar7);
-      hdc = (HDC16)s_tile2_bmp_1050_1538;
-      Rectangle16(0x1000,iVar9->field_0x6,iVar9->field_0x4,iVar9->field_0x2,
+      hdc = s_tile2_bmp_1050_1538;
+      Rectangle16(0x1000,iVar9.field_0x6,iVar9.field_0x4,iVar9.field_0x2,
                   *(INT16 *)(iVar7 + iVar4));
     }
     iStack32 += 0x1;
   }
   SelectPalette16(hdc,0x0,b_force_background);
-  DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-  SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
-  SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle_00);
-  DeleteDC16((HDC16)s_tile2_bmp_1050_1538);
-  DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectObject16(s_tile2_bmp_1050_1538,handle);
+  SelectObject16(s_tile2_bmp_1050_1538,handle_00);
+  DeleteDC16(s_tile2_bmp_1050_1538);
+  DeleteObject16(s_tile2_bmp_1050_1538);
   return;
 }
 

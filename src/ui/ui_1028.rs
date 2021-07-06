@@ -12,7 +12,7 @@ fn post_msg_1028_76da(void)
   
   puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
   uVar2 = (puVar3 >> 0x10);
-  lVar1 = *(long *)(puVar3 + 0xc);
+  lVar1 = (puVar3 + 0xc);
   uStack8 = (lVar1 >> 0x10);
   uStack10 = lVar1;
   if (((uStack8 | uStack10) != 0x0) && (*_PTR_LOOP_1050_65e2 == lVar1)) {

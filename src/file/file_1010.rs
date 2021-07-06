@@ -42,9 +42,9 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         }
         else {
           puStack26 = 0x389a;
-          uVar4->field_0x2 = 0x1008;
+          uVar4.field_0x2 = 0x1008;
           puStack26 = 0xea8;
-          uVar4->field_0x2 = 0x1010;
+          uVar4.field_0x2 = 0x1010;
           puStack22 = puStack26;
         }
         BVar3 = read_file_1008_7dee(uVar7,uVar8,local_12,0x0,param_5,0x2,0x1008);
@@ -61,15 +61,15 @@ fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         }
         uVar6 = (puStack22 >> 0x10);
         (puStack22 + 0x4) = local_12[0];
-        puVar1 = iVar6->field_0xa;
-        ppcVar2 = (*iVar6->field_0xa + 0x8);
+        puVar1 = iVar6.field_0xa;
+        ppcVar2 = (*iVar6.field_0xa + 0x8);
         (**ppcVar2)(0x8,puVar1,(puVar1 >> 0x10),puStack22,uVar6);
-        paStack8 = (astruct_229 *)&paStack8->field_0x1;
+        paStack8 = (astruct_229 *)&paStack8.field_0x1;
         param_4 = extraout_DX;
       }
-      BVar3 = read_file_1008_7dee(uVar7,uVar8,&iVar6->field_0xe,0x0,uVar5,0x2,0x1008);
+      BVar3 = read_file_1008_7dee(uVar7,uVar8,&iVar6.field_0xe,0x0,uVar5,0x2,0x1008);
       if ((BVar3 != 0x0) &&
-         (BVar3 = read_file_1008_7dee(uVar7,uVar8,&iVar6->field_0x10,0x0,uVar5,0x2,0x1008)
+         (BVar3 = read_file_1008_7dee(uVar7,uVar8,&iVar6.field_0x10,0x0,uVar5,0x2,0x1008)
          , BVar3 != 0x0)) {
         for (uStack4 = 0x0; uStack4 < 0xa; uStack4 += 0x1) {
           BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,0x1008)
@@ -116,33 +116,33 @@ fn write_to_file_1010_6372(param_1: u32,param_2: u32,param_3: u16)
   if (BVar1 != 0x0) {
     uVar2 = (param_1 >> 0x10);
     iVar2 = (astruct_729 *)param_1;
-    local_10[0] = iVar2->field_0xa;
+    local_10[0] = iVar2.field_0xa;
     uVar3 = param_2;
     uVar4 = (param_2 >> 0x10);
     BVar1 = write_to_file_1008_7e1c
                       (uVar3,uVar4,local_10,param_3,0x4,0x1008);
     if (BVar1 != 0x0) {
-      local_8 = iVar2->field_0xe;
+      local_8 = iVar2.field_0xe;
       BVar1 = write_to_file_1008_7e1c
                         (uVar3,uVar4,&local_8,param_3,0x4,0x1008);
       if (BVar1 != 0x0) {
-        local_8 = iVar2->field_0x12;
+        local_8 = iVar2.field_0x12;
         BVar1 = write_to_file_1008_7e1c
                           (uVar3,uVar4,&local_8,param_3,0x4,0x1008);
         if (BVar1 != 0x0) {
-          local_8 = iVar2->field_0x16;
+          local_8 = iVar2.field_0x16;
           BVar1 = write_to_file_1008_7e1c
                             (uVar3,uVar4,&local_8,param_3,0x4,0x1008);
           if (BVar1 != 0x0) {
-            local_8 = iVar2->field_0x1a;
+            local_8 = iVar2.field_0x1a;
             BVar1 = write_to_file_1008_7e1c
                               (uVar3,uVar4,&local_8,param_3,0x4,0x1008);
             if (BVar1 != 0x0) {
-              local_8 = iVar2->field_0x1e;
+              local_8 = iVar2.field_0x1e;
               BVar1 = write_to_file_1008_7e1c
                                 (uVar3,uVar4,&local_8,param_3,0x4,0x1008);
               if (BVar1 != 0x0) {
-                local_8 = iVar2->field_0x22;
+                local_8 = iVar2.field_0x22;
                 BVar1 = write_to_file_1008_7e1c
                                   (uVar3,uVar4,&local_8,param_3,0x4,0x1008
                                   );
@@ -218,11 +218,11 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
   iVar3 = (astruct_45 *)(param_2 * 0x10);
   uVar5 = param_1;
   uVar6 = (param_1 >> 0x10);
-  if (iVar3->field_0x10 == 0x1) {
+  if (iVar3.field_0x10 == 0x1) {
     uStack10 = set_err_mode_1010_8b14
-                                 (param_1,*(ULONG *)&iVar3->field_0x12,param_3);
+                                 (param_1,*(ULONG *)&iVar3.field_0x12,param_3);
     uStack10._2_2_ = (uStack10 >> 0x10);
-    if ((iVar3->field_0x12 == uStack10) && (iVar3->field_0x14 == uStack10._2_2_)) {
+    if ((iVar3.field_0x12 == uStack10) && (iVar3.field_0x14 == uStack10._2_2_)) {
       msg_box_op_1010_8bb4(uVar5,uVar6,uStack10,unaff_CS,param_3);
       return (astruct_43 *)0x0;
     }
@@ -252,7 +252,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
       }
       iVar2 = (astruct_44 *)(param_2 * 0x10);
       pass1_1008_6562(*(u32 **)(uVar5 + 0x67c),
-                      CONCAT22(iVar2->field_0x1c,iVar2->field_0x1e),iVar2->field_0x1a,
+                      CONCAT22(iVar2.field_0x1c,iVar2.field_0x1e),iVar2.field_0x1a,
                       in_AX,in_DX);
       local_2e = (astruct_43 *)CONCAT22(in_DX,in_AX);
     }

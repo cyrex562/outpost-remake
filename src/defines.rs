@@ -32,3 +32,15 @@ pub struct Struct27 {
 pub struct Struct65 {
     
 }
+
+pub struct Struct11 {
+
+}
+
+pub struct Struct28 {
+
+}
+
+pub struct Struct29 {
+    
+}

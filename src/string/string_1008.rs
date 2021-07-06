@@ -88,7 +88,7 @@ fn load_str_and_sprintf_1008_b69c(astruct_25 *param_1,param_2: *mut u16,uchar *p
             );
   uVar5 = (param_1 >> 0x10);
   iVar5 = (astruct_25 *)param_1;
-  if (iVar5->field_0xa == 0x0) {
+  if (iVar5.field_0xa == 0x0) {
     mem_op_1000_179c(0xc,param_3,0x1000);
     if ((param_3 | in_buffer_4) == 0x0) {
       paVar6 = (astruct_26 *)0x0;
@@ -97,8 +97,8 @@ fn load_str_and_sprintf_1008_b69c(astruct_25 *param_1,param_2: *mut u16,uchar *p
       paVar6 = (astruct_26 *)
                set_struct_1008_574a((astruct_21 *)CONCAT22(param_3,in_buffer_4));
     }
-    &iVar5->field_0xa = paVar6;
-    (&iVar5->field_0xa + 0x2) = (paVar6 >> 0x10);
+    &iVar5.field_0xa = paVar6;
+    (&iVar5.field_0xa + 0x2) = (paVar6 >> 0x10);
     for (iStack516 = 0x1; iStack516 < 0x6; iStack516 += 0x1) {
       mem_op_1000_179c(0x12,(paVar6 >> 0x10),0x1000);
       if (paVar6 == (astruct_26 *)0x0) {
@@ -113,10 +113,10 @@ fn load_str_and_sprintf_1008_b69c(astruct_25 *param_1,param_2: *mut u16,uchar *p
       uVar2 = str_op_1008_60e8(CONCAT22(param_2,local_102),uVar4);
       (uVar7 + 0x4) = uVar2;
       (uVar7 + 0x6) = uVar4;
-      ppcVar1 = (*iVar5->field_0xa + 0x8);
+      ppcVar1 = (*iVar5.field_0xa + 0x8);
       paVar6 = (astruct_26 *)(**ppcVar1)();
     }
-    iVar5->field_0x22 = 0x5;
+    iVar5.field_0x22 = 0x5;
   }
   return;
 }
@@ -236,7 +236,7 @@ fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
     uVar12 = (uVar19 >> 0x10);
     uVar15 = uVar19;
     puVar13 = (uVar12 | uVar15);
-    if (((puVar13 != 0x0) && (*(long *)(uVar15 + 0x1c) != 0x8000002)) &&
+    if (((puVar13 != 0x0) && ((uVar15 + 0x1c) != 0x8000002)) &&
        ((iVar1 = (uVar15 + 0x12), iVar1 == 0x5 || (iVar1 == 0x6)))) {
       puVar13 = ((uVar15 + 0x6) & 0xff);
       pass1_1020_bd80((uVar15 + 0xc));
@@ -330,7 +330,7 @@ fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
   
   uVar22 = (param_2 >> 0x10);
   iVar20 = param_2;
-  lVar1 = *(long *)(iVar20 + 0x200);
+  lVar1 = (iVar20 + 0x200);
   valist = (param_1 >> 0x10);
   iVar21 = param_1;
   puVar6 = (iVar21 + 0xe);
@@ -361,11 +361,11 @@ fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
     uVar23 = pass1_1030_1d7c((puVar11 & 0xffff),extraout_DX_01,puVar2);
     uVar19 = (uVar23 >> 0x10);
     uVar10 = uVar23;
-    if ((((uVar19 | uVar10) != 0x0) && (*(long *)(uVar10 + 0x1c) != 0x8000002)) &&
+    if ((((uVar19 | uVar10) != 0x0) && ((uVar10 + 0x1c) != 0x8000002)) &&
        ((iVar20 = (uVar10 + 0x12), iVar20 == 0x5 || (iVar20 == 0x6)))) {
       uVar9 = (uVar10 + 0xc);
       BVar7 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0,uVar9,0x34);
-      if ((BVar7 == 0x0) && (*(long *)(uVar10 + 0x1c) != lVar1)) {
+      if ((BVar7 == 0x0) && ((uVar10 + 0x1c) != lVar1)) {
         pass1_1020_bd80(uVar9);
         pWVar16 = valist;
         wsprintf16((LPSTR)0x1020,(LPCSTR)(iVar21 + 0x22),valist);

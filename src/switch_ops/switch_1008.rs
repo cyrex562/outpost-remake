@@ -60,7 +60,7 @@ fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
     (iVar8 + 0xe4) = puVar4;
     (iVar8 + 0xe6) = uVar7;
   }
-  if (*(long *)(iVar8 + 0xce) != 0x0) {
+  if ((iVar8 + 0xce) != 0x0) {
     ppcVar3 = ((iVar8 + 0xce) + 0x10);
     (**ppcVar3)();
   }
@@ -2150,7 +2150,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
   piVar1 = (param_1 + 0xf2);
   *piVar1 = *piVar1 + 0x1;
   iVar5 = param_1;
-  if (*(long *)(param_1 + 0xee) != 0x0) {
+  if ((param_1 + 0xee) != 0x0) {
     uVar6 = (param_1 + 0xee);
     iVar5 = (param_1 + 0xee);
     ppcVar2 = (iVar5 + 0x90);
@@ -2165,7 +2165,7 @@ fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_insta
   (param_1 + 0xf0) = uVar4;
   ppcVar2 = ((param_1 + 0xee) + 0x8);
   (**ppcVar2)(s_tile2_bmp_1050_1538,(param_1 + 0xee),uVar4);
-  if (*(long *)(param_1 + 0xe8) != 0x0) {
+  if ((param_1 + 0xe8) != 0x0) {
     uVar6 = (param_1 + 0xe8);
     ppcVar2 = ((param_1 + 0xe8) + 0xc);
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar6,(uVar6 >> 0x10),0x0);

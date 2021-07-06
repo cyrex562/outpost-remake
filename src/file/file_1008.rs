@@ -1021,7 +1021,7 @@ fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
   }
   else {
     iVar3 = (astruct_199 *)param_1;
-    iVar3 = (astruct_199 *)&iVar3->field_0x22;
+    iVar3 = (astruct_199 *)&iVar3.field_0x22;
     uVar2 = (param_1 >> 0x10);
     BVar3 = read_file_1008_7dee(uVar11,uVar12,iVar3,0x0,uVar2,0x2,param_5);
     if ((BVar3 != 0x0) &&
@@ -1040,8 +1040,8 @@ fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
         set_struct_1008_574a((astruct_21 *)CONCAT22(param_4,uVar5));
         puVar8 = extraout_DX;
       }
-      &iVar3->field_0xa = uVar5;
-      *(uchar **)(&iVar3->field_0xa + 0x2) = puVar8;
+      &iVar3.field_0xa = uVar5;
+      *(uchar **)(&iVar3.field_0xa + 0x2) = puVar8;
       paStack286 = (astruct_200 *)0x0;
       while( true ) {
         if (local_10[0] <= paStack286) {
@@ -1070,14 +1070,14 @@ fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5:
            (BVar3 = read_file_1008_7dee(uVar11,uVar12,local_18,0x0,param_6,0x2,
                                         0x1000), BVar3 == 0x0)) break;
         uVar7 = str_op_1008_60e8(CONCAT22(param_6,local_118),uVar10);
-        uVar4->field_0x4 = uVar7;
-        uVar4->field_0x6 = uVar10;
-        uVar4->field_0x8 = local_14[0];
-        uVar4->field_0xa = local_8;
-        uVar4->field_0xe = local_18[0];
-        ppcVar1 = (*iVar3->field_0xa + 0x8);
+        uVar4.field_0x4 = uVar7;
+        uVar4.field_0x6 = uVar10;
+        uVar4.field_0x8 = local_14[0];
+        uVar4.field_0xa = local_8;
+        uVar4.field_0xe = local_18[0];
+        ppcVar1 = (*iVar3.field_0xa + 0x8);
         (**ppcVar1)();
-        paStack286 = (astruct_200 *)&paStack286->field_0x1;
+        paStack286 = (astruct_200 *)&paStack286.field_0x1;
         puVar8 = extraout_DX_00;
       }
       if (puStack284 != 0x0) {
