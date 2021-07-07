@@ -350,7 +350,7 @@ mixed_dos3_call_1000_3636
     if ((param_4 & 0x2) == 0x0) {
       if (-0x1 < (iVar7 + param_3 + CARRY2(uVar3,param_2))) {
 //LAB_1000_36e3:
-        uVar3 = CONCAT11(0x42,(u8)param_4);
+        uVar3 = CONCAT11(0x42,param_4);
         uVar8 = 0x0;
         if (true) {
           pcVar2 = swi(0x21);
@@ -1095,7 +1095,7 @@ fn mixed_sys_op_1000_40af
       uVar11 = uVar7;
       HVar8 = GLobalAlloc16(0x1000,CONCAT22(uVar7,uVar6));
       if ((HVar8 != 0x0) && ((uVar17 & 0x1) != 0x0)) {
-        SVar9 = WIN16_GlobalLock16((HGLOBAL16)s_tile2_bmp_1050_1538);
+        SVar9 = WIN16_GlobalLock16(s_tile2_bmp_1050_1538);
         if ((SVar9 != 0x0) || (uVar7 == 0x0)) {
           iVar16 = 0x12;
           iVar10 = 0x12;
@@ -1114,8 +1114,8 @@ fn mixed_sys_op_1000_40af
         }
         HVar8 = pass1_1000_422a(uVar7,HVar8,s_tile2_bmp_1050_1538,unaff_SS);
         if (HVar8 == 0x0) {
-          GlobalUnlock16((HGLOBAL16)s_tile2_bmp_1050_1538);
-          GlobalFree16((HGLOBAL16)s_tile2_bmp_1050_1538);
+          GlobalUnlock16(s_tile2_bmp_1050_1538);
+          GlobalFree16(s_tile2_bmp_1050_1538);
           HVar8 = 0x0;
         }
       }
@@ -1815,11 +1815,11 @@ fn free_rsrc_1010_4b3e(param_1: *mut u16,HGLOBAL16 param_2)
   (iVar8 + 0x2) = 0x1010;
   HVar12 = param_2;
   if ((iVar8 + 0x2a) != 0x0) {
-    HVar12 = (HGLOBAL16)s_tile2_bmp_1050_1538;
+    HVar12 = s_tile2_bmp_1050_1538;
     BVar7 = GlobalUnlock16(param_2);
     if (BVar7 == 0x0) {
-      HVar12 = (HGLOBAL16)s_tile2_bmp_1050_1538;
-      FreeResource16((HGLOBAL16)s_tile2_bmp_1050_1538);
+      HVar12 = s_tile2_bmp_1050_1538;
+      FreeResource16(s_tile2_bmp_1050_1538);
     }
   }
   (iVar8 + 0x2a) = 0x0;
@@ -1868,18 +1868,18 @@ fn find_n_load_rsrc_1010_4e9e(param_1: u32,HGLOBAL16 param_2)
   if ((iVar2 + 0x20) != 0x0) {
     HVar3 = param_2;
     if ((iVar2 + 0x2a) != 0x0) {
-      HVar3 = (HGLOBAL16)s_tile2_bmp_1050_1538;
+      HVar3 = s_tile2_bmp_1050_1538;
       BVar1 = GlobalUnlock16(param_2);
       if (BVar1 == 0x0) {
-        HVar3 = (HGLOBAL16)s_tile2_bmp_1050_1538;
-        FreeResource16((HGLOBAL16)s_tile2_bmp_1050_1538);
+        HVar3 = s_tile2_bmp_1050_1538;
+        FreeResource16(s_tile2_bmp_1050_1538);
       }
     }
     h_rsrc = FindResource16(HVar3,(LPCSTR)&ctx.PTR_LOOP_1050_000a,(LPCSTR)0x0);
     HVar3 = LoadResource16((HMODULE16)s_tile2_bmp_1050_1538,h_rsrc);
     *(HGLOBAL16 *)(iVar2 + 0x2a) = HVar3;
     if (HVar3 != 0x0) {
-      WIN16_LockResource16((HGLOBAL16)s_tile2_bmp_1050_1538);
+      WIN16_LockResource16(s_tile2_bmp_1050_1538);
       return;
     }
   }
@@ -2859,7 +2859,7 @@ call_win_proc_1038_d020
   }
   uVar4 = 0x0;
 //LAB_1038_d10e:
-  return (long)uVar4;
+  return uVar4;
 }
 
 

@@ -2999,9 +2999,9 @@ fn pass1_1010_41d6(param_1: u32,param_2: u32,uchar *param_3,param_4: u16,param_5
                  ((local_2e / iVar6) * 0x3c));
     }
     iVar7 = pass1_1000_49b2(local_2e);
-    iVar6 = ((long)iVar7 % 0x5);
+    iVar6 = (iVar7 % 0x5);
     paStack34 = 
-                (paStack34 & 0xffff0000 | (long)iVar7 % 0x5 & 0xffff);
+                (paStack34 & 0xffff0000 | iVar7 % 0x5 & 0xffff);
     if (local_2e < 0x0) {
       if (0x2 < iVar6) {
         iVar6 += -0x5;
@@ -5684,11 +5684,11 @@ pass1_1010_887a(astruct_87 **param_1,param_2: u32,param_3: i16,param_4: u16,
     uVar2 = (uStack20 + 0x4);
     uVar7 = (uStack16 >> 0x10);
     iVar5 = uStack16;
-    if ((long)uVar2 < (iVar5 + 0x4)) {
+    if (uVar2 < (iVar5 + 0x4)) {
       uVar2 = (iVar5 + 0x4);
     }
     uVar3 = (uStack20 + 0x8);
-    if ((long)uVar3 < (iVar5 + 0x8)) {
+    if (uVar3 < (iVar5 + 0x8)) {
       uVar3 = (iVar5 + 0x8);
     }
     uVar1 = uVar3;

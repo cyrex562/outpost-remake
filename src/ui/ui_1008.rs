@@ -262,7 +262,7 @@ win_ui_op_1008_1414(astruct_72 **param_1,param_2: u32,LPCSTR param_3,param_4: u1
   puStack34 = puVar6;
   puVar5 = pass1_1030_5b00(uStack20);
   uVar13 = SUB21(&local_2a,0x0);
-  uVar14 = (u8)(&local_2a >> 0x8);
+  uVar14 = (&local_2a >> 0x8);
   uVar3 = param_4;
   puVar12 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,puVar5,param_4,puVar6,
                             &iStack36);
@@ -1692,7 +1692,7 @@ unk_win_op_1008_97f2
     uVar5 = 0x1;
     goto LAB_1008_9a95;
   }
-  uVar8 = (u8)(param_1 >> 0x10);
+  uVar8 = (param_1 >> 0x10);
   uVar7 = SUB41(param_1,0x0);
   if (0x2b < param_5) {
     cVar9 = param_5;
@@ -1804,7 +1804,7 @@ unk_win_op_1008_97f2
                 ppcVar1 = (*param_1 + 0x8c);
                 iVar4 = (**ppcVar1)(param_6,param_1);
 //LAB_1008_9ada:
-                return (long)iVar4;
+                return iVar4;
               }
               if (param_5 == 0x311) {
                 ppcVar1 = (*param_1 + 0x88);

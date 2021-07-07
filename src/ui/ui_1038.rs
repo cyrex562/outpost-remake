@@ -840,7 +840,7 @@ unk_win_ui_op_1038_9820
   UVar3 = GetDlgItemInt16(param_4,0x1,&local_4,param_5);
   iVar4 = UVar3 * param_2 * param_3;
   UVar3 = GetDlgItemInt16(s_tile2_bmp_1050_1538,0x1,&local_6,param_5);
-  lVar2 = (long)(UVar3 * param_2) * (long)param_3;
+  lVar2 = (UVar3 * param_2) * param_3;
   uVar6 = (lVar2 >> 0x10);
   iVar5 = lVar2;
   if ((iVar4 - iVar7.field_0x94 < 0x1) && (-0x1 < iVar7.field_0x96 - iVar5)) {
@@ -850,7 +850,7 @@ unk_win_ui_op_1038_9820
     *piVar1 = *piVar1 - iVar5;
     return CONCAT22(uVar6,0x1);
   }
-  return (long)(uVar6 << 0x10);
+  return (uVar6 << 0x10);
 }
 
 
@@ -941,8 +941,8 @@ fn unk_win_ui_op_1038_9bc8(astruct_1 *param_1)
   pass1_1008_3e94((uStack10 & 0xffff0000 | (uStack10 + 0xe)),
                   puVar10,puVar13);
   IVar4 = GetSystemMetrics16(0x1008);
-  puVar7 = (((long)IVar4 * (long)PTR_LOOP_1050_5ef8) >> 0x10);
-  iStack12 = ((long)IVar4 * (long)PTR_LOOP_1050_5ef8) + 0xa;
+  puVar7 = ((IVar4 * PTR_LOOP_1050_5ef8) >> 0x10);
+  iStack12 = (IVar4 * PTR_LOOP_1050_5ef8) + 0xa;
   ctx.PTR_LOOP_1050_5ef8 = ctx.PTR_LOOP_1050_5ef8 + 0x1;
   iStack14 = iStack12 + local_6;
   iStack12 += local_4;
@@ -1737,7 +1737,7 @@ fn win_ui_cursor_op_1038_bc30(param_1: u32,HINSTANCE16 param_2,param_3: u16)
   HStack6 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
   uVar1 = (param_1 + 0x8e);
   pass1_1030_532e((astruct_100 *)CONCAT22(param_3,&local_112),
-                  (long)(uVar1 + 0xe) + 0x1000000,param_3,in_AF);
+                  (uVar1 + 0xe) + 0x1000000,param_3,in_AF);
   fn_ptr_1030_835a(_PTR_LOOP_1050_5748,CONCAT22(param_3,&local_112));
   pass1_1030_838e(_PTR_LOOP_1050_5748,param_3,in_AF);
   local_112 = 0x389a;
@@ -3612,7 +3612,7 @@ win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
     local_18 = LoadCursor16(0x1010,(LPCSTR)0x7f02);
     local_16 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
     pass1_1030_532e((astruct_100 *)CONCAT22(param_6,local_12a),
-                    (long)uStack26 + 0x2000000,param_6,in_AF);
+                    uStack26 + 0x2000000,param_6,in_AF);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748,CONCAT22(param_6,local_12a));
     pass1_1030_838e(_PTR_LOOP_1050_5748,param_6,in_AF);
     pass1_1030_8334(_PTR_LOOP_1050_5748,(_PTR_LOOP_1050_5748 >> 0x10));

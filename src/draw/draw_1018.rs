@@ -92,13 +92,13 @@ create_dc_1018_4e04(astruct_8 **param_1,param_2: u16,param_3: i16,param_4: i16,
   if ((DAT_1050_422e != 0x0) && (0x280 < param_4)) {
     for (iStack16 = 0x0; iStack16 < DAT_1050_4216 + 0x1; iStack16 += 0x1) {
       (&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) =
-           (((long)(&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) *
-                 ((long)param_4 + 0x1)) / 0x280);
+           (((&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) *
+                 (param_4 + 0x1)) / 0x280);
     }
     for (iStack16 = 0x0; iStack16 < DAT_1050_422c + 0x1; iStack16 += 0x1) {
       (&DAT_1050_419a + iStack16 * 0x2) =
-           (((long)(&DAT_1050_419a + iStack16 * 0x2) *
-                 ((long)param_3 + 0x1)) / 0x1e0);
+           (((&DAT_1050_419a + iStack16 * 0x2) *
+                 (param_3 + 0x1)) / 0x1e0);
     }
   }
   DAT_1050_422e = 0x0;
@@ -249,8 +249,8 @@ fn unk_draw_op_1018_623e(param_1: u32,HWND16 param_2,param_3: u16)
     iVar11 = (puVar13 + -0x38);
     uVar3 = (puVar13 + -0x30);
     uVar14 = uVar3;
-    uVar20 = (u8)(uVar3 >> 0x10);
-    uVar21 = (u8)(uVar3 >> 0x18);
+    uVar20 = (uVar3 >> 0x10);
+    uVar21 = (uVar3 >> 0x18);
     uVar3 = (puVar13 + -0x44);
     uVar15 = (uVar3 >> 0x10);
     iVar12 = uVar3;

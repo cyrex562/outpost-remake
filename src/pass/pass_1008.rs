@@ -894,7 +894,7 @@ pub fn pass1_1008_405c(astruct_76 *param_1,param_2: u32,param_3: i16,param_4: i1
   iVar3 = param_4 * 0x8 + 0x1f;
   iVar3 = ((iVar3 + (iVar3 >> 0xf & 0x1f)) >> 0x5) << 0x2;
   uStack10 = SEXT24(param_3);
-  lVar4 = (long)iVar3 * (long)param_3 + 0x436;
+  lVar4 = iVar3 * param_3 + 0x436;
   lVar4 = mem_op_1000_0a48(0x1,lVar4,(lVar4 >> 0x10),_PTR_LOOP_1050_5f2c
                            ,0x1000);
   iVar4.field_0x6 = lVar4;
@@ -904,7 +904,7 @@ pub fn pass1_1008_405c(astruct_76 *param_1,param_2: u32,param_3: i16,param_4: i1
   iVar4.field_0x1a = iVar3 >> 0xf;
   (&iVar4.field_0xe + 0x2) = 0x28;
   uVar1 = (&iVar4.field_0xe + 0x2);
-  (uVar1 + 0x4) = (long)param_4;
+  (uVar1 + 0x4) = param_4;
   uVar1 = (&iVar4.field_0xe + 0x2);
   (uVar1 + 0x8) = uStack10;
   uVar1 = (&iVar4.field_0xe + 0x2);
@@ -916,7 +916,7 @@ pub fn pass1_1008_405c(astruct_76 *param_1,param_2: u32,param_3: i16,param_4: i1
   sVar2 = (qword)&iVar4.field_0x18 * (qword)uStack10;
   puVar5 = ((qword)sVar2 >> 0x20);
   uVar1 = (&iVar4.field_0xe + 0x2);
-  (uVar1 + 0x14) = (long)sVar2;
+  (uVar1 + 0x14) = sVar2;
   uVar1 = (&iVar4.field_0xe + 0x2);
   (uVar1 + 0x20) = 0x100;
   uVar1 = (&iVar4.field_0xe + 0x2);
@@ -989,7 +989,7 @@ pub fn pass1_1008_431c(param_1: u32,param_2: u8)
     while( true ) {
       uVar2 = (iVar5 + 0x10);
       puVar1 = (uVar2 + 0x8);
-      if (*puVar1 == uStack6 || (long)*puVar1 < (long)uStack6) break;
+      if (*puVar1 == uStack6 || *puVar1 < uStack6) break;
       uVar4 = uStack6;
       pass1_1008_4544(param_1);
       uVar2 = (iVar5 + 0x10);
@@ -1196,7 +1196,7 @@ pub fn pass1_1008_47cc(astruct_76 *param_1)
     iVar6 = uVar2;
     uStack14 = (iVar6 + 0xe);
     (iVar5 + 0x18) =
-         (long)(uStack14 * (iVar6 + 0x4) + 0x1f) / 0x20 << 0x2;
+         (uStack14 * (iVar6 + 0x4) + 0x1f) / 0x20 << 0x2;
   }
   return;
 }
@@ -2163,7 +2163,7 @@ pub fn pass1_1008_612e(param_1: i16,param_2: i16,param_3: u16)
     if (param_2 < iStack18) {
       return;
     }
-    lVar3 = (long)iStack16 * (long)(0x7fff / (sqword)(long)uVar2);
+    lVar3 = iStack16 * (0x7fff / (sqword)uVar2);
     iVar4 = (lVar3 >> 0x10);
     if (uVar1 >> 0xf <= iVar4) {
       if (uVar1 >> 0xf < iVar4) {
@@ -2786,7 +2786,7 @@ pub fn pass1_1008_7c2a(param_1: u32,char *param_2,param_3: HFILE16) -> bool
     uVar1 = str_op_1000_3da4(param_2);
     BVar2 = write_to_file_1008_7e1c
                       (param_1,uVar3,param_2,
-                       (param_2 >> 0x10),(long)(uVar1 + 0x1),
+                       (param_2 >> 0x10),(uVar1 + 0x1),
                        0x1000);
     return BVar2;
   }
@@ -2995,7 +2995,7 @@ pass1_1008_87cc(astruct_86 *param_1,param_2: i16,param_3: i16,param_4: u16,param
   iStack12 = (iVar6 + 0xe);
   iStack14 = (iVar6 + 0x10);
   iVar6 = iVar5.field_0xc;
-  lVar1 = (long)(iVar6 + iVar5.field_0xe) * (long)iStack14;
+  lVar1 = (iVar6 + iVar5.field_0xe) * iStack14;
   puVar5 = (lVar1 >> 0x10);
   pass1_1008_3e76((param_1 & 0xffff0000 | ZEXT24(&iVar5.field_0x1c)),0x0
                   ,lVar1 + iVar5.field_0x12 + iStack10,

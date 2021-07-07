@@ -41,78 +41,99 @@ pub type HPALETTE16 = HANDLE16;
 // typedef LONG_PTR LRESULT;
 pub type LRESULT = LONG_PTR;
 
+pub type HCURSOR16 = HANDLE16;
+
+// typedef uint32_t SEGPTR;
+pub type SEGPTR = u32;
+
 pub struct FLOATING_SAVE_AREA {
     // DWORD ControlWord;
-    control_word: u32,
+    pub control_word: u32,
     // DWORD StatusWord;
-    status_word: u32,
+    pub status_word: u32,
     // DWORD TagWord;
-    tag_word: u32,
+    pub tag_word: u32,
     // DWORD ErrorOffset;
-    error_offset: u32,
+    pub error_offset: u32,
     // DWORD ErrorSelector;
-    error_selector: u32,
+    pub error_selector: u32,
     // DWORD DataOffset;
-    data_offset: u32,
+    pub data_offset: u32,
     // DWORD DataSelector;
-    data_selector: u32,
+    pub data_selector: u32,
     // BYTE RegisterArea[80];
-    register_area: [u8;80],
+    pub register_area: [u8; 80],
     // DWORD Cr0NpxState;
-    cr0_npx_state: u32
+    pub cr0_npx_state: u32,
+}
+
+impl FLOATING_SAVE_AREA {
+    pub fn new() -> FLOATING_SAVE_AREA {
+        FLOATING_SAVE_AREA {
+            control_word: 0,
+            status_word: 0,
+            tag_word: 0,
+            error_offset: (),
+            error_selector: 0,
+            data_offset: 0,
+            data_selector: 0,
+            register_area: [0; 80],
+            cr0_npx_state: 0,
+        }
+    }
 }
 
 pub struct CONTEXT {
     // DWORD ContextFlags;
-    context_flags: u32,
+    pub context_flags: u32,
     // DWORD Dr0;
-    dr0: u32,
+    pub dr0: u32,
     // DWORD Dr1;
-    dr1: u32,
+    pub dr1: u32,
     // DWORD Dr2;
-    dr2: u32,
+    pub dr2: u32,
     // DWORD Dr3;
-    dr3: u32,
+    pub dr3: u32,
     // DWORD Dr6;
-    dr6: u32,
+    pub dr6: u32,
     // DWORD Dr7;
-    dr7: u32,
+    pub dr7: u32,
     // FLOATING_SAVE_AREA FloatSave;
-    float_save: FLOATING_SAVE_AREA,
+    pub float_save: FLOATING_SAVE_AREA::new(),
     // DWORD SegGs;
-    seg_gs: u32,
+    pub seg_gs: u32,
     // DWORD SegFs;
-    seg_fs: u32,
+    pub seg_fs: u32,
     // DWORD SegEs;
-    seg_es: u32,
+    pub seg_es: u32,
     // DWORD SegDs;
-    seg_ds: u32
+    pub seg_ds: u32,
     // DWORD Edi;,
-    edi: u32,
+    pub edi: u32,
     // DWORD Esi;
-    esi: u32,
+    pub esi: u32,
     // DWORD Ebx;
-    ebx: u32,
+    pub ebx: u32,
     // DWORD Edx;
-    edx: u32,
+    pub edx: u32,
     // DWORD Ecx;
-    ecx: u32,
+    pub ecx: u32,
     // DWORD Eax;
-    eax: u32,
+    pub eax: u32,
     // DWORD Ebp;
-    ebp: u32,
+    pub ebp: u32,
     // DWORD Eip;
-    eip: u32,
+    pub eip: u32,
     // DWORD SegCs;
-    seg_cs: u32,
+    pub seg_cs: u32,
     // DWORD EFlags;
-    e_flags: u32,
+    pub e_flags: u32,
     // DWORD Esp;
-    esp: u32,
+    pub esp: u32,
     // DWORD SegSs;
-    seg_ss: u32,
+    pub seg_ss: u32,
     // BYTE ExtendedRegisters[512];
-    extended_registers: [u8;512]
+    pub extended_registers: [u8; 512],
 }
 
 impl CONTEXT {
@@ -125,7 +146,7 @@ impl CONTEXT {
             dr3: 0,
             dr6: 0,
             dr7: 0,
-            float_save: FLOATING_SAVE_AREA {},
+            float_save: FLOATING_SAVE_AREA::new(),
             seg_gs: 0,
             seg_fs: 0,
             seg_es: 0,
@@ -142,288 +163,364 @@ impl CONTEXT {
             e_flags: 0,
             esp: 0,
             seg_ss: 0,
-            extended_registers: []
+            extended_registers: [],
         }
     }
 }
 
+pub struct RECT16 {
+    // INT16 x;
+    pub x: i16,
+    // INT16 y;
+    pub y: i16,
+}
 
+pub struct POINT16 {
+    // INT16 x;
+    pub x: i16,
+    // INT16 y;
+    pub y: i16,
+}
 
-struct RECT16 {
-    INT16 x;
-    INT16 y;
-};
+pub struct WINDOWPLACEMENT16 {
+    // UINT16 length;
+    pub length: u16,
+    // UINT16 flags;
+    pub flags: u16,
+    // UINT16 show_cmd;
+    pub show_cmd: u16,
+    // struct POINT16 pt_min_position;
+    pub pt_min_position: POINT16,
+    // struct POINT16 pt_max_position;
+    pub pt_max_position: POINT16,
+    // struct RECT16 rc_normal_position;
+    pub rc_normal_position: RECT16,
+}
 
-struct POINT16 {
-    INT16 x;
-    INT16 y;
-};
+pub struct WNDCLASS16 {
+    // UINT16 style;
+    pub style: u16,
+    // LPVOID lpfn_wnd_proc;
+    pub lpfn_wnd_proc: u32,
+    // INT16 cb_cls_extra;
+    pub cb_cls_extra: i16,
+    // INT16 cb_wnd_extra;
+    pub cb_wnd_extra: i16,
+    // HANDLE16 h_instance;
+    pub h_instance: HANDLE16,
+    // HICON16 h_icon;
+    pub h_icon: HICON16,
+    // HCURSOR16 h_cursor;
+    pub h_cursor: HCURSOR16,
+    // HBRUSH16 hbr_background;
+    pub hbr_background: HBRUSH16,
+    // SEGPTR lpsz_menu_name;
+    pub lpsz_menu_name: SEGPTR,
+    // SEGPTR lpsz_class_name;
+    pub lpsz_class_name: SEGPTR,
+}
 
-struct WINDOWPLACEMENT16 {
-    UINT16 length;
-    UINT16 flags;
-    UINT16 show_cmd;
-    struct POINT16 pt_min_position;
-    struct POINT16 pt_max_position;
-    struct RECT16 rc_normal_position;
-};
+// typedef long i32;
 
-typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
-
-typedef void * LPVOID;
-
-typedef HANDLE16 HICON16;
-
-typedef uint uint32_t;
-
-typedef uint32_t SEGPTR;
-
-struct WNDCLASS16 {
-    UINT16 style;
-    LPVOID lpfn_wnd_proc;
-    INT16 cb_cls_extra;
-    INT16 cb_wnd_extra;
-    HANDLE16 h_instance;
-    HICON16 h_icon;
-    HCURSOR16 h_cursor;
-    HBRUSH16 hbr_background;
-    SEGPTR lpsz_menu_name;
-    SEGPTR lpsz_class_name;
-};
-
-typedef long i32;
-
-typedef struct TwoWords TwoWords, *PTwoWords;
+// typedef struct TwoWords TwoWords, *PTwoWords;
 
 struct TwoWords {
-    UINT16 a_0x0;
-    UINT16 b_0x2;
-};
+    // UINT16 a_0x0;
+    a_0x0: u16,
+    // UINT16 b_0x2;
+    b_0x2: u16,
+}
 
+// typedef ushort BOOL16;
 
+// typedef HANDLE16 HGDIOBJ16;
 
-typedef ushort BOOL16;
+// typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
 
-typedef HANDLE16 HGDIOBJ16;
+// typedef ushort WORD;
 
-typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
-
-typedef ushort WORD;
-
-struct LOGPALETTE {
-    WORD pal_version;
-    WORD pal_num_entries;
-};
+pub struct LOGPALETTE {
+    // WORD pal_version;
+    pub pal_version: u16,
+    // WORD pal_num_entries;
+    pub pal_num_entries: u16,
+}
 
 // typedef struct MSG16 MSG16, *PMSG16;
 
-
-
 // typedef ulong DWORD;
 
-struct MSG16 {
-    HWND16 hwnd;
-    UINT16 message;
-    WPARAM16 wparam;
-    LPARAM lparam;
-    DWORD time;
-    struct POINT16 pt;
-};
+pub struct MSG16 {
+    // HWND16 hwnd;
+    pub hwnd: HWND16,
+    // UINT16 message;
+    pub message: u16,
+    // WPARAM16 wparam;
+    pub wparam: WPARAM16,
+    // LPARAM lparam;
+    pub lparam: LPARAM,
+    // DWORD time;
+    pub time: u32,
+    // struct POINT16 pt;
+    pub pt: POINT16,
+}
 
-typedef struct BITMAPINFOHEADER BITMAPINFOHEADER, *PBITMAPINFOHEADER;
+pub struct BITMAPINFOHEADER {
+    // DWORD bi_size;
+    pub bi_size: u32,
+    // LONG bi_width;
+    pub bi_width: libc::c_long,
+    // LONG bi_height;
+    pub bi_height: libc::c_long,
+    // WORD bi_planes;
+    pub bi_planes: u16,
+    // WORD bi_bit_count;
+    pub bi_bit_count: u16,
+    // DWORD bi_compression;
+    pub bi_compression: u32,
+    // DWORD bi_size_image;
+    pub bi_size_image: u32,
+    // LONG bi_x_pels_per_meter;
+    pub bi_x_pels_per_meter: libc::c_long,
+    // LONG bi_y_pels_per_meter;
+    pub bi_y_pels_per_meter: libc::c_long,
+    // DWORD bi_clr_used;
+    pub bi_clr_used: u32,
+    // DWORD bi_clr_important;
+    pub bi_clr_important: u32,
+}
 
-typedef long LONG;
+pub struct PAINTSTRUCT16 {
+    // HDC16 hdc;
+    pub hdc: HDC16,
+    // BOOL16 f_erase;
+    pub f_erase: u16,
+    // struct RECT16 rc_paint;
+    pub rc_paint: RECT16,
+    // BOOL16 f_restore;
+    pub f_restore: u16,
+    // BOOL16 f_inc_update;
+    pub f_inc_updated: u16,
+    // BYTE rgb_reserved[16];
+    pub rgb_reserved: [u8; 16],
+}
 
-struct BITMAPINFOHEADER {
-    DWORD bi_size;
-    LONG bi_width;
-    LONG bi_height;
-    WORD bi_planes;
-    WORD bi_bit_count;
-    DWORD bi_compression;
-    DWORD bi_size_image;
-    LONG bi_x_pels_per_meter;
-    LONG bi_y_pels_per_meter;
-    DWORD bi_clr_used;
-    DWORD bi_clr_important;
-};
+pub struct tagRGBQUAD {
+    // BYTE rgbBlue;
+    pub rgbBlue: u8,
+    // BYTE rgbGreen;
+    pub rgbGreen: u8,
+    // BYTE rgbRed;
+    pub rgbRed: u8,
+    // BYTE rgbReserved;
+    pub rgbReserved: u8,
+}
 
+pub struct BITMAPINFO {
+    // BITMAPINFOHEADER bim_header;
+    pub bim_header: BITMAPINFOHEADER,
+    // RGBQUAD bmi_colors;
+    pub bmi_colors: tagRGBQUAD,
+}
 
+// typedef ushort u16;
 
-// typedef struct PAINTSTRUCT16 PAINTSTRUCT16, *PPAINTSTRUCT16;
+// typedef HANDLE16 HPALETTE16;
 
-struct PAINTSTRUCT16 {
-    HDC16 hdc;
-    BOOL16 f_erase;
-    struct RECT16 rc_paint;
-    BOOL16 f_restore;
-    BOOL16 f_inc_update;
-    BYTE rgb_reserved[16];
-};
+// typedef HANDLE16 HRSRC16;
 
-typedef struct BITMAPINFO BITMAPINFO, *PBITMAPINFO;
-
-
-// WARNING! conflicting data type names: /wingdi.h/BITMAPINFOHEADER - /BITMAPINFOHEADER
-
-typedef struct tagRGBQUAD tagRGBQUAD, *PtagRGBQUAD;
-
-typedef struct tagRGBQUAD RGBQUAD;
-
-struct tagRGBQUAD {
-    BYTE rgbBlue;
-    BYTE rgbGreen;
-    BYTE rgbRed;
-    BYTE rgbReserved;
-};
-
-struct BITMAPINFO {
-    BITMAPINFOHEADER bim_header;
-    RGBQUAD bmi_colors;
-};
-
-typedef ushort u16;
-
-
-
-typedef HANDLE16 HPALETTE16;
-
-typedef HANDLE16 HRSRC16;
-
-typedef ulong u32;
-
+// typedef ulong u32;
 
 // WARNING! conflicting data type names: /RGBQUAD - /wingdi.h/RGBQUAD
 
-typedef struct tagMSG tagMSG, *PtagMSG;
+// typedef struct tagMSG tagMSG, *PtagMSG;
 
-typedef struct tagMSG MSG;
+// typedef struct tagMSG MSG;
 
-typedef struct HWND__ HWND__, *PHWND__;
+// typedef struct HWND__ HWND__, *PHWND__;
 
-typedef struct HWND__ * HWND;
+// typedef struct HWND__ * HWND;
 
-typedef uint UINT;
+// typedef uint UINT;
 
-typedef uint UINT_PTR;
+// typedef uint UINT_PTR;
 
-typedef UINT_PTR WPARAM;
+// typedef UINT_PTR WPARAM;
 
-typedef struct tagPOINT tagPOINT, *PtagPOINT;
+// typedef struct tagPOINT tagPOINT, *PtagPOINT;
 
-typedef struct tagPOINT POINT;
+// typedef struct tagPOINT POINT;
 
-struct tagPOINT {
-    LONG x;
-    LONG y;
-};
+pub struct tagPOINT {
+    // LONG x;
+    pub x: libc::c_long,
+    // LONG y;
+    pub y: libc::c_long,
+}
 
-struct tagMSG {
-    HWND hwnd;
-    UINT message;
-    WPARAM wParam;
-    LPARAM lParam;
-    DWORD time;
-    POINT pt;
-};
+pub struct tagMSG {
+    // HWND hwnd;
+    pub hwnd: HWND16,
+    // UINT message;
+    pub message: libc::c_uint,
+    // WPARAM wParam;
+    pub wParam: WPARAM16,
+    // LPARAM lParam;
+    pub lParam: LPARAM,
+    // DWORD time;
+    pub time: u32,
+    // POINT pt;
+    pub pt: POINT16,
+}
 
-struct HWND__ {
-    int unused;
-};
+// struct HWND__ {
+//     int unused;
+// };
 
-typedef struct _devicemodeA _devicemodeA, *P_devicemodeA;
+// typedef struct _devicemodeA _devicemodeA, *P_devicemodeA;
 
-typedef struct _devicemodeA DEVMODEA;
+// typedef struct _devicemodeA DEVMODEA;
 
-typedef union _union_655 _union_655, *P_union_655;
+// typedef union _union_655 _union_655, *P_union_655;
 
-typedef union _union_658 _union_658, *P_union_658;
+// typedef union _union_658 _union_658, *P_union_658;
 
-typedef struct _struct_656 _struct_656, *P_struct_656;
+// typedef struct _struct_656 _struct_656, *P_struct_656;
 
-typedef struct _struct_657 _struct_657, *P_struct_657;
+// typedef struct _struct_657 _struct_657, *P_struct_657;
 
-typedef struct _POINTL _POINTL, *P_POINTL;
+// typedef struct _POINTL _POINTL, *P_POINTL;
 
-typedef struct _POINTL POINTL;
+// typedef struct _POINTL POINTL;
 
-struct _POINTL {
-    LONG x;
-    LONG y;
-};
+pub struct _POINTL {
+    // LONG x;
+    pub x: libc::c_long,
+    // LONG y;
+    pub y: libc::c_long,
+}
 
-struct _struct_657 {
-    POINTL dmPosition;
-    DWORD dmDisplayOrientation;
-    DWORD dmDisplayFixedOutput;
-};
+pub struct _struct_657 {
+    // POINTL dmPosition;
+    pub dmPosition: _POINTL,
+    // DWORD dmDisplayOrientation;
+    pub dmDisplayOrientation: u32,
+    // DWORD dmDisplayFixedOutput;
+    pub dmDisplayFixedOutput: u32,
+}
 
-struct _struct_656 {
-    short dmOrientation;
-    short dmPaperSize;
-    short dmPaperLength;
-    short dmPaperWidth;
-    short dmScale;
-    short dmCopies;
-    short dmDefaultSource;
-    short dmPrintQuality;
-};
+pub struct _struct_656 {
+    // short dmOrientation;
+    pub dmOrientation: i16,
+    // short dmPaperSize;
+    pub dmPaperSize: i16,
+    // short dmPaperLength;
+    pub dmPaperLength: i16,
+    // short dmPaperWidth;
+    pub dmPaperWidth: i16,
+    // short dmScale;
+    pub dmScale: i16,
+    // short dmCopies;
+    pub dmCopies: i16,
+    // short dmDefaultSource;
+    pub dmDefaultSource: i16,
+    // short dmPrintQuality;
+    pub dmPrintQuality: i16,
+}
 
-union _union_655 {
-    struct _struct_656 field0;
-    struct _struct_657 field1;
-};
+// union _union_655 {
+//     struct _struct_656 field0;
+//     struct _struct_657 field1;
+// };
 
-union _union_658 {
-    DWORD dmDisplayFlags;
-    DWORD dmNup;
-};
+// union _union_658 {
+//     DWORD dmDisplayFlags;
+//     DWORD dmNup;
+// };
 
-struct _devicemodeA {
-    BYTE dmDeviceName[32];
-    WORD dmSpecVersion;
-    WORD dmDriverVersion;
-    WORD dmSize;
-    WORD dmDriverExtra;
-    DWORD dmFields;
-    union _union_655 field_0x2c;
-    short dmColor;
-    short dmDuplex;
-    short dmYResolution;
-    short dmTTOption;
-    short dmCollate;
-    BYTE dmFormName[32];
-    WORD dmLogPixels;
-    DWORD dmBitsPerPel;
-    DWORD dmPelsWidth;
-    DWORD dmPelsHeight;
-    union _union_658 field_0x74;
-    DWORD dmDisplayFrequency;
-    DWORD dmICMMethod;
-    DWORD dmICMIntent;
-    DWORD dmMediaType;
-    DWORD dmDitherType;
-    DWORD dmReserved1;
-    DWORD dmReserved2;
-    DWORD dmPanningWidth;
-    DWORD dmPanningHeight;
-};
+pub struct _devicemodeA {
+    // BYTE dmDeviceName[32];
+    pub dmDeviceName: [u8; 32],
+    // WORD dmSpecVersion;
+    pub dmSpecVersion: u16,
+    // WORD dmDriverVersion;
+    pub dmDriverVersion: u16,
+    // WORD dmSize;
+    pub dmSize: u16,
+    // WORD dmDriverExtra;
+    pub dmDriverExtra: u16,
+    // DWORD dmFields;
+    pub dmFields: u32,
+    // union _union_655 field_0x2c;
+    pub field_0x2c: _struct_656,
+    // short dmColor;
+    pub dmColor: i16,
+    // short dmDuplex;
+    pub dmDuplex: i16,
+    // short dmYResolution;
+    pub dmYResolution: i16,
+    // short dmTTOption;
+    pub dmTTOption: i16,
+    // short dmCollate;
+    pub dmCollate: i16,
+    // BYTE dmFormName[32];
+    pub dmFormName: [u8; 32],
+    // WORD dmLogPixels;
+    pub dmLogPixels: i16,
+    // DWORD dmBitsPerPel;
+    pub dmBitsPerPel: u32,
+    // DWORD dmPelsWidth;
+    pub dmPelsWidth: u32,
+    // DWORD dmPelsHeight;
+    pub dmPelsHeight: u32,
+    // union _union_658 field_0x74;
+    pub field_0x74: _struct_656,
+    // DWORD dmDisplayFrequency;
+    pub dmDisplayFrequency: u32,
+    // DWORD dmICMMethod;
+    pub dmICMMethod: u32,
+    // DWORD dmICMIntent;
+    pub dmICMIntent: u32,
+    // DWORD dmMediaType;
+    pub dmMediaType: u32,
+    // DWORD dmDitherType;
+    pub dmDitherType: u32,
+    // DWORD dmReserved1;
+    pub dmReserved1: u32,
+    // DWORD dmReserved2;
+    pub dmReserved2: u32,
+    // DWORD dmPanningWidth;
+    pub dmPanningWidth: u32,
+    // DWORD dmPanningHeight;
+    pub dmPanningHeight: u32,
+}
 
-typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER, *PtagBITMAPINFOHEADER;
+//typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER, *PtagBITMAPINFOHEADER;
 
-struct tagBITMAPINFOHEADER {
-    DWORD biSize;
-    LONG biWidth;
-    LONG biHeight;
-    WORD biPlanes;
-    WORD biBitCount;
-    DWORD biCompression;
-    DWORD biSizeImage;
-    LONG biXPelsPerMeter;
-    LONG biYPelsPerMeter;
-    DWORD biClrUsed;
-    DWORD biClrImportant;
-};
+pub struct tagBITMAPINFOHEADER {
+    // DWORD biSize;
+    pub biSize: u32,
+    // LONG biWidth;
+    pub biWidth: libc::c_long,
+    // LONG biHeight;
+    pub biHeight: libc::c_long,
+    // WORD biPlanes;
+    pub biPlanes: u16,
+    // WORD biBitCount;
+    pub biBitCount: u16,
+    // DWORD biCompression;
+    pub biCompression: u32,
+    // DWORD biSizeImage;
+    pub biSizeImage: u32,
+    // LONG biXPelsPerMeter;
+    pub biXPelsPerMeter: libc::c_long,
+    // LONG biYPelsPerMeter;
+    pub biYPelsPerMeter: libc::c_long,
+    // DWORD biClrUsed;
+    pub biClrUsed: u32,
+    // DWORD biClrImportant;
+    pub biClrImportant: u32,
+}
 
 // typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
 //
@@ -433,34 +530,28 @@ struct tagBITMAPINFOHEADER {
 //
 // typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
 
+// typedef char CHAR;
 
+// typedef CHAR * LPCSTR;
 
+// typedef CHAR * LPSTR;
 
+// typedef CHAR * PCHAR;
 
-typedef char CHAR;
+// typedef void * PVOID;
 
-typedef CHAR * LPCSTR;
+// typedef uint UINT32;
 
-typedef CHAR * LPSTR;
+// typedef uchar UINT8;
 
-typedef CHAR * PCHAR;
+// typedef ulong ULONG_PTR;
 
-typedef void * PVOID;
+// typedef short int16_t;
 
-typedef uint UINT32;
+// typedef ulong ULONG;
 
-typedef uchar UINT8;
+// typedef uchar UCHAR;
 
-typedef ulong ULONG_PTR;
+// typedef WORD ATOM;
 
-typedef short int16_t;
-
-typedef ulong ULONG;
-
-typedef uchar UCHAR;
-
-typedef WORD ATOM;
-
-
-
-typedef void * LPCVOID;
+// typedef void * LPCVOID;

@@ -472,8 +472,8 @@ fn unk_draw_op_1020_2020(param_1: u32,HWND16 param_2,param_3: u16)
     iVar12 = (puVar14 + -0x38);
     uVar2 = (puVar14 + -0x30);
     uVar15 = uVar2;
-    uVar22 = (u8)(uVar2 >> 0x10);
-    uVar23 = (u8)(uVar2 >> 0x18);
+    uVar22 = (uVar2 >> 0x10);
+    uVar23 = (uVar2 >> 0x18);
     uVar2 = (puVar14 + -0x44);
     uVar16 = (uVar2 >> 0x10);
     iVar13 = uVar2;

@@ -77,7 +77,7 @@ win_ui_op_1040_07dc(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
     }
   }
   else {
-    uVar9 = (u8)(param_2 >> 0x8);
+    uVar9 = (param_2 >> 0x8);
     if (param_5 < 0x74) {
       if (param_5 == 0x6e) {
         (_PTR_LOOP_1050_5b7c + 0xae) = 0x99;

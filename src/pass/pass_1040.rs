@@ -2074,7 +2074,7 @@ pub fn pass1_1040_6470(astruct_18 *param_1,param_2: u16)
   param_1.field_0x0 = 0x67ba;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   if (&iVar1.field_0x92 != 0x0) {
-    pass1_1010_1ea6(&iVar1.field_0x92,(long)param_1,param_2);
+    pass1_1010_1ea6(&iVar1.field_0x92,param_1,param_2);
   }
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,iVar1.field_0x6);
   fn_ptr_1000_17ce(&iVar1.field_0x8e,0x1000);
@@ -3261,8 +3261,8 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
           uVar14 = (uVar3 >> 0x10);
           uVar12 = 0x9;
         }
-        uVar10 = (u8)uVar8;
-        uVar11 = (u8)(uVar8 >> 0x8);
+        uVar10 = uVar8;
+        uVar11 = (uVar8 >> 0x8);
       }
       else {
         if (param_4._2_2_ == 0x1824) {

@@ -52,11 +52,11 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   let uVar32: u8;
   
   puVar10 = __return_storage_ptr__;
-  uVar31 = (u8)param_9;
-  uVar32 = (u8)(param_9 >> 0x8);
+  uVar31 = param_9;
+  uVar32 = (param_9 >> 0x8);
   bVar23 = 0x0;
   uVar30 = 0x0;
-  uVar28 = (u8)(param_4 >> 0x8);
+  uVar28 = (param_4 >> 0x8);
   if ((param_6 + 0xec76 & 0x3) != 0x0) goto LAB_1010_2ad8;
   uVar11 = param_6 + 0xec76 >> 0x1;
   if (0x1c < uVar11) goto LAB_1010_2ad8;
@@ -79,7 +79,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     BVar14 = write_to_file_1008_7e1c
                        (param_5,param_6,param_8,0x0,
                         CONCAT13(param_1._1_1_,
-                                         CONCAT12((u8)param_1,param_9)),0x1008);
+                                         CONCAT12(param_1,param_9)),0x1008);
     if (BVar14 != 0x0) {
       return param_7;
     }
@@ -164,17 +164,17 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     *pbVar3 = bVar5 + bVar16 + bVar24;
     pcVar2 = (uVar11 + unaff_SI);
     *pcVar2 = *pcVar2 + bVar16 + (CARRY1(bVar23,bVar16) || CARRY1(bVar5 + bVar16,bVar24));
-    struct_op_1018_4cda(CONCAT11(uVar31,uVar30),CONCAT11((u8)param_1,uVar32),
-                        CONCAT11((u8)param_2,param_1._1_1_));
+    struct_op_1018_4cda(CONCAT11(uVar31,uVar30),CONCAT11(param_1,uVar32),
+                        CONCAT11(param_2,param_1._1_1_));
     iVar15 = CONCAT11(uVar31,uVar30);
-    puVar9 = CONCAT13((u8)param_1,CONCAT12(uVar32,iVar15));
+    puVar9 = CONCAT13(param_1,CONCAT12(uVar32,iVar15));
     *puVar9 = (s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
     (iVar15 + 0x2) = 0x1010;
-    pass1_1018_4dce(CONCAT13((u8)param_1,CONCAT12(uVar32,iVar15)),0x1b3,
+    pass1_1018_4dce(CONCAT13(param_1,CONCAT12(uVar32,iVar15)),0x1b3,
                     param_7,unaff_SS);
     _PTR_LOOP_1050_4230 =
-         CONCAT13((u8)param_1,CONCAT12(uVar32,CONCAT11(uVar31,uVar30)));
-    return (u16_t)CONCAT11((u8)param_1,uVar32);
+         CONCAT13(param_1,CONCAT12(uVar32,CONCAT11(uVar31,uVar30)));
+    return (u16_t)CONCAT11(param_1,uVar32);
   case 0xe:
     (__return_storage_ptr__ + 0x2) = param_5;
     break;

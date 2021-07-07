@@ -1376,8 +1376,8 @@ win_sys_op_1020_493c
       }
       paStack18 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x1f8,param_6);
       WinHelp16(0x1010,(LPCSTR)uStack26,
-                CONCAT11((u8)((LPCSTR)uStack26 >> 0xf),
-                         (u8)((LPCSTR)uStack26 >> 0xf)),
+                CONCAT11(((LPCSTR)uStack26 >> 0xf),
+                         ((LPCSTR)uStack26 >> 0xf)),
                 CONCAT22(paStack18,0x1));
       return;
     case 0x78:
@@ -1597,7 +1597,7 @@ win_sys_op_1020_493c
               if (iVar4 != 0x1) {
                 return;
               }
-              uVar16 = (u8)(param_6 >> 0x8);
+              uVar16 = (param_6 >> 0x8);
               paVar14 = pass1_1030_e79a((astruct_100 *)
                                         CONCAT13(uVar16,CONCAT12(param_6,local_356))
                                         ,param_6,in_AF);
@@ -1968,7 +1968,7 @@ fn ui_op_1020_536e(param_1: u32,param_2: u32,param_3: i16,param_4: i16,uchar *pa
         }
         puStack16 = CONCAT22(puVar8,UVar6);
         uVar16 = SUB21(puVar8,0x0);
-        uVar17 = (u8)(puVar8 >> 0x8);
+        uVar17 = (puVar8 >> 0x8);
         pass1_1020_294a(CONCAT13(uVar17,CONCAT12(uVar16,UVar6)),
                         CONCAT22(param_2,uVar12),(param_2 >> 0x10),
                         puVar8,unaff_DI,unaff_SS);
@@ -2071,7 +2071,7 @@ fn post_msg_1020_55b0(param_1: u32,param_2: u16) -> u16
             (0x1010,_PTR_LOOP_1050_14cc,
              (_PTR_LOOP_1050_14cc >> 0x10),0x100,local_10c,param_2);
   puVar5 = pass1_1008_9436(CONCAT22(param_2,local_112));
-  uVar8 = (u8)(param_2 >> 0x8);
+  uVar8 = (param_2 >> 0x8);
   pcVar6 = pass1_1008_a8f4(puStack12,
 
                                    CONCAT13(uVar8,CONCAT12(param_2,&local_114)),
@@ -2259,8 +2259,8 @@ fn win_ui_op_1020_5de8(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
     uVar1 = puVar3[0x22];
     cStack15 = (uVar2 >> 0x18);
     if (cStack15 == '\x05') {
-      uVar7 = (u8)uVar1;
-      uVar8 = (u8)(uVar1 >> 0x8);
+      uVar7 = uVar1;
+      uVar8 = (uVar1 >> 0x8);
       uStack18 = uVar2;
       goto LAB_1020_5e62;
     }
@@ -2321,7 +2321,7 @@ fn win_ui_op_1020_5e76(param_1: u32,param_2: u16,param_3: u16)
   local_6 = param_3;
   uStack4 = param_2;
   puVar3 = &local_6;
-  uVar15 = (u8)(unaff_SS >> 0x8);
+  uVar15 = (unaff_SS >> 0x8);
   pt_in_rect_1020_5856
             (param_1,(POINT16 *)CONCAT13(uVar15,CONCAT12(unaff_SS,puVar3)),puVar3);
   uStack10 = CONCAT22(in_DX,puVar3);

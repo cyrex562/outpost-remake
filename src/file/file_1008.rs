@@ -938,7 +938,7 @@ read_file_1008_7cfe(param_1: u16,param_2: u16,param_3: u16,
       if (lVar3 < 0x400) {
         return;
       }
-      uStack6._0_2_ = CONCAT11(uStack6._1_1_ + 0x4,(u8)uStack6);
+      uStack6._0_2_ = CONCAT11(uStack6._1_1_ + 0x4,uStack6);
       uStack6 = CONCAT22((uStack6 >> 0x10) + (0xfb < uStack6._1_1_),
                          uStack6);
     }

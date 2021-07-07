@@ -15,12 +15,30 @@ pub fn GetVersion16() -> u32 {
     unimplemented!()
 }
 // HGLOBAL16 GLobalAlloc16(UINT16 flags, DWORD size)
+pub fn GLobalAlloc16(flags: u16, size: u32) -> HGLOBAL16 {
+    unimplemented!()
+}
 // HGLOBAL16 GlobalReAlloc16(HGLOBAL16 handle, DWORD size, UINT16 flags)
+pub fn GlobalReAlloc16(handle: HGLOBAL16, size: u32, flags: u16) -> HGLOBAL16 {
+    unimplemented!()
+}
 // HGLOBAL16 GlobalFree16(HGLOBAL16 handle)
+pub fn GlobalFree16(handle: HGLOBAL16) -> HGLOBAL16 {
+    unimplemented!()
+}
 // SEGPTR WIN16_GlobalLock16(HGLOBAL16 handle)
+pub fn WIN16_GlobalLock16(handle: HGLOBAL16) -> SEGPTR {
+    unimplemented!()
+}
 // BOOL16 GlobalUnlock16(HGLOBAL16 handle)
 // DWORD GlobalSize16(HGLOBAL16 handle)
+pub fn GlobalSize16(handle: HGLOBAL16) -> u32 {
+    unimplemented!()
+}
 // DWORD GlobalHandle16(WORD sel)
+pub fn GlobalHandle16(sel: u16) -> u32 {
+    unimplemented!()
+}
 // HGLOBAL16 LockSegment16(HGLOBAL16 handle)
 pub fn LockSegment16(handle: HGLOBAL16) -> HGLOBAL16 {
     unimplemented!()
@@ -65,7 +83,13 @@ pub fn FatalAppExit16(action: u16, reason: &str) {
 // DWORD GlobalDOSAlloc16(DWORD size)
 // WORD GlobalDOSFree16(WORD sel)
 // WORD GlobalPageLock16(HGLOBAL16 handle)
+pub fn GlobalPageLock16(handle: HGLOBAL16) -> u16 {
+    unimplemented!()
+}
 // WORD GlobalPageUnlock16(HGLOBAL16 handle)
+pub fn GlobalPageUnlock16(handle: HGLOBAL16) -> u16 {
+    unimplemented!()
+}
 // void hmemcpy16(LPVOID dst, LPCVOID src, long count)
 // long WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count)
 // long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count)

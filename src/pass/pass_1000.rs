@@ -1,5 +1,7 @@
 use crate::{win_struct::HINSTANCE16, winapi::DOS3Call};
 
+pub fn pass1_1000_010c
+
 pub unsafe fn  pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16)
 
 {
@@ -2033,7 +2035,7 @@ pub fn pass1_1000_2d34(param_1: u16,param_2: u16,param_3: *mut u8,param_4: u8,pa
     *param_5 = 0x0;
     param_5[0x4] = 0x0;
     param_5[0x3] = 0x0;
-    uStack14 = (u8)uVar4;
+    uStack14 = uVar4;
     *(param_5 + 0xb) = uStack14;
     (param_5 + 0x78) = bStack8;
     param_5[0x2] = 0x0;
@@ -2708,7 +2710,7 @@ pub fn pass1_1000_31f7(param_1: u16,param_2: i16,param_3: *mut u16,param_4: i16,
     else {
       uVar16 = pass1_1000_34d8(param_2,param_5);
     }
-    if ((((param_2 + -0x6) & 0x40) != 0x0) && ((long)uVar16 < 0x0)) {
+    if ((((param_2 + -0x6) & 0x40) != 0x0) && (uVar16 < 0x0)) {
       pbVar2 = (param_2 + -0x5);
       *pbVar2 = *pbVar2 | 0x1;
       uVar16 = CONCAT22(-((uVar16 >> 0x10) + (uVar16 != 0x0)),-uVar16
@@ -3959,13 +3961,13 @@ pass1_1000_462e(param_1: u16,param_2: i16,param_3: u16,param_4: u16,param_5: u16
   uVar12 = 0x3c;
   uVar11 = 0x0;
   uVar10 = 0x3c;
-  uVar1 = ((long)param_1 * 0x16d);
+  uVar1 = (param_1 * 0x16d);
   uVar2 = (param_1 + 0x3) >> 0x2;
   uVar3 = uVar2 + param_3;
   uVar6 = uVar1 + uVar3;
   uVar7 = uVar6 + uVar8;
   uVar9 = pass1_1000_52be(uVar7 + 0xe44,
-                          (((long)param_1 * 0x16d) >> 0x10) +
+                          ((param_1 * 0x16d) >> 0x10) +
                           ((param_1 + 0x3) >> 0xf) + (param_3 >> 0xf) +
                           CARRY2(uVar2,param_3) + CARRY2(uVar1,uVar3) +
                           (uVar8 >> 0xf) + CARRY2(uVar6,uVar8) +
@@ -4271,7 +4273,7 @@ pub fn pass1_1000_4906(astruct_20 *param_1,WNDCLASS16 *in_wnd_class,param_3: u16
       *puVar1 = uVar3;
     }
     for (uVar6 = ((uVar6 & 0x1) != 0x0);
-        uVar2 = (u8)(in_wnd_class & 0xff), uVar6 != 0x0; uVar6 -= 0x1) {
+        uVar2 = (in_wnd_class & 0xff), uVar6 != 0x0; uVar6 -= 0x1) {
       puVar1 = puVar7;
       puVar7 = (puVar7 + 0x1);
       *puVar1 = uVar2;
@@ -4962,7 +4964,7 @@ pub fn pass1_1000_54a0(param_1: u32,param_2: u16,param_3: u16) -> u16
       puVar7 = puVar7 + 0x1;
       *puVar1 = uVar3;
     }
-    for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar2 = (u8)(param_2 & 0xff),
+    for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar2 = (param_2 & 0xff),
         uVar6 != 0x0; uVar6 -= 0x1) {
       puVar1 = puVar7;
       puVar7 = (puVar7 + 0x1);

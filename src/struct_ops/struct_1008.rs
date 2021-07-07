@@ -257,8 +257,8 @@ fn struct_op_1008_6604(astruct_85 *param_1,param_2: i16,param_3: i16)
   iVar3 = ((iVar3 + (iVar3 >> 0xf & 0x1f)) >> 0x5) << 0x2;
   &iVar4.field_0x18 = iVar3;
   (&iVar4.field_0x18 + 0x2) = iVar3 >> 0xf;
-  lVar6 = mem_op_1000_0a48(0x1,((long)iVar3 * (long)param_2),
-                           (((long)iVar3 * (long)param_2) >> 0x10),
+  lVar6 = mem_op_1000_0a48(0x1,(iVar3 * param_2),
+                           ((iVar3 * param_2) >> 0x10),
                            _PTR_LOOP_1050_5f2c,0x1000);
   uVar5 = (lVar6 >> 0x10);
   iVar4.field_0x6 = lVar6;
@@ -267,7 +267,7 @@ fn struct_op_1008_6604(astruct_85 *param_1,param_2: i16,param_3: i16)
   iVar4.field_0x16 = uVar5;
   *iVar4.field_0x10 = 0x28;
   puVar1 = iVar4.field_0x10;
-  (puVar1 + 0x4) = (long)param_3;
+  (puVar1 + 0x4) = param_3;
   puVar1 = iVar4.field_0x10;
   uVar5 = (puVar1 >> 0x10);
   iVar2 = (astruct_84 *)puVar1;
@@ -280,7 +280,7 @@ fn struct_op_1008_6604(astruct_85 *param_1,param_2: i16,param_3: i16)
   puVar1 = iVar4.field_0x10;
   (puVar1 + 0x10) = 0x0;
   puVar1 = iVar4.field_0x10;
-  (puVar1 + 0x14) = iVar4.field_0x18 * (long)param_2;
+  (puVar1 + 0x14) = iVar4.field_0x18 * param_2;
   puVar1 = iVar4.field_0x10;
   (puVar1 + 0x20) = 0x100;
   puVar1 = iVar4.field_0x10;
@@ -960,7 +960,7 @@ fn pass1_1008_c79a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_5: 
       uVar3 = (_PTR_LOOP_1050_65e2 + 0x52);
       pass1_1030_4bbe(param_4,uVar5,uVar3,(uStack14 + 0x12));
       (param_1 + 0xe) =
-           (long)(uVar3 + 0x94) + *_PTR_LOOP_1050_65e2;
+           (uVar3 + 0x94) + *_PTR_LOOP_1050_65e2;
     }
   }
   return;
@@ -1452,7 +1452,7 @@ fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
                 puVar17 = struct_1018_48b0(puStack14,
                                            CONCAT22(local_2e._8_2_ >> 0xf,
                                                     local_2e._8_2_ & 0xff |
-                                                    ((long)
+                                                    (
                                              local_2e._8_2_ >> 0x8) << 0x8),
                                            CONCAT22(puVar13,uVar6),uStack36);
                 uVar12 = (puVar17 >> 0x10);
@@ -1464,7 +1464,7 @@ fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
             }
             else {
               plVar1 = &puVar9.field_0x8;
-              *plVar1 = *plVar1 + (long)local_2e._8_2_;
+              *plVar1 = *plVar1 + local_2e._8_2_;
             }
             iStack4 = 0x1;
           }

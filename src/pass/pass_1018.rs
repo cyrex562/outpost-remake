@@ -1117,7 +1117,7 @@ fn pass1_1018_1346(param_1: u16,param_2: u16,astruct_93 *param_3)
       uStack52 = CONCAT22(extraout_DX,uVar7);
       param_2 = extraout_DX;
       for (puStack56 = 0x0; puStack56 < uStack52;
-          puStack56 = ((long)puStack56 + 0x1)) {
+          puStack56 = (puStack56 + 0x1)) {
         uVar9 = 0x30;
         uVar11 = pass1_1030_1d7c(uVar7,param_2,puStack48);
         param_2 = (uVar11 >> 0x10);
@@ -1172,7 +1172,7 @@ fn pass1_1018_1346(param_1: u16,param_2: u16,astruct_93 *param_3)
         uStack52 = CONCAT22(extraout_DX_01,uVar7);
         uStack8 = extraout_DX_01;
         for (puStack48 = 0x0; puStack48 < uStack52;
-            puStack48 = ((long)puStack48 + 0x1)) {
+            puStack48 = (puStack48 + 0x1)) {
           uVar11 = uStack52;
           pass1_1030_1d58(puStack56);
           uVar9 = 0x30;
@@ -2551,7 +2551,7 @@ fn pass1_1018_2e28(param_1: u32)
   let uVar2: u16;
   
   uVar2 = (param_1 >> 0x10);
-  lVar1 = (long)(param_1 + 0x174);
+  lVar1 = (param_1 + 0x174);
   empty_1008_8fc4((param_1 + 0x17e),lVar1);
   if ((extraout_DX | lVar1) != 0x0) {
     return;
@@ -2579,7 +2579,7 @@ fn pass1_1018_2e5e(param_1: u16,param_2: u16,param_3: u16,param_4: u32)
   }
   if ((iVar4.field_0x17e != 0x0) &&
      (lVar1 = iVar4.field_0x17e, (lVar1 + 0xa) != 0x0)) {
-    lVar1 = (long)iVar4.field_0x174;
+    lVar1 = iVar4.field_0x174;
     empty_1008_8fc4(iVar4.field_0x17e,lVar1);
     uVar1 = lVar1;
     pass1_1018_2e28(param_4);
@@ -2726,7 +2726,7 @@ fn pass1_1018_30fc(param_1: u32,u16 **param_2,uchar *param_3)
     *(uchar **)(puVar3 + 0x2) = puVar7;
     (*param_2 + 0x4) = uVar1;
     for (iStack6 = 0x0; iStack6 < uVar1; iStack6 += 0x1) {
-      lVar6 = (long)iStack6;
+      lVar6 = iStack6;
       empty_1008_8fc4((param_1 + 0x17e),lVar6);
       (*param_2 + iStack6 * 0x2) =
            (lVar6 + 0x2e);
@@ -2777,7 +2777,7 @@ fn pass1_1018_31fa(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
     (iVar6 + 0x174) = 0x0;
     while( true ) {
       if (iVar4 <= (iVar6 + 0x174)) break;
-      lVar5 = (long)(iVar6 + 0x174);
+      lVar5 = (iVar6 + 0x174);
       empty_1008_8fc4((iVar6 + 0x17e),lVar5);
       iVar3 = lVar5;
       pass1_1018_2e28(param_1);

@@ -2857,8 +2857,8 @@ fn pass1_1020_a89e(param_1: u16,param_2: u32,param_3: *mut u32,param_4: u16)
   puVar7 = &local_14;
   pass1_1008_3e94(CONCAT22(param_1,puVar7),CONCAT22(param_1,&local_18)
                   ,CONCAT22(param_1,&local_16));
-  uVar10 = (u8)param_1;
-  uVar11 = (u8)(param_1 >> 0x8);
+  uVar10 = param_1;
+  uVar11 = (param_1 >> 0x8);
   pass1_1008_3e76(CONCAT13(uVar11,CONCAT12(uVar10,&local_14)),0x0,local_18,
                   local_16 + 0x2);
   struct_op_1028_8888(param_1,in_AF,(astruct_100 *)CONCAT22(param_1,local_13c),0x0,0x7a,
@@ -5002,7 +5002,7 @@ fn pass1_1020_cac2(param_1: u32,uchar *param_2,param_3: u16,param_4: u16,param_5
     pass1_1028_b58e(param_1);
     uVar5 = (puVar3 + 0x6) - puStack36;
     pass1_1030_7ddc(CONCAT13((extraout_DX_00 >> 0x8),
-                             CONCAT12(extraout_DX_00,puVar4)),(long)uVar5,0x1e,
+                             CONCAT12(extraout_DX_00,puVar4)),uVar5,0x1e,
                     uVar5,(uVar5 >> 0xf),param_3,param_4,param_5);
     ppcVar2 = (*puStack16 + 0xc);
     (**ppcVar2)(0x1030,puStack16,(puStack16 >> 0x10),puVar3,extraout_DX)
@@ -5374,8 +5374,8 @@ fn pass1_1020_d194(param_1: u32,param_2: i16,param_3: u16)
           (**ppcVar1)(uVar11,uVar7,puVar9,0x1,uVar18,puVar8,puStack34,puStack34);
           return;
         }
-        uVar15 = (u8)uVar2;
-        uVar16 = (u8)(uVar2 >> 0x8);
+        uVar15 = uVar2;
+        uVar16 = (uVar2 >> 0x8);
         uVar6 = uStack38;
         puVar17 = extraout_DX;
         pass1_1030_1d58(puStack34);
