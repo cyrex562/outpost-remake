@@ -10,11 +10,11 @@ read_file_1020_a65e(param_1: u32,param_2: u32,param_3: u16,
   let local_8: [u8;2];
   let local_6: [u8;2];
   let local_4: [u8;2];
-  u16_t uVar3;
-  u16_t uVar2;
+  let uVar3: u16;
+  let uVar2: u16;
   
-  uVar2 = (u16_t)param_2;
-  uVar3 = (u16_t)(param_2 >> 0x10);
+  uVar2 = param_2;
+  uVar3 = (param_2 >> 0x10);
   read_file_1008_7cfe(uVar2,uVar3,0xb,0x1008,param_3);
   if (param_4 != 0x0) {
     if (0x1 < ctx.PTR_LOOP_1050_0312) {
@@ -42,7 +42,7 @@ read_file_1020_a65e(param_1: u32,param_2: u32,param_3: u16,
 
 
 
-fn write_to_file_1020_d3d4(param_1: u32,param_2: u32,param_3: u16) -> bool
+pub fn write_to_file_1020_d3d4(param_1: u32,param_2: u32,param_3: u16) -> bool
 
 {
   let BVar1: bool;
@@ -64,7 +64,7 @@ fn write_to_file_1020_d3d4(param_1: u32,param_2: u32,param_3: u16) -> bool
 }
 
 
-fn write_to_file_1020_e6a4(param_1: u32,param_2: u32,param_3: u16) -> bool
+pub fn write_to_file_1020_e6a4(param_1: u32,param_2: u32,param_3: u16) -> bool
 
 {
   let in_AX: i16;

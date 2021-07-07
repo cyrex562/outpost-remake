@@ -1,4 +1,4 @@
-fn fn_ptr_1028_d566(param_1: *mut u32, param_2: *mut u32) -> bool {
+pub fn fn_ptr_1028_d566(param_1: *mut u32, param_2: *mut u32) -> bool {
     code * *ppcVar1;
     let iVar2: i16;
     let uVar3: u16;
@@ -14,7 +14,7 @@ fn fn_ptr_1028_d566(param_1: *mut u32, param_2: *mut u32) -> bool {
     return 0x0;
 }
 
-fn fn_ptr_1028_d728(param_1: u32) {
+pub fn fn_ptr_1028_d728(param_1: u32) {
     code * *ppcVar1;
 
     ppcVar1 = ((param_1 + 0x4) + 0x10);
@@ -22,7 +22,7 @@ fn fn_ptr_1028_d728(param_1: u32) {
     return;
 }
 
-fn fn_ptr_1028_d742(param_1: u32, param_2: *mut u32) -> u16 {
+pub fn fn_ptr_1028_d742(param_1: u32, param_2: *mut u32) -> u16 {
     code * *ppcVar1;
     let uVar2: u32;
 

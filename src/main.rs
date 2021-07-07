@@ -21,6 +21,7 @@ use crate::winapi::{
 mod bad;
 mod cleanup;
 mod debug;
+mod defines;
 mod draw;
 mod exit;
 mod file;
@@ -41,9 +42,8 @@ mod ui;
 mod util;
 mod win_struct;
 mod winapi;
-mod defines;
 
-fn main() {
+pub fn main() {
     let mut ctx = AppContext::new();
     let mut task_ctx = CONTEXT::new();
     let mut param_8: i16 = 0;

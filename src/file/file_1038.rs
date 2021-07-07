@@ -1,8 +1,8 @@
 
-fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
+pub fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
 {
   let uVar1: u16;
-  astruct_307 *iVar2;
+  let iVar2: &mut Struct307;
   let BVar2: bool;
   let iVar3: i16;
   let uVar4: u16;
@@ -15,8 +15,8 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
   if (ctx.PTR_LOOP_1050_0312 < 0x2) {
     return;
   }
-  iVar2 = (astruct_307 *)param_1;
-  iVar2 = (astruct_307 *)&iVar2.field_0x4;
+  iVar2 = param_1;
+  iVar2 = &iVar2.field_0x4;
   puVar5 = (param_1 & 0xffff0000 | ZEXT24(iVar2));
   pass1_1008_766e(param_2,puVar5,param_4,0x1008,param_3);
   if (puVar5 != 0x0) {
@@ -60,18 +60,18 @@ fn file_1038_774e(param_1: u32,param_2: u32,uchar *param_3,param_4: u16)
 }
 
 
-fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
+pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
                    param_4: u16) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let BVar2: bool;
   let uVar3: u16;
   let uVar4: u16;
   let extraout_DX: *mut u8
   let puVar5: *mut u8
   let extraout_DX_00: *mut u8
-  u16_t unaff_SS;
+  let unaff_SS: u16;
   let uVar6: u16;
   let uVar7: u16;
   let uVar8: u16;
@@ -113,7 +113,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
       ppcVar1 = (*param_1 + 0x4);
       (**ppcVar1)(0x1000,*param_1,(*param_1 >> 0x10),uStack14,
                   (uStack14 >> 0x10),uVar10);
-      param_4 = (u16_t)extraout_DX;
+      param_4 = extraout_DX;
     }
     local_4 = local_4 - 0x1;
     BVar2 = read_file_1008_7dee(uVar6,uVar8,local_12,0x0,unaff_SS,0x2,0x1008);
@@ -144,7 +144,7 @@ fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         ppcVar1 = ((param_1 + 0x4) + 0x4)
         ;
         (**ppcVar1)(0x1030,uVar9,(uVar9 >> 0x10),uVar3,puVar5,uVar10);
-        param_4 = (u16_t)extraout_DX_00;
+        param_4 = extraout_DX_00;
       }
       return 0x0;
     }

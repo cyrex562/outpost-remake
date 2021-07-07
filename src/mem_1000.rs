@@ -1,4 +1,4 @@
-use crate::{defines::StructA, fn_ptr::fn_ptr_1000::fn_ptr_op_1000_1708, global::AppContext, misc::{empty_fn_1000_214a, ret_true_1000_2146}, pass::pass_1000::{pass1_1000_0368, pass1_1000_0c32, pass1_1000_15ce, pass1_1000_1a54, pass1_1000_1afe, pass1_1000_1e61, pass1_1000_52be, pass1_1000_5390}, sys_api::_SHI_INVOKEERRORHANDLER1, util::{CARRY2, CONCAT11, CONCAT22, SUB42, make_u16_ptr}, win_struct::HGLOBAL16, winapi::{GLobalAlloc16, GlobalFree16, GlobalHandle16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, WIN16_GlobalLock16}};
+use crate::{defines::StructA, fn_ptr::fn_ptr_1000::fn_ptr_op_1000_1708, global::AppContext, misc::{empty_fn_1000_214a, ret_true_1000_2146}, pass::pass_1000::{pass1_1000_0368, pass1_1000_0c32, pass1_1000_15ce, pass1_1000_1a54, pass1_1000_1afe, pass1_1000_1e61, pass1_1000_20a2, pass1_1000_25a8, pass1_1000_2913, pass1_1000_52be, pass1_1000_5390}, string::string_1000::poss_str_op_1000_28dc, sys_api::{_SHI_INVOKEERRORHANDLER1, mixed_dos3_call_1000_3636, mixed_dos3_call_1000_39f2}, util::{CARRY2, CONCAT11, CONCAT22, SUB42, make_u16_ptr}, win_struct::HGLOBAL16, winapi::{FatalAppExit16, FatalExit, GLobalAlloc16, GlobalFree16, GlobalHandle16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, GlobalUnlock16, WIN16_GlobalLock16}};
 
 
 pub unsafe fn mem_op_1000_0052(param_1: u32, param_2: u32) {
@@ -686,7 +686,7 @@ pub fn  mem_op_1000_13ce(param_1: u16) -> i32
   DVar3 = GlobalHandle16(param_1);
   uVar2 = (DVar3 >> 0x10);
   if (DVar3 != 0x0) {
-    HVar1 = GlobalFree16(s_tile2_bmp_1050_1538);
+    HVar1 = GlobalFree16(ctx.s_tile2_bmp_1050_1538);
     return CONCAT22(uVar2,(HVar1 == 0x0));
   }
   return (uVar2 << 0x10);
@@ -795,10 +795,10 @@ pub fn  mem_op_1000_1558(param_1: u16,param_2: u16,param_3: u16) -> i32
     while ((param_2 < u_stack8) || ((param_2 <= u_stack8 && (param_1 <= u_stack10)))) {
       loop {
         d_var2 = CONCAT22(uStack10,param_3);
-        param_3 = s_tile2_bmp_1050_1538;
+        param_3 = ctx.s_tile2_bmp_1050_1538;
         d_var2 = GlobalDOSAlloc16(DVar2);
         uVar1 = d_var2;
-        if (uVar1 == 0x0) break;
+        if (uVar1 == 0x0){ break;}
         0x0 = 0x0;
         &ctx.PTR_LOOP_1050_0002 = u_stack12;
         u_stack12 = uVar1;
@@ -815,7 +815,7 @@ pub fn  mem_op_1000_1558(param_1: u16,param_2: u16,param_3: u16) -> i32
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn  mem_op_1000_160a(
+pub unsafe fn  mem_op_1000_160a(
   ctx: &mut AppContext, 
   param_1: u16,
   param_2: u16) -> *mut u8
@@ -867,7 +867,7 @@ pub unsafe fn mem_1000_167a(
 }
 
 
-pub fn mem_op_1000_179c(
+pub unsafe fn mem_op_1000_179c(
   ctx: &mut AppContext, 
   param_1: u16,
   param_2: *mut u8,
@@ -885,7 +885,7 @@ pub fn mem_op_1000_179c(
   return;
 }
 
-pub fn  mem_op_1000_18ec(
+pub unsafe fn  mem_op_1000_18ec(
   ctx: &mut AppContext, 
   param_1: u16,
   param_2: u16,
@@ -988,7 +988,7 @@ pub unsafe fn mem_op_1000_1902(
 }
 
 
-pub fn mem_op_1000_1b68(param_1: u16,param_2: u16,param_3: u16,param_4: u16) -> u32
+pub unsafe fn mem_op_1000_1b68(param_1: u16,param_2: u16,param_3: u16,param_4: u16) -> u32
 
 {
   let uVar1: u32;
@@ -1003,7 +1003,7 @@ pub fn mem_op_1000_1b68(param_1: u16,param_2: u16,param_3: u16,param_4: u16) -> 
 
 
 
-pub fn mem_op_1000_1b9a(param_1: u16,param_2: u32,param_3: u16,param_4: u16) -> u32
+pub unsafe fn mem_op_1000_1b9a(param_1: u16,param_2: u32,param_3: u16,param_4: u16) -> u32
 
 {
   let uVar1: u16;
@@ -1017,23 +1017,29 @@ pub fn mem_op_1000_1b9a(param_1: u16,param_2: u32,param_3: u16,param_4: u16) -> 
   
   (param_2 + 0x14) = 0x0;
   uStack4 = 0x0;
-  do {
+  loop {
     iVar5 = (uStack4 * 0x2);
     if (iVar5 != 0x0) {
-      do {
+      loop {
         uVar2 = (iVar5 + 0x8);
         (uVar2 + 0xc) = 0x0;
         mem_op_1000_13ce(param_4);
         iVar5 = (iVar5 + 0x4);
-      } while ((uStack4 * 0x2) != iVar5);
+        if (uStack4 * 0x2) == iVar5 {
+          break;
+        }
+      } 
     }
     uStack4 += 0x1;
-  } while (uStack4 < 0x5);
+    if uStack4 >= 0x5 {
+      break;
+    }
+  } 
   uVar4 = (param_2 + 0x12);
   uVar3 = (param_2 + 0x10);
   while( true ) {
     puStack8 = CONCAT22(uVar4,uVar3);
-    if ((uVar4 | uVar3) == 0x0) break;
+    if ((uVar4 | uVar3) == 0x0) {break;}
     uVar1 = *puStack8;
     uVar4 = (uVar3 + 0x2);
     mem_op_1000_13ce(param_4);
@@ -1087,7 +1093,7 @@ pub fn mem_op_1000_21b6(param_1: u16,param_2: u16) -> bool
 }
 
 
-pub fn mem_1000_2bb6(param_1: u16,i16 *param_2,param_3: i16,param_4: u16,param_5: u16,
+pub unsafe fn mem_1000_2bb6(param_1: u16,param_2: &mut i16,param_3: i16,param_4: u16,param_5: u16,
              param_6: u16,param_7: u8,param_8: u16) -> u16
 
 {
@@ -1095,9 +1101,9 @@ pub fn mem_1000_2bb6(param_1: u16,i16 *param_2,param_3: i16,param_4: u16,param_5
   let iVar2: i16;
   let piVar3: *mut i16;
   let bVar4: u8;
-  let puVar5: *mut u8
-  let puVar6: *mut u8
-  let puVar7: *mut u8
+  let puVar5: *mut u8;
+  let puVar6: *mut u8;
+  let puVar7: *mut u8;
   let uStack4: u16;
   let iStack2: i16;
   
@@ -1108,7 +1114,9 @@ pub fn mem_1000_2bb6(param_1: u16,i16 *param_2,param_3: i16,param_4: u16,param_5
   if (((bVar4 & 0x82) != 0x0) && ((bVar4 & 0x40) == 0x0)) {
     param_2[0x2] = 0x0;
     if ((bVar4 & 0x1) != 0x0) {
-      if ((bVar4 & 0x10) == 0x0) goto LAB_1000_2c37;
+      if ((bVar4 & 0x10) == 0x0) {
+        // TODO: goto LAB_1000_2c37;
+      }
       *param_2 = param_2[0x3];
       bVar4 &= 0xfe;
     }
@@ -1159,7 +1167,7 @@ pub fn mem_1000_2bb6(param_1: u16,i16 *param_2,param_3: i16,param_4: u16,param_5
 }
 
 
-pub fn mem_1000_2ce8(i16 *param_1,param_2: u16,param_3: u16)
+pub unsafe fn mem_1000_2ce8(param_1: &mut i16,param_2: u16,param_3: u16)
 {
   let piVar1: *mut i16;
   let uVar2: u16;
@@ -1185,54 +1193,60 @@ pub fn mem_1000_2ce8(i16 *param_1,param_2: u16,param_3: u16)
   return;
 }
 
-pub fn mixed_mem_op_1000_3c51
-          (HGLOBAL16 param_1,HGLOBAL16 param_2,param_3: i16,param_4: u16,
-          param_5: u16,param_6: i16) -> u32
+pub unsafe fn mixed_mem_op_1000_3c51(
+  param_1: HGLOBAL16,
+  param_2: HGLOBAL16,
+  param_3: i16,
+  param_4: u16,
+  param_5: u16,
+  param_6: i16) -> u32
 
 {
   let piVar1: *mut i16;
-  char *pcVar2;
-  LPCSTR str;
+  let mut pcVar2: String; 
+  let mut str: String;
   let piVar3: *mut i16;
   let uVar4: u16;
   let flags: u16;
-  HGLOBAL16 HVar5;
+  let HVar5: HGLOBAL16;
   let piVar6: *mut i16;
-  char *pcVar7;
+  let mut pcVar7: String; 
   let DVar8: u32;
-  HGLOBAL16 HVar9;
+  let HVar9: HGLOBAL16;
   let iVar10: i16;
   let iVar11: i16;
   
   if (((param_3 + 0x2) & 0x4) == 0x0) {
-    HVar9 = *(HGLOBAL16 *)(param_3 + 0x6);
+    HVar9 = (param_3 + 0x6);
     flags = 0x0;
     HVar5 = param_1;
     if (param_1 == 0x0) {
-      if (false) goto LAB_1000_3cb6;
+      if (false) {
+        // goto LAB_1000_3cb6;
+      }
       flags = 0x1;
     }
     uVar4 = 0x2;
     if (true) {
       uVar4 = 0x20;
     }
-    param_5 = (u16_t)s_tile2_bmp_1050_1538;
+    param_5 = ctx.s_tile2_bmp_1050_1538;
     param_1 = GlobalReAlloc16(0x1000,CONCAT22(param_1,uVar4),flags);
     if (param_1 == 0x0) {
 //LAB_1000_3cb6:
       return CONCAT22(HVar5,param_1);
     }
     if (param_1 == HVar9) {
-      param_5 = (u16_t)s_tile2_bmp_1050_1538;
+      param_5 = ctx.s_tile2_bmp_1050_1538;
       param_1 = param_2;
-      DVar8 = GlobalSize16(s_tile2_bmp_1050_1538);
+      DVar8 = GlobalSize16(ctx.s_tile2_bmp_1050_1538);
       if (DVar8 != 0x0) {
         HVar5 = param_1;
         if (((HVar9 + 0x2) & 0x4) != 0x0) {
           HVar5 = param_1 - 0x1;
-          *(HGLOBAL16 *)(HVar9 - 0x2) = HVar5;
+          (HVar9 - 0x2) = HVar5;
         }
-        goto LAB_1000_3cb6;
+//         TODO: goto LAB_1000_3cb6;
       }
     }
   }
@@ -1249,18 +1263,23 @@ pub fn mixed_mem_op_1000_3c51
     str = str + iVar10;
     iVar10 = 0x22;
     pcVar7 = str;
-    do {
-      if (iVar10 == 0x0) break;
+    loop {
+      if (iVar10 == 0x0) {
+        break;
+      }
       iVar10 += -0x1;
       pcVar2 = pcVar7;
       pcVar7 = pcVar7 + 0x1;
-    } while (*pcVar2 != '\r');
+      if *pcVar2 == '\r' {
+        break;
+      }
+    } 
     pcVar7[-0x1] = '\0';
   }
   FatalAppExit16(param_5,str);
   FatalExit();
   piVar6 = &ctx.PTR_LOOP_1050_63fe;
-  do {
+  loop {
     piVar1 = piVar6;
     piVar6 = piVar6 + 0x1;
     iVar10 = *piVar1;
@@ -1269,13 +1288,16 @@ pub fn mixed_mem_op_1000_3c51
       return CONCAT22(param_6,piVar3);
     }
     iVar10 = -0x1;
-    do {
-      if (iVar10 == 0x0) break;
+    loop {
+      if (iVar10 == 0x0) {break;}
       iVar10 += -0x1;
       piVar1 = piVar6;
       piVar6 = (piVar6 + 0x1);
-    } while (*piVar1 != '\0');
-  } while( true );
+      if *piVar1 == '\0' {
+        break;
+      }
+    } 
+  } 
 }
 
 
@@ -1283,7 +1305,7 @@ pub fn mixed_mem_op_1000_3c51
 pub fn free_mem_1000_407a(param_1: u16,param_2: u16,param_3: u16)
 {
   let uVar1: u16;
-  HGLOBAL16 handle;
+  let handle: HGLOBAL16;
   
   handle = 0x1000;
   if (false) {
@@ -1291,7 +1313,7 @@ pub fn free_mem_1000_407a(param_1: u16,param_2: u16,param_3: u16)
     if (uVar1 == 0x0) {
       return;
     }
-    handle = s_tile2_bmp_1050_1538;
+    handle = ctx.s_tile2_bmp_1050_1538;
     GlobalUnlock16(0x1000);
   }
   GlobalFree16(handle);

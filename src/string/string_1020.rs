@@ -1,6 +1,6 @@
 
 
-fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,char *param_4)
+pub fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,char *param_4)
 {
   unk_str_op_1000_3d3e
             ((param_2 & 0xffff0000 | (param_2 + 0xa)),param_4);
@@ -11,10 +11,10 @@ fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,char *param_4)
 }
 
 
-fn string_op_1020_c2f8(param_1: u16) -> *mut u8
+pub fn string_op_1020_c2f8(param_1: u16) -> *mut u8
 
 {
-  char *pcVar1;
+  let mut pcVar1: String; 
   
   switch(param_1) {
   case 0x1:
@@ -50,7 +50,7 @@ fn string_op_1020_c2f8(param_1: u16) -> *mut u8
   case 0x10:
   }
   pcVar1 = load_string_1010_847e
-                     (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10)
+                     (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10)
                       ,0x1010);
   return pcVar1;
 }

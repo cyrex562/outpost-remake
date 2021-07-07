@@ -1,10 +1,10 @@
 
-fn mix_draw_op_1040_21d6(param_1: u32,HWND16 param_2,param_3: u16)
+pub fn mix_draw_op_1040_21d6(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let uVar1: u8;
   let uVar2: u8;
-  astruct_13 *paVar3;
-  code **ppcVar4;
+  let paVar3: &mut Struct13;
+  let ppcVar4: u32;
   let iVar5: i16;
   HPALETTE16 b_force_background;
   COLORREF color;
@@ -23,7 +23,7 @@ fn mix_draw_op_1040_21d6(param_1: u32,HWND16 param_2,param_3: u16)
   iVar6 = param_1;
   uVar8 = (iVar6 + 0x6);
   local_24 = BeginPaint16(param_2,&local_22);
-  paVar3 = *(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe);
+  paVar3 = *(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe);
   b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
   ppcVar4 = ((iVar6 + 0x8e) + 0x4);
   (**ppcVar4)(0x1008,(iVar6 + 0x8e),0xffffffff,&local_24,param_3,uVar8);
@@ -33,34 +33,34 @@ fn mix_draw_op_1040_21d6(param_1: u32,HWND16 param_2,param_3: u16)
   uVar1 = *(iVar5 + 0x3e5);
   uVar2 = *(iVar5 + 0x3e6);
   color = SetBkColor16(0x1008,0x0);
-  color_00 = SetTextColor16(s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
+  color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
   HStack62 = 0x0;
-  handle = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5ced);
+  handle = GetProp16((HWND16)s_tile2_bmp_1050_1538,0x5ced);
   if (handle != 0x0) {
-    HStack62 = SelectObject16(s_tile2_bmp_1050_1538,handle);
+    HStack62 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,iVar6 + 0x92,rect,
+  DrawText16(ctx.s_tile2_bmp_1050_1538,&ctx.PTR_LOOP_1050_0010,iVar6 + 0x92,rect,
              0xffff);
-  SetTextColor16(s_tile2_bmp_1050_1538,
+  SetTextColor16(ctx.s_tile2_bmp_1050_1538,
                  CONCAT11(*(iVar5 + 0x95),*(iVar5 + 0x96)));
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,iVar6 + 0x9a,rect,
+  DrawText16(ctx.s_tile2_bmp_1050_1538,&ctx.PTR_LOOP_1050_0010,iVar6 + 0x9a,rect,
              0xffff);
   if (handle != 0x0) {
-    SelectObject16(s_tile2_bmp_1050_1538,HStack62);
+    SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack62);
   }
-  SetBkColor16(s_tile2_bmp_1050_1538,color);
-  SetTextColor16(s_tile2_bmp_1050_1538,color_00);
-  SelectPalette16(s_tile2_bmp_1050_1538,0x0,b_force_background);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,color);
+  SetTextColor16(ctx.s_tile2_bmp_1050_1538,color_00);
+  SelectPalette16(ctx.s_tile2_bmp_1050_1538,0x0,b_force_background);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_22);
   return;
 }
 
 
-fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF param_4) -> u32
+pub fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF param_4) -> u32
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   let iVar3: i16;
   HBRUSH16 HVar4;
@@ -68,7 +68,7 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
   let iVar6: i16;
   let uVar7: u16;
   COLORREF CVar8;
-  HWND16 hdc;
+  let hdc: HWND16;
   let uVar9: u32;
   
   uVar7 = (param_1 >> 0x10);
@@ -79,14 +79,14 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
     HVar4 = CreateSolidBrush16(param_4);
     *(HBRUSH16 *)(iVar6 + 0x4) = HVar4;
   }
-  if (_PTR_LOOP_1050_5cf8 == 0x0) {
+  if (ctx.PTR__LOOP_1050_5cf8 == 0x0) {
     ppcVar1 = (*param_1 + 0x68);
     uVar9 = (**ppcVar1)(CVar8,param_1,(iVar6 + 0x6e));
     CVar8 = 0x1008;
     uVar9 = pass1_1008_4d72(uVar9);
     uVar2 = (uVar9 >> 0x10);
     iVar3 = uVar9;
-    _PTR_LOOP_1050_5cf8 =
+    ctx._PTR_LOOP_1050_5cf8 =
          CONCAT22(CONCAT11(0x2,*(iVar3 + 0x94)),
                   CONCAT11(*(iVar3 + 0x95),*(iVar3 + 0x96)));
   }
@@ -95,26 +95,26 @@ fn draw_ui_op_1040_27cc(param_1: *mut u32,param_2: u16,param_3: u16,COLORREF par
     if (param_3 != 0x6) {
       return 0x0;
     }
-    hdc = s_tile2_bmp_1050_1538;
+    hdc = ctx.s_tile2_bmp_1050_1538;
     IVar5 = GetDlgCtrlID16(CVar8);
     if (((iVar6 + 0x94) != 0x0) && (IVar5 == 0xfb2)) {
       CVar8 = 0x0;
-      goto LAB_1040_286e;
+//       TODO: goto LAB_1040_286e;
     }
   }
   CVar8 = (COLORREF)_PTR_LOOP_1050_5cf8;
 //LAB_1040_286e:
   SetTextColor16(hdc,CVar8);
-  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   return CONCAT22(0x1050,(iVar6 + 0x4));
 }
 
 
-fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
+pub fn draw_op_1040_5a06(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let puVar1: *mut u16;
   let uVar2: u32;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let uVar4: u32;
   HPALETTE16 b_force_background;
   let iVar5: i16;
@@ -128,8 +128,8 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   let uVar8: u16;
   let IVar9: i16;
   let uVar10: u32;
-  astruct_43 *paVar11;
-  astruct_76 *paVar12;
+  let paVar11: &mut Struct43;
+  let paVar12: &mut Struct76;
   let uVar13: u16;
   HDC16 *pHVar14;
   let uVar15: u16;
@@ -142,7 +142,7 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   let uStack82: u16;
   let iStack72: i16;
   let iStack68: i16;
-  astruct_76 *paStack54;
+  let paStack54: &mut Struct76;
   HDC16 local_2c;
   PAINTSTRUCT16 local_2a;
   RECT16 local_a [0x2];
@@ -156,37 +156,37 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   uVar8 = 0x1008;
   b_force_background =
        palette_op_1008_4e08
-                 (*(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe),&local_2c,in_DX,0x1008)
+                 (*(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe),&local_2c,in_DX,0x1008)
   ;
-  paStack54 = (astruct_76 *)0x0;
+  paStack54 = 0x0;
   if ((iVar6 + 0x98) != 0x0) {
-    paStack54 = (astruct_76 *)
-                unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,(iVar6 + 0x98),param_3)
+    paStack54 = 
+                unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,(iVar6 + 0x98),param_3)
     ;
     IVar9 = 0x1008;
     uVar10 = pass1_1008_4772(paStack54);
     if (((uVar10 >> 0x10) | uVar10) == 0x0) {
-      if (paStack54 != (astruct_76 *)0x0) {
-        if (paStack54 != (astruct_76 *)0x0) {
+      if (paStack54 != 0x0) {
+        if (paStack54 != 0x0) {
           ppcVar3 = paStack54;
           (**ppcVar3)(0x1008,paStack54,(paStack54 >> 0x10),0x1,uVar13);
         }
       }
       IVar9 = 0x1010;
-      paStack54 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x4d,param_3);
+      paStack54 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x4d,param_3);
     }
-    uVar8 = SUB42(s_tile2_bmp_1050_1538,0x0);
+    uVar8 = SUB42(ctx.s_tile2_bmp_1050_1538,0x0);
     GetSystemMetrics16(IVar9);
     ppcVar3 = (paStack54 + 0x4);
     (**ppcVar3)();
   }
-  if (paStack54 != (astruct_76 *)0x0) {
-    if (paStack54 != (astruct_76 *)0x0) {
+  if (paStack54 != 0x0) {
+    if (paStack54 != 0x0) {
       ppcVar3 = paStack54;
       (**ppcVar3)(uVar8,paStack54,(paStack54 >> 0x10),0x1,uVar13,uVar21);
     }
   }
-  paVar11 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,(iVar6 + 0x96),param_3);
+  paVar11 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,(iVar6 + 0x96),param_3);
   uVar21 = (paVar11 >> 0x10);
   pHVar14 = &local_2c;
   uVar19 = 0x4;
@@ -199,16 +199,16 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   uVar13 = paVar11;
   uVar8 = uVar21;
   (**ppcVar3)();
-  if (paVar11 != (astruct_43 *)0x0) {
-    if (paVar11 != (astruct_43 *)0x0) {
+  if (paVar11 != 0x0) {
+    if (paVar11 != 0x0) {
       ppcVar3 = uVar4;
-      (**ppcVar3)(s_tile2_bmp_1050_1538,paVar11,uVar21,0x1,uVar13,uVar8,iVar5,
+      (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,paVar11,uVar21,0x1,uVar13,uVar8,iVar5,
                   uVar19,uVar20,pHVar14,uVar15);
     }
   }
   handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,0x25,0x100);
-  handle_00 = SelectObject16(s_tile2_bmp_1050_1538,handle);
-  paVar12 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x4f,param_3);
+  handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
+  paVar12 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x4f,param_3);
   uVar21 = (paVar12 >> 0x10);
   uVar10 = pass1_1008_4772(paVar12);
   uVar13 = (uVar10 >> 0x10);
@@ -219,16 +219,16 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
   IVar9 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
   iStack72 = uVar2;
   x = 0xc5 - (IVar9 - iStack72);
-  MoveTo16(s_tile2_bmp_1050_1538,iVar5,0x82);
+  MoveTo16(ctx.s_tile2_bmp_1050_1538,iVar5,0x82);
   iStack68 = uVar4;
   y = iStack68 * 0xa + 0x85;
-  LineTo16(s_tile2_bmp_1050_1538,iVar5,y);
+  LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,y);
   HVar18 = local_2c;
-  LineTo16(s_tile2_bmp_1050_1538,x,y);
+  LineTo16(ctx.s_tile2_bmp_1050_1538,x,y);
   HVar17 = local_2c;
-  LineTo16(s_tile2_bmp_1050_1538,x,0x82);
+  LineTo16(ctx.s_tile2_bmp_1050_1538,x,0x82);
   HVar16 = local_2c;
-  LineTo16(s_tile2_bmp_1050_1538,iVar5,0x82);
+  LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,0x82);
   for (uStack82 = 0x0; puVar1 = (iVar6 + 0x94),
       uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
     pHVar14 = &local_2c;
@@ -237,20 +237,20 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
     uVar15 = param_3;
     IVar9 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
     ppcVar3 = (paVar12 + 0x4);
-    (**ppcVar3)(s_tile2_bmp_1050_1538,paVar12,uVar21,-(IVar9 + -0xc4),uVar13,
+    (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,paVar12,uVar21,-(IVar9 + -0xc4),uVar13,
                 iVar5,pHVar14,uVar15,HVar16,HVar17);
   }
-  if (paVar12 != (astruct_76 *)0x0) {
-    if (paVar12 != (astruct_76 *)0x0) {
+  if (paVar12 != 0x0) {
+    if (paVar12 != 0x0) {
       ppcVar3 = paVar12;
-      (**ppcVar3)(s_tile2_bmp_1050_1538,paVar12,uVar21,0x1,HVar16,HVar17,HVar18)
+      (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,paVar12,uVar21,0x1,HVar16,HVar17,HVar18)
       ;
     }
   }
-  SelectObject16(s_tile2_bmp_1050_1538,handle_00);
-  DeleteObject16(s_tile2_bmp_1050_1538);
-  SelectPalette16(s_tile2_bmp_1050_1538,0x0,b_force_background);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_00);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
+  SelectPalette16(ctx.s_tile2_bmp_1050_1538,0x0,b_force_background);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_2a);
   return;
 }
@@ -259,9 +259,9 @@ fn draw_op_1040_5a06(param_1: u32,HWND16 param_2,param_3: u16)
 
 // WARNING: Could not reconcile some variable overlaps
 
-fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16)
+pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14,in_win_handle_2: HWND16,param_3: u16)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let BVar2: bool;
   let y: i16;
   let iVar3: i16;
@@ -270,10 +270,10 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
   HGDIOBJ16 handle_00;
   RECT16 *rect;
   HANDLE16 handle_01;
-  LPCSTR str;
-  astruct_14 *iVar4;
-  char *count;
-  char *str_00;
+  let mut str: String;
+  let iVar4: &mut Struct14;
+  let mut count: String; 
+  let mut str_00: String; 
   let uVar4: u32;
   let DVar5: u32;
   HBRUSH16 hbrush;
@@ -288,17 +288,17 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
   HDC16 local_hdc_4;
   
   str_00 = (in_struct_1 >> 0x10);
-  iVar4 = (astruct_14 *)in_struct_1;
+  iVar4 = in_struct_1;
   uVar7 = iVar4.field_0x6;
   BVar2 = IsIconic16(in_win_handle_2);
   if (BVar2 == 0x0) {
     uVar6 = iVar4.field_0x6;
     local_hdc_4 = GetWindowDC16((HWND16)s_tile2_bmp_1050_1538);
     ppcVar1 = (in_struct_1 + 0x68);
-    uStack8 = (astruct_13 *)
-              (**ppcVar1)(s_tile2_bmp_1050_1538,in_struct_1,iVar4.field_0x6e,uVar6,
+    uStack8 = 
+              (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,in_struct_1,iVar4.field_0x6e,uVar6,
                           uVar7);
-    if (uStack8 != (astruct_13 *)0x0) {
+    if (uStack8 != 0x0) {
       HStack10 = palette_op_1008_4e08
                            (uStack8,&local_hdc_4,
                             (uStack8 >> 0x10) | uStack8,0x1008);
@@ -307,52 +307,52 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
       iVar3 = (iStack12 - local_rect_12.y) + -0x1;
       color = (-(iVar4.field_0x60 == 0x0) & 0x1e) + 0x25;
       handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,color,0x100);
-      handle_00 = SelectObject16(s_tile2_bmp_1050_1538,handle);
-      MoveTo16(s_tile2_bmp_1050_1538,0x0,0x0);
-      LineTo16(s_tile2_bmp_1050_1538,0x0,y);
-      LineTo16(s_tile2_bmp_1050_1538,iVar3,y);
-      LineTo16(s_tile2_bmp_1050_1538,iVar3,0x0);
-      LineTo16(s_tile2_bmp_1050_1538,0x0,0x0);
+      handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
+      MoveTo16(ctx.s_tile2_bmp_1050_1538,0x0,0x0);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,0x0,y);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iVar3,y);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iVar3,0x0);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,0x0,0x0);
       uVar4 = GetWindowLong16((HWND16)s_tile2_bmp_1050_1538,-0x10);
       if (((uVar4 & 0x800000) != 0x0) && ((uVar4 & 0x400000) != 0x0)) {
         iVar3 = iVar4.field_0x62 - iVar4.field_0x66;
-        MoveTo16(s_tile2_bmp_1050_1538,iVar3,0x0);
-        LineTo16(s_tile2_bmp_1050_1538,iVar3,y);
+        MoveTo16(ctx.s_tile2_bmp_1050_1538,iVar3,0x0);
+        LineTo16(ctx.s_tile2_bmp_1050_1538,iVar3,y);
         iVar4.field_0x7a = iVar4.field_0x64;
         iVar4.field_0x7c = iVar4.field_0x66;
         iVar4.field_0x7e = y;
         iVar4.field_0x80 = iVar4.field_0x62 - iVar4.field_0x66;
         hbrush = 0x4;
         rect = (RECT16 *)GetStockObject16((INT16)s_tile2_bmp_1050_1538);
-        FillRect16(s_tile2_bmp_1050_1538,rect,hbrush);
+        FillRect16(ctx.s_tile2_bmp_1050_1538,rect,hbrush);
         if (iVar4.field_0x76 != 0x0) {
-          draw_op_1040_82ee((astruct_15 *)in_struct_1,s_tile2_bmp_1050_1538);
+          draw_op_1040_82ee(in_struct_1,s_tile2_bmp_1050_1538);
         }
         count = &iVar4.field_0x10;
         if (*count != '\0') {
           local_obj_handle_42 = 0x0;
-          handle_01 = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5de9);
+          handle_01 = GetProp16((HWND16)s_tile2_bmp_1050_1538,0x5de9);
           if (handle_01 != 0x0) {
-            local_obj_handle_42 = SelectObject16(s_tile2_bmp_1050_1538,handle_01);
+            local_obj_handle_42 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_01);
           }
-          SetBkColor16(s_tile2_bmp_1050_1538,0x0);
-          SetTextColor16(s_tile2_bmp_1050_1538,color);
-          str = (LPCSTR)lstrlen16((LPCSTR)s_tile2_bmp_1050_1538);
-          DVar5 = GetTextExtent16(s_tile2_bmp_1050_1538,str,count);
-          TextOut16(s_tile2_bmp_1050_1538,str,count,str_00,
+          SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
+          SetTextColor16(ctx.s_tile2_bmp_1050_1538,color);
+          str = lstrlen16(ctx.s_tile2_bmp_1050_1538);
+          DVar5 = GetTextExtent16(ctx.s_tile2_bmp_1050_1538,str,count);
+          TextOut16(ctx.s_tile2_bmp_1050_1538,str,count,str_00,
                     (iVar4.field_0x80 - iVar4.field_0x7c) / 0x2 -
                     (DVar5 >> 0x10) / 0x2);
           if (handle_01 != 0x0) {
-            SelectObject16(s_tile2_bmp_1050_1538,local_obj_handle_42);
+            SelectObject16(ctx.s_tile2_bmp_1050_1538,local_obj_handle_42);
           }
         }
       }
       ppcVar1 = (in_struct_1 + 0x64);
-      (**ppcVar1)(s_tile2_bmp_1050_1538,in_struct_1,uStack8,local_hdc_4);
-      HStack10 = SelectPalette16(s_tile2_bmp_1050_1538,0x0,HStack10);
-      DeleteObject16(s_tile2_bmp_1050_1538);
-      SelectObject16(s_tile2_bmp_1050_1538,handle_00);
-      DeleteObject16(s_tile2_bmp_1050_1538);
+      (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,in_struct_1,uStack8,local_hdc_4);
+      HStack10 = SelectPalette16(ctx.s_tile2_bmp_1050_1538,0x0,HStack10);
+      DeleteObject16(ctx.s_tile2_bmp_1050_1538);
+      SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_00);
+      DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     }
     ReleaseDC16((HWND16)s_tile2_bmp_1050_1538,local_hdc_4);
     return;
@@ -364,25 +364,25 @@ fn draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_handle_2,param_3: u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16 param_4) -> u32
+pub fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16 param_4) -> u32
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let iVar2: i16;
   HGDIOBJ16 HVar3;
   let IVar4: i16;
-  HWND16 hwnd;
-  HWND16 hdc;
+  let hwnd: HWND16;
+  let hdc: HWND16;
   let uVar5: u32;
   COLORREF color;
   let uVar6: u16;
   
   uVar6 = 0x4;
-  hwnd = s_tile2_bmp_1050_1538;
+  hwnd = ctx.s_tile2_bmp_1050_1538;
   HVar3 = GetStockObject16(param_4);
-  if (_PTR_LOOP_1050_5df0 == 0x0) {
+  if (ctx.PTR__LOOP_1050_5df0 == 0x0) {
     ppcVar1 = (*param_1 + 0x68);
-    uVar5 = (**ppcVar1)(s_tile2_bmp_1050_1538,param_1,
+    uVar5 = (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,param_1,
                         (param_1 + 0x6e),uVar6);
     if (uVar5 == 0x0) {
       return 0x0;
@@ -391,7 +391,7 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
     uVar5 = pass1_1008_4d72(uVar5);
     uVar6 = (uVar5 >> 0x10);
     iVar2 = uVar5;
-    _PTR_LOOP_1050_5df0 =
+    ctx._PTR_LOOP_1050_5df0 =
          CONCAT22(CONCAT11(0x2,*(iVar2 + 0x94)),
                   CONCAT11(*(iVar2 + 0x95),*(iVar2 + 0x96)));
   }
@@ -400,28 +400,28 @@ fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16
     if (param_3 != 0x6) {
       return 0x0;
     }
-    hdc = s_tile2_bmp_1050_1538;
+    hdc = ctx.s_tile2_bmp_1050_1538;
     IVar4 = GetDlgCtrlID16(hwnd);
     if (IVar4 == 0x14c) {
       color = 0x0;
-      goto LAB_1040_7f00;
+//       TODO: goto LAB_1040_7f00;
     }
     if (IVar4 == 0x175) {
       color = 0x0;
-      goto LAB_1040_7f00;
+//       TODO: goto LAB_1040_7f00;
     }
   }
   color = (COLORREF)_PTR_LOOP_1050_5df0;
 //LAB_1040_7f00:
   SetTextColor16(hdc,color);
-  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   return CONCAT22(0x1050,HVar3);
 }
 
 
-fn draw_op_1040_82ee(astruct_15 *param_1,COLORREF in_colorref_2)
+pub fn draw_op_1040_82ee(param_1: &mut Struct15,COLORREF in_colorref_2)
 {
-  astruct_15 *iVar1;
+  let iVar1: &mut Struct15;
   let uVar1: u16;
   let local_1a: u32;
   let uStack22: u32;
@@ -435,7 +435,7 @@ fn draw_op_1040_82ee(astruct_15 *param_1,COLORREF in_colorref_2)
   let iStack4: i16;
   
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_15 *)param_1;
+  iVar1 = param_1;
   iStack6 = (iVar1.field_0x80 - iVar1.field_0x7c) + -0x2;
   iStack8 = (-(iVar1.field_0x60 == 0x0) & 0x1e) + 0x25;
   iStack4 = iStack6;
@@ -450,19 +450,19 @@ fn draw_op_1040_82ee(astruct_15 *param_1,COLORREF in_colorref_2)
   iStack16 = (iVar1.field_0x88 - iVar1.field_0x84) / 0x2 + iVar1.field_0x84 + -0x2;
   iStack14 = iVar1.field_0x86 - 0x2;
   iStack12 = (iVar1.field_0x88 - iVar1.field_0x84) / 0x2 + iVar1.field_0x84 + 0x2;
-  FrameRect16(s_tile2_bmp_1050_1538,l_brush_handle,(HBRUSH16)&iVar1.field_0x82);
-  FrameRect16(s_tile2_bmp_1050_1538,l_brush_handle,(HBRUSH16)&local_12);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  FrameRect16(ctx.s_tile2_bmp_1050_1538,l_brush_handle,(HBRUSH16)&iVar1.field_0x82);
+  FrameRect16(ctx.s_tile2_bmp_1050_1538,l_brush_handle,(HBRUSH16)&local_12);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   iVar1.field_0x7a = iVar1.field_0x86 + 0x2;
   return;
 }
 
 
-fn mixed_draw_op_1040_8a06(param_1: u32,HWND16 param_2,param_3: u16)
+pub fn mixed_draw_op_1040_8a06(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let uVar1: u8;
   let uVar2: u8;
-  astruct_13 *paVar3;
+  let paVar3: &mut Struct13;
   let uVar4: u16;
   HPALETTE16 b_force_background;
   COLORREF color;
@@ -477,59 +477,59 @@ fn mixed_draw_op_1040_8a06(param_1: u32,HWND16 param_2,param_3: u16)
   
   rect = (RECT16 *)(param_1 >> 0x10);
   local_24 = BeginPaint16(param_2,&local_22);
-  paVar3 = *(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe);
+  paVar3 = *(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe);
   b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
   uVar5 = pass1_1008_4d72(paVar3);
   uVar4 = (uVar5 >> 0x10);
   uVar1 = *(uVar5 + 0x95);
   uVar2 = *(uVar5 + 0x96);
   DrawIcon16(0x1008,*(INT16 *)(param_1 + 0x8e),0xa,0x14);
-  color = SetBkColor16(s_tile2_bmp_1050_1538,0x0);
-  color_00 = SetTextColor16(s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
+  color = SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
+  color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
   HStack62 = 0x0;
-  handle = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5dfa);
+  handle = GetProp16((HWND16)s_tile2_bmp_1050_1538,0x5dfa);
   if (handle != 0x0) {
-    HStack62 = SelectObject16(s_tile2_bmp_1050_1538,handle);
+    HStack62 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,param_1 + 0x9e,
+  DrawText16(ctx.s_tile2_bmp_1050_1538,&ctx.PTR_LOOP_1050_0010,param_1 + 0x9e,
              rect,0xffff);
   if (handle != 0x0) {
-    SelectObject16(s_tile2_bmp_1050_1538,HStack62);
+    SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack62);
   }
-  SetBkColor16(s_tile2_bmp_1050_1538,color);
-  SetTextColor16(s_tile2_bmp_1050_1538,color_00);
-  SelectPalette16(s_tile2_bmp_1050_1538,0x0,b_force_background);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,color);
+  SetTextColor16(ctx.s_tile2_bmp_1050_1538,color_00);
+  SelectPalette16(ctx.s_tile2_bmp_1050_1538,0x0,b_force_background);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_22);
   return;
 }
 
 
-fn load_icon_1040_8b92(param_1: u32,HINSTANCE16 param_2)
+pub fn load_icon_1040_8b92(param_1: u32,HINSTANCE16 param_2)
 {
   let bVar1: u8;
   HICON16 HVar2;
   let uVar3: u16;
-  LPCSTR name;
+  let mut name: String;
   
   uVar3 = (param_1 >> 0x10);
   bVar1 = (param_1 + 0x98) & 0xf0;
   if (bVar1 == 0x30) {
-    name = (LPCSTR)0x7f03;
+    name = 0x7f03;
   }
   else {
     if ((bVar1 == 0x10) || (bVar1 == 0x10)) {
-      name = (LPCSTR)0x7f01;
+      name = 0x7f01;
     }
     else {
       if ((bVar1 == 0x40) || (bVar1 == 0x40)) {
-        name = (LPCSTR)0x7f04;
+        name = 0x7f04;
       }
       else {
         if (bVar1 != 0x20) {
           return;
         }
-        name = (LPCSTR)0x7f02;
+        name = 0x7f02;
       }
     }
   }
@@ -540,55 +540,55 @@ fn load_icon_1040_8b92(param_1: u32,HINSTANCE16 param_2)
 
 
 
-fn draw_text_1040_8d14(astruct_37 *param_1,HWND16 param_2)
+pub fn draw_text_1040_8d14(param_1: &mut Struct37,param_2: HWND16)
 {
   let bVar1: u8;
   let IVar2: i16;
   HANDLE16 handle;
-  astruct_37 *iVar3;
+  let iVar3: &mut Struct37;
   RECT16 *rect;
   HGDIOBJ16 HStack8;
   
   rect = (RECT16 *)(param_1 >> 0x10);
-  iVar3 = (astruct_37 *)param_1;
+  iVar3 = param_1;
   bVar1 = iVar3.field_0x98 & 0xf0;
   if ((((bVar1 == 0x30) || (bVar1 == 0x10)) || (bVar1 == 0x40)) || (bVar1 == 0x20)) {
     iVar3.field_0xa0 = 0xa;
     IVar2 = GetSystemMetrics16(param_2);
     iVar3.field_0x9e = IVar2 + 0x28;
-    param_2 = s_tile2_bmp_1050_1538;
+    param_2 = ctx.s_tile2_bmp_1050_1538;
   }
   else {
     iVar3.field_0xa0 = 0xa;
     iVar3.field_0x9e = 0x14;
   }
   HStack8 = 0x0;
-  handle = GetProp16(param_2,(LPCSTR)0x5e0f);
+  handle = GetProp16(param_2,0x5e0f);
   if (handle != 0x0) {
-    HStack8 = SelectObject16(s_tile2_bmp_1050_1538,handle);
+    HStack8 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   }
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)0x410,&iVar3.field_0x9e,rect,
+  DrawText16(ctx.s_tile2_bmp_1050_1538,0x410,&iVar3.field_0x9e,rect,
              0xffff);
   if (HStack8 != 0x0) {
-    SelectObject16(s_tile2_bmp_1050_1538,HStack8);
+    SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack8);
   }
   return;
 }
 
 
 
-fn unk_draw_op_1040_9458(astruct_17 *param_1,param_2: u8,param_3: u16,HDC16 param_4)
+pub fn unk_draw_op_1040_9458(param_1: &mut Struct17,param_2: u8,param_3: u16,HDC16 param_4)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   Ulet UVar2: i32;
   let uVar3: u16;
-  astruct_17 *iVar4;
+  let iVar4: &mut Struct17;
   let uVar4: u16;
   let puStack8: *mut u16;
-  ULONG *puStack6;
+  let puStack6: &mut u32;
   
   uVar4 = (param_1 >> 0x10);
-  iVar4 = (astruct_17 *)param_1;
+  iVar4 = param_1;
   if (iVar4.field_0x8 != 0x0) {
     puStack6 = iVar4.field_0x8;
     uVar3 = (&iVar4.field_0x8 + 0x2);
@@ -608,39 +608,39 @@ fn unk_draw_op_1040_9458(astruct_17 *param_1,param_2: u8,param_3: u16,HDC16 para
     ppcVar1 = (UVar2 + 0x4);
     (**ppcVar1)(param_4,puStack6,iVar4.field_0x28,iVar4.field_0x26,&param_3);
     SelectPalette16(param_4,0x0,puStack8);
-    DeleteObject16(s_tile2_bmp_1050_1538);
+    DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   }
   return;
 }
 
 
 
-fn draw_text_1040_94fc(astruct_37 *param_1,HDC16 param_2)
+pub fn draw_text_1040_94fc(param_1: &mut Struct37,HDC16 param_2)
 {
   COLORREF color;
   COLORREF color_00;
-  astruct_38 *iVar1;
+  let iVar1: &mut Struct38;
   RECT16 *rect;
   
   rect = (RECT16 *)(param_1 >> 0x10);
-  iVar1 = (astruct_38 *)param_1;
+  iVar1 = param_1;
   color = SetBkColor16(param_2,iVar1.field_0x3a);
-  color_00 = SetTextColor16(s_tile2_bmp_1050_1538,iVar1.field_0x3c);
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)&ctx.PTR_LOOP_1050_0010,&iVar1.field_0x2e,
+  color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538,iVar1.field_0x3c);
+  DrawText16(ctx.s_tile2_bmp_1050_1538,&ctx.PTR_LOOP_1050_0010,&iVar1.field_0x2e,
              rect,0xffff);
-  SetBkColor16(s_tile2_bmp_1050_1538,color);
-  SetTextColor16(s_tile2_bmp_1050_1538,color_00);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,color);
+  SetTextColor16(ctx.s_tile2_bmp_1050_1538,color_00);
   return;
 }
 
 
 
-fn draw_text_1040_9650(Uparam_1: i32,HWND16 param_2)
+pub fn draw_text_1040_9650(Uparam_1: i32,param_2: HWND16)
 {
   HDC16 hdc;
   
   hdc = GetDC16(param_2);
-  DrawText16(s_tile2_bmp_1050_1538,(LPCSTR)0x410,param_1 + 0x2e,
+  DrawText16(ctx.s_tile2_bmp_1050_1538,0x410,param_1 + 0x2e,
              (RECT16 *)(param_1 >> 0x10),0xffff);
   ReleaseDC16((HWND16)s_tile2_bmp_1050_1538,hdc);
   return;
@@ -651,7 +651,7 @@ fn draw_text_1040_9650(Uparam_1: i32,HWND16 param_2)
 
 // WARNING: Could not reconcile some variable overlaps
 
-fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
+pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,RECT16 *param_4)
 {
   let iVar1: i16;
   let iVar2: i16;
@@ -663,9 +663,9 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
   let color: *mut u8;
   COLORREF color_00;
   COLORREF color_01;
-  astruct_71 *iVar4;
+  let iVar4: &mut Struct71;
   let y: i16;
-  char *x;
+  let mut x: String; 
   let cx: i16;
   let cy: i16;
   let iStack88: i16;
@@ -697,11 +697,11 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
   iStack28 = 0x0;
   HStack30 = 0x0;
   y = (param_2 >> 0x10);
-  iVar4 = (astruct_71 *)param_2;
+  iVar4 = param_2;
   uStack32 = iVar4.field_0x4 & 0x8;
   uStack34 = iVar4.field_0x56 & 0x1;
   BeginPaint16(param_3,&local_42);
-  mode = SetMapMode16(s_tile2_bmp_1050_1538,0x1);
+  mode = SetMapMode16(ctx.s_tile2_bmp_1050_1538,0x1);
   GetClientRect16((HWND16)s_tile2_bmp_1050_1538,&local_12);
   iVar2 = (uStack14 >> 0x10);
   iVar1 = iVar2 + -0x1;
@@ -717,28 +717,28 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
   if (iVar4.field_0x6 != '\0') {
     iStack28 = 0x1;
     if (iVar4.field_0x5a != 0x0) {
-      HStack30 = SelectObject16(s_tile2_bmp_1050_1538,iVar4.field_0x5a);
+      HStack30 = SelectObject16(ctx.s_tile2_bmp_1050_1538,iVar4.field_0x5a);
     }
     uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4.field_0x6)));
-    DrawText16(0x1000,(LPCSTR)0x400,&local_a,param_4,uVar3);
+    DrawText16(0x1000,0x400,&local_a,param_4,uVar3);
     iStack8 = ((uStack14._2_2_ - iStack4) + iStack8) / 0x2 + local_12.y;
     iStack4 += iStack8;
     local_a = ((uStack14 - iStack6) + local_a) / 0x2 + local_12.x;
     iStack6 += local_a;
   }
   handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,DAT_1050_5ec2,
-                       (COLORREF)(DAT_1050_5ec2 >> 0x10));
+                       (COLORREF)(ctx.DAT_1050_5ec2 >> 0x10));
   handle_00 = CreatePen16((INT16)s_tile2_bmp_1050_1538,DAT_1050_5ebe,
-                          (COLORREF)(DAT_1050_5ebe >> 0x10));
-  handle_01 = SelectObject16(s_tile2_bmp_1050_1538,handle);
+                          (COLORREF)(ctx.DAT_1050_5ebe >> 0x10));
+  handle_01 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   if (uStack34 != 0x0) {
     iStack78 = 0x0;
     do {
-      MoveTo16(s_tile2_bmp_1050_1538,iStack20,iStack26);
-      LineTo16(s_tile2_bmp_1050_1538,iStack20,iStack22);
-      LineTo16(s_tile2_bmp_1050_1538,iStack24,iStack22);
-      LineTo16(s_tile2_bmp_1050_1538,iStack24,iStack26);
-      LineTo16(s_tile2_bmp_1050_1538,iStack20,iStack26);
+      MoveTo16(ctx.s_tile2_bmp_1050_1538,iStack20,iStack26);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack20,iStack22);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack24,iStack22);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack24,iStack26);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack20,iStack26);
       iStack24 += 0x1;
       iStack26 += 0x1;
       iStack22 += -0x1;
@@ -753,15 +753,15 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
     iStack86 = local_12.x;
     iStack80 = uStack14._2_2_;
     do {
-      SelectObject16(s_tile2_bmp_1050_1538,handle);
-      MoveTo16(s_tile2_bmp_1050_1538,iStack80,iStack86);
-      LineTo16(s_tile2_bmp_1050_1538,iStack80,iStack82);
-      LineTo16(s_tile2_bmp_1050_1538,iStack84,iStack82);
+      SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
+      MoveTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack86);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack82);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iStack84,iStack82);
       iStack88 = 0x0;
       do {
-        SelectObject16(s_tile2_bmp_1050_1538,handle_00);
-        LineTo16(s_tile2_bmp_1050_1538,iStack84,iStack86);
-        LineTo16(s_tile2_bmp_1050_1538,iStack80,iStack86);
+        SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_00);
+        LineTo16(ctx.s_tile2_bmp_1050_1538,iStack84,iStack86);
+        LineTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack86);
         iStack88 += 0x1;
       } while (iStack88 < 0x2);
       iStack84 += 0x1;
@@ -772,9 +772,9 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
     } while (iStack78 < 0x2);
   }
   else {
-    MoveTo16(s_tile2_bmp_1050_1538,uStack14._2_2_,local_12.x);
-    LineTo16(s_tile2_bmp_1050_1538,local_12.y,local_12.x);
-    LineTo16(s_tile2_bmp_1050_1538,local_12.y,uStack14 + 0x1);
+    MoveTo16(ctx.s_tile2_bmp_1050_1538,uStack14._2_2_,local_12.x);
+    LineTo16(ctx.s_tile2_bmp_1050_1538,local_12.y,local_12.x);
+    LineTo16(ctx.s_tile2_bmp_1050_1538,local_12.y,uStack14 + 0x1);
     if (iStack28 != 0x0) {
       iStack8 += 0x2;
       local_a += 0x2;
@@ -782,21 +782,21 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
       iStack4 += 0x2;
     }
   }
-  MoveTo16(s_tile2_bmp_1050_1538,0x0,0x0);
+  MoveTo16(ctx.s_tile2_bmp_1050_1538,0x0,0x0);
   if (iStack28 != 0x0) {
     if ((iVar4.field_0x4 & 0x4) == 0x0) {
       color = ctx.PTR_LOOP_1050_5ec6;
       if (uStack32 != 0x0) {
-        color = DAT_1050_5eca;
+        color = ctx.DAT_1050_5eca;
       }
-      color_00 = SetTextColor16(s_tile2_bmp_1050_1538,(COLORREF)color);
-      color_01 = SetBkColor16(s_tile2_bmp_1050_1538,0x0);
+      color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538,(COLORREF)color);
+      color_01 = SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
       uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4.field_0x6)))
       ;
-      DrawText16(0x1000,(LPCSTR)(&ctx.PTR_LOOP_1050_0000 + 0x1),&local_a,param_4,
+      DrawText16(0x1000,(&ctx.PTR_LOOP_1050_0000 + 0x1),&local_a,param_4,
                  uVar3);
-      SetTextColor16(s_tile2_bmp_1050_1538,color_00);
-      SetBkColor16(s_tile2_bmp_1050_1538,color_01);
+      SetTextColor16(ctx.s_tile2_bmp_1050_1538,color_00);
+      SetBkColor16(ctx.s_tile2_bmp_1050_1538,color_01);
     }
     else {
       GetStockObject16((INT16)s_tile2_bmp_1050_1538);
@@ -808,19 +808,19 @@ fn draw_op_1040_9948(param_1: u16,param_2: u32,HWND16 param_3,RECT16 *param_4)
                    CONCAT22(local_a,iStack8),uVar3,x,y,cx,cy);
     }
     if (HStack30 != 0x0) {
-      SelectObject16(s_tile2_bmp_1050_1538,HStack30);
+      SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack30);
     }
   }
-  SelectObject16(s_tile2_bmp_1050_1538,handle_01);
-  SetMapMode16(s_tile2_bmp_1050_1538,mode);
-  DeleteObject16(s_tile2_bmp_1050_1538);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_01);
+  SetMapMode16(ctx.s_tile2_bmp_1050_1538,mode);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_42);
   return;
 }
 
 
-fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
+pub fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
 {
   let piVar1: *mut i16;
   let bVar2: bool;
@@ -841,12 +841,12 @@ fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
     HVar5 = CreateSolidBrush16(param_4);
     *(HBRUSH16 *)(iVar6 + 0x8e) = HVar5;
   }
-  if (_PTR_LOOP_1050_5ee8 == 0x0) {
+  if (ctx.PTR__LOOP_1050_5ee8 == 0x0) {
     hdc = 0x1008;
-    uVar8 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
+    uVar8 = pass1_1008_4d72((ctx.PTR__LOOP_1050_4230 + 0xe));
     uVar3 = (uVar8 >> 0x10);
     iVar4 = uVar8;
-    _PTR_LOOP_1050_5ee8 =
+    ctx._PTR_LOOP_1050_5ee8 =
          CONCAT12(*(iVar4 + 0x94),
                          CONCAT11(*(iVar4 + 0x95),
                                   *(iVar4 + 0x96)));
@@ -872,7 +872,7 @@ fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
     }
   }
   SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5ee8);
-  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   return;
 }
 
@@ -880,28 +880,28 @@ fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-fn unk_draw_op_1040_b0f8(astruct_18 *param_1)
+pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18)
 {
   let uVar1: u16;
   let uVar2: u16;
   let in_DX: *mut u8
-  astruct_18 *iVar3;
+  let iVar3: &mut Struct18;
   let unaff_DI: i16;
   let uVar3: u16;
   let uVar4: u16;
   let unaff_SS: u16;
   let puVar5: *mut u16;
-  astruct_18 *paStack10;
+  let paStack10: &mut Struct18;
   
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
   param_1.field_0x0 = 0xb772;
   iVar3.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,unaff_SS,in_DX,unaff_DI);
+  puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,unaff_SS,in_DX,unaff_DI);
   uVar4 = 0x1010;
   pass1_1010_7b8c(puVar5,iVar3.field_0x6,unaff_SS);
   if (iVar3.field_0x8e != 0x0) {
-    uVar4 = SUB42(s_tile2_bmp_1050_1538,0x0);
+    uVar4 = SUB42(ctx.s_tile2_bmp_1050_1538,0x0);
     DeleteObject16(0x1010);
     iVar3.field_0x8e = 0x0;
   }
@@ -918,7 +918,7 @@ fn unk_draw_op_1040_b0f8(astruct_18 *param_1)
 }
 
 
-fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *param_4)
+pub fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,param_3: HWND16,RECT16 *param_4)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -983,7 +983,7 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
       iStack4 = (iVar7 + 0x20);
       param_4 = &local_a;
       rect = (RECT16 *)0x0;
-      goto LAB_1040_c19d;
+//       TODO: goto LAB_1040_c19d;
     }
     local_a.x = 0x0;
     local_a.y = 0x0;
@@ -1005,7 +1005,7 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
       local_a.y = (iVar7 + 0x20) + (iVar7 + 0x24);
     }
   }
-  param_3 = s_tile2_bmp_1050_1538;
+  param_3 = ctx.s_tile2_bmp_1050_1538;
   rect = &local_a;
 //LAB_1040_c19d:
   InvalidateRect16(param_3,rect,param_4);
@@ -1014,7 +1014,7 @@ fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,HWND16 param_3,RECT16 *pa
 
 
 
-fn unk_draw_op_1040_c226(param_1: u32,HWND16 param_2,param_3: u16)
+pub fn unk_draw_op_1040_c226(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let uVar1: u32;
   HPEN16 handle;
@@ -1041,21 +1041,21 @@ fn unk_draw_op_1040_c226(param_1: u32,HWND16 param_2,param_3: u16)
   local_32.x = iStack40 + -0xa;
   iStack46 += -0x2;
   iStack44 += -0x2;
-  FrameRect16(s_tile2_bmp_1050_1538,pRStack38,(HBRUSH16)&local_32);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  FrameRect16(ctx.s_tile2_bmp_1050_1538,pRStack38,(HBRUSH16)&local_32);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,-0x7f80,0x0);
-  handle_00 = SelectObject16(s_tile2_bmp_1050_1538,handle);
+  handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   draw_line_1040_c302(param_1,s_tile2_bmp_1050_1538);
   draw_op_1040_c38e(param_1);
-  SelectObject16(s_tile2_bmp_1050_1538,handle_00);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_00);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_22);
   return;
 }
 
 
 
-fn draw_line_1040_c302(param_1: u32,HDC16 param_2)
+pub fn draw_line_1040_c302(param_1: u32,HDC16 param_2)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -1082,7 +1082,7 @@ fn draw_line_1040_c302(param_1: u32,HDC16 param_2)
     iVar6 = uVar1;
     uVar1 &= 0xffff0000;
     uVar7 = (uVar1 >> 0x10);
-    LineTo16(s_tile2_bmp_1050_1538,*(INT16 *)(iVar6 + 0x20),
+    LineTo16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar6 + 0x20),
              (iVar6 + 0x22) / 0x2 + (uVar1 | iVar6 + 0x1e));
   }
   return;
@@ -1090,7 +1090,7 @@ fn draw_line_1040_c302(param_1: u32,HDC16 param_2)
 
 
 
-fn draw_op_1040_c38e(param_1: u32)
+pub fn draw_op_1040_c38e(param_1: u32)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -1129,9 +1129,9 @@ fn draw_op_1040_c38e(param_1: u32)
       uVar10 = (uVar1 >> 0x10);
       iVar5 = (iVar5 + 0x24) / 0x2 + (iVar5 + 0x20);
       MoveTo16(hdc,iVar5,*pIVar6);
-      LineTo16(s_tile2_bmp_1050_1538,iVar5,*pIVar6 + -0xf);
-      hdc = s_tile2_bmp_1050_1538;
-      DVar11 = GetCurrentPosition16(s_tile2_bmp_1050_1538);
+      LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,*pIVar6 + -0xf);
+      hdc = ctx.s_tile2_bmp_1050_1538;
+      DVar11 = GetCurrentPosition16(ctx.s_tile2_bmp_1050_1538);
       iStack18 = (DVar11 >> 0x10);
       IStack20 = DVar11;
       if (iStack26 == 0x0) {
@@ -1155,9 +1155,9 @@ fn draw_op_1040_c38e(param_1: u32)
     uVar9 = (uVar1 >> 0x10);
     MoveTo16(hdc,(iVar7 + 0x24) / 0x2 + (iVar7 + 0x20),
              (iVar7 + 0x22) + (uVar1 | iVar7 + 0x1e));
-    LineTo16(s_tile2_bmp_1050_1538,
+    LineTo16(ctx.s_tile2_bmp_1050_1538,
              (iVar7 + 0x24) / 0x2 + (iVar7 + 0x20),IStack16);
-    DVar11 = GetCurrentPosition16(s_tile2_bmp_1050_1538);
+    DVar11 = GetCurrentPosition16(ctx.s_tile2_bmp_1050_1538);
     iVar7 = (DVar11 >> 0x10);
     if (iVar7 < iStack14) {
       iStack14 = iVar7;
@@ -1165,17 +1165,17 @@ fn draw_op_1040_c38e(param_1: u32)
     if (iStack18 < iVar7) {
       iStack18 = iVar7;
     }
-    MoveTo16(s_tile2_bmp_1050_1538,iStack14,IStack16);
-    LineTo16(s_tile2_bmp_1050_1538,iStack18,IStack20);
+    MoveTo16(ctx.s_tile2_bmp_1050_1538,iStack14,IStack16);
+    LineTo16(ctx.s_tile2_bmp_1050_1538,iStack18,IStack20);
   }
   return;
 }
 
 
-fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
+pub fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
 {
   let uVar1: u16;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let uVar3: u32;
   HGDIOBJ16 HVar4;
   let iVar5: i16;
@@ -1187,44 +1187,44 @@ fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
   HPALETTE16 HStack8;
   let uStack6: u16;
   
-  uVar6 = (_PTR_LOOP_1050_4230 >> 0x10);
-  uStack6 = (_PTR_LOOP_1050_4230 + 0xe);
-  uVar1 = (_PTR_LOOP_1050_4230 + 0x10);
+  uVar6 = (ctx.PTR__LOOP_1050_4230 >> 0x10);
+  uStack6 = (ctx.PTR__LOOP_1050_4230 + 0xe);
+  uVar1 = (ctx.PTR__LOOP_1050_4230 + 0x10);
   HStack8 = palette_op_1008_4e08
-                      ((astruct_13 *)CONCAT22(uVar1,uStack6),&param_2 + 0x2,uVar1,
+                      (CONCAT22(uVar1,uStack6),&param_2 + 0x2,uVar1,
                        0x1008);
   uVar6 = (param_1 >> 0x10);
   iVar5 = param_1;
   (iVar5 + 0x46) = 0x1;
   HStack10 = GetStockObject16(0x1008);
   HStack12 = CreatePen16((INT16)s_tile2_bmp_1050_1538,0x2,0x100);
-  HStack14 = SelectObject16(s_tile2_bmp_1050_1538,HStack10);
-  HStack16 = SelectObject16(s_tile2_bmp_1050_1538,HStack12);
-  Rectangle16(s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
+  HStack14 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack10);
+  HStack16 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack12);
+  Rectangle16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
               *(INT16 *)(iVar5 + 0x22),0x0,0x0);
-  MoveTo16(s_tile2_bmp_1050_1538,0x0,
+  MoveTo16(ctx.s_tile2_bmp_1050_1538,0x0,
            (iVar5 + 0x36) * 0x2 + (iVar5 + 0x2a));
-  LineTo16(s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
+  LineTo16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
            (iVar5 + 0x36) * 0x2 + (iVar5 + 0x2a));
-  SelectObject16(s_tile2_bmp_1050_1538,HStack14);
-  HVar4 = SelectObject16(s_tile2_bmp_1050_1538,HStack16);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack14);
+  HVar4 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack16);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   uVar3 = *param_1;
   ppcVar2 = (uVar3 + 0x10);
-  (**ppcVar2)(s_tile2_bmp_1050_1538,param_1,param_2,HVar4,param_2._2_2_);
+  (**ppcVar2)(ctx.s_tile2_bmp_1050_1538,param_1,param_2,HVar4,param_2._2_2_);
   ppcVar2 = (uVar3 + 0x14);
-  (**ppcVar2)(s_tile2_bmp_1050_1538,param_1,param_2._2_2_);
+  (**ppcVar2)(ctx.s_tile2_bmp_1050_1538,param_1,param_2._2_2_);
   (iVar5 + 0x46) = 0x0;
-  SelectPalette16(s_tile2_bmp_1050_1538,0x0,HStack8);
-  DeleteObject16(s_tile2_bmp_1050_1538);
+  SelectPalette16(ctx.s_tile2_bmp_1050_1538,0x0,HStack8);
+  DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   return;
 }
 
 
-fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
+pub fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
 {
   let uVar1: u16;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let iVar3: i16;
   let uVar4: u16;
   let uVar5: u16;
@@ -1237,12 +1237,12 @@ fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
   if (((iVar3 + 0xa) | (iVar3 + 0x8)) != 0x0) {
     HStack4 = 0x0;
     if ((iVar3 + 0x46) == 0x0) {
-      uVar5 = (_PTR_LOOP_1050_4230 >> 0x10);
-      uStack12 = (_PTR_LOOP_1050_4230 + 0xe);
-      uVar1 = (_PTR_LOOP_1050_4230 + 0x10);
+      uVar5 = (ctx.PTR__LOOP_1050_4230 >> 0x10);
+      uStack12 = (ctx.PTR__LOOP_1050_4230 + 0xe);
+      uVar1 = (ctx.PTR__LOOP_1050_4230 + 0x10);
       param_4 = 0x1008;
       HStack4 = palette_op_1008_4e08
-                          ((astruct_13 *)CONCAT22(uVar1,uStack12),&param_3,uVar1,0x1008);
+                          (CONCAT22(uVar1,uStack12),&param_3,uVar1,0x1008);
     }
     puStack8 = (iVar3 + 0x8);
     uVar5 = (iVar3 + 0xa);
@@ -1251,7 +1251,7 @@ fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
       puStack8 = (iVar3 + 0xc);
       uVar5 = (iVar3 + 0xe);
     }
-    if ((*(long *)(iVar3 + 0x10) != 0x0) && ((param_2 & 0x4) != 0x0)) {
+    if (((iVar3 + 0x10) != 0x0) && ((param_2 & 0x4) != 0x0)) {
       puStack8 = (iVar3 + 0x10);
       uVar5 = (iVar3 + 0x12);
     }
@@ -1260,7 +1260,7 @@ fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
                 (iVar3 + 0x26),&param_3);
     if ((iVar3 + 0x46) == 0x0) {
       SelectPalette16(param_4,0x0,HStack4);
-      DeleteObject16(s_tile2_bmp_1050_1538);
+      DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     }
   }
   return;

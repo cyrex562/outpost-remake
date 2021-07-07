@@ -1,9 +1,9 @@
 
-fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,param_5: u16) -> u32
+pub fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,param_5: u16) -> u32
 
 {
   let uVar1: u32;
-  astruct_263 *iVar2;
+  let iVar2: &mut Struct263;
   let uVar2: u16;
   let uStack14: u32;
   let uStack6: u16;
@@ -12,11 +12,11 @@ fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,param_5:
   uStack6 = 0x0;
   uStack4 = 0x0;
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_263 *)param_1;
+  iVar2 = param_1;
   uVar1 = iVar2.field_0x122;
   pass1_1008_e852(uVar1,(uVar1 >> 0x10),iVar2.field_0x126,param_5,
                   param_4);
-  pass1_1030_8344(_PTR_LOOP_1050_5748,(_PTR_LOOP_1050_5748 >> 0x10)
+  pass1_1030_8344(ctx.PTR__LOOP_1050_5748,(ctx.PTR__LOOP_1050_5748 >> 0x10)
                   ,CONCAT22(param_4,param_3));
   uStack14 = CONCAT22(param_4,param_3);
   switch(param_2) {
@@ -66,10 +66,10 @@ fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,param_5:
 }
 
 
-fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,uchar *param_5)
+pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,uchar *param_5)
 {
   let iVar1: i16;
-  char *pcVar2;
+  let mut pcVar2: String; 
   let uVar3: u16;
   let uVar4: u16;
   let uVar5: u16;
@@ -100,7 +100,7 @@ switchD_1018_3f8b_caseD_2:
       iVar1 = param_3 * 0x4 + 0x40b6;
       break;
     default:
-      goto switchD_1018_3f8b_caseD_2;
+//       TODO: goto switchD_1018_3f8b_caseD_2;
     case 0x3:
       iVar1 = param_3 * 0x4 + 0x40e2;
       break;
@@ -152,7 +152,7 @@ switchD_1018_3f8b_caseD_2:
       uStack8 = (param_2 % lStack14);
       struct_1018_4790(puStack22,lVar10,CONCAT22(param_5,uVar3),(iVar1 + 0x2));
       iStack10 = lVar10;
-      goto LAB_1018_425e;
+//       TODO: goto LAB_1018_425e;
     }
   }
   else {
@@ -170,7 +170,7 @@ switchD_1018_3f8b_caseD_2:
                                   (iVar1 + 0x2));
         uStack8 = (puVar9 >> 0x10);
         iStack10 = puVar9;
-        goto LAB_1018_425e;
+//         TODO: goto LAB_1018_425e;
       }
     }
     else {
@@ -178,8 +178,8 @@ switchD_1018_3f8b_caseD_2:
         if (iVar11 != 0x4) goto LAB_1018_425e;
         iVar1 = (iVar1 + 0x2);
         uVar5 = iVar1 - 0x1;
-        iVar11 = _PTR_LOOP_1050_14cc;
-        IVar12 = (_PTR_LOOP_1050_14cc >> 0x10);
+        iVar11 = ctx._PTR_LOOP_1050_14cc;
+        IVar12 = (ctx.PTR__LOOP_1050_14cc >> 0x10);
         if (uVar5 == 0x0) {
           load_string_1010_84ac(iVar11,IVar12,0x1010);
           uVar6 = uVar5;
@@ -232,11 +232,11 @@ switchD_1018_3f8b_caseD_2:
                                   uVar13);
         uStack8 = (puVar9 >> 0x10);
         iStack10 = puVar9;
-        goto LAB_1018_425e;
+//         TODO: goto LAB_1018_425e;
       }
-      uVar4 = pass1_1008_c646(_PTR_LOOP_1050_06e0,
+      uVar4 = pass1_1008_c646(ctx.PTR__LOOP_1050_06e0,
                               CONCAT22((iVar1 + 0x2),
-                                       (_PTR_LOOP_1050_06e0 >> 0x10)),unaff_SS
+                                       (ctx.PTR__LOOP_1050_06e0 >> 0x10)),unaff_SS
                              );
       if (uVar4 == 0x0) {
         uVar4 = 0x4f;
@@ -253,7 +253,7 @@ switchD_1018_3f8b_caseD_2:
         uStack8 = (param_2 % lStack14);
         struct_1018_47c8(puStack22,uVar7,uStack26,uVar4,0x0);
         iStack10 = uVar7;
-        goto LAB_1018_425e;
+//         TODO: goto LAB_1018_425e;
       }
     }
   }
@@ -268,7 +268,7 @@ switchD_1018_3f8b_caseD_2:
 }
 
 
-fn switch_1018_43ec(param_1: u16,param_2: u16,param_3: u16) -> u16
+pub fn switch_1018_43ec(param_1: u16,param_2: u16,param_3: u16) -> u16
 
 {
   let uStack6: u16;
@@ -285,7 +285,7 @@ switchD_1018_444f_caseD_10:
       uStack6 = 0x7;
       break;
     default:
-      goto switchD_1018_444f_caseD_10;
+//       TODO: goto switchD_1018_444f_caseD_10;
     case 0x11:
     case 0x13:
     case 0x14:

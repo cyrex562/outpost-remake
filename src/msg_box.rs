@@ -1,5 +1,5 @@
 
-fn msg_box_op_1000_1f24(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> bool
+pub fn msg_box_op_1000_1f24(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> bool
 
 {
   let piVar1: *mut i16;
@@ -15,25 +15,25 @@ fn msg_box_op_1000_1f24(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> 
 }
 
 
-fn msg_box_op_1000_214c
+pub fn msg_box_op_1000_214c
           (param_1: u16,param_2: i16,param_3: u16,param_4: u16,param_5: u16) -> bool
 
 {
   let IVar1: i16;
   let iVar2: i16;
-  LPCSTR text;
+  let mut text: String;
   
-  text = (LPCSTR)(0x2 - (param_2 == 0x0) | 0x2110);
+  text = (0x2 - (param_2 == 0x0) | 0x2110);
   MessageBeep16(param_5);
   do {
-    IVar1 = MessageBox16(s_tile2_bmp_1050_1538,text,(LPCSTR)0x1de8,0x1000);
+    IVar1 = MessageBox16(ctx.s_tile2_bmp_1050_1538,text,0x1de8,0x1000);
     iVar2 = IVar1 + -0x1;
     if (iVar2 == 0x0) {
       return 0x0;
     }
     if ((0x0 < iVar2) && (!SBORROW2(iVar2,0x1))) {
       if (IVar1 == 0x3 || IVar1 + -0x2 < 0x1) {
-        fatal_app_exit_1000_3e9e(s_tile2_bmp_1050_1538);
+        fatal_app_exit_1000_3e9e(ctx.s_tile2_bmp_1050_1538);
         return 0x0;
       }
       if (IVar1 == 0x4) {
@@ -46,6 +46,6 @@ fn msg_box_op_1000_214c
     if ((text & 0x2000) == 0x0) {
       return 0x0;
     }
-    text = (LPCSTR)(text & 0xdfef | 0x1010);
+    text = (text & 0xdfef | 0x1010);
   } while( true );
 }

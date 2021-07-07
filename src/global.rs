@@ -15,7 +15,7 @@ pub struct AppContext {
     pub data_seg: u16,
     pub _DAT_1050_5f82: u16,
     pub DAT_1050_5f87: u16,
-    pub s_tile2_bmp_1050_1538: u32,
+    pub ctx.s_tile2_bmp_1050_1538: u32,
     pub _PTR_LOOP_1050_65e2: u32
 }
 
@@ -36,7 +36,7 @@ impl AppContext {
             PTR_LOOP_1050_5f4e: (),
             PTR_LOOP_1050_5f50: (),
             PTR_LOOP_1050_5f52: (),
-            s_tile2_bmp_1050_1538: (),
+            ctx.s_tile2_bmp_1050_1538: (),
             _PTR_LOOP_1050_65e2: (),
         }
     }

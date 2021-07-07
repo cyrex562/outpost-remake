@@ -43,7 +43,7 @@ pub fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,p
           return 0x0;
         }
         (*PTR_LOOP_1050_5f3c)();
-        goto LAB_1000_1724;
+//         TODO: goto LAB_1000_1724;
       }
       iVar1 = (*PTR_LOOP_1050_5f34)();
     }
@@ -74,7 +74,7 @@ pub fn fn_ptr_op_1000_24cd(param_1: i16,param_2: i16)
   let cVar3: u8;
   let uVar5: u16;
   let uVar3: u16;
-  u16_t uVar4;
+  let uVar4: u16;
   
   iVar2 = param_2 + 0x1;
   uVar5 = ctx.data_seg;
@@ -105,9 +105,9 @@ pub fn fn_ptr_op_1000_24cd(param_1: i16,param_2: i16)
 
 pub fn fn_ptr_op_1000_2594(code **param_1,code **param_2)
 {
-  code **ppcVar1;
-  code **ppcVar2;
-  code **fn_ptr_1;
+  let ppcVar1: u32;
+  let ppcVar2: u32;
+  let fn_ptr_1: u32;
   
   while (param_2 < param_1) {
     ppcVar2 = param_1 + -0x2;

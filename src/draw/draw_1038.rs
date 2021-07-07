@@ -1,14 +1,14 @@
 
 void 
 draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
-                 HWND16 param_5,param_6: u16)
+                 param_5: HWND16,param_6: u16)
 
 {
   let uVar1: u32;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let uVar3: u16;
   let iVar4: i16;
-  astruct_18 *paVar5;
+  let paVar5: &mut Struct18;
   let in_DX: *mut u8
   let puVar6: *mut u8
   let puVar7: *mut u8
@@ -16,15 +16,15 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
   let uVar8: u16;
   bool local_1a [0x2];
   let UStack22: u16;
-  astruct_18 *paStack20;
-  astruct_18 *paStack16;
+  let paStack20: &mut Struct18;
+  let paStack16: &mut Struct18;
   let iStack12: i16;
-  astruct_18 *paStack10;
-  astruct_20 *paStack6;
+  let paStack10: &mut Struct18;
+  let paStack6: &mut Struct20;
   
   if (param_4._2_2_ == 0xeb) {
-    paStack6 = (astruct_20 *)
-               mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,in_DX,unaff_DI);
+    paStack6 = 
+               mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,in_DX,unaff_DI);
     puVar6 = (paStack6 >> 0x10);
     paVar5 = (param_1 + 0x90);
     if (paVar5 != 0x0) {
@@ -93,10 +93,10 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
       UStack22 = GetDlgItemInt16(param_5,0x1,local_1a,param_6);
       if (local_1a[0] != 0x0) {
         uVar1 = (param_1 + 0x98);
-        draw_fn_1010_2a32(0x94be,(u16_t)s_tile2_bmp_1050_1538,uVar1,
+        draw_fn_1010_2a32(0x94be,s_tile2_bmp_1050_1538,uVar1,
                           (uVar1 >> 0x10),UStack22,
                           CONCAT22(uVar8,(iVar4 * 0xe + 0x5a72)),
-                          (u16_t)in_DX,param_1,(u16_t)&stack0xfffe,param_2);
+                          in_DX,param_1,&stack0xfffe,param_2);
       }
     }
   }
@@ -105,7 +105,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
 
 
 void 
-draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_colorref_4,
+draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF in_colorref_4,
                  param_5: u16)
 
 {
@@ -116,26 +116,26 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
   HBRUSH16 local_brush_handle;
   Ulet uVar5: i32;
   let extraout_DX: u16;
-  astruct_10 *local_struct_5;
-  astruct_10 *var5;
+  let local_struct_5: &mut Struct10;
+  let var5: &mut Struct10;
   COLORREF hdc;
   let uVar6: u32;
   let uStack14: u16;
   
-  var5 = (astruct_10 *)(in_struct_1 >> 0x10);
-  local_struct_5 = (astruct_10 *)in_struct_1;
+  var5 = (in_struct_1 >> 0x10);
+  local_struct_5 = in_struct_1;
   hdc = in_colorref_4;
   if (local_struct_5.brush_handle_field_0x8e == 0x0) {
     hdc = (COLORREF)s_tile2_bmp_1050_1538;
     local_brush_handle = CreateSolidBrush16(in_colorref_4);
     local_struct_5.brush_handle_field_0x8e = local_brush_handle;
   }
-  if (_PTR_LOOP_1050_5b64 == 0x0) {
+  if (ctx.PTR__LOOP_1050_5b64 == 0x0) {
     hdc = 0x1008;
-    uVar6 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
+    uVar6 = pass1_1008_4d72((ctx.PTR__LOOP_1050_4230 + 0xe));
     uVar3 = (uVar6 >> 0x10);
     iVar4 = uVar6;
-    _PTR_LOOP_1050_5b64 =
+    ctx._PTR_LOOP_1050_5b64 =
          CONCAT12(*(iVar4 + 0x94),
                          CONCAT11(*(iVar4 + 0x95),
                                   *(iVar4 + 0x96)));
@@ -161,7 +161,7 @@ draw_op_1038_9dcc(astruct_10 *in_struct_1,param_2: i16,param_3: u16,COLORREF in_
     }
   }
   SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5b64);
-  SetBkColor16(s_tile2_bmp_1050_1538,0x0);
+  SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   return;
 }
 

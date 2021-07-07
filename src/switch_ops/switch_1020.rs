@@ -1,5 +1,5 @@
 
-fn switch_1020_c3b4(param_1: u16) -> u16
+pub fn switch_1020_c3b4(param_1: u16) -> u16
 
 {
   let uStack6: u16;

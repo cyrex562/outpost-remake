@@ -26,21 +26,21 @@ pub fn  poss_str_op_1000_28dc(param_1: i16) -> String
 }
 
 
-fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
+pub fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
 {
   let puVar4: *mut u16;
   let puVar5: *mut u16;
   let uVar6: u16;
   let uVar7: u16;
-  char *l_string_2;
-  char *puVar6;
-  char *puVar7;
+  let mut l_string_2: String; 
+  let mut puVar6: String; 
+  let mut puVar7: String; 
   let uVar8: u16;
-  char *l_string_1;
+  let mut l_string_1: String; 
   let l_b_var8: bool;
-  char *puVar3;
-  char *puVar2;
-  char *puVar1;
+  let mut puVar3: String; 
+  let mut puVar2: String; 
+  let mut puVar1: String; 
   
   l_string_1 = (in_string_2 >> 0x10);
   l_string_2 = in_string_2;
@@ -89,12 +89,12 @@ fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
 }
 
 
-fn str_op_1000_3da4(char *param_1) -> u16
+pub fn str_op_1000_3da4(char *param_1) -> u16
 
 {
-  char *pcVar1;
+  let mut pcVar1: String; 
   let uVar2: u16;
-  char *pcVar3;
+  let mut pcVar3: String; 
   let bVar4: bool;
   
   pcVar3 = param_1;
@@ -119,10 +119,10 @@ fn str_op_1000_3da4(char *param_1) -> u16
 uchar  str_op_1000_3dbe(char *param_1,char *param_2,param_3: u16)
 
 {
-  char *pcVar1;
+  let mut pcVar1: String; 
   let cVar2: u8;
-  char *pcVar3;
-  char *pcVar4;
+  let mut pcVar3: String; 
+  let mut pcVar4: String; 
   let uVar5: u16;
   
   uVar5 = (param_1 >> 0x10);
@@ -160,7 +160,7 @@ str_1000_4d58(char *in_string_1,char *in_string_2,param_3: u32,param_4: u32,
   let uVar3: u16;
   let uVar4: u16;
   let uVar5: u16;
-  char *pcStack18;
+  let mut pcStack18: String; 
   let uStack12: u16;
   let uStack10: u16;
   let uStack8: u16;
@@ -230,7 +230,7 @@ str_1000_4d58(char *in_string_1,char *in_string_2,param_3: u32,param_4: u32,
                                in_string_1._2_2_ << 0x10),uVar1);
       *(param_4 + uVar1) = 0x0;
     }
-    if (param_5 == (WNDCLASS16 *)0x0) {
+    if (param_5 == 0x0) {
       return;
     }
     uVar1 = uVar3 - uStack12;
@@ -252,7 +252,7 @@ str_1000_4d58(char *in_string_1,char *in_string_2,param_3: u32,param_4: u32,
                              in_string_1._2_2_ << 0x10),uVar1);
     *(param_4 + uVar1) = 0x0;
   }
-  if (param_5 != (WNDCLASS16 *)0x0) {
+  if (param_5 != 0x0) {
     *&param_5.style = 0x0;
   }
   return;

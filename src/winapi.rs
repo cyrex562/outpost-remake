@@ -31,6 +31,9 @@ pub fn WIN16_GlobalLock16(handle: HGLOBAL16) -> SEGPTR {
     unimplemented!()
 }
 // BOOL16 GlobalUnlock16(HGLOBAL16 handle)
+pub fn GlobalUnlock16(handle: HGLOBAL16) -> bool {
+    unimplemented!()
+}
 // DWORD GlobalSize16(HGLOBAL16 handle)
 pub fn GlobalSize16(handle: HGLOBAL16) -> u32 {
     unimplemented!()
@@ -71,6 +74,9 @@ pub fn DOS3Call(context: &mut CONTEXT) {
 // void __AHSHIFT(void)
 // void __AHINCR(void)
 // void OutputDebugString16(LPCSTR str)
+pub fn OutputDebugString16(str: &mut String) {
+    unimplemented!()
+}
 // INT16 GetPrivateProfileString16(LPCSTR section, LPCSTR entry, LPCSTR def_val, LPSTR buffer, UINT16 len, LPCSTR filename)
 // BOOL16 WritePrivateProfileString16(LPCSTR section, LPCSTR entry, LPCSTR string, LPCSTR filename)
 // SEGPTR GetDOSEnvironment16(void)
@@ -259,6 +265,9 @@ pub fn SelectPalette16(hdc: HDC16, hpal: HPALETTE16, b_force_background: bool) -
 // BOOL16 TrackPopupMenu16(HMENU16 hmenu, UINT16 wflags, INT16 x, INT16 y, INT16 n_reserved, HWND16 hwnd, RECT16 * lp_rect)
 // INT16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD * valist)
 // INT16 wvsprintf16(LPSTR buffer, LPCSTR spec, WORD * args)
+pub fn wvsprintf16(buffer: &mut String, spec: &mut LPCSTR, args: *mut ushort) -> i16 {
+    unimplemented!()
+}
 // HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, INT16 x, INT16 y, INT16 width, INT16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
 // BOOL16 DestroyIcon16(HICON16 h_icon)
 pub fn DestroyIcon16(h_icon: HICON16) -> bool {
@@ -266,7 +275,13 @@ pub fn DestroyIcon16(h_icon: HICON16) -> bool {
 }
 // BOOL16 DestroyCursor16(HCURSOR16 h_cursor)
 // DWORD mciSendCommand16(UINT16 w_dev_id, UINT16 w_msg, DWORD dw_param1, DWORD p2)
+pub fn mciSendCommand16(w_dev_id: u16, w_msg: u16, dw_parm1: u32, p2: u32) -> u32 {
+    unimplemented!()
+}
 // BOOL16 mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, UINT16 u_length)
+pub fn mciGetErrorString16(w_error: u32, lp_str_buffer: &mut String, u_length: u16) -> bool {
+    unimplemented!()
+}
 // BOOL16 GetOpenFileName16(SEGPTR ofn)
 // BOOL16 GetSaveFileName16(SEGPTR ofn)
 

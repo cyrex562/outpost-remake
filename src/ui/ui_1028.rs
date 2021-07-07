@@ -1,5 +1,5 @@
 
-fn post_msg_1028_76da(void)
+pub fn post_msg_1028_76da(void)
 {
   let lVar1: i32;
   let uVar2: u16;
@@ -10,7 +10,7 @@ fn post_msg_1028_76da(void)
   let uStack10: u16;
   let uStack8: u16;
   
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
   uVar2 = (puVar3 >> 0x10);
   lVar1 = (puVar3 + 0xc);
   uStack8 = (lVar1 >> 0x10);
@@ -23,7 +23,7 @@ fn post_msg_1028_76da(void)
 }
 
 
-fn send_msg_1028_e242(param_1: *mut u32,param_2: i16,HWND16 param_3)
+pub fn send_msg_1028_e242(param_1: *mut u32,param_2: i16,param_3: HWND16)
 {
   let puVar1: *mut u8
   let unaff_DI: i16;

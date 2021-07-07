@@ -1,14 +1,14 @@
 
-fn struct_1028_0068(param_1: *mut u16,uchar *param_2)
+pub fn struct_1028_0068(param_1: *mut u16,uchar *param_2)
 {
   let uVar1: u16;
   let extraout_DX: u16;
-  astruct_183 *iVar2;
+  let iVar2: &mut Struct183;
   let uVar2: u16;
   
   struct_1028_b354(param_1);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_183 *)param_1;
+  iVar2 = param_1;
   uVar1 = 0x0;
   iVar2.field_0x20 = 0x0;
   &iVar2.field_0x22 = 0x0;
@@ -19,7 +19,7 @@ fn struct_1028_0068(param_1: *mut u16,uchar *param_2)
     &iVar2.field_0x22 = 0x0;
   }
   else {
-    set_struct_1008_574a((astruct_21 *)CONCAT22(param_2,uVar1));
+    set_struct_1008_574a(CONCAT22(param_2,uVar1));
     iVar2.field_0x22 = uVar1;
     iVar2.field_0x24 = extraout_DX;
   }
@@ -27,15 +27,15 @@ fn struct_1028_0068(param_1: *mut u16,uchar *param_2)
 }
 
 
-fn struct_1028_0954(param_1: *mut u16) -> u16
+pub fn struct_1028_0954(param_1: *mut u16) -> u16
 
 {
-  astruct_185 *iVar1;
+  let iVar1: &mut Struct185;
   let uVar1: u16;
   
   struct_1028_b354(param_1);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_185 *)param_1;
+  iVar1 = param_1;
   iVar1.field_0x20 = 0x0;
   *param_1 = 0xada;
   iVar1.field_0x2 = &USHORT_1050_1028;
@@ -44,7 +44,7 @@ fn struct_1028_0954(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_0b42(param_1: *mut u16) -> u16
+pub fn struct_1028_0b42(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -54,7 +54,7 @@ fn struct_1028_0b42(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_178c(param_1: *mut u16) -> u16
+pub fn struct_1028_178c(param_1: *mut u16) -> u16
 
 {
   struct_1030_dc96(param_1);
@@ -64,15 +64,15 @@ fn struct_1028_178c(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_1bbc(param_1: *mut u16) -> u16
+pub fn struct_1028_1bbc(param_1: *mut u16) -> u16
 
 {
-  astruct_190 *iVar1;
+  let iVar1: &mut Struct190;
   let uVar1: u16;
   
   struct_1028_b354(param_1);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_190 *)param_1;
+  iVar1 = param_1;
   iVar1.field_0x20 = 0x0;
   iVar1.field_0x22 = 0x0;
   *param_1 = 0x1eee;
@@ -81,17 +81,17 @@ fn struct_1028_1bbc(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_1f56(param_1: *mut u16,uchar *param_2)
+pub fn struct_1028_1f56(param_1: *mut u16,uchar *param_2)
 {
   let uVar1: u32;
   let uVar2: u16;
   let extraout_DX: u16;
-  astruct_186 *iVar3;
+  let iVar3: &mut Struct186;
   let uVar3: u16;
   
   struct_1028_b354(param_1);
   uVar3 = (param_1 >> 0x10);
-  iVar3 = (astruct_186 *)param_1;
+  iVar3 = param_1;
   uVar2 = 0x0;
   &iVar3.field_0x20 = 0x0;
   iVar3.field_0x24 = 0x0;
@@ -102,7 +102,7 @@ fn struct_1028_1f56(param_1: *mut u16,uchar *param_2)
     &iVar3.field_0x20 = 0x0;
   }
   else {
-    set_struct_1008_574a((astruct_21 *)CONCAT22(param_2,uVar2));
+    set_struct_1008_574a(CONCAT22(param_2,uVar2));
     iVar3.field_0x20 = uVar2;
     iVar3.field_0x22 = extraout_DX;
   }
@@ -112,7 +112,7 @@ fn struct_1028_1f56(param_1: *mut u16,uchar *param_2)
 }
 
 
-fn struct_1028_25da(param_1: *mut u16) -> u16
+pub fn struct_1028_25da(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -123,7 +123,7 @@ fn struct_1028_25da(param_1: *mut u16) -> u16
 
 
 
-fn struct_1028_26b4(param_1: *mut u16) -> u16
+pub fn struct_1028_26b4(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -133,7 +133,7 @@ fn struct_1028_26b4(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_27f0(param_1: *mut u16) -> u16
+pub fn struct_1028_27f0(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -143,7 +143,7 @@ fn struct_1028_27f0(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_2bdc(param_1: *mut u16) -> u16
+pub fn struct_1028_2bdc(param_1: *mut u16) -> u16
 
 {
   struct_1028_0954(param_1);
@@ -153,7 +153,7 @@ fn struct_1028_2bdc(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_355e(param_1: *mut u16) -> u16
+pub fn struct_1028_355e(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -164,16 +164,16 @@ fn struct_1028_355e(param_1: *mut u16) -> u16
 
 
 
-fn struct_1028_37a6(param_1: *mut u16,uchar *param_2,param_3: u16,param_4: u16)
+pub fn struct_1028_37a6(param_1: *mut u16,uchar *param_2,param_3: u16,param_4: u16)
 {
   let uVar1: u16;
   let uVar2: u16;
-  astruct_189 *iVar3;
+  let iVar3: &mut Struct189;
   let uVar3: u16;
   
   struct_1028_b354(param_1);
   uVar3 = (param_1 >> 0x10);
-  iVar3 = (astruct_189 *)param_1;
+  iVar3 = param_1;
   uVar1 = 0x0;
   iVar3.field_0x20 = 0x0;
   iVar3.field_0x24 = 0x0;
@@ -194,7 +194,7 @@ fn struct_1028_37a6(param_1: *mut u16,uchar *param_2,param_3: u16,param_4: u16)
 }
 
 
-fn struct_1028_3e94(param_1: *mut u16) -> u16
+pub fn struct_1028_3e94(param_1: *mut u16) -> u16
 
 {
   let uVar1: u16;
@@ -209,7 +209,7 @@ fn struct_1028_3e94(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_406c(param_1: *mut u16) -> u16
+pub fn struct_1028_406c(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -219,7 +219,7 @@ fn struct_1028_406c(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_4354(param_1: *mut u16) -> u16
+pub fn struct_1028_4354(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -229,7 +229,7 @@ fn struct_1028_4354(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_44d2(param_1: *mut u16) -> u16
+pub fn struct_1028_44d2(param_1: *mut u16) -> u16
 
 {
   let uVar1: u16;
@@ -243,7 +243,7 @@ fn struct_1028_44d2(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_489e(param_1: *mut u16) -> u16
+pub fn struct_1028_489e(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -253,20 +253,20 @@ fn struct_1028_489e(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_49aa(param_1: *mut u16) -> u16
+pub fn struct_1028_49aa(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
   *param_1 = 0x4b1c;
   (param_1 + 0x2) = &USHORT_1050_1028;
-  pass1_1000_4906((astruct_20 *)
+  pass1_1000_4906(
                   (param_1 & 0xffff0000 | (param_1 + 0x20)),
-                  (WNDCLASS16 *)0x0,0xa);
+                  0x0,0xa);
   return param_1;
 }
 
 
-fn struct_1028_4b84(param_1: *mut u16) -> u16
+pub fn struct_1028_4b84(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -276,7 +276,7 @@ fn struct_1028_4b84(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_50d8(param_1: *mut u16) -> u16
+pub fn struct_1028_50d8(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -286,7 +286,7 @@ fn struct_1028_50d8(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_52e8(param_1: *mut u16) -> u16
+pub fn struct_1028_52e8(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -296,7 +296,7 @@ fn struct_1028_52e8(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_53c6(param_1: *mut u16) -> u16
+pub fn struct_1028_53c6(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -306,7 +306,7 @@ fn struct_1028_53c6(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_5630(param_1: *mut u16) -> u16
+pub fn struct_1028_5630(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -316,7 +316,7 @@ fn struct_1028_5630(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_57a6(param_1: *mut u16) -> u16
+pub fn struct_1028_57a6(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -326,7 +326,7 @@ fn struct_1028_57a6(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_5966(param_1: *mut u16) -> u16
+pub fn struct_1028_5966(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -336,7 +336,7 @@ fn struct_1028_5966(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_5a48(param_1: *mut u16) -> u16
+pub fn struct_1028_5a48(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -346,7 +346,7 @@ fn struct_1028_5a48(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_5c54(param_1: *mut u16) -> u16
+pub fn struct_1028_5c54(param_1: *mut u16) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -356,7 +356,7 @@ fn struct_1028_5c54(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_5ed8(param_1: *mut u16) -> u16
+pub fn struct_1028_5ed8(param_1: *mut u16) -> u16
 
 {
   let uVar1: u16;
@@ -370,14 +370,14 @@ fn struct_1028_5ed8(param_1: *mut u16) -> u16
 }
 
 
-fn struct_1028_60bc(param_1: *mut u16,param_2: u16,uchar *param_3) -> u16
+pub fn struct_1028_60bc(param_1: *mut u16,param_2: u16,uchar *param_3) -> u16
 
 {
   let uVar1: u32;
   let uVar2: u16;
-  astruct_187 *iVar2;
+  let iVar2: &mut Struct187;
   
-  iVar2 = (astruct_187 *)param_1;
+  iVar2 = param_1;
   uVar2 = (param_1 >> 0x10);
   struct_1028_b354(param_1);
   &iVar2.field_0x20 = 0x0;
@@ -388,7 +388,7 @@ fn struct_1028_60bc(param_1: *mut u16,param_2: u16,uchar *param_3) -> u16
     &iVar2.field_0x20 = 0x0;
   }
   else {
-    uVar1 = set_struct_1008_574a((astruct_21 *)CONCAT22(param_3,param_2));
+    uVar1 = set_struct_1008_574a(CONCAT22(param_3,param_2));
     iVar2.field_0x20 = uVar1;
     iVar2.field_0x22 = (uVar1 >> 0x10);
   }
@@ -397,17 +397,17 @@ fn struct_1028_60bc(param_1: *mut u16,param_2: u16,uchar *param_3) -> u16
 
 
 void 
-struct_op_1028_87f0(param_1: u16,param_2: u8,astruct_97 *param_3,param_4: u16,
+struct_op_1028_87f0(param_1: u16,param_2: u8,param_3: &mut Struct97,param_4: u16,
                    param_5: u16,param_6: u16,param_7: *mut u32,param_8: u16,
                    param_9: u32,param_1: u320)
 
 {
-  astruct_97 *iVar1;
-  astruct_97 *puVar1;
+  let iVar1: &mut Struct97;
+  let puVar1: &mut Struct97;
   
-  struct_op_1028_d1dc(param_1,param_2,(astruct_100 *)param_3,0x3e8);
-  puVar1 = (astruct_97 *)(param_3 >> 0x10);
-  iVar1 = (astruct_97 *)param_3;
+  struct_op_1028_d1dc(param_1,param_2,param_3,0x3e8);
+  puVar1 = (param_3 >> 0x10);
+  iVar1 = param_3;
   iVar1.field_0x108 = param_10;
   iVar1.field_0x10c = param_9;
   iVar1.field_0x110 = 0x0;
@@ -430,17 +430,17 @@ struct_op_1028_87f0(param_1: u16,param_2: u8,astruct_97 *param_3,param_4: u16,
 
 
 void 
-struct_op_1028_8888(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16,
+struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u16,
                    param_5: u16,param_6: *mut u32,param_7: u16,param_8: u32,
                    param_9: u32,param_1: u320)
 
 {
-  astruct_100 *iVar1;
+  let iVar1: &mut Struct100;
   let puVar1: *mut u8
   
   struct_op_1028_d1dc(param_1,param_2,param_3,0x3e8);
   puVar1 = (param_3 >> 0x10);
-  iVar1 = (astruct_100 *)param_3;
+  iVar1 = param_3;
   iVar1.field_0x108 = param_10;
   iVar1.field_0x10c = param_9;
   iVar1.field_0x110 = param_8;
@@ -462,7 +462,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16,
 
 
 void 
-struct_op_1028_933c(astruct_100 *param_1,param_2: u16,param_3: u16,param_4: u16,
+struct_op_1028_933c(param_1: &mut Struct100,param_2: u16,param_3: u16,param_4: u16,
                    param_5: *mut u32,param_6: u16,param_7: u32,param_8: u32,
                    param_9: u16,param_10: u8)
 
@@ -493,10 +493,10 @@ struct_op_1028_933c(astruct_100 *param_1,param_2: u16,param_3: u16,param_4: u16,
 }
 
 
-fn struct_1028_9c62(param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5: u8) -> u16
+pub fn struct_1028_9c62(param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5: u8) -> u16
 
 {
-  struct_op_1028_d1dc(param_4,param_5,(astruct_100 *)CONCAT22(param_2,param_1),param_3);
+  struct_op_1028_d1dc(param_4,param_5,CONCAT22(param_2,param_1),param_3);
   (param_1 + 0x108) = param_3;
   CONCAT22(param_2,param_1) = 0x9eb6;
   (param_1 + 0x2) = &USHORT_1050_1028;
@@ -505,15 +505,15 @@ fn struct_1028_9c62(param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5:
 
 
 astruct_100 * 
-struct_op_1028_d1dc(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16)
+struct_op_1028_d1dc(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u16)
 
 {
-  astruct_101 *iVar1;
+  let iVar1: &mut Struct101;
   let puVar1: *mut u8
   let in_stack_0000fffa: u16;
   
   puVar1 = (param_3 >> 0x10);
-  iVar1 = (astruct_101 *)param_3;
+  iVar1 = param_3;
   param_3.field_0x0 = 0x389a;
   iVar1.field_0x2 = 0x1008;
   iVar1.field_0x4 = param_4;
@@ -527,7 +527,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,astruct_100 *param_3,param_4: u16)
 
 
 
-fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
+pub fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
 {
   let uVar1: u16;
   let puVar2: *mut u8
@@ -551,7 +551,7 @@ fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
 }
 
 
-fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
+pub fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
 {
   let local_10c: u16;
   let uStack266: u16;
@@ -622,19 +622,19 @@ fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
 }
 
 
-fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
+pub fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
 {
   let puVar1: *mut u16;
   let uVar2: u16;
   let puVar3: *mut u16;
   let puVar4: *mut u8
   let extraout_DX: *mut u8
-  astruct_158 *iVar5;
+  let iVar5: &mut Struct158;
   let uVar5: u16;
   let puStack14: *mut u16;
   
   uVar5 = (param_1 >> 0x10);
-  iVar5 = (astruct_158 *)param_1;
+  iVar5 = param_1;
   *param_1 = 0x0;
   iVar5.field_0x4 = 0x0;
   iVar5.field_0x8 = 0x0;
@@ -647,7 +647,7 @@ fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
     iVar5.field_0x4 = 0x0;
   }
   else {
-    set_struct_1008_574a((astruct_21 *)(puVar3 & 0xffff | ZEXT24(param_2) << 0x10))
+    set_struct_1008_574a((puVar3 & 0xffff | ZEXT24(param_2) << 0x10))
     ;
     *puVar1 = 0xd804;
     (puVar3 + 0x2) = &USHORT_1050_1028;
@@ -662,7 +662,7 @@ fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
     iVar5.field_0x8 = 0x0;
   }
   else {
-    set_struct_1008_574a((astruct_21 *)CONCAT22(puVar4,uVar2));
+    set_struct_1008_574a(CONCAT22(puVar4,uVar2));
     *puStack14 = 0xd804;
     (uVar2 + 0x2) = &USHORT_1050_1028;
     iVar5.field_0x8 = puStack14;

@@ -3,7 +3,7 @@ pub fn pass1_1040_0a1a(param_1: u32)
 {
   let uVar1: u16;
   let puVar2: u32;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let uVar4: u32;
   let puVar5: u32;
   let extraout_DX: *mut u8
@@ -58,7 +58,7 @@ pub fn pass1_1040_0a1a(param_1: u32)
 }
 
 
-astruct_18 *  pass1_1040_0b6a(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_0b6a(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_073a(param_1);
@@ -73,21 +73,21 @@ astruct_18 *  pass1_1040_0b6a(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 astruct_57 * 
-pass1_1040_0bfc(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_0bfc(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
-  astruct_715 *iVar1;
+  let iVar1: &mut Struct715;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xfcd,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_715 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   param_1 = 0xdb0;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x39,param_8,param_6,param_7);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x39,param_8,param_6,param_7);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   iVar1.field_0x74 = 0x1;
@@ -96,7 +96,7 @@ pass1_1040_0bfc(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 
 
-pub fn pass1_1040_0c54(astruct_18 *param_1,param_2: u16)
+pub fn pass1_1040_0c54(param_1: &mut Struct18,param_2: u16)
 {
   let uVar1: u16;
   
@@ -118,7 +118,7 @@ pub fn pass1_1040_0d80(void) -> u16
 
 
 astruct_18 * 
-pass1_1040_0d8a(astruct_18 *param_1,param_2: u8,param_3: u16)
+pass1_1040_0d8a(param_1: &mut Struct18,param_2: u8,param_3: u16)
 
 {
   pass1_1040_0c54(param_1,param_3);
@@ -133,24 +133,24 @@ pass1_1040_0d8a(astruct_18 *param_1,param_2: u8,param_3: u16)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_0e1c(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
+pass1_1040_0e1c(param_1: &mut Struct57,param_2: u16,param_3: u32,param_4: u16,
                uchar *param_5,param_6: i16,param_7: u16)
 
 {
-  astruct_716 *iVar1;
+  let iVar1: &mut Struct716;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0x1c0,param_4);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_716 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   iVar1.field_0x92 = param_3;
   iVar1.field_0x96 = 0x0;
   iVar1.field_0x98 = param_2;
   param_1 = (s_overflow_on_node__d_1050_11ca + 0x8);
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3a,param_7,param_5,param_6);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3a,param_7,param_5,param_6);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   return;
@@ -160,10 +160,10 @@ pass1_1040_0e1c(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_0e86(astruct_18 *param_1,param_2: u16)
+pub fn pass1_1040_0e86(param_1: &mut Struct18,param_2: u16)
 {
   let uVar1: u16;
-  astruct_18 *paVar2;
+  let paVar2: &mut Struct18;
   let puVar3: *mut u8
   let iVar4: i16;
   let unaff_DI: i16;
@@ -185,10 +185,10 @@ pub fn pass1_1040_0e86(astruct_18 *param_1,param_2: u16)
   ctx.PTR_LOOP_1050_5b82 = (iVar4 + 0x96);
   if ((iVar4 + 0x92) == 0x0) {
     uVar6 = SUB42(&ctx.PTR_LOOP_1050_1038,0x0);
-    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(iVar4 + 0x6));
+    pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(iVar4 + 0x6));
   }
   else {
-    puVar7 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_2,puVar3,unaff_DI);
+    puVar7 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_2,puVar3,unaff_DI);
     uVar6 = 0x1010;
     pass1_1010_7b8c(puVar7,(iVar4 + 0x6),param_2);
   }
@@ -224,7 +224,7 @@ pass1_1040_109c(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
                    param_4._2_2_,param_7);
         return;
       }
-      puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_8,param_5,param_6);
+      puVar4 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_8,param_5,param_6);
       iVar3 = puVar4;
       uVar1 = (param_1 + 0x92);
       ui_op_1010_79aa(puVar4,0xfb6,(uVar1 + 0x6),param_8);
@@ -259,7 +259,7 @@ pass1_1040_1152(param_1: i16,param_2: u16,uchar *param_3,param_4: i16,param_5: u
   if ((param_1 + 0x92) != 0x0) {
     uVar2 = (param_1 + 0x8e);
     uVar1 = (uVar2 + 0xa);
-    puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,param_3,param_4);
+    puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,param_3,param_4);
     uVar2 = (param_1 + 0x92);
     uVar4 = (uVar2 >> 0x10);
     iVar3 = uVar2;
@@ -275,7 +275,7 @@ pass1_1040_1152(param_1: i16,param_2: u16,uchar *param_3,param_4: i16,param_5: u
 
 
 astruct_18 * 
-pass1_1040_11ac(astruct_18 *param_1,param_2: u8,param_3: u16)
+pass1_1040_11ac(param_1: &mut Struct18,param_2: u8,param_3: u16)
 
 {
   pass1_1040_0e86(param_1,param_3);
@@ -290,21 +290,21 @@ pass1_1040_11ac(astruct_18 *param_1,param_2: u8,param_3: u16)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 astruct_57 * 
-pass1_1040_123e(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_123e(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
-  astruct_717 *iVar1;
+  let iVar1: &mut Struct717;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xfd1,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_717 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   param_1 = 0x17b0;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x46,param_8,param_6,param_7);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x46,param_8,param_6,param_7);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   return param_1;
@@ -314,20 +314,20 @@ pass1_1040_123e(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_1290(astruct_18 *param_1)
+pub fn pass1_1040_1290(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x17b0;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
 
 
-astruct_18 *  pass1_1040_178a(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_178a(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_1290(param_1);
@@ -342,24 +342,24 @@ astruct_18 *  pass1_1040_178a(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_181c(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_181c(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: u16)
 
 {
-  astruct_433 *iVar1;
+  let iVar1: &mut Struct433;
   let unaff_DI: i16;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xfbb,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_433 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   iVar1.field_0x92 = 0x0;
   iVar1.field_0x94 = 0x0;
   param_1 = 0x1c48;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,param_7,param_6,unaff_DI);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,param_7,param_6,unaff_DI);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   return;
@@ -369,14 +369,14 @@ pass1_1040_181c(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_1876(astruct_18 *param_1)
+pub fn pass1_1040_1876(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x1c48;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -408,7 +408,7 @@ pass1_1040_1ab0(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: u16
 }
 
 
-astruct_18 *  pass1_1040_1c22(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_1c22(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_1876(param_1);
@@ -423,27 +423,27 @@ astruct_18 *  pass1_1040_1c22(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_1cb4(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_1cb4(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
   let puVar1: *mut u8
-  astruct_718 *iVar2;
+  let iVar2: &mut Struct718;
   let uVar2: u16;
   let puVar3: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xe8,param_5);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_718 *)param_1;
+  iVar2 = param_1;
   &iVar2.field_0x8e = 0x0;
   &iVar2.field_0x92 = 0x0;
   param_1 = 0x1eee;
   iVar2.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,param_8,param_6,param_7);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,param_8,param_6,param_7);
   puVar1 = (puVar3 >> 0x10);
   iVar2.field_0x8e = puVar3;
   iVar2.field_0x90 = puVar1;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x37,param_8,puVar1,param_7);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x37,param_8,puVar1,param_7);
   iVar2.field_0x92 = puVar3;
   iVar2.field_0x94 = (puVar3 >> 0x10);
   return;
@@ -453,14 +453,14 @@ pass1_1040_1cb4(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_1d24(astruct_18 *param_1)
+pub fn pass1_1040_1d24(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x1eee;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -491,7 +491,7 @@ pass1_1040_1e80(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: u16
 
 
 
-astruct_18 *  pass1_1040_1ec8(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_1ec8(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_1d24(param_1);
@@ -505,12 +505,12 @@ astruct_18 *  pass1_1040_1ec8(astruct_18 *param_1,param_2: u8)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_1f5a(astruct_57 *param_1,param_2: u16,param_3: i16,param_4: u16)
+pub fn pass1_1040_1f5a(param_1: &mut Struct57,param_2: u16,param_3: i16,param_4: u16)
 {
   let piVar1: *mut i16;
   let puVar2: *mut u8
-  astruct_719 *iVar3;
-  astruct_43 *paVar3;
+  let iVar3: &mut Struct719;
+  let paVar3: &mut Struct43;
   let uVar4: u32;
   let puVar5: *mut u16;
   let iVar6: i16;
@@ -529,13 +529,13 @@ pub fn pass1_1040_1f5a(astruct_57 *param_1,param_2: u16,param_3: i16,param_4: u1
   (iVar6 + 0xa6) = 0x0;
   param_1 = 0x237e;
   (iVar6 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  paVar3 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x1cc,param_4);
+  paVar3 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x1cc,param_4);
   (iVar6 + 0x8e) = paVar3;
   (iVar6 + 0x90) = (paVar3 >> 0x10);
-  uVar4 = pass1_1008_4772((astruct_76 *)
+  uVar4 = pass1_1008_4772(
                           (paVar3 & 0xffff0000 | (iVar6 + 0x8e)));
   puVar2 = (uVar4 >> 0x10);
-  puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x48,param_4,puVar2,param_3);
+  puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_4,puVar2,param_3);
   local_16 = CONCAT22((uVar4 + 0x8) + 0xa,0xa);
   uStack18 = CONCAT22(0x1d6,(uVar4 + 0x4) + -0xa);
   (iVar6 + 0x92) = local_16;
@@ -547,7 +547,7 @@ pub fn pass1_1040_1f5a(astruct_57 *param_1,param_2: u16,param_3: i16,param_4: u1
   iVar9 = iVar6 + 0xa2;
   iVar8 = iVar6 + 0xa6;
   uVar10 = uVar7;
-  puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_4,
+  puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_4,
                            (puVar5 >> 0x10),iVar6 + 0xa2);
   pass1_1010_0538(puVar5,CONCAT22(uVar7,iVar8),
                   CONCAT22(uVar10,iVar9),0x1010,param_4);
@@ -558,16 +558,16 @@ pub fn pass1_1040_1f5a(astruct_57 *param_1,param_2: u16,param_3: i16,param_4: u1
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_205e(astruct_18 *param_1)
+pub fn pass1_1040_205e(param_1: &mut Struct18)
 {
   let puVar1: u32;
   let uVar2: u16;
-  code **ppcVar3;
-  astruct_624 *iVar4;
+  let ppcVar3: u32;
+  let iVar4: &mut Struct624;
   let uVar4: u16;
   
   uVar4 = (param_1 >> 0x10);
-  iVar4 = (astruct_624 *)param_1;
+  iVar4 = param_1;
   param_1.field_0x0 = 0x237e;
   iVar4.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   puVar1 = iVar4.field_0x8e;
@@ -578,13 +578,13 @@ pub fn pass1_1040_205e(astruct_18 *param_1)
   }
   fn_ptr_1000_17ce(iVar4.field_0xa2,0x1000);
   fn_ptr_1000_17ce(iVar4.field_0xa6,0x1000);
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,iVar4.field_0x6);
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,iVar4.field_0x6);
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
 
 
-astruct_18 *  pass1_1040_2358(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_2358(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_205e(param_1);
@@ -599,26 +599,26 @@ astruct_18 *  pass1_1040_2358(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_23ea(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_23ea(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,param_6: u16,param_7: u16)
 
 {
   let uVar1: u32;
-  astruct_436 *iVar2;
+  let iVar2: &mut Struct436;
   let unaff_DI: i16;
   let uVar2: u16;
   let puVar3: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x9a,param_2,0xfbd,param_5);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_436 *)param_1;
+  iVar2 = param_1;
   &iVar2.field_0x8e = 0x0;
   iVar2.field_0x92 = 0x0;
   iVar2.field_0x94 = 0x0;
   param_1 = 0x2956;
   iVar2.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   iVar2.field_0x8a = 0x26;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x6,param_6,param_7,unaff_DI);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x6,param_6,param_7,unaff_DI);
   iVar2.field_0x8e = puVar3;
   iVar2.field_0x90 = (puVar3 >> 0x10);
   uVar1 = &iVar2.field_0x8e;
@@ -630,14 +630,14 @@ pass1_1040_23ea(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_2464(astruct_18 *param_1)
+pub fn pass1_1040_2464(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x2956;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -646,7 +646,7 @@ pub fn pass1_1040_2464(astruct_18 *param_1)
 pub fn pass1_1040_288e(param_1: u32)
 {
   let uVar1: u16;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let uVar3: u32;
   let puVar4: u32;
   let puVar5: u32;
@@ -693,7 +693,7 @@ pub fn pass1_1040_288e(param_1: u32)
 
 
 
-astruct_18 *  pass1_1040_2930(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_2930(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_2464(param_1);
@@ -708,7 +708,7 @@ astruct_18 *  pass1_1040_2930(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 astruct_57 * 
-pas1_1040_29c2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pas1_1040_29c2(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
               param_5: u16)
 
 {
@@ -721,11 +721,11 @@ pas1_1040_29c2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
   param_1 = 0x2e26;
   (iVar1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
   load_string_1010_84ac
-            (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10),0x1010);
+            (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
   (iVar1 + 0x94) = param_4;
   (iVar1 + 0x96) = param_5;
   load_string_1010_84ac
-            (_PTR_LOOP_1050_14cc,(_PTR_LOOP_1050_14cc >> 0x10),0x1010);
+            (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
   (iVar1 + 0x98) = param_4;
   (iVar1 + 0x9a) = param_5;
   return param_1;
@@ -733,13 +733,13 @@ pas1_1040_29c2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 
 
-pub fn pass1_1040_2a22(astruct_18 *param_1)
+pub fn pass1_1040_2a22(param_1: &mut Struct18)
 {
-  astruct_625 *iVar1;
+  let iVar1: &mut Struct625;
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_625 *)param_1;
+  iVar1 = param_1;
   param_1.field_0x0 = 0x2e26;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   fn_ptr_1000_17ce(iVar1.field_0x94,0x1000);
@@ -766,7 +766,7 @@ pub fn pass1_1040_2dac(param_1: u32)
 
 
 
-astruct_18 *  pass1_1040_2e00(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_2e00(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_2a22(param_1);
@@ -781,17 +781,17 @@ astruct_18 *  pass1_1040_2e00(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_2ea2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_2ea2(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
-  astruct_720 *iVar1;
+  let iVar1: &mut Struct720;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0x180,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_720 *)param_1;
+  iVar1 = param_1;
   iVar1.field_0x8e = 0x0;
   iVar1.field_0x90 = 0x0;
   iVar1.field_0x92 = 0x0;
@@ -799,7 +799,7 @@ pass1_1040_2ea2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
   &iVar1.field_0x96 = 0x0;
   param_1 = 0x3436;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
   iVar1.field_0x96 = puVar2;
   iVar1.field_0x98 = (puVar2 >> 0x10);
   return;
@@ -809,14 +809,14 @@ pass1_1040_2ea2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_2f06(astruct_18 *param_1)
+pub fn pass1_1040_2f06(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x3436;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -834,14 +834,14 @@ pass1_1040_2f32(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16
   let iVar2: i16;
   
   iVar2 = 0x0;
-  puVar1 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
+  puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
   pass1_1010_038e(puVar1,iVar2,param_5);
   destroy_win_1040_7b98(CONCAT22(param_2,param_1),0x1010);
   return;
 }
 
 
-astruct_18 *  pass1_1040_3410(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_3410(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_2f06(param_1);
@@ -856,17 +856,17 @@ astruct_18 *  pass1_1040_3410(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_34a2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_34a2(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
-  astruct_721 *iVar1;
+  let iVar1: &mut Struct721;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0x192,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_721 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   iVar1.field_0x92 = 0x0;
   iVar1.field_0x94 = 0x0;
@@ -874,7 +874,7 @@ pass1_1040_34a2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
   iVar1.field_0x98 = 0x0;
   param_1 = (s_Null_Ptr_1050_38f3 + 0x7);
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   return;
@@ -884,14 +884,14 @@ pass1_1040_34a2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_3506(astruct_18 *param_1)
+pub fn pass1_1040_3506(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = (s_Null_Ptr_1050_38f3 + 0x7);
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -906,14 +906,14 @@ pub fn pass1_1040_3532(param_1: u16,param_2: u16,uchar *param_3,param_4: i16,par
   let iVar2: i16;
   
   iVar2 = 0x0;
-  puVar1 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
+  puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
   pass1_1010_038e(puVar1,iVar2,param_5);
   destroy_win_1040_7b98(CONCAT22(param_2,param_1),0x1010);
   return;
 }
 
 
-astruct_18 *  pass1_1040_38d4(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_38d4(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_3506(param_1);
@@ -928,17 +928,17 @@ astruct_18 *  pass1_1040_38d4(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_3966(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_3966(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
-  astruct_722 *iVar1;
+  let iVar1: &mut Struct722;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0x185,param_5);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_722 *)param_1;
+  iVar1 = param_1;
   &iVar1.field_0x8e = 0x0;
   iVar1.field_0x92 = 0x0;
   iVar1.field_0x96 = 0x0;
@@ -950,7 +950,7 @@ pass1_1040_3966(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
   iVar1.field_0xa4 = 0x5;
   param_1 = 0x3ffc;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3c,param_8,param_6,param_7);
   iVar1.field_0x8e = puVar2;
   iVar1.field_0x90 = (puVar2 >> 0x10);
   return;
@@ -960,14 +960,14 @@ pass1_1040_3966(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_39e2(astruct_18 *param_1)
+pub fn pass1_1040_39e2(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x3ffc;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
@@ -982,7 +982,7 @@ pub fn pass1_1040_3a0e(param_1: u16,param_2: u16,uchar *param_3,param_4: i16,par
   let iVar2: i16;
   
   iVar2 = 0x0;
-  puVar1 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
+  puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
   pass1_1010_038e(puVar1,iVar2,param_5);
   destroy_win_1040_7b98(CONCAT22(param_2,param_1),0x1010);
   return;
@@ -990,7 +990,7 @@ pub fn pass1_1040_3a0e(param_1: u16,param_2: u16,uchar *param_3,param_4: i16,par
 
 
 
-astruct_18 *  pass1_1040_3fd6(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_3fd6(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_39e2(param_1);
@@ -1005,29 +1005,29 @@ astruct_18 *  pass1_1040_3fd6(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_4068(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_4068(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                param_5: u16,uchar *param_6,param_7: i16,param_8: u16)
 
 {
   let puVar1: *mut u8
-  astruct_723 *iVar2;
+  let iVar2: &mut Struct723;
   let uVar2: u16;
   let puVar3: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xfb7,param_5);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_723 *)param_1;
+  iVar2 = param_1;
   &iVar2.field_0x8e = 0x0;
   iVar2.field_0x92 = 0x0;
   iVar2.field_0x9a = 0x0;
   param_1 = 0x4466;
   iVar2.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   iVar2.field_0x76 = 0x1;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,param_8,param_6,param_7);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,param_8,param_6,param_7);
   puVar1 = (puVar3 >> 0x10);
   iVar2.field_0x8e = puVar3;
   iVar2.field_0x90 = puVar1;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x29,param_8,puVar1,param_7);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x29,param_8,puVar1,param_7);
   iVar2.field_0x96 = puVar3;
   iVar2.field_0x98 = (puVar3 >> 0x10);
   return;
@@ -1037,20 +1037,20 @@ pass1_1040_4068(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_40e2(astruct_18 *param_1)
+pub fn pass1_1040_40e2(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0x4466;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1,&ctx.PTR_LOOP_1050_1038);
   return;
 }
 
 
-astruct_18 *  pass1_1040_4440(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_4440(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_40e2(param_1);
@@ -1063,7 +1063,7 @@ astruct_18 *  pass1_1040_4440(astruct_18 *param_1,param_2: u8)
 
 
 void 
-pass1_1040_44d2(astruct_57 *param_1,param_2: u32,param_3: u16,param_4: u16,
+pass1_1040_44d2(param_1: &mut Struct57,param_2: u32,param_3: u16,param_4: u16,
                uchar *param_5)
 
 {
@@ -1128,25 +1128,25 @@ pass1_1040_45e8(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
                param_6: u16,param_7: u16)
 
 {
-  astruct_18 *paVar1;
-  code **ppcVar2;
+  let paVar1: &mut Struct18;
+  let ppcVar2: u32;
   let uVar3: u32;
   let uVar4: u16;
-  astruct_18 *paVar5;
+  let paVar5: &mut Struct18;
   let puVar6: *mut u8
   let puVar7: *mut u8
   let iVar8: i16;
   let unaff_DI: i16;
   let uVar9: u16;
-  astruct_20 *paVar10;
+  let paVar10: &mut Struct20;
   let piStack16: *mut i16;
   
   if (param_4._2_2_ != 0xeb) {
     pass1_1040_b54a(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
     return;
   }
-  paVar10 = (astruct_20 *)
-            mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_7,param_5,unaff_DI);
+  paVar10 = 
+            mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_7,param_5,unaff_DI);
   puVar6 = (paVar10 >> 0x10);
   paVar1 = (param_1 + 0x90);
   if (paVar1 != 0x0) {
@@ -1203,7 +1203,7 @@ pass1_1040_45e8(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
 
 pub fn pass1_1040_4766(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = (*param_1 + 0x74);
   (**ppcVar1)();
@@ -1214,7 +1214,7 @@ pub fn pass1_1040_4766(param_1: *mut u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_477e(astruct_1 *param_1,uchar *param_2,param_3: u16,param_4: u16)
+pub fn pass1_1040_477e(param_1: &mut Struct1,uchar *param_2,param_3: u16,param_4: u16)
 {
   let puVar1: *mut u8
   let pUVar2: *mut u16;
@@ -1226,7 +1226,7 @@ pub fn pass1_1040_477e(astruct_1 *param_1,uchar *param_2,param_3: u16,param_4: u
   let uVar7: u16;
   
   unk_win_ui_op_1040_b230(param_1,param_3,param_4);
-  puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_4,param_2,unaff_DI);
+  puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_4,param_2,unaff_DI);
   puVar3 = (puVar5 >> 0x10);
   uVar7 = SUB42(ctx.data_seg,0x0);
   uVar6 = 0x5d68;
@@ -1244,7 +1244,7 @@ pub fn pass1_1040_477e(astruct_1 *param_1,uchar *param_2,param_3: u16,param_4: u
 
 
 
-astruct_18 *  pass1_1040_47fe(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_47fe(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -1259,7 +1259,7 @@ astruct_18 *  pass1_1040_47fe(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_48a0(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
+pass1_1040_48a0(param_1: &mut Struct57,param_2: u16,param_3: u32,param_4: u16,
                uchar *param_5,param_6: u16)
 
 {
@@ -1268,8 +1268,8 @@ pass1_1040_48a0(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
   let uVar3: u16;
   let puVar4: *mut u8
   let puVar5: *mut u8
-  astruct_444 *iVar5;
-  astruct_445 *iVar6;
+  let iVar5: &mut Struct444;
+  let iVar6: &mut Struct445;
   let unaff_DI: i16;
   let uVar6: u16;
   let uVar7: u16;
@@ -1278,11 +1278,11 @@ pass1_1040_48a0(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
   
   struct_1040_b082(param_1,CONCAT22(param_4,0xfa1));
   uVar6 = (param_1 >> 0x10);
-  iVar5 = (astruct_444 *)param_1;
+  iVar5 = param_1;
   iVar5.field_0x94 = 0x0;
   param_1 = &ctx.PTR_LOOP_1050_4e18;
   iVar5.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,param_5,unaff_DI);
+  puVar8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,param_5,unaff_DI);
   puVar4 = (puVar8 >> 0x10);
   uVar3 = puVar8;
   &iVar5.field_0x94 = uVar3;
@@ -1312,7 +1312,7 @@ pass1_1040_48a0(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
                     puVar5);
     piVar2 = iVar5.field_0x90;
     uVar7 = (piVar2 >> 0x10);
-    iVar6 = (astruct_445 *)piVar2;
+    iVar6 = piVar2;
     iVar6.field_0x2 = uVar3 + 0x2;
     iVar6.field_0x4 = puVar5;
   }
@@ -1331,7 +1331,7 @@ pass1_1040_48a0(astruct_57 *param_1,param_2: u16,param_3: u32,param_4: u16,
 }
 
 
-pub fn pass1_1040_4cf4(param_1: u32,HWND16 param_2,param_3: u16)
+pub fn pass1_1040_4cf4(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -1347,10 +1347,10 @@ pub fn pass1_1040_4cf4(param_1: u32,HWND16 param_2,param_3: u16)
   uVar6 = (param_1 >> 0x10);
   iVar4 = param_1;
   GetDlgItem16(param_2,0x1770);
-  LVar8 = SendMessage16(s_tile2_bmp_1050_1538,0x0,0x0,0x4070000);
+  LVar8 = SendMessage16(ctx.s_tile2_bmp_1050_1538,0x0,0x0,0x4070000);
   uVar3 = (LVar8 >> 0x10);
   if (LVar8 != -0x1) {
-    LVar8 = SendMessage16(s_tile2_bmp_1050_1538,local_52,param_3,
+    LVar8 = SendMessage16(ctx.s_tile2_bmp_1050_1538,local_52,param_3,
                           CONCAT22(0x408,LVar8));
     uVar3 = (LVar8 >> 0x10);
   }
@@ -1400,7 +1400,7 @@ pub fn pass1_1040_4dcc(param_1: u32,param_2: i16,param_3: u16) -> *mut u8
   let uVar1: u32;
   let uVar2: u32;
   let uVar3: u16;
-  char *pcVar4;
+  let mut pcVar4: String; 
   
   uVar3 = (param_1 >> 0x10);
   uVar2 = (param_1 + 0x90);
@@ -1412,7 +1412,7 @@ pub fn pass1_1040_4dcc(param_1: u32,param_2: i16,param_3: u16) -> *mut u8
 
 
 
-astruct_18 *  pass1_1040_4df2(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_4df2(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -1424,7 +1424,7 @@ astruct_18 *  pass1_1040_4df2(astruct_18 *param_1,param_2: u8)
 
 
 
-pub fn pass1_1040_4e94(astruct_57 *param_1,param_2: i32,param_3: u16)
+pub fn pass1_1040_4e94(param_1: &mut Struct57,param_2: i32,param_3: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -1450,7 +1450,7 @@ pub fn pass1_1040_4e94(astruct_57 *param_1,param_2: i32,param_3: u16)
 
 
 
-pub fn pass1_1040_4f0a(astruct_18 *param_1)
+pub fn pass1_1040_4f0a(param_1: &mut Struct18)
 {
   param_1.field_0x0 = 0x55a2;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
@@ -1461,11 +1461,11 @@ pub fn pass1_1040_4f0a(astruct_18 *param_1)
 
 
 u16 
-pass1_1040_4f28(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5: i16,
+pass1_1040_4f28(param_1: *mut u32,param_2: &mut i16,param_3: u16,param_4: u16,param_5: i16,
                param_6: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   
   if (param_5 == 0x2b) {
@@ -1488,7 +1488,7 @@ pass1_1040_4f28(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5
 
 pub fn pass1_1040_4f82(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = (*param_1 + 0x80);
   (**ppcVar1)();
@@ -1499,7 +1499,7 @@ pub fn pass1_1040_4f82(param_1: *mut u32)
 pub fn pass1_1040_5238(param_1: u32) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = ((param_1 + 0x94) + 0x8);
   (**ppcVar1)();
@@ -1507,7 +1507,7 @@ pub fn pass1_1040_5238(param_1: u32) -> u16
 }
 
 
-astruct_18 *  pass1_1040_557c(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_557c(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_4f0a(param_1);
@@ -1519,7 +1519,7 @@ astruct_18 *  pass1_1040_557c(astruct_18 *param_1,param_2: u8)
 
 
 
-pub fn pass1_1040_5626(astruct_57 *param_1,param_2: u32,param_3: u16,uchar *param_4)
+pub fn pass1_1040_5626(param_1: &mut Struct57,param_2: u32,param_3: u16,uchar *param_4)
 {
   let piVar1: *mut i16;
   let uVar2: u16;
@@ -1529,11 +1529,11 @@ pub fn pass1_1040_5626(astruct_57 *param_1,param_2: u32,param_3: u16,uchar *para
   let uVar6: u32;
   let uVar7: u16;
   let piStack12: *mut i16;
-  astruct_441 *iVar8;
-  astruct_396 *iVar7;
-  astruct_439 *iVar6;
+  let iVar8: &mut Struct441;
+  let iVar7: &mut Struct396;
+  let iVar6: &mut Struct439;
   
-  iVar8 = (astruct_441 *)param_1;
+  iVar8 = param_1;
   uVar7 = (param_1 >> 0x10);
   struct_1040_b082(param_1,CONCAT22(param_3,0xfa3));
   uVar2 = 0x0;
@@ -1592,7 +1592,7 @@ pub fn pass1_1040_5626(astruct_57 *param_1,param_2: u32,param_3: u16,uchar *para
 
 
 void 
-pass1_1040_57d4(astruct_1 *param_1,uchar *param_2,param_3: i16,param_4: u16,
+pass1_1040_57d4(param_1: &mut Struct1,uchar *param_2,param_3: i16,param_4: u16,
                param_5: u16)
 
 {
@@ -1631,13 +1631,13 @@ pub fn pass1_1040_5d12(param_1: u32) -> u32
   let uVar1: u16;
   let uVar2: u16;
   let uVar3: u32;
-  astruct_440 *iVar4;
+  let iVar4: &mut Struct440;
   let uVar4: u16;
   let uVar5: u32;
   
   uVar3 = (param_1 + 0x90);
   uVar4 = (uVar3 >> 0x10);
-  iVar4 = (astruct_440 *)uVar3;
+  iVar4 = uVar3;
   uVar1 = iVar4.field_0x6;
   uVar2 = iVar4.field_0x8;
   if ((uVar2 | uVar1) != 0x0) {
@@ -1695,25 +1695,25 @@ pub fn pass1_1040_5d42(param_1: u32)
 
 pub fn pass1_1040_5dc4(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u32;
   let uVar3: u16;
   let uVar4: u16;
   let uVar5: u16;
   let puVar6: *mut u8
   let extraout_DX: u16;
-  astruct_724 *iVar7;
+  let iVar7: &mut Struct724;
   let uVar7: u16;
   let puVar8: *mut u16;
   let puVar9: u32;
   let uVar10: u16;
   let iStack18: i16;
   
-  puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_4,param_2,param_3);
+  puVar8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_4,param_2,param_3);
   puVar6 = (puVar8 >> 0x10);
   uVar3 = puVar8;
   uVar7 = (param_1 >> 0x10);
-  iVar7 = (astruct_724 *)param_1;
+  iVar7 = param_1;
   pass1_1010_a5ca(uVar3,puVar6,iVar7.field_0x9a,uVar3,puVar6);
   if (uVar3 == 0x0) {
     iVar7.field_0x94 = 0x0;
@@ -1727,7 +1727,7 @@ pub fn pass1_1040_5dc4(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
       uVar10 = 0x41;
     }
     puVar9 = 
-             mixed_1010_20ba(_PTR_LOOP_1050_0ed0,uVar10,param_4,puVar6,param_3);
+             mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,uVar10,param_4,puVar6,param_3);
     uVar4 = iVar7.field_0x9a;
     ppcVar1 = (*puVar9 + 0x14);
     (**ppcVar1)(0x1010,puVar9,(puVar9 >> 0x10),uVar4,uVar4 >> 0xf);
@@ -2021,7 +2021,7 @@ i16  pass1_1040_5eaa(param_1: u32)
 
 
 
-astruct_18 *  pass1_1040_6360(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_6360(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -2036,23 +2036,23 @@ astruct_18 *  pass1_1040_6360(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_6402(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
+pass1_1040_6402(param_1: &mut Struct57,param_2: u16,uchar *param_3,param_4: i16,
                param_5: u16)
 
 {
-  code **ppcVar1;
-  astruct_725 *iVar2;
+  let ppcVar1: u32;
+  let iVar2: &mut Struct725;
   let uVar2: u16;
   let puVar3: *mut u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0x1850,param_2);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_725 *)param_1;
+  iVar2 = param_1;
   iVar2.field_0x8e = 0x0;
   iVar2.field_0x92 = 0x0;
   param_1 = 0x67ba;
   iVar2.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
+  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
   &iVar2.field_0x92 = puVar3;
   (&iVar2.field_0x92 + 0x2) = (puVar3 >> 0x10);
   ppcVar1 = (*iVar2.field_0x92 + 0x4);
@@ -2064,9 +2064,9 @@ pass1_1040_6402(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_6470(astruct_18 *param_1,param_2: u16)
+pub fn pass1_1040_6470(param_1: &mut Struct18,param_2: u16)
 {
-  astruct_18 *iVar1;
+  let iVar1: &mut Struct18;
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
@@ -2076,7 +2076,7 @@ pub fn pass1_1040_6470(astruct_18 *param_1,param_2: u16)
   if (&iVar1.field_0x92 != 0x0) {
     pass1_1010_1ea6(&iVar1.field_0x92,param_1,param_2);
   }
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,iVar1.field_0x6);
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,iVar1.field_0x6);
   fn_ptr_1000_17ce(&iVar1.field_0x8e,0x1000);
   ui_cleanup_op_1040_782c(param_1,0x1000);
   return;
@@ -2084,7 +2084,7 @@ pub fn pass1_1040_6470(astruct_18 *param_1,param_2: u16)
 
 
 astruct_18 * 
-pass1_1040_6794(astruct_18 *param_1,param_2: u8,param_3: u16)
+pass1_1040_6794(param_1: &mut Struct18,param_2: u8,param_3: u16)
 
 {
   pass1_1040_6470(param_1,param_3);
@@ -2096,7 +2096,7 @@ pass1_1040_6794(astruct_18 *param_1,param_2: u8,param_3: u16)
 
 
 
-pub fn pass1_1040_6826(astruct_57 *param_1,param_2: u16)
+pub fn pass1_1040_6826(param_1: &mut Struct57,param_2: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -2113,7 +2113,7 @@ pub fn pass1_1040_6826(astruct_57 *param_1,param_2: u16)
 
 
 
-pub fn pass1_1040_6862(astruct_18 *param_1)
+pub fn pass1_1040_6862(param_1: &mut Struct18)
 {
   param_1.field_0x0 = 0x6f32;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
@@ -2124,11 +2124,11 @@ pub fn pass1_1040_6862(astruct_18 *param_1)
 
 
 u16 
-pass1_1040_68d2(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5: i16,
+pass1_1040_68d2(param_1: *mut u32,param_2: &mut i16,param_3: u16,param_4: u16,param_5: i16,
                param_6: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   
   if (param_5 == 0x2b) {
@@ -2151,7 +2151,7 @@ pass1_1040_68d2(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5
 
 pub fn pass1_1040_692e(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = (*param_1 + 0x7c);
   (**ppcVar1)();
@@ -2163,7 +2163,7 @@ pub fn pass1_1040_6cac(param_1: u32,param_2: u16)
 {
   let puVar1: u32;
   let uVar2: u16;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let iVar4: i16;
   let uVar5: u16;
   
@@ -2187,7 +2187,7 @@ pub fn pass1_1040_6cac(param_1: u32,param_2: u16)
 pub fn pass1_1040_6cfa(param_1: u32) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = ((param_1 + 0x98) + 0x8);
   (**ppcVar1)();
@@ -2195,7 +2195,7 @@ pub fn pass1_1040_6cfa(param_1: u32) -> u16
 }
 
 
-astruct_18 *  pass1_1040_6f0c(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_6f0c(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_6862(param_1);
@@ -2207,7 +2207,7 @@ astruct_18 *  pass1_1040_6f0c(astruct_18 *param_1,param_2: u8)
 
 
 
-pub fn pass1_1040_6fb6(astruct_57 *param_1,param_2: u16)
+pub fn pass1_1040_6fb6(param_1: &mut Struct57,param_2: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -2224,11 +2224,11 @@ pub fn pass1_1040_6fb6(astruct_57 *param_1,param_2: u16)
 
 
 u16 
-pass1_1040_7044(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5: i16,
+pass1_1040_7044(param_1: *mut u32,param_2: &mut i16,param_3: u16,param_4: u16,param_5: i16,
                param_6: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   
   if (param_5 == 0x2b) {
@@ -2251,7 +2251,7 @@ pass1_1040_7044(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5
 
 pub fn pass1_1040_70a0(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = (*param_1 + 0x7c);
   (**ppcVar1)();
@@ -2263,7 +2263,7 @@ pub fn pass1_1040_741e(param_1: u32,param_2: u16)
 {
   let puVar1: u32;
   let uVar2: u16;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let iVar4: i16;
   let uVar5: u16;
   
@@ -2287,7 +2287,7 @@ pub fn pass1_1040_741e(param_1: u32,param_2: u16)
 pub fn pass1_1040_746c(param_1: u32) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = ((param_1 + 0x98) + 0x8);
   (**ppcVar1)();
@@ -2295,7 +2295,7 @@ pub fn pass1_1040_746c(param_1: u32) -> u16
 }
 
 
-astruct_18 *  pass1_1040_767e(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_767e(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -2313,10 +2313,10 @@ pub fn pass1_1040_78de(void)
 }
 
 
-pub fn pass1_1040_79c0(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5: u16) -> u16
+pub fn pass1_1040_79c0(param_1: *mut u32,param_2: &mut i16,param_3: u16,param_4: u16,param_5: u16) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let cVar2: u8;
   let uVar3: u16;
   let unaff_CS: u16;
@@ -2416,12 +2416,12 @@ pub fn pass1_1040_805a(uchar *param_1) -> u32
   let uVar1: u16;
   let unaff_SS: u16;
   
-  if (_PTR_LOOP_1050_4230 == 0x0) {
-    mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x28,unaff_SS,param_1,unaff_DI);
+  if (ctx.PTR__LOOP_1050_4230 == 0x0) {
+    mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x28,unaff_SS,param_1,unaff_DI);
   }
-  uVar1 = (_PTR_LOOP_1050_4230 >> 0x10);
-  return CONCAT22((_PTR_LOOP_1050_4230 + 0x10),
-                  (_PTR_LOOP_1050_4230 + 0xe));
+  uVar1 = (ctx.PTR__LOOP_1050_4230 >> 0x10);
+  return CONCAT22((ctx.PTR__LOOP_1050_4230 + 0x10),
+                  (ctx.PTR__LOOP_1050_4230 + 0xe));
 }
 
 
@@ -2431,7 +2431,7 @@ pub fn pass1_1040_805a(uchar *param_1) -> u32
 pub fn pass1_1040_807e(param_1: u32,param_2: u16,param_3: u16)
 {
   let uVar1: u16;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let puVar3: u32;
   let puVar4: u32;
   let in_DX: *mut u8
@@ -2440,17 +2440,17 @@ pub fn pass1_1040_807e(param_1: u32,param_2: u16,param_3: u16)
   let puVar6: *mut u8
   let extraout_DX_00: *mut u8
   let puVar7: *mut u8
-  astruct_395 *iVar9;
+  let iVar9: &mut Struct395;
   let uVar8: u16;
-  astruct_43 *paVar9;
+  let paVar9: &mut Struct43;
   let uStack10: u32;
-  astruct_393 *iVar8;
+  let iVar8: &mut Struct393;
   
   if (param_2 == 0x1) {
     pass1_1040_805a(in_DX);
     return;
   }
-  paVar9 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,param_2,param_3);
+  paVar9 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_2,param_3);
   uVar5 = (paVar9 >> 0x10);
   puVar3 = paVar9;
   if ((uVar5 | puVar3) != 0x0) {
@@ -2459,9 +2459,9 @@ pub fn pass1_1040_807e(param_1: u32,param_2: u16,param_3: u16)
     (**ppcVar2)(0x1010,puVar3,uVar5);
     uStack10 = CONCAT22(extraout_DX,puVar4);
     uVar8 = (param_1 >> 0x10);
-    iVar9 = (astruct_395 *)param_1;
+    iVar9 = param_1;
     puVar6 = extraout_DX;
-    if (iVar9.field_0x70 != (astruct_90 *)0x0) {
+    if (iVar9.field_0x70 != 0x0) {
       puVar4 = *(u32 **)&iVar9.field_0x70;
       uVar1 = (&iVar9.field_0x70 + 0x2);
       puVar6 = (uVar1 | puVar4);
@@ -2483,7 +2483,7 @@ pub fn pass1_1040_807e(param_1: u32,param_2: u16,param_3: u16)
     *(u32 **)&iVar9.field_0x70 = puVar4;
     *(uchar **)(&iVar9.field_0x70 + 0x2) = puVar7;
     pass1_1008_4d84(iVar9.field_0x70,uStack10,puVar7);
-    if (paVar9 != (astruct_43 *)0x0) {
+    if (paVar9 != 0x0) {
       ppcVar2 = paVar9;
       (**ppcVar2)(0x1008,puVar3,uVar5,0x1);
     }
@@ -2505,7 +2505,7 @@ pub fn pass1_1040_824a(param_1: u32,param_2: i16) -> u16
 
 
 astruct_18 * 
-pass1_1040_83e6(astruct_18 *param_1,param_2: u8,param_3: u16)
+pass1_1040_83e6(param_1: &mut Struct18,param_2: u8,param_3: u16)
 
 {
   ui_cleanup_op_1040_782c(param_1,param_3);
@@ -2518,17 +2518,17 @@ pass1_1040_83e6(astruct_18 *param_1,param_2: u8,param_3: u16)
 
 
 astruct_57 * 
-pass1_1040_8478(astruct_57 *param_1,param_2: u16,char *param_3,char *param_4,
+pass1_1040_8478(param_1: &mut Struct57,param_2: u16,char *param_3,char *param_4,
                param_5: u16,param_6: u16)
 
 {
   let uVar1: u16;
-  astruct_712 *iVar2;
+  let iVar2: &mut Struct712;
   let uVar2: u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfc3,param_5);
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_712 *)param_1;
+  iVar2 = param_1;
   iVar2.field_0x8e = 0x0;
   iVar2.field_0x98 = param_2;
   iVar2.field_0x9a = 0x0;
@@ -2549,7 +2549,7 @@ pass1_1040_8478(astruct_57 *param_1,param_2: u16,char *param_3,char *param_4,
 }
 
 
-pub fn pass1_1040_869a(astruct_18 *param_1)
+pub fn pass1_1040_869a(param_1: &mut Struct18)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -2571,7 +2571,7 @@ pass1_1040_8978(param_1: *mut u32,param_2: u16,param_3: u16,param_4: u16,
                WNDCLASS16 *param_5)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   unk_win_msg_op_1008_9510(&ctx.PTR_LOOP_1050_5df4,0x1008,param_5);
   win_1008_5c5c(param_5,param_3,param_4,_PTR_LOOP_1050_02a0,param_2);
@@ -2591,7 +2591,7 @@ pass1_1040_89a4(param_1: *mut u32,param_2: *mut u16,uchar *param_3,param_4: i16,
 {
   let uVar1: u16;
   let uVar2: u16;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let uVar4: u16;
   let uVar5: u16;
   let uVar6: u16;
@@ -2601,12 +2601,12 @@ pass1_1040_89a4(param_1: *mut u32,param_2: *mut u16,uchar *param_3,param_4: i16,
   uVar1 = (param_2 + 0x2);
   uVar2 = *param_2;
   uVar6 = 0x1010;
-  puVar7 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2,param_5,param_3,param_4);
+  puVar7 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,param_5,param_3,param_4);
   uVar5 = (puVar7 >> 0x10);
   uVar4 = puVar7;
   if ((uVar4 + 0x72) != 0x0) {
     uVar6 = 0x1008;
-    win_1008_5c7c(_PTR_LOOP_1050_02a0,CONCAT22(uVar1,uVar2),param_5,uVar4,uVar5);
+    win_1008_5c7c(ctx.PTR__LOOP_1050_02a0,CONCAT22(uVar1,uVar2),param_5,uVar4,uVar5);
     (param_1 + 0x8c) = uVar4;
   }
   ppcVar3 = (*param_1 + 0x74);
@@ -2634,7 +2634,7 @@ pub fn pass1_1040_8b3c(param_1: u16,param_2: u32,param_3: u32,param_4: u16)
 
 
 
-astruct_18 *  pass1_1040_8db6(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_8db6(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_869a(param_1);
@@ -2649,7 +2649,7 @@ astruct_18 *  pass1_1040_8db6(astruct_18 *param_1,param_2: u8)
 pub fn pass1_1040_8e58(param_1: i16,param_2: u16,param_3: u16,param_4: u32) -> u16
 
 {
-  pass1_1040_b040((astruct_57 *)CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),
+  pass1_1040_b040(CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),
                   (param_4 >> 0x10));
   CONCAT22(param_2,param_1) = 0x8f3c;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
@@ -2658,7 +2658,7 @@ pub fn pass1_1040_8e58(param_1: i16,param_2: u16,param_3: u16,param_4: u32) -> u
 
 
 
-pub fn pass1_1040_8e82(astruct_18 *param_1)
+pub fn pass1_1040_8e82(param_1: &mut Struct18)
 {
   param_1.field_0x0 = 0x8f3c;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
@@ -2668,7 +2668,7 @@ pub fn pass1_1040_8e82(astruct_18 *param_1)
 
 
 
-astruct_18 *  pass1_1040_8f16(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_8f16(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_8e82(param_1);
@@ -2683,11 +2683,11 @@ pub fn pass1_1040_9252(param_1: u32,param_2: u16)
 {
   let piVar1: *mut i16;
   let iVar2: i16;
-  astruct_161 *iVar3;
+  let iVar3: &mut Struct161;
   let uVar3: u16;
   
   uVar3 = (param_1 >> 0x10);
-  iVar3 = (astruct_161 *)param_1;
+  iVar3 = param_1;
   if (iVar3.field_0x4 != 0x0) {
     draw_text_1040_9650(param_1 & 0xffff | uVar3 << 0x10,param_2);
   }
@@ -2718,7 +2718,7 @@ pub fn pass1_1040_9252(param_1: u32,param_2: u16)
 }
 
 
-LRESULT  pass1_1040_93e6(param_1: u32,HWND16 param_2)
+LRESULT  pass1_1040_93e6(param_1: u32,param_2: HWND16)
 
 {
   LRESULT LVar1;
@@ -2731,7 +2731,7 @@ LRESULT  pass1_1040_93e6(param_1: u32,HWND16 param_2)
 
 pub fn pass1_1040_9422(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   
   uVar2 = (param_1 >> 0x10);
@@ -2750,12 +2750,12 @@ pub fn pass1_1040_9422(param_1: *mut u32)
 pub fn pass1_1040_9618(param_1: u32)
 {
   let uVar1: u16;
-  astruct_162 *iVar2;
+  let iVar2: &mut Struct162;
   let uVar2: u16;
   let uVar3: u32;
   
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_162 *)param_1;
+  iVar2 = param_1;
   uVar3 = pass1_1008_4772(iVar2.field_0x8);
   uVar1 = (uVar3 >> 0x10);
   iVar2.field_0x2a = (uVar3 + 0x4);
@@ -2829,7 +2829,7 @@ pass1_1040_a2cc(param_1: i16,param_2: u32,param_3: u32,param_4: u16,uchar *param
 
 
 astruct_18 * 
-pass1_1040_a4c2(astruct_18 *param_1,param_2: u8,param_3: u16)
+pass1_1040_a4c2(param_1: &mut Struct18,param_2: u8,param_3: u16)
 
 {
   free_proc_inst_1040_a294(param_1,param_3);
@@ -2866,11 +2866,11 @@ pub fn pass1_1040_a5d0(param_1: u32)
 {
   let uVar1: u16;
   let uVar2: u16;
-  astruct_258 *iVar4;
+  let iVar4: &mut Struct258;
   let uVar3: u16;
   
   uVar3 = (param_1 >> 0x10);
-  iVar4 = (astruct_258 *)param_1;
+  iVar4 = param_1;
   uVar1 = iVar4.field_0x2;
   uVar2 = iVar4.field_0x4;
   if ((uVar2 | uVar1) != 0x0) {
@@ -2884,7 +2884,7 @@ pub fn pass1_1040_a5d0(param_1: u32)
 
 
 
-pub fn pass1_1040_a640(astruct_57 *param_1,param_2: u32,param_3: u16)
+pub fn pass1_1040_a640(param_1: &mut Struct57,param_2: u32,param_3: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -2909,7 +2909,7 @@ pub fn pass1_1040_a84a(param_1: u32,param_2: u16)
 }
 
 
-astruct_18 *  pass1_1040_abe2(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_abe2(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -2924,24 +2924,24 @@ astruct_18 *  pass1_1040_abe2(astruct_18 *param_1,param_2: u8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_ac84(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
+pass1_1040_ac84(param_1: &mut Struct57,param_2: u16,uchar *param_3,param_4: i16,
                param_5: u16)
 
 {
-  astruct_726 *iVar1;
+  let iVar1: &mut Struct726;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   struct_1040_b082(param_1,CONCAT22(param_2,0x1f3));
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_726 *)param_1;
+  iVar1 = param_1;
   iVar1.field_0x94 = 0x0;
   &iVar1.field_0x98 = 0x0;
   param_1 = 0xafc4;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  iVar1.field_0x94 = _PTR_LOOP_1050_5ef0;
-  _PTR_LOOP_1050_5ef0 = 0x0;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3d,param_5,param_3,param_4);
+  iVar1.field_0x94 = ctx._PTR_LOOP_1050_5ef0;
+  ctx._PTR_LOOP_1050_5ef0 = 0x0;
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3d,param_5,param_3,param_4);
   iVar1.field_0x98 = puVar2;
   iVar1.field_0x9a = (puVar2 >> 0x10);
   return;
@@ -2951,14 +2951,14 @@ pass1_1040_ac84(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_ace8(astruct_18 *param_1)
+pub fn pass1_1040_ace8(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0xafc4;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   unk_draw_op_1040_b0f8(param_1);
   return;
 }
@@ -2992,7 +2992,7 @@ pass1_1040_ad24(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
 }
 
 
-astruct_18 *  pass1_1040_af9e(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_af9e(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_ace8(param_1);
@@ -3004,7 +3004,7 @@ astruct_18 *  pass1_1040_af9e(astruct_18 *param_1,param_2: u8)
 
 
 
-pub fn pass1_1040_b040(astruct_57 *param_1,param_2: u32,param_3: u16)
+pub fn pass1_1040_b040(param_1: &mut Struct57,param_2: u32,param_3: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -3020,7 +3020,7 @@ pub fn pass1_1040_b040(astruct_57 *param_1,param_2: u32,param_3: u16)
 }
 
 
-pub fn pass1_1040_b0bc(astruct_57 *param_1,param_2: u32,param_3: u32)
+pub fn pass1_1040_b0bc(param_1: &mut Struct57,param_2: u32,param_3: u32)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -3043,7 +3043,7 @@ pass1_1040_b17c(param_1: u32,param_2: u32,uchar *param_3,param_4: i16,param_5: i
 {
   let piVar1: *mut i16;
   let uVar2: u32;
-  char *pcVar3;
+  let mut pcVar3: String; 
   let uVar4: u16;
   let iVar5: i16;
   let uVar6: u16;
@@ -3065,7 +3065,7 @@ pass1_1040_b17c(param_1: u32,param_2: u32,uchar *param_3,param_4: i16,param_5: i
     iStack4 += 0x1;
     param_3 = puVar7;
   }
-  puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,param_3,param_5);
+  puVar8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,param_3,param_5);
   uVar4 = (puVar8 >> 0x10);
   uVar2 = (iVar5 + 0x90);
   puStack12 = (uVar2 + 0x2);
@@ -3085,7 +3085,7 @@ pass1_1040_b17c(param_1: u32,param_2: u32,uchar *param_3,param_4: i16,param_5: i
 pub fn pass1_1040_b316(param_1: *mut u32,param_2: u16,param_3: u16,param_4: u16,param_5: i16) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uStack4: u16;
   
   if (param_5 == 0xf) {
@@ -3106,7 +3106,7 @@ pub fn pass1_1040_b316(param_1: *mut u32,param_2: u16,param_3: u16,param_4: u16,
 }
 
 
-pub fn pass1_1040_b45e(param_1: u32,HWND16 param_2)
+pub fn pass1_1040_b45e(param_1: u32,param_2: HWND16)
 {
   let uVar1: u32;
   let piVar2: *mut i16;
@@ -3126,7 +3126,7 @@ pub fn pass1_1040_b45e(param_1: u32,HWND16 param_2)
         *piVar2 != iStack8 && iStack8 <= *piVar2; iStack8 += 0x1) {
       SetDlgItemText16(param_2,*pIStack6,(SEGPTR)(pIStack6 + 0x2));
       pIStack6 = (INT16 *)(pIStack6 & 0xffff0000 | (pIStack6 + 0xa));
-      param_2 = s_tile2_bmp_1050_1538;
+      param_2 = ctx.s_tile2_bmp_1050_1538;
     }
   }
   return;
@@ -3146,7 +3146,7 @@ pub fn pass1_1040_b4c8(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
   
   uVar4 = (param_1 >> 0x10);
   if ((param_1 + 0x90) != 0x0) {
-    puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_4,param_2,param_3);
+    puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_4,param_2,param_3);
     uVar2 = (param_1 + 0x90);
     iVar1 = (uVar2 + 0xa);
     iVar3 = iVar1 + -0x4;
@@ -3166,7 +3166,7 @@ pub fn pass1_1040_b4c8(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
         ui_op_1010_79aa(puVar5,0xfda,0x0,param_4);
         if (iVar3 == 0x0) {
           uVar4 = 0xd;
-          goto LAB_1040_b50f;
+//           TODO: goto LAB_1040_b50f;
         }
       }
     }
@@ -3183,14 +3183,14 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
                param_6: u16,param_7: u16)
 
 {
-  astruct_18 *paVar1;
-  code **ppcVar2;
+  let paVar1: &mut Struct18;
+  let ppcVar2: u32;
   let uVar3: u32;
   let iVar4: i16;
   let iVar5: i16;
-  astruct_18 *paVar6;
+  let paVar6: &mut Struct18;
   let uVar7: u16;
-  astruct_515 *iVar6;
+  let iVar6: &mut Struct515;
   let unaff_DI: i16;
   let uVar8: u16;
   let puVar9: *mut u16;
@@ -3206,7 +3206,7 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
   }
   else {
     if (param_4._2_2_ == 0xeb) {
-      puVar9 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_7,param_5,unaff_DI);
+      puVar9 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_7,param_5,unaff_DI);
       uVar7 = (puVar9 >> 0x10);
       paVar1 = (param_1 + 0x90);
       if (paVar1 != 0x0) {
@@ -3233,7 +3233,7 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
     }
     else {
       if (param_4._2_2_ == 0x1790) {
-        puVar9 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
+        puVar9 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
         uVar3 = (param_1 + 0x90);
         uVar3 = (uVar3 + 0x6);
         iVar4 = pass1_1010_7d38(puVar9,(puVar9 >> 0x10),uVar3,
@@ -3246,7 +3246,7 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
         if (iVar4 == 0x0) {
           uVar3 = (param_1 + 0x90);
           uVar8 = (uVar3 >> 0x10);
-          iVar6 = (astruct_515 *)uVar3;
+          iVar6 = uVar3;
           uVar3 = iVar6.field_0x6;
           uVar13 = uVar3;
           uVar14 = (uVar3 >> 0x10);
@@ -3255,7 +3255,7 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
         else {
           uVar3 = (param_1 + 0x90);
           uVar8 = (uVar3 >> 0x10);
-          iVar6 = (astruct_515 *)uVar3;
+          iVar6 = uVar3;
           uVar3 = iVar6.field_0x6;
           uVar13 = uVar3;
           uVar14 = (uVar3 >> 0x10);
@@ -3266,11 +3266,11 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
       }
       else {
         if (param_4._2_2_ == 0x1824) {
-          puVar9 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
-          iVar6 = (astruct_515 *)puVar9;
+          puVar9 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
+          iVar6 = puVar9;
           uVar3 = (param_1 + 0x90);
           ui_op_1010_79aa(puVar9,0xfc5,(uVar3 + 0x6),param_7);
-          if (iVar6 != (astruct_515 *)0x0) {
+          if (iVar6 != 0x0) {
             return;
           }
           uVar3 = (param_1 + 0x90);
@@ -3289,11 +3289,11 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
                        param_4,param_4._2_2_,param_6);
             return;
           }
-          puVar9 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
-          iVar6 = (astruct_515 *)puVar9;
+          puVar9 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x32,param_7,param_5,unaff_DI);
+          iVar6 = puVar9;
           uVar3 = (param_1 + 0x90);
           ui_op_1010_79aa(puVar9,0xfb6,(uVar3 + 0x6),param_7);
-          if (iVar6 != (astruct_515 *)0x0) {
+          if (iVar6 != 0x0) {
             return;
           }
           uVar3 = (param_1 + 0x90);
@@ -3315,7 +3315,7 @@ pass1_1040_b54a(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
 
 
 
-ULONG  pass1_1040_b74c(astruct_18 *param_1,param_2: u8)
+ULONG  pass1_1040_b74c(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -3327,7 +3327,7 @@ ULONG  pass1_1040_b74c(astruct_18 *param_1,param_2: u8)
 
 
 
-pub fn pass1_1040_b7ee(astruct_57 *param_1,param_2: i32,param_3: u16)
+pub fn pass1_1040_b7ee(param_1: &mut Struct57,param_2: i32,param_3: u16)
 {
   let iVar1: i16;
   let uVar2: u16;
@@ -3354,11 +3354,11 @@ pub fn pass1_1040_b7ee(astruct_57 *param_1,param_2: i32,param_3: u16)
 
 
 u16 
-pass1_1040_b864(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5: i16,
+pass1_1040_b864(param_1: *mut u32,param_2: &mut i16,param_3: u16,param_4: u16,param_5: i16,
                param_6: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u16;
   
   if (param_5 == 0x2b) {
@@ -3381,7 +3381,7 @@ pass1_1040_b864(param_1: *mut u32,i16 *param_2,param_3: u16,param_4: u16,param_5
 
 pub fn pass1_1040_b8be(param_1: *mut u32)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = (*param_1 + 0x80);
   (**ppcVar1)();
@@ -3393,7 +3393,7 @@ pub fn pass1_1040_b8be(param_1: *mut u32)
 pub fn pass1_1040_bb5a(param_1: u32) -> u16
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   
   ppcVar1 = ((param_1 + 0x94) + 0x8);
   (**ppcVar1)();
@@ -3401,7 +3401,7 @@ pub fn pass1_1040_bb5a(param_1: u32) -> u16
 }
 
 
-astruct_18 *  pass1_1040_be94(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_be94(param_1: &mut Struct18,param_2: u8)
 
 {
   unk_draw_op_1040_b0f8(param_1);
@@ -3416,11 +3416,11 @@ astruct_18 *  pass1_1040_be94(astruct_18 *param_1,param_2: u8)
 pub fn struct_1040_bf3e(param_1: *mut u16,param_2: u16) -> u16
 
 {
-  astruct_442 *iVar1;
+  let iVar1: &mut Struct442;
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_442 *)param_1;
+  iVar1 = param_1;
   *param_1 = 0x389a;
   iVar1.field_0x2 = 0x1008;
   *param_1 = 0x3aa8;
@@ -3438,11 +3438,11 @@ pub fn struct_1040_bf3e(param_1: *mut u16,param_2: u16) -> u16
 
 pub fn pass1_1040_bf92(param_1: *mut u16,param_2: u16)
 {
-  astruct_514 *iVar1;
+  let iVar1: &mut Struct514;
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_514 *)param_1;
+  iVar1 = param_1;
   *param_1 = 0xc53e;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   pass1_1010_1ea6(iVar1.field_0x6,param_1 & 0xffff | uVar1 << 0x10,param_2)
@@ -3459,7 +3459,7 @@ pub fn pass1_1040_bf92(param_1: *mut u16,param_2: u16)
 
 pub fn pass1_1040_bfde(param_1: u32,param_2: *mut u32,param_3: u16)
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let uVar2: u32;
   let iVar3: i16;
   let uVar4: u16;
@@ -3493,10 +3493,10 @@ pass1_1040_c54a(param_1: *mut u16,param_2: u16,param_3: *mut u32,param_4: u16,
                param_5: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   let iVar3: i16;
   let extraout_DX: u16;
-  astruct_164 *iVar2;
+  let iVar2: &mut Struct164;
   let uVar4: u16;
   let puVar5: u32;
   let uVar6: u16;
@@ -3513,7 +3513,7 @@ pass1_1040_c54a(param_1: *mut u16,param_2: u16,param_3: *mut u32,param_4: u16,
              (puVar5 >> 0x10),uVar6,uVar7,
              (uVar7 >> 0x10),extraout_DX,param_4,param_5);
   uVar4 = (param_1 >> 0x10);
-  iVar2 = (astruct_164 *)param_1;
+  iVar2 = param_1;
   iVar2.field_0x42 = param_3;
   iVar2.field_0x46 = 0x0;
   iVar2.field_0x48 = param_2;
@@ -3530,7 +3530,7 @@ pub fn pass1_1040_c5ac(param_1: *mut u16)
 {
   let puVar1: u32;
   let uVar2: u16;
-  code **ppcVar3;
+  let ppcVar3: u32;
   let iVar4: i16;
   let uVar5: u16;
   
@@ -3580,14 +3580,14 @@ pub fn pass1_1040_c60e(param_1: u32) -> u16
 pub fn pass1_1040_c630(param_1: *mut u32,param_2: u16,param_3: u16)
 {
   let iVar1: i16;
-  code **ppcVar2;
+  let ppcVar2: u32;
   let uVar3: u32;
   let uVar4: u32;
-  astruct_165 *iVar4;
+  let iVar4: &mut Struct165;
   let uVar5: u16;
   
   uVar5 = (param_1 >> 0x10);
-  iVar4 = (astruct_165 *)param_1;
+  iVar4 = param_1;
   uVar3 = iVar4.field_0x42;
   if ((uVar3 + 0x12) != 0x71) {
     iVar4.field_0x36 = 0x5;
@@ -3597,13 +3597,13 @@ pub fn pass1_1040_c630(param_1: *mut u32,param_2: u16,param_3: u16)
     iVar4.field_0x30 = iVar1;
     iVar4.field_0x2e = iVar1;
     if (ctx.PTR_LOOP_1050_5f02 == 0x0) {
-      _PTR_LOOP_1050_5f04 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0xff,param_3);
+      ctx._PTR_LOOP_1050_5f04 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0xff,param_3);
       param_2 = 0x1010;
-      _PTR_LOOP_1050_5f08 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x100,param_3);
+      ctx._PTR_LOOP_1050_5f08 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x100,param_3);
     }
     ctx.PTR_LOOP_1050_5f02 = ctx.PTR_LOOP_1050_5f02 + 0x1;
-    iVar4.field_0x8 = _PTR_LOOP_1050_5f04;
-    iVar4.field_0xc = _PTR_LOOP_1050_5f08;
+    iVar4.field_0x8 = ctx._PTR_LOOP_1050_5f04;
+    iVar4.field_0xc = ctx._PTR_LOOP_1050_5f08;
     pass1_1040_9618(param_1);
     iVar4.field_0x20 = 0x0;
     iVar4.field_0x1e = 0xc8;
@@ -3649,7 +3649,7 @@ pass1_1040_c94a(param_1: i16,param_2: u16,uchar *param_3,param_4: i16,param_5: u
   let puVar5: *mut u16;
   
   if ((param_1 + 0x48) != 0x0) {
-    puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3,param_6,param_3,param_4);
+    puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,param_3,param_4);
     uVar4 = (puVar5 >> 0x10);
     uVar2 = (param_1 + 0x42);
     uVar1 = (uVar2 + 0x12);
@@ -3671,7 +3671,7 @@ pass1_1040_c94a(param_1: i16,param_2: u16,uchar *param_3,param_4: i16,param_5: u
       }
     }
   }
-  draw_text_1040_94fc((astruct_37 *)CONCAT22(param_2,param_1),param_5);
+  draw_text_1040_94fc(CONCAT22(param_2,param_1),param_5);
   return;
 }
 
@@ -3692,24 +3692,24 @@ pub fn pass1_1040_c9cc(param_1: *mut u16,param_2: u8) -> u16
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void 
-pass1_1040_ca16(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
+pass1_1040_ca16(param_1: &mut Struct57,param_2: u16,uchar *param_3,param_4: i16,
                param_5: u16)
 
 {
-  astruct_727 *iVar1;
+  let iVar1: &mut Struct727;
   let uVar1: u16;
   let puVar2: *mut u16;
   
   struct_1040_b082(param_1,CONCAT22(param_2,0x1840));
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_727 *)param_1;
-  iVar1.field_0x94 = _PTR_LOOP_1050_5f0c;
+  iVar1 = param_1;
+  iVar1.field_0x94 = ctx._PTR_LOOP_1050_5f0c;
   &iVar1.field_0x98 = 0x0;
   iVar1.field_0x9c = 0x0;
   iVar1.field_0x9e = 0x0;
   param_1 = 0xd07c;
   iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x3e,param_5,param_3,param_4);
+  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3e,param_5,param_3,param_4);
   iVar1.field_0x98 = puVar2;
   iVar1.field_0x9a = (puVar2 >> 0x10);
   return;
@@ -3719,14 +3719,14 @@ pass1_1040_ca16(astruct_57 *param_1,param_2: u16,uchar *param_3,param_4: i16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_ca74(astruct_18 *param_1)
+pub fn pass1_1040_ca74(param_1: &mut Struct18)
 {
   let uVar1: u16;
   
   uVar1 = (param_1 >> 0x10);
   param_1.field_0x0 = 0xd07c;
   (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,(param_1 + 0x6));
   ctx.PTR_LOOP_1050_5f10 = 0x0;
   unk_draw_op_1040_b0f8(param_1);
   return;
@@ -3742,7 +3742,7 @@ pub fn pass1_1040_caa6(param_1: u16,param_2: u32,uchar *param_3,param_4: i16,par
   let iVar2: i16;
   
   iVar2 = 0x0;
-  puVar1 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
+  puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2b,param_5,param_3,param_4);
   pass1_1010_038e(puVar1,iVar2,param_5);
   destroy_window_1040_b726
             ((ULONG *)CONCAT22(param_2,param_1),(param_2 >> 0x10),0x1010);
@@ -3753,7 +3753,7 @@ pub fn pass1_1040_caa6(param_1: u16,param_2: u32,uchar *param_3,param_4: i16,par
 LRESULT  pass1_1040_cc66(param_1: u32,param_2: u16)
 
 {
-  code **ppcVar1;
+  let ppcVar1: u32;
   LRESULT LVar2;
   
   ppcVar1 = ((param_1 + 0x98) + 0x10);
@@ -3790,7 +3790,7 @@ pass1_1040_cc8c(param_1: i16,param_2: u16,param_3: u16,param_4: u32,uchar *param
 }
 
 
-pub fn pass1_1040_cdac(param_1: u32,param_2: u16,param_3: u16,param_4: i16,HWND16 param_5) -> u16
+pub fn pass1_1040_cdac(param_1: u32,param_2: u16,param_3: u16,param_4: i16,param_5: HWND16) -> u16
 
 {
   let piVar1: *mut i16;
@@ -3824,7 +3824,7 @@ pub fn pass1_1040_cdac(param_1: u32,param_2: u16,param_3: u16,param_4: i16,HWND1
 }
 
 
-astruct_18 *  pass1_1040_d056(astruct_18 *param_1,param_2: u8)
+astruct_18 *  pass1_1040_d056(param_1: &mut Struct18,param_2: u8)
 
 {
   pass1_1040_ca74(param_1);
@@ -3838,31 +3838,31 @@ astruct_18 *  pass1_1040_d056(astruct_18 *param_1,param_2: u8)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1040_d0f8(astruct_57 *param_1,param_2: u16)
+pub fn pass1_1040_d0f8(param_1: &mut Struct57,param_2: u16)
 {
   let uVar1: u16;
   let in_DX: *mut u8
   let uVar2: u16;
   let puVar3: *mut u8
   let puVar4: *mut u8
-  astruct_438 *iVar5;
+  let iVar5: &mut Struct438;
   let unaff_DI: i16;
   let uVar5: u16;
   let unaff_SS: u16;
   let puVar6: *mut u16;
   let uVar7: u32;
-  astruct_392 *iVar8;
+  let iVar8: &mut Struct392;
   
   struct_1040_b082(param_1,CONCAT22(param_2,0x1845));
   uVar5 = (param_1 >> 0x10);
-  iVar5 = (astruct_438 *)param_1;
+  iVar5 = param_1;
   &iVar5.field_0x94 = 0x0;
-  iVar5.field_0x98 = _PTR_LOOP_1050_5f16;
+  iVar5.field_0x98 = ctx._PTR_LOOP_1050_5f16;
   &iVar5.field_0x9c = 0x0;
   iVar5.field_0xa0 = 0x0;
   param_1 = 0xd8c4;
   iVar5.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  puVar6 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0,0x47,unaff_SS,in_DX,unaff_DI);
+  puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x47,unaff_SS,in_DX,unaff_DI);
   uVar2 = (puVar6 >> 0x10);
   iVar5.field_0x94 = puVar6;
   iVar5.field_0x96 = uVar2;
@@ -3895,15 +3895,15 @@ pub fn pass1_1040_d1bc(param_1: *mut astruct_18)
 {
   let puVar1: u32;
   let uVar2: u16;
-  code **ppcVar3;
-  astruct_513 *iVar4;
+  let ppcVar3: u32;
+  let iVar4: &mut Struct513;
   let uVar4: u16;
   
   uVar4 = (param_1 >> 0x10);
-  iVar4 = (astruct_513 *)param_1;
+  iVar4 = param_1;
   param_1.field_0x0 = 0xd8c4;
   iVar4.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,iVar4.field_0x6);
+  pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c,iVar4.field_0x6);
   puVar1 = iVar4.field_0x9c;
   uVar2 = iVar4.field_0x9e;
   if (uVar2 | puVar1) != 0x0 {
