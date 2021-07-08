@@ -2,8 +2,10 @@
 
 use crate::global::AppContext;
 use crate::util::{CONCAT22, SUB42};
-use crate::win_struct::{HWND16, WPARAM16};
-use crate::winapi::GetWindowLong16;
+use crate::win_struct::{HWND16, WPARAM16, MSG16};
+use crate::winapi::{GetWindowLong16, swi, DOS3Call, GetMessage16, IsDialogMessage16};
+use crate::pass::pass_1008::pass1_1008_57c4;
+use crate::pass::pass_1000::pass1_1000_462e;
 
 pub fn _SHI_INVOKEERRORHANDLER1() -> u16
 
@@ -1237,15 +1239,19 @@ pub fn dos3_call_set_struct_1000_42de(param_1: *mut u16,param_2: *mut u16,param_
 
 
 
-pub fn dos3_call_op_1000_435c(param_1: *mut u16,param_2: u16,param_3: u16,param_4: &mut i16,param_5: u16)
-
+pub fn dos3_call_op_1000_435c(
+    param_1: *mut u16,
+    param_2: u16,
+    param_3: &mut u16,
+    param_4: &mut i16,
+    param_5: &mut String)
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let UVar2: u16;
   let uVar3: u16;
-  let extraout_DX: u16;
-  let extraout_DX_00: u16;
-  let extraout_DX_01: u16;
+  let mut extraout_DX: u16 = 0;
+  let mut extraout_DX_00: u16 = 0;
+  let mut extraout_DX_01: u16 = 0;
   let uVar4: u16;
   let cVar5: u8;
   let uVar6: u16;
@@ -1255,45 +1261,45 @@ pub fn dos3_call_op_1000_435c(param_1: *mut u16,param_2: u16,param_3: u16,param_
   let iStack2: i16;
   
   iStack2 = param_4 + 0x1;
-  if (true) {
+  if true {
     pcVar1 = swi(0x21);
     (*pcVar1)(ctx.data_seg);
-    param_3 = extraout_DX;
+    *param_3 = extraout_DX;
   }
-  else {
-    DOS3Call(&ctx.PTR_LOOP_1050_1000);
-  }
+  // else {
+  //   DOS3Call(&ctx.PTR_LOOP_1050_1000);
+  // }
   uVar3 = param_2;
-  uVar4 = param_3;
-  if (true) {
+  uVar4 = *param_3;
+  if true {
     pcVar1 = swi(0x21);
     (*pcVar1)();
-    param_3 = extraout_DX_00;
+    *param_3 = extraout_DX_00;
   }
-  else {
-    DOS3Call(&ctx.PTR_LOOP_1050_1000);
-  }
+  // else {
+  //   DOS3Call(&ctx.PTR_LOOP_1050_1000);
+  // }
   uVar9 = param_3 >> 0x8;
   uVar8 = uVar3 & 0xff;
   uVar6 = uVar3 >> 0x8;
   uVar7 = uVar6;
-  if (true) {
+  if true {
     pcVar1 = swi(0x21);
     (*pcVar1)();
-    cVar5 = uVar6;
-    param_3 = extraout_DX_01;
+    cVar5 = uVar6 as u8;
+    *param_3 = extraout_DX_01;
   }
-  else {
-    DOS3Call(&ctx.PTR_LOOP_1050_1000);
-    cVar5 = uVar6;
-  }
-  if ((uVar4 != param_3) && (cVar5 == '\x17')) {
+  // else {
+  //   DOS3Call(&ctx.PTR_LOOP_1050_1000);
+  //   cVar5 = uVar6;
+  // }
+  if (uVar4 != param_3) && (cVar5 == '\x17') {
     uVar3 = param_2;
-    param_3 = uVar4;
+    *param_3 = uVar4;
   }
   UVar2 = pass1_1000_462e(uVar3 - 0x7bc,param_3 >> 0x8,param_3 & 0xff,uVar7,uVar8,uVar9,
                           &iStack2,param_5,param_3);
-  if (param_1._2_2_ != 0x0) {
+  if param_1._2_2_ != 0x0 {
     (param_1 + 0x2) = param_3;
     *param_1 = UVar2;
   }
@@ -1687,34 +1693,38 @@ pub fn kill_timer_1008_921c(param_1: *mut u16,param_2: HWND16)
 }
 
 
-WPARAM16  win_msg_op_1008_9498(MSG *in_msg_1,MSG16 *in_msg_2)
-
+pub fn  win_msg_op_1008_9498(
+    ctx: &mut AppContext,
+    in_msg_1: &mut MSG16,
+    in_msg_2: &mut String) -> WPARAM16
 {
   let BVar1: bool;
   let IVar2: i16;
-  MSG16 local_msg_1;
+  let local_msg_1: MSG16;
   
 //LAB_1008_949c:
-  BVar1 = GetMessage16((MSG16 *)in_msg_1,0x0,0x0,0x0);
-  if (BVar1 == 0x0) {
+  BVar1 = GetMessage16(in_msg_1,0x0,0x0,0x0);
+  if BVar1 == false {
     return local_msg_1.wparam;
   }
-  if ((ctx.PTR__LOOP_1050_5bc8 + 0x8) != 0x0) goto code_r0x100894cd;
+  if (ctx.PTR__LOOP_1050_5bc8 + 0x8) != 0x0 {
+      // goto code_r0x100894cd;
+  }
 //   TODO: goto LAB_1008_94dc;
 code_r0x100894cd:
-  in_msg_1 = (MSG *)s_tile2_bmp_1050_1538;
+  in_msg_1 = s_tile2_bmp_1050_1538;
   BVar1 = IsDialogMessage16(ctx.s_tile2_bmp_1050_1538,&local_msg_1);
-  if (BVar1 == 0x0) {
+  if BVar1 == false {
 //LAB_1008_94dc:
-    if (ctx.PTR_LOOP_1050_0398 != 0x0) {
-      in_msg_1 = (MSG *)s_tile2_bmp_1050_1538;
+    if ctx.PTR_LOOP_1050_0398 != 0x0 {
+      in_msg_1 = s_tile2_bmp_1050_1538;
       IVar2 = TranslateAccelerator16
                         (ctx.s_tile2_bmp_1050_1538,(HACCEL16)&local_msg_1,in_msg_2);
       if (IVar2 != 0x0) goto LAB_1008_949c;
     }
-    TranslateMessage16((MSG16 *)s_tile2_bmp_1050_1538);
-    in_msg_1 = (MSG *)s_tile2_bmp_1050_1538;
-    DispatchMessage16((MSG16 *)s_tile2_bmp_1050_1538);
+    TranslateMessage16(s_tile2_bmp_1050_1538);
+    in_msg_1 = s_tile2_bmp_1050_1538;
+    DispatchMessage16(s_tile2_bmp_1050_1538);
   }
 //   TODO: goto LAB_1008_949c;
 }
@@ -1739,19 +1749,19 @@ pub fn unk_win_msg_op_1008_9510(param_1: &mut i16,MSG16 *param_2,MSG16 *param_3)
   }
   return;
 code_r0x10089538:
-  param_2 = (MSG16 *)s_tile2_bmp_1050_1538;
+  param_2 = s_tile2_bmp_1050_1538;
   has_message = IsDialogMessage16(ctx.s_tile2_bmp_1050_1538,&local_14);
   if (has_message == 0x0) {
 //LAB_1008_9547:
     if (ctx.PTR_LOOP_1050_0398 != 0x0) {
-      param_2 = (MSG16 *)s_tile2_bmp_1050_1538;
+      param_2 = s_tile2_bmp_1050_1538;
       IVar1 = TranslateAccelerator16
                         (ctx.s_tile2_bmp_1050_1538,(HACCEL16)&local_14,param_3);
       if (IVar1 != 0x0) goto LAB_1008_9578;
     }
-    TranslateMessage16((MSG16 *)s_tile2_bmp_1050_1538);
-    param_2 = (MSG16 *)s_tile2_bmp_1050_1538;
-    DispatchMessage16((MSG16 *)s_tile2_bmp_1050_1538);
+    TranslateMessage16(s_tile2_bmp_1050_1538);
+    param_2 = s_tile2_bmp_1050_1538;
+    DispatchMessage16(s_tile2_bmp_1050_1538);
   }
 //   TODO: goto LAB_1008_9578;
 }
@@ -1980,7 +1990,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar6 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (0x1008,param_1.field_0xa,puVar12,
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar6 = &ctx.PTR_LOOP_1050_1000;
@@ -1998,7 +2008,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar16 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar6,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar16 = &ctx.PTR_LOOP_1050_1000;
@@ -2012,7 +2022,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar6 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar16,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar6 = &ctx.PTR_LOOP_1050_1000;
@@ -2026,7 +2036,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar16 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar6,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar16 = &ctx.PTR_LOOP_1050_1000;
@@ -2040,7 +2050,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar6 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar16,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar6 = &ctx.PTR_LOOP_1050_1000;
@@ -2054,7 +2064,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar16 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar6,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar16 = &ctx.PTR_LOOP_1050_1000;
@@ -2068,7 +2078,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar6 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar16,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   puVar11 = puVar12;
   if (*param_1.field_0xe != '\0') {
@@ -2087,7 +2097,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar16 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar6,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar16 = &ctx.PTR_LOOP_1050_1000;
@@ -2101,7 +2111,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar6 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar16,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar6 = 0x1008;
@@ -2114,7 +2124,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pCVar16 = ctx.s_tile2_bmp_1050_1538;
   GetPrivateProfileString16
             (pCVar6,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pCVar16 = 0x1008;
@@ -2127,7 +2137,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   index = ctx.s_tile2_bmp_1050_1538;
   puVar9 = GetPrivateProfileString16
                              (pCVar16,uVar3,(uVar3 >> 0x10),
-                              (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21)
+                              (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21)
                               ,pcVar18,(pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     index = 0x1008;
@@ -2203,7 +2213,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   puVar12 = extraout_DX_00;
   GetPrivateProfileString16
             (&ctx.PTR_LOOP_1050_1000,uVar3,(uVar3 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),pcVar18,
              (pcVar18 >> 0x10));
   if (*param_1.field_0xe != '\0') {
     pcVar18 = param_1.field_0xe;
@@ -2401,7 +2411,7 @@ pub fn get_private_profile_string_1010_6132(param_1: u32,param_2: i16,LPCSTR par
   uVar2 = (iVar7 + 0xa);
   GetPrivateProfileString16
             (param_3,uVar2,(uVar2 >> 0x10),
-             (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),uVar1,
+             (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21),uVar1,
              (uVar1 >> 0x10));
   if (*(iVar7 + 0xe) != '\0') {
     uVar3 = pass1_1000_47a4((iVar7 + 0xe),0x105014a6,unaff_SS);
@@ -2667,12 +2677,12 @@ pub fn sprintf_op_1018_34b6(param_1: u32,param_2: u8)
   iVar1 = (iVar2 + 0x12e);
   if (iVar1 == 0x188) {
     lVar4 = pass1_1008_57f0(uVar3,(iVar2 + 0x130),unaff_SS);
-    buffer = (LPSTR)0x1020;
+    buffer = 0x1020;
     string_1020_c0d8((lVar4 + 0xe));
   }
   else {
     if (iVar1 == 0x18b) {
-      buffer = (LPSTR)0x1008;
+      buffer = 0x1008;
       pass1_1008_57f0(uVar3,(iVar2 + 0x130),unaff_SS);
     }
     else {
@@ -2683,7 +2693,7 @@ pub fn sprintf_op_1018_34b6(param_1: u32,param_2: u8)
                    (iVar2 + 0x22),(short)valist);
         return;
       }
-      buffer = (LPSTR)0x1008;
+      buffer = 0x1008;
       pass1_1008_57f0(uVar3,(iVar2 + 0x130),unaff_SS);
     }
   }

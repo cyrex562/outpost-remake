@@ -1,9 +1,6 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{
-    CONTEXT, HDC16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HTASK16,
-    HWND16, LPARAM, LRESULT, WPARAM16,
-};
+use crate::win_struct::{CONTEXT, HDC16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HPALETTE16, HTASK16, HWND16, LPARAM, LRESULT, WPARAM16, MSG16};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)
@@ -186,6 +183,9 @@ pub fn DestroyWindow16(hwnd: HWND16) -> bool {}
 // INT16 DrawText16(HDC16 hdc, LPCSTR str, INT16 count, RECT16 * rect, UINT16 flags)
 // HWND16 CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template, HWND16 owner, LPVOID dlg_proc)
 // BOOL16 IsDialogMessage16(HWND16 hwnd_dlg, MSG16 * msg16)
+pub fn IsDialogMessage16(hwnd_dlg: HWND16, msg: &mut MSG16) -> bool {
+    unimplemented!()
+}
 // HWND16 GetDlgItem16(HWND16 hwnd_dlg, INT16 id)
 pub fn GetDlgItem16(hwnd_dlg: HWND16, id: i16) -> HWND16 {
     unimplemented!()
@@ -204,6 +204,9 @@ pub fn IsDlgButtonChecked(hwnd: HWND16, id: u16) -> u16 {
 // void MessageBeep16(UINT16 i)
 // LRESULT DefWindowProc16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
 // BOOL16 GetMessage16(MSG16 * msg, HWND16 hwnd, UINT16 first, UINT16 last)
+pub fn GetMessage16(msg: &mut MSG16, hwnd: HWND16, first: u16, last: u16) -> bool {
+    unimplemented!()
+}
 // BOOL16 PostMessage16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
 pub fn PostMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> bool {
     unimplemented!()
@@ -240,6 +243,9 @@ pub fn DestroyMenu16(menu: HMENU16) -> bool {
 // HCURSOR16 LoadCursor16(HINSTANCE16 h_instance, LPCSTR name)
 // HICON16 LoadIcon16(HINSTANCE16 h_instance, LPCSTR name)
 // INT16 LoadString16(HINSTANCE16 instance, UINT16 resource_id, LPSTR buffer, INT16 buf_len)
+pub fn LoadString16(instance: HINSTANCE16, resource_id: u16, buffer: &mut String, buf_len: u16) -> i16 {
+    unimplemented!()
+}
 // HACCEL16 LoadAccelerators16(HINSTANCE16 instance, LPCSTR lp_table_name)
 // INT16 TranslateAccelerator16(HWND16 hwnd, HACCEL16 haccel, MSG16 * msg)
 // INT16 GetSystemMetrics16(INT16 index)

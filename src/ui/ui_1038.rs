@@ -571,7 +571,7 @@ pub fn send_dlg_item_msg_1038_8f74(param_1: u32,param_2: HWND16,param_3: *mut u1
     while( true ) {
       lVar3 = pass1_1008_5b12(local_40c,param_3);
       if (lVar3 == 0x0) break;
-      wsprintf16((LPSTR)0x1008,local_50c,param_3);
+      wsprintf16(0x1008,local_50c,param_3);
       SendDlgItemMessage16
                 (ctx.s_tile2_bmp_1050_1538,local_50c,param_3,0x0,
                  0x185b0401);
@@ -1678,7 +1678,7 @@ win_ui_op_1038_b922(param_1: *mut u32,param_2: u32,param_3: u16,param_4: u16,
                           (ctx.PTR__LOOP_1050_14cc,
                            (ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
       puVar6 = (pcVar11 >> 0x10);
-      uVar5 = wsprintf16((LPSTR)0x1010,local_414,param_6);
+      uVar5 = wsprintf16(0x1010,local_414,param_6);
       uVar9 = 0x1000;
       mem_op_1000_179c(0xb4,puVar6,0x1000);
       if ((puVar6 | uVar5) == 0x0) {
@@ -1776,7 +1776,7 @@ pub fn win_dlg_op_1038_bea4(param_1: u32,param_2: *mut u16)
   uVar6 = (param_1 >> 0x10);
   iVar5 = param_1;
   GetWindowText16(0x1010,0x80,local_8c);
-  wsprintf16((LPSTR)s_tile2_bmp_1050_1538,local_10e,param_2);
+  wsprintf16(s_tile2_bmp_1050_1538,local_10e,param_2);
   SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)local_10e);
   HVar2 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x179);
   *(HWND16 *)(iVar5 + 0x92) = HVar2;
@@ -2044,7 +2044,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
   uStack10 = (puStack6 + 0x68);
   iVar1 = param_1;
   GetWindowText16(0x1010,0x80,local_40c);
-  wsprintf16((LPSTR)s_tile2_bmp_1050_1538,local_80e,param_2);
+  wsprintf16(s_tile2_bmp_1050_1538,local_80e,param_2);
   SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)local_80e);
   pass1_1008_e038((iVar1 + 0x8e),
                   (param_1 & 0xffff0000 | (iVar1 + 0x92)),
@@ -2052,7 +2052,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
   load_string_1010_84e0
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x400,local_80e,(short)param_2);
-  wsprintf16((LPSTR)0x1010,local_40c,param_2);
+  wsprintf16(0x1010,local_40c,param_2);
   SetDlgItemText16(ctx.s_tile2_bmp_1050_1538,local_40c,(SEGPTR)param_2);
   return;
 }

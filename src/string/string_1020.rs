@@ -1,6 +1,6 @@
 
 
-pub fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,char *param_4)
+pub fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,param_4: &mut String)
 {
   unk_str_op_1000_3d3e
             ((param_2 & 0xffff0000 | (param_2 + 0xa)),param_4);

@@ -31,3 +31,7 @@ pub fn make_u16_ptr(address: u32) -> *mut u16 {
 pub fn make_u8_ptr(address: u32) -> *mut u8 {
     unimplemented!()
 }
+
+pub fn get_string_at_addr(address: u32) -> String {
+    unimplemented!()
+}

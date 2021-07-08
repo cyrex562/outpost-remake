@@ -1,6 +1,6 @@
 use crate::{win_struct::HINSTANCE16, winapi::DOS3Call};
 
-pub fn pass1_1000_010c
+// pub fn pass1_1000_010c
 
 pub unsafe fn  pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16)
 
@@ -1366,7 +1366,7 @@ pub fn pass1_1000_262c(
   puStack4 = in_DX;
   ctx.PTR_LOOP_1050_5fc2 = param_1;
   ctx.PTR_LOOP_1050_5fc4 = in_DX;
-  IVar5 = GetModuleFileName16(param_4,(LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df
+  IVar5 = GetModuleFileName16(param_4,(s_You_may_not_run_a_turn__The_game_1050_00df
                                              + 0x25),param_1);
   puStack4[IVar5] = 0x0;
   iVar9 = 0x1;
@@ -1510,7 +1510,7 @@ pub fn pass1_1000_262c(
   *ppcVar10 = pcVar13;
   ppcVar10[0x1] = param_3;
   ppcVar10 = ppcVar10 + 0x2;
-  do {
+  loop {
     pcVar11 = pcVar11 + -0x1;
 //LAB_1000_274f:
     pcVar1 = pcVar11;
@@ -1530,25 +1530,29 @@ pub fn pass1_1000_262c(
     pcVar12 = pcVar11;
     if (cVar2 == '\"') {
 //LAB_1000_278b:
-      while( true ) {
+      loop {
         pcVar11 = pcVar12 + 0x1;
         cVar2 = *pcVar12;
         if ((cVar2 == '\r') || (cVar2 == '\0')) goto LAB_1000_27be;
         if (cVar2 == '\"') break;
         if (cVar2 == '\\') {
           uVar7 = 0x0;
-          do {
+          loop {
             pcVar12 = pcVar11;
             uVar7 += 0x1;
             pcVar11 = pcVar12 + 0x1;
             cVar2 = *pcVar12;
-          } while (cVar2 == '\\');
-          if (cVar2 == '\"') {
-            for (uVar8 = uVar7 >> 0x1; uVar8 != 0x0; uVar8 -= 0x1) {
-              pcVar1 = pcVar13;
-              pcVar13 = pcVar13 + 0x1;
-              *pcVar1 = '\\';
+            if cVar2 != '\\' {
+              break;
             }
+          } 
+          if (cVar2 == '\"') {
+            // TODO: refactor for loop
+            // for (uVar8 = uVar7 >> 0x1; uVar8 != 0x0; uVar8 -= 0x1) {
+            //   pcVar1 = pcVar13;
+            //   pcVar13 = pcVar13 + 0x1;
+            //   *pcVar1 = '\\';
+            // }
             if ((uVar7 & 0x1) == 0x0) break;
             pcVar1 = pcVar13;
             pcVar13 = pcVar13 + 0x1;
@@ -1603,7 +1607,7 @@ pub fn pass1_1000_262c(
       pcVar13 = pcVar13 + 0x1;
       *pcVar1 = '\\';
     }
-  } while( true );
+  } 
 }
 
 
@@ -3922,7 +3926,7 @@ pub fn pass1_1000_455a(param_1: u32,param_2: u16) -> u16
 
 
 pub fn pass1_1000_462e(param_1: u16,param_2: i16,param_3: u16,param_4: u16,param_5: u16,
-               param_6: i16,param_7: i16,param_8: u16,param_9: u16) -> i16
+               param_6: i16,param_7: i16,param_8: &mut String,param_9: u16) -> i16
 
 {
   let uVar1: u16;

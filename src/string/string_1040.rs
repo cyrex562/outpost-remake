@@ -1,7 +1,7 @@
 
 i16 
 string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
-                param_5: u16,param_6: u16,uchar *param_7,param_8: u16)
+                param_5: u16,param_6: u16,uparam_7: &mut String,param_8: u16)
 
 {
   Ulet UVar1: i32;
@@ -77,7 +77,7 @@ string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
     load_string_1010_84e0
               (0x1010,_PTR_LOOP_1050_14cc,
                (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,UVar1,
-               (short)(UVar1 >> 0x10));
+               (UVar1 >> 0x10));
     iStack16 += -0x1;
   }
   while (puVar2 = _iStack14, iStack16 != 0x0) {
@@ -89,7 +89,7 @@ string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
                         (ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
     uVar6 = 0x1000;
     uStack32 = pcVar7;
-    pass1_1000_3cea(iVar5.field_0x90,(ULONG)pcVar7);
+    pass1_1000_3cea(iVar5.field_0x90,pcVar7);
   }
   iStack16 = iStack16 + -0x1;
   load_icon_1040_8b92(param_1,uVar6);
@@ -99,7 +99,7 @@ string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
 
 
 
-pub fn string_1040_a626(param_1: *mut u16,char *param_2,param_3: u16)
+pub fn string_1040_a626(param_1: *mut u16,param_2: &mut String,param_3: u16)
 {
   let uVar1: u16;
   

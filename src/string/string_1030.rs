@@ -12,7 +12,7 @@ pub fn vsprintf_op_1030_840a(param_1: u32,param_2: &mut String,param_3: *mut u16
     pCStack6 = pCVar1;
     args = param_3;
     if (ctx.PTR_LOOP_1050_5750 == 0x0) {
-      param_2 = (LPSTR)&ctx.PTR_LOOP_1050_1000;
+      param_2 = &ctx.PTR_LOOP_1050_1000;
       pass1_1000_2b3c(s_simres_out_1050_5758,ctx.data_seg,0x5756,
                       ctx.data_seg,param_4,&stack0xfffe);
       ctx._PTR_LOOP_1050_5752 = CONCAT22(param_4,pCVar1);

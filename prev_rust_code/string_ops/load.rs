@@ -603,7 +603,7 @@ pub unsafe fn load_string_1038_8dda(param_1: u32) {
 
 u32 __stdcall16far load_string_1010_847e(u16 offset_base,u16 segment,u16 resource_id)
 {
-  LoadString16(0x3ff,(LPSTR)CONCAT22(segment,offset_base + 0x682),resource_id,g_h_instance_1050_038c);
+  LoadString16(0x3ff,CONCAT22(segment,offset_base + 0x682),resource_id,g_h_instance_1050_038c);
   return CONCAT22(segment,offset_base + 0x682);
 }
 */

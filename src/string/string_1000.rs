@@ -26,7 +26,7 @@ pub fn  poss_str_op_1000_28dc(param_1: i16) -> String
 }
 
 
-pub fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
+pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
 {
   let puVar4: *mut u16;
   let puVar5: *mut u16;
@@ -89,7 +89,7 @@ pub fn unk_str_op_1000_3d3e(char *param_1,char *in_string_2)
 }
 
 
-pub fn str_op_1000_3da4(char *param_1) -> u16
+pub fn str_op_1000_3da4(param_1: &mut String) -> u16
 
 {
   let mut pcVar1: String; 
@@ -116,7 +116,7 @@ pub fn str_op_1000_3da4(char *param_1) -> u16
 
 
 
-uchar  str_op_1000_3dbe(char *param_1,char *param_2,param_3: u16)
+uchar  str_op_1000_3dbe(param_1: &mut String,param_2: &mut String,param_3: u16)
 
 {
   let mut pcVar1: String; 
@@ -151,7 +151,7 @@ uchar  str_op_1000_3dbe(char *param_1,char *param_2,param_3: u16)
 
 
 void 
-str_1000_4d58(char *in_string_1,char *in_string_2,param_3: u32,param_4: u32,
+str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,param_4: u32,
              WNDCLASS16 *param_5)
 
 {

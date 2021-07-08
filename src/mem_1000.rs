@@ -627,7 +627,7 @@ pub unsafe fn mem_op_1000_0b20(ctx: &mut AppContext, param_1: u16,param_2: u16,p
 
 pub unsafe fn mem_op_1000_131c(
   ctx: &mut AppContext, 
-  param_1: *mut u16,
+  param_1: u16,
   param_2: u16,
   param_3: i16,
   param_4: u16)
@@ -642,17 +642,17 @@ pub unsafe fn mem_op_1000_131c(
   
   l_var3 = CONCAT22(u_stack8,u_stack10);
   i_stack6 = 0x1;
-  if (((param_1 & 0x1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2)))) {
+  if ((param_1 & 0x1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2))) {
     param_2 = 0xfff0;
     param_3 = 0x0;
   }
-  if ((param_1 & 0x4) != 0x0) {
+  if (param_1 & 0x4) != 0x0 {
     l_var3 = mem_op_1000_1558(param_2,param_3,param_4);
   }
   loop {
     h_var1 = GLobalAlloc16(param_4,CONCAT22(param_3,param_2));
     u_stack10 = l_var3;
-    if (h_var1 != 0x0) {break;}
+    if h_var1 != 0x0 {break;}
     b_var2 = i_stack6 != 0x0;
     i_stack6 = i_stack6 + -0x1;
     param_4 = ctx.s_tile2_bmp_1050_1538;
@@ -660,14 +660,14 @@ pub unsafe fn mem_op_1000_131c(
       break;
     }
   } 
-  if ((param_1 & 0x4) != 0x0) {
-    if (h_var1 != 0x0) {
+  if (param_1 & 0x4) != 0x0 {
+    if h_var1 != 0x0 {
       GlobalPageLock16(ctx.s_tile2_bmp_1050_1538);
     }
     pass1_1000_15ce(u_stack10,(l_var3 >> 0x10),
                     ctx.s_tile2_bmp_1050_1538);
   }
-  if (h_var1 != 0x0) {
+  if h_var1 != 0x0 {
     WIN16_GlobalLock16(ctx.s_tile2_bmp_1050_1538);
     return;
   }
@@ -818,27 +818,25 @@ pub fn  mem_op_1000_1558(param_1: u16,param_2: u16,param_3: u16) -> i32
 pub unsafe fn  mem_op_1000_160a(
   ctx: &mut AppContext, 
   param_1: u16,
-  param_2: u16) -> *mut u8
+  param_2: u16) -> u16
 {
-  let pu_var1: *mut u8;
-  
-  pu_var1 = ret_true_1000_2146();
-  if (pu_var1 == 0x0) {
+  let pu_var1 = ret_true_1000_2146();
+  if pu_var1 == 0x0 {
     return pu_var1;
   }
-  if ((ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0) {
+  if (ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0 {
     ctx.DAT_1050_5f30 = 0x1;
     ctx.DAT_1050_5f32 = 0x1;
     ctx._PTR_LOOP_1050_5f2c = mem_op_1000_18ec(ctx.DAT_1050_5f46,param_1,param_2);
-    if (ctx._PTR_LOOP_1050_5f2c != 0x0) {
-      if (ctx.PTR_LOOP_1050_5f42 != 0x0) {
+    if ctx._PTR_LOOP_1050_5f2c != 0x0 {
+      if ctx.PTR_LOOP_1050_5f42 != 0x0 {
         pass1_1000_1a54(ctx.PTR_LOOP_1050_5f42,ctx._PTR_LOOP_1050_5f2c,
                         (ctx._PTR_LOOP_1050_5f2c >> 0x10),param_2);
       }
       ctx.PTR_LOOP_1050_5f2e = (ctx._PTR_LOOP_1050_5f2c >> 0x10);
-      if (ctx.DAT_1050_5f44 != 0xffff) {
+      if ctx.DAT_1050_5f44 != 0xffff {
         pass1_1000_1afe(ctx.DAT_1050_5f44,ctx.PTR_LOOP_1050_5f2c,
-                        ctx.PTR_LOOP_1050_5f2e);
+                        ctx.PTR_LOOP_1050_5f2e, 0x1000);
       }
     }
   }
@@ -870,14 +868,14 @@ pub unsafe fn mem_1000_167a(
 pub unsafe fn mem_op_1000_179c(
   ctx: &mut AppContext, 
   param_1: u16,
-  param_2: *mut u8,
+  param_2: u16,
   param_3: u16)
 {
-  let pu_var1: *mut u8;
-  let pu_var2: *mut u8;
+  let pu_var1: u16;
+  let pu_var2: u16;
   pu_var1 = ctx.PTR_LOOP_1050_5f2c;
   pu_var2 = ctx.PTR_LOOP_1050_5f2e;
-  if ((ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0) {
+  if (ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0 {
     pu_var1 = mem_op_1000_160a(ctx, param_2,param_3);
     pu_var2 = param_2;
   }
@@ -906,10 +904,10 @@ pub unsafe fn mem_op_1000_1902(
   param_3: u16,
   param_4: u16,
   param_5: u16,
-  param_6: u16) -> *mut u8
+  param_6: &mut u16) -> u32
 
 {
-  let p_uvar1: *mut u16;
+  let p_uvar1: u16;
   let uvar2: u16;
   let bvar3: bool;
   let u_var3: u16;
@@ -926,8 +924,9 @@ pub unsafe fn mem_op_1000_1902(
   if true {
     loop {
       u_var3 = uvar5;
-      p_uvar1 = make_u16_ptr((*param_1 & 0xfffb | 0x1000) as u32);
-      mem_op_1000_131c(ctx, p_uvar1, 0x100, 0x0, param_5);
+      // p_uvar1 = make_u16_ptr((*param_1 & 0xfffb | 0x1000) as u32);
+      p_uvar1 = (*param_1 & 0xfffb | 0x1000);
+        mem_op_1000_131c(ctx, p_uvar1, 0x100, 0x0, param_5);
       uvar5 = u_var3 | p_uvar1;
       if uvar5 != 0x0 { break; };
       uvar2 = pass1_1000_1e61(param_5, 0x2, 0x0, 0x0);
@@ -959,7 +958,7 @@ pub unsafe fn mem_op_1000_1902(
       p_uvar1[0xc] = 0x0;
       p_uvar1[0xd] = 0x2000;
       p_uvar1[0xe] = 0x800;
-      dvar7 = mem_op_1000_1532(param_5);
+      dvar7 = mem_op_1000_1532(ctx, param_5);
       p_uvar1[0xf] = dvar7;
       p_uvar1[0x10] = (dvar7 >> 0x10);
       p_uvar1[0x12] = 0x0;
@@ -971,8 +970,8 @@ pub unsafe fn mem_op_1000_1902(
       p_uvar1[0x20] = 0x0;
       p_uvar1[0x1f] = 0x0;
       bvar3 = pass1_1000_1afe(param_4, p_uvar1, u_var3);
-      if (bvar3 != 0x0) {
-        if ((param_3 | param_2) != 0x0) {
+      if bvar3 != 0x0 {
+        if (param_3 | param_2) != 0x0 {
           p_uvar6 = p_uvar1;
           uvar5 = u_var3;
           u_var8 = pass1_1000_52be(param_2, param_3, param_4, 0x0);

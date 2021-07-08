@@ -61,7 +61,7 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
       (uVar10 + 0x138) = uVar9;
       piVar2 = (uVar10 + 0x13a);
       *piVar2 = *piVar2 + 0x1;
-      wsprintf16((LPSTR)0x1030,(uVar10 + 0x22),valist);
+      wsprintf16(0x1030,(uVar10 + 0x22),valist);
       return;
     }
     (uVar10 + 0x13e) = uStack6;

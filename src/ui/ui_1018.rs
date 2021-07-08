@@ -214,7 +214,7 @@ pub fn set_window_text_1018_6086(Uparam_1: i32,param_2: &mut String,param_3: *mu
   wsprintf16(param_2,&stack0xfff4,param_3);
   GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x1be);
   SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)&stack0xfff4);
-  wsprintf16((LPSTR)s_tile2_bmp_1050_1538,&stack0xfff4,param_3);
+  wsprintf16(s_tile2_bmp_1050_1538,&stack0xfff4,param_3);
   HStack8 = (param_1 + 0x6);
   HStack8 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x1bf);
   SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)&stack0xfff4);
