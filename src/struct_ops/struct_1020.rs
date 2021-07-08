@@ -18,7 +18,7 @@ pub fn struct_1020_1738(param_1: &mut Struct57,param_2: u16,param_3: u32)
 
 pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let uVar1: u16;
   let iVar2: &mut Struct20;
   let unaff_DI: i16;
@@ -79,7 +79,7 @@ pub fn struct_1020_3644(param_1: *mut u16,param_2: u16,param_3: u32,param_4: u16
 
 pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let uVar1: u16;
   let iVar2: &mut Struct129;
   let unaff_DI: i16;
@@ -131,7 +131,7 @@ struct_1020_790e(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u32,param_
 pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let iVar3: &mut Struct280;
   let iVar4: i16;
   let puVar5: *mut u16;
@@ -168,8 +168,8 @@ pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
 
 pub fn set_struct_op_1020_921c(param_1: &mut Struct42,param_2: u16)
 {
-  HDC16 HVar1;
-  let in_DX: *mut u8
+  let HVar1: HDC16;
+  let in_DX: *mut u8;
   let iVar3: &mut Struct42;
   let unaff_DI: i16;
   let uVar3: &mut Struct42;
@@ -303,7 +303,7 @@ pub fn struct_1020_d866(param_1: *mut u16) -> u16
 
 pub fn struct_1020_d954(param_1: *mut u16)
 {
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let iVar1: &mut Struct182;
   let unaff_DI: i16;
   let uVar1: u16;

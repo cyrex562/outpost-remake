@@ -2163,7 +2163,7 @@ pub fn pass1_1000_2f48(param_1: i32,param_2: i16,param_3: u16,param_4: u16,param
 
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let iStack2: i16;
   
   iStack2 = param_2 + 0x1;
@@ -2194,8 +2194,8 @@ pub fn pass1_1000_2fa4(param_1: &mut i16,param_2: u16,param_3: u16,param_4: u16,
   let piVar1: *mut i16;
   let bVar2: u8;
   let iVar3: i16;
-  let puVar4: *mut u8
-  let puVar5: *mut u8
+  let puVar4: *mut u8;
+  let puVar5: *mut u8;
   let uVar6: u16;
   
   uVar6 = 0x0;
@@ -3554,7 +3554,7 @@ i16  pass1_1000_3e2c(param_1: u32)
 
 
 
-byte *  pass1_1000_3e82(param_1: u16,uchar *param_2,param_3: u16)
+byte *  pass1_1000_3e82(param_1: u16,param_2: *mut u8,param_3: u16)
 
 {
   byte *pbVar1;
@@ -3685,7 +3685,7 @@ pub fn pass1_1000_3f5c(param_1: i16,param_2: u16,param_3: u16,param_4: u16,param
 pub fn pass1_1000_400a(param_1: i16,param_2: u16) -> *mut u8
 
 {
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   let iStack2: i16;
   
   iStack2 = param_2 + 0x1;
@@ -4306,7 +4306,7 @@ pub fn  pass1_1000_49b2(param_1: u16) -> i16
 
 
 pub fn pass1_1000_49c6(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16,
-               param_6: u16,uchar *param_7,param_8: i16) -> u16
+               param_6: u16,param_7: *mut u8,param_8: i16) -> u16
 
 {
   let uVar1: u16;
@@ -4377,7 +4377,7 @@ pub fn pass1_1000_49c6(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param
 
 
 
-pub fn pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,uchar *param_5,
+pub fn pass1_1000_4aea(param_1: u16,param_2: u16,param_3: i16,param_4: u16,param_5: *mut u8,
                param_6: i16,param_7: i16,param_8: u16,param_9: u16,param_10: u16)
 
 {
@@ -4987,7 +4987,7 @@ pub fn pass1_1000_54a0(param_1: u32,param_2: u16,param_3: u16) -> u16
 
 
 
-pub fn pass1_1000_54e8(uchar *param_1,param_2: u16,param_3: i16,param_4: i16,param_5: i16,
+pub fn pass1_1000_54e8(param_1: *mut u8,param_2: u16,param_3: i16,param_4: i16,param_5: i16,
                param_6: u16)
 
 {
@@ -5011,7 +5011,7 @@ pub fn pass1_1000_54e8(uchar *param_1,param_2: u16,param_3: i16,param_4: i16,par
 
 
 
-pub fn pass1_1000_5512(uchar *param_1,param_2: u16,param_3: i16,param_4: i16,param_5: u16)
+pub fn pass1_1000_5512(param_1: *mut u8,param_2: u16,param_3: i16,param_4: i16,param_5: u16)
 {
   let bVar1: bool;
   let uStack4: u16;
@@ -5030,7 +5030,7 @@ pub fn pass1_1000_5512(uchar *param_1,param_2: u16,param_3: i16,param_4: i16,par
 
 
 
-pub fn pass1_1000_5586(uchar *param_1,param_2: u16,param_3: i16,param_4: i16,param_5: i16,
+pub fn pass1_1000_5586(param_1: *mut u8,param_2: u16,param_3: i16,param_4: i16,param_5: i16,
                param_6: u16)
 
 {

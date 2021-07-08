@@ -9,9 +9,9 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
   let uVar3: u16;
   let iVar4: i16;
   let paVar5: &mut Struct18;
-  let in_DX: *mut u8
-  let puVar6: *mut u8
-  let puVar7: *mut u8
+  let in_DX: *mut u8;
+  let puVar6: *mut u8;
+  let puVar7: *mut u8;
   let unaff_DI: i16;
   let uVar8: u16;
   bool local_1a [0x2];
@@ -113,7 +113,7 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
   let bVar2: bool;
   let uVar3: u16;
   let iVar4: i16;
-  HBRUSH16 local_brush_handle;
+  let local_brush_handle: HBRUSH16;
   Ulet uVar5: i32;
   let extraout_DX: u16;
   let local_struct_5: &mut Struct10;
@@ -126,7 +126,7 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
   local_struct_5 = in_struct_1;
   hdc = in_colorref_4;
   if (local_struct_5.brush_handle_field_0x8e == 0x0) {
-    hdc = (COLORREF)s_tile2_bmp_1050_1538;
+    hdc = s_tile2_bmp_1050_1538;
     local_brush_handle = CreateSolidBrush16(in_colorref_4);
     local_struct_5.brush_handle_field_0x8e = local_brush_handle;
   }
@@ -160,7 +160,7 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
       ctx.PTR_LOOP_1050_5b64 = ctx.PTR_LOOP_1050_5b68;
     }
   }
-  SetTextColor16(hdc,(COLORREF)PTR_LOOP_1050_5b64);
+  SetTextColor16(hdc,PTR_LOOP_1050_5b64);
   SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   return;
 }

@@ -115,7 +115,7 @@ pub fn pass1_1008_04f8(param_1: *mut u16,param_2: u8,param_3: u16) -> u16
 }
 
 
-pub fn pass1_1008_07d8(param_1: u16,bool param_2,uchar *param_3,param_4: u16) -> bool
+pub fn pass1_1008_07d8(param_1: u16,bool param_2,param_3: *mut u8,param_4: u16) -> bool
 
 {
   let uVar2: u16;
@@ -149,7 +149,7 @@ pub fn pass1_1008_07d8(param_1: u16,bool param_2,uchar *param_3,param_4: u16) ->
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_087e(param_1: u16,uchar *param_2,param_3: u16,param_4: u8)
+pub fn pass1_1008_087e(param_1: u16,param_2: *mut u8,param_3: u16,param_4: u8)
 {
   let uVar1: u16;
   let uVar2: u16;
@@ -157,7 +157,7 @@ pub fn pass1_1008_087e(param_1: u16,uchar *param_2,param_3: u16,param_4: u8)
   let local_112: u16;
   let uStack272: u16;
   let uStack6: u16;
-  let puStack4: *mut u8
+  let puStack4: *mut u8;
   
   uVar2 = 0x1000;
   mem_op_1000_179c(0xa,param_2,0x1000);
@@ -296,7 +296,7 @@ pub fn pass1_1008_12aa(param_1: u32)
 }
 
 
-pub fn pass1_1008_3018(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
+pub fn pass1_1008_3018(param_1: u32,param_2: *mut u8,param_3: i16,param_4: u16)
 {
   Ulet UVar1: i32;
   let uVar2: u16;
@@ -338,7 +338,7 @@ pub fn pass1_1008_3018(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
 
 pub fn pass1_1008_30cc(param_1: u32,param_2: u16,param_3: u16,param_4: i16,param_5: u16)
 {
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   let puVar2: *mut u16;
   let puVar3: *mut u8;
   let uVar4: u16;
@@ -874,7 +874,7 @@ pub fn pass1_1008_405c(param_1: &mut Struct76,param_2: u32,param_3: i16,param_4:
   sqword sVar2;
   let iVar3: i16;
   let lVar4: i32;
-  let puVar5: *mut u8
+  let puVar5: *mut u8;
   let iVar4: &mut Struct76;
   let uVar6: u16;
   let uStack10: u32;
@@ -1208,8 +1208,8 @@ pub fn pass1_1008_4834(param_1: &mut Struct76)
   let ppcVar1: u32;
   let puVar2: u32;
   let uVar3: u32;
-  let extraout_DX: *mut u8
-  let puVar4: *mut u8
+  let extraout_DX: *mut u8;
+  let puVar4: *mut u8;
   let extraout_DX_00: u16;
   let struct_var5_1: &mut Struct76;
   let struct_var5: &mut Struct76;
@@ -1359,7 +1359,7 @@ pub fn pass1_1008_4b5e(param_1: *mut u32) -> u32
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_4b8e(param_1: u32,uchar *param_2,param_3: i16,param_4: u16)
+pub fn pass1_1008_4b8e(param_1: u32,param_2: *mut u8,param_3: i16,param_4: u16)
 {
   let uVar1: u32;
   let uVar2: u16;
@@ -1449,7 +1449,7 @@ pub fn pass1_1008_4d72(param_1: u32) -> u32
 
 
 
-pub fn pass1_1008_4d84(param_1: &mut Struct90,param_2: u32,uchar *param_3)
+pub fn pass1_1008_4d84(param_1: &mut Struct90,param_2: u32,param_3: *mut u8)
 {
   let uVar1: u16;
   let iVar3: &mut Struct90;
@@ -2113,13 +2113,13 @@ pub fn pass1_1008_5fa2(param_1: u32,param_2: u8) -> u32
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-uchar *  pass1_1008_5fd8(param_1: u16,uchar *param_2)
+uchar *  pass1_1008_5fd8(param_1: u16,param_2: *mut u8)
 
 {
   let piVar1: *mut i16;
   let mut pcVar2: String; 
-  let puStack10: *mut u8
-  let puStack8: *mut u8
+  let puStack10: *mut u8;
+  let puStack8: *mut u8;
   let iStack6: i16;
   
   puStack10 = &stack0x0006;
@@ -2214,7 +2214,7 @@ pub fn pass1_1008_64a2(param_1: *mut u16)
 
 
 
-pub fn pass1_1008_64c8(param_1: *mut u32,param_2: u32,param_3: i16,param_4: u16,uchar *param_5)
+pub fn pass1_1008_64c8(param_1: *mut u32,param_2: u32,param_3: i16,param_4: u16,param_5: *mut u8)
 {
   let iVar1: i16;
   let iVar2: i16;
@@ -2257,7 +2257,7 @@ pub fn pass1_1008_64c8(param_1: *mut u32,param_2: u32,param_3: i16,param_4: u16,
 
 
 
-pub fn pass1_1008_6562(param_1: *mut u32,param_2: u32,param_3: i16,param_4: u16,uchar *param_5)
+pub fn pass1_1008_6562(param_1: *mut u32,param_2: u32,param_3: i16,param_4: u16,param_5: *mut u8)
 {
   let iVar1: i16;
   let iVar2: i16;
@@ -2372,7 +2372,7 @@ pass1_1008_68ea(param_1: i16,param_2: u16,param_3: *mut u32,param_4: u16,param_5
 
 
 
-pub fn pass1_1008_6978(param_1: u32,param_2: i16,param_3: u32,param_4: u16,uchar *param_5)
+pub fn pass1_1008_6978(param_1: u32,param_2: i16,param_3: u32,param_4: u16,param_5: *mut u8)
 {
   let ppcVar1: u32;
   let puStack10: *mut u16;
@@ -2626,10 +2626,10 @@ pub fn pass1_1008_72a8(param_1: *mut u16,param_2: u16) -> u16
 }
 
 
-pub fn pass1_1008_766e(param_1: u32,param_2: *mut u32,param_3: u16,param_4: u16,uchar *param_5)
+pub fn pass1_1008_766e(param_1: u32,param_2: *mut u32,param_3: u16,param_4: u16,param_5: *mut u8)
 {
   let puVar1: u32;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let local_6: u32;
   
   *param_2 = 0x0;
@@ -2798,7 +2798,7 @@ pub fn pass1_1008_7c2a(param_1: u32,char *param_2,param_3: HFILE16) -> bool
 
 
 u16 
-pass1_1008_7e4a(param_1: u16,uchar *param_2,param_3: u8,char *param_4,param_5: u16,
+pass1_1008_7e4a(param_1: u16,param_2: *mut u8,param_3: u8,char *param_4,param_5: u16,
                param_6: u16)
 
 {
@@ -2938,7 +2938,7 @@ pass1_1008_87cc(param_1: &mut Struct86,param_2: i16,param_3: i16,param_4: u16,pa
   let uVar2: u16;
   let BVar3: bool;
   let piVar4: *mut i16;
-  let puVar5: *mut u8
+  let puVar5: *mut u8;
   let iVar5: &mut Struct86;
   let iVar6: i16;
   let unaff_DI: i16;
@@ -3173,8 +3173,8 @@ pub fn pass1_1008_8c4e(param_1: u32,param_2: u32,param_3: u16)
 {
   let uVar1: u16;
   let puVar2: *mut u16;
-  let puVar3: *mut u8
-  let puVar4: *mut u8
+  let puVar3: *mut u8;
+  let puVar4: *mut u8;
   let uVar5: u16;
   let iVar6: i16;
   let uVar7: u16;
@@ -3213,7 +3213,7 @@ pub fn pass1_1008_8c4e(param_1: u32,param_2: u32,param_3: u16)
 pub fn pass1_1008_8ce4(param_1: u32,param_2: *mut u16,param_3: u32,param_4: u16)
 {
   let puVar1: *mut u8;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let uVar3: u16;
   let iVar4: i16;
   let uVar5: u16;
@@ -3256,8 +3256,8 @@ pub fn pass1_1008_8d8a(param_1: u32,param_2: &mut Struct76,param_3: u32)
   let uVar1: u16;
   let cVar2: u8;
   let puVar3: *mut u16;
-  let puVar4: *mut u8
-  let puVar5: *mut u8
+  let puVar4: *mut u8;
+  let puVar5: *mut u8;
   let uVar6: u16;
   Struct112 *iVar7;
   let uVar7: u16;
@@ -3544,7 +3544,7 @@ pub fn pass1_1008_91ba(param_1: *mut u16,param_2: HWND16) -> u16
 
 void 
 pass1_1008_9262(param_1: i16,param_2: u16,param_3: u32,param_4: u32,param_5: u16,
-               uchar *param_6)
+               param_6: *mut u8)
 
 {
   let ppcVar1: u32;
@@ -3824,9 +3824,9 @@ pub fn pass1_1008_9d02(param_1: *mut u16,param_2: u8) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_9d36(uchar *param_1,uchar *param_2,param_3: u16,param_4: u16)
+pub fn pass1_1008_9d36(param_1: *mut u8,param_2: *mut u8,param_3: u16,param_4: u16)
 {
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   let uVar2: u16;
   let puVar3: *mut u16;
   let paVar4: &mut Struct43;
@@ -4003,9 +4003,9 @@ void pass1_1008_9fb2(param_1: u16,param_2: i16,param_3: u16,param_4: u16,param_5
   let uVar7: u16;
   let uVar8: u16;
   let extraout_DL: u8;
-  let puVar9: *mut u8
-  let puVar10: *mut u8
-  let extraout_DX: *mut u8
+  let puVar9: *mut u8;
+  let puVar10: *mut u8;
+  let extraout_DX: *mut u8;
   let extraout_DX_00: u16;
   let uVar11: u16;
   let bVar12: u8;
@@ -4118,14 +4118,14 @@ pub fn pass1_1008_b200(param_1: u32,param_2: u16)
   let uVar5: &mut Struct195;
   let uVar6: u16;
   let uVar7: u32;
-  let extraout_DX: *mut u8
-  let extraout_DX_00: *mut u8
-  let puVar8: *mut u8
-  let puVar9: *mut u8
+  let extraout_DX: *mut u8;
+  let extraout_DX_00: *mut u8;
+  let puVar8: *mut u8;
+  let puVar9: *mut u8;
   let extraout_DX_01: u16;
   let uVar10: u16;
   let uVar11: u16;
-  let extraout_DX_02: *mut u8
+  let extraout_DX_02: *mut u8;
   let iVar12: &mut Struct194;
   let uVar12: u16;
   let mut pcVar13: String; 
@@ -4231,7 +4231,7 @@ pub fn pass1_1008_b366(param_1: u32) -> u32
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_b38c(param_1: u32,param_2: u16,uchar *param_3) -> u32
+pub fn pass1_1008_b38c(param_1: u32,param_2: u16,param_3: *mut u8) -> u32
 
 {
   let puVar1: u32;
@@ -4312,7 +4312,7 @@ pub fn pass1_1008_b47a(param_1: u32) -> u32
 
 
 
-pub fn pass1_1008_b4a0(param_1: u32,param_2: i32,param_3: u16,uchar *param_4,param_5: u16)
+pub fn pass1_1008_b4a0(param_1: u32,param_2: i32,param_3: u16,param_4: *mut u8,param_5: u16)
 {
   let uVar1: u32;
   let uVar2: u16;
@@ -4706,8 +4706,8 @@ pub fn pass1_1008_d3ae(param_1: u32)
   let uVar5: u16;
   let uVar6: u16;
   let uVar7: u16;
-  let puVar8: *mut u8
-  let puVar9: *mut u8
+  let puVar8: *mut u8;
+  let puVar9: *mut u8;
   let iVar13: &mut Struct208;
   let uVar10: u16;
   let uVar11: u16;
@@ -4961,7 +4961,7 @@ pub fn pass1_1008_d968(param_1: *mut u16,param_2: u8) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_d99e(param_1: i16,param_2: u16,param_3: u16,uchar *param_4,param_5: u16)
+pub fn pass1_1008_d99e(param_1: i16,param_2: u16,param_3: u16,param_4: *mut u8,param_5: u16)
 {
   struct_op_1018_4cda(param_1,param_2,param_3);
   CONCAT22(param_2,param_1) = 0xd9fa;
@@ -5117,7 +5117,7 @@ pub fn pass1_1008_de58(param_1: u32,param_2: i32,param_3: i32,param_4: u16)
   let bVar2: bool;
   let puVar4: &mut Struct210;
   let extraout_DX: u16;
-  let puVar3: *mut u8
+  let puVar3: *mut u8;
   let uVar4: u16;
   let iVar6: &mut Struct211;
   let paVar5: &mut Struct210;
@@ -5316,9 +5316,9 @@ pub fn pass1_1008_e164(param_1: u32,param_2: u16,param_3: u8)
   let uVar5: &mut Struct215;
   let paVar3: &mut Struct215;
   let paVar4: &mut Struct216;
-  let puVar5: *mut u8
-  let puVar6: *mut u8
-  let puVar7: *mut u8
+  let puVar5: *mut u8;
+  let puVar6: *mut u8;
+  let puVar7: *mut u8;
   let uVar8: u16;
   let uVar11: &mut Struct214;
   let paVar9: &mut Struct215;
@@ -5487,13 +5487,13 @@ pub fn pass1_1008_e3ec(param_1: u32,param_2: *mut u32,param_3: *mut u32,param_4:
   let paVar4: &mut Struct219;
   let puVar5: u32;
   let puVar4: &mut Struct219;
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let extraout_DX_00: u16;
   let uVar6: u16;
   let uVar7: u16;
   let extraout_DX_01: u16;
-  let puVar8: *mut u8
-  let extraout_DX_02: *mut u8
+  let puVar8: *mut u8;
+  let extraout_DX_02: *mut u8;
   let extraout_DX_03: u16;
   let uVar9: u16;
   let extraout_DX_04: u16;
@@ -5744,7 +5744,7 @@ pub fn pass1_1008_e9a4(param_1: u16,param_2: u16,param_3: u32,param_4: i16,param
   let puVar1: *mut u16;
   let uVar2: u16;
   let uVar3: u16;
-  let puVar4: *mut u8
+  let puVar4: *mut u8;
   let iVar5: i16;
   let uVar6: u16;
   let uVar7: u32;
@@ -5879,7 +5879,7 @@ pub fn pass1_1008_eb6e(void) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_eb74(param_1: u32,param_2: i16,uchar *param_3,param_4: i16,param_5: u16)
+pub fn pass1_1008_eb74(param_1: u32,param_2: i16,param_3: *mut u8,param_4: i16,param_5: u16)
 {
   (param_1 + 0xa) = param_2;
   if (param_2 != 0x0) {

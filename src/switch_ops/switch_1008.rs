@@ -1,16 +1,16 @@
 
-pub fn window_op_1008_0af8(astruct *param_1,uchar *param_2,param_3: u16)
+pub fn window_op_1008_0af8(astruct *param_1,param_2: *mut u8,param_3: u16)
 {
   let piVar1: *mut i16;
   let uVar2: u16;
   let ppcVar3: u32;
   let puVar4: *mut u8;
   let uVar5: u32;
-  let puVar6: *mut u8
+  let puVar6: *mut u8;
   let extraout_DX: u16;
-  let extraout_DX_00: *mut u8
+  let extraout_DX_00: *mut u8;
   let uVar7: u16;
-  let extraout_DX_01: *mut u8
+  let extraout_DX_01: *mut u8;
   let iVar8: i16;
   let uVar9: u16;
   let uVar10: u16;
@@ -98,8 +98,8 @@ mixed_win_op_1008_0c60
   let ppcVar1: u32;
   HINSTANCE16 HVar2;
   let BVar3: bool;
-  let puVar4: *mut u8
-  let extraout_DX: *mut u8
+  let puVar4: *mut u8;
+  let extraout_DX: *mut u8;
   let struct_var5: &mut Struct72;
   let unaff_DI: i16;
   ulet in_AF: u8;
@@ -114,8 +114,8 @@ mixed_win_op_1008_0c60
   let uVar13: u16;
   uchar local_64 [0x50];
   let uStack20: u32;
-  HCURSOR16 HStack16;
-  HCURSOR16 HStack14;
+  let HStack16: HCURSOR16;
+  let HStack14: HCURSOR16;
   let uStack6: u32;
   let struct_var15: &mut Struct72;
   
@@ -655,7 +655,7 @@ big_switch_1008_15d4
   let uVar4: u16;
   let puVar5: *mut u8;
   let extraout_DX: u16;
-  let puVar6: *mut u8
+  let puVar6: *mut u8;
   let uVar7: u16;
   let paVar8: &mut Struct20;
   let paStack32: &mut Struct20;
@@ -2064,13 +2064,13 @@ Low-level Error: Symbol $$undef00000009 extends beyond the end of the address sp
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16  win_ui_op_1008_2b54(param_1: u16,uchar *param_2,param_3: u16)
+i16  win_ui_op_1008_2b54(param_1: u16,param_2: *mut u8,param_3: u16)
 
 {
   let uVar1: u16;
   let ppcVar2: u32;
   let iVar3: i16;
-  let puVar4: *mut u8
+  let puVar4: *mut u8;
   let hwnd: HWND16;
   let mut pcVar5: String; 
   let uVar6: u16;
@@ -2134,7 +2134,7 @@ pub fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_i
 {
   let piVar1: *mut i16;
   let ppcVar2: u32;
-  HCURSOR16 HVar3;
+  let HVar3: HCURSOR16;
   let in_DX: u16;
   let uVar4: u16;
   let iVar5: i16;

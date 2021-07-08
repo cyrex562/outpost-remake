@@ -1,11 +1,11 @@
 
-pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,uchar *param_4,param_5: i16) -> u16
+pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,param_5: i16) -> u16
 
 {
   let ppcVar1: u32;
   let uVar2: u16;
-  let puVar3: *mut u8
-  let extraout_DX: *mut u8
+  let puVar3: *mut u8;
+  let extraout_DX: *mut u8;
   let paVar4: &mut Struct636;
   let iVar5: i16;
   let uVar6: u16;

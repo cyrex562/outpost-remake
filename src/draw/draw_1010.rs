@@ -17,25 +17,25 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   let puVar10: *mut u16;
   let uVar11: u16;
   HPALETTE16 b_force_background;
-  HGDIOBJ16 handle;
+  let handle: HGDIOBJ16;
   let uVar12: u16;
   let uVar13: u16;
   let BVar14: bool;
   let iVar15: i16;
   let bVar16: u8;
-  let extraout_DX: *mut u8
-  let extraout_DX_00: *mut u8
-  let puVar17: *mut u8
-  let extraout_DX_01: *mut u8
-  let extraout_DX_02: *mut u8
-  let puVar18: *mut u8
+  let extraout_DX: *mut u8;
+  let extraout_DX_00: *mut u8;
+  let puVar17: *mut u8;
+  let extraout_DX_01: *mut u8;
+  let extraout_DX_02: *mut u8;
+  let puVar18: *mut u8;
   let iVar19: i16;
   let unaff_SI: i16;
   let iVar20: i16;
   let iVar21: i16;
   let unaff_DI: u16;
   let uVar22: u16;
-  HDC16 hdc;
+  let hdc: HDC16;
   let unaff_SS: u16;
   let bVar23: u8;
   let bVar24: bool;
@@ -46,7 +46,7 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   let puVar27: u32;
   let in_stack_0000ffde: i16;
   let uVar28: u8;
-  HGDIOBJ16 HVar29;
+  let HVar29: HGDIOBJ16;
   let uVar30: u8;
   let uVar31: u8;
   let uVar32: u8;
@@ -326,9 +326,9 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
   let uVar4: u16;
   let uVar5: u16;
   let iVar6: i16;
-  let in_DX: *mut u8
-  let puVar7: *mut u8
-  let puVar8: *mut u8
+  let in_DX: *mut u8;
+  let puVar7: *mut u8;
+  let puVar8: *mut u8;
   let unaff_DI: i16;
   let uVar9: u16;
   let unaff_SS: u16;
@@ -383,7 +383,7 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
 //       TODO: goto LAB_1010_413e;
     }
     iStack6 += 0x1;
-    param_3 = (RECT16 *)s_tile2_bmp_1050_1538;
+    param_3 = s_tile2_bmp_1050_1538;
   } while( true );
 }
 
@@ -415,35 +415,35 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   let ppcVar3: u32;
   let iVar4: i16;
   HPALETTE16 b_force_background;
-  HGDIOBJ16 handle;
-  HGDIOBJ16 handle_00;
+  let handle: HGDIOBJ16;
+  let handle_00: HGDIOBJ16;
   let uVar5: u16;
-  let extraout_DX: *mut u8
-  let puVar6: *mut u8
+  let extraout_DX: *mut u8;
+  let puVar6: *mut u8;
   let mut output: String;
   let iVar6: &mut Struct5;
   let iVar7: i16;
   let iVar9: &mut Struct4;
   let uVar8: u16;
-  HDC16 hdc;
+  let hdc: HDC16;
   let uVar9: u32;
   DEVMODEA *init_data;
   let uVar10: u32;
   let iStack32: i16;
-  HDC16 local_14;
+  let local_14: HDC16;
   let mut pCStack18: String;
   let mut pCStack16: String;
   let local_e: u16;
   let uStack12: u16;
   let uStack10: u16;
   let uStack8: u16;
-  HGDIOBJ16 stock_obj_handle;
+  let stock_obj_handle: HGDIOBJ16;
   HPEN16 pen_handle;
   
   uVar10 = 0x1;
   pen_handle = CreatePen16(in_style_3,-0x2805,0x77);
   uVar8 = 0x5;
-  stock_obj_handle = GetStockObject16((INT16)s_tile2_bmp_1050_1538);
+  stock_obj_handle = GetStockObject16(s_tile2_bmp_1050_1538);
   local_e = 0x0;
   uStack12 = 0x0;
   uStack10 = 0x1;
@@ -541,7 +541,7 @@ pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,RECT16 *param
 //       TODO: goto LAB_1010_4e67;
     }
     iStack12 += 0x1;
-    param_4 = (RECT16 *)s_tile2_bmp_1050_1538;
+    param_4 = s_tile2_bmp_1050_1538;
   } while( true );
 }
 

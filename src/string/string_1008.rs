@@ -191,14 +191,14 @@ pub fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u8;
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let extraout_DX_00: u16;
-  let puVar11: *mut u8
-  let extraout_DX_01: *mut u8
+  let puVar11: *mut u8;
+  let extraout_DX_01: *mut u8;
   let uVar12: u16;
-  let puVar13: *mut u8
-  let extraout_DX_02: *mut u8
-  let puVar14: *mut u8
+  let puVar13: *mut u8;
+  let extraout_DX_02: *mut u8;
+  let puVar14: *mut u8;
   let uVar15: u16;
   let iVar16: i16;
   let valist: *mut u16;
@@ -323,14 +323,14 @@ pub fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
   let puVar11: u32;
   let uVar12: u32;
   let uVar13: u8;
-  let extraout_DX: *mut u8
-  let puVar14: *mut u8
+  let extraout_DX: *mut u8;
+  let puVar14: *mut u8;
   let extraout_DX_00: u16;
   let uVar15: u16;
-  let extraout_DX_01: *mut u8
+  let extraout_DX_01: *mut u8;
   let pWVar16: *mut u16;
   let pWVar17: *mut u16;
-  let puVar18: *mut u8
+  let puVar18: *mut u8;
   let uVar19: u16;
   let iVar20: i16;
   let iVar21: i16;
@@ -438,7 +438,7 @@ pub fn string_1008_e586(param_1: u16,param_2: u16,param_3: u32,param_4: u16,para
 
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let mut in_string_2: String; 
   
   pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,param_3,(param_3 >> 0x10));

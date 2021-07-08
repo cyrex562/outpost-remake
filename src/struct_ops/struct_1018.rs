@@ -5,9 +5,9 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
   let ppcVar2: u32;
   let puVar3: *mut u16;
   let uVar4: u16;
-  let puVar5: *mut u8
+  let puVar5: *mut u8;
   let uVar6: u16;
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let unaff_DI: i16;
   let puVar7: *mut u16;
   let uVar8: u16;
@@ -103,7 +103,7 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
 
 
 void 
-struct_1018_229c(param_1: &mut Struct632,uchar *param_2,param_3: u16,uchar *param_4,
+struct_1018_229c(param_1: &mut Struct632,param_2: *mut u8,param_3: u16,param_4: *mut u8,
                 param_5: u16)
 
 {
@@ -380,7 +380,7 @@ pub fn struct_op_1018_4cda(param_1: i16,param_2: u16,param_3: u16)
 
 pub fn struct_1018_66cc(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let uVar1: u16;
   let iVar2: &mut Struct20;
   let unaff_DI: i16;
@@ -1390,9 +1390,9 @@ struct_1020_0762(param_1: &mut Struct20,param_2: u32,param_3: *mut u32,param_4: 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn struct_1020_0baa(param_1: *mut u16,param_2: u16,uchar *param_3,param_4: u16)
+pub fn struct_1020_0baa(param_1: *mut u16,param_2: u16,param_3: *mut u8,param_4: u16)
 {
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   let iVar2: &mut Struct276;
   let unaff_DI: i16;
   let uVar2: u16;

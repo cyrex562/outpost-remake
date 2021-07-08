@@ -645,9 +645,9 @@ mixed_dos3_call_1000_370a
 // WARNING: Unable to track spacebase fully for stack
 
 pub fn mixed_dos3_call_1000_39f2(
-  uchar *param_1,
+  param_1: *mut u8,
   char *param_2,
-  uchar *param_3,
+  param_3: *mut u8,
   param_4: u16,
   param_5: u16,
   param_6: u16,
@@ -656,7 +656,7 @@ pub fn mixed_dos3_call_1000_39f2(
 {
   byte *pbVar1;
   let puVar2: *mut u8;
-  let puVar3: *mut u8
+  let puVar3: *mut u8;
   code *pcVar4;
   let uVar5: u16;
   let uVar6: u8;
@@ -665,7 +665,7 @@ pub fn mixed_dos3_call_1000_39f2(
   let piVar9: *mut i16;
   let piVar10: *mut i16;
   let uVar11: u16;
-  let puVar12: *mut u8
+  let puVar12: *mut u8;
   let iVar13: i16;
   let puVar14: *mut u8;
   byte *pbVar15;
@@ -1012,7 +1012,7 @@ mixed_dos3_call_1000_3ad9
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 u16 
-sys_1000_3f9c(uchar *param_1,uchar *param_2,param_3: u16,param_4: u16,param_5: u16,
+sys_1000_3f9c(param_1: *mut u8,param_2: *mut u8,param_3: u16,param_4: u16,param_5: u16,
              param_6: i16,param_7: u16,param_8: u16,param_9: u16,param_10: u8)
 
 {
@@ -1483,9 +1483,9 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32,param_2: u16)
   let iVar3: i16;
   let uVar4: u16;
   let uVar5: u32;
-  let puVar6: *mut u8
-  let extraout_DX: *mut u8
-  let puVar7: *mut u8
+  let puVar6: *mut u8;
+  let extraout_DX: *mut u8;
+  let puVar7: *mut u8;
   let uVar8: u16;
   let unaff_DI: i16;
   let uVar9: u16;
@@ -1499,14 +1499,14 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32,param_2: u16)
   CHAR local_13e [0xac];
   CHAR local_92 [0x80];
   let uStack18: u16;
-  let puStack16: *mut u8
+  let puStack16: *mut u8;
   let puStack14: u32;
   let uStack10: u16;
   let uStack8: u16;
   let uStack6: u16;
-  let puStack4: *mut u8
+  let puStack4: *mut u8;
   
-  instance = (HINSTANCE16)s_tile2_bmp_1050_1538;
+  instance = s_tile2_bmp_1050_1538;
   DVar11 = GetVersion16();
   puVar7 = (DVar11 >> 0x10);
   uStack6 = (DVar11 & 0xffff);
@@ -1544,7 +1544,7 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32,param_2: u16)
   uVar4 = dos3_call_1000_51aa(&stack0xfffe);
   if (uVar4 != 0x0) {
     LoadString16(0x1000,0x80,local_13e,param_2);
-    LoadString16((HINSTANCE16)s_tile2_bmp_1050_1538,0x80,local_1be,param_2);
+    LoadString16(s_tile2_bmp_1050_1538,0x80,local_1be,param_2);
     uVar4 = MessageBox16(ctx.s_tile2_bmp_1050_1538,&ctx.PTR_LOOP_1050_0010,
                          local_13e,param_2);
     fn_ptr_op_1000_24cd(0x1,&stack0xfffe);
@@ -1772,7 +1772,7 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32)
   let uVar1: u16;
   let IVar2: i16;
   let IVar3: i16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let iVar4: i16;
   let unaff_DI: i16;
   let uVar5: u16;
@@ -1797,8 +1797,8 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32)
   (iVar4 + 0x1a) = local_6 + 0x9;
   IVar2 = GetSystemMetrics16(0x1008);
   (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-  IVar2 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-  IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+  IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar7 + 0x8);
   return;
 }
@@ -1911,11 +1911,11 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   let uVar8: u16;
   let puVar9: *mut u16;
   let uVar10: u16;
-  let puVar11: *mut u8
-  let extraout_DX: *mut u8
-  let puVar12: *mut u8
-  let extraout_DX_00: *mut u8
-  let extraout_DX_01: *mut u8
+  let puVar11: *mut u8;
+  let extraout_DX: *mut u8;
+  let puVar12: *mut u8;
+  let extraout_DX_00: *mut u8;
+  let extraout_DX_01: *mut u8;
   let puVar13: *mut u8;
   let puVar14: *mut u16;
   let unaff_DI: i16;
@@ -1929,17 +1929,17 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   let local_134: [u8;102];
   let puStack50: *mut u16;
   let uStack46: u16;
-  let puStack44: *mut u8
+  let puStack44: *mut u8;
   let iStack42: i16;
   let iStack26: i16;
-  let puStack24: *mut u8
+  let puStack24: *mut u8;
   let iStack22: i16;
   let puStack20: *mut u16;
   let uStack16: u32;
   let iStack12: i16;
   let uStack10: i16;
   let uStack8: u16;
-  let puStack6: *mut u8
+  let puStack6: *mut u8;
   let uStack4: u16;
   
   paVar17 = struct_op_1010_1d48(CONCAT22(param_2,param_1),param_3);
@@ -2267,7 +2267,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: *mut u16)
   let uVar3: u32;
   let ppcVar4: u32;
   let mut pCVar5: String;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let iVar6: i16;
   let unaff_DI: i16;
   let uVar7: u16;
@@ -2476,7 +2476,7 @@ pub fn get_sys_metrics_1018_09a8(param_1: u32,INT16 param_2)
   let uVar1: u32;
   let IVar2: i16;
   let IVar3: i16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let iVar4: i16;
   let unaff_DI: i16;
   let uVar5: u16;
@@ -2503,8 +2503,8 @@ pub fn get_sys_metrics_1018_09a8(param_1: u32,INT16 param_2)
   IVar2 = GetSystemMetrics16(0x1008);
   uVar1 = (iVar4 + 0x5a);
   (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar1 + 0x4);
-  IVar2 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-  IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+  IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   uVar1 = (iVar4 + 0x5a);
   (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar1 + 0x8);
   return;
@@ -2522,8 +2522,8 @@ pub fn get_sys_metrics_1018_1ea0(param_1: &mut Struct55,param_2: u16)
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
   iVar3.field_0x2e = IVar1 * 0x2 + iVar3.field_0x36;
-  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-  IVar2 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+  IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   iVar3.field_0x30 = IVar1 + iVar3.field_0x38 + IVar2;
   return;
 }
@@ -2534,20 +2534,20 @@ pub fn mixed_sys_op_1018_2978(param_1: u32,param_2: u16,param_3: u16)
   let ppcVar1: u32;
   let puVar2: *mut u8;
   let puVar3: *mut u8;
-  RECT16 *rect;
+  let rect: *mut RECT16;
   let iVar4: i16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let uVar5: u16;
-  let extraout_DX: *mut u8
-  let puVar6: *mut u8
-  let puVar7: *mut u8
+  let extraout_DX: *mut u8;
+  let puVar6: *mut u8;
+  let puVar7: *mut u8;
   let iVar8: i16;
   let uVar9: u16;
   let uVar10: u16;
   let uVar11: u16;
   let uVar12: u8;
   let paStack62: &mut Struct76;
-  RECT16 local_3a;
+  let local_3a: RECT16;
   let iStack54: i16;
   let iStack52: i16;
   let uStack50: u32;
@@ -2626,7 +2626,7 @@ pub fn get_sys_metrics_1018_2f56(param_1: u32)
   let uVar1: u16;
   let IVar2: i16;
   let IVar3: i16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let iVar4: i16;
   let unaff_DI: i16;
   let uVar5: u16;
@@ -2651,8 +2651,8 @@ pub fn get_sys_metrics_1018_2f56(param_1: u32)
   (iVar4 + 0x1a) = local_6 + 0x9;
   IVar2 = GetSystemMetrics16(0x1008);
   (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-  IVar2 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-  IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+  IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar7 + 0x8);
   return;
 }
@@ -2718,8 +2718,8 @@ pub fn get_sys_metrics_1018_4b1e(param_1: &mut Struct55,param_2: u16,param_3: u1
   (iVar1 + 0x2) = 0x1018;
   if (ctx.PTR_LOOP_1050_416c == 0x0) {
     ctx.PTR_LOOP_1050_416c = GetSystemMetrics16(0x1010);
-    ctx.PTR_LOOP_1050_416e = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
-    ctx.PTR_LOOP_1050_4170 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+    ctx.PTR_LOOP_1050_416e = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    ctx.PTR_LOOP_1050_4170 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   }
   return param_1;
 }
@@ -2755,15 +2755,15 @@ pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16,param_2: u32,INT16 param_3)
   iVar3.field_0xa = (param_2 + 0xe4);
   IVar1 = GetSystemMetrics16(param_3);
   iVar3.field_0xe = IVar1;
-  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   iVar3.field_0x10 = IVar1;
-  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   iVar3.field_0x12 = IVar1;
   return;
 }
 
 
-pub fn make_proc_inst_1038_cf6c(param_1: *mut u16,uchar *param_2,LPVOID param_3)
+pub fn make_proc_inst_1038_cf6c(param_1: *mut u16,param_2: *mut u8,LPVOID param_3)
 {
   LPVOID pvVar1;
   let iVar2: i16;
@@ -2991,9 +2991,9 @@ get_sys_metrics_1040_7728
                   0x0,0x8);
   IVar1 = GetSystemMetrics16(0x1000);
   iVar2.field_0x62 = IVar1;
-  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   iVar2.field_0x64 = IVar1;
-  IVar1 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   iVar2.field_0x66 = IVar1;
   return;
 }
@@ -3003,7 +3003,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37,param_2: HWND16)
 {
   let piVar1: *mut i16;
   let bVar2: u8;
-  HDC16 hdc;
+  let hdc: HDC16;
   let IVar3: i16;
   let iVar4: i16;
   let uVar5: u16;
@@ -3014,14 +3014,14 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37,param_2: HWND16)
   draw_text_1040_8d14(param_1,s_tile2_bmp_1050_1538);
   (iVar4 + 0xa6) = (iVar4 + 0x9e);
   (iVar4 + 0xaa) = (iVar4 + 0xa2);
-  IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
   piVar1 = (iVar4 + 0xac);
   *piVar1 = *piVar1 + IVar3;
   bVar2 = (iVar4 + 0x98) & 0xf0;
   if ((((bVar2 == 0x30) || (bVar2 == 0x10)) || (bVar2 == 0x40)) || (bVar2 == 0x20)) {
-    IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+    IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
     if ((iVar4 + 0xac) < IVar3) {
-      IVar3 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+      IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
       *(INT16 *)(iVar4 + 0xac) = IVar3;
     }
   }
@@ -3079,7 +3079,7 @@ pub fn reg_class_1040_98c0(Uparam_1: i32,HINSTANCE16 param_2,WNDCLASS16 *in_wnd_
 
 void 
 make_proc_inst_1040_a234
-          (uchar *param_1,uchar *param_2,param_3: u16,param_4: u32,LPVOID param_5)
+          (param_1: *mut u8,param_2: *mut u8,param_3: u16,param_4: u32,LPVOID param_5)
 
 {
   LPVOID pvVar1;

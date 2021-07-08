@@ -29,9 +29,9 @@ pub fn struct_op_1008_0000(param_1: *mut u16)
 pub fn set_struct_op_1008_0536(param_1: *mut u16,HINSTANCE16 param_2,param_3: u16)
 {
   HICON16 HVar1;
-  HCURSOR16 HVar2;
-  HGDIOBJ16 HVar3;
-  let puVar4: *mut u8
+  let HVar2: HCURSOR16;
+  let HVar3: HGDIOBJ16;
+  let puVar4: *mut u8;
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;
@@ -57,9 +57,9 @@ pub fn set_struct_op_1008_0536(param_1: *mut u16,HINSTANCE16 param_2,param_3: u1
   (iVar5 + 0xae) = 0x8700;
   HVar1 = LoadIcon16(param_2,0xd4);
   *(HICON16 *)(iVar5 + 0xc2) = HVar1;
-  HVar2 = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538,0x7f00);
+  HVar2 = LoadCursor16(s_tile2_bmp_1050_1538,0x7f00);
   *(HCURSOR16 *)(iVar5 + 0xc4) = HVar2;
-  HVar3 = GetStockObject16((INT16)s_tile2_bmp_1050_1538);
+  HVar3 = GetStockObject16(s_tile2_bmp_1050_1538);
   *(HGDIOBJ16 *)(iVar5 + 0xc6) = HVar3;
   puVar8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_3,puVar4,unaff_DI);
   puVar4 = (puVar8 >> 0x10);
@@ -392,9 +392,9 @@ pub fn set_struct_op_1008_9584(param_1: &mut Struct20,Uparam_2: i32)
 pub fn struct_1008_9fd2(param_1: &mut Struct79,param_2: &mut Struct79,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8
-  let puVar3: *mut u8
-  let extraout_DX: *mut u8
+  let puVar2: *mut u8;
+  let puVar3: *mut u8;
+  let extraout_DX: *mut u8;
   let extraout_DX_00: u16;
   let uVar4: u16;
   let paVar5: &mut Struct79;
@@ -438,7 +438,7 @@ pub fn struct_1008_9fd2(param_1: &mut Struct79,param_2: &mut Struct79,param_3: u
 }
 
 
-pub fn struct_1008_bde0(param_1: *mut u32,uchar *param_2)
+pub fn struct_1008_bde0(param_1: *mut u32,param_2: *mut u8)
 {
   let uVar1: u16;
   let iVar2: &mut Struct139;
@@ -833,7 +833,7 @@ i16  pass1_1008_c646(param_1: u16,param_2: u32,param_3: u16)
 {
   let piVar1: *mut i16;
   let iVar2: i16;
-  let puVar3: *mut u8
+  let puVar3: *mut u8;
   let unaff_DI: i16;
   let puVar4: u32;
   let puVar5: *mut u16;
@@ -935,7 +935,7 @@ pub fn pass1_1008_c79a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param
   let iVar2: i16;
   let uVar3: u32;
   let extraout_DX: u16;
-  let puVar4: *mut u8
+  let puVar4: *mut u8;
   let uVar5: u16;
   let uVar6: u16;
   let puVar7: *mut u16;
@@ -1007,10 +1007,10 @@ pub fn pass1_1008_c882(param_1: u32,param_2: u16)
   let ppcVar5: u32;
   let uVar6: u16;
   let uVar7: u16;
-  let puVar8: *mut u8
-  let extraout_DX: *mut u8
-  let puVar9: *mut u8
-  let puVar10: *mut u8
+  let puVar8: *mut u8;
+  let extraout_DX: *mut u8;
+  let puVar9: *mut u8;
+  let puVar10: *mut u8;
   let uVar11: u16;
   let iVar9: &mut Struct201;
   let unaff_DI: i16;
@@ -1235,11 +1235,11 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
   let puVar4: u32;
   let uVar5: u16;
   let puVar6: *mut u8;
-  let extraout_DX: *mut u8
-  let extraout_DX_00: *mut u8
-  let puVar8: *mut u8
-  let puVar9: *mut u8
-  let extraout_DX_01: *mut u8
+  let extraout_DX: *mut u8;
+  let extraout_DX_00: *mut u8;
+  let puVar8: *mut u8;
+  let puVar9: *mut u8;
+  let extraout_DX_01: *mut u8;
   let iVar10: &mut Struct202;
   let uVar10: u16;
   let mut pcVar11: String; 
@@ -1248,9 +1248,9 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
   let iStack30: i16;
   let local_18: [u8;8];
   let uStack16: u16;
-  let puStack14: *mut u8
+  let puStack14: *mut u8;
   let uStack12: u16;
-  let puStack10: *mut u8
+  let puStack10: *mut u8;
   let iStack8: i16;
   let lStack6: i32;
   let uVar7: u32;
@@ -1358,12 +1358,12 @@ pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u32;
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let extraout_DX_00: u16;
-  let puVar11: *mut u8
+  let puVar11: *mut u8;
   let uVar12: u16;
   let extraout_DX_01: u16;
-  let puVar13: *mut u8
+  let puVar13: *mut u8;
   let iVar15: &mut Struct205;
   let uVar14: u16;
   let uVar15: u16;
@@ -1376,7 +1376,7 @@ pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
   let uStack30: u32;
   let uStack26: u32;
   let puStack18: u32;
-  let puStack16: *mut u8
+  let puStack16: *mut u8;
   let puStack14: *mut u16;
   let uStack10: u16;
   let uStack8: u32;
@@ -1519,14 +1519,14 @@ pub fn pass1_1008_cfa0(param_1: u32,param_2: u32)
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u32;
-  let extraout_DX: *mut u8
-  let extraout_DX_00: *mut u8
-  let puVar11: *mut u8
-  let puVar12: *mut u8
-  let puVar13: *mut u8
-  let extraout_DX_01: *mut u8
-  let extraout_DX_02: *mut u8
-  let extraout_DX_03: *mut u8
+  let extraout_DX: *mut u8;
+  let extraout_DX_00: *mut u8;
+  let puVar11: *mut u8;
+  let puVar12: *mut u8;
+  let puVar13: *mut u8;
+  let extraout_DX_01: *mut u8;
+  let extraout_DX_02: *mut u8;
+  let extraout_DX_03: *mut u8;
   let uVar14: u16;
   let iVar15: i16;
   let uVar16: u16;
@@ -1713,7 +1713,7 @@ pub fn struct_1008_dcdc(param_1: *mut u16)
 pub fn struct_1008_dd4e(param_1: &mut Struct209,param_2: u16,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let extraout_DX: u16;
   let paVar3: &mut Struct79;
   
@@ -1756,7 +1756,7 @@ pub fn struct_1008_ecb2(param_1: &mut Struct221,param_2: u16,param_3: u16) -> u3
 
 {
   let in_AX: u16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let unaff_SS: u16;
   
   struct_1010_2cd2(param_1,param_2,param_3,unaff_SS);

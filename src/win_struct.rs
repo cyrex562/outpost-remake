@@ -46,6 +46,11 @@ pub type HCURSOR16 = HANDLE16;
 // typedef uint32_t SEGPTR;
 pub type SEGPTR = u32;
 
+pub type HRSRC16 = HANDLE16;
+
+// typedef WORD ATOM;
+pub type ATOM = i16;
+
 pub struct FLOATING_SAVE_AREA {
     // DWORD ControlWord;
     pub control_word: u32,
@@ -193,7 +198,7 @@ pub struct WINDOWPLACEMENT16 {
     pub pt_min_position: POINT16,
     // struct POINT16 pt_max_position;
     pub pt_max_position: POINT16,
-    // struct RECT16 rc_normal_position;
+    // struct let rc_normal_position: RECT16;
     pub rc_normal_position: RECT16,
 }
 
@@ -210,9 +215,9 @@ pub struct WNDCLASS16 {
     pub h_instance: HANDLE16,
     // HICON16 h_icon;
     pub h_icon: HICON16,
-    // HCURSOR16 h_cursor;
+    // let h_cursor: HCURSOR16;
     pub h_cursor: HCURSOR16,
-    // HBRUSH16 hbr_background;
+    // let hbr_background: HBRUSH16;
     pub hbr_background: HBRUSH16,
     // SEGPTR lpsz_menu_name;
     pub lpsz_menu_name: SEGPTR,
@@ -291,11 +296,11 @@ pub struct BITMAPINFOHEADER {
 }
 
 pub struct PAINTSTRUCT16 {
-    // HDC16 hdc;
+    // let hdc: HDC16;
     pub hdc: HDC16,
     // BOOL16 f_erase;
     pub f_erase: u16,
-    // struct RECT16 rc_paint;
+    // struct let rc_paint: RECT16;
     pub rc_paint: RECT16,
     // BOOL16 f_restore;
     pub f_restore: u16,
@@ -552,6 +557,6 @@ pub struct tagBITMAPINFOHEADER {
 
 // typedef uchar UCHAR;
 
-// typedef WORD ATOM;
+
 
 // typedef void * LPCVOID;

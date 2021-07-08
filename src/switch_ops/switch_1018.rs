@@ -66,7 +66,7 @@ pub fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,para
 }
 
 
-pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,uchar *param_5)
+pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,param_5: *mut u8)
 {
   let iVar1: i16;
   let mut pcVar2: String; 
@@ -75,7 +75,7 @@ pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,ucha
   let uVar5: u16;
   let uVar6: u16;
   let uVar7: u32;
-  let puVar8: *mut u8
+  let puVar8: *mut u8;
   let unaff_SS: u16;
   let puVar9: *mut u16;
   let lVar10: i32;

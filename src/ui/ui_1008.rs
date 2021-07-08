@@ -4,18 +4,18 @@ pub fn win_ui_cursor_op_1008_06c0(param_1: *mut u32,param_2: u32,param_3: u16,pa
   let ppcVar1: u32;
   let in_AX: u16;
   let in_DX: u16;
-  let puVar2: *mut u8
-  let extraout_DX: *mut u8
+  let puVar2: *mut u8;
+  let extraout_DX: *mut u8;
   let unaff_DI: i16;
   let uVar3: u16;
-  let unaff_SS: *mut u8
+  let unaff_SS: *mut u8;
   let in_AF: u8;
   let mut pcVar4: String; 
   let puVar5: *mut u16;
   uchar local_5a [0x50];
   let uStack10: u32;
-  HCURSOR16 HStack6;
-  HCURSOR16 HStack4;
+  let HStack6: HCURSOR16;
+  let HStack4: HCURSOR16;
   
   if (param_4 == 0x400) {
     pass1_1030_8344(ctx.PTR__LOOP_1050_5748,
@@ -83,7 +83,7 @@ pub fn menu_ui_op_1008_09ba(param_1: u32,param_2: HWND16,RECT16 *param_3,param_4
   local_6.y = param_2;
   ClientToScreen16(param_4,&local_6);
   TrackPopupMenu16(ctx.s_tile2_bmp_1050_1538,0x0,0x0,PTR_LOOP_1050_0396,0x0,
-                   local_6.y,(RECT16 *)local_6.x);
+                   local_6.y,local_6.x);
   return;
 }
 
@@ -122,8 +122,8 @@ pub fn message_box_op_1008_12dc(param_1: u32,param_2: u32,HINSTANCE16 param_3,pa
   let uStack36: u32;
   let uStack16: u32;
   let local_c: [u8;6];
-  HCURSOR16 HStack6;
-  HCURSOR16 HStack4;
+  let HStack6: HCURSOR16;
+  let HStack4: HCURSOR16;
   
   HStack4 = LoadCursor16(param_3,0x7f02);
   HStack6 = SetCursor16(ctx.s_tile2_bmp_1050_1538);
@@ -182,9 +182,9 @@ win_ui_op_1008_1414(astruct_72 **param_1,param_2: u32,LPCSTR param_3,param_4: u1
   let iVar4: i16;
   let puVar5: u32;
   let uVar5: u32;
-  let puVar6: *mut u8
+  let puVar6: *mut u8;
   let uVar7: u16;
-  let type: *mut u8
+  let type: *mut u8;
   let uVar8: u16;
   let extraout_DX: u16;
   let unaff_DI: i16;
@@ -198,7 +198,7 @@ win_ui_op_1008_1414(astruct_72 **param_1,param_2: u32,LPCSTR param_3,param_4: u1
   let local_2a: u32;
   let uStack38: u16;
   let iStack36: i16;
-  let puStack34: *mut u8
+  let puStack34: *mut u8;
   let uStack32: u32;
   let uStack28: u32;
   let uStack24: u32;
@@ -326,7 +326,7 @@ cursor_op_1008_2dcc(param_1: i16,param_2: u16,param_3: u16,HINSTANCE16 in_hinsta
 {
   let uVar1: u32;
   let ppcVar2: u32;
-  HCURSOR16 cursor_handle;
+  let cursor_handle: HCURSOR16;
   let in_DX: u16;
   let extraout_DX: u16;
   let iVar3: i16;
@@ -361,7 +361,7 @@ cursor_op_1008_2dcc(param_1: i16,param_2: u16,param_3: u16,HINSTANCE16 in_hinsta
   }
   else {
     (param_1 + 0xe8) = 0x0;
-    ui_op_1008_2c4e(param_1,param_2,param_3,(HINSTANCE16)s_tile2_bmp_1050_1538);
+    ui_op_1008_2c4e(param_1,param_2,param_3,s_tile2_bmp_1050_1538);
     (param_1 + 0xce) = 0x0;
   }
   SetCursor16(ctx.s_tile2_bmp_1050_1538);
@@ -377,7 +377,7 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 **param_1,param_2: u16)
 {
   let uVar1: u16;
   let iVar2: i16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let uVar3: u16;
   let uVar4: u16;
   let unaff_DI: i16;
@@ -386,8 +386,8 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 **param_1,param_2: u16)
   let local_224: [u8;108];
   let uStack284: u16;
   let mut pcStack282: String; 
-  HCURSOR16 HStack274;
-  HCURSOR16 HStack272;
+  let HStack274: HCURSOR16;
+  let HStack272: HCURSOR16;
   let uStack270: u32;
   Ulet UStack266: i32;
   let uStack262: u32;
@@ -435,7 +435,7 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 **param_1,param_2: u16)
     uStack270 = (param_1 + 0xe8);
     send_msg_1020_097e(uStack270,0x1020);
     UpdateWindow16(0x1020);
-    HStack272 = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538,0x7f02);
+    HStack272 = LoadCursor16(s_tile2_bmp_1050_1538,0x7f02);
     HStack274 = SetCursor16(ctx.s_tile2_bmp_1050_1538);
     win_ui_op_1008_1414(param_1,CONCAT22(param_2,local_102),s_tile2_bmp_1050_1538,
                         param_2,in_AF,uVar3);
@@ -452,7 +452,7 @@ pub fn save_file_1008_3178(param_1: u32,param_2: i16,param_3: u16)
   let puVar3: *mut u16;
   let uVar4: u16;
   let BVar5: bool;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let extraout_DX: u16;
   let uVar6: u16;
   let unaff_DI: i16;
@@ -765,7 +765,7 @@ pub fn set_sys_color_1008_357e(param_1: u32,param_2: i16,INT16 in_index_3,param_
   if (param_2 != 0x0) {
     count = ctx.s_tile2_bmp_1050_1538;
     colorref_var2 = GetSysColor16(in_index_3);
-    if ((colorref_var2 == (COLORREF)local_80) && (iVar2 == local_80._2_2_)) {
+    if ((colorref_var2 == local_80) && (iVar2 == local_80._2_2_)) {
       return;
     }
   }
@@ -786,15 +786,15 @@ pub fn set_sys_color_1008_357e(param_1: u32,param_2: i16,INT16 in_index_3,param_
 pub fn fill_rect_1008_39ac(in_win_handle_1: HWND16)
 {
   RECT16 local_brush_handle [0x2];
-  RECT16 *local_brush_handle_2;
-  HDC16 HStack36;
-  PAINTSTRUCT16 local_paint_struct;
+  let local_brush_handle_2: *mut RECT16;
+  let HStack36: HDC16;
+  let local_paint_struct: PAINTSTRUCT16;
   
   HStack36 = BeginPaint16(in_win_handle_1,&local_paint_struct);
-  local_brush_handle_2 = (RECT16 *)CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
+  local_brush_handle_2 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
   GetClientRect16(ctx.s_tile2_bmp_1050_1538,local_brush_handle);
   FillRect16(ctx.s_tile2_bmp_1050_1538,local_brush_handle_2,
-             (HBRUSH16)local_brush_handle);
+             local_brush_handle);
   EndPaint16(ctx.s_tile2_bmp_1050_1538,&local_paint_struct);
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   return;
@@ -1000,7 +1000,7 @@ palette_op_1008_4e08(param_1: &mut Struct13,bool param_2,param_3: u16,HDC16 para
 
 void 
 create_palette_1008_4e38
-          (in_struct_1: &mut Struct13,LOGPALETTE *in_log_palette_2,uchar *param_3)
+          (in_struct_1: &mut Struct13,LOGPALETTE *in_log_palette_2,param_3: *mut u8)
 
 {
   let piVar1: *mut i16;
@@ -1013,8 +1013,8 @@ create_palette_1008_4e38
   let uVar9: u16;
   let uVar10: u16;
   let iStack14: i16;
-  let puStack12: *mut u8
-  let puStack8: *mut u8
+  let puStack12: *mut u8;
+  let puStack8: *mut u8;
   let uVar3: *mut u16;
   
   uVar8 = (in_struct_1 >> 0x10);
@@ -1070,7 +1070,7 @@ file_and_draw_op_1008_4f20
   let paVar5: &mut Struct43;
   let uVar6: u32;
   DEVMODEA *init_data;
-  HDC16 local_2c;
+  let local_2c: HDC16;
   let mut pCStack42: String;
   let mut pCStack40: String;
   let local_26: [u8;24];
@@ -1267,7 +1267,7 @@ pub fn create_window_1008_5e7e(u16 in_stock_obj_id,WNDCLASS16 *in_wnd_class) -> 
   let puStack34: *mut u8;
   let uStack32: u16;
   let uStack30: u16;
-  HGDIOBJ16 HStack28;
+  let HStack28: HGDIOBJ16;
   let uStack26: u32;
   let puStack22: u32;
   let local_12: [u32;0x4];
@@ -1295,7 +1295,7 @@ pub fn create_window_1008_5e7e(u16 in_stock_obj_id,WNDCLASS16 *in_wnd_class) -> 
   HStack28 = GetStockObject16(in_stock_obj_id);
   uStack26 = 0x0;
   puStack22 = local_12;
-  BVar3 = GetClassInfo16((HINSTANCE16)s_tile2_bmp_1050_1538,(SEGPTR)&name,in_wnd_class);
+  BVar3 = GetClassInfo16(s_tile2_bmp_1050_1538,(SEGPTR)&name,in_wnd_class);
   if (BVar3 == 0x0) {
     AVar4 = RegisterClass16(s_tile2_bmp_1050_1538);
     if (AVar4 == 0x0) {
@@ -1320,7 +1320,7 @@ make_def_win_proc_1008_5f44
 
 {
   let WVar1: u16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let unaff_DI: i16;
   WNDCLASS16 *unaff_SS;
   LRESULT LVar2;
@@ -1346,7 +1346,7 @@ make_def_win_proc_1008_5f44
 
 u16 
 win_ui_op_1008_8214(param_1: u16,param_2: i16,param_3: u16,param_4: u32,param_5: u16,
-                   uchar *param_6,param_7: HWND16)
+                   param_6: *mut u8,param_7: HWND16)
 
 {
   let IVar1: i16;
@@ -1410,7 +1410,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,
   let uVar6: u16;
   let paVar7: &mut Struct18;
   let cVar8: u8;
-  RECT16 local_a;
+  let local_a: RECT16;
   let iStack4: i16;
   
   paVar7 = GetWindowLong16(param_5,0x0);
@@ -1453,7 +1453,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,
           iVar2 = (iVar3 + 0x4);
           pbVar1 = (iVar3 + 0x4);
           *pbVar1 = *pbVar1 & 0xf3;
-          BVar4 = PtInRect16((RECT16 *)s_tile2_bmp_1050_1538,
+          BVar4 = PtInRect16(s_tile2_bmp_1050_1538,
                              (POINT16)CONCAT22(param_2,param_1));
           if (BVar4 == 0x0) {
             pbVar1 = (iVar3 + 0x4);
@@ -1473,7 +1473,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,
           }
           if ((iVar3 + 0x4) != iVar2) {
             InvalidateRect16(ctx.s_tile2_bmp_1050_1538,
-                             (RECT16 *)(&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
+                             (&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
             UpdateWindow16(ctx.s_tile2_bmp_1050_1538);
           }
         }
@@ -1508,7 +1508,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,
                 pbVar1 = (iVar3 + 0x4);
                 *pbVar1 = *pbVar1 & 0xf2;
                 InvalidateRect16(ctx.s_tile2_bmp_1050_1538,
-                                 (RECT16 *)(&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
+                                 (&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
                 UpdateWindow16(ctx.s_tile2_bmp_1050_1538);
               }
               SendMessage16(ctx.s_tile2_bmp_1050_1538,(iVar3 + 0x2),0x0,
@@ -1532,7 +1532,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,
           SetTimer16(ctx.s_tile2_bmp_1050_1538,0x0,0x0,
                      (LPVOID)(s_New_failed_in_Op__Op__Simulator_1050_0110 + 0x1c));
           InvalidateRect16(ctx.s_tile2_bmp_1050_1538,
-                           (RECT16 *)(&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
+                           (&ctx.PTR_LOOP_1050_0000 + 0x1),0x0);
           UpdateWindow16(ctx.s_tile2_bmp_1050_1538);
           SetCapture16(ctx.s_tile2_bmp_1050_1538);
         }
@@ -1648,7 +1648,7 @@ pub fn create_window_ex_1008_9760(astruct *in_struct_1,param_2: u16)
 
 pub fn begin_end_paint_1008_97c8(param_1: HWND16)
 {
-  PAINTSTRUCT16 local_22;
+  let local_22: PAINTSTRUCT16;
   
   BeginPaint16(param_1,&local_22);
   EndPaint16(ctx.s_tile2_bmp_1050_1538,&local_22);
@@ -1661,7 +1661,7 @@ pub fn begin_end_paint_1008_97c8(param_1: HWND16)
 
 u32 
 unk_win_op_1008_97f2
-          (param_1: *mut u32,param_2: &mut i16,WPARAM16 param_3,uchar *param_4,param_5: u16,
+          (param_1: *mut u32,param_2: &mut i16,WPARAM16 param_3,param_4: *mut u8,param_5: u16,
           param_6: HWND16)
 
 {
@@ -1992,10 +1992,10 @@ pass1_1008_a1f0(param_1: u16,param_2: u16,param_3: u8,param_4: u32,param_5: *mut
   let uVar5: u16;
   let extraout_DX: u16;
   let uVar6: u16;
-  let puVar7: *mut u8
+  let puVar7: *mut u8;
   let uVar8: u16;
   let iVar9: i16;
-  let in_buf_len_5: *mut u8
+  let in_buf_len_5: *mut u8;
   let uVar10: u16;
   let puVar11: *mut u16;
   let mut pcVar12: String; 
@@ -2753,7 +2753,7 @@ pub fn pass1_1008_aed8(param_1: u32) -> bool
 
 
 u32 
-pass1_1008_aefe(uchar *param_1,uchar *param_2,param_3: u16,uchar *param_4,param_5: u16
+pass1_1008_aefe(param_1: *mut u8,param_2: *mut u8,param_3: u16,param_4: *mut u8,param_5: u16
                )
 
 {

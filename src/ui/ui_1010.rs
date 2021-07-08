@@ -112,7 +112,7 @@ win_ui_op_1010_0240(param_1: u16,param_2: u16,param_3: u16,param_4: HWND16,
   let ppcVar1: u32;
   let BVar2: bool;
   let WVar3: u16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let unaff_DI: i16;
   let puVar4: u32;
   let uVar5: u16;

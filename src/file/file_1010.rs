@@ -1,12 +1,12 @@
 
-pub fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,uchar *param_4,param_5: u16)
+pub fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16)
 {
   let puVar1: u32;
   let ppcVar2: u32;
   let BVar3: bool;
   let uVar4: &mut Struct229;
   let uVar5: u16;
-  let extraout_DX: *mut u8
+  let extraout_DX: *mut u8;
   let iVar6: &mut Struct228;
   let uVar6: u16;
   let uVar7: u16;
@@ -202,7 +202,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
   let in_AX: u16;
   let puVar1: u32;
   let puVar2: u32;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let uVar3: u16;
   let iVar3: &mut Struct45;
   let iVar2: &mut Struct44;

@@ -14,7 +14,7 @@ string_1010_1722(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u3
     pcVar2 = load_string_1010_847e
                        (ctx.PTR__LOOP_1050_14cc,
                         (ctx.PTR__LOOP_1050_14cc >> 0x10),
-                        (HINSTANCE16)&USHORT_1050_1028);
+                        &USHORT_1050_1028);
     uVar1 = (pcVar2 >> 0x10);
     unk_str_op_1000_3d3e(CONCAT22(param_1,local_52),pcVar2);
     pcVar2 = CONCAT22(uVar1,local_52);
@@ -42,7 +42,7 @@ pub fn unk_load_str_op_1010_2c34(void) -> u16
 
 {
   let pUVar1: *mut u16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   short in_buf_len_5;
   let unaff_DI: i16;
   let unaff_SS: u16;
@@ -129,7 +129,7 @@ unk_load_str_op_1010_8c96
   let puVar3: u32;
   let iVar4: i16;
   let uVar5: u16;
-  let in_DX: *mut u8
+  let in_DX: *mut u8;
   let iVar6: i16;
   let uVar7: u16;
   let uVar8: u16;
@@ -142,7 +142,7 @@ unk_load_str_op_1010_8c96
   let local_10: u32;
   let iStack12: i16;
   let uStack10: i16;
-  let puStack8: *mut u8
+  let puStack8: *mut u8;
   let uStack6: u16;
   let uStack4: u16;
   
@@ -173,7 +173,7 @@ unk_load_str_op_1010_8c96
           pcVar10 = load_string_1010_847e
                               (ctx.PTR__LOOP_1050_14cc,
                                (ctx.PTR__LOOP_1050_14cc >> 0x10),
-                               (HINSTANCE16)&USHORT_1050_1028);
+                               &USHORT_1050_1028);
           uStack4 = (pcVar10 >> 0x10);
           uStack6 = SUB42(pcVar10,0x0);
           IVar2 = wsprintf16(&USHORT_1050_1028,spec,valist);
@@ -203,7 +203,7 @@ unk_load_str_op_1010_8c96
           pcVar10 = load_string_1010_847e
                               (ctx.PTR__LOOP_1050_14cc,
                                (ctx.PTR__LOOP_1050_14cc >> 0x10),
-                               (HINSTANCE16)&USHORT_1050_1028);
+                               &USHORT_1050_1028);
           uStack4 = (pcVar10 >> 0x10);
           uStack6 = SUB42(pcVar10,0x0);
           wsprintf16(&USHORT_1050_1028,spec,valist);
@@ -240,7 +240,7 @@ unk_load_str_op_1010_8c96
         pcVar10 = load_string_1010_847e
                             (ctx.PTR__LOOP_1050_14cc,
                              (ctx.PTR__LOOP_1050_14cc >> 0x10),
-                             (HINSTANCE16)&USHORT_1050_1028);
+                             &USHORT_1050_1028);
         uStack4 = (pcVar10 >> 0x10);
         uStack6 = SUB42(pcVar10,0x0);
         wsprintf16(&USHORT_1050_1028,spec,valist);
@@ -331,7 +331,7 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
   let uVar6: u16;
   let uVar7: u16;
   let mut in_buffer_4: String; 
-  let in_buf_len_5: *mut u8
+  let in_buf_len_5: *mut u8;
   let uStack22: u16;
   let mut pcStack6: String; 
   

@@ -3,7 +3,7 @@
 pub fn struct_1010_02e0(param_1: &mut Struct79,param_2: &mut Struct79,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let extraout_DX: u16;
   let paVar3: &mut Struct79;
   
@@ -36,14 +36,14 @@ pub fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
   let puVar3: *mut u8;
   let puVar4: *mut u8;
   let uVar5: u32;
-  let extraout_DX: *mut u8
-  let puVar6: *mut u8
-  let puVar7: *mut u8
-  let extraout_DX_00: *mut u8
+  let extraout_DX: *mut u8;
+  let puVar6: *mut u8;
+  let puVar7: *mut u8;
+  let extraout_DX_00: *mut u8;
   let extraout_DX_01: u16;
   let extraout_DX_02: u16;
   let extraout_DX_03: u16;
-  let extraout_DX_04: *mut u8
+  let extraout_DX_04: *mut u8;
   let iVar8: &mut Struct232;
   let iVar9: &mut Struct231;
   let iVar10: &mut Struct230;
@@ -229,7 +229,7 @@ pub fn struct_1010_383a(param_1: *mut u16)
 }
 
 
-pub fn struct_1010_38f8(param_1: u32,param_2: i16,param_3: u16,uchar *param_4) -> u16
+pub fn struct_1010_38f8(param_1: u32,param_2: i16,param_3: u16,param_4: *mut u8) -> u16
 
 {
   let uVar1: u16;
@@ -301,7 +301,7 @@ pub fn struct_1010_3c52(param_1: u32,param_2: u16,param_3: u16)
 
 void 
 struct_1010_4d5c(param_1: u32,param_2: u16,param_3: u16,param_4: u16,param_5: u16
-                ,param_6: i16,uchar *param_7)
+                ,param_6: i16,param_7: *mut u8)
 
 {
   let uVar1: u32;
@@ -517,7 +517,7 @@ pub fn struct_1010_e9e4(param_1: &mut Struct261,param_2: u16,param_3: u16)
   let uVar4: u16;
   let uVar5: u16;
   let uVar6: u32;
-  let puVar7: *mut u8
+  let puVar7: *mut u8;
   let iVar8: i16;
   let paVar9: &mut Struct79;
   let puVar10: *mut u16;

@@ -1,5 +1,5 @@
 
-pub fn struct_1028_0068(param_1: *mut u16,uchar *param_2)
+pub fn struct_1028_0068(param_1: *mut u16,param_2: *mut u8)
 {
   let uVar1: u16;
   let extraout_DX: u16;
@@ -81,7 +81,7 @@ pub fn struct_1028_1bbc(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1028_1f56(param_1: *mut u16,uchar *param_2)
+pub fn struct_1028_1f56(param_1: *mut u16,param_2: *mut u8)
 {
   let uVar1: u32;
   let uVar2: u16;
@@ -164,7 +164,7 @@ pub fn struct_1028_355e(param_1: *mut u16) -> u16
 
 
 
-pub fn struct_1028_37a6(param_1: *mut u16,uchar *param_2,param_3: u16,param_4: u16)
+pub fn struct_1028_37a6(param_1: *mut u16,param_2: *mut u8,param_3: u16,param_4: u16)
 {
   let uVar1: u16;
   let uVar2: u16;
@@ -370,7 +370,7 @@ pub fn struct_1028_5ed8(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1028_60bc(param_1: *mut u16,param_2: u16,uchar *param_3) -> u16
+pub fn struct_1028_60bc(param_1: *mut u16,param_2: u16,param_3: *mut u8) -> u16
 
 {
   let uVar1: u32;
@@ -436,7 +436,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 
 {
   let iVar1: &mut Struct100;
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   
   struct_op_1028_d1dc(param_1,param_2,param_3,0x3e8);
   puVar1 = (param_3 >> 0x10);
@@ -468,7 +468,7 @@ struct_op_1028_933c(param_1: &mut Struct100,param_2: u16,param_3: u16,param_4: u
 
 {
   let iVar1: i16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   
   struct_op_1028_d1dc(param_9,param_10,param_1,0x3e8);
   puVar2 = (param_1 >> 0x10);
@@ -509,7 +509,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 
 {
   let iVar1: &mut Struct101;
-  let puVar1: *mut u8
+  let puVar1: *mut u8;
   let in_stack_0000fffa: u16;
   
   puVar1 = (param_3 >> 0x10);
@@ -530,7 +530,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 pub fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8
+  let puVar2: *mut u8;
   let uVar3: u16;
   
   uVar3 = (param_1 >> 0x10);
@@ -622,13 +622,13 @@ pub fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
 }
 
 
-pub fn struct_1028_d59c(param_1: *mut u32,uchar *param_2)
+pub fn struct_1028_d59c(param_1: *mut u32,param_2: *mut u8)
 {
   let puVar1: *mut u16;
   let uVar2: u16;
   let puVar3: *mut u16;
-  let puVar4: *mut u8
-  let extraout_DX: *mut u8
+  let puVar4: *mut u8;
+  let extraout_DX: *mut u8;
   let iVar5: &mut Struct158;
   let uVar5: u16;
   let puStack14: *mut u16;

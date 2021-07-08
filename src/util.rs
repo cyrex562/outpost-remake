@@ -35,3 +35,7 @@ pub fn make_u8_ptr(address: u32) -> *mut u8 {
 pub fn get_string_at_addr(address: u32) -> String {
     unimplemented!()
 }
+
+pub fn ZEXT24(a: u16) -> u32 {
+    unimplemented!()
+}
