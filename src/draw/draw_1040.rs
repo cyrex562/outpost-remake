@@ -6,7 +6,7 @@ pub fn mix_draw_op_1040_21d6(param_1: u32,param_2: HWND16,param_3: u16)
   let paVar3: &mut Struct13;
   let ppcVar4: u32;
   let iVar5: i16;
-  HPALETTE16 b_force_background;
+  let b_force_background: HPALETTE16;
   COLORREF color;
   COLORREF color_00;
   HANDLE16 handle;
@@ -23,7 +23,7 @@ pub fn mix_draw_op_1040_21d6(param_1: u32,param_2: HWND16,param_3: u16)
   iVar6 = param_1;
   uVar8 = (iVar6 + 0x6);
   local_24 = BeginPaint16(param_2,&local_22);
-  paVar3 = *(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe);
+  paVar3 = (ctx.PTR__LOOP_1050_4230 + 0xe);
   b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
   ppcVar4 = ((iVar6 + 0x8e) + 0x4);
   (**ppcVar4)(0x1008,(iVar6 + 0x8e),0xffffffff,&local_24,param_3,uVar8);
@@ -116,9 +116,9 @@ pub fn draw_op_1040_5a06(param_1: u32,param_2: HWND16,param_3: u16)
   let uVar2: u32;
   let ppcVar3: u32;
   let uVar4: u32;
-  HPALETTE16 b_force_background;
+  let b_force_background: HPALETTE16;
   let iVar5: i16;
-  HPEN16 handle;
+  let handle: HPEN16;
   let handle_00: HGDIOBJ16;
   let x: i16;
   let y: i16;
@@ -156,7 +156,7 @@ pub fn draw_op_1040_5a06(param_1: u32,param_2: HWND16,param_3: u16)
   uVar8 = 0x1008;
   b_force_background =
        palette_op_1008_4e08
-                 (*(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe),&local_2c,in_DX,0x1008)
+                 ((ctx.PTR__LOOP_1050_4230 + 0xe),&local_2c,in_DX,0x1008)
   ;
   paStack54 = 0x0;
   if ((iVar6 + 0x98) != 0x0) {
@@ -266,7 +266,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14,in_win_handle_2: HWND16,para
   let y: i16;
   let iVar3: i16;
   COLORREF color;
-  HPEN16 handle;
+  let handle: HPEN16;
   let handle_00: HGDIOBJ16;
   let rect: *mut RECT16;
   HANDLE16 handle_01;
@@ -283,7 +283,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14,in_win_handle_2: HWND16,para
   let local_rect_12: RECT16;
   let iStack14: i16;
   let iStack12: i16;
-  HPALETTE16 HStack10;
+  let HStack10: HPALETTE16;
   let uStack8: u32;
   let local_hdc_4: HDC16;
   
@@ -364,7 +364,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14,in_win_handle_2: HWND16,para
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,INT16 param_4) -> u32
+pub fn set_text_bk_color_1040_7e5e(param_1: *mut u32,param_2: u16,param_3: u16,param_4: i16) -> u32
 
 {
   let ppcVar1: u32;
@@ -464,7 +464,7 @@ pub fn mixed_draw_op_1040_8a06(param_1: u32,param_2: HWND16,param_3: u16)
   let uVar2: u8;
   let paVar3: &mut Struct13;
   let uVar4: u16;
-  HPALETTE16 b_force_background;
+  let b_force_background: HPALETTE16;
   COLORREF color;
   COLORREF color_00;
   HANDLE16 handle;
@@ -477,13 +477,13 @@ pub fn mixed_draw_op_1040_8a06(param_1: u32,param_2: HWND16,param_3: u16)
   
   rect = (param_1 >> 0x10);
   local_24 = BeginPaint16(param_2,&local_22);
-  paVar3 = *(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe);
+  paVar3 = (ctx.PTR__LOOP_1050_4230 + 0xe);
   b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
   uVar5 = pass1_1008_4d72(paVar3);
   uVar4 = (uVar5 >> 0x10);
   uVar1 = *(uVar5 + 0x95);
   uVar2 = *(uVar5 + 0x96);
-  DrawIcon16(0x1008,*(INT16 *)(param_1 + 0x8e),0xa,0x14);
+  DrawIcon16(0x1008,(param_1 + 0x8e),0xa,0x14);
   color = SetBkColor16(ctx.s_tile2_bmp_1050_1538,0x0);
   color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
   HStack62 = 0x0;
@@ -651,14 +651,14 @@ pub fn draw_text_1040_9650(Uparam_1: i32,param_2: HWND16)
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,RECT16 *param_4)
+pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,param_4: &RECT16)
 {
   let iVar1: i16;
   let iVar2: i16;
   int16_t mode;
   let uVar3: u16;
-  HPEN16 handle;
-  HPEN16 handle_00;
+  let handle: HPEN16;
+  let handle_00: HPEN16;
   let handle_01: HGDIOBJ16;
   let color: *mut u8;
   COLORREF color_00;
@@ -918,7 +918,7 @@ pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18)
 }
 
 
-pub fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,param_3: HWND16,RECT16 *param_4)
+pub fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,param_3: HWND16,param_4: &RECT16)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -1017,7 +1017,7 @@ pub fn invalidate_rect_1040_c028(param_1: u32,param_2: i16,param_3: HWND16,RECT1
 pub fn unk_draw_op_1040_c226(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let uVar1: u32;
-  HPEN16 handle;
+  let handle: HPEN16;
   let handle_00: HGDIOBJ16;
   let uVar2: u16;
   let local_32: RECT16;
@@ -1082,7 +1082,7 @@ pub fn draw_line_1040_c302(param_1: u32,HDC16 param_2)
     iVar6 = uVar1;
     uVar1 &= 0xffff0000;
     uVar7 = (uVar1 >> 0x10);
-    LineTo16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar6 + 0x20),
+    LineTo16(ctx.s_tile2_bmp_1050_1538,(iVar6 + 0x20),
              (iVar6 + 0x22) / 0x2 + (uVar1 | iVar6 + 0x1e));
   }
   return;
@@ -1182,9 +1182,9 @@ pub fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
   let uVar6: u16;
   let HStack16: HGDIOBJ16;
   let HStack14: HGDIOBJ16;
-  HPEN16 HStack12;
+  let HStack12: HPEN16;
   let HStack10: HGDIOBJ16;
-  HPALETTE16 HStack8;
+  let HStack8: HPALETTE16;
   let uStack6: u16;
   
   uVar6 = (ctx.PTR__LOOP_1050_4230 >> 0x10);
@@ -1200,11 +1200,11 @@ pub fn draw_op_1040_c74c(param_1: *mut u32,param_2: u32,param_3: u16)
   HStack12 = CreatePen16(s_tile2_bmp_1050_1538,0x2,0x100);
   HStack14 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack10);
   HStack16 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack12);
-  Rectangle16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
-              *(INT16 *)(iVar5 + 0x22),0x0,0x0);
+  Rectangle16(ctx.s_tile2_bmp_1050_1538,(iVar5 + 0x24),
+              (iVar5 + 0x22),0x0,0x0);
   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x0,
            (iVar5 + 0x36) * 0x2 + (iVar5 + 0x2a));
-  LineTo16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar5 + 0x24),
+  LineTo16(ctx.s_tile2_bmp_1050_1538,(iVar5 + 0x24),
            (iVar5 + 0x36) * 0x2 + (iVar5 + 0x2a));
   SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack14);
   HVar4 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack16);
@@ -1230,7 +1230,7 @@ pub fn palette_op_1040_c886(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4)
   let uVar5: u16;
   let uStack12: u16;
   let puStack8: u32;
-  HPALETTE16 HStack4;
+  let HStack4: HPALETTE16;
   
   uVar4 = (param_1 >> 0x10);
   iVar3 = param_1;

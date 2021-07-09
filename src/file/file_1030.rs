@@ -71,7 +71,7 @@ file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,
                                 ctx.PTR_LOOP_1050_5f2e,0x1000);
     &iVar10.field_0x10 = uVar4;
     (&iVar10.field_0x10 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
-    puVar7 = *(uchar **)(&iVar10.field_0x10 + 0x2);
+    puVar7 = (&iVar10.field_0x10 + 0x2);
     uVar4 = (param_2 >> 0x10);
     BVar5 = read_file_1008_7dee(param_2,uVar4,&iVar10.field_0x10,0x0,
                                 puVar7,0x2,0x1008);
@@ -211,7 +211,7 @@ read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
   let unaff_SS: u16;
   let uVar4: u32;
   let lVar5: i32;
-  byte *pbStack60;
+  let pbStack60: *mut u8;
   let lStack56: i32;
   let uStack20: u32;
   
@@ -234,7 +234,7 @@ read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
           lStack56 = WIN16_hread(0x1000,(SEGPTR)*param_2,
                                  CONCAT22(*param_3,(*param_2 >> 0x10)));
           uVar3 = (lStack56 >> 0x10);
-          _lclose16((HFILE16)s_tile2_bmp_1050_1538);
+          _lclose16(s_tile2_bmp_1050_1538);
           pbStack60 = *param_3;
           while (lStack56 != 0x0) {
             if (((*pbStack60 + 0x608b) & 0x20) == 0x0) {
@@ -336,7 +336,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
               (uVar8 + 0x16) = 0x0;
             }
             else {
-              pass1_1000_5586((uchar *)0x3e38,0x1008,iVar2,0x6,uVar7,puVar9);
+              pass1_1000_5586(0x3e38,0x1008,iVar2,0x6,uVar7,puVar9);
               uVar8 = &iVar12.field_0x10;
               (uVar8 + 0x16) = uStack1040;
             }

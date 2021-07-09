@@ -90,16 +90,16 @@ pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,p
     break;
   case 0xa:
     mem_op_1000_179c(0x1c,param_4,0x1000);
-    if ((uchar *)(param_4 | paVar4) == 0x0) goto LAB_1010_2126;
-    uVar11 = pass1_1010_0eac((uchar *)paVar4,param_4,param_2,
+    if ((param_4 | paVar4) == 0x0) goto LAB_1010_2126;
+    uVar11 = pass1_1010_0eac(paVar4,param_4,param_2,
                              (param_4 | paVar4),param_3);
     puVar3 = (uVar11 >> 0x10);
     paVar4 = uVar11;
     break;
   case 0xb:
     mem_op_1000_179c(0x1c,param_4,0x1000);
-    if ((uchar *)(param_4 | paVar4) == 0x0) goto LAB_1010_2126;
-    uVar11 = pass1_1008_aefe((uchar *)paVar4,param_4,param_2,
+    if ((param_4 | paVar4) == 0x0) goto LAB_1010_2126;
+    uVar11 = pass1_1008_aefe(paVar4,param_4,param_2,
                              (param_4 | paVar4),param_3);
     puVar3 = (uVar11 >> 0x10);
     paVar4 = uVar11;
@@ -150,7 +150,7 @@ pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,p
     mem_op_1000_179c(0x58,param_4,0x1000);
     puVar3 = (param_4 | paVar4);
     if (puVar3 == 0x0) goto LAB_1010_2126;
-    pass1_1008_9d36((uchar *)paVar4,param_4,param_2,param_3);
+    pass1_1008_9d36(paVar4,param_4,param_2,param_3);
     break;
   case 0x28:
     mem_op_1000_179c(0x2c,param_4,0x1000);
@@ -212,7 +212,7 @@ pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,p
     uVar2 = 0x60;
     uVar7 = 0x1000;
     mem_op_1000_179c(0x60,param_4,0x1000);
-    if ((uchar *)(param_4 | paVar4) == 0x0) {
+    if ((param_4 | paVar4) == 0x0) {
 //LAB_1010_2680:
       uVar7 = 0x1000;
       paVar4 = 0x0;
@@ -247,7 +247,7 @@ pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,p
 //     TODO: goto LAB_1010_25bb;
   case 0x34:
     mem_op_1000_179c(0x72,param_4,0x1000);
-    if ((uchar *)(param_4 | paVar4) == 0x0) goto LAB_1010_25b8;
+    if ((param_4 | paVar4) == 0x0) goto LAB_1010_25b8;
     uVar11 = pass1_1010_1b6e(paVar4,param_4,param_2,param_3,
                              (param_4 | paVar4));
     uVar7 = (uVar11 >> 0x10);
@@ -336,7 +336,7 @@ pub fn mixed_1010_20ba(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8,p
     puVar3 = extraout_DX;
 //LAB_1010_2683:
     *(astruct_636 **)(param_2 * 0x4 + iVar5) = paVar4;
-    *(uchar **)(param_2 * 0x4 + iVar5 + 0x2) = puVar3;
+    (param_2 * 0x4 + iVar5 + 0x2) = puVar3;
     ppcVar1 = (paVar4 + 0x10);
     (**ppcVar1)(uVar7,paVar4,puVar3,uVar2);
     break;

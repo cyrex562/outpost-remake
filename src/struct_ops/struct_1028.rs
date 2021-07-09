@@ -485,7 +485,7 @@ struct_op_1028_933c(param_1: &mut Struct100,param_2: u16,param_3: u16,param_4: u
   (iVar1 + 0x122) = param_3;
   param_1.field_0x0 = 0x9934;
   (iVar1 + 0x2) = &USHORT_1050_1028;
-  sys_1000_3f9c((uchar *)(iVar1 + 0x8),puVar2,
+  sys_1000_3f9c((iVar1 + 0x8),puVar2,
                 s_SCPutBldg_site_0x_08lx__bldg__u__1050_50ce,
                 ctx.data_seg,param_8,&stack0xfffe,puVar2,0x1000,
                 param_9,param_10);
@@ -545,7 +545,7 @@ pub fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
   else {
     struct_1028_d59c((param_2 & 0xffff | param_3 << 0x10),puVar2);
     param_1 = uVar1;
-    *(uchar **)(param_1 + 0x2) = puVar2;
+    (param_1 + 0x2) = puVar2;
   }
   return;
 }

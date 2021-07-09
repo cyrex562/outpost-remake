@@ -72,6 +72,19 @@ pub struct FLOATING_SAVE_AREA {
     pub cr0_npx_state: u32,
 }
 
+// struct PALETTEENTRY {
+//     BYTE pe_red;
+//     BYTE pe_green;
+//     BYTE pe_blue;
+//     BYTE pe_flags;
+// };
+pub struct PALETTEENTRY {
+    pe_red: u8,
+    pe_green: u8,
+    pe_blue: u8,
+    pe_flags: u8
+}
+
 impl FLOATING_SAVE_AREA {
     pub fn new() -> FLOATING_SAVE_AREA {
         FLOATING_SAVE_AREA {
@@ -174,42 +187,42 @@ impl CONTEXT {
 }
 
 pub struct RECT16 {
-    // INT16 x;
+    // x: i16;
     pub x: i16,
-    // INT16 y;
+    // y: i16;
     pub y: i16,
 }
 
 pub struct POINT16 {
-    // INT16 x;
+    // x: i16;
     pub x: i16,
-    // INT16 y;
+    // y: i16;
     pub y: i16,
 }
 
 pub struct WINDOWPLACEMENT16 {
-    // UINT16 length;
+    // Ulength: i16;
     pub length: u16,
-    // UINT16 flags;
+    // Uflags: i16;
     pub flags: u16,
-    // UINT16 show_cmd;
+    // Ushow_cmd: i16;
     pub show_cmd: u16,
-    // struct POINT16 pt_min_position;
+    // struct POpt_min_position: i16;
     pub pt_min_position: POINT16,
-    // struct POINT16 pt_max_position;
+    // struct POpt_max_position: i16;
     pub pt_max_position: POINT16,
     // struct let rc_normal_position: RECT16;
     pub rc_normal_position: RECT16,
 }
 
 pub struct WNDCLASS16 {
-    // UINT16 style;
+    // Ustyle: i16;
     pub style: u16,
     // LPVOID lpfn_wnd_proc;
     pub lpfn_wnd_proc: u32,
-    // INT16 cb_cls_extra;
+    // cb_cls_extra: i16;
     pub cb_cls_extra: i16,
-    // INT16 cb_wnd_extra;
+    // cb_wnd_extra: i16;
     pub cb_wnd_extra: i16,
     // HANDLE16 h_instance;
     pub h_instance: HANDLE16,
@@ -219,9 +232,9 @@ pub struct WNDCLASS16 {
     pub h_cursor: HCURSOR16,
     // let hbr_background: HBRUSH16;
     pub hbr_background: HBRUSH16,
-    // SEGPTR lpsz_menu_name;
+    // lpsz_menu_name: SEGPTR;
     pub lpsz_menu_name: SEGPTR,
-    // SEGPTR lpsz_class_name;
+    // lpsz_class_name: SEGPTR;
     pub lpsz_class_name: SEGPTR,
 }
 
@@ -230,9 +243,9 @@ pub struct WNDCLASS16 {
 // typedef struct TwoWords TwoWords, *PTwoWords;
 
 struct TwoWords {
-    // UINT16 a_0x0;
+    // Ua_0x0: i16;
     a_0x0: u16,
-    // UINT16 b_0x2;
+    // Ub_0x2: i16;
     b_0x2: u16,
 }
 
@@ -258,7 +271,7 @@ pub struct LOGPALETTE {
 pub struct MSG16 {
     // HWND16 hwnd;
     pub hwnd: HWND16,
-    // UINT16 message;
+    // Umessage: i16;
     pub message: u16,
     // WPARAM16 wparam;
     pub wparam: WPARAM16,
@@ -266,7 +279,7 @@ pub struct MSG16 {
     pub lparam: LPARAM,
     // DWORD time;
     pub time: u32,
-    // struct POINT16 pt;
+    // struct POpt: i16;
     pub pt: POINT16,
 }
 
@@ -556,7 +569,5 @@ pub struct tagBITMAPINFOHEADER {
 // typedef ulong ULONG;
 
 // typedef uchar UCHAR;
-
-
 
 // typedef void * LPCVOID;

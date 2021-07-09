@@ -213,7 +213,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   valist = (param_1 >> 0x10);
   iVar16 = param_1;
   puVar5 = (iVar16 + 0x12);
-  puVar13 = *(uchar **)(iVar16 + 0x14);
+  puVar13 = (iVar16 + 0x14);
   if ((puVar13 | puVar5) != 0x0) {
     ppcVar3 = *puVar5;
     (**ppcVar3)();
@@ -346,7 +346,7 @@ pub fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
   valist = (param_1 >> 0x10);
   iVar21 = param_1;
   puVar6 = (iVar21 + 0xe);
-  puVar14 = *(uchar **)(iVar21 + 0x10);
+  puVar14 = (iVar21 + 0x10);
   if ((puVar14 | puVar6) != 0x0) {
     ppcVar4 = *puVar6;
     (**ppcVar4)();

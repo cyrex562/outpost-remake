@@ -136,7 +136,7 @@ pub fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
     uVar9 = (uVar5 >> 0x10);
     iVar11 = uVar5;
     (iVar11 + iStack32 * 0x4) = iVar8.field_0x60 + uStack30 * 0x8;
-    *(uchar **)(iVar11 + iStack32 * 0x4 + 0x2) = puVar7;
+    (iVar11 + iStack32 * 0x4 + 0x2) = puVar7;
     uStack30 += 0x3;
     iStack32 += 0x1;
   }
@@ -144,7 +144,7 @@ pub fn struct_1010_0f9c(param_1: *mut u32,param_2: u16,param_3: u16)
 }
 
 
-astruct_79 *  struct_op_1010_1d48(param_1: &mut Struct79,param_2: u16)
+pub fn  struct_op_1010_1d48(param_1: &mut Struct79,param_2: u16) -> *mut Struct79
 
 {
   let iVar1: &mut Struct79;

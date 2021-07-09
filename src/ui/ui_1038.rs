@@ -653,7 +653,7 @@ send_dlg_item_int_1038_94da
       uStack10 = 0x0;
     }
     iVar2 = iStack8 * 0xe;
-    GetDlgItem16(ctx.s_tile2_bmp_1050_1538,*(INT16 *)(iVar2 + 0x5a72));
+    GetDlgItem16(ctx.s_tile2_bmp_1050_1538,(iVar2 + 0x5a72));
     SetFocus16(ctx.s_tile2_bmp_1050_1538);
     if ((uStack10 != 0x0) &&
        (lVar3 = unk_win_ui_op_1038_9820
@@ -964,7 +964,7 @@ pub fn unk_win_ui_op_1038_9bc8(param_1: &mut Struct1)
   iStack36 = 0x0;
   HVar6 = 0x1010;
   while (iVar3 = iStack36 * 0x2, (iVar3 + iVar5) != 0x0) {
-    HVar6 = GetDlgItem16(HVar6,*(INT16 *)(iVar3 + iVar5));
+    HVar6 = GetDlgItem16(HVar6,(iVar3 + iVar5));
     *(HWND16 *)(iVar8 + iVar3 + 0x94) = HVar6;
     iStack36 += 0x1;
     piVar1 = (iVar8 + 0x128);
@@ -1006,7 +1006,7 @@ enable_window_1038_9cec
     iStack12 = 0x0;
     HVar5 = 0x1010;
     while (iVar2 = iStack12 * 0x2, (iVar2 + iVar4) != 0x0) {
-      HVar5 = GetDlgItem16(HVar5,*(INT16 *)(iVar2 + iVar4));
+      HVar5 = GetDlgItem16(HVar5,(iVar2 + iVar4));
       *(HWND16 *)(param_1 + iVar2 + 0x94) = HVar5;
       iStack12 += 0x1;
       piVar1 = (param_1 + 0x128);
@@ -1349,7 +1349,7 @@ pub fn set_win_pos_1038_abdc(param_1: HWND16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn unk_win_ui_op_1038_ac38(INT16 param_1,param_2: u16)
+pub fn unk_win_ui_op_1038_ac38(param_1: i16,param_2: u16)
 {
   let uVar1: u16;
   let iVar2: i16;
@@ -1919,7 +1919,7 @@ LRESULT  send_msg_1038_c228(param_1: u32,param_2: HWND16)
 
 pub fn enable_win_1038_c294(param_1: u32)
 {
-  SEGPTR lp_string;
+  lp_string: SEGPTR;
   let uVar1: u16;
   let unaff_SS: u16;
   let uStack12: u32;
@@ -2630,15 +2630,15 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
   }
   else {
   }
-  *(uchar **)(param_1 + -0x1c) = ctx.PTR_LOOP_1050_5f2c;
-  *(uchar **)(param_1 + -0x1a) = ctx.PTR_LOOP_1050_5f2e;
+  (param_1 + -0x1c) = ctx.PTR_LOOP_1050_5f2c;
+  (param_1 + -0x1a) = ctx.PTR_LOOP_1050_5f2e;
   uVar5 = fn_ptr_op_1000_1708(((param_1 + -0x6) + 0x2) * 0x4,0x0,0x1,
                               ctx.PTR_LOOP_1050_5f2c,PTR_LOOP_1050_5f2e,0x1000);
   uVar2 = (param_1 + 0x6);
   uVar9 = (uVar2 >> 0x10);
   iVar7 = uVar2;
   (iVar7 + 0x96) = uVar5;
-  *(uchar **)(iVar7 + 0x98) = ctx.PTR_LOOP_1050_5f2e;
+  (iVar7 + 0x98) = ctx.PTR_LOOP_1050_5f2e;
   (param_1 + -0x8) = 0x1;
   while (iVar7 = (param_1 + -0x6), piVar1 = (param_1 + -0x8),
         *piVar1 == iVar7 || *piVar1 < iVar7) {
@@ -2649,7 +2649,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
                               (param_1 + -0x8));
     puVar6 = (puVar10 >> 0x10);
     (param_1 + -0x1c) = puVar10;
-    *(uchar **)(param_1 + -0x1a) = puVar6;
+    (param_1 + -0x1a) = puVar6;
     (param_1 + -0x24) = *puVar10;
     (param_1 + -0x22) = (puVar10 + 0x2);
     (param_1 + -0x20) = 0x1;
@@ -2658,7 +2658,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
     MapDialogRect16(0x1010,rect);
     mem_op_1000_179c(0x42,puVar6,0x1000);
     *(astruct_160 **)(param_1 + -0x28) = rect;
-    *(uchar **)(param_1 + -0x26) = puVar6;
+    (param_1 + -0x26) = puVar6;
     ctx.PTR_LOOP_1050_5f2e = (puVar6 | rect);
     if (ctx.PTR_LOOP_1050_5f2e == 0x0) {
       uVar2 = (param_1 + 0x6);
@@ -2680,7 +2680,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
       iVar7 = uVar2;
       iVar8 = (param_1 + -0x8) * 0x4;
       *(astruct_160 **)(iVar7 + iVar8) = rect;
-      *(uchar **)(iVar7 + iVar8 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
+      (iVar7 + iVar8 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
     }
     uVar2 = (param_1 + 0x6);
     uVar2 = (uVar2 + 0x96);
@@ -3255,7 +3255,7 @@ pub fn win_ui_op_1038_ec1a(param_1: u16,param_2: i16)
   }
   else {
   }
-  *(uchar **)(param_2 + -0x18) = ctx.PTR_LOOP_1050_5f2c;
+  (param_2 + -0x18) = ctx.PTR_LOOP_1050_5f2c;
   (param_2 + -0x16) = ctx.PTR_LOOP_1050_5f2e;
   uVar4 = fn_ptr_op_1000_1708(((param_2 + -0x6) + 0x2) * 0x4,0x0,0x1,
                               ctx.PTR_LOOP_1050_5f2c,PTR_LOOP_1050_5f2e,0x1000);
@@ -3273,7 +3273,7 @@ pub fn win_ui_op_1038_ec1a(param_1: u16,param_2: i16)
                               (param_2 + -0x8));
     puVar5 = (puVar11 >> 0x10);
     (param_2 + -0x18) = puVar11;
-    *(uchar **)(param_2 + -0x16) = puVar5;
+    (param_2 + -0x16) = puVar5;
     (param_2 + -0x20) = *puVar11;
     (param_2 + -0x1e) = (puVar11 + 0x2);
     (param_2 + -0x1c) = 0x1;
@@ -3282,7 +3282,7 @@ pub fn win_ui_op_1038_ec1a(param_1: u16,param_2: i16)
     MapDialogRect16(0x1010,rect);
     mem_op_1000_179c(0x42,puVar5,0x1000);
     *(astruct_160 **)(param_2 + -0x24) = rect;
-    *(uchar **)(param_2 + -0x22) = puVar5;
+    (param_2 + -0x22) = puVar5;
     uVar6 = puVar5 | rect;
     if (uVar6 == 0x0) {
       uVar2 = (param_2 + 0x6);
@@ -3671,7 +3671,7 @@ LRESULT  win_ui_op_1040_0558(param_1: u32,param_2: i16,param_3: HWND16)
   let uVar6: u16;
   
   iVar1 = param_2 * 0xe;
-  GetDlgItem16(param_3,*(INT16 *)(iVar1 + 0x5c64));
+  GetDlgItem16(param_3,(iVar1 + 0x5c64));
   iVar2 = pass1_1010_659a((param_1 + 0x8e),(iVar1 + 0x5c66),
                           unaff_SS);
   if ((iVar2 == 0x0) && ((iVar1 + 0x5c66) != 0xa)) {

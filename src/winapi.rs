@@ -1,6 +1,11 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{ATOM, BITMAPINFO, COLORREF, CONTEXT, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16, HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR, WNDCLASS16, WPARAM16};
+use crate::win_struct::{
+    ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16,
+    HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16,
+    HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR,
+    WINDOWPLACEMENT16, WNDCLASS16, WPARAM16,
+};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)
@@ -11,11 +16,11 @@ pub fn FatalExit() {
 pub fn GetVersion16() -> u32 {
     unimplemented!()
 }
-// HGLOBAL16 GLobalAlloc16(UINT16 flags, DWORD size)
+// HGLOBAL16 GLobalAlloc16(Uflags: i16, DWORD size)
 pub fn GLobalAlloc16(flags: u16, size: u32) -> HGLOBAL16 {
     unimplemented!()
 }
-// HGLOBAL16 GlobalReAlloc16(HGLOBAL16 handle, DWORD size, UINT16 flags)
+// HGLOBAL16 GlobalReAlloc16(HGLOBAL16 handle, DWORD size, Uflags: i16)
 pub fn GlobalReAlloc16(handle: HGLOBAL16, size: u32, flags: u16) -> HGLOBAL16 {
     unimplemented!()
 }
@@ -23,7 +28,7 @@ pub fn GlobalReAlloc16(handle: HGLOBAL16, size: u32, flags: u16) -> HGLOBAL16 {
 pub fn GlobalFree16(handle: HGLOBAL16) -> HGLOBAL16 {
     unimplemented!()
 }
-// SEGPTR WIN16_GlobalLock16(HGLOBAL16 handle)
+// WIN16_GlobalLock16: SEGPTR(HGLOBAL16 handle)
 pub fn WIN16_GlobalLock16(handle: HGLOBAL16) -> SEGPTR {
     unimplemented!()
 }
@@ -47,7 +52,7 @@ pub fn LockSegment16(handle: HGLOBAL16) -> HGLOBAL16 {
 pub fn WaitEvent16(task: HTASK16) -> bool {
     unimplemented!()
 }
-// INT16 GetModuleFileName16(HINSTANCE16 h_module, LPSTR lp_file_name, INT16 n_size)
+// GetModuleFileName16: i16(HINSTANCE16 h_module, LPSTR lp_file_name, n_size: i16)
 pub fn GetModuleFileName16(h_module: HINSTANCE16, lp_file_name: &String, n_size: i16) -> i16 {
     unimplemented!()
 }
@@ -67,7 +72,7 @@ pub fn FindResource16(h_module: HMODULE16, name: &String, rsrc_type: &String) ->
 pub fn LoadResource16(h_module: HMODULE16, h_rsrc: HRSRC16) -> HGLOBAL16 {
     unimplemented!()
 }
-// SEGPTR WIN16_LockResource16(HGLOBAL16 handle)
+// WIN16_LockResource16: SEGPTR(HGLOBAL16 handle)
 pub fn WIN16_LockResource16(handle: HGLOBAL16) -> SEGPTR {
     unimplemented!()
 }
@@ -79,19 +84,19 @@ pub fn FreeResource16(handle: HGLOBAL16) -> bool {
 pub fn _lclose16(h_file: HFILE16) -> HFILE16 {
     unimplemented!()
 }
-// HFILE16 _lcreat16(LPCSTR path, INT16 attr)
+// HFILE16 _lcreat16(LPCSTR path, attr: i16)
 pub fn _lcreat16(path: &String, attr: i16) -> HFILE16 {
     unimplemented!()
 }
-// long _llseek16(HFILE16 h_file, long l_offset, INT16 n_origin)
+// long _llseek16(HFILE16 h_file, long l_offset, n_origin: i16)
 pub fn _llseek16(h_file: HFILE16, l_offset: libc::c_long, n_origin: i16) -> libc::c_long {
     unimplemented!()
 }
-// HFILE16 _lopen16(LPCSTR path, INT16 mode)
+// HFILE16 _lopen16(LPCSTR path, mode: i16)
 pub fn _lopen16(path: &String, mode: i16) -> HFILE16 {
     unimplemented!()
 }
-// INT16 lstrlen16(LPCSTR str)
+// lstrlen16: i16(LPCSTR str)
 pub fn lstrlen16(a: &String) -> i16 {
     unimplemented!()
 }
@@ -103,7 +108,7 @@ pub fn InitTask16(context: &mut CONTEXT) {
 pub fn DOS3Call(context: &mut CONTEXT) {
     unimplemented!()
 }
-// UINT16 SetErrorMode16(UINT16 mode)
+// USetErrorMode16: i16(Umode: i16)
 pub fn SetErrorMode16(mode: u16) -> u16 {
     unimplemented!()
 }
@@ -119,23 +124,35 @@ pub fn __AHINCR() {
 pub fn OutputDebugString16(str: &mut String) {
     unimplemented!()
 }
-// INT16 GetPrivateProfileString16(LPCSTR section, LPCSTR entry, LPCSTR def_val, LPSTR buffer, UINT16 len, LPCSTR filename)
-pub fn GetPrivateProfileString16(section: &String, entry: &String, def_val &String, buffer: &mut String, len: usize, filename: &String) -> i16 {
+// GetPrivateProfileString16: i16(LPCSTR section, LPCSTR entry, LPCSTR def_val, LPSTR buffer, Ulen: i16, LPCSTR filename)
+pub fn GetPrivateProfileString16(
+    section: &String,
+    entry: &String,
+    def_val: &String,
+    buffer: &mut String,
+    len: usize,
+    filename: &String,
+) -> i16 {
     unimplemented!()
 }
 // BOOL16 WritePrivateProfileString16(LPCSTR section, LPCSTR entry, LPCSTR string, LPCSTR filename)
-pub fn WritePrivateProfileString16(section: &String, entry: &String, str_to_write: &String, filename: &String) -> bool {
+pub fn WritePrivateProfileString16(
+    section: &String,
+    entry: &String,
+    str_to_write: &String,
+    filename: &String,
+) -> bool {
     unimplemented!()
 }
-// SEGPTR GetDOSEnvironment16(void)
+// GetDOSEnvironment16: SEGPTR(void)
 pub fn GetDOSEnvironment16() -> SEGPTR {
     unimplemented!()
 }
-// void FatalAppExit16(UINT16 action, LPCSTR str)
+// void FatalAppExit16(Uaction: i16, LPCSTR str)
 pub fn FatalAppExit16(action: u16, reason: &str) {
     unimplemented!()
 }
-// HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, UINT16 n_cmd_show)
+// HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, Un_cmd_show: i16)
 pub fn WinExec16(lp_cmd_line: &String, n_cmd_show: u16) -> HINSTANCE16 {
     unimplemented!()
 }
@@ -163,7 +180,7 @@ pub fn GlobalPageUnlock16(handle: HGLOBAL16) -> u16 {
 pub fn hmemcpy16(dst: *mut u8, src: *mut u8, count: libc::c_long) {
     unimplemented!()
 }
-// long WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count)
+// long WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count)
 pub fn WIN16_hread(h_file: HFILE16, buffer: SEGPTR, count: usize) -> usize {
     unimplemented!()
 }
@@ -183,27 +200,27 @@ pub fn SetMapMode16(hdc: HDC16, mode: i16) -> i16 {
 pub fn SetTextColor16(hdc: HDC16, color: COLORREF) -> COLORREF {
     unimplemented!()
 }
-// BOOL16 LineTo16(HDC16 hdc, INT16 x, INT16 y)
+// BOOL16 LineTo16(HDC16 hdc, x: i16, y: i16)
 pub fn LineTo16(hdc: HDC16, x: i16, y: i16) -> bool {
     unimplemented!()
 }
-// DWORD MoveTo16(HDC16 hdc, INT16 x, INT16 y)
+// DWORD MoveTo16(HDC16 hdc, x: i16, y: i16)
 pub fn MoveTo16(hdc: HDC16, x: i16, y: i16) -> u32 {
     unimplemented!()
 }
-// BOOL16 Ellipse16(HDC16 hdc, INT16 left, INT16 top, INT16 right, INT16 bottom)
+// BOOL16 Ellipse16(HDC16 hdc, left: i16, top: i16, right: i16, bottom: i16)
 pub fn Ellipse16(hdc: HDC16, left: i16, top: i16, right: i16, bottom: i16) -> bool {
     unimplemented!()
 }
-// BOOL16 Rectangle16(HDC16 hdc, INT16 left, INT16 top, INT16 right, INT16 bottom)
+// BOOL16 Rectangle16(HDC16 hdc, left: i16, top: i16, right: i16, bottom: i16)
 pub fn Rectangle16(hdc: HDC16, left: i16, top: i16, right: i16, bottom: i16) -> bool {
     unimplemented!()
 }
-// BOOL16 TextOut16(HDC16 hdc, INT16 x, INT16 y, char * str, INT16 count)
+// BOOL16 TextOut16(HDC16 hdc, x: i16, y: i16, char * str, count: i16)
 pub fn TextOut16(hdc: HDC16, x: i16, y: i16, out_text: &String, count: usize) -> bool {
     unimplemented!()
 }
-// BOOL16 Polygon16(HDC16 hdc, POINT16 * pt, INT16 count)
+// BOOL16 Polygon16(HDC16 hdc, POINT16 * pt, count: i16)
 pub fn Polygon16(hdc: HDC16, pt: &[POINT16], count: i16) -> bool {
     unimplemented!()
 }
@@ -212,10 +229,15 @@ pub fn SelectObject16(hdc: HDC16, handle: HGDIOBJ16) -> HGDIOBJ16 {
     unimplemented!()
 }
 // HDC16 CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output, DEVMODEA * init_data)
-pub fn CreateDC16(driver: &String, device: &String, output: &String, init_data: &_devicemodeA) -> HDC16 {
+pub fn CreateDC16(
+    driver: &String,
+    device: &String,
+    output: &String,
+    init_data: &_devicemodeA,
+) -> HDC16 {
     unimplemented!()
 }
-// HPEN16 CreatePen16(INT16 style, INT16 width, COLORREF color)
+// HPEN16 CreatePen16(style: i16, width: i16, COLORREF color)
 pub fn CreatePen16(style: i16, width: i16, color: COLORREF) -> HPEN16 {
     unimplemented!()
 }
@@ -235,15 +257,15 @@ pub fn DeleteObject16(obj: HGDIOBJ16) -> bool {
 pub fn GetCurrentPosition16(hdc: HDC16) -> u32 {
     unimplemented!()
 }
-// INT16 GetDeviceCaps16(HDC16 hdc, INT16 cap)
+// GetDeviceCaps16: i16(HDC16 hdc, cap: i16)
 pub fn GetDeviceCaps16(hdc: HDC16, cap: i16) -> i16 {
     unimplemented!()
 }
-// HGDIOBJ16 GetStockObject16(INT16 obj)
+// HGDIOBJ16 GetStockObject16(obj: i16)
 pub fn GetStockObject16(obj: i16) -> HGDIOBJ16 {
     unimplemented!()
 }
-// DWORD GetTextExtent16(HDC16 hdc, LPCSTR str, INT16 count)
+// DWORD GetTextExtent16(HDC16 hdc, LPCSTR str, count: i16)
 pub fn GetTextExtent16(hdc: HDC16, text: &String, count: usize) -> u32 {
     unimplemented!()
 }
@@ -255,39 +277,69 @@ pub fn UnrealizeObject16(obj: HGDIOBJ16) -> bool {
 pub fn CreatePalette16(palette: &mut LOGPALETTE) -> HPALETTE16 {
     unimplemented!()
 }
-// UINT16 GetSystemPaletteEntries(HDC16 hdc, UINT16 start, UINT16 count, PALETTEENTRY * entries)
-pub fn GetSystemPaletteEntries(hdc: HDC16, start: u16, count: u16, entries: &[PALETTEENTRY]) -> u16 {
-
+// UGetSystemPaletteEntries: i16(HDC16 hdc, Ustart: i16, Ucount: i16, PALETTEENTRY * entries)
+pub fn GetSystemPaletteEntries(
+    hdc: HDC16,
+    start: u16,
+    count: u16,
+    entries: &[PALETTEENTRY],
+) -> u16 {
 }
-// INT16 StretchDIBits16(HDC16 hdc, INT16 x_dst, INT16 y_dst, INT16 width_dst, INT16 height_dst, INT16 x_src, INT16 y_src, INT16 width_src, INT16 height_src, PVOID bits, BITMAPINFO * info, UINT16 w_usage, DWORD dw_rop)
-pub fn StretchDIBits16(hdc: HDC16, x_dst: i16, y_dst: i16, width_dst: i16, height_dst: i16, x_src: i16, width_src: i16, height_src: i16, bits: *mut u8, info: &BITMAPINFO, w_usage: u16, dw_rop: u32) -> i16 {
+// StretchDIBits16: i16(HDC16 hdc, x_dst: i16, y_dst: i16, width_dst: i16, height_dst: i16, x_src: i16, y_src: i16, width_src: i16, height_src: i16, PVOID bits, BITMAPINFO * info, Uw_usage: i16, DWORD dw_rop)
+pub fn StretchDIBits16(
+    hdc: HDC16,
+    x_dst: i16,
+    y_dst: i16,
+    width_dst: i16,
+    height_dst: i16,
+    x_src: i16,
+    width_src: i16,
+    height_src: i16,
+    bits: *mut u8,
+    info: &BITMAPINFO,
+    w_usage: u16,
+    dw_rop: u32,
+) -> i16 {
     unimplemented!()
 }
-// INT16 SetDIBitsToDevice(HDC16 hdc, INT16 x_dest, INT16 y_dest, INT16 cx, INT16 cy, INT16 x_src, INT16 y_src, UINT16 startscan, UINT16 lines, LPCVOID bits, BITMAPINFO * info, UINT16 coloruse)
-pub fn SetDIBitsToDevice(hdc: HDC16, x_dest: i16, y_dest: i16, cx: i16, cy: i16, x_src: i16, y_src: i16, startscan: u16, lines: u16, bits: *mut u8, info: &BITMAPINFO, coloruse: u16) -> i16 {
+// SetDIBitsToDevice: i16(HDC16 hdc, x_dest: i16, y_dest: i16, cx: i16, cy: i16, x_src: i16, y_src: i16, Ustartscan: i16, Ulines: i16, LPCVOID bits, BITMAPINFO * info, Ucoloruse: i16)
+pub fn SetDIBitsToDevice(
+    hdc: HDC16,
+    x_dest: i16,
+    y_dest: i16,
+    cx: i16,
+    cy: i16,
+    x_src: i16,
+    y_src: i16,
+    startscan: u16,
+    lines: u16,
+    bits: *mut u8,
+    info: &BITMAPINFO,
+    coloruse: u16,
+) -> i16 {
     unimplemented!()
 }
-// BOOL16 MoveToEx16(HDC16 hdc, INT16 x, INT16 y, POINT16 * pt)
+// BOOL16 MoveToEx16(HDC16 hdc, x: i16, y: i16, POINT16 * pt)
 pub fn MoveToEx16(hdc: HDC16, x: i16, y: i16, pt: &POINT16) -> bool {
     unimplemented!()
 }
-// INT16 MessageBox16(HWND16 hwnd, LPCSTR text, LPCSTR title, UINT16 type)
+// MessageBox16: i16(HWND16 hwnd, LPCSTR text, LPCSTR title, Utype: i16)
 pub fn MessageBox16(hwnd: HWND16, text: &String, title: &String, box_type: u16) -> i16 {
     unimplemented!()
 }
-// INT16 InitApp16(HINSTANCE16 h_instance)
+// InitApp16: i16(HINSTANCE16 h_instance)
 pub fn InitApp16(h_inst: HINSTANCE16) -> i16 {
     unimplemented!()
 }
-// void PostQuitMessage16(INT16 exit_code)
+// void PostQuitMessage16(exit_code: i16)
 pub fn PostQuitMessage16(exit_code: i16) {
     unimplemented!()
 }
-// UINT16 SetTimer16(HWND16 hwnd, UINT16 id, UINT16 timeout, LPVOID proc)
+// USetTimer16: i16(HWND16 hwnd, Uid: i16, Utimeout: i16, LPVOID proc)
 pub fn SetTimer16(hwnd: HWND16, id: u16, timeout: u16, proc: u32) -> u16 {
     unimplemented!()
 }
-// BOOL16 KillTimer16(HWND16 hwnd, UINT16 id)
+// BOOL16 KillTimer16(HWND16 hwnd, Uid: i16)
 pub fn KillTimer16(hwnd: HWND16, id: u16) -> bool {
     unimplemented!()
 }
@@ -316,7 +368,7 @@ pub fn GetProp16(hwnd: HWND16, text: &String) -> HANDLE16 {
     unimplemented!()
 }
 // BOOL16 SetProp16(HWND16 hwnd, LPCSTR str, HANDLE16 handle)
-pub fn SetProp16(hwnd: HWND16, text: &String, handle:HANDLE16) -> bool {
+pub fn SetProp16(hwnd: HWND16, text: &String, handle: HANDLE16) -> bool {
     unimplemented!()
 }
 // void ClientToScreen16(HWND16 hwnd, POINT16 * lppnt)
@@ -347,11 +399,11 @@ pub fn EnableWindow16(hwnd: HWND16, enable: bool) -> bool {
 pub fn IsWindowEnabled16(hwnd: HWND16) -> bool {
     unimplemented!()
 }
-// INT16 GetWindowText16(HWND16 hwnd, SEGPTR lp_string, INT16 n_max_count)
+// GetWindowText16: i16(HWND16 hwnd, lp_string: SEGPTR, n_max_count: i16)
 pub fn GetWindowText16(hwnd: HWND16, lp_string: &SEGPTR, n_max_count: i16) -> i16 {
     unimplemented!()
 }
-// BOOL16 SetWindowText16(HWND16 hwnd, SEGPTR lp_string)
+// BOOL16 SetWindowText16(HWND16 hwnd, lp_string: SEGPTR)
 pub fn SetWindowText16(hwnd: HWND16, lp_string: &SEGPTR) -> bool {
     unimplemented!()
 }
@@ -363,11 +415,23 @@ pub fn BeginPaint16(hwnd: HWND16, lps: &mut PAINSTRUCT16) -> HDC16 {
 pub fn EndPaint16(hwnd: HWND16, lps: &mut PAINSTRUCT16) -> bool {
     unimplemented!()
 }
-// HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, INT16 x, INT16 y, INT16 width, INT16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
-pub fn CreateWindow16(class_name: &String, window_name: &String, style: u32, x: i16, y: i16, width: i16, height: i16, parent: HWND16, hmenu: HMENU16, instance: HINSTANCE16, data: *mut u8) -> HWND16 {
+// HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
+pub fn CreateWindow16(
+    class_name: &String,
+    window_name: &String,
+    style: u32,
+    x: i16,
+    y: i16,
+    width: i16,
+    height: i16,
+    parent: HWND16,
+    hmenu: HMENU16,
+    instance: HINSTANCE16,
+    data: *mut u8,
+) -> HWND16 {
     unimplemented!()
 }
-// BOOL16 ShowWindow16(HWND16 hwnd, INT16 cmd)
+// BOOL16 ShowWindow16(HWND16 hwnd, cmd: i16)
 pub fn ShowWindow16(hwnd: HWND16, cmd: i16) -> bool {
     unimplemented!()
 }
@@ -385,7 +449,7 @@ pub fn DestroyWindow16(hwnd: HWND16) -> bool {}
 pub fn EnumChildWindows1(parent: HWND16, func: fn(), lparam: LPARAM) -> bool {
     unimplemented!()
 }
-// BOOL16 MoveWindow16(HWND16 hwnd, INT16 x, INT16 y, INT16 cx, INT16 cy, BOOL16 repaint)
+// BOOL16 MoveWindow16(HWND16 hwnd, x: i16, y: i16, cx: i16, cy: i16, BOOL16 repaint)
 pub fn MoveWindow16(hwnd: HWND16, x: i16, y: i16, cx: i16, cy: i16, repaint: bool) -> bool {
     unimplemented!()
 }
@@ -401,7 +465,7 @@ pub fn GetDC16(hwnd: HWND16) -> HDC16 {
 pub fn GetWindowDC16(hwnd: HWND16) -> HDC16 {
     unimplemented!()
 }
-// INT16 ReleaseDC16(HWND16 hwnd, HDC16 hdc)
+// ReleaseDC16: i16(HWND16 hwnd, HDC16 hdc)
 pub fn ReleaseDC16(hwnd: HWND16, hdc: HDC16) -> i16 {
     unimplemented!()
 }
@@ -409,98 +473,176 @@ pub fn ReleaseDC16(hwnd: HWND16, hdc: HDC16) -> i16 {
 pub fn SetCursor16(hcursor: HCURSOR16) -> HCURSOR16 {
     unimplemented!()
 }
-// INT16 ShowCursor16(BOOL16 b_show)
+// ShowCursor16: i16(BOOL16 b_show)
 pub fn ShowCursor16(b_show: bool) -> i16 {
     unimplemented!()
 }
-// BOOL16 PtInRect16(RECT16 * rect, POINT16 pt)
+// BOOL16 PtInRect16(RECT16 * rect, POpt: i16)
 pub fn PtInRect16(rect: &mut RECT16, pt: POINT16) -> bool {
     unimplemented!()
 }
-// INT16 FillRect16(HDC16 hdc, RECT16 * rect, HBRUSH16 hbrush)
+// FillRect16: i16(HDC16 hdc, RECT16 * rect, HBRUSH16 hbrush)
 pub fn FillRect16(hdc: HDC16, rect: &RECT16, hbrush: HBRUSH16) -> i16 {
     unimplemented!()
 }
-// INT16 FrameRect16(HDC16 hdc, RECT16 * rect, HBRUSH16 hbrush)
+// FrameRect16: i16(HDC16 hdc, RECT16 * rect, HBRUSH16 hbrush)
 pub fn FrameRect16(hdc: HDC16, rect: &RECT16, hbrush: HBRUSH16) -> i16 {
     unimplemented!()
 }
-// BOOL16 DrawIcon16(HDC16 hdc, INT16 x, INT16 y, HICON16 h_icon)
+// BOOL16 DrawIcon16(HDC16 hdc, x: i16, y: i16, HICON16 h_icon)
 pub fn DrawIcon16(hdc: HDC16, x: i16, y: i16, h_icon: HICON16) -> bool {
     unimplemented!()
 }
-// INT16 DrawText16(HDC16 hdc, LPCSTR str, INT16 count, RECT16 * rect, UINT16 flags)
+// DrawText16: i16(HDC16 hdc, LPCSTR str, count: i16, RECT16 * rect, Uflags: i16)
 pub fn DrawText16(hdc: HDC16, text: &String, count: i16, rect: &RECT16, flags: u16) -> i16 {
     unimplemented!()
 }
 // HWND16 CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template, HWND16 owner, LPVOID dlg_proc)
-pub fn CreateDialog16(h_inst: HINSTANCE16, dlg_template: &String, owner: HWND16, dlg_proc: fn()) -> HWND16 {
+pub fn CreateDialog16(
+    h_inst: HINSTANCE16,
+    dlg_template: &String,
+    owner: HWND16,
+    dlg_proc: fn(),
+) -> HWND16 {
     unimplemented!()
 }
 // BOOL16 IsDialogMessage16(HWND16 hwnd_dlg, MSG16 * msg16)
 pub fn IsDialogMessage16(hwnd_dlg: HWND16, msg: &mut MSG16) -> bool {
     unimplemented!()
 }
-// HWND16 GetDlgItem16(HWND16 hwnd_dlg, INT16 id)
+// HWND16 GetDlgItem16(HWND16 hwnd_dlg, id: i16)
 pub fn GetDlgItem16(hwnd_dlg: HWND16, id: i16) -> HWND16 {
     unimplemented!()
 }
-// void SetDlgItemText16(HWND16 hwnd, INT16 id, SEGPTR lp_string)
+// void SetDlgItemText16(HWND16 hwnd, id: i16, lp_string: SEGPTR)
 pub fn SetDlgItemText16(hwnd: HWND16, id: i16, lp_string: &SEGPTR) {
     unimplemented!()
 }
-// void SetDlgItemInt16(HWND16 hwnd, INT16 id, UINT16 value, BOOL16 f_signed)
-// UINT16 GetDlgItemInt16(HWND16 hwnd, INT16 id, BOOL16 * translated, BOOL16 f_signed)
-// BOOL16 CheckRadioButton16(HWND16 hwnd_dlg, UINT16 first_id, UINT16 last_id, UINT16 check_id)
-// BOOL16 CheckDlgButton16(HWND16 hwnd, INT16 id, UINT16 check)
-// UINT16 IsDlgButtonChecked(HWND16 hwnd, UINT16 id)
+// void SetDlgItemInt16(HWND16 hwnd, id: i16, Uvalue: i16, BOOL16 f_signed)
+pub fn SetDlgItemInt16(hwnd: HWND16, id: i16, value: u16, f_signed: bool) {
+    unimplemented!()
+}
+// UGetDlgItemInt16: i16(HWND16 hwnd, id: i16, BOOL16 * translated, BOOL16 f_signed)
+pub fn GetDlgItemInt16(hwnd: HWND16, id: i16, translated: &mut bool, f_signed: bool) -> u16 {
+    unimplemented!()
+}
+// BOOL16 CheckRadioButton16(HWND16 hwnd_dlg, Ufirst_id: i16, Ulast_id: i16, Ucheck_id: i16)
+pub fn CheckRadioButton16(hwnd_dlg: HWND16, first_id: u16, last_id: u16, check_id: u16) -> bool {
+    unimplemented!()
+}
+// BOOL16 CheckDlgButton16(HWND16 hwnd, id: i16, Ucheck: i16)
+pub fn CheckDlgButton16(hwnd: HWND16, id: i16, check: u16) -> bool {
+    unimplemented!()
+}
+// UIsDlgButtonChecked: i16(HWND16 hwnd, Uid: i16)
 pub fn IsDlgButtonChecked(hwnd: HWND16, id: u16) -> u16 {
     unimplemented!()
 }
-// LRESULT SendDlgItemMessage16(HWND16 hwnd, INT16 id, UINT16 msg, WPARAM16 w_param, LPARAM l_param)
+// LRESULT SendDlgItemMessage16(HWND16 hwnd, id: i16, Umsg: i16, WPARAM16 w_param, LPARAM l_param)
+pub fn SendDlgItemMessage16(
+    hwnd: HWND16,
+    id: i16,
+    msg: u16,
+    w_param: WPARAM16,
+    lparam: LPARAM,
+) -> LRESULT {
+    unimplemented!()
+}
 // void MapDialogRect16(HWND16 hwnd, RECT16 * rect)
-// void MessageBeep16(UINT16 i)
-// LRESULT DefWindowProc16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
-// BOOL16 GetMessage16(MSG16 * msg, HWND16 hwnd, UINT16 first, UINT16 last)
+pub fn MapDialogRect16(hwnd: HWND16, rect: &RECT16) {
+    unimplemented!()
+}
+// void MessageBeep16(Ui: i16)
+pub fn MessageBeep16(i: u16) {
+    unimplemented!()
+}
+// LRESULT DefWindowProc16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+pub fn DefWindowProc16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> LRESULT {
+    unimplemented!()
+}
+// BOOL16 GetMessage16(MSG16 * msg, HWND16 hwnd, Ufirst: i16, Ulast: i16)
 pub fn GetMessage16(msg: &mut MSG16, hwnd: HWND16, first: u16, last: u16) -> bool {
     unimplemented!()
 }
-// BOOL16 PostMessage16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
+// BOOL16 PostMessage16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
 pub fn PostMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> bool {
     unimplemented!()
 }
-// LRESULT SendMessage16(HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
+// LRESULT SendMessage16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
 pub fn SendMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> LRESULT {
     unimplemented!()
 }
 // BOOL16 TranslateMessage16(MSG16 * msg)
+pub fn TranslateMessage16(msg: &mut MSG16) -> bool {
+    unimplemented!()
+}
+
 // long DispatchMessage16(MSG16 * msg)
-// LRESULT CallWindowProc16(LPVOID func, HWND16 hwnd, UINT16 msg, WPARAM16 wparam, LPARAM lparam)
+pub fn DispatchMessage16(msg: &mut MSG16) -> usize {
+    unimplemented!()
+}
+// LRESULT CallWindowProc16(LPVOID func, HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+pub fn CallWindowProc16(
+    func: fn(),
+    hwnd: HWND16,
+    msg: u16,
+    wparam: WPARAM16,
+    lparam: LPARAM,
+) -> LRESULT {
+    unimplemented!()
+}
 // void UpdateWindow16(HWND16 hwnd)
+pub fn UpdateWindow16(hwnd: HWND16) {
+    unimplemented!()
+}
 // void InvalidateRect16(HWND16 hwnd, RECT16 * rect, BOOL16 erase)
+pub fn InvalidateRect16(hwnd: HWND16, rect: &RECT16, erase: bool) {
+    unimplemented!()
+}
 // void ValidateRect16(HWND16 hwnd, RECT16 * rect)
-// WORD GetWindowWord16(HWND16 hwnd, INT16 offset)
+pub fn ValidateRect16(hwnd: HWND16, rect: &RECT16) {
+    unimplemented!()
+}
+// WORD GetWindowWord16(HWND16 hwnd, offset: i16)
 pub fn GetWindowWord16(hwnd: HWND16, offset: i16) -> i16 {
     unimplemented!()
 }
-// WORD SetWindowWord16(HWND16 hwnd, INT16 offset, WORD newval)
-// long GetWindowLong16(HWND16 hwnd, INT16 offset)
+// WORD SetWindowWord16(HWND16 hwnd, offset: i16, WORD newval)
+pub fn SetWindowWord16(hwnd: HWND16, offset: i16, newval: i16) -> i16 {
+    unimplemented!()
+}
+// long GetWindowLong16(HWND16 hwnd, offset: i16)
 pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
     unimplemented!()
 }
-// long SetWindowLong16(HWND16 hwnd, INT16 offset, long newval)
+// long SetWindowLong16(HWND16 hwnd, offset: i16, long newval)
+pub fn SetWindowLong16(hwnd: HWND16, offset: i16, newval: libc::c_long) -> libc::c_long {
+    unimplemented!()
+}
 // HMENU16 LoadMenu16(HINSTANCE16 instance, LPCSTR name)
+pub fn LoadMenu16(instance: HINSTANCE16, name: &String) -> HMENU16 {
+    unimplemented!()
+}
 // BOOL16 DestroyMenu16(HMENU16 menu)
 pub fn DestroyMenu16(menu: HMENU16) -> bool {
     unimplemented!()
 }
-// BOOL16 CheckMenuItem16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
-// BOOL16 EnableMenuItem16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
-// HMENU16 GetSubMenu16(HMENU16 h_menu, INT16 n_pos)
-// BOOL16 WinHelp16(HWND16 hwnd, LPCSTR lp_help_file, UINT16 w_command, DWORD dw_data)
+// BOOL16 CheckMenuItem16(HMENU16 hmenu, Uw_item_id: i16, Uw_flags: i16)
+pub fn CheckMenuItem16(hmenu: HMENU16, w_item_id: u16, w_flags: u16) -> bool {
+    unimplemented!()
+}
+// BOOL16 EnableMenuItem16(HMENU16 hmenu, Uw_item_id: i16, Uw_flags: i16)
+pub fn EnableMenuItem16(hmenu: HMENU16, w_item_id: u16, w_flags: u16) -> bool {
+    unimplemented!()
+}
+// HMENU16 GetSubMenu16(HMENU16 h_menu, n_pos: i16)
+pub fn GetSubMenu16(h_menu: HMENU16, n_pos: i16) -> HMENU16 {
+    unimplemented!()
+}
+// BOOL16 WinHelp16(HWND16 hwnd, LPCSTR lp_help_file, Uw_command: i16, DWORD dw_data)
 // HCURSOR16 LoadCursor16(HINSTANCE16 h_instance, LPCSTR name)
 // HICON16 LoadIcon16(HINSTANCE16 h_instance, LPCSTR name)
-// INT16 LoadString16(HINSTANCE16 instance, UINT16 resource_id, LPSTR buffer, INT16 buf_len)
+// LoadString16: i16(HINSTANCE16 instance, Uresource_id: i16, LPSTR buffer, buf_len: i16)
 pub fn LoadString16(
     instance: HINSTANCE16,
     resource_id: u16,
@@ -510,54 +652,165 @@ pub fn LoadString16(
     unimplemented!()
 }
 // HACCEL16 LoadAccelerators16(HINSTANCE16 instance, LPCSTR lp_table_name)
-// INT16 TranslateAccelerator16(HWND16 hwnd, HACCEL16 haccel, MSG16 * msg)
-// INT16 GetSystemMetrics16(INT16 index)
-// COLORREF GetSysColor16(INT16 index)
-// void SetSysColors16(INT16 count, INT16 * list, COLORREF * values)
-// BOOL16 GrayString16(HDC16 hdc, HBRUSH16 param_2, LPVOID gsprc, LPARAM lparam, INT16 cch, INT16 x, INT16 y, INT16 cx, INT16 cy)
+pub fn LoadAccelerators16(instance: HINSTANCE16, lp_table_name: &String) -> HACCEL16 {
+    unimplemented!()
+}
+// TranslateAccelerator16: i16(HWND16 hwnd, HACCEL16 haccel, MSG16 * msg)
+pub fn TranslateAccelerator16(hwnd: HWND16, haccel: HACCEL16, msg: &MSG) -> i16 {
+    unimplemented!()
+}
+// GetSystemMetrics16: i16(index: i16)
+pub fn GetSystemMetrics16(index: i16) -> i16 {
+    unimplemented!()
+}
+// COLORREF GetSysColor16(index: i16)
+pub fn GetSysColor16(index: i16) -> COLORREF {
+    unimplemented!()
+}
+// void SetSysColors16(count: i16, INT16 * list, COLORREF * values)
+pub fn SetSysColors16(count: i16, list: &[i16], values: &[COLORREF]) {
+    unimplemented!()
+}
+// BOOL16 GrayString16(HDC16 hdc, HBRUSH16 param_2, LPVOID gsprc, LPARAM lparam, cch: i16, x: i16, y: i16, cx: i16, cy: i16)
+pub fn GrayString16(
+    hdc: HDC16,
+    param_2: HBRUSH16,
+    gsprc: *mut u8,
+    lparam: LPARAM,
+    cch: i16,
+    x: i16,
+    y: i16,
+    cx: i16,
+    cy: i16,
+) -> bool {
+    unimplemented!()
+}
 // HWND16 SetSysModalWindow(HWND16 hwnd)
+pub fn SetSysModalWindow(hwnd: HWND16) -> HWND16 {
+    unimplemented!()
+}
 // HWND16 GetNextDlgTabItem16(HWND16 hwnd_dlg, HWND16 hwnd_ctrl, BOOL16 f_previous)
-// BOOL16 SetWindowPos16(HWND16 hwnd, HWND16 hwnd_insert_after, INT16 x, INT16 y, INT16 cx, INT16 cy, WORD flags)
-// UINT16 GetMenuState16(HMENU16 hmenu, UINT16 w_item_id, UINT16 w_flags)
-// INT16 GetDlgCtrlID16(HWND16 hwnd)
+pub fn GetNextDlgTabItem16(hwnd_dlg: HWND16, hwnd_ctrl: HWND16, f_previous: bool) -> HWND16 {
+    unimplemented!()
+}
+// BOOL16 SetWindowPos16(HWND16 hwnd, HWND16 hwnd_insert_after, x: i16, y: i16, cx: i16, cy: i16, WORD flags)
+pub fn SetWindowPos16(
+    hwnd: HWND16,
+    hwnd_insert_after: HWND16,
+    x: i16,
+    y: i16,
+    cx: i16,
+    cy: i16,
+    flags: u16,
+) -> bool {
+    unimplemented!()
+}
+// UGetMenuState16: i16(HMENU16 hmenu, Uw_item_id: i16, Uw_flags: i16)
+pub fn GetMenuState16(hmenu: HMENU16, w_item_id: u16, w_flags: u16) -> u16 {
+    unimplemented!()
+}
+// GetDlgCtrlID16: i16(HWND16 hwnd)
+pub fn GetDlgCtrlID16(hwnd: HWND16) -> i16 {
+    unimplemented!()
+}
 // HPALETTE16 SelectPalette16(HDC16 hdc, HPALETTE16 hpal, BOOL16 b_force_background)
 pub fn SelectPalette16(hdc: HDC16, hpal: HPALETTE16, b_force_background: bool) -> HPALETTE16 {
     unimplemented!()
 }
-// UINT16 RealizePalette16(HDC16 hdc)
+// URealizePalette16: i16(HDC16 hdc)
+pub fn RealizePalette16(hdc: HDC16) -> u16 {
+    unimplemented!()
+}
 // BOOL16 GetWindowPlacement16(HWND16 hwnd, WINDOWPLACEMENT16 * wp16)
+pub fn GetWindowPlacement16(hwnd: HWND16, wp16: &WINDOWPLACEMENT16) -> bool {
+    unimplemented!()
+}
 // BOOL16 SetWindowPlacement16(HWND16 hwnd, WINDOWPLACEMENT16 * wp16)
-// BOOL16 GetClassInfo16(HINSTANCE16 h_inst16, SEGPTR name, WNDCLASS16 * wc)
-// BOOL16 InsertMenu16(HMENU16 hmenu, UINT16 pos, UINT16 flags, UINT16 id, SEGPTR data)
-// BOOL16 DeleteMenu16(HMENU16 hmenu, UINT16 npos, UINT16 wflags)
-// BOOL16 ModifyMenu16(HMENU16 hmenu, UINT16 pos, UINT16 flags, UINT16 id, SEGPTR data)
-// BOOL16 TrackPopupMenu16(HMENU16 hmenu, UINT16 wflags, INT16 x, INT16 y, INT16 n_reserved, HWND16 hwnd, RECT16 * lp_rect)
-// INT16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD * valist)
-// INT16 wvsprintf16(LPSTR buffer, LPCSTR spec, WORD * args)
+pub fn SetWindowPlacement16(hwnd: HWND16, wp16: &WINDOWPLACEMENT16) -> bool {
+    unimplemented!()
+}
+// BOOL16 GetClassInfo16(HINSTANCE16 h_inst16, name: SEGPTR, WNDCLASS16 * wc)
+pub fn GetClassInfo16(h_inst: HINSTANCE16, name: &String, wc: &WNDCLASS16) -> bool {
+    unimplemented!()
+}
+// BOOL16 InsertMenu16(HMENU16 hmenu, Upos: i16, Uflags: i16, Uid: i16, data: SEGPTR)
+pub fn InsertMenu16(hmenu: HMENU16, pos: u16, flags: u16, id: u16, data: SEGPTR) -> bool {
+    unimplemented!()
+}
+// BOOL16 DeleteMenu16(HMENU16 hmenu, Unpos: i16, Uwflags: i16)
+pub fn DeleteMenu16(hmenu: HMENU16, npos: u16, w_flags: u16) -> bool {
+    unimplemented!()
+}
+// BOOL16 ModifyMenu16(HMENU16 hmenu, Upos: i16, Uflags: i16, Uid: i16, data: SEGPTR)
+pub fn ModifyMenu16(hmenu: HMENU16, pos: u16, flags: u16, id: u16, data: SEGPTR) -> bool {
+    unimplemented!()
+}
+// BOOL16 TrackPopupMenu16(HMENU16 hmenu, Uwflags: i16, x: i16, y: i16, n_reserved: i16, HWND16 hwnd, RECT16 * lp_rect)
+pub fn TrackPopupMenu16(
+    hmenu: HMENU16,
+    w_flags: u16,
+    x: i16,
+    y: i16,
+    n_reserved: i16,
+    hwnd: HWND16,
+    lp_rect: &RECT16,
+) -> bool {
+    unimplemented!()
+}
+// wsprintf16: i16(LPSTR buffer, LPCSTR spec, WORD * valist)
+pub fn wsprintf16(buffer: &String, spec: &String, valist: *mut u16) -> i16 {
+    unimplemented!()
+}
+// wvsprintf16: i16(LPSTR buffer, LPCSTR spec, WORD * args)
 pub fn wvsprintf16(buffer: &mut String, spec: &mut LPCSTR, args: *mut ushort) -> i16 {
     unimplemented!()
 }
-// HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, INT16 x, INT16 y, INT16 width, INT16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
+// HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
+pub fn CreateWIndowEx16(
+    ex_style: u32,
+    class_name: &String,
+    window_name: &String,
+    style: u32,
+    x: i16,
+    y: i16,
+    width: i16,
+    height: i16,
+    parent: HWND16,
+    hmenu: HMENU16,
+    instance: HINSTANCE16,
+    data: *mut u8,
+) -> HWND16 {
+    unimplemented!()
+}
 // BOOL16 DestroyIcon16(HICON16 h_icon)
 pub fn DestroyIcon16(h_icon: HICON16) -> bool {
     unimplemented!()
 }
 // BOOL16 DestroyCursor16(HCURSOR16 h_cursor)
-// DWORD mciSendCommand16(UINT16 w_dev_id, UINT16 w_msg, DWORD dw_param1, DWORD p2)
+pub fn DestroyCursor16(h_cursor: HCURSOR16) -> bool {
+    unimplemented!()
+}
+// DWORD mciSendCommand16(Uw_dev_id: i16, Uw_msg: i16, DWORD dw_param1, DWORD p2)
 pub fn mciSendCommand16(w_dev_id: u16, w_msg: u16, dw_parm1: u32, p2: u32) -> u32 {
     unimplemented!()
 }
-// BOOL16 mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, UINT16 u_length)
+// BOOL16 mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, Uu_length: i16)
 pub fn mciGetErrorString16(w_error: u32, lp_str_buffer: &mut String, u_length: u16) -> bool {
     unimplemented!()
 }
-// BOOL16 GetOpenFileName16(SEGPTR ofn)
-// BOOL16 GetSaveFileName16(SEGPTR ofn)
+// BOOL16 GetOpenFileName16(ofn: SEGPTR)
+pub fn GetOpenFileName16(ofn: SEGPTR) -> bool {
+    unimplemented!()
+}
+// BOOL16 GetSaveFileName16(ofn: SEGPTR)
+pub fn GetSaveFileName16(ofn: SEGPTR) -> bool {
+    unimplemented!()
+}
 
 pub fn swi(a: u16) -> u32 {
     unimplemented!()
 }
 
-pub fn SegmentLimit(param_1: u16) ->u16 {
+pub fn SegmentLimit(param_1: u16) -> u16 {
     unimplemented!()
 }

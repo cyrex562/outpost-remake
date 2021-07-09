@@ -504,7 +504,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
     *(u32 **)(puVar3 + 0x5) = puVar4;
-    *(uchar **)(puVar3 + 0x16) = param_5;
+    (puVar3 + 0x16) = param_5;
     puStack16 = ((puVar3 + 0x5) + 0xa4);
     puStack14 = param_5;
     BVar1 = read_file_1008_7dee(uVar5,uVar8,puStack16,0x0,param_5,0x2,
@@ -549,7 +549,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
     *(u32 **)(puVar3 + 0x5) = puVar4;
-    *(uchar **)(puVar3 + 0x16) = param_5;
+    (puVar3 + 0x16) = param_5;
 //     TODO: goto switchD_1028_ba97_caseD_6;
   }
   if (BVar1 == 0x0) {

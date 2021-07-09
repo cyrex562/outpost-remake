@@ -69,7 +69,7 @@ pub fn fn_ptr_1000_17ce(param_1: &mut Struct18,param_2: u16)
 
 pub fn fn_ptr_op_1000_24cd(param_1: i16,param_2: i16)
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let iVar2: i16;
   let cVar3: u8;
   let uVar5: u16;

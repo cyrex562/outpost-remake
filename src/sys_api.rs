@@ -14,7 +14,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
   let BVar2: bool;
   let uVar2: u16;
   let unaff_CS: u16;
-  code *pcStack6;
+  let pcStack6: u32;
   let puStack4: *mut u8;
   let uVar3: u16;
   
@@ -62,15 +62,15 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
 pub fn dos3_call_1000_23ea(param_1: u16,param_2: u16,param_3: i16,param_4: &mut String) -> *mut i16
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
+  let pbVar1: *mut u8;
+  let pbVar2: *mut u8;
   let bVar3: u8;
   let piVar4: *mut i16;
-  byte *pbVar5;
+  let pbVar5: *mut u8;
   let mut pcVar6: String; 
   let uVar7: u16;
   let ppcVar8: u32;
-  code *pcVar9;
+  let pcVar9: u32;
   let uVar10: u16;
   let bVar11: u8;
   let bVar12: u8;
@@ -80,9 +80,9 @@ pub fn dos3_call_1000_23ea(param_1: u16,param_2: u16,param_3: i16,param_4: &mut 
   let uVar15: u16;
   let extraout_DX: u16;
   let uVar16: u16;
-  byte *pbVar17;
+  let pbVar17: *mut u8;
   let piVar18: *mut i16;
-  byte *pbVar19;
+  let pbVar19: *mut u8;
   let mut pcVar20: String; 
   let action: u16;
   let bVar21: bool;
@@ -115,7 +115,7 @@ pub fn dos3_call_1000_23ea(param_1: u16,param_2: u16,param_3: i16,param_4: &mut 
   uVar13 = pass1_1000_29dc(param_4);
   uVar22 = CONCAT22(uVar15,uVar13);
   if (&ctx.PTR_LOOP_1050_6202 != 0x0) {
-    uVar7 = *(u16_t *)&ctx.PTR_LOOP_1050_5f7e;
+    uVar7 = &ctx.PTR_LOOP_1050_5f7e;
     bVar21 = false;
     ppcVar8 = &ctx.PTR_LOOP_1050_6200;
     (**ppcVar8)(action);
@@ -231,7 +231,7 @@ pub fn dos3_call_1000_23ea(param_1: u16,param_2: u16,param_3: i16,param_4: &mut 
 
 pub fn dos3_op_1000_256b(void)
 {
-  code *pcVar1;
+  let pcVar1: u32;
   
   if (ctx.PTR_LOOP_1050_6202 != 0x0) {
     (*PTR_LOOP_1050_6200)();
@@ -283,7 +283,7 @@ sys_1000_30b4(param_1: u16,param_2: u16,param_3: *mut u8,param_4: i16,param_5: u
 pub fn dos3_call_op_1000_35fe(param_1: u16,param_2: i16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u16;
   let uVar3: u8;
   
@@ -317,8 +317,8 @@ pub fn dos3_call_op_1000_35fe(param_1: u16,param_2: i16) -> u16
 pub fn mixed_dos3_call_1000_3636(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16)
 
 {
-  byte *pbVar1;
-  code *pcVar2;
+  let pbVar1: *mut u8;
+  let pcVar2: u32;
   let uVar3: u16;
   let uVar4: u16;
   let uVar5: u16;
@@ -409,7 +409,7 @@ mixed_dos3_call_1000_370a
           param_6: i16)
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u16;
   let uVar3: u16;
   let iVar4: i16;
@@ -654,10 +654,10 @@ pub fn mixed_dos3_call_1000_39f2(
   char param_7) -> *mut u8
 
 {
-  byte *pbVar1;
+  let pbVar1: *mut u8;
   let puVar2: *mut u8;
   let puVar3: *mut u8;
-  code *pcVar4;
+  let pcVar4: u32;
   let uVar5: u16;
   let uVar6: u8;
   let piVar7: *mut i16;
@@ -668,11 +668,11 @@ pub fn mixed_dos3_call_1000_39f2(
   let puVar12: *mut u8;
   let iVar13: i16;
   let puVar14: *mut u8;
-  byte *pbVar15;
+  let pbVar15: *mut u8;
   let piVar16: *mut i16;
   let puVar17: *mut u8;
   let unaff_BP: i16;
-  byte *pbVar18;
+  let pbVar18: *mut u8;
   let puVar19: *mut u8;
   let uVar20: u16;
   let uVar21: u8;
@@ -923,7 +923,7 @@ mixed_dos3_call_1000_3ad9
 {
   let puVar1: *mut u16;
   let piVar2: *mut i16;
-  code *pcVar3;
+  let pcVar3: u32;
   let uVar4: u16;
   let uVar5: u16;
   let piVar6: *mut i16;
@@ -1059,7 +1059,7 @@ pub fn mixed_sys_op_1000_40af
   let uVar6: u16;
   let uVar7: u16;
   HVar8: HGLOBAL16;
-  SEGPTR SVar9;
+  SVar9: SEGPTR;
   let iVar10: i16;
   let uVar11: u16;
   let puVar12: *mut u16;
@@ -1189,7 +1189,7 @@ pub fn dos3_call_set_struct_1000_42de(param_1: *mut u16,param_2: *mut u16,param_
   let uVar1: u16;
   let uVar2: u16;
   let uVar3: u16;
-  code *pcVar4;
+  let pcVar4: u32;
   let uVar5: u16;
   let uVar6: u16;
   let uVar7: u16;
@@ -1310,7 +1310,7 @@ pub fn dos3_call_op_1000_435c(
 pub fn dos3_call_1000_4f20(param_1: u16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u16;
   let uVar3: u8;
   
@@ -1333,7 +1333,7 @@ pub fn dos3_call_1000_4f20(param_1: u16) -> u16
 pub fn dos3_call_1000_514e(param_1: i16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u16;
   let uVar3: u8;
   
@@ -1356,7 +1356,7 @@ pub fn dos3_call_1000_514e(param_1: i16) -> u16
 pub fn dos3_call_1000_5174(param_1: u16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u16;
   let uVar3: u8;
   
@@ -1380,7 +1380,7 @@ pub fn dos3_call_1000_5174(param_1: u16) -> u16
 pub fn dos3_calls_1000_5198(param_1: i16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u8;
   let uVar3: u16;
   let bVar4: u8;
@@ -1430,7 +1430,7 @@ pub fn dos3_calls_1000_5198(param_1: i16) -> u16
 pub fn dos3_call_1000_51aa(param_1: u16) -> u16
 
 {
-  code *pcVar1;
+  let pcVar1: u32;
   let uVar2: u8;
   let uVar3: u16;
   let bVar4: u8;
@@ -1566,7 +1566,7 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32,param_2: u16)
   uVar9 = (param_1 >> 0x10);
   iVar3 = param_1;
   (iVar3 + 0x8) = uVar10;
-  *(uchar **)(iVar3 + 0xa) = puVar6;
+  (iVar3 + 0xa) = puVar6;
   uVar5 = (iVar3 + 0x8);
   puVar2 = (iVar3 + 0x8);
   ctx._PTR_LOOP_1050_0298 = uVar5;
@@ -1791,7 +1791,7 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32)
                   puVar8,puVar9);
   uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
-  uVar7 = pass1_1008_4772(*(astruct_76 **)(iVar4 + 0x66));
+  uVar7 = pass1_1008_4772((iVar4 + 0x66));
   uVar1 = (uVar7 >> 0x10);
   (iVar4 + 0x18) = local_4 + 0x8;
   (iVar4 + 0x1a) = local_6 + 0x9;
@@ -1965,7 +1965,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
   pass1_1010_6034(CONCAT22(param_2,param_1),puVar12);
   mem_op_1000_179c(0x101,puVar12,0x1000);
   &param_1.field_0xe = uVar15;
-  *(uchar **)(&param_1.field_0xe + 0x2) = puVar12;
+  (&param_1.field_0xe + 0x2) = puVar12;
   pass1_1000_5008(&param_1.field_0xe,puVar12,0x100,&stack0xfffe);
   uStack4 = str_op_1000_3da4(param_1.field_0xe);
   pcVar18 = param_1.field_0xe;
@@ -2086,7 +2086,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
     uStack46 = pass1_1000_3e2c(param_1.field_0xe);
     puVar11 = (puVar12 | uStack46);
     puStack44 = puVar12;
-    if ((uchar *)(puVar12 | uStack46) != 0x0) {
+    if ((puVar12 | uStack46) != 0x0) {
       param_1.field_0x76 = uStack46;
       param_1.field_0x78 = puVar12;
       puVar11 = puVar12;
@@ -2176,7 +2176,7 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: u16,param_3: u16,par
     puVar12 = extraout_DX;
   }
   &param_1.field_0x64 = puVar9;
-  *(uchar **)(&param_1.field_0x64 + 0x2) = puVar12;
+  (&param_1.field_0x64 + 0x2) = puVar12;
   pcVar18 = param_1.field_0xe;
   pass1_1000_5008(pcVar18,(pcVar18 >> 0x10),0x100,&stack0xfffe
                  );
@@ -2282,7 +2282,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: *mut u16)
   (iVar6 + 0x2) = 0x1010;
   puVar8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,unaff_SS,in_DX,unaff_DI);
   uVar3 = (iVar6 + 0xe);
-  sys_1000_3f9c((uchar *)uVar3,(uVar3 >> 0x10),0x149c,
+  sys_1000_3f9c(uVar3,(uVar3 >> 0x10),0x149c,
                 ctx.data_seg,(puVar8 + 0xa),&stack0xfffe,
                 uVar7,0x1000,unaff_SS,in_AF);
   if ((iVar6 + 0x80) == 0x0) {
@@ -2340,7 +2340,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: *mut u16)
             (ctx.s_tile2_bmp_1050_1538,uVar3,(uVar3 >> 0x10),
              pCVar5);
   uVar3 = (iVar6 + 0xe);
-  sys_1000_3f9c((uchar *)uVar3,(uVar3 >> 0x10),0x14a2,
+  sys_1000_3f9c(uVar3,(uVar3 >> 0x10),0x14a2,
                 ctx.data_seg,(iVar6 + 0x76),
                 &stack0xfffe,uVar7,0x1000,unaff_SS,in_AF);
   uVar3 = (iVar6 + 0xa);
@@ -2471,7 +2471,7 @@ pub fn set_err_mode_1010_8b14(param_1: u32,Uparam_2: i32,param_3: u16) -> u32
 }
 
 
-pub fn get_sys_metrics_1018_09a8(param_1: u32,INT16 param_2)
+pub fn get_sys_metrics_1018_09a8(param_1: u32,param_2: i16)
 {
   let uVar1: u32;
   let IVar2: i16;
@@ -2591,7 +2591,7 @@ pub fn mixed_sys_op_1018_2978(param_1: u32,param_2: u16,param_3: u16)
   uVar9 = (param_1 >> 0x10);
   iVar8 = param_1;
   (iVar8 + 0xe) = puVar3;
-  *(uchar **)(iVar8 + 0x10) = puVar7;
+  (iVar8 + 0x10) = puVar7;
   pass1_1008_4d84(*(astruct_90 **)(iVar8 + 0xe),uStack50,puVar7);
   uVar12 = SUB21(ctx.PTR_LOOP_1050_0396,0x0);
   rect = &local_3a;
@@ -2645,7 +2645,7 @@ pub fn get_sys_metrics_1018_2f56(param_1: u32)
                   puVar8,puVar9);
   uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
-  uVar7 = pass1_1008_4772(*(astruct_76 **)(iVar4 + 0x24));
+  uVar7 = pass1_1008_4772((iVar4 + 0x24));
   uVar1 = (uVar7 >> 0x10);
   (iVar4 + 0x18) = local_4 + 0xb5;
   (iVar4 + 0x1a) = local_6 + 0x9;
@@ -2726,7 +2726,7 @@ pub fn get_sys_metrics_1018_4b1e(param_1: &mut Struct55,param_2: u16,param_3: u1
 
 
 
-pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16,param_2: u32,INT16 param_3)
+pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16,param_2: u32,param_3: i16)
 {
   let IVar1: i16;
   let iVar3: &mut Struct56;
@@ -2780,7 +2780,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: *mut u16,param_2: *mut u8,LPVOID param_
   ctx._PTR_LOOP_1050_5bc8 = param_1;
   pvVar1 = MakeProcInstance16(param_3,(HANDLE16)PTR_LOOP_1050_038c);
   *(LPVOID *)(iVar2 + 0x4) = pvVar1;
-  *(uchar **)(iVar2 + 0x6) = param_2;
+  (iVar2 + 0x6) = param_2;
   ctx.PTR_LOOP_1050_5bcc =
        
        MakeProcInstance16((LPVOID)s_tile2_bmp_1050_1538,(HANDLE16)PTR_LOOP_1050_038c);
@@ -3022,7 +3022,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37,param_2: HWND16)
     IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
     if ((iVar4 + 0xac) < IVar3) {
       IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-      *(INT16 *)(iVar4 + 0xac) = IVar3;
+      (iVar4 + 0xac) = IVar3;
     }
   }
   piVar1 = (iVar4 + 0xaa);

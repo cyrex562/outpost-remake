@@ -82,7 +82,7 @@ create_dc_1018_4e04(astruct_8 **param_1,param_2: u16,param_3: i16,param_4: i16,
   uVar4 = pass1_1008_4772(iVar4.field_0xa);
   pass1_1008_43cc(iVar4.field_0xa);
   paVar2 = 
-           CreateDC16(0x1008,uVar4,(uVar4 >> 0x10),(DEVMODEA *)0x0
+           CreateDC16(0x1008,uVar4,(uVar4 >> 0x10),0x0
                      );
   iVar4.field_0x12 = paVar2;
   paVar2 = &iVar4.field_0x12;
@@ -182,7 +182,7 @@ pub fn unk_draw_op_1018_623e(param_1: u32,param_2: HWND16,param_3: u16)
   let uVar5: u16;
   HDC16 *pHVar6;
   let iVar7: i16;
-  HPEN16 handle;
+  let handle: HPEN16;
   let HVar8: HGDIOBJ16;
   let handle_00: HBRUSH16;
   let puVar9: *mut u8;
@@ -230,10 +230,10 @@ pub fn unk_draw_op_1018_623e(param_1: u32,param_2: HWND16,param_3: u16)
   while ((puVar13 + -0x38) < (puVar13 + -0x28)) {
     iVar11 = (puVar13 + -0x38) * 0x4;
     uVar3 = (puVar13 + -0x2c);
-    uVar16 = pass1_1008_4772(*(astruct_76 **)(iVar11 + uVar3));
+    uVar16 = pass1_1008_4772((iVar11 + uVar3));
     puVar9 = (uVar16 >> 0x10);
     (puVar13 + -0x44) = uVar16;
-    *(uchar **)(puVar13 + -0x42) = puVar9;
+    (puVar13 + -0x42) = puVar9;
     uVar3 = (puVar13 + 0x6);
     pass1_1018_642e(uVar3,(uVar3 >> 0x10),
                     CONCAT13((param_3 >> 0x8),
@@ -245,7 +245,7 @@ pub fn unk_draw_op_1018_623e(param_1: u32,param_2: HWND16,param_3: u16)
     uVar3 = (puVar13 + -0x2c);
     pass1_1008_4480((puVar13 + -0x26),
                     CONCAT22(param_3,puVar13 + -0x36),
-                    *(astruct_76 **)(uVar3 + iVar11),param_3);
+                    (uVar3 + iVar11),param_3);
     iVar11 = (puVar13 + -0x38);
     uVar3 = (puVar13 + -0x30);
     uVar14 = uVar3;
@@ -266,7 +266,7 @@ pub fn unk_draw_op_1018_623e(param_1: u32,param_2: HWND16,param_3: u16)
       uVar5 = (iVar19 + 0x30) << 0x3;
       mem_op_1000_179c(uVar5,puVar9,0x1000);
       (iVar19 + 0x1a) = uVar5;
-      *(uchar **)(iVar19 + 0x1c) = puVar9;
+      (iVar19 + 0x1c) = puVar9;
     }
     uVar3 = (iVar19 + 0x1a);
     iVar11 *= 0x8;
@@ -336,7 +336,7 @@ pub fn draw_line_1018_6444(param_1: u32,HDC16 param_2)
   MoveTo16(param_2,0x5,*pIVar2);
   uVar7 = (pIVar2 >> 0x10);
   iVar5 = pIVar2;
-  LineTo16(ctx.s_tile2_bmp_1050_1538,0x5,*(INT16 *)(iVar5 + iVar1 * 0x8 + -0x4));
+  LineTo16(ctx.s_tile2_bmp_1050_1538,0x5,(iVar5 + iVar1 * 0x8 + -0x4));
   for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
     piVar6 = (iStack10 * 0x8 + iVar5);
     iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
@@ -344,7 +344,7 @@ pub fn draw_line_1018_6444(param_1: u32,HDC16 param_2)
     LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,iVar4);
   }
   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,*pIVar2);
-  LineTo16(ctx.s_tile2_bmp_1050_1538,0x5f,*(INT16 *)(iVar5 + iVar1 * 0x8 + -0x4));
+  LineTo16(ctx.s_tile2_bmp_1050_1538,0x5f,(iVar5 + iVar1 * 0x8 + -0x4));
   for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
     piVar6 = (iStack10 * 0x8 + iVar5);
     iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
@@ -378,7 +378,7 @@ pub fn draw_op_1018_6544(param_1: u32,param_2: &mut i16,param_3: u16)
 
 pub fn draw_polygon_1018_661c(param_1: u16,param_2: u16,param_3: u32,HDC16 param_4)
 {
-  Polygon16(param_4,(POINT16 *)param_3,(param_3 >> 0x10));
+  Polygon16(param_4,param_3,(param_3 >> 0x10));
   return;
 }
 
@@ -476,7 +476,7 @@ pub fn unk_draw_op_1018_c578(param_1: &mut Struct36,param_2: u16)
   pRVar18 = pRStack44;
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   uVar6 = (iVar11 + 0xe2);
-  paVar4 = *(astruct_76 **)(uVar6 + 0xe);
+  paVar4 = (uVar6 + 0xe);
   b_force_background = &local_2a;
   uVar17 = CONCAT22(pRVar18,param_2);
   uVar14 = (paVar4 >> 0x10);
@@ -504,7 +504,7 @@ pub fn unk_draw_op_1018_c578(param_1: &mut Struct36,param_2: u16)
 
 
 
-pub fn draw_text_1018_c742(param_1: &mut Struct36,HDC16 param_2,RECT16 *param_3,param_4: u16)
+pub fn draw_text_1018_c742(param_1: &mut Struct36,HDC16 param_2,param_3: &RECT16,param_4: u16)
 {
   let piVar1: *mut i16;
   COLORREF CVar2;
@@ -633,7 +633,7 @@ pub fn unk_draw_op_1018_cda8(param_1: &mut Struct36,param_2: u16)
   pRVar19 = pRStack44;
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   uVar18 = (iVar10 + 0xe2);
-  paVar3 = *(astruct_76 **)(uVar18 + 0xe);
+  paVar3 = (uVar18 + 0xe);
   b_force_background = &local_2a;
   uVar18 = CONCAT22(pRVar19,param_2);
   uVar13 = (paVar3 >> 0x10);
@@ -736,7 +736,7 @@ pub fn unk_draw_op_1018_cfc0(param_1: &mut Struct36,param_2: u16)
   pRVar18 = pRStack44;
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   uVar17 = (iVar10 + 0xe2);
-  paVar3 = *(astruct_76 **)(uVar17 + 0xe);
+  paVar3 = (uVar17 + 0xe);
   b_force_background = &local_2a;
   uVar17 = CONCAT22(pRVar18,param_2);
   uVar12 = (paVar3 >> 0x10);

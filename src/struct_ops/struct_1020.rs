@@ -155,11 +155,11 @@ pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
   uVar1 = iVar3.field_0x6 << 0x3;
   mem_op_1000_179c(uVar1,puVar2,0x1000);
   &iVar3.field_0x8 = uVar1;
-  *(uchar **)(&iVar3.field_0x8 + 0x2) = puVar2;
+  (&iVar3.field_0x8 + 0x2) = puVar2;
   uVar1 = iVar3.field_0x6 << 0x2;
   mem_op_1000_179c(uVar1,puVar2,0x1000);
   &iVar3.field_0xc = uVar1;
-  *(uchar **)(&iVar3.field_0xc + 0x2) = puVar2;
+  (&iVar3.field_0xc + 0x2) = puVar2;
   pass1_1000_4906(iVar3.field_0x8,0x0,iVar3.field_0x6 << 0x3);
   pass1_1000_4906(iVar3.field_0xc,0x0,iVar3.field_0x6 << 0x2);
   return;

@@ -1,10 +1,9 @@
 
-i16 
-string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
-                param_5: u16,param_6: u16,uparam_7: &mut String,param_8: u16)
+pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
+                param_5: u16,param_6: u16,uparam_7: &mut String,param_8: u16) -> i16
 
 {
-  Ulet UVar1: i32;
+  let UVar1: i32;
   let puVar2: *mut u16;
   let uVar3: u16;
   let uVar4: u16;
@@ -66,7 +65,7 @@ string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
   iStack16 = iStack16 + -0x1;
   mem_op_1000_179c(uVar4,param_7,0x1000);
   &iVar5.field_0x90 = uVar4;
-  *(uchar **)(&iVar5.field_0x90 + 0x2) = param_7;
+  (&iVar5.field_0x90 + 0x2) = param_7;
   _iStack14 = CONCAT22(param_8,&param_6);
   iStack16 = param_4 + -0x1;
   if (iStack16 != 0x0) {

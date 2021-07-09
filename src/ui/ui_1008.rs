@@ -57,7 +57,7 @@ pub fn win_ui_cursor_op_1008_06c0(param_1: *mut u32,param_2: u32,param_3: u16,pa
 }
 
 
-pub fn menu_ui_op_1008_09ba(param_1: u32,param_2: HWND16,RECT16 *param_3,param_4: HWND16)
+pub fn menu_ui_op_1008_09ba(param_1: u32,param_2: HWND16,param_3: &RECT16,param_4: HWND16)
 {
   let HVar1: HMENU16;
   let iVar2: i16;
@@ -648,7 +648,7 @@ pub fn save_file_1008_3178(param_1: u32,param_2: i16,param_3: u16)
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn set_sys_color_1008_357e(param_1: u32,param_2: i16,INT16 in_index_3,param_4: u16)
+pub fn set_sys_color_1008_357e(param_1: u32,param_2: i16,in_index_3: i16,param_4: u16)
 {
   let uVar1: u16;
   COLORREF colorref_var2;
@@ -818,7 +818,7 @@ win_ui_op_1008_3c34(param_1: u32,param_2: u8,param_3: u16,HDC16 param_4,
   let iVar3: i16;
   let uVar4: u16;
   let uVar5: u16;
-  HPALETTE16 HStack12;
+  let HStack12: HPALETTE16;
   let uStack10: u16;
   let puStack6: u32;
   
@@ -886,7 +886,7 @@ pub fn set_di_bits_to_device_1008_45d6(param_1: u32,HDC16 param_2)
   uVar1 = (iVar3 + 0x10);
   cx = (uVar1 >> 0x10);
   y_dest = uVar1;
-  info = *(INT16 *)(y_dest + 0x8);
+  info = (y_dest + 0x8);
   uVar1 = (iVar3 + 0x14);
   SetDIBitsToDevice(param_2,0x0,y_dest,cx,uVar1,(uVar1 >> 0x10),info,
                     0x0,0x0,0x0,(BITMAPINFO *)info,(y_dest + 0x4));
@@ -927,7 +927,7 @@ pub fn stretch_di_bits_1008_465a(param_1: u32,HDC16 param_2)
   x_src = (uVar1 >> 0x10);
   height_dst = uVar1;
   bits = *(PVOID *)(height_dst + 0x4);
-  height_src = *(INT16 *)(height_dst + 0x8);
+  height_src = (height_dst + 0x8);
   uVar1 = (iVar3 + 0x14);
   StretchDIBits16(param_2,0x20,0xcc,0x0,height_dst,x_src,uVar1,
                   (uVar1 >> 0x10),height_src,bits,(BITMAPINFO *)0x0,0x0,
@@ -942,7 +942,7 @@ pub fn palette_op_1008_46e4(param_1: u32,param_2: u16,param_3: u16,HDC16 param_4
 {
   let bVar1: bool;
   let uVar2: u16;
-  HPALETTE16 HVar2;
+  let HVar2: HPALETTE16;
   let iVar3: i16;
   let uVar4: u16;
   let uVar5: u32;
@@ -972,7 +972,7 @@ pub fn palette_op_1008_46e4(param_1: u32,param_2: u16,param_3: u16,HDC16 param_4
     return 0x0;
   }
   create_palette_1008_4e38
-            (*(astruct_13 **)(iVar3 + 0xa),param_4,(uVar6 >> 0x10));
+            ((iVar3 + 0xa),param_4,(uVar6 >> 0x10));
   (iVar3 + 0xe) = uVar2;
   HVar2 = SelectPalette16(param_4,0x0,*(bool *)(iVar3 + 0xe));
   *(HPALETTE16 *)(iVar3 + 0x4) = HVar2;
@@ -986,7 +986,7 @@ HPALETTE16
 palette_op_1008_4e08(param_1: &mut Struct13,bool param_2,param_3: u16,HDC16 param_4)
 
 {
-  HPALETTE16 HVar1;
+  let HVar1: HPALETTE16;
   
   create_palette_1008_4e38(param_1,param_4,param_3);
   HVar1 = SelectPalette16(param_4,0x0,param_2);
@@ -1024,12 +1024,12 @@ create_palette_1008_4e38
     in_log_palette_2 = (LOGPALETTE *)&ctx.PTR_LOOP_1050_1000;
     mem_op_1000_179c(uVar4,param_3,0x1000);
     &local_struct_1.field_0xe = uVar4;
-    *(uchar **)(&local_struct_1.field_0xe + 0x2) = param_3;
+    (&local_struct_1.field_0xe + 0x2) = param_3;
     *local_struct_1.field_0xe = 0x300;
     uVar3 = local_struct_1.field_0xe;
     (uVar3 + 0x2) = local_struct_1.field_0xc;
     puVar2 = local_struct_1.field_0xe;
-    puStack8 = (UCHAR *)(puVar2 & 0xffff0000 | (puVar2 + 0x4));
+    puStack8 = (puVar2 & 0xffff0000 | (puVar2 + 0x4));
     puStack12 = local_struct_1.field_0x4;
     iStack14 = 0x0;
     while( true ) {
@@ -1037,15 +1037,15 @@ create_palette_1008_4e38
       if (*piVar1 == iStack14 || *piVar1 < iStack14) break;
       uVar9 = (puStack12 >> 0x10);
       iVar5 = puStack12;
-      *puStack8 = *(UCHAR *)(iVar5 + 0x2);
+      *puStack8 = *(iVar5 + 0x2);
       uVar10 = (puStack8 >> 0x10);
       iVar6 = puStack8;
       *(iVar6 + 0x1) = *(iVar5 + 0x1);
-      *(UCHAR *)(iVar6 + 0x2) = *puStack12;
+      *(iVar6 + 0x2) = *puStack12;
       *(iVar6 + 0x3) = 0x0;
       iStack14 += 0x1;
-      puStack8 = (UCHAR *)(puStack8 & 0xffff0000 | (iVar6 + 0x4));
-      puStack12 = (UCHAR *)(puStack12 & 0xffff0000 | (iVar5 + 0x4));
+      puStack8 = (puStack8 & 0xffff0000 | (iVar6 + 0x4));
+      puStack12 = (puStack12 & 0xffff0000 | (iVar5 + 0x4));
     }
   }
   CreatePalette16(in_log_palette_2);
@@ -1069,7 +1069,7 @@ file_and_draw_op_1008_4f20
   let uVar4: u16;
   let paVar5: &mut Struct43;
   let uVar6: u32;
-  DEVMODEA *init_data;
+  init_data: DEVMODEA;
   let local_2c: HDC16;
   let mut pCStack42: String;
   let mut pCStack40: String;
@@ -1090,7 +1090,7 @@ file_and_draw_op_1008_4f20
   pass1_1008_5068(param_1,CONCAT22(param_5,local_26));
   pass1_1008_47cc(param_1);
   pass1_1008_4834(param_1);
-  init_data = (DEVMODEA *)0x0;
+  init_data = 0x0;
   uVar6 = pass1_1008_4772(param_1);
   output = (uVar6 >> 0x10);
   pCStack42 = uVar6;
@@ -1119,7 +1119,7 @@ file_and_draw_op_1008_4f20
 pub fn cleanup_palette_1008_56e2(Uparam_1: i32,HDC16 param_2) -> bool
 
 {
-  HPALETTE16 HVar1;
+  let HVar1: HPALETTE16;
   let uVar2: u16;
   
   uVar2 = (param_1 >> 0x10);
@@ -1370,7 +1370,7 @@ win_ui_op_1008_8214(param_1: u16,param_2: i16,param_3: u16,param_4: u32,param_5:
     puVar3 = GetWindowLong16(param_7,0x0);
     *puVar3 = (param_4 + 0x8);
     IVar1 = GetDlgCtrlID16(ctx.s_tile2_bmp_1050_1538);
-    *(INT16 *)(puVar3 + 0x2) = IVar1;
+    (puVar3 + 0x2) = IVar1;
   }
   return 0x1;
 }
@@ -1402,7 +1402,7 @@ pub fn send_msg_1008_84ba(param_1: u16,param_2: u32,param_3: HWND16)
 
 pub fn win_sys_op_1008_84f2(param_1: u16,param_2: u16,param_3: i16,param_4: u32,param_5: HWND16)
 {
-  byte *pbVar1;
+  let pbVar1: *mut u8;
   let iVar2: i16;
   let iVar3: i16;
   let Bvar4: bool;
@@ -1562,7 +1562,7 @@ pub fn set_win_text_1008_9664(param_1: u32,param_2: u16,char *param_3)
 }
 
 
-pub fn show_win_1008_96ae(param_1: u32,INT16 param_2,param_3: HWND16) -> bool
+pub fn show_win_1008_96ae(param_1: u32,param_2: i16,param_3: HWND16) -> bool
 
 {
   let BVar1: bool;
@@ -1895,7 +1895,7 @@ switchD_1008_9b30_caseD_1:
 }
 
 
-pub fn get_stock_obj_1008_9c56(INT16 param_1)
+pub fn get_stock_obj_1008_9c56(param_1: i16)
 {
   GetStockObject16(param_1);
   return;
@@ -2045,7 +2045,7 @@ pass1_1008_a1f0(param_1: u16,param_2: u16,param_3: u8,param_4: u32,param_5: *mut
     uVar3 = puStack6 >> 0x10;
     pcVar12 = pass1_1038_4d28(CONCAT13((uVar6 >> 0x8),CONCAT12(uVar6,iVar9)));
     param_1 = 0x1000;
-    sys_1000_3f9c((uchar *)(uVar8 + 0xe),in_buf_len_5,local_106,param_2,
+    sys_1000_3f9c((uVar8 + 0xe),in_buf_len_5,local_106,param_2,
                   pcVar12,&stack0xfffe,uVar3,0x1000,param_2,param_3);
     break;
   case 0x5:

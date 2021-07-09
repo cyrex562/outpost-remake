@@ -672,7 +672,7 @@ big_switch_1008_15d4
     puVar6 = (extraout_DX | puVar5);
     if (puVar6 == 0x0) goto LAB_1008_162a;
     uVar2 = (puVar5 + 0x4);
-    puVar6 = *(uchar **)(puVar5 + 0x6);
+    puVar6 = (puVar5 + 0x6);
     param_1 = uVar2;
   } while ((param_1 + 0xde) != param_5);
   uStack6 = uVar2 & 0xffff | ZEXT24(puVar6) << 0x10;
@@ -2277,7 +2277,7 @@ pub fn pass1_1008_738c(param_1: u16,param_2: u16,param_3: u16) -> u16
 
 
 
-i16  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16)
+pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
 
 {
   let iVar1: i16;

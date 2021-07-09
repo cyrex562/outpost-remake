@@ -1,22 +1,23 @@
+use crate::{mem_1000::mem_op_1000_179c, mixed::mixed_1010_20ba, pass::{pass_1000::pass1_1000_484c, pass_1008::pass1_1008_4772, pass_1010::{pass1_1010_1f62, pass1_1010_209e, pass1_1010_6ca2, pass1_1010_715c, pass1_1010_8170}, pass_1018::pass1_1018_0afa}, string::string_1040::string_1040_8520, switch_ops::switch_1008::switch_1008_73ea, util::{CONCAT12, CONCAT13, CONCAT22, SUB42}, win_struct::{HDC16, HGDIOBJ16, HPALETTE16, POINT16, RECT16}, winapi::{CreateDC16, DeleteDC16, DeleteObject16, PtInRect16, Rectangle16, SelectObject16, SelectPalette16}};
 
-u16_t 
-draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
+
+pub unsafe fn draw_fn_1010_2a32(param_1: u16,param_2: u16,__return_storage_ptr__: *mut u16,
                  param_4: i16,param_5: u16,param_6: u32,param_7: u16,
-                 param_8: u16,param_9: u16,param_10: u16)
+                 param_8: u16,param_9: u16,param_10: u16, unaff_SS: u16, unaff_SI: u16, unaff_DI: u16, in_AF: u8) -> u16
 
 {
   let piVar1: *mut i16;
   let mut pcVar2: String; 
-  byte *pbVar3;
+  let pbVar3: *mut u8;
   let uVar4: u32;
   let bVar5: u8;
   let uVar6: u16;
   let ppcVar7: u32;
-  code *pcVar8;
+  let pcVar8: u32;
   let puVar9: *mut u16;
   let puVar10: *mut u16;
   let uVar11: u16;
-  HPALETTE16 b_force_background;
+  let b_force_background: HPALETTE16;
   let handle: HGDIOBJ16;
   let uVar12: u16;
   let uVar13: u16;
@@ -30,16 +31,16 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   let extraout_DX_02: *mut u8;
   let puVar18: *mut u8;
   let iVar19: i16;
-  let unaff_SI: i16;
+  // let unaff_SI: i16;
   let iVar20: i16;
   let iVar21: i16;
-  let unaff_DI: u16;
+  // let unaff_DI: u16;
   let uVar22: u16;
   let hdc: HDC16;
-  let unaff_SS: u16;
+  // let unaff_SS: u16;
   let bVar23: u8;
   let bVar24: bool;
-  undefined1 in_AF;
+  // let in_AF: u8;
   let uVar25: u32;
   let in_stack_0000ffca: u16;
   let uVar26: u16;
@@ -57,26 +58,22 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   bVar23 = 0x0;
   uVar30 = 0x0;
   uVar28 = (param_4 >> 0x8);
-  if ((param_6 + 0xec76 & 0x3) != 0x0) goto LAB_1010_2ad8;
+  if ((param_6 + 0xec76 & 0x3) != 0x0) {
+    // goto LAB_1010_2ad8;
+  }
   uVar11 = param_6 + 0xec76 >> 0x1;
-  if (0x1c < uVar11) goto LAB_1010_2ad8;
-  switch(uVar11) {
-  default:
+  if (0x1c < uVar11) {
+    //goto LAB_1010_2ad8;
+  }
+  match(uVar11) {
+  _ => {},
 //     TODO: goto switchD_1010_2ab5_caseD_0;
-  case 0x1:
-  case 0x3:
-  case 0xb:
-    *(u16_t *)(uVar11 + 0xa) = param_8;
-  case 0x9:
-  case 0xf:
-  case 0x15:
-  case 0x1b:
-    *(u16_t *)(uVar11 + 0xa) = param_8;
-    *(u16_t *)(uVar11 + 0x10) = param_8;
-    *(u16_t *)(uVar11 + 0xc) = param_8;
-    return param_10;
-  case 0x5:
-    BVar14 = write_to_file_1008_7e1c
+  0x1|0x3|0xb =>{(uVar11 + 0xa) = param_8;}
+  0x9|0xf|0x15|0x1b =>  {(uVar11 + 0xa) = param_8;
+    (uVar11 + 0x10) = param_8;
+    (uVar11 + 0xc) = param_8;
+    return param_10;}
+  0x5 => {BVar14 = write_to_file_1008_7e1c
                        (param_5,param_6,param_8,0x0,
                         CONCAT13(param_1._1_1_,
                                          CONCAT12(param_1,param_9)),0x1008);
@@ -84,66 +81,69 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
       return param_7;
     }
     ctx.PTR_LOOP_1050_0310 = 0x6d0;
-    return param_7;
-  case 0x6:
-    bVar23 = 0x0;
+    return param_7;}
+  0x6 =>
+    {bVar23 = 0x0;
 //     TODO: goto LAB_1010_2ad8;
-  case 0x7:
-    ppcVar7 = param_8;
+}
+  0x7 =>
+    {ppcVar7 = param_8;
     (**ppcVar7)();
     iVar15 = param_5 + 0x105;
     puVar17 = extraout_DX;
     pass1_1010_8170(ctx.PTR__LOOP_1050_14cc,iVar15,extraout_DX,0x1010);
     iVar20 = param_5 * 0x4;
     (__return_storage_ptr__ + iVar20 + 0x26) = iVar15;
-    *(uchar **)(__return_storage_ptr__ + iVar20 + 0x28) = puVar17;
+    (__return_storage_ptr__ + iVar20 + 0x28) = puVar17;
     HVar29 = ctx.data_seg;
-    uVar25 = pass1_1008_4772(*(astruct_76 **)(__return_storage_ptr__ + iVar20 + 0x26)
+    uVar25 = pass1_1008_4772((__return_storage_ptr__ + iVar20 + 0x26)
                             );
     puVar17 = (uVar25 >> 0x10);
-    CreateDC16(0x1008,uVar25,puVar17,(DEVMODEA *)puVar17);
+    CreateDC16(0x1008,uVar25,puVar17,puVar17);
     b_force_background =
          palette_op_1008_4e08
-                   (*(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe),&stack0xffec,
+                   ((ctx.PTR__LOOP_1050_4230 + 0xe),&stack0xffec,
                     puVar17,0x1008);
     handle = SelectObject16(0x1008,CONCAT11(uVar30,bVar23));
     hdc = ctx.s_tile2_bmp_1050_1538;
     HVar29 = SelectObject16(ctx.s_tile2_bmp_1050_1538,HVar29);
-    for (iVar15 = 0x0; piVar1 = (__return_storage_ptr__ + 0x74),
-        *piVar1 != iVar15 && iVar15 <= *piVar1; iVar15 += 0x1) {
-      iVar20 = (iVar15 * 0x10 + param_5) * 0x8;
-      puVar17 = *(uchar **)(__return_storage_ptr__ + 0x72);
-      hdc = 0x1000;
-      b_force_background = 0x48e1;
-      uVar11 = pass1_1000_484c(CONCAT13((unaff_SS >> 0x8),
-                                        CONCAT12(unaff_SS,&stack0xfff2)),
-                               CONCAT13((puVar17 >> 0x8),
-                                        CONCAT12(puVar17,
-                                                 iVar20 + (__return_storage_ptr__
-                                                                  + 0x7))),0x8);
-      if (uVar11 != 0x0) {
-        uVar4 = (__return_storage_ptr__ + 0x7);
-        uVar22 = (uVar4 >> 0x10);
-        iVar19 = uVar4;
-        iVar21 = iVar20 + iVar19;
-        hdc = ctx.s_tile2_bmp_1050_1538;
-        b_force_background = (HPALETTE16)&ctx.PTR_LOOP_1050_4908;
-        Rectangle16(0x1000,*(INT16 *)(iVar21 + 0x6),*(INT16 *)(iVar21 + 0x4),
-                    *(INT16 *)(iVar21 + 0x2),*(INT16 *)(iVar19 + iVar20));
-      }
-    }
+    // TODO: refactor for loop
+    // for (iVar15 = 0x0; piVar1 = (__return_storage_ptr__ + 0x74),
+    //     *piVar1 != iVar15 && iVar15 <= *piVar1; iVar15 += 0x1) {
+    //   iVar20 = (iVar15 * 0x10 + param_5) * 0x8;
+    //   puVar17 = (__return_storage_ptr__ + 0x72);
+    //   hdc = 0x1000;
+    //   b_force_background = 0x48e1;
+    //   uVar11 = pass1_1000_484c(CONCAT13((unaff_SS >> 0x8),
+    //                                     CONCAT12(unaff_SS,&stack0xfff2)),
+    //                            CONCAT13((puVar17 >> 0x8),
+    //                                     CONCAT12(puVar17,
+    //                                              iVar20 + (__return_storage_ptr__
+    //                                                               + 0x7))),0x8);
+    //   if (uVar11 != 0x0) {
+    //     uVar4 = (__return_storage_ptr__ + 0x7);
+    //     uVar22 = (uVar4 >> 0x10);
+    //     iVar19 = uVar4;
+    //     iVar21 = iVar20 + iVar19;
+    //     hdc = ctx.s_tile2_bmp_1050_1538;
+    //     b_force_background = (HPALETTE16)&ctx.PTR_LOOP_1050_4908;
+    //     Rectangle16(0x1000,(iVar21 + 0x6),(iVar21 + 0x4),
+    //                 (iVar21 + 0x2),(iVar19 + iVar20));
+    //   }
+    // }
     SelectPalette16(hdc,0x0,b_force_background);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
     SelectObject16(ctx.s_tile2_bmp_1050_1538,HVar29);
     DeleteDC16(ctx.s_tile2_bmp_1050_1538);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
-    return puVar17;
-  case 0x8:
-    bVar23 = 0x3;
+    return puVar17;}
+  0x8 =>
+    {bVar23 = 0x3;
 //     TODO: goto LAB_1010_2ad8;
-  case 0xd:
-    pbVar3 = (uVar11 + unaff_SI);
+}
+  0xd => 
+    {pbVar3 = (uVar11 + unaff_SI);
     bVar23 = *pbVar3;
     bVar5 = *pbVar3 + param_7;
     *pbVar3 = bVar5 + (uVar11 < 0x1c);
@@ -174,24 +174,23 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
                     param_7,unaff_SS);
     ctx._PTR_LOOP_1050_4230 =
          CONCAT13(param_1,CONCAT12(uVar32,CONCAT11(uVar31,uVar30)));
-    return CONCAT11(param_1,uVar32);
-  case 0xe:
-    (__return_storage_ptr__ + 0x2) = param_5;
-    break;
-  case 0x11:
-    do {
+    return CONCAT11(param_1,uVar32);}
+  0xe => 
+    {(__return_storage_ptr__ + 0x2) = param_5;}
+  0x11 =>
+    {loop {
                     // WARNING: Do nothing block with infinite loop
-    } while( true );
-  case 0x12:
-    ctx.PTR_LOOP_1050_10c6 = (0x0 < param_5);
-    ctx.PTR_LOOP_1050_1142 = (0x2 < param_5);
-    break;
-  case 0x13:
+    } }
+  0x12 =>
+    {ctx.PTR_LOOP_1050_10c6 = (0x0 < param_5);
+    ctx.PTR_LOOP_1050_1142 = (0x2 < param_5);}
+
+  0x13 =>{
     iVar15 = __return_storage_ptr__ * 0x8 + param_1;
     if ((((iVar15 + 0x22) != 0x0) || ((iVar15 + 0x24) != 0x0)) ||
        (((iVar15 + 0x26) != 0x0 || ((iVar15 + 0x28) != 0x0)))) {
       uVar4 = (param_1 + 0xe);
-      sys_1000_3f9c((uchar *)uVar4,(uVar4 >> 0x10),
+      sys_1000_3f9c(uVar4,(uVar4 >> 0x10),
                     s__d__d__d__d_1050_14ae,ctx.data_seg,
                     
                              (__return_storage_ptr__ * 0x8 + param_1 + 0x22),
@@ -201,16 +200,17 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
                 (&ctx.PTR_LOOP_1050_1000,uVar4,(uVar4 >> 0x10),
                  (param_1 + 0xe));
     }
-    return param_7;
-  case 0x14:
+    return param_7;}
+  0x14 => {
     (__return_storage_ptr__ + 0x24) = param_5;
-    break;
-  case 0x17:
+    // break;
+  }
+  0x17 => {
     puVar17 = (param_7 - 0x1);
     pbVar3 = (uVar11 + unaff_SI);
     *pbVar3 = *pbVar3 | puVar17;
-    *(u16_t *)(__return_storage_ptr__ + 0x12) = param_8;
-    *(uchar **)(__return_storage_ptr__ + 0x14) = puVar17;
+    (__return_storage_ptr__ + 0x12) = param_8;
+    (__return_storage_ptr__ + 0x14) = puVar17;
     uVar11 = 0x0;
     while( true ) {
       if (in_stack_0000ffca <= uVar11) {
@@ -247,7 +247,9 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
       if ((BVar14 == 0x0) ||
          (BVar14 = read_file_1008_7dee(param_5,param_6,puVar27 + 0x6,0x0,
                                        (puVar27 >> 0x10),0x2,0x1008),
-         BVar14 == 0x0)) break;
+         BVar14 == 0x0)) {
+           // break
+         };
       iVar15 = switch_1008_73ea(param_5,param_6,in_stack_0000ffde);
       (puVar27 + 0x4) = iVar15;
       ppcVar7 = (
@@ -265,11 +267,12 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     ppcVar7 = *puVar27;
     (**ppcVar7)();
     ctx.PTR_LOOP_1050_0310 = 0x6d2;
-    return extraout_DX_01;
-  case 0x18:
+    return extraout_DX_01;}
+  0x18 =>{
     bVar23 = 0x2;
 //     TODO: goto LAB_1010_2ad8;
-  case 0x19:
+}
+  0x19 =>{
     uVar13 = pass1_1010_6ca2(CONCAT13(uVar28,CONCAT12(param_4,__return_storage_ptr__
                                                      )),0x8,param_7,unaff_SS);
     if (uVar13 != 0x0) {
@@ -284,10 +287,10 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
     if (uVar13 != 0x0) {
       pass1_1010_715c(0x1c005a,0x1c,uVar13,param_7,unaff_DI,unaff_SS);
     }
-    return param_7;
-  case 0x1a:
+    return param_7;}
+  0x1a => {
     (__return_storage_ptr__ + 0x26) = param_5;
-  }
+  
   bVar23 = 0x1;
 //LAB_1010_2ad8:
   if ((bVar23 == 0x1) || (bVar23 == 0x2)) {
@@ -312,12 +315,19 @@ draw_fn_1010_2a32(param_1: u16,param_2: u16,u16 *__return_storage_ptr__,
   (bVar23 * 0x7c + 0xed6) = param_5;
   pass1_1010_1f62(unaff_SS,CONCAT13(uVar28,CONCAT12(param_4,__return_storage_ptr__))
                   ,0xc);
-switchD_1010_2ab5_caseD_0:
-  return param_7;
+// switchD_1010_2ab5_caseD_0:
+  return param_7;}
 }
 
 
-i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
+pub fn  pt_in_rect_1010_40f8(
+  ctx: &mut AppContext, 
+  param_1: u32,
+  param_2: &POINT16,
+  param_3: &RECT16,
+in_DX: *mut u8,
+unaff_DI: i16,
+unaff_SS: u16) -> i16
 
 {
   let piVar1: *mut i16;
@@ -326,12 +336,12 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
   let uVar4: u16;
   let uVar5: u16;
   let iVar6: i16;
-  let in_DX: *mut u8;
+  // let in_DX: *mut u8;
   let puVar7: *mut u8;
   let puVar8: *mut u8;
-  let unaff_DI: i16;
+  // let unaff_DI: i16;
   let uVar9: u16;
-  let unaff_SS: u16;
+  // let unaff_SS: u16;
   let puVar10: *mut u16;
   let puStack16: u32;
   let iStack6: i16;
@@ -339,7 +349,7 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
   
   iStack6 = 0x0;
   uStack4 = 0x0;
-  do {
+  loop {
     uVar9 = (param_1 >> 0x10);
     piVar1 = (param_1 + 0x74);
     if (*piVar1 == iStack6 || *piVar1 < iStack6) {
@@ -376,15 +386,15 @@ i16  pt_in_rect_1010_40f8(param_1: u32,POINT16 *param_2,RECT16 *param_3)
       }
       return -0x1;
     }
-    in_DX = *(uchar **)(param_1 + 0x72);
+    in_DX = (param_1 + 0x72);
     BVar3 = PtInRect16(param_3,*param_2);
     if (BVar3 != 0x0) {
       uStack4 = 0x1;
 //       TODO: goto LAB_1010_413e;
     }
     iStack6 += 0x1;
-    param_3 = s_tile2_bmp_1050_1538;
-  } while( true );
+    param_3 = ctx.s_tile2_bmp_1050_1538;
+  } 
 }
 
 
@@ -394,10 +404,13 @@ pub fn draw_1010_47ae(param_1: u32,param_2: u16,param_3: u16)
   let UStack4: u16;
   
   UStack4 = 0x0;
-  do {
+  loop {
     draw_op_1010_47d0(param_1,(param_1 >> 0x10),UStack4,param_2,param_3);
     UStack4 += 0x1;
-  } while (UStack4 < 0x10);
+    if UStack4 >= 0x10 {
+      break;
+    }
+  } 
   return;
 }
 
@@ -405,16 +418,18 @@ pub fn draw_1010_47ae(param_1: u32,param_2: u16,param_3: u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
-draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
-                 param_5: u16)
-
+pub fn draw_op_1010_47d0(
+  param_1: u32,
+  param_2: u16,
+  param_3: u16,
+  in_style_3: i16,
+  param_5: u16)
 {
   let piVar1: *mut i16;
   let puVar2: u32;
   let ppcVar3: u32;
   let iVar4: i16;
-  HPALETTE16 b_force_background;
+  let b_force_background: HPALETTE16;
   let handle: HGDIOBJ16;
   let handle_00: HGDIOBJ16;
   let uVar5: u16;
@@ -427,7 +442,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   let uVar8: u16;
   let hdc: HDC16;
   let uVar9: u32;
-  DEVMODEA *init_data;
+  let init_data: ;
   let uVar10: u32;
   let iStack32: i16;
   let local_14: HDC16;
@@ -438,7 +453,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   let uStack10: u16;
   let uStack8: u16;
   let stock_obj_handle: HGDIOBJ16;
-  HPEN16 pen_handle;
+  let pen_handle: HPEN16;
   
   uVar10 = 0x1;
   pen_handle = CreatePen16(in_style_3,-0x2805,0x77);
@@ -449,7 +464,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   uStack10 = 0x1;
   uStack8 = 0x1;
   puVar2 = (param_1 + 0x26 + param_3 * 0x4);
-  puVar6 = *(uchar **)(param_1 + 0x26 + param_3 * 0x4 + 0x2);
+  puVar6 = (param_1 + 0x26 + param_3 * 0x4 + 0x2);
   if ((puVar6 | puVar2) != 0x0) {
     ppcVar3 = *puVar2;
     (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,puVar2,puVar6,0x1,uVar8,uVar10);
@@ -459,16 +474,16 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
   pass1_1010_8170(ctx.PTR__LOOP_1050_14cc,iVar4,puVar6,s_tile2_bmp_1050_1538);
   iVar7 = param_3 * 0x4;
   (param_1 + iVar7 + 0x26) = iVar4;
-  *(uchar **)(param_1 + iVar7 + 0x28) = puVar6;
-  init_data = (DEVMODEA *)0x0;
-  uVar9 = pass1_1008_4772(*(astruct_76 **)(param_1 + 0x26 + iVar7));
+  (param_1 + iVar7 + 0x28) = puVar6;
+  init_data = 0x0;
+  uVar9 = pass1_1008_4772((param_1 + 0x26 + iVar7));
   output = (uVar9 >> 0x10);
   pCStack18 = uVar9;
   pCStack16 = output;
   local_14 = CreateDC16(0x1008,pCStack18,output,init_data);
   b_force_background =
        palette_op_1008_4e08
-                 (*(astruct_13 **)(ctx.PTR__LOOP_1050_4230 + 0xe),&local_14,
+                 ((ctx.PTR__LOOP_1050_4230 + 0xe),&local_14,
                   output,0x1008);
   handle = SelectObject16(0x1008,pen_handle);
   hdc = ctx.s_tile2_bmp_1050_1538;
@@ -489,7 +504,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
       iVar9 = (iVar4 + iVar7);
       hdc = ctx.s_tile2_bmp_1050_1538;
       Rectangle16(0x1000,iVar9.field_0x6,iVar9.field_0x4,iVar9.field_0x2,
-                  *(INT16 *)(iVar7 + iVar4));
+                  (iVar7 + iVar4));
     }
     iStack32 += 0x1;
   }
@@ -503,7 +518,7 @@ draw_op_1010_47d0(param_1: u32,param_2: u16,param_3: u16,INT16 in_style_3,
 }
 
 
-pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,RECT16 *param_4)
+pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,param_4: &RECT16)
 {
   let piVar1: *mut i16;
   let bVar2: bool;

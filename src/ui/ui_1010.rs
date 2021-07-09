@@ -81,7 +81,7 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
     piVar3 = (puVar5 & 0xffff | extraout_DX << 0x10);
     local_18.show_cmd = 0x9;
     local_18.rc_normal_position.x = *piVar3;
-    local_18.rc_normal_position.y = *(INT16 *)(iVar2 + 0x2);
+    local_18.rc_normal_position.y = (iVar2 + 0x2);
     iStack6 = (iVar2 + 0x4) + *piVar3;
     iStack4 = (iVar2 + 0x2) + (iVar2 + 0x6);
     SetWindowPlacement16(ctx.s_tile2_bmp_1050_1538,&local_18);

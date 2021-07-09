@@ -41,7 +41,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
         struct_1040_a598((paVar5 & 0xffff | ZEXT24(puVar6) << 0x10));
       }
       (param_1 + 0x90) = uVar3;
-      *(uchar **)(param_1 + 0x92) = puVar7;
+      (param_1 + 0x92) = puVar7;
       (param_1 + 0x90) = 0x11;
       iStack12 = *(param_1 + 0x90);
       uVar3 = iStack12 * 0xa + 0x2;
@@ -53,13 +53,13 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
       }
       else {
         paStack16 = iStack12;
-        pass1_1000_5586((uchar *)0xa564,&ctx.PTR_LOOP_1050_1040,iStack12,0xa,
+        pass1_1000_5586(0xa564,&ctx.PTR_LOOP_1050_1040,iStack12,0xa,
                         uVar3 + 0x2,puVar7);
         uVar1 = (param_1 + 0x90);
         uVar8 = (uVar1 >> 0x10);
         iVar4 = uVar1;
         (iVar4 + 0x2) = uVar3 + 0x2;
-        *(uchar **)(iVar4 + 0x4) = puVar7;
+        (iVar4 + 0x4) = puVar7;
       }
       uVar8 = (paStack10 >> 0x10);
       uVar1 = (param_1 + 0x90);

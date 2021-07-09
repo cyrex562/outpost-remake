@@ -61,7 +61,7 @@ switchD_1030_069f_caseD_19:
 //     TODO: goto joined_r0x103002a1;
   case 0xb:
     mem_op_1000_179c(0x2c,param_4,0x1000);
-    if ((uchar *)(param_4 | param_5) != 0x0) {
+    if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_3670(CONCAT22(param_4,param_5),
                                 (param_4 | param_5),param_6,param_7);
       return puVar4;
@@ -260,7 +260,7 @@ joined_r0x103002a1:
   case 0x39:
   case 0x3a:
     mem_op_1000_179c(0x24,param_4,0x1000);
-    if ((uchar *)(param_4 | param_5) != 0x0) {
+    if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_60bc(CONCAT22(param_4,param_5),param_5,
                                 (param_4 | param_5));
       return puVar4;
@@ -374,7 +374,7 @@ joined_r0x103002a1:
   case 0x5a:
   case 0x5b:
     mem_op_1000_179c(0x26,param_4,0x1000);
-    if ((uchar *)(param_4 | param_5) != 0x0) {
+    if ((param_4 | param_5) != 0x0) {
       puVar4 = pass1_1028_5524(CONCAT22(param_4,param_5),
                                (param_4 | param_5));
       return puVar4;
@@ -532,7 +532,7 @@ switchD_1030_0fa3_caseD_19:
 //     TODO: goto joined_r0x10300adb;
   case 0xb:
     mem_op_1000_179c(0x2c,param_7,0x1000);
-    if ((uchar *)(param_7 | param_8) != 0x0) {
+    if ((param_7 | param_8) != 0x0) {
       puVar5 = pass1_1028_3692(param_8,param_7,param_4,param_6,
                                (param_7 | param_8),param_9,param_10);
       return puVar5;
@@ -548,7 +548,7 @@ switchD_1030_0fa3_caseD_19:
     break;
   case 0xd:
     mem_op_1000_179c(0x26,param_7,0x1000);
-    if ((uchar *)(param_7 | param_8) != 0x0) {
+    if ((param_7 | param_8) != 0x0) {
       puVar5 = pass1_1028_34a6(param_8,param_7,param_4,param_6,
                                (param_7 | param_8));
       return puVar5;
@@ -754,7 +754,7 @@ joined_r0x10300adb:
   case 0x39:
   case 0x3a:
     mem_op_1000_179c(0x24,param_7,0x1000);
-    if ((uchar *)(param_7 | param_8) != 0x0) {
+    if ((param_7 | param_8) != 0x0) {
       puVar5 =
                pass1_1028_611e(param_8,param_7,param_4,param_6,param_8,
                                (param_7 | param_8));
