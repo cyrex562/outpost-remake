@@ -1,5 +1,6 @@
+use crate::win_struct::HWND16;
 
-pub fn pt_in_rect_1018_1bda(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
+pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16)
 {
   let piVar1: *mut i16;
   let uVar2: u16;
@@ -26,7 +27,7 @@ pub fn pt_in_rect_1018_1bda(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
   PStack24 = (POINT16)CONCAT22(param_2,param_3);
   uStack16 = 0x0;
   iStack26 = 0x0;
-  while( true ) {
+  loop {
     uVar6 = (param_1 >> 0x10);
     piVar1 = (iVar3 + 0x44);
     if (*piVar1 == iStack26 || *piVar1 < iStack26) {
@@ -42,7 +43,7 @@ pub fn pt_in_rect_1018_1bda(param_1: u32,param_2: u16,param_3: u16,param_4: u16)
     local_8 += local_14 + -0x6;
     iStack4 = local_8 + 0xc;
     BVar4 = PtInRect16(0x1008,PStack24);
-    if (BVar4 != 0x0) break;
+    if (BVar4 != 0x0) { break; }
     iStack26 += 0x1;
   }
   pass1_1018_1eda(param_1,uStack14,param_4);
@@ -63,7 +64,7 @@ pub fn get_dc_1018_4db0(Uparam_1: i32,param_2: u16,param_3: HWND16)
 }
 
 
-void 
+pub fn
 create_dc_1018_4e04(astruct_8 **param_1,param_2: u16,param_3: i16,param_4: i16,
                    LPCSTR in_string_5,u16 in_string_6)
 
@@ -90,16 +91,18 @@ create_dc_1018_4e04(astruct_8 **param_1,param_2: u16,param_3: i16,param_4: i16,
   (**ppcVar1)();
   iVar4.field_0x1a = paVar2;
   if ((ctx.DAT_1050_422e != 0x0) && (0x280 < param_4)) {
-    for (iStack16 = 0x0; iStack16 < ctx.DAT_1050_4216 + 0x1; iStack16 += 0x1) {
-      (&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) =
-           (((&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) *
-                 (param_4 + 0x1)) / 0x280);
-    }
-    for (iStack16 = 0x0; iStack16 < ctx.DAT_1050_422c + 0x1; iStack16 += 0x1) {
-      (&DAT_1050_419a + iStack16 * 0x2) =
-           (((&DAT_1050_419a + iStack16 * 0x2) *
-                 (param_3 + 0x1)) / 0x1e0);
-    }
+// TODO: refactor for loop
+    // for (iStack16 = 0x0; iStack16 < ctx.DAT_1050_4216 + 0x1; iStack16 += 0x1) {
+    //   (&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) =
+    //        (((&ctx.PTR_DAT_1050_0009_1050_4172 + iStack16 * 0x2) *
+    //              (param_4 + 0x1)) / 0x280);
+    // }
+// TODO: refactor for loop
+    // for (iStack16 = 0x0; iStack16 < ctx.DAT_1050_422c + 0x1; iStack16 += 0x1) {
+    //   (&DAT_1050_419a + iStack16 * 0x2) =
+    //        (((&DAT_1050_419a + iStack16 * 0x2) *
+    //              (param_3 + 0x1)) / 0x1e0);
+    // }
   }
   ctx.DAT_1050_422e = 0x0;
   return;
@@ -337,20 +340,22 @@ pub fn draw_line_1018_6444(param_1: u32,HDC16 param_2)
   uVar7 = (pIVar2 >> 0x10);
   iVar5 = pIVar2;
   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5,(iVar5 + iVar1 * 0x8 + -0x4));
-  for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
-    piVar6 = (iStack10 * 0x8 + iVar5);
-    iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
-    MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,iVar4);
-    LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,iVar4);
-  }
+    // TODO: refactor
+  // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+  //   piVar6 = (iStack10 * 0x8 + iVar5);
+  //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
+  //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,iVar4);
+  //   LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,iVar4);
+  // }
   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,*pIVar2);
   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5f,(iVar5 + iVar1 * 0x8 + -0x4));
-  for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
-    piVar6 = (iStack10 * 0x8 + iVar5);
-    iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
-    MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,iVar4);
-    LineTo16(ctx.s_tile2_bmp_1050_1538,0x5a,iVar4);
-  }
+    // TODO: refactor
+  // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+  //   piVar6 = (iStack10 * 0x8 + iVar5);
+  //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
+  //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,iVar4);
+  //   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5a,iVar4);
+  // }
   return;
 }
 

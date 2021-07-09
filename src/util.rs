@@ -39,3 +39,11 @@ pub fn get_string_at_addr(address: u32) -> String {
 pub fn ZEXT24(a: u16) -> u32 {
     unimplemented!()
 }
+
+pub fn vec_from_addr<T>(addr: u32) -> Vec<T> {
+    unimplemented!()
+}
+
+pub fn struct_from_addr<T>(addr: u32) -> T {
+    unimplemented!()
+}

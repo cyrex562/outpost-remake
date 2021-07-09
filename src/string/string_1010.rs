@@ -1,5 +1,5 @@
 
-void 
+pub fn
 string_1010_1722(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u32
                 )
 
@@ -38,7 +38,7 @@ use crate::pass::pass_1038::pass1_1038_4d28;
 use crate::winapi::LoadString16;
 use crate::string::string_1008::str_op_1008_60e8;
 
-pub fn unk_load_str_op_1010_2c34(void) -> u16
+pub fn unk_load_str_op_1010_2c34() -> u16
 
 {
   let pUVar1: *mut u16;
@@ -108,7 +108,7 @@ pub fn load_string_1010_84ac(param_1: i16,param_2: i16,param_3: HINSTANCE16)
 
 
 
-void 
+pub fn
 load_string_1010_84e0
           (in_hinstance_5: HINSTANCE16,param_2: u16,param_3: u16,u16 in_resc_id_3,
           in_buffer_4: &mut String,short in_buf_len_5)
@@ -162,8 +162,8 @@ unk_load_str_op_1010_8c96
       iVar4 = uVar9;
       param_4 = 0x1010;
       switch(uVar5) {
-      case 0x0:
-      case 0x1:
+      0x0 =>
+      0x1 =>
         uVar1 = (iVar6 + 0x8);
         pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,uVar1,(uVar1 >> 0x10));
         local_10 = (iVar4 + 0xc);
@@ -180,7 +180,7 @@ unk_load_str_op_1010_8c96
           return CONCAT22(IVar2,uStack4);
         }
         break;
-      case 0x2:
+      0x2 =>
         uVar1 = (iVar6 + 0x8);
         pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,uVar1,(uVar1 >> 0x10));
         local_10 = (iVar4 + 0xc);
@@ -212,10 +212,10 @@ unk_load_str_op_1010_8c96
         break;
       default:
 //         TODO: goto switchD_1010_8e11_caseD_4;
-      case 0x4:
-      case 0x7:
-      case 0x8:
-      case 0xa:
+      0x4 =>
+      0x7 =>
+      0x8 =>
+      0xa =>
 //         TODO: goto LAB_1010_8ea5;
       }
       uVar9 = ZEXT24(&local_10);
@@ -318,7 +318,7 @@ string_op_1010_ada6(param_1: HINSTANCE16,param_2: u16,param_3: u16,param_4: u16,
 }
 
 
-void 
+pub fn
 string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
                    param_5: &mut String,param_6: u32)
 
@@ -355,7 +355,7 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
   switch(iVar1) {
   default:
     break;
-  case 0x6:
+  0x6 =>
     load_string_1010_84e0(0x1010,uVar7,uVar6,0x3ff,in_buffer_4,in_buf_len_5);
     uStack22 = str_op_1000_3da4(pcStack6);
     pcVar5 = load_string_1010_847e
@@ -364,10 +364,10 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
     uVar7 = pcVar5;
     uVar6 = s_____s__lu_1050_38d7;
 //     TODO: goto LAB_1010_c4f9;
-  case 0x7:
-  case 0x9:
+  0x7 =>
+  0x9 =>
     break;
-  case 0x8:
+  0x8 =>
     load_string_1010_84e0(0x1010,uVar7,uVar6,0x3ff,in_buffer_4,in_buf_len_5);
     uStack22 = str_op_1000_3da4(pcStack6);
     pcVar5 = load_string_1010_847e
@@ -429,18 +429,18 @@ pub fn load_str_1010_ddf6(param_1: u32,param_2: u32)
   *(param_1 + 0x13c) = 0x0;
   uVar1 = struct_op_1030_73a8(param_2);
   switch((uVar1 + 0x12)) {
-  case 0x1:
-  case 0x2:
-  case 0x4:
-  case 0x7:
-  case 0x9:
+  0x1 =>
+  0x2 =>
+  0x4 =>
+  0x7 =>
+  0x9 =>
     break;
-  case 0x3:
-  case 0x5:
+  0x3 =>
+  0x5 =>
     break;
-  case 0x6:
+  0x6 =>
     break;
-  case 0x8:
+  0x8 =>
     break;
   default:
 //     TODO: goto switchD_1010_de53_caseD_9;

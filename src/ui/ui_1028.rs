@@ -1,5 +1,5 @@
 
-pub fn post_msg_1028_76da(void)
+pub fn post_msg_1028_76da()
 {
   let lVar1: i32;
   let uVar2: u16;

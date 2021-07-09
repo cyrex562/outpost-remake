@@ -188,7 +188,7 @@ unsafe fn entry(
     i_var16 = 0x15;
     pass1_1000_25a8(param_5, ctx.s_tile2_bmp_1050_1538 as u16);
     pass1_1000_2913(i_var16, param_5, ctx.s_tile2_bmp_1050_1538 as u16);
-    str_a = poss_str_op_1000_28dc(i_var17);
+    str_a = poss_str_op_1000_28dc(ctx, i_var17);
     if str_a.chars().nth(0).unwrap() != '\0' {
         i_var16 = 0x9;
         if str_a.chars().nth(0).unwrap() == 'M' {

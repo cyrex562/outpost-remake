@@ -17,37 +17,37 @@ pub fn string_op_1020_c2f8(param_1: u16) -> *mut u8
   let mut pcVar1: String; 
   
   switch(param_1) {
-  case 0x1:
+  0x1 =>
     break;
-  case 0x2:
+  0x2 =>
     break;
-  case 0x3:
+  0x3 =>
     break;
-  case 0x4:
+  0x4 =>
     break;
-  case 0x5:
+  0x5 =>
     break;
-  case 0x6:
+  0x6 =>
     break;
-  case 0x7:
+  0x7 =>
     break;
-  case 0x8:
+  0x8 =>
     break;
-  case 0x9:
+  0x9 =>
     break;
-  case 0xa:
+  0xa =>
     break;
-  case 0xb:
+  0xb =>
     break;
-  case 0xc:
+  0xc =>
     break;
-  case 0xd:
+  0xd =>
     break;
-  case 0xe:
+  0xe =>
     break;
-  case 0xf:
+  0xf =>
     break;
-  case 0x10:
+  0x10 =>
   }
   pcVar1 = load_string_1010_847e
                      (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10)

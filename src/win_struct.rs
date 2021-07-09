@@ -193,6 +193,15 @@ pub struct RECT16 {
     pub y: i16,
 }
 
+impl RECT16 {
+    pub fn new() -> RECT16 {
+        RECT16 {
+            x: 0,
+            y: 0
+        }
+    }
+}
+
 pub struct POINT16 {
     // x: i16;
     pub x: i16,

@@ -1,5 +1,7 @@
+use crate::exit::fatal_app_exit_1000_3e9e;
+use crate::winapi::{MessageBox16, MessageBeep16};
 
-pub fn msg_box_op_1000_1f24(param_1: i16,param_2: u16,param_3: u16,param_4: u16) -> bool
+pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u16) -> bool
 
 {
   let piVar1: *mut i16;
@@ -25,7 +27,7 @@ pub fn msg_box_op_1000_214c
   
   text = (0x2 - (param_2 == 0x0) | 0x2110);
   MessageBeep16(param_5);
-  do {
+  loop {
     IVar1 = MessageBox16(ctx.s_tile2_bmp_1050_1538,text,0x1de8,0x1000);
     iVar2 = IVar1 + -0x1;
     if (iVar2 == 0x0) {
@@ -47,5 +49,5 @@ pub fn msg_box_op_1000_214c
       return 0x0;
     }
     text = (text & 0xdfef | 0x1010);
-  } while( true );
+  }
 }

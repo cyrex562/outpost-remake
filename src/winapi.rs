@@ -1,11 +1,6 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{
-    ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16,
-    HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16,
-    HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR,
-    WINDOWPLACEMENT16, WNDCLASS16, WPARAM16,
-};
+use crate::win_struct::{ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16, HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR, WINDOWPLACEMENT16, WNDCLASS16, WPARAM16, PAINTSTRUCT16};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)
@@ -408,11 +403,11 @@ pub fn SetWindowText16(hwnd: HWND16, lp_string: &SEGPTR) -> bool {
     unimplemented!()
 }
 // HDC16 BeginPaint16(HWND16 hwnd, PAINTSTRUCT16 * lps)
-pub fn BeginPaint16(hwnd: HWND16, lps: &mut PAINSTRUCT16) -> HDC16 {
+pub fn BeginPaint16(hwnd: HWND16, lps: &mut PAINTSTRUCT16) -> HDC16 {
     unimplemented!()
 }
 // BOOL16 EndPaint16(HWND16 hwnd, PAINTSTRUCT16 * lps)
-pub fn EndPaint16(hwnd: HWND16, lps: &mut PAINSTRUCT16) -> bool {
+pub fn EndPaint16(hwnd: HWND16, lps: &mut PAINTSTRUCT16) -> bool {
     unimplemented!()
 }
 // HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)

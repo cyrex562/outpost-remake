@@ -31,6 +31,31 @@ LRESULT  send_dlg_item_msg_1038_7eac(param_1: u32)
 
 
 
+use crate::winapi::{EnableWindow16, GetDlgItem16, SetWindowPos16, GetWindowRect16, MapDialogRect16, SendMessage16, ShowWindow16, DestroyWindow16, PostMessage16, GetSystemMetrics16, IsDlgButtonChecked, CheckRadioButton16, SetCursor16, SetWindowText16, SendDlgItemMessage16, IsWindow16, SetDlgItemText16, wsprintf16, GetWindowText16, SetFocus16, CheckDlgButton16, BringWindowToTop16, SetBkColor16, SetTextColor16, GetDlgCtrlID16, GetStockObject16, GetWindowWord16, ReleaseDC16, GetDeviceCaps16, GetDC16, SetDlgItemInt16, GetDlgItemInt16, MessageBox16};
+use crate::util::{CONCAT22, CONCAT12, CONCAT13, SUB42, CONCAT11};
+use crate::win_struct::{HWND16, RECT16, WNDCLASS16, WPARAM16, HCURSOR16, HINSTANCE16, SEGPTR, HDC16, LRESULT};
+use crate::mixed::mixed_1010_20ba;
+use crate::ui::ui_1040::{move_win_1040_826c, dialog_ui_fn_1040_78e2, enable_win_1040_9234, unk_win_ui_op_1040_b230};
+use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
+use crate::pass::pass_1018::{pass1_1018_0ad4, pass1_1018_1c9a};
+use crate::pass::pass_1028::pass1_1028_e1ec;
+use crate::pass::pass_1010::{pass1_1010_0932, pass1_1010_0892, pass1_1010_3770, pass1_1010_375e, pass1_1010_091e, pass1_1010_088c, pass1_1010_08e2, pass1_1010_0886, pass1_1010_6604, pass1_1010_5fd8, pass1_1010_6006, pass1_1010_6566};
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_1708, fn_ptr_1000_17ce};
+use crate::sys_api::unk_win_msg_op_1008_9510;
+use crate::string::string_1000::{unk_str_op_1000_3d3e, str_op_1000_3da4};
+use crate::string::string_1010::{unk_load_str_op_1010_2c34, load_string_1010_847e};
+use crate::defines::Struct18;
+use crate::pass::pass_1008::{pass1_1008_941a, pass1_1008_eb5c, pass1_1008_eb6e, pass1_1008_e038, pass1_1008_e2a4, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_4d72, pass1_1008_3e94, pass1_1008_4772, pass1_1008_3f62, pass1_1008_3e38, pass1_1008_5b12, pass1_1008_5784, pass1_1008_b61a, pass1_1008_b47a, pass1_1008_b38c, pass1_1008_b366, pass1_1008_b200, pass1_1008_b4a0, pass1_1008_b820, pass1_1008_b340, pass1_1008_b63a};
+use crate::string::string_1040::string_1040_8520;
+use crate::pass::pass_1038::{pass1_1038_e03e, pass1_1038_3aa6, pass1_1038_387e};
+use std::default::default;
+use crate::string::string_1008::{string_1008_e586, load_string_1008_b1f0, load_string_1008_b65a};
+use crate::pass::pass_1030::{pass1_1030_8334, pass1_1030_838e, fn_ptr_1030_835a, pass1_1030_532e, pass1_1030_6c1a};
+use crate::cleanup::destroy_win_1040_7b98;
+use crate::struct_ops::struct_1008::{set_struct_1008_574a, pass1_1008_c85e, pass1_1008_c83a, pass1_1008_c79a};
+use crate::pass::pass_1000::pass1_1000_3cea;
+use crate::ui::ui_1008::pass1_1008_b146;
+
 pub fn send_dlg_item_msg_1038_7fae(param_1: u32)
 {
   let in_AX: u16;
@@ -119,7 +144,7 @@ send_dlg_item_msg_1038_8164
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn msg_box_op_1038_81be(param_1: u32,char *param_2,param_3: *mut u8,param_4: u16)
+pub fn msg_box_op_1038_81be(param_1: u32,param_2: &mut String,param_3: *mut u8,param_4: u16)
 {
   char local_206 [0x102];
   char local_104 [0x102];
@@ -211,13 +236,13 @@ pub fn set_win_text_1038_8358(param_1: u32,param_2: HWND16,param_3: u16)
     }
     lp_string = local_208;
   }
-  SetWindowText16(hwnd,(SEGPTR)lp_string);
+  SetWindowText16(hwnd,lp_string);
   return;
 }
 
 
 
-void 
+pub fn
 send_dlg_item_msg_1038_8400
           (param_1: u16,param_2: u16,param_3: u32,param_4: u16,param_5: u16)
 
@@ -227,9 +252,9 @@ send_dlg_item_msg_1038_8400
   let local_a: [u8;8];
   
   pass1_1008_5784(CONCAT22(param_5,local_a),param_3);
-  while( true ) {
+  loop {
     lVar2 = pass1_1008_5b12(local_a,param_5);
-    if (lVar2 == 0x0) break;
+    if (lVar2 == 0x0) { break; }
     uVar1 = (lVar2 + 0x4);
     SendDlgItemMessage16
               (0x1008,uVar1,(uVar1 >> 0x10),0x0,
@@ -274,7 +299,7 @@ pub fn send_dlg_item_msg_1038_844a(param_1: u32,param_2: HWND16,param_3: u16) ->
     load_string_1010_84e0
               (0x1010,_PTR_LOOP_1050_14cc,
                (ctx.PTR__LOOP_1050_14cc >> 0x10),0x100,local_108,param_3);
-    BVar1 = SetWindowText16(0x1010,(SEGPTR)local_108);
+    BVar1 = SetWindowText16(0x1010,local_108);
     return CONCAT22(uVar2,BVar1);
   }
   send_dlg_item_msg_1038_8400(param_1,uVar3,uStack6,0x1854,param_3);
@@ -386,7 +411,7 @@ pub fn send_dlg_item_msg_1038_87b2(param_1: u32,param_2: u16,param_3: u16) -> u1
 }
 
 
-pub fn msg_box_ui_op_1038_8a3a(param_1: u32,char *param_2,param_3: *mut u8,param_4: u16)
+pub fn msg_box_ui_op_1038_8a3a(param_1: u32,param_2: &mut String,param_3: *mut u8,param_4: u16)
 {
   char local_20a [0x102];
   let mut pcStack264: String; 
@@ -500,7 +525,7 @@ pub fn send_dlg_item_msg_1038_8d22(param_1: u32,param_2: HWND16,param_3: u16)
 }
 
 
-pub fn msg_box_op_1038_8dda(param_1: u32,char *param_2,param_3: *mut u8,param_4: u16)
+pub fn msg_box_op_1038_8dda(param_1: u32,param_2: &mut String,param_3: *mut u8,param_4: u16)
 {
   char local_206 [0x102];
   char local_104 [0x102];
@@ -568,9 +593,9 @@ pub fn send_dlg_item_msg_1038_8f74(param_1: u32,param_2: HWND16,param_3: *mut u1
   if (iVar1 == 0x0) {
     local_404 = pass1_1008_c85e((param_1 + 0x94),param_3);
     pass1_1008_5784(CONCAT22(param_3,local_40c),local_404);
-    while( true ) {
+    loop {
       lVar3 = pass1_1008_5b12(local_40c,param_3);
-      if (lVar3 == 0x0) break;
+      if (lVar3 == 0x0) { break; }
       wsprintf16(0x1008,local_50c,param_3);
       SendDlgItemMessage16
                 (ctx.s_tile2_bmp_1050_1538,local_50c,param_3,0x0,
@@ -718,51 +743,51 @@ pub fn win_msg_op_1038_95fc(param_1: u32,param_2: u16)
     puVar5 = extraout_DX;
   }
   puStack14 = CONCAT22(puVar5,uVar2);
-  for (iStack20 = 0x0; iStack20 < 0xf; iStack20 += 0x1) {
-    uVar12 = (param_1 + 0x6);
-    HVar8 = ctx.s_tile2_bmp_1050_1538;
-    UVar3 = GetDlgItemInt16(hwnd,0x1,&local_10,param_2);
-    if (UVar3 != 0x0) {
-      if ((iStack20 * 0xe + 0x5a7c) < 0x83) {
-        uVar11 = 0x8;
-        HVar8 = 0x1000;
-        UVar4 = UVar3;
-        mem_op_1000_179c(0x8,puVar5,0x1000);
-        puStack24 = CONCAT22(puVar5,UVar4);
-        if ((puVar5 | UVar4) == 0x0) {
-          puStack30 = 0x0;
-        }
-        else {
-          *puStack24 = 0x389a;
-          (UVar4 + 0x2) = 0x1008;
-          *puStack24 = 0xa1c4;
-          (UVar4 + 0x2) = 0x1010;
-          puStack30 = puStack24;
-        }
-        uVar7 = (puStack30 >> 0x10);
-        iVar6 = puStack30;
-        (iVar6 + 0x6) = UVar3;
-        (iVar6 + 0x4) = (iStack20 * 0xe + 0x5a7c);
-        ppcVar1 = (*puStack14 + 0x4);
-        (**ppcVar1)(0x1000,puStack14,(puStack14 >> 0x10),iVar6,uVar7,
-                    uVar11,uVar12);
-        puVar5 = extraout_DX_00;
-      }
-      else {
-        if ((iStack20 * 0xe + 0x5a7c) == 0x89) {
-          uVar10 = (iStack20 * 0xe + 0x5a7c);
-          uVar9 = UVar3;
-        }
-        else {
-          uVar10 = (iStack20 * 0xe + 0x5a7c);
-          uVar9 = 0x0;
-        }
-        HVar8 = 0x1010;
-        pass1_1010_6566(puStack10,uVar9,UVar3,uVar10,param_2);
-      }
-    }
-    hwnd = HVar8;
-  }
+  // for (iStack20 = 0x0; iStack20 < 0xf; iStack20 += 0x1) {
+  //   uVar12 = (param_1 + 0x6);
+  //   HVar8 = ctx.s_tile2_bmp_1050_1538;
+  //   UVar3 = GetDlgItemInt16(hwnd,0x1,&local_10,param_2);
+  //   if (UVar3 != 0x0) {
+  //     if ((iStack20 * 0xe + 0x5a7c) < 0x83) {
+  //       uVar11 = 0x8;
+  //       HVar8 = 0x1000;
+  //       UVar4 = UVar3;
+  //       mem_op_1000_179c(0x8,puVar5,0x1000);
+  //       puStack24 = CONCAT22(puVar5,UVar4);
+  //       if ((puVar5 | UVar4) == 0x0) {
+  //         puStack30 = 0x0;
+  //       }
+  //       else {
+  //         *puStack24 = 0x389a;
+  //         (UVar4 + 0x2) = 0x1008;
+  //         *puStack24 = 0xa1c4;
+  //         (UVar4 + 0x2) = 0x1010;
+  //         puStack30 = puStack24;
+  //       }
+  //       uVar7 = (puStack30 >> 0x10);
+  //       iVar6 = puStack30;
+  //       (iVar6 + 0x6) = UVar3;
+  //       (iVar6 + 0x4) = (iStack20 * 0xe + 0x5a7c);
+  //       ppcVar1 = (*puStack14 + 0x4);
+  //       (**ppcVar1)(0x1000,puStack14,(puStack14 >> 0x10),iVar6,uVar7,
+  //                   uVar11,uVar12);
+  //       puVar5 = extraout_DX_00;
+  //     }
+  //     else {
+  //       if ((iStack20 * 0xe + 0x5a7c) == 0x89) {
+  //         uVar10 = (iStack20 * 0xe + 0x5a7c);
+  //         uVar9 = UVar3;
+  //       }
+  //       else {
+  //         uVar10 = (iStack20 * 0xe + 0x5a7c);
+  //         uVar9 = 0x0;
+  //       }
+  //       HVar8 = 0x1010;
+  //       pass1_1010_6566(puStack10,uVar9,UVar3,uVar10,param_2);
+  //     }
+  //   }
+  //   hwnd = HVar8;
+  // }
   (puStack6 + 0xa) = puStack14;
   PostMessage16(hwnd,0x0,0x0,0x11100ed);
   return;
@@ -770,7 +795,7 @@ pub fn win_msg_op_1038_95fc(param_1: u32,param_2: u16)
 
 
 
-void 
+pub fn
 win_ui_op_1038_977a(param_1: i16,param_2: u16,param_3: i16,param_4: *mut u8,param_5: HWND16,
                    param_6: u16)
 
@@ -864,20 +889,20 @@ pub fn win_ui_dlg_op_1038_98b4(param_1: &mut Struct51,param_2: HWND16,bool param
   let local_4: bool;
   
   local_4 = 0x0;
-  for (iStack8 = 0x0; iVar3 = param_1, uVar2 = (param_1 >> 0x10),
-      iStack8 < 0xf; iStack8 += 0x1) {
-    iVar3 = (iVar3 + 0x6);
-    UVar1 = GetDlgItemInt16(param_2,0x1,&local_4,param_3);
-    unk_win_ui_op_1038_9820(param_1,UVar1,iVar3,s_tile2_bmp_1050_1538,param_3);
-    param_2 = ctx.s_tile2_bmp_1050_1538;
-  }
+  // for (iStack8 = 0x0; iVar3 = param_1, uVar2 = (param_1 >> 0x10),
+  //     iStack8 < 0xf; iStack8 += 0x1) {
+  //   iVar3 = (iVar3 + 0x6);
+  //   UVar1 = GetDlgItemInt16(param_2,0x1,&local_4,param_3);
+  //   unk_win_ui_op_1038_9820(param_1,UVar1,iVar3,s_tile2_bmp_1050_1538,param_3);
+  //   param_2 = ctx.s_tile2_bmp_1050_1538;
+  // }
   SetDlgItemInt16(param_2,0x1,(iVar3 + 0x94),0xfa9);
   SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538,0x1,(iVar3 + 0x96),0xfa8);
   return;
 }
 
 
-void 
+pub fn
 enable_win_1038_9a66
           (param_1: u16,param_2: u16,u16 in_b_enable_3,param_4: u32,
           in_hwnd_5: HWND16)
@@ -980,7 +1005,7 @@ pub fn unk_win_ui_op_1038_9bc8(param_1: &mut Struct1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 enable_window_1038_9cec
           (param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5: i16,
           param_6: HWND16)
@@ -1133,7 +1158,7 @@ pub fn win_ui_op_1038_a4ee(param_1: &mut Struct1,param_2: u16)
   puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,in_DX,unaff_DI);
   uVar1 = (puVar2 + 0x6c);
   GetDlgItem16(0x1010,0x114);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)uVar1);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,uVar1);
   SetFocus16(ctx.s_tile2_bmp_1050_1538);
   SendMessage16(ctx.s_tile2_bmp_1050_1538,0x0,0xffff,0x4010000);
   unk_win_ui_op_1038_a18c(param_1,unaff_SS);
@@ -1188,7 +1213,7 @@ pub fn win_ui_op_1038_a6f4(param_1: &mut Struct1)
   puVar4 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,in_DX,unaff_DI);
   uVar1 = (puVar4 + 0x68);
   GetDlgItem16(0x1010,0x115);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)uVar1);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,uVar1);
   SetFocus16(ctx.s_tile2_bmp_1050_1538);
   LVar5 = SendMessage16(ctx.s_tile2_bmp_1050_1538,0x0,0xffff,0x4010000);
   uVar3 = (LVar5 >> 0x10);
@@ -1232,7 +1257,7 @@ pub fn win_ui_op_1038_a788(param_1: u32,param_2: i16,param_3: HWND16,param_4: u1
 }
 
 
-void 
+pub fn
 enable_win_1038_a8f8
           (param_1: u16,param_2: u16,param_3: u16,TwoWords param_4,in_hwnd_5: HWND16)
 
@@ -1434,15 +1459,15 @@ pub fn show_win_1038_b634(param_1: u32,param_2: HWND16)
   iVar1 = param_1;
   if ((iVar1 + 0xac) == 0x0) {
     (iVar1 + 0xac) = 0x1;
-    for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 0x1) {
-      HVar3 = param_2;
-      if (((uStack4 * 0x4 + iVar1 + 0x2) | (uStack4 * 0x4 + iVar1)) !=
-          0x0) {
-        HVar3 = ctx.s_tile2_bmp_1050_1538;
-        ShowWindow16(param_2,0x0);
-      }
-      param_2 = HVar3;
-    }
+    // for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 0x1) {
+    //   HVar3 = param_2;
+    //   if (((uStack4 * 0x4 + iVar1 + 0x2) | (uStack4 * 0x4 + iVar1)) !=
+    //       0x0) {
+    //     HVar3 = ctx.s_tile2_bmp_1050_1538;
+    //     ShowWindow16(param_2,0x0);
+    //   }
+    //   param_2 = HVar3;
+    // }
   }
   return;
 }
@@ -1460,15 +1485,15 @@ pub fn show_win_1038_b68a(param_1: u32,param_2: HWND16)
   iVar1 = param_1;
   if ((iVar1 + 0xac) != 0x0) {
     (iVar1 + 0xac) = 0x0;
-    for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 0x1) {
-      HVar3 = param_2;
-      if (((uStack4 * 0x4 + iVar1 + 0x2) | (uStack4 * 0x4 + iVar1)) !=
-          0x0) {
-        HVar3 = ctx.s_tile2_bmp_1050_1538;
-        ShowWindow16(param_2,0x1);
-      }
-      param_2 = HVar3;
-    }
+    // for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 0x1) {
+    //   HVar3 = param_2;
+    //   if (((uStack4 * 0x4 + iVar1 + 0x2) | (uStack4 * 0x4 + iVar1)) !=
+    //       0x0) {
+    //     HVar3 = ctx.s_tile2_bmp_1050_1538;
+    //     ShowWindow16(param_2,0x1);
+    //   }
+    //   param_2 = HVar3;
+    // }
   }
   return;
 }
@@ -1521,17 +1546,17 @@ pub fn win_ui_op_1038_b81c(param_1: &mut Struct1)
   piVar5 = (uVar1 | uVar4);
   iStack10 = 0x0;
   hwnd_dlg = 0x1010;
-  for (UStack12 = 0x1a0; UStack12 < 0x1b5; UStack12 += 0x1) {
-    if ((iStack10 * 0x2 + uVar4) == UStack12) {
-      iStack10 += 0x1;
-      HVar8 = hwnd_dlg;
-    }
-    else {
-      HVar8 = ctx.s_tile2_bmp_1050_1538;
-      CheckDlgButton16(hwnd_dlg,0x2,UStack12);
-    }
-    hwnd_dlg = HVar8;
-  }
+  // for (UStack12 = 0x1a0; UStack12 < 0x1b5; UStack12 += 0x1) {
+  //   if ((iStack10 * 0x2 + uVar4) == UStack12) {
+  //     iStack10 += 0x1;
+  //     HVar8 = hwnd_dlg;
+  //   }
+  //   else {
+  //     HVar8 = ctx.s_tile2_bmp_1050_1538;
+  //     CheckDlgButton16(hwnd_dlg,0x2,UStack12);
+  //   }
+  //   hwnd_dlg = HVar8;
+  // }
   GetDlgItem16(hwnd_dlg,0xfb1);
   win_enabled = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x0);
   uVar2 = (iVar6 + 0x92);
@@ -1646,16 +1671,16 @@ win_ui_op_1038_b922(param_1: *mut u32,param_2: u32,param_3: u16,param_4: u16,
   }
   else {
     if (param_3 == 0xfb1) {
-      for (uStack1132 = 0x1a0; uVar13 = CONCAT22(param_4,HStack8), uStack1132 < 0x1b5;
-          uStack1132 += 0x1) {
-        UVar3 = IsDlgButtonChecked(param_5,uStack1132);
-        if (UVar3 == 0x1) {
-          pass1_1008_d818((iVar7 + 0x8e),uStack1132);
-          uVar13 = CONCAT22(param_4,HStack8);
-//           TODO: goto LAB_1038_bba2;
-        }
-        param_5 = ctx.s_tile2_bmp_1050_1538;
-      }
+//       for (uStack1132 = 0x1a0; uVar13 = CONCAT22(param_4,HStack8), uStack1132 < 0x1b5;
+//           uStack1132 += 0x1) {
+//         UVar3 = IsDlgButtonChecked(param_5,uStack1132);
+//         if (UVar3 == 0x1) {
+//           pass1_1008_d818((iVar7 + 0x8e),uStack1132);
+//           uVar13 = CONCAT22(param_4,HStack8);
+// //           TODO: goto LAB_1038_bba2;
+//         }
+//         param_5 = ctx.s_tile2_bmp_1050_1538;
+//       }
     }
     else {
       if (param_3 != 0xfbe) goto LAB_1038_bbbf;
@@ -1777,7 +1802,7 @@ pub fn win_dlg_op_1038_bea4(param_1: u32,param_2: *mut u16)
   iVar5 = param_1;
   GetWindowText16(0x1010,0x80,local_8c);
   wsprintf16(s_tile2_bmp_1050_1538,local_10e,param_2);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)local_10e);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,local_10e);
   HVar2 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x179);
   *(HWND16 *)(iVar5 + 0x92) = HVar2;
   pass1_1008_e3ec((iVar5 + 0x8e),CONCAT22(param_2,&local_116),
@@ -1825,7 +1850,7 @@ pub fn show_win_1038_c044(param_1: &mut Struct1)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 msg_box_op_1038_c07a
           (param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: u16)
 
@@ -1990,7 +2015,7 @@ pub fn send_msg_1038_c374(param_1: u32,param_2: *mut u32,param_3: u16,param_4: H
   (**ppcVar2)(ctx.s_tile2_bmp_1050_1538,param_2,uVar9);
   uStack6 = CONCAT22(extraout_DX,uVar3);
   uStack10 = 0x0;
-  while( true ) {
+  loop {
     if (uStack6 <= uStack10) {
       return;
     }
@@ -2007,7 +2032,7 @@ pub fn send_msg_1038_c374(param_1: u32,param_2: *mut u32,param_3: u16,param_4: H
                           0x4030000);
     uVar6 = 0x1000;
     fn_ptr_1000_17ce(paVar8,0x1000);
-    if (LVar7 == -0x1) break;
+    if (LVar7 == -0x1) { break; }
     if (LVar7 == -0x2) {
       return;
     }
@@ -2045,7 +2070,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
   iVar1 = param_1;
   GetWindowText16(0x1010,0x80,local_40c);
   wsprintf16(s_tile2_bmp_1050_1538,local_80e,param_2);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)local_80e);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,local_80e);
   pass1_1008_e038((iVar1 + 0x8e),
                   (param_1 & 0xffff0000 | (iVar1 + 0x92)),
                   (param_1 & 0xffff0000 | (iVar1 + 0x96)));
@@ -2053,7 +2078,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x400,local_80e,(short)param_2);
   wsprintf16(0x1010,local_40c,param_2);
-  SetDlgItemText16(ctx.s_tile2_bmp_1050_1538,local_40c,(SEGPTR)param_2);
+  SetDlgItemText16(ctx.s_tile2_bmp_1050_1538,local_40c,param_2);
   return;
 }
 
@@ -2061,7 +2086,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 message_box_op_1038_c672
           (param_1: i16,param_2: u16,param_3: u16,param_4: u32,short param_5)
 
@@ -2245,23 +2270,23 @@ pub fn show_win_1038_cb5c(param_1: &mut Struct1)
   dialog_ui_fn_1040_78e2(param_1,&ctx.PTR_LOOP_1050_1040);
   uVar5 = (param_1 >> 0x10);
   uVar2 = pass1_1008_eb6e();
-  for (iStack10 = 0x0; iStack10 < uVar2; iStack10 += 0x1) {
-    uVar1 = (param_1 + 0x8e);
-    puVar6 =
-             pass1_1008_eb5c(uVar1,(uVar1 >> 0x10),iStack10);
-    puVar3 = (puVar6 >> 0x10);
-    puVar7 = puVar6;
-    mem_op_1000_179c(0x42,puVar3,0x1000);
-    uVar4 = (puVar7 >> 0x10);
-    in_DX = uVar4 | puVar7;
-    if (puVar7 != 0x0) {
-      pass1_1008_3bd6(puVar7,uVar4,0x0,
-                      CONCAT22(*puVar6,(puVar6 + 0x2)),0x101,0xff0100,
-                      CONCAT22((param_1 + 0x6),
-                               (puVar6 + 0x4)),in_DX,unaff_SS)
-      ;
-    }
-  }
+  // for (iStack10 = 0x0; iStack10 < uVar2; iStack10 += 0x1) {
+  //   uVar1 = (param_1 + 0x8e);
+  //   puVar6 =
+  //            pass1_1008_eb5c(uVar1,(uVar1 >> 0x10),iStack10);
+  //   puVar3 = (puVar6 >> 0x10);
+  //   puVar7 = puVar6;
+  //   mem_op_1000_179c(0x42,puVar3,0x1000);
+  //   uVar4 = (puVar7 >> 0x10);
+  //   in_DX = uVar4 | puVar7;
+  //   if (puVar7 != 0x0) {
+  //     pass1_1008_3bd6(puVar7,uVar4,0x0,
+  //                     CONCAT22(*puVar6,(puVar6 + 0x2)),0x101,0xff0100,
+  //                     CONCAT22((param_1 + 0x6),
+  //                              (puVar6 + 0x4)),in_DX,unaff_SS)
+  //     ;
+  //   }
+  // }
   win_1008_5c7c(ctx.PTR__LOOP_1050_02a0,0x90001,unaff_SS,uVar2,in_DX);
   ShowWindow16(0x1008,0x5);
   return;
@@ -2359,37 +2384,37 @@ pub fn win_ui_op_1038_d2a2(param_1: &mut Struct1)
   hwnd = &ctx.PTR_LOOP_1050_1040;
   dialog_ui_fn_1040_78e2(param_1,&ctx.PTR_LOOP_1050_1040);
   iStack4 = 0x7;
-  for (iStack10 = 0x0; uVar5 = (param_1 >> 0x10), iStack10 < iStack4;
-      iStack10 += 0x1) {
-    unaff_DI = iStack10 * 0xc;
-    local_16 = (unaff_DI + 0x5c0c);
-    uStack20 = (unaff_DI + 0x5c0e);
-    uStack18 = 0x1;
-    uStack16 = 0x1;
-    rect = &local_16;
-    MapDialogRect16(hwnd,rect);
-    hwnd_00 = 0x1000;
-    mem_op_1000_179c(0x42,in_DX,0x1000);
-    puVar3 = (in_DX | rect);
-    if (puVar3 == 0x0) {
-      rect = 0x0;
-      in_DX = 0x0;
-    }
-    else {
-      hwnd_00 = 0x1008;
-      pass1_1008_3bd6(rect,in_DX,0x1,CONCAT22(local_16,uStack20),0x104,0x1020103,
-                      CONCAT22((param_1 + 0x6),
-                               (unaff_DI + 0x5c10)),puVar3,
-                      unaff_SS);
-      in_DX = puVar3;
-    }
-    uStack8 = CONCAT22(in_DX,rect);
-    hwnd = hwnd_00;
-    if ((iStack10 * 0xc + 0x5c12) == 0x0) {
-      hwnd = ctx.s_tile2_bmp_1050_1538;
-      EnableWindow16(hwnd_00,0x0);
-    }
-  }
+  // for (iStack10 = 0x0; uVar5 = (param_1 >> 0x10), iStack10 < iStack4;
+  //     iStack10 += 0x1) {
+  //   unaff_DI = iStack10 * 0xc;
+  //   local_16 = (unaff_DI + 0x5c0c);
+  //   uStack20 = (unaff_DI + 0x5c0e);
+  //   uStack18 = 0x1;
+  //   uStack16 = 0x1;
+  //   rect = &local_16;
+  //   MapDialogRect16(hwnd,rect);
+  //   hwnd_00 = 0x1000;
+  //   mem_op_1000_179c(0x42,in_DX,0x1000);
+  //   puVar3 = (in_DX | rect);
+  //   if (puVar3 == 0x0) {
+  //     rect = 0x0;
+  //     in_DX = 0x0;
+  //   }
+  //   else {
+  //     hwnd_00 = 0x1008;
+  //     pass1_1008_3bd6(rect,in_DX,0x1,CONCAT22(local_16,uStack20),0x104,0x1020103,
+  //                     CONCAT22((param_1 + 0x6),
+  //                              (unaff_DI + 0x5c10)),puVar3,
+  //                     unaff_SS);
+  //     in_DX = puVar3;
+  //   }
+  //   uStack8 = CONCAT22(in_DX,rect);
+  //   hwnd = hwnd_00;
+  //   if ((iStack10 * 0xc + 0x5c12) == 0x0) {
+  //     hwnd = ctx.s_tile2_bmp_1050_1538;
+  //     EnableWindow16(hwnd_00,0x0);
+  //   }
+  // }
   uVar10 = 0x86;
   uStack14 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x9,unaff_SS,in_DX,unaff_DI);
   uVar4 = (uStack14 >> 0x10);
@@ -2446,13 +2471,13 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8,param_2: u16,param_3: u16,Uparam_4: i
   uStack6 = 0x0;
   iStack8 = 0x0;
   switch(param_4._2_2_) {
-  case 0x145:
+  0x145 =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1038,0x146);
     uVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     uStack6 = 0x13f0647;
     uVar11 = 0x1f1;
 //     TODO: goto LAB_1038_d490;
-  case 0x146:
+  0x146 =>
     uStack6 = 0x1400648;
     puVar5 = pass1_1008_941a(CONCAT22(unaff_SS,local_c),0x1,0xc4);
     puVar4 = (puVar5 >> 0x10);
@@ -2497,13 +2522,13 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8,param_2: u16,param_3: u16,Uparam_4: i
       PostMessage16(0x1010,0x0,0x0,0x11100af);
     }
     break;
-  case 0x147:
+  0x147 =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1038,0x148);
     uVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     uStack6 = 0x1410647;
     uVar11 = 0x1f5;
 //     TODO: goto LAB_1038_d490;
-  case 0x148:
+  0x148 =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1038,0x149);
     uVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     uStack6 = 0x1420647;
@@ -2512,13 +2537,13 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8,param_2: u16,param_3: u16,Uparam_4: i
     hwnd = 0x1008;
     win_1008_5c5c(unaff_SS,uVar2,in_DX,_PTR_LOOP_1050_02a0,uVar11);
     break;
-  case 0x149:
+  0x149 =>
     uStack6 = 0x1430648;
     PostMessage16(&ctx.PTR_LOOP_1050_1038,0x0,0x0,0x11100b8);
     hwnd = ctx.s_tile2_bmp_1050_1538;
     DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
     break;
-  case 0x14a:
+  0x14a =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1038,0x145);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     uVar9 = 0xc;
@@ -2532,7 +2557,7 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8,param_2: u16,param_3: u16,Uparam_4: i
               (0x1010,pcVar7,(pcVar7 >> 0x10),WVar8,
                CONCAT22(uVar10,uVar9));
     break;
-  case 0x14b:
+  0x14b =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1038,0x147);
     hwnd = ctx.s_tile2_bmp_1050_1538;
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
@@ -2704,7 +2729,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
   (param_1 + -0xc) = puVar11;
   (param_1 + -0xa) = (puVar11 >> 0x10);
   uVar2 = (param_1 + -0xc);
-  SetWindowText16(0x1010,(SEGPTR)(uVar2 + 0x68));
+  SetWindowText16(0x1010,(uVar2 + 0x68));
   ShowWindow16(ctx.s_tile2_bmp_1050_1538,0x5);
   SetCursor16(ctx.s_tile2_bmp_1050_1538);
   return;
@@ -2714,7 +2739,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 unk_win_sys_op_1038_da68
           (param_1: i16,param_2: u16,param_3: u16,param_4: u32,WNDCLASS16 *param_5,
           param_6: *mut u8)
@@ -3033,42 +3058,42 @@ pub fn win_ui_op_1038_e348(param_1: &mut Struct1)
   iVar5 = param_1;
   (iVar5 + 0x8e) = uVar2;
   (iVar5 + 0x90) = ctx.PTR_LOOP_1050_5f2e;
-  for (iStack10 = 0x1; iStack10 <= uStack8; iStack10 += 0x1) {
-    puStack26 =
-                pass1_1010_091e(puStack6,(puStack6 >> 0x10),
-                                iStack10);
-    puVar3 = (puStack26 >> 0x10);
-    local_22 = *puStack26;
-    uStack32 = (puStack26 + 0x2);
-    uStack30 = 0x1;
-    uStack28 = 0x1;
-    rect = &local_22;
-    MapDialogRect16(0x1010,rect);
-    mem_op_1000_179c(0x42,puVar3,0x1000);
-    uVar4 = puVar3 | rect;
-    if (uVar4 == 0x0) {
-      uVar1 = (iVar5 + 0x8e);
-      (uVar1 + iStack10 * 0x4) = 0x0;
-    }
-    else {
-      pass1_1008_3bd6(rect,puVar3,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
-                      CONCAT22((iVar5 + 0x6),
-                               (puStack26 + 0x4)),uVar4,unaff_SS);
-      uVar1 = (iVar5 + 0x8e);
-      uVar8 = (uVar1 >> 0x10);
-      iVar6 = uVar1;
-      *(astruct_160 **)(iVar6 + iStack10 * 0x4) = rect;
-      (iVar6 + iStack10 * 0x4 + 0x2) = uVar4;
-    }
-    uVar1 = (iVar5 + 0x8e);
-    uVar8 = (uVar1 >> 0x10);
-    iVar6 = uVar1;
-    if ((iVar6 + iStack10 * 0x4) != 0x0) {
-      enable_win_1040_9234
-                ((iVar6 + iStack10 * 0x4),*(bool *)(puStack26 + 0x6),
-                 &ctx.PTR_LOOP_1050_1040);
-    }
-  }
+  // for (iStack10 = 0x1; iStack10 <= uStack8; iStack10 += 0x1) {
+  //   puStack26 =
+  //               pass1_1010_091e(puStack6,(puStack6 >> 0x10),
+  //                               iStack10);
+  //   puVar3 = (puStack26 >> 0x10);
+  //   local_22 = *puStack26;
+  //   uStack32 = (puStack26 + 0x2);
+  //   uStack30 = 0x1;
+  //   uStack28 = 0x1;
+  //   rect = &local_22;
+  //   MapDialogRect16(0x1010,rect);
+  //   mem_op_1000_179c(0x42,puVar3,0x1000);
+  //   uVar4 = puVar3 | rect;
+  //   if (uVar4 == 0x0) {
+  //     uVar1 = (iVar5 + 0x8e);
+  //     (uVar1 + iStack10 * 0x4) = 0x0;
+  //   }
+  //   else {
+  //     pass1_1008_3bd6(rect,puVar3,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
+  //                     CONCAT22((iVar5 + 0x6),
+  //                              (puStack26 + 0x4)),uVar4,unaff_SS);
+  //     uVar1 = (iVar5 + 0x8e);
+  //     uVar8 = (uVar1 >> 0x10);
+  //     iVar6 = uVar1;
+  //     *(astruct_160 **)(iVar6 + iStack10 * 0x4) = rect;
+  //     (iVar6 + iStack10 * 0x4 + 0x2) = uVar4;
+  //   }
+  //   uVar1 = (iVar5 + 0x8e);
+  //   uVar8 = (uVar1 >> 0x10);
+  //   iVar6 = uVar1;
+  //   if ((iVar6 + iStack10 * 0x4) != 0x0) {
+  //     enable_win_1040_9234
+  //               ((iVar6 + iStack10 * 0x4),*(bool *)(puStack26 + 0x6),
+  //                &ctx.PTR_LOOP_1050_1040);
+  //   }
+  // }
   move_win_1040_826c(param_1,-0x1,0xffff);
   ShowWindow16(&ctx.PTR_LOOP_1050_1040,0x5);
   return;
@@ -3422,34 +3447,34 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1,param_2: *mut u8,param_3: HWND1
                     // 
   dialog_ui_fn_1040_78e2(param_1,param_3);
   iStack4 = 0x8;
-  for (iStack10 = 0x0; uVar5 = param_1,
-      uVar6 = (param_1 >> 0x10), iStack10 < iStack4; iStack10 += 0x1) {
-    unaff_DI = iStack10 * 0xe;
-    local_24 = (unaff_DI + 0x5c60);
-    uStack34 = (unaff_DI + 0x5c62);
-    uStack32 = 0x1;
-    uStack30 = 0x1;
-    rect = &local_24;
-    MapDialogRect16(param_3,rect);
-    param_3 = 0x1000;
-    mem_op_1000_179c(0x42,param_2,0x1000);
-    uVar1 = param_2 | rect;
-    if (uVar1 == 0x0) {
-      rect = 0x0;
-      uVar1 = 0x0;
-    }
-    else {
-      param_3 = 0x1008;
-      pass1_1008_3bd6(rect,param_2,0x1,CONCAT22(local_24,uStack34),0x104,0x1020103
-                      ,CONCAT22((uVar5 + 0x6),
-                                (unaff_DI + 0x5c64)),uVar1,unaff_SS
-                     );
-    }
-    paStack8 = rect;
-    uStack6 = uVar1;
-    LVar7 = win_ui_op_1040_0558(param_1,iStack10,param_3);
-    param_2 = (LVar7 >> 0x10);
-  }
+  // for (iStack10 = 0x0; uVar5 = param_1,
+  //     uVar6 = (param_1 >> 0x10), iStack10 < iStack4; iStack10 += 0x1) {
+  //   unaff_DI = iStack10 * 0xe;
+  //   local_24 = (unaff_DI + 0x5c60);
+  //   uStack34 = (unaff_DI + 0x5c62);
+  //   uStack32 = 0x1;
+  //   uStack30 = 0x1;
+  //   rect = &local_24;
+  //   MapDialogRect16(param_3,rect);
+  //   param_3 = 0x1000;
+  //   mem_op_1000_179c(0x42,param_2,0x1000);
+  //   uVar1 = param_2 | rect;
+  //   if (uVar1 == 0x0) {
+  //     rect = 0x0;
+  //     uVar1 = 0x0;
+  //   }
+  //   else {
+  //     param_3 = 0x1008;
+  //     pass1_1008_3bd6(rect,param_2,0x1,CONCAT22(local_24,uStack34),0x104,0x1020103
+  //                     ,CONCAT22((uVar5 + 0x6),
+  //                               (unaff_DI + 0x5c64)),uVar1,unaff_SS
+  //                    );
+  //   }
+  //   paStack8 = rect;
+  //   uStack6 = uVar1;
+  //   LVar7 = win_ui_op_1040_0558(param_1,iStack10,param_3);
+  //   param_2 = (LVar7 >> 0x10);
+  // }
   move_win_1040_826c(param_1,-0x1,0xffff);
   uStack18 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,unaff_SS,param_2,unaff_DI);
   uVar2 = (uStack18 >> 0x10);
@@ -3478,7 +3503,7 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1,param_2: *mut u8,param_3: HWND1
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: u16
                    ,WNDCLASS16 *param_6)
 
@@ -3516,35 +3541,35 @@ win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
   iStack4 = 0x8;
   iStack6 = 0x0;
   switch(param_4._2_2_) {
-  case 0x167:
+  0x167 =>
     enable_win_1040_060e
               (CONCAT22(param_2,param_1),0x3,&ctx.PTR_LOOP_1050_1040,param_6);
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16b);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     iStack4 = 0x0;
     break;
-  case 0x168:
+  0x168 =>
     enable_win_1040_060e
               (CONCAT22(param_2,param_1),0x3,&ctx.PTR_LOOP_1050_1040,param_6);
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16b);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     iStack4 = 0x1;
     break;
-  case 0x169:
+  0x169 =>
     enable_win_1040_060e
               (CONCAT22(param_2,param_1),0x3,&ctx.PTR_LOOP_1050_1040,param_6);
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16b);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     iStack4 = 0x2;
     break;
-  case 0x16a:
+  0x16a =>
     enable_win_1040_060e
               (CONCAT22(param_2,param_1),0x3,&ctx.PTR_LOOP_1050_1040,param_6);
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16b);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     iStack4 = 0x3;
     break;
-  case 0x16b:
+  0x16b =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16b);
     uVar5 = SUB42(ctx.s_tile2_bmp_1050_1538,0x0);
     BVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x0);
@@ -3560,18 +3585,18 @@ win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
                       param_6);
       (param_1 + 0x92) = 0x8;
     }
-    for (iStack8 = 0x0; iStack8 < 0x4; iStack8 += 0x1) {
-      LVar7 = win_ui_op_1040_0558(CONCAT22(param_2,param_1),iStack8,uVar5);
-      in_DX = (LVar7 >> 0x10);
-    }
+    // for (iStack8 = 0x0; iStack8 < 0x4; iStack8 += 0x1) {
+    //   LVar7 = win_ui_op_1040_0558(CONCAT22(param_2,param_1),iStack8,uVar5);
+    //   in_DX = (LVar7 >> 0x10);
+    // }
 //     TODO: goto LAB_1040_04da;
-  case 0x16c:
+  0x16c =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16d);
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x1);
     iStack4 = 0x5;
     (param_1 + 0x94) = 0x5;
 //     TODO: goto LAB_1040_04da;
-  case 0x16d:
+  0x16d =>
     GetDlgItem16(&ctx.PTR_LOOP_1050_1040,0x16d);
     BVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x0);
     uVar5 = 0x1008;
@@ -3606,7 +3631,7 @@ win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
     uStack26 = pass1_1030_2fac(uStack20);
     set_window_text_1018_6086(*(ULONG *)(param_1 + 0x96),0x1018,param_6);
 //     TODO: goto LAB_1040_04da;
-  case 0x16e:
+  0x16e =>
     puStack30 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x39,param_6,in_DX,unaff_DI);
     uStack26 = (puStack30 + 0x20);
     local_18 = LoadCursor16(0x1010,0x7f02);
@@ -3704,9 +3729,9 @@ pub fn enable_win_1040_060e(param_1: u32,param_2: i16,param_3: HWND16,param_4: u
   
   _iStack8 = (INT16 *)CONCAT22(param_4,&stack0x000a);
   iStack10 = param_2;
-  while( true ) {
+  loop {
     pIVar1 = _iStack8;
-    if (iStack10 == 0x0) break;
+    if (iStack10 == 0x0) { break; }
     _iStack8 = (INT16 *)(_iStack8 & 0xffff0000 | (iStack8 + 0x2));
     HStack16 = (param_1 + 0x6);
     iStack10 = iStack10 + -0x1;

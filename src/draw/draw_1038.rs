@@ -1,5 +1,5 @@
 
-void 
+pub fn
 draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
                  param_5: HWND16,param_6: u16)
 
@@ -104,7 +104,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
 }
 
 
-void 
+pub fn
 draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF in_colorref_4,
                  param_5: u16)
 
@@ -149,13 +149,14 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
       return;
     }
     bVar2 = false;
-    for (uStack14 = 0x0; puVar1 = &local_struct_5.field_0x128,
-        uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 += 0x1) {
-      if ((&local_struct_5.field_0x94 + uStack14 * 0x2) == param_2) {
-        bVar2 = true;
-        break;
-      }
-    }
+    // TODO: refactor for loop
+    // for (uStack14 = 0x0; puVar1 = &local_struct_5.field_0x128,
+    //     uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 += 0x1) {
+    //   if ((&local_struct_5.field_0x94 + uStack14 * 0x2) == param_2) {
+    //     bVar2 = true;
+    //     break;
+    //   }
+    // }
     if (bVar2) {
       ctx.PTR_LOOP_1050_5b64 = ctx.PTR_LOOP_1050_5b68;
     }

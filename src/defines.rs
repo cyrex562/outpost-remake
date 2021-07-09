@@ -1,3 +1,5 @@
+pub type U32Ptr = u32;
+
 pub struct StructA {
     pub field_0x16: u16,
     pub field_0x36: u32,
@@ -43,4 +45,35 @@ pub struct Struct28 {
 
 pub struct Struct29 {
     
+}
+
+pub struct Struct19 {
+    pub field_0x0: u16,
+    pub field_0xa: i16,
+    pub field_0xc: i16,
+    pub field_0xe: u16,
+    pub field_0x14: i16,
+    pub field_0x16: i16,
+    pub field_0x18: u16
+}
+
+pub struct Struct79 {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: u16,
+    pub field_0x8: u16,
+    pub field_0xa: u16,
+    pub field_0xc: u16,
+    pub field_0xe: u16,
+    pub field_0x12: u16,
+    pub field_0x14: u16,
+    pub field_0x16: u16
+}
+
+pub struct Struct80 {
+
+}
+
+pub struct Struct648 {
+
 }

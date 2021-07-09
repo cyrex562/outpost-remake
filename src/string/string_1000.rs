@@ -1,28 +1,37 @@
-pub fn  poss_str_op_1000_28dc(param_1: i16) -> String
+use crate::global::AppContext;
+use crate::defines::U32Ptr;
+use crate::util::get_string_at_addr;
+
+pub fn  poss_str_op_1000_28dc(
+    ctx: &mut AppContext,
+    param_1: i16) -> String
 
 {
-  let piVar1: *mut i16;
-  *mut let piVar2: u8;
-  let iVar2: i16;
-  *mut let piVar3: u8;
+  let string_1: &String;
+  let pi_var2: *mut u8;
+  let i_var2: i16;
+  let mut string_ptr_1: String;
   
-  piVar3 = &ctx.PTR_LOOP_1050_63fe;
-  do {
-    piVar1 = piVar3;
-    piVar3 = (piVar3 + 0x2);
-    iVar2 = *piVar1;
-    piVar2 = piVar3;
-    if ((iVar2 == param_1) || (piVar2 = (iVar2 + 0x1), piVar2 == 0x0)) {
-      return piVar2;
+  string_ptr_1 = get_string_at_addr(ctx.PTR_LOOP_1050_63fe);
+  loop {
+    string_1 = &string_ptr_1;
+    string_ptr_1 = string_ptr_1[2..];
+    i_var2 = string_1[0];
+    pi_var2 = string_ptr_1;
+    if (i_var2 == param_1) || (pi_var2 = (i_var2 + 0x1), pi_var2 == 0x0) {
+      return pi_var2;
     }
-    iVar2 = -0x1;
-    do {
-      if (iVar2 == 0x0) break;
-      iVar2 += -0x1;
-      piVar1 = piVar3;
-      piVar3 = (piVar3 + 0x1);
-    } while (*piVar1 != '\0');
-  } while( true );
+    i_var2 = -0x1;
+    loop {
+      if i_var2 == 0x0 { break; }
+      i_var2 += -0x1;
+      string_1 = string_ptr_1;
+      string_ptr_1 = (string_ptr_1 + 0x1);
+          if *string_1 == 0 {
+              break;
+          }
+    }
+  }
 }
 
 
@@ -47,13 +56,16 @@ pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
   l_b_var8 = true;
   uVar6 = 0xffff;
   puVar6 = l_string_2;
-  do {
-    if (uVar6 == 0x0) break;
+  loop {
+    if (uVar6 == 0x0) { break; }
     uVar6 -= 0x1;
     puVar1 = puVar6;
     puVar6 = puVar6 + 0x1;
     l_b_var8 = *puVar1 == '\0';
-  } while (!l_b_var8);
+    if l_b_var8 == true {
+        break;
+    }
+  }
   uVar6 = ~uVar6;
   uVar8 = (param_1 >> 0x10);
   puVar7 = param_1;
@@ -71,20 +83,21 @@ pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
     param_1 = in_string_2;
     uVar6 -= 0x1;
   }
-  for (uVar7 = uVar6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
-    puVar5 = puVar7;
-    puVar7 = (puVar7 + 0x2);
-    puVar4 = l_string_2;
-    l_string_2 = (l_string_2 + 0x2);
-    *puVar5 = *puVar4;
-  }
-  for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
-    puVar5 = puVar7;
-    puVar7 = (puVar7 + 0x1);
-    puVar4 = l_string_2;
-    l_string_2 = (l_string_2 + 0x1);
-    *puVar5 = *puVar4;
-  }
+    // TODO: refactor
+  // for (uVar7 = uVar6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
+  //   puVar5 = puVar7;
+  //   puVar7 = (puVar7 + 0x2);
+  //   puVar4 = l_string_2;
+  //   l_string_2 = (l_string_2 + 0x2);
+  //   *puVar5 = *puVar4;
+  // }
+  // for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
+  //   puVar5 = puVar7;
+  //   puVar7 = (puVar7 + 0x1);
+  //   puVar4 = l_string_2;
+  //   l_string_2 = (l_string_2 + 0x1);
+  //   *puVar5 = *puVar4;
+  // }
   return;
 }
 
@@ -101,7 +114,7 @@ pub fn str_op_1000_3da4(param_1: &mut String) -> u16
   bVar4 = true;
   uVar2 = 0xffff;
   do {
-    if (uVar2 == 0x0) break;
+    if (uVar2 == 0x0) { break; }
     uVar2 -= 0x1;
     pcVar1 = pcVar3;
     pcVar3 = pcVar3 + 0x1;
@@ -133,24 +146,24 @@ uchar  str_op_1000_3dbe(param_1: &mut String,param_2: &mut String,param_3: u16)
       pcVar1 = pcVar3;
       pcVar3 = pcVar3 + 0x1;
       cVar2 = *pcVar1;
-      if (cVar2 == '\0') break;
+      if (cVar2 == '\0') { break; }
       pcVar1 = pcVar4;
       pcVar4 = pcVar4 + 0x1;
       *pcVar1 = cVar2;
       param_3 -= 0x1;
     } while (param_3 != 0x0);
-    for (; param_3 != 0x0; param_3 -= 0x1) {
-      pcVar1 = pcVar4;
-      pcVar4 = pcVar4 + 0x1;
-      *pcVar1 = '\0';
-    }
+    // for (; param_3 != 0x0; param_3 -= 0x1) {
+    //   pcVar1 = pcVar4;
+    //   pcVar4 = pcVar4 + 0x1;
+    //   *pcVar1 = '\0';
+    // }
   }
   return (uchar)param_1;
 }
 
 
 
-void 
+pub fn
 str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,param_4: u32,
              WNDCLASS16 *param_5)
 
@@ -186,10 +199,10 @@ str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,par
   uStack6 = 0x0;
   uStack8 = 0x0;
   pcStack18 = in_string_1;
-  while( true ) {
+  loop {
     uVar5 = (pcStack18 >> 0x10);
     uVar3 = pcStack18;
-    if (*pcStack18 == '\0') break;
+    if (*pcStack18 == '\0') { break; }
     if ((*pcStack18 == '/') || (*pcStack18 == '\\')) {
       uStack8 = uVar3 + 0x1;
       uStack6 = uVar5;

@@ -118,7 +118,7 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
     local_4 = local_4 - 0x1;
     BVar2 = read_file_1008_7dee(uVar6,uVar8,local_12,0x0,unaff_SS,0x2,0x1008);
     if (BVar2 != 0x0) {
-      while( true ) {
+      loop {
         if (local_12[0] == 0x0) {
           return 0x1;
         }
@@ -138,7 +138,7 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         uVar10 = (uVar9 >> 0x10);
         uVar4 = uVar3;
         file_1030_b836(CONCAT22(puVar5,uVar3),CONCAT22(uVar9,uVar7),puVar5,unaff_SS);
-        if (uVar4 == 0x0) break;
+        if (uVar4 == 0x0) { break; }
         uVar7 = (param_1 >> 0x10);
         uVar9 = (param_1 + 0x4);
         ppcVar1 = ((param_1 + 0x4) + 0x4)

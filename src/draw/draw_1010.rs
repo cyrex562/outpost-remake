@@ -212,7 +212,7 @@ pub unsafe fn draw_fn_1010_2a32(param_1: u16,param_2: u16,__return_storage_ptr__
     (__return_storage_ptr__ + 0x12) = param_8;
     (__return_storage_ptr__ + 0x14) = puVar17;
     uVar11 = 0x0;
-    while( true ) {
+    loop {
       if (in_stack_0000ffca <= uVar11) {
         BVar14 = read_file_1008_7dee(param_5,param_6,
                                      __return_storage_ptr__ + 0x1a,0x0,param_4,0x2,
@@ -489,9 +489,9 @@ pub fn draw_op_1010_47d0(
   hdc = ctx.s_tile2_bmp_1050_1538;
   handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538,stock_obj_handle);
   iStack32 = 0x0;
-  while( true ) {
+  loop {
     piVar1 = (param_1 + 0x74);
-    if (*piVar1 == iStack32 || *piVar1 < iStack32) break;
+    if (*piVar1 == iStack32 || *piVar1 < iStack32) { break; }
     iVar4 = (iStack32 * 0x10 + param_3) * 0x8;
     hdc = 0x1000;
     uVar5 = pass1_1000_484c(CONCAT22(param_5,&local_e),
@@ -537,7 +537,7 @@ pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,param_4: &REC
   (iVar4 + 0x24) = 0x0;
   iStack12 = 0x0;
   iStack10 = 0x0;
-  do {
+  loop {
     piVar1 = (iVar4 + 0x30);
     if (*piVar1 == iStack12 || *piVar1 < iStack12) {
 //LAB_1010_4e67:
@@ -557,7 +557,7 @@ pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,param_4: &REC
     }
     iStack12 += 0x1;
     param_4 = s_tile2_bmp_1050_1538;
-  } while( true );
+  }
 }
 
 

@@ -1,4 +1,21 @@
 use crate::{util::{CONCAT11, CONCAT22}, win_struct::{HFILE16, SEGPTR}};
+use crate::struct_ops::struct_1008::{struct_1008_dcdc, set_struct_1008_574a, struct_op_1008_3f92, struct_op_1008_48fe, struct_op_1008_4c98};
+use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_0a48};
+use crate::string::string_1008::str_op_1008_60e8;
+use crate::ui::ui_1008::set_stuct_1008_b0bc;
+use crate::winapi::{WIN16_hread, _llseek16, _lclose16, _lopen16, _hwrite16, _lcreat16};
+use crate::util::ZEXT24;
+use crate::string::string_1000::str_op_1000_3da4;
+use crate::pass::pass_1008::{pass1_1008_3e76, pass1_1008_72a8, pass1_1008_4b8e};
+use crate::pass::pass_1020::{pass1_1020_bb16, pass1_1020_ba3e, pass1_1020_a43e, pass1_1020_a644};
+use crate::struct_ops::struct_1030::struct_op_1030_1cd8;
+use crate::struct_ops::struct_1020::struct_1020_c444;
+use crate::file::file_1038::read_file_1038_7c02;
+use crate::file::file_1028::{read_file_1028_def2, write_to_file_1028_dce2};
+use crate::pass::pass_1038::pass1_1038_7b20;
+use crate::pass::pass_1030::pass1_1030_5c1a;
+use crate::pass::pass_1028::pass1_1028_d7a0;
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, call_fn_ptr_1000_0dc6};
 
 
 pub fn close_file_1008_496c(param_1: *mut u16)
@@ -89,7 +106,7 @@ pub fn read_file_1008_49e8(param_1: u32,param_2: u16,param_3: u16) -> u16
         if ((puVar6 | (iVar7 + 0x1a)) == 0x0) {
           return puVar6;
         }
-        lVar9 = WIN16_hread(0x1000,(SEGPTR)uStack6,
+        lVar9 = WIN16_hread(0x1000,uStack6,
                             CONCAT22((iVar7 + 0x1a),
                                      (uStack6 >> 0x10)));
         puVar5 = (lVar9 >> 0x10);
@@ -304,7 +321,7 @@ pub fn file_fn_1008_6eee(param_1: u16,param_2: u16,param_3: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 read_file_1008_6f7a(param_1: u16,param_2: u16,param_3: u32,
                    param_4: u16)
 
@@ -537,19 +554,20 @@ pub fn file_1008_7548(param_1: u32,long *param_2,param_3: HFILE16,param_4: u16)
     }
     ppcVar1 = (*param_2 + 0x24);
     (**ppcVar1)(param_3,*param_2);
-    for (uStack14 = 0x0; uStack14 < local_6; uStack14 += 0x1) {
-      BVar3 = read_file_1008_7dee(uVar7,uVar2,&local_1c,0x0,param_4,0x4,param_3);
-      if ((BVar3 == 0x0) ||
-         (BVar3 = read_file_1008_7dee(uVar7,uVar2,local_18,0x0,param_4,0x2,param_3
-                                     ), BVar3 == 0x0)) {
-        ppcVar1 = (*param_2 + 0x1c);
-        (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10));
-        return;
-      }
-      ppcVar1 = (*param_2 + 0x28);
-      (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10),local_18[0],
-                  local_1c,(local_1c >> 0x10));
-    }
+      // TODO: refactor for loop
+    // for (uStack14 = 0x0; uStack14 < local_6; uStack14 += 0x1) {
+    //   BVar3 = read_file_1008_7dee(uVar7,uVar2,&local_1c,0x0,param_4,0x4,param_3);
+    //   if ((BVar3 == 0x0) ||
+    //      (BVar3 = read_file_1008_7dee(uVar7,uVar2,local_18,0x0,param_4,0x2,param_3
+    //                                  ), BVar3 == 0x0)) {
+    //     ppcVar1 = (*param_2 + 0x1c);
+    //     (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10));
+    //     return;
+    //   }
+    //   ppcVar1 = (*param_2 + 0x28);
+    //   (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10),local_18[0],
+    //               local_1c,(local_1c >> 0x10));
+    // }
     ppcVar1 = (*param_2 + 0x1c);
     (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10));
   }
@@ -591,15 +609,16 @@ pub fn file_1008_76e4(param_1: u32,long *param_2,param_3: u16,param_4: u16,param
     }
     ppcVar1 = (*param_2 + 0x14);
     (**ppcVar1)(param_3,*param_2,(*param_2 >> 0x10),local_6);
-    for (uStack10 = 0x0; uStack10 < local_6; uStack10 += 0x1) {
-      BVar3 = read_file_1008_7dee(param_1,uVar4,local_18,0x0,param_4,0x4,
-                                  param_3);
-      if (BVar3 == 0x0) {
-        return;
-      }
-      ppcVar1 = (*param_2 + 0x18);
-      (**ppcVar1)();
-    }
+      // TODO: refactor for loop
+    // for (uStack10 = 0x0; uStack10 < local_6; uStack10 += 0x1) {
+    //   BVar3 = read_file_1008_7dee(param_1,uVar4,local_18,0x0,param_4,0x4,
+    //                               param_3);
+    //   if (BVar3 == 0x0) {
+    //     return;
+    //   }
+    //   ppcVar1 = (*param_2 + 0x18);
+    //   (**ppcVar1)();
+    // }
     ppcVar1 = (*param_2 + 0x1c);
     (**ppcVar1)();
   }
@@ -645,20 +664,21 @@ pub fn file_1008_77cc(param_1: u32,long *param_2,param_3: *mut u8,param_4: HFILE
         (param_2 + 0x2) = uVar3;
       }
     }
-    for (uStack6 = 0x0; uStack6 < local_4; uStack6 += 0x1) {
-      BVar2 = read_file_1008_7dee(uVar4,uVar5,local_14,0x0,param_5,0x2,param_4);
-      if (BVar2 == 0x0) {
-        return 0x0;
-      }
-      BVar2 = read_file_1008_7dee(uVar4,uVar5,local_10,0x0,param_5,0x4,param_4);
-      if (BVar2 == 0x0) {
-        return 0x0;
-      }
-      param_4 = 0x1020;
-      pass1_1020_bb8a((long *)*param_2,local_10[0],
-                      CONCAT22(local_14[0],(local_10[0] >> 0x10)),unaff_DI,
-                      param_5);
-    }
+      // TODO: refactor for loop
+    // for (uStack6 = 0x0; uStack6 < local_4; uStack6 += 0x1) {
+    //   BVar2 = read_file_1008_7dee(uVar4,uVar5,local_14,0x0,param_5,0x2,param_4);
+    //   if (BVar2 == 0x0) {
+    //     return 0x0;
+    //   }
+    //   BVar2 = read_file_1008_7dee(uVar4,uVar5,local_10,0x0,param_5,0x4,param_4);
+    //   if (BVar2 == 0x0) {
+    //     return 0x0;
+    //   }
+    //   param_4 = 0x1020;
+    //   pass1_1020_bb8a((long *)*param_2,local_10[0],
+    //                   CONCAT22(local_14[0],(local_10[0] >> 0x10)),unaff_DI,
+    //                   param_5);
+    // }
   }
   return 0x1;
 }
@@ -701,7 +721,7 @@ write_to_file_1008_7954
                     (param_1,uVar5,&local_18,param_5,0x4,param_4);
   if (BVar2 != 0x0) {
     uStack10 = 0x0;
-    while( true ) {
+    loop {
       if (uStack6 <= uStack10) {
         return uVar4;
       }
@@ -716,7 +736,7 @@ write_to_file_1008_7954
       BVar2 = write_to_file_1008_7e1c
                         (param_1,uVar5,&local_20,param_5,0x4,
                          param_4);
-      if (BVar2 == 0x0) break;
+      if (BVar2 == 0x0) { break; }
       uStack10 += 0x1;
     }
   }
@@ -754,7 +774,7 @@ pub fn write_to_file_1008_7a22(param_1: u32,param_2: i32,param_3: HFILE16,param_
   }
   else {
     uStack6 = 0x0;
-    while( true ) {
+    loop {
       if (uStack4 <= uStack6) {
         return;
       }
@@ -764,7 +784,7 @@ pub fn write_to_file_1008_7a22(param_1: u32,param_2: i32,param_3: HFILE16,param_
       local_1c[0] = local_12;
       BVar1 = write_to_file_1008_7e1c
                         (uVar2,uVar3,local_1c,param_4,0x2,0x1020);
-      if (BVar1 == 0x0) break;
+      if (BVar1 == 0x0) { break; }
       local_24[0] = local_10;
       BVar1 = write_to_file_1008_7e1c
                         (uVar2,uVar3,local_24,param_4,0x4,0x1020);
@@ -844,15 +864,15 @@ pub fn read_file_1008_7bc8(param_1: u32,param_2: *mut u16,param_3: HFILE16,param
 }
 
 
-pub fn read_file_1008_7c6e(param_1: u16,param_2: u16,char *param_3,param_4: HFILE16)
+pub fn read_file_1008_7c6e(param_1: u16,param_2: u16,param_3: &mut String,param_4: HFILE16)
 {
   let mut pcVar1: String; 
   char local_c [0xa];
   
-  while( true ) {
+  loop {
     pcVar1 = param_3;
     WIN16_hread(param_4,0x1,ZEXT24(local_c) << 0x10);
-    if (local_c[0] == '\0') break;
+    if (local_c[0] == '\0') { break; }
     param_3 = (param_3 & 0xffff0000 | (param_3 + 0x1));
     *pcVar1 = local_c[0];
     param_4 = s_tile2_bmp_1050_1538;
@@ -893,7 +913,7 @@ pub fn write_to_file_1008_7cac(param_1: u32,param_2: u16) -> bool
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 read_file_1008_7cfe(param_1: u16,param_2: u16,param_3: u16,
                    param_4: u16,param_5: u16)
 
@@ -910,32 +930,33 @@ read_file_1008_7cfe(param_1: u16,param_2: u16,param_3: u16,
   
   uStack6 = 0x0;
   bVar1 = false;
-  do {
+  loop {
     _llseek16(param_4,uStack6 << 0x10,(uStack6 >> 0x10));
     param_4 = ctx.s_tile2_bmp_1050_1538;
     lVar3 = WIN16_hread(s_tile2_bmp_1050_1538,0x400,ZEXT24(local_406) << 0x10);
-    for (uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 += 0x1) {
-      if (local_406[uStack1040] == *_PTR_s_dcbSC_1050_0336_1050_033c) {
-        if (!bVar1) {
-          bVar1 = true;
-          uStack6 = CONCAT22((uStack6 >> 0x10) + uStack1040._2_2_ +
-                             CARRY2(uStack6,uStack1040),
-                             uStack6 + uStack1040);
-          break;
-        }
-        bVar1 = false;
-        uVar2 = pass1_1008_7e4a((ctx.PTR__s_dcbSC_1050_0336_1050_033c >> 0x10),
-                                param_5,in_AF,
-                                CONCAT22(param_5,local_406 + uStack1040),
-                                in_stack_0000fbd2,in_stack_0000fbd4);
-        if (uVar2 != 0x0) {
-          lVar3 = uStack1040 + uStack6 + 0x7;
-          _llseek16(s_tile2_bmp_1050_1538,lVar3 * 0x10000,
-                    (lVar3 >> 0x10));
-          return;
-        }
-      }
-    }
+// TODO: refactor for loop
+    // for (uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 += 0x1) {
+    //   if (local_406[uStack1040] == *_PTR_s_dcbSC_1050_0336_1050_033c) {
+    //     if (!bVar1) {
+    //       bVar1 = true;
+    //       uStack6 = CONCAT22((uStack6 >> 0x10) + uStack1040._2_2_ +
+    //                          CARRY2(uStack6,uStack1040),
+    //                          uStack6 + uStack1040);
+    //       break;
+    //     }
+    //     bVar1 = false;
+    //     uVar2 = pass1_1008_7e4a((ctx.PTR__s_dcbSC_1050_0336_1050_033c >> 0x10),
+    //                             param_5,in_AF,
+    //                             CONCAT22(param_5,local_406 + uStack1040),
+    //                             in_stack_0000fbd2,in_stack_0000fbd4);
+    //     if (uVar2 != 0x0) {
+    //       lVar3 = uStack1040 + uStack6 + 0x7;
+    //       _llseek16(s_tile2_bmp_1050_1538,lVar3 * 0x10000,
+    //                 (lVar3 >> 0x10));
+    //       return;
+    //     }
+    //   }
+    // }
     if (!bVar1) {
       if (lVar3 < 0x400) {
         return;
@@ -944,7 +965,7 @@ read_file_1008_7cfe(param_1: u16,param_2: u16,param_3: u16,
       uStack6 = CONCAT22((uStack6 >> 0x10) + (0xfb < uStack6._1_1_),
                          uStack6);
     }
-  } while( true );
+  }
 }
 
 
@@ -966,7 +987,7 @@ pub fn read_file_1008_7dee(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
 
 bool 
 write_to_file_1008_7e1c
-          (param_1: u16,param_2: u16,param_3: u16,param_4: u16,char *buf_to_write,
+          (param_1: u16,param_2: u16,param_3: u16,param_4: u16,buf_to_write: &mut String,
           HFILE16 file_handle)
 
 {
@@ -1044,7 +1065,7 @@ pub fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
       &iVar3.field_0xa = uVar5;
       (&iVar3.field_0xa + 0x2) = puVar8;
       paStack286 = 0x0;
-      while( true ) {
+      loop {
         if (local_10[0] <= paStack286) {
           return;
         }
@@ -1069,7 +1090,7 @@ pub fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
             (BVar3 = read_file_1008_7dee(uVar11,uVar12,&local_8,0x0,param_6,0x4,
                                          0x1000), BVar3 == 0x0)) ||
            (BVar3 = read_file_1008_7dee(uVar11,uVar12,local_18,0x0,param_6,0x2,
-                                        0x1000), BVar3 == 0x0)) break;
+                                        0x1000), BVar3 == 0x0)) { break; }
         uVar7 = str_op_1008_60e8(CONCAT22(param_6,local_118),uVar10);
         uVar4.field_0x4 = uVar7;
         uVar4.field_0x6 = uVar10;
@@ -1092,7 +1113,7 @@ pub fn file_1008_bb5e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
 }
 
 
-void 
+pub fn
 file_1008_e70e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16,
               param_6: u16)
 
@@ -1125,7 +1146,7 @@ file_1008_e70e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: 
         return;
       }
       uStack10 = 0x0;
-      while( true ) {
+      loop {
         if (local_4 <= uStack10) {
           return;
         }
@@ -1153,7 +1174,7 @@ file_1008_e70e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: 
             BVar3 == 0x0 ||
             (BVar3 = read_file_1008_7dee(uVar7,uVar8,puStack14 + 0x12,0x0,
                                          (puStack14 >> 0x10),0x2,0x1000),
-            BVar3 == 0x0)))) break;
+            BVar3 == 0x0)))) { break; }
         uVar9 = (puStack14 >> 0x10);
         (puStack14 + 0xc) = local_12[0];
         uVar6 = (param_1 >> 0x10);

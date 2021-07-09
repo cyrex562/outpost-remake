@@ -3,16 +3,16 @@
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 mixed_struct_op_1040_8fb8
-          (param_1: *mut u16,param_2: u16,char *param_3,param_4: u16,param_5: u16,
-          param_6: u16,param_7: u16,param_8: u16,param_9: u16,LPVOID param_10,
+          (param_1: *mut u16,param_2: u16,param_3: &mut String,param_4: u16,param_5: u16,
+          param_6: u16,param_7: u16,param_8: u16,param_9: u16,param_10: *mut u8,
           param_11: u16)
 
 {
   let uVar1: u16;
   let uVar2: u16;
-  LPVOID pvVar3;
+  pvVar3: *mut u8;
   let iVar4: i16;
   let uVar5: u16;
   let paVar6: &mut Struct43;
@@ -47,7 +47,7 @@ mixed_struct_op_1040_8fb8
     paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_6,param_11);
     (iVar4 + 0x8) = paVar6;
     (iVar4 + 0xa) = (paVar6 >> 0x10);
-    param_10 = (LPVOID)0x1010;
+    param_10 = 0x1010;
     paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_5,param_11);
     param_9 = (paVar6 >> 0x10);
     (iVar4 + 0xc) = paVar6;
@@ -56,7 +56,7 @@ mixed_struct_op_1040_8fb8
       (iVar4 + 0x10) = 0x0;
     }
     else {
-      param_10 = (LPVOID)0x1010;
+      param_10 = 0x1010;
       paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_4,param_11);
       param_9 = (paVar6 >> 0x10);
       (iVar4 + 0x10) = paVar6;
@@ -68,7 +68,7 @@ mixed_struct_op_1040_8fb8
   (iVar4 + 0x2e) = uVar1;
   (iVar4 + 0x32) = 0x0;
   if (param_3 != 0x0) {
-    param_10 = (LPVOID)0x1008;
+    param_10 = 0x1008;
     uVar2 = str_op_1008_60e8(param_3,param_9);
     (iVar4 + 0x4) = uVar2;
     (iVar4 + 0x6) = param_9;

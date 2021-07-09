@@ -1,5 +1,8 @@
+use crate::util::{CONCAT22, ZEXT24};
+use crate::file::file_1008::{write_to_file_1008_7cac, read_file_1008_7dee, read_file_1008_7cfe};
+use crate::mem_1000::mem_op_1000_179c;
 
-pub fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16)
+pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16)
 {
   let puVar1: u32;
   let ppcVar2: u32;
@@ -30,10 +33,10 @@ pub fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
     BVar3 = read_file_1008_7dee(uVar7,uVar8,&local_6,0x0,param_5,0x2,0x1008);
     if (BVar3 != 0x0) {
       paStack8 = 0x0;
-      while( true ) {
+      loop {
         iVar6 = param_1;
         uVar5 = (param_1 >> 0x10);
-        if (local_6 <= paStack8) break;
+        if (local_6 <= paStack8) { break; }
         uVar4 = local_6;
         mem_op_1000_179c(0xa,param_4,0x1000);
         puStack26 = CONCAT22(param_4,uVar4);
@@ -71,26 +74,28 @@ pub fn file_1010_0c7c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
       if ((BVar3 != 0x0) &&
          (BVar3 = read_file_1008_7dee(uVar7,uVar8,&iVar6.field_0x10,0x0,uVar5,0x2,0x1008)
          , BVar3 != 0x0)) {
-        for (uStack4 = 0x0; uStack4 < 0xa; uStack4 += 0x1) {
-          BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,0x1008)
-          ;
-          if (BVar3 == 0x0) goto LAB_1010_0cb1;
-          uVar5 = uStack4;
-          if (ctx.PTR_LOOP_1050_0312 < 0x2) {
-            uVar5 = pass1_1008_738c(uVar7,uVar8,uStack4);
-          }
-          (uVar5 * 0x8 + 0xe28) = local_2a[0];
-          uStack38 = uVar5;
-        }
+          // TODO: refactor for loop
+        // for (uStack4 = 0x0; uStack4 < 0xa; uStack4 += 0x1) {
+        //   BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,0x1008)
+        //   ;
+        //   if (BVar3 == 0x0) goto LAB_1010_0cb1;
+        //   uVar5 = uStack4;
+        //   if (ctx.PTR_LOOP_1050_0312 < 0x2) {
+        //     uVar5 = pass1_1008_738c(uVar7,uVar8,uStack4);
+        //   }
+        //   (uVar5 * 0x8 + 0xe28) = local_2a[0];
+        //   uStack38 = uVar5;
+        // }
         if (0x2 < ctx.PTR_LOOP_1050_0312) {
           uStack4 = 0x0;
-          do {
+          loop {
             BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,
                                         0x1008);
             if (BVar3 == 0x0) goto LAB_1010_0cb1;
             (uStack4 * 0x8 + 0xea8) = local_2a[0];
             uStack4 += 0x1;
-          } while (uStack4 < 0x3);
+                if uStack4 >= 0x3 { break; }
+          }
         }
         return;
       }
@@ -330,7 +335,7 @@ pub fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
                                 (uVar8,uVar9,&local_a,param_3,0x2,0x1008);
               if (BVar3 != 0x0) {
                 iStack4 = 0x0;
-                while( true ) {
+                loop {
                   piVar1 = (iVar6 + 0x30);
                   if (*piVar1 == iStack4 || *piVar1 < iStack4) {
                     return;
@@ -342,7 +347,7 @@ pub fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
                   local_12[0] = local_12[0] & 0xffff0000 | ZEXT24(&local_22);
                   iVar4 = write_to_file_1008_7b4c
                                     (param_2,CONCAT22(param_3,&local_22),0x1008,param_3);
-                  if (iVar4 == 0x0) break;
+                  if (iVar4 == 0x0) { break; }
                   iStack4 += 0x1;
                 }
               }

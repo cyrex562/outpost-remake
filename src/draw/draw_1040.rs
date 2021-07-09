@@ -1,5 +1,16 @@
+use crate::winapi::{DeleteObject16, SelectPalette16, SelectObject16, LineTo16, MoveTo16, Rectangle16, CreatePen16, GetStockObject16, GetCurrentPosition16, EndPaint16, FrameRect16, GetClientRect16, CreateSolidBrush16, BeginPaint16, InvalidateRect16, SetBkColor16, SetTextColor16, SetMapMode16, GrayString16, DrawText16, ReleaseDC16, GetDC16, GetProp16, GetSystemMetrics16, DrawIcon16, GetDlgCtrlID16, TextOut16, GetTextExtent16, lstrlen16, FillRect16, GetWindowLong16, GetWindowRect16, GetWindowDC16, IsIconic16};
+use crate::util::{CONCAT22, SUB42, CONCAT11, CONCAT12, ZEXT24};
+use crate::win_struct::{HPALETTE16, HDC16, HGDIOBJ16, HPEN16, PAINTSTRUCT16, RECT16, HWND16, HBRUSH16, COLORREF, HINSTANCE16};
+use crate::pass::pass_1010::{pass1_1010_2ee2, pass1_1010_7b8c};
+use crate::ui::ui_1040::ui_cleanup_op_1040_782c;
+use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
+use crate::pass::pass_1040::pass1_1040_a5d0;
+use crate::mixed::mixed_1010_20ba;
+use crate::defines::Struct18;
+use crate::pass::pass_1008::{pass1_1008_4d72, pass1_1008_4772};
+use crate::string::string_1000::str_op_1000_3da4;
 
-pub fn mix_draw_op_1040_21d6(param_1: u32,param_2: HWND16,param_3: u16)
+pub fn mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16)
 {
   let uVar1: u8;
   let uVar2: u8;
@@ -229,17 +240,18 @@ pub fn draw_op_1040_5a06(param_1: u32,param_2: HWND16,param_3: u16)
   LineTo16(ctx.s_tile2_bmp_1050_1538,x,0x82);
   HVar16 = local_2c;
   LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,0x82);
-  for (uStack82 = 0x0; puVar1 = (iVar6 + 0x94),
-      uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
-    pHVar14 = &local_2c;
-    iVar5 = iStack68 * uStack82 + 0x84;
-    uVar13 = 0x4;
-    uVar15 = param_3;
-    IVar9 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    ppcVar3 = (paVar12 + 0x4);
-    (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,paVar12,uVar21,-(IVar9 + -0xc4),uVar13,
-                iVar5,pHVar14,uVar15,HVar16,HVar17);
-  }
+    // TODO: refactor for loop
+  // for (uStack82 = 0x0; puVar1 = (iVar6 + 0x94),
+  //     uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
+  //   pHVar14 = &local_2c;
+  //   iVar5 = iStack68 * uStack82 + 0x84;
+  //   uVar13 = 0x4;
+  //   uVar15 = param_3;
+  //   IVar9 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+  //   ppcVar3 = (paVar12 + 0x4);
+  //   (**ppcVar3)(ctx.s_tile2_bmp_1050_1538,paVar12,uVar21,-(IVar9 + -0xc4),uVar13,
+  //               iVar5,pHVar14,uVar15,HVar16,HVar17);
+  // }
   if (paVar12 != 0x0) {
     if (paVar12 != 0x0) {
       ppcVar3 = paVar12;
@@ -733,7 +745,7 @@ pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,param_4: &REC
   handle_01 = SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
   if (uStack34 != 0x0) {
     iStack78 = 0x0;
-    do {
+    loop {
       MoveTo16(ctx.s_tile2_bmp_1050_1538,iStack20,iStack26);
       LineTo16(ctx.s_tile2_bmp_1050_1538,iStack20,iStack22);
       LineTo16(ctx.s_tile2_bmp_1050_1538,iStack24,iStack22);
@@ -744,7 +756,8 @@ pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,param_4: &REC
       iStack22 += -0x1;
       iStack20 += -0x1;
       iStack78 += 0x1;
-    } while (iStack78 < 0x1);
+          if iStack78 >= 0x1 { break; }
+    }
   }
   if ((iVar4.field_0x4 & 0x2) == 0x0) {
     iStack84 = (local_12 >> 0x10);
@@ -752,24 +765,26 @@ pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,param_4: &REC
     iStack78 = 0x0;
     iStack86 = local_12.x;
     iStack80 = uStack14._2_2_;
-    do {
+    loop {
       SelectObject16(ctx.s_tile2_bmp_1050_1538,handle);
       MoveTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack86);
       LineTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack82);
       LineTo16(ctx.s_tile2_bmp_1050_1538,iStack84,iStack82);
       iStack88 = 0x0;
-      do {
+      loop {
         SelectObject16(ctx.s_tile2_bmp_1050_1538,handle_00);
         LineTo16(ctx.s_tile2_bmp_1050_1538,iStack84,iStack86);
         LineTo16(ctx.s_tile2_bmp_1050_1538,iStack80,iStack86);
         iStack88 += 0x1;
-      } while (iStack88 < 0x2);
+            if iStack88 >= 0x2 { break; }
+      }
       iStack84 += 0x1;
       iStack86 += 0x1;
       iStack82 += -0x1;
       iStack80 += -0x1;
       iStack78 += 0x1;
-    } while (iStack78 < 0x2);
+          if iStack78 >= 0x2 { break; }
+    }
   }
   else {
     MoveTo16(ctx.s_tile2_bmp_1050_1538,uStack14._2_2_,local_12.x);
@@ -804,7 +819,7 @@ pub fn draw_op_1040_9948(param_1: u16,param_2: u32,param_3: HWND16,param_4: &REC
       cy = 0x0;
       x = &iVar4.field_0x6;
       uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(x)));
-      GrayString16(0x1000,iStack4 - iStack8,(LPVOID)(iStack6 - local_a),
+      GrayString16(0x1000,iStack4 - iStack8,(iStack6 - local_a),
                    CONCAT22(local_a,iStack8),uVar3,x,y,cx,cy);
     }
     if (HStack30 != 0x0) {
@@ -860,13 +875,14 @@ pub fn draw_op_1040_a67e(param_1: u32,param_2: i16,param_3: u16,COLORREF param_4
       return;
     }
     bVar2 = false;
-    for (iStack14 = 0x0; piVar1 = (iVar6 + 0xea),
-        *piVar1 != iStack14 && iStack14 <= *piVar1; iStack14 += 0x1) {
-      if ((iVar6 + 0x9a + iStack14 * 0x2) == param_2) {
-        bVar2 = true;
-        break;
-      }
-    }
+      // TODO: refactor for loop
+    // for (iStack14 = 0x0; piVar1 = (iVar6 + 0xea),
+    //     *piVar1 != iStack14 && iStack14 <= *piVar1; iStack14 += 0x1) {
+    //   if ((iVar6 + 0x9a + iStack14 * 0x2) == param_2) {
+    //     bVar2 = true;
+    //     break;
+    //   }
+    // }
     if (bVar2) {
       ctx.PTR_LOOP_1050_5ee8 = ctx.PTR_LOOP_1050_5eec;
     }
@@ -1121,24 +1137,25 @@ pub fn draw_op_1040_c38e(param_1: u32)
     hdc = 0x1010;
     iVar4 = iVar7;
     pass1_1010_2ee2(*(u32 **)(iVar8 + 0x6),unaff_SS,0x1010);
-    for (iStack26 = 0x0; iStack26 < iVar7; iStack26 += 0x1) {
-      uVar1 = (iStack26 * 0x4 + iVar4);
-      iVar5 = uVar1;
-      uVar1 &= 0xffff0000;
-      pIVar6 = (INT16 *)(uVar1 | iVar5 + 0x1e);
-      uVar10 = (uVar1 >> 0x10);
-      iVar5 = (iVar5 + 0x24) / 0x2 + (iVar5 + 0x20);
-      MoveTo16(hdc,iVar5,*pIVar6);
-      LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,*pIVar6 + -0xf);
-      hdc = ctx.s_tile2_bmp_1050_1538;
-      DVar11 = GetCurrentPosition16(ctx.s_tile2_bmp_1050_1538);
-      iStack18 = (DVar11 >> 0x10);
-      IStack20 = DVar11;
-      if (iStack26 == 0x0) {
-        IStack16 = IStack20;
-        iStack14 = iStack18;
-      }
-    }
+      // TODO: refactor for loop
+    // for (iStack26 = 0x0; iStack26 < iVar7; iStack26 += 0x1) {
+    //   uVar1 = (iStack26 * 0x4 + iVar4);
+    //   iVar5 = uVar1;
+    //   uVar1 &= 0xffff0000;
+    //   pIVar6 = (INT16 *)(uVar1 | iVar5 + 0x1e);
+    //   uVar10 = (uVar1 >> 0x10);
+    //   iVar5 = (iVar5 + 0x24) / 0x2 + (iVar5 + 0x20);
+    //   MoveTo16(hdc,iVar5,*pIVar6);
+    //   LineTo16(ctx.s_tile2_bmp_1050_1538,iVar5,*pIVar6 + -0xf);
+    //   hdc = ctx.s_tile2_bmp_1050_1538;
+    //   DVar11 = GetCurrentPosition16(ctx.s_tile2_bmp_1050_1538);
+    //   iStack18 = (DVar11 >> 0x10);
+    //   IStack20 = DVar11;
+    //   if (iStack26 == 0x0) {
+    //     IStack16 = IStack20;
+    //     iStack14 = iStack18;
+    //   }
+    // }
     uVar2 = (iVar8 + 0x6);
     if ((uVar2 + 0x24) != 0x0) {
       iStack14 += -0xd;

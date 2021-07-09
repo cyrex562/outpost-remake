@@ -29,7 +29,7 @@ pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u
         puVar2 = ((lVar8 >> 0x10) | uVar5);
         if (puVar2 != 0x0) {
             hmemcpy16(
-                (LPVOID) & ctx.PTR_LOOP_1050_1000,
+                 & ctx.PTR_LOOP_1050_1000,
                 uVar7,
                 CONCAT22((iVar4 + 0x6), iVar1),
             );

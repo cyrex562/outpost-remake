@@ -133,26 +133,26 @@ switchD_1008_1091_caseD_69:
   }
   param_4 = 0x1008;
   switch(param_2) {
-  case 0x64:
+  0x64 =>
     BVar3 = pass1_1008_07d8(uVar9,param_3,param_6,param_5);
     win_ui_cursor_op_1008_2e9a(param_1,param_5);
     return BVar3;
-  case 0x65:
+  0x65 =>
     pass1_1008_3018(param_1,param_6,unaff_DI,param_5);
     return param_3;
-  case 0x66:
+  0x66 =>
     pass1_1008_30cc(param_1,param_3,param_6,unaff_DI,param_5);
     return param_3;
-  case 0x67:
+  0x67 =>
     iVar11 = win_ui_op_1008_2b54(param_3,param_6,param_5);
     if (iVar11 == 0x0) {
       return 0x0;
     }
-  case 0xee:
+  0xee =>
     uVar13 = 0x0;
     uVar10 = 0x10;
 //     TODO: goto LAB_1008_0d18;
-  case 0x68:
+  0x68 =>
     pass1_1030_8344(ctx.PTR__LOOP_1050_5748,
                     (ctx.PTR__LOOP_1050_5748 >> 0x10),0x4000001);
     puVar4 = (param_6 | param_3);
@@ -191,344 +191,344 @@ switchD_1008_1091_caseD_69:
 //     TODO: goto LAB_1008_0e3d;
   default:
 //     TODO: goto switchD_1008_1091_caseD_69;
-  case 0x6e:
+  0x6e =>
     iVar11 = 0x2;
 //     TODO: goto LAB_1008_0cba;
-  case 0x6f:
+  0x6f =>
     uStack6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x1f8,param_5);
     BVar3 = WinHelp16(0x1010,0x0,0x0,CONCAT22(uStack6,0x3));
     return BVar3;
-  case 0x70:
+  0x70 =>
     iVar11 = 0x1;
 //LAB_1008_0cba:
     uVar5 = pass1_1038_af40(ctx.PTR__LOOP_1050_5b7c,(uVar9 + 0x8),iVar11,param_6,
                             uVar9,&ctx.PTR_LOOP_1050_1038,param_5);
     return uVar5;
-  case 0x71:
+  0x71 =>
     HVar2 = WinExec16(0x1008,0x3);
     return HVar2;
-  case 0x79:
+  0x79 =>
     BVar3 = post_msg_1008_2d22(param_1);
     return BVar3;
-  case 0x7a:
+  0x7a =>
     uVar12 = 0xb;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x7b:
+  0x7b =>
     uVar12 = 0x1e;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x7c:
+  0x7c =>
     uVar12 = 0x1f;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x7d:
+  0x7d =>
     uVar12 = 0x21;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x7e:
+  0x7e =>
     uVar12 = 0x35;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x7f:
+  0x7f =>
     uVar13 = 0x39;
     break;
-  case 0x80:
+  0x80 =>
     uVar12 = 0x22;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x81:
+  0x81 =>
     uVar13 = 0x36;
     break;
-  case 0x82:
+  0x82 =>
     uVar13 = 0x37;
     break;
-  case 0x83:
+  0x83 =>
     uVar13 = 0x38;
     break;
-  case 0x84:
+  0x84 =>
     uVar13 = 0x3a;
     break;
-  case 0x85:
+  0x85 =>
     uVar13 = 0x3b;
     break;
-  case 0x86:
+  0x86 =>
     uVar13 = 0x3c;
     break;
-  case 0x87:
+  0x87 =>
     uVar13 = 0x3d;
     break;
-  case 0x88:
+  0x88 =>
     uVar13 = 0x3e;
     break;
-  case 0x89:
+  0x89 =>
     uVar13 = 0x3f;
     break;
-  case 0x8a:
+  0x8a =>
     uVar13 = 0x40;
     break;
-  case 0x8b:
+  0x8b =>
     uVar12 = 0xc;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x8c:
+  0x8c =>
     uVar13 = 0x41;
     break;
-  case 0x8d:
+  0x8d =>
     uVar13 = 0x42;
     break;
-  case 0x8e:
+  0x8e =>
     uVar13 = 0x43;
     break;
-  case 0x8f:
+  0x8f =>
     uVar13 = 0x44;
     break;
-  case 0x90:
+  0x90 =>
     uVar13 = 0x45;
     break;
-  case 0x91:
+  0x91 =>
     uVar13 = 0x46;
     break;
-  case 0x92:
+  0x92 =>
     uVar13 = 0x47;
     break;
-  case 0x93:
+  0x93 =>
     uVar12 = 0x23;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x94:
+  0x94 =>
     uVar12 = 0x24;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x95:
+  0x95 =>
     uVar13 = 0x48;
     break;
-  case 0x96:
+  0x96 =>
     uVar13 = 0x49;
     break;
-  case 0x97:
+  0x97 =>
     uVar13 = 0x4a;
     break;
-  case 0x98:
+  0x98 =>
     uVar13 = 0x4b;
     break;
-  case 0x99:
+  0x99 =>
     uVar13 = 0x4c;
     break;
-  case 0x9a:
+  0x9a =>
     uVar12 = 0xd;
 //     TODO: goto LAB_1008_0f3e;
-  case 0x9b:
+  0x9b =>
     uVar13 = 0x4d;
     break;
-  case 0x9c:
+  0x9c =>
     uVar13 = 0x4e;
     break;
-  case 0x9d:
+  0x9d =>
     uVar13 = 0x4f;
     break;
-  case 0x9e:
+  0x9e =>
     uVar13 = 0x50;
     break;
-  case 0x9f:
+  0x9f =>
     uVar13 = 0x51;
     break;
-  case 0xa0:
+  0xa0 =>
     uVar12 = 0xe;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa1:
+  0xa1 =>
     uVar12 = 0xf;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa2:
+  0xa2 =>
     uVar13 = 0x52;
     break;
-  case 0xa3:
+  0xa3 =>
     uVar12 = 0x10;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa4:
+  0xa4 =>
     uVar13 = 0x53;
     break;
-  case 0xa5:
+  0xa5 =>
     uVar12 = 0x11;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa6:
+  0xa6 =>
     uVar12 = 0x12;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa7:
+  0xa7 =>
     uVar13 = 0x57;
     break;
-  case 0xa8:
+  0xa8 =>
     uVar12 = 0x13;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xa9:
+  0xa9 =>
     uVar12 = 0x14;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xaa:
+  0xaa =>
     uVar13 = 0x58;
     break;
-  case 0xab:
+  0xab =>
     uVar13 = 0x63;
     break;
-  case 0xac:
+  0xac =>
     uVar13 = 0x59;
     break;
-  case 0xad:
+  0xad =>
     uVar13 = 0x5a;
     break;
-  case 0xae:
+  0xae =>
     uVar13 = 0x5b;
     break;
-  case 0xaf:
+  0xaf =>
     uVar13 = 0x15;
     break;
-  case 0xb0:
+  0xb0 =>
     uVar12 = 0x25;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xb1:
+  0xb1 =>
     uVar13 = 0x5c;
     break;
-  case 0xb2:
+  0xb2 =>
     uVar13 = 0x16;
     break;
-  case 0xb3:
+  0xb3 =>
     uVar13 = 0x5d;
     break;
-  case 0xb4:
+  0xb4 =>
     uVar12 = 0x5e;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xb5:
+  0xb5 =>
     uVar13 = 0x5f;
     break;
-  case 0xb6:
+  0xb6 =>
     uVar13 = 0x60;
     break;
-  case 0xb7:
+  0xb7 =>
     uVar13 = 0x61;
     break;
-  case 0xb8:
+  0xb8 =>
     uVar13 = 0x62;
     break;
-  case 0xb9:
+  0xb9 =>
     uVar13 = 0x64;
     break;
-  case 0xba:
+  0xba =>
     uVar13 = 0x65;
     break;
-  case 0xbb:
+  0xbb =>
     uVar13 = 0x66;
     break;
-  case 0xbc:
+  0xbc =>
     uVar13 = 0x67;
     break;
-  case 0xbd:
+  0xbd =>
     uVar13 = 0x68;
     break;
-  case 0xbe:
+  0xbe =>
     uVar13 = 0x69;
     break;
-  case 0xbf:
+  0xbf =>
     uVar12 = 0x17;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc0:
+  0xc0 =>
     uVar12 = 0x18;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc1:
+  0xc1 =>
     uVar12 = 0x19;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc2:
+  0xc2 =>
     uVar12 = 0x1a;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc3:
+  0xc3 =>
     uVar12 = 0x1b;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc4:
+  0xc4 =>
     uVar12 = 0x1c;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc5:
+  0xc5 =>
     uVar12 = 0x1d;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc6:
+  0xc6 =>
     uVar12 = 0x4;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc8:
+  0xc8 =>
     uVar12 = 0x3;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xc9:
+  0xc9 =>
     uVar12 = 0x1;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xca:
+  0xca =>
     uVar12 = 0x5;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xcb:
+  0xcb =>
     pass1_1008_087e(param_3,param_6,param_5,in_AF);
     uVar12 = 0x6;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xcc:
+  0xcc =>
     uVar12 = 0x7;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xcd:
+  0xcd =>
     uVar12 = 0x8;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xce:
+  0xce =>
     uVar12 = 0x9;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xcf:
+  0xcf =>
     uVar12 = 0xa;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd0:
+  0xd0 =>
     uVar12 = 0x26;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd1:
+  0xd1 =>
     uVar12 = 0x27;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd2:
+  0xd2 =>
     uVar12 = 0x28;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd3:
+  0xd3 =>
     uVar12 = 0x29;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd4:
+  0xd4 =>
     uVar12 = 0x2a;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd5:
+  0xd5 =>
     uVar12 = 0x2b;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd6:
+  0xd6 =>
     uVar12 = 0x2c;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd7:
+  0xd7 =>
     uVar12 = 0x2d;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd8:
+  0xd8 =>
     uVar12 = 0x2e;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xd9:
+  0xd9 =>
     uVar12 = 0x2f;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xda:
+  0xda =>
     uVar12 = 0x30;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xdb:
+  0xdb =>
     uVar12 = 0x31;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xdc:
+  0xdc =>
     uVar12 = 0x32;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xdd:
+  0xdd =>
     uVar12 = 0x33;
 //     TODO: goto LAB_1008_0f3e;
-  case 0xde:
+  0xde =>
     uVar12 = 0x34;
 //LAB_1008_0f3e:
     cursor_op_1008_2dcc(uVar9,struct_var15,uVar12,0x1008);
     return param_3;
-  case 0xdf:
+  0xdf =>
     uVar13 = 0x55;
     break;
-  case 0xe0:
+  0xe0 =>
     uVar13 = 0x56;
     break;
-  case 0x100:
+  0x100 =>
     win_1008_5c5c(param_5,param_3,param_6,_PTR_LOOP_1050_02a0,0x1dc);
     return param_3;
-  case 0x12c:
+  0x12c =>
     uVar13 = 0xf020;
     uVar10 = 0x112;
 //LAB_1008_0d18:
     LVar6 = SendMessage16(0x1008,0x0,0x0,CONCAT22(uVar10,uVar13));
     return LVar6;
-  case 0x12e:
+  0x12e =>
     uVar13 = 0xf060;
     uVar10 = 0x112;
 //LAB_1008_0e3d:
@@ -540,7 +540,7 @@ switchD_1008_1091_caseD_69:
 }
 
 
-void  switchD_1008:1091::caseD_a7(void)
+pub fn  switchD_1008:1091::caseD_a7()
 
 {
   let uVar1: u32;
@@ -555,7 +555,7 @@ void  switchD_1008:1091::caseD_a7(void)
 
 
 
-void  switchD_1008:1091::caseD_aa(void)
+pub fn  switchD_1008:1091::caseD_aa()
 
 {
   let uVar1: u32;
@@ -570,7 +570,7 @@ void  switchD_1008:1091::caseD_aa(void)
 
 
 
-void  switchD_1008:1091::caseD_ac(void)
+pub fn  switchD_1008:1091::caseD_ac()
 
 {
   let uVar1: u32;
@@ -585,7 +585,7 @@ void  switchD_1008:1091::caseD_ac(void)
 
 
 
-void  switchD_1008:1091::caseD_ad(void)
+pub fn  switchD_1008:1091::caseD_ad()
 
 {
   let uVar1: u32;
@@ -600,7 +600,7 @@ void  switchD_1008:1091::caseD_ad(void)
 
 
 
-void  switchD_1008:1091::caseD_ae(void)
+pub fn  switchD_1008:1091::caseD_ae()
 
 {
   let uVar1: u32;
@@ -615,7 +615,7 @@ void  switchD_1008:1091::caseD_ae(void)
 
 
 
-void  switchD_1008:1091::caseD_b1(void)
+pub fn  switchD_1008:1091::caseD_b1()
 
 {
   let uVar1: u32;
@@ -630,7 +630,7 @@ void  switchD_1008:1091::caseD_b1(void)
 
 
 
-void  switchD_1008:1091::caseD_b3(void)
+pub fn  switchD_1008:1091::caseD_b3()
 
 {
   let uVar1: u32;
@@ -644,7 +644,7 @@ void  switchD_1008:1091::caseD_b3(void)
 }
 
 
-void 
+pub fn
 big_switch_1008_15d4
           (param_1: u16,param_2: u16,WNDCLASS16 *param_3,param_4: u32,param_5: i16)
 
@@ -693,7 +693,7 @@ switchD_1008_2a63_caseD_2:
     uVar7 = (param_4 >> 0x10);
     uVar3 = param_1;
     switch(param_5 - 0x1) {
-    case 0x0:
+    0x0 =>
       mem_op_1000_179c(0xec,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -708,7 +708,7 @@ switchD_1008_2a63_caseD_2:
       break;
     default:
 //       TODO: goto switchD_1008_2a63_caseD_2;
-    case 0x2:
+    0x2 =>
       mem_op_1000_179c(0xfa,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -719,7 +719,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3:
+    0x3 =>
       mem_op_1000_179c(0xf6,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -730,7 +730,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4:
+    0x4 =>
       mem_op_1000_179c(0xf6,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -741,7 +741,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5:
+    0x5 =>
       mem_op_1000_179c(0xf8,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -752,7 +752,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x6:
+    0x6 =>
       mem_op_1000_179c(0xf6,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -763,7 +763,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x7:
+    0x7 =>
       mem_op_1000_179c(0x118,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -774,7 +774,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x8:
+    0x8 =>
       mem_op_1000_179c(0xf6,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -785,7 +785,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x9:
+    0x9 =>
       mem_op_1000_179c(0xf6,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -796,7 +796,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xa:
+    0xa =>
       win_1008_5c5c(param_3,param_1,puVar6,_PTR_LOOP_1050_02a0,0x1d3);
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
@@ -811,7 +811,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xb:
+    0xb =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -825,7 +825,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xc:
+    0xc =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -839,7 +839,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xd:
+    0xd =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -853,7 +853,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xe:
+    0xe =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -867,7 +867,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0xf:
+    0xf =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -881,7 +881,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x10:
+    0x10 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -895,7 +895,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x11:
+    0x11 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -909,7 +909,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x12:
+    0x12 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -923,7 +923,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x13:
+    0x13 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -937,7 +937,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x14:
+    0x14 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -951,7 +951,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x15:
+    0x15 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -965,7 +965,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x16:
+    0x16 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -979,7 +979,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x17:
+    0x17 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -993,7 +993,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x18:
+    0x18 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1007,7 +1007,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x19:
+    0x19 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1021,7 +1021,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x1a:
+    0x1a =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1035,7 +1035,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x1b:
+    0x1b =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1049,7 +1049,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x1c:
+    0x1c =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1062,7 +1062,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x1d:
+    0x1d =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1076,7 +1076,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x1e:
+    0x1e =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1090,7 +1090,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x20:
+    0x20 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1104,7 +1104,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x21:
+    0x21 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1117,7 +1117,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x22:
+    0x22 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1130,7 +1130,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x23:
+    0x23 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1144,7 +1144,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x24:
+    0x24 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1158,7 +1158,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x25:
+    0x25 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1172,7 +1172,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x26:
+    0x26 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1186,7 +1186,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x27:
+    0x27 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1200,7 +1200,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x28:
+    0x28 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1214,7 +1214,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x29:
+    0x29 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1228,7 +1228,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2a:
+    0x2a =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1242,7 +1242,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2b:
+    0x2b =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1256,7 +1256,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2c:
+    0x2c =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1270,7 +1270,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2d:
+    0x2d =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1284,7 +1284,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2e:
+    0x2e =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1298,7 +1298,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x2f:
+    0x2f =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1312,7 +1312,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x30:
+    0x30 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1326,7 +1326,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x31:
+    0x31 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1340,7 +1340,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x32:
+    0x32 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1354,7 +1354,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x33:
+    0x33 =>
       mem_op_1000_179c(0x114,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1368,7 +1368,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x34:
+    0x34 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1381,7 +1381,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x35:
+    0x35 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1394,7 +1394,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x36:
+    0x36 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1407,7 +1407,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x37:
+    0x37 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1420,7 +1420,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x38:
+    0x38 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1433,7 +1433,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x39:
+    0x39 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1446,7 +1446,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3a:
+    0x3a =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1459,7 +1459,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3b:
+    0x3b =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1473,7 +1473,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3c:
+    0x3c =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1487,7 +1487,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3d:
+    0x3d =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1500,7 +1500,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3e:
+    0x3e =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1513,7 +1513,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x3f:
+    0x3f =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1526,7 +1526,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x40:
+    0x40 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1539,7 +1539,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x41:
+    0x41 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1552,7 +1552,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x42:
+    0x42 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1565,7 +1565,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x43:
+    0x43 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1578,7 +1578,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x44:
+    0x44 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1591,7 +1591,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x45:
+    0x45 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1604,7 +1604,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x46:
+    0x46 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1617,7 +1617,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x47:
+    0x47 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1630,7 +1630,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x48:
+    0x48 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1643,7 +1643,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x49:
+    0x49 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1656,7 +1656,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4a:
+    0x4a =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1669,7 +1669,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4b:
+    0x4b =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1682,7 +1682,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4c:
+    0x4c =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1695,7 +1695,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4d:
+    0x4d =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1708,7 +1708,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4e:
+    0x4e =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1721,7 +1721,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x4f:
+    0x4f =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1734,7 +1734,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x50:
+    0x50 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1747,7 +1747,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x51:
+    0x51 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1760,7 +1760,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x52:
+    0x52 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1773,7 +1773,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x54:
+    0x54 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1786,7 +1786,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x55:
+    0x55 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1799,7 +1799,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x56:
+    0x56 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1812,7 +1812,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x57:
+    0x57 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1825,7 +1825,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x58:
+    0x58 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1838,7 +1838,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x59:
+    0x59 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1851,7 +1851,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5a:
+    0x5a =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1864,7 +1864,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5b:
+    0x5b =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1877,7 +1877,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5c:
+    0x5c =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1890,7 +1890,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5d:
+    0x5d =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1903,7 +1903,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5e:
+    0x5e =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1916,7 +1916,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x5f:
+    0x5f =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1929,7 +1929,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x60:
+    0x60 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1942,7 +1942,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x61:
+    0x61 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1955,7 +1955,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x62:
+    0x62 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1968,7 +1968,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x63:
+    0x63 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1982,7 +1982,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x64:
+    0x64 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -1995,7 +1995,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x65:
+    0x65 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -2008,7 +2008,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x66:
+    0x66 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -2021,7 +2021,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x67:
+    0x67 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -2034,7 +2034,7 @@ switchD_1008_2a63_caseD_2:
 //         TODO: goto LAB_1008_2a35;
       }
       break;
-    case 0x68:
+    0x68 =>
       mem_op_1000_179c(0xf2,puVar6,0x1000);
       paStack32 = CONCAT22(puVar6,param_1);
       puVar6 = (puVar6 | param_1);
@@ -2186,58 +2186,58 @@ pub fn switch_1008_72bc(param_1: u16,param_2: u16,param_3: u16) -> u16
 {
   if (ctx.PTR_LOOP_1050_0312 < 0x2) {
     switch(param_3) {
-    case 0x1:
+    0x1 =>
       param_3 = 0x1;
       break;
-    case 0x2:
+    0x2 =>
       param_3 = 0x2;
       break;
-    case 0x3:
+    0x3 =>
       param_3 = 0x3;
       break;
-    case 0x4:
+    0x4 =>
       param_3 = 0x5;
       break;
-    case 0x5:
+    0x5 =>
       param_3 = 0x4;
       break;
-    case 0x6:
+    0x6 =>
       param_3 = 0x6;
       break;
-    case 0x7:
+    0x7 =>
       param_3 = 0x7;
       break;
-    case 0x8:
+    0x8 =>
       param_3 = 0x8;
       break;
-    case 0x9:
+    0x9 =>
       param_3 = 0x9;
       break;
-    case 0xa:
+    0xa =>
       param_3 = 0xa;
       break;
-    case 0xb:
+    0xb =>
       param_3 = 0xb;
       break;
-    case 0xc:
+    0xc =>
       param_3 = 0xc;
       break;
-    case 0xd:
+    0xd =>
       param_3 = 0xd;
       break;
-    case 0xe:
+    0xe =>
       param_3 = 0xe;
       break;
-    case 0xf:
+    0xf =>
       param_3 = 0xf;
       break;
-    case 0x10:
+    0x10 =>
       return 0x10;
-    case 0x11:
+    0x11 =>
       return 0x11;
-    case 0x12:
+    0x12 =>
       return 0x12;
-    case 0x13:
+    0x13 =>
       return 0x13;
     default:
       return 0x0;
@@ -2253,21 +2253,21 @@ pub fn pass1_1008_738c(param_1: u16,param_2: u16,param_3: u16) -> u16
   let uVar1: u16;
   
   switch(param_3) {
-  case 0x1:
+  0x1 =>
     uVar1 = 0x3;
     break;
-  case 0x2:
+  0x2 =>
     uVar1 = 0x4;
     break;
-  case 0x3:
+  0x3 =>
     return 0x5;
-  case 0x4:
+  0x4 =>
     return 0x6;
-  case 0x5:
+  0x5 =>
     return 0x8;
-  case 0x6:
+  0x6 =>
     return 0x9;
-  case 0x7:
+  0x7 =>
     return 0xa;
   default:
     uVar1 = 0x0;
@@ -2288,117 +2288,117 @@ pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
   if ((ctx.PTR_LOOP_1050_0312 < 0x2) && (iVar1 = iStack4, true)) {
     iVar1 = param_3;
     switch(param_3) {
-    case 0x18:
-    case 0x19:
-    case 0x1a:
-    case 0x1b:
-    case 0x1c:
-    case 0x1d:
-    case 0x1e:
-    case 0x1f:
-    case 0x20:
-    case 0x21:
-    case 0x22:
-    case 0x23:
-    case 0x24:
-    case 0x25:
-    case 0x26:
-    case 0x27:
-    case 0x28:
-    case 0x29:
-    case 0x2a:
-    case 0x2b:
-    case 0x2c:
-    case 0x2d:
-    case 0x2e:
-    case 0x2f:
-    case 0x30:
-    case 0x31:
-    case 0x32:
-    case 0x33:
-    case 0x34:
-    case 0x35:
-    case 0x36:
-    case 0x37:
-    case 0x38:
-    case 0x39:
-    case 0x3a:
-    case 0x3b:
-    case 0x3c:
+    0x18 =>
+    0x19 =>
+    0x1a =>
+    0x1b =>
+    0x1c =>
+    0x1d =>
+    0x1e =>
+    0x1f =>
+    0x20 =>
+    0x21 =>
+    0x22 =>
+    0x23 =>
+    0x24 =>
+    0x25 =>
+    0x26 =>
+    0x27 =>
+    0x28 =>
+    0x29 =>
+    0x2a =>
+    0x2b =>
+    0x2c =>
+    0x2d =>
+    0x2e =>
+    0x2f =>
+    0x30 =>
+    0x31 =>
+    0x32 =>
+    0x33 =>
+    0x34 =>
+    0x35 =>
+    0x36 =>
+    0x37 =>
+    0x38 =>
+    0x39 =>
+    0x3a =>
+    0x3b =>
+    0x3c =>
       iVar1 = param_3 + 0x3;
       break;
-    case 0x3d:
-    case 0x3e:
+    0x3d =>
+    0x3e =>
       iVar1 = param_3 + 0x4;
       break;
-    case 0x3f:
-    case 0x40:
-    case 0x41:
-    case 0x42:
-    case 0x43:
-    case 0x44:
-    case 0x45:
-    case 0x46:
-    case 0x47:
-    case 0x48:
-    case 0x49:
-    case 0x4a:
-    case 0x4b:
-    case 0x4c:
-    case 0x4d:
-    case 0x4e:
-    case 0x4f:
-    case 0x50:
-    case 0x51:
-    case 0x52:
-    case 0x53:
-    case 0x54:
-    case 0x55:
-    case 0x56:
-    case 0x57:
-    case 0x58:
-    case 0x59:
-    case 0x5a:
-    case 0x5b:
-    case 0x5c:
-    case 0x5d:
-    case 0x5e:
-    case 0x5f:
-    case 0x60:
-    case 0x61:
-    case 0x62:
-    case 0x63:
-    case 0x64:
-    case 0x65:
-    case 0x66:
+    0x3f =>
+    0x40 =>
+    0x41 =>
+    0x42 =>
+    0x43 =>
+    0x44 =>
+    0x45 =>
+    0x46 =>
+    0x47 =>
+    0x48 =>
+    0x49 =>
+    0x4a =>
+    0x4b =>
+    0x4c =>
+    0x4d =>
+    0x4e =>
+    0x4f =>
+    0x50 =>
+    0x51 =>
+    0x52 =>
+    0x53 =>
+    0x54 =>
+    0x55 =>
+    0x56 =>
+    0x57 =>
+    0x58 =>
+    0x59 =>
+    0x5a =>
+    0x5b =>
+    0x5c =>
+    0x5d =>
+    0x5e =>
+    0x5f =>
+    0x60 =>
+    0x61 =>
+    0x62 =>
+    0x63 =>
+    0x64 =>
+    0x65 =>
+    0x66 =>
       iVar1 = param_3 + 0x8;
       break;
-    case 0x67:
-    case 0x68:
-    case 0x69:
-    case 0x6a:
-    case 0x6b:
-    case 0x6c:
-    case 0x6d:
-    case 0x6e:
-    case 0x6f:
-    case 0x70:
-    case 0x71:
-    case 0x72:
-    case 0x73:
-    case 0x74:
-    case 0x75:
-    case 0x76:
-    case 0x77:
-    case 0x78:
-    case 0x79:
-    case 0x7a:
-    case 0x7b:
-    case 0x7c:
-    case 0x7d:
-    case 0x7e:
-    case 0x7f:
-    case 0x80:
+    0x67 =>
+    0x68 =>
+    0x69 =>
+    0x6a =>
+    0x6b =>
+    0x6c =>
+    0x6d =>
+    0x6e =>
+    0x6f =>
+    0x70 =>
+    0x71 =>
+    0x72 =>
+    0x73 =>
+    0x74 =>
+    0x75 =>
+    0x76 =>
+    0x77 =>
+    0x78 =>
+    0x79 =>
+    0x7a =>
+    0x7b =>
+    0x7c =>
+    0x7d =>
+    0x7e =>
+    0x7f =>
+    0x80 =>
       iVar1 = param_3 + 0x9;
     }
   }

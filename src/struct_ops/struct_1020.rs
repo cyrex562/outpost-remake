@@ -106,7 +106,7 @@ pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4
 
 
 
-void 
+pub fn
 struct_1020_790e(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u32,param_5: u16
                 )
 

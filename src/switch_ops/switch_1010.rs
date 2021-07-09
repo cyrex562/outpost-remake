@@ -1,5 +1,5 @@
 
-void  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
+pub fn  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
 
 {
   let uVar1: u32;
@@ -27,25 +27,25 @@ void  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
 pub fn switch_1010_6646(param_1: u16,param_2: u16,param_3: *mut u16,param_4: u16)
 {
   switch(param_4) {
-  case 0x83:
+  0x83 =>
     *param_3 = 0xa;
     break;
-  case 0x84:
+  0x84 =>
     *param_3 = 0xe;
     break;
-  case 0x85:
+  0x85 =>
     *param_3 = 0x12;
     break;
-  case 0x86:
+  0x86 =>
     *param_3 = 0x16;
     return;
-  case 0x87:
+  0x87 =>
     *param_3 = 0x1a;
     return;
-  case 0x88:
+  0x88 =>
     *param_3 = 0x1e;
     return;
-  case 0x89:
+  0x89 =>
     *param_3 = 0x22;
     return;
   default:

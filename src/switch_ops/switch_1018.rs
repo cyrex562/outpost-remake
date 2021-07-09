@@ -20,42 +20,42 @@ pub fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,para
                   ,CONCAT22(param_4,param_3));
   uStack14 = CONCAT22(param_4,param_3);
   switch(param_2) {
-  case 0x188:
+  0x188 =>
     if (iVar2.field_0xa == 0x0) {
       pass1_1008_d3ae(param_1 & 0xffff | uVar2 << 0x10);
     }
     uStack6 = &iVar2.field_0xa;
     uStack4 = (&iVar2.field_0xa + 0x2);
     break;
-  case 0x189:
+  0x189 =>
     if (iVar2.field_0xe == 0x0) {
       unk_str_op_1008_d4f6(param_1 & 0xffff | uVar2 << 0x10,uStack14);
     }
     uStack6 = &iVar2.field_0xe;
     uStack4 = (&iVar2.field_0xe + 0x2);
     break;
-  case 0x18a:
+  0x18a =>
     if (iVar2.field_0x12 == 0x0) {
       unk_str_op_1008_d1c6(param_1 & 0xffff | uVar2 << 0x10,uStack14);
     }
     uStack6 = &iVar2.field_0x12;
     uStack4 = (&iVar2.field_0x12 + 0x2);
     break;
-  case 0x18b:
+  0x18b =>
     if (iVar2.field_0x16 == 0x0) {
       pass1_1008_cfa0(param_1 & 0xffff | uVar2 << 0x10,uStack14);
     }
     uStack6 = &iVar2.field_0x16;
     uStack4 = (&iVar2.field_0x16 + 0x2);
     break;
-  case 0x18c:
+  0x18c =>
     if (iVar2.field_0x1a == 0x0) {
       pass1_1008_cda2(param_1 & 0xffff | uVar2 << 0x10,uStack14,param_5);
     }
     uStack6 = &iVar2.field_0x1a;
     uStack4 = (&iVar2.field_0x1a + 0x2);
     break;
-  case 0x18d:
+  0x18d =>
     if (iVar2.field_0x1e == 0x0) {
       pass1_1008_cbc4(param_1 & 0xffff | uVar2 << 0x10,uStack14,param_5);
     }
@@ -96,36 +96,36 @@ switchD_1018_3f8b_caseD_2:
   }
   else {
     switch(param_4) {
-    case 0x1:
+    0x1 =>
       iVar1 = param_3 * 0x4 + 0x40b6;
       break;
     default:
 //       TODO: goto switchD_1018_3f8b_caseD_2;
-    case 0x3:
+    0x3 =>
       iVar1 = param_3 * 0x4 + 0x40e2;
       break;
-    case 0x4:
+    0x4 =>
       iVar1 = param_3 * 0x4 + 0x40ee;
       break;
-    case 0x8:
+    0x8 =>
       iVar1 = param_3 * 0x4 + 0x40f2;
       break;
-    case 0x9:
+    0x9 =>
       iVar1 = param_3 * 0x4 + 0x4106;
       break;
-    case 0xa:
+    0xa =>
       iVar1 = param_3 * 0x4 + 0x410a;
       break;
-    case 0x14:
+    0x14 =>
       iVar1 = param_3 * 0x4 + 0x410e;
       break;
-    case 0x16:
+    0x16 =>
       iVar1 = param_3 * 0x4 + 0x4112;
       break;
-    case 0x17:
+    0x17 =>
       iVar1 = param_3 * 0x4 + 0x4116;
       break;
-    case 0x19:
+    0x19 =>
       iVar1 = param_3 * 0x4 + 0x411a;
     }
   }
@@ -279,79 +279,79 @@ switchD_1018_444f_caseD_10:
   }
   else {
     switch(param_3) {
-    case 0xf:
-    case 0x35:
-    case 0x36:
+    0xf =>
+    0x35 =>
+    0x36 =>
       uStack6 = 0x7;
       break;
     default:
 //       TODO: goto switchD_1018_444f_caseD_10;
-    case 0x11:
-    case 0x13:
-    case 0x14:
-    case 0x15:
-    case 0x2d:
-    case 0x2e:
-    case 0x6e:
+    0x11 =>
+    0x13 =>
+    0x14 =>
+    0x15 =>
+    0x2d =>
+    0x2e =>
+    0x6e =>
       uStack6 = 0x9;
       break;
-    case 0x12:
-    case 0x31:
-    case 0x32:
-    case 0x52:
-    case 0x53:
-    case 0x54:
-    case 0x55:
-    case 0x56:
-    case 0x5a:
-    case 0x5b:
-    case 0x5c:
-    case 0x5d:
-    case 0x5e:
-    case 0x5f:
+    0x12 =>
+    0x31 =>
+    0x32 =>
+    0x52 =>
+    0x53 =>
+    0x54 =>
+    0x55 =>
+    0x56 =>
+    0x5a =>
+    0x5b =>
+    0x5c =>
+    0x5d =>
+    0x5e =>
+    0x5f =>
       uStack6 = 0x4;
       break;
-    case 0x1b:
-    case 0x1c:
-    case 0x1d:
-    case 0x28:
-    case 0x29:
-    case 0x2c:
-    case 0x2f:
-    case 0x30:
-    case 0x68:
-    case 0x69:
+    0x1b =>
+    0x1c =>
+    0x1d =>
+    0x28 =>
+    0x29 =>
+    0x2c =>
+    0x2f =>
+    0x30 =>
+    0x68 =>
+    0x69 =>
       uStack6 = 0x5;
       break;
-    case 0x1e:
-    case 0x1f:
-    case 0x20:
-    case 0x33:
-    case 0x34:
+    0x1e =>
+    0x1f =>
+    0x20 =>
+    0x33 =>
+    0x34 =>
       uStack6 = 0x6;
       break;
-    case 0x22:
-    case 0x23:
-    case 0x24:
+    0x22 =>
+    0x23 =>
+    0x24 =>
       uStack6 = 0x8;
       break;
-    case 0x25:
-    case 0x26:
-    case 0x27:
+    0x25 =>
+    0x26 =>
+    0x27 =>
       uStack6 = 0x2;
       break;
-    case 0x38:
-    case 0x39:
-    case 0x4f:
-    case 0x50:
-    case 0x51:
-    case 0x57:
-    case 0x58:
-    case 0x59:
-    case 0x66:
-    case 0x67:
-    case 0x6c:
-    case 0x6d:
+    0x38 =>
+    0x39 =>
+    0x4f =>
+    0x50 =>
+    0x51 =>
+    0x57 =>
+    0x58 =>
+    0x59 =>
+    0x66 =>
+    0x67 =>
+    0x6c =>
+    0x6d =>
       uStack6 = 0x3;
     }
   }

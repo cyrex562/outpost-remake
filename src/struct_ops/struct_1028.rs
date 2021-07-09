@@ -396,7 +396,7 @@ pub fn struct_1028_60bc(param_1: *mut u16,param_2: u16,param_3: *mut u8) -> u16
 }
 
 
-void 
+pub fn
 struct_op_1028_87f0(param_1: u16,param_2: u8,param_3: &mut Struct97,param_4: u16,
                    param_5: u16,param_6: u16,param_7: *mut u32,param_8: u16,
                    param_9: u32,param_1: u320)
@@ -429,7 +429,7 @@ struct_op_1028_87f0(param_1: u16,param_2: u8,param_3: &mut Struct97,param_4: u16
 
 
 
-void 
+pub fn
 struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u16,
                    param_5: u16,param_6: *mut u32,param_7: u16,param_8: u32,
                    param_9: u32,param_1: u320)
@@ -461,7 +461,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 }
 
 
-void 
+pub fn
 struct_op_1028_933c(param_1: &mut Struct100,param_2: u16,param_3: u16,param_4: u16,
                    param_5: *mut u32,param_6: u16,param_7: u32,param_8: u32,
                    param_9: u16,param_10: u8)

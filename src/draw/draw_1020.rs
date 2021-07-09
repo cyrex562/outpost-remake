@@ -1,6 +1,20 @@
+use crate::winapi::{DeleteObject16, SelectObject16, LineTo16, MoveToEx16, CreatePen16, FillRect16, CreateSolidBrush16, GetClientRect16, EndPaint16, BeginPaint16, SelectPalette16, InvalidateRect16, RealizePalette16, GetDC16, UnrealizeObject16, GetStockObject16, ReleaseDC16, TextOut16, GetTextExtent16, lstrlen16, SetTextColor16, SetBkColor16, MoveTo16, GetWindowRect16, GetWindowDC16, IsIconic16, PtInRect16, SetCursor16, PostMessage16, ReleaseCapture16, LoadAccelerators16, Rectangle16, Ellipse16, ValidateRect16, SetMapMode16, Polygon16, DeleteDC16, CreateDC16, DrawIcon16};
+use crate::win_struct::{POINT16, RECT16, HPEN16, HGDIOBJ16, HWND16, PAINTSTRUCT16, HDC16, HPALETTE16, HCURSOR16, HBRUSH16};
+use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT12, CONCAT13, CONCAT11};
+use crate::pass::pass_1008::{pass1_1008_8b20, pass1_1008_5b12, pass1_1008_57a4, pass1_1008_5118, pass1_1008_3e94, pass1_1008_4772, pass1_1008_4480, pass1_1008_3e76, pass1_1008_3e38};
+use crate::misc::empty_1008_8fc4;
+use crate::pass::pass_1018::{pass1_1018_2862, pass1_1018_31d0, pass1_1018_017c, pass1_1018_108c, pass1_1018_15f6, pass1_1018_1320, pass1_1018_1054, pass1_1018_0d9a, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_181c};
+use crate::mixed::mixed_1010_20ba;
+use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::draw::draw_1008::unk_draw_op_1008_61b2;
+use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
+use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_3770, pass1_1010_375e, pass1_1010_4dc8, pass1_1010_4df0, pass1_1010_4c2c, pass1_1010_454a};
+use crate::defines::Struct18;
+use crate::pass::pass_1020::{pass1_1020_68de, pass1_1020_2488, pass1_1020_239c, pass1_1020_2286};
+use crate::sys_api::get_sys_metrics_1020_7c1a;
+use crate::mem_1000::mem_op_1000_179c;
 
-
-pub fn unk_draw_op_1020_0000(param_1: u32,param_2: HWND16,param_3: u16)
+pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16)
 {
   let piVar1: *mut i16;
   let ppcVar2: u32;
@@ -48,41 +62,42 @@ pub fn unk_draw_op_1020_0000(param_1: u32,param_2: HWND16,param_3: u16)
                   (param_1 & 0xffff0000 | (iVar5 + 0x18)),
                   (iVar5 + 0x24),param_3);
   paStack46 = 0x0;
-  for (iStack48 = 0x0; iStack48 < 0x6; iStack48 += 0x1) {
-    uVar3 = (iVar5 + 0x14);
-    hwnd = 0x1010;
-    pass1_1010_2b78(uVar3,(uVar3 >> 0x10),iStack48,
-                    CONCAT22(param_3,&local_b4));
-    if (local_b4 == 0x0) {
-      for (iStack56 = 0x0; iVar4 = iStack56, iStack56 <= iStack178; iStack56 += 0x1) {
-        piVar1 = aiStack176 + iStack56 * 0x3;
-        piStack184 = piVar1;
-        if (aiStack176[iStack56 * 0x3 + 0x2] != 0x0) {
-          paStack46 = 
-                      pass1_1010_2b98((iVar5 + 0x14),
-                                      aiStack176[iStack56 * 0x3 + 0x2]);
-          pass1_1008_3e54(CONCAT22(param_3,local_be),0x0,
-                          aiStack176[iVar4 * 0x3 + 0x1] + local_2a,*piVar1 + local_28);
-          hwnd = 0x1008;
-          pass1_1008_4480(puStack38,CONCAT22(param_3,local_be),paStack46,
-                          param_3);
-        }
-      }
-    }
-    else {
-      _local_be = CONCAT22(param_3,aiStack176 + iStack178 * 0x3);
-      if (aiStack176[iStack178 * 0x3 + 0x2] != 0x0) {
-        paStack46 = 
-                    pass1_1010_2b98((iVar5 + 0x14),
-                                    aiStack176[iStack178 * 0x3 + 0x2]);
-        pass1_1008_3e54(CONCAT22(param_3,local_c4),0x0,
-                        (_local_be + 0x2) + local_2a,*_local_be + local_28);
-        hwnd = 0x1008;
-        pass1_1008_4480(puStack38,CONCAT22(param_3,local_c4),paStack46,
-                        param_3);
-      }
-    }
-  }
+    // TODO: refactor
+  // for (iStack48 = 0x0; iStack48 < 0x6; iStack48 += 0x1) {
+  //   uVar3 = (iVar5 + 0x14);
+  //   hwnd = 0x1010;
+  //   pass1_1010_2b78(uVar3,(uVar3 >> 0x10),iStack48,
+  //                   CONCAT22(param_3,&local_b4));
+  //   if (local_b4 == 0x0) {
+  //     for (iStack56 = 0x0; iVar4 = iStack56, iStack56 <= iStack178; iStack56 += 0x1) {
+  //       piVar1 = aiStack176 + iStack56 * 0x3;
+  //       piStack184 = piVar1;
+  //       if (aiStack176[iStack56 * 0x3 + 0x2] != 0x0) {
+  //         paStack46 =
+  //                     pass1_1010_2b98((iVar5 + 0x14),
+  //                                     aiStack176[iStack56 * 0x3 + 0x2]);
+  //         pass1_1008_3e54(CONCAT22(param_3,local_be),0x0,
+  //                         aiStack176[iVar4 * 0x3 + 0x1] + local_2a,*piVar1 + local_28);
+  //         hwnd = 0x1008;
+  //         pass1_1008_4480(puStack38,CONCAT22(param_3,local_be),paStack46,
+  //                         param_3);
+  //       }
+  //     }
+  //   }
+  //   else {
+  //     _local_be = CONCAT22(param_3,aiStack176 + iStack178 * 0x3);
+  //     if (aiStack176[iStack178 * 0x3 + 0x2] != 0x0) {
+  //       paStack46 =
+  //                   pass1_1010_2b98((iVar5 + 0x14),
+  //                                   aiStack176[iStack178 * 0x3 + 0x2]);
+  //       pass1_1008_3e54(CONCAT22(param_3,local_c4),0x0,
+  //                       (_local_be + 0x2) + local_2a,*_local_be + local_28);
+  //       hwnd = 0x1008;
+  //       pass1_1008_4480(puStack38,CONCAT22(param_3,local_c4),paStack46,
+  //                       param_3);
+  //     }
+  //   }
+  // }
   ppcVar2 = (*puStack38 + 0x4);
   (**ppcVar2)(hwnd,puStack38,(puStack38 >> 0x10),0x0,0x0,iVar5 + 0xa,
               uVar6,uVar7);
@@ -579,20 +594,22 @@ pub fn draw_line_1020_229c(param_1: u32,HDC16 param_2)
   uVar7 = (pIVar2 >> 0x10);
   iVar5 = pIVar2;
   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5,(iVar5 + iVar1 * 0x8 + -0x4));
-  for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
-    piVar6 = (iStack10 * 0x8 + iVar5);
-    iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
-    MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,iVar4);
-    LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,iVar4);
-  }
+    // TODO: refactor
+  // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+  //   piVar6 = (iStack10 * 0x8 + iVar5);
+  //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
+  //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,iVar4);
+  //   LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,iVar4);
+  // }
   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,*pIVar2);
   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5f,(iVar5 + iVar1 * 0x8 + -0x4));
-  for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
-    piVar6 = (iStack10 * 0x8 + iVar5);
-    iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
-    MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,iVar4);
-    LineTo16(ctx.s_tile2_bmp_1050_1538,0x5a,iVar4);
-  }
+  // TODO: refactor for loop
+    // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+  //   piVar6 = (iStack10 * 0x8 + iVar5);
+  //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
+  //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,iVar4);
+  //   LineTo16(ctx.s_tile2_bmp_1050_1538,0x5a,iVar4);
+  // }
   return;
 }
 
@@ -927,7 +944,7 @@ pub fn unk_draw_op_1020_320e(param_1: u32,HDC16 param_2,param_3: u16)
 
 
 
-void 
+pub fn
 draw_op_1020_33c0(param_1: u32,param_2: u32,param_3: i16,param_4: u32,param_5: i16,
                  param_6: u16,param_7: u16)
 
@@ -953,24 +970,25 @@ draw_op_1020_33c0(param_1: u32,param_2: u32,param_3: i16,param_4: u32,param_5: i
     hdc = ctx.s_tile2_bmp_1050_1538;
     obj_handle_2 = SelectObject16(ctx.s_tile2_bmp_1050_1538,brush_handle);
     puStack14 = param_4;
-    for (iStack20 = 0x0; iStack20 < param_3; iStack20 += 0x1) {
-      uVar4 = (param_1 >> 0x10);
-      iVar1 = param_3;
-      pass1_1020_3540(param_1,uVar4,param_5,puStack14,in_DX,unaff_SS);
-      if (param_5 < 0x1) {
-        uVar2 = 0x3;
-      }
-      else {
-        uVar2 = 0x4;
-      }
-      uVar3 = in_DX;
-      draw_polygon_1020_3602(param_1,uVar4,CONCAT22(iVar1,uVar2),hdc);
-      hdc = 0x1000;
-      fn_ptr_1000_17ce(CONCAT22(in_DX,iVar1),0x1000);
-      puStack14 =
-                  (puStack14 & 0xffff0000 | (puStack14 + 0x6));
-      in_DX = uVar3;
-    }
+// TODO: refactor for loop
+//     for (iStack20 = 0x0; iStack20 < param_3; iStack20 += 0x1) {
+//       uVar4 = (param_1 >> 0x10);
+//       iVar1 = param_3;
+//       pass1_1020_3540(param_1,uVar4,param_5,puStack14,in_DX,unaff_SS);
+//       if (param_5 < 0x1) {
+//         uVar2 = 0x3;
+//       }
+//       else {
+//         uVar2 = 0x4;
+//       }
+//       uVar3 = in_DX;
+//       draw_polygon_1020_3602(param_1,uVar4,CONCAT22(iVar1,uVar2),hdc);
+//       hdc = 0x1000;
+//       fn_ptr_1000_17ce(CONCAT22(in_DX,iVar1),0x1000);
+//       puStack14 =
+//                   (puStack14 & 0xffff0000 | (puStack14 + 0x6));
+//       in_DX = uVar3;
+//     }
     SelectObject16(hdc,obj_handle_2);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     SelectObject16(ctx.s_tile2_bmp_1050_1538,object_handle);
@@ -1176,10 +1194,11 @@ pub fn mixed_draw_op_1020_3fa0(param_1: u32,param_2: HWND16,param_3: u16)
                   CONCAT22(param_3,&local_32),
                   CONCAT22(param_3,&local_32 + 0x2));
   uStack54 = uStack44;
-  for (iStack56 = 0x0; iStack56 < iStack46; iStack56 += 0x1) {
-    draw_rect_1020_40ce(uStack54,local_32,(local_32 >> 0x10),param_3);
-    uStack54 = uStack54 & 0xffff0000 | (uStack54 + 0x18);
-  }
+    // TODO: refactor for loop
+  // for (iStack56 = 0x0; iStack56 < iStack46; iStack56 += 0x1) {
+  //   draw_rect_1020_40ce(uStack54,local_32,(local_32 >> 0x10),param_3);
+  //   uStack54 = uStack54 & 0xffff0000 | (uStack54 + 0x18);
+  // }
   EndPaint16(0x1008,&local_22);
   return;
 }
@@ -1375,9 +1394,9 @@ pub fn pt_in_rect_1020_5856(param_1: u32,param_2: &POINT16,param_3: u16)
   pass1_1018_2862((param_1 + 0xfa));
   if ((in_DX | param_3) != 0x0) {
     uStack10 = 0x0;
-    while( true ) {
+    loop {
       puVar1 = (param_3 + 0xa);
-      if (*puVar1 < uStack10 || *puVar1 == uStack10) break;
+      if (*puVar1 < uStack10 || *puVar1 == uStack10) { break; }
       uVar3 = uStack10;
       empty_1008_8fc4(param_3,in_DX,uStack10,(uStack10 >> 0x10));
       if ((extraout_DX | uVar3) != 0x0) {
@@ -1397,7 +1416,7 @@ pub fn pt_in_rect_1020_5856(param_1: u32,param_2: &POINT16,param_3: u16)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void 
+pub fn
 pt_in_rect_op_1020_58ce
           (param_1: u32,param_2: u16,param_3: u16,param_4: u8,param_5: &RECT16,
           param_6: u16)
@@ -1454,36 +1473,37 @@ pt_in_rect_op_1020_58ce
       if (uVar3 != 0x0) {
         uStack30 = pass1_1020_6498((iVar7 + 0xf6),0x1);
         uStack30._2_2_ = (uStack30 >> 0x10);
-        for (puStack26 = 0x0; puStack26 < 0x4;
-            puStack26 = (puStack26 + 0x1)) {
-          BVar4 = PtInRect16(rect_00,(POINT16)CONCAT22(uStack4,local_6));
-          if (BVar4 != 0x0) {
-            local_18[0] = 0x0;
-            uStack20 = 0x0;
-            if (puStack26 == 0x0) {
-              uStack20 = (-(uStack10 == 0x0) & 0x4) - 0x5;
-            }
-            else {
-              if (puStack26 == (&ctx.PTR_LOOP_1050_0000 + 0x1)) {
-                uStack20 = (-(uStack10 == 0x0) & 0xfffc) + 0x5;
-              }
-              else {
-                if (puStack26 == &ctx.PTR_LOOP_1050_0002) {
-                  local_18[0] = (-(uStack10 == 0x0) & 0x4) - 0x5;
-                }
-                else {
-                  if (puStack26 == (&ctx.PTR_LOOP_1050_0002 + 0x1)) {
-                    local_18[0] = (-(uStack10 == 0x0) & 0xfffc) + 0x5;
-                  }
-                }
-              }
-            }
-            pass1_1020_2a94((iVar7 + 0xce),CONCAT22(local_18[0],uStack20),
-                            param_6);
-            return;
-          }
-          rect_00 = s_tile2_bmp_1050_1538;
-        }
+// TODO: refactor for loop
+        // for (puStack26 = 0x0; puStack26 < 0x4;
+        //     puStack26 = (puStack26 + 0x1)) {
+        //   BVar4 = PtInRect16(rect_00,(POINT16)CONCAT22(uStack4,local_6));
+        //   if (BVar4 != 0x0) {
+        //     local_18[0] = 0x0;
+        //     uStack20 = 0x0;
+        //     if (puStack26 == 0x0) {
+        //       uStack20 = (-(uStack10 == 0x0) & 0x4) - 0x5;
+        //     }
+        //     else {
+        //       if (puStack26 == (&ctx.PTR_LOOP_1050_0000 + 0x1)) {
+        //         uStack20 = (-(uStack10 == 0x0) & 0xfffc) + 0x5;
+        //       }
+        //       else {
+        //         if (puStack26 == &ctx.PTR_LOOP_1050_0002) {
+        //           local_18[0] = (-(uStack10 == 0x0) & 0x4) - 0x5;
+        //         }
+        //         else {
+        //           if (puStack26 == (&ctx.PTR_LOOP_1050_0002 + 0x1)) {
+        //             local_18[0] = (-(uStack10 == 0x0) & 0xfffc) + 0x5;
+        //           }
+        //         }
+        //       }
+        //     }
+        //     pass1_1020_2a94((iVar7 + 0xce),CONCAT22(local_18[0],uStack20),
+        //                     param_6);
+        //     return;
+        //   }
+        //   rect_00 = s_tile2_bmp_1050_1538;
+        // }
       }
       uVar3 = pass1_1020_64d4((iVar7 + 0xf6),0x3);
       if (uVar3 != 0x0) {
@@ -1620,7 +1640,7 @@ pub fn mix_draw_op_1020_650c(param_1: &mut Struct7,param_2: HWND16,param_3: u16)
     }
   }
   iStack8 = 0x0;
-  do {
+  loop {
     iVar4 = iVar3 + 0x18;
     iVar5 = iStack8 * 0x4;
     if ((iVar4 + iVar5) != 0x0) {
@@ -1630,7 +1650,10 @@ pub fn mix_draw_op_1020_650c(param_1: &mut Struct7,param_2: HWND16,param_3: u16)
                   (puStack6 >> 0x10));
     }
     iStack8 += 0x1;
-  } while (iStack8 < 0x5);
+    if iStack8 >= 0x5 {
+        break;
+    }
+  }
   uVar7 = (iVar3 + 0x4);
   BeginPaint16(param_2,&local_28);
   ppcVar1 = (*puStack6 + 0x4);
@@ -1930,10 +1953,10 @@ pub fn realize_palette_1020_8128(param_1: u32,param_2: i16,HGDIOBJ16 param_3,par
     RealizePalette16(ctx.s_tile2_bmp_1050_1538);
     pass1_1008_57a4(CONCAT22(param_4,local_12),
                     param_1 & 0xffff0000 | (iVar6 + 0xd2));
-    while( true ) {
+    loop {
       puVar3 = local_12;
       pass1_1008_5b12(puVar3,param_4);
-      if ((extraout_DX | puVar3) == 0x0) break;
+      if ((extraout_DX | puVar3) == 0x0) { break; }
       uVar9 = (puVar3 + 0x6);
       puVar4 = (puVar3 + 0x4);
       ppcVar1 = (*puVar4 + 0x90);
@@ -1979,7 +2002,7 @@ pub fn win_ui_palette_op_1020_81c0(param_1: HWND16)
 }
 
 
-void 
+pub fn
 invalidate_rect_1020_8d90
           (param_1: u32,param_2: u16,param_3: u32,param_4: u16,param_5: u16,
           param_6: u16)
@@ -2058,17 +2081,19 @@ pub fn invalidate_rect_1020_8fb4(param_1: u32,param_2: u16)
     if ((in_DX | (iVar5 + 0xaa)) != 0x0) {
       uVar2 = (iVar5 + 0xaa);
       iVar1 = (uVar2 + 0xa);
-      for (iStack8 = 0x0; iStack8 < iVar1; iStack8 += 0x1) {
-        uVar3 = SEXT24(iStack8);
-        empty_1008_8fc4((iVar5 + 0xaa),uVar3);
-        erase = uVar3;
-        uVar4 = extraout_DX | erase;
-        if (((uVar4 != 0x0) && (0x9 < (erase + 0x2e))) &&
-           (pass1_1008_8b20(uVar3 & 0xffff | extraout_DX << 0x10,unaff_SS),
-           (uVar4 | erase) != 0x0)) {
-          InvalidateRect16(0x1008,0x0,erase);
-        }
-      }
+        // TODO: refactor for loop
+
+        // for (iStack8 = 0x0; iStack8 < iVar1; iStack8 += 0x1) {
+      //   uVar3 = SEXT24(iStack8);
+      //   empty_1008_8fc4((iVar5 + 0xaa),uVar3);
+      //   erase = uVar3;
+      //   uVar4 = extraout_DX | erase;
+      //   if (((uVar4 != 0x0) && (0x9 < (erase + 0x2e))) &&
+      //      (pass1_1008_8b20(uVar3 & 0xffff | extraout_DX << 0x10,unaff_SS),
+      //      (uVar4 | erase) != 0x0)) {
+      //     InvalidateRect16(0x1008,0x0,erase);
+      //   }
+      // }
     }
   }
   return;
@@ -2167,7 +2192,7 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
   uVar4 = local_struct_1.field_0x6;
   uStack48 = (uVar4 + 0x12);
   uStack58 = 0x9;
-  do {
+  loop {
     uVar4 = (uStack58 * 0x4 + uStack34);
     HStack50 = CreatePen16(s_tile2_bmp_1050_1538,uVar4,
                            (uVar4 >> 0x10));
@@ -2184,7 +2209,8 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
     SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack52);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     uStack58 -= 0x1;
-  } while (uStack58 < 0x8000);
+    if uStack58 >= 0x8000 { break; }
+  }
   pRVar6 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
   uVar7 = (puStack26 >> 0x10);
   local_a = CONCAT22((puStack26 + 0x12) + 0x1,local_a.x);
@@ -2194,20 +2220,21 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
   FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_a);
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   iStack62 = 0x8;
-  for (uStack58 = 0x1; uStack58 < 0xa; uStack58 += 0x1) {
-    pRVar6 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
-    uStack6 = uStack6 & 0xffff | (local_a.y - 0x1) << 0x10;
-    local_12 = local_12 & 0xffff | (uStack14._2_2_ + 0x1) << 0x10;
-    uVar7 = (puStack26 >> 0x10);
-    local_a = local_a & 0xffff |
-              ((iStack62 * 0x2 + puStack26) + 0x1) << 0x10;
-    uStack14 = uStack14 & 0xffff |
-               (uStack58 * 0x2 + puStack26 + 0x14) << 0x10;
-    FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_a);
-    FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_12);
-    DeleteObject16(ctx.s_tile2_bmp_1050_1538);
-    iStack62 += -0x1;
-  }
+    // TODO: refactor for loop
+    // for (uStack58 = 0x1; uStack58 < 0xa; uStack58 += 0x1) {
+  //   pRVar6 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
+  //   uStack6 = uStack6 & 0xffff | (local_a.y - 0x1) << 0x10;
+  //   local_12 = local_12 & 0xffff | (uStack14._2_2_ + 0x1) << 0x10;
+  //   uVar7 = (puStack26 >> 0x10);
+  //   local_a = local_a & 0xffff |
+  //             ((iStack62 * 0x2 + puStack26) + 0x1) << 0x10;
+  //   uStack14 = uStack14 & 0xffff |
+  //              (uStack58 * 0x2 + puStack26 + 0x14) << 0x10;
+  //   FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_a);
+  //   FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_12);
+  //   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
+  //   iStack62 += -0x1;
+  // }
   pRVar6 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
   local_a &= 0xffff;
   uStack6 = uStack6 & 0xffff | *puStack26 << 0x10;
@@ -2218,7 +2245,7 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
   FillRect16(ctx.s_tile2_bmp_1050_1538,pRVar6,&local_12);
   DeleteObject16(ctx.s_tile2_bmp_1050_1538);
   uStack58 = 0x3;
-  do {
+  loop {
     uVar4 = (uStack58 * 0x4 + uStack38);
     HStack50 = CreatePen16(s_tile2_bmp_1050_1538,uVar4,
                            (uVar4 >> 0x10));
@@ -2239,7 +2266,8 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
     SelectObject16(ctx.s_tile2_bmp_1050_1538,HStack52);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     uStack58 -= 0x1;
-  } while (uStack58 < 0x8000);
+    if uStack58 >= 0x8000 { break; }
+  }
   local_struct_1.field_0x10 = 0x0;
   return;
 }

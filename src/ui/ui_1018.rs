@@ -1,5 +1,5 @@
 
-void 
+pub fn
 win_op_1018_294a(param_1: i16,param_2: u16,param_3: u16,Uparam_4: i32,param_5: u16,
                 LPCSTR in_string_6)
 
@@ -174,11 +174,11 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
   uVar7 = iStack16 >> 0xf;
   *pIStack6 = iStack16 / 0x2 + 0x3;
   pass1_1028_dc52(CONCAT22(param_2,local_28),0x1,0x0,0x100);
-  while( true ) {
+  loop {
     puVar4 = local_28;
     pass1_1028_e4ec(CONCAT22(param_2,puVar4));
     uVar8 = uVar7 | puVar4;
-    if (uVar8 == 0x0) break;
+    if (uVar8 == 0x0) { break; }
     pUVar2 = *(ULONG **)(puVar4 + 0x10);
     uVar7 = uVar8;
     if (pUVar2 != (ULONG *)0x0) {
@@ -194,7 +194,7 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
 }
 
 
-void 
+pub fn
 set_window_text_1018_6066
           (param_1: u16,param_2: u16,in_win_text_3: SEGPTR,param_4: u16,
           dialog_id_5: i16,in_hwnd_6: HWND16)
@@ -213,11 +213,11 @@ pub fn set_window_text_1018_6086(Uparam_1: i32,param_2: &mut String,param_3: *mu
   
   wsprintf16(param_2,&stack0xfff4,param_3);
   GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x1be);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)&stack0xfff4);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,&stack0xfff4);
   wsprintf16(s_tile2_bmp_1050_1538,&stack0xfff4,param_3);
   HStack8 = (param_1 + 0x6);
   HStack8 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538,0x1bf);
-  SetWindowText16(ctx.s_tile2_bmp_1050_1538,(SEGPTR)&stack0xfff4);
+  SetWindowText16(ctx.s_tile2_bmp_1050_1538,&stack0xfff4);
   return;
 }
 

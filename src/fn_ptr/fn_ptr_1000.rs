@@ -1,4 +1,10 @@
 use crate::defines::Struct18;
+use crate::winapi::{DOS3Call, swi};
+use crate::sys_api::dos3_op_1000_256b;
+use crate::misc::ret_op_1000_55ac;
+use crate::util::CONCAT22;
+use crate::mem_1000::mem_op_1000_0a48;
+use crate::pass::pass_1000::pass1_1000_1e61;
 
 
 pub fn  call_fn_ptr_1000_0dc6(param_1: u16,param_2: u16,param_3: u16) -> bool
@@ -14,8 +20,8 @@ pub fn  call_fn_ptr_1000_0dc6(param_1: u16,param_2: u16,param_3: u16) -> bool
 
 
 
-pub fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,param_5: u16,
-                   param_6: u16) -> u16
+pub fn fn_ptr_op_1000_1708(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16,
+                           param_6: u16) -> u16
 
 {
   let iVar1: i16;
@@ -28,7 +34,7 @@ pub fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,p
     param_2 += bVar2;
   }
 //LAB_1000_1724:
-  do {
+  loop {
     if ((param_5 | param_4) != 0x0) {
       lVar3 = mem_op_1000_0a48(param_3,param_1,param_2,CONCAT22(param_5,param_4),
                                param_6);
@@ -53,7 +59,7 @@ pub fn fn_ptr_op_1000_1708(param_1: u16,param_2: u16,param_3: u16,param_4: u16,p
     if (iVar1 == 0x0) {
       return 0x0;
     }
-  } while( true );
+  }
 }
 
 

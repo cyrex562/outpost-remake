@@ -1,5 +1,5 @@
 
-void 
+pub fn
 set_window_placement_1010_0070
           (param_1: u32,param_2: i16,param_3: u16,param_4: HWND16,param_5: u16)
 
@@ -91,14 +91,14 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
 
 
 
-pub fn enum_child_windows_1010_01be(LPVOID param_1)
+pub fn enum_child_windows_1010_01be(param_1: *mut u8)
 {
-  LPVOID pvVar1;
+  pvVar1: *mut u8;
   
   if (ctx.PTR_LOOP_1050_0010 == 0x0) {
     pvVar1 = MakeProcInstance16(param_1,(HANDLE16)PTR_LOOP_1050_038c);
-    EnumChildWindows1(ctx.s_tile2_bmp_1050_1538,(LPVOID)0x0,ZEXT24(pvVar1) << 0x10);
-    FreeProcInstance16((LPVOID)s_tile2_bmp_1050_1538);
+    EnumChildWindows1(ctx.s_tile2_bmp_1050_1538,0x0,ZEXT24(pvVar1) << 0x10);
+    FreeProcInstance16(s_tile2_bmp_1050_1538);
   }
   return;
 }
@@ -214,7 +214,7 @@ pub fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
       if (((param_2 == 0x0) && ((puVar2 + 0x4) == param_3)) ||
          ((param_3 == 0x0 &&
           (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) == param_2)))
-         ) break;
+         ) { break; }
     } while (((puVar2 + 0x4) != param_3) ||
             (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) != param_2)
             );
@@ -244,9 +244,9 @@ pub fn show_win_1010_7a76(param_1: u32,param_2: u16)
   if ((iVar1 + 0x20) == 0x0) {
     (iVar1 + 0x20) = 0x1;
     pass1_1008_5784(CONCAT22(unaff_SS,local_a),(iVar1 + 0x1c));
-    while( true ) {
+    loop {
       lVar3 = pass1_1008_5b12(local_a,unaff_SS);
-      if (lVar3 == 0x0) break;
+      if (lVar3 == 0x0) { break; }
       ShowWindow16(0x1008,0x0);
     }
   }
@@ -267,9 +267,9 @@ pub fn show_window_1010_7ace(param_1: u32,param_2: u16)
   if ((iVar1 + 0x20) != 0x0) {
     (iVar1 + 0x20) = 0x0;
     pass1_1008_5784(CONCAT22(param_2,local_a),(iVar1 + 0x1c));
-    while( true ) {
+    loop {
       lVar3 = pass1_1008_5b12(local_a,param_2);
-      if (lVar3 == 0x0) break;
+      if (lVar3 == 0x0) { break; }
       ShowWindow16(0x1008,0x1);
     }
   }
@@ -288,9 +288,9 @@ pub fn send_msg_1010_7c42(param_1: u32,param_2: u16)
   iVar1 = param_1;
   if (((iVar1 + 0x1e) | (iVar1 + 0x1c)) != 0x0) {
     pass1_1008_5784(CONCAT22(param_2,local_a),(iVar1 + 0x1c));
-    while( true ) {
+    loop {
       lVar3 = pass1_1008_5b12(local_a,param_2);
-      if (lVar3 == 0x0) break;
+      if (lVar3 == 0x0) { break; }
       SendMessage16(0x1008,0x0,0x0,0x11100eb);
     }
   }
@@ -314,10 +314,10 @@ pub fn send_msg_1010_7c9e(param_1: u32,param_2: i16,param_3: u16)
   iVar2 = param_1;
   if ((((iVar2 + 0x1e) | (iVar2 + 0x1c)) != 0x0) && (param_2 != 0x0)) {
     pass1_1008_5784(CONCAT22(param_3,local_a),(iVar2 + 0x1c));
-    while( true ) {
+    loop {
       lVar4 = pass1_1008_5b12(local_a,param_3);
       uVar3 = (lVar4 >> 0x10);
-      if (lVar4 == 0x0) break;
+      if (lVar4 == 0x0) { break; }
       if ((lVar4 + 0x4) != 0x0) {
         uVar5 = struct_op_1030_73a8((lVar4 + 0x4));
         BVar1 = pass1_1008_c6ae(ctx.PTR__LOOP_1050_06e0,(uVar5 + 0xc),
@@ -332,7 +332,7 @@ pub fn send_msg_1010_7c9e(param_1: u32,param_2: i16,param_3: u16)
 }
 
 
-void 
+pub fn
 msg_box_op_1010_8bb4
           (param_1: u16,param_2: u16,param_3: u32,HINSTANCE16 param_4,param_5: u16)
 

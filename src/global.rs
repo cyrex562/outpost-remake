@@ -1,22 +1,28 @@
 #![allow(non_snake_case)]
 
+use crate::defines::U32Ptr;
+
 pub struct AppContext {
-    pub PTR_LOOP_1050_5f7e: u32,
-    pub PTR_LOOP_1050_1000: u32,
-    pub PTR_LOOP_1050_5f80: u32,
-    pub PTR_LOOP_1050_63fe: u32,
-    pub PTR_LOOP_1050_5f84: u32,
-    pub PTR_LOOP_1050_5f4c: u32,
-    pub PTR_LOOP_1050_5f48: u32,
-    pub PTR_LOOP_1050_5f4a: u32,
-    pub PTR_LOOP_1050_5f4e: u32,
-    pub PTR_LOOP_1050_5f50: u32,
-    pub PTR_LOOP_1050_5f52: u32,
+    pub PTR_LOOP_1050_5f7e: U32Ptr,
+    pub PTR_LOOP_1050_1000: U32Ptr,
+    pub PTR_LOOP_1050_5f80: U32Ptr,
+    pub PTR_LOOP_1050_63fe: U32Ptr,
+    pub PTR_LOOP_1050_5f84: U32Ptr,
+    pub PTR_LOOP_1050_5f4c: U32Ptr,
+    pub PTR_LOOP_1050_5f48: U32Ptr,
+    pub PTR_LOOP_1050_5f4a: U32Ptr,
+    pub PTR_LOOP_1050_5f4e: U32Ptr,
+    pub PTR_LOOP_1050_5f50: U32Ptr,
+    pub PTR_LOOP_1050_5f52: U32Ptr,
     pub data_seg: u16,
     pub _DAT_1050_5f82: u16,
     pub DAT_1050_5f87: u16,
-    pub ctx.s_tile2_bmp_1050_1538: u32,
-    pub _PTR_LOOP_1050_65e2: u32
+    pub s_tile2_bmp_1050_1538: U32Ptr,
+    pub _PTR_LOOP_1050_65e2: U32Ptr,
+    pub _PTR_LOOP_1050_0368: U32Ptr,
+    pub PTR__LOOP_1050_0368: U32Ptr,
+    pub PTR__LOOP_1050_0ed0: U32Ptr,
+    pub PTR__LOOP_1050_14cc: U32Ptr,
 }
 
 impl AppContext {
@@ -31,13 +37,17 @@ impl AppContext {
             data_seg: 0x1050,
             _DAT_1050_5f82: 0,
             DAT_1050_5f87: 0,
-            PTR_LOOP_1050_5f48: (),
-            PTR_LOOP_1050_5f4a: (),
-            PTR_LOOP_1050_5f4e: (),
-            PTR_LOOP_1050_5f50: (),
-            PTR_LOOP_1050_5f52: (),
-            ctx.s_tile2_bmp_1050_1538: (),
-            _PTR_LOOP_1050_65e2: (),
+            PTR_LOOP_1050_5f48: 0,
+            PTR_LOOP_1050_5f4a: 0,
+            PTR_LOOP_1050_5f4e: 0,
+            PTR_LOOP_1050_5f50: 0,
+            PTR_LOOP_1050_5f52: 0,
+            s_tile2_bmp_1050_1538: 0,
+            _PTR_LOOP_1050_65e2: 0,
+            _PTR_LOOP_1050_0368: 0,
+            PTR__LOOP_1050_0368: 0,
+            PTR__LOOP_1050_0ed0: 0,
+            PTR__LOOP_1050_14cc: 0
         }
     }
 }
