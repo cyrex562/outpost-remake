@@ -2062,7 +2062,7 @@ pub fn pass1_1018_dd7c(
             (in_Struct617_1 >> 0x10),
         );
         local_DXAX_208 = pass1_1030_73a8(CONCAT22(local_DX_195, local_Struct617_ptr_1));
-        local_DXAX_208 = (local_DXAX_208 >> 0x10);
+       // local_DXAX_208 = (local_DXAX_208 >> 0x10);
         local_Struct615_ptr_1 = local_DXAX_208;
         if ((local_DXAX_208 | local_Struct615_ptr_1) != 0) {
             temp_5f29fbf093 = &local_Struct617_ptr_1.field_0x2e;

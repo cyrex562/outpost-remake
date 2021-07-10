@@ -47,3 +47,7 @@ pub fn vec_from_addr<T>(addr: u32) -> Vec<T> {
 pub fn struct_from_addr<T>(addr: u32) -> T {
     unimplemented!()
 }
+
+pub fn get_mut_struct_ref_from_addr<T>(addr: u32) -> &mut T {unimplemented!()}
+
+pub fn get_struct_ref_from_addr<T>(addr: u32) -> &T {unimplemented!()}

@@ -892,7 +892,7 @@ pub unsafe fn pass1_1008_52fc(param_1: &mut  Struct195) {
     u_var2 = local_bx_5.field_0x2;
     pu_var1 = &local_bx_5.field_0x8;
     i_var5 = (u_var2 >> 0xf) + (&local_bx_5.field_0x8 + 2) + CARRY2(u_var2, pu_var1);
-    local_e = (lVar4 >> 0x10);
+   // local_e = (lVar4 >> 0x10);
     if ((local_e <= i_var5)
         && ((
             local_e._0_2_ = lVar4,

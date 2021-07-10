@@ -23,6 +23,10 @@ pub struct AppContext {
     pub PTR__LOOP_1050_0368: U32Ptr,
     pub PTR__LOOP_1050_0ed0: U32Ptr,
     pub PTR__LOOP_1050_14cc: U32Ptr,
+    pub PTR_LOOP_1050_038c: U32Ptr,
+    pub PTR__LOOP_1050_5748: U32Ptr,
+    pub USHORT_1050_1028: u16,
+
 }
 
 impl AppContext {
@@ -47,7 +51,10 @@ impl AppContext {
             _PTR_LOOP_1050_0368: 0,
             PTR__LOOP_1050_0368: 0,
             PTR__LOOP_1050_0ed0: 0,
-            PTR__LOOP_1050_14cc: 0
+            PTR__LOOP_1050_14cc: 0,
+            PTR_LOOP_1050_038c: 0,
+            PTR__LOOP_1050_5748: 0,
+            USHORT_1050_1028: 0
         }
     }
 }

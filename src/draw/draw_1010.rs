@@ -98,7 +98,7 @@ pub unsafe fn draw_fn_1010_2a32(param_1: u16,param_2: u16,__return_storage_ptr__
     HVar29 = ctx.data_seg;
     uVar25 = pass1_1008_4772((__return_storage_ptr__ + iVar20 + 0x26)
                             );
-    puVar17 = (uVar25 >> 0x10);
+   // puVar17 = (uVar25 >> 0x10);
     CreateDC16(0x1008,uVar25,puVar17,puVar17);
     b_force_background =
          palette_op_1008_4e08
@@ -350,14 +350,14 @@ unaff_SS: u16) -> i16
   iStack6 = 0x0;
   uStack4 = 0x0;
   loop {
-    uVar9 = (param_1 >> 0x10);
+   // uVar9 = (param_1 >> 0x10);
     piVar1 = (param_1 + 0x74);
     if (*piVar1 == iStack6 || *piVar1 < iStack6) {
 //LAB_1010_413e:
       if ((uStack4 != 0x0) && (0x3 < ctx.PTR_LOOP_1050_3960)) {
         puVar10 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,iStack6 + 0xc,unaff_SS,in_DX,
                                   unaff_DI);
-        puVar7 = (puVar10 >> 0x10);
+       // puVar7 = (puVar10 >> 0x10);
         uVar4 = pass1_1018_0afa(puVar10);
         if (uVar4 == 0x0) {
           uVar9 = 0x1000;
@@ -477,7 +477,7 @@ pub fn draw_op_1010_47d0(
   (param_1 + iVar7 + 0x28) = puVar6;
   init_data = 0x0;
   uVar9 = pass1_1008_4772((param_1 + 0x26 + iVar7));
-  output = (uVar9 >> 0x10);
+ // output = (uVar9 >> 0x10);
   pCStack18 = uVar9;
   pCStack16 = output;
   local_14 = CreateDC16(0x1008,pCStack18,output,init_data);
@@ -499,7 +499,7 @@ pub fn draw_op_1010_47d0(
                                      iVar4 + (param_1 + 0x70)),0x8);
     if (uVar5 != 0x0) {
       uVar10 = (param_1 + 0x70);
-      uVar8 = (uVar10 >> 0x10);
+     // uVar8 = (uVar10 >> 0x10);
       iVar7 = uVar10;
       iVar9 = (iVar4 + iVar7);
       hdc = ctx.s_tile2_bmp_1050_1538;
@@ -529,8 +529,8 @@ pub fn pt_in_rect_1010_4e08(param_1: u32,param_2: u16,param_3: u16,param_4: &REC
   let uStack10: i16;
   POlet PStack8: i16;
   
-  PStack8 = (POINT16)CONCAT22(param_2,param_3);
-  uVar5 = (param_1 >> 0x10);
+  PStack8 = CONCAT22(param_2,param_3);
+ // uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
   (iVar4 + 0x22) = (iVar4 + 0x20);
   bVar2 = false;

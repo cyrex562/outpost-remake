@@ -1679,7 +1679,7 @@ pub fn post_msg_1028_76da() {
     );
   // u_var2 = (ppVar3  >> 0x10);
     lVar1 = (ppVar3 + 0xc);
-    local_a = (lVar1 >> 0x10);
+   // local_a = (lVar1 >> 0x10);
     local_a._0_2_ = lVar1;
     if (((local_a | local_a) != 0) && (*ctx._PTR_LOOP_1050_65e2 == lVar1)) {
         PostMessage16(0, 0x106, 0x111, ctx.g_h_window);
@@ -2120,7 +2120,7 @@ pub fn pass1_1028_7c4e(param_1: u32) {
     local_8 = u16_1050_13ae;
     if (2 < u16_1050_13ae) {
         local_c = *ctx._PTR_LOOP_1050_65e2;
-        local_c = (local_c >> 0x10);
+       // local_c = (local_c >> 0x10);
         if (2 < local_c) {
             local_10 = local_c - 2;
             local_e = local_c - (local_c < 2);
@@ -2264,7 +2264,7 @@ pub fn pass1_1028_7dfc(param_1: u32) {
     local_8 = u16_1050_13ae;
     if (2 < u16_1050_13ae) {
         local_c = *ctx._PTR_LOOP_1050_65e2;
-        local_c = (local_c >> 0x10);
+       // local_c = (local_c >> 0x10);
         if (3 < local_c) {
             local_10 = local_c - 3;
             local_e = local_c - (local_c < 3);
@@ -2403,7 +2403,7 @@ pub fn pass1_1028_7fb6(param_1: u32) {
     let mut local_6: u32;
 
     local_6 = *ctx._PTR_LOOP_1050_65e2;
-    local_6 = (local_6 >> 0x10);
+   // local_6 = (local_6 >> 0x10);
     if (0xb < local_6) {
         local_a = local_6 - 0xb;
         local_8 = local_6 - (local_6 < 0xb);

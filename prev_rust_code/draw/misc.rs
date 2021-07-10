@@ -2211,7 +2211,7 @@ pub fn draw_1040_8a06(param_1: u32) {
     local_24 = BeginPaint16(CONCAT22(unaff_ss, &local_22), (i_var4 + 6));
     u_var5 = (ctx._PTR_LOOP_1050_4230 + 0xe);
     local_28._0_2_ = u_var5;
-    local_28 = (u_var5 >> 0x10);
+   // local_28 = (u_var5 >> 0x10);
     dev_ctx_handle = &local_24;
     palette::realize_palette_1008_4e08(local_28, local_28, dev_ctx_handle, unaff_ss);
     u_var5 = pass1_1008_4d72(u_var5);
@@ -2247,7 +2247,7 @@ pub fn draw_1040_8a06(param_1: u32) {
     }
     u_var1 = (i_var4 + 0x90);
     local_28._0_2_ = u_var1;
-    local_28 = (u_var1 >> 0x10);
+   // local_28 = (u_var1 >> 0x10);
     DrawText16(
         0x10,
         (i_var4 + 0x9e),
@@ -2846,7 +2846,7 @@ pub fn draw_1040_9948(ctx: &mut AppContext, param_1: HWND16, param_2: u32) {
     local_e = CONCAT22(iVar1, local_e - 1);
     if (local_22 != 0) {
         local_1a._0_2_ = local_12;
-        local_1a = (local_12 >> 0x10);
+       // local_1a = (local_12 >> 0x10);
         local_12 = CONCAT22(local_1a + 2, local_1a + 2);
         local_e = CONCAT22(i_var2 + -3, local_e - 3);
         local_16._0_2_ = local_e - 1;
@@ -2885,7 +2885,7 @@ pub fn draw_1040_9948(ctx: &mut AppContext, param_1: HWND16, param_2: u32) {
         } {}
     }
     if ((*(i_var8 + 4) & 2) == 0) {
-        local_56 = (local_12 >> 0x10);
+       // local_56 = (local_12 >> 0x10);
         local_52._0_2_ = local_e;
         local_4e = 0;
         local_56._0_2_ = local_12;

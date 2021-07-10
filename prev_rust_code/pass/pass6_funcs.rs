@@ -4009,7 +4009,7 @@ pub unsafe fn pass1_1038_43cc(param_1: &mut  Struct1106, param_2: u32, param_3: 
         while (local_16 < _local_12) {
             u_var6 = _local_12;
             pass1_1030_1d7c(u_var2, ctx.dx_reg, local_16, (local_16 >> 0x10));
-            param_2 = (param_2 >> 0x10);
+           // param_2 = (param_2 >> 0x10);
             u_var3 = u_var6;
             while (u_var4 = u_var6, param_2 != 0) {
                 pass1_1030_cf78(u_var3, extraout_DL, param_3);

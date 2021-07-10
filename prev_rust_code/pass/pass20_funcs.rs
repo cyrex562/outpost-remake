@@ -773,7 +773,7 @@ pub unsafe fn pass1_1010_96d0(in_struct_1: &mut  Struct467) {
         if ((local_struct_1.b == 0) && (local_struct_1.c != 0)) {
             local_8 = 1;
             local_DXAX_54 = pass1_1030_8326();
-            local_DXAX_54 = (local_DXAX_54 >> 0x10);
+           // local_DXAX_54 = (local_DXAX_54 >> 0x10);
             if ((local_DXAX_54 != 0) || (0x32 < local_DXAX_54)) {
                 local_8 = 5;
             }

@@ -4,7 +4,7 @@ pub fn struct_1030_11aa(param_1: *mut u16,param_2: i32,param_3: i32,param_4: u16
   let iVar1: &mut Struct156;
   let uVar1: u16;
   
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0x389a;
   iVar1.field_0x2 = 0x1008;
@@ -41,7 +41,7 @@ pub fn struct_1030_1550(param_1: u32,param_2: u16)
   let lStack10: i32;
   let uStack6: u32;
   
-  uVar4 = (param_1 >> 0x10);
+ // uVar4 = (param_1 >> 0x10);
   iVar5 = param_1;
   if (&iVar5.field_0x12 == 0x0) {
     uVar3 = iVar5.field_0xe;
@@ -88,7 +88,7 @@ pub fn struct_1030_1628(param_1: *mut u16)
   let iVar1: &mut Struct181;
   let uVar1: u16;
   
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0x389a;
   iVar1.field_0x2 = 0x1008;
@@ -109,7 +109,7 @@ pub fn struct_1030_17ce(param_1: *mut u16,param_2: u32,param_3: u32) -> u16
   let iVar3: &mut Struct343;
   
   iVar3 = param_1;
-  uVar3 = (param_1 >> 0x10);
+ // uVar3 = (param_1 >> 0x10);
   paVar1 = struct_1030_1628(param_1);
   &iVar3.field_0xc = 0x0;
   *param_1 = 0x1a16;
@@ -134,7 +134,7 @@ pub fn struct_op_1030_1cd8(param_1: &mut Struct75,param_2: u32,param_3: u32)
   let struct_var1: &mut Struct75;
   let struct_var2: &mut Struct75;
   
-  struct_var2 = (param_1 >> 0x10);
+ // struct_var2 = (param_1 >> 0x10);
   struct_var1 = param_1;
   param_1.field_0x0 = 0x389a;
   struct_var1.field_0x2 = 0x1008;
@@ -158,17 +158,18 @@ pub fn struct_1030_2112(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mu
   let iStack4: i16;
   
   pass1_1030_183c(param_1,0x1,0x1,0x8000000,param_2,param_3,param_4);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0x293c;
   iVar1.field_0x2 = 0x1030;
   iStack4 = 0x0;
-  do {
+  loop {
     iVar2 = (&iVar1.field_0x0 + iStack4 * 0x2);
     iVar2.field_0x10 = 0xffff;
     iVar2.field_0x1a6 = 0x19;
     iStack4 += 0x1;
-  } while (iStack4 < 0x83);
+    if (iStack4 < 0x83) == false { break; }
+  }
   pass1_1000_4906(
                   (param_1 & 0xffff0000 | &iVar1.field_0x116),
                   0x0,0x86);
@@ -217,7 +218,7 @@ pub fn struct_1030_299a(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mu
   let uVar1: u16;
   
   pass1_1030_183c(param_1,0x5,0xf,0x2000000,param_2,param_3,param_4);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x10 = 0x0;
   iVar1.field_0x14 = 0x0;
@@ -238,7 +239,7 @@ pub fn struct_1030_44be(param_1: *mut u32,param_2: u16)
   let unaff_SS: u16;
   let puVar2: *mut u16;
   
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0x0;
   iVar1.field_0x8 = 0x0;
@@ -264,7 +265,7 @@ pub fn struct_1030_4574(param_1: u32) -> u32
   let iVar1: &mut Struct159;
   let uVar1: u16;
   
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0xc = ctx.DAT_1050_518c;
   iVar1.field_0xe = 0x518e;
@@ -280,7 +281,7 @@ pub fn struct_1030_565a(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mu
   let uVar1: u16;
   
   pass1_1030_183c(param_1,0x64,0x1f4,0x3000000,param_2,param_3,param_4);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x10 = 0x0;
   pass1_1008_3e38(
@@ -302,7 +303,7 @@ pub fn struct_op_1030_73a8(param_1: u32) -> u32
   let iVar2: i16;
   let uVar3: u16;
   
-  uVar3 = (param_1 >> 0x10);
+ // uVar3 = (param_1 >> 0x10);
   iVar2 = param_1;
   if ((iVar2 + 0x16) == 0x0) {
     return 0x0;
@@ -325,9 +326,9 @@ pub fn struct_1030_8544(param_1: *mut u16,param_2: *mut u16)
   let uVar2: u16;
   
   *param_1 = *param_2;
-  uVar1 = (param_2 >> 0x10);
+ // uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar2 = param_1;
   iVar2.field_0x4 = iVar1.field_0x4;
   pass1_1008_3f62((param_1 & 0xffff0000 | &iVar2.field_0x8)
@@ -349,7 +350,7 @@ pub fn struct_1030_c06e(param_1: *mut u16)
   let uVar1: u16;
   
   struct_1028_b354(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x20 = 0x0;
   iVar1.field_0x24 = 0x0;
@@ -365,7 +366,7 @@ pub fn struct_1030_c6f6(param_1: *mut u16) -> u16
   let uVar1: u16;
   
   struct_1028_b354(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   (param_1 + 0x20) = 0x0;
   *param_1 = 0xc940;
   (param_1 + 0x2) = 0x1030;
@@ -380,7 +381,7 @@ pub fn struct_1030_c9a8(param_1: *mut u16) -> u16
   let uVar2: u16;
   
   struct_1028_b354(param_1);
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 0x98) = 0x1;
   *param_1 = 0xd88e;
@@ -399,7 +400,7 @@ pub fn struct_1030_d8f6(param_1: *mut u16) -> u16
   let uVar1: u16;
   
   struct_1028_b354(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0xdc2e;
   iVar1.field_0x2 = 0x1030;
@@ -424,7 +425,7 @@ pub fn struct_1030_dc96(param_1: *mut u16) -> u16
   let uVar1: u16;
   
   struct_1028_b354(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   (param_1 + 0x20) = 0x0;
   *param_1 = 0xe036;
   (param_1 + 0x2) = 0x1030;
@@ -439,7 +440,7 @@ pub fn struct_1030_e4fa(param_1: &mut Struct100,param_2: u32,param_3: u16,param_
   let puVar1: *mut u8;
   
   struct_op_1028_d1dc(param_3,param_4,param_1,0x3e80);
-  puVar1 = (param_1 >> 0x10);
+ // puVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x108 = param_2;
   param_1.field_0x0 = 0xe62e;

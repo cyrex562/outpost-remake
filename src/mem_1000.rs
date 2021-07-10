@@ -112,7 +112,7 @@ pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, para
         );
         u_stack14 = u_var8 * 0xc + param_1 + 0x36;
     }
-    u_stack10 = (d_var7 >> 0x10);
+   // u_stack10 = (d_var7 >> 0x10);
     u_stack12 = d_var7;
     pu_var1 = (param_1 + 0x1e);
     u_var9 = *pu_var1;
@@ -229,7 +229,7 @@ pub unsafe fn mem_op_1000_03c6(
                         uVar7 = pass1_1000_09ca(UVar6, 0x0);
                     }
                 }
-                param_2 = (DVar9 >> 0x10);
+               // param_2 = (DVar9 >> 0x10);
                 *puVar5 = uVar7;
                 puVar5[0x1] = 0x8000;
                 puVar1 = (param_4 + 0x1e);
@@ -272,7 +272,7 @@ pub unsafe fn mem_op_1000_0510(
     u_var6 = (param_2 + 0x4);
     b_var3 = (param_2 + 0xc);
     d_var12 = mem_op_1000_1532(param_3);
-    u_var9 = (d_var12 >> 0x10);
+   // u_var9 = (d_var12 >> 0x10);
     u_var8 = d_var12;
     if (param_1 != 0x0) {
         u_var7 = (i_var4 + 0x1e);
@@ -533,7 +533,7 @@ pub unsafe fn mem_op_1000_0a48(
     let u_var5: u32;
     let pu_var1: *mut u16;
 
-    u_var4 = (param_4 >> 0x10);
+   // u_var4 = (param_4 >> 0x10);
     if ((param_4 + 0x14) == -0x4153) {
         if ((param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0x6) < param_2))) {
             if ((param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0xa) < param_2))) {
@@ -544,7 +544,7 @@ pub unsafe fn mem_op_1000_0a48(
         } else {
             if ((false) || (param_2 != 0x0)) {
                 u_var5 = mem_op_1000_0838(ctx, 0x0, param_5);
-                u_var3 = (u_var5 >> 0x10);
+               // u_var3 = (u_var5 >> 0x10);
                 pu_var2 = u_var5;
                 if ((u_var5 != 0x0) && ((param_1 & 0x1) != 0x0)) {
                     u_var1 = (ctx.s_version__d__d_1050_0012 + 0x6);
@@ -724,7 +724,7 @@ pub fn mem_op_1000_13ce(param_1: u16) -> i32 {
     let DVar3: u32;
 
     DVar3 = GlobalHandle16(param_1);
-    uVar2 = (DVar3 >> 0x10);
+   // uVar2 = (DVar3 >> 0x10);
     if (DVar3 != 0x0) {
         HVar1 = GlobalFree16(ctx.s_tile2_bmp_1050_1538);
         return CONCAT22(uVar2, (HVar1 == 0x0));

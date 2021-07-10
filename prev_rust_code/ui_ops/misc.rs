@@ -1531,7 +1531,7 @@ pub unsafe fn win_gui_fn_1018_eada(param_1: &mut WinStruct42) {
     let mut local_4: u16;
 
     struct_var1 = create_win_1008_9760(ctx, param_1);
-    local_DXAX_28 = (struct_var1 >> 0x10);
+   // local_DXAX_28 = (struct_var1 >> 0x10);
     //// ocal_struct_1_hi = (param_1  >> 0x10);
     // local_struct_1 = param_1;
     local_DXAX_28._0_2_ =
@@ -4082,7 +4082,7 @@ pub fn mixed_1040_8520(
         uStack43 = 0x85;
         pcVar7 = in_string_1;
         u_var4 = get_string_index_1000_3da4(in_string_1);
-        uStack40 = (pcVar7 >> 0x10);
+       // uStack40 = (pcVar7 >> 0x10);
         local_1c = pcVar7;
       // in_dx = (in_string_1  >> 0x10);
         uStack40._0_2_ = in_string_1;
@@ -5052,7 +5052,7 @@ pub fn win_fn_1040_3590(param_1: u32) {
     HVar2 = GetDlgItem16(0x196, local_596);
     u_var1 = (i_var3 + 0x8e);
     local_59a._0_2_ = u_var1;
-    local_59a = (u_var1 >> 0x10);
+   // local_59a = (u_var1 >> 0x10);
     local_596._0_2_ = HVar2;
     wsprintf_1018_34b6();
     local_59a._0_2_ = HVar2;

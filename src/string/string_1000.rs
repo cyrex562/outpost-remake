@@ -51,7 +51,7 @@ pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
   let mut puVar2: String; 
   let mut puVar1: String; 
   
-  l_string_1 = (in_string_2 >> 0x10);
+ // l_string_1 = (in_string_2 >> 0x10);
   l_string_2 = in_string_2;
   l_b_var8 = true;
   uVar6 = 0xffff;
@@ -67,7 +67,7 @@ pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
     }
   }
   uVar6 = ~uVar6;
-  uVar8 = (param_1 >> 0x10);
+ // uVar8 = (param_1 >> 0x10);
   puVar7 = param_1;
   if (l_b_var8) {
     if ((param_1 & 0x1) != 0x0) {
@@ -113,13 +113,14 @@ pub fn str_op_1000_3da4(param_1: &mut String) -> u16
   pcVar3 = param_1;
   bVar4 = true;
   uVar2 = 0xffff;
-  do {
+  loop {
     if (uVar2 == 0x0) { break; }
     uVar2 -= 0x1;
     pcVar1 = pcVar3;
     pcVar3 = pcVar3 + 0x1;
     bVar4 = *pcVar1 == '\0';
-  } while (!bVar4);
+      if (!bVar4) == false { break; }
+  }
   uVar2 = ~uVar2;
   if (bVar4) {
     uVar2 -= 0x1;
@@ -138,11 +139,11 @@ uchar  str_op_1000_3dbe(param_1: &mut String,param_2: &mut String,param_3: u16)
   let mut pcVar4: String; 
   let uVar5: u16;
   
-  uVar5 = (param_1 >> 0x10);
+ // uVar5 = (param_1 >> 0x10);
   pcVar4 = param_1;
   pcVar3 = param_2;
   if (param_3 != 0x0) {
-    do {
+    loop {
       pcVar1 = pcVar3;
       pcVar3 = pcVar3 + 0x1;
       cVar2 = *pcVar1;
@@ -151,7 +152,8 @@ uchar  str_op_1000_3dbe(param_1: &mut String,param_2: &mut String,param_3: u16)
       pcVar4 = pcVar4 + 0x1;
       *pcVar1 = cVar2;
       param_3 -= 0x1;
-    } while (param_3 != 0x0);
+if (param_3 != 0x0) == false { break; }
+    }
     // for (; param_3 != 0x0; param_3 -= 0x1) {
     //   pcVar1 = pcVar4;
     //   pcVar4 = pcVar4 + 0x1;
@@ -181,7 +183,7 @@ str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,par
   
   uStack10 = 0x0;
   uStack12 = 0x0;
-  uVar4 = (in_string_1 >> 0x10);
+ // uVar4 = (in_string_1 >> 0x10);
   iVar2 = in_string_1;
   if ((*in_string_1 == '\0') || (*(iVar2 + 0x1) != ':')) {
     if (in_string_2 != 0x0) {
@@ -200,7 +202,7 @@ str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,par
   uStack8 = 0x0;
   pcStack18 = in_string_1;
   loop {
-    uVar5 = (pcStack18 >> 0x10);
+   // uVar5 = (pcStack18 >> 0x10);
     uVar3 = pcStack18;
     if (*pcStack18 == '\0') { break; }
     if ((*pcStack18 == '/') || (*pcStack18 == '\\')) {

@@ -85,7 +85,7 @@ pub fn send_dialog_item_msg_1040_d79c(param_1: u32) {
         }
         lVar1 = CONCAT22(local_10e, local_10e) + 1;
         local_10e._0_2_ = lVar1;
-        local_10e = (lVar1 >> 0x10);
+       // local_10e = (lVar1 >> 0x10);
     }
     SendDlgItemMessage16(0, 1, 0xb, (s_dibtext_bmp_1050_1844 + 3), (i_var3 + 6));
     return;
@@ -375,7 +375,7 @@ pub fn set_dialog_item_text_1040_ae04(param_1: &mut  Struct347) {
             SetDlgItemText16(_local_120, local_116 + 0x1dc, local_struct_1.window_handle);
             u_var1 = local_struct_1.field_0x98;
             local_124._0_2_ = u_var1;
-            local_124 = (u_var1 >> 0x10);
+           // local_124 = (u_var1 >> 0x10);
             wsprintf_1010_8c96(
                 local_124,
                 local_124,

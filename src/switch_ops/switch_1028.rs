@@ -944,7 +944,7 @@ joined_r0x10300adb:
   0x72 =>
   0x76 =>
     mem_op_1000_179c(0x26,(puVar5 >> 0x10),0x1000);
-    uVar4 = (puVar5 >> 0x10);
+   // uVar4 = (puVar5 >> 0x10);
     if (puVar5 != 0x0) {
       puVar5 = pass1_1020_e91e(puVar5,uVar4,param_4,param_6,uVar4 | puVar5);
       return puVar5;

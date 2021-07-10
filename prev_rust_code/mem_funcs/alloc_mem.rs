@@ -136,7 +136,7 @@ pub unsafe fn alloc_mem_1000_03c6(ctx: &mut AppContext,
             local_alloc_flags = 0x1000;
         }
         alloc_addr = alloc_mem_1000_131c(&param_3.field_0x16 | local_alloc_flags, in_alloc_size);
-        alloc_addr = (alloc_addr >> 0x10);
+       // alloc_addr = (alloc_addr >> 0x10);
         if alloc_addr != 0 {
             local_AX_131 = mem_size::get_mem_sz_1000_0308();
             if local_AX_131 != 0x0 {

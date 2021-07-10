@@ -22,7 +22,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
   let uStack6: u32;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfc3,param_2);
-  uVar5 = (param_1 >> 0x10);
+ // uVar5 = (param_1 >> 0x10);
   iVar5 = param_1;
   iVar5.field_0x8e = 0x0;
   iVar5.field_0x98 = param_3;
@@ -55,7 +55,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     pcVar7 = load_string_1010_847e
                        (ctx.PTR__LOOP_1050_14cc,
                         (ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
-    param_7 = (pcVar7 >> 0x10);
+   // param_7 = (pcVar7 >> 0x10);
     uStack28 = pcVar7;
     uVar3 = str_op_1000_3da4(pcVar7);
     iStack22 += uVar3;

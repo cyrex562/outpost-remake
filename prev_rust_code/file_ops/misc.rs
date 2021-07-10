@@ -671,10 +671,10 @@ pub unsafe fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_
                         u_var3 = (u_var27 + 0x11e);
                         paVar26 = (u_var27 + 0x120);
                         local_38._0_2_ = u_var3;
-                        local_38 = (u_var3 >> 0x10);
+                       // local_38 = (u_var3 >> 0x10);
                         u_var3 = (u_var27 + 0x10c);
                         local_2a._0_2_ = u_var3;
-                        local_2a = (u_var3 >> 0x10);
+                       // local_2a = (u_var3 >> 0x10);
                         (local_38 + 0x20) = u_var3;
                     }
                     local_42._0_1_ = 0;
@@ -782,7 +782,7 @@ pub unsafe fn pass1_1028_e628(param_1: u32, param_2: u16, param_3: u16, param_3_
                 }
                 u_var3 = (local_1a + 0x16);
                 local_1e._0_2_ = u_var3;
-                local_1e = (u_var3 >> 0x10);
+               // local_1e = (u_var3 >> 0x10);
                 u_var8 = &ctx.PTR_LOOP_1050_65e2;
                 local_42._0_1_ = u_var8;
                 local_42 = (u_var8 >> 8);

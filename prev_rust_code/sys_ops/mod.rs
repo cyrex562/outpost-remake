@@ -1509,7 +1509,7 @@ pub unsafe fn pass1_1028_a188(param_1: u16, param_2: u16, param_1_00: i32, param
     u_var6 = lVar9;
     (u_var5 + i_var11) = local_e - u_var6;
     (u_var5 + i_var11 + 2) = (local_c - (lVar9 >> 0x10)) - (local_e < u_var6);
-    local_12 = (lVar8 >> 0x10);
+   // local_12 = (lVar8 >> 0x10);
     local_12._0_2_ = lVar8;
     if ((local_12 | local_12) != 0) {
         pass1_1030_375a(u_var1, u_var4, param_2_00, local_12, local_12);

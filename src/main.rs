@@ -44,6 +44,12 @@ mod win_struct;
 mod winapi;
 mod mixed;
 
+
+// TODO: refactor for loops
+// TODO: refactor use of GOTO
+// TODO: remove use of `*(astruct_99 **)`
+// TODO: fix up function declarations
+
 pub fn main() {
     let mut ctx = AppContext::new();
     let mut task_ctx = CONTEXT::new();
@@ -128,7 +134,7 @@ unsafe fn entry(
             version = GetVersion16();
             ctx.PTR_LOOP_1050_5f52 = (u_var14 >> 0x10);
             ctx.PTR_LOOP_1050_5f84 = u_var14;
-            u_var9 = (version >> 0x10);
+           // u_var9 = (version >> 0x10);
             u_var8 = (version >> 0x8) as u8;
             ctx.PTR_LOOP_1050_5f80 = version;
             u_var5 = CONCAT11(0x30, u_var8);

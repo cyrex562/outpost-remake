@@ -6,7 +6,7 @@ use crate::string::string_1010::{load_string_1010_847e, load_string_1010_84ac};
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
 use crate::pass::pass_1008::{pass1_1008_ec94, pass1_1008_b9ce};
 use crate::pass::pass_1010::{pass1_1010_2e5c, pass1_1010_2e02};
-use crate::pass::pass_1038::{pass1_1038_4d28, pass1_1038_4e78};
+use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78};
 use crate::pass::pass_1028::pass1_1028_e1ec;
 use crate::struct_ops::struct_1018::struct_1018_47c8;
 use crate::winapi::wsprintf16;
@@ -74,7 +74,7 @@ pub fn load_string_1008_b1f0() -> String
 }
 
 
-pub fn load_string_1008_b65a(Uparam_1: i32,in_string_2: &mut String,Uparam_3: i32,param_4: u16)
+pub fn load_string_1008_b65a(param_1: i32,in_string_2: &mut String,param_3: i32,param_4: u16)
 {
   let unaff_SS: u16;
   
@@ -102,15 +102,15 @@ pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25,param_2: *mut u16,u
   let paVar6: &mut Struct26;
   let uVar7: u32;
   let iStack516: i16;
-  char local_202 [0x100];
-  CHAR local_102 [0x100];
+  local_202: u8 [0x100];
+  local_102: u8 [0x100];
   
   in_buffer_4 = local_202;
   load_string_1010_84e0
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x100,in_buffer_4,param_2
             );
-  uVar5 = (param_1 >> 0x10);
+ // uVar5 = (param_1 >> 0x10);
   iVar5 = param_1;
   if (iVar5.field_0xa == 0x0) {
     mem_op_1000_179c(0xc,param_3,0x1000);
@@ -149,7 +149,7 @@ pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25,param_2: *mut u16,u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn load_str_and_sprintf_1008_b78a(Uparam_1: i32,param_2: *mut u16,uparam_3: &mut String,param_4: u16)
+pub fn load_str_and_sprintf_1008_b78a(param_1: i32,param_2: *mut u16,uparam_3: &mut String,param_4: u16)
 {
   let piVar1: *mut i16;
   let ppcVar2: u32;
@@ -157,8 +157,8 @@ pub fn load_str_and_sprintf_1008_b78a(Uparam_1: i32,param_2: *mut u16,uparam_3: 
   let iVar4: i16;
   let uVar5: u16;
   let uVar6: u32;
-  char local_206 [0x100];
-  CHAR local_106 [0x100];
+  local_206: u8 [0x100];
+  local_106: u8 [0x100];
   let iStack6: i16;
   let uStack4: u16;
   
@@ -169,12 +169,12 @@ pub fn load_str_and_sprintf_1008_b78a(Uparam_1: i32,param_2: *mut u16,uparam_3: 
   else {
     uVar6 = set_stuct_1008_b0bc(CONCAT22(param_3,param_4));
   }
-  uStack4 = (uVar6 >> 0x10);
+ // uStack4 = (uVar6 >> 0x10);
   load_string_1010_84e0
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x100,local_206,param_2);
   iStack6 = uVar6;
-  uVar5 = (param_1 >> 0x10);
+ // uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
   piVar1 = (iVar4 + 0x22);
   *piVar1 = *piVar1 + 0x1;
@@ -222,7 +222,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   let uStack14: u32;
   let puStack10: u32;
   
-  valist = (param_1 >> 0x10);
+ // valist = (param_1 >> 0x10);
   iVar16 = param_1;
   puVar5 = (iVar16 + 0x12);
   puVar13 = (iVar16 + 0x14);
@@ -243,7 +243,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   (iVar16 + 0x12) = puVar5;
   (iVar16 + 0x14) = uVar17;
   puVar18 = pass1_1008_c6fa(ctx.PTR__LOOP_1050_06e0,0x2);
-  puVar11 = (puVar18 >> 0x10);
+ // puVar11 = (puVar18 >> 0x10);
   uVar6 = puVar18;
   uVar17 = SUB42(&ctx.PTR_LOOP_1050_1038,0x0);
   pass1_1038_4e78(uVar6,puVar11,param_2,puVar18);
@@ -352,10 +352,10 @@ pub fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
   let uStack58: u16;
   let uStack20: u32;
   
-  uVar22 = (param_2 >> 0x10);
+ // uVar22 = (param_2 >> 0x10);
   iVar20 = param_2;
   lVar1 = (iVar20 + 0x200);
-  valist = (param_1 >> 0x10);
+ // valist = (param_1 >> 0x10);
   iVar21 = param_1;
   puVar6 = (iVar21 + 0xe);
   puVar14 = (iVar21 + 0x10);
@@ -460,7 +460,7 @@ pub fn string_1008_e586(param_1: u16,param_2: u16,param_3: u32,param_4: u16,para
   }
   uVar1 = param_4;
   mem_op_1000_179c(0x80,puVar2,0x1000);
-  in_string_2 = pass1_1038_4d28(CONCAT22(param_5,param_4));
+  in_string_2 = load_string_1038_4d28(CONCAT22(param_5, param_4));
   unk_str_op_1000_3d3e(CONCAT22(puVar2,uVar1),in_string_2);
   return CONCAT22(puVar2,uVar1);
 }
@@ -519,7 +519,7 @@ pass1_1008_eeac(param_1: u16,param_2: u16,param_3: u32,uparam_4: &mut String,par
   
   uVar7 = (param_3 + 0x12);
   puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,param_4,param_5);
-  uVar4 = (puVar6 >> 0x10);
+ // uVar4 = (puVar6 >> 0x10);
   uVar1 = puVar6;
   uVar5 = uVar4;
   if (uVar7 == 0x7d) {

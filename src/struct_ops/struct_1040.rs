@@ -17,7 +17,7 @@ mixed_struct_op_1040_8fb8
   let uVar5: u16;
   let paVar6: &mut Struct43;
   
-  uVar5 = (param_1 >> 0x10);
+ // uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
   *param_1 = 0x389a;
   (iVar4 + 0x2) = 0x1008;
@@ -49,7 +49,7 @@ mixed_struct_op_1040_8fb8
     (iVar4 + 0xa) = (paVar6 >> 0x10);
     param_10 = 0x1010;
     paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_5,param_11);
-    param_9 = (paVar6 >> 0x10);
+   // param_9 = (paVar6 >> 0x10);
     (iVar4 + 0xc) = paVar6;
     (iVar4 + 0xe) = param_9;
     if (param_4 == 0x0) {
@@ -58,7 +58,7 @@ mixed_struct_op_1040_8fb8
     else {
       param_10 = 0x1010;
       paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_4,param_11);
-      param_9 = (paVar6 >> 0x10);
+     // param_9 = (paVar6 >> 0x10);
       (iVar4 + 0x10) = paVar6;
       (iVar4 + 0x12) = param_9;
     }
@@ -91,7 +91,7 @@ pub fn struct_1040_a598(param_1: *mut u16)
   let iVar1: &mut Struct259;
   let uVar1: u16;
   
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   *param_1 = 0x0;
   iVar1.field_0x2 = 0x0;
@@ -113,7 +113,7 @@ pub fn struct_1040_b082(param_1: &mut Struct57,param_2: u32)
   let uVar1: u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,param_2,(param_2 >> 0x10));
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x8e = 0x0;
   iVar1.field_0x90 = 0x0;

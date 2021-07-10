@@ -20,9 +20,9 @@ pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: *mut u8,param_4: u16)
   puVar5 = (param_1 & 0xffff0000 | ZEXT24(iVar2));
   pass1_1008_766e(param_2,puVar5,param_4,0x1008,param_3);
   if (puVar5 != 0x0) {
-    uVar1 = (param_1 >> 0x10);
+   // uVar1 = (param_1 >> 0x10);
     uVar4 = param_2;
-    uVar6 = (param_2 >> 0x10);
+   // uVar6 = (param_2 >> 0x10);
     BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x8,0x0,uVar1,0x4,0x1008);
     if ((((((BVar2 != 0x0) &&
            (iVar3 = file_1008_77cc(param_2,(long *)(param_1 & 0xffff0000 |
@@ -85,7 +85,7 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
     return 0x1;
   }
   uVar6 = param_2;
-  uVar8 = (param_2 >> 0x10);
+ // uVar8 = (param_2 >> 0x10);
   read_file_1008_7cfe(uVar6,uVar8,0x17,0x1008,unaff_SS);
   if ((param_3 != 0x0) &&
      (BVar2 = read_file_1008_7dee(uVar6,uVar8,&local_4,0x0,unaff_SS,0x2,0x1008),
@@ -104,7 +104,7 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
       else {
         struct_1038_6520(CONCAT22(param_4,uVar3));
       }
-      uVar10 = (uVar9 >> 0x10);
+     // uVar10 = (uVar9 >> 0x10);
       uStack14 = CONCAT22(puVar5,uVar3);
       file_1038_774e(CONCAT22(puVar5,uVar3),CONCAT22(uVar9,uVar7),puVar5,unaff_SS);
       if (uVar3 == 0x0) {
@@ -135,11 +135,11 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
         else {
           pass1_1030_ae6c(CONCAT22(param_4,uVar3));
         }
-        uVar10 = (uVar9 >> 0x10);
+       // uVar10 = (uVar9 >> 0x10);
         uVar4 = uVar3;
         file_1030_b836(CONCAT22(puVar5,uVar3),CONCAT22(uVar9,uVar7),puVar5,unaff_SS);
         if (uVar4 == 0x0) { break; }
-        uVar7 = (param_1 >> 0x10);
+       // uVar7 = (param_1 >> 0x10);
         uVar9 = (param_1 + 0x4);
         ppcVar1 = ((param_1 + 0x4) + 0x4)
         ;

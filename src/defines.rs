@@ -39,8 +39,16 @@ pub struct Struct11 {
 
 }
 
+pub struct Struct13 {
+
+}
+
 pub struct Struct28 {
 
+}
+
+pub struct Struct194 {
+    pub field_0xe: u16,
 }
 
 pub struct Struct29 {
@@ -55,6 +63,10 @@ pub struct Struct19 {
     pub field_0x14: i16,
     pub field_0x16: i16,
     pub field_0x18: u16
+}
+
+pub struct Struct76 {
+
 }
 
 pub struct Struct79 {
@@ -72,6 +84,11 @@ pub struct Struct79 {
 
 pub struct Struct80 {
 
+}
+
+pub struct Struct449 {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
 }
 
 pub struct Struct648 {

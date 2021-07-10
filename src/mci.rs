@@ -31,7 +31,7 @@ pub fn mci_send_command_1008_53ae(param_1: u32, param_2: u16, param_3: u16, para
     uStack8 = 0x4000;
     uStack6 = param_2;
     DVar1 = mciSendCommand16(param_3, &local_1e, CONCAT22(0x200, param_4), 0x8030003);
-    uStack32 = (DVar1 >> 0x10);
+   // uStack32 = (DVar1 >> 0x10);
     uStack34 = DVar1;
     if (iStack26 != 0x0) {
         if ((uStack32 | uStack34) != 0x0) {
@@ -41,7 +41,7 @@ pub fn mci_send_command_1008_53ae(param_1: u32, param_2: u16, param_3: u16, para
         local_2e = param_2;
         uStack44 = 0x0;
         DVar1 = mciSendCommand16(0x1000, &local_2e, CONCAT22(0x2, param_4), 0x8060000);
-        uStack32 = (DVar1 >> 0x10);
+       // uStack32 = (DVar1 >> 0x10);
         uStack34 = DVar1;
         if ((uStack32 | uStack34) != 0x0) {
             mciGetErrorString16(0x4001538, local_432, param_4);
@@ -54,7 +54,7 @@ pub fn mci_send_command_1008_53ae(param_1: u32, param_2: u16, param_3: u16, para
             CONCAT22(0x1, param_4),
             0x8040000,
         );
-        uStack32 = (DVar1 >> 0x10);
+       // uStack32 = (DVar1 >> 0x10);
         uStack34 = DVar1;
         if ((uStack32 | uStack34) != 0x0) {
             mciGetErrorString16(0x4001538, local_432, param_4);
@@ -69,7 +69,7 @@ pub fn mci_send_command_1008_5cb6(param_1: u32, param_2: i16, param_3: u16, unaf
     // let unaff_SS: u16;
 
     mciSendCommand16(param_3, 0x0, 0x0, 0x8040000);
-    uVar2 = (param_1 >> 0x10);
+   // uVar2 = (param_1 >> 0x10);
     iVar1 = param_1;
     if (((iVar1 + 0xa) == 0x0) || ((iVar1 + 0xa) != param_2)) {
         (iVar1 + 0x12) = 0x0;

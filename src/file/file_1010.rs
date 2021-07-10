@@ -24,7 +24,7 @@ pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
   let uStack4: u16;
   
   uVar7 = param_2;
-  uVar8 = (param_2 >> 0x10);
+ // uVar8 = (param_2 >> 0x10);
   read_file_1008_7cfe(uVar7,uVar8,0x6,0x1008,param_5);
   if (param_3 == 0x0) {
     ctx.PTR_LOOP_1050_0310 = 0x6d4;
@@ -35,7 +35,7 @@ pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
       paStack8 = 0x0;
       loop {
         iVar6 = param_1;
-        uVar5 = (param_1 >> 0x10);
+       // uVar5 = (param_1 >> 0x10);
         if (local_6 <= paStack8) { break; }
         uVar4 = local_6;
         mem_op_1000_179c(0xa,param_4,0x1000);
@@ -62,7 +62,7 @@ pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
           }
 //           TODO: goto LAB_1010_0cb1;
         }
-        uVar6 = (puStack22 >> 0x10);
+       // uVar6 = (puStack22 >> 0x10);
         (puStack22 + 0x4) = local_12[0];
         puVar1 = iVar6.field_0xa;
         ppcVar2 = (*iVar6.field_0xa + 0x8);
@@ -91,7 +91,10 @@ pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
           loop {
             BVar3 = read_file_1008_7dee(uVar7,uVar8,local_2a,0x0,param_5,0x2,
                                         0x1008);
-            if (BVar3 == 0x0) goto LAB_1010_0cb1;
+            if (BVar3 == 0x0) {
+                // goto
+                // LAB_1010_0cb1;
+            }
             (uStack4 * 0x8 + 0xea8) = local_2a[0];
             uStack4 += 0x1;
                 if uStack4 >= 0x3 { break; }
@@ -119,11 +122,11 @@ pub fn write_to_file_1010_6372(param_1: u32,param_2: u32,param_3: u16)
   
   BVar1 = write_to_file_1008_7cac(param_2,param_3);
   if (BVar1 != 0x0) {
-    uVar2 = (param_1 >> 0x10);
+   // uVar2 = (param_1 >> 0x10);
     iVar2 = param_1;
     local_10[0] = iVar2.field_0xa;
     uVar3 = param_2;
-    uVar4 = (param_2 >> 0x10);
+   // uVar4 = (param_2 >> 0x10);
     BVar1 = write_to_file_1008_7e1c
                       (uVar3,uVar4,local_10,param_3,0x4,0x1008);
     if (BVar1 != 0x0) {
@@ -178,9 +181,9 @@ pub fn write_to_file_1010_6846(param_1: u32,param_2: u32,param_3: u16)
   BVar2 = write_to_file_1008_7cac(param_2,param_3);
   if (BVar2 != 0x0) {
     iVar3 = param_1;
-    uVar1 = (param_1 >> 0x10);
+   // uVar1 = (param_1 >> 0x10);
     uVar4 = param_2;
-    uVar5 = (param_2 >> 0x10);
+   // uVar5 = (param_2 >> 0x10);
     BVar2 = write_to_file_1008_7e1c(uVar4,uVar5,iVar3 + 0xa,uVar1,0x114,0x1008);
     if (BVar2 != 0x0) {
       BVar2 = write_to_file_1008_7e1c(uVar4,uVar5,iVar3 + 0x11e,uVar1,0x2a,0x1008)
@@ -222,10 +225,10 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
   paStack6 = 0x0;
   iVar3 = (param_2 * 0x10);
   uVar5 = param_1;
-  uVar6 = (param_1 >> 0x10);
+ // uVar6 = (param_1 >> 0x10);
   if (iVar3.field_0x10 == 0x1) {
     uStack10 = set_err_mode_1010_8b14
-                                 (param_1,*(ULONG *)&iVar3.field_0x12,param_3);
+                                 (param_1,&iVar3.field_0x12,param_3);
     uStack10._2_2_ = (uStack10 >> 0x10);
     if ((iVar3.field_0x12 == uStack10) && (iVar3.field_0x14 == uStack10._2_2_)) {
       msg_box_op_1010_8bb4(uVar5,uVar6,uStack10,unaff_CS,param_3);
@@ -256,7 +259,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
         return 0x0;
       }
       iVar2 = (param_2 * 0x10);
-      pass1_1008_6562(*(u32 **)(uVar5 + 0x67c),
+      pass1_1008_6562((uVar5 + 0x67c),
                       CONCAT22(iVar2.field_0x1c,iVar2.field_0x1e),iVar2.field_0x1a,
                       in_AX,in_DX);
       local_2e = CONCAT22(in_DX,in_AX);
@@ -265,7 +268,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
       iVar4 = param_2 * 0x10;
       if ((iVar4 + 0x10) == 0x3) {
         local_2e = 
-                   set_err_mode_1010_8b14(param_1,*(ULONG *)(iVar4 + 0x12),param_3);
+                   set_err_mode_1010_8b14(param_1,(iVar4 + 0x12),param_3);
         if (((iVar4 + 0x12) == local_2e) &&
            ((iVar4 + 0x14) == (local_2e >> 0x10))) {
           msg_box_op_1010_8bb4(uVar5,uVar6,local_2e,unaff_CS,param_3);
@@ -277,7 +280,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
         if ((param_2 * 0x10 + 0x10) == 0x4) {
           local_2e = 
                      set_err_mode_1010_8b14
-                               (param_1,*(ULONG *)(param_2 * 0x10 + 0x12),param_3);
+                               (param_1,(param_2 * 0x10 + 0x12),param_3);
         }
       }
     }
@@ -306,11 +309,11 @@ pub fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
   
   BVar3 = write_to_file_1008_7cac(param_2,param_3);
   if (BVar3 != 0x0) {
-    uVar7 = (param_1 >> 0x10);
+   // uVar7 = (param_1 >> 0x10);
     iVar6 = param_1;
     local_12[0] = (iVar6 + 0x16);
     uVar8 = param_2;
-    uVar9 = (param_2 >> 0x10);
+   // uVar9 = (param_2 >> 0x10);
     BVar3 = write_to_file_1008_7e1c
                       (uVar8,uVar9,local_12,param_3,0x4,0x1008);
     if (BVar3 != 0x0) {

@@ -2703,7 +2703,7 @@ pub unsafe fn pass1_1030_4f5a(param_1: u32) {
             _local_14 = CONCAT22(u_var5, i_var3);
             local_16 = local_16 + 1;
         }
-        local_e = (u_var1 >> 0x10);
+       // local_e = (u_var1 >> 0x10);
         local_e._0_2_ = u_var1;
         if ((local_e | local_e) != 0) {
             error_check_1000_0dc6(local_e, local_e);
@@ -2791,7 +2791,7 @@ pub unsafe fn pass1_1030_5044(param_1: u32) {
             _local_16 = CONCAT22(u_var8, i_var4);
             local_18 = local_18 + 1;
         }
-        local_e = (u_var2 >> 0x10);
+       // local_e = (u_var2 >> 0x10);
         local_e._0_2_ = u_var2;
         if ((local_e | local_e) != 0) {
             error_check_1000_0dc6(local_e, local_e);

@@ -21,7 +21,7 @@ pub type HDC16 = HANDLE16;
 pub type HFILE16 = HANDLE16;
 // typedef HANDLE16 HGLOBAL16;
 pub type HGLOBAL16 = HANDLE16;
-// typedef char i8;
+// typedef i8: u8;
 // typedef HANDLE16 HPEN16;
 pub type HPEN16 = HANDLE16;
 // typedef HANDLE16 HINSTANCE16;
@@ -82,7 +82,7 @@ pub struct PALETTEENTRY {
     pe_red: u8,
     pe_green: u8,
     pe_blue: u8,
-    pe_flags: u8
+    pe_flags: u8,
 }
 
 impl FLOATING_SAVE_AREA {
@@ -195,10 +195,7 @@ pub struct RECT16 {
 
 impl RECT16 {
     pub fn new() -> RECT16 {
-        RECT16 {
-            x: 0,
-            y: 0
-        }
+        RECT16 { x: 0, y: 0 }
     }
 }
 
@@ -557,7 +554,7 @@ pub struct tagBITMAPINFOHEADER {
 //
 // typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
 
-// typedef char CHAR;
+// typedef CHAR: u8;
 
 // typedef CHAR * LPCSTR;
 
@@ -569,7 +566,7 @@ pub struct tagBITMAPINFOHEADER {
 
 // typedef uint UINT32;
 
-// typedef uchar UINT8;
+// typedef uUINT8: u8;
 
 // typedef ulong ULONG_PTR;
 
@@ -577,6 +574,6 @@ pub struct tagBITMAPINFOHEADER {
 
 // typedef ulong ULONG;
 
-// typedef uchar UCHAR;
+// typedef uUCHAR: u8;
 
 // typedef void * LPCVOID;

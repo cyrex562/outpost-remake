@@ -3,7 +3,7 @@ use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::set_struct_1008_687a;
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
-use crate::ui::ui_1008::fill_rect_1008_39ac;
+use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
 use crate::util::{struct_from_addr, vec_from_addr};
 use crate::win_struct::{COLORREF, WNDCLASS16, HINSTANCE16};
 use crate::winapi::FillRect16;
@@ -28,29 +28,23 @@ pub fn draw_op_1008_1230(param_1: HWND16) {
     return;
 }
 
-pub fn unk_draw_op_1008_61b2(
+pub unsafe fn unk_draw_op_1008_61b2(
     ctx: &mut AppContext,
     param_1: &mut Struct20,
     param_2: u16,
     param_3: u16,
     param_4: i32,
-    param_5: u16,
+    param_5: &mut WNDCLASS16,
     extraout_dx: U32Ptr,
     unaff_di: i16,
-) -> *mut Struct20 {
+)  {
     let l_hgdiobj_1: HGDIOBJ16;
     let l_hcursor_1: HCURSOR16;
-    // let extraout_DX: *mut u8;
     let mut pu_var1: Struct79;
-    // let unaff_DI: i16;
     let l_struct_2: u16;
-    // let u_var5: &mut Struct20;
-    // let i_var1: &mut Struct20;
     let i_var4: &mut Struct20;
     let u_var1: u16;
 
-    // i_var1 = param_1;
-    // u_var5 = (param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_4);
     param_1.field_0xde = param_2;
     param_1.field_0xe0 = 0x0;
@@ -77,14 +71,12 @@ pub fn unk_draw_op_1008_61b2(
         unaff_di,
         extraout_dx as u16,
     );
-    u_var1 = (l_struct_2 >> 0x10);
-    i_var1.field_0xb4 = 0x0;
-    i_var1.field_0xb6 = 0x0;
-    i_var1.field_0xb8 = (l_struct_2 + 0xa);
-    i_var1.field_0xba = (l_struct_2 + 0xc);
-    i_var1.field_0xca = param_3;
-    win_ui_reg_class_1008_96d2(param_1, 0x1010, param_5);
-    return param_1;
+    param_1.field_0xb4 = 0x0;
+    param_1.field_0xb6 = 0x0;
+    param_1.field_0xb8 = (l_struct_2 + 0xa);
+    param_1.field_0xba = (l_struct_2 + 0xc);
+    param_1.field_0xca = param_3;
+    win_ui_reg_class_1008_96d2(ctx, param_1, 0x1010, param_5);
 }
 
 pub fn fill_rect_1008_62c0(ctx: &mut AppContext, win_handle: HWND16) {
@@ -104,7 +96,7 @@ pub fn unk_draw_op_1008_7f62(
     ctx: &mut AppContext,
     param_1: &mut Struct20,
     param_2: u16,
-    Uparam_3: i32,
+    param_3: i32,
     param_4: u16,
 ) -> *mut Struct20 {
     let HVar1: HGDIOBJ16;
@@ -113,7 +105,7 @@ pub fn unk_draw_op_1008_7f62(
     let iVar3: &mut Struct20;
 
     iVar3 = param_1;
-    uVar4 = (param_1 >> 0x10);
+   // uVar4 = (param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_3);
     iVar3.field_0xde = param_2;
     param_1.field_0x0 = 0x8042;
@@ -130,7 +122,7 @@ pub fn unk_draw_op_1008_7f62(
     iVar3.field_0xac = 0x44000000;
     iVar3.field_0xbc = (param_3 + 0x8);
     iVar3.field_0xca = iVar3.field_0xde;
-    win_ui_reg_class_1008_96d2(param_1, s_tile2_bmp_1050_1538, param_4);
+    win_ui_reg_class_1008_96d2(ctx, param_1, s_tile2_bmp_1050_1538, param_4);
     return param_1;
 }
 
@@ -145,7 +137,7 @@ pub fn unk_draw_op_1008_80ee(
     let i_var3: &mut Struct23;
     let u_var3: &mut Struct23;
 
-    u_var3 = (param_1 >> 0x10);
+   // u_var3 = (param_1 >> 0x10);
     i_var3 = param_1;
     param_1.field_0x0 = 0x389a;
     i_var3.field_0x2 = 0x1008;

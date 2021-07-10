@@ -5,7 +5,7 @@ pub fn struct_1020_1738(param_1: &mut Struct57,param_2: u16,param_3: u32)
   let uVar1: u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfcd,(param_3 + 0x8));
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x8e = 0x0;
   iVar1.field_0x92 = 0x0;
@@ -26,7 +26,7 @@ pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
   let puVar3: *mut u16;
   
   unk_draw_op_1020_7f7a(param_1,0x7,CONCAT22(param_3,param_2));
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar2 = param_1;
   &iVar2[0x1].field_0xc = 0x0;
   iVar2[0x1].field_0x10 = 0x0;
@@ -35,7 +35,7 @@ pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
   ((iVar2 + 0x1)).field_0x0 = 0x27a8;
   iVar2[0x1].field_0x2 = 0x1020;
   puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2a,param_4,extraout_DX,unaff_DI);
-  uVar1 = (puVar3 >> 0x10);
+ // uVar1 = (puVar3 >> 0x10);
   &iVar2[0x1].field_0x10 = puVar3;
   (&iVar2[0x1].field_0x10 + 0x2) = uVar1;
   &iVar2[0x1].field_0x4 = &iVar2[0x1].field_0x10;
@@ -87,7 +87,7 @@ pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4
   let puVar3: *mut u16;
   
   unk_draw_op_1020_7f7a(param_2,0x5,CONCAT22(param_4,param_3));
-  uVar2 = (param_2 >> 0x10);
+ // uVar2 = (param_2 >> 0x10);
   iVar2 = param_2;
   iVar2.field_0xee = 0x0;
   &iVar2.field_0xf2 = 0x0;
@@ -96,7 +96,7 @@ pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4
   iVar2.field_0xe2 = 0x781c;
   iVar2.field_0xe4 = 0x1020;
   puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x25,param_1,extraout_DX,unaff_DI);
-  uVar1 = (puVar3 >> 0x10);
+ // uVar1 = (puVar3 >> 0x10);
   iVar2.field_0xf2 = puVar3;
   iVar2.field_0xf4 = uVar1;
   iVar2.field_0xe6 = iVar2.field_0xf2;
@@ -115,7 +115,7 @@ struct_1020_790e(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u32,param_
   let uVar1: u16;
   
   unk_draw_op_1008_7f62(param_1,param_3,param_4,param_5);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0xe0 = 0x0;
   iVar1.field_0xe4 = 0x0;
@@ -136,7 +136,7 @@ pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
   let iVar4: i16;
   let puVar5: *mut u16;
   
-  iVar4 = (param_1 >> 0x10);
+ // iVar4 = (param_1 >> 0x10);
   iVar3 = param_1;
   *param_1 = 0x389a;
   iVar3.field_0x2 = 0x1008;
@@ -149,7 +149,7 @@ pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
   iVar3.field_0x2 = 0x1020;
   puVar5 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_3,
                            (puVar5 >> 0x10),iVar4);
-  puVar2 = (puVar5 >> 0x10);
+ // puVar2 = (puVar5 >> 0x10);
   pass1_1008_3f62((param_1 & 0xffff0000 | ZEXT24(iVar3 + 0x1)),
                   (puVar5 & 0xffff0000 | (puVar5 + 0xe)));
   uVar1 = iVar3.field_0x6 << 0x3;
@@ -177,7 +177,7 @@ pub fn set_struct_op_1020_921c(param_1: &mut Struct42,param_2: u16)
   let unaff_SS: u16;
   let pUVar3: *mut u16;
   
-  uVar3 = (param_1 >> 0x10);
+ // uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
   param_1.field_0x0 = 0x389a;
   iVar3.field_0x2 = 0x1008;
@@ -211,7 +211,7 @@ pub fn struct_1020_c444(param_1: &mut Struct75,param_2: u32,param_3: u32)
   let uVar1: &mut Struct75;
   
   struct_op_1030_1cd8(param_1,param_2,param_3);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 0x1) = 0x0;
   &iVar1[0x1].field_0x4 = 0x0;
@@ -268,7 +268,7 @@ pub fn struct_1020_d37c(param_1: *mut u16) -> u16
   let uVar1: u16;
   
   struct_1028_b354(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   (param_1 + 0x20) = 0x0;
   *param_1 = 0xd53e;
   (param_1 + 0x2) = 0x1020;
@@ -311,7 +311,7 @@ pub fn struct_1020_d954(param_1: *mut u16)
   let puVar2: *mut u16;
   
   struct_1030_dc96(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   iVar1.field_0x24 = 0x0;
   iVar1.field_0x26 = 0x0;
@@ -339,7 +339,7 @@ struct_1020_d99e(param_1: *mut u16,param_2: u16,param_3: i16,param_4: u32,param_
   let iVar2: &mut Struct178;
   
   iVar2 = param_1;
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   puVar1 = pass1_1030_dcc2(iVar2,uVar2,param_3,param_4,param_5);
   iVar2.field_0x24 = param_2;
   iVar2.field_0x26 = 0x0;
@@ -373,7 +373,7 @@ pub fn struct_1020_e8f6(param_1: *mut u16) -> u16
   let uVar1: u16;
   
   struct_1030_dc96(param_1);
-  uVar1 = (param_1 >> 0x10);
+ // uVar1 = (param_1 >> 0x10);
   (param_1 + 0x24) = 0x0;
   *param_1 = 0xeef6;
   (param_1 + 0x2) = 0x1020;

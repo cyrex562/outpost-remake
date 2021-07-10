@@ -25,9 +25,9 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
   let uStack4: u16;
   
   uVar12 = pass1_1030_8326();
-  uStack4 = (uVar12 >> 0x10);
+ // uStack4 = (uVar12 >> 0x10);
   uStack6 = uVar12;
-  valist = (param_1 >> 0x10);
+ // valist = (param_1 >> 0x10);
   uVar10 = param_1;
   puVar1 = (uVar10 + 0x140);
   bVar11 = *puVar1 < uStack4;
@@ -37,7 +37,7 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
     if ((uVar10 + 0x13a) < uVar3) {
       uVar13 = switch_1018_3b9e(param_1,(uVar10 + 0x12e),uVar3,uStack4,param_2)
       ;
-      uVar8 = (uVar13 >> 0x10);
+     // uVar8 = (uVar13 >> 0x10);
       uVar6 = uVar13;
       uStack10 = uVar6;
       uStack8 = uVar8;

@@ -32,7 +32,7 @@ set_window_placement_1010_0070
   if ((iStack16 == -0x1) || (param_2 != 0x0)) {
     local_18._2_4_ = 0x50001;
     lVar4 = GetWindowLong16(ctx.s_tile2_bmp_1050_1538,0x0);
-    uVar2 = (lVar4 >> 0x10);
+   // uVar2 = (lVar4 >> 0x10);
     puVar3 = (lVar4 + 0xe0);
     ppcVar1 = (*puVar3 + 0x38);
     (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,puVar3,(lVar4 + 0xe2),
@@ -72,7 +72,7 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
   GetWindowPlacement16(param_4,&local_18);
   if (local_18.rc_normal_position.x == -0x1) {
     lVar6 = GetWindowLong16(ctx.s_tile2_bmp_1050_1538,0x0);
-    uVar4 = (lVar6 >> 0x10);
+   // uVar4 = (lVar6 >> 0x10);
     puVar5 = (lVar6 + 0xe0);
     ppcVar1 = (*puVar5 + 0x1c);
     (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,puVar5,(lVar6 + 0xe2),
@@ -151,7 +151,7 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
   let iStack4: i16;
   
   iVar3 = param_1;
-  uVar4 = (param_1 >> 0x10);
+ // uVar4 = (param_1 >> 0x10);
   if (param_2 == 0x0) {
     piVar1 = (iVar3 + 0x28);
     *piVar1 = *piVar1 + -0xa;
@@ -166,7 +166,7 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
   if ((iVar3 + 0x52) != 0x0) {
     iStack4 = 0x0;
     hwnd = param_3;
-    do {
+    loop {
       uVar2 = (iVar3 + 0x52);
       param_3 = hwnd;
       if ((uVar2 + iStack4 * 0x4) != 0x0) {
@@ -177,10 +177,11 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
       }
       iStack4 += 0x1;
       hwnd = param_3;
-    } while (iStack4 < 0xa);
+        if (iStack4 < 0xa) == false { break; }
+    }
   }
   if ((iVar3 + 0x16) == 0x0) {
-    pass1_1010_32f4(param_1,*(u32 **)(iVar3 + 0x56),unaff_SS,param_3);
+    pass1_1010_32f4(param_1,(iVar3 + 0x56),unaff_SS,param_3);
   }
   else {
     pass1_1010_32da(param_1,
@@ -202,22 +203,26 @@ pub fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
   let lStack14: i32;
   let local_a: [u8;8];
   
-  uVar3 = (param_1 >> 0x10);
+ // uVar3 = (param_1 >> 0x10);
   if (((param_1 + 0x1c) != 0x0) && ((param_3 != 0x0 || (param_2 != 0x0)))) {
     pass1_1008_5784(CONCAT22(param_4,local_a),(param_1 + 0x1c));
     lStack18 = 0x0;
-    do {
+    loop {
       puVar2 = local_a;
       pass1_1008_5b12(puVar2,param_4);
       lStack14 = CONCAT22(extraout_DX,puVar2);
-      if ((extraout_DX | puVar2) == 0x0) goto LAB_1010_7a49;
+      if ((extraout_DX | puVar2) == 0x0) {
+          // goto
+          // LAB_1010_7a49;
+      }
       if (((param_2 == 0x0) && ((puVar2 + 0x4) == param_3)) ||
          ((param_3 == 0x0 &&
           (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) == param_2)))
          ) { break; }
-    } while (((puVar2 + 0x4) != param_3) ||
+        if (((puVar2 + 0x4) != param_3) ||
             (uVar1 = (puVar2 + 0x8), (uVar1 + 0xa) != param_2)
-            );
+        ) == false { break; }
+    }
     lStack18 = lStack14;
 //LAB_1010_7a49:
     if (lStack18 != 0x0) {
@@ -239,7 +244,7 @@ pub fn show_win_1010_7a76(param_1: u32,param_2: u16)
   let lVar3: i32;
   let local_a: [u8;8];
   
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   if ((iVar1 + 0x20) == 0x0) {
     (iVar1 + 0x20) = 0x1;
@@ -262,7 +267,7 @@ pub fn show_window_1010_7ace(param_1: u32,param_2: u16)
   let lVar3: i32;
   let local_a: [u8;8];
   
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   if ((iVar1 + 0x20) != 0x0) {
     (iVar1 + 0x20) = 0x0;
@@ -284,7 +289,7 @@ pub fn send_msg_1010_7c42(param_1: u32,param_2: u16)
   let lVar3: i32;
   let local_a: [u8;8];
   
-  uVar2 = (param_1 >> 0x10);
+ // uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   if (((iVar1 + 0x1e) | (iVar1 + 0x1c)) != 0x0) {
     pass1_1008_5784(CONCAT22(param_2,local_a),(iVar1 + 0x1c));
@@ -310,13 +315,13 @@ pub fn send_msg_1010_7c9e(param_1: u32,param_2: i16,param_3: u16)
   let uVar5: u32;
   let local_a: [u8;8];
   
-  uVar3 = (param_1 >> 0x10);
+ // uVar3 = (param_1 >> 0x10);
   iVar2 = param_1;
   if ((((iVar2 + 0x1e) | (iVar2 + 0x1c)) != 0x0) && (param_2 != 0x0)) {
     pass1_1008_5784(CONCAT22(param_3,local_a),(iVar2 + 0x1c));
     loop {
       lVar4 = pass1_1008_5b12(local_a,param_3);
-      uVar3 = (lVar4 >> 0x10);
+     // uVar3 = (lVar4 >> 0x10);
       if (lVar4 == 0x0) { break; }
       if ((lVar4 + 0x4) != 0x0) {
         uVar5 = struct_op_1030_73a8((lVar4 + 0x4));

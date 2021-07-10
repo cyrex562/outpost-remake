@@ -1014,7 +1014,7 @@ pub fn pass1_1030_10b0(
     if ((u_var3 | paVar2) != 0) {
         pass1_1030_7e5a(CONCAT22(u_var3, paVar2), u_var1);
     }
-    local_a = (u_var1 >> 0x10);
+   // local_a = (u_var1 >> 0x10);
     pass1_1030_1358(
         (param_1 + 0x26),
         in_ax,
@@ -3216,7 +3216,7 @@ pub unsafe fn pass1_1028_c952(param_1: &mut Struct44) {
                     if var10 != 0 {
                         var7 = var14;
                         pass1_1038_540a(var17, var13, var16);
-                        var14 = (var14 >> 0x10);
+                       // var14 = (var14 >> 0x10);
                         if (var7 & 0xffff | var10 << 0x10) < var14 {
                             var5 = var8 - var7;
                             var9 = (var14 - var10) - (var8 < var7);
@@ -3301,7 +3301,7 @@ pub fn pass1_1028_cb04(param_1: &mut Struct44) {
                 u_var1 = local_bx_92.field_0x8c;
                 u_var6 = u_var1;
                 pass1_1038_540a(local_e, u_var9, 0x23);
-                local_26 = (u_var1 >> 0x10);
+               // local_26 = (u_var1 >> 0x10);
                 if (ctx.dx_reg <= local_26)
                     && ((
                         u_var5 = u_var6,
@@ -3323,7 +3323,7 @@ pub fn pass1_1028_cb04(param_1: &mut Struct44) {
                 u_var1 = local_bx_92.field_0x90;
                 u_var6 = u_var1;
                 pass1_1038_540a(local_e, u_var9, 0x24);
-                local_26 = (u_var1 >> 0x10);
+               // local_26 = (u_var1 >> 0x10);
                 if ((ctx.dx_reg <= local_26)
                     && ((
                         u_var5 = u_var6,
@@ -3350,7 +3350,7 @@ pub fn pass1_1028_cb04(param_1: &mut Struct44) {
                 u_var8 = u_var2;
                 pass1_1038_540a(local_e, u_var9, local_16);
                 u_var8 = u_var8 & 0xffff | ctx.dx_reg << 0x10;
-                local_36 = (u_var2 >> 0x10);
+               // local_36 = (u_var2 >> 0x10);
                 if (u_var8 < u_var2) {
                     if ((((local_16 == 0x23) || (local_16 == 0x24)) || (local_10 < local_36))
                         || ((

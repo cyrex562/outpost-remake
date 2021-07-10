@@ -25,11 +25,11 @@ pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16
   
   BVar2 = write_to_file_1028_b5ec(param_1,param_2,param_3);
   if (BVar2 != 0x0) {
-    uVar4 = (param_1 >> 0x10);
+   // uVar4 = (param_1 >> 0x10);
     iVar3 = param_1;
     local_1a[0] = (iVar3 + 0x20);
     uVar5 = param_2;
-    uVar6 = (param_2 >> 0x10);
+   // uVar6 = (param_2 >> 0x10);
     BVar2 = write_to_file_1008_7e1c
                       (uVar5,uVar6,local_1a,param_3,0x2,0x1008);
     if (BVar2 != 0x0) {
@@ -83,10 +83,10 @@ pub fn write_to_file_1028_1452(param_1: u32,param_2: u32,param_3: u16) -> u16
   
   BVar1 = write_to_file_1028_b5ec(param_1,param_2,param_3);
   if (BVar1 != 0x0) {
-    uVar2 = (param_1 >> 0x10);
+   // uVar2 = (param_1 >> 0x10);
     local_c[0] = (param_1 + 0x22);
     uVar3 = param_2;
-    uVar4 = (param_2 >> 0x10);
+   // uVar4 = (param_2 >> 0x10);
     BVar1 = write_to_file_1008_7e1c
                       (uVar3,uVar4,local_c,param_3,0x2,0x1008);
     if (BVar1 != 0x0) {
@@ -183,10 +183,10 @@ pub fn write_to_file_1028_3d0e(param_1: u32,param_2: u32,param_3: u16,param_4: u
   
   BVar1 = write_to_file_1028_b5ec(param_1,param_2,param_3);
   if (BVar1 != 0x0) {
-    uVar3 = (param_1 >> 0x10);
+   // uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
     local_10[0] = (iVar2 + 0x20);
-    uVar4 = (param_2 >> 0x10);
+   // uVar4 = (param_2 >> 0x10);
     BVar1 = write_to_file_1008_7e1c
                       (param_2,uVar4,local_10,param_3,0x4,0x1008);
     if (BVar1 != 0x0) {
@@ -288,11 +288,11 @@ pub fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
   let local_8: [u16;0x2];
   let iStack4: i16;
   
-  uVar4 = (param_1 >> 0x10);
+ // uVar4 = (param_1 >> 0x10);
   iVar3 = param_1;
   local_e[0] = (iVar3 + 0xc);
   uVar5 = param_2;
-  uVar6 = (param_2 >> 0x10);
+ // uVar6 = (param_2 >> 0x10);
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_e,param_3,0x2,0x1008);
   if (BVar2 == 0x0) {
     ctx.PTR_LOOP_1050_0310 = 0x6d0;
@@ -436,13 +436,13 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   let puVar3: u32;
   
   puVar3 = param_1;
-  uVar6 = (param_1 >> 0x10);
+ // uVar6 = (param_1 >> 0x10);
   file_1030_1730(param_1,param_2);
   if (param_3 == 0x0) {
     return;
   }
   uVar5 = param_2;
-  uVar8 = (param_2 >> 0x10);
+ // uVar8 = (param_2 >> 0x10);
   BVar1 = read_file_1008_7dee(uVar5,uVar8,&local_4,0x0,param_4,0x2,0x1008);
   if (BVar1 == 0x0) {
     ctx.PTR_LOOP_1050_0310 = 0x6d2;
@@ -499,7 +499,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   0x4 =>
     uVar7 = pass1_1028_e0bc(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),puVar3,param_5,
                             param_4);
-    puStack14 = (uVar7 >> 0x10);
+   // puStack14 = (uVar7 >> 0x10);
     (puVar3 + 0x5) = uVar7;
     (puVar3 + 0x16) = puStack14;
     if ((puStack14 | (puVar3 + 0x5)) != 0x0) {
@@ -513,7 +513,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   0x5 =>
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
-    *(u32 **)(puVar3 + 0x5) = puVar4;
+    (puVar3 + 0x5) = puVar4;
     (puVar3 + 0x16) = param_5;
     puStack16 = ((puVar3 + 0x5) + 0xa4);
     puStack14 = param_5;
@@ -558,7 +558,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   0x9 =>
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
-    *(u32 **)(puVar3 + 0x5) = puVar4;
+    (puVar3 + 0x5) = puVar4;
     (puVar3 + 0x16) = param_5;
 //     TODO: goto switchD_1028_ba97_caseD_6;
   }
@@ -603,14 +603,14 @@ pub fn write_to_file_1028_dce2(param_1: *mut u32,param_2: u32,param_3: u16) -> u
   let uStack24: u32;
   let local_14: [u8;12];
   
-  uVar7 = (param_2 >> 0x10);
+ // uVar7 = (param_2 >> 0x10);
   BVar2 = write_to_file_1008_7cac(param_2,param_3);
   if (BVar2 != 0x0) {
     local_26[0] = *param_1;
     BVar2 = write_to_file_1008_7e1c
                       (param_2,uVar7,local_26,param_3,0x4,0x1008);
     if (BVar2 != 0x0) {
-      uVar6 = (param_1 >> 0x10);
+     // uVar6 = (param_1 >> 0x10);
       iVar5 = param_1;
       local_1e[0] = (iVar5 + 0x8);
       BVar2 = write_to_file_1008_7e1c
@@ -711,10 +711,10 @@ pub fn read_file_1028_def2(param_1: u32,param_2: u32,param_3: u16,param_4: u16)
   let uVar5: u16;
   
   uVar4 = param_2;
-  uVar5 = (param_2 >> 0x10);
+ // uVar5 = (param_2 >> 0x10);
   read_file_1008_7cfe(uVar4,uVar5,0xa,0x1008,param_3);
   if (param_4 != 0x0) {
-    uVar3 = (param_1 >> 0x10);
+   // uVar3 = (param_1 >> 0x10);
     BVar2 = read_file_1008_7dee(uVar4,uVar5,param_1,0x0,uVar3,0x4,0x1008);
     if (BVar2 != 0x0) {
       BVar2 = read_file_1008_7dee(uVar4,uVar5,param_1 + 0x8,0x0,uVar3,0x2,0x1008);

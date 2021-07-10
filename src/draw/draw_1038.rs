@@ -25,7 +25,7 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
   if (param_4._2_2_ == 0xeb) {
     paStack6 = 
                mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,param_6,in_DX,unaff_DI);
-    puVar6 = (paStack6 >> 0x10);
+   // puVar6 = (paStack6 >> 0x10);
     paVar5 = (param_1 + 0x90);
     if (paVar5 != 0x0) {
       paStack10 = paVar5;
@@ -56,12 +56,12 @@ draw_op_1038_92f6(param_1: u16,param_2: u16,param_3: u16,param_4: u32,
         pass1_1000_5586(0xa564,&ctx.PTR_LOOP_1050_1040,iStack12,0xa,
                         uVar3 + 0x2,puVar7);
         uVar1 = (param_1 + 0x90);
-        uVar8 = (uVar1 >> 0x10);
+       // uVar8 = (uVar1 >> 0x10);
         iVar4 = uVar1;
         (iVar4 + 0x2) = uVar3 + 0x2;
         (iVar4 + 0x4) = puVar7;
       }
-      uVar8 = (paStack10 >> 0x10);
+     // uVar8 = (paStack10 >> 0x10);
       uVar1 = (param_1 + 0x90);
       (uVar1 + 0x6) = (paStack10 + 0x6);
       uVar1 = (param_1 + 0x90);
@@ -122,7 +122,7 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
   let uVar6: u32;
   let uStack14: u16;
   
-  var5 = (in_struct_1 >> 0x10);
+ // var5 = (in_struct_1 >> 0x10);
   local_struct_5 = in_struct_1;
   hdc = in_colorref_4;
   if (local_struct_5.brush_handle_field_0x8e == 0x0) {
@@ -133,7 +133,7 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
   if (ctx.PTR__LOOP_1050_5b64 == 0x0) {
     hdc = 0x1008;
     uVar6 = pass1_1008_4d72((ctx.PTR__LOOP_1050_4230 + 0xe));
-    uVar3 = (uVar6 >> 0x10);
+   // uVar3 = (uVar6 >> 0x10);
     iVar4 = uVar6;
     ctx._PTR_LOOP_1050_5b64 =
          CONCAT12(*(iVar4 + 0x94),
