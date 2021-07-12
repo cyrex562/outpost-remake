@@ -2858,7 +2858,7 @@ pub fn pass1_1038_290e(param_1: u16,param_2: u16) -> u16
   let unaff_SI: u16;
   let unaff_DI: u16;
   let unaff_SS: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   
   pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,0x1,0x400);
   if ((param_2 | param_1) != 0x0) {
@@ -3593,7 +3593,7 @@ pub fn pass1_1038_35a8(param_1: u32,param_2: u16,param_3: u16,param_4: *mut u8)
   let iVar3: &mut Struct425;
   let uVar2: u16;
   let unaff_SS: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   
  // uVar2 = (param_1 >> 0x10);
   iVar3 = param_1;
@@ -8135,7 +8135,7 @@ pub fn pass1_1038_7d5c(param_1: &mut Struct18)
 LRESULT  pass1_1038_7dac(param_1: u32,param_2: u16)
 
 {
-  LRESULT LVar1;
+  let LVar1: LRESULT;
   
   pass1_1040_78de(param_1);
   LVar1 = send_dlg_item_msg_1038_844a(param_1,&ctx.PTR_LOOP_1050_1040,param_2);
@@ -8457,7 +8457,7 @@ pub fn pass1_1038_8cf6(param_1: &mut Struct18)
 LRESULT  pass1_1038_8d7e(param_1: u32,param_2: u16)
 
 {
-  LRESULT LVar1;
+  let LVar1: LRESULT;
   
   pass1_1040_78de(param_1);
   LVar1 = send_dlg_item_msg_1038_8f74(param_1,&ctx.PTR_LOOP_1050_1040,param_2);

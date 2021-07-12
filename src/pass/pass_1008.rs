@@ -141,8 +141,7 @@ pub fn pass1_1008_07d8(param_1: u16, bool param_2, param_3: *mut u8, param_4: u1
 {
     let uVar2: u16;
     let uVar1: u16;
-    ulet
-    in_AF: u8;
+    let in_AF: u8;
     let uVar3: u32;
 
     if (ctx.PTR__LOOP_1050_5748 == 0x0) {
@@ -306,8 +305,7 @@ pub fn pass1_1008_12aa(param_1: u32) {
 
 
 pub fn pass1_1008_3018(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16) {
-    Ulet
-    UVar1: i32;
+    let UVar1: i32;
     let uVar2: u16;
     let iVar3: i16;
     let uVar4: u16;
@@ -1073,56 +1071,47 @@ pub fn pass1_1008_4544(param_1: u32) {
 pub fn pass1_1008_4772(param_1: &mut Struct76) -> u32
 
 {
-    let bVar1: bool;
-    let iVar2: &mut Struct76;
-    let uVar2: u16;
+    let b_var1: bool;
 
-    // uVar2 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if (&iVar2.field_0x6 == 0x0) {
-        pass1_1008_47cc((param_1 & 0xffff | uVar2 << 0x10));
+    if &param_1.field_0x6 == 0x0 {
+        pass1_1008_47cc(param_1);
     }
-    if (&iVar2.field_0x6 == 0x0) {
-        bVar1 = false;
+    if &param_1.field_0x6 == 0x0 {
+        b_var1 = false;
     } else {
-        if ((&iVar2.field_0x8 + 0x2) == 0x0) {
-            pass1_1008_4834((param_1 & 0xffff | uVar2 << 0x10));
+        if (&param_1.field_0x8 + 0x2) == 0x0 {
+            pass1_1008_4834(param_1);
         }
-        bVar1 = true;
+        b_var1 = true;
     }
-    if (!bVar1) {
+    if !b_var1 {
         return 0x0;
     }
-    return CONCAT22(iVar2.field_0x12, (&iVar2.field_0xe + 0x2));
+    return CONCAT22(param_1.field_0x12, (&param_1.field_0xe + 0x2));
 }
 
 
 pub fn pass1_1008_47cc(param_1: &mut Struct76) {
-    let uVar1: u32;
-    let uVar2: u32;
-    let uVar3: u16;
-    let iVar5: i16;
-    let iVar6: i16;
-    let uVar7: u16;
-    let uVar8: u16;
-    let uStack14: u32;
-    let iVar4: i16;
+    let u_var1: u32;
+    let u_var2: u32;
+    let u_var3: u16;
+    let i_var6: i16;
+    let u_stack14: u32;
+    let i_var4: i16;
 
-    // uVar7 = (param_1 >> 0x10);
-    iVar5 = param_1;
-    if ((iVar5 + 0x6) != 0x0) {
-        uVar1 = (iVar5 + 0x6);
-        iVar6 = (iVar5 + 0x8);
-        iVar4 = uVar1;
-        uVar3 = iVar4 + 0xe;
-        (iVar5 + 0x10) = uVar1 & 0xffff0000 | uVar3;
-        (iVar5 + 0x14) = iVar4 + 0x436;
-        (iVar5 + 0x16) = iVar6 + (-(0xfbd7 < uVar3) & 0x6c);
-        uVar2 = (iVar5 + 0x10);
-        // uVar8 = (uVar2 >> 0x10);
-        iVar6 = uVar2;
-        uStack14 = (iVar6 + 0xe);
-        (iVar5 + 0x18) = (uStack14 * (iVar6 + 0x4) + 0x1f) / 0x20 << 0x2;
+    if (param_1 + 0x6) != 0x0 {
+        u_var1 = (param_1.field_0x6);
+        i_var6 = (param_1.field_0x8);
+        i_var4 = u_var1;
+        u_var3 = i_var4 + 0xe;
+        (param_1.field_0x10) = u_var1 & 0xffff0000 | u_var3;
+        (param_1.field_0x14) = i_var4 + 0x436;
+        (param_1.field_0x16) = i_var6 + (-(0xfbd7 < u_var3) & 0x6c);
+        u_var2 = (param_1.field_0x10);
+        // u_var8 = (u_var2 >> 0x10);
+        i_var6 = u_var2;
+        u_stack14 = (i_var6 + 0xe);
+        (param_1.field_0x18) = (u_stack14 * (i_var6 + 0x4) + 0x1f) / 0x20 << 0x2;
     }
     return;
 }

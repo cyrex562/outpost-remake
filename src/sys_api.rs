@@ -1561,7 +1561,7 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32,param_2: u16)
   let uVar8: u16;
   let unaff_DI: i16;
   let uVar9: u16;
-  HINSTANCE16 instance;
+  let instance: HINSTANCE16;
   let uVar10: u16;
   let DVar11: u32;
   let puVar12: u32;
@@ -2894,15 +2894,15 @@ pub fn free_proc_inst_1038_cfda(param_1: *mut u16,param_2: *mut u8)
 
 long 
 call_win_proc_1038_d020
-          (param_1: HWND16,param_2: u32,LPARAM param_3,param_4: u16,param_5: HWND16)
+          (param_1: HWND16,param_2: u32,param_3: LPARAM,param_4: u16,param_5: HWND16)
 
 {
   let ppcVar1: u32;
-  WPARAM16 wparam;
-  HANDLE16 HVar2;
-  HANDLE16 HVar3;
+  wparam: WPARAM16;
+  let HVar2: HANDLE16;
+  let HVar3: HANDLE16;
   let uVar4: u16;
-  LRESULT LVar5;
+  let LVar5: LRESULT;
   let uVar6: u16;
   let uVar7: u16;
   let uVar8: u16;
@@ -2965,8 +2965,8 @@ win_prop_op_1038_d118
   let ppcVar1: u32;
   let uVar2: u32;
   let cVar3: u8;
-  HANDLE16 HVar4;
-  HANDLE16 HVar5;
+  let HVar4: HANDLE16;
+  let HVar5: HANDLE16;
   let uVar6: u16;
   let uVar7: u16;
   let uVar8: u16;
@@ -3092,7 +3092,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37,param_2: HWND16)
  // uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
   hdc = GetDC16(param_2);
-  draw_text_1040_8d14(param_1,s_tile2_bmp_1050_1538);
+  draw_text_1040_8d14(ctx, param_1, s_tile2_bmp_1050_1538);
   (iVar4 + 0xa6) = (iVar4 + 0x9e);
   (iVar4 + 0xaa) = (iVar4 + 0xa2);
   IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
@@ -3118,7 +3118,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37,param_2: HWND16)
 }
 
 
-pub fn reg_class_1040_98c0(param_1: i32,HINSTANCE16 param_2,WNDCLASS16 *in_wnd_class_3)
+pub fn reg_class_1040_98c0(param_1: i32,param_2: HINSTANCE16,in_wnd_class_3: &WNDCLASS16)
 {
   let BVar1: bool;
   ATOM AVar2;
@@ -3201,14 +3201,14 @@ pub fn free_proc_inst_1040_a294(param_1: &mut Struct18,param_2: u16)
 
 u32 
 call_win_proc_1040_a40e
-          (param_1: HWND16,param_2: u32,LPARAM param_3,param_4: u16,param_5: *mut u8,
+          (param_1: HWND16,param_2: u32,param_3: LPARAM,param_4: u16,param_5: *mut u8,
           param_6: u16)
 
 {
   let uVar1: u16;
   let ppcVar2: u32;
   let puVar4: u32;
-  WPARAM16 wparam;
+  wparam: WPARAM16;
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;

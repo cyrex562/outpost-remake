@@ -161,7 +161,7 @@ unsafe fn entry(
                 break;
             }
         }
-        // TODO: HGLOBAL16/HINSTANCE16 into CONTEXT
+        // TODO: HGLOBAL16/into: HINSTANCE16 CONTEXT
         //*in_task_context = ctx.s_tile2_bmp_1050_1538;
         *param_8 = CONCAT11((*param_8 >> 0x8) as u8, 0xff) as i16;
         pass1_1000_24db(*param_8, 0x0);

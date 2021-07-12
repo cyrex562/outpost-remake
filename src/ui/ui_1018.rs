@@ -259,7 +259,7 @@ pub fn mix_ui_op_1018_6adc(Struct28 *param_1)
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar7: *mut u16;
   let paVar8: &mut Struct43;
   

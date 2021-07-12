@@ -3,7 +3,7 @@ pub fn vsprintf_op_1030_840a(param_1: u32,param_2: &mut String,param_3: *mut u16
 {
   let mut pCVar1: String;
   let unaff_ES: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let mut pCStack6: String;
   let args: *mut u16;
   

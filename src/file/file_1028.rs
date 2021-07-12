@@ -706,7 +706,7 @@ pub fn read_file_1028_def2(param_1: u32,param_2: u32,param_3: u16,param_4: u16)
   let unaff_SI: u16;
   let unaff_DI: u16;
   let uVar3: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar4: u16;
   let uVar5: u16;
   

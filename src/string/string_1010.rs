@@ -143,7 +143,7 @@ unk_load_str_op_1010_8c96
   let iVar6: i16;
   let uVar7: u16;
   let uVar8: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar9: u32;
   let mut pcVar10: String; 
   let mut spec: String;

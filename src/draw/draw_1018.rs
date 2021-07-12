@@ -512,7 +512,7 @@ pub fn unk_draw_op_1018_c578(param_1: &mut Struct36,param_2: u16)
 pub fn draw_text_1018_c742(param_1: &mut Struct36,param_2: HDC16,param_3: &RECT16,param_4: u16)
 {
   let piVar1: *mut i16;
-  COLORREF CVar2;
+  let CVar2: COLORREF;
   let iVar3: i16;
   let iVar4: &mut Struct36;
   let uVar4: &mut Struct36;
@@ -524,7 +524,7 @@ pub fn draw_text_1018_c742(param_1: &mut Struct36,param_2: HDC16,param_3: &RECT1
   let iStack16: i16;
   let iStack14: i16;
   let iStack12: i16;
-  COLORREF CStack10;
+  let CStack10: COLORREF;
   let uStack8: u16;
   let uStack6: u32;
   

@@ -134,7 +134,7 @@ pub fn window_op_1020_10a0(astruct *param_1)
   let extraout_DX_00: u16;
   let unaff_DI: i16;
   let unaff_SS: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let puVar7: *mut u16;
   let uVar8: u32;
   let uVar9: u16;
@@ -362,10 +362,10 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
   let uVar11: u16;
   let uVar12: u16;
   let uVar13: u16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar14: *mut u16;
-  WNDCLASS16 *in_resc_id_3;
-  WNDCLASS16 *in_buffer_4;
+  in_resc_id_3: &WNDCLASS16;
+  in_buffer_4: &WNDCLASS16;
   WNDCLASS16 local_178 [0xc];
   let uStack118: u32;
   let uStack114: u32;
@@ -1108,7 +1108,7 @@ mixed_menu_op_1020_44ec
   let unaff_DI: i16;
   let uVar11: u16;
   let HVar12: HMENU16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let local_138: [u16;0x2];
   let local_134: [u16;0x2];
   let puStack304: *mut u16;
@@ -1324,7 +1324,7 @@ mixed_menu_op_1020_44ec
 pub fn
 win_sys_op_1020_493c
           (param_1: *mut u32,param_2: u16,param_3: *mut u8,param_4: u16,HCURSOR16 param_5
-          ,WNDCLASS16 *param_6)
+          ,param_6: &WNDCLASS16)
 
 {
   let ppcVar1: u32;
@@ -1339,7 +1339,7 @@ win_sys_op_1020_493c
   let uVar10: u16;
   let unaff_DI: i16;
   let uVar11: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar12: u32;
   let puVar13: *mut u16;
   let paVar14: &mut Struct100;
@@ -2079,11 +2079,11 @@ pub fn post_msg_1020_55b0(param_1: u32,param_2: u16) -> u16
   let uVar5: u16;
   let hwnd: HWND16;
   let hwnd_00: HWND16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let puVar5: *mut u16;
   let mut pcVar6: String; 
   let puVar6: u32;
-  LRESULT LVar7;
+  let LVar7: LRESULT;
   let uVar8: u8;
   let local_114: i16;
   let local_112: [u8;2];
@@ -2179,7 +2179,7 @@ pub fn menu_ui_op_1020_5bf2(param_1: &mut Struct52,param_2: HWND16,param_3: &REC
   let uVar7: u16;
   let unaff_CS: *mut RECT16;
   let instance: *mut RECT16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let uVar8: u32;
   POlet local_10: i16;
   let iStack12: i16;
@@ -2653,7 +2653,7 @@ pub fn realize_palette_1020_6896(param_1: u32,param_2: i16,param_3: HGDIOBJ16)
 
 pub fn
 win_ui_op_1020_6ae6(param_1: *mut u32,param_2: u16,param_3: i16,param_4: i16,param_5: HWND16,
-                   WPARAM16 param_6)
+                   param_6: WPARAM16)
 
 {
   let ppcVar1: u32;
@@ -2661,7 +2661,7 @@ win_ui_op_1020_6ae6(param_1: *mut u32,param_2: u16,param_3: i16,param_4: i16,par
   let iVar3: i16;
   let uVar4: u16;
   let hwnd: HWND16;
-  LRESULT LVar5;
+  let LVar5: LRESULT;
   let in_stack_0000ff86: u16;
   let in_stack_0000ff88: u16;
   let HVar6: HWND16;
@@ -2720,7 +2720,7 @@ pub fn window_op_1020_6c3a(astruct *param_1)
 {
   let uVar1: u32;
   let ppcVar2: u32;
-  HICON16 HVar3;
+  let HVar3: HICON16;
   let paVar4: &mut Struct160;
   bool *pBVar5;
   let uVar6: u32;
@@ -2823,10 +2823,10 @@ pub fn win_ui_fn_1020_6e98(param_1: u32,in_win_handle: HWND16,param_3: u16)
   let window_handle: HWND16;
   let uVar3: u16;
   let in_DX: u16;
-  WPARAM16 WVar4;
+  WVar4: WPARAM16;
   let iVar5: i16;
   let uVar6: u16;
-  LRESULT LVar7;
+  let LVar7: LRESULT;
   let mut pcVar8: String; 
   let uVar9: u16;
   let uVar10: u16;

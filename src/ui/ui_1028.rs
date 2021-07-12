@@ -28,7 +28,7 @@ pub fn send_msg_1028_e242(param_1: *mut u32,param_2: i16,param_3: HWND16)
   let puVar1: *mut u8;
   let unaff_DI: i16;
   let unaff_SS: u16;
-  LRESULT LVar2;
+  let LVar2: LRESULT;
   
   puVar1 = (*param_1 % 0x64);
   if (*param_1 % 0x64 == 0x0) {

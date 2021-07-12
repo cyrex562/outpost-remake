@@ -1508,7 +1508,7 @@ pass1_1020_679c(param_1: &mut Struct18,param_2: u8,param_3: u16,param_4: u16)
 
 pub fn pass1_1020_687c(param_1: u32,param_2: u16,param_3: u16)
 {
-  ulet uVar1: u8;
+  let uVar1: u8;
   
   uVar1 = (uchar)param_2;
   get_win_ui_info_op_1020_7a50(param_1,param_3);
@@ -2870,7 +2870,7 @@ pub fn pass1_1020_a89e(param_1: u16,param_2: u32,param_3: *mut u32,param_4: u16)
   let puVar7: u32;
   let extraout_DX: u16;
   let unaff_DI: i16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u8;
@@ -3120,7 +3120,7 @@ pass1_1020_ad90(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
   let uVar5: u32;
   let uVar6: u16;
   let extraout_DX: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let puVar7: u32;
   let uVar8: u16;
   let uVar9: u16;
@@ -3451,7 +3451,7 @@ pass1_1020_b2da(param_1: u16,param_2: u16,param_3: u16,param_4: i16,param_5: *mu
   let uVar3: u16;
   let puVar4: *mut u8;
   let uVar5: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let puVar6: *mut u16;
   u8 **ppuVar7;
   let iStack28: i16;

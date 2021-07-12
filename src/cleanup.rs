@@ -23,21 +23,21 @@ use crate::{
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
     param_1: &mut StructB,
-    unaff_CS: u16,
-    unaff_SS: u16,
+    unaff_cs: u16,
+    unaff_ss: u16,
 ) {
     let pu_var1: u32;
     let u_var2: u16;
     // let paVar3: &mut Struct18;
-    let mut pa_var3: *mut Struct18;
+    let mut pa_var3: &mut Struct18;
     // let ppcVar4: u32;
     let mut ppc_var4: u32;
-    let i_var5: i16;
+    // let i_var5: i16;
     let u_var6: u16;
-    // let unaff_CS: u16;
-    // HICON16 h_icon;
+    // let unaff_cs: u16;
+    // let h_icon: HICON16;
     let mut h_icon: HICON16;
-    // let unaff_SS: u16;
+    // let unaff_ss: u16;
     let u_var7: u16;
     let u_var8: u16;
 
@@ -45,22 +45,22 @@ pub fn cleanup_ui_op_1008_0618(
     // i_var5 = param_1;
     param_1.field_0x0 = 0x389e;
     param_1.field_0x2 = 0x1008;
-    set_sys_color_1008_357e(param_1, 0x0, unaff_CS, unaff_SS);
+    set_sys_color_1008_357e(param_1, 0x0, unaff_cs as i16, unaff_ss);
     pa_var3 = &mut param_1.field_0xf8; // (i_var5 + 0xf8);
                                        // u_var8 = (pa_var3 >> 0x10);
     h_icon = 0x1000;
     fn_ptr_1000_17ce(ctx, pa_var3, 0x1000);
-    if (i_var5 + 0xec) != 0x0 {
+    if (param_1.field_0xec) != 0x0 {
         u_var8 = i_var5 + 0xec;
-        h_icon = ctx.s_tile2_bmp_1050_1538;
+        h_icon = ctx.s_tile2_bmp_1050_1538 as HICON16;
         DestroyMenu16(0x1000);
     }
-    u_var7 = i_var5 + 0xc2;
+    u_var7 = param_1.field_0xc2;
     DestroyIcon16(h_icon);
-    (i_var5 + 0xc2) = 0x0;
+    (param_1.field_0xc2) = 0x0;
     pu_var1 = i_var5 + 0xe0;
     u_var2 = i_var5 + 0xe2;
-    if ((u_var2 | pu_var1) != 0x0) {
+    if (u_var2 | pu_var1) != 0x0 {
         ppc_var4 = *pu_var1;
         (**ppc_var4)(
             ctx.s_tile2_bmp_1050_1538,
@@ -71,11 +71,11 @@ pub fn cleanup_ui_op_1008_0618(
             pa_var3,
         );
     }
-    pass1_1008_57c4((param_1 & 0xffff0000 | (i_var5 + 0xd2)));
-    *param_1 = 0x380a;
-    (i_var5 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (i_var5 + 0x2) = 0x1008;
+    pass1_1008_57c4((param_1 & 0xffff0000 | (param_1.field_0xd2)));
+    param_1.field_0x0 = 0x380a;
+    (param_1.field_0x2) = 0x1008;
+    param_1.field_0x0 = 0x389a;
+    (param_1.field_0x2) = 0x1008;
     return;
 }
 
@@ -415,7 +415,7 @@ pub fn cleanup_ui_op_1020_1038(ctx: &mut AppContext, param_1: u32, unaff_CS: HIC
     let ppc_var3: u32;
     let i_var4: i16;
     let u_var5: u16;
-    // HICON16 unaff_CS;
+    // let unaff_CS: HICON16;
     let u_var6: u16;
 
    // u_var5 = (param_1 >> 0x10);

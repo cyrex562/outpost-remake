@@ -1,6 +1,6 @@
 use crate::cleanup::clenaup_win_ui_1018_4d22;
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{Struct11, Struct13, Struct18, U32Ptr, Struct79, Struct_1008_09ba, Struct_1008_0a3c};
+use crate::defines::{Struct11, Struct13, Struct18, U32Ptr, Struct79, Struct_1008_09ba, Struct_1008_0a3c, StructB};
 use crate::draw::draw_1008::draw_op_1008_8288;
 use crate::file::file_1008::{close_file_1008_6dd0, file_fn_1008_6e02};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_24cd};
@@ -346,7 +346,7 @@ pub fn post_msg_1008_2d22(param_1: u32) {
 }
 
 
-pub fn cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, HINSTANCE16 in_hinstance,
+pub fn cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, in_hinstance: HINSTANCE16,
 )
 
 {
@@ -411,7 +411,7 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 * * param_1, param_2: u16) {
     let HStack274: HCURSOR16;
     let HStack272: HCURSOR16;
     let uStack270: u32;
-    Ulet
+    let
     UStack266: i32;
     let uStack262: u32;
     local_102: u8[0x100];
@@ -654,7 +654,7 @@ pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: u16) {
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn set_sys_color_1008_357e(param_1: u32, param_2: i16, in_index_3: i16, param_4: u16) {
+pub fn set_sys_color_1008_357e(param_1: &mut StructB, param_2: i16, in_index_3: i16, param_4: u16) {
     let uVar1: u16;
     COLORREF
     colorref_var2;
@@ -1115,7 +1115,7 @@ pub fn cleanup_palette_1008_56e2(param_1: i32, param_2: HDC16) -> bool
 }
 
 
-pub fn win_1008_5c5c(WNDCLASS16 *param_1, param_2: u16, param_3: u16, param_4: u32,
+pub fn win_1008_5c5c(param_1: &WNDCLASS16, param_2: u16, param_3: u16, param_4: u32,
                      param_5: u16)
 
 {
@@ -1127,7 +1127,7 @@ pub fn win_1008_5c5c(WNDCLASS16 *param_1, param_2: u16, param_3: u16, param_4: u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_1008_5c7c(param_1: u32, param_2: u32, WNDCLASS16 *param_3, param_4: u16,
+pub fn win_1008_5c7c(param_1: u32, param_2: u32, param_3: &WNDCLASS16, param_4: u16,
                      param_5: u16)
 
 {
@@ -1138,7 +1138,7 @@ pub fn win_1008_5c7c(param_1: u32, param_2: u32, WNDCLASS16 *param_3, param_4: u
 
 
 pub fn win_1008_5c9e(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16,
-                     WNDCLASS16 *param_5)
+                     param_5: &WNDCLASS16)
 
 {
     win_1008_5c7c(param_1, *param_2, param_5, param_3, param_4);
@@ -1146,7 +1146,7 @@ pub fn win_1008_5c9e(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16
 }
 
 
-pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, WNDCLASS16 *in_wnd_class) {
+pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WNDCLASS16) {
     let uVar1: u32;
     let iVar2: i16;
     let iVar3: i16;
@@ -1223,7 +1223,7 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, WNDCLASS16 *in_wn
 }
 
 
-pub fn create_window_1008_5e7e(u16 in_stock_obj_id, WNDCLASS16 *in_wnd_class) -> HWND16 {
+pub fn create_window_1008_5e7e(u16 in_stock_obj_id, in_wnd_class: &WNDCLASS16) -> HWND16 {
     let puVar1: u32;
     let puVar2: u32;
     let BVar3: bool;
@@ -1286,10 +1286,10 @@ pub fn create_window_1008_5e7e(u16 in_stock_obj_id, WNDCLASS16 *in_wnd_class) ->
 
 LRESULT
 make_def_win_proc_1008_5f44
-(param_1: u16,WPARAM16 in_wparam_2,LPARAM param_3,in_hwnd_4: HWND16)
+(param_1: u16,in_wparam_2: WPARAM16,param_3: LPARAM,in_hwnd_4: HWND16)
 
 {
-let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; LRESULT LVar2; let puVar3: * mut u16;
+let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; let LVar2: LRESULT; let puVar3: * mut u16;
 
 if (param_3._2_2_ == 0x2) {
 WVar1 = GetWindowWord16(in_hwnd_4, 0x0); mci_send_command_1008_5cb6(ctx.PTR__LOOP_1050_02a0, WVar1, s_tile2_bmp_1050_1538);
@@ -1607,7 +1607,7 @@ pub fn begin_end_paint_1008_97c8(param_1: HWND16) {
 
 u32
 unk_win_op_1008_97f2
-(param_1: * mut u32,param_2: & mut i16,WPARAM16 param_3,param_4: * mut u8,param_5: u16,
+(param_1: * mut u32,param_2: & mut i16,param_3: WPARAM16,param_4: * mut u8,param_5: u16,
 param_6: HWND16)
 
 {
@@ -1783,11 +1783,11 @@ pub fn get_stock_obj_1008_9c56(param_1: i16) {
 
 LRESULT
 make_def_wnd_proc_1008_9ce6
-(param_1: u16,param_2: u16,u16 in_msg_3,WPARAM16 param_4,LPARAM param_5,
+(param_1: u16,param_2: u16,u16 in_msg_3,param_4: WPARAM16,param_5: LPARAM,
 in_hwnd_5: HWND16)
 
 {
-LRESULT LVar1;
+let LVar1: LRESULT;
 
 LVar1 = DefWindowProc16(in_hwnd_5, in_msg_3, param_4, param_5); return LVar1;
 }
@@ -2189,7 +2189,7 @@ pub fn pass1_1008_a9ec(param_1: u32) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_aa28(param_1: u32, param_2: u16, WNDCLASS16 *param_3) {
+pub fn pass1_1008_aa28(param_1: u32, param_2: u16, param_3: &WNDCLASS16) {
     let ppcVar1: u32;
     let uVar2: u32;
     let extraout_DX: u16;

@@ -7,7 +7,7 @@ LRESULT  send_dlg_item_msg_1038_7eac(param_1: u32)
   let unaff_SS: u16;
   let puVar1: *mut u16;
   let mut pcVar2: String; 
-  LRESULT LVar3;
+  let LVar3: LRESULT;
   
   puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x30,unaff_SS,in_DX,unaff_DI);
   pcVar2 = pass1_1010_375e(puVar1);
@@ -67,7 +67,7 @@ pub fn send_dlg_item_msg_1038_7fae(param_1: u32)
   let iVar1: i16;
   let uVar2: u16;
   let unaff_SS: u16;
-  LRESULT LVar3;
+  let LVar3: LRESULT;
   
  // uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
@@ -128,7 +128,7 @@ send_dlg_item_msg_1038_8164
           (param_1: u16,param_2: u16,param_3: *mut u8,param_4: u16,param_5: HWND16)
 
 {
-  LRESULT LVar1;
+  let LVar1: LRESULT;
   
   *param_3 = '\0';
   LVar1 = SendDlgItemMessage16(param_5,0x0,0x0,0x0,CONCAT22(param_4,0x409));
@@ -277,7 +277,7 @@ pub fn send_dlg_item_msg_1038_844a(param_1: u32,param_2: HWND16,param_3: u16) ->
   let BVar1: bool;
   let uVar2: u16;
   let uVar3: u16;
-  LRESULT LVar4;
+  let LVar4: LRESULT;
   local_108: u8 [0x102];
   let uStack6: u32;
   
@@ -330,7 +330,7 @@ pub fn send_dlg_item_msg_1038_8618(param_1: u32,param_2: u16) -> u16
   let uVar4: u16;
   let uVar5: u16;
   let hwnd: HWND16;
-  LRESULT LVar6;
+  let LVar6: LRESULT;
   let uVar7: u32;
   let uVar8: u32;
   let local_106: [u8;100];
@@ -393,7 +393,7 @@ pub fn send_dlg_item_msg_1038_87b2(param_1: u32,param_2: u16,param_3: u16) -> u1
   let uVar2: u16;
   let in_DX: u16;
   let uVar3: u32;
-  LRESULT LVar4;
+  let LVar4: LRESULT;
   let uVar5: u16;
   let local_102: [u8;100];
   
@@ -479,8 +479,8 @@ pub fn send_dlg_item_msg_1038_8b58(param_1: u32,param_2: u16)
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;
-  ulet in_AF: u8;
-  LRESULT LVar7;
+  let in_AF: u8;
+  let LVar7: LRESULT;
   let local_106: [u8;100];
   let puStack6: *mut u16;
   
@@ -511,9 +511,9 @@ pub fn send_dlg_item_msg_1038_8d22(param_1: u32,param_2: HWND16,param_3: u16)
 {
   let unaff_DI: u16;
   let in_AF: u8;
-  LRESULT LVar1;
+  let LVar1: LRESULT;
   let local_106: [u8;100];
-  WPARAM16 WStack6;
+  WStack6: WPARAM16;
   let iStack4: i16;
   
   LVar1 = SendDlgItemMessage16(param_2,0x0,0x0,0x0,0x185b0409);
@@ -584,7 +584,7 @@ pub fn send_dlg_item_msg_1038_8f74(param_1: u32,param_2: HWND16,param_3: *mut u1
   let iVar1: i16;
   let uVar2: u16;
   let lVar3: i32;
-  LRESULT LVar4;
+  let LVar4: LRESULT;
   let enable: bool;
   local_50c: u8 [0x100];
   let local_40c: [u8;8];
@@ -632,7 +632,7 @@ pub fn win_dlg_op_1038_9294(param_1: &mut Struct1,param_2: u16)
   let uVar2: u16;
   let in_DX: u16;
   let uVar3: u16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let local_6: bool;
   let local_4: bool;
   
@@ -1153,7 +1153,7 @@ pub fn win_ui_op_1038_a4ee(param_1: &mut Struct1,param_2: u16)
   let uVar1: u32;
   let in_DX: *mut u8;
   let unaff_DI: i16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar2: *mut u16;
   
   dialog_ui_fn_1040_78e2(param_1,&ctx.PTR_LOOP_1050_1040);
@@ -1209,9 +1209,9 @@ pub fn win_ui_op_1038_a6f4(param_1: &mut Struct1)
   let in_DX: *mut u8;
   let uVar3: u16;
   let unaff_DI: i16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar4: *mut u16;
-  LRESULT LVar5;
+  let LVar5: LRESULT;
   
   dialog_ui_fn_1040_78e2(param_1,&ctx.PTR_LOOP_1050_1040);
   puVar4 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,in_DX,unaff_DI);
@@ -1295,8 +1295,8 @@ pub fn win_ui_op_1038_a972(param_1: &mut Struct1)
 {
   let BVar1: bool;
   let uVar2: u16;
-  WNDCLASS16 *unaff_SS;
-  LRESULT LVar3;
+  unaff_SS: &WNDCLASS16;
+  let LVar3: LRESULT;
   
   dialog_ui_fn_1040_78e2(param_1,&ctx.PTR_LOOP_1050_1040);
   SendDlgItemMessage16(&ctx.PTR_LOOP_1050_1040,0x0,0x0,0x1,0x1160401);
@@ -1321,7 +1321,7 @@ pub fn win_sys_op_1038_a9fa(param_1: i32,param_2: i16)
   let unaff_DI: i16;
   let unaff_SS: u16;
   let puVar1: *mut u16;
-  LRESULT LVar2;
+  let LVar2: LRESULT;
   
   if (param_2 != 0x0) {
     puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,in_DX,unaff_DI);
@@ -1360,7 +1360,7 @@ pub fn win_sys_op_1038_a9fa(param_1: i32,param_2: i16)
 
 pub fn set_win_pos_1038_abdc(param_1: HWND16)
 {
-  RECT16 local_12 [0x2];
+  let local_12: [RECT16;0x2];
   let local_a: RECT16;
   let iStack6: i16;
   let iStack4: i16;
@@ -1383,13 +1383,13 @@ pub fn unk_win_ui_op_1038_ac38(param_1: i16,param_2: u16)
   let uVar1: u16;
   let iVar2: i16;
   let IVar3: i16;
-  Ulet uVar3: i32;
+  let uVar3: i32;
   let extraout_DX: u16;
   let hwnd: HWND16;
   let hdc: HWND16;
   let uVar5: u32;
-  COLORREF color;
-  Ulet uVar4: u8;
+  let color: COLORREF;
+  let uVar4: u8;
   let iVar1: &mut Struct46;
   
   hwnd = ctx.s_tile2_bmp_1050_1538;
@@ -1582,7 +1582,7 @@ pub fn win_ui_op_1038_b81c(param_1: &mut Struct1)
 
 u32 
 win_ui_op_1038_b922(param_1: *mut u32,param_2: u32,param_3: u16,param_4: u16,
-                   param_5: HWND16,WNDCLASS16 *param_6)
+                   param_5: HWND16,param_6: &WNDCLASS16)
 
 {
   let piVar1: *mut i16;
@@ -1595,12 +1595,12 @@ win_ui_op_1038_b922(param_1: *mut u32,param_2: u32,param_3: u16,param_4: u16,
   let unaff_DI: i16;
   let uVar8: u16;
   let uVar9: u16;
-  LRESULT LVar10;
+  let LVar10: LRESULT;
   let mut pcVar11: String; 
   let paVar12: &mut Struct57;
   let uVar13: u32;
   let mut pCVar14: String; 
-  WNDCLASS16 *pWVar15;
+  pWVar15: &WNDCLASS16;
   let puVar16: *mut u8;
   let uStack1132: u16;
   local_464: u8 [0x50];
@@ -1759,10 +1759,10 @@ win_ui_op_1038_b922(param_1: *mut u32,param_2: u32,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_cursor_op_1038_bc30(param_1: u32,HINSTANCE16 param_2,param_3: u16)
+pub fn win_ui_cursor_op_1038_bc30(param_1: u32,param_2: HINSTANCE16,param_3: u16)
 {
   let uVar1: u32;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let local_112: u16;
   let uStack272: u16;
   let HStack6: HCURSOR16;
@@ -1790,14 +1790,14 @@ pub fn win_dlg_op_1038_bea4(param_1: u32,param_2: *mut u16)
   let in_DX: *mut u8;
   let puVar3: *mut u8;
   let uVar4: u16;
-  WPARAM16 wparam;
+  wparam: WPARAM16;
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;
   let puVar7: *mut u16;
   let uVar8: u32;
   let mut pcVar9: String; 
-  LRESULT LVar10;
+  let LVar10: LRESULT;
   let local_116: u32;
   let local_112: u32;
   local_10e: u8 [0x82];
@@ -1869,7 +1869,7 @@ msg_box_op_1038_c07a
   let uVar2: u16;
   let unaff_CS: u16;
   let hwnd: HWND16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   ulocal_70c: u8 [0x200];
   local_50c: u8 [0x100];
   local_40c: u8 [0x402];
@@ -1936,9 +1936,9 @@ msg_box_op_1038_c07a
 LRESULT  send_msg_1038_c228(param_1: u32,param_2: HWND16)
 
 {
-  WPARAM16 wparam;
-  LRESULT LVar1;
-  LRESULT LVar2;
+  wparam: WPARAM16;
+  let LVar1: LRESULT;
+  let LVar2: LRESULT;
   
  // wparam = (param_1 >> 0x10);
   LVar1 = SendMessage16(param_2,0x0,0x0,0x4070000);
@@ -2010,7 +2010,7 @@ pub fn send_msg_1038_c374(param_1: u32,param_2: *mut u32,param_3: u16,param_4: H
   let extraout_DX_00: u16;
   let uVar5: u16;
   let uVar6: u16;
-  LRESULT LVar7;
+  let LVar7: LRESULT;
   let paVar8: &mut Struct18;
   let uVar9: u16;
   let uStack10: u32;
@@ -2103,7 +2103,7 @@ message_box_op_1038_c672
 {
   let uVar1: u32;
   let hwnd: HWND16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar2: u16;
   local_404: u8 [0x402];
   
@@ -2284,7 +2284,7 @@ pub fn show_win_1038_cb5c(param_1: &mut Struct1)
   let puVar3: *mut u8;
   let uVar4: u16;
   let uVar5: u16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar6: *mut u16;
   let puVar7: *mut u16;
   let uStack10: i16;
@@ -2387,10 +2387,10 @@ pub fn win_ui_op_1038_d2a2(param_1: &mut Struct1)
   let uVar5: u16;
   let hwnd: HWND16;
   let hwnd_00: HWND16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let mut pcVar6: String; 
-  LRESULT LVar7;
-  WPARAM16 w_param;
+  let LVar7: LRESULT;
+  w_param: WPARAM16;
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u16;
@@ -2477,12 +2477,12 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8,param_2: u16,param_3: u16,param_4: i3
   let unaff_DI: i16;
   let hwnd: HWND16;
   let hwnd_00: HWND16;
-  WNDCLASS16 *unaff_SS;
+  unaff_SS: &WNDCLASS16;
   let puVar5: *mut u16;
-  LRESULT LVar6;
+  let LVar6: LRESULT;
   let mut pcVar7: String; 
   let in_stack_00000005: u8;
-  WPARAM16 WVar8;
+  WVar8: WPARAM16;
   let uVar9: u16;
   let uVar10: u16;
   let uVar11: u16;
@@ -2647,7 +2647,7 @@ pub fn post_win_msg_1038_d840(param_1: &mut Struct70,param_2: u16,param_3: HWND1
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
+pub fn destroy_crsor_1038_d8b2(param_1: i16,param_2: HINSTANCE16,param_3: u16)
 {
   let piVar1: *mut i16;
   let uVar2: u32;
@@ -2763,7 +2763,7 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16,HINSTANCE16 param_2,param_3: u16)
 
 pub fn
 unk_win_sys_op_1038_da68
-          (param_1: i16,param_2: u16,param_3: u16,param_4: u32,WNDCLASS16 *param_5,
+          (param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: &WNDCLASS16,
           param_6: *mut u8)
 
 {
@@ -3239,7 +3239,7 @@ pub fn win_ui_op_1038_ea18(param_1: &mut Struct1)
 {
   let IVar1: i16;
   let BVar2: bool;
-  RECT16 local_10 [0x2];
+  let local_10: [RECT16;0x2];
   let HStack8: HWND16;
   let uStack6: u32;
   
@@ -3258,9 +3258,9 @@ pub fn win_ui_op_1038_ea18(param_1: &mut Struct1)
 
 
 
-pub fn win_ui_op_1038_eaa2(param_1: u32,param_2: i16,param_3: HWND16,WPARAM16 param_4)
+pub fn win_ui_op_1038_eaa2(param_1: u32,param_2: i16,param_3: HWND16,param_4: WPARAM16)
 {
-  LRESULT LVar1;
+  let LVar1: LRESULT;
   let local_54: [u8;52];
   
   if (param_2 != 0x0) {
@@ -3442,8 +3442,8 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1,param_2: *mut u8,param_3: HWND1
   let uVar5: u16;
   let unaff_DI: i16;
   let uVar6: u16;
-  WNDCLASS16 *unaff_SS;
-  LRESULT LVar7;
+  unaff_SS: &WNDCLASS16;
+  let LVar7: LRESULT;
   let uVar8: u32;
   let local_24: u16;
   let uStack34: u16;
@@ -3530,7 +3530,7 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1,param_2: *mut u8,param_3: HWND1
 
 pub fn
 win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: u16
-                   ,WNDCLASS16 *param_6)
+                   ,param_6: &WNDCLASS16)
 
 {
   let uVar1: u16;
@@ -3541,15 +3541,15 @@ win_ui_op_1040_0170(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
   let extraout_DX: *mut u8;
   let unaff_DI: i16;
   let uVar5: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let mut pcVar6: String; 
-  LRESULT LVar7;
-  WPARAM16 w_param;
+  let LVar7: LRESULT;
+  w_param: WPARAM16;
   let uVar8: u16;
   HCURSOR16 *pHVar9;
-  WNDCLASS16 *pWVar10;
+  pWVar10: &WNDCLASS16;
   HCURSOR16 *pHVar11;
-  WNDCLASS16 *pWVar12;
+  pWVar12: &WNDCLASS16;
   u32 *local_12a [0x43];
   let puStack30: *mut u16;
   let uStack26: u16;
@@ -3715,8 +3715,8 @@ LRESULT  win_ui_op_1040_0558(param_1: u32,param_2: i16,param_3: HWND16)
   let iVar2: i16;
   let unaff_SS: u16;
   let mut pcVar3: String; 
-  LRESULT LVar4;
-  WPARAM16 w_param;
+  let LVar4: LRESULT;
+  w_param: WPARAM16;
   let uVar5: u16;
   let uVar6: u16;
   

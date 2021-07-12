@@ -6345,7 +6345,7 @@ astruct_100 *  pass1_1028_74ae(param_1: &mut Struct100)
 
 {
   let unaff_SS: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   
   struct_op_1028_d1dc(unaff_SS,in_AF,param_1,0x1387);
   param_1.field_0x0 = 0x819a;
@@ -8759,7 +8759,7 @@ pub fn pass1_1028_9ca0(param_1: i16,param_2: u16,param_3: u8) -> u16
 pub fn pass1_1028_9cca(param_1: i16,param_2: u16) -> u16
 
 {
-  ulet in_AF: u8;
+  let in_AF: u8;
   
   pass1_1038_28d8(CONCAT22(param_2,param_1 + -0x108),param_2,in_AF);
   fn_ptr_1030_835a(ctx.PTR__LOOP_1050_5748,CONCAT22(param_2,param_1 + -0x108));
@@ -8846,7 +8846,7 @@ pub fn pass1_1028_9d10(param_1: i16,param_2: i16,param_3: u16,param_4: u8) -> u1
 pub fn pass1_1028_9d3a(param_1: u16,param_2: u16) -> u16
 
 {
-  ulet in_AF: u8;
+  let in_AF: u8;
   
   pass1_1028_9ec6(CONCAT22(param_2,param_1 - 0x220),param_2,in_AF);
   fn_ptr_1030_835a(ctx.PTR__LOOP_1050_5748,CONCAT22(param_2,param_1 - 0x220));
@@ -8876,7 +8876,7 @@ pub fn pass1_1028_9d48(param_1: i16,param_2: u16,param_3: u8) -> u16
 pub fn pass1_1028_9d56(param_1: i16,param_2: u16) -> u16
 
 {
-  ulet in_AF: u8;
+  let in_AF: u8;
   
   pass1_1028_81aa(CONCAT22(param_2,param_1 + -0x220),param_2,in_AF);
   fn_ptr_1030_835a(ctx.PTR__LOOP_1050_5748,CONCAT22(param_2,param_1 + -0x220));
@@ -13713,7 +13713,7 @@ pass1_1028_edc4(param_1: u32,param_2: u16,param_3: *mut u16,param_4: i32,param_5
   let uVar1: u16;
   let uVar2: u32;
   let puVar3: *mut u8;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let local_1a: [u8;4];
   let uStack22: u32;
   let uStack18: u32;

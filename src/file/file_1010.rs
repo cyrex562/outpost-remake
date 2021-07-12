@@ -215,7 +215,7 @@ unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16)
   let iVar3: &mut Struct45;
   let iVar2: &mut Struct44;
   let iVar4: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let uVar5: u16;
   let uVar6: u16;
   let local_2e: u32;

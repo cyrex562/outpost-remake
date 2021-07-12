@@ -1,30 +1,30 @@
 pub type HANDLE16 = u16;
-// typedef HANDLE16 HBRUSH16;
+// typedef let HBRUSH16: HANDLE16;
 pub type HBRUSH16 = HANDLE16;
-// typedef HANDLE16 HMENU16;
+// typedef let HMENU16: HANDLE16;
 pub type HMENU16 = HANDLE16;
 // typedef ushort WPARAM16;
 pub type WPARAM16 = u16;
-// typedef HANDLE16 HWND16;
+// typedef let HWND16: HANDLE16;
 pub type HWND16 = HANDLE16;
-// typedef HANDLE16 HMODULE16;
+// typedef let HMODULE16: HANDLE16;
 pub type HMODULE16 = HANDLE16;
-// typedef HANDLE16 HACCEL16;
+// typedef let HACCEL16: HANDLE16;
 pub type HACCEL16 = HANDLE16;
-// typedef HANDLE16 HTASK16;
+// typedef let HTASK16: HANDLE16;
 pub type HTASK16 = HANDLE16;
 // typedef uint32_t COLORREF;
 pub type COLORREF = u32;
-// typedef HANDLE16 HDC16;
+// typedef let HDC16: HANDLE16;
 pub type HDC16 = HANDLE16;
-// typedef HANDLE16 HFILE16;
+// typedef let HFILE16: HANDLE16;
 pub type HFILE16 = HANDLE16;
-// typedef HANDLE16 HGLOBAL16;
+// typedef let HGLOBAL16: HANDLE16;
 pub type HGLOBAL16 = HANDLE16;
 // typedef i8: u8;
-// typedef HANDLE16 HPEN16;
+// typedef let HPEN16: HANDLE16;
 pub type HPEN16 = HANDLE16;
-// typedef HANDLE16 HINSTANCE16;
+// typedef let HINSTANCE16: HANDLE16;
 pub type HINSTANCE16 = HANDLE16;
 
 pub type HICON16 = HANDLE16;
@@ -230,9 +230,9 @@ pub struct WNDCLASS16 {
     pub cb_cls_extra: i16,
     // cb_wnd_extra: i16;
     pub cb_wnd_extra: i16,
-    // HANDLE16 h_instance;
+    // let h_instance: HANDLE16;
     pub h_instance: HANDLE16,
-    // HICON16 h_icon;
+    // let h_icon: HICON16;
     pub h_icon: HICON16,
     // let h_cursor: HCURSOR16;
     pub h_cursor: HCURSOR16,
@@ -257,7 +257,7 @@ struct TwoWords {
 
 // typedef ushort BOOL16;
 
-// typedef HANDLE16 HGDIOBJ16;
+// typedef let HGDIOBJ16: HANDLE16;
 
 // typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
 
@@ -279,9 +279,9 @@ pub struct MSG16 {
     pub hwnd: HWND16,
     // Umessage: i16;
     pub message: u16,
-    // WPARAM16 wparam;
+    // wparam: WPARAM16;
     pub wparam: WPARAM16,
-    // LPARAM lparam;
+    // lparam: LPARAM;
     pub lparam: LPARAM,
     // DWORD time;
     pub time: u32,
@@ -349,9 +349,9 @@ pub struct BITMAPINFO {
 
 // typedef ushort u16;
 
-// typedef HANDLE16 HPALETTE16;
+// typedef let HPALETTE16: HANDLE16;
 
-// typedef HANDLE16 HRSRC16;
+// typedef let HRSRC16: HANDLE16;
 
 // typedef ulong u32;
 
@@ -389,7 +389,7 @@ pub struct tagMSG {
     pub message: libc::c_uint,
     // WPARAM wParam;
     pub wParam: WPARAM16,
-    // LPARAM lParam;
+    // lParam: LPARAM;
     pub lParam: LPARAM,
     // DWORD time;
     pub time: u32,

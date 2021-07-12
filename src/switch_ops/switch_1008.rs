@@ -96,15 +96,15 @@ mixed_win_op_1008_0c60
 
 {
   let ppcVar1: u32;
-  HINSTANCE16 HVar2;
+  let HVar2: HINSTANCE16;
   let BVar3: bool;
   let puVar4: *mut u8;
   let extraout_DX: *mut u8;
   let struct_var5: &mut Struct72;
   let unaff_DI: i16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar5: u32;
-  LRESULT LVar6;
+  let LVar6: LRESULT;
   let mut pcVar7: String; 
   let puVar8: *mut u16;
   let uVar9: u16;
@@ -545,7 +545,7 @@ pub fn  switchD_1008:1091::caseD_a7()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -560,7 +560,7 @@ pub fn  switchD_1008:1091::caseD_aa()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -575,7 +575,7 @@ pub fn  switchD_1008:1091::caseD_ac()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -590,7 +590,7 @@ pub fn  switchD_1008:1091::caseD_ad()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -605,7 +605,7 @@ pub fn  switchD_1008:1091::caseD_ae()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -620,7 +620,7 @@ pub fn  switchD_1008:1091::caseD_b1()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -635,7 +635,7 @@ pub fn  switchD_1008:1091::caseD_b3()
 {
   let uVar1: u32;
   let unaff_BP: i16;
-  HINSTANCE16 unaff_CS;
+  let unaff_CS: HINSTANCE16;
   let unaff_SS: u16;
   
   uVar1 = (unaff_BP + 0x6);
@@ -646,7 +646,7 @@ pub fn  switchD_1008:1091::caseD_b3()
 
 pub fn
 big_switch_1008_15d4
-          (param_1: u16,param_2: u16,WNDCLASS16 *param_3,param_4: u32,param_5: i16)
+          (param_1: u16,param_2: u16,param_3: &WNDCLASS16,param_4: u32,param_5: i16)
 
 {
   let piVar1: *mut i16;
@@ -2134,7 +2134,7 @@ i16  win_ui_op_1008_2b54(param_1: u16,param_2: *mut u8,param_3: u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,HINSTANCE16 in_h_instance_4)
+pub fn ui_op_1008_2c4e(param_1: i16,param_2: u16,param_3: i16,in_h_instance_4: HINSTANCE16)
 {
   let piVar1: *mut i16;
   let ppcVar2: u32;

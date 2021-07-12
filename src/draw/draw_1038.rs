@@ -114,11 +114,11 @@ draw_op_1038_9dcc(in_struct_1: &mut Struct10,param_2: i16,param_3: u16,COLORREF 
   let uVar3: u16;
   let iVar4: i16;
   let local_brush_handle: HBRUSH16;
-  Ulet uVar5: i32;
+  let uVar5: i32;
   let extraout_DX: u16;
   let local_struct_5: &mut Struct10;
   let var5: &mut Struct10;
-  COLORREF hdc;
+  let hdc: COLORREF;
   let uVar6: u32;
   let uStack14: u16;
   

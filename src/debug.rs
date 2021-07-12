@@ -15,7 +15,7 @@ pub fn debug_print_1008_6048(
 ) {
     // let in_DX: u16;
     // let unaff_ES: u16;
-    // ulet in_AF: u8;
+    // let in_AF: u8;
     let u_stack266: u16;
     let mut p_c_stack6: String;
     let args: *mut u16;

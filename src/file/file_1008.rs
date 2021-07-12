@@ -853,7 +853,7 @@ pub fn read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16,
 {
     let bVar1: bool;
     let uVar2: u16;
-    ulet
+    let
     in_AF: u8;
     let lVar3: i32;
     let in_stack_0000fbd2: u16;

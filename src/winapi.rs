@@ -47,7 +47,7 @@ pub fn LockSegment16(handle: HGLOBAL16) -> HGLOBAL16 {
 pub fn WaitEvent16(task: HTASK16) -> bool {
     unimplemented!()
 }
-// GetModuleFileName16: i16(HINSTANCE16 h_module, LPSTR lp_file_name, n_size: i16)
+// GetModuleFileName16: i16(h_module: HINSTANCE16, LPSTR lp_file_name, n_size: i16)
 pub fn GetModuleFileName16(h_module: HINSTANCE16, lp_file_name: &String, n_size: i16) -> i16 {
     unimplemented!()
 }
@@ -147,7 +147,7 @@ pub fn GetDOSEnvironment16() -> SEGPTR {
 pub fn FatalAppExit16(action: u16, reason: &str) {
     unimplemented!()
 }
-// HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, Un_cmd_show: i16)
+// WinExec16: HINSTANCE16(LPCSTR lp_cmd_line, Un_cmd_show: i16)
 pub fn WinExec16(lp_cmd_line: &String, n_cmd_show: u16) -> HINSTANCE16 {
     unimplemented!()
 }
@@ -322,7 +322,7 @@ pub fn MoveToEx16(hdc: HDC16, x: i16, y: i16, pt: &POINT16) -> bool {
 pub fn MessageBox16(hwnd: HWND16, text: &String, title: &String, box_type: u16) -> i16 {
     unimplemented!()
 }
-// InitApp16: i16(HINSTANCE16 h_instance)
+// InitApp16: i16(h_instance: HINSTANCE16)
 pub fn InitApp16(h_inst: HINSTANCE16) -> i16 {
     unimplemented!()
 }
@@ -410,7 +410,7 @@ pub fn BeginPaint16(hwnd: HWND16, lps: &mut PAINTSTRUCT16) -> HDC16 {
 pub fn EndPaint16(hwnd: HWND16, lps: &mut PAINTSTRUCT16) -> bool {
     unimplemented!()
 }
-// HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
+// HWND16 CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, instance: HINSTANCE16, LPVOID data)
 pub fn CreateWindow16(
     class_name: &String,
     window_name: &String,
@@ -440,7 +440,7 @@ pub fn IsWindow16(hwnd: HWND16) -> bool {
 }
 // BOOL16 DestroyWindow16(HWND16 hwnd)
 pub fn DestroyWindow16(hwnd: HWND16) -> bool {}
-// BOOL16 EnumChildWindows1(HWND16 parent, LPVOID func, LPARAM lparam)
+// BOOL16 EnumChildWindows1(HWND16 parent, LPVOID func, lparam: LPARAM)
 pub fn EnumChildWindows1(parent: HWND16, func: fn(), lparam: LPARAM) -> bool {
     unimplemented!()
 }
@@ -492,7 +492,7 @@ pub fn DrawIcon16(hdc: HDC16, x: i16, y: i16, h_icon: HICON16) -> bool {
 pub fn DrawText16(hdc: HDC16, text: &String, count: i16, rect: &RECT16, flags: u16) -> i16 {
     unimplemented!()
 }
-// HWND16 CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template, HWND16 owner, LPVOID dlg_proc)
+// HWND16 CreateDialog16(hinst: HINSTANCE16, LPCSTR dlg_template, HWND16 owner, LPVOID dlg_proc)
 pub fn CreateDialog16(
     h_inst: HINSTANCE16,
     dlg_template: &String,
@@ -533,7 +533,7 @@ pub fn CheckDlgButton16(hwnd: HWND16, id: i16, check: u16) -> bool {
 pub fn IsDlgButtonChecked(hwnd: HWND16, id: u16) -> u16 {
     unimplemented!()
 }
-// LRESULT SendDlgItemMessage16(HWND16 hwnd, id: i16, Umsg: i16, WPARAM16 w_param, LPARAM l_param)
+// LRESULT SendDlgItemMessage16(HWND16 hwnd, id: i16, Umsg: i16, w_param: WPARAM16, l_param: LPARAM)
 pub fn SendDlgItemMessage16(
     hwnd: HWND16,
     id: i16,
@@ -551,7 +551,7 @@ pub fn MapDialogRect16(hwnd: HWND16, rect: &RECT16) {
 pub fn MessageBeep16(i: u16) {
     unimplemented!()
 }
-// LRESULT DefWindowProc16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+// LRESULT DefWindowProc16(HWND16 hwnd, Umsg: i16, wparam: WPARAM16, lparam: LPARAM)
 pub fn DefWindowProc16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> LRESULT {
     unimplemented!()
 }
@@ -559,11 +559,11 @@ pub fn DefWindowProc16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM)
 pub fn GetMessage16(msg: &mut MSG16, hwnd: HWND16, first: u16, last: u16) -> bool {
     unimplemented!()
 }
-// BOOL16 PostMessage16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+// BOOL16 PostMessage16(HWND16 hwnd, Umsg: i16, wparam: WPARAM16, lparam: LPARAM)
 pub fn PostMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> bool {
     unimplemented!()
 }
-// LRESULT SendMessage16(HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+// LRESULT SendMessage16(HWND16 hwnd, Umsg: i16, wparam: WPARAM16, lparam: LPARAM)
 pub fn SendMessage16(hwnd: HWND16, msg: u16, wparam: WPARAM16, lparam: LPARAM) -> LRESULT {
     unimplemented!()
 }
@@ -576,7 +576,7 @@ pub fn TranslateMessage16(msg: &mut MSG16) -> bool {
 pub fn DispatchMessage16(msg: &mut MSG16) -> usize {
     unimplemented!()
 }
-// LRESULT CallWindowProc16(LPVOID func, HWND16 hwnd, Umsg: i16, WPARAM16 wparam, LPARAM lparam)
+// LRESULT CallWindowProc16(LPVOID func, HWND16 hwnd, Umsg: i16, wparam: WPARAM16, lparam: LPARAM)
 pub fn CallWindowProc16(
     func: fn(),
     hwnd: HWND16,
@@ -614,7 +614,7 @@ pub fn GetWindowLong16(hwnd: HWND16, offset: i16) -> libc::c_long {
 pub fn SetWindowLong16(hwnd: HWND16, offset: i16, newval: libc::c_long) -> libc::c_long {
     unimplemented!()
 }
-// HMENU16 LoadMenu16(HINSTANCE16 instance, LPCSTR name)
+// HMENU16 LoadMenu16(instance: HINSTANCE16, LPCSTR name)
 pub fn LoadMenu16(instance: HINSTANCE16, name: &String) -> HMENU16 {
     unimplemented!()
 }
@@ -638,15 +638,15 @@ pub fn GetSubMenu16(h_menu: HMENU16, n_pos: i16) -> HMENU16 {
 pub fn WinHelp16(hwnd: HWND16, lp_help_file: &String, w_command: i16, dw_data: u32) -> bool {
     unimplemented!()
 }
-// HCURSOR16 LoadCursor16(HINSTANCE16 h_instance, LPCSTR name)
+// HCURSOR16 LoadCursor16(h_instance: HINSTANCE16, LPCSTR name)
 pub fn LoadCursor16(h_instance: HINSTANCE16, name: &String) -> HCURSOR16 {
     unimplemented!()
 }
-// HICON16 LoadIcon16(HINSTANCE16 h_instance, LPCSTR name)
+// HICON16 LoadIcon16(h_instance: HINSTANCE16, LPCSTR name)
 pub fn LoadIcon16(h_instance: HINSTANCE16, name: &String) -> HICON16 {
     unimplemented!()
 }
-// LoadString16: i16(HINSTANCE16 instance, Uresource_id: i16, LPSTR buffer, buf_len: i16)
+// LoadString16: i16(instance: HINSTANCE16, Uresource_id: i16, LPSTR buffer, buf_len: i16)
 pub fn LoadString16(
     instance: HINSTANCE16,
     resource_id: u16,
@@ -655,7 +655,7 @@ pub fn LoadString16(
 ) -> i16 {
     unimplemented!()
 }
-// HACCEL16 LoadAccelerators16(HINSTANCE16 instance, LPCSTR lp_table_name)
+// HACCEL16 LoadAccelerators16(instance: HINSTANCE16, LPCSTR lp_table_name)
 pub fn LoadAccelerators16(instance: HINSTANCE16, lp_table_name: &String) -> HACCEL16 {
     unimplemented!()
 }
@@ -675,7 +675,7 @@ pub fn GetSysColor16(index: i16) -> COLORREF {
 pub fn SetSysColors16(count: i16, list: &[i16], values: &[COLORREF]) {
     unimplemented!()
 }
-// BOOL16 GrayString16(HDC16 hdc, HBRUSH16 param_2, LPVOID gsprc, LPARAM lparam, cch: i16, x: i16, y: i16, cx: i16, cy: i16)
+// BOOL16 GrayString16(HDC16 hdc, HBRUSH16 param_2, LPVOID gsprc, lparam: LPARAM, cch: i16, x: i16, y: i16, cx: i16, cy: i16)
 pub fn GrayString16(
     hdc: HDC16,
     param_2: HBRUSH16,
@@ -733,7 +733,7 @@ pub fn GetWindowPlacement16(hwnd: HWND16, wp16: &WINDOWPLACEMENT16) -> bool {
 pub fn SetWindowPlacement16(hwnd: HWND16, wp16: &WINDOWPLACEMENT16) -> bool {
     unimplemented!()
 }
-// BOOL16 GetClassInfo16(HINSTANCE16 h_inst16, name: SEGPTR, WNDCLASS16 * wc)
+// BOOL16 GetClassInfo16(h_inst16: HINSTANCE16, name: SEGPTR, WNDCLASS16 * wc)
 pub fn GetClassInfo16(h_inst: HINSTANCE16, name: &String, wc: &WNDCLASS16) -> bool {
     unimplemented!()
 }
@@ -769,7 +769,7 @@ pub fn wsprintf16(buffer: &String, spec: &String, valist: *mut u16) -> i16 {
 pub fn wvsprintf16(buffer: &mut String, spec: &mut LPCSTR, args: *mut ushort) -> i16 {
     unimplemented!()
 }
-// HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data)
+// HWND16 CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR window_name, DWORD style, x: i16, y: i16, width: i16, height: i16, HWND16 parent, HMENU16 hmenu, instance: HINSTANCE16, LPVOID data)
 pub fn CreateWIndowEx16(
     ex_style: u32,
     class_name: &String,

@@ -339,7 +339,7 @@ pub fn send_msg_1010_7c9e(param_1: u32,param_2: i16,param_3: u16)
 
 pub fn
 msg_box_op_1010_8bb4
-          (param_1: u16,param_2: u16,param_3: u32,HINSTANCE16 param_4,param_5: u16)
+          (param_1: u16,param_2: u16,param_3: u32,param_4: HINSTANCE16,param_5: u16)
 
 {
   let mut pcVar1: String; 

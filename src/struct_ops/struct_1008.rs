@@ -48,9 +48,9 @@ pub fn struct_op_1008_0000(param_1: *mut u16)
 }
 
 
-pub fn set_struct_op_1008_0536(param_1: *mut u16,HINSTANCE16 param_2,param_3: u16)
+pub fn set_struct_op_1008_0536(param_1: *mut u16,param_2: HINSTANCE16,param_3: u16)
 {
-  HICON16 HVar1;
+  let HVar1: HICON16;
   let HVar2: HCURSOR16;
   let HVar3: HGDIOBJ16;
   let puVar4: *mut u8;

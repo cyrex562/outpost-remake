@@ -8384,7 +8384,7 @@ astruct_18 *  pass1_1020_07f4(param_1: &mut Struct18,param_2: u8)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1020_08b6(WNDCLASS16 *param_1,param_2: &mut Struct20,param_3: u16,param_4: i32)
+pub fn pass1_1020_08b6(param_1: &WNDCLASS16,param_2: &mut Struct20,param_3: u16,param_4: i32)
 {
   let iVar1: &mut Struct20;
   let uVar1: u16;

@@ -276,7 +276,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
   let puVar9: *mut u8;
   let iVar9: &mut Struct380;
   let uVar10: u16;
-  ulet in_AF: u8;
+  let in_AF: u8;
   let uVar11: u16;
   let uVar12: u16;
   let uStack1040: u32;

@@ -5,12 +5,12 @@ use crate::exit::exit_1000_25f2;
 use crate::win_struct::WNDCLASS16;
 use crate::sys_api::{dos3_call_1000_5174, mixed_dos3_call_1000_39f2, dos3_call_1000_514e, dos3_call_op_1000_35fe, dos3_op_1000_256b};
 use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
-use crate::mem_1000::{free_mem_1000_407a, mem_1000_167a, mem_op_1000_1dfa, mem_op_1000_1b9a, mem_op_1000_21b6, mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_1532, mem_1000_0670, mem_op_1000_0510, mem_op_1000_0838};
+use crate::mem_1000::{free_mem_1000_407a, mem_1000_167a, mem_op_1000_1dfa, mem_op_1000_1b9a, mem_op_1000_21b6, mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_1532, mem_1000_0670, mem_op_1000_0510, mem_op_1000_0838, mixed_mem_op_1000_3c51};
 use crate::global::AppContext;
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_2594, call_fn_ptr_1000_0dc6};
 use crate::misc::ret_op_1000_55ac;
 use crate::msg_box::{msg_box_op_1000_214c, msg_box_op_1000_1f24};
-use crate::defines::StructA;
+use crate::defines::{StructA, Struct20};
 
 // pub fn pass1_1000_010c
 
@@ -79,18 +79,21 @@ pub unsafe fn  pass1_1000_07ac(param_1: u16,param_2: i16,param_3: i16)
 }
 
 
-
-pub unsafe fn  pass1_1000_07fc(param_1: u16,param_2: u32) -> *mut astruct_99
+pub unsafe fn pass1_1000_07fc(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u32,
+    mut out: Option<&mut Struct99>)
 
 {
-  let paVar1: &mut Struct99;
-  
-  if ((param_2 + 0x14) != -0x4153) {
-    pass1_1000_1e61(param_1,0xa,0x0,0x0);
-    return 0x0;
-  }
-  paVar1 = mem_op_1000_0838(0x0,param_1);
-  return paVar1;
+    let pa_var1: &mut Struct99;
+
+    if (param_2 + 0x14) != -0x4153 {
+        pass1_1000_1e61(ctx, param_1, 0xa, 0x0, 0x0);
+        out = None;
+    }
+    pa_var1 = mem_op_1000_0838(ctx, 0x0, param_1);
+    out = Some(pa_var1);
 }
 
 pub unsafe fn  pass1_1000_093a(ctx: &mut AppContext, param_1: *mut i16,param_2: u16,param_3: u16) -> u16
@@ -4406,51 +4409,51 @@ pub fn pass1_1000_48a8(param_1: u32,param_2: u32,param_3: i16) -> u16
 
 
 
-pub fn pass1_1000_4906(param_1: &mut Struct20,WNDCLASS16 *in_wnd_class,param_3: u16) -> u16
+pub fn pass1_1000_4906(param_1: &mut Struct20,in_wnd_class: Option<&WNDCLASS16>,param_3: u16) -> u16
 
 {
-  let puVar1: *mut u16;
-  let uVar2: u8;
-  let uVar3: u16;
-  let uVar4: u16;
-  let uVar5: u16;
-  let uVar6: u16;
-  let puVar7: *mut u16;
-  let iVar8: i16;
+  let pu_var1: *mut u16;
+  let u_var2: u8;
+  let u_var3: u16;
+  let u_var4: u16;
+  let u_var5: u16;
+  let u_var6: u16;
+  let pu_var7: *mut u16;
+  let i_var8: i16;
   
-  if (param_3 != 0x0) {
-   // iVar8 = (param_1 >> 0x10);
-    uVar5 = -param_1;
-    uVar6 = param_3;
-    if (uVar5 != 0x0) {
-      uVar6 = (uVar5 - param_3 & -(uVar5 < param_3)) + param_3;
-      uVar5 = param_3 - uVar6;
+  if param_3 != 0x0 {
+   // i_var8 = (param_1 >> 0x10);
+    u_var5 = -param_1;
+    u_var6 = param_3;
+    if u_var5 != 0x0 {
+      u_var6 = (u_var5 - param_3 & -(u_var5 < param_3)) + param_3;
+      u_var5 = param_3 - u_var6;
     }
-    uVar3 = in_wnd_class & 0xff | in_wnd_class << 0x8;
-    puVar7 = param_1;
+    u_var3 = in_wnd_class & 0xff | in_wnd_class << 0x8;
+    pu_var7 = param_1;
       // TODO: refactor for loop
-    // for (uVar4 = uVar6 >> 0x1; uVar4 != 0x0; uVar4 -= 0x1) {
-    //   puVar1 = puVar7;
-    //   puVar7 = puVar7 + 0x1;
-    //   *puVar1 = uVar3;
+    // for (u_var4 = u_var6 >> 0x1; u_var4 != 0x0; u_var4 -= 0x1) {
+    //   pu_var1 = pu_var7;
+    //   pu_var7 = pu_var7 + 0x1;
+    //   *pu_var1 = u_var3;
     // }
-    // for (uVar6 = ((uVar6 & 0x1) != 0x0);
-    //     uVar2 = (in_wnd_class & 0xff), uVar6 != 0x0; uVar6 -= 0x1) {
-    //   puVar1 = puVar7;
-    //   puVar7 = (puVar7 + 0x1);
-    //   *puVar1 = uVar2;
+    // for (u_var6 = ((u_var6 & 0x1) != 0x0);
+    //     u_var2 = (in_wnd_class & 0xff), u_var6 != 0x0; u_var6 -= 0x1) {
+    //   pu_var1 = pu_var7;
+    //   pu_var7 = (pu_var7 + 0x1);
+    //   *pu_var1 = u_var2;
     // }
-    if (uVar5 != 0x0) {
+    if u_var5 != 0x0 {
         // TODO: refactor for loop
-      // for (uVar6 = uVar5 >> 0x1; uVar6 != 0x0; uVar6 -= 0x1) {
-      //   puVar1 = puVar7;
-      //   puVar7 = puVar7 + 0x1;
-      //   *puVar1 = uVar3;
+      // for (u_var6 = u_var5 >> 0x1; u_var6 != 0x0; u_var6 -= 0x1) {
+      //   pu_var1 = pu_var7;
+      //   pu_var7 = pu_var7 + 0x1;
+      //   *pu_var1 = u_var3;
       // }
-      // for (uVar6 = ((uVar5 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
-      //   puVar1 = puVar7;
-      //   puVar7 = (puVar7 + 0x1);
-      //   *puVar1 = uVar2;
+      // for (u_var6 = ((u_var5 & 0x1) != 0x0); u_var6 != 0x0; u_var6 -= 0x1) {
+      //   pu_var1 = pu_var7;
+      //   pu_var7 = (pu_var7 + 0x1);
+      //   *pu_var1 = u_var2;
       // }
     }
   }

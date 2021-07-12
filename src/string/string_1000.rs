@@ -167,7 +167,7 @@ if (param_3 != 0x0) == false { break; }
 
 pub fn
 str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,param_4: u32,
-             WNDCLASS16 *param_5)
+             param_5: &WNDCLASS16)
 
 {
   let uVar1: u16;
