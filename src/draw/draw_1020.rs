@@ -1,6 +1,6 @@
 use crate::winapi::{DeleteObject16, SelectObject16, LineTo16, MoveToEx16, CreatePen16, FillRect16, CreateSolidBrush16, GetClientRect16, EndPaint16, BeginPaint16, SelectPalette16, InvalidateRect16, RealizePalette16, GetDC16, UnrealizeObject16, GetStockObject16, ReleaseDC16, TextOut16, GetTextExtent16, lstrlen16, SetTextColor16, SetBkColor16, MoveTo16, GetWindowRect16, GetWindowDC16, IsIconic16, PtInRect16, SetCursor16, PostMessage16, ReleaseCapture16, LoadAccelerators16, Rectangle16, Ellipse16, ValidateRect16, SetMapMode16, Polygon16, DeleteDC16, CreateDC16, DrawIcon16};
 use crate::win_struct::{POINT16, RECT16, HPEN16, HGDIOBJ16, HWND16, PAINTSTRUCT16, HDC16, HPALETTE16, HCURSOR16, HBRUSH16, COLORREF, HINSTANCE16, LOGPALETTE};
-use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT12, CONCAT13, CONCAT11, struct_from_addr, get_mut_struct_ref_from_addr};
+use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT12, CONCAT13, CONCAT11, struct_from_addr, get_struct_at_addr};
 use crate::pass::pass_1008::{pass1_1008_8b20, pass1_1008_5b12, pass1_1008_57a4, pass1_1008_5118, pass1_1008_3e94, pass1_1008_4772, pass1_1008_4480, pass1_1008_3e76, pass1_1008_3e38, pass1_1008_41bc, pass1_1008_941a};
 use crate::misc::empty_1008_8fc4;
 use crate::pass::pass_1018::{pass1_1018_2862, pass1_1018_31d0, pass1_1018_017c, pass1_1018_108c, pass1_1018_15f6, pass1_1018_1320, pass1_1018_1054, pass1_1018_0d9a, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_181c, pass1_1018_265c, pass1_1018_266a, pass1_1018_25d2, pass1_1018_161c};
@@ -333,7 +333,7 @@ pub fn draw_op_1020_15de(
       hwnd = 0x1008;
       pass1_1008_4480(((i_var5 + 0x18) as u32),
                       (u_var1 & 0xffff0000 | (u_var1 + 0x76)),
-                      get_mut_struct_ref_from_addr(u_var7 & 0xffff | u_var4 << 0x10), unaff_ss);
+                      get_struct_at_addr(u_var7 & 0xffff | u_var4 << 0x10), unaff_ss);
     }
     ppc_var2 = ((i_var5 + 0x18) + 0x4) as u32;
     (**ppc_var2)(hwnd, (i_var5 + 0x18), 0x0, &local_24, unaff_ss, u_var8, u_var9);
@@ -483,7 +483,7 @@ pub unsafe fn unk_draw_op_1020_2020(
   while (ptr_1 + -0x38) < (ptr_1 + -0x28) {
     i_var12 = ((ptr_1 + -0x38) * 0x4) as i16;
     u_var2 = (ptr_1 + -0x2c);
-    u_var17 = pass1_1008_4772(get_mut_struct_ref_from_addr((i_var12 + u_var2) as u32));
+    u_var17 = pass1_1008_4772(get_struct_at_addr((i_var12 + u_var2) as u32));
    // pu_var10 = (u_var17 >> 0x10);
     (ptr_1 + -0x44) = u_var17;
     (ptr_1 + -0x42) = pu_var10;
@@ -500,7 +500,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     u_var2 = (ptr_1 + -0x2c);
     pass1_1008_4480((ptr_1 + -0x26),
                     CONCAT22(param_3, (ptr_1 + -0x36) as u16),
-                    get_mut_struct_ref_from_addr(u_var2 + i_var12), param_3);
+                    get_struct_at_addr(u_var2 + i_var12), param_3);
     i_var12 = (ptr_1 + -0x38) as i16;
     u_var2 = (ptr_1 + -0x30);
     u_var15 = u_var2 as u16;
@@ -519,7 +519,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     u_var20 = 0x10;
     if ((i_var21 + 0x1a) == 0x0) {
       u_var4 = ((i_var21 + 0x30) << 0x3) as u16;
-      mem_op_1000_179c(ctx,u_var4, get_mut_struct_ref_from_addr::<Struct79>(pu_var10), 0x1000);
+      mem_op_1000_179c(ctx, u_var4, get_struct_at_addr::<Struct79>(pu_var10), 0x1000);
       (i_var21 + 0x1a) = u_var4 as i16;
       (i_var21 + 0x1c) = pu_var10 as i16;
     }
@@ -1227,7 +1227,7 @@ pub fn  pass1_1020_4064(param_1: &mut Struct18,param_2: u8)
 {
   win_ui_palette_op_1020_3e84(param_1);
   if ((param_2 & 0x1) != 0x0) {
-    fn_ptr_1000_17ce(param_1,0x1000);
+    fn_ptr_1000_17ce(ctx, param_1, 0x1000);
   }
   return param_1;
 }
@@ -1755,7 +1755,7 @@ pub unsafe fn palette_op_1020_7270(param_1: *mut u16, param_2: HDC16)
   if ((u_var2 | u_var1) != 0x0) {
     pass1_1008_5118(CONCAT22(u_var2, u_var1));
     param_2 = 0x1000;
-    fn_ptr_1000_17ce(pa_stack8, 0x1000);
+    fn_ptr_1000_17ce(ctx, pa_stack8, 0x1000);
   }
   hvar3 = SelectPalette16(param_2, 0x0, (i_var4 + 0x20));
   (i_var4 + 0x20) = hvar3 as i16;

@@ -587,7 +587,7 @@ pub fn pass1_1008_ef50(param_1: *mut u16,param_2: u8) -> u16
 {
   pass1_1008_ec94(param_1);
   if ((param_2 & 0x1) != 0x0) {
-    fn_ptr_1000_17ce(param_1,0x1000);
+    fn_ptr_1000_17ce(ctx, param_1, 0x1000);
   }
   return param_1;
 }

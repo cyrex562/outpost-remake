@@ -216,7 +216,7 @@ read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
 
 {
   let uVar1: u16;
-  HFILE16 HVar2;
+  HVar2: HFILE16
   let uVar3: u16;
   let unaff_SS: u16;
   let uVar4: u32;
@@ -325,7 +325,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
         read_file_1008_7c6e(uVar4,uVar11,CONCAT22(param_5,puVar6),0x1008);
         if (puVar6 != 0x0) {
           uVar8 = &iVar12.field_0x10;
-          fn_ptr_1000_17ce((uVar8 + 0x4),0x1000);
+          fn_ptr_1000_17ce(ctx, (uVar8 + 0x4), 0x1000);
           uVar7 = str_op_1008_60e8(CONCAT22(param_5,local_408),puVar9);
           uVar8 = &iVar12.field_0x10;
          // uVar10 = (uVar8 >> 0x10);

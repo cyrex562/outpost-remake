@@ -49,7 +49,7 @@ pub fn cleanup_ui_op_1008_0618(
     pa_var3 = &mut param_1.field_0xf8; // (i_var5 + 0xf8);
                                        // u_var8 = (pa_var3 >> 0x10);
     h_icon = 0x1000;
-    fn_ptr_1000_17ce(pa_var3, 0x1000);
+    fn_ptr_1000_17ce(ctx, pa_var3, 0x1000);
     if (i_var5 + 0xec) != 0x0 {
         u_var8 = i_var5 + 0xec;
         h_icon = ctx.s_tile2_bmp_1050_1538;
@@ -134,7 +134,7 @@ pub unsafe fn unk_destroy_win_op_1010_2fa0(ctx: &mut AppContext, param_1: i32, p
                 break;
             }
         }
-        fn_ptr_1000_17ce(i_var3 + 0x52, 0x1000);
+        fn_ptr_1000_17ce(ctx, i_var3 + 0x52, 0x1000);
         (i_var3 + 0x52) = 0x0;
     }
     return;
@@ -369,7 +369,7 @@ pub fn destroy_window_1018_c518(ctx: &mut AppContext, param_1: &mut Struct29) {
     i_var2 = param_1;
     param_1 = 0xc8bc;
     i_var2.field_0x2 = 0x1018;
-    fn_ptr_1000_17ce(&i_var2.field_0x108, 0x1000);
+    fn_ptr_1000_17ce(ctx, &i_var2.field_0x108, 0x1000);
     if (i_var2.field_0x112 != 0x0) {
         b_var1 = IsWindow16(0x1000);
         if (b_var1 != 0x0) {

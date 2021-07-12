@@ -1,4 +1,4 @@
-use crate::defines::{Struct79, Struct648};
+use crate::defines::{Struct79, Struct648, Struct19};
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1008::{pass1_1008_3e94, pass1_1008_612e};
 use crate::util::{CONCAT22, CONCAT13, CONCAT12, struct_from_addr, CARRY2};
@@ -13,12 +13,13 @@ use crate::struct_ops::struct_1030::{struct_op_1030_73a8, struct_op_1030_1cd8};
 use crate::pass::pass_1010::{pass1_1010_d710, pass1_1010_d24a, pass1_1010_cf36, pass1_1010_c864, pass1_1010_c7e2, pass1_1010_37d4};
 use crate::string::string_1008::str_op_1008_60e8;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
+use crate::win_struct::WNDCLASS16;
 
 pub unsafe fn struct_1010_02e0(
     ctx: &mut AppContext,
-    param_1: &mut Struct79,
+    param_1: &mut Struct19,
     param_3: u16,
-extraout_dx: u16)
+    extraout_dx: u16)
 {
   let u_var1: u16;
   let pu_var2: *mut u8;
@@ -297,7 +298,7 @@ pub fn struct_1010_38f8(param_1: u32,param_2: i16,param_3: u16,param_4: *mut u8)
 
 
 pub fn struct_1010_3b7a(
-    param_1: &mut Struct79,
+    param_1: &mut Struct19,
     param_3: u16)
 {
   set_struct_fields_1010_1d48(param_1, param_3);
@@ -403,7 +404,7 @@ pub fn struct_1010_5f1e(param_1: &mut Struct73,param_2: &mut String,param_3: u16
   
  // uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
-  fn_ptr_1000_17ce(&iVar3.field_0x16,0x1000);
+  fn_ptr_1000_17ce(ctx, &iVar3.field_0x16, 0x1000);
   uVar1 = str_op_1008_60e8(param_2,param_3);
   iVar3.field_0x16 = uVar1;
   iVar3.field_0x18 = param_3;
@@ -411,7 +412,7 @@ pub fn struct_1010_5f1e(param_1: &mut Struct73,param_2: &mut String,param_3: u16
 }
 
 
-pub fn struct_1010_6326(param_1: &mut Struct630,param_2: u16,param_3: u16)
+pub fn struct_1010_6326(param_1: &mut Struct630, param_2: &mut Struct19, param_3: u16)
 {
   set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
   param_1.field_0xa = 0x0;
@@ -459,7 +460,7 @@ pub fn struct_1010_9172(param_1: u32)
 }
 
 
-pub fn struct_1010_95aa(param_1: &mut Struct629,param_2: u16,param_3: u16)
+pub fn struct_1010_95aa(param_1: &mut Struct629, param_2: &mut Struct19, param_3: u16)
 {
   set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
   param_1.field_0xa = 0x0;
@@ -476,7 +477,7 @@ pub fn struct_1010_95aa(param_1: &mut Struct629,param_2: u16,param_3: u16)
 }
 
 
-pub fn struct_1010_a1d8(param_1: &mut Struct627,param_2: u16,param_3: u16,param_4: u16)
+pub fn struct_1010_a1d8(param_1: &mut Struct627, param_2: &mut Struct19, param_3: u16, param_4: &mut WNDCLASS16)
 {
   let iVar1: i16;
   let ppcVar2: u32;
@@ -561,7 +562,7 @@ pub fn struct_1010_dd5e(param_1: u16,param_2: u16,param_3: u32)
 }
 
 
-pub fn struct_1010_e9e4(param_1: &mut Struct261,param_2: u16,param_3: u16)
+pub fn struct_1010_e9e4(param_1: &mut Struct261, param_2: &mut Struct19, param_3: u16)
 {
   let puVar1: *mut u16;
   let uVar2: u16;

@@ -93,7 +93,7 @@ win_ui_op_1040_07dc(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
                          local_806,param_8);
     local_406[0] = uStack2060;
     uVar6 = 0x1000;
-    fn_ptr_1000_17ce(CONCAT22(param_6,puVar4),0x1000);
+    fn_ptr_1000_17ce(ctx, CONCAT22(param_6, puVar4), 0x1000);
     if (IVar2 == 0x6) {
       uVar6 = SUB42(ctx.s_tile2_bmp_1050_1538,0x0);
       PostMessage16(0x1000,0x0,0x0,0x11100cb);
@@ -1486,7 +1486,7 @@ pub fn send_msg_1040_3374(param_1: u32,param_2: *mut u32,param_3: u16,param_4: H
     LVar6 = SendMessage16(0x1018,paVar7,(paVar7 >> 0x10),
                           0x4030000);
     uVar5 = 0x1000;
-    fn_ptr_1000_17ce(paVar7,0x1000);
+    fn_ptr_1000_17ce(ctx, paVar7, 0x1000);
     if (LVar6 == -0x1) { break; }
     if (LVar6 == -0x2) {
       return;
@@ -2223,7 +2223,7 @@ set_win_pos_1040_4ae4
       paStack16 = paStack10;
       if (paStack10 != 0x0) {
         pass1_1040_a5d0(paStack10);
-        fn_ptr_1000_17ce(paStack10,0x1000);
+        fn_ptr_1000_17ce(ctx, paStack10, 0x1000);
       }
       ppcVar1 = (CONCAT22(param_2,param_1) + 0x70);
       (**ppcVar1)();
@@ -2640,7 +2640,7 @@ win_ui_op_1040_5800(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5:
       if (paStack10 != 0x0) {
         pass1_1040_a5d0(paStack10);
         hwnd = 0x1000;
-        fn_ptr_1000_17ce(paStack10,0x1000);
+        fn_ptr_1000_17ce(ctx, paStack10, 0x1000);
       }
       ppcVar1 = (CONCAT22(param_2,param_1) + 0x70);
       (**ppcVar1)();
@@ -2695,7 +2695,7 @@ pub fn msg_box_ui_op_1040_64ca(param_1: u32,param_2: &mut String,param_3: *mut u
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -3905,7 +3905,7 @@ pub fn mix_win_ui_op_1040_911e(param_1: *mut u16)
       (**ppcVar4)();
     }
   }
-  fn_ptr_1000_17ce((iVar5 + 0x4),0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar5 + 0x4), 0x1000);
   uVar3 = (iVar5 + 0x14);
   SetWindowLong16(0x1000,uVar3,CONCAT22(0xfffc,(uVar3 >> 0x10)));
   RemoveProp16(ctx.s_tile2_bmp_1050_1538,s_thisLo_1050_5e1c);
@@ -4256,7 +4256,7 @@ win_op_1040_9cde(param_1: u16,WPARAM16 param_2,param_3: i16,param_4: u32,param_5
             return;
           }
           if (bVar16 == 0x2) {
-            fn_ptr_1000_17ce(paVar12,0x1000);
+            fn_ptr_1000_17ce(ctx, paVar12, 0x1000);
             SetWindowLong16(0x1000,0x0,0x0);
             return;
           }
@@ -4576,7 +4576,7 @@ pub fn msg_box_op_1040_a85a(param_1: u32,param_2: &mut String,param_3: *mut u8,p
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -4714,7 +4714,7 @@ pub fn msg_box_ui_op_1040_ad66(param_1: u32,param_2: &mut String,param_3: *mut u
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -5275,7 +5275,7 @@ pub fn msg_box_op_1040_cce4(param_1: u32,param_2: &mut String,param_3: *mut u8,p
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -5538,7 +5538,7 @@ pub fn msg_box_op_1040_d3d0(param_1: u32,param_2: &mut String,param_3: *mut u8,p
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 

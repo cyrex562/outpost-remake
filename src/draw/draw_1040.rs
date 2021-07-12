@@ -927,7 +927,7 @@ pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18)
   if ((uVar2 | uVar1) != 0x0) {
     pass1_1040_a5d0(CONCAT22(uVar2,uVar1));
     uVar4 = 0x1000;
-    fn_ptr_1000_17ce(paStack10,0x1000);
+    fn_ptr_1000_17ce(ctx, paStack10, 0x1000);
   }
   ui_cleanup_op_1040_782c(param_1,uVar4);
   return;

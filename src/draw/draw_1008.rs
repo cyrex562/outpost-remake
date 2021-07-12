@@ -4,7 +4,7 @@ use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::set_struct_1008_687a;
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{struct_from_addr, vec_from_addr};
+use crate::util::{struct_from_addr, vec_at_addr};
 use crate::win_struct::{COLORREF, WNDCLASS16, HINSTANCE16};
 use crate::winapi::FillRect16;
 use crate::{
@@ -324,7 +324,7 @@ pub unsafe fn unk_draw_op_1008_da12(
     let mut i_var7 = param_1.field_0xc + -0x1e0;
     count = (i_var7 >> 0xf);
     pass1_1008_3e76(
-        &mut vec_from_addr::<u16>(CONCAT22(param_2, param_1.field_0xe)),
+        &mut vec_at_addr::<u16>(CONCAT22(param_2, param_1.field_0xe)),
         0x0,
         i_var7 / 0x2,
         ((param_1.field_0xa + -0x280) / 0x2) as u16,
@@ -368,7 +368,7 @@ pub unsafe fn unk_draw_op_1008_da12(
         (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
         if l_stack8 != 0x0 {
             if param_1.field_0x18 != 0x0 {
-                entries = vec_from_addr((param_1.field_0x16 / 0x2) as u32);
+                entries = vec_at_addr((param_1.field_0x16 / 0x2) as u32);
                 GetSystemPaletteEntries(0x1000, start, count as u16, entries.as_mut_slice());
                 GetSystemPaletteEntries(
                     ctx.s_tile2_bmp_1050_1538 as HDC16,
@@ -392,7 +392,7 @@ pub unsafe fn unk_draw_op_1008_da12(
             }
         }
         hwnd = 0x1000;
-        fn_ptr_1000_17ce(struct_from_addr(CONCAT22(count as u16, start)), 0x1000);
+        fn_ptr_1000_17ce(ctx, struct_from_addr(CONCAT22(count as u16, start)), 0x1000);
     }
     ReleaseDC16(hwnd, hdc);
     return;

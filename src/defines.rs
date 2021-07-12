@@ -1,3 +1,5 @@
+use crate::win_struct::HMENU16;
+
 pub type U32Ptr = u32;
 
 pub struct StructA {
@@ -92,5 +94,56 @@ pub struct Struct449 {
 }
 
 pub struct Struct648 {
+
+}
+
+pub struct Struct_1008_09ba {
+    pub field_0xec: HMENU16,
+}
+
+pub struct Struct_1008_0a3c {
+    pub field_0xde: bool
+}
+
+pub struct Struct_1008_496c {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: u16,
+    pub field_0x6: u16,
+    pub field_0x8: Struct18,
+    pub field_0xc: u16,
+    pub field_0x1a: Struct18
+}
+
+pub struct Struct_1008_49e8 {
+    pub field_0x4: u16,
+    pub field_0x8: u16,
+    pub field_0xc: u16,
+    pub field_0xe: u16,
+    pub field_0x1a: u16,
+    pub field_0x1c: u16,
+    pub field_0x1e: u16,
+    pub field_0x12: u16,
+}
+
+pub struct Struct_1008_4cdc {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x4: Struct18,
+    pub field_0xe: Struct18,
+    pub field_0x12: u16
+}
+
+pub struct Struct_1008_4d26 {
+    pub field_0x2: u16,
+    pub field_0x4: u16,
+    pub field_0xc: u16,
+}
+
+pub struct Struct_1008_4d84 {
+
+}
+
+pub struct Struct_1000_05e2 {
 
 }

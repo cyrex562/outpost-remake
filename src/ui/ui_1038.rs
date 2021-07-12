@@ -31,30 +31,34 @@ LRESULT  send_dlg_item_msg_1038_7eac(param_1: u32)
 
 
 
-use crate::winapi::{EnableWindow16, GetDlgItem16, SetWindowPos16, GetWindowRect16, MapDialogRect16, SendMessage16, ShowWindow16, DestroyWindow16, PostMessage16, GetSystemMetrics16, IsDlgButtonChecked, CheckRadioButton16, SetCursor16, SetWindowText16, SendDlgItemMessage16, IsWindow16, SetDlgItemText16, wsprintf16, GetWindowText16, SetFocus16, CheckDlgButton16, BringWindowToTop16, SetBkColor16, SetTextColor16, GetDlgCtrlID16, GetStockObject16, GetWindowWord16, ReleaseDC16, GetDeviceCaps16, GetDC16, SetDlgItemInt16, GetDlgItemInt16, MessageBox16};
-use crate::util::{CONCAT22, CONCAT12, CONCAT13, SUB42, CONCAT11};
-use crate::win_struct::{HWND16, RECT16, WNDCLASS16, WPARAM16, HCURSOR16, HINSTANCE16, SEGPTR, HDC16, LRESULT};
-use crate::mixed::mixed_1010_20ba;
-use crate::ui::ui_1040::{move_win_1040_826c, dialog_ui_fn_1040_78e2, enable_win_1040_9234, unk_win_ui_op_1040_b230};
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
-use crate::pass::pass_1018::{pass1_1018_0ad4, pass1_1018_1c9a};
-use crate::pass::pass_1028::pass1_1028_e1ec;
-use crate::pass::pass_1010::{pass1_1010_0932, pass1_1010_0892, pass1_1010_3770, pass1_1010_375e, pass1_1010_091e, pass1_1010_088c, pass1_1010_08e2, pass1_1010_0886, pass1_1010_6604, pass1_1010_5fd8, pass1_1010_6006, pass1_1010_6566};
-use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_1708, fn_ptr_1000_17ce};
-use crate::sys_api::unk_win_msg_op_1008_9510;
-use crate::string::string_1000::{unk_str_op_1000_3d3e, str_op_1000_3da4};
-use crate::string::string_1010::{unk_load_str_op_1010_2c34, load_string_1010_847e};
-use crate::defines::Struct18;
-use crate::pass::pass_1008::{pass1_1008_941a, pass1_1008_eb5c, pass1_1008_eb6e, pass1_1008_e038, pass1_1008_e2a4, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_4d72, pass1_1008_3e94, pass1_1008_4772, pass1_1008_3f62, pass1_1008_3e38, pass1_1008_5b12, pass1_1008_5784, pass1_1008_b61a, pass1_1008_b47a, pass1_1008_b38c, pass1_1008_b366, pass1_1008_b200, pass1_1008_b4a0, pass1_1008_b820, pass1_1008_b340, pass1_1008_b63a};
-use crate::string::string_1040::string_1040_8520;
-use crate::pass::pass_1038::{pass1_1038_e03e, pass1_1038_3aa6, pass1_1038_387e};
 use std::default::default;
-use crate::string::string_1008::{string_1008_e586, load_string_1008_b1f0, load_string_1008_b65a};
-use crate::pass::pass_1030::{pass1_1030_8334, pass1_1030_838e, fn_ptr_1030_835a, pass1_1030_532e, pass1_1030_6c1a};
+
 use crate::cleanup::destroy_win_1040_7b98;
-use crate::struct_ops::struct_1008::{set_struct_1008_574a, pass1_1008_c85e, pass1_1008_c83a, pass1_1008_c79a};
+use crate::defines::Struct18;
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
+use crate::global::AppContext;
+use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
+use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::pass1_1000_3cea;
+use crate::pass::pass_1008::{pass1_1008_3e38, pass1_1008_3e94, pass1_1008_3f62, pass1_1008_4772, pass1_1008_4d72, pass1_1008_5784, pass1_1008_5b12, pass1_1008_941a, pass1_1008_b200, pass1_1008_b340, pass1_1008_b366, pass1_1008_b38c, pass1_1008_b47a, pass1_1008_b4a0, pass1_1008_b61a, pass1_1008_b63a, pass1_1008_b820, pass1_1008_e038, pass1_1008_e2a4, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_eb5c, pass1_1008_eb6e};
+use crate::pass::pass_1010::{pass1_1010_0886, pass1_1010_088c, pass1_1010_0892, pass1_1010_08e2, pass1_1010_091e, pass1_1010_0932, pass1_1010_375e, pass1_1010_3770, pass1_1010_5fd8, pass1_1010_6006, pass1_1010_6566, pass1_1010_6604};
+use crate::pass::pass_1018::{pass1_1018_0ad4, pass1_1018_1c9a};
+use crate::pass::pass_1028::{pass1_1028_d01a, pass1_1028_e1ec};
+use crate::pass::pass_1030::{fn_ptr_1030_835a, pass1_1030_532e, pass1_1030_6c1a, pass1_1030_8334, pass1_1030_838e};
+use crate::pass::pass_1038::{pass1_1038_387e, pass1_1038_3aa6, pass1_1038_e03e};
+use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::string::string_1008::{load_string_1008_b1f0, load_string_1008_b65a, string_1008_e586};
+use crate::string::string_1010::{load_string_1010_847e, unk_load_str_op_1010_2c34};
+use crate::string::string_1040::string_1040_8520;
+use crate::struct_ops::struct_1008::{pass1_1008_c79a, pass1_1008_c83a, pass1_1008_c85e, set_struct_1008_574a};
+use crate::struct_ops::struct_1028::struct_1028_d2b0;
+use crate::sys_api::unk_win_msg_op_1008_9510;
 use crate::ui::ui_1008::pass1_1008_b146;
+use crate::ui::ui_1028::send_msg_1028_e242;
+use crate::ui::ui_1040::{dialog_ui_fn_1040_78e2, enable_win_1040_9234, move_win_1040_826c, unk_win_ui_op_1040_b230};
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42};
+use crate::win_struct::{HCURSOR16, HDC16, HINSTANCE16, HWND16, LRESULT, RECT16, SEGPTR, WNDCLASS16, WPARAM16};
+use crate::winapi::{BringWindowToTop16, CheckDlgButton16, CheckRadioButton16, DestroyWindow16, EnableWindow16, GetDC16, GetDeviceCaps16, GetDlgCtrlID16, GetDlgItem16, GetDlgItemInt16, GetStockObject16, GetSystemMetrics16, GetWindowRect16, GetWindowText16, GetWindowWord16, IsDlgButtonChecked, IsWindow16, MapDialogRect16, MessageBox16, PostMessage16, ReleaseDC16, SendDlgItemMessage16, SendMessage16, SetBkColor16, SetCursor16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetTextColor16, SetWindowPos16, SetWindowText16, ShowWindow16, wsprintf16};
 
 pub fn send_dlg_item_msg_1038_7fae(param_1: u32)
 {
@@ -185,7 +189,7 @@ pub fn msg_box_op_1038_81be(param_1: u32,param_2: &mut String,param_3: *mut u8,p
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -436,7 +440,7 @@ pub fn msg_box_ui_op_1038_8a3a(param_1: u32,param_2: &mut String,param_3: *mut u
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x101,local_20a,param_4);
   MessageBox16(0x1010,0x0,local_20a,param_4);
-  fn_ptr_1000_17ce(CONCAT22(puStack262,pcStack264),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(puStack262, pcStack264), 0x1000);
   return;
 }
 
@@ -566,7 +570,7 @@ pub fn msg_box_op_1038_8dda(param_1: u32,param_2: &mut String,param_3: *mut u8,p
              (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,local_104,param_4);
   pass1_1000_3cea(CONCAT22(param_3,param_2),CONCAT22(param_4,local_104));
   MessageBox16(0x1000,0x0,local_206,param_4);
-  fn_ptr_1000_17ce(CONCAT22(param_3,param_2),0x1000);
+  fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
   return;
 }
 
@@ -2037,7 +2041,7 @@ pub fn send_msg_1038_c374(param_1: u32,param_2: *mut u32,param_3: u16,param_4: H
     LVar7 = SendMessage16(0x1008,paVar8,(paVar8 >> 0x10),
                           0x4030000);
     uVar6 = 0x1000;
-    fn_ptr_1000_17ce(paVar8,0x1000);
+    fn_ptr_1000_17ce(ctx, paVar8, 0x1000);
     if (LVar7 == -0x1) { break; }
     if (LVar7 == -0x2) {
       return;
@@ -3137,7 +3141,7 @@ pub fn unk_win_ui_op_1038_e71c(param_1: &mut Struct1,param_2: u16)
   unk_str_op_1000_3d3e
             ((param_1 & 0xffff0000 | (iVar1 + 0x10)),
              CONCAT22(extraout_DX,param_2));
-  fn_ptr_1000_17ce(paStack6,0x1000);
+  fn_ptr_1000_17ce(ctx, paStack6, 0x1000);
   move_win_1040_826c(param_1,-0x1,0xffff);
   ShowWindow16(&ctx.PTR_LOOP_1050_1040,0x5);
   (iVar1 + 0x92) = 0x1;
@@ -3760,6 +3764,26 @@ pub fn enable_win_1040_060e(param_1: u32,param_2: i16,param_3: HWND16,param_4: u
     param_3 = ctx.s_tile2_bmp_1050_1538;
     EnableWindow16(ctx.s_tile2_bmp_1050_1538,0x0);
   }
+  return;
+}
+
+pub fn send_msg_1030_83ba(
+    ctx: &mut AppContext,
+    param_1: &mut u32,
+    mut param_2: &mut i32,
+    param_3: u16,
+    param_4: u8)
+{
+  let l_var1: i32;
+  while (l_var1 = param_2 + -0x1, param_2 != 0x0) {
+    struct_1028_d2b0(*param_1,param_3,param_4);
+    pass1_1028_d01a((param_1 + 0x4));
+    *param_2 = l_var1;
+    if l_var1 != 0x0 {
+      send_msg_1028_e242(ctx.PTR__LOOP_1050_65e2,0x0,&ctx.USHORT_1050_1028);
+    }
+  }
+  send_msg_1028_e242(ctx.PTR__LOOP_1050_65e2,0x1,&ctx.USHORT_1050_1028);
   return;
 }
 

@@ -2,7 +2,7 @@ use crate::util::{CONCAT22, SUB42, ZEXT24};
 use crate::pass::pass_1000::pass1_1000_4906;
 use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a, mem_op_1000_0a48};
 use crate::struct_ops::struct_1010::{struct_1010_2cd2, struct_1010_383a};
-use crate::defines::Struct79;
+use crate::defines::{Struct79, Struct19};
 use crate::struct_ops::struct_1018::{struct_1018_4842, struct_1018_48b0, struct_1018_4920, struct_1018_47c8};
 use crate::string::string_1010::load_string_1010_84ac;
 use crate::pass::pass_1030::{pass1_1030_38f2, pass1_1030_4bbe};
@@ -411,7 +411,7 @@ pub fn set_struct_op_1008_9584(param_1: &mut Struct20,param_2: i32)
 }
 
 
-pub fn struct_1008_9fd2(param_1: &mut Struct79,param_2: &mut Struct79,param_3: u16)
+pub fn struct_1008_9fd2(param_1: &mut Struct19, param_2: &mut Struct19, param_3: u16)
 {
   let uVar1: u16;
   let puVar2: *mut u8;
@@ -842,7 +842,7 @@ pub fn struct_1008_bde0(param_1: *mut u32,param_2: *mut u8)
 pub fn pass1_1008_c626(param_1: *mut u32)
 {
   ctx._PTR_LOOP_1050_06e0 = 0x0;
-  fn_ptr_1000_17ce(*param_1,0x1000);
+  fn_ptr_1000_17ce(ctx, *param_1, 0x1000);
   return;
 }
 
@@ -1153,7 +1153,7 @@ pub fn pass1_1008_ca24(param_1: u32,param_2: u8,param_3: u16) -> u32
 {
   pass1_1008_c75c(param_1,param_3);
   if ((param_2 & 0x1) != 0x0) {
-    fn_ptr_1000_17ce(param_1,0x1000);
+    fn_ptr_1000_17ce(ctx, param_1, 0x1000);
   }
   return param_1;
 }

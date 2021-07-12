@@ -177,7 +177,7 @@ unsafe fn entry(
     );
     ctx.PTR_LOOP_1050_5f84 = u_var14;
     pass1_1000_27d6(make_u16_ptr(u_var14 >> 0x10));
-    u_var14 = ret_op_1000_55ac(pu_var18);
+    u_var14 = ret_op_1000_55ac(pu_var18, 0, 0, 0);
     u_var6 = u_var14 as i16;
     let mut param_6: i16 = 0;
     init_1000_23be(

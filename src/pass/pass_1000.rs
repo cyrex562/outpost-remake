@@ -10,6 +10,7 @@ use crate::global::AppContext;
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_2594, call_fn_ptr_1000_0dc6};
 use crate::misc::ret_op_1000_55ac;
 use crate::msg_box::{msg_box_op_1000_214c, msg_box_op_1000_1f24};
+use crate::defines::StructA;
 
 // pub fn pass1_1000_010c
 
@@ -889,8 +890,12 @@ pub fn  pass1_1000_1afe(param_1: u16,param_2: u32,param_3: u16, unaff_CS: u16) -
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1000_1e61(ctx: &mut AppContext, param_1: u16,param_2: u16,param_3: u16,param_4: u16) -> u16
-
+pub fn pass1_1000_1e61(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u16,
+    param_3: &mut StructA,
+    param_4: u16) -> u16
 {
   let i_var1: i16;
   let b_var2: bool;
@@ -898,7 +903,7 @@ pub fn pass1_1000_1e61(ctx: &mut AppContext, param_1: u16,param_2: u16,param_3: 
   let u_stack64: u16;
   let u_stack62: u16;
   let u_stack60: u16;
-  let pcStack6: u32;
+  let pc_stack6: u32;
   let pu_stack4: *mut u8;
   let u_var3: u16;
   
@@ -907,35 +912,35 @@ pub fn pass1_1000_1e61(ctx: &mut AppContext, param_1: u16,param_2: u16,param_3: 
   u_stack60 = param_4;
   u_stack64 = param_2;
   pu_stack4 = ctx.data_seg;
-  if (true) {
-    pcStack6 = &ctx.PTR_PTR_1050_5f1a;
-    if ((ctx.PTR_LOOP_1050_5f1c | ctx.PTR_PTR_1050_5f1a) == 0x0) {
-      pcStack6 = 0x0;
+  if true {
+    pc_stack6 = &ctx.PTR_PTR_1050_5f1a;
+    if (ctx.PTR_LOOP_1050_5f1c | ctx.PTR_PTR_1050_5f1a) == 0x0 {
+      pc_stack6 = 0x0;
       pu_stack4 = 0x0;
     }
     else {
       i_var1 = mem_op_1000_21b6(ctx.PTR_PTR_1050_5f1a,ctx.PTR_LOOP_1050_5f1c);
-      pcStack6 = ctx.PTR_PTR_1050_5f1a;
+      pc_stack6 = ctx.PTR_PTR_1050_5f1a;
       pu_stack4 = ctx.PTR_LOOP_1050_5f1c;
-      if (i_var1 == 0x0) {
+      if i_var1 == 0x0 {
         ctx.PTR_PTR_1050_5f1a = &ctx.PTR_PTR_1050_1f7e;
         ctx.PTR_LOOP_1050_5f1c = &ctx.PTR_LOOP_1050_1000;
-        pcStack6 = &ctx.PTR_PTR_1050_1f7e;
+        pc_stack6 = &ctx.PTR_PTR_1050_1f7e;
         pu_stack4 = &ctx.PTR_LOOP_1050_1000;
       }
     }
-    if ((pu_stack4 | pcStack6) != 0x0) {
+    if (pu_stack4 | pc_stack6) != 0x0 {
       b_var2 = msg_box_op_1000_1f24
                         (&ctx.PTR_PTR_1050_5f1a,ctx.data_seg,0x0,0x1000);
-      if (b_var2 == 0x0) {
-        u_var3 = (*pcStack6)(0x1000,&u_stack64);
+      if b_var2 == 0x0 {
+        u_var3 = (*pc_stack6)(0x1000, &u_stack64);
       }
       else {
         pu_stack4 = 0x0;
-        pcStack6 = 0x0;
+        pc_stack6 = 0x0;
         u_var3 = 0x0;
       }
-      if ((pu_stack4 | pcStack6) != 0x0) {
+      if (pu_stack4 | pc_stack6) != 0x0 {
         pass1_1000_1f68(u_var3);
       }
       return u_var3;

@@ -176,7 +176,7 @@ pub fn hmemcpy16(dst: *mut u8, src: *mut u8, count: libc::c_long) {
     unimplemented!()
 }
 // long WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count)
-pub fn WIN16_hread(h_file: HFILE16, buffer: SEGPTR, count: usize) -> usize {
+pub fn WIN16_hread(h_file: HFILE16, buffer: &mut Vec<u8>, count: usize) -> usize {
     unimplemented!()
 }
 // long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count)
@@ -635,8 +635,17 @@ pub fn GetSubMenu16(h_menu: HMENU16, n_pos: i16) -> HMENU16 {
     unimplemented!()
 }
 // BOOL16 WinHelp16(HWND16 hwnd, LPCSTR lp_help_file, Uw_command: i16, DWORD dw_data)
+pub fn WinHelp16(hwnd: HWND16, lp_help_file: &String, w_command: i16, dw_data: u32) -> bool {
+    unimplemented!()
+}
 // HCURSOR16 LoadCursor16(HINSTANCE16 h_instance, LPCSTR name)
+pub fn LoadCursor16(h_instance: HINSTANCE16, name: &String) -> HCURSOR16 {
+    unimplemented!()
+}
 // HICON16 LoadIcon16(HINSTANCE16 h_instance, LPCSTR name)
+pub fn LoadIcon16(h_instance: HINSTANCE16, name: &String) -> HICON16 {
+    unimplemented!()
+}
 // LoadString16: i16(HINSTANCE16 instance, Uresource_id: i16, LPSTR buffer, buf_len: i16)
 pub fn LoadString16(
     instance: HINSTANCE16,

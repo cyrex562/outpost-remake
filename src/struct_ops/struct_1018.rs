@@ -1429,3 +1429,10 @@ pub fn struct_1020_0baa(param_1: *mut u16,param_2: u16,param_3: *mut u8,param_4:
   return;
 }
 
+
+pub fn set_struct_1018_262e(param_1: u32)
+{
+  (param_1 + 0x44) = 0x1;
+  (param_1 + 0x3e) = 0x0;
+}
+

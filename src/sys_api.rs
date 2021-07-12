@@ -7,7 +7,7 @@ use crate::winapi::{GetWindowLong16, swi, DOS3Call, GetMessage16, IsDialogMessag
 use crate::pass::pass_1008::{pass1_1008_57c4, pass1_1008_9628, pass1_1008_4772, pass1_1008_3e94, pass1_1008_405c, pass1_1008_4d84, pass1_1008_5b12, pass1_1008_5784, pass1_1008_5bdc, pass1_1008_5394};
 use crate::pass::pass_1000::{pass1_1000_462e, pass1_1000_4906, pass1_1000_3cea, pass1_1000_47a4, pass1_1000_5008, pass1_1000_475e, pass1_1000_29b5, pass1_1000_29af, pass1_1000_422a, pass1_1000_2913, pass1_1000_25a8, pass1_1000_55b1, pass1_1000_3bac, pass1_1000_29dc, pass1_1000_1f68};
 use crate::draw::draw_1040::{unk_draw_op_1040_b0f8, draw_text_1040_8d14};
-use crate::defines::{Struct18, Struct79};
+use crate::defines::{Struct18, Struct79, Struct19};
 use crate::pass::pass_1040::pass1_1040_b040;
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_24cd, fn_ptr_1000_17ce, fn_ptr_op_1000_2594};
 use crate::string::string_1000::{unk_str_op_1000_3d3e, str_op_1000_3da4, poss_str_op_1000_28dc};
@@ -1931,15 +1931,15 @@ pub fn free_rsrc_1010_4b3e(param_1: *mut u16,param_2: HGLOBAL16)
     }
   }
   uVar6 = (iVar8 + 0x12);
-  fn_ptr_1000_17ce((uVar6 + 0x4),0x1000);
-  fn_ptr_1000_17ce((iVar8 + 0x12),0x1000);
+  fn_ptr_1000_17ce(ctx, (uVar6 + 0x4), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar8 + 0x12), 0x1000);
   puVar2 = (iVar8 + 0x16);
   uVar3 = (iVar8 + 0x18);
   if ((uVar3 | puVar2) != 0x0) {
     ppcVar4 = *puVar2;
     (**ppcVar4)(0x1000,puVar2,uVar3,0x1);
   }
-  fn_ptr_1000_17ce((iVar8 + 0x1a),0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar8 + 0x1a), 0x1000);
   pass1_1010_1d80(param_1,unaff_SS);
   return;
 }
@@ -1977,7 +1977,7 @@ pub fn find_n_load_rsrc_1010_4e9e(param_1: u32,param_2: HGLOBAL16)
 }
 
 
-pub fn win_sys_op_1010_5404(param_1: &mut Struct54,param_2: &mut Struct79,param_3: u16,param_4: u16)
+pub fn win_sys_op_1010_5404(param_1: &mut Struct54, param_2: &mut Struct19, param_3: u16, param_4: &mut WNDCLASS16)
 {
   let piVar1: *mut i16;
   u16 **ppuVar2;
@@ -2454,19 +2454,19 @@ pub fn write_private_profile_str_1010_5b10(param_1: *mut u16)
     iStack12 += 0x1;
     if iStack12 >= 0x8 { break; }
   }
-  fn_ptr_1000_17ce((iVar6 + 0xa),0x1000);
-  fn_ptr_1000_17ce((iVar6 + 0xe),0x1000);
-  fn_ptr_1000_17ce((iVar6 + 0x12),0x1000);
-  fn_ptr_1000_17ce((iVar6 + 0x16),0x1000);
-  fn_ptr_1000_17ce((iVar6 + 0x1a),0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0xa), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0xe), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0x12), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0x16), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0x1a), 0x1000);
   puVar1 = (iVar6 + 0x64);
   uVar2 = (iVar6 + 0x66);
   if ((uVar2 | puVar1) != 0x0) {
     ppcVar4 = *puVar1;
     (**ppcVar4)(0x1000,puVar1,uVar2,0x1);
   }
-  fn_ptr_1000_17ce((iVar6 + 0x68),0x1000);
-  fn_ptr_1000_17ce((iVar6 + 0x6c),0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0x68), 0x1000);
+  fn_ptr_1000_17ce(ctx, (iVar6 + 0x6c), 0x1000);
   pass1_1010_1d80(param_1,unaff_SS);
   return;
 }

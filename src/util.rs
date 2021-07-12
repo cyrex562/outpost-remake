@@ -32,7 +32,7 @@ pub fn make_u8_ptr(address: u32) -> *mut u8 {
     unimplemented!()
 }
 
-pub fn get_string_at_addr(address: u32) -> String {
+pub fn get_string_at_addr(address: u32) -> &mut String {
     unimplemented!()
 }
 
@@ -40,14 +40,18 @@ pub fn ZEXT24(a: u16) -> u32 {
     unimplemented!()
 }
 
-pub fn vec_from_addr<T>(addr: u32) -> Vec<T> {
+pub fn vec_at_addr<T>(addr: u32) -> &mut Vec<T> {
     unimplemented!()
 }
 
-pub fn struct_from_addr<T>(addr: u32) -> T {
+// pub fn struct_from_addr<T>(addr: u32) -> T {
+//     unimplemented!()
+// }
+
+pub fn get_struct_at_addr<T>(addr: u32) -> &mut T {unimplemented!()}
+
+// pub fn get_struct_ref_from_addr<T>(addr: u32) -> &T {unimplemented!()}
+
+pub fn get_string_at_rsrc(rsrc_id: u16) -> String {
     unimplemented!()
 }
-
-pub fn get_mut_struct_ref_from_addr<T>(addr: u32) -> &mut T {unimplemented!()}
-
-pub fn get_struct_ref_from_addr<T>(addr: u32) -> &T {unimplemented!()}

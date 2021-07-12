@@ -365,7 +365,7 @@ pass1_1020_24f2(param_1: &mut Struct18,param_2: u8,param_3: u16)
 {
   pass1_1020_1f74(param_1,param_3);
   if ((param_2 & 0x1) != 0x0) {
-    fn_ptr_1000_17ce(param_1,0x1000);
+    fn_ptr_1000_17ce(ctx, param_1, 0x1000);
   }
   return param_1;
 }
@@ -1887,7 +1887,7 @@ pub fn pass1_1020_8556(param_1: *mut u16)
   iVar5 = param_1;
   *param_1 = 0x87aa;
   iVar5.field_0x2 = 0x1020;
-  fn_ptr_1000_17ce(iVar5.field_0x8,0x1000);
+  fn_ptr_1000_17ce(ctx, iVar5.field_0x8, 0x1000);
   if (((&iVar5.field_0xc + 0x2) | &iVar5.field_0xc) != 0x0) {
     iStack12 = 0x0;
     loop {
@@ -1902,12 +1902,12 @@ pub fn pass1_1020_8556(param_1: *mut u16)
         uVar2 = (iVar4 + iVar6 + 0x2);
         if ((uVar2 | paVar3) != 0x0) {
           pass1_1008_5118(paVar3 & 0xffff | uVar2 << 0x10);
-          fn_ptr_1000_17ce(paVar3,0x1000);
+          fn_ptr_1000_17ce(ctx, paVar3, 0x1000);
         }
       }
       iStack12 += 0x1;
     }
-    fn_ptr_1000_17ce(iVar5.field_0xc,0x1000);
+    fn_ptr_1000_17ce(ctx, iVar5.field_0xc, 0x1000);
   }
   *param_1 = 0x389a;
   iVar5.field_0x2 = 0x1008;
@@ -1941,7 +1941,7 @@ pub fn pass1_1020_85f6(param_1: u32)
     uVar2 = (iVar5 + iStack4 * 0x4 + 0x2);
     if ((uVar2 | paVar3) != 0x0) {
       pass1_1008_5118(paVar3 & 0xffff | uVar2 << 0x10);
-      fn_ptr_1000_17ce(paVar3,0x1000);
+      fn_ptr_1000_17ce(ctx, paVar3, 0x1000);
     }
     uVar4 = iVar6.field_0xc;
     (uVar4 + iStack4 * 0x4) = 0x0;
@@ -1985,7 +1985,7 @@ pub fn pass1_1020_865a(param_1: u32)
       uVar2 = (iVar6 + iVar8 + 0x2);
       if ((uVar2 | paVar3) != 0x0) {
         pass1_1008_5118(paVar3 & 0xffff | uVar2 << 0x10);
-        fn_ptr_1000_17ce(paVar3,0x1000);
+        fn_ptr_1000_17ce(ctx, paVar3, 0x1000);
       }
       uVar4 = (iVar5 + 0xc);
       (uVar4 + iStack4 * 0x4) = 0x0;
@@ -4505,7 +4505,7 @@ pub fn pass1_1020_c47a(param_1: *mut u16)
  // uVar1 = (param_1 >> 0x10);
   *param_1 = 0xc834;
   (param_1 + 0x2) = 0x1020;
-  fn_ptr_1000_17ce((param_1 + 0x18),0x1000);
+  fn_ptr_1000_17ce(ctx, (param_1 + 0x18), 0x1000);
   pass1_1030_1d28(param_1);
   return;
 }
@@ -5767,7 +5767,7 @@ pub fn pass1_1020_d8ca(param_1: i16,param_2: u16) -> u32
 {
   pass1_1028_b418((param_1 + 0x6));
   if (((param_1 + 0xa) & 0x1) != 0x0) {
-    fn_ptr_1000_17ce((param_1 + 0x6),0x1000);
+    fn_ptr_1000_17ce(ctx, (param_1 + 0x6), 0x1000);
   }
   return CONCAT22((param_1 + 0x8),(param_1 + 0x6));
 }

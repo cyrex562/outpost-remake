@@ -2856,7 +2856,7 @@ pub fn win_ui_fn_1020_6e98(param_1: u32,in_win_handle: HWND16,param_3: u16)
     if (window_handle == 0x0) {
       if ((window_name._2_2_ | window_name) != 0x0) {
         pass1_1018_2afa(window_name);
-        fn_ptr_1000_17ce(paVar2,0x1000);
+        fn_ptr_1000_17ce(ctx, paVar2, 0x1000);
         return;
       }
     }
@@ -2904,7 +2904,7 @@ pub fn win_ui_fn_1020_6e98(param_1: u32,in_win_handle: HWND16,param_3: u16)
       if (window_name != 0x0) {
         pass1_1018_2afa(window_name);
         window_handle = 0x1000;
-        fn_ptr_1000_17ce(paVar2,0x1000);
+        fn_ptr_1000_17ce(ctx, paVar2, 0x1000);
       }
       ShowWindow16(window_handle,0x1);
       SetFocus16(ctx.s_tile2_bmp_1050_1538);
@@ -3050,7 +3050,7 @@ pub fn win_ui_op_1020_737a(param_1: i32,param_2: HWND16,param_3: u16) -> bool
       paStack78 = CONCAT22(uVar7,uVar1);
       if ((uVar7 | uVar1) != 0x0) {
         pass1_1008_5118(CONCAT22(uVar7,uVar1));
-        fn_ptr_1000_17ce(paStack78,0x1000);
+        fn_ptr_1000_17ce(ctx, paStack78, 0x1000);
       }
       puVar5 = local_42;
       pass1_1008_8ce4(local_30,CONCAT22(param_3,puVar5),
