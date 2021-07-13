@@ -1,6 +1,6 @@
-use crate::global::AppContext;
 use crate::defines::U32Ptr;
-use crate::util::get_string_at_addr;
+use crate::global::AppContext;
+use crate::util::{CONCAT22, get_string_from_addr};
 
 pub fn  poss_str_op_1000_28dc(
     ctx: &mut AppContext,
@@ -12,7 +12,7 @@ pub fn  poss_str_op_1000_28dc(
   let i_var2: i16;
   let mut string_ptr_1: String;
   
-  string_ptr_1 = get_string_at_addr(ctx.PTR_LOOP_1050_63fe);
+  string_ptr_1 = get_string_from_addr(ctx.PTR_LOOP_1050_63fe);
   loop {
     string_1 = &string_ptr_1;
     string_ptr_1 = string_ptr_1[2..];
@@ -271,4 +271,14 @@ str_1000_4d58(in_string_1: &mut String,in_string_2: &mut String,param_3: u32,par
     *&param_5.style = 0x0;
   }
   return;
+}
+
+
+pub fn string_1000_1fd2(param_1: i16) -> String
+
+{
+    if param_1 == 0x2 {
+        return "Out of memory.  Please free some memory, then choose retry.".to_string();
+    }
+    return get_string_from_addr(CONCAT22(0x1000, (param_1 * 0x17 + 0x1c7a) as u16)).to_string();
 }

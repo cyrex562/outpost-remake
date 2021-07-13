@@ -8,7 +8,7 @@ pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u
   let unaff_CS: u16;
   
   if (param_3 < (param_1 + 0xc)) {
-    msg_box_op_1000_214c(0x0,0x0,0xd940,&ctx.PTR_LOOP_1050_1040,param_4);
+    msg_box_op_1000_214c(0x0, 0x0, 0xd940, param_4);
     return 0x1;
   }
   piVar1 = (param_1 + 0xc);
@@ -18,7 +18,7 @@ pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u
 
 
 pub fn msg_box_op_1000_214c
-          (param_1: u16,param_2: i16,param_3: u16,param_4: u16,param_5: u16) -> bool
+          (param_1: u16, param_2: i16, param_3: &String, param_5: u16) -> bool
 
 {
   let IVar1: i16;

@@ -2472,7 +2472,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: *mut u16)
 }
 
 
-pub fn get_private_profile_string_1010_6132(param_1: u32,param_2: i16,LPCSTR param_3)
+pub fn get_private_profile_string_1010_6132(param_1: u32,param_2: i16,param_3: &String)
 {
   let uVar1: u32;
   let uVar2: u32;

@@ -1,7 +1,25 @@
+use crate::util::{CONCAT22, ZEXT24};
+use crate::struct_ops::struct_1018::struct_1020_0baa;
+use crate::mem_1000::mem_op_1000_179c;
+use crate::ui::ui_1008::{create_window_ex_1008_9760, win_1008_5c5c};
+use crate::winapi::{SendMessage16, IsWindow16, PostMessage16, ShowCursor16, SetWindowText16, GetDlgItem16, wsprintf16, SetWindowPos16, GetSystemMetrics16, GetClientRect16};
+use crate::win_struct::{HWND16, WNDCLASS16, SEGPTR, RECT16};
+use crate::pass::pass_1008::{pass1_1008_57c4, pass1_1008_405c, pass1_1008_4d84};
+use crate::pass::pass_1018::{pass1_1020_04f6, pass1_1018_ec74, pass1_1018_e834, pass1_1018_e4f2, struct_1018_e100, pass1_1018_6924, pass1_1018_6198, pass1_1018_5b06};
+use crate::struct_ops::struct_1010::struct_1010_3c52;
+use crate::mixed::mixed_1010_20ba;
+use crate::draw::draw_1018::{get_dc_1018_4db0, create_dc_1018_4e04};
+use crate::cleanup::unk_destroy_window_op_1018_6bb6;
+use crate::mci::mci_send_command_1008_53ae;
+use crate::defines::{Struct28, Struct76};
+use crate::pass::pass_1000::pass1_1000_3cea;
+use crate::pass::pass_1028::{pass1_1028_e4ec, pass1_1028_dc52};
+use crate::ui::ui_1040::dialog_ui_fn_1040_78e2;
+use crate::struct_ops::struct_1008::struct_1008_4c58;
 
 pub fn
 win_op_1018_294a(param_1: i16,param_2: u16,param_3: u16,param_4: i32,param_5: u16,
-                LPCSTR in_string_6)
+                in_string_6: &String)
 
 {
   if (((param_1 + 0x18) != 0x0) && (param_4._2_2_ == 0x280)) {
@@ -249,7 +267,7 @@ pub fn window_op_1018_67b6(astruct *param_1)
 }
 
 
-pub fn mix_ui_op_1018_6adc(Struct28 *param_1)
+pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
 {
   let iVar1: i16;
   let iVar2: i16;

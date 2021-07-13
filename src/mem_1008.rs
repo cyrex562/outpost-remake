@@ -22,7 +22,7 @@ pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u
    // uVar6 = (param_1 >> 0x10);
     iVar4 = param_1;
     if ((iVar4 + 0x6) != 0x0) {
-        uVar7 = pass1_1000_1284((iVar4 + 0x6), 0x1000);
+        uVar7 = pass1_1000_1284(ctx, (iVar4 + 0x6), 0x1000);
        // iVar1 = (uVar7 >> 0x10);
         lVar8 = mem_op_1000_0a48(ctx, 0x1, uVar7, iVar1, ctx._PTR_LOOP_1050_5f2c, 0x1000);
         uVar5 = lVar8;

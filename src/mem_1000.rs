@@ -439,7 +439,7 @@ pub unsafe fn mem_1000_0670(
     return 0x1;
 }
 
-pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, param_1: &mut StructA, param_2: u16) -> u32 {
+pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, param_1: Option<&mut StructA>, param_2: u16) -> u32 {
     let pu_var1: *mut u16;
     let pi_var2: *mut i16;
     let i_var3: i16;
@@ -710,7 +710,7 @@ pub unsafe fn mem_op_1000_131c(
         if h_var1 != 0x0 {
             GlobalPageLock16(ctx.s_tile2_bmp_1050_1538);
         }
-        pass1_1000_15ce(u_stack10, (l_var3 >> 0x10), ctx.s_tile2_bmp_1050_1538);
+        pass1_1000_15ce(ctx, u_stack10, (l_var3 >> 0x10), ctx.s_tile2_bmp_1050_1538);
     }
     if h_var1 != 0x0 {
         WIN16_GlobalLock16(ctx.s_tile2_bmp_1050_1538);

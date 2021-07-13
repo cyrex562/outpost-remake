@@ -21,7 +21,7 @@ use crate::struct_ops::struct_1010::struct_1010_5f1e;
 use crate::ui::ui_1010::show_window_1010_7ace;
 use crate::ui::ui_1018::send_msg_1020_097e;
 use crate::ui::ui_1038::{send_msg_1030_83ba, show_win_1038_b68a};
-use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_struct_ref_from_addr, SUB42, ZEXT24, get_struct_at_addr, get_string_at_rsrc};
+use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_struct_ref_from_addr, SUB42, ZEXT24, get_struct_from_addr, get_string_from_rsrc};
 use crate::win_struct::{ATOM, BITMAPINFO, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16, HPALETTE16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
 use crate::winapi::{BeginPaint16, ClientToScreen16, CreatePalette16, CreateSolidBrush16, CreateWindow16, CreateWIndowEx16, DefWindowProc16, DeleteObject16, EndPaint16, FillRect16, GetClassInfo16, GetClientRect16, GetOpenFileName16, GetSaveFileName16, GetStockObject16, GetSubMenu16, GetSysColor16, GetWindowLong16, InvalidateRect16, IsIconic16, KillTimer16, LoadMenu16, mciSendCommand16, MessageBeep16, MessageBox16, OutputDebugString16, PostMessage16, PostQuitMessage16, PtInRect16, RealizePalette16, RegisterClass16, ReleaseCapture16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDIBitsToDevice, SetSysColors16, SetTimer16, SetWindowText16, SetWindowWord16, ShowWindow16, StretchDIBits16, TrackPopupMenu16, UpdateWindow16, LoadCursor16};
 
@@ -57,7 +57,7 @@ pub unsafe fn win_ui_cursor_op_1008_06c0(
     if param_4 == 0x400 {
         pass1_1030_8344(
             ctx, ctx.PTR__LOOP_1050_5748 as u16 as u32, 0x4000001);
-        struct_1 = get_struct_at_addr((in_dx | in_ax) as u32) ;
+        struct_1 = get_struct_from_addr((in_dx | in_ax) as u32) ;
         if struct_1 != 0x0 {
             if ctx.PTR_LOOP_1050_4fe8 != 0x0 {
                 pc_var4 = load_string_1010_847e(ctx.PTR__LOOP_1050_14cc as i16,
@@ -165,7 +165,7 @@ pub fn message_box_op_1008_12dc(
     let cursor_handle_1: HCURSOR16;
     let curosr_handle_2: HCURSOR16;
 
-    curosr_handle_2 = LoadCursor16(param_3, &get_string_at_rsrc(0x7f02));
+    curosr_handle_2 = LoadCursor16(param_3, &get_string_from_rsrc(0x7f02));
     cursor_handle_1 = SetCursor16(ctx.s_tile2_bmp_1050_1538 as HCURSOR16);
     str_1008_6d8a(CONCAT22(param_4, local_c), param_2, in_dx, param_4, in_af);
     bvar1 = file_fn_1008_6e02(CONCAT22(param_4, local_c),
@@ -205,7 +205,7 @@ pub fn message_box_op_1008_12dc(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_op_1008_1414(astruct_72 * * param_1, param_2: u32, LPCSTR param_3, param_4: u16,
+pub fn win_ui_op_1008_1414(astruct_72 * * param_1, param_2: u32, param_3: &String, param_4: u16,
                            param_5: u8, param_6: u16)
 
 {
@@ -1223,7 +1223,7 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
 }
 
 
-pub fn create_window_1008_5e7e(u16 in_stock_obj_id, in_wnd_class: &WNDCLASS16) -> HWND16 {
+pub fn create_window_1008_5e7e(in_stock_obj_id: u16, in_wnd_class: &WNDCLASS16) -> HWND16 {
     let puVar1: u32;
     let puVar2: u32;
     let BVar3: bool;
@@ -1783,7 +1783,7 @@ pub fn get_stock_obj_1008_9c56(param_1: i16) {
 
 LRESULT
 make_def_wnd_proc_1008_9ce6
-(param_1: u16,param_2: u16,u16 in_msg_3,param_4: WPARAM16,param_5: LPARAM,
+(param_1: u16,param_2: u16,in_msg_3: u16,param_4: WPARAM16,param_5: LPARAM,
 in_hwnd_5: HWND16)
 
 {

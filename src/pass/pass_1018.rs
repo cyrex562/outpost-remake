@@ -168,8 +168,9 @@ pass1_1018_0196(param_1: u32,param_2: u32,param_3: u32,param_4: u16,param_5: *mu
     piVar1 = (iVar7 + 0x32);
     *piVar1 = *piVar1 + 0x5;
     uVar3 = (iVar7 + 0x2c);
-    lVar9 = pass1_1000_0ed4(0x1000,param_6,0x1,(iVar7 + 0x32) * 0x6,0x0,
-                            uVar3,(uVar3 >> 0x10));
+    lVar9 = pass1_1000_0ed4(
+        ctx, 0x1000, param_6, 0x1, (iVar7 + 0x32) * 0x6, 0x0,
+        uVar3, (uVar3 >> 0x10));
     ctx.PTR_LOOP_1050_5f2e = (lVar9 >> 0x10);
     uVar5 = lVar9;
   }

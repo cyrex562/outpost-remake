@@ -887,10 +887,11 @@ pub fn pass1_1030_1f77(param_1: i16,param_2: i16,param_3: u16,param_4: u16)
   else {
     uVar3 = (param_1 + 0x4);
     uVar2 = (param_2 + -0x4);
-    lVar7 = pass1_1000_0ed4(0x1000,param_4,0x1,uVar2 * 0x4,
-                            (ctx.PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar2,uVar2)) *
-                            0x2 + CARRY2(uVar2 * 0x2,uVar2 * 0x2),uVar3,
-                            (uVar3 >> 0x10));
+    lVar7 = pass1_1000_0ed4(
+        ctx, 0x1000, param_4, 0x1, uVar2 * 0x4,
+        (ctx.PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar2,uVar2)) *
+        0x2 + CARRY2(uVar2 * 0x2,uVar2 * 0x2), uVar3,
+        (uVar3 >> 0x10));
     ctx.PTR_LOOP_1050_5f2e = (lVar7 >> 0x10);
     uVar5 = lVar7;
   }
@@ -6640,8 +6641,9 @@ pub fn pass1_1030_878c(long *param_1,param_2: i16,param_3: u16)
                                   ctx.PTR_LOOP_1050_5f2e,0x1000);
     }
     else {
-      lVar5 = pass1_1000_0ed4(0x1000,param_3,0x1,uVar2 * 0x6,0x0,*param_1,
-                              (*param_1 >> 0x10));
+      lVar5 = pass1_1000_0ed4(
+          ctx, 0x1000, param_3, 0x1, uVar2 * 0x6, 0x0, *param_1,
+          (*param_1 >> 0x10));
       ctx.PTR_LOOP_1050_5f2e = (lVar5 >> 0x10);
       uVar3 = lVar5;
     }

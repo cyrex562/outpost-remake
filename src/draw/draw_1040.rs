@@ -1,5 +1,5 @@
 use crate::winapi::{DeleteObject16, SelectPalette16, SelectObject16, LineTo16, MoveTo16, Rectangle16, CreatePen16, GetStockObject16, GetCurrentPosition16, EndPaint16, FrameRect16, GetClientRect16, CreateSolidBrush16, BeginPaint16, InvalidateRect16, SetBkColor16, SetTextColor16, SetMapMode16, GrayString16, DrawText16, ReleaseDC16, GetDC16, GetProp16, GetSystemMetrics16, DrawIcon16, GetDlgCtrlID16, TextOut16, GetTextExtent16, lstrlen16, FillRect16, GetWindowLong16, GetWindowRect16, GetWindowDC16, IsIconic16, LoadIcon16};
-use crate::util::{CONCAT22, SUB42, CONCAT11, CONCAT12, ZEXT24, get_string_at_rsrc};
+use crate::util::{CONCAT22, SUB42, CONCAT11, CONCAT12, ZEXT24, get_string_from_rsrc};
 use crate::win_struct::{HPALETTE16, HDC16, HGDIOBJ16, HPEN16, PAINTSTRUCT16, RECT16, HWND16, HBRUSH16, COLORREF, HINSTANCE16, HANDLE16, HICON16};
 use crate::pass::pass_1010::{pass1_1010_2ee2, pass1_1010_7b8c};
 use crate::ui::ui_1040::ui_cleanup_op_1040_782c;
@@ -143,7 +143,7 @@ pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
     let paVar11: &mut Struct43;
     let paVar12: &mut Struct76;
     let uVar13: u16;
-    HDC16 * pHVar14;
+    let pHVar14: HDC16;
     let uVar15: u16;
     let HVar16: HDC16;
     let HVar17: HDC16;
@@ -511,18 +511,18 @@ pub fn load_icon_1040_8b92(param_1: &mut Struct_1040_8b92, instance_handle: HINS
 
     b_var1 = (param_1.field_0x98) & 0xf0;
     if b_var1 == 0x30 {
-        name = get_string_at_rsrc(0x7f03);
+        name = get_string_from_rsrc(0x7f03);
     } else {
         if (b_var1 == 0x10) || (b_var1 == 0x10) {
-            name = get_string_at_rsrc(0x7f01);
+            name = get_string_from_rsrc(0x7f01);
         } else {
             if (b_var1 == 0x40) || (b_var1 == 0x40) {
-                name = get_string_at_rsrc(0x7f04);
+                name = get_string_from_rsrc(0x7f04);
             } else {
                 if b_var1 != 0x20 {
                     return;
                 }
-                name = get_string_at_rsrc(0x7f02);
+                name = get_string_from_rsrc(0x7f02);
             }
         }
     }
@@ -556,11 +556,11 @@ pub fn draw_text_1040_8d14(
         iVar3.field_0x9e = 0x14;
     }
     obj_handle = 0x0;
-    handle = GetProp16(*param_2, &get_string_at_rsrc(0x5e0f));
+    handle = GetProp16(*param_2, &get_string_from_rsrc(0x5e0f));
     if handle != 0x0 {
         obj_handle = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, handle);
     }
-    DrawText16(ctx.s_tile2_bmp_1050_1538 as HDC16, &get_string_at_rsrc(0x410), iVar3.field_0x9e, &rect,
+    DrawText16(ctx.s_tile2_bmp_1050_1538 as HDC16, &get_string_from_rsrc(0x410), iVar3.field_0x9e, &rect,
                0xffff);
     if obj_handle != 0x0 {
         SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, obj_handle);

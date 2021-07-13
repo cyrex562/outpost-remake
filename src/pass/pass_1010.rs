@@ -4218,7 +4218,7 @@ pub fn pass1_1010_6ca2(param_1: u32, param_2: i16, param_3: u16, param_4: u16) -
 
 
 
-u16 pass1_1010_6cf8(param_1: u16,param_2: u32,param_3: i16,param_4: u16,
+pass1_1010_6cf8: u16(param_1: u16,param_2: u32,param_3: i16,param_4: u16,
 param_5: u16,param_6: u16,param_7: u16)
 
 {

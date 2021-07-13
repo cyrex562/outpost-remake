@@ -3225,9 +3225,10 @@ pub fn pass1_1008_909c(param_1: u32, param_2: u16) {
                                     ctx.PTR_LOOP_1050_5f2e, 0x1000);
     } else {
         lVar5 = iVar5.field_0x6;
-        lVar5 = pass1_1000_0ed4(0x1000, param_2, 0x1, uVar3 * 0x4,
-                                (ctx.PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar3, uVar3)) * 0x2 + CARRY2(uVar3 * 0x2, uVar3 * 0x2), lVar5,
-                                (lVar5 >> 0x10));
+        lVar5 = pass1_1000_0ed4(
+            ctx, 0x1000, param_2, 0x1, uVar3 * 0x4,
+            (ctx.PTR_LOOP_1050_5f2e * 0x2 + CARRY2(uVar3, uVar3)) * 0x2 + CARRY2(uVar3 * 0x2, uVar3 * 0x2), lVar5,
+            (lVar5 >> 0x10));
         ctx.PTR_LOOP_1050_5f2e = (lVar5 >> 0x10);
         uVar3 = lVar5;
     }

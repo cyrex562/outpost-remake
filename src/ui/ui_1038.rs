@@ -908,7 +908,7 @@ pub fn win_ui_dlg_op_1038_98b4(param_1: &mut Struct51,param_2: HWND16,bool param
 
 pub fn
 enable_win_1038_9a66
-          (param_1: u16,param_2: u16,u16 in_b_enable_3,param_4: u32,
+          (param_1: u16,param_2: u16,in_b_enable_3: u16,param_4: u32,
           in_hwnd_5: HWND16)
 
 {

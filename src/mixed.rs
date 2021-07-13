@@ -1,14 +1,14 @@
-use crate::pass::pass_1010::{pass1_1010_2816, pass1_1010_3d82, pass1_1010_503e, pass1_1010_3e3c, pass1_1010_3702, pass1_1010_6abc, pass1_1010_195e, pass1_1010_1146, pass1_1010_6700, pass1_1010_4a8a, pass1_1010_8c32, pass1_1010_2bfc, pass1_1010_0000};
+use crate::pass::pass_1010::{pass1_1010_2816, pass1_1010_3d82, pass1_1010_503e, pass1_1010_3e3c, pass1_1010_3702, pass1_1010_6abc, pass1_1010_195e, pass1_1010_1146, pass1_1010_6700, pass1_1010_4a8a, pass1_1010_8c32, pass1_1010_2bfc, pass1_1010_0000, pass1_1010_28e6};
 use crate::struct_ops::struct_1010::{struct_1010_3b7a, struct_1010_a1d8, struct_1010_95aa, struct_1010_6326, struct_1010_02e0, struct_1010_e9e4, struct_1010_50b2};
 use crate::sys_api::win_sys_op_1010_5404;
-use crate::struct_ops::struct_1018::{struct_1018_2b10, struct_1018_0570};
+use crate::struct_ops::struct_1018::{struct_1018_2b10, struct_1018_0570, struct_1018_229c};
 use crate::pass::pass_1008::{pass1_1008_eabc, pass1_1008_d99e, pass1_1008_9d36, pass1_1008_eb2a, pass1_1008_d790, pass1_1008_d72e, pass1_1008_ec10};
 use crate::pass::pass_1018::{pass1_1018_18b8, pass1_1018_4aaa, pass1_1018_1ff4, pass1_1018_5070, pass1_1018_56e6};
 use crate::mem_1000::mem_op_1000_179c;
 use crate::struct_ops::struct_1008::{struct_1008_9fd2, struct_1008_dd4e, pass1_1008_c72a, struct_1008_ecb2};
 use crate::ui::ui_1008::pass1_1008_af94;
 use crate::draw::draw_1008::unk_draw_op_1008_da12;
-use crate::util::{CONCAT22, get_struct_at_addr};
+use crate::util::{CONCAT22, get_struct_from_addr};
 use crate::defines::{Struct79, U32Ptr, Struct19};
 use crate::global::AppContext;
 use crate::win_struct::WNDCLASS16;
@@ -38,7 +38,7 @@ pub unsafe fn mixed_1010_20ba(
   // let pu_stack6: *mut u16;
   
   pass1_1010_2816(param_1);
-  let mut struct_ref_1 = get_struct_at_addr::<Struct19>((param_2 * 0x4) as u32);
+  let mut struct_ref_1 = get_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);
   // let u_var6 = (param_1 >> 0x10);
   let i_var5 = param_1;
   let mut pu_stack6 = (struct_ref_1.field_0x0 + i_var5);
@@ -169,7 +169,7 @@ pub unsafe fn mixed_1010_20ba(
   0x25 => {
       mem_op_1000_179c(ctx, 0x1c, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1018_4aaa(struct_ref_1, param_4, param_2, pu_var3, param_3);
@@ -178,7 +178,7 @@ pub unsafe fn mixed_1010_20ba(
   0x26 => {
       mem_op_1000_179c(ctx, 0x1c, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1008_d99e(struct_ref_1, param_4, param_2, pu_var3, param_3);
@@ -187,7 +187,7 @@ pub unsafe fn mixed_1010_20ba(
   0x27 => {
       mem_op_1000_179c(ctx, 0x58, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1008_9d36(struct_ref_1, param_4, param_2, param_3);
@@ -196,7 +196,7 @@ pub unsafe fn mixed_1010_20ba(
   0x28 => {
       mem_op_1000_179c(ctx, 0x2c, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1010_28e6(struct_ref_1, param_4, param_2, pu_var3, param_3);
@@ -214,7 +214,7 @@ pub unsafe fn mixed_1010_20ba(
   0x2a => {
       mem_op_1000_179c(ctx, 0x1c, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1010_503e(struct_ref_1, param_4, param_2, pu_var3, param_3);
@@ -241,7 +241,7 @@ pub unsafe fn mixed_1010_20ba(
   0x2d => {
       mem_op_1000_179c(ctx, 0x80, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1010_3e3c(CONCAT22(param_4, struct_ref_1), param_2, param_3);
@@ -249,7 +249,7 @@ pub unsafe fn mixed_1010_20ba(
   }
   0x2e => {
       mem_op_1000_179c(ctx, 0x806, param_4, 0x1000);
-      if ((param_4 | struct_ref_1) == 0x0) {}
+      if (param_4 | struct_ref_1) == 0x0 {}
       // goto
       // LAB_1010_2126
       u_var11 = pass1_1018_1ff4(struct_ref_1, param_4, param_2);
@@ -260,7 +260,7 @@ pub unsafe fn mixed_1010_20ba(
   0x2f => {
       mem_op_1000_179c(ctx, 0x58, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       struct_1010_e9e4(struct_ref_1, param_4, param_2);
@@ -268,7 +268,7 @@ pub unsafe fn mixed_1010_20ba(
   }
   0x30 => {
       mem_op_1000_179c(ctx, 0xe, param_4, 0x1000);
-      if ((param_4 | struct_ref_1) == 0x0) {}
+      if (param_4 | struct_ref_1) == 0x0 {}
       // goto
       // LAB_1010_2126
       pu_var8 = pass1_1010_3702(struct_ref_1, param_4, param_2);
@@ -280,7 +280,7 @@ pub unsafe fn mixed_1010_20ba(
       uVar2 = 0x60;
       u_var7 = 0x1000;
       mem_op_1000_179c(ctx, 0x60, param_4, 0x1000);
-      if ((param_4 | struct_ref_1) == 0x0) {
+      if (param_4 | struct_ref_1) == 0x0 {
 //LAB_1010_2680:
           u_var7 = 0x1000;
           struct_ref_1 = 0x0;
@@ -297,7 +297,7 @@ pub unsafe fn mixed_1010_20ba(
   0x32 => {
       mem_op_1000_179c(ctx, 0x26, param_4, 0x1000);
       pu_var3 = (param_4 | struct_ref_1);
-      if (pu_var3 == 0x0) {}
+      if pu_var3 == 0x0 {}
       // goto
       // LAB_1010_2126
       pass1_1010_6abc(struct_ref_1, param_4, param_2);

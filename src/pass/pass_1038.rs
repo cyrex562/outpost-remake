@@ -2,7 +2,7 @@ use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, enable_win_1040_9234};
 use crate::defines::{Struct18, U32Ptr};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::pass::pass_1010::{pass1_1010_08e2, pass1_1010_0886, pass1_1010_038e, pass1_1010_041a, pass1_1010_1ea6, pass1_1010_3770, pass1_1010_8fba};
-use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT11, CARRY2, CONCAT12, CONCAT13, get_string_at_addr};
+use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT11, CARRY2, CONCAT12, CONCAT13, get_string_from_addr};
 use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
 use crate::string::string_1010::load_string_1010_847e;
 use crate::mixed::mixed_1010_20ba;
@@ -5199,8 +5199,8 @@ pub fn load_string_1038_4d28(address: U32Ptr) -> String
 
 {
 
-  return get_string_at_addr(CONCAT22(((address + 0x1fc) as u16),
-                                     ((address + 0x1fa) as u16)));
+  return get_string_from_addr(CONCAT22(((address + 0x1fc) as u16),
+                                       ((address + 0x1fa) as u16)));
 }
 
 
