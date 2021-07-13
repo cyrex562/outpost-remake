@@ -1289,7 +1289,7 @@ pub unsafe fn mixed_mem_op_1000_3c51(
     iVar11 = 0x12;
     iVar10 = 0x12;
     pass1_1000_25a8(param_4, param_5);
-    pass1_1000_2913(iVar10, param_4, param_5);
+    pass1_1000_2913(ctx, iVar10, param_4, param_5);
     string_1 = poss_str_op_1000_28dc(ctx, iVar11);
     if (string_1 != 0x0) {
         iVar10 = 0x9;

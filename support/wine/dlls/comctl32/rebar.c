@@ -621,8 +621,8 @@ REBAR_DrawBand (HDC hdc, const REBAR_INFO *infoPtr, REBAR_BAND *lpBand)
     if (lpBand->fDraw & DRAW_TEXT) {
 	/* need to handle CDRF_NEWFONT here */
 	INT oldBkMode = SetBkMode (hdc, TRANSPARENT);
-	COLORREF oldcolor = CLR_NONE;
-	COLORREF new;
+	oldcolor: COLORREF = CLR_NONE;
+	new: COLORREF;
 	if (lpBand->clrFore != CLR_NONE) {
 	    new = (lpBand->clrFore == CLR_DEFAULT) ? infoPtr->clrBtnText :
 		    lpBand->clrFore;
@@ -1832,7 +1832,7 @@ static LRESULT REBAR_EraseBkGnd (const REBAR_INFO *infoPtr, HDC hdc)
     UINT i;
     INT oldrow;
     RECT cr;
-    COLORREF old = CLR_NONE, new;
+    old: COLORREF = CLR_NONE, new;
     HTHEME theme = GetWindowTheme (infoPtr->hwndSelf);
 
     GetClientRect (infoPtr->hwndSelf, &cr);
@@ -2353,7 +2353,7 @@ REBAR_GetBarInfo (const REBAR_INFO *infoPtr, LPREBARINFO lpInfo)
 static inline LRESULT
 REBAR_GetBkColor (const REBAR_INFO *infoPtr)
 {
-    COLORREF clr = infoPtr->clrBk;
+    clr: COLORREF = infoPtr->clrBk;
 
     if (clr == CLR_DEFAULT)
       clr = infoPtr->clrBtnFace;
@@ -2795,9 +2795,9 @@ REBAR_SetBarInfo (REBAR_INFO *infoPtr, const REBARINFO *lpInfo)
 
 
 static LRESULT
-REBAR_SetBkColor (REBAR_INFO *infoPtr, COLORREF clr)
+REBAR_SetBkColor (REBAR_INFO *infoPtr, clr: COLORREF)
 {
-    COLORREF clrTemp;
+    clrTemp: COLORREF;
 
     clrTemp = infoPtr->clrBk;
     infoPtr->clrBk = clr;
@@ -2824,9 +2824,9 @@ REBAR_SetParent (REBAR_INFO *infoPtr, HWND parent)
 
 
 static LRESULT
-REBAR_SetTextColor (REBAR_INFO *infoPtr, COLORREF clr)
+REBAR_SetTextColor (REBAR_INFO *infoPtr, clr: COLORREF)
 {
-    COLORREF clrTemp;
+    clrTemp: COLORREF;
 
     clrTemp = infoPtr->clrText;
     infoPtr->clrText = clr;

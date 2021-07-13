@@ -151,7 +151,7 @@ typedef struct OLEPictureImpl {
   /* Bitmap transparency mask */
     HBITMAP hbmMask;
     HBITMAP hbmXor;
-    COLORREF rgbTrans;
+    rgbTrans: COLORREF;
 
   /* data */
     void* data;
@@ -1032,7 +1032,7 @@ static HRESULT OLEPictureImpl_LoadWICSource(OLEPictureImpl *This, IWICBitmapSour
     WICRect rc;
     IWICBitmapSource *real_source;
     UINT x, y;
-    COLORREF white = RGB(255, 255, 255), black = RGB(0, 0, 0);
+    white: COLORREF = RGB(255, 255, 255), black = RGB(0, 0, 0);
     BOOL has_alpha=FALSE;
 
     hr = WICConvertBitmapSource(&GUID_WICPixelFormat32bppBGRA, src, &real_source);

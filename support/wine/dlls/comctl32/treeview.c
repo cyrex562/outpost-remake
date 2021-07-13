@@ -1943,9 +1943,9 @@ TREEVIEW_GetLineColor(const TREEVIEW_INFO *infoPtr)
 }
 
 static LRESULT
-TREEVIEW_SetLineColor(TREEVIEW_INFO *infoPtr, COLORREF color)
+TREEVIEW_SetLineColor(TREEVIEW_INFO *infoPtr, color: COLORREF)
 {
-    COLORREF prevColor = infoPtr->clrLine;
+    prevColor: COLORREF = infoPtr->clrLine;
 
     TRACE("\n");
     infoPtr->clrLine = color;
@@ -1961,9 +1961,9 @@ TREEVIEW_GetTextColor(const TREEVIEW_INFO *infoPtr)
 }
 
 static LRESULT
-TREEVIEW_SetTextColor(TREEVIEW_INFO *infoPtr, COLORREF color)
+TREEVIEW_SetTextColor(TREEVIEW_INFO *infoPtr, color: COLORREF)
 {
-    COLORREF prevColor = infoPtr->clrText;
+    prevColor: COLORREF = infoPtr->clrText;
 
     TRACE("\n");
     infoPtr->clrText = color;
@@ -1983,9 +1983,9 @@ TREEVIEW_GetBkColor(const TREEVIEW_INFO *infoPtr)
 }
 
 static LRESULT
-TREEVIEW_SetBkColor(TREEVIEW_INFO *infoPtr, COLORREF newColor)
+TREEVIEW_SetBkColor(TREEVIEW_INFO *infoPtr, newColor: COLORREF)
 {
-    COLORREF prevColor = infoPtr->clrBk;
+    prevColor: COLORREF = infoPtr->clrBk;
 
     TRACE("\n");
     infoPtr->clrBk = newColor;
@@ -2005,9 +2005,9 @@ TREEVIEW_GetInsertMarkColor(const TREEVIEW_INFO *infoPtr)
 }
 
 static LRESULT
-TREEVIEW_SetInsertMarkColor(TREEVIEW_INFO *infoPtr, COLORREF color)
+TREEVIEW_SetInsertMarkColor(TREEVIEW_INFO *infoPtr, color: COLORREF)
 {
-    COLORREF prevColor = infoPtr->clrInsertMark;
+    prevColor: COLORREF = infoPtr->clrInsertMark;
 
     TRACE("0x%08x\n", color);
     infoPtr->clrInsertMark = color;
@@ -2374,7 +2374,7 @@ TREEVIEW_DrawItemLines(const TREEVIEW_INFO *infoPtr, HDC hdc, const TREEVIEW_ITE
 		 & (TVS_LINESATROOT|TVS_HASLINES|TVS_HASBUTTONS))
 		> TVS_LINESATROOT);
     HBRUSH hbr, hbrOld;
-    COLORREF clrBk = GETBKCOLOR(infoPtr->clrBk);
+    clrBk: COLORREF = GETBKCOLOR(infoPtr->clrBk);
 
     if (!lar && item->iLevel == 0)
 	return;
@@ -2517,7 +2517,7 @@ TREEVIEW_DrawItem(const TREEVIEW_INFO *infoPtr, HDC hdc, TREEVIEW_ITEM *item)
 {
     INT cditem;
     HFONT hOldFont;
-    COLORREF oldTextColor, oldTextBkColor;
+    oldTextColor: COLORREF, oldTextBkColor;
     int centery;
     BOOL inFocus = (GetFocus() == infoPtr->hwnd);
     NMTVCUSTOMDRAW nmcdhdr;
@@ -2878,7 +2878,7 @@ static void
 TREEVIEW_FillBkgnd(const TREEVIEW_INFO *infoPtr, HDC hdc, const RECT *rc)
 {
     HBRUSH hBrush;
-    COLORREF clrBk = GETBKCOLOR(infoPtr->clrBk);
+    clrBk: COLORREF = GETBKCOLOR(infoPtr->clrBk);
 
     hBrush =  CreateSolidBrush(clrBk);
     FillRect(hdc, rc, hBrush);

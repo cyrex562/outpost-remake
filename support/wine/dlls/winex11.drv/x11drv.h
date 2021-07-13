@@ -151,13 +151,13 @@ extern BOOL X11DRV_Chord( PHYSDEV dev, INT left, INT top, INT right, INT bottom,
                           INT xstart, INT ystart, INT xend, INT yend ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_Ellipse( PHYSDEV dev, INT left, INT top, INT right, INT bottom ) DECLSPEC_HIDDEN;
 extern INT X11DRV_EnumICMProfiles( PHYSDEV dev, ICMENUMPROCW proc, LPARAM lparam ) DECLSPEC_HIDDEN;
-extern BOOL X11DRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT fillType ) DECLSPEC_HIDDEN;
+extern BOOL X11DRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT fillType ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_FillPath( PHYSDEV dev ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_GetDeviceGammaRamp( PHYSDEV dev, LPVOID ramp ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_GetICMProfile( PHYSDEV dev, LPDWORD size, LPWSTR filename ) DECLSPEC_HIDDEN;
 extern DWORD X11DRV_GetImage( PHYSDEV dev, BITMAPINFO *info,
                               struct gdi_image_bits *bits, struct bitblt_coords *src ) DECLSPEC_HIDDEN;
-extern COLORREF X11DRV_GetNearestColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
+extern X11DRV_GetNearestColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
 extern UINT X11DRV_GetSystemPaletteEntries( PHYSDEV dev, UINT start, UINT count, LPPALETTEENTRY entries ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_GradientFill( PHYSDEV dev, TRIVERTEX *vert_array, ULONG nvert,
                                  void *grad_array, ULONG ngrad, ULONG mode ) DECLSPEC_HIDDEN;
@@ -179,11 +179,11 @@ extern BOOL X11DRV_RoundRect( PHYSDEV dev, INT left, INT top, INT right, INT bot
                               INT ell_width, INT ell_height ) DECLSPEC_HIDDEN;
 extern HBRUSH X11DRV_SelectBrush( PHYSDEV dev, HBRUSH hbrush, const struct brush_pattern *pattern ) DECLSPEC_HIDDEN;
 extern HPEN X11DRV_SelectPen( PHYSDEV dev, HPEN hpen, const struct brush_pattern *pattern ) DECLSPEC_HIDDEN;
-extern COLORREF X11DRV_SetDCBrushColor( PHYSDEV dev, COLORREF crColor ) DECLSPEC_HIDDEN;
-extern COLORREF X11DRV_SetDCPenColor( PHYSDEV dev, COLORREF crColor ) DECLSPEC_HIDDEN;
+extern X11DRV_SetDCBrushColor: COLORREF( PHYSDEV dev, crColor: COLORREF ) DECLSPEC_HIDDEN;
+extern X11DRV_SetDCPenColor: COLORREF( PHYSDEV dev, crColor: COLORREF ) DECLSPEC_HIDDEN;
 extern void X11DRV_SetDeviceClipping( PHYSDEV dev, HRGN rgn ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_SetDeviceGammaRamp( PHYSDEV dev, LPVOID ramp ) DECLSPEC_HIDDEN;
-extern COLORREF X11DRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color ) DECLSPEC_HIDDEN;
+extern X11DRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_StretchBlt( PHYSDEV dst_dev, struct bitblt_coords *dst,
                                PHYSDEV src_dev, struct bitblt_coords *src, DWORD rop ) DECLSPEC_HIDDEN;
 extern BOOL X11DRV_StrokeAndFillPath( PHYSDEV dev ) DECLSPEC_HIDDEN;
@@ -203,8 +203,8 @@ extern Pixmap create_pixmap_from_image( HDC hdc, const XVisualInfo *vis, const B
 extern DWORD get_pixmap_image( Pixmap pixmap, int width, int height, const XVisualInfo *vis,
                                BITMAPINFO *info, struct gdi_image_bits *bits ) DECLSPEC_HIDDEN;
 extern struct window_surface *create_surface( Window window, const XVisualInfo *vis, const RECT *rect,
-                                              COLORREF color_key, BOOL use_alpha ) DECLSPEC_HIDDEN;
-extern void set_surface_color_key( struct window_surface *window_surface, COLORREF color_key ) DECLSPEC_HIDDEN;
+                                              color_key: COLORREF, BOOL use_alpha ) DECLSPEC_HIDDEN;
+extern void set_surface_color_key( struct window_surface *window_surface, color_key: COLORREF ) DECLSPEC_HIDDEN;
 extern HRGN expose_surface( struct window_surface *window_surface, const RECT *rect ) DECLSPEC_HIDDEN;
 
 extern RGNDATA *X11DRV_GetRegionData( HRGN hrgn, HDC hdc_lptodp ) DECLSPEC_HIDDEN;
@@ -268,11 +268,11 @@ extern ColorShifts X11DRV_PALETTE_default_shifts DECLSPEC_HIDDEN;
 extern int X11DRV_PALETTE_mapEGAPixel[16] DECLSPEC_HIDDEN;
 
 extern int X11DRV_PALETTE_Init(void) DECLSPEC_HIDDEN;
-extern BOOL X11DRV_IsSolidColor(COLORREF color) DECLSPEC_HIDDEN;
+extern BOOL X11DRV_IsSolidColor(color: COLORREF) DECLSPEC_HIDDEN;
 
-extern COLORREF X11DRV_PALETTE_ToLogical(X11DRV_PDEVICE *physDev, int pixel) DECLSPEC_HIDDEN;
-extern int X11DRV_PALETTE_ToPhysical(X11DRV_PDEVICE *physDev, COLORREF color) DECLSPEC_HIDDEN;
-extern COLORREF X11DRV_PALETTE_GetColor( X11DRV_PDEVICE *physDev, COLORREF color ) DECLSPEC_HIDDEN;
+extern X11DRV_PALETTE_ToLogical: COLORREF(X11DRV_PDEVICE *physDev, int pixel) DECLSPEC_HIDDEN;
+extern int X11DRV_PALETTE_ToPhysical(X11DRV_PDEVICE *physDev, color: COLORREF) DECLSPEC_HIDDEN;
+extern X11DRV_PALETTE_GetColor: COLORREF( X11DRV_PDEVICE *physDev, color: COLORREF ) DECLSPEC_HIDDEN;
 
 /* GDI escapes */
 

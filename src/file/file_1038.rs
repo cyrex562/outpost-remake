@@ -25,7 +25,7 @@ pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: *mut u8,param_4: u16)
    // uVar6 = (param_2 >> 0x10);
     BVar2 = read_file_1008_7dee(uVar4,uVar6,&iVar2.field_0x8,0x0,uVar1,0x4,0x1008);
     if ((((((BVar2 != 0x0) &&
-           (iVar3 = file_1008_77cc(param_2,(long *)(param_1 & 0xffff0000 |
+           (iVar3 = file_1008_77cc(param_2,(param_1 & 0xffff0000 |
                                                    &iVar2.field_0xe),param_3
                                    ,0x1008,param_4), iVar3 != 0x0)) &&
           (BVar2 = read_file_1008_7dee(uVar4,uVar6,&local_4,0x0,param_4,0x2,0x1008

@@ -1348,12 +1348,12 @@ typedef struct _NMTBCUSTOMDRAW
     HBRUSH hbrMonoDither;
     HBRUSH hbrLines;
     HPEN hpenLines;
-    COLORREF clrText;
-    COLORREF clrMark;
-    COLORREF clrTextHighlight;
-    COLORREF clrBtnFace;
-    COLORREF clrBtnHighlight;
-    COLORREF clrHighlightHotTrack;
+    clrText: COLORREF;
+    clrMark: COLORREF;
+    clrTextHighlight: COLORREF;
+    clrBtnFace: COLORREF;
+    clrBtnHighlight: COLORREF;
+    clrHighlightHotTrack: COLORREF;
     RECT rcText;
     int nStringBkMode;
     int nHLStringBkMode;
@@ -1404,8 +1404,8 @@ typedef const TBBUTTON *LPCTBBUTTON;
 
 
 typedef struct _COLORMAP {
-    COLORREF from;
-    COLORREF to;
+    from: COLORREF;
+    to: COLORREF;
 } COLORMAP, *LPCOLORMAP;
 
 
@@ -3733,12 +3733,12 @@ typedef struct LVGROUPMETRICS
 	UINT Top;
 	UINT Right;
 	UINT Bottom;
-	COLORREF crLeft;
-	COLORREF crTop;
-	COLORREF crRight;
-	COLORREF crBottom;
-	COLORREF crRightHeader;
-	COLORREF crFooter;
+	crLeft: COLORREF;
+	crTop: COLORREF;
+	crRight: COLORREF;
+	crBottom: COLORREF;
+	crRightHeader: COLORREF;
+	crFooter: COLORREF;
 } LVGROUPMETRICS, *PLVGROUPMETRICS;
 
 typedef INT (*PFNLVGROUPCOMPARE)(INT, INT, VOID*);
@@ -3795,11 +3795,11 @@ typedef INT (CALLBACK *PFNLVCOMPARE)(LPARAM, LPARAM, LPARAM);
 typedef struct tagNMLVCUSTOMDRAW
 {
     NMCUSTOMDRAW nmcd;
-    COLORREF clrText;
-    COLORREF clrTextBk;
+    clrText: COLORREF;
+    clrTextBk: COLORREF;
     int iSubItem;	/* (_WIN32_IE >= 0x0400) */
     DWORD dwItemType;	/* (_WIN32_IE >= 0x560) */
-    COLORREF clrFace;   /* (_WIN32_IE >= 0x560) */
+    clrFace: COLORREF;   /* (_WIN32_IE >= 0x560) */
     int iIconEffect;	/* (_WIN32_IE >= 0x560) */
     int iIconPhase;	/* (_WIN32_IE >= 0x560) */
     int iPartId;	/* (_WIN32_IE >= 0x560) */

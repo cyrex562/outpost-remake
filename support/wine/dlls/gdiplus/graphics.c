@@ -77,7 +77,7 @@ static BYTE convert_path_point_type(BYTE type)
     return ret;
 }
 
-static COLORREF get_gdi_brush_color(const GpBrush *brush)
+static get_gdi_brush_color: COLORREF(const GpBrush *brush)
 {
     ARGB argb;
 
@@ -1550,7 +1550,7 @@ static GpStatus brush_fill_pixels(GpGraphics *graphics, GpBrush *brush,
 /* Draws the linecap the specified color and size on the hdc.  The linecap is in
  * direction of the line from x1, y1 to x2, y2 and is anchored on x2, y2. Probably
  * should not be called on an hdc that has a path you care about. */
-static void draw_cap(GpGraphics *graphics, COLORREF color, GpLineCap cap, REAL size,
+static void draw_cap(GpGraphics *graphics, color: COLORREF, GpLineCap cap, REAL size,
     const GpCustomLineCap *custom, REAL x1, REAL y1, REAL x2, REAL y2)
 {
     HGDIOBJ oldbrush = NULL, oldpen = NULL;
@@ -6541,7 +6541,7 @@ GpStatus WINGDIPAPI GdipMultiplyWorldTransform(GpGraphics *graphics, GDIPCONST G
 }
 
 /* Color used to fill bitmaps so we can tell which parts have been drawn over by gdi32. */
-static const COLORREF DC_BACKGROUND_KEY = 0x0c0b0d;
+static const DC_BACKGROUND_KEY: COLORREF = 0x0c0b0d;
 
 GpStatus WINGDIPAPI GdipGetDC(GpGraphics *graphics, HDC *hdc)
 {

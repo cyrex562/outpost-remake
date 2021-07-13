@@ -214,7 +214,7 @@ static const struct launcher *launcher_from_point( int x, int y )
 
 static void draw_launchers( HDC hdc, RECT update_rect )
 {
-    COLORREF color = SetTextColor( hdc, RGB(255,255,255) ); /* FIXME: depends on background color */
+    color: COLORREF = SetTextColor( hdc, RGB(255,255,255) ); /* FIXME: depends on background color */
     int mode = SetBkMode( hdc, TRANSPARENT );
     unsigned int i;
     LOGFONTW lf;

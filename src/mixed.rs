@@ -9,7 +9,7 @@ use crate::struct_ops::struct_1008::{struct_1008_9fd2, struct_1008_dd4e, pass1_1
 use crate::ui::ui_1008::pass1_1008_af94;
 use crate::draw::draw_1008::unk_draw_op_1008_da12;
 use crate::util::{CONCAT22, get_struct_from_addr};
-use crate::defines::{Struct79, U32Ptr, Struct19};
+use crate::defines::{Struct79, U32Ptr, Struct19, Struct20};
 use crate::global::AppContext;
 use crate::win_struct::WNDCLASS16;
 
@@ -20,12 +20,11 @@ pub unsafe fn mixed_1010_20ba(
     param_3: &mut WNDCLASS16,
     param_4: &mut Struct19,
     param_5: i16,
-    extraout_dx: u16) -> u16
-
+    extraout_dx: u16) -> &mut Struct20
 {
   let ppc_var1: u32;
   let u_var2: u16;
-  let pu_var3: U32Ptr;
+  let mut pu_var3: U32Ptr = 0;
   // let extraout_dx: *mut u8;
   // let pa_var4: &mut Struct636;
   // let i_var5: i16;
@@ -41,7 +40,7 @@ pub unsafe fn mixed_1010_20ba(
   let mut struct_ref_1 = get_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);
   // let u_var6 = (param_1 >> 0x10);
   let i_var5 = param_1;
-  let mut pu_stack6 = (struct_ref_1.field_0x0 + i_var5);
+  let mut pu_stack6: &mut Struct20 = (struct_ref_1.field_0x0 + i_var5);
   if pu_stack6 != 0x0 {
     return pu_stack6;
   }

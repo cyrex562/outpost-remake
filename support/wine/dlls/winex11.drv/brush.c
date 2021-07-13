@@ -96,17 +96,17 @@ static const int EGAmapping[TOTAL_LEVELS] =
 #define PIXEL_VALUE(r,g,b) \
     X11DRV_PALETTE_mapEGAPixel[EGAmapping[((r)*PRIMARY_LEVELS+(g))*PRIMARY_LEVELS+(b)]]
 
-static const COLORREF BLACK = RGB(0, 0, 0);
-static const COLORREF WHITE = RGB(0xff, 0xff, 0xff);
+static const BLACK: COLORREF = RGB(0, 0, 0);
+static const WHITE: COLORREF = RGB(0xff, 0xff, 0xff);
 
 /***********************************************************************
  *           BRUSH_DitherColor
  */
-static Pixmap BRUSH_DitherColor( COLORREF color, int depth)
+static Pixmap BRUSH_DitherColor( color: COLORREF, int depth)
 {
     /* X image for building dithered pixmap */
     static XImage *ditherImage = NULL;
-    static COLORREF prevColor = 0xffffffff;
+    static prevColor: COLORREF = 0xffffffff;
     unsigned int x, y;
     Pixmap pixmap;
     GC gc;
@@ -160,7 +160,7 @@ static Pixmap BRUSH_DitherColor( COLORREF color, int depth)
 /***********************************************************************
  *           BRUSH_DitherMono
  */
-static Pixmap BRUSH_DitherMono( COLORREF color )
+static Pixmap BRUSH_DitherMono( color: COLORREF )
 {
     /* This makes the spray work in Win 3.11 pbrush.exe */
     /* FIXME. Extend this basic selection of dither patterns */
@@ -178,9 +178,9 @@ static Pixmap BRUSH_DitherMono( COLORREF color )
 /***********************************************************************
  *           BRUSH_SelectSolidBrush
  */
-static void BRUSH_SelectSolidBrush( X11DRV_PDEVICE *physDev, COLORREF color )
+static void BRUSH_SelectSolidBrush( X11DRV_PDEVICE *physDev, color: COLORREF )
 {
-    COLORREF colorRGB = X11DRV_PALETTE_GetColor( physDev, color );
+    colorRGB: COLORREF = X11DRV_PALETTE_GetColor( physDev, color );
     if ((physDev->depth > 1) && (default_visual.depth <= 8) && !X11DRV_IsSolidColor( color ))
     {
 	  /* Dithered brush */
@@ -285,7 +285,7 @@ HBRUSH X11DRV_SelectBrush( PHYSDEV dev, HBRUSH hbrush, const struct brush_patter
 /***********************************************************************
  *           SetDCBrushColor (X11DRV.@)
  */
-COLORREF X11DRV_SetDCBrushColor( PHYSDEV dev, COLORREF crColor )
+X11DRV_SetDCBrushColor: COLORREF( PHYSDEV dev, crColor: COLORREF )
 {
     X11DRV_PDEVICE *physDev = get_x11drv_dev( dev );
 

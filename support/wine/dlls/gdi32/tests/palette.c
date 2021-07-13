@@ -49,7 +49,7 @@ static void test_DIB_PAL_COLORS(void) {
     char logpalettebuf[sizeof(LOGPALETTE) + sizeof(logpalettedata)];
     PLOGPALETTE logpalette = (PLOGPALETTE)logpalettebuf;
     HPALETTE hpal, hpalOld;
-    COLORREF setColor, chkColor, getColor;
+    setColor: COLORREF, chkColor, getColor;
     int i;
 
     /* Initialize the logical palette with a few colours */

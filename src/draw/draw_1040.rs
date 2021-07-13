@@ -71,7 +71,7 @@ pub fn mix_draw_op_1040_21d6(
 }
 
 
-pub fn draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF param_4) -> u32
+pub fn draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, param_4: COLORREF) -> u32
 
 {
     let ppcVar1: u32;
@@ -419,7 +419,7 @@ pub fn set_text_bk_color_1040_7e5e(param_1: *mut u32, param_2: u16, param_3: u16
 }
 
 
-pub fn draw_op_1040_82ee(param_1: &mut Struct15, COLORREF in_colorref_2) {
+pub fn draw_op_1040_82ee(param_1: &mut Struct15, in_colorref_2: COLORREF) {
     let iVar1: &mut Struct15;
     let uVar1: u16;
     let local_1a: u32;
@@ -812,7 +812,7 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
 }
 
 
-pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, COLORREF param_4) {
+pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLORREF) {
     let piVar1: *mut i16;
     let bVar2: bool;
     let uVar3: u16;

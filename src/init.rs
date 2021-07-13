@@ -917,7 +917,7 @@ pub unsafe fn init_op_1008_54aa(
     let param_1 = make_u16_ptr(0);
 
   dos3_call_op_1000_435c(param_1, in_cx, in_dx, stack0xfffe, param_8);
-  pass1_1000_4d0c(param_5);
+  pass1_1000_4d0c(ctx, param_5);
   pass1_1000_1fea(ctx);
     let mut param_1: u16 = 0;
   ctx._PTR_LOOP_1050_03a0 = mem_op_1000_1902(ctx, &mut param_1, 0x32, 0x0, 0x12, 0x1000, in_dx);

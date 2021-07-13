@@ -1976,7 +1976,7 @@ static void test_emf_DCBrush(void)
     HBRUSH hBrush;
     HPEN hPen;
     BOOL ret;
-    COLORREF color;
+    color: COLORREF;
 
     if (!pSetDCBrushColor || !pSetDCPenColor)
     {
@@ -2304,7 +2304,7 @@ static void test_mf_DCBrush(void)
     HBRUSH hBrush;
     HPEN hPen;
     BOOL ret;
-    COLORREF color;
+    color: COLORREF;
 
     if (!pSetDCBrushColor || !pSetDCPenColor)
     {

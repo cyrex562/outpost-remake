@@ -3287,7 +3287,7 @@ static LRESULT PROPSHEET_Paint(HWND hwnd, HDC hdcParam)
     {
 	HWND hwndLineHeader = GetDlgItem(hwnd, IDC_SUNKEN_LINEHEADER);
 	HFONT hOldFont;
-	COLORREF clrOld = 0;
+	clrOld: COLORREF = 0;
 	int oldBkMode = 0;
 
         GetClientRect(hwndLineHeader, &r);

@@ -230,7 +230,7 @@ HBRUSH WINAPI CreateBrushIndirect( const LOGBRUSH * brush )
  * - The brush returned should be freed by the caller using DeleteObject()
  *   when it is no longer required.
  */
-HBRUSH WINAPI CreateHatchBrush( INT style, COLORREF color )
+HBRUSH WINAPI CreateHatchBrush( INT style, color: COLORREF )
 {
     LOGBRUSH logbrush;
 
@@ -360,7 +360,7 @@ HBRUSH WINAPI CreateDIBPatternBrushPt( const void* data, UINT coloruse )
  * - The brush returned should be freed by the caller using DeleteObject()
  *   when it is no longer required.
  */
-HBRUSH WINAPI CreateSolidBrush( COLORREF color )
+HBRUSH WINAPI CreateSolidBrush( color: COLORREF )
 {
     LOGBRUSH logbrush;
 

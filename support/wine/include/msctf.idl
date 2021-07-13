@@ -720,7 +720,7 @@ struct TF_DA_COLOR {
     [switch_type(TF_DA_COLORTYPE), switch_is(type)]
     union {
         [case(TF_CT_SYSCOLOR)] int nIndex;
-        [case(TF_CT_COLORREF)] COLORREF cr;
+        [case(TF_CT_COLORREF)] cr: COLORREF;
     };
 } TF_DA_COLOR;
 

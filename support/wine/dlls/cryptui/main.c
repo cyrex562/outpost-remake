@@ -740,7 +740,7 @@ static LRESULT CALLBACK cert_mgr_advanced_dlg_proc(HWND hwnd, UINT msg,
         if (imageList)
         {
             HBITMAP bmp;
-            COLORREF backColor = RGB(255, 0, 255);
+            backColor: COLORREF = RGB(255, 0, 255);
 
             bmp = LoadBitmapW(hInstance, MAKEINTRESOURCEW(IDB_CHECKS));
             ImageList_AddMasked(imageList, bmp, backColor);
@@ -1128,7 +1128,7 @@ static LRESULT CALLBACK cert_mgr_dlg_proc(HWND hwnd, UINT msg, WPARAM wp,
         if (data->imageList)
         {
             HBITMAP bmp;
-            COLORREF backColor = RGB(255, 0, 255);
+            backColor: COLORREF = RGB(255, 0, 255);
 
             bmp = LoadBitmapW(hInstance, MAKEINTRESOURCEW(IDB_SMALL_ICONS));
             ImageList_AddMasked(data->imageList, bmp, backColor);
@@ -3622,7 +3622,7 @@ static LRESULT CALLBACK cert_properties_general_dlg_proc(HWND hwnd, UINT msg,
             if (editData->imageList)
             {
                 HBITMAP bmp;
-                COLORREF backColor = RGB(255, 0, 255);
+                backColor: COLORREF = RGB(255, 0, 255);
 
                 bmp = LoadBitmapW(hInstance, MAKEINTRESOURCEW(IDB_CHECKS));
                 ImageList_AddMasked(editData->imageList, bmp, backColor);
@@ -4248,7 +4248,7 @@ static BOOL init_hierarchy_page(PCCRYPTUI_VIEWCERTIFICATE_STRUCTW pCertViewInfo,
         if (data->imageList)
         {
             HBITMAP bmp;
-            COLORREF backColor = RGB(255, 0, 255);
+            backColor: COLORREF = RGB(255, 0, 255);
 
             data->pCertViewInfo = pCertViewInfo;
             data->selectedCert = 0xffffffff;

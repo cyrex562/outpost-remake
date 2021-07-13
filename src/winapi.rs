@@ -183,7 +183,7 @@ pub fn WIN16_hread(h_file: HFILE16, buffer: &mut Vec<u8>, count: usize) -> usize
 pub fn _hwrite16(h_file: HFILE16, buffer: &mut String, count: usize) -> usize {
     unimplemented!()
 }
-// COLORREF SetBkColor16(HDC16 hdc, COLORREF color)
+// SetBkColor16: COLORREF(HDC16 hdc, color: COLORREF)
 pub fn SetBkColor16(hdc: HDC16, color: COLORREF) -> COLORREF {
     unimplemented!()
 }
@@ -191,7 +191,7 @@ pub fn SetBkColor16(hdc: HDC16, color: COLORREF) -> COLORREF {
 pub fn SetMapMode16(hdc: HDC16, mode: i16) -> i16 {
     unimplemented!()
 }
-// COLORREF SetTextColor16(HDC16 hdc, COLORREF color)
+// SetTextColor16: COLORREF(HDC16 hdc, color: COLORREF)
 pub fn SetTextColor16(hdc: HDC16, color: COLORREF) -> COLORREF {
     unimplemented!()
 }
@@ -232,11 +232,11 @@ pub fn CreateDC16(
 ) -> HDC16 {
     unimplemented!()
 }
-// HPEN16 CreatePen16(style: i16, width: i16, COLORREF color)
+// HPEN16 CreatePen16(style: i16, width: i16, color: COLORREF)
 pub fn CreatePen16(style: i16, width: i16, color: COLORREF) -> HPEN16 {
     unimplemented!()
 }
-// HBRUSH16 CreateSolidBrush16(COLORREF color)
+// HBRUSH16 CreateSolidBrush16(color: COLORREF)
 pub fn CreateSolidBrush16(color: COLORREF) -> HBRUSH16 {
     unimplemented!()
 }
@@ -667,7 +667,7 @@ pub fn TranslateAccelerator16(hwnd: HWND16, haccel: HACCEL16, msg: &MSG) -> i16 
 pub fn GetSystemMetrics16(index: i16) -> i16 {
     unimplemented!()
 }
-// COLORREF GetSysColor16(index: i16)
+// GetSysColor16: COLORREF(index: i16)
 pub fn GetSysColor16(index: i16) -> COLORREF {
     unimplemented!()
 }

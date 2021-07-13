@@ -1562,7 +1562,7 @@ interface IDragSourceHelper : IUnknown
         SIZE     sizeDragImage;
         POINT    ptOffset;
         HBITMAP  hbmpDragImage;
-        COLORREF crColorKey;
+        crColorKey: COLORREF;
     } SHDRAGIMAGE, *LPSHDRAGIMAGE;
 
   HRESULT InitializeFromBitmap(

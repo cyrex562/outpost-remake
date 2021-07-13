@@ -442,7 +442,7 @@ static inline void add_bounds_rect(RECT *bounds, const RECT *rect)
 /***********************************************************************
  *              sync_window_opacity
  */
-static void sync_window_opacity(struct macdrv_win_data *data, COLORREF key, BYTE alpha,
+static void sync_window_opacity(struct macdrv_win_data *data, key: COLORREF, BYTE alpha,
                                 BOOL per_pixel_alpha, DWORD flags)
 {
     CGFloat opacity = 1.0;
@@ -668,7 +668,7 @@ static void create_cocoa_window(struct macdrv_win_data *data)
     CGRect frame;
     DWORD style, ex_style;
     HRGN win_rgn;
-    COLORREF key;
+    key: COLORREF;
     BYTE alpha;
     DWORD layered_flags;
 
@@ -1608,7 +1608,7 @@ void CDECL macdrv_SetFocus(HWND hwnd)
  *
  * Set transparency attributes for a layered window.
  */
-void CDECL macdrv_SetLayeredWindowAttributes(HWND hwnd, COLORREF key, BYTE alpha, DWORD flags)
+void CDECL macdrv_SetLayeredWindowAttributes(HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags)
 {
     struct macdrv_win_data *data = get_win_data(hwnd);
 

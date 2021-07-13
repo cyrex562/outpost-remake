@@ -40,12 +40,12 @@ INT MFDRV_SetBkMode( PHYSDEV dev, INT mode )
     return MFDRV_MetaParam1( dev, META_SETBKMODE, (WORD)mode) ? mode : 0;
 }
 
-COLORREF MFDRV_SetBkColor( PHYSDEV dev, COLORREF color )
+MFDRV_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return MFDRV_MetaParam2(dev, META_SETBKCOLOR, HIWORD(color), LOWORD(color)) ? color : CLR_INVALID;
 }
 
-COLORREF MFDRV_SetTextColor( PHYSDEV dev, COLORREF color )
+MFDRV_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return MFDRV_MetaParam2(dev, META_SETTEXTCOLOR, HIWORD(color), LOWORD(color)) ? color : CLR_INVALID;
 }
@@ -195,12 +195,12 @@ BOOL MFDRV_WidenPath( PHYSDEV dev )
     return FALSE;
 }
 
-COLORREF MFDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color )
+MFDRV_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return CLR_INVALID;
 }
 
-COLORREF MFDRV_SetDCPenColor( PHYSDEV dev, COLORREF color )
+MFDRV_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return CLR_INVALID;
 }

@@ -249,14 +249,14 @@ void GraphCtrl_SetRange(TGraphCtrl* this, double dLower, double dUpper, int nDec
     GraphCtrl_InvalidateCtrl(this);
 }
 
-void GraphCtrl_SetGridColor(TGraphCtrl* this, COLORREF color)
+void GraphCtrl_SetGridColor(TGraphCtrl* this, color: COLORREF)
 {
     this->m_crGridColor = color;
     /*  clear out the existing garbage, re-start with a clean plot */
     GraphCtrl_InvalidateCtrl(this);
 }
 
-void GraphCtrl_SetPlotColor(TGraphCtrl* this, int plot, COLORREF color)
+void GraphCtrl_SetPlotColor(TGraphCtrl* this, int plot, color: COLORREF)
 {
     this->m_crPlotColor[plot] = color;
     DeleteObject(this->m_penPlot[plot]);
@@ -265,7 +265,7 @@ void GraphCtrl_SetPlotColor(TGraphCtrl* this, int plot, COLORREF color)
     GraphCtrl_InvalidateCtrl(this);
 }
 
-void GraphCtrl_SetBackgroundColor(TGraphCtrl* this, COLORREF color)
+void GraphCtrl_SetBackgroundColor(TGraphCtrl* this, color: COLORREF)
 {
     this->m_crBackColor = color;
     DeleteObject(this->m_brushBack);

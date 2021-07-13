@@ -817,7 +817,7 @@ CreateMappedBitmap (HINSTANCE hInstance, INT_PTR idBitmap, UINT wFlags,
     HDC hdcScreen;
     HBITMAP hbm;
     LPCOLORMAP sysColorMap;
-    COLORREF cRef;
+    cRef: COLORREF;
     COLORMAP internalColorMap[4] =
 	{{0x000000, 0}, {0x808080, 0}, {0xC0C0C0, 0}, {0xFFFFFF, 0}};
 
@@ -1429,7 +1429,7 @@ COMCTL32_RefreshSysColors(void)
  *     Draws up to but not including the bottom co-ordinate when drawing
  *     vertically or the right co-ordinate when horizontal.
  */
-void COMCTL32_DrawInsertMark(HDC hDC, const RECT *lpRect, COLORREF clrInsertMark, BOOL bHorizontal)
+void COMCTL32_DrawInsertMark(HDC hDC, const RECT *lpRect, clrInsertMark: COLORREF, BOOL bHorizontal)
 {
     HPEN hPen = CreatePen(PS_SOLID, 1, clrInsertMark);
     HPEN hOldPen;
@@ -1481,7 +1481,7 @@ void COMCTL32_DrawInsertMark(HDC hDC, const RECT *lpRect, COLORREF clrInsertMark
  * RETURNS
  *     none
  */
-void COMCTL32_EnsureBitmapSize(HBITMAP *pBitmap, int cxMinWidth, int cyMinHeight, COLORREF crBackground)
+void COMCTL32_EnsureBitmapSize(HBITMAP *pBitmap, int cxMinWidth, int cyMinHeight, crBackground: COLORREF)
 {
     int cxNew, cyNew;
     BITMAP bmp;
@@ -1649,10 +1649,10 @@ LRESULT WINAPI SetPathWordBreakProc(HWND hwnd, BOOL bSet)
  * Draw text with shadow.
  */
 int WINAPI DrawShadowText(HDC hdc, LPCWSTR text, UINT length, RECT *rect, DWORD flags,
-                          COLORREF crText, COLORREF crShadow, int offset_x, int offset_y)
+                          crText: COLORREF, crShadow: COLORREF, int offset_x, int offset_y)
 {
     int bkmode, ret;
-    COLORREF clr;
+    clr: COLORREF;
     RECT r;
 
     FIXME("(%p, %s, %d, %p, 0x%08x, 0x%08x, 0x%08x, %d, %d): semi-stub\n", hdc, debugstr_w(text),

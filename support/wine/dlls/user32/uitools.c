@@ -638,7 +638,7 @@ static void UITOOLS_DrawCheckedRect( HDC dc, LPRECT rect )
     if(GetSysColor(COLOR_BTNHIGHLIGHT) == RGB(255, 255, 255))
     {
       HBRUSH hbsave;
-      COLORREF bg;
+      bg: COLORREF;
 
       FillRect(dc, rect, GetSysColorBrush(COLOR_BTNFACE));
       bg = SetBkColor(dc, RGB(255, 255, 255));
@@ -922,7 +922,7 @@ static BOOL UITOOLS95_DrawFrameCaption(HDC dc, LPRECT r, UINT uFlags)
     static const WCHAR glyphFontName[] = { 'M','a','r','l','e','t','t',0 };
     UINT alignsave;
     int bksave;
-    COLORREF clrsave;
+    clrsave: COLORREF;
     SIZE size;
 
     UITOOLS95_DFC_ButtonPush(dc, r, uFlags & 0xff00);
@@ -1589,7 +1589,7 @@ static BOOL UITOOLS_DrawState(HDC hdc, HBRUSH hbr, DRAWSTATEPROC func, LPARAM lp
     HDC memdc;
     RECT rc;
     UINT dtflags = DT_NOCLIP;
-    COLORREF fg, bg;
+    fg: COLORREF, bg;
     UINT opcode = flags & 0xf;
     INT len = wp;
     BOOL retval, tmp;

@@ -786,8 +786,8 @@ static void MONTHCAL_DrawDay(const MONTHCAL_INFO *infoPtr, HDC hdc, const SYSTEM
   static const WCHAR fmtW[] = { '%','d',0 };
   WCHAR buf[10];
   RECT r, r_temp;
-  COLORREF oldCol = 0;
-  COLORREF oldBk  = 0;
+  oldCol: COLORREF = 0;
+  oldBk: COLORREF  = 0;
   INT old_bkmode, selection;
 
   /* no need to check styles: when selection is not valid, it is set to zero.
@@ -1225,7 +1225,7 @@ static void MONTHCAL_PaintCalendar(const MONTHCAL_INFO *infoPtr, HDC hdc, const 
 
 static void MONTHCAL_Refresh(MONTHCAL_INFO *infoPtr, HDC hdc, const PAINTSTRUCT *ps)
 {
-  COLORREF old_text_clr, old_bk_clr;
+  old_text_clr: COLORREF, old_bk_clr;
   HFONT old_font;
   INT i;
 
@@ -1301,10 +1301,10 @@ MONTHCAL_GetColor(const MONTHCAL_INFO *infoPtr, UINT index)
 }
 
 static LRESULT
-MONTHCAL_SetColor(MONTHCAL_INFO *infoPtr, UINT index, COLORREF color)
+MONTHCAL_SetColor(MONTHCAL_INFO *infoPtr, UINT index, color: COLORREF)
 {
   enum CachedBrush type;
-  COLORREF prev;
+  prev: COLORREF;
 
   TRACE("%p, %d: color %08x\n", infoPtr, index, color);
 

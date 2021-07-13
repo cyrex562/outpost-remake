@@ -261,7 +261,7 @@ static INT nulldrv_ExtEscape( PHYSDEV dev, INT escape, INT in_size, const void *
     return 0;
 }
 
-static BOOL nulldrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT type )
+static BOOL nulldrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT type )
 {
     return TRUE;
 }
@@ -568,7 +568,7 @@ static INT nulldrv_SetArcDirection( PHYSDEV dev, INT dir )
     return dir;
 }
 
-static COLORREF nulldrv_SetBkColor( PHYSDEV dev, COLORREF color )
+static nulldrv_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return color;
 }
@@ -583,12 +583,12 @@ static UINT nulldrv_SetBoundsRect( PHYSDEV dev, RECT *rect, UINT flags )
     return DCB_RESET;
 }
 
-static COLORREF nulldrv_SetDCBrushColor( PHYSDEV dev, COLORREF color )
+static nulldrv_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return color;
 }
 
-static COLORREF nulldrv_SetDCPenColor( PHYSDEV dev, COLORREF color )
+static nulldrv_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return color;
 }
@@ -613,7 +613,7 @@ static DWORD nulldrv_SetMapperFlags( PHYSDEV dev, DWORD flags )
     return flags;
 }
 
-static COLORREF nulldrv_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+static nulldrv_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     return color;
 }
@@ -648,7 +648,7 @@ static INT nulldrv_SetTextCharacterExtra( PHYSDEV dev, INT extra )
     return extra;
 }
 
-static COLORREF nulldrv_SetTextColor( PHYSDEV dev, COLORREF color )
+static nulldrv_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     return color;
 }

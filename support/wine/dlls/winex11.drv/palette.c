@@ -101,8 +101,8 @@ static BOOL X11DRV_PALETTE_BuildPrivateMap( const PALETTEENTRY *sys_pal_template
 static BOOL X11DRV_PALETTE_BuildSharedMap( const PALETTEENTRY *sys_pal_template );
 static void X11DRV_PALETTE_FillDefaultColors( const PALETTEENTRY *sys_pal_template );
 static void X11DRV_PALETTE_FormatSystemPalette(void);
-static BOOL X11DRV_PALETTE_CheckSysColor( const PALETTEENTRY *sys_pal_template, COLORREF c);
-static int X11DRV_PALETTE_LookupSystemXPixel(COLORREF col);
+static BOOL X11DRV_PALETTE_CheckSysColor( const PALETTEENTRY *sys_pal_template, c: COLORREF);
+static int X11DRV_PALETTE_LookupSystemXPixel(col: COLORREF);
 
 
 /***********************************************************************
@@ -678,7 +678,7 @@ static void X11DRV_PALETTE_FillDefaultColors( const PALETTEENTRY *sys_pal_templa
  *
  * Check whether 'color' can be represented with a solid color.
  */
-BOOL X11DRV_IsSolidColor( COLORREF color )
+BOOL X11DRV_IsSolidColor( color: COLORREF )
 {
     int i;
     const PALETTEENTRY *pEntry = COLOR_sysPal;
@@ -711,7 +711,7 @@ BOOL X11DRV_IsSolidColor( COLORREF color )
  *
  * Return RGB color for given X pixel.
  */
-COLORREF X11DRV_PALETTE_ToLogical(X11DRV_PDEVICE *physDev, int pixel)
+X11DRV_PALETTE_ToLogical: COLORREF(X11DRV_PDEVICE *physDev, int pixel)
 {
     XColor color;
 
@@ -743,7 +743,7 @@ COLORREF X11DRV_PALETTE_ToLogical(X11DRV_PDEVICE *physDev, int pixel)
 
     if ((default_visual.depth <= 8) && (pixel < 256) &&
         !(X11DRV_PALETTE_PaletteFlags & (X11DRV_PALETTE_VIRTUAL | X11DRV_PALETTE_FIXED)) ) {
-        COLORREF ret;
+        ret: COLORREF;
         EnterCriticalSection( &palette_cs );
         ret = *(COLORREF *)(COLOR_sysPal + (X11DRV_PALETTE_XPixelToPalette ? X11DRV_PALETTE_XPixelToPalette[pixel]: pixel)) & 0x00ffffff;
         LeaveCriticalSection( &palette_cs );
@@ -759,7 +759,7 @@ COLORREF X11DRV_PALETTE_ToLogical(X11DRV_PDEVICE *physDev, int pixel)
 /***********************************************************************
  *	     X11DRV_SysPaletteLookupPixel
  */
-static int X11DRV_SysPaletteLookupPixel( COLORREF col, BOOL skipReserved )
+static int X11DRV_SysPaletteLookupPixel( col: COLORREF, BOOL skipReserved )
 {
     int i, best = 0, diff = 0x7fffffff;
     int r,g,b;
@@ -787,7 +787,7 @@ static int X11DRV_SysPaletteLookupPixel( COLORREF col, BOOL skipReserved )
  *
  * Resolve PALETTEINDEX/PALETTERGB/DIBINDEX COLORREFs to an RGB COLORREF.
  */
-COLORREF X11DRV_PALETTE_GetColor( X11DRV_PDEVICE *physDev, COLORREF color )
+X11DRV_PALETTE_GetColor: COLORREF( X11DRV_PDEVICE *physDev, color: COLORREF )
 {
     HPALETTE             hPal = GetCurrentObject(physDev->dev.hdc, OBJ_PAL );
     PALETTEENTRY         entry;
@@ -817,7 +817,7 @@ COLORREF X11DRV_PALETTE_GetColor( X11DRV_PDEVICE *physDev, COLORREF color )
  *
  * Return the physical color closest to 'color'.
  */
-int X11DRV_PALETTE_ToPhysical( X11DRV_PDEVICE *physDev, COLORREF color )
+int X11DRV_PALETTE_ToPhysical( X11DRV_PDEVICE *physDev, color: COLORREF )
 {
     WORD 		 index = 0;
     HPALETTE 		 hPal = GetCurrentObject(physDev->dev.hdc, OBJ_PAL );
@@ -929,7 +929,7 @@ int X11DRV_PALETTE_ToPhysical( X11DRV_PDEVICE *physDev, COLORREF color )
 /***********************************************************************
  *           X11DRV_PALETTE_LookupPixel
  */
-static int X11DRV_PALETTE_LookupPixel(ColorShifts *shifts, COLORREF color )
+static int X11DRV_PALETTE_LookupPixel(ColorShifts *shifts, color: COLORREF )
 {
     unsigned char spec_type = color >> 24;
 
@@ -996,7 +996,7 @@ static int X11DRV_PALETTE_LookupPixel(ColorShifts *shifts, COLORREF color )
 /***********************************************************************
  *           X11DRV_PALETTE_LookupSystemXPixel
  */
-static int X11DRV_PALETTE_LookupSystemXPixel(COLORREF col)
+static int X11DRV_PALETTE_LookupSystemXPixel(col: COLORREF)
 {
  int            i, best = 0, diff = 0x7fffffff;
  int            size = palette_size;
@@ -1047,7 +1047,7 @@ static void X11DRV_PALETTE_FormatSystemPalette(void)
 /***********************************************************************
  *           X11DRV_PALETTE_CheckSysColor
  */
-static BOOL X11DRV_PALETTE_CheckSysColor( const PALETTEENTRY *sys_pal_template, COLORREF c)
+static BOOL X11DRV_PALETTE_CheckSysColor( const PALETTEENTRY *sys_pal_template, c: COLORREF)
 {
   int i;
   for( i = 0; i < NB_RESERVED_COLORS; i++ )
@@ -1241,10 +1241,10 @@ UINT X11DRV_GetSystemPaletteEntries( PHYSDEV dev, UINT start, UINT count, LPPALE
 /***********************************************************************
  *              GetNearestColor   (X11DRV.@)
  */
-COLORREF X11DRV_GetNearestColor( PHYSDEV dev, COLORREF color )
+X11DRV_GetNearestColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     unsigned char spec_type = color >> 24;
-    COLORREF nearest;
+    nearest: COLORREF;
 
     if (!palette_size) return color;
 

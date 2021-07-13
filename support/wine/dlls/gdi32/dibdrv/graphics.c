@@ -508,7 +508,7 @@ static inline void get_range( BYTE aa, DWORD text_comp, BYTE *min_comp, BYTE *ma
     *max_comp = ramp[16 - aa] + ((0xff - ramp[16 - aa]) * text_comp) / 0xff;
 }
 
-static inline void get_aa_ranges( COLORREF col, struct intensity_range intensities[17] )
+static inline void get_aa_ranges( col: COLORREF, struct intensity_range intensities[17] )
 {
     int i;
 
@@ -667,7 +667,7 @@ static struct cached_glyph *get_cached_glyph( struct cached_font *font, UINT ind
  */
 static inline void get_text_bkgnd_masks( DC *dc, const dib_info *dib, rop_mask *mask )
 {
-    COLORREF bg = dc->backgroundColor;
+    bg: COLORREF = dc->backgroundColor;
 
     mask->and = 0;
 
@@ -675,7 +675,7 @@ static inline void get_text_bkgnd_masks( DC *dc, const dib_info *dib, rop_mask *
         mask->xor = get_pixel_color( dc, dib, bg, FALSE );
     else
     {
-        COLORREF fg = dc->textColor;
+        fg: COLORREF = dc->textColor;
         mask->xor = get_pixel_color( dc, dib, fg, TRUE );
         if (fg != bg) mask->xor = ~mask->xor;
     }
@@ -1047,7 +1047,7 @@ static void fill_row( dib_info *dib, HRGN clip, RECT *row, DWORD pixel, UINT typ
 /***********************************************************************
  *           dibdrv_ExtFloodFill
  */
-BOOL dibdrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT type )
+BOOL dibdrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT type )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev( dev );
     DC *dc = get_physdev_dc( dev );
@@ -1090,7 +1090,7 @@ BOOL dibdrv_FillPath( PHYSDEV dev )
 /***********************************************************************
  *           dibdrv_GetNearestColor
  */
-COLORREF dibdrv_GetNearestColor( PHYSDEV dev, COLORREF color )
+dibdrv_GetNearestColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev( dev );
     DC *dc = get_physdev_dc( dev );
@@ -1105,7 +1105,7 @@ COLORREF dibdrv_GetNearestColor( PHYSDEV dev, COLORREF color )
 /***********************************************************************
  *           dibdrv_GetPixel
  */
-COLORREF dibdrv_GetPixel( PHYSDEV dev, INT x, INT y )
+dibdrv_GetPixel: COLORREF( PHYSDEV dev, INT x, INT y )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev( dev );
     DC *dc = get_physdev_dc( dev );
@@ -1584,7 +1584,7 @@ BOOL dibdrv_Pie( PHYSDEV dev, INT left, INT top, INT right, INT bottom,
 /***********************************************************************
  *           dibdrv_SetPixel
  */
-COLORREF dibdrv_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+dibdrv_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev( dev );
     DC *dc = get_physdev_dc( dev );

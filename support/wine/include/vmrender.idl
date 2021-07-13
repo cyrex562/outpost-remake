@@ -129,7 +129,7 @@ interface IVMRSurfaceAllocatorNotify : IUnknown
     HRESULT ChangeDDrawDevice([in] IDirectDraw7 *device, [in] HMONITOR monitor);
     HRESULT RestoreDDrawSurfaces();
     HRESULT NotifyEvent([in] LONG EventCode, [in] LONG_PTR p1, [in] LONG_PTR p2);
-    HRESULT SetBorderColor([in] COLORREF border);
+    HRESULT SetBorderColor([in] border: COLORREF);
 }
 
 typedef enum _VMR_ASPECT_RATIO_MODE
@@ -158,9 +158,9 @@ interface IVMRWindowlessControl : IUnknown
     HRESULT RepaintVideo([in] HWND hwnd, [in] HDC hdc);
     HRESULT DisplayModeChanged();
     HRESULT GetCurrentImage([out] BYTE **data);
-    HRESULT SetBorderColor([in] COLORREF border);
+    HRESULT SetBorderColor([in] border: COLORREF);
     HRESULT GetBorderColor([out] COLORREF *border);
-    HRESULT SetColorKey([in] COLORREF key);
+    HRESULT SetColorKey([in] key: COLORREF);
     HRESULT GetColorKey([out] COLORREF *key);
 }
 
@@ -209,7 +209,7 @@ interface IVMRMixerControl : IUnknown
     HRESULT SetZOrder([in] DWORD id, [in] DWORD z);
     HRESULT GetZOrder([in] DWORD id, [out] DWORD *z);
     HRESULT SetOutputRect([in] DWORD id, [in] const NORMALIZEDRECT *rect);
-    HRESULT SetBackgroundClr([in] COLORREF background);
+    HRESULT SetBackgroundClr([in] background: COLORREF);
     HRESULT GetBackgroundClr([out] COLORREF *background);
     HRESULT SetMixingPrefs([in] DWORD prefs);
     HRESULT GetMixingPrefs([out] DWORD *prefs);
@@ -379,7 +379,7 @@ typedef struct _VMRALPHABITMAP
     RECT rSrc;
     RECT rDest;
     FLOAT fAlpha;
-    COLORREF clrSrcKey;
+    clrSrcKey: COLORREF;
 } VMRALPHABITMAP, *PVMRALPHABITMAP;
 
 cpp_quote("#define VMRBITMAP_DISABLE (0x01)")

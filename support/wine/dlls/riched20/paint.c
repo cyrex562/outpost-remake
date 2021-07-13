@@ -185,9 +185,9 @@ static int calc_y_offset( const ME_Context *c, ME_Style *style )
     return offs;
 }
 
-static COLORREF get_text_color( ME_Context *c, ME_Style *style, BOOL highlight )
+static get_text_color: COLORREF( ME_Context *c, ME_Style *style, BOOL highlight )
 {
-    COLORREF color;
+    color: COLORREF;
 
     if (highlight)
         color = ITextHost_TxGetSysColor( c->editor->texthost, COLOR_HIGHLIGHTTEXT );
@@ -201,9 +201,9 @@ static COLORREF get_text_color( ME_Context *c, ME_Style *style, BOOL highlight )
     return color;
 }
 
-static COLORREF get_back_color( ME_Context *c, ME_Style *style, BOOL highlight )
+static get_back_color: COLORREF( ME_Context *c, ME_Style *style, BOOL highlight )
 {
-    COLORREF color;
+    color: COLORREF;
 
     if (highlight)
         color = ITextHost_TxGetSysColor( c->editor->texthost, COLOR_HIGHLIGHT );
@@ -216,7 +216,7 @@ static COLORREF get_back_color( ME_Context *c, ME_Style *style, BOOL highlight )
     return color;
 }
 
-static HPEN get_underline_pen( ME_Style *style, COLORREF color )
+static HPEN get_underline_pen( ME_Style *style, color: COLORREF )
 {
     if (style->fmt.dwEffects & CFE_LINK)
         return CreatePen( PS_SOLID, 1, color );
@@ -243,7 +243,7 @@ static HPEN get_underline_pen( ME_Style *style, COLORREF color )
     return NULL;
 }
 
-static void draw_underline( ME_Context *c, ME_Run *run, int x, int y, COLORREF color )
+static void draw_underline( ME_Context *c, ME_Run *run, int x, int y, color: COLORREF )
 {
     HPEN pen;
 
@@ -272,7 +272,7 @@ static void draw_space( ME_Context *c, ME_Run *run, int x, int y,
     HDC hdc = c->hDC;
     BOOL old_style_selected = FALSE;
     RECT rect;
-    COLORREF back_color = 0;
+    back_color: COLORREF = 0;
 
     SetRect( &rect, x, ymin, x + run->nWidth, ymin + cy );
 
@@ -289,8 +289,8 @@ static void draw_space( ME_Context *c, ME_Run *run, int x, int y,
 
     if (actually_draw)
     {
-        COLORREF text_color = get_text_color( c, run->style, selected );
-        COLORREF old_text, old_back;
+        text_color: COLORREF = get_text_color( c, run->style, selected );
+        old_text: COLORREF, old_back;
         HFONT old_font = NULL;
         int y_offset = calc_y_offset( c, run->style );
         static const WCHAR space[1] = {' '};
@@ -331,9 +331,9 @@ static void get_selection_rect( ME_Context *c, ME_Run *run, int from, int to, in
 
 static void draw_text( ME_Context *c, ME_Run *run, int x, int y, BOOL selected, RECT *sel_rect )
 {
-    COLORREF text_color = get_text_color( c, run->style, selected );
-    COLORREF back_color = get_back_color( c, run->style, selected );
-    COLORREF old_text, old_back = 0;
+    text_color: COLORREF = get_text_color( c, run->style, selected );
+    back_color: COLORREF = get_back_color( c, run->style, selected );
+    old_text: COLORREF, old_back = 0;
     const WCHAR *text = get_text( run, 0 );
     ME_String *masked = NULL;
     const BOOL paint_bg = ( selected
@@ -438,7 +438,7 @@ static void ME_DrawTextWithStyle(ME_Context *c, ME_Run *run, int x, int y,
 static void ME_DebugWrite(HDC hDC, const POINT *pt, LPCWSTR szText) {
   int align = SetTextAlign(hDC, TA_LEFT|TA_TOP);
   HGDIOBJ hFont = SelectObject(hDC, GetStockObject(DEFAULT_GUI_FONT));
-  COLORREF color = SetTextColor(hDC, RGB(128,128,128));
+  color: COLORREF = SetTextColor(hDC, RGB(128,128,128));
   TextOutW(hDC, pt->x, pt->y, szText, lstrlenW(szText));
   SelectObject(hDC, hFont);
   SetTextAlign(hDC, align);
@@ -507,7 +507,7 @@ static const struct {unsigned width : 8, pen_style : 4, dble : 1;} border_detail
   /* 1 1/2 dashed */    {2, PS_DASH, FALSE},
 };
 
-static const COLORREF pen_colors[16] = {
+static const pen_colors: COLORREF[16] = {
   /* Black */           RGB(0x00, 0x00, 0x00),  /* Blue */            RGB(0x00, 0x00, 0xFF),
   /* Cyan */            RGB(0x00, 0xFF, 0xFF),  /* Green */           RGB(0x00, 0xFF, 0x00),
   /* Magenta */         RGB(0xFF, 0x00, 0xFF),  /* Red */             RGB(0xFF, 0x00, 0x00),
@@ -714,7 +714,7 @@ static void ME_DrawTableBorders(ME_Context *c, ME_DisplayItem *paragraph)
       HPEN pen, oldPen;
       LOGBRUSH logBrush;
       HBRUSH brush;
-      COLORREF color;
+      color: COLORREF;
       POINT oldPt;
       int width;
       BOOL atTop = (para->pCell != para->prev_para->member.para.pCell);
@@ -903,7 +903,7 @@ static void draw_para_number( ME_Context *c, ME_DisplayItem *p )
     ME_Paragraph *para = &p->member.para;
     HFONT old_font;
     int x, y;
-    COLORREF old_text;
+    old_text: COLORREF;
 
     if (para->fmt.wNumbering)
     {

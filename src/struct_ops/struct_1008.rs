@@ -1,49 +1,37 @@
 use crate::util::{CONCAT22, SUB42, ZEXT24};
-use crate::pass::pass_1000::pass1_1000_4906;
+use crate::pass::pass_1000::{pass1_1000_4906, pass1_1000_3d7a};
 use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a, mem_op_1000_0a48};
 use crate::struct_ops::struct_1010::{struct_1010_2cd2, struct_1010_383a};
-use crate::defines::{Struct79, Struct19};
+use crate::defines::{Struct79, Struct19, Struct20, Struct76};
 use crate::struct_ops::struct_1018::{struct_1018_4842, struct_1018_48b0, struct_1018_4920, struct_1018_47c8};
 use crate::string::string_1010::load_string_1010_84ac;
 use crate::pass::pass_1030::{pass1_1030_38f2, pass1_1030_4bbe};
 use crate::string::string_1008::str_op_1008_60e8;
-use crate::pass::pass_1020::{string_op_1020_c222, pass1_1020_bd80, pass1_1020_a43e};
+use crate::pass::pass_1020::{string_op_1020_c222, pass1_1020_bd80, pass1_1020_a43e, pass1_1020_a6ee};
 use crate::pass::pass_1008::{pass1_1008_5b12, pass1_1008_5784, pass1_1008_909c, pass1_1008_4016, pass1_1008_4834, pass1_1008_47cc};
 use crate::bad::bad_1030_1312;
 use crate::pass::pass_1038::load_string_1038_4d28;
 use crate::pass::pass_1028::{pass1_1028_e4ec, pass1_1028_dc52};
 use crate::pass::pass_1010::pass1_1010_1d80;
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
-use crate::file::file_1008::{read_file_1008_7dee, write_to_file_1008_7cac};
-use crate::win_struct::{HFILE16, HGDIOBJ16, HCURSOR16, HINSTANCE16};
+use crate::file::file_1008::{read_file_1008_7dee, write_to_file_1008_7cac, read_file_1008_7cfe};
+use crate::win_struct::{HFILE16, HGDIOBJ16, HCURSOR16, HINSTANCE16, HICON16};
 use crate::mixed::mixed_1010_20ba;
 use crate::ui::ui_1008::set_sys_color_1008_357e;
 use crate::string::string_1000::unk_str_op_1000_3d3e;
-use crate::winapi::GetStockObject16;
+use crate::winapi::{GetStockObject16, LoadCursor16, LoadIcon16};
 
 pub fn struct_op_1008_0000(param_1: *mut u16)
 {
-  let iVar1: i16;
-  let uVar2: u16;
-  
-                    // Segment:    2
-                    // Offset:     000060e0
-                    // Length:     efe0
-                    // Min Alloc:  efe0
-                    // Flags:      0d50
-                    //     Code
-                    //     Moveable
-                    //     Preload
-                    //     Impure (Non-shareable)
-                    // 
- // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
+  let i_var1: i16;
+  let u_var2: u16;
+  i_var1 = param_1;
   *param_1 = 0x52a;
-  (iVar1 + 0x2) = 0x1008;
-  (iVar1 + 0x4) = 0x0;
-  (iVar1 + 0x8) = 0x0;
+  (i_var1 + 0x2) = 0x1008;
+  (i_var1 + 0x4) = 0x0;
+  (i_var1 + 0x8) = 0x0;
   *param_1 = 0x51e;
-  (iVar1 + 0x2) = 0x1008;
+  (i_var1 + 0x2) = 0x1008;
   return;
 }
 
@@ -1306,7 +1294,7 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
     pass1_1028_e4ec(CONCAT22(param_3,puVar6));
     puVar9 = (puVar8 | puVar6);
     if (puVar9 == 0x0) { break; }
-    plVar1 = (long *)(puVar6 + 0x200);
+    plVar1 = (puVar6 + 0x200);
     puVar8 = puVar9;
     if (*plVar1 == lStack6) {
       iStack30 += 0x1;

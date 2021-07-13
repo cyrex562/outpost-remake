@@ -291,7 +291,7 @@ struct sysparam_dword_entry
 struct sysparam_rgb_entry
 {
     struct sysparam_entry hdr;
-    COLORREF val;
+    val: COLORREF;
     HBRUSH brush;
     HPEN pen;
 };
@@ -2990,9 +2990,9 @@ UINT WINAPI GetDoubleClickTime(void)
 /*************************************************************************
  *		GetSysColor (USER32.@)
  */
-COLORREF WINAPI DECLSPEC_HOTPATCH GetSysColor(INT nIndex)
+WINAPI: COLORREF DECLSPEC_HOTPATCH GetSysColor(INT nIndex)
 {
-    COLORREF ret = 0;
+    ret: COLORREF = 0;
 
     if (nIndex >= 0 && nIndex < ARRAY_SIZE(system_colors))
         get_entry(&system_colors[nIndex], 0, &ret);

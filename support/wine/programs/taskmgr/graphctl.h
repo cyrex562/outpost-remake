@@ -38,9 +38,9 @@ typedef struct
   char m_strXUnitsString[50];
   char m_strYUnitsString[50];
 
-  COLORREF m_crBackColor;                 /* background color */
-  COLORREF m_crGridColor;                 /* grid color */
-  COLORREF m_crPlotColor[MAX_PLOTS];      /* data color   */
+  m_crBackColor: COLORREF;                 /* background color */
+  m_crGridColor: COLORREF;                 /* grid color */
+  m_crPlotColor: COLORREF[MAX_PLOTS];      /* data color   */
   
   double m_dCurrentPosition[MAX_PLOTS];   /* current position */
   double m_dPreviousPosition[MAX_PLOTS];  /* previous position */
@@ -80,7 +80,7 @@ void    GraphCtrl_Create(TGraphCtrl* this, HWND hWnd, HWND hParentWnd, UINT nID)
 void    GraphCtrl_Reset(TGraphCtrl* this);
 void    GraphCtrl_SetBackgroundColor(TGraphCtrl* this, COLORREF 
 color);
-void    GraphCtrl_SetGridColor(TGraphCtrl* this, COLORREF color);
+void    GraphCtrl_SetGridColor(TGraphCtrl* this, color: COLORREF);
 void    GraphCtrl_SetPlotColor(TGraphCtrl* this, int plot, COLORREF 
 color);
 void    GraphCtrl_SetRange(TGraphCtrl* this, double dLower, double 

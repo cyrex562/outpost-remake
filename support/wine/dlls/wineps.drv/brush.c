@@ -70,7 +70,7 @@ HBRUSH PSDRV_SelectBrush( PHYSDEV dev, HBRUSH hbrush, const struct brush_pattern
 /***********************************************************************
  *           SetDCBrushColor (WINEPS.@)
  */
-COLORREF PSDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color )
+PSDRV_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
 

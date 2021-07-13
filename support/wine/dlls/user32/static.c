@@ -47,7 +47,7 @@ static void STATIC_PaintBitmapfn( HWND hwnd, HDC hdc, DWORD style );
 static void STATIC_PaintEnhMetafn( HWND hwnd, HDC hdc, DWORD style );
 static void STATIC_PaintEtchedfn( HWND hwnd, HDC hdc, DWORD style );
 
-static COLORREF color_3dshadow, color_3ddkshadow, color_3dhighlight;
+static color_3dshadow: COLORREF, color_3ddkshadow, color_3dhighlight;
 
 /* offsets for GetWindowLong for static private information */
 #define HFONT_GWL_OFFSET    0

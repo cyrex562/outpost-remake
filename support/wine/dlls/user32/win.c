@@ -3797,7 +3797,7 @@ BOOL CDECL __wine_set_pixel_format( HWND hwnd, int format )
 /*****************************************************************************
  *              SetLayeredWindowAttributes (USER32.@)
  */
-BOOL WINAPI SetLayeredWindowAttributes( HWND hwnd, COLORREF key, BYTE alpha, DWORD flags )
+BOOL WINAPI SetLayeredWindowAttributes( HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags )
 {
     BOOL ret;
 
@@ -3910,7 +3910,7 @@ BOOL WINAPI UpdateLayeredWindowIndirect( HWND hwnd, const UPDATELAYEREDWINDOWINF
  *              UpdateLayeredWindow (USER32.@)
  */
 BOOL WINAPI UpdateLayeredWindow( HWND hwnd, HDC hdcDst, POINT *pptDst, SIZE *psize,
-                                 HDC hdcSrc, POINT *pptSrc, COLORREF crKey, BLENDFUNCTION *pblend,
+                                 HDC hdcSrc, POINT *pptSrc, crKey: COLORREF, BLENDFUNCTION *pblend,
                                  DWORD flags)
 {
     UPDATELAYEREDWINDOWINFO info;

@@ -384,7 +384,7 @@ const struct gdi_dc_funcs *X11DRV_XRender_Init(void)
 }
 
 /* Helper function to convert from a color packed in a 32-bit integer to a XRenderColor */
-static void get_xrender_color( struct xrender_physdev *physdev, COLORREF src_color, XRenderColor *dst_color )
+static void get_xrender_color( struct xrender_physdev *physdev, src_color: COLORREF, XRenderColor *dst_color )
 {
     if (src_color & (1 << 24))  /* PALETTEINDEX */
     {

@@ -448,7 +448,7 @@ BOOL EMFDRV_RoundRect( PHYSDEV dev, INT left, INT top, INT right,
 /***********************************************************************
  *           EMFDRV_SetPixel
  */
-COLORREF EMFDRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+EMFDRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     EMRSETPIXELV emr;
 
@@ -663,7 +663,7 @@ BOOL EMFDRV_PolyDraw( PHYSDEV dev, const POINT *pts, const BYTE *types, DWORD co
 /**********************************************************************
  *          EMFDRV_ExtFloodFill
  */
-BOOL EMFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT fillType )
+BOOL EMFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT fillType )
 {
     EMREXTFLOODFILL emr;
 

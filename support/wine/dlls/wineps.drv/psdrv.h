@@ -455,11 +455,11 @@ extern BOOL PSDRV_RoundRect( PHYSDEV dev, INT left, INT top, INT right,
 extern HBRUSH PSDRV_SelectBrush( PHYSDEV dev, HBRUSH hbrush, const struct brush_pattern *pattern ) DECLSPEC_HIDDEN;
 extern HFONT PSDRV_SelectFont( PHYSDEV dev, HFONT hfont, UINT *aa_flags ) DECLSPEC_HIDDEN;
 extern HPEN PSDRV_SelectPen( PHYSDEV dev, HPEN hpen, const struct brush_pattern *pattern ) DECLSPEC_HIDDEN;
-extern COLORREF PSDRV_SetBkColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
-extern COLORREF PSDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
-extern COLORREF PSDRV_SetDCPenColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
-extern COLORREF PSDRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color ) DECLSPEC_HIDDEN;
-extern COLORREF PSDRV_SetTextColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
+extern PSDRV_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
+extern PSDRV_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
+extern PSDRV_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
+extern PSDRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF ) DECLSPEC_HIDDEN;
+extern PSDRV_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
 extern INT PSDRV_StartDoc( PHYSDEV dev, const DOCINFOW *doc ) DECLSPEC_HIDDEN;
 extern BOOL PSDRV_StrokeAndFillPath( PHYSDEV dev ) DECLSPEC_HIDDEN;
 extern BOOL PSDRV_StrokePath( PHYSDEV dev ) DECLSPEC_HIDDEN;
@@ -486,7 +486,7 @@ extern void PSDRV_ResetClip( PHYSDEV dev ) DECLSPEC_HIDDEN;
 
 extern BOOL PSDRV_CopyColor(PSCOLOR *col1, PSCOLOR *col2) DECLSPEC_HIDDEN;
 extern void PSDRV_CreateColor( PHYSDEV dev, PSCOLOR *pscolor,
-		     COLORREF wincolor ) DECLSPEC_HIDDEN;
+		     wincolor: COLORREF ) DECLSPEC_HIDDEN;
 extern PSRGB rgb_to_grayscale_scale( void ) DECLSPEC_HIDDEN;
 extern char PSDRV_UnicodeToANSI(int u) DECLSPEC_HIDDEN;
 

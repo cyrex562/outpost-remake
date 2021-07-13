@@ -1575,7 +1575,7 @@ TOOLTIPS_SetMaxTipWidth (TOOLTIPS_INFO *infoPtr, INT MaxWidth)
 
 
 static inline LRESULT
-TOOLTIPS_SetTipBkColor (TOOLTIPS_INFO *infoPtr, COLORREF clrBk)
+TOOLTIPS_SetTipBkColor (TOOLTIPS_INFO *infoPtr, clrBk: COLORREF)
 {
     infoPtr->clrBk = clrBk;
 
@@ -1584,7 +1584,7 @@ TOOLTIPS_SetTipBkColor (TOOLTIPS_INFO *infoPtr, COLORREF clrBk)
 
 
 static inline LRESULT
-TOOLTIPS_SetTipTextColor (TOOLTIPS_INFO *infoPtr, COLORREF clrText)
+TOOLTIPS_SetTipTextColor (TOOLTIPS_INFO *infoPtr, clrText: COLORREF)
 {
     infoPtr->clrText = clrText;
 

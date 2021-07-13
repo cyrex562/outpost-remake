@@ -2439,7 +2439,7 @@ pub fn pass1_1008_766e(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u
     *param_2 = 0x0;
     local_6 = 0x0;
     puVar1 = &local_6;
-    file_1008_76e4(param_1, (long *)CONCAT22(param_3, puVar1), param_4, param_3, param_5);
+    file_1008_76e4(param_1, CONCAT22(param_3, puVar1), param_4, param_3, param_5);
     if (puVar1 != 0x0) {
         if (local_6 != 0x0) {
             mem_op_1000_179c(0xc, param_5, 0x1000);

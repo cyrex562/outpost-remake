@@ -277,7 +277,7 @@ HPALETTE16 WINAPI WinGCreateHalfTonePalette16(void)
  *  Success: A handle to the created brush.
  *  Failure: A NULL handle.
  */
-HBRUSH16 WINAPI WinGCreateHalfToneBrush16(HDC16 winDC, COLORREF col,
+HBRUSH16 WINAPI WinGCreateHalfToneBrush16(HDC16 winDC, col: COLORREF,
                                             WING_DITHER_TYPE type)
 {
     TRACE("(%d,%d,%d)\n", winDC, col, type);

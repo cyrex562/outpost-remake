@@ -206,7 +206,7 @@ BOOL WINAPI FileIconInit(BOOL bFullInit);
 #define FMF_NO_COLUMN_BREAK  0x10
 
 HMENU WINAPI FileMenu_Create(
-	COLORREF crBorderColor,
+	crBorderColor: COLORREF,
 	int nBorderWidth,
 	HBITMAP hBorderBmp,
 	int nSelHeight,

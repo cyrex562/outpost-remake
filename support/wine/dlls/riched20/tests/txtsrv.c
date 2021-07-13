@@ -341,7 +341,7 @@ static HRESULT WINAPI ITextHostImpl_TxGetParaFormat(ITextHost *iface,
     return E_NOTIMPL;
 }
 
-static COLORREF WINAPI ITextHostImpl_TxGetSysColor(ITextHost *iface,
+static WINAPI: COLORREF ITextHostImpl_TxGetSysColor(ITextHost *iface,
                                                    int nIndex)
 {
     ITextHostTestImpl *This = impl_from_ITextHost(iface);

@@ -719,7 +719,7 @@ static BOOL windrv_Ellipse( PHYSDEV dev, INT left, INT top, INT right, INT botto
     return ret;
 }
 
-static BOOL windrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT type )
+static BOOL windrv_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT type )
 {
     struct windrv_physdev *physdev = get_windrv_physdev( dev );
     BOOL ret;
@@ -777,10 +777,10 @@ static DWORD windrv_GetImage( PHYSDEV dev, BITMAPINFO *info,
     return ret;
 }
 
-static COLORREF windrv_GetPixel( PHYSDEV dev, INT x, INT y )
+static windrv_GetPixel: COLORREF( PHYSDEV dev, INT x, INT y )
 {
     struct windrv_physdev *physdev = get_windrv_physdev( dev );
-    COLORREF ret;
+    ret: COLORREF;
 
     lock_surface( physdev );
     dev = GET_NEXT_PHYSDEV( dev, pGetPixel );
@@ -971,10 +971,10 @@ static void windrv_SetDeviceClipping( PHYSDEV dev, HRGN rgn )
     }
 }
 
-static COLORREF windrv_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+static windrv_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     struct windrv_physdev *physdev = get_windrv_physdev( dev );
-    COLORREF ret;
+    ret: COLORREF;
 
     lock_surface( physdev );
     dev = GET_NEXT_PHYSDEV( dev, pSetPixel );

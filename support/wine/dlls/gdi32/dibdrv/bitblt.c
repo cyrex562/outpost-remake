@@ -1381,7 +1381,7 @@ DWORD gradient_bitmapinfo( const BITMAPINFO *info, void *bits, TRIVERTEX *vert_a
     return ret;
 }
 
-COLORREF get_pixel_bitmapinfo( const BITMAPINFO *info, void *bits, struct bitblt_coords *src )
+get_pixel_bitmapinfo: COLORREF( const BITMAPINFO *info, void *bits, struct bitblt_coords *src )
 {
     dib_info dib;
     DWORD pixel;

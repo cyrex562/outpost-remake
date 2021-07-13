@@ -276,7 +276,7 @@ DECLSPEC_HIDDEN HRESULT WINAPI ITextHostImpl_TxGetParaFormat(ITextHost *iface,
     return S_OK;
 }
 
-DECLSPEC_HIDDEN COLORREF WINAPI ITextHostImpl_TxGetSysColor(ITextHost *iface,
+DECLSPEC_HIDDEN WINAPI: COLORREF ITextHostImpl_TxGetSysColor(ITextHost *iface,
                                             int nIndex)
 {
     return GetSysColor(nIndex);

@@ -1151,9 +1151,9 @@ static void D3D3_ViewportClearTest(void)
     if(window) DestroyWindow(window);
 }
 
-static COLORREF getPixelColor_GDI(IDirectDrawSurface *Surface, UINT x, UINT y)
+static getPixelColor_GDI: COLORREF(IDirectDrawSurface *Surface, UINT x, UINT y)
 {
-    COLORREF clr = CLR_INVALID;
+    clr: COLORREF = CLR_INVALID;
     HDC hdc;
     HRESULT hr;
 
@@ -1482,7 +1482,7 @@ static void DX1_BackBufferFlipTest(void)
     WNDCLASSA wc = {0};
     DDSURFACEDESC ddsd;
     DDBLTFX ddbltfx;
-    COLORREF color;
+    color: COLORREF;
     const DWORD white = 0xffffff;
     const DWORD red = 0xff0000;
     BOOL attached = FALSE;

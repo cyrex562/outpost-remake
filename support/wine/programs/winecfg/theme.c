@@ -500,7 +500,7 @@ static struct
     int sm_idx, color_idx;
     const char *color_reg;
     int size;
-    COLORREF color;
+    color: COLORREF;
     LOGFONTW lf;
 } metrics[] =
 {
@@ -538,7 +538,7 @@ static struct
     {-1,                COLOR_MENUBAR,          "MenuBar"       }, /* IDC_SYSPARAMS_MENUBAR */
 };
 
-static void save_sys_color(int idx, COLORREF clr)
+static void save_sys_color(int idx, clr: COLORREF)
 {
     char buffer[13];
 
@@ -546,7 +546,7 @@ static void save_sys_color(int idx, COLORREF clr)
     set_reg_key(HKEY_CURRENT_USER, "Control Panel\\Colors", metrics[idx].color_reg, buffer);
 }
 
-static void set_color_from_theme(WCHAR *keyName, COLORREF color)
+static void set_color_from_theme(WCHAR *keyName, color: COLORREF)
 {
     char *keyNameA = NULL;
     int keyNameSize=0, i=0;
@@ -577,7 +577,7 @@ static void do_parse_theme(WCHAR *file)
     char *keyNameValueA = NULL;
     int keyNameValueSize = 0;
     int red = 0, green = 0, blue = 0;
-    COLORREF color;
+    color: COLORREF;
 
     WINE_TRACE("%s\n", wine_dbgstr_w(file));
 
@@ -1005,7 +1005,7 @@ static void apply_sysparams(void)
     NONCLIENTMETRICSW ncm;
     int i, cnt = 0;
     int colors_idx[ARRAY_SIZE(metrics)];
-    COLORREF colors[ARRAY_SIZE(metrics)];
+    colors: COLORREF[ARRAY_SIZE(metrics)];
     HDC hdc;
     int dpi;
 
@@ -1275,7 +1275,7 @@ ThemeDlgProc (HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
                         case IDC_SYSPARAM_COLOR:
                         {
-                            static COLORREF user_colors[16];
+                            static user_colors: COLORREF[16];
                             CHOOSECOLORW c_color;
                             int index = SendDlgItemMessageW(hDlg, IDC_SYSPARAM_COMBO, CB_GETCURSEL, 0, 0);
 

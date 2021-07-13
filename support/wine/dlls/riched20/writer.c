@@ -41,7 +41,7 @@ typedef struct tagME_OutStream
     UINT nFontTblLen;
     ME_FontTableItem fonttbl[STREAMOUT_FONTTBL_SIZE];
     UINT nColorTblLen;
-    COLORREF colortbl[STREAMOUT_COLORTBL_SIZE];
+    colortbl: COLORREF[STREAMOUT_COLORTBL_SIZE];
     UINT nDefaultFont;
     UINT nDefaultCodePage;
     /* nNestingLevel = 0 means we aren't in a cell, 1 means we are in a cell,
@@ -282,7 +282,7 @@ static BOOL find_font_in_fonttbl( ME_OutStream *stream, CHARFORMAT2W *fmt, unsig
     return i < stream->nFontTblLen;
 }
 
-static void add_color_to_colortbl( ME_OutStream *stream, COLORREF color )
+static void add_color_to_colortbl( ME_OutStream *stream, color: COLORREF )
 {
     int i;
 
@@ -297,7 +297,7 @@ static void add_color_to_colortbl( ME_OutStream *stream, COLORREF color )
     }
 }
 
-static BOOL find_color_in_colortbl( ME_OutStream *stream, COLORREF color, unsigned int *idx )
+static BOOL find_color_in_colortbl( ME_OutStream *stream, color: COLORREF, unsigned int *idx )
 {
     int i;
 
@@ -421,7 +421,7 @@ ME_StreamOutRTFTableProps(ME_TextEditor *editor, ME_OutStream *pStream,
         if (borders[i]->width)
         {
           unsigned int idx;
-          COLORREF crColor = borders[i]->colorRef;
+          crColor: COLORREF = borders[i]->colorRef;
           sprintf(props + strlen(props), "\\clbrdr%c", sideChar[i]);
           sprintf(props + strlen(props), "\\brdrs");
           sprintf(props + strlen(props), "\\brdrw%d", borders[i]->width);
@@ -449,7 +449,7 @@ ME_StreamOutRTFTableProps(ME_TextEditor *editor, ME_OutStream *pStream,
       if (borders[i]->width)
       {
         unsigned int idx;
-        COLORREF crColor = borders[i]->colorRef;
+        crColor: COLORREF = borders[i]->colorRef;
         sprintf(props + strlen(props), "\\trbrdr%c", sideChar[i]);
         sprintf(props + strlen(props), "\\brdrs");
         sprintf(props + strlen(props), "\\brdrw%d", borders[i]->width);

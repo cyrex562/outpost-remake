@@ -172,7 +172,7 @@ HBRUSH DEFWND_ControlColor( HDC hDC, UINT ctlType )
     if( ctlType == CTLCOLOR_SCROLLBAR)
     {
         HBRUSH hb = GetSysColorBrush(COLOR_SCROLLBAR);
-        COLORREF bk = GetSysColor(COLOR_3DHILIGHT);
+        bk: COLORREF = GetSysColor(COLOR_3DHILIGHT);
         SetTextColor( hDC, GetSysColor(COLOR_3DFACE));
         SetBkColor( hDC, bk);
 

@@ -820,7 +820,7 @@ static BOOL is_argb_surface( struct window_surface *surface )
 /***********************************************************************
  *           set_color_key
  */
-static void set_color_key( struct android_window_surface *surface, COLORREF key )
+static void set_color_key( struct android_window_surface *surface, key: COLORREF )
 {
     if (key == CLR_INVALID)
         surface->color_key = CLR_INVALID;
@@ -887,7 +887,7 @@ done:
  *           create_surface
  */
 static struct window_surface *create_surface( HWND hwnd, const RECT *rect,
-                                              BYTE alpha, COLORREF color_key, BOOL src_alpha )
+                                              BYTE alpha, color_key: COLORREF, BOOL src_alpha )
 {
     struct android_window_surface *surface;
     int width = rect->right - rect->left, height = rect->bottom - rect->top;
@@ -930,10 +930,10 @@ failed:
 /***********************************************************************
  *           set_surface_layered
  */
-static void set_surface_layered( struct window_surface *window_surface, BYTE alpha, COLORREF color_key )
+static void set_surface_layered( struct window_surface *window_surface, BYTE alpha, color_key: COLORREF )
 {
     struct android_window_surface *surface = get_android_surface( window_surface );
-    COLORREF prev_key;
+    prev_key: COLORREF;
     BYTE prev_alpha;
 
     if (window_surface->funcs != &android_surface_funcs) return;  /* we may get the null surface */
@@ -1059,7 +1059,7 @@ void CDECL ANDROID_WindowPosChanging( HWND hwnd, HWND insert_after, UINT swp_fla
     struct android_win_data *data = get_win_data( hwnd );
     RECT surface_rect;
     DWORD flags;
-    COLORREF key;
+    key: COLORREF;
     BYTE alpha;
     BOOL layered = GetWindowLongW( hwnd, GWL_EXSTYLE ) & WS_EX_LAYERED;
 
@@ -1229,7 +1229,7 @@ void CDECL ANDROID_SetWindowRgn( HWND hwnd, HRGN hrgn, BOOL redraw )
 /***********************************************************************
  *	     ANDROID_SetLayeredWindowAttributes
  */
-void CDECL ANDROID_SetLayeredWindowAttributes( HWND hwnd, COLORREF key, BYTE alpha, DWORD flags )
+void CDECL ANDROID_SetLayeredWindowAttributes( HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags )
 {
     struct android_win_data *data;
 
@@ -1253,7 +1253,7 @@ BOOL CDECL ANDROID_UpdateLayeredWindow( HWND hwnd, const UPDATELAYEREDWINDOWINFO
     struct window_surface *surface;
     struct android_win_data *data;
     BLENDFUNCTION blend = { AC_SRC_OVER, 0, 255, 0 };
-    COLORREF color_key = (info->dwFlags & ULW_COLORKEY) ? info->crKey : CLR_INVALID;
+    color_key: COLORREF = (info->dwFlags & ULW_COLORKEY) ? info->crKey : CLR_INVALID;
     char buffer[FIELD_OFFSET( BITMAPINFO, bmiColors[256] )];
     BITMAPINFO *bmi = (BITMAPINFO *)buffer;
     void *src_bits, *dst_bits;

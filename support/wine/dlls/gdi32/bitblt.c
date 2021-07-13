@@ -221,7 +221,7 @@ static DWORD blend_bits( const BITMAPINFO *src_info, const struct gdi_image_bits
     return blend_bitmapinfo( src_info, src_bits->ptr, src, dst_info, dst_bits->ptr, dst, blend );
 }
 
-static RGBQUAD get_dc_rgb_color( DC *dc, int color_table_size, COLORREF color )
+static RGBQUAD get_dc_rgb_color( DC *dc, int color_table_size, color: COLORREF )
 {
     RGBQUAD ret = { 0, 0, 0, 0 };
 
@@ -488,14 +488,14 @@ done:
     return ret;
 }
 
-COLORREF nulldrv_GetPixel( PHYSDEV dev, INT x, INT y )
+nulldrv_GetPixel: COLORREF( PHYSDEV dev, INT x, INT y )
 {
     DC *dc = get_nulldrv_dc( dev );
     char buffer[FIELD_OFFSET( BITMAPINFO, bmiColors[256] )];
     BITMAPINFO *info = (BITMAPINFO *)buffer;
     struct bitblt_coords src;
     struct gdi_image_bits bits;
-    COLORREF ret;
+    ret: COLORREF;
 
     src.visrect.left = x;
     src.visrect.top  = y;
@@ -840,8 +840,8 @@ BOOL WINAPI GdiTransparentBlt( HDC hdcDest, int xDest, int yDest, int widthDest,
     HDC hdcMask = NULL;
     HBITMAP bmpMask = NULL;
     HBITMAP oldMask = NULL;
-    COLORREF oldBackground;
-    COLORREF oldForeground;
+    oldBackground: COLORREF;
+    oldForeground: COLORREF;
     int oldStretchMode;
     DIBSECTION dib;
 

@@ -184,7 +184,7 @@ typedef struct tagME_Run
 typedef struct tagME_Border
 {
   int width;
-  COLORREF colorRef;
+  colorRef: COLORREF;
 } ME_Border;
 
 typedef struct tagME_BorderRect
@@ -396,7 +396,7 @@ typedef struct tagME_TextEditor
   int nTotalWidth, nLastTotalWidth;
   int nAvailWidth; /* 0 = wrap to client area, else wrap width in twips */
   int nUDArrowX;
-  COLORREF rgbBackColor;
+  rgbBackColor: COLORREF;
   HBRUSH hbrBackground;
   BOOL bCaretAtEnd;
   int nEventMask;

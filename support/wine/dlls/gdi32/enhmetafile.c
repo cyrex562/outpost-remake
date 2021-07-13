@@ -2328,7 +2328,7 @@ BOOL WINAPI EnumEnhMetaFile(
     SIZE vp_size, win_size;
     POINT vp_org, win_org;
     INT mapMode = MM_TEXT, old_align = 0, old_rop2 = 0, old_arcdir = 0, old_polyfill = 0, old_stretchblt = 0;
-    COLORREF old_text_color = 0, old_bk_color = 0;
+    old_text_color: COLORREF = 0, old_bk_color = 0;
 
     if(!lpRect && hdc)
     {

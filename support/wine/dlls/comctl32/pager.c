@@ -72,7 +72,7 @@ typedef struct
     HWND   hwndChild;  /* handle of the contained wnd */
     HWND   hwndNotify; /* handle of the parent wnd */
     DWORD  dwStyle;    /* styles for this control */
-    COLORREF clrBk;    /* background color */
+    clrBk: COLORREF;    /* background color */
     INT    nBorder;    /* border size for the control */
     INT    nButtonSize;/* size of the pager btns */
     INT    nPos;       /* scroll position */
@@ -115,7 +115,7 @@ PAGER_GetButtonRects(const PAGER_INFO* infoPtr, RECT* prcTopLeft, RECT* prcBotto
 }
 
 static void
-PAGER_DrawButton(HDC hdc, COLORREF clrBk, RECT rc,
+PAGER_DrawButton(HDC hdc, clrBk: COLORREF, RECT rc,
                  BOOL horz, BOOL topLeft, INT btnState)
 {
     UINT flags;
@@ -423,9 +423,9 @@ PAGER_RecalcSize(PAGER_INFO *infoPtr)
 
 
 static COLORREF
-PAGER_SetBkColor (PAGER_INFO* infoPtr, COLORREF clrBk)
+PAGER_SetBkColor (PAGER_INFO* infoPtr, clrBk: COLORREF)
 {
-    COLORREF clrTemp = infoPtr->clrBk;
+    clrTemp: COLORREF = infoPtr->clrBk;
 
     infoPtr->clrBk = clrBk;
     TRACE("[%p] %06x\n", infoPtr->hwndSelf, infoPtr->clrBk);

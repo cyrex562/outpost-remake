@@ -143,7 +143,7 @@ pub fn dos3_call_1000_23ea(param_1: u16,param_2: u16,param_3: i16,param_4: &mut 
       iVar24 = 0x2;
       iVar23 = 0x2;
       pass1_1000_25a8(uVar7,action);
-      pass1_1000_2913(iVar23,uVar7,action);
+      pass1_1000_2913(ctx, iVar23, uVar7, action);
       str = poss_str_op_1000_28dc(iVar24);
       if (str != 0x0) {
         iVar23 = 0x9;
@@ -1170,7 +1170,7 @@ pub fn mixed_sys_op_1000_40af
           iVar16 = 0x12;
           iVar10 = 0x12;
           pass1_1000_25a8(param_5,s_tile2_bmp_1050_1538);
-          pass1_1000_2913(iVar10,param_5,s_tile2_bmp_1050_1538);
+          pass1_1000_2913(ctx, iVar10, param_5, s_tile2_bmp_1050_1538);
           str = poss_str_op_1000_28dc(iVar16);
           if (str == 0x0) {
               goto

@@ -891,9 +891,9 @@ INT WINAPI GetDeviceCaps( HDC hdc, INT cap )
 /***********************************************************************
  *		GetBkColor (GDI32.@)
  */
-COLORREF WINAPI GetBkColor( HDC hdc )
+WINAPI: COLORREF GetBkColor( HDC hdc )
 {
-    COLORREF ret = 0;
+    ret: COLORREF = 0;
     DC * dc = get_dc_ptr( hdc );
     if (dc)
     {
@@ -907,9 +907,9 @@ COLORREF WINAPI GetBkColor( HDC hdc )
 /***********************************************************************
  *           SetBkColor    (GDI32.@)
  */
-COLORREF WINAPI SetBkColor( HDC hdc, COLORREF color )
+WINAPI: COLORREF SetBkColor( HDC hdc, color: COLORREF )
 {
-    COLORREF ret = CLR_INVALID;
+    ret: COLORREF = CLR_INVALID;
     DC * dc = get_dc_ptr( hdc );
 
     TRACE("hdc=%p color=0x%08x\n", hdc, color);
@@ -928,9 +928,9 @@ COLORREF WINAPI SetBkColor( HDC hdc, COLORREF color )
 /***********************************************************************
  *		GetTextColor (GDI32.@)
  */
-COLORREF WINAPI GetTextColor( HDC hdc )
+WINAPI: COLORREF GetTextColor( HDC hdc )
 {
-    COLORREF ret = 0;
+    ret: COLORREF = 0;
     DC * dc = get_dc_ptr( hdc );
     if (dc)
     {
@@ -944,9 +944,9 @@ COLORREF WINAPI GetTextColor( HDC hdc )
 /***********************************************************************
  *           SetTextColor    (GDI32.@)
  */
-COLORREF WINAPI SetTextColor( HDC hdc, COLORREF color )
+WINAPI: COLORREF SetTextColor( HDC hdc, color: COLORREF )
 {
-    COLORREF ret = CLR_INVALID;
+    ret: COLORREF = CLR_INVALID;
     DC * dc = get_dc_ptr( hdc );
 
     TRACE(" hdc=%p color=0x%08x\n", hdc, color);
@@ -1930,10 +1930,10 @@ DWORD WINAPI SetLayout(HDC hdc, DWORD layout)
 /***********************************************************************
  *           GetDCBrushColor    (GDI32.@)
  */
-COLORREF WINAPI GetDCBrushColor(HDC hdc)
+WINAPI: COLORREF GetDCBrushColor(HDC hdc)
 {
     DC *dc;
-    COLORREF dcBrushColor = CLR_INVALID;
+    dcBrushColor: COLORREF = CLR_INVALID;
 
     TRACE("hdc(%p)\n", hdc);
 
@@ -1950,10 +1950,10 @@ COLORREF WINAPI GetDCBrushColor(HDC hdc)
 /***********************************************************************
  *           SetDCBrushColor    (GDI32.@)
  */
-COLORREF WINAPI SetDCBrushColor(HDC hdc, COLORREF crColor)
+WINAPI: COLORREF SetDCBrushColor(HDC hdc, crColor: COLORREF)
 {
     DC *dc;
-    COLORREF oldClr = CLR_INVALID;
+    oldClr: COLORREF = CLR_INVALID;
 
     TRACE("hdc(%p) crColor(%08x)\n", hdc, crColor);
 
@@ -1976,10 +1976,10 @@ COLORREF WINAPI SetDCBrushColor(HDC hdc, COLORREF crColor)
 /***********************************************************************
  *           GetDCPenColor    (GDI32.@)
  */
-COLORREF WINAPI GetDCPenColor(HDC hdc)
+WINAPI: COLORREF GetDCPenColor(HDC hdc)
 {
     DC *dc;
-    COLORREF dcPenColor = CLR_INVALID;
+    dcPenColor: COLORREF = CLR_INVALID;
 
     TRACE("hdc(%p)\n", hdc);
 
@@ -1996,10 +1996,10 @@ COLORREF WINAPI GetDCPenColor(HDC hdc)
 /***********************************************************************
  *           SetDCPenColor    (GDI32.@)
  */
-COLORREF WINAPI SetDCPenColor(HDC hdc, COLORREF crColor)
+WINAPI: COLORREF SetDCPenColor(HDC hdc, crColor: COLORREF)
 {
     DC *dc;
-    COLORREF oldClr = CLR_INVALID;
+    oldClr: COLORREF = CLR_INVALID;
 
     TRACE("hdc(%p) crColor(%08x)\n", hdc, crColor);
 

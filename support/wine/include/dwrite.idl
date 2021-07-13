@@ -958,7 +958,7 @@ interface IDWriteBitmapRenderTarget : IUnknown
         DWRITE_MEASURING_MODE measuring_mode,
         DWRITE_GLYPH_RUN const* glyph_run,
         IDWriteRenderingParams* params,
-        COLORREF textColor,
+        textColor: COLORREF,
         [defaultvalue(NULL)] RECT *blackbox_rect);
 
     HDC GetMemoryDC();

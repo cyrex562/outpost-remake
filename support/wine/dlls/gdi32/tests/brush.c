@@ -28,7 +28,7 @@
 #include "wine/test.h"
 
 typedef struct _STOCK_BRUSH {
-    COLORREF color;
+    color: COLORREF;
     int stockobj;
     const char *name;
 } STOCK_BRUSH;

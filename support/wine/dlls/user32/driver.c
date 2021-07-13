@@ -432,7 +432,7 @@ static void CDECL nulldrv_SetFocus( HWND hwnd )
 {
 }
 
-static void CDECL nulldrv_SetLayeredWindowAttributes( HWND hwnd, COLORREF key, BYTE alpha, DWORD flags )
+static void CDECL nulldrv_SetLayeredWindowAttributes( HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags )
 {
 }
 
@@ -704,7 +704,7 @@ static void CDECL loaderdrv_GetDC( HDC hdc, HWND hwnd, HWND top_win, const RECT 
     load_driver()->pGetDC( hdc, hwnd, top_win, win_rect, top_rect, flags );
 }
 
-static void CDECL loaderdrv_SetLayeredWindowAttributes( HWND hwnd, COLORREF key, BYTE alpha, DWORD flags )
+static void CDECL loaderdrv_SetLayeredWindowAttributes( HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags )
 {
     load_driver()->pSetLayeredWindowAttributes( hwnd, key, alpha, flags );
 }

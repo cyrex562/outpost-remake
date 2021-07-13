@@ -729,7 +729,7 @@ DATETIME_Refresh (DATETIME_INFO *infoPtr, HDC hdc)
         RECT *field;
         RECT *rcDraw = &infoPtr->rcDraw;
         SIZE size;
-        COLORREF oldTextColor;
+        oldTextColor: COLORREF;
         HFONT oldFont = SelectObject (hdc, infoPtr->hFont);
         INT oldBkMode = SetBkMode (hdc, TRANSPARENT);
         WCHAR txt[80];

@@ -109,7 +109,7 @@ HexEdit_Paint(HEXEDIT_INFO *infoPtr)
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(infoPtr->hwndSelf, &ps);
     INT nXStart, nYStart;
-    COLORREF clrOldText;
+    clrOldText: COLORREF;
     HFONT hOldFont;
     INT iMode;
     LONG lByteOffset = infoPtr->nScrollPos * infoPtr->nBytesPerLine;

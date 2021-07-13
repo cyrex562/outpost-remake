@@ -1015,7 +1015,7 @@ BOOL X11DRV_RoundRect( PHYSDEV dev, INT left, INT top, INT right, INT bottom,
 /***********************************************************************
  *           X11DRV_SetPixel
  */
-COLORREF X11DRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+X11DRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     X11DRV_PDEVICE *physDev = get_x11drv_dev( dev );
     unsigned long pixel;
@@ -1410,7 +1410,7 @@ static int ExtFloodFillXGetImageErrorHandler( Display *dpy, XErrorEvent *event, 
 /**********************************************************************
  *          X11DRV_ExtFloodFill
  */
-BOOL X11DRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT fillType )
+BOOL X11DRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT fillType )
 {
     X11DRV_PDEVICE *physDev = get_x11drv_dev( dev );
     XImage *image;

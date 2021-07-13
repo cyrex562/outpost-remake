@@ -565,9 +565,9 @@ STATUSBAR_GetTipTextW (const STATUS_INFO *infoPtr, INT id, LPWSTR tip, INT size)
 
 
 static COLORREF
-STATUSBAR_SetBkColor (STATUS_INFO *infoPtr, COLORREF color)
+STATUSBAR_SetBkColor (STATUS_INFO *infoPtr, color: COLORREF)
 {
-    COLORREF oldBkColor;
+    oldBkColor: COLORREF;
 
     oldBkColor = infoPtr->clrBk;
     infoPtr->clrBk = color;

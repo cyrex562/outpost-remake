@@ -769,7 +769,7 @@ static LRESULT SYSLINK_Draw (const SYSLINK_INFO *infoPtr, HDC hdc)
     RECT rc;
     PDOC_ITEM Current;
     HFONT hOldFont;
-    COLORREF OldTextColor, OldBkColor;
+    OldTextColor: COLORREF, OldBkColor;
     HBRUSH hBrush;
     UINT text_flags = ETO_CLIPPED;
     UINT mode = GetBkMode( hdc );
@@ -824,7 +824,7 @@ static LRESULT SYSLINK_Draw (const SYSLINK_INFO *infoPtr, HDC hdc)
                 ExtTextOutW(hdc, bl->rc.left, bl->rc.top, text_flags, &bl->rc, tx, bl->nChars, NULL);
                 if((Current->Type == slLink) && (Current->u.Link.state & LIS_FOCUSED) && infoPtr->HasFocus)
                 {
-                    COLORREF PrevTextColor;
+                    PrevTextColor: COLORREF;
                     PrevTextColor = SetTextColor(hdc, infoPtr->TextColor);
                     DrawFocusRect(hdc, &bl->rc);
                     SetTextColor(hdc, PrevTextColor);

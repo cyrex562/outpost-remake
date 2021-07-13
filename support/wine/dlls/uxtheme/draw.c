@@ -284,7 +284,7 @@ static HRESULT UXTHEME_LoadImage(HTHEME hTheme, HDC hdc, int iPartId, int iState
  */
 static inline BOOL UXTHEME_StretchBlt(HDC hdcDst, int nXOriginDst, int nYOriginDst, int nWidthDst, int nHeightDst,
                                       HDC hdcSrc, int nXOriginSrc, int nYOriginSrc, int nWidthSrc, int nHeightSrc,
-                                      INT transparent, COLORREF transcolor)
+                                      INT transparent, transcolor: COLORREF)
 {
     static const BLENDFUNCTION blendFunc = 
     {
@@ -329,7 +329,7 @@ static inline BOOL UXTHEME_StretchBlt(HDC hdcDst, int nXOriginDst, int nYOriginD
  */
 static inline BOOL UXTHEME_Blt(HDC hdcDest, int nXOriginDest, int nYOriginDest, int nWidthDest, int nHeightDest,
                                HDC hdcSrc, int nXOriginSrc, int nYOriginSrc,
-                               INT transparent, COLORREF transcolor)
+                               INT transparent, transcolor: COLORREF)
 {
     return UXTHEME_StretchBlt(hdcDest, nXOriginDest, nYOriginDest, nWidthDest, nHeightDest,
                               hdcSrc, nXOriginSrc, nYOriginSrc, nWidthDest, nHeightDest,
@@ -346,7 +346,7 @@ static inline BOOL UXTHEME_SizedBlt (HDC hdcDst, int nXOriginDst, int nYOriginDs
                                      HDC hdcSrc, int nXOriginSrc, int nYOriginSrc, 
                                      int nWidthSrc, int nHeightSrc,
                                      int sizingtype, 
-                                     INT transparent, COLORREF transcolor)
+                                     INT transparent, transcolor: COLORREF)
 {
     if (sizingtype == ST_TILE)
     {
@@ -480,7 +480,7 @@ static HRESULT UXTHEME_DrawImageGlyph(HTHEME hTheme, HDC hdc, int iPartId,
     HGDIOBJ oldSrc = NULL;
     RECT rcSrc;
     INT transparent = 0;
-    COLORREF transparentcolor;
+    transparentcolor: COLORREF;
     int valign = VA_CENTER;
     int halign = HA_CENTER;
     POINT dstSize;
@@ -673,7 +673,7 @@ static HRESULT UXTHEME_DrawImageBackground(HTHEME hTheme, HDC hdc, int iPartId,
     POINT drawSize;
     int sizingtype = ST_STRETCH;
     INT transparent;
-    COLORREF transparentcolor = 0;
+    transparentcolor: COLORREF = 0;
     BOOL hasAlpha;
 
     hr = UXTHEME_LoadImage(hTheme, hdc, iPartId, iStateId, pRect, FALSE, 
@@ -879,7 +879,7 @@ static HRESULT UXTHEME_DrawBorderRectangle(HTHEME hTheme, HDC hdc, int iPartId,
     HRESULT hr = S_OK;
     HPEN hPen;
     HGDIOBJ oldPen;
-    COLORREF bordercolor = RGB(0,0,0);
+    bordercolor: COLORREF = RGB(0,0,0);
     int bordersize = 1;
 
     GetThemeInt(hTheme, iPartId, iStateId, TMT_BORDERSIZE, &bordersize);
@@ -935,7 +935,7 @@ static HRESULT UXTHEME_DrawBackgroundFill(HTHEME hTheme, HDC hdc, int iPartId,
 
     if(filltype == FT_SOLID) {
         HBRUSH hBrush;
-        COLORREF fillcolor = RGB(255,255,255);
+        fillcolor: COLORREF = RGB(255,255,255);
 
         GetThemeColor(hTheme, iPartId, iStateId, TMT_FILLCOLOR, &fillcolor);
         hBrush = CreateSolidBrush(fillcolor);
@@ -950,8 +950,8 @@ static HRESULT UXTHEME_DrawBackgroundFill(HTHEME hTheme, HDC hdc, int iPartId,
             a gradient ratio of 0 and 255 respectively
         */
 
-        COLORREF gradient1 = RGB(0,0,0);
-        COLORREF gradient2 = RGB(255,255,255);
+        gradient1: COLORREF = RGB(0,0,0);
+        gradient2: COLORREF = RGB(255,255,255);
         TRIVERTEX vert[2];
         GRADIENT_RECT gRect;
 
@@ -1174,9 +1174,9 @@ static const signed char LTRBInnerFlat[] = {
     -1, EDGE_FILL,        EDGE_FILL,        EDGE_FILL,
 };
 
-static COLORREF get_edge_color (int edgeType, HTHEME theme, int part, int state)
+static get_edge_color: COLORREF (int edgeType, HTHEME theme, int part, int state)
 {
-    COLORREF col;
+    col: COLORREF;
     if ((EdgeColorMap[edgeType].themeProp == -1)
         || FAILED (GetThemeColor (theme, part, state, 
             EdgeColorMap[edgeType].themeProp, &col)))
@@ -1661,8 +1661,8 @@ HRESULT WINAPI DrawThemeTextEx(HTHEME hTheme, HDC hdc, int iPartId, int iStateId
     HFONT hFont = NULL;
     HGDIOBJ oldFont = NULL;
     LOGFONTW logfont;
-    COLORREF textColor;
-    COLORREF oldTextColor;
+    textColor: COLORREF;
+    oldTextColor: COLORREF;
     int oldBkMode;
 
     TRACE("%p %p %d %d %s:%d 0x%08x %p %p\n", hTheme, hdc, iPartId, iStateId,
@@ -1830,7 +1830,7 @@ static HRESULT create_image_bg_region(HTHEME theme, int part, int state, const R
     HBITMAP bmp;
     HRGN hrgn;
     BOOL istrans;
-    COLORREF transcolour;
+    transcolour: COLORREF;
     HBRUSH transbrush;
     unsigned int x, y, start;
     BITMAPINFO bitmapinfo;
@@ -2088,7 +2088,7 @@ BOOL WINAPI IsThemeBackgroundPartiallyTransparent(HTHEME hTheme, int iPartId,
     RECT rcSrc;
     BOOL hasAlpha;
     INT transparent;
-    COLORREF transparentcolor;
+    transparentcolor: COLORREF;
 
     TRACE("(%d,%d)\n", iPartId, iStateId);
 

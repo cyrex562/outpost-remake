@@ -101,7 +101,7 @@ typedef enum
 typedef struct
 {
     DWORD ChannelMapping;
-    COLORREF Color;
+    Color: COLORREF;
     EPcxConnectionType ConnectionType;
     EPcxGeoLocation GeoLocation;
     EPcxGenLocation GenLocation;

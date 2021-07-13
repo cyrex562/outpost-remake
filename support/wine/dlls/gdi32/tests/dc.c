@@ -64,7 +64,7 @@ static void dump_region(HRGN hrgn)
 static void test_dc_values(void)
 {
     HDC hdc = CreateDCA("DISPLAY", NULL, NULL, NULL);
-    COLORREF color;
+    color: COLORREF;
     int extra;
 
     ok( hdc != NULL, "CreateDC failed\n" );
@@ -614,7 +614,7 @@ static void test_DC_bitmap(void)
     HDC hdc, hdcmem;
     DWORD bits[64];
     HBITMAP hbmp, oldhbmp;
-    COLORREF col;
+    col: COLORREF;
     int i, bitspixel;
     int ret, ret2;
 

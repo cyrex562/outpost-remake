@@ -684,7 +684,7 @@ ULONG WINAPI OaBuildVersion(void)
  *  pColorRef [O] Destination for converted color, or NULL to test if the conversion is ok
  *
  * RETURNS
- *  Success: S_OK. The conversion is ok, and pColorRef contains the converted color if non-NULL.
+ *  Success: S_OK. The conversion is ok, and pcontains: COLORREF the converted color if non-NULL.
  *  Failure: E_INVALIDARG, if any argument is invalid.
  *
  * FIXME
@@ -695,13 +695,13 @@ HRESULT WINAPI OleTranslateColor(
   HPALETTE  hpal,
   COLORREF* pColorRef)
 {
-  COLORREF colorref;
+  colorref: COLORREF;
   BYTE b = HIBYTE(HIWORD(clr));
 
   TRACE("(%08x, %p, %p)\n", clr, hpal, pColorRef);
 
   /*
-   * In case pColorRef is NULL, provide our own to simplify the code.
+   * In case pis: COLORREF NULL, provide our own to simplify the code.
    */
   if (pColorRef == NULL)
     pColorRef = &colorref;

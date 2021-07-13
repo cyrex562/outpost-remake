@@ -66,7 +66,7 @@ PSRGB rgb_to_grayscale_scale( void )
  * Result is grey scale if ColorDevice field of ppd is CD_False else an
  * rgb colour is produced.
  */
-void PSDRV_CreateColor( PHYSDEV dev, PSCOLOR *pscolor, COLORREF wincolor )
+void PSDRV_CreateColor( PHYSDEV dev, PSCOLOR *pscolor, wincolor: COLORREF )
 {
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
     int ctype = wincolor >> 24;
@@ -96,7 +96,7 @@ void PSDRV_CreateColor( PHYSDEV dev, PSCOLOR *pscolor, COLORREF wincolor )
 /***********************************************************************
  *           PSDRV_SetBkColor
  */
-COLORREF PSDRV_SetBkColor( PHYSDEV dev, COLORREF color )
+PSDRV_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
     PSDRV_CreateColor(dev, &physDev->bkColor, color);
@@ -107,7 +107,7 @@ COLORREF PSDRV_SetBkColor( PHYSDEV dev, COLORREF color )
 /***********************************************************************
  *           PSDRV_SetTextColor
  */
-COLORREF PSDRV_SetTextColor( PHYSDEV dev, COLORREF color )
+PSDRV_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
     PSDRV_CreateColor(dev, &physDev->font.color, color);

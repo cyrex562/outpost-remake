@@ -153,23 +153,23 @@ extern BOOL COMBO_FlipListbox(HEADCOMBO *lphc, BOOL ok, BOOL bRedrawButton) DECL
 
 typedef struct
 {
-    COLORREF clrBtnHighlight;       /* COLOR_BTNHIGHLIGHT                  */
-    COLORREF clrBtnShadow;          /* COLOR_BTNSHADOW                     */
-    COLORREF clrBtnText;            /* COLOR_BTNTEXT                       */
-    COLORREF clrBtnFace;            /* COLOR_BTNFACE                       */
-    COLORREF clrHighlight;          /* COLOR_HIGHLIGHT                     */
-    COLORREF clrHighlightText;      /* COLOR_HIGHLIGHTTEXT                 */
-    COLORREF clrHotTrackingColor;   /* COLOR_HOTLIGHT                      */
-    COLORREF clr3dHilight;          /* COLOR_3DHILIGHT                     */
-    COLORREF clr3dShadow;           /* COLOR_3DSHADOW                      */
-    COLORREF clr3dDkShadow;         /* COLOR_3DDKSHADOW                    */
-    COLORREF clr3dFace;             /* COLOR_3DFACE                        */
-    COLORREF clrWindow;             /* COLOR_WINDOW                        */
-    COLORREF clrWindowText;         /* COLOR_WINDOWTEXT                    */
-    COLORREF clrGrayText;           /* COLOR_GREYTEXT                      */
-    COLORREF clrActiveCaption;      /* COLOR_ACTIVECAPTION                 */
-    COLORREF clrInfoBk;             /* COLOR_INFOBK                        */
-    COLORREF clrInfoText;           /* COLOR_INFOTEXT                      */
+    clrBtnHighlight: COLORREF;       /* COLOR_BTNHIGHLIGHT                  */
+    clrBtnShadow: COLORREF;          /* COLOR_BTNSHADOW                     */
+    clrBtnText: COLORREF;            /* COLOR_BTNTEXT                       */
+    clrBtnFace: COLORREF;            /* COLOR_BTNFACE                       */
+    clrHighlight: COLORREF;          /* COLOR_HIGHLIGHT                     */
+    clrHighlightText: COLORREF;      /* COLOR_HIGHLIGHTTEXT                 */
+    clrHotTrackingColor: COLORREF;   /* COLOR_HOTLIGHT                      */
+    clr3dHilight: COLORREF;          /* COLOR_3DHILIGHT                     */
+    clr3dShadow: COLORREF;           /* COLOR_3DSHADOW                      */
+    clr3dDkShadow: COLORREF;         /* COLOR_3DDKSHADOW                    */
+    clr3dFace: COLORREF;             /* COLOR_3DFACE                        */
+    clrWindow: COLORREF;             /* COLOR_WINDOW                        */
+    clrWindowText: COLORREF;         /* COLOR_WINDOWTEXT                    */
+    clrGrayText: COLORREF;           /* COLOR_GREYTEXT                      */
+    clrActiveCaption: COLORREF;      /* COLOR_ACTIVECAPTION                 */
+    clrInfoBk: COLORREF;             /* COLOR_INFOBK                        */
+    clrInfoText: COLORREF;           /* COLOR_INFOTEXT                      */
 } COMCTL32_SysColor;
 
 extern COMCTL32_SysColor  comctl32_color DECLSPEC_HIDDEN;
@@ -177,8 +177,8 @@ extern COMCTL32_SysColor  comctl32_color DECLSPEC_HIDDEN;
 /* Internal function */
 HWND COMCTL32_CreateToolTip (HWND) DECLSPEC_HIDDEN;
 VOID COMCTL32_RefreshSysColors(void) DECLSPEC_HIDDEN;
-void COMCTL32_DrawInsertMark(HDC hDC, const RECT *lpRect, COLORREF clrInsertMark, BOOL bHorizontal) DECLSPEC_HIDDEN;
-void COMCTL32_EnsureBitmapSize(HBITMAP *pBitmap, int cxMinWidth, int cyMinHeight, COLORREF crBackground) DECLSPEC_HIDDEN;
+void COMCTL32_DrawInsertMark(HDC hDC, const RECT *lpRect, clrInsertMark: COLORREF, BOOL bHorizontal) DECLSPEC_HIDDEN;
+void COMCTL32_EnsureBitmapSize(HBITMAP *pBitmap, int cxMinWidth, int cyMinHeight, crBackground: COLORREF) DECLSPEC_HIDDEN;
 void COMCTL32_GetFontMetrics(HFONT hFont, TEXTMETRICW *ptm) DECLSPEC_HIDDEN;
 BOOL COMCTL32_IsReflectedMessage(UINT uMsg) DECLSPEC_HIDDEN;
 INT  Str_GetPtrWtoA (LPCWSTR lpSrc, LPSTR lpDest, INT nMaxLen) DECLSPEC_HIDDEN;

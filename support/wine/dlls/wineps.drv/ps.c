@@ -943,7 +943,7 @@ BOOL PSDRV_WriteDIBPatternDict(PHYSDEV dev, const BITMAPINFO *bmi, BYTE *bits, U
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
     char *buf, *ptr;
     INT w, h, x, y, w_mult, h_mult, abs_height = abs( bmi->bmiHeader.biHeight );
-    COLORREF map[2];
+    map: COLORREF[2];
 
     TRACE( "size %dx%dx%d\n",
            bmi->bmiHeader.biWidth, bmi->bmiHeader.biHeight, bmi->bmiHeader.biBitCount);

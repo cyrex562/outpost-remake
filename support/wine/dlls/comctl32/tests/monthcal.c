@@ -679,7 +679,7 @@ static HWND create_monthcal_control(DWORD style)
 
 static void test_color(void)
 {
-    COLORREF color, prev;
+    color: COLORREF, prev;
     HWND hwnd;
 
     hwnd = create_monthcal_control(0);

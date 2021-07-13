@@ -73,7 +73,7 @@ extern BOOL     EMFDRV_DeleteObject( PHYSDEV dev, HGDIOBJ obj ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_Ellipse( PHYSDEV dev, INT left, INT top, INT right, INT bottom ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_EndPath( PHYSDEV dev ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_ExcludeClipRect( PHYSDEV dev, INT left, INT top, INT right, INT bottom ) DECLSPEC_HIDDEN;
-extern BOOL     EMFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT fillType ) DECLSPEC_HIDDEN;
+extern BOOL     EMFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT fillType ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_ExtSelectClipRgn( PHYSDEV dev, HRGN hrgn, INT mode ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_ExtTextOut( PHYSDEV dev, INT x, INT y, UINT flags, const RECT *lprect, LPCWSTR str,
                                    UINT count, const INT *lpDx ) DECLSPEC_HIDDEN;
@@ -121,22 +121,22 @@ extern HFONT    EMFDRV_SelectFont( PHYSDEV dev, HFONT handle, UINT *aa_flags ) D
 extern HPEN     EMFDRV_SelectPen( PHYSDEV dev, HPEN handle, const struct brush_pattern *pattern ) DECLSPEC_HIDDEN;
 extern HPALETTE EMFDRV_SelectPalette( PHYSDEV dev, HPALETTE hPal, BOOL force ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetArcDirection( PHYSDEV dev, INT arcDirection ) DECLSPEC_HIDDEN;
-extern COLORREF EMFDRV_SetBkColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
+extern EMFDRV_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetBkMode( PHYSDEV dev, INT mode ) DECLSPEC_HIDDEN;
-extern COLORREF EMFDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
-extern COLORREF EMFDRV_SetDCPenColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
+extern EMFDRV_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
+extern EMFDRV_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetDIBitsToDevice( PHYSDEV dev, INT xDest, INT yDest, DWORD cx, DWORD cy, INT xSrc,
                                           INT ySrc, UINT startscan, UINT lines, LPCVOID bits,
                                           BITMAPINFO *info, UINT coloruse ) DECLSPEC_HIDDEN;
 extern DWORD    EMFDRV_SetLayout( PHYSDEV dev, DWORD layout ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetMapMode( PHYSDEV dev, INT mode ) DECLSPEC_HIDDEN;
 extern DWORD    EMFDRV_SetMapperFlags( PHYSDEV dev, DWORD flags ) DECLSPEC_HIDDEN;
-extern COLORREF EMFDRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color ) DECLSPEC_HIDDEN;
+extern EMFDRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetPolyFillMode( PHYSDEV dev, INT mode ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetROP2( PHYSDEV dev, INT rop ) DECLSPEC_HIDDEN;
 extern INT      EMFDRV_SetStretchBltMode( PHYSDEV dev, INT mode ) DECLSPEC_HIDDEN;
 extern UINT     EMFDRV_SetTextAlign( PHYSDEV dev, UINT align ) DECLSPEC_HIDDEN;
-extern COLORREF EMFDRV_SetTextColor( PHYSDEV dev, COLORREF color ) DECLSPEC_HIDDEN;
+extern EMFDRV_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_SetTextJustification( PHYSDEV dev, INT nBreakExtra, INT nBreakCount ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_SetViewportExtEx( PHYSDEV dev, INT x, INT y, SIZE *size ) DECLSPEC_HIDDEN;
 extern BOOL     EMFDRV_SetViewportOrgEx( PHYSDEV dev, INT x, INT y, POINT *pt ) DECLSPEC_HIDDEN;

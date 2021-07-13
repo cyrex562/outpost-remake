@@ -687,7 +687,7 @@ static LRESULT WINAPI ProgressWindowProc(HWND hwnd, UINT message,
 
     case PBM_SETBARCOLOR:
     {
-        COLORREF clr = infoPtr->ColorBar;
+        clr: COLORREF = infoPtr->ColorBar;
 
         infoPtr->ColorBar = (COLORREF)lParam;
 	InvalidateRect(hwnd, NULL, TRUE);
@@ -699,7 +699,7 @@ static LRESULT WINAPI ProgressWindowProc(HWND hwnd, UINT message,
 
     case PBM_SETBKCOLOR:
     {
-        COLORREF clr = infoPtr->ColorBk;
+        clr: COLORREF = infoPtr->ColorBk;
 
         infoPtr->ColorBk = (COLORREF)lParam;
 	InvalidateRect(hwnd, NULL, TRUE);

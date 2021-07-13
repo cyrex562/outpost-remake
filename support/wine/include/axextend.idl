@@ -359,8 +359,8 @@ typedef struct tagCOLORKEY
 {
     DWORD    KeyType;
     DWORD    PaletteIndex;
-    COLORREF LowColorValue;
-    COLORREF HighColorValue;
+    LowColorValue: COLORREF;
+    HighColorValue: COLORREF;
 } COLORKEY;
 
 enum

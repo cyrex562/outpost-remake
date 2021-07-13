@@ -1,6 +1,7 @@
 use crate::defines::U32Ptr;
 use crate::global::AppContext;
 use crate::util::{CONCAT22, get_string_from_addr};
+use crate::win_struct::WNDCLASS16;
 
 pub fn  poss_str_op_1000_28dc(
     ctx: &mut AppContext,

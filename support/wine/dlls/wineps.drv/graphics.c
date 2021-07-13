@@ -438,7 +438,7 @@ BOOL PSDRV_PolyBezierTo( PHYSDEV dev, const POINT *pts, DWORD count )
 /***********************************************************************
  *           PSDRV_SetPixel
  */
-COLORREF PSDRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+PSDRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     PSCOLOR pscolor;
     POINT pt;

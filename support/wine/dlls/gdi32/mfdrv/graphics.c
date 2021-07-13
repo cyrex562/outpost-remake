@@ -108,7 +108,7 @@ BOOL MFDRV_RoundRect( PHYSDEV dev, INT left, INT top, INT right,
 /***********************************************************************
  *           MFDRV_SetPixel
  */
-COLORREF MFDRV_SetPixel( PHYSDEV dev, INT x, INT y, COLORREF color )
+MFDRV_SetPixel: COLORREF( PHYSDEV dev, INT x, INT y, color: COLORREF )
 {
     return MFDRV_MetaParam4(dev, META_SETPIXEL, x, y,HIWORD(color),
 			    LOWORD(color));
@@ -241,7 +241,7 @@ BOOL MFDRV_PolyPolygon( PHYSDEV dev, const POINT* pt, const INT* counts, UINT po
 /**********************************************************************
  *          MFDRV_ExtFloodFill
  */
-BOOL MFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, COLORREF color, UINT fillType )
+BOOL MFDRV_ExtFloodFill( PHYSDEV dev, INT x, INT y, color: COLORREF, UINT fillType )
 {
     return MFDRV_MetaParam4(dev,META_FLOODFILL,x,y,HIWORD(color),
 			    LOWORD(color));

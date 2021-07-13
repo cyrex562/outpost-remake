@@ -433,7 +433,7 @@ static void sync_window_region( struct x11drv_win_data *data, HRGN win_region )
  *              sync_window_opacity
  */
 static void sync_window_opacity( Display *display, Window win,
-                                 COLORREF key, BYTE alpha, DWORD flags )
+                                 key: COLORREF, BYTE alpha, DWORD flags )
 {
     unsigned long opacity = 0xffffffff;
 
@@ -1507,7 +1507,7 @@ static void create_whole_window( struct x11drv_win_data *data )
     int cx, cy, mask;
     XSetWindowAttributes attr;
     WCHAR text[1024];
-    COLORREF key;
+    key: COLORREF;
     BYTE alpha;
     DWORD layered_flags;
     HRGN win_rgn;
@@ -2236,7 +2236,7 @@ void CDECL X11DRV_WindowPosChanging( HWND hwnd, HWND insert_after, UINT swp_flag
     struct x11drv_win_data *data = get_win_data( hwnd );
     RECT surface_rect;
     DWORD flags;
-    COLORREF key;
+    key: COLORREF;
     BOOL layered = GetWindowLongW( hwnd, GWL_EXSTYLE ) & WS_EX_LAYERED;
 
     if (!data && !(data = X11DRV_create_win_data( hwnd, window_rect, client_rect ))) return;
@@ -2562,7 +2562,7 @@ void CDECL X11DRV_SetWindowRgn( HWND hwnd, HRGN hrgn, BOOL redraw )
  *
  * Set transparency attributes for a layered window.
  */
-void CDECL X11DRV_SetLayeredWindowAttributes( HWND hwnd, COLORREF key, BYTE alpha, DWORD flags )
+void CDECL X11DRV_SetLayeredWindowAttributes( HWND hwnd, key: COLORREF, BYTE alpha, DWORD flags )
 {
     struct x11drv_win_data *data = get_win_data( hwnd );
 
@@ -2612,7 +2612,7 @@ BOOL CDECL X11DRV_UpdateLayeredWindow( HWND hwnd, const UPDATELAYEREDWINDOWINFO 
     struct window_surface *surface;
     struct x11drv_win_data *data;
     BLENDFUNCTION blend = { AC_SRC_OVER, 0, 255, 0 };
-    COLORREF color_key = (info->dwFlags & ULW_COLORKEY) ? info->crKey : CLR_INVALID;
+    color_key: COLORREF = (info->dwFlags & ULW_COLORKEY) ? info->crKey : CLR_INVALID;
     char buffer[FIELD_OFFSET( BITMAPINFO, bmiColors[256] )];
     BITMAPINFO *bmi = (BITMAPINFO *)buffer;
     void *src_bits, *dst_bits;

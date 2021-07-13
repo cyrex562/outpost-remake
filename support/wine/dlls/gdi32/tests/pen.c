@@ -37,10 +37,10 @@ static void test_logpen(void)
     {
         UINT style;
         INT width;
-        COLORREF color;
+        color: COLORREF;
         UINT ret_style;
         INT ret_width;
-        COLORREF ret_color;
+        ret_color: COLORREF;
     } pen[] = {
         { PS_SOLID, -123, RGB(0x12,0x34,0x56), PS_SOLID, 123, RGB(0x12,0x34,0x56) },
         { PS_SOLID, 0, RGB(0x12,0x34,0x56), PS_SOLID, 0, RGB(0x12,0x34,0x56) },

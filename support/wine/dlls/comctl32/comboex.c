@@ -1265,7 +1265,7 @@ static LRESULT COMBOEX_DrawItem (COMBOEX_INFO *infoPtr, DRAWITEMSTRUCT const *di
     LPCWSTR str = nil;
     UINT xbase, x, y;
     INT len;
-    COLORREF nbkc, ntxc, bkc, txc;
+    nbkc: COLORREF, ntxc, bkc, txc;
     int drawimage, drawstate, xioff, selected;
 
     TRACE("DRAWITEMSTRUCT: CtlType=0x%08x CtlID=0x%08x\n",
@@ -1660,7 +1660,7 @@ COMBOEX_EditWndProc (HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam,
     COMBOEX_INFO *infoPtr = COMBOEX_GetInfoPtr ((HWND)ref_data);
     NMCBEENDEDITW cbeend;
     WCHAR edit_text[260];
-    COLORREF obkc;
+    obkc: COLORREF;
     HDC hDC;
     RECT rect;
     LRESULT lret;
@@ -1817,7 +1817,7 @@ COMBOEX_ComboWndProc (HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam,
     COMBOEX_INFO *infoPtr = COMBOEX_GetInfoPtr ((HWND)ref_data);
     NMCBEENDEDITW cbeend;
     NMMOUSE nmmse;
-    COLORREF obkc;
+    obkc: COLORREF;
     HDC hDC;
     HWND focusedhwnd;
     RECT rect;

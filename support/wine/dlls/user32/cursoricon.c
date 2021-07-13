@@ -2598,7 +2598,7 @@ BOOL WINAPI DrawIconEx( HDC hdc, INT x0, INT y0, HICON hIcon,
     HDC hdc_dest, hMemDC;
     BOOL result = FALSE, DoOffscreen;
     HBITMAP hB_off = 0;
-    COLORREF oldFg, oldBg;
+    oldFg: COLORREF, oldBg;
     INT x, y, nStretchMode;
 
     TRACE_(icon)("(hdc=%p,pos=%d.%d,hicon=%p,extend=%d.%d,istep=%d,br=%p,flags=0x%08x)\n",
@@ -2744,7 +2744,7 @@ failed:
 static void DIB_FixColorsToLoadflags(BITMAPINFO * bmi, UINT loadflags, BYTE pix)
 {
     int colors;
-    COLORREF c_W, c_S, c_F, c_L, c_C;
+    c_W: COLORREF, c_S, c_F, c_L, c_C;
     int incr,i;
     RGBQUAD *ptr;
     int bitmap_type;

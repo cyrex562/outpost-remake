@@ -254,7 +254,7 @@ static int FM_InitMenuPopup(HMENU hmenu, LPCITEMIDLIST pAlternatePidl)
  *  (ffffffff,00000000,00000000,00000000,00000000)
  */
 HMENU WINAPI FileMenu_Create (
-	COLORREF crBorderColor,
+	crBorderColor: COLORREF,
 	int nBorderWidth,
 	HBITMAP hBorderBmp,
 	int nSelHeight,
@@ -594,7 +594,7 @@ LRESULT WINAPI FileMenu_DrawItem(
 	LPDRAWITEMSTRUCT	lpdis)
 {
 	LPFMITEM pMyItem = (LPFMITEM)(lpdis->itemData);
-	COLORREF clrPrevText, clrPrevBkgnd;
+	clrPrevText: COLORREF, clrPrevBkgnd;
 	int xi,yi,xt,yt;
 	HIMAGELIST hImageList;
 	RECT TextRect;

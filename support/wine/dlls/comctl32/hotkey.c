@@ -97,7 +97,7 @@ HOTKEY_DrawHotKey(HOTKEY_INFO *infoPtr, HDC hdc, LPCWSTR KeyName, WORD NameLen)
 {
     SIZE TextSize;
     INT nXStart, nYStart;
-    COLORREF clrOldText, clrOldBk;
+    clrOldText: COLORREF, clrOldBk;
     HFONT hFontOld;
 
     /* Make a gap from the frame */

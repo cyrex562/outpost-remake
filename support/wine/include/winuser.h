@@ -881,7 +881,7 @@ typedef struct tagWINDOWPLACEMENT
 #define CTLCOLOR_SCROLLBAR          5
 #define CTLCOLOR_STATIC             6
 
-WINUSERAPI COLORREF WINAPI GetSysColor(INT);
+WINUSERAPI WINAPI: COLORREF GetSysColor(INT);
 WINUSERAPI BOOL     WINAPI SetSysColors(INT,const INT*,const COLORREF*);
 
 #endif /* NOCOLOR */

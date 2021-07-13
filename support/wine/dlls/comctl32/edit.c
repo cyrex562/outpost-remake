@@ -2119,8 +2119,8 @@ static void EDIT_MoveWordForward(EDITSTATE *es, BOOL extend)
  */
 static INT EDIT_PaintText(EDITSTATE *es, HDC dc, INT x, INT y, INT line, INT col, INT count, BOOL rev)
 {
-	COLORREF BkColor;
-	COLORREF TextColor;
+	BkColor: COLORREF;
+	TextColor: COLORREF;
 	LOGFONTW underline_font;
 	HFONT hUnderline = 0;
 	HFONT old_font = 0;

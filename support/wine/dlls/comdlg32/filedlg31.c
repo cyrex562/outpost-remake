@@ -228,7 +228,7 @@ static LONG FD31_WMDrawItem(HWND hWnd, WPARAM wParam, LPARAM lParam,
 {
     WCHAR *str;
     HICON hIcon;
-    COLORREF oldText = 0, oldBk = 0;
+    oldText: COLORREF = 0, oldBk = 0;
 
     if (lpdis->CtlType == ODT_LISTBOX && lpdis->CtlID == lst1)
     {

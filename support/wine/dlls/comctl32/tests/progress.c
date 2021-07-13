@@ -217,7 +217,7 @@ static void test_redraw(void)
 static void test_setcolors(void)
 {
     HWND progress;
-    COLORREF clr;
+    clr: COLORREF;
 
     progress = create_progress(PBS_SMOOTH);
 

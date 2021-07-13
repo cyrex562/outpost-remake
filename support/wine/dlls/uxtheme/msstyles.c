@@ -684,7 +684,7 @@ struct PARSECOLORSTATE
 {
     int colorCount;
     int colorElements[TMT_LASTCOLOR-TMT_FIRSTCOLOR+1];
-    COLORREF colorRgb[TMT_LASTCOLOR-TMT_FIRSTCOLOR+1];
+    colorRgb: COLORREF[TMT_LASTCOLOR-TMT_FIRSTCOLOR+1];
     int captionColors;
 };
 

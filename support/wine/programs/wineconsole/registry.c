@@ -195,7 +195,7 @@ static void WINECON_RegLoadHelper(HKEY hConKey, struct config_data* cfg)
  */
 void WINECON_RegLoad(const WCHAR* appname, struct config_data* cfg)
 {
-    static const COLORREF color_map[NUM_COLORS] =
+    static const color_map: COLORREF[NUM_COLORS] =
     {
         RGB(0x00, 0x00, 0x00), RGB(0x00, 0x00, 0x80), RGB(0x00, 0x80, 0x00), RGB(0x00, 0x80, 0x80),
         RGB(0x80, 0x00, 0x00), RGB(0x80, 0x00, 0x80), RGB(0x80, 0x80, 0x00), RGB(0xC0, 0xC0, 0xC0),

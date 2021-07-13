@@ -1744,7 +1744,7 @@ static HPALETTE create_default_palette( int bpp )
     return CreatePalette( pal );
 }
 
-static inline void solid_patblt( HDC hdc, int x, int y, int width, int height, COLORREF color )
+static inline void solid_patblt( HDC hdc, int x, int y, int width, int height, color: COLORREF )
 {
     HBRUSH brush = CreateSolidBrush( color );
     brush = SelectObject( hdc, brush );
@@ -1774,7 +1774,7 @@ static void draw_graphics(HDC hdc, const BITMAPINFO *bmi, BYTE *bits)
     BOOL ret, dib_is_1bpp = (bmi->bmiHeader.biBitCount == 1);
     BOOL dib_is_8bpp_gray = (bmi->bmiHeader.biBitCount == 8 && bmi->bmiColors[1].rgbRed == 1);
     BLENDFUNCTION blend;
-    COLORREF old_text, old_bkgnd;
+    old_text: COLORREF, old_bkgnd;
     HPALETTE hpal, old_hpal;
 
     blend.BlendOp = AC_SRC_OVER;
@@ -2670,7 +2670,7 @@ static void draw_graphics(HDC hdc, const BITMAPINFO *bmi, BYTE *bits)
 
     for (i = 0; i < 256; i++)
     {
-        COLORREF s, g;
+        s: COLORREF, g;
 
         for (j = 0; j < 16; j++)
         {
@@ -2995,9 +2995,9 @@ static inline BYTE aa_comp(BYTE dst, BYTE text, BYTE alpha)
     }
 }
 
-static inline COLORREF aa_colorref( COLORREF dst, COLORREF text, BYTE glyph )
+static inline aa_colorref: COLORREF( dst: COLORREF, text: COLORREF, BYTE glyph )
 {
-    COLORREF ret;
+    ret: COLORREF;
 
     ret = RGB( aa_comp( GetRValue(dst), GetRValue(text), glyph ),
                aa_comp( GetGValue(dst), GetGValue(text), glyph ),
@@ -3021,7 +3021,7 @@ static void draw_text_2( HDC hdc, const BITMAPINFO *bmi, BYTE *bits, BOOL aa )
     POINT origin, g_org;
     static const BYTE vals[4] = { 0x00, 0x00, 0x00, 0x00 };
     TEXTMETRICA tm;
-    COLORREF text_color;
+    text_color: COLORREF;
 
     for(i = 0; i < dib_size; i++)
         bits[i] = vals[i % 4];
@@ -3082,7 +3082,7 @@ static void draw_text_2( HDC hdc, const BITMAPINFO *bmi, BYTE *bits, BOOL aa )
             for (y = 0; y < gm.gmBlackBoxY; y++)
             {
                 BYTE *g_ptr = g_buf + y * stride;
-                COLORREF val;
+                val: COLORREF;
 
                 for (x = 0; x < gm.gmBlackBoxX; x++)
                 {

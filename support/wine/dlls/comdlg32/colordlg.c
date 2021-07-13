@@ -43,7 +43,7 @@ static INT_PTR CALLBACK ColorDlgProc( HWND hWnd, UINT wMsg, WPARAM wParam, LPARA
 
 #define CONV_LPARAMTOPOINT(lp,p) do { (p)->x = (short)LOWORD(lp); (p)->y = (short)HIWORD(lp); } while(0)
 
-static const COLORREF predefcolors[6][8]=
+static const predefcolors: COLORREF[6][8]=
 {
  { 0x008080FFL, 0x0080FFFFL, 0x0080FF80L, 0x0080FF00L,
    0x00FFFF80L, 0x00FF8000L, 0x00C080FFL, 0x00FF80FFL },
@@ -127,7 +127,7 @@ static int hsl_to_x(int hue, int sat, int lum)
 /***********************************************************************
  *                             CC_HSLtoRGB                    [internal]
  */
-static COLORREF CC_HSLtoRGB(int hue, int sat, int lum)
+static CC_HSLtoRGB: COLORREF(int hue, int sat, int lum)
 {
  int h, r, g, b;
 
@@ -146,7 +146,7 @@ static COLORREF CC_HSLtoRGB(int hue, int sat, int lum)
 /***********************************************************************
  *                             CC_RGBtoHSL                    [internal]
  */
-static int CC_RGBtoHSL(char c, COLORREF rgb)
+static int CC_RGBtoHSL(char c, rgb: COLORREF)
 {
  WORD maxi, mini, mmsum, mmdif, result = 0;
  int iresult = 0, r, g, b;
@@ -671,7 +671,7 @@ static void CC_EditSetRGB( CCPRIV *infoPtr )
 {
  if (IsWindowVisible( GetDlgItem(infoPtr->hwndSelf, IDC_COLOR_GRAPH) ))   /* if full size */
  {
-   COLORREF cr = infoPtr->lpcc->rgbResult;
+   cr: COLORREF = infoPtr->lpcc->rgbResult;
    int r = GetRValue(cr);
    int g = GetGValue(cr);
    int b = GetBValue(cr);

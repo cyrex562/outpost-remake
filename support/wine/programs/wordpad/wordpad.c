@@ -2108,7 +2108,7 @@ static LRESULT OnNotify( HWND hWnd, LPARAM lParam)
 }
 
 /* Copied from dlls/comdlg32/fontdlg.c */
-static const COLORREF textcolors[]=
+static const textcolors: COLORREF[]=
 {
     0x00000000L,0x00000080L,0x00008000L,0x00008080L,
     0x00800000L,0x00800080L,0x00808000L,0x00808080L,

@@ -557,7 +557,7 @@ static struct window_surface *create_surface( const BITMAPINFO *info )
 /***********************************************************************
  *           SetBkColor    (GDI.1)
  */
-COLORREF WINAPI SetBkColor16( HDC16 hdc, COLORREF color )
+WINAPI: COLORREF SetBkColor16( HDC16 hdc, color: COLORREF )
 {
     return SetBkColor( HDC_32(hdc), color );
 }
@@ -629,7 +629,7 @@ INT16 WINAPI SetTextCharacterExtra16( HDC16 hdc, INT16 extra )
 /***********************************************************************
  *           SetTextColor    (GDI.9)
  */
-COLORREF WINAPI SetTextColor16( HDC16 hdc, COLORREF color )
+WINAPI: COLORREF SetTextColor16( HDC16 hdc, color: COLORREF )
 {
     return SetTextColor( HDC_32(hdc), color );
 }
@@ -801,7 +801,7 @@ BOOL16 WINAPI Ellipse16( HDC16 hdc, INT16 left, INT16 top,
 /**********************************************************************
  *          FloodFill   (GDI.25)
  */
-BOOL16 WINAPI FloodFill16( HDC16 hdc, INT16 x, INT16 y, COLORREF color )
+BOOL16 WINAPI FloodFill16( HDC16 hdc, INT16 x, INT16 y, color: COLORREF )
 {
     return ExtFloodFill( HDC_32(hdc), x, y, color, FLOODFILLBORDER );
 }
@@ -860,7 +860,7 @@ INT16 WINAPI SaveDC16( HDC16 hdc )
 /***********************************************************************
  *           SetPixel    (GDI.31)
  */
-COLORREF WINAPI SetPixel16( HDC16 hdc, INT16 x, INT16 y, COLORREF color )
+WINAPI: COLORREF SetPixel16( HDC16 hdc, INT16 x, INT16 y, color: COLORREF )
 {
     return SetPixel( HDC_32(hdc), x, y, color );
 }
@@ -1369,7 +1369,7 @@ HFONT16 WINAPI CreateFontIndirect16( const LOGFONT16 *plf16 )
 /***********************************************************************
  *           CreateHatchBrush    (GDI.58)
  */
-HBRUSH16 WINAPI CreateHatchBrush16( INT16 style, COLORREF color )
+HBRUSH16 WINAPI CreateHatchBrush16( INT16 style, color: COLORREF )
 {
     return HBRUSH_16( CreateHatchBrush( style, color ) );
 }
@@ -1387,7 +1387,7 @@ HBRUSH16 WINAPI CreatePatternBrush16( HBITMAP16 hbitmap )
 /***********************************************************************
  *           CreatePen    (GDI.61)
  */
-HPEN16 WINAPI CreatePen16( INT16 style, INT16 width, COLORREF color )
+HPEN16 WINAPI CreatePen16( INT16 style, INT16 width, color: COLORREF )
 {
     LOGPEN logpen;
 
@@ -1451,7 +1451,7 @@ HRGN16 WINAPI CreateRectRgnIndirect16( const RECT16* rect )
 /***********************************************************************
  *           CreateSolidBrush    (GDI.66)
  */
-HBRUSH16 WINAPI CreateSolidBrush16( COLORREF color )
+HBRUSH16 WINAPI CreateSolidBrush16( color: COLORREF )
 {
     return HBRUSH_16( CreateSolidBrush( color ) );
 }
@@ -1544,7 +1544,7 @@ LONG WINAPI GetBitmapBits16( HBITMAP16 hbitmap, LONG count, LPVOID buffer )
 /***********************************************************************
  *		GetBkColor (GDI.75)
  */
-COLORREF WINAPI GetBkColor16( HDC16 hdc )
+WINAPI: COLORREF GetBkColor16( HDC16 hdc )
 {
     return GetBkColor( HDC_32(hdc) );
 }
@@ -1713,7 +1713,7 @@ INT16 WINAPI GetObject16( HGDIOBJ16 handle16, INT16 count, LPVOID buffer )
 /***********************************************************************
  *           GetPixel    (GDI.83)
  */
-COLORREF WINAPI GetPixel16( HDC16 hdc, INT16 x, INT16 y )
+WINAPI: COLORREF GetPixel16( HDC16 hdc, INT16 x, INT16 y )
 {
     return GetPixel( HDC_32(hdc), x, y );
 }
@@ -1776,7 +1776,7 @@ INT16 WINAPI GetTextCharacterExtra16( HDC16 hdc )
 /***********************************************************************
  *		GetTextColor (GDI.90)
  */
-COLORREF WINAPI GetTextColor16( HDC16 hdc )
+WINAPI: COLORREF GetTextColor16( HDC16 hdc )
 {
     return GetTextColor( HDC_32(hdc) );
 }
@@ -2060,7 +2060,7 @@ HDC16 WINAPI CreateIC16( LPCSTR driver, LPCSTR device, LPCSTR output,
 /***********************************************************************
  *           GetNearestColor   (GDI.154)
  */
-COLORREF WINAPI GetNearestColor16( HDC16 hdc, COLORREF color )
+WINAPI: COLORREF GetNearestColor16( HDC16 hdc, color: COLORREF )
 {
     return GetNearestColor( HDC_32(hdc), color );
 }
@@ -2633,7 +2633,7 @@ BOOL16 WINAPI ResizePalette16( HPALETTE16 hpalette, UINT16 cEntries )
 /***********************************************************************
  *           GetNearestPaletteIndex   (GDI.370)
  */
-UINT16 WINAPI GetNearestPaletteIndex16( HPALETTE16 hpalette, COLORREF color )
+UINT16 WINAPI GetNearestPaletteIndex16( HPALETTE16 hpalette, color: COLORREF )
 {
     return GetNearestPaletteIndex( HPALETTE_32(hpalette), color );
 }
@@ -2642,7 +2642,7 @@ UINT16 WINAPI GetNearestPaletteIndex16( HPALETTE16 hpalette, COLORREF color )
 /**********************************************************************
  *          ExtFloodFill   (GDI.372)
  */
-BOOL16 WINAPI ExtFloodFill16( HDC16 hdc, INT16 x, INT16 y, COLORREF color,
+BOOL16 WINAPI ExtFloodFill16( HDC16 hdc, INT16 x, INT16 y, color: COLORREF,
                               UINT16 fillType )
 {
     return ExtFloodFill( HDC_32(hdc), x, y, color, fillType );
@@ -3666,7 +3666,7 @@ BOOL16 WINAPI SetLayout16( HDC16 hdc, DWORD layout )
  *  This function is undocumented and untested. The implementation may
  *  not be correct.
  */
-BOOL16 WINAPI SetSolidBrush16(HBRUSH16 hBrush, COLORREF newColor )
+BOOL16 WINAPI SetSolidBrush16(HBRUSH16 hBrush, newColor: COLORREF )
 {
     FIXME( "%04x %08x no longer supported\n", hBrush, newColor );
     return FALSE;
@@ -3701,7 +3701,7 @@ BOOL16 WINAPI IsDCCurrentPalette16(HDC16 hDC)
 /*********************************************************************
  *           SetMagicColors   (GDI.606)
  */
-VOID WINAPI SetMagicColors16(HDC16 hDC, COLORREF color, UINT16 index)
+VOID WINAPI SetMagicColors16(HDC16 hDC, color: COLORREF, UINT16 index)
 {
     FIXME("(hDC %04x, color %04x, index %04x): stub\n", hDC, (int)color, index);
 

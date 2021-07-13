@@ -38,7 +38,7 @@ pub fn file_1030_19b4(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   
   file_1030_1730(param_1,param_2);
   if (param_3 != 0x0) {
-    plVar1 = (long *)(param_1 & 0xffff0000 | (param_1 + 0xc));
+    plVar1 = (param_1 & 0xffff0000 | (param_1 + 0xc));
     file_1008_76e4(param_2,plVar1,0x1008,param_5,param_4);
     if (plVar1 == 0x0) {
       ctx.PTR_LOOP_1050_0310 = 0x6d2;
@@ -462,13 +462,13 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
           BVar3 = read_file_1008_7dee(uVar13,uVar14,&iVar3.field_0x16,0x0,uVar11,0x4,
                                       0x1008);
           if (BVar3 != 0x0) {
-            plVar7 = (long *)(param_1 & 0xffff0000 | &iVar3.field_0x1e);
+            plVar7 = (param_1 & 0xffff0000 | &iVar3.field_0x1e);
             file_1008_76e4(param_2,plVar7,0x1008,param_5,param_4);
             if ((((plVar7 != 0x0) &&
-                 (iVar6 = file_1008_77cc(param_2,(long *)(param_1 & 0xffff0000 |
+                 (iVar6 = file_1008_77cc(param_2,(param_1 & 0xffff0000 |
                                                          &iVar3.field_0x22),
                                          param_4,0x1008,param_5), iVar6 != 0x0)) &&
-                (iVar6 = file_1008_77cc(param_2,(long *)(param_1 & 0xffff0000 |
+                (iVar6 = file_1008_77cc(param_2,(param_1 & 0xffff0000 |
                                                         &iVar3.field_0x26),
                                         param_4,0x1008,param_5), iVar6 != 0x0)) &&
                (BVar3 = read_file_1008_7dee(uVar13,uVar14,&iVar3.field_0x2a,0x0,

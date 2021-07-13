@@ -4622,7 +4622,7 @@ pub fn pass1_1020_c5b8(param_1: u16,param_2: u16,param_3: i16,param_4: u16)
  // uVar8 = (uVar2 >> 0x10);
   iVar7 = uVar2;
   (iVar7 + 0x1c) = 0x1;
-  plVar1 = (long *)(iVar7 + 0x8);
+  plVar1 = (iVar7 + 0x8);
   *plVar1 = *plVar1 + 0x1;
   puVar4 = (param_3 + -0xa);
   *puVar4 = (param_3 + 0xa);
@@ -4652,7 +4652,7 @@ pub fn pass1_1020_c644(param_1: *mut u32,param_2: u16,param_3: u32)
   iVar4 = (iVar5 + 0x8) * 0x6 + (iVar5 + 0x18);
   uVar2 = (iVar5 + 0x1a);
   puStack6 = CONCAT22(uVar2,iVar4);
-  plVar1 = (long *)(iVar5 + 0x8);
+  plVar1 = (iVar5 + 0x8);
   *plVar1 = *plVar1 + 0x1;
   *puStack6 = param_3;
   (iVar4 + 0x4) = param_2;

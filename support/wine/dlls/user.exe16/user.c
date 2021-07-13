@@ -1286,7 +1286,7 @@ INT16 WINAPI GetSystemMetrics16(INT16 index)
 /*************************************************************************
  *		GetSysColor (USER.180)
  */
-COLORREF WINAPI GetSysColor16(INT16 index)
+WINAPI: COLORREF GetSysColor16(INT16 index)
 {
     return GetSysColor(index);
 }

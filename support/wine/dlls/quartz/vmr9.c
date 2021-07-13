@@ -1860,7 +1860,7 @@ static HRESULT WINAPI VMR7WindowlessControl_GetCurrentImage(IVMRWindowlessContro
 }
 
 static HRESULT WINAPI VMR7WindowlessControl_SetBorderColor(IVMRWindowlessControl *iface,
-                                                           COLORREF color)
+                                                           color: COLORREF)
 {
     struct quartz_vmr *This = impl_from_IVMRWindowlessControl(iface);
 
@@ -1877,7 +1877,7 @@ static HRESULT WINAPI VMR7WindowlessControl_GetBorderColor(IVMRWindowlessControl
     return E_NOTIMPL;
 }
 
-static HRESULT WINAPI VMR7WindowlessControl_SetColorKey(IVMRWindowlessControl *iface, COLORREF color)
+static HRESULT WINAPI VMR7WindowlessControl_SetColorKey(IVMRWindowlessControl *iface, color: COLORREF)
 {
     struct quartz_vmr *This = impl_from_IVMRWindowlessControl(iface);
 
@@ -2084,7 +2084,7 @@ static HRESULT WINAPI VMR9WindowlessControl_GetCurrentImage(IVMRWindowlessContro
     return E_NOTIMPL;
 }
 
-static HRESULT WINAPI VMR9WindowlessControl_SetBorderColor(IVMRWindowlessControl9 *iface, COLORREF color)
+static HRESULT WINAPI VMR9WindowlessControl_SetBorderColor(IVMRWindowlessControl9 *iface, color: COLORREF)
 {
     struct quartz_vmr *This = impl_from_IVMRWindowlessControl9(iface);
 
@@ -2185,7 +2185,7 @@ static HRESULT WINAPI VMR7SurfaceAllocatorNotify_NotifyEvent(IVMRSurfaceAllocato
 }
 
 static HRESULT WINAPI VMR7SurfaceAllocatorNotify_SetBorderColor(IVMRSurfaceAllocatorNotify *iface,
-                                                                COLORREF clrBorder)
+                                                                clrBorder: COLORREF)
 {
     struct quartz_vmr *This = impl_from_IVMRSurfaceAllocatorNotify(iface);
 

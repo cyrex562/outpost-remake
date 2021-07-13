@@ -2107,8 +2107,7 @@ pub fn pass1_1010_36b4(param_1: *mut u16, param_2: u8) -> u16
 }
 
 
-pub fn pass1_1010_3702(param_1: &mut Struct19, param_2: &mut Struct19, param_3: u16) -> u16
-
+pub fn pass1_1010_3702(param_1: &mut Struct19, param_2: &mut Struct19, param_3: u16) -> &mut Struct19
 {
     struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa) = 0x0;
@@ -4960,7 +4959,7 @@ pub fn pass1_1010_866c(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
 // WARNING: Could not reconcile some variable overlaps
 
 pub fn pass1_1010_86de(param_1: u16, param_2: u16, param_3: u8, param_4: u32) {
-    long * plVar1;
+    let mut plVar1: long;
     let iVar2: i16;
     let bVar3: bool;
     let uVar4: u16;
@@ -4973,7 +4972,7 @@ pub fn pass1_1010_86de(param_1: u16, param_2: u16, param_3: u8, param_4: u32) {
     // uVar4 = (uVar6 >> 0x10);
     uStack10 = 0x0;
     loop {
-        plVar1 = (long *)(uVar6 + 0x8);
+        plVar1 = (uVar6 + 0x8);
         if (*plVar1 == uStack10 || *plVar1 < uStack10) {
             return;
         }
@@ -4982,7 +4981,7 @@ pub fn pass1_1010_86de(param_1: u16, param_2: u16, param_3: u8, param_4: u32) {
         iVar2 = lVar5;
         bVar3 = false;
         // TODO: refactor for loop
-//     for (lStack20 = 0x0; plVar1 = (long *)(uVar6 + 0x4),
+//     for (lStack20 = 0x0; plVar1 = (uVar6 + 0x4),
 //         *plVar1 != lStack20 && lStack20 <= *plVar1; lStack20 += 0x1) {
 //       if (bVar3) {
 // //LAB_1010_86fc:
@@ -7124,7 +7123,7 @@ pub fn pass1_1010_c864(param_1: u32, param_2: *mut u16, param_3: &mut Struct104,
                        param_5: *mut u8, param_6: u8)
 
 {
-    long * plVar1;
+    let mut plVar1: long;
     let lVar2: i32;
     let ppcVar3: u32;
     let uVar4: u32;
@@ -7314,7 +7313,7 @@ pub fn pass1_1010_cc56(param_1: u32, param_2: u32, param_3: &mut Struct104, para
                        param_5: *mut u8, param_6: u8)
 
 {
-    long * plVar1;
+    let mut plVar1: long;
     let uVar2: u32;
     let mut pcVar3: String;
     let uVar4: u16;

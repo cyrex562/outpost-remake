@@ -115,7 +115,7 @@ static inline BOOL rop_needs_and_mask( INT rop )
     return codes.a1 || codes.a2;
 }
 
-static inline RGBQUAD rgbquad_from_colorref(COLORREF c)
+static inline RGBQUAD rgbquad_from_colorref(c: COLORREF)
 {
     RGBQUAD ret;
 
@@ -135,7 +135,7 @@ static inline BOOL rgbquad_equal(const RGBQUAD *a, const RGBQUAD *b)
     return FALSE;
 }
 
-static COLORREF make_rgb_colorref( DC *dc, const dib_info *dib, COLORREF color,
+static make_rgb_colorref: COLORREF( DC *dc, const dib_info *dib, color: COLORREF,
                                    BOOL *got_pixel, DWORD *pixel )
 {
     *pixel = 0;
@@ -167,17 +167,17 @@ static COLORREF make_rgb_colorref( DC *dc, const dib_info *dib, COLORREF color,
  *                   get_pixel_color
  *
  * 1 bit bitmaps map the fg/bg colors as follows:
- * If the fg colorref exactly matches one of the color table entries then
+ * If the fg exactly: COLORREF matches one of the color table entries then
  * that entry is the fg color and the other is the bg.
  * Otherwise the bg color is mapped to the closest entry in the table and
  * the fg takes the other one.
  */
-DWORD get_pixel_color( DC *dc, const dib_info *dib, COLORREF color, BOOL mono_fixup )
+DWORD get_pixel_color( DC *dc, const dib_info *dib, color: COLORREF, BOOL mono_fixup )
 {
     RGBQUAD fg_quad;
     BOOL got_pixel;
     DWORD pixel;
-    COLORREF rgb_ref;
+    rgb_ref: COLORREF;
     const RGBQUAD *color_table;
 
     rgb_ref = make_rgb_colorref( dc, dib, color, &got_pixel, &pixel );
@@ -205,7 +205,7 @@ DWORD get_pixel_color( DC *dc, const dib_info *dib, COLORREF color, BOOL mono_fi
  * there are several fg sources (pen, brush, text) we take as bg the inverse
  * of the relevant fg color (which is always set up correctly).
  */
-static inline void get_color_masks( DC *dc, const dib_info *dib, UINT rop, COLORREF colorref,
+static inline void get_color_masks( DC *dc, const dib_info *dib, UINT rop, colorref: COLORREF,
                                     INT bkgnd_mode, rop_mask *fg_mask, rop_mask *bg_mask )
 {
     DWORD color = get_pixel_color( dc, dib, colorref, TRUE );
@@ -1742,7 +1742,7 @@ static inline int get_pen_device_width( DC *dc, int width )
 /***********************************************************************
  *           dibdrv_SetDCPenColor
  */
-COLORREF dibdrv_SetDCPenColor( PHYSDEV dev, COLORREF color )
+dibdrv_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev(dev);
     DC *dc = get_physdev_dc( dev );
@@ -1887,7 +1887,7 @@ static BOOL create_hatch_brush_bits(dibdrv_physdev *pdev, dib_brush *brush, BOOL
 static BOOL create_dither_brush_bits(dibdrv_physdev *pdev, dib_brush *brush, BOOL *needs_reselect)
 {
     DC *dc = get_physdev_dc( &pdev->dev );
-    COLORREF rgb;
+    rgb: COLORREF;
     DWORD pixel;
     BOOL got_pixel;
 
@@ -1956,7 +1956,7 @@ static BOOL select_pattern_brush( dibdrv_physdev *pdev, dib_brush *brush, BOOL *
         /* monochrome DDB pattern uses DC colors */
         DWORD pixel;
         BOOL got_pixel;
-        COLORREF color;
+        color: COLORREF;
 
         color = make_rgb_colorref( dc, &pdev->dib, dc->textColor, &got_pixel, &pixel );
         color_table[0].rgbRed      = GetRValue( color );
@@ -2054,7 +2054,7 @@ static BOOL null_brush(dibdrv_physdev *pdev, dib_brush *brush, dib_info *dib,
     return TRUE;
 }
 
-static BOOL brush_needs_dithering( dibdrv_physdev *pdev, COLORREF color )
+static BOOL brush_needs_dithering( dibdrv_physdev *pdev, color: COLORREF )
 {
     int i;
     RGBQUAD rgb;
@@ -2228,7 +2228,7 @@ HPEN dibdrv_SelectPen( PHYSDEV dev, HPEN hpen, const struct brush_pattern *patte
 /***********************************************************************
  *           dibdrv_SetDCBrushColor
  */
-COLORREF dibdrv_SetDCBrushColor( PHYSDEV dev, COLORREF color )
+dibdrv_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     dibdrv_physdev *pdev = get_dibdrv_pdev(dev);
     DC *dc = get_physdev_dc( dev );

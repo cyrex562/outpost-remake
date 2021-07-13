@@ -559,7 +559,7 @@ static void LISTBOX_PaintItem( LB_DESCR *descr, HDC hdc, const RECT *rect,
     }
     else
     {
-        COLORREF oldText = 0, oldBk = 0;
+        oldText: COLORREF = 0, oldBk = 0;
 
         if (action == ODA_FOCUS)
         {

@@ -386,7 +386,7 @@ static void test_begin_paint(void)
     HDC old_hdc, hdc;
     RECT rect, parent_rect;
     PAINTSTRUCT ps;
-    COLORREF cr;
+    cr: COLORREF;
 
     /* cache DC */
 

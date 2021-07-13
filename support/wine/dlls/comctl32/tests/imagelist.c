@@ -246,7 +246,7 @@ static void check_bits(HWND hwnd, HIMAGELIST himl, int idx, int size,
                        const BYTE *checkbits, LPCSTR loc)
 {
     BYTE bits[100*100/8];
-    COLORREF c;
+    c: COLORREF;
     HDC hdc;
     int x, y, i = -1;
 
@@ -934,7 +934,7 @@ static void check_ilhead_data(const ILHEAD *ilh, INT cx, INT cy, INT cur, INT ma
     ok(ilh->ovls[3] == -1, "wrong ovls[3] %04x\n", ilh->ovls[3]);
 }
 
-static HBITMAP create_bitmap(INT cx, INT cy, COLORREF color, const char *comment)
+static HBITMAP create_bitmap(INT cx, INT cy, color: COLORREF, const char *comment)
 {
     HDC hdc;
     BITMAPINFO bmi;
@@ -2290,7 +2290,7 @@ static void test_IImageList_GetBkColor(void)
 {
     IImageList *imgl;
     HIMAGELIST himl;
-    COLORREF color;
+    color: COLORREF;
     HRESULT hr;
 
     himl = pImageList_Create(16, 16, ILC_COLOR16, 0, 3);
@@ -2312,7 +2312,7 @@ static void test_IImageList_SetBkColor(void)
 {
     IImageList *imgl;
     HIMAGELIST himl;
-    COLORREF color;
+    color: COLORREF;
     HRESULT hr;
 
     himl = pImageList_Create(16, 16, ILC_COLOR16, 0, 3);

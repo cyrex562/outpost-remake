@@ -1648,7 +1648,7 @@ struct x11drv_window_surface
   BOOL byteswap;
   BOOL is_argb;
   DWORD alpha_bits;
-  COLORREF color_key;
+  color_key: COLORREF;
   HRGN region;
   void *bits;
 #ifdef HAVE_LIBXXSHM
@@ -1839,7 +1839,7 @@ static void update_surface_region(struct x11drv_window_surface *surface)
 /***********************************************************************
  *           set_color_key
  */
-static void set_color_key(struct x11drv_window_surface *surface, COLORREF key)
+static void set_color_key(struct x11drv_window_surface *surface, key: COLORREF)
 {
   UINT *masks = surface->info.bmiColors;
 
@@ -2100,7 +2100,7 @@ static const struct window_surface_funcs x11drv_surface_funcs =
  *           create_surface
  */
 struct window_surface *create_surface(Window window, const XVisualInfo *vis, const RECT *rect,
-                                      COLORREF color_key, BOOL use_alpha)
+                                      color_key: COLORREF, BOOL use_alpha)
 {
   const XPixmapFormatValues *format = pixmap_formats[vis->depth];
   struct x11drv_window_surface *surface;
@@ -2175,10 +2175,10 @@ failed:
 /***********************************************************************
  *           set_surface_color_key
  */
-void set_surface_color_key(struct window_surface *window_surface, COLORREF color_key)
+void set_surface_color_key(struct window_surface *window_surface, color_key: COLORREF)
 {
   struct x11drv_window_surface *surface = get_x11_surface(window_surface);
-  COLORREF prev;
+  prev: COLORREF;
 
   if (window_surface->funcs != &x11drv_surface_funcs)
     return; /* we may get the null surface */

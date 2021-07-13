@@ -29,6 +29,10 @@ impl Struct18 {
 
 }
 
+pub struct Struct10 {
+
+}
+
 pub struct Struct27 {
 
 }

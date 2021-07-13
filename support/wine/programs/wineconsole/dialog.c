@@ -147,7 +147,7 @@ static INT_PTR WINAPI WCUSER_OptionDlgProc(HWND hDlg, UINT msg, WPARAM wParam, L
     return TRUE;
 }
 
-static COLORREF get_color(struct dialog_info *di, unsigned int idc)
+static get_color: COLORREF(struct dialog_info *di, unsigned int idc)
 {
     LONG_PTR index;
 
@@ -198,7 +198,7 @@ static LRESULT WINAPI WCUSER_FontPreviewProc(HWND hWnd, UINT msg, WPARAM wParam,
             hFont = (HFONT)GetWindowLongPtrW(hWnd, 0);
             if (hFont)
             {
-                COLORREF bkcolor;
+                bkcolor: COLORREF;
                 WCHAR ascii[] = {'A','S','C','I','I',':',' ','a','b','c','X','Y','Z','\0'};
                 WCHAR buf[256];
                 int   len;

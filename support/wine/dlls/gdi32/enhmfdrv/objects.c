@@ -460,7 +460,7 @@ found:
 /******************************************************************
  *         EMFDRV_SetDCBrushColor
  */
-COLORREF EMFDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color )
+EMFDRV_SetDCBrushColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     EMFDRV_PDEVICE *physDev = get_emf_physdev( dev );
     DC *dc = get_physdev_dc( dev );
@@ -482,7 +482,7 @@ COLORREF EMFDRV_SetDCBrushColor( PHYSDEV dev, COLORREF color )
 /******************************************************************
  *         EMFDRV_SetDCPenColor
  */
-COLORREF EMFDRV_SetDCPenColor( PHYSDEV dev, COLORREF color )
+EMFDRV_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     EMFDRV_PDEVICE *physDev = get_emf_physdev( dev );
     DC *dc = get_physdev_dc( dev );

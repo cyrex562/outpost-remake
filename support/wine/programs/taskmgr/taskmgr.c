@@ -54,13 +54,13 @@ BOOL bInMenuLoop = FALSE;        /* Tells us if we are in the menu loop */
 TASKMANAGER_SETTINGS TaskManagerSettings;
 
 
-void FillSolidRect(HDC hDC, LPCRECT lpRect, COLORREF clr)
+void FillSolidRect(HDC hDC, LPCRECT lpRect, clr: COLORREF)
 {
     SetBkColor(hDC, clr);
     ExtTextOutW(hDC, 0, 0, ETO_OPAQUE, lpRect, NULL, 0, NULL);
 }
 
-static void FillSolidRect2(HDC hDC, int x, int y, int cx, int cy, COLORREF clr)
+static void FillSolidRect2(HDC hDC, int x, int y, int cx, int cy, clr: COLORREF)
 {
     RECT rect;
 
@@ -69,7 +69,7 @@ static void FillSolidRect2(HDC hDC, int x, int y, int cx, int cy, COLORREF clr)
     ExtTextOutW(hDC, 0, 0, ETO_OPAQUE, &rect, NULL, 0, NULL);
 }
 
-static void Draw3dRect(HDC hDC, int x, int y, int cx, int cy, COLORREF clrTopLeft, COLORREF clrBottomRight)
+static void Draw3dRect(HDC hDC, int x, int y, int cx, int cy, clrTopLeft: COLORREF, clrBottomRight: COLORREF)
 {
     FillSolidRect2(hDC, x, y, cx - 1, 1, clrTopLeft);
     FillSolidRect2(hDC, x, y, 1, cy - 1, clrTopLeft);

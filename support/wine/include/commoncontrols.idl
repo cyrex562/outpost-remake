@@ -92,7 +92,7 @@ interface IImageList : IUnknown
 
     HRESULT AddMasked(
         [in] HBITMAP hbmImage,
-        [in] COLORREF crMask,
+        [in] crMask: COLORREF,
         [out] int* pi);
 
     HRESULT Draw(
@@ -148,7 +148,7 @@ interface IImageList : IUnknown
         [in] UINT uNewCount);
 
     HRESULT SetBkColor(
-        [in] COLORREF clrBk,
+        [in] clrBk: COLORREF,
         [out] COLORREF* pclr);
 
     HRESULT GetBkColor(

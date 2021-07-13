@@ -81,7 +81,7 @@ typedef struct msi_font_tag
 {
     struct list entry;
     HFONT hfont;
-    COLORREF color;
+    color: COLORREF;
     WCHAR name[1];
 } msi_font;
 

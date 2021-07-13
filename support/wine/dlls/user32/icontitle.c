@@ -136,7 +136,7 @@ static BOOL ICONTITLE_Paint( HWND hwnd, HWND owner, HDC hDC, BOOL bActive )
     RECT rect;
     HFONT hPrevFont;
     HBRUSH hBrush;
-    COLORREF textColor = 0;
+    textColor: COLORREF = 0;
 
     if( bActive )
     {

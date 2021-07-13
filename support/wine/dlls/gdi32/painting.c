@@ -450,10 +450,10 @@ BOOL WINAPI RoundRect( HDC hdc, INT left, INT top, INT right,
 /***********************************************************************
  *           SetPixel    (GDI32.@)
  */
-COLORREF WINAPI SetPixel( HDC hdc, INT x, INT y, COLORREF color )
+WINAPI: COLORREF SetPixel( HDC hdc, INT x, INT y, color: COLORREF )
 {
     PHYSDEV physdev;
-    COLORREF ret;
+    ret: COLORREF;
     DC * dc = get_dc_ptr( hdc );
 
     if (!dc) return 0;
@@ -467,7 +467,7 @@ COLORREF WINAPI SetPixel( HDC hdc, INT x, INT y, COLORREF color )
 /***********************************************************************
  *           SetPixelV    (GDI32.@)
  */
-BOOL WINAPI SetPixelV( HDC hdc, INT x, INT y, COLORREF color )
+BOOL WINAPI SetPixelV( HDC hdc, INT x, INT y, color: COLORREF )
 {
     PHYSDEV physdev;
     DC * dc = get_dc_ptr( hdc );
@@ -483,10 +483,10 @@ BOOL WINAPI SetPixelV( HDC hdc, INT x, INT y, COLORREF color )
 /***********************************************************************
  *           GetPixel    (GDI32.@)
  */
-COLORREF WINAPI GetPixel( HDC hdc, INT x, INT y )
+WINAPI: COLORREF GetPixel( HDC hdc, INT x, INT y )
 {
     PHYSDEV physdev;
-    COLORREF ret;
+    ret: COLORREF;
     DC * dc = get_dc_ptr( hdc );
 
     if (!dc) return CLR_INVALID;
@@ -731,7 +731,7 @@ BOOL WINAPI PolyPolyline( HDC hdc, const POINT* pt, const DWORD* counts,
 /**********************************************************************
  *          ExtFloodFill   (GDI32.@)
  */
-BOOL WINAPI ExtFloodFill( HDC hdc, INT x, INT y, COLORREF color,
+BOOL WINAPI ExtFloodFill( HDC hdc, INT x, INT y, color: COLORREF,
                               UINT fillType )
 {
     PHYSDEV physdev;
@@ -752,7 +752,7 @@ BOOL WINAPI ExtFloodFill( HDC hdc, INT x, INT y, COLORREF color,
 /**********************************************************************
  *          FloodFill   (GDI32.@)
  */
-BOOL WINAPI FloodFill( HDC hdc, INT x, INT y, COLORREF color )
+BOOL WINAPI FloodFill( HDC hdc, INT x, INT y, color: COLORREF )
 {
     return ExtFloodFill( hdc, x, y, color, FLOODFILLBORDER );
 }

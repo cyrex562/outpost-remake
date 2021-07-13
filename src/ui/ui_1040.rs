@@ -4406,7 +4406,7 @@ pub fn unk_win_ui_op_1040_b230(param_1: &mut Struct1, param_2: u16, param_3: u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_op_1040_b372(param_1: i32, param_2: u16, param_3: u16, COLORREF in_colorref_4) {
+pub fn win_ui_op_1040_b372(param_1: i32, param_2: u16, param_3: u16, in_colorref_4: COLORREF) {
     let uVar1: u16;
     let iVar2: i16;
     let local_brush_handle: HBRUSH16;

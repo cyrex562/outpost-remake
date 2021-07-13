@@ -2875,7 +2875,7 @@ static void draw_item(Pane* pane, LPDRAWITEMSTRUCT dis, Entry* entry, int calcWi
 	WCHAR buffer[BUFFER_LEN];
 	DWORD attrs;
 	int visible_cols = pane->visible_cols;
-	COLORREF bkcolor, textcolor;
+	bkcolor: COLORREF, textcolor;
 	RECT focusRect = dis->rcItem;
 	HBRUSH hbrush;
 	enum IMAGE img;

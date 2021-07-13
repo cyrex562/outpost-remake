@@ -3388,9 +3388,9 @@ static void FILEDLG95_LOOKIN_Init(HWND hwndCombo)
  */
 static LRESULT FILEDLG95_LOOKIN_DrawItem(LPDRAWITEMSTRUCT pDIStruct)
 {
-  COLORREF crWin = GetSysColor(COLOR_WINDOW);
-  COLORREF crHighLight = GetSysColor(COLOR_HIGHLIGHT);
-  COLORREF crText = GetSysColor(COLOR_WINDOWTEXT);
+  crWin: COLORREF = GetSysColor(COLOR_WINDOW);
+  crHighLight: COLORREF = GetSysColor(COLOR_HIGHLIGHT);
+  crText: COLORREF = GetSysColor(COLOR_WINDOWTEXT);
   RECT rectText;
   RECT rectIcon;
   SHFILEINFOW sfi;

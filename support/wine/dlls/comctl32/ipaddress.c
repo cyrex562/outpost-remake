@@ -143,7 +143,7 @@ static LRESULT IPADDRESS_Draw (const IPADDRESS_INFO *infoPtr, HDC hdc)
 {
     static const WCHAR dotW[] = { '.', 0 };
     RECT rect, rcPart;
-    COLORREF bgCol, fgCol;
+    bgCol: COLORREF, fgCol;
     HTHEME theme;
     int i, state = ETS_NORMAL;
 

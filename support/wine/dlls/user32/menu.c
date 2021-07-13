@@ -1505,7 +1505,7 @@ static void MENU_DrawMenuItem( HWND hwnd, POPUPMENU *menu, HWND hwndOwner, HDC h
         ** the menu owner has finished drawing.
         */
         DRAWITEMSTRUCT dis;
-        COLORREF old_bk, old_text;
+        old_bk: COLORREF, old_text;
 
         dis.CtlType   = ODT_MENU;
 	dis.CtlID     = 0;

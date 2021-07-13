@@ -638,7 +638,7 @@ pub fn file_1008_77cc(param_1: u32, long *param_2, param_3: *mut u8, param_4: HF
                 *param_2 = 0x0;
             } else {
                 param_4 = 0x1020;
-                pass1_1020_ba3e((long *)CONCAT22(param_3, uVar1), 0x5, 0x5, unaff_DI, unaff_SI);
+                pass1_1020_ba3e(CONCAT22(param_3, uVar1), 0x5, 0x5, unaff_DI, unaff_SI);
                 param_2 = uVar1;
                 (param_2 + 0x2) = uVar3;
             }
@@ -654,7 +654,7 @@ pub fn file_1008_77cc(param_1: u32, long *param_2, param_3: *mut u8, param_4: HF
         //     return 0x0;
         //   }
         //   param_4 = 0x1020;
-        //   pass1_1020_bb8a((long *)*param_2,local_10[0],
+        //   pass1_1020_bb8a(*param_2,local_10[0],
         //                   CONCAT22(local_14[0],(local_10[0] >> 0x10)),unaff_DI,
         //                   param_5);
         // }

@@ -4677,7 +4677,7 @@ static void test_dc_target(void)
     unsigned int i;
     HDC hdc, hdc2;
     D2D_RECT_F r;
-    COLORREF clr;
+    clr: COLORREF;
     HRESULT hr;
     RECT rect;
 

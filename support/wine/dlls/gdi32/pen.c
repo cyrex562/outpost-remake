@@ -58,7 +58,7 @@ static const struct gdi_obj_funcs pen_funcs =
 /***********************************************************************
  *           CreatePen    (GDI32.@)
  */
-HPEN WINAPI CreatePen( INT style, INT width, COLORREF color )
+HPEN WINAPI CreatePen( INT style, INT width, color: COLORREF )
 {
     LOGPEN logpen;
 

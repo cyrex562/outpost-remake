@@ -287,7 +287,7 @@ BOOL WINAPI ChooseFontA(LPCHOOSEFONTA lpChFont)
 #define TEXT_EXTRAS 4
 #define TEXT_COLORS 16
 
-static const COLORREF textcolors[TEXT_COLORS]=
+static const textcolors: COLORREF[TEXT_COLORS]=
 {
     0x00000000L,0x00000080L,0x00008000L,0x00008080L,
     0x00800000L,0x00800080L,0x00808000L,0x00808080L,
@@ -794,7 +794,7 @@ static LRESULT CFn_WMDrawItem(LPARAM lParam)
 {
     HBRUSH hBrush;
     WCHAR buffer[40];
-    COLORREF cr, oldText=0, oldBk=0;
+    cr: COLORREF, oldText=0, oldBk=0;
     RECT rect;
     int nFontType;
     int cx, cy, idx;

@@ -7407,7 +7407,7 @@ static void test_palette_gdi(void)
     HDC dc;
     DDBLTFX fx;
     RECT r;
-    COLORREF color;
+    color: COLORREF;
     /* On the Windows 8 testbot palette index 0 of the onscreen palette is forced to
      * r = 0, g = 0, b = 0. Do not attempt to set it to something else as this is
      * not the point of this test. */

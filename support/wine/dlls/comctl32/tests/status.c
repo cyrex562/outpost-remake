@@ -260,7 +260,7 @@ static void test_status_control(void)
     HICON hIcon;
     char ch;
     char chstr[10] = "Inval id";
-    COLORREF crColor = RGB(0,0,0);
+    crColor: COLORREF = RGB(0,0,0);
 
     hWndStatus = create_status_control(WS_VISIBLE | SBT_TOOLTIPS, 0);
 

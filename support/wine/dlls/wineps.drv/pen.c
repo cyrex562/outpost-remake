@@ -141,7 +141,7 @@ HPEN PSDRV_SelectPen( PHYSDEV dev, HPEN hpen, const struct brush_pattern *patter
 /***********************************************************************
  *           SetDCPenColor (WINEPS.@)
  */
-COLORREF PSDRV_SetDCPenColor( PHYSDEV dev, COLORREF color )
+PSDRV_SetDCPenColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     PSDRV_PDEVICE *physDev = get_psdrv_dev( dev );
 

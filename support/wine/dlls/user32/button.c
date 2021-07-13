@@ -736,7 +736,7 @@ static void PB_Paint( HWND hwnd, HDC hDC, UINT action )
     HPEN     hOldPen;
     HBRUSH   hOldBrush;
     INT      oldBkMode;
-    COLORREF oldTxtColor;
+    oldTxtColor: COLORREF;
     HFONT hFont;
     LONG state = get_button_state( hwnd );
     LONG style = GetWindowLongW( hwnd, GWL_STYLE );

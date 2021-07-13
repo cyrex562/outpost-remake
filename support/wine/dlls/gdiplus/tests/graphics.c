@@ -2112,7 +2112,7 @@ static void test_clip_xform(void)
     GpGraphics *graphics = NULL;
     HDC hdc = GetDC( hwnd );
     GpRegion *clip;
-    COLORREF color;
+    color: COLORREF;
     UINT region_data_size;
     struct {
         DWORD size;
@@ -2589,7 +2589,7 @@ static void test_fromMemoryBitmap(void)
     GpBitmap *bitmap = NULL;
     BYTE bits[48] = {0};
     HDC hdc=NULL;
-    COLORREF color;
+    color: COLORREF;
 
     status = GdipCreateBitmapFromScan0(4, 4, 12, PixelFormat24bppRGB, bits, &bitmap);
     expect(Ok, status);
@@ -4940,7 +4940,7 @@ static void test_alpha_hdc(void)
     ULONG *bits;
     BITMAPINFO bmi;
     GpRectF bounds;
-    COLORREF colorref;
+    colorref: COLORREF;
 
     hdc = CreateCompatibleDC(0);
     ok(hdc != NULL, "CreateCompatibleDC failed\n");

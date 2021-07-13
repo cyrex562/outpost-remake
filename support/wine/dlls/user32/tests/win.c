@@ -4937,7 +4937,7 @@ static void test_scrollwindow(HWND hwnd)
 {
     HDC hdc;
     RECT rc, rc2, rc3;
-    COLORREF colr;
+    colr: COLORREF;
 
     ShowWindow(hwnd, SW_SHOW);
     UpdateWindow(hwnd);
@@ -5195,7 +5195,7 @@ static void test_scrolldc(HWND parent)
     HRGN exprgn, tmprgn, hrgn;
     RECT rc, rc2, rcu, cliprc;
     HWND hwnd1;
-    COLORREF colr;
+    colr: COLORREF;
 
     hrgn = CreateRectRgn(0, 0, 0, 0);
     tmprgn = CreateRectRgn(0, 0, 0, 0);
@@ -7533,7 +7533,7 @@ static void test_hwnd_message(void)
 static void test_layered_window(void)
 {
     HWND hwnd, child;
-    COLORREF key = 0;
+    key: COLORREF = 0;
     BYTE alpha = 0;
     DWORD flags = 0;
     POINT pt = {0, 0};
@@ -9917,15 +9917,15 @@ static void test_LockWindowUpdate(HWND parent)
         POINT p = {10, 10};
         BOOL ret;
         const DWORD dc_flags = DCX_USESTYLE | (tests[i].allow_drawing ? DCX_LOCKWINDOWUPDATE : 0);
-        const COLORREF c1 = 0x111100, c2 = 0x222200;
+        const c1: COLORREF = 0x111100, c2 = 0x222200;
 
         hdc = GetDCEx(tests[i].hwnd_draw, 0, dc_flags);
 
 #define TEST_PIXEL(c_valid, c_invalid)                                      \
     do                                                                      \
     {                                                                       \
-        COLORREF c = GetPixel(hdc, p.x, p.y);                               \
-        COLORREF e = tests[i].expect_valid ? (c_valid) : (c_invalid);       \
+        c: COLORREF = GetPixel(hdc, p.x, p.y);                               \
+        e: COLORREF = tests[i].expect_valid ? (c_valid) : (c_invalid);       \
         todo_wine_if(!tests[i].expect_valid)                                \
             ok(c == e, "%u: GetPixel: got %08x, expected %08x\n", i, c, e); \
     } while (0)

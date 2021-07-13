@@ -984,7 +984,7 @@ static void PB_Paint( const BUTTON_INFO *infoPtr, HDC hDC, UINT action )
     HPEN     hOldPen, hpen;
     HBRUSH   hOldBrush;
     INT      oldBkMode;
-    COLORREF oldTxtColor;
+    oldTxtColor: COLORREF;
     HFONT hFont;
     LONG state = infoPtr->state;
     LONG style = GetWindowLongW( infoPtr->hwnd, GWL_STYLE );

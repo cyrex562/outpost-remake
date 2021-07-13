@@ -2209,8 +2209,8 @@ static HRESULT SS_ItemOut( SCRIPT_STRING_ANALYSIS ssa,
     StringAnalysis *analysis;
     int off_x = 0;
     HRESULT hr;
-    COLORREF BkColor = 0x0;
-    COLORREF TextColor = 0x0;
+    BkColor: COLORREF = 0x0;
+    TextColor: COLORREF = 0x0;
     INT BkMode = 0;
     INT runStart, runEnd;
     INT iGlyph, cGlyphs;

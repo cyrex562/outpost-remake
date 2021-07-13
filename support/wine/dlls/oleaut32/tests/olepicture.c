@@ -718,7 +718,7 @@ static void test_Render(void)
     PICTDESC desc;
     OLE_XSIZE_HIMETRIC pWidth;
     OLE_YSIZE_HIMETRIC pHeight;
-    COLORREF result, expected;
+    result: COLORREF, expected;
     HDC hdc = create_render_dc();
 
     /* test IPicture::Render return code on uninitialized picture */

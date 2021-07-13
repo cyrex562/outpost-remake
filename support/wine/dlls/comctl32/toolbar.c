@@ -508,7 +508,7 @@ static void
 TOOLBAR_DrawFlatSeparator (const RECT *lpRect, HDC hdc, const TOOLBAR_INFO *infoPtr)
 {
     RECT myrect;
-    COLORREF oldcolor, newcolor;
+    oldcolor: COLORREF, newcolor;
 
     myrect.left = (lpRect->left + lpRect->right) / 2 - 1;
     myrect.right = myrect.left + 1;
@@ -548,7 +548,7 @@ TOOLBAR_DrawFlatHorizontalSeparator (const RECT *lpRect, HDC hdc,
                              const TOOLBAR_INFO *infoPtr)
 {
     RECT myrect;
-    COLORREF oldcolor, newcolor;
+    oldcolor: COLORREF, newcolor;
 
     myrect.left = lpRect->left;
     myrect.right = lpRect->right;
@@ -577,7 +577,7 @@ TOOLBAR_DrawFlatHorizontalSeparator (const RECT *lpRect, HDC hdc,
 
 
 static void
-TOOLBAR_DrawArrow (HDC hdc, INT left, INT top, COLORREF clr)
+TOOLBAR_DrawArrow (HDC hdc, INT left, INT top, clr: COLORREF)
 {
     INT x, y;
     HPEN hPen, hOldPen;
@@ -608,8 +608,8 @@ TOOLBAR_DrawString (const TOOLBAR_INFO *infoPtr, RECT *rcText, LPCWSTR lpText,
 {
     HDC hdc = tbcd->nmcd.hdc;
     HFONT  hOldFont = 0;
-    COLORREF clrOld = 0;
-    COLORREF clrOldBk = 0;
+    clrOld: COLORREF = 0;
+    clrOldBk: COLORREF = 0;
     int oldBkMode = 0;
     UINT state = tbcd->nmcd.uItemState;
 
@@ -658,8 +658,8 @@ TOOLBAR_DrawPattern (const RECT *lpRect, const NMTBCUSTOMDRAW *tbcd)
 {
     HDC hdc = tbcd->nmcd.hdc;
     HBRUSH hbr = SelectObject (hdc, tbcd->hbrMonoDither);
-    COLORREF clrTextOld;
-    COLORREF clrBkOld;
+    clrTextOld: COLORREF;
+    clrBkOld: COLORREF;
     INT cx = lpRect->right - lpRect->left;
     INT cy = lpRect->bottom - lpRect->top;
     INT cxEdge = GetSystemMetrics(SM_CXEDGE);
@@ -1031,7 +1031,7 @@ TOOLBAR_DrawButton (const TOOLBAR_INFO *infoPtr, TBUTTON_INFO *btnPtr, HDC hdc, 
     {
         if ( dwItemCDFlag & TBCDRF_HILITEHOTTRACK )
         {
-            COLORREF oldclr;
+            oldclr: COLORREF;
 
             oldclr = SetBkColor(hdc, tbcd.clrHighlightHotTrack);
             ExtTextOutW(hdc, 0, 0, ETO_OPAQUE, &rc, NULL, 0, 0);
@@ -2621,8 +2621,8 @@ TOOLBAR_CustomizeDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		RECT rcText;
 		HPEN hPen, hOldPen;
 		HBRUSH hOldBrush;
-		COLORREF oldText = 0;
-		COLORREF oldBk = 0;
+		oldText: COLORREF = 0;
+		oldBk: COLORREF = 0;
 
 		/* get item data */
                btnInfo = (PCUSTOMBUTTON)SendDlgItemMessageW (hwnd, wParam, LB_GETITEMDATA, lpdis->itemID, 0);
@@ -4789,7 +4789,7 @@ TOOLBAR_SetInsertMark (TOOLBAR_INFO *infoPtr, const TBINSERTMARK *lptbim)
 
 
 static LRESULT
-TOOLBAR_SetInsertMarkColor (TOOLBAR_INFO *infoPtr, COLORREF clr)
+TOOLBAR_SetInsertMarkColor (TOOLBAR_INFO *infoPtr, clr: COLORREF)
 {
     infoPtr->clrInsertMark = clr;
 

@@ -70,7 +70,7 @@ BOOL WINAPI GetThemeSysBool(HTHEME hTheme, int iBoolID)
 /***********************************************************************
  *      GetThemeSysColor                                    (UXTHEME.@)
  */
-COLORREF WINAPI GetThemeSysColor(HTHEME hTheme, int iColorID)
+WINAPI: COLORREF GetThemeSysColor(HTHEME hTheme, int iColorID)
 {
     HRESULT hr;
     PTHEME_PROPERTY tp;
@@ -79,7 +79,7 @@ COLORREF WINAPI GetThemeSysColor(HTHEME hTheme, int iColorID)
     SetLastError(0);
     if(hTheme) {
         if((tp = MSSTYLES_FindMetric(TMT_COLOR, iColorID))) {
-            COLORREF color;
+            color: COLORREF;
             hr = MSSTYLES_GetPropertyColor(tp, &color);
             if(SUCCEEDED(hr))
                 return color;

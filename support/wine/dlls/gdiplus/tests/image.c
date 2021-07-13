@@ -1665,7 +1665,7 @@ static void test_createhbitmap(void)
     BITMAP bm;
     int ret;
     HDC hdc;
-    COLORREF pixel;
+    pixel: COLORREF;
     BYTE bits[640];
     BitmapData lockeddata;
 

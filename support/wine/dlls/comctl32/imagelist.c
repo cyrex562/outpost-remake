@@ -525,13 +525,13 @@ INT WINAPI ImageList_AddIcon (HIMAGELIST himl, HICON hIcon)
  */
 
 INT WINAPI
-ImageList_AddMasked (HIMAGELIST himl, HBITMAP hBitmap, COLORREF clrMask)
+ImageList_AddMasked (HIMAGELIST himl, HBITMAP hBitmap, clrMask: COLORREF)
 {
     HDC    hdcMask, hdcBitmap;
     INT    ret;
     BITMAP bmp;
     HBITMAP hMaskBitmap;
-    COLORREF bkColor;
+    bkColor: COLORREF;
 
     TRACE("himl=%p hbitmap=%p clrmask=%x\n", himl, hBitmap, clrMask);
     if (!is_valid(himl))
@@ -1227,7 +1227,7 @@ ImageList_Draw (HIMAGELIST himl, INT i, HDC hdc, INT x, INT y, UINT fStyle)
 
 BOOL WINAPI
 ImageList_DrawEx (HIMAGELIST himl, INT i, HDC hdc, INT x, INT y,
-		  INT dx, INT dy, COLORREF rgbBk, COLORREF rgbFg,
+		  INT dx, INT dy, rgbBk: COLORREF, rgbFg: COLORREF,
 		  UINT fStyle)
 {
     IMAGELISTDRAWPARAMS imldp;
@@ -1251,7 +1251,7 @@ ImageList_DrawEx (HIMAGELIST himl, INT i, HDC hdc, INT x, INT y,
 
 static BOOL alpha_blend_image( HIMAGELIST himl, HDC dest_dc, int dest_x, int dest_y,
                                int src_x, int src_y, int cx, int cy, BLENDFUNCTION func,
-                               UINT style, COLORREF blend_col )
+                               UINT style, blend_col: COLORREF )
 {
     BOOL ret = FALSE;
     HDC hdc;
@@ -1368,7 +1368,7 @@ ImageList_DrawIndirect (IMAGELISTDRAWPARAMS *pimldp)
     INT cx, cy, nOvlIdx;
     DWORD fState, dwRop;
     UINT fStyle;
-    COLORREF oldImageBk, oldImageFg;
+    oldImageBk: COLORREF, oldImageFg;
     HDC hImageDC, hImageListDC, hMaskListDC;
     HBITMAP hImageBmp, hOldImageBmp, hBlendMaskBmp;
     BOOL bIsTransparent, bBlend, bResult = FALSE, bMask;
@@ -1428,7 +1428,7 @@ ImageList_DrawIndirect (IMAGELISTDRAWPARAMS *pimldp)
     has_alpha = (himl->has_alpha && himl->has_alpha[pimldp->i]);
     if (!bMask && (has_alpha || (fState & ILS_ALPHA)))
     {
-        COLORREF colour, blend_col = CLR_NONE;
+        colour: COLORREF, blend_col = CLR_NONE;
         BLENDFUNCTION func;
 
         if (bBlend)
@@ -1483,7 +1483,7 @@ ImageList_DrawIndirect (IMAGELISTDRAWPARAMS *pimldp)
 	}
     } else {
 	/* blend the image with the needed solid background */
-        COLORREF colour = RGB(0,0,0);
+        colour: COLORREF = RGB(0,0,0);
 
         if( !bIsTransparent )
         {
@@ -1509,7 +1509,7 @@ ImageList_DrawIndirect (IMAGELISTDRAWPARAMS *pimldp)
     /* Time for blending, if required */
     if (bBlend) {
 	HBRUSH hBlendBrush;
-        COLORREF clrBlend = pimldp->rgbFg;
+        clrBlend: COLORREF = pimldp->rgbFg;
 	HDC hBlendMaskDC = hImageListDC;
 	HBITMAP hOldBitmap;
 
@@ -1560,8 +1560,8 @@ ImageList_DrawIndirect (IMAGELISTDRAWPARAMS *pimldp)
     /* now copy the image to the screen */
     dwRop = SRCCOPY;
     if (himl->hbmMask && bIsTransparent ) {
-	COLORREF oldDstFg = SetTextColor(pimldp->hdcDst, RGB( 0, 0, 0 ) );
-	COLORREF oldDstBk = SetBkColor(pimldp->hdcDst, RGB( 0xff, 0xff, 0xff ));
+	oldDstFg: COLORREF = SetTextColor(pimldp->hdcDst, RGB( 0, 0, 0 ) );
+	oldDstBk: COLORREF = SetBkColor(pimldp->hdcDst, RGB( 0xff, 0xff, 0xff ));
         BitBlt (pimldp->hdcDst, pimldp->x,  pimldp->y, cx, cy, hMaskListDC, pt.x, pt.y, SRCAND);
 	SetBkColor(pimldp->hdcDst, oldDstBk);
 	SetTextColor(pimldp->hdcDst, oldDstFg);
@@ -1676,7 +1676,7 @@ ImageList_EndDrag (void)
  *     Failure: CLR_NONE
  */
 
-COLORREF WINAPI
+WINAPI: COLORREF
 ImageList_GetBkColor (HIMAGELIST himl)
 {
     return himl ? himl->clrBk : CLR_NONE;
@@ -1952,7 +1952,7 @@ ImageList_GetImageRect (HIMAGELIST himl, INT i, LPRECT lpRect)
 
 HIMAGELIST WINAPI
 ImageList_LoadImageA (HINSTANCE hi, LPCSTR lpbmp, INT cx, INT cGrow,
-			COLORREF clrMask, UINT uType, UINT uFlags)
+			clrMask: COLORREF, UINT uType, UINT uFlags)
 {
     HIMAGELIST himl;
     LPWSTR lpbmpW;
@@ -1996,7 +1996,7 @@ ImageList_LoadImageA (HINSTANCE hi, LPCSTR lpbmp, INT cx, INT cGrow,
 
 HIMAGELIST WINAPI
 ImageList_LoadImageW (HINSTANCE hi, LPCWSTR lpbmp, INT cx, INT cGrow,
-                      COLORREF clrMask, UINT uType, UINT uFlags)
+                      clrMask: COLORREF, UINT uType, UINT uFlags)
 {
     HIMAGELIST himl = NULL;
     HANDLE   handle;
@@ -2643,7 +2643,7 @@ ImageList_ReplaceIcon (HIMAGELIST himl, INT nIndex, HICON hIcon)
     }
     else
     {
-        COLORREF color = himl->clrBk != CLR_NONE ? himl->clrBk : comctl32_color.clrWindow;
+        color: COLORREF = himl->clrBk != CLR_NONE ? himl->clrBk : comctl32_color.clrWindow;
         HBRUSH brush = CreateSolidBrush( GetNearestColor( himl->hdcImage, color ));
 
         SelectObject( himl->hdcImage, brush );
@@ -2675,10 +2675,10 @@ done:
  *     Failure: CLR_NONE
  */
 
-COLORREF WINAPI
-ImageList_SetBkColor (HIMAGELIST himl, COLORREF clrBk)
+WINAPI: COLORREF
+ImageList_SetBkColor (HIMAGELIST himl, clrBk: COLORREF)
 {
-    COLORREF clrOldBk;
+    clrOldBk: COLORREF;
 
     if (!is_valid(himl))
 	return CLR_NONE;
@@ -3342,7 +3342,7 @@ static HRESULT WINAPI ImageListImpl_Replace(IImageList2 *iface, int i,
 }
 
 static HRESULT WINAPI ImageListImpl_AddMasked(IImageList2 *iface, HBITMAP hbmImage,
-    COLORREF crMask, int *pi)
+    crMask: COLORREF, int *pi)
 {
     HIMAGELIST imgl = impl_from_IImageList2(iface);
     int ret;
@@ -3524,7 +3524,7 @@ static HRESULT WINAPI ImageListImpl_SetImageCount(IImageList2 *iface, UINT count
     return ImageList_SetImageCount(imgl, count) ? S_OK : E_FAIL;
 }
 
-static HRESULT WINAPI ImageListImpl_SetBkColor(IImageList2 *iface, COLORREF clrBk,
+static HRESULT WINAPI ImageListImpl_SetBkColor(IImageList2 *iface, clrBk: COLORREF,
     COLORREF *pclr)
 {
     HIMAGELIST imgl = impl_from_IImageList2(iface);

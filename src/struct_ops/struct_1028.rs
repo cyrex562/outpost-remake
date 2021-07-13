@@ -186,7 +186,7 @@ pub fn struct_1028_37a6(param_1: *mut u16,param_2: *mut u8,param_3: u16,param_4:
     &iVar3.field_0x28 = 0x0;
   }
   else {
-    pass1_1020_ba3e((long *)CONCAT22(param_2,uVar1),0x5,0x5,param_4,param_3);
+    pass1_1020_ba3e(CONCAT22(param_2,uVar1),0x5,0x5,param_4,param_3);
     iVar3.field_0x28 = uVar1;
     iVar3.field_0x2a = uVar2;
   }

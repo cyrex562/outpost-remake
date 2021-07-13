@@ -2071,9 +2071,9 @@ HRESULT WINAPI SHIsExpandableFolder(LPSHELLFOLDER lpFolder, LPCITEMIDLIST pidl)
  * RETURNS
  *  Nothing.
  */
-DWORD WINAPI SHFillRectClr(HDC hDC, LPCRECT pRect, COLORREF cRef)
+DWORD WINAPI SHFillRectClr(HDC hDC, LPCRECT pRect, cRef: COLORREF)
 {
-    COLORREF cOldColor = SetBkColor(hDC, cRef);
+    cOldColor: COLORREF = SetBkColor(hDC, cRef);
     ExtTextOutA(hDC, 0, 0, ETO_OPAQUE, pRect, 0, 0, 0);
     SetBkColor(hDC, cOldColor);
     return 0;
@@ -3625,7 +3625,7 @@ HMODULE WINAPI MLLoadLibraryW(LPCWSTR new_mod, HMODULE inst_hwnd, DWORD dwCrossC
  * RETURNS
  *  The adjusted RGB color.
  */
-COLORREF WINAPI ColorAdjustLuma(COLORREF cRGB, int dwLuma, BOOL bUnknown)
+WINAPI: COLORREF ColorAdjustLuma(cRGB: COLORREF, int dwLuma, BOOL bUnknown)
 {
   TRACE("(0x%8x,%d,%d)\n", cRGB, dwLuma, bUnknown);
 
@@ -3754,12 +3754,12 @@ static WORD ConvertHue(int wHue, WORD wMid1, WORD wMid2)
  *  wSaturation [I] Saturation amount
  *
  * RETURNS
- *  A COLORREF representing the converted color.
+ *  A representing: COLORREF the converted color.
  *
  * NOTES
  *  Input hls values are constrained to the range (0..240).
  */
-COLORREF WINAPI ColorHLSToRGB(WORD wHue, WORD wLuminosity, WORD wSaturation)
+WINAPI: COLORREF ColorHLSToRGB(WORD wHue, WORD wLuminosity, WORD wSaturation)
 {
   WORD wRed;
 
@@ -4145,7 +4145,7 @@ HRESULT WINAPI IUnknown_HasFocusIO(IUnknown *lpUnknown)
 /*************************************************************************
  *      ColorRGBToHLS	[SHLWAPI.@]
  *
- * Convert an rgb COLORREF into the hls color space.
+ * Convert an rgb into: COLORREF the hls color space.
  *
  * PARAMS
  *  cRGB         [I] Source rgb value
@@ -4161,7 +4161,7 @@ HRESULT WINAPI IUnknown_HasFocusIO(IUnknown *lpUnknown)
  *  Output HLS values are constrained to the range (0..240).
  *  For Achromatic conversions, Hue is set to 160.
  */
-VOID WINAPI ColorRGBToHLS(COLORREF cRGB, LPWORD pwHue,
+VOID WINAPI ColorRGBToHLS(cRGB: COLORREF, LPWORD pwHue,
 			  LPWORD pwLuminance, LPWORD pwSaturation)
 {
   int wR, wG, wB, wMax, wMin, wHue, wLuminosity, wSaturation;

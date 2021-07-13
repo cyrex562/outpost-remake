@@ -256,7 +256,7 @@ INT arc2polybezier(GpPointF * points, REAL x1, REAL y1, REAL x2, REAL y2,
     else return i+1;
 }
 
-COLORREF ARGB2COLORREF(ARGB color)
+ARGB2COLORREF: COLORREF(ARGB color)
 {
     /*
     Packing of these color structures:

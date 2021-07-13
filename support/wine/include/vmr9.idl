@@ -172,7 +172,7 @@ interface IVMRWindowlessControl9 : IUnknown
     HRESULT RepaintVideo([in] HWND hwnd, [in] HDC hdc);
     HRESULT DisplayModeChanged();
     HRESULT GetCurrentImage([out] BYTE **dib);
-    HRESULT SetBorderColor([in] COLORREF color);
+    HRESULT SetBorderColor([in] color: COLORREF);
     HRESULT GetBorderColor([out] COLORREF *color);
 }
 
@@ -257,7 +257,7 @@ interface IVMRMixerControl9 : IUnknown
     HRESULT GetZOrder([in] DWORD streamid, [out] DWORD *zorder);
     HRESULT SetOutputRect([in] DWORD streamid, [in] const VMR9NormalizedRect *rect);
     HRESULT GetOutputRect([in] DWORD streamid, [out] VMR9NormalizedRect *rect);
-    HRESULT SetBackgroundClr([in] COLORREF back);
+    HRESULT SetBackgroundClr([in] back: COLORREF);
     HRESULT GetBackgroundClr([out] COLORREF *back);
     HRESULT SetMixingPrefs([in] DWORD mixingprefs);
     HRESULT GetMixingPrefs([out] DWORD *mixingprefs);
@@ -274,7 +274,7 @@ typedef struct _VMR9AlphaBitmap
     RECT rSrc;
     VMR9NormalizedRect *rDest;
     FLOAT fAlpha;
-    COLORREF clrSrcKey;
+    clrSrcKey: COLORREF;
     DWORD dwFilterMode;
 } VMR9AlphaBitmap;
 

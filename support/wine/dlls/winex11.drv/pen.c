@@ -154,7 +154,7 @@ HPEN X11DRV_SelectPen( PHYSDEV dev, HPEN hpen, const struct brush_pattern *patte
 /***********************************************************************
  *           SetDCPenColor (X11DRV.@)
  */
-COLORREF X11DRV_SetDCPenColor( PHYSDEV dev, COLORREF crColor )
+X11DRV_SetDCPenColor: COLORREF( PHYSDEV dev, crColor: COLORREF )
 {
     X11DRV_PDEVICE *physDev = get_x11drv_dev( dev );
 

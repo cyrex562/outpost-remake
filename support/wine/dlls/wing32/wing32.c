@@ -112,7 +112,7 @@ HPALETTE WINAPI WinGCreateHalftonePalette( void )
 /***********************************************************************
  *           WinGCreateHalftoneBrush   (WING32.@)
  */
-HBRUSH WINAPI WinGCreateHalftoneBrush( HDC hdc, COLORREF color, INT type )
+HBRUSH WINAPI WinGCreateHalftoneBrush( HDC hdc, color: COLORREF, INT type )
 {
     return CreateSolidBrush( color );
 }

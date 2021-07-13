@@ -43,7 +43,7 @@ struct inner_data_user {
 #define PRIVATE(data)   ((struct inner_data_user*)((data)->private))
 
 /* from user.c */
-extern const COLORREF WCUSER_ColorMap[16];
+extern const WCUSER_ColorMap: COLORREF[16];
 extern BOOL WCUSER_GetProperties(struct inner_data*, BOOL);
 extern BOOL WCUSER_ValidateFont(const struct inner_data* data, const LOGFONTW* lf, int pass);
 extern BOOL WCUSER_ValidateFontMetric(const struct inner_data* data, const TEXTMETRICW* tm,

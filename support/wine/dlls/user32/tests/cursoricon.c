@@ -478,7 +478,7 @@ static void test_child_process(void)
     SendMessageA(child, WM_USER+1, 0, (LPARAM) cursor);
 }
 
-static BOOL color_match(COLORREF a, COLORREF b)
+static BOOL color_match(a: COLORREF, b: COLORREF)
 {
     /* 5-bit accuracy is a sufficient test. This will match as long as
      * colors are never truncated to less that 3x5-bit accuracy i.e.
@@ -1802,7 +1802,7 @@ static void check_alpha_draw(HDC hdc, BOOL drawiconex, BOOL alpha, int bpp, int 
 {
     HICON hicon;
     UINT32 color[2];
-    COLORREF modern_expected, legacy_expected, result;
+    modern_expected: COLORREF, legacy_expected, result;
 
     color[0] = 0x00A0B0C0;
     color[1] = alpha ? 0xFF000000 : 0x00000000;
@@ -1828,10 +1828,10 @@ static void check_alpha_draw(HDC hdc, BOOL drawiconex, BOOL alpha, int bpp, int 
         drawiconex ? "DrawIconEx" : "DrawIcon", result, line);
 }
 
-static void check_DrawIcon(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, COLORREF background,
-                           COLORREF modern_expected, COLORREF legacy_expected, int line)
+static void check_DrawIcon(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, background: COLORREF,
+                           modern_expected: COLORREF, legacy_expected: COLORREF, int line)
 {
-    COLORREF result;
+    result: COLORREF;
     HICON hicon = create_test_icon(hdc, 1, 1, bpp, maskvalue, &color, sizeof(color));
     if (!hicon) return;
     SetPixelV(hdc, 0, 0, background);
@@ -1929,10 +1929,10 @@ cleanup:
         DeleteDC(hdcDst);
 }
 
-static void check_DrawIconEx(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, UINT flags, COLORREF background,
-                             COLORREF modern_expected, COLORREF legacy_expected, int line)
+static void check_DrawIconEx(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, UINT flags, background: COLORREF,
+                             modern_expected: COLORREF, legacy_expected: COLORREF, int line)
 {
-    COLORREF result;
+    result: COLORREF;
     HICON hicon = create_test_icon(hdc, 1, 1, bpp, maskvalue, &color, sizeof(color));
     if (!hicon) return;
     SetPixelV(hdc, 0, 0, background);
@@ -2024,7 +2024,7 @@ cleanup:
 
 static void check_DrawState_Size(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, HBRUSH hbr, UINT flags, int line)
 {
-    COLORREF result, background;
+    result: COLORREF, background;
     BOOL passed[2];
     HICON hicon = create_test_icon(hdc, 1, 1, bpp, maskvalue, &color, sizeof(color));
     background = 0x00FFFFFF;
@@ -2075,9 +2075,9 @@ static void check_DrawState_Size(HDC hdc, BOOL maskvalue, UINT32 color, int bpp,
 }
 
 static void check_DrawState_Color(HDC hdc, BOOL maskvalue, UINT32 color, int bpp, HBRUSH hbr, UINT flags,
-                             COLORREF background, COLORREF modern_expected, COLORREF legacy_expected, int line)
+                             background: COLORREF, modern_expected: COLORREF, legacy_expected: COLORREF, int line)
 {
-    COLORREF result;
+    result: COLORREF;
     HICON hicon = create_test_icon(hdc, 1, 1, bpp, maskvalue, &color, sizeof(color));
     if (!hicon) return;
     /* Set color of the pixel that will be checked afterwards */

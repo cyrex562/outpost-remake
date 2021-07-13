@@ -294,7 +294,7 @@ typedef struct
 {
     UINT16   lopnStyle;
     POINT16  lopnWidth;
-    COLORREF lopnColor;
+    lopnColor: COLORREF;
 } LOGPEN16, *LPLOGPEN16;
 
 typedef struct

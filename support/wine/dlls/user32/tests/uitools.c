@@ -28,7 +28,7 @@ static void test_FillRect(void)
     HDC hdc, hdcmem;
     DWORD bits[64];
     HBITMAP hbmp, oldhbmp;
-    COLORREF col;
+    col: COLORREF;
     HBRUSH old_brush;
     RECT r;
 

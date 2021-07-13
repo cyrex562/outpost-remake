@@ -2048,7 +2048,7 @@ static DWORD get_pixel_null(const dib_info *dib, int x, int y)
     return 0;
 }
 
-static DWORD colorref_to_pixel_888(const dib_info *dib, COLORREF color)
+static DWORD colorref_to_pixel_888(const dib_info *dib, color: COLORREF)
 {
     return ( ((color >> 16) & 0xff) | (color & 0xff00) | ((color << 16) & 0xff0000) );
 }
@@ -2097,12 +2097,12 @@ static DWORD rgbquad_to_pixel_masks(const dib_info *dib, RGBQUAD rgb)
     return rgb_to_pixel_masks(dib, rgb.rgbRed, rgb.rgbGreen, rgb.rgbBlue);
 }
 
-static DWORD colorref_to_pixel_masks(const dib_info *dib, COLORREF colour)
+static DWORD colorref_to_pixel_masks(const dib_info *dib, colour: COLORREF)
 {
     return rgb_to_pixel_masks(dib, GetRValue(colour), GetGValue(colour), GetBValue(colour));
 }
 
-static DWORD colorref_to_pixel_555(const dib_info *dib, COLORREF color)
+static DWORD colorref_to_pixel_555(const dib_info *dib, color: COLORREF)
 {
     return ( ((color >> 19) & 0x1f) | ((color >> 6) & 0x03e0) | ((color << 7) & 0x7c00) );
 }
@@ -2160,36 +2160,36 @@ static DWORD rgbquad_to_pixel_colortable(const dib_info *dib, RGBQUAD rgb)
     return rgb_to_pixel_colortable( dib, rgb.rgbRed, rgb.rgbGreen, rgb.rgbBlue );
 }
 
-static DWORD colorref_to_pixel_colortable(const dib_info *dib, COLORREF color)
+static DWORD colorref_to_pixel_colortable(const dib_info *dib, color: COLORREF)
 {
     return rgb_to_pixel_colortable( dib, GetRValue(color), GetGValue(color), GetBValue(color) );
 }
 
-static DWORD colorref_to_pixel_null(const dib_info *dib, COLORREF color)
+static DWORD colorref_to_pixel_null(const dib_info *dib, color: COLORREF)
 {
     return 0;
 }
 
-static COLORREF pixel_to_colorref_888(const dib_info *dib, DWORD pixel)
+static pixel_to_colorref_888: COLORREF(const dib_info *dib, DWORD pixel)
 {
     return ( ((pixel >> 16) & 0xff) | (pixel & 0xff00) | ((pixel << 16) & 0xff0000) );
 }
 
-static COLORREF pixel_to_colorref_masks(const dib_info *dib, DWORD pixel)
+static pixel_to_colorref_masks: COLORREF(const dib_info *dib, DWORD pixel)
 {
     return RGB( get_field( pixel, dib->red_shift,   dib->red_len ),
                 get_field( pixel, dib->green_shift, dib->green_len ),
                 get_field( pixel, dib->blue_shift,  dib->blue_len ) );
 }
 
-static COLORREF pixel_to_colorref_555(const dib_info *dib, DWORD pixel)
+static pixel_to_colorref_555: COLORREF(const dib_info *dib, DWORD pixel)
 {
     return RGB( ((pixel >> 7) & 0xf8) | ((pixel >> 12) & 0x07),
                 ((pixel >> 2) & 0xf8) | ((pixel >>  7) & 0x07),
                 ((pixel << 3) & 0xf8) | ((pixel >>  2) & 0x07) );
 }
 
-static COLORREF pixel_to_colorref_colortable(const dib_info *dib, DWORD pixel)
+static pixel_to_colorref_colortable: COLORREF(const dib_info *dib, DWORD pixel)
 {
     const RGBQUAD *color_table = get_dib_color_table( dib );
 
@@ -2201,7 +2201,7 @@ static COLORREF pixel_to_colorref_colortable(const dib_info *dib, DWORD pixel)
     return 0;
 }
 
-static COLORREF pixel_to_colorref_null(const dib_info *dib, DWORD pixel)
+static pixel_to_colorref_null: COLORREF(const dib_info *dib, DWORD pixel)
 {
     return 0;
 }
@@ -6619,7 +6619,7 @@ static void create_rop_masks_null(const dib_info *dib, const BYTE *hatch_ptr,
 {
 }
 
-static void create_dither_masks_8(const dib_info *dib, int rop2, COLORREF color, rop_mask_bits *bits)
+static void create_dither_masks_8(const dib_info *dib, int rop2, color: COLORREF, rop_mask_bits *bits)
 {
     /* mapping between RGB triples and the default color table */
     static const BYTE mapping[27] =
@@ -6679,7 +6679,7 @@ static void create_dither_masks_8(const dib_info *dib, int rop2, COLORREF color,
     }
 }
 
-static void create_dither_masks_4(const dib_info *dib, int rop2, COLORREF color, rop_mask_bits *bits)
+static void create_dither_masks_4(const dib_info *dib, int rop2, color: COLORREF, rop_mask_bits *bits)
 {
     /* mapping between RGB triples and the default color table */
     static const BYTE mapping[27] =
@@ -6747,7 +6747,7 @@ static void create_dither_masks_4(const dib_info *dib, int rop2, COLORREF color,
     }
 }
 
-static void create_dither_masks_1(const dib_info *dib, int rop2, COLORREF color, rop_mask_bits *bits)
+static void create_dither_masks_1(const dib_info *dib, int rop2, color: COLORREF, rop_mask_bits *bits)
 {
     BYTE *and_bits = bits->and, *xor_bits = bits->xor;
     struct rop_codes codes;
@@ -6783,7 +6783,7 @@ static void create_dither_masks_1(const dib_info *dib, int rop2, COLORREF color,
     }
 }
 
-static void create_dither_masks_null(const dib_info *dib, int rop2, COLORREF color, rop_mask_bits *bits)
+static void create_dither_masks_null(const dib_info *dib, int rop2, color: COLORREF, rop_mask_bits *bits)
 {
 }
 

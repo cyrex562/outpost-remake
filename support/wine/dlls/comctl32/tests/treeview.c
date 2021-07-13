@@ -779,7 +779,7 @@ static void test_focus(void)
 
 static void test_get_set_bkcolor(void)
 {
-    COLORREF crColor;
+    crColor: COLORREF;
     HWND hTree;
 
     hTree = create_treeview_control(0);
@@ -863,7 +863,7 @@ static void test_get_set_indent(void)
 
 static void test_get_set_insertmark(void)
 {
-    COLORREF crColor = RGB(0,0,0);
+    crColor: COLORREF = RGB(0,0,0);
     HWND hTree;
 
     hTree = create_treeview_control(0);
@@ -1037,7 +1037,7 @@ static void test_get_set_scrolltime(void)
 static void test_get_set_textcolor(void)
 {
     /* If the value is -1, the control is using the system color for the text color. */
-    COLORREF crColor;
+    crColor: COLORREF;
     HWND hTree;
 
     hTree = create_treeview_control(0);
@@ -1387,8 +1387,8 @@ static LRESULT CALLBACK parent_wnd_proc(HWND hWnd, UINT message, WPARAM wParam, 
             case NM_CUSTOMDRAW:
             {
                 NMTVCUSTOMDRAW *nmcd = (NMTVCUSTOMDRAW*)lParam;
-                COLORREF c0ffee = RGB(0xc0,0xff,0xee), cafe = RGB(0xca,0xfe,0x00);
-                COLORREF text = GetTextColor(nmcd->nmcd.hdc), bkgnd = GetBkColor(nmcd->nmcd.hdc);
+                c0ffee: COLORREF = RGB(0xc0,0xff,0xee), cafe = RGB(0xca,0xfe,0x00);
+                text: COLORREF = GetTextColor(nmcd->nmcd.hdc), bkgnd = GetBkColor(nmcd->nmcd.hdc);
 
                 msg.flags |= custdraw;
                 msg.stage = nmcd->nmcd.dwDrawStage;
@@ -1683,7 +1683,7 @@ static void test_treeview_classinfo(void)
 
 static void test_get_linecolor(void)
 {
-    COLORREF clr;
+    clr: COLORREF;
     HWND hTree;
 
     hTree = create_treeview_control(0);
@@ -1700,7 +1700,7 @@ static void test_get_linecolor(void)
 
 static void test_get_insertmarkcolor(void)
 {
-    COLORREF clr;
+    clr: COLORREF;
     HWND hTree;
 
     hTree = create_treeview_control(0);
@@ -2029,7 +2029,7 @@ static void test_TVS_SINGLEEXPAND(void)
 static void test_WM_PAINT(void)
 {
     HWND hTree;
-    COLORREF clr;
+    clr: COLORREF;
     LONG ret;
     RECT rc;
     HDC hdc;

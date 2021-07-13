@@ -1851,7 +1851,7 @@ static void test_redraw(void)
 
 static LRESULT WINAPI cd_wndproc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    COLORREF clr, c0ffee = RGB(0xc0, 0xff, 0xee);
+    clr: COLORREF, c0ffee = RGB(0xc0, 0xff, 0xee);
 
     if(message == WM_NOTIFY) {
         NMHDR *nmhdr = (NMHDR*)lParam;
@@ -1985,8 +1985,8 @@ static void test_color(void)
     DWORD r;
     int i;
 
-    COLORREF color;
-    COLORREF colors[4] = {RGB(0,0,0), RGB(100,50,200), CLR_NONE, RGB(255,255,255)};
+    color: COLORREF;
+    colors: COLORREF[4] = {RGB(0,0,0), RGB(100,50,200), CLR_NONE, RGB(255,255,255)};
 
     hwnd = create_listview_control(LVS_REPORT);
     ok(hwnd != NULL, "failed to create a listview window\n");

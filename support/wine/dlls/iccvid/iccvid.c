@@ -749,11 +749,11 @@ static void ICCVID_dump_BITMAPINFO(const BITMAPINFO * bmi)
         debugstr_an( (const char *)&bmi->bmiHeader.biCompression, 4 ) );
 }
 
-static inline int ICCVID_CheckMask(RGBQUAD bmiColors[3], COLORREF redMask, COLORREF blueMask, COLORREF greenMask)
+static inline int ICCVID_CheckMask(RGBQUAD bmiColors[3], redMask: COLORREF, blueMask: COLORREF, greenMask: COLORREF)
 {
-    COLORREF realRedMask = MAKECOLOUR32(bmiColors[0].rgbRed, bmiColors[0].rgbGreen, bmiColors[0].rgbBlue);
-    COLORREF realBlueMask = MAKECOLOUR32(bmiColors[1].rgbRed, bmiColors[1].rgbGreen, bmiColors[1].rgbBlue);
-    COLORREF realGreenMask = MAKECOLOUR32(bmiColors[2].rgbRed, bmiColors[2].rgbGreen, bmiColors[2].rgbBlue);
+    realRedMask: COLORREF = MAKECOLOUR32(bmiColors[0].rgbRed, bmiColors[0].rgbGreen, bmiColors[0].rgbBlue);
+    realBlueMask: COLORREF = MAKECOLOUR32(bmiColors[1].rgbRed, bmiColors[1].rgbGreen, bmiColors[1].rgbBlue);
+    realGreenMask: COLORREF = MAKECOLOUR32(bmiColors[2].rgbRed, bmiColors[2].rgbGreen, bmiColors[2].rgbBlue);
 
     TRACE("\nbmiColors[0] = 0x%08x\nbmiColors[1] = 0x%08x\nbmiColors[2] = 0x%08x\n",
         realRedMask, realBlueMask, realGreenMask);

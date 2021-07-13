@@ -293,9 +293,9 @@ typedef struct tagLISTVIEW_INFO
 
   /* colors */
   HBRUSH hBkBrush;
-  COLORREF clrBk;
-  COLORREF clrText;
-  COLORREF clrTextBk;
+  clrBk: COLORREF;
+  clrText: COLORREF;
+  clrTextBk: COLORREF;
 
   /* font */
   HFONT hDefaultFont;
@@ -1059,7 +1059,7 @@ static inline DWORD notify_customdraw (const LISTVIEW_INFO *infoPtr, DWORD dwDra
 
 static void prepaint_setup (const LISTVIEW_INFO *infoPtr, HDC hdc, NMLVCUSTOMDRAW *lpnmlvcd, BOOL SubItem)
 {
-    COLORREF backcolor, textcolor;
+    backcolor: COLORREF, textcolor;
 
     /* apparently, for selected items, we have to override the returned values */
     if (!SubItem)
@@ -5141,7 +5141,7 @@ static void LISTVIEW_RefreshList(LISTVIEW_INFO *infoPtr, ITERATOR *i, HDC hdc, D
  */
 static void LISTVIEW_Refresh(LISTVIEW_INFO *infoPtr, HDC hdc, const RECT *prcErase)
 {
-    COLORREF oldTextColor = 0, oldBkColor = 0;
+    oldTextColor: COLORREF = 0, oldBkColor = 0;
     NMLVCUSTOMDRAW nmlvcd;
     HFONT hOldFont = 0;
     DWORD cdmode;
@@ -8049,7 +8049,7 @@ static BOOL LISTVIEW_Scroll(LISTVIEW_INFO *infoPtr, INT dx, INT dy)
  *   SUCCESS : TRUE
  *   FAILURE : FALSE
  */
-static BOOL LISTVIEW_SetBkColor(LISTVIEW_INFO *infoPtr, COLORREF color)
+static BOOL LISTVIEW_SetBkColor(LISTVIEW_INFO *infoPtr, color: COLORREF)
 {
     TRACE("(color=%x)\n", color);
 
@@ -9089,7 +9089,7 @@ static INT LISTVIEW_SetSelectionMark(LISTVIEW_INFO *infoPtr, INT nIndex)
  *   SUCCESS : TRUE
  *   FAILURE : FALSE
  */
-static BOOL LISTVIEW_SetTextBkColor(LISTVIEW_INFO *infoPtr, COLORREF color)
+static BOOL LISTVIEW_SetTextBkColor(LISTVIEW_INFO *infoPtr, color: COLORREF)
 {
     TRACE("(color=%x)\n", color);
 
@@ -9109,7 +9109,7 @@ static BOOL LISTVIEW_SetTextBkColor(LISTVIEW_INFO *infoPtr, COLORREF color)
  *   SUCCESS : TRUE
  *   FAILURE : FALSE
  */
-static BOOL LISTVIEW_SetTextColor (LISTVIEW_INFO *infoPtr, COLORREF color)
+static BOOL LISTVIEW_SetTextColor (LISTVIEW_INFO *infoPtr, color: COLORREF)
 {
     TRACE("(color=%x)\n", color);
 

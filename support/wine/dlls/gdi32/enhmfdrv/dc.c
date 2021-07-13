@@ -97,7 +97,7 @@ INT EMFDRV_SetBkMode( PHYSDEV dev, INT mode )
     return EMFDRV_WriteRecord( dev, &emr.emr ) ? mode : 0;
 }
 
-COLORREF EMFDRV_SetBkColor( PHYSDEV dev, COLORREF color )
+EMFDRV_SetBkColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     EMRSETBKCOLOR emr;
     EMFDRV_PDEVICE *physDev = get_emf_physdev( dev );
@@ -111,7 +111,7 @@ COLORREF EMFDRV_SetBkColor( PHYSDEV dev, COLORREF color )
 }
 
 
-COLORREF EMFDRV_SetTextColor( PHYSDEV dev, COLORREF color )
+EMFDRV_SetTextColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     EMRSETTEXTCOLOR emr;
     EMFDRV_PDEVICE *physDev = get_emf_physdev( dev );

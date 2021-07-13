@@ -471,7 +471,7 @@ UINT nulldrv_GetSystemPaletteEntries( PHYSDEV dev, UINT start, UINT count, PALET
  */
 UINT WINAPI GetNearestPaletteIndex(
     HPALETTE hpalette, /* [in] Handle of logical color palette */
-    COLORREF color)      /* [in] Color to be matched */
+    color: COLORREF)      /* [in] Color to be matched */
 {
     PALETTEOBJ* palObj = GDI_GetObjPtr( hpalette, OBJ_PAL );
     UINT index  = 0;
@@ -500,7 +500,7 @@ UINT WINAPI GetNearestPaletteIndex(
 
 
 /* null driver fallback implementation for GetNearestColor */
-COLORREF nulldrv_GetNearestColor( PHYSDEV dev, COLORREF color )
+nulldrv_GetNearestColor: COLORREF( PHYSDEV dev, color: COLORREF )
 {
     unsigned char spec_type;
     DC *dc = get_nulldrv_dc( dev );
@@ -541,11 +541,11 @@ COLORREF nulldrv_GetNearestColor( PHYSDEV dev, COLORREF color )
  *    Success: Color from system palette that corresponds to given color
  *    Failure: CLR_INVALID
  */
-COLORREF WINAPI GetNearestColor(
+WINAPI: COLORREF GetNearestColor(
     HDC hdc,      /* [in] Handle of device context */
-    COLORREF color) /* [in] Color to be matched */
+    color: COLORREF) /* [in] Color to be matched */
 {
-    COLORREF nearest = CLR_INVALID;
+    nearest: COLORREF = CLR_INVALID;
     DC *dc;
 
     if ((dc = get_dc_ptr( hdc )))

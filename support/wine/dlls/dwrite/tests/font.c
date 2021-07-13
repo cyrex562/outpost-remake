@@ -1130,7 +1130,7 @@ static void test_CreateBitmapRenderTarget(void)
     DWRITE_MATRIX m;
     DIBSECTION ds;
     XFORM xform;
-    COLORREF c;
+    c: COLORREF;
     HRESULT hr;
     FLOAT pdip;
     SIZE size;

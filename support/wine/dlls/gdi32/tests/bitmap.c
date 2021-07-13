@@ -357,9 +357,9 @@ static void test_dib_info(HBITMAP hbm, const void *bits, const BITMAPINFOHEADER 
     ok(ret == 0, "%d != 0\n", ret);
 }
 
-static void _test_color( int line, HDC hdc, COLORREF color, COLORREF exp )
+static void _test_color( int line, HDC hdc, color: COLORREF, exp: COLORREF )
 {
-    COLORREF c;
+    c: COLORREF;
     c = SetPixel(hdc, 0, 0, color);
     ok_(__FILE__, line)(c == exp, "SetPixel failed: got 0x%06x expected 0x%06x\n", c, exp);
     c = GetPixel(hdc, 0, 0);
@@ -451,7 +451,7 @@ static void test_dibsections(void)
     DWORD *bits32;
     HPALETTE hpal, oldpal;
     DIBSECTION dibsec;
-    COLORREF c0, c1;
+    c0: COLORREF, c1;
     int i;
     MEMORY_BASIC_INFORMATION info;
 
@@ -1593,18 +1593,18 @@ static void test_bitmap(void)
     DeleteDC(hdc);
 }
 
-static COLORREF get_nearest( int r, int g, int b )
+static get_nearest: COLORREF( int r, int g, int b )
 {
     return (r*r + g*g + b*b < (255-r)*(255-r) + (255-g)*(255-g) + (255-b)*(255-b)) ? 0x000000 : 0xffffff;
 }
 
-static BOOL is_black_pen( COLORREF fg, COLORREF bg, int r, int g, int b )
+static BOOL is_black_pen( fg: COLORREF, bg: COLORREF, int r, int g, int b )
 {
     if (fg == 0 || bg == 0xffffff) return RGB(r,g,b) != 0xffffff && RGB(r,g,b) != bg;
     return RGB(r,g,b) == 0x000000 || RGB(r,g,b) == bg;
 }
 
-static void test_bitmap_colors( HDC hdc, COLORREF fg, COLORREF bg, int r, int g, int b )
+static void test_bitmap_colors( HDC hdc, fg: COLORREF, bg: COLORREF, int r, int g, int b )
 {
     static const WORD pattern_bits[] = { 0x5555, 0xaaaa, 0x5555, 0xaaaa, 0x5555, 0xaaaa, 0x5555, 0xaaaa };
     char buffer[FIELD_OFFSET( BITMAPINFO, bmiColors ) + 256 * sizeof(RGBQUAD)];
@@ -1612,7 +1612,7 @@ static void test_bitmap_colors( HDC hdc, COLORREF fg, COLORREF bg, int r, int g,
     RGBQUAD *colors = info->bmiColors;
     WORD bits[16];
     void *bits_ptr;
-    COLORREF res;
+    res: COLORREF;
     HBRUSH old_brush;
     HPEN old_pen;
     HBITMAP bitmap;
@@ -1718,7 +1718,7 @@ static void test_bitmap_colors( HDC hdc, COLORREF fg, COLORREF bg, int r, int g,
 
 static void test_mono_bitmap(void)
 {
-    static const COLORREF colors[][2] =
+    static const colors: COLORREF[][2] =
     {
         { RGB(0x00,0x00,0x00), RGB(0xff,0xff,0xff) },
         { RGB(0xff,0xff,0xff), RGB(0x00,0x00,0x00) },

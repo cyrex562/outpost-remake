@@ -1505,7 +1505,7 @@ typedef struct {
   BYTE  cAuxBuffers;
   BYTE  iLayerPlane;
   BYTE  bReserved;
-  COLORREF crTransparent;
+  crTransparent: COLORREF;
 } LAYERPLANEDESCRIPTOR, *PLAYERPLANEDESCRIPTOR, *LPLAYERPLANEDESCRIPTOR;
 
 /* Get/SetSystemPaletteUse() values */
@@ -1543,7 +1543,7 @@ typedef struct
 {
     UINT     lopnStyle;
     POINT    lopnWidth;
-    COLORREF lopnColor;
+    lopnColor: COLORREF;
 } LOGPEN, *LPLOGPEN;
 
 
@@ -1552,7 +1552,7 @@ typedef struct tagEXTLOGPEN
     DWORD    elpPenStyle;
     DWORD    elpWidth;
     UINT     elpBrushStyle;
-    COLORREF elpColor;
+    elpColor: COLORREF;
     ULONG_PTR elpHatch;
     DWORD elpNumEntries;
     DWORD elpStyleEntry[1];
@@ -2221,7 +2221,7 @@ typedef struct {
     LONG     xSrc;
     LONG     ySrc;
     XFORM    xformSrc;
-    COLORREF crBkColorSrc;
+    crBkColorSrc: COLORREF;
     DWORD    iUsageSrc;
     DWORD    offBmiSrc;
     DWORD    cbBmiSrc;
@@ -2333,7 +2333,7 @@ typedef struct {
 typedef struct {
     EMR      emr;
     POINTL   ptlStart;
-    COLORREF crColor;
+    crColor: COLORREF;
     DWORD    iMode;
 } EMREXTFLOODFILL, *PEMREXTFLOODFILL;
 
@@ -2425,7 +2425,7 @@ typedef struct {
     LONG     xSrc;
     LONG     ySrc;
     XFORM    xformSrc;
-    COLORREF crBkColorSrc;
+    crBkColorSrc: COLORREF;
     DWORD    iUsageSrc;
     DWORD    offBmiSrc;
     DWORD    cbBmiSrc;
@@ -2460,7 +2460,7 @@ typedef struct {
     LONG     cxSrc;
     LONG     cySrc;
     XFORM    xformSrc;
-    COLORREF crBkColorSrc;
+    crBkColorSrc: COLORREF;
     DWORD    iUsageSrc;
     DWORD    offBmiSrc;
     DWORD    cbBmiSrc;
@@ -2595,7 +2595,7 @@ typedef struct {
 
 typedef struct {
     EMR      emr;
-    COLORREF crColor;
+    crColor: COLORREF;
 } EMRSETBKCOLOR,   *PEMRSETBKCOLOR,
   EMRSETTEXTCOLOR, *PEMRSETTEXTCOLOR;
 
@@ -2650,7 +2650,7 @@ typedef struct {
 typedef struct {
     EMR     emr;
     POINTL  ptlPixel;
-    COLORREF crColor;
+    crColor: COLORREF;
 } EMRSETPIXELV, *PEMRSETPIXELV;
 
 typedef struct {
@@ -2675,7 +2675,7 @@ typedef struct {
     LONG     xSrc;
     LONG     ySrc;
     XFORM    xformSrc;
-    COLORREF crBkColorSrc;
+    crBkColorSrc: COLORREF;
     DWORD    iUsageSrc;
     DWORD    offBmiSrc;
     DWORD    cbBmiSrc;
@@ -2696,7 +2696,7 @@ typedef struct {
     LONG     xSrc;
     LONG     ySrc;
     XFORM    xformSrc;
-    COLORREF crBkColorSrc;
+    crBkColorSrc: COLORREF;
     DWORD    iUsageSrc;
     DWORD    offBmiSrc;
     DWORD    cbBmiSrc;

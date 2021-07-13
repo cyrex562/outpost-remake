@@ -899,8 +899,8 @@ static void test_resize(void)
     }
 }
 
-static void expect_band_content_(int line, HWND hRebar, UINT uBand, INT fStyle, COLORREF clrFore,
-    COLORREF clrBack, LPCSTR lpText, int iImage, HWND hwndChild,
+static void expect_band_content_(int line, HWND hRebar, UINT uBand, INT fStyle, clrFore: COLORREF,
+    clrBack: COLORREF, LPCSTR lpText, int iImage, HWND hwndChild,
     INT cxMinChild, INT cyMinChild, INT cx, HBITMAP hbmBack, INT wID,
     INT cyChild, INT cyMaxChild, INT cyIntegral, INT cxIdeal, LPARAM lParam,
     UINT cxHeader, UINT cxHeader_broken)
@@ -1007,7 +1007,7 @@ static void test_bandinfo(void)
 static void test_colors(void)
 {
     COLORSCHEME scheme;
-    COLORREF clr;
+    clr: COLORREF;
     BOOL ret;
     HWND hRebar;
     REBARBANDINFOA bi;

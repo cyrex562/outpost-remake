@@ -281,7 +281,7 @@ static void save_sys_colors (HKEY baseKey)
     {
         for (i = 0; i < NUM_SYS_COLORS; i++)
         {
-            COLORREF col = GetSysColor (i);
+            col: COLORREF = GetSysColor (i);
         
             sprintf (colorStr, "%d %d %d", 
                 GetRValue (col), GetGValue (col), GetBValue (col));
@@ -355,7 +355,7 @@ static void UXTHEME_RestoreSystemMetrics(void)
                            0, KEY_QUERY_VALUE, &colorKey) == ERROR_SUCCESS) 
         {
             int i;
-            COLORREF sysCols[NUM_SYS_COLORS];
+            sysCols: COLORREF[NUM_SYS_COLORS];
             int sysColsIndices[NUM_SYS_COLORS];
             int sysColCount = 0;
         
