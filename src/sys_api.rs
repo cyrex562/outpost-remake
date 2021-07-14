@@ -344,7 +344,7 @@ pub fn dos3_call_op_1000_35fe(param_1: u16,param_2: i16) -> u16
   if (!uVar3) {
     return 0x0;
   }
-  pass1_1000_29b5(uVar2);
+  pass1_1000_29b5(ctx, uVar2);
   return 0xffff;
 }
 
@@ -441,7 +441,7 @@ pub fn mixed_dos3_call_1000_3636(param_1: u16,param_2: u16,param_3: u16,param_4:
   uVar8 = true;
 //LAB_1000_299d:
   if (uVar8) {
-    pass1_1000_29b5(uVar3);
+    pass1_1000_29b5(ctx, uVar3);
   }
   return;
 }
@@ -965,7 +965,7 @@ pub fn mixed_dos3_call_1000_39f2(
   }
 //LAB_1000_299d:
   if (uVar21) {
-    pass1_1000_29b5(piVar7);
+    pass1_1000_29b5(ctx, piVar7);
     piVar7 = 0xffff;
   }
   return piVar7;
@@ -1398,7 +1398,7 @@ pub fn dos3_call_1000_4f20(param_1: u16) -> u16
   if (!uVar3) {
     return 0x0;
   }
-  pass1_1000_29b5(uVar2);
+  pass1_1000_29b5(ctx, uVar2);
   return 0xffff;
 }
 
@@ -1421,7 +1421,7 @@ pub fn dos3_call_1000_514e(param_1: i16) -> u16
   if (!uVar3) {
     return 0x0;
   }
-  pass1_1000_29b5(uVar2);
+  pass1_1000_29b5(ctx, uVar2);
   return 0xffff;
 }
 
@@ -1442,7 +1442,7 @@ pub fn dos3_call_1000_5174(param_1: u16) -> u16
     DOS3Call(&ctx.PTR_LOOP_1050_1000);
   }
   if (uVar3) {
-    pass1_1000_29b5(uVar2);
+    pass1_1000_29b5(ctx, uVar2);
     return uVar2 & 0xff;
   }
   return 0x0;
@@ -1491,7 +1491,7 @@ pub fn dos3_calls_1000_5198(param_1: i16) -> u16
     DOS3Call(&ctx.PTR_LOOP_1050_1000);
   }
   if ((uVar5 & 0x100) != 0x0) {
-    pass1_1000_29b5(uVar3);
+    pass1_1000_29b5(ctx, uVar3);
     return uVar3 & 0xff;
   }
   return 0x0;
@@ -1541,7 +1541,7 @@ pub fn dos3_call_1000_51aa(param_1: u16) -> u16
     DOS3Call(&ctx.PTR_LOOP_1050_1000);
   }
   if ((uVar5 & 0x100) != 0x0) {
-    pass1_1000_29b5(uVar3);
+    pass1_1000_29b5(ctx, uVar3);
     return uVar3 & 0xff;
   }
   return 0x0;

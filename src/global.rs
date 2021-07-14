@@ -74,6 +74,8 @@ pub struct AppContext {
     pub s_SOLDefaultWindowClass_1050_01fe: String,
     pub PTR_LOOP_1050_48de: U32Ptr,
     pub _PTR_LOOP_1050_5f2c: U32Ptr,
+    pub PTR_LOOP_1050_5f88: U32Ptr,
+    pub PTR_LOOP_1050_5f78: U32Ptr
 }
 
 impl AppContext {

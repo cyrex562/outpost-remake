@@ -59,3 +59,5 @@ pub fn get_string_from_rsrc(rsrc_id: u16) -> String {
 pub fn CARRY4(a: u32, b: u32) -> u32 {
     unimplemented!()
 }
+
+pub fn SBORROW2(a: u32 b: u32) -> u32 { unimplemented!()}
