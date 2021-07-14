@@ -18,7 +18,7 @@ use crate::{
         WIN16_GlobalLock16,
     },
 };
-use crate::defines::{Struct79, Struct_1000_05e2, Struct19};
+use crate::defines::{Struct79, Struct_1000_05e2, Struct19, Struct99};
 use crate::winapi::GlobalDOSAlloc16;
 use crate::pass::pass_1000::{pass1_1000_09ca, pass1_1000_05b4, pass1_1000_0782};
 
@@ -439,7 +439,7 @@ pub unsafe fn mem_1000_0670(
     return 0x1;
 }
 
-pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, param_1: Option<&mut StructA>, param_2: u16) -> u32 {
+pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, param_1: Option<&mut StructA>, param_2: u16) -> &mut Struct99 {
     let pu_var1: *mut u16;
     let pi_var2: *mut i16;
     let i_var3: i16;

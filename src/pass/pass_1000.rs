@@ -1,9 +1,9 @@
 use crate::{string::string_1000::poss_str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
-use crate::defines::{Struct18, Struct20, StructA};
+use crate::defines::{Struct18, Struct20, StructA, Struct99};
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
 use crate::global::AppContext;
-use crate::mem_1000::{free_mem_1000_407a, mem_1000_0670, mem_1000_167a, mem_op_1000_0510, mem_op_1000_0838, mem_op_1000_0a48, mem_op_1000_1532, mem_op_1000_160a, mem_op_1000_1b9a, mem_op_1000_1dfa, mem_op_1000_21b6, mixed_mem_op_1000_3c51};
+use crate::mem_1000::{free_mem_1000_407a, mem_1000_0670, mem_1000_167a, mem_op_1000_0510, mem_op_1000_0838, mem_op_1000_0a48, mem_op_1000_1532, mem_op_1000_160a, mem_op_1000_1b9a, mem_op_1000_1dfa, mem_op_1000_21b6, mixed_mem_op_1000_3c51, mem_1000_2bb6};
 use crate::misc::ret_op_1000_55ac;
 use crate::msg_box::{msg_box_op_1000_1f24, msg_box_op_1000_214c};
 use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};

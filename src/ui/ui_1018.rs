@@ -97,8 +97,9 @@ pub fn unk_win_ui_op_1018_4f18(param_1: &mut Struct39,param_2: u16,param_3: u32)
   else {
     iVar3 = (iStack12 - local_12.y) + 0x1;
     uVar9 = 0x1008;
-    pass1_1008_405c(paStack22,&iVar6.field_0xe,iVar3,
-                    (iStack14 - local_12.x) + 0x1);
+    pass1_1008_405c(
+        ctx, paStack22, &iVar6.field_0xe, iVar3,
+        (iStack14 - local_12.x) + 0x1);
     iVar6.field_0xa = iVar3;
     iVar6.field_0xc = uVar7;
   }

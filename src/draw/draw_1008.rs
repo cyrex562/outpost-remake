@@ -1,16 +1,7 @@
-use crate::defines::{Struct19, Struct80, Struct79, U32Ptr};
-use crate::global::AppContext;
-use crate::mixed::mixed_1010_20ba;
-use crate::struct_ops::struct_1008::set_struct_1008_687a;
-use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
-use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{struct_from_addr, get_vec_from_addr};
-use crate::win_struct::{COLORREF, WNDCLASS16, HINSTANCE16};
-use crate::winapi::FillRect16;
 use crate::{
     fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708},
     mem_1000::mem_op_1000_160a,
-    pass::pass_1008::{pass1_1008_3e38, pass1_1008_3e76, pass1_1008_818c},
+    pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c},
     string::string_1000::unk_str_op_1000_3d3e,
     util::{CONCAT22, ZEXT24},
     win_struct::{
@@ -22,6 +13,15 @@ use crate::{
         Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
     },
 };
+use crate::defines::{Struct19, Struct79, Struct80, U32Ptr};
+use crate::global::AppContext;
+use crate::mixed::mixed_1010_20ba;
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
+use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
+use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
+use crate::util::{get_vec_from_addr, struct_from_addr};
+use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16};
+use crate::winapi::FillRect16;
 
 pub fn draw_op_1008_1230(param_1: HWND16) {
     fill_rect_1008_39ac(param_1);
@@ -310,7 +310,7 @@ pub unsafe fn unk_draw_op_1008_da12(
     set_struct_fields_1010_1d48(&mut struct_from_addr::<Struct79>(CONCAT22(param_2, param_1.field_0x0)), param_3);
     param_1.field_0xa = 0x0;
     param_1.field_0xc = 0x0;
-    pass1_1008_3e38(CONCAT22(param_2, param_1.field_0xe));
+    clear_struct_1008_3e38(CONCAT22(param_2, param_1.field_0xe));
     param_1.field_0x14 = 0x0;
     param_1.field_0x16 = 0x0;
     param_1.field_0x18 = 0x0;

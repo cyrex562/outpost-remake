@@ -3,7 +3,7 @@ pub type HANDLE16 = u16;
 pub type HBRUSH16 = HANDLE16;
 // typedef let HMENU16: HANDLE16;
 pub type HMENU16 = HANDLE16;
-// typedef ushort WPARAM16;
+// typedef uWPARAM16: i16;
 pub type WPARAM16 = u16;
 // typedef let HWND16: HANDLE16;
 pub type HWND16 = HANDLE16;
@@ -255,13 +255,13 @@ struct TwoWords {
     b_0x2: u16,
 }
 
-// typedef ushort BOOL16;
+// typedef uBOOL16: i16;
 
 // typedef let HGDIOBJ16: HANDLE16;
 
 // typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
 
-// typedef ushort WORD;
+// typedef uWORD: i16;
 
 pub struct LOGPALETTE {
     // WORD pal_version;
@@ -347,7 +347,7 @@ pub struct BITMAPINFO {
     pub bmi_colors: tagRGBQUAD,
 }
 
-// typedef ushort u16;
+// typedef uu16: i16;
 
 // typedef let HPALETTE16: HANDLE16;
 
@@ -434,21 +434,21 @@ pub struct _struct_657 {
 }
 
 pub struct _struct_656 {
-    // short dmOrientation;
+    // dmOrientation: i16;
     pub dmOrientation: i16,
-    // short dmPaperSize;
+    // dmPaperSize: i16;
     pub dmPaperSize: i16,
-    // short dmPaperLength;
+    // dmPaperLength: i16;
     pub dmPaperLength: i16,
-    // short dmPaperWidth;
+    // dmPaperWidth: i16;
     pub dmPaperWidth: i16,
-    // short dmScale;
+    // dmScale: i16;
     pub dmScale: i16,
-    // short dmCopies;
+    // dmCopies: i16;
     pub dmCopies: i16,
-    // short dmDefaultSource;
+    // dmDefaultSource: i16;
     pub dmDefaultSource: i16,
-    // short dmPrintQuality;
+    // dmPrintQuality: i16;
     pub dmPrintQuality: i16,
 }
 
@@ -477,15 +477,15 @@ pub struct _devicemodeA {
     pub dmFields: u32,
     // union _union_655 field_0x2c;
     pub field_0x2c: _struct_656,
-    // short dmColor;
+    // dmColor: i16;
     pub dmColor: i16,
-    // short dmDuplex;
+    // dmDuplex: i16;
     pub dmDuplex: i16,
-    // short dmYResolution;
+    // dmYResolution: i16;
     pub dmYResolution: i16,
-    // short dmTTOption;
+    // dmTTOption: i16;
     pub dmTTOption: i16,
-    // short dmCollate;
+    // dmCollate: i16;
     pub dmCollate: i16,
     // BYTE dmFormName[32];
     pub dmFormName: [u8; 32],
@@ -570,7 +570,7 @@ pub struct tagBITMAPINFOHEADER {
 
 // typedef ulong ULONG_PTR;
 
-// typedef short int16_t;
+// typedef int16_t: i16;
 
 // typedef ulong ULONG;
 

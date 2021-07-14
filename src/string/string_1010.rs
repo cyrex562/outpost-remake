@@ -54,7 +54,7 @@ pub fn unk_load_str_op_1010_2c34() -> u16
 {
   let pUVar1: *mut u16;
   let in_DX: *mut u8;
-  short in_buf_len_5;
+  in_buf_len_5: i16;
   let unaff_DI: i16;
   let unaff_SS: u16;
   let puVar2: *mut u16;
@@ -121,7 +121,7 @@ pub fn load_string_1010_84ac(param_1: i16,param_2: i16,param_3: HINSTANCE16)
 pub fn
 load_string_1010_84e0
           (in_hinstance_5: HINSTANCE16,param_2: u16,param_3: u16,in_resc_id_3: u16,
-          in_buffer_4: &mut String,short in_buf_len_5)
+          in_buffer_4: &mut String,in_buf_len_5: i16)
 
 {
   LoadString16(in_hinstance_5,in_resc_id_3,in_buffer_4,in_buf_len_5);
@@ -440,7 +440,7 @@ string_1010_dcac(param_1: u16,param_2: u16,param_3: u16,param_4: i16,param_5: u3
 
 pub fn load_str_1010_ddf6(param_1: u32,param_2: u32)
 {
-  short in_buf_len_5;
+  in_buf_len_5: i16;
   let uVar1: u32;
   
  // in_buf_len_5 = (param_1 >> 0x10);

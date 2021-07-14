@@ -1,35 +1,36 @@
-use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, enable_win_1040_9234};
-use crate::defines::{Struct18, U32Ptr};
-use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
-use crate::pass::pass_1010::{pass1_1010_08e2, pass1_1010_0886, pass1_1010_038e, pass1_1010_041a, pass1_1010_1ea6, pass1_1010_3770, pass1_1010_8fba};
-use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT11, CARRY2, CONCAT12, CONCAT13, get_string_from_addr};
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
-use crate::string::string_1010::load_string_1010_847e;
-use crate::mixed::mixed_1010_20ba;
-use crate::cleanup::destroy_win_1040_7b98;
-use crate::pass::pass_1008::{pass1_1008_4d84, pass1_1008_b63a, pass1_1008_b340, pass1_1008_5b12, pass1_1008_5784, pass1_1008_79f0, pass1_1008_3f62, pass1_1008_3e38, pass1_1008_7c2a};
-use crate::struct_ops::struct_1008::{struct_1008_4c58, set_struct_1008_574a, pass1_1008_c6ae, pass1_1008_c6fa};
-use crate::draw::draw_1040::unk_draw_op_1040_b0f8;
-use crate::pass::pass_1040::pass1_1040_b040;
-use crate::pass::pass_1000::{pass1_1000_5586, pass1_1000_07fc, pass1_1000_4906};
-use crate::struct_ops::struct_1040::{struct_1040_a598, struct_1040_b082};
-use crate::ui::ui_1038::send_dlg_item_msg_1038_8b58;
-use crate::winapi::SetDlgItemInt16;
-use crate::win_struct::{HWND16, SEGPTR};
-use crate::pass::pass_1030::{pass1_1030_b768, pass1_1030_affc, pass1_1030_aefa, pass1_1030_6c4c, pass1_1030_6a2c, pass1_1030_7c50, pass1_1030_6fa0, pass1_1030_6d4e, pass1_1030_16d6, pass1_1030_72d0, pass1_1030_8e3c, pass1_1030_38f2, pass1_1030_1d58, pass1_1030_38b8, fn_ptr_1030_835a, pass1_1030_64ce, pass1_1030_1d7c, pass1_1030_3258, pass1_1030_326a, pass1_1030_5b1c, pass1_1030_73ee, pass1_1030_1358, pass1_1030_6b86, pass1_1030_ce72, pass1_1030_6e9c, pass1_1030_cc44, pass1_1030_375a, pass1_1030_9f40, pass1_1030_9ecc, pass1_1030_9ef2, pass1_1030_18b2, pass1_1030_314c, pass1_1030_d0a8, pass1_1030_d180, pass1_1030_bd74, pass1_1030_bcae};
-use crate::file::file_1008::{write_to_file_1008_7cac, write_to_file_1008_7a22, read_file_1008_7dee, read_file_1008_7c6e, file_1008_7548};
-use crate::fn_ptr::fn_ptr_1020::fn_ptr_1020_ba7e;
-use crate::pass::pass_1028::{pass1_1028_e1ec, pass1_1028_6408, pass1_1028_62c8, pass1_1028_45e2, pass1_1028_bdac, pass1_1028_b58e, pass1_1028_6356, pass1_1028_678c, pass1_1028_6228, pass1_1028_6744};
-use crate::switch_ops::switch_1020::switch_1020_c3b4;
-use crate::pass::pass_1020::{pass1_1020_c42e, pass1_1020_c3ae, pass1_1020_bb16, pass1_1020_ba94};
-use crate::struct_ops::struct_1030::{struct_op_1030_73a8, struct_op_1030_1cd8, struct_1030_11aa, struct_1030_17ce};
 use std::default::default;
-use crate::string::string_1008::str_op_1008_60e8;
-use crate::file::file_1030::{read_file_1030_33f0, file_1030_1730, write_to_file_1030_32e4};
-use crate::switch_ops::switch_1008::switch_1008_72bc;
+
 use crate::bad::bad_1030_1312;
-use crate::struct_ops::struct_1020::struct_1020_c444;
+use crate::cleanup::destroy_win_1040_7b98;
+use crate::defines::{Struct18, U32Ptr};
+use crate::draw::draw_1040::unk_draw_op_1040_b0f8;
+use crate::file::file_1008::{file_1008_7548, read_file_1008_7c6e, read_file_1008_7dee, write_to_file_1008_7a22, write_to_file_1008_7cac};
+use crate::file::file_1030::{file_1030_1730, read_file_1030_33f0, write_to_file_1030_32e4};
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
+use crate::fn_ptr::fn_ptr_1020::fn_ptr_1020_ba7e;
+use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
+use crate::mixed::mixed_1010_20ba;
+use crate::pass::pass_1000::{pass1_1000_07fc, pass1_1000_4906, pass1_1000_5586};
+use crate::pass::pass_1008::{pass1_1008_3f62, pass1_1008_4d84, pass1_1008_5784, pass1_1008_5b12, pass1_1008_79f0, pass1_1008_7c2a, pass1_1008_b340, pass1_1008_b63a};
+use crate::pass::pass_1010::{pass1_1010_038e, pass1_1010_041a, pass1_1010_0886, pass1_1010_08e2, pass1_1010_1ea6, pass1_1010_3770, pass1_1010_8fba};
+use crate::pass::pass_1020::{pass1_1020_ba94, pass1_1020_bb16, pass1_1020_c3ae, pass1_1020_c42e};
+use crate::pass::pass_1028::{pass1_1028_45e2, pass1_1028_6228, pass1_1028_62c8, pass1_1028_6356, pass1_1028_6408, pass1_1028_6744, pass1_1028_678c, pass1_1028_b58e, pass1_1028_bdac, pass1_1028_e1ec};
+use crate::pass::pass_1030::{fn_ptr_1030_835a, pass1_1030_1358, pass1_1030_16d6, pass1_1030_18b2, pass1_1030_1d58, pass1_1030_1d7c, pass1_1030_314c, pass1_1030_3258, pass1_1030_326a, pass1_1030_375a, pass1_1030_38b8, pass1_1030_38f2, pass1_1030_5b1c, pass1_1030_64ce, pass1_1030_6a2c, pass1_1030_6b86, pass1_1030_6c4c, pass1_1030_6d4e, pass1_1030_6e9c, pass1_1030_6fa0, pass1_1030_72d0, pass1_1030_73ee, pass1_1030_7c50, pass1_1030_8e3c, pass1_1030_9ecc, pass1_1030_9ef2, pass1_1030_9f40, pass1_1030_aefa, pass1_1030_affc, pass1_1030_b768, pass1_1030_bcae, pass1_1030_bd74, pass1_1030_cc44, pass1_1030_ce72, pass1_1030_d0a8, pass1_1030_d180};
+use crate::pass::pass_1040::pass1_1040_b040;
+use crate::string::string_1008::str_op_1008_60e8;
+use crate::string::string_1010::load_string_1010_847e;
 use crate::string::string_1030::vsprintf_op_1030_840a;
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a, struct_1008_4c58};
+use crate::struct_ops::struct_1020::struct_1020_c444;
+use crate::struct_ops::struct_1030::{struct_1030_11aa, struct_1030_17ce, struct_op_1030_1cd8, struct_op_1030_73a8};
+use crate::struct_ops::struct_1040::{struct_1040_a598, struct_1040_b082};
+use crate::switch_ops::switch_1008::switch_1008_72bc;
+use crate::switch_ops::switch_1020::switch_1020_c3b4;
+use crate::ui::ui_1038::send_dlg_item_msg_1038_8b58;
+use crate::ui::ui_1040::{enable_win_1040_9234, ui_cleanup_op_1040_782c};
+use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, get_string_from_addr, SUB42, ZEXT24};
+use crate::win_struct::{HWND16, SEGPTR};
+use crate::winapi::SetDlgItemInt16;
 
 pub fn pass1_1038_0000(param_1: u32, param_2: u16, param_3: *mut u8)
 {
@@ -1639,7 +1640,7 @@ pass1_1038_16f2(param_1: u32,param_2: *mut u32,param_3: *mut u32,param_4: u16,pa
                param_6: u16,param_7: u16,param_8: u16,param_9: u8)
 
 {
-  long *plVar1;
+  plVar1: &i32;
   let ppcVar2: u32;
   let uVar3: u16;
   let puVar4: u32;
@@ -1659,7 +1660,7 @@ pass1_1038_16f2(param_1: u32,param_2: *mut u32,param_3: *mut u32,param_4: u16,pa
   let lStack68: i32;
   let puStack56: u32;
   let puStack52: u32;
-  long *plStack50;
+  plStack50: &i32;
   let uStack46: u16;
   let uStack42: u32;
   let uStack22: u32;
@@ -6329,7 +6330,7 @@ pass1_1038_5cc6(param_1: u32,param_2: u32,param_3: u32,param_4: u32,param_5: i16
   let iStack8: i16;
   let iStack4: i16;
   
-  puVar6 = pass1_1008_3e38(CONCAT22(unaff_SS,&local_a));
+  puVar6 = clear_struct_1008_3e38(CONCAT22(unaff_SS, &local_a));
  // uVar4 = (puVar6 >> 0x10);
   loop {
     iStack4 = 0x0;
@@ -6727,7 +6728,7 @@ pub fn struct_1038_6520(param_1: *mut u16)
   iVar1.field_0x12 = 0x0;
   iVar1.field_0x14 = 0x0;
   iVar1.field_0x16 = 0x0;
-  pass1_1008_3e38(
+  clear_struct_1008_3e38(
                   (param_1 & 0xffff0000 | &iVar1.field_0x1a));
   iVar1.field_0x20 = 0x0;
   iVar1.field_0x24 = 0x0;
@@ -6767,7 +6768,7 @@ pass1_1038_6590(param_1: *mut u16,param_2: u16,param_3: u16,param_4: u16,
   iVar3.field_0x14 = 0x0;
   iVar3.field_0x16 = param_2;
   iVar3.field_0x18 = param_3;
-  puVar4 = pass1_1008_3e38(
+  puVar4 = clear_struct_1008_3e38(
                            (param_1 & 0xffff0000 | &iVar3.field_0x1a)
                           );
  // uVar1 = (puVar4 >> 0x10);
@@ -6795,7 +6796,7 @@ pass1_1038_6590(param_1: *mut u16,param_2: u16,param_3: u16,param_4: u16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1038_666e(param_1: *mut u16,long *param_2,param_3: u16,param_4: u32)
+pub fn pass1_1038_666e(param_1: *mut u16,param_2: &i32,param_3: u16,param_4: u32)
 {
   let uVar1: u16;
   let uVar2: u16;
@@ -6817,7 +6818,7 @@ pub fn pass1_1038_666e(param_1: *mut u16,long *param_2,param_3: u16,param_4: u32
   iVar3.field_0x14 = 0x0;
   iVar3.field_0x18 = 0x0;
   iVar3.field_0x16 = 0x0;
-  puVar4 = pass1_1008_3e38(
+  puVar4 = clear_struct_1008_3e38(
                            (param_1 & 0xffff0000 | &iVar3.field_0x1a)
                           );
  // uVar1 = (puVar4 >> 0x10);
@@ -6869,7 +6870,7 @@ pub fn pass1_1038_675c(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u16,
   iVar3.field_0x12 = param_3;
   iVar3.field_0x14 = 0x0;
   iVar3.field_0x16 = param_2;
-  puVar4 = pass1_1008_3e38(
+  puVar4 = clear_struct_1008_3e38(
                            (param_1 & 0xffff0000 | &iVar3.field_0x1a)
                           );
  // uVar1 = (puVar4 >> 0x10);
@@ -6918,7 +6919,7 @@ pub fn pass1_1038_6838(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u16,
   iVar3.field_0x12 = 0x0;
   iVar3.field_0x14 = param_3;
   iVar3.field_0x16 = param_2;
-  puVar4 = pass1_1008_3e38(
+  puVar4 = clear_struct_1008_3e38(
                            (param_1 & 0xffff0000 | &iVar3.field_0x1a)
                           );
  // uVar1 = (puVar4 >> 0x10);
@@ -7046,7 +7047,7 @@ pass1_1038_6a0e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,
     uStack6 = CONCAT22(param_3,param_2);
     piVar1 = (uVar8 + 0x24);
     *piVar1 = *piVar1 + 0x3c;
-    puVar10 = pass1_1008_3e38(CONCAT22(param_6,local_c));
+    puVar10 = clear_struct_1008_3e38(CONCAT22(param_6, local_c));
    // uVar6 = (puVar10 >> 0x10);
     loop {
       uVar3 = pass1_1038_6d24(param_1,CONCAT22(param_6,local_10),
@@ -7288,7 +7289,7 @@ pass1_1038_6d24(param_1: u32,param_2: *mut u32,param_3: *mut u16,param_4: i16,pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1038_6e1a(param_1: u16,param_2: u16,long *param_3) -> u16
+pub fn pass1_1038_6e1a(param_1: u16,param_2: u16,param_3: &i32) -> u16
 
 {
   let uVar1: u16;

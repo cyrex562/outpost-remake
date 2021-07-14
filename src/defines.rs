@@ -172,3 +172,12 @@ pub struct Struct161 {
 pub struct Struct37 {
 
 }
+
+pub struct Struct99 {
+
+}
+
+pub struct Struct110 {
+
+}
+

@@ -34,7 +34,7 @@ pub fn file_1030_1730(param_1: u32, param_2: u32)
 
 pub fn file_1030_19b4(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_5: u16)
 {
-  long *plVar1;
+  plVar1: &i32;
   
   file_1030_1730(param_1,param_2);
   if (param_3 != 0x0) {
@@ -413,7 +413,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
   let iVar3: &mut Struct387;
   let BVar3: bool;
   let iVar6: i16;
-  long *plVar7;
+  plVar7: &i32;
   let puVar8: u32;
   let extraout_DX: u16;
   let uVar9: u16;

@@ -70,7 +70,10 @@ pub struct AppContext {
     pub PTR_LOOP_1050_6066: U32Ptr,
     pub DAT_1050_61e8: u32,
     pub PTR_LOOP_1050_61ea: U32Ptr,
-    pub s_TPPOPMENU_1050_43fa: String
+    pub s_TPPOPMENU_1050_43fa: String,
+    pub s_SOLDefaultWindowClass_1050_01fe: String,
+    pub PTR_LOOP_1050_48de: U32Ptr,
+    pub _PTR_LOOP_1050_5f2c: U32Ptr,
 }
 
 impl AppContext {
@@ -143,7 +146,10 @@ impl AppContext {
             PTR_LOOP_1050_6066: 0,
             DAT_1050_61e8: 0,
             PTR_LOOP_1050_61ea: 0,
-            s_TPPOPMENU_1050_43fa: "".to_string()
+            s_TPPOPMENU_1050_43fa: "".to_string(),
+            s_SOLDefaultWindowClass_1050_01fe: "".to_string(),
+            PTR_LOOP_1050_48de: 0,
+            _PTR_LOOP_1050_5f2c: 0
         }
     }
 }

@@ -1,13 +1,12 @@
 use crate::defines::{Struct18, U32Ptr};
-use crate::winapi::{DOS3Call, swi};
-use crate::sys_api::dos3_op_1000_256b;
-use crate::misc::ret_op_1000_55ac;
-use crate::util::{CONCAT22, get_string_from_addr, get_struct_from_addr};
-use crate::mem_1000::mem_op_1000_0a48;
-use crate::pass::pass_1000::pass1_1000_1e61;
 use crate::global::AppContext;
+use crate::mem_1000::mem_op_1000_0a48;
+use crate::misc::ret_op_1000_55ac;
+use crate::pass::pass_1000::pass1_1000_1e61;
+use crate::sys_api::dos3_op_1000_256b;
+use crate::util::{CONCAT22, get_string_from_addr, get_struct_from_addr};
 use crate::win_struct::CONTEXT;
-
+use crate::winapi::{DOS3Call, swi};
 
 pub fn  call_fn_ptr_1000_0dc6(
     ctx: &mut AppContext,
@@ -137,6 +136,17 @@ pub fn fn_ptr_op_1000_2594(mut param_1: U32Ptr, param_2: U32Ptr)
     }
   }
   return;
+}
+
+
+pub fn call_fn_ptr_1008_3e0e(param_1: &mut Struct18) {
+    let fn_ptr: u32;
+
+    if param_1.field_0x4 != 0x0 {
+        fn_ptr = ((param_1.field_0x4) + 0x4);
+        (**fn_ptr)();
+    }
+    return;
 }
 
 

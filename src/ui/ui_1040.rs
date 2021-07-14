@@ -1,35 +1,37 @@
-use crate::winapi::{SendDlgItemMessage16, EnableWindow16, GetDlgItem16, MessageBox16, SetDlgItemInt16, GetDlgItemInt16, SendMessage16, SetWindowPos16, ShowWindow16, SetBkColor16, SetTextColor16, GetDlgCtrlID16, CreateSolidBrush16, GetWindowRect16, GetSystemMetrics16, SetDlgItemText16, wsprintf16, GetStockObject16, GetProp16, UpdateWindow16, MoveWindow16, SetProp16, SetWindowLong16, CreateWindow16, FreeProcInstance16, RemoveProp16, SetSysModalWindow, IsDialogMessage16, GetMessage16, IsWindow16, PtInRect16, ScreenToClient16, TrackPopupMenu16, ClientToScreen16, GetSubMenu16, LoadMenu16, PostMessage16, GetWindowLong16, GetWindowText16, CreateDialog16, DestroyMenu16, DeleteObject16, DestroyWindow16, InvalidateRect16, GetClientRect16, ReleaseDC16, GetTextExtent16, GetDC16, MapDialogRect16, SetFocus16, CheckRadioButton16, SetWindowText16, IsDlgButtonChecked, CheckDlgButton16, GetCursorPos16, ReleaseCapture16, SetCapture16, DefWindowProc16, GetNextDlgTabItem16, LoadCursor16, CallWindowProc16, WinHelp16};
-use crate::util::{CONCAT22, CONCAT11, CONCAT12, ZEXT24, SUB42, CONCAT13};
-use crate::pass::pass_1010::{pass1_1010_9044, pass1_1010_9210, pass1_1010_ac62, pass1_1010_a5ac, pass1_1010_c320, pass1_1010_2ee2, pass1_1010_32c0, pass1_1010_0898, pass1_1010_acc0, pass1_1010_5fb0, pass1_1010_5f7a, pass1_1010_038e, pass1_1010_60ba, pass1_1010_60c0, pass1_1010_60c6, pass1_1010_60b4, pass1_1010_60a0, pass1_1010_5d9c, pass1_1010_519a, pass1_1010_5120, pass1_1010_52fc, pass1_1010_531c, pass1_1010_4f30, pass1_1010_6118, pass1_1010_c3c2, pass1_1010_91cc, pass1_1010_a5ec, pass1_1010_a568, pass1_1010_a58a, pass1_1010_a5ca, pass1_1010_a50c, pass1_1010_60fa};
-use crate::mixed::mixed_1010_20ba;
-use crate::win_struct::{HWND16, HBRUSH16, COLORREF, RECT16, SEGPTR, HGDIOBJ16, HCURSOR16, MSG16, POINT16, HMENU16, HINSTANCE16, HDC16, LRESULT, WPARAM16, HANDLE16, LPARAM};
-use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
-use crate::pass::pass_1000::{pass1_1000_3cea, pass1_1000_4906, pass1_1000_5586};
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
-use crate::pass::pass_1030::{pass1_1030_8344, pass1_1030_8326, pass1_1030_6e14, pass1_1030_6ddc, fn_ptr_1030_835a};
-use crate::pass::pass_1018::{pass1_1018_5206, pass1_1018_50ea, pass1_1018_2678, pass1_1018_3ab2, pass1_1018_3d44, pass1_1018_3a7a, pass1_1018_3a5c, pass1_1018_3a42, pass1_1018_3424, pass1_1018_3cda, pass1_1018_3a94, pass1_1018_1c9a, pass1_1018_57d2, pass1_1018_36e6, pass1_1018_3710};
-use crate::pass::pass_1040::{pass1_1040_bfde, struct_1040_bf3e, pass1_1040_b45e, pass1_1040_b54a, pass1_1040_9824, pass1_1040_5dc4, pass1_1040_5cd6, pass1_1040_a5d0};
-use crate::pass::pass_1008::{pass1_1008_4d72, pass1_1008_3e94, pass1_1008_3e38, pass1_1008_4772, pass1_1008_5b12, pass1_1008_5784, pass1_1008_3bd6, pass1_1008_5fd8};
-use crate::string::string_1010::{load_string_1010_847e, load_string_1010_ac92, string_1010_5286, load_string_1010_84e0, string_op_1010_c446};
-use crate::pass::pass_1020::{string_op_1020_c222, string_1020_c0d8, pass1_1020_bae6};
-use crate::struct_ops::struct_1030::struct_op_1030_73a8;
-use crate::struct_ops::struct_1010::{struct_1010_dd5e, struct_1010_9172};
-use crate::sys_api::{reg_class_1040_98c0, sprintf_op_1018_34b6};
-use crate::string::string_1000::{unk_str_op_1000_3d3e, str_op_1000_3da4};
-use crate::defines::{Struct65, Struct18, Struct20};
-use crate::cleanup::unk_destroy_win_op_1010_2fa0;
-use crate::ui::ui_1010::{win_ui_op_1010_3202, ui_op_1010_79aa};
 use std::default::default;
-use crate::switch_ops::switch_1018::switch_1018_3b9e;
-use crate::string::string_1018::{unk_str_op_1018_35b0, string_1018_39d8};
-use crate::pass::pass_1028::{pass1_1028_4a9a, pass1_1028_8dec, pass1_1028_8d9e};
-use crate::ui::ui_1008::pass1_1008_a930;
-use crate::string::string_1040::string_1040_8520;
-use crate::global::AppContext;
-use crate::draw::draw_1040::draw_op_1040_9948;
+
+use crate::cleanup::unk_destroy_win_op_1010_2fa0;
 use crate::debug::debug_print_1008_6048;
+use crate::defines::{Struct18, Struct20, Struct65};
+use crate::draw::draw_1040::draw_op_1040_9948;
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
+use crate::global::AppContext;
+use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
+use crate::mixed::mixed_1010_20ba;
+use crate::pass::pass_1000::{pass1_1000_3cea, pass1_1000_4906, pass1_1000_5586};
+use crate::pass::pass_1008::{pass1_1008_3bd6, pass1_1008_3e94, pass1_1008_4772, pass1_1008_4d72, pass1_1008_5784, pass1_1008_5b12, pass1_1008_5fd8};
+use crate::pass::pass_1010::{pass1_1010_038e, pass1_1010_0898, pass1_1010_2ee2, pass1_1010_32c0, pass1_1010_4f30, pass1_1010_5120, pass1_1010_519a, pass1_1010_52fc, pass1_1010_531c, pass1_1010_5d9c, pass1_1010_5f7a, pass1_1010_5fb0, pass1_1010_60a0, pass1_1010_60b4, pass1_1010_60ba, pass1_1010_60c0, pass1_1010_60c6, pass1_1010_60fa, pass1_1010_6118, pass1_1010_9044, pass1_1010_91cc, pass1_1010_9210, pass1_1010_a50c, pass1_1010_a568, pass1_1010_a58a, pass1_1010_a5ac, pass1_1010_a5ca, pass1_1010_a5ec, pass1_1010_ac62, pass1_1010_acc0, pass1_1010_c320, pass1_1010_c3c2};
+use crate::pass::pass_1018::{pass1_1018_1c9a, pass1_1018_2678, pass1_1018_3424, pass1_1018_36e6, pass1_1018_3710, pass1_1018_3a42, pass1_1018_3a5c, pass1_1018_3a7a, pass1_1018_3a94, pass1_1018_3ab2, pass1_1018_3cda, pass1_1018_3d44, pass1_1018_50ea, pass1_1018_5206, pass1_1018_57d2};
+use crate::pass::pass_1020::{pass1_1020_bae6, string_1020_c0d8, string_op_1020_c222};
+use crate::pass::pass_1028::{pass1_1028_4a9a, pass1_1028_8d9e, pass1_1028_8dec};
+use crate::pass::pass_1030::{fn_ptr_1030_835a, pass1_1030_6ddc, pass1_1030_6e14, pass1_1030_8326, pass1_1030_8344};
+use crate::pass::pass_1040::{pass1_1040_5cd6, pass1_1040_5dc4, pass1_1040_9824, pass1_1040_a5d0, pass1_1040_b45e, pass1_1040_b54a, pass1_1040_bfde, struct_1040_bf3e};
+use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::string::string_1010::{load_string_1010_847e, load_string_1010_84e0, load_string_1010_ac92, string_1010_5286, string_op_1010_c446};
+use crate::string::string_1018::{string_1018_39d8, unk_str_op_1018_35b0};
+use crate::string::string_1040::string_1040_8520;
+use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
+use crate::struct_ops::struct_1010::{struct_1010_9172, struct_1010_dd5e};
+use crate::struct_ops::struct_1030::struct_op_1030_73a8;
 use crate::struct_ops::struct_1040::struct_1040_a598;
+use crate::switch_ops::switch_1018::switch_1018_3b9e;
+use crate::sys_api::{reg_class_1040_98c0, sprintf_op_1018_34b6};
+use crate::ui::ui_1008::pass1_1008_a930;
+use crate::ui::ui_1010::{ui_op_1010_79aa, win_ui_op_1010_3202};
 use crate::ui::ui_1038::set_win_pos_1038_abdc;
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
+use crate::win_struct::{COLORREF, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16, HWND16, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR, WPARAM16};
+use crate::winapi::{CallWindowProc16, CheckDlgButton16, CheckRadioButton16, ClientToScreen16, CreateDialog16, CreateSolidBrush16, CreateWindow16, DefWindowProc16, DeleteObject16, DestroyMenu16, DestroyWindow16, EnableWindow16, FreeProcInstance16, GetClientRect16, GetCursorPos16, GetDC16, GetDlgCtrlID16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetNextDlgTabItem16, GetProp16, GetStockObject16, GetSubMenu16, GetSystemMetrics16, GetTextExtent16, GetWindowLong16, GetWindowRect16, GetWindowText16, InvalidateRect16, IsDialogMessage16, IsDlgButtonChecked, IsWindow16, LoadCursor16, LoadMenu16, MapDialogRect16, MessageBox16, MoveWindow16, PostMessage16, PtInRect16, ReleaseCapture16, ReleaseDC16, RemoveProp16, ScreenToClient16, SendDlgItemMessage16, SendMessage16, SetBkColor16, SetCapture16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetProp16, SetSysModalWindow, SetTextColor16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, TrackPopupMenu16, UpdateWindow16, WinHelp16, wsprintf16};
 
 pub fn show_win_1040_0766(param_1: &mut Struct1, param_2: u16) {
     let in_DX: *mut u8;
@@ -175,7 +177,7 @@ pub fn win_ui_op_1040_07dc(param_1: u16, param_2: u16, param_3: u16, param_4: u1
 }
 
 
-pub fn enable_window_1040_0acc(param_1: u16, param_2: u16, bool param_3, param_4: HWND16) {
+pub fn enable_window_1040_0acc(param_1: u16, param_2: u16, param_3: bool, param_4: HWND16) {
     let BVar1: bool;
 
     BVar1 = IsWindow16(param_4);
@@ -1093,7 +1095,7 @@ pub fn win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 }
 
 
-pub fn win_dlg_item_1040_2d48(param_1: u32, param_2: HWND16, bool param_3) {
+pub fn win_dlg_item_1040_2d48(param_1: u32, param_2: HWND16, param_3: bool) {
     let UVar1: u16;
     let value: u16;
     let local_4: bool;
@@ -1778,7 +1780,7 @@ pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: *mut u8
         uStack26 = (uStack34 + 0x4);
     }
     if ((local_1e._2_2_ == 0x0) && (local_1e == 0x0)) {
-        puVar6 = pass1_1008_3e38(CONCAT22(param_3, local_30));
+        puVar6 = clear_struct_1008_3e38(CONCAT22(param_3, local_30));
         // puVar2 = (puVar6 >> 0x10);
         uVar1 = (iVar3 + 0x96);
         pass1_1018_2678(uVar1, (uVar1 >> 0x10),
@@ -3336,7 +3338,7 @@ pub fn win_ui_op_1040_81fe(param_1: HWND16) {
 }
 
 
-pub fn move_win_1040_826c(param_1: &mut Struct1, param_2: i16, bool param_3) {
+pub fn move_win_1040_826c(param_1: &mut Struct1, param_2: i16, param_3: bool) {
     let IVar1: i16;
     let unaff_CS: HWND16;
     let local_e: RECT16;
@@ -3477,7 +3479,7 @@ pub fn enable_window_1040_8ea0(param_1: u16, param_2: u16, param_3: u16, param_4
 }
 
 
-pub fn mix_win_ui_op_1040_911e(param_1: *mut u16) {
+pub fn mix_win_ui_op_1040_911e(param_1: &mut Struct18) {
     let puVar1: u32;
     let uVar2: u16;
     let uVar3: u32;
@@ -3528,7 +3530,7 @@ pub fn mix_win_ui_op_1040_911e(param_1: *mut u16) {
 }
 
 
-pub fn enable_win_1040_9234(param_1: u32, bool param_2, param_3: HWND16) {
+pub fn enable_win_1040_9234(param_1: u32, param_2: bool, param_3: HWND16) {
     if ((param_1 + 0x18) != 0x0) {
         EnableWindow16(param_3, param_2);
     }

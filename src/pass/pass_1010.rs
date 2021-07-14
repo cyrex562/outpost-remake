@@ -1,36 +1,37 @@
-use crate::util::{CONCAT22, CONCAT12, CONCAT13, ZEXT24, CARRY2, SUB42};
-use crate::defines::{Struct79, Struct18, Struct65, Struct11, Struct19};
-use crate::pass::pass_1028::{pass1_1028_e1ec, pass1_1028_b58e, pass1_1028_121e, pass1_1028_4faa, pass1_1028_e4ec, pass1_1028_dc52, pass1_1028_e0a0};
-use crate::pass::pass_1030::{fn_ptr_1030_835a, pass1_1030_532e, pass1_1030_70f4, pass1_1030_7c28, pass1_1030_6ddc, pass1_1030_7f5a, pass1_1030_7f98, pass1_1030_809c, pass1_1030_8344, pass1_1030_25d8, pass1_1030_38f2, pass1_1030_301a, fn_ptr_1030_84d0, pass1_1030_8326};
-use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
-use crate::pass::pass_1018::{pass1_1018_04f2, pass1_1018_209c, pass1_1018_4dce, pass1_1018_4b78};
-use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78, pass1_1038_50e0, pass1_1038_5050};
-use crate::mixed::mixed_1010_20ba;
-use crate::struct_ops::struct_1008::{pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a};
-use crate::struct_ops::struct_1030::{struct_op_1030_73a8, struct_op_1030_1cd8};
-use crate::string::string_1000::unk_str_op_1000_3d3e;
-use crate::string::string_1020::string_op_1020_c2f8;
-use crate::pass::pass_1020::{string_op_1020_c222, pass1_1020_bae6, string_1020_c0d8};
-use crate::string::string_1008::str_op_1008_60e8;
-use crate::pass::pass_1000::{pass1_1000_4906, pass1_1000_5586, pass1_1000_3cea, pass1_1000_475e, pass1_1000_48a8, pass1_1000_4aea, pass1_1000_472c};
-use crate::struct_ops::struct_1010::{struct_1010_dd5e, struct_1010_383a, struct_1010_38f8};
-use crate::string::string_1040::string_1040_a626;
 use std::default::default;
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
+
 use crate::bad::bad_1010_bf08;
-use crate::pass::pass_1008::{pass1_1008_3f62, pass1_1008_5b12, pass1_1008_5784, pass1_1008_64a2, pass1_1008_4544, pass1_1008_4772, pass1_1008_6562, pass1_1008_64c8, pass1_1008_3eb4, pass1_1008_7c2a, pass1_1008_3e38, pass1_1008_92b2, pass1_1008_3e54, pass1_1008_3e94};
-use crate::sys_api::{set_err_mode_1010_8b14, write_private_profile_str_1010_5b10, free_rsrc_1010_4b3e, get_sys_metrics_1018_4b1e};
-use crate::file::file_1008::{file_1008_6414, read_file_1008_7dee, read_file_1008_7c6e, write_to_file_1008_7cac};
-use crate::win_struct::{HINSTANCE16, SEGPTR};
-use crate::mem_1008::memcpy_op_1008_676e;
-use crate::ui::ui_1010::send_msg_1010_7c42;
-use crate::cleanup::{destroy_window_1010_7b26, clenaup_win_ui_1018_4d22, unk_destroy_win_op_1010_2fa0};
-use crate::switch_ops::switch_1008::{switch_1008_73ea, switch_1008_72bc};
-use crate::switch_ops::switch_1010::switch_1010_6646;
-use crate::string::string_1010::{load_string_1010_84ac, string_1010_5286};
-use crate::struct_ops::struct_1018::struct_op_1018_4cda;
-use crate::ui::ui_1040::mov_update_win_1040_93aa;
+use crate::cleanup::{clenaup_win_ui_1018_4d22, destroy_window_1010_7b26, unk_destroy_win_op_1010_2fa0};
+use crate::defines::{Struct11, Struct18, Struct19, Struct65, Struct79};
+use crate::file::file_1008::{file_1008_6414, read_file_1008_7c6e, read_file_1008_7dee, write_to_file_1008_7cac};
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::global::AppContext;
+use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
+use crate::mem_1008::memcpy_op_1008_676e;
+use crate::mixed::mixed_1010_20ba;
+use crate::pass::pass_1000::{pass1_1000_3cea, pass1_1000_472c, pass1_1000_475e, pass1_1000_48a8, pass1_1000_4906, pass1_1000_4aea, pass1_1000_5586};
+use crate::pass::pass_1008::{pass1_1008_3e54, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_3f62, pass1_1008_4544, pass1_1008_4772, pass1_1008_5784, pass1_1008_5b12, pass1_1008_64a2, pass1_1008_64c8, pass1_1008_6562, pass1_1008_7c2a, pass1_1008_92b2};
+use crate::pass::pass_1018::{pass1_1018_04f2, pass1_1018_209c, pass1_1018_4b78, pass1_1018_4dce};
+use crate::pass::pass_1020::{pass1_1020_bae6, string_1020_c0d8, string_op_1020_c222};
+use crate::pass::pass_1028::{pass1_1028_121e, pass1_1028_4faa, pass1_1028_b58e, pass1_1028_dc52, pass1_1028_e0a0, pass1_1028_e1ec, pass1_1028_e4ec};
+use crate::pass::pass_1030::{fn_ptr_1030_835a, fn_ptr_1030_84d0, pass1_1030_25d8, pass1_1030_301a, pass1_1030_38f2, pass1_1030_532e, pass1_1030_6ddc, pass1_1030_70f4, pass1_1030_7c28, pass1_1030_7f5a, pass1_1030_7f98, pass1_1030_809c, pass1_1030_8326, pass1_1030_8344};
+use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78, pass1_1038_5050, pass1_1038_50e0};
+use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::string::string_1008::str_op_1008_60e8;
+use crate::string::string_1010::{load_string_1010_84ac, string_1010_5286};
+use crate::string::string_1020::string_op_1020_c2f8;
+use crate::string::string_1040::string_1040_a626;
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a};
+use crate::struct_ops::struct_1010::{struct_1010_383a, struct_1010_38f8, struct_1010_dd5e};
+use crate::struct_ops::struct_1018::struct_op_1018_4cda;
+use crate::struct_ops::struct_1030::{struct_op_1030_1cd8, struct_op_1030_73a8};
+use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
+use crate::switch_ops::switch_1010::switch_1010_6646;
+use crate::sys_api::{free_rsrc_1010_4b3e, get_sys_metrics_1018_4b1e, set_err_mode_1010_8b14, write_private_profile_str_1010_5b10};
+use crate::ui::ui_1010::send_msg_1010_7c42;
+use crate::ui::ui_1040::mov_update_win_1040_93aa;
+use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
+use crate::win_struct::{HINSTANCE16, SEGPTR};
 
 pub unsafe fn pass1_1010_0000(param_1: &mut Struct645, param_3: u16, param_4: u16, unaff_di: &mut Struct19) -> u32
 
@@ -3183,7 +3184,7 @@ pub fn pass1_1010_4c3e(param_1: u32, param_2: i16, param_3: i16, param_4: *mut u
             }
         }
         iStack4 = 0x14;
-        pass1_1008_3e38(CONCAT22(param_5, local_c));
+        clear_struct_1008_3e38(CONCAT22(param_5, local_c));
         uStack6 = 0x0;
         iStack14 = 0x0;
         loop {

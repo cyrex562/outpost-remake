@@ -91,7 +91,7 @@ pub fn window_op_1008_0af8(astruct *param_1,param_2: *mut u8,param_3: u16)
 
 bool 
 mixed_win_op_1008_0c60
-          (astruct_72 **param_1,param_2: u16,bool param_3,param_4: HWND16,
+          (astruct_72 **param_1,param_2: u16,param_3: bool,param_4: HWND16,
           param_5: u16,param_6: u16)
 
 {

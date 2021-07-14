@@ -39,7 +39,7 @@ pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u
                 uVar5 = 0x0;
                 uVar3 = 0x0;
             } else {
-                pass1_1008_4016(CONCAT22(puVar2, uVar5));
+                pass1_1008_4016(ctx, CONCAT22(puVar2, uVar5));
             }
             (uVar5 + 0x6) = lVar8;
             pass1_1008_47cc(CONCAT22(uVar3, uVar5));

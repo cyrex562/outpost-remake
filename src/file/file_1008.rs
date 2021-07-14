@@ -492,7 +492,7 @@ pub fn file_fn_1008_726c(uint32_t param_1, param_2: u16, HFILE16 file_handle) ->
 }
 
 
-pub fn file_1008_7548(param_1: u32, long *param_2, param_3: HFILE16, param_4: u16) {
+pub fn file_1008_7548(param_1: u32, param_2: &i32, param_3: HFILE16, param_4: u16) {
     let ppcVar1: u32;
     let uVar2: u16;
     let BVar3: bool;
@@ -557,7 +557,7 @@ pub fn file_1008_7548(param_1: u32, long *param_2, param_3: HFILE16, param_4: u1
 }
 
 
-pub fn file_1008_76e4(param_1: u32, long *param_2, param_3: u16, param_4: u16, param_5: u16) {
+pub fn file_1008_76e4(param_1: u32, param_2: &i32, param_3: u16, param_4: u16, param_5: u16) {
     let ppcVar1: u32;
     let uVar2: u16;
     let BVar3: bool;
@@ -607,7 +607,7 @@ pub fn file_1008_76e4(param_1: u32, long *param_2, param_3: u16, param_4: u16, p
 }
 
 
-pub fn file_1008_77cc(param_1: u32, long *param_2, param_3: *mut u8, param_4: HFILE16, param_5: u16) -> u16
+pub fn file_1008_77cc(param_1: u32, param_2: &i32, param_3: *mut u8, param_4: HFILE16, param_5: u16) -> u16
 
 {
     let uVar1: u16;

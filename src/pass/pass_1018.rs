@@ -1,7 +1,7 @@
 use std::default::default;
 
 use crate::cleanup::{clenaup_win_ui_1018_4d22, delete_palette_1018_e16c, destroy_win_1008_628e};
-use crate::defines::{Struct11, Struct18, Struct79, Struct19};
+use crate::defines::{Struct11, Struct18, Struct19, Struct79};
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::draw::draw_1020::{draw_op_1020_041e, draw_op_1020_9364, palette_op_1020_92c4, unk_draw_op_1020_0c3e, unk_draw_op_1020_7f7a, win_ui_palette_op_1020_0cd2};
 use crate::file::file_1008::{read_file_1008_7bc8, read_file_1008_7cfe, read_file_1008_7dee};
@@ -10,7 +10,7 @@ use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
 use crate::misc::empty_1008_8fc4;
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::{pass1_1000_07fc, pass1_1000_093a, pass1_1000_0ed4, pass1_1000_3de8, pass1_1000_4906, pass1_1000_49b2, pass1_1000_5586};
-use crate::pass::pass_1008::{pass1_1008_3e38, pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_3f32, pass1_1008_3f62, pass1_1008_4772, pass1_1008_50c2, pass1_1008_5118, pass1_1008_5134, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_5bdc, pass1_1008_5c34, pass1_1008_612e, pass1_1008_68c6, pass1_1008_6978, pass1_1008_6c90, pass1_1008_6cec, pass1_1008_87cc, pass1_1008_8bc6, pass1_1008_8faa, pass1_1008_92b2, pass1_1008_941a, pass1_1008_9f48, pass1_1008_dfa6, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_e852};
+use crate::pass::pass_1008::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_3f32, pass1_1008_3f62, pass1_1008_4772, pass1_1008_50c2, pass1_1008_5118, pass1_1008_5134, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_5bdc, pass1_1008_5c34, pass1_1008_612e, pass1_1008_68c6, pass1_1008_6978, pass1_1008_6c90, pass1_1008_6cec, pass1_1008_87cc, pass1_1008_8bc6, pass1_1008_8faa, pass1_1008_92b2, pass1_1008_941a, pass1_1008_9f48, pass1_1008_dfa6, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_e852};
 use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2b50, pass1_1010_2b66, pass1_1010_3c9e, pass1_1010_3cd0, pass1_1010_4f20, pass1_1010_5f7a, pass1_1010_5fb0, pass1_1010_65d0, pass1_1010_71d6, pass1_1010_8018, pass1_1010_81f6, pass1_1010_bf1e, pass1_1010_eb66, pass1_1010_ec18};
 use crate::pass::pass_1020::{pass1_1020_808e, pass1_1020_bd80, string_1020_c0ca, string_1020_c0d8, string_op_1020_c222};
 use crate::pass::pass_1028::{pass1_1028_d69e, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e4ec};
@@ -20,7 +20,7 @@ use crate::string::string_1000::str_op_1000_3da4;
 use crate::string::string_1008::{str_op_1008_60e8, string_1008_e586};
 use crate::string::string_1010::load_string_1010_84ac;
 use crate::string::string_1020::string_op_1020_c2f8;
-use crate::struct_ops::struct_1008::{pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_ca5a, pass1_1008_caa0, pass1_1008_cac6, set_struct_1008_574a, struct_op_1008_8e9e};
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, pass1_1008_c6ae, pass1_1008_c6fa, pass1_1008_ca5a, pass1_1008_caa0, pass1_1008_cac6, set_struct_1008_574a, struct_op_1008_8e9e};
 use crate::struct_ops::struct_1018::{struct_1018_4720, struct_1018_4790, struct_1018_47c8, struct_1018_4842, struct_1018_48b0, struct_1018_48e8, struct_1018_4920, struct_1020_0762, struct_op_1018_4cda};
 use crate::struct_ops::struct_1020::{set_struct_op_1020_921c, struct_1020_3644};
 use crate::struct_ops::struct_1028::struct_op_1028_933c;
@@ -89,7 +89,7 @@ pub fn pass1_1018_0000(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u
                                     ctx.PTR_LOOP_1050_5f2e,0x1000);
         (iVar5 + 0x2c) = uVar7;
         (iVar5 + 0x2e) = ctx.PTR_LOOP_1050_5f2e;
-        pass1_1008_3e38(CONCAT22(param_5,local_20));
+        clear_struct_1008_3e38(CONCAT22(param_5, local_20));
           // TODO: refactor for loop
         // for (iStack16 = 0x0; piVar1 = (iVar5 + 0x30),
         //     *piVar1 != iStack16 && iStack16 <= *piVar1; iStack16 += 0x1) {
@@ -1466,7 +1466,7 @@ pub fn pass1_1018_18b8(param_1: u16,param_2: &mut Struct55,param_3: u16)
   iVar3.field_0x22 = 0x1008;
   &iVar3.field_0x24 = 0x0;
   iVar3.field_0x28 = 0x4;
-  puVar2 = pass1_1008_3e38((param_2 & 0xffff0000 | ZEXT24(iVar3 + 0x1)));
+  puVar2 = clear_struct_1008_3e38((param_2 & 0xffff0000 | ZEXT24(iVar3 + 0x1)));
  // puVar1 = (puVar2 >> 0x10);
   &iVar3[0x1].field_0x6 = 0x0;
   iVar3[0x1].field_0xa = 0x0;
@@ -2156,7 +2156,7 @@ pub fn pass1_1018_25d2(param_1: u32,param_2: u16,param_3: u32,param_4: i16,param
   if ((param_1 + 0x20) == 0x0) {
     return 0x0;
   }
-  puVar4 = pass1_1008_3e38(CONCAT22(param_5,local_8));
+  puVar4 = clear_struct_1008_3e38(CONCAT22(param_5, local_8));
  // puVar2 = (puVar4 >> 0x10);
   pass1_1018_161c(param_5,(param_1 + 0x20),
                   CONCAT22(param_5,local_8),param_3,(param_3 >> 0x10))
@@ -4558,12 +4558,12 @@ pub fn pass1_1018_5b06(param_1: &mut Struct132,param_2: u16,param_3: u16,param_4
   set_struct_op_1020_921c(CONCAT22(param_2,param_1),param_3);
   param_1.field_0x14 = 0x0;
   param_1.field_0x18 = 0x0;
-  puVar11 = pass1_1008_3e38(CONCAT22(param_2,&param_1.field_0x1c));
+  puVar11 = clear_struct_1008_3e38(CONCAT22(param_2, &param_1.field_0x1c));
   CONCAT22(param_2,param_1) = &ctx.PTR_LOOP_1050_5e1a;
   param_1.field_0x2 = 0x1018;
   puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_4,
                              (puVar11 >> 0x10),unaff_DI);
-  puVar11 = pass1_1008_3e38(CONCAT22(param_4,local_c));
+  puVar11 = clear_struct_1008_3e38(CONCAT22(param_4, local_c));
  // puVar7 = (puVar11 >> 0x10);
   pass1_1008_3f62(CONCAT22(param_4,local_c),
                   (puStack6 & 0xffff0000 | (puStack6 + 0xe)))
@@ -8102,8 +8102,8 @@ pub fn pass1_1018_ec74(param_1: &mut Struct661,param_2: i16,param_3: u16,param_4
   
   set_struct_op_1020_921c(CONCAT22(param_2,param_1),param_3);
   param_1.field_0x14 = 0x0;
-  pass1_1008_3e38(CONCAT22(param_2,&param_1.field_0x18));
-  puVar6 = pass1_1008_3e38(CONCAT22(param_2,&param_1.field_0x1e));
+  clear_struct_1008_3e38(CONCAT22(param_2, &param_1.field_0x18));
+  puVar6 = clear_struct_1008_3e38(CONCAT22(param_2, &param_1.field_0x1e));
   &param_1.field_0x24 = 0x0;
   CONCAT22(param_2,param_1) = 0x1cc;
   param_1.field_0x2 = 0x1020;

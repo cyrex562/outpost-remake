@@ -1,32 +1,33 @@
-use crate::pass::pass_1030::{pass1_1030_1358, pass1_1030_684c, pass1_1030_64ce, pass1_1030_1a32, pass1_1030_13f6, pass1_1030_4c06, pass1_1030_4bbe, pass1_1030_4538, pass1_1030_61b0, pass1_1030_615a, fn_ptr_1030_835a, pass1_1030_6522, pass1_1030_177a, pass1_1030_730a, pass1_1030_72d0, fn_ptr_1030_7296, pass1_1030_6c4c, pass1_1030_6d80, pass1_1030_16b2, pass1_1030_165e, pass1_1030_375a, pass1_1030_2690, pass1_1030_25b2, pass1_1030_387c, pass1_1030_3548, pass1_1030_38b8, pass1_1030_355c, pass1_1030_35a4, pass1_1030_7e5a, pass1_1030_73ee, pass1_1030_1d7c, pass1_1030_34da, pass1_1030_bd74, pass1_1030_1d58, pass1_1030_bcae, pass1_1030_6fa0, pass1_1030_2a2c, pass1_1030_dcc2, pass1_1030_5b1c, pass1_1030_5b3e, pass1_1030_df0c, pass1_1030_2fac, pass1_1030_7c28, pass1_1030_7f1a, pass1_1030_bc24, pass1_1030_b936, pass1_1030_61fe, pass1_1030_5a80, pass1_1030_4782, pass1_1030_3006, pass1_1030_4628, pass1_1030_5fe2, pass1_1030_4594, pass1_1030_5d3c, pass1_1030_154c, pass1_1030_14b4, pass1_1030_2068, pass1_1030_145a, pass1_1030_671c, pass1_1030_67cc, pass1_1030_6740, pass1_1030_66de, pass1_1030_560e, pass1_1030_2958, pass1_1030_5d0a, pass1_1030_7d7c, pass1_1030_bcde, pass1_1030_627e, pass1_1030_5b5c, pass1_1030_3534, pass1_1030_38f2, pass1_1030_3694, pass1_1030_7ddc, pass1_1030_7c50, pass1_1030_7d1c};
-use crate::pass::pass_1000::{pass1_1000_07fc, pass1_1000_4906};
-use crate::util::{CONCAT22, ZEXT24, SUB42, CONCAT12, CONCAT13, CONCAT11, CARRY2};
-use crate::struct_ops::struct_1030::{struct_1030_4574, struct_1030_11aa, struct_1030_44be, struct_op_1030_73a8, struct_1030_1628, struct_1030_e4fa, struct_1030_dc96, struct_1030_565a, struct_1030_299a};
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a};
-use crate::bad::bad_1030_1312;
-use crate::mixed::mixed_1010_20ba;
-use crate::fn_ptr::fn_ptr_1000::{fn_ptr_op_1000_1708, fn_ptr_1000_17ce};
-use crate::struct_ops::struct_1008::{pass1_1008_c626, struct_1008_bde0, struct_op_1008_8e9e, pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a};
-use crate::defines::Struct18;
-use crate::file::file_1008::{write_to_file_1008_7cac, read_file_1008_7dee};
-use crate::pass::pass_1020::{pass1_1020_c872, pass1_1020_c860, pass1_1020_a43e, pass1_1020_bb16, pass1_1020_bae6, pass1_1020_a80e, pass1_1020_a54c, pass1_1020_a49a, pass1_1020_ba3e, pass1_1020_a89e, pass1_1020_c42e};
-use crate::fn_ptr::fn_ptr_1028::{fn_ptr_1028_d742, fn_ptr_1028_d728};
-use crate::pass::pass_1008::{pass1_1008_8faa, pass1_1008_5b12, pass1_1008_5784, pass1_1008_3e76, pass1_1008_6cec, pass1_1008_6c90, pass1_1008_3eb4, pass1_1008_612e, pass1_1008_3e38, pass1_1008_df4a, pass1_1008_3e54, pass1_1008_3e94, pass1_1008_7ad4};
-use crate::pass::pass_1018::{pass1_1018_dcf6, pass1_1018_34a6, pass1_1018_0196, pass1_1018_04b8};
-use crate::pass::pass_1038::{pass1_1038_565e, empty_1038_540a, pass1_1038_4d6e, pass1_1038_5770, pass1_1038_387e, pass1_1038_56d6, pass1_1038_5464, pass1_1038_3fca, pass1_1038_518c, pass1_1038_3fb0, pass1_1038_349e, pass1_1038_4900, pass1_1038_4d0e, pass1_1038_4d3c, pass1_1038_4f54, pass1_1038_4e78, pass1_1038_3698, pass1_1038_362e, pass1_1038_3ba0, pass1_1038_75ca, pass1_1038_79f2, pass1_1038_5804, pass1_1038_57dc, pass1_1038_3222, pass1_1038_79b2, pass1_1038_52b8, pass1_1038_42cc, pass1_1038_43cc};
-use crate::pass::pass_1010::{pass1_1010_043a, pass1_1010_ebf8, pass1_1010_089e, pass1_1010_ed3e, pass1_1010_ed22, pass1_1010_65d0, pass1_1010_9f72, pass1_1010_988c, pass1_1010_9766, pass1_1010_ec84};
-use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
-use crate::file::file_1030::file_1030_1730;
-use crate::string::string_1030::vsprintf_op_1030_840a;
 use std::default::default;
-use crate::string::string_1008::load_str_and_sprintf_1008_b78a;
-use crate::ui::ui_1028::post_msg_1028_76da;
+
+use crate::bad::bad_1030_1312;
+use crate::defines::Struct18;
+use crate::file::file_1008::{read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::file::file_1028::{file_1028_b81a, write_to_file_1028_b5ec};
-use crate::struct_ops::struct_1028::{struct_1028_0068, struct_op_1028_87f0};
+use crate::file::file_1030::file_1030_1730;
+use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::fn_ptr::fn_ptr_1020::fn_ptr_1020_ba7e;
-use crate::ui::ui_1008::post_win_msg_1008_a0e4;
+use crate::fn_ptr::fn_ptr_1028::{fn_ptr_1028_d728, fn_ptr_1028_d742};
+use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
+use crate::mixed::mixed_1010_20ba;
+use crate::pass::pass_1000::{pass1_1000_07fc, pass1_1000_4906};
+use crate::pass::pass_1008::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_5784, pass1_1008_5b12, pass1_1008_612e, pass1_1008_6c90, pass1_1008_6cec, pass1_1008_7ad4, pass1_1008_8faa, pass1_1008_df4a};
+use crate::pass::pass_1010::{pass1_1010_043a, pass1_1010_089e, pass1_1010_65d0, pass1_1010_9766, pass1_1010_988c, pass1_1010_9f72, pass1_1010_ebf8, pass1_1010_ec84, pass1_1010_ed22, pass1_1010_ed3e};
+use crate::pass::pass_1018::{pass1_1018_0196, pass1_1018_04b8, pass1_1018_34a6, pass1_1018_dcf6};
+use crate::pass::pass_1020::{pass1_1020_a43e, pass1_1020_a49a, pass1_1020_a54c, pass1_1020_a80e, pass1_1020_a89e, pass1_1020_ba3e, pass1_1020_bae6, pass1_1020_bb16, pass1_1020_c42e, pass1_1020_c860, pass1_1020_c872};
+use crate::pass::pass_1030::{fn_ptr_1030_7296, fn_ptr_1030_835a, pass1_1030_1358, pass1_1030_13f6, pass1_1030_145a, pass1_1030_14b4, pass1_1030_154c, pass1_1030_165e, pass1_1030_16b2, pass1_1030_177a, pass1_1030_1a32, pass1_1030_1d58, pass1_1030_1d7c, pass1_1030_2068, pass1_1030_25b2, pass1_1030_2690, pass1_1030_2958, pass1_1030_2a2c, pass1_1030_2fac, pass1_1030_3006, pass1_1030_34da, pass1_1030_3534, pass1_1030_3548, pass1_1030_355c, pass1_1030_35a4, pass1_1030_3694, pass1_1030_375a, pass1_1030_387c, pass1_1030_38b8, pass1_1030_38f2, pass1_1030_4538, pass1_1030_4594, pass1_1030_4628, pass1_1030_4782, pass1_1030_4bbe, pass1_1030_4c06, pass1_1030_560e, pass1_1030_5a80, pass1_1030_5b1c, pass1_1030_5b3e, pass1_1030_5b5c, pass1_1030_5d0a, pass1_1030_5d3c, pass1_1030_5fe2, pass1_1030_615a, pass1_1030_61b0, pass1_1030_61fe, pass1_1030_627e, pass1_1030_64ce, pass1_1030_6522, pass1_1030_66de, pass1_1030_671c, pass1_1030_6740, pass1_1030_67cc, pass1_1030_684c, pass1_1030_6c4c, pass1_1030_6d80, pass1_1030_6fa0, pass1_1030_72d0, pass1_1030_730a, pass1_1030_73ee, pass1_1030_7c28, pass1_1030_7c50, pass1_1030_7d1c, pass1_1030_7d7c, pass1_1030_7ddc, pass1_1030_7e5a, pass1_1030_7f1a, pass1_1030_b936, pass1_1030_bc24, pass1_1030_bcae, pass1_1030_bcde, pass1_1030_bd74, pass1_1030_dcc2, pass1_1030_df0c};
+use crate::pass::pass_1038::{empty_1038_540a, pass1_1038_3222, pass1_1038_349e, pass1_1038_362e, pass1_1038_3698, pass1_1038_387e, pass1_1038_3ba0, pass1_1038_3fb0, pass1_1038_3fca, pass1_1038_42cc, pass1_1038_43cc, pass1_1038_4900, pass1_1038_4d0e, pass1_1038_4d3c, pass1_1038_4d6e, pass1_1038_4e78, pass1_1038_4f54, pass1_1038_518c, pass1_1038_52b8, pass1_1038_5464, pass1_1038_565e, pass1_1038_56d6, pass1_1038_5770, pass1_1038_57dc, pass1_1038_5804, pass1_1038_75ca, pass1_1038_79b2, pass1_1038_79f2};
 use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::string::string_1008::load_str_and_sprintf_1008_b78a;
+use crate::string::string_1030::vsprintf_op_1030_840a;
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, pass1_1008_c626, pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a, struct_1008_bde0, struct_op_1008_8e9e};
+use crate::struct_ops::struct_1028::{struct_1028_0068, struct_op_1028_87f0};
+use crate::struct_ops::struct_1030::{struct_1030_11aa, struct_1030_1628, struct_1030_299a, struct_1030_44be, struct_1030_4574, struct_1030_565a, struct_1030_dc96, struct_1030_e4fa, struct_op_1030_73a8};
+use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
 use crate::switch_ops::switch_1020::switch_1020_c3b4;
+use crate::ui::ui_1008::post_win_msg_1008_a0e4;
+use crate::ui::ui_1028::post_msg_1028_76da;
+use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 
 pub fn pass1_1028_00cc(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: *mut u8)
 {
@@ -290,7 +291,7 @@ pass1_1028_0582(param_1: *mut u32,param_2: *mut u32,param_3: u16,param_4: u16,pa
 
 {
   u32 **ppuVar1;
-  long *plVar2;
+  plVar2: &i32;
   let uVar3: u32;
   let ppcVar4: u32;
   let puVar5: *mut u8;
@@ -1129,7 +1130,7 @@ pub fn pass1_1028_134a(param_1: *mut u32,param_2: u16,param_3: u16,param_4: u16)
   let piVar1: *mut i16;
   let ppcVar2: u32;
   let BVar3: bool;
-  long *plVar4;
+  plVar4: &i32;
   let uVar5: u16;
   let uVar6: u16;
   let uVar7: u32;
@@ -3056,7 +3057,7 @@ pass1_1028_3958(param_1: u32,param_2: i16,param_3: u16,param_4: i16,param_5: u16
                param_6: u16)
 
 {
-  long *plVar1;
+  plVar1: &i32;
   qword qVar2;
   let uVar3: u16;
   let uVar4: u16;
@@ -4740,7 +4741,7 @@ pub fn pass1_1028_5a6a(param_1: i16,param_2: u16,param_3: i16,param_4: u32,param
 
 pub fn pass1_1028_5a98(param_1: u16,param_2: i16,param_3: u16)
 {
-  long *plVar1;
+  plVar1: &i32;
   let iVar2: i16;
   let ppcVar3: u32;
   let uVar4: u32;
@@ -6030,7 +6031,7 @@ pass1_1028_6fc0(param_1: &mut Struct100,param_2: u16,param_3: u8)
 
 pub fn pass1_1028_6ff6(param_1: u32,param_2: u16,param_3: i16,param_4: u16)
 {
-  long *plVar1;
+  plVar1: &i32;
   let puVar2: *mut u8;
   let paVar3: &mut Struct67;
   let puVar4: *mut u8;
@@ -6661,7 +6662,7 @@ pub fn pass1_1028_78b8(param_1: u32,param_2: i32,param_3: i16,param_4: u16,param
     uStack16 = puVar5 & 0xffff | param_2 << 0x10;
     if ((puVar5 + 0x200) == 0x8000002) {
       pass1_1020_a43e(param_4,puVar6,CONCAT22(param_4,&local_18));
-      puVar13 = pass1_1008_3e38(CONCAT22(param_4,local_1e));
+      puVar13 = clear_struct_1008_3e38(CONCAT22(param_4, local_1e));
      // puVar6 = (puVar13 >> 0x10);
       puVar1 = &local_18;
       pass1_1020_a49a(param_4,param_5,puVar6,CONCAT22(param_4,puVar1),
@@ -10283,7 +10284,7 @@ pub fn pass1_1028_b260(param_1: *mut u16)
 }
 
 
-pub fn pass1_1028_b2c8(param_1: u32,param_2: u32,bool param_3,param_4: u16) -> bool
+pub fn pass1_1028_b2c8(param_1: u32,param_2: u32,param_3: bool,param_4: u16) -> bool
 
 {
   let BVar1: bool;
@@ -12857,7 +12858,7 @@ pub fn pass1_1028_e44a(param_1: u32,param_2: i32,param_3: u16)
 pub fn pass1_1028_e4ec(param_1: u32)
 {
   let puVar1: u32;
-  long *plVar2;
+  plVar2: &i32;
   let uVar3: u32;
   let uVar4: u16;
   let uVar5: u32;

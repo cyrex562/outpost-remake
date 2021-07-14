@@ -40,7 +40,7 @@ use crate::global::AppContext;
 use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::pass1_1000_3cea;
-use crate::pass::pass_1008::{pass1_1008_3e38, pass1_1008_3e94, pass1_1008_3f62, pass1_1008_4772, pass1_1008_4d72, pass1_1008_5784, pass1_1008_5b12, pass1_1008_941a, pass1_1008_b200, pass1_1008_b340, pass1_1008_b366, pass1_1008_b38c, pass1_1008_b47a, pass1_1008_b4a0, pass1_1008_b61a, pass1_1008_b63a, pass1_1008_b820, pass1_1008_e038, pass1_1008_e2a4, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_eb5c, pass1_1008_eb6e};
+use crate::pass::pass_1008::{pass1_1008_3e94, pass1_1008_3f62, pass1_1008_4772, pass1_1008_4d72, pass1_1008_5784, pass1_1008_5b12, pass1_1008_941a, pass1_1008_b200, pass1_1008_b340, pass1_1008_b366, pass1_1008_b38c, pass1_1008_b47a, pass1_1008_b4a0, pass1_1008_b61a, pass1_1008_b63a, pass1_1008_b820, pass1_1008_e038, pass1_1008_e2a4, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_eb5c, pass1_1008_eb6e};
 use crate::pass::pass_1010::{pass1_1010_0886, pass1_1010_088c, pass1_1010_0892, pass1_1010_08e2, pass1_1010_091e, pass1_1010_0932, pass1_1010_375e, pass1_1010_3770, pass1_1010_5fd8, pass1_1010_6006, pass1_1010_6566, pass1_1010_6604};
 use crate::pass::pass_1018::{pass1_1018_0ad4, pass1_1018_1c9a};
 use crate::pass::pass_1028::{pass1_1028_d01a, pass1_1028_e1ec};
@@ -50,7 +50,7 @@ use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
 use crate::string::string_1008::{load_string_1008_b1f0, load_string_1008_b65a, string_1008_e586};
 use crate::string::string_1010::{load_string_1010_847e, unk_load_str_op_1010_2c34};
 use crate::string::string_1040::string_1040_8520;
-use crate::struct_ops::struct_1008::{pass1_1008_c79a, pass1_1008_c83a, pass1_1008_c85e, set_struct_1008_574a};
+use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, pass1_1008_c79a, pass1_1008_c83a, pass1_1008_c85e, set_struct_1008_574a};
 use crate::struct_ops::struct_1028::struct_1028_d2b0;
 use crate::sys_api::unk_win_msg_op_1008_9510;
 use crate::ui::ui_1008::pass1_1008_b146;
@@ -446,7 +446,7 @@ pub fn msg_box_ui_op_1038_8a3a(param_1: u32,param_2: &mut String,param_3: *mut u
 
 
 
-pub fn unk_win_ui_op_1038_8afe(param_1: &mut Struct50,param_2: HWND16,bool param_3)
+pub fn unk_win_ui_op_1038_8afe(param_1: &mut Struct50,param_2: HWND16,param_3: bool)
 {
   let uVar1: u32;
   let dlg_item: u16;
@@ -653,7 +653,7 @@ pub fn win_dlg_op_1038_9294(param_1: &mut Struct1,param_2: u16)
 bool 
 send_dlg_item_int_1038_94da
           (param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5: i16,
-          param_6: HWND16,bool param_7)
+          param_6: HWND16,param_7: bool)
 
 {
   let pUVar1: *mut u16;
@@ -850,7 +850,7 @@ win_ui_op_1038_977a(param_1: i16,param_2: u16,param_3: i16,param_4: *mut u8,para
 
 long 
 unk_win_ui_op_1038_9820
-          (param_1: &mut Struct51,param_2: i16,param_3: i16,param_4: HWND16,bool param_5)
+          (param_1: &mut Struct51,param_2: i16,param_3: i16,param_4: HWND16,param_5: bool)
 
 {
   let piVar1: *mut i16;
@@ -884,7 +884,7 @@ unk_win_ui_op_1038_9820
 
 
 
-pub fn win_ui_dlg_op_1038_98b4(param_1: &mut Struct51,param_2: HWND16,bool param_3)
+pub fn win_ui_dlg_op_1038_98b4(param_1: &mut Struct51,param_2: HWND16,param_3: bool)
 {
   let UVar1: u16;
   let uVar2: u16;
@@ -1098,7 +1098,7 @@ pub fn unk_win_ui_op_1038_a18c(param_1: &mut Struct1,param_2: u16)
   let puStack6: *mut u16;
   
   puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x27,param_2,in_DX,unaff_DI);
-  pass1_1008_3e38(CONCAT22(param_2,local_c));
+  clear_struct_1008_3e38(CONCAT22(param_2, local_c));
   pass1_1008_3f62(CONCAT22(param_2,local_c),
                   (puStack6 & 0xffff0000 | (puStack6 + 0x52))
                  );
@@ -2098,7 +2098,7 @@ pub fn win_dlg_op_1038_c58e(param_1: u32,param_2: *mut u16)
 
 pub fn
 message_box_op_1038_c672
-          (param_1: i16,param_2: u16,param_3: u16,param_4: u32,short param_5)
+          (param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: i16)
 
 {
   let uVar1: u32;

@@ -1,21 +1,22 @@
-use crate::winapi::{DeleteObject16, SelectObject16, LineTo16, MoveToEx16, CreatePen16, FillRect16, CreateSolidBrush16, GetClientRect16, EndPaint16, BeginPaint16, SelectPalette16, InvalidateRect16, RealizePalette16, GetDC16, UnrealizeObject16, GetStockObject16, ReleaseDC16, TextOut16, GetTextExtent16, lstrlen16, SetTextColor16, SetBkColor16, MoveTo16, GetWindowRect16, GetWindowDC16, IsIconic16, PtInRect16, SetCursor16, PostMessage16, ReleaseCapture16, LoadAccelerators16, Rectangle16, Ellipse16, ValidateRect16, SetMapMode16, Polygon16, DeleteDC16, CreateDC16, DrawIcon16};
-use crate::win_struct::{POINT16, RECT16, HPEN16, HGDIOBJ16, HWND16, PAINTSTRUCT16, HDC16, HPALETTE16, HCURSOR16, HBRUSH16, COLORREF, HINSTANCE16, LOGPALETTE};
-use crate::util::{CONCAT22, SUB42, ZEXT24, CONCAT12, CONCAT13, CONCAT11, struct_from_addr, get_struct_from_addr};
-use crate::pass::pass_1008::{pass1_1008_8b20, pass1_1008_5b12, pass1_1008_57a4, pass1_1008_5118, pass1_1008_3e94, pass1_1008_4772, pass1_1008_4480, pass1_1008_3e76, pass1_1008_3e38, pass1_1008_41bc, pass1_1008_941a};
-use crate::misc::empty_1008_8fc4;
-use crate::pass::pass_1018::{pass1_1018_2862, pass1_1018_31d0, pass1_1018_017c, pass1_1018_108c, pass1_1018_15f6, pass1_1018_1320, pass1_1018_1054, pass1_1018_0d9a, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_181c, pass1_1018_265c, pass1_1018_266a, pass1_1018_25d2, pass1_1018_161c};
-use crate::mixed::mixed_1010_20ba;
-use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::defines::{Struct13, Struct18, Struct76, Struct79, U32Ptr};
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
-use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_3770, pass1_1010_375e, pass1_1010_4dc8, pass1_1010_4df0, pass1_1010_4c2c, pass1_1010_454a, pass1_1010_ecc6};
-use crate::defines::{Struct18, Struct76, Struct13, U32Ptr, Struct79};
-use crate::pass::pass_1020::{pass1_1020_68de, pass1_1020_2488, draw_1020_239c, pass1_1020_2286, pass1_1020_6498, pass1_1020_5d56, pass1_1020_64d4};
-use crate::sys_api::get_sys_metrics_1020_7c1a;
-use crate::mem_1000::mem_op_1000_179c;
-use crate::ui::ui_1008::{file_and_draw_op_1008_4f20, create_palette_1008_4e38, win_ui_reg_class_1008_96d2, win_1008_5c9e};
-use crate::pass::pass_1030::pass1_1030_8308;
 use crate::global::AppContext;
+use crate::mem_1000::mem_op_1000_179c;
+use crate::misc::empty_1008_8fc4;
+use crate::mixed::mixed_1010_20ba;
+use crate::pass::pass_1008::{pass1_1008_3e76, pass1_1008_3e94, pass1_1008_41bc, pass1_1008_4480, pass1_1008_4772, pass1_1008_5118, pass1_1008_57a4, pass1_1008_5b12, pass1_1008_8b20, pass1_1008_941a};
+use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_375e, pass1_1010_3770, pass1_1010_454a, pass1_1010_4c2c, pass1_1010_4dc8, pass1_1010_4df0, pass1_1010_ecc6};
+use crate::pass::pass_1018::{pass1_1018_017c, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_0d9a, pass1_1018_1054, pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c, pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0};
+use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498, pass1_1020_64d4, pass1_1020_68de};
+use crate::pass::pass_1030::pass1_1030_8308;
+use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
+use crate::sys_api::get_sys_metrics_1020_7c1a;
+use crate::ui::ui_1008::{create_palette_1008_4e38, file_and_draw_op_1008_4f20, win_1008_5c9e, win_ui_reg_class_1008_96d2};
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, get_struct_from_addr, struct_from_addr, SUB42, ZEXT24};
+use crate::win_struct::{COLORREF, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16};
+use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16};
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16)
 {
@@ -479,7 +480,7 @@ pub unsafe fn unk_draw_op_1020_2020(
   u_stack48 = 0x14;
   local_32 = 0x0;
   style = 0x1008;
-  pass1_1008_3e38(CONCAT22(param_3, local_38[0] as u16));
+  clear_struct_1008_3e38(CONCAT22(param_3, local_38[0] as u16));
   while (ptr_1 + -0x38) < (ptr_1 + -0x28) {
     i_var12 = ((ptr_1 + -0x38) * 0x4) as i16;
     u_var2 = (ptr_1 + -0x2c);
@@ -1546,7 +1547,7 @@ pt_in_rect_op_1020_58ce
             u_stack46 = (i_var8 + 0x20) as u32;
             u_var5 = (i_var8 + 0x22) as u16;
             if ((u_var5 | u_stack46) != 0x0) {
-              pu_var12 = pass1_1008_3e38(CONCAT22(param_6, local_34));
+              pu_var12 = clear_struct_1008_3e38(CONCAT22(param_6, local_34));
              // pu_var6 = (pu_var12 >> 0x10);
               pass1_1018_161c(param_6, u_stack46, CONCAT22(param_6, local_34),
                               u_stack18 as i16, u_stack20 as i16);

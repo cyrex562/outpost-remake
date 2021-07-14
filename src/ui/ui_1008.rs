@@ -806,7 +806,7 @@ pub fn fill_rect_1008_39ac(in_win_handle_1: HWND16) {
 }
 
 
-pub fn post_quit_msg_1008_3af4(short exit_code) {
+pub fn post_quit_msg_1008_3af4(exit_code: i16) {
     PostQuitMessage16(exit_code);
     return;
 }
@@ -976,7 +976,7 @@ pub fn palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: H
 
 
 HPALETTE16
-palette_op_1008_4e08(param_1: & mut Struct13,bool param_2,param_3: u16,param_4: HDC16)
+palette_op_1008_4e08(param_1: & mut Struct13,param_2: bool,param_3: u16,param_4: HDC16)
 
 {
 let HVar1: HPALETTE16;

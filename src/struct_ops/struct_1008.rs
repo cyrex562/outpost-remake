@@ -1,24 +1,25 @@
-use crate::util::{CONCAT22, SUB42, ZEXT24};
-use crate::pass::pass_1000::{pass1_1000_4906, pass1_1000_3d7a};
-use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_160a, mem_op_1000_0a48};
-use crate::struct_ops::struct_1010::{struct_1010_2cd2, struct_1010_383a};
-use crate::defines::{Struct79, Struct19, Struct20, Struct76};
-use crate::struct_ops::struct_1018::{struct_1018_4842, struct_1018_48b0, struct_1018_4920, struct_1018_47c8};
-use crate::string::string_1010::load_string_1010_84ac;
-use crate::pass::pass_1030::{pass1_1030_38f2, pass1_1030_4bbe};
-use crate::string::string_1008::str_op_1008_60e8;
-use crate::pass::pass_1020::{string_op_1020_c222, pass1_1020_bd80, pass1_1020_a43e, pass1_1020_a6ee};
-use crate::pass::pass_1008::{pass1_1008_5b12, pass1_1008_5784, pass1_1008_909c, pass1_1008_4016, pass1_1008_4834, pass1_1008_47cc};
 use crate::bad::bad_1030_1312;
-use crate::pass::pass_1038::load_string_1038_4d28;
-use crate::pass::pass_1028::{pass1_1028_e4ec, pass1_1028_dc52};
-use crate::pass::pass_1010::pass1_1010_1d80;
+use crate::defines::{Struct18, Struct19, Struct20, Struct76, Struct79};
+use crate::file::file_1008::{read_file_1008_7cfe, read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
-use crate::file::file_1008::{read_file_1008_7dee, write_to_file_1008_7cac, read_file_1008_7cfe};
-use crate::win_struct::{HFILE16, HGDIOBJ16, HCURSOR16, HINSTANCE16, HICON16};
+use crate::global::AppContext;
+use crate::mem_1000::{mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_179c};
 use crate::mixed::mixed_1010_20ba;
-use crate::ui::ui_1008::set_sys_color_1008_357e;
+use crate::pass::pass_1000::{pass1_1000_3d7a, pass1_1000_4906};
+use crate::pass::pass_1008::{pass1_1008_4016, pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_909c};
+use crate::pass::pass_1010::pass1_1010_1d80;
+use crate::pass::pass_1020::{pass1_1020_a43e, pass1_1020_a6ee, pass1_1020_bd80, string_op_1020_c222};
+use crate::pass::pass_1028::{pass1_1028_dc52, pass1_1028_e4ec};
+use crate::pass::pass_1030::{pass1_1030_38f2, pass1_1030_4bbe};
+use crate::pass::pass_1038::load_string_1038_4d28;
 use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::string::string_1008::str_op_1008_60e8;
+use crate::string::string_1010::load_string_1010_84ac;
+use crate::struct_ops::struct_1010::{struct_1010_2cd2, struct_1010_383a};
+use crate::struct_ops::struct_1018::{struct_1018_47c8, struct_1018_4842, struct_1018_48b0, struct_1018_4920};
+use crate::ui::ui_1008::set_sys_color_1008_357e;
+use crate::util::{CONCAT22, SUB42, ZEXT24};
+use crate::win_struct::{HCURSOR16, HFILE16, HGDIOBJ16, HICON16, HINSTANCE16};
 use crate::winapi::{GetStockObject16, LoadCursor16, LoadIcon16};
 
 pub fn struct_op_1008_0000(param_1: *mut u16)
@@ -255,7 +256,7 @@ pub fn struct_op_1008_6604(param_1: &mut Struct85,param_2: i16,param_3: i16)
   let uVar5: u16;
   let lVar6: i32;
   
-  pass1_1008_4016(param_1);
+  pass1_1008_4016(ctx, param_1);
  // uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
   param_1 = 0x685a;
@@ -1239,7 +1240,7 @@ pub fn pass1_1008_cac6(param_1: u32)
 
 pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
 {
-  long *plVar1;
+  plVar1: &i32;
   let ppcVar2: u32;
   let bVar3: bool;
   let puVar4: u32;
@@ -1357,7 +1358,7 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
 
 pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
 {
-  long *plVar1;
+  plVar1: &i32;
   let puVar2: u32;
   let ppcVar3: u32;
   let puVar4: u32;
@@ -1778,6 +1779,29 @@ pub fn struct_1008_ecb2(param_1: &mut Struct221,param_2: u16,param_3: u16) -> u3
   pass1_1000_4906(CONCAT22(in_DX,param_1.field_0x5c),0x0,
                   0x20c);
   return CONCAT22(param_2,param_1);
+}
+
+
+pub fn pass1_1008_3ab8(
+    ctx: &mut AppContext,
+    param_1: &mut Struct20) -> &mut Struct20
+{
+    set_struct_1008_687a(param_1, 0x0);
+    param_1.field_0xde = 0x0;
+    param_1.field_0x0 = 0x3b46;
+    param_1.field_0x2 = 0x1008;
+    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1.field_0x5b)), ctx.s_SOLDefaultWindowClass_1050_01fe);
+    return param_1;
+}
+
+
+pub fn clear_struct_1008_3e38(param_1: &mut Struct18) -> &mut Struct18
+
+{
+    param_1.field_0x0 = 0x0;
+    param_1.field_0x2 = 0x0;
+    param_1.field_0x2 = 0x0;
+    return param_1;
 }
 
 

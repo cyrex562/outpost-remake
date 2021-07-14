@@ -47,7 +47,7 @@ pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
 pub fn struct_1020_3644(param_1: *mut u16,param_2: u16,param_3: u32,param_4: u16)
 {
   let iVar2: &mut Struct272;
-  short in_buf_len_5;
+  in_buf_len_5: i16;
   let iVar1: &mut Struct270;
   
   struct_1020_790e(param_1,0x0,param_2,param_3,param_4);

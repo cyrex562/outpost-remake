@@ -2688,7 +2688,7 @@ pub fn mixed_sys_op_1018_2978(param_1: u32,param_2: u16,param_3: u16)
   else {
     iVar4 = (iStack52 - local_3a.y) + 0x1;
     uVar10 = 0x1008;
-    pass1_1008_405c(paStack62,(iVar8 + 0xe),iVar4,(iStack54 - local_3a.x) + 0x1)
+    pass1_1008_405c(ctx, paStack62, (iVar8 + 0xe), iVar4, (iStack54 - local_3a.x) + 0x1)
     ;
     (iVar8 + 0xa) = iVar4;
     (iVar8 + 0xc) = uVar5;
