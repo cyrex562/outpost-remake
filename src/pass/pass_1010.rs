@@ -9,14 +9,14 @@ use crate::global::AppContext;
 use crate::mem_1000::{mem_op_1000_160a, mem_op_1000_179c};
 use crate::mem_1008::memcpy_op_1008_676e;
 use crate::mixed::mixed_1010_20ba;
-use crate::pass::pass_1000::{pass1_1000_3cea, pass1_1000_472c, pass1_1000_475e, pass1_1000_48a8, pass1_1000_4906, pass1_1000_4aea, pass1_1000_5586};
+use crate::pass::pass_1000::{pass1_1000_3cea, pass1_1000_472c, pass1_1000_48a8, pass1_1000_4906, pass1_1000_4aea, pass1_1000_5586};
 use crate::pass::pass_1008::{pass1_1008_3e54, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_3f62, pass1_1008_4544, pass1_1008_4772, pass1_1008_5784, pass1_1008_5b12, pass1_1008_64a2, pass1_1008_64c8, pass1_1008_6562, pass1_1008_7c2a, pass1_1008_92b2};
 use crate::pass::pass_1018::{pass1_1018_04f2, pass1_1018_209c, pass1_1018_4b78, pass1_1018_4dce};
 use crate::pass::pass_1020::{pass1_1020_bae6, string_1020_c0d8, string_op_1020_c222};
 use crate::pass::pass_1028::{pass1_1028_121e, pass1_1028_4faa, pass1_1028_b58e, pass1_1028_dc52, pass1_1028_e0a0, pass1_1028_e1ec, pass1_1028_e4ec};
 use crate::pass::pass_1030::{fn_ptr_1030_835a, fn_ptr_1030_84d0, pass1_1030_25d8, pass1_1030_301a, pass1_1030_38f2, pass1_1030_532e, pass1_1030_6ddc, pass1_1030_70f4, pass1_1030_7c28, pass1_1030_7f5a, pass1_1030_7f98, pass1_1030_809c, pass1_1030_8326, pass1_1030_8344};
 use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78, pass1_1038_5050, pass1_1038_50e0};
-use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::string::string_1000::{string_1000_475e, unk_str_op_1000_3d3e};
 use crate::string::string_1008::str_op_1008_60e8;
 use crate::string::string_1010::{load_string_1010_84ac, string_1010_5286};
 use crate::string::string_1020::string_op_1020_c2f8;
@@ -818,7 +818,7 @@ pub fn pass1_1010_11c6(param_1: u32, param_2: u16, param_3: *mut u8) {
         uVar4 = (uVar5 + uStack14 * 0x4);
         puVar17 = (uVar4 + ctx.DAT_1050_0ecc * 0x8);
         puStack50 = (uVar4 & 0xffff0000 | ZEXT24(puVar17));
-        iVar7 = pass1_1000_475e(uStack10, *puVar17);
+        iVar7 = string_1000_475e(ctx, uStack10, *puVar17);
         if (iVar7 != 0x0) {
             uStack10 = *puStack50;
             uStack14 = uStack14 & 0xffff | (uStack14._2_2_ + 0x1) << 0x10;
@@ -881,8 +881,9 @@ pub fn pass1_1010_11c6(param_1: u32, param_2: u16, param_3: *mut u8) {
             iVar19 = iStack28 * 0x4;
             uVar5 = iVar18.field_0x64;
             uVar5 = (uVar5 + iVar19);
-            iVar21 = pass1_1000_475e(*puStack22,
-                                     (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xeba) * 0x8));
+            iVar21 = string_1000_475e(
+                ctx, *puStack22,
+                (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xeba) * 0x8));
             if (iVar21 != 0x0) { break; }
             uVar5 = iVar18.field_0x64;
             // uVar23 = (uVar5 >> 0x10);
@@ -918,13 +919,15 @@ pub fn pass1_1010_11c6(param_1: u32, param_2: u16, param_3: *mut u8) {
                 if (*piVar1 == iStack28 || *piVar1 < iStack28) { break; }
                 uVar5 = iVar18.field_0x64;
                 uVar5 = (uVar5 + iStack28 * 0x4);
-                iVar21 = pass1_1000_475e(*puStack26,
-                                         (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xebc) * 0x8));
+                iVar21 = string_1000_475e(
+                    ctx, *puStack26,
+                    (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xebc) * 0x8));
                 if (iVar21 != 0x0) { break; }
                 uVar5 = iVar18.field_0x64;
                 uVar5 = (uVar5 + iStack28 * 0x4);
-                uVar10 = pass1_1000_475e(*puStack22,
-                                         (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xeba) * 0x8));
+                uVar10 = string_1000_475e(
+                    ctx, *puStack22,
+                    (uVar5 + (ctx.DAT_1050_0ecc * 0x6 + 0xeba) * 0x8));
                 if (uVar10 != 0x0) { break; }
                 mem_op_1000_179c(0x1a, puVar16, 0x1000);
                 if ((puVar16 | uVar10) == 0x0) {
@@ -1082,15 +1085,17 @@ pub fn pass1_1010_184a(param_1: *mut u32, param_2: *mut u32) {
 
     iVar2 = ctx.DAT_1050_0ecc;
     iVar1 = (ctx.DAT_1050_0ecc * 0x6 + 0xeba) * 0x8;
-    iVar1 = pass1_1000_475e((iVar1 + *param_1),
-                            (iVar1 + *param_2));
+    iVar1 = string_1000_475e(
+        ctx, (iVar1 + *param_1),
+        (iVar1 + *param_2));
     if (iVar1 == 0x0) {
         iVar1 = (iVar2 * 0x6 + 0xebc) * 0x8;
-        iVar1 = pass1_1000_475e((iVar1 + *param_1),
-                                (iVar1 + *param_2));
+        iVar1 = string_1000_475e(
+            ctx, (iVar1 + *param_1),
+            (iVar1 + *param_2));
         if (iVar1 == 0x0) {
             iVar2 = (iVar2 * 0x6 + 0xebe) * 0x8;
-            pass1_1000_475e((iVar2 + *param_1), (iVar2 + *param_2));
+            string_1000_475e(ctx, (iVar2 + *param_1), (iVar2 + *param_2));
         }
     }
     return;

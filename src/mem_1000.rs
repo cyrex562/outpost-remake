@@ -854,7 +854,7 @@ pub fn mem_op_1000_1558(param_1: u16, param_2: u16, param_3: &mut u16) -> i32 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn mem_op_1000_160a(ctx: &mut AppContext, param_1: &mut Struct79, param_2: u16) -> u16 {
+pub unsafe fn mem_op_1000_160a(ctx: &mut AppContext, param_1: Option<&mut Struct79>, param_2: u16) -> u16 {
     let pu_var1 = ret_true_1000_2146();
     if pu_var1 == 0x0 {
         return pu_var1;
@@ -1117,7 +1117,7 @@ pub fn mem_op_1000_21b6(param_1: u16, param_2: u16) -> bool {
 
 pub unsafe fn mem_1000_2bb6(
     param_1: u16,
-    param_2: &mut i16,
+    param_2: &String,
     param_3: i16,
     param_4: u16,
     param_5: u16,

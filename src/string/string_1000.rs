@@ -1,6 +1,6 @@
 use crate::defines::U32Ptr;
 use crate::global::AppContext;
-use crate::util::{CONCAT22, get_string_from_addr};
+use crate::util::{CONCAT11, CONCAT22, get_string_from_addr};
 use crate::win_struct::WNDCLASS16;
 
 pub fn  poss_str_op_1000_28dc(
@@ -282,4 +282,51 @@ pub fn string_1000_1fd2(param_1: i16) -> String
         return "Out of memory.  Please free some memory, then choose retry.".to_string();
     }
     return get_string_from_addr(CONCAT22(0x1000, (param_1 * 0x17 + 0x1c7a) as u16)).to_string();
+}
+
+
+pub fn string_1000_475e(
+    ctx: &mut AppContext,
+    param_1: &String,
+    param_2: &String
+) -> u8
+
+{
+    let mut string_2: &String;
+    let c_var2: u8;
+    let c_var3: u8;
+    let b_var4: u8;
+    let b_var3: u8;
+    let string_3: String;
+    let mut string_1: &String;
+    let mut string_4: &String;
+
+    string_4 = param_2;
+    string_1 = param_1;
+    string_3 = (ctx.s_You_may_not_run_a_turn__The_game_1050_00df[0x20..].to_string());
+    loop {
+        loop {
+            c_var3 = string_3[0];
+            if c_var3 == '\0' as u8 {
+                // goto LAB_1000_479d;
+            }
+            string_2 = string_4;
+            string_4 = string_4 + 0x1;
+            c_var3 = string_2[0];
+            c_var2 = string_1[0];
+            string_3 = get_string_from_addr(CONCAT11(c_var2, c_var3) as u32).clone();
+            string_1 = &string_1[1..].to_string();
+            if c_var2 != c_var3 { break; }
+        }
+        b_var4 = c_var3 + 0xbf + (-((c_var3 + 0xbf) < 0x1a) & 0x20) + 0x41;
+        b_var3 = c_var2 + 0xbf;
+        string_3[0] = b_var3 + (-(b_var3 < 0x1a) & 0x20) + 0x41;
+        string_3[0] = CONCAT11(b_var4, string_3[0]);
+        if (string_3 == b_var4) == false {
+            break;
+        }
+    }
+    c_var3 = (string_3 < b_var4) * -0x2 + '\x01';
+//LAB_1000_479d:
+    return c_var3;
 }

@@ -36,7 +36,7 @@ pub struct AppContext {
     pub PTR_LOOP_1050_000c: U32Ptr,
     pub PTR_LOOP_1050_000e: U32Ptr,
     pub PTR_LOOP_1050_000a: U32Ptr,
-    pub DAT_1050_0004: u32,
+    pub DAT_1050_0004: i16,
     pub PTR_LOOP_1050_0010: U32Ptr,
     pub PTR_LOOP_1050_0002: U32Ptr,
     pub PTR_LOOP_1050_0000: U32Ptr,
@@ -75,7 +75,16 @@ pub struct AppContext {
     pub PTR_LOOP_1050_48de: U32Ptr,
     pub _PTR_LOOP_1050_5f2c: U32Ptr,
     pub PTR_LOOP_1050_5f88: U32Ptr,
-    pub PTR_LOOP_1050_5f78: U32Ptr
+    pub PTR_LOOP_1050_5f78: U32Ptr,
+    pub DAT_1050_5f8a: u32,
+    pub PTR_LOOP_1050_5ff0: U32Ptr,
+    pub DAT_1050_0009: i16,
+    pub PTR_s_3_wav_1050_25cc_1050_6068: String,
+    pub PTR_s_3_wav_1050_25cc_1050_607c: String,
+    pub PTR_s_3_wav_1050_25cc_1050_6074: String,
+    pub PTR_s_3_wav_1050_25cc_1050_6070: String,
+    pub DAT_1050_605d: i16,
+    pub PTR_LOOP_1050_6062: U32Ptr,
 }
 
 impl AppContext {
@@ -151,7 +160,18 @@ impl AppContext {
             s_TPPOPMENU_1050_43fa: "".to_string(),
             s_SOLDefaultWindowClass_1050_01fe: "".to_string(),
             PTR_LOOP_1050_48de: 0,
-            _PTR_LOOP_1050_5f2c: 0
+            _PTR_LOOP_1050_5f2c: 0,
+            PTR_LOOP_1050_5f88: 0,
+            PTR_LOOP_1050_5f78: 0,
+            DAT_1050_5f8a: 0,
+            PTR_LOOP_1050_5ff0: 0,
+            DAT_1050_0009: 0,
+            PTR_s_3_wav_1050_25cc_1050_6068: "".to_string(),
+            PTR_s_3_wav_1050_25cc_1050_607c: "".to_string(),
+            PTR_s_3_wav_1050_25cc_1050_6074: "".to_string(),
+            PTR_s_3_wav_1050_25cc_1050_6070: "".to_string(),
+            DAT_1050_605d: 0,
+            PTR_LOOP_1050_6062: 0
         }
     }
 }

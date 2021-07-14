@@ -1,6 +1,6 @@
 use crate::cleanup::clenaup_win_ui_1018_4d22;
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{Struct11, Struct13, Struct18, U32Ptr, Struct79, Struct_1008_09ba, Struct_1008_0a3c, StructB};
+use crate::defines::{Struct11, Struct13, Struct18, Struct79, Struct_1008_09ba, Struct_1008_0a3c, StructB, U32Ptr};
 use crate::draw::draw_1008::draw_op_1008_8288;
 use crate::file::file_1008::{close_file_1008_6dd0, file_fn_1008_6e02};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_24cd};
@@ -8,22 +8,22 @@ use crate::global::AppContext;
 use crate::mci::mci_send_command_1008_5cb6;
 use crate::mem_1000::mem_op_1000_179c;
 use crate::mixed::mixed_1010_20ba;
-use crate::pass::pass_1000::{pass1_1000_093a, pass1_1000_3cea, pass1_1000_475e, pass1_1000_4906, pass1_1000_4f2e, pass1_1000_5008};
+use crate::pass::pass_1000::{pass1_1000_093a, pass1_1000_3cea, pass1_1000_4906, pass1_1000_4f2e, pass1_1000_5008};
 use crate::pass::pass_1008::{pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_a086};
 use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1f62, pass1_1010_60cc};
-use crate::struct_ops::struct_1018::set_struct_1018_262e;
 use crate::pass::pass_1030::{pass1_1030_8326, pass1_1030_8344};
 use crate::pass::pass_1038::pass1_1038_3608;
-use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::string::string_1000::{str_op_1000_3da4, string_1000_475e, unk_str_op_1000_3d3e};
 use crate::string::string_1008::{str_1008_6d8a, str_op_1008_60e8};
 use crate::string::string_1010::load_string_1010_847e;
 use crate::struct_ops::struct_1010::struct_1010_5f1e;
+use crate::struct_ops::struct_1018::set_struct_1018_262e;
 use crate::ui::ui_1010::show_window_1010_7ace;
 use crate::ui::ui_1018::send_msg_1020_097e;
 use crate::ui::ui_1038::{send_msg_1030_83ba, show_win_1038_b68a};
-use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_struct_ref_from_addr, SUB42, ZEXT24, get_struct_from_addr, get_string_from_rsrc};
+use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_string_from_rsrc, get_struct_from_addr, get_struct_ref_from_addr, SUB42, ZEXT24};
 use crate::win_struct::{ATOM, BITMAPINFO, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16, HPALETTE16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
-use crate::winapi::{BeginPaint16, ClientToScreen16, CreatePalette16, CreateSolidBrush16, CreateWindow16, CreateWIndowEx16, DefWindowProc16, DeleteObject16, EndPaint16, FillRect16, GetClassInfo16, GetClientRect16, GetOpenFileName16, GetSaveFileName16, GetStockObject16, GetSubMenu16, GetSysColor16, GetWindowLong16, InvalidateRect16, IsIconic16, KillTimer16, LoadMenu16, mciSendCommand16, MessageBeep16, MessageBox16, OutputDebugString16, PostMessage16, PostQuitMessage16, PtInRect16, RealizePalette16, RegisterClass16, ReleaseCapture16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDIBitsToDevice, SetSysColors16, SetTimer16, SetWindowText16, SetWindowWord16, ShowWindow16, StretchDIBits16, TrackPopupMenu16, UpdateWindow16, LoadCursor16};
+use crate::winapi::{BeginPaint16, ClientToScreen16, CreatePalette16, CreateSolidBrush16, CreateWindow16, CreateWIndowEx16, DefWindowProc16, DeleteObject16, EndPaint16, FillRect16, GetClassInfo16, GetClientRect16, GetOpenFileName16, GetSaveFileName16, GetStockObject16, GetSubMenu16, GetSysColor16, GetWindowLong16, InvalidateRect16, IsIconic16, KillTimer16, LoadCursor16, LoadMenu16, mciSendCommand16, MessageBeep16, MessageBox16, OutputDebugString16, PostMessage16, PostQuitMessage16, PtInRect16, RealizePalette16, RegisterClass16, ReleaseCapture16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDIBitsToDevice, SetSysColors16, SetTimer16, SetWindowText16, SetWindowWord16, ShowWindow16, StretchDIBits16, TrackPopupMenu16, UpdateWindow16};
 
 pub unsafe fn win_ui_cursor_op_1008_06c0(
     ctx: &mut AppContext,
@@ -1174,7 +1174,7 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
     string_1 = s_waveaudio_1050_02a4;
     str_1000_4d58(param_2, 0x0, 0x0, 0x0, CONCAT22(in_wnd_class, local_11e),
     );
-    iVar2 = pass1_1000_475e(CONCAT22(in_wnd_class, local_11e), 0x105002ae);
+    iVar2 = string_1000_475e(ctx, CONCAT22(in_wnd_class, local_11e), 0x105002ae);
     if (iVar2 == 0x0) {
         uVar1 = (iVar3 + 0xc) as u32;
         iStack24 = (uVar1 + 0x74) as i16;

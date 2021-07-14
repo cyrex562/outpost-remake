@@ -1,11 +1,12 @@
 use crate::bad::bad_1030_1312;
-use crate::defines::{Struct18, Struct19, Struct20, Struct76, Struct79};
+use crate::defines::{Struct18, Struct19, Struct20, Struct76, Struct79, Struct_1000_2cb0};
 use crate::file::file_1008::{read_file_1008_7cfe, read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::global::AppContext;
 use crate::mem_1000::{mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_179c};
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::{pass1_1000_3d7a, pass1_1000_4906};
+use crate::pass::pass_1000;
 use crate::pass::pass_1008::{pass1_1008_4016, pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_909c};
 use crate::pass::pass_1010::pass1_1010_1d80;
 use crate::pass::pass_1020::{pass1_1020_a43e, pass1_1020_a6ee, pass1_1020_bd80, string_op_1020_c222};
@@ -1802,6 +1803,25 @@ pub fn clear_struct_1008_3e38(param_1: &mut Struct18) -> &mut Struct18
     param_1.field_0x2 = 0x0;
     param_1.field_0x2 = 0x0;
     return param_1;
+}
+
+
+pub fn struct_1000_2cb0(param_1: &mut Struct_1000_2cb0, param_2: u16) {
+    let pu_var1: u16;
+    let b_var2: u8;
+
+    b_var2 = (param_1.field_0x5) as u8;
+    if ((b_var2 & 0x83) != 0x0) && ((b_var2 & 0x8) != 0x0) {
+        pass_1000::pass1_1000_16ee(ctx, &mut param_1.field_0x3, param_1 + 0x4, param_2);
+        pu_var1 = param_1.field_0x5;
+        pu_var1 = pu_var1 & 0xf7;
+        param_1.field_0x3 = Struct18{ field_0x0: 0, field_0x1: 0 };
+        param_1.field_0x4 = 0x0;
+        param_1.field_0x0 = 0x0;
+        param_1.field_0x1 = 0x0;
+        param_1.field_0x2 = 0x0;
+    }
+    return;
 }
 
 

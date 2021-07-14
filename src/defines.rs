@@ -22,11 +22,8 @@ impl StructA {
 }
 
 pub struct Struct18 {
-
-}
-
-impl Struct18 {
-
+    pub field_0x0: u16,
+    pub field_0x1: u16
 }
 
 pub struct Struct10 {
@@ -181,3 +178,23 @@ pub struct Struct110 {
 
 }
 
+pub struct Struct_1000_2cb0 {
+    pub field_0x0: u16,
+    pub field_0x1: u16,
+    pub field_0x2: u16,
+    pub field_0x3: Struct18,
+    pub field_0x4: u16,
+    pub field_0x5: u16,
+    pub field_0xb: u16,
+    pub field_0x78: u16
+}
+
+
+pub struct Struct_1000_34cf {
+    pub field_0xe: Struct197,
+
+}
+
+pub struct Struct197 {
+    pub field_0x2: u16
+}
