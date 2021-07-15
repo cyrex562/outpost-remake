@@ -63,3 +63,5 @@ pub fn CARRY4(a: u32, b: u32) -> u32 {
 pub fn SBORROW2(a: u32 b: u32) -> u32 { unimplemented!()}
 
 pub fn SEXT24(a: u16) -> u32 {unimplemented!()}
+
+pub fn address_of(a: u32) -> u32 {unimplemented!()}

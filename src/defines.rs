@@ -198,3 +198,37 @@ pub struct Struct_1000_34cf {
 pub struct Struct197 {
     pub field_0x2: u16
 }
+
+pub struct Struct_1000_09ca {
+    pub field_0x0: Struct_211,
+    pub field_0x1: u16,
+    pub field_0x2: u16,
+    pub field_0x7: U32Ptr,
+    pub field_0x8: Struct_160,
+    pub field_0x9: u16,
+    pub field_0xa: u16,
+}
+
+pub struct Struct_211 {
+
+}
+
+pub struct Struct_160 {
+
+}
+
+pub struct Struct_1000_0c32 {
+    pub field_0xe: u16,
+}
+
+pub struct Pointer<T> {
+
+}
+
+impl Pointer<T> {
+    pub fn new<T>() -> Pointer<T> {
+        Pointer::<T> {
+
+        }
+    }
+}
