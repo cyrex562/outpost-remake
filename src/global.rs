@@ -85,6 +85,8 @@ pub struct AppContext {
     pub PTR_s_3_wav_1050_25cc_1050_6070: String,
     pub DAT_1050_605d: i16,
     pub PTR_LOOP_1050_6062: U32Ptr,
+    pub s_MciSoundWindow_1050_02bd: String,
+    pub s_SCInternalPutBldg2_site_0x_08lx__1050_5099: String,
 }
 
 impl AppContext {
@@ -171,7 +173,9 @@ impl AppContext {
             PTR_s_3_wav_1050_25cc_1050_6074: "".to_string(),
             PTR_s_3_wav_1050_25cc_1050_6070: "".to_string(),
             DAT_1050_605d: 0,
-            PTR_LOOP_1050_6062: 0
+            PTR_LOOP_1050_6062: 0,
+            s_MciSoundWindow_1050_02bd: "".to_string(),
+            s_SCInternalPutBldg2_site_0x_08lx__1050_5099: "".to_string()
         }
     }
 }

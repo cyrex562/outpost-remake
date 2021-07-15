@@ -908,7 +908,7 @@ pub unsafe fn mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16, pa
     return l_var2;
 }
 
-pub unsafe fn mem_op_1000_179c(ctx: &mut AppContext, param_1: u16, param_2: &mut Struct19, param_3: u16) {
+pub unsafe fn mem_op_1000_179c(ctx: &mut AppContext, param_1: u16, param_2: &mut Struct18, param_3: u16) {
     let pu_var1: u16;
     let pu_var2: u16;
     pu_var1 = ctx.PTR_LOOP_1050_5f2c;

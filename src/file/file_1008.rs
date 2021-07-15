@@ -160,7 +160,7 @@ pub fn file_1008_4c26(param_1: u32, param_2: u8) -> u32
 }
 
 
-pub fn file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, param_4: *mut u8) {
+pub fn file_1008_6414(param_1: &mut Struct18, param_2: &mut Struct18, param_3: u16, param_4: &mut Struct18) {
     let ppcVar1: u32;
     let puVar2: *mut u8;
     let uVar3: u16;

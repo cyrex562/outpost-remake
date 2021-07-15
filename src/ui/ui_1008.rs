@@ -1,6 +1,6 @@
 use crate::cleanup::clenaup_win_ui_1018_4d22;
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{Struct11, Struct13, Struct18, Struct79, Struct_1008_09ba, Struct_1008_0a3c, StructB, U32Ptr};
+use crate::defines::{Struct11, Struct13, Struct18, Struct79, Struct_1008_09ba, Struct_1008_0a3c, StructB, U32Ptr, Struct76};
 use crate::draw::draw_1008::draw_op_1008_8288;
 use crate::file::file_1008::{close_file_1008_6dd0, file_fn_1008_6e02};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_24cd};
@@ -9,7 +9,7 @@ use crate::mci::mci_send_command_1008_5cb6;
 use crate::mem_1000::mem_op_1000_179c;
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::{pass1_1000_093a, pass1_1000_3cea, pass1_1000_4906, pass1_1000_4f2e, pass1_1000_5008};
-use crate::pass::pass_1008::{pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_a086};
+use crate::pass::pass_1008::{pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_a086, pass1_1008_4016};
 use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1f62, pass1_1010_60cc};
 use crate::pass::pass_1030::{pass1_1030_8326, pass1_1030_8344};
 use crate::pass::pass_1038::pass1_1038_3608;
@@ -21,8 +21,8 @@ use crate::struct_ops::struct_1018::set_struct_1018_262e;
 use crate::ui::ui_1010::show_window_1010_7ace;
 use crate::ui::ui_1018::send_msg_1020_097e;
 use crate::ui::ui_1038::{send_msg_1030_83ba, show_win_1038_b68a};
-use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_string_from_rsrc, get_struct_from_addr, get_struct_ref_from_addr, SUB42, ZEXT24};
-use crate::win_struct::{ATOM, BITMAPINFO, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16, HPALETTE16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16};
+use crate::util::{CONCAT12, CONCAT13, CONCAT22, get_string_from_rsrc, get_struct_from_addr, get_struct_ref_from_addr, SUB42, ZEXT24, address_of};
+use crate::win_struct::{ATOM, BITMAPINFO, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16, HPALETTE16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16, WNDCLASS16, COLORREF, DEVMODEA};
 use crate::winapi::{BeginPaint16, ClientToScreen16, CreatePalette16, CreateSolidBrush16, CreateWindow16, CreateWIndowEx16, DefWindowProc16, DeleteObject16, EndPaint16, FillRect16, GetClassInfo16, GetClientRect16, GetOpenFileName16, GetSaveFileName16, GetStockObject16, GetSubMenu16, GetSysColor16, GetWindowLong16, InvalidateRect16, IsIconic16, KillTimer16, LoadCursor16, LoadMenu16, mciSendCommand16, MessageBeep16, MessageBox16, OutputDebugString16, PostMessage16, PostQuitMessage16, PtInRect16, RealizePalette16, RegisterClass16, ReleaseCapture16, SelectPalette16, SendMessage16, SetCapture16, SetCursor16, SetDIBitsToDevice, SetSysColors16, SetTimer16, SetWindowText16, SetWindowWord16, ShowWindow16, StretchDIBits16, TrackPopupMenu16, UpdateWindow16};
 
 pub unsafe fn win_ui_cursor_op_1008_06c0(
@@ -49,7 +49,7 @@ pub unsafe fn win_ui_cursor_op_1008_06c0(
     // let in_AF: u8;
     let mut pc_var4: String;
     let pu_var5: U32Ptr;
-    let mut ulocal_5a: [u8;0x50] = [0;0x50];
+    let mut ulocal_5a = String::new();
     let u_stack10: u32;
     let hstack6: HCURSOR16;
     let hstack4: HCURSOR16;
@@ -892,41 +892,44 @@ pub fn set_di_bits_to_device_1008_45d6(param_1: u32, param_2: HDC16) {
 }
 
 
-pub fn stretch_di_bits_1008_465a(param_1: u32, param_2: HDC16) {
-    PVOID
-    bits;
+pub fn stretch_di_bits_1008_465a(
+    ctx: &mut AppContext,
+    param_1: &mut Struct76,
+    param_2: HDC16
+) {
+    let mut bits: Vec<u8> = Vec::new();
     let height_src: i16;
-    let uVar1: u32;
-    let bVar2: bool;
-    let iVar3: i16;
+    let u_var1: u32;
+    let b_var2: bool;
+    let i_var3: i16;
     let height_dst: i16;
-    let uVar4: u16;
+    let u_var4: u16;
     let x_src: i16;
 
-    // uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1 as i16;
-    if ((iVar3 + 0x6) == 0x0) {
+    // u_var4 = (param_1 >> 0x10);
+    i_var3 = param_1 as i16;
+    if (i_var3 + 0x6) == 0x0 {
         pass1_1008_47cc(param_1);
     }
-    if (((iVar3 + 0x8) | (iVar3 + 0x6)) == 0x0) {
-        bVar2 = false;
+    if (((i_var3 + 0x8) | (i_var3 + 0x6)) == 0x0) {
+        b_var2 = false;
     } else {
-        if (((iVar3 + 0xc) | (iVar3 + 0xa)) == 0x0) {
-            pass1_1008_4834(param_1);
+        if (((i_var3 + 0xc) | (i_var3 + 0xa)) == 0x0) {
+            pass1_1008_4834(ctx, param_1);
         }
-        bVar2 = true;
+        b_var2 = true;
     }
-    if (!bVar2) {
+    if (!b_var2) {
         return;
     }
-    uVar1 = (iVar3 + 0x10) as u32;
-    // x_src = (uVar1 >> 0x10);
-    height_dst = uVar1 as i16;
+    u_var1 = (i_var3 + 0x10) as u32;
+    // x_src = (u_var1 >> 0x10);
+    height_dst = u_var1 as i16;
     bits = (height_dst + 0x4);
     height_src = (height_dst + 0x8);
-    uVar1 = (iVar3 + 0x14) as u32;
-    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, uVar1 as i16,
-                    ((uVar1 >> 0x10) as i16), height_src, bits, (BITMAPINFO *)0x0, 0x0,
+    u_var1 = (i_var3 + 0x14) as u32;
+    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, u_var1 as i16,
+                    ((u_var1 >> 0x10) as i16), height_src, bits, (BITMAPINFO *)0x0, 0x0,
                     CONCAT22(bits, height_src as u16));
     return;
 }
@@ -1041,56 +1044,61 @@ pub unsafe fn create_palette_1008_4e38(
 }
 
 
-pub fn file_and_draw_op_1008_4f20(param_1: *mut u16, param_2: u32, param_3: u16, param_4: u32, param_5: u16)
+pub fn file_and_draw_op_1008_4f20(
+    ctx: &mut AppContext,
+    param_1: &mut Struct76,
+    param_2: u32,
+    param_3: u16,
+    param_4: u32,
+    param_5: u16
+)
 
 {
-    let uVar1: u32;
+    let u_var1: u32;
     let b_force_background: u16;
-    COLORREF
-    color;
-    COLORREF
-    color_00;
+    let color: COLORREF;
+    let color_00: COLORREF;
     let x: u16;
-    let uVar2: u16;
+    let u_var2: u16;
     let mut output: String;
-    let iVar3: i16;
-    let uVar4: u16;
-    let paVar5: &mut Struct43;
-    let uVar6: u32;
+    let i_var3: &mut Struct76;
+    let u_var4: u16;
+    let pa_var5: &mut Struct43;
+    let u_var6: u32;
     init_data: DEVMODEA;
     let local_2c: HDC16;
-    let mut pCStack42: String;
-    let mut pCStack40: String;
+    let mut p_cstack42: String;
+    let mut p_cstack40: String;
     let local_26: [u8; 24];
 
-    pass1_1008_4016(param_1);
-    // uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    (iVar3 + 0x1e) = param_4 as i16;
-    (iVar3 + 0x22) = param_3 as i16;
-    (iVar3 + 0x24) = param_2 as i16;
-    *param_1 = (s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x9);
-    (iVar3 + 0x2) = 0x1008;
-    paVar5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, 0x2, param_5);
-    // uVar2 = (paVar5 >> 0x10);
-    struct_op_1008_48fe(CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
-    read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, uVar2);
+    pass1_1008_4016(ctx, param_1);
+    // u_var4 = (param_1 >> 0x10);
+    i_var3 = param_1;
+    (i_var3.field_0x1e) = param_4 as i16;
+    (i_var3.field_0x22) = param_3 as i16;
+    (i_var3.field_0x24) = param_2 as i16;
+    param_1.field_0x0 = (ctx.s_SCInternalPutBldg2_site_0x_08lx__1050_5099[9..].to_string());
+    (i_var3.field_0x2) = 0x1008;
+    pa_var5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, 0x2, param_5);
+    // u_var2 = (pa_var5 >> 0x10);
+    struct_op_1008_48fe(CONCAT22(param_5, local_26), 0x1, pa_var5, u_var2);
+    read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, u_var2);
     pass1_1008_5068(param_1, CONCAT22(param_5, local_26));
     pass1_1008_47cc(param_1);
     pass1_1008_4834(param_1);
     init_data = 0x0;
-    uVar6 = pass1_1008_4772(param_1);
-    // output = (uVar6 >> 0x10);
-    pCStack42 = uVar6;
-    pCStack40 = output;
-    local_2c = CreateDC16(0x1010, pCStack42, output, init_data);
+    u_var6 = pass1_1008_4772(param_1);
+    // output = (u_var6 >> 0x10);
+    p_cstack42 = u_var6;
+    p_cstack40 = output;
+    local_2c = CreateDC16(0x1010, p_cstack42, output, init_data);
     b_force_background = palette_op_1008_46e4(param_1, &local_2c, output,
                                               ctx.s_tile2_bmp_1050_1538);
     color = SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0xffff);
-    color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538, (iVar3 + 0x22));
-    x = str_op_1000_3da4((iVar3 + 0x1e));
-    uVar1 = (iVar3 + 0x1e) as u32;
-    TextOut16(0x1000, x, uVar1, (uVar1 >> 0x10), 0x0);
+    color_00 = SetTextColor16(ctx.s_tile2_bmp_1050_1538, (i_var3 + 0x22));
+    x = str_op_1000_3da4((i_var3 + 0x1e));
+    u_var1 = (i_var3 + 0x1e) as u32;
+    TextOut16(0x1000, x, u_var1, (u_var1 >> 0x10), 0x0);
     SetBkColor16(ctx.s_tile2_bmp_1050_1538, color);
     SetTextColor16(ctx.s_tile2_bmp_1050_1538, color_00);
     SelectPalette16(ctx.s_tile2_bmp_1050_1538, 0x0, b_force_background);
@@ -1198,7 +1206,7 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
                 (iVar3 + 0xa) = offset_val;
                 (iVar3 + 0x10) = 0x1;
             }
-            window_handle_1 = create_window_1008_5e7e(ctx.s_tile2_bmp_1050_1538, in_wnd_class);
+            window_handle_1 = create_window_1008_5e7e(ctx, ctx.s_tile2_bmp_1050_1538, in_wnd_class);
             if (window_handle_1 == 0x0) {
                 mci_send_command_1008_5cb6(param_1, offset_val, s_tile2_bmp_1050_1538);
                 return;
@@ -1223,55 +1231,58 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
 }
 
 
-pub fn create_window_1008_5e7e(in_stock_obj_id: u16, in_wnd_class: &WNDCLASS16) -> HWND16 {
-    let puVar1: u32;
-    let puVar2: u32;
-    let BVar3: bool;
-    ATOM
-    AVar4;
+pub fn create_window_1008_5e7e(
+    ctx: &mut AppContext,
+    stock_obj_id: u16,
+    in_wnd_class: &WNDCLASS16) -> HWND16 {
+    let pu_var1: u32;
+    let pu_var2: u32;
+    let bvar3: bool;
+    let avar4: ATOM;
     let window_handle_1: HWND16;
-    let iVar5: i16;
+    let i_var5: i16;
     let mut string_1: String;
-    let puVar6: u32;
-    let name: u16;
-    let uStack42: u16;
-    let uStack40: u16;
-    let uStack38: u16;
-    let uStack36: u16;
-    let puStack34: *mut u8;
-    let uStack32: u16;
-    let uStack30: u16;
-    let HStack28: HGDIOBJ16;
-    let uStack26: u32;
-    let puStack22: u32;
-    let local_12: [u32; 0x4];
+    let pu_var6: String;
+    let name: String;
+    let u_stack42: u16;
+    let u_stack40: u16;
+    let u_stack38: u16;
+    let u_stack36: u16;
+    let pu_stack34: U32Ptr;
+    let u_stack32: u16;
+    let u_stack30: u16;
+    let hstack28: HGDIOBJ16;
+    let u_stack26: u32;
+    let pu_stack22: u32;
+    let local_12: [u32; 0x4] = [0;4];
 
-    puVar6 = local_12;
-    string_1 = s_MciSoundWindow_1050_02bd;
-    // for (iVar5 = 0x3; iVar5 != 0x0; iVar5 += -0x1) {
-    //   puVar2 = puVar6;
-    //   puVar6 = puVar6 + 0x1;
-    //   puVar1 = string_1;
+    pu_var6 = local_12;
+    string_1 = ctx.s_MciSoundWindow_1050_02bd.clone();
+    // for (i_var5 = 0x3; i_var5 != 0x0; i_var5 += -0x1) {
+    //   pu_var2 = pu_var6;
+    //   pu_var6 = pu_var6 + 0x1;
+    //   pu_var1 = string_1;
     //   string_1 = (string_1 + 0x4);
-    //   *puVar2 = *puVar1;
+    //   *pu_var2 = *pu_var1;
     // }
-    puVar6 = string_1;
-    *(puVar6 + 0x2) = *(string_1 + 0x2);
+    pu_var6 = string_1.clone();
+    // *(pu_var6 + 0x2) = *(string_1 + 0x2);
+    pu_var6[2] = string_1[2];
     name = 0x2000;
-    uStack42 = SUB42(&DAT_1050_5f44, 0x0);
-    uStack40 = 0x1008;
-    uStack36 = 0x2;
-    puStack34 = ctx.PTR_LOOP_1050_038c;
-    uStack32 = 0x0;
-    uStack30 = 0x0;
-    uStack38 = 0x0;
-    HStack28 = GetStockObject16(in_stock_obj_id);
-    uStack26 = 0x0;
-    puStack22 = local_12;
-    BVar3 = GetClassInfo16(s_tile2_bmp_1050_1538, &name, in_wnd_class);
-    if (BVar3 == 0x0) {
-        AVar4 = RegisterClass16(s_tile2_bmp_1050_1538);
-        if (AVar4 == 0x0) {
+    u_stack42 = SUB42(address_of(ctx.DAT_1050_5f44) as u16, 0x0);
+    u_stack40 = 0x1008;
+    u_stack36 = 0x2;
+    pu_stack34 = ctx.PTR_LOOP_1050_038c;
+    u_stack32 = 0x0;
+    u_stack30 = 0x0;
+    u_stack38 = 0x0;
+    hstack28 = GetStockObject16(stock_obj_id as i16);
+    u_stack26 = 0x0;
+    pu_stack22 = local_12[0];
+    bvar3 = GetClassInfo16(ctx.s_tile2_bmp_1050_1538, &name, in_wnd_class);
+    if (bvar3 == 0x0) {
+        avar4 = RegisterClass16(ctx.s_tile2_bmp_1050_1538);
+        if (avar4 == 0x0) {
             OutputDebugString16(ctx.s_tile2_bmp_1050_1538);
             return 0x0;
         }
@@ -2095,7 +2106,8 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
         load_string_1010_84e0(0x1010, uVar13, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd7;
     }
-    switchD_1008_a835_caseD_3: if (puStack6 != 0x0) {
+    // switchD_1008_a835_caseD_3:
+    if (puStack6 != 0x0) {
     ppcVar2 = *puStack6;
     (**ppcVar2)(param_1, puStack6, (puStack6 >> 0x10), 0x1);
 }

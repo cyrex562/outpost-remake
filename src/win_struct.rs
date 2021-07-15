@@ -462,7 +462,7 @@ pub struct _struct_656 {
 //     DWORD dmNup;
 // };
 
-pub struct _devicemodeA {
+pub struct DEVMODEA {
     // BYTE dmDeviceName[32];
     pub dmDeviceName: [u8; 32],
     // WORD dmSpecVersion;

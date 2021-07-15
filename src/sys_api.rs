@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{Struct18, Struct19, Struct79};
+use crate::defines::{Struct18, Struct19, Struct79, Struct87};
 use crate::draw::draw_1040::{draw_text_1040_8d14, unk_draw_op_1040_b0f8};
 use crate::exit::exit_1000_25f2;
 use crate::file::file_1008::close_file_1008_496c;
@@ -2330,7 +2330,7 @@ pub fn get_private_profile_string_1010_6132(param_1: u32, param_2: i16, param_3:
 }
 
 
-pub fn set_err_mode_1010_8b14(param_1: u32, param_2: i32, param_3: u16) -> u32
+pub fn set_err_mode_1010_8b14(param_1: &mut Struct87, param_2: i32, param_3: u16) -> u32
 
 {
     let uVar1: u16;

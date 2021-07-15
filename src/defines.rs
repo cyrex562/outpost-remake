@@ -73,7 +73,11 @@ pub struct Struct20 {
 }
 
 pub struct Struct76 {
-
+    pub field_0x1e: u16,
+    pub field_0x22: u16,
+    pub field_0x24: u16,
+    pub field_0x0: String,
+    pub field_0x2: u16,
 }
 
 pub struct Struct79 {
@@ -231,4 +235,10 @@ impl Pointer<T> {
 
         }
     }
+}
+
+pub struct Struct87 {
+    pub field_0x680: i16,
+    pub field_0x67c: u16,
+    pub field_0x67e: Struct18
 }

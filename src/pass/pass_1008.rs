@@ -1994,7 +1994,7 @@ pub fn pass1_1008_6330(param_1: *mut u16, param_2: u8) {
 }
 
 
-pub fn pass1_1008_64a2(param_1: *mut u16) {
+pub fn pass1_1008_64a2(param_1: &mut Struct18) {
     let uVar1: u16;
     let ppcVar2: u32;
 

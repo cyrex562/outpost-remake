@@ -2,7 +2,7 @@ use std::default::default;
 
 use crate::bad::bad_1010_bf08;
 use crate::cleanup::{clenaup_win_ui_1018_4d22, destroy_window_1010_7b26, unk_destroy_win_op_1010_2fa0};
-use crate::defines::{Struct11, Struct18, Struct19, Struct65, Struct79};
+use crate::defines::{Struct11, Struct18, Struct19, Struct65, Struct79, Struct87, U32Ptr};
 use crate::file::file_1008::{file_1008_6414, read_file_1008_7c6e, read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::global::AppContext;
@@ -28,7 +28,7 @@ use crate::struct_ops::struct_1030::{struct_op_1030_1cd8, struct_op_1030_73a8};
 use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
 use crate::switch_ops::switch_1010::switch_1010_6646;
 use crate::sys_api::{free_rsrc_1010_4b3e, get_sys_metrics_1018_4b1e, set_err_mode_1010_8b14, write_private_profile_str_1010_5b10};
-use crate::ui::ui_1010::send_msg_1010_7c42;
+use crate::ui::ui_1010::{send_msg_1010_7c42, msg_box_op_1010_8bb4};
 use crate::ui::ui_1040::mov_update_win_1040_93aa;
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{HINSTANCE16, SEGPTR};
@@ -4736,7 +4736,7 @@ pub fn pass1_1010_8018(param_1: u32, param_2: u16, param_3: *mut u8, param_4: u1
     let uVar2: *mut u16;
 
     if ((param_2 * 0xa + 0x1fa0) != 0x0) {
-        pass1_1010_878c((astruct_87 * *)param_1, (param_2 * 0xa + 0x1fa0), param_4);
+        pass1_1010_878c(ctx, (astruct_87 * *), param_1, (param_2 * 0xa + 0x1fa0), param_4);
         // uVar2 = (param_1 >> 0x10);
         if ((param_1 + 0x67c) != 0x0) {
             iVar1 = param_2 * 0xa;
@@ -5009,65 +5009,69 @@ pub fn pass1_1010_86de(param_1: u16, param_2: u16, param_3: u8, param_4: u32) {
 }
 
 
-pub fn pass1_1010_878c(astruct_87 * * param_1, param_2: i16, param_3: HINSTANCE16) {
-    let uVar1: u16;
-    let uVar2: u16;
-    let uVar4: u16;
-    let puVar3: *mut u8;
-    let puVar4: *mut u8;
-    let uVar6: &mut Struct87;
-    let iVar5: i16;
-    let uVar7: u16;
-    let unaff_SS: u16;
-    let paVar8: &mut Struct87;
-    let paVar9: &mut Struct87;
+pub unsafe fn pass1_1010_878c(
+    ctx: &mut AppContext,
+    struct_1: &mut Struct87,
+    param_2: i16,
+    param_3: &mut HINSTANCE16,
+    unaff_ss: u16
+) {
+    let u_var1: u16;
+    let u_var2: u16;
+    let u_var4: &mut Struct18;
+    let pu_var3: &mut Struct18;
+    let pu_var4: &mut Struct18;
+    let u_var6: &mut Struct87;
+    let i_var5: i16;
+    let u_var7: u16 = 0;
+    let pa_var8: &mut Struct18;
+    let pa_var9: &mut Struct18;
 
-    // uVar7 = (param_1 >> 0x10);
-    uVar6 = param_1;
-    if (uVar6.field_0x680 == param_2) {
+    u_var6 = struct_1;
+    if u_var6.field_0x680 == param_2 {
         return;
     }
-    uVar1 = uVar6.field_0x67c;
-    puVar4 = uVar6.field_0x67e;
-    puVar3 = (puVar4 | uVar1);
-    uVar2 = uVar1;
-    if (puVar3 != 0x0) {
-        pass1_1008_64a2(CONCAT22(puVar4, uVar1));
-        param_3 = 0x1000;
-        fn_ptr_1000_17ce(ctx, CONCAT22(puVar4, uVar1), 0x1000);
+    u_var1 = u_var6.field_0x67c;
+    pu_var4 = &mut u_var6.field_0x67e;
+    pu_var3 = pu_var4;
+    u_var2 = u_var1;
+    if pu_var3 != 0x0 {
+        pass1_1008_64a2(pu_var4);
+        *param_3 = 0x1000;
+        fn_ptr_1000_17ce(ctx, pu_var4, 0x1000);
     }
-    if ((param_2 == 0x1) || (param_2 == 0x2)) {
-        mem_op_1000_179c(0x8, puVar3, 0x1000);
-        puVar4 = (puVar3 | uVar2);
-        if (puVar4 == 0x0) {
-            &uVar6.field_0x67c = 0x0;
+    if (param_2 == 0x1) || (param_2 == 0x2) {
+        mem_op_1000_179c(ctx, 0x8, pu_var3, 0x1000);
+        pu_var4 = pu_var3;
+        if pu_var4 == 0x0 {
+            u_var6.field_0x67c = 0x0;
 //       TODO: goto LAB_1010_8869;
         }
-        paVar8 = *param_1;
-        paVar9 = CONCAT22(puVar3, uVar2);
+        pa_var8 = struct_1.field_0x0;
+        pa_var9 = pu_var3;
 //LAB_1010_8853:
-        uVar4 = paVar9;
-        file_1008_6414(paVar9, paVar8, unaff_SS, puVar4);
+        u_var4 = pa_var9;
+        file_1008_6414(pa_var9, pa_var8, unaff_ss, pu_var4);
     } else {
-        iVar5 = param_2 * 0x4;
-        paVar8 = set_err_mode_1010_8b14(param_1, (iVar5 + 0x172a), unaff_SS);
-        paVar9 = paVar8;
-        if (((iVar5 + 0x172a) == paVar8) && ((iVar5 + 0x172c) == (paVar8 >> 0x10))) {
-            msg_box_op_1010_8bb4(uVar6, uVar7, paVar8, param_3, unaff_SS);
+        i_var5 = param_2 * 0x4;
+        pa_var8 = set_err_mode_1010_8b14(struct_1, (i_var5 + 0x172a), unaff_ss);
+        pa_var9 = pa_var8;
+        if ((i_var5 + 0x172a) == pa_var8) && ((i_var5 + 0x172c) == (pa_var8 >> 0x10)) {
+            msg_box_op_1010_8bb4(u_var6, u_var7, pa_var8, param_3, unaff_ss);
         }
-        mem_op_1000_179c(0x8, (paVar9 >> 0x10), 0x1000);
-        puVar4 = ((paVar9 >> 0x10) | paVar9);
-        if (paVar9 != 0x0) {
+        mem_op_1000_179c(ctx, 0x8, (pa_var9 >> 0x10), 0x1000);
+        pu_var4 = ((pa_var9 >> 0x10) | pa_var9);
+        if pa_var9 != 0x0 {
             // goto
             // LAB_1010_8853;
         }
-        uVar4 = 0x0;
-        puVar4 = 0x0;
+        u_var4 = None;
+        pu_var4 = None;
     }
-    uVar6.field_0x67c = uVar4;
-    uVar6.field_0x67e = puVar4;
+    u_var6.field_0x67c = u_var4;
+    u_var6.field_0x67e = pu_var4;
 //LAB_1010_8869:
-    uVar6.field_0x680 = param_2;
+    u_var6.field_0x680 = param_2;
     return;
 }
 
