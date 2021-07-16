@@ -87,6 +87,13 @@ pub struct AppContext {
     pub PTR_LOOP_1050_6062: U32Ptr,
     pub s_MciSoundWindow_1050_02bd: String,
     pub s_SCInternalPutBldg2_site_0x_08lx__1050_5099: String,
+    pub PTR_LOOP_1050_1040: U32Ptr,
+    pub _PTR_LOOP_1050_14cc: U32Ptr,
+    pub s_New_failed_in_Op__Op_1050_0020: String,
+    pub s_DanBrotherton_1050_0302: String,
+    pub s_overflow_on_node__d_1050_11ca: String,
+    pub PTR__LOOP_1050_5b7c: U32Ptr,
+    pub PTR_LOOP_1050_5b80: U32Ptr,
 }
 
 impl AppContext {
@@ -175,7 +182,13 @@ impl AppContext {
             DAT_1050_605d: 0,
             PTR_LOOP_1050_6062: 0,
             s_MciSoundWindow_1050_02bd: "".to_string(),
-            s_SCInternalPutBldg2_site_0x_08lx__1050_5099: "".to_string()
+            s_SCInternalPutBldg2_site_0x_08lx__1050_5099: "".to_string(),
+            PTR_LOOP_1050_1040: 0,
+            _PTR_LOOP_1050_14cc: 0,
+            s_New_failed_in_Op__Op_1050_0020: "".to_string(),
+            s_DanBrotherton_1050_0302: "".to_string(),
+            s_overflow_on_node__d_1050_11ca: "".to_string(),
+            PTR__LOOP_1050_5b7c: 0
         }
     }
 }

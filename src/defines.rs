@@ -22,8 +22,13 @@ impl StructA {
 }
 
 pub struct Struct18 {
-    pub field_0x0: u16,
-    pub field_0x1: u16
+    pub field_0x0: String,
+    pub field_0x1: u16,
+    pub field_0x2: U32Ptr,
+    pub field_0x6: i16,
+    pub field_0x8e: u16,
+    pub field_0x92: U32Ptr,
+    pub field_0x94: u16
 }
 
 pub struct Struct10 {
@@ -31,7 +36,7 @@ pub struct Struct10 {
 }
 
 pub struct Struct27 {
-
+ pub field_0x16: u16
 }
 
 pub struct Struct65 {
@@ -55,7 +60,18 @@ pub struct Struct194 {
 }
 
 pub struct Struct29 {
-    
+    pub field_0x0: u16,
+    pub field_0x188: Struct18,
+}
+
+pub struct Struct57 {
+    pub field_0x0: String,
+    pub field_0x2: U32Ptr
+    pub field_0x8e: Struct20,
+    pub field_0x92: u32,
+    pub field_0x96: u16,
+    pub field_0x98: u16,
+
 }
 
 pub struct Struct19 {
@@ -241,4 +257,22 @@ pub struct Struct87 {
     pub field_0x680: i16,
     pub field_0x67c: u16,
     pub field_0x67e: Struct18
+}
+
+pub struct Struct_1010_2fa0 {
+
+}
+
+pub struct Struct_1008_628e {
+    pub field_0x2: u16,
+    pub field_0x8: u16,
+    pub field_0xd2: Struct_257,
+}
+
+pub struct Struct_257 {
+    pub field_0x14: U32Ptr
+}
+
+pub struct Struct_1010_7b26 {
+
 }

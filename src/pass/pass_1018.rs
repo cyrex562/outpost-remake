@@ -1,7 +1,7 @@
 use std::default::default;
 
 use crate::cleanup::{clenaup_win_ui_1018_4d22, delete_palette_1018_e16c, destroy_win_1008_628e};
-use crate::defines::{Struct11, Struct18, Struct19, Struct79};
+use crate::defines::{Struct11, Struct18, Struct19, Struct79, Struct29};
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::draw::draw_1020::{draw_op_1020_041e, draw_op_1020_9364, palette_op_1020_92c4, unk_draw_op_1020_0c3e, unk_draw_op_1020_7f7a, win_ui_palette_op_1020_0cd2};
 use crate::file::file_1008::{read_file_1008_7bc8, read_file_1008_7cfe, read_file_1008_7dee};
@@ -8195,7 +8195,7 @@ pass1_1020_01d8(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16,
 
 
 
-pub fn pass1_1020_022c(param_1: *mut u16)
+pub fn pass1_1020_022c(param_1: &mut Struct29)
 {
   let puVar1: u32;
   let uVar2: u16;

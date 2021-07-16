@@ -13,15 +13,15 @@ use crate::{
         Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
     },
 };
-use crate::defines::{Struct19, Struct79, Struct80, U32Ptr};
+use crate::defines::{Struct19, Struct79, Struct80, U32Ptr, Struct20};
 use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{get_vec_from_addr, struct_from_addr};
+use crate::util::{get_vec_from_addr, struct_from_addr, get_string_from_rsrc};
 use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16};
-use crate::winapi::FillRect16;
+use crate::winapi::{FillRect16, LoadCursor16};
 
 pub fn draw_op_1008_1230(param_1: HWND16) {
     fill_rect_1008_39ac(param_1);
@@ -30,53 +30,53 @@ pub fn draw_op_1008_1230(param_1: HWND16) {
 
 pub unsafe fn unk_draw_op_1008_61b2(
     ctx: &mut AppContext,
-    param_1: &mut Struct20,
+    struct_4: &mut Struct20,
     param_2: u16,
     param_3: u16,
     param_4: i32,
-    param_5: &mut WNDCLASS16,
+    wnd_class: &mut WNDCLASS16,
     extraout_dx: U32Ptr,
     unaff_di: i16,
 )  {
-    let l_hgdiobj_1: HGDIOBJ16;
-    let l_hcursor_1: HCURSOR16;
-    let mut pu_var1: Struct79;
-    let l_struct_2: u16;
-    let i_var4: &mut Struct20;
+    let gdi_obj_1: HGDIOBJ16;
+    let cursor_1: HCURSOR16;
+    let mut struct_1: Struct19;
+    let struct_2: u16;
+    let struct_3: &mut Struct20;
     let u_var1: u16;
 
-    set_struct_1008_687a(param_1, param_4);
-    param_1.field_0xde = param_2;
-    param_1.field_0xe0 = 0x0;
-    param_1.field_0x0 = 0x6378;
-    param_1.field_0x2 = 0x1008;
-    pu_var1 = struct_from_addr::<Struct79>(extraout_dx);
+    set_struct_1008_687a(struct_4, param_4);
+    struct_4.field_0xde = param_2;
+    struct_4.field_0xe0 = 0x0;
+    struct_4.field_0x0 = 0x6378;
+    struct_4.field_0x2 = 0x1008;
+    struct_1 = struct_from_addr::<Struct79>(extraout_dx);
     unk_str_op_1000_3d3e(
-        (param_1 & 0xffff0000 | &i_var1.field_0x5b),
+        (struct_4 & 0xffff0000 | &i_var1.field_0x5b),
         ctx.s_DanBrotherton_1050_0302,
     );
-    l_hgdiobj_1 = GetStockObject16(0x1000);
-    param_1.hgdiobj_field_0xc6 = l_hgdiobj_1;
-    l_hcursor_1 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, 0x7f00);
-    param_1.hcursor_field_0xc4 = l_hcursor_1;
-    param_1.field_0xc8 = 0x200b;
-    param_1.field_0xac = 0x45000000;
-    param_1.field_0xbc = (param_4 + 0x8);
-    l_struct_2 = mixed_1010_20ba(
+    gdi_obj_1 = GetStockObject16(0x1000);
+    struct_4.hgdiobj_field_0xc6 = gdi_obj_1;
+    cursor_1 = LoadCursor16(ctx.s_tile2_bmp_1050_1538 as HINSTANCE16, &get_string_from_rsrc(0x7f00));
+    struct_4.hcursor_field_0xc4 = cursor_1;
+    struct_4.field_0xc8 = 0x200b;
+    struct_4.field_0xac = 0x45000000;
+    struct_4.field_0xbc = (param_4 + 0x8);
+    struct_2 = mixed_1010_20ba(
         ctx,
         ctx.PTR__LOOP_1050_0ed0,
         0x48,
-        param_5,
-        &mut pu_var1,
+        wnd_class,
+        &mut struct_1,
         unaff_di,
         extraout_dx as u16,
     );
-    param_1.field_0xb4 = 0x0;
-    param_1.field_0xb6 = 0x0;
-    param_1.field_0xb8 = (l_struct_2 + 0xa);
-    param_1.field_0xba = (l_struct_2 + 0xc);
-    param_1.field_0xca = param_3;
-    win_ui_reg_class_1008_96d2(ctx, param_1, 0x1010, param_5);
+    struct_4.field_0xb4 = 0x0;
+    struct_4.field_0xb6 = 0x0;
+    struct_4.field_0xb8 = (struct_2 + 0xa);
+    struct_4.field_0xba = (struct_2 + 0xc);
+    struct_4.field_0xca = param_3;
+    win_ui_reg_class_1008_96d2(ctx, struct_4, 0x1010, wnd_class);
 }
 
 pub fn fill_rect_1008_62c0(ctx: &mut AppContext, win_handle: HWND16) {

@@ -2,7 +2,7 @@ use std::default::default;
 
 use crate::bad::bad_1010_bf08;
 use crate::cleanup::{clenaup_win_ui_1018_4d22, destroy_window_1010_7b26, unk_destroy_win_op_1010_2fa0};
-use crate::defines::{Struct11, Struct18, Struct19, Struct65, Struct79, Struct87, U32Ptr};
+use crate::defines::{Struct11, Struct18, Struct19, Struct65, Struct79, Struct87, U32Ptr, Struct27, Struct20};
 use crate::file::file_1008::{file_1008_6414, read_file_1008_7c6e, read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708};
 use crate::global::AppContext;
@@ -31,7 +31,7 @@ use crate::sys_api::{free_rsrc_1010_4b3e, get_sys_metrics_1018_4b1e, set_err_mod
 use crate::ui::ui_1010::{send_msg_1010_7c42, msg_box_op_1010_8bb4};
 use crate::ui::ui_1040::mov_update_win_1040_93aa;
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
-use crate::win_struct::{HINSTANCE16, SEGPTR};
+use crate::win_struct::{HINSTANCE16, SEGPTR, WNDCLASS16};
 
 pub unsafe fn pass1_1010_0000(param_1: &mut Struct645, param_3: u16, param_4: u16, unaff_di: &mut Struct19) -> u32
 
@@ -1445,7 +1445,7 @@ pub fn pass1_1010_1ea6(param_1: u32, param_2: i32, param_3: u16) {
 }
 
 
-pub fn pass1_1010_1f62(param_1: u16, param_2: u32, param_3: i16) {
+pub fn pass1_1010_1f62(param_1: u16, param_2: &mut Struct27, param_3: i16) {
     let uVar1: u32;
     let ppcVar2: u32;
     let iVar3: i16;
@@ -1876,7 +1876,7 @@ pub fn pass1_1010_32c0(param_1: u32, param_2: u32) {
 }
 
 
-pub fn pass1_1010_32da(param_1: *mut u32, param_2: u32, param_3: u16, param_4: u16) {
+pub fn pass1_1010_32da(param_1: &mut Struct27, param_2: &mut Struct65, param_3: u16, param_4: u16) {
     pass1_1010_32f4(param_1, (param_2 + 0x42), param_4, param_3);
     return;
 }
@@ -3763,7 +3763,7 @@ pub fn pass1_1010_60fa(param_1: u32) {
 }
 
 
-pub fn pass1_1010_6118(param_1: u32) {
+pub fn pass1_1010_6118(param_1: &mut Struct20) {
     let iVar1: i16;
     let uVar2: u16;
 
@@ -4341,7 +4341,7 @@ pub fn pass1_1010_71c2(param_1: u16, param_2: u16, param_3: i16, param_4: u16) {
         uVar2 = (param_3 + 0x6);
         uVar2 = (uVar2 + 0x18);
         uVar1 = (param_3 + 0x6);
-        destroy_window_1010_7b26(uVar1 & 0xffff0000 | (uVar1 - 0xa), (uVar2 + 0x28), param_4, param_2);
+        destroy_window_1010_7b26(uVar1 & 0xffff0000 | (uVar1 - 0xa), (uVar2 + 0x28), param_4, param_2, 0);
         return;
     }
     if (param_1 < 0x14) {
@@ -4514,7 +4514,7 @@ pub fn pass1_1010_7818(param_1: u32, param_2: u32) -> u16
 }
 
 
-pub fn pass1_1010_7b8c(param_1: u32, param_2: i16, param_3: u16) {
+pub fn pass1_1010_7b8c(param_1: &mut Struct20, param_2: i16, param_3: &mut WNDCLASS16) {
     let puVar1: u32;
     let uVar2: u16;
     let ppcVar3: u32;

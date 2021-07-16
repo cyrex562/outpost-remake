@@ -1,4 +1,5 @@
-use crate::defines::Struct87;
+use crate::defines::{Struct87, Struct20};
+use crate::win_struct::WNDCLASS16;
 
 pub fn
 set_window_placement_1010_0070
@@ -194,7 +195,7 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
 }
 
 
-pub fn ui_op_1010_79aa(param_1: u32,param_2: i16,param_3: i32,param_4: u16)
+pub fn ui_op_1010_79aa(param_1: &mut Struct20, param_2: i16, param_3: i32, param_4: &mut WNDCLASS16)
 {
   let uVar1: u32;
   let puVar2: *mut u8;
