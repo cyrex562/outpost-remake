@@ -52,12 +52,12 @@ use crate::global::AppContext;
 pub fn unk_load_str_op_1010_2c34() -> u16
 
 {
-  let pUVar1: *mut u16;
-  let in_DX: *mut u8;
+  let pUVar1: U32Ptr;
+  let in_DX: U32Ptr;
   in_buf_len_5: i16;
   let unaff_DI: i16;
   let unaff_SS: u16;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   
   puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,unaff_SS,in_DX,unaff_DI);
   mem_op_1000_179c(0x80,(puVar2 >> 0x10),0x1000);
@@ -77,7 +77,7 @@ pub unsafe fn string_1010_5286(param_1: u16,param_2: u16,param_3: u32,param_4: &
 
 {
   let mut in_buffer_4: String; 
-  let in_buf_len_5: *mut u8;
+  let in_buf_len_5: U32Ptr;
   let mut pc_var1: String;
   
   pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,param_3,(param_3 >> 0x10));
@@ -139,7 +139,7 @@ unk_load_str_op_1010_8c96
   let puVar3: u32;
   let iVar4: i16;
   let uVar5: u16;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let iVar6: i16;
   let uVar7: u16;
   let uVar8: u16;
@@ -147,12 +147,12 @@ unk_load_str_op_1010_8c96
   let uVar9: u32;
   let mut pcVar10: String; 
   let mut spec: String;
-  let valist: *mut u16;
+  let valist: U32Ptr;
   let uStack46: u32;
   let local_10: u32;
   let iStack12: i16;
   let uStack10: i16;
-  let puStack8: *mut u8;
+  let puStack8: U32Ptr;
   let uStack6: u16;
   let uStack4: u16;
   
@@ -274,7 +274,7 @@ switchD_1010_8e11_caseD_4:
 }
 
 
-pub fn load_string_1010_9432(param_1: HINSTANCE16) -> *mut u8
+pub fn load_string_1010_9432(param_1: HINSTANCE16) -> U32Ptr
 
 {
   let mut pcVar1: String; 
@@ -286,7 +286,7 @@ pub fn load_string_1010_9432(param_1: HINSTANCE16) -> *mut u8
 }
 
 
-pub fn load_string_1010_ac92(param_1: HINSTANCE16,param_2: u16,param_3: u16,param_4: i16) -> *mut u8
+pub fn load_string_1010_ac92(param_1: HINSTANCE16,param_2: u16,param_3: u16,param_4: i16) -> U32Ptr
 
 {
   let mut pcVar1: String; 
@@ -349,7 +349,7 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
   let uVar6: u16;
   let uVar7: u16;
   let mut in_buffer_4: String; 
-  let in_buf_len_5: *mut u8;
+  let in_buf_len_5: U32Ptr;
   let uStack22: u16;
   let mut pcStack6: String; 
   

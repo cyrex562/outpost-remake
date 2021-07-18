@@ -6,16 +6,16 @@ use crate::ui::ui_1010::msg_box_op_1010_8bb4;
 use crate::pass::pass_1008::pass1_1008_6562;
 use crate::pass::pass_1010::pass1_1010_878c;
 use crate::struct_ops::struct_1008::{struct_op_1008_3f92, struct_op_1008_48fe};
-use crate::win_struct::HINSTANCE16;
+use crate::win_struct::{HINSTANCE16, WNDCLASS16};
 
-pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16)
+pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16)
 {
   let puVar1: u32;
   let ppcVar2: u32;
   let BVar3: bool;
   let uVar4: &mut Struct229;
   let uVar5: u16;
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let iVar6: &mut Struct228;
   let uVar6: u16;
   let uVar7: u16;
@@ -209,13 +209,13 @@ pub fn write_to_file_1010_6846(param_1: u32,param_2: u32,param_3: u16)
 }
 
 
-pub unsafe fn unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16) -> Option<&mut Struct43>
+pub unsafe fn unk_io_op_1010_830a(param_1: u32, param_2: u16, param_3: &mut WNDCLASS16) -> Option<&mut Struct43>
 
 {
   let in_ax: u16;
   let pu_var1: u32;
   let pu_var2: u32;
-  let in_dx: *mut u8;
+  let in_dx: U32Ptr;
   let u_var3: u16;
   let i_var3: &mut Struct45;
   let i_var2: &mut Struct44;
@@ -297,7 +297,7 @@ pub unsafe fn unk_io_op_1010_830a(param_1: u32,param_2: u16,param_3: u16) -> Opt
 
 pub fn write_to_file_1010_ed58(param_1: u32,param_2: u32,param_3: u16)
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let uVar2: u16;
   let BVar3: bool;
   let iVar4: i16;

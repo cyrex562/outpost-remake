@@ -22,7 +22,7 @@ use crate::{
 pub unsafe fn draw_fn_1010_2a32(
     param_1: u16,
     param_2: u16,
-    __return_storage_ptr__: *mut u16,
+    __return_storage_ptr__: U32Ptr,
     param_4: i16,
     param_5: u16,
     param_6: u32,
@@ -35,16 +35,16 @@ pub unsafe fn draw_fn_1010_2a32(
     unaff_DI: u16,
     in_AF: u8,
 ) -> u16 {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let mut pcVar2: String;
-    let pbVar3: *mut u8;
+    let pbVar3: U32Ptr;
     let uVar4: u32;
     let bVar5: u8;
     let uVar6: u16;
     let ppcVar7: u32;
     let pcVar8: u32;
-    let puVar9: *mut u16;
-    let puVar10: *mut u16;
+    let puVar9: U32Ptr;
+    let puVar10: U32Ptr;
     let uVar11: u16;
     let b_force_background: HPALETTE16;
     let handle: HGDIOBJ16;
@@ -53,12 +53,12 @@ pub unsafe fn draw_fn_1010_2a32(
     let BVar14: bool;
     let iVar15: i16;
     let bVar16: u8;
-    let extraout_DX: *mut u8;
-    let extraout_DX_00: *mut u8;
-    let puVar17: *mut u8;
-    let extraout_DX_01: *mut u8;
-    let extraout_DX_02: *mut u8;
-    let puVar18: *mut u8;
+    let extraout_DX: U32Ptr;
+    let extraout_DX_00: U32Ptr;
+    let puVar17: U32Ptr;
+    let extraout_DX_01: U32Ptr;
+    let extraout_DX_02: U32Ptr;
+    let puVar18: U32Ptr;
     let iVar19: i16;
     // let unaff_SI: i16;
     let iVar20: i16;
@@ -438,23 +438,23 @@ pub unsafe fn pt_in_rect_1010_40f8(
     param_1: u32,
     param_2: &POINT16,
     param_3: &RECT16,
-    in_dx: *mut u8,
+    in_dx: U32Ptr,
     unaff_di: i16,
     unaff_ss: u16,
 ) -> i16 {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let ppc_var2: u32;
     let b_var3: bool;
     let u_var4: u16;
     let u_var5: u16;
     let i_var6: i16;
-    // let in_DX: *mut u8;
-    let pu_var7: *mut u8;
-    let pu_var8: *mut u8;
+    // let in_DX: U32Ptr;
+    let pu_var7: U32Ptr;
+    let pu_var8: U32Ptr;
     // let unaff_DI: i16;
     let u_var9: u16;
     // let unaff_SS: u16;
-    let pu_var10: *mut u16;
+    let pu_var10: U32Ptr;
     let pu_stack16: u32;
     let i_stack6: i16;
     let u_stack4: u16;
@@ -537,7 +537,7 @@ pub unsafe fn draw_1010_47ae(param_1: u32, param_2: u16, param_3: u16) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_style_3: i16, param_5: u16) {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let puVar2: u32;
     let ppcVar3: u32;
     let iVar4: i16;
@@ -545,8 +545,8 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
     let handle: HGDIOBJ16;
     let handle_00: HGDIOBJ16;
     let uVar5: u16;
-    let extraout_DX: *mut u8;
-    let puVar6: *mut u8;
+    let extraout_DX: U32Ptr;
+    let puVar6: U32Ptr;
     let mut output: String;
     let iVar6: &mut Struct5;
     let iVar7: i16;
@@ -649,7 +649,7 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
 }
 
 pub unsafe fn pt_in_rect_1010_4e08(param_1: u32, param_2: u16, param_3: u16, param_4: &RECT16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let bVar2: bool;
     let BVar3: bool;
     let iVar4: i16;

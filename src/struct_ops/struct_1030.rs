@@ -1,5 +1,5 @@
 
-pub fn struct_1030_11aa(param_1: *mut u16,param_2: i32,param_3: i32,param_4: u16)
+pub fn struct_1030_11aa(param_1: U32Ptr,param_2: i32,param_3: i32,param_4: u16)
 {
   let iVar1: &mut Struct156;
   let uVar1: u16;
@@ -32,7 +32,7 @@ pub fn struct_1030_11aa(param_1: *mut u16,param_2: i32,param_3: i32,param_4: u16
 
 pub fn struct_1030_1550(param_1: u32,param_2: u16)
 {
-  let puVar1: *mut u16;
+  let puVar1: U32Ptr;
   let uVar2: u16;
   let uVar3: u16;
   let iVar5: &mut Struct157;
@@ -83,7 +83,7 @@ pub fn struct_1030_1550(param_1: u32,param_2: u16)
 }
 
 
-pub fn struct_1030_1628(param_1: *mut u16)
+pub fn struct_1030_1628(param_1: U32Ptr)
 {
   let iVar1: &mut Struct181;
   let uVar1: u16;
@@ -100,7 +100,7 @@ pub fn struct_1030_1628(param_1: *mut u16)
 }
 
 
-pub fn struct_1030_17ce(param_1: *mut u16,param_2: u32,param_3: u32) -> u16
+pub fn struct_1030_17ce(param_1: U32Ptr,param_2: u32,param_3: u32) -> u16
 
 {
   let paVar1: &mut Struct75;
@@ -150,7 +150,7 @@ pub fn struct_op_1030_1cd8(param_1: &mut Struct75,param_2: u32,param_3: u32)
 
 
 
-pub fn struct_1030_2112(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mut u8)
+pub fn struct_1030_2112(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: U32Ptr)
 {
   let iVar1: &mut Struct366;
   let iVar2: &mut Struct367;
@@ -212,7 +212,7 @@ pub fn struct_1030_2112(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mu
 }
 
 
-pub fn struct_1030_299a(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mut u8)
+pub fn struct_1030_299a(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: U32Ptr)
 {
   let iVar1: &mut Struct352;
   let uVar1: u16;
@@ -237,7 +237,7 @@ pub fn struct_1030_44be(param_1: *mut u32,param_2: u16)
   let unaff_DI: i16;
   let uVar1: u16;
   let unaff_SS: u16;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   
  // uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
@@ -274,7 +274,7 @@ pub fn struct_1030_4574(param_1: u32) -> u32
 }
 
 
-pub fn struct_1030_565a(param_1: *mut u16,param_2: u32,param_3: u16,param_4: *mut u8) -> *mut u16
+pub fn struct_1030_565a(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: U32Ptr) -> U32Ptr
 
 {
   let iVar1: &mut Struct353;
@@ -318,7 +318,7 @@ pub fn struct_op_1030_73a8(param_1: u32) -> u32
 }
 
 
-pub fn struct_1030_8544(param_1: *mut u16,param_2: *mut u16)
+pub fn struct_1030_8544(param_1: U32Ptr,param_2: U32Ptr)
 {
   let iVar1: &mut Struct356;
   let iVar2: &mut Struct355;
@@ -344,7 +344,7 @@ pub fn struct_1030_8544(param_1: *mut u16,param_2: *mut u16)
 
 
 
-pub fn struct_1030_c06e(param_1: *mut u16)
+pub fn struct_1030_c06e(param_1: U32Ptr)
 {
   let iVar1: &mut Struct188;
   let uVar1: u16;
@@ -360,7 +360,7 @@ pub fn struct_1030_c06e(param_1: *mut u16)
 }
 
 
-pub fn struct_1030_c6f6(param_1: *mut u16) -> u16
+pub fn struct_1030_c6f6(param_1: U32Ptr) -> u16
 
 {
   let uVar1: u16;
@@ -374,7 +374,7 @@ pub fn struct_1030_c6f6(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1030_c9a8(param_1: *mut u16) -> u16
+pub fn struct_1030_c9a8(param_1: U32Ptr) -> u16
 
 {
   let iVar1: i16;
@@ -393,7 +393,7 @@ pub fn struct_1030_c9a8(param_1: *mut u16) -> u16
 
 
 
-pub fn struct_1030_d8f6(param_1: *mut u16) -> u16
+pub fn struct_1030_d8f6(param_1: U32Ptr) -> u16
 
 {
   let iVar1: &mut Struct184;
@@ -419,7 +419,7 @@ pub fn struct_1030_d8f6(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1030_dc96(param_1: *mut u16) -> u16
+pub fn struct_1030_dc96(param_1: U32Ptr) -> u16
 
 {
   let uVar1: u16;
@@ -437,7 +437,7 @@ pub fn struct_1030_dc96(param_1: *mut u16) -> u16
 pub fn struct_1030_e4fa(param_1: &mut Struct100,param_2: u32,param_3: u16,param_4: u8)
 {
   let iVar1: &mut Struct289;
-  let puVar1: *mut u8;
+  let puVar1: U32Ptr;
   
   struct_op_1028_d1dc(param_3,param_4,param_1,0x3e80);
  // puVar1 = (param_1 >> 0x10);

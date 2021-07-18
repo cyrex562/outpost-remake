@@ -51,7 +51,7 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
 {
   let ppcVar1: u32;
   let iVar2: i16;
-  let piVar3: *mut i16;
+  let piVar3: U32Ptr;
   let uVar4: u16;
   let puVar5: u32;
   let extraout_DX: u16;
@@ -93,9 +93,9 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
 
 
 
-pub fn enum_child_windows_1010_01be(param_1: *mut u8)
+pub fn enum_child_windows_1010_01be(param_1: U32Ptr)
 {
-  pvVar1: *mut u8;
+  pvVar1: U32Ptr;
   
   if (ctx.PTR_LOOP_1050_0010 == 0x0) {
     pvVar1 = MakeProcInstance16(param_1,(HANDLE16)PTR_LOOP_1050_038c);
@@ -114,7 +114,7 @@ win_ui_op_1010_0240(param_1: u16,param_2: u16,param_3: u16,param_4: HWND16,
   let ppcVar1: u32;
   let BVar2: bool;
   let WVar3: u16;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let unaff_DI: i16;
   let puVar4: u32;
   let uVar5: u16;
@@ -144,7 +144,7 @@ win_ui_op_1010_0240(param_1: u16,param_2: u16,param_3: u16,param_4: HWND16,
 
 pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let uVar2: u32;
   let iVar3: i16;
   let uVar4: u16;
@@ -198,7 +198,7 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
 pub fn ui_op_1010_79aa(param_1: &mut Struct20, param_2: i16, param_3: i32, param_4: &mut WNDCLASS16)
 {
   let uVar1: u32;
-  let puVar2: *mut u8;
+  let puVar2: U32Ptr;
   let extraout_DX: u16;
   let uVar3: u16;
   let lStack18: i32;

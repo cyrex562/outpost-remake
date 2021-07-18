@@ -1,11 +1,11 @@
 use crate::winapi::{FatalAppExit16, FatalExit};
 
-pub fn exit_1000_25cc(param_1: i16, param_2: u16, param_3: u16) -> *mut i16 {
-    let pi_var1: *mut i16;
+pub fn exit_1000_25cc(param_1: i16, param_2: u16, param_3: u16) -> U32Ptr {
+    let pi_var1: U32Ptr;
     let mut pcVar2: String;
     let mut str: String;
-    let pi_var3: *mut i16;
-    let pi_var4: *mut i16;
+    let pi_var3: U32Ptr;
+    let pi_var4: U32Ptr;
     let mut pc_var5: String;
     let i_var6: i16;
     let i_var7: i16;
@@ -75,16 +75,16 @@ pub unsafe fn exit_1000_25f2(
     param_5: u16,
     param_6: u16,
     param_7: u16,
-) -> *mut i16 {
+) -> U32Ptr {
     i16 * *ppiVar1;
-    let piVar2: *mut i16;
+    let piVar2: U32Ptr;
     let mut pcVar3: String;
-    let puVar4: *mut u8;
-    let piVar5: *mut i16;
+    let puVar4: U32Ptr;
+    let piVar5: U32Ptr;
     let uVar6: u16;
     let mut str: String;
     let iVar7: i16;
-    let piVar8: *mut i16;
+    let piVar8: U32Ptr;
     let mut pcVar9: String;
 
     puVar4 = (param_4 + 0x1 & 0xfffe);

@@ -3,13 +3,13 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
 {
   let puVar1: u32;
   let ppcVar2: u32;
-  let puVar3: *mut u16;
+  let puVar3: U32Ptr;
   let uVar4: u16;
-  let puVar5: *mut u8;
+  let puVar5: U32Ptr;
   let uVar6: u16;
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let unaff_DI: i16;
-  let puVar7: *mut u16;
+  let puVar7: U32Ptr;
   let uVar8: u16;
   let uVar9: &mut Struct262;
   
@@ -103,11 +103,11 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
 
 
 pub fn
-struct_1018_229c(param_1: &mut Struct632,param_2: *mut u8,param_3: u16,param_4: *mut u8,
+struct_1018_229c(param_1: &mut Struct632,param_2: U32Ptr,param_3: u16,param_4: U32Ptr,
                 param_5: u16)
 
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let paVar2: &mut Struct43;
   let iStack4: i16;
   
@@ -179,10 +179,10 @@ pub fn struct_1018_2b10(param_1: &mut Struct55,param_2: u16,param_3: u16)
 {
   let puVar1: u32;
   let ppcVar2: u32;
-  let puVar3: *mut u16;
+  let puVar3: U32Ptr;
   let uVar4: u16;
   let unaff_DI: i16;
-  let puVar5: *mut u16;
+  let puVar5: U32Ptr;
   let paVar6: &mut Struct43;
   let uVar7: u32;
   let uVar8: u16;
@@ -239,7 +239,7 @@ pub fn struct_1018_2b10(param_1: &mut Struct55,param_2: u16,param_3: u16)
 }
 
 
-pub fn struct_1018_4720(param_1: *mut u16,param_2: u32,param_3: u32)
+pub fn struct_1018_4720(param_1: U32Ptr,param_2: u32,param_3: u32)
 {
   let iVar1: &mut Struct204;
   let uVar1: u16;
@@ -257,7 +257,7 @@ pub fn struct_1018_4720(param_1: *mut u16,param_2: u32,param_3: u32)
 }
 
 
-pub fn struct_1018_4790(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) -> u16
+pub fn struct_1018_4790(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u16) -> u16
 
 {
   let iVar1: &mut Struct266;
@@ -275,7 +275,7 @@ pub fn struct_1018_4790(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16
 
 
 
-pub fn struct_1018_47c8(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16,param_5: u32)
+pub fn struct_1018_47c8(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u16,param_5: u32)
 {
   let iVar1: &mut Struct264;
   let uVar1: u16;
@@ -292,7 +292,7 @@ pub fn struct_1018_47c8(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16
 }
 
 
-pub fn struct_1018_4842(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) -> u16
+pub fn struct_1018_4842(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u16) -> u16
 
 {
   let iVar1: &mut Struct265;
@@ -310,7 +310,7 @@ pub fn struct_1018_4842(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16
 }
 
 
-pub fn struct_1018_48b0(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) -> u16
+pub fn struct_1018_48b0(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u16) -> u16
 
 {
   let iVar1: &mut Struct207;
@@ -328,7 +328,7 @@ pub fn struct_1018_48b0(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16
 
 
 
-pub fn struct_1018_48e8(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16) -> u16
+pub fn struct_1018_48e8(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u16) -> u16
 
 {
   let iVar1: i16;
@@ -346,7 +346,7 @@ pub fn struct_1018_48e8(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u16
 
 
 
-pub fn struct_1018_4920(param_1: *mut u16,param_2: u32,param_3: u32,param_4: u32)
+pub fn struct_1018_4920(param_1: U32Ptr,param_2: u32,param_3: u32,param_4: u32)
 {
   let iVar1: &mut Struct203;
   let uVar1: u16;
@@ -381,12 +381,12 @@ pub fn struct_op_1018_4cda(param_1: i16,param_2: u16,param_3: u16)
 
 pub fn struct_1018_66cc(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: &mut Struct20;
   let unaff_DI: i16;
   let uVar2: &mut Struct20;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   
   unk_draw_op_1020_7f7a(param_1,0xa,CONCAT22(param_3,param_2));
  // uVar2 = (param_1 >> 0x10);
@@ -1391,15 +1391,15 @@ struct_1020_0762(param_1: &mut Struct20,param_2: u32,param_3: *mut u32,param_4: 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn struct_1020_0baa(param_1: *mut u16,param_2: u16,param_3: *mut u8,param_4: u16)
+pub fn struct_1020_0baa(param_1: U32Ptr,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
-  let puVar1: *mut u8;
+  let puVar1: U32Ptr;
   let iVar2: &mut Struct276;
   let unaff_DI: i16;
   let uVar2: u16;
-  let puVar3: *mut u16;
-  let puVar4: *mut u16;
-  let puVar5: *mut u16;
+  let puVar3: U32Ptr;
+  let puVar4: U32Ptr;
+  let puVar5: U32Ptr;
   let uVar6: u16;
   
  // uVar2 = (param_1 >> 0x10);

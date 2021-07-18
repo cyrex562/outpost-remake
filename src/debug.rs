@@ -6,7 +6,7 @@ use crate::{
 pub fn debug_print_1008_6048(
     param_1: u32,
     param_2: &mut String,
-    param_3: *mut u16,
+    param_3: U32Ptr,
     in_DX: u16,
     unaff_ES: u16,
     in_AF: u8,
@@ -18,7 +18,7 @@ pub fn debug_print_1008_6048(
     // let in_AF: u8;
     let u_stack266: u16;
     let mut p_c_stack6: String;
-    let args: *mut u16;
+    let args: U32Ptr;
 
     if (ctx.PTR_LOOP_1050_02ec != 0x0) {
         p_c_stack6 = &stack0x0008;

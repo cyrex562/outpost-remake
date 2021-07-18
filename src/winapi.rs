@@ -52,7 +52,7 @@ pub fn GetModuleFileName16(h_module: HINSTANCE16, lp_file_name: &String, n_size:
     unimplemented!()
 }
 // LPVOID MakeProcInstance16(LPVOID func, HANDLE16 h_instance)
-pub fn MakeProcInstance16(func: fn(), h_instance: HANDLE16) -> *mut u8 {
+pub fn MakeProcInstance16(func: fn(), h_instance: HANDLE16) -> U32Ptr {
     unimplemented!()
 }
 // void FreeProcInstance16(LPVOID func)
@@ -172,7 +172,7 @@ pub fn GlobalPageUnlock16(handle: HGLOBAL16) -> u16 {
     unimplemented!()
 }
 // void hmemcpy16(LPVOID dst, LPCVOID src, long count)
-pub fn hmemcpy16(dst: *mut u8, src: *mut u8, count: libc::c_long) {
+pub fn hmemcpy16(dst: U32Ptr, src: U32Ptr, count: libc::c_long) {
     unimplemented!()
 }
 // long WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count)
@@ -290,7 +290,7 @@ pub fn StretchDIBits16(
     x_src: i16,
     width_src: i16,
     height_src: i16,
-    bits: *mut u8,
+    bits: U32Ptr,
     info: &BITMAPINFO,
     w_usage: u16,
     dw_rop: u32,
@@ -308,7 +308,7 @@ pub fn SetDIBitsToDevice(
     y_src: i16,
     startscan: u16,
     lines: u16,
-    bits: *mut u8,
+    bits: U32Ptr,
     info: &BITMAPINFO,
     coloruse: u16,
 ) -> i16 {
@@ -422,7 +422,7 @@ pub fn CreateWindow16(
     parent: HWND16,
     hmenu: HMENU16,
     instance: HINSTANCE16,
-    data: *mut u8,
+    data: U32Ptr,
 ) -> HWND16 {
     unimplemented!()
 }
@@ -679,7 +679,7 @@ pub fn SetSysColors16(count: i16, list: &[i16], values: &[COLORREF]) {
 pub fn GrayString16(
     hdc: HDC16,
     param_2: HBRUSH16,
-    gsprc: *mut u8,
+    gsprc: U32Ptr,
     lparam: LPARAM,
     cch: i16,
     x: i16,
@@ -762,7 +762,7 @@ pub fn TrackPopupMenu16(
     unimplemented!()
 }
 // wsprintf16: i16(LPSTR buffer, LPCSTR spec, WORD * valist)
-pub fn wsprintf16(buffer: &String, spec: &String, valist: *mut u16) -> i16 {
+pub fn wsprintf16(buffer: &String, spec: &String, valist: U32Ptr) -> i16 {
     unimplemented!()
 }
 // wvsprintf16: i16(LPSTR buffer, LPCSTR spec, WORD * args)
@@ -782,7 +782,7 @@ pub fn CreateWIndowEx16(
     parent: HWND16,
     hmenu: HMENU16,
     instance: HINSTANCE16,
-    data: *mut u8,
+    data: U32Ptr,
 ) -> HWND16 {
     unimplemented!()
 }

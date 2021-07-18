@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{Struct18, Struct19, Struct79, Struct87};
+use crate::defines::{Struct18, Struct19, Struct79, Struct87, U32Ptr};
 use crate::draw::draw_1040::{draw_text_1040_8d14, unk_draw_op_1040_b0f8};
 use crate::exit::exit_1000_25f2;
 use crate::file::file_1008::close_file_1008_496c;
@@ -30,12 +30,12 @@ use crate::winapi::{DefWindowProc16, DeleteObject16, DispatchMessage16, DOS3Call
 pub fn _SHI_INVOKEERRORHANDLER1() -> u16
 
 {
-    let iVar1: i16;
+    let mut iVar1: bool;
     let BVar2: bool;
     let uVar2: u16;
     let unaff_CS: u16;
     let pcStack6: u32;
-    let puStack4: *mut u8;
+    let puStack4: U32Ptr;
     let uVar3: u16;
 
     uVar3 = ctx.data_seg;
@@ -48,7 +48,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
             iVar1 = mem_op_1000_21b6(ctx.PTR_PTR_1050_5f1a, PTR_LOOP_1050_5f1c);
             pcStack6 = ctx.PTR_PTR_1050_5f1a;
             puStack4 = ctx.PTR_LOOP_1050_5f1c;
-            if (iVar1 == 0x0) {
+            if iVar1 == false {
                 ctx.PTR_PTR_1050_5f1a = &ctx.PTR_PTR_1050_1f7e;
                 ctx.PTR_LOOP_1050_5f1c = &ctx.PTR_LOOP_1050_1000;
                 pcStack6 = &ctx.PTR_PTR_1050_1f7e;
@@ -57,7 +57,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
         }
         if ((puStack4 | pcStack6) != 0x0) {
             BVar2 = msg_box_op_1000_1f24(&ctx.PTR_PTR_1050_5f1a, ctx.data_seg, 0x0, unaff_CS);
-            if (BVar2 == 0x0) {
+            if BVar2 == false {
                 uVar2 = (*pcStack6)();
             } else {
                 puStack4 = 0x0;
@@ -74,14 +74,14 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
 }
 
 
-pub fn dos3_call_1000_23ea(param_1: u16, param_2: u16, param_3: i16, param_4: &mut String) -> *mut i16
+pub fn dos3_call_1000_23ea(param_1: u16, param_2: u16, param_3: i16, param_4: &mut String) -> U32Ptr
 
 {
-    let pbVar1: *mut u8;
-    let pbVar2: *mut u8;
+    let pbVar1: U32Ptr;
+    let pbVar2: U32Ptr;
     let bVar3: u8;
-    let piVar4: *mut i16;
-    let pbVar5: *mut u8;
+    let piVar4: U32Ptr;
+    let pbVar5: U32Ptr;
     let mut pcVar6: String;
     let uVar7: u16;
     let ppcVar8: u32;
@@ -91,13 +91,13 @@ pub fn dos3_call_1000_23ea(param_1: u16, param_2: u16, param_3: i16, param_4: &m
     let bVar12: u8;
     let uVar13: u16;
     let mut str: String;
-    let piVar14: *mut i16;
+    let piVar14: U32Ptr;
     let uVar15: u16;
     let extraout_DX: u16;
     let uVar16: u16;
-    let pbVar17: *mut u8;
-    let piVar18: *mut i16;
-    let pbVar19: *mut u8;
+    let pbVar17: U32Ptr;
+    let piVar18: U32Ptr;
+    let pbVar19: U32Ptr;
     let mut pcVar20: String;
     let action: u16;
     let bVar21: bool;
@@ -276,29 +276,42 @@ pub fn dos3_op_1000_256b() {
 }
 
 
-u16
-sys_1000_30b4(param_1: u16,param_2: u16,param_3: * mut u8,param_4: i16,param_5: u16,
-param_6: u16,param_7: u16,param_8: u16)
+pub fn sys_1000_30b4(
+    ctx: &mut AppContext,
+    param_1: &mut Struct_1000_2cb0,
+    param_2: u16,
+    param_3: U32Ptr,
+    param_4: i16,
+    param_5: &mut Struct_1000_2cb0,
+    param_6: u16,
+    param_7: u16,
+    param_8: u16,
+) -> u16
 
 {
-let bVar1: u8; let bVar2: u8;
-let uVar3: u16; let iVar3: i16;
-let uVar4: u16;
+    let bVar1: u8;
+    let bVar2: u8;
+    let uVar3: u16;
+    let iVar3: i16;
+    let uVar4: u16;
 
-iVar3 = param_4 + 0x1; uVar4 = SUB42(ctx.data_seg, 0x0); exit_1000_25f2(0x30c5, param_7, ctx.data_seg, 0x214, param_6, param_7, param_8); bVar1 = * param_3; if ((bVar1 != 0x0) & & (true)) {
-if ((bVar1 - 0x20) < 0x59) {
-bVar2 = ((bVar1 - 0x20) + 0x5ffe) & 0xf;
-}
-else {
-bVar2 = 0x0;
-}
+    iVar3 = param_4 + 0x1;
+    uVar4 = SUB42(ctx.data_seg, 0x0);
+    exit_1000_25f2(0x30c5, param_7, ctx.data_seg, 0x214, param_6, param_7, param_8);
+    bVar1 = *param_3;
+    if (bVar1 != 0x0) & &(true) {
+        if (bVar1 - 0x20) < 0x59 {
+            bVar2 = ((bVar1 - 0x20) + 0x5ffe) & 0xf;
+        } else {
+            bVar2 = 0x0;
+        }
 // WARNING: Could not emulate address calculation at 0x10003101
 // WARNING: Treating indirect jump as call
-uVar3 = (((((bVar2 * '\b') + 0x5ffe) > > 0x4) * 0x2 + 0x30a4))(param_5 & 0xff00 | bVar1, uVar4, iVar3); return uVar3;
+        uVar3 = ((((bVar2 * '\b') + 0x5ffe) > > 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, uVar4, iVar3);
+        return uVar3;
+    }
+    return 0x0;
 }
-return 0x0;
-}
-
 
 
 pub fn dos3_call_op_1000_35fe(param_1: u16, param_2: i16) -> u16
@@ -335,7 +348,7 @@ pub fn dos3_call_op_1000_35fe(param_1: u16, param_2: i16) -> u16
 pub fn mixed_dos3_call_1000_3636(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16)
 
 {
-    let pbVar1: *mut u8;
+    let pbVar1: U32Ptr;
     let pcVar2: u32;
     let uVar3: u16;
     let uVar4: u16;
@@ -428,7 +441,7 @@ pub fn mixed_dos3_call_1000_370a(
     param_3: u16,
     param_4: u8,
     param_5: u16,
-    param_6: i16
+    param_6: i16,
 ) -> u16
 
 {
@@ -651,35 +664,35 @@ pub fn mixed_dos3_call_1000_370a(
 // WARNING: Unable to track spacebase fully for stack
 
 pub fn mixed_dos3_call_1000_39f2(
-    param_1: *mut u8,
+    param_1: U32Ptr,
     param_2: &mut String,
-    param_3: *mut u8,
+    param_3: U32Ptr,
     param_4: u16,
     param_5: u16,
     param_6: u16,
-    param_7: u8) -> *mut u8
+    param_7: u8) -> U32Ptr
 
 {
-    let pbVar1: *mut u8;
-    let puVar2: *mut u8;
-    let puVar3: *mut u8;
+    let pbVar1: U32Ptr;
+    let puVar2: U32Ptr;
+    let puVar3: U32Ptr;
     let pcVar4: u32;
     let uVar5: u16;
     let uVar6: u8;
-    let piVar7: *mut i16;
+    let piVar7: U32Ptr;
     let uVar8: u16;
-    let piVar9: *mut i16;
-    let piVar10: *mut i16;
+    let piVar9: U32Ptr;
+    let piVar10: U32Ptr;
     let uVar11: u16;
-    let puVar12: *mut u8;
+    let puVar12: U32Ptr;
     let iVar13: i16;
-    let puVar14: *mut u8;
-    let pbVar15: *mut u8;
-    let piVar16: *mut i16;
-    let puVar17: *mut u8;
+    let puVar14: U32Ptr;
+    let pbVar15: U32Ptr;
+    let piVar16: U32Ptr;
+    let puVar17: U32Ptr;
     let unaff_BP: i16;
-    let pbVar18: *mut u8;
-    let puVar19: *mut u8;
+    let pbVar18: U32Ptr;
+    let puVar19: U32Ptr;
     let uVar20: u16;
     let uVar21: u8;
     let bVar22: u8;
@@ -689,8 +702,8 @@ pub fn mixed_dos3_call_1000_39f2(
     let cVar26: u8;
     let uVar27: u32;
     let mut pcVar28: String;
-    let piStack14: *mut i16;
-    let puStack12: *mut u8;
+    let piStack14: U32Ptr;
+    let puStack12: U32Ptr;
     let uStack10: u16;
     let uStack8: u16;
     let uStack6: u16;
@@ -920,7 +933,7 @@ mixed_dos3_call_1000_3ad9
 param_7: u16,param_8: u8)
 
 {
-let puVar1: * mut u16; let piVar2: * mut i16; let pcVar3: u32; let uVar4: u16; let uVar5: u16; let piVar6: * mut i16; let piVar7: *mut i16; let uVar8: u16; let bVar9: u8; let bVar10: bool; let cVar11: u8; let cVar12: u8; let cVar13: u8;
+let puVar1: * mut u16; let piVar2: * mut i16; let pcVar3: u32; let uVar4: u16; let uVar5: u16; let piVar6: * mut i16; let piVar7: U32Ptr; let uVar8: u16; let bVar9: u8; let bVar10: bool; let cVar11: u8; let cVar12: u8; let cVar13: u8;
 
 piVar7 = (param_4 - param_2); if (piVar7 == 0x0) {
 return param_1;
@@ -989,24 +1002,24 @@ return uVar2;
 }
 
 
-pub fn mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4: u16, param_5: u16) -> *mut i16
+pub fn mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4: u16, param_5: u16) -> U32Ptr
 
 {
-    let puVar1: *mut u16;
+    let puVar1: U32Ptr;
     let uVar2: u16;
     let mut pcVar3: String;
-    let puVar4: *mut u16;
+    let puVar4: U32Ptr;
     let mut str: String;
-    let puVar5: *mut u16;
+    let puVar5: U32Ptr;
     let uVar6: u16;
     let uVar7: u16;
     HVar8: HGLOBAL16;
     SVar9: SEGPTR;
     let iVar10: i16;
     let uVar11: u16;
-    let puVar12: *mut u16;
+    let puVar12: U32Ptr;
     let mut pcVar13: String;
-    let puVar14: *mut u16;
+    let puVar14: U32Ptr;
     let unaff_SS: u16;
     let bVar15: bool;
     let iVar16: i16;
@@ -1136,7 +1149,7 @@ pub fn mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4:
 }
 
 
-pub fn dos3_call_set_struct_1000_42de(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
+pub fn dos3_call_set_struct_1000_42de(param_1: U32Ptr, param_2: U32Ptr, param_3: U32Ptr) {
     let uVar1: u16;
     let uVar2: u16;
     let uVar3: u16;
@@ -1189,7 +1202,7 @@ pub fn dos3_call_set_struct_1000_42de(param_1: *mut u16, param_2: *mut u16, para
 
 
 pub fn dos3_call_op_1000_435c(
-    param_1: *mut u16,
+    param_1: U32Ptr,
     param_2: u16,
     param_3: &mut u16,
     param_4: &mut i16,
@@ -1414,13 +1427,13 @@ pub fn dos3_call_1000_51aa(param_1: u16) -> u16
 
 pub fn mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16) {
     let ppcVar1: u32;
-    let puVar2: *mut u16;
+    let puVar2: U32Ptr;
     let iVar3: i16;
     let uVar4: u16;
     let uVar5: u32;
-    let puVar6: *mut u8;
-    let extraout_DX: *mut u8;
-    let puVar7: *mut u8;
+    let puVar6: U32Ptr;
+    let extraout_DX: U32Ptr;
+    let puVar7: U32Ptr;
     let uVar8: u16;
     let unaff_DI: i16;
     let uVar9: u16;
@@ -1434,12 +1447,12 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16) {
     local_13e: u8[0xac];
     local_92: u8[0x80];
     let uStack18: u16;
-    let puStack16: *mut u8;
+    let puStack16: U32Ptr;
     let puStack14: u32;
     let uStack10: u16;
     let uStack8: u16;
     let uStack6: u16;
-    let puStack4: *mut u8;
+    let puStack4: U32Ptr;
 
     instance = s_tile2_bmp_1050_1538;
     DVar11 = GetVersion16();
@@ -1603,7 +1616,7 @@ pub fn mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16) {
 }
 
 
-pub fn kill_timer_1008_921c(param_1: *mut u16, param_2: HWND16) {
+pub fn kill_timer_1008_921c(param_1: U32Ptr, param_2: HWND16) {
     let iVar1: i16;
     let uVar2: u16;
 
@@ -1700,15 +1713,15 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32) {
     let uVar1: u16;
     let IVar2: i16;
     let IVar3: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar4: i16;
     let unaff_DI: i16;
     let uVar5: u16;
     let unaff_SS: u16;
-    let puVar6: *mut u16;
+    let puVar6: U32Ptr;
     let uVar7: u32;
-    let puVar8: *mut u16;
-    let puVar9: *mut u16;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let local_6: i16;
     let local_4: i16;
 
@@ -1732,8 +1745,8 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32) {
 }
 
 
-pub fn free_rsrc_1010_4b3e(param_1: *mut u16, param_2: HGLOBAL16) {
-    let piVar1: *mut i16;
+pub fn free_rsrc_1010_4b3e(param_1: U32Ptr, param_2: HGLOBAL16) {
+    let piVar1: U32Ptr;
     let puVar2: u32;
     let uVar3: u16;
     let ppcVar4: u32;
@@ -1827,7 +1840,7 @@ pub fn find_n_load_rsrc_1010_4e9e(param_1: u32, param_2: HGLOBAL16) {
 
 
 pub fn win_sys_op_1010_5404(param_1: &mut Struct54, param_2: &mut Struct19, param_3: u16, param_4: &mut WNDCLASS16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     u16 * *ppuVar2;
     let uVar3: u32;
     let puVar4: u32;
@@ -1835,37 +1848,37 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54, param_2: &mut Struct19, para
     let mut pCVar6: String;
     let iVar7: i16;
     let uVar8: u16;
-    let puVar9: *mut u16;
+    let puVar9: U32Ptr;
     let uVar10: u16;
-    let puVar11: *mut u8;
-    let extraout_DX: *mut u8;
-    let puVar12: *mut u8;
-    let extraout_DX_00: *mut u8;
-    let extraout_DX_01: *mut u8;
-    let puVar13: *mut u8;
-    let puVar14: *mut u16;
+    let puVar11: U32Ptr;
+    let extraout_DX: U32Ptr;
+    let puVar12: U32Ptr;
+    let extraout_DX_00: U32Ptr;
+    let extraout_DX_01: U32Ptr;
+    let puVar13: U32Ptr;
+    let puVar14: U32Ptr;
     let unaff_DI: i16;
     let uVar15: u16;
     let mut pCVar16: String;
     let index: i16;
     let paVar17: &mut Struct79;
     let mut pcVar18: String;
-    let puVar19: *mut u16;
+    let puVar19: U32Ptr;
     let uVar20: u16;
     let local_134: [u8; 102];
-    let puStack50: *mut u16;
+    let puStack50: U32Ptr;
     let uStack46: u16;
-    let puStack44: *mut u8;
+    let puStack44: U32Ptr;
     let iStack42: i16;
     let iStack26: i16;
-    let puStack24: *mut u8;
+    let puStack24: U32Ptr;
     let iStack22: i16;
-    let puStack20: *mut u16;
+    let puStack20: U32Ptr;
     let uStack16: u32;
     let iStack12: i16;
     let uStack10: i16;
     let uStack8: u16;
-    let puStack6: *mut u8;
+    let puStack6: U32Ptr;
     let uStack4: u16;
 
     paVar17 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
@@ -2166,19 +2179,19 @@ pub fn win_sys_op_1010_5404(param_1: &mut Struct54, param_2: &mut Struct19, para
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn write_private_profile_str_1010_5b10(param_1: *mut u16) {
+pub fn write_private_profile_str_1010_5b10(param_1: U32Ptr) {
     let puVar1: u32;
     let uVar2: u16;
     let uVar3: u32;
     let ppcVar4: u32;
     let mut pCVar5: String;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar6: i16;
     let unaff_DI: i16;
     let uVar7: u16;
     let unaff_SS: u16;
     let in_AF: u8;
-    let puVar8: *mut u16;
+    let puVar8: U32Ptr;
     let iStack12: i16;
 
     // uVar7 = (param_1 >> 0x10);
@@ -2361,14 +2374,14 @@ pub fn get_sys_metrics_1018_09a8(param_1: u32, param_2: i16) {
     let uVar1: u32;
     let IVar2: i16;
     let IVar3: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar4: i16;
     let unaff_DI: i16;
     let uVar5: u16;
     let unaff_SS: u16;
-    let puVar6: *mut u16;
-    let puVar7: *mut u16;
-    let puVar8: *mut u16;
+    let puVar6: U32Ptr;
+    let puVar7: U32Ptr;
+    let puVar8: U32Ptr;
     let local_a: i16;
     let local_8: i16;
     let iStack6: i16;
@@ -2415,15 +2428,15 @@ pub fn get_sys_metrics_1018_1ea0(param_1: &mut Struct55, param_2: u16) {
 
 pub fn mixed_sys_op_1018_2978(param_1: u32, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
-    let puVar2: *mut u8;
-    let puVar3: *mut u8;
+    let puVar2: U32Ptr;
+    let puVar3: U32Ptr;
     let rect: *mut RECT16;
     let iVar4: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar5: u16;
-    let extraout_DX: *mut u8;
-    let puVar6: *mut u8;
-    let puVar7: *mut u8;
+    let extraout_DX: U32Ptr;
+    let puVar6: U32Ptr;
+    let puVar7: U32Ptr;
     let iVar8: i16;
     let uVar9: u16;
     let uVar10: u16;
@@ -2504,15 +2517,15 @@ pub fn get_sys_metrics_1018_2f56(param_1: u32) {
     let uVar1: u16;
     let IVar2: i16;
     let IVar3: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar4: i16;
     let unaff_DI: i16;
     let uVar5: u16;
     let unaff_SS: u16;
-    let puVar6: *mut u16;
+    let puVar6: U32Ptr;
     let uVar7: u32;
-    let puVar8: *mut u16;
-    let puVar9: *mut u16;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let local_6: i16;
     let local_4: i16;
 
@@ -2542,7 +2555,7 @@ pub fn sprintf_op_1018_34b6(param_1: u32, param_2: u8) {
     in_register_00000001;
     let in_DX: u16;
     let iVar2: i16;
-    let valist: *mut u16;
+    let valist: U32Ptr;
     buffer: &mut String;
     let unaff_SS: u16;
     let uVar3: u32;
@@ -2599,7 +2612,7 @@ pub fn get_sys_metrics_1018_4b1e(param_1: &mut Struct55, param_2: u16, param_3: 
 }
 
 
-pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16, param_2: u32, param_3: i16) {
+pub fn get_sys_metrics_1020_7c1a(param_1: U32Ptr, param_2: u32, param_3: i16) {
     let IVar1: i16;
     let iVar3: &mut Struct56;
     let uVar3: u16;
@@ -2635,8 +2648,8 @@ pub fn get_sys_metrics_1020_7c1a(param_1: *mut u16, param_2: u32, param_3: i16) 
 }
 
 
-pub fn make_proc_inst_1038_cf6c(param_1: *mut u16, param_2: *mut u8, param_3: *mut u8) {
-    pvVar1: *mut u8;
+pub fn make_proc_inst_1038_cf6c(param_1: U32Ptr, param_2: U32Ptr, param_3: U32Ptr) {
+    pvVar1: U32Ptr;
     let iVar2: i16;
     let uVar3: u16;
 
@@ -2662,7 +2675,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: *mut u16, param_2: *mut u8, param_3: *m
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn free_proc_inst_1038_cfda(param_1: *mut u16, param_2: *mut u8) {
+pub fn free_proc_inst_1038_cfda(param_1: U32Ptr, param_2: U32Ptr) {
     let iVar1: i16;
     let uVar2: u16;
 
@@ -2707,8 +2720,7 @@ LVar5 = SendMessage16(ctx.s_tile2_bmp_1050_1538, 0x0,0x0, 0x112f140); uVar4 = (L
 if (lStack14 != 0x0) {
 return lStack14;
 }
-}
-if (lStack6 != 0x0) {
+} if (lStack6 != 0x0) {
 LVar5 = CallWindowProc16(s_tile2_bmp_1050_1538, param_1, param_2,wparam,
 param_3); return LVar5;
 }
@@ -2836,7 +2848,7 @@ pub fn get_sys_metrics_1040_7728(param_1: &mut Struct57, param_2: u16, param_3: 
 
 
 pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37, param_2: HWND16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let bVar2: u8;
     let hdc: HDC16;
     let IVar3: i16;
@@ -2880,7 +2892,7 @@ pub fn reg_class_1040_98c0(param_1: i32, param_2: HINSTANCE16, in_wnd_class_3: &
     let uStack26: u16;
     let uStack24: u16;
     let uStack22: u32;
-    let puStack18: *mut u8;
+    let puStack18: U32Ptr;
     let uStack16: u16;
     let uStack14: u16;
     let uStack12: u16;
@@ -2912,10 +2924,10 @@ pub fn reg_class_1040_98c0(param_1: i32, param_2: HINSTANCE16, in_wnd_class_3: &
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn make_proc_inst_1040_a234(param_1: *mut u8, param_2: *mut u8, param_3: u16, param_4: u32, param_5: *mut u8)
+pub fn make_proc_inst_1040_a234(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: u32, param_5: U32Ptr)
 
 {
-    pvVar1: *mut u8;
+    pvVar1: U32Ptr;
     let in_DX: u16;
 
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3),
@@ -2960,7 +2972,7 @@ let puVar4: u32; wparam: WPARAM16; let iVar5: i16; let unaff_DI: i16; let uVar6:
 
 uStack6 = 0x0;
 // wparam = (param_2 >> 0x10); if (param_3 == 0x19) {
-puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = (* puVar4 + 0x34); uStack6 = ( ** ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), param_1,
+puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = ( * puVar4 + 0x34); uStack6 = ( * * ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), param_1,
 param_2, ctx.data_seg);
 // param_4 = (uStack6 >> 0x10);
 }
@@ -2972,8 +2984,7 @@ if (param_3 == 0x110) {
 uVar7 = win_msg_1040_a308( & ctx.PTR_LOOP_1050_5ee0, unaff_DI, param_5,
 param_6); return uVar7;
 }
-}
-if (uStack6 != 0x0) {
+} if (uStack6 != 0x0) {
 return uStack6 & 0xffff | param_4 < < 0x10;
 }
 uVar5 = & ctx.PTR_LOOP_1050_5bc8;

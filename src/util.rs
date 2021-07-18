@@ -24,11 +24,11 @@ pub fn CONCAT12(a: u8, b: u16) -> u32 {
     unimplemented!()
 }
 
-pub fn make_u16_ptr(address: u32) -> *mut u16 {
+pub fn make_u16_ptr(address: u32) -> U32Ptr {
     unimplemented!()
 }
 
-pub fn make_u8_ptr(address: u32) -> *mut u8 {
+pub fn make_u8_ptr(address: u32) -> U32Ptr {
     unimplemented!()
 }
 

@@ -288,10 +288,10 @@ pub unsafe fn unk_draw_op_1008_da12(
     param_2: u16,
     param_3: u16,
 ) {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let b_var2: u8;
     let u_var3: u32;
-    let pu_var4: *mut u16;
+    let pu_var4: U32Ptr;
     let hdc: HDC16;
     let i16_var6: i16;
     // let i_var7: i16;

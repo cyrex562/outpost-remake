@@ -5,14 +5,14 @@
 
 pub fn
 mixed_struct_op_1040_8fb8
-          (param_1: *mut u16,param_2: u16,param_3: &mut String,param_4: u16,param_5: u16,
-          param_6: u16,param_7: u16,param_8: u16,param_9: u16,param_10: *mut u8,
+          (param_1: U32Ptr,param_2: u16,param_3: &mut String,param_4: u16,param_5: u16,
+          param_6: u16,param_7: u16,param_8: u16,param_9: u16,param_10: U32Ptr,
           param_11: u16)
 
 {
   let uVar1: u16;
   let uVar2: u16;
-  pvVar3: *mut u8;
+  pvVar3: U32Ptr;
   let iVar4: i16;
   let uVar5: u16;
   let paVar6: &mut Struct43;
@@ -86,7 +86,7 @@ mixed_struct_op_1040_8fb8
 
 
 
-pub fn struct_1040_a598(param_1: *mut u16)
+pub fn struct_1040_a598(param_1: U32Ptr)
 {
   let iVar1: &mut Struct259;
   let uVar1: u16;

@@ -1,8 +1,8 @@
 
 pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
 {
-  let puVar1: *mut u16;
-  let piVar2: *mut i16;
+  let puVar1: U32Ptr;
+  let piVar2: U32Ptr;
   let uVar3: u16;
   let uVar4: u16;
   let ppcVar5: u32;
@@ -12,7 +12,7 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
   let uVar9: u16;
   let extraout_DX: u16;
   let uVar10: u16;
-  let valist: *mut u16;
+  let valist: U32Ptr;
   let bVar11: bool;
   let uVar12: u32;
   let uVar13: u32;

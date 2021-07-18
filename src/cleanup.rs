@@ -107,7 +107,7 @@ pub unsafe fn unk_destroy_win_op_1010_2fa0(
     struct_1: &mut Struct_1010_2fa0,
     win_handle_1: &mut HWND16
 ) {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let u_var2: u32;
     let struct_2: &mut Struct_1010_2fa0;
     let u_var4: u16;
@@ -159,7 +159,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
     param_4: u16,
     unaff_ss: u16,
 ) {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let u_var2: i32;
     let l_var3: i32;
     let b_var4: bool;
@@ -278,7 +278,7 @@ pub fn destroy_window_1010_7b26(
     extraout_dx: u16
 ) -> u32 {
     let u_var1: u16;
-    let pu_var2: *mut u8;
+    let pu_var2: U32Ptr;
     let struct_2: &mut Struct_1010_7b26;
     let u_var4: u16;
     let local_a: [u8; 0x8];
@@ -599,7 +599,7 @@ pub fn destroy_window_1020_3b3e(param_1: &mut Struct30, param_2: HWND16, unaff_s
     return;
 }
 
-pub unsafe fn destroy_cursor_1020_42f4(param_1: *mut u16, param_2: u16) {
+pub unsafe fn destroy_cursor_1020_42f4(param_1: U32Ptr, param_2: u16) {
     let iVar1: i16;
     let uVar2: u16;
     let h_cursor: HMENU16;
@@ -809,7 +809,7 @@ pub fn destroy_win_1038_a3d2(param_1: i32, param_2: HWND16) {
 
 pub fn destroy_window_1038_cc00(param_1: i16, param_2: u16, param_3: u16, param_4: i32) {
     let uVar1: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_DI: i16;
     WNDCLASS16 * unaff_SS;
     let i_var2: i16;

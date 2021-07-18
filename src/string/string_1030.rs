@@ -1,11 +1,11 @@
 
-pub fn vsprintf_op_1030_840a(param_1: u32,param_2: &mut String,param_3: *mut u16,param_4: u16)
+pub fn vsprintf_op_1030_840a(param_1: u32,param_2: &mut String,param_3: U32Ptr,param_4: u16)
 {
   let mut pCVar1: String;
   let unaff_ES: u16;
   let in_AF: u8;
   let mut pCStack6: String;
-  let args: *mut u16;
+  let args: U32Ptr;
   
   if (ctx.PTR_LOOP_1050_574c != 0x0) {
     pCVar1 = &stack0x0008;

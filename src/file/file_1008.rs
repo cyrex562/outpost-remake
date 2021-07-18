@@ -63,9 +63,9 @@ pub unsafe fn read_file_1008_49e8(
     let i_var2: i16;
     let u_var3: u32;
     let u_var4: u32;
-    let pu_var5: *mut u8;
-    let pu_var6: *mut u8;
-    // let extraout_dx: *mut u8;
+    let pu_var5: U32Ptr;
+    let pu_var6: U32Ptr;
+    // let extraout_dx: U32Ptr;
     // let i_var7: i16;
     // let unaff_di: i16;
     let h_file: u16;
@@ -74,7 +74,7 @@ pub unsafe fn read_file_1008_49e8(
     let mut local_18: usize = 0;
     let mut u_stack22: u32 = 0;
     let u_stack10: u16;
-    let pu_stack8: *mut u8;
+    let pu_stack8: U32Ptr;
     let u_stack6: u32;
 
     // uVar8 = (param_1 >> 0x10);
@@ -162,7 +162,7 @@ pub fn file_1008_4c26(param_1: u32, param_2: u8) -> u32
 
 pub fn file_1008_6414(param_1: &mut Struct18, param_2: &mut Struct18, param_3: u16, param_4: &mut Struct18) {
     let ppcVar1: u32;
-    let puVar2: *mut u8;
+    let puVar2: U32Ptr;
     let uVar3: u16;
     let extraout_DX: u16;
     let iVar4: i16;
@@ -247,8 +247,8 @@ pub fn read_file_1008_6e78(uint32_t param_1, param_2: u16, in_string: &String, p
 {
     let b_var1: bool;
     let i_var2: i16;
-    let var3: *mut u8;
-    let extraout_DX: *mut u8;
+    let var3: U32Ptr;
+    let extraout_DX: U32Ptr;
     let unaff_DI: i16;
     let local_4: [u8; 2];
 
@@ -280,7 +280,7 @@ pub fn read_file_1008_6e78(uint32_t param_1, param_2: u16, in_string: &String, p
 pub fn file_fn_1008_6eee(param_1: u16, param_2: u16, param_3: u32) {
     let BVar1: bool;
     let uVar2: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_SS: u16;
     let uVar3: u32;
     let local_e: [u8; 4];
@@ -320,9 +320,9 @@ pub fn read_file_1008_6f7a(param_1: u16, param_2: u16, param_3: u32,
     let var5: u16;
     let i_var3: i16;
     let b_var4: bool;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar1: u16;
-    let puVar2: *mut u16;
+    let puVar2: U32Ptr;
     let local_e: [u8; 4];
     let uStack10: u32;
     let puStack6: u32;
@@ -607,7 +607,7 @@ pub fn file_1008_76e4(param_1: u32, param_2: &i32, param_3: u16, param_4: u16, p
 }
 
 
-pub fn file_1008_77cc(param_1: u32, param_2: &i32, param_3: *mut u8, param_4: HFILE16, param_5: u16) -> u16
+pub fn file_1008_77cc(param_1: u32, param_2: &i32, param_3: U32Ptr, param_4: HFILE16, param_5: u16) -> u16
 
 {
     let uVar1: u16;
@@ -776,7 +776,7 @@ return 0x0;
 
 
 
-pub fn read_file_1008_7bc8(param_1: u32, param_2: *mut u16, param_3: HFILE16, param_4: u16) -> bool
+pub fn read_file_1008_7bc8(param_1: u32, param_2: U32Ptr, param_3: HFILE16, param_4: u16) -> bool
 
 {
     let BVar1: bool;
@@ -934,7 +934,7 @@ return 0x0;
 }
 
 
-pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16,
+pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16,
                       param_6: u16)
 
 {
@@ -944,13 +944,13 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let BVar3: bool;
     let uVar5: u16;
     let uVar4: &mut Struct200;
-    let puVar6: *mut u8;
+    let puVar6: U32Ptr;
     let uVar7: u16;
-    let extraout_DX: *mut u8;
-    let puVar8: *mut u8;
+    let extraout_DX: U32Ptr;
+    let puVar8: U32Ptr;
     let uVar9: u16;
     let uVar10: u16;
-    let extraout_DX_00: *mut u8;
+    let extraout_DX_00: U32Ptr;
     let extraout_DX_01: u16;
     let uVar11: u16;
     let uVar12: u16;
@@ -1038,7 +1038,7 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
 }
 
 
-pub fn file_1008_e70e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16,
+pub fn file_1008_e70e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16,
                       param_6: u16)
 
 {
@@ -1046,7 +1046,7 @@ pub fn file_1008_e70e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let ppcVar2: u32;
     let BVar3: bool;
     let uVar4: u16;
-    let extraout_DX: *mut u8;
+    let extraout_DX: U32Ptr;
     let uVar5: u16;
     let uVar6: u16;
     let uVar7: u16;

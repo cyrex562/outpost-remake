@@ -18,12 +18,12 @@ pub fn struct_1020_1738(param_1: &mut Struct57,param_2: u16,param_3: u32)
 
 pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: &mut Struct20;
   let unaff_DI: i16;
   let uVar2: u16;
-  let puVar3: *mut u16;
+  let puVar3: U32Ptr;
   
   unk_draw_op_1020_7f7a(param_1,0x7,CONCAT22(param_3,param_2));
  // uVar2 = (param_1 >> 0x10);
@@ -44,7 +44,7 @@ pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
 }
 
 
-pub fn struct_1020_3644(param_1: *mut u16,param_2: u16,param_3: u32,param_4: u16)
+pub fn struct_1020_3644(param_1: U32Ptr,param_2: u16,param_3: u32,param_4: u16)
 {
   let iVar2: &mut Struct272;
   in_buf_len_5: i16;
@@ -79,12 +79,12 @@ pub fn struct_1020_3644(param_1: *mut u16,param_2: u16,param_3: u32,param_4: u16
 
 pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4: u16)
 {
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: &mut Struct129;
   let unaff_DI: i16;
   let uVar2: u16;
-  let puVar3: *mut u16;
+  let puVar3: U32Ptr;
   
   unk_draw_op_1020_7f7a(param_2,0x5,CONCAT22(param_4,param_3));
  // uVar2 = (param_2 >> 0x10);
@@ -107,7 +107,7 @@ pub fn struct_1020_7554(param_1: u16,param_2: &mut Struct20,param_3: u16,param_4
 
 
 pub fn
-struct_1020_790e(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u32,param_5: u16
+struct_1020_790e(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: u32,param_5: u16
                 )
 
 {
@@ -128,13 +128,13 @@ struct_1020_790e(param_1: *mut u16,param_2: u32,param_3: u16,param_4: u32,param_
 }
 
 
-pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
+pub fn struct_1020_847a(param_1: U32Ptr,param_2: i16,param_3: u16)
 {
   let uVar1: u16;
-  let puVar2: *mut u8;
+  let puVar2: U32Ptr;
   let iVar3: &mut Struct280;
   let iVar4: i16;
-  let puVar5: *mut u16;
+  let puVar5: U32Ptr;
   
  // iVar4 = (param_1 >> 0x10);
   iVar3 = param_1;
@@ -169,13 +169,13 @@ pub fn struct_1020_847a(param_1: *mut u16,param_2: i16,param_3: u16)
 pub fn set_struct_op_1020_921c(param_1: &mut Struct42,param_2: u16)
 {
   let HVar1: HDC16;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let iVar3: &mut Struct42;
   let unaff_DI: i16;
   let uVar3: &mut Struct42;
   let unaff_CS: HWND16;
   let unaff_SS: u16;
-  let pUVar3: *mut u16;
+  let pUVar3: U32Ptr;
   
  // uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
@@ -222,7 +222,7 @@ pub fn struct_1020_c444(param_1: &mut Struct75,param_2: u32,param_3: u32)
 
 
 
-pub fn struct_1020_c9ea(param_1: *mut u16) -> u16
+pub fn struct_1020_c9ea(param_1: U32Ptr) -> u16
 
 {
   struct_1028_0954(param_1);
@@ -232,7 +232,7 @@ pub fn struct_1020_c9ea(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1020_cce4(param_1: *mut u16) -> u16
+pub fn struct_1020_cce4(param_1: U32Ptr) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -242,7 +242,7 @@ pub fn struct_1020_cce4(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1020_cde6(param_1: *mut u16) -> u16
+pub fn struct_1020_cde6(param_1: U32Ptr) -> u16
 
 {
   struct_1028_0954(param_1);
@@ -252,7 +252,7 @@ pub fn struct_1020_cde6(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1020_d06c(param_1: *mut u16) -> u16
+pub fn struct_1020_d06c(param_1: U32Ptr) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -262,7 +262,7 @@ pub fn struct_1020_d06c(param_1: *mut u16) -> u16
 }
 
 
-pub fn struct_1020_d37c(param_1: *mut u16) -> u16
+pub fn struct_1020_d37c(param_1: U32Ptr) -> u16
 
 {
   let uVar1: u16;
@@ -277,7 +277,7 @@ pub fn struct_1020_d37c(param_1: *mut u16) -> u16
 
 
 
-pub fn struct_1020_d5a6(param_1: *mut u16) -> u16
+pub fn struct_1020_d5a6(param_1: U32Ptr) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -288,7 +288,7 @@ pub fn struct_1020_d5a6(param_1: *mut u16) -> u16
 
 
 
-pub fn struct_1020_d866(param_1: *mut u16) -> u16
+pub fn struct_1020_d866(param_1: U32Ptr) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -301,14 +301,14 @@ pub fn struct_1020_d866(param_1: *mut u16) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn struct_1020_d954(param_1: *mut u16)
+pub fn struct_1020_d954(param_1: U32Ptr)
 {
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let iVar1: &mut Struct182;
   let unaff_DI: i16;
   let uVar1: u16;
   let unaff_SS: u16;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   
   struct_1030_dc96(param_1);
  // uVar1 = (param_1 >> 0x10);
@@ -329,12 +329,12 @@ pub fn struct_1020_d954(param_1: *mut u16)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 u16 * 
-struct_1020_d99e(param_1: *mut u16,param_2: u16,param_3: i16,param_4: u32,param_5: u16,
+struct_1020_d99e(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: u32,param_5: u16,
                 param_6: u16)
 
 {
   let unaff_DI: i16;
-  let puVar1: *mut u16;
+  let puVar1: U32Ptr;
   let uVar2: u16;
   let iVar2: &mut Struct178;
   
@@ -356,7 +356,7 @@ struct_1020_d99e(param_1: *mut u16,param_2: u16,param_3: i16,param_4: u32,param_
 
 
 
-pub fn struct_1020_e7fa(param_1: *mut u16) -> u16
+pub fn struct_1020_e7fa(param_1: U32Ptr) -> u16
 
 {
   struct_1028_b354(param_1);
@@ -367,7 +367,7 @@ pub fn struct_1020_e7fa(param_1: *mut u16) -> u16
 
 
 
-pub fn struct_1020_e8f6(param_1: *mut u16) -> u16
+pub fn struct_1020_e8f6(param_1: U32Ptr) -> u16
 
 {
   let uVar1: u16;

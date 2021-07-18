@@ -4,7 +4,7 @@ use crate::winapi::{MessageBox16, MessageBeep16};
 pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u16) -> bool
 
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let unaff_CS: u16;
   
   if (param_3 < (param_1 + 0xc)) {

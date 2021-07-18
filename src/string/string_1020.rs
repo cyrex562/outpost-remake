@@ -11,7 +11,7 @@ pub fn string_1020_79b4(param_1: u16,param_2: u32,param_3: i16,param_4: &mut Str
 }
 
 
-pub fn string_op_1020_c2f8(param_1: u16) -> *mut u8
+pub fn string_op_1020_c2f8(param_1: u16) -> U32Ptr
 
 {
   let mut pcVar1: String; 

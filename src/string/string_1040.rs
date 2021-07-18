@@ -4,7 +4,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
 
 {
   let UVar1: i32;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   let uVar3: u16;
   let uVar4: u16;
   let iVar5: &mut Struct293;
@@ -98,7 +98,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
 
 
 
-pub fn string_1040_a626(param_1: *mut u16,param_2: &mut String,param_3: u16)
+pub fn string_1040_a626(param_1: U32Ptr,param_2: &mut String,param_3: u16)
 {
   let uVar1: u16;
   

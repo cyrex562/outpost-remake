@@ -1,13 +1,13 @@
 
 u16 * 
-switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: *mut u8,param_5: u16,
+switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5: u16,
                 param_6: u16,param_7: u16)
 
 {
-  let puVar1: *mut u8;
+  let puVar1: U32Ptr;
   let uVar2: u16;
   let uVar3: u16;
-  let puVar4: *mut u16;
+  let puVar4: U32Ptr;
   
                     // Segment:    7
                     // Offset:     000516c0
@@ -478,15 +478,15 @@ joined_r0x103002a1:
 
 u16 * 
 switch_1030_07ac(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
-                param_5: u16,param_6: u32,param_7: *mut u8,param_8: &mut Struct179,
+                param_5: u16,param_6: u32,param_7: U32Ptr,param_8: &mut Struct179,
                 param_9: u16,param_10: u16,param_11: u16)
 
 {
   let paVar1: &mut Struct179;
   let uVar2: u16;
-  let puVar3: *mut u8;
+  let puVar3: U32Ptr;
   let uVar4: u16;
-  let puVar5: *mut u16;
+  let puVar5: U32Ptr;
   
   puVar5 = CONCAT22(param_7,param_8);
   paVar1 = (param_4 - 0x1);

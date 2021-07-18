@@ -109,7 +109,7 @@ pub fn write_to_file_1028_1452(param_1: u32,param_2: u32,param_3: u16) -> u16
 
 
 
-pub fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16) -> bool
+pub fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,param_5: u16) -> bool
 
 {
   let uVar1: u32;
@@ -118,8 +118,8 @@ pub fn file_1028_24a2(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
   let uVar4: u16;
   let uVar5: u16;
   let uVar6: u16;
-  let extraout_DX: *mut u8;
-  let puVar7: *mut u8;
+  let extraout_DX: U32Ptr;
+  let puVar7: U32Ptr;
   let uVar8: u16;
   let uVar10: u16;
   let uVar9: u32;
@@ -230,7 +230,7 @@ pub fn write_to_file_1028_5f82(param_1: u32,param_2: u32,param_3: u16) -> bool
 
 
 
-pub fn pass1_1028_5fcc(param_1: i16,param_2: *mut u8,param_3: i16,param_4: u16)
+pub fn pass1_1028_5fcc(param_1: i16,param_2: U32Ptr,param_3: i16,param_4: u16)
 {
   let uVar1: u32;
   let uVar2: u32;
@@ -416,7 +416,7 @@ joined_r0x1028b766:
 // WARNING: Unable to use type for symbol puVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_5: *mut u8)
+pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_5: U32Ptr)
 {
   let BVar1: bool;
   let iVar2: i16;
@@ -428,7 +428,7 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   let local_2a: [u16;0x2];
   let local_26: [u8;16];
   let puStack16: u32;
-  let puStack14: *mut u8;
+  let puStack14: U32Ptr;
   let uStack10: i16;
   let local_8: i16;
   let local_6: i16;
@@ -591,7 +591,7 @@ pub fn write_to_file_1028_dce2(param_1: *mut u32,param_2: u32,param_3: u16) -> u
 {
   let ppcVar1: u32;
   let BVar2: bool;
-  let puVar3: *mut u8;
+  let puVar3: U32Ptr;
   let in_DX: u16;
   let extraout_DX: u16;
   let uVar4: u16;
@@ -797,7 +797,7 @@ write_file_fn_1028_e56c
 
 {
   let ppcVar1: u32;
-  let puVar2: *mut u8;
+  let puVar2: U32Ptr;
   let BVar3: bool;
   let in_DX: u16;
   let extraout_DX: u16;

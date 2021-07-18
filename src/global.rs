@@ -61,7 +61,7 @@ pub struct AppContext {
     pub PTR_LOOP_1050_5fd2: U32Ptr,
     pub PTR_LOOP_1050_5fd4: U32Ptr,
     pub PTR_LOOP_1050_5fba: U32Ptr,
-    pub PTR_LOOP_1050_5fbc: U32Ptr,
+    pub PTR_LOOP_1050_5fbc: String,
     pub _PTR_LOOP_1050_5fc2: U32Ptr,
     pub s__C_FILE_INFO__1050_5f5c: String,
     pub PTR_LOOP_1050_5fbe: U32Ptr,
@@ -188,7 +188,8 @@ impl AppContext {
             s_New_failed_in_Op__Op_1050_0020: "".to_string(),
             s_DanBrotherton_1050_0302: "".to_string(),
             s_overflow_on_node__d_1050_11ca: "".to_string(),
-            PTR__LOOP_1050_5b7c: 0
+            PTR__LOOP_1050_5b7c: 0,
+            PTR_LOOP_1050_5b80: 0
         }
     }
 }

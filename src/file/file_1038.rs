@@ -1,5 +1,5 @@
 
-pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: *mut u8,param_4: u16)
+pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: U32Ptr,param_4: u16)
 {
   let uVar1: u16;
   let iVar2: &mut Struct307;
@@ -68,9 +68,9 @@ pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
   let BVar2: bool;
   let uVar3: u16;
   let uVar4: u16;
-  let extraout_DX: *mut u8;
-  let puVar5: *mut u8;
-  let extraout_DX_00: *mut u8;
+  let extraout_DX: U32Ptr;
+  let puVar5: U32Ptr;
+  let extraout_DX_00: U32Ptr;
   let unaff_SS: u16;
   let uVar6: u16;
   let uVar7: u16;

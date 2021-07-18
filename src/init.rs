@@ -27,7 +27,7 @@ pub unsafe fn init_1000_23be(ctx: &mut AppContext, param_1: u16, param_2: u16, p
 
 pub fn init_globals_1020_96d4()
 {
-  let pu_var1: *mut u16;
+  let pu_var1: U32Ptr;
   let i_var2: i16;
   let pu_var3: u16;
   
@@ -884,10 +884,10 @@ pub fn init_globals_1020_96d4()
 
 pub unsafe fn init_op_1008_54aa(
     ctx: &mut AppContext,
-    param_1: *mut u8,
+    param_1: U32Ptr,
     param_2: &mut String,
-    param_3: *mut u8,
-    param_4: *mut u8,
+    param_3: U32Ptr,
+    param_4: U32Ptr,
     param_5: u16,
     param_6: u16,
     param_7: u16,

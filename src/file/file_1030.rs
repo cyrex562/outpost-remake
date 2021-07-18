@@ -50,17 +50,17 @@ pub fn file_1030_19b4(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
 
 
 u16 
-file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,
+file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
               param_5: u16)
 
 {
   let uVar1: u32;
-  let piVar2: *mut i16;
+  let piVar2: U32Ptr;
   let uVar3: u16;
   let uVar4: u16;
   let BVar5: bool;
   let uVar6: u16;
-  let puVar7: *mut u8;
+  let puVar7: U32Ptr;
   let iVar7: &mut Struct368;
   let uVar8: u16;
   let uVar9: u16;
@@ -221,7 +221,7 @@ read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
   let unaff_SS: u16;
   let uVar4: u32;
   let lVar5: i32;
-  let pbStack60: *mut u8;
+  let pbStack60: U32Ptr;
   let lStack56: i32;
   let uStack20: u32;
   
@@ -263,17 +263,17 @@ read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
 }
 
 
-pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16)
+pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,param_5: u16)
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let iVar2: i16;
   let uVar3: u32;
   let uVar4: u16;
   let BVar5: bool;
-  let puVar6: *mut u8;
+  let puVar6: U32Ptr;
   let uVar7: u16;
   let uVar8: u32;
-  let puVar9: *mut u8;
+  let puVar9: U32Ptr;
   let iVar9: &mut Struct380;
   let uVar10: u16;
   let in_AF: u8;
@@ -406,7 +406,7 @@ read_file_1030_5c52(param_1: u32,param_2: u32,param_3: u16,
 }
 
 
-pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,param_5: u16)
+pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,param_5: u16)
 {
   let lVar1: i32;
   let ppcVar2: u32;
@@ -417,7 +417,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: *mut u8,pa
   let puVar8: u32;
   let extraout_DX: u16;
   let uVar9: u16;
-  let puVar10: *mut u8;
+  let puVar10: U32Ptr;
   let extraout_DX_00: u16;
   let iVar4: &mut Struct389;
   let iVar5: &mut Struct391;

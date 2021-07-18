@@ -124,7 +124,7 @@ pub fn draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, param
 
 
 pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
-    let puVar1: *mut u16;
+    let puVar1: U32Ptr;
     let uVar2: u32;
     let ppcVar3: u32;
     let uVar4: u32;
@@ -580,7 +580,7 @@ pub fn unk_draw_op_1040_9458(
     let u_var3: u16;
     // let i_var4: &mut Struct17;
     let u_var4: u16;
-    let pu_stack8: *mut u16;
+    let pu_stack8: U32Ptr;
     let pu_stack6: &mut u32;
 
     // u_var4 = (param_1 >> 0x10);
@@ -652,7 +652,7 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
     let handle: HPEN16;
     let handle_00: HPEN16;
     let handle_01: HGDIOBJ16;
-    let color: *mut u8;
+    let color: U32Ptr;
     let color_00: COLORREF;
     let color_01: COLORREF;
     let iVar4: &mut Struct71;
@@ -813,7 +813,7 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
 
 
 pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLORREF) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let bVar2: bool;
     let uVar3: u16;
     let iVar4: i16;
@@ -873,13 +873,13 @@ pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLO
 pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18) {
     let uVar1: u16;
     let uVar2: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar3: &mut Struct18;
     let unaff_DI: i16;
     let uVar3: u16;
     let uVar4: u16;
     let unaff_SS: u16;
-    let puVar5: *mut u16;
+    let puVar5: U32Ptr;
     let paStack10: &mut Struct18;
 
     // uVar3 = (param_1 >> 0x10);
@@ -920,7 +920,7 @@ pub fn invalidate_rect_1040_c028(param_1: u32, param_2: i16, param_3: HWND16, pa
     let local_a: RECT16;
     let iStack6: i16;
     let iStack4: i16;
-    let piVar8: *mut i16;
+    let piVar8: U32Ptr;
 
     iVar7 = param_1;
     // uVar9 = (param_1 >> 0x10);

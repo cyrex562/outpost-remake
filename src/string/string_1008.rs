@@ -90,7 +90,7 @@ pub fn load_string_1008_b65a(param_1: i32,in_string_2: &mut String,param_3: i32,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25,param_2: *mut u16,uparam_3: &mut String)
+pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25,param_2: U32Ptr,uparam_3: &mut String)
 {
   let ppcVar1: u32;
   let mut in_buffer_4: String; 
@@ -149,9 +149,9 @@ pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25,param_2: *mut u16,u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn load_str_and_sprintf_1008_b78a(param_1: i32,param_2: *mut u16,uparam_3: &mut String,param_4: u16)
+pub fn load_str_and_sprintf_1008_b78a(param_1: i32,param_2: U32Ptr,uparam_3: &mut String,param_4: u16)
 {
-  let piVar1: *mut i16;
+  let piVar1: U32Ptr;
   let ppcVar2: u32;
   let uVar3: u16;
   let iVar4: i16;
@@ -203,17 +203,17 @@ pub fn unk_str_op_1008_d1c6(param_1: u32,param_2: u32)
   let uVar8: u16;
   let uVar9: u16;
   let uVar10: u8;
-  let extraout_DX: *mut u8;
+  let extraout_DX: U32Ptr;
   let extraout_DX_00: u16;
-  let puVar11: *mut u8;
-  let extraout_DX_01: *mut u8;
+  let puVar11: U32Ptr;
+  let extraout_DX_01: U32Ptr;
   let uVar12: u16;
-  let puVar13: *mut u8;
-  let extraout_DX_02: *mut u8;
-  let puVar14: *mut u8;
+  let puVar13: U32Ptr;
+  let extraout_DX_02: U32Ptr;
+  let puVar14: U32Ptr;
   let uVar15: u16;
   let iVar16: i16;
-  let valist: *mut u16;
+  let valist: U32Ptr;
   let uVar17: u16;
   let puVar18: u32;
   let uVar19: u32;
@@ -335,19 +335,19 @@ pub fn unk_str_op_1008_d4f6(param_1: u32,param_2: u32)
   let puVar11: u32;
   let uVar12: u32;
   let uVar13: u8;
-  let extraout_DX: *mut u8;
-  let puVar14: *mut u8;
+  let extraout_DX: U32Ptr;
+  let puVar14: U32Ptr;
   let extraout_DX_00: u16;
   let uVar15: u16;
-  let extraout_DX_01: *mut u8;
-  let pWVar16: *mut u16;
-  let pWVar17: *mut u16;
-  let puVar18: *mut u8;
+  let extraout_DX_01: U32Ptr;
+  let pWVar16: U32Ptr;
+  let pWVar17: U32Ptr;
+  let puVar18: U32Ptr;
   let uVar19: u16;
   let iVar20: i16;
   let iVar21: i16;
   let uVar22: u16;
-  let valist: *mut u16;
+  let valist: U32Ptr;
   let uVar23: u32;
   let uStack58: u16;
   let uStack20: u32;
@@ -450,7 +450,7 @@ pub fn string_1008_e586(param_1: u16,param_2: u16,param_3: u32,param_4: u16,para
 
 {
   let uVar1: u16;
-  let puVar2: *mut u8;
+  let puVar2: U32Ptr;
   let mut in_string_2: String; 
   
   pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,param_3,(param_3 >> 0x10));
@@ -466,7 +466,7 @@ pub fn string_1008_e586(param_1: u16,param_2: u16,param_3: u32,param_4: u16,para
 }
 
 
-pub fn load_string_1008_ee56() -> *mut u8
+pub fn load_string_1008_ee56() -> U32Ptr
 
 {
   let mut pcVar1: String; 
@@ -514,7 +514,7 @@ pass1_1008_eeac(param_1: u16,param_2: u16,param_3: u32,uparam_4: &mut String,par
   let uVar3: u16;
   let uVar4: u16;
   let uVar5: u16;
-  let puVar6: *mut u16;
+  let puVar6: U32Ptr;
   let uVar7: u16;
   
   uVar7 = (param_3 + 0x12);
@@ -582,7 +582,7 @@ pub fn pass1_1008_ef4a() -> u16
 
 
 
-pub fn pass1_1008_ef50(param_1: *mut u16,param_2: u8) -> u16
+pub fn pass1_1008_ef50(param_1: U32Ptr,param_2: u8) -> u16
 
 {
   pass1_1008_ec94(param_1);

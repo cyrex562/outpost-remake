@@ -86,8 +86,8 @@ unsafe fn entry(
     param_7: u16,
     param_8: &mut i16,
     param_9: &mut String,
-) -> *mut i16 {
-    let pu_var1: *mut i16;
+) -> U32Ptr {
+    let pu_var1: U32Ptr;
     let u_var2: i16;
     // char * pc_var3;
     let mut pc_var3: String = "".to_string();
@@ -96,9 +96,9 @@ unsafe fn entry(
     let u_var5: u16;
     let u_var6: i16;
     let mut str_a: String = "".to_string();
-    let pu_var7: *mut i16;
+    let pu_var7: U32Ptr;
     let u_var9: u32;
-    let pu_var10: *mut i16;
+    let pu_var10: U32Ptr;
     // char * pc_var11;
     let mut pc_var11 = "".to_string();
     let b_var12: bool;
@@ -107,7 +107,7 @@ unsafe fn entry(
     let u_var15: u32;
     let i_var16: i16;
     let i_var17: i16;
-    let pu_var18: *mut u8;
+    let pu_var18: U32Ptr;
     let u_var19: u16;
     let mut pc_var4 = 0;
 
@@ -218,7 +218,7 @@ unsafe fn entry(
     }
     FatalAppExit16(ctx.s_tile2_bmp_1050_1538 as u16, str_a.as_str());
     FatalExit();
-    pu_var10 = &ctx.PTR_LOOP_1050_63fe as *mut i16;
+    pu_var10 = &ctx.PTR_LOOP_1050_63fe as U32Ptr;
     loop {
         pu_var1 = pu_var10;
         pu_var10 = pu_var10 + 0x1;

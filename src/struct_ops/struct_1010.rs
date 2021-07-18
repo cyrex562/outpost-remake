@@ -21,7 +21,7 @@ pub unsafe fn struct_1010_02e0(
     param_3: u16,
     extraout_dx: u16) {
     let u_var1: u16;
-    let pu_var2: *mut u8;
+    let pu_var2: U32Ptr;
     // let extraout_dx: u16;
     // let paVar3: &mut Struct79;
 
@@ -67,17 +67,17 @@ pub unsafe fn struct_1010_0f9c(
     extraout_DX_04: u16) {
     let fn_ptr_1: u32;
     let u_var2: u16;
-    let pu_var3: *mut u8;
-    let pu_var4: *mut u8;
+    let pu_var3: U32Ptr;
+    let pu_var4: U32Ptr;
     let u_var5: u32;
-    // let extraout_DX: *mut u8;
-    let pu_var6: *mut u8;
+    // let extraout_DX: U32Ptr;
+    let pu_var6: U32Ptr;
     // let pu_var7: Struct79;
-    // let extraout_DX_00: *mut u8;
+    // let extraout_DX_00: U32Ptr;
     // let extraout_DX_01: u16;
     // let extraout_DX_02: u16;
     // let extraout_DX_03: u16;
-    // let extraout_DX_04: *mut u8;
+    // let extraout_DX_04: U32Ptr;
     // let iVar8: &mut Struct232;
     let i_var9: &mut Struct231;
     let i_var10: &mut Struct230;
@@ -91,7 +91,7 @@ pub unsafe fn struct_1010_0f9c(
     let u_stack36: u32;
     let i_stack32: i16;
     let u_stack30: u16;
-    let pu_stack28: *mut u16;
+    let pu_stack28: U32Ptr;
     let u_stack24: u32;
     let mut local_14: [u8; 12] = [0; 12];
 
@@ -204,9 +204,9 @@ pub fn set_struct_fields_1010_1d48(param_1: &mut Struct19, param_2: u16)
 pub unsafe fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u16, unaff_di: i16, extraout_dx: u16) {
     // let unaff_DI: i16;
     let paVar1: &mut Struct79;
-    let puVar2: *mut u16;
-    let piVar3: *mut i16;
-    let piVar4: *mut i16;
+    let puVar2: U32Ptr;
+    let piVar3: U32Ptr;
+    let piVar4: U32Ptr;
     let uVar5: u16;
     let local_6: i16;
     let local_4: i16;
@@ -245,7 +245,7 @@ pub unsafe fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u1
 }
 
 
-pub fn struct_1010_383a(param_1: *mut u16) {
+pub fn struct_1010_383a(param_1: U32Ptr) {
     let iVar1: &mut Struct223;
     let uVar1: u16;
 
@@ -265,13 +265,13 @@ pub fn struct_1010_383a(param_1: *mut u16) {
 }
 
 
-pub fn struct_1010_38f8(param_1: u32, param_2: i16, param_3: u16, param_4: *mut u8) -> u16
+pub fn struct_1010_38f8(param_1: u32, param_2: i16, param_3: u16, param_4: U32Ptr) -> u16
 
 {
     let uVar1: u16;
     let iVar2: &mut Struct240;
     let uVar2: u16;
-    let puVar3: *mut u16;
+    let puVar3: U32Ptr;
 
     if (param_2 != 0x0) {
         uVar1 = param_2 << 0x2;
@@ -467,7 +467,7 @@ pub fn struct_1010_a1d8(param_1: &mut Struct627, param_2: &mut Struct19, param_3
     let ppcVar2: u32;
     let unaff_DI: i16;
     let paVar3: &mut Struct79;
-    let puVar4: *mut u16;
+    let puVar4: U32Ptr;
     let uStack4: u16;
 
     paVar3 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
@@ -543,16 +543,16 @@ pub fn struct_1010_dd5e(param_1: u16, param_2: u16, param_3: u32) {
 
 
 pub fn struct_1010_e9e4(param_1: &mut Struct261, param_2: &mut Struct19, param_3: u16) {
-    let puVar1: *mut u16;
+    let puVar1: U32Ptr;
     let uVar2: u16;
     let iVar3: i16;
     let uVar4: u16;
     let uVar5: u16;
     let uVar6: u32;
-    let puVar7: *mut u8;
+    let puVar7: U32Ptr;
     let iVar8: i16;
     let paVar9: &mut Struct79;
-    let puVar10: *mut u16;
+    let puVar10: U32Ptr;
     let iStack4: i16;
 
     paVar9 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);

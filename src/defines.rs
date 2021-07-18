@@ -22,7 +22,7 @@ impl StructA {
 }
 
 pub struct Struct18 {
-    pub field_0x0: String,
+    pub field_0x0: u16,
     pub field_0x1: u16,
     pub field_0x2: U32Ptr,
     pub field_0x6: i16,
@@ -65,10 +65,11 @@ pub struct Struct29 {
 }
 
 pub struct Struct57 {
-    pub field_0x0: String,
-    pub field_0x2: U32Ptr
-    pub field_0x8e: Struct20,
-    pub field_0x92: u32,
+    pub field_0x0: u16,
+    pub field_0x2: U32Ptr,
+    pub field_0x8e: Option<Struct20>,
+    pub field_0x92: Option<Struct19>,
+    pub field_0x94: u16,
     pub field_0x96: u16,
     pub field_0x98: u16,
 

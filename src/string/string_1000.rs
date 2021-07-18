@@ -9,7 +9,7 @@ pub fn  poss_str_op_1000_28dc(
 
 {
   let string_1: &String;
-  let pi_var2: *mut u8;
+  let pi_var2: U32Ptr;
   let i_var2: i16;
   let mut string_ptr_1: String;
   
@@ -38,8 +38,8 @@ pub fn  poss_str_op_1000_28dc(
 
 pub fn unk_str_op_1000_3d3e(param_1: &mut String,in_string_2: &mut String)
 {
-  let puVar4: *mut u16;
-  let puVar5: *mut u16;
+  let puVar4: U32Ptr;
+  let puVar5: U32Ptr;
   let uVar6: u16;
   let uVar7: u16;
   let mut l_string_2: String; 

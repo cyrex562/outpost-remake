@@ -29,9 +29,9 @@ pub unsafe fn draw_op_1038_92f6(
     let u_var3: u16;
     let i_var4: i16;
     let pa_var5: &mut Struct18;
-    // let in_dx: *mut u8;
+    // let in_dx: U32Ptr;
     // let pu_var6: &mut Struct19;
-    let pu_var7: *mut u8;
+    let pu_var7: U32Ptr;
     // let unaff_di: i16;
     let u_var8: u16;
     let local_1a: [bool; 0x2];
@@ -128,7 +128,7 @@ pub fn draw_op_1038_9dcc(
     in_colorref_4: COLORREF,
     param_5: u16)
 {
-    let pu_var1: *mut u16;
+    let pu_var1: U32Ptr;
     let b_var2: bool;
     let u_var3: u16;
     let i_var4: i16;

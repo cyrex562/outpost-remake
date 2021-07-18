@@ -66,7 +66,7 @@ pub fn switch_1018_3b9e(param_1: u32,param_2: u16,param_3: u16,param_4: u16,para
 }
 
 
-pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,param_5: *mut u8)
+pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,param_5: U32Ptr)
 {
   let iVar1: i16;
   let mut pcVar2: String; 
@@ -75,20 +75,20 @@ pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,para
   let uVar5: u16;
   let uVar6: u16;
   let uVar7: u32;
-  let puVar8: *mut u8;
+  let puVar8: U32Ptr;
   let unaff_SS: u16;
-  let puVar9: *mut u16;
+  let puVar9: U32Ptr;
   let lVar10: i32;
   let iVar11: i16;
   let IVar12: i16;
   let uVar13: u16;
   let uStack26: u32;
-  let puStack22: *mut u16;
+  let puStack22: U32Ptr;
   let lStack18: i32;
   let lStack14: i32;
   let uStack10: i16;
   let uStack8: u16;
-  let piStack6: *mut i16;
+  let piStack6: U32Ptr;
   
   if (false) {
 switchD_1018_3f8b_caseD_2:

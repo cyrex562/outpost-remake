@@ -11,7 +11,7 @@ use crate::{
 
 pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u16) {
     let iVar1: i16;
-    let puVar2: *mut u8;
+    let puVar2: U32Ptr;
     let uVar3: u16;
     let iVar4: i16;
     let uVar5: u16;
@@ -55,7 +55,7 @@ pub unsafe fn memcpy_op_1008_676e(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
-    param_3: *mut u8,
+    param_3: U32Ptr,
 ) {
     let uVar1: u32;
     let lVar2: i32;
@@ -99,7 +99,7 @@ pub unsafe fn mem_1008_ed1e(
     param_2: u16,
     param_3: i16,
     param_4: u16,
-    param_5: *mut u8,
+    param_5: U32Ptr,
 ) {
     if (param_3 != 0x0) {
         mem_op_1000_179c(ctx, param_3 << 0x2, param_5, 0x1000);

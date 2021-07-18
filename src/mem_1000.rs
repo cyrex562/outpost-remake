@@ -27,8 +27,8 @@ pub unsafe fn mem_op_1000_0052(param_1: u32, param_2: u32) {
 }
 
 pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u16) -> bool {
-    let pu_var1: *mut u16;
-    let pi_var2: *mut i16;
+    let pu_var1: U32Ptr;
+    let pi_var2: U32Ptr;
     let b_var3: bool;
     let u_var4: u16;
     let u_var5: u32;
@@ -140,7 +140,7 @@ pub unsafe fn mem_op_1000_0308(param_1: i16, param_2: &mut StructA, param_3: u16
     let i_var2: i16;
     let b_var3: bool;
     let extraout_a_h: u8;
-    let pi_var4: *mut i16;
+    let pi_var4: U32Ptr;
 
     if (param_2 + 0xa) == 0x0 {
         b_var3 = mem_op_1000_01b0(ctx,param_2, param_3);
@@ -174,11 +174,11 @@ pub unsafe fn mem_op_1000_03c6(
     param_6: u8,
     param_7: u8,
 ) -> u32 {
-    let puVar1: *mut u16;
-    let piVar2: *mut i16;
+    let puVar1: U32Ptr;
+    let piVar2: U32Ptr;
     let uVar3: u16;
     let uVar4: u16;
-    let puVar5: *mut u16;
+    let puVar5: U32Ptr;
     let UVar6: u16;
     let uVar7: u16;
     let bVar8: bool;
@@ -255,8 +255,8 @@ pub unsafe fn mem_op_1000_0510(
     param_2: u16,
     param_3: u16,
 ) -> u32 {
-    let pu_var1: *mut u16;
-    let pi_var2: *mut i16;
+    let pu_var1: U32Ptr;
+    let pi_var2: U32Ptr;
     let b_var3: u8;
     let i_var4: i16;
     let u_var6: u16;
@@ -311,7 +311,7 @@ pub unsafe fn mem_op_1000_05e2(
     param_4: &mut StructA,
     param_5: &mut u16,
 ) -> u32 {
-    let pu_var1: *mut u16;
+    let pu_var1: U32Ptr;
     let i_var2: i16;
     let u_var3: u16;
     let u_var4: u16;
@@ -368,14 +368,14 @@ pub unsafe fn mem_1000_0668(ctx: &mut AppContext, param_1: u16) -> u32 {
 
 pub unsafe fn mem_1000_0670(
     param_1: u16,
-    param_2: *mut i16,
+    param_2: U32Ptr,
     param_3: u16,
-    param_4: *mut u32,
+    param_4: U32Ptr,
     param_5: i16,
     param_6: u16,
 ) -> u16 {
-    let puVar1: *mut u16;
-    let piVar2: *mut i16;
+    let puVar1: U32Ptr;
+    let piVar2: U32Ptr;
     let UVar3: &mut StructA;
     let UVar4: u16;
     let iVar5: i16;
@@ -440,18 +440,18 @@ pub unsafe fn mem_1000_0670(
 }
 
 pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, param_1: Option<&mut StructA>, param_2: u16) -> &mut Struct99 {
-    let pu_var1: *mut u16;
-    let pi_var2: *mut i16;
+    let pu_var1: U32Ptr;
+    let pi_var2: U32Ptr;
     let i_var3: i16;
-    let pu_var4: *mut u16;
+    let pu_var4: U32Ptr;
     let u_var5: u16;
     let u_var6: u16;
     let u_var7: u16;
     let u_var8: u32;
-    let pi_var9: *mut i16;
+    let pi_var9: U32Ptr;
     let b_var10: bool;
     let u_stack6: u16;
-    let pi_stack4: *mut i16;
+    let pi_stack4: U32Ptr;
 
     pi_var9 = (param_1 + 0x2);
     pi_stack4 = pi_var9;
@@ -523,16 +523,16 @@ pub unsafe fn mem_op_1000_0a48(
     param_1: u8,
     param_2: u32,
     param_4: u32,
-    param_5: u16,
+    param_5: U32Ptr,
     in_stack_00000005: u8,
 ) -> i32 {
     let u_var1: u16;
-    let pu_var2: *mut u16;
+    let pu_var2: U32Ptr;
     let u_var4: u16;
     let u_var3: u16;
     let u_var4: u16;
     let u_var5: u32;
-    let pu_var1: *mut u16;
+    let pu_var1: U32Ptr;
 
    // u_var4 = (param_4 >> 0x10);
     if ((param_4 + 0x14) == -0x4153) {
@@ -577,18 +577,18 @@ pub unsafe fn mem_op_1000_0b20(
     param_3: u16,
     param_4: &mut u16,
 ) -> u16 {
-    let pu_var1: *mut u16;
+    let pu_var1: U32Ptr;
     let u_var2: u16;
     let u_var3: u16;
     let u_var4: u16;
     let u_var5: u16;
     let u_var6: u32;
-    let pu_var7: *mut u16;
+    let pu_var7: U32Ptr;
     let u_var8: u16;
     let b_var9: bool;
     let u_var10: u32;
     let u_stack20: u16;
-    let pu_stack6: *mut u16;
+    let pu_stack6: U32Ptr;
 
     u_var8 = SUB42(ctx.data_seg, 0x0);
     u_var2 = param_1 & 0x2;
@@ -888,7 +888,7 @@ pub unsafe fn mem_op_1000_160a(ctx: &mut AppContext, param_1: Option<&mut Struct
 }
 
 pub unsafe fn mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: u16) -> u16 {
-    let pu_var1: *mut u8;
+    let pu_var1: U32Ptr;
     let l_var2: i32;
 
     if ((ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0) {
@@ -948,10 +948,10 @@ pub unsafe fn mem_op_1000_1902(
     let bvar3: bool;
     let u_var3: u16;
     let uvar5: u16;
-    let p_uvar6: *mut u16;
+    let p_uvar6: U32Ptr;
     let dvar7: u32;
     let u_var8: u32;
-    let pu_var1: *mut u16;
+    let pu_var1: U32Ptr;
 
     if ((param_1 & 0x8000) != 0x0) && (_SHI_INVOKEERRORHANDLER1 != -0x6f70) {
         *param_1 |= 0x1;
@@ -1041,7 +1041,7 @@ pub unsafe fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4
     let uVar4: u16;
     let iVar5: i16;
     let lVar6: i32;
-    let puStack8: *mut u16;
+    let puStack8: U32Ptr;
     let uStack4: u16;
 
     (param_2 + 0x14) = 0x0;
@@ -1109,10 +1109,7 @@ pub fn mem_op_1000_1dfa(param_1: i16, param_2: u8, param_3: u16, param_4: u16) -
 }
 
 pub fn mem_op_1000_21b6(param_1: u16, param_2: u16) -> bool {
-    let BVar1: bool;
-
-    BVar1 = mem_op_1000_1dfa(0x0, 0x4, param_1, param_2);
-    return BVar1 == 0x0;
+    mem_op_1000_1dfa(0x0, 0x4, param_1, param_2)
 }
 
 pub unsafe fn mem_1000_2bb6(
@@ -1125,13 +1122,13 @@ pub unsafe fn mem_1000_2bb6(
     param_7: u8,
     param_8: u16,
 ) -> u16 {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let iVar2: i16;
-    let piVar3: *mut i16;
+    let piVar3: U32Ptr;
     let bVar4: u8;
-    let puVar5: *mut u8;
-    let puVar6: *mut u8;
-    let puVar7: *mut u8;
+    let puVar5: U32Ptr;
+    let puVar6: U32Ptr;
+    let puVar7: U32Ptr;
     let uStack4: u16;
     let iStack2: i16;
 
@@ -1207,7 +1204,7 @@ pub unsafe fn mem_1000_2bb6(
 }
 
 pub unsafe fn mem_1000_2ce8(ctx: &mut AppContext, param_1: &mut i16, param_2: &mut u16, param_3: u16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let uVar2: u16;
 
     uVar2 = mem_1000_167a(ctx, 0x200, param_3, param_2);
@@ -1238,14 +1235,14 @@ pub unsafe fn mixed_mem_op_1000_3c51(
     param_5: &mut u16,
     param_6: i16,
 ) -> u32 {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let mut pcVar2: String;
     let mut string_1: String;
-    let piVar3: *mut i16;
+    let piVar3: U32Ptr;
     let uVar4: u16;
     let flags: u16;
     let HVar5: HGLOBAL16;
-    let piVar6: *mut i16;
+    let piVar6: U32Ptr;
     let mut pcVar7: String;
     let DVar8: u32;
     let HVar9: HGLOBAL16;

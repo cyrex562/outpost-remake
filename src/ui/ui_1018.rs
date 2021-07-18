@@ -38,10 +38,10 @@ pub fn unk_win_ui_op_1018_4f18(param_1: &mut Struct39,param_2: u16,param_3: u32)
   let rect: *mut RECT16;
   let iVar3: i16;
   let uVar4: u32;
-  let extraout_DX: *mut u8;
-  let puVar5: *mut u8;
-  let extraout_DX_00: *mut u8;
-  let puVar6: *mut u8;
+  let extraout_DX: U32Ptr;
+  let puVar5: U32Ptr;
+  let extraout_DX_00: U32Ptr;
+  let puVar6: U32Ptr;
   let uVar7: u16;
   let iVar6: &mut Struct39;
   let uVar8: u16;
@@ -140,16 +140,16 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
   let uVar1: u32;
   let pUVar2: &mut u32;
   let IVar3: i16;
-  let puVar4: *mut u8;
-  let in_DX: *mut u8;
-  let puVar5: *mut u8;
-  let puVar6: *mut u8;
+  let puVar4: U32Ptr;
+  let in_DX: U32Ptr;
+  let puVar5: U32Ptr;
+  let puVar6: U32Ptr;
   let uVar7: u16;
   let uVar8: u16;
   let iVar9: i16;
   let unaff_DI: i16;
   let uVar10: u16;
-  let puVar11: *mut u16;
+  let puVar11: U32Ptr;
   let local_28: [u8;12];
   let iStack22: i16;
   let uStack20: u16;
@@ -226,7 +226,7 @@ set_window_text_1018_6066
 
 
 
-pub fn set_window_text_1018_6086(param_1: i32,param_2: &mut String,param_3: *mut u16)
+pub fn set_window_text_1018_6086(param_1: i32,param_2: &mut String,param_3: U32Ptr)
 {
   let HStack8: HWND16;
   
@@ -244,7 +244,7 @@ pub fn set_window_text_1018_6086(param_1: i32,param_2: &mut String,param_3: *mut
 pub fn window_op_1018_67b6(astruct *param_1)
 {
   let in_AX: &mut Struct658;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: i16;
   let unaff_DI: i16;
@@ -273,13 +273,13 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
   let iVar1: i16;
   let iVar2: i16;
   let uVar3: u16;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let uVar4: u16;
   let iVar5: i16;
   let unaff_DI: i16;
   let uVar6: u16;
   unaff_SS: &WNDCLASS16;
-  let puVar7: *mut u16;
+  let puVar7: U32Ptr;
   let paVar8: &mut Struct43;
   
   puVar7 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,unaff_SS,in_DX,unaff_DI);
@@ -311,11 +311,11 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
 }
 
 
-pub fn win_1018_df40(astruct *param_1,param_2: u16,param_3: *mut u8,param_4: u16)
+pub fn win_1018_df40(astruct *param_1,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
   let iVar1: &mut Struct267;
   let uVar1: u16;
-  let puVar2: *mut u16;
+  let puVar2: U32Ptr;
   
   create_window_ex_1008_9760(param_1,0x1008);
   mem_op_1000_179c(0xa,param_3,0x1000);
@@ -336,7 +336,7 @@ pub fn win_1018_df40(astruct *param_1,param_2: u16,param_3: *mut u8,param_4: u16
 pub fn window_op_1018_e384(astruct *param_1)
 {
   let in_AX: &mut Struct659;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: i16;
   let unaff_DI: i16;
@@ -363,7 +363,7 @@ pub fn window_op_1018_e384(astruct *param_1)
 pub fn window_op_1018_e6c6(astruct *param_1)
 {
   let in_AX: &mut Struct660;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: i16;
   let unaff_DI: i16;
@@ -399,7 +399,7 @@ pub fn post_win_msg_1018_ea0a(param_1: u16,param_2: u16,param_3: i16,param_4: HW
 pub fn window_op_1018_eada(astruct *param_1)
 {
   let in_AX: &mut Struct661;
-  let in_DX: *mut u8;
+  let in_DX: U32Ptr;
   let uVar1: u16;
   let iVar2: i16;
   let uVar3: u16;
@@ -422,16 +422,16 @@ pub fn window_op_1018_eada(astruct *param_1)
 }
 
 
-pub fn win_1020_0316(astruct *param_1,param_2: *mut u8,param_3: u16)
+pub fn win_1020_0316(astruct *param_1,param_2: U32Ptr,param_3: u16)
 {
   let uVar1: u32;
   let uVar2: u16;
-  let puVar3: *mut u8;
-  let puVar4: *mut u8;
+  let puVar3: U32Ptr;
+  let puVar4: U32Ptr;
   let iVar1: &mut Struct273;
   let unaff_DI: i16;
   let uVar5: u16;
-  let puVar6: *mut u16;
+  let puVar6: U32Ptr;
   
   create_window_ex_1008_9760(param_1,0x1008);
   puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x1,param_3,param_2,unaff_DI);
@@ -556,9 +556,9 @@ pub fn send_msg_1020_097e(param_1: u32,param_2: HWND16)
 
 
 
-pub fn win_1020_09ba(astruct *param_1,param_2: u16,param_3: *mut u8,param_4: u16)
+pub fn win_1020_09ba(astruct *param_1,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
-  let puVar1: *mut u8;
+  let puVar1: U32Ptr;
   let iVar1: &mut Struct275;
   let uVar2: u16;
   

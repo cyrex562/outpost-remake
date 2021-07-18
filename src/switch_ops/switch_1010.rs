@@ -24,7 +24,7 @@ pub fn  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
 }
 
 
-pub fn switch_1010_6646(param_1: u16,param_2: u16,param_3: *mut u16,param_4: u16)
+pub fn switch_1010_6646(param_1: u16,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
   switch(param_4) {
   0x83 =>

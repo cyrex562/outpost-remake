@@ -42,10 +42,10 @@ pub unsafe fn win_ui_cursor_op_1008_06c0(
     // let in_ax: u16;
     // let in_dx: u16;
     let mut struct_1: &mut Struct79;
-    // let extraout_dx: *mut u8;
+    // let extraout_dx: U32Ptr;
     // let unaff_di: i16;
     let u_var3: u16;
-    // let unaff_SS: *mut u8;
+    // let unaff_SS: U32Ptr;
     // let in_AF: u8;
     let mut pc_var4: String;
     let pu_var5: U32Ptr;
@@ -215,7 +215,7 @@ pub fn win_ui_op_1008_1414(astruct_72 * * param_1, param_2: u32, param_3: &Strin
     let iVar4: i16;
     let puVar5: u32;
     let uVar5: u32;
-    let puVar6: *mut u8;
+    let puVar6: U32Ptr;
     let uVar7: u16;
     let type : * mut u8;
     let uVar8: u16;
@@ -224,20 +224,20 @@ pub fn win_ui_op_1008_1414(astruct_72 * * param_1, param_2: u32, param_3: &Strin
     let uVar9: u16;
     let puVar10: u32;
     let mut pcVar11: String;
-    let puVar12: *mut u16;
+    let puVar12: U32Ptr;
     let uVar13: u8;
     let uVar14: u8;
     let iVar15: i16;
     let local_2a: u32;
     let uStack38: u16;
     let iStack36: i16;
-    let puStack34: *mut u8;
+    let puStack34: U32Ptr;
     let uStack32: u32;
     let uStack28: u32;
     let uStack24: u32;
     let uStack20: u32;
     let uStack16: u32;
-    let puStack12: *mut u16;
+    let puStack12: U32Ptr;
     let local_8: [u8; 6];
     let uVar10: u16;
 
@@ -310,7 +310,7 @@ pub fn win_ui_op_1008_1414(astruct_72 * * param_1, param_2: u32, param_3: &Strin
 
 
 pub fn post_msg_1008_2d22(param_1: u32) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let uVar2: u32;
     let ppcVar3: u32;
     let iVar4: i16;
@@ -399,7 +399,7 @@ pub fn cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, in_hinstanc
 pub fn win_ui_cursor_op_1008_2e9a(astruct_72 * * param_1, param_2: u16) {
     let uVar1: u16;
     let iVar2: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar3: u16;
     let uVar4: u16;
     let unaff_DI: i16;
@@ -468,10 +468,10 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 * * param_1, param_2: u16) {
 pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: u16) {
     let uVar1: u32;
     let iVar2: i16;
-    let puVar3: *mut u16;
+    let puVar3: U32Ptr;
     let uVar4: u16;
     let BVar5: bool;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let extraout_DX: u16;
     let uVar6: u16;
     let unaff_DI: i16;
@@ -492,10 +492,10 @@ pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: u16) {
     let uStack1374: u16;
     let mut pcStack1370: String;
     let uStack1350: u32;
-    let puStack1346: *mut u8;
+    let puStack1346: U32Ptr;
     let uStack1342: u32;
     let mut pcStack1338: String;
-    let puStack1334: *mut u8;
+    let puStack1334: U32Ptr;
     let uStack1330: u32;
     let uStack1326: u16;
     let mut pcStack1322: String;
@@ -506,7 +506,7 @@ pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: u16) {
     let uStack1038: u16;
     let local_40c: [u8; 102];
     let uStack778: u32;
-    let puStack774: *mut u16;
+    let puStack774: U32Ptr;
     let local_302: [u8; 100];
     u8
     local_202[0xff];
@@ -994,8 +994,8 @@ pub unsafe fn create_palette_1008_4e38(
     in_struct_1: &mut Struct13,
     in_log_palette_2: &mut LOGPALETTE,
     param_3: U32Ptr) {
-    let piVar1: *mut i16;
-    let puVar2: *mut u16;
+    let piVar1: U32Ptr;
+    let puVar2: U32Ptr;
     let uVar4: u16;
     let local_struct_1: &mut Struct13;
     let iVar5: i16;
@@ -1004,9 +1004,9 @@ pub unsafe fn create_palette_1008_4e38(
     let uVar9: u16;
     let uVar10: u16;
     let iStack14: i16;
-    let puStack12: *mut u8;
-    let puStack8: *mut u8;
-    let uVar3: *mut u16;
+    let puStack12: U32Ptr;
+    let puStack8: U32Ptr;
+    let uVar3: U32Ptr;
 
     // uVar8 = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
@@ -1363,7 +1363,7 @@ pub fn send_msg_1008_84ba(param_1: u16, param_2: u32, param_3: HWND16) {
 
 
 pub fn win_sys_op_1008_84f2(param_1: u16, param_2: u16, param_3: i16, param_4: u32, param_5: HWND16) {
-    let pbVar1: *mut u8;
+    let pbVar1: U32Ptr;
     let iVar2: i16;
     let iVar3: i16;
     let Bvar4: bool;
@@ -1550,7 +1550,7 @@ pub fn win_ui_reg_class_1008_96d2(
     let u_stack26: u16;
     let u_stack24: u16;
     let u_stack22: u32;
-    let pu_stack18: *mut u8;
+    let pu_stack18: U32Ptr;
     let u_stack16: u16;
     let u_stack14: u16;
     let u_stack12: u16;
@@ -1870,8 +1870,8 @@ pub fn post_win_msg_1008_a0e4(param_1: &mut Struct67, param_2: i32, param_3: i16
 }
 
 
-pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, param_5: *mut u16,
-                       param_6: *mut u16, param_7: *mut u16, param_8: *mut u16)
+pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, param_5: U32Ptr,
+                       param_6: U32Ptr, param_7: U32Ptr, param_8: U32Ptr)
 
 {
     let uVar1: u32;
@@ -1881,12 +1881,12 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
     let uVar5: u16;
     let extraout_DX: u16;
     let uVar6: u16;
-    let puVar7: *mut u8;
+    let puVar7: U32Ptr;
     let uVar8: u16;
     let iVar9: i16;
-    let in_buf_len_5: *mut u8;
+    let in_buf_len_5: U32Ptr;
     let uVar10: u16;
-    let puVar11: *mut u16;
+    let puVar11: U32Ptr;
     let mut pcVar12: String;
     let uVar13: u16;
     let uVar14: u8;
@@ -2133,13 +2133,13 @@ param_4); pass1_1008_944e(param_3, local_6, (local_6 > > 0x10)); return CONCAT22
 pub fn pass1_1008_a930(param_1: u32, param_2: i16, param_3: u16) {
     let uVar1: u32;
     let ppcVar2: u32;
-    let puVar3: *mut u8;
+    let puVar3: U32Ptr;
     let extraout_DX: u16;
     let uVar4: u16;
     let iVar5: i16;
     let uVar6: u16;
-    let puStack24: *mut u16;
-    let puStack18: *mut u16;
+    let puStack24: U32Ptr;
+    let puStack18: U32Ptr;
     let local_a: [u8; 8];
 
     if (param_2 == 0x0) {
@@ -2378,7 +2378,7 @@ pub fn pass1_1008_ab80(param_1: u16, param_2: u16, param_3: u16) -> u16
 }
 
 
-pub fn pass1_1008_ad0c(param_1: *mut u16, param_2: u8) -> u16
+pub fn pass1_1008_ad0c(param_1: U32Ptr, param_2: u8) -> u16
 
 {
     let uVar1: u16;
@@ -2393,7 +2393,7 @@ pub fn pass1_1008_ad0c(param_1: *mut u16, param_2: u8) -> u16
 }
 
 
-pub fn pass1_1008_ad38(param_1: *mut u16, param_2: u8) -> u16
+pub fn pass1_1008_ad38(param_1: U32Ptr, param_2: u8) -> u16
 
 {
     *param_1 = 0x389a;
@@ -2418,7 +2418,7 @@ pub fn pass1_1008_ad64(param_1: u32, param_2: u8) -> u32
 }
 
 
-pub fn pass1_1008_ada2(param_1: *mut u16, param_2: i16) -> u16
+pub fn pass1_1008_ada2(param_1: U32Ptr, param_2: i16) -> u16
 
 {
     let uVar1: u16;
@@ -2432,7 +2432,7 @@ pub fn pass1_1008_ada2(param_1: *mut u16, param_2: i16) -> u16
 }
 
 
-pub fn pass1_1008_add2(param_1: *mut u16) {
+pub fn pass1_1008_add2(param_1: U32Ptr) {
     *param_1 = ((param_1 + 0x4) * 0x6 + 0x3a4);
     return;
 }
@@ -2453,7 +2453,7 @@ pub fn pass1_1008_ae0c(param_1: u32) -> u16
 
 
 pub fn pass1_1008_ae26(param_1: &mut i16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let iVar2: i16;
     let iVar3: i16;
     let uVar4: u16;
@@ -2548,7 +2548,7 @@ pub fn pass1_1008_af94(param_1: &mut Struct643, param_2: u16, param_3: u16) {
 }
 
 
-pub fn pass1_1008_afde(param_1: *mut u16, param_2: u16) {
+pub fn pass1_1008_afde(param_1: U32Ptr, param_2: u16) {
     let puVar1: u32;
     let uVar2: u16;
     let ppcVar3: u32;
@@ -2582,7 +2582,7 @@ pub fn pass1_1008_afde(param_1: *mut u16, param_2: u16) {
 }
 
 
-pub fn pass1_1008_b05a(param_1: *mut u16) -> u16
+pub fn pass1_1008_b05a(param_1: U32Ptr) -> u16
 
 {
     let iVar1: &mut Struct193;
@@ -2599,7 +2599,7 @@ pub fn pass1_1008_b05a(param_1: *mut u16) -> u16
 }
 
 
-pub fn pass1_1008_b08c(param_1: *mut u16) {
+pub fn pass1_1008_b08c(param_1: U32Ptr) {
     let iVar1: i16;
     let uVar2: u16;
 
@@ -2631,7 +2631,7 @@ pub fn set_stuct_1008_b0bc(param_1: &mut Struct26) {
 }
 
 
-pub fn pass1_1008_b0f2(param_1: *mut u16) -> u16
+pub fn pass1_1008_b0f2(param_1: U32Ptr) -> u16
 
 {
     let uVar1: u16;
@@ -2645,7 +2645,7 @@ pub fn pass1_1008_b0f2(param_1: *mut u16) -> u16
 }
 
 
-pub fn pass1_1008_b11e(param_1: *mut u16) -> u16
+pub fn pass1_1008_b11e(param_1: U32Ptr) -> u16
 
 {
     let uVar1: u16;

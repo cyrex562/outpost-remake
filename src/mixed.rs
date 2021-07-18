@@ -20,12 +20,11 @@ pub unsafe fn mixed_1010_20ba(
     param_3: &mut WNDCLASS16,
     param_4: &mut Struct19,
     param_5: i16,
-    extraout_dx: u16) -> &mut Struct20
-{
+    extraout_dx: u16) -> &mut Struct19 {
   let ppc_var1: u32;
   let u_var2: u16;
   let mut pu_var3: U32Ptr = 0;
-  // let extraout_dx: *mut u8;
+  // let extraout_dx: U32Ptr;
   // let pa_var4: &mut Struct636;
   // let i_var5: i16;
   // let u_var6: u16;
@@ -34,7 +33,7 @@ pub unsafe fn mixed_1010_20ba(
   let pu_var9: &mut Struct19;
   let u_var10: u32;
   let u_var11: &mut Struct19;
-  // let pu_stack6: *mut u16;
+  // let pu_stack6: U32Ptr;
   
   pass1_1010_2816(param_1);
   let mut struct_ref_1 = get_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);

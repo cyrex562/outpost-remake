@@ -20,7 +20,7 @@ use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, D
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16)
 {
-  let pi_var1: *mut i16;
+  let pi_var1: U32Ptr;
   let ppc_var2: u32;
   let u_var3: u32;
   let i_var4: i16;
@@ -30,7 +30,7 @@ pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16)
   let u_var7: u16;
   let local_c4: [u8;6];
   let local_be: [u8;2];
-  let pi_stack184: *mut i16;
+  let pi_stack184: U32Ptr;
   let local_b4: i16;
   let i_stack178: i16;
   let ai_stack176: [i16;0x3c];
@@ -599,7 +599,7 @@ pub fn draw_line_1020_229c(param_1: u32,param_2: HDC16)
   let u_var3: u32;
   let i_var4: i16;
   let i_var5: i16;
-  let pi_var6: *mut i16;
+  let pi_var6: U32Ptr;
   let u_var7: u16;
   let u_stack10: i16;
   
@@ -661,11 +661,11 @@ pub unsafe fn invalidate_rect_1020_2ae4(param_1: *mut u32, param_2: u16, param_3
   let ppc_var1: u32;
   let c_var2: u8;
   let i_var3: i16;
-  let in_dx: *mut u8;
+  let in_dx: U32Ptr;
   let u_var4: u16;
   let u_var5: u16;
   let unaff_di: i16;
-  let pu_var6: *mut u16;
+  let pu_var6: U32Ptr;
   let u_var7: u32;
   let pa_var8: &mut Struct43;
   let u_var9: u16;
@@ -739,7 +739,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(param_1: *mut u32, param_2: u16, param_3
 }
 
 
-pub unsafe fn load_draw_op_1020_2ede(param_1: *mut u16, param_2: u32, param_3: u16)
+pub unsafe fn load_draw_op_1020_2ede(param_1: U32Ptr, param_2: u32, param_3: u16)
 {
   let u_var1: u32;
   let ppc_var2: u32;
@@ -747,12 +747,12 @@ pub unsafe fn load_draw_op_1020_2ede(param_1: *mut u16, param_2: u32, param_3: u
   let i_var4: i16;
   let handle: HPEN16;
   let hvar5: HGDIOBJ16;
-  let in_dx: *mut u8;
+  let in_dx: U32Ptr;
   let i_var6: i16;
   let unaff_di: i16;
   let u_var7: u16;
   let unaff_ss: u16;
-  let pu_var8: *mut u16;
+  let pu_var8: U32Ptr;
   let pa_var9: &mut Struct76;
   let u_var10: u32;
   init_data: DEVMODEA;
@@ -979,7 +979,7 @@ draw_op_1020_33c0(param_1: u32,param_2: u32,param_3: i16,param_4: u32,param_5: i
   let unaff_ss: u16;
   let u_var4: u16;
   let i_stack20: i16;
-  let pu_stack14: *mut u16;
+  let pu_stack14: U32Ptr;
   
   if (param_3 != 0x0) {
     pen_handle = CreatePen16(param_7 as i16, param_2 as i16, (param_2 >> 0x10));
@@ -1031,7 +1031,7 @@ pub fn draw_op_1020_3488(param_1: i32)
   let unaff_ss: u16;
   let bottom: i16;
   let local_a: u32;
-  let pu_stack6: *mut u16;
+  let pu_stack6: U32Ptr;
   
  // u_var5 = (param_1 >> 0x10);
   u_var2 = (param_1 + 0x14) as u32;
@@ -1079,14 +1079,14 @@ pub unsafe fn unk_draw_op_1020_3da4(param_1: &mut Struct24, param_2: i32)
   let i_var4: i16;
   let hvar5: HGDIOBJ16;
   let p_hvar6: HDC16;
-  let in_dx: *mut u8;
+  let in_dx: U32Ptr;
   let u_var7: u16;
   let i_var8: i16;
   let unaff_di: i16;
   let u_var9: u16;
   let unaff_cs: u16;
   let unaff_ss: u16;
-  let pu_var10: *mut u16;
+  let pu_var10: U32Ptr;
   let local_4: HDC16;
   let i_var9: &mut Struct24;
   let u_var8: &mut Struct24;
@@ -1276,18 +1276,18 @@ pub unsafe fn unk_draw_op_1020_41c8(param_1: &mut Struct20, param_2: u16, param_
 {
   let ppc_var1: u32;
   let hvar2: HCURSOR16;
-  let pu_var3: *mut u16;
-  let extraout_dx: *mut u8;
-  let pu_var4: *mut u8;
+  let pu_var3: U32Ptr;
+  let extraout_dx: U32Ptr;
+  let pu_var4: U32Ptr;
   let u_var6: u16;
   let u_var5: &mut Struct64;
   let unaff_di: i16;
   let u_var7: u16;
   let unaff_ss: u16;
-  let pu_var8: *mut u16;
-  let pu_var9: *mut u8;
-  let pu_var10: *mut u8;
-  let pu_var11: *mut u8;
+  let pu_var8: U32Ptr;
+  let pu_var9: U32Ptr;
+  let pu_var10: U32Ptr;
+  let pu_var11: U32Ptr;
   
   unk_draw_op_1020_7f7a(param_1, 0x8, CONCAT22(param_3, param_2) as i32);
  // u_var7 = (param_1 >> 0x10);
@@ -1347,7 +1347,7 @@ pub unsafe fn set_cursor_1020_5764(param_1: u32, param_2: i16, param_3: u16)
 {
   let u_var1: u16;
   let u_var2: u32;
-  let in_dx: *mut u8;
+  let in_dx: U32Ptr;
   let i_var3: i16;
   let unaff_di: i16;
   let u_var4: u16;
@@ -1356,7 +1356,7 @@ pub unsafe fn set_cursor_1020_5764(param_1: u32, param_2: i16, param_3: u16)
   let local_e: i16;
   let local_c: [u8;2];
   let u_stack10: u32;
-  let pu_stack6: *mut u16;
+  let pu_stack6: U32Ptr;
   
   pu_stack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2f, param_3, in_dx, unaff_di);
  // u_var4 = (pu_stack6 >> 0x10);
@@ -1444,10 +1444,10 @@ pt_in_rect_op_1020_58ce
   let u_var2: u32;
   let u_var3: u16;
   let bvar4: bool;
-  let msg: *mut u16;
-  let in_dx: *mut u8;
+  let msg: U32Ptr;
+  let in_dx: U32Ptr;
   let u_var5: u16;
-  let pu_var6: *mut u8;
+  let pu_var6: U32Ptr;
   let i_var7: i16;
   let i_var8: i16;
   let unaff_di: i16;
@@ -1456,17 +1456,17 @@ pt_in_rect_op_1020_58ce
   let rect: *mut RECT16;
   let rect_00: *mut RECT16;
   let u_var11: u32;
-  let pu_var12: *mut u16;
+  let pu_var12: U32Ptr;
   let local_34: [u8;6];
   let u_stack46: u32;
-  let pu_stack38: *mut u16;
+  let pu_stack38: U32Ptr;
   let u_stack30: u32;
-  let pu_stack26: *mut u16;
+  let pu_stack26: U32Ptr;
   let local_18: [u16;0x2];
   let u_stack20: u16;
   let u_stack18: u32;
   let u_stack14: u16;
-  let pu_stack12: *mut u8;
+  let pu_stack12: U32Ptr;
   let u_stack10: u16;
   let u_stack8: u16;
   let local_6: u16;
@@ -1731,7 +1731,7 @@ pub fn  draw_op_1020_7070(param_1: i16,param_2: u16) -> HGDIOBJ16
 }
 
 
-pub unsafe fn palette_op_1020_7270(param_1: *mut u16, param_2: HDC16)
+pub unsafe fn palette_op_1020_7270(param_1: U32Ptr, param_2: HDC16)
 {
   let u_var1: u16;
   let u_var2: u16;
@@ -1894,13 +1894,13 @@ pub unsafe fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_
   let u_var1: u16;
   let hvar2: HGDIOBJ16;
   let hvar3: HCURSOR16;
-  let pu_var4: *mut u8;
+  let pu_var4: U32Ptr;
   let i_var4: &mut Struct20;
   let unaff_di: i16;
   let u_var5: u16;
   let unaff_ss: u16;
   let pa_var6: &mut Struct20;
-  let pu_var7: *mut u16;
+  let pu_var7: U32Ptr;
   let in_stack_0000000e: u16;
   
   pa_var6 = unk_draw_op_1008_61b2
@@ -1946,7 +1946,7 @@ pub fn realize_palette_1020_8128(param_1: u32,param_2: i16,param_3: HGDIOBJ16,pa
 {
   let ppc_var1: u32;
   let u_var2: u32;
-  let pu_var3: *mut u8;
+  let pu_var3: U32Ptr;
   let pu_var4: u32;
   let pu_var5: u32;
   let extraout_dx: u16;
@@ -2124,7 +2124,7 @@ pub fn invalidate_rect_1020_8fb4(param_1: u32,param_2: u16)
 }
 
 
-pub unsafe fn palette_op_1020_92c4(param_1: *mut u16, param_2: HDC16)
+pub unsafe fn palette_op_1020_92c4(param_1: U32Ptr, param_2: HDC16)
 {
   let i_var1: i16;
   let u_var2: u16;
@@ -2172,7 +2172,7 @@ pub fn mix_draw_op_1020_9312(param_1: u32,param_2: HWND16)
 
 pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: i16)
 {
-  let pi_var1: *mut i16;
+  let pi_var1: U32Ptr;
   let u_var2: u16;
   let i_var3: i16;
   let u_var4: u32;
@@ -2192,7 +2192,7 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7,in_win_handle_2: HWND16,param_3: 
   let u_stack38: u32;
   let u_stack34: u32;
   let u_stack30: u32;
-  let pu_stack26: *mut u16;
+  let pu_stack26: U32Ptr;
   let i_stack22: i16;
   let i_stack20: i16;
   let local_12: u32;

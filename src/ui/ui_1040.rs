@@ -39,10 +39,10 @@ pub unsafe fn show_win_1040_0766(
     unaff_di: i16,
     wndclass_1: &mut WNDCLASS16
 ) {
-    let pu_var1: *mut u8 = ();
-    let pu_var2: *mut u16;
-    let pi_var3: *mut i16;
-    let pi_var4: *mut i16;
+    let pu_var1: U32Ptr = ();
+    let pu_var2: U32Ptr;
+    let pi_var3: U32Ptr;
+    let pi_var4: U32Ptr;
     let u_var5: u16;
     let local_a: i16;
     let local_8: i16;
@@ -96,11 +96,11 @@ pub fn win_ui_op_1040_07dc(
     let ppc_var1: u32;
     let i_var2: i16;
     let b_var3: bool;
-    let pu_var4: *mut u8;
-    let pu_var5: *mut u8;
+    let pu_var4: U32Ptr;
+    let pu_var5: U32Ptr;
     let unaff_di: i16;
     let u_var6: u16;
-    let pu_var7: *mut u16;
+    let pu_var7: U32Ptr;
     let pu_var8: u32;
     let u_var9: u8;
     let u_var10: u8;
@@ -303,13 +303,13 @@ pub fn post_win_msg_1040_0d5e(param_1: u16, param_2: u16, param_3: i16, param_4:
 
 
 pub fn set_win_pos_1040_0f10(param_1: HWND16, param_2: u16, param_3: i16) {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let uVar2: u32;
     let iVar3: i16;
     let unaff_DI: i16;
     let uVar4: u16;
     let uVar5: u32;
-    let puVar6: *mut u16;
+    let puVar6: U32Ptr;
     let check: u16;
 
     dialog_ui_fn_1040_78e2((param_3 + 0x6), param_1);
@@ -372,7 +372,7 @@ pub fn set_win_pos_1040_0f10(param_1: HWND16, param_2: u16, param_3: i16) {
 }
 
 
-pub fn win_ui_op_1040_12bc(param_1: &mut Struct1, param_2: u16, param_3: *mut u8) {
+pub fn win_ui_op_1040_12bc(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr) {
     let uVar1: u32;
     wparam: WPARAM16;
     let HVar2: HWND16;
@@ -412,9 +412,9 @@ pub fn win_msg_op_1040_13b2(param_1: u32, param_2: i16, param_3: HWND16, param_4
     let uVar2: u32;
     let uVar3: u16;
     let iVar4: i16;
-    let puVar5: *mut u8;
-    let puVar6: *mut u8;
-    let puVar7: *mut u8;
+    let puVar5: U32Ptr;
+    let puVar6: U32Ptr;
+    let puVar7: U32Ptr;
     let iVar8: i16;
     let uVar9: u16;
     let uVar10: u16;
@@ -424,8 +424,8 @@ pub fn win_msg_op_1040_13b2(param_1: u32, param_2: i16, param_3: HWND16, param_4
     let local_22e: [u8; 118];
     let uStack278: u32;
     let uStack274: u32;
-    let puStack270: *mut u8;
-    let puStack268: *mut u8;
+    let puStack270: U32Ptr;
+    let puStack268: U32Ptr;
     let uStack266: u32;
     let uStack262: u16;
     let mut pcStack260: String;
@@ -567,9 +567,9 @@ uVar1 = 0x1;
 pub fn send_msg_1040_1696(param_1: u32, param_2: u16, param_3: u16, param_4: HWND16) {
     let uVar1: u32;
     let uVar2: u32;
-    let puVar3: *mut u16;
-    let puVar4: *mut u8;
-    let puVar5: *mut u8;
+    let puVar3: U32Ptr;
+    let puVar4: U32Ptr;
+    let puVar5: U32Ptr;
     let uVar6: u16;
     let LVar7: LRESULT;
     let paVar8: &mut Struct18;
@@ -611,7 +611,7 @@ pub fn send_msg_1040_1696(param_1: u32, param_2: u16, param_3: u16, param_4: HWN
 }
 
 
-pub fn show_win_1040_18a2(param_1: &mut Struct1, param_2: HWND16, param_3: *mut u16) {
+pub fn show_win_1040_18a2(param_1: &mut Struct1, param_2: HWND16, param_3: U32Ptr) {
     let uVar1: u32;
     local_304: u8[0x100];
     local_204: u8[0x100];
@@ -667,7 +667,7 @@ pub fn show_win_1040_18a2(param_1: &mut Struct1, param_2: HWND16, param_3: *mut 
 pub fn unk_win_ui_op_1040_19ea(param_1: &mut Struct32, param_2: i16, param_3: HWND16) {
     let uVar1: u32;
     let UVar2: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let iVar4: &mut Struct32;
     let unaff_DI: i16;
     let uVar3: &mut Struct32;
@@ -816,7 +816,7 @@ pub fn create_win_1040_20d4(param_1: u16, param_2: u16, param_3: u16, param_4: &
     let y: i16;
     let unaff_DI: i16;
     let uVar1: u16;
-    let puVar2: *mut u16;
+    let puVar2: U32Ptr;
     let local_1e: RECT16;
     let iStack26: i16;
     let iStack24: i16;
@@ -858,7 +858,7 @@ pub fn show_win_1040_2490(param_1: &mut Struct1, param_2: HWND16) {
     let uVar2: u16;
     let iVar4: &mut Struct1;
     let uVar3: u16;
-    let piVar4: *mut i16;
+    let piVar4: U32Ptr;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
     // uVar3 = (param_1 >> 0x10);
@@ -984,8 +984,8 @@ pub fn dlg_ui_op_1040_2a64(param_1: &mut Struct1, param_2: u16, param_3: u16) {
     let uVar1: u32;
     let paVar2: &mut Struct160;
     let uVar3: u16;
-    let puVar4: *mut u8;
-    let puVar5: *mut u8;
+    let puVar4: U32Ptr;
+    let puVar5: U32Ptr;
     let iVar6: i16;
     let uVar7: u16;
     let hwnd: HWND16;
@@ -1065,7 +1065,7 @@ pub fn win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 
 {
     let uVar1: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_SS: u16;
     let uVar2: u32;
     let iStack8: i16;
@@ -1157,16 +1157,16 @@ pub fn show_win_1040_2f5a(param_1: &mut Struct1, param_2: HWND16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: *mut u16) {
+pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     let HVar1: HWND16;
-    let in_DX: *mut u8;
-    let puVar2: *mut u8;
+    let in_DX: U32Ptr;
+    let puVar2: U32Ptr;
     let uVar3: u16;
     let msg: u16;
     let iVar4: i16;
     let unaff_DI: i16;
     let uVar5: u16;
-    let puVar6: *mut u16;
+    let puVar6: U32Ptr;
     let uVar7: u32;
     let mut pcVar8: String;
     let local_116: u32;
@@ -1174,7 +1174,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: *mut u16) {
     local_10e: u8[0x82];
     let local_8c: [u8; 82];
     let uStack10: u32;
-    let puStack6: *mut u16;
+    let puStack6: U32Ptr;
 
     puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     // puVar2 = (puStack6 >> 0x10);
@@ -1214,11 +1214,11 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: *mut u16) {
 pub fn win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32) {
     let iVar1: i16;
     let uVar2: u32;
-    let puVar3: *mut u8;
+    let puVar3: U32Ptr;
     let unaff_CS: u16;
     let unaff_SS: u16;
     let LVar4: LRESULT;
-    let puVar5: *mut u16;
+    let puVar5: U32Ptr;
     let iVar6: i16;
 
     send_msg_1040_323c(CONCAT22(param_2, param_1), unaff_CS);
@@ -1379,11 +1379,11 @@ pub fn show_win_1040_355a(param_1: &mut Struct1, param_2: HWND16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn set_win_text_1040_3590(param_1: u32, param_2: *mut u16) {
+pub fn set_win_text_1040_3590(param_1: u32, param_2: U32Ptr) {
     let HVar1: HWND16;
     lp_string: SEGPTR;
     let lp_string_00: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar2: u16;
     let iVar3: i16;
     let unaff_DI: i16;
@@ -1395,7 +1395,7 @@ pub fn set_win_text_1040_3590(param_1: u32, param_2: *mut u16) {
     local_58e: u8[0x82];
     local_50c: u8[0x100];
     let uStack1036: u32;
-    let puStack1032: *mut u16;
+    let puStack1032: U32Ptr;
     local_404: u8[0x402];
 
     puStack1032 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
@@ -1457,14 +1457,14 @@ pub fn message_box_op_1040_37f0(param_1: i16, param_2: u16, param_3: u16, param_
 
 {
     let uVar1: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar2: u16;
     let unaff_DI: i16;
     let LVar3: LRESULT;
     let iVar4: i16;
     local_40c: u8[0x402];
     let uStack10: u32;
-    let puStack6: *mut u16;
+    let puStack6: U32Ptr;
 
     if (param_4._2_2_ == 0x193) {
         puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_6, in_DX, unaff_DI);
@@ -1544,10 +1544,10 @@ pub fn show_win_1040_3ae8(param_1: &mut Struct1, param_2: u16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_op_1040_3b1e(param_1: &mut Struct2, param_2: *mut u16) {
+pub fn win_ui_op_1040_3b1e(param_1: &mut Struct2, param_2: U32Ptr) {
     let BVar1: bool;
     let HVar2: HWND16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar3: u16;
     let uVar4: u16;
     let unaff_DI: i16;
@@ -1556,7 +1556,7 @@ pub fn win_ui_op_1040_3b1e(param_1: &mut Struct2, param_2: *mut u16) {
     local_10e: u8[0x82];
     local_8c: u8[0x82];
     let uStack10: u32;
-    let puStack6: *mut u16;
+    let puStack6: U32Ptr;
 
     puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     uStack10 = (puStack6 + 0x68);
@@ -1597,7 +1597,7 @@ pub fn unk_win_ui_op_1040_3c64(param_1: i16, param_2: u16, param_3: u16, param_4
     let unaff_SS: u16;
     let uVar3: u32;
     let LVar4: LRESULT;
-    let puVar5: *mut u16;
+    let puVar5: U32Ptr;
     let iVar6: i16;
 
     if (param_4._2_2_ == 0x186) {
@@ -1733,7 +1733,7 @@ pub fn send_dlg_item_msg_1040_3f12(param_1: u16, param_2: u16, param_3: u32, par
 
 {
     let uVar1: u32;
-    let puVar2: *mut u8;
+    let puVar2: U32Ptr;
     let extraout_DX: u16;
     let iVar3: i16;
     let hwnd: HWND16;
@@ -1763,19 +1763,19 @@ pub fn send_dlg_item_msg_1040_3f12(param_1: u16, param_2: u16, param_3: u32, par
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: *mut u8) {
+pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr) {
     let uVar1: u32;
-    let puVar2: *mut u8;
+    let puVar2: U32Ptr;
     let iVar3: i16;
     let unaff_DI: *mut RECT16;
     let uVar4: u16;
     let uVar5: u16;
     let hwnd: HWND16;
     let in_AF: u8;
-    let puVar6: *mut u16;
-    let piVar7: *mut i16;
-    let piVar8: *mut i16;
-    let puVar9: *mut u8;
+    let puVar6: U32Ptr;
+    let piVar7: U32Ptr;
+    let piVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let local_36: i16;
     let local_34: i16;
     let local_32: i16;
@@ -1841,7 +1841,7 @@ pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: *mut u8
 }
 
 
-pub fn win_ui_op_1040_42b2(param_1: u32, param_2: i16, param_3: HWND16, param_4: *mut u16) {
+pub fn win_ui_op_1040_42b2(param_1: u32, param_2: i16, param_3: HWND16, param_4: U32Ptr) {
     let uVar1: u32;
     let uVar2: u16;
     let uVar3: u16;
@@ -1943,9 +1943,9 @@ pub fn set_win_pos_1040_4ae4(param_1: i16, param_2: u16, param_3: u16, param_4: 
     let uVar2: u32;
     let uVar3: u16;
     let paVar4: &mut Struct18;
-    let in_DX: *mut u8;
-    let puVar5: *mut u8;
-    let puVar6: *mut u8;
+    let in_DX: U32Ptr;
+    let puVar5: U32Ptr;
+    let puVar6: U32Ptr;
     let iVar7: i16;
     let unaff_DI: i16;
     let uVar8: u16;
@@ -2042,7 +2042,7 @@ return LVar2;
 }
 
 
-pub fn set_win_pos_1040_4f96(param_1: &mut Struct1, param_2: u16, param_3: u16, param_4: *mut u8) {
+pub fn set_win_pos_1040_4f96(param_1: &mut Struct1, param_2: u16, param_3: u16, param_4: U32Ptr) {
     let puVar1: u32;
     let ppcVar2: u32;
     let uVar3: u16;
@@ -2051,16 +2051,16 @@ pub fn set_win_pos_1040_4f96(param_1: &mut Struct1, param_2: u16, param_3: u16, 
     let uVar6: u16;
     let uVar7: u16;
     let iVar8: i16;
-    let extraout_DX: *mut u8;
-    let puVar9: *mut u8;
-    let puVar10: *mut u8;
+    let extraout_DX: U32Ptr;
+    let puVar9: U32Ptr;
+    let puVar10: U32Ptr;
     let uVar11: u16;
     let uVar12: u16;
     let iVar11: &mut Struct443;
     let unaff_DI: i16;
     let uVar13: u16;
     let uVar14: u16;
-    let puVar15: *mut u16;
+    let puVar15: U32Ptr;
     let BVar16: bool;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
@@ -2170,13 +2170,13 @@ pub fn win_ui_op_1040_52c0(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     let BVar2: bool;
     let iVar3: i16;
     let uVar4: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar5: u16;
     let uVar6: u16;
     let uVar7: u16;
     let unaff_DI: i16;
-    let puVar8: *mut u16;
-    let puVar9: *mut u16;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let uVar10: u32;
     let uVar11: u16;
     let uVar12: u16;
@@ -2309,10 +2309,10 @@ pub fn enable_win_1040_5780(param_1: *mut u32) {
     let ppcVar1: u32;
     let uVar2: u32;
     let uVar3: u16;
-    let extraout_DX: *mut u8;
+    let extraout_DX: U32Ptr;
     let unaff_DI: i16;
     let unaff_SS: u16;
-    let puVar4: *mut u16;
+    let puVar4: U32Ptr;
 
     ppcVar1 = (*param_1 + 0x74);
     (**ppcVar1)();
@@ -2339,16 +2339,16 @@ pub fn win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     let uVar3: u16;
     let uVar4: u16;
     let paVar5: &mut Struct18;
-    let in_DX: *mut u8;
-    let puVar6: *mut u8;
-    let puVar7: *mut u8;
-    let extraout_DX: *mut u8;
+    let in_DX: U32Ptr;
+    let puVar6: U32Ptr;
+    let puVar7: U32Ptr;
+    let extraout_DX: U32Ptr;
     let iVar8: i16;
-    let unaff_DI: *mut u8;
+    let unaff_DI: U32Ptr;
     let uVar9: u16;
     let hwnd: HWND16;
     let unaff_SS: u16;
-    let piStack24: *mut i16;
+    let piStack24: U32Ptr;
     let local_14: [RECT16; 0x2];
     let iStack12: i16;
     let paStack10: &mut Struct18;
@@ -2430,7 +2430,7 @@ pub fn win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 }
 
 
-pub fn msg_box_ui_op_1040_64ca(param_1: u32, param_2: &mut String, param_3: *mut u8, param_4: u16) {
+pub fn msg_box_ui_op_1040_64ca(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
     local_206: u8[0x102];
     local_104: u8[0x102];
 
@@ -2460,8 +2460,8 @@ pub fn show_win_1040_65ba(param_1: &mut Struct1, param_2: u16) {
     let uVar1: u32;
     let uVar2: u16;
     let rect: &mut Struct160;
-    let in_DX: *mut u8;
-    let puVar3: *mut u8;
+    let in_DX: U32Ptr;
+    let puVar3: U32Ptr;
     let iVar4: i16;
     let iVar5: i16;
     let unaff_DI: i16;
@@ -2473,10 +2473,10 @@ pub fn show_win_1040_65ba(param_1: &mut Struct1, param_2: u16) {
     let uStack32: u16;
     let uStack30: u16;
     let uStack28: u16;
-    let puStack26: *mut u16;
+    let puStack26: U32Ptr;
     let uStack10: i16;
     let uStack8: u16;
-    let puStack6: *mut u16;
+    let puStack6: U32Ptr;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
     puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2b, unaff_SS, in_DX, unaff_DI);
@@ -2593,10 +2593,10 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
     let mut pCVar5: String;
     let puVar6: u32;
     let iVar7: i16;
-    let in_DX: *mut u8;
-    let extraout_DX: *mut u8;
-    let puVar8: *mut u8;
-    let puVar9: *mut u8;
+    let in_DX: U32Ptr;
+    let extraout_DX: U32Ptr;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let uVar10: u16;
     let iVar11: i16;
     let unaff_DI: i16;
@@ -2604,7 +2604,7 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
     let uVar13: u16;
     let uVar14: u16;
     let hwnd: HWND16;
-    let puVar15: *mut u16;
+    let puVar15: U32Ptr;
     let DVar16: u32;
     let mut pcVar17: String;
     let BVar18: bool;
@@ -2615,7 +2615,7 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
     local_58: u8[0x50];
     let HStack8: HDC16;
     let paStack6: &mut Struct160;
-    let puStack4: *mut u8;
+    let puStack4: U32Ptr;
 
     dialog_ui_fn_1040_78e2(param_1, param_3);
     puVar15 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x33, param_2, in_DX, unaff_DI);
@@ -2736,7 +2736,7 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
 pub fn win_ui_op_1040_6d1a(param_1: i16, param_2: u16, param_3: u16, param_4: u32) {
     let ppcVar1: u32;
     let uVar2: u32;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_CS: u16;
     let unaff_SS: u16;
     let iVar3: i16;
@@ -2865,10 +2865,10 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
     let mut pCVar5: String;
     let puVar6: u32;
     let iVar7: i16;
-    let in_DX: *mut u8;
-    let extraout_DX: *mut u8;
-    let puVar8: *mut u8;
-    let puVar9: *mut u8;
+    let in_DX: U32Ptr;
+    let extraout_DX: U32Ptr;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let uVar10: u16;
     let iVar11: i16;
     let unaff_DI: i16;
@@ -2876,7 +2876,7 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
     let uVar13: u16;
     let uVar14: u16;
     let hwnd: HWND16;
-    let puVar15: *mut u16;
+    let puVar15: U32Ptr;
     let DVar16: u32;
     let mut pcVar17: String;
     let BVar18: bool;
@@ -2887,7 +2887,7 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
     local_58: u8[0x50];
     let HStack8: HDC16;
     let paStack6: &mut Struct160;
-    let puStack4: *mut u8;
+    let puStack4: U32Ptr;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
     puVar15 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x34, param_3, in_DX, unaff_DI);
@@ -3008,7 +3008,7 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
 pub fn win_cleanup_op_1040_748c(param_1: i16, param_2: u16, param_3: u16, param_4: u32) {
     let ppcVar1: u32;
     let uVar2: u32;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_CS: u16;
     let unaff_SS: u16;
     let iVar3: i16;
@@ -3084,7 +3084,7 @@ pub fn win_cleanup_op_1040_748c(param_1: i16, param_2: u16, param_3: u16, param_
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn create_window_1040_7620(param_1: u32, param_2: i16, HMENin_menu_handle: *mut u16, param_4: u16,
+pub fn create_window_1040_7620(param_1: u32, param_2: i16, HMENin_menu_handle: U32Ptr, param_4: u16,
                                param_5: i16)
 
 {
@@ -3499,7 +3499,7 @@ pub fn enable_window_1040_8ea0(param_1: u16, param_2: u16, param_3: u16, param_4
 
 {
     let enable: HWND16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_SS: u16;
 
     if (param_4._2_2_ == 0xf8) {
@@ -3770,7 +3770,7 @@ pub fn call_win_proc_1040_9684(param_1: HWND16, param_2: u16, param_3: WPARAM16,
 }
 
 
-pub fn unk_win_ui_op_1040_9854(param_1: *mut u16, param_2: u16) -> u16
+pub fn unk_win_ui_op_1040_9854(param_1: U32Ptr, param_2: u16) -> u16
 
 {
     let HVar1: HCURSOR16;
@@ -3801,7 +3801,7 @@ pub fn win_op_1040_9cde(param_1: u16, param_2: WPARAM16, param_3: i16, param_4: 
                         param_6: u16)
 
 {
-    let pbVar1: *mut u8;
+    let pbVar1: U32Ptr;
     let iVar2: i16;
     let uVar3: u16;
     let uVar4: u16;
@@ -3809,7 +3809,7 @@ pub fn win_op_1040_9cde(param_1: u16, param_2: WPARAM16, param_3: i16, param_4: 
     let IVar6: i16;
     let BVar7: bool;
     let offset: u16;
-    let puVar8: *mut u8;
+    let puVar8: U32Ptr;
     let uVar9: u16;
     let uVar10: u16;
     let HVar11: HWND16;
@@ -4059,13 +4059,13 @@ pub fn win_op_1040_9cde(param_1: u16, param_2: WPARAM16, param_3: i16, param_4: 
 pub fn win_msg_1040_a308(param_1: u32, param_2: i16, param_3: HWND16, param_4: u16) -> u32
 
 {
-    let piVar1: *mut i16;
+    let piVar1: U32Ptr;
     let uVar2: u32;
     let iVar3: i16;
     let uVar4: u16;
     let hwnd: HWND16;
     let LVar5: LRESULT;
-    let puVar6: *mut u16;
+    let puVar6: U32Ptr;
     let mut pcVar7: String;
     let uVar8: u16;
     let uVar9: u16;
@@ -4162,7 +4162,7 @@ pub fn win_ui_op_1040_a784(param_1: i16, param_2: i16, param_3: u16, param_4: u3
 }
 
 
-pub fn msg_box_op_1040_a85a(param_1: u32, param_2: &mut String, param_3: *mut u8, param_4: u16) {
+pub fn msg_box_op_1040_a85a(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
     local_206: u8[0x102];
     local_104: u8[0x102];
 
@@ -4194,15 +4194,15 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(
     unaff_di: i16,
     in_dx: u16,
 ) {
-    let pi_var1: *mut i16;
+    let pi_var1: U32Ptr;
     let u_var2: u32;
     let u_var3: u32;
     let u_var4: u16;
-    let value: *mut u8;
+    let value: U32Ptr;
     let mut pc_var5: String;
     let u_var6: u16;
-    let pu_var8: *mut u8;
-    let pu_var9: *mut u8;
+    let pu_var8: U32Ptr;
+    let pu_var9: U32Ptr;
     let lp_string: u16;
     let i_var10: i16;
     let i_var11: i16;
@@ -4210,7 +4210,7 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(
     let u_var13: u16;
     let hvar14: HWND16;
     let b_var15: bool;
-    let pu_var16: *mut u16;
+    let pu_var16: U32Ptr;
     let l_var17: i32;
     let u_stack288: u16;
     let u_stack286: u16;
@@ -4305,7 +4305,7 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(
 }
 
 
-pub fn msg_box_ui_op_1040_ad66(param_1: u32, param_2: &mut String, param_3: *mut u8, param_4: u16) {
+pub fn msg_box_ui_op_1040_ad66(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
     local_206: u8[0x102];
     local_104: u8[0x102];
 
@@ -4328,14 +4328,14 @@ pub fn msg_box_ui_op_1040_ad66(param_1: u32, param_2: &mut String, param_3: *mut
 pub unsafe fn win_ui_op_1040_ae04(
     ctx: &mut AppContext,
     param_1: u32,
-    param_2: *mut u16,
+    param_2: U32Ptr,
     in_dx: u16,
     unaff_di: u16,
     in_af: u8) {
     let b_var1: bool;
     let i_var2: i16;
     let mut id: String;
-    // let in_DX: *mut u8;
+    // let in_DX: U32Ptr;
     let u_var3: u16;
     let lp_string: SEGPTR;
 
@@ -4343,7 +4343,7 @@ pub unsafe fn win_ui_op_1040_ae04(
     // let unaff_DI: i16;
     let u_var7: u16;
     // let in_AF: u8;
-    let pu_var8: *mut u16;
+    let pu_var8: U32Ptr;
     let u_var9: u32;
     let u_var10: u32;
     let mut pc_var11: String;
@@ -4391,11 +4391,11 @@ pub unsafe fn win_ui_op_1040_ae04(
 pub fn unk_win_ui_op_1040_b230(param_1: &mut Struct1, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
     let IVar2: i16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let unaff_DI: i16;
     let uVar3: u16;
-    let puVar4: *mut u16;
-    let puVar5: *mut u16;
+    let puVar4: U32Ptr;
+    let puVar5: U32Ptr;
     let uVar7: u16;
     let uVar6: u32;
     let local_1a: RECT16;
@@ -4405,7 +4405,7 @@ pub fn unk_win_ui_op_1040_b230(param_1: &mut Struct1, param_2: u16, param_3: u16
     let iStack16: i16;
     let iStack14: i16;
     let iStack12: i16;
-    let puStack10: *mut u16;
+    let puStack10: U32Ptr;
     let local_6: i16;
     let local_4: i16;
 
@@ -4523,14 +4523,14 @@ pub fn win_ui_1040_b8d2(param_1: &mut Struct1, param_2: u16, param_3: u16, param
     let uVar5: u16;
     let uVar6: u16;
     let iVar7: i16;
-    let puVar8: *mut u8;
-    let puVar9: *mut u8;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let uVar10: u16;
     let uVar11: u16;
     let iVar10: &mut Struct167;
     let unaff_DI: i16;
     let uVar12: u16;
-    let puVar13: *mut u16;
+    let puVar13: U32Ptr;
 
     dialog_ui_fn_1040_78e2(param_1, param_3);
     puVar13 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x31, param_4, param_2, unaff_DI);
@@ -4634,13 +4634,13 @@ pub fn win_ui_op_1040_bbe2(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     let BVar2: bool;
     let iVar3: i16;
     let uVar4: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar5: u16;
     let uVar6: u16;
     let uVar7: u16;
     let unaff_DI: i16;
-    let puVar8: *mut u16;
-    let puVar9: *mut u16;
+    let puVar8: U32Ptr;
+    let puVar9: U32Ptr;
     let uVar10: u32;
     let uVar11: u16;
     let uVar12: u16;
@@ -4836,7 +4836,7 @@ pub fn win_ui_op_1040_cace(param_1: u32, param_2: HWND16, param_3: u16) {
 }
 
 
-pub fn msg_box_op_1040_cce4(param_1: u32, param_2: &mut String, param_3: *mut u8, param_4: u16) {
+pub fn msg_box_op_1040_cce4(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
     let uStack522: u32;
     local_206: u8[0x102];
     local_104: u8[0x102];
@@ -4860,7 +4860,7 @@ pub fn msg_box_op_1040_cce4(param_1: u32, param_2: &mut String, param_3: *mut u8
 }
 
 
-pub fn send_dlg_item_msg_1040_ce12(param_1: u16, param_2: u16, param_3: u32, param_4: u16, param_5: *mut u16)
+pub fn send_dlg_item_msg_1040_ce12(param_1: u16, param_2: u16, param_3: u32, param_4: u16, param_5: U32Ptr)
 
 {
     let lVar1: i32;
@@ -4936,10 +4936,10 @@ EnableWindow16(ctx.s_tile2_bmp_1050_1538, enable); LVar3 = SendDlgItemMessage16(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn send_dlg_item_msg_1040_d20c(param_1: u32, param_2: i32, param_3: u16, param_4: u16, in_AF: u8, unaff_DI: i16, in_DX: *mut u8, in_AX: u16) {
+pub fn send_dlg_item_msg_1040_d20c(param_1: u32, param_2: i32, param_3: u16, param_4: u16, in_AF: u8, unaff_DI: i16, in_DX: U32Ptr, in_AX: u16) {
     let uVar2: u16;
-    let puVar3: *mut u16;
-    let puVar4: *mut u8;
+    let puVar3: U32Ptr;
+    let puVar4: U32Ptr;
     let uVar5: u16;
     let local_106: [u8; 104];
 
@@ -5018,7 +5018,7 @@ pub fn win_ui_op_1040_d2ac(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn msg_box_op_1040_d3d0(param_1: u32, param_2: &mut String, param_3: *mut u8, param_4: u16) {
+pub fn msg_box_op_1040_d3d0(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
     local_206: u8[0x102];
     local_104: u8[0x102];
 
@@ -5110,7 +5110,7 @@ pub fn enable_win_1040_d6be(param_1: u32, param_2: HWND16) {
 
 pub fn send_ldg_item_msg_1040_d79c(param_1: u32, param_2: u16) {
     let uVar1: u16;
-    let in_DX: *mut u8;
+    let in_DX: U32Ptr;
     let uVar2: u16;
     let uVar3: u16;
     let iVar4: i16;
@@ -5122,7 +5122,7 @@ pub fn send_ldg_item_msg_1040_d79c(param_1: u32, param_2: u16) {
     let uStack270: u32;
     let uStack266: u32;
     local_106: u8[0x100];
-    let puStack6: *mut u16;
+    let puStack6: U32Ptr;
 
     puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
     // uVar2 = (puStack6 >> 0x10);
