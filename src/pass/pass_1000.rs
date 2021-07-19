@@ -1,7 +1,7 @@
 use core::num::flt2dec::to_exact_exp_str;
 
 use crate::{string::string_1000::poss_str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
-use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr};
+use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr, Struct_1000_30a4};
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
 use crate::global::AppContext;
@@ -12,7 +12,7 @@ use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
 use crate::string::string_1000;
 use crate::struct_ops::struct_1008;
 use crate::sys_api::{dos3_call_1000_514e, dos3_call_1000_5174, dos3_call_op_1000_35fe, dos3_op_1000_256b, mixed_dos3_call_1000_370a, mixed_dos3_call_1000_39f2, sys_1000_30b4};
-use crate::util::{address_of, CARRY2, CARRY4, CONCAT11, CONCAT12, CONCAT13, CONCAT22, get_string_from_addr, get_struct_from_addr, SBORROW2, SEXT24, SUB42, ZEXT24, get_string_from_rsrc};
+use crate::util::{address_of, CARRY2, CARRY4, CONCAT11, CONCAT12, CONCAT13, CONCAT22, get_string_from_addr, get_struct_from_addr, SBORROW2, SEXT24, SUB42, ZEXT24, get_string_from_rsrc, store_string_at_addr};
 use crate::win_struct::{CONTEXT, WNDCLASS16};
 use crate::winapi::{FatalAppExit16, FatalExit, GetModuleFileName16, GlobalDOSFree16, SegmentLimit, swi};
 
@@ -2231,7 +2231,7 @@ pub unsafe fn pass1_1000_2e74(
 
 {
     let pu_var1: U32Ptr;
-    let u_var2: u16;
+    let u_var2: U32Ptr;
     let u_var3: u16;
     let pu_var4: U32Ptr;
     let pu_var5: U32Ptr;
@@ -2245,26 +2245,26 @@ pub unsafe fn pass1_1000_2e74(
                 u_var2 = *pu_var4;
                 u_var3 = pu_var4[0x1];
                 if (u_var2 | u_var3) == 0x0 {
-                    u_var2 = mem_1000_167a(ctx, 0x200, param_2, u_var3);
+                    u_var2 = mem_1000_167a(ctx, 0x200, param_2, u_var3) as u32;
                     if u_var3 == 0x0 {
                         return 0x0;
                     }
                     *pu_var4 = u_var2;
                     pu_var4[0x1] = u_var3;
                 }
-                param_1.field_0x3 = u_var2;
+                param_1.field_0x3 = get_struct_from_addr::<Struct18>(u_var2).clone();
                 param_1.field_0x4 = u_var3;
-                param_1.field_0x0 = u_var2;
-                param_1[0x1] = u_var3;
-                param_1[0x2] = 0x200;
-                param_1[0x79] = 0x200;
-                pu_var1 = param_1 + 0x5;
+                param_1.field_0x0 = u_var2 as u16;
+                param_1.field_0x0 = u_var3;
+                param_1.field_0x2 = 0x200;
+                param_1.field_0x79 = 0x200;
+                pu_var1 = param_1.field_0x5 as u32;
                 pu_var1 = pu_var1 | 0x2;
                 pu_var5 = 0x11;
                 return 0x1;
             }
         } else {
-            if ctx.DAT_1050_5f8a <= (param_1 + 0xb) {
+            if ctx.DAT_1050_5f8a <= (param_1.field_0xb) as u32 {
                 pu_var1 = pu_var5;
                 pu_var1 = pu_var1 | 0x10;
             }
@@ -2274,27 +2274,45 @@ pub unsafe fn pass1_1000_2e74(
 }
 
 
-pub fn pass1_1000_2f00(param_1: i16, param_2: &mut Struct_1000_2cb0, param_3: u16, param_4: u16, param_5: u16,
-                       param_6: u8)
+pub fn pass1_1000_2f00(
+    param_1: i16,
+    param_2: &mut Struct_1000_2cb0,
+    param_3: u16,
+    param_4: u16,
+    param_5: u16,
+    param_6: u8
+)
 
 {
-    if ((((param_2 + 0x78) & 0x10) != 0x0) && ((((param_2 + 0xb) + 0x5f90) & 0x40) != 0x0)) {
-        pass1_1000_2fa4(param_2, param_3, param_4, param_5, param_6);
-        if (param_1 != 0x0) {
-            (param_2 + 0x78) = 0x0;
-            param_2[0x79] = 0x0;
+    if (((param_2 + 0x78) & 0x10) != 0x0) && ((((param_2 + 0xb) + 0x5f90) & 0x40) != 0x0) {
+        pass1_1000_2fa4(
+            param_2,
+            param_3,
+            param_4,
+            param_5,
+            param_6
+        );
+        if param_1 != 0x0 {
+            (param_2.field_0x78) = 0x0;
+            param_2.field_0x79 = 0x0;
             param_2.field_0x0 = 0x0;
-            param_2[0x1] = 0x0;
-            param_2[0x3] = 0x0;
-            param_2[0x4] = 0x0;
+            param_2.field_0x1 = 0x0;
+            // param_2.field_0x3 = 0x0;
+            param_2.field_0x4 = 0x0;
         }
     }
     return;
 }
 
 
-pub fn pass1_1000_2f48(param_1: &mut Struct_1000_2cb0, param_2: i16, param_3: u16, param_4: u16, param_5: u16,
-                       param_6: u8) -> u16
+pub fn pass1_1000_2f48(
+    param_1: &mut Struct_1000_2cb0,
+    param_2: i16,
+    param_3: u16,
+    param_4: u16,
+    param_5: u16,
+    param_6: u8
+) -> u16
 
 {
     let u_var1: u16;
@@ -2310,7 +2328,7 @@ pub fn pass1_1000_2f48(param_1: &mut Struct_1000_2cb0, param_2: i16, param_3: u1
             if ((param_1.field_0x78) & 0x40) != 0x0 {
                 pu_var2 = pass1_1000_400a((param_1.field_0xb as i16),
                                           i_stack2 as u16);
-                u_var1 = !(pu_var2 != 0x0);
+                // u_var1 = !(pu_var2 != 0);
             }
         } else {
             u_var1 = 0xffff;
@@ -2342,8 +2360,8 @@ pub fn pass1_1000_2fa4(
         pu_var4 = (param_1.field_0x0 - param_1.field_0x3.field_0x0) as u32;
         if 0x0 < pu_var4 {
             pu_var5 = mixed_dos3_call_1000_39f2(
-                (param_1.field_0xb),
-                CONCAT22(param_1[0x4], param_1[0x3]),
+                (param_1.field_0xb as u32),
+                get_string_from_addr(CONCAT22(param_1.field_0x4, param_1.field_0x3.field_0x0)),
                 pu_var4,
                 param_2,
                 param_3,
@@ -2352,11 +2370,11 @@ pub fn pass1_1000_2fa4(
             );
             if pu_var5 == pu_var4 {
                 if ((param_1 + 0x5) & 0x80) != 0x0 {
-                    pi_var1 = param_1.field_0x5;
+                    pi_var1 = param_1.field_0x5 as u32;
                     pi_var1 = pi_var1 & 0xfd;
                 }
             } else {
-                pi_var1 = param_1.field_0x5;
+                pi_var1 = param_1.field_0x5 as u32;
                 pi_var1 = pi_var1 | 0x20;
                 u_var6 = 0xffff;
             }
@@ -2432,7 +2450,7 @@ pub fn pass1_1000_3038(
 // WARNING (jumptable): Unable to track spacebase fully for stack
 // WARNING: Unable to track spacebase fully for stack
 
-pub unsafe fn pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16,
+pub unsafe fn pass1_1000_30a4(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16, param_5: i16,
                               param_6: u16, param_7: u16, param_8: u16, param_9: u16,
                               param_10: u8) -> u16
 
@@ -2444,7 +2462,7 @@ pub unsafe fn pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4:
     let u_var5: u16;
     let pu_var6: U32Ptr;
 
-    pu_var6 = (param_5 + (param_3 + param_6) + param_10);
+    pu_var6 = (param_5 + (param_3 + param_6) + param_10) as u32;
     pu_var1 = pu_var6;
     *pu_var1 = *pu_var1 ^ pu_var6;
     pu_var1 = (pu_var6 + param_3 + 0x31);
@@ -2453,28 +2471,28 @@ pub unsafe fn pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4:
     *pu_var1 = *pu_var1 ^ param_3;
     pu_var1 = pu_var6 + -0x3794;
     *pu_var1 = *pu_var1 ^ param_2;
-    (param_1 + -0x2) = (param_4 + 0x1) as i16;
+    (param_1 + -0x2) = (param_4 + 0x1) as i16 as u32;
     (param_1 + -0x4) = ctx.data_seg;
-    (param_1 + -0x6) = param_8 as i16;
+    (param_1 + -0x6) = param_8 as u32;
     (param_1 + -0x8) = 0x30c5;
     exit_1000_25f2(((param_1 + -0x8) as u16), ((param_1 + -0x6) as u16),
-                   (param_1 + -0x4), 0x214, param_7, param_8, param_9);
-    (param_1 + -0x6) = pu_var6;
-    (param_1 + -0x8) = param_6 ^ pu_var6;
+                   ((param_1 + -0x4) as i16), 0x214, param_7, param_8, param_9);
+    (param_1 + -0x6) = pu_var6 as u32;
+    (param_1 + -0x8) = (param_6 ^ pu_var6) as u32;
     (param_1 + -0xc) = 0x0;
     *(param_1 + -0x9) = 0x0;
-    pc_var3 = (param_1 + 0x8);
-    c_var2 = *pc_var3;
-    (param_1 + 0x8) = pc_var3 + 0x1;
+    pc_var3 = get_string_from_addr((param_1 + 0x8) as u32).clone();
+    c_var2 = pc_var3[0];
+    store_string_at_addr(param_1 + 0x8, &pc_var3[1..].to_string());
     *(param_1 + -0x6) = c_var2;
-    if ((c_var2 != '\0') & &(-0x1 < (param_1 + -0xc))) {
-        if ((c_var2 - 0x20) < 0x59) {
+    if (c_var2 != '\0' as u8) & &(-0x1 < (param_1 + -0xc)) {
+        if (c_var2 - 0x20) < 0x59 {
             b_var4 = ((c_var2 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var4 = 0x0;
         }
-        b_var4 = ((b_var4 * '\b' + *(param_1 + -0x9)) + 0x5ffe) >> 0x4;
-        (param_1 + -0x9) = b_var4 as i16;
+        b_var4 = ((b_var4 * 0x8 as u8 + *(param_1 + -0x9)) + 0x5ffe) >> 0x4;
+        (param_1 + -0x9) = b_var4 as i16 as u32;
 // WARNING: Could not recover jumptable at 0x1000310e. Too many
 // branches
 // WARNING: Treating indirect jump as call
@@ -2495,26 +2513,35 @@ pub unsafe fn pass1_1000_3113(param_1: u16, param_2: u16) -> u16
     let b_var3: u8;
     let u_var4: u16;
 
-    pass1_1000_3552(0x1, param_1 as i16, param_2);
-    pc_var2 = (param_1 + 0xa);
-    c_var1 = *pc_var2;
-    (param_1 + 0xa) = pc_var2 + 0x1;
-    *(param_1 - 0x4) = c_var1;
-    if ((c_var1 != '\0') && (-0x1 < (param_1 - 0xa))) {
-        if ((c_var1 - 0x20) < 0x59) {
+    let mut a: i16 = 0x1i16;
+
+    pass1_1000_3552(
+        &mut a,
+        param_1 as i16,
+        param_2,
+        0,
+        0,
+        0
+    );
+    pc_var2 = get_string_from_addr((param_1 + 0xa) as u32).clone();
+    c_var1 = pc_var2[0];
+    store_string_at_addr((param_1 + 0xa), &pc_var2[0x1..].to_string());
+    store_string_at_addr((param_1 - 0x4),&c_var1.to_string());
+    if (c_var1 != '\0' as u8) && (-0x1 < (param_1 - 0xa)) {
+        if (c_var1 - 0x20) < 0x59 {
             b_var3 = ((c_var1 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var3 = 0x0;
         }
-        b_var3 = ((b_var3 * '\b' + *(param_1 - 0x7)) + 0x5ffe) >> 0x4;
+        b_var3 = ((b_var3 * 0x8 + *(param_1 - 0x7)) + 0x5ffe) >> 0x4;
         (param_1 - 0x7) = b_var3 as u16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
         // WARNING: Treating indirect jump as call
-        u_var4 = ((b_var3 * 0x2 + 0x30a4))();
+        u_var4 = (b_var3 * 0x2 + 0x30a4)();
         return u_var4;
     }
-    return (param_1 - 0xa);
+    return param_1 - 0xa;
 }
 
 
@@ -2534,22 +2561,22 @@ pub fn pass1_1000_311e(param_1: i16, param_2: u16) -> u16
     (param_1 + -0x14) = 0x0;
     (param_1 + -0x6) = 0x20;
     (param_1 + -0xe) = 0xffff;
-    pc_var2 = (param_1 + 0xa);
-    c_var1 = *pc_var2;
-    (param_1 + 0xa) = pc_var2 + 0x1;
+    pc_var2 = get_string_at_addr(param_1 + 0xa);
+    c_var1 = pc_var2[0];
+    store_string_at_addr((param_1 + 0xa), &pc_var2[1..].to_string());
     *(param_1 + -0x4) = c_var1;
-    if ((c_var1 != '\0') && (-0x1 < (param_1 + -0xa))) {
-        if ((c_var1 - 0x20) < 0x59) {
+    if (c_var1 != '\0' as u8) && (-0x1 < (param_1 + -0xa)) {
+        if (c_var1 - 0x20) < 0x59 {
             b_var3 = ((c_var1 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var3 = 0x0;
         }
-        b_var3 = ((b_var3 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var3 = ((b_var3 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var3 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
         // WARNING: Treating indirect jump as call
-        u_var4 = ((b_var3 * 0x2 + 0x30a4))();
+        u_var4 = (b_var3 * 0x2 + 0x30a4)();
         return u_var4;
     }
     return (param_1 + -0xa) as u16;
@@ -2569,44 +2596,44 @@ pub unsafe fn pass1_1000_3134(param_1: i16, param_2: u16) -> u16
     let u_var5: u16;
 
     c_var2 = *(param_1 + -0x4);
-    if (c_var2 == '-') {
-        pb_var1 = (param_1 + -0x6);
+    if (c_var2 == '-' as u8) {
+        pb_var1 = (param_1 + -0x6) as u32;
         *pb_var1 = *pb_var1 | 0x4;
     } else {
-        if (c_var2 == '+') {
-            pb_var1 = (param_1 + -0x6);
+        if (c_var2 == '+' as u8) {
+            pb_var1 = (param_1 + -0x6) as u32;
             *pb_var1 = *pb_var1 | 0x1;
         } else {
-            if (c_var2 == ' ') {
-                pb_var1 = (param_1 + -0x6);
+            if (c_var2 == ' ' as u8) {
+                pb_var1 = (param_1 + -0x6) as u32;
                 *pb_var1 = *pb_var1 | 0x2;
             } else {
-                if (c_var2 == '#') {
-                    pb_var1 = (param_1 + -0x6);
+                if (c_var2 == '#' as u8) {
+                    pb_var1 = (param_1 + -0x6) as u32;
                     *pb_var1 = *pb_var1 | 0x80;
                 } else {
-                    pb_var1 = (param_1 + -0x6);
+                    pb_var1 = (param_1 + -0x6) as u32;
                     *pb_var1 = *pb_var1 | 0x8;
                 }
             }
         }
     }
-    pc_var3 = (param_1 + 0xa);
-    c_var2 = *pc_var3;
-    (param_1 + 0xa) = pc_var3 + 0x1;
+    pc_var3 = get_string_from_addr((param_1 + 0xa) as u32).clone();
+    c_var2 = pc_var3[0];
+    store_string_at_addr((param_1 + 0xa), &pc_var3[0x1..].to_string());
     *(param_1 + -0x4) = c_var2;
-    if ((c_var2 != '\0') && (-0x1 < (param_1 + -0xa))) {
-        if ((c_var2 - 0x20) < 0x59) {
+    if (c_var2 != '\0' as u8) && (-0x1 < (param_1 + -0xa)) {
+        if (c_var2 - 0x20) < 0x59 {
             b_var4 = ((c_var2 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var4 = 0x0;
         }
-        b_var4 = ((b_var4 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var4 = ((b_var4 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var4 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
         // WARNING: Treating indirect jump as call
-        u_var5 = ((b_var4 * 0x2 + 0x30a4))();
+        u_var5 = (b_var4 * 0x2 + 0x30a4)();
         return u_var5;
     }
     return (param_1 + -0xa) as u16;
@@ -2615,7 +2642,7 @@ pub unsafe fn pass1_1000_3134(param_1: i16, param_2: u16) -> u16
 
 // WARNING (jumptable): Unable to track spacebase fully for stack
 
-pub unsafe fn pass1_1000_3168(param_1: i16, param_2: u16) -> u16
+pub unsafe fn pass1_1000_3168(param_1: &mut Struct_1000_34cf, param_2: u16) -> u16
 
 {
     let pb_var1: U32Ptr;
@@ -2625,33 +2652,33 @@ pub unsafe fn pass1_1000_3168(param_1: i16, param_2: u16) -> u16
     let u_var5: u16;
 
     c_var2 = *(param_1 + -0x4);
-    if (c_var2 == '*') {
+    if c_var2 == '*' as u8 {
         u_var5 = pass1_1000_34cf(param_1, param_2);
-        if (u_var5 < 0x0) {
+        if u_var5 < 0x0 {
             u_var5 = -u_var5;
-            pb_var1 = (param_1 + -0x6);
+            pb_var1 = (param_1 + -0x6) as u32;
             *pb_var1 = *pb_var1 | 0x4;
         }
     } else {
         u_var5 = ((param_1 + -0xc) * 0xa + (c_var2 - 0x30)) as u16;
     }
     (param_1 + -0xc) = u_var5 as i16;
-    pc_var3 = (param_1 + 0xa);
-    c_var2 = *pc_var3;
-    (param_1 + 0xa) = pc_var3 + 0x1;
+    pc_var3 = get_string_from_addr((param_1 + 0xa) as u32).clone();
+    c_var2 = pc_var3[0];
+    (param_1 + 0xa) = pc_var3[1..].to_string();
     *(param_1 + -0x4) = c_var2;
-    if ((c_var2 != '\0') && (-0x1 < (param_1 + -0xa))) {
-        if ((c_var2 - 0x20) < 0x59) {
+    if (c_var2 != '\0' as u8) && (-0x1 < (param_1 + -0xa)) {
+        if (c_var2 - 0x20) < 0x59 {
             b_var4 = ((c_var2 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var4 = 0x0;
         }
-        b_var4 = ((b_var4 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var4 = ((b_var4 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var4 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
         // WARNING: Treating indirect jump as call
-        u_var5 = ((b_var4 * 0x2 + 0x30a4))();
+        u_var5 = (b_var4 * 0x2 + 0x30a4)();
         return u_var5;
     }
     return (param_1 + -0xa) as u16;
@@ -2665,27 +2692,28 @@ pub fn pass1_1000_3194(param_1: i16, param_2: u16) -> u16
 
 {
     let c_var1: u8;
-    let mut pc_var2: String;
+    let mut pc_var2: &mut String;
     let b_var3: u8;
     let u_var4: u16;
 
     (param_1 + -0xe) = 0x0;
-    pc_var2 = (param_1 + 0xa);
-    c_var1 = *pc_var2;
-    (param_1 + 0xa) = pc_var2 + 0x1;
+    pc_var2 = get_string_from_addr((param_1 + 0xa) as u32);
+    c_var1 = pc_var2[0];
+    // (param_1 + 0xa) = pc_var2[1..].to_string();
+    store_string_at_addr((param_1 + 0xa), &pc_var2[1..].to_string())
     *(param_1 + -0x4) = c_var1;
-    if ((c_var1 != '\0') && (-0x1 < (param_1 + -0xa))) {
-        if ((c_var1 - 0x20) < 0x59) {
+    if (c_var1 != '\0' as u8) && (-0x1 < (param_1 + -0xa)) {
+        if (c_var1 - 0x20) < 0x59 {
             b_var3 = ((c_var1 - 0x20) + 0x5ffe) & 0xf;
         } else {
             b_var3 = 0x0;
         }
-        b_var3 = ((b_var3 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var3 = ((b_var3 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var3 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
         // WARNING: Treating indirect jump as call
-        u_var4 = ((b_var3 * 0x2 + 0x30a4))();
+        u_var4 = (b_var3 * 0x2 + 0x30a4)();
         return u_var4;
     }
     return (param_1 + -0xa) as u16;
@@ -2694,7 +2722,7 @@ pub fn pass1_1000_3194(param_1: i16, param_2: u16) -> u16
 
 // WARNING (jumptable): Unable to track spacebase fully for stack
 
-pub unsafe fn pass1_1000_319c(param_1: i16, param_2: u16) -> u16
+pub unsafe fn pass1_1000_319c(param_1: &mut Struct_1000_34cf, param_2: u16) -> u16
 
 {
     let c_var1: u8;
@@ -2703,7 +2731,7 @@ pub unsafe fn pass1_1000_319c(param_1: i16, param_2: u16) -> u16
     let u_var4: u16;
 
     c_var1 = *(param_1 + -0x4);
-    if (c_var1 == '*') {
+    if (c_var1 == '*' as u8) {
         u_var4 = pass1_1000_34cf(param_1, param_2);
         if (u_var4 < 0x0) {
             u_var4 = 0xffff;
@@ -2722,7 +2750,7 @@ pub unsafe fn pass1_1000_319c(param_1: i16, param_2: u16) -> u16
         } else {
             b_var3 = 0x0;
         }
-        b_var3 = ((b_var3 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var3 = ((b_var3 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var3 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
@@ -2779,7 +2807,7 @@ pub unsafe fn pass1_1000_31c5(param_1: i16, param_2: u16) -> u16
         } else {
             b_var4 = 0x0;
         }
-        b_var4 = ((b_var4 * '\b' + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var4 = ((b_var4 * 0x8 + *(param_1 + -0x7)) + 0x5ffe) >> 0x4;
         (param_1 + -0x7) = b_var4 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches
@@ -3042,7 +3070,7 @@ pub unsafe fn pass1_1000_31f7(
         } else {
             b_var6 = 0x0;
         }
-        b_var6 = ((b_var6 * '\b' as u8 + *(param_2 + -0x7)) + 0x5ffe) >> 0x4;
+        b_var6 = ((b_var6 * 0x8 as u8 + *(param_2 + -0x7)) + 0x5ffe) >> 0x4;
         (param_2 + -0x7) = b_var6 as i16;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many
         // branches

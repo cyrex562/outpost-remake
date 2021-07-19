@@ -65,3 +65,7 @@ pub fn SBORROW2(a: u32 b: u32) -> u32 { unimplemented!()}
 pub fn SEXT24(a: u16) -> u32 {unimplemented!()}
 
 pub fn address_of(a: u32) -> u32 {unimplemented!()}
+
+pub fn store_string_at_addr(address: U3Ptr, src_string: &String) {unimplemented!()}
+
+

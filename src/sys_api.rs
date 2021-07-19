@@ -307,7 +307,7 @@ pub fn sys_1000_30b4(
         }
 // WARNING: Could not emulate address calculation at 0x10003101
 // WARNING: Treating indirect jump as call
-        uVar3 = ((((bVar2 * '\b') + 0x5ffe) > > 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, uVar4, iVar3);
+        uVar3 = ((((bVar2 * 0x8) + 0x5ffe) > > 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, uVar4, iVar3);
         return uVar3;
     }
     return 0x0;
