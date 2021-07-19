@@ -2842,7 +2842,7 @@ pub unsafe fn pass1_1000_31f7(
     let mut i_var9: i16;
     let i_var10: i16;
     let mut pu_var11: &mut i16 = &mut 0;
-    let u_var12: u16 = 0;
+    let mut u_var12: u16 = 0;
     let mut pc_var13: String;
     let mut pc_var14: String;
     let b_var15: bool;
@@ -2960,9 +2960,25 @@ pub unsafe fn pass1_1000_31f7(
                         // u_var12 = (u_var16 >> 0x10);
                         if ((param_2 + -0x5) & 0x18) == 0x0 {
                             *(param_2 + -0x3) = 0x7;
-                            pass1_1000_356e(&mut u_var16, 0x10, param_2, 0x4, (param_2 + -0x20e), param_5, param_5);
-                            pass1_1000_356e(u_var12, 0x10, param_2, 0x4, (param_2 + -0x213),
-                                            param_5, param_5);
+                            let mut a = 0x4;
+                            pass1_1000_356e(
+                                &mut u_var16,
+                                0x10,
+                                param_2,
+                                &mut a,
+                                (param_2 + -0x20e),
+                                param_5,
+                                param_5
+                            );
+                            pass1_1000_356e(
+                                &mut u_var12,
+                                0x10,
+                                param_2,
+                                &mut a,
+                                (param_2 + -0x213),
+                                param_5,
+                                param_5
+                            );
                             *(param_2 + -0x212) = 0x3a;
                             pu_var11 = &mut ctx.DAT_1050_0009;
 //               TODO: goto LAB_1000_3444;
