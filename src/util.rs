@@ -71,3 +71,5 @@ pub fn address_of(a: u32) -> u32 {unimplemented!()}
 pub fn write_string_to_addr(address: U32Ptr, src_string: &String) {unimplemented!()}
 
 pub fn write_bool_to_addr(address: U32Ptr, value: bool) { unimplemented!()}
+
+pub fn write_struct_to_addr<T>(address: U32Ptr, value: &T) { unimplemented!()}

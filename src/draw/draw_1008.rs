@@ -41,7 +41,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     let gdi_obj_1: HGDIOBJ16;
     let cursor_1: HCURSOR16;
     let mut struct_1: Struct19;
-    let struct_2: u16;
+    let struct_2: &mut Struct19;
     let struct_3: &mut Struct20;
     let u_var1: u16;
 
@@ -53,7 +53,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     struct_1 = struct_from_addr::<Struct79>(extraout_dx);
     unk_str_op_1000_3d3e(
         (struct_4 & 0xffff0000 | &i_var1.field_0x5b),
-        ctx.s_DanBrotherton_1050_0302,
+        &mut ctx.s_DanBrotherton_1050_0302,
     );
     gdi_obj_1 = GetStockObject16(0x1000);
     struct_4.hgdiobj_field_0xc6 = gdi_obj_1;
@@ -76,7 +76,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     struct_4.field_0xb8 = (struct_2 + 0xa);
     struct_4.field_0xba = (struct_2 + 0xc);
     struct_4.field_0xca = param_3;
-    win_ui_reg_class_1008_96d2(ctx, struct_4, 0x1010, wnd_class);
+    win_ui_reg_class_1008_96d2(ctx, struct_4, 0x1010, wnd_class, 0);
 }
 
 pub fn fill_rect_1008_62c0(ctx: &mut AppContext, win_handle: HWND16) {
@@ -97,7 +97,7 @@ pub fn unk_draw_op_1008_7f62(
     param_1: &mut Struct20,
     param_2: u16,
     param_3: i32,
-    param_4: u16,
+    param_4: &mut WNDCLASS16,
 ) -> *mut Struct20 {
     let HVar1: HGDIOBJ16;
     let HVar2: HCURSOR16;
@@ -116,13 +116,13 @@ pub fn unk_draw_op_1008_7f62(
     );
     HVar1 = GetStockObject16(0x1000);
     iVar3.hgdiobj_field_0xc6 = HVar1;
-    HVar2 = LoadCursor16(s_tile2_bmp_1050_1538, 0x7f00);
+    HVar2 = LoadCursor16(s_tile2_bmp_1050_1538, &read_string_from_rsrc(0x7f00));
     iVar3.hcursor_field_0xc4 = HVar2;
     iVar3.field_0xc8 = 0x2008;
     iVar3.field_0xac = 0x44000000;
     iVar3.field_0xbc = (param_3 + 0x8);
     iVar3.field_0xca = iVar3.field_0xde;
-    win_ui_reg_class_1008_96d2(ctx, param_1, s_tile2_bmp_1050_1538, param_4);
+    win_ui_reg_class_1008_96d2(ctx, param_1, s_tile2_bmp_1050_1538, param_4, 0);
     return param_1;
 }
 
@@ -151,13 +151,13 @@ pub fn unk_draw_op_1008_80ee(
         ctx.s_MicroSpinControl_1050_0370,
     );
     i_var3.field_0x54 = 0x3;
-    hvar1 = LoadCursor16(0x1000, 0x7f00);
+    hvar1 = LoadCursor16(0x1000, &read_string_from_rsrc(0x7f00));
     i_var3.field_0x58 = hvar1;
     hvar2 = GetStockObject16(s_tile2_bmp_1050_1538);
     i_var3.field_0x56 = hvar2;
     pass1_1008_818c(
         ctx,
-        (param_1 & 0xffff | u_var3 << 0x10),
+        param_1,
         ctx.s_tile2_bmp_1050_1538 as HINSTANCE16,
         param_2,
         stack_0xfffe
@@ -339,33 +339,35 @@ pub unsafe fn unk_draw_op_1008_da12(
         if ctx.PTR__LOOP_1050_5f2c == 0x0 {
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
         } else {
-            count = ctx.PTR_LOOP_1050_5f2e;
+            count = ctx.PTR_LOOP_1050_5f2e as i16;
         }
         start = fn_ptr_op_1000_1708(
+            ctx,
             (i16_var5 + 0x1) * 0x4,
             0x0,
             0x1,
-            ctx.PTR_LOOP_1050_5f2c,
+            ctx.PTR_LOOP_1050_5f2c as u16,
             count,
             0x1000,
         );
         l_stack8 = CONCAT22(count as u16, start) as i32;
         i_var7 = param_1.field_0x16;
         if ctx.PTR__LOOP_1050_5f2c == 0x0 {
-            ctx.PTR_LOOP_1050_5f2e = count;
+            ctx.PTR_LOOP_1050_5f2e = count as u32;
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
         } else {
         }
         u_var9 = fn_ptr_op_1000_1708(
+            ctx,
             (i_var7 + 0x1) * 0x4,
             0x0,
             0x1,
-            ctx.PTR_LOOP_1050_5f2c,
-            ctx.PTR_LOOP_1050_5f2e,
+            ctx.PTR_LOOP_1050_5f2c as u16,
+            ctx.PTR_LOOP_1050_5f2e as u16,
             0x1000,
         );
         param_1.field_0x18 = u_var9;
-        (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
+        (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e as u16;
         if l_stack8 != 0x0 {
             if param_1.field_0x18 != 0x0 {
                 entries = read_vec_from_addr((param_1.field_0x16 / 0x2) as u32);

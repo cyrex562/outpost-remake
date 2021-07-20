@@ -95,6 +95,13 @@ pub struct AppContext {
     pub PTR__LOOP_1050_5b7c: U32Ptr,
     pub PTR_LOOP_1050_5b80: U32Ptr,
     pub PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e: String,
+    pub DAT_1050_5f44: u32,
+    pub DAT_1050_61d2: u32, 
+    pub PTR_LOOP_1050_61d0: U32Ptr,
+    pub _DAT_1050_61ce: u32,
+    pub DAT_1050_61ce: u32,
+    pub PTR__PTR_1050_61e0: U32Ptr,
+    pub PTR_USHORT_1050_1050_1050_61de: U32Ptr,
 }
 
 impl AppContext {
@@ -191,7 +198,14 @@ impl AppContext {
             s_overflow_on_node__d_1050_11ca: "".to_string(),
             PTR__LOOP_1050_5b7c: 0,
             PTR_LOOP_1050_5b80: 0,
-            PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e: "".to_string()
+            PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e: "".to_string(),
+            DAT_1050_5f44: 0,
+            DAT_1050_61d2: 0,
+            PTR_LOOP_1050_61d0: 0,
+            _DAT_1050_61ce: 0,
+            DAT_1050_61ce: 0,
+            PTR__PTR_1050_61e0: 0,
+            PTR_USHORT_1050_1050_1050_61de: 0
         }
     }
 }

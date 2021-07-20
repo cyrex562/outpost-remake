@@ -118,7 +118,6 @@ pub fn win_ui_op_1040_07dc(
         load_string_1010_84e0(
             0x1010,
             ctx._PTR_LOOP_1050_14cc,
-            (ctx.PTR__LOOP_1050_14cc >> 0x10),
             0x3ff,
             local_806,
             param_8
@@ -186,11 +185,9 @@ pub fn win_ui_op_1040_07dc(
 //       TODO: goto LAB_1040_09f9;
         }
         enable_window_1040_0acc(param_1, param_2, 0x0, param_7);
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                              (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_406,
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_406,
                               param_8);
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                              (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_806, param_8);
         u_var6 = SUB42(ctx.s_tile2_bmp_1050_1538, 0x0);
         i_var2 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14),
                               local_406, param_8);
@@ -1470,8 +1467,7 @@ pub fn message_box_op_1040_37f0(param_1: i16, param_2: u16, param_3: u16, param_
         puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_6, in_DX, unaff_DI);
         // uVar2 = (puStack6 >> 0x10);
         uStack10 = (puStack6 + 0x68);
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                              (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_40c, param_6);
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_40c, param_6);
         uVar1 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10),
                              uStack10, (uStack10 >> 0x10));
         pass1_1018_3710((param_1 + 0x8e), param_6, uVar1, uVar2);
@@ -2435,18 +2431,14 @@ pub fn msg_box_ui_op_1040_64ca(param_1: u32, param_2: &mut String, param_3: U32P
     local_104: u8[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
@@ -2684,8 +2676,7 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
     puStack4 = uVar10;
     enable_win_1040_9234(CONCAT22(uVar10, paVar4), BVar18, hwnd);
     HStack8 = GetDC16(hwnd);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x50, local_58, param_2);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x50, local_58, param_2);
     pcVar17 = local_58;
     pCVar5 = str_op_1000_3da4(CONCAT22(param_2, pcVar17));
     DVar16 = GetTextExtent16(0x1000, pCVar5, pcVar17);
@@ -2694,8 +2685,7 @@ pub fn mixed_win_ui_op_1040_6942(param_1: &mut Struct1, param_2: u16, param_3: u
     CreateWindow16(ctx.s_tile2_bmp_1050_1538, 0x0,
                    ZEXT24(ctx.PTR_LOOP_1050_038c) << 0x10, 0x7cd, (iVar11 + 0x6),
                    IStack90, IStack92, 0xad, 0x22, 0x0, (s_Rebel_1050_4ffc + 0x4));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x50, local_58, param_2);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x50, local_58, param_2);
     pcVar17 = local_58;
     pCVar5 = str_op_1000_3da4(CONCAT22(param_2, pcVar17));
     DVar16 = GetTextExtent16(0x1000, pCVar5, pcVar17);
@@ -2956,8 +2946,7 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
     puStack4 = uVar10;
     enable_win_1040_9234(CONCAT22(uVar10, paVar4), BVar18, hwnd);
     HStack8 = GetDC16(hwnd);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x50, local_58, param_3);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x50, local_58, param_3);
     pcVar17 = local_58;
     pCVar5 = str_op_1000_3da4(CONCAT22(param_3, pcVar17));
     DVar16 = GetTextExtent16(0x1000, pCVar5, pcVar17);
@@ -2966,8 +2955,7 @@ pub fn mixed_win_ui_op_1040_70b4(param_1: &mut Struct1, param_2: u16, param_3: u
     CreateWindow16(ctx.s_tile2_bmp_1050_1538, 0x0,
                    ZEXT24(ctx.PTR_LOOP_1050_038c) << 0x10, 0x7cd, (iVar11 + 0x6),
                    IStack90, IStack92, 0xad, 0x22, 0x0, (s_Rebel_1050_4ffc + 0x4));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x50, local_58, param_3);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x50, local_58, param_3);
     pcVar17 = local_58;
     pCVar5 = str_op_1000_3da4(CONCAT22(param_3, pcVar17));
     DVar16 = GetTextExtent16(0x1000, pCVar5, pcVar17);
@@ -4167,18 +4155,14 @@ pub fn msg_box_op_1040_a85a(param_1: u32, param_2: &mut String, param_3: U32Ptr,
     local_104: u8[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
@@ -4310,12 +4294,10 @@ pub fn msg_box_ui_op_1040_ad66(param_1: u32, param_2: &mut String, param_3: U32P
     local_104: u8[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
@@ -4797,24 +4779,22 @@ pub fn win_ui_op_1040_cace(param_1: u32, param_2: HWND16, param_3: u16) {
         return;
     }
     pass1_1018_50ea((uVar5 + 0x98), uStack6, (uVar5 + 0x94));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_208, param_3);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_208, param_3);
     uVar1 = (uVar5 + 0x94);
     uVar8 = (ctx.PTR__LOOP_1050_14cc >> 0x10);
     if ((uVar1 + 0x36) == 0x0) {
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, uVar8, 0x3ff, local_108, param_3);
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_108, param_3);
         iVar3 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14),
                              local_208, param_3);
     } else {
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, uVar8, 0x3ff, local_108, param_3);
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_108, param_3);
         iVar3 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14),
                              local_208, param_3);
     }
     bVar2 = iVar3 == 0x6;
     bVar7 = false;
     if ((!bVar2) && (uVar1 = (uVar5 + 0x94), (uVar1 + 0x34) < 0x1)) {
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                              (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_108, param_3);
+        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_108, param_3);
         IVar4 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14),
                              local_208, param_3);
         bVar7 = IVar4 == 0x6;
@@ -4844,15 +4824,12 @@ pub fn msg_box_op_1040_cce4(param_1: u32, param_2: &mut String, param_3: U32Ptr,
     let uVar3: u16;
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
@@ -5023,42 +5000,31 @@ pub fn msg_box_op_1040_d3d0(param_1: u32, param_2: &mut String, param_3: U32Ptr,
     local_104: u8[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
                           (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
-                          (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce(ctx, CONCAT22(param_3, param_2), 0x1000);
