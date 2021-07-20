@@ -4604,7 +4604,7 @@ pub fn pass1_1018_5b06(param_1: &mut Struct132,param_2: u16,param_3: u16,param_4
     param_1.field_0x18 = 0x0;
   }
   else {
-    pass1_1008_50c2((Struct110 *)CONCAT22(puVar7,uVar5),(uVar4 + 0x8),
+    pass1_1008_50c2(CONCAT22(puVar7,uVar5),(uVar4 + 0x8),
                     (uVar4 + 0x4),CONCAT22(param_2,&param_1.field_0x1c)
                     ,puVar1);
     &param_1.field_0x18 = uVar5;

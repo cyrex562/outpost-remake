@@ -20,7 +20,7 @@ astruct_18 *  pass1_1020_0d82(param_1: &mut Struct18,param_2: u8)
 use std::default::default;
 
 use crate::cleanup::{cleanup_menu_ui_op_1020_795c, cleanup_ui_op_1020_1038, destroy_icon_1020_2c88, destroy_icon_1020_6bd2, destroy_win_1008_628e, destroy_win_1040_8212, destroy_window_1020_3b3e};
-use crate::defines::Struct18;
+use crate::defines::{Struct18, U32Ptr, Struct99, Struct110, Struct76, Struct57};
 use crate::draw::draw_1018::pt_in_rect_1018_1bda;
 use crate::draw::draw_1020::{draw_op_1020_15de, draw_op_1020_30be, draw_op_1020_7cc8, draw_op_1020_9364, draw_polygon_1020_2474, invalidate_rect_1020_735a, invalidate_rect_1020_8d90, mixed_draw_op_1020_3fa0, palette_op_1020_92c4, pt_in_rect_op_1020_58ce};
 use crate::file::file_1008::{close_file_1008_496c, read_file_1008_7dee, write_to_file_1008_7cac};
@@ -49,9 +49,11 @@ use crate::sys_api::{find_n_load_rsrc_1010_4e9e, unk_win_msg_op_1008_9510};
 use crate::ui::ui_1008::post_win_msg_1008_a0e4;
 use crate::ui::ui_1020::{get_win_ui_info_op_1020_7a50, ui_op_1020_536e, win_ui_cursor_op_1020_1294, win_ui_op_1020_5de8, win_ui_op_1020_5e76, win_ui_op_1020_737a, window_op_1020_10a0};
 use crate::ui::ui_1038::bring_win_to_top_1038_b72e;
-use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
+use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24, SBORROW2};
 use crate::win_struct::{HCURSOR16, HDC16, HGDIOBJ16, SEGPTR};
 use crate::winapi::{GetDC16, GetStockObject16, SelectObject16, SetCapture16, SetCursor16, SetMapMode16};
+use crate::file::file_1010::unk_io_op_1010_830a;
+use crate::draw::draw_1010::pt_in_rect_1010_4e08;
 
 pub fn pass1_1020_0dc4(param_1: U32Ptr, param_2: u16, param_3: u32, param_4: u16)
 {
@@ -136,7 +138,7 @@ pub fn pass1_1020_1780(param_1: U32Ptr)
   
   ppcVar1 = (*param_1 + 0x6c);
   (**ppcVar1)();
-  destroy_win_1040_8212((ULONG)param_1,&ctx.PTR_LOOP_1050_1040);
+  destroy_win_1040_8212(param_1,&ctx.PTR_LOOP_1050_1040);
   return;
 }
 
@@ -2167,7 +2169,7 @@ pub fn pass1_1020_8908(param_1: u32,param_2: u32,param_3: u16)
   //       puVar6 = puVar5;
   //       uVar4 = uVar3;
   //       mem_op_1000_179c(0x14,puVar5,0x1000);
-  //       paStack28 = (Struct110 *)CONCAT22(puVar6,uVar4);
+  //       paStack28 = CONCAT22(puVar6,uVar4);
   //       if ((puVar6 | uVar4) == 0x0) {
   //         uVar2 = iVar8.field_0xc;
   //         (uVar2 + iStack4 * 0x4) = 0x0;
@@ -2333,7 +2335,7 @@ pub fn pass1_1020_8bcc(param_1: u32,param_2: u16)
       else {
         puVar5 = (param_1 & 0xffff0000 | &iVar9.field_0x16);
        // uVar9 = (uStack20 >> 0x10);
-        pass1_1008_50c2((Struct110 *)CONCAT22(puVar6,uVar3),
+        pass1_1008_50c2(CONCAT22(puVar6,uVar3),
                         (uStack20 + 0x8),(uStack20 + 0x4),
                         puVar5,uStack6);
         puVar2 = iVar9.field_0xc;
@@ -2358,7 +2360,7 @@ pub fn pass1_1020_8bcc(param_1: u32,param_2: u16)
       else {
         uVar4 = &iVar9.field_0x16;
        // uVar9 = (uStack20 >> 0x10);
-        pass1_1008_50c2((Struct110 *)CONCAT22(puVar6,uVar3),
+        pass1_1008_50c2(CONCAT22(puVar6,uVar3),
                         (uStack20 + 0x8),(uStack20 + 0x4),
                         (param_1 & 0xffff0000 | uVar4),uStack6);
         puVar2 = iVar9.field_0xc;

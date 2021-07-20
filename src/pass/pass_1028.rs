@@ -6479,7 +6479,7 @@ pub fn pass1_1028_767e(param_1: i16,param_2: u16,param_3: i16,param_4: u16)
      (((qword)*_PTR_LOOP_1050_65e2 % 0x64) == 0x0)) {
     puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x40,param_4,0x0,param_3);
     load_str_and_sprintf_1008_b78a
-              ((ULONG)puVar1,param_4,(puVar1 >> 0x10),puVar1);
+              (puVar1,param_4,(puVar1 >> 0x10),puVar1);
   }
   return;
 }

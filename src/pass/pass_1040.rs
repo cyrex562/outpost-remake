@@ -2987,7 +2987,7 @@ ULONG  pass1_1040_b74c(param_1: & mut Struct18,param_2: u8)
 unk_draw_op_1040_b0f8(param_1); if ((param_2 & 0x1) != 0x0) {
 fn_ptr_1000_17ce(param_1, 0x1000);
 }
-return (ULONG)param_1;
+return param_1;
 }
 
 

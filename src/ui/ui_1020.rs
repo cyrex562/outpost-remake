@@ -185,7 +185,7 @@ pub fn window_op_1020_10a0(astruct *param_1)
     (iVar11 + 0xf6) = 0x0;
   }
   else {
-    unk_win_ui_op_1020_1418(CONCAT22(puVar5,uVar3),(ULONG)param_1,unaff_SS);
+    unk_win_ui_op_1020_1418(CONCAT22(puVar5,uVar3),param_1,unaff_SS);
     (iVar11 + 0xf6) = uVar3;
     (iVar11 + 0xf8) = puVar6;
   }
@@ -934,7 +934,7 @@ pub fn window_op_1020_38aa(astruct *param_1)
     (uVar11 + 0xf6) = 0x0;
   }
   else {
-    unk_draw_op_1020_3da4(CONCAT22(puVar7,uVar2),(ULONG)param_1);
+    unk_draw_op_1020_3da4(CONCAT22(puVar7,uVar2),param_1);
     (uVar11 + 0xf6) = uVar2;
     (uVar11 + 0xf8) = extraout_DX_00;
     puVar6 = extraout_DX_00;
@@ -2797,7 +2797,7 @@ pub fn window_op_1020_6c3a(astruct *param_1)
     (iVar11 + 0xf6) = 0x0;
   }
   else {
-    unk_win_ui_op_1020_717e(CONCAT22(puVar8,paVar4),(ULONG)param_1,unaff_SS);
+    unk_win_ui_op_1020_717e(CONCAT22(puVar8,paVar4),param_1,unaff_SS);
     (iVar11 + 0xf6) = paVar4;
     (iVar11 + 0xf8) = uVar10;
   }

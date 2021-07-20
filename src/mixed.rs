@@ -13,7 +13,7 @@ use crate::defines::{Struct79, U32Ptr, Struct19, Struct20};
 use crate::global::AppContext;
 use crate::win_struct::WNDCLASS16;
 
-pub unsafe fn mixed_1010_20ba(
+pub fn mixed_1010_20ba(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
@@ -39,7 +39,7 @@ pub unsafe fn mixed_1010_20ba(
   let mut struct_ref_1 = read_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);
   // let u_var6 = (param_1 >> 0x10);
   let i_var5 = param_1;
-  let mut pu_stack6: &mut Struct20 = (struct_ref_1.field_0x0 + i_var5);
+  let mut pu_stack6: &mut Struct19 = read_struct_from_addr::<Struct19>((struct_ref_1.field_0x0 + i_var5) as u32);
   if pu_stack6 != 0x0 {
     return pu_stack6;
   }

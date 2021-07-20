@@ -17,7 +17,7 @@ use crate::ui::ui_1008::set_stuct_1008_b0bc;
 use crate::util::{CONCAT12, CONCAT13, CONCAT22, SUB42, write_struct_to_addr, ZEXT24};
 use crate::winapi::wsprintf16;
 
-pub unsafe fn str_op_1008_60e8(
+pub fn str_op_1008_60e8(
     ctx: &mut AppContext,
     param_1: &mut String,
     param_2: &mut Struct18,

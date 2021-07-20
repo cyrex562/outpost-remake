@@ -518,7 +518,7 @@ pub fn pass1_1010_09b4(param_1: u16, param_2: u16, param_3: U32Ptr, char * * par
         pcStack18 = CONCAT22(param_6, uVar7);
         *param_3 = '\0';
         unk_str_op_1000_3d3e(CONCAT22(param_6, uVar7), *param_4);
-        pass1_1000_3cea(CONCAT22(param_6, uVar7), (ULONG)uStack10);
+        pass1_1000_3cea(CONCAT22(param_6, uVar7), uStack10);
         pass1_1000_3cea(CONCAT22(param_6, uVar7),
                         param_3 & 0xffff0000 | (param_3 + 0x2));
         fn_ptr_1000_17ce(ctx, *param_4, 0x1000);
@@ -1910,11 +1910,11 @@ pub fn pass1_1010_32f4(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: 
 
     // uVar14 = (param_1 >> 0x10);
     iVar10 = param_1;
-    if (iVar10.field_0x52 != (Struct65 *)
+    if (iVar10.field_0x52 !=
     0x0) {
         param_4 = 0x1000;
         fn_ptr_1000_17ce(ctx, iVar10.field_0x52, 0x1000);
-        iVar10.field_0x52 = (Struct65 *)
+        iVar10.field_0x52 =
         0x0;
         iVar10.field_0x18 = 0x0;
     }
@@ -4773,7 +4773,7 @@ pub fn pass1_1010_8096(param_1: U32Ptr, param_2: i16) {
     } else {
         puVar6 = &USHORT_1050_3196;
     }
-    pass1_1000_3cea(CONCAT22(unaff_SS, local_106), (ULONG)puVar6);
+    pass1_1000_3cea(CONCAT22(unaff_SS, local_106), puVar6);
     pass1_1000_3cea(CONCAT22(unaff_SS, local_106), CONCAT22(unaff_SS, local_306));
     pcVar5 = set_err_mode_1010_8b14(param_1, CONCAT22(unaff_SS, local_106), unaff_SS);
     // uVar2 = (pcVar5 >> 0x10);

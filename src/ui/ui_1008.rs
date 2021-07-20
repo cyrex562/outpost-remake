@@ -1973,7 +1973,7 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
         pcVar12 = load_string_1010_847e(ctx.PTR__LOOP_1050_14cc,
                                         (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x1010);
         // puVar7 = (pcVar12 >> 0x10);
-        pass1_1000_3cea((param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe))) as i32, (ULONG)pcVar12);
+        pass1_1000_3cea((param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe))) as i32, pcVar12);
         *param_7 = 0x4c;
         uVar14 = 0x1;
         uVar15 = 0x0;
@@ -2047,7 +2047,7 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
         pcVar12 = load_string_1010_847e(ctx.PTR__LOOP_1050_14cc,
                                         (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x1010);
         param_1 = 0x1000;
-        pass1_1000_3cea((param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe))) as i32, (ULONG)pcVar12);
+        pass1_1000_3cea((param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe))) as i32, pcVar12);
         *param_7 = 0x33;
         break;
         0x38 => param_1 = 0x1010;
@@ -2599,7 +2599,7 @@ pub fn pass1_1008_b05a(param_1: U32Ptr) -> u16
 }
 
 
-pub fn pass1_1008_b08c(param_1: U32Ptr) {
+pub fn pass1_1008_b08c(param_1: &mut Struct18) {
     let iVar1: i16;
     let uVar2: u16;
 

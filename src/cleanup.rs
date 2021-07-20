@@ -19,14 +19,21 @@ use crate::{
         ShowWindow16,
     },
 };
-use crate::winapi::SelectObject16;
-use crate::win_struct::LPARAM;
+use crate::winapi::{SelectObject16, GetDlgItem16, WinHelp16, DestroyCursor16, EndPaint16, BeginPaint16};
+use crate::win_struct::{LPARAM, HGDIOBJ16, WNDCLASS16};
 use crate::pass::pass_1038::pass1_1038_b6e0;
-use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, mov_update_win_1040_93aa};
-use crate::pass::pass_1018::pass1_1020_022c;
-use crate::defines::{Struct_1010_2fa0, Struct_1008_628e, Struct_1010_7b26};
-use crate::pass::pass_1010::{pass1_1010_1f62, pass1_1010_32da};
-use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12};
+use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, mov_update_win_1040_93aa, move_win_1040_826c, dialog_ui_fn_1040_78e2, post_win_msg_1040_7b3c};
+use crate::pass::pass_1018::{pass1_1020_022c, pass1_1018_2dde, pass1_1018_31d0, pass1_1018_2d9a, pass1_1018_2e28};
+use crate::defines::{Struct_1010_2fa0, Struct_1008_628e, Struct_1010_7b26, U32Ptr, Struct28};
+use crate::pass::pass_1010::{pass1_1010_1f62, pass1_1010_32da, pass1_1010_1d80};
+use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_eb74, pass1_1008_b544};
+use crate::util::read_struct_from_addr;
+use crate::sys_api::unk_win_msg_op_1008_9510;
+use crate::ui::ui_1008::win_1008_5c7c;
+use crate::draw::draw_1020::invalidate_rect_1020_735a;
+use crate::ui::ui_1020::{win_ui_fn_1020_6e98, post_win_msg_1020_1ca4};
+use crate::file::file_1010::unk_io_op_1010_830a;
+use crate::pass::pass_1020::pass1_1020_808e;
 
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
@@ -306,44 +313,43 @@ pub fn destroy_window_1010_7b26(
     return CONCAT22(u_var1, param_4);
 }
 
-pub unsafe fn clenaup_win_ui_1018_4d22(
+pub fn clenaup_win_ui_1018_4d22(
     ctx: &mut AppContext,
-    in_struct_1: &mut Struct11,
-    mut in_hdc_2: HDC16,
-    unaff_SS: u16,
+    struct_1: &mut Struct18,
+    draw_ctx_1: &mut HDC16,
+    unaff_ss: u16,
 ) {
     let u_var1: u16;
     let ppc_var23: u32;
-    let local_struct_1: Struct11;
-    let u_var4: &mut Struct11;
-    let unaff_SS: u16;
-    let pu_var2: *mut libc::c_ulong;
-    let pu_var1: *mut libc::c_ulong;
+    let struct_2: &mut Struct18;
+    let struct_3: &mut Struct11;
+    let pu_var2: U32Ptr;
+    let pu_var1: U32Ptr;
 
    // u_var4 = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
-    *in_struct_1 = (ctx.s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12);
-    local_struct_1.field_0x2 = 0x1018;
-    if (local_struct.field_0x12 != 0x0) {
-        SelectPalette16(in_hdc_2, 0x0, local_struct_1.field_0x1a);
-        DeleteObject16(ctx.s_tile2_bmp_1050_1538);
-        in_hdc_2 = ctx.s_tile2_bmp_1050_1538;
-        DeleteDC16(ctx.s_tile2_bmp_1050_1538);
+    struct_2 = struct_1;
+    *struct_1 = read_struct_from_addr::<Struct18>(ctx.s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12).clone();
+    struct_2.field_0x2 = 0x1018;
+    if local_struct.field_0x12 != 0x0 {
+        SelectPalette16(*draw_ctx_1, 0x0, struct_2.field_0x1a);
+        DeleteObject16(ctx.s_tile2_bmp_1050_1538 as HGDIOBJ16);
+        *draw_ctx_1 = ctx.s_tile2_bmp_1050_1538 as HDC16;
+        DeleteDC16(ctx.s_tile2_bmp_1050_1538 as HDC16);
     }
-    pu_var1 = local_struct_1.field_0xa;
-    u_var1 = local_struct_1.field_0xc;
-    if ((u_var1 | pu_var1) != 0x0) {
+    pu_var1 = struct_2.field_0xa;
+    u_var1 = struct_2.field_0xc;
+    if (u_var1 | pu_var1) != 0x0 {
         ppc_var23 = *pu_var1;
-        (**ppc_var23)(in_hdc_2, pu_var1, u_var1, 0x1);
+        (**ppc_var23)(draw_ctx_1, pu_var1, u_var1, 0x1);
     }
-    pu_var2 = local_struct_1.field_0xe;
-    u_var1 = local_struct_1.field_0x10;
-    if ((u_var1 | pu_var2) != 0x0) {
+    pu_var2 = struct_2.field_0xe;
+    u_var1 = struct_2.field_0x10;
+    if (u_var1 | pu_var2) != 0x0 {
         ppc_var23 = *pu_var2;
-        (**ppc_var23)(in_hdc_2, pu_var2, u_var1, 0x1);
+        (**ppc_var23)(draw_ctx_1, pu_var2, u_var1, 0x1);
     }
     ctx._PTR_LOOP_1050_4230 = 0x0;
-    pass1_1010_1d80(in_struct_1, unaff_SS);
+    pass1_1010_1d80(struct_1, unaff_SS);
     return;
 }
 

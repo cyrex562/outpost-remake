@@ -920,7 +920,7 @@ pub fn mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: 
     return l_var2 as u16;
 }
 
-pub unsafe fn mem_op_1000_179c(
+pub fn mem_op_1000_179c(
     ctx: &mut AppContext,
     param_1: &mut i16,
     param_2: &mut Struct18,

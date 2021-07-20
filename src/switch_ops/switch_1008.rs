@@ -56,7 +56,7 @@ pub fn window_op_1008_0af8(astruct *param_1,param_2: U32Ptr,param_3: u16)
     piVar1 = (iVar8 + 0xcc);
     *piVar1 = *piVar1 + 0x1;
     uVar10 = 0x1020;
-    pass1_1020_08b6(unaff_SS,paStack6,(iVar8 + 0xcc),(ULONG)param_1);
+    pass1_1020_08b6(unaff_SS,paStack6,(iVar8 + 0xcc),param_1);
     (iVar8 + 0xe4) = puVar4;
     (iVar8 + 0xe6) = uVar7;
   }
