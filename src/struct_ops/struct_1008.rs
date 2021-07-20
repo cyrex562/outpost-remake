@@ -450,7 +450,7 @@ pub fn struct_1008_9fd2(param_1: &mut Struct19, param_2: &mut Struct19, param_3:
 }
 
 
-pub fn struct_1008_bde0(param_1: *mut u32,param_2: U32Ptr)
+pub fn struct_1008_bde0(param_1: U32Ptr,param_2: U32Ptr)
 {
   let uVar1: u16;
   let iVar2: &mut Struct139;
@@ -829,7 +829,7 @@ pub fn struct_1008_bde0(param_1: *mut u32,param_2: U32Ptr)
 }
 
 
-pub fn pass1_1008_c626(param_1: *mut u32)
+pub fn pass1_1008_c626(param_1: U32Ptr)
 {
   ctx._PTR_LOOP_1050_06e0 = 0x0;
   fn_ptr_1000_17ce(ctx, *param_1, 0x1000);

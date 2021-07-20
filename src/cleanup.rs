@@ -972,7 +972,7 @@ pub fn destroy_win_1040_8b7e(param_1: HWND16) {
     return;
 }
 
-pub unsafe fn destroy_window_1040_b726(param_1: *mut u32, param_2: i16, in_win_handle_3: HWND16) {
+pub unsafe fn destroy_window_1040_b726(param_1: U32Ptr, param_2: i16, in_win_handle_3: HWND16) {
     let ppcVar1: u32;
 
     if (param_2 != 0x0) {

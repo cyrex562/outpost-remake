@@ -231,7 +231,7 @@ pub fn struct_1030_299a(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: U32Pt
 }
 
 
-pub fn struct_1030_44be(param_1: *mut u32,param_2: u16)
+pub fn struct_1030_44be(param_1: U32Ptr,param_2: u16)
 {
   let iVar1: &mut Struct138;
   let unaff_DI: i16;

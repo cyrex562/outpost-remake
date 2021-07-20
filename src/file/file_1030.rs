@@ -211,7 +211,7 @@ pub fn read_file_1030_33f0(param_1: u32,param_2: u32)
 
 
 u16_t 
-read_file_1030_4e70(param_1: u32,param_2: *mut u32,byte **param_3,param_4: i32,
+read_file_1030_4e70(param_1: u32,param_2: U32Ptr,byte **param_3,param_4: i32,
                    param_5: u16)
 
 {

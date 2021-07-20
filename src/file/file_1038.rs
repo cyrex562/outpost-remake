@@ -60,7 +60,7 @@ pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: U32Ptr,param_4: u16)
 }
 
 
-pub fn read_file_1038_7c02(param_1: *mut u32,param_2: u32,param_3: u16,
+pub fn read_file_1038_7c02(param_1: U32Ptr,param_2: u32,param_3: u16,
                    param_4: u16) -> u16
 
 {

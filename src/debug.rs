@@ -25,7 +25,7 @@ pub fn debug_print_1008_6048(
         args = param_3;
         if (ctx.DAT_1050_02ee == 0xffff) {
             // param_2 =  & ctx.PTR_LOOP_1050_1000;
-            u_stack266 = pass1_1000_3ec0(0x2f4, ctx.data_seg);
+            u_stack266 = pass1_1000_3ec0(ctx, 0x2f4, ctx.data_seg);
             ctx.DAT_1050_02ee = ((in_DX | u_stack266) != 0x0);
         }
         if (ctx.DAT_1050_02ee != 0x0) {

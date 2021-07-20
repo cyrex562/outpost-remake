@@ -252,7 +252,7 @@ pub fn show_win_1040_0c7c(param_1: &mut Struct1, param_2: u16, param_3: u16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn set_text_bk_color_1040_0cc0(param_1: *mut u32, param_2: u16, param_3: u16, param_4: i16) -> u32
+pub fn set_text_bk_color_1040_0cc0(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: i16) -> u32
 
 {
     let ppcVar1: u32;
@@ -1320,7 +1320,7 @@ pub fn set_win_pos_1040_331a(param_1: u32, param_2: u16, param_3: i16, param_4: 
 }
 
 
-pub fn send_msg_1040_3374(param_1: u32, param_2: *mut u32, param_3: u16, param_4: HWND16) {
+pub fn send_msg_1040_3374(param_1: u32, param_2: U32Ptr, param_3: u16, param_4: HWND16) {
     let ppcVar1: u32;
     let uVar2: u16;
     let uVar3: u32;
@@ -2305,7 +2305,7 @@ pub fn win_ui_op_1040_52c0(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn enable_win_1040_5780(param_1: *mut u32) {
+pub fn enable_win_1040_5780(param_1: U32Ptr) {
     let ppcVar1: u32;
     let uVar2: u32;
     let uVar3: u16;
@@ -3207,7 +3207,7 @@ pub fn dialog_ui_fn_1040_78e2(in_struct_1: &mut Struct1, in_instance_handle: HIN
 
 
 pub fn post_win_msg_1040_7b3c(
-    param_1: *mut u32,
+    param_1: U32Ptr,
     param_2: u16,
     param_3: u16,
     param_4: i16,
@@ -3318,7 +3318,7 @@ pub fn win_help_1040_800c(param_1: u32, param_2: u16) {
 }
 
 
-pub fn unk_win_ui_op_1040_8158(param_1: *mut u32, POparam_2: i16, param_3: i16, param_4: HWND16) {
+pub fn unk_win_ui_op_1040_8158(param_1: U32Ptr, POparam_2: i16, param_3: i16, param_4: HWND16) {
     let ppcVar1: u32;
     let IVar2: i16;
     let BVar3: bool;
@@ -4505,7 +4505,7 @@ pub fn win_ui_op_1040_b372(param_1: i32, param_2: u16, param_3: u16, in_colorref
 }
 
 
-pub fn show_win_1040_b43c(param_1: *mut u32, param_2: HWND16) {
+pub fn show_win_1040_b43c(param_1: U32Ptr, param_2: HWND16) {
     let ppcVar1: u32;
 
     ppcVar1 = (*param_1 + 0x70);

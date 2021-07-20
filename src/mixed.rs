@@ -8,7 +8,7 @@ use crate::mem_1000::mem_op_1000_179c;
 use crate::struct_ops::struct_1008::{struct_1008_9fd2, struct_1008_dd4e, pass1_1008_c72a, struct_1008_ecb2};
 use crate::ui::ui_1008::pass1_1008_af94;
 use crate::draw::draw_1008::unk_draw_op_1008_da12;
-use crate::util::{CONCAT22, get_struct_from_addr};
+use crate::util::{CONCAT22, read_struct_from_addr};
 use crate::defines::{Struct79, U32Ptr, Struct19, Struct20};
 use crate::global::AppContext;
 use crate::win_struct::WNDCLASS16;
@@ -36,7 +36,7 @@ pub unsafe fn mixed_1010_20ba(
   // let pu_stack6: U32Ptr;
   
   pass1_1010_2816(param_1);
-  let mut struct_ref_1 = get_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);
+  let mut struct_ref_1 = read_struct_from_addr::<Struct19>((param_2 * 0x4) as u32);
   // let u_var6 = (param_1 >> 0x10);
   let i_var5 = param_1;
   let mut pu_stack6: &mut Struct20 = (struct_ref_1.field_0x0 + i_var5);

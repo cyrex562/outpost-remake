@@ -586,7 +586,7 @@ read_file_1028_d7ba(param_1: u16,param_2: u16,param_3: u32,
 }
 
 
-pub fn write_to_file_1028_dce2(param_1: *mut u32,param_2: u32,param_3: u16) -> u32
+pub fn write_to_file_1028_dce2(param_1: U32Ptr,param_2: u32,param_3: u16) -> u32
 
 {
   let ppcVar1: u32;

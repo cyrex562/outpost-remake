@@ -2,7 +2,7 @@ use crate::{
     pass::pass_1010::pass1_1010_1f62,
     winapi::{mciGetErrorString16, mciSendCommand16},
 };
-use crate::util::{CONCAT22, SUB42, get_struct_from_addr};
+use crate::util::{CONCAT22, SUB42, read_struct_from_addr};
 use crate::pass::pass_1000::pass1_1000_4906;
 use crate::global::AppContext;
 
@@ -36,7 +36,7 @@ pub fn mci_send_command_1008_53ae(
         if (u_stack32 | u_stack34) != 0x0 {
             mciGetErrorString16(0x4001538, &mut local_432, param_4);
         }
-        pass1_1000_4906(get_struct_from_addr(CONCAT22(param_4, local_2e)), None, 0xc);
+        pass1_1000_4906(read_struct_from_addr(CONCAT22(param_4, local_2e)), None, 0xc);
         local_2e = param_2;
         u_stack44 = 0x0;
         send_cmd_result = mciSendCommand16(0x1000, local_2e, CONCAT22(0x2, param_4), 0x8060000);

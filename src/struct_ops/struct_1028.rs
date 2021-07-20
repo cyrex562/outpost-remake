@@ -398,7 +398,7 @@ pub fn struct_1028_60bc(param_1: U32Ptr,param_2: u16,param_3: U32Ptr) -> u16
 
 pub fn
 struct_op_1028_87f0(param_1: u16,param_2: u8,param_3: &mut Struct97,param_4: u16,
-                   param_5: u16,param_6: u16,param_7: *mut u32,param_8: u16,
+                   param_5: u16,param_6: u16,param_7: U32Ptr,param_8: u16,
                    param_9: u32,param_1: u320)
 
 {
@@ -431,7 +431,7 @@ struct_op_1028_87f0(param_1: u16,param_2: u8,param_3: &mut Struct97,param_4: u16
 
 pub fn
 struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u16,
-                   param_5: u16,param_6: *mut u32,param_7: u16,param_8: u32,
+                   param_5: u16,param_6: U32Ptr,param_7: u16,param_8: u32,
                    param_9: u32,param_1: u320)
 
 {
@@ -463,7 +463,7 @@ struct_op_1028_8888(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 
 pub fn
 struct_op_1028_933c(param_1: &mut Struct100,param_2: u16,param_3: u16,param_4: u16,
-                   param_5: *mut u32,param_6: u16,param_7: u32,param_8: u32,
+                   param_5: U32Ptr,param_6: u16,param_7: u32,param_8: u32,
                    param_9: u16,param_10: u8)
 
 {
@@ -527,7 +527,7 @@ struct_op_1028_d1dc(param_1: u16,param_2: u8,param_3: &mut Struct100,param_4: u1
 
 
 
-pub fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
+pub fn struct_1028_d22e(param_1: U32Ptr,param_2: u32,param_3: u16)
 {
   let uVar1: u16;
   let puVar2: U32Ptr;
@@ -551,7 +551,7 @@ pub fn struct_1028_d22e(param_1: *mut u32,param_2: u32,param_3: u16)
 }
 
 
-pub fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
+pub fn struct_1028_d2b0(param_1: U32Ptr,param_2: u16,param_3: u8)
 {
   let local_10c: u16;
   let uStack266: u16;
@@ -622,7 +622,7 @@ pub fn struct_1028_d2b0(param_1: *mut u32,param_2: u16,param_3: u8)
 }
 
 
-pub fn struct_1028_d59c(param_1: *mut u32,param_2: U32Ptr)
+pub fn struct_1028_d59c(param_1: U32Ptr,param_2: U32Ptr)
 {
   let puVar1: U32Ptr;
   let uVar2: u16;

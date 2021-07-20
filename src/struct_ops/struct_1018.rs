@@ -1368,7 +1368,7 @@ struct_1018_7d70(param_1: &mut Struct20,param_2: u16,param_3: u32,param_4: u16)
 
 
 pub fn
-struct_1020_0762(param_1: &mut Struct20,param_2: u32,param_3: *mut u32,param_4: u16,
+struct_1020_0762(param_1: &mut Struct20,param_2: u32,param_3: U32Ptr,param_4: u16,
                 param_5: u32,param_6: u32,param_7: u16)
 
 {

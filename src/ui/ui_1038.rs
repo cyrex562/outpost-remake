@@ -1750,7 +1750,7 @@ pub fn set_win_pos_1038_c31a(param_1: u32, param_2: u16, param_3: i16, param_4: 
 }
 
 
-pub fn send_msg_1038_c374(param_1: u32, param_2: *mut u32, param_3: u16, param_4: HWND16) {
+pub fn send_msg_1038_c374(param_1: u32, param_2: U32Ptr, param_3: u16, param_4: HWND16) {
     let uVar1: u32;
     let ppcVar2: u32;
     let uVar3: u16;

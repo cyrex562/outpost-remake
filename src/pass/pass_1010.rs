@@ -721,7 +721,7 @@ pub fn pass1_1010_1146(param_1: u32, param_2: u16, param_3: i16, param_4: u16) {
 }
 
 
-pub fn pass1_1010_116c(param_1: *mut u32, param_2: i16, param_3: u16) {
+pub fn pass1_1010_116c(param_1: U32Ptr, param_2: i16, param_3: u16) {
     let ppcVar1: u32;
     let iVar2: i16;
     let uVar3: u16;
@@ -1079,7 +1079,7 @@ pub unsafe fn pass1_1010_17c0(
 }
 
 
-pub fn pass1_1010_184a(param_1: *mut u32, param_2: *mut u32) {
+pub fn pass1_1010_184a(param_1: U32Ptr, param_2: U32Ptr) {
     let iVar1: i16;
     let iVar2: i16;
 
@@ -1134,7 +1134,7 @@ pub fn pass1_1010_195e(param_1: &mut Struct19, param_2: &mut Struct19, param_3: 
 }
 
 
-pub fn pass1_1010_19a4(param_1: *mut u32, param_2: u16, param_3: u16) {
+pub fn pass1_1010_19a4(param_1: U32Ptr, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
     let puVar2: U32Ptr;
     let extraout_DX: u16;
@@ -1237,7 +1237,7 @@ pass1_1010_0f24(param_1, param_2, param_3,param_5, param_4); (param_1 + 0xb) = 0
 
 
 
-pub fn pass1_1010_1bb4(param_1: *mut u32, param_2: u16, param_3: u16) {
+pub fn pass1_1010_1bb4(param_1: U32Ptr, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
     let puVar2: U32Ptr;
     let extraout_DX: u16;
@@ -1827,7 +1827,7 @@ pub fn pass1_1010_2e5c(param_1: u16, param_2: u16, param_3: u32) {
 }
 
 
-pub fn pass1_1010_2ee2(param_1: *mut u32, param_2: u16, param_3: u16) {
+pub fn pass1_1010_2ee2(param_1: U32Ptr, param_2: u16, param_3: u16) {
     let uVar1: u32;
     let ppcVar2: u32;
     let iVar3: i16;
@@ -1884,7 +1884,7 @@ pub fn pass1_1010_32da(param_1: &mut Struct27, param_2: &mut Struct65, param_3: 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_32f4(param_1: *mut u32, param_2: *mut u32, param_3: u16, param_4: u16) {
+pub fn pass1_1010_32f4(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: u16) {
     let puVar1: U32Ptr;
     let puVar2: u32;
     let uVar3: u32;
@@ -2023,7 +2023,7 @@ pub fn pass1_1010_32f4(param_1: *mut u32, param_2: *mut u32, param_3: u16, param
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn pass1_1010_35a4(param_1: *mut u32, param_2: u32, param_3: U32Ptr) {
+pub fn pass1_1010_35a4(param_1: U32Ptr, param_2: u32, param_3: U32Ptr) {
     let ppcVar1: u32;
     let uVar2: u32;
     let uVar3: u16;
@@ -2255,7 +2255,7 @@ pub fn pass1_1010_394a(param_1: u16, param_2: u16, param_3: i16, param_4: u16, p
 }
 
 
-pub fn pass1_1010_398e(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u32, param_5: u16) {
+pub fn pass1_1010_398e(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u32, param_5: u16) {
     let piVar1: U32Ptr;
     let ppcVar2: u32;
     let uVar3: u32;
@@ -3633,7 +3633,7 @@ pub fn pass1_1010_5f7a(param_1: i16, param_2: u16, param_3: u16, param_4: i16) -
 }
 
 
-pub fn pass1_1010_5fb0(param_1: u32, param_2: u16, param_3: *mut u32, param_4: u16, param_5: i16) {
+pub fn pass1_1010_5fb0(param_1: u32, param_2: u16, param_3: U32Ptr, param_4: u16, param_5: i16) {
     let uVar1: u16;
     let iVar1: &mut Struct656;
 
@@ -4625,7 +4625,7 @@ pub fn pass1_1010_7dd2(param_1: U32Ptr, param_2: u8) -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_7e40(param_1: *mut u32, param_2: U32Ptr, param_3: i16, param_4: u16) {
+pub fn pass1_1010_7e40(param_1: U32Ptr, param_2: U32Ptr, param_3: i16, param_4: u16) {
     let uVar1: u32;
     let puVar2: &mut Struct652;
     let uVar2: u16;
@@ -4662,7 +4662,7 @@ pub fn pass1_1010_7e40(param_1: *mut u32, param_2: U32Ptr, param_3: i16, param_4
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_7efc(param_1: *mut u32, param_2: u16) {
+pub fn pass1_1010_7efc(param_1: U32Ptr, param_2: u16) {
     let uVar1: u16;
     let uVar2: u16;
     let puVar3: u32;
@@ -4751,7 +4751,7 @@ pub fn pass1_1010_8018(param_1: u32, param_2: u16, param_3: U32Ptr, param_4: u16
 }
 
 
-pub fn pass1_1010_8096(param_1: *mut u32, param_2: i16) {
+pub fn pass1_1010_8096(param_1: U32Ptr, param_2: i16) {
     let uVar1: u16;
     let uVar2: u16;
     let uVar3: u16;
@@ -5526,7 +5526,7 @@ pub fn pass1_1010_9348(param_1: u32, param_2: i16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_9372(param_1: *mut u32, param_2: u16, param_3: i16, param_4: i16, param_5: i16) {
+pub fn pass1_1010_9372(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16) {
     let ppcVar1: u32;
     let cVar2: u8;
     let uVar3: u16;
@@ -8159,7 +8159,7 @@ pub fn pass1_1010_de78(param_1: u32, param_2: u32) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_debe(param_1: u32, param_2: u16, param_3: U32Ptr, param_4: *mut u32, param_5: u32,
+pub fn pass1_1010_debe(param_1: u32, param_2: u16, param_3: U32Ptr, param_4: U32Ptr, param_5: u32,
                        param_6: u16)
 
 {

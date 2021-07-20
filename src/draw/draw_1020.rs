@@ -14,7 +14,7 @@ use crate::string::string_1000::unk_str_op_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
 use crate::sys_api::get_sys_metrics_1020_7c1a;
 use crate::ui::ui_1008::{create_palette_1008_4e38, file_and_draw_op_1008_4f20, win_1008_5c9e, win_ui_reg_class_1008_96d2};
-use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, get_struct_from_addr, struct_from_addr, SUB42, ZEXT24};
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, read_struct_from_addr, struct_from_addr, SUB42, ZEXT24};
 use crate::win_struct::{COLORREF, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16};
 use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16};
 
@@ -334,7 +334,7 @@ pub fn draw_op_1020_15de(
       hwnd = 0x1008;
       pass1_1008_4480(((i_var5 + 0x18) as u32),
                       (u_var1 & 0xffff0000 | (u_var1 + 0x76)),
-                      get_struct_from_addr(u_var7 & 0xffff | u_var4 << 0x10), unaff_ss);
+                      read_struct_from_addr(u_var7 & 0xffff | u_var4 << 0x10), unaff_ss);
     }
     ppc_var2 = ((i_var5 + 0x18) + 0x4) as u32;
     (**ppc_var2)(hwnd, (i_var5 + 0x18), 0x0, &local_24, unaff_ss, u_var8, u_var9);
@@ -484,7 +484,7 @@ pub unsafe fn unk_draw_op_1020_2020(
   while (ptr_1 + -0x38) < (ptr_1 + -0x28) {
     i_var12 = ((ptr_1 + -0x38) * 0x4) as i16;
     u_var2 = (ptr_1 + -0x2c);
-    u_var17 = pass1_1008_4772(get_struct_from_addr((i_var12 + u_var2) as u32));
+    u_var17 = pass1_1008_4772(read_struct_from_addr((i_var12 + u_var2) as u32));
    // pu_var10 = (u_var17 >> 0x10);
     (ptr_1 + -0x44) = u_var17;
     (ptr_1 + -0x42) = pu_var10;
@@ -501,7 +501,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     u_var2 = (ptr_1 + -0x2c);
     pass1_1008_4480((ptr_1 + -0x26),
                     CONCAT22(param_3, (ptr_1 + -0x36) as u16),
-                    get_struct_from_addr(u_var2 + i_var12), param_3);
+                    read_struct_from_addr(u_var2 + i_var12), param_3);
     i_var12 = (ptr_1 + -0x38) as i16;
     u_var2 = (ptr_1 + -0x30);
     u_var15 = u_var2 as u16;
@@ -520,7 +520,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     u_var20 = 0x10;
     if ((i_var21 + 0x1a) == 0x0) {
       u_var4 = ((i_var21 + 0x30) << 0x3) as u16;
-      mem_op_1000_179c(ctx, u_var4, get_struct_from_addr::<Struct79>(pu_var10), 0x1000);
+      mem_op_1000_179c(ctx, u_var4, read_struct_from_addr::<Struct79>(pu_var10), 0x1000);
       (i_var21 + 0x1a) = u_var4 as i16;
       (i_var21 + 0x1c) = pu_var10 as i16;
     }
@@ -656,7 +656,7 @@ pub fn realize_palette_1020_2992(param_1: i32,param_2: i16)
 }
 
 
-pub unsafe fn invalidate_rect_1020_2ae4(param_1: *mut u32, param_2: u16, param_3: HWND16, param_4: u16)
+pub unsafe fn invalidate_rect_1020_2ae4(param_1: U32Ptr, param_2: u16, param_3: HWND16, param_4: u16)
 {
   let ppc_var1: u32;
   let c_var2: u8;
@@ -1688,7 +1688,7 @@ pub fn mix_draw_op_1020_650c(param_1: &mut Struct7,param_2: HWND16,param_3: u16)
 }
 
 
-pub unsafe fn pt_in_rect_1020_68fc(param_1: *mut u32, param_2: u16, param_3: u16)
+pub unsafe fn pt_in_rect_1020_68fc(param_1: U32Ptr, param_2: u16, param_3: u16)
 {
   let ppc_var1: u32;
   let u_var2: u16;

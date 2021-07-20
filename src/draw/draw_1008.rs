@@ -19,7 +19,7 @@ use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{get_vec_from_addr, struct_from_addr, get_string_from_rsrc};
+use crate::util::{read_vec_from_addr, struct_from_addr, read_string_from_rsrc};
 use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16};
 use crate::winapi::{FillRect16, LoadCursor16};
 
@@ -57,7 +57,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     );
     gdi_obj_1 = GetStockObject16(0x1000);
     struct_4.hgdiobj_field_0xc6 = gdi_obj_1;
-    cursor_1 = LoadCursor16(ctx.s_tile2_bmp_1050_1538 as HINSTANCE16, &get_string_from_rsrc(0x7f00));
+    cursor_1 = LoadCursor16(ctx.s_tile2_bmp_1050_1538 as HINSTANCE16, &read_string_from_rsrc(0x7f00));
     struct_4.hcursor_field_0xc4 = cursor_1;
     struct_4.field_0xc8 = 0x200b;
     struct_4.field_0xac = 0x45000000;
@@ -324,7 +324,7 @@ pub unsafe fn unk_draw_op_1008_da12(
     let mut i_var7 = param_1.field_0xc + -0x1e0;
     count = (i_var7 >> 0xf);
     pass1_1008_3e76(
-        &mut get_vec_from_addr::<u16>(CONCAT22(param_2, param_1.field_0xe)),
+        &mut read_vec_from_addr::<u16>(CONCAT22(param_2, param_1.field_0xe)),
         0x0,
         i_var7 / 0x2,
         ((param_1.field_0xa + -0x280) / 0x2) as u16,
@@ -368,7 +368,7 @@ pub unsafe fn unk_draw_op_1008_da12(
         (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
         if l_stack8 != 0x0 {
             if param_1.field_0x18 != 0x0 {
-                entries = get_vec_from_addr((param_1.field_0x16 / 0x2) as u32);
+                entries = read_vec_from_addr((param_1.field_0x16 / 0x2) as u32);
                 GetSystemPaletteEntries(0x1000, start, count as u16, entries.as_mut_slice());
                 GetSystemPaletteEntries(
                     ctx.s_tile2_bmp_1050_1538 as HDC16,

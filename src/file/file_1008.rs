@@ -16,7 +16,7 @@ use crate::struct_ops::struct_1008::{set_struct_1008_574a, struct_1008_dcdc, str
 use crate::struct_ops::struct_1020::struct_1020_c444;
 use crate::struct_ops::struct_1030::struct_op_1030_1cd8;
 use crate::ui::ui_1008::set_stuct_1008_b0bc;
-use crate::util::{get_string_from_rsrc, ZEXT24};
+use crate::util::{read_string_from_rsrc, ZEXT24};
 use crate::winapi::{_hwrite16, _lclose16, _lcreat16, _llseek16, _lopen16, WIN16_hread};
 
 pub fn close_file_1008_496c(param_1: &mut Struct_1008_496c) {
@@ -86,7 +86,7 @@ pub unsafe fn read_file_1008_49e8(
         h_file = param_2;
         if (param_1 + 0xc) == -0x1 {
             h_file = ctx.s_tile2_bmp_1050_1538 as HFILE16;
-            hvar1 = _lopen16(&get_string_from_rsrc(param_2), 0x0);
+            hvar1 = _lopen16(&read_string_from_rsrc(param_2), 0x0);
             (param_1 + 0xc) = hvar1;
             if hvar1 == 0xffff {
                 return param_3;
@@ -197,7 +197,7 @@ pub fn file_1008_6414(param_1: &mut Struct18, param_2: &mut Struct18, param_3: u
 }
 
 
-pub fn close_file_1008_6dd0(param_1: *mut u32, param_2: HFILE16) {
+pub fn close_file_1008_6dd0(param_1: U32Ptr, param_2: HFILE16) {
     let uVar1: u16;
 
     // uVar1 = (param_1 >> 0x10);
@@ -353,7 +353,7 @@ pub fn read_file_1008_6f7a(param_1: u16, param_2: u16, param_3: u32,
 }
 
 
-pub fn write_to_file_1008_70a6(param_1: *mut u32, param_2: &String) -> u16
+pub fn write_to_file_1008_70a6(param_1: U32Ptr, param_2: &String) -> u16
 
 {
     HVar1: HFILE16

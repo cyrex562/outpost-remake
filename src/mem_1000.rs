@@ -1231,7 +1231,7 @@ pub unsafe fn mixed_mem_op_1000_3c51(
     param_1: &mut HGLOBAL16,
     param_2: &mut HGLOBAL16,
     param_3: i16,
-    param_4: u16,
+    param_4: &mut String,
     param_5: &mut u16,
     param_6: i16,
 ) -> u32 {

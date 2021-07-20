@@ -1078,7 +1078,7 @@ pub fn mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4:
                     pcVar13 = str;
                     break;
                 }
-                HVar8 = pass1_1000_422a(uVar7, HVar8, s_tile2_bmp_1050_1538, unaff_SS);
+                HVar8 = pass1_1000_422a(ctx, uVar7, HVar8, s_tile2_bmp_1050_1538, unaff_SS);
                 if (HVar8 == 0x0) {
                     GlobalUnlock16(ctx.s_tile2_bmp_1050_1538);
                     GlobalFree16(ctx.s_tile2_bmp_1050_1538);

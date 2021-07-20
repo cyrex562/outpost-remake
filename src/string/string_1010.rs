@@ -20,8 +20,8 @@ pub fn string_1010_1722(
                         ((ctx.PTR__LOOP_1050_14cc >> 0x10) as i16),
                         ctx.USHORT_1050_1028);
    // u_var1 = (pcVar2 >> 0x10);
-    unk_str_op_1000_3d3e(&mut get_string_from_addr(CONCAT22(param_1, local_52[0] as u16)), &mut str_1);
-    str_1 = get_string_from_addr(CONCAT22(u_var1, local_52[0] as u16));
+    unk_str_op_1000_3d3e(&mut read_string_from_addr(CONCAT22(param_1, local_52[0] as u16)), &mut str_1);
+    str_1 = read_string_from_addr(CONCAT22(u_var1, local_52[0] as u16));
   }
   else {
     str_1 = load_string_1038_4d28(((param_2 + 0x2e) as u32));
@@ -34,7 +34,7 @@ pub fn string_1010_1722(
 
 
 use crate::win_struct::HINSTANCE16;
-use crate::util::{CONCAT22, get_string_from_addr, ZEXT24};
+use crate::util::{CONCAT22, read_string_from_addr, ZEXT24};
 use crate::pass::pass_1028::{pass1_1028_e1ec, pass1_1028_b58e};
 use crate::mem_1000::mem_op_1000_179c;
 use crate::pass::pass_1000::pass1_1000_3cea;
@@ -100,8 +100,8 @@ pub unsafe fn string_1010_5286(param_1: u16,param_2: u16,param_3: u32,param_4: &
 
 pub fn load_string_1010_847e(param_1: i16, buf_len: i16, h_inst: HINSTANCE16) -> String
 {
-  LoadString16(h_inst, 0x3ff, &mut get_string_from_addr((param_1 + 0x682) as u32), buf_len as u16);
-  return get_string_from_addr(CONCAT22(buf_len as u16, ((param_1 + 0x682) as u16)));
+  LoadString16(h_inst, 0x3ff, &mut read_string_from_addr((param_1 + 0x682) as u32), buf_len as u16);
+  return read_string_from_addr(CONCAT22(buf_len as u16, ((param_1 + 0x682) as u16)));
 }
 
 

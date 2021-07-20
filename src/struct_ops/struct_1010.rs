@@ -56,7 +56,7 @@ pub unsafe fn struct_1010_02e0(
 
 pub unsafe fn struct_1010_0f9c(
     ctx: &mut AppContext,
-    param_1: *mut u32,
+    param_1: U32Ptr,
     param_2: u16,
     param_3: u16,
     extraout_dx: u32,

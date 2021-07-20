@@ -1,13 +1,13 @@
 use crate::mem_1000::{mem_op_1000_1902, mem_op_1000_179c, mem_op_1000_1b68};
 use crate::sys_api::{dos3_call_op_1000_435c, win_msg_op_1008_9498};
-use crate::util::{CONCAT12, CONCAT13, CONCAT22, make_u16_ptr, make_u8_ptr, get_string_from_addr};
+use crate::util::{CONCAT12, CONCAT13, CONCAT22, make_u16_ptr, make_u8_ptr, read_string_from_addr};
 use crate::global::AppContext;
 use crate::string::string_1008::str_op_1008_60e8;
 use crate::pass::pass_1000::{pass1_1000_4d0c, pass1_1000_1fea};
 use crate::struct_ops::struct_1008::struct_op_1008_0000;
 
 pub unsafe fn init_1000_23be(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: &mut String, param_4: u16, param_5: &mut u16, param_6:&mut i16) {
-    let mut loaded_str = get_string_from_addr(CONCAT22(ctx.PTR_LOOP_1050_5f50 as u16, ctx.PTR_LOOP_1050_5f4e as u16));
+    let mut loaded_str = read_string_from_addr(CONCAT22(ctx.PTR_LOOP_1050_5f50 as u16, ctx.PTR_LOOP_1050_5f4e as u16));
     init_op_1008_54aa(
         make_u8_ptr(ctx.PTR_LOOP_1050_5f52),
         &mut loaded_str,

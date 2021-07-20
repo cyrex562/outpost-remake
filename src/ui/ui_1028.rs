@@ -23,7 +23,7 @@ pub fn post_msg_1028_76da()
 }
 
 
-pub fn send_msg_1028_e242(param_1: *mut u32,param_2: i16,param_3: HWND16)
+pub fn send_msg_1028_e242(param_1: U32Ptr,param_2: i16,param_3: HWND16)
 {
   let puVar1: U32Ptr;
   let unaff_DI: i16;

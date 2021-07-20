@@ -28,7 +28,7 @@ use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{HCURSOR16, HDC16, HGDIOBJ16, HMENU16, HPALETTE16, HWND16, PAINTSTRUCT16, POINT16, RECT16, SEGPTR, WNDCLASS16};
 use crate::winapi::{BeginPaint16, BringWindowToTop16, ClientToScreen16, CreateWindow16, DeleteObject16, DestroyWindow16, DrawIcon16, EnableMenuItem16, EndPaint16, EnumChildWindows1, FillRect16, FreeProcInstance16, GetClientRect16, GetDC16, GetDlgItem16, GetStockObject16, GetSubMenu16, GetSystemMetrics16, GetWindowRect16, GetWindowText16, InvalidateRect16, IsIconic16, LoadMenu16, MakeProcInstance16, MoveWindow16, PostMessage16, PtInRect16, RealizePalette16, ReleaseCapture16, SelectPalette16, SendMessage16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowPos16, SetWindowText16, ShowWindow16, TrackPopupMenu16, UnrealizeObject16, UpdateWindow16};
 
-pub fn win_help_op_1020_0ec4(param_1: *mut u32, param_2: u16, param_3: u16)
+pub fn win_help_op_1020_0ec4(param_1: U32Ptr, param_2: u16, param_3: u16)
 {
   let ppcVar1: u32;
   let cVar2: u8;
@@ -1325,7 +1325,7 @@ mixed_menu_op_1020_44ec
 
 pub fn
 win_sys_op_1020_493c
-          (param_1: *mut u32,param_2: u16,param_3: U32Ptr,param_4: u16,HCURSOR16 param_5
+          (param_1: U32Ptr,param_2: u16,param_3: U32Ptr,param_4: u16,HCURSOR16 param_5
           ,param_6: &WNDCLASS16)
 
 {
@@ -2654,7 +2654,7 @@ pub fn realize_palette_1020_6896(param_1: u32,param_2: i16,param_3: HGDIOBJ16)
 
 
 pub fn
-win_ui_op_1020_6ae6(param_1: *mut u32,param_2: u16,param_3: i16,param_4: i16,param_5: HWND16,
+win_ui_op_1020_6ae6(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: i16,param_5: HWND16,
                    param_6: WPARAM16)
 
 {
