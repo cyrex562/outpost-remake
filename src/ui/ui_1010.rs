@@ -240,17 +240,17 @@ pub fn ui_op_1010_79aa(param_1: &mut Struct20, param_2: i16, param_3: i32, param
 
 pub fn show_win_1010_7a76(param_1: u32,param_2: u16)
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let uVar2: u16;
   let unaff_SS: u16;
   let lVar3: i32;
   let local_a: [u8;8];
   
  // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  if ((iVar1 + 0x20) == 0x0) {
-    (iVar1 + 0x20) = 0x1;
-    pass1_1008_5784(CONCAT22(unaff_SS,local_a),(iVar1 + 0x1c));
+  i_var1 = param_1;
+  if ((i_var1 + 0x20) == 0x0) {
+    (i_var1 + 0x20) = 0x1;
+    pass1_1008_5784(CONCAT22(unaff_SS,local_a),(i_var1 + 0x1c));
     loop {
       lVar3 = pass1_1008_5b12(local_a,unaff_SS);
       if (lVar3 == 0x0) { break; }
@@ -264,16 +264,16 @@ pub fn show_win_1010_7a76(param_1: u32,param_2: u16)
 
 pub fn show_window_1010_7ace(param_1: u32,param_2: u16)
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let uVar2: u16;
   let lVar3: i32;
   let local_a: [u8;8];
   
  // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  if ((iVar1 + 0x20) != 0x0) {
-    (iVar1 + 0x20) = 0x0;
-    pass1_1008_5784(CONCAT22(param_2,local_a),(iVar1 + 0x1c));
+  i_var1 = param_1;
+  if ((i_var1 + 0x20) != 0x0) {
+    (i_var1 + 0x20) = 0x0;
+    pass1_1008_5784(CONCAT22(param_2,local_a),(i_var1 + 0x1c));
     loop {
       lVar3 = pass1_1008_5b12(local_a,param_2);
       if (lVar3 == 0x0) { break; }
@@ -286,15 +286,15 @@ pub fn show_window_1010_7ace(param_1: u32,param_2: u16)
 
 pub fn send_msg_1010_7c42(param_1: u32,param_2: u16)
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let uVar2: u16;
   let lVar3: i32;
   let local_a: [u8;8];
   
  // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  if (((iVar1 + 0x1e) | (iVar1 + 0x1c)) != 0x0) {
-    pass1_1008_5784(CONCAT22(param_2,local_a),(iVar1 + 0x1c));
+  i_var1 = param_1;
+  if (((i_var1 + 0x1e) | (i_var1 + 0x1c)) != 0x0) {
+    pass1_1008_5784(CONCAT22(param_2,local_a),(i_var1 + 0x1c));
     loop {
       lVar3 = pass1_1008_5b12(local_a,param_2);
       if (lVar3 == 0x0) { break; }

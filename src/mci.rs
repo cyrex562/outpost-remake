@@ -61,20 +61,20 @@ pub fn mci_send_command_1008_53ae(
 }
 
 pub fn mci_send_command_1008_5cb6(param_1: u32, param_2: i16, param_3: u16, unaff_SS: u16) {
-    let iVar1: i16;
+    let i_var1: i16;
     let uVar2: u16;
     // let unaff_SS: u16;
 
     mciSendCommand16(param_3, 0x0, 0x0, 0x8040000);
    // uVar2 = (param_1 >> 0x10);
-    iVar1 = param_1;
-    if ((iVar1 + 0xa) == 0x0) || ((iVar1 + 0xa) != param_2) {
-        (iVar1 + 0x12) = 0x0;
-        iVar1 = 0x11;
+    i_var1 = param_1;
+    if ((i_var1 + 0xa) == 0x0) || ((i_var1 + 0xa) != param_2) {
+        (i_var1 + 0x12) = 0x0;
+        i_var1 = 0x11;
     } else {
-        (iVar1 + 0x10) = 0x0;
-        iVar1 = 0x10;
+        (i_var1 + 0x10) = 0x0;
+        i_var1 = 0x10;
     }
-    pass1_1010_1f62(unaff_SS, param_1 & 0xffff | uVar2 << 0x10, iVar1);
+    pass1_1010_1f62(unaff_SS, param_1 & 0xffff | uVar2 << 0x10, i_var1);
     return;
 }

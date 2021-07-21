@@ -20,7 +20,7 @@ pub fn string_1010_1722(
                         ((ctx.PTR__LOOP_1050_14cc >> 0x10) as i16),
                         ctx.USHORT_1050_1028);
    // u_var1 = (pcVar2 >> 0x10);
-    unk_str_op_1000_3d3e(&mut read_string_from_addr(CONCAT22(param_1, local_52[0] as u16)), &mut str_1);
+    string_1000_3d3e(&mut read_string_from_addr(CONCAT22(param_1, local_52[0] as u16)), &mut str_1);
     str_1 = read_string_from_addr(CONCAT22(u_var1, local_52[0] as u16));
   }
   else {
@@ -37,13 +37,13 @@ use crate::win_struct::HINSTANCE16;
 use crate::util::{CONCAT22, read_string_from_addr, ZEXT24};
 use crate::pass::pass_1028::{pass1_1028_e1ec, pass1_1028_b58e};
 use crate::mem_1000::mem_op_1000_179c;
-use crate::pass::pass_1000::pass1_1000_3cea;
+use crate::string::string_1000::string_1000_3cea;
 use crate::pass::pass_1038::load_string_1038_4d28;
 use crate::winapi::LoadString16;
 use crate::string::string_1008::str_op_1008_60e8;
 use std::default::default;
 use crate::struct_ops::struct_1030::struct_op_1030_73a8;
-use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::string::string_1000::{str_op_1000_3da4, string_1000_3d3e};
 use crate::struct_ops::struct_1010::struct_1010_dd5e;
 use crate::pass::pass_1010::pass1_1010_e964;
 use crate::mixed::mixed_1010_20ba;
@@ -65,9 +65,9 @@ pub fn unk_load_str_op_1010_2c34() -> u16
   load_string_1010_84e0
             (0x1000, _PTR_LOOP_1050_14cc, 0x80, puVar2, in_buf_len_5
             );
-  pUVar1 = pass1_1000_3cea(puVar2,s__1050_11c8);
+  pUVar1 = string_1000_3cea(puVar2, s__1050_11c8);
   pass1_1010_e964(in_buf_len_5,unaff_SS,unaff_DI);
-  pass1_1000_3cea(puVar2,CONCAT22(in_buf_len_5,pUVar1));
+  string_1000_3cea(puVar2, CONCAT22(in_buf_len_5, pUVar1));
   return puVar2;
 }
 
@@ -79,7 +79,7 @@ pub unsafe fn string_1010_5286(param_1: u16,param_2: u16,param_3: u32,param_4: &
   let in_buf_len_5: U32Ptr;
   let mut pc_var1: String;
   
-  pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,param_3,(param_3 >> 0x10));
+  pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2, param_3);
   in_buf_len_5 = (param_5 | param_4);
   if in_buf_len_5.is_null() {
     return 0x0;
@@ -89,9 +89,9 @@ pub unsafe fn string_1010_5286(param_1: u16,param_2: u16,param_3: u32,param_4: &
   load_string_1010_84e0
             (0x1000, _PTR_LOOP_1050_14cc, 0x80, in_buffer_4,
              in_buf_len_5);
-  pass1_1000_3cea(CONCAT22(in_buf_len_5,in_buffer_4),0x105013ac);
+  string_1000_3cea(CONCAT22(in_buf_len_5, in_buffer_4), 0x105013ac);
   pc_var1 = load_string_1038_4d28(CONCAT22(param_5, param_4));
-  pass1_1000_3cea(CONCAT22(in_buf_len_5,in_buffer_4), pc_var1);
+  string_1000_3cea(CONCAT22(in_buf_len_5, in_buffer_4), pc_var1);
   return CONCAT22(in_buf_len_5,in_buffer_4);
 }
 
@@ -339,7 +339,7 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
                    param_5: &mut String,param_6: u32)
 
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let uVar2: u16;
   let uVar3: u16;
   let uVar4: u32;
@@ -360,15 +360,15 @@ string_op_1010_c446(param_1: u16,param_2: u8,uparam_3: &mut String,param_4: u32,
  // uVar2 = (uVar4 >> 0x10);
   uVar3 = uVar2;
   struct_1010_dd5e(param_4,(param_4 >> 0x10),param_6);
-  iVar1 = (uVar4 + 0x12);
-  if (0x6 < iVar1 - 0x3) {
+  i_var1 = (uVar4 + 0x12);
+  if (0x6 < i_var1 - 0x3) {
     return;
   }
   in_buffer_4 = pcStack6;
  // in_buf_len_5 = (pcStack6 >> 0x10);
   uVar7 = ctx._PTR_LOOP_1050_14cc;
   uVar6 = (ctx.PTR__LOOP_1050_14cc >> 0x10);
-  switch(iVar1) {
+  switch(i_var1) {
   default:
     break;
   0x6 =>

@@ -1,7 +1,7 @@
 
 pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
 {
-  let puVar1: U32Ptr;
+  let pu_var1: U32Ptr;
   let piVar2: U32Ptr;
   let uVar3: u16;
   let uVar4: u16;
@@ -29,10 +29,10 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
   uStack6 = uVar12;
  // valist = (param_1 >> 0x10);
   uVar10 = param_1;
-  puVar1 = (uVar10 + 0x140);
-  bVar11 = *puVar1 < uStack4;
+  pu_var1 = (uVar10 + 0x140);
+  bVar11 = *pu_var1 < uStack4;
   if ((bVar11) ||
-     ((bVar11 || *puVar1 == uStack4 && ((uVar10 + 0x13e) < uStack6)))) {
+     ((bVar11 || *pu_var1 == uStack4 && ((uVar10 + 0x13e) < uStack6)))) {
     uVar3 = (uVar10 + 0x13c);
     if ((uVar10 + 0x13a) < uVar3) {
       uVar13 = switch_1018_3b9e(param_1,(uVar10 + 0x12e),uVar3,uStack4,param_2)
@@ -77,7 +77,7 @@ pub fn unk_str_op_1018_35b0(param_1: u32,param_2: u16,param_3: u16)
 pub fn string_1018_39d8(param_1: u16,param_2: u32,param_3: u32,param_4: u32) -> bool
 
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let mut pcVar2: String; 
   let lVar3: i32;
   let uVar4: u32;
@@ -86,10 +86,10 @@ pub fn string_1018_39d8(param_1: u16,param_2: u32,param_3: u32,param_4: u32) -> 
   pcVar2 = load_string_1010_847e
                      (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10)
                       ,0x1010);
-  iVar1 = pass1_1000_3d7a(pcVar2,uVar4);
-  if (iVar1 != 0x0) {
-    iVar1 = pass1_1000_3d7a(param_4,param_3);
-    if (iVar1 != 0x0) {
+  i_var1 = pass1_1000_3d7a(pcVar2,uVar4);
+  if (i_var1 != 0x0) {
+    i_var1 = pass1_1000_3d7a(param_4,param_3);
+    if (i_var1 != 0x0) {
       lVar3 = pass1_1018_4608(param_1,param_2,param_3,param_4);
       if ((lVar3 != 0x0) && ((lVar3 + 0xc) == 0x1)) {
         return 0x1;

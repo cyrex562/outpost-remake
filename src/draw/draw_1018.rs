@@ -149,7 +149,7 @@ pub fn invalidate_rect_1018_5d32(param_1: u32, param_2: i16, param_3: HWND16) {
 }
 
 pub fn misc_draw_op_1018_5d6c(param_1: u32, param_2: HWND16) {
-    let puVar1: u32;
+    let pu_var1: u32;
     let ppcVar2: u32;
     let uVar3: u32;
     let iVar4: i16;
@@ -164,20 +164,20 @@ pub fn misc_draw_op_1018_5d6c(param_1: u32, param_2: HWND16) {
     uVar7 = (iVar4 + 0x4);
     BeginPaint16(param_2, &local_22);
     uVar3 = (iVar4 + 0x14);
-    puVar1 = (uVar3 + 0xa);
+    pu_var1 = (uVar3 + 0xa);
     paVar6 = pass1_1008_9f48((iVar4 + 0x14));
     pass1_1008_5236((iVar4 + 0x18));
     pass1_1008_4480(
-        puVar1,
+        pu_var1,
         (param_1 & 0xffff0000 | (iVar4 + 0x1c)),
         paVar6,
         unaff_SS,
     );
-    ppcVar2 = (*puVar1 + 0x4);
+    ppcVar2 = (*pu_var1 + 0x4);
     (**ppcVar2)(
         0x1008,
-        puVar1,
-        (puVar1 >> 0x10),
+        pu_var1,
+        (pu_var1 >> 0x10),
         0x0,
         param_1 & 0xffff0000 | (iVar4 + 0xa),
         uVar7,
@@ -349,7 +349,7 @@ pub unsafe fn unk_draw_op_1018_623e(param_1: u32, param_2: HWND16, param_3: u16)
 }
 
 pub fn draw_line_1018_6444(param_1: u32, param_2: HDC16) {
-    let iVar1: i16;
+    let i_var1: i16;
     INT16 * pIVar2;
     let uVar3: u32;
     let iVar4: i16;
@@ -360,15 +360,15 @@ pub fn draw_line_1018_6444(param_1: u32, param_2: HDC16) {
 
     // uVar7 = (param_1 >> 0x10);
     uVar3 = (param_1 + 0x6);
-    iVar1 = (uVar3 + 0x30);
+    i_var1 = (uVar3 + 0x30);
     uVar3 = (param_1 + 0x6);
     pIVar2 = (uVar3 + 0x1a);
     MoveTo16(param_2, 0x5, *pIVar2);
     // uVar7 = (pIVar2 >> 0x10);
     iVar5 = pIVar2;
-    LineTo16(ctx.s_tile2_bmp_1050_1538, 0x5, (iVar5 + iVar1 * 0x8 + -0x4));
+    LineTo16(ctx.s_tile2_bmp_1050_1538, 0x5, (iVar5 + i_var1 * 0x8 + -0x4));
     // TODO: refactor
-    // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+    // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
     //   piVar6 = (iStack10 * 0x8 + iVar5);
     //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
     //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,iVar4);
@@ -378,10 +378,10 @@ pub fn draw_line_1018_6444(param_1: u32, param_2: HDC16) {
     LineTo16(
         ctx.s_tile2_bmp_1050_1538,
         0x5f,
-        (iVar5 + iVar1 * 0x8 + -0x4),
+        (iVar5 + i_var1 * 0x8 + -0x4),
     );
     // TODO: refactor
-    // for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+    // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
     //   piVar6 = (iStack10 * 0x8 + iVar5);
     //   iVar4 = (piVar6[0x2] - *piVar6 >> 0x1) + *piVar6;
     //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5f,iVar4);
@@ -872,7 +872,7 @@ pub fn unk_draw_op_1018_cfc0(param_1: &mut Struct36, param_2: u16) {
 }
 
 pub fn invalidate_rect_1018_edd8(param_1: u32, param_2: i16, param_3: u16) {
-    let iVar1: i16;
+    let i_var1: i16;
     let uVar2: u16;
     let uVar3: u32;
     let local_16: i16;
@@ -885,21 +885,21 @@ pub fn invalidate_rect_1018_edd8(param_1: u32, param_2: i16, param_3: u16) {
     let local_6: i16;
     let local_4: i16;
 
-    iVar1 = param_1;
+    i_var1 = param_1;
     // uVar2 = (param_1 >> 0x10);
     if (param_2 == 0x1) {
-        (iVar1 + 0x14) = 0x0;
+        (i_var1 + 0x14) = 0x0;
         return;
     }
     if (param_2 != 0xc) {
         return;
     }
     pass1_1008_3e94(
-        (param_1 & 0xffff0000 | (iVar1 + 0x18)),
+        (param_1 & 0xffff0000 | (i_var1 + 0x18)),
         CONCAT22(param_3, &local_6),
         CONCAT22(param_3, &local_4),
     );
-    uVar3 = pass1_1010_2b66((iVar1 + 0x14));
+    uVar3 = pass1_1010_2b66((i_var1 + 0x14));
     // uStack8 = (uVar3 >> 0x10);
     uStack10 = uVar3;
     uStack14 = pass1_1008_4772((uVar3 & 0xffff | uStack8 << 0x10));

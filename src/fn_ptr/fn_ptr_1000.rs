@@ -22,7 +22,7 @@ pub fn  call_fn_ptr_1000_0dc6(
 }
 
 
-pub unsafe fn fn_ptr_op_1000_1708(
+pub  fn fn_ptr_op_1000_1708(
     ctx: &mut AppContext,
     param_1: &mut i16,
     param_2: &mut u16,
@@ -83,7 +83,7 @@ pub fn fn_ptr_1000_17ce(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u
 pub fn fn_ptr_op_1000_24cd(
     ctx: &mut AppContext,
     param_1: i16,
-    param_2: i16)
+    param_2: u16)
 {
   let pc_var1: u32;
   let i_var2: i16;

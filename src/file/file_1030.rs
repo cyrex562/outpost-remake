@@ -475,8 +475,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                                             uVar11,0x4,0x1008), BVar3 != 0x0)) {
               if (iVar3.field_0x2a != 0x0) {
                 lVar1 = iVar3.field_0x2a;
-                pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,lVar1,
-                                (lVar1 >> 0x10));
+                pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2, lVar1);
                 iVar3.field_0x2e = BVar3;
                 iVar3.field_0x30 = param_4;
               }

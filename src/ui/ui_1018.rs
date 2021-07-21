@@ -12,7 +12,7 @@ use crate::draw::draw_1018::{get_dc_1018_4db0, create_dc_1018_4e04};
 use crate::cleanup::unk_destroy_window_op_1018_6bb6;
 use crate::mci::mci_send_command_1008_53ae;
 use crate::defines::{Struct28, Struct76};
-use crate::pass::pass_1000::pass1_1000_3cea;
+use crate::string::string_1000::string_1000_3cea;
 use crate::pass::pass_1028::{pass1_1028_e4ec, pass1_1028_dc52};
 use crate::ui::ui_1040::dialog_ui_fn_1040_78e2;
 use crate::struct_ops::struct_1008::struct_1008_4c58;
@@ -114,23 +114,23 @@ pub fn unk_win_ui_op_1018_4f18(param_1: &mut Struct39,param_2: u16,param_3: u32)
 pub fn win_1018_598c(astruct *param_1,param_2: u16,param_3: u16)
 {
   let uVar1: u16;
-  let iVar1: &mut Struct131;
+  let i_var1: &mut Struct131;
   let uVar2: u16;
   let unaff_SS: u16;
   
   create_window_ex_1008_9760(param_1,0x1008);
  // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  get_dc_1018_4db0(iVar1.field_0xf2,iVar1.field_0x8,0x1008);
+  i_var1 = param_1;
+  get_dc_1018_4db0(i_var1.field_0xf2,i_var1.field_0x8,0x1008);
   mem_op_1000_179c(0x2a,param_3,0x1000);
   uVar1 = param_3 | param_2;
   if (uVar1 != 0x0) {
-    pass1_1018_5b06(param_2,param_3,iVar1.field_0x8,unaff_SS);
-    iVar1.field_0xee = param_2;
-    iVar1.field_0xf0 = uVar1;
+    pass1_1018_5b06(param_2,param_3,i_var1.field_0x8,unaff_SS);
+    i_var1.field_0xee = param_2;
+    i_var1.field_0xf0 = uVar1;
     return;
   }
-  &iVar1.field_0xee = 0x0;
+  &i_var1.field_0xee = 0x0;
   return;
 }
 
@@ -201,7 +201,7 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
     pUVar2 = (puVar4 + 0x10);
     uVar7 = uVar8;
     if (pUVar2 != (ULONG *)0x0) {
-      pass1_1000_3cea(param_1 & 0xffff0000 | (iVar9 + 0x10),*pUVar2);
+      string_1000_3cea(param_1 & 0xffff0000 | (iVar9 + 0x10), *pUVar2);
       uVar7 = uVar8;
     }
   }
@@ -270,7 +270,7 @@ pub fn window_op_1018_67b6(astruct *param_1)
 
 pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let iVar2: i16;
   let uVar3: u16;
   let in_DX: U32Ptr;
@@ -284,13 +284,13 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
   
   puVar7 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,unaff_SS,in_DX,unaff_DI);
  // uVar4 = (puVar7 >> 0x10);
-  iVar1 = (puVar7 + 0xa);
+  i_var1 = (puVar7 + 0xa);
   iVar2 = (puVar7 + 0xc);
  // uVar6 = (param_1 >> 0x10);
   iVar5 = param_1;
-  if (0x1 < iVar1 - (iVar5 + 0xe6)) {
-    uVar4 = iVar1 >> 0xf;
-    (iVar5 + 0xe2) = iVar1 / 0x2 - ((iVar5 + 0xe6) + 0x1) / 0x2;
+  if (0x1 < i_var1 - (iVar5 + 0xe6)) {
+    uVar4 = i_var1 >> 0xf;
+    (iVar5 + 0xe2) = i_var1 / 0x2 - ((iVar5 + 0xe6) + 0x1) / 0x2;
   }
   if (0x1 < iVar2 - (iVar5 + 0xe8)) {
     uVar4 = iVar2 >> 0xf;
@@ -313,22 +313,22 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28)
 
 pub fn win_1018_df40(astruct *param_1,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
-  let iVar1: &mut Struct267;
+  let i_var1: &mut Struct267;
   let uVar1: u16;
   let puVar2: U32Ptr;
   
   create_window_ex_1008_9760(param_1,0x1008);
   mem_op_1000_179c(0xa,param_3,0x1000);
-  iVar1 = param_1;
+  i_var1 = param_1;
  // uVar1 = (param_1 >> 0x10);
   if ((param_3 | param_2) != 0x0) {
-    puVar2 = struct_1018_e100(CONCAT22(param_3,param_2),iVar1.field_0x8,
+    puVar2 = struct_1018_e100(CONCAT22(param_3,param_2),i_var1.field_0x8,
                               (param_3 | param_2),param_4);
-    iVar1.field_0xe2 = puVar2;
-    iVar1.field_0xe4 = (puVar2 >> 0x10);
+    i_var1.field_0xe2 = puVar2;
+    i_var1.field_0xe4 = (puVar2 >> 0x10);
     return;
   }
-  &iVar1.field_0xe2 = 0x0;
+  &i_var1.field_0xe2 = 0x0;
   return;
 }
 
@@ -428,7 +428,7 @@ pub fn win_1020_0316(astruct *param_1,param_2: U32Ptr,param_3: u16)
   let uVar2: u16;
   let puVar3: U32Ptr;
   let puVar4: U32Ptr;
-  let iVar1: &mut Struct273;
+  let i_var1: &mut Struct273;
   let unaff_DI: i16;
   let uVar5: u16;
   let puVar6: U32Ptr;
@@ -437,25 +437,25 @@ pub fn win_1020_0316(astruct *param_1,param_2: U32Ptr,param_3: u16)
   puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x1,param_3,param_2,unaff_DI);
  // puVar3 = (puVar6 >> 0x10);
  // uVar5 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  iVar1.field_0xe2 = puVar6;
-  iVar1.field_0xe4 = puVar3;
-  uVar1 = &iVar1.field_0xe2;
-  (uVar1 + 0x16) = iVar1.field_0xea;
-  uVar2 = iVar1.field_0xee;
-  uVar1 = &iVar1.field_0xe2;
+  i_var1 = param_1;
+  i_var1.field_0xe2 = puVar6;
+  i_var1.field_0xe4 = puVar3;
+  uVar1 = &i_var1.field_0xe2;
+  (uVar1 + 0x16) = i_var1.field_0xea;
+  uVar2 = i_var1.field_0xee;
+  uVar1 = &i_var1.field_0xe2;
   (uVar1 + 0x12) = uVar2;
-  struct_1010_3c52(&iVar1.field_0xe2,iVar1.field_0xec,param_3);
+  struct_1010_3c52(&i_var1.field_0xe2,i_var1.field_0xec,param_3);
   mem_op_1000_179c(0x12,puVar3,0x1000);
   puVar4 = (puVar3 | uVar2);
   if (puVar4 != 0x0) {
-    pass1_1020_04f6(CONCAT22(puVar3,uVar2),iVar1.field_0x8,puVar4,unaff_DI,
+    pass1_1020_04f6(CONCAT22(puVar3,uVar2),i_var1.field_0x8,puVar4,unaff_DI,
                     param_3);
-    iVar1.field_0xe6 = uVar2;
-    iVar1.field_0xe8 = puVar4;
+    i_var1.field_0xe6 = uVar2;
+    i_var1.field_0xe8 = puVar4;
     return;
   }
-  &iVar1.field_0xe6 = 0x0;
+  &i_var1.field_0xe6 = 0x0;
   return;
 }
 
@@ -542,14 +542,14 @@ pub fn send_win_msg_1020_08fe(param_1: &mut Struct63,param_2: HWND16)
 
 pub fn send_msg_1020_097e(param_1: u32,param_2: HWND16)
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let uVar2: u16;
   
  // uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  if (((iVar1 + 0xea) | (iVar1 + 0xe8)) != 0x0) {
+  i_var1 = param_1;
+  if (((i_var1 + 0xea) | (i_var1 + 0xe8)) != 0x0) {
     SendMessage16(param_2,0x0,0x0,0x1110001);
-    (iVar1 + 0xe8) = 0x0;
+    (i_var1 + 0xe8) = 0x0;
   }
   return;
 }
@@ -558,21 +558,21 @@ pub fn send_msg_1020_097e(param_1: u32,param_2: HWND16)
 
 pub fn win_1020_09ba(astruct *param_1,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
-  let puVar1: U32Ptr;
-  let iVar1: &mut Struct275;
+  let pu_var1: U32Ptr;
+  let i_var1: &mut Struct275;
   let uVar2: u16;
   
   create_window_ex_1008_9760(param_1,0x1008);
   mem_op_1000_179c(0xe,param_3,0x1000);
-  puVar1 = (param_3 | param_2);
-  iVar1 = param_1;
+  pu_var1 = (param_3 | param_2);
+  i_var1 = param_1;
  // uVar2 = (param_1 >> 0x10);
-  if (puVar1 != 0x0) {
-    struct_1020_0baa(CONCAT22(param_3,param_2),iVar1.field_0x8,puVar1,param_4);
-    iVar1.field_0xe2 = param_2;
-    iVar1.field_0xe4 = puVar1;
+  if (pu_var1 != 0x0) {
+    struct_1020_0baa(CONCAT22(param_3,param_2),i_var1.field_0x8,pu_var1,param_4);
+    i_var1.field_0xe2 = param_2;
+    i_var1.field_0xe4 = pu_var1;
     return;
   }
-  &iVar1.field_0xe2 = 0x0;
+  &i_var1.field_0xe2 = 0x0;
   return;
 }

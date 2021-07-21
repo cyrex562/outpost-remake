@@ -37,7 +37,7 @@ pub fn poss_str_op_1000_28dc(
 }
 
 
-pub fn unk_str_op_1000_3d3e(
+pub fn string_1000_3d3e(
     string_1: &mut String,
     string_2: &mut String
 ) {
@@ -172,10 +172,10 @@ pub fn str_op_1000_3dbe(
 
 pub fn str_1000_4d58(
     string_1: &mut String,
-    string_2: &mut String,
+    string_2: Option<&mut String>,
     param_3: u32,
-    param_4: u32,
-    param_5: &mut WNDCLASS16,
+    param_4: &mut String,
+    param_5: &mut String,
 )
 
 {
@@ -332,4 +332,89 @@ pub fn string_1000_475e(
     c_var3 = (string_3 < b_var4) * -0x2 + '\x01';
 //LAB_1000_479d:
     return c_var3;
+}
+
+
+pub fn string_1000_3cea(
+    string_1: &mut String,
+    string_2: &mut String
+) -> &mut String
+
+{
+    let string_4: &mut String;
+    let mut pc_var2: &String;
+    let p_uvar3: U32Ptr;
+    let i_var4: i16;
+    let u_var5: u16;
+    let u_var6: u16;
+    let string_3: &mut String;
+    let string_6: &mut String;
+    let string_5: &mut String;
+    let string_7: &mut String;
+    let u_var11: u16;
+    let u_var12: u16;
+    let b_var13: bool;
+
+    // u_var11 = (param_1 >> 0x10);
+    b_var13 = true;
+    i_var4 = -0x1;
+    string_3 = string_1;
+    loop {
+        if i_var4 == 0x0 { break; }
+        i_var4 += -0x1;
+        string_4 = string_3;
+        string_3 = (&mut string_3[1..].to_string());
+        b_var13 = string_4[0] == '\0';
+        if b_var13 { break; }
+    }
+    string_7 = (string_3 + -0x1);
+    // u_var12 = (param_2 >> 0x10);
+    string_6 = string_2;
+    u_var5 = 0xffff;
+    loop {
+        if u_var5 == 0x0 { break; }
+        u_var5 -= 0x1;
+        pc_var2 = string_6;
+        string_6 = string_6 + 0x1;
+        b_var13 = *pc_var2 == '\0';
+        if b_var13 { break; }
+    }
+    u_var5 = !u_var5;
+    if !b_var13 {
+        string_6 = string_6 + -u_var5;
+        u_var5 += 0x1;
+    }
+    string_5 = (string_6 + -u_var5);
+    if u_var5 == 0x0 {
+        string_4 = string_5;
+        string_5 = string_5 + 0x1;
+        string_7[0] = string_4[0];
+        u_var5 = 0xfffe;
+        string_7 = (string_3 + 0x1);
+    } else {
+        if (string_5 & 0x1) != 0x0 {
+            string_4 = string_5;
+            string_5 = (string_5 + 0x1);
+            string_7[0] = string_4[0];
+            u_var5 -= 0x1;
+            string_7 = string_3;
+        }
+    }
+    // TODO: refactor for loop
+    // for (u_var6 = u_var5 >> 0x1; u_var6 != 0x0; u_var6 -= 0x1) {
+    //   p_uvar3 = p_uvar10;
+    //   p_uvar10 = p_uvar10 + 0x1;
+    //   p_uvar1 = p_uvar9;
+    //   p_uvar9 = p_uvar9 + 0x1;
+    //   *p_uvar3 = *p_uvar1;
+    // }
+    // TODO: refactor for loop
+    // for (u_var5 = ((u_var5 & 0x1) != 0x0); u_var5 != 0x0; u_var5 -= 0x1) {
+    //   p_uvar3 = p_uvar10;
+    //   p_uvar10 = (p_uvar10 + 0x1);
+    //   p_uvar1 = p_uvar9;
+    //   p_uvar9 = (p_uvar9 + 0x1);
+    //   *p_uvar3 = *p_uvar1;
+    // }
+    return string_1;
 }

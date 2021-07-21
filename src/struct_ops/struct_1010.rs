@@ -252,21 +252,21 @@ pub unsafe fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u1
 
 
 pub fn struct_1010_383a(param_1: U32Ptr) {
-    let iVar1: &mut Struct223;
+    let i_var1: &mut Struct223;
     let uVar1: u16;
 
     // uVar1 = (param_1 >> 0x10);
-    iVar1 = param_1;
+    i_var1 = param_1;
     *param_1 = 0x389a;
-    iVar1.field_0x2 = 0x1008;
-    iVar1.field_0x4 = 0x0;
-    iVar1.field_0x8 = 0x0;
-    iVar1.field_0xc = 0x0;
-    iVar1.field_0x10 = 0x0;
-    iVar1.field_0x12 = 0x0;
-    iVar1.field_0x14 = 0x0;
+    i_var1.field_0x2 = 0x1008;
+    i_var1.field_0x4 = 0x0;
+    i_var1.field_0x8 = 0x0;
+    i_var1.field_0xc = 0x0;
+    i_var1.field_0x10 = 0x0;
+    i_var1.field_0x12 = 0x0;
+    i_var1.field_0x14 = 0x0;
     *param_1 = 0x3b5e;
-    iVar1.field_0x2 = 0x1010;
+    i_var1.field_0x2 = 0x1010;
     return;
 }
 
@@ -318,7 +318,7 @@ pub fn struct_1010_3b7a(
 
 
 pub fn struct_1010_3c52(ctx: &mut AppContext, param_1: u32, param_2: u16, param_3: u16) {
-    let puVar1: u32;
+    let pu_var1: u32;
     let uVar2: u16;
     let ppcVar3: u32;
     let iVar4: &mut Struct274;
@@ -328,10 +328,10 @@ pub fn struct_1010_3c52(ctx: &mut AppContext, param_1: u32, param_2: u16, param_
     // uVar4 = (param_1 >> 0x10);
     iVar4 = param_1;
     iVar4.field_0x14 = param_2;
-    puVar1 = iVar4.field_0xe;
+    pu_var1 = iVar4.field_0xe;
     uVar2 = iVar4.field_0x10;
-    if ((uVar2 | puVar1) != 0x0) {
-        ppcVar3 = *puVar1;
+    if ((uVar2 | pu_var1) != 0x0) {
+        ppcVar3 = *pu_var1;
         (**ppcVar3)();
     }
     paVar5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, iVar4.field_0x14, param_3);
@@ -423,7 +423,7 @@ pub fn struct_1010_6326(param_1: &mut Struct630, param_2: &mut Struct19, param_3
 
 
 pub fn struct_1010_9172(param_1: u32) {
-    let puVar1: u32;
+    let pu_var1: u32;
     let uVar2: u16;
     let ppcVar3: u32;
     let iVar4: &mut Struct249;
@@ -433,11 +433,11 @@ pub fn struct_1010_9172(param_1: u32) {
 
     // uVar4 = (param_1 >> 0x10);
     iVar4 = param_1;
-    puVar1 = iVar4.field_0x4;
+    pu_var1 = iVar4.field_0x4;
     uVar2 = iVar4.field_0x6;
-    paVar5 = CONCAT22(uVar2, puVar1);
-    if ((uVar2 | puVar1) != 0x0) {
-        ppcVar3 = *puVar1;
+    paVar5 = CONCAT22(uVar2, pu_var1);
+    if ((uVar2 | pu_var1) != 0x0) {
+        ppcVar3 = *pu_var1;
         paVar5 = (**ppcVar3)();
     }
     mem_op_1000_179c(0x18, (paVar5 >> 0x10), 0x1000);
@@ -469,7 +469,7 @@ pub fn struct_1010_95aa(param_1: &mut Struct629, param_2: &mut Struct19, param_3
 
 
 pub fn struct_1010_a1d8(param_1: &mut Struct627, param_2: &mut Struct19, param_3: u16, param_4: &mut WNDCLASS16) {
-    let iVar1: i16;
+    let i_var1: i16;
     let ppcVar2: u32;
     let unaff_DI: i16;
     let paVar3: &mut Struct79;
@@ -498,9 +498,9 @@ pub fn struct_1010_a1d8(param_1: &mut Struct627, param_2: &mut Struct19, param_3
                     0x96);
     uStack4 = 0x0;
     loop {
-        iVar1 = &param_1.field_0x0 + uStack4 * 0x6;
-        *(iVar1 + 0xe) = pass1_1010_c7e2;
-        (iVar1 + 0x12) = 0x0;
+        i_var1 = &param_1.field_0x0 + uStack4 * 0x6;
+        *(i_var1 + 0xe) = pass1_1010_c7e2;
+        (i_var1 + 0x12) = 0x0;
         uStack4 += 0x1;
         while uStack4 >= 0x19 {
             break;
@@ -549,7 +549,7 @@ pub fn struct_1010_dd5e(param_1: u16, param_2: u16, param_3: u32) {
 
 
 pub fn struct_1010_e9e4(param_1: &mut Struct261, param_2: &mut Struct19, param_3: u16) {
-    let puVar1: U32Ptr;
+    let pu_var1: U32Ptr;
     let uVar2: u16;
     let iVar3: i16;
     let uVar4: u16;
@@ -611,9 +611,9 @@ pub fn struct_1010_e9e4(param_1: &mut Struct261, param_2: &mut Struct19, param_3
     //     uVar5 = -uVar5;
     //   }
     //   iVar8 = iStack4 * 0x4;
-    //   puVar1 = (&param_1.field_0x34 + iVar8);
-    //   uVar2 = *puVar1;
-    //   uVar4 = uVar5 + *puVar1;
+    //   pu_var1 = (&param_1.field_0x34 + iVar8);
+    //   uVar2 = *pu_var1;
+    //   uVar4 = uVar5 + *pu_var1;
     //   uVar6 = uVar4;
     //   iVar3 = (&param_1.field_0x34 + iVar8 + 0x2);
     //   (&param_1.field_0x34 + iVar8) = uVar4;

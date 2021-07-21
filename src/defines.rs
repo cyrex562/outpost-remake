@@ -281,3 +281,7 @@ pub struct Struct_1010_7b26 {
 pub struct Struct_1000_30a4 {
 
 }
+
+pub struct Struct183 {
+
+}

@@ -1,3 +1,5 @@
+use crate::defines::U32Ptr;
+
 pub fn fn_ptr_1028_d566(param_1: U32Ptr, param_2: U32Ptr) -> bool {
     code * *ppcVar1;
     let iVar2: i16;
@@ -30,4 +32,10 @@ pub fn fn_ptr_1028_d742(param_1: u32, param_2: U32Ptr) -> u16 {
     uVar2 = (**ppcVar1)();
     pass1_1020_c872((param_1 + 0x4), (uVar2 + 0x4), uVar2);
     return 0x1;
+}
+
+
+pub fn fn_ptr_1030_835a(param_1: U32Ptr, param_2: U32Ptr) {
+    fn_ptr_1028_d566(param_1, param_2);
+    return;
 }

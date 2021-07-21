@@ -124,7 +124,7 @@ pub fn draw_ui_op_1040_27cc(param_1: U32Ptr, param_2: u16, param_3: u16, param_4
 
 
 pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
-    let puVar1: U32Ptr;
+    let pu_var1: U32Ptr;
     let uVar2: u32;
     let ppcVar3: u32;
     let uVar4: u32;
@@ -237,8 +237,8 @@ pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
     HVar16 = local_2c;
     LineTo16(ctx.s_tile2_bmp_1050_1538, iVar5, 0x82);
     // TODO: refactor for loop
-    // for (uStack82 = 0x0; puVar1 = (iVar6 + 0x94),
-    //     uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
+    // for (uStack82 = 0x0; pu_var1 = (iVar6 + 0x94),
+    //     uStack82 <= *pu_var1 && *pu_var1 != uStack82; uStack82 += 0x1) {
     //   pHVar14 = &local_2c;
     //   iVar5 = iStack68 * uStack82 + 0x84;
     //   uVar13 = 0x4;
@@ -420,7 +420,7 @@ pub fn set_text_bk_color_1040_7e5e(param_1: U32Ptr, param_2: u16, param_3: u16, 
 
 
 pub fn draw_op_1040_82ee(param_1: &mut Struct15, in_colorref_2: COLORREF) {
-    let iVar1: &mut Struct15;
+    let i_var1: &mut Struct15;
     let uVar1: u16;
     let local_1a: u32;
     let uStack22: u32;
@@ -434,25 +434,25 @@ pub fn draw_op_1040_82ee(param_1: &mut Struct15, in_colorref_2: COLORREF) {
     let iStack4: i16;
 
     // uVar1 = (param_1 >> 0x10);
-    iVar1 = param_1;
-    iStack6 = (iVar1.field_0x80 - iVar1.field_0x7c) + -0x2;
-    iStack8 = (-(iVar1.field_0x60 == 0x0) & 0x1e) + 0x25;
+    i_var1 = param_1;
+    iStack6 = (i_var1.field_0x80 - i_var1.field_0x7c) + -0x2;
+    iStack8 = (-(i_var1.field_0x60 == 0x0) & 0x1e) + 0x25;
     iStack4 = iStack6;
     l_brush_handle = CreateSolidBrush16(in_colorref_2);
-    if (iVar1.field_0x86 == 0x0) {
-        local_1a = CONCAT22(iVar1.field_0x66 + 0x2, iVar1.field_0x64 + 0x2);
+    if (i_var1.field_0x86 == 0x0) {
+        local_1a = CONCAT22(i_var1.field_0x66 + 0x2, i_var1.field_0x64 + 0x2);
         uStack22 = CONCAT22(iStack4, iStack6);
-        &iVar1.field_0x82 = local_1a;
-        &iVar1.field_0x86 = uStack22;
+        &i_var1.field_0x82 = local_1a;
+        &i_var1.field_0x86 = uStack22;
     }
-    local_12 = iVar1.field_0x82 + 0x2;
-    iStack16 = (iVar1.field_0x88 - iVar1.field_0x84) / 0x2 + iVar1.field_0x84 + -0x2;
-    iStack14 = iVar1.field_0x86 - 0x2;
-    iStack12 = (iVar1.field_0x88 - iVar1.field_0x84) / 0x2 + iVar1.field_0x84 + 0x2;
-    FrameRect16(ctx.s_tile2_bmp_1050_1538, l_brush_handle, &iVar1.field_0x82);
+    local_12 = i_var1.field_0x82 + 0x2;
+    iStack16 = (i_var1.field_0x88 - i_var1.field_0x84) / 0x2 + i_var1.field_0x84 + -0x2;
+    iStack14 = i_var1.field_0x86 - 0x2;
+    iStack12 = (i_var1.field_0x88 - i_var1.field_0x84) / 0x2 + i_var1.field_0x84 + 0x2;
+    FrameRect16(ctx.s_tile2_bmp_1050_1538, l_brush_handle, &i_var1.field_0x82);
     FrameRect16(ctx.s_tile2_bmp_1050_1538, l_brush_handle, &local_12);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
-    iVar1.field_0x7a = iVar1.field_0x86 + 0x2;
+    i_var1.field_0x7a = i_var1.field_0x86 + 0x2;
     return;
 }
 
@@ -644,7 +644,7 @@ pub fn draw_text_1040_9650(
 // WARNING: Could not reconcile some variable overlaps
 
 pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &RECT16) {
-    let iVar1: i16;
+    let i_var1: i16;
     let iVar2: i16;
     int16_t
     mode;
@@ -696,15 +696,15 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
     mode = SetMapMode16(ctx.s_tile2_bmp_1050_1538, 0x1);
     GetClientRect16(s_tile2_bmp_1050_1538, &local_12);
     // iVar2 = (uStack14 >> 0x10);
-    iVar1 = iVar2 + -0x1;
-    uStack14 = CONCAT22(iVar1, uStack14 + -0x1);
+    i_var1 = iVar2 + -0x1;
+    uStack14 = CONCAT22(i_var1, uStack14 + -0x1);
     if (uStack34 != 0x0) {
         iStack26 = local_12;
         // iStack24 = (local_12 >> 0x10);
         local_12 = CONCAT22(iStack24 + 0x2, iStack26 + 0x2);
         uStack14 = CONCAT22(iVar2 + -0x3, uStack14 + -0x3);
         iStack22 = uStack14 + -0x1;
-        iStack20 = iVar1;
+        iStack20 = i_var1;
     }
     if (iVar4.field_0x6 != '\0') {
         iStack28 = 0x1;

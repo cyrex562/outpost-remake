@@ -1,17 +1,17 @@
 
 pub fn struct_1020_1738(param_1: &mut Struct57,param_2: u16,param_3: u32)
 {
-  let iVar1: &mut Struct278;
+  let i_var1: &mut Struct278;
   let uVar1: u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfcd,(param_3 + 0x8));
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  iVar1.field_0x8e = 0x0;
-  iVar1.field_0x92 = 0x0;
-  iVar1.field_0x96 = 0x0;
+  i_var1 = param_1;
+  i_var1.field_0x8e = 0x0;
+  i_var1.field_0x92 = 0x0;
+  i_var1.field_0x96 = 0x0;
   param_1 = 0x1e7a;
-  iVar1.field_0x2 = 0x1020;
+  i_var1.field_0x2 = 0x1020;
   return;
 }
 
@@ -48,7 +48,7 @@ pub fn struct_1020_3644(param_1: U32Ptr,param_2: u16,param_3: u32,param_4: u16)
 {
   let iVar2: &mut Struct272;
   in_buf_len_5: i16;
-  let iVar1: &mut Struct270;
+  let i_var1: &mut Struct270;
   
   struct_1020_790e(param_1,0x0,param_2,param_3,param_4);
   in_buf_len_5 = (short)(param_1 >> 0x10);
@@ -111,19 +111,19 @@ struct_1020_790e(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: u32,param_5:
                 )
 
 {
-  let iVar1: &mut Struct271;
+  let i_var1: &mut Struct271;
   let uVar1: u16;
   
   unk_draw_op_1008_7f62(param_1,param_3,param_4,param_5);
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  iVar1.field_0xe0 = 0x0;
-  iVar1.field_0xe4 = 0x0;
-  iVar1.field_0xe8 = 0x0;
-  iVar1.field_0xec = 0x0;
-  iVar1.field_0xee = param_2;
+  i_var1 = param_1;
+  i_var1.field_0xe0 = 0x0;
+  i_var1.field_0xe4 = 0x0;
+  i_var1.field_0xe8 = 0x0;
+  i_var1.field_0xec = 0x0;
+  i_var1.field_0xee = param_2;
   *param_1 = 0x7b86;
-  iVar1.field_0x2 = 0x1020;
+  i_var1.field_0x2 = 0x1020;
   return;
 }
 
@@ -207,16 +207,16 @@ pub fn set_struct_op_1020_921c(param_1: &mut Struct42,param_2: u16)
 
 pub fn struct_1020_c444(param_1: &mut Struct75,param_2: u32,param_3: u32)
 {
-  let iVar1: &mut Struct75;
+  let i_var1: &mut Struct75;
   let uVar1: &mut Struct75;
   
   struct_op_1030_1cd8(param_1,param_2,param_3);
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  (iVar1 + 0x1) = 0x0;
-  &iVar1[0x1].field_0x4 = 0x0;
+  i_var1 = param_1;
+  (i_var1 + 0x1) = 0x0;
+  &i_var1[0x1].field_0x4 = 0x0;
   param_1.field_0x0 = 0xc834;
-  iVar1.field_0x2 = 0x1020;
+  i_var1.field_0x2 = 0x1020;
   return;
 }
 
@@ -304,7 +304,7 @@ pub fn struct_1020_d866(param_1: U32Ptr) -> u16
 pub fn struct_1020_d954(param_1: U32Ptr)
 {
   let extraout_DX: U32Ptr;
-  let iVar1: &mut Struct182;
+  let i_var1: &mut Struct182;
   let unaff_DI: i16;
   let uVar1: u16;
   let unaff_SS: u16;
@@ -312,15 +312,15 @@ pub fn struct_1020_d954(param_1: U32Ptr)
   
   struct_1030_dc96(param_1);
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  iVar1.field_0x24 = 0x0;
-  iVar1.field_0x26 = 0x0;
-  &iVar1.field_0x28 = 0x0;
+  i_var1 = param_1;
+  i_var1.field_0x24 = 0x0;
+  i_var1.field_0x26 = 0x0;
+  &i_var1.field_0x28 = 0x0;
   *param_1 = 0xe792;
-  iVar1.field_0x2 = 0x1020;
+  i_var1.field_0x2 = 0x1020;
   puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2f,unaff_SS,extraout_DX,unaff_DI);
-  iVar1.field_0x28 = puVar2;
-  iVar1.field_0x2a = (puVar2 >> 0x10);
+  i_var1.field_0x28 = puVar2;
+  i_var1.field_0x2a = (puVar2 >> 0x10);
   return;
 }
 
@@ -334,22 +334,22 @@ struct_1020_d99e(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: u32,param_5:
 
 {
   let unaff_DI: i16;
-  let puVar1: U32Ptr;
+  let pu_var1: U32Ptr;
   let uVar2: u16;
   let iVar2: &mut Struct178;
   
   iVar2 = param_1;
  // uVar2 = (param_1 >> 0x10);
-  puVar1 = pass1_1030_dcc2(iVar2,uVar2,param_3,param_4,param_5);
+  pu_var1 = pass1_1030_dcc2(iVar2,uVar2,param_3,param_4,param_5);
   iVar2.field_0x24 = param_2;
   iVar2.field_0x26 = 0x0;
   &iVar2.field_0x28 = 0x0;
   *param_1 = 0xe792;
   iVar2.field_0x2 = 0x1020;
-  puVar1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2f,param_6,
-                           (puVar1 >> 0x10),unaff_DI);
-  iVar2.field_0x28 = puVar1;
-  iVar2.field_0x2a = (puVar1 >> 0x10);
+  pu_var1 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2f,param_6,
+                           (pu_var1 >> 0x10),unaff_DI);
+  iVar2.field_0x28 = pu_var1;
+  iVar2.field_0x2a = (pu_var1 >> 0x10);
   iVar2.field_0x10 = 0x49;
   return param_1;
 }

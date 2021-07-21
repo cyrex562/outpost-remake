@@ -2284,13 +2284,13 @@ pub fn pass1_1008_738c(param_1: u16,param_2: u16,param_3: u16) -> u16
 pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
 
 {
-  let iVar1: i16;
+  let i_var1: i16;
   let iStack4: i16;
   
   iStack4 = 0x0;
-  iVar1 = param_3;
-  if ((ctx.PTR_LOOP_1050_0312 < 0x2) && (iVar1 = iStack4, true)) {
-    iVar1 = param_3;
+  i_var1 = param_3;
+  if ((ctx.PTR_LOOP_1050_0312 < 0x2) && (i_var1 = iStack4, true)) {
+    i_var1 = param_3;
     switch(param_3) {
     0x18 =>
     0x19 =>
@@ -2329,11 +2329,11 @@ pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
     0x3a =>
     0x3b =>
     0x3c =>
-      iVar1 = param_3 + 0x3;
+      i_var1 = param_3 + 0x3;
       break;
     0x3d =>
     0x3e =>
-      iVar1 = param_3 + 0x4;
+      i_var1 = param_3 + 0x4;
       break;
     0x3f =>
     0x40 =>
@@ -2375,7 +2375,7 @@ pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
     0x64 =>
     0x65 =>
     0x66 =>
-      iVar1 = param_3 + 0x8;
+      i_var1 = param_3 + 0x8;
       break;
     0x67 =>
     0x68 =>
@@ -2403,10 +2403,10 @@ pub fn  switch_1008_73ea(param_1: u16,param_2: u16,param_3: i16) -> i16
     0x7e =>
     0x7f =>
     0x80 =>
-      iVar1 = param_3 + 0x9;
+      i_var1 = param_3 + 0x9;
     }
   }
-  iStack4 = iVar1;
+  iStack4 = i_var1;
   return iStack4;
 }
 

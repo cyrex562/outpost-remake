@@ -403,7 +403,7 @@ pub fn write_to_file_1028_b5ec(param_1: u32,param_2: u32,param_3: u16) -> bool
     }
   }
   BVar2 = write_to_file_1008_7e1c(uVar5,uVar6,local_8,param_3,0x2,0x1008);
-joined_r0x1028b766:
+// joined_r0x1028b766:
   if (BVar2 == 0x0) {
     ctx.PTR_LOOP_1050_0310 = 0x6d0;
     return 0x0;

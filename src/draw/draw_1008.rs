@@ -2,7 +2,7 @@ use crate::{
     fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708},
     mem_1000::mem_op_1000_160a,
     pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c},
-    string::string_1000::unk_str_op_1000_3d3e,
+    string::string_1000::string_1000_3d3e,
     util::{CONCAT22, ZEXT24},
     win_struct::{
         HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, PALETTEENTRY, RECT16,
@@ -51,7 +51,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     struct_4.field_0x0 = 0x6378;
     struct_4.field_0x2 = 0x1008;
     struct_1 = struct_from_addr::<Struct79>(extraout_dx);
-    unk_str_op_1000_3d3e(
+    string_1000_3d3e(
         (struct_4 & 0xffff0000 | &i_var1.field_0x5b),
         &mut ctx.s_DanBrotherton_1050_0302,
     );
@@ -110,7 +110,7 @@ pub fn unk_draw_op_1008_7f62(
     iVar3.field_0xde = param_2;
     param_1.field_0x0 = 0x8042;
     iVar3.field_0x2 = 0x1008;
-    unk_str_op_1000_3d3e(
+    string_1000_3d3e(
         (param_1 & 0xffff0000 | &iVar3.field_0x5b),
         s_SOLChildPar_1050_0358,
     );
@@ -146,7 +146,7 @@ pub fn unk_draw_op_1008_80ee(
     i_var3.field_0x58 = 0x0;
     param_1.field_0x0 = 0x87c8;
     i_var3.field_0x2 = 0x1008;
-    unk_str_op_1000_3d3e(
+    string_1000_3d3e(
         (param_1 & 0xffff0000 | &i_var3.field_0x4),
         ctx.s_MicroSpinControl_1050_0370,
     );

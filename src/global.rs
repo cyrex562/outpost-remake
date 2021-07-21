@@ -106,6 +106,11 @@ pub struct AppContext {
     pub _PTR_s_dcbSC_1050_0336_1050_033c: String,
     pub s_SCInternalPutBldg_site_0x_08lx__b_1050_5046: U32Ptr,
     pub _PTR_LOOP_1050_4230: U32Ptr,
+    pub _PTR_LOOP_1050_5748: U32Ptr,
+    pub _PTR_LOOP_1050_0ed0: U32Ptr,
+    pub _PTR_LOOP_1050_5b7c: U32Ptr,
+    pub PTR__LOOP_1050_5bc8: U32Ptr,
+    pub s_New_failed_in_Op__Op__Simulator_1050_0110: String,
 }
 
 impl AppContext {
@@ -213,7 +218,12 @@ impl AppContext {
             _PTR_PTR_1050_61e0: "".to_string(),
             _PTR_s_dcbSC_1050_0336_1050_033c: "".to_string(),
             s_SCInternalPutBldg_site_0x_08lx__b_1050_5046: 0,
-            _PTR_LOOP_1050_4230: 0
+            _PTR_LOOP_1050_4230: 0,
+            _PTR_LOOP_1050_5748: 0,
+            _PTR_LOOP_1050_0ed0: 0,
+            _PTR_LOOP_1050_5b7c: 0,
+            PTR__LOOP_1050_5bc8: 0,
+            s_New_failed_in_Op__Op__Simulator_1050_0110: "".to_string()
         }
     }
 }

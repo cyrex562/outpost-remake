@@ -4,7 +4,7 @@ switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5:
                 param_6: u16,param_7: u16)
 
 {
-  let puVar1: U32Ptr;
+  let pu_var1: U32Ptr;
   let uVar2: u16;
   let uVar3: u16;
   let puVar4: U32Ptr;
@@ -148,10 +148,10 @@ switchD_1030_069f_caseD_19:
   0x1e =>
   0x1f =>
     mem_op_1000_179c(0x26,param_4,0x1000);
-    puVar1 = (param_4 | param_5);
-    if (puVar1 != 0x0) {
-      struct_1028_0068(CONCAT22(param_4,param_5),puVar1);
-      return CONCAT22(puVar1,param_5);
+    pu_var1 = (param_4 | param_5);
+    if (pu_var1 != 0x0) {
+      struct_1028_0068(CONCAT22(param_4,param_5),pu_var1);
+      return CONCAT22(pu_var1,param_5);
     }
     break;
   0x20 =>
@@ -234,10 +234,10 @@ switchD_1030_069f_caseD_19:
   0x34 =>
   0x35 =>
     mem_op_1000_179c(0x2c,param_4,0x1000);
-    puVar1 = (param_4 | param_5);
-    if (puVar1 != 0x0) {
-      struct_1028_37a6(CONCAT22(param_4,param_5),puVar1,param_6,param_7);
-      return CONCAT22(puVar1,param_5);
+    pu_var1 = (param_4 | param_5);
+    if (pu_var1 != 0x0) {
+      struct_1028_37a6(CONCAT22(param_4,param_5),pu_var1,param_6,param_7);
+      return CONCAT22(pu_var1,param_5);
     }
     break;
   0x36 =>
@@ -283,10 +283,10 @@ joined_r0x103002a1:
     break;
   0x3e =>
     mem_op_1000_179c(0x26,param_4,0x1000);
-    puVar1 = (param_4 | param_5);
-    if (puVar1 != 0x0) {
-      struct_1028_1f56(CONCAT22(param_4,param_5),puVar1);
-      return CONCAT22(puVar1,param_5);
+    pu_var1 = (param_4 | param_5);
+    if (pu_var1 != 0x0) {
+      struct_1028_1f56(CONCAT22(param_4,param_5),pu_var1);
+      return CONCAT22(pu_var1,param_5);
     }
     break;
   0x3f =>

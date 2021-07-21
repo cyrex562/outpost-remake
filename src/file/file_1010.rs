@@ -10,7 +10,7 @@ use crate::win_struct::{HINSTANCE16, WNDCLASS16};
 
 pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16)
 {
-  let puVar1: u32;
+  let pu_var1: u32;
   let ppcVar2: u32;
   let BVar3: bool;
   let uVar4: &mut Struct229;
@@ -70,9 +70,9 @@ pub fn file_1010_0c7c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
         }
        // uVar6 = (puStack22 >> 0x10);
         (puStack22 + 0x4) = local_12[0];
-        puVar1 = iVar6.field_0xa;
+        pu_var1 = iVar6.field_0xa;
         ppcVar2 = (*iVar6.field_0xa + 0x8);
-        (**ppcVar2)(0x8,puVar1,(puVar1 >> 0x10),puStack22,uVar6);
+        (**ppcVar2)(0x8,pu_var1,(pu_var1 >> 0x10),puStack22,uVar6);
         paStack8 = &paStack8.field_0x1;
         param_4 = extraout_DX;
       }
@@ -209,7 +209,7 @@ pub fn write_to_file_1010_6846(param_1: u32,param_2: u32,param_3: u16)
 }
 
 
-pub unsafe fn unk_io_op_1010_830a(param_1: u32, param_2: u16, param_3: &mut WNDCLASS16) -> Option<&mut Struct43>
+pub  fn unk_io_op_1010_830a(param_1: u32, param_2: u16, param_3: &mut WNDCLASS16) -> Option<&mut Struct43>
 
 {
   let in_ax: u16;

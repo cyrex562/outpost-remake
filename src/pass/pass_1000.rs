@@ -1,18 +1,18 @@
 use core::num::flt2dec::to_exact_exp_str;
 
 use crate::{string::string_1000::poss_str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
-use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr, Struct_1000_30a4};
+use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr};
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
 use crate::global::AppContext;
 use crate::mem_1000::{free_mem_1000_407a, mem_1000_0670, mem_1000_167a, mem_1000_2bb6, mem_op_1000_0510, mem_op_1000_0838, mem_op_1000_0a48, mem_op_1000_1532, mem_op_1000_160a, mem_op_1000_1b9a, mem_op_1000_1dfa, mem_op_1000_21b6, mixed_mem_op_1000_3c51};
 use crate::misc::ret_op_1000_55ac;
 use crate::msg_box::{msg_box_op_1000_1f24, msg_box_op_1000_214c};
-use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e, str_op_1000_3dbe};
+use crate::string::string_1000::{string_1000_3d3e, str_op_1000_3da4, str_op_1000_3dbe};
 use crate::string::string_1000;
 use crate::struct_ops::struct_1008;
 use crate::sys_api::{dos3_call_1000_514e, dos3_call_1000_5174, dos3_call_op_1000_35fe, dos3_op_1000_256b, mixed_dos3_call_1000_370a, mixed_dos3_call_1000_39f2, sys_1000_30b4};
-use crate::util::{address_of, CARRY2, CARRY4, CONCAT11, CONCAT12, CONCAT13, CONCAT22, read_string_from_addr, read_struct_from_addr, SBORROW2, SEXT24, SUB42, ZEXT24, read_string_from_rsrc, write_string_to_addr, write_bool_to_addr, make_u16_ptr};
+use crate::util::{address_of, CARRY2, CARRY4, CONCAT11, CONCAT12, CONCAT13, CONCAT22, make_u16_ptr, read_string_from_addr, read_string_from_rsrc, read_struct_from_addr, SBORROW2, SEXT24, SUB42, write_bool_to_addr, write_string_to_addr, ZEXT24};
 use crate::win_struct::{CONTEXT, WNDCLASS16};
 use crate::winapi::{FatalAppExit16, FatalExit, GetModuleFileName16, GlobalDOSFree16, SegmentLimit, swi};
 
@@ -49,7 +49,7 @@ pub fn pass1_1000_05b4(param_1: u8, param_2: i16)
     return;
 }
 
-pub unsafe fn pass1_1000_0782(param_1: u32, param_2: u16, param_3: i16, in_stack_00000004: u16) -> u16
+pub fn pass1_1000_0782(param_1: u32, param_2: u16, param_3: i16, in_stack_00000004: u16) -> u16
 
 {
     (param_3 + 0xe) = 0x0;
@@ -60,7 +60,7 @@ pub unsafe fn pass1_1000_0782(param_1: u32, param_2: u16, param_3: i16, in_stack
 }
 
 
-pub unsafe fn pass1_1000_07ac(param_1: u16, param_2: i16, param_3: i16)
+pub fn pass1_1000_07ac(param_1: u16, param_2: i16, param_3: i16)
 
 {
     let pu_var1: U32Ptr;
@@ -81,7 +81,7 @@ pub unsafe fn pass1_1000_07ac(param_1: u16, param_2: i16, param_3: i16)
 }
 
 
-pub unsafe fn pass1_1000_07fc(
+pub fn pass1_1000_07fc(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u32,
@@ -98,7 +98,7 @@ pub unsafe fn pass1_1000_07fc(
     out = Some(pa_var1);
 }
 
-pub unsafe fn pass1_1000_093a(
+pub fn pass1_1000_093a(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
@@ -148,7 +148,7 @@ pub unsafe fn pass1_1000_09a0(
 }
 
 
-pub unsafe fn pass1_1000_09ca(param_1: i16, param_2: &mut Struct_1000_09ca) -> u16
+pub  fn pass1_1000_09ca(param_1: i16, param_2: &mut Struct_1000_09ca) -> u16
 
 {
     let pu_var1: U32Ptr;
@@ -181,7 +181,7 @@ pub unsafe fn pass1_1000_09ca(param_1: i16, param_2: &mut Struct_1000_09ca) -> u
 }
 
 
-pub unsafe fn pass1_1000_0c32(
+pub  fn pass1_1000_0c32(
     param_1: u16,
     param_2: u16,
     param_3: &mut Struct_1000_0c32,
@@ -352,7 +352,7 @@ pub unsafe fn pass1_1000_0e08(
 }
 
 
-pub unsafe fn pass1_1000_0ed4(
+pub  fn pass1_1000_0ed4(
     ctx: &mut AppContext,
     param_1: u16,
     mut param_2: u16,
@@ -442,7 +442,7 @@ pub unsafe fn pass1_1000_0ed4(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1000_0fb8(
+pub  fn pass1_1000_0fb8(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,
@@ -575,7 +575,7 @@ pub unsafe fn pass1_1000_0fb8(
 }
 
 
-pub unsafe fn pass1_1000_115c(ctx: &mut AppContext, param_1: i16, param_2: U32Ptr) -> bool
+pub  fn pass1_1000_115c(ctx: &mut AppContext, param_1: i16, param_2: U32Ptr) -> bool
 
 {
     let ptr_1: U32Ptr;
@@ -1977,13 +1977,16 @@ pub unsafe fn pass1_1000_2a00(ctx: &mut AppContext, param_1: &mut Struct_1000_2c
             // goto
             // LAB_1000_2af2;
         }
-        unk_str_op_1000_3d3e(read_string_from_addr(CONCAT22(param_5, local_10 as u16)), read_string_from_addr(0x10505fea));
+        string_1000_3d3e(
+            read_string_from_addr(CONCAT22(param_5, local_10 as u16)),
+            read_string_from_addr(0x10505fea)
+        );
         pu_stack20 = local_e;
         if local_10 == '\\' as u8 {
             pu_stack20 = u_stack15 as u32;
         } else {
-            pass1_1000_3cea(
-                CONCAT22(param_5, local_10 as u16) as i32,
+            string_1000::string_1000_3cea(
+                read_string_from_addr(CONCAT22(param_5, local_10 as u16)),
                 read_string_from_addr(0x10505fec)
             );
         }
@@ -3480,89 +3483,7 @@ pub fn pass1_1000_3cd8(param_1: u16, param_2: u16, stack0xfffe: u16) {
 }
 
 
-pub unsafe fn pass1_1000_3cea(param_1: i32, param_2: &String) -> u16
-
-{
-    let p_uvar1: U32Ptr;
-    let mut pc_var2: &String;
-    let p_uvar3: U32Ptr;
-    let i_var4: i16;
-    let u_var5: u16;
-    let u_var6: u16;
-    let p_uvar7: U32Ptr;
-    let mut pc_var8: &String;
-    let p_uvar9: U32Ptr;
-    let p_uvar10: U32Ptr;
-    let u_var11: u16;
-    let u_var12: u16;
-    let b_var13: bool;
-
-    // u_var11 = (param_1 >> 0x10);
-    b_var13 = true;
-    i_var4 = -0x1;
-    p_uvar7 = param_1 as u32;
-    loop {
-        if (i_var4 == 0x0) { break; }
-        i_var4 += -0x1;
-        p_uvar1 = p_uvar7;
-        p_uvar7 = (p_uvar7 + 0x1);
-        b_var13 = *p_uvar1 == '\0';
-        if b_var13 { break; }
-    }
-    p_uvar10 = (p_uvar7 + -0x1);
-    // u_var12 = (param_2 >> 0x10);
-    pc_var8 = param_2;
-    u_var5 = 0xffff;
-    loop {
-        if (u_var5 == 0x0) { break; }
-        u_var5 -= 0x1;
-        pc_var2 = pc_var8;
-        pc_var8 = pc_var8 + 0x1;
-        b_var13 = *pc_var2 == '\0';
-        if b_var13 { break; }
-    }
-    u_var5 = !u_var5;
-    if (!b_var13) {
-        pc_var8 = pc_var8 + -u_var5;
-        u_var5 += 0x1;
-    }
-    p_uvar9 = (pc_var8 + -u_var5);
-    if (u_var5 == 0x0) {
-        p_uvar1 = p_uvar9;
-        p_uvar9 = p_uvar9 + 0x1;
-        *p_uvar10 = *p_uvar1;
-        u_var5 = 0xfffe;
-        p_uvar10 = (p_uvar7 + 0x1);
-    } else {
-        if ((p_uvar9 & 0x1) != 0x0) {
-            p_uvar1 = p_uvar9;
-            p_uvar9 = (p_uvar9 + 0x1);
-            *p_uvar10 = *p_uvar1;
-            u_var5 -= 0x1;
-            p_uvar10 = p_uvar7;
-        }
-    }
-    // TODO: refactor for loop
-    // for (u_var6 = u_var5 >> 0x1; u_var6 != 0x0; u_var6 -= 0x1) {
-    //   p_uvar3 = p_uvar10;
-    //   p_uvar10 = p_uvar10 + 0x1;
-    //   p_uvar1 = p_uvar9;
-    //   p_uvar9 = p_uvar9 + 0x1;
-    //   *p_uvar3 = *p_uvar1;
-    // }
-    // TODO: refactor for loop
-    // for (u_var5 = ((u_var5 & 0x1) != 0x0); u_var5 != 0x0; u_var5 -= 0x1) {
-    //   p_uvar3 = p_uvar10;
-    //   p_uvar10 = (p_uvar10 + 0x1);
-    //   p_uvar1 = p_uvar9;
-    //   p_uvar9 = (p_uvar9 + 0x1);
-    //   *p_uvar3 = *p_uvar1;
-    // }
-    return param_1 as u16;
-}
-
-
-pub unsafe fn pass1_1000_3d7a(param_1: u32, param_2: &String) -> i16
+pub  fn pass1_1000_3d7a(param_1: u32, param_2: &String) -> i16
 
 {
     let pb_var1: U32Ptr;
@@ -3758,7 +3679,7 @@ pub fn pass1_1000_3e2c(string_1: &String) -> i16
 // }
 
 
-pub unsafe fn pass1_1000_3e82(
+pub fn pass1_1000_3e82(
     param_1: &mut u16,
     param_2: U32Ptr,
     param_3: u16,
@@ -3780,14 +3701,14 @@ pub unsafe fn pass1_1000_3e82(
     let c_var4: u8;
 
     u_var6 = 0x0;
-    if (param_3 == 0xa) {
+    if param_3 == 0xa {
         u_var6 = param_1 >> 0xf;
     }
 // u_var12 = (param_2 >> 0x10);
     pb_var9 = param_2;
     pb_var10 = pb_var9;
     pb_var8 = pb_var9;
-    if (((true) & &(param_3 == 0xa)) & &(u_var6 < 0x0)) {
+    if (true &&(param_3 == 0xa)) & &(u_var6 < 0x0) {
         pb_var10 = pb_var9 + 0x1;
         *param_2 = '-';
         b_var13 = *param_1 != 0x0;
@@ -3798,7 +3719,7 @@ pub unsafe fn pass1_1000_3e82(
     loop {
         u_var7 = 0x0;
         u_var5 = u_var6;
-        if (u_var6 != 0x0) {
+        if u_var6 != 0x0 {
             u_var5 = u_var6 / param_3;
             u_var7 = u_var6 % param_3;
         }
@@ -3806,7 +3727,7 @@ pub unsafe fn pass1_1000_3e82(
         *param_1 = (u_var2 / param_3) as u16;
         c_var4 = (u_var2 % param_3) as u8;
         b_var3 = c_var4 + 0x30;
-        if (0x39 < b_var3) {
+        if 0x39 < b_var3 {
             b_var3 = c_var4 + 0x57;
         }
         pb_var11 = pb_var10 + 0x1;
@@ -3940,7 +3861,7 @@ pub fn pass1_1000_400a(
 }
 
 
-pub unsafe fn pass1_1000_41e0(param_1: i16) -> u16
+pub  fn pass1_1000_41e0(param_1: i16) -> u16
 
 {
     let pi_stack6: U32Ptr;

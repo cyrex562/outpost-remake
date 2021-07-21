@@ -88,20 +88,20 @@ mixed_struct_op_1040_8fb8
 
 pub fn struct_1040_a598(param_1: U32Ptr)
 {
-  let iVar1: &mut Struct259;
+  let i_var1: &mut Struct259;
   let uVar1: u16;
   
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
+  i_var1 = param_1;
   *param_1 = 0x0;
-  iVar1.field_0x2 = 0x0;
-  iVar1.field_0x6 = 0x0;
-  iVar1.field_0xa = 0x0;
-  iVar1.field_0xc = 0x0;
-  iVar1.field_0x10 = 0x0;
-  iVar1.field_0x12 = 0x0;
-  iVar1.field_0x14 = 0x0;
-  iVar1.field_0x16 = 0x0;
+  i_var1.field_0x2 = 0x0;
+  i_var1.field_0x6 = 0x0;
+  i_var1.field_0xa = 0x0;
+  i_var1.field_0xc = 0x0;
+  i_var1.field_0x10 = 0x0;
+  i_var1.field_0x12 = 0x0;
+  i_var1.field_0x14 = 0x0;
+  i_var1.field_0x16 = 0x0;
   return;
 }
 
@@ -109,16 +109,16 @@ pub fn struct_1040_a598(param_1: U32Ptr)
 
 pub fn struct_1040_b082(param_1: &mut Struct57,param_2: u32)
 {
-  let iVar1: &mut Struct437;
+  let i_var1: &mut Struct437;
   let uVar1: u16;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,param_2,(param_2 >> 0x10));
  // uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  iVar1.field_0x8e = 0x0;
-  iVar1.field_0x90 = 0x0;
+  i_var1 = param_1;
+  i_var1.field_0x8e = 0x0;
+  i_var1.field_0x90 = 0x0;
   param_1 = 0xb772;
-  iVar1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
+  i_var1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
   return;
 }
 

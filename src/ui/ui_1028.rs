@@ -25,19 +25,19 @@ pub fn post_msg_1028_76da()
 
 pub fn send_msg_1028_e242(param_1: U32Ptr,param_2: i16,param_3: HWND16)
 {
-  let puVar1: U32Ptr;
+  let pu_var1: U32Ptr;
   let unaff_DI: i16;
   let unaff_SS: u16;
   let LVar2: LRESULT;
   
-  puVar1 = (*param_1 % 0x64);
+  pu_var1 = (*param_1 % 0x64);
   if (*param_1 % 0x64 == 0x0) {
     LVar2 = SendMessage16(param_3,0x0,0x0,0x410000);
-   // puVar1 = (LVar2 >> 0x10);
+   // pu_var1 = (LVar2 >> 0x10);
   }
   *param_1 = *param_1 + 0x1;
   if (param_2 != 0x0) {
-    pass1_1028_e28a(puVar1,unaff_DI,unaff_SS);
+    pass1_1028_e28a(pu_var1,unaff_DI,unaff_SS);
   }
   return;
 }

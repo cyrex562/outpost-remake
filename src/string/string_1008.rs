@@ -9,7 +9,7 @@ use crate::pass::pass_1020::pass1_1020_bd80;
 use crate::pass::pass_1028::pass1_1028_e1ec;
 use crate::pass::pass_1030::pass1_1030_1d7c;
 use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78};
-use crate::string::string_1000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::string::string_1000::{str_op_1000_3da4, string_1000_3d3e};
 use crate::string::string_1010::{load_string_1010_847e, load_string_1010_84ac, load_string_1010_84e0};
 use crate::struct_ops::struct_1008::{pass1_1008_c6ae, pass1_1008_c6fa, set_struct_1008_574a};
 use crate::struct_ops::struct_1018::struct_1018_47c8;
@@ -185,7 +185,7 @@ pub fn load_str_and_sprintf_1008_b78a(param_1: i32, param_2: U32Ptr, uparam_3: &
 
 
 pub fn unk_str_op_1008_d1c6(param_1: u32, param_2: u32) {
-    let iVar1: i16;
+    let i_var1: i16;
     let uVar2: u32;
     let ppcVar3: u32;
     let bVar4: bool;
@@ -252,7 +252,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32, param_2: u32) {
     //   uVar15 = uVar19;
     //   puVar13 = (uVar12 | uVar15);
     //   if (((puVar13 != 0x0) && ((uVar15 + 0x1c) != 0x8000002)) &&
-    //      ((iVar1 = (uVar15 + 0x12), iVar1 == 0x5 || (iVar1 == 0x6)))) {
+    //      ((i_var1 = (uVar15 + 0x12), i_var1 == 0x5 || (i_var1 == 0x6)))) {
     //     puVar13 = ((uVar15 + 0x6) & 0xff);
     //     pass1_1020_bd80((uVar15 + 0xc));
     //     wsprintf16(0x1020,(iVar16 + 0x22),valist);
@@ -438,7 +438,7 @@ pub fn string_1008_e586(param_1: u16, param_2: u16, param_3: u32, param_4: u16, 
     let puVar2: U32Ptr;
     let mut in_string_2: String;
 
-    pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2, param_3 as u16, ((param_3 >> 0x10) as u16));
+    pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2, param_3 as u16);
     puVar2 = (param_5 | param_4) as u32;
     if (puVar2 == 0x0) {
         return 0x0;
@@ -446,7 +446,7 @@ pub fn string_1008_e586(param_1: u16, param_2: u16, param_3: u32, param_4: u16, 
     uVar1 = param_4;
     mem_op_1000_179c(0x80, puVar2 as u16, 0x1000);
     in_string_2 = load_string_1038_4d28(CONCAT22(param_5, param_4));
-    unk_str_op_1000_3d3e(CONCAT22(puVar2 as u16, uVar1), in_string_2);
+    string_1000_3d3e(CONCAT22(puVar2 as u16, uVar1), in_string_2);
     return CONCAT22(puVar2 as u16, uVar1);
 }
 

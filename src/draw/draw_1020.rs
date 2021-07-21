@@ -10,12 +10,12 @@ use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_375e, pass1_1010_3770, 
 use crate::pass::pass_1018::{pass1_1018_017c, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_0d9a, pass1_1018_1054, pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c, pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0};
 use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498, pass1_1020_64d4, pass1_1020_68de};
 use crate::pass::pass_1030::pass1_1030_8308;
-use crate::string::string_1000::unk_str_op_1000_3d3e;
+use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
 use crate::sys_api::get_sys_metrics_1020_7c1a;
 use crate::ui::ui_1008::{create_palette_1008_4e38, file_and_draw_op_1008_4f20, win_1008_5c9e, win_ui_reg_class_1008_96d2};
-use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, read_struct_from_addr, struct_from_addr, SUB42, ZEXT24};
-use crate::win_struct::{COLORREF, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16};
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, read_struct_from_addr, SUB42, ZEXT24};
+use crate::win_struct::{COLORREF, DEVMODEA, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16, HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16};
 use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, lstrlen16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16};
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16)
@@ -739,7 +739,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(param_1: U32Ptr, param_2: u16, param_3: 
 }
 
 
-pub unsafe fn load_draw_op_1020_2ede(param_1: U32Ptr, param_2: u32, param_3: u16)
+pub unsafe fn load_draw_op_1020_2ede(ctx: &mut AppContext, param_1: U32Ptr, param_2: u32, param_3: u16)
 {
   let u_var1: u32;
   let ppc_var2: u32;
@@ -755,7 +755,7 @@ pub unsafe fn load_draw_op_1020_2ede(param_1: U32Ptr, param_2: u32, param_3: u16
   let pu_var8: U32Ptr;
   let pa_var9: &mut Struct76;
   let u_var10: u32;
-  init_data: DEVMODEA;
+  let init_data: DEVMODEA;
   
   get_sys_metrics_1020_7c1a(param_1, param_2, param_3 as i16);
  // u_var7 = (param_1 >> 0x10);
@@ -768,7 +768,7 @@ pub unsafe fn load_draw_op_1020_2ede(param_1: U32Ptr, param_2: u32, param_3: u16
   (i_var6 + 0x20) = 0x0;
   *param_1 = 0x363c;
   (i_var6 + 0x2) = 0x1020;
-  pu_var8 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, (param_2 + 0xfc), unaff_ss,
+  pu_var8 = mixed_1010_20ba(ctx, ctx.PTR__LOOP_1050_0ed0, (param_2 + 0xfc), unaff_ss,
                             in_dx, unaff_di);
   (i_var6 + 0x14) = pu_var8;
   (i_var6 + 0x16) = (pu_var8 >> 0x10);
@@ -897,10 +897,11 @@ pub fn unk_draw_op_1020_320e(param_1: u32,param_2: HDC16,param_3: u16)
   let u_var6: u16;
   let u_var7: u16;
   let u_var8: u32;
-  init_data: DEVMODEA;
+  let init_data: DEVMODEA;
   let local_c: i16;
   let local_a: u32;
-  HDC16 *pHStack6;
+  // HDC16 *pHStack6;
+  let pHStack6: HDC16;
   let local_4: HDC16;
   
   local_4 = param_2;
@@ -1920,7 +1921,7 @@ pub unsafe fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_
   i_var4.field_0x2 = 0x1020;
   ((i_var4 + 0x1)).field_0x0 = 0x8358;
   i_var4[0x1].field_0x2 = 0x1020;
-  unk_str_op_1000_3d3e
+  string_1000_3d3e
             ((param_1 & 0xffff0000 | ZEXT24(&i_var4.field_0x5b)),
              s_VrMode_1050_4422);
   hvar2 = GetStockObject16(0x1000);
