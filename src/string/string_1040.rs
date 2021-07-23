@@ -4,7 +4,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
 
 {
   let UVar1: i32;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   let uVar3: u16;
   let u_var4: u16;
   let iVar5: &mut Struct293;
@@ -48,9 +48,9 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     iStack16 += -0x1;
   }
   iStack22 = 0x0;
-  while (puVar2 = _iStack14, iStack16 != 0x0) {
+  while (pu_var2 = _iStack14, iStack16 != 0x0) {
     _iStack14 = (_iStack14 & 0xffff0000 | (iStack14 + 0x2));
-    uStack20 = *puVar2;
+    uStack20 = *pu_var2;
     iStack16 = iStack16 + -0x1;
     pcVar7 = load_string_1010_847e
                        (ctx.PTR__LOOP_1050_14cc,
@@ -79,9 +79,9 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
                (UVar1 >> 0x10));
     iStack16 += -0x1;
   }
-  while (puVar2 = _iStack14, iStack16 != 0x0) {
+  while (pu_var2 = _iStack14, iStack16 != 0x0) {
     _iStack14 = (_iStack14 & 0xffff0000 | (iStack14 + 0x2));
-    uStack20 = *puVar2;
+    uStack20 = *pu_var2;
     iStack16 = iStack16 + -0x1;
     pcVar7 = load_string_1010_847e
                        (ctx.PTR__LOOP_1050_14cc,

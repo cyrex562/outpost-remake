@@ -468,7 +468,7 @@ pub fn win_ui_cursor_op_1008_2e9a(astruct_72 * * param_1, param_2: u16) {
 pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: &mut WNDCLASS16) {
     let u_var1: u32;
     let iVar2: i16;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let u_var4: u16;
     let BVar5: bool;
     let in_DX: U32Ptr;
@@ -526,11 +526,11 @@ pub fn save_file_1008_3178(param_1: u32, param_2: i16, param_3: &mut WNDCLASS16)
         if ((uVar10 | paStack1646) != 0x0) {
             pass1_1008_5784(CONCAT22(param_3, local_67e),
                             paStack1646 & 0xffff | uVar10 << 0x10);
-            puVar3 = local_67e;
-            pass1_1008_5b12(puVar3, param_3);
-            paStack1654 = CONCAT22(extraout_dx, puVar3);
-            if ((extraout_dx | puVar3) != 0x0) {
-                u_var1 = (puVar3 + 0x2);
+            pu_var3 = local_67e;
+            pass1_1008_5b12(pu_var3, param_3);
+            paStack1654 = CONCAT22(extraout_dx, pu_var3);
+            if ((extraout_dx | pu_var3) != 0x0) {
+                u_var1 = (pu_var3 + 0x2);
                 uStack778._0_2_ = u_var1;
                 // uVar10 = (u_var1 >> 0x10);
 //         TODO: goto LAB_1008_3206;
@@ -995,7 +995,7 @@ pub unsafe fn create_palette_1008_4e38(
     in_log_palette_2: &mut LOGPALETTE,
     param_3: U32Ptr) {
     let piVar1: U32Ptr;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let u_var4: u16;
     let local_struct_1: &mut Struct13;
     let iVar5: i16;
@@ -1019,8 +1019,8 @@ pub unsafe fn create_palette_1008_4e38(
         *local_struct_1.field_0xe = 0x300;
         uVar3 = local_struct_1.field_0xe;
         (uVar3 + 0x2) = local_struct_1.field_0xc;
-        puVar2 = local_struct_1.field_0xe;
-        puStack8 = (puVar2 & 0xffff0000 | (puVar2 + 0x4));
+        pu_var2 = local_struct_1.field_0xe;
+        puStack8 = (pu_var2 & 0xffff0000 | (pu_var2 + 0x4));
         puStack12 = local_struct_1.field_0x4;
         iStack14 = 0x0;
         loop {
@@ -1300,11 +1300,11 @@ make_def_win_proc_1008_5f44
 (param_1: u16,in_wparam_2: WPARAM16,param_3: LPARAM,in_hwnd_4: HWND16)
 
 {
-let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; let LVar2: LRESULT; let puVar3: * mut u16;
+let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; let LVar2: LRESULT; let pu_var3: * mut u16;
 
 if (param_3._2_2_ == 0x2) {
 WVar1 = GetWindowWord16(in_hwnd_4, 0x0); mci_send_command_1008_5cb6(ctx.PTR__LOOP_1050_02a0, WVar1, s_tile2_bmp_1050_1538);
-puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x37,unaff_SS, in_DX, unaff_DI); pass1_1008_aa28(puVar3, puVar3, unaff_SS);
+pu_var3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x37,unaff_SS, in_DX, unaff_DI); pass1_1008_aa28(pu_var3, pu_var3, unaff_SS);
 }
 else {
 if (param_3._2_2_ != 0x3b9) {
@@ -1322,20 +1322,20 @@ win_ui_op_1008_8214(param_1: u16,param_2: i16,param_3: u16,param_4: u32,param_5:
 param_6: * mut u8,param_7: HWND16)
 
 {
-let IVar1: i16; let puVar2: u32;
-let puVar3: * mut u16; let u_var4: u16;
+let IVar1: i16; let pu_var2: u32;
+let pu_var3: * mut u16; let u_var4: u16;
 
 if (param_2 == 0x81) {
 u_var4 = 0x6; mem_op_1000_179c(0x6, param_6,0x1000); if ((param_6 | param_5) == 0x0) {
-puVar2 = 0x0;
+pu_var2 = 0x0;
 }
 else {
-puVar2 = pass1_1008_80d2(CONCAT22(param_6, param_5));
+pu_var2 = pass1_1008_80d2(CONCAT22(param_6, param_5));
 }
-param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,puVar2, CONCAT22(u_var4, (puVar2 > > 0x10)));
+param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,pu_var2, CONCAT22(u_var4, (pu_var2 > > 0x10)));
 }
 if (param_2 == 0x1) {
-puVar3 = GetWindowLong16(param_7, 0x0); *puVar3 = (param_4 + 0x8); IVar1 = GetDlgCtrlID16(ctx.s_tile2_bmp_1050_1538); (puVar3 + 0x2) = IVar1;
+pu_var3 = GetWindowLong16(param_7, 0x0); *pu_var3 = (param_4 + 0x8); IVar1 = GetDlgCtrlID16(ctx.s_tile2_bmp_1050_1538); (pu_var3 + 0x2) = IVar1;
 }
 return 0x1;
 }
@@ -2133,7 +2133,7 @@ param_4); pass1_1008_944e(param_3, local_6, (local_6 > > 0x10)); return CONCAT22
 pub fn pass1_1008_a930(param_1: u32, param_2: i16, param_3: u16) {
     let u_var1: u32;
     let ppcVar2: u32;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let extraout_dx: u16;
     let u_var4: u16;
     let iVar5: i16;
@@ -2149,20 +2149,20 @@ pub fn pass1_1008_a930(param_1: u32, param_2: i16, param_3: u16) {
     iVar5 = param_1 as i16;
     pass1_1008_5784(CONCAT22(param_3, local_a), ((iVar5 + 0x410) as u32));
     loop {
-        puVar3 = local_a;
-        pass1_1008_5b12(puVar3, param_3);
-        u_var4 = extraout_dx | puVar3;
+        pu_var3 = local_a;
+        pass1_1008_5b12(pu_var3, param_3);
+        u_var4 = extraout_dx | pu_var3;
         if (u_var4 == 0x0) {
             mem_op_1000_179c(0x6, 0x0, 0x1000);
-            puStack24 = CONCAT22(u_var4, puVar3);
-            if ((u_var4 | puVar3) == 0x0) {
+            puStack24 = CONCAT22(u_var4, pu_var3);
+            if ((u_var4 | pu_var3) == 0x0) {
                 puStack18 = 0x0;
             } else {
                 *puStack24 = 0x389a;
-                (puVar3 + 0x2) = 0x1008;
-                (puVar3 + 0x4) = param_2;
+                (pu_var3 + 0x2) = 0x1008;
+                (pu_var3 + 0x4) = param_2;
                 *puStack24 = 0xad8a;
-                (puVar3 + 0x2) = 0x1008;
+                (pu_var3 + 0x2) = 0x1008;
                 puStack18 = puStack24;
             }
             u_var1 = (iVar5 + 0x410) as u32;
@@ -2171,7 +2171,7 @@ pub fn pass1_1008_a930(param_1: u32, param_2: i16, param_3: u16) {
                         (puStack18 >> 0x10));
             return;
         }
-        if ((puVar3 + 0x4) != param_2) == false { break; }
+        if ((pu_var3 + 0x4) != param_2) == false { break; }
     }
     return;
 }

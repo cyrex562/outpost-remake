@@ -73,7 +73,7 @@ pub unsafe fn draw_fn_1010_2a32(
     let uVar25: u32;
     let in_stack_0000ffca: u16;
     let uVar26: u16;
-    let puVar27: u32;
+    let pu_var27: u32;
     let in_stack_0000ffde: i16;
     let uVar28: u8;
     let HVar29: HGDIOBJ16;
@@ -315,14 +315,14 @@ pub unsafe fn draw_fn_1010_2a32(
                 }
                 uVar26 = in_stack_0000ffca;
                 mem_op_1000_179c(0x8, puVar17, 0x1000);
-                puVar27 = CONCAT22(puVar17, in_stack_0000ffca);
+                pu_var27 = CONCAT22(puVar17, in_stack_0000ffca);
                 puVar18 = (puVar17 | in_stack_0000ffca);
                 if (puVar18 == 0x0) {
-                    puVar27 = 0x0;
+                    pu_var27 = 0x0;
                 } else {
-                    puVar27 = 0x389a;
+                    pu_var27 = 0x389a;
                     (in_stack_0000ffca + 0x2) = 0x1008;
-                    puVar27 = 0xa1c4;
+                    pu_var27 = 0xa1c4;
                     (in_stack_0000ffca + 0x2) = 0x1010;
                 }
                 BVar14 =
@@ -332,9 +332,9 @@ pub unsafe fn draw_fn_1010_2a32(
                         BVar14 = read_file_1008_7dee(
                             param_5,
                             param_6,
-                            puVar27 + 0x6,
+                            pu_var27 + 0x6,
                             0x0,
-                            (puVar27 >> 0x10),
+                            (pu_var27 >> 0x10),
                             0x2,
                             0x1008,
                         ),
@@ -344,18 +344,18 @@ pub unsafe fn draw_fn_1010_2a32(
                     // break
                 };
                 iVar15 = switch_1008_73ea(param_5, param_6, in_stack_0000ffde);
-                (puVar27 + 0x4) = iVar15;
+                (pu_var27 + 0x4) = iVar15;
                 ppcVar7 = ((__return_storage_ptr__ + 0x12) + 0x4);
                 (**ppcVar7)();
                 uVar11 += 0x1;
                 puVar17 = extraout_DX_02;
                 in_stack_0000ffca = uVar26;
             }
-            if (puVar27 == 0x0) {
+            if (pu_var27 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return puVar18;
             }
-            ppcVar7 = *puVar27;
+            ppcVar7 = *pu_var27;
             (**ppcVar7)();
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return extraout_DX_01;
@@ -538,7 +538,7 @@ pub unsafe fn draw_1010_47ae(param_1: u32, param_2: u16, param_3: u16) {
 
 pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_style_3: i16, param_5: u16) {
     let pi_var1: U32Ptr;
-    let puVar2: u32;
+    let pu_var2: u32;
     let ppc_var3: u32;
     let i_var4: i16;
     let b_force_background: HPALETTE16;
@@ -575,13 +575,13 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
     uStack12 = 0x0;
     uStack10 = 0x1;
     uStack8 = 0x1;
-    puVar2 = (param_1 + 0x26 + param_3 * 0x4);
+    pu_var2 = (param_1 + 0x26 + param_3 * 0x4);
     puVar6 = (param_1 + 0x26 + param_3 * 0x4 + 0x2);
-    if ((puVar6 | puVar2) != 0x0) {
-        ppc_var3 = *puVar2;
+    if ((puVar6 | pu_var2) != 0x0) {
+        ppc_var3 = *pu_var2;
         (**ppc_var3)(
             ctx.s_tile2_bmp_1050_1538,
-            puVar2,
+            pu_var2,
             puVar6,
             0x1,
             uVar8,

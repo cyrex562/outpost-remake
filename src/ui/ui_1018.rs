@@ -34,7 +34,7 @@ win_op_1018_294a(param_1: i16,param_2: u16,param_3: u16,param_4: i32,param_5: u1
 pub fn unk_win_ui_op_1018_4f18(param_1: &mut Struct39,param_2: u16,param_3: u32)
 {
   let ppcVar1: u32;
-  let puVar2: u32;
+  let pu_var2: u32;
   let rect: *mut RECT16;
   let iVar3: i16;
   let u_var4: u32;
@@ -58,31 +58,31 @@ pub fn unk_win_ui_op_1018_4f18(param_1: &mut Struct39,param_2: u16,param_3: u32)
   u_var4 = paStack6 & 0xffff;
   ppcVar1 = (paStack6 + 0x14);
   (**ppcVar1)(0x1010,u_var4,(paStack6 >> 0x10));
-  puVar2 = u_var4;
+  pu_var2 = u_var4;
   uStack10 = u_var4 & 0xffff | ZEXT24(extraout_dx) << 0x10;
  // uVar8 = (param_1 >> 0x10);
   iVar6 = param_1;
   puVar5 = extraout_dx;
   if (&iVar6.field_0xe != 0x0) {
     uVar7 = iVar6.field_0x10;
-    puVar2 = &iVar6.field_0xe;
-    puVar5 = (uVar7 | puVar2);
+    pu_var2 = &iVar6.field_0xe;
+    puVar5 = (uVar7 | pu_var2);
     if (puVar5 != 0x0) {
-      ppcVar1 = *puVar2;
+      ppcVar1 = *pu_var2;
       (**ppcVar1)();
       puVar5 = extraout_DX_00;
     }
   }
   mem_op_1000_179c(0x14,puVar5,0x1000);
-  puVar6 = (puVar5 | puVar2);
+  puVar6 = (puVar5 | pu_var2);
   if (puVar6 == 0x0) {
-    puVar2 = 0x0;
+    pu_var2 = 0x0;
     puVar6 = 0x0;
   }
   else {
-    struct_1008_4c58(CONCAT22(puVar5,puVar2));
+    struct_1008_4c58(CONCAT22(puVar5,pu_var2));
   }
-  iVar6.field_0xe = puVar2;
+  iVar6.field_0xe = pu_var2;
   iVar6.field_0x10 = puVar6;
   pass1_1008_4d84(&iVar6.field_0xe,uStack10,puVar6);
   rect = &local_12;
@@ -138,7 +138,7 @@ pub fn win_1018_598c(astruct *param_1,param_2: u16,param_3: u16)
 pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
 {
   let u_var1: u32;
-  let pUVar2: &mut u32;
+  let pu_var2: &mut u32;
   let IVar3: i16;
   let puVar4: U32Ptr;
   let in_DX: U32Ptr;
@@ -198,10 +198,10 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
     pass1_1028_e4ec(CONCAT22(param_2,puVar4));
     uVar8 = uVar7 | puVar4;
     if (uVar8 == 0x0) { break; }
-    pUVar2 = (puVar4 + 0x10);
+    pu_var2 = (puVar4 + 0x10);
     uVar7 = uVar8;
-    if (pUVar2 != (ULONG *)0x0) {
-      string_1000_3cea(param_1 & 0xffff0000 | (iVar9 + 0x10), *pUVar2);
+    if (pu_var2 != (ULONG *)0x0) {
+      string_1000_3cea(param_1 & 0xffff0000 | (iVar9 + 0x10), *pu_var2);
       uVar7 = uVar8;
     }
   }
@@ -315,17 +315,17 @@ pub fn win_1018_df40(astruct *param_1,param_2: u16,param_3: U32Ptr,param_4: u16)
 {
   let i_var1: &mut Struct267;
   let u_var1: u16;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   
   create_window_ex_1008_9760(param_1,0x1008);
   mem_op_1000_179c(0xa,param_3,0x1000);
   i_var1 = param_1;
  // u_var1 = (param_1 >> 0x10);
   if ((param_3 | param_2) != 0x0) {
-    puVar2 = struct_1018_e100(CONCAT22(param_3,param_2),i_var1.field_0x8,
+    pu_var2 = struct_1018_e100(CONCAT22(param_3,param_2),i_var1.field_0x8,
                               (param_3 | param_2),param_4);
-    i_var1.field_0xe2 = puVar2;
-    i_var1.field_0xe4 = (puVar2 >> 0x10);
+    i_var1.field_0xe2 = pu_var2;
+    i_var1.field_0xe4 = (pu_var2 >> 0x10);
     return;
   }
   &i_var1.field_0xe2 = 0x0;
@@ -426,7 +426,7 @@ pub fn win_1020_0316(astruct *param_1,param_2: U32Ptr,param_3: u16)
 {
   let u_var1: u32;
   let u_var2: u16;
-  let puVar3: U32Ptr;
+  let pu_var3: U32Ptr;
   let puVar4: U32Ptr;
   let i_var1: &mut Struct273;
   let unaff_DI: i16;
@@ -435,21 +435,21 @@ pub fn win_1020_0316(astruct *param_1,param_2: U32Ptr,param_3: u16)
   
   create_window_ex_1008_9760(param_1,0x1008);
   puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x1,param_3,param_2,unaff_DI);
- // puVar3 = (puVar6 >> 0x10);
+ // pu_var3 = (puVar6 >> 0x10);
  // u_var5 = (param_1 >> 0x10);
   i_var1 = param_1;
   i_var1.field_0xe2 = puVar6;
-  i_var1.field_0xe4 = puVar3;
+  i_var1.field_0xe4 = pu_var3;
   u_var1 = &i_var1.field_0xe2;
   (u_var1 + 0x16) = i_var1.field_0xea;
   u_var2 = i_var1.field_0xee;
   u_var1 = &i_var1.field_0xe2;
   (u_var1 + 0x12) = u_var2;
   struct_1010_3c52(&i_var1.field_0xe2,i_var1.field_0xec,param_3);
-  mem_op_1000_179c(0x12,puVar3,0x1000);
-  puVar4 = (puVar3 | u_var2);
+  mem_op_1000_179c(0x12,pu_var3,0x1000);
+  puVar4 = (pu_var3 | u_var2);
   if (puVar4 != 0x0) {
-    pass1_1020_04f6(CONCAT22(puVar3,u_var2),i_var1.field_0x8,puVar4,unaff_DI,
+    pass1_1020_04f6(CONCAT22(pu_var3,u_var2),i_var1.field_0x8,puVar4,unaff_DI,
                     param_3);
     i_var1.field_0xe6 = u_var2;
     i_var1.field_0xe8 = puVar4;

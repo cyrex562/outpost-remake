@@ -237,7 +237,7 @@ pub fn struct_1030_44be(param_1: U32Ptr,param_2: u16)
   let unaff_DI: i16;
   let u_var1: u16;
   let unaff_SS: u16;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   
  // u_var1 = (param_1 >> 0x10);
   i_var1 = param_1;
@@ -253,8 +253,8 @@ pub fn struct_1030_44be(param_1: U32Ptr,param_2: u16)
   i_var1.field_0x160 = 0x0;
   i_var1.field_0x164 = 0x0;
   i_var1.field_0x568 = 0x0;
-  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,param_2,unaff_DI);
-  i_var1.field_0x568 = (puVar2 + 0x64);
+  pu_var2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,unaff_SS,param_2,unaff_DI);
+  i_var1.field_0x568 = (pu_var2 + 0x64);
   return;
 }
 

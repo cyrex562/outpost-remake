@@ -162,7 +162,7 @@ pub fn file_1008_4c26(param_1: u32, param_2: u8) -> u32
 
 pub fn file_1008_6414(param_1: &mut Struct18, param_2: &mut Struct18, param_3: u16, param_4: &mut Struct18) {
     let ppcVar1: u32;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let uVar3: u16;
     let extraout_dx: u16;
     let i_var4: i16;
@@ -174,23 +174,23 @@ pub fn file_1008_6414(param_1: &mut Struct18, param_2: &mut Struct18, param_3: u
     i_var4 = param_1;
     *param_1 = 0x0;
     (i_var4 + 0x4) = 0x0;
-    puVar2 = local_26;
-    struct_op_1008_48fe(CONCAT22(param_3, puVar2), 0x1, param_2,
+    pu_var2 = local_26;
+    struct_op_1008_48fe(CONCAT22(param_3, pu_var2), 0x1, param_2,
                         param_4);
     mem_op_1000_179c(0x1e, param_4, 0x1000);
-    paStack42 = CONCAT22(param_4, puVar2);
-    uVar3 = param_4 | puVar2;
+    paStack42 = CONCAT22(param_4, pu_var2);
+    uVar3 = param_4 | pu_var2;
     if (uVar3 == 0x0) {
         *param_1 = 0x0;
     } else {
-        puVar2 = local_26;
-        struct_op_1008_3f92(paStack42, CONCAT22(param_3, puVar2));
-        param_1 = puVar2;
+        pu_var2 = local_26;
+        struct_op_1008_3f92(paStack42, CONCAT22(param_3, pu_var2));
+        param_1 = pu_var2;
         (i_var4 + 0x2) = uVar3;
     }
     ppcVar1 = (*param_1 + 0x14);
     (**ppcVar1)();
-    (i_var4 + 0x4) = puVar2;
+    (i_var4 + 0x4) = pu_var2;
     (i_var4 + 0x6) = extraout_dx;
     close_file_1008_496c(local_26, param_3);
     return;
@@ -322,17 +322,17 @@ pub fn read_file_1008_6f7a(param_1: u16, param_2: u16, param_3: u32,
     let b_var4: bool;
     let in_DX: U32Ptr;
     let u_var1: u16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let local_e: [u8; 4];
     let uStack10: u32;
     let puStack6: u32;
 
     puStack6 = *_PTR_LOOP_1050_5748;
     uStack10 = *puStack6;
-    puVar2 = pass1_1020_a43e(param_4, in_DX, CONCAT22(param_4, local_e));
-    // u_var1 = (puVar2 >> 0x10);
+    pu_var2 = pass1_1020_a43e(param_4, in_DX, CONCAT22(param_4, local_e));
+    // u_var1 = (pu_var2 >> 0x10);
     var5 = read_file_1028_d7ba(uStack10, (uStack10 >> 0x10), param_3, param_4,
-                               puVar2);
+                               pu_var2);
     if (var5 != 0x0) {
         var5 = read_file_1030_5c52(ctx.PTR__LOOP_1050_5736, param_3, var5, param_4);
         if (var5 != 0x0) {

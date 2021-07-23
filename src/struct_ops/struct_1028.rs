@@ -464,10 +464,10 @@ pub fn struct_op_1028_933c(param_1: &mut Struct100, param_2: u16, param_3: u16, 
 
 {
     let i_var1: i16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
 
     struct_op_1028_d1dc(param_9, param_10, param_1, 0x3e8);
-    // puVar2 = (param_1 >> 0x10);
+    // pu_var2 = (param_1 >> 0x10);
     i_var1 = param_1;
     (i_var1 + 0x108) = param_8;
     (i_var1 + 0x10c) = param_7;
@@ -481,9 +481,9 @@ pub fn struct_op_1028_933c(param_1: &mut Struct100, param_2: u16, param_3: u16, 
     (i_var1 + 0x122) = param_3;
     param_1.field_0x0 = 0x9934;
     (i_var1 + 0x2) = &USHORT_1050_1028;
-    sys_1000_3f9c((i_var1 + 0x8), puVar2,
+    sys_1000_3f9c((i_var1 + 0x8), pu_var2,
                   s_SCPutBldg_site_0x_08lx__bldg__u__1050_50ce,
-                  ctx.data_seg, param_8, &stack0xfffe, puVar2, 0x1000,
+                  ctx.data_seg, param_8, &stack0xfffe, pu_var2, 0x1000,
                   param_9, param_10);
     return;
 }
@@ -528,7 +528,7 @@ pub fn struct_op_1028_d1dc(
 
 pub fn struct_1028_d22e(param_1: U32Ptr, param_2: u32, param_3: u16) {
     let u_var1: u16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let uVar3: u16;
 
     // uVar3 = (param_1 >> 0x10);
@@ -536,13 +536,13 @@ pub fn struct_1028_d22e(param_1: U32Ptr, param_2: u32, param_3: u16) {
     (param_1 + 0x4) = param_2;
     mem_op_1000_179c(0xc, param_3, 0x1000);
     u_var1 = param_2;
-    puVar2 = (param_3 | u_var1);
-    if (puVar2 == 0x0) {
+    pu_var2 = (param_3 | u_var1);
+    if (pu_var2 == 0x0) {
         *param_1 = 0x0;
     } else {
-        struct_1028_d59c((param_2 & 0xffff | param_3 << 0x10), puVar2);
+        struct_1028_d59c((param_2 & 0xffff | param_3 << 0x10), pu_var2);
         param_1 = u_var1;
-        (param_1 + 0x2) = puVar2;
+        (param_1 + 0x2) = pu_var2;
     }
     return;
 }
@@ -621,7 +621,7 @@ pub fn struct_1028_d2b0(param_1: U32Ptr, param_2: u16, param_3: u8) {
 pub fn struct_1028_d59c(param_1: U32Ptr, param_2: U32Ptr) {
     let pu_var1: U32Ptr;
     let u_var2: u16;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let puVar4: U32Ptr;
     let extraout_dx: U32Ptr;
     let iVar5: &mut Struct158;
@@ -633,22 +633,22 @@ pub fn struct_1028_d59c(param_1: U32Ptr, param_2: U32Ptr) {
     *param_1 = 0x0;
     iVar5.field_0x4 = 0x0;
     iVar5.field_0x8 = 0x0;
-    puVar3 = *_PTR_LOOP_1050_5748;
-    *param_1 = puVar3;
+    pu_var3 = *_PTR_LOOP_1050_5748;
+    *param_1 = pu_var3;
     mem_op_1000_179c(0xc, param_2, 0x1000);
-    pu_var1 = (puVar3 & 0xffff | ZEXT24(param_2) << 0x10);
-    puVar4 = (param_2 | puVar3);
+    pu_var1 = (pu_var3 & 0xffff | ZEXT24(param_2) << 0x10);
+    puVar4 = (param_2 | pu_var3);
     if (puVar4 == 0x0) {
         iVar5.field_0x4 = 0x0;
     } else {
-        set_struct_1008_574a((puVar3 & 0xffff | ZEXT24(param_2) << 0x10));
+        set_struct_1008_574a((pu_var3 & 0xffff | ZEXT24(param_2) << 0x10));
         *pu_var1 = 0xd804;
-        (puVar3 + 0x2) = &USHORT_1050_1028;
+        (pu_var3 + 0x2) = &USHORT_1050_1028;
         iVar5.field_0x4 = pu_var1;
-        puVar3 = pu_var1;
+        pu_var3 = pu_var1;
         puVar4 = extraout_dx;
     }
-    u_var2 = puVar3;
+    u_var2 = pu_var3;
     mem_op_1000_179c(0xc, puVar4, 0x1000);
     puStack14 = CONCAT22(puVar4, u_var2);
     if ((puVar4 | u_var2) == 0x0) {

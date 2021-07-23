@@ -565,7 +565,7 @@ u_var1 = 0x1;
 pub fn send_msg_1040_1696(param_1: u32, param_2: u16, param_3: u16, param_4: HWND16) {
     let u_var1: u32;
     let u_var2: u32;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let puVar4: U32Ptr;
     let puVar5: U32Ptr;
     let uVar6: u16;
@@ -581,13 +581,13 @@ pub fn send_msg_1040_1696(param_1: u32, param_2: u16, param_3: u16, param_4: HWN
     LVar7 = SendMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0xb0000);
     // puVar4 = (LVar7 >> 0x10);
     local_4 = 0x0;
-    puVar3 = &local_4;
+    pu_var3 = &local_4;
     // uVar6 = (param_1 >> 0x10);
-    pass1_1010_519a((param_1 + 0x8e), CONCAT22(param_3, puVar3), puVar4,
+    pass1_1010_519a((param_1 + 0x8e), CONCAT22(param_3, pu_var3), puVar4,
                     param_3);
     puVar5 = puVar4;
     // for (uStack18 = 0x0; uStack18 < local_4; uStack18 += 0x1) {
-    //   u_var1 = (puVar3 + uStack18 * 0x2);
+    //   u_var1 = (pu_var3 + uStack18 * 0x2);
     //   uVar10 = 0x0;
     //   uVar11 = 0x403;
     //   u_var2 = (param_1 + 0x8e);
@@ -814,7 +814,7 @@ pub fn create_win_1040_20d4(param_1: u16, param_2: u16, param_3: u16, param_4: &
     let y: i16;
     let unaff_DI: i16;
     let u_var1: u16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let local_1e: RECT16;
     let iStack26: i16;
     let iStack24: i16;
@@ -828,9 +828,9 @@ pub fn create_win_1040_20d4(param_1: u16, param_2: u16, param_3: u16, param_4: &
     let iStack4: i16;
 
     dialog_ui_fn_1040_78e2(param_4, param_2);
-    puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x48, param_1, param_3, unaff_DI);
-    // uStack12 = (puVar2 >> 0x10);
-    iStack14 = puVar2;
+    pu_var2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x48, param_1, param_3, unaff_DI);
+    // uStack12 = (pu_var2 >> 0x10);
+    iStack14 = pu_var2;
     iStack8 = (iStack14 + 0xa);
     iStack10 = (iStack14 + 0xc);
     // u_var1 = (param_4 >> 0x10);
@@ -1158,7 +1158,7 @@ pub fn show_win_1040_2f5a(param_1: &mut Struct1, param_2: HWND16) {
 pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     let HVar1: HWND16;
     let in_DX: U32Ptr;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let uVar3: u16;
     let msg: u16;
     let i_var4: i16;
@@ -1175,7 +1175,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     let puStack6: U32Ptr;
 
     puStack6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
-    // puVar2 = (puStack6 >> 0x10);
+    // pu_var2 = (puStack6 >> 0x10);
     uStack10 = (puStack6 + 0x68);
     // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
@@ -1187,7 +1187,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     pass1_1018_3a94((i_var4 + 0x96), CONCAT22(param_2, &local_116),
                     CONCAT22(param_2, &local_112), param_2);
     send_msg_1040_3374(param_1, local_112, (i_var4 + 0x92), 0x1018);
-    puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2f, param_2, puVar2, unaff_DI);
+    puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x2f, param_2, pu_var2, unaff_DI);
     // uVar3 = (puVar6 >> 0x10);
     uVar7 = (puVar6 + 0x24);
     uVar7 = pass1_1018_3a7a((i_var4 + 0x96), uVar7, uVar7, uVar3);
@@ -1212,7 +1212,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
 pub fn win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32) {
     let i_var1: i16;
     let u_var2: u32;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let unaff_CS: u16;
     let unaff_SS: u16;
     let LVar4: LRESULT;
@@ -1223,26 +1223,26 @@ pub fn win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     load_string_1010_847e(ctx.PTR__LOOP_1050_14cc, (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x1010);
     if (param_4._2_2_ == 0x181) {
         i_var1 = param_1 + 0x9a;
-        puVar3 = param_2;
+        pu_var3 = param_2;
         iVar6 = i_var1;
         pass1_1018_3cda((param_1 + 0x96), CONCAT22(param_2, param_1 + 0x19a),
                         CONCAT22(param_2, i_var1));
-        pass1_1018_3424((param_1 + 0x96), iVar6, puVar3, unaff_SS);
+        pass1_1018_3424((param_1 + 0x96), iVar6, pu_var3, unaff_SS);
         if (iVar6 == 0x0) {
             iVar6 = 0x21;
         } else {
-            pass1_1018_3a42((param_1 + 0x96), CONCAT22(param_2, i_var1), puVar3, unaff_SS);
+            pass1_1018_3a42((param_1 + 0x96), CONCAT22(param_2, i_var1), pu_var3, unaff_SS);
             pass1_1030_8344(
-                ctx, ctx.PTR__LOOP_1050_5748, CONCAT22(puVar3, iVar6));
+                ctx, ctx.PTR__LOOP_1050_5748, CONCAT22(pu_var3, iVar6));
             u_var2 = (iVar6 + 0x10);
             pass1_1030_8344(
                 ctx, ctx.PTR__LOOP_1050_5748, u_var2);
             ctx.PTR_LOOP_1050_5f0c = u_var2;
             ctx.PTR_LOOP_1050_5f10 = (&ctx.PTR_LOOP_1050_0000 + 0x1);
             iVar6 = 0x25;
-            ctx.PTR_LOOP_1050_5f0e = puVar3;
+            ctx.PTR_LOOP_1050_5f0e = pu_var3;
         }
-        pass1_1038_af40(ctx.PTR__LOOP_1050_5b7c, (param_1 + 0x8), iVar6, puVar3,
+        pass1_1038_af40(ctx.PTR__LOOP_1050_5b7c, (param_1 + 0x8), iVar6, pu_var3,
                         param_1, &ctx.PTR_LOOP_1050_1038, unaff_SS);
         LVar4 = SendMessage16(&ctx.PTR_LOOP_1050_1038, 0x0, 0x0, 0x1110002);
         iVar6 = 0x1;
@@ -1730,7 +1730,7 @@ pub fn send_dlg_item_msg_1040_3f12(param_1: u16, param_2: u16, param_3: u32, par
 
 {
     let u_var1: u32;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let extraout_dx: u16;
     let iVar3: i16;
     let hwnd: HWND16;
@@ -1741,11 +1741,11 @@ pub fn send_dlg_item_msg_1040_3f12(param_1: u16, param_2: u16, param_3: u32, par
     SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0, 0x1900405);
     pass1_1008_5784(CONCAT22(param_5, local_a), param_3);
     loop {
-        puVar2 = local_a;
+        pu_var2 = local_a;
         hwnd = 0x1008;
-        pass1_1008_5b12(puVar2, param_5);
-        if ((extraout_dx | puVar2) == 0x0) { break; }
-        u_var1 = (puVar2 + 0x4);
+        pass1_1008_5b12(pu_var2, param_5);
+        if ((extraout_dx | pu_var2) == 0x0) { break; }
+        u_var1 = (pu_var2 + 0x4);
         hwnd = ctx.s_tile2_bmp_1050_1538;
         LVar4 = SendDlgItemMessage16(0x1008, u_var1, (u_var1 >> 0x10), 0x0, 0x1900401);
         // iVar3 = (LVar4 >> 0x10);
@@ -1762,7 +1762,7 @@ pub fn send_dlg_item_msg_1040_3f12(param_1: u16, param_2: u16, param_3: u32, par
 
 pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr) {
     let u_var1: u32;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let iVar3: i16;
     let unaff_DI: *mut RECT16;
     let u_var4: u16;
@@ -1813,7 +1813,7 @@ pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr)
     }
     if ((local_1e._2_2_ == 0x0) && (local_1e == 0x0)) {
         puVar6 = clear_struct_1008_3e38(CONCAT22(param_3, local_30));
-        // puVar2 = (puVar6 >> 0x10);
+        // pu_var2 = (puVar6 >> 0x10);
         u_var1 = (iVar3 + 0x96);
         pass1_1018_2678(u_var1, (u_var1 >> 0x10),
                         CONCAT22(param_3, local_30));
@@ -1823,7 +1823,7 @@ pub fn win_ui_op_1040_410e(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr)
         piVar8 = &local_34;
         piVar7 = &local_36;
         puVar9 = param_3;
-        puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x48, param_3, puVar2, unaff_DI,
+        puVar6 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x48, param_3, pu_var2, unaff_DI,
         );
         hwnd = 0x1008;
         pass1_1008_3e94((puVar6 & 0xffff0000 | (puVar6 + 0xe)),
@@ -2454,7 +2454,7 @@ pub fn show_win_1040_65ba(param_1: &mut Struct1, param_2: u16) {
     let u_var2: u16;
     let rect: &mut Struct160;
     let in_DX: U32Ptr;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let i_var4: i16;
     let iVar5: i16;
     let unaff_DI: i16;
@@ -2490,7 +2490,7 @@ pub fn show_win_1040_65ba(param_1: &mut Struct1, param_2: u16) {
     //   puStack26 =
     //               pass1_1010_0946(puStack6,(puStack6 >> 0x10),iStack10,
     //                               ctx.PTR_LOOP_1050_5f2e,unaff_DI,unaff_SS);
-    //   puVar3 = (puStack26 >> 0x10);
+    //   pu_var3 = (puStack26 >> 0x10);
     //   local_22 = *puStack26;
     //   uStack32 = (puStack26 + 0x2);
     //   uStack30 = 0x1;
@@ -2498,15 +2498,15 @@ pub fn show_win_1040_65ba(param_1: &mut Struct1, param_2: u16) {
     //   rect = &local_22;
     //   MapDialogRect16(0x1010,rect);
     //   hwnd = 0x1000;
-    //   mem_op_1000_179c(0x42,puVar3,0x1000);
-    //   ctx.PTR_LOOP_1050_5f2e = (puVar3 | rect);
+    //   mem_op_1000_179c(0x42,pu_var3,0x1000);
+    //   ctx.PTR_LOOP_1050_5f2e = (pu_var3 | rect);
     //   if (ctx.PTR_LOOP_1050_5f2e == 0x0) {
     //     u_var1 = (i_var4 + 0x8e);
     //     (u_var1 + iStack10 * 0x4) = 0x0;
     //   }
     //   else {
     //     hwnd = 0x1008;
-    //     pass1_1008_3bd6(rect,puVar3,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
+    //     pass1_1008_3bd6(rect,pu_var3,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
     //                     CONCAT22((i_var4 + 0x6),
     //                              (puStack26 + 0x4)),
     //                     ctx.PTR_LOOP_1050_5f2e,unaff_SS);
@@ -4916,7 +4916,7 @@ EnableWindow16(ctx.s_tile2_bmp_1050_1538, enable); LVar3 = SendDlgItemMessage16(
 
 pub fn send_dlg_item_msg_1040_d20c(param_1: u32, param_2: i32, param_3: u16, param_4: u16, in_AF: u8, unaff_DI: i16, in_DX: U32Ptr, in_AX: u16) {
     let u_var2: u16;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
     let puVar4: U32Ptr;
     let u_var5: u16;
     let local_106: [u8; 104];
@@ -4933,9 +4933,9 @@ pub fn send_dlg_item_msg_1040_d20c(param_1: u32, param_2: i32, param_3: u16, par
             ctx, ctx.PTR__LOOP_1050_5748, param_2);
         puVar4 = local_106;
         u_var5 = param_4;
-        puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x3, param_4, in_DX, unaff_DI);
-        // u_var1 = (puVar3 >> 0x10);
-        pass1_1010_c3c2(puVar3, u_var1, CONCAT22(u_var5, puVar4), CONCAT22(in_DX, in_AX),
+        pu_var3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0, 0x3, param_4, in_DX, unaff_DI);
+        // u_var1 = (pu_var3 >> 0x10);
+        pass1_1010_c3c2(pu_var3, u_var1, CONCAT22(u_var5, puVar4), CONCAT22(in_DX, in_AX),
                         u_var1, in_AF, param_4);
         SendDlgItemMessage16(0x1010, local_106, param_4, 0x0, 0x18470401);
     }

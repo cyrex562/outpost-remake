@@ -210,7 +210,7 @@ pub fn set_struct_fields_1010_1d48(param_1: &mut Struct18, param_2: u16)
 pub unsafe fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u16, unaff_di: i16, extraout_dx: u16) {
     // let unaff_DI: i16;
     let paVar1: &mut Struct79;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let piVar3: U32Ptr;
     let piVar4: U32Ptr;
     let u_var5: u16;
@@ -277,7 +277,7 @@ pub fn struct_1010_38f8(param_1: u32, param_2: i16, param_3: u16, param_4: U32Pt
     let u_var1: u16;
     let iVar2: &mut Struct240;
     let u_var2: u16;
-    let puVar3: U32Ptr;
+    let pu_var3: U32Ptr;
 
     if (param_2 != 0x0) {
         u_var1 = param_2 << 0x2;
@@ -290,8 +290,8 @@ pub fn struct_1010_38f8(param_1: u32, param_2: i16, param_3: u16, param_4: U32Pt
     }
     mem_op_1000_179c(0x1a, param_4, 0x1000);
     if ((param_4 | param_3) != 0x0) {
-        puVar3 = pass1_1010_37d4(CONCAT22(param_4, param_3));
-        return puVar3;
+        pu_var3 = pass1_1010_37d4(CONCAT22(param_4, param_3));
+        return pu_var3;
     }
     return 0x0;
 }

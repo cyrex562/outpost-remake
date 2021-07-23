@@ -314,8 +314,8 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_47b8 = 0x0;
   pu_var3 = 0x47ba;
   // for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
-  //   pu_var1 = puVar3;
-  //   puVar3 = puVar3 + 0x1;
+  //   pu_var1 = pu_var3;
+  //   pu_var3 = pu_var3 + 0x1;
   //   *pu_var1 = 0x0;
   // }
   ctx._PTR_LOOP_1050_4850 = 0x0;

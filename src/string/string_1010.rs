@@ -57,18 +57,18 @@ pub fn unk_load_str_op_1010_2c34() -> u16
   in_buf_len_5: i16;
   let unaff_DI: i16;
   let unaff_SS: u16;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   
-  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,unaff_SS,in_DX,unaff_DI);
-  mem_op_1000_179c(0x80,(puVar2 >> 0x10),0x1000);
- // in_buf_len_5 = (puVar2 >> 0x10);
+  pu_var2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x3,unaff_SS,in_DX,unaff_DI);
+  mem_op_1000_179c(0x80,(pu_var2 >> 0x10),0x1000);
+ // in_buf_len_5 = (pu_var2 >> 0x10);
   load_string_1010_84e0
-            (0x1000, _PTR_LOOP_1050_14cc, 0x80, puVar2, in_buf_len_5
+            (0x1000, _PTR_LOOP_1050_14cc, 0x80, pu_var2, in_buf_len_5
             );
-  pUVar1 = string_1000_3cea(puVar2, s__1050_11c8);
+  pUVar1 = string_1000_3cea(pu_var2, s__1050_11c8);
   pass1_1010_e964(in_buf_len_5,unaff_SS,unaff_DI);
-  string_1000_3cea(puVar2, CONCAT22(in_buf_len_5, pUVar1));
-  return puVar2;
+  string_1000_3cea(pu_var2, CONCAT22(in_buf_len_5, pUVar1));
+  return pu_var2;
 }
 
 
@@ -134,7 +134,7 @@ unk_load_str_op_1010_8c96
 {
   let u_var1: u32;
   let IVar2: i16;
-  let puVar3: u32;
+  let pu_var3: u32;
   let i_var4: i16;
   let u_var5: u16;
   let in_DX: U32Ptr;
@@ -201,15 +201,15 @@ unk_load_str_op_1010_8c96
           uVar9 = pass1_1028_bb24(uVar9);
          // in_DX = (uVar9 >> 0x10);
           iStack10 = uVar9;
-          puVar3 = &local_10;
+          pu_var3 = &local_10;
           puStack8 = in_DX;
-          pass1_1030_627e(param_5,puVar3,in_DX,_PTR_LOOP_1050_5740,
-                          CONCAT22(param_5,puVar3),uVar9);
-          pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,puVar3,in_DX);
+          pass1_1030_627e(param_5,pu_var3,in_DX,_PTR_LOOP_1050_5740,
+                          CONCAT22(param_5,pu_var3),uVar9);
+          pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2,pu_var3,in_DX);
           u_var1 = (param_1 + 0xa);
           pass1_1010_c3c2(u_var1,(u_var1 >> 0x10),0x0,
-                          CONCAT22(in_DX,puVar3),in_DX,in_AF,param_5);
-          uStack46 = CONCAT22(in_DX,puVar3);
+                          CONCAT22(in_DX,pu_var3),in_DX,in_AF,param_5);
+          uStack46 = CONCAT22(in_DX,pu_var3);
           pcVar10 = load_string_1010_847e
                               (ctx.PTR__LOOP_1050_14cc,
                                (ctx.PTR__LOOP_1050_14cc >> 0x10),

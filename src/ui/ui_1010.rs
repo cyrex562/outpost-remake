@@ -8,7 +8,7 @@ set_window_placement_1010_0070
 {
   let ppcVar1: u32;
   let u_var2: u16;
-  let puVar3: u32;
+  let pu_var3: u32;
   let lVar4: i32;
   let local_18: [u8;6];
   let IStack18: i16;
@@ -35,11 +35,11 @@ set_window_placement_1010_0070
     local_18._2_4_ = 0x50001;
     lVar4 = GetWindowLong16(ctx.s_tile2_bmp_1050_1538,0x0);
    // u_var2 = (lVar4 >> 0x10);
-    puVar3 = (lVar4 + 0xe0);
-    ppcVar1 = (*puVar3 + 0x38);
-    (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,puVar3,(lVar4 + 0xe2),
+    pu_var3 = (lVar4 + 0xe0);
+    ppcVar1 = (*pu_var3 + 0x38);
+    (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,pu_var3,(lVar4 + 0xe2),
                 param_3);
-    pass1_1010_01f8(param_1,CONCAT22(param_5,local_18),puVar3);
+    pass1_1010_01f8(param_1,CONCAT22(param_5,local_18),pu_var3);
     SetWindowPlacement16(ctx.s_tile2_bmp_1050_1538,(WINDOWPLACEMENT16 *)local_18);
   }
   return;
@@ -198,7 +198,7 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
 pub fn ui_op_1010_79aa(param_1: &mut Struct20, param_2: i16, param_3: i32, param_4: &mut WNDCLASS16)
 {
   let u_var1: u32;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   let extraout_dx: u16;
   let uVar3: u16;
   let lStack18: i32;
@@ -210,19 +210,19 @@ pub fn ui_op_1010_79aa(param_1: &mut Struct20, param_2: i16, param_3: i32, param
     pass1_1008_5784(CONCAT22(param_4,local_a),(param_1 + 0x1c));
     lStack18 = 0x0;
     loop {
-      puVar2 = local_a;
-      pass1_1008_5b12(puVar2,param_4);
-      lStack14 = CONCAT22(extraout_dx,puVar2);
-      if ((extraout_dx | puVar2) == 0x0) {
+      pu_var2 = local_a;
+      pass1_1008_5b12(pu_var2,param_4);
+      lStack14 = CONCAT22(extraout_dx,pu_var2);
+      if ((extraout_dx | pu_var2) == 0x0) {
           // goto
           // LAB_1010_7a49;
       }
-      if (((param_2 == 0x0) && ((puVar2 + 0x4) == param_3)) ||
+      if (((param_2 == 0x0) && ((pu_var2 + 0x4) == param_3)) ||
          ((param_3 == 0x0 &&
-          (u_var1 = (puVar2 + 0x8), (u_var1 + 0xa) == param_2)))
+          (u_var1 = (pu_var2 + 0x8), (u_var1 + 0xa) == param_2)))
          ) { break; }
-        if (((puVar2 + 0x4) != param_3) ||
-            (u_var1 = (puVar2 + 0x8), (u_var1 + 0xa) != param_2)
+        if (((pu_var2 + 0x4) != param_3) ||
+            (u_var1 = (pu_var2 + 0x8), (u_var1 + 0xa) != param_2)
         ) == false { break; }
     }
     lStack18 = lStack14;

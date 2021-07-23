@@ -3,7 +3,7 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
 {
   let pu_var1: u32;
   let ppcVar2: u32;
-  let puVar3: U32Ptr;
+  let pu_var3: U32Ptr;
   let u_var4: u16;
   let puVar5: U32Ptr;
   let uVar6: u16;
@@ -71,16 +71,16 @@ pub fn struct_1018_0570(param_1: &mut Struct55,param_2: u16,param_3: u16)
   &uVar9.field_0x2c = puVar7;
   (&uVar9.field_0x2c + 0x2) = (puVar7 >> 0x10);
   if (param_1 == 0x0) {
-    puVar3 = 0x0;
+    pu_var3 = 0x0;
     uVar6 = 0x0;
   }
   else {
-    puVar3 = &uVar9.field_0x20;
+    pu_var3 = &uVar9.field_0x20;
     uVar6 = uVar8;
   }
   pu_var1 = uVar9.field_0x2c;
   ppcVar2 = (*uVar9.field_0x2c + 0x4);
-  (**ppcVar2)(0x1010,pu_var1,(pu_var1 >> 0x10),0x0,puVar3,uVar6);
+  (**ppcVar2)(0x1010,pu_var1,(pu_var1 >> 0x10),0x0,pu_var3,uVar6);
   puVar7 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2,param_3,extraout_dx,unaff_DI);
  // puVar5 = (puVar7 >> 0x10);
   if ((puVar7 + 0x80) != 0x0) {
@@ -179,7 +179,7 @@ pub fn struct_1018_2b10(param_1: &mut Struct55,param_2: u16,param_3: u16)
 {
   let pu_var1: u32;
   let ppcVar2: u32;
-  let puVar3: U32Ptr;
+  let pu_var3: U32Ptr;
   let u_var4: u16;
   let unaff_DI: i16;
   let puVar5: U32Ptr;
@@ -212,16 +212,16 @@ pub fn struct_1018_2b10(param_1: &mut Struct55,param_2: u16,param_3: u16)
   &uVar9.field_0x182 = puVar5;
   (&uVar9.field_0x182 + 0x2) = (puVar5 >> 0x10);
   if (param_1 == 0x0) {
-    puVar3 = 0x0;
+    pu_var3 = 0x0;
     u_var4 = 0x0;
   }
   else {
-    puVar3 = &uVar9.field_0x20;
+    pu_var3 = &uVar9.field_0x20;
     u_var4 = uVar8;
   }
   pu_var1 = uVar9.field_0x182;
   ppcVar2 = (*uVar9.field_0x182 + 0x4);
-  (**ppcVar2)(0x1010,pu_var1,(pu_var1 >> 0x10),0x0,puVar3,u_var4);
+  (**ppcVar2)(0x1010,pu_var1,(pu_var1 >> 0x10),0x0,pu_var3,u_var4);
   pu_var1 = uVar9.field_0x182;
   uVar9.field_0x17a = (pu_var1 + 0x24);
   paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,0x6e,param_3);
@@ -386,7 +386,7 @@ pub fn struct_1018_66cc(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
   let iVar2: &mut Struct20;
   let unaff_DI: i16;
   let u_var2: &mut Struct20;
-  let puVar2: U32Ptr;
+  let pu_var2: U32Ptr;
   
   unk_draw_op_1020_7f7a(param_1,0xa,CONCAT22(param_3,param_2));
  // u_var2 = (param_1 >> 0x10);
@@ -397,9 +397,9 @@ pub fn struct_1018_66cc(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
   iVar2.field_0x2 = 0x1018;
   ((iVar2 + 0x1)).field_0x0 = 0x691c;
   iVar2[0x1].field_0x2 = 0x1018;
-  puVar2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0xb,param_4,extraout_dx,unaff_DI);
- // u_var1 = (puVar2 >> 0x10);
-  &iVar2[0x1].field_0x10 = puVar2;
+  pu_var2 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0xb,param_4,extraout_dx,unaff_DI);
+ // u_var1 = (pu_var2 >> 0x10);
+  &iVar2[0x1].field_0x10 = pu_var2;
   (&iVar2[0x1].field_0x10 + 0x2) = u_var1;
   &iVar2[0x1].field_0x4 = &iVar2[0x1].field_0x10;
   (&iVar2[0x1].field_0x4 + 0x2) = u_var1;
@@ -1397,7 +1397,7 @@ pub fn struct_1020_0baa(param_1: U32Ptr,param_2: u16,param_3: U32Ptr,param_4: u1
   let iVar2: &mut Struct276;
   let unaff_DI: i16;
   let u_var2: u16;
-  let puVar3: U32Ptr;
+  let pu_var3: U32Ptr;
   let puVar4: U32Ptr;
   let puVar5: U32Ptr;
   let uVar6: u16;
@@ -1416,15 +1416,15 @@ pub fn struct_1020_0baa(param_1: U32Ptr,param_2: u16,param_3: U32Ptr,param_4: u1
   iVar2.field_0xc = 0x0;
   *param_1 = 0xdbc;
   iVar2.field_0x2 = 0x1020;
-  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x7,param_4,param_3,unaff_DI);
- // pu_var1 = (puVar3 >> 0x10);
-  iVar2.field_0x6 = puVar3;
+  pu_var3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x7,param_4,param_3,unaff_DI);
+ // pu_var1 = (pu_var3 >> 0x10);
+  iVar2.field_0x6 = pu_var3;
   iVar2.field_0x8 = pu_var1;
   puVar5 = &iVar2.field_0xa;
   puVar4 = &iVar2.field_0xc;
   uVar6 = u_var2;
-  puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_4,pu_var1,unaff_DI);
-  pass1_1008_3e94((puVar3 & 0xffff0000 | (puVar3 + 0xe)),
+  pu_var3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x48,param_4,pu_var1,unaff_DI);
+  pass1_1008_3e94((pu_var3 & 0xffff0000 | (pu_var3 + 0xe)),
                   CONCAT22(u_var2,puVar4),CONCAT22(uVar6,puVar5));
   return;
 }

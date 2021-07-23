@@ -311,7 +311,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32, param_2: u32) {
 
 pub fn unk_str_op_1008_d4f6(param_1: u32, param_2: u32) {
     let lVar1: i32;
-    let puVar2: u32;
+    let pu_var2: u32;
     let uVar3: u32;
     let ppcVar4: u32;
     let bVar5: bool;
@@ -362,14 +362,14 @@ pub fn unk_str_op_1008_d4f6(param_1: u32, param_2: u32) {
     }
     (iVar21 + 0xe) = puVar6 as i16;
     (iVar21 + 0x10) = uVar15 as i16;
-    puVar2 = (iVar20 + 0xc) as u32;
-    ppcVar4 = (*puVar2 + 0x10);
-    puVar11 = puVar2;
-    (**ppcVar4)(0x1000, puVar2, (iVar20 + 0xe));
+    pu_var2 = (iVar20 + 0xc) as u32;
+    ppcVar4 = (*pu_var2 + 0x10);
+    puVar11 = pu_var2;
+    (**ppcVar4)(0x1000, pu_var2, (iVar20 + 0xe));
     uVar12 = puVar11 & 0xffff | ZEXT24(extraout_DX_01 as u16) << 0x10;
     bVar5 = false;
     // for (uStack20 = 0x0; uStack20 < uVar12; uStack20 += 0x1) {
-    //   uVar23 = pass1_1030_1d7c((puVar11 & 0xffff),extraout_DX_01,puVar2);
+    //   uVar23 = pass1_1030_1d7c((puVar11 & 0xffff),extraout_DX_01,pu_var2);
     //   uVar19 = (uVar23 >> 0x10);
     //   uVar10 = uVar23;
     //   if ((((uVar19 | uVar10) != 0x0) && ((uVar10 + 0x1c) != 0x8000002)) &&
@@ -435,19 +435,19 @@ pub fn string_1008_e586(param_1: u16, param_2: u16, param_3: u32, param_4: u16, 
 
 {
     let u_var1: u16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let mut in_string_2: String;
 
     pass1_1028_e1ec(ctx.PTR__LOOP_1050_65e2, param_3 as u16);
-    puVar2 = (param_5 | param_4) as u32;
-    if (puVar2 == 0x0) {
+    pu_var2 = (param_5 | param_4) as u32;
+    if (pu_var2 == 0x0) {
         return 0x0;
     }
     u_var1 = param_4;
-    mem_op_1000_179c(0x80, puVar2 as u16, 0x1000);
+    mem_op_1000_179c(0x80, pu_var2 as u16, 0x1000);
     in_string_2 = load_string_1038_4d28(CONCAT22(param_5, param_4));
-    string_1000_3d3e(CONCAT22(puVar2 as u16, u_var1), in_string_2);
-    return CONCAT22(puVar2 as u16, u_var1);
+    string_1000_3d3e(CONCAT22(pu_var2 as u16, u_var1), in_string_2);
+    return CONCAT22(pu_var2 as u16, u_var1);
 }
 
 

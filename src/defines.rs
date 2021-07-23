@@ -3,10 +3,18 @@ use crate::win_struct::{HMENU16, HICON16};
 pub type U32Ptr = u32;
 
 pub struct StructA {
+    pub field_0x4: u16,
     pub field_0x16: u16,
     pub field_0x36: u32,
     pub field_0x3e: u16,
     pub field_0x40: u16,
+    pub field_0xa: Struct13_1,
+}
+
+pub struct Struct13_1 {
+    pub field_0x4: u16,
+    pub field_0x6: u16,
+    pub field_0xa: u16,
 }
 
 pub struct StructB {
@@ -17,7 +25,17 @@ pub struct StructB {
 
 impl StructA {
     pub fn new() -> StructA {
-        StructA{ field_0x16: 0, field_0x36: 0, field_0x3e: 0, field_0x40: 0 }
+        StructA{ 
+            field_0x4: 0, 
+            field_0x16: 0, 
+            field_0x36: 0, 
+            field_0x3e: 0, 
+            field_0x40: 0, 
+            field_0xa: Struct13_1 {
+                field_0x4: 0,
+                field_0x6: 0,
+                field_0xa: 0
+            } }
     }
 }
 
@@ -302,4 +320,15 @@ pub struct Struct_1028_0138 {
 
 pub struct Struct_1028_0176 {
 
+}
+
+pub struct Struct_1040_0a1a {
+    pub field_0x8e : Struct_311,
+    pub field_0x70 : u16,
+    pub field_0x72: u16,
+}
+
+pub struct Struct_311 {
+    pub field_0xa: u32,
+    pub field_0xc: u16,
 }

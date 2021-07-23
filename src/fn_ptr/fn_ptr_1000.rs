@@ -24,10 +24,10 @@ pub fn  call_fn_ptr_1000_0dc6(
 
 pub  fn fn_ptr_op_1000_1708(
     ctx: &mut AppContext,
-    param_1: &mut i16,
+    param_1: &mut u16,
     param_2: &mut u16,
     param_3: u16,
-    param_4: u16,
+    param_4: &mut Struct18,
     param_5: i16,
     param_6: u16) -> bool
 

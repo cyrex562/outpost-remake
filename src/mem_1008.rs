@@ -11,7 +11,7 @@ use crate::{
 
 pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u16) {
     let i_var1: i16;
-    let puVar2: U32Ptr;
+    let pu_var2: U32Ptr;
     let uVar3: u16;
     let i_var4: i16;
     let u_var5: u16;
@@ -26,20 +26,20 @@ pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u
        // i_var1 = (uVar7 >> 0x10);
         lVar8 = mem_op_1000_0a48(ctx, 0x1, uVar7, i_var1, ctx._PTR_LOOP_1050_5f2c, 0x1000);
         u_var5 = lVar8;
-        puVar2 = ((lVar8 >> 0x10) | u_var5);
-        if (puVar2 != 0x0) {
+        pu_var2 = ((lVar8 >> 0x10) | u_var5);
+        if (pu_var2 != 0x0) {
             hmemcpy16(
                  & ctx.PTR_LOOP_1050_1000,
                 uVar7,
                 CONCAT22((i_var4 + 0x6), i_var1),
             );
-            mem_op_1000_179c(ctx, 0x1e, puVar2, 0x1000);
-            uVar3 = puVar2 | u_var5;
+            mem_op_1000_179c(ctx, 0x1e, pu_var2, 0x1000);
+            uVar3 = pu_var2 | u_var5;
             if (uVar3 == 0x0) {
                 u_var5 = 0x0;
                 uVar3 = 0x0;
             } else {
-                pass1_1008_4016(ctx, CONCAT22(puVar2, u_var5));
+                pass1_1008_4016(ctx, CONCAT22(pu_var2, u_var5));
             }
             (u_var5 + 0x6) = lVar8;
             pass1_1008_47cc(CONCAT22(uVar3, u_var5));
