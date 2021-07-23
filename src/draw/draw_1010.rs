@@ -38,7 +38,7 @@ pub unsafe fn draw_fn_1010_2a32(
     let piVar1: U32Ptr;
     let mut pcVar2: String;
     let pbVar3: U32Ptr;
-    let uVar4: u32;
+    let u_var4: u32;
     let bVar5: u8;
     let uVar6: u16;
     let ppcVar7: u32;
@@ -53,7 +53,7 @@ pub unsafe fn draw_fn_1010_2a32(
     let BVar14: bool;
     let iVar15: i16;
     let bVar16: u8;
-    let extraout_DX: U32Ptr;
+    let extraout_dx: U32Ptr;
     let extraout_DX_00: U32Ptr;
     let puVar17: U32Ptr;
     let extraout_DX_01: U32Ptr;
@@ -129,8 +129,8 @@ pub unsafe fn draw_fn_1010_2a32(
             ppcVar7 = param_8;
             (**ppcVar7)();
             iVar15 = param_5 + 0x105;
-            puVar17 = extraout_DX;
-            pass1_1010_8170(ctx.PTR__LOOP_1050_14cc, iVar15, extraout_DX, 0x1010);
+            puVar17 = extraout_dx;
+            pass1_1010_8170(ctx.PTR__LOOP_1050_14cc, iVar15, extraout_dx, 0x1010);
             iVar20 = param_5 * 0x4;
             (__return_storage_ptr__ + iVar20 + 0x26) = iVar15;
             (__return_storage_ptr__ + iVar20 + 0x28) = puVar17;
@@ -161,9 +161,9 @@ pub unsafe fn draw_fn_1010_2a32(
             //                                              iVar20 + (__return_storage_ptr__
             //                                                               + 0x7))),0x8);
             //   if (uVar11 != 0x0) {
-            //     uVar4 = (__return_storage_ptr__ + 0x7);
-            //     uVar22 = (uVar4 >> 0x10);
-            //     iVar19 = uVar4;
+            //     u_var4 = (__return_storage_ptr__ + 0x7);
+            //     uVar22 = (u_var4 >> 0x10);
+            //     iVar19 = u_var4;
             //     iVar21 = iVar20 + iVar19;
             //     hdc = ctx.s_tile2_bmp_1050_1538;
             //     b_force_background = (HPALETTE16)&ctx.PTR_LOOP_1050_4908;
@@ -237,10 +237,10 @@ pub unsafe fn draw_fn_1010_2a32(
             if ((((iVar15 + 0x22) != 0x0) || ((iVar15 + 0x24) != 0x0))
                 || ((iVar15 + 0x26) != 0x0 || ((iVar15 + 0x28) != 0x0)))
             {
-                uVar4 = (param_1 + 0xe);
+                u_var4 = (param_1 + 0xe);
                 sys_1000_3f9c(
-                    uVar4,
-                    (uVar4 >> 0x10),
+                    u_var4,
+                    (u_var4 >> 0x10),
                     s__d__d__d__d_1050_14ae,
                     ctx.data_seg,
                     (__return_storage_ptr__ * 0x8 + param_1 + 0x22),
@@ -250,11 +250,11 @@ pub unsafe fn draw_fn_1010_2a32(
                     unaff_SS,
                     in_AF,
                 );
-                uVar4 = (param_1 + 0xa);
+                u_var4 = (param_1 + 0xa);
                 WritePrivateProfileString16(
                     &ctx.PTR_LOOP_1050_1000,
-                    uVar4,
-                    (uVar4 >> 0x10),
+                    u_var4,
+                    (u_var4 >> 0x10),
                     (param_1 + 0xe),
                 );
             }
@@ -539,13 +539,13 @@ pub unsafe fn draw_1010_47ae(param_1: u32, param_2: u16, param_3: u16) {
 pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_style_3: i16, param_5: u16) {
     let pi_var1: U32Ptr;
     let puVar2: u32;
-    let ppcVar3: u32;
-    let iVar4: i16;
+    let ppc_var3: u32;
+    let i_var4: i16;
     let b_force_background: HPALETTE16;
     let handle: HGDIOBJ16;
     let handle_00: HGDIOBJ16;
-    let uVar5: u16;
-    let extraout_DX: U32Ptr;
+    let u_var5: u16;
+    let extraout_dx: U32Ptr;
     let puVar6: U32Ptr;
     let mut output: String;
     let iVar6: &mut Struct5;
@@ -578,8 +578,8 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
     puVar2 = (param_1 + 0x26 + param_3 * 0x4);
     puVar6 = (param_1 + 0x26 + param_3 * 0x4 + 0x2);
     if ((puVar6 | puVar2) != 0x0) {
-        ppcVar3 = *puVar2;
-        (**ppcVar3)(
+        ppc_var3 = *puVar2;
+        (**ppc_var3)(
             ctx.s_tile2_bmp_1050_1538,
             puVar2,
             puVar6,
@@ -587,17 +587,17 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
             uVar8,
             uVar10,
         );
-        puVar6 = extraout_DX;
+        puVar6 = extraout_dx;
     }
-    iVar4 = param_3 + 0x105;
+    i_var4 = param_3 + 0x105;
     pass1_1010_8170(
         ctx.PTR__LOOP_1050_14cc,
-        iVar4,
+        i_var4,
         puVar6,
         s_tile2_bmp_1050_1538,
     );
     iVar7 = param_3 * 0x4;
-    (param_1 + iVar7 + 0x26) = iVar4;
+    (param_1 + iVar7 + 0x26) = i_var4;
     (param_1 + iVar7 + 0x28) = puVar6;
     init_data = 0x0;
     uVar9 = pass1_1008_4772((param_1 + 0x26 + iVar7));
@@ -616,25 +616,25 @@ pub unsafe fn draw_op_1010_47d0(param_1: u32, param_2: u16, param_3: u16, in_sty
         if (*pi_var1 == iStack32 || *pi_var1 < iStack32) {
             break;
         }
-        iVar4 = (iStack32 * 0x10 + param_3) * 0x8;
+        i_var4 = (iStack32 * 0x10 + param_3) * 0x8;
         hdc = 0x1000;
-        uVar5 = pass1_1000_484c(
+        u_var5 = pass1_1000_484c(
             CONCAT22(param_5, &local_e),
-            CONCAT22((param_1 + 0x72), iVar4 + (param_1 + 0x70)),
+            CONCAT22((param_1 + 0x72), i_var4 + (param_1 + 0x70)),
             0x8,
         );
-        if (uVar5 != 0x0) {
+        if (u_var5 != 0x0) {
             uVar10 = (param_1 + 0x70);
             // uVar8 = (uVar10 >> 0x10);
             iVar7 = uVar10;
-            iVar9 = (iVar4 + iVar7);
+            iVar9 = (i_var4 + iVar7);
             hdc = ctx.s_tile2_bmp_1050_1538;
             Rectangle16(
                 0x1000,
                 iVar9.field_0x6,
                 iVar9.field_0x4,
                 iVar9.field_0x2,
-                (iVar7 + iVar4),
+                (iVar7 + i_var4),
             );
         }
         iStack32 += 0x1;
@@ -652,26 +652,26 @@ pub unsafe fn pt_in_rect_1010_4e08(param_1: u32, param_2: u16, param_3: u16, par
     let piVar1: U32Ptr;
     let bVar2: bool;
     let BVar3: bool;
-    let iVar4: i16;
-    let uVar5: u16;
+    let i_var4: i16;
+    let u_var5: u16;
     let iStack12: i16;
     let uStack10: i16;
     let PStack8: i16;
 
     PStack8 = CONCAT22(param_2, param_3);
-    // uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    (iVar4 + 0x22) = (iVar4 + 0x20);
+    // u_var5 = (param_1 >> 0x10);
+    i_var4 = param_1;
+    (i_var4 + 0x22) = (i_var4 + 0x20);
     bVar2 = false;
-    (iVar4 + 0x24) = 0x0;
+    (i_var4 + 0x24) = 0x0;
     iStack12 = 0x0;
     iStack10 = 0x0;
     loop {
-        piVar1 = (iVar4 + 0x30);
+        piVar1 = (i_var4 + 0x30);
         if (*piVar1 == iStack12 || *piVar1 < iStack12) {
             //LAB_1010_4e67:
             if (iStack10 != 0x0) {
-                (iVar4 + 0x20) = iStack10;
+                (i_var4 + 0x20) = iStack10;
             }
             if (bVar2) {
                 return;

@@ -6,9 +6,9 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
   let UVar1: i32;
   let puVar2: U32Ptr;
   let uVar3: u16;
-  let uVar4: u16;
+  let u_var4: u16;
   let iVar5: &mut Struct293;
-  let uVar5: u16;
+  let u_var5: u16;
   let uVar6: u16;
   let mut pcVar7: String; 
   let uStack32: u32;
@@ -22,7 +22,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
   let uStack6: u32;
   
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfc3,param_2);
- // uVar5 = (param_1 >> 0x10);
+ // u_var5 = (param_1 >> 0x10);
   iVar5 = param_1;
   iVar5.field_0x8e = 0x0;
   iVar5.field_0x98 = param_3;
@@ -39,11 +39,11 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
   if (param_4 != 0x0) {
     _iStack14 = CONCAT22(param_8,&param_6);
     uStack18 = param_5;
-    uVar4 = param_5;
+    u_var4 = param_5;
     load_string_1010_84ac
               (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010
               );
-    iVar5.field_0x94 = uVar4;
+    iVar5.field_0x94 = u_var4;
     iVar5.field_0x96 = param_7;
     iStack16 += -0x1;
   }
@@ -60,11 +60,11 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     uVar3 = str_op_1000_3da4(pcVar7);
     iStack22 += uVar3;
   }
-  uVar4 = iStack22 + 0x1;
+  u_var4 = iStack22 + 0x1;
   uVar6 = 0x1000;
   iStack16 = iStack16 + -0x1;
-  mem_op_1000_179c(uVar4,param_7,0x1000);
-  &iVar5.field_0x90 = uVar4;
+  mem_op_1000_179c(u_var4,param_7,0x1000);
+  &iVar5.field_0x90 = u_var4;
   (&iVar5.field_0x90 + 0x2) = param_7;
   _iStack14 = CONCAT22(param_8,&param_6);
   iStack16 = param_4 + -0x1;
@@ -100,10 +100,10 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
 
 pub fn string_1040_a626(param_1: U32Ptr,param_2: &mut String,param_3: u16)
 {
-  let uVar1: u16;
+  let u_var1: u16;
   
-  uVar1 = str_op_1008_60e8(param_2,param_3);
-  *param_1 = uVar1;
+  u_var1 = str_op_1008_60e8(param_2,param_3);
+  *param_1 = u_var1;
   (param_1 + 0x2) = param_3;
   return;
 }

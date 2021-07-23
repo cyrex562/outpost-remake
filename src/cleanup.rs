@@ -171,7 +171,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
     let l_var3: i32;
     let b_var4: bool;
     let u_var5: u16;
-    // Struct27 *iVar4;
+    // Struct27 *i_var4;
     let mut struct_3: &mut Struct27;
     let i_var6: i16;
     // Struct27 *uVar7;
@@ -254,7 +254,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
                             win_handle = ctx.s_tile2_bmp_1050_1538 as HWND16;
                             DestroyWindow16(hwnd_00);
                         }
-                        lVar3 = iVar4.field_0x52;
+                        lVar3 = i_var4.field_0x52;
                         (lVar3 + iStack8 * 0x4) = 0x0;
                         iStack8 += 0x1;
                         hwnd_00 = win_handle;
@@ -297,7 +297,7 @@ pub fn destroy_window_1010_7b26(
         loop {
             pu_var2 = local_a;
             pass1_1008_5b12(pu_var2, param_3);
-            param_4 = extraout_DX | pu_var2;
+            param_4 = extraout_dx | pu_var2;
             if (param_4 == 0x0) {
                 break;
             }
@@ -305,7 +305,7 @@ pub fn destroy_window_1010_7b26(
                 break;
             }
         }
-        u_var1 = extraout_DX | pu_var2;
+        u_var1 = extraout_dx | pu_var2;
         if (u_var1 != 0x0) {
             u_var1 = DestroyWindow16(0x1008);
         }
@@ -607,10 +607,10 @@ pub fn destroy_window_1020_3b3e(param_1: &mut Struct30, param_2: HWND16, unaff_s
 
 pub unsafe fn destroy_cursor_1020_42f4(param_1: U32Ptr, param_2: u16) {
     let i_var1: i16;
-    let uVar2: u16;
+    let u_var2: u16;
     let h_cursor: HMENU16;
 
-   // uVar2 = (param_1 >> 0x10);
+   // u_var2 = (param_1 >> 0x10);
     i_var1 = param_1;
     *param_1 = 0x623c;
     (i_var1 + 0x2) = 0x1020;
@@ -633,47 +633,47 @@ pub fn unk_destroy_win_op_1020_694c(
     param_3: HWND16,
     param_4: u16,
 ) -> u16 {
-    let uVar1: u32;
-    let uVar2: u16;
+    let u_var1: u32;
+    let u_var2: u16;
     let HVar3: HWND16;
-    let iVar4: i16;
+    let i_var4: i16;
     let paVar5: &mut Struct43;
     let uVar6: u16;
 
-    uVar2 = param_2;
+    u_var2 = param_2;
     if (param_2 != 0x12b) {
-        iVar4 = param_1;
+        i_var4 = param_1;
        // uVar6 = (param_1 >> 0x10);
         if (param_2 < 0x12c) {
             if (param_2 == 0x6f) {
                 paVar5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, 0x1f8, param_4);
-                uVar2 = WinHelp16(
+                u_var2 = WinHelp16(
                     0x1010,
                     (s_New_failed_in_Op__Op_1050_0020 + 0x9),
                     0x0,
                     CONCAT22(paVar5, 0x1),
                 );
-                return uVar2;
+                return u_var2;
             }
             if (param_2 == 0xeb) {
-                uVar2 = GetDlgItem16(param_3, 0x1797);
-                if (uVar2 != 0x0) {
+                u_var2 = GetDlgItem16(param_3, 0x1797);
+                if (u_var2 != 0x0) {
                     //LAB_1020_6a6f:
                     win_ui_fn_1020_6e98(param_1, ctx.s_tile2_bmp_1050_1538, param_4);
-                    return uVar2;
+                    return u_var2;
                 }
             } else {
-                uVar2 = param_2 - 0xef;
-                if (uVar2 == 0x0) {
-                    pass1_1018_2e28((iVar4 + 0xf2));
+                u_var2 = param_2 - 0xef;
+                if (u_var2 == 0x0) {
+                    pass1_1018_2e28((i_var4 + 0xf2));
                     pass1_1008_3e0e(param_1);
                 } else {
-                    uVar2 = param_2 - 0x129;
-                    if ((uVar2 != 0x0) && (uVar2 = param_2 - 0x12a, uVar2 == 0x0)) {
+                    u_var2 = param_2 - 0x129;
+                    if ((u_var2 != 0x0) && (u_var2 = param_2 - 0x12a, u_var2 == 0x0)) {
                         uVar6 = 0xf012;
                         //LAB_1020_69c3:
-                        uVar2 = PostMessage16(param_3, 0x0, 0x0, CONCAT22(0x112, uVar6));
-                        return uVar2;
+                        u_var2 = PostMessage16(param_3, 0x0, 0x0, CONCAT22(0x112, uVar6));
+                        return u_var2;
                     }
                 }
             }
@@ -683,13 +683,13 @@ pub fn unk_destroy_win_op_1020_694c(
                 if (HVar3 != 0x0) {
                     DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
                 }
-                uVar2 = pass1_1018_31d0((iVar4 + 0xf2));
-                if (uVar2 != 0x0) {
-                    uVar1 = (iVar4 + 0xf2);
-                    uVar2 = pass1_1018_2d9a(uVar1, (uVar1 >> 0x10));
+                u_var2 = pass1_1018_31d0((i_var4 + 0xf2));
+                if (u_var2 != 0x0) {
+                    u_var1 = (i_var4 + 0xf2);
+                    u_var2 = pass1_1018_2d9a(u_var1, (u_var1 >> 0x10));
                     //LAB_1020_6a0b:
-                    invalidate_rect_1020_735a((iVar4 + 0xf6), 0x1018);
-                    return uVar2;
+                    invalidate_rect_1020_735a((i_var4 + 0xf6), 0x1018);
+                    return u_var2;
                 }
             } else {
                 if (param_2 < 0xbb9) {
@@ -697,9 +697,9 @@ pub fn unk_destroy_win_op_1020_694c(
                         uVar6 = 0xf020;
                         //             TODO: goto LAB_1020_69c3;
                     }
-                    uVar2 = param_2 - 0x12d;
+                    u_var2 = param_2 - 0x12d;
                     if (param_2 != 0x12c) {
-                        uVar2 = param_2 - 0x12e;
+                        u_var2 = param_2 - 0x12e;
                     }
                 } else {
                     if (param_2 == 0xbb9) {
@@ -707,19 +707,19 @@ pub fn unk_destroy_win_op_1020_694c(
                         if (HVar3 != 0x0) {
                             DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
                         }
-                        uVar2 = pass1_1018_31d0((iVar4 + 0xf2));
-                        if (uVar2 != 0x0) {
-                            uVar1 = (iVar4 + 0xf2);
-                            uVar2 = pass1_1018_2dde(uVar1, (uVar1 >> 0x10));
+                        u_var2 = pass1_1018_31d0((i_var4 + 0xf2));
+                        if (u_var2 != 0x0) {
+                            u_var1 = (i_var4 + 0xf2);
+                            u_var2 = pass1_1018_2dde(u_var1, (u_var1 >> 0x10));
                             //               TODO: goto LAB_1020_6a0b;
                         }
                     } else {
-                        uVar2 = param_2 - 0xbba;
-                        if (uVar2 == 0x0) {
-                            uVar2 = GetDlgItem16(param_3, 0x1797);
-                            if (uVar2 != 0x0) {
-                                uVar2 = DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
-                                return uVar2;
+                        u_var2 = param_2 - 0xbba;
+                        if (u_var2 == 0x0) {
+                            u_var2 = GetDlgItem16(param_3, 0x1797);
+                            if (u_var2 != 0x0) {
+                                u_var2 = DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
+                                return u_var2;
                             }
                             //               TODO: goto LAB_1020_6a6f;
                         }
@@ -728,40 +728,40 @@ pub fn unk_destroy_win_op_1020_694c(
             }
         }
     }
-    return uVar2;
+    return u_var2;
 }
 
 pub fn destroy_icon_1020_6bd2(param_1: u32, param_2: u8, param_3: HICON16) {
     let pu_var1: u32;
-    let uVar2: u16;
-    let ppcVar3: u32;
-    let iVar4: i16;
-    let uVar5: u16;
+    let u_var2: u16;
+    let ppc_var3: u32;
+    let i_var4: i16;
+    let u_var5: u16;
     let uVar6: u16;
 
-   // uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    uVar6 = (iVar4 + 0xc2);
+   // u_var5 = (param_1 >> 0x10);
+    i_var4 = param_1;
+    uVar6 = (i_var4 + 0xc2);
     DestroyIcon16(param_3);
-    (iVar4 + 0xc2) = 0x0;
-    (iVar4 + 0x8) = 0x0;
-    pu_var1 = (iVar4 + 0xf6);
-    uVar2 = (iVar4 + 0xf8);
-    if ((uVar2 | pu_var1) != 0x0) {
-        ppcVar3 = *pu_var1;
-        (**ppcVar3)(ctx.s_tile2_bmp_1050_1538, pu_var1, uVar2, 0x1, uVar6);
+    (i_var4 + 0xc2) = 0x0;
+    (i_var4 + 0x8) = 0x0;
+    pu_var1 = (i_var4 + 0xf6);
+    u_var2 = (i_var4 + 0xf8);
+    if ((u_var2 | pu_var1) != 0x0) {
+        ppc_var3 = *pu_var1;
+        (**ppc_var3)(ctx.s_tile2_bmp_1050_1538, pu_var1, u_var2, 0x1, uVar6);
     }
-    (iVar4 + 0xf6) = 0x0;
-    pass1_1010_1dda((iVar4 + 0xf2));
-    (iVar4 + 0xf2) = 0x0;
+    (i_var4 + 0xf6) = 0x0;
+    pass1_1010_1dda((i_var4 + 0xf2));
+    (i_var4 + 0xf2) = 0x0;
     return;
 }
 
 pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: &mut Struct3, in_menu_handle_2: HMENU16) {
     let local_struct_1: &mut Struct3;
-    let uVar1: &mut Struct3;
+    let u_var1: &mut Struct3;
 
-   // uVar1 = (in_struct_1 >> 0x10);
+   // u_var1 = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1.address_offset_field_0x0 = 0x7b86;
     local_struct_1.address_offset_field_0x2 = 0x1020;
@@ -778,9 +778,9 @@ pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: &mut Struct3, in_menu_handle_2:
 
 pub fn destroy_window_1020_8250(param_1: u32, param_2: HWND16) {
     let BVar1: bool;
-    let uVar2: u16;
+    let u_var2: u16;
 
-   // uVar2 = (param_1 >> 0x10);
+   // u_var2 = (param_1 >> 0x10);
     if ((param_1 + 0xec) != 0x0) {
         BVar1 = IsWindow16(param_2);
         if (BVar1 != 0x0) {
@@ -814,30 +814,30 @@ pub fn destroy_win_1038_a3d2(param_1: i32, param_2: HWND16) {
 }
 
 pub fn destroy_window_1038_cc00(param_1: i16, param_2: u16, param_3: u16, param_4: i32) {
-    let uVar1: u16;
+    let u_var1: u16;
     let in_DX: U32Ptr;
     let unaff_DI: i16;
     WNDCLASS16 * unaff_SS;
     let i_var2: i16;
 
-    uVar1 = param_4._2_2_ - 0x1cd;
-    if (uVar1 == 0x0) {
+    u_var1 = param_4._2_2_ - 0x1cd;
+    if (u_var1 == 0x0) {
         i_var2 = 0x1;
     } else {
-        uVar1 = param_4._2_2_ - 0x1ce;
-        if (uVar1 == 0x0) {
+        u_var1 = param_4._2_2_ - 0x1ce;
+        if (u_var1 == 0x0) {
             i_var2 = 0x2;
         } else {
-            uVar1 = param_4._2_2_ - 0x1cf;
-            if (uVar1 == 0x0) {
+            u_var1 = param_4._2_2_ - 0x1cf;
+            if (u_var1 == 0x0) {
                 i_var2 = 0x3;
             } else {
-                uVar1 = param_4._2_2_ - 0x1d0;
-                if (uVar1 == 0x0) {
+                u_var1 = param_4._2_2_ - 0x1d0;
+                if (u_var1 == 0x0) {
                     i_var2 = 0x4;
                 } else {
-                    uVar1 = param_4._2_2_ - 0x1d1;
-                    if (uVar1 != 0x0) {
+                    u_var1 = param_4._2_2_ - 0x1d1;
+                    if (u_var1 != 0x0) {
                         post_win_msg_1040_7b3c(
                             CONCAT22(param_2, param_1),
                             param_3,
@@ -853,12 +853,12 @@ pub fn destroy_window_1038_cc00(param_1: i16, param_2: u16, param_3: u16, param_
         }
     }
     pass1_1008_eb74((param_1 + 0x8e), i_var2, in_DX, unaff_DI, unaff_SS);
-    if (uVar1 != 0x0) {
+    if (u_var1 != 0x0) {
         win_1008_5c7c(
             ctx._PTR_LOOP_1050_02a0,
-            CONCAT22(uVar1, 0x1),
+            CONCAT22(u_var1, 0x1),
             unaff_SS,
-            uVar1,
+            u_var1,
             in_DX,
         );
         DestroyWindow16(0x1008);
@@ -904,9 +904,9 @@ pub fn destroy_win_1038_e1dc(param_1: u16, param_2: u16, param_3: i16, param_4: 
 
 pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
     let i_var1: &mut Struct31;
-    let uVar1: &mut Struct31;
+    let u_var1: &mut Struct31;
 
-   // uVar1 = (param_1 >> 0x10);
+   // u_var1 = (param_1 >> 0x10);
     i_var1 = param_1;
     *param_1.field_0x0 = 0x67c;
     i_var1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
@@ -921,14 +921,14 @@ pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
 
 pub fn destroy_win_1040_5256(param_1: &mut Struct34, param_2: HWND16) {
     let pUVar1: &mut u32;
-    let uVar2: u16;
-    let ppcVar3: u32;
+    let u_var2: u16;
+    let ppc_var3: u32;
     let Bvar4: bool;
     let iVar5: &mut Struct34;
-    let uVar5: u16;
+    let u_var5: u16;
     let HVar6: HWND16;
 
-   // uVar5 = (param_1 >> 0x10);
+   // u_var5 = (param_1 >> 0x10);
     iVar5 = param_1;
     HVar6 = param_2;
     if (iVar5.field_0xb6 != 0x0) {
@@ -941,10 +941,10 @@ pub fn destroy_win_1040_5256(param_1: &mut Struct34, param_2: HWND16) {
     }
     iVar5.field_0xb6 = 0x0;
     pUVar1 = iVar5.field_0x94;
-    uVar2 = iVar5.field_0x96;
-    if ((uVar2 | pUVar1) != 0x0) {
-        ppcVar3 = *pUVar1;
-        (**ppcVar3)(HVar6, pUVar1, uVar2, 0x1);
+    u_var2 = iVar5.field_0x96;
+    if ((u_var2 | pUVar1) != 0x0) {
+        ppc_var3 = *pUVar1;
+        (**ppc_var3)(HVar6, pUVar1, u_var2, 0x1);
     }
     iVar5.field_0x94 = 0x0;
     iVar5.field_0x98 = 0x0;
@@ -960,9 +960,9 @@ pub fn destroy_win_1040_7b98(param_1: i32, param_2: HWND16) {
 
 pub fn destroy_win_1040_8212(param_1: i32, param_2: HWND16) {
     let is_window: bool;
-    let uVar1: u16;
+    let u_var1: u16;
 
-   // uVar1 = (param_1 >> 0x10);
+   // u_var1 = (param_1 >> 0x10);
     if ((param_1 + 0x8c) != 0x0) {
         is_window = IsWindow16(param_2);
         if (is_window != 0x0) {
@@ -991,14 +991,14 @@ pub unsafe fn destroy_window_1040_b726(param_1: U32Ptr, param_2: i16, in_win_han
 
 pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
     let pu_var1: u32;
-    let uVar2: u16;
-    let ppcVar3: u32;
+    let u_var2: u16;
+    let ppc_var3: u32;
     let Bvar4: bool;
     let iVar5: &mut Struct35;
-    let uVar5: u16;
+    let u_var5: u16;
     let HVar6: HWND16;
 
-   // uVar5 = (param_1 >> 0x10);
+   // u_var5 = (param_1 >> 0x10);
     iVar5 = param_1;
     HVar6 = param_2;
     if (iVar5.field_0xb6 != 0x0) {
@@ -1011,10 +1011,10 @@ pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
     }
     iVar5.field_0xb6 = 0x0;
     pu_var1 = iVar5.field_0x94;
-    uVar2 = iVar5.field_0x96;
-    if (uVar2 | pu_var1) != 0x0 {
-        ppcVar3 = *pu_var1;
-        (**ppcVar3)(HVar6, pu_var1, uVar2, 0x1);
+    u_var2 = iVar5.field_0x96;
+    if (u_var2 | pu_var1) != 0x0 {
+        ppc_var3 = *pu_var1;
+        (**ppc_var3)(HVar6, pu_var1, u_var2, 0x1);
     }
     iVar5.field_0x94 = 0x0;
     iVar5.field_0x98 = 0x0;

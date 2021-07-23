@@ -13,38 +13,38 @@ pub unsafe fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: u32, param_2: u
     let i_var1: i16;
     let puVar2: U32Ptr;
     let uVar3: u16;
-    let iVar4: i16;
-    let uVar5: u16;
+    let i_var4: i16;
+    let u_var5: u16;
     let uVar6: u16;
     let uVar7: u32;
     let lVar8: i32;
 
    // uVar6 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    if ((iVar4 + 0x6) != 0x0) {
-        uVar7 = pass1_1000_1284(ctx, (iVar4 + 0x6), 0x1000);
+    i_var4 = param_1;
+    if ((i_var4 + 0x6) != 0x0) {
+        uVar7 = pass1_1000_1284(ctx, (i_var4 + 0x6), 0x1000);
        // i_var1 = (uVar7 >> 0x10);
         lVar8 = mem_op_1000_0a48(ctx, 0x1, uVar7, i_var1, ctx._PTR_LOOP_1050_5f2c, 0x1000);
-        uVar5 = lVar8;
-        puVar2 = ((lVar8 >> 0x10) | uVar5);
+        u_var5 = lVar8;
+        puVar2 = ((lVar8 >> 0x10) | u_var5);
         if (puVar2 != 0x0) {
             hmemcpy16(
                  & ctx.PTR_LOOP_1050_1000,
                 uVar7,
-                CONCAT22((iVar4 + 0x6), i_var1),
+                CONCAT22((i_var4 + 0x6), i_var1),
             );
             mem_op_1000_179c(ctx, 0x1e, puVar2, 0x1000);
-            uVar3 = puVar2 | uVar5;
+            uVar3 = puVar2 | u_var5;
             if (uVar3 == 0x0) {
-                uVar5 = 0x0;
+                u_var5 = 0x0;
                 uVar3 = 0x0;
             } else {
-                pass1_1008_4016(ctx, CONCAT22(puVar2, uVar5));
+                pass1_1008_4016(ctx, CONCAT22(puVar2, u_var5));
             }
-            (uVar5 + 0x6) = lVar8;
-            pass1_1008_47cc(CONCAT22(uVar3, uVar5));
-            pass1_1008_4834(CONCAT22(uVar3, uVar5));
-            (uVar5 + 0x1c) = 0x1;
+            (u_var5 + 0x6) = lVar8;
+            pass1_1008_47cc(CONCAT22(uVar3, u_var5));
+            pass1_1008_4834(CONCAT22(uVar3, u_var5));
+            (u_var5 + 0x1c) = 0x1;
             return;
         }
     }
@@ -57,17 +57,17 @@ pub unsafe fn memcpy_op_1008_676e(
     param_2: u16,
     param_3: U32Ptr,
 ) {
-    let uVar1: u32;
+    let u_var1: u32;
     let lVar2: i32;
     let uVar3: u16;
-    let iVar4: i16;
+    let i_var4: i16;
     let iVar5: i16;
     let uVar6: u16;
     let uVar7: u16;
 
    // uVar6 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    if ((iVar4 + 0x6) == 0x0) {
+    i_var4 = param_1;
+    if ((i_var4 + 0x6) == 0x0) {
         return;
     }
     mem_op_1000_179c(ctx, 0x1e, param_3, 0x1000);
@@ -76,18 +76,18 @@ pub unsafe fn memcpy_op_1008_676e(
         param_2 = 0x0;
         uVar3 = 0x0;
     } else {
-        uVar1 = (iVar4 + 0x10);
-       // uVar7 = (uVar1 >> 0x10);
-        iVar5 = uVar1;
+        u_var1 = (i_var4 + 0x10);
+       // uVar7 = (u_var1 >> 0x10);
+        iVar5 = u_var1;
         struct_op_1008_6604(CONCAT22(param_3, param_2), (iVar5 + 0x8), (iVar5 + 0x4));
     }
-    pass1_1000_48a8((param_2 + 0x10), (iVar4 + 0x10), 0x28);
-    uVar1 = (param_2 + 0x10);
-    lVar2 = (uVar1 + 0x8) * (iVar4 + 0x18);
+    pass1_1000_48a8((param_2 + 0x10), (i_var4 + 0x10), 0x28);
+    u_var1 = (param_2 + 0x10);
+    lVar2 = (u_var1 + 0x8) * (i_var4 + 0x18);
     hmemcpy16(
         ctx.PTR_LOOP_1050_1000,
         lVar2,
-        CONCAT22((iVar4 + 0x6), (lVar2 >> 0x10)),
+        CONCAT22((i_var4 + 0x6), (lVar2 >> 0x10)),
     );
     (param_2 + 0x1c) = 0x1;
     return;

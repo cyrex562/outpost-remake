@@ -2,7 +2,7 @@
 pub fn  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
 
 {
-  let uVar1: u32;
+  let u_var1: u32;
   let iVar2: i16;
   let unaff_SS: u16;
   let in_AF: u8;
@@ -10,14 +10,14 @@ pub fn  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
   iVar2 = param_2 * 0x8 + param_1;
   if (((((iVar2 + 0x22) != 0x0) || ((iVar2 + 0x24) != 0x0)) ||
       ((iVar2 + 0x26) != 0x0)) || ((iVar2 + 0x28) != 0x0)) {
-    uVar1 = (param_1 + 0xe);
-    sys_1000_3f9c(uVar1,(uVar1 >> 0x10),
+    u_var1 = (param_1 + 0xe);
+    sys_1000_3f9c(u_var1,(u_var1 >> 0x10),
                   s__d__d__d__d_1050_14ae,ctx.data_seg,
                   (param_2 * 0x8 + param_1 + 0x22),
                   &stack0xfffe,param_1._2_2_,0x1000,unaff_SS,in_AF);
-    uVar1 = (param_1 + 0xa);
+    u_var1 = (param_1 + 0xa);
     WritePrivateProfileString16
-              (&ctx.PTR_LOOP_1050_1000,uVar1,(uVar1 >> 0x10),
+              (&ctx.PTR_LOOP_1050_1000,u_var1,(u_var1 >> 0x10),
                (param_1 + 0xe));
   }
   return;

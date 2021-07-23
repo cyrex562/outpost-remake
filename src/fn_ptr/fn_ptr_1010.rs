@@ -2,19 +2,19 @@
 pub fn fn_ptr_1010_905e(param_1: u32,param_2: u32)
 {
   let pu_var1: u32;
-  let uVar2: u16;
-  let ppcVar3: u32;
-  let iVar4: &mut Struct169;
-  let uVar4: u16;
+  let u_var2: u16;
+  let ppc_var3: u32;
+  let i_var4: &mut Struct169;
+  let u_var4: u16;
   
- // uVar4 = (param_1 >> 0x10);
-  iVar4 = param_1;
-  pu_var1 = &iVar4.field_0x4;
-  uVar2 = (&iVar4.field_0x4 + 0x2);
-  if ((uVar2 | pu_var1) != 0x0) {
-    ppcVar3 = *pu_var1;
-    (**ppcVar3)();
+ // u_var4 = (param_1 >> 0x10);
+  i_var4 = param_1;
+  pu_var1 = &i_var4.field_0x4;
+  u_var2 = (&i_var4.field_0x4 + 0x2);
+  if ((u_var2 | pu_var1) != 0x0) {
+    ppc_var3 = *pu_var1;
+    (**ppc_var3)();
   }
-  iVar4.field_0x4 = param_2;
+  i_var4.field_0x4 = param_2;
   return;
 }

@@ -26,11 +26,11 @@ pub fn fn_ptr_1028_d728(param_1: u32) {
 
 pub fn fn_ptr_1028_d742(param_1: u32, param_2: U32Ptr) -> u16 {
     code * *ppcVar1;
-    let uVar2: u32;
+    let u_var2: u32;
 
     ppcVar1 = (*param_2 + 0xc);
-    uVar2 = (**ppcVar1)();
-    pass1_1020_c872((param_1 + 0x4), (uVar2 + 0x4), uVar2);
+    u_var2 = (**ppcVar1)();
+    pass1_1020_c872((param_1 + 0x4), (u_var2 + 0x4), u_var2);
     return 0x1;
 }
 

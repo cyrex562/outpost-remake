@@ -145,7 +145,7 @@ pub fn str_op_1000_3dbe(
     let mut string_3: &mut String;
     let var3: u16;
 
-    // uVar5 = (param_1 >> 0x10);
+    // u_var5 = (param_1 >> 0x10);
     string_3 = param_1;
     string_2 = param_2;
     if param_3 != 0x0 {
@@ -210,7 +210,7 @@ pub fn str_1000_4d58(
     u_stack8 = 0x0;
     string_3 = string_1;
     loop {
-        // uVar5 = (pcStack18 >> 0x10);
+        // u_var5 = (pcStack18 >> 0x10);
         string_5 = string_3;
         if *string_3 == '\0' { break; }
         if (*string_3 == '/') || (*string_3 == '\\') {

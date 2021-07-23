@@ -101,11 +101,11 @@ pub fn unk_draw_op_1008_7f62(
 ) -> *mut Struct20 {
     let HVar1: HGDIOBJ16;
     let HVar2: HCURSOR16;
-    let uVar4: &mut Struct20;
+    let u_var4: &mut Struct20;
     let iVar3: &mut Struct20;
 
     iVar3 = param_1;
-   // uVar4 = (param_1 >> 0x10);
+   // u_var4 = (param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_3);
     iVar3.field_0xde = param_2;
     param_1.field_0x0 = 0x8042;

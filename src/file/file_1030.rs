@@ -11,16 +11,16 @@ use crate::pass::pass_1030::pass1_1030_84ae;
 
 pub fn file_1030_1730(param_1: u32, param_2: u32)
 {
-  let uVar1: u16;
+  let u_var1: u16;
   let BVar2: bool;
   let uVar3: u16;
   
- // uVar1 = (param_1 >> 0x10);
+ // u_var1 = (param_1 >> 0x10);
  // uVar3 = (param_2 >> 0x10);
-  BVar2 = read_file_1008_7dee(param_2,uVar3,param_1 + 0x4,0x0,uVar1,0x4,
+  BVar2 = read_file_1008_7dee(param_2,uVar3,param_1 + 0x4,0x0,u_var1,0x4,
                               0x1008);
   if (BVar2 != 0x0) {
-    BVar2 = read_file_1008_7dee(param_2,uVar3,param_1 + 0x8,0x0,uVar1,0x4,
+    BVar2 = read_file_1008_7dee(param_2,uVar3,param_1 + 0x8,0x0,u_var1,0x4,
                                 0x1008);
     if (BVar2 != 0x0) {
       return;
@@ -54,10 +54,10 @@ file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
               param_5: u16)
 
 {
-  let uVar1: u32;
+  let u_var1: u32;
   let piVar2: U32Ptr;
   let uVar3: u16;
-  let uVar4: u16;
+  let u_var4: u16;
   let BVar5: bool;
   let uVar6: u16;
   let puVar7: U32Ptr;
@@ -77,13 +77,13 @@ file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
     }
     else {
     }
-    uVar4 = fn_ptr_op_1000_1708(0x6,0x0,0x1,PTR_LOOP_1050_5f2c,
+    u_var4 = fn_ptr_op_1000_1708(0x6,0x0,0x1,PTR_LOOP_1050_5f2c,
                                 ctx.PTR_LOOP_1050_5f2e,0x1000);
-    &iVar10.field_0x10 = uVar4;
+    &iVar10.field_0x10 = u_var4;
     (&iVar10.field_0x10 + 0x2) = ctx.PTR_LOOP_1050_5f2e;
     puVar7 = (&iVar10.field_0x10 + 0x2);
-   // uVar4 = (param_2 >> 0x10);
-    BVar5 = read_file_1008_7dee(param_2,uVar4,&iVar10.field_0x10,0x0,
+   // u_var4 = (param_2 >> 0x10);
+    BVar5 = read_file_1008_7dee(param_2,u_var4,&iVar10.field_0x10,0x0,
                                 puVar7,0x2,0x1008);
     if (BVar5 != 0x0) {
       piVar2 = iVar10.field_0x10;
@@ -99,9 +99,9 @@ file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
       iVar7.field_0x2 = uVar6;
       iVar7.field_0x4 = puVar7;
       piVar2 = iVar10.field_0x10;
-      uVar1 = (piVar2 + 0x2);
-      BVar5 = read_file_1008_7dee(param_2,uVar4,uVar1,0x0,
-                                  (uVar1 >> 0x10),uVar3,0x1008);
+      u_var1 = (piVar2 + 0x2);
+      BVar5 = read_file_1008_7dee(param_2,u_var4,u_var1,0x0,
+                                  (u_var1 >> 0x10),uVar3,0x1008);
       if (BVar5 != 0x0) {
         return 0x1;
       }
@@ -114,45 +114,45 @@ file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
 
 pub fn write_to_file_1030_32e4(param_1: u32,param_2: u32,param_3: u16)
 {
-  let uVar1: u16;
+  let u_var1: u16;
   let iVar2: i16;
   let BVar3: bool;
-  let uVar4: u16;
-  let uVar5: u16;
+  let u_var4: u16;
+  let u_var5: u16;
   let local_16: [u32;0x2];
   let local_c: u16;
   let local_a: [u32;0x2];
   
   iVar2 = param_1;
- // uVar1 = (param_1 >> 0x10);
-  uVar4 = param_2;
- // uVar5 = (param_2 >> 0x10);
-  BVar3 = write_to_file_1008_7e1c(uVar4,uVar5,iVar2 + 0x4,uVar1,0x16c,0x1008);
+ // u_var1 = (param_1 >> 0x10);
+  u_var4 = param_2;
+ // u_var5 = (param_2 >> 0x10);
+  BVar3 = write_to_file_1008_7e1c(u_var4,u_var5,iVar2 + 0x4,u_var1,0x16c,0x1008);
   if (BVar3 != 0x0) {
-    BVar3 = write_to_file_1008_7e1c(uVar4,uVar5,iVar2 + 0x174,uVar1,&DAT_0000_000c,0x1008)
+    BVar3 = write_to_file_1008_7e1c(u_var4,u_var5,iVar2 + 0x174,u_var1,&DAT_0000_000c,0x1008)
     ;
     if (BVar3 != 0x0) {
       BVar3 = write_to_file_1008_7e1c
-                        (uVar4,uVar5,iVar2 + 0x180,uVar1,&DAT_0000_000c,0x1008);
+                        (u_var4,u_var5,iVar2 + 0x180,u_var1,&DAT_0000_000c,0x1008);
       if (BVar3 != 0x0) {
         BVar3 = write_to_file_1008_7e1c
-                          (uVar4,uVar5,iVar2 + 0x18c,uVar1,0x18,0x1008);
+                          (u_var4,u_var5,iVar2 + 0x18c,u_var1,0x18,0x1008);
         if (BVar3 != 0x0) {
           local_c = (iVar2 + 0x1a8);
           BVar3 = write_to_file_1008_7e1c
-                            (uVar4,uVar5,&local_c,param_3,0x2,0x1008);
+                            (u_var4,u_var5,&local_c,param_3,0x2,0x1008);
           if (BVar3 != 0x0) {
             local_16[0] = (iVar2 + 0x1aa);
             BVar3 = write_to_file_1008_7e1c
-                              (uVar4,uVar5,local_16,param_3,0x4,0x1008);
+                              (u_var4,u_var5,local_16,param_3,0x4,0x1008);
             if (BVar3 != 0x0) {
               local_a[0] = (iVar2 + 0x170);
               BVar3 = write_to_file_1008_7e1c
-                                (uVar4,uVar5,local_a,param_3,0x4,0x1008);
+                                (u_var4,u_var5,local_a,param_3,0x4,0x1008);
               if (BVar3 != 0x0) {
                 local_c = (iVar2 + 0x1ae);
                 BVar3 = write_to_file_1008_7e1c
-                                  (uVar4,uVar5,&local_c,param_3,0x2,0x1008
+                                  (u_var4,u_var5,&local_c,param_3,0x2,0x1008
                                   );
                 if (BVar3 != 0x0) {
                   return;
@@ -172,35 +172,35 @@ pub fn write_to_file_1030_32e4(param_1: u32,param_2: u32,param_3: u16)
 
 pub fn read_file_1030_33f0(param_1: u32,param_2: u32)
 {
-  let uVar1: u16;
+  let u_var1: u16;
   let iVar2: &mut Struct430;
   let BVar2: bool;
   let uVar3: u16;
-  let uVar4: u16;
+  let u_var4: u16;
   
   iVar2 = param_1;
   iVar2 = &iVar2.field_0x4;
- // uVar1 = (param_1 >> 0x10);
+ // u_var1 = (param_1 >> 0x10);
   uVar3 = param_2;
- // uVar4 = (param_2 >> 0x10);
-  BVar2 = read_file_1008_7dee(uVar3,uVar4,iVar2,0x0,uVar1,0x16c,0x1008);
+ // u_var4 = (param_2 >> 0x10);
+  BVar2 = read_file_1008_7dee(uVar3,u_var4,iVar2,0x0,u_var1,0x16c,0x1008);
   if (((((BVar2 != 0x0) &&
-        (BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x174,0x0,uVar1,0xc,0x1008)
+        (BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x174,0x0,u_var1,0xc,0x1008)
         , BVar2 != 0x0)) &&
-       (BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x180,0x0,uVar1,0xc,0x1008),
+       (BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x180,0x0,u_var1,0xc,0x1008),
        BVar2 != 0x0)) &&
-      ((BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x18c,0x0,uVar1,0x18,0x1008)
+      ((BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x18c,0x0,u_var1,0x18,0x1008)
        , BVar2 != 0x0 &&
-       (BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x1a8,0x0,uVar1,0x2,0x1008),
+       (BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x1a8,0x0,u_var1,0x2,0x1008),
        BVar2 != 0x0)))) &&
-     (BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x1aa,0x0,uVar1,0x4,0x1008),
+     (BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x1aa,0x0,u_var1,0x4,0x1008),
      BVar2 != 0x0)) {
     if (ctx.PTR_LOOP_1050_0312 < 0x2) {
       return;
     }
-    BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x170,0x0,uVar1,0x4,0x1008);
+    BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x170,0x0,u_var1,0x4,0x1008);
     if ((BVar2 != 0x0) &&
-       (BVar2 = read_file_1008_7dee(uVar3,uVar4,&iVar2.field_0x1ae,0x0,uVar1,0x2,0x1008),
+       (BVar2 = read_file_1008_7dee(uVar3,u_var4,&iVar2.field_0x1ae,0x0,u_var1,0x2,0x1008),
        BVar2 != 0x0)) {
       return;
     }
@@ -215,11 +215,11 @@ read_file_1030_4e70(param_1: u32,param_2: U32Ptr,byte **param_3,param_4: i32,
                    param_5: u16)
 
 {
-  let uVar1: u16;
+  let u_var1: u16;
   HVar2: HFILE16
   let uVar3: u16;
   let unaff_SS: u16;
-  let uVar4: u32;
+  let u_var4: u32;
   let lVar5: i32;
   let pbStack60: U32Ptr;
   let lStack56: i32;
@@ -228,10 +228,10 @@ read_file_1030_4e70(param_1: u32,param_2: U32Ptr,byte **param_3,param_4: i32,
   *param_3 = 0x0;
   *param_2 = 0x0;
   if (param_4 != 0x0) {
-    uVar4 = pass1_1030_5164(param_1,param_4,unaff_SS);
-   // param_5 = (uVar4 >> 0x10);
-    uVar1 = dos3_call_1000_51aa(&stack0xfffe);
-    if (uVar1 == 0x0) {
+    u_var4 = pass1_1030_5164(param_1,param_4,unaff_SS);
+   // param_5 = (u_var4 >> 0x10);
+    u_var1 = dos3_call_1000_51aa(&stack0xfffe);
+    if (u_var1 == 0x0) {
       *param_2 = uStack20;
       HVar2 = _lopen16(&ctx.PTR_LOOP_1050_1000,0x0);
       if (HVar2 != 0xffff) {
@@ -268,7 +268,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
   let piVar1: U32Ptr;
   let iVar2: i16;
   let uVar3: u32;
-  let uVar4: u16;
+  let u_var4: u16;
   let BVar5: bool;
   let puVar6: U32Ptr;
   let uVar7: u16;
@@ -296,21 +296,21 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
     }
     else {
     }
-    uVar4 = fn_ptr_op_1000_1708(0x20,0x0,0x1,PTR_LOOP_1050_5f2c,
+    u_var4 = fn_ptr_op_1000_1708(0x20,0x0,0x1,PTR_LOOP_1050_5f2c,
                                 ctx.PTR_LOOP_1050_5f2e,0x1000);
-    puVar9 = (ctx.PTR_LOOP_1050_5f2e | uVar4);
+    puVar9 = (ctx.PTR_LOOP_1050_5f2e | u_var4);
     if (puVar9 == 0x0) {
-      uVar4 = 0x0;
+      u_var4 = 0x0;
       puVar9 = 0x0;
     }
     else {
-      pass1_1030_84ae(CONCAT22(ctx.PTR_LOOP_1050_5f2e,uVar4));
+      pass1_1030_84ae(CONCAT22(ctx.PTR_LOOP_1050_5f2e,u_var4));
     }
-    iVar12.field_0x10 = uVar4;
+    iVar12.field_0x10 = u_var4;
     iVar12.field_0x12 = puVar9;
-    uVar4 = param_2;
+    u_var4 = param_2;
    // uVar11 = (param_2 >> 0x10);
-    BVar5 = read_file_1008_7dee(uVar4,uVar11,&local_4,0x0,param_5,0x2,0x1008);
+    BVar5 = read_file_1008_7dee(u_var4,uVar11,&local_4,0x0,param_5,0x2,0x1008);
     if (BVar5 != 0x0) {
       uVar8 = (ctx.PTR__LOOP_1050_65e2 + 0x52);
       uStack8 = uVar8;
@@ -318,11 +318,11 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                       0x0,0x1,local_4);
       iVar12.field_0x10 = uVar8;
       iVar12.field_0x12 = puVar9;
-      BVar5 = read_file_1008_7dee(uVar4,uVar11,iVar12.field_0x10 + 0x2,0x0,puVar9
+      BVar5 = read_file_1008_7dee(u_var4,uVar11,iVar12.field_0x10 + 0x2,0x0,puVar9
                                   ,0x2,0x1008);
       if (BVar5 != 0x0) {
         puVar6 = local_408;
-        read_file_1008_7c6e(uVar4,uVar11,CONCAT22(param_5,puVar6),0x1008);
+        read_file_1008_7c6e(u_var4,uVar11,CONCAT22(param_5,puVar6),0x1008);
         if (puVar6 != 0x0) {
           uVar8 = &iVar12.field_0x10;
           fn_ptr_1000_17ce(ctx, (uVar8 + 0x4), 0x1000);
@@ -333,7 +333,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
           iVar9.field_0x4 = uVar7;
           iVar9.field_0x6 = puVar9;
           uVar8 = &iVar12.field_0x10;
-          BVar5 = read_file_1008_7dee(uVar4,uVar11,uVar8 + 0x1a,0x0,
+          BVar5 = read_file_1008_7dee(u_var4,uVar11,uVar8 + 0x1a,0x0,
                                       (uVar8 >> 0x10),0x2,0x1008);
           if (BVar5 != 0x0) {
             uVar8 = &iVar12.field_0x10;
@@ -368,7 +368,7 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                                                 &iVar12.field_0x14),0x1008,
                                         param_5);
             if ((BVar5 != 0x0) &&
-               (BVar5 = read_file_1008_7dee(uVar4,uVar11,&iVar12.field_0x1c,0x0,uVar12,
+               (BVar5 = read_file_1008_7dee(u_var4,uVar11,&iVar12.field_0x1c,0x0,uVar12,
                                             0x2,0x1008), BVar5 != 0x0)) {
               return;
             }
@@ -389,12 +389,12 @@ read_file_1030_5c52(param_1: u32,param_2: u32,param_3: u16,
 
 {
   let BVar1: bool;
-  let uVar2: u16;
+  let u_var2: u16;
   
- // uVar2 = (param_2 >> 0x10);
-  read_file_1008_7cfe(param_2,uVar2,0x9,0x1008,param_4);
+ // u_var2 = (param_2 >> 0x10);
+  read_file_1008_7cfe(param_2,u_var2,0x9,0x1008,param_4);
   if (param_3 != 0x0) {
-    BVar1 = read_file_1008_7dee(param_2,uVar2,param_1,0x0,
+    BVar1 = read_file_1008_7dee(param_2,u_var2,param_1,0x0,
                                 (param_1 >> 0x10),0x24,0x1008);
     if (BVar1 == 0x0) {
       ctx.PTR_LOOP_1050_0310 = 0x6d2;
@@ -415,11 +415,11 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
   let iVar6: i16;
   plVar7: &i32;
   let puVar8: u32;
-  let extraout_DX: u16;
+  let extraout_dx: u16;
   let uVar9: u16;
   let puVar10: U32Ptr;
   let extraout_DX_00: u16;
-  let iVar4: &mut Struct389;
+  let i_var4: &mut Struct389;
   let iVar5: &mut Struct391;
   let uVar11: u16;
   let uVar12: u16;
@@ -439,7 +439,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
   let local_20: [u16;0x9];
   let uStack14: u16;
   let local_4: u16;
-  let uVar5: &mut Struct388;
+  let u_var5: &mut Struct388;
   let uVar8: &mut Struct390;
   
   file_1030_1730(param_1,param_2);
@@ -498,21 +498,21 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                   //   local_3e[0] = ctx._PTR_LOOP_1050_68a2;
                   //   paStack50 = pass1_1000_07fc(0x1000,_PTR_LOOP_1050_68a2);
                   //   uVar9 = (paStack50 >> 0x10);
-                  //   uVar5 = paStack50;
-                  //   puVar10 = (uVar9 | uVar5);
+                  //   u_var5 = paStack50;
+                  //   puVar10 = (uVar9 | u_var5);
                   //   if (puVar10 == 0x0) {
                   //     paStack44 = 0x0;
                   //   }
                   //   else {
                   //     paStack50.field_0x0 = 0x389a;
-                  //     uVar5.field_0x2 = 0x1008;
-                  //     uVar5.field_0x4 = 0x0;
-                  //     uVar5.field_0x6 = 0x0;
-                  //     uVar5.field_0x8 = 0x0;
-                  //     uVar5.field_0xa = 0x0;
-                  //     uVar5.field_0xc = 0x0;
+                  //     u_var5.field_0x2 = 0x1008;
+                  //     u_var5.field_0x4 = 0x0;
+                  //     u_var5.field_0x6 = 0x0;
+                  //     u_var5.field_0x8 = 0x0;
+                  //     u_var5.field_0xa = 0x0;
+                  //     u_var5.field_0xc = 0x0;
                   //     paStack50.field_0x0 = 0x56ce;
-                  //     uVar5.field_0x2 = 0x1018;
+                  //     u_var5.field_0x2 = 0x1018;
                   //     paStack44 = paStack50;
                   //   }
                   //   BVar3 = read_file_1008_7dee(uVar13,uVar14,local_28,0x0,param_5
@@ -534,10 +534,10 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                   //                                                ),0x2,0x1008),
                   //           BVar3 == 0x0)))))) goto LAB_1030_77be;
                   //   uVar12 = (paStack44 >> 0x10);
-                  //   iVar4 = paStack44;
-                  //   iVar4.field_0x4 = local_28[0];
-                  //   iVar4.field_0x6 = local_24[0];
-                  //   iVar4.field_0x8 = local_2e;
+                  //   i_var4 = paStack44;
+                  //   i_var4.field_0x4 = local_28[0];
+                  //   i_var4.field_0x6 = local_24[0];
+                  //   i_var4.field_0x8 = local_2e;
                   //   if (iVar3.field_0x3a == 0x0) {
                   //     uVar9 = local_2e;
                   //     mem_op_1000_179c(0xc,puVar10,0x1000);
@@ -548,7 +548,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
                   //     else {
                   //       set_struct_1008_574a(CONCAT22(puVar10,uVar9));
                   //       &iVar3.field_0x3a = uVar9;
-                  //       (&iVar3.field_0x3a + 0x2) = extraout_DX;
+                  //       (&iVar3.field_0x3a + 0x2) = extraout_dx;
                   //     }
                   //   }
                   //   ppcVar2 = (*iVar3.field_0x3a + 0x8);

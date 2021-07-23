@@ -9,13 +9,13 @@ use crate::struct_ops::struct_1030::struct_1030_dc96;
 use crate::sys_api::sys_1000_3f9c;
 use crate::util::{CONCAT22, ZEXT24};
 
-pub fn struct_1028_0068(struct_2: &mut Struct183, param_2: U32Ptr, extraout_DX: u16) {
+pub fn struct_1028_0068(struct_2: &mut Struct183, param_2: U32Ptr, extraout_dx: u16) {
     let u_var1: u16;
-    // let extraout_DX: u16;
+    // let extraout_dx: u16;
     let struct_1: &mut Struct183;
 
     struct_1028_b354(struct_2);
-    // uVar2 = (param_1 >> 0x10);
+    // u_var2 = (param_1 >> 0x10);
     struct_1 = struct_2;
     u_var1 = 0x0;
     struct_1.field_0x20 = 0x0;
@@ -28,7 +28,7 @@ pub fn struct_1028_0068(struct_2: &mut Struct183, param_2: U32Ptr, extraout_DX: 
     } else {
         set_struct_1008_574a(CONCAT22(param_2, u_var1));
         struct_1.field_0x22 = u_var1;
-        struct_1.field_0x24 = extraout_DX;
+        struct_1.field_0x24 = extraout_dx;
     }
     return;
 }
@@ -38,10 +38,10 @@ pub fn struct_1028_0954(param_1: U32Ptr) -> u16
 
 {
     let i_var1: &mut Struct185;
-    let uVar1: u16;
+    let u_var1: u16;
 
     struct_1028_b354(param_1);
-    // uVar1 = (param_1 >> 0x10);
+    // u_var1 = (param_1 >> 0x10);
     i_var1 = param_1;
     i_var1.field_0x20 = 0x0;
     *param_1 = 0xada;
@@ -75,10 +75,10 @@ pub fn struct_1028_1bbc(param_1: U32Ptr) -> u16
 
 {
     let i_var1: &mut Struct190;
-    let uVar1: u16;
+    let u_var1: u16;
 
     struct_1028_b354(param_1);
-    // uVar1 = (param_1 >> 0x10);
+    // u_var1 = (param_1 >> 0x10);
     i_var1 = param_1;
     i_var1.field_0x20 = 0x0;
     i_var1.field_0x22 = 0x0;
@@ -89,30 +89,30 @@ pub fn struct_1028_1bbc(param_1: U32Ptr) -> u16
 
 
 pub fn struct_1028_1f56(param_1: U32Ptr, param_2: U32Ptr) {
-    let uVar1: u32;
-    let uVar2: u16;
-    let extraout_DX: u16;
+    let u_var1: u32;
+    let u_var2: u16;
+    let extraout_dx: u16;
     let iVar3: &mut Struct186;
     let uVar3: u16;
 
     struct_1028_b354(param_1);
     // uVar3 = (param_1 >> 0x10);
     iVar3 = param_1;
-    uVar2 = 0x0;
+    u_var2 = 0x0;
     &iVar3.field_0x20 = 0x0;
     iVar3.field_0x24 = 0x0;
     *param_1 = 0x2572;
     iVar3.field_0x2 = &USHORT_1050_1028;
     mem_op_1000_179c(0xc, param_2, 0x1000);
-    if ((param_2 | uVar2) == 0x0) {
+    if ((param_2 | u_var2) == 0x0) {
         &iVar3.field_0x20 = 0x0;
     } else {
-        set_struct_1008_574a(CONCAT22(param_2, uVar2));
-        iVar3.field_0x20 = uVar2;
-        iVar3.field_0x22 = extraout_DX;
+        set_struct_1008_574a(CONCAT22(param_2, u_var2));
+        iVar3.field_0x20 = u_var2;
+        iVar3.field_0x22 = extraout_dx;
     }
-    uVar1 = &iVar3.field_0x20;
-    (uVar1 + 0xa) = 0x0;
+    u_var1 = &iVar3.field_0x20;
+    (u_var1 + 0xa) = 0x0;
     return;
 }
 
@@ -168,28 +168,28 @@ pub fn struct_1028_355e(param_1: U32Ptr) -> u16
 
 
 pub fn struct_1028_37a6(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: u16) {
-    let uVar1: u16;
-    let uVar2: u16;
+    let u_var1: u16;
+    let u_var2: u16;
     let iVar3: &mut Struct189;
     let uVar3: u16;
 
     struct_1028_b354(param_1);
     // uVar3 = (param_1 >> 0x10);
     iVar3 = param_1;
-    uVar1 = 0x0;
+    u_var1 = 0x0;
     iVar3.field_0x20 = 0x0;
     iVar3.field_0x24 = 0x0;
     &iVar3.field_0x28 = 0x0;
     *param_1 = 0x3e2c;
     iVar3.field_0x2 = &USHORT_1050_1028;
     mem_op_1000_179c(0xa, param_2, 0x1000);
-    uVar2 = param_2 | uVar1;
-    if (uVar2 == 0x0) {
+    u_var2 = param_2 | u_var1;
+    if (u_var2 == 0x0) {
         &iVar3.field_0x28 = 0x0;
     } else {
-        pass1_1020_ba3e(CONCAT22(param_2, uVar1), 0x5, 0x5, param_4, param_3);
-        iVar3.field_0x28 = uVar1;
-        iVar3.field_0x2a = uVar2;
+        pass1_1020_ba3e(CONCAT22(param_2, u_var1), 0x5, 0x5, param_4, param_3);
+        iVar3.field_0x28 = u_var1;
+        iVar3.field_0x2a = u_var2;
     }
     return;
 }
@@ -198,14 +198,14 @@ pub fn struct_1028_37a6(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4:
 pub fn struct_1028_3e94(param_1: U32Ptr) -> u16
 
 {
-    let uVar1: u16;
+    let u_var1: u16;
 
     struct_1028_b354(param_1);
-    // uVar1 = (param_1 >> 0x10);
+    // u_var1 = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
     *param_1 = 0x4004;
     (param_1 + 0x2) = &USHORT_1050_1028;
-    pass1_1028_3fa2(param_1 & 0xffff | uVar1 << 0x10);
+    pass1_1028_3fa2(param_1 & 0xffff | u_var1 << 0x10);
     return param_1;
 }
 
@@ -233,10 +233,10 @@ pub fn struct_1028_4354(param_1: U32Ptr) -> u16
 pub fn struct_1028_44d2(param_1: U32Ptr) -> u16
 
 {
-    let uVar1: u16;
+    let u_var1: u16;
 
     struct_1028_b354(param_1);
-    // uVar1 = (param_1 >> 0x10);
+    // u_var1 = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
     *param_1 = 0x4836;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -360,10 +360,10 @@ pub fn struct_1028_5c54(param_1: U32Ptr) -> u16
 pub fn struct_1028_5ed8(param_1: U32Ptr) -> u16
 
 {
-    let uVar1: u16;
+    let u_var1: u16;
 
     struct_1028_b354(param_1);
-    // uVar1 = (param_1 >> 0x10);
+    // u_var1 = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
     *param_1 = 0x6054;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -374,12 +374,12 @@ pub fn struct_1028_5ed8(param_1: U32Ptr) -> u16
 pub fn struct_1028_60bc(param_1: U32Ptr, param_2: u16, param_3: U32Ptr) -> u16
 
 {
-    let uVar1: u32;
-    let uVar2: u16;
+    let u_var1: u32;
+    let u_var2: u16;
     let iVar2: &mut Struct187;
 
     iVar2 = param_1;
-    // uVar2 = (param_1 >> 0x10);
+    // u_var2 = (param_1 >> 0x10);
     struct_1028_b354(param_1);
     &iVar2.field_0x20 = 0x0;
     *param_1 = 0x6876;
@@ -388,9 +388,9 @@ pub fn struct_1028_60bc(param_1: U32Ptr, param_2: u16, param_3: U32Ptr) -> u16
     if ((param_3 | param_2) == 0x0) {
         &iVar2.field_0x20 = 0x0;
     } else {
-        uVar1 = set_struct_1008_574a(CONCAT22(param_3, param_2));
-        iVar2.field_0x20 = uVar1;
-        iVar2.field_0x22 = (uVar1 >> 0x10);
+        u_var1 = set_struct_1008_574a(CONCAT22(param_3, param_2));
+        iVar2.field_0x20 = u_var1;
+        iVar2.field_0x22 = (u_var1 >> 0x10);
     }
     return param_1;
 }
@@ -527,7 +527,7 @@ pub fn struct_op_1028_d1dc(
 
 
 pub fn struct_1028_d22e(param_1: U32Ptr, param_2: u32, param_3: u16) {
-    let uVar1: u16;
+    let u_var1: u16;
     let puVar2: U32Ptr;
     let uVar3: u16;
 
@@ -535,13 +535,13 @@ pub fn struct_1028_d22e(param_1: U32Ptr, param_2: u32, param_3: u16) {
     *param_1 = 0x0;
     (param_1 + 0x4) = param_2;
     mem_op_1000_179c(0xc, param_3, 0x1000);
-    uVar1 = param_2;
-    puVar2 = (param_3 | uVar1);
+    u_var1 = param_2;
+    puVar2 = (param_3 | u_var1);
     if (puVar2 == 0x0) {
         *param_1 = 0x0;
     } else {
         struct_1028_d59c((param_2 & 0xffff | param_3 << 0x10), puVar2);
-        param_1 = uVar1;
+        param_1 = u_var1;
         (param_1 + 0x2) = puVar2;
     }
     return;
@@ -620,15 +620,15 @@ pub fn struct_1028_d2b0(param_1: U32Ptr, param_2: u16, param_3: u8) {
 
 pub fn struct_1028_d59c(param_1: U32Ptr, param_2: U32Ptr) {
     let pu_var1: U32Ptr;
-    let uVar2: u16;
+    let u_var2: u16;
     let puVar3: U32Ptr;
     let puVar4: U32Ptr;
-    let extraout_DX: U32Ptr;
+    let extraout_dx: U32Ptr;
     let iVar5: &mut Struct158;
-    let uVar5: u16;
+    let u_var5: u16;
     let puStack14: U32Ptr;
 
-    // uVar5 = (param_1 >> 0x10);
+    // u_var5 = (param_1 >> 0x10);
     iVar5 = param_1;
     *param_1 = 0x0;
     iVar5.field_0x4 = 0x0;
@@ -646,17 +646,17 @@ pub fn struct_1028_d59c(param_1: U32Ptr, param_2: U32Ptr) {
         (puVar3 + 0x2) = &USHORT_1050_1028;
         iVar5.field_0x4 = pu_var1;
         puVar3 = pu_var1;
-        puVar4 = extraout_DX;
+        puVar4 = extraout_dx;
     }
-    uVar2 = puVar3;
+    u_var2 = puVar3;
     mem_op_1000_179c(0xc, puVar4, 0x1000);
-    puStack14 = CONCAT22(puVar4, uVar2);
-    if ((puVar4 | uVar2) == 0x0) {
+    puStack14 = CONCAT22(puVar4, u_var2);
+    if ((puVar4 | u_var2) == 0x0) {
         iVar5.field_0x8 = 0x0;
     } else {
-        set_struct_1008_574a(CONCAT22(puVar4, uVar2));
+        set_struct_1008_574a(CONCAT22(puVar4, u_var2));
         *puStack14 = 0xd804;
-        (uVar2 + 0x2) = &USHORT_1050_1028;
+        (u_var2 + 0x2) = &USHORT_1050_1028;
         iVar5.field_0x8 = puStack14;
     }
     return;

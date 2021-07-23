@@ -285,3 +285,21 @@ pub struct Struct_1000_30a4 {
 pub struct Struct183 {
 
 }
+
+pub struct Struct_1028_00cc {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x20: u16,
+    pub field_0x22: u16
+}
+
+pub struct Struct_1028_0138 {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x22: u16,
+    pub field_0x24: u16,
+}
+
+pub struct Struct_1028_0176 {
+
+}

@@ -2,7 +2,7 @@
 pub fn post_msg_1028_76da()
 {
   let lVar1: i32;
-  let uVar2: u16;
+  let u_var2: u16;
   let in_DX: U32Ptr;
   let unaff_DI: i16;
   let unaff_SS: u16;
@@ -11,7 +11,7 @@ pub fn post_msg_1028_76da()
   let uStack8: u16;
   
   puVar3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
- // uVar2 = (puVar3 >> 0x10);
+ // u_var2 = (puVar3 >> 0x10);
   lVar1 = (puVar3 + 0xc);
  // uStack8 = (lVar1 >> 0x10);
   uStack10 = lVar1;

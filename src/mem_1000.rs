@@ -184,7 +184,7 @@ pub fn mem_op_1000_03c6(
     let pu_var1: U32Ptr;
     let piVar2: U32Ptr;
     let uVar3: u16;
-    let uVar4: u16;
+    let u_var4: u16;
     let puVar5: U32Ptr;
     let UVar6: u16;
     let uVar7: u16;
@@ -196,7 +196,7 @@ pub fn mem_op_1000_03c6(
     uVar7 = CONCAT11(param_7, param_6);
     uVar3 = param_1 + 0xfff & 0xf000;
     pu_var1 = (param_4 + 0x1e);
-    uVar4 = uVar3 + *pu_var1;
+    u_var4 = uVar3 + *pu_var1;
     uVar3 = param_2 + (0xf000 < param_1) + (param_4 + 0x20) + CARRY2(uVar3, *pu_var1);
     pu_var1 = (param_4 + 0x28);
     bVar8 = uVar3 < *pu_var1;
@@ -205,7 +205,7 @@ pub fn mem_op_1000_03c6(
             || uVar3 == *pu_var1
                 && (
                     pu_var1 = (param_4 + 0x26),
-                    uVar4 < *pu_var1 || uVar4 == *pu_var1,
+                    u_var4 < *pu_var1 || u_var4 == *pu_var1,
                 ))
     {
         if param_3 == 0x3 {
@@ -242,10 +242,10 @@ pub fn mem_op_1000_03c6(
                 *puVar5 = uVar7;
                 puVar5[0x1] = 0x8000;
                 pu_var1 = (param_4 + 0x1e);
-                uVar4 = *pu_var1;
+                u_var4 = *pu_var1;
                 *pu_var1 = *pu_var1 + UVar6;
                 piVar2 = (param_4 + 0x20);
-                *piVar2 = *piVar2 + param_2 + CARRY2(uVar4, UVar6);
+                *piVar2 = *piVar2 + param_2 + CARRY2(u_var4, UVar6);
                 return uVar3 as u32;
             }
             mem_op_1000_13ce(param_5);
@@ -732,16 +732,16 @@ pub fn mem_op_1000_131c(
 
 pub fn mem_op_1000_13ce(param_1: u16) -> i32 {
     let HVar1: HGLOBAL16;
-    let uVar2: u16;
+    let u_var2: u16;
     let DVar3: u32;
 
     DVar3 = GlobalHandle16(param_1);
-   // uVar2 = (DVar3 >> 0x10);
+   // u_var2 = (DVar3 >> 0x10);
     if (DVar3 != 0x0) {
         HVar1 = GlobalFree16(ctx.s_tile2_bmp_1050_1538);
-        return CONCAT22(uVar2, (HVar1 == 0x0));
+        return CONCAT22(u_var2, (HVar1 == 0x0));
     }
-    return (uVar2 << 0x10) as i32;
+    return (u_var2 << 0x10) as i32;
 }
 
 pub fn mem_op_1000_1408(
@@ -847,15 +847,15 @@ pub fn mem_op_1000_1558(param_1: u16, param_2: u16, param_3: &mut u16) -> i32 {
                 d_var2 = CONCAT22(uStack10, param_3);
                 *param_3 = ctx.s_tile2_bmp_1050_1538;
                 d_var2 = GlobalDOSAlloc16(DVar2) as u32;
-                uVar1 = d_var2;
-                if (uVar1 == 0x0) {
+                u_var1 = d_var2;
+                if (u_var1 == 0x0) {
                     break;
                 }
                 0x0 = 0x0;
                 ctx.PTR_LOOP_1050_0002 = u_stack12;
-                u_stack12 = uVar1;
+                u_stack12 = u_var1;
             }
-            uVar1 = u_stack8 & 0x1;
+            u_var1 = u_stack8 & 0x1;
             u_stack8 >>= 0x1;
             u_stack10 = u_stack10 >> 0x1 | (u_var1 != 0x0) << 0xf;
         }
@@ -1011,7 +1011,7 @@ pub fn mem_op_1000_1902(
             ctx.PTR_LOOP_1050_5f1e = p_uvar1 as u32;
             ctx.PTR_LOOP_1050_5f20 = u_var3 as u32;
             // TODO: refactor for loop
-            // for (iVar4 = 0x5; iVar4 != 0x0; iVar4 += -0x1) {
+            // for (i_var4 = 0x5; i_var4 != 0x0; i_var4 += -0x1) {
             //   pu_var1 = p_uvar6;
             //   p_uvar6 = p_uvar6 + 0x1;
             //   *pu_var1 = 0x0;
@@ -1054,21 +1054,21 @@ pub fn mem_op_1000_1902(
 }
 
 pub unsafe fn mem_op_1000_1b68(param_1: u16, param_2: u16, param_3: u16, param_4: u16) -> u32 {
-    let uVar1: u32;
+    let u_var1: u32;
 
     if (param_3 + 0x14) != -0x4153 {
         pass1_1000_1e61(ctx,param_2, 0xa, 0x0, 0x0);
         return (param_1 << 0x10) as u32;
     }
-    uVar1 = mem_op_1000_1b9a(0x0, param_3 as u32, param_4, param_2);
-    return uVar1;
+    u_var1 = mem_op_1000_1b9a(0x0, param_3 as u32, param_4, param_2);
+    return u_var1;
 }
 
 pub  fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) -> u32 {
-    let uVar1: u16;
-    let uVar2: u32;
+    let u_var1: u16;
+    let u_var2: u32;
     let uVar3: u16;
-    let uVar4: u16;
+    let u_var4: u16;
     let iVar5: i16;
     let lVar6: i32;
     let puStack8: U32Ptr;
@@ -1080,8 +1080,8 @@ pub  fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16)
         iVar5 = (uStack4 * 0x2) as i16;
         if (iVar5 != 0x0) {
             loop {
-                uVar2 = (iVar5 + 0x8) as u32;
-                (uVar2 + 0xc) = 0x0;
+                u_var2 = (iVar5 + 0x8) as u32;
+                (u_var2 + 0xc) = 0x0;
                 mem_op_1000_13ce(param_4);
                 iVar5 = (iVar5 + 0x4);
                 if (uStack4 * 0x2) == iVar5 as u16 {
@@ -1094,17 +1094,17 @@ pub  fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16)
             break;
         }
     }
-    uVar4 = (param_2 + 0x12) as u16;
+    u_var4 = (param_2 + 0x12) as u16;
     uVar3 = (param_2 + 0x10) as u16;
     while (true) {
-        puStack8 = CONCAT22(uVar4, uVar3);
-        if ((uVar4 | uVar3) == 0x0) {
+        puStack8 = CONCAT22(u_var4, uVar3);
+        if ((u_var4 | uVar3) == 0x0) {
             break;
         }
-        uVar1 = *puStack8;
-        uVar4 = (uVar3 + 0x2);
+        u_var1 = *puStack8;
+        u_var4 = (uVar3 + 0x2);
         mem_op_1000_13ce(param_4);
-        uVar3 = uVar1;
+        uVar3 = u_var1;
     }
     pass1_1000_20a2(param_2 as u16, param_3);
     lVar6 = mem_op_1000_13ce(param_4);
@@ -1112,26 +1112,26 @@ pub  fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16)
 }
 
 pub fn mem_op_1000_1dfa(param_1: i16, param_2: u8, param_3: u16, param_4: u16) -> bool {
-    let uVar1: u32;
-    let uVar2: u16;
+    let u_var1: u32;
+    let u_var2: u16;
 
     if ((param_2 & 0x4) == 0x0) {
-        uVar2 = (((-((param_2 & 0x2) == 0x0) >> 0x8) & 0xfe) + 0x92) << 0x8;
+        u_var2 = (((-((param_2 & 0x2) == 0x0) >> 0x8) & 0xfe) + 0x92) << 0x8;
     } else {
-        uVar2 = 0x1800;
+        u_var2 = 0x1800;
     }
     if (((param_4 == 0x0) || (false))
         || ((param_4 & 0xff00 & (((-((param_2 & 0x4) == 0x0) >> 0x8) & 0x82) + 0x18) << 0x8)
-            != uVar2))
+            != u_var2))
     {
         return 0x1;
     }
     if (param_1 != 0x0) {
-        uVar1 = SegmentLimit(param_4) as u32;
+        u_var1 = SegmentLimit(param_4) as u32;
         if (CARRY2(param_3, (param_1 - 0x1) as u16)) {
             return 0x1;
         }
-        if (uVar1 < (param_3 + (param_1 - 0x1)) as u32) {
+        if (u_var1 < (param_3 + (param_1 - 0x1)) as u32) {
             return 0x1;
         }
     }
@@ -1235,24 +1235,24 @@ pub unsafe fn mem_1000_2bb6(
 
 pub unsafe fn mem_1000_2ce8(ctx: &mut AppContext, param_1: &mut i16, param_2: &mut u16, param_3: u16) {
     let piVar1: U32Ptr;
-    let uVar2: u16;
+    let u_var2: u16;
 
-    uVar2 = mem_1000_167a(ctx, 0x200, param_3, param_2);
+    u_var2 = mem_1000_167a(ctx, 0x200, param_3, param_2);
     if (param_2 == 0x0) {
         piVar1 = param_1 + 0x5;
         piVar1 = piVar1 | 0x4;
         param_1[0x79] = 0x1;
         *param_2 = ctx.data_seg;
-        uVar2 = param_1 + 0xf1;
+        u_var2 = param_1 + 0xf1;
     } else {
         piVar1 = param_1 + 0x5;
         piVar1 = piVar1 | 0x8;
         param_1[0x79] = 0x200;
     }
     param_1[0x1] = param_2;
-    *param_1 = uVar2 as i16;
+    *param_1 = u_var2 as i16;
     param_1[0x4] = param_2;
-    param_1[0x3] = uVar2;
+    param_1[0x3] = u_var2;
     param_1[0x2] = 0x0;
     return;
 }
@@ -1269,7 +1269,7 @@ pub unsafe fn mixed_mem_op_1000_3c51(
     let mut pcVar2: String;
     let mut string_1: String;
     let piVar3: U32Ptr;
-    let uVar4: u16;
+    let u_var4: u16;
     let flags: u16;
     let HVar5: HGLOBAL16;
     let piVar6: U32Ptr;
@@ -1289,12 +1289,12 @@ pub unsafe fn mixed_mem_op_1000_3c51(
             }
             flags = 0x1;
         }
-        uVar4 = 0x2;
+        u_var4 = 0x2;
         if (true) {
-            uVar4 = 0x20;
+            u_var4 = 0x20;
         }
         *param_5 = ctx.s_tile2_bmp_1050_1538;
-        *param_1 = GlobalReAlloc16(0x1000, CONCAT22(param_1, uVar4), flags);
+        *param_1 = GlobalReAlloc16(0x1000, CONCAT22(param_1, u_var4), flags);
         if (param_1 == 0x0) {
             //LAB_1000_3cb6:
             return CONCAT22(HVar5, param_1);
@@ -1366,13 +1366,13 @@ pub unsafe fn mixed_mem_op_1000_3c51(
 }
 
 pub fn free_mem_1000_407a(param_1: u16, param_2: u16, param_3: u16) {
-    let uVar1: u16;
+    let u_var1: u16;
     let handle: HGLOBAL16;
 
     handle = 0x1000;
     if (false) {
-        uVar1 = pass1_1000_41e0(param_2 as i16);
-        if (uVar1 == 0x0) {
+        u_var1 = pass1_1000_41e0(param_2 as i16);
+        if (u_var1 == 0x0) {
             return;
         }
         handle = ctx.s_tile2_bmp_1050_1538;

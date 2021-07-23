@@ -275,7 +275,7 @@ pub fn mixed_1010_20ba(
 
   }
   0x31 => {
-      uVar2 = 0x60;
+      u_var2 = 0x60;
       u_var7 = 0x1000;
       mem_op_1000_179c(ctx, 0x60, param_4, 0x1000);
       if (param_4 | struct_ref_1) == 0x0 {
@@ -422,7 +422,7 @@ pub fn mixed_1010_20ba(
       pass1_1008_af94(struct_ref_1, param_4, param_2);
   }
   0x41 => {
-      uVar2 = 0x60;
+      u_var2 = 0x60;
       mem_op_1000_179c(ctx, 0x60, param_4, 0x1000);
       if ((param_4 | struct_ref_1) == 0x0) {}
       // goto
