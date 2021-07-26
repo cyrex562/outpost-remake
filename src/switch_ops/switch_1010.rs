@@ -3,13 +3,13 @@ pub fn  switchD_1010:2ab5::caseD_13(param_1: u32,param_2: i16)
 
 {
   let u_var1: u32;
-  let iVar2: i16;
+  let i_var2: i16;
   let unaff_SS: u16;
   let in_AF: u8;
   
-  iVar2 = param_2 * 0x8 + param_1;
-  if (((((iVar2 + 0x22) != 0x0) || ((iVar2 + 0x24) != 0x0)) ||
-      ((iVar2 + 0x26) != 0x0)) || ((iVar2 + 0x28) != 0x0)) {
+  i_var2 = param_2 * 0x8 + param_1;
+  if (((((i_var2 + 0x22) != 0x0) || ((i_var2 + 0x24) != 0x0)) ||
+      ((i_var2 + 0x26) != 0x0)) || ((i_var2 + 0x28) != 0x0)) {
     u_var1 = (param_1 + 0xe);
     sys_1000_3f9c(u_var1,(u_var1 >> 0x10),
                   s__d__d__d__d_1050_14ae,ctx.data_seg,

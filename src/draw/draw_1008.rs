@@ -13,14 +13,14 @@ use crate::{
         Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
     },
 };
-use crate::defines::{Struct19, Struct79, Struct80, U32Ptr, Struct20};
+use crate::defines::{Struct19, Struct79, Struct80, U32Ptr, Struct20, Struct18};
 use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{read_vec_from_addr, struct_from_addr, read_string_from_rsrc};
-use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16};
+use crate::util::{read_vec_from_addr, struct_from_addr, read_string_from_rsrc, read_struct_from_addr};
+use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16, POINT16};
 use crate::winapi::{FillRect16, LoadCursor16};
 
 pub fn draw_op_1008_1230(param_1: HWND16) {
@@ -64,7 +64,7 @@ pub unsafe fn unk_draw_op_1008_61b2(
     struct_4.field_0xbc = (param_4 + 0x8);
     struct_2 = mixed_1010_20ba(
         ctx,
-        ctx.PTR__LOOP_1050_0ed0,
+        ctx.PTR_LOOP_1050_0ed0,
         0x48,
         wnd_class,
         &mut struct_1,
@@ -203,7 +203,7 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     pen_2 = CreatePen16(
         ctx.s_tile2_bmp_1050_1538 as i16,
         ctx._PTR_LOOP_1050_0368 as i16,
-        (ctx.PTR__LOOP_1050_0368 >> 0x10),
+        (ctx.PTR_LOOP_1050_0368 >> 0x10),
     );
     pen_1 = CreatePen16(
         s_tile2_bmp_1050_1538,
@@ -265,12 +265,12 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, brush);
     Polygon16(
         ctx.s_tile2_bmp_1050_1538 as HDC16,
-        (&ctx.PTR_LOOP_1050_0002 + 0x1),
+        read_struct_from_addr::<[POINT16]>(ctx.PTR_LOOP_1050_0002 + 0x1),
         local_10,
     );
     Polygon16(
         ctx.s_tile2_bmp_1050_1538 as HDC16,
-        (&ctx.PTR_LOOP_1050_0002 + 0x1),
+        read_struct_from_addr::<[POINT16]>(ctx.PTR_LOOP_1050_0002 + 0x1),
         local_1c,
     );
     SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, gid_obj_2);
@@ -297,9 +297,9 @@ pub unsafe fn unk_draw_op_1008_da12(
     // let i_var7: i16;
     let u_var8: i16;
     let i16_var5: i16;
-    let start: u16;
+    let start: bool;
     let u_var9: u16;
-    let mut entries: Vec<PALETTEENTRY>;
+    let mut entries: &mut Vec<PALETTEENTRY>;
     let count: i16;
     let i_var10: i16;
     let hwnd: HWND16;
@@ -307,10 +307,10 @@ pub unsafe fn unk_draw_op_1008_da12(
     let i_stack16: i16;
     let l_stack8: i32;
 
-    set_struct_fields_1010_1d48(&mut struct_from_addr::<Struct79>(CONCAT22(param_2, param_1.field_0x0)), param_3);
+    set_struct_fields_1010_1d48(read_struct_from_addr::<Struct18>(CONCAT22(param_2, param_1.field_0x0)), param_3);
     param_1.field_0xa = 0x0;
     param_1.field_0xc = 0x0;
-    clear_struct_1008_3e38(CONCAT22(param_2, param_1.field_0xe));
+    clear_struct_1008_3e38(read_struct_from_addr::<Struct18>(CONCAT22(param_2, param_1.field_0xe)));
     param_1.field_0x14 = 0x0;
     param_1.field_0x16 = 0x0;
     param_1.field_0x18 = 0x0;
@@ -336,23 +336,22 @@ pub unsafe fn unk_draw_op_1008_da12(
         param_1.field_0x14 = dev_caps;
         let i16_var5 = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0x6a);
         param_1.field_0x16 = i16_var5;
-        if ctx.PTR__LOOP_1050_5f2c == 0x0 {
+        if ctx.PTR_LOOP_1050_5f2c == 0x0 {
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
         } else {
             count = ctx.PTR_LOOP_1050_5f2e as i16;
         }
         start = fn_ptr_op_1000_1708(
             ctx,
-            (i16_var5 + 0x1) * 0x4,
+            ((i16_var5 + 0x1) * 0x4) as u16,
             0x0,
             0x1,
-            ctx.PTR_LOOP_1050_5f2c as u16,
-            count,
+            read_struct_from_addr::<Struct18>(ctx.PTR_LOOP_1050_5f2c),
             0x1000,
         );
-        l_stack8 = CONCAT22(count as u16, start) as i32;
+        // l_stack8 = CONCAT22(count as u16, start) as i32;
         i_var7 = param_1.field_0x16;
-        if ctx.PTR__LOOP_1050_5f2c == 0x0 {
+        if ctx.PTR_LOOP_1050_5f2c == 0x0 {
             ctx.PTR_LOOP_1050_5f2e = count as u32;
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
         } else {
@@ -362,16 +361,15 @@ pub unsafe fn unk_draw_op_1008_da12(
             (i_var7 + 0x1) * 0x4,
             0x0,
             0x1,
-            ctx.PTR_LOOP_1050_5f2c as u16,
-            ctx.PTR_LOOP_1050_5f2e as u16,
+            read_struct_from_addr::<Struct18>(ctx.PTR_LOOP_1050_5f2c),
             0x1000,
         );
         param_1.field_0x18 = u_var9;
         (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e as u16;
         if l_stack8 != 0x0 {
             if param_1.field_0x18 != 0x0 {
-                entries = read_vec_from_addr((param_1.field_0x16 / 0x2) as u32);
-                GetSystemPaletteEntries(0x1000, start, count as u16, entries.as_mut_slice());
+                entries = read_vec_from_addr::<PALETTEENTRY>((param_1.field_0x16 / 0x2) as u32);
+                GetSystemPaletteEntries(0x1000, start, count as u16, entries);
                 GetSystemPaletteEntries(
                     ctx.s_tile2_bmp_1050_1538 as HDC16,
                     entries * 0x4 + start,
@@ -394,7 +392,7 @@ pub unsafe fn unk_draw_op_1008_da12(
             }
         }
         hwnd = 0x1000;
-        fn_ptr_1000_17ce(ctx, struct_from_addr(CONCAT22(count as u16, start)), 0x1000);
+        fn_ptr_1000_17ce(ctx, read_struct_from_addr::<Struct18>(CONCAT22(count as u16, start)), 0x1000);
     }
     ReleaseDC16(hwnd, hdc);
     return;

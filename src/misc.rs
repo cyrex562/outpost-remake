@@ -14,7 +14,7 @@ pub fn empty_fn_1000_214a()
 }
 
 
-pub fn ret_op_1000_55ac(param_1: i16, param_2: u16, param_3: u16, param_4: i16) -> u32
+pub fn ret_op_1000_55ac(param_1: u32, param_2: u16, param_3: u16, param_4: i16) -> u32
 {
   unimplemented!()
 }

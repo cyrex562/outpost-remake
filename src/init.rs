@@ -6,7 +6,7 @@ use crate::string::string_1008::str_op_1008_60e8;
 use crate::pass::pass_1000::{pass1_1000_4d0c, pass1_1000_1fea};
 use crate::struct_ops::struct_1008::struct_op_1008_0000;
 
-pub unsafe fn init_1000_23be(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: &mut String, param_4: u16, param_5: &mut u16, param_6:&mut i16) {
+pub unsafe fn init_1000_23be(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: &mut String, param_4: u16, param_5: u16, param_6:&mut i16) {
     let mut loaded_str = read_string_from_addr(CONCAT22(ctx.PTR_LOOP_1050_5f50 as u16, ctx.PTR_LOOP_1050_5f4e as u16));
     init_op_1008_54aa(
         make_u8_ptr(ctx.PTR_LOOP_1050_5f52),
@@ -313,7 +313,7 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_47b2 = 0x0;
   ctx.PTR_LOOP_1050_47b8 = 0x0;
   pu_var3 = 0x47ba;
-  // for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  // for (i_var2 = 0x1b; i_var2 != 0x0; i_var2 += -0x1) {
   //   pu_var1 = pu_var3;
   //   pu_var3 = pu_var3 + 0x1;
   //   *pu_var1 = 0x0;
@@ -602,7 +602,7 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_4af4 = 0x0;
   pu_var3 = 0x4af6;
   // TODO: refactor for loop
-  // for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  // for (i_var2 = 0x1b; i_var2 != 0x0; i_var2 += -0x1) {
   //   pu_var1 = pu_var3;
   //   pu_var3 = pu_var3 + 0x1;
   //   *pu_var1 = 0x0;
@@ -874,7 +874,7 @@ pub fn init_globals_1020_96d4()
   ctx.PTR_LOOP_1050_4e30 = 0x0;
   pu_var3 = 0x4e32;
   // TODO: refactor for loop
-  // for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  // for (i_var2 = 0x1b; i_var2 != 0x0; i_var2 += -0x1) {
   //   pu_var1 = pu_var3;
   //   pu_var3 = pu_var3 + 0x1;
   //   *pu_var1 = 0x0;
@@ -922,14 +922,14 @@ pub unsafe fn init_op_1008_54aa(
     let mut param_1: u16 = 0;
   ctx._PTR_LOOP_1050_03a0 = mem_op_1000_1902(ctx, &mut param_1, 0x32, 0x0, 0x12, 0x1000, in_dx);
   ctx._PTR_LOOP_1050_029c =
-       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0xc,0x1000,(ctx.PTR__LOOP_1050_03a0 >> 0x10));
+       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0xc,0x1000,(ctx.PTR_LOOP_1050_03a0 >> 0x10));
   ctx._PTR_LOOP_1050_4fb8 =
-       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0x10,0x1000,(ctx.PTR__LOOP_1050_029c >> 0x10));
+       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0x10,0x1000,(ctx.PTR_LOOP_1050_029c >> 0x10));
   ctx._PTR_LOOP_1050_68a2 =
-       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0xe,0x1000,(ctx.PTR__LOOP_1050_4fb8 >> 0x10));
+       mem_op_1000_1902(ctx, &mut param_1,0x64,0x0,0xe,0x1000,(ctx.PTR_LOOP_1050_4fb8 >> 0x10));
   ctx._PTR_LOOP_1050_5744 =
-       mem_op_1000_1902(ctx, &mut param_1,0x1f4,0x0,0x42,0x1000,(ctx.PTR__LOOP_1050_68a2 >> 0x10));
-  u_var7 = mem_op_1000_1902(ctx, &mut param_1, 0x32, 0x0, 0x6, 0x1000, (ctx.PTR__LOOP_1050_5744 >> 0x10));
+       mem_op_1000_1902(ctx, &mut param_1,0x1f4,0x0,0x42,0x1000,(ctx.PTR_LOOP_1050_68a2 >> 0x10));
+  u_var7 = mem_op_1000_1902(ctx, &mut param_1, 0x32, 0x0, 0x6, 0x1000, (ctx.PTR_LOOP_1050_5744 >> 0x10));
   pu_var4 = u_var7;
   ctx.PTR_LOOP_1050_5768 = u_var7;
   ctx.PTR_LOOP_1050_038c = param_4;
@@ -948,9 +948,9 @@ pub unsafe fn init_op_1008_54aa(
     u_var5 = extraout_dx;
   }
   pu_stack12 = CONCAT22(u_var5, u_var3);
-  if ctx.PTR__LOOP_1050_0392 != 0x0 {
+  if ctx.PTR_LOOP_1050_0392 != 0x0 {
     ppc_var1 = (*pu_stack12 + 0x4);
-    (**ppc_var1)(0x1000, u_var3, u_var5, ctx._PTR_LOOP_1050_0392, (ctx.PTR__LOOP_1050_0392 >> 0x10));
+    (**ppc_var1)(0x1000, u_var3, u_var5, ctx._PTR_LOOP_1050_0392, (ctx.PTR_LOOP_1050_0392 >> 0x10));
   }
   u_var2 = *pu_stack12;
   ppc_var1 = u_var2 + 0x4;
@@ -963,14 +963,14 @@ pub unsafe fn init_op_1008_54aa(
     u_var6 = extraout_dx_01;
   }
   u_var7 = mem_op_1000_1b68(u_var6, 0x1000, ctx._PTR_LOOP_1050_03a0,
-                            (ctx.PTR__LOOP_1050_03a0 >> 0x10));
+                            (ctx.PTR_LOOP_1050_03a0 >> 0x10));
   u_var7 = mem_op_1000_1b68((u_var7 >> 0x10) as u16, 0x1000, ctx._PTR_LOOP_1050_029c,
-                            (ctx.PTR__LOOP_1050_029c >> 0x10));
+                            (ctx.PTR_LOOP_1050_029c >> 0x10));
   u_var7 = mem_op_1000_1b68((u_var7 >> 0x10) as u16, 0x1000, ctx._PTR_LOOP_1050_4fb8,
-                            (ctx.PTR__LOOP_1050_4fb8 >> 0x10));
+                            (ctx.PTR_LOOP_1050_4fb8 >> 0x10));
   u_var7 = mem_op_1000_1b68((u_var7 >> 0x10) as u16, 0x1000, ctx._PTR_LOOP_1050_68a2,
-                            (ctx.PTR__LOOP_1050_68a2 >> 0x10));
+                            (ctx.PTR_LOOP_1050_68a2 >> 0x10));
   mem_op_1000_1b68((u_var7 >> 0x10) as u16, 0x1000, ctx._PTR_LOOP_1050_5744,
-                   (ctx.PTR__LOOP_1050_5744 >> 0x10));
+                   (ctx.PTR_LOOP_1050_5744 >> 0x10));
   return;
 }

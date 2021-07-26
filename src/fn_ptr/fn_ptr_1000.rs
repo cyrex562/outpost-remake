@@ -24,11 +24,10 @@ pub fn  call_fn_ptr_1000_0dc6(
 
 pub  fn fn_ptr_op_1000_1708(
     ctx: &mut AppContext,
-    param_1: &mut u16,
-    param_2: &mut u16,
+    param_1: u16,
+    param_2: u16,
     param_3: u16,
     param_4: &mut Struct18,
-    param_5: i16,
     param_6: u16) -> bool
 
 {
@@ -44,7 +43,7 @@ pub  fn fn_ptr_op_1000_1708(
 //LAB_1000_1724:
   loop {
     if (param_5 | param_4) != 0x0 {
-      l_var3 = mem_op_1000_0a48(ctx, param_3 as u8, *param_1 as u16, CONCAT22(param_5 as u16, param_4), param_6, 0);
+      l_var3 = mem_op_1000_0a48(ctx, param_3 as u8, *param_1 as u16, param_6, 0);
       if l_var3 != 0x0 {
         return true;
       }

@@ -2,14 +2,14 @@ use crate::defines::U32Ptr;
 
 pub fn fn_ptr_1028_d566(param_1: U32Ptr, param_2: U32Ptr) -> bool {
     code * *ppcVar1;
-    let iVar2: i16;
-    let uVar3: u16;
+    let i_var2: i16;
+    let u_var3: u16;
 
     ppcVar1 = (*param_2 + 0x8);
-    iVar2 = (**ppcVar1)();
-    if (iVar2 != 0x0) {
-        uVar3 = fn_ptr_1028_d742(*param_1, param_2);
-        if (uVar3 != 0x0) {
+    i_var2 = (**ppcVar1)();
+    if (i_var2 != 0x0) {
+        u_var3 = fn_ptr_1028_d742(*param_1, param_2);
+        if (u_var3 != 0x0) {
             return 0x1;
         }
     }

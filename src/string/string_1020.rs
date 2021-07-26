@@ -50,7 +50,7 @@ pub fn string_op_1020_c2f8(param_1: u16) -> U32Ptr
   0x10 =>
   }
   pcVar1 = load_string_1010_847e
-                     (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10)
+                     (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10)
                       ,0x1010);
   return pcVar1;
 }

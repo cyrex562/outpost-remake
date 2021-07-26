@@ -1,6 +1,6 @@
 use core::num::flt2dec::to_exact_exp_str;
 
-use crate::{string::string_1000::poss_str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
+use crate::{string::string_1000::str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
 use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr};
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
@@ -395,7 +395,6 @@ pub  fn pass1_1000_0ed4(
                 ctx,
                 param_3 as u8,
                 param_4 as u32,
-                param_5 as u32,
                 CONCAT22(ustack4 as u16, u_stack6),
                 param_1 as u8
             );
@@ -775,7 +774,6 @@ pub unsafe fn pass1_1000_180c(
         ctx,
         0x0,
         param_1 as u32,
-        0x0,
         CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, ctx.PTR_LOOP_1050_5f2c as u16),
         param_3 as u8,
     );
@@ -800,7 +798,7 @@ pub unsafe fn pass1_1000_183c(
     if ((ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0) && ((pu_var1 | ctx.PTR_LOOP_1050_5f2c) == 0x0) {
         return 0x0;
     }
-    l_var2 = mem_op_1000_0a48(ctx, 0x1, ((param_2 * param_1) as u32), 0x0,
+    l_var2 = mem_op_1000_0a48(ctx, 0x1, ((param_2 * param_1) as u32),
                               CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, ctx.PTR_LOOP_1050_5f2c as u16), param_3 as u8);
     return l_var2 as u16;
 }
@@ -1280,7 +1278,11 @@ pub unsafe fn pass1_1000_24db(
 }
 
 
-pub unsafe fn pass1_1000_25a8(param_1: u16, param_2: u16) {
+pub fn pass1_1000_25a8(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u16
+) {
     pass1_1000_2913(ctx, 0xfc, param_1, param_2);
     pass1_1000_2913(ctx, 0xff, param_1, param_2);
     return;
@@ -1316,9 +1318,9 @@ pub unsafe fn pass1_1000_25d2(ctx: &mut AppContext, param_1: i16, param_2: i16, 
         return pi_var6;
     }
     i_var9 = 0x0;
-    pass1_1000_25a8(param_3, param_4);
+    pass1_1000_25a8(ctx, param_3, param_4);
     pass1_1000_2913(ctx, i_var9, param_3, param_4);
-    pc_var10 = poss_str_op_1000_28dc(ctx, 0x0);
+    pc_var10 = str_op_1000_28dc(ctx, 0x0);
     if pc_var10 != 0x0 {
         i_var9 = 0x9;
         if *pc_var10 == 'M' {
@@ -1373,11 +1375,11 @@ pub unsafe fn pass1_1000_25d2(ctx: &mut AppContext, param_1: i16, param_2: i16, 
 
 pub unsafe fn pass1_1000_262c(
     ctx: &mut AppContext,
-    param_1: &mut u16,
-    param_2: &mut u16,
+    param_1: u16,
+    param_2: u16,
     param_3: &String,
     param_4: HINSTANCE16,
-    in_dx: &mut u16,
+    in_dx: u16,
     unaff_es: u16,
 )
 
@@ -1667,7 +1669,10 @@ pub unsafe fn pass1_1000_262c(
 }
 
 
-pub unsafe fn pass1_1000_27d6(ctx: &mut AppContext, param_1: &mut u16) {
+pub unsafe fn pass1_1000_27d6(
+    ctx: &mut AppContext,
+    param_1: u32
+) {
     let pi_var1: U32Ptr;
     let mut pc_var2: String;
     let pu_var3: U32Ptr;
@@ -1770,25 +1775,25 @@ pub unsafe fn pass1_1000_27d6(ctx: &mut AppContext, param_1: &mut u16) {
 }
 
 
-pub unsafe fn pass1_1000_2913(
+pub fn pass1_1000_2913(
     ctx: &mut AppContext,
     param_1: i16,
     param_2: u16,
     param_3: u16) {
-    let mut pc_var1: String;
-    let mut pc_var2: String;
+    let mut string_1: String;
+    let mut string_2: String;
     let i_var3: i16;
 
     if ctx.PTR_LOOP_1050_61ec != 0x0 {
-        pc_var2 = poss_str_op_1000_28dc(ctx, param_1);
-        if pc_var2 != 0x0 {
+        string_2 = str_op_1000_28dc(ctx, param_1);
+        if string_2 != 0x0 {
             i_var3 = -0x1;
             loop {
                 if i_var3 == 0x0 { break; }
                 i_var3 += -0x1;
-                pc_var1 = pc_var2;
-                pc_var2 = pc_var2[1..].to_string();
-                if *pc_var1 == '\0' {
+                string_1 = string_2;
+                string_2 = string_2[1..].to_string();
+                if *string_1 == '\0' {
                     break;
                 }
             }
@@ -1828,9 +1833,9 @@ pub unsafe fn pass1_1000_2950(
         return pu_var7;
     }
     i_var5 = param_1;
-    pass1_1000_25a8(param_3, param_4);
+    pass1_1000_25a8(ctx, param_3, param_4);
     pass1_1000_2913(ctx, param_1, param_3, param_4);
-    string_a = poss_str_op_1000_28dc(ctx, i_var5);
+    string_a = str_op_1000_28dc(ctx, i_var5);
     if string_a != 0x0 {
         i_var5 = 0x9;
         if *string_a == 'M' {
@@ -2377,6 +2382,7 @@ pub fn pass1_1000_2fa4(
         pu_var4 = (param_1.field_0x0 - param_1.field_0x3.field_0x0) as u32;
         if 0x0 < pu_var4 {
             pu_var5 = mixed_dos3_call_1000_39f2(
+                ctx,
                 (param_1.field_0xb as u32),
                 read_string_from_addr(CONCAT22(param_1.field_0x4, param_1.field_0x3.field_0x0)),
                 pu_var4,
@@ -2492,8 +2498,9 @@ pub unsafe fn pass1_1000_30a4(param_1: U32Ptr, param_2: u16, param_3: u16, param
     (param_1 + -0x4) = ctx.data_seg;
     (param_1 + -0x6) = param_8 as u32;
     (param_1 + -0x8) = 0x30c5;
-    exit_1000_25f2(((param_1 + -0x8) as u16), ((param_1 + -0x6) as u16),
-                   ((param_1 + -0x4) as i16), 0x214, param_7, param_8, param_9);
+    exit_1000_25f2(
+        ctx, ((param_1 + -0x8) as u16), ((param_1 + -0x6) as u16),
+        ((param_1 + -0x4) as i16), 0x214, param_7, param_8, param_9);
     (param_1 + -0x6) = pu_var6 as u32;
     (param_1 + -0x8) = (param_6 ^ pu_var6) as u32;
     (param_1 + -0xc) = 0x0;
@@ -4012,7 +4019,7 @@ pub fn pass1_1000_440c(ctx: &mut AppContext, param_1: u16) {
     } else {
         let mut a = 0x3u16;
         str_op_1000_3dbe(
-            read_string_from_addr(ctx.PTR__PTR_1050_61e0),
+            read_string_from_addr(ctx.PTR_PTR_1050_61e0),
             &mut string_2,
             &mut a
         );
@@ -4763,9 +4770,9 @@ pub unsafe fn pass1_1000_4f1a(
 
     i_var7 = 0x19;
     i_var6 = 0x19;
-    pass1_1000_25a8(param_2, param_3);
+    pass1_1000_25a8(ctx, param_2, param_3);
     pass1_1000_2913(ctx, i_var6, param_2, param_3);
-    string_1 = poss_str_op_1000_28dc(ctx, i_var7);
+    string_1 = str_op_1000_28dc(ctx, i_var7);
     if string_1 != 0x0 {
         i_var6 = 0x9;
         if string_1[0] == 'M' {
@@ -5253,7 +5260,7 @@ pub unsafe fn pass1_1000_5586(param_1: U32Ptr, param_2: u16, param_3: i16, param
 }
 
 
-pub unsafe fn pass1_1000_55b1(
+pub fn pass1_1000_55b1(
     ctx: &mut AppContext,
     param_1: i16,
     param_2: u16,
@@ -5261,9 +5268,9 @@ pub unsafe fn pass1_1000_55b1(
 ) -> &mut String
 
 {
-    let pi_var2: &mut String;
+    let string_6: &mut String;
     let mut string_2: String;
-    let mut string_1: String;
+    let mut exit_reason: String;
     let string_5: &mut String;
     let string_4: &mut String;
     let mut string_3: String;
@@ -5273,17 +5280,17 @@ pub unsafe fn pass1_1000_55b1(
 
     i_var8 = 0x14;
     i_var7 = 0x14;
-    pass1_1000_25a8(param_2, param_3);
+    pass1_1000_25a8(ctx, param_2, param_3);
     pass1_1000_2913(ctx, i_var7, param_2, param_3);
-    string_1 = poss_str_op_1000_28dc(ctx, i_var8);
-    if string_1 != 0x0 {
+    exit_reason = str_op_1000_28dc(ctx, i_var8);
+    if exit_reason != 0x0 {
         i_var7 = 0x9;
-        if *string_1 == 'M' {
+        if *exit_reason == 'M' {
             i_var7 = 0xf;
         }
-        string_1 = string_1[i_var7..];
+        exit_reason = exit_reason[i_var7..];
         i_var7 = 0x22;
-        string_3 = string_1;
+        string_3 = exit_reason;
         loop {
             if i_var7 == 0x0 { break; }
             i_var7 += -0x1;
@@ -5293,13 +5300,13 @@ pub unsafe fn pass1_1000_55b1(
         }
         string_3[-0x1] = '\0';
     }
-    FatalAppExit16(param_3, &string_1);
+    FatalAppExit16(param_3, &exit_reason);
     FatalExit();
     string_4 = read_string_from_addr(ctx.PTR_LOOP_1050_63fe);
     loop {
-        pi_var2 = string_4;
+        string_6 = string_4;
         string_4 = string_4 + 0x1;
-        i_var7 = pi_var2[0];
+        i_var7 = string_6[0];
         string_5 = string_4;
         // string_5 = (i_var7 + 0x1);
         if (i_var7 == param_1) || (string_5 == 0x0) {

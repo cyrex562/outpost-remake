@@ -3,7 +3,7 @@ use crate::global::AppContext;
 use crate::util::{CONCAT11, CONCAT22, read_string_from_addr};
 use crate::win_struct::WNDCLASS16;
 
-pub fn poss_str_op_1000_28dc(
+pub fn str_op_1000_28dc(
     ctx: &mut AppContext,
     param_1: i16) -> String
 
@@ -19,7 +19,6 @@ pub fn poss_str_op_1000_28dc(
         string_2 = &mut string_2[2..].to_string();
         i_var2 = string_1[0];
         string_3 = string_2;
-        // string_3 = (i_var2 + 0x1);
         if (i_var2 == param_1) || (string_3 == 0x0) {
             return string_3.clone();
         }
@@ -87,19 +86,19 @@ pub fn string_1000_3d3e(
         var_6 -= 0x1;
     }
     // TODO: refactor
-    // for (uVar7 = uVar6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
-    //   puVar5 = puVar7;
+    // for (uVar7 = u_var6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
+    //   pu_var5 = puVar7;
     //   puVar7 = (puVar7 + 0x2);
     //   puVar4 = l_string_2;
     //   l_string_2 = (l_string_2 + 0x2);
-    //   *puVar5 = *puVar4;
+    //   *pu_var5 = *puVar4;
     // }
-    // for (uVar6 = ((uVar6 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
-    //   puVar5 = puVar7;
+    // for (u_var6 = ((u_var6 & 0x1) != 0x0); u_var6 != 0x0; u_var6 -= 0x1) {
+    //   pu_var5 = puVar7;
     //   puVar7 = (puVar7 + 0x1);
     //   puVar4 = l_string_2;
     //   l_string_2 = (l_string_2 + 0x1);
-    //   *puVar5 = *puVar4;
+    //   *pu_var5 = *puVar4;
     // }
     return;
 }

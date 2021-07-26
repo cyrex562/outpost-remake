@@ -43,7 +43,7 @@ pub unsafe fn draw_op_1038_92f6(
     let pa_stack6: &mut Struct20;
 
     if param_4._2_2_ == 0xeb {
-        pa_stack6 = mixed_1010_20ba(ctx, ctx.PTR__LOOP_1050_0ed0, 0x3, param_6, in_dx, unaff_di);
+        pa_stack6 = mixed_1010_20ba(ctx, ctx.PTR_LOOP_1050_0ed0, 0x3, param_6, in_dx, unaff_di);
         // pu_var6 = (pa_stack6 >> 0x10);
         pa_var5 = (param_1 + 0x90);
         if pa_var5 != 0x0 {
@@ -149,9 +149,9 @@ pub fn draw_op_1038_9dcc(
         local_brush_handle = CreateSolidBrush16(in_colorref_4);
         local_struct_5.brush_handle_field_0x8e = local_brush_handle;
     }
-    if ctx.PTR__LOOP_1050_5b64 == 0x0 {
+    if ctx.PTR_LOOP_1050_5b64 == 0x0 {
         color = 0x1008;
-        u_var6 = pass1_1008_4d72((ctx.PTR__LOOP_1050_4230 + 0xe));
+        u_var6 = pass1_1008_4d72((ctx.PTR_LOOP_1050_4230 + 0xe));
         // u_var3 = (u_var6 >> 0x10);
         i_var4 = u_var6;
         ctx._PTR_LOOP_1050_5b64 = CONCAT12(*(i_var4 + 0x94),

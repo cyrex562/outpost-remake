@@ -1,3 +1,4 @@
+
 use crate::win_struct::{HMENU16, HICON16};
 
 pub type U32Ptr = u32;
@@ -44,6 +45,10 @@ pub struct Struct18 {
     pub field_0x1: u16,
     pub field_0x2: U32Ptr,
     pub field_0x6: i16,
+    pub field_0x12: U32Ptr,
+    pub field_0x16: u16,
+    pub field_0x18: u16,
+    pub field_0x2a: u16,
     pub field_0x8e: u16,
     pub field_0x92: U32Ptr,
     pub field_0x94: u16
@@ -331,4 +336,25 @@ pub struct Struct_1040_0a1a {
 pub struct Struct_311 {
     pub field_0xa: u32,
     pub field_0xc: u16,
+}
+
+pub struct Struct_1040_98c0 {
+
+}
+
+pub struct Struct_1010_4b3e {
+    pub field_0x0: u16,
+    pub field_0x2: u16,
+    pub field_0x12: u16,
+    pub field_0x2a: u16,
+}
+
+pub struct Struct_1008_4274 {
+    pub field_0x6: u32,
+}
+
+pub struct Struct_1028_b514 {
+    pub field_0x12: u16,
+    pub field_0x18: u16,
+    pub field_0x14: Option<Struct18>,
 }

@@ -6,7 +6,7 @@ switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5:
 {
   let pu_var1: U32Ptr;
   let u_var2: u16;
-  let uVar3: u16;
+  let u_var3: u16;
   let puVar4: U32Ptr;
   
                     // Segment:    7
@@ -24,12 +24,12 @@ switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5:
   if (false) {
 switchD_1030_069f_caseD_19:
     mem_op_1000_179c(0x20,param_4,0x1000);
-    uVar3 = param_4 | u_var2;
-    if (uVar3 == 0x0) {
+    u_var3 = param_4 | u_var2;
+    if (u_var3 == 0x0) {
       return 0x0;
     }
     struct_1028_b354(CONCAT22(param_4,u_var2));
-    return CONCAT22(uVar3,u_var2);
+    return CONCAT22(u_var3,u_var2);
   }
   u_var2 = param_5;
   switch(param_3 - 0x1) {
@@ -486,9 +486,9 @@ switch_1030_07ac(param_1: u16,param_2: u16,param_3: u16,param_4: u16,
   let u_var2: u16;
   let pu_var3: U32Ptr;
   let u_var4: u16;
-  let puVar5: U32Ptr;
+  let pu_var5: U32Ptr;
   
-  puVar5 = CONCAT22(param_7,param_8);
+  pu_var5 = CONCAT22(param_7,param_8);
   paVar1 = (param_4 - 0x1);
   if (false) {
 switchD_1030_0fa3_caseD_19:
@@ -513,17 +513,17 @@ switchD_1030_0fa3_caseD_19:
   0x8 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_48c0(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_48c0(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x9 =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_2bfe(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_2bfe(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0xa =>
@@ -533,33 +533,33 @@ switchD_1030_0fa3_caseD_19:
   0xb =>
     mem_op_1000_179c(0x2c,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_3692(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_3692(param_8,param_7,param_4,param_6,
                                (param_7 | param_8),param_9,param_10);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0xc =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_3580(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_3580(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0xd =>
     mem_op_1000_179c(0x26,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_34a6(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_34a6(param_8,param_7,param_4,param_6,
                                (param_7 | param_8));
-      return puVar5;
+      return pu_var5;
     }
     break;
   0xe =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_408e(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_408e(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0xf =>
@@ -569,25 +569,25 @@ switchD_1030_0fa3_caseD_19:
   0x60 =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_0c50(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_0c50(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x10 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_0b64(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_0b64(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x11 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_4376(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_4376(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x12 =>
@@ -597,9 +597,9 @@ switchD_1030_0fa3_caseD_19:
   0x62 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_4ba6(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_4ba6(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x15 =>
@@ -607,9 +607,9 @@ switchD_1030_0fa3_caseD_19:
   0x17 =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_1be8(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_1be8(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   default:
@@ -619,9 +619,9 @@ switchD_1030_0fa3_caseD_19:
   0x1c =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1030_be56(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1030_be56(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x1d =>
@@ -637,9 +637,9 @@ switchD_1030_0fa3_caseD_19:
   0x20 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_50fa(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_50fa(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x21 =>
@@ -647,10 +647,10 @@ switchD_1030_0fa3_caseD_19:
   0x23 =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 =
+      pu_var5 =
                pass1_1028_3ec8(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x24 =>
@@ -658,9 +658,9 @@ switchD_1030_0fa3_caseD_19:
   0x26 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_d08e(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_d08e(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x27 =>
@@ -670,45 +670,45 @@ switchD_1030_0fa3_caseD_19:
   0x5e =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1030_c71e(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1030_c71e(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x29 =>
   0x2a =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_cd06(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_cd06(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x2b =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_26d6(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_26d6(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x2c =>
   0x2d =>
     mem_op_1000_179c(0x2a,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 =
+      pu_var5 =
                pass1_1028_49de(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x2e =>
   0x2f =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_e81c(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_e81c(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x30 =>
@@ -717,9 +717,9 @@ switchD_1030_0fa3_caseD_19:
   0x6c =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_d3a4(CONCAT22(param_7,param_8),param_3,param_4,param_6
+      pu_var5 = pass1_1020_d3a4(CONCAT22(param_7,param_8),param_3,param_4,param_6
                                ,param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x34 =>
@@ -745,37 +745,37 @@ joined_r0x10300adb:
   0x38 =>
     mem_op_1000_179c(0x9a,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 =
+      pu_var5 =
                pass1_1030_c9e4(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x39 =>
   0x3a =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 =
+      pu_var5 =
                pass1_1028_611e(param_8,param_7,param_4,param_6,param_8,
                                (param_7 | param_8));
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x3b =>
   0x3c =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_44fe(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_44fe(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x3d =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_ce08(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_ce08(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x3e =>
@@ -789,26 +789,26 @@ joined_r0x10300adb:
   0x3f =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_25fc(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_25fc(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x40 =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_ca0c(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_ca0c(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x46 =>
   0x69 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_d5c8(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_d5c8(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x47 =>
@@ -816,9 +816,9 @@ joined_r0x10300adb:
   0x49 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1020_d888(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_d888(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x4b =>
@@ -826,10 +826,10 @@ joined_r0x10300adb:
   0x4d =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 =
+      pu_var5 =
                pass1_1030_d942(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x4e =>
@@ -837,18 +837,18 @@ joined_r0x10300adb:
   0x50 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5c76(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5c76(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x51 =>
   0x52 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5988(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5988(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x53 =>
@@ -856,9 +856,9 @@ joined_r0x10300adb:
   0x55 =>
     mem_op_1000_179c(0x22,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5f00(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5f00(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x56 =>
@@ -866,68 +866,68 @@ joined_r0x10300adb:
   0x58 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_53e8(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_53e8(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x59 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_58a6(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_58a6(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x5a =>
   0x5b =>
     mem_op_1000_179c(0x26,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5546(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5546(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x63 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5e18(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5e18(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x64 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5a6a(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5a6a(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x65 =>
   0x66 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_530a(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_530a(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x67 =>
   0x68 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_57c8(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_57c8(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x6d =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_5652(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_5652(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x6f =>
@@ -935,19 +935,19 @@ joined_r0x10300adb:
   0x71 =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) == 0x0) {
-      puVar5 = 0x0;
+      pu_var5 = 0x0;
     }
     else {
-      puVar5 = pass1_1020_d888(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1020_d888(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
     }
   0x72 =>
   0x76 =>
-    mem_op_1000_179c(0x26,(puVar5 >> 0x10),0x1000);
-   // u_var4 = (puVar5 >> 0x10);
-    if (puVar5 != 0x0) {
-      puVar5 = pass1_1020_e91e(puVar5,u_var4,param_4,param_6,u_var4 | puVar5);
-      return puVar5;
+    mem_op_1000_179c(0x26,(pu_var5 >> 0x10),0x1000);
+   // u_var4 = (pu_var5 >> 0x10);
+    if (pu_var5 != 0x0) {
+      pu_var5 = pass1_1020_e91e(pu_var5,u_var4,param_4,param_6,u_var4 | pu_var5);
+      return pu_var5;
     }
     break;
   0x73 =>
@@ -955,25 +955,25 @@ joined_r0x10300adb:
   0x78 =>
     mem_op_1000_179c(0x2c,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = struct_1020_d99e(CONCAT22(param_7,param_8),param_3,param_4,
+      pu_var5 = struct_1020_d99e(CONCAT22(param_7,param_8),param_3,param_4,
                                 param_6,param_7 | param_8,param_11);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x74 =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_17ae(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_17ae(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x75 =>
     mem_op_1000_179c(0x24,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_2b1c(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_2b1c(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
     break;
   0x79 =>
@@ -984,9 +984,9 @@ joined_r0x10300adb:
   0x7e =>
     mem_op_1000_179c(0x20,param_7,0x1000);
     if ((param_7 | param_8) != 0x0) {
-      puVar5 = pass1_1028_2812(param_8,param_7,param_4,param_6,
+      pu_var5 = pass1_1028_2812(param_8,param_7,param_4,param_6,
                                param_7 | param_8);
-      return puVar5;
+      return pu_var5;
     }
   }
   return 0x0;

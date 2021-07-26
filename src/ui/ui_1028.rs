@@ -10,7 +10,7 @@ pub fn post_msg_1028_76da()
   let uStack10: u16;
   let uStack8: u16;
   
-  pu_var3 = mixed_1010_20ba(ctx.PTR__LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
+  pu_var3 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0,0x2c,unaff_SS,in_DX,unaff_DI);
  // u_var2 = (pu_var3 >> 0x10);
   lVar1 = (pu_var3 + 0xc);
  // uStack8 = (lVar1 >> 0x10);

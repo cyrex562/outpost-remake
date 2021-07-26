@@ -44,11 +44,11 @@ mixed_struct_op_1040_8fb8
   (i_var4 + 0x2a) = 0x0;
   if ((param_6 != 0x0) && (param_5 != 0x0)) {
     (i_var4 + 0x38) = 0x1;
-    paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_6,param_11);
+    paVar6 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc,param_6,param_11);
     (i_var4 + 0x8) = paVar6;
     (i_var4 + 0xa) = (paVar6 >> 0x10);
     param_10 = 0x1010;
-    paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_5,param_11);
+    paVar6 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc,param_5,param_11);
    // param_9 = (paVar6 >> 0x10);
     (i_var4 + 0xc) = paVar6;
     (i_var4 + 0xe) = param_9;
@@ -57,7 +57,7 @@ mixed_struct_op_1040_8fb8
     }
     else {
       param_10 = 0x1010;
-      paVar6 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc,param_4,param_11);
+      paVar6 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc,param_4,param_11);
      // param_9 = (paVar6 >> 0x10);
       (i_var4 + 0x10) = paVar6;
       (i_var4 + 0x12) = param_9;
@@ -76,7 +76,7 @@ mixed_struct_op_1040_8fb8
   (i_var4 + 0x22) = 0x0;
   (i_var4 + 0x1e) = 0x0;
   (i_var4 + 0x20) = 0x0;
-  if (ctx.PTR__LOOP_1050_5e18 == 0x0) {
+  if (ctx.PTR_LOOP_1050_5e18 == 0x0) {
     pvVar3 = MakeProcInstance16(param_10,(HANDLE16)PTR_LOOP_1050_038c);
     ctx._PTR_LOOP_1050_5e18 = CONCAT22(param_9,pvVar3);
   }

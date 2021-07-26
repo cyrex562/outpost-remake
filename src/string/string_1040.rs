@@ -5,11 +5,11 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
 {
   let UVar1: i32;
   let pu_var2: U32Ptr;
-  let uVar3: u16;
+  let u_var3: u16;
   let u_var4: u16;
   let iVar5: &mut Struct293;
   let u_var5: u16;
-  let uVar6: u16;
+  let u_var6: u16;
   let mut pcVar7: String; 
   let uStack32: u32;
   let uStack28: u32;
@@ -41,7 +41,7 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     uStack18 = param_5;
     u_var4 = param_5;
     load_string_1010_84ac
-              (ctx.PTR__LOOP_1050_14cc,(ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
               );
     iVar5.field_0x94 = u_var4;
     iVar5.field_0x96 = param_7;
@@ -53,15 +53,15 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     uStack20 = *pu_var2;
     iStack16 = iStack16 + -0x1;
     pcVar7 = load_string_1010_847e
-                       (ctx.PTR__LOOP_1050_14cc,
-                        (ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
+                       (ctx.PTR_LOOP_1050_14cc,
+                        (ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010);
    // param_7 = (pcVar7 >> 0x10);
     uStack28 = pcVar7;
-    uVar3 = str_op_1000_3da4(pcVar7);
-    iStack22 += uVar3;
+    u_var3 = str_op_1000_3da4(pcVar7);
+    iStack22 += u_var3;
   }
   u_var4 = iStack22 + 0x1;
-  uVar6 = 0x1000;
+  u_var6 = 0x1000;
   iStack16 = iStack16 + -0x1;
   mem_op_1000_179c(u_var4,param_7,0x1000);
   &iVar5.field_0x90 = u_var4;
@@ -72,10 +72,10 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     _iStack14 = CONCAT22(param_8,&stack0x0012);
     uStack20 = param_6;
     UVar1 = iVar5.field_0x90;
-    uVar6 = 0x1010;
+    u_var6 = 0x1010;
     load_string_1010_84e0
               (0x1010,_PTR_LOOP_1050_14cc,
-               (ctx.PTR__LOOP_1050_14cc >> 0x10),0x3ff,UVar1,
+               (ctx.PTR_LOOP_1050_14cc >> 0x10),0x3ff,UVar1,
                (UVar1 >> 0x10));
     iStack16 += -0x1;
   }
@@ -84,14 +84,14 @@ pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4
     uStack20 = *pu_var2;
     iStack16 = iStack16 + -0x1;
     pcVar7 = load_string_1010_847e
-                       (ctx.PTR__LOOP_1050_14cc,
-                        (ctx.PTR__LOOP_1050_14cc >> 0x10),0x1010);
-    uVar6 = 0x1000;
+                       (ctx.PTR_LOOP_1050_14cc,
+                        (ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010);
+    u_var6 = 0x1000;
     uStack32 = pcVar7;
     pass1_1000_3cea(iVar5.field_0x90,pcVar7);
   }
   iStack16 = iStack16 + -0x1;
-  load_icon_1040_8b92(param_1,uVar6);
+  load_icon_1040_8b92(param_1,u_var6);
   ctx.PTR_LOOP_1050_5df8 = 0x0;
   return iVar5;
 }

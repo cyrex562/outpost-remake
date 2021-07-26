@@ -32,10 +32,10 @@ pub fn debug_print_1008_6048(
             wvsprintf16(param_2, p_c_stack6, args);
             OutputDebugString16(ctx.s_tile2_bmp_1050_1538);
             OutputDebugString16(ctx.s_tile2_bmp_1050_1538);
-            if (ctx.PTR__LOOP_1050_02f0 != 0x0) {
+            if (ctx.PTR_LOOP_1050_02f0 != 0x0) {
                 pass1_1000_2b5c(
                     ctx._PTR_LOOP_1050_02f0,
-                    (ctx.PTR__LOOP_1050_02f0 >> 0x10),
+                    (ctx.PTR_LOOP_1050_02f0 >> 0x10),
                     0x2fd,
                     ctx.data_seg,
                     unaff_ES,

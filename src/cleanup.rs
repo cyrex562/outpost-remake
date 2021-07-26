@@ -45,7 +45,7 @@ pub fn cleanup_ui_op_1008_0618(
     let u_var2: u16;
     // let paVar3: &mut Struct18;
     let mut pa_var3: &mut Struct18;
-    // let ppcVar4: u32;
+    // let ppc_var4: u32;
     let mut ppc_var4: u32;
     // let i_var5: i16;
     let u_var6: u16;
@@ -576,7 +576,7 @@ pub fn destroy_window_1020_3b3e(param_1: &mut Struct30, param_2: HWND16, unaff_s
     let win_handle_1: HWND16;
     // let unaff_ss: u16;
 
-   // uVar6 = (param_1 >> 0x10);
+   // u_var6 = (param_1 >> 0x10);
     struct_2 = param_1;
     struct_2.field_0x10e = 0x0;
     win_handle_1 = param_2;
@@ -638,15 +638,15 @@ pub fn unk_destroy_win_op_1020_694c(
     let HVar3: HWND16;
     let i_var4: i16;
     let paVar5: &mut Struct43;
-    let uVar6: u16;
+    let u_var6: u16;
 
     u_var2 = param_2;
     if (param_2 != 0x12b) {
         i_var4 = param_1;
-       // uVar6 = (param_1 >> 0x10);
+       // u_var6 = (param_1 >> 0x10);
         if (param_2 < 0x12c) {
             if (param_2 == 0x6f) {
-                paVar5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, 0x1f8, param_4);
+                paVar5 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x1f8, param_4);
                 u_var2 = WinHelp16(
                     0x1010,
                     (s_New_failed_in_Op__Op_1050_0020 + 0x9),
@@ -670,9 +670,9 @@ pub fn unk_destroy_win_op_1020_694c(
                 } else {
                     u_var2 = param_2 - 0x129;
                     if ((u_var2 != 0x0) && (u_var2 = param_2 - 0x12a, u_var2 == 0x0)) {
-                        uVar6 = 0xf012;
+                        u_var6 = 0xf012;
                         //LAB_1020_69c3:
-                        u_var2 = PostMessage16(param_3, 0x0, 0x0, CONCAT22(0x112, uVar6));
+                        u_var2 = PostMessage16(param_3, 0x0, 0x0, CONCAT22(0x112, u_var6));
                         return u_var2;
                     }
                 }
@@ -694,7 +694,7 @@ pub fn unk_destroy_win_op_1020_694c(
             } else {
                 if (param_2 < 0xbb9) {
                     if (param_2 == 0x12c) {
-                        uVar6 = 0xf020;
+                        u_var6 = 0xf020;
                         //             TODO: goto LAB_1020_69c3;
                     }
                     u_var2 = param_2 - 0x12d;
@@ -737,11 +737,11 @@ pub fn destroy_icon_1020_6bd2(param_1: u32, param_2: u8, param_3: HICON16) {
     let ppc_var3: u32;
     let i_var4: i16;
     let u_var5: u16;
-    let uVar6: u16;
+    let u_var6: u16;
 
    // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
-    uVar6 = (i_var4 + 0xc2);
+    u_var6 = (i_var4 + 0xc2);
     DestroyIcon16(param_3);
     (i_var4 + 0xc2) = 0x0;
     (i_var4 + 0x8) = 0x0;
@@ -749,7 +749,7 @@ pub fn destroy_icon_1020_6bd2(param_1: u32, param_2: u8, param_3: HICON16) {
     u_var2 = (i_var4 + 0xf8);
     if ((u_var2 | pu_var1) != 0x0) {
         ppc_var3 = *pu_var1;
-        (**ppc_var3)(ctx.s_tile2_bmp_1050_1538, pu_var1, u_var2, 0x1, uVar6);
+        (**ppc_var3)(ctx.s_tile2_bmp_1050_1538, pu_var1, u_var2, 0x1, u_var6);
     }
     (i_var4 + 0xf6) = 0x0;
     pass1_1010_1dda((i_var4 + 0xf2));
@@ -777,13 +777,13 @@ pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: &mut Struct3, in_menu_handle_2:
 }
 
 pub fn destroy_window_1020_8250(param_1: u32, param_2: HWND16) {
-    let BVar1: bool;
+    let b_var1: bool;
     let u_var2: u16;
 
    // u_var2 = (param_1 >> 0x10);
     if ((param_1 + 0xec) != 0x0) {
-        BVar1 = IsWindow16(param_2);
-        if (BVar1 != 0x0) {
+        b_var1 = IsWindow16(param_2);
+        if (b_var1 != 0x0) {
             DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
             (param_1 + 0xec) = 0x0;
         }
@@ -914,7 +914,7 @@ pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
         DestroyWindow16(param_2);
         i_var1.field_0x96 = 0x0;
     }
-    pass1_1038_b6e0(ctx.PTR__LOOP_1050_5b7c, i_var1.field_0x6);
+    pass1_1038_b6e0(ctx.PTR_LOOP_1050_5b7c, i_var1.field_0x6);
     ui_cleanup_op_1040_782c(param_1, ctx.PTR_LOOP_1050_1040);
     return;
 }

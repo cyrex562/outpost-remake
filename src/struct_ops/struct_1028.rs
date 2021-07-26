@@ -93,10 +93,10 @@ pub fn struct_1028_1f56(param_1: U32Ptr, param_2: U32Ptr) {
     let u_var2: u16;
     let extraout_dx: u16;
     let iVar3: &mut Struct186;
-    let uVar3: u16;
+    let u_var3: u16;
 
     struct_1028_b354(param_1);
-    // uVar3 = (param_1 >> 0x10);
+    // u_var3 = (param_1 >> 0x10);
     iVar3 = param_1;
     u_var2 = 0x0;
     &iVar3.field_0x20 = 0x0;
@@ -171,10 +171,10 @@ pub fn struct_1028_37a6(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4:
     let u_var1: u16;
     let u_var2: u16;
     let iVar3: &mut Struct189;
-    let uVar3: u16;
+    let u_var3: u16;
 
     struct_1028_b354(param_1);
-    // uVar3 = (param_1 >> 0x10);
+    // u_var3 = (param_1 >> 0x10);
     iVar3 = param_1;
     u_var1 = 0x0;
     iVar3.field_0x20 = 0x0;
@@ -376,21 +376,21 @@ pub fn struct_1028_60bc(param_1: U32Ptr, param_2: u16, param_3: U32Ptr) -> u16
 {
     let u_var1: u32;
     let u_var2: u16;
-    let iVar2: &mut Struct187;
+    let i_var2: &mut Struct187;
 
-    iVar2 = param_1;
+    i_var2 = param_1;
     // u_var2 = (param_1 >> 0x10);
     struct_1028_b354(param_1);
-    &iVar2.field_0x20 = 0x0;
+    &i_var2.field_0x20 = 0x0;
     *param_1 = 0x6876;
-    iVar2.field_0x2 = &USHORT_1050_1028;
+    i_var2.field_0x2 = &USHORT_1050_1028;
     mem_op_1000_179c(0xc, param_3, 0x1000);
     if ((param_3 | param_2) == 0x0) {
-        &iVar2.field_0x20 = 0x0;
+        &i_var2.field_0x20 = 0x0;
     } else {
         u_var1 = set_struct_1008_574a(CONCAT22(param_3, param_2));
-        iVar2.field_0x20 = u_var1;
-        iVar2.field_0x22 = (u_var1 >> 0x10);
+        i_var2.field_0x20 = u_var1;
+        i_var2.field_0x22 = (u_var1 >> 0x10);
     }
     return param_1;
 }
@@ -529,9 +529,9 @@ pub fn struct_op_1028_d1dc(
 pub fn struct_1028_d22e(param_1: U32Ptr, param_2: u32, param_3: u16) {
     let u_var1: u16;
     let pu_var2: U32Ptr;
-    let uVar3: u16;
+    let u_var3: u16;
 
-    // uVar3 = (param_1 >> 0x10);
+    // u_var3 = (param_1 >> 0x10);
     *param_1 = 0x0;
     (param_1 + 0x4) = param_2;
     mem_op_1000_179c(0xc, param_3, 0x1000);

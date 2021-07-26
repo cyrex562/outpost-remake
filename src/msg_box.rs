@@ -4,15 +4,15 @@ use crate::winapi::{MessageBox16, MessageBeep16};
 pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u16) -> bool
 
 {
-  let piVar1: U32Ptr;
+  let pi_var1: U32Ptr;
   let unaff_CS: u16;
   
   if (param_3 < (param_1 + 0xc)) {
     msg_box_op_1000_214c(0x0, 0x0, 0xd940, param_4);
     return 0x1;
   }
-  piVar1 = (param_1 + 0xc);
-  *piVar1 = *piVar1 + 0x1;
+  pi_var1 = (param_1 + 0xc);
+  *pi_var1 = *pi_var1 + 0x1;
   return 0x0;
 }
 
@@ -22,18 +22,18 @@ pub fn msg_box_op_1000_214c
 
 {
   let IVar1: i16;
-  let iVar2: i16;
+  let i_var2: i16;
   let mut text: String;
   
   text = (0x2 - (param_2 == 0x0) | 0x2110);
   MessageBeep16(param_5);
   loop {
     IVar1 = MessageBox16(ctx.s_tile2_bmp_1050_1538,text,0x1de8,0x1000);
-    iVar2 = IVar1 + -0x1;
-    if (iVar2 == 0x0) {
+    i_var2 = IVar1 + -0x1;
+    if (i_var2 == 0x0) {
       return 0x0;
     }
-    if ((0x0 < iVar2) && (!SBORROW2(iVar2,0x1))) {
+    if ((0x0 < i_var2) && (!SBORROW2(i_var2,0x1))) {
       if (IVar1 == 0x3 || IVar1 + -0x2 < 0x1) {
         fatal_app_exit_1000_3e9e(ctx.s_tile2_bmp_1050_1538);
         return 0x0;
