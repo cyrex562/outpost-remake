@@ -1,5 +1,3 @@
-use core::num::flt2dec::to_exact_exp_str;
-
 use crate::{string::string_1000::str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
 use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr};
 use crate::exit::exit_1000_25f2;
