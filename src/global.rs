@@ -32,7 +32,6 @@ pub struct AppContext {
     pub _PTR_LOOP_1050_5b64: U32Ptr,
     pub PTR_LOOP_1050_5b68: U32Ptr,
     pub PTR_LOOP_1050_5b6a: U32Ptr,
-    pub PTR_LOOP_1050_5b64: U32Ptr,
     pub PTR_LOOP_1050_000c: U32Ptr,
     pub PTR_LOOP_1050_000e: U32Ptr,
     pub PTR_LOOP_1050_000a: U32Ptr,
@@ -113,7 +112,9 @@ pub struct AppContext {
     pub s_New_failed_in_Op__Op__Simulator_1050_0110: String,
     pub s_SCForceMorale__s_for_colony__08l_1050_5024: String,
     pub PTR_LOOP_1050_65e2: U32Ptr,
-    pub PTR_LOOP_1050_06e0: U32Ptr
+    pub PTR_LOOP_1050_06e0: U32Ptr,
+    pub s__d__d__d__d_1050_14ae: String,
+    pub PTR_LOOP_1050_3960: U32Ptr,
 }
 
 impl AppContext {
@@ -148,7 +149,6 @@ impl AppContext {
             _PTR_LOOP_1050_5b64: 0,
             PTR_LOOP_1050_5b68: 0,
             PTR_LOOP_1050_5b6a: 0,
-            PTR_LOOP_1050_5b64: 0,
             PTR_LOOP_1050_000c: 0,
             PTR_LOOP_1050_000e: 0,
             PTR_LOOP_1050_000a: 0,
@@ -229,7 +229,9 @@ impl AppContext {
             s_New_failed_in_Op__Op__Simulator_1050_0110: "".to_string(),
             s_SCForceMorale__s_for_colony__08l_1050_5024: "".to_string(),
             PTR_LOOP_1050_65e2: 0,
-            PTR_LOOP_1050_06e0: 0
+            PTR_LOOP_1050_06e0: 0,
+            s__d__d__d__d_1050_14ae: "".to_string(),
+            PTR_LOOP_1050_3960: 0
         }
     }
 }

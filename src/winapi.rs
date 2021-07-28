@@ -534,7 +534,9 @@ pub fn IsWindow16(hwnd: HWND16) -> bool {
 }
 
 // BOOL16 DestroyWindow16(HWND16 hwnd)
-pub fn DestroyWindow16(hwnd: HWND16) -> bool {}
+pub fn DestroyWindow16(hwnd: HWND16) -> bool {
+    unimplemented!()
+}
 
 // BOOL16 EnumChildWindows1(HWND16 parent, LPVOID func, lparam: LPARAM)
 pub fn EnumChildWindows1(parent: HWND16, func: fn(), lparam: LPARAM) -> bool {
@@ -577,7 +579,7 @@ pub fn ShowCursor16(b_show: bool) -> i16 {
 }
 
 // BOOL16 PtInRect16(RECT16 * rect, POpt: i16)
-pub fn PtInRect16(rect: &mut RECT16, pt: POINT16) -> bool {
+pub fn PtInRect16(rect: &RECT16, pt: &POINT16) -> bool {
     unimplemented!()
 }
 

@@ -1,6 +1,7 @@
+use crate::defines::Struct18;
 
-pub fn string_1040_8520(param_1: &mut Struct57,param_2: u16,param_3: u16,param_4: i16,
-                param_5: u16,param_6: u16,uparam_7: &mut String,param_8: u16) -> i16
+pub fn string_1040_8520(param_1: &mut Struct18, param_2: u16, param_3: u16, param_4: i16,
+                        param_5: u16, param_6: u16, uparam_7: &mut String, param_8: u16) -> i16
 
 {
   let UVar1: i32;

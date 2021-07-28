@@ -183,7 +183,7 @@ pub fn pass1_1020_1bb6(param_1: u32) -> u16
 pub fn pass1_1020_1d8e(param_1: u32,param_2: u32)
 {
   pt_in_rect_1010_4e08
-            ((param_1 + 0x8e),param_2,(param_2 >> 0x10),
+            ((param_1 + 0x8e), param_2,
              0x1010);
   return;
 }

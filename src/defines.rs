@@ -358,3 +358,10 @@ pub struct Struct_1028_b514 {
     pub field_0x18: u16,
     pub field_0x14: Option<Struct18>,
 }
+
+pub struct Struct_1010_4e08 {
+    pub field_0x20: u16,
+    pub field_0x22: u16,
+    pub field_0x24: u16,
+    pub field_0x30: u16,
+}
