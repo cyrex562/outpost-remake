@@ -4517,7 +4517,7 @@ pub fn pass1_1008_d3ae(
     //   }
     // }
     if (!bVar4) {
-        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc as i16, ((ctx.PTR_LOOP_1050_14cc >> 0x10) as i16), 0x1010,
+        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc as i16, 0x1010,
         );
         u_var11 = 0x1000;
         uVar15 = uVar13;
@@ -5170,7 +5170,7 @@ pub fn pass1_1008_e320(param_1: &mut Struct102, param_2: u32, param_3: u32, para
             u_var2 = &paVar1[-0x1].field_0xb;
         }
     }
-    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1010);
     iVar5.field_0x1e = u_var2;
     iVar5.field_0x20 = u_var4;
     return;

@@ -2424,7 +2424,7 @@ pub fn pass1_1030_4594(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: i16
     }
     u_var1 = SUB42(pu_var2, 0x0);
     i_var4 = (param_4 - 0x1) * 0x12;
-    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1010);
     // u_var6 = (puStack8 >> 0x10);
     iVar5 = puStack8;
     *puStack8 = u_var1;

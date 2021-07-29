@@ -109,7 +109,7 @@ pub fn destroy_win_1008_9698(param_1: HWND16) {
     return;
 }
 
-pub unsafe fn unk_destroy_win_op_1010_2fa0(
+pub fn unk_destroy_win_op_1010_2fa0(
     ctx: &mut AppContext,
     struct_1: &mut Struct_1010_2fa0,
     win_handle_1: &mut HWND16
@@ -978,12 +978,12 @@ pub fn destroy_win_1040_8b7e(param_1: HWND16) {
     return;
 }
 
-pub unsafe fn destroy_window_1040_b726(param_1: U32Ptr, param_2: i16, in_win_handle_3: HWND16) {
-    let ppcVar1: u32;
+pub fn destroy_window_1040_b726(param_1: U32Ptr, param_2: i16, in_win_handle_3: HWND16) {
+    let ppc_var1: u32;
 
-    if (param_2 != 0x0) {
-        ppcVar1 = (*param_1 + 0x78);
-        (**ppcVar1)(in_win_handle_3, param_1);
+    if param_2 != 0x0 {
+        ppc_var1 = (*param_1 + 0x78);
+        (**ppc_var1)(in_win_handle_3, param_1);
     }
     DestroyWindow16(in_win_handle_3);
     return;

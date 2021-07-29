@@ -104,7 +104,7 @@ pub fn load_string_1010_847e(param_1: i16, buf_len: i16, h_inst: HINSTANCE16) ->
 
 
 
-pub fn load_string_1010_84ac(param_1: i16,param_2: i16,param_3: HINSTANCE16)
+pub fn load_string_1010_84ac(param_1: U32Ptr, param_3: HINSTANCE16)
 {
   let u_var1: u16;
   

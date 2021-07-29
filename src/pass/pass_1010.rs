@@ -112,7 +112,7 @@ pub fn pass1_1010_0350(param_1: &mut Struct18, param_2: u16) {
 }
 
 
-pub fn pass1_1010_038e(param_1: u32, param_2: i16, param_3: u16) {
+pub fn pass1_1010_038e(param_1: &mut Struct19, param_2: i16, param_3: &mut WNDCLASS16) {
     let bVar1: bool;
     let i_var2: &mut Struct707;
     let u_var2: u16;
@@ -278,7 +278,7 @@ pub fn pass1_1010_0538(param_1: u32, char * * param_2, char * * param_3, param_4
         pass1_1010_1f62(param_5, param_1, 0x3);
     }
     iVar5 = i_var1 + 0x757;
-    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), param_4);
+    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, param_4);
     param_3 = iVar5;
     (param_3 + 0x2) = puVar8;
     while (pcVar6 = pass1_1000_472c(*param_3, '%'),
@@ -3702,10 +3702,10 @@ pub fn pass1_1010_6034(param_1: u32, param_2: u16) {
     pass1_1010_60a0(param_1);
     pu_var1 = pass1_1000_4906((param_1 & 0xffff0000 | (i_var2 + 0x22)),
                               0x0, 0x40);
-    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1000);
+    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1000);
     (i_var2 + 0x68) = pu_var1;
     (i_var2 + 0x6a) = param_2;
-    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1000);
+    load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1000);
     (i_var2 + 0x6c) = pu_var1;
     (i_var2 + 0x6e) = param_2;
     return;

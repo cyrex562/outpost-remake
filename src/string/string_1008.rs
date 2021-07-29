@@ -281,7 +281,7 @@ pub fn unk_str_op_1008_d1c6(param_1: u32, param_2: u32) {
     //   }
     // }
     if (!bVar4) {
-        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010,
+        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1010,
         );
         uVar9 = uStack14 as u16;
         uVar17 = 0x1000;
@@ -406,7 +406,7 @@ pub fn unk_str_op_1008_d4f6(param_1: u32, param_2: u32) {
     // }
     if (!bVar5) {
         puVar14 = extraout_DX_01;
-        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010,
+        load_string_1010_84ac(ctx.PTR_LOOP_1050_14cc, 0x1010,
         );
         uVar22 = 0x1000;
         puVar18 = puVar14;

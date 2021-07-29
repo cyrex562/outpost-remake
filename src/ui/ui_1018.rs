@@ -200,7 +200,7 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1,param_2: u16)
     if (uVar8 == 0x0) { break; }
     pu_var2 = (puVar4 + 0x10);
     uVar7 = uVar8;
-    if (pu_var2 != (ULONG *)0x0) {
+    if (pu_var2 != 0x0) {
       string_1000_3cea(param_1 & 0xffff0000 | (i_var9 + 0x10), *pu_var2);
       uVar7 = uVar8;
     }

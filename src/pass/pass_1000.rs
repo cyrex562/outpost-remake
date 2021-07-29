@@ -1258,7 +1258,7 @@ pub unsafe fn pass1_1000_24db(
     if (false) {
         fn_ptr_op_1000_2594(0x68b6, 0x68b6);
         fn_ptr_op_1000_2594(ctx.PTR_LOOP_1050_6210, 0x620c);
-        ret_op_1000_55ac(param_1, u_var3, u_var5, i_var2);
+        ret_op_1000_55ac(param_1 as u32, u_var3, u_var5, i_var2);
     }
     c_var4 = (u_var3 >> 0x8) as u8;
     fn_ptr_op_1000_2594(ctx.PTR_LOOP_1050_6210, ctx.PTR_LOOP_1050_6210);
@@ -2471,9 +2471,18 @@ pub fn pass1_1000_3038(
 // WARNING (jumptable): Unable to track spacebase fully for stack
 // WARNING: Unable to track spacebase fully for stack
 
-pub unsafe fn pass1_1000_30a4(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16, param_5: i16,
-                              param_6: u16, param_7: u16, param_8: u16, param_9: u16,
-                              param_10: u8) -> u16
+pub unsafe fn pass1_1000_30a4(
+    param_1: U32Ptr,
+    param_2: u16,
+    param_3: u16,
+    param_4: u16,
+    param_5: i16,
+    param_6: u16,
+    param_7: u16,
+    param_8: u16,
+    param_9: &String,
+    param_10: u8
+) -> u16
 
 {
     let pu_var1: U32Ptr;
@@ -5189,7 +5198,7 @@ pub fn pass1_1000_54a0(param_1: u32, param_2: u16, param_3: u16) -> u16
 }
 
 
-pub unsafe fn pass1_1000_54e8(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
+pub fn pass1_1000_54e8(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
                               param_6: u16)
 
 {
@@ -5235,7 +5244,7 @@ pub fn pass1_1000_5512(
 }
 
 
-pub unsafe fn pass1_1000_5586(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
+pub fn pass1_1000_5586(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
                               param_6: u16)
 
 {

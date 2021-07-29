@@ -91,11 +91,8 @@ pub struct Struct57 {
     pub field_0x0: u16,
     pub field_0x2: U32Ptr,
     pub field_0x8e: Option<Struct20>,
-    pub field_0x92: Option<Struct19>,
     pub field_0x94: u16,
-    pub field_0x96: u16,
-    pub field_0x98: u16,
-
+    pub field_0x96: Option<Struct19>,
 }
 
 pub struct Struct19 {

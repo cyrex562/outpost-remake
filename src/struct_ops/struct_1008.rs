@@ -1339,7 +1339,7 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
   }
   if (!bVar3) {
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uStack64 = CONCAT22(puVar9,puVar6);
     mem_op_1000_179c(0x12,puVar9,0x1000);
@@ -1489,7 +1489,7 @@ pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
   uStack10 = 0x0;
   if (i_stack4 == 0x0) {
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uVar16 = 0x0;
     puVar13 = uStack26._2_2_;
@@ -1574,7 +1574,7 @@ pub fn pass1_1008_cfa0(param_1: u32,param_2: u32)
   if ((-0x1 < puVar11) && ((0x0 < puVar11 || (u_var6 != 0x0)))) {
     puVar12 = puVar11;
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uVar17 = 0x1000;
     puVar13 = puVar12;
@@ -1603,7 +1603,7 @@ pub fn pass1_1008_cfa0(param_1: u32,param_2: u32)
     puVar12 = puVar11;
     uVar8 = u_var6;
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uVar17 = 0x1000;
     puVar13 = puVar12;
@@ -1631,7 +1631,7 @@ pub fn pass1_1008_cfa0(param_1: u32,param_2: u32)
     puVar12 = puVar11;
     uVar8 = u_var6;
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uVar17 = 0x1000;
     puVar13 = puVar12;
@@ -1656,7 +1656,7 @@ pub fn pass1_1008_cfa0(param_1: u32,param_2: u32)
   }
   if (!bVar4) {
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
     uVar17 = 0x1000;
     puVar12 = puVar11;

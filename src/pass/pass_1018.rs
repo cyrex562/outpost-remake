@@ -6721,7 +6721,7 @@ pass1_1018_c402(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4: u16,pa
   }
   else {
     load_string_1010_84ac
-              (ctx.PTR_LOOP_1050_14cc,(ctx.PTR_LOOP_1050_14cc >> 0x10),0x1010
+              (ctx.PTR_LOOP_1050_14cc, 0x1010
               );
   }
   &i_var4[0x1].field_0x26 = pu_var2;

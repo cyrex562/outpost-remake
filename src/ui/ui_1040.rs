@@ -4338,7 +4338,7 @@ pub fn msg_box_op_1040_a85a(param_1: u32, param_2: &mut String, param_3: U32Ptr,
 }
 
 
-pub unsafe fn win_ui_dlg_op_1040_a94a(
+pub fn win_ui_dlg_op_1040_a94a(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
@@ -4475,7 +4475,7 @@ pub fn msg_box_ui_op_1040_ad66(param_1: u32, param_2: &mut String, param_3: U32P
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn win_ui_op_1040_ae04(
+pub fn win_ui_op_1040_ae04(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: U32Ptr,

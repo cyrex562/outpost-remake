@@ -115,6 +115,8 @@ pub struct AppContext {
     pub PTR_LOOP_1050_06e0: U32Ptr,
     pub s__d__d__d__d_1050_14ae: String,
     pub PTR_LOOP_1050_3960: U32Ptr,
+    pub s_vrpal_bmp_1050_183a: String,
+    pub s_Null_Ptr_1050_38f3: String,
 }
 
 impl AppContext {

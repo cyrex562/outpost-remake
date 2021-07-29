@@ -756,7 +756,7 @@ pub fn win_ui_op_1038_977a(param_1: i16, param_2: u16, param_3: i16, param_4: U3
                               param_6, u_var5, u_var6, u_var2);
     }
     if ((iStack8 == 0x1) || (UStack6 == 0x0)) {
-        destroy_window_1040_b726((ULONG *)CONCAT22(param_2, param_1), param_3, &ctx.PTR_LOOP_1050_1040);
+        destroy_window_1040_b726(CONCAT22(param_2, param_1), param_3, &ctx.PTR_LOOP_1050_1040);
     }
     return;
 }

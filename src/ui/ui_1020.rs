@@ -454,7 +454,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
     if (uStack58 == 0x0) { break; }
     pUStack54 = (puVar6 + 0x10);
     uVar8 = uStack58;
-    if (pUStack54 != (ULONG *)0x0) {
+    if (pUStack54 != 0x0) {
       string_1000_3cea(param_1 & 0xffff0000 | (i_var9 + 0x10), *pUStack54);
       uVar8 = uStack58;
     }
