@@ -5306,3 +5306,23 @@ pub fn send_ldg_item_msg_1040_d79c(param_1: u32, param_2: u16) {
     return;
 }
 
+
+pub fn send_msg_1040_93e6(param_1: u32, param_2: HWND16) -> LRESULT
+
+{
+let LVar1: LRESULT;
+
+LVar1 = SendMessage16(param_2, 0x0, 0x0,
+CONCAT22(0x111, (param_1 + 0x1c))); return LVar1;
+}
+
+
+pub fn send_msg_1040_cc66(param_1: u32, param_2: u16) -> LRESULT
+
+{
+let ppcVar1: u32; let LVar2: LRESULT;
+
+ppcVar1 = ((param_1 + 0x98) + 0x10); ( * * ppcVar1)();
+LVar2 = send_dlg_msg_1040_cf1c(param_1, param_2); return LVar2;
+}
+
