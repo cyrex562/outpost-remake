@@ -16,7 +16,7 @@ use crate::winapi::{FatalAppExit16, FatalExit, GetModuleFileName16, GlobalDOSFre
 
 // pub fn pass1_1000_010c
 
-pub unsafe fn pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16)
+pub fn pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16)
 
 {
     let pu_var1: U32Ptr;
@@ -47,7 +47,7 @@ pub fn pass1_1000_05b4(param_1: u8, param_2: i16)
     return;
 }
 
-pub fn pass1_1000_0782(param_1: u32, param_2: u16, param_3: i16, in_stack_00000004: u16) -> u16
+pub fn pass1_1000_0782(param_1: &mut StructA, param_2: u16, param_3: i16, in_stack_00000004: u16) -> u16
 
 {
     (param_3 + 0xe) = 0x0;
@@ -146,35 +146,37 @@ pub unsafe fn pass1_1000_09a0(
 }
 
 
-pub  fn pass1_1000_09ca(param_1: i16, param_2: &mut Struct_1000_09ca) -> u16
+pub  fn pass1_1000_09ca(param_1: i16, opt_struct_1: Option<&mut Struct_1000_09ca>) -> u16
 
 {
     let pu_var1: U32Ptr;
     let i_var2: i16;
-    let u_var3: &mut Struct_211;
-    let pu_var4: &mut Struct_160;
+    let struct_2: &mut Struct_211;
+    let struct_3: &mut Struct_160;
 
-    pu_var1 = param_2.field_0xa as u32;
-    pu_var4 = read_struct_from_addr::<Struct_160>((param_2 + (param_1 - pu_var1) - 6 & 0xfffc) + pu_var1);
-    pu_var4.field_0x0 = 0x1;
-    param_2.field_0x7 = pu_var1;
-    pu_var4.field_0x2 = pu_var4;
-    pu_var4.field_0x1 = pu_var4;
-    param_2.field_0x8 = pu_var4.clone();
-    if ((param_2.field_0x0.field_0x6) & 0x7) == 0x2 {
-        param_2.field_0x9 = 0x8;
+    let struct_1 = opt_struct_1.unwrap();
+
+    pu_var1 = struct_1.field_0xa as u32;
+    struct_3 = read_struct_from_addr::<Struct_160>((struct_1 + (param_1 - pu_var1) - 6 & 0xfffc) + pu_var1);
+    struct_3.field_0x0 = 0x1;
+    struct_1.field_0x7 = pu_var1;
+    struct_3.field_0x2 = struct_3;
+    struct_3.field_0x1 = struct_3;
+    struct_1.field_0x8 = struct_3.clone();
+    if ((struct_1.field_0x0.field_0x6) & 0x7) == 0x2 {
+        struct_1.field_0x9 = 0x8;
     } else {
-        u_var3 = &mut param_2.field_0x0;
-        i_var2 = (u_var3 + 0x18);
-        *param_2[0x9] = (i_var2 - 0x5 & !-(i_var2 + 0x3 < 0x8)) + 0x8;
+        struct_2 = &mut struct_1.field_0x0;
+        i_var2 = (struct_2 + 0x18);
+        *struct_1[0x9] = (i_var2 - 0x5 & !-(i_var2 + 0x3 < 0x8)) + 0x8;
     }
-    pu_var4[-0x1] = (pu_var4 - pu_var1);
-    *pu_var1 = (pu_var4 - pu_var1) | 0x2;
-    param_2[0xc] = pu_var4;
-    param_2[0xb] = pu_var4[0x1];
-    (pu_var4[0x1] + 0x4) = pu_var1;
-    pu_var4[0x1] = pu_var1;
-    param_2[0x4] = 0xe08;
+    struct_3[-0x1] = (struct_3 - pu_var1);
+    *pu_var1 = (struct_3 - pu_var1) | 0x2;
+    struct_1[0xc] = struct_3;
+    struct_1[0xb] = struct_3[0x1];
+    (struct_3[0x1] + 0x4) = pu_var1;
+    struct_3[0x1] = pu_var1;
+    struct_1[0x4] = 0xe08;
     return *pu_var1 & 0xfffc;
 }
 

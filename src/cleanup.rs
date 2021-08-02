@@ -19,21 +19,23 @@ use crate::{
         ShowWindow16,
     },
 };
-use crate::winapi::{SelectObject16, GetDlgItem16, WinHelp16, DestroyCursor16, EndPaint16, BeginPaint16};
-use crate::win_struct::{LPARAM, HGDIOBJ16, WNDCLASS16};
+use crate::defines::{Struct28, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr};
+use crate::draw::draw_1020::invalidate_rect_1020_735a;
+use crate::file::file_1010::unk_io_op_1010_830a;
+use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_b544, pass1_1008_eb74};
+use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1f62, pass1_1010_2ee2, pass1_1010_32c0, pass1_1010_32da};
+use crate::pass::pass_1018::{pass1_1018_2d9a, pass1_1018_2dde, pass1_1018_2e28, pass1_1018_31d0, pass1_1020_022c};
+use crate::pass::pass_1020::pass1_1020_808e;
 use crate::pass::pass_1038::pass1_1038_b6e0;
-use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, mov_update_win_1040_93aa, move_win_1040_826c, dialog_ui_fn_1040_78e2, post_win_msg_1040_7b3c};
-use crate::pass::pass_1018::{pass1_1020_022c, pass1_1018_2dde, pass1_1018_31d0, pass1_1018_2d9a, pass1_1018_2e28};
-use crate::defines::{Struct_1010_2fa0, Struct_1008_628e, Struct_1010_7b26, U32Ptr, Struct28};
-use crate::pass::pass_1010::{pass1_1010_1f62, pass1_1010_32da, pass1_1010_1d80};
-use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_eb74, pass1_1008_b544};
-use crate::util::read_struct_from_addr;
+use crate::pass::pass_1040::pass1_1040_b54a;
 use crate::sys_api::unk_win_msg_op_1008_9510;
 use crate::ui::ui_1008::win_1008_5c7c;
-use crate::draw::draw_1020::invalidate_rect_1020_735a;
-use crate::ui::ui_1020::{win_ui_fn_1020_6e98, post_win_msg_1020_1ca4};
-use crate::file::file_1010::unk_io_op_1010_830a;
-use crate::pass::pass_1020::pass1_1020_808e;
+use crate::ui::ui_1010::win_ui_op_1010_3202;
+use crate::ui::ui_1020::{post_win_msg_1020_1ca4, win_ui_fn_1020_6e98};
+use crate::ui::ui_1040::{dialog_ui_fn_1040_78e2, mov_update_win_1040_93aa, move_win_1040_826c, post_win_msg_1040_7b3c};
+use crate::util::read_struct_from_addr;
+use crate::win_struct::{HGDIOBJ16, LPARAM, RECT16, WNDCLASS16};
+use crate::winapi::{BeginPaint16, DestroyCursor16, EndPaint16, GetClientRect16, GetDlgItem16, InvalidateRect16, RemoveProp16, SelectObject16, WinHelp16};
 
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
@@ -870,7 +872,7 @@ pub fn destroy_window_1038_cd88(param_1: &mut Struct1) {
     let unaff_SS: u16;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
-    move_win_1040_826c(param_1, -0x1, 0xffff);
+    move_win_1040_826c(param_1, -0x1);
     ShowWindow16(&ctx.PTR_LOOP_1050_1040, 0x5);
     (param_1 + 0x92) = 0x1;
     unk_win_msg_op_1008_9510((param_1 & 0xffff0000 | (param_1 + 0x92)), 0x1008, unaff_SS);
@@ -1018,5 +1020,126 @@ pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
     }
     iVar5.field_0x94 = 0x0;
     iVar5.field_0x98 = 0x0;
+    return;
+}
+
+pub fn win_cleanup_op_1040_748c(
+    ctx: &mut AppContext,
+    param_1: i16,
+    param_2: u16,
+    param_3: u16,
+    param_4: u32,
+    in_dx: u16,
+    mut unaff_cs: u16,
+    unaff_ss: u16,
+) {
+    let func_ptr_1: u32;
+    let u_var2: u32;
+    let i_var3: i16;
+    let mut rect_1: RECT16;
+    let i_stack6: i16;
+    let i_stack4: i16;
+
+    if false {
+        // switchD_1040_75ed_caseD_fb:
+        pass1_1040_b54a(param_1, param_2, param_3, param_4, in_dx, unaff_cs, unaff_ss);
+        return;
+    }
+    unaff_cs = ctx.PTR_LOOP_1050_1040 as u16;
+    match param_4 {
+        0xfa => {
+            func_ptr_1 = ((param_1 + 0x94) + 0x18);
+            (**func_ptr_1)();
+        },
+//     TODO: goto switchD_1040_75ed_caseD_fb;
+        0xfd => {
+            if ctx.DAT_1050_0ecc == 0x0 {
+                return;
+            }
+            ctx.DAT_1050_0ecc = 0x0;
+        },
+//     TODO: goto LAB_1040_755d;
+        0xfe => {
+            if ctx.DAT_1050_0ecc == 0x1 {
+                return;
+            }
+            ctx.DAT_1050_0ecc = 0x1;
+        },
+//     TODO: goto LAB_1040_755d;
+        0xff => {
+            if ctx.DAT_1050_0ecc == 0x2 {
+                return;
+            }
+            ctx.DAT_1050_0ecc = 0x2;
+//LAB_1040_755d:
+            u_var2 = (param_1 + 0x94);
+            func_ptr_1 = ((param_1 + 0x94) + 0x10);
+            (**func_ptr_1)(&ctx.PTR_LOOP_1050_1040, u_var2, (u_var2 >> 0x10));
+            pass1_1010_2ee2((param_1 + 0x94), unaff_ss, 0x1010);
+            PostMessage16(0x1010, 0x0, 0x0, 0x111010a);
+        },
+        0x107 => { i_var3 = 0x0; },
+//     TODO: goto LAB_1040_75ba;
+        0x108 => {
+            i_var3 = 0x1;
+//LAB_1040_75ba:
+            win_ui_op_1010_3202((param_1 + 0x94), i_var3, 0x1010);
+
+        },
+        0x10a => {
+            GetClientRect16(&ctx.PTR_LOOP_1050_1040, &rect_1);
+            u_var2 = (param_1 + 0x94);
+            rect_1.y += 0x3;
+            rect_1.x = (u_var2 + 0x1a) + -0x9;
+            i_stack6 += -0x3;
+            i_stack4 += -0x3;
+            InvalidateRect16(ctx.s_tile2_bmp_1050_1538,
+                             (&ctx.PTR_LOOP_1050_0000 + 0x1), &rect_1);
+            unk_destroy_win_op_1010_2fa0((param_1 + 0x94), 0x1010);
+            pass1_1010_32c0((param_1 + 0x94), 0x0);
+            pass1_1010_2ee2((param_1 + 0x94), unaff_ss, 0x1010);
+        },
+        0x10c => { DestroyWindow16(ctx.PTR_LOOP_1050_1040 as HWND16); },
+        _ => {},
+    }
+    return;
+}
+
+pub fn ui_cleanup_op_1040_782c(ctx: &mut AppContext, struct_1: &mut Struct18, handle_1: HGDIOBJ16) {
+    let pu_var1: u32;
+    let u_var2: u16;
+    let func_ptr_1: u32;
+    let struct_2: &mut Struct18;
+    let u_var5: u16;
+    let menu: HGDIOBJ16;
+    let hwnd: HMENU16;
+
+    // u_var5 = (param_1 >> 0x10);
+    struct_2 = struct_1;
+    struct_1.field_0x0 = 0x840c;
+    (struct_2.field_0x2) = ctx.PTR_LOOP_1050_1040;
+    pu_var1 = (struct_2.field_0x70);
+    u_var2 = (struct_2.field_0x72);
+    if (u_var2 | pu_var1) != 0x0 {
+        func_ptr_1 = *pu_var1;
+        (**func_ptr_1)(handle_1, pu_var1, u_var2, 0x1);
+    }
+    menu = handle_1;
+    if (struct_2.field_0x4) != 0x0 {
+        menu = ctx.s_tile2_bmp_1050_1538 as HMENU16;
+        DeleteObject16(handle_1);
+        (struct_2.field_0x4) = 0x0;
+    }
+    hwnd = menu;
+    if (struct_2.field_0x68) != 0x0 {
+        hwnd = ctx.s_tile2_bmp_1050_1538 as HWND16;
+        DestroyMenu16(menu);
+    }
+    RemoveProp16(hwnd, ctx.s_thisLo_1050_5db1);
+    RemoveProp16(ctx.s_tile2_bmp_1050_1538 as HWND16, ctx.s_thisHi_1050_5db8);
+    RemoveProp16(ctx.s_tile2_bmp_1050_1538 as HWND16, ctx.s_procLo_1050_5dbf);
+    RemoveProp16(ctx.s_tile2_bmp_1050_1538 as HWND16, ctx.s_procHi_1050_5dc6);
+    struct_1.field_0x0 = 0x389a;
+    (struct_2 + 0x2) = 0x1008;
     return;
 }

@@ -106,14 +106,14 @@ pub fn struct_1030_17ce(param_1: U32Ptr,param_2: u32,param_3: u32) -> u16
   let paVar1: &mut Struct75;
   let u_var2: u32;
   let u_var3: u16;
-  let iVar3: &mut Struct343;
+  let i_var3: &mut Struct343;
   
-  iVar3 = param_1;
+  i_var3 = param_1;
  // u_var3 = (param_1 >> 0x10);
   paVar1 = struct_1030_1628(param_1);
-  &iVar3.field_0xc = 0x0;
+  &i_var3.field_0xc = 0x0;
   *param_1 = 0x1a16;
-  iVar3.field_0x2 = 0x1030;
+  i_var3.field_0x2 = 0x1030;
   if ((param_3 != 0x0) || (param_2 != 0x0)) {
     mem_op_1000_179c(0x18,(paVar1 >> 0x10),0x1000);
     if (paVar1 == 0x0) {
@@ -122,8 +122,8 @@ pub fn struct_1030_17ce(param_1: U32Ptr,param_2: u32,param_3: u32) -> u16
     else {
       u_var2 = struct_op_1030_1cd8(paVar1,param_2,param_3);
     }
-    iVar3.field_0xc = u_var2;
-    iVar3.field_0xe = (u_var2 >> 0x10);
+    i_var3.field_0xc = u_var2;
+    i_var3.field_0xe = (u_var2 >> 0x10);
   }
   return param_1;
 }

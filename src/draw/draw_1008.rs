@@ -102,26 +102,26 @@ pub fn unk_draw_op_1008_7f62(
     let HVar1: HGDIOBJ16;
     let HVar2: HCURSOR16;
     let u_var4: &mut Struct20;
-    let iVar3: &mut Struct20;
+    let i_var3: &mut Struct20;
 
-    iVar3 = param_1;
+    i_var3 = param_1;
    // u_var4 = (param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_3);
-    iVar3.field_0xde = param_2;
+    i_var3.field_0xde = param_2;
     param_1.field_0x0 = 0x8042;
-    iVar3.field_0x2 = 0x1008;
+    i_var3.field_0x2 = 0x1008;
     string_1000_3d3e(
-        (param_1 & 0xffff0000 | &iVar3.field_0x5b),
+        (param_1 & 0xffff0000 | &i_var3.field_0x5b),
         s_SOLChildPar_1050_0358,
     );
     HVar1 = GetStockObject16(0x1000);
-    iVar3.hgdiobj_field_0xc6 = HVar1;
+    i_var3.hgdiobj_field_0xc6 = HVar1;
     HVar2 = LoadCursor16(s_tile2_bmp_1050_1538, &read_string_from_rsrc(0x7f00));
-    iVar3.hcursor_field_0xc4 = HVar2;
-    iVar3.field_0xc8 = 0x2008;
-    iVar3.field_0xac = 0x44000000;
-    iVar3.field_0xbc = (param_3 + 0x8);
-    iVar3.field_0xca = iVar3.field_0xde;
+    i_var3.hcursor_field_0xc4 = HVar2;
+    i_var3.field_0xc8 = 0x2008;
+    i_var3.field_0xac = 0x44000000;
+    i_var3.field_0xbc = (param_3 + 0x8);
+    i_var3.field_0xca = i_var3.field_0xde;
     win_ui_reg_class_1008_96d2(ctx, param_1, s_tile2_bmp_1050_1538, param_4, 0);
     return param_1;
 }
@@ -284,7 +284,7 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
 
 pub unsafe fn unk_draw_op_1008_da12(
     ctx: &mut AppContext,
-    param_1: &mut Struct19,
+    struct_1: &mut Struct19,
     param_2: u16,
     param_3: u16,
 ) {
@@ -297,49 +297,49 @@ pub unsafe fn unk_draw_op_1008_da12(
     // let i_var7: i16;
     let u_var8: i16;
     let i16_var5: i16;
-    let start: bool;
-    let u_var9: u16;
+    let start: u16;
+    let b_var9: bool;
     let mut entries: &mut Vec<PALETTEENTRY>;
-    let count: i16;
+    let struct_3: &mut Struct18;
     let i_var10: i16;
     let hwnd: HWND16;
     let pu_stack32: u16;
     let i_stack16: i16;
     let l_stack8: i32;
 
-    set_struct_fields_1010_1d48(read_struct_from_addr::<Struct18>(CONCAT22(param_2, param_1.field_0x0)), param_3);
-    param_1.field_0xa = 0x0;
-    param_1.field_0xc = 0x0;
-    clear_struct_1008_3e38(read_struct_from_addr::<Struct18>(CONCAT22(param_2, param_1.field_0xe)));
-    param_1.field_0x14 = 0x0;
-    param_1.field_0x16 = 0x0;
-    param_1.field_0x18 = 0x0;
-    CONCAT22(param_2, param_1.field_0x0) = 0xdc80;
-    param_1.field_0x2 = 0x1008;
+    set_struct_fields_1010_1d48(read_struct_from_addr::<Struct18>(CONCAT22(param_2, struct_1.field_0x0)), param_3);
+    struct_1.field_0xa = 0x0;
+    struct_1.field_0xc = 0x0;
+    clear_struct_1008_3e38(read_struct_from_addr::<Struct18>(CONCAT22(param_2, struct_1.field_0xe)));
+    struct_1.field_0x14 = 0x0;
+    struct_1.field_0x16 = 0x0;
+    struct_1.field_0x18 = false;
+    CONCAT22(param_2, struct_1.field_0x0) = 0xdc80;
+    struct_1.field_0x2 = 0x1008;
     let hdc = GetDC16(0x1010);
     let mut dev_caps = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0x8);
-    param_1.field_0xa = dev_caps;
+    struct_1.field_0xa = dev_caps;
     dev_caps = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0xa);
-    param_1.field_0xc = dev_caps;
-    let mut i_var7 = param_1.field_0xc + -0x1e0;
-    count = (i_var7 >> 0xf);
+    struct_1.field_0xc = dev_caps;
+    let mut i_var7 = struct_1.field_0xc + -0x1e0;
+    struct_3 = (i_var7 >> 0xf);
     pass1_1008_3e76(
-        &mut read_vec_from_addr::<u16>(CONCAT22(param_2, param_1.field_0xe)),
+        &mut read_vec_from_addr::<u16>(CONCAT22(param_2, struct_1.field_0xe)),
         0x0,
         i_var7 / 0x2,
-        ((param_1.field_0xa + -0x280) / 0x2) as u16,
+        ((struct_1.field_0xa + -0x280) / 0x2) as u16,
     );
     let mut hwnd = ctx.s_tile2_bmp_1050_1538 as HWND16;
     let u_var8 = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0x26);
     if (u_var8 & 0x100) != 0x0 {
         dev_caps = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0x68);
-        param_1.field_0x14 = dev_caps;
+        struct_1.field_0x14 = dev_caps;
         let i16_var5 = GetDeviceCaps16(ctx.s_tile2_bmp_1050_1538 as HDC16, 0x6a);
-        param_1.field_0x16 = i16_var5;
+        struct_1.field_0x16 = i16_var5;
         if ctx.PTR_LOOP_1050_5f2c == 0x0 {
-            ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
+            ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, struct_3, 0x1000);
         } else {
-            count = ctx.PTR_LOOP_1050_5f2e as i16;
+            struct_3 = ctx.PTR_LOOP_1050_5f2e as i16;
         }
         start = fn_ptr_op_1000_1708(
             ctx,
@@ -350,33 +350,33 @@ pub unsafe fn unk_draw_op_1008_da12(
             0x1000,
         );
         // l_stack8 = CONCAT22(count as u16, start) as i32;
-        i_var7 = param_1.field_0x16;
+        i_var7 = struct_1.field_0x16;
         if ctx.PTR_LOOP_1050_5f2c == 0x0 {
-            ctx.PTR_LOOP_1050_5f2e = count as u32;
-            ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, count, 0x1000);
+            ctx.PTR_LOOP_1050_5f2e = struct_3 as u32;
+            ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, struct_3, 0x1000);
         } else {
         }
-        u_var9 = fn_ptr_op_1000_1708(
+        b_var9 = fn_ptr_op_1000_1708(
             ctx,
-            (i_var7 + 0x1) * 0x4,
+            ((i_var7 + 0x1) * 0x4) as u16,
             0x0,
             0x1,
             read_struct_from_addr::<Struct18>(ctx.PTR_LOOP_1050_5f2c),
             0x1000,
         );
-        param_1.field_0x18 = u_var9;
-        (&param_1.field_0x18 + 0x2) = ctx.PTR_LOOP_1050_5f2e as u16;
+        struct_1.field_0x18 = b_var9;
+        struct_1.field_0x1a = ctx.PTR_LOOP_1050_5f2e as u16;
         if l_stack8 != 0x0 {
-            if param_1.field_0x18 != 0x0 {
-                entries = read_vec_from_addr::<PALETTEENTRY>((param_1.field_0x16 / 0x2) as u32);
-                GetSystemPaletteEntries(0x1000, start, count as u16, entries);
+            if struct_1.field_0x18 != false {
+                entries = read_vec_from_addr::<PALETTEENTRY>((struct_1.field_0x16 / 0x2) as u32);
+                GetSystemPaletteEntries(0x1000, start, struct_3 as u16, entries);
                 GetSystemPaletteEntries(
                     ctx.s_tile2_bmp_1050_1538 as HDC16,
                     entries * 0x4 + start,
-                    count as u16,
+                    struct_3.field_0x0 as u16,
                     entries.as_mut_slice(),
                 );
-                pu_stack32 = param_1.field_0x18;
+                pu_stack32 = struct_1.field_0x18;
                 // TODO: refactor for loop
                 // for (i_stack16 = 0x0; pu_var4 = pu_stack32, pi_var1 = &param_1.field_0x16,
                 //     *pi_var1 != i_stack16 && i_stack16 <= *pi_var1; i_stack16 += 0x1) {
@@ -392,7 +392,7 @@ pub unsafe fn unk_draw_op_1008_da12(
             }
         }
         hwnd = 0x1000;
-        fn_ptr_1000_17ce(ctx, read_struct_from_addr::<Struct18>(CONCAT22(count as u16, start)), 0x1000);
+        fn_ptr_1000_17ce(ctx, read_struct_from_addr::<Struct18>(CONCAT22(struct_3 as u16, start)), 0x1000);
     }
     ReleaseDC16(hwnd, hdc);
     return;

@@ -155,7 +155,7 @@ pub fn load_str_and_sprintf_1008_b78a(param_1: i32, param_2: U32Ptr, uparam_3: &
     let u_var6: u32;
     local_206: u8[0x100];
     local_106: u8[0x100];
-    let iStack6: i16;
+    let i_stack6: i16;
     let uStack4: u16;
 
     mem_op_1000_179c(0x12, param_3, 0x1000);
@@ -166,20 +166,20 @@ pub fn load_str_and_sprintf_1008_b78a(param_1: i32, param_2: U32Ptr, uparam_3: &
     }
     // uStack4 = (u_var6 >> 0x10);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, 0x100, local_206, param_2 as i16);
-    iStack6 = u_var6 as i16;
+    i_stack6 = u_var6 as i16;
     // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1 as i16;
     pi_var1 = (i_var4 + 0x22) as u32;
     *pi_var1 = *pi_var1 + 0x1;
     wsprintf16(0x1010, local_106, param_2);
-    iStack6 = u_var6 as i16;
+    i_stack6 = u_var6 as i16;
     u_var3 = str_op_1008_60e8(CONCAT22(param_2 as u16, local_106),
                              (u_var6 >> 0x10));
-    iStack6 = u_var6 as i16;
-    (iStack6 + 0x4) = u_var3 as i16;
-    (iStack6 + 0x6) = (u_var6 >> 0x10) as i16;
+    i_stack6 = u_var6 as i16;
+    (i_stack6 + 0x4) = u_var3 as i16;
+    (i_stack6 + 0x6) = (u_var6 >> 0x10) as i16;
     ppcVar2 = ((i_var4 + 0xa) + 0x8) as u32;
-    (**ppcVar2)(ctx.s_tile2_bmp_1050_1538, (i_var4 + 0xa), iStack6, uStack4);
+    (**ppcVar2)(ctx.s_tile2_bmp_1050_1538, (i_var4 + 0xa), i_stack6, uStack4);
     return;
 }
 

@@ -5,3 +5,6 @@ pub mod ui_1020;
 pub mod ui_1028;
 pub mod ui_1038;
 pub mod ui_1040;
+mod show_win;
+mod window;
+mod message;

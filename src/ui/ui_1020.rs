@@ -195,7 +195,7 @@ pub fn window_op_1020_10a0(astruct *param_1)
  // pu_var5 = (uVar8 >> 0x10);
   pass1_1010_41d6((iVar11 + 0xf2),uVar8,pu_var5,unaff_SS,in_AF);
   uVar8 = pass1_1010_451a((iVar11 + 0xf2),pu_var5,unaff_DI,unaff_SS);
-  pBVar4 = (bool *)uVar8;
+  pBVar4 = uVar8;
   u_var1 = param_1;
   ppcVar2 = (u_var1 + 0x14);
   (**ppcVar2)(0x1010,iVar11,uVar12,0x0,pBVar4,(uVar8 >> 0x10));
@@ -430,7 +430,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
     (i_var9 + 0x94) = puVar7;
   }
   u_var1 = (i_var9 + 0x8e);
-  pIStack12 = (INT16 *)(u_var1 & 0xffff0000 | (u_var1 + 0xa));
+  pIStack12 = (u_var1 & 0xffff0000 | (u_var1 + 0xa));
   puStack16 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0,0x48,unaff_SS,puVar7,unaff_DI);
   GetClientRect16(0x1010,&local_1c);
   IVar5 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
@@ -470,11 +470,11 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
       load_string_1010_84e0
                 (0x1010,_PTR_LOOP_1050_14cc,
                  (ctx.PTR_LOOP_1050_14cc >> 0x10),0x100,local_178,
-                 (short)unaff_SS);
+                 unaff_SS);
       SetWindowText16(0x1010,local_178);
     }
     pvStack60 = MakeProcInstance16(s_tile2_bmp_1050_1538,
-                                   (HANDLE16)PTR_LOOP_1050_038c);
+                                   PTR_LOOP_1050_038c);
     GetWindowRect16(ctx.s_tile2_bmp_1050_1538,&local_6e);
     uStack114 = uStack106;
     iStack98 = uStack106 - local_6e.x;
@@ -491,7 +491,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
   else {
     win_1008_5c7c(ctx.PTR_LOOP_1050_02a0,0x9d0001,unaff_SS,u_var4,uStack58);
     (i_var9 + 0x8c) = u_var4;
-    pvStack60 = MakeProcInstance16(0x1008,(HANDLE16)PTR_LOOP_1050_038c);
+    pvStack60 = MakeProcInstance16(0x1008,PTR_LOOP_1050_038c);
   }
   EnumChildWindows1(ctx.s_tile2_bmp_1050_1538,0x0,ZEXT24(pvStack60) << 0x10);
   FreeProcInstance16(s_tile2_bmp_1050_1538);
@@ -516,7 +516,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
     load_string_1010_84e0
               (0x1010,_PTR_LOOP_1050_14cc,
                (ctx.PTR_LOOP_1050_14cc >> 0x10),0x100,local_178,
-               (short)unaff_SS);
+               unaff_SS);
     GetDlgItem16(0x1010,0x175);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538,local_178);
     in_resc_id_3 = local_178;
@@ -526,7 +526,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1)
   load_string_1010_84e0
             (0x1010,_PTR_LOOP_1050_14cc,
              (ctx.PTR_LOOP_1050_14cc >> 0x10),in_resc_id_3,
-             in_buffer_4,(short)unaff_SS);
+             in_buffer_4,unaff_SS);
   SetWindowText16(0x1010,local_178);
 //LAB_1020_1b24:
   MoveWindow16(ctx.s_tile2_bmp_1050_1538,0x0,uStack74,
@@ -547,7 +547,7 @@ enable_window_1020_1bd4
   let ppcVar1: u32;
   let bVar2: bool;
   let in_AX: u16;
-  let iVar3: i16;
+  let i_var3: i16;
   let in_DX: U32Ptr;
   let puVar4: U32Ptr;
   let u_var5: u16;
@@ -575,18 +575,18 @@ enable_window_1020_1bd4
     mem_op_1000_179c(0xb4,in_DX,0x1000);
     puVar4 = (in_DX | in_AX);
     if (puVar4 == 0x0) {
-      iVar3 = 0x0;
+      i_var3 = 0x0;
       puVar4 = 0x0;
     }
     else {
       u_var5 = SUB42(&ctx.PTR_LOOP_1050_1040,0x0);
-      iVar3 = string_1040_8520(CONCAT22(in_DX,in_AX),
+      i_var3 = string_1040_8520(CONCAT22(in_DX,in_AX),
                                (param_1 + 0x6),0x30,0x2,0x57b,0x62a,puVar4,
                                unaff_SS);
     }
-    puStack12 = CONCAT22(puVar4,iVar3);
+    puStack12 = CONCAT22(puVar4,i_var3);
     ppcVar1 = (*puStack12 + 0x74);
-    (**ppcVar1)(u_var5,iVar3,puVar4);
+    (**ppcVar1)(u_var5,i_var3,puVar4);
   }
   return;
 }
@@ -686,15 +686,15 @@ send_msg_1020_29d8(param_1: i16,param_2: u16,param_3: u16,param_4: u32,param_5: 
   let unaff_DI: i16;
   let unaff_SS: u16;
   let pu_var2: U32Ptr;
-  let iVar3: i16;
+  let i_var3: i16;
   
- // iVar3 = (param_4 >> 0x10);
+ // i_var3 = (param_4 >> 0x10);
   post_win_msg_1020_79fc
-            (CONCAT22(param_2,param_1),param_3,param_4,iVar3,param_7
+            (CONCAT22(param_2,param_1),param_3,param_4,i_var3,param_7
             );
   pu_var2 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0,0x29,unaff_SS,param_6,unaff_DI);
  // pu_var1 = (pu_var2 >> 0x10);
-  if (iVar3 == 0x0) {
+  if (i_var3 == 0x0) {
     pass1_1018_270e(pu_var2,0x1,(param_1 + 0xfc),pu_var1,unaff_DI,unaff_SS);
   }
   else {
@@ -789,7 +789,7 @@ pub fn win_ui_op_1020_2cf0(astruct *param_1)
   pass1_1018_0ac0((i_var8 + 0xf2),param_1 & 0xffff | uVar9 << 0x10)
   ;
   u_var11 = pass1_1018_0b08((i_var8 + 0xf2));
-  pBVar4 = (bool *)u_var11;
+  pBVar4 = u_var11;
   ppcVar2 = (param_1 + 0x14);
   (**ppcVar2)();
   ppcVar2 = ((i_var8 + 0xf2) + 0x10);
@@ -904,7 +904,7 @@ pub fn window_op_1020_38aa(astruct *param_1)
   let iStack14: i16;
   let iStack12: i16;
   let local_a: RECT16;
-  let iStack6: i16;
+  let i_stack6: i16;
   let i_stack4: i16;
   
   u_var11 = param_1;
@@ -995,7 +995,7 @@ pub fn window_op_1020_38aa(astruct *param_1)
     GetWindowRect16(HVar9,&local_a);
     GetWindowRect16(ctx.s_tile2_bmp_1050_1538,&local_12);
     iStack12 -= local_12.y;
-    iStack14 = iStack6 - local_a.x;
+    iStack14 = i_stack6 - local_a.x;
     local_12.x = local_a.x;
     local_12.y = i_stack4 + 0x3;
     SetWindowPos16(ctx.s_tile2_bmp_1050_1538,0x44,iStack12,iStack14,local_12.y,
@@ -2421,11 +2421,11 @@ pub fn win_ui_op_1020_5e76(param_1: u32,param_2: u16,param_3: u16)
       load_string_1010_84e0
                 (0x1010,_PTR_LOOP_1050_14cc,
                  (ctx.PTR_LOOP_1050_14cc >> 0x10),0x3ff,local_aa,
-                 (short)unaff_SS);
+                 unaff_SS);
       load_string_1010_84e0
                 (0x1010,_PTR_LOOP_1050_14cc,
                  (ctx.PTR_LOOP_1050_14cc >> 0x10),0x3ff,local_1aa,
-                 (short)unaff_SS);
+                 unaff_SS);
       u_var6 = sys_1000_3f9c(local_2aa,unaff_SS,local_1aa,unaff_SS
                             ,PTR_LOOP_1050_50cc,&stack0xfffe,u_var11,0x1000,
                             unaff_SS,in_AF);
@@ -2602,29 +2602,29 @@ pub fn unk_win_ui_op_1020_67ce(in_struct_1: &mut Struct20,param_2: u16,param_3: 
 {
   let HVar1: HGDIOBJ16;
   let HVar2: HCURSOR16;
-  let iVar3: &mut Struct20;
+  let i_var3: &mut Struct20;
   let u_var4: &mut Struct20;
   let unaff_SS: u16;
   
   struct_1020_790e(in_struct_1,s_TPPOPMENU_1050_43fa,param_2,param_3,
                    unaff_SS);
  // u_var4 = (in_struct_1 >> 0x10);
-  iVar3 = in_struct_1;
-  iVar3[0x1].field_0x10 = 0x0;
-  &iVar3[0x1].field_0x14 = 0x0;
+  i_var3 = in_struct_1;
+  i_var3[0x1].field_0x10 = 0x0;
+  &i_var3[0x1].field_0x14 = 0x0;
   in_struct_1.field_0x0 = 0x70e6;
-  iVar3.field_0x2 = 0x1020;
+  i_var3.field_0x2 = 0x1020;
   string_1000_3d3e
-            ((in_struct_1 & 0xffff0000 | ZEXT24(&iVar3.field_0x5b)),
+            ((in_struct_1 & 0xffff0000 | ZEXT24(&i_var3.field_0x5b)),
              s_VrMode2_1050_4404);
   HVar1 = GetStockObject16(0x1000);
-  iVar3.hgdiobj_field_0xc6 = HVar1;
+  i_var3.hgdiobj_field_0xc6 = HVar1;
   HVar2 = LoadCursor16(s_tile2_bmp_1050_1538,0x7f00);
-  iVar3.hcursor_field_0xc4 = HVar2;
-  iVar3.field_0xac = 0x44c00000;
-  iVar3.field_0xc8 = 0x2020;
-  iVar3.field_0xbc = (param_3 + 0x8);
-  iVar3.field_0xca = param_2;
+  i_var3.hcursor_field_0xc4 = HVar2;
+  i_var3.field_0xac = 0x44c00000;
+  i_var3.field_0xc8 = 0x2020;
+  i_var3.field_0xbc = (param_3 + 0x8);
+  i_var3.field_0xca = param_2;
   win_ui_reg_class_1008_96d2(in_struct_1,0x1008,unaff_SS);
   window_op_1020_6c3a(in_struct_1);
   return;
@@ -2660,7 +2660,7 @@ win_ui_op_1020_6ae6(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: i16,param
 {
   let ppcVar1: u32;
   let pu_var2: U32Ptr;
-  let iVar3: i16;
+  let i_var3: i16;
   let u_var4: u16;
   let hwnd: HWND16;
   let LVar5: LRESULT;
@@ -2673,7 +2673,7 @@ win_ui_op_1020_6ae6(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: i16,param
   
   if (param_4 == 0x1797) {
    // u_var4 = (param_1 >> 0x10);
-    iVar3 = param_1;
+    i_var3 = param_1;
     hwnd = ctx.s_tile2_bmp_1050_1538;
     HStack4 = GetDlgItem16(param_5,0x1797);
     if (HStack4 != 0x0) {
@@ -2685,12 +2685,12 @@ win_ui_op_1020_6ae6(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: i16,param
           LVar5 = SendMessage16(ctx.s_tile2_bmp_1050_1538,local_58,param_6,
                                 CONCAT22(0x40a,uStack8));
           pu_var2 = local_58;
-          pass1_1018_30ca((iVar3 + 0xf2),CONCAT22(param_6,pu_var2),
+          pass1_1018_30ca((i_var3 + 0xf2),CONCAT22(param_6,pu_var2),
                           (LVar5 >> 0x10));
           hwnd = 0x1018;
-          pass1_1018_2fe8((iVar3 + 0xf2),in_stack_0000ff86,in_stack_0000ff88);
+          pass1_1018_2fe8((i_var3 + 0xf2),in_stack_0000ff86,in_stack_0000ff88);
           if (pu_var2 != 0x0) {
-            invalidate_rect_1020_735a((iVar3 + 0xf6),0x1018);
+            invalidate_rect_1020_735a((i_var3 + 0xf6),0x1018);
             ppcVar1 = (*param_1 + 0x40);
             (**ppcVar1)(0x1018,param_1,0xef,HVar6);
           }
@@ -2806,7 +2806,7 @@ pub fn window_op_1020_6c3a(astruct *param_1)
   u_var1 = (iVar11 + 0xf2);
   ppcVar2 = ((iVar11 + 0xf2) + 0x10);
   (**ppcVar2)(0x1000,u_var1,(u_var1 >> 0x10));
-  pBVar5 = (bool *)u_var6;
+  pBVar5 = u_var6;
   MoveWindow16(0x1000,0x1,pBVar5[0x3],pBVar5[0x2],pBVar5[0x1],*pBVar5);
   u_var6 = param_1;
   ppcVar2 = (u_var6 + 0x94);
@@ -2835,7 +2835,7 @@ pub fn win_ui_fn_1020_6e98(param_1: u32,in_win_handle: HWND16,param_3: u16)
   let iStack36: i16;
   let window_name: u32;
   let rectangle: RECT16;
-  let IStack6: i16;
+  let i_stack6: i16;
   let i_stack4: i16;
   
  // u_var6 = (param_1 >> 0x10);
@@ -2852,7 +2852,7 @@ pub fn win_ui_fn_1020_6e98(param_1: u32,in_win_handle: HWND16,param_3: u16)
     window_handle =
          CreateWindow16(0x1018,window_name,
                         CONCAT22(ctx.PTR_LOOP_1050_038c,window_name._2_2_),0x1797,
-                        (iVar5 + 0x8),i_stack4 + -0x19,IStack6,0x0,0x0,0x103,
+                        (iVar5 + 0x8),i_stack4 + -0x19,i_stack6,0x0,0x0,0x103,
                         0x40a0);
     paVar2 = window_name;
     if (window_handle == 0x0) {
@@ -3179,7 +3179,7 @@ post_win_msg_1020_79fc
 {
   let pu_var1: u32;
   let ppcVar2: u32;
-  let iVar3: i16;
+  let i_var3: i16;
   let i_var4: &mut Struct69;
   let u_var4: u16;
   let u_var5: u16;
@@ -3187,8 +3187,8 @@ post_win_msg_1020_79fc
  // u_var4 = (param_1 >> 0x10);
   i_var4 = param_1;
   ppcVar2 = (*i_var4.field_0xe0 + 0x24);
-  iVar3 = (**ppcVar2)(param_5,i_var4.field_0xe0);
-  if (iVar3 != param_4) {
+  i_var3 = (**ppcVar2)(param_5,i_var4.field_0xe0);
+  if (i_var3 != param_4) {
     u_var5 = i_var4.field_0x8;
     PostMessage16(param_5,0x0,0x0,0x850000);
     pu_var1 = i_var4.field_0xe0;
@@ -3206,26 +3206,26 @@ pub fn get_win_ui_info_op_1020_7a50(param_1: u32,param_2: HWND16)
   let ppcVar1: u32;
   let b_var2: bool;
   let IVar2: i16;
-  let IVar3: i16;
+  let i_var3: i16;
   let var5: u16;
   let local_a: RECT16;
-  let iStack6: i16;
+  let i_stack6: i16;
   let i_stack4: i16;
   
   local_a.x = 0x0;
   local_a.y = 0x0;
-  iStack6 = 0x0;
+  i_stack6 = 0x0;
   i_stack4 = 0x0;
  // var5 = (param_1 >> 0x10);
   b_var2 = IsIconic16(param_2);
   if (b_var2 == 0x0) {
     GetWindowRect16(ctx.s_tile2_bmp_1050_1538,&local_a);
-    iStack6 -= local_a.x;
+    i_stack6 -= local_a.x;
     i_stack4 -= local_a.y;
     IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    IVar3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
     local_a.x += IVar2 * 0x2;
-    local_a.y += IVar3 * 0x2;
+    local_a.y += i_var3 * 0x2;
   }
   ppcVar1 = ((param_1 + 0xe0) + 0x14);
   (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,(param_1 + 0xe0),&local_a);

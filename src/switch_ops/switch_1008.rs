@@ -2073,14 +2073,14 @@ i16  win_ui_op_1008_2b54(param_1: u16,param_2: U32Ptr,param_3: u16)
 {
   let u_var1: u16;
   let ppcVar2: u32;
-  let iVar3: i16;
+  let i_var3: i16;
   let puVar4: U32Ptr;
   let hwnd: HWND16;
   let mut pcVar5: String; 
   let u_var6: u16;
   u32 *local_a6 [0x14];
   let local_56: [u8;50];
-  let iStack6: i16;
+  let i_stack6: i16;
   let i_stack4: i16;
   
   i_stack4 = 0x0;
@@ -2103,31 +2103,31 @@ i16  win_ui_op_1008_2b54(param_1: u16,param_2: U32Ptr,param_3: u16)
     mem_op_1000_179c(0xb4,param_2,0x1000);
     puVar4 = (param_2 | param_1);
     if (puVar4 == 0x0) {
-      iVar3 = 0x0;
+      i_var3 = 0x0;
       puVar4 = 0x0;
     }
     else {
       hwnd = &ctx.PTR_LOOP_1050_1040;
-      iVar3 = string_1040_8520(CONCAT22(param_2,param_1),
+      i_var3 = string_1040_8520(CONCAT22(param_2,param_1),
                                ctx.PTR_LOOP_1050_0396,0x21,0x2,0x57b,0x5f2,puVar4,
                                param_3);
     }
-    local_a6[0] = CONCAT22(puVar4,iVar3);
+    local_a6[0] = CONCAT22(puVar4,i_var3);
     ppcVar2 = (*local_a6[0] + 0x74);
-    i_stack4 = (**ppcVar2)(hwnd,iVar3,puVar4,u_var6,param_1);
+    i_stack4 = (**ppcVar2)(hwnd,i_var3,puVar4,u_var6,param_1);
   }
-  iStack6 = i_stack4;
+  i_stack6 = i_stack4;
   if (i_stack4 != 0x1) {
-    iStack6 = 0x0;
+    i_stack6 = 0x0;
   }
-  if (((iStack6 != 0x0) && (ctx.PTR_LOOP_1050_5748 != 0x0)) &&
+  if (((i_stack6 != 0x0) && (ctx.PTR_LOOP_1050_5748 != 0x0)) &&
      (u_var1 = (ctx.PTR_LOOP_1050_5748 + 0x8),
      local_a6[0] = (local_a6[0] & 0xffff0000 | u_var1),
      u_var1 != 0x0)) {
     PostMessage16(hwnd,0x0,0x0,0x11100b4);
-    iStack6 = 0x0;
+    i_stack6 = 0x0;
   }
-  return iStack6;
+  return i_stack6;
 }
 
 

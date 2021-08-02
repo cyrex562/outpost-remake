@@ -680,7 +680,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(param_1: U32Ptr, param_2: u16, param_3: 
             // u_var4 = (u_var7 >> 0x10);
             pass1_1018_181c(((u_var5 + 0xf2) as u32),
                             (u_var7 & 0xffff | u_var4 << 0x10),
-                            (uchar)(u_var7 & 0xffff), u_var4);
+                            (u_var7 & 0xffff), u_var4);
             return;
         }
         if (param_2 < 0xfc) {

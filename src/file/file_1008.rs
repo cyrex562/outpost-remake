@@ -933,7 +933,7 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
 {
     let ppcVar1: u32;
     let u_var2: u16;
-    let iVar3: &mut Struct199;
+    let i_var3: &mut Struct199;
     let BVar3: bool;
     let u_var5: u16;
     let u_var4: &mut Struct200;
@@ -966,10 +966,10 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     if (param_3 == 0x0) {
         ctx.PTR_LOOP_1050_0310 = 0x6d4;
     } else {
-        iVar3 = param_1;
-        iVar3 = &iVar3.field_0x22;
+        i_var3 = param_1;
+        i_var3 = &i_var3.field_0x22;
         // u_var2 = (param_1 >> 0x10);
-        BVar3 = read_file_1008_7dee(u_var11, uVar12, iVar3, 0x0, u_var2, 0x2, param_5);
+        BVar3 = read_file_1008_7dee(u_var11, uVar12, i_var3, 0x0, u_var2, 0x2, param_5);
         if ((BVar3 != 0x0) && (u_var5 = read_file_1008_7dee(u_var11, uVar12, local_10, 0x0, param_6, 0x2, param_5,
         ), u_var5 != 0x0)) {
             if (local_10[0] == 0x0) {
@@ -984,8 +984,8 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                 set_struct_1008_574a(CONCAT22(param_4, u_var5));
                 puVar8 = extraout_dx;
             }
-            &iVar3.field_0xa = u_var5;
-            (&iVar3.field_0xa + 0x2) = puVar8;
+            &i_var3.field_0xa = u_var5;
+            (&i_var3.field_0xa + 0x2) = puVar8;
             paStack286 = 0x0;
             loop {
                 if (local_10[0] <= paStack286) {
@@ -1015,7 +1015,7 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                 u_var4.field_0x8 = local_14[0];
                 u_var4.field_0xa = local_8;
                 u_var4.field_0xe = local_18[0];
-                ppcVar1 = (*iVar3.field_0xa + 0x8);
+                ppcVar1 = (*i_var3.field_0xa + 0x8);
                 (**ppcVar1)();
                 paStack286 = &paStack286.field_0x1;
                 puVar8 = extraout_DX_00;

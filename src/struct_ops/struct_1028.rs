@@ -92,26 +92,26 @@ pub fn struct_1028_1f56(param_1: U32Ptr, param_2: U32Ptr) {
     let u_var1: u32;
     let u_var2: u16;
     let extraout_dx: u16;
-    let iVar3: &mut Struct186;
+    let i_var3: &mut Struct186;
     let u_var3: u16;
 
     struct_1028_b354(param_1);
     // u_var3 = (param_1 >> 0x10);
-    iVar3 = param_1;
+    i_var3 = param_1;
     u_var2 = 0x0;
-    &iVar3.field_0x20 = 0x0;
-    iVar3.field_0x24 = 0x0;
+    &i_var3.field_0x20 = 0x0;
+    i_var3.field_0x24 = 0x0;
     *param_1 = 0x2572;
-    iVar3.field_0x2 = &USHORT_1050_1028;
+    i_var3.field_0x2 = &USHORT_1050_1028;
     mem_op_1000_179c(0xc, param_2, 0x1000);
     if ((param_2 | u_var2) == 0x0) {
-        &iVar3.field_0x20 = 0x0;
+        &i_var3.field_0x20 = 0x0;
     } else {
         set_struct_1008_574a(CONCAT22(param_2, u_var2));
-        iVar3.field_0x20 = u_var2;
-        iVar3.field_0x22 = extraout_dx;
+        i_var3.field_0x20 = u_var2;
+        i_var3.field_0x22 = extraout_dx;
     }
-    u_var1 = &iVar3.field_0x20;
+    u_var1 = &i_var3.field_0x20;
     (u_var1 + 0xa) = 0x0;
     return;
 }
@@ -170,26 +170,26 @@ pub fn struct_1028_355e(param_1: U32Ptr) -> u16
 pub fn struct_1028_37a6(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: u16) {
     let u_var1: u16;
     let u_var2: u16;
-    let iVar3: &mut Struct189;
+    let i_var3: &mut Struct189;
     let u_var3: u16;
 
     struct_1028_b354(param_1);
     // u_var3 = (param_1 >> 0x10);
-    iVar3 = param_1;
+    i_var3 = param_1;
     u_var1 = 0x0;
-    iVar3.field_0x20 = 0x0;
-    iVar3.field_0x24 = 0x0;
-    &iVar3.field_0x28 = 0x0;
+    i_var3.field_0x20 = 0x0;
+    i_var3.field_0x24 = 0x0;
+    &i_var3.field_0x28 = 0x0;
     *param_1 = 0x3e2c;
-    iVar3.field_0x2 = &USHORT_1050_1028;
+    i_var3.field_0x2 = &USHORT_1050_1028;
     mem_op_1000_179c(0xa, param_2, 0x1000);
     u_var2 = param_2 | u_var1;
     if (u_var2 == 0x0) {
-        &iVar3.field_0x28 = 0x0;
+        &i_var3.field_0x28 = 0x0;
     } else {
         pass1_1020_ba3e(CONCAT22(param_2, u_var1), 0x5, 0x5, param_4, param_3);
-        iVar3.field_0x28 = u_var1;
-        iVar3.field_0x2a = u_var2;
+        i_var3.field_0x28 = u_var1;
+        i_var3.field_0x2a = u_var2;
     }
     return;
 }

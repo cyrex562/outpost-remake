@@ -250,7 +250,7 @@ pub fn set_struct_1008_574a(param_1: &mut Struct21)
 pub fn struct_op_1008_6604(param_1: &mut Struct85,param_2: i16,param_3: i16)
 {
   let pu_var1: u32;
-  let iVar3: i16;
+  let i_var3: i16;
   let i_var4: &mut Struct85;
   let i_var2: &mut Struct84;
   let u_var4: u16;
@@ -265,12 +265,12 @@ pub fn struct_op_1008_6604(param_1: &mut Struct85,param_2: i16,param_3: i16)
   lVar6 = mem_op_1000_0a48(0x1,0x28,0x0,_PTR_LOOP_1050_5f2c,0x1000);
   &i_var4.field_0x10 = lVar6;
   (&i_var4.field_0x10 + 0x2) = (lVar6 >> 0x10);
-  iVar3 = param_3 * 0x8 + 0x1f;
-  iVar3 = ((iVar3 + (iVar3 >> 0xf & 0x1f)) >> 0x5) << 0x2;
-  &i_var4.field_0x18 = iVar3;
-  (&i_var4.field_0x18 + 0x2) = iVar3 >> 0xf;
-  lVar6 = mem_op_1000_0a48(0x1,(iVar3 * param_2),
-                           ((iVar3 * param_2) >> 0x10),
+  i_var3 = param_3 * 0x8 + 0x1f;
+  i_var3 = ((i_var3 + (i_var3 >> 0xf & 0x1f)) >> 0x5) << 0x2;
+  &i_var4.field_0x18 = i_var3;
+  (&i_var4.field_0x18 + 0x2) = i_var3 >> 0xf;
+  lVar6 = mem_op_1000_0a48(0x1,(i_var3 * param_2),
+                           ((i_var3 * param_2) >> 0x10),
                            ctx._PTR_LOOP_1050_5f2c,0x1000);
  // u_var5 = (lVar6 >> 0x10);
   i_var4.field_0x6 = lVar6;
@@ -454,7 +454,7 @@ pub fn struct_1008_bde0(param_1: U32Ptr,param_2: U32Ptr)
 {
   let u_var1: u16;
   let i_var2: &mut Struct139;
-  let iVar3: &mut Struct140;
+  let i_var3: &mut Struct140;
   let i_var4: &mut Struct141;
   let iVar5: &mut Struct142;
   let iVar6: &mut Struct143;
@@ -491,9 +491,9 @@ pub fn struct_1008_bde0(param_1: U32Ptr,param_2: U32Ptr)
   i_var2.field_0x8 = ctx.data_seg;
   (*param_1 + 0xa) = 0x3;
   uVar13 = (*param_1 >> 0x10);
-  iVar3 = *param_1;
-  iVar3.field_0xc = 0x6ea;
-  iVar3.field_0xe = ctx.data_seg;
+  i_var3 = *param_1;
+  i_var3.field_0xc = 0x6ea;
+  i_var3.field_0xe = ctx.data_seg;
   (*param_1 + 0x10) = 0x2;
   uVar13 = (*param_1 >> 0x10);
   i_var4 = *param_1;

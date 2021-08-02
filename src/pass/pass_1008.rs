@@ -1405,7 +1405,7 @@ pub fn pass1_1008_4d72(param_1: u32) -> u32
 pub  fn pass1_1008_4d84(
     param_1: &mut Struct_1008_4d84,
     param_2: u32,
-    param_3: &mut Struct18) {
+    param_3: Option<&mut Struct18>) {
     let u_var1: u16;
 
     if param_1.field_0x12 != 0x0 {
@@ -2021,17 +2021,17 @@ pub fn pass1_1008_5fd8(param_1: u16, param_2: U32Ptr) -> U32Ptr
     let mut pcVar2: String;
     let puStack10: U32Ptr;
     let puStack8: U32Ptr;
-    let iStack6: i16;
+    let i_stack6: i16;
 
     puStack10 = &stack0x0006;
-    _iStack6 = CONCAT22(param_1, puStack10 as u16);
+    _i_stack6 = CONCAT22(param_1, puStack10 as u16);
     mem_op_1000_179c(0x1000, param_2, 0x1000);
     puStack8 = param_2;
     pcVar2 = load_string_1010_847e(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     string_1000_3d3e(CONCAT22(puStack8 as u16, puStack10 as u16), pcVar2);
     loop {
-        pi_var1 = _iStack6;
-        _iStack6 = (_iStack6 & 0xffff0000 | (iStack6 + 0x2));
+        pi_var1 = _i_stack6;
+        _i_stack6 = (_i_stack6 & 0xffff0000 | (i_stack6 + 0x2));
         if (*pi_var1 == 0x0) { break; }
         pcVar2 = load_string_1010_847e(ctx.PTR_LOOP_1050_14cc,
                                        (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
@@ -2757,10 +2757,10 @@ pub fn pass1_1008_818c(ctx: &mut AppContext, param_1: &mut Struct23, param_2: HI
     let uStack14: u16;
     let uStack12: u16;
     let uStack10: u32;
-    let iStack6: i16;
+    let i_stack6: i16;
     let uStack4: u16;
 
-    iStack6 = param_1 + 0x4;
+    i_stack6 = param_1 + 0x4;
     b_var1 = GetClassInfo16(param_2, &name, param_3);
     if b_var1 == false {
         name = (param_1 + 0x54);
@@ -4009,7 +4009,7 @@ pub fn pass1_1008_b38c(param_1: u32, param_2: u16, param_3: U32Ptr) -> u32
     let pu_var1: u32;
     let ppcVar2: u32;
     let u_var3: u16;
-    let iVar3: &mut Struct197;
+    let i_var3: &mut Struct197;
     let i_var4: &mut Struct196;
     let u_var4: u16;
     let pu_var5: U32Ptr;

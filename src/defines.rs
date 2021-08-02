@@ -12,10 +12,21 @@ pub struct StructA {
     pub field_0xa: Struct13_1,
 }
 
+pub struct Struct1 {
+
+}
+
 pub struct Struct13_1 {
+    pub field_0x0: u16,
     pub field_0x4: u16,
     pub field_0x6: u16,
     pub field_0xa: u16,
+}
+
+pub struct Struct_1050_0012 {
+    pub field_0x0: String,
+    pub field_0x2: u16,
+    pub field_0xc: u32,
 }
 
 pub struct StructB {
@@ -90,7 +101,7 @@ pub struct Struct29 {
 pub struct Struct57 {
     pub field_0x0: u16,
     pub field_0x2: U32Ptr,
-    pub field_0x8e: Option<Struct20>,
+    pub field_0x8e: Option<Struct19>,
     pub field_0x94: u16,
     pub field_0x96: Option<Struct19>,
 }
@@ -102,7 +113,8 @@ pub struct Struct19 {
     pub field_0xe: u16,
     pub field_0x14: i16,
     pub field_0x16: i16,
-    pub field_0x18: u16
+    pub field_0x18: bool,
+    pub field_0x1a: u16,
 }
 
 pub struct Struct20 {
@@ -361,4 +373,9 @@ pub struct Struct_1010_4e08 {
     pub field_0x22: u16,
     pub field_0x24: u16,
     pub field_0x30: u16,
+}
+
+pub struct Struct_1050_11ca {
+    pub field_0x0: String,
+    pub field_0x8: u16
 }

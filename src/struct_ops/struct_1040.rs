@@ -77,7 +77,7 @@ mixed_struct_op_1040_8fb8
   (i_var4 + 0x1e) = 0x0;
   (i_var4 + 0x20) = 0x0;
   if (ctx.PTR_LOOP_1050_5e18 == 0x0) {
-    pvVar3 = MakeProcInstance16(param_10,(HANDLE16)PTR_LOOP_1050_038c);
+    pvVar3 = MakeProcInstance16(param_10,PTR_LOOP_1050_038c);
     ctx._PTR_LOOP_1050_5e18 = CONCAT22(param_9,pvVar3);
   }
   ctx.PTR_LOOP_1050_5e16 = ctx.PTR_LOOP_1050_5e16 + 0x1;

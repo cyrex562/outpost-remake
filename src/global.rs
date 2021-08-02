@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use crate::defines::U32Ptr;
+use crate::defines::{U32Ptr, Struct_1050_0012, Struct_1050_11ca};
 
 pub struct AppContext {
     pub PTR_LOOP_1050_5f7e: U32Ptr,
@@ -39,7 +39,7 @@ pub struct AppContext {
     pub PTR_LOOP_1050_0010: U32Ptr,
     pub PTR_LOOP_1050_0002: U32Ptr,
     pub PTR_LOOP_1050_0000: U32Ptr,
-    pub s_version__d__d_1050_0012: String,
+    pub s_version__d__d_1050_0012: Struct_1050_0012,
     pub PTR_LOOP_1050_5f34: U32Ptr,
     pub PTR_LOOP_1050_5f36: U32Ptr,
     pub PTR_LOOP_1050_5f2e: U32Ptr,
@@ -90,7 +90,7 @@ pub struct AppContext {
     pub _PTR_LOOP_1050_14cc: U32Ptr,
     pub s_New_failed_in_Op__Op_1050_0020: String,
     pub s_DanBrotherton_1050_0302: String,
-    pub s_overflow_on_node__d_1050_11ca: String,
+    pub s_overflow_on_node__d_1050_11ca: Struct_1050_11ca,
     pub PTR_LOOP_1050_5b7c: U32Ptr,
     pub PTR_LOOP_1050_5b80: U32Ptr,
     pub PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e: String,
@@ -117,6 +117,11 @@ pub struct AppContext {
     pub PTR_LOOP_1050_3960: U32Ptr,
     pub s_vrpal_bmp_1050_183a: String,
     pub s_Null_Ptr_1050_38f3: String,
+    pub s_thisHi_1050_5db8: String,
+    pub s_procLo_1050_5dbf: String,
+    pub s_procHi_1050_5dc6: String,
+    pub s_thisLo_1050_5db1: String,
+    pub PTR_LOOP_1050_5cd0: U32Ptr,
 }
 
 impl AppContext {
@@ -233,7 +238,14 @@ impl AppContext {
             PTR_LOOP_1050_65e2: 0,
             PTR_LOOP_1050_06e0: 0,
             s__d__d__d__d_1050_14ae: "".to_string(),
-            PTR_LOOP_1050_3960: 0
+            PTR_LOOP_1050_3960: 0,
+            s_vrpal_bmp_1050_183a: "".to_string(),
+            s_Null_Ptr_1050_38f3: "".to_string(),
+            s_thisHi_1050_5db8: "".to_string(),
+            s_procLo_1050_5dbf: "".to_string(),
+            s_procHi_1050_5dc6: "".to_string(),
+            s_thisLo_1050_5db1: "".to_string(),
+            PTR_LOOP_1050_5cd0: 0
         }
     }
 }

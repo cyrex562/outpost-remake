@@ -88,7 +88,7 @@ pub fn switch_1018_3ee6(param_1: u32,param_2: i32,param_3: i16,param_4: u16,para
   let lStack14: i32;
   let uStack10: i16;
   let uStack8: u16;
-  let piStack6: U32Ptr;
+  let pi_stack6: U32Ptr;
   
   if (false) {
 switchD_1018_3f8b_caseD_2:
@@ -129,13 +129,13 @@ switchD_1018_3f8b_caseD_2:
       i_var1 = param_3 * 0x4 + 0x411a;
     }
   }
-  piStack6 = CONCAT22(0x1050,i_var1);
-  if (piStack6 == 0x0) {
+  pi_stack6 = CONCAT22(0x1050,i_var1);
+  if (pi_stack6 == 0x0) {
     return;
   }
   iStack10 = 0x0;
   uStack8 = 0x0;
-  iVar11 = *piStack6;
+  iVar11 = *pi_stack6;
   uVar13 = param_1;
  // u_var3 = (param_1 >> 0x10);
   if (iVar11 == 0x1) {

@@ -4,7 +4,7 @@ pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: U32Ptr,param_4: u16)
   let u_var1: u16;
   let i_var2: &mut Struct307;
   let BVar2: bool;
-  let iVar3: i16;
+  let i_var3: i16;
   let u_var4: u16;
   let u_var6: u16;
   let local_8: u16;
@@ -25,9 +25,9 @@ pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: U32Ptr,param_4: u16)
    // u_var6 = (param_2 >> 0x10);
     BVar2 = read_file_1008_7dee(u_var4,u_var6,&i_var2.field_0x8,0x0,u_var1,0x4,0x1008);
     if ((((((BVar2 != 0x0) &&
-           (iVar3 = file_1008_77cc(param_2,(param_1 & 0xffff0000 |
+           (i_var3 = file_1008_77cc(param_2,(param_1 & 0xffff0000 |
                                                    &i_var2.field_0xe),param_3
-                                   ,0x1008,param_4), iVar3 != 0x0)) &&
+                                   ,0x1008,param_4), i_var3 != 0x0)) &&
           (BVar2 = read_file_1008_7dee(u_var4,u_var6,&local_4,0x0,param_4,0x2,0x1008
                                       ), BVar2 != 0x0)) &&
          ((BVar2 = read_file_1008_7dee(u_var4,u_var6,&local_6,0x0,param_4,0x2,0x1008

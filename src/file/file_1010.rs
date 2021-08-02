@@ -179,23 +179,23 @@ pub fn write_to_file_1010_6846(param_1: u32,param_2: u32,param_3: u16)
 {
   let u_var1: u16;
   let BVar2: bool;
-  let iVar3: i16;
+  let i_var3: i16;
   let u_var4: u16;
   let u_var5: u16;
   let local_c: [u16;0x5];
   
   BVar2 = write_to_file_1008_7cac(param_2,param_3);
   if (BVar2 != 0x0) {
-    iVar3 = param_1;
+    i_var3 = param_1;
    // u_var1 = (param_1 >> 0x10);
     u_var4 = param_2;
    // u_var5 = (param_2 >> 0x10);
-    BVar2 = write_to_file_1008_7e1c(u_var4,u_var5,iVar3 + 0xa,u_var1,0x114,0x1008);
+    BVar2 = write_to_file_1008_7e1c(u_var4,u_var5,i_var3 + 0xa,u_var1,0x114,0x1008);
     if (BVar2 != 0x0) {
-      BVar2 = write_to_file_1008_7e1c(u_var4,u_var5,iVar3 + 0x11e,u_var1,0x2a,0x1008)
+      BVar2 = write_to_file_1008_7e1c(u_var4,u_var5,i_var3 + 0x11e,u_var1,0x2a,0x1008)
       ;
       if (BVar2 != 0x0) {
-        local_c[0] = (iVar3 + 0x148);
+        local_c[0] = (i_var3 + 0x148);
         BVar2 = write_to_file_1008_7e1c
                           (u_var4,u_var5,local_c,param_3,0x2,0x1008);
         if (BVar2 != 0x0) {

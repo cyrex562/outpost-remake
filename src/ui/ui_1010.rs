@@ -51,13 +51,13 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
 {
   let ppcVar1: u32;
   let i_var2: i16;
-  let piVar3: U32Ptr;
+  let pi_var3: U32Ptr;
   let u_var4: u16;
   let pu_var5: u32;
   let extraout_dx: u16;
   let lVar6: i32;
   WINDOWPLACEMENT16 local_18;
-  let iStack6: i16;
+  let i_stack6: i16;
   let i_stack4: i16;
   
   local_18.length = 0x16;
@@ -69,7 +69,7 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
   local_18.pt_max_position.y = 0x0;
   local_18.rc_normal_position.x = 0x0;
   local_18.rc_normal_position.y = 0x0;
-  iStack6 = 0x0;
+  i_stack6 = 0x0;
   i_stack4 = 0x0;
   GetWindowPlacement16(param_4,&local_18);
   if (local_18.rc_normal_position.x == -0x1) {
@@ -80,11 +80,11 @@ pub fn set_win_placement_1010_010e(param_1: u16,param_2: u16,param_3: u16,param_
     (**ppcVar1)(ctx.s_tile2_bmp_1050_1538,pu_var5,(lVar6 + 0xe2),
                 param_3);
     i_var2 = pu_var5;
-    piVar3 = (pu_var5 & 0xffff | extraout_dx << 0x10);
+    pi_var3 = (pu_var5 & 0xffff | extraout_dx << 0x10);
     local_18.show_cmd = 0x9;
-    local_18.rc_normal_position.x = *piVar3;
+    local_18.rc_normal_position.x = *pi_var3;
     local_18.rc_normal_position.y = (i_var2 + 0x2);
-    iStack6 = (i_var2 + 0x4) + *piVar3;
+    i_stack6 = (i_var2 + 0x4) + *pi_var3;
     i_stack4 = (i_var2 + 0x2) + (i_var2 + 0x6);
     SetWindowPlacement16(ctx.s_tile2_bmp_1050_1538,&local_18);
   }
@@ -98,7 +98,7 @@ pub fn enum_child_windows_1010_01be(param_1: U32Ptr)
   pvVar1: U32Ptr;
   
   if (ctx.PTR_LOOP_1050_0010 == 0x0) {
-    pvVar1 = MakeProcInstance16(param_1,(HANDLE16)PTR_LOOP_1050_038c);
+    pvVar1 = MakeProcInstance16(param_1,PTR_LOOP_1050_038c);
     EnumChildWindows1(ctx.s_tile2_bmp_1050_1538,0x0,ZEXT24(pvVar1) << 0x10);
     FreeProcInstance16(s_tile2_bmp_1050_1538);
   }
@@ -146,35 +146,35 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
 {
   let pi_var1: U32Ptr;
   let u_var2: u32;
-  let iVar3: i16;
+  let i_var3: i16;
   let u_var4: u16;
   let hwnd: HWND16;
   let unaff_SS: u16;
   let i_stack4: i16;
   
-  iVar3 = param_1;
+  i_var3 = param_1;
  // u_var4 = (param_1 >> 0x10);
   if (param_2 == 0x0) {
-    pi_var1 = (iVar3 + 0x28);
+    pi_var1 = (i_var3 + 0x28);
     *pi_var1 = *pi_var1 + -0xa;
     if (*pi_var1 < 0x0) {
-      (iVar3 + 0x28) = 0x0;
+      (i_var3 + 0x28) = 0x0;
     }
   }
   else {
-    pi_var1 = (iVar3 + 0x28);
-    *pi_var1 = *pi_var1 + (iVar3 + 0x18);
+    pi_var1 = (i_var3 + 0x28);
+    *pi_var1 = *pi_var1 + (i_var3 + 0x18);
   }
-  if ((iVar3 + 0x52) != 0x0) {
+  if ((i_var3 + 0x52) != 0x0) {
     i_stack4 = 0x0;
     hwnd = param_3;
     loop {
-      u_var2 = (iVar3 + 0x52);
+      u_var2 = (i_var3 + 0x52);
       param_3 = hwnd;
       if ((u_var2 + i_stack4 * 0x4) != 0x0) {
         param_3 = ctx.s_tile2_bmp_1050_1538;
         DestroyWindow16(hwnd);
-        u_var2 = (iVar3 + 0x52);
+        u_var2 = (i_var3 + 0x52);
         (u_var2 + i_stack4 * 0x4) = 0x0;
       }
       i_stack4 += 0x1;
@@ -182,12 +182,12 @@ pub fn win_ui_op_1010_3202(param_1: u32,param_2: i16,param_3: HWND16)
         if (i_stack4 < 0xa) == false { break; }
     }
   }
-  if ((iVar3 + 0x16) == 0x0) {
-    pass1_1010_32f4(param_1,(iVar3 + 0x56),unaff_SS,param_3);
+  if ((i_var3 + 0x16) == 0x0) {
+    pass1_1010_32f4(param_1,(i_var3 + 0x56),unaff_SS,param_3);
   }
   else {
     pass1_1010_32da(param_1,
-                    (iVar3 + (iVar3 + 0x16) * 0x4 + 0x26),param_3,
+                    (i_var3 + (i_var3 + 0x16) * 0x4 + 0x26),param_3,
                     unaff_SS);
   }
   pass1_1010_1f62(unaff_SS,param_1,0x8);
