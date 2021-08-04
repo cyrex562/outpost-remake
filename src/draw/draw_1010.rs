@@ -661,7 +661,7 @@ pub unsafe fn draw_op_1010_47d0(
     return;
 }
 
-pub unsafe fn pt_in_rect_1010_4e08(param_1: &mut Struct_1010_4e08, point: &POINT16, mut rect: &mut RECT16) {
+pub fn pt_in_rect_1010_4e08(param_1: &mut Struct_1010_4e08, point: &POINT16, mut rect: &mut RECT16) {
     let pi_var1: U32Ptr;
     let bVar2: bool;
     let b_result: bool;

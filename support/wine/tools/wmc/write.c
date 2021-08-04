@@ -332,7 +332,7 @@ static char *make_string(WCHAR *uc, int len, int codepage)
 		{
                         switch(*uc)
                         {
-                        case '\a': *cptr++ = '\\'; *cptr++ = 'a'; b += 2; break;
+                        case '\x07': *cptr++ = '\\'; *cptr++ = 'a'; b += 2; break;
                         case '\b': *cptr++ = '\\'; *cptr++ = 'b'; b += 2; break;
                         case '\f': *cptr++ = '\\'; *cptr++ = 'f'; b += 2; break;
                         case '\n': *cptr++ = '\\'; *cptr++ = 'n'; b += 2; break;
@@ -406,7 +406,7 @@ static char *make_string(WCHAR *uc, int len, int codepage)
 		{
                         switch(*cc)
                         {
-                        case '\a': *cptr++ = '\\'; *cptr++ = 'a'; b += 2; break;
+                        case '\x07': *cptr++ = '\\'; *cptr++ = 'a'; b += 2; break;
                         case '\b': *cptr++ = '\\'; *cptr++ = 'b'; b += 2; break;
                         case '\f': *cptr++ = '\\'; *cptr++ = 'f'; b += 2; break;
                         case '\n': *cptr++ = '\\'; *cptr++ = 'n'; b += 2; break;

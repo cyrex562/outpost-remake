@@ -348,7 +348,7 @@ static void	WCCURSES_SetTitle(const struct inner_data* data)
                             NULL, NULL);
         fputs("\033]2;", stdout);
         fputs(buffer, stdout);
-        fputc('\a', stdout);
+        fputc('\x07', stdout);
         fflush(stdout);
     }
 }

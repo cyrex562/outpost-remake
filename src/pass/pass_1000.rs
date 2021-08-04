@@ -4477,7 +4477,7 @@ pub fn pass1_1000_49b2(param_1: u16) -> i16
 }
 
 
-pub unsafe fn pass1_1000_49c6(
+pub fn pass1_1000_49c6(
     param_1: u16,
     param_2: u16,
     param_3: u16,
@@ -4553,7 +4553,7 @@ pub unsafe fn pass1_1000_49c6(
 }
 
 
-pub unsafe fn pass1_1000_4aea(
+pub fn pass1_1000_4aea(
     param_1: &mut u16,
     param_2: u16,
     param_3: i16,
@@ -4699,7 +4699,7 @@ pub unsafe fn pass1_1000_4aea(
 }
 
 
-pub unsafe fn pass1_1000_4ceb(
+pub fn pass1_1000_4ceb(
     param_1: &mut u16,
     param_2: &mut i16,
     param_3: i16,

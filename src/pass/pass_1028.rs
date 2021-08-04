@@ -10545,7 +10545,7 @@ pub fn pass1_1028_c724(param_1: u32) {
             // goto
             // LAB_1028_c770;
         }
-        if (u_var1 == '\a') {
+        if (u_var1 == '\x07') {
             u_var2 = i_var3.field_0x14;
             (u_var2 + 0xac) = 0xa;
 //       TODO: goto LAB_1028_c770;

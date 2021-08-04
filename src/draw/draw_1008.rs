@@ -28,7 +28,7 @@ pub fn draw_op_1008_1230(param_1: HWND16) {
     return;
 }
 
-pub unsafe fn unk_draw_op_1008_61b2(
+pub fn unk_draw_op_1008_61b2(
     ctx: &mut AppContext,
     struct_4: &mut Struct20,
     param_2: u16,

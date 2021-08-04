@@ -453,7 +453,7 @@ L\"			{
 
 <tklstr>\\[0-9]+	parser_error("Bad escape sequence");
 <tklstr>\\\n{ws}*	line_number++; char_number = 1; /* backslash at EOL continues string after leading whitespace on next line */
-<tklstr>\\a		addwchar('\a');
+<tklstr>\\a		addwchar('\x07');
 <tklstr>\\b		addwchar('\b');
 <tklstr>\\f		addwchar('\f');
 <tklstr>\\n		addwchar('\n');
@@ -506,7 +506,7 @@ L\"			{
 
 <tkstr>\\[0-9]+		parser_error("Bad escape sequence");
 <tkstr>\\\n{ws}*	line_number++; char_number = 1; /* backslash at EOL continues string after leading whitespace on next line */
-<tkstr>\\a		addcchar('\a');
+<tkstr>\\a		addcchar('\x07');
 <tkstr>\\b		addcchar('\b');
 <tkstr>\\f		addcchar('\f');
 <tkstr>\\n		addcchar('\n');

@@ -904,7 +904,7 @@ pub fn destroy_win_1038_e1dc(param_1: u16, param_2: u16, param_3: i16, param_4: 
     return;
 }
 
-pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
+pub fn destroy_win_1038_ef3a(ctx: &mut AppContext, param_1: &mut Struct31, param_2: HWND16) {
     let i_var1: &mut Struct31;
     let u_var1: &mut Struct31;
 
@@ -917,7 +917,7 @@ pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
         i_var1.field_0x96 = 0x0;
     }
     pass1_1038_b6e0(ctx.PTR_LOOP_1050_5b7c, i_var1.field_0x6);
-    ui_cleanup_op_1040_782c(param_1, ctx.PTR_LOOP_1050_1040);
+    ui_cleanup_op_1040_782c(ctx, param_1, ctx.PTR_LOOP_1050_1040);
     return;
 }
 

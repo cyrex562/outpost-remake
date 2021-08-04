@@ -68,7 +68,7 @@ int parse_strW( WCHAR *buffer, data_size_t *len, const char *src, char endchar )
             if (!*p) break;
             switch(*p)
             {
-            case 'a': *dest++ = '\a'; p++; continue;
+            case 'a': *dest++ = '\x07'; p++; continue;
             case 'b': *dest++ = '\b'; p++; continue;
             case 'e': *dest++ = '\e'; p++; continue;
             case 'f': *dest++ = '\f'; p++; continue;

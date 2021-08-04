@@ -197,7 +197,7 @@ pub fn unk_draw_op_1020_0c3e(param_1: u32, param_2: HWND16) {
 }
 
 
-pub unsafe fn win_ui_palette_op_1020_0cd2(param_1: u32,
+pub fn win_ui_palette_op_1020_0cd2(param_1: u32,
                                           param_2: HWND16,
                                           extraout_dx: u16) {
     let u_var1: u16;
@@ -1379,7 +1379,7 @@ pub fn pt_in_rect_1020_5856(param_1: u32, param_2: &POINT16, param_3: u16) {
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pt_in_rect_op_1020_58ce(param_1: u32, param_2: u16, param_3: u16, param_4: u8, param_5: &RECT16,
+pub fn pt_in_rect_op_1020_58ce(param_1: u32, param_2: u16, param_3: u16, param_4: u8, param_5: &RECT16,
                                       param_6: u16)
 
 {
@@ -1821,7 +1821,7 @@ pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
 }
 
 
-pub unsafe fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_3: i32) {
+pub fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_3: i32) {
     let u_var1: u16;
     let hvar2: HGDIOBJ16;
     let hvar3: HCURSOR16;
@@ -2046,7 +2046,7 @@ pub fn invalidate_rect_1020_8fb4(param_1: u32, param_2: u16) {
 }
 
 
-pub unsafe fn palette_op_1020_92c4(param_1: U32Ptr, param_2: HDC16) {
+pub fn palette_op_1020_92c4(param_1: U32Ptr, param_2: HDC16) {
     let i_var1: i16;
     let u_var2: u16;
 

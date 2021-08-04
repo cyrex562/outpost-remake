@@ -357,7 +357,7 @@ BOOL WINAPI SetConsoleOutputCP(UINT cp)
  */
 BOOL WINAPI Beep( DWORD dwFreq, DWORD dwDur )
 {
-    static const char beep = '\a';
+    static const char beep = '\x07';
     /* dwFreq and dwDur are ignored by Win95 */
     if (isatty(2)) write( 2, &beep, 1 );
     return TRUE;
@@ -2434,7 +2434,7 @@ BOOL WINAPI WriteConsoleW(HANDLE hConsoleOutput, LPCVOID lpBuffer, DWORD nNumber
 	{
 	    switch (psz[i])
 	    {
-	    case '\b': case '\t': case '\n': case '\a': case '\r':
+	    case '\b': case '\t': case '\n': case '\x07': case '\r':
 		/* don't handle here the i-th char... done below */
 		if ((k = i - first) > 0)
 		{
@@ -2461,7 +2461,7 @@ BOOL WINAPI WriteConsoleW(HANDLE hConsoleOutput, LPCVOID lpBuffer, DWORD nNumber
 	    case '\n':
 		next_line(hConsoleOutput, &csbi);
 		break;
- 	    case '\a':
+ 	    case '\x07':
 		Beep(400, 300);
  		break;
 	    case '\r':

@@ -1,6 +1,6 @@
 use crate::{cleanup::unk_destroy_window_op_1018_6bb6, global::AppContext, mixed::mixed_1010_20ba, pass::{pass_1008::pass1_1008_3e54, pass_1018::pass1_1018_659a}, ui::{ui_1008::{win_1008_5c5c, win_1008_5c9e}, ui_1018::mix_ui_op_1018_6adc}, util::{CONCAT22, SUB42}, win_struct::{COLORREF, HDC16, HWND16, PAINTSTRUCT16, RECT16}, winapi::{BeginPaint16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16, InvalidateRect16, PostMessage16, SelectPalette16, SetBkColor16, SetTextColor16}};
 
-pub unsafe fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
+pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
     let pi_var1: U32Ptr;
     let u_var2: u16;
     let i_var3: i16;
@@ -566,7 +566,7 @@ pub unsafe fn unk_draw_op_1018_c578(
     return;
 }
 
-pub unsafe fn draw_text_1018_c742(
+pub fn draw_text_1018_c742(
     ctx: &mut AppContext,
     param_1: &mut Struct36,
     param_2: HDC16,

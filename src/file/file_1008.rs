@@ -485,14 +485,14 @@ pub fn read_file_1008_71a0(param_1: u32, param_2: u16) -> u16
 }
 
 
-pub fn file_fn_1008_726c(uint32_t param_1, param_2: u16, HFILE16 file_handle) -> bool
+pub fn file_fn_1008_726c(param_1: u32, param_2: u16, file_handle: HFILE16) -> bool
 
 {
-    HVar1: HFILE16
+    let handle_1: HFILE16;
 
     if ((param_1 + 0x4) != -0x1) {
-        HVar1 = _lclose16(file_handle);
-        if (HVar1 == 0xffff) {
+        handle_1 = _lclose16(file_handle);
+        if (handle_1 == 0xffff) {
             ctx.PTR_LOOP_1050_0310 = 0x6d1;
             return 0x0;
         }
@@ -569,38 +569,37 @@ pub fn file_1008_7548(param_1: u32, param_2: &i32, param_3: HFILE16, param_4: u1
 
 
 pub fn file_1008_76e4(param_1: u32, param_2: &i32, param_3: u16, param_4: u16, param_5: u16) {
-    let ppcVar1: u32;
-    let u_var2: u16;
-    let BVar3: bool;
+    let var1: u32;
+    let var2: bool;
+    let b_var3: bool;
     let extraout_dx: u16;
     let u_var4: u16;
-    u8
-    local_18[0xe];
-    let uStack10: u32;
-    let local_6: u32;
+    let local_18: [u8;0xe];
+    let var10: u32;
+    let var6: u32;
 
-    local_6 = 0x0;
+    var6 = 0x0;
     // u_var4 = (param_1 >> 0x10);
-    u_var2 = read_file_1008_7dee(param_1, u_var4, &local_6, 0x0, param_4, 0x4,
+    var2 = read_file_1008_7dee(param_1, u_var4, &var6, 0x0, param_4, 0x4,
                                  param_3);
-    if (u_var2 == 0x0) {
+    if (var2 == 0x0) {
         return;
     }
-    if (local_6 != 0x0) {
+    if (var6 != 0x0) {
         if (*param_2 == 0x0) {
             param_3 = 0x1000;
             mem_op_1000_179c(0x18, param_5, 0x1000);
-            if ((param_5 | u_var2) == 0x0) {
+            if ((param_5 | var2) == 0x0) {
                 *param_2 = 0x0;
             } else {
                 param_3 = 0x1030;
-                struct_op_1030_1cd8(CONCAT22(param_5, u_var2), 0x5, local_6);
-                param_2 = u_var2;
+                struct_op_1030_1cd8(CONCAT22(param_5, var2), 0x5, var6);
+                param_2 = var2;
                 (param_2 + 0x2) = extraout_dx;
             }
         }
-        ppcVar1 = (*param_2 + 0x14);
-        (**ppcVar1)(param_3, *param_2, (*param_2 >> 0x10), local_6);
+        var1 = (*param_2 + 0x14);
+        (**var1)(param_3, *param_2, (*param_2 >> 0x10), var6);
         // TODO: refactor for loop
         // for (uStack10 = 0x0; uStack10 < local_6; uStack10 += 0x1) {
         //   BVar3 = read_file_1008_7dee(param_1,u_var4,local_18,0x0,param_4,0x4,
@@ -611,8 +610,8 @@ pub fn file_1008_76e4(param_1: u32, param_2: &i32, param_3: u16, param_4: u16, p
         //   ppcVar1 = (*param_2 + 0x18);
         //   (**ppcVar1)();
         // }
-        ppcVar1 = (*param_2 + 0x1c);
-        (**ppcVar1)();
+        var1 = (*param_2 + 0x1c);
+        (**var1)();
     }
     return;
 }
@@ -674,10 +673,10 @@ pub fn file_1008_77cc(param_1: u32, param_2: &i32, param_3: U32Ptr, param_4: HFI
 }
 
 
-u16_t
-write_to_file_1008_7954
-(param_1: u32,param_2: * mut u32,param_3: u16,param_4: HFILE16,
-param_5: u16)
+
+pub fn write_to_file_1008_7954
+(param_1: u32,param_2: U32Ptr,param_3: u16,param_4: HFILE16,
+param_5: u16) -> u16
 
 {
 let ppcVar1: u32; let BVar2: bool;
@@ -700,7 +699,7 @@ uStack6 = CONCAT22(u_var4, param_3);
 local_18 = param_3; uStack22 = u_var4; BVar2 = write_to_file_1008_7e1c
 (param_1, u_var5, & local_18, param_5,0x4, param_4); if (BVar2 != 0x0) {
 uStack10 = 0x0; loop {
-if (uStack6 < = uStack10) {
+if (uStack6 <= uStack10) {
 return u_var4;
 }
 ppcVar1 = ( * param_2 + 0x4); u_var3 = uStack6; ( * * ppcVar1)(); local_20 = u_var3; u_var4 = extraout_DX_00; uStack30 = extraout_DX_00; local_18 = local_20; uStack22 = extraout_DX_00; BVar2 = write_to_file_1008_7e1c
@@ -760,9 +759,11 @@ pub fn write_to_file_1008_7a22(param_1: u32, param_2: i32, param_3: HFILE16, par
 }
 
 
-u16
-write_to_file_1008_7b4c
-(param_1: u32,param_2: * mut u16,param_3: HFILE16,param_4: u16)
+pub fn write_to_file_1008_7b4c(
+    param_1: u32,
+    param_2: * mut u16,
+    param_3: HFILE16,
+    param_4: u16) -> u16
 
 {
 let b_var1: bool; let u_var2: u16;
@@ -815,7 +816,7 @@ pub fn read_file_1008_7bc8(param_1: u32, param_2: U32Ptr, param_3: HFILE16, para
 
 pub fn read_file_1008_7c6e(param_1: u16, param_2: u16, param_3: &mut String, param_4: HFILE16) {
     let mut pcVar1: String;
-    local_c: u8[0xa];
+    let local_c: [u8;0xa];
 
     loop {
         pcVar1 = param_3;
@@ -832,14 +833,16 @@ pub fn read_file_1008_7c6e(param_1: u16, param_2: u16, param_3: &mut String, par
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn write_to_file_1008_7cac(param_1: u32, param_2: u16) -> bool
+pub fn write_to_file_1008_7cac(
+    param_1: u32, 
+    param_2: u16) -> bool
 
 {
     let u_var1: u16;
     let BVar2: bool;
     let unaff_ES: u16;
     let in_AF: u8;
-    ulocal_c: u8[0xa];
+    let ulocal_c: [u8;0xa];
 
     sys_1000_3f9c(local_c, param_2, 0x340, ctx.data_seg,
                   ctx._PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, unaff_ES, 0x1000,
@@ -869,7 +872,7 @@ pub fn read_file_1008_7cfe(param_1: u32, param_3: u16,
     let in_stack_0000fbd2: u16;
     let in_stack_0000fbd4: u16;
     let uStack1040: u32;
-    local_406: u8[0x400];
+    let local_406: [u8;0x400];
     let uStack6: u32;
 
     uStack6 = 0x0;
@@ -920,7 +923,7 @@ pub fn read_file_1008_7dee(param_1: u16, param_2: u16, param_3: u16, param_4: u1
     let bytes_read: i32;
 
     bytes_read = WIN16_hread(file_handle, read_buf, param_4);
-    i +bytes_read == param_4 {
+    if bytes_read == param_4 {
         return true;
     }
     return false;
@@ -954,7 +957,7 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     let local_118: [u8; 100];
     let local_18: [u16; 0x2];
     let local_14: [u16; 0x2];
-    local_10: &mut Struct200[0x4];
+    let local_10: [Struct200; 0x4];
     let local_8: u32;
 
     if (ctx.PTR_LOOP_1050_0312 < 0x2) {

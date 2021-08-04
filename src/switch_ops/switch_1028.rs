@@ -1,7 +1,6 @@
 
-u16 * 
-switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5: u16,
-                param_6: u16,param_7: u16)
+pub fn switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5: u16,
+                param_6: u16,param_7: u16) -> u16
 
 {
   let pu_var1: U32Ptr;
@@ -22,7 +21,7 @@ switch_1030_0000(param_1: u16,param_2: u16,param_3: i16,param_4: U32Ptr,param_5:
   puVar4 = CONCAT22(param_4,param_5);
   u_var2 = param_3 - 0x1;
   if (false) {
-switchD_1030_069f_caseD_19:
+// switchD_1030_069f_caseD_19:
     mem_op_1000_179c(0x20,param_4,0x1000);
     u_var3 = param_4 | u_var2;
     if (u_var3 == 0x0) {
@@ -32,239 +31,223 @@ switchD_1030_069f_caseD_19:
     return CONCAT22(u_var3,u_var2);
   }
   u_var2 = param_5;
-  switch(param_3 - 0x1) {
-  0x0 =>
-  0x1 =>
-  0x2 =>
-  0x3 =>
-  0x4 =>
-  0x5 =>
-  0x6 =>
-  0x7 =>
-  0x8 =>
+  match(param_3 - 0x1) {
+  0x0 |
+  0x1 |
+  0x2 |
+  0x3 |
+  0x4 |
+  0x5 |
+  0x6 |
+  0x7 |
+  0x8 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_489e(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x9 =>
+    }}
+  0x9 =>{
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_2bdc(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0xa =>
+    }}
+  0xa =>{
     mem_op_1000_179c(0x26,param_4,0x1000);
-    u_var2 = param_4 | param_5;
+    u_var2 = param_4 | param_5;}
 //     TODO: goto joined_r0x103002a1;
-  0xb =>
+  0xb =>{
     mem_op_1000_179c(0x2c,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_3670(CONCAT22(param_4,param_5),
                                 (param_4 | param_5),param_6,param_7);
       return puVar4;
-    }
-    break;
-  0xc =>
+    }}
+    
+  0xc =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_355e(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0xd =>
+    }}
+    
+  0xd =>{
     mem_op_1000_179c(0x26,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_3484(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0xe =>
+    }}
+    
+  0xe =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_406c(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0xf =>
-  0x32 =>
-  0x33 =>
-  0x5f =>
-  0x60 =>
+    }}
+  0xf |
+  0x32 |
+  0x33 |
+  0x5f |
+  0x60 =>{
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_0c24(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x10 =>
+    }}
+  0x10 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_0b42(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x11 =>
+    }}
+    
+  0x11 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_4354(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x12 =>
-  0x13 =>
-  0x14 =>
-  0x61 =>
-  0x62 =>
+    }}
+    
+  0x12 |
+  0x13 |
+  0x14 |
+  0x61 |
+  0x62 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_4b84(CONCAT22(param_4,param_5));
       return puVar4;
     }
-    break;
-  0x15 =>
-  0x16 =>
-  0x17 =>
+    }
+  0x15 |
+  0x16 |
+  0x17 =>{
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_1bbc(CONCAT22(param_4,param_5));
       return puVar4;
     }
-    break;
-  default:
+    }
+  _ => {}
 //     TODO: goto switchD_1030_069f_caseD_19;
-  0x1a =>
-  0x1b =>
-  0x1c =>
+  0x1a | 0x1b | 0x1c =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1030_be34(CONCAT22(param_4,param_5));
       return puVar4;
     }
-    break;
-  0x1d =>
-  0x1e =>
-  0x1f =>
+    }
+  0x1d |
+  0x1e |
+  0x1f =>{
     mem_op_1000_179c(0x26,param_4,0x1000);
     pu_var1 = (param_4 | param_5);
     if (pu_var1 != 0x0) {
       struct_1028_0068(CONCAT22(param_4,param_5),pu_var1);
       return CONCAT22(pu_var1,param_5);
-    }
-    break;
-  0x20 =>
+    }}
+    
+  0x20 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_50d8(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x21 =>
-  0x22 =>
-  0x23 =>
+    }}
+    
+  0x21 |
+  0x22 |
+  0x23 =>{
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_3e94(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x24 =>
-  0x25 =>
-  0x26 =>
+    }}
+  0x24 |
+  0x25 |
+  0x26 =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1020_d06c(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x27 =>
-  0x28 =>
-  0x5c =>
-  0x5d =>
-  0x5e =>
+    }}
+  0x27 |
+  0x28 |
+  0x5c |
+  0x5d |
+  0x5e =>{
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1030_c6f6(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x29 =>
-  0x2a =>
+    }}
+  0x29 |
+  0x2a =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1020_cce4(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x2b =>
+    }}
+  0x2b =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_26b4(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x2c =>
-  0x2d =>
+    }}
+  0x2c |
+  0x2d =>{
     mem_op_1000_179c(0x2a,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_49aa(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x2e =>
-  0x2f =>
+    }}
+  0x2e |
+  0x2f =>{
     mem_op_1000_179c(0x20,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1020_e7fa(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x30 =>
-  0x31 =>
-  0x6b =>
-  0x6c =>
+    }}
+  0x30 |
+  0x31 |
+  0x6b |
+  0x6c =>{
     mem_op_1000_179c(0x22,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1020_d37c(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x34 =>
-  0x35 =>
+    }}
+  0x34 |
+  0x35 =>{
     mem_op_1000_179c(0x2c,param_4,0x1000);
     pu_var1 = (param_4 | param_5);
     if (pu_var1 != 0x0) {
       struct_1028_37a6(CONCAT22(param_4,param_5),pu_var1,param_6,param_7);
       return CONCAT22(pu_var1,param_5);
-    }
-    break;
-  0x36 =>
+    }}
+  0x36 =>{
     mem_op_1000_179c(0x26,param_4,0x1000);
     u_var2 = param_4 | param_5;
-joined_r0x103002a1:
+// joined_r0x103002a1:
     if (u_var2 != 0x0) {
       struct_1030_c06e(CONCAT22(param_4,param_5));
       return CONCAT22(u_var2,param_5);
-    }
-    break;
-  0x37 =>
-  0x38 =>
+    }}
+    
+  0x37 |
+  0x38 =>{
     mem_op_1000_179c(0x9a,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1030_c9a8(CONCAT22(param_4,param_5));
       return puVar4;
-    }
-    break;
-  0x39 =>
-  0x3a =>
+    }}
+    
+  0x39 |  0x3a =>{
     mem_op_1000_179c(0x24,param_4,0x1000);
     if ((param_4 | param_5) != 0x0) {
       puVar4 = struct_1028_60bc(CONCAT22(param_4,param_5),param_5,
                                 (param_4 | param_5));
       return puVar4;
-    }
+    }}
     break;
   0x3b =>
   0x3c =>

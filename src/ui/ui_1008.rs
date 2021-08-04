@@ -990,7 +990,7 @@ create_palette_1008_4e38(param_1, param_4, param_3); HVar1 = SelectPalette16(par
 
 // WARNING: Unable to use type for symbol u_var3
 
-pub unsafe fn create_palette_1008_4e38(
+pub fn create_palette_1008_4e38(
     in_struct_1: &mut Struct13,
     in_log_palette_2: &mut LOGPALETTE,
     param_3: U32Ptr) {
