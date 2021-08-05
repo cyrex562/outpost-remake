@@ -46,7 +46,8 @@ impl StructA {
             field_0xa: Struct13_1 {
                 field_0x4: 0,
                 field_0x6: 0,
-                field_0xa: 0
+                field_0xa: 0,
+                field_0x0: (),
             } }
     }
 }
