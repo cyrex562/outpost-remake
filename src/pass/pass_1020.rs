@@ -5684,7 +5684,7 @@ pub fn pass1_1020_dca8(param_1: u32,param_2: u16,param_3: u16)
 {
   let u_var1: u16;
   let u_var2: u16;
-  u8 local_2e [0xe];
+  let local_2e: [u8;0xe];
   let puStack32: u32;
   let uStack30: u16;
   let uStack28: u16;
@@ -5779,9 +5779,9 @@ pub fn pass1_1020_de32(param_1: u32,param_2: u16,param_3: U32Ptr,param_4: i16,pa
 
 
 
-bool 
+pub fn 
 pass1_1020_deac(param_1: u32,param_2: U32Ptr,param_3: i32,param_4: i16,param_5: U32Ptr,
-               param_6: i16,param_7: u16)
+               param_6: i16,param_7: u16) -> bool
 
 {
   let u_var1: u16;
