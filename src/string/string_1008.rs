@@ -39,7 +39,7 @@ pub fn str_op_1008_60e8(
 }
 
 
-pub unsafe fn str_1008_6d8a(
+pub fn str_1008_6d8a(
     ctx: &mut AppContext,
     mut param_1: U32Ptr,
     param_2: &mut String,

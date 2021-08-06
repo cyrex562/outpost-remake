@@ -488,15 +488,15 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
   if (false) {
     return;
   }
-  switch(iStack10) {
-  0x1 =>
-  0x2 =>
+  match(iStack10) {
+  0x1 |
+  0x2 |
   0x3 =>
-    puVar4 = puVar3 + 0x5;
+    {puVar4 = puVar3 + 0x5;
 //LAB_1028_b968:
     BVar1 = read_file_1008_7dee(uVar5,uVar8,puVar4,0x0,uVar6,0x2,0x1008);
-    break;
-  0x4 =>
+    }
+  0x4 =>{
     uVar7 = pass1_1028_e0bc(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),puVar3,param_5,
                             param_4);
    // puStack14 = (uVar7 >> 0x10);
@@ -509,8 +509,8 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
 //       TODO: goto LAB_1028_b968;
     }
     BVar1 = read_file_1008_7dee(uVar5,uVar8,local_26,0x0,param_4,0x2,0x1008);
-    break;
-  0x5 =>
+    }
+  0x5 =>{
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
     (puVar3 + 0x5) = puVar4;
@@ -552,29 +552,29 @@ pub fn file_1028_b81a(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
     uVar5 = switch_1008_72bc(uVar5,uVar8,local_2a[0]);
     uVar7 = puVar3[0x5];
     (uVar7 + 0xa6) = uVar5;
-    return;
-  default:
+    return;}
+  _ => {}
 //     TODO: goto switchD_1028_ba97_caseD_6;
-  0x9 =>
+  0x9 =>{
     puVar4 = puVar3;
     pass1_1028_e100(ctx.PTR__LOOP_1050_65e2,(puVar3 + 0x3),param_5);
     (puVar3 + 0x5) = puVar4;
     (puVar3 + 0x16) = param_5;
 //     TODO: goto switchD_1028_ba97_caseD_6;
+}
   }
   if (BVar1 == 0x0) {
     ctx.PTR_LOOP_1050_0310 = 0x6d2;
     return;
   }
-switchD_1028_ba97_caseD_6:
+// switchD_1028_ba97_caseD_6:
   return;
 }
 
 
 
-i16 
-read_file_1028_d7ba(param_1: u16,param_2: u16,param_3: u32,
-                   param_4: u16,param_5: u16)
+pub fn read_file_1028_d7ba(param_1: u16,param_2: u16,param_3: u32,
+                   param_4: u16,param_5: u16) -> i16
 
 {
   read_file_1008_7cfe(param_3,(param_3 >> 0x10),0x8,0x1008,param_4);

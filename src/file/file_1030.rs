@@ -34,7 +34,7 @@ pub fn file_1030_1730(param_1: u32, param_2: u32)
 
 pub fn file_1030_19b4(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_5: u16)
 {
-  plVar1: &i32;
+  let plVar1: &i32;
   
   file_1030_1730(param_1,param_2);
   if (param_3 != 0x0) {
@@ -49,9 +49,12 @@ pub fn file_1030_19b4(param_1: u32,param_2: u32,param_3: i16,param_4: u16,param_
 }
 
 
-u16 
-file_1030_1b18(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,
-              param_5: u16)
+pub fn file_1030_1b18(
+  param_1: u32,
+  param_2: u32,
+  param_3: i16,
+  param_4: U32Ptr,
+  param_5: u16) -> u16
 
 {
   let uVar1: u32;
@@ -210,13 +213,12 @@ pub fn read_file_1030_33f0(param_1: u32,param_2: u32)
 }
 
 
-u16_t 
-read_file_1030_4e70(param_1: u32,param_2: U32Ptr,byte **param_3,param_4: i32,
-                   param_5: u16)
+pub fn read_file_1030_4e70(param_1: u32,param_2: U32Ptr, param_3: &mut Vec<u8>,param_4: i32,
+                   param_5: u16) -> u16
 
 {
   let uVar1: u16;
-  HVar2: HFILE16
+  let HVar2: HFILE16;
   let uVar3: u16;
   let unaff_SS: u16;
   let uVar4: u32;
@@ -383,9 +385,8 @@ pub fn file_1030_581e(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
 }
 
 
-bool 
-read_file_1030_5c52(param_1: u32,param_2: u32,param_3: u16,
-                   param_4: u16)
+pub fn read_file_1030_5c52(param_1: u32,param_2: u32,param_3: u16,
+                   param_4: u16) -> bool
 
 {
   let BVar1: bool;
@@ -413,7 +414,7 @@ pub fn file_1030_778c(param_1: u32,param_2: u32,param_3: i16,param_4: U32Ptr,par
   let iVar3: &mut Struct387;
   let BVar3: bool;
   let iVar6: i16;
-  plVar7: &i32;
+  let plVar7: &i32;
   let puVar8: u32;
   let extraout_DX: u16;
   let uVar9: u16;

@@ -509,7 +509,7 @@ pub fn pass1_1040_1ab0(
         (param_1 + 0x94) = 0x1;
         check_dialog_btn_1040_1b8a(param_1, param_2);
     } else {
-        bstack6 = post_win_msg_1040_7b3c(CONCAT13((param_2 > > 0x8),
+        bstack6 = post_win_msg_1040_7b3c(CONCAT13((param_2 >> 0x8),
                                                   CONCAT12(param_2, param_1)), param_3,
                                          param_4, param_4._2_2_, param_6);
         u_stack4 = param_5;
@@ -844,8 +844,8 @@ let i_var1: i16; let uVar2: u16;
 pass1_1040_b0bc(param_1, param_2, CONCAT22(param_3,0x157));
 // uVar2 = (param_1 >> 0x10);
 i_var1 = param_1; param_1 = 0x2e26; (i_var1 + 0x2) = & ctx.PTR_LOOP_1050_1040; load_string_1010_84ac
-(ctx.PTR__LOOP_1050_14cc, (ctx.PTR__LOOP_1050_14cc > > 0x10), 0x1010); (i_var1 + 0x94) = param_4; (i_var1 + 0x96) = param_5; load_string_1010_84ac
-(ctx.PTR__LOOP_1050_14cc, (ctx.PTR__LOOP_1050_14cc > > 0x10), 0x1010); (i_var1 + 0x98) = param_4; (i_var1 + 0x9a) = param_5; return param_1;
+(ctx.PTR__LOOP_1050_14cc, (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x1010); (i_var1 + 0x94) = param_4; (i_var1 + 0x96) = param_5; load_string_1010_84ac
+(ctx.PTR__LOOP_1050_14cc, (ctx.PTR__LOOP_1050_14cc >> 0x10), 0x1010); (i_var1 + 0x98) = param_4; (i_var1 + 0x9a) = param_5; return param_1;
 }
 
 
@@ -2523,7 +2523,7 @@ param_6: u16,param_7: u16)
 let uVar1: u16;
 
 if (param_3._2_2_ == 0x1826) {
-if ((param_3 == 0x1) | | ((0x1 < param_3 - 0x1 & & (param_3 - 0x3 < 0x2)))) {
+if ((param_3 == 0x1) || ((0x1 < param_3 - 0x1 & & (param_3 - 0x3 < 0x2)))) {
 uVar1 = 0x1;
 }
 else {
@@ -2531,7 +2531,7 @@ uVar1 = 0x0;
 }
 return uVar1;
 }
-pass1_1040_b54a(param_1, param_2, (param_2 > > 0x10), param_3, param_5,
+pass1_1040_b54a(param_1, param_2, (param_2 >> 0x10), param_3, param_5,
 param_6, param_7); return CONCAT22(param_5, param_4);
 }
 

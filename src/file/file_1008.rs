@@ -1,4 +1,4 @@
-use crate::{util::{CONCAT11, CONCAT22}, win_struct::{HFILE16, SEGPTR}};
+use crate::{defines::U32Ptr, util::{CONCAT11, CONCAT22}, win_struct::{HFILE16, SEGPTR}};
 use crate::defines::{Struct18, Struct_1008_496c, Struct_1008_49e8};
 use crate::file::file_1028::{read_file_1028_def2, write_to_file_1028_dce2};
 use crate::file::file_1038::read_file_1038_7c02;
@@ -116,7 +116,7 @@ pub unsafe fn read_file_1008_49e8(
                 (param_1.field_0xc) = 0xffff;
                 (param_1.field_0x1e) = 0x1;
                 (param_1.field_0xe) = (param_1.field_0x1a);
-                u_var3 = (param_1.field_0x1a;
+                u_var3 = param_1.field_0x1a;
                 i_var2 = u_var3;
                 u_var3 &= 0xffff0000;
                 (param_1.field_0x12) = u_var3 | i_var2 + 0xe;
@@ -242,7 +242,7 @@ pub fn file_fn_1008_6e02(
 }
 
 
-pub fn read_file_1008_6e78(uint32_t param_1, param_2: u16, in_string: &String, param_4: u16) -> bool
+pub fn read_file_1008_6e78(param_1: u32, param_2: u16, in_string: &String, param_4: u16) -> bool
 
 {
     let b_var1: bool;
@@ -356,7 +356,7 @@ pub fn read_file_1008_6f7a(param_1: u16, param_2: u16, param_3: u32,
 pub fn write_to_file_1008_70a6(param_1: U32Ptr, param_2: &String) -> u16
 
 {
-    HVar1: HFILE16
+    let file_handle: HFILE16;
     let iVar2: i16;
     let uVar3: u16;
     let mut pCVar4: String;
@@ -372,9 +372,9 @@ pub fn write_to_file_1008_70a6(param_1: U32Ptr, param_2: &String) -> u16
         _lclose16(param_2);
         (iVar2 + 0x4) = 0xffff;
     }
-    HVar1 = _lcreat16(pCVar4, 0x0);
-    (iVar2 + 0x4) = HVar1;
-    if (HVar1 == 0xffff) {
+    file_handle = _lcreat16(pCVar4, 0x0);
+    (iVar2 + 0x4) = file_handle;
+    if (file_handle == 0xffff) {
         ctx.PTR_LOOP_1050_0310 = 0x6cf;
     } else {
         ctx.PTR_LOOP_1050_0312 = &DAT_1050_0004;
@@ -393,10 +393,10 @@ pub fn write_to_file_1008_70a6(param_1: U32Ptr, param_2: &String) -> u16
 }
 
 
-pub fn read_file_1008_7146(int32_t param_1, param_2: u16, param_3: &String, param_4: u16) -> bool
+pub fn read_file_1008_7146(param_1: i32, param_2: u16, param_3: &String, param_4: u16) -> bool
 
 {
-    HVar1: HFILE16
+    let HVar1: HFILE16;
     let iVar2: i16;
     let mut path: String;
 
@@ -432,7 +432,7 @@ pub fn read_file_1008_71a0(param_1: u32, param_2: u16) -> u16
     let iStack26: i16;
     let iStack24: i16;
     let iStack22: i16;
-    local_e: u8[0x9];
+    let local_e: [u8;0x9];
     let uStack5: u8;
     let uStack4: u16;
 
@@ -474,10 +474,10 @@ pub fn read_file_1008_71a0(param_1: u32, param_2: u16) -> u16
 }
 
 
-pub fn file_fn_1008_726c(uint32_t param_1, param_2: u16, HFILE16 file_handle) -> bool
+pub fn file_fn_1008_726c(param_1: u32, param_2: u16, file_handle: HFILE16) -> bool
 
 {
-    HVar1: HFILE16
+    let HVar1: HFILE16;
 
     if ((param_1 + 0x4) != -0x1) {
         HVar1 = _lclose16(file_handle);
@@ -563,8 +563,7 @@ pub fn file_1008_76e4(param_1: u32, param_2: &i32, param_3: u16, param_4: u16, p
     let BVar3: bool;
     let extraout_DX: u16;
     let uVar4: u16;
-    u8
-    local_18[0xe];
+    let local_18: [u8;0xe];
     let uStack10: u32;
     let local_6: u32;
 
@@ -663,11 +662,12 @@ pub fn file_1008_77cc(param_1: u32, param_2: &i32, param_3: U32Ptr, param_4: HFI
 }
 
 
-u16_t
-write_to_file_1008_7954
-(param_1: u32,param_2: * mut u32,param_3: u16,param_4: HFILE16,
-param_5: u16)
-
+pub fn write_to_file_1008_7954(
+    param_1: u32,
+    param_2: U32Ptr,
+    param_3: u16,
+    param_4: HFILE16,
+    param_5: u16) -> u16
 {
 let ppcVar1: u32; let BVar2: bool;
 let uVar3: u32; let extraout_DX: u16;
@@ -689,7 +689,7 @@ uStack6 = CONCAT22(uVar4, param_3);
 local_18 = param_3; uStack22 = uVar4; BVar2 = write_to_file_1008_7e1c
 (param_1, uVar5, & local_18, param_5,0x4, param_4); if (BVar2 != 0x0) {
 uStack10 = 0x0; loop {
-if (uStack6 < = uStack10) {
+if (uStack6 <= uStack10) {
 return uVar4;
 }
 ppcVar1 = ( * param_2 + 0x4); uVar3 = uStack6; ( * * ppcVar1)(); local_20 = uVar3; uVar4 = extraout_DX_00; uStack30 = extraout_DX_00; local_18 = local_20; uStack22 = extraout_DX_00; BVar2 = write_to_file_1008_7e1c
@@ -749,9 +749,7 @@ pub fn write_to_file_1008_7a22(param_1: u32, param_2: i32, param_3: HFILE16, par
 }
 
 
-u16
-write_to_file_1008_7b4c
-(param_1: u32,param_2: * mut u16,param_3: HFILE16,param_4: u16)
+pub fn write_to_file_1008_7b4c(param_1: u32,param_2: U32Ptr,param_3: HFILE16,param_4: u16) -> u16
 
 {
 let BVar1: bool; let uVar2: u16;
@@ -804,7 +802,7 @@ pub fn read_file_1008_7bc8(param_1: u32, param_2: U32Ptr, param_3: HFILE16, para
 
 pub fn read_file_1008_7c6e(param_1: u16, param_2: u16, param_3: &mut String, param_4: HFILE16) {
     let mut pcVar1: String;
-    local_c: u8[0xa];
+    let local_c: [u8;0xa];
 
     loop {
         pcVar1 = param_3;
@@ -828,7 +826,7 @@ pub fn write_to_file_1008_7cac(param_1: u32, param_2: u16) -> bool
     let BVar2: bool;
     let unaff_ES: u16;
     let in_AF: u8;
-    ulocal_c: u8[0xa];
+    let ulocal_c: [u8;0xa];
 
     sys_1000_3f9c(local_c, param_2, 0x340, ctx.data_seg,
                   ctx._PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, unaff_ES, 0x1000,
@@ -859,7 +857,7 @@ pub fn read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16,
     let in_stack_0000fbd2: u16;
     let in_stack_0000fbd4: u16;
     let uStack1040: u32;
-    local_406: u8[0x400];
+    let local_406: [u8;0x400];
     let uStack6: u32;
 
     uStack6 = 0x0;
@@ -918,16 +916,19 @@ pub fn read_file_1008_7dee(param_1: u16, param_2: u16, param_3: u16, param_4: u1
 
 
 
-bool
-write_to_file_1008_7e1c
-(param_1: u16,param_2: u16,param_3: u16,param_4: u16,buf_to_write: & mut String,
-HFILE16 file_handle)
+pub fn write_to_file_1008_7e1c(
+    param_1: u16,
+    param_2: u16,
+    param_3: u16,
+    param_4: u16,
+    buf_to_write: &mut String,
+    file_handle: HFILE16) -> bool
 
 {
 let mut pcVar1: String;
 
 pcVar1 = _hwrite16(file_handle, buf_to_write,
-CONCAT22(param_3, (buf_to_write > > 0x10))); if ((pcVar1 == buf_to_write) & & (true)) {
+CONCAT22(param_3, (buf_to_write >> 0x10))); if ((pcVar1 == buf_to_write) & & (true)) {
 return 0x1;
 }
 return 0x0;
@@ -961,7 +962,7 @@ pub fn file_1008_bb5e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     let local_118: [u8; 100];
     let local_18: [u16; 0x2];
     let local_14: [u16; 0x2];
-    local_10: &mut Struct200[0x4];
+    let local_10: [Struct200;0x4];
     let local_8: u32;
 
     if (ctx.PTR_LOOP_1050_0312 < 0x2) {

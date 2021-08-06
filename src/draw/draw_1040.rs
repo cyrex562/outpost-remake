@@ -646,8 +646,7 @@ pub fn draw_text_1040_9650(
 pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &RECT16) {
     let i_var1: i16;
     let iVar2: i16;
-    int16_t
-    mode;
+    let mode: i16;
     let uVar3: u16;
     let handle: HPEN16;
     let handle_00: HPEN16;

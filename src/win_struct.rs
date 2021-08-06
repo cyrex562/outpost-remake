@@ -13,7 +13,7 @@ pub type HMODULE16 = HANDLE16;
 pub type HACCEL16 = HANDLE16;
 // typedef let HTASK16: HANDLE16;
 pub type HTASK16 = HANDLE16;
-// typedef uint32_t COLORREF;
+// typedef COLORREF: u32;
 pub type COLORREF = u32;
 // typedef let HDC16: HANDLE16;
 pub type HDC16 = HANDLE16;
@@ -43,7 +43,7 @@ pub type LRESULT = LONG_PTR;
 
 pub type HCURSOR16 = HANDLE16;
 
-// typedef uint32_t SEGPTR;
+// typedef SEGPTR: u32;
 pub type SEGPTR = u32;
 
 pub type HRSRC16 = HANDLE16;

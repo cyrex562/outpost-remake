@@ -307,7 +307,7 @@ pub fn sys_1000_30b4(
         }
 // WARNING: Could not emulate address calculation at 0x10003101
 // WARNING: Treating indirect jump as call
-        uVar3 = ((((bVar2 * 0x8) + 0x5ffe) > > 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, uVar4, iVar3);
+        uVar3 = ((((bVar2 * 0x8) + 0x5ffe) >> 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, uVar4, iVar3);
         return uVar3;
     }
     return 0x0;
@@ -979,7 +979,7 @@ pub fn mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param
         cVar13 = piVar7 < 0x0;
         cVar12 = piVar7 == 0x0;
         cVar11 = (POPCOUNT(piVar7 & 0xff) & 0x1) == 0x0;
-        if (bVar9 | | cVar12) {
+        if (bVar9 || cVar12) {
             return param_1;
         }
     }
@@ -990,7 +990,7 @@ pub fn mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param
         if (bVar10) {
             uVar5 = CONCAT11(0x9, (piVar6 & 0xff));
         } else {
-            if ((((uVar8 + 0x5f90) & 0x40) == 0x0) | | (*(param_3 + 0x8) != '\x1a')) {
+            if ((((uVar8 + 0x5f90) & 0x40) == 0x0) || (*(param_3 + 0x8) != '\x1a')) {
                 bVar10 = true;
                 uVar5 = 0x1c00;
             } else {
@@ -3046,13 +3046,13 @@ pub fn call_win_proc_1040_a40e(param_1: HWND16, param_2: u32, param_3: LPARAM, p
 // wparam = (param_2 >> 0x10); if (param_3 == 0x19) {
     puVar4 = &ctx.PTR_LOOP_1050_5ee0;
     ppcVar2 = (*puVar4 + 0x34);
-    uStack6 = (**ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), param_1,
+    uStack6 = (**ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), param_1,
                           param_2, ctx.data_seg);
 // param_4 = (uStack6 >> 0x10);
 }
 else {
 if (param_3 == 0x86) {
-puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = (* puVar4 + 0x20); uVar7 = ( ** ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), wparam); return uVar7;
+puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = (* puVar4 + 0x20); uVar7 = ( ** ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), wparam); return uVar7;
 }
 if (param_3 == 0x110) {
 uVar7 = win_msg_1040_a308( & ctx.PTR_LOOP_1050_5ee0, unaff_DI, param_5,

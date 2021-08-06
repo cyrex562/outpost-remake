@@ -6884,7 +6884,7 @@ pass1_1020_ea20(param_1: u32,param_2: U32Ptr,param_3: u32,param_4: u32,param_5: 
     if (uVar1 != 0x3e) {
       if (uVar1 < 0x3f) {
         cVar4 = uVar1;
-        if (cVar4 != '\v') {
+        if (cVar4 != '\x0b') {
           if (cVar4 == '\x10') {
             return;
           }

@@ -990,7 +990,7 @@ create_palette_1008_4e38(param_1, param_4, param_3); HVar1 = SelectPalette16(par
 
 // WARNING: Unable to use type for symbol uVar3
 
-pub unsafe fn create_palette_1008_4e38(
+pub fn create_palette_1008_4e38(
     in_struct_1: &mut Struct13,
     in_log_palette_2: &mut LOGPALETTE,
     param_3: U32Ptr) {
@@ -1300,7 +1300,7 @@ make_def_win_proc_1008_5f44
 (param_1: u16,in_wparam_2: WPARAM16,param_3: LPARAM,in_hwnd_4: HWND16)
 
 {
-let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; let LVar2: LRESULT; let puVar3: * mut u16;
+let WVar1: u16; let in_DX: * mut u8; let unaff_DI: i16; WNDCLASS16 * unaff_SS; let LVar2: LRESULT; let puVar3: U32Ptr;
 
 if (param_3._2_2_ == 0x2) {
 WVar1 = GetWindowWord16(in_hwnd_4, 0x0); mci_send_command_1008_5cb6(ctx.PTR__LOOP_1050_02a0, WVar1, s_tile2_bmp_1050_1538);
@@ -1323,7 +1323,7 @@ param_6: * mut u8,param_7: HWND16)
 
 {
 let IVar1: i16; let puVar2: u32;
-let puVar3: * mut u16; let uVar4: u16;
+let puVar3: U32Ptr; let uVar4: u16;
 
 if (param_2 == 0x81) {
 uVar4 = 0x6; mem_op_1000_179c(0x6, param_6,0x1000); if ((param_6 | param_5) == 0x0) {
@@ -1332,7 +1332,7 @@ puVar2 = 0x0;
 else {
 puVar2 = pass1_1008_80d2(CONCAT22(param_6, param_5));
 }
-param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,puVar2, CONCAT22(uVar4, (puVar2 > > 0x10)));
+param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,puVar2, CONCAT22(uVar4, (puVar2 >> 0x10)));
 }
 if (param_2 == 0x1) {
 puVar3 = GetWindowLong16(param_7, 0x0); *puVar3 = (param_4 + 0x8); IVar1 = GetDlgCtrlID16(ctx.s_tile2_bmp_1050_1538); (puVar3 + 0x2) = IVar1;
@@ -2117,7 +2117,7 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
 
 
 u32
-pass1_1008_a8f4(param_1: u32,param_2: * mut u16,param_3: * mut u16,param_4: * mut u16,
+pass1_1008_a8f4(param_1: u32,param_2: U32Ptr,param_3: U32Ptr,param_4: U32Ptr,
 param_5: u16,param_6: u16,param_7: u16,param_8: u8)
 
 {
@@ -2125,7 +2125,7 @@ let i_var1: i16; let local_6: u32;
 
 i_var1 = & local_6 + 0x2; pass1_1008_a1f0(param_6, param_7, param_8, param_1, param_2,
 CONCAT22(param_7, & local_6), CONCAT22(param_7, i_var1),
-param_4); pass1_1008_944e(param_3, local_6, (local_6 > > 0x10)); return CONCAT22(param_5, i_var1);
+param_4); pass1_1008_944e(param_3, local_6, (local_6 >> 0x10)); return CONCAT22(param_5, i_var1);
 }
 
 

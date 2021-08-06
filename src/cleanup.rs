@@ -1,3 +1,25 @@
+use crate::defines::{Struct28, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr};
+use crate::draw::draw_1020::invalidate_rect_1020_735a;
+use crate::file::file_1010::unk_io_op_1010_830a;
+use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_b544, pass1_1008_eb74};
+use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1f62, pass1_1010_32da};
+use crate::pass::pass_1018::{
+    pass1_1018_2d9a, pass1_1018_2dde, pass1_1018_2e28, pass1_1018_31d0, pass1_1020_022c,
+};
+use crate::pass::pass_1020::pass1_1020_808e;
+use crate::pass::pass_1038::pass1_1038_b6e0;
+use crate::sys_api::unk_win_msg_op_1008_9510;
+use crate::ui::ui_1008::win_1008_5c7c;
+use crate::ui::ui_1020::{post_win_msg_1020_1ca4, win_ui_fn_1020_6e98};
+use crate::ui::ui_1040::{
+    dialog_ui_fn_1040_78e2, mov_update_win_1040_93aa, move_win_1040_826c, post_win_msg_1040_7b3c,
+    ui_cleanup_op_1040_782c,
+};
+use crate::util::read_struct_from_addr;
+use crate::win_struct::{HGDIOBJ16, LPARAM, WNDCLASS16};
+use crate::winapi::{
+    BeginPaint16, DestroyCursor16, EndPaint16, GetDlgItem16, SelectObject16, WinHelp16,
+};
 use crate::{
     defines::{Struct11, Struct18, Struct27, Struct29, Struct65, StructB},
     fn_ptr::{
@@ -19,21 +41,6 @@ use crate::{
         ShowWindow16,
     },
 };
-use crate::winapi::{SelectObject16, GetDlgItem16, WinHelp16, DestroyCursor16, EndPaint16, BeginPaint16};
-use crate::win_struct::{LPARAM, HGDIOBJ16, WNDCLASS16};
-use crate::pass::pass_1038::pass1_1038_b6e0;
-use crate::ui::ui_1040::{ui_cleanup_op_1040_782c, mov_update_win_1040_93aa, move_win_1040_826c, dialog_ui_fn_1040_78e2, post_win_msg_1040_7b3c};
-use crate::pass::pass_1018::{pass1_1020_022c, pass1_1018_2dde, pass1_1018_31d0, pass1_1018_2d9a, pass1_1018_2e28};
-use crate::defines::{Struct_1010_2fa0, Struct_1008_628e, Struct_1010_7b26, U32Ptr, Struct28};
-use crate::pass::pass_1010::{pass1_1010_1f62, pass1_1010_32da, pass1_1010_1d80};
-use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12, pass1_1008_eb74, pass1_1008_b544};
-use crate::util::read_struct_from_addr;
-use crate::sys_api::unk_win_msg_op_1008_9510;
-use crate::ui::ui_1008::win_1008_5c7c;
-use crate::draw::draw_1020::invalidate_rect_1020_735a;
-use crate::ui::ui_1020::{win_ui_fn_1020_6e98, post_win_msg_1020_1ca4};
-use crate::file::file_1010::unk_io_op_1010_830a;
-use crate::pass::pass_1020::pass1_1020_808e;
 
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
@@ -109,10 +116,10 @@ pub fn destroy_win_1008_9698(param_1: HWND16) {
     return;
 }
 
-pub unsafe fn unk_destroy_win_op_1010_2fa0(
+pub fn unk_destroy_win_op_1010_2fa0(
     ctx: &mut AppContext,
     struct_1: &mut Struct_1010_2fa0,
-    win_handle_1: &mut HWND16
+    win_handle_1: &mut HWND16,
 ) {
     let pi_var1: U32Ptr;
     let u_var2: u32;
@@ -188,7 +195,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
 
     win_handle = ctx.PTR_LOOP_1050_1040 as HWND16;
     u_var5 = pass1_1040_c60e(struct_2);
-    // uVar7 = (Struct27 *)(param_1 >> 0x10);
+    // uVar7 = (param_1 >> 0x10);
     struct_3 = struct_1;
     struct_3.field_0x12 = u_var5;
     struct_3.field_0x14 = 0x0;
@@ -224,7 +231,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
                 if 0x1 < struct_3.field_0x16 {
                     u_var2 = (&struct_3.field_0x22)[struct_3.field_0x16];
                     i_var6 = u_var2;
-                   // u_var8 = (u_var2 >> 0x10);
+                    // u_var8 = (u_var2 >> 0x10);
                     i_stack10 = (i_var6 + 0x20) + (i_var6 + 0x24) + 0x8;
                 }
                 win_handle = &ctx.PTR_LOOP_1050_1040;
@@ -245,7 +252,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
                     hwnd_00 = win_handle;
                     loop {
                         l_var3 = struct_3.field_0x52;
-                       // u_var8 = (l_var3 >> 0x10);
+                        // u_var8 = (l_var3 >> 0x10);
                         i_var6 = l_var3 as i16;
                         win_handle = hwnd_00;
                         if ((i_var6 + i_stack8 * 0x4) != 0x0)
@@ -282,7 +289,7 @@ pub fn destroy_window_1010_7b26(
     param_2: i32,
     param_3: u16,
     param_4: &mut u16,
-    extraout_dx: u16
+    extraout_dx: u16,
 ) -> u32 {
     let u_var1: u16;
     let pu_var2: U32Ptr;
@@ -326,9 +333,11 @@ pub fn clenaup_win_ui_1018_4d22(
     let pu_var2: U32Ptr;
     let pu_var1: U32Ptr;
 
-   // u_var4 = (in_struct_1 >> 0x10);
+    // u_var4 = (in_struct_1 >> 0x10);
     struct_2 = struct_1;
-    *struct_1 = read_struct_from_addr::<Struct18>(ctx.s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12).clone();
+    *struct_1 =
+        read_struct_from_addr::<Struct18>(ctx.s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12)
+            .clone();
     struct_2.field_0x2 = 0x1018;
     if local_struct.field_0x12 != 0x0 {
         SelectPalette16(*draw_ctx_1, 0x0, struct_2.field_0x1a);
@@ -364,7 +373,7 @@ pub fn unk_destroy_window_op_1018_6bb6(
     // let hwnd: HWND16;
     let hwnd: HWND16;
 
-   // u_var2 = (param_1 >> 0x10);
+    // u_var2 = (param_1 >> 0x10);
     i_var2 = param_1;
     hwnd = param_2;
     if (i_var2.field_0xea != 0x0) {
@@ -387,7 +396,7 @@ pub fn destroy_window_1018_c518(ctx: &mut AppContext, param_1: &mut Struct29) {
     let i_var2: &mut Struct29;
     let u_var3: u16;
 
-   // u_var3 = (param_1 >> 0x10);
+    // u_var3 = (param_1 >> 0x10);
     i_var2 = param_1;
     param_1.field_0x0 = 0xc8bc;
     i_var2.field_0x2 = 0x1018;
@@ -440,7 +449,7 @@ pub fn cleanup_ui_op_1020_1038(ctx: &mut AppContext, param_1: u32, unaff_CS: HIC
     // let unaff_CS: HICON16;
     let u_var6: u16;
 
-   // u_var5 = (param_1 >> 0x10);
+    // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
     u_var6 = (i_var4 + 0xc2);
     DestroyIcon16(unaff_CS);
@@ -513,7 +522,7 @@ pub fn destroy_icon_1020_2c88(ctx: &mut AppContext, param_1: u32, param_2: HICON
     let u_var5: u16;
     let u_var6: u16;
 
-   // u_var5 = (param_1 >> 0x10);
+    // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
     u_var6 = (i_var4 + 0xc2);
     DestroyIcon16(param_2);
@@ -541,7 +550,7 @@ pub fn cleanup_win_ui_1020_2fea(
     let var2: u16;
     // let unaff_SS: u16;
 
-   // var2 = (in_struct_1 >> 0x10);
+    // var2 = (in_struct_1 >> 0x10);
     i_var1 = in_struct_1;
     in_struct_1.offset_field_0x0 = 0x363c;
     i_var1.offset_field_0x2 = 0x1020;
@@ -576,7 +585,7 @@ pub fn destroy_window_1020_3b3e(param_1: &mut Struct30, param_2: HWND16, unaff_s
     let win_handle_1: HWND16;
     // let unaff_ss: u16;
 
-   // uVar6 = (param_1 >> 0x10);
+    // uVar6 = (param_1 >> 0x10);
     struct_2 = param_1;
     struct_2.field_0x10e = 0x0;
     win_handle_1 = param_2;
@@ -610,7 +619,7 @@ pub unsafe fn destroy_cursor_1020_42f4(param_1: U32Ptr, param_2: u16) {
     let uVar2: u16;
     let h_cursor: HMENU16;
 
-   // uVar2 = (param_1 >> 0x10);
+    // uVar2 = (param_1 >> 0x10);
     i_var1 = param_1;
     *param_1 = 0x623c;
     (i_var1 + 0x2) = 0x1020;
@@ -643,7 +652,7 @@ pub fn unk_destroy_win_op_1020_694c(
     uVar2 = param_2;
     if (param_2 != 0x12b) {
         iVar4 = param_1;
-       // uVar6 = (param_1 >> 0x10);
+        // uVar6 = (param_1 >> 0x10);
         if (param_2 < 0x12c) {
             if (param_2 == 0x6f) {
                 paVar5 = unk_io_op_1010_830a(ctx.PTR__LOOP_1050_14cc, 0x1f8, param_4);
@@ -739,7 +748,7 @@ pub fn destroy_icon_1020_6bd2(param_1: u32, param_2: u8, param_3: HICON16) {
     let uVar5: u16;
     let uVar6: u16;
 
-   // uVar5 = (param_1 >> 0x10);
+    // uVar5 = (param_1 >> 0x10);
     iVar4 = param_1;
     uVar6 = (iVar4 + 0xc2);
     DestroyIcon16(param_3);
@@ -761,7 +770,7 @@ pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: &mut Struct3, in_menu_handle_2:
     let local_struct_1: &mut Struct3;
     let uVar1: &mut Struct3;
 
-   // uVar1 = (in_struct_1 >> 0x10);
+    // uVar1 = (in_struct_1 >> 0x10);
     local_struct_1 = in_struct_1;
     in_struct_1.address_offset_field_0x0 = 0x7b86;
     local_struct_1.address_offset_field_0x2 = 0x1020;
@@ -780,7 +789,7 @@ pub fn destroy_window_1020_8250(param_1: u32, param_2: HWND16) {
     let BVar1: bool;
     let uVar2: u16;
 
-   // uVar2 = (param_1 >> 0x10);
+    // uVar2 = (param_1 >> 0x10);
     if ((param_1 + 0xec) != 0x0) {
         BVar1 = IsWindow16(param_2);
         if (BVar1 != 0x0) {
@@ -906,7 +915,7 @@ pub fn destroy_win_1038_ef3a(param_1: &mut Struct31, param_2: HWND16) {
     let i_var1: &mut Struct31;
     let uVar1: &mut Struct31;
 
-   // uVar1 = (param_1 >> 0x10);
+    // uVar1 = (param_1 >> 0x10);
     i_var1 = param_1;
     *param_1.field_0x0 = 0x67c;
     i_var1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
@@ -928,7 +937,7 @@ pub fn destroy_win_1040_5256(param_1: &mut Struct34, param_2: HWND16) {
     let uVar5: u16;
     let HVar6: HWND16;
 
-   // uVar5 = (param_1 >> 0x10);
+    // uVar5 = (param_1 >> 0x10);
     iVar5 = param_1;
     HVar6 = param_2;
     if (iVar5.field_0xb6 != 0x0) {
@@ -962,7 +971,7 @@ pub fn destroy_win_1040_8212(param_1: i32, param_2: HWND16) {
     let is_window: bool;
     let uVar1: u16;
 
-   // uVar1 = (param_1 >> 0x10);
+    // uVar1 = (param_1 >> 0x10);
     if ((param_1 + 0x8c) != 0x0) {
         is_window = IsWindow16(param_2);
         if (is_window != 0x0) {
@@ -998,7 +1007,7 @@ pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
     let uVar5: u16;
     let HVar6: HWND16;
 
-   // uVar5 = (param_1 >> 0x10);
+    // uVar5 = (param_1 >> 0x10);
     iVar5 = param_1;
     HVar6 = param_2;
     if (iVar5.field_0xb6 != 0x0) {

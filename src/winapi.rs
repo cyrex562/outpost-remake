@@ -1,6 +1,11 @@
 #![allow(non_snake_case)]
 
-use crate::win_struct::{ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16, HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, POINT16, RECT16, SEGPTR, WINDOWPLACEMENT16, WNDCLASS16, WPARAM16, PAINTSTRUCT16};
+use crate::win_struct::{
+    ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16,
+    HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16,
+    HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, PAINTSTRUCT16, POINT16, RECT16, SEGPTR,
+    WINDOWPLACEMENT16, WNDCLASS16, WPARAM16,
+};
 use std::hint::unreachable_unchecked;
 
 // void FatalExit(void)
@@ -75,19 +80,19 @@ pub fn WIN16_LockResource16(handle: HGLOBAL16) -> SEGPTR {
 pub fn FreeResource16(handle: HGLOBAL16) -> bool {
     unimplemented!()
 }
-// HFILE16 _lclose16(HFILE16 h_file)
+// _lclose16: HFILE16(h_file: HFILE16)
 pub fn _lclose16(h_file: HFILE16) -> HFILE16 {
     unimplemented!()
 }
-// HFILE16 _lcreat16(LPCSTR path, attr: i16)
+// _lcreat16: HFILE16(LPCSTR path, attr: i16)
 pub fn _lcreat16(path: &String, attr: i16) -> HFILE16 {
     unimplemented!()
 }
-// long _llseek16(HFILE16 h_file, long l_offset, n_origin: i16)
+// long _llseek16(h_file: HFILE16, long l_offset, n_origin: i16)
 pub fn _llseek16(h_file: HFILE16, l_offset: libc::c_long, n_origin: i16) -> libc::c_long {
     unimplemented!()
 }
-// HFILE16 _lopen16(LPCSTR path, mode: i16)
+// _lopen16: HFILE16(LPCSTR path, mode: i16)
 pub fn _lopen16(path: &String, mode: i16) -> HFILE16 {
     unimplemented!()
 }
@@ -175,11 +180,11 @@ pub fn GlobalPageUnlock16(handle: HGLOBAL16) -> u16 {
 pub fn hmemcpy16(dst: U32Ptr, src: U32Ptr, count: libc::c_long) {
     unimplemented!()
 }
-// long WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count)
+// long WIN16_hread(h_file: HFILE16, buffer: SEGPTR, long count)
 pub fn WIN16_hread(h_file: HFILE16, buffer: &mut Vec<u8>, count: usize) -> usize {
     unimplemented!()
 }
-// long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count)
+// long _hwrite16(h_file: HFILE16, LPCSTR buffer, long count)
 pub fn _hwrite16(h_file: HFILE16, buffer: &mut String, count: usize) -> usize {
     unimplemented!()
 }

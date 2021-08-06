@@ -2045,7 +2045,7 @@ invalidate_rect_1020_8d90
   let local_3e: i16;
   let u_stack60: u32;
   let local_38: [u8;28];
-  ulocal_10: u8 [0xa];
+  let ulocal_10: [u8;0xa];
   let u_stack6: u16;
   let u_stack4: u16;
   

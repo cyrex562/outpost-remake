@@ -1,8 +1,9 @@
 
-bool 
-read_file_1020_a65e(param_1: u32,param_2: u32,param_3: u16,
-                   param_4: u16)
-
+pub fn read_file_1020_a65e(
+  param_1: u32,
+  param_2: u32,
+  param_3: u16,
+  param_4: u16) -> bool
 {
   let BVar1: bool;
   let in_DX: u16;

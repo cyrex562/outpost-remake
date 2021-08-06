@@ -1025,7 +1025,7 @@ pub fn post_msg_1020_4394(param_1: u32,param_2: u16,param_3: HWND16)
         (iVar2 + 0x18) = 0x0;
         return;
       }
-      if (param_2 == '\v') {
+      if (param_2 == '\x0b') {
         uVar1 = (iVar2 + 0x2c);
         (uVar1 + 0xe) = (iVar2 + -0xda);
         return;
