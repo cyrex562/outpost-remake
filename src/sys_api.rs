@@ -307,7 +307,7 @@ pub fn sys_1000_30b4(
         }
 // WARNING: Could not emulate address calculation at 0x10003101
 // WARNING: Treating indirect jump as call
-        u_var3 = ((((bVar2 * 0x8) + 0x5ffe) > > 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, u_var4, i_var3);
+        u_var3 = ((((bVar2 * 0x8) + 0x5ffe) >> 0x4) * 0x2 + 0x30a4)(param_5 & 0xff00 | bVar1, u_var4, i_var3);
         return u_var3;
     }
     return 0x0;
@@ -981,18 +981,18 @@ pub fn mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param
         cVar13 = piVar7 < 0x0;
         cVar12 = piVar7 == 0x0;
         cVar11 = (POPCOUNT(piVar7 & 0xff) & 0x1) == 0x0;
-        if (bVar9 | | cVar12) {
+        if (bVar9 || cVar12) {
             return param_1;
         }
     }
-    u_var4 = (cVar13 < < 0x7 | cVar12 << 0x6 | param_8 < < 0x4 | cVar11 << 0x2 | 0x2 | bVar9) < < 0x8;
+    u_var4 = (cVar13 << 0x7 | cVar12 << 0x6 | param_8 << 0x4 | cVar11 << 0x2 | 0x2 | bVar9) << 0x8;
     u_var5 = piVar6 & 0xff | u_var4;
     if ((param_3 + -0x4) == 0x0) {
         bVar10 = (u_var4 & 0x100) != 0x0;
         if (bVar10) {
             u_var5 = CONCAT11(0x9, (piVar6 & 0xff));
         } else {
-            if ((((uVar8 + 0x5f90) & 0x40) == 0x0) | | (*(param_3 + 0x8) != '\x1a')) {
+            if ((((uVar8 + 0x5f90) & 0x40) == 0x0) || (*(param_3 + 0x8) != '\x1a')) {
                 bVar10 = true;
                 u_var5 = 0x1c00;
             } else {
@@ -2966,25 +2966,25 @@ pub fn call_win_proc_1040_a40e(param_1: HWND16, param_2: u32, param_3: LPARAM, p
 // wparam = (param_2 >> 0x10); if (param_3 == 0x19) {
     puVar4 = &ctx.PTR_LOOP_1050_5ee0;
     ppcVar2 = (*puVar4 + 0x34);
-    uStack6 = (**ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), param_1,
+    uStack6 = (**ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), param_1,
                           param_2, ctx.data_seg);
 // param_4 = (uStack6 >> 0x10);
 }
 else {
 if (param_3 == 0x86) {
-puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = (* puVar4 + 0x20); uVar7 = ( ** ppcVar2)(param_5, puVar4, (puVar4 > > 0x10), wparam); return uVar7;
+puVar4 = & ctx.PTR_LOOP_1050_5ee0; ppcVar2 = (* puVar4 + 0x20); uVar7 = ( ** ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), wparam); return uVar7;
 }
 if (param_3 == 0x110) {
 uVar7 = win_msg_1040_a308( & ctx.PTR_LOOP_1050_5ee0, unaff_DI, param_5,
 param_6); return uVar7;
 }
 } if (uStack6 != 0x0) {
-return uStack6 & 0xffff | param_4 < < 0x10;
+return uStack6 & 0xffff | param_4 << 0x10;
 }
 u_var5 = & ctx.PTR_LOOP_1050_5bc8;
 // u_var6 = (u_var5 >> 0x10);
 iVar5 = u_var5; u_var1 = (iVar5 + 0x6); if ((u_var1 | (iVar5 + 0x4)) == 0x0) {
-return u_var1 < < 0x10;
+return u_var1 << 0x10;
 }
 uVar7 = CallWindowProc16(param_5, param_1, param_2,wparam, param_3); return uVar7;
 }

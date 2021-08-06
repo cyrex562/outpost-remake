@@ -1164,7 +1164,7 @@ pass1_1038_0f8c(param_1: u16,param_2: u16,param_3: U32Ptr,param_4: u32,param_5: 
           u_var10 = uStack36._2_2_ | uVar9;
           param_6 = u_var10;
           if (u_var10 == 0x0) { break; }
-          qVar7 = (qword)(uVar9 & 0xffff | uStack36._2_2_ << 0x10) / (qword)u_var6;
+          qVar7 = (uVar9 & 0xffff | uStack36._2_2_ << 0x10) / u_var6;
           param_6 = qVar7 >> 0x10;
           uStack76 = qVar7;
           if (uStack76 == 0x0) { break; }
@@ -1520,8 +1520,8 @@ pass1_1038_1482(param_1: u32,param_2: U32Ptr,param_3: U32Ptr,param_4: u16,param_
     uStack30 = uStack14._2_2_;
     uStack28 = uStack18._2_2_;
     if ((uStack18._2_2_ | uStack14._2_2_) != 0x0) {
-      sVar2 = (qword)CONCAT22(uStack18._2_2_,uStack14._2_2_) * 0x64;
-      u_var5 = ((qword)sVar2 >> 0x20);
+      sVar2 = CONCAT22(uStack18._2_2_,uStack14._2_2_) * 0x64;
+      u_var5 = (sVar2 >> 0x20);
       uVar7 = sVar2 >> 0x1;
       ppcVar1 = (*param_2 + 0x4);
       uStack34 = uVar7;
@@ -2515,7 +2515,7 @@ pub fn pass1_1038_2306(param_1: u16,param_2: u16,param_3: u32)
       }
       uStack34 = uStack24 | uStack12._2_2_ << 0x10;
       uStack24 |= uStack12._2_2_ << 0x10;
-      qVar4 = (qword)uStack24 / (qword)uStack30;
+      qVar4 = uStack24 / uStack30;
       u_var6 = qVar4;
       uStack24 %= uStack30;
       pi_var1 = &uVar9.field_0xa;

@@ -136,11 +136,11 @@ let LVar1: LRESULT;
 
 * param_3 = '\0';
 LVar1 = SendDlgItemMessage16(param_5, 0x0, 0x0,0x0, CONCAT22(param_4, 0x409));
-if ((LVar1 != - 0x1) | | (false)) {
+if ((LVar1 != - 0x1) || (false)) {
 LVar1 = SendDlgItemMessage16
 (ctx.s_tile2_bmp_1050_1538, param_3,
-(param_3 > > 0x10), LVar1,
-CONCAT22(param_4, 0x40a)); if ((LVar1 != - 0x1) | | (false)) {
+(param_3 >> 0x10), LVar1,
+CONCAT22(param_4, 0x40a)); if ((LVar1 != - 0x1) || (false)) {
 return 0x1;
 }
 }
@@ -776,7 +776,7 @@ iVar5 = lVar2; if ((i_var4 - iVar7.field_0x94 < 0x1) & & ( - 0x1 < iVar7.field_0
 pi_var1 = & iVar7.field_0x94; * pi_var1 = * pi_var1 - i_var4; pi_var1 = & iVar7.field_0x96; * pi_var1 = * pi_var1 - iVar5;
 return CONCAT22(u_var6, 0x1);
 }
-return (u_var6 < < 0x10);
+return (u_var6 << 0x10);
 }
 
 
@@ -1498,10 +1498,10 @@ iStack10 = (puStack16 * 0xc + 0x5b84) + - 0x1; pass1_1008_612e(0x0, iStack10, iS
 ((puStack16 * 0x6 + iStack10) * 0x2 + 0x5b86
 )); load_string_1010_84e0
 (0x1010, _PTR_LOOP_1050_14cc,
-(ctx.PTR_LOOP_1050_14cc > > 0x10), 0x50, local_464,
+(ctx.PTR_LOOP_1050_14cc >> 0x10), 0x50, local_464,
 param_6); pcVar11 = load_string_1010_847e
 (ctx.PTR_LOOP_1050_14cc,
-(ctx.PTR_LOOP_1050_14cc > > 0x10), 0x1010);
+(ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
 // puVar6 = (pcVar11 >> 0x10);
 u_var5 = wsprintf16(0x1010, local_414,param_6); uVar9 = 0x1000; mem_op_1000_179c(0xb4, puVar6, 0x1000); if ((puVar6 | u_var5) == 0x0) {
 paVar12 = 0x0;
@@ -1509,9 +1509,9 @@ paVar12 = 0x0;
 else {
 pCVar14 = local_414; pWVar15 = param_6; puVar16 = ctx.PTR_LOOP_1050_0396; pcVar11 = load_string_1010_847e
 (ctx.PTR_LOOP_1050_14cc,
-(ctx.PTR_LOOP_1050_14cc > > 0x10), 0x1010); uVar9 = SUB42( & ctx.PTR_LOOP_1050_1040, 0x0); paVar12 = pass1_1040_8478(CONCAT22(puVar6, puVar16), 0x41, pcVar11,
+(ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010); uVar9 = SUB42( & ctx.PTR_LOOP_1050_1040, 0x0); paVar12 = pass1_1040_8478(CONCAT22(puVar6, puVar16), 0x41, pcVar11,
 CONCAT22(pWVar15, pCVar14), puVar16,
-(pcVar11 > > 0x10));
+(pcVar11 >> 0x10));
 }
 ppcVar2 = (paVar12 + 0x74); uVar13 = ( * * ppcVar2)(uVar9, paVar12); if (uVar13 != 0x1) {
 // goto LAB_1038_bc26;
@@ -3335,8 +3335,8 @@ else {
 EnableWindow16(0x1010, 0x1); u_var6 = (param_2 * 0xe + 0x5c68);
 }
 u_var5 = 0xc; w_param = 0x0; pcVar3 = load_string_1010_847e
-(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc > > 0x10), 0x1010); LVar4 = SendDlgItemMessage16
-(0x1010, pcVar3, (pcVar3 > > 0x10), w_param,
+(ctx.PTR_LOOP_1050_14cc, (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010); LVar4 = SendDlgItemMessage16
+(0x1010, pcVar3, (pcVar3 >> 0x10), w_param,
 CONCAT22(u_var6, u_var5)); return LVar4;
 }
 

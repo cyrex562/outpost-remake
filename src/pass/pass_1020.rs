@@ -6594,7 +6594,7 @@ pass1_1020_ea20(param_1: u32,param_2: U32Ptr,param_3: u32,param_4: u32,param_5: 
     if (u_var1 != 0x3e) {
       if (u_var1 < 0x3f) {
         cVar4 = u_var1;
-        if (cVar4 != '\b') {
+        if (cVar4 != '\x08') {
           if (cVar4 == '\x10') {
             return;
           }
@@ -6683,23 +6683,21 @@ pub fn pass1_1020_ecb0(param_1: u32,param_2: i16,param_3: u16)
     return;
   }
   if (false) {
-switchD_1020_ed0e_caseD_4:
+// switchD_1020_ed0e_caseD_4:
     uStack8 = (param_2 + 0x14);
   }
   else {
-    switch((param_2 + 0x14)) {
-    default:
+    match((param_2 + 0x14)) {
+    _ => {
       uStack8 = 0x2;
-      break;
-    0x3 =>
+      //       TODO: goto switchD_1020_ed0e_caseD_4;
+      }
+    0x3 |
     0x8 =>
-      uStack8 = 0x3;
-      break;
-    default:
-//       TODO: goto switchD_1020_ed0e_caseD_4;
-    0x5 =>
-    0x6 =>
-      uStack8 = 0x1;
+      {uStack8 = 0x3;}
+    0x5 |
+    0x6 =>{
+      uStack8 = 0x1;}
     }
   }
   (i_var2 + 0x14) = uStack8;
@@ -6809,7 +6807,7 @@ pub fn pass1_1020_ee3a(param_1: u32,param_2: u16,param_3: i16,param_4: u16,param
 
 
 
-astruct_18 *  pass1_1020_eed0(param_1: &mut Struct18,param_2: u8,param_3: u16)
+pub fn  pass1_1020_eed0(param_1: &mut Struct18,param_2: u8,param_3: u16) -> &mut Struct18
 
 {
   pass1_1030_dcf4(param_1,param_3);
@@ -6831,7 +6829,7 @@ pub fn pass1_1020_ef5e(param_1: U32Ptr)
 
 
 
-astruct_18 *  pass1_1020_ef94(param_1: &mut Struct18,param_2: u8)
+pub fn pass1_1020_ef94(param_1: &mut Struct18,param_2: u8) -> &mut Struct18
 
 {
   pass1_1020_ef5e(param_1);

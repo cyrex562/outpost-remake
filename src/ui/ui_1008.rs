@@ -1332,7 +1332,7 @@ pu_var2 = 0x0;
 else {
 pu_var2 = pass1_1008_80d2(CONCAT22(param_6, param_5));
 }
-param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,pu_var2, CONCAT22(u_var4, (pu_var2 > > 0x10)));
+param_7 = ctx.s_tile2_bmp_1050_1538; SetWindowLong16(0x1000,pu_var2, CONCAT22(u_var4, (pu_var2 >> 0x10)));
 }
 if (param_2 == 0x1) {
 pu_var3 = GetWindowLong16(param_7, 0x0); *pu_var3 = (param_4 + 0x8); IVar1 = GetDlgCtrlID16(ctx.s_tile2_bmp_1050_1538); (pu_var3 + 0x2) = IVar1;
@@ -2125,7 +2125,7 @@ let i_var1: i16; let local_6: u32;
 
 i_var1 = & local_6 + 0x2; pass1_1008_a1f0(param_6, param_7, param_8, param_1, param_2,
 CONCAT22(param_7, & local_6), CONCAT22(param_7, i_var1),
-param_4); pass1_1008_944e(param_3, local_6, (local_6 > > 0x10)); return CONCAT22(param_5, i_var1);
+param_4); pass1_1008_944e(param_3, local_6, (local_6 >> 0x10)); return CONCAT22(param_5, i_var1);
 }
 
 
