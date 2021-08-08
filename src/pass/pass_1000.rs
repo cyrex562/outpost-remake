@@ -4223,7 +4223,7 @@ pub fn pass1_1000_472c(param_1: &mut String, param_2: u8) -> U32Ptr
 }
 
 
-pub unsafe fn pass1_1000_47a4(
+pub fn pass1_1000_47a4(
     param_1: u32,
     param_2: u32,
     param_3: u16,

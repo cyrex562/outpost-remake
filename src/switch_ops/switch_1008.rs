@@ -2068,7 +2068,7 @@ Low-level Error: Symbol $$undef00000009 extends beyond the end of the address sp
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16  win_ui_op_1008_2b54(param_1: u16,param_2: U32Ptr,param_3: u16)
+pub fn win_ui_op_1008_2b54(param_1: u16,param_2: U32Ptr,param_3: u16) -> i16
 
 {
   let u_var1: u16;

@@ -840,7 +840,7 @@ pub fn pass1_1008_c626(param_1: U32Ptr)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16  pass1_1008_c646(param_1: u16,param_2: u32,param_3: u16)
+pub fn pass1_1008_c646(param_1: u16,param_2: u32,param_3: u16) -> i16
 
 {
   let pi_var1: U32Ptr;
