@@ -2117,7 +2117,7 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
 
 
 u32
-pass1_1008_a8f4(param_1: u32,param_2: * mut u16,param_3: * mut u16,param_4: * mut u16,
+pass1_1008_a8f4(param_1: u32,param_2: U32Ptr,param_3: U32Ptr,param_4: U32Ptr,
 param_5: u16,param_6: u16,param_7: u16,param_8: u8)
 
 {

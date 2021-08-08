@@ -605,7 +605,7 @@ UStack6 += 0x1;
 else {
 i_stack4 = - 0x1; UStack6 -= 0x1;
 }
-uStack10 = (UStack6 < = (iStack8 * 0xe + 0x5a7a)); pUVar1 = (iStack8 * 0xe + 0x5a78); if ( * pUVar1 != UStack6 & & UStack6 < = * pUVar1) {
+uStack10 = (UStack6 <= (iStack8 * 0xe + 0x5a7a)); pUVar1 = (iStack8 * 0xe + 0x5a78); if ( * pUVar1 != UStack6 & & UStack6 <= * pUVar1) {
 uStack10 = 0x0;
 }
 i_var2 = iStack8 * 0xe; GetDlgItem16(ctx.s_tile2_bmp_1050_1538, (i_var2 + 0x5a72)); SetFocus16(ctx.s_tile2_bmp_1050_1538); if ((uStack10 != 0x0) & & (lVar3 = unk_win_ui_op_1038_9820
