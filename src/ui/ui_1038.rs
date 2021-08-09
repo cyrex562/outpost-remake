@@ -127,9 +127,8 @@ pub fn enable_win_1038_806a(param_1: u32, param_2: HWND16) {
 
 
 
-u16
-send_dlg_item_msg_1038_8164
-(param_1: u16,param_2: u16,param_3: * mut u8,param_4: u16,param_5: HWND16)
+pub fn send_dlg_item_msg_1038_8164
+(param_1: u16,param_2: u16,param_3: U32Ptr,param_4: u16,param_5: HWND16) -> u16
 
 {
 let LVar1: LRESULT;
@@ -151,8 +150,8 @@ return 0x0;
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn msg_box_op_1038_81be(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
-    local_206: u8[0x102];
-    local_104: u8[0x102];
+    let local_206: [u8;0x102];
+    let local_104: [u8;0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
@@ -196,8 +195,8 @@ pub fn set_win_text_1038_8358(param_1: u32, param_2: HWND16, param_3: u16) {
     let u_var4: u16;
     let u_var3: u16;
     let hwnd: HWND16;
-    local_30a: u8[0x102];
-    local_208: u8[0x100];
+    let local_30a: [u8;0x102];
+    let local_208: [u8;0x100];
     let local_108: [u8; 100];
     let uStack8: u32;
     let HStack4: HWND16;
@@ -256,7 +255,7 @@ pub fn send_dlg_item_msg_1038_844a(param_1: u32, param_2: HWND16, param_3: u16) 
     let u_var2: u16;
     let u_var3: u16;
     let LVar4: LRESULT;
-    local_108: u8[0x102];
+    let local_108: [u8;0x102];
     let uStack6: u32;
 
     // u_var3 = (param_1 >> 0x10);
@@ -385,10 +384,10 @@ pub fn send_dlg_item_msg_1038_87b2(param_1: u32, param_2: u16, param_3: u16) -> 
 
 
 pub fn msg_box_ui_op_1038_8a3a(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
-    local_20a: u8[0x102];
+    let local_20a: [u8;0x102];
     let mut pcStack264: String;
     let puStack262: U32Ptr;
-    local_104: u8[0x102];
+    let local_104: [u8;0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
     pcStack264 = param_2;
@@ -472,7 +471,7 @@ pub fn send_dlg_item_msg_1038_8d22(param_1: u32, param_2: HWND16, param_3: u16) 
     let in_AF: u8;
     let LVar1: LRESULT;
     let local_106: [u8; 100];
-    WStack6: WPARAM16;
+    let WStack6: WPARAM16;
     let i_stack4: i16;
 
     LVar1 = SendDlgItemMessage16(param_2, 0x0, 0x0, 0x0, 0x185b0409);
@@ -488,8 +487,8 @@ pub fn send_dlg_item_msg_1038_8d22(param_1: u32, param_2: HWND16, param_3: u16) 
 
 
 pub fn msg_box_op_1038_8dda(param_1: u32, param_2: &mut String, param_3: U32Ptr, param_4: u16) {
-    local_206: u8[0x102];
-    local_104: u8[0x102];
+    let local_206: [u8;0x102];
+    let local_104: [u8;0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
     load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc,
@@ -532,7 +531,7 @@ pub fn send_dlg_item_msg_1038_8f74(param_1: u32, param_2: HWND16, param_3: U32Pt
     let lVar3: i32;
     let LVar4: LRESULT;
     let enable: bool;
-    local_50c: u8[0x100];
+    let local_50c: [u8;0x100];
     let local_40c: [u8; 8];
     let local_404: u32;
 
@@ -573,7 +572,7 @@ pub fn win_dlg_op_1038_9294(param_1: &mut Struct1, param_2: u16) {
     let u_var2: u16;
     let in_DX: u16;
     let u_var3: u16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let local_6: bool;
     let local_4: bool;
 
@@ -590,29 +589,37 @@ pub fn win_dlg_op_1038_9294(param_1: &mut Struct1, param_2: u16) {
 }
 
 
-bool
+pub fn 
 send_dlg_item_int_1038_94da
 (param_1: i16,param_2: u16,param_3: u16,param_4: u16,param_5: i16,
-param_6: HWND16,param_7: bool)
+param_6: HWND16,param_7: bool) -> bool
 
 {
-let pUVar1: * mut u16; let i_var2: i16; let lVar3: i32; let local_c: bool; let uStack10: u16; let iStack8: i16; let UStack: u16; let i_stack4: i16;
+let var1: U32Ptr; 
+let var2: i16; 
+let var3: i32; 
+let var4: bool; 
+let var5: u16; 
+let var6: i16; 
+let var7: u16; 
+let var8: i16;
 
-i_stack4 = 0x1; iStack8 = pass1_1038_993a(param_1, param_2, param_3); if ((- 0x1 < iStack8) & & (UStack6 = GetDlgItemInt16(param_6, 0x1, & local_c, param_7), local_c != 0x0)) {
+var8 = 0x1; var6 = pass1_1038_993a(param_1, param_2, param_3); if ((- 0x1 < var6) & & (var7 = GetDlgItemInt16(param_6, 0x1, & var4, param_7), var4 != 0x0)) {
 if (param_5 == 0x0) {
-UStack6 += 0x1;
+var7 += 0x1;
 }
 else {
-i_stack4 = - 0x1; UStack6 -= 0x1;
+var8 = - 0x1; var7 -= 0x1;
 }
-uStack10 = (UStack6 <= (iStack8 * 0xe + 0x5a7a)); pUVar1 = (iStack8 * 0xe + 0x5a78); if ( * pUVar1 != UStack6 & & UStack6 <= * pUVar1) {
-uStack10 = 0x0;
+var5 = (var7 <= (var6 * 0xe + 0x5a7a)); var1 = (var6 * 0xe + 0x5a78); 
+if ( (var1 != var7) && (var7 <= var1)) {
+var5 = 0x0;
 }
-i_var2 = iStack8 * 0xe; GetDlgItem16(ctx.s_tile2_bmp_1050_1538, (i_var2 + 0x5a72)); SetFocus16(ctx.s_tile2_bmp_1050_1538); if ((uStack10 != 0x0) & & (lVar3 = unk_win_ui_op_1038_9820
-(CONCAT22(param_2, param_1), 0x1, i_stack4,
-ctx.s_tile2_bmp_1050_1538, param_7), lVar3 != 0x0)) {
-SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538, 0x1, UStack6,
-(i_var2 + 0x5a72)); SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538, 0x1, (param_1 + 0x94), 0xfa9); SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538,0x1, (param_1 + 0x96), 0xfa8)
+var2 = var6 * 0xe; GetDlgItem16(ctx.s_tile2_bmp_1050_1538, (var2 + 0x5a72)); SetFocus16(ctx.s_tile2_bmp_1050_1538); if ((var5 != 0x0) & & (var3 = unk_win_ui_op_1038_9820
+(CONCAT22(param_2, param_1), 0x1, var8,
+ctx.s_tile2_bmp_1050_1538, param_7), var3 != 0x0)) {
+SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538, 0x1, var7,
+(var2 + 0x5a72)); SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538, 0x1, (param_1 + 0x94), 0xfa9); SetDlgItemInt16(ctx.s_tile2_bmp_1050_1538,0x1, (param_1 + 0x96), 0xfa8)
 ;
 }
 }
@@ -761,19 +768,30 @@ pub fn win_ui_op_1038_977a(param_1: i16, param_2: u16, param_3: i16, param_4: U3
 
 
 
-long
-unk_win_ui_op_1038_9820
-(param_1: & mut Struct51,param_2: i16,param_3: i16,param_4: HWND16,param_5: bool)
+pub fn unk_win_ui_op_1038_9820
+(param_1: & mut Struct51,param_2: i16,param_3: i16,param_4: HWND16,param_5: bool) -> u32
 
 {
-let pi_var1: * mut i16; let lVar2: i32; let UVar3: u16; let i_var4: i16; let iVar5: i16; let u_var6: u16; let iVar7: & mut Struct51; let uVar7: & mut Struct51; let local_6: bool; let local_4: bool;
+let mut pi_var1: U32Ptr; 
+let lVar2: i32; 
+let UVar3: u16; 
+let i_var4: i16; 
+let iVar5: i16; 
+let u_var6: u16; 
+let iVar7: & mut Struct51; 
+let uVar7: & mut Struct51; 
+let local_6: bool; 
+let local_4: bool;
 
 // uVar7 = (param_1 >> 0x10);
 iVar7 = param_1;
 UVar3 = GetDlgItemInt16(param_4, 0x1, & local_4, param_5); i_var4 = UVar3 * param_2 * param_3; UVar3 = GetDlgItemInt16(ctx.s_tile2_bmp_1050_1538,0x1, & local_6, param_5); lVar2 = (UVar3 * param_2) * param_3;
 // u_var6 = (lVar2 >> 0x10);
 iVar5 = lVar2; if ((i_var4 - iVar7.field_0x94 < 0x1) & & ( - 0x1 < iVar7.field_0x96 - iVar5)) {
-pi_var1 = & iVar7.field_0x94; * pi_var1 = * pi_var1 - i_var4; pi_var1 = & iVar7.field_0x96; * pi_var1 = * pi_var1 - iVar5;
+pi_var1 = iVar7.field_0x94; 
+pi_var1 = pi_var1 - i_var4; 
+pi_var1 = iVar7.field_0x96; 
+pi_var1 = pi_var1 - iVar5;
 return CONCAT22(u_var6, 0x1);
 }
 return (u_var6 << 0x10);
@@ -1031,18 +1049,18 @@ pub fn show_win_1038_a396(param_1: &mut Struct1, param_2: u16, param_3: u16) {
 }
 
 
-pub fn win_ui_op_1038_a4ee(param_1: &mut Struct1, param_2: u16) {
-    let u_var1: u32;
+pub fn win_ui_op_1038_a4ee(ctx: &mut AppContext, param_1: &mut Struct1, param_2: u16, unaff_DI: u16, unaff_SS: &WNDCLASS16) {
+    let mut u_var1: &mut String;
     let in_DX: U32Ptr;
     let unaff_DI: i16;
-    unaff_SS: &WNDCLASS16;
-    let pu_var2: U32Ptr;
+    let unaff_SS: &WNDCLASS16;
+    let pu_var2: &mut Struct19;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
     win_1008_5c7c(ctx.PTR_LOOP_1050_02a0, 0x20001, unaff_SS, param_2, in_DX);
     (param_1 + 0x8c) = param_2;
     pu_var2 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x2, unaff_SS, in_DX, unaff_DI);
-    u_var1 = (pu_var2 + 0x6c);
+    u_var1 = (pu_var2.field_0x6c);
     GetDlgItem16(0x1010, 0x114);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538, u_var1);
     SetFocus16(ctx.s_tile2_bmp_1050_1538);
@@ -1083,12 +1101,12 @@ pub fn win_ui_op_1038_a584(param_1: u16, param_2: i16, param_3: HWND16, param_4:
 
 
 pub fn win_ui_op_1038_a6f4(param_1: &mut Struct1) {
-    let u_var1: u32;
+    let u_var1: &mut String;
     let u_var2: u16;
     let in_DX: U32Ptr;
     let u_var3: u16;
     let unaff_DI: i16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let puVar4: U32Ptr;
     let LVar5: LRESULT;
 
@@ -1138,7 +1156,13 @@ pub fn win_ui_op_1038_a788(param_1: u32, param_2: i16, param_3: HWND16, param_4:
 }
 
 
-pub fn enable_win_1038_a8f8(param_1: u16, param_2: u16, param_3: u16, TwoWords param_4, in_hwnd_5: HWND16)
+pub fn enable_win_1038_a8f8(
+    ctx: &mut AppContext, 
+    param_1: u16, 
+    param_2: u16, 
+    param_3: u16, 
+    param_4: [u16;2], 
+    in_hwnd_5: HWND16)
 
 {
     let enable: bool;
@@ -1166,12 +1190,12 @@ pub fn enable_win_1038_a8f8(param_1: u16, param_2: u16, param_3: u16, TwoWords p
 pub fn win_ui_op_1038_a972(param_1: &mut Struct1) {
     let b_var1: bool;
     let u_var2: u16;
-    unaff_SS: &WNDCLASS16;
-    let LVar3: LRESULT;
+    let unaff_SS: &WNDCLASS16;
+    let l_var3: LRESULT;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
     SendDlgItemMessage16(&ctx.PTR_LOOP_1050_1040, 0x0, 0x0, 0x1, 0x1160401);
-    LVar3 = SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x1, 0x11a0401);
+    l_var3 = SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x1, 0x11a0401);
     // u_var2 = (LVar3 >> 0x10);
     GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x11a);
     b_var1 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x0);
@@ -1430,17 +1454,16 @@ pub fn win_ui_op_1038_b81c(param_1: &mut Struct1) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u32
-win_ui_op_1038_b922(param_1: * mut u32,param_2: u32,param_3: u16,param_4: u16,
-param_5: HWND16,param_6: & WNDCLASS16)
+pub fn win_ui_op_1038_b922(param_1: U32Ptr,param_2: u32,param_3: u16,param_4: u16,
+param_5: HWND16,param_6: & WNDCLASS16) ->u32
 
 {
-let pi_var1: * mut i16; let ppcVar2: u32; let UVar3: u16; let Bvar4: bool; let u_var5: u16; let puVar6: * mut u8; let iVar7: i16; let unaff_DI: i16; let uVar8: u16; let uVar9: u16; let LVar10: LRESULT; let mut pcVar11: String; let paVar12: & mut Struct57; let uVar13: u32; let mut pCVar14: String; pWVar15: & WNDCLASS16; let puVar16: * mut u8; let uStack1132: u16;
-local_464: u8 [0x50]; local_414: u8 [0x400]; let uStack20: u32; let puStack16: * mut u8; let puStack14: U32Ptr; let uStack10: i16; let HStack8: HWND16; let BStack6: bool; let uStack4: u16;
+let pi_var1: * mut i16; let ppcVar2: u32; let UVar3: u16; let Bvar4: bool; let u_var5: u16; let puVar6: U32Ptr; let iVar7: i16; let unaff_DI: i16; let uVar8: u16; let uVar9: u16; let LVar10: LRESULT; let mut pcVar11: String; let paVar12: & mut Struct57; let uVar13: u32; let mut pCVar14: String; let pWVar15: &WNDCLASS16; let puVar16: U32Ptr; let uStack1132: u16;
+let local_464: [u8;0x50]; let local_414: [u8;0x400]; let uStack20: u32; let puStack16: U32Ptr; let puStack14: U32Ptr; let uStack10: i16; let HStack8: HWND16; let BStack6: bool; let uStack4: u16;
 
 uVar13 = CONCAT22(param_4, HStack8); BStack6 = 0x0; uStack4 = 0x0;
 iVar7 = param_1;
-// uVar8 = (param_1 >> 0x10); if (param_3 < 0x1b5) { if (param_3 < 0x1a0) {
+uVar8 = (param_1 >> 0x10); if (param_3 < 0x1b5) { if (param_3 < 0x1a0) {
 uVar13 = CONCAT22(param_4, HStack8); if (param_3 != 0x2) {
 // goto LAB_1038_bbbf;
 }
@@ -1452,19 +1475,19 @@ BStack6 = 0x0; uStack4 = 0x0;
 }
 SendMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0,
 CONCAT13(0x4, CONCAT12(0x1, (iStack10 == 0x0)))); UVar3 = IsDlgButtonChecked(ctx.s_tile2_bmp_1050_1538, param_3); if (UVar3 == 0x0) {
-pi_var1 = (iVar7 + 0x96); * pi_var1 = * pi_var1 + 0x1; if ((iVar7 + 0x96) == 0x1) {
+pi_var1 = (iVar7 + 0x96); pi_var1 = pi_var1 + 0x1; if ((iVar7 + 0x96) == 0x1) {
 GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0xfb1); EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x0);
 }
 }
 else {
-pi_var1 = (iVar7 + 0x96); * pi_var1 = * pi_var1 + - 0x1; GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0xfb1); BVar4 = IsWindowEnabled16(ctx.s_tile2_bmp_1050_1538); if (BVar4 == 0x0) {
+pi_var1 = (iVar7 + 0x96); pi_var1 = pi_var1 + - 0x1; GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0xfb1); BVar4 = IsWindowEnabled16(ctx.s_tile2_bmp_1050_1538); if (BVar4 == 0x0) {
 GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0xfb1); EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
 }
 if ((iVar7 + 0x96) < 0x0) {
 CheckDlgButton16(ctx.s_tile2_bmp_1050_1538, 0x0, (iVar7 + 0x98)); (iVar7 + 0x96) = 0x0;
 }
 (iVar7 + 0x98) = param_3; pass1_1018_1c9a((iVar7 + 0x92), param_3); puStack14 = pass1_1018_1e78((iVar7 + 0x92), -0x1);
-// u_var5 = (puStack14 >> 0x10); if (puStack14 == 0x0) {
+u_var5 = (puStack14 >> 0x10); if (puStack14 == 0x0) {
 puStack16 = 0x0;
 }
 else {
@@ -1563,7 +1586,7 @@ pub fn win_dlg_op_1038_bea4(param_1: u32, param_2: U32Ptr) {
     let in_DX: U32Ptr;
     let pu_var3: U32Ptr;
     let u_var4: u16;
-    wparam: WPARAM16;
+    let wparam: WPARAM16;
     let iVar5: i16;
     let unaff_DI: i16;
     let u_var6: u16;
@@ -1573,7 +1596,7 @@ pub fn win_dlg_op_1038_bea4(param_1: u32, param_2: U32Ptr) {
     let LVar10: LRESULT;
     let local_116: u32;
     let local_112: u32;
-    local_10e: u8[0x82];
+    let local_10e: [u8;0x82];
     let local_8c: [u8; 82];
     let uStack10: u32;
     let puStack6: U32Ptr;
@@ -1636,9 +1659,9 @@ pub fn msg_box_op_1038_c07a(param_1: i16, param_2: u16, param_3: u16, param_4: u
     let unaff_CS: u16;
     let hwnd: HWND16;
     let in_AF: u8;
-    ulocal_70c: u8[0x200];
-    local_50c: u8[0x100];
-    local_40c: u8[0x402];
+    let ulocal_70c: [u8;0x200];
+    let local_50c: [u8;0x100];
+    let local_40c: [u8;0x402];
     let uStack10: u32;
     let uStack6: u32;
 
@@ -1691,10 +1714,10 @@ pub fn msg_box_op_1038_c07a(param_1: i16, param_2: u16, param_3: u16, param_4: u
 
 
 
-LRESULT  send_msg_1038_c228(param_1: u32,param_2: HWND16)
+pub fn  send_msg_1038_c228(param_1: u32,param_2: HWND16) -> LRESULT
 
 {
-wparam: WPARAM16; let LVar1: LRESULT; let LVar2: LRESULT;
+let wparam: WPARAM16; let LVar1: LRESULT; let LVar2: LRESULT;
 
 // wparam = (param_1 >> 0x10);
 LVar1 = SendMessage16(param_2,0x0, 0x0, 0x4070000); LVar2 = SendMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x4070000); SendMessage16(ctx.s_tile2_bmp_1050_1538, param_1 + 0x9e, wparam,
@@ -1705,21 +1728,21 @@ CONCAT22(0x408,LVar2)); return LVar1;
 
 
 pub fn enable_win_1038_c294(param_1: u32) {
-    lp_string: SEGPTR;
-    let u_var1: u16;
+   let string_1: SEGPTR;
+    let var1: u16;
     let unaff_SS: u16;
-    let uStack12: u32;
+    let var2: u32;
 
-    lp_string = param_1 + 0x9e;
-    uStack12 = param_1 & 0xffff0000 | lp_string;
+    string_1 = param_1 + 0x9e;
+    var2 = param_1 & 0xffff0000 | string_1;
     pass1_1008_e320((param_1 + 0x8e),
                     param_1 & 0xffff0000 | (param_1 + 0x19e),
-                    param_1 & 0xffff0000 | lp_string, unaff_SS);
-    SetWindowText16(0x1008, lp_string);
-    u_var1 = pass1_1008_e2a4((param_1 + 0x8e),
-                            param_1 & 0xffff0000 | (param_1 + 0x19e), uStack12);
-    EnableWindow16(0x1008, u_var1 & 0x1);
-    EnableWindow16(ctx.s_tile2_bmp_1050_1538, u_var1 & 0x2);
+                    param_1 & 0xffff0000 | string_1, unaff_SS);
+    SetWindowText16(0x1008, &string_1);
+    var1 = pass1_1008_e2a4((param_1 + 0x8e),
+                            param_1 & 0xffff0000 | (param_1 + 0x19e), var2);
+    EnableWindow16(0x1008, var1 & 0x1);
+    EnableWindow16(ctx.s_tile2_bmp_1050_1538, var1 & 0x2);
     return;
 }
 
@@ -1813,8 +1836,8 @@ pub fn win_dlg_op_1038_c58e(param_1: u32, param_2: U32Ptr) {
     let in_DX: U32Ptr;
     let i_var1: i16;
     let unaff_DI: i16;
-    local_80e: u8[0x402];
-    local_40c: u8[0x402];
+    let local_80e: [u8;0x402];
+    let local_40c: [u8;0x402];
     let uStack10: u32;
     let puStack6: U32Ptr;
 
@@ -1844,7 +1867,7 @@ pub fn message_box_op_1038_c672(param_1: i16, param_2: u16, param_3: u16, param_
     let hwnd: HWND16;
     let in_AF: u8;
     let u_var2: u16;
-    local_404: u8[0x402];
+    let local_404: [u8;0x402];
 
     u_var2 = (ctx.PTR_LOOP_1050_14cc >> 0x10);
     if (param_4._2_2_ == 0x17d) {
@@ -2006,7 +2029,7 @@ pub fn show_win_1038_cb5c(param_1: &mut Struct1) {
     let pu_var3: U32Ptr;
     let u_var4: u16;
     let u_var5: u16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let puVar6: U32Ptr;
     let puVar7: U32Ptr;
     let uStack10: i16;
@@ -2101,10 +2124,10 @@ pub fn win_ui_op_1038_d2a2(param_1: &mut Struct1) {
     let u_var5: u16;
     let hwnd: HWND16;
     let hwnd_00: HWND16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let mut pcVar6: String;
     let LVar7: LRESULT;
-    w_param: WPARAM16;
+    let w_param: WPARAM16;
     let uVar8: u16;
     let uVar9: u16;
     let u_var10: u16;
@@ -2187,12 +2210,12 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
     let unaff_DI: i16;
     let hwnd: HWND16;
     let hwnd_00: HWND16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let pu_var5: U32Ptr;
     let LVar6: LRESULT;
     let mut pcVar7: String;
     let in_stack_00000005: u8;
-    WVar8: WPARAM16;
+    let WVar8: WPARAM16;
     let uVar9: u16;
     let u_var10: u16;
     let u_var11: u16;
@@ -2204,12 +2227,13 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
     iStack8 = 0x0;
     match(param_4._2_2_)
     {
-        0x145 => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x146);
+        0x145 => {
+            GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x146);
         u_var2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         uStack6 = 0x13f0647;
-        u_var11 = 0x1f1;
+        u_var11 = 0x1f1;}
 //     TODO: goto LAB_1038_d490;
-        0x146 => uStack6 = 0x1400648;
+        0x146 => {uStack6 = 0x1400648;
         pu_var5 = pass1_1008_941a(CONCAT22(unaff_SS, local_c), 0x1, 0xc4);
         // puVar4 = (pu_var5 >> 0x10);
         win_1008_5c9e(ctx.PTR_LOOP_1050_02a0, CONCAT22(unaff_SS, local_c), local_c, puVar4,
@@ -2248,26 +2272,26 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
             hwnd = ctx.s_tile2_bmp_1050_1538;
             PostMessage16(0x1010, 0x0, 0x0, 0x11100af);
         }
-        break;
-        0x147 => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x148);
+        }
+        0x147 => {GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x148);
         u_var2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         uStack6 = 0x1410647;
-        u_var11 = 0x1f5;
+        u_var11 = 0x1f5;}
 //     TODO: goto LAB_1038_d490;
-        0x148 => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x149);
+        0x148 => {GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x149);
         u_var2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         uStack6 = 0x1420647;
         u_var11 = 0x1f2;
 //LAB_1038_d490:
         hwnd = 0x1008;
         win_1008_5c5c(unaff_SS, u_var2, in_DX, _PTR_LOOP_1050_02a0, u_var11);
-        break;
-        0x149 => uStack6 = 0x1430648;
+        }
+        0x149 =>{ uStack6 = 0x1430648;
         PostMessage16(&ctx.PTR_LOOP_1050_1038, 0x0, 0x0, 0x11100b8);
         hwnd = ctx.s_tile2_bmp_1050_1538;
-        DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
-        break;
-        0x14a => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x145);
+        DestroyWindow16(ctx.s_tile2_bmp_1050_1538);}
+        
+        0x14a => {GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x145);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         uVar9 = 0xc;
         u_var10 = 0x140;
@@ -2276,15 +2300,14 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
                                        (ctx.PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         hwnd = ctx.s_tile2_bmp_1050_1538;
         SendDlgItemMessage16(0x1010, pcVar7, (pcVar7 >> 0x10), WVar8,
-                             CONCAT22(u_var10, uVar9));
-        break;
-        0x14b => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x147);
+                             CONCAT22(u_var10, uVar9));}
+        0x14b => {GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x147);
         hwnd = ctx.s_tile2_bmp_1050_1538;
-        EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
-        break;
-        _ => post_win_msg_1040_7b3c(CONCAT22(param_2, CONCAT11(in_stack_00000005, param_1)), param_3,
+        EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);}
+
+        _ => {post_win_msg_1040_7b3c(CONCAT22(param_2, CONCAT11(in_stack_00000005, param_1)), param_3,
             param_4, param_4._2_2_, &ctx.PTR_LOOP_1050_1040);
-        return;
+        return;}
     }
     hwnd_00 = hwnd;
     if ((uStack6._2_2_ != 0x0) && (uStack6 != 0x0)) {
@@ -2436,7 +2459,8 @@ pub fn destroy_crsor_1038_d8b2(param_1: i16, param_2: HINSTANCE16, param_3: u16)
     (param_1 + -0xc) = puVar11;
     (param_1 + -0xa) = (puVar11 >> 0x10);
     u_var2 = (param_1 + -0xc);
-    SetWindowText16(0x1010, (u_var2 + 0x68));
+    let str_param = read_string_from_addr(u_var2 + 0x68);
+    SetWindowText16(0x1010, str_param);
     ShowWindow16(ctx.s_tile2_bmp_1050_1538, 0x5);
     SetCursor16(ctx.s_tile2_bmp_1050_1538);
     return;
@@ -3073,7 +3097,7 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1, param_2: U32Ptr, param_3: HWND
     let u_var5: u16;
     let unaff_DI: i16;
     let u_var6: u16;
-    unaff_SS: &WNDCLASS16;
+    let unaff_SS: &WNDCLASS16;
     let LVar7: LRESULT;
     let uVar8: u32;
     let local_24: u16;
@@ -3091,16 +3115,6 @@ pub fn win_ui_op_1040_0000(param_1: &mut Struct1, param_2: U32Ptr, param_3: HWND
     let uStack6: u16;
     let i_stack4: i16;
 
-    // Segment:    9
-    // Offset:     0006f820
-    // Length:     d974
-    // Min Alloc:  d974
-    // Flags:      0d50
-    //     Code
-    //     Moveable
-    //     Preload
-    //     Impure (Non-shareable)
-    //
     dialog_ui_fn_1040_78e2(param_1, param_3);
     i_stack4 = 0x8;
     // for (iStack10 = 0x0; u_var5 = param_1,
@@ -3172,13 +3186,13 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     let in_AF: u8;
     let mut pcVar6: String;
     let LVar7: LRESULT;
-    w_param: WPARAM16;
+    let w_param: WPARAM16;
     let uVar8: u16;
-    HCURSOR16 * pHVar9;
-    pWVar10: &WNDCLASS16;
-    HCURSOR16 * pHVar11;
-    pWVar12: &WNDCLASS16;
-    u32 * local_12a[0x43];
+    let pHVar9: HCURSOR16;
+    let pWVar10: &WNDCLASS16;
+    let pHVar11: HCURSOR16;
+    let pWVar12: &WNDCLASS16;
+    let local_12a: U32Ptr;
     let puStack30: U32Ptr;
     let uStack26: u16;
     let local_18: HCURSOR16;
@@ -3195,27 +3209,27 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
     i_stack6 = 0x0;
     match(param_4._2_2_)
     {
-        0x167 => enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
+        0x167 => {enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
         GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
-        i_stack4 = 0x0;
-        break;
-        0x168 => enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
+        i_stack4 = 0x0;}
+
+        0x168 => {enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
         GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
-        i_stack4 = 0x1;
-        break;
-        0x169 => enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
+        i_stack4 = 0x1;}
+
+        0x169 => {enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
         GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
-        i_stack4 = 0x2;
-        break;
-        0x16a => enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
+        i_stack4 = 0x2;}
+
+        0x16a => {enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
         GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
-        i_stack4 = 0x3;
-        break;
-        0x16b => GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
+        i_stack4 = 0x3;}
+
+        0x16b =>{ GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
         u_var5 = SUB42(ctx.s_tile2_bmp_1050_1538, 0x0);
         BVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x0);
         if ((param_1 + 0x92) != 0x3) {
@@ -3235,12 +3249,14 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
         //   in_DX = (LVar7 >> 0x10);
         // }
 //     TODO: goto LAB_1040_04da;
-        0x16c => GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16d);
+}
+        0x16c => {GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16d);
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         i_stack4 = 0x5;
         (param_1 + 0x94) = 0x5;
 //     TODO: goto LAB_1040_04da;
-        0x16d => GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16d);
+}
+        0x16d => {GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16d);
         BVar2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x0);
         u_var5 = 0x1008;
         win_1008_5c5c(param_6, BVar2, in_DX, _PTR_LOOP_1050_02a0, 0x1de);
@@ -3274,7 +3290,8 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
         uStack26 = pass1_1030_2fac(uStack20);
         set_window_text_1018_6086((param_1 + 0x96), 0x1018, param_6);
 //     TODO: goto LAB_1040_04da;
-        0x16e => puStack30 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x39, param_6, in_DX, unaff_DI);
+}
+        0x16e => {puStack30 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x39, param_6, in_DX, unaff_DI);
         uStack26 = (puStack30 + 0x20);
         local_18 = LoadCursor16(0x1010, 0x7f02);
         local_16 = SetCursor16(ctx.s_tile2_bmp_1050_1538);
@@ -3289,9 +3306,10 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
         DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
         local_12a[0] = &ULONG_1008_389a;
 //     TODO: goto LAB_1040_04da;
-        _ => post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_,
+}
+        _ => {post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_,
         param_5);
-        return;
+        return;}
     }
     (param_1 + 0x92) = i_stack4;
 //LAB_1040_04da:
@@ -3320,11 +3338,11 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT  win_ui_op_1040_0558(param_1: u32,param_2: i16,param_3: HWND16)
+pub fn  win_ui_op_1040_0558(param_1: u32,param_2: i16,param_3: HWND16) -> LRESULT
 
 {
 let i_var1: i16; let i_var2: i16;
-let unaff_SS: u16; let mut pcVar3: String; let LVar4: LRESULT; w_param: WPARAM16;
+let unaff_SS: u16; let mut pcVar3: String; let LVar4: LRESULT; let w_param: WPARAM16;
 let u_var5: u16; let u_var6: u16;
 
 i_var1 = param_2 * 0xe; GetDlgItem16(param_3,(i_var1 + 0x5c64)); i_var2 = pass1_1010_659a((param_1 + 0x8e), (i_var1 + 0x5c66),

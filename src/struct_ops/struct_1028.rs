@@ -429,7 +429,7 @@ pub fn struct_op_1028_87f0(param_1: u16, param_2: u8, param_3: &mut Struct97, pa
 
 pub fn struct_op_1028_8888(param_1: u16, param_2: u8, param_3: &mut Struct100, param_4: u16,
                            param_5: u16, param_6: U32Ptr, param_7: u16, param_8: u32,
-                           param_9: u32, param_1: u320)
+                           param_9: u32, param_10: u32)
 
 {
     let i_var1: &mut Struct100;

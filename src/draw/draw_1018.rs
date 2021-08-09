@@ -1,4 +1,19 @@
-use crate::{cleanup::unk_destroy_window_op_1018_6bb6, global::AppContext, mixed::mixed_1010_20ba, pass::{pass_1008::pass1_1008_3e54, pass_1018::pass1_1018_659a}, ui::{ui_1008::{win_1008_5c5c, win_1008_5c9e}, ui_1018::mix_ui_op_1018_6adc}, util::{CONCAT22, SUB42}, win_struct::{COLORREF, HDC16, HWND16, PAINTSTRUCT16, RECT16}, winapi::{BeginPaint16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16, InvalidateRect16, PostMessage16, SelectPalette16, SetBkColor16, SetTextColor16}};
+use crate::{
+    cleanup::unk_destroy_window_op_1018_6bb6,
+    global::AppContext,
+    mixed::mixed_1010_20ba,
+    pass::{pass_1008::pass1_1008_3e54, pass_1018::pass1_1018_659a},
+    ui::{
+        ui_1008::{win_1008_5c5c, win_1008_5c9e},
+        ui_1018::mix_ui_op_1018_6adc,
+    },
+    util::{CONCAT22, SUB42},
+    win_struct::{COLORREF, HDC16, HWND16, PAINTSTRUCT16, RECT16},
+    winapi::{
+        BeginPaint16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16,
+        InvalidateRect16, PostMessage16, SelectPalette16, SetBkColor16, SetTextColor16,
+    },
+};
 
 pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
     let pi_var1: U32Ptr;
@@ -67,8 +82,8 @@ pub fn get_dc_1018_4db0(param_1: i32, param_2: u16, param_3: HWND16) {
     return;
 }
 
-pub unsafe fn create_dc_1018_4e04(
-    param_1: *mut *mut astruct_8,
+pub fn create_dc_1018_4e04(
+    param_1: &mut Struct8,
     param_2: u16,
     param_3: i16,
     param_4: i16,
@@ -335,7 +350,11 @@ pub unsafe fn unk_draw_op_1018_623e(param_1: u32, param_2: HWND16, param_3: u16)
     uVar16 = pass1_1010_4dc8((u_var3 + 0x6));
     // u_var10 = (uVar16 >> 0x10);
     u_var5 = uVar16;
-    draw_op_1018_6544((puVar13 + 0x6), (uVar16 & 0xffff | u_var10 << 0x10), param_3);
+    draw_op_1018_6544(
+        (puVar13 + 0x6),
+        (uVar16 & 0xffff | u_var10 << 0x10),
+        param_3,
+    );
     pass1_1018_6630((puVar13 + 0x6), u_var5, u_var10);
     u_var3 = (puVar13 + 0x6);
     SelectPalette16(0x1010, 0x0, (u_var3 + 0x10));
@@ -366,7 +385,11 @@ pub fn draw_line_1018_6444(param_1: u32, param_2: HDC16) {
     MoveTo16(param_2, 0x5, *pIVar2);
     // uVar7 = (pIVar2 >> 0x10);
     iVar5 = pIVar2;
-    LineTo16(ctx.s_tile2_bmp_1050_1538, 0x5, (iVar5 + i_var1 * 0x8 + -0x4));
+    LineTo16(
+        ctx.s_tile2_bmp_1050_1538,
+        0x5,
+        (iVar5 + i_var1 * 0x8 + -0x4),
+    );
     // TODO: refactor
     // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
     //   piVar6 = (iStack10 * 0x8 + iVar5);

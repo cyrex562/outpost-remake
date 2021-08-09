@@ -1,3 +1,9 @@
+use crate::defines::{
+    Struct13_1, Struct18, Struct19, Struct79, Struct99, Struct_1000_05e2, U32Ptr,
+};
+use crate::pass::pass_1000::{pass1_1000_05b4, pass1_1000_0782, pass1_1000_09ca};
+use crate::util::read_struct_from_addr;
+use crate::winapi::GlobalDOSAlloc16;
 use crate::{
     defines::StructA,
     fn_ptr::fn_ptr_1000::fn_ptr_op_1000_1708,
@@ -18,10 +24,6 @@ use crate::{
         WIN16_GlobalLock16,
     },
 };
-use crate::defines::{Struct79, Struct_1000_05e2, Struct19, Struct99, U32Ptr, Struct18, Struct13_1};
-use crate::winapi::GlobalDOSAlloc16;
-use crate::pass::pass_1000::{pass1_1000_09ca, pass1_1000_05b4, pass1_1000_0782};
-use crate::util::read_struct_from_addr;
 
 pub fn mem_op_1000_0052(param_1: u32, param_2: u32) {
     unimplemented!()
@@ -48,7 +50,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
     // if (((param_1.offset(0x40)).read() | (param_1.offset(0x3e)).read()) == 0x0) {
     if param_1.field_0x40 | param_1.field_0x3e == 0 {
         u_var5 = param_1.field_0x36;
-        d_var6 = mem_op_1000_1532(ctx,param_2);
+        d_var6 = mem_op_1000_1532(ctx, param_2);
         d_var7 = d_var6;
     } else {
         d_var6 = mem_op_1000_1532(ctx, param_2);
@@ -82,13 +84,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
             }
             u_var5 = u_var9 >> 0x1;
             if u_var5 < 0xc {
-                u_var4 = pass1_1000_1e61(
-                    ctx,
-                    param_2,
-                    0x2,
-                    Some(param_1),
-                    ctx.data_seg
-                );
+                u_var4 = pass1_1000_1e61(ctx, param_2, 0x2, Some(param_1), ctx.data_seg);
                 if u_var4 == 0x0 {
                     return '\x01' as u32 - (param_1 + 0xa) == 0x0;
                 }
@@ -112,7 +108,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
     if u_var5 != 0x0 {
         u_var10 = 0x0;
         u_var9 = 0xc;
-        d_var7 = mem_op_1000_1532(ctx,param_2);
+        d_var7 = mem_op_1000_1532(ctx, param_2);
         u_var8 = pass1_1000_5390(
             (d_var7 - 0x42) as u16,
             (d_var7 >> 0x10) - (d_var7 < 0x42),
@@ -121,7 +117,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
         );
         u_stack14 = u_var8 * 0xc + param_1 + 0x36;
     }
-   // u_stack10 = (d_var7 >> 0x10);
+    // u_stack10 = (d_var7 >> 0x10);
     u_stack12 = d_var7 as u16;
     pu_var1 = (param_1 + 0x1e);
     u_var9 = *pu_var1;
@@ -146,7 +142,7 @@ pub fn mem_op_1000_0308(
     ctx: &mut AppContext,
     param_1: i16,
     struct_2: &mut StructA,
-    param_3: u16
+    param_3: u16,
 ) -> Option<&mut Struct13_1> {
     let struct_1: &mut Struct13_1;
     let i_var2: i16;
@@ -222,20 +218,9 @@ pub fn mem_op_1000_03c6(
             u_stack20 = 0x1000;
         }
         u_stack20 = (param_4 + 0x16) | u_stack20;
-        mem_op_1000_131c(
-            ctx,
-            u_stack20,
-            param_1,
-            param_2,
-            param_5
-        );
+        mem_op_1000_131c(ctx, u_stack20, param_1, param_2, param_5);
         if (u_var3 | u_stack20) != 0x0 {
-            pu_var5 = mem_op_1000_0308(
-                ctx,
-                param_3 as i16,
-                param_4,
-                0
-            ) as u32;
+            pu_var5 = mem_op_1000_0308(ctx, param_3 as i16, param_4, 0) as u32;
             if pu_var5 != 0x0 {
                 pu_var5[0x4] = u_stack20;
                 pu_var5[0x5] = u_var3;
@@ -257,7 +242,7 @@ pub fn mem_op_1000_03c6(
                         u_var7 = pass1_1000_09ca(uvar6 as i16, None);
                     }
                 }
-               // param_2 = (dvar9 >> 0x10);
+                // param_2 = (dvar9 >> 0x10);
                 *pu_var5 = u_var7;
                 pu_var5[0x1] = 0x8000;
                 pu_var1 = (param_4 + 0x1e);
@@ -270,17 +255,12 @@ pub fn mem_op_1000_03c6(
             mem_op_1000_13ce(*param_5);
         }
     } else {
-        pass1_1000_1e61(ctx,*param_5, 0x7, Some(param_4), ctx.data_seg);
+        pass1_1000_1e61(ctx, *param_5, 0x7, Some(param_4), ctx.data_seg);
     }
     return 0x0;
 }
 
-pub  fn mem_op_1000_0510(
-    ctx: &mut AppContext,
-    param_1: u16,
-    param_2: u16,
-    param_3: u16,
-) -> u32 {
+pub fn mem_op_1000_0510(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: u16) -> u32 {
     let var_1: U32Ptr;
     let pi_var2: String;
     let b_var3: u8;
@@ -299,15 +279,16 @@ pub  fn mem_op_1000_0510(
     u_var5 = (param_2 + 0x2);
     u_var6 = (param_2 + 0x4);
     b_var3 = (param_2 + 0xc) as u8;
-    d_var12 = mem_op_1000_1532(ctx,param_3);
-   u_var9 = (d_var12 >> 0x10) as u16;
+    d_var12 = mem_op_1000_1532(ctx, param_3);
+    u_var9 = (d_var12 >> 0x10) as u16;
     u_var8 = d_var12 as u16;
     if param_1 != 0x0 {
         u_var7 = (i_var4 + 0x1e) as u16;
         u_var10 = ((i_var4 + 0x20) - u_var9) - (u_var7 < u_var8);
         var_1 = (i_var4 + 0x24) as u32;
         b_var11 = u_var10 < *var_1;
-        if (b_var11 || u_var10 == *var_1) && (b_var11 || (u_var7 - u_var8 < (i_var4 + 0x22) as u16)) {
+        if (b_var11 || u_var10 == *var_1) && (b_var11 || (u_var7 - u_var8 < (i_var4 + 0x22) as u16))
+        {
             b_var11 = false;
             u_var9 = u_var10;
             // TODO: goto LAB_1000_0595;
@@ -325,7 +306,8 @@ pub  fn mem_op_1000_0510(
         (param_2 + 0xc) = 0x0;
         l_var13 = mem_op_1000_13ce(param_3);
         return CONCAT22(((l_var13 >> 0x10) as u16), 0x1);
-    } else {}
+    } else {
+    }
     return (u_var9 << 0x10) as u32;
 }
 
@@ -392,7 +374,7 @@ pub unsafe fn mem_1000_0668(ctx: &mut AppContext, param_1: u16) -> u32 {
     return u_var1;
 }
 
-pub  fn mem_1000_0670(
+pub fn mem_1000_0670(
     param_1: u16,
     param_2: U32Ptr,
     param_3: u16,
@@ -419,12 +401,18 @@ pub  fn mem_1000_0670(
 
     UVar3 = param_4;
     UVar4 = (param_4 + 0x2) as u16;
-    DVar15 = mem_op_1000_1532(ctx,param_6);
+    DVar15 = mem_op_1000_1532(ctx, param_6);
     UVar6 = param_5 + (0xffeb < param_3);
     uVar7 = *param_4;
     uVar8 = -((param_1 & 0x1) != 0x0) & 0x100 | -((param_1 & 0x4) != 0x0) & 0x400 | (uVar7 + 0x16);
     if (param_2 == 0x0) {
-        BVar11 = mem_op_1000_14f2(uVar8 | 0x2000, (param_3 + 0x14) as u32, UVar6, param_4 as u16, ctx.data_seg);
+        BVar11 = mem_op_1000_14f2(
+            uVar8 | 0x2000,
+            (param_3 + 0x14) as u32,
+            UVar6,
+            param_4 as u16,
+            ctx.data_seg,
+        );
         if (BVar11 == 0x0) {
             return 0x0;
         }
@@ -435,12 +423,12 @@ pub  fn mem_1000_0670(
         loop {
             uVar13 = uVar14;
             uVar9 = uVar8 | 0x2000;
-            mem_op_1000_1408(ctx,uVar9, param_3 + 0x14, UVar6, param_6);
+            mem_op_1000_1408(ctx, uVar9, &mut param_3 + 0x14, UVar6, param_6);
             uVar14 = uVar13 | uVar9;
             if (uVar14 != 0x0) {
                 break;
             }
-            UVar10 = pass1_1000_1e61(ctx,param_6, 0x2, UVar3, UVar4);
+            UVar10 = pass1_1000_1e61(ctx, param_6, 0x2, UVar3, UVar4);
             if UVar10 == 0 {
                 break;
             }
@@ -455,7 +443,7 @@ pub  fn mem_1000_0670(
         *param_2 = uVar9 + 0x14;
         (param_2 + 0x2) = uVar13 as u32;
     }
-    DVar16 = mem_op_1000_1532(ctx,param_6);
+    DVar16 = mem_op_1000_1532(ctx, param_6);
     uVar12 = (DVar16 - DVar15) as u16;
     pu_var1 = (UVar3 + 0x1e);
     uVar8 = *pu_var1;
@@ -468,7 +456,7 @@ pub  fn mem_1000_0670(
 pub fn mem_op_1000_0838(
     ctx: &mut AppContext,
     param_1: Option<&mut StructA>,
-    param_2: u16
+    param_2: u16,
 ) -> &mut Struct99 {
     let pu_var1: U32Ptr;
     let pi_var2: U32Ptr;
@@ -509,14 +497,14 @@ pub fn mem_op_1000_0838(
         }
         // TODO: LAB_1000_085b:
         if (param_1 + 0x18) == 0x0 {
-            pass1_1000_1e61(ctx,param_2, 0x4, param_1, ctx.data_seg);
+            pass1_1000_1e61(ctx, param_2, 0x4, param_1, ctx.data_seg);
             return 0x0;
         }
         u_var5 = (param_1 + 0x1a);
         loop {
             u_stack6 = u_var5;
             u_var5 = 0x1;
-            u_var8 = mem_op_1000_03c6(u_stack6, 0x0, 0x1, param_1, param_2, 0x0, '\0');
+            u_var8 = mem_op_1000_03c6(&mut u_stack6, 0x0, 0x1, param_1, &mut param_2, 0x0, '\0');
             if (u_var8 | u_var5) != 0x0 {
                 break;
             }
@@ -536,7 +524,7 @@ pub fn mem_op_1000_0838(
             }
             u_var5 = u_stack6 >> 0x1;
             if u_stack6 >> 0x1 < (param_1 + 0x18) + 0x14 {
-                u_var7 = pass1_1000_1e61(ctx,param_2, 0x2, param_1, ctx.data_seg);
+                u_var7 = pass1_1000_1e61(ctx, param_2, 0x2, param_1, ctx.data_seg);
                 u_var5 = u_stack6 & 0xfffe;
                 if u_var7 == 0x0 {
                     return 0x0;
@@ -548,7 +536,7 @@ pub fn mem_op_1000_0838(
     }
 }
 
-pub  fn mem_op_1000_0a48(
+pub fn mem_op_1000_0a48(
     ctx: &mut AppContext,
     param_1: u8,
     param_2: u32,
@@ -563,7 +551,7 @@ pub  fn mem_op_1000_0a48(
     let u_var5: u32;
     let pu_var1: U32Ptr;
 
-   // u_var4 = (param_4 >> 0x10);
+    // u_var4 = (param_4 >> 0x10);
     if (param_4 + 0x14) == -0x4153 {
         if (param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0x6) < param_2)) {
             if (param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0xa) < param_2)) {
@@ -574,7 +562,7 @@ pub  fn mem_op_1000_0a48(
         } else {
             if ((false) || (param_2 != 0x0)) {
                 u_var5 = mem_op_1000_0838(ctx, 0x0, param_5 as u16);
-               // u_var3 = (u_var5 >> 0x10);
+                // u_var3 = (u_var5 >> 0x10);
                 pu_var2 = u_var5;
                 if ((u_var5 != 0x0) && ((param_1 & 0x1) != 0x0)) {
                     u_var1 = (ctx.s_version__d__d_1050_0012 + 0x6);
@@ -739,7 +727,7 @@ pub fn mem_op_1000_131c(
         if h_var1 != 0x0 {
             GlobalPageLock16(ctx.s_tile2_bmp_1050_1538 as u16);
         }
-        pass1_1000_15ce(ctx, u_stack10, (l_var3 >> 0x10), ctx.s_tile2_bmp_1050_1538);
+        pass1_1000_15ce(ctx, &mut u_stack10, (l_var3 >> 0x10), ctx.s_tile2_bmp_1050_1538);
     }
     if h_var1 != 0x0 {
         WIN16_GlobalLock16(ctx.s_tile2_bmp_1050_1538 as u16);
@@ -754,7 +742,7 @@ pub fn mem_op_1000_13ce(param_1: u16) -> i32 {
     let DVar3: u32;
 
     DVar3 = GlobalHandle16(param_1);
-   // u_var2 = (DVar3 >> 0x10);
+    // u_var2 = (DVar3 >> 0x10);
     if (DVar3 != 0x0) {
         HVar1 = GlobalFree16(ctx.s_tile2_bmp_1050_1538);
         return CONCAT22(u_var2, (HVar1 == 0x0));
@@ -830,7 +818,7 @@ pub fn mem_op_1000_14f2(
 ) -> bool {
     // if (((param_1 & 0x1000) != 0x0) || ((param_3 == 0x0 && (param_2 < 0xfff1)))) {
     if (param_1 & 0x1000) || (param_2 < 0xfff10000) {
-        mem_op_1000_1408(ctx,param_1 & 0xfdff | 0x800, param_2, param_7, 0);
+        mem_op_1000_1408(ctx, param_1 & 0xfdff | 0x800, param_2, param_7, 0);
         if ((param_6 | param_5) != 0x0) {
             return true;
         }
@@ -853,7 +841,7 @@ pub fn alloc_mem_1000_1558(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,
-    param_3: &mut U32Ptr
+    param_3: &mut U32Ptr,
 ) -> u32 {
     let mut u_var1: u32 = 0;
     let mut alloc_size: u32 = 0;
@@ -885,11 +873,7 @@ pub fn alloc_mem_1000_1558(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub  fn mem_op_1000_160a(
-    ctx: &mut AppContext,
-    param_1: Option<&mut Struct18>,
-    param_2: u16
-) -> u16 {
+pub fn mem_op_1000_160a(ctx: &mut AppContext, param_1: Option<&mut Struct18>, param_2: u16) -> u16 {
     let pu_var1 = ret_true_1000_2146();
     if pu_var1 == 0x0 {
         return pu_var1;
@@ -897,20 +881,11 @@ pub  fn mem_op_1000_160a(
     if (ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0 {
         ctx.DAT_1050_5f30 = 0x1;
         ctx.DAT_1050_5f32 = 0x1;
-        ctx._PTR_LOOP_1050_5f2c = mem_op_1000_18ec(
-            ctx,
-            ctx.DAT_1050_5f46,
-            (param_1).unwrap(),
-            param_2
-        );
+        ctx._PTR_LOOP_1050_5f2c =
+            mem_op_1000_18ec(ctx, ctx.DAT_1050_5f46, (param_1).unwrap(), param_2);
         if ctx._PTR_LOOP_1050_5f2c != 0x0 {
             if ctx.PTR_LOOP_1050_5f42 != 0x0 {
-                pass1_1000_1a54(
-                    ctx.PTR_LOOP_1050_5f42,
-                    ctx._PTR_LOOP_1050_5f2c,
-                    param_2,
-                    0
-                );
+                pass1_1000_1a54(ctx.PTR_LOOP_1050_5f42, ctx._PTR_LOOP_1050_5f2c, param_2, 0);
             }
             ctx.PTR_LOOP_1050_5f2e = (ctx._PTR_LOOP_1050_5f2c >> 0x10);
             if ctx.DAT_1050_5f44 != 0xffff {
@@ -918,7 +893,7 @@ pub  fn mem_op_1000_160a(
                     ctx,
                     ctx.DAT_1050_5f44 as u16,
                     read_struct_from_addr::<StructA>(ctx.PTR_LOOP_1050_5f2c),
-                    0x1000
+                    0x1000,
                 );
             }
         }
@@ -947,22 +922,13 @@ pub fn mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: 
     return l_var2 as u16;
 }
 
-pub fn mem_op_1000_179c(
-    ctx: &mut AppContext,
-    param_1: u16,
-    param_2: &mut Struct18,
-    param_3: u16
-) {
+pub fn mem_op_1000_179c(ctx: &mut AppContext, param_1: u16, param_2: &mut Struct18, param_3: u16) {
     let pu_var1: &mut Struct18;
     let pu_var2: &mut Struct18;
     pu_var1 = read_struct_from_addr::<Struct18>(ctx.PTR_LOOP_1050_5f2c);
     pu_var2 = read_struct_from_addr::<Struct18>(ctx.PTR_LOOP_1050_5f2e);
     if (ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0 {
-        pu_var1 = mem_op_1000_160a(
-            ctx,
-            Some(param_2),
-            param_3
-        );
+        pu_var1 = mem_op_1000_160a(ctx, Some(param_2), param_3);
         pu_var2 = param_2;
     }
     let mut var3 = 0u16;
@@ -977,7 +943,7 @@ pub fn mem_op_1000_18ec(
     param_3: u16,
 ) -> u32 {
     let u_var1: u32;
-    u_var1 = mem_op_1000_1902(ctx, param_1, 0x0, 0x0, 0xc, param_3, param_2);
+    u_var1 = mem_op_1000_1902(ctx, &mut param_1, 0x0, 0x0, 0xc, param_3, param_2);
     return u_var1;
 }
 
@@ -1011,12 +977,12 @@ pub fn mem_op_1000_1902(
             u_var3 = uvar5;
             // p_uvar1 = make_u16_ptr((*param_1 & 0xfffb | 0x1000) as u32);
             p_uvar1 = (*param_1 & 0xfffb | 0x1000);
-            mem_op_1000_131c(ctx, p_uvar1, 0x100, 0x0, param_5);
+            mem_op_1000_131c(ctx, p_uvar1, 0x100, 0x0, &mut param_5);
             uvar5 = u_var3 | p_uvar1;
             if uvar5 != 0x0 {
                 break;
             };
-            uvar2 = pass1_1000_1e61(ctx,param_5, 0x2, 0x0, 0x0);
+            uvar2 = pass1_1000_1e61(ctx, param_5, 0x2, 0x0, 0x0);
             if uvar2 == 0 {
                 break;
             }
@@ -1076,14 +1042,14 @@ pub unsafe fn mem_op_1000_1b68(param_1: u16, param_2: u16, param_3: u16, param_4
     let u_var1: u32;
 
     if (param_3 + 0x14) != -0x4153 {
-        pass1_1000_1e61(ctx,param_2, 0xa, 0x0, 0x0);
+        pass1_1000_1e61(ctx, param_2, 0xa, 0x0, 0x0);
         return (param_1 << 0x10) as u32;
     }
     u_var1 = mem_op_1000_1b9a(0x0, param_3 as u32, param_4, param_2);
     return u_var1;
 }
 
-pub  fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) -> u32 {
+pub fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) -> u32 {
     let u_var1: u16;
     let u_var2: u32;
     let u_var3: u16;
@@ -1161,7 +1127,7 @@ pub fn mem_op_1000_21b6(param_1: u16, param_2: u16) -> bool {
     mem_op_1000_1dfa(0x0, 0x4, param_1, param_2)
 }
 
-pub unsafe fn mem_1000_2bb6(
+pub fn mem_1000_2bb6(
     param_1: u16,
     param_2: &String,
     param_3: i16,
@@ -1203,7 +1169,7 @@ pub unsafe fn mem_1000_2bb6(
                         && ((param_2 == 0x621c || (param_2 == 0x6228))
                             && ((puVar7[0x5f90] & 0x40) != 0x0)))
                         || (
-                            mem_1000_2ce8(ctx,param_2, param_8, param_5),
+                            mem_1000_2ce8(ctx, param_2, &mut param_8, param_5),
                             ((pi_var3 + 0x5) & 0x8) == 0x0,
                         ))))
         {
@@ -1254,7 +1220,12 @@ pub unsafe fn mem_1000_2bb6(
     return 0xffff;
 }
 
-pub unsafe fn mem_1000_2ce8(ctx: &mut AppContext, param_1: &mut i16, param_2: &mut u16, param_3: u16) {
+pub fn mem_1000_2ce8(
+    ctx: &mut AppContext,
+    param_1: &mut i16,
+    param_2: &mut u16,
+    param_3: u16,
+) {
     let pi_var1: U32Ptr;
     let u_var2: u16;
 

@@ -32,7 +32,7 @@ class SectionType(Enum):
 
 class ImageDosHeaderStruct(Structure):
     _fields_ = [
-        # 0x00: u8[2]: ID="MZ"
+        # 0x00: [u8;2]: ID="MZ"
         ("e_magic", c_char * 2),
         # 0x02: u16: bytes on last 512-byte page of file
         ("e_cblp", c_ushort),

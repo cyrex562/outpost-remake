@@ -1400,8 +1400,8 @@ pub fn pass1_1040_48a0(
     puVar8 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x3, param_6, param_5, unaff_DI);
     // puVar4 = (puVar8 >> 0x10);
     u_var3 = puVar8;
-    &iVar5.field_0x94 = u_var3;
-    (&iVar5.field_0x94 + 0x2) = puVar4;
+    iVar5.field_0x94 = u_var3;
+    (iVar5.field_0x94 + 0x2) = puVar4;
     mem_op_1000_179c(0x18, puVar4, 0x1000);
     pu_var5 = (puVar4 | u_var3);
     if (pu_var5 == 0x0) {
@@ -2758,7 +2758,7 @@ pub fn pass1_1040_a2cc(
     param_2: u32,
     param_3: u32,
     param_4: u16,
-    param_5: *mut u8,
+    param_5: U32Ptr,
     param_6: u16,
     param_7: u16,
 ) -> u32 {

@@ -8,7 +8,6 @@ use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1008::{pass1_1008_3e76, pass1_1008_3e94, pass1_1008_41bc, pass1_1008_4480, pass1_1008_4772, pass1_1008_5118, pass1_1008_57a4, pass1_1008_5b12, pass1_1008_8b20, pass1_1008_941a};
 use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_375e, pass1_1010_3770, pass1_1010_454a, pass1_1010_4c2c, pass1_1010_4dc8, pass1_1010_4df0, pass1_1010_ecc6};
 use crate::pass::pass_1018::{pass1_1018_017c, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_0d9a, pass1_1018_1054, pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c, pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0};
-use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498, pass1_1020_64d4, pass1_1020_68de};
 use crate::pass::pass_1030::pass1_1030_8308;
 use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
@@ -712,7 +711,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(param_1: U32Ptr, param_2: u16, param_3: 
 }
 
 
-pub unsafe fn load_draw_op_1020_2ede(ctx: &mut AppContext, param_1: U32Ptr, param_2: u32, param_3: u16) {
+pub fn load_draw_op_1020_2ede(ctx: &mut AppContext, param_1: U32Ptr, param_2: u32, param_3: u16) {
     let u_var1: u32;
     let ppc_var2: u32;
     let hvar3: HDC16;
@@ -1032,7 +1031,7 @@ pub fn draw_polygon_1020_3602(param_1: u16, param_2: u16, param_3: u32, param_4:
 }
 
 
-pub unsafe fn unk_draw_op_1020_3da4(param_1: &mut Struct24, param_2: i32) {
+pub fn unk_draw_op_1020_3da4(param_1: &mut Struct24, param_2: i32) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -1364,7 +1363,7 @@ pub fn pt_in_rect_1020_5856(param_1: u32, param_2: &POINT16, param_3: u16) {
             u_var3 = u_stack10;
             empty_1008_8fc4(param_3, in_dx, u_stack10, (u_stack10 >> 0x10));
             if ((extraout_dx | u_var3) != 0x0) {
-                bvar2 = PtInRect16(0x1008, *param_2);
+                bvar2 = PtInRect16(0x1008, param_2);
                 if (bvar2 != 0x0) {
                     return;
                 }
@@ -1718,10 +1717,10 @@ pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
     let handle: HPEN16;
     let handle_00: HGDIOBJ16;
     let mut count: String;
-    let mut str: String;
+    let mut string_1: String;
     let pu_var2: u32;
     let in_dx: u16;
-    let mut str_00: String;
+    let mut string_2: String;
     let i_var4: &mut Struct6;
     let i_var3: i16;
     let u_var4: u16;
@@ -1801,15 +1800,15 @@ pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
         if (*count != '\0') {
             SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
             SetTextColor16(ctx.s_tile2_bmp_1050_1538, color);
-            str = lstrlen16(ctx.s_tile2_bmp_1050_1538);
-            dvar6 = GetTextExtent16(ctx.s_tile2_bmp_1050_1538, str, count);
+            string_1 = lstrlen16(ctx.s_tile2_bmp_1050_1538);
+            dvar6 = GetTextExtent16(ctx.s_tile2_bmp_1050_1538, &string_1, count);
             // i_var3 = (dvar6 >> 0x10);
             if (is_iconic == 0x0) {
                 i_stack66 = (i_stack26 - i_stack30) / 0x2 - i_var3 / 0x2;
             } else {
                 i_stack66 = i_stack24 / 0x2 - i_var3 / 0x2;
             }
-            TextOut16(ctx.s_tile2_bmp_1050_1538, str, count, str_00, i_stack66 as usize);
+            TextOut16(ctx.s_tile2_bmp_1050_1538, string_1, count, &string_2, i_stack66 as usize);
         }
         hstack12 = SelectPalette16(ctx.s_tile2_bmp_1050_1538, 0x0, hstack12);
         DeleteObject16(ctx.s_tile2_bmp_1050_1538);

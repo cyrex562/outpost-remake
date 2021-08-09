@@ -380,3 +380,15 @@ pub struct Struct_1050_11ca {
     pub field_0x0: String,
     pub field_0x8: u16
 }
+
+pub struct Struct_1008_9664 {
+    pub field_0xa: String,
+}
+
+pub struct Struct30 {
+
+}
+
+pub struct Struct43 {
+    
+}

@@ -14,7 +14,7 @@ use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::{pass1_1000_07fc, pass1_1000_093a, pass1_1000_0ed4, pass1_1000_3de8, pass1_1000_4906, pass1_1000_49b2, pass1_1000_5586};
 use crate::pass::pass_1008::{pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_3eb4, pass1_1008_3f32, pass1_1008_3f62, pass1_1008_4772, pass1_1008_50c2, pass1_1008_5118, pass1_1008_5134, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_5bdc, pass1_1008_5c34, pass1_1008_612e, pass1_1008_68c6, pass1_1008_6978, pass1_1008_6c90, pass1_1008_6cec, pass1_1008_87cc, pass1_1008_8bc6, pass1_1008_8faa, pass1_1008_92b2, pass1_1008_941a, pass1_1008_9f48, pass1_1008_dfa6, pass1_1008_e320, pass1_1008_e3ec, pass1_1008_e852};
 use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2b50, pass1_1010_2b66, pass1_1010_3c9e, pass1_1010_3cd0, pass1_1010_4f20, pass1_1010_5f7a, pass1_1010_5fb0, pass1_1010_65d0, pass1_1010_71d6, pass1_1010_8018, pass1_1010_81f6, pass1_1010_bf1e, pass1_1010_eb66, pass1_1010_ec18};
-use crate::pass::pass_1020::{pass1_1020_808e, pass1_1020_bd80, string_1020_c0ca, string_1020_c0d8, string_op_1020_c222};
+
 use crate::pass::pass_1028::{pass1_1028_d69e, pass1_1028_dc52, pass1_1028_e1ec, pass1_1028_e4ec};
 use crate::pass::pass_1030::{pass1_1030_1d58, pass1_1030_1d7c, pass1_1030_5a52, pass1_1030_5b6c, pass1_1030_62e4, pass1_1030_6522, pass1_1030_6c66, pass1_1030_6d80, pass1_1030_7c28, pass1_1030_82f0, pass1_1030_8326, pass1_1030_8344};
 use crate::pass::pass_1038::{pass1_1038_2a0e, pass1_1038_2a5c, pass1_1038_4e78, pass1_1038_b6e0};
@@ -2687,7 +2687,7 @@ pub fn pass1_1018_2fe8(param_1: u32,param_2: u16,param_3: u16)
         pass1_1018_2e28(param_1);
         u_var4 = pass1_1020_bd80(u_var4);
         u_var5 = pass1_1000_3de8(CONCAT22(uVar8,u_var4),(i_var9 + 0x186),
-                                u_var3,param_2,param_3);
+                                &mut u_var3,param_2,param_3);
         if (u_var5 == 0x0) { break; }
         pi_var1 = (i_var9 + 0x174);
         *pi_var1 = *pi_var1 + 0x1;

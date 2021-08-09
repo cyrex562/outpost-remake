@@ -1,5 +1,7 @@
-use crate::{string::string_1000::str_op_1000_28dc, win_struct::{HINSTANCE16, SEGPTR}, winapi::{DOS3Call, GetDOSEnvironment16}};
-use crate::defines::{Struct18, Struct197, Struct20, Struct79, Struct99, Struct_1000_09ca, Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, StructA, U32Ptr};
+use crate::defines::{
+    Struct18, Struct197, Struct20, Struct79, Struct99, StructA, Struct_1000_09ca, Struct_1000_0c32,
+    Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, U32Ptr,
+};
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
 use crate::global::AppContext;
@@ -27,16 +29,12 @@ use crate::winapi::{
     swi, FatalAppExit16, FatalExit, GetModuleFileName16, GlobalDOSFree16, SegmentLimit,
 };
 use crate::{
-    string::string_1000::poss_str_op_1000_28dc,
+    string::string_1000::str_op_1000_28dc,
     win_struct::{HINSTANCE16, SEGPTR},
     winapi::{DOS3Call, GetDOSEnvironment16},
 };
 
-// pub fn pass1_1000_010c
-
-pub fn pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16)
-
-{
+pub fn pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16) {
     let pu_var1: U32Ptr;
 
     if (param_1 + 0x4) == param_1 {
@@ -63,9 +61,12 @@ pub fn pass1_1000_05b4(param_1: u8, param_2: i16) {
     return;
 }
 
-pub fn pass1_1000_0782(param_1: &mut StructA, param_2: u16, param_3: i16, in_stack_00000004: u16) -> u16
-
-{
+pub fn pass1_1000_0782(
+    param_1: &mut StructA,
+    param_2: u16,
+    param_3: i16,
+    in_stack_00000004: u16,
+) -> u16 {
     (param_3 + 0xe) = 0x0;
     (param_3 + 0x10) = param_3 + 0x14;
     (param_3 + 0x8) = 0x9a0;
@@ -144,10 +145,7 @@ pub unsafe fn pass1_1000_09a0(ctx: &mut AppContext, param_1: &mut u32, param_2: 
     return pu_var1;
 }
 
-
-pub  fn pass1_1000_09ca(param_1: i16, opt_struct_1: Option<&mut Struct_1000_09ca>) -> u16
-
-{
+pub fn pass1_1000_09ca(param_1: i16, opt_struct_1: Option<&mut Struct_1000_09ca>) -> u16 {
     let pu_var1: U32Ptr;
     let i_var2: i16;
     let struct_2: &mut Struct_211;
@@ -156,7 +154,9 @@ pub  fn pass1_1000_09ca(param_1: i16, opt_struct_1: Option<&mut Struct_1000_09ca
     let struct_1 = opt_struct_1.unwrap();
 
     pu_var1 = struct_1.field_0xa as u32;
-    struct_3 = read_struct_from_addr::<Struct_160>((struct_1 + (param_1 - pu_var1) - 6 & 0xfffc) + pu_var1);
+    struct_3 = read_struct_from_addr::<Struct_160>(
+        (struct_1 + (param_1 - pu_var1) - 6 & 0xfffc) + pu_var1,
+    );
     struct_3.field_0x0 = 0x1;
     struct_1.field_0x7 = pu_var1;
     struct_3.field_0x2 = struct_3;
@@ -701,7 +701,7 @@ pub fn pass1_1000_15ce(
     return;
 }
 
-pub unsafe fn pass1_1000_16aa(
+pub fn pass1_1000_16aa(
     ctx: &mut AppContext,
     param_1: &mut Struct18,
     param_2: u16,
@@ -785,8 +785,13 @@ pub unsafe fn pass1_1000_183c(
     {
         return 0x0;
     }
-    l_var2 = mem_op_1000_0a48(ctx, 0x1, ((param_2 * param_1) as u32),
-                              CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, ctx.PTR_LOOP_1050_5f2c as u16), param_3 as u8);
+    l_var2 = mem_op_1000_0a48(
+        ctx,
+        0x1,
+        ((param_2 * param_1) as u32),
+        CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, ctx.PTR_LOOP_1050_5f2c as u16),
+        param_3 as u8,
+    );
     return l_var2 as u16;
 }
 
@@ -1228,12 +1233,7 @@ pub unsafe fn pass1_1000_24db(ctx: &mut AppContext, param_1: i16, param_2: u16) 
     return;
 }
 
-
-pub fn pass1_1000_25a8(
-    ctx: &mut AppContext,
-    param_1: u16,
-    param_2: u16
-) {
+pub fn pass1_1000_25a8(ctx: &mut AppContext, param_1: u16, param_2: u16) {
     pass1_1000_2913(ctx, 0xfc, param_1, param_2);
     pass1_1000_2913(ctx, 0xff, param_1, param_2);
     return;
@@ -1640,11 +1640,7 @@ pub unsafe fn pass1_1000_262c(
     }
 }
 
-
-pub unsafe fn pass1_1000_27d6(
-    ctx: &mut AppContext,
-    param_1: u32
-) {
+pub unsafe fn pass1_1000_27d6(ctx: &mut AppContext, param_1: u32) {
     let pi_var1: U32Ptr;
     let mut pc_var2: String;
     let pu_var3: U32Ptr;
@@ -1760,12 +1756,7 @@ pub unsafe fn pass1_1000_27d6(
     }
 }
 
-
-pub fn pass1_1000_2913(
-    ctx: &mut AppContext,
-    param_1: i16,
-    param_2: u16,
-    param_3: u16) {
+pub fn pass1_1000_2913(ctx: &mut AppContext, param_1: i16, param_2: u16, param_3: u16) {
     let mut string_1: String;
     let mut string_2: String;
     let i_var3: i16;
@@ -2399,10 +2390,8 @@ pub unsafe fn pass1_1000_30a4(
     param_7: u16,
     param_8: u16,
     param_9: &String,
-    param_10: u8
-) -> u16
-
-{
+    param_10: u8,
+) -> u16 {
     let pu_var1: U32Ptr;
     let c_var2: u8;
     let mut pc_var3: String;
@@ -2424,8 +2413,15 @@ pub unsafe fn pass1_1000_30a4(
     (param_1 + -0x6) = param_8 as u32;
     (param_1 + -0x8) = 0x30c5;
     exit_1000_25f2(
-        ctx, ((param_1 + -0x8) as u16), ((param_1 + -0x6) as u16),
-        ((param_1 + -0x4) as i16), 0x214, param_7, param_8, param_9);
+        ctx,
+        ((param_1 + -0x8) as u16),
+        ((param_1 + -0x6) as u16),
+        ((param_1 + -0x4) as i16),
+        0x214,
+        param_7,
+        param_8,
+        param_9,
+    );
     (param_1 + -0x6) = pu_var6 as u32;
     (param_1 + -0x8) = (param_6 ^ pu_var6) as u32;
     (param_1 + -0xc) = 0x0;
@@ -3771,7 +3767,7 @@ pub fn pass1_1000_41e0(param_1: i16) -> u16 {
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub unsafe fn pass1_1000_422a(
+pub fn pass1_1000_422a(
     ctx: &mut AppContext,
     param_1: &mut i16,
     param_2: u16,
@@ -3829,7 +3825,7 @@ pub unsafe fn pass1_1000_422a(
     return *param_1;
 }
 
-pub unsafe fn pass1_1000_43f0(ctx: &mut AppContext, param_1: u16, param_2: u16) {
+pub fn pass1_1000_43f0(ctx: &mut AppContext, param_1: u16, param_2: u16) {
     if ctx.PTR_LOOP_1050_68b4 == 0x0 {
         pass1_1000_440c(ctx, param_2);
         ctx.PTR_LOOP_1050_68b4 = ctx.PTR_LOOP_1050_68b4 + 0x1;
@@ -3925,7 +3921,7 @@ pub fn pass1_1000_440c(ctx: &mut AppContext, param_1: u16) {
     return;
 }
 
-pub unsafe fn pass1_1000_455a(param_1: u32, param_2: &mut String) -> u16 {
+pub fn pass1_1000_455a(param_1: u32, param_2: &mut String) -> u16 {
     let pi_var1: U32Ptr;
     let i_var2: i16;
     let u_var3: u16;
@@ -3977,7 +3973,7 @@ pub unsafe fn pass1_1000_455a(param_1: u32, param_2: &mut String) -> u16 {
     return uvar5;
 }
 
-pub unsafe fn pass1_1000_462e(
+pub fn pass1_1000_462e(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: i16,
@@ -4112,14 +4108,7 @@ pub fn pass1_1000_472c(param_1: &mut String, param_2: u8) -> U32Ptr {
     return string_2 + -0x1;
 }
 
-
-pub fn pass1_1000_47a4(
-    param_1: u32,
-    param_2: u32,
-    param_3: u16,
-) -> u16
-
-{
+pub fn pass1_1000_47a4(param_1: u32, param_2: u32, param_3: u16) -> u16 {
     let pb_var1: U32Ptr;
     let b_var2: u8;
     let pu_var3: U32Ptr;
@@ -4356,7 +4345,6 @@ pub fn pass1_1000_49b2(param_1: u16) -> i16 {
     return ((param_1 ^ param_1 >> 0xf) - (param_1 >> 0xf)) as i16;
 }
 
-
 pub fn pass1_1000_49c6(
     param_1: u16,
     param_2: u16,
@@ -4431,7 +4419,6 @@ pub fn pass1_1000_49c6(
     }
     return u_var3;
 }
-
 
 pub fn pass1_1000_4aea(
     param_1: &mut u16,
@@ -4573,13 +4560,7 @@ pub fn pass1_1000_4aea(
     //   TODO: goto LAB_1000_4b81;
 }
 
-
-pub fn pass1_1000_4ceb(
-    param_1: &mut u16,
-    param_2: &mut i16,
-    param_3: i16,
-    param_4: u16,
-) {
+pub fn pass1_1000_4ceb(param_1: &mut u16, param_2: &mut i16, param_3: i16, param_4: u16) {
     let pu_var1: U32Ptr;
     let pu_var2: U32Ptr;
     let u_var3: u8;
@@ -5066,11 +5047,14 @@ pub fn pass1_1000_54a0(param_1: u32, param_2: u16, param_3: u16) -> u16 {
     return param_1 as u16;
 }
 
-
-pub fn pass1_1000_54e8(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
-                              param_6: u16)
-
-{
+pub fn pass1_1000_54e8(
+    param_1: U32Ptr,
+    param_2: u16,
+    param_3: i16,
+    param_4: i16,
+    param_5: i16,
+    param_6: u16,
+) {
     let i_var1: i16;
     let i_var2: i16;
     let u_stack14: u16;
@@ -5113,11 +5097,14 @@ pub fn pass1_1000_5512(
     return;
 }
 
-
-pub fn pass1_1000_5586(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16, param_5: i16,
-                              param_6: u16)
-
-{
+pub fn pass1_1000_5586(
+    param_1: U32Ptr,
+    param_2: u16,
+    param_3: i16,
+    param_4: i16,
+    param_5: i16,
+    param_6: u16,
+) {
     let i_var1: i16;
     let i_var2: i16;
     let u_stack14: u16;
@@ -5136,15 +5123,12 @@ pub fn pass1_1000_5586(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16
     return;
 }
 
-
 pub fn pass1_1000_55b1(
     ctx: &mut AppContext,
     param_1: i16,
     param_2: u16,
     param_3: u16,
-) -> &mut String
-
-{
+) -> &mut String {
     let string_6: &mut String;
     let mut string_2: String;
     let mut exit_reason: String;

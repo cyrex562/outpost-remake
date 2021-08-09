@@ -26,7 +26,7 @@ use crate::struct_ops::struct_1030::{struct_1030_11aa, struct_1030_17ce, struct_
 use crate::struct_ops::struct_1040::{struct_1040_a598, struct_1040_b082};
 use crate::switch_ops::switch_1008::switch_1008_72bc;
 use crate::switch_ops::switch_1020::switch_1020_c3b4;
-use crate::ui::ui_1038::send_dlg_item_msg_1038_8b58;
+
 use crate::ui::ui_1040::enable_win_1040_9234;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, read_string_from_addr, SUB42, ZEXT24};
 use crate::win_struct::{HWND16, SEGPTR};
@@ -8208,7 +8208,7 @@ pub fn pass1_1038_801a(param_1: u32,param_2: U32Ptr,param_3: i16,param_4: u16) -
   u_var1 = (pcVar5 >> 0x10) | pcVar5;
   u_var6 = pcVar5 & 0xffff | u_var1 << 0x10;
   if (pcVar5 != 0x0) {
-    pass1_1010_3770(puVar4,pcVar5,u_var1);
+    pass1_1010_3770(puVar4,&mut pcVar5,u_var1);
     u_var6 = pass1_1038_af40(ctx.PTR_LOOP_1050_5b7c,(u_var2 + 0x6),0x3,u_var1,u_var2,
                             0x1010,param_4);
   }
