@@ -95,12 +95,10 @@ pub fn win_help_op_1020_0ec4(param_1: U32Ptr, param_2: u16, param_3: u16)
     return;
   }
   if (true) {
-    switch(param_2) {
-    default:
+    match(param_2) {
+    _ =>
 //       TODO: goto switchD_1020_0feb_caseD_129;
-    0x12a =>
-      uVar8 = 0xf012;
-      break;
+    0x12a => { uVar8 = 0xf012; }
     0x12c =>
       uVar8 = 0xf020;
     }
@@ -1378,23 +1376,13 @@ win_sys_op_1020_493c
     if (false) {
       return;
     }
-    switch(param_2) {
-    0x69 =>
-      i_var4 = 0x0;
-      break;
-    0x6a =>
-      i_var4 = 0x1;
-      break;
-    0x6b =>
-      i_var4 = 0x2;
-      break;
-    0x6c =>
-      i_var4 = 0x3;
+    match(param_2) {
+    0x69 => { i_var4 = 0x0; }=> { i_var4 = 0x0; } = 0x1;=> { i_var4 = 0x0; }=> { i_var4 = 0x0; }=> { i_var4 = 0x0; } = 0x3;
       break;
     0x6d =>
       i_var4 = 0x4;
       break;
-    default:
+    _ =>
       return;
     0x77 =>
       if (((uVar9 + 0x10a) | (uVar9 + 0x108)) == 0x0) {
@@ -1465,11 +1453,11 @@ win_sys_op_1020_493c
       if (false) {
         return;
       }
-      switch(param_2) {
+      match(param_2) {
       0xf0 =>
         ui_op_1020_536e(param_1,0x0,-0x1,0x1,param_3);
         return;
-      default:
+      _ =>
         return;
       0xf6 =>
         if ((uVar9 + 0x116) != 0x0) {
@@ -1799,7 +1787,7 @@ win_sys_op_1020_493c
   if (false) {
     return;
   }
-  switch(param_2) {
+  match(param_2) {
   0x133 =>
     u_var6 = pass1_1020_64d4((uVar9 + 0xf6),0x3);
     if (u_var6 == 0x0) {
@@ -1855,7 +1843,7 @@ win_sys_op_1020_493c
     uVar18 = 0x5;
     u_var11 = 0x0;
     break;
-  default:
+  _ =>
 //     TODO: goto switchD_1020_518a_caseD_13a;
   0x13c =>
     u_var6 = pass1_1020_64d4((uVar9 + 0xf6),0x2);

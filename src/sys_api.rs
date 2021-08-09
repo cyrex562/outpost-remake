@@ -20,7 +20,6 @@ use crate::string::string_1008::str_op_1008_60e8;
 use crate::string::string_1010::{load_string_1010_847e, load_string_1010_84e0};
 use crate::string::string_1040::string_1040_8520;
 use crate::struct_ops::struct_1008::{set_struct_1008_574a, set_struct_op_1008_0536, struct_1008_4c58, struct_op_1008_3f92, struct_op_1008_48fe};
-use crate::switch_ops::switch_1010::switchD_1010;
 use crate::switch_ops::switch_1018::switch_1018_3b9e;
 use crate::ui::ui_1008::win_ui_reg_class_1008_96d2;
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42};
@@ -249,9 +248,8 @@ pub fn dos3_call_1000_23ea(param_1: u16, param_2: u16, param_3: i16, param_4: &m
     piVar14 = (uVar16 & 0xff00);
     bVar12 = bVar3 + 0xbf;
     piVar18 = (piVar14 | bVar12);
-    if (bVar3 < 0x41)
-    goto
-    LAB_1000_24a9;
+    if (bVar3 < 0x41){}
+    // goto     LAB_1000_24a9;
     pbVar1 = pbVar17;
     pbVar17 = pbVar17 + 0x1;
     *pbVar1 = bVar12 | bVar11 * '\x10';
@@ -359,7 +357,7 @@ pub fn mixed_dos3_call_1000_3636(param_1: u16, param_2: u16, param_3: u16, param
     let uVar9: u32;
 
     if (((param_1 < ctx.DAT_1050_5f8a) || (ctx.PTR_LOOP_1050_61ec == 0x0)) || (0x2 < param_1)) {
-        if ((ctx.PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0x0))
+        if ((ctx.PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0x0)) {}
 //     TODO: goto LAB_1000_36e3;
         if (param_4 == 0x0) {
             // goto

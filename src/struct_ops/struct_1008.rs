@@ -9,7 +9,7 @@ use crate::pass::pass_1000::{pass1_1000_3d7a, pass1_1000_4906};
 use crate::pass::pass_1000;
 use crate::pass::pass_1008::{pass1_1008_4016, pass1_1008_47cc, pass1_1008_4834, pass1_1008_5784, pass1_1008_5b12, pass1_1008_909c};
 use crate::pass::pass_1010::pass1_1010_1d80;
-use crate::pass::pass_1020::{pass1_1020_a43e, pass1_1020_a6ee, pass1_1020_bd80, string_op_1020_c222};
+use crate::pass::pass_1020::{pass1_1020_a43e, pass1_1020_a6ee, string_op_1020_c222};
 use crate::pass::pass_1028::{pass1_1028_dc52, pass1_1028_e4ec};
 use crate::pass::pass_1030::{pass1_1030_38f2, pass1_1030_4bbe};
 use crate::pass::pass_1038::load_string_1038_4d28;
@@ -1241,7 +1241,7 @@ pub fn pass1_1008_cac6(param_1: u32)
 
 pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
 {
-  plVar1: &i32;
+  let plVar1: &i32;
   let ppcVar2: u32;
   let bVar3: bool;
   let puVar4: u32;
@@ -1359,7 +1359,7 @@ pub fn pass1_1008_cbc4(param_1: u32,param_2: u32,param_3: u16)
 
 pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
 {
-  plVar1: &i32;
+  let plVar1: &i32;
   let pu_var2: u32;
   let ppc_var3: u32;
   let puVar4: u32;
@@ -1382,7 +1382,7 @@ pub fn pass1_1008_cda2(param_1: u32,param_2: u32,param_3: u16)
   let uVar16: u8;
   let puVar17: U32Ptr;
   let lStack50: i32;
-  u8 local_2e [0xa];
+  let local_2e: [u8;0xa];
   let uStack36: u16;
   let uStack34: u32;
   let uStack30: u32;
@@ -1815,7 +1815,7 @@ pub fn struct_1000_2cb0(param_1: &mut Struct_1000_2cb0, param_2: u16) {
         pass_1000::pass1_1000_16ee(ctx, &mut param_1.field_0x3, param_1 + 0x4, param_2);
         pu_var1 = param_1.field_0x5;
         pu_var1 = pu_var1 & 0xf7;
-        param_1.field_0x3 = Struct18{ field_0x0: 0, field_0x1: 0 };
+        param_1.field_0x3 = Struct18{ field_0x0: 0, field_0x1: 0, field_0x2: (), field_0x6: (), field_0x12: (), field_0x16: (), field_0x18: (), field_0x2a: (), field_0x8e: (), field_0x92: (), field_0x94: () };
         param_1.field_0x4 = 0x0;
         param_1.field_0x0 = 0x0;
         param_1.field_0x1 = 0x0;

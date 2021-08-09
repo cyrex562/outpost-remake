@@ -19,7 +19,7 @@ use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{read_vec_from_addr, struct_from_addr, read_string_from_rsrc, read_struct_from_addr};
+use crate::util::{read_vec_from_addr, read_string_from_rsrc, read_struct_from_addr};
 use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16, POINT16};
 use crate::winapi::{FillRect16, LoadCursor16};
 
@@ -282,7 +282,7 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     return;
 }
 
-pub unsafe fn unk_draw_op_1008_da12(
+pub fn unk_draw_op_1008_da12(
     ctx: &mut AppContext,
     struct_1: &mut Struct19,
     param_2: u16,

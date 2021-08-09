@@ -2779,7 +2779,7 @@ pub fn pass1_1028_3958(param_1: u32, param_2: i16, param_3: u16, param_4: i16, p
 //         iStack36 = 0x0;
 //         iVar7 = param_1;
 //         uVar8 = (param_1 >> 0x10);
-//         switch(uStack22) {
+//         match(uStack22) {
 //         0x4 =>
 //           uStack30 = local_28 >> 0x1;
 //           if ((uStack30 == 0x0) && (uStack20 != 0x0)) {

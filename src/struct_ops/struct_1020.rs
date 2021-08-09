@@ -47,7 +47,7 @@ pub fn struct_1020_2524(param_1: &mut Struct20,param_2: u16,param_3: u16,param_4
 pub fn struct_1020_3644(param_1: U32Ptr,param_2: u16,param_3: u32,param_4: u16)
 {
   let i_var2: &mut Struct272;
-  in_buf_len_5: i16;
+  let in_buf_len_5: i16;
   let i_var1: &mut Struct270;
   
   struct_1020_790e(param_1,0x0,param_2,param_3,param_4);
@@ -328,9 +328,8 @@ pub fn struct_1020_d954(param_1: U32Ptr)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 * 
-struct_1020_d99e(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: u32,param_5: u16,
-                param_6: u16)
+pub fn struct_1020_d99e(param_1: U32Ptr,param_2: u16,param_3: i16,param_4: u32,param_5: u16,
+                param_6: u16) -> u16
 
 {
   let unaff_DI: i16;

@@ -5,7 +5,6 @@ use crate::mem_1000::mem_op_1000_179c;
 use crate::pass::pass_1008::{pass1_1008_b9ce, pass1_1008_ec94};
 use crate::pass::pass_1010::{pass1_1010_2e02, pass1_1010_2e5c};
 use crate::pass::pass_1018::pass1_1018_4808;
-use crate::pass::pass_1020::pass1_1020_bd80;
 use crate::pass::pass_1028::pass1_1028_e1ec;
 use crate::pass::pass_1030::pass1_1030_1d7c;
 use crate::pass::pass_1038::{load_string_1038_4d28, pass1_1038_4e78};
@@ -99,8 +98,8 @@ pub fn load_str_and_sprintf_1008_b69c(param_1: &mut Struct25, param_2: U32Ptr, s
     let paVar6: &mut Struct26;
     let uVar7: u32;
     let iStack516: i16;
-    local_202: u8[0x100];
-    local_102: u8[0x100];
+    let local_202: [u8;0x100];
+    let local_102: [u8;0x100];
 
     string_1 = local_202;
     load_string_1010_84e0(
@@ -153,8 +152,8 @@ pub fn load_str_and_sprintf_1008_b78a(param_1: i32, param_2: U32Ptr, uparam_3: &
     let i_var4: i16;
     let u_var5: u16;
     let u_var6: u32;
-    local_206: u8[0x100];
-    local_106: u8[0x100];
+    let local_206: [u8;0x100];
+    let local_106: [u8;0x100];
     let i_stack6: i16;
     let uStack4: u16;
 
@@ -484,9 +483,8 @@ pub fn pass1_1008_eea6() -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-bool
-pass1_1008_eeac(param_1: u16,param_2: u16,param_3: u32,uparam_4: & mut String,param_5: i16,
-param_6: u16)
+pub fn pass1_1008_eeac(param_1: u16,param_2: u16,param_3: u32,uparam_4: & mut String,param_5: i16,
+param_6: u16) -> bool
 
 {
 let u_var1: u16; let cVar2: u8;

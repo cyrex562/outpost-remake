@@ -69,7 +69,7 @@ pub fn exit_1000_25cc(ctx: &mut AppContext, param_1: i16, param_2: u16, action: 
 // WARNING: Variable defined which should be unmapped: param_2
 // WARNING: Variable defined which should be unmapped: param_1
 
-pub unsafe fn exit_1000_25f2(
+pub fn exit_1000_25f2(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,

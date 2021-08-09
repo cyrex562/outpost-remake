@@ -7958,8 +7958,8 @@ pub fn pass1_1030_a57e(param_1: u32, param_2: U32Ptr, param_3: i16, param_4: i16
 //         iVar12 = (uVar19 + 0xc);
 //         if (0x5 < iVar12 - 0x7a) goto LAB_1030_a660;
 //         uVar17 = 0x1030;
-//         switch(iVar12) {
-//         default:
+//         match(iVar12) {
+//         _ =>
 //           iStack20 = local_1a + -0x1;
 //           piVar5 = &local_16;
 //           pass1_1030_ad86(u_var10,uVar14,CONCAT22(param_5,piVar5),u_var1,param_5,

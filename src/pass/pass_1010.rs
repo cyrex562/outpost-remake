@@ -60,7 +60,7 @@ use crate::ui::ui_1040::mov_update_win_1040_93aa;
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{HINSTANCE16, SEGPTR, WNDCLASS16};
 
-pub unsafe fn pass1_1010_0000(
+pub fn pass1_1010_0000(
     param_1: &mut Struct645,
     param_3: u16,
     param_4: u16,
@@ -4267,7 +4267,7 @@ pub fn pass1_1010_6cf8(
             send_msg_1010_7c9e(param_2, 0x12, param_4);
             return 0x1;
         }
-        // default:
+        // _ =>
         //     TODO: goto code_r0x1010703e;
         _ => {}
         0x4 => {

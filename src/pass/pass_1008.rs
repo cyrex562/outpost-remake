@@ -82,6 +82,10 @@ pub fn pass1_1008_0036(ctx: &mut AppContext, param_1: &mut Struct18, param_2: &m
         field_0x8e: 0,
         field_0x92: 0,
         field_0x94: 0,
+        field_0x12: (),
+        field_0x16: (),
+        field_0x18: (),
+        field_0x2a: (),
     };
 
     // u_var6 = (param_1 >> 0x10);
@@ -4926,7 +4930,7 @@ pub fn pass1_1008_e10c(
     let i_var1: i16;
     let iVar2: i16;
     let uVar3: u32;
-
+}
 
 pub fn
 pass1_1008_e10c(param_1: u32,param_2: u32,param_3: u32,param_4: i16,param_5: u16) -> i16

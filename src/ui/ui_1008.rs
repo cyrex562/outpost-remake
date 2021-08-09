@@ -1401,7 +1401,7 @@ pub fn win_sys_op_1008_84f2(param_1: u16, param_2: u16, param_3: i16, param_4: u
                 if (cVar8 == '\x02') {
                     fn_ptr_1000_17ce(ctx, paVar7, 0x1000);
                 } else {
-                    if (cVar8 != '\f') {
+                    if (cVar8 != '\x0c') {
                         if (cVar8 != '\x0f') {
                             // goto
                             // LAB_1008_8771;
@@ -1766,12 +1766,12 @@ param_6); return u_var6;
 ppcVar1 = ( * param_1 + 0x28); (* * ppcVar1)(param_6, uVar7, uVar8, param_2, param_3, CONCAT22(param_5, param_4));
 }
 else {
-param_6 = 0x1008; switch(param_5) {
+param_6 = 0x1008; match(param_5) {
 0x1 => break; 0x2 => ppcVar1 = ( *param_1 + 0x3c); ( * * ppcVar1)(0x1008, param_1); SetWindowLong16(0x1008,0x0, 0x0); BVar2 = IsWindow16(ctx.s_tile2_bmp_1050_1538); if (BVar2 != 0x0) {
 PostMessage16(ctx.s_tile2_bmp_1050_1538, msg, wparam,0x11100c7);
 }
 break; 0x3 => ppcVar1 = ( * param_1 + 0x54); ( * * ppcVar1)(0x8, uVar7, wparam, param_3, param_2);
-break; default:
+break; _ =>
 //       TODO: goto switchD_1008_9b30_caseD_4;
 0x5 => ppcVar1 = ( *param_1 + 0x58); ( * * ppcVar1)(0x8, uVar7, uVar8, param_3, param_2, param_4); break; 0x7 => ppcVar1 = ( * param_1 + 0x50); ( * *ppcVar1)(0x8, param_1, param_4);
 break; 0x8 => ppcVar1 = ( * param_1 + 0x74); ( * * ppcVar1)(0x8, param_1, param_4); break; 0xd =>
@@ -1922,7 +1922,7 @@ pub fn pass1_1008_a1f0(param_1: u16, param_2: u16, param_3: u8, param_4: u32, pa
     param_1 = 0x1008;
     uVar13 = ctx._PTR_LOOP_1050_14cc;
     u_var5 = (ctx.PTR_LOOP_1050_14cc >> 0x10);
-    switch((i_var9 + 0x4))
+    match((i_var9 + 0x4))
     {
         0x1 => load_string_1010_84e0(0x1010, uVar13, u_var5, 0x3ff, (uVar8 + 0xe), in_buf_len_5);
         *param_7 = 0xd1;
@@ -2240,7 +2240,7 @@ pub fn pass1_1008_aaa8(param_1: u16, param_2: u16, param_3: u16) -> u16
     let uStack4: u16;
 
     uStack4 = 0x0;
-    switch(param_3)
+    match(param_3)
     {
         0x1 => uStack4 = 0x24;
         break;
@@ -2301,7 +2301,7 @@ pub fn pass1_1008_ab80(param_1: u16, param_2: u16, param_3: u16) -> u16
 
     uStack4 = 0x0;
     if (true) {
-        switch(param_3)
+        match(param_3)
         {
             0x8 => uStack4 = 0x82;
             break;

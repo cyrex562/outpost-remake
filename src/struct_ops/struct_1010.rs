@@ -1,7 +1,7 @@
 use crate::defines::{Struct79, Struct648, Struct19, U32Ptr, Struct18};
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1008::{pass1_1008_3e94, pass1_1008_612e};
-use crate::util::{CONCAT22, CONCAT13, CONCAT12, struct_from_addr, CARRY2};
+use crate::util::{CONCAT22, CONCAT13, CONCAT12, CARRY2};
 use crate::pass::pass_1000::pass1_1000_4906;
 use crate::global::AppContext;
 use crate::mem_1000::mem_op_1000_179c;
@@ -207,7 +207,7 @@ pub fn set_struct_fields_1010_1d48(param_1: &mut Struct18, param_2: u16)
 }
 
 
-pub unsafe fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u16, unaff_di: i16, extraout_dx: u16) {
+pub fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u16, unaff_di: i16, extraout_dx: u16) {
     // let unaff_DI: i16;
     let paVar1: &mut Struct79;
     let pu_var2: U32Ptr;

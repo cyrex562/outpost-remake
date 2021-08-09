@@ -2202,7 +2202,7 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
 
     uStack6 = 0x0;
     iStack8 = 0x0;
-    switch(param_4._2_2_)
+    match(param_4._2_2_)
     {
         0x145 => GetDlgItem16(&ctx.PTR_LOOP_1050_1038, 0x146);
         u_var2 = EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
@@ -2282,7 +2282,7 @@ pub fn unk_win_ui_op_1038_d400(param_1: u8, param_2: u16, param_3: u16, param_4:
         hwnd = ctx.s_tile2_bmp_1050_1538;
         EnableWindow16(ctx.s_tile2_bmp_1050_1538, 0x1);
         break;
-        default: post_win_msg_1040_7b3c(CONCAT22(param_2, CONCAT11(in_stack_00000005, param_1)), param_3,
+        _ => post_win_msg_1040_7b3c(CONCAT22(param_2, CONCAT11(in_stack_00000005, param_1)), param_3,
             param_4, param_4._2_2_, &ctx.PTR_LOOP_1050_1040);
         return;
     }
@@ -3193,7 +3193,7 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
 
     i_stack4 = 0x8;
     i_stack6 = 0x0;
-    switch(param_4._2_2_)
+    match(param_4._2_2_)
     {
         0x167 => enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &ctx.PTR_LOOP_1050_1040, param_6);
         GetDlgItem16(&ctx.PTR_LOOP_1050_1040, 0x16b);
@@ -3289,7 +3289,7 @@ pub fn win_ui_op_1040_0170(param_1: i16, param_2: u16, param_3: u16, param_4: u3
         DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
         local_12a[0] = &ULONG_1008_389a;
 //     TODO: goto LAB_1040_04da;
-        default: post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_,
+        _ => post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_,
         param_5);
         return;
     }

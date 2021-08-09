@@ -352,7 +352,7 @@ pub fn mixed_1010_20ba(
       // LAB_1010_2126
       struct_1008_9fd2(struct_ref_1, param_4, param_2);
       // break;
-      // default:
+      // _ =>
 //     TODO: // goto switchD_1010_2765_caseD_38;
 }
   0x39 => {

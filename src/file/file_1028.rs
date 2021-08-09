@@ -527,7 +527,7 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
             (uVar7 + 0xa6) = u_var5;
             return;
         }
-        // default:
+        // _ =>
 //     TODO: goto switchD_1028_ba97_caseD_6;
         0x9 => {
             puVar4 = pu_var3;
