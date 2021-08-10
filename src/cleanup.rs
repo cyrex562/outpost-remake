@@ -1,4 +1,4 @@
-use crate::defines::{Struct11, Struct18, Struct27, Struct28, Struct29, Struct30, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr};
+use crate::defines::{Struct1, Struct11, Struct18, Struct27, Struct28, Struct29, Struct3, Struct30, Struct34, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr, Struct31};
 use crate::draw::draw_1020::invalidate_rect_1020_735a;
 use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
@@ -21,7 +21,7 @@ use crate::ui::ui_1040::{
 };
 use crate::util::{CONCAT22, read_struct_from_addr};
 use crate::win_struct::{HDC16, HGDIOBJ16, HICON16, HMENU16, HWND16, LPARAM, PAINTSTRUCT16, RECT16, WNDCLASS16};
-use crate::winapi::{BeginPaint16, DeleteDC16, DeleteObject16, DestroyCursor16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EndPaint16, GetClientRect16, GetDlgItem16, GetWindowWord16, InvalidateRect16, IsWindow16, PostMessage16, RemoveProp16, SelectObject16, SelectPalette16, WinHelp16};
+use crate::winapi::{BeginPaint16, DeleteDC16, DeleteObject16, DestroyCursor16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EndPaint16, GetClientRect16, GetDlgItem16, GetWindowWord16, InvalidateRect16, IsDlgButtonChecked, IsWindow16, PostMessage16, RemoveProp16, SelectObject16, SelectPalette16, SendMessage16, ShowWindow16, WinHelp16};
 
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
@@ -722,7 +722,7 @@ pub fn unk_destroy_win_op_1020_694c(
     return u_var2;
 }
 
-pub fn destroy_icon_1020_6bd2(param_1: u32, param_2: u8, param_3: HICON16) {
+pub fn destroy_icon_1020_6bd2(ctx: &mut AppContext, param_1: u32, param_2: u8, param_3: HICON16) {
     let pu_var1: u32;
     let u_var2: u16;
     let ppc_var3: u32;
@@ -767,7 +767,7 @@ pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: &mut Struct3, in_menu_handle_2:
     return;
 }
 
-pub fn destroy_window_1020_8250(param_1: u32, param_2: HWND16) {
+pub fn destroy_window_1020_8250(ctx: &mut AppContext, param_1: u32, param_2: HWND16) {
     let b_var1: bool;
     let u_var2: u16;
 
@@ -797,18 +797,18 @@ pub fn destroy_window_1038_a072(param_1: u16, param_2: u16, param_3: i16, param_
     return;
 }
 
-pub fn destroy_win_1038_a3d2(param_1: i32, param_2: HWND16) {
+pub fn destroy_win_1038_a3d2(ctx: &mut AppContext, param_1: i32, param_2: HWND16) {
     GetWindowWord16(param_2, -0x8);
     PostMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x1110105);
     destroy_win_1040_7b98(param_1, &ctx.PTR_LOOP_1050_1040);
     return;
 }
 
-pub fn destroy_window_1038_cc00(param_1: i16, param_2: u16, param_3: u16, param_4: i32) {
+pub fn destroy_window_1038_cc00(ctx: &mut AppContext, param_1: i16, param_2: u16, param_3: u16, param_4: i32) {
     let u_var1: u16;
     let in_DX: U32Ptr;
     let unaff_DI: i16;
-    WNDCLASS16 * unaff_SS;
+    let unaff_SS: &mut WNDCLASS16;
     let i_var2: i16;
 
     u_var1 = param_4._2_2_ - 0x1cd;
@@ -857,7 +857,7 @@ pub fn destroy_window_1038_cc00(param_1: i16, param_2: u16, param_3: u16, param_
     return;
 }
 
-pub fn destroy_window_1038_cd88(param_1: &mut Struct1) {
+pub fn destroy_window_1038_cd88(ctx: &mut AppContext, param_1: &mut Struct1) {
     let unaff_SS: u16;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
@@ -869,7 +869,7 @@ pub fn destroy_window_1038_cd88(param_1: &mut Struct1) {
     return;
 }
 
-pub fn destroy_win_1038_e1dc(param_1: u16, param_2: u16, param_3: i16, param_4: &mut HWND16) {
+pub fn destroy_win_1038_e1dc(ctx: &mut AppContext, aram_1: u16, param_2: u16, param_3: i16, param_4: &mut HWND16) {
     let uvar1: u16;
     let lparam: LPARAM;
 
@@ -910,7 +910,7 @@ pub fn destroy_win_1038_ef3a(ctx: &mut AppContext, param_1: &mut Struct31, param
     return;
 }
 
-pub fn destroy_win_1040_5256(param_1: &mut Struct34, param_2: HWND16) {
+pub fn destroy_win_1040_5256(ctx: &mut AppContext, param_1: &mut Struct34, param_2: HWND16) {
     let pUVar1: &mut u32;
     let u_var2: u16;
     let ppc_var3: u32;

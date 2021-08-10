@@ -97,7 +97,7 @@ pub fn win_ui_op_1040_07dc(
     let pu_var8: u32;
     let u_var9: u8;
     let u_var10: u8;
-    let su_stack2060: u32;
+    let u_stack2060: u32;
     let mut local_806: String = String::new();
     let local_406: [u32; 0x100] = [0; 0x100];
     let u_stack6: u32;
