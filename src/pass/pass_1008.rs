@@ -115,7 +115,7 @@ pub fn pass1_1008_0036(ctx: &mut AppContext, param_1: &mut Struct18, param_2: &m
     struct_1 = read_struct_from_addr::<Struct18>(ctx._PTR_LOOP_1050_14cc);
     if ctx.PTR_LOOP_1050_14cc != 0x0 {
         pass1_1010_7efc(ctx.PTR_LOOP_1050_14cc, 0x1010);
-        *aram_2 = 0x1000;
+        param_2 = 0x1000;
         fn_ptr_1000_17ce(ctx, &mut struct_1, 0x1000);
     }
     struct_1 = read_struct_from_addr::<Struct18>(ctx._PTR_LOOP_1050_5b7c);
@@ -712,6 +712,8 @@ pub fn pass_1008_3d44(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     }
     return param_1;
 }
+
+pub fn pass1_1008_3e0e(param_1: i32) {}
 
 pub fn pass1_1008_3e54(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16) -> u16 {
     let u_var1: u16;

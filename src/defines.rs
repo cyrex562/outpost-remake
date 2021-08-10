@@ -66,6 +66,24 @@ pub struct Struct18 {
     pub field_0x94: u16
 }
 
+impl Struct18 {
+    pub fn new() -> Struct18 {
+        Struct18 {
+            field_0x0: 0,
+            field_0x1: 0,
+            field_0x2: 0,
+            field_0x6: 0,
+            field_0x12: 0,
+            field_0x16: 0,
+            field_0x18: 0,
+            field_0x2a: 0,
+            field_0x8e: 0,
+            field_0x92: 0,
+            field_0x94: 0,
+        }
+    }
+}
+
 pub struct Struct10 {
 
 }

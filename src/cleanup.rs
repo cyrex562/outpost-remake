@@ -4,7 +4,7 @@ use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
 use crate::fn_ptr::util::get_fn_ptr_2;
 use crate::global::AppContext;
-use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_b544, pass1_1008_eb74};
+use crate::pass::pass_1008::{pass1_1008_3e0e, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_b544, pass1_1008_eb74};
 use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2ee2, pass1_1010_32c0, pass1_1010_32da};
 use crate::pass::pass_1018::{
     pass1_1018_2d9a, pass1_1018_2dde, pass1_1018_2e28, pass1_1018_31d0, pass1_1020_022c,
@@ -640,7 +640,7 @@ pub fn unk_destroy_win_op_1020_694c(
                 paVar5 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x1f8, param_4);
                 u_var2 = WinHelp16(
                     0x1010,
-                    (s_New_failed_in_Op__Op_1050_0020 + 0x9),
+                    (ctx.s_New_failed_in_Op__Op_1050_0020 + 0x9),
                     0x0,
                     CONCAT22(paVar5, 0x1),
                 );
