@@ -2035,7 +2035,7 @@ pub unsafe fn pass1_1000_2b3c(
     return;
 }
 
-pub unsafe fn pass1_1000_2b5c(
+pub fn pass1_1000_2b5c(
     ctx: &mut AppContext,
     param_1: &mut Struct_1000_2cb0,
     param_2: u16,
@@ -2192,11 +2192,7 @@ pub fn pass1_1000_2d34(
     return 0;
 }
 
-pub unsafe fn pass1_1000_2e74(
-    ctx: &mut AppContext,
-    param_1: &mut Struct_1000_2cb0,
-    param_2: u16,
-) -> u16 {
+pub fn pass1_1000_2e74(ctx: &mut AppContext, param_1: &mut Struct_1000_2cb0, param_2: u16) -> u16 {
     let pu_var1: U32Ptr;
     let u_var2: U32Ptr;
     let u_var3: u16;
