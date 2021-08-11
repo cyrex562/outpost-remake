@@ -1,11 +1,17 @@
-use crate::defines::{Struct1, Struct11, Struct18, Struct27, Struct28, Struct29, Struct3, Struct30, Struct34, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr, Struct31};
+use crate::defines::{Struct1, Struct11, Struct18, Struct27, Struct28, Struct29, Struct3, Struct30, Struct31, Struct34, Struct35, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr};
 use crate::draw::draw_1020::invalidate_rect_1020_735a;
 use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
 use crate::fn_ptr::util::get_fn_ptr_2;
 use crate::global::AppContext;
-use crate::pass::pass_1008::{pass1_1008_3e0e, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_b544, pass1_1008_eb74};
-use crate::pass::pass_1010::{pass1_1010_1d80, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2ee2, pass1_1010_32c0, pass1_1010_32da};
+use crate::pass::pass_1008::{
+    pass1_1008_3e0e, pass1_1008_5784, pass1_1008_57c4, pass1_1008_5b12, pass1_1008_b544,
+    pass1_1008_eb74,
+};
+use crate::pass::pass_1010::{
+    pass1_1010_1d80, pass1_1010_1dda, pass1_1010_1ea6, pass1_1010_1f62, pass1_1010_2ee2,
+    pass1_1010_32c0, pass1_1010_32da,
+};
 use crate::pass::pass_1018::{
     pass1_1018_2d9a, pass1_1018_2dde, pass1_1018_2e28, pass1_1018_31d0, pass1_1020_022c,
 };
@@ -19,9 +25,16 @@ use crate::ui::ui_1020::{post_win_msg_1020_1ca4, win_ui_fn_1020_6e98};
 use crate::ui::ui_1040::{
     dialog_ui_fn_1040_78e2, mov_update_win_1040_93aa, move_win_1040_826c, post_win_msg_1040_7b3c,
 };
-use crate::util::{CONCAT22, read_struct_from_addr};
-use crate::win_struct::{HDC16, HGDIOBJ16, HICON16, HMENU16, HWND16, LPARAM, PAINTSTRUCT16, RECT16, WNDCLASS16};
-use crate::winapi::{BeginPaint16, DeleteDC16, DeleteObject16, DestroyCursor16, DestroyIcon16, DestroyMenu16, DestroyWindow16, EndPaint16, GetClientRect16, GetDlgItem16, GetWindowWord16, InvalidateRect16, IsDlgButtonChecked, IsWindow16, PostMessage16, RemoveProp16, SelectObject16, SelectPalette16, SendMessage16, ShowWindow16, WinHelp16};
+use crate::util::{read_struct_from_addr, CONCAT22};
+use crate::win_struct::{
+    HDC16, HGDIOBJ16, HICON16, HMENU16, HWND16, LPARAM, PAINTSTRUCT16, RECT16, WNDCLASS16,
+};
+use crate::winapi::{
+    BeginPaint16, DeleteDC16, DeleteObject16, DestroyCursor16, DestroyIcon16, DestroyMenu16,
+    DestroyWindow16, EndPaint16, GetClientRect16, GetDlgItem16, GetWindowWord16, InvalidateRect16,
+    IsDlgButtonChecked, IsWindow16, PostMessage16, RemoveProp16, SelectObject16, SelectPalette16,
+    SendMessage16, ShowWindow16, WinHelp16,
+};
 
 pub fn cleanup_ui_op_1008_0618(
     ctx: &mut AppContext,
@@ -556,7 +569,12 @@ pub fn cleanup_win_ui_1020_2fea(
     return;
 }
 
-pub fn destroy_window_1020_3b3e(ctx: &mut AppContext, param_1: &mut Struct30, param_2: HWND16, unaff_ss: u16) {
+pub fn destroy_window_1020_3b3e(
+    ctx: &mut AppContext,
+    param_1: &mut Struct30,
+    param_2: HWND16,
+    unaff_ss: u16,
+) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u16;
@@ -804,7 +822,13 @@ pub fn destroy_win_1038_a3d2(ctx: &mut AppContext, param_1: i32, param_2: HWND16
     return;
 }
 
-pub fn destroy_window_1038_cc00(ctx: &mut AppContext, param_1: i16, param_2: u16, param_3: u16, param_4: i32) {
+pub fn destroy_window_1038_cc00(
+    ctx: &mut AppContext,
+    param_1: i16,
+    param_2: u16,
+    param_3: u16,
+    param_4: i32,
+) {
     let u_var1: u16;
     let in_DX: U32Ptr;
     let unaff_DI: i16;
@@ -869,7 +893,13 @@ pub fn destroy_window_1038_cd88(ctx: &mut AppContext, param_1: &mut Struct1) {
     return;
 }
 
-pub fn destroy_win_1038_e1dc(ctx: &mut AppContext, aram_1: u16, param_2: u16, param_3: i16, param_4: &mut HWND16) {
+pub fn destroy_win_1038_e1dc(
+    ctx: &mut AppContext,
+    aram_1: u16,
+    param_2: u16,
+    param_3: i16,
+    param_4: &mut HWND16,
+) {
     let uvar1: u16;
     let lparam: LPARAM;
 
@@ -910,23 +940,27 @@ pub fn destroy_win_1038_ef3a(ctx: &mut AppContext, param_1: &mut Struct31, param
     return;
 }
 
-pub fn destroy_win_1040_5256(ctx: &mut AppContext, param_1: &mut Struct34, param_2: HWND16) {
+pub fn destroy_win_1040_5256(
+    ctx: &mut AppContext,
+    param_1: &mut Struct34,
+    window_handle_2: HWND16,
+) {
     let pUVar1: &mut u32;
     let u_var2: u16;
-    let ppc_var3: u32;
-    let Bvar4: bool;
+    let func_ptr_1: u32;
+    // let Bvar4: bool;
     let iVar5: &mut Struct34;
     let u_var5: u16;
-    let HVar6: HWND16;
+    let window_handle_1: HWND16;
 
     // u_var5 = (param_1 >> 0x10);
     iVar5 = param_1;
-    HVar6 = param_2;
-    if (iVar5.field_0xb6 != 0x0) {
-        HVar6 = ctx.s_tile2_bmp_1050_1538;
-        BVar4 = IsWindow16(param_2);
-        if (BVar4 != 0x0) {
-            HVar6 = ctx.s_tile2_bmp_1050_1538;
+    window_handle_1 = window_handle_2;
+    if iVar5.field_0xb6 != 0x0 {
+        window_handle_1 = ctx.s_tile2_bmp_1050_1538;
+        let is_window = IsWindow16(window_handle_2);
+        if is_window {
+            window_handle_1 = ctx.s_tile2_bmp_1050_1538;
             DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
         }
     }
@@ -934,8 +968,8 @@ pub fn destroy_win_1040_5256(ctx: &mut AppContext, param_1: &mut Struct34, param
     pUVar1 = iVar5.field_0x94;
     u_var2 = iVar5.field_0x96;
     if ((u_var2 | pUVar1) != 0x0) {
-        ppc_var3 = *pUVar1;
-        (**ppc_var3)(HVar6, pUVar1, u_var2, 0x1);
+        func_ptr_1 = *pUVar1;
+        (**func_ptr_1)(window_handle_1, pUVar1, u_var2, 0x1);
     }
     iVar5.field_0x94 = 0x0;
     iVar5.field_0x98 = 0x0;
@@ -949,7 +983,7 @@ pub fn destroy_win_1040_7b98(param_1: i32, param_2: HWND16) {
     return;
 }
 
-pub fn destroy_win_1040_8212(param_1: i32, param_2: HWND16) {
+pub fn destroy_win_1040_8212(ctx: &mut AppContext, param_1: i32, param_2: HWND16) {
     let is_window: bool;
     let u_var1: u16;
 
@@ -980,11 +1014,11 @@ pub fn destroy_window_1040_b726(param_1: U32Ptr, param_2: i16, in_win_handle_3: 
     return;
 }
 
-pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
+pub fn destroy_win_1040_bb78(ctx: &mut AppContext, param_1: &mut Struct35, param_2: HWND16) {
     let pu_var1: u32;
     let u_var2: u16;
     let ppc_var3: u32;
-    let Bvar4: bool;
+    let is_window: bool;
     let iVar5: &mut Struct35;
     let u_var5: u16;
     let HVar6: HWND16;
@@ -994,8 +1028,8 @@ pub fn destroy_win_1040_bb78(param_1: &mut Struct35, param_2: HWND16) {
     HVar6 = param_2;
     if (iVar5.field_0xb6 != 0x0) {
         HVar6 = ctx.s_tile2_bmp_1050_1538;
-        BVar4 = IsWindow16(param_2);
-        if (BVar4 != 0x0) {
+        is_window = IsWindow16(param_2);
+        if (is_window != false) {
             HVar6 = ctx.s_tile2_bmp_1050_1538;
             DestroyWindow16(ctx.s_tile2_bmp_1050_1538);
         }

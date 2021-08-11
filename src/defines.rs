@@ -360,3 +360,5 @@ pub struct Struct3 {}
 pub struct Struct34 {}
 
 pub struct Struct31 {}
+
+pub struct Struct35 {}
