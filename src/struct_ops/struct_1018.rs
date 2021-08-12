@@ -20,8 +20,8 @@ pub fn struct_1018_0570(param_1: &mut Struct55, param_2: u16, param_3: u16) {
     uVar9.field_0x22 = 0x1008;
     uVar9.field_0x24 = 0x0;
     uVar9.field_0x2c = 0x0;
-    pass1_1008_3e38((param_1 & 0xffff0000 | &uVar9.field_0x30));
-    puVar7 = pass1_1008_3e38((param_1 & 0xffff0000 | &uVar9.field_0x36));
+    clear_struct_1008_3e38((param_1 & 0xffff0000 | &uVar9.field_0x30));
+    puVar7 = clear_struct_1008_3e38((param_1 & 0xffff0000 | &uVar9.field_0x36));
     // pu_var5 = (puVar7 >> 0x10);
     uVar9.field_0x3c = 0x0;
     pass1_1008_6c90((param_1 & 0xffff0000 | &uVar9.field_0x40));
