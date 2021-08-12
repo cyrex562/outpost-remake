@@ -1,11 +1,13 @@
-use crate::defines::{Struct18, Struct19, Struct_1010_4e08, U32Ptr};
+use crate::defines::{Struct18, Struct19, Struct4, Struct5, Struct_1010_4e08, U32Ptr};
 use crate::file::file_1008::read_file_1008_7dee;
 use crate::file::write::write_to_file_1008_7e1c;
 use crate::global::AppContext;
 use crate::pass::pass_1018::pass1_1018_4dce;
 use crate::struct_ops::struct_1018::struct_op_1018_4cda;
 use crate::sys_api::sys_1000_3f9c;
-use crate::util::{CARRY1, CONCAT11, SBORROW2, read_string_from_addr, read_struct_from_addr, write_string_to_addr};
+use crate::util::{
+    read_string_from_addr, read_struct_from_addr, write_string_to_addr, CARRY1, CONCAT11, SBORROW2,
+};
 use crate::win_struct::{HPEN16, WNDCLASS16};
 use crate::winapi::{swi, CreatePen16, GetStockObject16, WritePrivateProfileString16};
 use crate::{
@@ -30,7 +32,7 @@ use crate::{
     },
 };
 
-pub unsafe fn draw_fn_1010_2a32(
+pub fn draw_fn_1010_2a32(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,
@@ -51,6 +53,8 @@ pub unsafe fn draw_fn_1010_2a32(
     in_stack_0000ffde: u16,
     stack0xffec: u16,
     extraout_DX_00: u16,
+    extraout_DX_01: u16,
+    extraout_DX_02: u16,
     stack0xfffa: u16,
     stack0xffde: u16,
 ) -> u16 {
@@ -594,7 +598,7 @@ pub unsafe fn draw_op_1010_47d0(
     let mut u_var10 = 0x1;
     let mut pen_handle = CreatePen16(in_style_3, -0x2805, 0x77);
     let mut uVar8 = 0x5;
-    let mut stock_obj_handle = GetStockObject16(s_tile2_bmp_1050_1538);
+    let mut stock_obj_handle = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
     let mut local_e = 0x0;
     let mut uStack12 = 0x0;
     let mut uStack10 = 0x1;
@@ -673,45 +677,46 @@ pub unsafe fn draw_op_1010_47d0(
 }
 
 pub fn pt_in_rect_1010_4e08(
+    ctx: &mut AppContext, 
     param_1: &mut Struct_1010_4e08,
     point: &POINT16,
     mut rect: &mut RECT16,
 ) {
-    let pi_var1: U32Ptr;
-    let bVar2: bool;
+    let var1: U32Ptr;
+    let var2: bool;
     let b_result: bool;
-    let i_var4: i16;
-    let u_var5: u16;
-    let iStack12: i16;
-    let uStack10: i16;
-    let PStack8: i16;
+    let var4: i16;
+    let var5: u16;
+    let var12: i16;
+    let var10: i16;
+    let var8: i16;
 
     // u_var5 = (param_1 >> 0x10);
     let mut i_var4 = param_1;
     (i_var4.field_0x22) = (i_var4.field_0x20);
-    bVar2 = false;
+    var2 = false;
     (i_var4.field_0x24) = 0x0;
-    iStack12 = 0x0;
-    iStack10 = 0x0;
+    let var12 = 0x0;
+    let mut iStack10 = 0x0;
     loop {
-        pi_var1 = (i_var4.field_0x30) as u32;
-        if *pi_var1 == iStack12 || *pi_var1 < iStack12 {
+        let var1 = (i_var4.field_0x30) as u32;
+        if *var1 == var12 || *var1 < var12 {
             //LAB_1010_4e67:
             if iStack10 != 0x0 {
                 (i_var4.field_0x20) = iStack10;
             }
-            if bVar2 {
+            if var2 {
                 return;
             }
             return;
         }
-        b_result = PtInRect16(rect, point);
+        let b_result = PtInRect16(rect, point);
         if b_result != false {
-            iStack10 = iStack12;
-            bVar2 = true;
+            iStack10 = var12;
+            var2 = true;
             //       TODO: goto LAB_1010_4e67;
         }
-        iStack12 += 0x1;
+        var12 += 0x1;
         rect = read_struct_from_addr::<RECT16>(ctx.s_tile2_bmp_1050_1538);
     }
 }

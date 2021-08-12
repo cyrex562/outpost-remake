@@ -1,19 +1,7 @@
-use crate::{
-    cleanup::unk_destroy_window_op_1018_6bb6,
-    global::AppContext,
-    mixed::mixed_1010_20ba,
-    pass::{pass_1008::pass1_1008_3e54, pass_1018::pass1_1018_659a},
-    ui::{
+use crate::{cleanup::unk_destroy_window_op_1018_6bb6, defines::{Struct58, Struct76, Struct8, Struct9, U32Ptr}, global::AppContext, mixed::mixed_1010_20ba, pass::{pass_1008::{pass1_1008_3e54, pass1_1008_3e94, pass1_1008_43cc, pass1_1008_4480, pass1_1008_4772, pass1_1008_5236, pass1_1008_9f48}, pass_1010::pass1_1010_4c2c, pass_1018::{pass1_1018_1eda, pass1_1018_659a}}, ui::{
         ui_1008::{win_1008_5c5c, win_1008_5c9e},
         ui_1018::mix_ui_op_1018_6adc,
-    },
-    util::{CONCAT22, SUB42},
-    win_struct::{COLORREF, HDC16, HWND16, PAINTSTRUCT16, RECT16},
-    winapi::{
-        BeginPaint16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16,
-        InvalidateRect16, PostMessage16, SelectPalette16, SetBkColor16, SetTextColor16,
-    },
-};
+    }, util::{CONCAT22, SUB42}, win_struct::{COLORREF, HBRUSH16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, RECT16}, winapi::{BeginPaint16, CreateDC16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16, GetDC16, InvalidateRect16, PostMessage16, PtInRect16, SelectPalette16, SetBkColor16, SetTextColor16}};
 
 pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
     let pi_var1: U32Ptr;
@@ -61,7 +49,7 @@ pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u
         i_stack6 = local_a + 0xc;
         local_8 += local_14 + -0x6;
         i_stack4 = local_8 + 0xc;
-        BVar4 = PtInRect16(0x1008, p_stack24);
+        let BVar4 = PtInRect16(0x1008, p_stack24);
         if (BVar4 != 0x0) {
             break;
         }
@@ -83,6 +71,7 @@ pub fn get_dc_1018_4db0(param_1: i32, param_2: u16, param_3: HWND16) {
 }
 
 pub fn create_dc_1018_4e04(
+    ctx: &mut AppContext,
     param_1: &mut Struct8,
     param_2: u16,
     param_3: i16,
@@ -103,7 +92,7 @@ pub fn create_dc_1018_4e04(
     (**ppc_var1)();
     u_var4 = pass1_1008_4772(i_var4.field_0xa);
     pass1_1008_43cc(i_var4.field_0xa);
-    pa_var2 = CreateDC16(0x1008, u_var4, (u_var4 >> 0x10), 0x0);
+    pa_var2 = CreateDC16(0x1008, u_var4, u_var4 >> 0x10, 0x0);
     i_var4.field_0x12 = pa_var2;
     pa_var2 = &i_var4.field_0x12;
     ppc_var1 = (*i_var4.field_0xa + 0x8);
@@ -201,7 +190,7 @@ pub fn misc_draw_op_1018_5d6c(param_1: u32, param_2: HWND16) {
     return;
 }
 
-pub unsafe fn unk_draw_op_1018_623e(param_1: u32, param_2: HWND16, param_3: u16) {
+pub unsafe fn unk_draw_op_1018_623e(param_1: u32, param_2: HWND16, param_3: u16, stack0xfffe: u16) {
     let pi_var1: U32Ptr;
     let ppcVar2: u32;
     let u_var3: u32;

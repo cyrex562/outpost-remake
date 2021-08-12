@@ -364,3 +364,13 @@ pub struct Struct31 {}
 pub struct Struct35 {}
 
 pub struct Struct23 {}
+
+pub struct Struct5 {}
+
+pub struct Struct4 {}
+
+pub struct Struct8 {}
+
+pub struct Struct9 {}
+
+pub struct Struct58 {}

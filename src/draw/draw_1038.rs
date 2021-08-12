@@ -10,7 +10,7 @@ use crate::pass::pass_1000::pass1_1000_5586;
 use crate::mem_1000::mem_op_1000_179c;
 use crate::struct_ops::struct_1040::struct_1040_a598;
 use crate::mixed::mixed_1010_20ba;
-use crate::defines::{Struct20, Struct18, Struct10, Struct19};
+use crate::defines::{Struct10, Struct18, Struct19, Struct20, U32Ptr};
 use crate::global::AppContext;
 
 pub unsafe fn draw_op_1038_92f6(
@@ -112,7 +112,7 @@ pub unsafe fn draw_op_1038_92f6(
                 draw_fn_1010_2a32(0x94be, ctx.s_tile2_bmp_1050_1538, u_var1,
                                   (u_var1 >> 0x10), ustack22,
                                   CONCAT22(u_var8, (i_var4 * 0xe + 0x5a72)),
-                                  in_dx, param_1, &stack0xfffe, param_2);
+                                  in_dx, &mut param_1, &stack0xfffe, param_2);
             }
         }
     }

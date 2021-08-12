@@ -75,7 +75,7 @@ pub fn fill_rect_1008_62c0(ctx: &mut AppContext, win_handle: HWND16) {
     let mut rect: RECT16;
     let mut paint: PAINTSTRUCT16;
 
-    let hstack36 = BeginPaint16(win_handle, &mut paint);
+    let disp_dev_handle = BeginPaint16(win_handle, &mut paint);
     let brush = CreateSolidBrush16(ctx.s_tile2_bmp_1050_1538 as COLORREF);
     GetClientRect16(ctx.s_tile2_bmp_1050_1538 as HDC16, &mut rect);
     FillRect16(ctx.s_tile2_bmp_1050_1538 as HDC16, &rect, brush);
@@ -90,7 +90,7 @@ pub fn unk_draw_op_1008_7f62(
     param_2: u16,
     param_3: i32,
     param_4: &mut WNDCLASS16,
-) -> *mut Struct20 {
+) -> Struct20 {
     let HVar1: HGDIOBJ16;
     let HVar2: HCURSOR16;
     let u_var4: &mut Struct20;

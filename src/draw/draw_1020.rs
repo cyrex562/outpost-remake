@@ -8,6 +8,7 @@ use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1008::{pass1_1008_3e76, pass1_1008_3e94, pass1_1008_41bc, pass1_1008_4480, pass1_1008_4772, pass1_1008_5118, pass1_1008_57a4, pass1_1008_5b12, pass1_1008_8b20, pass1_1008_941a};
 use crate::pass::pass_1010::{pass1_1010_1ea6, pass1_1010_375e, pass1_1010_3770, pass1_1010_454a, pass1_1010_4c2c, pass1_1010_4dc8, pass1_1010_4df0, pass1_1010_ecc6};
 use crate::pass::pass_1018::{pass1_1018_017c, pass1_1018_0a50, pass1_1018_0a76, pass1_1018_0d9a, pass1_1018_1054, pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c, pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0};
+use crate::pass::pass_1020::pass1_1020_64d4;
 use crate::pass::pass_1030::pass1_1030_8308;
 use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;

@@ -25,7 +25,7 @@ use crate::{
     win_struct::{HFILE16, SEGPTR},
 };
 
-pub fn close_file_1008_496c(param_1: &mut Struct_1008_496c) {
+pub fn close_file_1008_496c(ctx: &mut AppContext, param_1: &mut Struct_1008_496c) {
     let pu_var1: u32;
     let u_var2: u16;
     let mut u_var3: &mut Struct18;
@@ -911,7 +911,7 @@ pub fn write_to_file_1008_7cac(param_1: u32, param_2: u16) -> bool {
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn read_file_1008_7cfe(param_1: u32, param_3: u16, param_4: u16, param_5: u16) {
+pub fn read_file_1008_7cfe(ctx: &mut AppContext, param_1: u32, param_3: u16, param_4: u16, param_5: u16) {
     let bVar1: bool;
     let u_var2: u16;
     let in_AF: u8;
@@ -927,7 +927,7 @@ pub fn read_file_1008_7cfe(param_1: u32, param_3: u16, param_4: u16, param_5: u1
     loop {
         _llseek16(param_4, uStack6 << 0x10, (uStack6 >> 0x10));
         param_4 = ctx.s_tile2_bmp_1050_1538;
-        lVar3 = WIN16_hread(s_tile2_bmp_1050_1538, 0x400, ZEXT24(local_406) << 0x10);
+        lVar3 = WIN16_hread(ctx.s_tile2_bmp_1050_1538, 0x400, local_406 << 0x10);
         // TODO: refactor for loop
         // for (uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 += 0x1) {
         //   if (local_406[uStack1040] == *_PTR_s_dcbSC_1050_0336_1050_033c) {

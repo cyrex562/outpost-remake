@@ -275,7 +275,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14, in_win_handle_2: HWND16, pa
     let handle_00: HGDIOBJ16;
     let rect: *mut RECT16;
     let handle_01: HANDLE16;
-    let mut str: String;
+    let mut str_a: String;
     let i_var4: &mut Struct14;
     let mut count: String;
     let mut str_00: String;
@@ -340,9 +340,9 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14, in_win_handle_2: HWND16, pa
                     }
                     SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
                     SetTextColor16(ctx.s_tile2_bmp_1050_1538, color);
-                    str = lstrlen16(ctx.s_tile2_bmp_1050_1538);
-                    DVar5 = GetTextExtent16(ctx.s_tile2_bmp_1050_1538, str, count);
-                    TextOut16(ctx.s_tile2_bmp_1050_1538, str, count, str_00,
+                    let str_a = lstrlen16(ctx.s_tile2_bmp_1050_1538);
+                    DVar5 = GetTextExtent16(ctx.s_tile2_bmp_1050_1538, str_a, count);
+                    TextOut16(ctx.s_tile2_bmp_1050_1538, str_a, count, &str_00,
                               (i_var4.field_0x80 - i_var4.field_0x7c) / 0x2 - (DVar5 >> 0x10) / 0x2);
                     if (handle_01 != 0x0) {
                         SelectObject16(ctx.s_tile2_bmp_1050_1538, local_obj_handle_42);

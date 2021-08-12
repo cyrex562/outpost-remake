@@ -16,7 +16,7 @@ use crate::fn_ptr::fn_ptr_1000::{
 use crate::fn_ptr::fn_ptr_1010::fn_ptr_1010_905e;
 use crate::fn_ptr::fn_ptr_1028::fn_ptr_1030_835a;
 use crate::global::AppContext;
-use crate::mem_1000::{mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_179c};
+use crate::mem_1000::{mem_1000_0016, mem_op_1000_0a48, mem_op_1000_160a, mem_op_1000_179c};
 use crate::mixed::mixed_1010_20ba;
 use crate::pass::pass_1000::{
     pass1_1000_07fc, pass1_1000_093a, pass1_1000_0ed4, pass1_1000_3d7a, pass1_1000_3de8,
@@ -152,7 +152,7 @@ pub fn pass1_1008_0036(ctx: &mut AppContext, param_1: &mut Struct18, param_2: &m
     return;
 }
 
-pub fn pass1_1008_049c(param_1: u16, param_2: u16, param_3: &mut String) {
+pub fn pass1_1008_049c(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: &mut String) {
     let u_var1: u16;
     let pu_var2: U32Ptr;
 
@@ -168,7 +168,7 @@ pub fn pass1_1008_049c(param_1: u16, param_2: u16, param_3: &mut String) {
     return;
 }
 
-pub fn pass1_1008_04d2(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_04d2(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     pass1_1008_9466(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -287,7 +287,7 @@ pub fn pass1_1008_087e(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_0932() -> u32 {
+pub fn pass1_1008_0932(ctx: &mut AppContext) -> u32 {
     let u_var1: u32;
 
     if (ctx.PTR_LOOP_1050_14cc != 0x0) {
@@ -320,7 +320,7 @@ pub fn pass1_1008_0984(param_1: i16, param_2: u16, param_3: i16, param_4: u16, p
     return;
 }
 
-pub fn pass1_1008_0a92(param_1: u32, param_2: i16) {
+pub fn pass1_1008_0a92(ctx: &mut AppContext, param_1: u32, param_2: i16) {
     let ppcVar1: u32;
     let i_var2: i16;
     let u_var3: u16;
@@ -336,10 +336,10 @@ pub fn pass1_1008_0a92(param_1: u32, param_2: i16) {
         (**ppcVar1)(param_2, (i_var2 + 0xe8));
     }
     if (ctx.PTR_LOOP_1050_0388 != 0x0) {
-        ppcVar1 = *_PTR_LOOP_1050_0388;
+        ppcVar1 = *ctx.PTR_LOOP_1050_0388;
         (**ppcVar1)(
             param_2,
-            _PTR_LOOP_1050_0388,
+            ctx.PTR_LOOP_1050_0388,
             (ctx.PTR_LOOP_1050_0388 >> 0x10),
             0x1,
         );

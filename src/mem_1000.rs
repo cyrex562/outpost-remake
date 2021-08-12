@@ -25,6 +25,10 @@ use crate::{
     },
 };
 
+pub fn mem_1000_0016(a: u32, b: u16) {
+    unimplemented!()
+}
+
 pub fn mem_op_1000_0052(param_1: u32, param_2: u32) {
     unimplemented!()
 }
@@ -727,7 +731,12 @@ pub fn mem_op_1000_131c(
         if h_var1 != 0x0 {
             GlobalPageLock16(ctx.s_tile2_bmp_1050_1538 as u16);
         }
-        pass1_1000_15ce(ctx, &mut u_stack10, (l_var3 >> 0x10), ctx.s_tile2_bmp_1050_1538);
+        pass1_1000_15ce(
+            ctx,
+            &mut u_stack10,
+            (l_var3 >> 0x10),
+            ctx.s_tile2_bmp_1050_1538,
+        );
     }
     if h_var1 != 0x0 {
         WIN16_GlobalLock16(ctx.s_tile2_bmp_1050_1538 as u16);
@@ -1220,12 +1229,7 @@ pub fn mem_1000_2bb6(
     return 0xffff;
 }
 
-pub fn mem_1000_2ce8(
-    ctx: &mut AppContext,
-    param_1: &mut i16,
-    param_2: &mut u16,
-    param_3: u16,
-) {
+pub fn mem_1000_2ce8(ctx: &mut AppContext, param_1: &mut i16, param_2: &mut u16, param_3: u16) {
     let pi_var1: U32Ptr;
     let u_var2: u16;
 
