@@ -255,13 +255,13 @@ pub struct Struct_1000_0c32 {
     pub field_0xe: u16,
 }
 
-pub struct Pointer<T> {}
+// pub struct Pointer<T> {}
 
-impl Pointer<T> {
-    pub fn new<T>() -> Pointer<T> {
-        Pointer::<T> {}
-    }
-}
+// impl Pointer<T> {
+//     pub fn new<T>() -> Pointer<T> {
+//         Pointer::<T> {}
+//     }
+// }
 
 pub struct Struct87 {
     pub field_0x680: i16,
@@ -362,3 +362,5 @@ pub struct Struct34 {}
 pub struct Struct31 {}
 
 pub struct Struct35 {}
+
+pub struct Struct23 {}

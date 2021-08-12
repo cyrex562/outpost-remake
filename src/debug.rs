@@ -1,6 +1,7 @@
-use crate::{defines::U32Ptr, pass::pass_1000::{pass1_1000_2b5c, pass1_1000_2f48, pass1_1000_3ec0}, winapi::{wvsprintf16, OutputDebugString16}};
+use crate::{defines::U32Ptr, global::AppContext, pass::pass_1000::{pass1_1000_2b5c, pass1_1000_2f48, pass1_1000_3ec0}, winapi::{wvsprintf16, OutputDebugString16}};
 
 pub fn debug_print_1008_6048(
+    ctx: &mut AppContext, 
     param_1: u32,
     param_2: &mut String,
     param_3: U32Ptr,

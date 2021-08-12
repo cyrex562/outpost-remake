@@ -1,3 +1,13 @@
+use crate::defines::{Struct18, Struct19, Struct_1010_4e08, U32Ptr};
+use crate::file::file_1008::read_file_1008_7dee;
+use crate::file::write::write_to_file_1008_7e1c;
+use crate::global::AppContext;
+use crate::pass::pass_1018::pass1_1018_4dce;
+use crate::struct_ops::struct_1018::struct_op_1018_4cda;
+use crate::sys_api::sys_1000_3f9c;
+use crate::util::{CARRY1, CONCAT11, SBORROW2, read_string_from_addr, read_struct_from_addr, write_string_to_addr};
+use crate::win_struct::{HPEN16, WNDCLASS16};
+use crate::winapi::{swi, CreatePen16, GetStockObject16, WritePrivateProfileString16};
 use crate::{
     mem_1000::mem_op_1000_179c,
     mixed::mixed_1010_20ba,
@@ -11,6 +21,7 @@ use crate::{
     },
     string::string_1040::string_1040_8520,
     switch_ops::switch_1008::switch_1008_73ea,
+    ui::ui_1008::palette_op_1008_4e08,
     util::{CONCAT12, CONCAT13, CONCAT22, SUB42},
     win_struct::{HDC16, HGDIOBJ16, HPALETTE16, POINT16, RECT16},
     winapi::{
@@ -18,16 +29,6 @@ use crate::{
         SelectPalette16,
     },
 };
-use crate::defines::{U32Ptr, Struct_1010_4e08, Struct19, Struct18};
-use crate::winapi::{GetStockObject16, CreatePen16, WritePrivateProfileString16, swi};
-use crate::win_struct::{HPEN16, WNDCLASS16};
-use crate::global::AppContext;
-use crate::file::file_1008::read_file_1008_7dee;
-use crate::sys_api::sys_1000_3f9c;
-use crate::util::{CONCAT11, SBORROW2, read_struct_from_addr, read_string_from_addr, write_string_to_addr};
-use crate::pass::pass_1018::pass1_1018_4dce;
-use crate::struct_ops::struct_1018::struct_op_1018_4cda;
-use crate::file::write::write_to_file_1008_7e1c;
 
 pub unsafe fn draw_fn_1010_2a32(
     ctx: &mut AppContext,
@@ -47,7 +48,11 @@ pub unsafe fn draw_fn_1010_2a32(
     in_af: u8,
     extraout_dx: u16,
     in_stack_0000ffca: &mut u16,
-    in_stack_0000ffde: u16
+    in_stack_0000ffde: u16,
+    stack0xffec: u16,
+    extraout_DX_00: u16,
+    stack0xfffa: u16,
+    stack0xffde: u16,
 ) -> u16 {
     let mut string_2: String;
     let var_3: U32Ptr;
@@ -76,7 +81,7 @@ pub unsafe fn draw_fn_1010_2a32(
 
     let mut var_10 = ret_val;
     let mut var_31 = param_9 as u8;
-    let mut var_32 = (param_9 >> 0x8) as u8;
+    let mut var32 = (param_9 >> 0x8) as u8;
     let mut var_23 = 0;
     let mut var_30 = 0x0;
     let mut var_28 = (param_4 >> 0x8) as u8;
@@ -88,15 +93,13 @@ pub unsafe fn draw_fn_1010_2a32(
         //goto LAB_1010_2ad8;
     }
     match u_var11 {
-        0x1 | 0x3 | 0xb => {
-            (u_var11 + 0xa) = param_8
-        },
+        0x1 | 0x3 | 0xb => (u_var11 + 0xa) = param_8,
         0x9 | 0xf | 0x15 | 0x1b => {
             (u_var11 + 0xa) = param_8;
             (u_var11 + 0x10) = param_8;
             (u_var11 + 0xc) = param_8;
             return param_10;
-        },
+        }
         0x5 => {
             b_var14 = write_to_file_1008_7e1c(
                 *param_5,
@@ -111,36 +114,33 @@ pub unsafe fn draw_fn_1010_2a32(
             }
             ctx.PTR_LOOP_1050_0310 = 0x6d0;
             return *param_7;
-        },
+        }
         0x6 => {
             var_23 = 0
             //     TODO: goto LAB_1010_2ad8;
-        },
+        }
         0x7 => {
             var_7 = param_8 as u32;
             (**var_7)();
             var_15 = param_5 + 0x105;
-            var_17 = read_string_from(extraout_dx);
-            pass1_1010_8170(ctx.PTR_LOOP_1050_14cc, var_15, extraout_dx as i16, 0x1010, 0);
+            var_17 = read_string_from_addr(extraout_dx);
+            pass1_1010_8170(
+                ctx.PTR_LOOP_1050_14cc,
+                var_15,
+                extraout_dx as i16,
+                0x1010,
+                0,
+            );
             var_20 = param_5 * 0x4;
             (ret_val + var_20 + 0x26) = var_15 as u32;
             // (ret_val + var_20 + 0x28) = var_17;
-           write_string_to_addr((ret_val + var_20 + 0x28), &var_17);
+            write_string_to_addr((ret_val + var_20 + 0x28), &var_17);
             handle_29 = ctx.data_seg;
             string_25 = pass1_1008_4772(Some(ret_val + var_20 + 0x26));
             // puVar17 = (uVar25 >> 0x10);
-            CreateDC16(
-                read_string_from_addr(0x1008),
-                &string_25,
-                &var_17,
-                var_17
-            );
-            b_force_background = palette_op_1008_4e08(
-                (ctx.PTR_LOOP_1050_4230 + 0xe),
-                &stack0xffec,
-                var_17,
-                0x1008,
-            );
+            CreateDC16(read_string_from_addr(0x1008), &string_25, &var_17, var_17);
+            b_force_background =
+                palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230 + 0xe), &stack0xffec, var_17, 0x1008);
             handle = SelectObject16(0x1008, CONCAT11(var_30, var_23));
             hdc = ctx.s_tile2_bmp_1050_1538 as HDC16;
             handle_29 = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, handle_29);
@@ -175,11 +175,11 @@ pub unsafe fn draw_fn_1010_2a32(
             DeleteDC16(ctx.s_tile2_bmp_1050_1538 as u16);
             DeleteObject16(ctx.s_tile2_bmp_1050_1538 as u16);
             return var_17 as u16;
-        },
+        }
         0x8 => {
             var_23 = 0x3;
             //     TODO: goto LAB_1010_2ad8;
-        },
+        }
         0xd => {
             var_3 = (u_var11 + unaff_si) as u32;
             var_23 = *var_3;
@@ -201,33 +201,34 @@ pub unsafe fn draw_fn_1010_2a32(
             var_5 = *var_3;
             *var_3 = var_5 + var_16 + bool_24;
             string_2 = (u_var11 + unaff_si);
-            *string_2 = *string_2 + var_16 + (CARRY1(var_23, var_16) || CARRY1(var_5 + var_16, bool_24));
+            *string_2 =
+                *string_2 + var_16 + (CARRY1(var_23, var_16) || CARRY1(var_5 + var_16, bool_24));
             struct_op_1018_4cda(
                 CONCAT11(var_31, var_30) as i16,
-                CONCAT11(param_1 as u8, uVar32),
+                CONCAT11(param_1 as u8, var32),
                 CONCAT11(param_2 as u8, param_1._1_1_),
             );
             var_15 = CONCAT11(var_31, var_30) as i16;
-            var_9 = CONCAT13(param_1, CONCAT12(uVar32, var_15 as u16));
-            *var_9 = (s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
+            var_9 = CONCAT13(param_1, CONCAT12(var32, var_15 as u16));
+            *var_9 = (ctx.s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
             (var_15 + 0x2) = 0x1010;
             pass1_1018_4dce(
-                CONCAT13(param_1, CONCAT12(uVar32, var_15 as u16)),
+                CONCAT13(param_1, CONCAT12(var32, var_15 as u16)),
                 0x1b3,
                 param_7,
                 unaff_ss,
             );
-            ctx._PTR_LOOP_1050_4230 = CONCAT13(param_1, CONCAT12(uVar32, CONCAT11(var_31, var_30)));
-            return CONCAT11(param_1 as u8, uVar32);
-        },
+            ctx._PTR_LOOP_1050_4230 = CONCAT13(param_1, CONCAT12(var32, CONCAT11(var_31, var_30)));
+            return CONCAT11(param_1 as u8, var32);
+        }
         0xe => {
             (ret_val + 0x2) = param_5;
-        },
-        0x11 => {},
+        }
+        0x11 => {}
         0x12 => {
             ctx.PTR_LOOP_1050_10c6 = (0x0 < param_5);
             ctx.PTR_LOOP_1050_1142 = (0x2 < param_5);
-        },
+        }
 
         0x13 => {
             var_15 = (ret_val * 0x8 + param_1) as i16;
@@ -235,17 +236,18 @@ pub unsafe fn draw_fn_1010_2a32(
                 || ((var_15 + 0x26) != 0x0 || ((var_15 + 0x28) != 0x0)))
             {
                 u_var4 = (param_1 + 0xe) as u32;
-                sys_1000_3f9c(ctx,
-                              u_var4,
-                              (u_var4 >> 0x10),
-                              ctx.s__d__d__d__d_1050_14ae,
-                              ctx.data_seg,
-                              ((ret_val * 0x8 + param_1 + 0x22) as u16),
-                              &stack0xfffa,
-                              param_2 as i16,
-                              0x1000,
-                              unaff_ss,
-                              in_af as u32,
+                sys_1000_3f9c(
+                    ctx,
+                    u_var4,
+                    (u_var4 >> 0x10),
+                    ctx.s__d__d__d__d_1050_14ae,
+                    ctx.data_seg,
+                    ((ret_val * 0x8 + param_1 + 0x22) as u16),
+                    &stack0xfffa,
+                    param_2 as i16,
+                    0x1000,
+                    unaff_ss,
+                    in_af as u32,
                 );
                 u_var4 = (param_1 + 0xa) as u32;
                 WritePrivateProfileString16(
@@ -256,11 +258,11 @@ pub unsafe fn draw_fn_1010_2a32(
                 );
             }
             return param_7;
-        },
+        }
         0x14 => {
             (ret_val + 0x24) = param_5;
             // break;
-        },
+        }
         0x17 => {
             var_17 = (param_7 - 0x1);
             var_3 = (u_var11 + unaff_si) as u32;
@@ -281,28 +283,28 @@ pub unsafe fn draw_fn_1010_2a32(
                     );
                     if (((b_var14 != 0x0)
                         && (
-                        b_var14 = read_file_1008_7dee(
-                            param_5,
-                            param_6 as u16,
-                            (ret_val + 0x1c) as u16,
-                            0x0,
-                            param_4,
-                            0x2,
-                            0x1008,
+                            b_var14 = read_file_1008_7dee(
+                                param_5,
+                                param_6 as u16,
+                                (ret_val + 0x1c) as u16,
+                                0x0,
+                                param_4,
+                                0x2,
+                                0x1008,
                             ),
-                        b_var14 != 0x0,
+                            b_var14 != 0x0,
                         ))
                         && (
-                        b_var14 = read_file_1008_7dee(
-                            param_5,
-                            param_6 as u16,
-                            (ret_val + 0x1e) as u16,
-                            0x0,
-                            param_4,
-                            0x2,
-                            0x1008,
+                            b_var14 = read_file_1008_7dee(
+                                param_5,
+                                param_6 as u16,
+                                (ret_val + 0x1e) as u16,
+                                0x0,
+                                param_4,
+                                0x2,
+                                0x1008,
                             ),
-                        b_var14 != 0x0,
+                            b_var14 != 0x0,
                         ))
                     {
                         return var_17 as u16;
@@ -322,20 +324,27 @@ pub unsafe fn draw_fn_1010_2a32(
                     pu_var27 = 0xa1c4;
                     (in_stack_0000ffca + 0x2) = 0x1010;
                 }
-                b_var14 =
-                    read_file_1008_7dee(param_5, param_6 as u16, &stack0xffde, 0x0, unaff_ss, 0x2, 0x1008);
+                b_var14 = read_file_1008_7dee(
+                    param_5,
+                    param_6 as u16,
+                    &stack0xffde,
+                    0x0,
+                    unaff_ss,
+                    0x2,
+                    0x1008,
+                );
                 if ((b_var14 == 0x0)
                     || (
-                    b_var14 = read_file_1008_7dee(
-                        param_5,
-                        param_6 as u16,
-                        (pu_var27 + 0x6) as u16,
-                        0x0,
-                        ((pu_var27 >> 0x10) as u16),
-                        0x2,
-                        0x1008,
+                        b_var14 = read_file_1008_7dee(
+                            param_5,
+                            param_6 as u16,
+                            (pu_var27 + 0x6) as u16,
+                            0x0,
+                            ((pu_var27 >> 0x10) as u16),
+                            0x2,
+                            0x1008,
                         ),
-                    b_var14 == 0x0,
+                        b_var14 == 0x0,
                     ))
                 {
                     // break
@@ -356,11 +365,11 @@ pub unsafe fn draw_fn_1010_2a32(
             (**var_7)();
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return extraout_DX_01;
-        },
+        }
         0x18 => {
             var_23 = 0x2
             //     TODO: goto LAB_1010_2ad8;
-        },
+        }
         0x19 => {
             var_13 = pass1_1010_6ca2(
                 CONCAT13(var_28 as u16, CONCAT12(param_4 as u8, *ret_val)),
@@ -394,7 +403,7 @@ pub unsafe fn draw_fn_1010_2a32(
                 pass1_1010_715c(0x1c005a, 0x1c, var_13, *param_7, unaff_di, unaff_ss);
             }
             return *param_7;
-        },
+        }
         0x1a => {
             (ret_val + 0x26) = *param_5;
 
@@ -402,7 +411,9 @@ pub unsafe fn draw_fn_1010_2a32(
             //LAB_1010_2ad8:
             if (var_23 == 0x1) || (var_23 == 0x2) {
                 if var_23 == 0x1 {
-                    *param_5 = ((ret_val + 0x2) + (ret_val + 0x22) + (ret_val + 0x24) + (ret_val + 0x26)) as u16;
+                    *param_5 =
+                        ((ret_val + 0x2) + (ret_val + 0x22) + (ret_val + 0x24) + (ret_val + 0x26))
+                            as u16;
                 }
                 if param_5 != 0x0 {
                     *param_7 = *param_5 >> 0xf;
@@ -423,10 +434,10 @@ pub unsafe fn draw_fn_1010_2a32(
             );
             // switchD_1010_2ab5_caseD_0:
             return param_7;
-        },
+        }
         _ => {
             //     TODO: goto switchD_1010_2ab5_caseD_0;
-        },
+        }
     }
 }
 
@@ -456,7 +467,7 @@ pub unsafe fn pt_in_rect_1010_40f8(
         field_0x2a: 0,
         field_0x8e: 0,
         field_0x92: 0,
-        field_0x94: 0
+        field_0x94: 0,
     };
     let mut string_8: String;
     let u_var9: u16;
@@ -478,7 +489,7 @@ pub unsafe fn pt_in_rect_1010_40f8(
                     unaff_ss,
                     in_dx,
                     unaff_di,
-                    0
+                    0,
                 );
                 // puVar7 = (puVar10 >> 0x10);
                 u_var4 = pass1_1018_0afa(pu_var10);
@@ -549,7 +560,7 @@ pub unsafe fn draw_op_1010_47d0(
     param_2: u16,
     param_3: u16,
     in_style_3: i16,
-    param_5: u16
+    param_5: u16,
 ) {
     let pi_var1: U32Ptr;
     let pu_var2: u32;
@@ -617,7 +628,7 @@ pub unsafe fn draw_op_1010_47d0(
     // output = (uVar9 >> 0x10);
     var_18 = uVar9;
     var_16 = output;
-    local_14 = CreateDC16(0x1008, var_18, output, init_data);
+    local_14 = CreateDC16(0x1008, &var_18, &output, init_data);
     b_force_background =
         palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230 + 0xe), &local_14, output, 0x1008);
     handle = SelectObject16(0x1008, pen_handle);
@@ -632,8 +643,8 @@ pub unsafe fn draw_op_1010_47d0(
         i_var4 = ((iStack32 * 0x10 + param_3) * 0x8) as u16;
         hdc = 0x1000;
         u_var5 = pass1_1000_484c(
-            CONCAT22(param_5, &local_e),
-            CONCAT22(((param_1 + 0x72) as u16), i_var4 + (param_1 + 0x70)),
+            &mut CONCAT22(param_5, &local_e),
+            &mut CONCAT22(((param_1 + 0x72) as u16), i_var4 + (param_1 + 0x70)),
             0x8,
         );
         if (u_var5 != 0x0) {
@@ -661,7 +672,11 @@ pub unsafe fn draw_op_1010_47d0(
     return;
 }
 
-pub fn pt_in_rect_1010_4e08(param_1: &mut Struct_1010_4e08, point: &POINT16, mut rect: &mut RECT16) {
+pub fn pt_in_rect_1010_4e08(
+    param_1: &mut Struct_1010_4e08,
+    point: &POINT16,
+    mut rect: &mut RECT16,
+) {
     let pi_var1: U32Ptr;
     let bVar2: bool;
     let b_result: bool;

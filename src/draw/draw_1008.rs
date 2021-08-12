@@ -1,18 +1,10 @@
-use crate::{
-    fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708},
-    mem_1000::mem_op_1000_160a,
-    pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c},
-    string::string_1000::string_1000_3d3e,
-    util::{CONCAT22, ZEXT24},
-    win_struct::{
+use crate::{defines::Struct23, fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708}, mem_1000::mem_op_1000_160a, pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c}, string::string_1000::string_1000_3d3e, util::{CONCAT22, ZEXT24}, win_struct::{
         HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, PALETTEENTRY, RECT16,
-    },
-    winapi::{
+    }, winapi::{
         BeginPaint16, CreatePen16, CreateSolidBrush16, DeleteObject16, EndPaint16, GetClientRect16,
         GetDC16, GetDeviceCaps16, GetStockObject16, GetSystemPaletteEntries, LineTo16, MoveTo16,
         Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
-    },
-};
+    }};
 use crate::defines::{Struct19, Struct79, Struct80, U32Ptr, Struct20, Struct18};
 use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
@@ -43,16 +35,16 @@ pub fn unk_draw_op_1008_61b2(
     let mut struct_1: Struct19;
     let struct_2: &mut Struct19;
     let struct_3: &mut Struct20;
-    let u_var1: u16;
+    let var1: u16;
 
     set_struct_1008_687a(struct_4, param_4);
     struct_4.field_0xde = param_2;
     struct_4.field_0xe0 = 0x0;
     struct_4.field_0x0 = 0x6378;
     struct_4.field_0x2 = 0x1008;
-    struct_1 = struct_from_addr::<Struct79>(extraout_dx);
+    struct_1 = read_struct_from_addr::<Struct79>(extraout_dx);
     string_1000_3d3e(
-        (struct_4 & 0xffff0000 | &i_var1.field_0x5b),
+        struct_4 & 0xffff0000 | &var1.field_0x5b,
         &mut ctx.s_DanBrotherton_1050_0302,
     );
     gdi_obj_1 = GetStockObject16(0x1000);
@@ -112,17 +104,17 @@ pub fn unk_draw_op_1008_7f62(
     i_var3.field_0x2 = 0x1008;
     string_1000_3d3e(
         (param_1 & 0xffff0000 | &i_var3.field_0x5b),
-        s_SOLChildPar_1050_0358,
+        ctx.s_SOLChildPar_1050_0358,
     );
     HVar1 = GetStockObject16(0x1000);
     i_var3.hgdiobj_field_0xc6 = HVar1;
-    HVar2 = LoadCursor16(s_tile2_bmp_1050_1538, &read_string_from_rsrc(0x7f00));
+    HVar2 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, &read_string_from_rsrc(0x7f00));
     i_var3.hcursor_field_0xc4 = HVar2;
     i_var3.field_0xc8 = 0x2008;
     i_var3.field_0xac = 0x44000000;
     i_var3.field_0xbc = (param_3 + 0x8);
     i_var3.field_0xca = i_var3.field_0xde;
-    win_ui_reg_class_1008_96d2(ctx, param_1, s_tile2_bmp_1050_1538, param_4, 0);
+    win_ui_reg_class_1008_96d2(ctx, param_1, ctx.s_tile2_bmp_1050_1538, param_4, 0);
     return param_1;
 }
 
@@ -153,7 +145,7 @@ pub fn unk_draw_op_1008_80ee(
     i_var3.field_0x54 = 0x3;
     hvar1 = LoadCursor16(0x1000, &read_string_from_rsrc(0x7f00));
     i_var3.field_0x58 = hvar1;
-    hvar2 = GetStockObject16(s_tile2_bmp_1050_1538);
+    hvar2 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
     i_var3.field_0x56 = hvar2;
     pass1_1008_818c(
         ctx,
@@ -206,21 +198,21 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
         (ctx.PTR_LOOP_1050_0368 >> 0x10),
     );
     pen_1 = CreatePen16(
-        s_tile2_bmp_1050_1538,
+        ctx.s_tile2_bmp_1050_1538,
         ctx.DAT_1050_0364,
         (ctx.DAT_1050_0364 >> 0x10),
     );
-    brush = CreateSolidBrush16(s_tile2_bmp_1050_1538);
-    GetClientRect16(s_tile2_bmp_1050_1538, &mut rect);
+    brush = CreateSolidBrush16(ctx.s_tile2_bmp_1050_1538);
+    GetClientRect16(ctx.s_tile2_bmp_1050_1538, &mut rect);
     y_coord = rect_top;
     u_stack64 = rect_left;
     u_stack66 = rect_top >> 0x1;
     x_coord = rect_left >> 0x1;
     u_stack70 = rect_top >> 0x2;
     u_stack72 = rect_left >> 0x2;
-    gdi_obj_1 = GetStockObject16(s_tile2_bmp_1050_1538);
+    gdi_obj_1 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
     gdi_obj_1 = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, gdi_obj_1);
-    gid_obj_2 = GetStockObject16(s_tile2_bmp_1050_1538);
+    gid_obj_2 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
     gid_obj_2 = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, gid_obj_2);
     Rectangle16(
         ctx.s_tile2_bmp_1050_1538 as HDC16,
@@ -238,9 +230,9 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     local_10 = u_stack66 + b_var1;
     i_stack14 = u_stack72 + b_var1 + -0x2;
     i_stack12 = local_10 + -0x3;
-    iStack10 = u_stack72 + b_var1 + 0x1;
+    local_10 = u_stack72 + b_var1 + 0x1;
     i_stack8 = local_10 + 0x3;
-    i_stack6 = iStack10;
+    i_stack6 = local_10;
     SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, pen_2);
     if b_var1 == false {
         MoveTo16(ctx.s_tile2_bmp_1050_1538 as HDC16, x_coord - 0x2, 0x1);
@@ -278,7 +270,7 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     DeleteObject16(ctx.s_tile2_bmp_1050_1538 as HDC16);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538 as HDC16);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538 as HDC16);
-    EndPaint16(s_tile2_bmp_1050_1538, &mut paint);
+    EndPaint16(ctx.s_tile2_bmp_1050_1538, &mut paint);
     return;
 }
 

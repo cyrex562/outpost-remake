@@ -73,3 +73,7 @@ pub fn write_string_to_addr(address: U32Ptr, src_string: &String) {unimplemented
 pub fn write_bool_to_addr(address: U32Ptr, value: bool) { unimplemented!()}
 
 pub fn write_struct_to_addr<T>(address: U32Ptr, value: &T) { unimplemented!()}
+
+pub fn CARRY1(a: u8, b: u8) -> u16 {
+    unimplemented!()
+}
