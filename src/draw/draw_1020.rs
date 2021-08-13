@@ -18,7 +18,7 @@ use crate::pass::pass_1018::{
     pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c,
     pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0,
 };
-use crate::pass::pass_1020::pass1_1020_64d4;
+use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_64d4};
 use crate::pass::pass_1030::pass1_1030_8308;
 use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
@@ -302,7 +302,7 @@ pub fn win_ui_palette_op_1020_0cd2(
     return;
 }
 
-pub fn realize_palette_1020_0e46(param_1: u32, param_2: i16, param_3: HGDIOBJ16) {
+pub fn realize_palette_1020_0e46(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HGDIOBJ16) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -322,7 +322,7 @@ pub fn realize_palette_1020_0e46(param_1: u32, param_2: i16, param_3: HGDIOBJ16)
     return;
 }
 
-pub fn invalidate_rect_1020_157c(param_1: u32, param_2: i16, param_3: HWND16) {
+pub fn invalidate_rect_1020_157c(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HWND16) {
     let bvar1: bool;
     let mut rect_1: RECT16 = RECT16::new();
     let u_stack4: u16;
@@ -343,7 +343,7 @@ pub fn invalidate_rect_1020_157c(param_1: u32, param_2: i16, param_3: HWND16) {
     return;
 }
 
-pub fn draw_op_1020_15de(param_1: i32, in_win_handle_2: HWND16, unaff_ss: u16) {
+pub fn draw_op_1020_15de(ctx: &mut AppContext, param_1: i32, in_win_handle_2: HWND16, unaff_ss: u16) {
     let u_var1: u32;
     let ppc_var2: u32;
     let bvar3: bool;
@@ -389,48 +389,48 @@ pub fn draw_op_1020_15de(param_1: i32, in_win_handle_2: HWND16, unaff_ss: u16) {
             u_var9,
         );
     } else {
-        draw_op_1020_1674(ctx, param_1, s_tile2_bmp_1050_1538);
+        draw_op_1020_1674(ctx, param_1, ctx.s_tile2_bmp_1050_1538);
     }
     EndPaint16(hwnd, &mut paint_1);
     return;
 }
 
-pub fn draw_op_1020_1674(ctx: &mut AppContext, param_1: i32, obj_id: i16) {
-    let ppc_var1: u32;
-    let u_var2: u16;
-    let mut local_1a = RECT16::new();
-    let u_stack24: u16;
-    let i_stack22: i16;
-    let i_stack20: i16;
-    let i_stack18: i16;
-    let i_stack16: i16;
-    let mut local_e = RECT16::new();
-    let u_stack10: i16;
-    let mut i_stack8 = 0i16;
+pub fn draw_op_1020_1674(ctx: &mut AppContext, struct_1: i32, obj_id: i16) {
+    let func_ptr_1: U32Ptr;
+    let var2: u16;
+    let mut rect_1 = RECT16::new();
+    let var4: u16;
+    let var5: i16;
+    let var6: i16;
+    let var7: i16;
+    let var8: i16;
+    let mut rect_2 = RECT16::new();
+    let var9: i16;
+    let mut var11 = 0i16;
     let mut obj_handle_1: HGDIOBJ16;
-    let i_stack4: i16;
+    let var12: i16;
 
     if ctx.PTR_LOOP_1050_0010 == 0x0 {
         // u_var2 = (param_1 >> 0x10);
-        ppc_var1 = ((param_1 + 0x14) + 0x2c) as u32;
-        i_stack4 = (**ppc_var1)(obj_id, (param_1 + 0x14));
-        if i_stack4 != 0x0 {
+        func_ptr_1 = ((struct_1 + 0x14) + 0x2c) as u32;
+        var12 = (**func_ptr_1)(obj_id, (struct_1 + 0x14));
+        if var12 != 0x0 {
             obj_handle_1 = GetStockObject16(obj_id);
-            GetClientRect16(ctx.s_tile2_bmp_1050_1538 as u16, &mut local_e);
+            GetClientRect16(ctx.s_tile2_bmp_1050_1538 as u16, &mut rect_2);
             // local_1a = 0x0;
-            u_stack24 = 0x0;
-            i_stack22 = (iStack10 - local_e.x) + -0x1;
-            i_stack20 = (i_stack8 - local_e.y) + -0x1;
-            i_stack18 = i_stack20;
-            i_stack16 = i_stack22;
-            FillRect16(ctx.s_tile2_bmp_1050_1538 as u16, &local_1a, obj_handle_1);
-            DrawIcon16(ctx.s_tile2_bmp_1050_1538 as u16, i_stack4, 0x2, 0x2);
+            var4 = 0x0;
+            var5 = (var9 - rect_2.x) + -0x1;
+            var6 = (var11 - rect_2.y) + -0x1;
+            var7 = var6;
+            var8 = var5;
+            FillRect16(ctx.s_tile2_bmp_1050_1538 as u16, &rect_1, obj_handle_1);
+            DrawIcon16(ctx.s_tile2_bmp_1050_1538 as u16, var12, 0x2, 0x2);
         }
     }
     return;
 }
 
-pub fn invalidate_rect_1020_1fb2(param_1: u32, param_2: i16, param_3: HWND16) {
+pub fn invalidate_rect_1020_1fb2(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HWND16) {
     let mut local_16 = RECT16::new();
     let u_stack20: u16;
     let i_stack18: i16;
@@ -451,7 +451,7 @@ pub fn invalidate_rect_1020_1fb2(param_1: u32, param_2: i16, param_3: HWND16) {
     // local_16 = 0x0;
     u_stack6 = 0x46;
     u_stack20 = 0x46;
-    i_stack18 = iStack10 - local_e.x;
+    i_stack18 = u_stack10 - local_e.x;
     u_stack4 = 0x5f;
     u_stack16 = 0x5f;
     InvalidateRect16(ctx.s_tile2_bmp_1050_1538, &local_16, false);
@@ -461,6 +461,7 @@ pub fn invalidate_rect_1020_1fb2(param_1: u32, param_2: i16, param_3: HWND16) {
 // WARNING: Inlined function: struct_1010_4d5c
 
 pub unsafe fn unk_draw_op_1020_2020(
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: HWND16,
     param_3: u16,
@@ -620,7 +621,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     (ptr_1 + -0x3e) = hvar9 as u32;
     hvar8 = SelectObject16(ctx.s_tile2_bmp_1050_1538, hvar9);
     (ptr_1 + -0x40) = hvar8 as u32;
-    draw_line_1020_229c((ptr_1 + 0x6), s_tile2_bmp_1050_1538);
+    draw_line_1020_229c((ptr_1 + 0x6), ctx.s_tile2_bmp_1050_1538);
     u_var2 = (ptr_1 + 0x6);
     pass1_1010_4df0((u_var2 + 0x6), u_var11, param_3);
     if (hvar8 == 0x0) {
@@ -656,28 +657,28 @@ pub unsafe fn unk_draw_op_1020_2020(
     return;
 }
 
-pub fn draw_line_1020_229c(param_1: u32, param_2: HDC16) {
-    let i_var1: i16;
-    INT16 * pIVar2;
-    let u_var3: u32;
-    let i_var4: i16;
-    let i_var5: i16;
-    let pi_var6: U32Ptr;
-    let u_var7: u16;
-    let u_stack10: i16;
+pub fn draw_line_1020_229c(ctx: &mut AppContext, struct_1: u32, dc_handle: HDC16) {
+    let var1: i16;
+    let var2: i16;
+    let var3: u32;
+    let var4: i16;
+    let var5: i16;
+    let var6: U32Ptr;
+    let var7: u16;
+    let var8: i16;
 
     // u_var7 = (param_1 >> 0x10);
-    u_var3 = (param_1 + 0x6);
-    i_var1 = (u_var3 + 0x30) as i16;
-    u_var3 = (param_1 + 0x6);
-    pIVar2 = (u_var3 + 0x1a);
-    MoveTo16(param_2, 0x5, *pIVar2);
+    var3 = (struct_1 + 0x6);
+    var1 = (var3 + 0x30) as i16;
+    var3 = (struct_1 + 0x6);
+    var2 = (var3 + 0x1a);
+    MoveTo16(dc_handle, 0x5, *var2);
     // u_var7 = (pIVar2 >> 0x10);
-    i_var5 = pIVar2;
+    var5 = var2;
     LineTo16(
         ctx.s_tile2_bmp_1050_1538,
         0x5,
-        (i_var5 + i_var1 * 0x8 + -0x4),
+        (var5 + var1 * 0x8 + -0x4),
     );
     // TODO: refactor
     // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
@@ -686,11 +687,11 @@ pub fn draw_line_1020_229c(param_1: u32, param_2: HDC16) {
     //   MoveTo16(ctx.s_tile2_bmp_1050_1538,0x5,i_var4);
     //   LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,i_var4);
     // }
-    MoveTo16(ctx.s_tile2_bmp_1050_1538, 0x5f, *pIVar2);
+    MoveTo16(ctx.s_tile2_bmp_1050_1538, 0x5f, *var2);
     LineTo16(
         ctx.s_tile2_bmp_1050_1538,
         0x5f,
-        (i_var5 + i_var1 * 0x8 + -0x4),
+        (var5 + var1 * 0x8 + -0x4),
     );
     // TODO: refactor for loop
     // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
@@ -707,7 +708,7 @@ pub fn draw_polygon_1020_2474(param_1: u16, param_2: u16, param_3: u32, param_4:
     return;
 }
 
-pub fn realize_palette_1020_2992(param_1: i32, param_2: i16) {
+pub fn realize_palette_1020_2992(ctx: &mut AppContext, param_1: i32, param_2: i16) {
     let ppc_var1: u32;
     let pu_var2: u32;
 
