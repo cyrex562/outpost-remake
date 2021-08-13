@@ -1,5 +1,6 @@
-use crate::defines::{Struct13, Struct18, Struct76, Struct79, U32Ptr};
+use crate::defines::{Struct13, Struct18, Struct43, Struct76, Struct79, U32Ptr};
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
+use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
 use crate::global::AppContext;
 use crate::mem_1000::mem_op_1000_179c;
@@ -20,6 +21,7 @@ use crate::pass::pass_1018::{
 };
 use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_64d4};
 use crate::pass::pass_1030::pass1_1030_8308;
+use crate::pass::pass_1038::pass1_1038_af40;
 use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
 use crate::sys_api::get_sys_metrics_1020_7c1a;
@@ -31,15 +33,7 @@ use crate::win_struct::{
     COLORREF, DEVMODEA, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16,
     HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16,
 };
-use crate::winapi::{
-    lstrlen16, BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16,
-    DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16,
-    GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16,
-    IsIconic16, LineTo16, LoadAccelerators16, MoveTo16, MoveToEx16, Polygon16, PostMessage16,
-    PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16,
-    SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16,
-    UnrealizeObject16, ValidateRect16,
-};
+use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16, WinHelp16, lstrlen16};
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16) {
     let pi_var1: U32Ptr;
@@ -724,6 +718,7 @@ pub fn realize_palette_1020_2992(ctx: &mut AppContext, param_1: i32, param_2: i1
 }
 
 pub unsafe fn invalidate_rect_1020_2ae4(
+    ctx: &mut AppContext,
     param_1: U32Ptr,
     param_2: u16,
     param_3: HWND16,
@@ -788,7 +783,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(
                 pa_var8 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x1f8, param_4);
                 WinHelp16(
                     0x1010,
-                    (s_New_failed_in_Op__Op_1050_0020 + 0xa),
+                    (ctx.s_New_failed_in_Op__Op_1050_0020 + 0xa),
                     0x0,
                     CONCAT22(pa_var8, 0x1),
                 );
@@ -895,7 +890,7 @@ pub fn invalidate_rect_1020_3080(param_1: u32, param_2: i16, param_3: HWND16) {
     return;
 }
 
-pub fn draw_op_1020_30be(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn draw_op_1020_30be(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let ppc_var1: u32;
     let u_var2: u32;
     let bvar3: bool;
