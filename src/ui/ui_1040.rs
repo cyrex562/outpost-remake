@@ -289,7 +289,7 @@ pub fn set_win_pos_1040_0f10(
         }
         CheckDlgButton16(0x1030, 0x1, check);
     }
-    GetCursorPos16(s_tile2_bmp_1050_1538);
+    GetCursorPos16(ctx.s_tile2_bmp_1050_1538);
     GetWindowRect16(
         ctx.s_tile2_bmp_1050_1538,
         read_struct_from_addr::<RECT16>(ptr_4 + -0xc),
@@ -1337,7 +1337,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
     GetWindowText16(0x1010, 0x80, local_8c);
-    wsprintf16(s_tile2_bmp_1050_1538, local_10e, param_2);
+    wsprintf16(ctx.s_tile2_bmp_1050_1538, local_10e, param_2);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538, local_10e);
     HVar1 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x182);
     (i_var4 + 0x92) = HVar1;
@@ -1614,7 +1614,7 @@ pub fn set_win_text_1040_3590(param_1: u32, param_2: U32Ptr) {
     // u_var4 = (param_1 >> 0x10);
     i_var3 = param_1;
     GetWindowText16(0x1010, 0x80, local_50c);
-    wsprintf16(s_tile2_bmp_1050_1538, local_58e, param_2);
+    wsprintf16(ctx.s_tile2_bmp_1050_1538, local_58e, param_2);
     b_var_1426 = SetWindowText16(ctx.s_tile2_bmp_1050_1538, local_58e);
     sprintf_op_1018_34b6((i_var3 + 0x8e), b_var_1426);
     uStack1424 = u_var2;
@@ -1839,7 +1839,7 @@ pub fn win_ui_op_1040_3b1e(param_1: &mut Struct2, param_2: U32Ptr) {
     // u_var5 = (param_1 >> 0x10);
     u_var4 = param_1;
     GetWindowText16(0x1010, 0x80, local_8c);
-    wsprintf16(s_tile2_bmp_1050_1538, local_10e, param_2);
+    wsprintf16(ctx.s_tile2_bmp_1050_1538, local_10e, param_2);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538, local_10e);
     u_var3 = u_var5;
     pass1_1018_3d44(
@@ -3866,10 +3866,10 @@ pub fn unk_win_ui_op_1040_8158(param_1: U32Ptr, POparam_2: i16, param_3: i16, pa
             u_var6 = (iVar5 + 0x6);
             ScreenToClient16(param_4, &local_6);
             uVar7 = 0x4;
-            IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+            IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
             local_6 = (local_6 & 0xffff | (local_6.y + IVar2) << 0x10);
             u_var4 = param_1 & 0xffff0000 | (iVar5 + 0x82);
-            BVar3 = PtInRect16(s_tile2_bmp_1050_1538, local_6);
+            BVar3 = PtInRect16(ctx.s_tile2_bmp_1050_1538, local_6);
             if (BVar3 != 0x0) {
                 ppcVar1 = (*param_1 + 0x14);
                 (**ppcVar1)(
@@ -3896,7 +3896,7 @@ pub fn check_dialog_msg_1040_81b6(param_1: u32, param_2: HWND16) {
         if b_var1 == 0x0 {
             return;
         }
-        b_var1 = GetMessage16(s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0);
+        b_var1 = GetMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0);
         if b_var1 == 0x0 {
             break;
         }
@@ -3922,9 +3922,9 @@ pub fn move_win_1040_826c(param_1: &mut Struct1, param_2: U32Ptr) {
 
     GetWindowRect16(unaff_CS, &local_e);
     if ((param_3 == 0xffff) || (param_2 == -0x1)) {
-        IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
         BStack4 = (IVar1 - (iStack10 - local_e.x)) / 0x2;
-        IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
         param_2 = (IVar1 - (iStack8 - local_e.y)) / 0x2;
     } else {
         BStack4 = param_3;
@@ -4188,7 +4188,7 @@ pub fn mix_win_ui_op_1040_911e(param_1: &mut Struct18) {
     RemoveProp16(ctx.s_tile2_bmp_1050_1538, 0x5e38);
     ctx.PTR_LOOP_1050_5e16 = ctx.PTR_LOOP_1050_5e16 + -0x1;
     if (ctx.PTR_LOOP_1050_5e16 == 0x0) {
-        FreeProcInstance16(s_tile2_bmp_1050_1538);
+        FreeProcInstance16(ctx.s_tile2_bmp_1050_1538);
         ctx._PTR_LOOP_1050_5e18 = 0x0;
     }
     *param_1 = 0x389a;
@@ -4435,7 +4435,7 @@ pub fn call_win_proc_1040_9684(
                     uVar7 = (HVar3 + 0x18);
                     GetClientRect16(ctx.s_tile2_bmp_1050_1538, local_1a);
                     u_var6 = CONCAT22(param_6, local_1a);
-                    BVar4 = PtInRect16(s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
+                    BVar4 = PtInRect16(ctx.s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
                     if (BVar4 == 0x0) {
                         return;
                     }
@@ -4457,7 +4457,13 @@ pub fn call_win_proc_1040_9684(
         }
     }
     if (lStack6 != 0x0) {
-        CallWindowProc16(s_tile2_bmp_1050_1538, param_1, param_2, param_3, param_4);
+        CallWindowProc16(
+            ctx.s_tile2_bmp_1050_1538,
+            param_1,
+            param_2,
+            param_3,
+            param_4,
+        );
     }
     return;
 }
@@ -4481,7 +4487,7 @@ pub fn unk_win_ui_op_1040_9854(param_1: U32Ptr, param_2: u16) -> u16 {
     (i_var3 + 0x54) = 0x3;
     HVar1 = LoadCursor16(0x1000, 0x7f00);
     (i_var3 + 0x58) = HVar1;
-    HVar2 = GetStockObject16(s_tile2_bmp_1050_1538);
+    HVar2 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
     (i_var3 + 0x56) = HVar2;
     reg_class_1040_98c0(
         ctx,
@@ -4659,7 +4665,7 @@ pub fn win_op_1040_9cde(
             }
             GetClientRect16(ctx.s_tile2_bmp_1050_1538, local_a);
             i_var2 = (iVar5 + 0x4);
-            b_var7 = PtInRect16(s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
+            b_var7 = PtInRect16(ctx.s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
             if (b_var7 == 0x0) {
                 pbVar1 = (iVar5 + 0x4);
                 *pbVar1 = *pbVar1 & 0xfd;
@@ -4763,7 +4769,7 @@ pub fn win_op_1040_9cde(
                     0x0,
                 );
                 UpdateWindow16(ctx.s_tile2_bmp_1050_1538);
-                b_var7 = PtInRect16(s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
+                b_var7 = PtInRect16(ctx.s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
                 if (b_var7 == 0x0) {
                     return;
                 }
@@ -5158,7 +5164,7 @@ pub fn win_ui_op_1040_ae04(
     //     u_var5 = i_stack280 * 0xc + i_var2;
     //     id = string_op_1020_c222((u_var5 + 0x4));
     //     SetDlgItemText16(0x1020,id,lp_string);
-    //     wsprintf16(s_tile2_bmp_1050_1538,local_102,param_2);
+    //     wsprintf16(ctx.s_tile2_bmp_1050_1538,local_102,param_2);
     //     SetDlgItemText16(ctx.s_tile2_bmp_1050_1538,local_102,param_2);
     //     u_var10 = unk_load_str_op_1010_8c96
     //                        ((param_1 + 0x98),CONCAT22(param_2,local_102),

@@ -28,7 +28,7 @@ use crate::pass::pass_1018::{
 };
 use crate::pass::pass_1020::{
     pass1_1020_0dc4, pass1_1020_1da8, pass1_1020_289a, pass1_1020_62e0, pass1_1020_6498,
-    pass1_1020_64d4, pass1_1020_6746, pass1_1020_68de, 
+    pass1_1020_64d4, pass1_1020_6746, pass1_1020_68de,
 };
 use crate::pass::pass_1028::{pass1_1028_dc52, pass1_1028_e4ec};
 use crate::string::string_1000::{string_1000_3cea, string_1000_3d3e};
@@ -348,7 +348,7 @@ pub fn unk_win_ui_op_1020_1418(param_1: &mut Struct40, param_2: i32, param_3: u1
     let u_var1: u32;
     let paVar2: &mut Struct13;
     let ppc_var3: u32;
-    HDC16 * pHVar4;
+    pHVar4: HDC16;
     let pu_var5: u32;
     let puVar6: U32Ptr;
     let extraout_dx: U32Ptr;
@@ -517,7 +517,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
     pIStack12 = (u_var1 & 0xffff0000 | (u_var1 + 0xa));
     puStack16 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x48, unaff_SS, puVar7, unaff_DI);
     GetClientRect16(0x1010, &local_1c);
-    IVar5 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar5 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     // uVar12 = (pIStack12 >> 0x10);
     iVar10 = pIStack12;
     (iVar10 + 0x6) = IVar5 + uStack24._2_2_;
@@ -563,13 +563,13 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
             );
             SetWindowText16(0x1010, local_178);
         }
-        pvStack60 = MakeProcInstance16(s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
+        pvStack60 = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
         GetWindowRect16(ctx.s_tile2_bmp_1050_1538, &local_6e);
         uStack114 = uStack106;
         iStack98 = uStack106 - local_6e.x;
         iStack94 = uStack106._2_2_ - local_6e.y;
         uStack118 = local_6e & 0xffff0000 | (-(iStack98 - (pIStack12 + 0x4)) / 0x2);
-        IVar5 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        IVar5 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
         u_var1 = uStack118 & 0xffff;
         uStack118 = u_var1 | (uStack118._2_2_ - IVar5) << 0x10;
         uStack118._0_2_ = u_var1;
@@ -587,14 +587,14 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
         pvStack60 = MakeProcInstance16(0x1008, PTR_LOOP_1050_038c);
     }
     EnumChildWindows1(ctx.s_tile2_bmp_1050_1538, 0x0, ZEXT24(pvStack60) << 0x10);
-    FreeProcInstance16(s_tile2_bmp_1050_1538);
+    FreeProcInstance16(ctx.s_tile2_bmp_1050_1538);
     HStack70 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x1);
     GetWindowRect16(ctx.s_tile2_bmp_1050_1538, &local_1c);
     uStack64 = uStack24;
     local_1c.x = uStack24 - local_1c.x;
     uStack74 = CONCAT22(local_1c.x, uStack24._2_2_ - local_1c.y);
     uStack68 = local_1c & 0xffff0000 | (-(local_1c.x - (pIStack12 + 0x4)) / 0x2);
-    IVar5 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar5 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     uStack68 = uStack68 & 0xffff | (uStack68._2_2_ - IVar5) << 0x10;
     if ((i_var9 + 0x96) == 0x0) {
         if (uStack8 == 0x0) {
@@ -2930,7 +2930,7 @@ pub fn unk_win_ui_op_1020_67ce(in_struct_1: &mut Struct20, param_2: u16, param_3
     );
     HVar1 = GetStockObject16(0x1000);
     i_var3.hgdiobj_field_0xc6 = HVar1;
-    HVar2 = LoadCursor16(s_tile2_bmp_1050_1538, 0x7f00);
+    HVar2 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, 0x7f00);
     i_var3.hcursor_field_0xc4 = HVar2;
     i_var3.field_0xac = 0x44c00000;
     i_var3.field_0xc8 = 0x2020;
@@ -3437,7 +3437,7 @@ pub fn win_ui_op_1020_737a(param_1: i32, param_2: HWND16, param_3: u16) -> bool 
             (**ppcVar2)(ctx.s_tile2_bmp_1050_1538, (i_var8 + 0x1c), u_var10, u_var11);
             BStack38 = BVar4;
             if (BVar4 != 0x0) {
-                local_rect = GetStockObject16(s_tile2_bmp_1050_1538);
+                local_rect = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 GetClientRect16(ctx.s_tile2_bmp_1050_1538, &local_30);
                 local_brush_handle = 0x0;
                 iStack56 = (iStack44 - local_30.x) + -0x1;
@@ -3594,8 +3594,8 @@ pub fn get_win_ui_info_op_1020_7a50(param_1: u32, param_2: HWND16) {
         GetWindowRect16(ctx.s_tile2_bmp_1050_1538, &local_a);
         i_stack6 -= local_a.x;
         i_stack4 -= local_a.y;
-        IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-        i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+        i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
         local_a.x += IVar2 * 0x2;
         local_a.y += i_var3 * 0x2;
     }

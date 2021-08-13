@@ -29,8 +29,8 @@ use crate::struct_ops::struct_1018::set_struct_1018_262e;
 use crate::ui::ui_1010::show_window_1010_7ace;
 use crate::ui::ui_1018::send_msg_1020_097e;
 use crate::util::{
-    address_of, read_string_from_rsrc, read_struct_from_addr, CONCAT12,
-    CONCAT13, CONCAT22, SUB42, ZEXT24,
+    address_of, read_string_from_rsrc, read_struct_from_addr, CONCAT12, CONCAT13, CONCAT22, SUB42,
+    ZEXT24,
 };
 use crate::win_struct::{
     ATOM, BITMAPINFO, COLORREF, DEVMODEA, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HMENU16,
@@ -579,7 +579,7 @@ pub fn win_ui_cursor_op_1008_2e9a(param_1: &mut Struct72, param_2: u16) {
         uStack270 = (param_1 + 0xe8);
         send_msg_1020_097e(uStack270, 0x1020);
         UpdateWindow16(0x1020);
-        HStack272 = LoadCursor16(s_tile2_bmp_1050_1538, 0x7f02);
+        HStack272 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, 0x7f02);
         HStack274 = SetCursor16(ctx.s_tile2_bmp_1050_1538);
         win_ui_op_1008_1414(
             param_1,
@@ -957,7 +957,7 @@ pub fn fill_rect_1008_39ac(in_win_handle_1: HWND16) {
     let local_paint_struct: PAINTSTRUCT16;
 
     HStack36 = BeginPaint16(in_win_handle_1, &local_paint_struct);
-    local_brush_handle_2 = CreateSolidBrush16(s_tile2_bmp_1050_1538);
+    local_brush_handle_2 = CreateSolidBrush16(ctx.s_tile2_bmp_1050_1538);
     GetClientRect16(ctx.s_tile2_bmp_1050_1538, local_brush_handle);
     FillRect16(
         ctx.s_tile2_bmp_1050_1538,
@@ -1635,7 +1635,7 @@ pub fn win_sys_op_1008_84f2(
                     i_var2 = (i_var3 + 0x4);
                     pbVar1 = (i_var3 + 0x4);
                     *pbVar1 = *pbVar1 & 0xf3;
-                    BVar4 = PtInRect16(s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
+                    BVar4 = PtInRect16(ctx.s_tile2_bmp_1050_1538, CONCAT22(param_2, param_1));
                     if (BVar4 == 0x0) {
                         pbVar1 = (i_var3 + 0x4);
                         *pbVar1 = *pbVar1 | 0x2;

@@ -197,7 +197,7 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1, param_2: u16) {
     u_var1 = (i_var9 + 0x8e);
     pi_stack6 = (u_var1 & 0xffff0000 | (u_var1 + 0xa));
     GetClientRect16(0x1000, &local_e);
-    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     (pi_stack6 + 0x6) = i_var3 + iStack8;
     puVar11 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x48, param_2, puVar6, unaff_DI);
     // uStack20 = (puVar11 >> 0x10);
@@ -256,7 +256,7 @@ pub fn set_window_text_1018_6086(param_1: i32, param_2: &mut String, param_3: U3
     wsprintf16(param_2, &stack0xfff4, param_3);
     GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x1be);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538, &stack0xfff4);
-    wsprintf16(s_tile2_bmp_1050_1538, &stack0xfff4, param_3);
+    wsprintf16(ctx.s_tile2_bmp_1050_1538, &stack0xfff4, param_3);
     HStack8 = (param_1 + 0x6);
     HStack8 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x1bf);
     SetWindowText16(ctx.s_tile2_bmp_1050_1538, &stack0xfff4);

@@ -50695,7 +50695,7 @@ struct astruct_40 {
     undefined field_0x16;
     undefined field_0x17;
     undefined4 * field_0x18;
-    HDC16 * field_0x1c;
+    field_0x1c: HDC16;
     undefined field_0x1e;
 };
 
@@ -52109,7 +52109,7 @@ struct astruct_24 {
     ULONG * field_0x14;
     HGDIOBJ16 field_0x18;
     HGDIOBJ16 field_0x1a;
-    HDC16 * field_0x1c;
+    field_0x1c: HDC16;
     int16_t field_0x1e;
 };
 
@@ -54136,7 +54136,7 @@ struct astruct_41 {
     undefined4 field_0x14;
     undefined4 field_0x18;
     undefined4 * field_0x1c;
-    HDC16 * field_0x20;
+    field_0x20: HDC16;
 };
 
 typedef struct astruct_701 astruct_701, *Pastruct_701;

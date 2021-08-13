@@ -911,7 +911,13 @@ pub fn write_to_file_1008_7cac(param_1: u32, param_2: u16) -> bool {
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn read_file_1008_7cfe(ctx: &mut AppContext, param_1: u32, param_3: u16, param_4: u16, param_5: u16) {
+pub fn read_file_1008_7cfe(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_3: u16,
+    param_4: u16,
+    param_5: u16,
+) {
     let bVar1: bool;
     let u_var2: u16;
     let in_AF: u8;
@@ -945,7 +951,7 @@ pub fn read_file_1008_7cfe(ctx: &mut AppContext, param_1: u32, param_3: u16, par
         //                             in_stack_0000fbd2,in_stack_0000fbd4);
         //     if (u_var2 != 0x0) {
         //       lVar3 = uStack1040 + uStack6 + 0x7;
-        //       _llseek16(s_tile2_bmp_1050_1538,lVar3 * 0x10000,
+        //       _llseek16(ctx.s_tile2_bmp_1050_1538,lVar3 * 0x10000,
         //                 (lVar3 >> 0x10));
         //       return;
         //     }

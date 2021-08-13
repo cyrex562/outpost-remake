@@ -94,7 +94,7 @@ pub fn enum_child_windows_1010_01be(param_1: U32Ptr) {
     if (ctx.PTR_LOOP_1050_0010 == 0x0) {
         pvVar1 = MakeProcInstance16(param_1, PTR_LOOP_1050_038c);
         EnumChildWindows1(ctx.s_tile2_bmp_1050_1538, 0x0, ZEXT24(pvVar1) << 0x10);
-        FreeProcInstance16(s_tile2_bmp_1050_1538);
+        FreeProcInstance16(ctx.s_tile2_bmp_1050_1538);
     }
     return;
 }

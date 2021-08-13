@@ -79,7 +79,8 @@ use crate::sys_api::unk_win_msg_op_1008_9510;
 use crate::ui::ui_1008::post_win_msg_1008_a0e4;
 use crate::ui::ui_1020::{
     get_win_ui_info_op_1020_7a50, ui_op_1020_536e, win_ui_cursor_op_1020_1294, win_ui_op_1020_5de8,
-      win_ui_op_1020_5e76, win_ui_op_1020_737a, window_op_1020_10a0};
+    win_ui_op_1020_5e76, win_ui_op_1020_737a, window_op_1020_10a0,
+};
 use crate::util::{CARRY2, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SBORROW2, SUB42, ZEXT24};
 use crate::win_struct::{HCURSOR16, HDC16, HGDIOBJ16, SEGPTR};
 use crate::winapi::{
@@ -967,12 +968,12 @@ pub fn pass1_1020_3d08(
                 uVar7 = (param_4 + 0x6);
                 (uVar7 + 0x1e) = iVar15;
                 uVar29 = (param_4 + -0x2);
-                HVar16 = GetStockObject16(s_tile2_bmp_1050_1538);
+                HVar16 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 HVar16 = SelectObject16(ctx.s_tile2_bmp_1050_1538, HVar16);
                 uVar7 = (param_4 + 0x6);
                 (uVar7 + 0x18) = HVar16;
                 uVar30 = (param_4 + -0x2);
-                HVar16 = GetStockObject16(s_tile2_bmp_1050_1538);
+                HVar16 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 HVar16 = SelectObject16(ctx.s_tile2_bmp_1050_1538, HVar16);
                 uVar7 = (param_4 + 0x6);
                 (uVar7 + 0x1a) = HVar16;
@@ -1295,7 +1296,7 @@ pub fn pass1_1020_6184(param_1: u32, param_2: u16, param_3: u16) {
         HVar1 = SetCursor16(param_3);
         (i_var2 + 0xee) = HVar1;
         (i_var2 + 0x10c) = param_2;
-        SetCapture16(s_tile2_bmp_1050_1538);
+        SetCapture16(ctx.s_tile2_bmp_1050_1538);
         (i_var2 + 0xf4) = 0x2;
     }
     return;

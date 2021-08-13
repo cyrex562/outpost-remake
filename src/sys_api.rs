@@ -1644,7 +1644,7 @@ pub fn mixed_win_sys_op_1008_016e(ctx: &mut AppContext, param_1: u32, param_2: u
     version_part_2 = dos3_call_1000_51aa(&stack0xfffe);
     if (version_part_2 != 0x0) {
         LoadString16(0x1000, 0x80, local_13e, param_2);
-        LoadString16(s_tile2_bmp_1050_1538, 0x80, local_1be, param_2);
+        LoadString16(ctx.s_tile2_bmp_1050_1538, 0x80, local_1be, param_2);
         version_part_2 = MessageBox16(
             ctx.s_tile2_bmp_1050_1538,
             &ctx.PTR_LOOP_1050_0010,
@@ -1835,9 +1835,9 @@ pub fn win_msg_op_1008_9498(
                 // LAB_1008_949c;
             }
         }
-        TranslateMessage16(s_tile2_bmp_1050_1538);
+        TranslateMessage16(ctx.s_tile2_bmp_1050_1538);
         in_msg_1 = s_tile2_bmp_1050_1538;
-        DispatchMessage16(s_tile2_bmp_1050_1538);
+        DispatchMessage16(ctx.s_tile2_bmp_1050_1538);
     }
     //   TODO: goto LAB_1008_949c;
 }
@@ -1877,9 +1877,9 @@ pub fn unk_win_msg_op_1008_9510(
                 // goto LAB_1008_9578;
             }
         }
-        TranslateMessage16(s_tile2_bmp_1050_1538);
+        TranslateMessage16(ctx.s_tile2_bmp_1050_1538);
         param_2 = s_tile2_bmp_1050_1538;
-        DispatchMessage16(s_tile2_bmp_1050_1538);
+        DispatchMessage16(ctx.s_tile2_bmp_1050_1538);
     }
     //   TODO: goto LAB_1008_9578;
 }
@@ -1912,8 +1912,8 @@ pub fn get_sys_metrics_1010_46f6(param_1: u32) {
     (i_var4 + 0x1a) = local_6 + 0x9;
     IVar2 = GetSystemMetrics16(0x1008);
     (i_var4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-    IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     (i_var4 + 0x1e) = i_var3 + IVar2 + (uVar7 + 0x8);
     return;
 }
@@ -2606,8 +2606,8 @@ pub fn get_sys_metrics_1018_09a8(param_1: u32, param_2: i16) {
     IVar2 = GetSystemMetrics16(0x1008);
     u_var1 = (i_var4 + 0x5a);
     (i_var4 + 0x1c) = IVar2 * 0x2 + (u_var1 + 0x4);
-    IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     u_var1 = (i_var4 + 0x5a);
     (i_var4 + 0x1e) = i_var3 + IVar2 + (u_var1 + 0x8);
     return;
@@ -2623,8 +2623,8 @@ pub fn get_sys_metrics_1018_1ea0(param_1: &mut Struct55, param_2: u16) {
     // u_var3 = (param_1 >> 0x10);
     i_var3 = param_1;
     i_var3.field_0x2e = IVar1 * 0x2 + i_var3.field_0x36;
-    IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+    IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     i_var3.field_0x30 = IVar1 + i_var3.field_0x38 + IVar2;
     return;
 }
@@ -2758,8 +2758,8 @@ pub fn get_sys_metrics_1018_2f56(param_1: u32) {
     (i_var4 + 0x1a) = local_6 + 0x9;
     IVar2 = GetSystemMetrics16(0x1008);
     (i_var4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-    IVar2 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar2 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     (i_var4 + 0x1e) = i_var3 + IVar2 + (uVar7 + 0x8);
     return;
 }
@@ -2826,8 +2826,8 @@ pub fn get_sys_metrics_1018_4b1e(param_1: &mut Struct55, param_2: u16, param_3: 
     (i_var1 + 0x2) = 0x1018;
     if (ctx.PTR_LOOP_1050_416c == 0x0) {
         ctx.PTR_LOOP_1050_416c = GetSystemMetrics16(0x1010);
-        ctx.PTR_LOOP_1050_416e = GetSystemMetrics16(s_tile2_bmp_1050_1538);
-        ctx.PTR_LOOP_1050_4170 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        ctx.PTR_LOOP_1050_416e = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
+        ctx.PTR_LOOP_1050_4170 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     }
     return param_1;
 }
@@ -2860,9 +2860,9 @@ pub fn get_sys_metrics_1020_7c1a(param_1: U32Ptr, param_2: u32, param_3: i16) {
     i_var3.field_0xa = (param_2 + 0xe4);
     IVar1 = GetSystemMetrics16(param_3);
     i_var3.field_0xe = IVar1;
-    IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     i_var3.field_0x10 = IVar1;
-    IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     i_var3.field_0x12 = IVar1;
     return;
 }
@@ -2884,7 +2884,7 @@ pub fn make_proc_inst_1038_cf6c(param_1: U32Ptr, param_2: U32Ptr, param_3: U32Pt
     pvVar1 = MakeProcInstance16(param_3, PTR_LOOP_1050_038c);
     (i_var2 + 0x4) = pvVar1;
     (i_var2 + 0x6) = param_2;
-    ctx.PTR_LOOP_1050_5bcc = MakeProcInstance16(s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
+    ctx.PTR_LOOP_1050_5bcc = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
     ctx.PTR_LOOP_1050_5bce = param_2;
     return;
 }
@@ -2900,7 +2900,7 @@ pub fn free_proc_inst_1038_cfda(param_1: U32Ptr, param_2: U32Ptr) {
     *param_1 = 0xd23e;
     (i_var1 + 0x2) = &ctx.PTR_LOOP_1050_1038;
     FreeProcInstance16(param_2);
-    FreeProcInstance16(s_tile2_bmp_1050_1538);
+    FreeProcInstance16(ctx.s_tile2_bmp_1050_1538);
     (i_var1 + 0x4) = 0x0;
     *param_1 = 0x389a;
     (i_var1 + 0x2) = 0x1008;
@@ -2972,7 +2972,7 @@ pub fn call_win_proc_1038_d020(
         }
     }
     if lStack6 != 0x0 {
-        LVar5 = CallWindowProc16(s_tile2_bmp_1050_1538, param_1, param_2, wparam, param_3);
+        LVar5 = CallWindowProc16(ctx.s_tile2_bmp_1050_1538, param_1, param_2, wparam, param_3);
         return LVar5;
     }
     u_var4 = 0x0;
@@ -3101,9 +3101,9 @@ pub fn get_sys_metrics_1040_7728(
     pass1_1000_4906((param_1 & 0xffff0000 | &i_var2.field_0x82), 0x0, 0x8);
     IVar1 = GetSystemMetrics16(0x1000);
     i_var2.field_0x62 = IVar1;
-    IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     i_var2.field_0x64 = IVar1;
-    IVar1 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    IVar1 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     i_var2.field_0x66 = IVar1;
     return;
 }
@@ -3122,14 +3122,14 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37, param_2: HWND16) {
     draw_text_1040_8d14(ctx, param_1, s_tile2_bmp_1050_1538);
     (i_var4 + 0xa6) = (i_var4 + 0x9e);
     (i_var4 + 0xaa) = (i_var4 + 0xa2);
-    i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+    i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
     pi_var1 = (i_var4 + 0xac);
     *pi_var1 = *pi_var1 + i_var3;
     bVar2 = (i_var4 + 0x98) & 0xf0;
     if ((((bVar2 == 0x30) || (bVar2 == 0x10)) || (bVar2 == 0x40)) || (bVar2 == 0x20)) {
-        i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+        i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
         if ((i_var4 + 0xac) < i_var3) {
-            i_var3 = GetSystemMetrics16(s_tile2_bmp_1050_1538);
+            i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);
             (i_var4 + 0xac) = i_var3;
         }
     }

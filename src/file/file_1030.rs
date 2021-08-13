@@ -281,7 +281,7 @@ pub fn read_file_1030_4e70(
                     l_stack56 =
                         WIN16_hread(0x1000, *param_2, CONCAT22(*param_3, (*param_2 >> 0x10)));
                     // u_var3 = (lStack56 >> 0x10);
-                    _lclose16(s_tile2_bmp_1050_1538);
+                    _lclose16(ctx.s_tile2_bmp_1050_1538);
                     pb_stack60 = *param_3;
                     while (l_stack56 != 0x0) {
                         if (((*pb_stack60 + 0x608b) & 0x20) == 0x0) {
