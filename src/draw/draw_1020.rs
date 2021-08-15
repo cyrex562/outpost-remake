@@ -1,6 +1,6 @@
 use crate::defines::{
-    Struct13, Struct16, Struct18, Struct20, Struct24, Struct43, Struct64, Struct76, Struct79,
-    U32Ptr,
+    Struct13, Struct16, Struct18, Struct20, Struct24, Struct43, Struct64, Struct7, Struct76,
+    Struct79, U32Ptr,
 };
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::file::file_1010::unk_io_op_1010_830a;
@@ -22,7 +22,10 @@ use crate::pass::pass_1018::{
     pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c,
     pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0,
 };
-use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498, pass1_1020_64d4, pass1_1020_68de};
+use crate::pass::pass_1020::{
+    draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498,
+    pass1_1020_64d4, pass1_1020_68de,
+};
 use crate::pass::pass_1030::pass1_1030_8308;
 use crate::pass::pass_1038::pass1_1038_af40;
 use crate::string::string_1000::string_1000_3d3e;
@@ -36,7 +39,15 @@ use crate::win_struct::{
     COLORREF, DEVMODEA, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16,
     HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16,
 };
-use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, LoadCursor16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16, WinHelp16, lstrlen16};
+use crate::winapi::{
+    lstrlen16, BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16,
+    DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16,
+    GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16,
+    IsIconic16, LineTo16, LoadAccelerators16, LoadCursor16, MoveTo16, MoveToEx16, Polygon16,
+    PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16,
+    SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16,
+    TextOut16, UnrealizeObject16, ValidateRect16, WinHelp16,
+};
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16) {
     let pi_var1: U32Ptr;
@@ -1535,11 +1546,7 @@ pub unsafe fn unk_draw_op_1020_41c8(
     return;
 }
 
-pub unsafe fn set_cursor_1020_5764(
-    ctx: &mut AppContext,
-    param_1: u32, 
-    param_2: i16, 
-    param_3: u16) {
+pub unsafe fn set_cursor_1020_5764(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: u16) {
     let u_var1: u16;
     let u_var2: u32;
     let in_dx: U32Ptr;
@@ -1641,7 +1648,7 @@ pub fn pt_in_rect_op_1020_58ce(
     let ppc_var1: u32;
     let u_var2: u32;
     let u_var3: u16;
-    let bvar4: bool;
+    let b_var4: bool;
     let msg: U32Ptr;
     let in_dx: U32Ptr;
     let u_var5: u16;
@@ -1692,8 +1699,8 @@ pub fn pt_in_rect_op_1020_58ce(
                 // TODO: refactor for loop
                 // for (pu_stack26 = 0x0; pu_stack26 < 0x4;
                 //     pu_stack26 = (pu_stack26 + 0x1)) {
-                //   BVar4 = PtInRect16(rect_00,(POINT16)CONCAT22(u_stack4,local_6));
-                //   if (BVar4 != 0x0) {
+                //   b_var4 = PtInRect16(rect_00,(POINT16)CONCAT22(u_stack4,local_6));
+                //   if (b_var4 != 0x0) {
                 //     local_18[0] = 0x0;
                 //     u_stack20 = 0x0;
                 //     if (pu_stack26 == 0x0) {
@@ -1718,7 +1725,7 @@ pub fn pt_in_rect_op_1020_58ce(
                 //                     param_6);
                 //     return;
                 //   }
-                //   rect_00 = s_tile2_bmp_1050_1538;
+                //   rect_00 = ctx.s_tile2_bmp_1050_1538;
                 // }
             }
             u_var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x3);
@@ -1800,12 +1807,12 @@ pub fn pt_in_rect_op_1020_58ce(
         u_var11 = pass1_1020_6498(((i_var7 + 0xf6) as u32), 0x4);
         u_stack30._2_2_ = (u_var11 >> 0x10);
         u_var10 = u_var11 as u16;
-        rect_00 = s_tile2_bmp_1050_1538;
+        rect_00 = ctx.s_tile2_bmp_1050_1538;
         pu_var6 = u_stack30._2_2_;
         u_stack14 = u_var10;
         pu_stack12 = u_stack30._2_2_;
-        BVar4 = PtInRect16(rect, CONCAT22(u_stack4, local_6));
-        if (BVar4 == 0x0) {
+        b_var4 = PtInRect16(rect, CONCAT22(u_stack4, local_6));
+        if (b_var4 == 0x0) {
             // goto
             // LAB_1020_5a16;
         }
@@ -1826,10 +1833,10 @@ pub fn pt_in_rect_op_1020_58ce(
                 i_var7 += 0xe2;
             }
             u_stack30 = CONCAT22(u_var9, i_var7 as u16);
-            ppc_var1 = (*_PTR_LOOP_1050_02a0 + 0x4);
+            ppc_var1 = (*ctx.PTR_LOOP_1050_02a0 + 0x4);
             (**ppc_var1)(
                 0x1010,
-                _PTR_LOOP_1050_02a0,
+                ctx.PTR_LOOP_1050_02a0,
                 (ctx.PTR_LOOP_1050_02a0 >> 0x10),
                 0x10,
                 i_var7,
@@ -1859,10 +1866,10 @@ pub fn pt_in_rect_op_1020_58ce(
         u_var11 = pass1_1020_6498(((i_var7 + 0xf6) as u32), 0x2);
         u_stack30._2_2_ = (u_var11 >> 0x10);
         u_stack14 = u_var11 as u16;
-        rect = s_tile2_bmp_1050_1538;
+        rect = ctx.s_tile2_bmp_1050_1538;
         pu_stack12 = u_stack30._2_2_;
-        BVar4 = PtInRect16(param_5, CONCAT22(u_stack4, local_6));
-        if (BVar4 == 0x0) {
+        b_var4 = PtInRect16(param_5, CONCAT22(u_stack4, local_6));
+        if (b_var4 == 0x0) {
             // goto
             // LAB_1020_5942;
         }
@@ -1874,7 +1881,12 @@ pub fn pt_in_rect_op_1020_58ce(
     return;
 }
 
-pub fn mix_draw_op_1020_650c(param_1: &mut Struct7, param_2: HWND16, param_3: u16) {
+pub fn mix_draw_op_1020_650c(
+    ctx: &mut AppContext,
+    param_1: &mut Struct7,
+    param_2: HWND16,
+    param_3: u16,
+) {
     let ppc_var1: u32;
     let u_var2: u32;
     let i_var3: i16;

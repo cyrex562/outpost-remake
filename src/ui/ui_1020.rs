@@ -348,7 +348,7 @@ pub fn unk_win_ui_op_1020_1418(param_1: &mut Struct40, param_2: i32, param_3: u1
     let u_var1: u32;
     let paVar2: &mut Struct13;
     let ppc_var3: u32;
-    pHVar4: HDC16;
+    let pHVar4: HDC16;
     let pu_var5: u32;
     let puVar6: U32Ptr;
     let extraout_dx: U32Ptr;
@@ -2459,7 +2459,7 @@ pub fn menu_ui_op_1020_5bf2(param_1: &mut Struct52, param_2: HWND16, param_3: &R
     instance = unaff_CS;
     if (u_var2 != 0x0) {
         uStack10 = pass1_1020_6498(iVar5.field_0xf6, 0x2);
-        instance = s_tile2_bmp_1050_1538;
+        instance = ctx.s_tile2_bmp_1050_1538;
         uVar8 = uStack10;
         BVar3 = PtInRect16(unaff_CS, CONCAT22(HStack4, local_6));
         if (BVar3 != 0x0) {
@@ -2485,7 +2485,7 @@ pub fn menu_ui_op_1020_5bf2(param_1: &mut Struct52, param_2: HWND16, param_3: &R
         if (HVar5 == 0x0) {
             return 0x1;
         }
-        instance = s_tile2_bmp_1050_1538;
+        instance = ctx.s_tile2_bmp_1050_1538;
         HVar5 = GetSubMenu16(ctx.s_tile2_bmp_1050_1538, 0x0);
         iVar5.field_0x106 = HVar5;
         if (HVar5 == 0x0) {
@@ -3346,7 +3346,7 @@ pub fn post_win_msg_1020_7308(param_1: u32, param_2: u16, param_3: HWND16) {
     }
     //LAB_1020_7310:
     PostMessage16(param_3, 0x0, 0x0, 0x11100eb);
-    invalidate_rect_1020_735a(param_1, s_tile2_bmp_1050_1538);
+    invalidate_rect_1020_735a(param_1, ctx.s_tile2_bmp_1050_1538);
     return;
 }
 

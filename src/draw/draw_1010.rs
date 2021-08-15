@@ -677,7 +677,7 @@ pub unsafe fn draw_op_1010_47d0(
 }
 
 pub fn pt_in_rect_1010_4e08(
-    ctx: &mut AppContext, 
+    ctx: &mut AppContext,
     param_1: &mut Struct_1010_4e08,
     point: &POINT16,
     mut rect: &mut RECT16,

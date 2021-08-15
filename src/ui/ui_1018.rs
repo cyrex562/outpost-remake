@@ -329,7 +329,7 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28) {
     paVar8 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, (iVar5 + 0xec), unaff_SS);
     mci_send_command_1008_53ae(paVar8, (iVar5 + 0x8), 0x1008, unaff_SS);
     ShowCursor16(0x1008);
-    unk_destroy_window_op_1018_6bb6(param_1, s_tile2_bmp_1050_1538);
+    unk_destroy_window_op_1018_6bb6(param_1, ctx.s_tile2_bmp_1050_1538);
     return;
 }
 

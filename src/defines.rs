@@ -382,3 +382,5 @@ pub struct Struct24 {}
 pub struct Struct16 {}
 
 pub struct Struct64 {}
+
+pub struct Struct7 {}

@@ -1204,8 +1204,8 @@ pub fn mixed_sys_op_1000_40af(
                 if ((SVar9 != 0x0) || (uVar7 == 0x0)) {
                     iVar16 = 0x12;
                     iVar10 = 0x12;
-                    pass1_1000_25a8(ctx, param_5, s_tile2_bmp_1050_1538);
-                    pass1_1000_2913(ctx, iVar10, param_5, s_tile2_bmp_1050_1538);
+                    pass1_1000_25a8(ctx, param_5, ctx.s_tile2_bmp_1050_1538);
+                    pass1_1000_2913(ctx, iVar10, param_5, ctx.s_tile2_bmp_1050_1538);
                     str = str_op_1000_28dc(iVar16);
                     if (str == 0x0) {
                         // goto
@@ -1220,7 +1220,7 @@ pub fn mixed_sys_op_1000_40af(
                     pcVar13 = str;
                     break;
                 }
-                HVar8 = pass1_1000_422a(ctx, uVar7, HVar8, s_tile2_bmp_1050_1538, unaff_SS);
+                HVar8 = pass1_1000_422a(ctx, uVar7, HVar8, ctx.s_tile2_bmp_1050_1538, unaff_SS);
                 if (HVar8 == 0x0) {
                     GlobalUnlock16(ctx.s_tile2_bmp_1050_1538);
                     GlobalFree16(ctx.s_tile2_bmp_1050_1538);
@@ -1599,7 +1599,7 @@ pub fn mixed_win_sys_op_1008_016e(ctx: &mut AppContext, param_1: u32, param_2: u
     let version_part_1: u16;
     let puStack4: U32Ptr;
 
-    instance = s_tile2_bmp_1050_1538;
+    instance = ctx.s_tile2_bmp_1050_1538;
     version = GetVersion16();
     // puVar7 = (DVar11 >> 0x10);
     version_part_1 = (version & 0xffff);
@@ -1819,12 +1819,12 @@ pub fn win_msg_op_1008_9498(
     }
     //   TODO: goto LAB_1008_94dc;
     // code_r0x100894cd:
-    in_msg_1 = s_tile2_bmp_1050_1538;
+    in_msg_1 = ctx.s_tile2_bmp_1050_1538;
     b_var1 = IsDialogMessage16(ctx.s_tile2_bmp_1050_1538, &local_msg_1);
     if b_var1 == false {
         //LAB_1008_94dc:
         if ctx.PTR_LOOP_1050_0398 != 0x0 {
-            in_msg_1 = s_tile2_bmp_1050_1538;
+            in_msg_1 = ctx.s_tile2_bmp_1050_1538;
             IVar2 = TranslateAccelerator16(
                 ctx.s_tile2_bmp_1050_1538,
                 (HACCEL16) & local_msg_1,
@@ -1836,7 +1836,7 @@ pub fn win_msg_op_1008_9498(
             }
         }
         TranslateMessage16(ctx.s_tile2_bmp_1050_1538);
-        in_msg_1 = s_tile2_bmp_1050_1538;
+        in_msg_1 = ctx.s_tile2_bmp_1050_1538;
         DispatchMessage16(ctx.s_tile2_bmp_1050_1538);
     }
     //   TODO: goto LAB_1008_949c;
@@ -1865,12 +1865,12 @@ pub fn unk_win_msg_op_1008_9510(
     }
     return;
     // code_r0x10089538:
-    param_2 = s_tile2_bmp_1050_1538;
+    param_2 = ctx.s_tile2_bmp_1050_1538;
     has_message = IsDialogMessage16(ctx.s_tile2_bmp_1050_1538, &local_14);
     if has_message == 0x0 {
         //LAB_1008_9547:
         if ctx.PTR_LOOP_1050_0398 != 0x0 {
-            param_2 = s_tile2_bmp_1050_1538;
+            param_2 = ctx.s_tile2_bmp_1050_1538;
             IVar1 =
                 TranslateAccelerator16(ctx.s_tile2_bmp_1050_1538, (HACCEL16) & local_14, param_3);
             if IVar1 != 0x0 {
@@ -1878,7 +1878,7 @@ pub fn unk_win_msg_op_1008_9510(
             }
         }
         TranslateMessage16(ctx.s_tile2_bmp_1050_1538);
-        param_2 = s_tile2_bmp_1050_1538;
+        param_2 = ctx.s_tile2_bmp_1050_1538;
         DispatchMessage16(ctx.s_tile2_bmp_1050_1538);
     }
     //   TODO: goto LAB_1008_9578;
@@ -3119,7 +3119,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: &mut Struct37, param_2: HWND16) {
     // u_var5 = (param_1 >> 0x10);
     i_var4 = param_1;
     hdc = GetDC16(param_2);
-    draw_text_1040_8d14(ctx, param_1, s_tile2_bmp_1050_1538);
+    draw_text_1040_8d14(ctx, param_1, ctx.s_tile2_bmp_1050_1538);
     (i_var4 + 0xa6) = (i_var4 + 0x9e);
     (i_var4 + 0xaa) = (i_var4 + 0xa2);
     i_var3 = GetSystemMetrics16(ctx.s_tile2_bmp_1050_1538);

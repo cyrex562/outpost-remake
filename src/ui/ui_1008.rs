@@ -487,7 +487,7 @@ pub fn cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, in_hinstanc
     }
     big_switch_1008_15d4(
         i_var3,
-        s_tile2_bmp_1050_1538,
+        ctx.s_tile2_bmp_1050_1538,
         unaff_SS,
         CONCAT22(param_2, param_1 as u16),
         param_3,
@@ -504,7 +504,7 @@ pub fn cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, in_hinstanc
         (param_1 + 0xce) = (param_1 + 0xe8);
     } else {
         (param_1 + 0xe8) = 0x0;
-        ui_op_1008_2c4e(param_1, param_2, param_3, s_tile2_bmp_1050_1538);
+        ui_op_1008_2c4e(param_1, param_2, param_3, ctx.s_tile2_bmp_1050_1538);
         (param_1 + 0xce) = 0x0;
     }
     SetCursor16(ctx.s_tile2_bmp_1050_1538);
@@ -584,7 +584,7 @@ pub fn win_ui_cursor_op_1008_2e9a(param_1: &mut Struct72, param_2: u16) {
         win_ui_op_1008_1414(
             param_1,
             CONCAT22(param_2, local_102),
-            s_tile2_bmp_1050_1538,
+            ctx.s_tile2_bmp_1050_1538,
             param_2,
             in_AF,
             u_var3,
@@ -1387,7 +1387,7 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
             }
             window_handle_1 = create_window_1008_5e7e(ctx, ctx.s_tile2_bmp_1050_1538, in_wnd_class);
             if (window_handle_1 == 0x0) {
-                mci_send_command_1008_5cb6(param_1, offset_val, s_tile2_bmp_1050_1538);
+                mci_send_command_1008_5cb6(param_1, offset_val, ctx.s_tile2_bmp_1050_1538);
                 return;
             }
             pass1_1000_4906(CONCAT22(in_wnd_class, &message_1), 0x0, 0xc);
@@ -1497,7 +1497,7 @@ pub fn make_def_win_proc_1008_5f44(
 
     if (param_3._2_2_ == 0x2) {
         WVar1 = GetWindowWord16(in_hwnd_4, 0x0);
-        mci_send_command_1008_5cb6(ctx.PTR_LOOP_1050_02a0, WVar1, s_tile2_bmp_1050_1538);
+        mci_send_command_1008_5cb6(ctx.PTR_LOOP_1050_02a0, WVar1, ctx.s_tile2_bmp_1050_1538);
         pu_var3 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x37, unaff_SS, in_DX, unaff_DI);
         pass1_1008_aa28(pu_var3, pu_var3, unaff_SS);
     } else {
@@ -1624,7 +1624,7 @@ pub fn win_sys_op_1008_84f2(
                             // goto
                             // LAB_1008_8771;
                         }
-                        draw_op_1008_8288(param_4._2_2_, paVar7, s_tile2_bmp_1050_1538);
+                        draw_op_1008_8288(param_4._2_2_, paVar7, ctx.s_tile2_bmp_1050_1538);
                     }
                 }
             }
@@ -1686,7 +1686,7 @@ pub fn win_sys_op_1008_84f2(
                         );
                     }
                     if (((i_var3 + 0x4) & 0x2) == 0x0) {
-                        send_msg_1008_84ba(param_4._2_2_, paVar7, s_tile2_bmp_1050_1538);
+                        send_msg_1008_84ba(param_4._2_2_, paVar7, ctx.s_tile2_bmp_1050_1538);
                     }
                 } else {
                     if (param_4 != 0x201) {
@@ -1728,7 +1728,7 @@ pub fn win_sys_op_1008_84f2(
                         pbVar1 = (i_var3 + 0x4);
                         *pbVar1 = *pbVar1 | 0x8;
                     }
-                    send_msg_1008_84ba(param_4._2_2_, paVar7, s_tile2_bmp_1050_1538);
+                    send_msg_1008_84ba(param_4._2_2_, paVar7, ctx.s_tile2_bmp_1050_1538);
                     SetTimer16(
                         ctx.s_tile2_bmp_1050_1538,
                         0x0,

@@ -865,7 +865,7 @@ pub fn read_file_1008_7c6e(param_1: u16, param_2: u16, param_3: &mut String, par
         }
         param_3 = (param_3 & 0xffff0000 | (param_3 + 0x1));
         *pcVar1 = local_c[0];
-        param_4 = s_tile2_bmp_1050_1538;
+        param_4 = ctx.s_tile2_bmp_1050_1538;
     }
     *param_3 = '\0';
     return;

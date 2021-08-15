@@ -362,10 +362,10 @@ pub fn win_ui_op_1040_12bc(param_1: &mut Struct1, param_2: u16, param_3: U32Ptr)
     );
     // wparam = (pcVar4 >> 0x10);
     HVar2 = GetDlgItem16(0x1010, (s_vrpal_bmp_1050_183a + 0x5));
-    send_msg_1040_1696(param_1, HVar2, param_3, s_tile2_bmp_1050_1538);
+    send_msg_1040_1696(param_1, HVar2, param_3, ctx.s_tile2_bmp_1050_1538);
     SendMessage16(ctx.s_tile2_bmp_1050_1538, pcVar4, wparam, 0x40dffff);
     HVar2 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, (s_vrpal_bmp_1050_183a + 0x4));
-    send_msg_1040_1696(param_1, HVar2, param_3, s_tile2_bmp_1050_1538);
+    send_msg_1040_1696(param_1, HVar2, param_3, ctx.s_tile2_bmp_1050_1538);
     SendMessage16(ctx.s_tile2_bmp_1050_1538, pcVar4, wparam, 0x40dffff);
     ShowWindow16(ctx.s_tile2_bmp_1050_1538, 0x5);
     return;
@@ -1355,7 +1355,7 @@ pub fn win_dlg_op_1040_2f90(param_1: u32, param_2: U32Ptr) {
     SendMessage16(0x1018, uVar7, (uVar7 >> 0x10), 0x40dffff);
     HVar1 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x183);
     (i_var4 + 0x94) = HVar1;
-    send_msg_1040_3374(param_1, local_116, HVar1, s_tile2_bmp_1050_1538);
+    send_msg_1040_3374(param_1, local_116, HVar1, ctx.s_tile2_bmp_1050_1538);
     pcVar8 = load_string_1010_847e(
         ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
@@ -4409,7 +4409,7 @@ pub fn call_win_proc_1040_9684(
                     pRVar5 = local_1a;
                     u_var6 = CONCAT22(uVar7, param_6);
                     BVar4 = PtInRect16(
-                        s_tile2_bmp_1050_1538,
+                        ctx.s_tile2_bmp_1050_1538,
                         CONCAT13((param_2 >> 0x8), CONCAT12(param_2, param_1)),
                     );
                     if (BVar4 == 0x0) {
@@ -4640,7 +4640,7 @@ pub fn win_op_1040_9cde(
                                 draw_op_1040_9948(
                                     param_4._2_2_,
                                     paVar12,
-                                    s_tile2_bmp_1050_1538,
+                                    ctx.s_tile2_bmp_1050_1538,
                                     param_6,
                                 );
                                 return;
@@ -4875,7 +4875,7 @@ pub fn get_dlg_item_1040_a3d0(param_1: u32, param_2: HWND16) {
         lVar1 = i_var3.field_0x90;
         (lVar1 + 0x14) = i_var3.field_0x6;
         GetDlgItem16(param_2, 0x1826);
-        win_msg_1040_a308(param_1, unaff_DI, s_tile2_bmp_1050_1538, unaff_SS);
+        win_msg_1040_a308(param_1, unaff_DI, ctx.s_tile2_bmp_1050_1538, unaff_SS);
     }
     return;
 }
@@ -5268,7 +5268,7 @@ pub fn win_ui_op_1040_b372(param_1: i32, param_2: u16, param_3: u16, in_colorref
     // u_var5 = (param_1 >> 0x10);
     local_colorref = in_colorref_4;
     if (param_1 + 0x8e) == 0x0 {
-        local_colorref = s_tile2_bmp_1050_1538;
+        local_colorref = ctx.s_tile2_bmp_1050_1538;
         local_brush_handle = CreateSolidBrush16(in_colorref_4);
         (param_1 + 0x8e) = local_brush_handle;
     }

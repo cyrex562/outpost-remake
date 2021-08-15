@@ -80,7 +80,7 @@ pub unsafe fn send_dlg_item_msg_1038_7eac(
         SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0xffff, 0x18540407);
         SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0, 0x18550405);
         SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0, 0x18560405);
-        enable_win_1038_806a(param_1, s_tile2_bmp_1050_1538);
+        enable_win_1038_806a(param_1, ctx.s_tile2_bmp_1050_1538);
     }
     lvar3 = SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x1, 0x1854000b);
     return lvar3;
@@ -2090,7 +2090,7 @@ pub fn win_dlg_op_1038_bea4(param_1: u32, param_2: U32Ptr) {
     SendMessage16(0x1008, uVar8, (uVar8 >> 0x10), 0x40dffff);
     HVar2 = GetDlgItem16(ctx.s_tile2_bmp_1050_1538, 0x17a);
     (iVar5 + 0x94) = HVar2;
-    send_msg_1038_c374(param_1, local_116, HVar2, s_tile2_bmp_1050_1538);
+    send_msg_1038_c374(param_1, local_116, HVar2, ctx.s_tile2_bmp_1050_1538);
     pcVar9 = load_string_1010_847e(
         ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),

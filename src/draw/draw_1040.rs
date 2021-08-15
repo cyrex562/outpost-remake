@@ -114,7 +114,7 @@ pub fn draw_ui_op_1040_27cc(param_1: U32Ptr, param_2: u16, param_3: u16, param_4
     iVar6 = param_1;
     CVar8 = param_4;
     if ((iVar6 + 0x4) == 0x0) {
-        CVar8 = s_tile2_bmp_1050_1538;
+        CVar8 = ctx.s_tile2_bmp_1050_1538;
         HVar4 = CreateSolidBrush16(param_4);
         (iVar6 + 0x4) = HVar4;
     }
@@ -379,7 +379,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14, in_win_handle_2: HWND16, pa
                 rect = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 FillRect16(ctx.s_tile2_bmp_1050_1538, rect, hbrush);
                 if (i_var4.field_0x76 != 0x0) {
-                    draw_op_1040_82ee(in_struct_1, s_tile2_bmp_1050_1538);
+                    draw_op_1040_82ee(in_struct_1, ctx.s_tile2_bmp_1050_1538);
                 }
                 count = &i_var4.field_0x10;
                 if (*count != '\0') {
@@ -924,7 +924,7 @@ pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLO
     iVar6 = param_1;
     hdc = param_4;
     if ((iVar6 + 0x8e) == 0x0) {
-        hdc = s_tile2_bmp_1050_1538;
+        hdc = ctx.s_tile2_bmp_1050_1538;
         HVar5 = CreateSolidBrush16(param_4);
         (iVar6 + 0x8e) = HVar5;
     }
@@ -1121,7 +1121,7 @@ pub fn unk_draw_op_1040_c226(param_1: u32, param_2: HWND16, param_3: u16) {
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     handle = CreatePen16(ctx.s_tile2_bmp_1050_1538, -0x7f80, 0x0);
     handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538, handle);
-    draw_line_1040_c302(param_1, s_tile2_bmp_1050_1538);
+    draw_line_1040_c302(param_1, ctx.s_tile2_bmp_1050_1538);
     draw_op_1040_c38e(param_1);
     SelectObject16(ctx.s_tile2_bmp_1050_1538, handle_00);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
