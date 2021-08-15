@@ -1,4 +1,7 @@
-use crate::defines::{Struct13, Struct18, Struct43, Struct76, Struct79, U32Ptr};
+use crate::defines::{
+    Struct13, Struct16, Struct18, Struct20, Struct24, Struct43, Struct64, Struct76, Struct79,
+    U32Ptr,
+};
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
@@ -19,7 +22,7 @@ use crate::pass::pass_1018::{
     pass1_1018_108c, pass1_1018_1320, pass1_1018_15f6, pass1_1018_161c, pass1_1018_181c,
     pass1_1018_25d2, pass1_1018_265c, pass1_1018_266a, pass1_1018_2862, pass1_1018_31d0,
 };
-use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_64d4};
+use crate::pass::pass_1020::{draw_1020_239c, pass1_1020_2286, pass1_1020_2488, pass1_1020_5d56, pass1_1020_6498, pass1_1020_64d4, pass1_1020_68de};
 use crate::pass::pass_1030::pass1_1030_8308;
 use crate::pass::pass_1038::pass1_1038_af40;
 use crate::string::string_1000::string_1000_3d3e;
@@ -33,7 +36,7 @@ use crate::win_struct::{
     COLORREF, DEVMODEA, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16,
     HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16,
 };
-use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16, WinHelp16, lstrlen16};
+use crate::winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteDC16, DeleteObject16, DrawIcon16, Ellipse16, EndPaint16, FillRect16, GetClientRect16, GetDC16, GetStockObject16, GetTextExtent16, GetWindowDC16, GetWindowRect16, InvalidateRect16, IsIconic16, LineTo16, LoadAccelerators16, LoadCursor16, MoveTo16, MoveToEx16, Polygon16, PostMessage16, PtInRect16, RealizePalette16, Rectangle16, ReleaseCapture16, ReleaseDC16, SelectObject16, SelectPalette16, SetBkColor16, SetCursor16, SetMapMode16, SetTextColor16, TextOut16, UnrealizeObject16, ValidateRect16, WinHelp16, lstrlen16};
 
 pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16) {
     let pi_var1: U32Ptr;
@@ -296,7 +299,12 @@ pub fn win_ui_palette_op_1020_0cd2(
     return;
 }
 
-pub fn realize_palette_1020_0e46(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HGDIOBJ16) {
+pub fn realize_palette_1020_0e46(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: HGDIOBJ16,
+) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -316,20 +324,25 @@ pub fn realize_palette_1020_0e46(ctx: &mut AppContext, param_1: u32, param_2: i1
     return;
 }
 
-pub fn invalidate_rect_1020_157c(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HWND16) {
-    let bvar1: bool;
-    let mut rect_1: RECT16 = RECT16::new();
-    let u_stack4: u16;
+pub fn invalidate_rect_1020_157c(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: HWND16,
+) {
+    let mut var1 = false;
+    let mut rect_1 = RECT16::new();
+    let var3 = 0u16;
 
     if param_2 == 0x1 {
         (param_1 + 0x14) = 0x0;
         return;
     }
     if param_2 == 0x2 {
-        bvar1 = IsIconic16(param_3);
-        if bvar1 == false {
+        var1 = IsIconic16(param_3);
+        if var1 == false {
             GetClientRect16(ctx.s_tile2_bmp_1050_1538, &mut rect_1);
-            u_stack4 = 0x9a;
+            var3 = 0x9a;
             InvalidateRect16(ctx.s_tile2_bmp_1050_1538, &mut rect_1, false);
             return;
         }
@@ -337,7 +350,12 @@ pub fn invalidate_rect_1020_157c(ctx: &mut AppContext, param_1: u32, param_2: i1
     return;
 }
 
-pub fn draw_op_1020_15de(ctx: &mut AppContext, param_1: i32, in_win_handle_2: HWND16, unaff_ss: u16) {
+pub fn draw_op_1020_15de(
+    ctx: &mut AppContext,
+    param_1: i32,
+    in_win_handle_2: HWND16,
+    unaff_ss: u16,
+) {
     let u_var1: u32;
     let ppc_var2: u32;
     let bvar3: bool;
@@ -424,7 +442,12 @@ pub fn draw_op_1020_1674(ctx: &mut AppContext, struct_1: i32, obj_id: i16) {
     return;
 }
 
-pub fn invalidate_rect_1020_1fb2(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HWND16) {
+pub fn invalidate_rect_1020_1fb2(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: HWND16,
+) {
     let mut local_16 = RECT16::new();
     let u_stack20: u16;
     let i_stack18: i16;
@@ -669,11 +692,7 @@ pub fn draw_line_1020_229c(ctx: &mut AppContext, struct_1: u32, dc_handle: HDC16
     MoveTo16(dc_handle, 0x5, *var2);
     // u_var7 = (pIVar2 >> 0x10);
     var5 = var2;
-    LineTo16(
-        ctx.s_tile2_bmp_1050_1538,
-        0x5,
-        (var5 + var1 * 0x8 + -0x4),
-    );
+    LineTo16(ctx.s_tile2_bmp_1050_1538, 0x5, (var5 + var1 * 0x8 + -0x4));
     // TODO: refactor
     // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
     //   pi_var6 = (iStack10 * 0x8 + i_var5);
@@ -682,11 +701,7 @@ pub fn draw_line_1020_229c(ctx: &mut AppContext, struct_1: u32, dc_handle: HDC16
     //   LineTo16(ctx.s_tile2_bmp_1050_1538,0xa,i_var4);
     // }
     MoveTo16(ctx.s_tile2_bmp_1050_1538, 0x5f, *var2);
-    LineTo16(
-        ctx.s_tile2_bmp_1050_1538,
-        0x5f,
-        (var5 + var1 * 0x8 + -0x4),
-    );
+    LineTo16(ctx.s_tile2_bmp_1050_1538, 0x5f, (var5 + var1 * 0x8 + -0x4));
     // TODO: refactor for loop
     // for (iStack10 = 0x0; iStack10 < i_var1; iStack10 += 0x1) {
     //   pi_var6 = (iStack10 * 0x8 + i_var5);
@@ -975,7 +990,7 @@ pub fn draw_op_1020_30be(ctx: &mut AppContext, param_1: u32, param_2: HWND16, pa
     return;
 }
 
-pub fn unk_draw_op_1020_320e(param_1: u32, param_2: HDC16, param_3: u16) {
+pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16, param_3: u16) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -1104,6 +1119,7 @@ pub fn unk_draw_op_1020_320e(param_1: u32, param_2: HDC16, param_3: u16) {
 }
 
 pub fn draw_op_1020_33c0(
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: u32,
     param_3: i16,
@@ -1162,7 +1178,7 @@ pub fn draw_op_1020_33c0(
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn draw_op_1020_3488(param_1: i32) {
+pub fn draw_op_1020_3488(ctx: &mut AppContext, param_1: i32) {
     let u_var1: u16;
     let u_var2: u32;
     let u_var3: u32;
@@ -1218,7 +1234,7 @@ pub fn draw_polygon_1020_3602(param_1: u16, param_2: u16, param_3: u32, param_4:
     return;
 }
 
-pub fn unk_draw_op_1020_3da4(param_1: &mut Struct24, param_2: i32) {
+pub fn unk_draw_op_1020_3da4(ctx: &mut AppContext, param_1: &mut Struct24, param_2: i32) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -1274,7 +1290,7 @@ pub fn unk_draw_op_1020_3da4(param_1: &mut Struct24, param_2: i32) {
     return;
 }
 
-pub fn win_ui_palette_op_1020_3e84(param_1: &mut Struct16) {
+pub fn win_ui_palette_op_1020_3e84(ctx: &mut AppContext, param_1: &mut Struct16) {
     let i_var1: &mut Struct16;
     let u_var1: u16;
     let unaff_ss: u16;
@@ -1300,7 +1316,7 @@ pub fn win_ui_palette_op_1020_3e84(param_1: &mut Struct16) {
     return;
 }
 
-pub fn validate_rect_1020_3f12(param_1: u32, param_2: i16, param_3: HWND16) {
+pub fn validate_rect_1020_3f12(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: HWND16) {
     let local_a: RECT16;
     let u_stack6: u32;
 
@@ -1323,7 +1339,7 @@ pub fn validate_rect_1020_3f12(param_1: u32, param_2: i16, param_3: HWND16) {
     return;
 }
 
-pub fn mixed_draw_op_1020_3fa0(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn mixed_draw_op_1020_3fa0(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let u_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -1377,7 +1393,7 @@ pub fn mixed_draw_op_1020_3fa0(param_1: u32, param_2: HWND16, param_3: u16) {
     return;
 }
 
-pub fn pass1_1020_4064(param_1: &mut Struct18, param_2: u8) {
+pub fn pass1_1020_4064(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) {
     win_ui_palette_op_1020_3e84(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -1385,7 +1401,13 @@ pub fn pass1_1020_4064(param_1: &mut Struct18, param_2: u8) {
     return param_1;
 }
 
-pub fn draw_rect_1020_40ce(param_1: u32, param_2: i16, param_3: i16, param_4: u16) {
+pub fn draw_rect_1020_40ce(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: i16,
+    param_4: u16,
+) {
     let i_var1: i16;
     let hvar2: HGDIOBJ16;
     let handle: HPEN16;
@@ -1434,6 +1456,7 @@ pub fn draw_rect_1020_40ce(param_1: u32, param_2: i16, param_3: i16, param_4: u1
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn unk_draw_op_1020_41c8(
+    ctx: &mut AppContext,
     param_1: &mut Struct20,
     param_2: u16,
     param_3: u16,
@@ -1480,13 +1503,13 @@ pub unsafe fn unk_draw_op_1020_41c8(
     u_var5.field_0xe4 = 0x1020;
     pu_var4 = extraout_dx;
     pu_var11 = ctx.PTR_LOOP_1050_038c;
-    hvar2 = LoadCursor16(param_4, (s__s__ld_1050_019c + 0x2));
+    hvar2 = LoadCursor16(param_4, (ctx.s__s__ld_1050_019c + 0x2));
     u_var5.field_0xf0 = hvar2;
     pu_var10 = ctx.PTR_LOOP_1050_038c;
-    hvar2 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, (s__s__ld_1050_019c + 0x3));
+    hvar2 = LoadCursor16(ctx.s_tile2_bmp_1050_1538, (ctx.s__s__ld_1050_019c + 0x3));
     u_var5.field_0xf2 = hvar2;
     pu_var9 = ctx.PTR_LOOP_1050_038c;
-    ctx.PTR_LOOP_1050_0398 = LoadAccelerators16(ctx.s_tile2_bmp_1050_1538, s_OpAccel_1050_43e8);
+    ctx.PTR_LOOP_1050_0398 = LoadAccelerators16(ctx.s_tile2_bmp_1050_1538, ctx.s_OpAccel_1050_43e8);
     pu_var8 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x29, unaff_ss, pu_var4, unaff_di);
     &u_var5.field_0xfa = pu_var8;
     (&u_var5.field_0xfa + 0x2) = (pu_var8 >> 0x10);
@@ -1512,7 +1535,11 @@ pub unsafe fn unk_draw_op_1020_41c8(
     return;
 }
 
-pub unsafe fn set_cursor_1020_5764(param_1: u32, param_2: i16, param_3: u16) {
+pub unsafe fn set_cursor_1020_5764(
+    ctx: &mut AppContext,
+    param_1: u32, 
+    param_2: i16, 
+    param_3: u16) {
     let u_var1: u16;
     let u_var2: u32;
     let in_dx: U32Ptr;
@@ -1549,7 +1576,7 @@ pub unsafe fn set_cursor_1020_5764(param_1: u32, param_2: i16, param_3: u16) {
                 (i_var3 + 0xee) = 0x0;
                 (i_var3 + 0xf4) = 0x1;
                 (i_var3 + 0x10c) = 0x0;
-                h_instance = s_tile2_bmp_1050_1538;
+                h_instance = ctx.s_tile2_bmp_1050_1538;
                 ReleaseCapture16();
             }
             LoadCursor16(h_instance, 0x7f02);
@@ -1603,6 +1630,7 @@ pub fn pt_in_rect_1020_5856(param_1: u32, param_2: &POINT16, param_3: u16) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pt_in_rect_op_1020_58ce(
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
     param_3: u16,

@@ -376,3 +376,9 @@ pub struct Struct9 {}
 pub struct Struct58 {}
 
 pub struct Struct36 {}
+
+pub struct Struct24 {}
+
+pub struct Struct16 {}
+
+pub struct Struct64 {}
