@@ -384,3 +384,11 @@ pub struct Struct16 {}
 pub struct Struct64 {}
 
 pub struct Struct7 {}
+
+pub struct Struct6 {}
+
+pub struct Struct14 {}
+
+pub struct Struct15 {}
+
+pub struct Struct71 {}

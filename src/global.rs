@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use crate::defines::{U32Ptr, Struct_1050_0012, Struct_1050_11ca};
+use crate::defines::{Struct_1050_0012, Struct_1050_11ca, U32Ptr};
 
 pub struct AppContext {
     pub PTR_LOOP_1050_5f7e: U32Ptr,
@@ -44,9 +44,9 @@ pub struct AppContext {
     pub PTR_LOOP_1050_5f36: U32Ptr,
     pub PTR_LOOP_1050_5f2e: U32Ptr,
     pub PTR_LOOP_1050_5f2c: U32Ptr,
-    pub PTR_PTR_1050_5f1a: U32Ptr,
+    pub PTRPTR_1050_5f1a: U32Ptr,
     pub PTR_LOOP_1050_5f1c: U32Ptr,
-    pub PTR_PTR_1050_1f7e: U32Ptr,
+    pub PTRPTR_1050_1f7e: U32Ptr,
     pub PTR_LOOP_1050_5f26: U32Ptr,
     pub PTR_LOOP_1050_5f22: U32Ptr,
     pub PTR_LOOP_1050_5f20: U32Ptr,
@@ -95,13 +95,13 @@ pub struct AppContext {
     pub PTR_LOOP_1050_5b80: U32Ptr,
     pub PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e: String,
     pub DAT_1050_5f44: u32,
-    pub DAT_1050_61d2: u32, 
+    pub DAT_1050_61d2: u32,
     pub PTR_LOOP_1050_61d0: U32Ptr,
     pub DAT_1050_61ce: u32,
     pub DAT_1050_61ce: u32,
-    pub PTR_PTR_1050_61e0: U32Ptr,
+    pub PTRPTR_1050_61e0: U32Ptr,
     pub PTR_USHORT_1050_1050_1050_61de: U32Ptr,
-    pub PTR_PTR_1050_61e0: String,
+    pub PTRPTR_1050_61e0: String,
     pub PTR_s_dcbSC_1050_0336_1050_033c: String,
     pub s_SCInternalPutBldg_site_0x_08lx__b_1050_5046: U32Ptr,
     pub PTR_LOOP_1050_4230: U32Ptr,
@@ -126,7 +126,7 @@ pub struct AppContext {
 
 impl AppContext {
     pub fn new() -> AppContext {
-        AppContext{
+        AppContext {
             PTR_LOOP_1050_5f7e: 0,
             PTR_LOOP_1050_1000: 0,
             PTR_LOOP_1050_5f80: 0,
@@ -168,9 +168,9 @@ impl AppContext {
             PTR_LOOP_1050_5f36: 0,
             PTR_LOOP_1050_5f2e: 0,
             PTR_LOOP_1050_5f2c: 0,
-            PTR_PTR_1050_5f1a: 0,
+            PTRPTR_1050_5f1a: 0,
             PTR_LOOP_1050_5f1c: 0,
-            PTR_PTR_1050_1f7e: 0,
+            PTRPTR_1050_1f7e: 0,
             PTR_LOOP_1050_5f26: 0,
             PTR_LOOP_1050_5f22: 0,
             PTR_LOOP_1050_5f20: 0,
@@ -223,9 +223,9 @@ impl AppContext {
             PTR_LOOP_1050_61d0: 0,
             DAT_1050_61ce: 0,
             DAT_1050_61ce: 0,
-            PTR_PTR_1050_61e0: 0,
+            PTRPTR_1050_61e0: 0,
             PTR_USHORT_1050_1050_1050_61de: 0,
-            PTR_PTR_1050_61e0: "".to_string(),
+            PTRPTR_1050_61e0: "".to_string(),
             PTR_s_dcbSC_1050_0336_1050_033c: "".to_string(),
             s_SCInternalPutBldg_site_0x_08lx__b_1050_5046: 0,
             PTR_LOOP_1050_4230: 0,

@@ -1,19 +1,28 @@
-use crate::{defines::Struct23, fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708}, mem_1000::mem_op_1000_160a, pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c}, string::string_1000::string_1000_3d3e, util::{CONCAT22, ZEXT24}, win_struct::{
-        HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, PALETTEENTRY, RECT16,
-    }, winapi::{
-        BeginPaint16, CreatePen16, CreateSolidBrush16, DeleteObject16, EndPaint16, GetClientRect16,
-        GetDC16, GetDeviceCaps16, GetStockObject16, GetSystemPaletteEntries, LineTo16, MoveTo16,
-        Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
-    }};
-use crate::defines::{Struct19, Struct79, Struct80, U32Ptr, Struct20, Struct18};
+use crate::defines::{Struct18, Struct19, Struct20, Struct79, Struct80, U32Ptr};
 use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
 use crate::struct_ops::struct_1008::{clear_struct_1008_3e38, set_struct_1008_687a};
 use crate::struct_ops::struct_1010::set_struct_fields_1010_1d48;
 use crate::ui::ui_1008::{fill_rect_1008_39ac, win_ui_reg_class_1008_96d2};
-use crate::util::{read_vec_from_addr, read_string_from_rsrc, read_struct_from_addr};
-use crate::win_struct::{COLORREF, HINSTANCE16, WNDCLASS16, POINT16};
+use crate::util::{read_string_from_rsrc, read_struct_from_addr, read_vec_from_addr};
+use crate::win_struct::{COLORREF, HINSTANCE16, POINT16, WNDCLASS16};
 use crate::winapi::{FillRect16, LoadCursor16};
+use crate::{
+    defines::Struct23,
+    fn_ptr::fn_ptr_1000::{fn_ptr_1000_17ce, fn_ptr_op_1000_1708},
+    mem_1000::mem_op_1000_160a,
+    pass::pass_1008::{pass1_1008_3e76, pass1_1008_818c},
+    string::string_1000::string_1000_3d3e,
+    util::{CONCAT22, ZEXT24},
+    win_struct::{
+        HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, PALETTEENTRY, RECT16,
+    },
+    winapi::{
+        BeginPaint16, CreatePen16, CreateSolidBrush16, DeleteObject16, EndPaint16, GetClientRect16,
+        GetDC16, GetDeviceCaps16, GetStockObject16, GetSystemPaletteEntries, LineTo16, MoveTo16,
+        Polygon16, Rectangle16, ReleaseDC16, SelectObject16,
+    },
+};
 
 pub fn draw_op_1008_1230(param_1: HWND16) {
     fill_rect_1008_39ac(param_1);
@@ -29,7 +38,7 @@ pub fn unk_draw_op_1008_61b2(
     wnd_class: &mut WNDCLASS16,
     extraout_dx: U32Ptr,
     unaff_di: i16,
-)  {
+) {
     let gdi_obj_1: HGDIOBJ16;
     let cursor_1: HCURSOR16;
     let mut struct_1: Struct19;
@@ -49,7 +58,10 @@ pub fn unk_draw_op_1008_61b2(
     );
     gdi_obj_1 = GetStockObject16(0x1000);
     struct_4.hgdiobj_field_0xc6 = gdi_obj_1;
-    cursor_1 = LoadCursor16(ctx.s_tile2_bmp_1050_1538 as HINSTANCE16, &read_string_from_rsrc(0x7f00));
+    cursor_1 = LoadCursor16(
+        ctx.s_tile2_bmp_1050_1538 as HINSTANCE16,
+        &read_string_from_rsrc(0x7f00),
+    );
     struct_4.hcursor_field_0xc4 = cursor_1;
     struct_4.field_0xc8 = 0x200b;
     struct_4.field_0xac = 0x45000000;
@@ -97,7 +109,7 @@ pub fn unk_draw_op_1008_7f62(
     let i_var3: &mut Struct20;
 
     i_var3 = param_1;
-   // u_var4 = (param_1 >> 0x10);
+    // u_var4 = (param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_3);
     i_var3.field_0xde = param_2;
     param_1.field_0x0 = 0x8042;
@@ -122,14 +134,14 @@ pub fn unk_draw_op_1008_80ee(
     ctx: &mut AppContext,
     param_1: &mut Struct23,
     param_2: &WNDCLASS16,
-    stack_0xfffe: u16
+    stack_0xfffe: u16,
 ) -> *mut Struct23 {
     let hvar1: HCURSOR16;
     let hvar2: HGDIOBJ16;
     let i_var3: &mut Struct23;
     let u_var3: &mut Struct23;
 
-   // u_var3 = (param_1 >> 0x10);
+    // u_var3 = (param_1 >> 0x10);
     i_var3 = param_1;
     param_1.field_0x0 = 0x389a;
     i_var3.field_0x2 = 0x1008;
@@ -152,7 +164,7 @@ pub fn unk_draw_op_1008_80ee(
         param_1,
         ctx.s_tile2_bmp_1050_1538 as HINSTANCE16,
         param_2,
-        stack_0xfffe
+        stack_0xfffe,
     );
     return param_1;
 }
@@ -194,7 +206,7 @@ pub fn draw_op_1008_8288(ctx: &mut AppContext, param_1: u16, param_2: u32, param
     b_var1 = false;
     pen_2 = CreatePen16(
         ctx.s_tile2_bmp_1050_1538 as i16,
-        ctx._PTR_LOOP_1050_0368 as i16,
+        ctx.PTR_LOOP_1050_0368 as i16,
         (ctx.PTR_LOOP_1050_0368 >> 0x10),
     );
     pen_1 = CreatePen16(
@@ -299,10 +311,16 @@ pub fn unk_draw_op_1008_da12(
     let i_stack16: i16;
     let l_stack8: i32;
 
-    set_struct_fields_1010_1d48(read_struct_from_addr::<Struct18>(CONCAT22(param_2, struct_1.field_0x0)), param_3);
+    set_struct_fields_1010_1d48(
+        read_struct_from_addr::<Struct18>(CONCAT22(param_2, struct_1.field_0x0)),
+        param_3,
+    );
     struct_1.field_0xa = 0x0;
     struct_1.field_0xc = 0x0;
-    clear_struct_1008_3e38(read_struct_from_addr::<Struct18>(CONCAT22(param_2, struct_1.field_0xe)));
+    clear_struct_1008_3e38(read_struct_from_addr::<Struct18>(CONCAT22(
+        param_2,
+        struct_1.field_0xe,
+    )));
     struct_1.field_0x14 = 0x0;
     struct_1.field_0x16 = 0x0;
     struct_1.field_0x18 = false;
@@ -384,7 +402,11 @@ pub fn unk_draw_op_1008_da12(
             }
         }
         hwnd = 0x1000;
-        fn_ptr_1000_17ce(ctx, read_struct_from_addr::<Struct18>(CONCAT22(struct_3 as u16, start)), 0x1000);
+        fn_ptr_1000_17ce(
+            ctx,
+            read_struct_from_addr::<Struct18>(CONCAT22(struct_3 as u16, start)),
+            0x1000,
+        );
     }
     ReleaseDC16(hwnd, hdc);
     return;

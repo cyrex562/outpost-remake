@@ -1,19 +1,21 @@
 use std::default::default;
 
 use crate::defines::U32Ptr;
-use crate::file::file_1008::{read_file_1008_7cfe, read_file_1008_7dee, write_to_file_1008_7a22, write_to_file_1008_7cac};
+use crate::file::file_1008::{
+    read_file_1008_7cfe, read_file_1008_7dee, write_to_file_1008_7a22, write_to_file_1008_7cac,
+};
 use crate::file::file_1030::file_1030_1730;
+use crate::global::AppContext;
 use crate::pass::pass_1008::{pass1_1008_5784, pass1_1008_5b12};
-use crate::pass::pass_1028::{pass1_1028_dc52, pass1_1028_e0bc, pass1_1028_e100, pass1_1028_e4ec, pass1_1028_e628};
+use crate::pass::pass_1028::{
+    pass1_1028_dc52, pass1_1028_e0bc, pass1_1028_e100, pass1_1028_e4ec, pass1_1028_e628,
+};
 use crate::pass::pass_1030::pass1_1030_16d6;
 use crate::pass::pass_1038::pass1_1038_3ba0;
 use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
 use crate::util::{CONCAT22, ZEXT24};
-use crate::global::AppContext;
 
-pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16
-
-{
+pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16 {
     let u_var1: u32;
     let BVar2: bool;
     let i_var3: i16;
@@ -47,16 +49,24 @@ pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16
                 }
                 local_14[0] = (lStack14 + 0x4);
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_14, param_3, 0x2, 0x1008);
-                if (BVar2 == 0x0) { break; }
+                if (BVar2 == 0x0) {
+                    break;
+                }
                 local_14[0] = (lStack14 + 0x6);
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_14, param_3, 0x2, 0x1008);
-                if (BVar2 == 0x0) { break; }
+                if (BVar2 == 0x0) {
+                    break;
+                }
                 local_14[0] = (lStack14 + 0x8);
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_14, param_3, 0x2, 0x1008);
-                if (BVar2 == 0x0) { break; }
+                if (BVar2 == 0x0) {
+                    break;
+                }
                 local_14[0] = (lStack14 + 0xa);
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_14, param_3, 0x2, 0x1008);
-                if (BVar2 == 0x0) { break; }
+                if (BVar2 == 0x0) {
+                    break;
+                }
                 local_14[0] = (lStack14 + 0xc);
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_14, param_3, 0x2, 0x1008);
             }
@@ -66,10 +76,7 @@ pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16
     return 0x0;
 }
 
-
-pub fn write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16) -> u16
-
-{
+pub fn write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16) -> u16 {
     let b_var1: bool;
     let u_var2: u16;
     let u_var3: u16;
@@ -100,10 +107,13 @@ pub fn write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16) -> u16
     return 0x0;
 }
 
-
-pub fn file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16) -> bool
-
-{
+pub fn file_1028_24a2(
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: U32Ptr,
+    param_5: u16,
+) -> bool {
     let u_var1: u32;
     let ppcVar2: u32;
     let BVar3: bool;
@@ -123,7 +133,15 @@ pub fn file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
         return 0x0;
     }
     if (0x1 < ctx.PTR_LOOP_1050_0312) {
-        BVar3 = read_file_1008_7dee(param_2, (param_2 >> 0x10), &local_4, 0x0, param_5, 0x2, 0x1008);
+        BVar3 = read_file_1008_7dee(
+            param_2,
+            (param_2 >> 0x10),
+            &local_4,
+            0x0,
+            param_5,
+            0x2,
+            0x1008,
+        );
         if (BVar3 == 0x0) {
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return 0x0;
@@ -162,7 +180,6 @@ pub fn file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     return 0x1;
 }
 
-
 pub fn write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4: u16) {
     let b_var1: bool;
     let i_var2: i16;
@@ -180,8 +197,7 @@ pub fn write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4
         b_var1 = write_to_file_1008_7e1c(param_2, u_var4, local_10, param_3, 0x4, 0x1008);
         if (b_var1 != 0x0) {
             local_8 = (i_var2 + 0x24);
-            b_var1 = write_to_file_1008_7e1c(param_2, u_var4, &local_8, param_3, 0x4, 0x1008,
-            );
+            b_var1 = write_to_file_1008_7e1c(param_2, u_var4, &local_8, param_3, 0x4, 0x1008);
             if (b_var1 != 0x0) {
                 write_to_file_1008_7a22(param_2, (i_var2 + 0x28), 0x1008, param_3);
                 if (b_var1 != 0x0) {
@@ -194,18 +210,14 @@ pub fn write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4
     return;
 }
 
-
-pub fn write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16) -> bool
-
-{
+pub fn write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16) -> bool {
     let b_var1: bool;
     let local_c: [u16; 0x5];
 
     b_var1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if (b_var1 != 0x0) {
         local_c[0] = (param_1 + 0x20);
-        b_var1 = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3,
-                                         0x2, 0x1008);
+        b_var1 = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
         if (b_var1 == 0x0) {
             ctx.PTR_LOOP_1050_0310 = 0x6d0;
             return b_var1;
@@ -215,28 +227,35 @@ pub fn write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16) -> bool
     return b_var1;
 }
 
-
 pub fn pass1_1028_5fcc(param_1: i16, param_2: U32Ptr, param_3: i16, param_4: u16) {
     let u_var1: u32;
     let u_var2: u32;
     let BVar3: bool;
 
-    file_1028_b81a((param_3 + 0x6), (param_3 + 0xa), param_1, param_4,
-                   param_2);
-    if ((param_1 != 0x0) && (u_var1 = (param_3 + 0x6), u_var2 = (param_3 + 0xa),
-                             BVar3 = read_file_1008_7dee(u_var2, (u_var2 >> 0x10),
-                                                         u_var1 + 0x20, 0x0, (u_var1 >> 0x10), 0x2,
-                                                         0x1008), BVar3 == 0x0)) {
+    file_1028_b81a((param_3 + 0x6), (param_3 + 0xa), param_1, param_4, param_2);
+    if ((param_1 != 0x0)
+        && (
+            u_var1 = (param_3 + 0x6),
+            u_var2 = (param_3 + 0xa),
+            BVar3 = read_file_1008_7dee(
+                u_var2,
+                (u_var2 >> 0x10),
+                u_var1 + 0x20,
+                0x0,
+                (u_var1 >> 0x10),
+                0x2,
+                0x1008,
+            ),
+            BVar3 == 0x0,
+        ))
+    {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
-
-pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool
-
-{
+pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool {
     let u_var1: u32;
     let in_AX: bool;
     let BVar2: bool;
@@ -246,8 +265,14 @@ pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool
         u_var1 = (param_1 + 0x6);
         (param_1 + -0xa) = (u_var1 + 0xc);
         u_var1 = (param_1 + 0xa);
-        BVar2 = write_to_file_1008_7e1c(u_var1, (u_var1 >> 0x10), param_1 - 0xa, param_2,
-                                        0x2, 0x1008);
+        BVar2 = write_to_file_1008_7e1c(
+            u_var1,
+            (u_var1 >> 0x10),
+            param_1 - 0xa,
+            param_2,
+            0x2,
+            0x1008,
+        );
         if (BVar2 == 0x0) {
             ctx.PTR_LOOP_1050_0310 = 0x6d0;
             return BVar2;
@@ -257,10 +282,7 @@ pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool
     return in_AX;
 }
 
-
-pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool
-
-{
+pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool {
     let u_var1: u32;
     let BVar2: bool;
     let i_var3: i16;
@@ -338,7 +360,7 @@ pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool
             if ((i_var3 + 0x14) == 0x0) {
                 local_8[0] = 0x0;
                 BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_8, param_3, 0x2, 0x1008);
-//         TODO: goto joined_r0x1028b766;
+                //         TODO: goto joined_r0x1028b766;
             }
             u_var1 = (i_var3 + 0x14);
             local_8[0] = (u_var1 + 0x94);
@@ -379,14 +401,13 @@ pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool
         }
     }
     BVar2 = write_to_file_1008_7e1c(u_var5, u_var6, local_8, param_3, 0x2, 0x1008);
-// joined_r0x1028b766:
+    // joined_r0x1028b766:
     if (BVar2 == 0x0) {
         ctx.PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     return 0x1;
 }
-
 
 // WARNING: Unable to use type for symbol pu_var3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -465,12 +486,17 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
     match (iStack10) {
         0x1 | 0x2 | 0x3 => {
             puVar4 = pu_var3 + 0x5;
-//LAB_1028_b968:
+            //LAB_1028_b968:
             b_var1 = read_file_1008_7dee(u_var5, uVar8, puVar4, 0x0, u_var6, 0x2, 0x1008);
         }
         0x4 => {
-            uVar7 = pass1_1028_e0bc(ctx.PTR_LOOP_1050_65e2, (pu_var3 + 0x3), pu_var3, param_5,
-                                    param_4);
+            uVar7 = pass1_1028_e0bc(
+                ctx.PTR_LOOP_1050_65e2,
+                (pu_var3 + 0x3),
+                pu_var3,
+                param_5,
+                param_4,
+            );
             // puStack14 = (uVar7 >> 0x10);
             (pu_var3 + 0x5) = uVar7;
             (pu_var3 + 0x16) = puStack14;
@@ -478,7 +504,7 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
                 puVar4 = ((pu_var3 + 0x5) + 0x94);
                 u_var6 = puStack14;
                 puStack16 = puVar4;
-//       TODO: goto LAB_1028_b968;
+                //       TODO: goto LAB_1028_b968;
             }
             b_var1 = read_file_1008_7dee(u_var5, uVar8, local_26, 0x0, param_4, 0x2, 0x1008);
         }
@@ -490,8 +516,7 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
             (pu_var3 + 0x16) = param_5;
             puStack16 = ((pu_var3 + 0x5) + 0xa4);
             puStack14 = param_5;
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, puStack16, 0x0, param_5, 0x2,
-                                         0x1008);
+            b_var1 = read_file_1008_7dee(u_var5, uVar8, puStack16, 0x0, param_5, 0x2, 0x1008);
             if (b_var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
@@ -502,22 +527,43 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
                 return;
             }
             uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, uVar7 + 0xa8, 0x0, (uVar7 >> 0x10),
-                                         0x2, 0x1008);
+            b_var1 = read_file_1008_7dee(
+                u_var5,
+                uVar8,
+                uVar7 + 0xa8,
+                0x0,
+                (uVar7 >> 0x10),
+                0x2,
+                0x1008,
+            );
             if (b_var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
             uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, uVar7 + 0xaa, 0x0, (uVar7 >> 0x10),
-                                         0x2, 0x1008);
+            b_var1 = read_file_1008_7dee(
+                u_var5,
+                uVar8,
+                uVar7 + 0xaa,
+                0x0,
+                (uVar7 >> 0x10),
+                0x2,
+                0x1008,
+            );
             if (b_var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
             uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, uVar7 + 0xac, 0x0, (uVar7 >> 0x10),
-                                         0x2, 0x1008);
+            b_var1 = read_file_1008_7dee(
+                u_var5,
+                uVar8,
+                uVar7 + 0xac,
+                0x0,
+                (uVar7 >> 0x10),
+                0x2,
+                0x1008,
+            );
             if (b_var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
@@ -528,32 +574,23 @@ pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
             return;
         }
         // _ =>
-//     TODO: goto switchD_1028_ba97_caseD_6;
+        //     TODO: goto switchD_1028_ba97_caseD_6;
         0x9 => {
             puVar4 = pu_var3;
             pass1_1028_e100(ctx.PTR_LOOP_1050_65e2, (pu_var3 + 0x3), param_5);
             (pu_var3 + 0x5) = puVar4;
             (pu_var3 + 0x16) = param_5;
-        }
-//     TODO: goto switchD_1028_ba97_caseD_6;
+        } //     TODO: goto switchD_1028_ba97_caseD_6;
     }
     if b_var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-// switchD_1028_ba97_caseD_6:
+    // switchD_1028_ba97_caseD_6:
     return;
 }
 
-
-pub fn read_file_1028_d7ba(
-    ctx: &mut AppContext,
-    param_3: u32,
-    param_4: u16,
-    param_5: u16
-) -> u16
-
-{
+pub fn read_file_1028_d7ba(ctx: &mut AppContext, param_3: u32, param_4: u16, param_5: u16) -> u16 {
     read_file_1008_7cfe(param_3, 0x8, 0x1008, param_4);
     if param_5 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d4;
@@ -562,16 +599,13 @@ pub fn read_file_1028_d7ba(
     return 0x1;
 }
 
-
 pub fn write_to_file_1028_dce2(
     param_1: U32Ptr,
     param_2: u32,
     param_3: u16,
     in_dx: u16,
     extraout_dx: u16,
-) -> u32
-
-{
+) -> u32 {
     let ppc_var1: u32;
     let bvar2: bool;
     let pu_var3: U32Ptr;
@@ -595,12 +629,15 @@ pub fn write_to_file_1028_dce2(
             // u_var6 = (param_1 >> 0x10);
             i_var5 = param_1;
             local_1e[0] = (i_var5 + 0x8);
-            bvar2 = write_to_file_1008_7e1c(param_2, u_var7, local_1e, param_3, 0x2, 0x1008,
-            );
+            bvar2 = write_to_file_1008_7e1c(param_2, u_var7, local_1e, param_3, 0x2, 0x1008);
             if bvar2 != 0x0 {
-                ppc_var1 = (*_PTR_LOOP_1050_5166 + 0xc);
-                (**ppc_var1)(0x1008, _PTR_LOOP_1050_5166,
-                             (ctx.PTR_LOOP_1050_5166 >> 0x10), param_2);
+                ppc_var1 = (*PTR_LOOP_1050_5166 + 0xc);
+                (**ppc_var1)(
+                    0x1008,
+                    ctx.PTR_LOOP_1050_5166,
+                    (ctx.PTR_LOOP_1050_5166 >> 0x10),
+                    param_2,
+                );
                 in_dx = extraout_dx;
                 if bvar2 != 0x0 {
                     bvar2 = write_to_file_1008_7cac(param_2, param_3);
@@ -613,23 +650,41 @@ pub fn write_to_file_1028_dce2(
                                 if (bvar2 != 0x0) {
                                     bvar2 = write_to_file_1008_7cac(param_2, param_3);
                                     if (bvar2 != 0x0) {
-                                        in_dx = write_file_fn_1028_e56c(i_var5, u_var6, param_2, param_3);
+                                        in_dx = write_file_fn_1028_e56c(
+                                            i_var5, u_var6, param_2, param_3,
+                                        );
                                         if (bvar2 != 0x0) {
                                             bvar2 = write_to_file_1008_7cac(param_2, param_3);
                                             if (bvar2 != 0x0) {
-                                                in_dx = write_file_fn_1028_e56c(i_var5, u_var6, param_2, param_3);
+                                                in_dx = write_file_fn_1028_e56c(
+                                                    i_var5, u_var6, param_2, param_3,
+                                                );
                                                 if (bvar2 != 0x0) {
-                                                    bvar2 = write_to_file_1008_7cac(param_2, param_3);
+                                                    bvar2 =
+                                                        write_to_file_1008_7cac(param_2, param_3);
                                                     if (bvar2 != 0x0) {
-                                                        in_dx = write_file_fn_1028_e56c(i_var5, u_var6, param_2, param_3);
+                                                        in_dx = write_file_fn_1028_e56c(
+                                                            i_var5, u_var6, param_2, param_3,
+                                                        );
                                                         if (bvar2 != 0x0) {
-                                                            bvar2 = write_to_file_1008_7cac(param_2, param_3);
+                                                            bvar2 = write_to_file_1008_7cac(
+                                                                param_2, param_3,
+                                                            );
                                                             if (bvar2 != 0x0) {
-                                                                in_dx = write_file_fn_1028_e56c(i_var5, u_var6, param_2, param_3);
+                                                                in_dx = write_file_fn_1028_e56c(
+                                                                    i_var5, u_var6, param_2,
+                                                                    param_3,
+                                                                );
                                                                 if (bvar2 != 0x0) {
-                                                                    bvar2 = write_to_file_1008_7cac(param_2, param_3);
+                                                                    bvar2 = write_to_file_1008_7cac(
+                                                                        param_2, param_3,
+                                                                    );
                                                                     if (bvar2 != 0x0) {
-                                                                        in_dx = write_file_fn_1028_e56c(i_var5, u_var6, param_2, param_3);
+                                                                        in_dx =
+                                                                            write_file_fn_1028_e56c(
+                                                                                i_var5, u_var6,
+                                                                                param_2, param_3,
+                                                                            );
                                                                         if (bvar2 != 0x0) {
                                                                             bvar2 = write_to_file_1008_7cac(param_2, param_3);
                                                                             if (bvar2 != 0x0) {
@@ -639,12 +694,17 @@ pub fn write_to_file_1028_dce2(
                                                                                         CONCAT22(param_3, local_14), 0x1,
                                                                                         0x0, 0x400);
                                                                                     loop {
-                                                                                        u_var4 = in_dx;
+                                                                                        u_var4 =
+                                                                                            in_dx;
                                                                                         pu_var3 = local_14;
                                                                                         pass1_1028_e4ec(CONCAT22(param_3, pu_var3));
                                                                                         u_stack24 = CONCAT22(u_var4, pu_var3);
                                                                                         in_dx = u_var4 | pu_var3;
-                                                                                        if (in_dx == 0x0) { break; }
+                                                                                        if (in_dx
+                                                                                            == 0x0)
+                                                                                        {
+                                                                                            break;
+                                                                                        }
                                                                                         if ((pu_var3 + 0x200) != 0x8000002) {
                                                                                             pass1_1038_3ba0(CONCAT22(u_var4, pu_var3));
                                                                                         }
@@ -673,7 +733,6 @@ pub fn write_to_file_1028_dce2(
     return in_dx;
 }
 
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u16) {
@@ -695,50 +754,89 @@ pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u1
         if (BVar2 != 0x0) {
             BVar2 = read_file_1008_7dee(u_var4, u_var5, param_1 + 0x8, 0x0, u_var3, 0x2, 0x1008);
             if (BVar2 != 0x0) {
-                u_var3 = (*_PTR_LOOP_1050_5166 >> 0x10);
-                ppcVar1 = (*_PTR_LOOP_1050_5166 + 0x10);
-                (**ppcVar1)(0x1008, _PTR_LOOP_1050_5166,
-                            (ctx.PTR_LOOP_1050_5166 >> 0x10), param_2);
+                u_var3 = (*PTR_LOOP_1050_5166 >> 0x10);
+                ppcVar1 = (*PTR_LOOP_1050_5166 + 0x10);
+                (**ppcVar1)(
+                    0x1008,
+                    ctx.PTR_LOOP_1050_5166,
+                    (ctx.PTR_LOOP_1050_5166 >> 0x10),
+                    param_2,
+                );
                 if (BVar2 != 0x0) {
                     read_file_1008_7cfe(u_var4, 0xc, 0x1008, param_3);
                     if (BVar2 != 0x0) {
-                        pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x100, unaff_SI, unaff_DI, u_var3, param_3,
-                                        in_AF);
+                        pass1_1028_e628(
+                            param_1, u_var4, u_var5, 0x0, 0x100, unaff_SI, unaff_DI, u_var3,
+                            param_3, in_AF,
+                        );
                         if (BVar2 != 0x0) {
                             read_file_1008_7cfe(u_var4, 0xd, 0x1008, param_3);
                             if (BVar2 != 0x0) {
-                                pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x200, unaff_SI, unaff_DI, u_var3,
-                                                param_3, in_AF);
+                                pass1_1028_e628(
+                                    param_1, u_var4, u_var5, 0x0, 0x200, unaff_SI, unaff_DI,
+                                    u_var3, param_3, in_AF,
+                                );
                                 if (BVar2 != 0x0) {
                                     read_file_1008_7cfe(u_var4, 0xe, 0x1008, param_3);
                                     if (BVar2 != 0x0) {
-                                        pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x300, unaff_SI, unaff_DI, u_var3,
-                                                        param_3, in_AF);
+                                        pass1_1028_e628(
+                                            param_1, u_var4, u_var5, 0x0, 0x300, unaff_SI,
+                                            unaff_DI, u_var3, param_3, in_AF,
+                                        );
                                         if (BVar2 != 0x0) {
                                             read_file_1008_7cfe(u_var4, 0xf, 0x1008, param_3);
                                             if (BVar2 != 0x0) {
-                                                pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x400, unaff_SI, unaff_DI,
-                                                                u_var3, param_3, in_AF);
+                                                pass1_1028_e628(
+                                                    param_1, u_var4, u_var5, 0x0, 0x400, unaff_SI,
+                                                    unaff_DI, u_var3, param_3, in_AF,
+                                                );
                                                 if (BVar2 != 0x0) {
-                                                    read_file_1008_7cfe(u_var4, 0x10, 0x1008, param_3);
+                                                    read_file_1008_7cfe(
+                                                        u_var4, 0x10, 0x1008, param_3,
+                                                    );
                                                     if (BVar2 != 0x0) {
-                                                        pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x500, unaff_SI,
-                                                                        unaff_DI, u_var3, param_3, in_AF);
+                                                        pass1_1028_e628(
+                                                            param_1, u_var4, u_var5, 0x0, 0x500,
+                                                            unaff_SI, unaff_DI, u_var3, param_3,
+                                                            in_AF,
+                                                        );
                                                         if (BVar2 != 0x0) {
-                                                            read_file_1008_7cfe(u_var4, 0x11, 0x1008, param_3);
+                                                            read_file_1008_7cfe(
+                                                                u_var4, 0x11, 0x1008, param_3,
+                                                            );
                                                             if (BVar2 != 0x0) {
-                                                                pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x600, unaff_SI,
-                                                                                unaff_DI, u_var3, param_3, in_AF);
+                                                                pass1_1028_e628(
+                                                                    param_1, u_var4, u_var5, 0x0,
+                                                                    0x600, unaff_SI, unaff_DI,
+                                                                    u_var3, param_3, in_AF,
+                                                                );
                                                                 if (BVar2 != 0x0) {
-                                                                    read_file_1008_7cfe(u_var4, 0x12, 0x1008, param_3);
+                                                                    read_file_1008_7cfe(
+                                                                        u_var4, 0x12, 0x1008,
+                                                                        param_3,
+                                                                    );
                                                                     if (BVar2 != 0x0) {
-                                                                        pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x700, unaff_SI, unaff_DI, u_var3, param_3, in_AF);
+                                                                        pass1_1028_e628(
+                                                                            param_1, u_var4,
+                                                                            u_var5, 0x0, 0x700,
+                                                                            unaff_SI, unaff_DI,
+                                                                            u_var3, param_3, in_AF,
+                                                                        );
                                                                         if (BVar2 != 0x0) {
-                                                                            read_file_1008_7cfe(u_var4, 0x13, 0x1008, param_3);
+                                                                            read_file_1008_7cfe(
+                                                                                u_var4, 0x13,
+                                                                                0x1008, param_3,
+                                                                            );
                                                                             if (BVar2 != 0x0) {
-                                                                                pass1_1028_e628(param_1, u_var4, u_var5, 0x0, 0x800,
-                                                                                                unaff_SI, unaff_DI, u_var3, param_3,
-                                                                                                in_AF);
+                                                                                pass1_1028_e628(
+                                                                                    param_1,
+                                                                                    u_var4, u_var5,
+                                                                                    0x0, 0x800,
+                                                                                    unaff_SI,
+                                                                                    unaff_DI,
+                                                                                    u_var3,
+                                                                                    param_3, in_AF,
+                                                                                );
                                                                                 if (BVar2 != 0x0) {
                                                                                     return;
                                                                                 }
@@ -764,10 +862,7 @@ pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u1
     return;
 }
 
-
-pub fn write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: u16) -> u16
-
-{
+pub fn write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: u16) -> u16 {
     let ppcVar1: u32;
     let pu_var2: U32Ptr;
     let BVar3: bool;
@@ -784,20 +879,25 @@ pub fn write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4
     let uStack6: u16;
     let i_stack4: i16;
 
-    pass1_1028_dc52(CONCAT22(param_4, local_14), 0x1, in_stack_0000000c,
-                    (in_stack_0000000c >> 0x10));
+    pass1_1028_dc52(
+        CONCAT22(param_4, local_14),
+        0x1,
+        in_stack_0000000c,
+        (in_stack_0000000c >> 0x10),
+    );
     uStack24 = 0x0;
     loop {
         pu_var2 = local_14;
         pass1_1028_e4ec(CONCAT22(param_4, pu_var2));
         puStack28 = CONCAT22(in_DX, pu_var2);
         in_DX |= pu_var2;
-        if (in_DX == 0x0) { break; }
+        if (in_DX == 0x0) {
+            break;
+        }
         uStack24 += 0x1;
     }
     local_2a[0] = uStack24;
-    BVar3 = write_to_file_1008_7e1c(param_3, (param_3 >> 0x10), local_2a,
-                                    param_4, 0x4, 0x1008);
+    BVar3 = write_to_file_1008_7e1c(param_3, (param_3 >> 0x10), local_2a, param_4, 0x4, 0x1008);
     if (BVar3 == 0x0) {
         ctx.PTR_LOOP_1050_0310 = 0x6d0;
     } else {
@@ -820,9 +920,10 @@ pub fn write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4
             local_2a[0] = local_2a[0] & 0xffff0000 | ZEXT24(pu_var2);
             uStack6 = extraout_dx;
             in_DX = extraout_dx;
-            if pu_var2 == 0 { break; }
+            if pu_var2 == 0 {
+                break;
+            }
         }
     }
     return in_DX;
 }
-

@@ -929,23 +929,23 @@ pub fn pass1_1000_1e61(
     u_stack64 = param_2;
     pu_stack4 = ctx.data_seg as u32;
     if true {
-        pc_stack6 = ctx.PTR_PTR_1050_5f1a;
-        if (ctx.PTR_LOOP_1050_5f1c | ctx.PTR_PTR_1050_5f1a) == 0x0 {
+        pc_stack6 = ctx.PTRPTR_1050_5f1a;
+        if (ctx.PTR_LOOP_1050_5f1c | ctx.PTRPTR_1050_5f1a) == 0x0 {
             pc_stack6 = 0x0;
             pu_stack4 = 0x0;
         } else {
-            b_var1 = mem_op_1000_21b6(ctx.PTR_PTR_1050_5f1a as u16, ctx.PTR_LOOP_1050_5f1c as u16);
-            pc_stack6 = ctx.PTR_PTR_1050_5f1a;
+            b_var1 = mem_op_1000_21b6(ctx.PTRPTR_1050_5f1a as u16, ctx.PTR_LOOP_1050_5f1c as u16);
+            pc_stack6 = ctx.PTRPTR_1050_5f1a;
             pu_stack4 = ctx.PTR_LOOP_1050_5f1c;
             if b_var1 == false {
-                ctx.PTR_PTR_1050_5f1a = ctx.PTR_PTR_1050_1f7e;
+                ctx.PTRPTR_1050_5f1a = ctx.PTRPTR_1050_1f7e;
                 ctx.PTR_LOOP_1050_5f1c = ctx.PTR_LOOP_1050_1000;
-                pc_stack6 = ctx.PTR_PTR_1050_1f7e;
+                pc_stack6 = ctx.PTRPTR_1050_1f7e;
                 pu_stack4 = ctx.PTR_LOOP_1050_1000;
             }
         }
         if (pu_stack4 | pc_stack6) != 0x0 {
-            b_var2 = msg_box_op_1000_1f24(ctx.PTR_PTR_1050_5f1a as i16, ctx.data_seg, 0x0, 0x1000);
+            b_var2 = msg_box_op_1000_1f24(ctx.PTRPTR_1050_5f1a as i16, ctx.data_seg, 0x0, 0x1000);
             if b_var2 == false {
                 u_var3 = (*pc_stack6)(0x1000, &u_stack64);
             } else {
@@ -1521,7 +1521,7 @@ pub unsafe fn pass1_1000_262c(
         // branches
         // WARNING: Treating indirect jump as call
         (*&ctx.PTR_LOOP_1050_5fd2)();
-        ctx._PTR_LOOP_1050_5fc2 =
+        ctx.PTR_LOOP_1050_5fc2 =
             CONCAT22(ctx.PTR_LOOP_1050_5fc4 as u16, ctx.PTR_LOOP_1050_5fc2 as u16);
         return;
     }
@@ -3728,7 +3728,7 @@ pub fn pass1_1000_400a(ctx: &mut AppContext, param_1: i16, param_2: u16) -> U32P
     } else {
         if ((ctx.PTR_LOOP_1050_61ec == 0x0)
             || (param_1 < ctx.DAT_1050_5f8a as i16 && (0x2 < param_1)))
-            && (0x31d < CONCAT11(ctx.DAT_1050_5f83, DAT_1050_5f82))
+            && (0x31d < CONCAT11(ctx.DAT_1050_5f83, ctx.DAT_1050_5f82))
         {
             pu_var1 = ctx.PTR_LOOP_1050_5f88;
             pu_var1 = dos3_call_1000_5174(i_stack2 as u16) as u32;
@@ -3747,7 +3747,7 @@ pub fn pass1_1000_400a(ctx: &mut AppContext, param_1: i16, param_2: u16) -> U32P
 pub fn pass1_1000_41e0(param_1: i16) -> u16 {
     let pi_stack6: U32Ptr;
 
-    pi_stack6 = CONCAT22(ctx.PTR_LOOP_1050_6192, PTR_LOOP_1050_6190);
+    pi_stack6 = CONCAT22(ctx.PTR_LOOP_1050_6192, ctx.PTR_LOOP_1050_6190);
     loop {
         if (ctx.PTR_LOOP_1050_6190 + (ctx.PTR_LOOP_1050_6194 & 0xfffc) <= pi_stack6) {
             return 0x0;
@@ -3903,11 +3903,11 @@ pub fn pass1_1000_440c(ctx: &mut AppContext, param_1: u16) {
     // ctx.DAT_1050_61d2 = string_2[0..0];
     write_string_to_addr(ctx.DAT_1050_61d2, &string_2[0]);
     if ctx.DAT_1050_61d2 == 0x0 {
-        ctx._PTR_PTR_1050_61e0[0] = '\0';
+        ctx.PTRPTR_1050_61e0[0] = '\0';
     } else {
         let mut a = 0x3u16;
         str_op_1000_3dbe(
-            read_string_from_addr(ctx.PTR_PTR_1050_61e0),
+            read_string_from_addr(ctx.PTRPTR_1050_61e0),
             &mut string_2,
             &mut a,
         );

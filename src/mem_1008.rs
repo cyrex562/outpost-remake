@@ -27,7 +27,7 @@ pub fn memcpy_op_1008_4274(ctx: &mut AppContext, param_1: &mut Struct_1008_4274,
     if (i_var4 + 0x6) != 0x0 {
         uVar7 = pass1_1000_1284(ctx, i_var4.field_0x6, 0x1000);
         i_var1 = uVar7;
-        lVar8 = mem_op_1000_0a48(ctx, 0x1, uVar7, ctx._PTR_LOOP_1050_5f2c, 0x1000);
+        lVar8 = mem_op_1000_0a48(ctx, 0x1, uVar7, ctx.PTR_LOOP_1050_5f2c, 0x1000);
         u_var5 = lVar8;
         pu_var2 = ((lVar8 >> 0x10) | u_var5);
         if (pu_var2 != 0x0) {

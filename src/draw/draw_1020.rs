@@ -1,6 +1,6 @@
 use crate::defines::{
-    Struct13, Struct16, Struct18, Struct20, Struct24, Struct43, Struct64, Struct7, Struct76,
-    Struct79, U32Ptr,
+    Struct13, Struct16, Struct18, Struct20, Struct24, Struct43, Struct6, Struct64, Struct7,
+    Struct76, Struct79, U32Ptr,
 };
 use crate::draw::draw_1008::unk_draw_op_1008_61b2;
 use crate::file::file_1010::unk_io_op_1010_830a;
@@ -30,9 +30,10 @@ use crate::pass::pass_1030::pass1_1030_8308;
 use crate::pass::pass_1038::pass1_1038_af40;
 use crate::string::string_1000::string_1000_3d3e;
 use crate::struct_ops::struct_1008::clear_struct_1008_3e38;
-use crate::sys_api::get_sys_metrics_1020_7c1a;
+use crate::sys_api::{get_sys_metrics_1020_7c1a, sys_1000_3f9c};
 use crate::ui::ui_1008::{
-    create_palette_1008_4e38, file_and_draw_op_1008_4f20, win_1008_5c9e, win_ui_reg_class_1008_96d2,
+    create_palette_1008_4e38, file_and_draw_op_1008_4f20, palette_op_1008_4e08, win_1008_5c9e,
+    win_ui_reg_class_1008_96d2,
 };
 use crate::util::{read_struct_from_addr, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{
@@ -1947,7 +1948,12 @@ pub fn mix_draw_op_1020_650c(
     return;
 }
 
-pub unsafe fn pt_in_rect_1020_68fc(param_1: U32Ptr, param_2: u16, param_3: u16) {
+pub unsafe fn pt_in_rect_1020_68fc(
+    ctx: &mut AppContext,
+    param_1: U32Ptr,
+    param_2: u16,
+    param_3: u16,
+) {
     let ppc_var1: u32;
     let u_var2: u16;
     let bvar3: bool;
@@ -1970,22 +1976,22 @@ pub unsafe fn pt_in_rect_1020_68fc(param_1: U32Ptr, param_2: u16, param_3: u16) 
     return;
 }
 
-pub fn draw_op_1020_7070(param_1: i16, param_2: u16) -> HGDIOBJ16 {
+pub fn draw_op_1020_7070(ctx: &mut AppContext, param_1: i16, param_2: u16) -> HGDIOBJ16 {
     let hvar1: HGDIOBJ16;
 
     hvar1 = GetStockObject16(param_1);
     if (ctx.PTR_LOOP_1050_441e == 0x0) {
-        ctx._PTR_LOOP_1050_441e = 0x1000002;
+        ctx.PTR_LOOP_1050_441e = 0x1000002;
     }
     if (0x6 < param_2) {
         return 0x0;
     }
-    SetTextColor16(ctx.s_tile2_bmp_1050_1538, _PTR_LOOP_1050_441e);
+    SetTextColor16(ctx.s_tile2_bmp_1050_1538, ctx.PTR_LOOP_1050_441e);
     SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
     return hvar1;
 }
 
-pub unsafe fn palette_op_1020_7270(param_1: U32Ptr, param_2: HDC16) {
+pub unsafe fn palette_op_1020_7270(ctx: &mut AppContext, param_1: U32Ptr, param_2: HDC16) {
     let u_var1: u16;
     let u_var2: u16;
     let hvar3: HPALETTE16;
@@ -2029,7 +2035,12 @@ pub fn invalidate_rect_1020_735a(param_1: u32, param_2: HWND16) {
     return;
 }
 
-pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
+pub fn draw_op_1020_7cc8(
+    ctx: &mut AppContext,
+    param_1: i32,
+    in_win_handle_2: HWND16,
+    param_3: u16,
+) {
     let ppc_var1: u32;
     let rect: *mut RECT16;
     let color: COLORREF;
@@ -2040,7 +2051,7 @@ pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
     let pu_var2: u32;
     let in_dx: u16;
     let mut string_2: String;
-    let i_var4: &mut Struct6;
+    let mut i_var4: Struct6;
     let i_var3: i16;
     let u_var4: u16;
     let u_var5: u16;
@@ -2151,7 +2162,11 @@ pub fn draw_op_1020_7cc8(param_1: i32, in_win_handle_2: HWND16, param_3: u16) {
     return;
 }
 
-pub fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_3: i32) {
+pub fn unk_draw_op_1020_7f7a(
+    ctx: &mut AppContext, 
+    param_1: &mut Struct20, 
+    param_2: u16, 
+    param_3: i32) {
     let u_var1: u16;
     let hvar2: HGDIOBJ16;
     let hvar3: HCURSOR16;
@@ -2187,7 +2202,7 @@ pub fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_3: i32)
     i_var4[0x1].field_0x2 = 0x1020;
     string_1000_3d3e(
         (param_1 & 0xffff0000 | ZEXT24(&i_var4.field_0x5b)),
-        s_VrMode_1050_4422,
+        ctx.s_VrMode_1050_4422,
     );
     hvar2 = GetStockObject16(0x1000);
     i_var4.hgdiobj_field_0xc6 = hvar2;
@@ -2207,7 +2222,12 @@ pub fn unk_draw_op_1020_7f7a(param_1: &mut Struct20, param_2: u16, param_3: i32)
     return;
 }
 
-pub fn realize_palette_1020_8128(param_1: u32, param_2: i16, param_3: HGDIOBJ16, param_4: u16) {
+pub fn realize_palette_1020_8128(
+    ctx: &mut AppContext, 
+    param_1: u32, 
+    param_2: i16, 
+    param_3: HGDIOBJ16, 
+    param_4: u16) {
     let ppc_var1: u32;
     let u_var2: u32;
     let pu_var3: U32Ptr;
@@ -2260,7 +2280,9 @@ pub fn realize_palette_1020_8128(param_1: u32, param_2: i16, param_3: HGDIOBJ16,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_ui_palette_op_1020_81c0(param_1: HWND16) {
+pub fn win_ui_palette_op_1020_81c0(
+    ctx: &mut AppContext,
+    param_1: HWND16) {
     let in_struct_1: &mut Struct13;
     let b_force_background: bool;
     let b_force_background_00: HPALETTE16;
@@ -2294,12 +2316,14 @@ pub fn win_ui_palette_op_1020_81c0(param_1: HWND16) {
 }
 
 pub fn invalidate_rect_1020_8d90(
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: u16,
     param_3: u32,
     param_4: u16,
     param_5: u16,
     param_6: u16,
+    stack0xfffe: u16,
 ) {
     let u_var1: u32;
     let i_var2: i16;
@@ -2316,6 +2340,7 @@ pub fn invalidate_rect_1020_8d90(
     let mut ulocal_10: [u8; 0xa] = [0; 0x8];
     let u_stack6: u16;
     let u_stack4: u16;
+    let local_10: U32Ptr;
 
     // u_var3 = (param_1 >> 0x10);
     i_var2 = param_1 as i16;
@@ -2325,9 +2350,10 @@ pub fn invalidate_rect_1020_8d90(
         if (param_5 | u_stack6) != 0x0 {
             u_stack4 = param_5;
             sys_1000_3f9c(
+                ctx,
                 local_10,
                 param_6,
-                s__03ld_1050_442a,
+                ctx.s__03ld_1050_442a,
                 ctx.data_seg,
                 u_stack6,
                 &stack0xfffe,
@@ -2410,7 +2436,7 @@ pub fn invalidate_rect_1020_8fb4(param_1: u32, param_2: u16) {
     return;
 }
 
-pub fn palette_op_1020_92c4(param_1: U32Ptr, param_2: HDC16) {
+pub fn palette_op_1020_92c4(ctx: &mut AppContext, param_1: U32Ptr, param_2: HDC16) {
     let i_var1: i16;
     let u_var2: u16;
 
@@ -2429,7 +2455,7 @@ pub fn palette_op_1020_92c4(param_1: U32Ptr, param_2: HDC16) {
     return;
 }
 
-pub fn mix_draw_op_1020_9312(param_1: u32, param_2: HWND16) {
+pub fn mix_draw_op_1020_9312(ctx: &mut AppContext, param_1: u32, param_2: HWND16) {
     let pu_var1: u32;
     let ppc_var2: u32;
     let u_var3: u32;
@@ -2457,7 +2483,11 @@ pub fn mix_draw_op_1020_9312(param_1: u32, param_2: HWND16) {
     return;
 }
 
-pub fn draw_op_1020_9364(param_1: &mut Struct7, in_win_handle_2: HWND16, param_3: i16) {
+pub fn draw_op_1020_9364(
+    ctx: &mut AppContext,
+    param_1: &mut Struct7, 
+    in_win_handle_2: HWND16, 
+    param_3: i16) {
     let pi_var1: U32Ptr;
     let u_var2: u16;
     let i_var3: i16;
@@ -2493,12 +2523,12 @@ pub fn draw_op_1020_9364(param_1: &mut Struct7, in_win_handle_2: HWND16, param_3
     u_stack14 = u_stack6;
     i_stack20 = ctx.DAT_1050_4216;
     i_stack22 = ctx.DAT_1050_422c;
-    pu_stack26 = ctx._PTR_PTR_DAT_1050_0009_1050_4172_1050_4212;
-    u_stack30 = ctx._PTR_PTR_1050_4218;
-    u_stack34 = ctx._PTR_PTR_s_ew_failed_in_Op_Op_1050_0021_1050_41da_1050_421c;
-    u_stack38 = ctx._PTR_PTR_DAT_1050_0041_1050_4202_1050_4220;
-    u_stack42 = ctx._PTR_DAT_1050_419a_1050_4224;
-    u_stack46 = ctx._PTR_PTR_1050_4228;
+    pu_stack26 = ctx.PTR_DAT_1050_0009_1050_4172_1050_4212;
+    u_stack30 = ctx.PTR_1050_4218;
+    u_stack34 = ctx.PTR_s_ew_failed_in_Op_Op_1050_0021_1050_41da_1050_421c;
+    u_stack38 = ctx.PTR_DAT_1050_0041_1050_4202_1050_4220;
+    u_stack42 = ctx.PTR_DAT_1050_419a_1050_4224;
+    u_stack46 = ctx.PTR_1050_4228;
     u_var4 = local_struct_1.field_0x6;
     u_stack48 = (u_var4 + 0x12) as u16;
     u_stack58 = 0x9;

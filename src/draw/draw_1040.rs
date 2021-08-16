@@ -1,7 +1,9 @@
 use crate::cleanup::ui_cleanup_op_1040_782c;
 use crate::defines::{
-    Struct13, Struct161, Struct17, Struct18, Struct37, Struct76, Struct_1040_8b92, U32Ptr,
+    Struct13, Struct14, Struct15, Struct161, Struct17, Struct18, Struct37, Struct43, Struct71,
+    Struct76, Struct_1040_8b92, U32Ptr,
 };
+use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
 use crate::global::AppContext;
 use crate::mixed::mixed_1010_20ba;
@@ -9,6 +11,7 @@ use crate::pass::pass_1008::{pass1_1008_4772, pass1_1008_4d72};
 use crate::pass::pass_1010::{pass1_1010_2ee2, pass1_1010_7b8c};
 use crate::pass::pass_1040::pass1_1040_a5d0;
 use crate::string::string_1000::str_op_1000_3da4;
+use crate::ui::ui_1008::palette_op_1008_4e08;
 use crate::util::{read_string_from_rsrc, CONCAT11, CONCAT12, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{
     COLORREF, HANDLE16, HBRUSH16, HDC16, HGDIOBJ16, HICON16, HINSTANCE16, HPALETTE16, HPEN16,
@@ -23,7 +26,7 @@ use crate::winapi::{
     SetBkColor16, SetMapMode16, SetTextColor16, TextOut16,
 };
 
-pub fn mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn mix_draw_op_1040_21d6(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let u_var1: u8;
     let u_var2: u8;
     let pa_var3: &mut Struct13;
@@ -98,7 +101,13 @@ pub fn mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16) {
     return;
 }
 
-pub fn draw_ui_op_1040_27cc(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: COLORREF) -> u32 {
+pub fn draw_ui_op_1040_27cc(
+    ctx: &mut AppContext,
+    param_1: U32Ptr,
+    param_2: u16,
+    param_3: u16,
+    param_4: COLORREF,
+) -> u32 {
     let ppcVar1: u32;
     let u_var2: u16;
     let i_var3: i16;
@@ -125,7 +134,7 @@ pub fn draw_ui_op_1040_27cc(param_1: U32Ptr, param_2: u16, param_3: u16, param_4
         uVar9 = pass1_1008_4d72(uVar9);
         // u_var2 = (uVar9 >> 0x10);
         i_var3 = uVar9;
-        ctx._PTR_LOOP_1050_5cf8 = CONCAT22(
+        ctx.PTR_LOOP_1050_5cf8 = CONCAT22(
             CONCAT11(0x2, *(i_var3 + 0x94)),
             CONCAT11(*(i_var3 + 0x95), *(i_var3 + 0x96)),
         );
@@ -142,14 +151,14 @@ pub fn draw_ui_op_1040_27cc(param_1: U32Ptr, param_2: u16, param_3: u16, param_4
             //       TODO: goto LAB_1040_286e;
         }
     }
-    CVar8 = _PTR_LOOP_1050_5cf8;
+    CVar8 = ctx.PTR_LOOP_1050_5cf8;
     //LAB_1040_286e:
     SetTextColor16(hdc, CVar8);
     SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
     return CONCAT22(0x1050, (iVar6 + 0x4));
 }
 
-pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn draw_op_1040_5a06(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let pu_var1: U32Ptr;
     let u_var2: u32;
     let ppc_var3: u32;
@@ -310,7 +319,12 @@ pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16) {
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14, in_win_handle_2: HWND16, param_3: u16) {
+pub fn draw_op_1040_7bb2(
+    ctx: &mut AppContext,
+    in_struct_1: &mut Struct14,
+    in_win_handle_2: HWND16,
+    param_3: u16,
+) {
     let ppcVar1: u32;
     let BVar2: bool;
     let y: i16;
@@ -420,6 +434,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: &mut Struct14, in_win_handle_2: HWND16, pa
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn set_text_bk_color_1040_7e5e(
+    ctx: &mut AppContext,
     param_1: U32Ptr,
     param_2: u16,
     param_3: u16,
@@ -448,7 +463,7 @@ pub fn set_text_bk_color_1040_7e5e(
         u_var5 = pass1_1008_4d72(u_var5);
         // u_var6 = (u_var5 >> 0x10);
         i_var2 = u_var5;
-        ctx._PTR_LOOP_1050_5df0 = CONCAT22(
+        ctx.PTR_LOOP_1050_5df0 = CONCAT22(
             CONCAT11(0x2, *(i_var2 + 0x94)),
             CONCAT11(*(i_var2 + 0x95), *(i_var2 + 0x96)),
         );
@@ -469,14 +484,14 @@ pub fn set_text_bk_color_1040_7e5e(
             //       TODO: goto LAB_1040_7f00;
         }
     }
-    color = _PTR_LOOP_1050_5df0;
+    color = ctx.PTR_LOOP_1050_5df0;
     //LAB_1040_7f00:
     SetTextColor16(hdc, color);
     SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
     return CONCAT22(0x1050, HVar3);
 }
 
-pub fn draw_op_1040_82ee(param_1: &mut Struct15, in_colorref_2: COLORREF) {
+pub fn draw_op_1040_82ee(ctx: &mut AppContext, param_1: &mut Struct15, in_colorref_2: COLORREF) {
     let i_var1: &mut Struct15;
     let u_var1: u16;
     let local_1a: u32;
@@ -517,7 +532,7 @@ pub fn draw_op_1040_82ee(param_1: &mut Struct15, in_colorref_2: COLORREF) {
     return;
 }
 
-pub fn mixed_draw_op_1040_8a06(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn mixed_draw_op_1040_8a06(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let u_var1: u8;
     let u_var2: u8;
     let paVar3: &mut Struct13;
@@ -610,10 +625,10 @@ pub fn draw_text_1040_8d14(ctx: &mut AppContext, param_1: &mut Struct37, param_2
         param_1.field_0xa0 = 0xa;
         ivar2 = GetSystemMetrics16(*param_2 as i16);
         param_1.field_0x9e = ivar2 + 0x28;
-        *param_2 = ctx.s_tile2_bmp_1050_1538 as u16;
+        param_2.field_0x0 = ctx.s_tile2_bmp_1050_1538 as u16;
     } else {
-        i_var3.field_0xa0 = 0xa;
-        i_var3.field_0x9e = 0x14;
+        param_1.field_0xa0 = 0xa;
+        param_1.field_0x9e = 0x14;
     }
     obj_handle = 0x0;
     handle = GetProp16(*param_2, &read_string_from_rsrc(0x5e0f));
@@ -623,7 +638,7 @@ pub fn draw_text_1040_8d14(ctx: &mut AppContext, param_1: &mut Struct37, param_2
     DrawText16(
         ctx.s_tile2_bmp_1050_1538 as HDC16,
         &read_string_from_rsrc(0x410),
-        i_var3.field_0x9e,
+        param_1.field_0x9e,
         &rect,
         0xffff,
     );
@@ -641,7 +656,7 @@ pub fn unk_draw_op_1040_9458(
     param_4: HDC16,
 ) {
     let ppc_var1: u32;
-    // let uvar2: i32;
+    let uvar2: i32;
     let u_var3: u16;
     // let i_var4: &mut Struct17;
     let u_var4: u16;
@@ -715,7 +730,13 @@ pub fn draw_text_1040_9650(ctx: &mut AppContext, param_1: &mut Struct161, param_
 
 // WARNING: Could not reconcile some variable overlaps
 
-pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &RECT16) {
+pub fn draw_op_1040_9948(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u32,
+    param_3: HWND16,
+    param_4: &RECT16,
+) {
     let i_var1: i16;
     let i_var2: i16;
     let mode: i16;
@@ -791,12 +812,12 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
     }
     handle = CreatePen16(
         ctx.s_tile2_bmp_1050_1538,
-        DAT_1050_5ec2,
+        ctx.DAT_1050_5ec2,
         (ctx.DAT_1050_5ec2 >> 0x10),
     );
     handle_00 = CreatePen16(
         ctx.s_tile2_bmp_1050_1538,
-        DAT_1050_5ebe,
+        ctx.DAT_1050_5ebe,
         (ctx.DAT_1050_5ebe >> 0x10),
     );
     handle_01 = SelectObject16(ctx.s_tile2_bmp_1050_1538, handle);
@@ -908,7 +929,13 @@ pub fn draw_op_1040_9948(param_1: u16, param_2: u32, param_3: HWND16, param_4: &
     return;
 }
 
-pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLORREF) {
+pub fn draw_op_1040_a67e(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: u16,
+    param_4: COLORREF,
+) {
     let pi_var1: U32Ptr;
     let bVar2: bool;
     let u_var3: u16;
@@ -933,7 +960,7 @@ pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLO
         uVar8 = pass1_1008_4d72((ctx.PTR_LOOP_1050_4230 + 0xe));
         // u_var3 = (uVar8 >> 0x10);
         i_var4 = uVar8;
-        ctx._PTR_LOOP_1050_5ee8 = CONCAT12(
+        ctx.PTR_LOOP_1050_5ee8 = CONCAT12(
             *(i_var4 + 0x94),
             CONCAT11(*(i_var4 + 0x95), *(i_var4 + 0x96)),
         );
@@ -957,14 +984,14 @@ pub fn draw_op_1040_a67e(param_1: u32, param_2: i16, param_3: u16, param_4: COLO
             ctx.PTR_LOOP_1050_5ee8 = ctx.PTR_LOOP_1050_5eec;
         }
     }
-    SetTextColor16(hdc, PTR_LOOP_1050_5ee8);
+    SetTextColor16(hdc, ctx.PTR_LOOP_1050_5ee8);
     SetBkColor16(ctx.s_tile2_bmp_1050_1538, 0x0);
     return;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18) {
+pub fn unk_draw_op_1040_b0f8(ctx: &mut AppContext, param_1: &mut Struct18) {
     let u_var1: u16;
     let u_var2: u16;
     let in_DX: U32Ptr;
@@ -1000,7 +1027,13 @@ pub fn unk_draw_op_1040_b0f8(param_1: &mut Struct18) {
     return;
 }
 
-pub fn invalidate_rect_1040_c028(param_1: u32, param_2: i16, param_3: HWND16, param_4: &RECT16) {
+pub fn invalidate_rect_1040_c028(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: i16,
+    param_3: HWND16,
+    param_4: &RECT16,
+) {
     let u_var1: u32;
     let u_var2: u32;
     let u_var3: u32;
@@ -1091,7 +1124,7 @@ pub fn invalidate_rect_1040_c028(param_1: u32, param_2: i16, param_3: HWND16, pa
     return;
 }
 
-pub fn unk_draw_op_1040_c226(param_1: u32, param_2: HWND16, param_3: u16) {
+pub fn unk_draw_op_1040_c226(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
     let u_var1: u32;
     let handle: HPEN16;
     let handle_00: HGDIOBJ16;
@@ -1129,7 +1162,7 @@ pub fn unk_draw_op_1040_c226(param_1: u32, param_2: HWND16, param_3: u16) {
     return;
 }
 
-pub fn draw_line_1040_c302(param_1: u32, param_2: HDC16) {
+pub fn draw_line_1040_c302(ctx: &mut AppContext, param_1: u32, param_2: HDC16) {
     let u_var1: u32;
     let u_var2: u32;
     let u_var3: u32;
@@ -1167,13 +1200,13 @@ pub fn draw_line_1040_c302(param_1: u32, param_2: HDC16) {
     return;
 }
 
-pub fn draw_op_1040_c38e(param_1: u32) {
+pub fn draw_op_1040_c38e(ctx: &mut AppContext, param_1: u32) {
     let u_var1: u32;
     let u_var2: u32;
     let u_var3: u32;
     let i_var4: i16;
     let iVar5: i16;
-    INT16 * pIVar6;
+    let pIVar6: i16;
     let in_DX: u16;
     let iVar7: i16;
     let i_var8: i16;
@@ -1253,7 +1286,7 @@ pub fn draw_op_1040_c38e(param_1: u32) {
     return;
 }
 
-pub fn draw_op_1040_c74c(param_1: U32Ptr, param_2: u32, param_3: u16) {
+pub fn draw_op_1040_c74c(ctx: &mut AppContext, param_1: U32Ptr, param_2: u32, param_3: u16) {
     let u_var1: u16;
     let ppcVar2: u32;
     let u_var3: u32;
@@ -1315,7 +1348,13 @@ pub fn draw_op_1040_c74c(param_1: U32Ptr, param_2: u32, param_3: u16) {
     return;
 }
 
-pub fn palette_op_1040_c886(param_1: u32, param_2: u8, param_3: u16, param_4: HDC16) {
+pub fn palette_op_1040_c886(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u8,
+    param_3: u16,
+    param_4: HDC16,
+) {
     let u_var1: u16;
     let ppcVar2: u32;
     let i_var3: i16;

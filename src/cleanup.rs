@@ -1,4 +1,8 @@
-use crate::defines::{Struct1, Struct11, Struct18, Struct27, Struct28, Struct29, Struct3, Struct30, Struct31, Struct34, Struct35, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0, Struct_1010_7b26, U32Ptr};
+use crate::defines::{
+    Struct1, Struct11, Struct18, Struct27, Struct28, Struct29, Struct3, Struct30, Struct31,
+    Struct34, Struct35, Struct43, Struct65, StructB, Struct_1008_628e, Struct_1010_2fa0,
+    Struct_1010_7b26, U32Ptr,
+};
 use crate::draw::draw_1020::invalidate_rect_1020_735a;
 use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000::fn_ptr_1000_17ce;
@@ -351,7 +355,7 @@ pub fn clenaup_win_ui_1018_4d22(
         ppc_var23 = *pu_var2;
         (**ppc_var23)(draw_ctx_1, pu_var2, u_var1, 0x1);
     }
-    ctx._PTR_LOOP_1050_4230 = 0x0;
+    ctx.PTR_LOOP_1050_4230 = 0x0;
     pass1_1010_1d80(struct_1, unaff_ss);
     return;
 }
@@ -870,7 +874,7 @@ pub fn destroy_window_1038_cc00(
     pass1_1008_eb74((param_1 + 0x8e), i_var2, in_DX, unaff_DI, unaff_SS);
     if (u_var1 != 0x0) {
         win_1008_5c7c(
-            ctx._PTR_LOOP_1050_02a0,
+            ctx.PTR_LOOP_1050_02a0,
             CONCAT22(u_var1, 0x1),
             unaff_SS,
             u_var1,

@@ -29,17 +29,17 @@ pub type HINSTANCE16 = HANDLE16;
 
 pub type HICON16 = HANDLE16;
 
-// typedef long LONG_PTR;
-pub type LONG_PTR = libc::c_long;
-// typedef LONG_PTR LPARAM;
-pub type LPARAM = LONG_PTR;
+// typedef long LONGPTR;
+pub type LONGPTR = libc::c_long;
+// typedef LONGPTR LPARAM;
+pub type LPARAM = LONGPTR;
 
 pub type HGDIOBJ16 = HANDLE16;
 
 pub type HPALETTE16 = HANDLE16;
 
-// typedef LONG_PTR LRESULT;
-pub type LRESULT = LONG_PTR;
+// typedef LONGPTR LRESULT;
+pub type LRESULT = LONGPTR;
 
 pub type HCURSOR16 = HANDLE16;
 
@@ -367,9 +367,9 @@ pub struct BITMAPINFO {
 
 // typedef uint UINT;
 
-// typedef uint UINT_PTR;
+// typedef uint UINTPTR;
 
-// typedef UINT_PTR WPARAM;
+// typedef UINTPTR WPARAM;
 
 // typedef struct tagPOINT tagPOINT, *PtagPOINT;
 
@@ -568,7 +568,7 @@ pub struct tagBITMAPINFOHEADER {
 
 // typedef uUINT8: u8;
 
-// typedef ulong ULONG_PTR;
+// typedef ulong ULONGPTR;
 
 // typedef int16_t: i16;
 

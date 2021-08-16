@@ -60,7 +60,7 @@ pub fn struct_1020_3644(param_1: U32Ptr, param_2: u16, param_3: u32, param_4: u1
     i_var2.field_0xf4 = 0x1020;
     load_string_1010_84e0(
         0x1010,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         0x3ff,
         &i_var2.field_0xa,
@@ -68,7 +68,7 @@ pub fn struct_1020_3644(param_1: U32Ptr, param_2: u16, param_3: u32, param_4: u1
     );
     unk_str_op_1000_3d3e(
         (param_1 & 0xffff0000 | &i_var2.field_0x5b),
-        s_VrMode_1050_42ca,
+        ctx.s_VrMode_1050_42ca,
     );
     i_var2.field_0xac = 0x44c00000;
     window_op_1020_38aa(param_1);

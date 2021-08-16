@@ -235,7 +235,7 @@ pub fn window_op_1020_10a0(param_1: &mut Struct1) {
     (iVar11 + 0xe0) = (iVar11 + 0xf2);
     (iVar11 + 0xe2) = uVar9;
     puVar10 = ctx.PTR_LOOP_1050_038c;
-    u_var3 = LoadIcon16(0x1010, s_PLNTICON_1050_4267);
+    u_var3 = LoadIcon16(0x1010, ctx.s_PLNTICON_1050_4267);
     (iVar11 + 0xc2) = u_var3;
     u_var1 = (iVar11 + 0xf2);
     ppcVar2 = ((iVar11 + 0xf2) + 0x30);
@@ -555,7 +555,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
         if (uStack8 != 0x0) {
             load_string_1010_84e0(
                 0x1010,
-                _PTR_LOOP_1050_14cc,
+                ctx.PTR_LOOP_1050_14cc,
                 (ctx.PTR_LOOP_1050_14cc >> 0x10),
                 0x100,
                 local_178,
@@ -563,7 +563,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
             );
             SetWindowText16(0x1010, local_178);
         }
-        pvStack60 = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
+        pvStack60 = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, ctx.PTR_LOOP_1050_038c);
         GetWindowRect16(ctx.s_tile2_bmp_1050_1538, &local_6e);
         uStack114 = uStack106;
         iStack98 = uStack106 - local_6e.x;
@@ -584,7 +584,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
     } else {
         win_1008_5c7c(ctx.PTR_LOOP_1050_02a0, 0x9d0001, unaff_SS, u_var4, uStack58);
         (i_var9 + 0x8c) = u_var4;
-        pvStack60 = MakeProcInstance16(0x1008, PTR_LOOP_1050_038c);
+        pvStack60 = MakeProcInstance16(0x1008, ctx.PTR_LOOP_1050_038c);
     }
     EnumChildWindows1(ctx.s_tile2_bmp_1050_1538, 0x0, ZEXT24(pvStack60) << 0x10);
     FreeProcInstance16(ctx.s_tile2_bmp_1050_1538);
@@ -606,7 +606,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
     } else {
         load_string_1010_84e0(
             0x1010,
-            _PTR_LOOP_1050_14cc,
+            ctx.PTR_LOOP_1050_14cc,
             (ctx.PTR_LOOP_1050_14cc >> 0x10),
             0x100,
             local_178,
@@ -620,7 +620,7 @@ pub fn mixed_ui_op_1020_179c(param_1: &mut Struct1) {
     }
     load_string_1010_84e0(
         0x1010,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         in_resc_id_3,
         in_buffer_4,
@@ -888,7 +888,7 @@ pub fn win_ui_op_1020_2cf0(param_1: &mut Struct1) {
     (i_var8 + 0xe0) = (i_var8 + 0xf2);
     (i_var8 + 0xe2) = u_var5;
     puVar12 = ctx.PTR_LOOP_1050_038c;
-    u_var3 = LoadIcon16(0x1010, s_SITEICON_1050_428d);
+    u_var3 = LoadIcon16(0x1010, ctx.s_SITEICON_1050_428d);
     (i_var8 + 0xc2) = u_var3;
     u_var1 = (i_var8 + 0xf2);
     ppcVar2 = ((i_var8 + 0xf2) + 0x30);
@@ -957,7 +957,7 @@ pub fn win_ui_op_1020_36f6(param_1: u32, param_2: i16, param_3: i16) {
     *puStack1034 = 0x0;
     load_string_1010_84e0(
         0x1010,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         0x3ff,
         local_406,
@@ -1863,7 +1863,7 @@ pub fn win_sys_op_1020_493c(
                                 ctx.PTR_LOOP_1050_5748,
                                 CONCAT13(uVar16, CONCAT12(param_6, pu_var5)),
                             );
-                            win_1008_5c5c(param_6, pu_var5, uVar9, _PTR_LOOP_1050_02a0, 0x1e6);
+                            win_1008_5c5c(param_6, pu_var5, uVar9, ctx.PTR_LOOP_1050_02a0, 0x1e6);
                             return;
                         }
                         uVar16 = 0x0;
@@ -1973,7 +1973,7 @@ pub fn win_sys_op_1020_493c(
             i_var4 = 0x3;
         } else {
             uVar17 = (ctx.PTR_LOOP_1050_5748 >> 0x10);
-            u_var6 = ctx._PTR_LOOP_1050_5748;
+            u_var6 = ctx.PTR_LOOP_1050_5748;
             if (param_2 == 0x200) {
                 uVar12 = (uVar9 + 0x108);
                 // u_var11 = (uVar12 >> 0x10);
@@ -2356,7 +2356,7 @@ pub fn post_msg_1020_55b0(param_1: u32, param_2: u16) -> u16 {
     puStack12 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x37, param_2, pu_var3, unaff_DI);
     load_string_1010_84e0(
         0x1010,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         0x100,
         local_10c,
@@ -2480,7 +2480,7 @@ pub fn menu_ui_op_1020_5bf2(param_1: &mut Struct52, param_2: HWND16, param_3: &R
         return 0x0;
     }
     if (iVar5.field_0x106 == 0x0) {
-        HVar5 = LoadMenu16(instance, s_TILEMENU_1050_43f0);
+        HVar5 = LoadMenu16(instance, ctx.s_TILEMENU_1050_43f0);
         iVar5.field_0x106 = HVar5;
         if (HVar5 == 0x0) {
             return 0x1;
@@ -2704,7 +2704,7 @@ pub fn win_ui_op_1020_5e76(param_1: u32, param_2: u16, param_3: u16) {
         if (puVar4 == 0x6b6) {
             load_string_1010_84e0(
                 0x1010,
-                _PTR_LOOP_1050_14cc,
+                ctx.PTR_LOOP_1050_14cc,
                 (ctx.PTR_LOOP_1050_14cc >> 0x10),
                 0x3ff,
                 local_aa,
@@ -2712,7 +2712,7 @@ pub fn win_ui_op_1020_5e76(param_1: u32, param_2: u16, param_3: u16) {
             );
             load_string_1010_84e0(
                 0x1010,
-                _PTR_LOOP_1050_14cc,
+                ctx.PTR_LOOP_1050_14cc,
                 (ctx.PTR_LOOP_1050_14cc >> 0x10),
                 0x3ff,
                 local_1aa,
@@ -2723,7 +2723,7 @@ pub fn win_ui_op_1020_5e76(param_1: u32, param_2: u16, param_3: u16) {
                 unaff_SS,
                 local_1aa,
                 unaff_SS,
-                PTR_LOOP_1050_50cc,
+                ctx.PTR_LOOP_1050_50cc,
                 &stack0xfffe,
                 u_var11,
                 0x1000,
@@ -2913,7 +2913,7 @@ pub fn unk_win_ui_op_1020_67ce(in_struct_1: &mut Struct20, param_2: u16, param_3
 
     struct_1020_790e(
         in_struct_1,
-        s_TPPOPMENU_1050_43fa,
+        ctx.s_TPPOPMENU_1050_43fa,
         param_2,
         param_3,
         unaff_SS,
@@ -2926,7 +2926,7 @@ pub fn unk_win_ui_op_1020_67ce(in_struct_1: &mut Struct20, param_2: u16, param_3
     i_var3.field_0x2 = 0x1020;
     string_1000_3d3e(
         (in_struct_1 & 0xffff0000 | ZEXT24(&i_var3.field_0x5b)),
-        s_VrMode2_1050_4404,
+        ctx.s_VrMode2_1050_4404,
     );
     HVar1 = GetStockObject16(0x1000);
     i_var3.hgdiobj_field_0xc6 = HVar1;
@@ -3060,7 +3060,7 @@ pub fn window_op_1020_6c3a(param_1: &mut Struct1) {
     (iVar11 + 0xe0) = (iVar11 + 0xf2);
     (iVar11 + 0xe2) = uVar7;
     puVar14 = ctx.PTR_LOOP_1050_038c;
-    HVar3 = LoadIcon16(0x1010, s_TILEICON_1050_440c);
+    HVar3 = LoadIcon16(0x1010, ctx.s_TILEICON_1050_440c);
     (iVar11 + 0xc2) = HVar3;
     u_var6 = (iVar11 + 0xf2);
     ppcVar2 = ((iVar11 + 0xf2) + 0x30);

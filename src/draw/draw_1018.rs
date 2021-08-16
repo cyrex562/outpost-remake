@@ -1,10 +1,30 @@
-use crate::{cleanup::unk_destroy_window_op_1018_6bb6, defines::{Struct28, Struct36, Struct58, Struct76, Struct8, Struct9, U32Ptr}, global::AppContext, mem_1000::mem_op_1000_179c, mixed::mixed_1010_20ba, pass::{pass_1008::{
+use crate::{
+    cleanup::unk_destroy_window_op_1018_6bb6,
+    defines::{Struct28, Struct36, Struct58, Struct76, Struct8, Struct9, U32Ptr},
+    global::AppContext,
+    mem_1000::mem_op_1000_179c,
+    mixed::mixed_1010_20ba,
+    pass::{
+        pass_1008::{
             pass1_1008_3e54, pass1_1008_3e76, pass1_1008_3e94, pass1_1008_43cc, pass1_1008_4480,
             pass1_1008_4772, pass1_1008_5236, pass1_1008_9f48,
-        }, pass_1010::{pass1_1010_2b66, pass1_1010_4c2c, pass1_1010_4dc8}, pass_1018::{pass1_1018_1eda, pass1_1018_642e, pass1_1018_659a, pass1_1018_6630}}, struct_ops::struct_1008::clear_struct_1008_3e38, ui::{
+        },
+        pass_1010::{pass1_1010_2b66, pass1_1010_4c2c, pass1_1010_4dc8},
+        pass_1018::{pass1_1018_1eda, pass1_1018_642e, pass1_1018_659a, pass1_1018_6630},
+    },
+    struct_ops::struct_1008::clear_struct_1008_3e38,
+    ui::{
         ui_1008::{win_1008_5c5c, win_1008_5c9e},
         ui_1018::mix_ui_op_1018_6adc,
-    }, util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42}, win_struct::{COLORREF, HBRUSH16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, RECT16}, winapi::{BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteObject16, DrawText16, EndPaint16, FillRect16, GetDC16, InvalidateRect16, LineTo16, MoveTo16, Polygon16, PostMessage16, PtInRect16, SelectObject16, SelectPalette16, SetBkColor16, SetTextColor16}};
+    },
+    util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42},
+    win_struct::{COLORREF, HBRUSH16, HDC16, HGDIOBJ16, HPEN16, HWND16, PAINTSTRUCT16, RECT16},
+    winapi::{
+        BeginPaint16, CreateDC16, CreatePen16, CreateSolidBrush16, DeleteObject16, DrawText16,
+        EndPaint16, FillRect16, GetDC16, InvalidateRect16, LineTo16, MoveTo16, Polygon16,
+        PostMessage16, PtInRect16, SelectObject16, SelectPalette16, SetBkColor16, SetTextColor16,
+    },
+};
 
 pub fn pt_in_rect_1018_1bda(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
     let pi_var1: U32Ptr;
@@ -526,7 +546,7 @@ pub unsafe fn unk_draw_op_1018_c578(
     }
     if ((ctx.PTR_LOOP_1050_02a0 + 0x12) == 0x0) {
         hwnd = 0x1008;
-        win_1008_5c5c(param_2, u_var7, u_var9, ctx._PTR_LOOP_1050_02a0, 0x1d3);
+        win_1008_5c5c(param_2, u_var7, u_var9, ctx.PTR_LOOP_1050_02a0, 0x1d3);
     }
     local_2a = BeginPaint16(hwnd, &local_22);
     p_r_stack44 = CreateSolidBrush16(ctx.s_tile2_bmp_1050_1538);
@@ -644,10 +664,7 @@ pub fn draw_text_1018_c742(
     return;
 }
 
-pub unsafe fn unk_draw_op_1018_cda8(
-    ctx: &mut AppContext, 
-    param_1: &mut Struct36, 
-    param_2: u16) {
+pub unsafe fn unk_draw_op_1018_cda8(ctx: &mut AppContext, param_1: &mut Struct36, param_2: u16) {
     let pi_var1: U32Ptr;
     let i_var2: i16;
     let pa_var3: &mut Struct76;
@@ -710,7 +727,7 @@ pub unsafe fn unk_draw_op_1018_cda8(
                 param_2,
                 u_var5,
                 u_var8,
-                ctx._PTR_LOOP_1050_02a0 & 0xffff | uVar12 << 0x10,
+                ctx.PTR_LOOP_1050_02a0 & 0xffff | uVar12 << 0x10,
                 0x1d3,
             );
         }

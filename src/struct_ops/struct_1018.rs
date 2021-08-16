@@ -57,7 +57,7 @@ pub fn struct_1018_0570(param_1: &mut Struct55, param_2: u16, param_3: u16) {
     uVar9.field_0x22 = 0x1018;
     if ((ctx.PTR_LOOP_1050_3960 == 0x0) && (ctx.PTR_LOOP_1050_3962 == 0x0)) {
         mem_op_1000_179c(0x8, pu_var5, 0x1000);
-        ctx._PTR_LOOP_1050_3962 = CONCAT22(pu_var5, u_var6);
+        ctx.PTR_LOOP_1050_3962 = CONCAT22(pu_var5, u_var6);
         pass1_1000_4906(CONCAT22(pu_var5, u_var6), 0x0, 0x8);
     }
     ctx.PTR_LOOP_1050_3960 = ctx.PTR_LOOP_1050_3960 + 0x1;

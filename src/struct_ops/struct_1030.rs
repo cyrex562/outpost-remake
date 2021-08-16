@@ -57,7 +57,7 @@ pub fn struct_1030_1550(param_1: u32, param_2: u16) {
             u_var3 << 0x2,
             0x0,
             0x1,
-            PTR_LOOP_1050_5f2c,
+            ctx.PTR_LOOP_1050_5f2c,
             ctx.PTR_LOOP_1050_5f2e,
             0x1000,
         );
@@ -265,7 +265,7 @@ pub fn struct_1030_565a(param_1: U32Ptr, param_2: u32, param_3: u16, param_4: U3
     clear_struct_1008_3e38((param_1 & 0xffff0000 | &i_var1.field_0x14));
     i_var1.field_0x1a = 0x0;
     i_var1.field_0x1c = 0x0;
-    *param_1 = s_procLo_1050_5bd0;
+    *param_1 = ctx.s_procLo_1050_5bd0;
     i_var1.field_0x2 = 0x1030;
     return param_1;
 }
@@ -399,7 +399,7 @@ pub fn struct_1030_e4fa(param_1: &mut Struct100, param_2: u32, param_3: u16, par
     sys_1000_3f9c(
         &i_var1.field_0x8,
         pu_var1,
-        s_SCKillBldg__0x_08lx_1050_597c,
+        ctx.s_SCKillBldg__0x_08lx_1050_597c,
         ctx.data_seg,
         i_var1.field_0x108,
         &stack0xfffe,

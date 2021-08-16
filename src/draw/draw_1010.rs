@@ -222,7 +222,7 @@ pub fn draw_fn_1010_2a32(
                 param_7,
                 unaff_ss,
             );
-            ctx._PTR_LOOP_1050_4230 = CONCAT13(param_1, CONCAT12(var32, CONCAT11(var_31, var_30)));
+            ctx.PTR_LOOP_1050_4230 = CONCAT13(param_1, CONCAT12(var32, CONCAT11(var_31, var_30)));
             return CONCAT11(param_1 as u8, var32);
         }
         0xe => {

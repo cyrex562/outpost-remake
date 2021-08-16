@@ -2559,7 +2559,7 @@ pub fn pass1_1040_8978(
     let ppcVar1: u32;
 
     unk_win_msg_op_1008_9510(&ctx.PTR_LOOP_1050_5df4, 0x1008, param_5);
-    win_1008_5c5c(param_5, param_3, param_4, _PTR_LOOP_1050_02a0, param_2);
+    win_1008_5c5c(param_5, param_3, param_4, ctx.PTR_LOOP_1050_02a0, param_2);
     ppcVar1 = (*param_1 + 0x74);
     (**ppcVar1)(0x1008, param_1);
     return;
@@ -2880,8 +2880,8 @@ pub fn pass1_1040_ac84(
     &i_var1.field_0x98 = 0x0;
     param_1 = 0xafc4;
     i_var1.field_0x2 = &ctx.PTR_LOOP_1050_1040;
-    i_var1.field_0x94 = ctx._PTR_LOOP_1050_5ef0;
-    ctx._PTR_LOOP_1050_5ef0 = 0x0;
+    i_var1.field_0x94 = ctx.PTR_LOOP_1050_5ef0;
+    ctx.PTR_LOOP_1050_5ef0 = 0x0;
     pu_var2 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x3d, param_5, param_3, param_4);
     i_var1.field_0x98 = pu_var2;
     i_var1.field_0x9a = (pu_var2 >> 0x10);
@@ -3501,13 +3501,13 @@ pub fn pass1_1040_c630(param_1: U32Ptr, param_2: u16, param_3: u16) {
         i_var4.field_0x30 = i_var1;
         i_var4.field_0x2e = i_var1;
         if (ctx.PTR_LOOP_1050_5f02 == 0x0) {
-            ctx._PTR_LOOP_1050_5f04 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0xff, param_3);
+            ctx.PTR_LOOP_1050_5f04 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0xff, param_3);
             param_2 = 0x1010;
-            ctx._PTR_LOOP_1050_5f08 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x100, param_3);
+            ctx.PTR_LOOP_1050_5f08 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x100, param_3);
         }
         ctx.PTR_LOOP_1050_5f02 = ctx.PTR_LOOP_1050_5f02 + 0x1;
-        i_var4.field_0x8 = ctx._PTR_LOOP_1050_5f04;
-        i_var4.field_0xc = ctx._PTR_LOOP_1050_5f08;
+        i_var4.field_0x8 = ctx.PTR_LOOP_1050_5f04;
+        i_var4.field_0xc = ctx.PTR_LOOP_1050_5f08;
         pass1_1040_9618(ctx, param_1);
         i_var4.field_0x20 = 0x0;
         i_var4.field_0x1e = 0xc8;
@@ -3600,7 +3600,7 @@ pub fn pass1_1040_ca16(
     struct_1040_b082(param_1, CONCAT22(param_2, 0x1840));
     // u_var1 = (param_1 >> 0x10);
     i_var1 = param_1;
-    i_var1.field_0x94 = ctx._PTR_LOOP_1050_5f0c;
+    i_var1.field_0x94 = ctx.PTR_LOOP_1050_5f0c;
     &i_var1.field_0x98 = 0x0;
     i_var1.field_0x9c = 0x0;
     i_var1.field_0x9e = 0x0;
@@ -3742,7 +3742,7 @@ pub fn pass1_1040_d0f8(param_1: &mut Struct57, param_2: u16) {
     // u_var5 = (param_1 >> 0x10);
     iVar5 = param_1;
     &iVar5.field_0x94 = 0x0;
-    iVar5.field_0x98 = ctx._PTR_LOOP_1050_5f16;
+    iVar5.field_0x98 = ctx.PTR_LOOP_1050_5f16;
     &iVar5.field_0x9c = 0x0;
     iVar5.field_0xa0 = 0x0;
     param_1 = 0xd8c4;

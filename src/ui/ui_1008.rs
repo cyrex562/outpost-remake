@@ -758,7 +758,7 @@ pub fn save_file_1008_3178(
     } else {
         if (param_2 != 0x2) {
             debug_print_1008_6048(
-                s_Unsupported_FileStructType_in_Op_1050_01ca,
+                ctx.s_Unsupported_FileStructType_in_Op_1050_01ca,
                 0x1000,
                 param_3,
             );
@@ -1355,13 +1355,13 @@ pub fn win_ui_op_1008_5cfe(param_1: u32, param_2: &mut String, in_wnd_class: &WN
     u_var1 = (i_var3 + 0xc) as u32;
     iStack24 = (u_var1 + 0x72) as i16;
     iStack26 = 0x1;
-    string_1 = s_waveaudio_1050_02a4;
+    string_1 = ctx.s_waveaudio_1050_02a4;
     str_1000_4d58(param_2, 0x0, 0x0, 0x0, CONCAT22(in_wnd_class, local_11e));
     i_var2 = string_1000_475e(ctx, CONCAT22(in_wnd_class, local_11e), 0x105002ae);
     if (i_var2 == 0x0) {
         u_var1 = (i_var3 + 0xc) as u32;
         iStack24 = (u_var1 + 0x74) as i16;
-        string_1 = s_sequencer_1050_02b3;
+        string_1 = ctx.s_sequencer_1050_02b3;
         iStack26 = 0x0;
     }
     if (iStack24 != 0x0) {
@@ -1469,7 +1469,7 @@ pub fn create_window_1008_5e7e(
         0x0,
         ZEXT24(ctx.PTR_LOOP_1050_038c) << 0x10,
         0x0,
-        PTR_LOOP_1050_0396,
+        ctx.PTR_LOOP_1050_0396,
         0x1,
         0x1,
         0x8000,
@@ -2176,7 +2176,7 @@ pub fn post_win_msg_1008_a0e4(
     //LAB_1008_a146:
     if (!bVar4) {
         param_7 = 0x1000;
-        paStack14 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_03a0);
+        paStack14 = pass1_1000_07fc(0x1000, ctx.PTR_LOOP_1050_03a0);
         // uVar7 = (paStack14 >> 0x10);
         u_var3 = paStack14;
         if ((uVar7 | u_var3) == 0x0) {
@@ -2264,7 +2264,7 @@ pub fn pass1_1008_a1f0(
         // switchD_1008_a835_caseD_3;
     }
     param_1 = 0x1008;
-    uVar13 = ctx._PTR_LOOP_1050_14cc;
+    uVar13 = ctx.PTR_LOOP_1050_14cc;
     u_var5 = (ctx.PTR_LOOP_1050_14cc >> 0x10);
     match (i_var9 + 0x4) {
         0x1 => {
@@ -2277,7 +2277,7 @@ pub fn pass1_1008_a1f0(
             pass1_1028_e1ec(ctx.PTR_LOOP_1050_65e2, u_var1, (u_var1 >> 0x10));
             load_string_1010_84e0(
                 0x1010,
-                _PTR_LOOP_1050_14cc,
+                ctx.PTR_LOOP_1050_14cc,
                 (ctx.PTR_LOOP_1050_14cc >> 0x10),
                 0x100,
                 local_106,
@@ -2341,7 +2341,7 @@ pub fn pass1_1008_a1f0(
                 (uVar8 + 0x418) = 0x1;
                 load_string_1010_84e0(
                     0x1010,
-                    _PTR_LOOP_1050_14cc,
+                    ctx.PTR_LOOP_1050_14cc,
                     (ctx.PTR_LOOP_1050_14cc >> 0x10),
                     0x3ff,
                     (uVar8 + 0xe),
@@ -2684,7 +2684,7 @@ pub fn pass1_1008_aa28(param_1: u32, param_2: u16, param_3: &WNDCLASS16) {
                 param_3,
                 param_2,
                 extraout_dx | param_2,
-                _PTR_LOOP_1050_02a0,
+                ctx.PTR_LOOP_1050_02a0,
                 ((param_2 + 0x4) as u32),
             );
             if (puStack6 != 0x0) {

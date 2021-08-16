@@ -68,22 +68,22 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16 {
     u_var3 = ctx.data_seg;
     puStack4 = ctx.data_seg;
     if (true) {
-        if ((ctx.PTR_LOOP_1050_5f1c | ctx.PTR_PTR_1050_5f1a) == 0x0) {
+        if ((ctx.PTR_LOOP_1050_5f1c | ctx.PTRPTR_1050_5f1a) == 0x0) {
             pcStack6 = 0x0;
             puStack4 = 0x0;
         } else {
-            i_var1 = mem_op_1000_21b6(ctx.PTR_PTR_1050_5f1a, PTR_LOOP_1050_5f1c);
-            pcStack6 = ctx.PTR_PTR_1050_5f1a;
+            i_var1 = mem_op_1000_21b6(ctx.PTRPTR_1050_5f1a, ctx.PTR_LOOP_1050_5f1c);
+            pcStack6 = ctx.PTRPTR_1050_5f1a;
             puStack4 = ctx.PTR_LOOP_1050_5f1c;
             if i_var1 == false {
-                ctx.PTR_PTR_1050_5f1a = &ctx.PTR_PTR_1050_1f7e;
+                ctx.PTRPTR_1050_5f1a = &ctx.PTRPTR_1050_1f7e;
                 ctx.PTR_LOOP_1050_5f1c = &ctx.PTR_LOOP_1050_1000;
-                pcStack6 = &ctx.PTR_PTR_1050_1f7e;
+                pcStack6 = &ctx.PTRPTR_1050_1f7e;
                 puStack4 = &ctx.PTR_LOOP_1050_1000;
             }
         }
         if ((puStack4 | pcStack6) != 0x0) {
-            BVar2 = msg_box_op_1000_1f24(&ctx.PTR_PTR_1050_5f1a, ctx.data_seg, 0x0, unaff_CS);
+            BVar2 = msg_box_op_1000_1f24(&ctx.PTRPTR_1050_5f1a, ctx.data_seg, 0x0, unaff_CS);
             if BVar2 == false {
                 u_var2 = (*pcStack6)();
             } else {
@@ -228,7 +228,7 @@ pub fn dos3_call_1000_23ea(
                 break;
             }
             iVar23 = 0xd;
-            pbVar17 = s__C_FILE_INFO__1050_5f5c;
+            pbVar17 = ctx.s__C_FILE_INFO__1050_5f5c;
             loop {
                 if (iVar23 == 0x0) {
                     break;
@@ -469,7 +469,7 @@ pub fn mixed_dos3_call_1000_3636(
             }
         }
         //LAB_1000_369b:
-        u_var3 = s_471_bmp_1050_1600;
+        u_var3 = ctx.s_471_bmp_1050_1600;
     } else {
         u_var3 = 0x900;
     }
@@ -1673,7 +1673,7 @@ pub fn mixed_win_sys_op_1008_016e(ctx: &mut AppContext, param_1: u32, param_2: u
     (i_var3 + 0xa) = puVar6;
     u_var5 = (i_var3 + 0x8);
     pu_var2 = (i_var3 + 0x8);
-    ctx._PTR_LOOP_1050_0298 = u_var5;
+    ctx.PTR_LOOP_1050_0298 = u_var5;
     *pu_var2 = 0x70;
     (pu_var2 + 0x2) = ctx.s_tile2_bmp_1050_1538;
     u_var10 = 0x1000;
@@ -1718,7 +1718,7 @@ pub fn mixed_win_sys_op_1008_016e(ctx: &mut AppContext, param_1: u32, param_2: u
     }
     if (ctx.PTR_LOOP_1050_5b7c == 0x0) {
         debug_print_1008_6048(
-            s_New_failed_in_Op__Op__DialogCtr_1050_0053,
+            ctx.s_New_failed_in_Op__Op__DialogCtr_1050_0053,
             u_var10,
             param_2,
         );
@@ -1739,7 +1739,7 @@ pub fn mixed_win_sys_op_1008_016e(ctx: &mut AppContext, param_1: u32, param_2: u
     }
     if (ctx.PTR_LOOP_1050_5bc8 == 0x0) {
         debug_print_1008_6048(
-            s_New_failed_in_Op__Op__DialogHand_1050_0073,
+            ctx.s_New_failed_in_Op__Op__DialogHand_1050_0073,
             u_var10,
             param_2,
         );
@@ -1793,7 +1793,7 @@ pub fn kill_timer_1008_921c(param_1: U32Ptr, param_2: HWND16) {
     *param_1 = 0x9416;
     (i_var1 + 0x2) = 0x1008;
     KillTimer16(param_2, 0x1);
-    ctx._PTR_LOOP_1050_0388 = 0x0;
+    ctx.PTR_LOOP_1050_0388 = 0x0;
     pass1_1008_57c4((param_1 & 0xffff0000 | (i_var1 + 0x6)));
     *param_1 = 0x389a;
     (i_var1 + 0x2) = 0x1008;
@@ -2797,7 +2797,7 @@ pub fn sprintf_op_1018_34b6(param_1: u32, param_2: u8) {
             if (i_var1 != 0x18c) {
                 load_string_1010_84e0(
                     0x1010,
-                    _PTR_LOOP_1050_14cc,
+                    ctx.PTR_LOOP_1050_14cc,
                     (ctx.PTR_LOOP_1050_14cc >> 0x10),
                     0x100,
                     (i_var2 + 0x22),
@@ -2880,11 +2880,11 @@ pub fn make_proc_inst_1038_cf6c(param_1: U32Ptr, param_2: U32Ptr, param_3: U32Pt
     (i_var2 + 0x8) = 0x0;
     *param_1 = 0xd23e;
     (i_var2 + 0x2) = &ctx.PTR_LOOP_1050_1038;
-    ctx._PTR_LOOP_1050_5bc8 = param_1;
-    pvVar1 = MakeProcInstance16(param_3, PTR_LOOP_1050_038c);
+    ctx.PTR_LOOP_1050_5bc8 = param_1;
+    pvVar1 = MakeProcInstance16(param_3, ctx.PTR_LOOP_1050_038c);
     (i_var2 + 0x4) = pvVar1;
     (i_var2 + 0x6) = param_2;
-    ctx.PTR_LOOP_1050_5bcc = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
+    ctx.PTR_LOOP_1050_5bcc = MakeProcInstance16(ctx.s_tile2_bmp_1050_1538, ctx.PTR_LOOP_1050_038c);
     ctx.PTR_LOOP_1050_5bce = param_2;
     return;
 }
@@ -2930,13 +2930,13 @@ pub fn call_win_proc_1038_d020(
 
     uVar9 = SUB42(ctx.data_seg, 0x0);
     uVar8 = param_3._2_2_;
-    HVar2 = GetProp16(param_5, s_procHi_1050_5bd7);
+    HVar2 = GetProp16(param_5, ctx.s_procHi_1050_5bd7);
     uVar7 = param_3._2_2_;
-    HVar3 = GetProp16(ctx.s_tile2_bmp_1050_1538, s_procLo_1050_5bd0);
+    HVar3 = GetProp16(ctx.s_tile2_bmp_1050_1538, ctx.s_procLo_1050_5bd0);
     lStack6 = CONCAT22(HVar2, HVar3);
     u_var6 = param_3._2_2_;
-    HVar2 = GetProp16(ctx.s_tile2_bmp_1050_1538, s_thisHi_1050_5be5);
-    HVar3 = GetProp16(ctx.s_tile2_bmp_1050_1538, s_thisLo_1050_5bde);
+    HVar2 = GetProp16(ctx.s_tile2_bmp_1050_1538, ctx.s_thisHi_1050_5be5);
+    HVar3 = GetProp16(ctx.s_tile2_bmp_1050_1538, ctx.s_thisLo_1050_5bde);
     puStack10 = CONCAT22(HVar2, HVar3);
     wparam = (param_2 >> 0x10);
     if ((HVar2 | HVar3) != 0x0) {
@@ -2999,9 +2999,9 @@ pub fn win_prop_op_1038_d118(
 
     uVar8 = SUB42(ctx.data_seg, 0x0);
     uVar7 = param_3;
-    HVar4 = GetProp16(param_5, s_thisHi_1050_5bf3);
+    HVar4 = GetProp16(param_5, ctx.s_thisHi_1050_5bf3);
     u_var6 = param_3;
-    HVar5 = GetProp16(ctx.s_tile2_bmp_1050_1538, s_thisLo_1050_5bec);
+    HVar5 = GetProp16(ctx.s_tile2_bmp_1050_1538, ctx.s_thisLo_1050_5bec);
     puStack6 = CONCAT22(HVar4, HVar5);
     if (param_2._2_2_ == 0x30) {
         if (param_2 == 0x0) {
@@ -3206,10 +3206,10 @@ pub fn make_proc_inst_1040_a234(
     CONCAT22(param_2, param_1) = 0xa4e8;
     (param_1 + 0x2) = &ctx.PTR_LOOP_1050_1040;
     if (ctx.PTR_LOOP_1050_5edc == 0x0) {
-        pvVar1 = MakeProcInstance16(param_5, PTR_LOOP_1050_038c);
-        ctx._PTR_LOOP_1050_5edc = CONCAT22(in_DX, pvVar1);
+        pvVar1 = MakeProcInstance16(param_5, ctx.PTR_LOOP_1050_038c);
+        ctx.PTR_LOOP_1050_5edc = CONCAT22(in_DX, pvVar1);
     }
-    (param_1 + 0xc) = ctx._PTR_LOOP_1050_5edc;
+    (param_1 + 0xc) = ctx.PTR_LOOP_1050_5edc;
     ctx.PTR_LOOP_1050_5eda = ctx.PTR_LOOP_1050_5eda + 0x1;
     ctx.PTR_LOOP_1050_5ee0 = param_1;
     ctx.PTR_LOOP_1050_5ee2 = param_2;
@@ -3224,7 +3224,7 @@ pub fn free_proc_inst_1040_a294(param_1: &mut Struct18, param_2: u16) {
     ctx.PTR_LOOP_1050_5eda = ctx.PTR_LOOP_1050_5eda + -0x1;
     if (ctx.PTR_LOOP_1050_5eda == 0x0) {
         FreeProcInstance16(param_2);
-        ctx._PTR_LOOP_1050_5edc = 0x0;
+        ctx.PTR_LOOP_1050_5edc = 0x0;
     }
     unk_draw_op_1040_b0f8(param_1);
     return;

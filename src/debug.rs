@@ -1,7 +1,12 @@
-use crate::{defines::U32Ptr, global::AppContext, pass::pass_1000::{pass1_1000_2b5c, pass1_1000_2f48, pass1_1000_3ec0}, winapi::{wvsprintf16, OutputDebugString16}};
+use crate::{
+    defines::U32Ptr,
+    global::AppContext,
+    pass::pass_1000::{pass1_1000_2b5c, pass1_1000_2f48, pass1_1000_3ec0},
+    winapi::{wvsprintf16, OutputDebugString16},
+};
 
 pub fn debug_print_1008_6048(
-    ctx: &mut AppContext, 
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: &mut String,
     param_3: U32Ptr,
@@ -32,7 +37,7 @@ pub fn debug_print_1008_6048(
             OutputDebugString16(ctx.s_tile2_bmp_1050_1538);
             if (ctx.PTR_LOOP_1050_02f0 != 0x0) {
                 pass1_1000_2b5c(
-                    ctx._PTR_LOOP_1050_02f0,
+                    ctx.PTR_LOOP_1050_02f0,
                     (ctx.PTR_LOOP_1050_02f0 >> 0x10),
                     0x2fd,
                     ctx.data_seg,
@@ -42,7 +47,7 @@ pub fn debug_print_1008_6048(
                     param_3,
                 );
                 pass1_1000_2f48(
-                    ctx._PTR_LOOP_1050_02f0,
+                    ctx.PTR_LOOP_1050_02f0,
                     &stack0xfffe,
                     unaff_ES,
                     0x1000,

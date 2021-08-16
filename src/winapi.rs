@@ -2,8 +2,13 @@
 
 use std::hint::unreachable_unchecked;
 
-use crate::win_struct::{ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16, HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, PAINTSTRUCT16, POINT16, RECT16, SEGPTR, WINDOWPLACEMENT16, WNDCLASS16, WPARAM16};
 use crate::defines::U32Ptr;
+use crate::win_struct::{
+    ATOM, BITMAPINFO, COLORREF, CONTEXT, HACCEL16, HANDLE16, HBRUSH16, HCURSOR16, HDC16, HFILE16,
+    HGDIOBJ16, HGLOBAL16, HICON16, HINSTANCE16, HMENU16, HMODULE16, HPALETTE16, HPEN16, HRSRC16,
+    HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, MSG16, PAINTSTRUCT16, POINT16, RECT16, SEGPTR,
+    WINDOWPLACEMENT16, WNDCLASS16, WPARAM16,
+};
 
 // void FatalExit(void)
 pub fn FatalExit() {
@@ -343,7 +348,8 @@ pub fn GetSystemPaletteEntries(
     start: u16,
     count: u16,
     entries: &[PALETTEENTRY],
-) -> u16 {}
+) -> u16 {
+}
 
 // StretchDIBits16: i16(HDC16 hdc, x_dst: i16, y_dst: i16, width_dst: i16, height_dst: i16, x_src: i16, y_src: i16, width_src: i16, height_src: i16, PVOID bits, BITMAPINFO * info, Uw_usage: i16, DWORD dw_rop)
 pub fn StretchDIBits16(
@@ -932,7 +938,7 @@ pub fn wsprintf16(buffer: &String, spec: &String, valist: U32Ptr) -> i16 {
 }
 
 // wvsprintf16: i16(LPSTR buffer, LPCSTR spec, WORD * args)
-pub fn wvsprintf16(buffer: &mut String, spec: &mut LPCSTR, args: *mut ushort) -> i16 {
+pub fn wvsprintf16(buffer: &mut String, spec: &mut String, args: &mut u16) -> i16 {
     unimplemented!()
 }
 

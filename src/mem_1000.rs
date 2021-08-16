@@ -890,13 +890,13 @@ pub fn mem_op_1000_160a(ctx: &mut AppContext, param_1: Option<&mut Struct18>, pa
     if (ctx.PTR_LOOP_1050_5f2e | ctx.PTR_LOOP_1050_5f2c) == 0x0 {
         ctx.DAT_1050_5f30 = 0x1;
         ctx.DAT_1050_5f32 = 0x1;
-        ctx._PTR_LOOP_1050_5f2c =
+        ctx.PTR_LOOP_1050_5f2c =
             mem_op_1000_18ec(ctx, ctx.DAT_1050_5f46, (param_1).unwrap(), param_2);
-        if ctx._PTR_LOOP_1050_5f2c != 0x0 {
+        if ctx.PTR_LOOP_1050_5f2c != 0x0 {
             if ctx.PTR_LOOP_1050_5f42 != 0x0 {
-                pass1_1000_1a54(ctx.PTR_LOOP_1050_5f42, ctx._PTR_LOOP_1050_5f2c, param_2, 0);
+                pass1_1000_1a54(ctx.PTR_LOOP_1050_5f42, ctx.PTR_LOOP_1050_5f2c, param_2, 0);
             }
-            ctx.PTR_LOOP_1050_5f2e = (ctx._PTR_LOOP_1050_5f2c >> 0x10);
+            ctx.PTR_LOOP_1050_5f2e = (ctx.PTR_LOOP_1050_5f2c >> 0x10);
             if ctx.DAT_1050_5f44 != 0xffff {
                 pass1_1000_1afe(
                     ctx,
@@ -925,7 +925,7 @@ pub fn mem_1000_167a(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: 
         ctx,
         0x0,
         param_1 as u32,
-        CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, PTR_LOOP_1050_5f2c),
+        CONCAT22(ctx.PTR_LOOP_1050_5f2e as u16, ctx.PTR_LOOP_1050_5f2c),
         param_2 as u8,
     );
     return l_var2 as u16;
@@ -997,7 +997,7 @@ pub fn mem_op_1000_1902(
             }
         }
         if (u_var3 | p_uvar1) != 0x0 {
-            p_uvar1[0x17] = &ctx.PTR_PTR_1050_5f1a;
+            p_uvar1[0x17] = &ctx.PTRPTR_1050_5f1a;
             p_uvar1[0x18] = ctx.data_seg;
             p_uvar1[0x15] = ctx.PTR_LOOP_1050_5f1e;
             p_uvar1[0x16] = ctx.PTR_LOOP_1050_5f20;

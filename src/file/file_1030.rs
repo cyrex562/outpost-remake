@@ -273,7 +273,7 @@ pub fn read_file_1030_4e70(
             *param_2 = u_stack20;
             file_handle = _lopen16(ctx.PTR_LOOP_1050_1000, 0x0);
             if file_handle != 0xffff {
-                l_var5 = mem_op_1000_0a48(ctx, 0x1, param_2, ctx._PTR_LOOP_1050_5f2c, 0x1000);
+                l_var5 = mem_op_1000_0a48(ctx, 0x1, param_2, ctx.PTR_LOOP_1050_5f2c, 0x1000);
                 // param_5 = (lVar5 >> 0x10);
                 param_3 = l_var5;
                 (param_3 + 0x2) = param_5;
@@ -333,7 +333,7 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
             0x20,
             0x0,
             0x1,
-            PTR_LOOP_1050_5f2c,
+            ctx.PTR_LOOP_1050_5f2c,
             ctx.PTR_LOOP_1050_5f2e,
             0x1000,
         );
@@ -630,8 +630,8 @@ pub fn file_1030_778c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                                 {
                                     // TODO: refactor for loop
                                     // for (uStack14 = 0x0; uStack14 < local_20[0]; uStack14 += 0x1) {
-                                    //   local_3e[0] = ctx._PTR_LOOP_1050_68a2;
-                                    //   paStack50 = pass1_1000_07fc(0x1000,_PTR_LOOP_1050_68a2);
+                                    //   local_3e[0] = ctx.PTR_LOOP_1050_68a2;
+                                    //   paStack50 = pass1_1000_07fc(0x1000,PTR_LOOP_1050_68a2);
                                     //   uVar9 = (paStack50 >> 0x10);
                                     //   u_var5 = paStack50;
                                     //   puVar10 = (uVar9 | u_var5);
@@ -698,9 +698,9 @@ pub fn file_1030_778c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                                             if (local_56[0] <= uStack82) {
                                                 return;
                                             }
-                                            paStack44 = ctx._PTR_LOOP_1050_68a2;
+                                            paStack44 = ctx.PTR_LOOP_1050_68a2;
                                             paStack50 =
-                                                pass1_1000_07fc(0x1000, _PTR_LOOP_1050_68a2);
+                                                pass1_1000_07fc(0x1000, ctx.PTR_LOOP_1050_68a2);
                                             // uVar9 = (paStack50 >> 0x10);
                                             uVar8 = paStack50;
                                             puVar10 = (uVar9 | uVar8);

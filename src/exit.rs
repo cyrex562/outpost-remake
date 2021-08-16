@@ -57,7 +57,7 @@ pub fn exit_1000_25cc(ctx: &mut AppContext, param_1: i16, param_2: u16, action: 
             i_var6 += -0x1;
             pi_var1 = pi_var4;
             pi_var4 = (pi_var4 + 0x1);
-            if *pivar1 == '\0' {
+            if *pi_var1 == '\0' {
                 break;
             }
         }

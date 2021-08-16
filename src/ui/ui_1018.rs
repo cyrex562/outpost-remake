@@ -321,7 +321,7 @@ pub fn mix_ui_op_1018_6adc(param_1: &mut Struct28) {
             unaff_SS,
             u_var3,
             u_var4,
-            _PTR_LOOP_1050_02a0,
+            ctx.PTR_LOOP_1050_02a0,
             (iVar5 + 0xee),
         );
         (iVar5 + 0xf0) = u_var3;

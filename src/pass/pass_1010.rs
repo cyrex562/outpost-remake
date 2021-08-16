@@ -1597,7 +1597,7 @@ pub fn pass1_1010_2024(param_1: u32) -> u32 {
 
     // u_var1 = (param_1 >> 0x10);
     (param_1 + 0x124) = 0x0;
-    ctx._PTR_LOOP_1050_0ed0 = param_1;
+    ctx.PTR_LOOP_1050_0ed0 = param_1;
     pass1_1000_4906((param_1 & 0xffff | u_var1 << 0x10), 0x0, 0x124);
     return param_1;
 }
@@ -1626,7 +1626,7 @@ pub fn pass1_1010_2050(param_1: u32) {
             break;
         }
     }
-    ctx._PTR_LOOP_1050_0ed0 = 0x0;
+    ctx.PTR_LOOP_1050_0ed0 = 0x0;
     return;
 }
 
@@ -1717,7 +1717,7 @@ pub fn pass1_1010_28e6(
         0x40,
         0x0,
         0x1,
-        PTR_LOOP_1050_5f2c,
+        ctx.PTR_LOOP_1050_5f2c,
         ctx.PTR_LOOP_1050_5f2e,
         0x1000,
     );
@@ -2024,7 +2024,7 @@ pub fn pass1_1010_32f4(param_1: U32Ptr, param_2: U32Ptr, param_3: u16, param_4: 
                 0x28,
                 0x0,
                 0x1,
-                PTR_LOOP_1050_5f2c,
+                ctx.PTR_LOOP_1050_5f2c,
                 ctx.PTR_LOOP_1050_5f2e,
                 0x1000,
             );
@@ -3350,7 +3350,7 @@ pub fn pass1_1010_503e(
     CONCAT22(param_2, param_1) = (s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
     (param_1 + 0x2) = 0x1010;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3, param_4, param_5);
-    ctx._PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
+    ctx.PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
     return;
 }
 
@@ -4879,7 +4879,7 @@ pub fn pass1_1010_7e40(param_1: U32Ptr, param_2: U32Ptr, param_3: i16, param_4: 
     pass1_1000_4906((param_1 & 0xffff0000 | &pu_var2.field_0x454), 0x0, 0x228);
     *&pu_var2.field_0x682 = 0x0;
     *&pu_var2.field_0xa82 = 0x0;
-    ctx._PTR_LOOP_1050_14cc = param_1;
+    ctx.PTR_LOOP_1050_14cc = param_1;
     pu_var3 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x2, param_4, param_2, param_3);
     pu_var2.field_0xe88 = pu_var3;
     pu_var2.field_0xe8a = (pu_var3 >> 0x10);
@@ -4932,7 +4932,7 @@ pub fn pass1_1010_7efc(param_1: U32Ptr, param_2: u16) {
     //   }
     // }
     fn_ptr_1000_17ce(ctx, *param_1, 0x1000);
-    ctx._PTR_LOOP_1050_14cc = 0x0;
+    ctx.PTR_LOOP_1050_14cc = 0x0;
     return;
 }
 
@@ -5156,7 +5156,7 @@ pub fn pass1_1010_85be(param_1: u32, param_2: i16, param_3: i16, param_4: u16) {
             CONCAT22(param_4, local_20a),
             CONCAT22(param_4, local_30a),
         );
-        string_1000_3d3e(CONCAT22(param_4, local_10a), s_male_1050_14c6);
+        string_1000_3d3e(CONCAT22(param_4, local_10a), ctx.s_male_1050_14c6);
         string_1000_3cea(CONCAT22(param_4, local_10a), CONCAT22(param_4, local_20a));
         string_1000_3cea(CONCAT22(param_4, local_10a), CONCAT22(param_4, local_30a));
         set_err_mode_1010_8b14(param_1, CONCAT22(param_4, local_10a), param_4);
@@ -5802,7 +5802,7 @@ pub fn pass1_1010_9372(param_1: U32Ptr, param_2: u16, param_3: i16, param_4: i16
         if (ctx.PTR_LOOP_1050_3528 == 0x0) {
             ppcVar1 = (*param_1 + 0x18);
             u_var6 = (**ppcVar1)();
-            ctx._PTR_LOOP_1050_3528 = mixed_1010_20ba(
+            ctx.PTR_LOOP_1050_3528 = mixed_1010_20ba(
                 ctx.PTR_LOOP_1050_0ed0,
                 u_var6,
                 unaff_SS,
@@ -6806,7 +6806,7 @@ pub fn pass1_1010_ad22(param_1: u16, param_2: u16, param_3: u16, param_4: u16, p
         param_3,
         pu_var2,
         param_2,
-        _PTR_LOOP_1050_5740,
+        ctx.PTR_LOOP_1050_5740,
         CONCAT22(param_3, pu_var2),
         (u_var1 + 0x20),
     );
@@ -7279,7 +7279,7 @@ pub fn pass1_1010_c2d8(param_1: u32, param_3: i32) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pass1_1010_c312() -> u32 {
-    return CONCAT22((ctx.PTR_LOOP_1050_65e2 + 0x2), *_PTR_LOOP_1050_65e2);
+    return CONCAT22((ctx.PTR_LOOP_1050_65e2 + 0x2), *PTR_LOOP_1050_65e2);
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -7308,7 +7308,7 @@ pub fn pass1_1010_c320(param_1: u16, param_2: u16, param_3: U32Ptr, param_4: u32
     }
     load_string_1010_84e0(
         0x1010,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         0x3ff,
         puStack6,
@@ -8805,7 +8805,7 @@ pub fn pass1_1010_de78(param_1: u32, param_2: u32) {
     pass1_1030_809c(param_2);
     load_string_1010_84e0(
         0x1030,
-        _PTR_LOOP_1050_14cc,
+        ctx.PTR_LOOP_1050_14cc,
         (ctx.PTR_LOOP_1050_14cc >> 0x10),
         0x3ff,
         (param_1 + 0x13c),
@@ -9148,7 +9148,7 @@ pub fn pass1_1010_e1f4(param_1: u32, param_2: u32, param_3: u16, param_4: u16) {
         //LAB_1010_e241:
         load_string_1010_84e0(
             0x1008,
-            _PTR_LOOP_1050_14cc,
+            ctx.PTR_LOOP_1050_14cc,
             (ctx.PTR_LOOP_1050_14cc >> 0x10),
             0x3ff,
             (iVar6 + 0x13c),
@@ -9201,7 +9201,7 @@ pub fn pass1_1010_e58a(param_1: u32, param_2: u32, param_3: U32Ptr, param_4: i16
     if (u_var5 == 0x0) {
         load_string_1010_84e0(
             0x1008,
-            _PTR_LOOP_1050_14cc,
+            ctx.PTR_LOOP_1050_14cc,
             (ctx.PTR_LOOP_1050_14cc >> 0x10),
             0x3ff,
             (iVar6 + 0x13c),
@@ -9309,7 +9309,7 @@ pub fn pass1_1010_e682(param_1: u32, param_2: u32, param_3: u16, param_4: u8) {
                         if (uVar8 == 0x0) {
                             load_string_1010_84e0(
                                 0x1008,
-                                _PTR_LOOP_1050_14cc,
+                                ctx.PTR_LOOP_1050_14cc,
                                 (ctx.PTR_LOOP_1050_14cc >> 0x10),
                                 0x3ff,
                                 (u_var5 + 0x13c),
@@ -9568,7 +9568,7 @@ pub fn pass1_1010_ecc6(
         param_6,
         param_4,
         param_5,
-        _PTR_LOOP_1050_5740,
+        ctx.PTR_LOOP_1050_5740,
         param_2,
         param_3,
     );
