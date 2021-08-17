@@ -1,4 +1,10 @@
-use super::file_1008::{read_file_1008_7cfe, read_file_1008_7dee};
+use crate::{global::AppContext, pass::pass_1020::pass1_1020_b97e};
+
+use super::{
+    file_1008::{read_file_1008_7cfe, read_file_1008_7dee},
+    file_1028::write_to_file_1028_b5ec,
+    write::write_to_file_1008_7e1c,
+};
 
 pub fn read_file_1020_a65e(
     ctx: &mut AppContext,
@@ -45,10 +51,8 @@ pub fn read_file_1020_a65e(
 }
 
 pub fn write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16) -> bool {
-    let b_var1: bool;
-    let local_c: [u16; 0x5];
-
-    b_var1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
+    let mut local_c: Vec<u8>;
+    let mut b_var1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if (b_var1 != 0x0) {
         local_c[0] = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
@@ -58,6 +62,7 @@ pub fn write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16) -> bool
         }
         b_var1 = 0x1;
     }
+
     return b_var1;
 }
 
