@@ -2687,7 +2687,7 @@ pub fn pass1_1030_4628(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: i16
             break;
         }
     }
-    u_var1 = (&DAT_1050_5350 + u_var2 * 0x5e);
+    u_var1 = (&ctx.DAT_1050_5350 + u_var2 * 0x5e);
     pass1_1008_612e(u_var1, (u_var1 >> 0x10), u_var3);
     (iVar5 + 0x22) = u_var3;
     piVar7 = (u_var2 * 0x5e + 0x5354);
@@ -3552,7 +3552,7 @@ pub fn pass1_1030_53f4(param_1: u32, param_2: u16, param_3: u16, param_4: u8) {
             param_3,
             param_4,
         );
-        uStack16 = *PTR_LOOP_1050_5748;
+        uStack16 = *ctx.PTR_LOOP_1050_5748;
         fn_ptr_1028_d566(uStack16, CONCAT22(param_3, local_11e));
         bStack291 = ((i_var3 + 0x108) >> 0x18);
         u_var2 = bStack291;
@@ -11615,7 +11615,7 @@ pub fn pass1_1030_d180(param_1: u32, param_2: u16) {
         }
         i_stack4 += 0x1;
     }
-    u_var2 = *PTR_LOOP_1050_65e2;
+    u_var2 = *ctx.PTR_LOOP_1050_65e2;
     i_var1 = (ctx.PTR_LOOP_1050_65e2 + 0x2);
     i_var4 = i_stack4 * 0xc + u_var3;
     (i_var4 + 0x20) = u_var2 + 0xc8;
@@ -11665,7 +11665,7 @@ pub fn pass1_1030_d26c(param_1: u32, param_2: u16) {
     let iVar5: i16;
     let iStack8: i16;
 
-    u_var2 = *PTR_LOOP_1050_65e2;
+    u_var2 = *ctx.PTR_LOOP_1050_65e2;
     // for (iStack8 = 0x0; iStack8 < 0xa; iStack8 += 0x1) {
     //   iVar5 = iStack8 * 0xc + param_1;
     //   if ((((iVar5 + 0x22) | (iVar5 + 0x20)) != 0x0) &&
@@ -11800,7 +11800,7 @@ pub fn pass1_1030_d3b2(param_1: i16, param_2: u16, param_3: i16, param_4: i16, p
             if (!bVar3) {
                 return;
             }
-            u_var5 = *PTR_LOOP_1050_65e2;
+            u_var5 = *ctx.PTR_LOOP_1050_65e2;
             i_var1 = (ctx.PTR_LOOP_1050_65e2 + 0x2);
             (param_1 + param_3 * 0xc + 0x20) = u_var5 + 0xc8;
             (param_1 + param_3 * 0xc + 0x22) = i_var1 + (0xff37 < u_var5);

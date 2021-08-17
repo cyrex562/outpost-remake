@@ -605,7 +605,7 @@ pub fn struct_1028_d59c(param_1: U32Ptr, param_2: U32Ptr) {
     *param_1 = 0x0;
     iVar5.field_0x4 = 0x0;
     iVar5.field_0x8 = 0x0;
-    pu_var3 = *PTR_LOOP_1050_5748;
+    pu_var3 = *ctx.PTR_LOOP_1050_5748;
     *param_1 = pu_var3;
     mem_op_1000_179c(0xc, param_2, 0x1000);
     pu_var1 = (pu_var3 & 0xffff | ZEXT24(param_2) << 0x10);

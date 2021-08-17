@@ -631,7 +631,7 @@ pub fn write_to_file_1028_dce2(
             local_1e[0] = (i_var5 + 0x8);
             bvar2 = write_to_file_1008_7e1c(param_2, u_var7, local_1e, param_3, 0x2, 0x1008);
             if bvar2 != 0x0 {
-                ppc_var1 = (*PTR_LOOP_1050_5166 + 0xc);
+                ppc_var1 = (*ctx.PTR_LOOP_1050_5166 + 0xc);
                 (**ppc_var1)(
                     0x1008,
                     ctx.PTR_LOOP_1050_5166,
@@ -754,8 +754,8 @@ pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u1
         if (BVar2 != 0x0) {
             BVar2 = read_file_1008_7dee(u_var4, u_var5, param_1 + 0x8, 0x0, u_var3, 0x2, 0x1008);
             if (BVar2 != 0x0) {
-                u_var3 = (*PTR_LOOP_1050_5166 >> 0x10);
-                ppcVar1 = (*PTR_LOOP_1050_5166 + 0x10);
+                u_var3 = (*ctx.PTR_LOOP_1050_5166 >> 0x10);
+                ppcVar1 = (*ctx.PTR_LOOP_1050_5166 + 0x10);
                 (**ppcVar1)(
                     0x1008,
                     ctx.PTR_LOOP_1050_5166,

@@ -13,7 +13,7 @@ pub fn post_msg_1028_76da() {
     lVar1 = (pu_var3 + 0xc);
     // uStack8 = (lVar1 >> 0x10);
     uStack10 = lVar1;
-    if (((uStack8 | uStack10) != 0x0) && (*PTR_LOOP_1050_65e2 == lVar1)) {
+    if (((uStack8 | uStack10) != 0x0) && (*ctx.PTR_LOOP_1050_65e2 == lVar1)) {
         PostMessage16(0x1010, 0x0, 0x0, 0x1110106);
         (pu_var3 + 0xc) = 0x0;
     }

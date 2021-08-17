@@ -7279,7 +7279,7 @@ pub fn pass1_1010_c2d8(param_1: u32, param_3: i32) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pass1_1010_c312() -> u32 {
-    return CONCAT22((ctx.PTR_LOOP_1050_65e2 + 0x2), *PTR_LOOP_1050_65e2);
+    return CONCAT22((ctx.PTR_LOOP_1050_65e2 + 0x2), *ctx.PTR_LOOP_1050_65e2);
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address

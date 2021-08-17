@@ -5582,7 +5582,7 @@ pub fn pass1_1008_e9a4(param_1: u16, param_2: u16, param_3: u32, param_4: i16, p
                 u_var3 = 0x14;
             }
         } else {
-            if (ctx.PTR_LOOP_1050_13ae != &DAT_1050_0004) {
+            if (ctx.PTR_LOOP_1050_13ae != &ctx.DAT_1050_0004) {
                 // goto
                 // LAB_1008_ea2b;
             }

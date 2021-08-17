@@ -392,3 +392,18 @@ pub struct Struct14 {}
 pub struct Struct15 {}
 
 pub struct Struct71 {}
+
+pub struct Struct199 {}
+
+pub struct Struct200 {}
+
+pub struct Struct229 {}
+
+pub struct Struct228 {}
+
+pub struct Struct729 {}
+
+
+pub struct Struct45 {}
+
+pub struct Struct44{}

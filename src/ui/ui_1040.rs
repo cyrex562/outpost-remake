@@ -662,7 +662,7 @@ pub fn show_win_1040_18a2(param_1: &mut Struct1, param_2: HWND16, param_3: U32Pt
             if (ctx.PTR_LOOP_1050_13ae == (&ctx.PTR_LOOP_1050_0002 + 0x1)) {
                 uStack4 = 0x622;
             } else {
-                if (ctx.PTR_LOOP_1050_13ae == &DAT_1050_0004) {
+                if (ctx.PTR_LOOP_1050_13ae == &ctx.DAT_1050_0004) {
                     uStack4 = 0x623;
                 } else {
                     uStack4 = 0x620;
@@ -5213,7 +5213,7 @@ pub fn unk_win_ui_op_1040_b230(param_1: &mut Struct1, param_2: u16, param_3: u16
     let local_4: i16;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
-    if (ctx.PTR_LOOP_1050_5ef8 == (&DAT_1050_0004 + 0x1)) {
+    if (ctx.PTR_LOOP_1050_5ef8 == (&ctx.DAT_1050_0004 + 0x1)) {
         ctx.PTR_LOOP_1050_5ef8 = 0x0;
     }
     pu_var5 = CONCAT22(param_3, &local_4);

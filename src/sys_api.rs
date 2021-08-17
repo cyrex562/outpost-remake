@@ -302,7 +302,7 @@ pub fn dos3_op_1000_256b() {
     let pcVar1: u32;
 
     if (ctx.PTR_LOOP_1050_6202 != 0x0) {
-        (*PTR_LOOP_1050_6200)();
+        (*ctx.PTR_LOOP_1050_6200)();
     }
     if (true) {
         pcVar1 = swi(0x21);
@@ -597,7 +597,7 @@ pub fn mixed_dos3_call_1000_370a(
             } else {
                 bVar11 = 0x0;
             }
-            if (u_var5 < &DAT_1050_5f8a) {
+            if (u_var5 < &ctx.DAT_1050_5f8a) {
                 (u_var5 + 0x5f90) = bVar11 | bVar10 | 0x1;
                 return u_var5;
             }
@@ -1254,7 +1254,7 @@ pub fn mixed_sys_op_1000_40af(
         if ((ctx.PTR_LOOP_1050_618e | ctx.PTR_LOOP_1050_618c) == 0x0) {
             return 0x0;
         }
-        iVar10 = (*PTR_LOOP_1050_618c)(param_4, param_3, param_1, param_2);
+        iVar10 = (*ctx.PTR_LOOP_1050_618c)(param_4, param_3, param_1, param_2);
         if (iVar10 == 0x0) {
             return 0x0;
         }

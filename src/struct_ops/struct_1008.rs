@@ -946,7 +946,7 @@ pub fn pass1_1008_c79a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, p
             );
             u_var3 = (ctx.PTR_LOOP_1050_65e2 + 0x52);
             pass1_1030_4bbe(param_4, u_var5, u_var3, (uStack14 + 0x12));
-            (param_1 + 0xe) = (u_var3 + 0x94) + *PTR_LOOP_1050_65e2;
+            (param_1 + 0xe) = (u_var3 + 0x94) + *ctx.PTR_LOOP_1050_65e2;
         }
     }
     return;
@@ -955,7 +955,7 @@ pub fn pass1_1008_c79a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, p
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pass1_1008_c83a(param_1: u32) {
-    if (*PTR_LOOP_1050_65e2 <= (param_1 + 0xe)) {
+    if (*ctx.PTR_LOOP_1050_65e2 <= (param_1 + 0xe)) {
         return;
     }
     return;

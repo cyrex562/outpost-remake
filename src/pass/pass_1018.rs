@@ -2065,7 +2065,7 @@ pub fn pass1_1018_2504(param_1: u16, param_2: u16) {
 
     pass1_1030_8344(ctx, ctx.PTR_LOOP_1050_5748, 0x4000001);
     if ((param_2 | param_1) != 0x0) {
-        u_var1 = pass1_1028_d69e(**PTR_LOOP_1050_5748);
+        u_var1 = pass1_1028_d69e(**ctx.PTR_LOOP_1050_5748);
         if (u_var1 == 0x0) {
             return;
         }

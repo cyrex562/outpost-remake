@@ -130,8 +130,8 @@ pub fn create_dc_1018_4e04(
         // }
         // TODO: refactor for loop
         // for (iStack16 = 0x0; iStack16 < ctx.DAT_1050_422c + 0x1; iStack16 += 0x1) {
-        //   (&DAT_1050_419a + iStack16 * 0x2) =
-        //        (((&DAT_1050_419a + iStack16 * 0x2) *
+        //   (&ctx.DAT_1050_419a + iStack16 * 0x2) =
+        //        (((&ctx.DAT_1050_419a + iStack16 * 0x2) *
         //              (param_3 + 0x1)) / 0x1e0);
         // }
     }

@@ -1188,7 +1188,7 @@ pub fn unk_win_ui_op_1038_9bc8(param_1: &mut Struct1) {
     let local_4: i16;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
-    if (ctx.PTR_LOOP_1050_5ef8 == (&DAT_1050_0004 + 0x1)) {
+    if (ctx.PTR_LOOP_1050_5ef8 == (&ctx.DAT_1050_0004 + 0x1)) {
         ctx.PTR_LOOP_1050_5ef8 = 0x0;
     }
     puVar13 = CONCAT22(unaff_SS, &local_4);
@@ -1588,7 +1588,7 @@ pub fn win_sys_op_1038_a9fa(param_1: i32, param_2: i16) {
                     LVar2 =
                         SendDlgItemMessage16(ctx.s_tile2_bmp_1050_1538, 0x0, 0x0, 0x0, 0x1190400);
                     if (LVar2 != 0x0) {
-                        ctx.PTR_LOOP_1050_13ae = &DAT_1050_0004;
+                        ctx.PTR_LOOP_1050_13ae = &ctx.DAT_1050_0004;
                     }
                 } else {
                     ctx.PTR_LOOP_1050_13ae = (&ctx.PTR_LOOP_1050_0002 + 0x1);
@@ -3246,7 +3246,7 @@ pub fn unk_win_sys_op_1038_da68(
             } else {
                 if (param_4._2_2_ != 0x123) {
                     if (param_4._2_2_ - 0x125 == 0x0) {
-                        ppcVar1 = (*PTR_LOOP_1050_02a0 + 0x4);
+                        ppcVar1 = (*ctx.PTR_LOOP_1050_02a0 + 0x4);
                         param_4._2_2_ = param_4._2_2_ - 0x125;
                         (**ppcVar1)();
                         (param_1 + 0x90) = 0x1;

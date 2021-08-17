@@ -162,7 +162,7 @@ pub fn pass1_1038_008e(
     }
     pass1_1008_eb74(puVar11, 0x0, puVar8, param_5, param_6);
     if ((((u_var3 + 0xe) | (u_var3 + 0xc)) == 0x0) && ((i_var9 + 0x18) < 0xc9)) {
-        u_var2 = *PTR_LOOP_1050_65e2;
+        u_var2 = *ctx.PTR_LOOP_1050_65e2;
         u_var4 = u_var2;
         u_var6 = u_var2;
         pass1_1008_612e(0x0, 0x8, u_var4);
@@ -301,7 +301,7 @@ pub fn pass1_1038_0340(
     let uStack10: u32;
     let uStack6: u32;
 
-    uStack6 = *PTR_LOOP_1050_65e2;
+    uStack6 = *ctx.PTR_LOOP_1050_65e2;
     uStack10 = 0x0;
     uStack12 = 0x0;
     i_var3 = param_4;
@@ -457,7 +457,7 @@ pub fn pass1_1038_05d8(
     let uStack10: u32;
     let uStack6: u32;
 
-    uStack6 = *PTR_LOOP_1050_65e2;
+    uStack6 = *ctx.PTR_LOOP_1050_65e2;
     uStack10 = 0x0;
     uStack12 = 0x0;
     pass1_1038_4cea(
@@ -720,7 +720,7 @@ pub fn pass1_1038_095e(
     let paStack6: &mut Struct67;
 
     paStack6 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x37, param_7, param_5, param_6);
-    uStack10 = *PTR_LOOP_1050_65e2;
+    uStack10 = *ctx.PTR_LOOP_1050_65e2;
     // uVar8 = (param_4 >> 0x10);
     if (uStack10 % 0xa == 0x0) {
         if (param_3 < 0xc9) {
@@ -746,7 +746,7 @@ pub fn pass1_1038_095e(
     //LAB_1038_09c3:
     iStack12 = (param_4 + 0x22);
     iStack14 = 0x0;
-    uStack18 = *PTR_LOOP_1050_65e2;
+    uStack18 = *ctx.PTR_LOOP_1050_65e2;
     if (iStack12 < 0x4b) {
         if (iStack12 < 0x3c) {
             if (iStack12 < 0x32) {
@@ -2064,8 +2064,8 @@ pub fn pass1_1038_1ac6(
         param_7,
     );
     pass1_1028_d52c(
-        *PTR_LOOP_1050_5748,
-        *PTR_LOOP_1050_65e2 + 0x1,
+        *ctx.PTR_LOOP_1050_5748,
+        *ctx.PTR_LOOP_1050_65e2 + 0x1,
         CONCAT22(param_6, local_118),
     );
     return;
@@ -5055,7 +5055,7 @@ pub fn pass1_1038_4760(param_1: u32) {
         //       u_var11 = SUB42(&USHORT_1050_1028,0x0);
         //       func_0x10285a94();
         //       if (iVar5 == 0x2) {
-        //         if ((*PTR_LOOP_1050_65e2 & 0x1) == 0x0) goto LAB_1038_485e;
+        //         if ((*ctx.PTR_LOOP_1050_65e2 & 0x1) == 0x0) goto LAB_1038_485e;
         //       }
         //       else {
         //         if (iVar5 != 0x3) {
@@ -5228,7 +5228,7 @@ pub fn pass1_1038_4918(param_1: u32, param_2: i16, param_3: u16, param_4: u16, p
     }
     uStack14 = uStack14;
     // switchD_1038_49cf_caseD_a:
-    uStack18 = *PTR_LOOP_1050_65e2;
+    uStack18 = *ctx.PTR_LOOP_1050_65e2;
     if ((uStack14 != 0x0)
         && (((uStack18 & 0xffff | (ctx.PTR_LOOP_1050_65e2 + 0x2) << 0x10) % uStack14) == 0x0))
     {

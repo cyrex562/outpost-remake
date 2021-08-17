@@ -2606,7 +2606,7 @@ pub fn pass1_1020_a43e(param_1: u16, param_2: U32Ptr, param_3: U32Ptr) -> u16 {
             ctx.PTR_LOOP_1050_4e74 = 0x44b4;
             //       TODO: goto LAB_1020_a482;
         }
-        if (ctx.PTR_LOOP_1050_13ae == &DAT_1050_0004) {
+        if (ctx.PTR_LOOP_1050_13ae == &ctx.DAT_1050_0004) {
             ctx.PTR_LOOP_1050_4e74 = 0x4b2c;
             //       TODO: goto LAB_1020_a482;
         }
@@ -5145,7 +5145,7 @@ pub fn pass1_1020_cac2(param_1: u32, param_2: U32Ptr, param_3: u16, param_4: u16
                 if (puStack8 == (&ctx.PTR_LOOP_1050_0002 + 0x1)) {
                     iStack52 = (pu_var3 + 0x6) / 0x2;
                 } else {
-                    if (puStack8 == &DAT_1050_0004) {
+                    if (puStack8 == &ctx.DAT_1050_0004) {
                         iVar6 = (pu_var3 + 0x6) * 0x3;
                         iStack52 = (iVar6 + (iVar6 >> 0xf & 0x3)) >> 0x2;
                     }
