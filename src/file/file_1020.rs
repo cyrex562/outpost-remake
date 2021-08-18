@@ -1,4 +1,7 @@
-use crate::{global::AppContext, pass::pass_1020::pass1_1020_b97e};
+use crate::{
+    global::AppContext,
+    pass::{pass_1020::pass1_1020_b97e, pass_1030::pass1_1030_de7c},
+};
 
 use super::{
     file_1008::{read_file_1008_7cfe, read_file_1008_7dee},
@@ -50,13 +53,18 @@ pub fn read_file_1020_a65e(
     return 0x0;
 }
 
-pub fn write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16) -> bool {
+pub fn write_to_file_1020_d3d4(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> bool {
     let mut local_c: Vec<u8>;
     let mut b_var1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
-    if (b_var1 != 0x0) {
+    if b_var1 != 0x0 {
         local_c[0] = (param_1 + 0x20);
         b_var1 = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
-        if (b_var1 == 0x0) {
+        if b_var1 == 0x0 {
             ctx.PTR_LOOP_1050_0310 = 0x6d0;
             return b_var1;
         }
@@ -66,7 +74,12 @@ pub fn write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16) -> bool
     return b_var1;
 }
 
-pub fn write_to_file_1020_e6a4(param_1: u32, param_2: u32, param_3: u16) -> bool {
+pub fn write_to_file_1020_e6a4(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> bool {
     let in_AX: i16;
     let b_var1: bool;
     let u_var2: u16;

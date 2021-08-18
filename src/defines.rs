@@ -403,7 +403,28 @@ pub struct Struct228 {}
 
 pub struct Struct729 {}
 
-
 pub struct Struct45 {}
 
-pub struct Struct44{}
+pub struct Struct44 {}
+
+pub struct Struct368 {}
+
+pub struct Struct369 {}
+
+pub struct Struct370 {}
+
+pub struct Struct430 {}
+
+pub struct Struct381 {}
+
+pub struct Struct380 {}
+
+pub struct Struct387 {}
+
+pub struct Struct389 {}
+
+pub struct Struct391 {}
+
+pub struct Struct388 {}
+
+pub struct Struct390 {}

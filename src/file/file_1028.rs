@@ -1,5 +1,3 @@
-use std::default::default;
-
 use crate::defines::U32Ptr;
 use crate::file::file_1008::{
     read_file_1008_7cfe, read_file_1008_7dee, write_to_file_1008_7a22, write_to_file_1008_7cac,
@@ -13,9 +11,16 @@ use crate::pass::pass_1028::{
 use crate::pass::pass_1030::pass1_1030_16d6;
 use crate::pass::pass_1038::pass1_1038_3ba0;
 use crate::switch_ops::switch_1008::{switch_1008_72bc, switch_1008_73ea};
-use crate::util::{CONCAT22, ZEXT24};
+use crate::util::{CONCAT22, SBORROW2, ZEXT24};
 
-pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16 {
+use super::write::write_to_file_1008_7e1c;
+
+pub fn write_to_file_1028_0234(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> u16 {
     let u_var1: u32;
     let BVar2: bool;
     let i_var3: i16;
@@ -76,13 +81,18 @@ pub fn write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16) -> u16 
     return 0x0;
 }
 
-pub fn write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16) -> u16 {
+pub fn write_to_file_1028_1452(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> u16 {
     let b_var1: bool;
     let u_var2: u16;
     let u_var3: u16;
     let u_var4: u16;
     let local_c: [u16; 0x3];
-    u8 * local_6[0x2];
+    let mut local_6: Vec<u8>;
 
     b_var1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if (b_var1 != 0x0) {
@@ -108,6 +118,7 @@ pub fn write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16) -> u16 
 }
 
 pub fn file_1028_24a2(
+    ctx: &mut AppContext,
     param_1: u32,
     param_2: u32,
     param_3: i16,
@@ -180,7 +191,13 @@ pub fn file_1028_24a2(
     return 0x1;
 }
 
-pub fn write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4: u16) {
+pub fn write_to_file_1028_3d0e(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+    param_4: u16,
+) {
     let b_var1: bool;
     let i_var2: i16;
     let u_var3: u16;
@@ -210,7 +227,12 @@ pub fn write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4
     return;
 }
 
-pub fn write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16) -> bool {
+pub fn write_to_file_1028_5f82(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> bool {
     let b_var1: bool;
     let local_c: [u16; 0x5];
 
@@ -227,7 +249,13 @@ pub fn write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16) -> bool
     return b_var1;
 }
 
-pub fn pass1_1028_5fcc(param_1: i16, param_2: U32Ptr, param_3: i16, param_4: u16) {
+pub fn pass1_1028_5fcc(
+    ctx: &mut AppContext,
+    param_1: i16,
+    param_2: U32Ptr,
+    param_3: i16,
+    param_4: u16,
+) {
     let u_var1: u32;
     let u_var2: u32;
     let BVar3: bool;
@@ -255,7 +283,7 @@ pub fn pass1_1028_5fcc(param_1: i16, param_2: U32Ptr, param_3: i16, param_4: u16
     return;
 }
 
-pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool {
+pub fn write_to_file_1028_b286(ctx: &mut AppContext, param_1: i16, param_2: u16) -> bool {
     let u_var1: u32;
     let in_AX: bool;
     let BVar2: bool;
@@ -282,7 +310,12 @@ pub fn write_to_file_1028_b286(param_1: i16, param_2: u16) -> bool {
     return in_AX;
 }
 
-pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool {
+pub fn write_to_file_1028_b5ec(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+) -> bool {
     let u_var1: u32;
     let BVar2: bool;
     let i_var3: i16;
@@ -412,177 +445,159 @@ pub fn write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16) -> bool
 // WARNING: Unable to use type for symbol pu_var3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, param_5: U32Ptr) {
-    let b_var1: bool;
-    let i_var2: i16;
-    let puVar4: u32;
-    let u_var5: u16;
-    let u_var6: u16;
-    let uVar7: u32;
-    let uVar8: u16;
-    let local_2a: [u16; 0x2];
-    let local_26: [u8; 16];
-    let puStack16: u32;
-    let puStack14: U32Ptr;
-    let uStack10: i16;
-    let local_8: i16;
-    let local_6: i16;
-    let local_4: i16;
-    let pu_var3: u32;
+pub fn file_1028_b81a(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: u16,
+    param_5: U32Ptr,
+) {
+    let var1: bool;
+    let var2: i16;
+    let var3: u32;
+    let var5: u16;
+    let var6: u16;
+    let var7: u32;
+    let var8: u16;
+    let var9: [u16; 0x2];
+    let var10: [u8; 16];
+    let var11: u32;
+    let var12: U32Ptr;
+    let var13: i16;
+    let var14: i16;
+    let var15: i16;
+    let var16: i16;
+    let var17: u32;
+    let mut b_var1: bool;
 
-    pu_var3 = param_1;
+    var17 = param_1;
     // u_var6 = (param_1 >> 0x10);
     file_1030_1730(param_1, param_2);
-    if (param_3 == 0x0) {
+    if param_3 == 0x0 {
         return;
     }
-    u_var5 = param_2;
+    var5 = param_2;
     // uVar8 = (param_2 >> 0x10);
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, &local_4, 0x0, param_4, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var1 = read_file_1008_7dee(var5, var8, &var16, 0x0, param_4, 0x2, 0x1008);
+    if b_var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, &local_6, 0x0, param_4, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var1 = read_file_1008_7dee(var5, var8, &var15, 0x0, param_4, 0x2, 0x1008);
+    if b_var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, &local_8, 0x0, param_4, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var1 = read_file_1008_7dee(var5, var8, &var14, 0x0, param_4, 0x2, 0x1008);
+    if b_var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    i_var2 = switch_1008_73ea(u_var5, uVar8, local_4);
-    (pu_var3 + 0x3) = i_var2;
-    i_var2 = switch_1008_73ea(u_var5, uVar8, local_6);
-    (pu_var3 + 0xe) = i_var2;
-    i_var2 = switch_1008_73ea(u_var5, uVar8, local_8);
-    (pu_var3 + 0x4) = i_var2;
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, &local_4, 0x0, param_4, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var2 = switch_1008_73ea(var5, var8, var16);
+    (var17 + 0x3) = var2;
+    var2 = switch_1008_73ea(var5, var8, var15);
+    (var17 + 0xe) = var2;
+    var2 = switch_1008_73ea(var5, var8, var14);
+    (var17 + 0x4) = var2;
+    var1 = read_file_1008_7dee(var5, var8, &var16, 0x0, param_4, 0x2, 0x1008);
+    if b_var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, &local_6, 0x0, param_4, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var1 = read_file_1008_7dee(var5, var8, &var15, 0x0, param_4, 0x2, 0x1008);
+    if (var1 == 0x0) {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    b_var1 = read_file_1008_7dee(u_var5, uVar8, pu_var3 + 0x1a, 0x0, u_var6, 0x2, 0x1008);
-    if (b_var1 == 0x0) {
+    var1 = read_file_1008_7dee(var5, var8, var17 + 0x1a, 0x0, var6, 0x2, 0x1008);
+    if (var1 == 0x0) {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
-    (pu_var3 + 0x12) = local_4;
-    (pu_var3 + 0x6) = local_6;
-    iStack10 = (pu_var3 + 0x12);
-    if (iStack10 == 0x6) {
-        iStack10 = (pu_var3 + 0x6);
+    (var17 + 0x12) = var16;
+    (var17 + 0x6) = var15;
+    let mut var18 = (var17 + 0x12);
+    if (var18 == 0x6) {
+        var18 = (var17 + 0x6);
     }
-    if (false) {
-        return;
-    }
-    match (iStack10) {
+
+    match (var18) {
         0x1 | 0x2 | 0x3 => {
-            puVar4 = pu_var3 + 0x5;
+            var3 = var17 + 0x5;
             //LAB_1028_b968:
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, puVar4, 0x0, u_var6, 0x2, 0x1008);
+            var1 = read_file_1008_7dee(var5, var8, var3, 0x0, var6, 0x2, 0x1008);
         }
         0x4 => {
-            uVar7 = pass1_1028_e0bc(
+            var7 = pass1_1028_e0bc(
                 ctx.PTR_LOOP_1050_65e2,
-                (pu_var3 + 0x3),
-                pu_var3,
+                (var17 + 0x3),
+                var17,
                 param_5,
                 param_4,
             );
             // puStack14 = (uVar7 >> 0x10);
-            (pu_var3 + 0x5) = uVar7;
-            (pu_var3 + 0x16) = puStack14;
-            if ((puStack14 | (pu_var3 + 0x5)) != 0x0) {
-                puVar4 = ((pu_var3 + 0x5) + 0x94);
-                u_var6 = puStack14;
-                puStack16 = puVar4;
+            (var17 + 0x5) = var7;
+            (var17 + 0x16) = var12;
+            if ((var12 | (var17 + 0x5)) != 0x0) {
+                var3 = ((var17 + 0x5) + 0x94);
+                var6 = var12;
+                var11 = var3;
                 //       TODO: goto LAB_1028_b968;
             }
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, local_26, 0x0, param_4, 0x2, 0x1008);
+            var1 = read_file_1008_7dee(var5, var8, var10, 0x0, param_4, 0x2, 0x1008);
         }
 
         0x5 => {
-            puVar4 = pu_var3;
-            pass1_1028_e100(ctx.PTR_LOOP_1050_65e2, (pu_var3 + 0x3), param_5);
-            (pu_var3 + 0x5) = puVar4;
-            (pu_var3 + 0x16) = param_5;
-            puStack16 = ((pu_var3 + 0x5) + 0xa4);
-            puStack14 = param_5;
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, puStack16, 0x0, param_5, 0x2, 0x1008);
-            if (b_var1 == 0x0) {
+            var3 = var17;
+            pass1_1028_e100(ctx.PTR_LOOP_1050_65e2, (var17 + 0x3), param_5);
+            (var17 + 0x5) = var3;
+            (var17 + 0x16) = param_5;
+            var11 = ((var17 + 0x5) + 0xa4);
+            var12 = param_5;
+            var1 = read_file_1008_7dee(var5, var8, var11, 0x0, param_5, 0x2, 0x1008);
+            if (var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
-            b_var1 = read_file_1008_7dee(u_var5, uVar8, local_2a, 0x0, param_4, 0x2, 0x1008);
-            if (b_var1 == 0x0) {
+            var1 = read_file_1008_7dee(var5, var8, var9, 0x0, param_4, 0x2, 0x1008);
+            if (var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
-            uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(
-                u_var5,
-                uVar8,
-                uVar7 + 0xa8,
-                0x0,
-                (uVar7 >> 0x10),
-                0x2,
-                0x1008,
-            );
-            if (b_var1 == 0x0) {
+            var7 = var17[0x5];
+            var1 = read_file_1008_7dee(var5, var8, var7 + 0xa8, 0x0, (var7 >> 0x10), 0x2, 0x1008);
+            if (var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
-            uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(
-                u_var5,
-                uVar8,
-                uVar7 + 0xaa,
-                0x0,
-                (uVar7 >> 0x10),
-                0x2,
-                0x1008,
-            );
-            if (b_var1 == 0x0) {
+            var7 = var17[0x5];
+            var1 = read_file_1008_7dee(var5, var8, var7 + 0xaa, 0x0, (var7 >> 0x10), 0x2, 0x1008);
+            if (var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
-            uVar7 = pu_var3[0x5];
-            b_var1 = read_file_1008_7dee(
-                u_var5,
-                uVar8,
-                uVar7 + 0xac,
-                0x0,
-                (uVar7 >> 0x10),
-                0x2,
-                0x1008,
-            );
-            if (b_var1 == 0x0) {
+            var7 = var17[0x5];
+            var1 = read_file_1008_7dee(var5, var8, var7 + 0xac, 0x0, (var7 >> 0x10), 0x2, 0x1008);
+            if (var1 == 0x0) {
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return;
             }
-            u_var5 = switch_1008_72bc(u_var5, uVar8, local_2a[0]);
-            uVar7 = pu_var3[0x5];
-            (uVar7 + 0xa6) = u_var5;
+            var5 = switch_1008_72bc(var5, var8, var9[0]);
+            var7 = var17[0x5];
+            (var7 + 0xa6) = var5;
             return;
         }
         // _ =>
         //     TODO: goto switchD_1028_ba97_caseD_6;
         0x9 => {
-            puVar4 = pu_var3;
-            pass1_1028_e100(ctx.PTR_LOOP_1050_65e2, (pu_var3 + 0x3), param_5);
-            (pu_var3 + 0x5) = puVar4;
-            (pu_var3 + 0x16) = param_5;
+            var3 = var17;
+            pass1_1028_e100(ctx.PTR_LOOP_1050_65e2, (var17 + 0x3), param_5);
+            (var17 + 0x5) = var3;
+            (var17 + 0x16) = param_5;
         } //     TODO: goto switchD_1028_ba97_caseD_6;
     }
-    if b_var1 == 0x0 {
+    if var1 == 0x0 {
         ctx.PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
@@ -600,6 +615,7 @@ pub fn read_file_1028_d7ba(ctx: &mut AppContext, param_3: u32, param_4: u16, par
 }
 
 pub fn write_to_file_1028_dce2(
+    ctx: &mut AppContext,
     param_1: U32Ptr,
     param_2: u32,
     param_3: u16,
@@ -735,7 +751,13 @@ pub fn write_to_file_1028_dce2(
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u16) {
+pub fn read_file_1028_def2(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: u16,
+    param_4: u16,
+) {
     let ppcVar1: u32;
     let BVar2: bool;
     let unaff_SI: u16;
@@ -862,7 +884,13 @@ pub fn read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u1
     return;
 }
 
-pub fn write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: u16) -> u16 {
+pub fn write_file_fn_1028_e56c(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u16,
+    param_3: u32,
+    param_4: u16,
+) -> u16 {
     let ppcVar1: u32;
     let pu_var2: U32Ptr;
     let BVar3: bool;

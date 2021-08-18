@@ -1,4 +1,7 @@
-use crate::defines::{Struct18, Struct99, U32Ptr};
+use crate::defines::{
+    Struct18, Struct368, Struct369, Struct370, Struct380, Struct381, Struct387, Struct388,
+    Struct389, Struct391, Struct430, Struct99, U32Ptr,
+};
 use crate::file::file_1008::{
     file_1008_76e4, file_1008_77cc, read_file_1008_7bc8, read_file_1008_7c6e, read_file_1008_7dee,
 };
@@ -17,17 +20,19 @@ use crate::util::{read_struct_from_addr, write_struct_to_addr, CONCAT22, ZEXT24}
 use crate::win_struct::HFILE16;
 use crate::winapi::{WIN16_hread, _lclose16, _lopen16};
 
-pub fn file_1030_1730(param_1: u32, param_2: u32) {
+use super::file_1008::read_file_1008_7cfe;
+
+pub fn file_1030_1730(ctx: &mut AppContext, param_1: u32, param_2: u32) {
     let u_var1: u16;
-    let BVar2: bool;
+    let b_var2: bool;
     let u_var3: u16;
 
     // u_var1 = (param_1 >> 0x10);
     // u_var3 = (param_2 >> 0x10);
-    BVar2 = read_file_1008_7dee(param_2, u_var3, param_1 + 0x4, 0x0, u_var1, 0x4, 0x1008);
-    if (BVar2 != 0x0) {
-        BVar2 = read_file_1008_7dee(param_2, u_var3, param_1 + 0x8, 0x0, u_var1, 0x4, 0x1008);
-        if (BVar2 != 0x0) {
+    b_var2 = read_file_1008_7dee(param_2, u_var3, param_1 + 0x4, 0x0, u_var1, 0x4, 0x1008);
+    if (b_var2 != 0x0) {
+        b_var2 = read_file_1008_7dee(param_2, u_var3, param_1 + 0x8, 0x0, u_var1, 0x4, 0x1008);
+        if (b_var2 != 0x0) {
             return;
         }
     }
@@ -35,14 +40,21 @@ pub fn file_1030_1730(param_1: u32, param_2: u32) {
     return;
 }
 
-pub fn file_1030_19b4(param_1: u32, param_2: u32, param_3: i16, param_4: u16, param_5: u16) {
-    let plVar1: &i32;
+pub fn file_1030_19b4(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: u16,
+    param_5: u16,
+) {
+    let var1: &i32;
 
     file_1030_1730(param_1, param_2);
     if (param_3 != 0x0) {
-        plVar1 = (param_1 & 0xffff0000 | (param_1 + 0xc));
-        file_1008_76e4(param_2, plVar1, 0x1008, param_5, param_4);
-        if (plVar1 == 0x0) {
+        var1 = (param_1 & 0xffff0000 | (param_1 + 0xc));
+        file_1008_76e4(ctx, param_2, var1, 0x1008, param_5, param_4);
+        if (var1 == 0x0) {
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
@@ -73,7 +85,7 @@ pub fn file_1030_1b18(
 
     i_var10 = param_1;
     // u_var9 = (param_1 >> 0x10);
-    file_1030_19b4(param_1, param_2, param_3, param_4, param_5);
+    file_1030_19b4(ctx, param_1, param_2, param_3, param_4, param_5);
     if param_3 != 0x0 {
         if ctx.PTR_LOOP_1050_5f2c == 0x0 {
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(ctx, Some(param_4), 0x1000) as u32;
@@ -135,7 +147,7 @@ pub fn file_1030_1b18(
     return 0x0;
 }
 
-pub fn read_file_1030_33f0(param_1: u32, param_2: u32) {
+pub fn read_file_1030_33f0(ctx: &mut AppContext, param_1: u32, param_2: u32) {
     let u_var1: u16;
     let i_var2: &mut Struct430;
     let BVar2: bool;
@@ -298,7 +310,14 @@ pub fn read_file_1030_4e70(
     return param_5;
 }
 
-pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16) {
+pub fn file_1030_581e(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: U32Ptr,
+    param_5: u16,
+) {
     let pi_var1: U32Ptr;
     let i_var2: i16;
     let u_var3: u32;
@@ -315,7 +334,7 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     let uVar12: u16;
     let uStack1040: u32;
     let iStack1036: i16;
-    let local_408: [u8; 400];
+    let mut local_408: Vec<u8>;
     let uStack8: u32;
     let local_4: i16;
     let iVar12: &mut Struct381;
@@ -323,8 +342,8 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
     iVar12 = param_1;
     // uVar12 = (param_1 >> 0x10);
     file_1030_19b4(param_1, param_2, param_3, param_4, param_5);
-    if (param_3 != 0x0) {
-        if (ctx.PTR_LOOP_1050_5f2c == 0x0) {
+    if param_3 != 0x0 {
+        if ctx.PTR_LOOP_1050_5f2c == 0x0 {
             ctx.PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);
             ctx.PTR_LOOP_1050_5f2e = param_4;
         } else {
@@ -337,8 +356,8 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
             ctx.PTR_LOOP_1050_5f2e,
             0x1000,
         );
-        puVar9 = (ctx.PTR_LOOP_1050_5f2e | u_var4);
-        if (puVar9 == 0x0) {
+        puVar9 = ctx.PTR_LOOP_1050_5f2e | u_var4;
+        if puVar9 == 0x0 {
             u_var4 = 0x0;
             puVar9 = 0x0;
         } else {
@@ -349,15 +368,15 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
         u_var4 = param_2;
         // u_var11 = (param_2 >> 0x10);
         BVar5 = read_file_1008_7dee(u_var4, u_var11, &local_4, 0x0, param_5, 0x2, 0x1008);
-        if (BVar5 != 0x0) {
-            uVar8 = (ctx.PTR_LOOP_1050_65e2 + 0x52);
+        if BVar5 != 0x0 {
+            uVar8 = ctx.PTR_LOOP_1050_65e2 + 0x52;
             uStack8 = uVar8;
             pass1_1030_4782(
                 param_5,
                 in_AF,
                 puVar9,
                 uVar8,
-                (uVar8 >> 0x10),
+                uVar8 >> 0x10,
                 0x0,
                 0x1,
                 local_4,
@@ -373,12 +392,12 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                 0x2,
                 0x1008,
             );
-            if (BVar5 != 0x0) {
+            if BVar5 != 0x0 {
                 puVar6 = local_408;
                 read_file_1008_7c6e(u_var4, u_var11, CONCAT22(param_5, puVar6), 0x1008);
-                if (puVar6 != 0x0) {
+                if puVar6 != 0x0 {
                     uVar8 = &iVar12.field_0x10;
-                    fn_ptr_1000_17ce(ctx, (uVar8 + 0x4), 0x1000);
+                    fn_ptr_1000_17ce(ctx, uVar8 + 0x4, 0x1000);
                     uVar7 = str_op_1008_60e8(CONCAT22(param_5, local_408), puVar9);
                     uVar8 = &iVar12.field_0x10;
                     // u_var10 = (uVar8 >> 0x10);
@@ -391,17 +410,17 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                         u_var11,
                         uVar8 + 0x1a,
                         0x0,
-                        (uVar8 >> 0x10),
+                        uVar8 >> 0x10,
                         0x2,
                         0x1008,
                     );
-                    if (BVar5 != 0x0) {
+                    if BVar5 != 0x0 {
                         uVar8 = &iVar12.field_0x10;
-                        i_var2 = (uVar8 + 0x1a);
+                        i_var2 = uVar8 + 0x1a;
                         uVar7 = i_var2 * 0x6;
                         mem_op_1000_179c(uVar7, puVar9, 0x1000);
                         uStack1040 = CONCAT22(puVar9, uVar7);
-                        if ((puVar9 | uVar7) == 0x0) {
+                        if (puVar9 | uVar7) == 0x0 {
                             uVar8 = &iVar12.field_0x10;
                             (uVar8 + 0x16) = 0x0;
                         } else {
@@ -424,11 +443,11 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                         // }
                         BVar5 = read_file_1008_7bc8(
                             param_2,
-                            (param_1 & 0xffff0000 | &iVar12.field_0x14),
+                            param_1 & 0xffff0000 | &iVar12.field_0x14,
                             0x1008,
                             param_5,
                         );
-                        if ((BVar5 != 0x0)
+                        if (BVar5 != 0x0)
                             && (
                                 BVar5 = read_file_1008_7dee(
                                     u_var4,
@@ -440,7 +459,7 @@ pub fn file_1030_581e(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                                     0x1008,
                                 ),
                                 BVar5 != 0x0,
-                            ))
+                            )
                         {
                             return;
                         }
@@ -485,7 +504,14 @@ pub fn read_file_1030_5c52(
     return param_3;
 }
 
-pub fn file_1030_778c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr, param_5: u16) {
+pub fn file_1030_778c(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: U32Ptr,
+    param_5: u16,
+) {
     let lVar1: i32;
     let ppcVar2: u32;
     let i_var3: &mut Struct387;
@@ -551,10 +577,11 @@ pub fn file_1030_778c(param_1: u32, param_2: u32, param_3: i16, param_4: U32Ptr,
                     );
                     if (BVar3 != 0x0) {
                         plVar7 = (param_1 & 0xffff0000 | &i_var3.field_0x1e);
-                        file_1008_76e4(param_2, plVar7, 0x1008, param_5, param_4);
+                        file_1008_76e4(ctx, param_2, plVar7, 0x1008, param_5, param_4);
                         if ((((plVar7 != 0x0)
                             && (
                                 iVar6 = file_1008_77cc(
+                                    ctx,
                                     param_2,
                                     (param_1 & 0xffff0000 | &i_var3.field_0x22),
                                     param_4,
