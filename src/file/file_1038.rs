@@ -1,3 +1,5 @@
+use crate::defines::U32Ptr;
+
 
 pub fn file_1038_774e(param_1: u32,param_2: u32,param_3: U32Ptr,param_4: u16)
 {

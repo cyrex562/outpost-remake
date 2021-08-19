@@ -1,7 +1,4 @@
-use crate::defines::{
-    Struct18, Struct368, Struct369, Struct370, Struct380, Struct381, Struct387, Struct388,
-    Struct389, Struct391, Struct430, Struct99, U32Ptr,
-};
+use crate::defines::{Struct18, Struct368, Struct369, Struct370, Struct380, Struct381, Struct387, Struct388, Struct389, Struct390, Struct391, Struct430, Struct99, U32Ptr};
 use crate::file::file_1008::{
     file_1008_76e4, file_1008_77cc, read_file_1008_7bc8, read_file_1008_7c6e, read_file_1008_7dee,
 };
