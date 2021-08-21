@@ -147,7 +147,7 @@ pub fn mem_op_1000_0308(
     param_1: i16,
     struct_2: &mut StructA,
     param_3: u16,
-) -> Option<&mut Struct13_1> {
+) -> Option<Struct13_1> {
     let struct_1: &mut Struct13_1;
     let i_var2: i16;
     let b_var3: bool;
@@ -181,6 +181,7 @@ pub fn mem_op_1000_0308(
 }
 
 pub fn mem_op_1000_03c6(
+    ctx: &mut AppContext,
     param_1: &mut u16,
     param_2: &mut u16,
     param_3: u16,
@@ -379,6 +380,7 @@ pub unsafe fn mem_1000_0668(ctx: &mut AppContext, param_1: u16) -> u32 {
 }
 
 pub fn mem_1000_0670(
+    ctx: &mut AppContext,
     param_1: u16,
     param_2: U32Ptr,
     param_3: u16,
@@ -404,7 +406,7 @@ pub fn mem_1000_0670(
     let DVar16: u32;
 
     UVar3 = param_4;
-    UVar4 = (param_4 + 0x2) as u16;
+    UVar4 = (param_4 + 0x2);
     DVar15 = mem_op_1000_1532(ctx, param_6);
     UVar6 = param_5 + (0xffeb < param_3);
     uVar7 = *param_4;
@@ -461,7 +463,7 @@ pub fn mem_op_1000_0838(
     ctx: &mut AppContext,
     param_1: Option<&mut StructA>,
     param_2: u16,
-) -> &mut Struct99 {
+) -> Struct99 {
     let pu_var1: U32Ptr;
     let pi_var2: U32Ptr;
     let i_var3: i16;
@@ -544,6 +546,8 @@ pub fn mem_op_1000_0a48(
     ctx: &mut AppContext,
     param_1: u8,
     param_2: u32,
+    param_3: u32,
+    param_4: u32,
     param_5: U32Ptr,
     in_stack_00000005: u8,
 ) -> i32 {
@@ -559,9 +563,9 @@ pub fn mem_op_1000_0a48(
     if (param_4 + 0x14) == -0x4153 {
         if (param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0x6) < param_2)) {
             if (param_3 != 0x0) || (true && ((ctx.s_version__d__d_1050_0012 + 0xa) < param_2)) {
-                u_var5 = mem_op_1000_05e2(ctx, param_2, param_3, _param_1 & 0xfffd, 0x0, param_5);
+                u_var5 = mem_op_1000_05e2(ctx, param_2, param_3, param_1 & 0xfffd, 0x0, param_5);
             } else {
-                u_var5 = mem_op_1000_0b20(_param_1 & 0xfffd, 0x0, param_2, param_5 as u16);
+                u_var5 = mem_op_1000_0b20(ctx, param_1 & 0xfffd, 0x0, param_2, param_5);
             }
         } else {
             if ((false) || (param_2 != 0x0)) {
@@ -649,7 +653,7 @@ pub fn mem_op_1000_0b20(
                     u_var6 = mem_op_1000_03c6(
                         (param_2 + 0x1a),
                         0x0,
-                        u_var2,
+                        &mut u_var2,
                         param_2,
                         param_4,
                         0x0,
@@ -745,7 +749,7 @@ pub fn mem_op_1000_131c(
     return;
 }
 
-pub fn mem_op_1000_13ce(param_1: u16) -> i32 {
+pub fn mem_op_1000_13ce(param_1: u16, ctx: &mut AppContext) -> i32 {
     let HVar1: HGLOBAL16;
     let u_var2: u16;
     let DVar3: u32;
@@ -817,6 +821,7 @@ pub fn mem_op_1000_1408(
 }
 
 pub fn mem_op_1000_14f2(
+    ctx: &mut AppContext,
     param_1: u16,
     param_2: u32,
     param_3: &mut StructA,
@@ -861,7 +866,7 @@ pub fn alloc_mem_1000_1558(
     if (param_2 < 0x9) && (param_2 < 0x8 || (param_1 == 0x0)) {
         while (param_2 < u_stack8) || (param_2 <= u_stack8 && (param_1 <= u_stack10)) {
             loop {
-                alloc_size = CONCAT22(uStack10, param_3);
+                alloc_size = CONCAT22(u_stack10, param_3);
                 *param_3 = ctx.s_tile2_bmp_1050_1538;
                 alloc_size = GlobalDOSAlloc16(alloc_size as usize) as u32;
                 u_var1 = alloc_size;
@@ -1047,7 +1052,13 @@ pub fn mem_op_1000_1902(
     return 0x0;
 }
 
-pub unsafe fn mem_op_1000_1b68(param_1: u16, param_2: u16, param_3: u16, param_4: u16) -> u32 {
+pub unsafe fn mem_op_1000_1b68(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u16,
+    param_3: u16,
+    param_4: u16,
+) -> u32 {
     let u_var1: u32;
 
     if (param_3 + 0x14) != -0x4153 {
@@ -1076,7 +1087,7 @@ pub fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) 
             loop {
                 u_var2 = (iVar5 + 0x8) as u32;
                 (u_var2 + 0xc) = 0x0;
-                mem_op_1000_13ce(param_4);
+                mem_op_1000_13ce(param_4, ctx);
                 iVar5 = (iVar5 + 0x4);
                 if (uStack4 * 0x2) == iVar5 as u16 {
                     break;
@@ -1097,11 +1108,11 @@ pub fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) 
         }
         u_var1 = *puStack8;
         u_var4 = (u_var3 + 0x2);
-        mem_op_1000_13ce(param_4);
+        mem_op_1000_13ce(param_4, ctx);
         u_var3 = u_var1;
     }
     pass1_1000_20a2(param_2 as u16, param_3);
-    lVar6 = mem_op_1000_13ce(param_4);
+    lVar6 = mem_op_1000_13ce(param_4, ctx);
     return CONCAT22(((lVar6 >> 0x10) as u16), 0x1);
 }
 
@@ -1137,6 +1148,7 @@ pub fn mem_op_1000_21b6(param_1: u16, param_2: u16) -> bool {
 }
 
 pub fn mem_1000_2bb6(
+    ctx: &mut AppContext,
     param_1: u16,
     param_2: &String,
     param_3: i16,

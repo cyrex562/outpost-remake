@@ -34,6 +34,10 @@ use crate::{
     winapi::{DOS3Call, GetDOSEnvironment16},
 };
 
+pub fn pass1_1000_010c() {
+    unimplemented!()
+}
+
 pub fn pass1_1000_0368(param_1: u16, param_2: u16, param_3: u16) {
     let pu_var1: U32Ptr;
 

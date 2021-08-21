@@ -1,3 +1,4 @@
+use crate::global::AppContext;
 use crate::win_struct::HFILE16;
 use crate::winapi::_hwrite16;
 
@@ -18,7 +19,7 @@ pub fn write_to_file_1008_7e1c(
     return false;
 }
 
-pub fn write_to_file_1030_32e4(param_1: u32, param_2: u32, param_3: u16) {
+pub fn write_to_file_1030_32e4(ctx: &mut AppContext, param_1: u32, param_2: u32, param_3: u16) {
     let u_var1: u16;
     let i_var2: i16;
     let bvar3: bool;

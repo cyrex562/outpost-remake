@@ -1,3 +1,4 @@
+use crate::defines::U32Ptr;
 use crate::global::AppContext;
 use crate::mem_1000::{mem_op_1000_179c, mem_op_1000_1902, mem_op_1000_1b68};
 use crate::pass::pass_1000::{pass1_1000_1fea, pass1_1000_4d0c};
@@ -35,7 +36,7 @@ pub unsafe fn init_1000_23be(
     return;
 }
 
-pub fn init_globals_1020_96d4() {
+pub fn init_globals_1020_96d4(ctx: &mut AppContext) {
     let pu_var1: U32Ptr;
     let i_var2: i16;
     let pu_var3: u16;
