@@ -1,6 +1,7 @@
 use crate::defines::{
-    Struct18, Struct197, Struct20, Struct79, Struct99, StructA, Struct_1000_09ca, Struct_1000_0c32,
-    Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211, U32Ptr,
+    Struct171, Struct18, Struct197, Struct20, Struct79, Struct99, StructA, Struct_1000_09ca,
+    Struct_1000_0c32, Struct_1000_2cb0, Struct_1000_30a4, Struct_1000_34cf, Struct_160, Struct_211,
+    U32Ptr,
 };
 use crate::exit::exit_1000_25f2;
 use crate::fn_ptr::fn_ptr_1000::{call_fn_ptr_1000_0dc6, fn_ptr_op_1000_2594};
@@ -100,9 +101,9 @@ pub fn pass1_1000_07fc(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u32,
-    mut out: Option<&mut Struct99>,
+    mut out: Option<Struct99>,
 ) {
-    let pa_var1: &mut Struct99;
+    let pa_var1: Struct99;
 
     if (param_2 + 0x14) != -0x4153 {
         pass1_1000_1e61(ctx, param_1, 0xa, None, 0x0);
@@ -373,7 +374,7 @@ pub fn pass1_1000_0ed4(
     let ustack4: U32Ptr;
 
     if (ctx.PTR_LOOP_1050_000c & 0xfff8) == 0xcad0 {
-        u_stack6 = 0x0;
+        let u_stack6 = 0x0;
         ustack4 = address_of(ctx.PTR_LOOP_1050_0002);
         if (param_3 & 0x8) == 0x0 {
             struct_1 = Some(param_6);
@@ -551,7 +552,7 @@ pub fn pass1_1000_0fb8(
             }
         }
     }
-    BVar4 = pass1_1000_115c(ctx, param_2 as i16, pu_var8);
+    let BVar4 = pass1_1000_115c(ctx, param_2 as i16, pu_var8);
     if BVar4 == 0x0 {
         return u_stack4;
     }
@@ -830,7 +831,13 @@ pub fn pass1_1000_18d2(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u1
     return;
 }
 
-pub fn pass1_1000_1a54(ctx: &mut AppContext, param_1: U32Ptr, param_3: u16, param_4: u16) -> u16 {
+pub fn pass1_1000_1a54(
+    ctx: &mut AppContext,
+    param_1: U32Ptr,
+    param_3: u16,
+    param_4: u16,
+    param_2: u16,
+) -> u16 {
     let u_var1: u16;
     let u_var2: u16;
 
@@ -884,6 +891,7 @@ pub fn pass1_1000_1afe(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: &mut StructA,
+    param_3: u16,
     unaff_cs: u16,
 ) -> bool {
     let u_var1: u16;
@@ -1042,7 +1050,7 @@ pub unsafe fn pass1_1000_201c(param_1: i16, param_2: i16, param_3: u16) {
     while u_var3 != 0x0 {
         let mut a: u16 = (param_2 + 0x4) as u16;
         let mut b: i16 = (param_2 + 0x6) as i16;
-        BVar4 = pass1_1000_206c(&mut a, &mut b);
+        let BVar4 = pass1_1000_206c(&mut a, &mut b);
         if BVar4 == 0x0 {
             u_var2 = (param_2 + 0x4) as u32;
             // u_var6 = (u_var2 >> 0x10);
@@ -1349,13 +1357,15 @@ pub unsafe fn pass1_1000_262c(
     param_4: HINSTANCE16,
     in_dx: u16,
     unaff_es: u16,
+    stack0x0004: u16,
+    stack0xfffa: u16,
 ) {
     let mut pc_var1: &String;
     let c_var2: u8;
     let u_var3: u16;
     let pu_var4: U32Ptr;
     let ivar5: i16;
-    let mut u_var6: &String;
+    let mut u_var6: String;
     let u_var7: u16;
     let u_var8: u16;
     // let in_dx: U32Ptr;
@@ -1804,6 +1814,7 @@ pub unsafe fn pass1_1000_2950(
     let mut pu_var7: U32Ptr = 0;
     let mut pc_var8: String;
     let u_var9: u16;
+    let pcVar: String;
 
     pu_var4 = ctx.PTR_LOOP_1050_6066;
     ctx.PTR_LOOP_1050_6066 = ctx.PTR_LOOP_1050_1000;
@@ -1865,7 +1876,7 @@ pub unsafe fn pass1_1000_2950(
     }
 }
 
-pub fn pass1_1000_29af(param_1: u16) {
+pub fn pass1_1000_29af(ctx: &mut AppContext, param_1: u16) {
     pass1_1000_29b5(ctx, &mut (param_1 & 0xff));
     return;
 }
@@ -1898,11 +1909,11 @@ pub fn pass1_1000_29b5(ctx: &mut AppContext, param_1: &mut u16) {
     return;
 }
 
-pub fn pass1_1000_29dc(param_1: &String) -> &String {
-    if ___EXPORTEDSTUB != (0xb8) {
+pub fn pass1_1000_29dc(ctx: &mut AppContext, param_1: &String) -> String {
+    if ctx.___EXPORTEDSTUB != (0xb8) {
         return param_1;
     }
-    return uRam100029ed;
+    return ctx.uRam100029ed;
 }
 
 pub unsafe fn pass1_1000_2a00(
@@ -2263,6 +2274,7 @@ pub fn pass1_1000_2f00(
 }
 
 pub fn pass1_1000_2f48(
+    ctx: &mut AppContext,
     param_1: &mut Struct_1000_2cb0,
     param_2: i16,
     param_3: u16,
@@ -2292,6 +2304,7 @@ pub fn pass1_1000_2f48(
 }
 
 pub fn pass1_1000_2fa4(
+    ctx: &mut AppContext,
     param_1: &mut Struct_1000_2cb0,
     param_2: u16,
     param_3: u16,
@@ -2307,12 +2320,12 @@ pub fn pass1_1000_2fa4(
 
     u_var6 = 0x0;
     b_var2 = (param_1 + 0x5);
-    if (((b_var2 & 0x3) == 0x2) && ((b_var2 & 0x8) != 0x0 || (((param_1 + 0x78) & 0x1) != 0x0))) {
+    if ((b_var2 & 0x3) == 0x2) && ((b_var2 & 0x8) != 0x0 || (((param_1 + 0x78) & 0x1) != 0x0)) {
         pu_var4 = (param_1.field_0x0 - param_1.field_0x3.field_0x0) as u32;
         if 0x0 < pu_var4 {
             pu_var5 = mixed_dos3_call_1000_39f2(
                 ctx,
-                (param_1.field_0xb as u32),
+                param_1.field_0xb as u32,
                 read_string_from_addr(CONCAT22(param_1.field_0x4, param_1.field_0x3.field_0x0)),
                 pu_var4,
                 param_2,
@@ -2381,6 +2394,7 @@ pub fn pass1_1000_3038(param_1: i16, param_2: u16, param_3: u16, param_4: u16, p
 // WARNING: Unable to track spacebase fully for stack
 
 pub unsafe fn pass1_1000_30a4(
+    ctx: &mut AppContext,
     param_1: U32Ptr,
     param_2: u16,
     param_3: u16,
@@ -2493,7 +2507,7 @@ pub fn pass1_1000_311e(param_1: i16, param_2: u16) -> u16 {
     (param_1 + -0x14) = 0x0;
     (param_1 + -0x6) = 0x20;
     (param_1 + -0xe) = 0xffff;
-    pc_var2 = get_string_at_addr(param_1 + 0xa);
+    pc_var2 = read_string_from_addr(param_1 + 0xa);
     c_var1 = pc_var2[0];
     write_string_to_addr(((param_1 + 0xa) as u32), &pc_var2[1..].to_string());
     *(param_1 + -0x4) = c_var1;
@@ -3126,6 +3140,7 @@ pub unsafe fn pass1_1000_3534(
     unaff_es: u16,
     unaff_cs: u16,
     unaff_af: u8,
+    in_af: u8,
 ) {
     let pi_var1: U32Ptr;
     let pu_var2: U32Ptr;
@@ -3181,7 +3196,7 @@ pub unsafe fn pass1_1000_3552(
             u_var2 = pass1_1000_3503(in_dx as u8, in_dx, param_2, unaff_cs, param_3, in_af) as u16;
             u_var3 |= u_var2;
             *param_1 += -0x1;
-            if pram_1 == 0 {
+            if param_1 == 0 {
                 break;
             }
         }
@@ -3195,6 +3210,7 @@ pub unsafe fn pass1_1000_3552(
 pub fn pass1_1000_356e(
     param_1: &mut u16,
     param_2: U32Ptr,
+    param_3: U32Ptr,
     param_4: U32Ptr,
     param_5: U32Ptr,
     param_6: U32Ptr,
@@ -3249,7 +3265,7 @@ pub fn pass1_1000_39e1() {
     return;
 }
 
-pub fn pass1_1000_3bac() -> i16 {
+pub fn pass1_1000_3bac(ctx: &mut AppContext, stack0x0004: u16) -> i16 {
     let i_var1: i16;
 
     if (ctx.PTR_LOOP_1050_5f48 < &stack0x0004) {
@@ -3423,7 +3439,7 @@ pub fn pass1_1000_3d7a(param_1: u32, param_2: &String) -> i16 {
         b_var11 = *pb_var1 < *pb_var3;
         b_var12 = *pb_var1 == *pb_var3;
         if !b_var12 {
-            breka;
+            break;
         }
     }
     if !b_var12 {
@@ -3499,7 +3515,7 @@ pub fn pass1_1000_3de8(
 }
 
 pub fn pass1_1000_3e2c(string_1: &String) -> i16 {
-    let string_2: &string;
+    let string_2: &String;
     let b_var2: u8;
     let b_var3: u8;
     let i_var4: i16;
@@ -3748,7 +3764,7 @@ pub fn pass1_1000_400a(ctx: &mut AppContext, param_1: i16, param_2: u16) -> U32P
     return pu_var1;
 }
 
-pub fn pass1_1000_41e0(param_1: i16) -> u16 {
+pub fn pass1_1000_41e0(ctx: &mut AppContext, param_1: i16) -> u16 {
     let pi_stack6: U32Ptr;
 
     pi_stack6 = CONCAT22(ctx.PTR_LOOP_1050_6192, ctx.PTR_LOOP_1050_6190);
@@ -3899,9 +3915,9 @@ pub fn pass1_1000_440c(ctx: &mut AppContext, param_1: u16) {
     }
     ctx.PTR_LOOP_1050_61d0 = (ctx._DAT_1050_61ce >> 0x10);
     if c_var1 == '-' as u8 {
-        ctx._DAT_1050_61ce = CONCAT22(
+        ctx.DAT_1050_61ce = CONCAT22(
             -(ctx.PTR_LOOP_1050_61d0 + (ctx.DAT_1050_61ce != 0x0)),
-            -DAT_1050_61ce,
+            -ctx.DAT_1050_61ce,
         );
     }
     // ctx.DAT_1050_61d2 = string_2[0..0];
@@ -4108,7 +4124,7 @@ pub fn pass1_1000_472c(param_1: &mut String, param_2: u8) -> U32Ptr {
     return string_2 + -0x1;
 }
 
-pub fn pass1_1000_47a4(param_1: u32, param_2: u32, param_3: u16) -> u16 {
+pub fn pass1_1000_47a4(ctx: &mut AppContext, param_1: u32, param_2: u32, param_3: u16) -> u16 {
     let pb_var1: U32Ptr;
     let b_var2: u8;
     let pu_var3: U32Ptr;
@@ -4140,17 +4156,17 @@ pub fn pass1_1000_47a4(param_1: u32, param_2: u32, param_3: u16) -> u16 {
     }
     pb_var1 = param_1;
     if param_1 == 0x0 {
-        pb_var1 = pbRam105061e4;
+        pb_var1 = ctx.pbRam105061e4;
     }
     loop {
-        pbRam105061e4 = pb_var1;
+        ctx.pbRam105061e4 = pb_var1;
         // u_var8 = (pbRam105061e4 >> 0x10);
-        pb_var6 = (pbRam105061e4 + 0x1);
-        b_var2 = *pbRam105061e4;
+        pb_var6 = (ctx.pbRam105061e4 + 0x1);
+        b_var2 = *ctx.pbRam105061e4;
         if b_var2 == 0x0 {
             return 0x0;
         }
-        pb_var1 = (pbRam105061e4 & 0xffff0000 | ZEXT24(pb_var6 as u16));
+        pb_var1 = (ctx.pbRam105061e4 & 0xffff0000 | ZEXT24(pb_var6 as u16));
         if (('\x01' << (b_var2 & 0x7) & (local_22 + (b_var2 >> 0x3))) != 0x0) == false {
             break;
         }
@@ -4170,8 +4186,8 @@ pub fn pass1_1000_47a4(param_1: u32, param_2: u32, param_3: u16) -> u16 {
     *pb_var4 = 0x0;
     pb_var4 = pb_var4 + 0x1;
     //LAB_1000_483c:
-    pbRam105061e4 = (pbRam105061e4 & 0xffff0000 | ZEXT24(pb_var4 as u16));
-    return pbRam105061e4;
+    ctx.pbRam105061e4 = (ctx.pbRam105061e4 & 0xffff0000 | ZEXT24(pb_var4 as u16));
+    return ctx.pbRam105061e4;
 }
 
 pub unsafe fn pass1_1000_484c(param_1: &mut u32, param_2: &mut u32, param_3: &mut u16) -> u16 {
@@ -4292,7 +4308,7 @@ pub fn pass1_1000_4906(
     struct_1: &mut Struct20,
     in_wnd_class: Option<&WNDCLASS16>,
     param_3: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     let pu_var1: U32Ptr;
     let u_var2: u8;
     let u_var3: u16;
@@ -4346,6 +4362,7 @@ pub fn pass1_1000_49b2(param_1: u16) -> i16 {
 }
 
 pub fn pass1_1000_49c6(
+    ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,
     param_3: u16,
@@ -4397,7 +4414,7 @@ pub fn pass1_1000_49c6(
         }
         u_var2 = (u_var1 * param_6);
         u_var3 = u_var2 + u_stack20;
-        iStack10 = ((u_var1 * param_6 >> 0x10) + CARRY2(u_var2, u_stack20)) * 0x100 + u_stack18;
+        let iStack10 = ((u_var1 * param_6 >> 0x10) + CARRY2(u_var2, u_stack20)) * 0x100 + u_stack18;
         u_stack12 = u_var3;
         i_var4 = (*param_7)();
         if (i_var4 == 0x0) {
@@ -4421,6 +4438,7 @@ pub fn pass1_1000_49c6(
 }
 
 pub fn pass1_1000_4aea(
+    ctx: &mut AppContext,
     param_1: &mut u16,
     param_2: u16,
     param_3: i16,

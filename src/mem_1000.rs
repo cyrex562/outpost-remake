@@ -1,7 +1,7 @@
 use crate::defines::{
     Struct13_1, Struct18, Struct19, Struct79, Struct99, Struct_1000_05e2, U32Ptr,
 };
-use crate::pass::pass_1000::{pass1_1000_05b4, pass1_1000_0782, pass1_1000_09ca};
+use crate::pass::pass_1000::{pass1_1000_010c, pass1_1000_05b4, pass1_1000_0782, pass1_1000_09ca};
 use crate::util::read_struct_from_addr;
 use crate::winapi::GlobalDOSAlloc16;
 use crate::{
@@ -899,7 +899,7 @@ pub fn mem_op_1000_160a(ctx: &mut AppContext, param_1: Option<&mut Struct18>, pa
             mem_op_1000_18ec(ctx, ctx.DAT_1050_5f46, (param_1).unwrap(), param_2);
         if ctx.PTR_LOOP_1050_5f2c != 0x0 {
             if ctx.PTR_LOOP_1050_5f42 != 0x0 {
-                pass1_1000_1a54(ctx.PTR_LOOP_1050_5f42, ctx.PTR_LOOP_1050_5f2c, param_2, 0);
+                pass1_1000_1a54(ctx, ctx.PTR_LOOP_1050_5f42, ctx.PTR_LOOP_1050_5f2c, param_2, 0);
             }
             ctx.PTR_LOOP_1050_5f2e = (ctx.PTR_LOOP_1050_5f2c >> 0x10);
             if ctx.DAT_1050_5f44 != 0xffff {
@@ -1069,7 +1069,13 @@ pub unsafe fn mem_op_1000_1b68(
     return u_var1;
 }
 
-pub fn mem_op_1000_1b9a(param_1: u16, param_2: u32, param_3: u16, param_4: u16) -> u32 {
+pub fn mem_op_1000_1b9a(
+    ctx: &mut AppContext,
+    param_1: u16,
+    param_2: u32,
+    param_3: u16,
+    param_4: u16,
+) -> u32 {
     let u_var1: u16;
     let u_var2: u32;
     let u_var3: u16;
@@ -1266,6 +1272,7 @@ pub fn mem_1000_2ce8(ctx: &mut AppContext, param_1: &mut i16, param_2: &mut u16,
 }
 
 pub unsafe fn mixed_mem_op_1000_3c51(
+    ctx: &mut AppContext,
     param_1: &mut HGLOBAL16,
     param_2: &mut HGLOBAL16,
     param_3: i16,
@@ -1373,14 +1380,14 @@ pub unsafe fn mixed_mem_op_1000_3c51(
     }
 }
 
-pub fn free_mem_1000_407a(param_1: u16, param_2: u16, param_3: u16) {
+pub fn free_mem_1000_407a(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3: u16) {
     let u_var1: u16;
     let handle: HGLOBAL16;
 
     handle = 0x1000;
-    if (false) {
+    if false {
         u_var1 = pass1_1000_41e0(param_2 as i16);
-        if (u_var1 == 0x0) {
+        if u_var1 == 0x0 {
             return;
         }
         handle = ctx.s_tile2_bmp_1050_1538;

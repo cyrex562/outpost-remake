@@ -1,12 +1,12 @@
-use crate::pass::pass_1010::{pass1_1010_2816, pass1_1010_3d82, pass1_1010_503e, pass1_1010_3e3c, pass1_1010_3702, pass1_1010_6abc, pass1_1010_195e, pass1_1010_1146, pass1_1010_6700, pass1_1010_4a8a, pass1_1010_8c32, pass1_1010_2bfc, pass1_1010_0000, pass1_1010_28e6};
+use crate::pass::pass_1010::{pass1_1010_0000, pass1_1010_0eac, pass1_1010_1146, pass1_1010_195e, pass1_1010_1b6e, pass1_1010_2816, pass1_1010_28e6, pass1_1010_2bfc, pass1_1010_3702, pass1_1010_3d82, pass1_1010_3e3c, pass1_1010_4a8a, pass1_1010_503e, pass1_1010_6700, pass1_1010_6abc, pass1_1010_8c32, pass1_1010_9298};
 use crate::struct_ops::struct_1010::{struct_1010_3b7a, struct_1010_a1d8, struct_1010_95aa, struct_1010_6326, struct_1010_02e0, struct_1010_e9e4, struct_1010_50b2};
 use crate::sys_api::win_sys_op_1010_5404;
 use crate::struct_ops::struct_1018::{struct_1018_2b10, struct_1018_0570, struct_1018_229c};
 use crate::pass::pass_1008::{pass1_1008_eabc, pass1_1008_d99e, pass1_1008_9d36, pass1_1008_eb2a, pass1_1008_d790, pass1_1008_d72e, pass1_1008_ec10};
-use crate::pass::pass_1018::{pass1_1018_18b8, pass1_1018_4aaa, pass1_1018_1ff4, pass1_1018_5070, pass1_1018_56e6};
+use crate::pass::pass_1018::{pass1_1018_18b8, pass1_1018_1ff4, pass1_1018_331c, pass1_1018_4aaa, pass1_1018_5070, pass1_1018_56e6};
 use crate::mem_1000::mem_op_1000_179c;
 use crate::struct_ops::struct_1008::{struct_1008_9fd2, struct_1008_dd4e, pass1_1008_c72a, struct_1008_ecb2};
-use crate::ui::ui_1008::pass1_1008_af94;
+use crate::ui::ui_1008::{pass1_1008_aefe, pass1_1008_af94};
 use crate::draw::draw_1008::unk_draw_op_1008_da12;
 use crate::util::{CONCAT22, read_struct_from_addr};
 use crate::defines::{Struct79, U32Ptr, Struct19, Struct20};
@@ -20,7 +20,7 @@ pub fn mixed_1010_20ba(
     param_3: &mut WNDCLASS16,
     param_4: &mut Struct19,
     param_5: i16,
-    extraout_dx: u16) -> &mut Struct19 {
+    extraout_dx: u16) -> Struct19 {
   let ppc_var1: u32;
   let u_var2: u16;
   let mut pu_var3: U32Ptr = 0;
