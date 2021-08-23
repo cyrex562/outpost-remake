@@ -1869,7 +1869,7 @@ pub fn pass1_1018_1ff4(param_1: &mut Struct634, param_2: &mut Struct19, param_3:
     let local_8: i16;
     let uStack6: u32;
 
-    paVar2 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    paVar2 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     &param_1.field_0xa = 0xb9010b;
     param_1.field_0xe = 0x170035;
     CONCAT22(param_2, param_1) = 0x21e8;
@@ -3658,7 +3658,7 @@ pub fn pass1_1018_5032(param_1: &mut Struct11, param_2: u8, param_3: u16) -> &mu
 }
 
 pub fn pass1_1018_5070(param_1: &mut Struct641, param_2: u16, param_3: u16) {
-    struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     param_1.field_0xa = 0x0;
     param_1.field_0xe = 0x0;
     param_1.field_0x12 = 0x0;
@@ -4110,7 +4110,7 @@ pub fn pass1_1018_56a8(param_1: u32, param_2: u8, param_3: u16) -> u32 {
 }
 
 pub fn pass1_1018_56e6(param_1: &mut Struct19, param_2: u16, param_3: u16) -> u16 {
-    struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa) = 0x0;
     CONCAT22(param_2, param_1) = 0x5830;
     (param_1 + 0x2) = 0x1018;

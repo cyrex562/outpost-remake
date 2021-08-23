@@ -1965,7 +1965,7 @@ pub fn win_sys_op_1010_5404(
     let puStack6: U32Ptr;
     let uStack4: u16;
 
-    paVar17 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    paVar17 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     // puVar12 = (paVar17 >> 0x10);
     uVar15 = 0x0;
     &param_1.field_0xa = 0x0;
@@ -2817,7 +2817,7 @@ pub fn get_sys_metrics_1018_4b1e(param_1: &mut Struct55, param_2: u16, param_3: 
     let i_var1: i16;
     let u_var2: u16;
 
-    struct_op_1010_1d48(param_1, param_3);
+    set_struct_fields_1010_1d48(param_1, param_3);
     // u_var2 = (param_1 >> 0x10);
     i_var1 = param_1;
     (i_var1 + 0x12) = param_2;

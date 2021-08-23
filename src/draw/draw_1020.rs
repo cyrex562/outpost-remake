@@ -35,7 +35,7 @@ use crate::ui::ui_1008::{
     create_palette_1008_4e38, file_and_draw_op_1008_4f20, palette_op_1008_4e08, win_1008_5c9e,
     win_ui_reg_class_1008_96d2,
 };
-use crate::util::{read_struct_from_addr, CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
+use crate::util::{CONCAT11, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24, read_string_from_addr, read_struct_from_addr};
 use crate::win_struct::{
     COLORREF, DEVMODEA, HBRUSH16, HCURSOR16, HDC16, HGDIOBJ16, HINSTANCE16, HPALETTE16, HPEN16,
     HWND16, LOGPALETTE, PAINTSTRUCT16, POINT16, RECT16,
@@ -808,9 +808,10 @@ pub unsafe fn invalidate_rect_1020_2ae4(
             c_var2 = param_2 as u8;
             if (c_var2 == 'o') {
                 pa_var8 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x1f8, param_4);
+                let help_file_string: &String = read_string_from_addr(ctx.s_New_failed_in_Op__Op_1050_0020 + 0xa);
                 WinHelp16(
                     0x1010,
-                    (ctx.s_New_failed_in_Op__Op_1050_0020 + 0xa),
+                    help_file_string,
                     0x0,
                     CONCAT22(pa_var8, 0x1),
                 );

@@ -392,7 +392,7 @@ pub fn struct_1008_9fd2(param_1: &mut Struct19, param_2: &mut Struct19, param_3:
     let u_var4: u16;
     let paVar5: &mut Struct79;
 
-    paVar5 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    paVar5 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     // pu_var2 = (paVar5 >> 0x10);
     u_var1 = 0x0;
     (param_1 + 0x1) = 0x0;
@@ -877,7 +877,7 @@ pub fn pass1_1008_c6fa(param_1: &mut i16, param_2: i16) -> u32 {
 }
 
 pub fn pass1_1008_c72a(param_1: &mut Struct642, param_2: u16, param_3: u16) {
-    struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     param_1.field_0xa = 0x0;
     param_1.field_0xe = 0x0;
     CONCAT22(param_2, param_1) = 0xca4a;
@@ -1114,7 +1114,7 @@ pub fn pass1_1008_ca24(param_1: u32, param_2: u8, param_3: u16) -> u32 {
 }
 
 pub fn pass1_1008_ca5a(param_1: &mut Struct639, param_2: u16, param_3: u16) {
-    struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     param_1.field_0xa = 0x0;
     param_1.field_0xe = 0x0;
     param_1.field_0x12 = 0x0;
@@ -1677,7 +1677,7 @@ pub fn struct_1008_dd4e(param_1: &mut Struct209, param_2: u16, param_3: u16) {
     let extraout_dx: u16;
     let paVar3: &mut Struct79;
 
-    paVar3 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    paVar3 = set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     // pu_var2 = (paVar3 >> 0x10);
     u_var1 = 0x0;
     &param_1.field_0xa = 0x0;

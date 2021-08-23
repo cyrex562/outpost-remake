@@ -341,7 +341,7 @@ pub fn struct_1018_4920(param_1: U32Ptr, param_2: u32, param_3: u32, param_4: u3
 }
 
 pub fn struct_op_1018_4cda(param_1: i16, param_2: u16, param_3: u16) {
-    struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
+    set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa) = 0x0;
     (param_1 + 0xe) = 0x0;
     (param_1 + 0x12) = 0x0;

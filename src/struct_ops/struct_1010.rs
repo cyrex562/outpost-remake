@@ -251,6 +251,7 @@ pub fn struct_1010_2cd2(param_1: &mut Struct19, param_3: u16, param_4: u16, unaf
 }
 
 
+
 pub fn struct_1010_383a(param_1: U32Ptr) {
     let i_var1: &mut Struct223;
     let u_var1: u16;

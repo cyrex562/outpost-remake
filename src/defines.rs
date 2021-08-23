@@ -438,3 +438,29 @@ pub struct Struct171 {}
 pub struct Struct450 {}
 
 pub struct Struct452 {}
+
+pub struct Struct451 {}
+
+pub struct Struct456 {}
+
+pub struct Struct160 {}
+
+pub struct Struct649 {}
+
+pub struct Struct83 {}
+
+pub struct Struct109 {}
+
+pub struct Struct111 {}
+
+pub struct Struct651 {}
+
+pub struct Struct457 {}
+
+pub struct Struct458 {}
+
+pub struct Struct459 {}
+
+pub struct Struct362 {}
+
+pub struct Struct460 {}
