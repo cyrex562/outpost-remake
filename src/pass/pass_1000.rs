@@ -4695,20 +4695,20 @@ pub unsafe fn pass1_1000_4f1a(
     }
 }
 
-pub fn pass1_1000_4f2e(param_1: u16) -> u16 {
-    let pc_var1: u32;
+pub fn pass1_1000_4f2e(ctx: &mut AppContext, param_1: u16) -> u16 {
+    let func_ptr_1: u32;
     let mut u_var2: u16;
     let u_var3: u8;
 
-    u_var2 = 0x3b50;
-    u_var3 = 0x0;
-    if (true) {
-        pc_var1 = swi(0x21);
-        u_var2 = (*pc_var1)(ctx.data_seg, param_1 + 0x1);
+    let mut u_var2 = 0x3b50;
+    let mut u_var3 = 0x0;
+    if true {
+        let func_ptr_1 = swi(0x21);
+        u_var2 = (func_ptr_1)(ctx.data_seg, param_1 + 0x1);
     } else {
         DOS3Call(&mut ctx.PTR_LOOP_1050_1000);
     }
-    if (!u_var3) {
+    if !u_var3 {
         return 0x0;
     }
     pass1_1000_29b5(ctx, &mut u_var2);
@@ -4725,6 +4725,10 @@ pub fn pass1_1000_5008(param_1: u16, param_2: u16, param_3: u16, param_4: i16) {
         0x0, param_1, param_2, param_3, &i_stack2, unaff_cs, unaff_ss,
     );
     return;
+}
+
+pub fn pass1_1000_5026(a: u16, b: u16, c: u16, d: u16, e: &u16, f: u16, g: u16) {
+    unimplemented!()
 }
 
 pub fn pass1_1000_5224(param_1: u16, param_2: u16, param_3: &mut u16, param_4: u16) -> u32 {
@@ -5085,7 +5089,7 @@ pub fn pass1_1000_54e8(
         i_var2 -= param_4;
         u_stack8 = param_6;
         u_stack14 = 0x5506;
-        iStack10 = i_var2;
+        let iStack10 = i_var2;
         (*param_1)();
     }
     return;
@@ -5134,7 +5138,7 @@ pub fn pass1_1000_5586(
     while (i_var2 += -0x1, -0x1 < i_var2) {
         u_stack8 = param_6;
         u_stack14 = 0x559b;
-        iStack10 = i_var1;
+        let iStack10 = i_var1;
         (*param_1)();
         i_var1 += param_4;
     }

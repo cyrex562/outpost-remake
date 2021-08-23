@@ -2,11 +2,7 @@
 
 use crate::cleanup::{cleanup_ui_op_1008_0618, clenaup_win_ui_1018_4d22};
 use crate::debug::debug_print_1008_6048;
-use crate::defines::{
-    Struct11, Struct110, Struct18, Struct19, Struct194, Struct197, Struct20, Struct449, Struct65,
-    Struct76, Struct79, Struct99, Struct_1008_49e8, Struct_1008_4cdc, Struct_1008_4d26,
-    Struct_1008_4d84, U32Ptr,
-};
+use crate::defines::{Struct11, Struct110, Struct18, Struct19, Struct194, Struct197, Struct20, Struct449, Struct450, Struct452, Struct65, Struct76, Struct79, Struct99, Struct_1008_49e8, Struct_1008_4cdc, Struct_1008_4d26, Struct_1008_4d84, U32Ptr};
 use crate::file::file_1008::{file_1008_76e4, read_file_1008_7dee, write_to_file_1008_7cac};
 use crate::file::file_1010::unk_io_op_1010_830a;
 use crate::fn_ptr::fn_ptr_1000;
@@ -168,7 +164,7 @@ pub fn pass1_1008_049c(ctx: &mut AppContext, param_1: u16, param_2: u16, param_3
     return;
 }
 
-pub fn pass1_1008_04d2(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_04d2(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_9466(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -181,7 +177,7 @@ pub fn pass1_1008_04f8(
     param_1: &mut Struct18,
     param_2: u8,
     param_3: &mut u16,
-) -> &mut Struct18 {
+) -> Struct18 {
     pass1_1008_0036(ctx, param_1, param_3);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -197,7 +193,7 @@ pub fn pass1_1008_07d8(
     param_4: u16,
     stack0xfffe: u16,
     in_af: u8,
-) -> &mut bool {
+) -> bool {
     let u_var2: u16;
     let u_var1: u16;
     let u_var3: u32;
@@ -396,10 +392,10 @@ pub fn pass1_1008_3018(
 ) {
     let string_1: &mut String;
     let u_var2: u16;
-    let i_var3: &mut Struct19;
+    let i_var3: Struct19;
     let u_var4: u16;
     let u_stack266: u16;
-    let struct_1: &mut Struct19;
+    let struct_1: Struct19;
     let mut string_2 = String::new();
 
     string_2[0] = '\0';
@@ -540,7 +536,7 @@ pub fn pass1_1008_377a() {
     return;
 }
 
-pub fn pass1_1008_377e(param_1: U32Ptr, param_2: u8) -> u16 {
+pub fn pass1_1008_377e(ctx: &mut AppContext, param_1: U32Ptr, param_2: u8) -> u16 {
     *param_1 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -549,7 +545,7 @@ pub fn pass1_1008_377e(param_1: U32Ptr, param_2: u8) -> u16 {
     return param_1 as u16;
 }
 
-pub fn pass1_1008_37aa(param_1: U32Ptr, param_2: u8) -> u16 {
+pub fn pass1_1008_37aa(ctx: &mut AppContext, param_1: U32Ptr, param_2: u8) -> u16 {
     let u_var1: &mut Struct450;
     let u_var2: u16;
 
@@ -559,15 +555,15 @@ pub fn pass1_1008_37aa(param_1: U32Ptr, param_2: u8) -> u16 {
     u_var1.field_0x2 = 0x1008;
     *param_1 = 0x389a;
     u_var1.field_0x2 = 0x1008;
-    if ((param_2 & 0x1) != 0x0) {
+    if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
     }
     return param_1 as u16;
 }
 
-pub fn pass1_1008_37e4(param_1: u32, param_2: u8) -> u32 {
+pub fn pass1_1008_37e4(ctx: &mut AppContext, param_1: u32, param_2: u8) -> u32 {
     cleanup_ui_op_1008_0618(param_1);
-    if ((param_2 & 0x1) != 0x0) {
+    if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
     }
     return param_1;
@@ -591,7 +587,7 @@ pub fn pass1_1008_392e(param_1: U32Ptr, param_2: u16) -> u16 {
     return param_1 as u16;
 }
 
-pub fn pass1_1008_397a(param_1: U32Ptr) {
+pub fn pass1_1008_397a(param_1: &mut Struct452) {
     let i_var1: &mut Struct452;
     let u_var1: u16;
 

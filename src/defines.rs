@@ -434,3 +434,7 @@ pub struct Struct307 {}
 pub struct Struct169 {}
 
 pub struct Struct171 {}
+
+pub struct Struct450 {}
+
+pub struct Struct452 {}
