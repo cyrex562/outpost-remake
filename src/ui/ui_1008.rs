@@ -1491,7 +1491,7 @@ pub fn make_def_win_proc_1008_5f44(
     let WVar1: u16;
     let in_DX: U32Ptr;
     let unaff_DI: i16;
-    WNDCLASS16 * unaff_SS;
+    let unaff_SS: &mut WNDCLASS16;
     let LVar2: LRESULT;
     let pu_var3: U32Ptr;
 

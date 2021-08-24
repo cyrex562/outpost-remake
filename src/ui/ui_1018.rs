@@ -168,7 +168,7 @@ pub fn win_ui_op_1018_5e9a(param_1: &mut Struct1, param_2: u16) {
     let iStack16: i16;
     let local_e: RECT16;
     let iStack8: i16;
-    INT16 * pi_stack6;
+    let pi_stack6: &mut INT16;
 
     dialog_ui_fn_1040_78e2(param_1, &ctx.PTR_LOOP_1050_1040);
     puVar11 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x39, param_2, in_DX, unaff_DI);

@@ -2997,7 +2997,7 @@ pub fn pass1_1030_4bbe(param_1: u16, param_2: u16, param_3: u32, param_4: i16) {
     let pu_var2: u32;
     let u_var3: u16;
     let i_var4: i16;
-    Struct117 * iVar5;
+    let iVar5: &mut Struct117;
     let pu_var5: u32;
     let puVar6: u32;
     let uVar7: u16;
@@ -3121,7 +3121,7 @@ pub fn pass1_1030_4c52(
 pub fn pass1_1030_4d3a(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: u32) {
     let u_var1: u16;
     let i_var2: i16;
-    Struct118 * i_var3;
+    let i_var3: &mut Struct118;
     let u_var3: u16;
     let unaff_SS: u16;
     let mut pcStack8: String;
@@ -7764,7 +7764,7 @@ pub fn pass1_1030_9adc(
     let extraout_dx: u16;
     let extraout_DX_00: u16;
     let iVar7: &mut Struct121;
-    Struct119 * iVar6;
+    let iVar6: &mut Struct119;
     let paStack6: &mut Struct99;
     let u_var3: &mut Struct120;
 

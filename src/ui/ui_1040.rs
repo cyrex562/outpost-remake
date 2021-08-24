@@ -4525,7 +4525,7 @@ pub fn win_op_1040_9cde(
     let u_var10: u16;
     let HVar11: HWND16;
     let paVar12: &mut Struct18;
-    INT16 * pIVar13;
+    let pIVar13: &mut INT16;
     let LVar14: LRESULT;
     let uVar15: u32;
     let bVar16: u8;

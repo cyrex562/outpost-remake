@@ -4231,7 +4231,7 @@ pub fn win_ui_op_1040_0558(param_1: u32, param_2: i16, param_3: HWND16) -> LRESU
 }
 
 pub fn enable_win_1040_060e(param_1: u32, param_2: i16, param_3: HWND16, param_4: u16) {
-    INT16 * pIVar1;
+    let pIVar1: &mut INT16;
     let HStack16: HWND16;
     let uStack10: i16;
     let iStack8: i16;

@@ -464,3 +464,31 @@ pub struct Struct459 {}
 pub struct Struct362 {}
 
 pub struct Struct460 {}
+
+pub struct Struct461 {}
+
+pub struct Struct86 {}
+
+pub struct Struct462 {}
+
+pub struct Struct112 {}
+
+pub struct Struct463 {}
+
+pub struct Struct107 {}
+
+pub struct Struct108 {}
+
+pub struct Struct106 {}
+
+pub struct Struct464 {}
+
+pub struct Struct134 {}
+
+pub struct Struct465 {}
+
+pub struct Struct195 {}
+
+pub struct Struct196 {}
+
+pub struct Struct198 {}

@@ -164,7 +164,7 @@ pub fn window_op_1020_10a0(param_1: &mut Struct1) {
     let ppcVar2: u32;
     let in_AX: &mut Struct160;
     let u_var3: u16;
-    bool * pBVar4;
+    let pBVar4: &mut bool;
     let in_DX: U32Ptr;
     let pu_var5: U32Ptr;
     let puVar6: U32Ptr;
@@ -857,7 +857,7 @@ pub fn win_ui_op_1020_2cf0(param_1: &mut Struct1) {
     let u_var1: u32;
     let ppcVar2: u32;
     let u_var3: u16;
-    bool * pBVar4;
+    let pBVar4: &mut bool;
     let in_DX: U32Ptr;
     let u_var5: u16;
     let extraout_dx: U32Ptr;
@@ -3033,7 +3033,7 @@ pub fn window_op_1020_6c3a(param_1: &mut Struct1) {
     let ppcVar2: u32;
     let HVar3: HICON16;
     let paVar4: &mut Struct160;
-    bool * pBVar5;
+    let pBVar5: &mut bool;
     let u_var6: u32;
     let in_DX: U32Ptr;
     let uVar7: u16;

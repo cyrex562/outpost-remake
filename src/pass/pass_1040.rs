@@ -131,7 +131,7 @@ pub unsafe fn pass1_1040_0bfc(
 ) -> &mut Struct57 {
     let struct_4: &mut Struct57;
     let u_var1: u16;
-    let struct_5: &mut Struct19;
+    let struct_5: Struct19;
 
     get_sys_metrics_1040_7728(struct_2, 0x1, param_2, 0xfcd, param_5);
     struct_4 = struct_2;
@@ -525,7 +525,7 @@ pub unsafe fn pass1_1040_1cb4(
 ) {
     let pu_var1: &mut Struct19;
     let i_var2: &mut Struct57;
-    let pu_var3: &mut Struct19;
+    let pu_var3: Struct19;
 
     get_sys_metrics_1040_7728(param_1, 0x1, param_2, 0xe8, param_5);
     i_var2 = param_1;
@@ -542,7 +542,7 @@ pub unsafe fn pass1_1040_1cb4(
         param_7,
         0,
     );
-    pu_var1 = pu_var3;
+    pu_var1 = &mut pu_var3;
     i_var2.field_0x8e = Some(pu_var3.clone());
     pu_var3 = mixed_1010_20ba(
         ctx,
@@ -621,7 +621,7 @@ pub unsafe fn pass1_1040_1f5a(
     let i_var3: &mut Struct719;
     let pa_var3: Option<&mut Struct43>;
     let u_var4: &mut Struct19;
-    let pu_var5: &mut Struct19;
+    let pu_var5: Struct19;
     let i_var6: &mut Struct57;
     let u_var7: u16;
     let i_var8: i16;
@@ -641,7 +641,7 @@ pub unsafe fn pass1_1040_1f5a(
     pa_var3 = unk_io_op_1010_830a(ctx.PTR_LOOP_1050_14cc, 0x1cc, param_4);
     (i_var6 + 0x8e) = pa_var3;
     // (i_var6 + 0x90) = (pa_var3 >> 0x10);
-    u_var4 = pass1_1008_4772(pa_var3.clone());
+    // u_var4 = pass1_1008_4772(pa_var3.clone());
     // pu_var2 = (u_var4 >> 0x10);
     pu_var2 = u_var4;
     pu_var5 = mixed_1010_20ba(
@@ -889,7 +889,7 @@ pub fn pass1_1040_2ea2(
     wnd_class_1: &mut WNDCLASS16,
 ) {
     let struct_2: &mut Struct57;
-    let struct_4: &mut Struct19;
+    let struct_4: Struct19;
 
     get_sys_metrics_1040_7728(struct_1, 0x1, param_2, 0x180, param_5);
     struct_2 = struct_1;
@@ -929,7 +929,7 @@ pub fn pass1_1040_2f32(
     param_4: u16,
     wnd_class_1: &mut WNDCLASS16,
 ) {
-    let struct_2: &mut Struct19;
+    let struct_2: Struct19;
     let i_var2: i16;
 
     i_var2 = 0x0;
@@ -942,7 +942,7 @@ pub fn pass1_1040_2f32(
         param_4 as i16,
         0,
     );
-    pass1_1010_038e(struct_2, i_var2, wnd_class_1);
+    pass1_1010_038e(&mut struct_2, i_var2, wnd_class_1);
     destroy_win_1040_7b98(CONCAT22(param_2, param_1) as i32, 0x1010);
     return;
 }
@@ -3046,7 +3046,7 @@ pub fn pass1_1040_b45e(param_1: u32, param_2: HWND16) {
     let i_var3: i16;
     let u_var4: u16;
     let iStack8: i16;
-    INT16 * pi_stack6;
+    let pi_stack6: &mut INT16;
 
     // u_var4 = (param_1 >> 0x10);
     i_var3 = param_1;
