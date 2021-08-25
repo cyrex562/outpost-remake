@@ -725,7 +725,7 @@ pub fn pass1_1010_0eac(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1010_0ee6(param_1: &mut Struct11, param_2: u8) -> &mut Struct11 {
+pub fn pass1_1010_0ee6(param_1: &mut Struct11, param_2: u8) -> Struct11 {
     clenaup_win_ui_1018_4d22(param_1, 0x1018);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2212,11 +2212,7 @@ pub fn pass1_1010_36b4(param_1: U32Ptr, param_2: u8) -> u16 {
     return param_1;
 }
 
-pub fn pass1_1010_3702(
-    param_1: &mut Struct19,
-    param_2: &mut Struct19,
-    param_3: u16,
-) -> &mut Struct19 {
+pub fn pass1_1010_3702(param_1: &mut Struct19, param_2: &mut Struct19, param_3: u16) -> Struct19 {
     set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa) = 0x0;
     CONCAT22(param_2, param_1) = 0x37c4;
@@ -3079,7 +3075,7 @@ pub fn pass1_1010_4994(
     param_2: &mut Struct18,
     param_3: u8,
     param_4: u16,
-) -> &mut Struct18 {
+) -> Struct18 {
     param_2 = (param_2 & 0xffff0000 | (param_2 - 0x20));
     pass1_1010_3f00(param_2, param_4);
     if ((param_3 & 0x1) != 0x0) {
@@ -3354,7 +3350,7 @@ pub fn pass1_1010_503e(
     return;
 }
 
-pub fn pass1_1010_5074(param_1: &mut Struct11, param_2: u8) -> &mut Struct11 {
+pub fn pass1_1010_5074(param_1: &mut Struct11, param_2: u8) -> Struct11 {
     clenaup_win_ui_1018_4d22(param_1, 0x1018);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3930,11 +3926,7 @@ pub fn pass1_1010_66ca(param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
     return param_1;
 }
 
-pub fn pass1_1010_6700(
-    param_1: &mut Struct636,
-    param_2: &mut Struct19,
-    param_3: u16,
-) -> &mut Struct19 {
+pub fn pass1_1010_6700(param_1: &mut Struct636, param_2: &mut Struct19, param_3: u16) -> Struct19 {
     set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     param_1.field_0x148 = 0x33;
     CONCAT22(param_2, param_1) = 0x6aac;

@@ -590,7 +590,7 @@ pub fn pass1_1008_ef50(param_1: U32Ptr, param_2: u8) -> u16 {
     return param_1 as u16;
 }
 
-pub fn pass1_1008_ef76(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_ef76(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     let unaff_SS: u16;
 
     pass1_1008_ed00(param_1, unaff_SS);

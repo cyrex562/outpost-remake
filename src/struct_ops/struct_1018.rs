@@ -389,7 +389,7 @@ pub fn struct_op_1018_6a0e(
     param_6: u16,
     param_7: u32,
     param_8: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     let i_var1: i16;
     let u_var2: u16;
 
@@ -414,7 +414,7 @@ pub fn struct_1018_6d02(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xb, 0x9c, 0x8b, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa27e;
     (param_1 + 0x2) = 0x1018;
@@ -426,7 +426,7 @@ pub fn struct_1018_6d38(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xc, 0x9d, 0xd0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb562;
     (param_1 + 0x2) = 0x1018;
@@ -438,7 +438,7 @@ pub fn struct_1018_6d6e(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xd, 0x9e, 0xd1, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9822;
     (param_1 + 0x2) = 0x1018;
@@ -450,7 +450,7 @@ pub fn struct_1018_6da4(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xe, 0x9f, 0xd2, param_2, param_3, param_4);
     param_1.field_0x0 = 0xab06;
     (param_1 + 0x2) = 0x1018;
@@ -462,7 +462,7 @@ pub fn struct_1018_6dda(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xf, 0xa0, 0xd4, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbdea;
     (param_1 + 0x2) = 0x1018;
@@ -474,7 +474,7 @@ pub fn struct_1018_6e10(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x10, 0xa1, 0xda, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa0aa;
     (param_1 + 0x2) = 0x1018;
@@ -486,7 +486,7 @@ pub fn struct_1018_6e46(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x11, 0xa2, 0xdc, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb38e;
     (param_1 + 0x2) = 0x1018;
@@ -498,7 +498,7 @@ pub fn struct_1018_6e7c(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x12, 0xa3, 0xd3, param_2, param_3, param_4);
     param_1.field_0x0 = 0x964e;
     (param_1 + 0x2) = 0x1018;
@@ -510,7 +510,7 @@ pub fn struct_1018_6eb2(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x13, 0xa4, 0xdb, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa932;
     (param_1 + 0x2) = 0x1018;
@@ -522,7 +522,7 @@ pub fn struct_1018_6ee8(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x14, 0xa5, 0xa5, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbc16;
     (param_1 + 0x2) = 0x1018;
@@ -534,7 +534,7 @@ pub fn struct_1018_6f1e(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x15, 0xa7, 0xb2, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9e3a;
     (param_1 + 0x2) = 0x1018;
@@ -546,7 +546,7 @@ pub fn struct_1018_6f54(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x16, 0xa8, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb11e;
     (param_1 + 0x2) = 0x1018;
@@ -558,7 +558,7 @@ pub fn struct_1018_6f8a(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x17, 0xaf, 0xc0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x93de;
     (param_1 + 0x2) = 0x1018;
@@ -570,7 +570,7 @@ pub fn struct_1018_6fc0(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x18, 0xb0, 0xc1, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa6c2;
     (param_1 + 0x2) = 0x1018;
@@ -582,7 +582,7 @@ pub fn struct_1018_6ff6(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x19, 0xb1, 0x80, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb9a6;
     (param_1 + 0x2) = 0x1018;
@@ -594,7 +594,7 @@ pub fn struct_1018_702c(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct20 {
+) -> Struct20 {
     struct_op_1018_6a0e(param_1, 0x1ec, 0x1a, 0xb2, 0xc3, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9c66;
     (param_1 + 0x2) = 0x1018;
@@ -606,7 +606,7 @@ pub fn struct_1018_7062(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1b, 0xb3, 0xc4, param_2, param_3, param_4);
     param_1.field_0x0 = 0xaf4a;
     (param_1 + 0x2) = 0x1018;
@@ -618,7 +618,7 @@ pub fn struct_1018_7098(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1c, 0xb4, 0xd8, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc22e;
     (param_1 + 0x2) = 0x1018;
@@ -630,7 +630,7 @@ pub fn struct_1018_70ce(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1d, 0xb5, 0x7b, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa4ee;
     (param_1 + 0x2) = 0x1018;
@@ -642,7 +642,7 @@ pub fn struct_1018_7104(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1e, 0xb6, 0xd9, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb7d2;
     (param_1 + 0x2) = 0x1018;
@@ -654,7 +654,7 @@ pub fn struct_1018_713a(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1f, 0xb7, 0x7d, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9a92;
     (param_1 + 0x2) = 0x1018;
@@ -666,7 +666,7 @@ pub fn struct_1018_7170(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x21, 0xb9, 0xdd, param_2, param_3, param_4);
     param_1.field_0x0 = 0xad76;
     (param_1 + 0x2) = 0x1018;
@@ -678,7 +678,7 @@ pub fn struct_1018_71a6(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x23, 0xd3, 0xd6, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb69a;
     (param_1 + 0x2) = 0x1018;
@@ -690,7 +690,7 @@ pub fn struct_1018_71dc(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1ed, 0x24, 0xd4, 0xd7, param_2, param_3, param_4);
     param_1.field_0x0 = 0x995a;
     (param_1 + 0x2) = 0x1018;
@@ -702,7 +702,7 @@ pub fn struct_1018_7212(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x25, 0xe9, 0xee, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa452;
     (param_1 + 0x2) = 0x1018;
@@ -714,7 +714,7 @@ pub fn struct_1018_7248(
     param_2: u16,
     param_3: i32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x63, 0xa6, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc05a;
     (param_1 + 0x2) = 0x1018;
@@ -726,7 +726,7 @@ pub fn struct_1018_727e(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x64, 0xa9, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa31a;
     (param_1 + 0x2) = 0x1018;
@@ -738,7 +738,7 @@ pub fn struct_1018_72b4(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x65, 0xaa, 0xbb, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb5fe;
     (param_1 + 0x2) = 0x1018;
@@ -750,7 +750,7 @@ pub fn struct_1018_72ea(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x66, 0xab, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x98be;
     (param_1 + 0x2) = 0x1018;
@@ -762,7 +762,7 @@ pub fn struct_1018_7320(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x67, 0xac, 0xbd, param_2, param_3, param_4);
     param_1.field_0x0 = 0xaba2;
     (param_1 + 0x2) = 0x1018;
@@ -774,7 +774,7 @@ pub fn struct_1018_7356(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x68, 0xad, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbe86;
     (param_1 + 0x2) = 0x1018;
@@ -786,7 +786,7 @@ pub fn struct_1018_738c(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x69, 0xae, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xac3e;
     (param_1 + 0x2) = 0x1018;
@@ -798,7 +798,7 @@ pub fn struct_1018_73c2(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x35, 0xba, 0x81, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbf22;
     (param_1 + 0x2) = 0x1018;
@@ -810,7 +810,7 @@ pub fn struct_1018_73f8(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x39, 0xbb, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa146;
     (param_1 + 0x2) = 0x1018;
@@ -822,7 +822,7 @@ pub fn struct_1018_745e(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x22, 0xbc, 0xd5, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb42a;
     (param_1 + 0x2) = 0x1018;
@@ -834,7 +834,7 @@ pub fn struct_1018_7494(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x36, 0xbd, 0xcd, param_2, param_3, param_4);
     param_1.field_0x0 = 0x96ea;
     (param_1 + 0x2) = 0x1018;
@@ -846,7 +846,7 @@ pub fn struct_1018_74ca(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x37, 0xbe, 0x83, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa9ce;
     (param_1 + 0x2) = 0x1018;
@@ -858,7 +858,7 @@ pub fn struct_1018_7500(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x38, 0xbf, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbcb2;
     (param_1 + 0x2) = 0x1018;
@@ -870,7 +870,7 @@ pub fn struct_1018_7536(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x3a, 0xc0, 0x85, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9f72;
     (param_1 + 0x2) = 0x1018;
@@ -882,7 +882,7 @@ pub fn struct_1018_756c(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1e2, 0x3b, 0xc1, 0x86, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb256;
     (param_1 + 0x2) = 0x1018;
@@ -894,7 +894,7 @@ pub fn pass1_1018_75a2(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x3c, 0xc2, 0x87, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9516;
     (param_1 + 0x2) = 0x1018;
@@ -906,7 +906,7 @@ pub fn pass1_1018_75d8(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x3d, 0xc3, 0x88, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa7fa;
     (param_1 + 0x2) = 0x1018;
@@ -918,7 +918,7 @@ pub fn struct_1018_760e(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x3e, 0xc4, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbade;
     (param_1 + 0x2) = 0x1018;
@@ -930,7 +930,7 @@ pub fn struct_1018_7644(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x3f, 0xc5, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9d02;
     (param_1 + 0x2) = 0x1018;
@@ -942,7 +942,7 @@ pub fn struct_1018_767a(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x40, 0xc6, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xafe6;
     (param_1 + 0x2) = 0x1018;
@@ -954,7 +954,7 @@ pub fn struct_1018_76b0(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x41, 0xc7, 0x8d, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc2ca;
     (param_1 + 0x2) = 0x1018;
@@ -966,7 +966,7 @@ pub fn struct_1018_76e6(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x42, 0xc8, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa58a;
     (param_1 + 0x2) = 0x1018;
@@ -978,7 +978,7 @@ pub fn struct_1018_771c(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x43, 0xc9, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb86e;
     (param_1 + 0x2) = 0x1018;
@@ -990,7 +990,7 @@ pub fn struct_1018_7752(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x44, 0xcc, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9b2e;
     (param_1 + 0x2) = 0x1018;
@@ -1002,7 +1002,7 @@ pub fn struct_1018_7788(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x45, 0xcd, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xae12;
     (param_1 + 0x2) = 0x1018;
@@ -1014,7 +1014,7 @@ pub fn struct_1018_77be(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x46, 0xd1, 0x92, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc0f6;
     (param_1 + 0x2) = 0x1018;
@@ -1026,7 +1026,7 @@ pub fn struct_1018_77f4(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x47, 0xd2, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa3b6;
     (param_1 + 0x2) = 0x1018;
@@ -1038,7 +1038,7 @@ pub fn struct_1018_782a(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x48, 0xd5, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xacda;
     (param_1 + 0x2) = 0x1018;
@@ -1050,7 +1050,7 @@ pub fn struct_1018_7860(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x49, 0xd6, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbfbe;
     (param_1 + 0x2) = 0x1018;
@@ -1062,7 +1062,7 @@ pub fn struct_1018_7896(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1f4, 0x4a, 0xd7, 0x98, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa1e2;
     (param_1 + 0x2) = 0x1018;
@@ -1074,7 +1074,7 @@ pub fn struct_1018_78cc(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x4b, 0xd8, 0x99, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb4c6;
     (param_1 + 0x2) = 0x1018;
@@ -1086,7 +1086,7 @@ pub fn struct_1018_7902(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x4c, 0xd9, 0xee, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9786;
     (param_1 + 0x2) = 0x1018;
@@ -1098,7 +1098,7 @@ pub fn struct_1018_7938(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x4d, 0xda, 0x9c, param_2, param_3, param_4);
     param_1.field_0x0 = 0xaa6a;
     (param_1 + 0x2) = 0x1018;
@@ -1110,7 +1110,7 @@ pub fn struct_1018_796e(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x4e, 0xdb, 0x9d, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbd4e;
     (param_1 + 0x2) = 0x1018;
@@ -1122,7 +1122,7 @@ pub fn struct_1018_79a4(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x4f, 0xdc, 0x9e, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa00e;
     (param_1 + 0x2) = 0x1018;
@@ -1134,7 +1134,7 @@ pub fn struct_1018_79da(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x50, 0xdd, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb2f2;
     (param_1 + 0x2) = 0x1018;
@@ -1146,7 +1146,7 @@ pub fn struct_1018_7a10(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1d9, 0x51, 0xde, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x95b2;
     (param_1 + 0x2) = 0x1018;
@@ -1158,7 +1158,7 @@ pub fn struct_1018_7a46(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x52, 0xdf, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa896;
     (param_1 + 0x2) = 0x1018;
@@ -1170,7 +1170,7 @@ pub fn struct_1018_7a7c(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x53, 0xe0, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xbb7a;
     (param_1 + 0x2) = 0x1018;
@@ -1182,7 +1182,7 @@ pub fn struct_1018_7ab2(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1e4, 0x55, 0xe2, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb082;
     (param_1 + 0x2) = 0x1018;
@@ -1194,7 +1194,7 @@ pub fn struct_1018_7ae8(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1e4, 0x56, 0xe3, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc366;
     (param_1 + 0x2) = 0x1018;
@@ -1206,7 +1206,7 @@ pub fn struct_1018_7b1e(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1da, 0x57, 0xe4, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa626;
     (param_1 + 0x2) = 0x1018;
@@ -1218,7 +1218,7 @@ pub fn struct_1018_7b54(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1d8, 0x58, 0xe5, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb90a;
     (param_1 + 0x2) = 0x1018;
@@ -1230,7 +1230,7 @@ pub fn struct_1018_7b8a(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x59, 0xe6, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9bca;
     (param_1 + 0x2) = 0x1018;
@@ -1242,7 +1242,7 @@ pub fn struct_1018_7bc0(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1ef, 0x5a, 0xe7, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xaeae;
     (param_1 + 0x2) = 0x1018;
@@ -1254,7 +1254,7 @@ pub fn struct_1018_7bf6(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x5b, 0xe8, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xc192;
     (param_1 + 0x2) = 0x1018;
@@ -1266,7 +1266,7 @@ pub fn struct_1018_7c2c(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x5c, 0xea, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb736;
     (param_1 + 0x2) = 0x1018;
@@ -1278,7 +1278,7 @@ pub fn struct_1018_7c62(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x5d, 0xeb, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x99f6;
     (param_1 + 0x2) = 0x1018;
@@ -1290,7 +1290,7 @@ pub fn struct_1018_7c98(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1e6, 0x5e, 0xec, 0xee, param_2, param_3, param_4);
     param_1.field_0x0 = 0xba42;
     (param_1 + 0x2) = 0x1018;
@@ -1302,7 +1302,7 @@ pub fn struct_1018_7cce(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1da, 0x5f, 0xed, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x9ed6;
     (param_1 + 0x2) = 0x1018;
@@ -1314,7 +1314,7 @@ pub fn struct_1018_7d04(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x0, 0x60, 0xee, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0xb1ba;
     (param_1 + 0x2) = 0x1018;
@@ -1326,7 +1326,7 @@ pub fn struct_1018_7d3a(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1f0, 0x61, 0xef, 0x0, param_2, param_3, param_4);
     param_1.field_0x0 = 0x947a;
     (param_1 + 0x2) = 0x1018;
@@ -1338,7 +1338,7 @@ pub fn struct_1018_7d70(
     param_2: u16,
     param_3: u32,
     param_4: u16,
-) -> &mut Struct2 {
+) -> Struct2 {
     struct_op_1018_6a0e(param_1, 0x1f7, 0x62, 0xf0, 0xcc, param_2, param_3, param_4);
     param_1.field_0x0 = 0xa75e;
     (param_1 + 0x2) = 0x1018;

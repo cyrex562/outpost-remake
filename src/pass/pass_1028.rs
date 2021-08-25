@@ -546,7 +546,7 @@ pub fn pass1_1028_081e(param_1: u32, param_2: i16, param_3: u16) {
     return;
 }
 
-pub fn pass1_1028_08c6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_08c6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_0138(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -643,7 +643,7 @@ pub fn pass1_1028_09d4(
     return;
 }
 
-pub fn pass1_1028_0ab4(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_0ab4(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -664,7 +664,7 @@ pub fn pass1_1028_0b64(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1028_0b96(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_0b96(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -1360,7 +1360,7 @@ pub fn pass1_1028_1556(param_1: u32, param_2: i16, param_3: u16, param_4: u16) -
     return 0x0;
 }
 
-pub fn pass1_1028_1646(param_1: u32) -> &mut Struct409 {
+pub fn pass1_1028_1646(param_1: u32) -> Struct409 {
     let paVar1: &mut Struct409;
     let u_var2: &mut Struct409;
     let u_var3: u16;
@@ -1408,7 +1408,7 @@ pub fn pass1_1028_1646(param_1: u32) -> &mut Struct409 {
     return paVar1;
 }
 
-pub fn pass1_1028_16fe(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_16fe(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -1684,7 +1684,7 @@ pub fn pass1_1028_1b1e(param_1: u32) {
     return;
 }
 
-pub fn pass1_1028_1b2e(param_1: &mut Struct18, param_2: u8, param_3: u16) -> &mut Struct18 {
+pub fn pass1_1028_1b2e(param_1: &mut Struct18, param_2: u8, param_3: u16) -> Struct18 {
     pass1_1030_dcf4(param_1, param_3);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -1952,7 +1952,7 @@ pub fn pass1_1028_1e8a(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return 0x1;
 }
 
-pub fn pass1_1028_1ec8(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_1ec8(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2374,7 +2374,7 @@ pub fn pass1_1028_2418(param_1: u32, param_2: u32, param_3: u16) -> bool {
     return BVar2;
 }
 
-pub fn pass1_1028_254c(param_1: &mut Struct18, param_2: u8, param_3: u16) -> &mut Struct18 {
+pub fn pass1_1028_254c(param_1: &mut Struct18, param_2: u8, param_3: u16) -> Struct18 {
     pass1_1028_2042(param_1, param_3);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2395,7 +2395,7 @@ pub fn pass1_1028_25fc(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1028_2626(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_2626(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2440,7 +2440,7 @@ pub fn pass1_1028_272e(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_2762(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_2762(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2662,7 +2662,7 @@ pub fn pass1_1028_297c(
     return 0x0;
 }
 
-pub fn pass1_1028_2a6c(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_2a6c(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -2690,7 +2690,7 @@ pub fn pass1_1028_2b1c(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1028_2b4e(param_1: &mut Struct18, param_2: u8, param_3: u16) -> &mut Struct18 {
+pub fn pass1_1028_2b4e(param_1: &mut Struct18, param_2: u8, param_3: u16) -> Struct18 {
     pass1_1030_dcf4(param_1, param_3);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3371,7 +3371,7 @@ pub fn pass1_1028_3246(
     return;
 }
 
-pub fn pass1_1028_33f6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_33f6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3401,7 +3401,7 @@ pub fn pass1_1028_34a6(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1028_34d0(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_34d0(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_0138(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3449,7 +3449,7 @@ pub fn pass1_1028_35b0(param_1: u32, param_2: i16, param_3: u16, param_4: u16, p
     return;
 }
 
-pub fn pass1_1028_35e2(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_35e2(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3518,7 +3518,7 @@ pub fn pass1_1028_36bc(
     return 0x0;
 }
 
-pub fn pass1_1028_3718(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_3718(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_388e(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -3912,7 +3912,7 @@ pub fn pass1_1028_3d92(
     return;
 }
 
-pub fn pass1_1028_3e06(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_3e06(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_388e(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -4010,7 +4010,7 @@ pub fn pass1_1028_3fa2(param_1: u32) {
     return;
 }
 
-pub fn pass1_1028_3fde(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_3fde(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -4274,7 +4274,7 @@ pub fn pass1_1028_43f6(
     return;
 }
 
-pub fn pass1_1028_4444(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_4444(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -4622,7 +4622,7 @@ pub fn pass1_1028_4aca(param_1: u32, param_2: U32Ptr, param_3: i16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_4af6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_4af6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -4962,7 +4962,7 @@ pub fn pass1_1028_4faa(param_1: u32, param_2: u16) -> u32 {
     return u_var4;
 }
 
-pub fn pass1_1028_504a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_504a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5074,7 +5074,7 @@ pub fn pass1_1028_5128(
     return;
 }
 
-pub fn pass1_1028_525a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_525a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5151,7 +5151,7 @@ pub fn pass1_1028_5412(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_5496(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_5496(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5204,7 +5204,7 @@ pub fn pass1_1028_5570(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_55a2(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_55a2(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_0138(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5425,7 +5425,7 @@ pub fn pass1_1028_5b42(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_5bc6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_5bc6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5508,7 +5508,7 @@ pub fn pass1_1028_5d12(param_1: u16, param_2: i16, param_3: u16, param_4: u8) {
     return;
 }
 
-pub fn pass1_1028_5d68(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_5d68(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -5613,7 +5613,7 @@ pub fn pass1_1028_6008(param_1: U32Ptr, param_2: u16, param_3: u16, param_4: u16
     return;
 }
 
-pub fn pass1_1028_602e(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_602e(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -6118,7 +6118,7 @@ pub fn pass1_1028_6822(param_1: u32, param_2: U32Ptr, param_3: u16) -> u16 {
     return 0x1;
 }
 
-pub fn pass1_1028_6850(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_6850(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_6186(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -6244,7 +6244,7 @@ pub fn pass1_1028_69cc(param_1: u32, param_2: &mut Struct317, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_6a7a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_6a7a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -6253,7 +6253,7 @@ pub fn pass1_1028_6a7a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_6aa6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_6aa6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -6520,7 +6520,7 @@ pub fn pass1_1028_6daa(
     return;
 }
 
-pub fn pass1_1028_6e24(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_6e24(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -6529,7 +6529,7 @@ pub fn pass1_1028_6e24(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_6e60(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_6e60(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x32c7);
     param_1.field_0x0 = 0x6fb0;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -6602,7 +6602,7 @@ pub fn pass1_1028_6ef6(param_1: u32, param_2: u16, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_6f84(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_6f84(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -6611,7 +6611,7 @@ pub fn pass1_1028_6f84(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_6fc0(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_6fc0(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x3e7);
     param_1.field_0x0 = 0x749e;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -6972,7 +6972,7 @@ pub fn pass1_1028_740c(param_1: u16, param_2: u16, param_3: i16, param_4: u32) {
     return;
 }
 
-pub fn pass1_1028_7472(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_7472(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -6981,7 +6981,7 @@ pub fn pass1_1028_7472(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_74ae(param_1: &mut Struct100) -> &mut Struct100 {
+pub fn pass1_1028_74ae(param_1: &mut Struct100) -> Struct100 {
     let unaff_SS: u16;
     let in_AF: u8;
 
@@ -7883,7 +7883,7 @@ pub fn pass1_1028_7fb6(param_1: u32, param_2: i16, param_3: u16, param_4: u8) {
     return;
 }
 
-pub fn pass1_1028_816e(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_816e(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -7892,7 +7892,7 @@ pub fn pass1_1028_816e(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_81aa(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_81aa(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x1b57);
     param_1.field_0x0 = 0x836e;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -8001,7 +8001,7 @@ pub fn pass1_1028_82b4(param_1: u32, param_2: u16, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_8342(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_8342(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8010,7 +8010,7 @@ pub fn pass1_1028_8342(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_837e(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_837e(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0xf9f);
     param_1.field_0x0 = 0x84ba;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -8071,7 +8071,7 @@ pub fn pass1_1028_8400(param_1: u32, param_2: u16, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_848e(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_848e(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8185,7 +8185,7 @@ pub fn pass1_1028_858c(param_1: u32, param_2: &mut Struct318, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_865c(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_865c(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8200,7 +8200,7 @@ pub fn pass1_1028_8698(
     param_3: u32,
     param_4: u8,
     param_5: u16,
-) -> &mut Struct100 {
+) -> Struct100 {
     pass1_1028_6af2(param_1, param_2, param_3, param_5, param_4);
     param_1.field_0x0 = 0x87e0;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -8280,7 +8280,7 @@ pub fn pass1_1028_86f4(param_1: u32, param_2: &mut Struct320, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_87b4(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_87b4(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8522,7 +8522,7 @@ pub fn pass1_1028_8c46(param_1: u32, param_2: &mut Struct322, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_8d62(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_8d62(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8640,7 +8640,7 @@ pub fn pass1_1028_8ea6(param_1: u32, param_2: &mut Struct324, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_8f8a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_8f8a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_8dec(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -8654,7 +8654,7 @@ pub fn pass1_1028_8fc0(
     param_3: u32,
     param_4: u16,
     param_5: u8,
-) -> &mut Struct100 {
+) -> Struct100 {
     pass1_1028_6af2(param_1, param_2, param_3, param_4, param_5);
     param_1.field_0x0 = 0x90d6;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -8700,7 +8700,7 @@ pub fn pass1_1028_8fea(param_1: u32, param_2: &mut Struct326, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_90aa(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_90aa(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -8714,7 +8714,7 @@ pub fn pass1_1028_90e6(
     param_2: u16,
     param_3: u16,
     param_4: u8,
-) -> &mut Struct100 {
+) -> Struct100 {
     let u_var1: u16;
 
     struct_op_1028_d1dc(param_3, param_4, param_1, 0x1387);
@@ -8851,7 +8851,7 @@ pub fn pass1_1028_9264(param_1: u32, param_2: u16, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_9300(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_9300(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -9152,7 +9152,7 @@ pub fn pass1_1028_9624(
     return;
 }
 
-pub fn pass1_1028_9908(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_9908(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -9358,7 +9358,7 @@ pub fn pass1_1028_9b48(param_1: u32, param_2: &mut Struct330, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_9c2c(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_9c2c(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_9992(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -9578,7 +9578,7 @@ pub fn pass1_1028_9dee(param_1: u32, param_2: &mut Struct332, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_9e8a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_9e8a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -9587,7 +9587,7 @@ pub fn pass1_1028_9e8a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_9ec6(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_9ec6(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, (s_noth_bmp_1050_2321 + 0x6));
     param_1.field_0x0 = 0xa6f6;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10145,7 +10145,7 @@ pub fn pass1_1028_a61e(
     return;
 }
 
-pub fn pass1_1028_a6ca(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_a6ca(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10154,7 +10154,7 @@ pub fn pass1_1028_a6ca(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_a706(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_a706(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0xbb7);
     param_1.field_0x0 = 0xa856;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10226,7 +10226,7 @@ pub fn pass1_1028_a79c(param_1: u32, param_2: u16, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_a82a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_a82a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10235,7 +10235,7 @@ pub fn pass1_1028_a82a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_a866(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_a866(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x36af);
     param_1.field_0x0 = 0xa9ae;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10300,7 +10300,7 @@ pub fn pass1_1028_a8f4(param_1: u32, param_2: &mut Struct335, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_a982(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_a982(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10309,7 +10309,7 @@ pub fn pass1_1028_a982(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_a9be(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_a9be(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x176f);
     param_1.field_0x0 = 0xab22;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10384,7 +10384,7 @@ pub fn pass1_1028_aa68(param_1: u32, param_2: &mut Struct336, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_aaf6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_aaf6(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10393,7 +10393,7 @@ pub fn pass1_1028_aaf6(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_ab32(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_ab32(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x2edf);
     param_1.field_0x0 = 0xaca6;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10484,7 +10484,7 @@ pub fn pass1_1028_abec(param_1: u32, param_2: &mut Struct337, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_ac7a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_ac7a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10493,7 +10493,7 @@ pub fn pass1_1028_ac7a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1028_acb6(param_1: &mut Struct100, param_2: u16, param_3: u8) -> &mut Struct100 {
+pub fn pass1_1028_acb6(param_1: &mut Struct100, param_2: u16, param_3: u8) -> Struct100 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x3e7f);
     param_1.field_0x0 = 0xae56;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10586,7 +10586,7 @@ pub fn pass1_1028_ad9c(param_1: u32, param_2: &mut Struct338, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_ae2a(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_ae2a(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10738,7 +10738,7 @@ pub fn pass1_1028_afce(param_1: u32, param_2: &mut Struct339, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_b0a2(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_b0a2(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10753,7 +10753,7 @@ pub fn pass1_1028_b0de(
     param_3: u32,
     param_4: u16,
     param_5: u8,
-) -> &mut Struct100 {
+) -> Struct100 {
     pass1_1028_6af2(param_1, param_2, param_3, param_4, param_5);
     param_1.field_0x0 = 0xb1f4;
     (param_1 + 0x2) = &USHORT_1050_1028;
@@ -10799,7 +10799,7 @@ pub fn pass1_1028_b108(param_1: u32, param_2: &mut Struct341, param_3: U32Ptr) {
     return;
 }
 
-pub fn pass1_1028_b1c8(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_b1c8(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     param_1.field_0x0 = 0x389a;
     (param_1 + 0x2) = 0x1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -10857,7 +10857,7 @@ pub fn pass1_1028_b2c8(param_1: u32, param_2: u32, param_3: bool, param_4: u16) 
     return param_3;
 }
 
-pub fn pass1_1028_b316(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_b316(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b260(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -12656,7 +12656,7 @@ pub fn pass1_1028_ced2(
     return 0x1;
 }
 
-pub fn pass1_1028_cf44(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_cf44(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1028_b418(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -12930,7 +12930,7 @@ pub fn pass1_1028_d7a0(param_1: u16, param_2: u16, param_3: u32, param_4: u16) -
     return b_var1;
 }
 
-pub fn pass1_1028_d7de(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1028_d7de(param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_57c4(param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(param_1, 0x1000);

@@ -468,7 +468,7 @@ pub fn struct_op_1028_d1dc(
     param_3: &mut Struct100,
     param_4: u16,
     in_stack_0000fffa: u16,
-) -> &mut Struct100 {
+) -> Struct100 {
     let i_var1: &mut Struct101;
     let pu_var1: U32Ptr;
 

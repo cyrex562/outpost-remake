@@ -492,3 +492,33 @@ pub struct Struct195 {}
 pub struct Struct196 {}
 
 pub struct Struct198 {}
+
+pub struct Struct208 {}
+
+pub struct Struct21 {}
+
+pub struct Struct647 {}
+
+pub struct Struct732 {}
+
+pub struct Struct471 {}
+
+pub struct Struct210 {}
+
+pub struct Struct211 {}
+
+pub struct Struct215 {}
+
+pub struct Struct214 {}
+
+pub struct Struct216 {}
+
+pub struct Struct213 {}
+
+pub struct Struct102 {}
+
+pub struct Struct103 {}
+
+pub struct Struct219 {}
+
+pub struct Struct218 {}
