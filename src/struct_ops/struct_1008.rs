@@ -49,7 +49,7 @@ pub fn set_struct_op_1008_0536(param_1: U32Ptr, param_2: HINSTANCE16, param_3: u
     let iVar5: i16;
     let unaff_DI: i16;
     let u_var6: u16;
-    let paVar7: &mut Struct20;
+    let paVar7: Struct20;
     let puVar8: U32Ptr;
 
     paVar7 = pass1_1008_3ab8(param_1);

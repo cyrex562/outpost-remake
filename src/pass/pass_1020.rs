@@ -4270,8 +4270,8 @@ pub fn pass1_1020_b97e(
     return;
 }
 
-pub fn pass1_1020_ba2b() {
-    init_globals_1020_96d4();
+pub fn pass1_1020_ba2b(ctx: &mut AppContext) {
+    init_globals_1020_96d4(ctx);
     pass1_1020_a426();
     return;
 }
