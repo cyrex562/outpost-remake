@@ -1926,7 +1926,7 @@ pub unsafe fn pass1_1000_2a00(
     param_6: u8,
 ) -> u16 {
     let b_var1: bool;
-    let pi_var2: &mut String;
+    let pi_var2: String;
     let i_var3: i16;
     let u_var4: u16;
     let u_var5: u16;
@@ -5145,12 +5145,7 @@ pub fn pass1_1000_5586(
     return;
 }
 
-pub fn pass1_1000_55b1(
-    ctx: &mut AppContext,
-    param_1: i16,
-    param_2: u16,
-    param_3: u16,
-) -> &mut String {
+pub fn pass1_1000_55b1(ctx: &mut AppContext, param_1: i16, param_2: u16, param_3: u16) -> String {
     let string_6: &mut String;
     let mut string_2: String;
     let mut exit_reason: String;

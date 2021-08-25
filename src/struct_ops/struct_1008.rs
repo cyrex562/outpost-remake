@@ -1721,7 +1721,7 @@ pub fn struct_1008_ecb2(param_1: &mut Struct221, param_2: u16, param_3: u16) -> 
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1008_3ab8(ctx: &mut AppContext, param_1: &mut Struct20) -> &mut Struct20 {
+pub fn pass1_1008_3ab8(ctx: &mut AppContext, param_1: &mut Struct20) -> Struct20 {
     set_struct_1008_687a(param_1, 0x0);
     param_1.field_0xde = 0x0;
     param_1.field_0x0 = 0x3b46;
@@ -1730,7 +1730,7 @@ pub fn pass1_1008_3ab8(ctx: &mut AppContext, param_1: &mut Struct20) -> &mut Str
     return param_1;
 }
 
-pub fn clear_struct_1008_3e38(param_1: &mut Struct18) -> &mut Struct18 {
+pub fn clear_struct_1008_3e38(param_1: &mut Struct18) -> Struct18 {
     param_1.field_0x0 = 0x0;
     param_1.field_0x2 = 0x0;
     param_1.field_0x2 = 0x0;

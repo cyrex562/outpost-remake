@@ -5,10 +5,11 @@ use crate::debug::debug_print_1008_6048;
 use crate::defines::{
     Struct106, Struct107, Struct108, Struct109, Struct11, Struct110, Struct111, Struct112,
     Struct134, Struct160, Struct18, Struct19, Struct194, Struct195, Struct196, Struct197,
-    Struct198, Struct20, Struct23, Struct362, Struct43, Struct449, Struct450, Struct451, Struct452,
-    Struct456, Struct457, Struct458, Struct459, Struct460, Struct461, Struct462, Struct463,
-    Struct464, Struct465, Struct649, Struct65, Struct651, Struct76, Struct79, Struct83, Struct86,
-    Struct99, Struct_1008_49e8, Struct_1008_4cdc, Struct_1008_4d26, Struct_1008_4d84, U32Ptr,
+    Struct198, Struct20, Struct208, Struct21, Struct23, Struct362, Struct43, Struct449, Struct450,
+    Struct451, Struct452, Struct456, Struct457, Struct458, Struct459, Struct460, Struct461,
+    Struct462, Struct463, Struct464, Struct465, Struct649, Struct65, Struct651, Struct76, Struct79,
+    Struct83, Struct86, Struct99, Struct_1008_49e8, Struct_1008_4cdc, Struct_1008_4d26,
+    Struct_1008_4d84, U32Ptr,
 };
 use crate::file::file_1008::{
     file_1008_76e4, read_file_1008_7dee, write_to_file_1008_7954, write_to_file_1008_7cac,
@@ -4309,7 +4310,7 @@ pub fn pass1_1008_b63a(param_1: u32, param_2: u32) {
     return;
 }
 
-pub fn pass1_1008_b820(param_1: u32, param_2: i16, param_3: u16) -> u32 {
+pub fn pass1_1008_b820(ctx: &mut AppContext, param_1: u32, param_2: i16, param_3: u16) -> u32 {
     let u_var1: u16;
 
     pass1_1030_8344(ctx, ctx.PTR_LOOP_1050_5748, 0x8000001);
@@ -4429,7 +4430,13 @@ pub fn pass1_1008_b9ce(param_1: u32, param_2: u32, param_3: u16) {
     return;
 }
 
-pub fn pass1_1008_ba38(param_1: u32, param_2: u32, param_3: HFILE16, param_4: u16) {
+pub fn pass1_1008_ba38(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: HFILE16,
+    param_4: u16,
+) {
     let u_var1: u32;
     let BVar2: bool;
     let pu_var3: U32Ptr;
@@ -4498,7 +4505,7 @@ pub fn pass1_1008_ba38(param_1: u32, param_2: u32, param_3: HFILE16, param_4: u1
     return;
 }
 
-pub fn pass1_1008_bd02(param_1: u32, param_2: u8) -> u32 {
+pub fn pass1_1008_bd02(ctx: &mut AppContext, param_1: u32, param_2: u8) -> u32 {
     let unaff_SS: u16;
 
     pass1_1008_afde(param_1, unaff_SS);
@@ -4508,7 +4515,7 @@ pub fn pass1_1008_bd02(param_1: u32, param_2: u8) -> u32 {
     return param_1;
 }
 
-pub fn pass1_1008_bd28(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_bd28(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_b08c(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -4516,7 +4523,7 @@ pub fn pass1_1008_bd28(param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
     return param_1;
 }
 
-pub fn pass1_1008_bd4e(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_bd4e(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_b08c(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -4524,7 +4531,7 @@ pub fn pass1_1008_bd4e(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8
     return param_1;
 }
 
-pub fn pass1_1008_bd74(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_bd74(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_b08c(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -4532,7 +4539,7 @@ pub fn pass1_1008_bd74(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8
     return param_1;
 }
 
-pub fn pass1_1008_bd9a(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_bd9a(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     pass1_1008_b08c(param_1);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -4632,11 +4639,7 @@ pub fn pass1_1008_d6f4(param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
     return param_1 as u16;
 }
 
-pub fn pass1_1008_d72e(
-    param_1: &mut Struct19,
-    param_2: &mut Struct19,
-    param_3: u16,
-) -> &mut Struct19 {
+pub fn pass1_1008_d72e(param_1: &mut Struct19, param_2: &mut Struct19, param_3: u16) -> Struct19 {
     set_struct_fields_1010_1d48(CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa) = 0x0;
     CONCAT22(param_2, param_1) = 0xd780;
@@ -4819,7 +4822,7 @@ pub fn pass1_1008_d99e(
     return;
 }
 
-pub fn pass1_1008_d9d4(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> &mut Struct18 {
+pub fn pass1_1008_d9d4(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) -> Struct18 {
     clenaup_win_ui_1018_4d22(ctx, param_1, 0x1018, 0);
     if (param_2 & 0x1) != 0x0 {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);

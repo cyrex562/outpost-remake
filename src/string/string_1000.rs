@@ -1,13 +1,9 @@
 use crate::defines::U32Ptr;
 use crate::global::AppContext;
-use crate::util::{CONCAT11, CONCAT22, read_string_from_addr};
+use crate::util::{read_string_from_addr, CONCAT11, CONCAT22};
 use crate::win_struct::WNDCLASS16;
 
-pub fn str_op_1000_28dc(
-    ctx: &mut AppContext,
-    param_1: i16) -> String
-
-{
+pub fn str_op_1000_28dc(ctx: &mut AppContext, param_1: i16) -> String {
     let string_1: &String;
     let string_3: &mut String;
     let i_var2: i16;
@@ -24,7 +20,9 @@ pub fn str_op_1000_28dc(
         }
         i_var2 = -0x1;
         loop {
-            if i_var2 == 0x0 { break; }
+            if i_var2 == 0x0 {
+                break;
+            }
             i_var2 += -0x1;
             string_1 = string_2;
             string_2 = (string_2 + 0x1);
@@ -35,11 +33,7 @@ pub fn str_op_1000_28dc(
     }
 }
 
-
-pub fn string_1000_3d3e(
-    string_1: &mut String,
-    string_2: &mut String
-) {
+pub fn string_1000_3d3e(string_1: &mut String, string_2: &mut String) {
     let ptr_1: U32Ptr;
     let ptr_2: U32Ptr;
     let var_6: u16;
@@ -60,7 +54,9 @@ pub fn string_1000_3d3e(
     var_6 = 0xffff;
     string_4 = string_3;
     loop {
-        if var_6 == 0x0 { break; }
+        if var_6 == 0x0 {
+            break;
+        }
         var_6 -= 0x1;
         string_9 = string_4;
         string_4 = string_4 + 0x1;
@@ -103,10 +99,7 @@ pub fn string_1000_3d3e(
     return;
 }
 
-
-pub fn str_op_1000_3da4(string_1: &mut String) -> u16
-
-{
+pub fn str_op_1000_3da4(string_1: &mut String) -> u16 {
     let mut string_2: &mut String;
     let var_2: u16;
     let mut string_3: &mut String;
@@ -116,12 +109,16 @@ pub fn str_op_1000_3da4(string_1: &mut String) -> u16
     bool_1 = true;
     var_2 = 0xffff;
     loop {
-        if var_2 == 0x0 { break; }
+        if var_2 == 0x0 {
+            break;
+        }
         var_2 -= 0x1;
         string_2 = string_3;
         string_3 = string_3 + 0x1;
         bool_1 = *string_2 == '\0';
-        if (!bool_1) == false { break; }
+        if (!bool_1) == false {
+            break;
+        }
     }
     var_2 = !var_2;
     if bool_1 {
@@ -130,14 +127,7 @@ pub fn str_op_1000_3da4(string_1: &mut String) -> u16
     return var_2;
 }
 
-
-pub fn str_op_1000_3dbe(
-    param_1: &mut String,
-    param_2: &mut String,
-    param_3: &mut u16,
-) -> &mut String
-
-{
+pub fn str_op_1000_3dbe(param_1: &mut String, param_2: &mut String, param_3: &mut u16) -> String {
     let mut string_1: &mut String;
     let var2: u8;
     let mut string_2: &mut String;
@@ -152,12 +142,16 @@ pub fn str_op_1000_3dbe(
             string_1 = string_2;
             string_2 = string_2 + 0x1;
             var2 = string_1[0];
-            if var2 == '\0' as u8 { break; }
+            if var2 == '\0' as u8 {
+                break;
+            }
             string_1 = string_3;
             string_3 = string_3 + 0x1;
             string_1[0] = var2;
             *param_3 -= 0x1;
-            if (param_3 != 0x0) == false { break; }
+            if (param_3 != 0x0) == false {
+                break;
+            }
         }
         // for (; param_3 != 0x0; param_3 -= 0x1) {
         //   pcVar1 = pcVar4;
@@ -168,16 +162,13 @@ pub fn str_op_1000_3dbe(
     return param_1;
 }
 
-
 pub fn str_1000_4d58(
     string_1: &mut String,
     string_2: Option<&mut String>,
     param_3: u32,
     param_4: &mut String,
     param_5: &mut String,
-)
-
-{
+) {
     let mut u_var1: u16;
     let string_4: &mut String;
     let string_5: &mut String;
@@ -211,7 +202,9 @@ pub fn str_1000_4d58(
     loop {
         // u_var5 = (pcStack18 >> 0x10);
         string_5 = string_3;
-        if *string_3 == '\0' { break; }
+        if *string_3 == '\0' {
+            break;
+        }
         if (*string_3 == '/') || (*string_3 == '\\') {
             u_stack8 = string_5 + 0x1;
             u_stack6 = u_var5;
@@ -233,8 +226,11 @@ pub fn str_1000_4d58(
             if (0xff < u_var1) {
                 u_var1 = 0xff;
             }
-            str_op_1000_3dbe((param_3 & 0xffff | param_3._2_2_ << 0x10),
-                             string_1, &mut u_var1);
+            str_op_1000_3dbe(
+                (param_3 & 0xffff | param_3._2_2_ << 0x10),
+                string_1,
+                &mut u_var1,
+            );
             *(param_3 + u_var1) = 0x0;
         }
         *string_1 = read_string_from_addr(CONCAT22(u_stack6, u_stack8)).clone();
@@ -266,8 +262,11 @@ pub fn str_1000_4d58(
         if 0xff < u_var1 {
             u_var1 = 0xff;
         }
-        str_op_1000_3dbe((param_4 & 0xffff | param_4._2_2_ << 0x10),
-                         (string_1 & 0xffff | string_1._2_2_ << 0x10), &mut u_var1);
+        str_op_1000_3dbe(
+            (param_4 & 0xffff | param_4._2_2_ << 0x10),
+            (string_1 & 0xffff | string_1._2_2_ << 0x10),
+            &mut u_var1,
+        );
         *(param_4 + u_var1) = 0x0;
     }
     if param_5 != 0x0 {
@@ -276,24 +275,14 @@ pub fn str_1000_4d58(
     return;
 }
 
-
-pub fn string_1000_1fd2(param_1: i16) -> String
-
-{
+pub fn string_1000_1fd2(param_1: i16) -> String {
     if param_1 == 0x2 {
         return "Out of memory.  Please free some memory, then choose retry.".to_string();
     }
     return read_string_from_addr(CONCAT22(0x1000, (param_1 * 0x17 + 0x1c7a) as u16)).to_string();
 }
 
-
-pub fn string_1000_475e(
-    ctx: &mut AppContext,
-    param_1: &String,
-    param_2: &String,
-) -> u8
-
-{
+pub fn string_1000_475e(ctx: &mut AppContext, param_1: &String, param_2: &String) -> u8 {
     let mut string_2: &String;
     let c_var2: u8;
     let c_var3: u8;
@@ -318,7 +307,9 @@ pub fn string_1000_475e(
             c_var2 = string_1[0];
             string_3 = read_string_from_addr(CONCAT11(c_var2, c_var3) as u32).clone();
             string_1 = &string_1[1..].to_string();
-            if c_var2 != c_var3 { break; }
+            if c_var2 != c_var3 {
+                break;
+            }
         }
         b_var4 = c_var3 + 0xbf + (-((c_var3 + 0xbf) < 0x1a) & 0x20) + 0x41;
         b_var3 = c_var2 + 0xbf;
@@ -329,17 +320,11 @@ pub fn string_1000_475e(
         }
     }
     c_var3 = (string_3 < b_var4) * -0x2 + '\x01';
-//LAB_1000_479d:
+    //LAB_1000_479d:
     return c_var3;
 }
 
-
-pub fn string_1000_3cea(
-    string_1: &mut String,
-    string_2: &mut String
-) -> &mut String
-
-{
+pub fn string_1000_3cea(string_1: &mut String, string_2: &mut String) -> String {
     let string_4: &mut String;
     let mut pc_var2: &String;
     let p_uvar3: U32Ptr;
@@ -359,24 +344,32 @@ pub fn string_1000_3cea(
     i_var4 = -0x1;
     string_3 = string_1;
     loop {
-        if i_var4 == 0x0 { break; }
+        if i_var4 == 0x0 {
+            break;
+        }
         i_var4 += -0x1;
         string_4 = string_3;
         string_3 = (&mut string_3[1..].to_string());
         b_var13 = string_4[0] == '\0';
-        if b_var13 { break; }
+        if b_var13 {
+            break;
+        }
     }
     string_7 = (string_3 + -0x1);
     // u_var12 = (param_2 >> 0x10);
     string_6 = string_2;
     u_var5 = 0xffff;
     loop {
-        if u_var5 == 0x0 { break; }
+        if u_var5 == 0x0 {
+            break;
+        }
         u_var5 -= 0x1;
         pc_var2 = string_6;
         string_6 = string_6 + 0x1;
         b_var13 = *pc_var2 == '\0';
-        if b_var13 { break; }
+        if b_var13 {
+            break;
+        }
     }
     u_var5 = !u_var5;
     if !b_var13 {
