@@ -11061,3 +11061,7 @@ pub fn pass1_1040_073a(param_1: &mut Struct18) {
     ui_cleanup_op_1040_782c(param_1, &ctx.PTR_LOOP_1050_1038);
     return;
 }
+
+pub fn pass1_1038_4d28(a: u16) -> String {
+    unimplemented!()
+}
