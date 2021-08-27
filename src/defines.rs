@@ -44,7 +44,7 @@ impl StructA {
                 field_0x4: 0,
                 field_0x6: 0,
                 field_0xa: 0,
-                field_0x0: (),
+                field_0x0: 0,
             },
         }
     }
@@ -343,6 +343,15 @@ pub struct Struct_1010_4e08 {
 pub struct Struct_1050_11ca {
     pub field_0x0: String,
     pub field_0x8: u16,
+}
+
+impl Struct_1050_11ca {
+    pub fn new() -> Struct_1050_11ca {
+        Struct_1050_11ca {
+            field_0x0: "".to_string(),
+            field_0x8: 0,
+        }
+    }
 }
 
 pub struct Struct_1008_9664 {
