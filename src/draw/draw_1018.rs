@@ -363,7 +363,7 @@ pub unsafe fn unk_draw_op_1018_623e(
     (puVar13 + -0x3e) = handle_00;
     HVar8 = SelectObject16(ctx.s_tile2_bmp_1050_1538, handle_00);
     (puVar13 + -0x40) = HVar8;
-    draw_line_1018_6444((puVar13 + 0x6), ctx.s_tile2_bmp_1050_1538);
+    draw_line_1018_6444(ctx, (puVar13 + 0x6), ctx.s_tile2_bmp_1050_1538);
     u_var3 = (puVar13 + 0x6);
     uVar16 = pass1_1010_4dc8((u_var3 + 0x6));
     // u_var10 = (uVar16 >> 0x10);
@@ -589,7 +589,7 @@ pub unsafe fn unk_draw_op_1018_c578(
         u_var7,
         h_var19,
     );
-    draw_text_1018_c742(param_1, 0x1008, param_2, extraout_dx);
+    draw_text_1018_c742(ctx, param_1, 0x1008, param_2, extraout_dx);
     SelectPalette16(0x1008, 0x0, b_force_background);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     EndPaint16(ctx.s_tile2_bmp_1050_1538, &local_22);
@@ -774,7 +774,7 @@ pub unsafe fn unk_draw_op_1018_cda8(ctx: &mut AppContext, param_1: &mut Struct36
         pHVar17,
         uVar18,
     );
-    draw_text_1018_c742(param_1, 0x1008, param_2, extraout_dx);
+    draw_text_1018_c742(ctx, param_1, 0x1008, param_2, extraout_dx);
     SelectPalette16(0x1008, 0x0, b_force_background);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     EndPaint16(ctx.s_tile2_bmp_1050_1538, &local_22);
@@ -894,7 +894,7 @@ pub fn unk_draw_op_1018_cfc0(ctx: &mut AppContext, param_1: &mut Struct36, param
         uVar8,
         HVar19,
     );
-    draw_text_1018_c742(param_1, 0x1008, param_2, extraout_dx);
+    draw_text_1018_c742(ctx, param_1, 0x1008, param_2, extraout_dx);
     SelectPalette16(0x1008, 0x0, b_force_background);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     EndPaint16(ctx.s_tile2_bmp_1050_1538, &local_22);
@@ -917,11 +917,11 @@ pub fn invalidate_rect_1018_edd8(param_1: u32, param_2: i16, param_3: u16) {
 
     i_var1 = param_1;
     // u_var2 = (param_1 >> 0x10);
-    if (param_2 == 0x1) {
+    if param_2 == 0x1 {
         (i_var1 + 0x14) = 0x0;
         return;
     }
-    if (param_2 != 0xc) {
+    if param_2 != 0xc {
         return;
     }
     pass1_1008_3e94(

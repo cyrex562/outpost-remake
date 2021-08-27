@@ -8,8 +8,8 @@ pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u
     let pi_var1: U32Ptr;
     let unaff_CS: u16;
 
-    if (param_3 < (param_1 + 0xc)) {
-        msg_box_op_1000_214c(0x0, 0x0, 0xd940, param_4);
+    if param_3 < (param_1 + 0xc) {
+        msg_box_op_1000_214c(ctx, 0x0, 0x0, 0xd940, param_4);
         return 0x1;
     }
     pi_var1 = (param_1 + 0xc);

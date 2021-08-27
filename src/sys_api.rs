@@ -2371,6 +2371,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: U32Ptr) {
     puVar8 = mixed_1010_20ba(ctx.PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
     u_var3 = (iVar6 + 0xe);
     sys_1000_3f9c(
+        ctx,
         u_var3,
         (u_var3 >> 0x10),
         0x149c,
@@ -2426,6 +2427,7 @@ pub fn write_private_profile_str_1010_5b10(param_1: U32Ptr) {
     WritePrivateProfileString16(ctx.s_tile2_bmp_1050_1538, u_var3, (u_var3 >> 0x10), &pCVar5);
     u_var3 = (iVar6 + 0xe);
     sys_1000_3f9c(
+        ctx,
         u_var3,
         (u_var3 >> 0x10),
         0x14a2,

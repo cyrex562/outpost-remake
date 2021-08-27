@@ -393,7 +393,7 @@ pub fn draw_op_1040_7bb2(
                 rect = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 FillRect16(ctx.s_tile2_bmp_1050_1538, rect, hbrush);
                 if (i_var4.field_0x76 != 0x0) {
-                    draw_op_1040_82ee(in_struct_1, ctx.s_tile2_bmp_1050_1538);
+                    draw_op_1040_82ee(ctx,in_struct_1, ctx.s_tile2_bmp_1050_1538);
                 }
                 count = &i_var4.field_0x10;
                 if (*count != '\0') {
@@ -1154,8 +1154,8 @@ pub fn unk_draw_op_1040_c226(ctx: &mut AppContext, param_1: u32, param_2: HWND16
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     handle = CreatePen16(ctx.s_tile2_bmp_1050_1538, -0x7f80, 0x0);
     handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538, handle);
-    draw_line_1040_c302(param_1, ctx.s_tile2_bmp_1050_1538);
-    draw_op_1040_c38e(param_1);
+    draw_line_1040_c302(ctx,param_1, ctx.s_tile2_bmp_1050_1538);
+    draw_op_1040_c38e(ctx,param_1);
     SelectObject16(ctx.s_tile2_bmp_1050_1538, handle_00);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     EndPaint16(ctx.s_tile2_bmp_1050_1538, &local_22);

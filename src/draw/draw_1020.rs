@@ -154,7 +154,7 @@ pub fn unk_draw_op_1020_0000(param_1: u32, param_2: HWND16, param_3: u16) {
 }
 
 pub fn draw_op_1020_041e(param_1: u32, param_2: u16) {
-    fill_rect_1020_065e((param_1 + 0xe6), param_2);
+    fill_rect_1020_065e(ctx, (param_1 + 0xe6), param_2);
     return;
 }
 
@@ -650,7 +650,7 @@ pub unsafe fn unk_draw_op_1020_2020(
     (ptr_1 + -0x3e) = hvar9 as u32;
     hvar8 = SelectObject16(ctx.s_tile2_bmp_1050_1538, hvar9);
     (ptr_1 + -0x40) = hvar8 as u32;
-    draw_line_1020_229c((ptr_1 + 0x6), ctx.s_tile2_bmp_1050_1538);
+    draw_line_1020_229c(ctx, (ptr_1 + 0x6), ctx.s_tile2_bmp_1050_1538);
     u_var2 = (ptr_1 + 0x6);
     pass1_1010_4df0((u_var2 + 0x6), u_var11, param_3);
     if (hvar8 == 0x0) {
@@ -962,7 +962,7 @@ pub fn draw_op_1020_30be(ctx: &mut AppContext, param_1: u32, param_2: HWND16, pa
         );
         u_var2 = (i_var4 + 0x14) as u32;
         if ((u_var2 + 0x84) == 0x1) {
-            unk_draw_op_1020_320e(param_1, local_24, param_3);
+            unk_draw_op_1020_320e(ctx, param_1, local_24, param_3);
         }
         ppc_var1 = (*local_3c + 0x4);
         (**ppc_var1)(
@@ -976,16 +976,16 @@ pub fn draw_op_1020_30be(ctx: &mut AppContext, param_1: u32, param_2: HWND16, pa
         );
         u_var2 = (i_var4 + 0x14) as u32;
         if ((u_var2 + 0x84) != 0x1) {
-            unk_draw_op_1020_320e(param_1, local_24, param_3);
+            unk_draw_op_1020_320e(ctx, param_1, local_24, param_3);
         }
-        draw_op_1020_3488(param_1 as i32);
+        draw_op_1020_3488(ctx, param_1 as i32);
         ppc_var1 = (*local_3c + 0xc);
         (**ppc_var1)(0x1018, local_3c, (local_3c >> 0x10), &local_24, param_3);
     } else {
-        if (ctx.PTR_LOOP_1050_0010 == 0x0) {
+        if ctx.PTR_LOOP_1050_0010 == 0x0 {
             ppc_var1 = ((i_var4 + 0x14) + 0x2c) as u32;
             i_stack38 = (**ppc_var1)(ctx.s_tile2_bmp_1050_1538);
-            if (i_stack38 != 0x0) {
+            if i_stack38 != 0x0 {
                 p_rstack40 = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 GetClientRect16(ctx.s_tile2_bmp_1050_1538, &local_30);
                 local_3c = 0x0;
@@ -1047,7 +1047,7 @@ pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16,
         CONCAT22(param_3, &local_a),
     );
     u_var3 = (i_var4 + 0x14) as u32;
-    draw_op_1020_33c0(
+    draw_op_1020_33c0(ctx,
         param_1,
         (u_var3 + 0x6c),
         local_c,
@@ -1063,7 +1063,7 @@ pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16,
         param_3,
     );
     u_var3 = (i_var4 + 0x14) as u32;
-    draw_op_1020_33c0(
+    draw_op_1020_33c0(ctx,
         param_1,
         (u_var3 + 0x74),
         local_c,
@@ -1078,7 +1078,7 @@ pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16,
         CONCAT22(param_3, &local_a),
     );
     u_var3 = (i_var4 + 0x14) as u32;
-    draw_op_1020_33c0(
+    draw_op_1020_33c0(ctx,
         param_1,
         (u_var3 + 0x68),
         local_c,
@@ -1094,7 +1094,7 @@ pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16,
     );
     if (local_c != 0x0) {
         u_var3 = (i_var4 + 0x14) as u32;
-        draw_op_1020_33c0(
+        draw_op_1020_33c0(ctx,
             param_1,
             (u_var3 + 0x70),
             local_c,
@@ -1112,7 +1112,7 @@ pub fn unk_draw_op_1020_320e(ctx: &mut AppContext, param_1: u32, param_2: HDC16,
     );
     if (local_c != 0x0) {
         u_var3 = (i_var4 + 0x14) as u32;
-        draw_op_1020_33c0(
+        draw_op_1020_33c0(ctx,
             param_1,
             (u_var3 + 0x78),
             local_c,
@@ -1407,7 +1407,7 @@ pub fn mixed_draw_op_1020_3fa0(ctx: &mut AppContext, param_1: u32, param_2: HWND
 }
 
 pub fn pass1_1020_4064(ctx: &mut AppContext, param_1: &mut Struct18, param_2: u8) {
-    win_ui_palette_op_1020_3e84(param_1);
+    win_ui_palette_op_1020_3e84(ctx,param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
     }
@@ -1490,7 +1490,7 @@ pub unsafe fn unk_draw_op_1020_41c8(
     let pu_var10: U32Ptr;
     let pu_var11: U32Ptr;
 
-    unk_draw_op_1020_7f7a(param_1, 0x8, CONCAT22(param_3, param_2) as i32);
+    unk_draw_op_1020_7f7a(ctx,param_1, 0x8, CONCAT22(param_3, param_2) as i32);
     // u_var7 = (param_1 >> 0x10);
     u_var5 = param_1;
     u_var5.field_0xee = 0x0;
@@ -1904,9 +1904,9 @@ pub fn mix_draw_op_1020_650c(
     i_var3 = param_1;
     u_var2 = (i_var3 + 0x14) as u32;
     pu_stack6 = (u_var2 + 0xa);
-    if (((i_var3 + 0x10) != 0x0) || (u_var2 = (i_var3 + 0x14) as u32, (u_var2 + 0x24) != 0x0)) {
-        draw_op_1020_9364(param_1, param_2, param_3 as i16);
-        if ((i_var3 + 0x24) != 0x0) {
+    if ((i_var3 + 0x10) != 0x0) || (u_var2 = (i_var3 + 0x14) as u32, (u_var2 + 0x24) != 0x0) {
+        draw_op_1020_9364(ctx,param_1, param_2, param_3 as i16);
+        if (i_var3 + 0x24) != 0x0 {
             u_var2 = (i_var3 + 0x24) as u32;
             ppc_var1 = ((i_var3 + 0x24) + 0x14) as u32;
             (**ppc_var1)(param_2, u_var2, (u_var2 >> 0x10));
@@ -1916,7 +1916,7 @@ pub fn mix_draw_op_1020_650c(
     loop {
         i_var4 = i_var3 + 0x18;
         i_var5 = i_stack8 * 0x4;
-        if ((i_var4 + i_var5) != 0x0) {
+        if (i_var4 + i_var5) != 0x0 {
             u_var2 = (i_var4 + i_var5) as u32;
             ppc_var1 = ((i_var4 + i_var5) + 0x8) as u32;
             (**ppc_var1)(

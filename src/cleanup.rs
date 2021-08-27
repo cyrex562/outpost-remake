@@ -1128,7 +1128,7 @@ pub fn win_cleanup_op_1040_748c(
                 (&ctx.PTR_LOOP_1050_0000 + 0x1),
                 &rect_1,
             );
-            unk_destroy_win_op_1010_2fa0((param_1 + 0x94), 0x1010);
+            unk_destroy_win_op_1010_2fa0(ctx, (param_1 + 0x94), 0x1010);
             pass1_1010_32c0((param_1 + 0x94), 0x0);
             pass1_1010_2ee2((param_1 + 0x94), unaff_ss, 0x1010);
         }

@@ -166,7 +166,7 @@ pub unsafe fn read_file_1008_49e8(
 }
 
 pub fn file_1008_4c26(ctx: &mut AppContext, param_1: u32, param_2: u8) -> u32 {
-    close_file_1008_496c(param_1);
+    close_file_1008_496c(ctx,param_1);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
     }
@@ -238,7 +238,7 @@ pub fn file_fn_1008_6e02(
     let local_4: [u8; 2];
 
     ctx.PTR_LOOP_1050_0310 = 0x0;
-    var1 = write_to_file_1008_70a6(param_1, in_string);
+    var1 = write_to_file_1008_70a6(ctx,param_1, in_string,0,0,0);
     if var1 != 0x0 {
         // u_var1 = (param_1 >> 0x10);
         pass1_1008_72a8(0, 0);
@@ -252,12 +252,12 @@ pub fn file_fn_1008_6e02(
         );
         if (var1 != 0x0)
             && (
-                var1 = file_fn_1008_6eee(param_1, local_4, param_3),
+                var1 = file_fn_1008_6eee(ctx,param_1, local_4, param_3, 0, 0),
                 var1 != 0x0,
             )
         {
-            var2 = file_fn_1008_726c(param_1, u_var1, in_string);
-            if (var2 == 0x0) {
+            var2 = file_fn_1008_726c(ctx,param_1, u_var1, in_string);
+            if var2 == 0x0 {
                 return 0x0;
             }
             return 0x1;
@@ -274,7 +274,7 @@ pub fn read_file_1008_6e78(
     in_string: &String,
     param_4: u16,
     extraout_dx: U32Ptr,
-    unaff_DI: i16,
+    unaff_di: i16,
 ) -> bool {
     let b_var1: bool;
     let i_var2: i16;
@@ -282,7 +282,7 @@ pub fn read_file_1008_6e78(
     let local_4: [u8; 2];
 
     ctx.PTR_LOOP_1050_0310 = 0x0;
-    b_var1 = read_file_1008_7146(param_1, param_2, in_string, param_4);
+    b_var1 = read_file_1008_7146(ctx,param_1, param_2, in_string, param_4);
     if b_var1 != 0x0 {
         pass1_1008_72a8();
         i_var2 = pass1_1008_7056(
@@ -290,14 +290,14 @@ pub fn read_file_1008_6e78(
             param_2,
             CONCAT22(param_4, local_4),
             extraout_dx,
-            unaff_DI,
+            unaff_di,
             param_4,
         );
         if (i_var2 != 0x0) {
             var3 = local_4;
-            read_file_1008_6f7a(param_1, param_2, CONCAT22(param_4, var3), param_4);
+            read_file_1008_6f7a(ctx,ctx,param_1, param_2, CONCAT22(param_4, var3), param_4);
             if (var3 != 0x0) {
-                b_var1 = file_fn_1008_726c(param_1, param_2, in_string);
+                b_var1 = file_fn_1008_726c(ctx,param_1, param_2, in_string);
                 if (b_var1 == 0x0) {
                     return 0x0;
                 }
@@ -374,15 +374,15 @@ pub fn read_file_1008_6f7a(
     var7 = *var8;
     var2 = pass1_1020_a43e(param_4, in_dx, CONCAT22(param_4, var6));
     // u_var1 = (pu_var2 >> 0x10);
-    var5 = read_file_1028_d7ba(var7, (var7 >> 0x10), param_3, param_4, var2);
+    var5 = read_file_1028_d7ba(ctx,var7, param_3, param_4);
     if (var5 != 0x0) {
-        var5 = read_file_1030_5c52(ctx.PTR_LOOP_1050_5736, param_3, var5, param_4);
+        var5 = read_file_1030_5c52(ctx,ctx.PTR_LOOP_1050_5736, param_3, var5, param_4);
         if (var5 != 0x0) {
             read_file_1028_def2(ctx.PTR_LOOP_1050_65e2, param_3, param_4, var5);
             if (var5 != 0x0) {
                 var3 = read_file_1038_7c02(ctx.PTR_LOOP_1050_5a64, param_3, var5, var1);
                 if (var3 != 0x0) {
-                    var4 = read_file_1020_a65e(CONCAT22(param_4, var6), param_3, param_4, var6);
+                    var4 = read_file_1020_a65e(ctx,CONCAT22(param_4, var6), param_3, param_4, var6);
                     if (var4 != 0x0) {
                         return;
                     }
@@ -465,7 +465,7 @@ pub fn read_file_1008_7146(
     if file_handle == 0xffff {
         ctx.PTR_LOOP_1050_0310 = 0x6cf;
     } else {
-        i_var2 = read_file_1008_71a0(CONCAT22(param_2, param_1), param_4);
+        i_var2 = read_file_1008_71a0(ctx,CONCAT22(param_2, param_1), param_4, 0);
         if i_var2 != 0x0 {
             return true;
         }
@@ -1223,7 +1223,7 @@ pub fn file_1008_e70e(
     }
     uVar7 = param_2;
     // uVar8 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar7, 0x14, param_5, param_6);
+    read_file_1008_7cfe(ctx,uVar7, 0x14, param_5, param_6);
     if (param_3 != 0x0) {
         BVar3 = read_file_1008_7dee(uVar7, uVar8, &local_4, 0x0, param_6, 0x2, param_5);
         if (BVar3 != 0x0) {

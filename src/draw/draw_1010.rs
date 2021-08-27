@@ -547,7 +547,7 @@ pub unsafe fn draw_1010_47ae(param_1: u32, param_2: u16, param_3: u16) {
 
     UStack4 = 0x0;
     loop {
-        draw_op_1010_47d0(param_1, (param_1 >> 0x10), UStack4, param_2, param_3 as i16);
+        draw_op_1010_47d0(ctx, param_1, (param_1 >> 0x10), UStack4, param_2, param_3 as i16);
         UStack4 += 0x1;
         if UStack4 >= 0x10 {
             break;

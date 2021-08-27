@@ -3110,13 +3110,7 @@ pub fn pass1_1008_8c4e(param_1: u32, param_2: u32, param_3: u16) {
             var5 = 0x0;
         } else {
             var2 = (param_1 & 0xffff0000 | (var6 + 0x1c));
-            pass1_1008_50c2(
-                &mut var9,
-                (var8 + 0x8),
-                (var8 + 0x4),
-                var2,
-                param_2,
-            );
+            pass1_1008_50c2(&mut var9, (var8 + 0x8), (var8 + 0x4), var2, param_2);
             var1 = SUB42(var2 as u16, 0x0);
         }
         pass1_1008_5134(CONCAT22(var5, var1));
@@ -3781,7 +3775,7 @@ pub fn pass1_1008_9e5a(ctx: &mut AppContext, param_1: &mut Struct18) {
     let var4: U32Ptr;
     let var6: u16;
     let var5: &mut Struct18;
-    let mut var7 = 0: u16;
+    let mut var7 = 0;
     let var8: U32Ptr;
     let var9: i16;
 
@@ -3799,11 +3793,7 @@ pub fn pass1_1008_9e5a(ctx: &mut AppContext, param_1: &mut Struct18) {
             var4 = var5.field_0x1c;
             var6 = var7;
         }
-        pass1_1008_92b2(
-            ctx.PTR_LOOP_1050_0388,
-            0x50,
-            CONCAT22(var6, var4 as u16),
-        );
+        pass1_1008_92b2(ctx.PTR_LOOP_1050_0388, 0x50, CONCAT22(var6, var4 as u16));
     }
     var9 = 0x0;
     loop {

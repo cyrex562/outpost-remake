@@ -50,7 +50,9 @@ pub fn read_vec_from_addr<T>(addr: u32) -> &mut Vec<T> {
 //     unimplemented!()
 // }
 
-pub fn read_struct_from_addr<T>(addr: u32) -> &mut T {unimplemented!()}
+pub fn read_struct_from_addr<T>(addr: u32) -> &mut T {
+    unimplemented!()
+}
 
 // pub fn get_struct_ref_from_addr<T>(addr: u32) -> &T {unimplemented!()}
 
@@ -58,21 +60,37 @@ pub fn read_string_from_rsrc(rsrc_id: u16) -> String {
     unimplemented!()
 }
 
+pub fn read_func_from_addr<T>(addr: u32) -> T {
+    unimplemented!()
+}
+
 pub fn CARRY4(a: u32, b: u32) -> u32 {
     unimplemented!()
 }
 
-pub fn SBORROW2(a: u32, b: u32) -> u32 { unimplemented!()}
+pub fn SBORROW2(a: u32, b: u32) -> u32 {
+    unimplemented!()
+}
 
-pub fn SEXT24(a: u16) -> u32 {unimplemented!()}
+pub fn SEXT24(a: u16) -> u32 {
+    unimplemented!()
+}
 
-pub fn address_of(a: u32) -> u32 {unimplemented!()}
+pub fn address_of(a: u32) -> u32 {
+    unimplemented!()
+}
 
-pub fn write_string_to_addr(address: U32Ptr, src_string: &String) {unimplemented!()}
+pub fn write_string_to_addr(address: U32Ptr, src_string: &String) {
+    unimplemented!()
+}
 
-pub fn write_bool_to_addr(address: U32Ptr, value: bool) { unimplemented!()}
+pub fn write_bool_to_addr(address: U32Ptr, value: bool) {
+    unimplemented!()
+}
 
-pub fn write_struct_to_addr<T>(address: U32Ptr, value: &T) { unimplemented!()}
+pub fn write_struct_to_addr<T>(address: U32Ptr, value: &T) {
+    unimplemented!()
+}
 
 pub fn CARRY1(a: u8, b: u8) -> u16 {
     unimplemented!()

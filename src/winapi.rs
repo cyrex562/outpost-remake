@@ -349,6 +349,7 @@ pub fn GetSystemPaletteEntries(
     count: u16,
     entries: &[PALETTEENTRY],
 ) -> u16 {
+    unimplemented!()
 }
 
 // StretchDIBits16: i16(HDC16 hdc, x_dst: i16, y_dst: i16, width_dst: i16, height_dst: i16, x_src: i16, y_src: i16, width_src: i16, height_src: i16, PVOID bits, BITMAPINFO * info, Uw_usage: i16, DWORD dw_rop)
