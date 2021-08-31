@@ -1161,71 +1161,73 @@ pub fn palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: H
 }
 
 pub fn palette_op_1008_4e08(
+    ctx: &mut AppContext,
     param_1: &mut Struct13,
     param_2: bool,
-    param_3: u16,
+    param_3: &String,
     param_4: HDC16,
 ) -> HPALETTE16 {
-    let HVar1: HPALETTE16;
+    let palette_1: HPALETTE16;
 
-    create_palette_1008_4e38(param_1, param_4, param_3);
-    HVar1 = SelectPalette16(param_4, 0x0, param_2);
-    RealizePalette16(ctx.s_tile2_bmp_1050_1538);
-    return HVar1;
+    create_palette_1008_4e38(ctx, param_1, param_4, param_3);
+    palette_1 = SelectPalette16(param_4, 0x0, param_2);
+    RealizePalette16(ctx.s_tile2_bmp_1050_1538 as HDC16);
+    return palette_1;
 }
 
 // WARNING: Unable to use type for symbol u_var3
 
 pub fn create_palette_1008_4e38(
+    ctx: &mut AppContext,
     in_struct_1: &mut Struct13,
     in_log_palette_2: &mut LOGPALETTE,
     param_3: U32Ptr,
 ) {
-    let pi_var1: U32Ptr;
-    let pu_var2: U32Ptr;
-    let u_var4: u16;
-    let local_struct_1: &mut Struct13;
-    let iVar5: i16;
-    let iVar6: i16;
-    let uVar8: u16;
-    let uVar9: u16;
-    let u_var10: u16;
-    let iStack14: i16;
-    let puStack12: U32Ptr;
-    let puStack8: U32Ptr;
-    let u_var3: U32Ptr;
+    let ptr_1: U32Ptr;
+    let ptr_2: U32Ptr;
+    let var_3: u16;
+    let struct_4: &mut Struct13;
+    let var_5: i16;
+    let var_6: i16;
+    let var_7: u16;
+    let var_8: u16;
+    let var_10: u16;
+    let var_11: i16;
+    let ptr_12: U32Ptr;
+    let ptr_13: U32Ptr;
+    let ptr_14: U32Ptr;
 
     // uVar8 = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
-    u_var4 = (local_struct_1.field_0xc + 0x2) * 0x4;
-    if (local_struct_1.field_0xe == 0x0) {
-        in_log_palette_2 = &ctx.PTR_LOOP_1050_1000;
-        mem_op_1000_179c(u_var4, param_3 as u16, 0x1000);
-        &local_struct_1.field_0xe = u_var4;
-        (&local_struct_1.field_0xe + 0x2) = param_3;
-        *local_struct_1.field_0xe = 0x300;
-        u_var3 = local_struct_1.field_0xe;
-        (u_var3 + 0x2) = local_struct_1.field_0xc;
-        pu_var2 = local_struct_1.field_0xe;
-        puStack8 = (pu_var2 & 0xffff0000 | (pu_var2 + 0x4));
-        puStack12 = local_struct_1.field_0x4;
-        iStack14 = 0x0;
+    let struct_4 = in_struct_1;
+    let var_3 = (struct_4.field_0xc + 0x2) * 0x4;
+    if struct_4.field_0xe == 0x0 {
+        *in_log_palette_2 = ctx.PTR_LOOP_1050_1000;
+        mem_op_1000_179c(ctx, var_3, param_3 as u16, 0x1000);
+        struct_4.field_0xe = var_3;
+        (struct_4.field_0xe + 0x2) = param_3;
+        *struct_4.field_0xe = 0x300;
+        ptr_14 = struct_4.field_0xe;
+        (ptr_14 + 0x2) = struct_4.field_0xc;
+        ptr_2 = struct_4.field_0xe;
+        ptr_13 = (ptr_2 & 0xffff0000 | (ptr_2 + 0x4));
+        ptr_12 = struct_4.field_0x4;
+        var_11 = 0x0;
         loop {
-            pi_var1 = &local_struct_1.field_0xc;
-            if (*pi_var1 == iStack14 || *pi_var1 < iStack14) {
+            ptr_1 = struct_4.field_0xc;
+            if (*ptr_1 == var_11 || *ptr_1 < var_11) {
                 break;
             }
             // uVar9 = (puStack12 >> 0x10);
-            iVar5 = puStack12;
-            *puStack8 = *(iVar5 + 0x2);
+            var_5 = ptr_12;
+            *ptr_13 = *(var_5 + 0x2);
             // u_var10 = (puStack8 >> 0x10);
-            iVar6 = puStack8;
-            *(iVar6 + 0x1) = *(iVar5 + 0x1);
-            *(iVar6 + 0x2) = *puStack12;
-            *(iVar6 + 0x3) = 0x0;
-            iStack14 += 0x1;
-            puStack8 = (puStack8 & 0xffff0000 | (iVar6 + 0x4));
-            puStack12 = (puStack12 & 0xffff0000 | (iVar5 + 0x4));
+            var_6 = ptr_13;
+            *(var_6 + 0x1) = *(var_5 + 0x1);
+            *(var_6 + 0x2) = *ptr_12;
+            *(var_6 + 0x3) = 0x0;
+            var_11 += 0x1;
+            ptr_13 = (ptr_13 & 0xffff0000 | (var_6 + 0x4));
+            ptr_12 = (ptr_12 & 0xffff0000 | (var_5 + 0x4));
         }
     }
     CreatePalette16(in_log_palette_2);

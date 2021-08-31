@@ -91,7 +91,7 @@ impl FLOATING_SAVE_AREA {
             control_word: 0,
             status_word: 0,
             tag_word: 0,
-            error_offset: (),
+            error_offset: 0,
             error_selector: 0,
             data_offset: 0,
             data_selector: 0,
@@ -181,7 +181,7 @@ impl CONTEXT {
             e_flags: 0,
             esp: 0,
             seg_ss: 0,
-            extended_registers: [],
+            extended_registers: [0;512],
         }
     }
 }

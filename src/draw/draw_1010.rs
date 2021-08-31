@@ -1,13 +1,11 @@
-use crate::defines::{Struct18, Struct19, Struct4, Struct5, Struct_1010_4e08, U32Ptr};
+use crate::defines::{Struct18, Struct19, Struct4, Struct5, Struct_1010_4e08, U32Ptr, Struct43};
 use crate::file::file_1008::read_file_1008_7dee;
 use crate::file::write::write_to_file_1008_7e1c;
 use crate::global::AppContext;
 use crate::pass::pass_1018::pass1_1018_4dce;
 use crate::struct_ops::struct_1018::struct_op_1018_4cda;
 use crate::sys_api::sys_1000_3f9c;
-use crate::util::{
-    read_string_from_addr, read_struct_from_addr, write_string_to_addr, CARRY1, CONCAT11, SBORROW2,
-};
+use crate::util::{read_string_from_addr, read_struct_from_addr, write_string_to_addr, CARRY1, CONCAT11, SBORROW2, read_func_from_addr};
 use crate::win_struct::{HPEN16, WNDCLASS16};
 use crate::winapi::{swi, CreatePen16, GetStockObject16, WritePrivateProfileString16};
 use crate::{
@@ -36,7 +34,7 @@ pub fn draw_fn_1010_2a32(
     ctx: &mut AppContext,
     param_1: u16,
     param_2: u16,
-    ret_val: U32Ptr,
+    mut ret_val: U32Ptr,
     param_4: u16,
     param_5: &mut u16,
     param_6: u32,
@@ -51,7 +49,7 @@ pub fn draw_fn_1010_2a32(
     extraout_dx: u16,
     in_stack_0000ffca: &mut u16,
     in_stack_0000ffde: u16,
-    stack0xffec: u16,
+    stack0xffec: bool,
     extraout_DX_00: u16,
     extraout_DX_01: u16,
     extraout_DX_02: u16,
@@ -63,7 +61,7 @@ pub fn draw_fn_1010_2a32(
     let u_var4: u32;
     let var_5: u8;
     let u_var6: u16;
-    let var_7: u32;
+    let func_ptr_1: fn();
     let var_8: u32;
     let var_9: U32Ptr;
     let b_force_background: bool;
@@ -73,12 +71,12 @@ pub fn draw_fn_1010_2a32(
     let b_var14: bool;
     let var_15: i16;
     let var_16: u8;
-    let mut var_17: String;
+    let mut var_17: &mut String;
     let var_18: U32Ptr;
     let var_20: i16;
     let hdc: HDC16;
     let bool_24: bool;
-    let mut string_25: String;
+    let mut struct_25: Struct19;
     let var_26: u16;
     let pu_var27: u32;
     let handle_29: HGDIOBJ16;
@@ -124,27 +122,27 @@ pub fn draw_fn_1010_2a32(
             //     TODO: goto LAB_1010_2ad8;
         }
         0x7 => {
-            var_7 = param_8 as u32;
-            (**var_7)();
+            func_ptr_1 = read_func_from_addr::<fn()>(param_8 as u32);
+            func_ptr_1();
             var_15 = param_5 + 0x105;
-            var_17 = read_string_from_addr(extraout_dx);
+            var_17 = read_string_from_addr(extraout_dx as u32);
             pass1_1010_8170(
-                ctx.PTR_LOOP_1050_14cc,
+                ctx.PTR_LOOP_1050_14cc as i16,
                 var_15,
-                extraout_dx as i16,
+                extraout_dx as u32,
                 0x1010,
-                0,
             );
             var_20 = param_5 * 0x4;
             (ret_val + var_20 + 0x26) = var_15 as u32;
             // (ret_val + var_20 + 0x28) = var_17;
             write_string_to_addr((ret_val + var_20 + 0x28), &var_17);
             handle_29 = ctx.data_seg;
-            string_25 = pass1_1008_4772(Some(ret_val + var_20 + 0x26));
+            struct_25 = pass1_1008_4772(Some(read_struct_from_addr::<Struct43>(ret_val + var_20 + 0x26)));
             // puVar17 = (uVar25 >> 0x10);
-            CreateDC16(read_string_from_addr(0x1008), &string_25, &var_17, var_17);
+            CreateDC16(read_string_from_addr(0x1008), read_string_from_addr(struct_25.field_0x0 as u32), &var_17, var_17);
+
             b_force_background =
-                palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230 + 0xe), &stack0xffec, var_17, 0x1008);
+                palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230.field_0xe), stack0xffec, var_17, 0x1008);
             handle = SelectObject16(0x1008, CONCAT11(var_30, var_23));
             hdc = ctx.s_tile2_bmp_1050_1538 as HDC16;
             handle_29 = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, handle_29);
@@ -214,7 +212,7 @@ pub fn draw_fn_1010_2a32(
             );
             var_15 = CONCAT11(var_31, var_30) as i16;
             var_9 = CONCAT13(param_1, CONCAT12(var32, var_15 as u16));
-            *var_9 = (ctx.s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
+            var_9 = (ctx.s_SCInternalPutBldg2_site_0x_08lx__1050_5099 + 0x1);
             (var_15 + 0x2) = 0x1010;
             pass1_1018_4dce(
                 CONCAT13(param_1, CONCAT12(var32, var_15 as u16)),
@@ -244,7 +242,7 @@ pub fn draw_fn_1010_2a32(
                     ctx,
                     u_var4,
                     (u_var4 >> 0x10),
-                    ctx.s__d__d__d__d_1050_14ae,
+                    ctx.s__d__d__d__d_1050_14ae as u16,
                     ctx.data_seg,
                     ((ret_val * 0x8 + param_1 + 0x22) as u16),
                     &stack0xfffa,
@@ -255,7 +253,7 @@ pub fn draw_fn_1010_2a32(
                 );
                 u_var4 = (param_1 + 0xa) as u32;
                 WritePrivateProfileString16(
-                    &ctx.PTR_LOOP_1050_1000,
+                    read_string_from_addr(ctx.PTR_LOOP_1050_1000),
                     u_var4,
                     (u_var4 >> 0x10),
                     (param_1 + 0xe),
@@ -355,8 +353,8 @@ pub fn draw_fn_1010_2a32(
                 };
                 var_15 = switch_1008_73ea(param_5, param_6 as u16, in_stack_0000ffde as i16);
                 (pu_var27 + 0x4) = var_15 as u32;
-                var_7 = ((ret_val + 0x12) + 0x4);
-                (**var_7)();
+                func_ptr_1 = ((ret_val + 0x12) + 0x4);
+                (**func_ptr_1)();
                 u_var11 += 0x1;
                 var_17 = extraout_DX_02;
                 *in_stack_0000ffca = var_26;
@@ -365,8 +363,8 @@ pub fn draw_fn_1010_2a32(
                 ctx.PTR_LOOP_1050_0310 = 0x6d2;
                 return var_18 as u16;
             }
-            var_7 = *pu_var27;
-            (**var_7)();
+            func_ptr_1 = *pu_var27;
+            (**func_ptr_1)();
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return extraout_DX_01;
         }
@@ -382,7 +380,7 @@ pub fn draw_fn_1010_2a32(
                 unaff_ss,
             );
             if var_13 != 0x0 {
-                *ret_val = (ctx.s_version__d__d_1050_0012 + 0x8);
+                ret_val = (ctx.s_version__d__d_1050_0012.field_0x8);
                 pass1_1010_715c(
                     CONCAT22(0x1a, var_10 as u16),
                     0x1a,
@@ -627,12 +625,12 @@ pub unsafe fn draw_op_1010_47d0(
     iVar7 = (param_3 * 0x4) as i16;
     (param_1 + iVar7 + 0x26) = i_var4 as u32;
     (param_1 + iVar7 + 0x28) = puVar6;
-    let mut init_data = 0x0;
+    let mut init_data = _devicemodeA{};
     uVar9 = pass1_1008_4772((param_1 + 0x26 + iVar7));
     // output = (uVar9 >> 0x10);
     var_18 = uVar9;
     var_16 = output;
-    local_14 = CreateDC16(0x1008, &var_18, &output, init_data);
+    local_14 = CreateDC16(0x1008, &var_18, &output, &init_data);
     b_force_background =
         palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230 + 0xe), &local_14, output, 0x1008);
     handle = SelectObject16(0x1008, pen_handle);
@@ -696,7 +694,7 @@ pub fn pt_in_rect_1010_4e08(
     (i_var4.field_0x22) = (i_var4.field_0x20);
     var2 = false;
     (i_var4.field_0x24) = 0x0;
-    let var12 = 0x0;
+    let mut var12 = 0x0;
     let mut iStack10 = 0x0;
     loop {
         let var1 = (i_var4.field_0x30) as u32;

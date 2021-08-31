@@ -256,7 +256,7 @@ pub fn read_file_1030_4e70(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: U32Ptr,
-    param_3: &mut Vec<u8>,
+    param_3: U32Ptr,
     param_4: i32,
     param_5: &mut u32,
     stack0xfffe: u16,
@@ -474,31 +474,30 @@ pub fn read_file_1030_5c52(
     ctx: &mut AppContext,
     param_1: u32,
     param_2: u32,
-    param_3: u16,
+    param_3: &mut bool,
     param_4: u16,
 ) -> bool {
     let b_var1: bool;
     let u_var2: u16;
 
     // u_var2 = (param_2 >> 0x10);
-    read_file_1008_7cfe(param_2, u_var2, 0x9, 0x1008, param_4);
-    if (param_3 != 0x0) {
+    read_file_1008_7cfe(ctx, param_2, 0x9, 0x1008, param_4);
+    if param_3 != 0x0 {
         b_var1 = read_file_1008_7dee(
             param_2,
-            u_var2,
             param_1,
             0x0,
             (param_1 >> 0x10),
             0x24,
             0x1008,
         );
-        if (b_var1 == 0x0) {
+        if b_var1 == false {
             ctx.PTR_LOOP_1050_0310 = 0x6d2;
             return b_var1;
         }
-        param_3 = 0x1;
+        *param_3 = true;
     }
-    return param_3;
+    return *param_3;
 }
 
 pub fn file_1030_778c(
