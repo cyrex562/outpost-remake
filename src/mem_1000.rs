@@ -34,8 +34,8 @@ pub fn mem_op_1000_0052(param_1: u32, param_2: u32) {
 }
 
 pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u16) -> bool {
-    let pu_var1: U32Ptr;
-    let pi_var2: U32Ptr;
+    let ptr1: U32Ptr;
+    let ptr2: U32Ptr;
     let b_var3: bool;
     let u_var4: u16;
     let u_var5: u32;
@@ -90,7 +90,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
             if u_var5 < 0xc {
                 u_var4 = pass1_1000_1e61(ctx, param_2, 0x2, Some(param_1), ctx.data_seg);
                 if u_var4 == 0x0 {
-                    return '\x01' as u32 - (param_1 + 0xa) == 0x0;
+                    return '\x01' as u32 - (param_1.field_0xa) == 0x0;
                 }
                 d_var6 = mem_op_1000_1532(ctx, param_2);
                 u_var5 = u_var9 & 0xfffe;
@@ -102,13 +102,13 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
             0xc,
             0x0,
         );
-        u_var5 = u_var8 * 0xc + param_1 + 0x42;
+        u_var5 = u_var8 * 0xc + param_1.field_0x42;
     }
-    pu_var1 = make_u16_ptr(param_1 + 0x1e);
-    u_var9 = *pu_var1 as u32;
-    *pu_var1 = *pu_var1 - d_var6;
-    pi_var2 = (param_1 + 0x20);
-    *pi_var2 = (*pi_var2 - (d_var6 >> 0x10)) - (u_var9 < d_var6);
+    ptr1 = param_1.field_0x1e;
+    u_var9 = *ptr1 as u32;
+    *ptr1 = *ptr1 - d_var6;
+    ptr2 = (param_1.field_0x20);
+    *ptr2 = (*ptr2 - (d_var6 >> 0x10)) - (u_var9 < d_var6);
     if u_var5 != 0x0 {
         u_var10 = 0x0;
         u_var9 = 0xc;
@@ -119,15 +119,15 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, param_1: &mut StructA, param_2: u1
             u_var9 as u16,
             u_var10,
         );
-        u_stack14 = u_var8 * 0xc + param_1 + 0x36;
+        u_stack14 = u_var8 * 0xc + param_1.field_0x36;
     }
     // u_stack10 = (d_var7 >> 0x10);
     u_stack12 = d_var7 as u16;
-    pu_var1 = (param_1 + 0x1e);
-    u_var9 = *pu_var1;
-    *pu_var1 = *pu_var1 + u_stack12;
-    pi_var2 = (param_1 + 0x20);
-    *pi_var2 = *pi_var2 + u_stack10 + CARRY2(u_var9 as u16, u_stack12);
+    ptr1 = (param_1.field_0x1e);
+    u_var9 = *ptr1;
+    *ptr1 = *ptr1 + u_stack12;
+    ptr2 = (param_1.field_0x20);
+    *ptr2 = *ptr2 + u_stack10 + CARRY2(u_var9 as u16, u_stack12);
     u_var9 = (param_1 + 0xa);
     loop {
         u_var10 = u_var5 as u16;
@@ -1192,7 +1192,7 @@ pub fn mem_1000_2bb6(
             if (bVar4 & 0x10) == 0x0 {
                 // TODO: goto LAB_1000_2c37;
             }
-            *param_2 = param_2[0x3];
+            param_2[0] = param_2[0x3];
             bVar4 &= 0xfe;
         }
         (param_2 + 0x5) = bVar4 & 0xef | 0x2;

@@ -1646,13 +1646,13 @@ pub fn pt_in_rect_op_1020_58ce(
     param_4: u8,
     param_5: &RECT16,
     param_6: u16,
+    in_dx: u16,
 ) {
-    let ppc_var1: u32;
-    let u_var2: u32;
-    let u_var3: u16;
-    let b_var4: bool;
-    let msg: U32Ptr;
-    let in_dx: U32Ptr;
+    let var1: u32;
+    let var2: u32;
+    let var3: u16;
+    let bool4: bool;
+    let ptr5: U32Ptr;
     let u_var5: u16;
     let pu_var6: U32Ptr;
     let i_var7: i16;
@@ -1669,7 +1669,7 @@ pub fn pt_in_rect_op_1020_58ce(
     let pu_stack38: U32Ptr;
     let u_stack30: u32;
     let pu_stack26: U32Ptr;
-    let local_18: [u16; 0x2];
+    let mut array_18: [u16; 0x2] = [0;2];
     let u_stack20: u16;
     let u_stack18: u32;
     let u_stack14: u16;
@@ -1685,17 +1685,17 @@ pub fn pt_in_rect_op_1020_58ce(
     u_stack10 = (param_4 & 0x4) as u16;
     // u_var9 = (param_1 >> 0x10);
     i_var7 = param_1 as i16;
-    u_var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x2);
+    var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x2);
     u_stack30._2_2_ = in_dx;
     rect = param_5;
-    if (u_var3 == 0x0) {
+    if (var3 == 0x0) {
         //LAB_1020_5942:
-        u_var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x4);
+        var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x4);
         rect_00 = rect;
-        if (u_var3 == 0x0) {
+        if (var3 == 0x0) {
             //LAB_1020_5a16:
-            u_var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x1);
-            if (u_var3 != 0x0) {
+            var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x1);
+            if (var3 != 0x0) {
                 u_stack30 = pass1_1020_6498(((i_var7 + 0xf6) as u32), 0x1);
                 u_stack30._2_2_ = (u_stack30 >> 0x10);
                 // TODO: refactor for loop
@@ -1730,8 +1730,8 @@ pub fn pt_in_rect_op_1020_58ce(
                 //   rect_00 = ctx.s_tile2_bmp_1050_1538;
                 // }
             }
-            u_var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x3);
-            if (u_var3 != 0x0) {
+            var3 = pass1_1020_64d4(((i_var7 + 0xf6) as u32), 0x3);
+            if (var3 != 0x0) {
                 u_stack30._0_2_ = &local_6;
                 pt_in_rect_1020_5856(
                     param_1,
@@ -1742,16 +1742,16 @@ pub fn pt_in_rect_op_1020_58ce(
                 if (u_var5 != 0x0) {
                     pu_stack26 = (u_stack30)[0x17];
                     if (((u_stack8 == 0x0) || (u_stack10 == 0x0)) && (u_stack10 == 0x0)) {
-                        local_18[0] = 0x1;
+                        array_18[0] = 0x1;
                     } else {
-                        local_18[0] = 0x2;
+                        array_18[0] = 0x2;
                     }
                     u_stack20 = (u_stack30)[0x6];
                     u_stack18 = CONCAT22(u_stack18._2_2_, (u_stack30)[0x7]);
                     if ((pu_stack26 == 0xb) || (pu_stack26 == 0x37)) {
-                        u_var2 = (i_var7 + 0xfa) as u32;
+                        var2 = (i_var7 + 0xfa) as u32;
                         // u_var10 = (u_var2 >> 0x10);
-                        i_var8 = u_var2 as i16;
+                        i_var8 = var2 as i16;
                         u_stack46 = (i_var8 + 0x20) as u32;
                         u_var5 = (i_var8 + 0x22) as u16;
                         if ((u_var5 | u_stack46) != 0x0) {
@@ -1782,24 +1782,24 @@ pub fn pt_in_rect_op_1020_58ce(
                             );
                         }
                     }
-                    u_var3 = pass1_1018_25d2(
+                    var3 = pass1_1018_25d2(
                         ((i_var7 + 0xfa) as u32),
-                        local_18[0],
+                        array_18[0],
                         u_stack18 & 0xffff | u_stack20 << 0x10,
                         unaff_di,
                         param_6,
                     );
-                    if (u_var3 != 0x0) {
+                    if (var3 != 0x0) {
                         return;
                     }
-                    u_var3 = pass1_1020_5d56(
+                    var3 = pass1_1020_5d56(
                         param_1,
                         CONCAT22(u_stack30._2_2_, u_stack30 as u16),
                         u_var5,
                         unaff_di,
                         param_6,
                     );
-                    if (u_var3 != 0x0) {
+                    if (var3 != 0x0) {
                         return;
                     }
                 }
@@ -1813,8 +1813,8 @@ pub fn pt_in_rect_op_1020_58ce(
         pu_var6 = u_stack30._2_2_;
         u_stack14 = u_var10;
         pu_stack12 = u_stack30._2_2_;
-        b_var4 = PtInRect16(rect, CONCAT22(u_stack4, local_6));
-        if (b_var4 == 0x0) {
+        bool4 = PtInRect16(rect, CONCAT22(u_stack4, local_6));
+        if (bool4 == 0x0) {
             // goto
             // LAB_1020_5a16;
         }
@@ -1835,8 +1835,8 @@ pub fn pt_in_rect_op_1020_58ce(
                 i_var7 += 0xe2;
             }
             u_stack30 = CONCAT22(u_var9, i_var7 as u16);
-            ppc_var1 = (*ctx.PTR_LOOP_1050_02a0 + 0x4);
-            (**ppc_var1)(
+            var1 = (*ctx.PTR_LOOP_1050_02a0 + 0x4);
+            (**var1)(
                 0x1010,
                 ctx.PTR_LOOP_1050_02a0,
                 (ctx.PTR_LOOP_1050_02a0 >> 0x10),
@@ -1846,21 +1846,21 @@ pub fn pt_in_rect_op_1020_58ce(
                 u_var10,
                 pu_var6,
             );
-            pu_var12 = pass1_1008_941a(CONCAT22(param_6, local_18), 0x1, 0x86);
-            msg = local_18;
+            pu_var12 = pass1_1008_941a(CONCAT22(param_6, array_18), 0x1, 0x86);
+            ptr5 = array_18;
             rect = 0x1008;
             win_1008_5c9e(
                 ctx.PTR_LOOP_1050_02a0,
-                CONCAT22(param_6, msg),
-                msg,
+                CONCAT22(param_6, ptr5),
+                ptr5,
                 (pu_var12 >> 0x10),
                 param_6,
             );
-            if (msg != 0x0) {
+            if (ptr5 != 0x0) {
                 return;
             }
             u_var9 = 0xf6;
-            pu_stack26 = msg;
+            pu_stack26 = ptr5;
             //       TODO: goto LAB_1020_5936;
         }
         u_var9 = 0xf6;
@@ -1870,16 +1870,16 @@ pub fn pt_in_rect_op_1020_58ce(
         u_stack14 = u_var11 as u16;
         rect = ctx.s_tile2_bmp_1050_1538;
         pu_stack12 = u_stack30._2_2_;
-        b_var4 = PtInRect16(param_5, CONCAT22(u_stack4, local_6));
-        if (b_var4 == 0x0) {
+        bool4 = PtInRect16(param_5, CONCAT22(u_stack4, local_6));
+        if (bool4 == 0x0) {
             // goto
             // LAB_1020_5942;
         }
         u_var9 = 0x68;
     }
-    msg = 0x0;
+    ptr5 = 0x0;
     //LAB_1020_5936:
-    PostMessage16(rect, msg, msg, CONCAT22(0x111, u_var9) as i32);
+    PostMessage16(rect, ptr5, ptr5, CONCAT22(0x111, u_var9) as i32);
     return;
 }
 

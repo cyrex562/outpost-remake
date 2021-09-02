@@ -1043,14 +1043,14 @@ pub fn invalidate_rect_1040_c028(
     let iVar7: i16;
     let uVar9: u16;
     let rect: *mut RECT16;
-    let local_a: RECT16;
+    let mut rect_2: RECT16;
     let i_stack6: i16;
     let i_stack4: i16;
     let piVar8: U32Ptr;
 
     iVar7 = param_1;
     // uVar9 = (param_1 >> 0x10);
-    if (param_2 == 0x8) {
+    if param_2 == 0x8 {
         GetClientRect16(param_3, &local_a);
         u_var1 = (iVar7 + 0x6);
         u_var3 = (iVar7 + 0x6);
