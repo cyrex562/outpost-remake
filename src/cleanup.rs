@@ -163,7 +163,7 @@ pub fn unk_destroy_win_op_1010_2fa0(
     return;
 }
 
-pub unsafe fn unk_destroy_win_op_1010_305a(
+pub fn unk_destroy_win_op_1010_305a(
     ctx: &mut AppContext,
     struct_1: &mut Struct27,
     param_2: i16,
