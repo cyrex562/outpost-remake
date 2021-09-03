@@ -22,8 +22,8 @@ use crate::winapi::{
     DrawText16, EndPaint16, FillRect16, FrameRect16, GetClientRect16, GetCurrentPosition16,
     GetDC16, GetDlgCtrlID16, GetProp16, GetStockObject16, GetSystemMetrics16, GetTextExtent16,
     GetWindowDC16, GetWindowLong16, GetWindowRect16, GrayString16, InvalidateRect16, IsIconic16,
-    LineTo16, LoadIcon16, MoveTo16, Rectangle16, ReleaseDC16, SelectObject16, SelectPalette16,
-    SetBkColor16, SetMapMode16, SetTextColor16, TextOut16,
+    LineTo16, LoadIcon16, MoveTo16, PtInRect16, Rectangle16, ReleaseDC16, SelectObject16,
+    SelectPalette16, SetBkColor16, SetMapMode16, SetTextColor16, TextOut16,
 };
 
 pub fn mix_draw_op_1040_21d6(ctx: &mut AppContext, param_1: u32, param_2: HWND16, param_3: u16) {
@@ -393,7 +393,7 @@ pub fn draw_op_1040_7bb2(
                 rect = GetStockObject16(ctx.s_tile2_bmp_1050_1538);
                 FillRect16(ctx.s_tile2_bmp_1050_1538, rect, hbrush);
                 if (i_var4.field_0x76 != 0x0) {
-                    draw_op_1040_82ee(ctx,in_struct_1, ctx.s_tile2_bmp_1050_1538);
+                    draw_op_1040_82ee(ctx, in_struct_1, ctx.s_tile2_bmp_1050_1538);
                 }
                 count = &i_var4.field_0x10;
                 if (*count != '\0') {
@@ -1042,7 +1042,7 @@ pub fn invalidate_rect_1040_c028(
     let u_var6: u16;
     let iVar7: i16;
     let uVar9: u16;
-    let rect: *mut RECT16;
+    let rect: &mut RECT16;
     let mut rect_2: RECT16;
     let i_stack6: i16;
     let i_stack4: i16;
@@ -1051,14 +1051,14 @@ pub fn invalidate_rect_1040_c028(
     iVar7 = param_1;
     // uVar9 = (param_1 >> 0x10);
     if param_2 == 0x8 {
-        GetClientRect16(param_3, &local_a);
+        GetClientRect16(param_3, rect);
         u_var1 = (iVar7 + 0x6);
         u_var3 = (iVar7 + 0x6);
         iVar5 = (u_var3 + 0x16);
         u_var3 = (iVar7 + 0x6);
-        local_a.x = (u_var3 + 0x1a);
+        rect.x = (u_var3 + 0x1a);
         u_var3 = (iVar7 + 0x6);
-        local_a.y = (u_var3 + 0x1c);
+        PtInRect16.y = (u_var3 + 0x1c);
         if (iVar5 != 0x0) {
             if (iVar5 < 0x2) {
                 i_var4 = 0x1;
@@ -1068,7 +1068,7 @@ pub fn invalidate_rect_1040_c028(
             u_var2 = ((iVar5 - i_var4) * 0x4 + u_var1 + 0x2a);
             iVar5 = u_var2;
             u_var2 &= 0xffff0000;
-            local_a.x = (iVar5 + 0x22) + (u_var2 | iVar5 + 0x1e);
+            rect.x = (iVar5 + 0x22) + (u_var2 | iVar5 + 0x1e);
         }
         u_var1 = (iVar7 + 0x6);
         i_stack6 = (u_var1 + 0x1e);
@@ -1089,21 +1089,21 @@ pub fn invalidate_rect_1040_c028(
             u_var2 &= 0xffff0000;
             piVar8 = (u_var2 | iVar7 + 0x1e);
             // uVar9 = (u_var2 >> 0x10);
-            local_a.y = (iVar7 + 0x20) + -0x8;
-            local_a.x = *piVar8;
+            rect_2.y = (iVar7 + 0x20) + -0x8;
+            rect_2.x = *piVar8;
             i_stack6 = (iVar7 + 0x22) + *piVar8;
             i_stack4 = (iVar7 + 0x20);
-            param_4 = &local_a;
+            param_4 = &rect_2;
             rect = 0x0;
             //       TODO: goto LAB_1040_c19d;
         }
-        local_a.x = 0x0;
-        local_a.y = 0x0;
+        rect.x = 0x0;
+        rect.y = 0x0;
         i_stack6 = 0x0;
         i_stack4 = 0x0;
-        GetClientRect16(param_3, &local_a);
+        GetClientRect16(param_3, &rect_2);
         u_var1 = (iVar7 + 0x6);
-        local_a.x = (u_var1 + 0x1a);
+        rect_2.x = (u_var1 + 0x1a);
         u_var1 = (iVar7 + 0x6);
         i_stack6 = (u_var1 + 0x1e);
         i_stack4 += -0x5;
@@ -1114,11 +1114,11 @@ pub fn invalidate_rect_1040_c028(
             u_var1 = (u_var1 + iVar7 * 0x4 + 0x26);
             iVar7 = u_var1;
             // uVar9 = (u_var1 >> 0x10);
-            local_a.y = (iVar7 + 0x20) + (iVar7 + 0x24);
+            rect.y = (iVar7 + 0x20) + (iVar7 + 0x24);
         }
     }
     param_3 = ctx.s_tile2_bmp_1050_1538;
-    rect = &local_a;
+    rect = &rect_2;
     //LAB_1040_c19d:
     InvalidateRect16(param_3, rect, param_4);
     return;
@@ -1154,8 +1154,8 @@ pub fn unk_draw_op_1040_c226(ctx: &mut AppContext, param_1: u32, param_2: HWND16
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     handle = CreatePen16(ctx.s_tile2_bmp_1050_1538, -0x7f80, 0x0);
     handle_00 = SelectObject16(ctx.s_tile2_bmp_1050_1538, handle);
-    draw_line_1040_c302(ctx,param_1, ctx.s_tile2_bmp_1050_1538);
-    draw_op_1040_c38e(ctx,param_1);
+    draw_line_1040_c302(ctx, param_1, ctx.s_tile2_bmp_1050_1538);
+    draw_op_1040_c38e(ctx, param_1);
     SelectObject16(ctx.s_tile2_bmp_1050_1538, handle_00);
     DeleteObject16(ctx.s_tile2_bmp_1050_1538);
     EndPaint16(ctx.s_tile2_bmp_1050_1538, &local_22);

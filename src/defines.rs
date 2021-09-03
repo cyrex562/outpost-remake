@@ -531,3 +531,19 @@ pub struct Struct103 {}
 pub struct Struct219 {}
 
 pub struct Struct218 {}
+
+pub struct Struct645 {}
+
+pub struct Struct707 {}
+
+pub struct Struct225 {}
+
+pub struct Struct226 {}
+
+pub struct Struct227 {}
+
+pub struct Struct239 {}
+
+pub struct Struct234{}
+
+pub struct Struct238{}

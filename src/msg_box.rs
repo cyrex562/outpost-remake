@@ -4,7 +4,7 @@ use crate::global::AppContext;
 use crate::util::SBORROW2;
 use crate::winapi::{MessageBeep16, MessageBox16};
 
-pub fn msg_box_op_1000_1f24(param_1: i16, param_2: u16, param_3: u16, param_4: u16) -> bool {
+pub fn msg_box_op_1000_1f24(ctx: &mut AppContext, param_1: i16, param_2: u16, param_3: u16, param_4: u16) -> bool {
     let pi_var1: U32Ptr;
     let unaff_CS: u16;
 

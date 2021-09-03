@@ -1,12 +1,15 @@
-use crate::defines::{Struct18, Struct19, Struct4, Struct5, Struct_1010_4e08, U32Ptr, Struct43};
+use crate::defines::{Struct18, Struct19, Struct4, Struct43, Struct5, Struct_1010_4e08, U32Ptr};
 use crate::file::file_1008::read_file_1008_7dee;
 use crate::file::write::write_to_file_1008_7e1c;
 use crate::global::AppContext;
 use crate::pass::pass_1018::pass1_1018_4dce;
 use crate::struct_ops::struct_1018::struct_op_1018_4cda;
 use crate::sys_api::sys_1000_3f9c;
-use crate::util::{read_string_from_addr, read_struct_from_addr, write_string_to_addr, CARRY1, CONCAT11, SBORROW2, read_func_from_addr};
-use crate::win_struct::{HPEN16, WNDCLASS16};
+use crate::util::{
+    read_func_from_addr, read_string_from_addr, read_struct_from_addr, write_string_to_addr,
+    CARRY1, CONCAT11, SBORROW2,
+};
+use crate::win_struct::{DEVMODEA, HPEN16, WNDCLASS16};
 use crate::winapi::{swi, CreatePen16, GetStockObject16, WritePrivateProfileString16};
 use crate::{
     mem_1000::mem_op_1000_179c,
@@ -137,12 +140,23 @@ pub fn draw_fn_1010_2a32(
             // (ret_val + var_20 + 0x28) = var_17;
             write_string_to_addr((ret_val + var_20 + 0x28), &var_17);
             handle_29 = ctx.data_seg;
-            struct_25 = pass1_1008_4772(Some(read_struct_from_addr::<Struct43>(ret_val + var_20 + 0x26)));
+            struct_25 = pass1_1008_4772(Some(read_struct_from_addr::<Struct43>(
+                ret_val + var_20 + 0x26,
+            )));
             // puVar17 = (uVar25 >> 0x10);
-            CreateDC16(read_string_from_addr(0x1008), read_string_from_addr(struct_25.field_0x0 as u32), &var_17, var_17);
+            CreateDC16(
+                read_string_from_addr(0x1008),
+                read_string_from_addr(struct_25.field_0x0 as u32),
+                &var_17,
+                var_17,
+            );
 
-            b_force_background =
-                palette_op_1008_4e08((ctx.PTR_LOOP_1050_4230.field_0xe), stack0xffec, var_17, 0x1008);
+            b_force_background = palette_op_1008_4e08(
+                (ctx.PTR_LOOP_1050_4230.field_0xe),
+                stack0xffec,
+                var_17,
+                0x1008,
+            );
             handle = SelectObject16(0x1008, CONCAT11(var_30, var_23));
             hdc = ctx.s_tile2_bmp_1050_1538 as HDC16;
             handle_29 = SelectObject16(ctx.s_tile2_bmp_1050_1538 as HDC16, handle_29);
@@ -273,7 +287,7 @@ pub fn draw_fn_1010_2a32(
             (ret_val + 0x14) = var_17;
             u_var11 = 0x0;
             loop {
-                if (in_stack_0000ffca <= u_var11) {
+                if (*in_stack_0000ffca <= u_var11) {
                     b_var14 = read_file_1008_7dee(
                         param_5,
                         param_6 as u16,
@@ -540,12 +554,19 @@ pub unsafe fn pt_in_rect_1010_40f8(
     }
 }
 
-pub unsafe fn draw_1010_47ae(param_1: u32, param_2: u16, param_3: u16) {
+pub unsafe fn draw_1010_47ae(ctx: &mut AppContext, param_1: u32, param_2: u16, param_3: u16) {
     let UStack4: u16;
 
     UStack4 = 0x0;
     loop {
-        draw_op_1010_47d0(ctx, param_1, (param_1 >> 0x10), UStack4, param_2, param_3 as i16);
+        draw_op_1010_47d0(
+            ctx,
+            param_1,
+            (param_1 >> 0x10),
+            UStack4,
+            param_2,
+            param_3 as i16,
+        );
         UStack4 += 0x1;
         if UStack4 >= 0x10 {
             break;
@@ -625,7 +646,7 @@ pub unsafe fn draw_op_1010_47d0(
     iVar7 = (param_3 * 0x4) as i16;
     (param_1 + iVar7 + 0x26) = i_var4 as u32;
     (param_1 + iVar7 + 0x28) = puVar6;
-    let mut init_data = _devicemodeA{};
+    let mut init_data = DEVMODEA::new();
     uVar9 = pass1_1008_4772((param_1 + 0x26 + iVar7));
     // output = (uVar9 >> 0x10);
     var_18 = uVar9;

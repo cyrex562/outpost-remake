@@ -87,7 +87,7 @@ pub struct AppContext {
     pub s_MciSoundWindow_1050_02bd: String,
     pub s_SCInternalPutBldg2_site_0x_08lx__1050_5099: U32Ptr,
     pub PTR_LOOP_1050_1040: U32Ptr,
-    pub s_New_failed_in_Op__Op_1050_0020: String,
+    pub s_New_failed_in_Op__Op_1050_0020: U32Ptr,
     pub s_DanBrotherton_1050_0302: String,
     pub s_overflow_on_node__d_1050_11ca: Struct_1050_11ca,
     pub PTR_LOOP_1050_5b7c: U32Ptr,
@@ -119,6 +119,8 @@ pub struct AppContext {
     pub s_procHi_1050_5dc6: String,
     pub s_thisLo_1050_5db1: String,
     pub PTR_LOOP_1050_5cd0: U32Ptr,
+    pub s_648_bmp_1050_1919: U32Ptr,
+    pub s_dibtext_bmp_1050_1844: U32Ptr,
 }
 
 impl AppContext {
@@ -204,7 +206,7 @@ impl AppContext {
             s_MciSoundWindow_1050_02bd: "".to_string(),
             s_SCInternalPutBldg2_site_0x_08lx__1050_5099: 0,
             PTR_LOOP_1050_1040: 0,
-            s_New_failed_in_Op__Op_1050_0020: "".to_string(),
+            s_New_failed_in_Op__Op_1050_0020: 0,
             s_DanBrotherton_1050_0302: "".to_string(),
             s_overflow_on_node__d_1050_11ca: Struct_1050_11ca::new(),
             PTR_LOOP_1050_5b7c: 0,
@@ -231,6 +233,8 @@ impl AppContext {
             s_procHi_1050_5dc6: "".to_string(),
             s_thisLo_1050_5db1: "".to_string(),
             PTR_LOOP_1050_5cd0: 0,
+            s_648_bmp_1050_1919: (),
+            s_dibtext_bmp_1050_1844: (),
         }
     }
 }
