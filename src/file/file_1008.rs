@@ -559,7 +559,7 @@ pub fn file_fn_1008_726c(
 pub fn file_1008_7548(
     ctx: &mut AppContext,
     param_1: u32,
-    param_2: &i32,
+    param_2: &mut i32,
     param_3: HFILE16,
     param_4: u16,
 ) {

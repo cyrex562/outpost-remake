@@ -1,5 +1,3 @@
-use std::default::default;
-
 use crate::cleanup::{
     clenaup_win_ui_1018_4d22, delete_palette_1018_e16c, destroy_win_1008_628e,
     ui_cleanup_op_1040_782c,

@@ -37,7 +37,7 @@ pub fn mix_draw_op_1040_21d6(ctx: &mut AppContext, param_1: u32, param_2: HWND16
     let color_00: COLORREF;
     let handle: HANDLE16;
     let in_dx: u16;
-    let i_var6: i16;
+    let i_var6: u32;
     let rect: *mut RECT16;
     let u_var7: u32;
     let u_var8: u16;
@@ -1129,7 +1129,7 @@ pub fn unk_draw_op_1040_c226(ctx: &mut AppContext, param_1: u32, param_2: HWND16
     let handle: HPEN16;
     let handle_00: HGDIOBJ16;
     let u_var2: u16;
-    let local_32: RECT16;
+    let mut local_32: RECT16;
     let iStack46: i16;
     let iStack44: i16;
     let uStack42: u16;

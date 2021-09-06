@@ -43,7 +43,7 @@ use crate::string::string_1000::{
     str_op_1000_3da4, string_1000_3cea, string_1000_3d3e, string_1000_475e,
 };
 use crate::string::string_1008::str_op_1008_60e8;
-use crate::string::string_1010::{load_string_1010_84ac, string_1010_5286};
+use crate::string::string_1010::{load_string_1010_84ac, string_1010_5286, string_op_1010_ada6};
 use crate::string::string_1020::string_op_1020_c2f8;
 use crate::string::string_1040::string_1040_a626;
 use crate::struct_ops::struct_1008::{
@@ -65,6 +65,7 @@ use crate::ui::ui_1040::mov_update_win_1040_93aa;
 use crate::util::{CARRY2, CONCAT12, CONCAT13, CONCAT22, SUB42, ZEXT24};
 use crate::win_struct::{HINSTANCE16, SEGPTR, WNDCLASS16};
 
+use super::pass_1000::pass1_1000_3e2c;
 use super::pass_1008::{pass1_1008_5fd8, pass1_1008_dfa6};
 use super::pass_1040::pass1_1040_c54a;
 
@@ -1275,7 +1276,7 @@ pub fn pass1_1010_195e(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1010_19a4(param_1: U32Ptr, param_2: u16, param_3: u16) {
+pub fn pass1_1010_19a4(ctx: &mut AppContext, param_1: U32Ptr, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
     let pu_var2: U32Ptr;
     let extraout_dx: u16;
@@ -1289,7 +1290,7 @@ pub fn pass1_1010_19a4(param_1: U32Ptr, param_2: u16, param_3: u16) {
             break;
         }
         ppcVar1 = (*param_1 + 0x40);
-        (**ppcVar1)(&USHORT_1050_1028, param_1);
+        (**ppcVar1)(&ctx.USHORT_1050_1028, param_1);
         param_2 = extraout_dx;
     }
     return;
@@ -1297,7 +1298,13 @@ pub fn pass1_1010_19a4(param_1: U32Ptr, param_2: u16, param_3: u16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_1a06(param_1: u32, param_2: u32, param_3: i16, param_4: u16) {
+pub fn pass1_1010_1a06(
+    ctx: &mut AppContext,
+    param_1: u32,
+    param_2: u32,
+    param_3: i16,
+    param_4: u16,
+) {
     let mut pcVar1: String;
     let i_var2: i16;
     let u_var3: u16;
@@ -1325,7 +1332,7 @@ pub fn pass1_1010_1a06(param_1: u32, param_2: u32, param_3: i16, param_4: u16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_1a66(param_1: u32, param_2: u32) -> u8 {
+pub fn pass1_1010_1a66(ctx: &mut AppContext, param_1: u32, param_2: u32) -> u8 {
     let u_var1: u32;
     let u_var2: u8;
     let u_var3: u16;
@@ -1343,7 +1350,7 @@ pub fn pass1_1010_1a66(param_1: u32, param_2: u32) -> u8 {
         if (u_var7 != 0x2) || ((u_var7 & 0xff0000) != 0x0) {
             u_var1 = (param_1 + 0x6e);
             let u_var3 = pass1_1010_b028(u_var1, param_2);
-            BVar4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x5);
+            let rzhttps://www.verizon.com/support/wireless-internet-services-data-only/B3yjm,Var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x5);
             if (BVar4 == 0x0)
                 & &(
                     BVar4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x6),
