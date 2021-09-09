@@ -544,6 +544,14 @@ pub struct Struct227 {}
 
 pub struct Struct239 {}
 
-pub struct Struct234{}
+pub struct Struct234 {}
 
-pub struct Struct238{}
+pub struct Struct238 {}
+
+pub struct Struct455 {}
+
+pub struct Struct241 {}
+
+pub struct Struct242 {}
+
+pub struct Struct498 {}

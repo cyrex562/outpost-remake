@@ -5,7 +5,8 @@ use crate::cleanup::{
 };
 use crate::defines::{
     Struct11, Struct18, Struct19, Struct20, Struct225, Struct226, Struct227, Struct234, Struct238,
-    Struct239, Struct27, Struct645, Struct65, Struct707, Struct79, Struct87, U32Ptr,
+    Struct239, Struct241, Struct242, Struct27, Struct455, Struct498, Struct645, Struct65,
+    Struct707, Struct79, Struct87, U32Ptr,
 };
 use crate::file::file_1008::{
     file_1008_6414, read_file_1008_7c6e, read_file_1008_7dee, write_to_file_1008_7cac,
@@ -1350,14 +1351,12 @@ pub fn pass1_1010_1a66(ctx: &mut AppContext, param_1: u32, param_2: u32) -> u8 {
         if (u_var7 != 0x2) || ((u_var7 & 0xff0000) != 0x0) {
             u_var1 = (param_1 + 0x6e);
             let u_var3 = pass1_1010_b028(u_var1, param_2);
-            let rzhttps://www.verizon.com/support/wireless-internet-services-data-only/B3yjm,Var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x5);
-            if (BVar4 == 0x0)
-                & &(
-                    BVar4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x6),
-                    BVar4 == 0x0,
-                )
-            {
-                u_var2 = '\0' as u8;
+            b_var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x5);
+            if b_var4 == 0x0 {
+                b_var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x6);
+                if (b_var4 == 0) {
+                    u_var2 = '\0' as u8;
+                }
             } else {
                 u_var2 = '\x01' as u8;
             }
@@ -1367,7 +1366,7 @@ pub fn pass1_1010_1a66(ctx: &mut AppContext, param_1: u32, param_2: u32) -> u8 {
     return '\0' as u8;
 }
 
-pub fn pass1_1010_1b04(param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
+pub fn pass1_1010_1b04(ctx: &mut AppContext, param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
     pass1_1010_0f76(param_1, param_3);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -1378,6 +1377,7 @@ pub fn pass1_1010_1b04(param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub fn pass1_1010_1b6e(
+    ctx: &mut AppContext,
     param_1: &mut Struct79,
     param_2: &mut Struct79,
     param_3: u16,
@@ -1397,7 +1397,7 @@ pub fn pass1_1010_1b6e(
     return CONCAT22(param_2, param_1);
 }
 
-pub fn pass1_1010_1bb4(param_1: U32Ptr, param_2: u16, param_3: u16) {
+pub fn pass1_1010_1bb4(ctx: &mut AppContext, param_1: U32Ptr, param_2: u16, param_3: u16) {
     let ppcVar1: u32;
     let pu_var2: U32Ptr;
     let extraout_dx: u16;
@@ -1411,7 +1411,7 @@ pub fn pass1_1010_1bb4(param_1: U32Ptr, param_2: u16, param_3: u16) {
             break;
         }
         ppcVar1 = (*param_1 + 0x40);
-        (**ppcVar1)(&USHORT_1050_1028, param_1);
+        (**ppcVar1)(&ctx.USHORT_1050_1028, param_1);
         param_2 = extraout_dx;
     }
     return;
@@ -1431,10 +1431,11 @@ pub fn pass1_1010_1c16(param_1: u32, param_2: u32, param_3: i16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_1c40(param_1: u32, param_2: u32) -> u8 {
+pub fn pass1_1010_1c40(ctx: &mut AppContext, param_1: u32, param_2: u32) -> u8 {
     // let u_var1: u32; let u_var2: u8;
     let u_var3: u16;
     let b_var4: bool;
+    let u_var2: u8;
     // let u_var5: u16; let u_var6: u16;
     // let uVar7: u32;
     let u_var5 = (param_2 >> 0x10);
@@ -1447,11 +1448,11 @@ pub fn pass1_1010_1c40(param_1: u32, param_2: u32) -> u8 {
         if (u_var7 != 0x2) || ((u_var7 & 0xff0000) != 0x0) {
             u_var1 = (param_1 + 0x6e);
             u_var3 = pass1_1010_b028(u_var1, param_2);
-            BVar4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x11);
-            if (BVar4 == 0x0)
+            b_var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x11);
+            if (b_var4 == 0x0)
                 & &(
-                    BVar4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x12),
-                    BVar4 == 0x0,
+                    b_var4 = pass1_1008_c6ae(ctx.PTR_LOOP_1050_06e0, u_var3, 0x12),
+                    b_var4 == 0x0,
                 )
             {
                 u_var2 = '\0';
@@ -1464,7 +1465,7 @@ pub fn pass1_1010_1c40(param_1: u32, param_2: u32) -> u8 {
     return '\0';
 }
 
-pub fn pass1_1010_1cde(param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
+pub fn pass1_1010_1cde(ctx: &mut AppContext, param_1: U32Ptr, param_2: u8, param_3: u16) -> u16 {
     pass1_1010_0f76(param_1, param_3);
     if ((param_2 & 0x1) != 0x0) {
         fn_ptr_1000_17ce(ctx, param_1, 0x1000);
@@ -1505,7 +1506,7 @@ pub fn pass1_1010_1dd4() -> u16 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_1dda(param_1: u32) {
+pub fn pass1_1010_1dda(ctx: &mut AppContext, param_1: u32) {
     pass1_1010_209e(ctx.PTR_LOOP_1050_0ed0, (param_1 + 0x8));
     return;
 }
@@ -5220,7 +5221,7 @@ pub fn pass1_1010_866c(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
     let u_var1: u32;
     let cVar2: u8;
     let i_var3: i16;
-    let bVar4: bool;
+    let b_var4: bool;
 
     if (param_5 < 0x28) {
         if ((param_5 < 0x25) && (param_5 != 0x23)) {
@@ -5238,7 +5239,7 @@ pub fn pass1_1010_866c(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
                 if (param_5 < 0x33) {
                     return;
                 }
-                bVar4 = SBORROW2(param_5 - 0x33, 0x1);
+                b_var4 = SBORROW2(param_5 - 0x33, 0x1);
                 i_var3 = param_5 - 0x34;
             } else {
                 if (param_5 == 0x49) {
@@ -5248,10 +5249,10 @@ pub fn pass1_1010_866c(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
                 if ((param_5 - 0x49) < 0x2a) {
                     return;
                 }
-                bVar4 = SBORROW2(param_5 - 0x73, 0x5);
+                b_var4 = SBORROW2(param_5 - 0x73, 0x5);
                 i_var3 = param_5 - 0x78;
             }
-            if (((i_var3 != 0x0) && bVar4) == (i_var3 < 0x0)) {
+            if (((i_var3 != 0x0) && b_var4) == (i_var3 < 0x0)) {
                 return;
             }
         }
