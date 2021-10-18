@@ -17,7 +17,7 @@
 #include "../Configuration.h"
 #include "../EventHandler.h"
 #include "../Filesystem.h"
-#include "../Math/MathUtils.h"
+#include "../../archive/MathUtils.h"
 #include "../Utility.h"
 
 #include <GL/glew.h>

@@ -23,7 +23,7 @@
 #include "Utility.h"
 #include "Version.h"
 
-#include "Math/MathUtils.h"
+#include "../archive/MathUtils.h"
 #include "Math/Trig.h"
 
 #include "Mixer/Mixer.h"
