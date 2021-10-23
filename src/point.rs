@@ -1,6 +1,6 @@
 use std::ops::{AddAssign, SubAssign, Sub, Add};
 
-#[derive(Clone,Debug,PartialEq,Default)]
+#[derive(Clone,Debug,PartialEq,Default,PartialOrd)]
 pub struct Point<T> {
     pub x: T,
     pub y: T
@@ -60,6 +60,32 @@ impl Point<T> {
             y: self.y / other.y,
         }
     }
-
-    // TODO: cast trait imp
 }
+
+impl Into<T> for Point<U> {
+    fn into(self) -> Point<T> {
+        Point {
+            x: self.x as T,
+            y: self.y as T,
+        }
+    }
+}
+
+// Vector + (append) Point
+// TODO: no equivalent
+
+// TODO?
+// template <typename BaseType>
+// 	Point(BaseType, BaseType) -> Point<BaseType>;
+
+// pub trait PartialOrd<Rhs = Self>: PartialEq<Rhs>
+// where
+//     Rhs: ?Sized,
+// {
+//     fn partial_cmp(&self, other: &Rhs) -> Option<Ordering>;
+//
+//     fn lt(&self, other: &Rhs) -> bool { ... }
+//     fn le(&self, other: &Rhs) -> bool { ... }
+//     fn gt(&self, other: &Rhs) -> bool { ... }
+//     fn ge(&self, other: &Rhs) -> bool { ... }
+// }
