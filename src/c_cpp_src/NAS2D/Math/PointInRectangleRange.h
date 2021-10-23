@@ -14,7 +14,7 @@
 #include "VectorSizeRange.h"
 #include "Rectangle.h"
 #include "Vector.h"
-#include "Point.h"
+#include "../../archive/Point.h"
 
 
 namespace NAS2D

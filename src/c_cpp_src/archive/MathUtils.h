@@ -9,7 +9,7 @@
 // ==================================================================================
 #pragma once
 
-#include "../NAS2D/Math/Point.h"
+#include "Point.h"
 
 #include <memory>
 #include <string>

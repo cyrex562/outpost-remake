@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include "Vector.h"
+#include "../NAS2D/Math/Vector.h"
 
 
 namespace NAS2D

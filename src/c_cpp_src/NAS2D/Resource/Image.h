@@ -10,7 +10,7 @@
 #pragma once
 
 #include "../Renderer/Color.h"
-#include "../Math/Point.h"
+#include "../../archive/Point.h"
 #include "../Math/Vector.h"
 
 #include <string>
