@@ -1,0 +1,88 @@
+#pragma once
+
+#include <NAS2D/Signal/Signal.h>
+#include <NAS2D/Math/Point.h>
+#include <NAS2D/Math/Vector.h>
+#include <NAS2D/Math/Rectangle.h>
+
+
+/**
+ * Implements a base for all GUI Controls to derive from.
+ * 
+ * The Control class is the base class from which all GUI controls inherit
+ * from.
+ */
+class Control
+{
+
+	using ResizeSignal = NAS2D::Signal<Control*>;
+	using OnMoveSignal = NAS2D::Signal<NAS2D::Vector<int>>;
+
+	Control() = default;
+	virtual ~Control() = default;
+
+	NAS2D::Point<int> position() const { return mRect.startPoint(); }
+	void position(NAS2D::Point<int> pos);
+
+	int positionX();
+	int positionY();
+
+	OnMoveSignal::Source& moved();
+
+	void highlight(bool highlight);
+	bool highlight() const;
+
+	void enabled(bool enabled);
+	bool enabled() const;
+
+	void visible(bool visible);
+	bool visible() const;
+
+	virtual void hide() { visible(false); }
+	virtual void show() { visible(true); }
+
+	const NAS2D::Rectangle<int>& rect() const;
+
+	virtual void hasFocus(bool focus);
+	bool hasFocus() const;
+
+	NAS2D::Vector<int> size() const { return mRect.size(); }
+	void size(NAS2D::Vector<int> newSize);
+	void size(int newSize);
+
+	void width(int w);
+	void height(int h);
+
+	ResizeSignal::Source& resized();
+
+	virtual void update() {}
+
+protected:
+	/**
+	 * Called whenever the Control's position is changed.
+	 * 
+	 * \param	displacement	Difference in position.
+	 */
+	virtual void onMove(NAS2D::Vector<int> displacement) { mOnMoveSignal(displacement); }
+
+	virtual void onResize() { mOnResizeSignal(this); }
+
+	virtual void onVisibilityChange(bool /*visible*/) {}
+
+	virtual void onEnableChange() {}
+
+	virtual void onFocusChange() {}
+
+	OnMoveSignal mOnMoveSignal; /**< Signal fired whenever the position of the Control changes. */
+	ResizeSignal mOnResizeSignal;
+
+	NAS2D::Rectangle<int> mRect; /**< Area of the Control. */
+
+	bool mEnabled = true; /**< Flag indicating whether or not the Control is enabled. */
+	bool mHasFocus = false; /**< Flag indicating that the Control has input focus. */
+	bool mVisible = true; /**< Flag indicating visibility of the Control. */
+	bool mHighlight = false; /**< Flag indicating that this Control is highlighted. */
+
+
+	virtual void draw() {}
+};
