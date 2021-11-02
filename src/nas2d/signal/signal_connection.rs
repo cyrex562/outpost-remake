@@ -8,48 +8,44 @@
 // = Acknowledgment of your use of NAS2D is appreciated but is not required.
 // ==================================================================================
 
-#pragma once
+use crate::nas2d::signal::signal_source::SignalSource;
 
-#include "Delegate.h"
-#include "SignalSource.h"
+// using SignalType = SignalSource<Params...>;
+type SignalType = SignalSource;
+// using DelegateType = typename SignalType::DelegateType;
 
-
-namespace NAS2D
+// template <typename... Params>
+pub struct SignalConnection
 {
-
-
-	template <typename... Params>
-	class SignalConnection
-	{
-
-		using SignalType = SignalSource<Params...>;
-		using DelegateType = typename SignalType::DelegateType;
-
-		// No copy/move construction/assignment
-		// This class is designed to handle a parent object's connection to a signal
-		// The delegate parameter is likely tied to the address of the parent object
-		// When parent object is copied/moved, a new updated connection must be formed
-		// Disable copy/move to remove default copy/move from parent objects
-		SignalConnection(const SignalConnection&) = delete;
-		SignalConnection(SignalConnection&&) = delete;
-		SignalConnection& operator=(const SignalConnection&) = delete;
-		SignalConnection& operator=(SignalConnection&&) = delete;
-
-		SignalConnection(SignalType& signalSource, DelegateType delegate) :
-			mSignalSource{signalSource},
-			mDelegate{delegate}
-		{
-			mSignalSource.connect(mDelegate);
-		}
-
-		~SignalConnection()
-		{
-			mSignalSource.disconnect(mDelegate);
-		}
-
-
-		SignalType& mSignalSource;
-		DelegateType mDelegate;
-	};
-
+    // No copy/move construction/assignment
+    // This class is designed to handle a parent object's connection to a signal
+    // The delegate parameter is likely tied to the address of the parent object
+    // When parent object is copied/moved, a new updated connection must be formed
+    // Disable copy/move to remove default copy/move from parent objects
+    pub m_signal_source: SignalType,
+    pub m_delegate: DelegateType,
 }
+
+impl SignalConnection {
+    // SignalConnection(const SignalConnection&) = delete;
+    // SignalConnection(SignalConnection&&) = delete;
+    // SignalConnection& operator=(const SignalConnection&) = delete;
+    // SignalConnection& operator=(SignalConnection&&) = delete;
+    // SignalConnection(SignalType& signalSource, DelegateType delegate) :
+    // mSignalSource{signalSource}, mDelegate{delegate}
+    // {
+    //     mSignalSource.connect(mDelegate);
+    // }
+    pub fn new(signal_source: &SignalType, delegate: DelegateType) -> Self {
+        Self {
+            m_signal_source: SignalSource {},
+            m_delegate: ()
+        }
+    }
+
+// ~SignalConnection()
+// {
+// mSignalSource.disconnect(mDelegate);
+// }
+}
+

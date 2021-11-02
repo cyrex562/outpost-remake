@@ -1,9 +1,9 @@
 use std::collections::HashMap;
+use std::io::empty;
 use std::process::Output;
 
-#[derive(Debug,Clone,PartialOrd, PartialEq)]
-pub struct DelegateMemento
-{
+#[derive(Debug, Clone, PartialOrd, PartialEq)]
+pub struct DelegateMemento {
     // TODO:
     // DelegateMemento& operator=(const DelegateMemento& right)
     // {
@@ -14,13 +14,11 @@ pub struct DelegateMemento
     // inline bool operator<(const DelegateMemento& right) { return IsLess(right); }
     // inline bool operator>(const DelegateMemento& right) { return right.IsLess(*this); }
     pub m_pthis: i32,
-    pub m_pfunction: i32,
+    pub m_pfunction: Option<i32>,
 }
 
 impl DelegateMemento {
-
-    pub fn set_memento_from(&mut self, right: &DelegateMemento)
-    {
+    pub fn set_memento_from(&mut self, right: &DelegateMemento) {
         self.m_pFunction = right.m_pFunction;
         self.m_pthis = right.m_pthis;
     }
@@ -37,51 +35,36 @@ impl DelegateMemento {
         self.set_memento_from(right)
     }
 
-    pub fn bind_static_func(&mut self, p_parent: DerivedClass, static_function_invoker: ParentInvokerSig, function_to_bind: Option<fn()>) {
+    pub fn bind_static_func(&mut self,
+                            p_parent: DerivedClass,
+                            static_function_invoker: ParentInvokerSig,
+                            function_to_bind: Option<fn()>,
+    ) {
         if !function_to_bind.is_some() {
-            
+            self.m_pfunction = None;
+        } else {
+            self.bind_mem_func(p_parent, static_function_invoker);
         }
+        // self.m_pthis = function_to_bind;
     }
 
-        template <typename DerivedClass, typename ParentInvokerSig>
-        inline void bindstaticfunc(DerivedClass* pParent, ParentInvokerSig static_function_invoker, StaticFuncPtr function_to_bind)
-        {
-            if (!function_to_bind)
-            {
-                m_pFunction = nullptr;
-            }
-            else
-            {
-                bindmemfunc(pParent, static_function_invoker);
-            }
-            static_assert(sizeof(GenericClass*) != sizeof(function_to_bind), "Can't use evil method");
-            m_pthis = horrible_cast<GenericClass*>(function_to_bind);
+    pub fn get_static_function(&mut self) -> fn() {
+        unimplemented!()
+    }
+
+    pub fn is_equal_to_static_func_ptr(&mut self, func_ptr: Option<fn()>) -> bool {
+        if func_ptr.is_none() {
+            //return empty()
+        } else {
+            // return funcptr == reinterpret_cast<StaticFuncPtr>(GetStaticFunction());
         }
-
-        inline UnvoidStaticFuncPtr GetStaticFunction() const
-        {
-            static_assert(sizeof(UnvoidStaticFuncPtr) != sizeof(this), "Can't use evil method");
-            return horrible_cast<UnvoidStaticFuncPtr>(this);
-        }
-
-
-        inline bool IsEqualToStaticFuncPtr(StaticFuncPtr funcptr)
-        {
-            if (!funcptr)
-            {
-                return empty();
-            }
-            else
-            {
-                return funcptr == reinterpret_cast<StaticFuncPtr>(GetStaticFunction());
-            }
-        }
-    };
-
+        todo!()
+    }
 }
 
 // using DesiredRetType = typename detail::DefaultVoidToVoid<RetType>::type;
 pub struct DesiredRetType {}
+
 // using StaticFunctionPtr = DesiredRetType (*)(Params...);
 // using UnvoidStaticFunctionPtr = RetType (*)(Params...);
 // using GenericMemFn = RetType (detail::GenericClass::*)(Params...);
@@ -97,12 +80,12 @@ pub struct SafeBoolStruct {
 type UselessTypeDef = SafeBoolStruct;
 type UnspecifiedBoolType = fn() -> SafeBoolStruct;
 
-#[derive(Debug,Clone,PartialOrd,PartialEq)]
+#[derive(Debug, Clone, PartialOrd, PartialEq)]
 pub struct DelegateX {
     pub closure: ClosureType,
 }
-impl DelegateX {
 
+impl DelegateX {
     pub fn new() -> Self {
         // clear()
         Self {
@@ -132,13 +115,7 @@ impl DelegateX {
     //     m_Closure.bindmemfunc(static_cast<X*>(pthis), function_to_bind);
     // }
 
-    template <typename X, typename Y>
-    inline void Bind(Y* pthis, DesiredRetType (X::*function_to_bind)(Params...))
-    {
-        m_Closure.bindmemfunc(static_cast<X*>(pthis), function_to_bind);
-    }
-
-    pub fn bind(&mut self, function_to_bind: fn() -> DesiredRetType {
+    pub fn bind(&mut self, function_to_bind: fn() -> DesiredRetType) {
         self.closure.bind_mem_func(self, function_to_bind)
     }
 
@@ -198,119 +175,94 @@ impl DelegateX {
     }
 
 
-    pub fn invoke_static_function(&self, params: &HashMap<String, (String, String)>) -> RetType
-    {
+    pub fn invoke_static_function(&self, params: &HashMap<String, (String, String)>) -> RetType {
         self.closure.get_static_function(params)
     }
 }
 
+// using BaseType = DelegateX<RetType, Params...>; type BaseType = DelegateX;
+// using SelfType = Delegate; type SelfType = Delegate;
+
 // template <typename RetType, typename... Params>
-pub struct Delegate<RetType(Params...)> : public DelegateX<RetType, Params...>
-{
+// <RetType(Params...)> : public DelegateX<RetType, Params...>
+pub struct Delegate {}
 
-    using BaseType = DelegateX<RetType, Params...>;
-    using SelfType = Delegate;
-
-    Delegate() = default;
-
-    template <typename X, typename Y>
-    Delegate(Y* pthis, RetType (X::*function_to_bind)(Params...)) :
-        BaseType(pthis, function_to_bind)
-    {}
-
-    template <typename X, typename Y>
-    Delegate(const Y* pthis, RetType (X::*function_to_bind)(Params...) const) :
-        BaseType(pthis, function_to_bind)
-    {}
-
-    Delegate(RetType (*function_to_bind)(Params...)) :
-        BaseType(function_to_bind)
-    {}
-
-    Delegate& operator=(const BaseType& x)
-    {
-        *static_cast<BaseType*>(this) = x;
-        return *this;
+impl Delegate {
+    pub fn new() -> Self {
+        Self {}
     }
+
+    // template <typename X, typename Y>
+    // Delegate(Y* pthis, RetType (X::*function_to_bind)(Params...)) :
+    //     BaseType(pthis, function_to_bind)
+    // {}
+
+    // template <typename X, typename Y>
+    // Delegate(const Y* pthis, RetType (X::*function_to_bind)(Params...) const) :
+    //     BaseType(pthis, function_to_bind)
+    // {}
+
+    // Delegate(RetType (*function_to_bind)(Params...)) :
+    //     BaseType(function_to_bind)
+    // {}
+
+    // Delegate& operator=(const BaseType& x)
+    // {
+    //     *static_cast<BaseType*>(this) = x;
+    //     return *this;
+    // }
 }
 
-
-
-template <typename X, typename Y, typename RetType, typename... Params>
-DelegateX<RetType, Params...> MakeDelegate(Y* x, RetType (X::*func)(Params...))
-{
-    return DelegateX<RetType, Params...>(x, func);
+// template <typename X, typename Y, typename RetType, typename... Params>
+// DelegateX<RetType, Params...> MakeDelegate(Y* x, RetType (X::*func)(Params...))
+// {
+// return DelegateX<RetType, Params...>(x, func);
+// }
+pub fn make_delegate() -> DelegateX {
+    DelegateX::new()
 }
 
-template <typename X, typename Y, typename RetType, typename... Params>
-DelegateX<RetType, Params...> MakeDelegate(Y* x, RetType (X::*func)(Params...) const)
-{
-    return DelegateX<RetType, Params...>(x, func);
-}
+// template <typename X, typename Y, typename RetType, typename... Params>
+// DelegateX<RetType, Params...> MakeDelegate(Y* x, RetType (X::*func)(Params...) const)
+// {
+//     return DelegateX<RetType, Params...>(x, func);
+// }
 
 // template <typename GenericMemFunc, typename StaticFuncPtr, typename UnvoidStaticFuncPtr>
-pub struct ClosurePtr : public DelegateMemento
-{
+pub struct ClosurePtr {}
 
-template <typename X, typename XMemFunc>
-inline void bindmemfunc(X* pthis, XMemFunc function_to_bind)
-{
-m_pthis = SimplifyMemFunc<sizeof(function_to_bind)>::Convert(pthis, function_to_bind, m_pFunction);
+impl ClosurePtr {
+    pub fn bind_mem_func(&mut self, function_to_bind: fn()) {
+        self.m_pthis = simplify_mem_func(self.p_this, function_to_bind, self.m_p_function);
+        self.m_p_static_function = None;
+    }
 
-m_pStaticFunction = nullptr;
+    pub fn get_closure_this(&self) -> GenericClass {
+        self.m_p_this
+    }
 
+    pub fn ge_closure_mem_ptr(&self) -> GenericMemFunc {
+        self.m_p_function
+    }
+
+    pub fn copy_from(&self, p_parent: &DerivedClass, x: &DelegateMemento) {
+        set_memento_from(x);
+        if self.m_p_static_function.is_some() {
+            self.m_p_this = p_parent;
+        }
+    }
+
+    pub fn bind_static_func(&self, p_parent: &DerivedClass, static_function_inovker: &ParentInvokerSig, function_to_bind: &StaticFuncPtr) {
+        if function_to_bind.is_none() {
+            self.m_p_function = None;
+        } else {
+            // self.bind_mem_func(p_parent, static_function_inovker);
+        }
+
+        self.m_p_static_function = function_to_bind;
+    }
+
+    pub fn get_static_function(&self) -> UnvoidStaticFuncPtr {
+        self.m_p_static_function
+    }
 }
-
-template <typename X, typename XMemFunc>
-inline void bindconstmemfunc(const X* pthis, XMemFunc function_to_bind)
-{
-m_pthis = SimplifyMemFunc<sizeof(function_to_bind)>::Convert(const_cast<X*>(pthis), function_to_bind, m_pFunction);
-
-m_pStaticFunction = nullptr;
-
-}
-
-
-template <typename X, typename XMemFunc>
-inline void bindmemfunc(const X* pthis, XMemFunc function_to_bind)
-{
-bindconstmemfunc(pthis, function_to_bind);
-
-m_pStaticFunction = nullptr;
-
-}
-
-
-inline GenericClass* GetClosureThis() const
-{
-return m_pthis;
-}
-
-inline GenericMemFunc GetClosureMemPtr() const
-{
-return CastMemFuncPtr<GenericMemFunc>(m_pFunction);
-}
-
-
-
-template <typename DerivedClass>
-inline void CopyFrom(DerivedClass* pParent, const DelegateMemento& x)
-{
-SetMementoFrom(x);
-if (m_pStaticFunction) m_pthis = reinterpret_cast<GenericClass*>(pParent);
-}
-
-template <typename DerivedClass, typename ParentInvokerSig>
-inline void bindstaticfunc(DerivedClass* pParent, ParentInvokerSig static_function_invoker, StaticFuncPtr function_to_bind)
-{
-if (!function_to_bind)
-{
-m_pFunction = nullptr;
-}
-else
-{
-bindmemfunc(pParent, static_function_invoker);
-}
-m_pStaticFunction = reinterpret_cast<GenericFuncPtr>(function_to_bind);
-}
-inline UnvoidStaticFuncPtr GetStaticFunction() const { return reinterpret_cast<UnvoidStaticFuncPtr>(m_pStaticFunction); }
