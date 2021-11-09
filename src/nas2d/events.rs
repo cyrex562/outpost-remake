@@ -7,232 +7,32 @@ pub struct EventHandler {
 }
 
 impl EventHandler {
-    pub fn new() -> EventHandler {
-
+    pub fn new() -> Self {
+        Self {}
     }
 }
 
-// operator |=
-// operator &=
-// operator |
-// operator &
-
-// EventHandler::KeyModifier& operator|=(EventHandler::KeyModifier& a, const EventHandler::KeyModifier& b) noexcept
-// {
-//     using underlying = std::underlying_type_t<EventHandler::KeyModifier>;
-//     auto underlying_a = static_cast<underlying>(a);
-//     auto underlying_b = static_cast<underlying>(b);
-//     a = static_cast<EventHandler::KeyModifier>(underlying_a | underlying_b);
-//     return a;
-// }
-
-// EventHandler::KeyModifier& operator&=(EventHandler::KeyModifier& a, const EventHandler::KeyModifier& b) noexcept
-// {
-//     using underlying = std::underlying_type_t<EventHandler::KeyModifier>;
-//     auto underlying_a = static_cast<underlying>(a);
-//     auto underlying_b = static_cast<underlying>(b);
-//     a = static_cast<EventHandler::KeyModifier>(underlying_a & underlying_b);
-//     return a;
-// }
-
-// EventHandler::KeyModifier operator|(EventHandler::KeyModifier a, const EventHandler::KeyModifier& b) noexcept
-// {
-// 	a |= b;
-// 	return a;
-// }
-
-// EventHandler::KeyModifier operator&(EventHandler::KeyModifier a, const EventHandler::KeyModifier& b) noexcept
-// {
-//     a &= b;
-//     return a;
-// }
-
-
-
-
-
-/**
- * Triggered whenever the application gains or loses focus.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(bool gained);
- * \endcode
- *
- * \arg \c gained Bool value indicating whether or not the app lost focus.
- */
-EventHandler::ActivateEventSource& EventHandler::activate()
-{
-	return mActivateEvent;
+pub enum EventType {
+    // triggered when the app gains or loses focus
+    ActivateEvent,
+    // triggered when the app's window is hidden or exposed
+    WindowHiddenEvent,
+    // triggered when the app's window is exposed
+    WindowExposedEvent,
+    // triggered when the application's window is minimized
+    WindowMinimizedEvent,
+    // triggered when the app's window is maximized
+    WindowMaximizedEvent,
+    // triggered when the app's window is restored to its original size and location
+    WindowRestoredEvent,
+    // triggered when the window is resized,
+    WindowResizeEvent,
+    // triggered when the mouse enters the application's window
+    WindowMouseEnterEvent,
+    // triggered when the mouse leaves the application's window
+    WindowMouseLeaveEvent,
 }
 
-
-/**
- * Triggered whenever the application's window is hidden or exposed.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(bool hidden);
- * \endcode
- *
- * \arg \c gained Bool value indicating whether or not the window was hidden.
- */
-EventHandler::WindowHiddenEventSource& EventHandler::windowHidden()
-{
-	return mWindowHiddenEvent;
-}
-
-
-/**
- * Triggered whenever the application's window is exposed.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowExposedEventSource& EventHandler::windowExposed()
-{
-	return mWindowExposedEvent;
-}
-
-
-/**
- * Triggered whenever the application's window is minimized.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowMinimizedEventSource& EventHandler::windowMinimized()
-{
-	return mWindowMinimizedEvent;
-}
-
-
-/**
- * Triggered whenever the application's window is maximized.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowMaximizedEventSource& EventHandler::windowMaximized()
-{
-	return mWindowMaximizedEvent;
-}
-
-
-/**
- * Triggered whenever the application's window is restored to its original size and location.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowRestoredEventSource& EventHandler::windowRestored()
-{
-	return mWindowRestoredEvent;
-}
-
-
-/**
- * Triggered whenever the window is resized.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowResizedEventSource& EventHandler::windowResized()
-{
-	return mWindowResizedEvent;
-}
-
-
-/**
- * Triggered whenever the mouse enters the application's window.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowMouseEnterEventSource& EventHandler::windowMouseEnter()
-{
-	return mWindowMouseEnterEvent;
-}
-
-
-/**
- * Triggered whenever the mouse leaves the application's window.
- *
- * To connect an event handler to this event, call the 'connect()'
- * function as follows:
- *
- * \code
- * connect(this, &Object::function);
- * \endcode
- *
- * \code
- * void function(void);
- * \endcode
- */
-EventHandler::WindowMouseLeaveEventSource& EventHandler::windowMouseLeave()
-{
-	return mWindowMouseLeaveEvent;
-}
 
 
 /**
