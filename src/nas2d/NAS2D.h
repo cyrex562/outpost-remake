@@ -37,8 +37,8 @@
 #include "Resource/Sprite.h"
 
 #include "Signal/signal_connection_h.rs"
-#include "Signal/delegate_h.rs"
-#include "signal/signal_h.rs"
+#include "signal/delegate.rs"
+#include "signal/signal.rs"
 #include "Signal/signal_source.rs"
 
 #include "Xml/Xml.h"

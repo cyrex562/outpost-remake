@@ -1,3 +1,5 @@
+
+
 /**
  * Signal with preset number of parameters
  *
@@ -14,4 +16,3 @@ impl Signal {
         }
     }
 }
-

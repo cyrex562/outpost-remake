@@ -12,7 +12,7 @@
 
 #include "Color.h"
 #include "../Timer.h"
-#include "../signal/signal_h.rs"
+#include "../signal/signal.rs"
 
 #include <chrono>
 

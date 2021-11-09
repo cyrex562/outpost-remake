@@ -11,7 +11,7 @@
 #pragma once
 
 #include "AnimationSet.h"
-#include "../signal/signal_h.rs"
+#include "../signal/signal.rs"
 #include "../Timer.h"
 #include "../Renderer/Color.h"
 

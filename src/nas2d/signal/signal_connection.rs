@@ -38,7 +38,7 @@ impl SignalConnection {
     // }
     pub fn new(signal_source: &SignalType, delegate: DelegateType) -> Self {
         Self {
-            m_signal_source: SignalSource {},
+            m_signal_source: SignalSource { delegate_list: () },
             m_delegate: ()
         }
     }

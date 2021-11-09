@@ -1,5 +1,4 @@
-
-
+use crate::nas2d::signal::delegate::make_delegate;
 
 pub type Source = SignalSource;
 //pub type DelegateType = DelegateX<void, Params, HashMap<K,V>>
@@ -13,26 +12,24 @@ impl SignalSource {
         return self.delegate_list.is_empty()
     }
 
-    bool empty() const { return delegateList.empty(); }
+    pub fn clear(&self) {
+        self.delegate_list.clear()
+    }
 
-    void clear() { delegateList.clear(); }
+    pub fn connect(&self, delegate: DelegateType) {
+        self.insert(delegate)
+    }
 
-    void connect(DelegateType delegate) { delegateList.insert(delegate); }
+    pub fn connect2<T, U>(&mut self, obj: &T, func: U) {
+        self.insert(make_delegate(obj, func))
+    }
 
-    template <typename X, typename Y>
-    void connect(Y* obj, void (X::*func)(Params...)) { delegateList.insert(MakeDelegate(obj, func)); }
+    pub fn disconnect(&mut self, delegate: &DelegateType) {
+        self.delegate_list.erase(delegate)
+    }
 
-    template <typename X, typename Y>
-    void connect(Y* obj, void (X::*func)(Params...) const) { delegateList.insert(MakeDelegate(obj, func)); }
-
-    void disconnect(DelegateType delegate) { delegateList.erase(delegate); }
-
-    template <typename X, typename Y>
-    void disconnect(Y* obj, void (X::*func)(Params...)) { delegateList.erase(MakeDelegate(obj, func)); }
-
-    template <typename X, typename Y>
-    void disconnect(Y* obj, void (X::*func)(Params...) const) { delegateList.erase(MakeDelegate(obj, func)); }
-
-
+    pub fn disconnect2<T, U>(&mut self, obj: &T, func: U) {
+        self.delegate_list.erase(make_delegate(obj, func))
+    }
 }
 

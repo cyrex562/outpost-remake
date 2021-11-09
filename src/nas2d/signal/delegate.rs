@@ -218,8 +218,8 @@ impl Delegate {
 // {
 // return DelegateX<RetType, Params...>(x, func);
 // }
-pub fn make_delegate() -> DelegateX {
-    DelegateX::new()
+pub fn make_delegate<T, U>(ret_type: T, func: U) -> DelegateX {
+    DelegateX::new(ret_type, func)
 }
 
 // template <typename X, typename Y, typename RetType, typename... Params>
