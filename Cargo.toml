@@ -9,3 +9,9 @@ edition = "2018"
 [dependencies]
 libc = "0.2.93"
 num = "0.4.0"
+
+[dependencies.sdl2]
+version = "0.35"
+# git = "https://github.com/rust-sdl2/rust-sdl2"
+default-features = true
+features = [ "ttf", "image", "gfx", "mixer", "bundled", "raw-window-handle"]
