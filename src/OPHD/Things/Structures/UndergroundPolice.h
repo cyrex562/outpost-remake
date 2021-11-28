@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class UndergroundPolice : public Structure
 {
 
 	UndergroundPolice() : Structure(constants::UndergroundPolice,
-		"structures/police_underground.sprite",
-		StructureClass::UndergroundPolice,
-		StructureID::SID_UNDERGROUND_POLICE)
+									"structures/police_underground.sprite",
+									StructureClass::UndergroundPolice,
+									StructureID::SID_UNDERGROUND_POLICE)
 	{
 		maxAge(500);
 		turnsToBuild(3);
@@ -24,7 +23,6 @@ class UndergroundPolice : public Structure
 		return 5;
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(1);

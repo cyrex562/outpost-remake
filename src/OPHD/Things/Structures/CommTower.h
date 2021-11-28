@@ -4,17 +4,15 @@
 
 #include "../../Constants.h"
 
-
 class CommTower : public Structure
 {
 
 	const int BaseRange = 10;
 
-
 	CommTower() : Structure(constants::CommTower,
-		"structures/communications_tower.sprite",
-		StructureClass::Communication,
-		StructureID::SID_COMM_TOWER)
+							"structures/communications_tower.sprite",
+							StructureClass::Communication,
+							StructureID::SID_COMM_TOWER)
 	{
 		maxAge(600);
 		turnsToBuild(2);
@@ -23,12 +21,10 @@ class CommTower : public Structure
 		selfSustained(true);
 	}
 
-
 	int getRange() const
 	{
 		return operational() ? BaseRange : 0;
 	}
-
 
 	StringTable createInspectorViewTable() override
 	{
@@ -47,7 +43,6 @@ class CommTower : public Structure
 		return stringTable;
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(3);

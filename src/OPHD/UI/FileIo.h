@@ -8,7 +8,6 @@
 #include <NAS2D/Signal/Signal.h>
 #include <NAS2D/EventHandler.h>
 
-
 class FileIo : public Window
 {
 
@@ -18,29 +17,27 @@ class FileIo : public Window
 		Save
 	};
 
-	using FileOperationSignal = NAS2D::Signal<const std::string&, FileOperation>;
+	using FileOperationSignal = NAS2D::Signal<const std::string &, FileOperation>;
 
 	FileIo();
 	~FileIo() override;
 
 	void setMode(FileOperation fileOp);
-	void scanDirectory(const std::string& directory);
+	void scanDirectory(const std::string &directory);
 
-	FileOperationSignal::Source& fileOperation() { return mSignal; }
+	FileOperationSignal::Source &fileOperation() { return mSignal; }
 
 	void update() override;
 
-protected:
 	void onDoubleClick(NAS2D::EventHandler::MouseButton button, int x, int y);
 	void onKeyDown(NAS2D::EventHandler::KeyCode key, NAS2D::EventHandler::KeyModifier mod, bool repeat);
-
 
 	void onClose();
 	void onFileIo();
 	void onFileDelete();
 
 	void onFileSelect();
-	void onFileNameChange(TextControl* control);
+	void onFileNameChange(TextControl *control);
 
 	FileOperationSignal mSignal;
 

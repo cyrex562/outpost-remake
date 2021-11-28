@@ -6,10 +6,8 @@
 
 #include <algorithm>
 
-
 const int ResidentialWasteCapacityBase = 1000;
 const int ResidentialColonistCapacityBase = 25;
-
 
 /**
  * Base Residential structure.
@@ -21,9 +19,9 @@ class Residence : public Structure
 {
 
 	Residence() : Structure(constants::Residence,
-		"structures/residential_1.sprite",
-		StructureClass::Residence,
-		StructureID::SID_RESIDENCE)
+							"structures/residential_1.sprite",
+							StructureClass::Residence,
+							StructureID::SID_RESIDENCE)
 	{
 		maxAge(500);
 		turnsToBuild(2);
@@ -31,7 +29,6 @@ class Residence : public Structure
 		requiresCHAP(true);
 		hasCrime(true);
 	}
-
 
 	int capacity() const { return ResidentialColonistCapacityBase; }
 
@@ -42,7 +39,6 @@ class Residence : public Structure
 
 	int wasteOverflow() const { return mWasteOverflow; }
 	void wasteOverflow(int amount) { mWasteOverflow = amount; }
-
 
 	int pullWaste(int amount)
 	{
@@ -59,15 +55,12 @@ class Residence : public Structure
 		return pulledAmount;
 	}
 
-
 	void assignColonists(int amount)
 	{
 		mAssignedColonists = std::clamp(amount, 0, capacity());
 	}
 
-
 	int assignedColonists() const { return mAssignedColonists; }
-
 
 	StringTable createInspectorViewTable() override
 	{
@@ -91,13 +84,10 @@ class Residence : public Structure
 		return stringTable;
 	}
 
-
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(2);
 	}
-
 
 	void think() override
 	{
@@ -109,8 +99,6 @@ protected:
 		}
 	}
 
-
-protected:
 	int mWasteAccumulated = 0;
 	int mWasteOverflow = 0;
 

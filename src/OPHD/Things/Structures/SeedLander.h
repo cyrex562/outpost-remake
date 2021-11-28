@@ -6,20 +6,17 @@
 
 #include <NAS2D/Math/Point.h>
 
-
 class SeedLander : public Structure
 {
 
 	using Signal = NAS2D::Signal<NAS2D::Point<int>>;
 
-
 	SeedLander() = delete;
-	SeedLander(NAS2D::Point<int> position) :
-		Structure{constants::SeedLander,
-		"structures/seed_0.sprite",
-		StructureClass::Lander,
-		StructureID::SID_SEED_LANDER},
-		mPosition{position}
+	SeedLander(NAS2D::Point<int> position) : Structure{constants::SeedLander,
+													   "structures/seed_0.sprite",
+													   StructureClass::Lander,
+													   StructureID::SID_SEED_LANDER},
+											 mPosition{position}
 	{
 		maxAge(50);
 		turnsToBuild(1);
@@ -35,20 +32,21 @@ class SeedLander : public Structure
 		mPosition = position;
 	}
 
-	Signal::Source& deploySignal() { return mDeploy; }
+	Signal::Source &deploySignal() { return mDeploy; }
 
-protected:
 	void think() override
 	{
 		if (age() == turnsToBuild())
 		{
 			// Logic guard, probably not necessary.
-			if (mPosition == NAS2D::Point{0, 0}) { return; }
+			if (mPosition == NAS2D::Point{0, 0})
+			{
+				return;
+			}
 
 			mDeploy(mPosition);
 		}
 	}
-
 
 	Signal mDeploy;
 	NAS2D::Point<int> mPosition;

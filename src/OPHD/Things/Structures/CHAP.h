@@ -4,7 +4,6 @@
 
 #include "../../Constants.h"
 
-
 class CHAP : public Structure
 {
 
@@ -16,7 +15,6 @@ class CHAP : public Structure
 		requiresCHAP(false);
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		resourcesIn({2, 0, 1, 1});

@@ -17,21 +17,19 @@
 #include <cstddef>
 #include <cmath>
 
-
 namespace NAS2D
 {
 	class Font;
 }
 
-
 struct ListBoxItemText
 {
 	std::string text; /**< Text of the ListBoxItem. */
-	int tag = 0; /**< User defined int data attached to the item. */
+	int tag = 0;	  /**< User defined int data attached to the item. */
 
 	struct Context
 	{
-		const NAS2D::Font& font;
+		const NAS2D::Font &font;
 
 		NAS2D::Color borderColorNormal = NAS2D::Color{75, 75, 75};
 		NAS2D::Color borderColorActive = NAS2D::Color{0, 185, 0};
@@ -47,9 +45,8 @@ struct ListBoxItemText
 		unsigned int itemHeight() const;
 	};
 
-	void draw(NAS2D::Renderer& renderer, NAS2D::Rectangle<int> itemDrawArea, const Context& context, bool isSelected, bool isHighlighted);
+	void draw(NAS2D::Renderer &renderer, NAS2D::Rectangle<int> itemDrawArea, const Context &context, bool isSelected, bool isHighlighted);
 };
-
 
 /**
  * Implements a ListBox control.
@@ -60,8 +57,7 @@ class ListBox : public Control
 
 	using SelectionChangeSignal = NAS2D::Signal<>;
 
-	ListBox() :
-		mContext{fontCache.load(constants::FONT_PRIMARY, constants::FontPrimaryNormal)}
+	ListBox() : mContext{fontCache.load(constants::FONT_PRIMARY, constants::FontPrimaryNormal)}
 	{
 		NAS2D::Utility<NAS2D::EventHandler>::get().mouseButtonDown().connect(this, &ListBox::onMouseDown);
 		NAS2D::Utility<NAS2D::EventHandler>::get().mouseMotion().connect(this, &ListBox::onMouseMove);
@@ -74,7 +70,8 @@ class ListBox : public Control
 		updateScrollLayout();
 	}
 
-	~ListBox() override {
+	~ListBox() override
+	{
 		NAS2D::Utility<NAS2D::EventHandler>::get().mouseButtonDown().disconnect(this, &ListBox::onMouseDown);
 		NAS2D::Utility<NAS2D::EventHandler>::get().mouseMotion().disconnect(this, &ListBox::onMouseMove);
 		NAS2D::Utility<NAS2D::EventHandler>::get().mouseWheel().disconnect(this, &ListBox::onMouseWheel);
@@ -82,33 +79,38 @@ class ListBox : public Control
 		mSlider.change().disconnect(this, &ListBox::onSlideChange);
 	}
 
-	bool isEmpty() const {
+	bool isEmpty() const
+	{
 		return mItems.empty();
 	}
 
-	std::size_t count() const {
+	std::size_t count() const
+	{
 		return mItems.size();
 	}
 
 	template <typename... Args>
-	void add(Args&&... args) {
+	void add(Args &&...args)
+	{
 		mItems.emplace_back(ListBoxItem{std::forward<Args>(args)...});
 		updateScrollLayout();
 	}
 
-	void clear() {
+	void clear()
+	{
 		mItems.clear();
 		mSelectedIndex = constants::NoSelection;
 		mHighlightIndex = constants::NoSelection;
 		updateScrollLayout();
 	}
 
-
-	bool isItemSelected() const {
+	bool isItemSelected() const
+	{
 		return mSelectedIndex != constants::NoSelection;
 	}
 
-	const ListBoxItem& selected() const {
+	const ListBoxItem &selected() const
+	{
 		if (mSelectedIndex == constants::NoSelection)
 		{
 			throw std::runtime_error("ListBox has no selected item");
@@ -117,43 +119,54 @@ class ListBox : public Control
 		return mItems[mSelectedIndex];
 	}
 
-
-	std::size_t selectedIndex() const {
+	std::size_t selectedIndex() const
+	{
 		return mSelectedIndex;
 	}
 
-	void setSelected(std::size_t index) {
+	void setSelected(std::size_t index)
+	{
 		mSelectedIndex = index;
 		mSelectionChanged();
 	}
 
-	void clearSelected() {
+	void clearSelected()
+	{
 		mSelectedIndex = constants::NoSelection;
 	}
 
 	template <typename UnaryPredicate>
-	void selectIf(UnaryPredicate predicate) {
-		for (std::size_t i = 0; i < mItems.size(); ++i) {
-			if (predicate(mItems[i])) {
+	void selectIf(UnaryPredicate predicate)
+	{
+		for (std::size_t i = 0; i < mItems.size(); ++i)
+		{
+			if (predicate(mItems[i]))
+			{
 				mSelectedIndex = i;
 				return;
 			}
 		}
 	}
 
-	std::size_t currentHighlight() const {
+	std::size_t currentHighlight() const
+	{
 		return mHighlightIndex;
 	}
 
-	unsigned int lineHeight() const {
+	unsigned int lineHeight() const
+	{
 		return mContext.itemHeight();
 	}
 
-	void update() override {
+	void update() override
+	{
 		// Ignore if menu is empty or invisible
-		if (!visible()) { return; }
+		if (!visible())
+		{
+			return;
+		}
 
-		auto& renderer = NAS2D::Utility<NAS2D::Renderer>::get();
+		auto &renderer = NAS2D::Utility<NAS2D::Renderer>::get();
 
 		const auto borderColor = hasFocus() ? mContext.borderColorActive : mContext.borderColorNormal;
 		renderer.drawBox(mRect, borderColor);
@@ -187,12 +200,13 @@ class ListBox : public Control
 		mSlider.update();
 	}
 
-	SelectionChangeSignal::Source& selectionChanged() {
+	SelectionChangeSignal::Source &selectionChanged()
+	{
 		return mSelectionChanged;
 	}
 
-protected:
-	virtual void onMouseDown(NAS2D::EventHandler::MouseButton /*button*/, int x, int y) {
+	virtual void onMouseDown(NAS2D::EventHandler::MouseButton /*button*/, int x, int y)
+	{
 		if (!visible() || mHighlightIndex == constants::NoSelection || mHighlightIndex >= mItems.size() || !mScrollArea.contains({x, y}))
 		{
 			return;
@@ -201,7 +215,8 @@ protected:
 		setSelected(mHighlightIndex);
 	}
 
-	virtual void onMouseMove(int x, int y, int /*relX*/, int /*relY*/) {
+	virtual void onMouseMove(int x, int y, int /*relX*/, int /*relY*/)
+	{
 		if (!visible() || !mScrollArea.contains({x, y}))
 		{
 			mHighlightIndex = constants::NoSelection;
@@ -215,13 +230,18 @@ protected:
 		}
 	}
 
-	void onMouseWheel(int /*x*/, int y) {
-		if (isEmpty() || !visible()) { return; }
+	void onMouseWheel(int /*x*/, int y)
+	{
+		if (isEmpty() || !visible())
+		{
+			return;
+		}
 
 		mSlider.changeThumbPosition((y < 0 ? 16.0f : -16.0f));
 	}
 
-	virtual void onSlideChange(float newPosition) {
+	virtual void onSlideChange(float newPosition)
+	{
 		updateScrollLayout();
 		// Intentional truncation of fractional value
 		const auto pos = std::floor(newPosition);
@@ -231,21 +251,23 @@ protected:
 		}
 	}
 
-
-	void onVisibilityChange(bool /*visible*/) override {
+	void onVisibilityChange(bool /*visible*/) override
+	{
 		updateScrollLayout();
 	}
 
-
-	void onMove(NAS2D::Vector<int> /*displacement*/) override {
+	void onMove(NAS2D::Vector<int> /*displacement*/) override
+	{
 		updateScrollLayout();
 	}
 
-	void onResize() override {
+	void onResize() override
+	{
 		updateScrollLayout();
 	}
 
-	void updateScrollLayout() {
+	void updateScrollLayout()
+	{
 		// Account for border around control
 		mScrollArea = mRect.inset(1);
 
@@ -266,7 +288,6 @@ protected:
 			mSlider.visible(false);
 		}
 	}
-
 
 	typename ListBoxItem::Context mContext;
 

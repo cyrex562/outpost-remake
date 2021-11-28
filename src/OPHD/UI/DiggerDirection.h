@@ -4,22 +4,20 @@
 #include "Core/Button.h"
 #include "../Common.h"
 
-
 class Tile;
 
-
-class DiggerDirection: public Window
+class DiggerDirection : public Window
 {
 
-	using Signal = NAS2D::Signal<Direction, Tile*>;
+	using Signal = NAS2D::Signal<Direction, Tile *>;
 
 	DiggerDirection();
 
 	void update() override;
 
-	Signal::Source& directionSelected() { return mSignal; }
+	Signal::Source &directionSelected() { return mSignal; }
 
-	void setParameters(Tile* tile);
+	void setParameters(Tile *tile);
 
 	void selectDown();
 
@@ -27,9 +25,7 @@ class DiggerDirection: public Window
 	void cardinalOnlyEnabled();
 	void allEnabled();
 
-protected:
 	void onCancel();
-
 
 	void onDiggerDown();
 	void onDiggerNorth();
@@ -46,5 +42,5 @@ protected:
 
 	Signal mSignal;
 
-	Tile* mTile = nullptr;
+	Tile *mTile = nullptr;
 };

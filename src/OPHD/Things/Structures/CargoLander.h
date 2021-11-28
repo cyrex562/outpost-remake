@@ -5,18 +5,16 @@
 #include "../../Constants.h"
 #include "../../Map/Tile.h"
 
-
 class CargoLander : public Structure
 {
 
-
 	using Signal = NAS2D::Signal<>;
 
-	CargoLander(Tile* t) : Structure(constants::CargoLander,
-		"structures/lander_0.sprite",
-		StructureClass::Lander,
-		StructureID::SID_CARGO_LANDER),
-		mTile(t)
+	CargoLander(Tile *t) : Structure(constants::CargoLander,
+									 "structures/lander_0.sprite",
+									 StructureClass::Lander,
+									 StructureID::SID_CARGO_LANDER),
+						   mTile(t)
 	{
 		maxAge(50);
 		turnsToBuild(1);
@@ -28,9 +26,8 @@ class CargoLander : public Structure
 		enable();
 	}
 
-	Signal::Source& deploySignal() { return mDeploy; }
+	Signal::Source &deploySignal() { return mDeploy; }
 
-protected:
 	void think() override
 	{
 		if (age() == turnsToBuild())
@@ -40,12 +37,10 @@ protected:
 		}
 	}
 
-
 	CargoLander() = delete;
-	CargoLander(const CargoLander&) = delete;
-	CargoLander& operator=(const CargoLander&) = delete;
-
+	CargoLander(const CargoLander &) = delete;
+	CargoLander &operator=(const CargoLander &) = delete;
 
 	Signal mDeploy;
-	Tile* mTile = nullptr;
+	Tile *mTile = nullptr;
 };

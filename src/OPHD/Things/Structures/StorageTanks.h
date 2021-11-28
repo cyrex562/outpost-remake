@@ -4,17 +4,15 @@
 
 #include "../../Constants.h"
 
-
 const int StorageTanksCapacity = 1000;
-
 
 class StorageTanks : public Structure
 {
 
 	StorageTanks() : Structure(constants::StorageTanks,
-		"structures/storage_tanks.sprite",
-		StructureClass::Storage,
-		StructureID::SID_STORAGE_TANKS)
+							   "structures/storage_tanks.sprite",
+							   StructureClass::Storage,
+							   StructureID::SID_STORAGE_TANKS)
 	{
 		maxAge(500);
 		turnsToBuild(2);
@@ -40,18 +38,15 @@ class StorageTanks : public Structure
 
 		stringTable.setColumnText(
 			1,
-			{
-				std::to_string(storage().total()) + " / " + std::to_string(storageCapacity()),
-				storage().resources[0],
-				storage().resources[2],
-				storage().resources[1],
-				storage().resources[3]
-			});
+			{std::to_string(storage().total()) + " / " + std::to_string(storageCapacity()),
+			 storage().resources[0],
+			 storage().resources[2],
+			 storage().resources[1],
+			 storage().resources[3]});
 
 		return stringTable;
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(1);

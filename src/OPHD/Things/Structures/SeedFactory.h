@@ -4,13 +4,12 @@
 
 #include "../../Constants.h"
 
-
 class SeedFactory : public Factory
 {
 
 	SeedFactory() : Factory(constants::SeedFactory,
-		"structures/seed_1.sprite",
-		StructureID::SID_SEED_FACTORY)
+							"structures/seed_1.sprite",
+							StructureID::SID_SEED_FACTORY)
 	{
 		maxAge(150);
 		turnsToBuild(8);
@@ -19,7 +18,6 @@ class SeedFactory : public Factory
 		initFactory();
 	}
 
-protected:
 	void initFactory() override
 	{
 		addProduct(ProductType::PRODUCT_DIGGER);
@@ -27,7 +25,6 @@ protected:
 		addProduct(ProductType::PRODUCT_MINER);
 		addProduct(ProductType::PRODUCT_TRUCK);
 	}
-
 
 	void defineResourceInput() override
 	{

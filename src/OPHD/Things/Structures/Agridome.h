@@ -6,7 +6,6 @@
 
 #include <algorithm>
 
-
 const int AGRIDOME_CAPACITY = 1000;
 const int AGRIDOME_BASE_PRODUCUCTION = 10;
 
@@ -22,10 +21,12 @@ class Agridome : public FoodProduction
 		hasCrime(true);
 	}
 
-protected:
 	void think() override
 	{
-		if (isIdle()) { return; }
+		if (isIdle())
+		{
+			return;
+		}
 
 		mFoodLevel = std::clamp(mFoodLevel + calculateProduction(), 0, AGRIDOME_CAPACITY);
 
@@ -50,7 +51,6 @@ protected:
 	{
 		return AGRIDOME_CAPACITY;
 	}
-
 
 	virtual int calculateProduction() override
 	{

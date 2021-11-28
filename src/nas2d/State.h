@@ -10,7 +10,6 @@
 
 #pragma once
 
-
 namespace NAS2D
 {
 
@@ -55,7 +54,7 @@ namespace NAS2D
 	 * 	MyState() {}
 	 * 	~MyState() {}
 	 *
-	 * protected:
+	 * 
 	 *
 	 * 	void initialize() {}
 	 * 	State* update() {}
@@ -79,7 +78,6 @@ namespace NAS2D
 
 		virtual ~State() = default;
 
-	protected:
 		friend class StateManager;
 
 		/**
@@ -93,7 +91,6 @@ namespace NAS2D
 		 */
 		virtual void initialize() = 0;
 
-
 		/**
 		 * Called once every frame.
 		 *
@@ -106,7 +103,7 @@ namespace NAS2D
 		 * \return	A pointer to a State object. NULL to terminate the
 		 *			NAS2D application.
 		 */
-		virtual State* update() = 0;
+		virtual State *update() = 0;
 	};
 
 } // namespace

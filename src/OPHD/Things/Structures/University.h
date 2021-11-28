@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class University : public Structure
 {
 
 	University() : Structure(constants::University,
-		"structures/university.sprite",
-		StructureClass::University,
-		StructureID::SID_UNIVERSITY)
+							 "structures/university.sprite",
+							 StructureClass::University,
+							 StructureID::SID_UNIVERSITY)
 	{
 		maxAge(500);
 		turnsToBuild(4);
@@ -20,7 +19,6 @@ class University : public Structure
 		hasCrime(true);
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(1);

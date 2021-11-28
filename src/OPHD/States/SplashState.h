@@ -8,24 +8,19 @@
 #include <NAS2D/Math/Point.h>
 #include <NAS2D/Resource/Image.h>
 
-
 class SplashState : public NAS2D::State
 {
 
 	SplashState();
 	~SplashState() override;
 
-protected:
-
 	void initialize() override;
-	NAS2D::State* update() override;
-
+	NAS2D::State *update() override;
 
 	void onKeyDown(NAS2D::EventHandler::KeyCode key, NAS2D::EventHandler::KeyModifier mod, bool repeat);
 	void onMouseDown(NAS2D::EventHandler::MouseButton button, int x, int y);
 
 	void skipSplash();
-
 
 	const NAS2D::Image mLogoLairworks;
 	const NAS2D::Image mLogoNas2d;
@@ -37,5 +32,5 @@ protected:
 
 	NAS2D::Timer mTimer;
 
-	NAS2D::State* mReturnState = this;
+	NAS2D::State *mReturnState = this;
 };

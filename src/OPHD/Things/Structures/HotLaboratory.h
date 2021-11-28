@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class HotLaboratory : public Structure
 {
 
 	HotLaboratory() : Structure(constants::HotLaboratory,
-		"structures/labo_surface.sprite",
-		StructureClass::Laboratory,
-		StructureID::SID_HOT_LABORATORY)
+								"structures/labo_surface.sprite",
+								StructureClass::Laboratory,
+								StructureID::SID_HOT_LABORATORY)
 	{
 		maxAge(500);
 		turnsToBuild(5);
@@ -20,7 +19,6 @@ class HotLaboratory : public Structure
 		requiresCHAP(false);
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(3);

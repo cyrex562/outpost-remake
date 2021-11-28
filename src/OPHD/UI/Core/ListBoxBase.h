@@ -12,7 +12,6 @@
 #include <vector>
 #include <cstddef>
 
-
 /**
  * Implements a base ListBox control that handles the low-level drawing,
  * input handling and management code while leaving the specific implementation
@@ -42,7 +41,6 @@ class ListBoxBase : public Control
 		std::string text;
 	};
 
-
 	ListBoxBase();
 	~ListBoxBase() override;
 
@@ -52,20 +50,20 @@ class ListBoxBase : public Control
 	void clear();
 
 	bool isItemSelected() const;
-	const ListBoxItem& selected() const;
+	const ListBoxItem &selected() const;
 	std::size_t selectedIndex() const;
 	void setSelection(std::size_t selection);
 	void clearSelected();
 
 	std::size_t currentHighlight() const;
 
-	SelectionChangeSignal::Source& selectionChanged() { return mSelectionChanged; }
+	SelectionChangeSignal::Source &selectionChanged() { return mSelectionChanged; }
 
 	void update() override = 0;
 
-protected:
 	template <typename ItemType, typename... Args>
-	void add(Args&&... args) {
+	void add(Args &&...args)
+	{
 		mItems.emplace_back(new ItemType{std::forward<Args>(args)...});
 		updateScrollLayout();
 	}
@@ -80,9 +78,7 @@ protected:
 
 	void onVisibilityChange(bool) override;
 
-
-	std::vector<ListBoxItem*> mItems; /**< List of Items. Pointers used for polymorphism. */
-
+	std::vector<ListBoxItem *> mItems; /**< List of Items. Pointers used for polymorphism. */
 
 	void onSlideChange(float newPosition);
 
@@ -92,20 +88,19 @@ protected:
 
 	void onResize() override;
 
-
 	std::size_t mHighlightIndex = constants::NoSelection;
 	std::size_t mSelectedIndex = constants::NoSelection;
 	unsigned int mScrollOffsetInPixels = 0;
 
 	int mItemHeight = 1; /**< Height of a ListBoxItem. */
-	int mItemWidth = 0; /**< Width of a ListBoxItem. */
+	int mItemWidth = 0;	 /**< Width of a ListBoxItem. */
 
 	bool mHasFocus = false;
 
-	NAS2D::Color mText = NAS2D::Color::White; /**< Text Color */
+	NAS2D::Color mText = NAS2D::Color::White;			 /**< Text Color */
 	NAS2D::Color mHighlightBg = NAS2D::Color::DarkGreen; /**< Highlight Background color. */
-	NAS2D::Color mHighlightText = NAS2D::Color::White; /**< Text Color for an item that is currently highlighted. */
+	NAS2D::Color mHighlightText = NAS2D::Color::White;	 /**< Text Color for an item that is currently highlighted. */
 
 	SelectionChangeSignal mSelectionChanged; /**< Signal for selection changed callback. */
-	Slider mSlider; /**< Slider control. */
+	Slider mSlider;							 /**< Slider control. */
 };

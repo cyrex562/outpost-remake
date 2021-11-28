@@ -9,7 +9,6 @@
 #include <string>
 #include <unordered_map>
 
-
 class Planet
 {
 
@@ -50,35 +49,30 @@ class Planet
 		std::string description;
 	};
 
-
 	using MouseSignal = NAS2D::Signal<>;
 
-
-	Planet(const Attributes& attributes);
+	Planet(const Attributes &attributes);
 	~Planet();
 
 	NAS2D::Point<int> position() const { return mPosition; }
-	void position(const NAS2D::Point<int>& point) { mPosition = point; }
+	void position(const NAS2D::Point<int> &point) { mPosition = point; }
 	void position(int x, int y) { mPosition = {x, y}; }
 
-	const Attributes& attributes() const { return mAttributes; }
+	const Attributes &attributes() const { return mAttributes; }
 
 	bool mouseHovering() const { return mMouseInArea; }
 
-	MouseSignal::Source& mouseEnter() { return mMouseEnterSignal; }
-	MouseSignal::Source& mouseExit() { return mMouseExitSignal; }
+	MouseSignal::Source &mouseEnter() { return mMouseEnterSignal; }
+	MouseSignal::Source &mouseExit() { return mMouseExitSignal; }
 
 	void update();
 
-protected:
 	bool pointInCircle(NAS2D::Point<int> point);
 	void onMouseMove(int x, int y, int rX, int rY);
 
-
 	Planet() = delete;
-	Planet(const Planet&) = delete;
-	Planet& operator=(const Planet&) = delete;
-
+	Planet(const Planet &) = delete;
+	Planet &operator=(const Planet &) = delete;
 
 	int mTick = 0;
 

@@ -4,7 +4,6 @@
 
 #include <NAS2D/Dictionary.h>
 
-
 class Robot : public Thing
 {
 
@@ -17,11 +16,10 @@ class Robot : public Thing
 		None
 	};
 
-	using TaskSignal = NAS2D::Signal<Robot*>;
+	using TaskSignal = NAS2D::Signal<Robot *>;
 
-
-	Robot(const std::string&, const std::string&, Type);
-	Robot(const std::string&, const std::string&, const std::string&, Type);
+	Robot(const std::string &, const std::string &, Type);
+	Robot(const std::string &, const std::string &, const std::string &, Type);
 
 	void startTask(int turns);
 
@@ -39,17 +37,15 @@ class Robot : public Thing
 
 	Type type() const { return mType; }
 
-	TaskSignal::Source& taskComplete() { return mTaskCompleteSignal; }
+	TaskSignal::Source &taskComplete() { return mTaskCompleteSignal; }
 
 	void id(int newId) { mId = newId; }
 	int id() const { return mId; }
 
 	virtual NAS2D::Dictionary getDataDict() const;
 
-protected:
 	void incrementFuelCellAge() { mFuelCellAge++; }
 	void updateTask();
-
 
 	int mId = 0;
 	int mFuelCellAge = 0;

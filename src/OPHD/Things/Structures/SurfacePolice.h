@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class SurfacePolice : public Structure
 {
 
 	SurfacePolice() : Structure(constants::SurfacePolice,
-		"structures/police_surface.sprite",
-		StructureClass::SurfacePolice,
-		StructureID::SID_SURFACE_POLICE)
+								"structures/police_surface.sprite",
+								StructureClass::SurfacePolice,
+								StructureID::SID_SURFACE_POLICE)
 	{
 		maxAge(500);
 		turnsToBuild(4);
@@ -24,7 +23,6 @@ class SurfacePolice : public Structure
 		return 5;
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(5);

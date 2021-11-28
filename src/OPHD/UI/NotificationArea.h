@@ -2,14 +2,12 @@
 
 #include "Core/Control.h"
 
-
 #include <vector>
 #include <NAS2D/EventHandler.h>
 #include <NAS2D/Math/Point.h>
 #include <NAS2D/Resource/Font.h>
 #include <NAS2D/Resource/Image.h>
 #include <NAS2D/Signal/Signal.h>
-
 
 class NotificationArea : public Control
 {
@@ -20,7 +18,6 @@ class NotificationArea : public Control
 		Information,
 		Warning
 	};
-
 
 	struct Notification
 	{
@@ -33,13 +30,12 @@ class NotificationArea : public Control
 
 	const int Width = 48;
 
-	using NotificationCallback = NAS2D::Signal<const Notification&>;
-
+	using NotificationCallback = NAS2D::Signal<const Notification &>;
 
 	NotificationArea();
 	~NotificationArea() override;
 
-	void push(const std::string& brief, const std::string& message, NAS2D::Point<int> position, int depth, NotificationType type);
+	void push(const std::string &brief, const std::string &message, NAS2D::Point<int> position, int depth, NotificationType type);
 
 	void clear()
 	{
@@ -47,27 +43,25 @@ class NotificationArea : public Control
 		mNotificationRectList.clear();
 	}
 
-	NotificationCallback& notificationClicked() { return mNotificationClicked; }
+	NotificationCallback &notificationClicked() { return mNotificationClicked; }
 
-	const Notification& notificationFromIndex(int index)
+	const Notification &notificationFromIndex(int index)
 	{
 		return mNotificationList.at(static_cast<size_t>(index));
 	}
 
 	void update() override;
 
-protected:
 	void onMouseDown(NAS2D::EventHandler::MouseButton, int, int);
 	void onMouseMove(int x, int y, int dX, int dY);
 
 	void onMove(NAS2D::Vector<int> displacement) override;
 	void onResize() override;
 
-
 	void updateRectListPositions();
 
-	const NAS2D::Image& mIcons;
-	const NAS2D::Font& mFont;
+	const NAS2D::Image &mIcons;
+	const NAS2D::Font &mFont;
 
 	std::vector<Notification> mNotificationList;
 	std::vector<NAS2D::Rectangle<int>> mNotificationRectList;
@@ -78,6 +72,6 @@ protected:
 	NotificationCallback mNotificationClicked;
 };
 
-const NAS2D::Rectangle<float>& IconRectFromNotificationType(const NotificationArea::NotificationType);
+const NAS2D::Rectangle<float> &IconRectFromNotificationType(const NotificationArea::NotificationType);
 const NAS2D::Color ColorFromNotification(const NotificationArea::NotificationType);
-const std::string& StringFromNotificationType(const NotificationArea::NotificationType);
+const std::string &StringFromNotificationType(const NotificationArea::NotificationType);

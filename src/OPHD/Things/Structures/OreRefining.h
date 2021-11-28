@@ -12,8 +12,7 @@
 class OreRefining : public Structure
 {
 
-	OreRefining(const std::string& name, const std::string& spritePath, StructureClass structureClass, StructureID id) :
-		Structure(name, spritePath, structureClass, id) {}
+	OreRefining(const std::string &name, const std::string &spritePath, StructureClass structureClass, StructureID id) : Structure(name, spritePath, structureClass, id) {}
 
 	StringTable createInspectorViewTable() override
 	{
@@ -27,23 +26,19 @@ class OreRefining : public Structure
 
 		stringTable.setColumnText(
 			0,
-			{
-				"",
-				"Common Metal",
-				"Rare Metal",
-				"Common Minerals",
-				"Rare Minerals"
-			});
+			{"",
+			 "Common Metal",
+			 "Rare Metal",
+			 "Common Minerals",
+			 "Rare Minerals"});
 
 		stringTable.setRowText(
 			0,
-			{
-				"Material",
-				"Storage",
-				"Ore Conversion Rate"
-			});
+			{"Material",
+			 "Storage",
+			 "Ore Conversion Rate"});
 
-		auto& resources = storage().resources;
+		auto &resources = storage().resources;
 
 		stringTable[{1, 1}].text = writeStorageAmount(resources[0]);
 		stringTable[{2, 1}].text = std::to_string(OreConversionDivisor[0]) + " : 1";
@@ -65,7 +60,6 @@ class OreRefining : public Structure
      */
 	int IndividualMaterialCapacity() const { return storageCapacity() / 4; }
 
-protected:
 	std::array<int, 4> OreConversionDivisor{2, 2, 3, 3};
 
 	void think() override
@@ -73,9 +67,9 @@ protected:
 		if (isIdle())
 		{
 			if (storage() < StorableResources{IndividualMaterialCapacity(),
-				IndividualMaterialCapacity(),
-				IndividualMaterialCapacity(),
-				IndividualMaterialCapacity()})
+											  IndividualMaterialCapacity(),
+											  IndividualMaterialCapacity(),
+											  IndividualMaterialCapacity()})
 			{
 				enable();
 			}
@@ -90,7 +84,7 @@ protected:
 	virtual void updateProduction()
 	{
 		StorableResources converted{0};
-		auto& ore = production();
+		auto &ore = production();
 
 		for (size_t i = 0; i < ore.resources.size(); ++i)
 		{
@@ -101,7 +95,7 @@ protected:
 			}
 		}
 
-		auto& stored = storage();
+		auto &stored = storage();
 		auto total = stored + converted;
 		auto capped = total.cap(IndividualMaterialCapacity());
 		auto overflow = total - capped;
@@ -110,24 +104,22 @@ protected:
 
 		if (!overflow.isEmpty())
 		{
-			StorableResources deconvertedResources{ overflow.resources[0] * OreConversionDivisor[0],
-				overflow.resources[1] * OreConversionDivisor[1],
-				overflow.resources[2] * OreConversionDivisor[2],
-				overflow.resources[3] * OreConversionDivisor[3]
-			};
+			StorableResources deconvertedResources{overflow.resources[0] * OreConversionDivisor[0],
+												   overflow.resources[1] * OreConversionDivisor[1],
+												   overflow.resources[2] * OreConversionDivisor[2],
+												   overflow.resources[3] * OreConversionDivisor[3]};
 
 			ore += deconvertedResources;
 
 			if (ore >= StorableResources{IndividualMaterialCapacity(),
-				IndividualMaterialCapacity(),
-				IndividualMaterialCapacity(),
-				IndividualMaterialCapacity()})
+										 IndividualMaterialCapacity(),
+										 IndividualMaterialCapacity(),
+										 IndividualMaterialCapacity()})
 			{
 				idle(IdleReason::InternalStorageFull);
 			}
 		}
 	}
-
 
 	std::string writeStorageAmount(int storageAmount) const
 	{

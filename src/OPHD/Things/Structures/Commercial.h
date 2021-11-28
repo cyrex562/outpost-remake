@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class Commercial : public Structure
 {
 
 	Commercial() : Structure(constants::Commercial,
-		"structures/commercial.sprite",
-		StructureClass::Commercial,
-		StructureID::SID_COMMERCIAL)
+							 "structures/commercial.sprite",
+							 StructureClass::Commercial,
+							 StructureID::SID_COMMERCIAL)
 	{
 		maxAge(500);
 		turnsToBuild(3);
@@ -20,7 +19,6 @@ class Commercial : public Structure
 		hasCrime(true);
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(2);

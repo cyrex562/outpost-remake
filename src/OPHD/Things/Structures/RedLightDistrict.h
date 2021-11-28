@@ -4,14 +4,13 @@
 
 #include "../../Constants.h"
 
-
 class RedLightDistrict : public Structure
 {
 
 	RedLightDistrict() : Structure(constants::RedLightDistrict,
-		"structures/red_light_district.sprite",
-		StructureClass::Residence,
-		StructureID::SID_RED_LIGHT_DISTRICT)
+								   "structures/red_light_district.sprite",
+								   StructureClass::Residence,
+								   StructureID::SID_RED_LIGHT_DISTRICT)
 	{
 		maxAge(500);
 		turnsToBuild(4);
@@ -20,7 +19,6 @@ class RedLightDistrict : public Structure
 		hasCrime(true);
 	}
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(5);

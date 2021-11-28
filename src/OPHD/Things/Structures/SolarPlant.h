@@ -4,18 +4,16 @@
 
 #include "../../Constants.h"
 
-
 const int SOLAR_PLANT_BASE_PRODUCUCTION = 2000;
-
 
 class SolarPlant : public PowerStructure
 {
 
 	SolarPlant(float meanSolarDistance) : PowerStructure(constants::SolarPlant,
-		"structures/solar_plant.sprite",
-		StructureClass::EnergyProduction,
-		StructureID::SID_SOLAR_PLANT),
-		mMeanSolarDistance(meanSolarDistance)
+														 "structures/solar_plant.sprite",
+														 StructureClass::EnergyProduction,
+														 StructureID::SID_SOLAR_PLANT),
+										  mMeanSolarDistance(meanSolarDistance)
 	{
 		maxAge(1000);
 		turnsToBuild(4);
@@ -23,7 +21,6 @@ class SolarPlant : public PowerStructure
 		hasCrime(true);
 	}
 
-protected:
 	int calculateMaxEnergyProduction() override
 	{
 		// Prevent possible dividing by zero
@@ -31,7 +28,6 @@ protected:
 
 		return static_cast<int>(SOLAR_PLANT_BASE_PRODUCUCTION / solarDistance);
 	}
-
 
 	const float mMeanSolarDistance;
 };

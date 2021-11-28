@@ -57,7 +57,7 @@ class Control
 
 	virtual void update() {}
 
-protected:
+
 	/**
 	 * Called whenever the Control's position is changed.
 	 * 

@@ -18,7 +18,6 @@
 #include <vector>
 #include <string>
 
-
 namespace NAS2D
 {
 	/**
@@ -32,15 +31,15 @@ namespace NAS2D
 
 		using AnimationCompleteSignal = Signal<>; /**< Signal used when action animations complete. */
 
-		Sprite(const std::string& filePath, const std::string& initialAction);
-		Sprite(const AnimationSet& animationSet, const std::string& initialAction);
+		Sprite(const std::string &filePath, const std::string &initialAction);
+		Sprite(const AnimationSet &animationSet, const std::string &initialAction);
 
 		Vector<int> size() const;
 		Point<int> origin(Point<int> point) const;
 
 		std::vector<std::string> actions() const;
 
-		void play(const std::string& action);
+		void play(const std::string &action);
 		void pause();
 		void resume();
 
@@ -58,14 +57,12 @@ namespace NAS2D
 		void color(Color color);
 		Color color() const;
 
-		AnimationCompleteSignal::Source& animationCompleteSignalSource();
+		AnimationCompleteSignal::Source &animationCompleteSignalSource();
 
-	protected:
 		unsigned int advanceByTimeDelta(unsigned int timeDelta);
 
-
-		const AnimationSet& mAnimationSet;
-		const std::vector<AnimationSet::Frame>* mCurrentAction{nullptr};
+		const AnimationSet &mAnimationSet;
+		const std::vector<AnimationSet::Frame> *mCurrentAction{nullptr};
 		std::size_t mCurrentFrame{0};
 
 		bool mPaused{false};
@@ -73,6 +70,6 @@ namespace NAS2D
 		AnimationCompleteSignal mAnimationCompleteSignal;
 
 		Color mColor{Color::Normal}; /**< Color tint to use for drawing the sprite. */
-		float mRotationAngle{0.0f}; /**< Angle of rotation in degrees. */
+		float mRotationAngle{0.0f};	 /**< Angle of rotation in degrees. */
 	};
 } // namespace

@@ -8,40 +8,34 @@
 // = Acknowledgment of your use of NAS2D is appreciated but is not required.
 // ==================================================================================
 
-#include "Mixer.h"
+// #include "MixerNull.h"
 
+pub struct MixerNull {}
 
-using namespace NAS2D;
+impl Mixer for MixerNull {
+    fn playSound(sound: &Sound) {}
 
+    fn stopSound() {}
 
-void Mixer::playMusic(const Music& music, int loops /*= Mixer::CONTINUOUS*/)
-{
-	fadeInMusic(music, loops, std::chrono::milliseconds{0});
-}
+    fn resumeSound() {}
 
+    fn stopMusic() {}
 
-void Mixer::stopAllAudio()
-{
-	stopMusic();
-	stopSound();
-}
+    fn pauseMusic() {}
 
+    fn resumeMusic() {}
 
-void Mixer::pauseAllAudio()
-{
-	pauseMusic();
-	pauseSound();
-}
+    fn fadeInMusic(music: &Music, loops: i32, fadeInTime: i64) {}
 
+    fn fadeOutMusic(fadeOutTIme: i64) {}
 
-void Mixer::resumeAllAudio()
-{
-	resumeMusic();
-	resumeSound();
-}
+    fn musicVolume(level: i32) {}
 
+    fn soundVolume2() -> i32 {
+        0
+    }
 
-SignalSource<>& Mixer::musicCompleteSignalSource()
-{
-	return mMusicComplete;
+    fn musicVolume2() -> i32 {
+        0
+    }
 }

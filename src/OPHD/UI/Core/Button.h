@@ -10,8 +10,7 @@
 
 #include <string>
 
-
-class Button: public TextControl
+class Button : public TextControl
 {
 
 	enum class Type
@@ -33,18 +32,16 @@ class Button: public TextControl
 
 	void fontSize(unsigned int pointSize);
 
-	void image(const std::string& path);
+	void image(const std::string &path);
 	bool hasImage() const;
 
-	ClickSignal::Source& click() { return mSignal; }
+	ClickSignal::Source &click() { return mSignal; }
 
 	void update() override;
 
-protected:
 	virtual void onMouseDown(NAS2D::EventHandler::MouseButton button, int x, int y);
 	virtual void onMouseUp(NAS2D::EventHandler::MouseButton button, int x, int y);
 	virtual void onMouseMove(int x, int y, int dX, int dY);
-
 
 	enum class State
 	{
@@ -54,16 +51,16 @@ protected:
 
 	void draw() override;
 
-	State mState = State::Normal; /**< Current state of the Button. */
+	State mState = State::Normal;	  /**< Current state of the Button. */
 	Type mType = Type::BUTTON_NORMAL; /**< Modifies Button behavior. */
 
-	const NAS2D::Image* mImage = nullptr; /**< Image to draw centered on the Button. */
+	const NAS2D::Image *mImage = nullptr; /**< Image to draw centered on the Button. */
 
 	NAS2D::RectangleSkin mSkinNormal;
 	NAS2D::RectangleSkin mSkinHover;
 	NAS2D::RectangleSkin mSkinPressed;
 
-	const NAS2D::Font* mFont = nullptr; /**< Buttons can have different font sizes. */
+	const NAS2D::Font *mFont = nullptr; /**< Buttons can have different font sizes. */
 
 	ClickSignal mSignal; /**< Object to notify when the Button is activated. */
 

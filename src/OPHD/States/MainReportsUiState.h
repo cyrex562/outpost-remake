@@ -7,37 +7,32 @@
 
 #include <vector>
 
-
 class Structure;
 
 class MainReportsUiState : public Wrapper
 {
 
 	using ReportsUiSignal = NAS2D::Signal<>;
-	using TakeMeThere = NAS2D::Signal<Structure*>;
-	using TakeMeThereList = std::vector<TakeMeThere*>;
-
+	using TakeMeThere = NAS2D::Signal<Structure *>;
+	using TakeMeThereList = std::vector<TakeMeThere *>;
 
 	MainReportsUiState();
 	~MainReportsUiState() override;
 
-	void selectFactoryPanel(Structure*);
-	void selectWarehousePanel(Structure*);
-	void selectMinePanel(Structure*);
+	void selectFactoryPanel(Structure *);
+	void selectWarehousePanel(Structure *);
+	void selectMinePanel(Structure *);
 
 	void clearLists();
 
-	ReportsUiSignal::Source& hideReports() { return mReportsUiSignal; }
+	ReportsUiSignal::Source &hideReports() { return mReportsUiSignal; }
 	TakeMeThereList takeMeThere();
 
-protected:
 	void initialize() override;
-	State* update() override;
-
+	State *update() override;
 
 	void _deactivate() override;
 	void _activate() override;
-
 
 	void onKeyDown(NAS2D::EventHandler::KeyCode key, NAS2D::EventHandler::KeyModifier mod, bool repeat);
 	void onMouseDown(NAS2D::EventHandler::MouseButton button, int x, int y);
@@ -46,7 +41,6 @@ protected:
 	void deselectAllPanels();
 
 	void exit();
-
 
 	ReportsUiSignal mReportsUiSignal;
 };

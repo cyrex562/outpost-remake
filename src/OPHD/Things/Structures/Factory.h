@@ -4,9 +4,7 @@
 
 #include "../../StorableResources.h"
 
-
 class ProductionCost;
-
 
 /**
  * Defines the Factory interface.
@@ -26,16 +24,15 @@ class Factory : public Structure
 {
 
 	// Signal providing what was complete and a reference to the Factory.
-	using ProductionSignal = NAS2D::Signal<Factory&>;
+	using ProductionSignal = NAS2D::Signal<Factory &>;
 
 	using ProductionTypeList = std::vector<ProductType>;
 
-
-	Factory(const std::string& name, const std::string& spritePath, StructureID id);
+	Factory(const std::string &name, const std::string &spritePath, StructureID id);
 
 	virtual void updateProduction();
 
-	void resourcePool(const StorableResources* resources) { mResources = resources; }
+	void resourcePool(const StorableResources *resources) { mResources = resources; }
 
 	int productionTurnsToComplete() const { return mTurnsToComplete; }
 	void productionTurnsToComplete(int newTurnsToComplete) { mTurnsToComplete = newTurnsToComplete; }
@@ -50,22 +47,20 @@ class Factory : public Structure
 	ProductType productWaiting() const { return mProductWaiting; }
 	ProductType pullProduct();
 
-	const ProductionTypeList& productList() const { return mAvailableProducts; }
+	const ProductionTypeList &productList() const { return mAvailableProducts; }
 
 	virtual void initFactory() = 0;
 
-	ProductionSignal::Source& productionComplete() { return mProductionComplete; }
+	ProductionSignal::Source &productionComplete() { return mProductionComplete; }
 
 	NAS2D::Dictionary getDataDict() const override;
 
-protected:
 	void clearProduction();
 
 	void addProduct(ProductType type);
 	bool enoughResourcesAvailable();
 
-	const StorableResources* resourcePool() { return mResources; }
-
+	const StorableResources *resourcePool() { return mResources; }
 
 	int mTurnsCompleted = 0;
 	int mTurnsToComplete = 0;
@@ -77,7 +72,7 @@ protected:
 
 	ProductionSignal mProductionComplete; /**< Signal used when production is complete. */
 
-	const StorableResources* mResources = nullptr; /**< Pointer to the player's resource pool. UGLY. */
+	const StorableResources *mResources = nullptr; /**< Pointer to the player's resource pool. UGLY. */
 };
 
-const ProductionCost& productCost(ProductType);
+const ProductionCost &productCost(ProductType);

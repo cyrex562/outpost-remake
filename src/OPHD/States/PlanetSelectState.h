@@ -13,17 +13,14 @@
 
 #include <vector>
 
-
 class PlanetSelectState : public NAS2D::State
 {
 
 	PlanetSelectState();
 	~PlanetSelectState() override;
 
-protected:
 	void initialize() override;
-	State* update() override;
-
+	State *update() override;
 
 	void onMouseDown(NAS2D::EventHandler::MouseButton, int, int);
 	void onMouseMove(int, int, int, int);
@@ -35,9 +32,8 @@ protected:
 
 	void onQuit();
 
-
-	const NAS2D::Font& mFontBold;
-	const NAS2D::Font& mTinyFont;
+	const NAS2D::Font &mFontBold;
+	const NAS2D::Font &mTinyFont;
 
 	const NAS2D::Image mBg;
 	const NAS2D::Image mCloud1;
@@ -50,7 +46,7 @@ protected:
 
 	NAS2D::Point<int> mMousePosition;
 
-	std::vector<Planet*> mPlanets;
+	std::vector<Planet *> mPlanets;
 
 	Button mQuit;
 
@@ -60,7 +56,7 @@ protected:
 
 	NAS2D::Timer mTimer;
 
-	NAS2D::State* mReturnState = this;
+	NAS2D::State *mReturnState = this;
 
 	std::vector<Planet::Attributes> PlanetAttributes;
 };

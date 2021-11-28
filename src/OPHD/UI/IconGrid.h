@@ -15,13 +15,11 @@
 
 #include <algorithm>
 
-
 /**
  * Represents a 2D grid of Icon items that can be selected with a mouse.
  */
 class IconGrid : public Control
 {
-
 
 	/**
 	 * Item used within the IconGrid.
@@ -40,34 +38,32 @@ class IconGrid : public Control
 		int meta = 0; /**< User defined integer value. Optional. */
 		bool available = true;
 
-	protected:
 		friend class IconGrid;
 
 		NAS2D::Point<int> pos;
 	};
 
-	using Signal = NAS2D::Signal<const IconGridItem*>;
+	using Signal = NAS2D::Signal<const IconGridItem *>;
 
-
-	IconGrid(const std::string& filePath, int iconSize, int margin);
+	IconGrid(const std::string &filePath, int iconSize, int margin);
 	~IconGrid() override;
 
-	const std::string& itemName(std::size_t index) const { return mIconItemList[index].name; }
+	const std::string &itemName(std::size_t index) const { return mIconItemList[index].name; }
 
 	int selectionIndex() const { return static_cast<int>(mSelectedIndex); }
 
 	bool empty() const { return mIconItemList.empty(); }
 
-	void addItemSorted(const std::string& name, int sheetIndex, int meta);
-	void addItem(const std::string& name, int sheetIndex, int meta);
-	void removeItem(const std::string& item);
-	bool itemExists(const std::string& item);
+	void addItemSorted(const std::string &name, int sheetIndex, int meta);
+	void addItem(const std::string &name, int sheetIndex, int meta);
+	void removeItem(const std::string &item);
+	bool itemExists(const std::string &item);
 	void clear();
 
 	// Setter
-	void itemAvailable(const std::string& item, bool isItemAvailable);
+	void itemAvailable(const std::string &item, bool isItemAvailable);
 	// Getter
-	bool itemAvailable(const std::string& item);
+	bool itemAvailable(const std::string &item);
 
 	void showTooltip(bool value) { mShowTooltip = value; }
 
@@ -78,7 +74,7 @@ class IconGrid : public Control
 	void incrementSelection();
 	void decrementSelection();
 
-	Signal::Source& selectionChanged() { return mSignal; }
+	Signal::Source &selectionChanged() { return mSignal; }
 
 	void hide() override;
 
@@ -86,13 +82,10 @@ class IconGrid : public Control
 
 	void update() override;
 
-
-protected:
 	virtual void onMouseDown(NAS2D::EventHandler::MouseButton button, int x, int y);
 	virtual void onMouseMove(int x, int y, int dX, int dY);
 
 	void onResize() override;
-
 
 	using IconItemList = std::vector<IconGridItem>;
 	using Index = IconItemList::size_type;
@@ -102,17 +95,17 @@ protected:
 
 	void raiseChangedEvent();
 
-	const NAS2D::Font& mFont;
+	const NAS2D::Font &mFont;
 
 	Index mHighlightIndex = constants::NoSelection; /**< Current highlight index. */
-	Index mSelectedIndex = constants::NoSelection; /**< Currently selected item index. */
+	Index mSelectedIndex = constants::NoSelection;	/**< Currently selected item index. */
 
-	int mIconSize = 1; /**< Size of the icons. */
+	int mIconSize = 1;	 /**< Size of the icons. */
 	int mIconMargin = 0; /**< Spacing between icons and edges of the IconGrid. */
 
 	bool mShowTooltip = false; /**< Flag indicating that we want a tooltip drawn near an icon when hovering over it. */
 
-	const NAS2D::Image& mIconSheet; /**< Image containing the icons. */
+	const NAS2D::Image &mIconSheet; /**< Image containing the icons. */
 
 	NAS2D::RectangleSkin mSkin;
 

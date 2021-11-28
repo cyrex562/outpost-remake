@@ -6,18 +6,16 @@
 
 #include <NAS2D/StringUtils.h>
 
-
 class Recycling : public Structure
 {
 
 	const int WasteProcessingCapacity = 30;
 	const int ResidentialSupportCount = 10;
 
-
 	Recycling() : Structure(constants::Recycling,
-		"structures/recycling.sprite",
-		StructureClass::Recycling,
-		StructureID::SID_RECYCLING)
+							"structures/recycling.sprite",
+							StructureClass::Recycling,
+							StructureID::SID_RECYCLING)
 	{
 		maxAge(500);
 		turnsToBuild(4);
@@ -26,19 +24,18 @@ class Recycling : public Structure
 		hasCrime(true);
 	}
 
-
 	/**
 	 * Amount of waste the facility can process per turn.
 	 */
 	virtual int wasteProcessingCapacity() const
 	{
-		if (!operational()) {
+		if (!operational())
+		{
 			return 0;
 		}
 
 		return WasteProcessingCapacity;
 	}
-
 
 	/**
 	 * Number of residential units the facility can support
@@ -46,13 +43,13 @@ class Recycling : public Structure
 	 */
 	virtual int residentialSupportCount() const
 	{
-		if (!operational()) {
+		if (!operational())
+		{
 			return 0;
 		}
 
 		return ResidentialSupportCount;
 	}
-
 
 	StringTable createInspectorViewTable() override
 	{
@@ -64,7 +61,8 @@ class Recycling : public Structure
 		stringTable[{0, 1}].text = "Max Waste Processing Capacity:";
 		stringTable[{1, 1}].text = NAS2D::stringFrom(wasteProcessingCapacity());
 
-		if (!operational()) {
+		if (!operational())
+		{
 			stringTable[{1, 0}].textColor = constants::WarningTextColor;
 			stringTable[{1, 1}].textColor = constants::WarningTextColor;
 		}
@@ -72,8 +70,6 @@ class Recycling : public Structure
 		return stringTable;
 	}
 
-
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(4);

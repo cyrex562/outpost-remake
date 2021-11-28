@@ -13,9 +13,7 @@
 #include <string>
 #include <map>
 
-
 typedef struct _Mix_Music Mix_Music;
-
 
 namespace NAS2D
 {
@@ -26,23 +24,21 @@ namespace NAS2D
 	class Music
 	{
 
-		explicit Music(const std::string& filePath);
+		explicit Music(const std::string &filePath);
 
-		Music(const Music& rhs) = delete;
-		Music& operator=(const Music& rhs) = delete;
+		Music(const Music &rhs) = delete;
+		Music &operator=(const Music &rhs) = delete;
 
 		~Music();
 
-		const std::string& name() const { return mResourceName; }
+		const std::string &name() const { return mResourceName; }
 
-	protected:
 		friend class MixerSDL;
-		Mix_Music* music() const;
-
+		Mix_Music *music() const;
 
 		std::string mResourceName; /**< File path */
 		const std::string mBuffer;
-		Mix_Music* mMusic{nullptr};
+		Mix_Music *mMusic{nullptr};
 	};
 
 } // namespace

@@ -6,9 +6,7 @@
 
 #include <vector>
 
-
 class Robot;
-
 
 /**
  * Implements the Robot Command structure.
@@ -17,9 +15,9 @@ class RobotCommand : public Structure
 {
 
 	RobotCommand() : Structure(constants::RobotCommand,
-		"structures/robot_control.sprite",
-		StructureClass::RobotCommand,
-		StructureID::SID_ROBOT_COMMAND)
+							   "structures/robot_control.sprite",
+							   StructureClass::RobotCommand,
+							   StructureID::SID_ROBOT_COMMAND)
 	{
 		maxAge(500);
 		turnsToBuild(3);
@@ -28,20 +26,18 @@ class RobotCommand : public Structure
 		hasCrime(true);
 	}
 
-	bool isControlling(Robot* robot) const;
+	bool isControlling(Robot *robot) const;
 
 	bool commandCapacityAvailable() const;
-	void addRobot(Robot* robot);
-	void removeRobot(Robot* robot);
+	void addRobot(Robot *robot);
+	void removeRobot(Robot *robot);
 
-	const std::vector<Robot*>& robots() { return mRobotList; }
+	const std::vector<Robot *> &robots() { return mRobotList; }
 
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(5);
 	}
 
-
-	std::vector<Robot*> mRobotList;
+	std::vector<Robot *> mRobotList;
 };

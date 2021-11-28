@@ -28,7 +28,6 @@
 #include <string>
 #include <memory>
 
-
 namespace NAS2D
 {
 	namespace Xml
@@ -46,13 +45,11 @@ class Tile;
 class TileMap;
 class MainReportsUiState;
 
-
 enum PointerType
 {
 	POINTER_NORMAL,
 	POINTER_PLACE_TILE
 };
-
 
 enum class InsertMode
 {
@@ -61,7 +58,6 @@ enum class InsertMode
 	Tube,
 	Structure
 };
-
 
 class MapViewState : public Wrapper
 {
@@ -72,31 +68,27 @@ class MapViewState : public Wrapper
 		Large = 2
 	};
 
-
 	using QuitSignal = NAS2D::Signal<>;
 	using ReportsUiSignal = NAS2D::Signal<>;
 	using MapChangedSignal = NAS2D::Signal<>;
 
-
-	MapViewState(MainReportsUiState& mainReportsState, const std::string& savegame);
-	MapViewState(MainReportsUiState& mainReportsState, const Planet::Attributes& planetAttributes, Difficulty selectedDifficulty);
+	MapViewState(MainReportsUiState &mainReportsState, const std::string &savegame);
+	MapViewState(MainReportsUiState &mainReportsState, const Planet::Attributes &planetAttributes, Difficulty selectedDifficulty);
 	~MapViewState() override;
 
 	void setPopulationLevel(PopulationLevel popLevel);
 
-	ReportsUiSignal::Source& showReporstUi() { return mReportsUiSignal; }
-	QuitSignal::Source& quit() { return mQuitSignal; }
-	MapChangedSignal::Source& mapChanged() { return mMapChangedSignal; }
+	ReportsUiSignal::Source &showReporstUi() { return mReportsUiSignal; }
+	QuitSignal::Source &quit() { return mQuitSignal; }
+	MapChangedSignal::Source &mapChanged() { return mMapChangedSignal; }
 
-	void focusOnStructure(Structure* s);
+	void focusOnStructure(Structure *s);
 
 	Difficulty difficulty() { return mDifficulty; }
 	void difficulty(Difficulty difficulty);
 
-protected:
 	void initialize() override;
-	State* update() override;
-
+	State *update() override;
 
 	void _deactivate() override;
 	void _activate() override;
@@ -112,15 +104,15 @@ protected:
 	void onWindowResized(NAS2D::Vector<int> newSize);
 
 	// ROBOT EVENT HANDLERS
-	void onDozerTaskComplete(Robot* robot);
-	void onDiggerTaskComplete(Robot* robot);
-	void onMinerTaskComplete(Robot* robot);
+	void onDozerTaskComplete(Robot *robot);
+	void onDiggerTaskComplete(Robot *robot);
+	void onMinerTaskComplete(Robot *robot);
 
 	// DRAWING FUNCTIONS
 	void drawUI();
 	void drawMiniMap();
 	void drawNavInfo();
-	bool drawNavIcon(NAS2D::Renderer& renderer, const NAS2D::Rectangle<int>& currentIconBounds, const NAS2D::Rectangle<int>& subImageBounds, const NAS2D::Color& iconColor, const NAS2D::Color& iconHighlightColor);
+	bool drawNavIcon(NAS2D::Renderer &renderer, const NAS2D::Rectangle<int> &currentIconBounds, const NAS2D::Rectangle<int> &subImageBounds, const NAS2D::Color &iconColor, const NAS2D::Color &iconHighlightColor);
 
 	void drawResourceInfo();
 	void drawRobotInfo();
@@ -130,7 +122,7 @@ protected:
 	void onDeployColonistLander();
 	void onDeploySeedLander(NAS2D::Point<int> point);
 	void insertSeedLander(NAS2D::Point<int> point);
-	void insertTube(ConnectorDir dir, int depth, Tile* tile);
+	void insertTube(ConnectorDir dir, int depth, Tile *tile);
 
 	void placeRobot();
 	void placeStructure();
@@ -139,9 +131,9 @@ protected:
 	void placeTubeStart();
 	void placeTubeEnd();
 
-	void placeRobodozer(Tile&);
-	void placeRobodigger(Tile&);
-	void placeRobominer(Tile&);
+	void placeRobodozer(Tile &);
+	void placeRobodigger(Tile &);
+	void placeRobominer(Tile &);
 
 	void setStructureID(StructureID type, InsertMode mode);
 
@@ -156,15 +148,15 @@ protected:
 	void checkCommRangeOverlay();
 	void checkSurfacePoliceOverlay();
 	void resetPoliceOverlays();
-	void fillRangedAreaList(TileList& tileList, Tile& centerTile, int range);
-	void fillRangedAreaList(TileList& tileList, Tile& centerTile, int range, int depth);
+	void fillRangedAreaList(TileList &tileList, Tile &centerTile, int range);
+	void fillRangedAreaList(TileList &tileList, Tile &centerTile, int range, int depth);
 	void checkConnectedness();
 	void changeViewDepth(int);
 
-	void pullRobotFromFactory(ProductType pt, Factory& factory);
-	void onFactoryProductionComplete(Factory& factory);
+	void pullRobotFromFactory(ProductType pt, Factory &factory);
+	void onFactoryProductionComplete(Factory &factory);
 
-	void onMineFacilityExtend(MineFacility* mf);
+	void onMineFacilityExtend(MineFacility *mf);
 
 	void countPlayerResources();
 
@@ -189,17 +181,17 @@ protected:
 	void checkNewlyBuiltStructures();
 
 	// SAVE GAME MANAGEMENT FUNCTIONS
-	void readRobots(NAS2D::Xml::XmlElement* element);
-	void readStructures(NAS2D::Xml::XmlElement* element);
-	void readTurns(NAS2D::Xml::XmlElement* element);
-	void readPopulation(NAS2D::Xml::XmlElement* element);
-	void readMoraleChanges(NAS2D::Xml::XmlElement*);
+	void readRobots(NAS2D::Xml::XmlElement *element);
+	void readStructures(NAS2D::Xml::XmlElement *element);
+	void readTurns(NAS2D::Xml::XmlElement *element);
+	void readPopulation(NAS2D::Xml::XmlElement *element);
+	void readMoraleChanges(NAS2D::Xml::XmlElement *);
 
 	void scrubRobotList();
 
-	void load(const std::string& filePath);
-	void save(const std::string& filePath);
-	NAS2D::Xml::XmlElement* serializeProperties();
+	void load(const std::string &filePath);
+	void save(const std::string &filePath);
+	NAS2D::Xml::XmlElement *serializeProperties();
 
 	// UI MANAGEMENT FUNCTIONS
 	void clearMode();
@@ -223,9 +215,9 @@ protected:
 
 	// UI EVENT HANDLERS
 	void onTurns();
-	void setOverlay(TileList& tileList, Tile::Overlay overlay);
+	void setOverlay(TileList &tileList, Tile::Overlay overlay);
 	void clearOverlays();
-	void clearOverlay(TileList& tileList);
+	void clearOverlay(TileList &tileList);
 	void updateOverlays();
 	void changePoliceOverlayDepth(int oldDepth, int newDepth);
 	void onToggleConnectedness();
@@ -233,36 +225,35 @@ protected:
 	void onToggleRouteOverlay();
 	void onTogglePoliceOverlay();
 
-	void onNotificationClicked(const NotificationArea::Notification&);
+	void onNotificationClicked(const NotificationArea::Notification &);
 
 	void onSaveGame();
 	void onLoadGame();
 	void onReturnToGame();
 	void onGameOver();
 
-	void onStructuresSelectionChange(const IconGrid::IconGridItem*);
-	void onConnectionsSelectionChange(const IconGrid::IconGridItem*);
-	void onRobotsSelectionChange(const IconGrid::IconGridItem*);
+	void onStructuresSelectionChange(const IconGrid::IconGridItem *);
+	void onConnectionsSelectionChange(const IconGrid::IconGridItem *);
+	void onRobotsSelectionChange(const IconGrid::IconGridItem *);
 
-	void onDiggerSelectionDialog(Direction direction, Tile* tile);
+	void onDiggerSelectionDialog(Direction direction, Tile *tile);
 
-	void onFileIoAction(const std::string& filePath, FileIo::FileOperation fileOp);
+	void onFileIoAction(const std::string &filePath, FileIo::FileOperation fileOp);
 
 	void onNotificationWindowTakeMeThere(NAS2D::Point<int> position, int depth);
 
-
-	MainReportsUiState& mMainReportsState;
-	TileMap* mTileMap{nullptr};
+	MainReportsUiState &mMainReportsState;
+	TileMap *mTileMap{nullptr};
 	CrimeRateUpdate mCrimeRateUpdate;
 	CrimeExecution mCrimeExecution;
 
 	Planet::Attributes mPlanetAttributes;
 	Difficulty mDifficulty = Difficulty::Medium;
 
-	const NAS2D::Image mUiIcons{"ui/icons.png"}; /**< User interface icons. */
+	const NAS2D::Image mUiIcons{"ui/icons.png"};   /**< User interface icons. */
 	const NAS2D::Image mBackground{"sys/bg1.png"}; /**< Background image drawn behind the tile map. */
-	std::unique_ptr<NAS2D::Image> mMapDisplay; /**< Satellite view of the Site Map. */
-	std::unique_ptr<NAS2D::Image> mHeightMap; /**< Height view of the Site Map. */
+	std::unique_ptr<NAS2D::Image> mMapDisplay;	   /**< Satellite view of the Site Map. */
+	std::unique_ptr<NAS2D::Image> mHeightMap;	   /**< Height view of the Site Map. */
 
 	NAS2D::Point<int> mTileMapMouseHover; /**< Tile position the mouse is currently hovering over. */
 
@@ -277,9 +268,9 @@ protected:
 
 	RobotTileTable mRobotList; /**< List of active robots and their positions on the map. */
 
-	InsertMode mInsertMode = InsertMode::None; /**< What's being inserted into the TileMap if anything. */
+	InsertMode mInsertMode = InsertMode::None;			   /**< What's being inserted into the TileMap if anything. */
 	StructureID mCurrentStructure = StructureID::SID_NONE; /**< Structure being placed. */
-	Robot::Type mCurrentRobot = Robot::Type::None; /**< Robot being placed. */
+	Robot::Type mCurrentRobot = Robot::Type::None;		   /**< Robot being placed. */
 
 	Population mPopulation;
 
@@ -338,7 +329,7 @@ protected:
 	MapChangedSignal mMapChangedSignal;
 
 	// ROUTING
-	micropather::MicroPather* mPathSolver = nullptr;
+	micropather::MicroPather *mPathSolver = nullptr;
 
 	// MISCELLANEOUS
 	int mTurnCount = 0;

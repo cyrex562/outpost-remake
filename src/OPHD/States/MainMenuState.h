@@ -10,7 +10,6 @@
 
 #include <array>
 
-
 /**
  * Implements the main menu screen.
  */
@@ -20,10 +19,8 @@ class MainMenuState : public NAS2D::State
 	MainMenuState();
 	~MainMenuState() override;
 
-protected:
 	void initialize() override;
-	State* update() override;
-
+	State *update() override;
 
 	void onKeyDown(NAS2D::EventHandler::KeyCode key, NAS2D::EventHandler::KeyModifier mod, bool repeat);
 	void onWindowResized(NAS2D::Vector<int> newSize);
@@ -39,8 +36,7 @@ protected:
 	void onHelp();
 	void onQuit();
 
-	void onFileIoAction(const std::string& filePath, FileIo::FileOperation fileOp);
-
+	void onFileIoAction(const std::string &filePath, FileIo::FileOperation fileOp);
 
 	const NAS2D::Image mBgImage;
 
@@ -49,5 +45,5 @@ protected:
 	std::array<Button, 4> buttons;
 
 	Label lblVersion;
-	NAS2D::State* mReturnState = this;
+	NAS2D::State *mReturnState = this;
 };

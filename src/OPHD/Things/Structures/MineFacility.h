@@ -10,11 +10,11 @@
 class MineFacility : public Structure
 {
 
-	using ExtensionCompleteSignal = NAS2D::Signal<MineFacility*>;
+	using ExtensionCompleteSignal = NAS2D::Signal<MineFacility *>;
 
-	MineFacility(Mine* mine);
+	MineFacility(Mine *mine);
 
-	void mine(Mine* mine) { mMine = mine; }
+	void mine(Mine *mine) { mMine = mine; }
 	void maxDepth(int depth) { mMaxDepth = depth; }
 
 	bool extending() const;
@@ -32,34 +32,29 @@ class MineFacility : public Structure
 	/**
 	 * Gets a pointer to the mine the MineFacility manages.
 	 */
-	Mine* mine() { return mMine; }
+	Mine *mine() { return mMine; }
 
-	ExtensionCompleteSignal::Source& extensionComplete() { return mExtensionComplete; }
+	ExtensionCompleteSignal::Source &extensionComplete() { return mExtensionComplete; }
 
-protected:
 	friend class MapViewState;
 
 	void assignedTrucks(int count) { mAssignedTrucks = count; }
 	void digTimeRemaining(int count) { mDigTurnsRemaining = count; }
 
-protected:
 	void think() override;
 
-
 	MineFacility() = delete;
-	MineFacility(const MineFacility&) = delete;
-	MineFacility& operator=(const MineFacility&) = delete;
-
+	MineFacility(const MineFacility &) = delete;
+	MineFacility &operator=(const MineFacility &) = delete;
 
 	void activated() override;
 
-
-	int mMaxDepth = 0; /**< Maximum digging depth. */
+	int mMaxDepth = 0;			/**< Maximum digging depth. */
 	int mDigTurnsRemaining = 0; /**< Turns remaining before extension is complete. */
-	int mAssignedTrucks = 1; /**< All mine facilities are built with at least one truck. */
+	int mAssignedTrucks = 1;	/**< All mine facilities are built with at least one truck. */
 	int mMaxTruckCount = 10;
 
-	Mine* mMine = nullptr; /**< Mine that this facility manages. */
+	Mine *mMine = nullptr; /**< Mine that this facility manages. */
 
 	ExtensionCompleteSignal mExtensionComplete; /**< Called whenever an extension is completed. */
 };

@@ -9,7 +9,6 @@
 
 #include <NAS2D/Dictionary.h>
 
-
 /**
  * State of an individual Structure.
  */
@@ -66,9 +65,8 @@ class Structure : public Thing
 		Warehouse
 	};
 
-
-	Structure(const std::string& name, const std::string& spritePath, StructureClass structureClass, StructureID id);
-	Structure(const std::string& name, const std::string& spritePath, const std::string& initialAction, StructureClass structureClass, StructureID id);
+	Structure(const std::string &name, const std::string &spritePath, StructureClass structureClass, StructureID id);
+	Structure(const std::string &name, const std::string &spritePath, const std::string &initialAction, StructureClass structureClass, StructureID id);
 
 	~Structure() override = default;
 
@@ -97,20 +95,20 @@ class Structure : public Thing
 	bool forceIdle() const { return mForcedIdle; }
 
 	// RESOURCES AND RESOURCE MANAGEMENT
-	const StorableResources& resourcesIn() const { return mResourcesInput; }
+	const StorableResources &resourcesIn() const { return mResourcesInput; }
 
-	StorableResources& storage() { return mStoragePool; }
-	StorableResources& production() { return mProductionPool; }
+	StorableResources &storage() { return mStoragePool; }
+	StorableResources &production() { return mProductionPool; }
 
-	const PopulationRequirements& populationRequirements() const { return mPopulationRequirements; }
-	PopulationRequirements& populationAvailable() { return mPopulationAvailable; }
+	const PopulationRequirements &populationRequirements() const { return mPopulationRequirements; }
+	PopulationRequirements &populationAvailable() { return mPopulationAvailable; }
 
 	// ATTRIBUTES
 	StructureClass structureClass() const { return mStructureClass; }
-	const std::string& stateDescription() const;
-	static const std::string& stateDescription(StructureState state);
-	const std::string& classDescription() const;
-	static const std::string& classDescription(Structure::StructureClass structureClass);
+	const std::string &stateDescription() const;
+	static const std::string &stateDescription(StructureState state);
+	const std::string &classDescription() const;
+	static const std::string &classDescription(Structure::StructureClass structureClass);
 	ConnectorDir connectorDirection() const { return mConnectorDirection; }
 
 	int turnsToBuild() const { return mTurnsToBuild; }
@@ -162,7 +160,6 @@ class Structure : public Thing
 
 	virtual NAS2D::Dictionary getDataDict() const;
 
-protected:
 	friend class StructureCatalogue;
 
 	void turnsToBuild(int newTurnsToBuild) { mTurnsToBuild = newTurnsToBuild; }
@@ -184,13 +181,12 @@ protected:
 	void selfSustained(bool value) { mSelfSustained = value; }
 	void hasCrime(bool value) { mHasCrime = value; }
 
-	void setPopulationRequirements(const PopulationRequirements& pr) { mPopulationRequirements = pr; }
+	void setPopulationRequirements(const PopulationRequirements &pr) { mPopulationRequirements = pr; }
 	void energyRequired(int energy) { mEnergyRequirement = energy; }
 
-	void resourcesIn(const StorableResources& resources) { mResourcesInput = resources; }
+	void resourcesIn(const StorableResources &resources) { mResourcesInput = resources; }
 
 	void storageCapacity(int capacity) { mStorageCapacity = capacity; }
-
 
 	Structure() = delete;
 
@@ -203,7 +199,6 @@ protected:
 	 * activation can do so without overriding void activate();
 	 */
 	virtual void activated() {}
-
 
 	int mTurnsToBuild{0};
 	int mAge{0};
@@ -221,12 +216,12 @@ protected:
 	ConnectorDir mConnectorDirection{ConnectorDir::CONNECTOR_INTERSECTION};
 
 	PopulationRequirements mPopulationRequirements{}; /**< Population requirements for structure operation. */
-	PopulationRequirements mPopulationAvailable{}; /**< Determine how many of each type of population required was actually supplied to the structure. */
+	PopulationRequirements mPopulationAvailable{};	  /**< Determine how many of each type of population required was actually supplied to the structure. */
 
 	StorableResources mResourcesInput; /**< Resources needed to operate the Structure. */
 
 	StorableResources mProductionPool; /**< Resource pool used for production. */
-	StorableResources mStoragePool; /**< Resource storage pool. */
+	StorableResources mStoragePool;	   /**< Resource storage pool. */
 
 	DisabledReason mDisabledReason{DisabledReason::None};
 	IdleReason mIdleReason{IdleReason::None};
@@ -238,7 +233,6 @@ protected:
 	bool mForcedIdle{false}; /**< Indicates that the Structure was manually set to Idle by the user and should remain that way until the user says otherwise. */
 };
 
-
-using StructureList = std::vector<Structure*>;
+using StructureList = std::vector<Structure *>;
 
 std::string StructureName(StructureID id);

@@ -9,7 +9,6 @@
 
 #include "../../States/MapViewStateHelper.h" // yuck
 
-
 class MaintenanceFacility : public Structure
 {
 
@@ -17,11 +16,10 @@ class MaintenanceFacility : public Structure
 	static constexpr int MaximumPersonnel{10};
 	static constexpr int MinimumPersonnel{1};
 
-
 	MaintenanceFacility() : Structure(constants::MaintenanceFacility,
-		"structures/maintenance.sprite",
-		StructureClass::Maintenance,
-		StructureID::SID_MAINTENANCE_FACILITY)
+									  "structures/maintenance.sprite",
+									  StructureClass::Maintenance,
+									  StructureID::SID_MAINTENANCE_FACILITY)
 	{
 		maxAge(200);
 		turnsToBuild(5);
@@ -30,62 +28,52 @@ class MaintenanceFacility : public Structure
 		hasCrime(true);
 	}
 
-
-	void resources(const StorableResources& resources)
+	void resources(const StorableResources &resources)
 	{
 		mResources = &resources;
 	}
-
 
 	bool suppliesAvailable() const
 	{
 		return mMaterialsLevel > 0;
 	}
 
-
 	int maintenancePersonnel() const
 	{
 		return mMaintenancePersonnel;
 	}
-
 
 	void addPersonnel()
 	{
 		mMaintenancePersonnel = std::clamp(mMaintenancePersonnel + 1, MinimumPersonnel, MaximumPersonnel);
 	}
 
-
 	void removePersonnel()
 	{
 		mMaintenancePersonnel = std::clamp(mMaintenancePersonnel - 1, MinimumPersonnel, MaximumPersonnel);
 	}
-
 
 	int personnel() const
 	{
 		return mMaintenancePersonnel;
 	}
 
-
 	void personnel(int assigned)
 	{
 		mMaintenancePersonnel = assigned;
 	}
-
 
 	bool personnelAvailable() const
 	{
 		return mAssignedPersonnel < mMaintenancePersonnel;
 	}
 
-
-	void addPriorityStructure(Structure* structure)
+	void addPriorityStructure(Structure *structure)
 	{
 		mPriorityList.push_back(structure);
 	}
 
-
-	void removePriorityStructure(Structure* structure)
+	void removePriorityStructure(Structure *structure)
 	{
 		auto it = std::find(mPriorityList.begin(), mPriorityList.end(), structure);
 		if (it != mPriorityList.end())
@@ -94,16 +82,17 @@ class MaintenanceFacility : public Structure
 		}
 	}
 
-
 	bool hasPriorityStructures() const
 	{
 		return !mPriorityList.empty();
 	}
 
-
-	void repairStructures(StructureList& structures)
+	void repairStructures(StructureList &structures)
 	{
-		if (!operational()) { return; }
+		if (!operational())
+		{
+			return;
+		}
 
 		if (hasPriorityStructures())
 		{
@@ -117,21 +106,17 @@ class MaintenanceFacility : public Structure
 		}
 	}
 
-
-protected:
 	void defineResourceInput() override
 	{
 		energyRequired(4);
 	}
-
 
 	bool canMakeRepairs()
 	{
 		return (personnelAvailable() && suppliesAvailable());
 	}
 
-
-	void moveStructureToBack(StructureList& structures, Structure* structure)
+	void moveStructureToBack(StructureList &structures, Structure *structure)
 	{
 		auto it = std::find(structures.begin(), structures.end(), structure);
 		if (it != structures.end())
@@ -141,12 +126,14 @@ protected:
 		}
 	}
 
-
-	void repairPriorityStructures(StructureList& structures)
+	void repairPriorityStructures(StructureList &structures)
 	{
 		for (auto structure : mPriorityList)
 		{
-			if (!canMakeRepairs()) { return; }
+			if (!canMakeRepairs())
+			{
+				return;
+			}
 
 			repairStructure(structure);
 
@@ -159,12 +146,17 @@ protected:
 		}
 	}
 
-
-	void repairStructure(Structure* structure)
+	void repairStructure(Structure *structure)
 	{
-		if (structure->destroyed() || structure->underConstruction()) { return; }
+		if (structure->destroyed() || structure->underConstruction())
+		{
+			return;
+		}
 
-		if (!canMakeRepairs()) { return; }
+		if (!canMakeRepairs())
+		{
+			return;
+		}
 
 		if (structure->disabled() && structure->disabledReason() == DisabledReason::StructuralIntegrity)
 		{
@@ -194,10 +186,12 @@ protected:
 		}
 	}
 
-
 	void think() override
 	{
-		if (mMaterialsLevel == MaintenanceSuppliesCapacity) { return; }
+		if (mMaterialsLevel == MaintenanceSuppliesCapacity)
+		{
+			return;
+		}
 
 		StorableResources maintenanceSuppliesCost{1, 1, 1, 1};
 
@@ -210,9 +204,7 @@ protected:
 		mAssignedPersonnel = 0;
 	}
 
-
-
-	const StorableResources& resources() { return *mResources; }
+	const StorableResources &resources() { return *mResources; }
 
 	int mMaterialsLevel{0};
 	int mMaintenancePersonnel{MinimumPersonnel};
@@ -220,5 +212,5 @@ protected:
 
 	StructureList mPriorityList;
 
-	const StorableResources* mResources{nullptr};
+	const StorableResources *mResources{nullptr};
 };

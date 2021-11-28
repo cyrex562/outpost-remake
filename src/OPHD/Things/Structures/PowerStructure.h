@@ -6,7 +6,6 @@
 
 #include <string>
 
-
 /**
  * Virtual class for structures whose primary purpose is power production
  *
@@ -15,8 +14,7 @@
 class PowerStructure : public Structure
 {
 
-	PowerStructure(const std::string& name, const std::string& spritePath, StructureClass structureClass, StructureID id) :
-		Structure(name, spritePath, structureClass, id) {}
+	PowerStructure(const std::string &name, const std::string &spritePath, StructureClass structureClass, StructureID id) : Structure(name, spritePath, structureClass, id) {}
 
 	StringTable createInspectorViewTable() override
 	{
@@ -41,6 +39,5 @@ class PowerStructure : public Structure
 		return operational() ? calculateMaxEnergyProduction() : 0;
 	}
 
-protected:
 	virtual int calculateMaxEnergyProduction() = 0;
 };
