@@ -48,3 +48,33 @@ void __stdcall16far pass1_1040_b0bc(astruct_57 *param_1,ulong param_2,ulong para
   *(undefined2 *)(iVar1 + 0x2) = (int)&PTR_LOOP_1050_1040;
   return;
 }
+
+
+void __stdcall16far post_win_msg_1040_7f56(ulong param_1,char *param_2)
+
+{
+  unk_str_op_1000_3d3e((char *)(param_1 & 0xffff0000 | (ulong)((int)param_1 + 0x10)),param_2);
+  PostMessage16(0x1000,0x0,0x0,0x850000);
+  return;
+}
+
+
+BOOL16 __stdcall16far post_win_msg_1040_7f1c(ulong param_1,int param_2,HWND16 param_3)
+
+{
+  int iVar1;
+  undefined2 uVar2;
+  
+  uVar2 = (undefined2)(param_1 >> 0x10);
+  iVar1 = (int)param_1;
+  if (*(int *)(iVar1 + 0x78) != 0x0) {
+    return 0x0;
+  }
+  if (*(int *)(iVar1 + 0x60) != param_2) {
+    *(int *)(iVar1 + 0x60) = param_2;
+    PostMessage16(param_3,0x0,0x0,0x850000);
+  }
+  return 0x1;
+}
+
+

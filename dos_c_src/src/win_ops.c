@@ -939,4 +939,191 @@ ushort * __stdcall16far pass1_1040_97da(ushort *param_1,byte param_2)
 }
 
 
+astruct_57 * __stdcall16far
+pass1_1040_8478(astruct_57 *param_1,ushort param_2,char *param_3,char *param_4,ushort param_5,ushort param_6)
 
+{
+  ushort uVar1;
+  astruct_712 *iVar2;
+  undefined2 uVar2;
+  
+  get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfc3,param_5);
+  uVar2 = (undefined2)((ulong)param_1 >> 0x10);
+  iVar2 = (astruct_712 *)param_1;
+  iVar2->field_0x8e = 0x0;
+  iVar2->field_0x98 = param_2;
+  iVar2->field_0x9a = 0x0;
+  iVar2->field_0xb2 = 0x0;
+  *(undefined2 *)param_1 = 0x8ddc;
+  iVar2->field_0x2 = (int)&PTR_LOOP_1050_1040;
+  iVar2->field_0x9e = 0x0;
+  iVar2->field_0xa2 = 0x12c;
+  uVar1 = str_op_1008_60e8(param_4,param_6);
+  iVar2->field_0x90 = uVar1;
+  iVar2->field_0x92 = param_6;
+  uVar1 = str_op_1008_60e8(param_3,param_6);
+  iVar2->field_0x94 = uVar1;
+  iVar2->field_0x96 = param_6;
+  load_icon_1040_8b92((ulong)param_1,0x1008);
+  PTR_LOOP_1050_5df8 = (undefined *)0x0;
+  return param_1;
+}
+
+
+void __stdcall16far check_dialog_msg_1040_81b6(ulong param_1,HWND16 param_2)
+
+{
+  BOOL16 BVar1;
+  MSG16 local_14;
+  
+  *(undefined2 *)((int)param_1 + 0x78) = 0x1;
+  while( true ) {
+    BVar1 = IsWindow16(param_2);
+    if (BVar1 == 0x0) {
+      return;
+    }
+    BVar1 = GetMessage16((MSG16 *)s_tile2_bmp_1050_1538,0x0,0x0,0x0);
+    if (BVar1 == 0x0) break;
+    param_2 = (HWND16)s_tile2_bmp_1050_1538;
+    IsDialogMessage16((HWND16)s_tile2_bmp_1050_1538,&local_14);
+  }
+  return;
+}
+
+
+void __stdcall16far unk_win_ui_op_1040_8158(ulong *param_1,POINT16 param_2,int param_3,HWND16 param_4)
+
+{
+  code **ppcVar1;
+  INT16 IVar2;
+  BOOL16 BVar3;
+  ulong uVar4;
+  int iVar5;
+  undefined2 uVar6;
+  undefined2 uVar7;
+  POINT16 local_6;
+  
+  if (param_3 == 0x2) {
+    uVar6 = (undefined2)((ulong)param_1 >> 0x10);
+    iVar5 = (int)param_1;
+    if (*(int *)(iVar5 + 0x76) != 0x0) {
+      local_6 = param_2;
+      uVar6 = *(undefined2 *)(iVar5 + 0x6);
+      ScreenToClient16(param_4,&local_6);
+      uVar7 = 0x4;
+      IVar2 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+      local_6 = (POINT16)((ulong)local_6 & 0xffff | (ulong)(uint)(local_6.y + IVar2) << 0x10);
+      uVar4 = (ulong)param_1 & 0xffff0000 | (ulong)(iVar5 + 0x82);
+      BVar3 = PtInRect16((RECT16 *)s_tile2_bmp_1050_1538,local_6);
+      if (BVar3 != 0x0) {
+        ppcVar1 = (code **)((int)*param_1 + 0x14);
+        (**ppcVar1)((int)s_tile2_bmp_1050_1538,param_1,0x0,uVar4,uVar7,uVar6);
+      }
+    }
+  }
+  return;
+}
+
+
+void __stdcall16far win_help_1040_800c(ulong param_1,ushort param_2)
+
+{
+  undefined2 uVar1;
+  astruct_43 *paVar2;
+  LPCSTR lp_help_file;
+  UINT16 w_command;
+  undefined2 uVar3;
+  
+  paVar2 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x1f8,param_2);
+  uVar1 = (undefined2)(param_1 >> 0x10);
+  if (*(int *)((int)param_1 + 0x8a) == 0x0) {
+    w_command = 0x0;
+    uVar3 = 0x3;
+    lp_help_file = (LPCSTR)0x0;
+  }
+  else {
+    uVar3 = 0x1;
+    lp_help_file = *(LPCSTR *)((int)param_1 + 0x8a);
+    w_command = (int)lp_help_file >> 0xf;
+  }
+  WinHelp16(0x1010,lp_help_file,w_command,CONCAT22((int)paVar2,uVar3));
+  return;
+}
+
+
+void __stdcall16far destroy_win_1040_7b98(ULONG param_1,HWND16 param_2)
+
+{
+  if (*(int *)((int)param_1 + 0x74) == 0x0) {
+    DestroyWindow16(param_2);
+  }
+  return;
+}
+
+
+BOOL16 __stdcall16far post_win_msg_1040_7b3c(ulong *param_1,ushort param_2,ushort param_3,int param_4,HWND16 param_5)
+
+{
+  code **ppcVar1;
+  
+  if ((param_4 == 0x1) || (param_4 == 0x2)) {
+    ppcVar1 = (code **)((int)*param_1 + 0x14);
+    (**ppcVar1)();
+  }
+  else {
+    if (param_4 == 0x6f) {
+      ppcVar1 = (code **)((int)*param_1 + 0x2c);
+      (**ppcVar1)(param_5,param_1);
+    }
+    else {
+      if (param_4 != 0x12e) {
+        return 0x0;
+      }
+      PostMessage16(param_5,0x0,0x0,0x112f060);
+    }
+  }
+  return 0x1;
+}
+
+
+
+void __stdcall16far ui_cleanup_op_1040_782c(astruct_18 *param_1,HGDIOBJ16 param_2)
+
+{
+  undefined4 *puVar1;
+  uint uVar2;
+  code **ppcVar3;
+  int iVar4;
+  undefined2 uVar5;
+  HGDIOBJ16 menu;
+  HMENU16 hwnd;
+  
+  uVar5 = (undefined2)((ulong)param_1 >> 0x10);
+  iVar4 = (int)param_1;
+  param_1->field_0x0 = 0x840c;
+  *(undefined2 *)(iVar4 + 0x2) = (int)&PTR_LOOP_1050_1040;
+  puVar1 = (undefined4 *)*(uint *)(iVar4 + 0x70);
+  uVar2 = *(uint *)(iVar4 + 0x72);
+  if ((uVar2 | (uint)puVar1) != 0x0) {
+    ppcVar3 = (code **)*puVar1;
+    (**ppcVar3)(param_2,puVar1,uVar2,0x1);
+  }
+  menu = param_2;
+  if (*(int *)(iVar4 + 0x4) != 0x0) {
+    menu = (HGDIOBJ16)s_tile2_bmp_1050_1538;
+    DeleteObject16(param_2);
+    *(undefined2 *)(iVar4 + 0x4) = 0x0;
+  }
+  hwnd = menu;
+  if (*(int *)(iVar4 + 0x68) != 0x0) {
+    hwnd = (HMENU16)s_tile2_bmp_1050_1538;
+    DestroyMenu16(menu);
+  }
+  RemoveProp16(hwnd,(LPCSTR)s_thisLo_1050_5db1);
+  RemoveProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_thisHi_1050_5db8);
+  RemoveProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_procLo_1050_5dbf);
+  RemoveProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)s_procHi_1050_5dc6);
+  param_1->field_0x0 = 0x389a;
+  *(undefined2 *)(iVar4 + 0x2) = 0x1008;
+  return;
+}
