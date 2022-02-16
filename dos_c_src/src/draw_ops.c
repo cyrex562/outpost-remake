@@ -1140,3 +1140,430 @@ void __stdcall16far draw_op_1040_7bb2(astruct_14 *in_struct_1,HWND16 in_win_hand
   }
   return;
 }
+
+
+
+astruct_18 * __stdcall16far pass1_1040_767e(astruct_18 *param_1,byte param_2)
+
+{
+  unk_draw_op_1040_b0f8(param_1);
+  if ((param_2 & 0x1) != 0x0) {
+    fn_ptr_1000_17ce(param_1,0x1000);
+  }
+  return param_1;
+}
+
+
+
+astruct_18 * __stdcall16far pass1_1040_6360(astruct_18 *param_1,byte param_2)
+
+{
+  unk_draw_op_1040_b0f8(param_1);
+  if ((param_2 & 0x1) != 0x0) {
+    fn_ptr_1000_17ce(param_1,0x1000);
+  }
+  return param_1;
+}
+
+
+void __stdcall16far pass1_1040_6862(astruct_18 *param_1)
+
+{
+  param_1->field_0x0 = 0x6f32;
+  *(undefined2 *)((int)param_1 + 0x2) = (int)&PTR_LOOP_1050_1040;
+  unk_draw_op_1040_b0f8(param_1);
+  return;
+}
+
+
+
+
+
+astruct_18 * __stdcall16far pass1_1040_4df2(astruct_18 *param_1,byte param_2)
+
+{
+  unk_draw_op_1040_b0f8(param_1);
+  if ((param_2 & 0x1) != 0x0) {
+    fn_ptr_1000_17ce(param_1,0x1000);
+  }
+  return param_1;
+}
+
+
+
+
+void __stdcall16far pass1_1040_4f0a(astruct_18 *param_1)
+
+{
+  param_1->field_0x0 = 0x55a2;
+  *(undefined2 *)((int)param_1 + 0x2) = (int)&PTR_LOOP_1050_1040;
+  unk_draw_op_1040_b0f8(param_1);
+  return;
+}
+
+
+void __stdcall16far draw_op_1040_5a06(ulong param_1,HWND16 param_2,ushort param_3)
+
+{
+  uint *puVar1;
+  undefined4 uVar2;
+  code **ppcVar3;
+  undefined4 uVar4;
+  HPALETTE16 b_force_background;
+  int iVar5;
+  HPEN16 handle;
+  HGDIOBJ16 handle_00;
+  int x;
+  int y;
+  ushort in_DX;
+  int iVar6;
+  undefined2 uVar7;
+  undefined2 uVar8;
+  INT16 IVar9;
+  ulong uVar10;
+  astruct_43 *paVar11;
+  astruct_76 *paVar12;
+  undefined2 uVar13;
+  HDC16 *pHVar14;
+  ushort uVar15;
+  HDC16 HVar16;
+  HDC16 HVar17;
+  HDC16 HVar18;
+  undefined2 uVar19;
+  undefined2 uVar20;
+  undefined2 uVar21;
+  uint uStack82;
+  int iStack72;
+  int iStack68;
+  astruct_76 *paStack54;
+  HDC16 local_2c;
+  PAINTSTRUCT16 local_2a;
+  RECT16 local_a [0x2];
+  
+  uVar7 = (undefined2)(param_1 >> 0x10);
+  iVar6 = (int)param_1;
+  uVar21 = *(undefined2 *)(iVar6 + 0x6);
+  GetWindowRect16(param_2,local_a);
+  uVar13 = *(undefined2 *)(iVar6 + 0x6);
+  local_2c = BeginPaint16((HWND16)s_tile2_bmp_1050_1538,&local_2a);
+  uVar8 = 0x1008;
+  b_force_background = palette_op_1008_4e08(*(astruct_13 **)((int)_PTR_LOOP_1050_4230 + 0xe),&local_2c,in_DX,0x1008);
+  paStack54 = (astruct_76 *)0x0;
+  if (*(int *)(iVar6 + 0x98) != 0x0) {
+    paStack54 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,*(ushort *)(iVar6 + 0x98),param_3);
+    IVar9 = 0x1008;
+    uVar10 = pass1_1008_4772(paStack54);
+    if (((uint)(uVar10 >> 0x10) | (uint)uVar10) == 0x0) {
+      if (paStack54 != (astruct_76 *)0x0) {
+        if (paStack54 != (astruct_76 *)0x0) {
+          ppcVar3 = (code **)*(undefined4 *)paStack54;
+          (**ppcVar3)(0x1008,(int)paStack54,(int)((ulong)paStack54 >> 0x10),0x1,uVar13);
+        }
+      }
+      IVar9 = 0x1010;
+      paStack54 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x4d,param_3);
+    }
+    uVar8 = SUB42(s_tile2_bmp_1050_1538,0x0);
+    GetSystemMetrics16(IVar9);
+    ppcVar3 = (code **)((int)*(undefined4 *)paStack54 + 0x4);
+    (**ppcVar3)();
+  }
+  if (paStack54 != (astruct_76 *)0x0) {
+    if (paStack54 != (astruct_76 *)0x0) {
+      ppcVar3 = (code **)*(undefined4 *)paStack54;
+      (**ppcVar3)(uVar8,(int)paStack54,(int)((ulong)paStack54 >> 0x10),0x1,uVar13,uVar21);
+    }
+  }
+  paVar11 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,*(ushort *)(iVar6 + 0x96),param_3);
+  uVar21 = (undefined2)((ulong)paVar11 >> 0x10);
+  pHVar14 = &local_2c;
+  uVar19 = 0x4;
+  uVar20 = 0xd;
+  uVar15 = param_3;
+  IVar9 = GetSystemMetrics16(0x1010);
+  iVar5 = -(IVar9 + -0x23);
+  uVar4 = *(undefined4 *)paVar11;
+  ppcVar3 = (code **)uVar4 + 0x2;
+  uVar13 = (int)paVar11;
+  uVar8 = uVar21;
+  (**ppcVar3)();
+  if (paVar11 != (astruct_43 *)0x0) {
+    if (paVar11 != (astruct_43 *)0x0) {
+      ppcVar3 = (code **)uVar4;
+      (**ppcVar3)((int)s_tile2_bmp_1050_1538,(int)paVar11,uVar21,0x1,uVar13,uVar8,iVar5,uVar19,uVar20,pHVar14,uVar15);
+    }
+  }
+  handle = CreatePen16((INT16)s_tile2_bmp_1050_1538,0x25,0x100);
+  handle_00 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
+  paVar12 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,0x4f,param_3);
+  uVar21 = (undefined2)((ulong)paVar12 >> 0x10);
+  uVar10 = pass1_1008_4772(paVar12);
+  uVar13 = (undefined2)(uVar10 >> 0x10);
+  uVar4 = *(undefined4 *)((int)uVar10 + 0x4);
+  uVar2 = *(undefined4 *)((int)uVar10 + 0x8);
+  IVar9 = GetSystemMetrics16(0x1008);
+  iVar5 = -(IVar9 + -0xc1);
+  IVar9 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+  iStack72 = (int)uVar2;
+  x = 0xc5 - (IVar9 - iStack72);
+  MoveTo16((HDC16)s_tile2_bmp_1050_1538,iVar5,0x82);
+  iStack68 = (int)uVar4;
+  y = iStack68 * 0xa + 0x85;
+  LineTo16((HDC16)s_tile2_bmp_1050_1538,iVar5,y);
+  HVar18 = local_2c;
+  LineTo16((HDC16)s_tile2_bmp_1050_1538,x,y);
+  HVar17 = local_2c;
+  LineTo16((HDC16)s_tile2_bmp_1050_1538,x,0x82);
+  HVar16 = local_2c;
+  LineTo16((HDC16)s_tile2_bmp_1050_1538,iVar5,0x82);
+  for (uStack82 = 0x0; puVar1 = (uint *)(iVar6 + 0x94), uStack82 <= *puVar1 && *puVar1 != uStack82;
+      uStack82 = uStack82 + 0x1) {
+    pHVar14 = &local_2c;
+    iVar5 = iStack68 * uStack82 + 0x84;
+    uVar13 = 0x4;
+    uVar15 = param_3;
+    IVar9 = GetSystemMetrics16((INT16)s_tile2_bmp_1050_1538);
+    ppcVar3 = (code **)((int)*(undefined4 *)paVar12 + 0x4);
+    (**ppcVar3)((int)s_tile2_bmp_1050_1538,(int)paVar12,uVar21,-(IVar9 + -0xc4),uVar13,iVar5,pHVar14,uVar15,HVar16,
+                HVar17);
+  }
+  if (paVar12 != (astruct_76 *)0x0) {
+    if (paVar12 != (astruct_76 *)0x0) {
+      ppcVar3 = (code **)*(undefined4 *)paVar12;
+      (**ppcVar3)((int)s_tile2_bmp_1050_1538,(int)paVar12,uVar21,0x1,HVar16,HVar17,HVar18);
+    }
+  }
+  SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle_00);
+  DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+  SelectPalette16((HDC16)s_tile2_bmp_1050_1538,0x0,b_force_background);
+  DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+  EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_2a);
+  return;
+}
+
+
+ushort __stdcall16far get_dc_op_1040_3d5e(ulong param_1,HWND16 param_2,ushort param_3)
+
+{
+  code **ppcVar1;
+  int iVar2;
+  undefined2 uVar3;
+  astruct_43 *paVar4;
+  undefined2 uVar5;
+  HDC16 local_4;
+  
+  uVar3 = (undefined2)(param_1 >> 0x10);
+  uVar5 = *(undefined2 *)((int)param_1 + 0x6);
+  local_4 = GetDC16(param_2);
+  paVar4 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc,*(ushort *)((int)param_1 + 0xa4),param_3);
+  iVar2 = (int)*(undefined4 *)paVar4;
+  ppcVar1 = (code **)(iVar2 + 0x8);
+  (**ppcVar1)(0x1010,(int)paVar4,(int)((ulong)paVar4 >> 0x10),&local_4,param_3,uVar5);
+  ppcVar1 = (code **)(iVar2 + 0x4);
+  (**ppcVar1)(0x1010,paVar4,0x50078,&local_4,param_3);
+  ppcVar1 = (code **)(iVar2 + 0xc);
+  (**ppcVar1)(0x1010,paVar4,&local_4,param_3);
+  ReleaseDC16(0x1010,local_4);
+  return 0x0;
+}
+
+
+
+void __stdcall16far invalidate_rect_1040_3ddc(astruct_2 *in_struct_1,HWND16 in_win_handle_2)
+
+{
+  undefined4 local_b_erase;
+  undefined4 uStack6;
+  
+  local_b_erase = 0x780005;
+  uStack6 = 0xdc0069;
+  InvalidateRect16(in_win_handle_2,(RECT16 *)0x0,(BOOL16)&local_b_erase);
+  return;
+}
+
+
+
+
+astruct_18 * __stdcall16far pass1_1040_47fe(astruct_18 *param_1,byte param_2)
+
+{
+  unk_draw_op_1040_b0f8(param_1);
+  if ((param_2 & 0x1) != 0x0) {
+    fn_ptr_1000_17ce(param_1,0x1000);
+  }
+  return param_1;
+}
+
+
+
+undefined4 __stdcall16far draw_ui_op_1040_27cc(ulong *param_1,ushort param_2,uint param_3,COLORREF param_4)
+
+{
+  code **ppcVar1;
+  undefined2 uVar2;
+  int iVar3;
+  HBRUSH16 HVar4;
+  INT16 IVar5;
+  int iVar6;
+  undefined2 uVar7;
+  COLORREF CVar8;
+  HWND16 hdc;
+  ulong uVar9;
+  
+  uVar7 = (undefined2)((ulong)param_1 >> 0x10);
+  iVar6 = (int)param_1;
+  CVar8 = param_4;
+  if (*(int *)(iVar6 + 0x4) == 0x0) {
+    CVar8 = (COLORREF)s_tile2_bmp_1050_1538;
+    HVar4 = CreateSolidBrush16(param_4);
+    *(HBRUSH16 *)(iVar6 + 0x4) = HVar4;
+  }
+  if (_PTR_LOOP_1050_5cf8 == 0x0) {
+    ppcVar1 = (code **)((int)*param_1 + 0x68);
+    uVar9 = (**ppcVar1)(CVar8,param_1,*(undefined2 *)(iVar6 + 0x6e));
+    CVar8 = 0x1008;
+    uVar9 = pass1_1008_4d72(uVar9);
+    uVar2 = (undefined2)(uVar9 >> 0x10);
+    iVar3 = (int)uVar9;
+    _PTR_LOOP_1050_5cf8 =
+         CONCAT22(CONCAT11(0x2,*(undefined *)(iVar3 + 0x94)),
+                  CONCAT11(*(undefined *)(iVar3 + 0x95),*(undefined *)(iVar3 + 0x96)));
+  }
+  hdc = CVar8;
+  if (0x5 < param_3) {
+    if (param_3 != 0x6) {
+      return 0x0;
+    }
+    hdc = (HWND16)s_tile2_bmp_1050_1538;
+    IVar5 = GetDlgCtrlID16(CVar8);
+    if ((*(int *)(iVar6 + 0x94) != 0x0) && (IVar5 == 0xfb2)) {
+      CVar8 = 0x0;
+      goto LAB_1040_286e;
+    }
+  }
+  CVar8 = (COLORREF)_PTR_LOOP_1050_5cf8;
+LAB_1040_286e:
+  SetTextColor16(hdc,CVar8);
+  SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
+  return CONCAT22(0x1050,*(undefined2 *)(iVar6 + 0x4));
+}
+
+
+
+void __stdcall16far pass1_1040_2a22(astruct_18 *param_1)
+
+{
+  astruct_625 *iVar1;
+  undefined2 uVar1;
+  
+  uVar1 = (undefined2)((ulong)param_1 >> 0x10);
+  iVar1 = (astruct_625 *)param_1;
+  param_1->field_0x0 = 0x2e26;
+  iVar1->field_0x2 = (int)&PTR_LOOP_1050_1040;
+  fn_ptr_1000_17ce(iVar1->field_0x94,0x1000);
+  fn_ptr_1000_17ce(iVar1->field_0x98,0x1000);
+  unk_draw_op_1040_b0f8(param_1);
+  return;
+}
+
+
+
+void __stdcall16far mix_draw_op_1040_21d6(ulong param_1,HWND16 param_2,ushort param_3)
+
+{
+  undefined uVar1;
+  undefined uVar2;
+  astruct_13 *paVar3;
+  code **ppcVar4;
+  int iVar5;
+  HPALETTE16 b_force_background;
+  COLORREF color;
+  COLORREF color_00;
+  HANDLE16 handle;
+  ushort in_DX;
+  int iVar6;
+  RECT16 *rect;
+  ulong uVar7;
+  undefined2 uVar8;
+  HGDIOBJ16 HStack62;
+  HDC16 local_24;
+  PAINTSTRUCT16 local_22;
+  
+  rect = (RECT16 *)(param_1 >> 0x10);
+  iVar6 = (int)param_1;
+  uVar8 = *(undefined2 *)(iVar6 + 0x6);
+  local_24 = BeginPaint16(param_2,&local_22);
+  paVar3 = *(astruct_13 **)((int)_PTR_LOOP_1050_4230 + 0xe);
+  b_force_background = palette_op_1008_4e08(paVar3,&local_24,in_DX,0x1008);
+  ppcVar4 = (code **)((int)*(undefined4 *)*(undefined4 *)(iVar6 + 0x8e) + 0x4);
+  (**ppcVar4)(0x1008,*(undefined4 *)(iVar6 + 0x8e),0xffffffff,&local_24,param_3,uVar8);
+  uVar7 = pass1_1008_4d72((ulong)paVar3);
+  uVar8 = (undefined2)(uVar7 >> 0x10);
+  iVar5 = (int)uVar7;
+  uVar1 = *(undefined *)(iVar5 + 0x3e5);
+  uVar2 = *(undefined *)(iVar5 + 0x3e6);
+  color = SetBkColor16(0x1008,0x0);
+  color_00 = SetTextColor16((HDC16)s_tile2_bmp_1050_1538,CONCAT11(uVar1,uVar2));
+  HStack62 = 0x0;
+  handle = GetProp16((HWND16)s_tile2_bmp_1050_1538,(LPCSTR)0x5ced);
+  if (handle != 0x0) {
+    HStack62 = SelectObject16((HDC16)s_tile2_bmp_1050_1538,handle);
+  }
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,iVar6 + 0x92,rect,0xffff);
+  SetTextColor16((HDC16)s_tile2_bmp_1050_1538,CONCAT11(*(undefined *)(iVar5 + 0x95),*(undefined *)(iVar5 + 0x96)));
+  DrawText16((HDC16)s_tile2_bmp_1050_1538,(LPCSTR)&PTR_LOOP_1050_0010,iVar6 + 0x9a,rect,0xffff);
+  if (handle != 0x0) {
+    SelectObject16((HDC16)s_tile2_bmp_1050_1538,HStack62);
+  }
+  SetBkColor16((HDC16)s_tile2_bmp_1050_1538,color);
+  SetTextColor16((HDC16)s_tile2_bmp_1050_1538,color_00);
+  SelectPalette16((HDC16)s_tile2_bmp_1050_1538,0x0,b_force_background);
+  DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
+  EndPaint16((HWND16)s_tile2_bmp_1050_1538,&local_22);
+  return;
+}
+
+
+undefined4 __stdcall16far set_text_bk_color_1040_0cc0(ulong *param_1,ushort param_2,uint param_3,INT16 param_4)
+
+{
+  code **ppcVar1;
+  int iVar2;
+  HDC16 obj;
+  HDC16 hdc;
+  ulong uVar3;
+  undefined2 uVar4;
+  HGDIOBJ16 HStack4;
+  
+  uVar4 = 0x4;
+  obj = (HDC16)s_tile2_bmp_1050_1538;
+  HStack4 = GetStockObject16(param_4);
+  if (_PTR_LOOP_1050_5cd0 == 0x0) {
+    ppcVar1 = (code **)((int)*param_1 + 0x68);
+    uVar3 = (**ppcVar1)((int)s_tile2_bmp_1050_1538,param_1,*(undefined2 *)((int)param_1 + 0x6e),uVar4);
+    obj = 0x1008;
+    uVar3 = pass1_1008_4d72(uVar3);
+    uVar4 = (undefined2)(uVar3 >> 0x10);
+    iVar2 = (int)uVar3;
+    _PTR_LOOP_1050_5cd0 =
+         CONCAT22(CONCAT11(0x2,*(undefined *)(iVar2 + 0x94)),
+                  CONCAT11(*(undefined *)(iVar2 + 0x95),*(undefined *)(iVar2 + 0x96)));
+  }
+  hdc = obj;
+  if (0x3 < param_3) {
+    if (param_3 == 0x4) {
+      hdc = (HDC16)s_tile2_bmp_1050_1538;
+      HStack4 = GetStockObject16(obj);
+    }
+    else {
+      if ((param_3 == 0x4) || (0x1 < param_3 - 0x5)) {
+        return 0x0;
+      }
+    }
+  }
+  SetTextColor16(hdc,(COLORREF)_PTR_LOOP_1050_5cd0);
+  SetBkColor16((HDC16)s_tile2_bmp_1050_1538,0x0);
+  return CONCAT22(0x1050,HStack4);
+}
+
+
