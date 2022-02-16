@@ -1,0 +1,18 @@
+[package]
+name = "harsh-realm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.sdl2]
+# "use-bindgen"
+# "bundled"
+version = "0.35"
+features = ["ttf", "image", "gfx",  "static-link","use-vcpkg"]
+
+[package.metadata.vcpkg]
+dependencies = ["sdl2", "sdl2-image[libjpeg-turbo,tiff,libwebp]", "sdl2-ttf", "sdl2-gfx", "sdl2-mixer"]
+git = "https://github.com/microsoft/vcpkg"
+rev = "5568f11"
+
+[package.metadata.vcpkg.target]
+x86_64-pc-windows-msvc = { triplet = "x64-windows-static-md" }
