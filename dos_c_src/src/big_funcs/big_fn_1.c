@@ -1,9 +1,4 @@
 
-
-
-// WARNING: Unable to use type for symbol uVar2
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void __stdcall16far big_switch_1008_15d4(u16 param_1,u16 param_2,u16 param_3,u32 param_4,i32 param_5)
 
 {

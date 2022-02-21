@@ -2226,3 +2226,92 @@ LAB_1010_2ad8:
 switchD_1010_2ab5_caseD_0:
     return param_7;
 }
+
+void __stdcall16far unk_draw_op_1008_da12(astruct_19 *param_1,ushort param_2,ushort param_3)
+
+{
+  int *piVar1;
+  byte bVar2;
+  ulong uVar3;
+  undefined2 *puVar4;
+  HDC16 hdc;
+  INT16 IVar6;
+  int iVar7;
+  uint uVar8;
+  astruct_80 *IVar5;
+  ushort start;
+  ushort uVar9;
+  PALETTEENTRY *entries;
+  undefined *count;
+  int iVar10;
+  HWND16 hwnd;
+  undefined2 *puStack32;
+  int iStack16;
+  long lStack8;
+  
+  struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2,param_1),param_3);
+  param_1->field_0xa = 0x0;
+  param_1->field_0xc = 0x0;
+  pass1_1008_3e38((ushort *)CONCAT22(param_2,&param_1->field_0xe));
+  param_1->field_0x14 = 0x0;
+  param_1->field_0x16 = 0x0;
+  param_1->field_0x18 = (undefined2 *)0x0;
+  *(undefined2 *)CONCAT22(param_2,param_1) = 0xdc80;
+  param_1->field_0x2 = 0x1008;
+  hdc = GetDC16(0x1010);
+  IVar6 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x8);
+  param_1->field_0xa = IVar6;
+  IVar6 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0xa);
+  param_1->field_0xc = IVar6;
+  iVar7 = param_1->field_0xc + -0x1e0;
+  count = (undefined *)(iVar7 >> 0xf);
+  pass1_1008_3e76((ushort *)CONCAT22(param_2,&param_1->field_0xe),0x0,iVar7 / 0x2,(param_1->field_0xa + -0x280) / 0x2);
+  hwnd = (HWND16)s_tile2_bmp_1050_1538;
+  uVar8 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x26);
+  if ((uVar8 & 0x100) != 0x0) {
+    IVar6 = GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x68);
+    param_1->field_0x14 = IVar6;
+    IVar5 = (astruct_80 *)GetDeviceCaps16((HDC16)s_tile2_bmp_1050_1538,0x6a);
+    param_1->field_0x16 = (INT16)IVar5;
+    if (_PTR_LOOP_1050_5f2c == 0x0) {
+      PTR_LOOP_1050_5f2c = mem_op_1000_160a((ushort)count,0x1000);
+    }
+    else {
+      count = PTR_LOOP_1050_5f2e;
+    }
+    start = fn_ptr_op_1000_1708((int)(IVar5 + 0x1) * 0x4,0x0,0x1,(uint)PTR_LOOP_1050_5f2c,(uint)count,0x1000);
+    lStack8 = CONCAT22(count,start);
+    iVar7 = param_1->field_0x16;
+    if (_PTR_LOOP_1050_5f2c == 0x0) {
+      PTR_LOOP_1050_5f2e = count;
+      PTR_LOOP_1050_5f2c = mem_op_1000_160a((ushort)count,0x1000);
+    }
+    else {
+    }
+    uVar9 = fn_ptr_op_1000_1708((iVar7 + 0x1) * 0x4,0x0,0x1,(uint)PTR_LOOP_1050_5f2c,(uint)PTR_LOOP_1050_5f2e,0x1000);
+    *(ushort *)&param_1->field_0x18 = uVar9;
+    *(undefined2 *)((int)&param_1->field_0x18 + 0x2) = PTR_LOOP_1050_5f2e;
+    if (lStack8 != 0x0) {
+      if (param_1->field_0x18 != (undefined2 *)0x0) {
+        entries = (PALETTEENTRY *)(param_1->field_0x16 / 0x2);
+        GetSystemPaletteEntries(0x1000,start,(UINT16)count,entries);
+        GetSystemPaletteEntries((HDC16)s_tile2_bmp_1050_1538,(int)entries * 0x4 + start,(UINT16)count,entries);
+        puStack32 = param_1->field_0x18;
+        for (iStack16 = 0x0; puVar4 = puStack32, piVar1 = &param_1->field_0x16,
+            *piVar1 != iStack16 && iStack16 <= *piVar1; iStack16 = iStack16 + 0x1) {
+          bVar2 = *(byte *)(iStack16 * 0x4 + start);
+          iVar7 = iStack16 * 0x4 + start;
+          uVar3 = (ulong)puStack32 >> 0x10;
+          iVar10 = (int)puStack32;
+          puStack32 = (undefined2 *)((ulong)puStack32 & 0xffff0000 | (ulong)(iVar10 + 0x4));
+          *puVar4 = CONCAT11(*(undefined *)(iVar7 + 0x1),*(undefined *)(iVar7 + 0x2));
+          *(uint *)(iVar10 + 0x2) = (uint)bVar2;
+        }
+      }
+    }
+    hwnd = 0x1000;
+    fn_ptr_1000_17ce((astruct_18 *)CONCAT22(count,start),0x1000);
+  }
+  ReleaseDC16(hwnd,hdc);
+  return;
+}
