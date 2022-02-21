@@ -2029,3 +2029,33 @@ ushort *__stdcall16far pass1_1028_58a6(int param_1, ushort param_2, int param_3,
     *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
     return (ushort *)CONCAT22(param_2, param_1);
 }
+
+
+ushort *__stdcall16far pass1_1028_5988(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+
+{
+    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    *(ushort *)CONCAT22(param_2, param_1) = (int)s_mineToSmelter__no_mines_1050_59df + 0x1;
+    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
+    return (ushort *)CONCAT22(param_2, param_1);
+}
+
+
+ushort *__stdcall16far pass1_1028_5a6a(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+
+{
+    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    *(ushort *)CONCAT22(param_2, param_1) = (ushort)s_thisLo_1050_5bec;
+    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
+    return (ushort *)CONCAT22(param_2, param_1);
+}
+
+
+ushort *__stdcall16far pass1_1028_5c76(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+
+{
+    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    *(ushort *)CONCAT22(param_2, param_1) = (int)s_static_1050_5d8b + 0x3;
+    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
+    return (ushort *)CONCAT22(param_2, param_1);
+}
