@@ -1690,3 +1690,336 @@ undefined4 __stdcall16far set_text_bk_color_1040_0cc0(ulong *param_1, ushort par
     SetBkColor16((HDC16)s_tile2_bmp_1050_1538, 0x0);
     return CONCAT22(0x1050, HStack4);
 }
+
+
+void __stdcall16far
+draw_op_1038_9dcc(astruct_10 *in_struct_1, int param_2, uint param_3, COLORREF in_colorref_4, UINT16 param_5)
+
+{
+    uint       *puVar1;
+    bool        bVar2;
+    undefined2  uVar3;
+    int         iVar4;
+    HBRUSH16    local_brush_handle;
+    ULONG       uVar5;
+    UINT16      extraout_DX;
+    astruct_10 *local_struct_5;
+    astruct_10 *var5;
+    COLORREF    hdc;
+    ulong       uVar6;
+    uint        uStack14;
+
+    var5           = (astruct_10 *)((ulong)in_struct_1 >> 0x10);
+    local_struct_5 = (astruct_10 *)in_struct_1;
+    hdc            = in_colorref_4;
+    if(local_struct_5->brush_handle_field_0x8e == 0x0)
+    {
+        hdc                                     = (COLORREF)s_tile2_bmp_1050_1538;
+        local_brush_handle                      = CreateSolidBrush16(in_colorref_4);
+        local_struct_5->brush_handle_field_0x8e = local_brush_handle;
+    }
+    if(_PTR_LOOP_1050_5b64 == 0x0)
+    {
+        hdc                 = 0x1008;
+        uVar6               = pass1_1008_4d72(*(ulong *)((int)_PTR_LOOP_1050_4230 + 0xe));
+        uVar3               = (undefined2)(uVar6 >> 0x10);
+        iVar4               = (int)uVar6;
+        _PTR_LOOP_1050_5b64 = (ulong)CONCAT12(*(undefined *)(iVar4 + 0x94),
+                                              CONCAT11(*(undefined *)(iVar4 + 0x95), *(undefined *)(iVar4 + 0x96)));
+        PTR_LOOP_1050_5b68  = (undefined *)CONCAT11(*(undefined *)(iVar4 + 0x3e5), *(undefined *)(iVar4 + 0x3e6));
+        PTR_LOOP_1050_5b6a  = (undefined *)(uint) * (byte *)(iVar4 + 0x3e4);
+    }
+    if(0x5 < param_3)
+    {
+        if(param_3 != 0x6)
+        {
+            return;
+        }
+        bVar2 = false;
+        for(uStack14 = 0x0; puVar1 = &local_struct_5->field_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14;
+            uStack14               = uStack14 + 0x1)
+        {
+            if(*(int *)(&local_struct_5->field_0x94 + uStack14 * 0x2) == param_2)
+            {
+                bVar2 = true;
+                break;
+            }
+        }
+        if(bVar2)
+        {
+            PTR_LOOP_1050_5b64 = PTR_LOOP_1050_5b68;
+        }
+    }
+    SetTextColor16(hdc, (COLORREF)PTR_LOOP_1050_5b64);
+    SetBkColor16((HDC16)s_tile2_bmp_1050_1538, 0x0);
+    return;
+}
+
+
+ushort __stdcall16far call_fn_ptr_1038_9ffa(HWND16 win_handle, ushort param_2, astruct_733 *struct_1, ushort param_4)
+
+{
+    code      **ppcVar1;
+    astruct_43 *var_2;
+    astruct_43 *var_3;
+    HDC16       dev_ctx;
+    u16         var_5;
+
+    var_5   = struct_1->field_0x6;
+    dev_ctx = GetDC16(win_handle);
+    var_3   = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x3, param_2);
+    var_2   = (astruct_43 *)*(undefined4 *)var_3;
+    ppcVar1 = (code **)&var_2->fn_ptr_field_0x8;
+    (**ppcVar1)(0x1010, (int)var_3, (int)((ulong)var_3 >> 0x10), &dev_ctx, param_2, var_5);
+    ppcVar1 = (code **)&var_2->fn_ptr_field_0x4;
+    (**ppcVar1)(0x1010, var_3, 0x50005, &dev_ctx, param_2);
+    ppcVar1 = (code **)&var_2->fn_ptr_field_0xc;
+    (**ppcVar1)(0x1010, var_3, &dev_ctx, param_2);
+    ReleaseDC16(0x1010, dev_ctx);
+    return 0x0;
+}
+
+
+void __stdcall16far unk_win_ui_op_1038_ac38(INT16 param_1, uint param_2)
+
+{
+    undefined2  uVar1;
+    int         iVar2;
+    INT16       IVar3;
+    ULONG       uVar3;
+    UINT16      extraout_DX;
+    HWND16      hwnd;
+    HWND16      hdc;
+    ulong       uVar5;
+    COLORREF    color;
+    UCHAR       uVar4;
+    astruct_46 *iVar1;
+
+    hwnd = (HWND16)s_tile2_bmp_1050_1538;
+    GetStockObject16(param_1);
+    if(_PTR_LOOP_1050_5b78 == 0x0)
+    {
+        hwnd                = 0x1008;
+        uVar5               = pass1_1008_4d72(*(ulong *)((int)_PTR_LOOP_1050_4230 + 0xe));
+        uVar1               = (undefined2)(uVar5 >> 0x10);
+        iVar2               = (int)uVar5;
+        _PTR_LOOP_1050_5b6c = (ulong)CONCAT12(*(undefined *)(iVar2 + 0x3ec),
+                                              CONCAT11(*(undefined *)(iVar2 + 0x3ed), *(undefined *)(iVar2 + 0x3ee)));
+        _PTR_LOOP_1050_5b70 = (ulong)CONCAT12(*(undefined *)(iVar2 + 0x3e4),
+                                              CONCAT11(*(undefined *)(iVar2 + 0x3e5), *(undefined *)(iVar2 + 0x3e6)));
+        _PTR_LOOP_1050_5b74 = (ulong)CONCAT12(*(undefined *)(iVar2 + 0x3f8),
+                                              CONCAT11(*(undefined *)(iVar2 + 0x3f9), *(undefined *)(iVar2 + 0x3fa)));
+        _PTR_LOOP_1050_5b78 = (ulong)CONCAT12(*(undefined *)(iVar2 + 0x94),
+                                              CONCAT11(*(undefined *)(iVar2 + 0x95), *(undefined *)(iVar2 + 0x96)));
+    }
+    if(param_2 < 0x4)
+    {
+    LAB_1038_acf0:
+        hdc   = (HWND16)s_tile2_bmp_1050_1538;
+        IVar3 = GetDlgCtrlID16(hwnd);
+        if(IVar3 == 0xfd4)
+        {
+            color = (COLORREF)_PTR_LOOP_1050_5b70;
+            goto LAB_1038_ad0e;
+        }
+        if(IVar3 != 0xfd5)
+        {
+            if(IVar3 == 0xfd6)
+            {
+                color = (COLORREF)_PTR_LOOP_1050_5b6c;
+                goto LAB_1038_ad0e;
+            }
+            if(IVar3 == 0xfd7)
+            {
+                color = (COLORREF)_PTR_LOOP_1050_5b74;
+                goto LAB_1038_ad0e;
+            }
+        }
+    }
+    else
+    {
+        hdc = hwnd;
+        if(param_2 != 0x4)
+        {
+            if((param_2 == 0x4) || (0x1 < param_2 - 0x5))
+            {
+                return;
+            }
+            goto LAB_1038_acf0;
+        }
+    }
+    color = (COLORREF)_PTR_LOOP_1050_5b78;
+LAB_1038_ad0e:
+    SetTextColor16(hdc, color);
+    SetBkColor16((HDC16)s_tile2_bmp_1050_1538, 0x0);
+    return;
+}
+
+
+void __stdcall16far pass1_1038_ae08(astruct_18 *param_1)
+
+{
+    param_1->field_0x0                  = 0xae4e;
+    *(undefined2 *)((int)param_1 + 0x2) = (int)&PTR_LOOP_1050_1038;
+    unk_draw_op_1040_b0f8(param_1);
+    return;
+}
+
+
+void __stdcall16far pass1_1038_893a(astruct_18 *param_1)
+
+{
+    undefined2 uVar1;
+
+    uVar1                               = (undefined2)((ulong)param_1 >> 0x10);
+    param_1->field_0x0                  = 0x8c2e;
+    *(undefined2 *)((int)param_1 + 0x2) = (int)&PTR_LOOP_1050_1038;
+    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, *(int *)((int)param_1 + 0x6));
+    unk_draw_op_1040_b0f8(param_1);
+    return;
+}
+
+
+void __stdcall16far pass1_1038_8cf6(astruct_18 *param_1)
+
+{
+    undefined2 uVar1;
+
+    uVar1                               = (undefined2)((ulong)param_1 >> 0x10);
+    param_1->field_0x0                  = 0x90c8;
+    *(undefined2 *)((int)param_1 + 0x2) = (int)&PTR_LOOP_1050_1038;
+    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, *(int *)((int)param_1 + 0x6));
+    unk_draw_op_1040_b0f8(param_1);
+    return;
+}
+
+
+void __stdcall16far
+draw_op_1038_92f6(ushort param_1, ushort param_2, ushort param_3, ulong param_4, HWND16 param_5, ushort param_6)
+
+{
+    undefined4  uVar1;
+    code      **ppcVar2;
+    uint        uVar3;
+    int         iVar4;
+    astruct_18 *paVar5;
+    uchar      *in_DX;
+    uchar      *puVar6;
+    uchar      *puVar7;
+    int         unaff_DI;
+    undefined2  uVar8;
+    BOOL16      local_1a[0x2];
+    UINT16      UStack22;
+    astruct_18 *paStack20;
+    astruct_18 *paStack16;
+    int         iStack12;
+    astruct_18 *paStack10;
+    astruct_20 *paStack6;
+
+    if(param_4._2_2_ == 0xeb)
+    {
+        paStack6 = (astruct_20 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+        puVar6   = (uchar *)((ulong)paStack6 >> 0x10);
+        paVar5   = *(astruct_18 **)(param_1 + 0x90);
+        if(paVar5 != (astruct_18 *)0x0)
+        {
+            paStack10 = paVar5;
+            mem_op_1000_179c(0x18, puVar6, 0x1000);
+            uVar3     = (uint)paVar5;
+            paStack16 = (astruct_18 *)((ulong)paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
+            puVar7    = (uchar *)((uint)puVar6 | uVar3);
+            if(puVar7 == (uchar *)0x0)
+            {
+                uVar3  = 0x0;
+                puVar7 = (uchar *)0x0;
+            }
+            else
+            {
+                struct_1040_a598((ushort *)((ulong)paVar5 & 0xffff | ZEXT24(puVar6) << 0x10));
+            }
+            *(uint *)(param_1 + 0x90)                      = uVar3;
+            *(uchar **)(param_1 + 0x92)                    = puVar7;
+            *(undefined2 *)*(undefined4 *)(param_1 + 0x90) = 0x11;
+            iStack12                                       = **(int **)(param_1 + 0x90);
+            uVar3                                          = iStack12 * 0xa + 0x2;
+            mem_op_1000_179c(uVar3, puVar7, 0x1000);
+            paStack16 = (astruct_18 *)CONCAT22(puVar7, uVar3);
+            if(((uint)puVar7 | uVar3) == 0x0)
+            {
+                uVar1                             = *(undefined4 *)(param_1 + 0x90);
+                *(undefined4 *)((int)uVar1 + 0x2) = 0x0;
+            }
+            else
+            {
+                *(int *)paStack16 = iStack12;
+                pass1_1000_5586(
+                  (uchar *)0xa564, (ushort)&PTR_LOOP_1050_1040, iStack12, 0xa, uVar3 + 0x2, (ushort)puVar7);
+                uVar1                    = *(undefined4 *)(param_1 + 0x90);
+                uVar8                    = (undefined2)((ulong)uVar1 >> 0x10);
+                iVar4                    = (int)uVar1;
+                *(int *)(iVar4 + 0x2)    = uVar3 + 0x2;
+                *(uchar **)(iVar4 + 0x4) = puVar7;
+            }
+            uVar8                              = (undefined2)((ulong)paStack10 >> 0x10);
+            uVar1                              = *(undefined4 *)(param_1 + 0x90);
+            *(undefined4 *)((int)uVar1 + 0x6)  = *(undefined4 *)((int)paStack10 + 0x6);
+            uVar1                              = *(undefined4 *)(param_1 + 0x90);
+            *(undefined2 *)((int)uVar1 + 0xa)  = *(undefined2 *)((int)paStack10 + 0xa);
+            uVar1                              = *(undefined4 *)(param_1 + 0x90);
+            *(undefined2 *)((int)uVar1 + 0x12) = *(undefined2 *)(param_1 + 0xa);
+            uVar8                              = 0x1010;
+            pass1_1010_a50c(paStack6, 0x10505b42, *(ulong *)(param_1 + 0x90));
+            paStack20 = paStack10;
+            paStack16 = paStack10;
+            if(paStack10 != (astruct_18 *)0x0)
+            {
+                pass1_1040_a5d0((ulong)paStack10);
+                uVar8 = 0x1000;
+                fn_ptr_1000_17ce(paStack10, 0x1000);
+            }
+            ppcVar2 = (code **)((int)*(undefined4 *)CONCAT22(param_2, param_1) + 0x70);
+            (**ppcVar2)(uVar8, param_1, param_2);
+        }
+    }
+    else
+    {
+        if(param_4._2_2_ != 0xf9)
+        {
+            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, (ushort)&PTR_LOOP_1050_1040, param_6);
+            return;
+        }
+        iVar4 = pass1_1038_993a(param_1, param_2, param_3);
+        if(-0x1 < iVar4)
+        {
+            uVar8    = *(undefined2 *)(param_1 + 0x6);
+            UStack22 = GetDlgItemInt16(param_5, 0x1, local_1a, param_6);
+            if(local_1a[0] != 0x0)
+            {
+                uVar1 = *(undefined4 *)(param_1 + 0x98);
+                draw_fn_1010_2a32(0x94be,
+                                  (uint16_t)s_tile2_bmp_1050_1538,
+                                  (uint16 *)uVar1,
+                                  (int)((ulong)uVar1 >> 0x10),
+                                  UStack22,
+                                  CONCAT22(uVar8, *(undefined2 *)(iVar4 * 0xe + 0x5a72)),
+                                  (uint16_t)in_DX,
+                                  param_1,
+                                  (uint16_t)&stack0xfffe,
+                                  param_2);
+            }
+        }
+    }
+    return;
+}
+
+
+astruct_18 *__stdcall16far pass1_1038_997c(astruct_18 *param_1, byte param_2)
+
+{
+    unk_draw_op_1040_b0f8(param_1);
+    if((param_2 & 0x1) != 0x0)
+    {
+        fn_ptr_1000_17ce(param_1, 0x1000);
+    }
+    return param_1;
+}

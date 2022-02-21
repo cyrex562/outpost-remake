@@ -75,3 +75,52 @@ void __stdcall16far pass1_1040_5d42(ulong param_1)
     }
     return;
 }
+
+
+void __stdcall16far pass1_1038_4d3c(ulong param_1, char *param_2, ushort param_3)
+
+{
+    ushort     uVar1;
+    int        iVar2;
+    undefined2 uVar3;
+
+    uVar3 = (undefined2)(param_1 >> 0x10);
+    iVar2 = (int)param_1;
+    fn_ptr_1000_17ce(*(astruct_18 **)(iVar2 + 0x1fa), 0x1000);
+    uVar1                      = str_op_1008_60e8(param_2, param_3);
+    *(ushort *)(iVar2 + 0x1fa) = uVar1;
+    *(ushort *)(iVar2 + 0x1fc) = param_3;
+    return;
+}
+
+
+void __stdcall16far pass1_1030_4dbc(ulong param_1, ulong param_2, long param_3)
+
+{
+    long      *plVar1;
+    int       *piVar2;
+    long       lVar3;
+    uint       uVar4;
+    int        iVar5;
+    undefined2 uVar6;
+
+    iVar5 = (int)param_1;
+    uVar6 = (undefined2)(param_1 >> 0x10);
+    if(0x0 < param_3)
+    {
+        *(ulong *)(iVar5 + 0x160) = param_2;
+        *(long *)(iVar5 + 0x164)  = param_3;
+    }
+    if((*(long *)(iVar5 + 0x160) == 0x0)
+       || (lVar3 = *(long *)(iVar5 + 0x164), plVar1 = (long *)(iVar5 + 0x164), *plVar1 = *plVar1 + -0x1, lVar3 == 0x0))
+    {
+        *(undefined4 *)(iVar5 + 0x160) = 0x0;
+    }
+    else
+    {
+        uVar4   = str_op_1000_3da4(*(char **)(iVar5 + 0x160));
+        piVar2  = (int *)(iVar5 + 0x160);
+        *piVar2 = *piVar2 + uVar4 + 0x2;
+    }
+    return;
+}
