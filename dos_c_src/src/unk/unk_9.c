@@ -1,54 +1,54 @@
 
-ushort *__stdcall16far pass1_1028_0b64(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1028_0b64(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xbbc;
-    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    CONCAT22(param_2, param_1) = 0xbbc;
+    (param_1 + 0x2)            = &USHORT_1050_1028;
+    return CONCAT22(param_2, param_1);
 }
 
-ushort *__stdcall16far pass1_1028_0c50(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1028_0c50(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(undefined2 *)(param_1 + 0x20)       = 0x0;
-    *(undefined2 *)(param_1 + 0x22)       = 0x0;
-    *(ushort *)CONCAT22(param_2, param_1) = (int)s_480_bmp_1050_1721 + 0x3;
-    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    (param_1 + 0x20)           = 0x0;
+    (param_1 + 0x22)           = 0x0;
+    CONCAT22(param_2, param_1) = s_480_bmp_1050_1721 + 0x3;
+    (param_1 + 0x2)            = &USHORT_1050_1028;
+    return CONCAT22(param_2, param_1);
 }
 
-void __stdcall16far pass1_1028_0c84(ulong param_1, ulong param_2, int param_3, ushort param_4)
+void __stdcall16far pass1_1028_0c84(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
 
 {
     code      **ppcVar1;
-    ushort      uVar2;
+    u16         uVar2;
     undefined4 *puVar3;
-    ushort      extraout_DX;
-    uint        uVar4;
-    ulong       uVar5;
+    u16         extraout_DX;
+    u16         uVar4;
+    u32         uVar5;
     undefined4 *puVar6;
-    ulong      *puVar7;
+    u32        *puVar7;
     byte        bStack55;
-    undefined   local_32[0xa];
+    u8          local_32[0xa];
     undefined4  uStack40;
     undefined4  uStack36;
     undefined4 *puStack28;
     undefined4  local_1a;
-    int         iStack22;
-    ushort      uStack20;
-    int         iStack18;
-    ushort      uStack16;
-    int         iStack14;
+    i16         iStack22;
+    u16         uStack20;
+    i16         iStack18;
+    u16         uStack16;
+    i16         iStack14;
     undefined4  local_c;
-    int         iStack8;
-    ulong       uStack6;
+    i16         iStack8;
+    u32         uStack6;
 
     pass1_1028_b58e(param_1);
     uStack6   = CONCAT22(extraout_DX, param_3);
-    local_c   = *(undefined4 *)(param_3 + 0xc);
-    iStack18  = *(int *)(param_3 + 0x10);
+    local_c   = (param_3 + 0xc);
+    iStack18  = (param_3 + 0x10);
     puStack28 = &local_c;
     uStack16  = extraout_DX;
     iStack14  = iStack18;
@@ -60,25 +60,25 @@ void __stdcall16far pass1_1028_0c84(ulong param_1, ulong param_2, int param_3, u
     uStack36 = CONCAT22(uStack36._2_2_, &local_1a);
     iStack14 = iStack14 + 0x1;
     uStack20 = uVar2;
-    if(iStack14 <= (int)uVar2)
+    if(iStack14 <= uVar2)
     {
-        puVar7   = (ulong *)CONCAT22(param_4, local_32);
+        puVar7   = CONCAT22(param_4, local_32);
         iStack22 = iStack14;
         uVar5    = pass1_1028_bb24(param_1);
-        uVar4    = (uint)(uVar5 >> 0x10);
+        uVar4    = (uVar5 >> 0x10);
         puVar3   = &local_1a;
-        pass1_1030_64ce(param_4, puVar3, uVar4, _PTR_LOOP_1050_5740, (ushort *)CONCAT22(param_4, puVar3), uVar5 & 0xffff | (ulong)uVar4 << 0x10, puVar7);
+        pass1_1030_64ce(param_4, puVar3, uVar4, _PTR_LOOP_1050_5740, CONCAT22(param_4, puVar3), uVar5 & 0xffff | uVar4 << 0x10, puVar7);
         uStack40 = *puVar3;
-        uVar4    = *(uint *)((int)puVar3 + 0x2);
-        bStack55 = (byte)((ulong)uStack40 >> 0x18);
-        uVar2    = (ushort)bStack55;
+        uVar4    = (puVar3 + 0x2);
+        bStack55 = (byte)(uStack40 >> 0x18);
+        uVar2    = bStack55;
         uStack36 = uStack40;
         if(bStack55 != 0x0)
         {
-            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack40, uVar4);
-            puVar6  = (undefined4 *)struct_op_1030_73a8(CONCAT22(uVar4, uVar2));
-            uVar2   = (ushort)puVar6;
-            ppcVar1 = (code **)((int)*puVar6 + 0x58);
+            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack40, uVar4);
+            puVar6  = struct_op_1030_73a8(CONCAT22(uVar4, uVar2));
+            uVar2   = puVar6;
+            ppcVar1 = (*puVar6 + 0x58);
             (**ppcVar1)();
         }
     }
@@ -88,15 +88,15 @@ void __stdcall16far pass1_1028_0c84(ulong param_1, ulong param_2, int param_3, u
 }
 
 
-ushort __stdcall16far pass1_1028_0d80(ulong param_1)
+u16 __stdcall16far pass1_1028_0d80(u32 param_1)
 
 {
-    ushort uVar1;
-    uint   uVar2;
+    u16 uVar1;
+    u16 uVar2;
 
-    uVar2 = (uint)(param_1 >> 0x10);
-    uVar1 = *(ushort *)((int)param_1 + 0x20);
-    pass1_1028_1646(param_1 & 0xffff | (ulong)uVar2 << 0x10);
+    uVar2 = (param_1 >> 0x10);
+    uVar1 = (param_1 + 0x20);
+    pass1_1028_1646(param_1 & 0xffff | uVar2 << 0x10);
     return uVar1;
 }
 
@@ -104,39 +104,39 @@ ushort __stdcall16far pass1_1028_0d80(ulong param_1)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1028_0d9c(ulong param_1, int param_2, ushort param_3)
+void __stdcall16far pass1_1028_0d9c(u32 param_1, i16 param_2, u16 param_3)
 
 {
     code      **ppcVar1;
     undefined4 *puVar2;
-    uint        uVar3;
-    ushort      uVar4;
+    u16         uVar3;
+    u16         uVar4;
     BOOL16      BVar5;
-    ushort      extraout_DX;
-    uint        uVar6;
-    ulong       uVar7;
-    ulong      *puVar8;
+    u16         extraout_DX;
+    u16         uVar6;
+    u32         uVar7;
+    u32        *puVar8;
     undefined4  uStack58;
-    undefined   local_32[0x6];
+    u8          local_32[0x6];
     undefined4 *puStack44;
     undefined4  uStack40;
     undefined4  uStack36;
     undefined4 *puStack28;
     undefined4  local_1a;
-    int         iStack22;
-    ushort      uStack20;
-    int         iStack18;
-    ushort      uStack16;
-    int         iStack14;
+    i16         iStack22;
+    u16         uStack20;
+    i16         iStack18;
+    u16         uStack16;
+    i16         iStack14;
     undefined4  local_c;
-    int         iStack8;
-    int         iStack6;
-    ushort      uStack4;
+    i16         iStack8;
+    i16         iStack6;
+    u16         uStack4;
 
     pass1_1028_b514(param_1);
     pass1_1028_b58e(param_1);
-    local_c   = *(undefined4 *)(param_2 + 0xc);
-    iStack18  = *(int *)(param_2 + 0x10);
+    local_c   = (param_2 + 0xc);
+    iStack18  = (param_2 + 0x10);
     puStack28 = &local_c;
     uStack16  = extraout_DX;
     iStack14  = iStack18;
@@ -148,29 +148,29 @@ void __stdcall16far pass1_1028_0d9c(ulong param_1, int param_2, ushort param_3)
     local_1a = local_c;
     uStack36 = CONCAT22(uStack36._2_2_, &local_1a);
     iStack22 = iStack14 + 0x1;
-    if(iStack22 <= (int)uStack20)
+    if(iStack22 <= uStack20)
     {
-        puVar8   = (ulong *)CONCAT22(param_3, local_32);
+        puVar8   = CONCAT22(param_3, local_32);
         iStack14 = iStack22;
         uVar7    = pass1_1028_bb24(param_1);
-        uVar6    = (uint)(uVar7 >> 0x10);
+        uVar6    = (uVar7 >> 0x10);
         puVar2   = &local_1a;
-        pass1_1030_64ce(param_3, puVar2, uVar6, _PTR_LOOP_1050_5740, (ushort *)CONCAT22(param_3, puVar2), uVar7 & 0xffff | (ulong)uVar6 << 0x10, puVar8);
+        pass1_1030_64ce(param_3, puVar2, uVar6, _PTR_LOOP_1050_5740, CONCAT22(param_3, puVar2), uVar7 & 0xffff | uVar6 << 0x10, puVar8);
         uStack40       = *puVar2;
-        uVar6          = *(uint *)((int)puVar2 + 0x2);
-        uStack58._3_1_ = (byte)((ulong)uStack40 >> 0x18);
-        uVar3          = (uint)uStack58._3_1_;
+        uVar6          = (puVar2 + 0x2);
+        uStack58._3_1_ = (byte)(uStack40 >> 0x18);
+        uVar3          = uStack58._3_1_;
         if(uStack58._3_1_ != 0x0)
         {
             uStack36 = uStack40;
-            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack40, uVar6);
+            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack40, uVar6);
             uStack58 = CONCAT22(uVar6, uVar3);
             uVar4    = pass1_1030_6fa0(CONCAT22(uVar6, uVar3));
             BVar5    = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uVar4, 0x13);
             if(BVar5 != 0x0)
             {
-                puStack44 = (undefined4 *)struct_op_1030_73a8(uStack58);
-                ppcVar1   = (code **)((int)*puStack44 + 0x24);
+                puStack44 = struct_op_1030_73a8(uStack58);
+                ppcVar1   = (*puStack44 + 0x24);
                 (**ppcVar1)();
             }
         }
@@ -181,16 +181,16 @@ void __stdcall16far pass1_1028_0d9c(ulong param_1, int param_2, ushort param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1028_0ea6(ulong *param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5)
+void __stdcall16far pass1_1028_0ea6(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
-    int         *piVar1;
+    i16         *piVar1;
     BOOL16       BVar2;
-    ushort       uVar3;
+    u16          uVar3;
     astruct_597 *iVar3;
-    uint         uVar4;
+    u16          uVar4;
 
-    uVar4 = (uint)((ulong)param_1 >> 0x10);
+    uVar4 = (param_1 >> 0x10);
     iVar3 = (astruct_597 *)param_1;
     if(iVar3->field_0xc != 0x10)
     {
@@ -200,7 +200,7 @@ void __stdcall16far pass1_1028_0ea6(ulong *param_1, ushort param_2, ushort param
             BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar3->field_0xc, 0x2);
             if(((BVar2 != 0x0) && (iVar3->field_0x12 != 0x7)) && (iVar3->field_0x12 != 0x4))
             {
-                uVar3 = pass1_1028_1556((ulong)param_1 & 0xffff | (ulong)uVar4 << 0x10, BVar2, param_2, param_5);
+                uVar3 = pass1_1028_1556(param_1 & 0xffff | uVar4 << 0x10, BVar2, param_2, param_5);
                 if(uVar3 == 0x0)
                     goto LAB_1028_0f0a;
                 if(iVar3->field_0x12 == 0x9)
@@ -229,7 +229,7 @@ void __stdcall16far pass1_1028_0ea6(ulong *param_1, ushort param_2, ushort param
         {
             piVar1  = &iVar3->field_0x22;
             *piVar1 = *piVar1 + -0x1;
-            pass1_1028_b58e((ulong)param_1 & 0xffff | (ulong)uVar4 << 0x10);
+            pass1_1028_b58e(param_1 & 0xffff | uVar4 << 0x10);
         }
     }
     return;
@@ -238,36 +238,36 @@ void __stdcall16far pass1_1028_0ea6(ulong *param_1, ushort param_2, ushort param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1028_0fa4(ulong *param_1, uchar *param_2, ushort param_3, ushort param_4, ushort param_5, ushort param_6)
+void __stdcall16far pass1_1028_0fa4(u32 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6)
 
 {
-    BOOL16     BVar1;
-    int        iVar2;
-    undefined2 uVar3;
-    ushort    *puVar4;
-    ulong      uVar5;
-    undefined2 uVar6;
-    undefined2 uVar7;
-    int        iVar8;
+    BOOL16 BVar1;
+    i16    iVar2;
+    u16    uVar3;
+    u16   *puVar4;
+    u32    uVar5;
+    u16    uVar6;
+    u16    uVar7;
+    i16    iVar8;
 
     pass1_1028_be9e(param_1, param_3, param_4, param_5, param_6);
     puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_6, param_2, param_4);
-    iVar8  = *(int *)((int)puVar4 + 0x82);
-    uVar3  = (undefined2)((ulong)param_1 >> 0x10);
-    iVar2  = (int)param_1;
-    if(*(int *)(iVar2 + 0x12) == 0x5)
+    iVar8  = (puVar4 + 0x82);
+    uVar3  = (param_1 >> 0x10);
+    iVar2  = param_1;
+    if((iVar2 + 0x12) == 0x5)
     {
-        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, *(undefined2 *)(iVar2 + 0xc), 0x2);
-        if((BVar1 != 0x0) && ((PTR_LOOP_1050_4fbc == (undefined *)0x0 || (iVar8 != 0x0))))
+        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (iVar2 + 0xc), 0x2);
+        if((BVar1 != 0x0) && ((PTR_LOOP_1050_4fbc == 0x0 || (iVar8 != 0x0))))
         {
-            PTR_LOOP_1050_4fbc = (undefined *)((int)&PTR_LOOP_1050_0000 + 0x1);
+            PTR_LOOP_1050_4fbc = (&PTR_LOOP_1050_0000 + 0x1);
             uVar7              = 0x0;
             iVar8              = 0x4;
             uVar6              = 0x1;
-            uVar5              = pass1_1028_b58e((ulong)param_1);
-            pass1_1030_7c50(uVar5, CONCAT22(uVar7, uVar6), iVar8, (uint)uVar5, (uchar *)(uVar5 >> 0x10));
+            uVar5              = pass1_1028_b58e(param_1);
+            pass1_1030_7c50(uVar5, CONCAT22(uVar7, uVar6), iVar8, uVar5, (uVar5 >> 0x10));
         }
-        *(undefined2 *)(iVar2 + 0x22) = 0x64;
+        (iVar2 + 0x22) = 0x64;
     }
     return;
 }
@@ -275,25 +275,25 @@ void __stdcall16far pass1_1028_0fa4(ulong *param_1, uchar *param_2, ushort param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-int __stdcall16far pass1_1028_1024(ulong param_1, int param_2, ushort param_3, ushort param_4)
+i16 __stdcall16far pass1_1028_1024(u32 param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
     BOOL16      BVar1;
     undefined4 *puVar2;
-    uint        uVar3;
-    uint        uVar4;
-    uint        uVar5;
-    ulong       uVar6;
-    int         iStack26;
-    int         iStack24;
+    u16         uVar3;
+    u16         uVar4;
+    u16         uVar5;
+    u32         uVar6;
+    i16         iStack26;
+    i16         iStack24;
     undefined4  local_16;
-    int         iStack18;
-    undefined2  uStack16;
-    undefined2  uStack14;
-    ulong       uStack12;
-    ushort      uStack8;
-    int         iStack6;
-    ushort      uStack4;
+    i16         iStack18;
+    u16         uStack16;
+    u16         uStack14;
+    u32         uStack12;
+    u16         uStack8;
+    i16         iStack6;
+    u16         uStack4;
 
     pass1_1028_bab6(param_1, param_2, param_3);
     iStack6  = param_2;
@@ -301,35 +301,35 @@ int __stdcall16far pass1_1028_1024(ulong param_1, int param_2, ushort param_3, u
     uStack8  = pass1_1030_2fac(CONCAT22(param_3, param_2));
     uStack12 = pass1_1028_bb24(param_1);
     uVar6    = pass1_1028_b58e(param_1);
-    uStack14 = (undefined2)(uVar6 >> 0x10);
-    local_16 = *(undefined4 *)((int)uVar6 + 0xc);
+    uStack14 = (uVar6 >> 0x10);
+    local_16 = (uVar6 + 0xc);
     iStack26 = 0x0;
     iStack24 = 0x0;
     while(true)
     {
-        if((int)uStack8 < iStack26)
+        if(uStack8 < iStack26)
         {
             return iStack24;
         }
         iStack18 = iStack26;
         puVar2   = &local_16;
-        pass1_1030_627e(param_4, (uint)puVar2, (uint)(uVar6 >> 0x10), _PTR_LOOP_1050_5740, (ushort *)CONCAT22(param_4, puVar2), uStack12);
-        uStack16 = (undefined2)uVar6;
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)puVar2, (uint)(uVar6 >> 0x10));
-        uStack16 = (undefined2)uVar6;
-        if(((uint)(uVar6 >> 0x10) | (uint)puVar2) == 0x0)
+        pass1_1030_627e(param_4, puVar2, (uVar6 >> 0x10), _PTR_LOOP_1050_5740, CONCAT22(param_4, puVar2), uStack12);
+        uStack16 = uVar6;
+        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, puVar2, (uVar6 >> 0x10));
+        uStack16 = uVar6;
+        if(((uVar6 >> 0x10) | puVar2) == 0x0)
             break;
         uVar6 = struct_op_1030_73a8(uVar6 & 0xffff0000 | ZEXT24(puVar2));
-        uVar4 = (uint)(uVar6 >> 0x10);
-        uVar3 = (uint)uVar6;
+        uVar4 = (uVar6 >> 0x10);
+        uVar3 = uVar6;
         uVar5 = uVar4 | uVar3;
         if(uVar6 == 0x0)
         {
             return iStack24;
         }
-        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, *(undefined2 *)(uVar3 + 0xc), 0x13);
+        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (uVar3 + 0xc), 0x13);
         uVar6 = CONCAT22(uVar5, uStack16);
-        if((BVar1 != 0x0) && (*(int *)(uVar3 + 0x12) == 0x5))
+        if((BVar1 != 0x0) && ((uVar3 + 0x12) == 0x5))
         {
             iStack24 = iStack24 + 0x1;
         }
@@ -341,24 +341,24 @@ int __stdcall16far pass1_1028_1024(ulong param_1, int param_2, ushort param_3, u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-int __stdcall16far pass1_1028_1106(ulong param_1, int param_2, ushort param_3, ushort param_4)
+i16 __stdcall16far pass1_1028_1106(u32 param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
     BOOL16      BVar1;
     undefined4 *puVar2;
-    uint        uVar3;
-    uint        uVar4;
-    ulong       uVar5;
-    int         iStack26;
-    int         iStack24;
+    u16         uVar3;
+    u16         uVar4;
+    u32         uVar5;
+    i16         iStack26;
+    i16         iStack24;
     undefined4  local_16;
-    int         iStack18;
-    undefined2  uStack16;
-    undefined2  uStack14;
-    ulong       uStack12;
-    ushort      uStack8;
-    int         iStack6;
-    ushort      uStack4;
+    i16         iStack18;
+    u16         uStack16;
+    u16         uStack14;
+    u32         uStack12;
+    u16         uStack8;
+    i16         iStack6;
+    u16         uStack4;
 
     pass1_1028_bab6(param_1, param_2, param_3);
     iStack6  = param_2;
@@ -366,32 +366,32 @@ int __stdcall16far pass1_1028_1106(ulong param_1, int param_2, ushort param_3, u
     uStack8  = pass1_1030_2fac(CONCAT22(param_3, param_2));
     uStack12 = pass1_1028_bb24(param_1);
     uVar5    = pass1_1028_b58e(param_1);
-    uStack14 = (undefined2)(uVar5 >> 0x10);
-    local_16 = *(undefined4 *)((int)uVar5 + 0xc);
+    uStack14 = (uVar5 >> 0x10);
+    local_16 = (uVar5 + 0xc);
     iStack26 = 0x0;
     iStack24 = 0x0;
     while(true)
     {
-        if((int)uStack8 < iStack26)
+        if(uStack8 < iStack26)
         {
             return iStack24;
         }
         iStack18 = iStack26;
         puVar2   = &local_16;
-        pass1_1030_627e(param_4, (uint)puVar2, (uint)(uVar5 >> 0x10), _PTR_LOOP_1050_5740, (ushort *)CONCAT22(param_4, puVar2), uStack12);
-        uStack16 = (undefined2)uVar5;
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)puVar2, (uint)(uVar5 >> 0x10));
-        uStack16 = (undefined2)uVar5;
-        if(((uint)(uVar5 >> 0x10) | (uint)puVar2) == 0x0)
+        pass1_1030_627e(param_4, puVar2, (uVar5 >> 0x10), _PTR_LOOP_1050_5740, CONCAT22(param_4, puVar2), uStack12);
+        uStack16 = uVar5;
+        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, puVar2, (uVar5 >> 0x10));
+        uStack16 = uVar5;
+        if(((uVar5 >> 0x10) | puVar2) == 0x0)
             break;
         uVar5 = struct_op_1030_73a8(uVar5 & 0xffff0000 | ZEXT24(puVar2));
-        uVar3 = (uint)(uVar5 >> 0x10);
-        uVar4 = uVar3 | (uint)uVar5;
+        uVar3 = (uVar5 >> 0x10);
+        uVar4 = uVar3 | uVar5;
         if(uVar5 == 0x0)
         {
             return iStack24;
         }
-        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, *(undefined2 *)((uint)uVar5 + 0xc), 0x13);
+        BVar1 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (uVar5 + 0xc), 0x13);
         uVar5 = CONCAT22(uVar4, uStack16);
         if(BVar1 != 0x0)
         {
@@ -403,35 +403,35 @@ int __stdcall16far pass1_1028_1106(ulong param_1, int param_2, ushort param_3, u
 }
 
 
-bool __stdcall16far pass1_1028_11de(ulong param_1)
+bool __stdcall16far pass1_1028_11de(u32 param_1)
 
 {
     undefined4 uVar1;
 
     uVar1 = pass1_1028_b58e(param_1);
-    return *(int *)((int)uVar1 + 0x10) == 0x0;
+    return (uVar1 + 0x10) == 0x0;
 }
 
 
-ushort __stdcall16far pass1_1028_12be(ulong param_1, ulong *param_2, ushort param_3)
+u16 __stdcall16far pass1_1028_12be(u32 param_1, u32 *param_2, u16 param_3)
 
 {
-    int        *piVar1;
-    uint        uVar2;
+    i16        *piVar1;
+    u16         uVar2;
     code      **ppcVar3;
     bool        bVar4;
-    undefined   extraout_AH;
-    ushort      uVar5;
+    u8          extraout_AH;
+    u16         uVar5;
     undefined4 *puVar6;
-    ulong       uVar7;
-    ulong       uVar8;
-    ushort      uStack8;
+    u32         uVar7;
+    u32         uVar8;
+    u16         uStack8;
 
     bVar4 = pass1_1028_11de(param_1);
     if(CONCAT11(extraout_AH, bVar4) == 0x0)
     {
-        puVar6  = (undefined4 *)pass1_1028_121e(param_1, param_3);
-        ppcVar3 = (code **)((int)*puVar6 + 0x40);
+        puVar6  = pass1_1028_121e(param_1, param_3);
+        ppcVar3 = (*puVar6 + 0x40);
         uVar5   = (**ppcVar3)();
         return uVar5;
     }
@@ -441,13 +441,13 @@ ushort __stdcall16far pass1_1028_12be(ulong param_1, ulong *param_2, ushort para
     uVar8    = uVar7;
     do
     {
-        uVar8            = pass1_1030_7c28(uVar7, uStack8, (uint)uVar8, (uint)(uVar8 >> 0x10), param_3);
-        uVar2            = *(uint *)param_2;
-        *(uint *)param_2 = *(int *)param_2 + (uint)uVar8;
-        piVar1           = (int *)((int)param_2 + 0x2);
-        *piVar1          = *piVar1 + (int)(uVar8 >> 0x10) + (uint)CARRY2(uVar2, (uint)uVar8);
-        uStack8          = uStack8 + 0x1;
-    } while((int)uStack8 < 0xe);
+        uVar8   = pass1_1030_7c28(uVar7, uStack8, uVar8, (uVar8 >> 0x10), param_3);
+        uVar2   = param_2;
+        param_2 = param_2 + uVar8;
+        piVar1  = (param_2 + 0x2);
+        *piVar1 = *piVar1 + (uVar8 >> 0x10) + CARRY2(uVar2, uVar8);
+        uStack8 = uStack8 + 0x1;
+    } while(uStack8 < 0xe);
     if(0x1f4 < *param_2)
     {
         return 0x1;
@@ -459,50 +459,50 @@ ushort __stdcall16far pass1_1028_12be(ulong param_1, ulong *param_2, ushort para
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1028_134a(ulong *param_1, ushort param_2, ushort param_3, ushort param_4)
+void __stdcall16far pass1_1028_134a(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    int       *piVar1;
+    i16       *piVar1;
     code     **ppcVar2;
     BOOL16     BVar3;
     long      *plVar4;
-    undefined2 uVar5;
-    undefined2 uVar6;
-    ulong      uVar7;
+    u16        uVar5;
+    u16        uVar6;
+    u32        uVar7;
     long       lStack26;
-    int        iStack22;
-    ulong      uStack18;
+    i16        iStack22;
+    u32        uStack18;
     undefined4 uStack10;
     long       local_6;
 
-    uVar6 = (undefined2)((ulong)param_1 >> 0x10);
-    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, *(undefined2 *)((int)param_1 + 0xc), 0x13);
+    uVar6 = (param_1 >> 0x10);
+    BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (param_1 + 0xc), 0x13);
     if(BVar3 != 0x0)
     {
         plVar4  = &local_6;
-        ppcVar2 = (code **)((int)*param_1 + 0x40);
+        ppcVar2 = (*param_1 + 0x40);
         (**ppcVar2)(0x1008, param_1, plVar4, param_4);
         if(plVar4 != (long *)0x0)
         {
-            piVar1  = (int *)((int)param_1 + 0x22);
+            piVar1  = (param_1 + 0x22);
             *piVar1 = *piVar1 + 0x1;
             return;
         }
         uStack10 = 0x1f4 - local_6;
-        uVar7    = pass1_1028_121e((ulong)param_1, param_4);
-        uVar5    = (undefined2)(uVar7 >> 0x10);
-        uVar6    = (undefined2)uVar7;
+        uVar7    = pass1_1028_121e(param_1, param_4);
+        uVar5    = (uVar7 >> 0x10);
+        uVar6    = uVar7;
         pass1_1028_b58e(uVar7);
         uStack18 = CONCAT22(uVar5, uVar6);
         for(iStack22 = 0x0; iStack22 < 0xa; iStack22 = iStack22 + 0x1)
         {
-            uStack10._0_2_ = *(uint *)(iStack22 * 0x2 + 0x4fbe);
-            uStack10._2_2_ = (uchar *)((int)(uint)uStack10 >> 0xf);
-            if(uStack10 < (int)(uint)uStack10)
+            uStack10._0_2_ = (iStack22 * 0x2 + 0x4fbe);
+            uStack10._2_2_ = (uStack10 >> 0xf);
+            if(uStack10 < uStack10)
             {
             }
-            lStack26 = CONCAT22(uStack10._2_2_, (uint)uStack10);
-            pass1_1030_7ddc(uStack18, CONCAT13((char)((uint)uStack10._2_2_ >> 0x8), CONCAT12((char)uStack10._2_2_, (uint)uStack10)), iStack22 + 0x4, (uint)uStack10, uStack10._2_2_, param_2, param_3, param_4);
+            lStack26 = CONCAT22(uStack10._2_2_, uStack10);
+            pass1_1030_7ddc(uStack18, CONCAT13((uStack10._2_2_ >> 0x8), CONCAT12(uStack10._2_2_, uStack10)), iStack22 + 0x4, uStack10, uStack10._2_2_, param_2, param_3, param_4);
             uStack10 = uStack10 - lStack26;
             if(uStack10 < 0x1)
             {
@@ -514,21 +514,21 @@ void __stdcall16far pass1_1028_134a(ulong *param_1, ushort param_2, ushort param
 }
 
 
-int __stdcall16far pass1_1028_1416(ulong param_1, ushort param_2, ushort param_3)
+i16 __stdcall16far pass1_1028_1416(u32 param_1, u16 param_2, u16 param_3)
 
 {
-    bool      bVar1;
-    undefined extraout_AH;
-    int       iVar2;
-    uint      uVar3;
-    ulong     uVar4;
+    bool bVar1;
+    u8   extraout_AH;
+    i16  iVar2;
+    u16  uVar3;
+    u32  uVar4;
 
     bVar1 = pass1_1028_11de(param_1);
     if(CONCAT11(extraout_AH, bVar1) == 0x0)
     {
         uVar4 = pass1_1028_121e(param_1, param_3);
-        uVar3 = (uint)(uVar4 >> 0x10);
-        iVar2 = pass1_1028_1416(uVar4 & 0xffff | (ulong)uVar3 << 0x10, uVar3, param_3);
+        uVar3 = (uVar4 >> 0x10);
+        iVar2 = pass1_1028_1416(uVar4 & 0xffff | uVar3 << 0x10, uVar3, param_3);
         return iVar2;
     }
     iVar2 = pass1_1028_1024(param_1, CONCAT11(extraout_AH, bVar1), param_2, param_3);
@@ -536,25 +536,25 @@ int __stdcall16far pass1_1028_1416(ulong param_1, ushort param_2, ushort param_3
 }
 
 
-ushort __stdcall16far pass1_1028_1556(ulong param_1, int param_2, ushort param_3, ushort param_4)
+u16 __stdcall16far pass1_1028_1556(u32 param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
-    int         iVar1;
+    i16         iVar1;
     undefined4 *puVar2;
-    uint        uVar3;
+    u16         uVar3;
     BOOL16      BVar4;
-    uint        uVar5;
-    uint        uVar6;
-    ulong       uVar7;
-    int         iStack26;
+    u16         uVar5;
+    u16         uVar6;
+    u32         uVar7;
+    i16         iStack26;
     undefined4  local_16;
-    int         iStack18;
-    undefined2  uStack16;
-    undefined2  uStack14;
-    ulong       uStack12;
-    ushort      uStack8;
-    int         iStack6;
-    ushort      uStack4;
+    i16         iStack18;
+    u16         uStack16;
+    u16         uStack14;
+    u32         uStack12;
+    u16         uStack8;
+    i16         iStack6;
+    u16         uStack4;
 
     pass1_1028_bab6(param_1, param_2, param_3);
     iStack6  = param_2;
@@ -562,39 +562,39 @@ ushort __stdcall16far pass1_1028_1556(ulong param_1, int param_2, ushort param_3
     uStack8  = pass1_1030_2fac(CONCAT22(param_3, param_2));
     uStack12 = pass1_1028_bb24(param_1);
     uVar7    = pass1_1028_b58e(param_1);
-    uStack14 = (undefined2)(uVar7 >> 0x10);
-    local_16 = *(undefined4 *)((int)uVar7 + 0xc);
+    uStack14 = (uVar7 >> 0x10);
+    local_16 = (uVar7 + 0xc);
     iStack26 = 0x1;
     while(true)
     {
-        if((int)uStack8 < iStack26)
+        if(uStack8 < iStack26)
         {
             return 0x0;
         }
         iStack18 = iStack26;
         puVar2   = &local_16;
-        pass1_1030_627e(param_4, (uint)puVar2, (uint)(uVar7 >> 0x10), _PTR_LOOP_1050_5740, (ushort *)CONCAT22(param_4, puVar2), uStack12);
-        uStack16 = (undefined2)uVar7;
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)puVar2, (uint)(uVar7 >> 0x10));
-        uStack16 = (undefined2)uVar7;
-        if(((uint)(uVar7 >> 0x10) | (uint)puVar2) == 0x0)
+        pass1_1030_627e(param_4, puVar2, (uVar7 >> 0x10), _PTR_LOOP_1050_5740, CONCAT22(param_4, puVar2), uStack12);
+        uStack16 = uVar7;
+        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, puVar2, (uVar7 >> 0x10));
+        uStack16 = uVar7;
+        if(((uVar7 >> 0x10) | puVar2) == 0x0)
         {
             return 0x0;
         }
         uVar7 = struct_op_1030_73a8(uVar7 & 0xffff0000 | ZEXT24(puVar2));
-        uVar5 = (uint)(uVar7 >> 0x10);
-        uVar3 = (uint)uVar7;
+        uVar5 = (uVar7 >> 0x10);
+        uVar3 = uVar7;
         uVar6 = uVar5 | uVar3;
         if(uVar7 == 0x0)
         {
             return 0x0;
         }
-        iVar1 = *(int *)(uVar3 + 0xc);
+        iVar1 = (uVar3 + 0xc);
         BVar4 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, iVar1, 0x13);
         uVar7 = CONCAT22(uVar6, uStack16);
         if((BVar4 == 0x0) && (iVar1 != 0x75))
             break;
-        if(*(int *)(uVar3 + 0x12) != 0x9)
+        if((uVar3 + 0x12) != 0x9)
         {
             return 0x1;
         }
@@ -604,14 +604,14 @@ ushort __stdcall16far pass1_1028_1556(ulong param_1, int param_2, ushort param_3
 }
 
 
-astruct_409 *__stdcall16far pass1_1028_1646(ulong param_1)
+astruct_409 *__stdcall16far pass1_1028_1646(u32 param_1)
 
 {
     astruct_409 *paVar1;
     astruct_409 *uVar2;
-    undefined2   uVar3;
+    u16          uVar3;
 
-    uVar3  = (undefined2)(param_1 >> 0x10);
+    uVar3  = (param_1 >> 0x10);
     uVar2  = (astruct_409 *)param_1;
     paVar1 = (astruct_409 *)(uVar2->field_0x20 + -0x4);
     if(paVar1 < (astruct_409 *)&DAT_1050_0009)
@@ -653,29 +653,29 @@ astruct_409 *__stdcall16far pass1_1028_1646(ulong param_1)
 }
 
 
-ushort *__stdcall16far pass1_1028_17ae(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1028_17ae(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0x1b54;
-    *(undefined2 *)(param_1 + 0x2)        = (int)&USHORT_1050_1028;
-    return (ushort *)CONCAT22(param_2, param_1);
+    CONCAT22(param_2, param_1) = 0x1b54;
+    (param_1 + 0x2)            = &USHORT_1050_1028;
+    return CONCAT22(param_2, param_1);
 }
 
 
-void __stdcall16far pass1_1028_17d8(ushort param_1, ushort param_2, ushort param_3)
+void __stdcall16far pass1_1028_17d8(u16 param_1, u16 param_2, u16 param_3)
 
 {
-    undefined2 extraout_DX;
+    u16 extraout_DX;
 
     pass1_1030_df0c(CONCAT22(param_2, param_1), param_3);
     pass1_1028_b58e(CONCAT22(param_2, param_1));
-    pass1_1038_57dc(*(ulong *)(param_3 + 0x2e), 0x1, 0x3);
+    pass1_1038_57dc(*(param_3 + 0x2e), 0x1, 0x3);
     return;
 }
 
 
-void __stdcall16far pass1_1028_1812(ulong *param_1, ushort param_2)
+void __stdcall16far pass1_1028_1812(u32 *param_1, u16 param_2)
 
 {
     pass1_1028_bdac(param_1, 0x2, param_2);
@@ -683,52 +683,52 @@ void __stdcall16far pass1_1028_1812(ulong *param_1, ushort param_2)
 }
 
 
-ushort *__stdcall16far pass1_1020_e91e(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_e91e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
-    *(undefined2 *)(param_1 + 0x24)       = 0x0;
-    *(ushort *)CONCAT22(param_2, param_1) = 0xeef6;
-    *(undefined2 *)(param_1 + 0x2)        = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    (param_1 + 0x24)           = 0x0;
+    CONCAT22(param_2, param_1) = 0xeef6;
+    (param_1 + 0x2)            = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
 
-void __stdcall16far pass1_1020_e9d4(ushort param_1, ushort param_2, ushort param_3)
+void __stdcall16far pass1_1020_e9d4(u16 param_1, u16 param_2, u16 param_3)
 
 {
-    undefined2 extraout_DX;
+    u16 extraout_DX;
 
     pass1_1030_df0c(CONCAT22(param_2, param_1), param_3);
     pass1_1028_b58e(CONCAT22(param_2, param_1));
-    pass1_1038_57dc(*(ulong *)(param_3 + 0x2e), 0x1, 0x1);
+    pass1_1038_57dc(*(param_3 + 0x2e), 0x1, 0x1);
     return;
 }
 
 
-void __stdcall16far pass1_1020_ea0e(ulong *param_1)
+void __stdcall16far pass1_1020_ea0e(u32 *param_1)
 
 {
-    pass1_1028_bdac(param_1, 0x1, (ushort)&USHORT_1050_1028);
+    pass1_1028_bdac(param_1, 0x1, &USHORT_1050_1028);
     return;
 }
 
-void __stdcall16far pass1_1020_ecb0(ulong param_1, int param_2, ushort param_3)
+void __stdcall16far pass1_1020_ecb0(u32 param_1, i16 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
-    int        iVar2;
-    uint       uVar3;
-    ushort     unaff_SS;
-    undefined2 uStack8;
+    i16        iVar2;
+    u16        uVar3;
+    u16        unaff_SS;
+    u16        uStack8;
 
-    uVar3 = (uint)(param_1 >> 0x10);
-    iVar2 = (int)param_1;
-    uVar1 = *(undefined4 *)(iVar2 + 0x8);
-    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uVar1, (uint)((ulong)uVar1 >> 0x10));
-    if(*(int *)(iVar2 + 0x12) == 0x1)
+    uVar3 = (param_1 >> 0x10);
+    iVar2 = param_1;
+    uVar1 = (iVar2 + 0x8);
+    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar1, (uVar1 >> 0x10));
+    if((iVar2 + 0x12) == 0x1)
     {
-        switch(*(undefined2 *)(param_2 + 0x14))
+        switch((param_2 + 0x14))
         {
         case 0x2:
         case 0x7:
@@ -739,65 +739,65 @@ void __stdcall16far pass1_1020_ecb0(ulong param_1, int param_2, ushort param_3)
             uStack8 = 0x3;
             break;
         default:
-            uStack8 = *(undefined2 *)(param_2 + 0x14);
+            uStack8 = (param_2 + 0x14);
             break;
         case 0x5:
         case 0x6:
             uStack8 = 0x1;
         }
-        *(undefined2 *)(iVar2 + 0x14) = uStack8;
+        (iVar2 + 0x14) = uStack8;
         return;
     }
-    pass1_1028_bf22(param_1 & 0xffff | (ulong)uVar3 << 0x10, (uchar *)param_3, unaff_SS);
+    pass1_1028_bf22(param_1 & 0xffff | uVar3 << 0x10, param_3, unaff_SS);
     return;
 }
 
-void __stdcall16far pass1_1020_ed3c(ulong param_1, int param_2, ushort param_3, uchar param_4)
+void __stdcall16far pass1_1020_ed3c(u32 param_1, i16 param_2, u16 param_3, u8 param_4)
 
 {
-    int        *piVar1;
-    ushort      uVar2;
-    undefined2  extraout_DX;
-    undefined2  extraout_DX_00;
-    int         iVar3;
-    undefined2  uVar4;
-    undefined   local_138[0x112];
-    ulong       uStack38;
+    i16        *piVar1;
+    u16         uVar2;
+    u16         extraout_DX;
+    u16         extraout_DX_00;
+    i16         iVar3;
+    u16         uVar4;
+    u8          local_138[0x112];
+    u32         uStack38;
     undefined4 *puStack30;
-    ulong       uStack28;
+    u32         uStack28;
     undefined4  uStack24;
-    ushort      uStack20;
-    int         local_12;
-    undefined   local_10[0x2];
-    undefined   local_e[0x2];
+    u16         uStack20;
+    i16         local_12;
+    u8          local_10[0x2];
+    u8          local_e[0x2];
     undefined4  local_c;
-    undefined2  uStack8;
-    int         iStack6;
-    undefined2  uStack4;
+    u16         uStack8;
+    i16         iStack6;
+    u16         uStack4;
 
-    uVar4   = (undefined2)(param_1 >> 0x10);
-    iVar3   = (int)param_1;
-    piVar1  = (int *)(iVar3 + 0x14);
+    uVar4   = (param_1 >> 0x10);
+    iVar3   = param_1;
+    piVar1  = (iVar3 + 0x14);
     *piVar1 = *piVar1 + -0x1;
     if(*piVar1 == 0x0)
     {
-        *(undefined2 *)(iVar3 + 0x12) = 0x0;
+        (iVar3 + 0x12) = 0x0;
         pass1_1028_b58e(param_1);
-        local_c   = *(undefined4 *)(param_2 + 0xc);
-        uStack8   = *(undefined2 *)(param_2 + 0x10);
+        local_c   = (param_2 + 0xc);
+        uStack8   = (param_2 + 0x10);
         puStack30 = &local_c;
         iStack6   = param_2;
         uStack4   = extraout_DX;
-        pass1_1008_3eb4((ushort *)CONCAT22(param_3, &local_c), (ushort *)CONCAT22(param_3, &local_12), (ushort *)CONCAT22(param_3, local_10), (ushort *)CONCAT22(param_3, local_e));
+        pass1_1008_3eb4(CONCAT22(param_3, &local_c), CONCAT22(param_3, &local_12), CONCAT22(param_3, local_10), CONCAT22(param_3, local_e));
         if(local_12 < 0x1)
         {
-            puStack30 = (undefined4 *)0x5;
+            puStack30 = 0x5;
         }
         else
         {
-            puStack30 = (undefined4 *)0x6;
+            puStack30 = 0x6;
         }
-        *(undefined2 *)(iStack6 + 0x14) = puStack30;
+        (iStack6 + 0x14) = puStack30;
         if(local_12 < 0x1)
         {
             uVar2 = 0x5;
@@ -810,66 +810,66 @@ void __stdcall16far pass1_1020_ed3c(ulong param_1, int param_2, ushort param_3, 
         pass1_1020_ee3a(param_1, uVar2, uVar2, param_3, param_4);
         pass1_1028_b58e(param_1);
         uStack24 = CONCAT22(extraout_DX_00, uVar2);
-        uStack28 = *(ulong *)(uVar2 + 0x2e);
+        uStack28 = *(uVar2 + 0x2e);
         pass1_1038_5804(uStack28, 0x1, 0x1);
-        if(0x0 < *(int *)(iVar3 + 0x24))
+        if(0x0 < (iVar3 + 0x24))
         {
-            uStack38 = *(ulong *)((int)uStack28 + 0x4);
-            pass1_1028_68de((astruct_100 *)CONCAT22(param_3, local_138), *(ushort *)(iVar3 + 0x24), uStack38, param_4, param_3);
-            fn_ptr_1030_835a(_PTR_LOOP_1050_5748, (ulong *)CONCAT22(param_3, local_138));
+            uStack38 = *(uStack28 + 0x4);
+            pass1_1028_68de((astruct_100 *)CONCAT22(param_3, local_138), (iVar3 + 0x24), uStack38, param_4, param_3);
+            fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_3, local_138));
         }
     }
     return;
 }
 
-void __stdcall16far pass1_1020_ef5e(ushort *param_1)
+void __stdcall16far pass1_1020_ef5e(u16 *param_1)
 
 {
-    *param_1                            = 0x0;
-    *(undefined2 *)((int)param_1 + 0x2) = (int)&USHORT_1050_1028;
+    *param_1        = 0x0;
+    (param_1 + 0x2) = &USHORT_1050_1028;
     pass1_1028_b418(param_1);
     return;
 }
 
-void __stdcall16far pass1_1028_0138(ushort *param_1)
+void __stdcall16far pass1_1028_0138(u16 *param_1)
 
 {
     undefined4 *puVar1;
-    uint        uVar2;
+    u16         uVar2;
     code      **ppcVar3;
-    int         iVar4;
-    undefined2  uVar5;
+    i16         iVar4;
+    u16         uVar5;
 
-    uVar5                        = (undefined2)((ulong)param_1 >> 0x10);
-    iVar4                        = (int)param_1;
-    *param_1                     = 0x8ec;
-    *(undefined2 *)(iVar4 + 0x2) = (int)&USHORT_1050_1028;
-    puVar1                       = (undefined4 *)*(uint *)(iVar4 + 0x22);
-    uVar2                        = *(uint *)(iVar4 + 0x24);
-    if((uVar2 | (uint)puVar1) != 0x0)
+    uVar5         = (param_1 >> 0x10);
+    iVar4         = param_1;
+    *param_1      = 0x8ec;
+    (iVar4 + 0x2) = &USHORT_1050_1028;
+    puVar1        = (iVar4 + 0x22);
+    uVar2         = (iVar4 + 0x24);
+    if((uVar2 | puVar1) != 0x0)
     {
-        ppcVar3 = (code **)*puVar1;
+        ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
     pass1_1028_b418(param_1);
     return;
 }
 
-void __stdcall16far pass1_1028_01ec(ulong *param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5)
+void __stdcall16far pass1_1028_01ec(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
     undefined4 uVar1;
-    int        iVar2;
-    undefined2 uVar3;
+    i16        iVar2;
+    u16        uVar3;
 
-    uVar3 = (undefined2)((ulong)param_1 >> 0x10);
-    iVar2 = (int)param_1;
-    if((*(int *)(iVar2 + 0x12) == 0x6) || (*(int *)(iVar2 + 0x12) == 0x5))
+    uVar3 = (param_1 >> 0x10);
+    iVar2 = param_1;
+    if(((iVar2 + 0x12) == 0x6) || ((iVar2 + 0x12) == 0x5))
     {
-        uVar1 = *(undefined4 *)(iVar2 + 0x14);
-        uVar3 = (undefined2)((ulong)uVar1 >> 0x10);
-        iVar2 = (int)uVar1;
-        if((*(int *)(iVar2 + 0xa6) == 0x14) || (*(int *)(iVar2 + 0xa8) == 0x10))
+        uVar1 = (iVar2 + 0x14);
+        uVar3 = (uVar1 >> 0x10);
+        iVar2 = uVar1;
+        if(((iVar2 + 0xa6) == 0x14) || ((iVar2 + 0xa8) == 0x10))
         {
             pass1_1028_bdac(param_1, 0x6, param_4);
             return;
@@ -880,18 +880,18 @@ void __stdcall16far pass1_1028_01ec(ulong *param_1, ushort param_2, ushort param
 }
 
 
-ushort __stdcall16far pass1_1028_04ee(ulong param_1, ulong *param_2, ushort param_3)
+u16 __stdcall16far pass1_1028_04ee(u32 param_1, u32 *param_2, u16 param_3)
 
 {
-    int       *piVar1;
-    uint       uVar2;
-    uint       uVar3;
-    undefined2 uVar4;
-    long       lVar5;
-    undefined  local_a[0x8];
+    i16 *piVar1;
+    u16  uVar2;
+    u16  uVar3;
+    u16  uVar4;
+    long lVar5;
+    u8   local_a[0x8];
 
     *param_2 = 0x0;
-    pass1_1008_5784((ulong *)CONCAT22(param_3, local_a), *(ulong *)((int)param_1 + 0x22));
+    pass1_1008_5784(CONCAT22(param_3, local_a), *(param_1 + 0x22));
     do
     {
         lVar5 = pass1_1008_5b12(local_a, param_3);
@@ -899,59 +899,59 @@ ushort __stdcall16far pass1_1028_04ee(ulong param_1, ulong *param_2, ushort para
         {
             return 0x0;
         }
-        uVar2            = *(uint *)((int)lVar5 + 0xc);
-        uVar4            = (undefined2)((ulong)param_2 >> 0x10);
-        uVar3            = *(uint *)param_2;
-        *(uint *)param_2 = *(int *)param_2 + uVar2;
-        piVar1           = (int *)((int)param_2 + 0x2);
-        *piVar1          = *piVar1 + (uint)CARRY2(uVar3, uVar2);
-    } while((*(int *)((int)param_2 + 0x2) == 0x0) && (*(uint *)param_2 < 0x1e));
+        uVar2   = (lVar5 + 0xc);
+        uVar4   = (param_2 >> 0x10);
+        uVar3   = param_2;
+        param_2 = param_2 + uVar2;
+        piVar1  = (param_2 + 0x2);
+        *piVar1 = *piVar1 + CARRY2(uVar3, uVar2);
+    } while(((param_2 + 0x2) == 0x0) && (param_2 < 0x1e));
     return 0x1;
 }
 
 
-void __stdcall16far pass1_1028_0550(ulong *param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5)
+void __stdcall16far pass1_1028_0550(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
-    uint       uVar1;
-    ulong      uVar2;
-    undefined2 uVar3;
-    undefined2 uVar4;
-    int        iVar5;
+    u16 uVar1;
+    u32 uVar2;
+    u16 uVar3;
+    u16 uVar4;
+    i16 iVar5;
 
     pass1_1028_be9e(param_1, param_2, param_3, param_4, param_5);
-    uVar1 = (uint)((ulong)param_1 >> 0x10);
-    if(*(int *)((int)param_1 + 0x12) == 0x5)
+    uVar1 = (param_1 >> 0x10);
+    if((param_1 + 0x12) == 0x5)
     {
         uVar4 = 0x0;
         iVar5 = 0x4;
         uVar3 = 0x1;
-        uVar2 = pass1_1028_b58e((ulong)param_1 & 0xffff | (ulong)uVar1 << 0x10);
-        pass1_1030_7c50(uVar2, CONCAT22(uVar4, uVar3), iVar5, (uint)uVar2, (uchar *)(uVar2 >> 0x10));
+        uVar2 = pass1_1028_b58e(param_1 & 0xffff | uVar1 << 0x10);
+        pass1_1030_7c50(uVar2, CONCAT22(uVar4, uVar3), iVar5, uVar2, (uVar2 >> 0x10));
     }
     return;
 }
 
-void __stdcall16far pass1_1028_081e(ulong param_1, int param_2, ushort param_3)
+void __stdcall16far pass1_1028_081e(u32 param_1, i16 param_2, u16 param_3)
 
 {
-    int       *piVar1;
-    int        iVar2;
-    undefined2 uVar3;
+    i16       *piVar1;
+    i16        iVar2;
+    u16        uVar3;
     undefined4 uVar4;
-    uint       uVar5;
-    int        iVar6;
-    undefined2 uVar7;
+    u16        uVar5;
+    i16        iVar6;
+    u16        uVar7;
 
     pass1_1028_b58e(param_1);
-    uVar4   = *(undefined4 *)(param_2 + 0x2e);
-    iVar2   = *(int *)((int)uVar4 + 0x18);
-    uVar7   = (undefined2)(param_1 >> 0x10);
-    iVar6   = (int)param_1;
-    piVar1  = (int *)(iVar6 + 0x20);
+    uVar4   = (param_2 + 0x2e);
+    iVar2   = (uVar4 + 0x18);
+    uVar7   = (param_1 >> 0x10);
+    iVar6   = param_1;
+    piVar1  = (iVar6 + 0x20);
     *piVar1 = *piVar1 + 0x1;
     uVar5   = *_PTR_LOOP_1050_65e2;
-    uVar3   = *(undefined2 *)((int)_PTR_LOOP_1050_65e2 + 0x2);
+    uVar3   = (_PTR_LOOP_1050_65e2 + 0x2);
     if(iVar2 < 0xfa)
     {
         uVar5 = uVar5 & 0x1;
@@ -968,123 +968,122 @@ void __stdcall16far pass1_1028_081e(ulong param_1, int param_2, ushort param_3)
             {
                 return;
             }
-            piVar1  = (int *)(iVar6 + 0x20);
+            piVar1  = (iVar6 + 0x20);
             *piVar1 = *piVar1 + 0x1;
             return;
         }
-        uVar5 = (uint)((qword)CONCAT22(uVar3, uVar5) % 0x3);
+        uVar5 = ((qword)CONCAT22(uVar3, uVar5) % 0x3);
     }
     if(uVar5 != 0x0)
     {
         return;
     }
-    piVar1  = (int *)(iVar6 + 0x20);
+    piVar1  = (iVar6 + 0x20);
     *piVar1 = *piVar1 + -0x1;
     return;
 }
 
 
-ushort *__stdcall16far pass1_1020_d888(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_d888(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xd8ec;
-    *(undefined2 *)(param_1 + 0x2)        = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    CONCAT22(param_2, param_1) = 0xd8ec;
+    (param_1 + 0x2)            = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
-void __stdcall16far pass1_1020_d9fa(ulong param_1, ushort param_2)
+void __stdcall16far pass1_1020_d9fa(u32 param_1, u16 param_2)
 
 {
-    undefined2 extraout_DX;
+    u16 extraout_DX;
 
-    if(*(int *)((int)param_1 + 0xc) != 0x79)
+    if((param_1 + 0xc) != 0x79)
     {
         pass1_1030_df0c(param_1, param_2);
         pass1_1028_b58e(param_1);
-        pass1_1038_57dc(*(ulong *)(param_2 + 0x2e), 0x1, 0x2);
+        pass1_1038_57dc(*(param_2 + 0x2e), 0x1, 0x2);
     }
     return;
 }
 
 
-void __stdcall16far pass1_1020_da3c(ulong *param_1)
+void __stdcall16far pass1_1020_da3c(u32 *param_1)
 
 {
-    pass1_1028_bdac(param_1, 0x2, (ushort)&USHORT_1050_1028);
+    pass1_1028_bdac(param_1, 0x2, &USHORT_1050_1028);
     return;
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_da4e(ulong *param_1, ushort *param_2, ulong param_3, ulong param_4, ushort param_5, int param_6, ushort param_7)
+void __stdcall16far pass1_1020_da4e(u32 *param_1, u16 *param_2, u32 param_3, u32 param_4, u16 param_5, i16 param_6, u16 param_7)
 
 {
     code      **ppcVar1;
     undefined4 *puVar2;
-    uint        uVar3;
+    u16         uVar3;
     BOOL16      BVar4;
-    uchar      *extraout_DX;
-    uchar      *puVar5;
-    uchar      *extraout_DX_00;
-    uint        uVar6;
-    ulong       uVar7;
-    ulong       uVar8;
-    ushort      uVar9;
-    ushort      uVar11;
-    ushort     *puVar10;
-    ulong       uVar12;
+    u8         *extraout_DX;
+    u8         *puVar5;
+    u8         *extraout_DX_00;
+    u16         uVar6;
+    u32         uVar7;
+    u32         uVar8;
+    u16         uVar9;
+    u16         uVar11;
+    u16        *puVar10;
+    u32         uVar12;
     byte        bStack31;
     undefined4  local_e;
-    ushort      uStack10;
-    uint        uStack8;
+    u16         uStack10;
+    u16         uStack8;
     undefined4  uStack6;
 
     puVar2 = &local_e;
-    pass1_1030_64ce(param_7, puVar2, param_5, _PTR_LOOP_1050_5740, param_2, param_4, (ulong *)CONCAT22(param_7, puVar2));
+    pass1_1030_64ce(param_7, puVar2, param_5, _PTR_LOOP_1050_5740, param_2, param_4, CONCAT22(param_7, puVar2));
     uStack6  = *puVar2;
-    uVar6    = *(uint *)((int)puVar2 + 0x2);
-    bStack31 = (byte)((ulong)uStack6 >> 0x18);
-    uVar3    = (uint)bStack31;
+    uVar6    = (puVar2 + 0x2);
+    bStack31 = (byte)(uStack6 >> 0x18);
+    uVar3    = bStack31;
     if(bStack31 != 0x0)
     {
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack6, uVar6);
+        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack6, uVar6);
         uVar7 = struct_op_1030_73a8(CONCAT22(uVar6, uVar3));
-        uVar6 = (uint)(uVar7 >> 0x10);
-        uVar3 = (uint)uVar7;
-        if(*(int *)(uVar3 + 0xc) == 0x10)
+        uVar6 = (uVar7 >> 0x10);
+        uVar3 = uVar7;
+        if((uVar3 + 0xc) == 0x10)
         {
-            PTR_LOOP_1050_50ca = (undefined *)0x6a9;
+            PTR_LOOP_1050_50ca = 0x6a9;
             return;
         }
     }
-    uVar9  = (ushort)param_1;
-    uVar11 = (ushort)((ulong)param_1 >> 0x10);
+    uVar9  = param_1;
+    uVar11 = (param_1 >> 0x10);
     pass1_1028_c7b6(param_7, uVar6, uVar9, uVar11, param_2, param_4);
-    uVar8   = (ulong)param_1 & 0xffff | (ulong)uVar11 << 0x10;
-    ppcVar1 = (code **)((int)*param_1 + 0x60);
+    uVar8   = param_1 & 0xffff | uVar11 << 0x10;
+    ppcVar1 = (*param_1 + 0x60);
     puVar10 = param_2;
     uVar7   = param_3;
     uVar12  = param_4;
     uStack8 = uVar3;
     (**ppcVar1)();
-    if(((uVar3 != 0x0) && (puVar5 = extraout_DX, pass1_1028_c23e(uVar9, uVar11, param_2, param_3, param_4, uVar3, (uint)extraout_DX, param_7), uVar3 != 0x0))
-       && (BVar4 = pass1_1028_c314(param_7, uVar3, (ushort)puVar5, uVar9, uVar11, param_2, (ushort)param_3, (ushort)(param_3 >> 0x10), param_4), BVar4 != 0x0))
+    if(((uVar3 != 0x0) && (puVar5 = extraout_DX, pass1_1028_c23e(uVar9, uVar11, param_2, param_3, param_4, uVar3, extraout_DX, param_7), uVar3 != 0x0))
+       && (BVar4 = pass1_1028_c314(param_7, uVar3, puVar5, uVar9, uVar11, param_2, param_3, (param_3 >> 0x10), param_4), BVar4 != 0x0))
     {
-        uVar6 = (uint)((ulong)param_2 >> 0x10);
-        if(((*(int *)((int)param_2 + 0x4) == 0x0) && (uStack8 != 0x4))
-           && (ppcVar1 = (code **)((int)*param_1 + 0x5c), (**ppcVar1)((int)&USHORT_1050_1028, param_1, param_2, param_3, param_4, uVar8, puVar10, uVar7, uVar12), puVar5 = extraout_DX_00, BVar4 == 0x0))
+        uVar6 = (param_2 >> 0x10);
+        if((((param_2 + 0x4) == 0x0) && (uStack8 != 0x4)) && (ppcVar1 = (*param_1 + 0x5c), (**ppcVar1)(&USHORT_1050_1028, param_1, param_2, param_3, param_4, uVar8, puVar10, uVar7, uVar12), puVar5 = extraout_DX_00, BVar4 == 0x0))
         {
             return;
         }
-        uStack10 = *(ushort *)((int)param_2 + 0x4);
+        uStack10 = (param_2 + 0x4);
         if(uStack10 != 0x0)
         {
-            pass1_1020_df10((ulong)param_1, (ushort *)((ulong)param_2 & 0xffff | (ulong)uVar6 << 0x10), param_4, uStack10, puVar5, param_6, param_7);
+            pass1_1020_df10(param_1, (param_2 & 0xffff | uVar6 << 0x10), param_4, uStack10, puVar5, param_6, param_7);
             return;
         }
-        pass1_1020_deac((ulong)param_1, (ushort *)((ulong)param_2 & 0xffff | (ulong)uVar6 << 0x10), param_4, 0x0, puVar5, param_6, param_7);
+        pass1_1020_deac(param_1, (param_2 & 0xffff | uVar6 << 0x10), param_4, 0x0, puVar5, param_6, param_7);
         return;
     }
     return;
@@ -1093,36 +1092,36 @@ void __stdcall16far pass1_1020_da4e(ulong *param_1, ushort *param_2, ulong param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_db86(ushort param_1, ushort param_2, ushort *param_3, ulong param_4, long param_5, ushort param_6)
+void __stdcall16far pass1_1020_db86(u16 param_1, u16 param_2, u16 *param_3, u32 param_4, long param_5, u16 param_6)
 
 {
-    int        iVar1;
-    undefined *puVar2;
-    uint       uVar3;
-    ulong      uVar4;
-    ushort    *puVar5;
-    undefined  local_4[0x2];
+    i16  iVar1;
+    u8  *puVar2;
+    u16  uVar3;
+    u32  uVar4;
+    u16 *puVar5;
+    u8   local_4[0x2];
 
-    uVar4 = pass1_1030_bcae((ushort)local_4, param_6);
-    uVar3 = (uint)(uVar4 >> 0x10);
-    iVar1 = (int)uVar4;
-    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)param_4, (uint)(param_4 >> 0x10));
-    uVar4  = *(ulong *)(iVar1 + 0x10);
+    uVar4 = pass1_1030_bcae(local_4, param_6);
+    uVar3 = (uVar4 >> 0x10);
+    iVar1 = uVar4;
+    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4, (param_4 >> 0x10));
+    uVar4  = *(iVar1 + 0x10);
     puVar5 = param_3;
-    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uVar4, (uint)(uVar4 >> 0x10));
+    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar4, (uVar4 >> 0x10));
     puVar2 = local_4;
-    pass1_1030_bcde(param_6, (ushort)puVar2, param_6, uVar4 & 0xffff | (ulong)uVar3 << 0x10, puVar5, param_5);
-    if((int)puVar2 < 0x0)
+    pass1_1030_bcde(param_6, puVar2, param_6, uVar4 & 0xffff | uVar3 << 0x10, puVar5, param_5);
+    if(puVar2 < 0x0)
     {
-        PTR_LOOP_1050_50ca = (undefined *)0x6af;
+        PTR_LOOP_1050_50ca = 0x6af;
     }
     else
     {
-        if(((int)puVar2 < 0x1f) || (*(int *)((int)param_3 + 0x4) < 0x1))
+        if((puVar2 < 0x1f) || ((param_3 + 0x4) < 0x1))
         {
             return;
         }
-        PTR_LOOP_1050_50ca = (undefined *)0x6b6;
+        PTR_LOOP_1050_50ca = 0x6b6;
         PTR_LOOP_1050_50cc = puVar2 + -0x1e;
     }
     return;
@@ -1131,38 +1130,38 @@ void __stdcall16far pass1_1020_db86(ushort param_1, ushort param_2, ushort *para
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_dc1c(ulong param_1, ushort *param_2, ushort param_3)
+void __stdcall16far pass1_1020_dc1c(u32 param_1, u16 *param_2, u16 param_3)
 
 {
-    int         iVar1;
+    i16         iVar1;
     code      **ppcVar2;
     undefined4 *puVar3;
-    uint        uVar4;
-    uint        uVar5;
-    ulong       uVar6;
+    u16         uVar4;
+    u16         uVar5;
+    u32         uVar6;
     undefined4 *puVar7;
-    ulong      *puVar8;
+    u32        *puVar8;
     byte        bStack27;
-    undefined   local_a[0x4];
+    u8          local_a[0x4];
     undefined4  uStack6;
 
-    puVar8 = (ulong *)CONCAT22(param_3, local_a);
+    puVar8 = CONCAT22(param_3, local_a);
     uVar6  = pass1_1028_bb24(param_1);
-    uVar5  = (uint)(uVar6 >> 0x10);
-    puVar3 = (undefined4 *)uVar6;
-    pass1_1030_64ce(param_3, puVar3, uVar5, _PTR_LOOP_1050_5740, param_2, uVar6 & 0xffff | (ulong)uVar5 << 0x10, puVar8);
+    uVar5  = (uVar6 >> 0x10);
+    puVar3 = uVar6;
+    pass1_1030_64ce(param_3, puVar3, uVar5, _PTR_LOOP_1050_5740, param_2, uVar6 & 0xffff | uVar5 << 0x10, puVar8);
     uStack6  = *puVar3;
-    uVar5    = *(uint *)((int)puVar3 + 0x2);
-    bStack27 = (byte)((ulong)uStack6 >> 0x18);
-    uVar4    = (uint)bStack27;
+    uVar5    = (puVar3 + 0x2);
+    bStack27 = (byte)(uStack6 >> 0x18);
+    uVar4    = bStack27;
     if(bStack27 != 0x0)
     {
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack6, uVar5);
-        puVar7 = (undefined4 *)struct_op_1030_73a8(CONCAT22(uVar5, uVar4));
-        iVar1  = *(int *)((int)puVar7 + 0xc);
+        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack6, uVar5);
+        puVar7 = struct_op_1030_73a8(CONCAT22(uVar5, uVar4));
+        iVar1  = (puVar7 + 0xc);
         if(((iVar1 < 0x1) || (SBORROW2(iVar1, 0x1))) || ((iVar1 != 0x9 && 0x7 < iVar1 + -0x1 && ((iVar1 + -0x9 < 0x6a || (0x6 < iVar1 + -0x73))))))
         {
-            ppcVar2 = (code **)((int)*puVar7 + 0x24);
+            ppcVar2 = (*puVar7 + 0x24);
             (**ppcVar2)();
         }
     }
@@ -1172,84 +1171,84 @@ void __stdcall16far pass1_1020_dc1c(ulong param_1, ushort *param_2, ushort param
 
 // WARNING: Could not reconcile some variable overlaps
 
-void __stdcall16far pass1_1020_dca8(ulong param_1, ushort param_2, ushort param_3)
+void __stdcall16far pass1_1020_dca8(u32 param_1, u16 param_2, u16 param_3)
 
 {
-    undefined2  uVar1;
-    ushort      uVar2;
-    undefined   local_2e[0xe];
+    u16         uVar1;
+    u16         uVar2;
+    u8          local_2e[0xe];
     undefined4 *puStack32;
-    ushort      uStack30;
-    ushort      uStack28;
-    ushort      uStack26;
-    ushort      uStack24;
-    ushort      uStack22;
-    ushort      uStack20;
-    ushort      uStack18;
+    u16         uStack30;
+    u16         uStack28;
+    u16         uStack26;
+    u16         uStack24;
+    u16         uStack22;
+    u16         uStack20;
+    u16         uStack18;
     undefined4  local_10;
-    ushort      uStack12;
+    u16         uStack12;
     undefined4  uStack10;
-    undefined   local_6[0x2];
-    int         local_4;
+    u8          local_6[0x2];
+    i16         local_4;
 
-    pass1_1028_c1f8(param_3, (int)local_6, param_2, param_1, (ushort *)CONCAT22(param_3, local_6), (ushort *)CONCAT22(param_3, &local_4));
+    pass1_1028_c1f8(param_3, local_6, param_2, param_1, CONCAT22(param_3, local_6), CONCAT22(param_3, &local_4));
     uStack10  = pass1_1028_b58e(param_1);
-    uVar1     = (undefined2)((ulong)uStack10 >> 0x10);
-    local_10  = *(undefined4 *)((int)uStack10 + 0xc);
-    uStack12  = *(ushort *)((int)uStack10 + 0x10);
+    uVar1     = (uStack10 >> 0x10);
+    local_10  = (uStack10 + 0xc);
+    uStack12  = (uStack10 + 0x10);
     puStack32 = &local_10;
-    uStack18  = (ushort)local_10;
-    uStack20  = (ushort)((ulong)local_10 >> 0x10);
-    uStack24  = (ushort)local_10 - 0x1;
-    if((int)uStack24 < 0x0)
+    uStack18  = local_10;
+    uStack20  = (local_10 >> 0x10);
+    uStack24  = local_10 - 0x1;
+    if(uStack24 < 0x0)
     {
         uStack24 = 0x0;
     }
     uVar2    = local_4 - 0x1;
-    uStack26 = (ushort)local_10 + 0x1;
-    if((int)uVar2 < (int)((ushort)local_10 + 0x1))
+    uStack26 = local_10 + 0x1;
+    if(uVar2 < (local_10 + 0x1))
     {
         uStack26 = uVar2;
     }
     uStack28 = uStack20 - 0x1;
-    if((int)uStack28 < 0x0)
+    if(uStack28 < 0x0)
     {
         uStack28 = 0x0;
     }
     uStack30 = uStack20 + 0x1;
-    if((int)uVar2 < (int)(uStack20 + 0x1))
+    if(uVar2 < (uStack20 + 0x1))
     {
         uStack30 = uVar2;
     }
     uStack22 = uStack12;
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack12, uStack28, uStack24);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack28, uStack18);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack28, uStack26);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack20, uStack24);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack20, uStack26);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack30, uStack24);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack30, uStack18);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
-    pass1_1008_3e54((ushort *)CONCAT22(param_3, local_2e), uStack22, uStack30, uStack26);
-    pass1_1020_dc1c(param_1, (ushort *)CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack12, uStack28, uStack24);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack28, uStack18);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack28, uStack26);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack20, uStack24);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack20, uStack26);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack30, uStack24);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack30, uStack18);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
+    pass1_1008_3e54(CONCAT22(param_3, local_2e), uStack22, uStack30, uStack26);
+    pass1_1020_dc1c(param_1, CONCAT22(param_3, local_2e), param_3);
     return;
 }
 
-BOOL16 __stdcall16far pass1_1020_deac(ulong param_1, ushort *param_2, long param_3, int param_4, uchar *param_5, int param_6, ushort param_7)
+BOOL16 __stdcall16far pass1_1020_deac(u32 param_1, u16 *param_2, long param_3, i16 param_4, u8 *param_5, i16 param_6, u16 param_7)
 
 {
-    ushort uVar1;
-    ushort uVar2;
+    u16 uVar1;
+    u16 uVar2;
 
-    uVar1 = (ushort)param_1;
-    uVar2 = (ushort)(param_1 >> 0x10);
-    pass1_1028_c7b6(param_7, (ushort)param_5, uVar1, uVar2, param_2, param_3);
+    uVar1 = param_1;
+    uVar2 = (param_1 >> 0x10);
+    pass1_1028_c7b6(param_7, param_5, uVar1, uVar2, param_2, param_3);
     if(param_4 < 0x1)
     {
         return 0x0;
@@ -1263,7 +1262,7 @@ BOOL16 __stdcall16far pass1_1020_deac(ulong param_1, ushort *param_2, long param
         if(param_4 == 0x4)
         {
             pass1_1020_de32(param_1, 0x4, param_5, param_6, param_7);
-            if(*(int *)(uVar1 + 0x24) == 0x6)
+            if((uVar1 + 0x24) == 0x6)
             {
                 return 0x1;
             }
@@ -1274,7 +1273,7 @@ BOOL16 __stdcall16far pass1_1020_deac(ulong param_1, ushort *param_2, long param
             return 0x0;
         }
     }
-    *(undefined2 *)(uVar1 + 0x24) = 0x1;
+    (uVar1 + 0x24) = 0x1;
     return 0x1;
 }
 
@@ -1282,72 +1281,72 @@ BOOL16 __stdcall16far pass1_1020_deac(ulong param_1, ushort *param_2, long param
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_df10(ulong param_1, ushort *param_2, long param_3, ushort param_4, uchar *param_5, int param_6, ushort param_7)
+void __stdcall16far pass1_1020_df10(u32 param_1, u16 *param_2, long param_3, u16 param_4, u8 *param_5, i16 param_6, u16 param_7)
 
 {
     undefined4 *puVar1;
-    uint        uVar2;
+    u16         uVar2;
     BOOL16      BVar3;
-    uint        uVar4;
-    ulong       uVar5;
-    ushort      uVar6;
-    ushort      uVar7;
+    u16         uVar4;
+    u32         uVar5;
+    u16         uVar6;
+    u16         uVar7;
     byte        bStack31;
     undefined4  local_e;
     undefined4  uStack10;
-    ushort      uStack6;
-    undefined2  uStack4;
+    u16         uStack6;
+    u16         uStack4;
 
     uStack4 = 0x0;
-    uVar6   = (ushort)param_1;
-    uVar7   = (ushort)(param_1 >> 0x10);
-    pass1_1028_c7b6(param_7, (ushort)param_5, uVar6, uVar7, param_2, param_3);
+    uVar6   = param_1;
+    uVar7   = (param_1 >> 0x10);
+    pass1_1028_c7b6(param_7, param_5, uVar6, uVar7, param_2, param_3);
     uStack6 = param_4;
     if(param_4 == 0x0)
     {
         puVar1 = &local_e;
-        pass1_1030_64ce(param_7, puVar1, param_5, _PTR_LOOP_1050_5740, param_2, param_3, (ulong *)CONCAT22(param_7, puVar1));
+        pass1_1030_64ce(param_7, puVar1, param_5, _PTR_LOOP_1050_5740, param_2, param_3, CONCAT22(param_7, puVar1));
         uStack10 = *puVar1;
-        uVar4    = *(uint *)((int)puVar1 + 0x2);
-        bStack31 = (byte)((ulong)uStack10 >> 0x18);
-        uVar2    = (uint)bStack31;
+        uVar4    = (puVar1 + 0x2);
+        bStack31 = (byte)(uStack10 >> 0x18);
+        uVar2    = bStack31;
         if(bStack31 != 0x0)
         {
-            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack10, uVar4);
+            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack10, uVar4);
             uVar5 = struct_op_1030_73a8(CONCAT22(uVar4, uVar2));
-            if(*(int *)((int)uVar5 + 0xc) == 0x6a)
+            if((uVar5 + 0xc) == 0x6a)
             {
                 BVar3 = pass1_1020_e044(param_1);
                 if(BVar3 == 0x0)
                 {
-                    *(undefined2 *)(uVar6 + 0x24) = 0x1;
+                    (uVar6 + 0x24) = 0x1;
                 }
                 else
                 {
-                    PTR_LOOP_1050_50ca = (undefined *)0x6ac;
+                    PTR_LOOP_1050_50ca = 0x6ac;
                 }
             }
         }
     }
     else
     {
-        if(((0x5 < (int)param_4) && (!SBORROW2(param_4, 0x6))) && ((int)(param_4 - 0x6) < 0x4))
+        if(((0x5 < param_4) && (!SBORROW2(param_4, 0x6))) && ((param_4 - 0x6) < 0x4))
         {
             pass1_1020_de32(param_1, param_4, param_5, param_6, param_7);
-            switch(*(undefined2 *)(uVar6 + 0x24))
+            switch((uVar6 + 0x24))
             {
             case 0x1:
                 BVar3 = pass1_1020_e044(param_1);
                 if(BVar3 != 0x0)
                 {
-                    PTR_LOOP_1050_50ca = (undefined *)0x6ac;
+                    PTR_LOOP_1050_50ca = 0x6ac;
                 }
                 break;
             case 0x2:
             case 0x3:
             case 0x4:
             case 0x5:
-                pass1_1020_e652(param_1, (ulong *)param_2, (ushort)((ulong)param_2 >> 0x10), param_3, param_7);
+                pass1_1020_e652(param_1, param_2, (param_2 >> 0x10), param_3, param_7);
             }
         }
     }
@@ -1357,20 +1356,20 @@ void __stdcall16far pass1_1020_df10(ulong param_1, ushort *param_2, long param_3
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 __stdcall16far pass1_1020_e044(ulong param_1)
+BOOL16 __stdcall16far pass1_1020_e044(u32 param_1)
 
 {
     undefined4 uVar1;
-    ushort     uVar2;
-    undefined2 uVar3;
-    ulong      uVar4;
+    u16        uVar2;
+    u16        uVar3;
+    u32        uVar4;
 
-    uVar3 = (undefined2)(param_1 >> 0x10);
-    uVar4 = pass1_1018_04b8(*(ulong *)((int)param_1 + 0x28));
-    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uVar4, (uint)(uVar4 >> 0x10));
+    uVar3 = (param_1 >> 0x10);
+    uVar4 = pass1_1018_04b8(*(param_1 + 0x28));
+    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar4, (uVar4 >> 0x10));
     uVar2 = pass1_1030_2fac(uVar4);
-    uVar1 = *(undefined4 *)((int)param_1 + 0x28);
-    if((int)uVar2 <= *(int *)((int)uVar1 + 0x1e))
+    uVar1 = (param_1 + 0x28);
+    if(uVar2 <= (uVar1 + 0x1e))
     {
         return 0x1;
     }
@@ -1381,45 +1380,45 @@ BOOL16 __stdcall16far pass1_1020_e044(ulong param_1)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_e08e(ulong param_1, ushort param_2, ushort param_3, uchar param_4)
+void __stdcall16far pass1_1020_e08e(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
 
 {
-    int        iVar1;
+    i16        iVar1;
     undefined4 uVar2;
-    int        iVar3;
-    int        iVar4;
-    ulong      uVar5;
-    undefined2 extraout_DX;
-    uint       uVar6;
-    ushort     uVar7;
-    ushort     uVar8;
-    int       *piVar9;
-    ushort    *puVar10;
-    ushort     uVar11;
-    ushort     uVar12;
-    undefined2 local_158;
-    undefined2 uStack342;
-    ulong      uStack50;
-    ulong     *puStack42;
-    int        local_22;
-    undefined  local_20[0x2];
-    undefined  local_1e[0x2];
-    undefined2 uStack28;
-    int       *piStack26;
-    int        local_18;
-    ushort     local_16;
-    ulong      uStack20;
-    ulong      local_10;
-    int        iStack12;
-    ulong      uStack10;
+    i16        iVar3;
+    i16        iVar4;
+    u32        uVar5;
+    u16        extraout_DX;
+    u16        uVar6;
+    u16        uVar7;
+    u16        uVar8;
+    i16       *piVar9;
+    u16       *puVar10;
+    u16        uVar11;
+    u16        uVar12;
+    u16        local_158;
+    u16        uStack342;
+    u32        uStack50;
+    u32       *puStack42;
+    i16        local_22;
+    u8         local_20[0x2];
+    u8         local_1e[0x2];
+    u16        uStack28;
+    i16       *piStack26;
+    i16        local_18;
+    u16        local_16;
+    u32        uStack20;
+    u32        local_10;
+    i16        iStack12;
+    u32        uStack10;
     undefined4 uStack6;
 
-    uVar8 = (ushort)(param_1 >> 0x10);
-    uVar7 = (ushort)param_1;
-    iVar3 = *(int *)(uVar7 + 0xc);
+    uVar8 = (param_1 >> 0x10);
+    uVar7 = param_1;
+    iVar3 = (uVar7 + 0xc);
     if(iVar3 == 0x74)
     {
-        iVar1 = *(int *)(uVar7 + 0x24);
+        iVar1 = (uVar7 + 0x24);
         iVar3 = iVar1 + -0x1;
         if(iVar3 == 0x0)
             goto LAB_1020_e0ae;
@@ -1432,7 +1431,7 @@ void __stdcall16far pass1_1020_e08e(ulong param_1, ushort param_2, ushort param_
     {
         if(iVar3 == 0x78)
         {
-            iVar1 = *(int *)(uVar7 + 0x24);
+            iVar1 = (uVar7 + 0x24);
             iVar4 = iVar1 + -0x1;
             if(iVar4 != 0x0)
             {
@@ -1475,95 +1474,95 @@ void __stdcall16far pass1_1020_e08e(ulong param_1, ushort param_2, ushort param_
 LAB_1020_e0b9:
     pass1_1028_b58e(param_1);
     uStack6  = CONCAT22(extraout_DX, iVar3);
-    uVar5    = *(ulong *)(iVar3 + 0x2e);
-    uVar6    = *(uint *)(iVar3 + 0x30);
+    uVar5    = *(iVar3 + 0x2e);
+    uVar6    = (iVar3 + 0x30);
     uStack10 = uVar5;
-    if(*(int *)(uVar7 + 0xc) != 0x79)
+    if((uVar7 + 0xc) != 0x79)
     {
-        pass1_1038_5804(uVar5 & 0xffff | (ulong)uVar6 << 0x10, 0x1, 0x2);
+        pass1_1038_5804(uVar5 & 0xffff | uVar6 << 0x10, 0x1, 0x2);
     }
-    if(*(int *)(uVar7 + 0x24) == 0x6)
+    if((uVar7 + 0x24) == 0x6)
     {
-        pass1_1038_43cc((int)uStack10, (int)(uStack10 >> 0x10), 0x1, 0x2, (int)uVar5, uVar6);
+        pass1_1038_43cc(uStack10, (uStack10 >> 0x10), 0x1, 0x2, uVar5, uVar6);
     }
-    local_10  = *(ulong *)((int)uStack6 + 0xc);
-    iStack12  = *(int *)((int)uStack6 + 0x10);
+    local_10  = *(uStack6 + 0xc);
+    iStack12  = (uStack6 + 0x10);
     puStack42 = &local_10;
-    if((*(int *)(uVar7 + 0x24) == 0x6) && (iStack12 == 0x0))
+    if(((uVar7 + 0x24) == 0x6) && (iStack12 == 0x0))
     {
         return;
     }
-    uVar2     = *(undefined4 *)(uVar7 + 0x28);
-    uVar5     = *(ulong *)((int)uVar2 + 0x20);
+    uVar2     = (uVar7 + 0x28);
+    uVar5     = *(uVar2 + 0x20);
     puVar10   = &local_16;
     piStack26 = &local_18;
     piVar9    = piStack26;
     uVar11    = param_3;
     uVar12    = param_3;
     uStack20  = uVar5;
-    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uVar5, (uint)(uVar5 >> 0x10));
-    uStack28 = (undefined2)uVar5;
-    pass1_1030_5b1c(uVar5 & 0xffff | ZEXT24(piStack26) << 0x10, (ushort *)CONCAT22(uVar11, piVar9), (ushort *)CONCAT22(uVar12, puVar10));
-    pass1_1028_c8ee(param_3, uVar7, uVar8, *(int *)(uVar7 + 0x24), (ushort *)CONCAT22(param_3, &local_10));
-    pass1_1008_3eb4((ushort *)CONCAT22(param_3, &local_10), (ushort *)CONCAT22(param_3, &local_22), (ushort *)CONCAT22(param_3, local_20), (ushort *)CONCAT22(param_3, local_1e));
-    if(*(int *)(uVar7 + 0x24) == 0x1)
+    pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar5, (uVar5 >> 0x10));
+    uStack28 = uVar5;
+    pass1_1030_5b1c(uVar5 & 0xffff | ZEXT24(piStack26) << 0x10, CONCAT22(uVar11, piVar9), CONCAT22(uVar12, puVar10));
+    pass1_1028_c8ee(param_3, uVar7, uVar8, (uVar7 + 0x24), CONCAT22(param_3, &local_10));
+    pass1_1008_3eb4(CONCAT22(param_3, &local_10), CONCAT22(param_3, &local_22), CONCAT22(param_3, local_20), CONCAT22(param_3, local_1e));
+    if((uVar7 + 0x24) == 0x1)
     {
         if(local_18 < local_22)
         {
             pass1_1030_5b3e(CONCAT22(piStack26, uStack28), local_22, local_16);
-            pass1_1030_5b1c(CONCAT22(piStack26, uStack28), (ushort *)CONCAT22(param_3, &local_18), (ushort *)CONCAT22(param_3, &local_16));
+            pass1_1030_5b1c(CONCAT22(piStack26, uStack28), CONCAT22(param_3, &local_18), CONCAT22(param_3, &local_16));
         }
-        uStack50 = *(ulong *)((int)uStack10 + 0x4);
+        uStack50 = *(uStack10 + 0x4);
         struct_op_1028_87f0(param_3, param_4, (astruct_97 *)CONCAT22(param_3, &local_158), 0x0, 0x0, 0x6a, &local_10, param_3, uStack50, uStack20);
-        fn_ptr_1030_835a(_PTR_LOOP_1050_5748, (ulong *)CONCAT22(param_3, &local_158));
+        fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_3, &local_158));
         local_158 = 0x389a;
         uStack342 = 0x1008;
     }
-    pass1_1028_ccd0(param_4, param_3, param_1, (ushort *)CONCAT22(param_3, &local_10));
+    pass1_1028_ccd0(param_4, param_3, param_1, CONCAT22(param_3, &local_10));
     return;
 }
 
-void __stdcall16far pass1_1020_e44c(ulong param_1, ushort param_2, ushort param_3, uchar param_4)
+void __stdcall16far pass1_1020_e44c(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
 
 {
-    int *piVar1;
-    int  iVar2;
-    uint uVar3;
+    i16 *piVar1;
+    i16  iVar2;
+    u16  uVar3;
 
-    uVar3 = (uint)(param_1 >> 0x10);
-    iVar2 = (int)param_1;
-    if(*(int *)(iVar2 + 0x12) == 0x2)
+    uVar3 = (param_1 >> 0x10);
+    iVar2 = param_1;
+    if((iVar2 + 0x12) == 0x2)
     {
-        piVar1  = (int *)(iVar2 + 0x14);
+        piVar1  = (iVar2 + 0x14);
         *piVar1 = *piVar1 + -0x1;
-        if((*(int *)(iVar2 + 0x26) == 0x0) && (*(int *)(iVar2 + 0xc) == 0x78))
+        if(((iVar2 + 0x26) == 0x0) && ((iVar2 + 0xc) == 0x78))
         {
-            pass1_1020_e294(param_1 & 0xffff | (ulong)uVar3 << 0x10, param_3, param_4);
+            pass1_1020_e294(param_1 & 0xffff | uVar3 << 0x10, param_3, param_4);
         }
-        if(*(int *)(iVar2 + 0x14) == 0x0)
+        if((iVar2 + 0x14) == 0x0)
         {
-            pass1_1020_e08e(param_1 & 0xffff | (ulong)uVar3 << 0x10, param_2, param_3, param_4);
+            pass1_1020_e08e(param_1 & 0xffff | uVar3 << 0x10, param_2, param_3, param_4);
             return;
         }
-        if(*(int *)(iVar2 + 0x24) == 0x6)
+        if((iVar2 + 0x24) == 0x6)
         {
-            *(undefined2 *)(iVar2 + 0xe) = 0x49;
+            (iVar2 + 0xe) = 0x49;
         }
     }
     return;
 }
 
 
-void __stdcall16far pass1_1020_e49a(ulong param_1, ushort param_2, uchar param_3)
+void __stdcall16far pass1_1020_e49a(u32 param_1, u16 param_2, u8 param_3)
 
 {
-    int        iVar1;
-    int        iVar2;
+    i16        iVar1;
+    i16        iVar2;
     undefined4 uVar3;
-    ushort     uStack10;
+    u16        uStack10;
 
     uVar3    = pass1_1028_b58e(param_1);
-    iVar1    = *(int *)((int)uVar3 + 0x14);
+    iVar1    = (uVar3 + 0x14);
     uStack10 = 0x0;
     iVar2    = iVar1 + -0x6;
     if(iVar2 == 0x0)
@@ -1599,11 +1598,11 @@ void __stdcall16far pass1_1020_e49a(ulong param_1, ushort param_2, uchar param_3
 }
 
 
-int __stdcall16far pass1_1020_e4fa(ulong param_1, ushort param_2)
+i16 __stdcall16far pass1_1020_e4fa(u32 param_1, u16 param_2)
 
 {
     undefined4 uVar1;
-    int        iStack4;
+    i16        iStack4;
 
     switch(param_2)
     {
@@ -1619,7 +1618,7 @@ int __stdcall16far pass1_1020_e4fa(ulong param_1, ushort param_2)
         break;
     default:
         uVar1   = pass1_1028_b58e(param_1);
-        iStack4 = *(int *)((int)uVar1 + 0x14) + 0x2;
+        iStack4 = (uVar1 + 0x14) + 0x2;
     }
     return iStack4;
 }
@@ -1628,154 +1627,154 @@ int __stdcall16far pass1_1020_e4fa(ulong param_1, ushort param_2)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_e558(ulong param_1, int param_2, ushort param_3)
+void __stdcall16far pass1_1020_e558(u32 param_1, i16 param_2, u16 param_3)
 
 {
     undefined4 *puVar1;
-    uint        uVar2;
-    int         iVar3;
-    undefined2  extraout_DX;
-    undefined2  uVar4;
-    uint        uVar5;
-    ushort      uVar6;
-    ushort      uVar7;
+    u16         uVar2;
+    i16         iVar3;
+    u16         extraout_DX;
+    u16         uVar4;
+    u16         uVar5;
+    u16         uVar6;
+    u16         uVar7;
     byte        bStack45;
-    undefined   local_24[0xc];
+    u8          local_24[0xc];
     undefined4  uStack24;
     undefined4  uStack20;
     undefined4  local_10;
-    undefined2  uStack12;
-    int         iStack10;
-    ushort      uStack8;
-    int         iStack6;
-    undefined2  uStack4;
+    u16         uStack12;
+    i16         iStack10;
+    u16         uStack8;
+    i16         iStack6;
+    u16         uStack4;
 
-    uVar7 = (ushort)(param_1 >> 0x10);
-    uVar6 = (ushort)param_1;
-    if(*(int *)(uVar6 + 0xc) == 0x79)
+    uVar7 = (param_1 >> 0x10);
+    uVar6 = param_1;
+    if((uVar6 + 0xc) == 0x79)
     {
-        param_2                       = *(int *)(uVar6 + 0x24);
-        *(int *)(uVar6 + 0x14)        = param_2;
-        *(undefined2 *)(uVar6 + 0x24) = 0x0;
+        param_2        = (uVar6 + 0x24);
+        (uVar6 + 0x14) = param_2;
+        (uVar6 + 0x24) = 0x0;
     }
-    if(*(int *)(uVar6 + 0x24) != 0x6)
+    if((uVar6 + 0x24) != 0x6)
     {
         pass1_1028_b58e(param_1);
-        uStack8  = *(ushort *)(param_2 + 0x14);
+        uStack8  = (param_2 + 0x14);
         iStack6  = param_2;
         uStack4  = extraout_DX;
         iStack10 = pass1_1020_e4fa(param_1, uStack8);
-        local_10 = *(undefined4 *)(iStack6 + 0xc);
-        uStack12 = *(undefined2 *)(iStack6 + 0x10);
+        local_10 = (iStack6 + 0xc);
+        uStack12 = (iStack6 + 0x10);
         uStack24 = CONCAT22(uStack24._2_2_, &local_10);
         uVar4    = uStack4;
-        pass1_1028_c8ee(param_3, uVar6, uVar7, *(int *)(uVar6 + 0x24), (ushort *)CONCAT22(param_3, &local_10));
+        pass1_1028_c8ee(param_3, uVar6, uVar7, (uVar6 + 0x24), CONCAT22(param_3, &local_10));
         puVar1 = &local_10;
-        pass1_1028_c89c(param_1, (ushort *)CONCAT22(param_3, puVar1), (ulong *)CONCAT22(param_3, local_24), (int)puVar1, param_3);
+        pass1_1028_c89c(param_1, CONCAT22(param_3, puVar1), CONCAT22(param_3, local_24), puVar1, param_3);
         uStack24       = *puVar1;
-        uVar5          = *(uint *)((int)puVar1 + 0x2);
-        bStack45       = (byte)((ulong)uStack24 >> 0x18);
-        uVar2          = (uint)bStack45;
-        uStack20._0_2_ = (ushort)uStack24;
+        uVar5          = (puVar1 + 0x2);
+        bStack45       = (byte)(uStack24 >> 0x18);
+        uVar2          = bStack45;
+        uStack20._0_2_ = uStack24;
         uStack20       = uStack24;
         if(bStack45 != 0x0)
         {
-            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (ushort)uStack20, uVar5);
-            uStack20._0_2_ = *(ushort *)(uVar2 + 0x14);
+            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack20, uVar5);
+            uStack20._0_2_ = (uVar2 + 0x14);
         }
-        uStack8                = (ushort)uStack20;
-        iVar3                  = pass1_1020_e4fa(param_1, (ushort)uStack20);
-        *(int *)(uVar6 + 0x14) = iStack10 + iVar3;
+        uStack8        = uStack20;
+        iVar3          = pass1_1020_e4fa(param_1, uStack20);
+        (uVar6 + 0x14) = iStack10 + iVar3;
         return;
     }
-    *(undefined2 *)(uVar6 + 0x14) = 0x1;
+    (uVar6 + 0x14) = 0x1;
     return;
 }
 
-ulong *__stdcall16far pass1_1020_e652(ulong param_1, ulong *param_2, ushort param_3, long param_4, ushort param_5)
+u32 *__stdcall16far pass1_1020_e652(u32 param_1, u32 *param_2, u16 param_3, long param_4, u16 param_5)
 
 {
-    ulong     *puVar1;
-    ushort     uVar2;
-    ushort     uVar3;
-    ulong      local_8;
-    undefined2 uStack4;
+    u32 *puVar1;
+    u16  uVar2;
+    u16  uVar3;
+    u32  local_8;
+    u16  uStack4;
 
     local_8 = *param_2;
-    uStack4 = *(undefined2 *)(param_2 + 0x1);
-    uVar3   = (ushort)(param_1 >> 0x10);
-    uVar2   = (ushort)param_1;
-    pass1_1028_c8ee(param_5, uVar2, uVar3, *(int *)(uVar2 + 0x24), (ushort *)CONCAT22(param_5, &local_8));
+    uStack4 = (param_2 + 0x1);
+    uVar3   = (param_1 >> 0x10);
+    uVar2   = param_1;
+    pass1_1028_c8ee(param_5, uVar2, uVar3, (uVar2 + 0x24), CONCAT22(param_5, &local_8));
     puVar1 = &local_8;
-    pass1_1028_c7b6(param_5, param_3, uVar2, uVar3, (ushort *)CONCAT22(param_5, puVar1), param_4);
-    if(puVar1 != (ulong *)0x0)
+    pass1_1028_c7b6(param_5, param_3, uVar2, uVar3, CONCAT22(param_5, puVar1), param_4);
+    if(puVar1 != 0x0)
     {
-        puVar1 = (ulong *)((int)&PTR_LOOP_1050_0000 + 0x1);
+        puVar1 = (&PTR_LOOP_1050_0000 + 0x1);
     }
     return puVar1;
 }
 
-ushort *__stdcall16far pass1_1020_e81c(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_e81c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xe88e;
-    *(undefined2 *)(param_1 + 0x2)        = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    CONCAT22(param_2, param_1) = 0xe88e;
+    (param_1 + 0x2)            = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
 
-void __stdcall16far pass1_1020_e846(ushort *param_1)
+void __stdcall16far pass1_1020_e846(u16 *param_1)
 
 {
-    *param_1                            = 0xe88e;
-    *(undefined2 *)((int)param_1 + 0x2) = 0x1020;
+    *param_1        = 0xe88e;
+    (param_1 + 0x2) = 0x1020;
     pass1_1028_b418(param_1);
     return;
 }
 
-int __cdecl16far pass1_1020_c7fa(ulong param_1, ulong param_2)
+i16 pass1_1020_c7fa(u32 param_1, u32 param_2)
 
 {
-    return *(int *)((int)param_1 + 0x4) - *(int *)((int)param_2 + 0x4);
+    return (param_1 + 0x4) - (param_2 + 0x4);
 }
 
 
-ulong __stdcall16far pass1_1020_c860(ulong param_1)
+u32 __stdcall16far pass1_1020_c860(u32 param_1)
 
 {
-    undefined2 uVar1;
+    u16 uVar1;
 
-    uVar1 = (undefined2)(param_1 >> 0x10);
-    return CONCAT22(*(undefined2 *)((int)param_1 + 0x6), *(undefined2 *)((int)param_1 + 0x4));
+    uVar1 = (param_1 >> 0x10);
+    return CONCAT22((param_1 + 0x6), (param_1 + 0x4));
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_c872(ulong param_1, ulong param_2, ulong param_3)
+void __stdcall16far pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
 
 {
-    uint       *puVar1;
-    ulong      *puVar2;
-    int        *piVar3;
+    u16        *puVar1;
+    u32        *puVar2;
+    i16        *piVar3;
     astruct_98 *uVar4;
-    uint        uVar6;
-    int         iVar7;
-    int         iVar8;
-    undefined2  uVar9;
-    undefined2  uVar10;
-    undefined2  uVar11;
+    u16         uVar6;
+    i16         iVar7;
+    i16         iVar8;
+    u16         uVar9;
+    u16         uVar10;
+    u16         uVar11;
     bool        bVar12;
-    ulong       uStack14;
-    ulong       uStack10;
+    u32         uStack14;
+    u32         uStack10;
     astruct_99 *puStack6;
     astruct_99 *uVar5;
 
     puStack6 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_4fb8);
-    uVar6    = (uint)((ulong)puStack6 >> 0x10);
+    uVar6    = (puStack6 >> 0x10);
     uVar5    = (astruct_99 *)puStack6;
-    if((uVar6 | (uint)uVar5) == 0x0)
+    if((uVar6 | uVar5) == 0x0)
     {
         puStack6 = (astruct_99 *)0x0;
     }
@@ -1796,143 +1795,143 @@ void __stdcall16far pass1_1020_c872(ulong param_1, ulong param_2, ulong param_3)
     {
         return;
     }
-    uVar9                   = (undefined2)((ulong)puStack6 >> 0x10);
-    iVar7                   = (int)puStack6;
-    *(ulong *)(iVar7 + 0x8) = param_3;
-    *(ulong *)(iVar7 + 0xc) = param_2;
-    uVar10                  = (undefined2)(param_1 >> 0x10);
-    iVar8                   = (int)param_1;
-    uStack14                = *(ulong *)(iVar8 + 0x4);
-    uVar11                  = *(undefined2 *)(iVar8 + 0x6);
-    if(*(int *)(iVar8 + 0x8) == 0x0)
+    uVar9          = (puStack6 >> 0x10);
+    iVar7          = puStack6;
+    *(iVar7 + 0x8) = param_3;
+    *(iVar7 + 0xc) = param_2;
+    uVar10         = (param_1 >> 0x10);
+    iVar8          = param_1;
+    uStack14       = *(iVar8 + 0x4);
+    uVar11         = (iVar8 + 0x6);
+    if((iVar8 + 0x8) == 0x0)
     {
     LAB_1020_c92d:
-        *(undefined4 *)(iVar7 + 0x4) = *(undefined4 *)(iVar8 + 0x4);
+        (iVar7 + 0x4) = (iVar8 + 0x4);
     }
     else
     {
-        puVar1 = (uint *)((int)uStack14 + 0xe);
+        puVar1 = (u16 *)(uStack14 + 0xe);
         bVar12 = *puVar1 < param_2._2_2_;
-        if((bVar12 || *puVar1 == param_2._2_2_) && ((bVar12 || (puVar1 = (uint *)((int)uStack14 + 0xc), *puVar1 < (uint)param_2 || *puVar1 == (uint)param_2))))
+        if((bVar12 || *puVar1 == param_2._2_2_) && ((bVar12 || (puVar1 = (u16 *)(uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
             goto LAB_1020_c92d;
         bVar12 = false;
         while(true)
         {
             if(uStack14 == 0x0)
                 break;
-            uVar11 = (undefined2)(uStack14 >> 0x10);
-            puVar2 = (ulong *)((int)uStack14 + 0xc);
+            uVar11 = (uStack14 >> 0x10);
+            puVar2 = (uStack14 + 0xc);
             if(*puVar2 < param_2 || *puVar2 == param_2)
             {
-                bVar12                                = true;
-                *(ulong *)(iVar7 + 0x4)               = uStack14;
-                *(astruct_99 **)((int)uStack10 + 0x4) = puStack6;
+                bVar12                           = true;
+                *(iVar7 + 0x4)                   = uStack14;
+                *(astruct_99 **)(uStack10 + 0x4) = puStack6;
                 break;
             }
             uStack10 = uStack14;
-            uStack14 = *(ulong *)((int)uStack14 + 0x4);
+            uStack14 = *(uStack14 + 0x4);
         }
         param_1 = uStack10;
         if(bVar12)
             goto LAB_1020_c9ab;
     }
-    uVar11                              = (undefined2)(param_1 >> 0x10);
-    *(int *)((int)param_1 + 0x4)        = iVar7;
-    *(undefined2 *)((int)param_1 + 0x6) = uVar9;
+    uVar11          = (param_1 >> 0x10);
+    (param_1 + 0x4) = iVar7;
+    (param_1 + 0x6) = uVar9;
 LAB_1020_c9ab:
-    piVar3  = (int *)(iVar8 + 0x8);
+    piVar3  = (iVar8 + 0x8);
     *piVar3 = *piVar3 + 0x1;
     return;
 }
 
 
-ushort *__stdcall16far pass1_1020_c9ba(ushort *param_1, byte param_2)
+u16 *__stdcall16far pass1_1020_c9ba(u16 *param_1, byte param_2)
 
 {
-    ushort uVar1;
+    u16 uVar1;
 
-    uVar1                 = (ushort)((ulong)param_1 >> 0x10);
-    *param_1              = 0x389a;
-    ((int *)param_1)[0x1] = 0x1008;
+    uVar1          = (param_1 >> 0x10);
+    *param_1       = 0x389a;
+    (param_1)[0x1] = 0x1008;
     if((param_2 & 0x1) != 0x0)
     {
-        pass1_1000_093a((int *)param_1, uVar1, 0x1000);
+        pass1_1000_093a(param_1, uVar1, 0x1000);
     }
     return param_1;
 }
 
-ushort *__stdcall16far pass1_1020_ca0c(astruct_179 *param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_ca0c(astruct_179 *param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xcc7c;
-    param_1->field_0x2                    = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    CONCAT22(param_2, param_1) = 0xcc7c;
+    param_1->field_0x2         = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1020_ca36(int param_1, ushort param_2, ushort param_3, int param_4, ushort param_5)
+void __stdcall16far pass1_1020_ca36(i16 param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
-    uchar  *puVar1;
-    ulong   uVar2;
-    ushort *puVar3;
+    u8  *puVar1;
+    u32  uVar2;
+    u16 *puVar3;
 
     pass1_1028_09b8(CONCAT22(param_2, param_1));
     uVar2  = pass1_1028_b4f2(CONCAT22(param_2, param_1));
-    puVar1 = (uchar *)(uVar2 >> 0x10);
-    if(*(long *)((int)uVar2 + 0x200) != 0x8000002)
+    puVar1 = (uVar2 >> 0x10);
+    if((uVar2 + 0x200) != 0x8000002)
     {
         puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x8, param_5, puVar1, param_4);
-        pass1_1010_988c((ulong)puVar3, *(int *)(param_1 + 0xc));
+        pass1_1010_988c(puVar3, (param_1 + 0xc));
     }
     return;
 }
 
 
-void __stdcall16far pass1_1020_ca82(ulong *param_1, ushort param_2, ushort param_3, ushort param_4)
+void __stdcall16far pass1_1020_ca82(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    uchar *puVar1;
-    uint   uVar2;
-    ulong  uVar3;
+    u8 *puVar1;
+    u16 uVar2;
+    u32 uVar3;
 
-    pass1_1028_be9e(param_1, param_2, param_3, (ushort)&USHORT_1050_1028, param_4);
-    uVar3  = pass1_1028_b4f2((ulong)param_1);
-    puVar1 = (uchar *)(uVar3 >> 0x10);
-    if(*(long *)((int)uVar3 + 0x200) != 0x8000002)
+    pass1_1028_be9e(param_1, param_2, param_3, &USHORT_1050_1028, param_4);
+    uVar3  = pass1_1028_b4f2(param_1);
+    puVar1 = (uVar3 >> 0x10);
+    if((uVar3 + 0x200) != 0x8000002)
     {
-        uVar2 = (uint)((ulong)param_1 >> 0x10);
-        if(*(int *)((int)param_1 + 0x12) == 0x5)
+        uVar2 = (param_1 >> 0x10);
+        if((param_1 + 0x12) == 0x5)
         {
-            pass1_1020_cac2((ulong)param_1 & 0xffff | (ulong)uVar2 << 0x10, puVar1, param_2, param_3, param_4);
+            pass1_1020_cac2(param_1 & 0xffff | uVar2 << 0x10, puVar1, param_2, param_3, param_4);
         }
     }
     return;
 }
 
 
-ushort *__stdcall16far pass1_1020_cd06(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_cd06(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xcd7e;
-    *(undefined2 *)(param_1 + 0x2)        = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    CONCAT22(param_2, param_1) = 0xcd7e;
+    (param_1 + 0x2)            = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
 
-ushort __stdcall16far pass1_1020_cd30(ulong param_1)
+u16 __stdcall16far pass1_1020_cd30(u32 param_1)
 
 {
-    int        iVar1;
-    undefined2 uVar2;
+    i16 iVar1;
+    u16 uVar2;
 
-    uVar2 = (undefined2)(param_1 >> 0x10);
-    iVar1 = (int)param_1;
-    if(((*(int *)(iVar1 + 0x12) == 0x6) || (*(int *)(iVar1 + 0x12) == 0x5)) && ((*(byte *)(iVar1 + 0x1a) & 0x2) != 0x0))
+    uVar2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    if((((iVar1 + 0x12) == 0x6) || ((iVar1 + 0x12) == 0x5)) && ((*(byte *)(iVar1 + 0x1a) & 0x2) != 0x0))
     {
         return 0x1;
     }
@@ -1940,113 +1939,113 @@ ushort __stdcall16far pass1_1020_cd30(ulong param_1)
 }
 
 
-ushort *__stdcall16far pass1_1020_ce08(astruct_179 *param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_ce08(astruct_179 *param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xd004;
-    param_1->field_0x2                    = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    CONCAT22(param_2, param_1) = 0xd004;
+    param_1->field_0x2         = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
-void __stdcall16far pass1_1020_cf6c(ushort param_1, ushort param_2, int param_3, ulong param_4)
+void __stdcall16far pass1_1020_cf6c(u16 param_1, u16 param_2, i16 param_3, u32 param_4)
 
 {
-    uint      *puVar1;
-    int       *piVar2;
-    uint       uVar3;
+    u16       *puVar1;
+    i16       *piVar2;
+    u16        uVar3;
     undefined4 uVar4;
-    undefined2 uVar5;
-    int        iVar6;
-    uint       uVar7;
-    uint       uVar8;
-    int        iVar9;
-    undefined2 uVar10;
+    u16        uVar5;
+    i16        iVar6;
+    u16        uVar7;
+    u16        uVar8;
+    i16        iVar9;
+    u16        uVar10;
 
-    uVar10                                = (undefined2)(param_4 >> 0x10);
-    uVar4                                 = *(undefined4 *)((int)param_4 + 0x1f6);
-    iVar6                                 = (int)uVar4;
-    uVar5                                 = (undefined2)((ulong)uVar4 >> 0x10);
-    uVar7                                 = param_3 / 0x5;
-    uVar8                                 = uVar7 * -0x4 + param_3;
-    puVar1                                = (uint *)(iVar6 + 0x50);
-    uVar3                                 = *puVar1;
-    *puVar1                               = *puVar1 + uVar8;
-    piVar2                                = (int *)(iVar6 + 0x52);
-    *piVar2                               = *piVar2 + ((int)uVar8 >> 0xf) + (uint)CARRY2(uVar3, uVar8);
-    iVar9                                 = (int)uVar7 >> 0xf;
-    puVar1                                = (uint *)(iVar6 + 0x78);
-    uVar3                                 = *puVar1;
-    *puVar1                               = *puVar1 + uVar7;
-    piVar2                                = (int *)(iVar6 + 0x7a);
-    *piVar2                               = *piVar2 + iVar9 + (uint)CARRY2(uVar3, uVar7);
-    puVar1                                = (uint *)(iVar6 + 0xa0);
-    uVar3                                 = *puVar1;
-    *puVar1                               = *puVar1 + uVar7;
-    piVar2                                = (int *)(iVar6 + 0xa2);
-    *piVar2                               = *piVar2 + iVar9 + (uint)CARRY2(uVar3, uVar7);
-    puVar1                                = (uint *)(iVar6 + 0xc8);
-    uVar3                                 = *puVar1;
-    *puVar1                               = *puVar1 + uVar7;
-    piVar2                                = (int *)(iVar6 + 0xca);
-    *piVar2                               = *piVar2 + iVar9 + (uint)CARRY2(uVar3, uVar7);
-    puVar1                                = (uint *)(iVar6 + 0xf0);
-    uVar3                                 = *puVar1;
-    *puVar1                               = *puVar1 + uVar7;
-    piVar2                                = (int *)(iVar6 + 0xf2);
-    *piVar2                               = *piVar2 + iVar9 + (uint)CARRY2(uVar3, uVar7);
-    *(undefined2 *)((int)param_4 + 0x1fe) = 0x1;
+    uVar10            = (param_4 >> 0x10);
+    uVar4             = (param_4 + 0x1f6);
+    iVar6             = uVar4;
+    uVar5             = (uVar4 >> 0x10);
+    uVar7             = param_3 / 0x5;
+    uVar8             = uVar7 * -0x4 + param_3;
+    puVar1            = (u16 *)(iVar6 + 0x50);
+    uVar3             = *puVar1;
+    *puVar1           = *puVar1 + uVar8;
+    piVar2            = (iVar6 + 0x52);
+    *piVar2           = *piVar2 + (uVar8 >> 0xf) + CARRY2(uVar3, uVar8);
+    iVar9             = uVar7 >> 0xf;
+    puVar1            = (u16 *)(iVar6 + 0x78);
+    uVar3             = *puVar1;
+    *puVar1           = *puVar1 + uVar7;
+    piVar2            = (iVar6 + 0x7a);
+    *piVar2           = *piVar2 + iVar9 + CARRY2(uVar3, uVar7);
+    puVar1            = (u16 *)(iVar6 + 0xa0);
+    uVar3             = *puVar1;
+    *puVar1           = *puVar1 + uVar7;
+    piVar2            = (iVar6 + 0xa2);
+    *piVar2           = *piVar2 + iVar9 + CARRY2(uVar3, uVar7);
+    puVar1            = (u16 *)(iVar6 + 0xc8);
+    uVar3             = *puVar1;
+    *puVar1           = *puVar1 + uVar7;
+    piVar2            = (iVar6 + 0xca);
+    *piVar2           = *piVar2 + iVar9 + CARRY2(uVar3, uVar7);
+    puVar1            = (u16 *)(iVar6 + 0xf0);
+    uVar3             = *puVar1;
+    *puVar1           = *puVar1 + uVar7;
+    piVar2            = (iVar6 + 0xf2);
+    *piVar2           = *piVar2 + iVar9 + CARRY2(uVar3, uVar7);
+    (param_4 + 0x1fe) = 0x1;
     return;
 }
 
-ushort *__stdcall16far pass1_1020_d08e(int param_1, ushort param_2, int param_3, ulong param_4, ushort param_5)
+u16 *__stdcall16far pass1_1020_d08e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 
 {
-    pass1_1028_b39e((ushort *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    *(ushort *)CONCAT22(param_2, param_1) = 0xd314;
-    *(undefined2 *)(param_1 + 0x2)        = 0x1020;
-    return (ushort *)CONCAT22(param_2, param_1);
+    pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    CONCAT22(param_2, param_1) = 0xd314;
+    (param_1 + 0x2)            = 0x1020;
+    return CONCAT22(param_2, param_1);
 }
 
 
-void __stdcall16far pass1_1020_d0b8(ulong *param_1, ushort param_2, ushort param_3, ushort param_4)
+void __stdcall16far pass1_1020_d0b8(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    ulong uVar1;
-    int   iVar2;
+    u32 uVar1;
+    i16 iVar2;
 
-    if(*(int *)((int)param_1 + 0x12) != 0x6)
+    if((param_1 + 0x12) != 0x6)
     {
         return;
     }
-    uVar1 = pass1_1028_b4f2((ulong)param_1);
-    iVar2 = (int)uVar1;
-    if(*(long *)(iVar2 + 0x200) != 0x8000002)
+    uVar1 = pass1_1028_b4f2(param_1);
+    iVar2 = uVar1;
+    if((iVar2 + 0x200) != 0x8000002)
     {
-        pass1_1028_cb04((ulong)param_1, param_2, param_3, param_4);
-        if((iVar2 == 0x0) || (pass1_1020_d194((ulong)param_1, param_3, param_4), iVar2 == 0x0))
+        pass1_1028_cb04(param_1, param_2, param_3, param_4);
+        if((iVar2 == 0x0) || (pass1_1020_d194(param_1, param_3, param_4), iVar2 == 0x0))
         {
             iVar2 = 0x6;
             goto LAB_1020_d10b;
         }
-        pass1_1028_c952((ulong)param_1, param_2, param_3, param_4);
+        pass1_1028_c952(param_1, param_2, param_3, param_4);
     }
     iVar2 = 0x5;
 LAB_1020_d10b:
-    pass1_1028_bdac(param_1, iVar2, (ushort)&USHORT_1050_1028);
+    pass1_1028_bdac(param_1, iVar2, &USHORT_1050_1028);
     return;
 }
 
 
-undefined2 __stdcall16far pass1_1020_d118(ulong param_1, ushort *param_2, ulong param_3, ulong param_4, int param_5, ushort param_6, ushort param_7)
+u16 __stdcall16far pass1_1020_d118(u32 param_1, u16 *param_2, u32 param_3, u32 param_4, i16 param_5, u16 param_6, u16 param_7)
 
 {
     BOOL16 BVar1;
-    ushort uVar2;
-    ushort uVar3;
+    u16    uVar2;
+    u16    uVar3;
 
-    uVar2 = (ushort)param_1;
-    uVar3 = (ushort)(param_1 >> 0x10);
+    uVar2 = param_1;
+    uVar3 = (param_1 >> 0x10);
     pass1_1028_c7b6(param_7, param_6, uVar2, uVar3, param_2, param_4);
     if(param_5 == 0x5)
     {
@@ -2056,7 +2055,7 @@ undefined2 __stdcall16far pass1_1020_d118(ulong param_1, ushort *param_2, ulong 
             pass1_1028_c3aa(uVar2, uVar3, param_2, param_3, param_4, param_7);
             if(param_5 != 0x0)
             {
-                BVar1 = pass1_1028_c314(param_7, param_5, param_6, uVar2, uVar3, param_2, (ushort)param_3, (ushort)(param_3 >> 0x10), param_4);
+                BVar1 = pass1_1028_c314(param_7, param_5, param_6, uVar2, uVar3, param_2, param_3, (param_3 >> 0x10), param_4);
                 if(BVar1 != 0x0)
                 {
                     return 0x1;
@@ -2066,7 +2065,7 @@ undefined2 __stdcall16far pass1_1020_d118(ulong param_1, ushort *param_2, ulong 
     }
     else
     {
-        PTR_LOOP_1050_50ca = (undefined *)0x6a8;
+        PTR_LOOP_1050_50ca = 0x6a8;
     }
     return 0x0;
 }

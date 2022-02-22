@@ -1,441 +1,441 @@
 
-//BOOL DeleteFileA(LPCSTR lpFileName)
+// BOOL DeleteFileA(LPCSTR lpFileName)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb230. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = DeleteFileA(lpFileName);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb230. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = DeleteFileA(lpFileName);
+//     return BVar1;
+// }
 
-//void GetLocalTime(LPSYSTEMTIME lpSystemTime)
+// void GetLocalTime(LPSYSTEMTIME lpSystemTime)
 //
 //{
-//    // WARNING: Could not recover jumptable at 0x004bb236. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    GetLocalTime(lpSystemTime);
-//    return;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb236. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     GetLocalTime(lpSystemTime);
+//     return;
+// }
 
-//BOOL LocalFileTimeToFileTime(FILETIME *lpLocalFileTime, LPFILETIME lpFileTime)
+// BOOL LocalFileTimeToFileTime(FILETIME *lpLocalFileTime, LPFILETIME lpFileTime)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb23c. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = LocalFileTimeToFileTime(lpLocalFileTime, lpFileTime);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb23c. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = LocalFileTimeToFileTime(lpLocalFileTime, lpFileTime);
+//     return BVar1;
+// }
 
-//BOOL DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)
+// BOOL DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb242. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = DosDateTimeToFileTime(wFatDate, wFatTime, lpFileTime);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb242. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = DosDateTimeToFileTime(wFatDate, wFatTime, lpFileTime);
+//     return BVar1;
+// }
 
-//BOOL FileTimeToDosDateTime(FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)
+// BOOL FileTimeToDosDateTime(FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb248. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = FileTimeToDosDateTime(lpFileTime, lpFatDate, lpFatTime);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb248. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = FileTimeToDosDateTime(lpFileTime, lpFatDate, lpFatTime);
+//     return BVar1;
+// }
 
-//BOOL FileTimeToLocalFileTime(FILETIME *lpFileTime, LPFILETIME lpLocalFileTime)
+// BOOL FileTimeToLocalFileTime(FILETIME *lpFileTime, LPFILETIME lpLocalFileTime)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb24e. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = FileTimeToLocalFileTime(lpFileTime, lpLocalFileTime);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb24e. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = FileTimeToLocalFileTime(lpFileTime, lpLocalFileTime);
+//     return BVar1;
+// }
 
-//SHORT GetKeyState(int nVirtKey)
+// SHORT GetKeyState(i16 nVirtKey)
 //
 //{
-//    u16 SVar1;
+//     u16 SVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb254. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    SVar1 = GetKeyState(nVirtKey);
-//    return SVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb254. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     SVar1 = GetKeyState(nVirtKey);
+//     return SVar1;
+// }
 
-//BOOL VirtualFree(LPVOID lpAddress, SIZE_T dwSize, u32 dwFreeType)
+// BOOL VirtualFree(LPVOID lpAddress, SIZE_T dwSize, u32 dwFreeType)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb25a. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = VirtualFree(lpAddress, dwSize, dwFreeType);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb25a. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = VirtualFree(lpAddress, dwSize, dwFreeType);
+//     return BVar1;
+// }
 
-//u32 SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, u32 dwMoveMethod)
+// u32 SetFilePoi16er(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, u32 dwMoveMethod)
 //
 //{
-//    u32 DVar1;
+//     u32 DVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb260. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    DVar1 = SetFilePointer(hFile, lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);
-//    return DVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb260. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     DVar1 = SetFilePoi16er(hFile, lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);
+//     return DVar1;
+// }
 
-//u32 GetCurrentProcessId(void)
+// u32 GetCurrentProcessId(void)
 //
 //{
-//    u32 DVar1;
+//     u32 DVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb266. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    DVar1 = GetCurrentProcessId();
-//    return DVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb266. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     DVar1 = GetCurrentProcessId();
+//     return DVar1;
+// }
 
-//HMODULE GetModuleHandleA(LPCSTR lpModuleName)
+// HMODULE GetModuleHandleA(LPCSTR lpModuleName)
 //
 //{
-//    HMODULE pHVar1;
+//     HMODULE pHVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb26c. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pHVar1 = GetModuleHandleA(lpModuleName);
-//    return pHVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb26c. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pHVar1 = GetModuleHandleA(lpModuleName);
+//     return pHVar1;
+// }
 
-//LPWSTR GetCommandLineW(void)
+// LPWSTR GetCommandLineW(void)
 //
 //{
-//    LPWSTR pWVar1;
+//     LPWSTR pWVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb272. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pWVar1 = GetCommandLineW();
-//    return pWVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb272. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pWVar1 = GetCommandLineW();
+//     return pWVar1;
+// }
 
-//LPSTR GetCommandLineA(void)
+// LPSTR GetCommandLineA(void)
 //
 //{
-//    LPSTR pCVar1;
+//     LPSTR pCVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb278. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pCVar1 = GetCommandLineA();
-//    return pCVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb278. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pCVar1 = GetCommandLineA();
+//     return pCVar1;
+// }
 
-//u32 GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, u32 nSize)
+// u32 GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, u32 nSize)
 //
 //{
-//    u32 DVar1;
+//     u32 DVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb27e. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    DVar1 = GetModuleFileNameA(hModule, lpFilename, nSize);
-//    return DVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb27e. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     DVar1 = GetModuleFileNameA(hModule, lpFilename, nSize);
+//     return DVar1;
+// }
 
-//u32 GetVersion(void)
+// u32 GetVersion(void)
 //
 //{
-//    u32 DVar1;
+//     u32 DVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb284. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    DVar1 = GetVersion();
-//    return DVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb284. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     DVar1 = GetVersion();
+//     return DVar1;
+// }
 //
-//LPCH GetEnvironmentStrings(void)
-//
-//{
-//    LPCH pCVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb28a. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pCVar1 = GetEnvironmentStrings();
-//    return pCVar1;
-//}
-//
-//BOOL CloseHandle(HANDLE hObject)
+// LPCH GetEnvironmentStrings(void)
 //
 //{
-//    BOOL BVar1;
+//     LPCH pCVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb290. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = CloseHandle(hObject);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb28a. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pCVar1 = GetEnvironmentStrings();
+//     return pCVar1;
+// }
 //
-//HANDLE CreateFileA(LPCSTR lpFileName, u32 dwDesiredAccess, u32 dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
-//                   u32 dwCreationDisposition, u32 dwFlagsAndAttributes, HANDLE hTemplateFile)
-//
-//{
-//    HANDLE pvVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb296. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pvVar1 = CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition,
-//                         dwFlagsAndAttributes, hTemplateFile);
-//    return pvVar1;
-//}
-//
-//u32 GetLastError(void)
+// BOOL CloseHandle(HANDLE hObject)
 //
 //{
-//    u32 DVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb29c. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    DVar1 = GetLastError();
-//    return DVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb290. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = CloseHandle(hObject);
+//     return BVar1;
+// }
 //
-//BOOL ReadFile(HANDLE hFile, LPVOID lpBuffer, u32 nNumberOfBytesToRead, Lu32* lpNumberOfBytesRead,
-//              LPOVERLAPPED lpOverlapped)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2a2. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
-//    return BVar1;
-//}
-//
-//BOOL MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName)
+// HANDLE CreateFileA(LPCSTR lpFileName, u32 dwDesiredAccess, u32 dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+//                    u32 dwCreationDisposition, u32 dwFlagsAndAttributes, HANDLE hTemplateFile)
 //
 //{
-//    BOOL BVar1;
+//     HANDLE pvVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2a8. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = MoveFileA(lpExistingFileName, lpNewFileName);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb296. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pvVar1 = CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition,
+//                          dwFlagsAndAttributes, hTemplateFile);
+//     return pvVar1;
+// }
 //
-//u32 GetWindowsDirectoryA(LPSTR lpBuffer, u32 uSize)
-//
-//{
-//    u32 UVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2ae. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    UVar1 = GetWindowsDirectoryA(lpBuffer, uSize);
-//    return UVar1;
-//}
-//
-//MCIERROR mciSendCommandA(MCIDEVICEID mciId, u32 uMsg, u32_PTR dwParam1, u32_PTR dwParam2)
+// u32 GetLastError(void)
 //
 //{
-//    MCIERROR MVar1;
+//     u32 DVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2b4. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    MVar1 = mciSendCommandA(mciId, uMsg, dwParam1, dwParam2);
-//    return MVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb29c. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     DVar1 = GetLastError();
+//     return DVar1;
+// }
 //
-//BOOL mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, u32 cchText)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2ba. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = mciGetErrorStringA(mcierr, pszText, cchText);
-//    return BVar1;
-//}
-//
-//BOOL GetExitCodeProcess(HANDLE hProcess, Lu32* lpExitCode)
+// BOOL ReadFile(HANDLE hFile, LPVOID lpBuffer, u32 nNumberOfBytesToRead, Lu32* lpNumberOfBytesRead,
+//               LPOVERLAPPED lpOverlapped)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2c0. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = GetExitCodeProcess(hProcess, lpExitCode);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2a2. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+//     return BVar1;
+// }
 //
-//BOOL CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes,
-//                    LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, u32 dwCreationFlags,
-//                    LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo,
-//                    LPPROCESS_INFORMATION lpProcessInformation)
+// BOOL MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2c6. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = CreateProcessA(lpApplicationName, lpCommandLine, lpProcessAttributes, lpThreadAttributes, bInheritHandles,
-//                           dwCreationFlags, lpEnvironment, lpCurrentDirectory, lpStartupInfo, lpProcessInformation);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2a8. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = MoveFileA(lpExistingFileName, lpNewFileName);
+//     return BVar1;
+// }
 //
-//BOOL FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2cc. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = FindNextFileA(hFindFile, lpFindFileData);
-//    return BVar1;
-//}
-//
-//BOOL ScreenToClient(HWND hWnd, LPPOINT lpPoint)
+// u32 GetWindowsDirectoryA(LPSTR lpBuffer, u32 uSize)
 //
 //{
-//    BOOL BVar1;
+//     u32 UVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2d2. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = ScreenToClient(hWnd, lpPoint);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2ae. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     UVar1 = GetWindowsDirectoryA(lpBuffer, uSize);
+//     return UVar1;
+// }
 //
-//BOOL GetCursorPos(LPPOINT lpPoint)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2d8. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = GetCursorPos(lpPoint);
-//    return BVar1;
-//}
-//
-//LRESULT DispatchMessageA(MSG *lpMsg)
+// MCIERROR mciSendCommandA(MCIDEVICEID mciId, u32 uMsg, u32_PTR dwParam1, u32_PTR dwParam2)
 //
 //{
-//    LRESULT LVar1;
+//     MCIERROR MVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2de. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    LVar1 = DispatchMessageA(lpMsg);
-//    return LVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2b4. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     MVar1 = mciSendCommandA(mciId, uMsg, dwParam1, dwParam2);
+//     return MVar1;
+// }
 //
-//BOOL TranslateMessage(MSG *lpMsg)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2e4. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = TranslateMessage(lpMsg);
-//    return BVar1;
-//}
-//
-//BOOL ReleaseCapture(void)
+// BOOL mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, u32 cchText)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2ea. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = ReleaseCapture();
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2ba. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = mciGetErrorStringA(mcierr, pszText, cchText);
+//     return BVar1;
+// }
 //
-//HWND SetCapture(HWND hWnd)
-//
-//{
-//    HWND pHVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2f0. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pHVar1 = SetCapture(hWnd);
-//    return pHVar1;
-//}
-//
-//BOOL PeekMessageA(LPMSG lpMsg, HWND hWnd, u32 wMsgFilterMin, u32 wMsgFilterMax, u32 wRemoveMsg)
+// BOOL GetExitCodeProcess(HANDLE hProcess, Lu32* lpExitCode)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb2f6. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = PeekMessageA(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2c0. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = GetExitCodeProcess(hProcess, lpExitCode);
+//     return BVar1;
+// }
 //
-//MMRESULT timeEndPeriod(u32 uPeriod)
-//
-//{
-//    MMRESULT MVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb2fc. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    MVar1 = timeEndPeriod(uPeriod);
-//    return MVar1;
-//}
-//
-//MMRESULT timeBeginPeriod(u32 uPeriod)
+// BOOL CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes,
+//                     LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, u32 dwCreationFlags,
+//                     LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo,
+//                     LPPROCESS_INFORMATION lpProcessInformation)
 //
 //{
-//    MMRESULT MVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb302. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    MVar1 = timeBeginPeriod(uPeriod);
-//    return MVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2c6. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = CreateProcessA(lpApplicationName, lpCommandLine, lpProcessAttributes, lpThreadAttributes, bInheritHandles,
+//                            dwCreationFlags, lpEnvironment, lpCurrentDirectory, lpStartupInfo, lpProcessInformation);
+//     return BVar1;
+// }
 //
-//BOOL ValidateRect(HWND hWnd, RECT *lpRect)
-//
-//{
-//    BOOL BVar1;
-//
-//    // WARNING: Could not recover jumptable at 0x004bb308. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = ValidateRect(hWnd, lpRect);
-//    return BVar1;
-//}
-//
-//BOOL GetUpdateRect(HWND hWnd, LPRECT lpRect, BOOL bErase)
+// BOOL FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)
 //
 //{
-//    BOOL BVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb30e. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    BVar1 = GetUpdateRect(hWnd, lpRect, bErase);
-//    return BVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2cc. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = FindNextFileA(hFindFile, lpFindFileData);
+//     return BVar1;
+// }
 //
-//HCURSOR SetCursor(HCURSOR hCursor)
+// BOOL ScreenToClient(HWND hWnd, LPPOi16 lpPoi16)
 //
 //{
-//    HCURSOR pHVar1;
+//     BOOL BVar1;
 //
-//    // WARNING: Could not recover jumptable at 0x004bb314. Too many branches
-//    // WARNING: Treating indirect jump as call
-//    pHVar1 = SetCursor(hCursor);
-//    return pHVar1;
-//}
+//     // WARNING: Could not recover jumptable at 0x004bb2d2. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = ScreenToClient(hWnd, lpPoi16);
+//     return BVar1;
+// }
+//
+// BOOL GetCursorPos(LPPOi16 lpPoi16)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2d8. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = GetCursorPos(lpPoi16);
+//     return BVar1;
+// }
+//
+// LRESULT DispatchMessageA(MSG *lpMsg)
+//
+//{
+//     LRESULT LVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2de. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     LVar1 = DispatchMessageA(lpMsg);
+//     return LVar1;
+// }
+//
+// BOOL TranslateMessage(MSG *lpMsg)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2e4. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = TranslateMessage(lpMsg);
+//     return BVar1;
+// }
+//
+// BOOL ReleaseCapture(void)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2ea. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = ReleaseCapture();
+//     return BVar1;
+// }
+//
+// HWND SetCapture(HWND hWnd)
+//
+//{
+//     HWND pHVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2f0. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pHVar1 = SetCapture(hWnd);
+//     return pHVar1;
+// }
+//
+// BOOL PeekMessageA(LPMSG lpMsg, HWND hWnd, u32 wMsgFilterMin, u32 wMsgFilterMax, u32 wRemoveMsg)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2f6. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = PeekMessageA(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg);
+//     return BVar1;
+// }
+//
+// MMRESULT timeEndPeriod(u32 uPeriod)
+//
+//{
+//     MMRESULT MVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb2fc. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     MVar1 = timeEndPeriod(uPeriod);
+//     return MVar1;
+// }
+//
+// MMRESULT timeBeginPeriod(u32 uPeriod)
+//
+//{
+//     MMRESULT MVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb302. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     MVar1 = timeBeginPeriod(uPeriod);
+//     return MVar1;
+// }
+//
+// BOOL ValidateRect(HWND hWnd, RECT *lpRect)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb308. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = ValidateRect(hWnd, lpRect);
+//     return BVar1;
+// }
+//
+// BOOL GetUpdateRect(HWND hWnd, LPRECT lpRect, BOOL bErase)
+//
+//{
+//     BOOL BVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb30e. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     BVar1 = GetUpdateRect(hWnd, lpRect, bErase);
+//     return BVar1;
+// }
+//
+// HCURSOR SetCursor(HCURSOR hCursor)
+//
+//{
+//     HCURSOR pHVar1;
+//
+//     // WARNING: Could not recover jumptable at 0x004bb314. Too many branches
+//     // WARNING: Treating indirect jump as call
+//     pHVar1 = SetCursor(hCursor);
+//     return pHVar1;
+// }
 //
 //// WARNING: Exceeded maximum restarts with more pending
 //
-//void ExitProcess(u32 uExitCode)
+// void ExitProcess(u32 uExitCode)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb31a. Too many branches
@@ -444,7 +444,7 @@
 //    return;
 //}
 //
-//LRESULT DefWindowProcA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
+// LRESULT DefWindowProcA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
 //
 //{
 //    LRESULT LVar1;
@@ -455,7 +455,7 @@
 //    return LVar1;
 //}
 //
-//void PostQuitMessage(int nExitCode)
+// void PostQuitMessage(i16 nExitCode)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb326. Too many branches
@@ -464,8 +464,8 @@
 //    return;
 //}
 //
-//HWND CreateWindowExA(u32 dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, u32 dwStyle, int X, int Y, int nWidth,
-//                     int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
+// HWND CreateWindowExA(u32 dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, u32 dwStyle, i16 X, i16 Y, i16 nWidth,
+//                     i16 nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
 //
 //{
 //    HWND pHVar1;
@@ -477,7 +477,7 @@
 //    return pHVar1;
 //}
 //
-//BOOL SetForegroundWindow(HWND hWnd)
+// BOOL SetForegroundWindow(HWND hWnd)
 //
 //{
 //    BOOL BVar1;
@@ -488,7 +488,7 @@
 //    return BVar1;
 //}
 //
-//ATOM RegisterClassA(WNDCLASSA *lpWndClass)
+// ATOM RegisterClassA(WNDCLASSA *lpWndClass)
 //
 //{
 //    ATOM AVar1;
@@ -499,7 +499,7 @@
 //    return AVar1;
 //}
 //
-//HICON LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName)
+// HICON LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName)
 //
 //{
 //    HICON pHVar1;
@@ -510,7 +510,7 @@
 //    return pHVar1;
 //}
 //
-//HCURSOR LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)
+// HCURSOR LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)
 //
 //{
 //    HCURSOR pHVar1;
@@ -521,7 +521,7 @@
 //    return pHVar1;
 //}
 //
-//HWND FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
+// HWND FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
 //
 //{
 //    HWND pHVar1;
@@ -532,7 +532,7 @@
 //    return pHVar1;
 //}
 //
-//BOOL SetCurrentDirectoryA(LPCSTR lpPathName)
+// BOOL SetCurrentDirectoryA(LPCSTR lpPathName)
 //
 //{
 //    BOOL BVar1;
@@ -543,10 +543,10 @@
 //    return BVar1;
 //}
 //
-//int ReleaseDC(HWND hWnd, HDC hDC)
+// i16 ReleaseDC(HWND hWnd, HDC hDC)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb356. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -554,7 +554,7 @@
 //    return iVar1;
 //}
 //
-//u32 GetSystemPaletteEntries(HDC hdc, u32 iStart, u32 cEntries, LPPALETTEENTRY pPalEntries)
+// u32 GetSystemPaletteEntries(HDC hdc, u32 iStart, u32 cEntries, LPPALETTEENTRY pPalEntries)
 //
 //{
 //    u32 UVar1;
@@ -565,10 +565,10 @@
 //    return UVar1;
 //}
 //
-//int GetDeviceCaps(HDC hdc, int index)
+// i16 GetDeviceCaps(HDC hdc, i16 index)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb362. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -576,7 +576,7 @@
 //    return iVar1;
 //}
 //
-//HDC GetDC(HWND hWnd)
+// HDC GetDC(HWND hWnd)
 //
 //{
 //    HDC pHVar1;
@@ -587,7 +587,7 @@
 //    return pHVar1;
 //}
 //
-//BOOL FindClose(HANDLE hFindFile)
+// BOOL FindClose(HANDLE hFindFile)
 //
 //{
 //    BOOL BVar1;
@@ -598,7 +598,7 @@
 //    return BVar1;
 //}
 //
-//HANDLE FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)
+// HANDLE FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)
 //
 //{
 //    HANDLE pvVar1;
@@ -609,7 +609,7 @@
 //    return pvVar1;
 //}
 //
-//u32 timeGetTime(void)
+// u32 timeGetTime(void)
 //
 //{
 //    u32 DVar1;
@@ -620,7 +620,7 @@
 //    return DVar1;
 //}
 //
-//BOOL WritePrivateProfileStringA(LPCSTR lpAppName, LPCSTR lpKeyName, LPCSTR lpString, LPCSTR lpFileName)
+// BOOL WritePrivateProfileStringA(LPCSTR lpAppName, LPCSTR lpKeyName, LPCSTR lpString, LPCSTR lpFileName)
 //
 //{
 //    BOOL BVar1;
@@ -631,10 +631,10 @@
 //    return BVar1;
 //}
 //
-//int ShowCursor(BOOL bShow)
+// i16 ShowCursor(BOOL bShow)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb386. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -642,21 +642,21 @@
 //    return iVar1;
 //}
 //
-//u32 GetPrivateProfileIntA(LPCSTR lpAppName, LPCSTR lpKeyName, INT nDefault, LPCSTR lpFileName)
+// u32 GetPrivateProfilei16A(LPCSTR lpAppName, LPCSTR lpKeyName, i16 nDefault, LPCSTR lpFileName)
 //
 //{
 //    u32 UVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb38c. Too many branches
 //    // WARNING: Treating indirect jump as call
-//    UVar1 = GetPrivateProfileIntA(lpAppName, lpKeyName, nDefault, lpFileName);
+//    UVar1 = GetPrivateProfilei16A(lpAppName, lpKeyName, nDefault, lpFileName);
 //    return UVar1;
 //}
 //
-//int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, u32 uType)
+// i16 MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, u32 uType)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb392. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -664,7 +664,7 @@
 //    return iVar1;
 //}
 //
-//LSTATUS RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, Lu32* lpReserved, Lu32* lpType, LPBYTE lpData, Lu32* lpcbData)
+// LSTATUS RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, Lu32* lpReserved, Lu32* lpType, LPBYTE lpData, Lu32* lpcbData)
 //
 //{
 //    LSTATUS LVar1;
@@ -675,7 +675,7 @@
 //    return LVar1;
 //}
 //
-//LSTATUS RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, u32 ulOptions, REGSAM samDesired, PHKEY phkResult)
+// LSTATUS RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, u32 ulOptions, REGSAM samDesired, PHKEY phkResult)
 //
 //{
 //    LSTATUS LVar1;
@@ -686,7 +686,7 @@
 //    return LVar1;
 //}
 //
-//void Sleep(u32 dwMilliseconds)
+// void Sleep(u32 dwMilliseconds)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb3a4. Too many branches
@@ -695,7 +695,7 @@
 //    return;
 //}
 //
-//LRESULT SendMessageA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
+// LRESULT SendMessageA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
 //
 //{
 //    LRESULT LVar1;
@@ -706,7 +706,7 @@
 //    return LVar1;
 //}
 //
-//BOOL SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue)
+// BOOL SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue)
 //
 //{
 //    BOOL BVar1;
@@ -717,7 +717,7 @@
 //    return BVar1;
 //}
 //
-//u32 CharUpperBuffA(LPSTR lpsz, u32 cchLength)
+// u32 CharUpperBuffA(LPSTR lpsz, u32 cchLength)
 //
 //{
 //    u32 DVar1;
@@ -728,7 +728,7 @@
 //    return DVar1;
 //}
 //
-//BOOL SetEnvironmentVariableA(LPCSTR lpName, LPCSTR lpValue)
+// BOOL SetEnvironmentVariableA(LPCSTR lpName, LPCSTR lpValue)
 //
 //{
 //    BOOL BVar1;
@@ -741,7 +741,7 @@
 //
 //// WARNING: Exceeded maximum restarts with more pending
 //
-//void ExitThread(u32 dwExitCode)
+// void ExitThread(u32 dwExitCode)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb3c2. Too many branches
@@ -750,7 +750,7 @@
 //    return;
 //}
 //
-//u32 WaitForSingleObject(HANDLE hHandle, u32 dwMilliseconds)
+// u32 WaitForSingleObject(HANDLE hHandle, u32 dwMilliseconds)
 //
 //{
 //    u32 DVar1;
@@ -761,7 +761,7 @@
 //    return DVar1;
 //}
 //
-//HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress,
+// HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress,
 //                    LPVOID lpParameter, u32 dwCreationFlags, Lu32* lpThreadId)
 //
 //{
@@ -773,7 +773,7 @@
 //    return pvVar1;
 //}
 //
-//HANDLE GetCurrentThread(void)
+// HANDLE GetCurrentThread(void)
 //
 //{
 //    HANDLE pvVar1;
@@ -784,7 +784,7 @@
 //    return pvVar1;
 //}
 //
-//BOOL SetEvent(HANDLE hEvent)
+// BOOL SetEvent(HANDLE hEvent)
 //
 //{
 //    BOOL BVar1;
@@ -795,7 +795,7 @@
 //    return BVar1;
 //}
 //
-//BOOL GetCPInfo(u32 CodePage, LPCPINFO lpCPInfo)
+// BOOL GetCPInfo(u32 CodePage, LPCPINFO lpCPInfo)
 //
 //{
 //    BOOL BVar1;
@@ -806,7 +806,7 @@
 //    return BVar1;
 //}
 //
-//u32 GetOEMCP(void)
+// u32 GetOEMCP(void)
 //
 //{
 //    u32 UVar1;
@@ -817,7 +817,7 @@
 //    return UVar1;
 //}
 //
-//u32 GetACP(void)
+// u32 GetACP(void)
 //
 //{
 //    u32 UVar1;
@@ -828,7 +828,7 @@
 //    return UVar1;
 //}
 //
-//BOOL SetConsoleCtrlHandler(PHANDLER_ROUTINE HandlerRoutine, BOOL Add)
+// BOOL SetConsoleCtrlHandler(PHANDLER_ROUTINE HandlerRoutine, BOOL Add)
 //
 //{
 //    BOOL BVar1;
@@ -839,7 +839,7 @@
 //    return BVar1;
 //}
 //
-//BOOL FreeEnvironmentStringsA(LPCH param_1)
+// BOOL FreeEnvironmentStringsA(LPCH param_1)
 //
 //{
 //    BOOL BVar1;
@@ -850,11 +850,11 @@
 //    return BVar1;
 //}
 //
-//int WideCharToMultiByte(u32 CodePage, u32 dwFlags, LPCWSTR lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr,
-//                        int cbMultiByte, LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
+// i16 WideCharToMultiByte(u32 CodePage, u32 dwFlags, LPCWSTR lpWideCharStr, i16 cchWideChar, LPSTR lpMultiByteStr,
+//                        i16 cbMultiByte, LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb3fe. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -863,7 +863,7 @@
 //    return iVar1;
 //}
 //
-//BOOL WriteConsoleA(HANDLE hConsoleOutput, void *lpBuffer, u32 nNumberOfCharsToWrite, Lu32* lpNumberOfCharsWritten,
+// BOOL WriteConsoleA(HANDLE hConsoleOutput, void *lpBuffer, u32 nNumberOfCharsToWrite, Lu32* lpNumberOfCharsWritten,
 //                   LPVOID lpReserved)
 //
 //{
@@ -875,7 +875,7 @@
 //    return BVar1;
 //}
 //
-//BOOL SetConsoleMode(HANDLE hConsoleHandle, u32 dwMode)
+// BOOL SetConsoleMode(HANDLE hConsoleHandle, u32 dwMode)
 //
 //{
 //    BOOL BVar1;
@@ -886,7 +886,7 @@
 //    return BVar1;
 //}
 //
-//BOOL GetConsoleMode(HANDLE hConsoleHandle, Lu32* lpMode)
+// BOOL GetConsoleMode(HANDLE hConsoleHandle, Lu32* lpMode)
 //
 //{
 //    BOOL BVar1;
@@ -897,7 +897,7 @@
 //    return BVar1;
 //}
 //
-//BOOL ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, u32 nLength, Lu32* lpNumberOfEventsRead)
+// BOOL ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, u32 nLength, Lu32* lpNumberOfEventsRead)
 //
 //{
 //    BOOL BVar1;
@@ -908,7 +908,7 @@
 //    return BVar1;
 //}
 //
-//u32 GetTimeZoneInformation(LPTIME_ZONE_INFORMATION lpTimeZoneInformation)
+// u32 GetTimeZoneInformation(LPTIME_ZONE_INFORMATION lpTimeZoneInformation)
 //
 //{
 //    u32 DVar1;
@@ -919,7 +919,7 @@
 //    return DVar1;
 //}
 //
-//BOOL FlushFileBuffers(HANDLE hFile)
+// BOOL FlushFileBuffers(HANDLE hFile)
 //
 //{
 //    BOOL BVar1;
@@ -930,7 +930,7 @@
 //    return BVar1;
 //}
 //
-//u32 GetCurrentDirectoryA(u32 nBufferLength, LPSTR lpBuffer)
+// u32 GetCurrentDirectoryA(u32 nBufferLength, LPSTR lpBuffer)
 //
 //{
 //    u32 DVar1;
@@ -941,7 +941,7 @@
 //    return DVar1;
 //}
 //
-//u32 GetFullPathNameA(LPCSTR lpFileName, u32 nBufferLength, LPSTR lpBuffer, LPSTR *lpFilePart)
+// u32 GetFullPathNameA(LPCSTR lpFileName, u32 nBufferLength, LPSTR lpBuffer, LPSTR *lpFilePart)
 //
 //{
 //    u32 DVar1;
@@ -952,7 +952,7 @@
 //    return DVar1;
 //}
 //
-//u32 GetFileAttributesA(LPCSTR lpFileName)
+// u32 GetFileAttributesA(LPCSTR lpFileName)
 //
 //{
 //    u32 DVar1;
@@ -963,7 +963,7 @@
 //    return DVar1;
 //}
 //
-//LPTOP_LEVEL_EXCEPTION_FILTER SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)
+// LPTOP_LEVEL_EXCEPTION_FILTER SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)
 //
 //{
 //    LPTOP_LEVEL_EXCEPTION_FILTER pPVar1;
@@ -974,7 +974,7 @@
 //    return pPVar1;
 //}
 //
-//LONG UnhandledExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
+// LONG UnhandledExceptionFilter(_EXCEPTION_POi16ERS *ExceptionInfo)
 //
 //{
 //    LONG LVar1;
@@ -985,7 +985,7 @@
 //    return LVar1;
 //}
 //
-//FARPROC GetProcAddress(HMODULE hModule, LPCSTR lpProcName)
+// FARPROC GetProcAddress(HMODULE hModule, LPCSTR lpProcName)
 //
 //{
 //    FARPROC pFVar1;
@@ -996,7 +996,7 @@
 //    return pFVar1;
 //}
 //
-//HMODULE LoadLibraryA(LPCSTR lpLibFileName)
+// HMODULE LoadLibraryA(LPCSTR lpLibFileName)
 //
 //{
 //    HMODULE pHVar1;
@@ -1007,7 +1007,7 @@
 //    return pHVar1;
 //}
 //
-//SIZE_T VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)
+// SIZE_T VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)
 //
 //{
 //    SIZE_T SVar1;
@@ -1018,11 +1018,11 @@
 //    return SVar1;
 //}
 //
-//int MultiByteToWideChar(u32 CodePage, u32 dwFlags, LPCSTR lpMultiByteStr, int cbMultiByte, LPWSTR lpWideCharStr,
-//                        int cchWideChar)
+// i16 MultiByteToWideChar(u32 CodePage, u32 dwFlags, LPCSTR lpMultiByteStr, i16 cbMultiByte, LPWSTR lpWideCharStr,
+//                        i16 cchWideChar)
 //
 //{
-//    int iVar1;
+//    i16 iVar1;
 //
 //    // WARNING: Could not recover jumptable at 0x004bb458. Too many branches
 //    // WARNING: Treating indirect jump as call
@@ -1030,7 +1030,7 @@
 //    return iVar1;
 //}
 //
-//u32 GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, u32 nSize)
+// u32 GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, u32 nSize)
 //
 //{
 //    u32 DVar1;
@@ -1041,7 +1041,7 @@
 //    return DVar1;
 //}
 //
-//BOOL TlsFree(u32 dwTlsIndex)
+// BOOL TlsFree(u32 dwTlsIndex)
 //
 //{
 //    BOOL BVar1;
@@ -1052,7 +1052,7 @@
 //    return BVar1;
 //}
 //
-//BOOL TlsSetValue(u32 dwTlsIndex, LPVOID lpTlsValue)
+// BOOL TlsSetValue(u32 dwTlsIndex, LPVOID lpTlsValue)
 //
 //{
 //    BOOL BVar1;
@@ -1063,7 +1063,7 @@
 //    return BVar1;
 //}
 //
-//u32 TlsAlloc(void)
+// u32 TlsAlloc(void)
 //
 //{
 //    u32 DVar1;
@@ -1074,7 +1074,7 @@
 //    return DVar1;
 //}
 //
-//void SetLastError(u32 dwErrCode)
+// void SetLastError(u32 dwErrCode)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb476. Too many branches
@@ -1083,7 +1083,7 @@
 //    return;
 //}
 //
-//LPVOID TlsGetValue(u32 dwTlsIndex)
+// LPVOID TlsGetValue(u32 dwTlsIndex)
 //
 //{
 //    LPVOID pvVar1;
@@ -1094,7 +1094,7 @@
 //    return pvVar1;
 //}
 //
-//void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
+// void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb482. Too many branches
@@ -1103,7 +1103,7 @@
 //    return;
 //}
 //
-//void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
+// void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb488. Too many branches
@@ -1112,7 +1112,7 @@
 //    return;
 //}
 //
-//u32 GetCurrentThreadId(void)
+// u32 GetCurrentThreadId(void)
 //
 //{
 //    u32 DVar1;
@@ -1123,7 +1123,7 @@
 //    return DVar1;
 //}
 //
-//void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
+// void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb494. Too many branches
@@ -1132,7 +1132,7 @@
 //    return;
 //}
 //
-//void InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
+// void InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb49a. Too many branches
@@ -1141,7 +1141,7 @@
 //    return;
 //}
 //
-//u32 GetFileType(HANDLE hFile)
+// u32 GetFileType(HANDLE hFile)
 //
 //{
 //    u32 DVar1;
@@ -1152,7 +1152,7 @@
 //    return DVar1;
 //}
 //
-//HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName)
+// HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName)
 //
 //{
 //    HANDLE pvVar1;
@@ -1163,7 +1163,7 @@
 //    return pvVar1;
 //}
 //
-//HANDLE GetStdHandle(u32 nStdHandle)
+// HANDLE GetStdHandle(u32 nStdHandle)
 //
 //{
 //    HANDLE pvVar1;
@@ -1174,7 +1174,7 @@
 //    return pvVar1;
 //}
 //
-//BOOL SetStdHandle(u32 nStdHandle, HANDLE hHandle)
+// BOOL SetStdHandle(u32 nStdHandle, HANDLE hHandle)
 //
 //{
 //    BOOL BVar1;
@@ -1185,7 +1185,7 @@
 //    return BVar1;
 //}
 //
-//LPVOID VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, u32 flAllocationType, u32 flProtect)
+// LPVOID VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, u32 flAllocationType, u32 flProtect)
 //
 //{
 //    LPVOID pvVar1;
@@ -1196,7 +1196,7 @@
 //    return pvVar1;
 //}
 //
-//BOOL WriteFile(HANDLE hFile, LPCVOID lpBuffer, u32 nNumberOfBytesToWrite, Lu32* lpNumberOfBytesWritten,
+// BOOL WriteFile(HANDLE hFile, LPCVOID lpBuffer, u32 nNumberOfBytesToWrite, Lu32* lpNumberOfBytesWritten,
 //               LPOVERLAPPED lpOverlapped)
 //
 //{
@@ -1208,7 +1208,7 @@
 //    return BVar1;
 //}
 //
-//void call_fn_ptr_004bb4c4(void)
+// void call_fn_ptr_004bb4c4(void)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb4c4. Too many branches
@@ -1219,7 +1219,7 @@
 //
 //// WARNING: Unknown calling convention yet parameter storage is locked
 //
-//HRESULT DirectDrawCreate(GUID *lp_guid, LPDIRECTDRAW *lp_lp_dd, IUnknown *p_unk_outer)
+// HRESULT DirectDrawCreate(GUID *lp_guid, LPDIRECTDRAW *lp_lp_dd, IUnknown *p_unk_outer)
 //
 //{
 //    HRESULT HVar1;
