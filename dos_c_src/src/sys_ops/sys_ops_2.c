@@ -1,5 +1,5 @@
 
-u16 __stdcall16far pass1_1030_e300(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
+u16  pass1_1030_e300(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     u16 *puVar1;
@@ -10,7 +10,7 @@ u16 __stdcall16far pass1_1030_e300(u32 param_1, u8 *param_2, i16 param_3, u16 pa
 }
 
 
-void __stdcall16far pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4  *puVar1;
@@ -24,7 +24,7 @@ void __stdcall16far pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
     u16         *puStack10;
 
     mem_op_1000_179c(0x112, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -54,7 +54,7 @@ void __stdcall16far pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far struct_1030_e4fa(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
+void  struct_1030_e4fa(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
 
 {
     astruct_289 *iVar1;
@@ -71,7 +71,7 @@ void __stdcall16far struct_1030_e4fa(astruct_100 *param_1, u32 param_2, u16 para
 }
 
 
-void __stdcall16far pass1_1030_e564(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_e564(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4  *puVar1;
@@ -84,7 +84,7 @@ void __stdcall16far pass1_1030_e564(u32 param_1, u16 param_2, u8 *param_3)
     u16         *puStack10;
 
     mem_op_1000_179c(0x10c, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -112,7 +112,7 @@ void __stdcall16far pass1_1030_e564(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_e6c2(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_e6c2(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4  *puVar1;
@@ -125,7 +125,7 @@ void __stdcall16far pass1_1030_e6c2(u32 param_1, u16 param_2, u8 *param_3)
     u16         *puStack10;
 
     mem_op_1000_179c(0x10a, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -153,7 +153,7 @@ void __stdcall16far pass1_1030_e6c2(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_e7d6(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_e7d6(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4 *puVar1;
@@ -165,7 +165,7 @@ void __stdcall16far pass1_1030_e7d6(u32 param_1, u16 param_2, u8 *param_3)
     u16        *puStack10;
 
     mem_op_1000_179c(0x108, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -191,7 +191,7 @@ void __stdcall16far pass1_1030_e7d6(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_e8a0(astruct_100 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6)
+void  pass1_1030_e8a0(astruct_100 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6)
 
 {
     astruct_408 *iVar1;
@@ -210,7 +210,7 @@ void __stdcall16far pass1_1030_e8a0(astruct_100 *param_1, u32 param_2, u16 param
 }
 
 
-void __stdcall16far pass1_1030_e98e(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_e98e(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4  *puVar1;
@@ -223,7 +223,7 @@ void __stdcall16far pass1_1030_e98e(u32 param_1, u16 param_2, u8 *param_3)
     u16         *puStack10;
 
     mem_op_1000_179c(0x112, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -253,7 +253,7 @@ void __stdcall16far pass1_1030_e98e(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_ebf8(u32 param_1, u16 param_2, u8 *param_3)
+void  pass1_1030_ebf8(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     undefined4 *puVar1;
@@ -265,7 +265,7 @@ void __stdcall16far pass1_1030_ebf8(u32 param_1, u16 param_2, u8 *param_3)
     u16        *puStack10;
 
     mem_op_1000_179c(0x108, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10      = 0x389a;
@@ -291,7 +291,7 @@ void __stdcall16far pass1_1030_ebf8(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_c1b2(u32 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5)
+void  pass1_1030_c1b2(u32 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
     i16          iVar1;
@@ -332,7 +332,7 @@ void __stdcall16far pass1_1030_c1b2(u32 *param_1, u8 *param_2, u16 param_3, u16 
 }
 
 
-void __stdcall16far pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 param_4, u16 param_5)
+void  pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 param_4, u16 param_5)
 
 {
     undefined4   uVar1;
@@ -396,12 +396,12 @@ void __stdcall16far pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 p
             uVar7  = uVar8;
             if(0x24 < uStack84)
                 break;
-            if(0x0 < (uStack84 * 0x2 + _PTR_LOOP_1050_580e))
+            if(0x0 < (uStack84 * 0x2 + globals->_PTR_LOOP_1050_580e))
             {
                 empty_1038_540a();
                 lStack80 = CONCAT22(puVar9, uVar7);
                 uVar12   = (_PTR_LOOP_1050_580e >> 0x10);
-                uVar11   = _PTR_LOOP_1050_580e;
+                uVar11   = globals->_PTR_LOOP_1050_580e;
                 iVar6    = (uStack84 * 0x2 + uVar11);
                 uVar10   = (long)iVar6 >> 0x10;
                 uVar15   = uStack84;
@@ -413,7 +413,7 @@ void __stdcall16far pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 p
                 }
                 pass1_1038_52b8(uStack6, CONCAT22(uVar10, iVar6), uVar15, uVar11, param_4, &PTR_LOOP_1050_1038, param_5);
                 uVar15 = uStack84 * 0x2;
-                uVar7  = (uVar15 + _PTR_LOOP_1050_580e);
+                uVar7  = (uVar15 + globals->_PTR_LOOP_1050_580e);
                 pass1_1030_7ddc(uStack10, (long)uVar7, uStack84, uVar7, uVar10, uVar15, param_4, param_5);
                 iVar6 = (_PTR_LOOP_1050_580e + uVar15);
                 uVar8 = SEXT24(iVar6);
@@ -436,7 +436,7 @@ void __stdcall16far pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 p
 }
 
 
-void __stdcall16far pass1_1030_c652(u8 *param_1, i16 param_2, u16 param_3)
+void  pass1_1030_c652(u8 *param_1, i16 param_2, u16 param_3)
 
 {
     u16 *puVar1;
@@ -447,7 +447,7 @@ void __stdcall16far pass1_1030_c652(u8 *param_1, i16 param_2, u16 param_3)
 }
 
 
-void __stdcall16far pass1_1030_ae6c(u16 *param_1)
+void  pass1_1030_ae6c(u16 *param_1)
 
 {
     undefined4   uVar1;
@@ -487,7 +487,7 @@ void __stdcall16far pass1_1030_ae6c(u16 *param_1)
 }
 
 
-void __stdcall16far pass1_1030_aefa(u16 *param_1, u32 param_2)
+void  pass1_1030_aefa(u16 *param_1, u32 param_2)
 
 {
     undefined4   uVar1;
@@ -533,7 +533,7 @@ void __stdcall16far pass1_1030_aefa(u16 *param_1, u32 param_2)
 }
 
 
-void __stdcall16far pass1_1030_b718(u16 param_1, u16 param_2, u16 *param_3, u32 *param_4, u8 *param_5, i16 param_6, u16 param_7)
+void  pass1_1030_b718(u16 param_1, u16 param_2, u16 *param_3, u32 *param_4, u8 *param_5, i16 param_6, u16 param_7)
 
 {
     u32 *puVar1;
@@ -546,13 +546,13 @@ void __stdcall16far pass1_1030_b718(u16 param_1, u16 param_2, u16 *param_3, u32 
     uVar2    = (puStack6 >> 0x10);
     lStack10 = (puStack6 + 0x20);
     puVar1   = local_12;
-    pass1_1030_64ce(param_7, puVar1, uVar2, _PTR_LOOP_1050_5740, param_3, lStack10, CONCAT22(param_7, puVar1));
+    pass1_1030_64ce(param_7, puVar1, uVar2, globals->_PTR_LOOP_1050_5740, param_3, lStack10, CONCAT22(param_7, puVar1));
     *param_4 = *puVar1;
     return;
 }
 
 
-void __stdcall16far pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
+void  pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
 
 {
     code      **ppcVar1;
@@ -580,7 +580,7 @@ void __stdcall16far pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
         {
             if((iStack24 * 0x2 + iVar4) != 0x0)
             {
-                paStack6 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_5768);
+                paStack6 = pass1_1000_07fc(0x1000, globals->_PTR_LOOP_1050_5768);
                 uVar6    = (paStack6 >> 0x10);
                 uVar2    = paStack6;
                 if((uVar6 | uVar2) == 0x0)
@@ -604,7 +604,7 @@ void __stdcall16far pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
     {
         if((iStack16 * 0x2 + iVar4) != 0x0)
         {
-            paStack6 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_5768);
+            paStack6 = pass1_1000_07fc(0x1000, globals->_PTR_LOOP_1050_5768);
             uVar6    = (paStack6 >> 0x10);
             uVar2    = paStack6;
             if((uVar6 | uVar2) == 0x0)
@@ -627,7 +627,7 @@ void __stdcall16far pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
 }
 
 
-void __stdcall16far pass1_1030_9d42(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u32 *param_5, u32 param_6)
+void  pass1_1030_9d42(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u32 *param_5, u32 param_6)
 
 {
     u32       *puVar1;
@@ -709,7 +709,7 @@ void __stdcall16far pass1_1030_9d42(u16 param_1, u16 param_2, u16 param_3, u16 p
 }
 
 
-u32 __stdcall16far pass1_1030_8e3c(u16 param_1, u16 param_2, u8 *param_3, u32 param_4, u32 param_5)
+u32  pass1_1030_8e3c(u16 param_1, u16 param_2, u8 *param_3, u32 param_4, u32 param_5)
 
 {
     u16  uVar1;
@@ -755,7 +755,7 @@ u32 __stdcall16far pass1_1030_8e3c(u16 param_1, u16 param_2, u8 *param_3, u32 pa
 }
 
 
-void __stdcall16far pass1_1030_7d1c(u32 param_1, u16 param_2, u32 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
+void  pass1_1030_7d1c(u32 param_1, u16 param_2, u32 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
 
 {
     u16          uVar1;
@@ -784,7 +784,7 @@ void __stdcall16far pass1_1030_7d1c(u32 param_1, u16 param_2, u32 param_3, u16 p
 }
 
 
-void __stdcall16far pass1_1030_7d7c(u32 param_1, u16 param_2, u32 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
+void  pass1_1030_7d7c(u32 param_1, u16 param_2, u32 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
 
 {
     u16          uVar1;
@@ -813,7 +813,7 @@ void __stdcall16far pass1_1030_7d7c(u32 param_1, u16 param_2, u32 param_3, u16 p
 }
 
 
-void __stdcall16far pass1_1030_7ddc(u32 param_1, long param_2, u16 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
+void  pass1_1030_7ddc(u32 param_1, long param_2, u16 param_3, u16 param_4, u8 *param_5, u16 param_6, u16 param_7, u16 param_8)
 
 {
     undefined4 uVar1;
@@ -847,7 +847,7 @@ void __stdcall16far pass1_1030_7ddc(u32 param_1, long param_2, u16 param_3, u16 
 }
 
 
-void __stdcall16far struct_1030_8128(u32 *param_1, u16 param_2, u16 param_3)
+void  struct_1030_8128(u32 *param_1, u16 param_2, u16 param_3)
 
 {
     u16          uVar1;
@@ -863,7 +863,7 @@ void __stdcall16far struct_1030_8128(u32 *param_1, u16 param_2, u16 param_3)
     *param_1            = 0x0;
     &iVar4->field_0x4   = 0x0;
     iVar4->field_0x8    = 0x0;
-    _PTR_LOOP_1050_5748 = param_1;
+    globals->_PTR_LOOP_1050_5748 = param_1;
     mem_op_1000_179c(0x56, param_2, 0x1000);
     puVar2 = (param_2 | uVar1);
     if(puVar2 != 0x0)
@@ -906,12 +906,12 @@ void __stdcall16far struct_1030_8128(u32 *param_1, u16 param_2, u16 param_3)
     {
         pass1_1038_78e2(CONCAT22(puVar3, uVar1), (puVar3 | uVar1));
     }
-    PTR_LOOP_1050_574a = (_PTR_LOOP_1050_5748 >> 0x10);
+    globals->PTR_LOOP_1050_574a = (_PTR_LOOP_1050_5748 >> 0x10);
     return;
 }
 
 
-u16 __stdcall16far pass1_1030_6db4(u8 *param_1, i16 param_2, u16 param_3)
+u16  pass1_1030_6db4(u8 *param_1, i16 param_2, u16 param_3)
 
 {
     u16 *puVar1;
@@ -922,7 +922,7 @@ u16 __stdcall16far pass1_1030_6db4(u8 *param_1, i16 param_2, u16 param_3)
 }
 
 
-void __stdcall16far pass1_1030_5ff6(u32 param_1, u16 param_2, u8 *param_3, u8 *param_4, u8 param_5)
+void  pass1_1030_5ff6(u32 param_1, u16 param_2, u8 *param_3, u8 *param_4, u8 param_5)
 
 {
     u16        *puVar1;
@@ -966,7 +966,7 @@ void __stdcall16far pass1_1030_5ff6(u32 param_1, u16 param_2, u8 *param_3, u8 *p
             puVar7        = extraout_DX;
         }
     }
-    for(uStack4 = 0x0; uVar4 = (iVar8 + 0x10), puVar1 = (u16 *)(uVar4 + 0xa), uStack4 <= *puVar1 && *puVar1 != uStack4; uStack4 = uStack4 + 0x1)
+    for(uStack4 = 0x0; uVar4 = (iVar8 + 0x10), puVar1 = (uVar4 + 0xa), uStack4 <= *puVar1 && *puVar1 != uStack4; uStack4 = uStack4 + 0x1)
     {
         uStack12 = pass1_1028_e2e0(_PTR_LOOP_1050_65e2, puVar7, 0x2);
         iVar5    = uStack12;
@@ -990,7 +990,7 @@ void __stdcall16far pass1_1030_5ff6(u32 param_1, u16 param_2, u8 *param_3, u8 *p
 }
 
 
-void __stdcall16far pass1_1030_615a(astruct_137 *param_1, u16 param_2)
+void  pass1_1030_615a(astruct_137 *param_1, u16 param_2)
 
 {
     u16          uVar1;
@@ -1014,12 +1014,12 @@ void __stdcall16far pass1_1030_615a(astruct_137 *param_1, u16 param_2)
         iVar2->field_0x4 = uVar1;
         iVar2->field_0x6 = extraout_DX;
     }
-    _PTR_LOOP_1050_5740 = param_1;
+    globals->_PTR_LOOP_1050_5740 = param_1;
     return;
 }
 
 
-u16 __stdcall16far pass1_1030_6222(u32 param_1, i16 param_2, u32 param_3, u32 param_4, u16 param_5, u8 *param_6, u16 param_7)
+u16  pass1_1030_6222(u32 param_1, i16 param_2, u32 param_3, u32 param_4, u16 param_5, u8 *param_6, u16 param_7)
 
 {
     fn_ptr_1 *ppcVar1;
@@ -1049,7 +1049,7 @@ u16 __stdcall16far pass1_1030_6222(u32 param_1, i16 param_2, u32 param_3, u32 pa
 }
 
 
-void __stdcall16far pass1_1030_62e4(u32 *param_1, u16 *param_2, long param_3, u16 param_4)
+void  pass1_1030_62e4(u32 *param_1, u16 *param_2, long param_3, u16 param_4)
 
 {
     code      **ppcVar1;
@@ -1167,7 +1167,7 @@ void __stdcall16far pass1_1030_62e4(u32 *param_1, u16 *param_2, long param_3, u1
 }
 
 
-void __stdcall16far pass1_1030_521c(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
+void  pass1_1030_521c(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
 
 {
     i16 iVar1;
@@ -1184,7 +1184,7 @@ void __stdcall16far pass1_1030_521c(astruct_100 *param_1, u32 param_2, u16 param
 }
 
 
-void __stdcall16far pass1_1030_5290(u32 param_1, astruct_376 *param_2, u8 *param_3)
+void  pass1_1030_5290(u32 param_1, astruct_376 *param_2, u8 *param_3)
 
 {
     undefined4  *puVar1;
@@ -1197,7 +1197,7 @@ void __stdcall16far pass1_1030_5290(u32 param_1, astruct_376 *param_2, u8 *param
     u16         *puStack10;
 
     mem_op_1000_179c(0x10c, param_3, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_3, param_2);
+    puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
         *puStack10         = 0x389a;
@@ -1225,7 +1225,7 @@ void __stdcall16far pass1_1030_5290(u32 param_1, astruct_376 *param_2, u8 *param
 }
 
 
-void __stdcall16far pass1_1030_532e(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
+void  pass1_1030_532e(astruct_100 *param_1, u32 param_2, u16 param_3, u8 param_4)
 
 {
     i16 iVar1;
@@ -1242,7 +1242,7 @@ void __stdcall16far pass1_1030_532e(astruct_100 *param_1, u32 param_2, u16 param
 }
 
 
-u16 __stdcall16far pass1_1030_538a(u32 param_1, i16 param_2, u16 param_3)
+u16  pass1_1030_538a(u32 param_1, i16 param_2, u16 param_3)
 
 {
     u8          *puVar1;
@@ -1284,7 +1284,7 @@ void pass1_1030_54f8(astruct_378 *param_1, u8 *param_2, u32 param_3)
     u16         *puStack10;
 
     mem_op_1000_179c(0x10c, param_2, 0x1000);
-    puStack10 = (u16 *)CONCAT22(param_2, param_1);
+    puStack10 = CONCAT22(param_2, param_1);
     if((param_2 | param_1) != 0x0)
     {
         *puStack10         = 0x389a;
@@ -1312,7 +1312,7 @@ void pass1_1030_54f8(astruct_378 *param_1, u8 *param_2, u32 param_3)
 }
 
 
-u16 __stdcall16far pass1_1030_3058(u32 param_1, u16 param_2, u8 *param_3)
+u16  pass1_1030_3058(u32 param_1, u16 param_2, u8 *param_3)
 
 {
     u16         *puVar1;
@@ -1344,7 +1344,7 @@ u16 __stdcall16far pass1_1030_3058(u32 param_1, u16 param_2, u8 *param_3)
             (&iVar4->field_0xc + 0x2) = puVar3;
         }
     }
-    for(uStack4 = 0x0; uVar5 = iVar4->field_0x10, puVar1 = (u16 *)(uVar5 + 0x22), uStack4 <= *puVar1 && *puVar1 != uStack4; uStack4 = uStack4 + 0x1)
+    for(uStack4 = 0x0; uVar5 = iVar4->field_0x10, puVar1 = (uVar5 + 0x22), uStack4 <= *puVar1 && *puVar1 != uStack4; uStack4 = uStack4 + 0x1)
     {
         uVar6   = pass1_1028_e2e0(_PTR_LOOP_1050_65e2, puVar3, 0x3);
         ppcVar2 = (*iVar4->field_0xc + 0x8);
@@ -1355,7 +1355,7 @@ u16 __stdcall16far pass1_1030_3058(u32 param_1, u16 param_2, u8 *param_3)
 }
 
 
-void __stdcall16far pass1_1030_314c(u16 *param_1, u32 param_2, u8 *param_3, u16 param_4)
+void  pass1_1030_314c(u16 *param_1, u32 param_2, u8 *param_3, u16 param_4)
 
 {
     astruct_364 *iVar1;
@@ -1398,7 +1398,7 @@ void __stdcall16far pass1_1030_314c(u16 *param_1, u32 param_2, u8 *param_3, u16 
 }
 
 
-void __stdcall16far pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 param_4)
+void  pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 param_4)
 
 {
     u16  uVar1;
@@ -1410,13 +1410,13 @@ void __stdcall16far pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 p
     u16 *puVar7;
     u16 *puStack8;
 
-    puVar2 = (u16 *)(param_4 - 0x1U);
+    puVar2 = (param_4 - 0x1U);
     mem_op_1000_179c(0x10, param_1, 0x1000);
-    puStack8 = (u16 *)(puVar2 & 0xffff | ZEXT24(param_1) << 0x10);
+    puStack8 = (puVar2 & 0xffff | ZEXT24(param_1) << 0x10);
     uVar3    = param_1 | puVar2;
     if(uVar3 == 0x0)
     {
-        puStack8 = (u16 *)0x0;
+        puStack8 = 0x0;
     }
     else
     {
@@ -1439,7 +1439,7 @@ void __stdcall16far pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 p
 }
 
 
-void __stdcall16far pass1_1030_4628(u8 *param_1, u16 param_2, u16 param_3, i16 param_4)
+void  pass1_1030_4628(u8 *param_1, u16 param_2, u16 param_3, i16 param_4)
 
 {
     undefined4 uVar1;
@@ -1520,7 +1520,7 @@ LAB_1030_474c:
 }
 
 
-void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 param_5, i16 param_6, i16 param_7, i16 param_8)
+void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 param_5, i16 param_6, i16 param_7, i16 param_8)
 
 {
     i16         iVar1;
@@ -1566,15 +1566,15 @@ void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 pa
 
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_3, 0x1000);
-        PTR_LOOP_1050_5f2e = param_3;
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_3, 0x1000);
+        globals->PTR_LOOP_1050_5f2e = param_3;
     }
     else
     {
     }
-    local_c4   = PTR_LOOP_1050_5f2c;
-    puStack194 = PTR_LOOP_1050_5f2e;
-    uVar2      = fn_ptr_op_1000_1708(0x20, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+    local_c4   = globals->PTR_LOOP_1050_5f2c;
+    puStack194 = globals->PTR_LOOP_1050_5f2e;
+    uVar2      = fn_ptr_op_1000_1708(0x20, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     paStack184 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
     puVar4     = (PTR_LOOP_1050_5f2e | uVar2);
     if(puVar4 == 0x0)
@@ -1644,7 +1644,7 @@ void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 pa
             puVar10           = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_1, (iVar7 % 0x64), unaff_DI);
             puStack194        = (puVar10 >> 0x10);
             local_c4          = puVar10;
-            local_c0          = PTR_LOOP_1050_13ae;
+            local_c0          = globals->PTR_LOOP_1050_13ae;
             uVar2             = 0x84;
             puVar10           = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x9, param_1, puStack194, unaff_DI);
             uStack190         = pass1_1010_65d0(param_1, puVar10, uVar2);
@@ -1694,7 +1694,7 @@ void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 pa
             uStack162         = uStack164;
             mem_op_1000_179c(uVar2, puVar4, 0x1000);
             paStack184         = (astruct_18 *)CONCAT22(puVar4, uVar2);
-            PTR_LOOP_1050_5f2e = (puVar4 | uVar2);
+            globals->PTR_LOOP_1050_5f2e = (puVar4 | uVar2);
             if(PTR_LOOP_1050_5f2e == 0x0)
             {
                 (piStack6 + 0x16) = 0x0;
@@ -1707,21 +1707,21 @@ void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 pa
             uStack170 = uStack162 * 0x2;
             if(_PTR_LOOP_1050_5f2c == 0x0)
             {
-                PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
+                globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
             }
             else
             {
             }
-            uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+            uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
             paStack174 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
             if(_PTR_LOOP_1050_5f2c == 0x0)
             {
-                PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
+                globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
             }
             else
             {
             }
-            uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+            uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
             paStack178 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
             iStack180  = 0x0;
         LAB_1030_4b57:
@@ -1765,7 +1765,7 @@ void __stdcall16far pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 pa
 }
 
 
-void __stdcall16far pass1_1030_23e2(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u8 *param_5, u16 param_6, u16 param_7)
+void  pass1_1030_23e2(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u8 *param_5, u16 param_6, u16 param_7)
 
 {
     code      **ppcVar1;
@@ -1866,7 +1866,7 @@ void __stdcall16far pass1_1030_23e2(u32 param_1, i16 param_2, u16 param_3, i16 p
 }
 
 
-void __stdcall16far pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
+void  pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     i16         *piVar1;
@@ -1913,7 +1913,7 @@ void __stdcall16far pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 p
 }
 
 
-u16 *__stdcall16far struct_1030_17ce(u16 *param_1, u32 param_2, u32 param_3)
+u16 * struct_1030_17ce(u16 *param_1, u32 param_2, u32 param_3)
 
 {
     astruct_75  *paVar1;
@@ -1945,7 +1945,7 @@ u16 *__stdcall16far struct_1030_17ce(u16 *param_1, u32 param_2, u32 param_3)
 }
 
 
-u16 *__stdcall16far pass1_1030_183c(u16 *param_1, u32 param_2, u32 param_3, u32 param_4, u32 param_5, u16 param_6, u8 *param_7)
+u16 * pass1_1030_183c(u16 *param_1, u32 param_2, u32 param_3, u32 param_4, u32 param_5, u16 param_6, u8 *param_7)
 
 {
     undefined4   uVar1;

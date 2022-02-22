@@ -1,5 +1,5 @@
 
-void __stdcall16far pass1_1030_227a(u32 param_1, u32 param_2, u16_t param_3, u16 param_4)
+void  pass1_1030_227a(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
     u16    uVar1;
@@ -36,13 +36,13 @@ void __stdcall16far pass1_1030_227a(u32 param_1, u32 param_2, u16_t param_3, u16
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return;
 }
 
 
-void __stdcall16far pass1_1030_232e(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5)
+void  pass1_1030_232e(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
     u16    uVar1;
@@ -79,13 +79,13 @@ void __stdcall16far pass1_1030_232e(u32 param_1, u32 param_2, i16 param_3, u16 p
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
 
-void __stdcall16far pass1_1030_2aca(u32 param_1, u32 param_2, u16_t param_3, u16 param_4)
+void  pass1_1030_2aca(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
     undefined4   uVar1;
@@ -159,14 +159,14 @@ void __stdcall16far pass1_1030_2aca(u32 param_1, u32 param_2, u16_t param_3, u16
             }
         }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    globals->PTR_LOOP_1050_0310 = 0x6d0;
     return;
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     undefined4   uVar1;
@@ -198,13 +198,13 @@ void __stdcall16far pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *p
     }
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);
-        PTR_LOOP_1050_5f2e = param_4;
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);
+        globals->PTR_LOOP_1050_5f2e = param_4;
     }
     else
     {
     }
-    uVar2       = fn_ptr_op_1000_1708(0x28, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+    uVar2       = fn_ptr_op_1000_1708(0x28, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     puStack1038 = CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
     puVar6      = (PTR_LOOP_1050_5f2e | uVar2);
     if(puVar6 == 0x0)
@@ -258,7 +258,7 @@ void __stdcall16far pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *p
                     BVar3             = read_file_1008_7dee(uVar2, uVar9, uVar1, 0x0, (uVar1 >> 0x10), iVar9->field_0x22 * 0x2, 0x1008);
                     if(BVar3 == 0x0)
                     {
-                        PTR_LOOP_1050_0310 = 0x6d2;
+                        globals->PTR_LOOP_1050_0310 = 0x6d2;
                         return;
                     }
                 }
@@ -276,12 +276,12 @@ void __stdcall16far pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *p
             }
         }
     }
-    PTR_LOOP_1050_0310 = 0x6d2;
+    globals->PTR_LOOP_1050_0310 = 0x6d2;
     return;
 }
 
 
-void __stdcall16far pass1_1030_16d6(u32 param_1, u32 param_2, u16 param_3)
+void  pass1_1030_16d6(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16     BVar1;
@@ -303,12 +303,12 @@ void __stdcall16far pass1_1030_16d6(u32 param_1, u32 param_2, u16 param_3)
             return;
         }
     }
-    PTR_LOOP_1050_0310 = 0x6d0;
+    globals->PTR_LOOP_1050_0310 = 0x6d0;
     return;
 }
 
 
-void __stdcall16far file_1030_1730(u32 param_1, u32 param_2)
+void  file_1030_1730(u32 param_1, u32 param_2)
 
 {
     u16    uVar1;
@@ -326,12 +326,12 @@ void __stdcall16far file_1030_1730(u32 param_1, u32 param_2)
             return;
         }
     }
-    PTR_LOOP_1050_0310 = 0x6d2;
+    globals->PTR_LOOP_1050_0310 = 0x6d2;
     return;
 }
 
 
-u16 __stdcall16far pass1_1030_1978(u32 param_1, u32 param_2, u16_t param_3, u16 param_4)
+u16  pass1_1030_1978(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
     pass1_1030_16d6(param_1, param_2, param_4);
@@ -340,7 +340,7 @@ u16 __stdcall16far pass1_1030_1978(u32 param_1, u32 param_2, u16_t param_3, u16 
         write_to_file_1008_7954(param_2, (param_1 + 0xc), param_3, 0x1008, param_4);
         if(param_3 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d0;
+            globals->PTR_LOOP_1050_0310 = 0x6d0;
             return param_3;
         }
         param_3 = 0x1;
@@ -349,7 +349,7 @@ u16 __stdcall16far pass1_1030_1978(u32 param_1, u32 param_2, u16_t param_3, u16 
 }
 
 
-void __stdcall16far file_1030_19b4(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5)
+void  file_1030_19b4(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
     long *plVar1;
@@ -361,7 +361,7 @@ void __stdcall16far file_1030_19b4(u32 param_1, u32 param_2, i16 param_3, u16 pa
         file_1008_76e4(param_2, plVar1, 0x1008, param_5, param_4);
         if(plVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
     }
@@ -369,12 +369,12 @@ void __stdcall16far file_1030_19b4(u32 param_1, u32 param_2, i16 param_3, u16 pa
 }
 
 
-u16 __stdcall16far pass1_1030_1a9c(u32 param_1, u32 param_2, u16 param_3)
+u16  pass1_1030_1a9c(u32 param_1, u32 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
     i16       *piVar2;
-    u16_t      in_AX;
+    u16      in_AX;
     u16        uVar3;
     BOOL16     BVar4;
     i16        iVar5;
@@ -403,7 +403,7 @@ u16 __stdcall16far pass1_1030_1a9c(u32 param_1, u32 param_2, u16 param_3)
                 return 0x1;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return 0x0;
 }
@@ -411,7 +411,7 @@ u16 __stdcall16far pass1_1030_1a9c(u32 param_1, u32 param_2, u16 param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 __stdcall16far file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+u16  file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     undefined4   uVar1;
@@ -434,15 +434,15 @@ u16 __stdcall16far file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *par
     {
         if(_PTR_LOOP_1050_5f2c == 0x0)
         {
-            PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);
-            PTR_LOOP_1050_5f2e = param_4;
+            globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);
+            globals->PTR_LOOP_1050_5f2e = param_4;
         }
         else
         {
         }
-        uVar4                       = fn_ptr_op_1000_1708(0x6, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+        uVar4                       = fn_ptr_op_1000_1708(0x6, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
         &iVar10->field_0x10         = uVar4;
-        (&iVar10->field_0x10 + 0x2) = PTR_LOOP_1050_5f2e;
+        (&iVar10->field_0x10 + 0x2) = globals->PTR_LOOP_1050_5f2e;
         puVar7                      = (&iVar10->field_0x10 + 0x2);
         uVar4                       = (param_2 >> 0x10);
         BVar5                       = read_file_1008_7dee(param_2, uVar4, &iVar10->field_0x10, 0x0, puVar7, 0x2, 0x1008);
@@ -469,29 +469,29 @@ u16 __stdcall16far file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *par
                 return 0x1;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return 0x0;
 }
 
 
-u16_t __stdcall16far write_file_fn_1028_e56c(u16 param_1, u16 param_2, undefined4 param_3, u16_t param_4)
+u16  write_file_fn_1028_e56c(u16 param_1, u16 param_2, undefined4 param_3, u16 param_4)
 
 {
     code      **ppcVar1;
     u8         *puVar2;
     BOOL16      BVar3;
-    u16_t       in_DX;
-    u16_t       extraout_DX;
+    u16       in_DX;
+    u16       extraout_DX;
     undefined4  in_stack_0000000c;
     u32         local_2a[0x3];
     undefined4 *puStack28;
     u32         uStack24;
     u8          local_14[0x8];
     u16         uStack12;
-    u16_t       uStack10;
+    u16       uStack10;
     u16         uStack8;
-    u16_t       uStack6;
+    u16       uStack6;
     i16         iStack4;
 
     pass1_1028_dc52((astruct_92 *)CONCAT22(param_4, local_14), 0x1, in_stack_0000000c, (in_stack_0000000c >> 0x10));
@@ -510,7 +510,7 @@ u16_t __stdcall16far write_file_fn_1028_e56c(u16 param_1, u16 param_2, undefined
     BVar3       = write_to_file_1008_7e1c(param_3, (param_3 >> 0x10), local_2a, param_4, 0x4, 0x1008);
     if(BVar3 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     else
     {
@@ -542,7 +542,7 @@ u16_t __stdcall16far write_file_fn_1028_e56c(u16 param_1, u16 param_2, undefined
 }
 
 
-BOOL16 __stdcall16far pass1_1028_d7a0(u16 param_1, u16 param_2, u32 param_3, u16_t param_4)
+BOOL16  pass1_1028_d7a0(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
 
 {
     BOOL16 BVar1;
@@ -556,26 +556,26 @@ BOOL16 __stdcall16far pass1_1028_d7a0(u16 param_1, u16 param_2, u32 param_3, u16
 }
 
 
-i16 __stdcall16far read_file_1028_d7ba(u16 param_1, u16 param_2, undefined4 param_3, u16_t param_4, u16_t param_5)
+i16  read_file_1028_d7ba(u16 param_1, u16 param_2, undefined4 param_3, u16 param_4, u16 param_5)
 
 {
     read_file_1008_7cfe(param_3, (param_3 >> 0x10), 0x8, 0x1008, param_4);
     if(param_5 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d4;
+        globals->PTR_LOOP_1050_0310 = 0x6d4;
         return param_5;
     }
     return 0x1;
 }
 
 
-u32 __stdcall16far write_to_file_1028_dce2(undefined4 *param_1, undefined4 param_2, u16_t param_3)
+u32  write_to_file_1028_dce2(undefined4 *param_1, undefined4 param_2, u16 param_3)
 
 {
     code     **ppcVar1;
     BOOL16     BVar2;
     u8        *puVar3;
-    u16_t      in_DX;
+    u16      in_DX;
     u16        extraout_DX;
     u16        uVar4;
     i16        iVar5;
@@ -601,7 +601,7 @@ u32 __stdcall16far write_to_file_1028_dce2(undefined4 *param_1, undefined4 param
             if(BVar2 != 0x0)
             {
                 ppcVar1 = (*_PTR_LOOP_1050_5166 + 0xc);
-                (**ppcVar1)(0x1008, _PTR_LOOP_1050_5166, (_PTR_LOOP_1050_5166 >> 0x10), param_2);
+                (**ppcVar1)(0x1008, globals->_PTR_LOOP_1050_5166, (_PTR_LOOP_1050_5166 >> 0x10), param_2);
                 in_DX = extraout_DX;
                 if(BVar2 != 0x0)
                 {
@@ -695,7 +695,7 @@ u32 __stdcall16far write_to_file_1028_dce2(undefined4 *param_1, undefined4 param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far read_file_1028_def2(u32 param_1, undefined4 param_2, u16_t param_3, u16_t param_4)
+void  read_file_1028_def2(u32 param_1, undefined4 param_2, u16 param_3, u16 param_4)
 
 {
     fn_ptr_1 *ppcVar1;
@@ -721,7 +721,7 @@ void __stdcall16far read_file_1028_def2(u32 param_1, undefined4 param_2, u16_t p
             {
                 uVar3   = (*_PTR_LOOP_1050_5166 >> 0x10);
                 ppcVar1 = (*_PTR_LOOP_1050_5166 + 0x10);
-                (**ppcVar1)(0x1008, _PTR_LOOP_1050_5166, (_PTR_LOOP_1050_5166 >> 0x10), param_2);
+                (**ppcVar1)(0x1008, globals->_PTR_LOOP_1050_5166, (_PTR_LOOP_1050_5166 >> 0x10), param_2);
                 if(BVar2 != 0x0)
                 {
                     read_file_1008_7cfe(uVar4, uVar5, 0xc, 0x1008, param_3);
@@ -797,7 +797,7 @@ void __stdcall16far read_file_1028_def2(u32 param_1, undefined4 param_2, u16_t p
 }
 
 
-BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -818,7 +818,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_e, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     pass1_1030_16d6(param_1, param_2, param_3);
@@ -830,42 +830,42 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     local_8[0] = (iVar3 + 0xe);
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     local_8[0] = (iVar3 + 0x10);
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     local_8[0] = (iVar3 + 0x12);
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     local_8[0] = (iVar3 + 0x18);
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     local_8[0] = (iVar3 + 0x1a);
     BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     iStack4 = (iVar3 + 0x12);
@@ -909,7 +909,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
             BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
             if(BVar2 == 0x0)
             {
-                PTR_LOOP_1050_0310 = 0x6d0;
+                globals->PTR_LOOP_1050_0310 = 0x6d0;
                 return 0x0;
             }
             uVar1      = (iVar3 + 0x14);
@@ -917,7 +917,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
             BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
             if(BVar2 == 0x0)
             {
-                PTR_LOOP_1050_0310 = 0x6d0;
+                globals->PTR_LOOP_1050_0310 = 0x6d0;
                 return 0x0;
             }
             uVar1      = (iVar3 + 0x14);
@@ -925,7 +925,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
             BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
             if(BVar2 == 0x0)
             {
-                PTR_LOOP_1050_0310 = 0x6d0;
+                globals->PTR_LOOP_1050_0310 = 0x6d0;
                 return 0x0;
             }
             uVar1      = (iVar3 + 0x14);
@@ -933,7 +933,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
             BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, 0x1008);
             if(BVar2 == 0x0)
             {
-                PTR_LOOP_1050_0310 = 0x6d0;
+                globals->PTR_LOOP_1050_0310 = 0x6d0;
                 return 0x0;
             }
             uVar1      = (iVar3 + 0x14);
@@ -944,7 +944,7 @@ BOOL16 __stdcall16far write_to_file_1028_b5ec(u32 param_1, u32 param_2, u16 para
 joined_r0x1028b766:
     if(BVar2 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return 0x0;
     }
     return 0x1;
@@ -954,7 +954,7 @@ joined_r0x1028b766:
 // WARNING: Unable to use type for symbol puVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u8 *param_5)
+void  file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u8 *param_5)
 
 {
     BOOL16 BVar1;
@@ -986,19 +986,19 @@ void __stdcall16far file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 pa
     BVar1 = read_file_1008_7dee(uVar5, uVar8, &local_4, 0x0, param_4, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     BVar1 = read_file_1008_7dee(uVar5, uVar8, &local_6, 0x0, param_4, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     BVar1 = read_file_1008_7dee(uVar5, uVar8, &local_8, 0x0, param_4, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     iVar2          = switch_1008_73ea(uVar5, uVar8, local_4);
@@ -1010,19 +1010,19 @@ void __stdcall16far file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 pa
     BVar1          = read_file_1008_7dee(uVar5, uVar8, &local_4, 0x0, param_4, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     BVar1 = read_file_1008_7dee(uVar5, uVar8, &local_6, 0x0, param_4, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     BVar1 = read_file_1008_7dee(uVar5, uVar8, puVar3 + 0x1a, 0x0, uVar6, 0x2, 0x1008);
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     (puVar3 + 0x12) = local_4;
@@ -1065,34 +1065,34 @@ void __stdcall16far file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 pa
         BVar1                   = read_file_1008_7dee(uVar5, uVar8, puStack16, 0x0, param_5, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
         BVar1 = read_file_1008_7dee(uVar5, uVar8, local_2a, 0x0, param_4, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
         uVar7 = puVar3[0x5];
         BVar1 = read_file_1008_7dee(uVar5, uVar8, uVar7 + 0xa8, 0x0, (uVar7 >> 0x10), 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
         uVar7 = puVar3[0x5];
         BVar1 = read_file_1008_7dee(uVar5, uVar8, uVar7 + 0xaa, 0x0, (uVar7 >> 0x10), 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
         uVar7 = puVar3[0x5];
         BVar1 = read_file_1008_7dee(uVar5, uVar8, uVar7 + 0xac, 0x0, (uVar7 >> 0x10), 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
         uVar5          = switch_1008_72bc(uVar5, uVar8, local_2a[0]);
@@ -1110,7 +1110,7 @@ void __stdcall16far file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 pa
     }
     if(BVar1 == 0x0)
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
 switchD_1028_ba97_caseD_6:
@@ -1118,7 +1118,7 @@ switchD_1028_ba97_caseD_6:
 }
 
 
-BOOL16 __stdcall16far pass1_1028_b2c8(u32 param_1, u32 param_2, BOOL16 param_3, u16 param_4)
+BOOL16  pass1_1028_b2c8(u32 param_1, u32 param_2, BOOL16 param_3, u16 param_4)
 
 {
     BOOL16 BVar1;
@@ -1132,7 +1132,7 @@ BOOL16 __stdcall16far pass1_1028_b2c8(u32 param_1, u32 param_2, BOOL16 param_3, 
         BVar1 = read_file_1008_7dee(param_2, uVar2, &local_4, 0x0, param_4, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return BVar1;
         }
         uVar2           = switch_1008_72bc(param_2, uVar2, local_4);
@@ -1143,7 +1143,7 @@ BOOL16 __stdcall16far pass1_1028_b2c8(u32 param_1, u32 param_2, BOOL16 param_3, 
 }
 
 
-u16 __stdcall16far pass1_1028_64d6(u32 param_1, u32 param_2, u16 param_3)
+u16  pass1_1028_64d6(u32 param_1, u32 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -1202,7 +1202,7 @@ u16 __stdcall16far pass1_1028_64d6(u32 param_1, u32 param_2, u16 param_3)
             local_26 = (lStack14 + 0xc);
             puVar3   = &local_26;
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return 0x0;
 }
@@ -1210,7 +1210,7 @@ u16 __stdcall16far pass1_1028_64d6(u32 param_1, u32 param_2, u16 param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     code      **ppcVar1;
@@ -1243,7 +1243,7 @@ void __stdcall16far pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 {
                     return;
                 }
-                paStack20 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_68a2);
+                paStack20 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_68a2);
                 uVar5     = (paStack20 >> 0x10);
                 uVar2     = paStack20;
                 if((uVar5 | uVar2) == 0x0)
@@ -1287,13 +1287,13 @@ void __stdcall16far pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 uStack6 = uStack6 + 0x1;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
 
-BOOL16 __stdcall16far write_to_file_1028_5f82(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  write_to_file_1028_5f82(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16 BVar1;
@@ -1306,7 +1306,7 @@ BOOL16 __stdcall16far write_to_file_1028_5f82(u32 param_1, u32 param_2, u16 para
         BVar1      = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d0;
+            globals->PTR_LOOP_1050_0310 = 0x6d0;
             return BVar1;
         }
         BVar1 = 0x1;
@@ -1315,7 +1315,7 @@ BOOL16 __stdcall16far write_to_file_1028_5f82(u32 param_1, u32 param_2, u16 para
 }
 
 
-void __stdcall16far pass1_1028_5fcc(i16 param_1, u8 *param_2, i16 param_3, u16 param_4)
+void  pass1_1028_5fcc(i16 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     undefined4 uVar1;
@@ -1325,14 +1325,14 @@ void __stdcall16far pass1_1028_5fcc(i16 param_1, u8 *param_2, i16 param_3, u16 p
     file_1028_b81a(*(param_3 + 0x6), *(param_3 + 0xa), param_1, param_4, param_2);
     if((param_1 != 0x0) && (uVar1 = (param_3 + 0x6), uVar2 = (param_3 + 0xa), BVar3 = read_file_1008_7dee(uVar2, (uVar2 >> 0x10), uVar1 + 0x20, 0x0, (uVar1 >> 0x10), 0x2, 0x1008), BVar3 == 0x0))
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
 
-void __stdcall16far pass1_1028_4a1a(u32 param_1, u32 param_2, u16 param_3)
+void  pass1_1028_4a1a(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16 BVar1;
@@ -1340,14 +1340,14 @@ void __stdcall16far pass1_1028_4a1a(u32 param_1, u32 param_2, u16 param_3)
     BVar1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if((BVar1 != 0x0) && (BVar1 = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), param_1 + 0x20, (param_1 >> 0x10), 0xa, 0x1008), BVar1 == 0x0))
     {
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
         return;
     }
     return;
 }
 
 
-void __stdcall16far pass1_1028_4a5a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1028_4a5a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     BOOL16 BVar1;
@@ -1355,14 +1355,14 @@ void __stdcall16far pass1_1028_4a5a(u32 param_1, u32 param_2, i16 param_3, u8 *p
     file_1028_b81a(param_1, param_2, param_3, param_5, param_4);
     if((param_3 != 0x0) && (BVar1 = read_file_1008_7dee(param_2, (param_2 >> 0x10), param_1 + 0x20, 0x0, (param_1 >> 0x10), 0xa, 0x1008), BVar1 == 0x0))
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
 
-void __stdcall16far write_to_file_1028_3d0e(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
+void  write_to_file_1028_3d0e(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
     BOOL16     BVar1;
@@ -1393,13 +1393,13 @@ void __stdcall16far write_to_file_1028_3d0e(u32 param_1, u32 param_2, u16 param_
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return;
 }
 
 
-void __stdcall16far pass1_1028_3d92(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5, u16 param_6)
+void  pass1_1028_3d92(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5, u16 param_6)
 
 {
     i16    iVar1;
@@ -1426,13 +1426,13 @@ void __stdcall16far pass1_1028_3d92(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
 
-BOOL16 __stdcall16far pass1_1028_2418(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  pass1_1028_2418(u32 param_1, u32 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -1456,7 +1456,7 @@ BOOL16 __stdcall16far pass1_1028_2418(u32 param_1, u32 param_2, u16 param_3)
         BVar2       = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_1c, param_3, 0x2, 0x1008);
         if(BVar2 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d0;
+            globals->PTR_LOOP_1050_0310 = 0x6d0;
             return BVar2;
         }
         while(true)
@@ -1478,7 +1478,7 @@ BOOL16 __stdcall16far pass1_1028_2418(u32 param_1, u32 param_2, u16 param_3)
 }
 
 
-BOOL16 __stdcall16far file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+BOOL16  file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     undefined4 uVar1;
@@ -1500,12 +1500,12 @@ BOOL16 __stdcall16far file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *
     {
         return 0x0;
     }
-    if(0x1 < PTR_LOOP_1050_0312)
+    if(0x1 < globals->PTR_LOOP_1050_0312)
     {
         BVar3 = read_file_1008_7dee(param_2, (param_2 >> 0x10), &local_4, 0x0, param_5, 0x2, 0x1008);
         if(BVar3 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return 0x0;
         }
         for(uStack6 = 0x0; uStack6 < local_4; uStack6 = uStack6 + 0x1)
@@ -1545,7 +1545,7 @@ BOOL16 __stdcall16far file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *
 }
 
 
-u16 __stdcall16far write_to_file_1028_1452(u32 param_1, u32 param_2, u16 param_3)
+u16  write_to_file_1028_1452(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16 BVar1;
@@ -1569,7 +1569,7 @@ u16 __stdcall16far write_to_file_1028_1452(u32 param_1, u32 param_2, u16 param_3
             BVar1      = write_to_file_1008_7e1c(uVar3, uVar4, local_6, param_3, 0x2, 0x1008);
             if(BVar1 != 0x0)
             {
-                local_6[0] = PTR_LOOP_1050_4fbc;
+                local_6[0] = globals->PTR_LOOP_1050_4fbc;
                 BVar1      = write_to_file_1008_7e1c(uVar3, uVar4, local_6, param_3, 0x2, 0x1008);
                 if(BVar1 != 0x0)
                 {
@@ -1577,13 +1577,13 @@ u16 __stdcall16far write_to_file_1028_1452(u32 param_1, u32 param_2, u16 param_3
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return 0x0;
 }
 
 
-void __stdcall16far pass1_1028_14d8(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1028_14d8(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     u16    uVar1;
@@ -1612,13 +1612,13 @@ void __stdcall16far pass1_1028_14d8(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 return;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
 
-BOOL16 __stdcall16far pass1_1020_e94e(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  pass1_1020_e94e(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16 in_AX;
@@ -1632,7 +1632,7 @@ BOOL16 __stdcall16far pass1_1020_e94e(u32 param_1, u32 param_2, u16 param_3)
         BVar1      = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d0;
+            globals->PTR_LOOP_1050_0310 = 0x6d0;
             return BVar1;
         }
         in_AX = 0x1;
@@ -1641,7 +1641,7 @@ BOOL16 __stdcall16far pass1_1020_e94e(u32 param_1, u32 param_2, u16 param_3)
 }
 
 
-void __stdcall16far pass1_1020_e994(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1020_e994(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     BOOL16 BVar1;
@@ -1649,13 +1649,13 @@ void __stdcall16far pass1_1020_e994(u32 param_1, u32 param_2, i16 param_3, u8 *p
     pass1_1030_dec4(param_1, param_2, param_3, param_4, param_5);
     if((param_3 != 0x0) && (BVar1 = read_file_1008_7dee(param_2, (param_2 >> 0x10), param_1 + 0x24, 0x0, (param_1 >> 0x10), 0x2, 0x1008), BVar1 == 0x0))
     {
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
         return;
     }
     return;
 }
 
-u16 __stdcall16far write_to_file_1028_0234(u32 param_1, u32 param_2, u16_t param_3)
+u16  write_to_file_1028_0234(u32 param_1, u32 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -1713,12 +1713,12 @@ u16 __stdcall16far write_to_file_1028_0234(u32 param_1, u32 param_2, u16_t param
                 BVar2       = write_to_file_1008_7e1c(uVar5, uVar6, local_14, param_3, 0x2, 0x1008);
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return 0x0;
 }
 
-void __stdcall16far pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     code       **ppcVar1;
@@ -1756,7 +1756,7 @@ void __stdcall16far pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *p
                     {
                         return;
                     }
-                    paStack20 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_68a2);
+                    paStack20 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_68a2);
                     uVar6     = (paStack20 >> 0x10);
                     uVar2     = (astruct_728 *)paStack20;
                     if((uVar6 | uVar2) == 0x0)
@@ -1801,12 +1801,12 @@ void __stdcall16far pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
-BOOL16 __stdcall16far write_to_file_1020_e6a4(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  write_to_file_1020_e6a4(u32 param_1, u32 param_2, u16 param_3)
 
 {
     i16    in_AX;
@@ -1832,13 +1832,13 @@ BOOL16 __stdcall16far write_to_file_1020_e6a4(u32 param_1, u32 param_2, u16 para
                 return 0x1;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return 0x0;
 }
 
 
-void __stdcall16far pass1_1020_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void  pass1_1020_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
     u16    uVar1;
@@ -1859,12 +1859,12 @@ void __stdcall16far pass1_1020_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *p
                 return;
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return;
 }
 
-BOOL16 __stdcall16far write_to_file_1020_d3d4(u32 param_1, u32 param_2, u16 param_3)
+BOOL16  write_to_file_1020_d3d4(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16 BVar1;
@@ -1877,7 +1877,7 @@ BOOL16 __stdcall16far write_to_file_1020_d3d4(u32 param_1, u32 param_2, u16 para
         BVar1      = write_to_file_1008_7e1c(param_2, (param_2 >> 0x10), local_c, param_3, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d0;
+            globals->PTR_LOOP_1050_0310 = 0x6d0;
             return BVar1;
         }
         BVar1 = 0x1;
@@ -1886,7 +1886,7 @@ BOOL16 __stdcall16far write_to_file_1020_d3d4(u32 param_1, u32 param_2, u16 para
 }
 
 
-BOOL16 __stdcall16far pass1_1020_d41a(u32 param_1, u32 param_2, BOOL16 param_3, u8 *param_4, u16 param_5)
+BOOL16  pass1_1020_d41a(u32 param_1, u32 param_2, BOOL16 param_3, u8 *param_4, u16 param_5)
 
 {
     BOOL16 BVar1;
@@ -1898,7 +1898,7 @@ BOOL16 __stdcall16far pass1_1020_d41a(u32 param_1, u32 param_2, BOOL16 param_3, 
         BVar1 = read_file_1008_7dee(param_2, (param_2 >> 0x10), &local_4, 0x0, param_5, 0x2, 0x1008);
         if(BVar1 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d2;
+            globals->PTR_LOOP_1050_0310 = 0x6d2;
             return BVar1;
         }
         (param_1 + 0x20) = local_4;
@@ -1908,7 +1908,7 @@ BOOL16 __stdcall16far pass1_1020_d41a(u32 param_1, u32 param_2, BOOL16 param_3, 
 }
 
 
-BOOL16 __stdcall16far pass1_1020_a644(u16 param_1, u16 param_2, u32 param_3, u16_t param_4)
+BOOL16  pass1_1020_a644(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
 
 {
     BOOL16 BVar1;
@@ -1922,7 +1922,7 @@ BOOL16 __stdcall16far pass1_1020_a644(u16 param_1, u16 param_2, u32 param_3, u16
 }
 
 
-BOOL16 __stdcall16far read_file_1020_a65e(undefined4 param_1, undefined4 param_2, u16_t param_3, u16_t param_4)
+BOOL16  read_file_1020_a65e(undefined4 param_1, undefined4 param_2, u16 param_3, u16 param_4)
 
 {
     BOOL16 BVar1;
@@ -1931,15 +1931,15 @@ BOOL16 __stdcall16far read_file_1020_a65e(undefined4 param_1, undefined4 param_2
     u8     local_8[0x2];
     u8     local_6[0x2];
     u8     local_4[0x2];
-    u16_t  uVar3;
-    u16_t  uVar2;
+    u16  uVar3;
+    u16  uVar2;
 
-    uVar2 = (u16_t)param_2;
-    uVar3 = (u16_t)(param_2 >> 0x10);
+    uVar2 = param_2;
+    uVar3 = (param_2 >> 0x10);
     read_file_1008_7cfe(uVar2, uVar3, 0xb, 0x1008, param_3);
     if(param_4 != 0x0)
     {
-        if(0x1 < PTR_LOOP_1050_0312)
+        if(0x1 < globals->PTR_LOOP_1050_0312)
         {
         LAB_1020_a6dc:
             pass1_1020_b97e(param_3, param_4, in_DX, param_1, (param_1 >> 0x10), 0x0);
@@ -1960,12 +1960,12 @@ BOOL16 __stdcall16far read_file_1020_a65e(undefined4 param_1, undefined4 param_2
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d2;
+        globals->PTR_LOOP_1050_0310 = 0x6d2;
     }
     return 0x0;
 }
 
-void __stdcall16far pass1_1020_2488(u32 param_1, u16 param_2, u16 param_3)
+void  pass1_1020_2488(u32 param_1, u16 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -1995,7 +1995,7 @@ void __stdcall16far pass1_1020_2488(u32 param_1, u16 param_2, u16 param_3)
     return;
 }
 
-void __stdcall16far pass1_1018_6630(u32 param_1, u16 param_2, u16 param_3)
+void  pass1_1018_6630(u32 param_1, u16 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -2025,7 +2025,7 @@ void __stdcall16far pass1_1018_6630(u32 param_1, u16 param_2, u16 param_3)
     return;
 }
 
-void __stdcall16far write_to_file_1010_ed58(u32 param_1, u32 param_2, u16_t param_3)
+void  write_to_file_1010_ed58(u32 param_1, u32 param_2, u16 param_3)
 
 {
     i16        *piVar1;
@@ -2098,7 +2098,7 @@ void __stdcall16far write_to_file_1010_ed58(u32 param_1, u32 param_2, u16_t para
                 }
             }
         }
-        PTR_LOOP_1050_0310 = 0x6d0;
+        globals->PTR_LOOP_1050_0310 = 0x6d0;
     }
     return;
 }

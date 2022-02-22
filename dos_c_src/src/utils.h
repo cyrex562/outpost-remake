@@ -1,0 +1,15 @@
+//
+// Created by cyrex on 2/22/2022.
+//
+
+#ifndef OUTPOST_1_SRC_UTILS_H_
+#define OUTPOST_1_SRC_UTILS_H_
+
+#include "types.h"
+
+u32 CONCAT22(u16 a, u16 b);
+
+
+u16 CONCAT11(u8 a, u8 b) ;
+
+#endif // OUTPOST_1_SRC_UTILS_H_

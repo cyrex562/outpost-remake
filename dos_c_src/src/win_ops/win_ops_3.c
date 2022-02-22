@@ -283,7 +283,7 @@ void pass1_1020_08b6(WNDCLASS16 *param_1, astruct_20 *param_2, u1616 param_3, u3
     (&iVar1[0x1].field_0x4 + 0x2) = 0x0;
     param_2->field_0x0            = 0xb0e;
     iVar1->field_0x2              = 0x1020;
-    win_1008_5c5c(param_1, 0x0, (paVar2 >> 0x10), _PTR_LOOP_1050_02a0, 0x1d4);
+    win_1008_5c5c(param_1, 0x0, (paVar2 >> 0x10), globals->_PTR_LOOP_1050_02a0, 0x1d4);
     return;
 }
 
@@ -460,7 +460,7 @@ void destroy_window_1018_c518(astruct_29 *param_1)
     return;
 }
 
-astruct_29 *pass1_1018_c896(astruct_29 *param_1, byte param_2)
+astruct_29 *pass1_1018_c896(astruct_29 *param_1, u8 param_2)
 
 {
     destroy_window_1018_c518(param_1);
@@ -990,10 +990,10 @@ LAB_1010_7710:
             }
             uVar16 = 0xc;
             mem_op_1000_179c(0xc, puVar6, 0x1000);
-            puStack14 = (u16 *)CONCAT22(puVar6, uVar4);
+            puStack14 = CONCAT22(puVar6, uVar4);
             if((puVar6 | uVar4) == 0x0)
             {
-                puStack20 = (u16 *)0x0;
+                puStack20 = 0x0;
             }
             else
             {
@@ -1373,7 +1373,7 @@ void enum_child_windows_1010_01be(LPVOID param_1)
 
     if(PTR_LOOP_1050_0010 == 0x0)
     {
-        pvVar1 = MakeProcInstance16(param_1, PTR_LOOP_1050_038c);
+        pvVar1 = MakeProcInstance16(param_1, globals->PTR_LOOP_1050_038c);
         EnumChildWindows1((HWND16)s_tile2_bmp_1050_1538, 0x0, ZEXT24(pvVar1) << 0x10);
         FreeProcInstance16(s_tile2_bmp_1050_1538);
     }
@@ -1405,7 +1405,7 @@ void pass1_1008_aa28(u32 param_1, u16 param_2, WNDCLASS16 *param_3)
         puStack6 = CONCAT22(extraout_DX, param_2);
         if((extraout_DX | param_2) != 0x0)
         {
-            win_1008_5c5c(param_3, param_2, extraout_DX | param_2, _PTR_LOOP_1050_02a0, (param_2 + 0x4));
+            win_1008_5c5c(param_3, param_2, extraout_DX | param_2, globals->_PTR_LOOP_1050_02a0, (param_2 + 0x4));
             if(puStack6 != 0x0)
             {
                 ppcVar1 = *puStack6;
@@ -1530,7 +1530,7 @@ void win_ui_reg_class_1008_96d2(astruct_20 *param_1, HINSTANCE16 in_h_inst_2, WN
         uStack26  = 0x5632;
         uStack24  = 0x1008;
         uStack22  = 0x40000;
-        puStack18 = PTR_LOOP_1050_038c;
+        puStack18 = globals->PTR_LOOP_1050_038c;
         uStack16  = (param_1 + 0xc2);
         uStack14  = (param_1 + 0xc4);
         uStack12  = (param_1 + 0xc6);
@@ -1560,17 +1560,17 @@ void create_window_ex_1008_9760(astruct *in_struct_1, u16 param_2)
     {
         uVar1               = struct_1->field_0xac;
         window_handle       = CreateWIndowEx16(CONCAT22(struct_1, param_2),
-                                         class_name,
-                                         PTR_LOOP_1050_038c,
-                                         CONCAT22(struct_1->field_0xbc, struct_1->field_0xca),
-                                         struct_1->field_0xba,
-                                         struct_1->field_0xb8,
-                                         struct_1->field_0xb6,
-                                         struct_1->field_0xb4,
-                                         (HWND16)uVar1,
-                                         (HMENU16)(uVar1 >> 0x10),
-                                         0x39e,
-                                         &USHORT_1050_1050);
+                                               class_name,
+                                               globals->PTR_LOOP_1050_038c,
+                                               CONCAT22(struct_1->field_0xbc, struct_1->field_0xca),
+                                               struct_1->field_0xba,
+                                               struct_1->field_0xb8,
+                                               struct_1->field_0xb6,
+                                               struct_1->field_0xb4,
+                                               (HWND16)uVar1,
+                                               (HMENU16)(uVar1 >> 0x10),
+                                               0x39e,
+                                               &USHORT_1050_1050);
         struct_1->field_0x8 = window_handle;
     }
     if(struct_1->field_0x8 == 0x0)
@@ -1581,7 +1581,7 @@ void create_window_ex_1008_9760(astruct *in_struct_1, u16 param_2)
 }
 
 
-u32 __stdcall16far unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *param_4, u16 param_5, HWND16 param_6)
+u32  unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *param_4, u16 param_5, HWND16 param_6)
 
 {
     code **ppcVar1;
@@ -1745,7 +1745,7 @@ u32 __stdcall16far unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 par
                         {
                             if(param_5 != 0x111)
                                 goto switchD_1008_9b30_caseD_4;
-                            if((param_4 != PTR_LOOP_1050_039c) && (PTR_LOOP_1050_039a == 0x0))
+                            if((param_4 != globals->PTR_LOOP_1050_039c) && (PTR_LOOP_1050_039a == 0x0))
                             {
                                 if(param_2 == 0x0)
                                 {
@@ -1853,7 +1853,7 @@ LAB_1008_9a95:
     return uVar5;
 }
 
-LRESULT __stdcall16far make_def_wnd_proc_1008_9ce6(u1616 param_1, u1616 param_2, u1616 in_msg_3, WPARAM16 param_4, LPARAM param_5, HWND16 in_hwnd_5)
+LRESULT  make_def_wnd_proc_1008_9ce6(u1616 param_1, u1616 param_2, u1616 in_msg_3, WPARAM16 param_4, LPARAM param_5, HWND16 in_hwnd_5)
 
 {
     LRESULT LVar1;
@@ -1886,7 +1886,7 @@ void pass1_1008_9e5a(astruct_11 *param_1)
     {
         if(param_1 == (astruct_11 *)0x0)
         {
-            puVar4 = (u16 *)0x0;
+            puVar4 = 0x0;
             uVar6  = 0x0;
         }
         else
@@ -1910,14 +1910,14 @@ void pass1_1008_9e5a(astruct_11 *param_1)
     } while(iStack4 < 0xc);
     if(param_1 == (astruct_11 *)0x0)
     {
-        puVar4 = (u16 *)0x0;
+        puVar4 = 0x0;
         uVar7  = 0x0;
     }
     else
     {
         puVar4 = &uVar5->field_0x1c;
     }
-    puStack8    = (u16 *)CONCAT22(uVar7, puVar4);
+    puStack8    = CONCAT22(uVar7, puVar4);
     *puStack8   = 0x389a;
     puVar4[0x1] = 0x1008;
     clenaup_win_ui_1018_4d22(param_1, 0x1018);
@@ -1925,7 +1925,7 @@ void pass1_1008_9e5a(astruct_11 *param_1)
 }
 
 
-void __stdcall16far post_win_msg_1008_a0e4(astruct_67 *param_1, long param_2, i16 param_3, u16 param_4, u32 param_5, i16 param_6, HWND16 param_7, u16 param_8)
+void  post_win_msg_1008_a0e4(astruct_67 *param_1, long param_2, i16 param_3, u16 param_4, u32 param_5, i16 param_6, HWND16 param_7, u16 param_8)
 
 {
     undefined4 *puVar1;
@@ -1959,7 +1959,7 @@ LAB_1008_a146:
     if(!bVar4)
     {
         param_7   = 0x1000;
-        paStack14 = pass1_1000_07fc(0x1000, _PTR_LOOP_1050_03a0);
+        paStack14 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_03a0);
         uVar7     = (paStack14 >> 0x10);
         uVar3     = paStack14;
         if((uVar7 | uVar3) == 0x0)
@@ -2002,15 +2002,15 @@ u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2)
     (iVar2 + 0x2) = 0x1008;
     (iVar2 + 0x4) = 0x0;
     set_struct_1008_574a((param_1 & 0xffff0000 | (iVar2 + 0x6)));
-    *param_1            = 0x9416;
-    (iVar2 + 0x2)       = 0x1008;
-    _PTR_LOOP_1050_0388 = param_1;
-    UVar1               = SetTimer16(param_2, 0x0, 0x0, (&PTR_LOOP_1050_0000 + 0x1));
+    *param_1                     = 0x9416;
+    (iVar2 + 0x2)                = 0x1008;
+    globals->_PTR_LOOP_1050_0388 = param_1;
+    UVar1                        = SetTimer16(param_2, 0x0, 0x0, (&PTR_LOOP_1050_0000 + 0x1));
     if(UVar1 == 0x0)
     {
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
-    PTR_LOOP_1050_038a = (_PTR_LOOP_1050_0388 >> 0x10);
+    globals->PTR_LOOP_1050_038a = (_PTR_LOOP_1050_0388 >> 0x10);
     return param_1;
 }
 
@@ -2026,7 +2026,7 @@ void kill_timer_1008_921c(u16 *param_1, HWND16 param_2)
     *param_1      = 0x9416;
     (iVar1 + 0x2) = 0x1008;
     KillTimer16(param_2, 0x1);
-    _PTR_LOOP_1050_0388 = 0x0;
+    globals->_PTR_LOOP_1050_0388 = 0x0;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0x6)));
     *param_1      = 0x389a;
     (iVar1 + 0x2) = 0x1008;
@@ -2043,9 +2043,9 @@ void send_msg_1008_84ba(u16 param_1, u32 param_2, HWND16 param_3)
 
     uVar2 = (param_2 >> 0x10);
     iVar1 = param_2;
-    if((*(byte *)(iVar1 + 0x4) & 0x4) == 0x0)
+    if((*(u8 *)(iVar1 + 0x4) & 0x4) == 0x0)
     {
-        if((*(byte *)(iVar1 + 0x4) & 0x8) == 0x0)
+        if((*(u8 *)(iVar1 + 0x4) & 0x8) == 0x0)
         {
             return;
         }
@@ -2108,7 +2108,7 @@ HWND16 create_window_1008_5e7e(u1616 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
     uStack42       = SUB42(&DAT_1050_5f44, 0x0);
     uStack40       = 0x1008;
     uStack36       = 0x2;
-    puStack34      = PTR_LOOP_1050_038c;
+    puStack34      = globals->PTR_LOOP_1050_038c;
     uStack32       = 0x0;
     uStack30       = 0x0;
     uStack38       = 0x0;
@@ -2125,7 +2125,7 @@ HWND16 create_window_1008_5e7e(u1616 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
             return 0x0;
         }
     }
-    window_handle_1 = CreateWindow16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)0x0, ZEXT24(PTR_LOOP_1050_038c) << 0x10, 0x0, (i1616)PTR_LOOP_1050_0396, 0x1, 0x1, 0x8000, 0x8000, 0x0, 0xcf);
+    window_handle_1 = CreateWindow16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)0x0, ZEXT24(globals->PTR_LOOP_1050_038c) << 0x10, 0x0, (i1616)PTR_LOOP_1050_0396, 0x1, 0x1, 0x8000, 0x8000, 0x0, 0xcf);
     return window_handle_1;
 }
 

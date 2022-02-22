@@ -1,5 +1,5 @@
 
-void __stdcall16far big_switch_1008_15d4(u16 param_1, u16 param_2, u16 param_3, u32 param_4, i32 param_5)
+void big_switch_1008_15d4(u16 param_1, u16 param_2, u16 param_3, u32 param_4, i32 param_5)
 
 {
     u16         var3;
@@ -138,7 +138,7 @@ LAB_1008_162a:
         struct_1018_66cc(paStack32, (var3 + 0xcc), var3, param_3);
         break;
     case 0xa:
-        win_1008_5c5c(param_3, param_1, var5, _PTR_LOOP_1050_02a0, 0x1d3);
+        win_1008_5c5c(param_3, param_1, var5, globals->_PTR_LOOP_1050_02a0, 0x1d3);
         mem_op_1000_179c(0xf2, var5, 0x1000);
         paStack32 = (astruct_20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);

@@ -26,5 +26,5 @@ file(GLOB win_ops_h src/win_ops/*.h)
 
 include_directories(./src)
 
-add_executable(efs_cpp ${SOURCES} ${HEADERS} ${src_unk_c} ${src_unk_h} ${big_funcs_c} ${big_funcs_h} ${draw_ops_c} ${draw_ops_h} ${file_ops_c} ${file_ops_h} ${fn_ptr_ops_c} ${fn_ptr_ops_h} ${struct_ops_c} ${struct_ops_h} ${sys_ops_c} ${sys_ops_h} ${ui_ops_c} ${ui_ops_h} ${win_ops_c} ${win_ops_h})
+add_executable(efs_cpp ${SOURCES} ${HEADERS} ${src_unk_c} ${src_unk_h} ${big_funcs_c} ${big_funcs_h} ${draw_ops_c} ${draw_ops_h} ${file_ops_c} ${file_ops_h} ${fn_ptr_ops_c} ${fn_ptr_ops_h} ${struct_ops_c} ${struct_ops_h} ${sys_ops_c} ${sys_ops_h} ${ui_ops_c} ${ui_ops_h} ${win_ops_c} ${win_ops_h} src/utils.c src/utils.h src/winapi.c src/winapi.h src/string_consts.h src/fn_ptr_defs.h src/fn_ptr_ops/fn_ptr_ops_6.h src/sys_ops/sys_ops_12.h src/unk/unk_14.h src/string_ops.h src/struct_ops/struct_ops_5.h)
 

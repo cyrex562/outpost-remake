@@ -1,5 +1,5 @@
 
-void __stdcall16far def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
+void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
     code      **ppcVar1;
@@ -27,7 +27,7 @@ void __stdcall16far def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 p
 }
 
 
-void __stdcall16far pass1_1008_3bd6(astruct_160 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u32 param_6, u32 param_7, u16 param_8, u16 param_9)
+void  pass1_1008_3bd6(astruct_160 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u32 param_6, u32 param_7, u16 param_8, u16 param_9)
 
 {
     mixed_struct_op_1040_8fb8(CONCAT22(param_2, param_1), param_3, 0x0, param_5, param_6, (param_6 >> 0x10), param_7, (param_7 >> 0x10), param_8, &PTR_LOOP_1050_1040, param_9);
@@ -42,7 +42,7 @@ void __stdcall16far pass1_1008_3bd6(astruct_160 *param_1, u16 param_2, u16 param
 }
 
 
-void __stdcall16far post_msg_1008_3d20(u32 param_1, HWND16 param_2)
+void  post_msg_1008_3d20(u32 param_1, HWND16 param_2)
 
 {
     PostMessage16(param_2, 0x0, 0x0, CONCAT22(0x111, (param_1 + 0xcc)));
@@ -50,7 +50,7 @@ void __stdcall16far post_msg_1008_3d20(u32 param_1, HWND16 param_2)
 }
 
 
-void __stdcall16far post_quit_msg_1008_3af4(short exit_code)
+void  post_quit_msg_1008_3af4(short exit_code)
 
 {
     PostQuitMessage16(exit_code);
@@ -58,7 +58,7 @@ void __stdcall16far post_quit_msg_1008_3af4(short exit_code)
 }
 
 
-u16 __stdcall16far unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 param_3)
+u16  unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 param_3)
 
 {
     BOOL16 BVar1;
@@ -80,7 +80,7 @@ u16 __stdcall16far unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 par
 }
 
 
-void __stdcall16far pass1_1008_0a92(u32 param_1, short param_2)
+void  pass1_1008_0a92(u32 param_1, short param_2)
 
 {
     code **ppcVar1;
@@ -102,14 +102,14 @@ void __stdcall16far pass1_1008_0a92(u32 param_1, short param_2)
     if(_PTR_LOOP_1050_0388 != 0x0)
     {
         ppcVar1 = *_PTR_LOOP_1050_0388;
-        (**ppcVar1)(param_2, _PTR_LOOP_1050_0388, (_PTR_LOOP_1050_0388 >> 0x10), 0x1);
+        (**ppcVar1)(param_2, globals->_PTR_LOOP_1050_0388, (_PTR_LOOP_1050_0388 >> 0x10), 0x1);
     }
     post_quit_msg_1008_3af4(param_2);
     return;
 }
 
 
-void __stdcall16far window_op_1008_0af8(astruct *param_1, u8 *param_2, u16 param_3)
+void  window_op_1008_0af8(astruct *param_1, u8 *param_2, u16 param_3)
 
 {
     i16        *piVar1;
@@ -133,10 +133,10 @@ void __stdcall16far window_op_1008_0af8(astruct *param_1, u8 *param_2, u16 param
     astruct_20 *paStack6;
 
     create_window_ex_1008_9760(param_1, param_3);
-    uVar9              = (param_1 >> 0x10);
-    iVar8              = param_1;
-    puVar4             = (iVar8 + 0x8);
-    PTR_LOOP_1050_0396 = puVar4;
+    uVar9                       = (param_1 >> 0x10);
+    iVar8                       = param_1;
+    puVar4                      = (iVar8 + 0x8);
+    globals->PTR_LOOP_1050_0396 = puVar4;
     mem_op_1000_179c(0x12, param_2, 0x1000);
     puVar6 = (param_2 | puVar4);
     if(puVar6 != 0x0)
@@ -200,7 +200,7 @@ void __stdcall16far window_op_1008_0af8(astruct *param_1, u8 *param_2, u16 param
     return;
 }
 
-BOOL16 __stdcall16far mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6)
+BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6)
 
 {
     code      **ppcVar1;
@@ -219,7 +219,7 @@ BOOL16 __stdcall16far mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, 
     u16         uVar9;
     u16         uVar10;
     i16         iVar11;
-    u16_t       uVar12;
+    u16         uVar12;
     u16         uVar13;
     u8          local_64[0x50];
     undefined4  uStack20;
@@ -613,7 +613,7 @@ BOOL16 __stdcall16far mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, 
     case 0xde:
         uVar12 = 0x34;
     LAB_1008_0f3e:
-        cursor_op_1008_2dcc(uVar9, (u16_t)struct_var15, uVar12, 0x1008);
+        cursor_op_1008_2dcc(uVar9, struct_var15, uVar12, 0x1008);
         return param_3;
     case 0xdf:
         uVar13 = 0x55;
@@ -622,7 +622,7 @@ BOOL16 __stdcall16far mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, 
         uVar13 = 0x56;
         break;
     case 0x100:
-        win_1008_5c5c(param_5, param_3, param_6, _PTR_LOOP_1050_02a0, 0x1dc);
+        win_1008_5c5c(param_5, param_3, param_6, globals->_PTR_LOOP_1050_02a0, 0x1dc);
         return param_3;
     case 0x12c:
         uVar13 = 0xf020;

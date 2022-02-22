@@ -1,5 +1,5 @@
 
-void __stdcall16far begin_end_pai16_1008_97c8(HWND16 param_1)
+void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
 {
     PAi16STRUCT16 local_22;
@@ -9,7 +9,7 @@ void __stdcall16far begin_end_pai16_1008_97c8(HWND16 param_1)
     return;
 }
 
-void __stdcall16far get_stock_obj_1008_9c56(i1616 param_1)
+void  get_stock_obj_1008_9c56(i1616 param_1)
 
 {
     GetStockObject16(param_1);
@@ -17,7 +17,7 @@ void __stdcall16far get_stock_obj_1008_9c56(i1616 param_1)
 }
 
 
-astruct_23 *__stdcall16far unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
+astruct_23 * unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
 
 {
     HCURSOR16   HVar1;
@@ -45,7 +45,7 @@ astruct_23 *__stdcall16far unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_
 }
 
 
-void __stdcall16far pass1_1008_818c(astruct_23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3)
+void  pass1_1008_818c(astruct_23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3)
 
 {
     BOOL16     BVar1;
@@ -70,7 +70,7 @@ void __stdcall16far pass1_1008_818c(astruct_23 *param_1, HINSTANCE16 param_2, WN
         uStack26  = 0x84f2;
         uStack24  = 0x1008;
         uStack22  = 0x40000;
-        puStack18 = PTR_LOOP_1050_038c;
+        puStack18 = globals->PTR_LOOP_1050_038c;
         uStack16  = 0x0;
         uStack14  = (param_1 + 0x58);
         uStack12  = (param_1 + 0x56);
@@ -143,7 +143,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     MoveTo16((HDC16)s_tile2_bmp_1050_1538, uStack68, 0x0);
     LineTo16((HDC16)s_tile2_bmp_1050_1538, uStack68, uStack62);
     uVar3 = (param_2 >> 0x10);
-    if((*(byte *)(param_2 + 0x4) & 0x4) != 0x0)
+    if((*(u8 *)(param_2 + 0x4) & 0x4) != 0x0)
     {
         uStack4 = 0x1;
     }
@@ -160,7 +160,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
         LineTo16((HDC16)s_tile2_bmp_1050_1538, 0x1, 0x1);
         LineTo16((HDC16)s_tile2_bmp_1050_1538, 0x1, uStack62 - 0x1);
     }
-    uStack4  = ((*(byte *)(param_2 + 0x4) & 0x8) != 0x0);
+    uStack4  = ((*(u8 *)(param_2 + 0x4) & 0x8) != 0x0);
     local_1c = uStack66 + uStack4;
     iStack22 = (uStack64 - uStack72) + uStack4;
     iStack26 = iStack22 + 0x1;
@@ -189,7 +189,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
 }
 
 
-astruct_20 *__stdcall16far unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
+astruct_20 * unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
     HGDIOBJ16   l_hgdiobj_1;
@@ -220,7 +220,7 @@ astruct_20 *__stdcall16far unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_
     iVar1->field_0xac         = 0x45000000;
     iVar1->field_0xbc         = (param_4 + 0x8);
     l_struct_2                = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_5, puVar1, unaff_DI);
-    uVar1                     = (u16 *)(l_struct_2 >> 0x10);
+    uVar1                     = (l_struct_2 >> 0x10);
     iVar1->field_0xb4         = 0x0;
     iVar1->field_0xb6         = 0x0;
     iVar1->field_0xb8         = (l_struct_2 + 0xa);
@@ -231,7 +231,7 @@ astruct_20 *__stdcall16far unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_
 }
 
 
-void __stdcall16far fill_rect_1008_62c0(HWND16 param_1)
+void  fill_rect_1008_62c0(HWND16 param_1)
 
 {
     RECT16        local_2e[0x2];
@@ -249,7 +249,7 @@ void __stdcall16far fill_rect_1008_62c0(HWND16 param_1)
 }
 
 
-HPALETTE16 __stdcall16far palette_op_1008_4e08(astruct_13 *param_1, BOOL16 param_2, u16 param_3, HDC16 param_4)
+HPALETTE16  palette_op_1008_4e08(astruct_13 *param_1, BOOL16 param_2, u16 param_3, HDC16 param_4)
 
 {
     HPALETTE16 HVar1;
@@ -262,7 +262,7 @@ HPALETTE16 __stdcall16far palette_op_1008_4e08(astruct_13 *param_1, BOOL16 param
 
 // WARNING: Unable to use type for symbol uVar3
 
-void __stdcall16far create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
+void  create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
 
 {
     i16        *piVar1;
@@ -282,9 +282,9 @@ void __stdcall16far create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE
     uVar8          = (in_struct_1 >> 0x10);
     local_struct_1 = (astruct_13 *)in_struct_1;
     uVar4          = (local_struct_1->field_0xc + 0x2) * 0x4;
-    if(local_struct_1->field_0xe == (u16 *)0x0)
+    if(local_struct_1->field_0xe == 0x0)
     {
-        in_log_palette_2 = (LOGPALETTE *)&PTR_LOOP_1050_1000;
+        in_log_palette_2 = (LOGPALETTE *)&globals->PTR_LOOP_1050_1000;
         mem_op_1000_179c(uVar4, param_3, 0x1000);
         &local_struct_1->field_0xe         = uVar4;
         (&local_struct_1->field_0xe + 0x2) = param_3;
@@ -320,7 +320,7 @@ void __stdcall16far create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5)
+void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
     undefined4  uVar1;
@@ -328,7 +328,7 @@ void __stdcall16far file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 pa
     COLORREF    color;
     COLORREF    color_00;
     u16         x;
-    u16_t       uVar2;
+    u16         uVar2;
     LPCSTR      output;
     i16         iVar3;
     u16         uVar4;
@@ -349,7 +349,7 @@ void __stdcall16far file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 pa
     *param_1        = s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x9;
     (iVar3 + 0x2)   = 0x1008;
     paVar5          = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x2, param_5);
-    uVar2           = (u16_t)(paVar5 >> 0x10);
+    uVar2           = (paVar5 >> 0x10);
     struct_op_1008_48fe((astruct_81 *)CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
     read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, uVar2);
     pass1_1008_5068((astruct_76 *)param_1, (astruct_83 *)CONCAT22(param_5, local_26));
@@ -377,7 +377,7 @@ void __stdcall16far file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 pa
 }
 
 
-BOOL16 __stdcall16far cleanup_palette_1008_56e2(u32 param_1, HDC16 param_2)
+BOOL16  cleanup_palette_1008_56e2(u32 param_1, HDC16 param_2)
 
 {
     HPALETTE16 HVar1;
@@ -391,7 +391,7 @@ BOOL16 __stdcall16far cleanup_palette_1008_56e2(u32 param_1, HDC16 param_2)
 }
 
 
-void __stdcall16far set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
+void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
 
 {
     i1616      info;
@@ -434,7 +434,7 @@ void __stdcall16far set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
 }
 
 
-void __stdcall16far stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
+void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
 
 {
     PVOID      bits;
@@ -479,7 +479,7 @@ void __stdcall16far stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
 }
 
 
-u16 __stdcall16far palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
+u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
 
 {
     bool       bVar1;
@@ -527,7 +527,7 @@ u16 __stdcall16far palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, H
 }
 
 
-void __stdcall16far set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 param_4)
+void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 param_4)
 
 {
     u16         uVar1;
@@ -668,7 +668,7 @@ void __stdcall16far set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_i
     return;
 }
 
-void __stdcall16far fill_rect_1008_39ac(HWND16 in_win_handle_1)
+void  fill_rect_1008_39ac(HWND16 in_win_handle_1)
 
 {
     RECT16        local_brush_handle[0x2];
@@ -686,7 +686,7 @@ void __stdcall16far fill_rect_1008_39ac(HWND16 in_win_handle_1)
 }
 
 
-void __stdcall16far pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 param_5)
+void  pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
     undefined4 uVar1;
@@ -703,7 +703,7 @@ void __stdcall16far pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 p
 }
 
 
-void __stdcall16far set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
+void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
 
 {
     HICON16     HVar1;

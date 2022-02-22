@@ -1,5 +1,5 @@
 
-void __stdcall16far file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
+void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 
 {
     code      **ppcVar1;
@@ -40,7 +40,7 @@ void __stdcall16far file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *p
 }
 
 
-void __stdcall16far close_file_1008_496c(u16 *param_1)
+void  close_file_1008_496c(u16 *param_1)
 
 {
     undefined4 *puVar1;
@@ -79,7 +79,7 @@ void __stdcall16far close_file_1008_496c(u16 *param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16_t __stdcall16far read_file_1008_49e8(u32 param_1, u16_t param_2, u16_t param_3)
+u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
 
 {
     HFILE16    HVar1;
@@ -92,7 +92,7 @@ u16_t __stdcall16far read_file_1008_49e8(u32 param_1, u16_t param_2, u16_t param
     i16        iVar7;
     i16        unaff_DI;
     u16        uVar8;
-    u16_t      h_file;
+    u16        h_file;
     u16        unaff_SS;
     long       lVar9;
     i16        local_18;
@@ -107,35 +107,35 @@ u16_t __stdcall16far read_file_1008_49e8(u32 param_1, u16_t param_2, u16_t param
     {
         if((iVar7 + 0x1e) != 0x0)
         {
-            return (u16_t)param_3;
+            return param_3;
         }
         h_file = param_2;
         if((iVar7 + 0xc) == -0x1)
         {
-            h_file                    = (u16_t)s_tile2_bmp_1050_1538;
+            h_file                    = s_tile2_bmp_1050_1538;
             HVar1                     = _lopen16((LPCSTR)param_2, 0x0);
             *(HFILE16 *)(iVar7 + 0xc) = HVar1;
             if(HVar1 == 0xffff)
             {
-                return (u16_t)param_3;
+                return param_3;
             }
         }
         uStack6 = 0x0;
         lVar9   = WIN16_hread(h_file, 0xe, ZEXT24(&local_18) << 0x10);
-        param_3 = (u16_t)(lVar9 >> 0x10);
+        param_3 = (lVar9 >> 0x10);
         if((lVar9 == 0xe) && (param_3 == 0x0))
         {
             uStack6 = uStack22;
             if(local_18 == &PTR_LOOP_1050_4d42)
             {
                 _llseek16((HFILE16)s_tile2_bmp_1050_1538, 0x0, 0x0);
-                lVar9          = mem_op_1000_0a48(0x1, uStack6, (uStack6 >> 0x10), _PTR_LOOP_1050_5f2c, 0x1000);
+                lVar9          = mem_op_1000_0a48(0x1, uStack6, (uStack6 >> 0x10), globals->_PTR_LOOP_1050_5f2c, 0x1000);
                 puVar6         = (lVar9 >> 0x10);
                 (iVar7 + 0x1a) = lVar9;
                 (iVar7 + 0x1c) = puVar6;
                 if((puVar6 | (iVar7 + 0x1a)) == 0x0)
                 {
-                    return (u16_t)puVar6;
+                    return puVar6;
                 }
                 lVar9    = WIN16_hread(0x1000, (SEGPTR)uStack6, CONCAT22((iVar7 + 0x1a), (uStack6 >> 0x10)));
                 puVar5   = (lVar9 >> 0x10);
@@ -169,9 +169,9 @@ u16_t __stdcall16far read_file_1008_49e8(u32 param_1, u16_t param_2, u16_t param
                 if((iVar7 + 0x22) != 0x0)
                 {
                     pass1_1008_4b8e(param_1, puVar6, unaff_DI, unaff_SS);
-                    return (u16_t)puVar6;
+                    return puVar6;
                 }
-                return (u16_t)puVar6;
+                return puVar6;
             }
         }
         _lclose16((HFILE16)s_tile2_bmp_1050_1538);
@@ -181,7 +181,7 @@ u16_t __stdcall16far read_file_1008_49e8(u32 param_1, u16_t param_2, u16_t param
 }
 
 
-u32 __stdcall16far file_1008_4c26(u32 param_1, byte param_2)
+u32  file_1008_4c26(u32 param_1, u8 param_2)
 
 {
     close_file_1008_496c(param_1);
@@ -192,7 +192,7 @@ u32 __stdcall16far file_1008_4c26(u32 param_1, byte param_2)
     return param_1;
 }
 
-void __stdcall16far save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
+void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
 
 {
     char        cVar1;

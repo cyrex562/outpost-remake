@@ -1,5 +1,5 @@
 
-void __stdcall16far mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
+void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
 
 {
     i16 iVar1;

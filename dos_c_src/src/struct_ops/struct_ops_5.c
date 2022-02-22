@@ -1,4 +1,7 @@
 
+#include "struct_ops_5.h"
+#include "types.h"
+
 u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3)
 
 {
@@ -96,10 +99,10 @@ u32 pass1_1010_0eac(u8 *param_1, u8 *param_2, u16 param_3, u8 *param_4, u16 para
 
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
-    CONCAT22(param_2, param_1) = 0xf0c;
-    (param_1 + 0x2)            = 0x1010;
-    PTR_LOOP_1050_4230         = param_1;
-    PTR_LOOP_1050_4232         = param_2;
+    CONCAT22(param_2, param_1)  = 0xf0c;
+    (param_1 + 0x2)             = 0x1010;
+    globals->PTR_LOOP_1050_4230 = param_1;
+    globals->PTR_LOOP_1050_4232 = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0xff, param_4, param_5);
     return CONCAT22(param_2, param_1);
 }
@@ -253,7 +256,7 @@ u16 *pass1_1008_eabc(i16 param_1, u16 param_2, u16 param_3)
     pass1_1008_3e38(CONCAT22(param_2, param_1 + 0xc));
     CONCAT22(param_2, param_1) = 0xeb1a;
     (param_1 + 0x2)            = 0x1008;
-    return (u16 *)CONCAT22(param_2, param_1);
+    return CONCAT22(param_2, param_1);
 }
 
 
@@ -412,7 +415,7 @@ void pass1_1008_d99e(i16 param_1, u16 param_2, u16 param_3, u8 *param_4, u16 par
     CONCAT22(param_2, param_1) = 0xd9fa;
     (param_1 + 0x2)            = 0x1008;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x9a, param_4, param_5);
-    _PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
+    globals->_PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
     return;
 }
 
@@ -457,7 +460,7 @@ void struct_1008_dcdc(u16 *param_1)
     return;
 }
 
-void __stdcall16far pass1_1008_e05e(u32 param_1, u16 param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6)
+void  pass1_1008_e05e(u32 param_1, u16 param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6)
 
 {
     i16  iVar1;
@@ -629,18 +632,18 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     u16          uVar3;
     u16          uVar13;
 
-    _PTR_LOOP_1050_06e0 = param_1;
+    globals->_PTR_LOOP_1050_06e0 = param_1;
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_2, 0x1000);
-        PTR_LOOP_1050_5f2e = param_2;
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_2, 0x1000);
+        globals->PTR_LOOP_1050_5f2e = param_2;
     }
     else
     {
     }
-    uVar1                = fn_ptr_op_1000_1708(0x1aa, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+    uVar1                = fn_ptr_op_1000_1708(0x1aa, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     param_1              = uVar1;
-    (param_1 + 0x2)      = PTR_LOOP_1050_5f2e;
+    (param_1 + 0x2)      = globals->PTR_LOOP_1050_5f2e;
     uVar3                = (*param_1 >> 0x10);
     iVar2                = (astruct_139 *)*param_1;
     iVar2->field_0x6     = 0x6e4;
@@ -988,10 +991,10 @@ u32 pass1_1008_aefe(u8 *param_1, u8 *param_2, u16 param_3, u8 *param_4, u16 para
 
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
-    CONCAT22(param_2, param_1) = 0xaf7c;
-    (param_1 + 0x2)            = 0x1008;
-    PTR_LOOP_1050_4230         = param_1;
-    PTR_LOOP_1050_4232         = param_2;
+    CONCAT22(param_2, param_1)  = 0xaf7c;
+    (param_1 + 0x2)             = 0x1008;
+    globals->PTR_LOOP_1050_4230 = param_1;
+    globals->PTR_LOOP_1050_4232 = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3, param_4, param_5);
     return CONCAT22(param_2, param_1);
 }

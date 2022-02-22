@@ -1,5 +1,5 @@
 
-void __stdcall16far cursor_op_1008_2dcc(i16 param_1, u16_t param_2, u16_t param_3, HINSTANCE16 in_hinstance)
+void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_hinstance)
 
 {
     undefined4 uVar1;
@@ -48,7 +48,7 @@ void __stdcall16far cursor_op_1008_2dcc(i16 param_1, u16_t param_2, u16_t param_
 }
 
 
-void __stdcall16far win_ui_cursor_op_1008_2e9a(astruct_72 **param_1, u16 param_2)
+void  win_ui_cursor_op_1008_2e9a(astruct_72 **param_1, u16 param_2)
 
 {
     u16        uVar1;
@@ -121,7 +121,7 @@ void __stdcall16far win_ui_cursor_op_1008_2e9a(astruct_72 **param_1, u16 param_2
     return;
 }
 
-void __stdcall16far pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
+void  pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     u32        UVar1;
@@ -163,7 +163,7 @@ void __stdcall16far pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 p
 }
 
 
-void __stdcall16far menu_ui_op_1008_09ba(u32 param_1, HWND16 param_2, RECT16 *param_3, HWND16 param_4)
+void  menu_ui_op_1008_09ba(u32 param_1, HWND16 param_2, RECT16 *param_3, HWND16 param_4)
 
 {
     HMENU16 HVar1;
@@ -197,7 +197,7 @@ void __stdcall16far menu_ui_op_1008_09ba(u32 param_1, HWND16 param_2, RECT16 *pa
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_a7(void)
+void  switchD_1008: 1091 ::caseD_a7(void)
 
 {
     undefined4  uVar1;
@@ -211,7 +211,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_a7(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_aa(void)
+void  switchD_1008: 1091 ::caseD_aa(void)
 
 {
     undefined4  uVar1;
@@ -225,7 +225,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_aa(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_ac(void)
+void  switchD_1008: 1091 ::caseD_ac(void)
 
 {
     undefined4  uVar1;
@@ -239,7 +239,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_ac(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_ad(void)
+void  switchD_1008: 1091 ::caseD_ad(void)
 
 {
     undefined4  uVar1;
@@ -253,7 +253,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_ad(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_ae(void)
+void  switchD_1008: 1091 ::caseD_ae(void)
 
 {
     undefined4  uVar1;
@@ -267,7 +267,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_ae(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_b1(void)
+void  switchD_1008: 1091 ::caseD_b1(void)
 
 {
     undefined4  uVar1;
@@ -281,7 +281,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_b1(void)
 }
 
 
-void __stdcall16far switchD_1008: 1091 ::caseD_b3(void)
+void  switchD_1008: 1091 ::caseD_b3(void)
 
 {
     undefined4  uVar1;
@@ -295,7 +295,7 @@ void __stdcall16far switchD_1008: 1091 ::caseD_b3(void)
 }
 
 
-void __stdcall16far draw_op_1008_1230(HWND16 param_1)
+void  draw_op_1008_1230(HWND16 param_1)
 
 {
     fill_rect_1008_39ac(param_1);
@@ -303,7 +303,7 @@ void __stdcall16far draw_op_1008_1230(HWND16 param_1)
 }
 
 
-void __stdcall16far message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u16 param_4)
+void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u16 param_4)
 
 {
     BOOL16    BVar1;
@@ -354,7 +354,7 @@ void __stdcall16far message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __stdcall16far win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6)
+void  win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6)
 
 {
     code     **ppcVar1;
@@ -369,7 +369,7 @@ void __stdcall16far win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCST
     u16        uVar8;
     u16        extraout_DX;
     i16        unaff_DI;
-    u16_t      uVar9;
+    u16        uVar9;
     u32       *puVar10;
     char      *pcVar11;
     u16       *puVar12;
@@ -393,12 +393,12 @@ void __stdcall16far win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCST
     puVar6  = (puVar10 >> 0x10);
     BVar2   = read_file_1008_6e78((u1632_t)local_8, param_4, param_3, param_4);
     iVar15  = param_1;
-    uVar9   = (u16_t)(param_1 >> 0x10);
+    uVar9   = (param_1 >> 0x10);
     if(BVar2 == 0x0)
     {
         if(PTR_LOOP_1050_0310 == 0x0)
         {
-            PTR_LOOP_1050_0310 = 0x6d4;
+            globals->PTR_LOOP_1050_0310 = 0x6d4;
         }
         pcVar11 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar7   = (pcVar11 >> 0x10);
@@ -409,7 +409,7 @@ void __stdcall16far win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCST
         MessageBeep16(0x1010);
         MessageBox16((HWND16)s_tile2_bmp_1050_1538, (LPCSTR)&PTR_LOOP_1050_0010, (LPCSTR)pcVar11, type);
         fn_ptr_1000_17ce((astruct_18 *)CONCAT22(uVar7, uVar3), 0x1000);
-        param_3 = (LPCSTR)&PTR_LOOP_1050_1000;
+        param_3 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
     cursor_op_1008_2dcc(iVar15, uVar9, 0x8, param_3);
@@ -450,7 +450,7 @@ void __stdcall16far win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCST
     return;
 }
 
-void __stdcall16far cleanup_ui_op_1008_0618(u16 *param_1)
+void  cleanup_ui_op_1008_0618(u16 *param_1)
 
 {
     undefined4 *puVar1;
@@ -499,7 +499,7 @@ void __stdcall16far cleanup_ui_op_1008_0618(u16 *param_1)
 }
 
 
-void __stdcall16far win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 param_4)
+void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 param_4)
 
 {
     code     **ppcVar1;
@@ -569,7 +569,7 @@ BOOL16 msg_box_op_1000_1f24(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
 }
 
 
-BOOL16 __stdcall16far pass1_1000_1f7e(u16 *param_1, u16 param_2)
+BOOL16  pass1_1000_1f7e(u16 *param_1, u16 param_2)
 
 {
     char   cVar1;
@@ -606,7 +606,7 @@ LAB_1000_1fbe:
     return BVar2;
 }
 
-BOOL16 __stdcall16far msg_box_op_1000_214c(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 param_5)
+BOOL16  msg_box_op_1000_214c(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
     i1616  IVar1;
@@ -648,7 +648,7 @@ BOOL16 __stdcall16far msg_box_op_1000_214c(u16 param_1, i16 param_2, u16 param_3
 }
 
 
-bool __stdcall16far mem_op_1000_21b6(u16 param_1, u16 param_2)
+bool  mem_op_1000_21b6(u16 param_1, u16 param_2)
 
 {
     BOOL16 BVar1;

@@ -1,5 +1,5 @@
 
-void __stdcall16far destroy_win_1038_ef3a(astruct_31 *param_1, HWND16 param_2)
+void  destroy_win_1038_ef3a(astruct_31 *param_1, HWND16 param_2)
 
 {
     astruct_31 *iVar1;
@@ -19,7 +19,7 @@ void __stdcall16far destroy_win_1038_ef3a(astruct_31 *param_1, HWND16 param_2)
     return;
 }
 
-void __stdcall16far win_ui_op_1040_0000(astruct_1 *param_1, u8 *param_2, HWND16 param_3)
+void  win_ui_op_1040_0000(astruct_1 *param_1, u8 *param_2, HWND16 param_3)
 
 {
     astruct_160 *rect;
@@ -111,7 +111,7 @@ void __stdcall16far win_ui_op_1040_0000(astruct_1 *param_1, u8 *param_2, HWND16 
     return;
 }
 
-void __stdcall16far win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, WNDCLASS16 *param_6)
+void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, WNDCLASS16 *param_6)
 
 {
     u16         uVar1;
@@ -179,7 +179,7 @@ void __stdcall16far win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u
         if((param_1 + 0x92) != 0x3)
         {
             uVar5 = 0x1008;
-            win_1008_5c5c(param_6, BVar2, in_DX, _PTR_LOOP_1050_02a0, 0x1de);
+            win_1008_5c5c(param_6, BVar2, in_DX, globals->_PTR_LOOP_1050_02a0, 0x1de);
         }
         if((param_1 + 0x92) != 0x8)
         {
@@ -205,7 +205,7 @@ void __stdcall16far win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u
         GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16d);
         BVar2 = EnableWindow16((HWND16)s_tile2_bmp_1050_1538, 0x0);
         uVar5 = 0x1008;
-        win_1008_5c5c(param_6, BVar2, in_DX, _PTR_LOOP_1050_02a0, 0x1de);
+        win_1008_5c5c(param_6, BVar2, in_DX, globals->_PTR_LOOP_1050_02a0, 0x1de);
         if((param_1 + 0x94) != 0x8)
         {
             iVar3   = (param_1 + 0x94) * 0xe;
@@ -276,7 +276,7 @@ LAB_1040_04da:
     return;
 }
 
-LRESULT __stdcall16far win_ui_op_1040_0558(u32 param_1, i16 param_2, HWND16 param_3)
+LRESULT  win_ui_op_1040_0558(u32 param_1, i16 param_2, HWND16 param_3)
 
 {
     i16      iVar1;
@@ -331,7 +331,7 @@ void enable_win_1040_060e(u32 param_1, i16 param_2, HWND16 param_3, u16 param_4)
     return;
 }
 
-void __stdcall16far pass1_1040_073a(astruct_18 *param_1)
+void  pass1_1040_073a(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -344,7 +344,7 @@ void __stdcall16far pass1_1040_073a(astruct_18 *param_1)
     return;
 }
 
-void __stdcall16far show_win_1040_0766(astruct_1 *param_1, u16 param_2)
+void  show_win_1040_0766(astruct_1 *param_1, u16 param_2)
 
 {
     u8        *in_DX;
@@ -373,7 +373,7 @@ void __stdcall16far show_win_1040_0766(astruct_1 *param_1, u16 param_2)
     return;
 }
 
-void __stdcall16far win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6, HWND16 param_7, u16 param_8)
+void  win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6, HWND16 param_7, u16 param_8)
 
 {
     code      **ppcVar1;
@@ -399,7 +399,7 @@ void __stdcall16far win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u
         puVar4     = pass1_1008_5fd8(param_8, param_6);
         uStack2060 = CONCAT22(param_6, puVar4);
         puVar5     = param_6;
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
+        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
         IVar2        = MessageBox16(0x1010, (LPCSTR)(s_New_failed_in_Op__Op_1050_0020 + 0x14), local_806, param_8);
         local_406[0] = uStack2060;
         uVar6        = 0x1000;
@@ -459,8 +459,8 @@ void __stdcall16far win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u
             goto LAB_1040_09f9;
         }
         enable_window_1040_0acc(param_1, param_2, 0x0, param_7);
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_406, param_8);
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
+        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_406, param_8);
+        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
         uVar6 = SUB42(s_tile2_bmp_1050_1538, 0x0);
         IVar2 = MessageBox16(0x1010, (LPCSTR)(s_New_failed_in_Op__Op_1050_0020 + 0x14), (LPCSTR)local_406, param_8);
         if(IVar2 == 0x6)
@@ -480,7 +480,7 @@ LAB_1040_0821:
     return;
 }
 
-void __stdcall16far enable_window_1040_0acc(u16 param_1, u16 param_2, BOOL16 param_3, HWND16 param_4)
+void  enable_window_1040_0acc(u16 param_1, u16 param_2, BOOL16 param_3, HWND16 param_4)
 
 {
     BOOL16 BVar1;
@@ -506,7 +506,7 @@ void __stdcall16far enable_window_1040_0acc(u16 param_1, u16 param_2, BOOL16 par
     return;
 }
 
-void __stdcall16far pass1_1040_0c54(astruct_18 *param_1, u16 param_2)
+void  pass1_1040_0c54(astruct_18 *param_1, u16 param_2)
 
 {
     u16 uVar1;
@@ -519,7 +519,7 @@ void __stdcall16far pass1_1040_0c54(astruct_18 *param_1, u16 param_2)
     return;
 }
 
-void __stdcall16far show_win_1040_0c7c(astruct_1 *param_1, u16 param_2, u16 param_3)
+void  show_win_1040_0c7c(astruct_1 *param_1, u16 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -533,7 +533,7 @@ void __stdcall16far show_win_1040_0c7c(astruct_1 *param_1, u16 param_2, u16 para
     return;
 }
 
-void __stdcall16far pass1_1038_e03e(u32 param_1)
+void  pass1_1038_e03e(u32 param_1)
 
 {
     undefined4 uVar1;
@@ -561,7 +561,7 @@ void __stdcall16far pass1_1038_e03e(u32 param_1)
     return;
 }
 
-void __stdcall16far pass1_1038_e16e(astruct_18 *param_1)
+void  pass1_1038_e16e(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -574,7 +574,7 @@ void __stdcall16far pass1_1038_e16e(astruct_18 *param_1)
     return;
 }
 
-void __stdcall16far check_radio_btn_show_win_1038_e19a(astruct_1 *param_1)
+void  check_radio_btn_show_win_1038_e19a(astruct_1 *param_1)
 
 {
     dialog_ui_fn_1040_78e2(param_1, &PTR_LOOP_1050_1040);
@@ -584,7 +584,7 @@ void __stdcall16far check_radio_btn_show_win_1038_e19a(astruct_1 *param_1)
     return;
 }
 
-void __stdcall16far pass1_1038_e308(astruct_18 *param_1)
+void  pass1_1038_e308(astruct_18 *param_1)
 
 {
     i16 iVar1;
@@ -600,7 +600,7 @@ void __stdcall16far pass1_1038_e308(astruct_18 *param_1)
     return;
 }
 
-void __stdcall16far win_ui_op_1038_e348(astruct_1 *param_1)
+void  win_ui_op_1038_e348(astruct_1 *param_1)
 
 {
     undefined4   uVar1;
@@ -626,24 +626,24 @@ void __stdcall16far win_ui_op_1038_e348(astruct_1 *param_1)
 
     dialog_ui_fn_1040_78e2(param_1, &PTR_LOOP_1050_1040);
     puStack6           = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2b, unaff_SS, in_DX, unaff_DI);
-    PTR_LOOP_1050_5f2e = (puStack6 >> 0x10);
+    globals->PTR_LOOP_1050_5f2e = (puStack6 >> 0x10);
     uStack8            = pass1_1010_088c();
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
     }
     else
     {
     }
-    puStack26      = (u16 *)CONCAT22(PTR_LOOP_1050_5f2e, PTR_LOOP_1050_5f2c);
-    uVar2          = fn_ptr_op_1000_1708((uStack8 + 0x2) * 0x4, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+    puStack26      = CONCAT22(PTR_LOOP_1050_5f2e, globals->PTR_LOOP_1050_5f2c);
+    uVar2          = fn_ptr_op_1000_1708((uStack8 + 0x2) * 0x4, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     uVar7          = (param_1 >> 0x10);
     iVar5          = param_1;
     (iVar5 + 0x8e) = uVar2;
-    (iVar5 + 0x90) = PTR_LOOP_1050_5f2e;
+    (iVar5 + 0x90) = globals->PTR_LOOP_1050_5f2e;
     for(iStack10 = 0x1; iStack10 <= uStack8; iStack10 = iStack10 + 0x1)
     {
-        puStack26 = (u16 *)pass1_1010_091e(puStack6, (puStack6 >> 0x10), iStack10);
+        puStack26 = pass1_1010_091e(puStack6, (puStack6 >> 0x10), iStack10);
         puVar3    = (puStack26 >> 0x10);
         local_22  = *puStack26;
         uStack32  = (puStack26 + 0x2);
@@ -680,7 +680,7 @@ void __stdcall16far win_ui_op_1038_e348(astruct_1 *param_1)
     return;
 }
 
-void __stdcall16far pass1_1038_e6f0(astruct_18 *param_1)
+void  pass1_1038_e6f0(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -693,7 +693,7 @@ void __stdcall16far pass1_1038_e6f0(astruct_18 *param_1)
     return;
 }
 
-void __stdcall16far unk_win_ui_op_1038_e71c(astruct_1 *param_1, u16 param_2)
+void  unk_win_ui_op_1038_e71c(astruct_1 *param_1, u16 param_2)
 
 {
     u16         extraout_DX;
@@ -717,7 +717,7 @@ void __stdcall16far unk_win_ui_op_1038_e71c(astruct_1 *param_1, u16 param_2)
     return;
 }
 
-void __stdcall16far chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2)
+void  chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2)
 
 {
     undefined4  uVar1;
@@ -808,7 +808,7 @@ void __stdcall16far chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2)
     return;
 }
 
-void __stdcall16far pass1_1038_e9ec(astruct_18 *param_1)
+void  pass1_1038_e9ec(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -821,7 +821,7 @@ void __stdcall16far pass1_1038_e9ec(astruct_18 *param_1)
     return;
 }
 
-void __stdcall16far win_ui_op_1038_ea18(astruct_1 *param_1)
+void  win_ui_op_1038_ea18(astruct_1 *param_1)
 
 {
     i1616  IVar1;
@@ -842,7 +842,7 @@ void __stdcall16far win_ui_op_1038_ea18(astruct_1 *param_1)
     return;
 }
 
-void __stdcall16far win_ui_op_1038_eaa2(u32 param_1, i16 param_2, HWND16 param_3, WPARAM16 param_4)
+void  win_ui_op_1038_eaa2(u32 param_1, i16 param_2, HWND16 param_3, WPARAM16 param_4)
 
 {
     LRESULT LVar1;
@@ -860,7 +860,7 @@ void __stdcall16far win_ui_op_1038_eaa2(u32 param_1, i16 param_2, HWND16 param_3
     return;
 }
 
-void __stdcall16far win_dlg_op_1038_c95e(u32 param_1, i16 param_2)
+void  win_dlg_op_1038_c95e(u32 param_1, i16 param_2)
 
 {
     undefined4 uVar1;
@@ -927,11 +927,11 @@ void __stdcall16far win_dlg_op_1038_c95e(u32 param_1, i16 param_2)
         }
     }
     DestroyWindow16(unaff_CS);
-    PTR_LOOP_1050_5b80 = 0x0;
+    globals->PTR_LOOP_1050_5b80 = 0x0;
     return;
 }
 
-void __stdcall16far pass1_1038_cb30(astruct_18 *param_1)
+void  pass1_1038_cb30(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -945,7 +945,7 @@ void __stdcall16far pass1_1038_cb30(astruct_18 *param_1)
 }
 
 
-void __stdcall16far show_win_1038_cb5c(astruct_1 *param_1)
+void  show_win_1038_cb5c(astruct_1 *param_1)
 
 {
     undefined4  uVar1;
@@ -965,13 +965,13 @@ void __stdcall16far show_win_1038_cb5c(astruct_1 *param_1)
     for(iStack10 = 0x0; iStack10 < uVar2; iStack10 = iStack10 + 0x1)
     {
         uVar1  = (param_1 + 0x8e);
-        puVar6 = (u16 *)pass1_1008_eb5c(uVar1, (uVar1 >> 0x10), iStack10);
+        puVar6 = pass1_1008_eb5c(uVar1, (uVar1 >> 0x10), iStack10);
         puVar3 = (puVar6 >> 0x10);
         puVar7 = puVar6;
         mem_op_1000_179c(0x42, puVar3, 0x1000);
         uVar4 = (puVar7 >> 0x10);
         in_DX = uVar4 | (astruct_160 *)puVar7;
-        if(puVar7 != (u16 *)0x0)
+        if(puVar7 != 0x0)
         {
             pass1_1008_3bd6((astruct_160 *)puVar7, uVar4, 0x0, CONCAT22(*puVar6, (puVar6 + 0x2)), 0x101, 0xff0100, CONCAT22((param_1 + 0x6), (puVar6 + 0x4)), in_DX, unaff_SS);
         }
@@ -982,7 +982,7 @@ void __stdcall16far show_win_1038_cb5c(astruct_1 *param_1)
 }
 
 
-void __stdcall16far destroy_window_1038_cc00(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
+void  destroy_window_1038_cc00(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
 
 {
     u16         uVar1;
@@ -1040,7 +1040,7 @@ void __stdcall16far destroy_window_1038_cc00(i16 param_1, u16 param_2, u16 param
 }
 
 
-void __stdcall16far pass1_1038_cd5c(astruct_18 *param_1)
+void  pass1_1038_cd5c(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -1054,7 +1054,7 @@ void __stdcall16far pass1_1038_cd5c(astruct_18 *param_1)
 }
 
 
-void __stdcall16far destroy_window_1038_cd88(astruct_1 *param_1)
+void  destroy_window_1038_cd88(astruct_1 *param_1)
 
 {
     u16 unaff_SS;
@@ -1069,7 +1069,7 @@ void __stdcall16far destroy_window_1038_cd88(astruct_1 *param_1)
 }
 
 
-void __stdcall16far check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HWND16 param_3)
+void  check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HWND16 param_3)
 
 {
     undefined4  uVar1;
@@ -1143,7 +1143,7 @@ void __stdcall16far check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HW
 }
 
 
-void __stdcall16far pass1_1038_d276(astruct_18 *param_1)
+void  pass1_1038_d276(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -1157,7 +1157,7 @@ void __stdcall16far pass1_1038_d276(astruct_18 *param_1)
 }
 
 
-void __stdcall16far win_ui_op_1038_d2a2(astruct_1 *param_1)
+void  win_ui_op_1038_d2a2(astruct_1 *param_1)
 
 {
     astruct_160 *rect;
@@ -1243,7 +1243,7 @@ void __stdcall16far win_ui_op_1038_d2a2(astruct_1 *param_1)
 }
 
 
-void __stdcall16far unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3, u32 param_4)
+void  unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3, u32 param_4)
 
 {
     i16         iVar1;
@@ -1328,7 +1328,7 @@ void __stdcall16far unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3
         uVar11  = 0x1f2;
     LAB_1038_d490:
         hwnd = 0x1008;
-        win_1008_5c5c(unaff_SS, uVar2, in_DX, _PTR_LOOP_1050_02a0, uVar11);
+        win_1008_5c5c(unaff_SS, uVar2, in_DX, globals->_PTR_LOOP_1050_02a0, uVar11);
         break;
     case 0x149:
         uStack6 = 0x1430648;
@@ -1377,7 +1377,7 @@ void __stdcall16far unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3
 }
 
 
-void __stdcall16far pass1_1038_d7d0(astruct_18 *param_1, u16 param_2)
+void  pass1_1038_d7d0(astruct_18 *param_1, u16 param_2)
 
 {
     i16 iVar1;
@@ -1402,7 +1402,7 @@ void __stdcall16far pass1_1038_d7d0(astruct_18 *param_1, u16 param_2)
 }
 
 
-void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
+void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
 
 {
     i16         *piVar1;
@@ -1429,26 +1429,26 @@ void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u1
     (param_1 + -0x6) = uVar5;
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(in_DX, 0x1000);
-        PTR_LOOP_1050_5f2e = in_DX;
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(in_DX, 0x1000);
+        globals->PTR_LOOP_1050_5f2e = in_DX;
     }
     else
     {
     }
-    (param_1 + -0x1c) = PTR_LOOP_1050_5f2c;
-    (param_1 + -0x1a) = PTR_LOOP_1050_5f2e;
-    uVar5             = fn_ptr_op_1000_1708(((param_1 + -0x6) + 0x2) * 0x4, 0x0, 0x1, PTR_LOOP_1050_5f2c, PTR_LOOP_1050_5f2e, 0x1000);
+    (param_1 + -0x1c) = globals->PTR_LOOP_1050_5f2c;
+    (param_1 + -0x1a) = globals->PTR_LOOP_1050_5f2e;
+    uVar5             = fn_ptr_op_1000_1708(((param_1 + -0x6) + 0x2) * 0x4, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     uVar2             = (param_1 + 0x6);
     uVar9             = (uVar2 >> 0x10);
     iVar7             = uVar2;
     (iVar7 + 0x96)    = uVar5;
-    (iVar7 + 0x98)    = PTR_LOOP_1050_5f2e;
+    (iVar7 + 0x98)    = globals->PTR_LOOP_1050_5f2e;
     (param_1 + -0x8)  = 0x1;
     while(iVar7 = (param_1 + -0x6), piVar1 = (param_1 + -0x8), *piVar1 == iVar7 || *piVar1 < iVar7)
     {
         uVar2             = (param_1 + 0x6);
         uVar2             = (uVar2 + 0x92);
-        puVar10           = (u16 *)pass1_1010_08e2(uVar2, (uVar2 >> 0x10), (param_1 + -0x8));
+        puVar10           = pass1_1010_08e2(uVar2, (uVar2 >> 0x10), (param_1 + -0x8));
         puVar6            = (puVar10 >> 0x10);
         (param_1 + -0x1c) = puVar10;
         (param_1 + -0x1a) = puVar6;
@@ -1461,7 +1461,7 @@ void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u1
         mem_op_1000_179c(0x42, puVar6, 0x1000);
         *(astruct_160 **)(param_1 + -0x28) = rect;
         (param_1 + -0x26)                  = puVar6;
-        PTR_LOOP_1050_5f2e                 = (puVar6 | rect);
+        globals->PTR_LOOP_1050_5f2e                 = (puVar6 | rect);
         if(PTR_LOOP_1050_5f2e == 0x0)
         {
             uVar2                            = (param_1 + 0x6);
@@ -1472,14 +1472,14 @@ void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u1
         {
             uVar2 = (param_1 + 0x6);
             uVar3 = (param_1 + -0x1c);
-            pass1_1008_3bd6(rect, (param_1 + -0x26), 0x0, CONCAT22((param_1 + -0x24), (param_1 + -0x22)), 0x101, 0xff0100, CONCAT22((uVar2 + 0x6), (uVar3 + 0x4)), PTR_LOOP_1050_5f2e, param_3);
+            pass1_1008_3bd6(rect, (param_1 + -0x26), 0x0, CONCAT22((param_1 + -0x24), (param_1 + -0x22)), 0x101, 0xff0100, CONCAT22((uVar2 + 0x6), (uVar3 + 0x4)), globals->PTR_LOOP_1050_5f2e, param_3);
             uVar2                            = (param_1 + 0x6);
             uVar2                            = (uVar2 + 0x96);
             uVar9                            = (uVar2 >> 0x10);
             iVar7                            = uVar2;
             iVar8                            = (param_1 + -0x8) * 0x4;
             *(astruct_160 **)(iVar7 + iVar8) = rect;
-            (iVar7 + iVar8 + 0x2)            = PTR_LOOP_1050_5f2e;
+            (iVar7 + iVar8 + 0x2)            = globals->PTR_LOOP_1050_5f2e;
         }
         uVar2 = (param_1 + 0x6);
         uVar2 = (uVar2 + 0x96);
@@ -1498,7 +1498,7 @@ void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u1
         piVar1  = (param_1 + -0x8);
         *piVar1 = *piVar1 + 0x1;
     }
-    puVar11          = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_3, PTR_LOOP_1050_5f2e, unaff_DI);
+    puVar11          = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_3, globals->PTR_LOOP_1050_5f2e, unaff_DI);
     (param_1 + -0xc) = puVar11;
     (param_1 + -0xa) = (puVar11 >> 0x10);
     uVar2            = (param_1 + -0xc);
@@ -1509,7 +1509,7 @@ void __stdcall16far destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u1
 }
 
 
-void __stdcall16far show_win_1038_b634(u32 param_1, HWND16 param_2)
+void  show_win_1038_b634(u32 param_1, HWND16 param_2)
 
 {
     i16    iVar1;
@@ -1537,7 +1537,7 @@ void __stdcall16far show_win_1038_b634(u32 param_1, HWND16 param_2)
 }
 
 
-void __stdcall16far show_win_1038_b68a(u32 param_1, HWND16 param_2)
+void  show_win_1038_b68a(u32 param_1, HWND16 param_2)
 
 {
     i16    iVar1;
@@ -1565,7 +1565,7 @@ void __stdcall16far show_win_1038_b68a(u32 param_1, HWND16 param_2)
 }
 
 
-BOOL16 __stdcall16far bring_win_to_top_1038_b72e(u32 param_1, i16 param_2, HWND16 in_win_handle_3)
+BOOL16  bring_win_to_top_1038_b72e(u32 param_1, i16 param_2, HWND16 in_win_handle_3)
 
 {
     if((param_2 * 0x4 + param_1) != 0x0)
@@ -1578,7 +1578,7 @@ BOOL16 __stdcall16far bring_win_to_top_1038_b72e(u32 param_1, i16 param_2, HWND1
 }
 
 
-void __stdcall16far pass1_1038_b7f0(astruct_18 *param_1)
+void  pass1_1038_b7f0(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -1592,7 +1592,7 @@ void __stdcall16far pass1_1038_b7f0(astruct_18 *param_1)
 }
 
 
-void __stdcall16far win_ui_op_1038_b81c(astruct_1 *param_1)
+void  win_ui_op_1038_b81c(astruct_1 *param_1)
 
 {
     u32        uVar1;
@@ -1656,7 +1656,7 @@ void __stdcall16far win_ui_op_1038_b81c(astruct_1 *param_1)
 }
 
 
-u32 __stdcall16far win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HWND16 param_5, WNDCLASS16 *param_6)
+u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HWND16 param_5, WNDCLASS16 *param_6)
 
 {
     i16        *piVar1;
@@ -1778,7 +1778,7 @@ u32 __stdcall16far win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u
             if(param_3 != 0xfbe)
                 goto LAB_1038_bbbf;
             puStack14 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_6, param_4, unaff_DI);
-            puStack16 = PTR_LOOP_1050_13ae;
+            puStack16 = globals->PTR_LOOP_1050_13ae;
             if(PTR_LOOP_1050_13ae == (&PTR_LOOP_1050_0000 + 0x1))
             {
                 puStack16 = &PTR_LOOP_1050_0002;
@@ -1786,7 +1786,7 @@ u32 __stdcall16far win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u
             iStack10 = (puStack16 * 0xc + 0x5b84) + -0x1;
             pass1_1008_612e(0x0, iStack10, iStack10);
             uStack20 = pass1_1018_1e78(*(iVar7 + 0x92), ((puStack16 * 0x6 + iStack10) * 0x2 + 0x5b86));
-            load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x50, local_464, (short)param_6);
+            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x50, local_464, (short)param_6);
             pcVar11 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             puVar6  = (pcVar11 >> 0x10);
             uVar5   = wspri16f16((LPSTR)0x1010, local_414, &param_6->style);
@@ -1800,7 +1800,7 @@ u32 __stdcall16far win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u
             {
                 pCVar14 = local_414;
                 pWVar15 = param_6;
-                puVar16 = PTR_LOOP_1050_0396;
+                puVar16 = globals->PTR_LOOP_1050_0396;
                 pcVar11 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
                 uVar9   = SUB42(&PTR_LOOP_1050_1040, 0x0);
                 paVar12 = pass1_1040_8478(CONCAT22(puVar6, puVar16), 0x41, pcVar11, CONCAT22(pWVar15, pCVar14), puVar16, (pcVar11 >> 0x10));
@@ -1829,7 +1829,7 @@ LAB_1038_bc26:
 }
 
 
-void __stdcall16far win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3)
+void  win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3)
 
 {
     undefined4 uVar1;
@@ -1853,7 +1853,7 @@ void __stdcall16far win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2,
 }
 
 
-void __stdcall16far pass1_1038_be4a(astruct_18 *param_1)
+void  pass1_1038_be4a(astruct_18 *param_1)
 
 {
     u16 uVar1;
@@ -1867,7 +1867,7 @@ void __stdcall16far pass1_1038_be4a(astruct_18 *param_1)
 }
 
 
-void __stdcall16far pass1_1038_be76(u16 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 param_5)
+void  pass1_1038_be76(u16 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 param_5)
 
 {
     u16 *puVar1;

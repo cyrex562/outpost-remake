@@ -53,7 +53,7 @@ void pass1_1020_3c8c(u32 param_1, u32 param_2, u16 param_3)
     return;
 }
 
-astruct_3 *pass1_1020_3ca6(astruct_3 *param_1, byte param_2, u16 param_3)
+astruct_3 *pass1_1020_3ca6(astruct_3 *param_1, u8 param_2, u16 param_3)
 
 {
     u32  uVar1;
@@ -67,7 +67,7 @@ astruct_3 *pass1_1020_3ca6(astruct_3 *param_1, byte param_2, u16 param_3)
         param_1._0_2_ = 0x0;
         param_1._2_2_ = 0x0;
     }
-    puStack10       = (u16 *)CONCAT22(param_1._2_2_, param_1);
+    puStack10       = CONCAT22(param_1._2_2_, param_1);
     *puStack10      = 0x389a;
     (param_1 + 0x2) = 0x1008;
     cleanup_menu_ui_op_1020_795c(param_1, param_3);
@@ -186,7 +186,7 @@ u16 destroy_win_1020_1e1e(HWND16 param_1)
     return 0x1;
 }
 
-astruct_18 *pass1_1020_1e54(astruct_18 *param_1, byte param_2)
+astruct_18 *pass1_1020_1e54(astruct_18 *param_1, u8 param_2)
 
 {
     ui_cleanup_op_1040_782c(param_1, &PTR_LOOP_1050_1040);
@@ -416,7 +416,7 @@ void window_op_1020_10a0(astruct *param_1)
     (iVar11 + 0xf4)             = uVar9;
     (iVar11 + 0xe0)             = (iVar11 + 0xf2);
     (iVar11 + 0xe2)             = uVar9;
-    puVar10                     = PTR_LOOP_1050_038c;
+    puVar10                     = globals->PTR_LOOP_1050_038c;
     uVar3                       = LoadIcon16(0x1010, (LPCSTR)s_PLNTICON_1050_4267);
     *(HICON16 *)(iVar11 + 0xc2) = uVar3;
     uVar1                       = (iVar11 + 0xf2);
@@ -503,7 +503,7 @@ void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param
 }
 
 
-astruct_3 *pass1_1020_135e(astruct_3 *param_1, byte param_2, u16 param_3)
+astruct_3 *pass1_1020_135e(astruct_3 *param_1, u8 param_2, u16 param_3)
 
 {
     cleanup_menu_ui_op_1020_795c(param_1, param_3);
@@ -595,7 +595,7 @@ void win_ui_op_1020_150e(u16 *param_1, HDC16 param_2)
     return;
 }
 
-astruct_18 *pass1_1020_170a(astruct_18 *param_1, byte param_2, u16 param_3)
+astruct_18 *pass1_1020_170a(astruct_18 *param_1, u8 param_2, u16 param_3)
 
 {
     win_ui_op_1020_150e(&param_1->field_0x0, param_3);
@@ -747,10 +747,10 @@ void mixed_ui_op_1020_179c(astruct_1 *param_1)
         HStack102      = GetDlgItem16(0x1010, 0x175);
         if(uStack8 != 0x0)
         {
-            load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
+            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
             SetWindowText16(0x1010, (SEGPTR)local_178);
         }
-        pvStack60 = MakeProcInstance16(s_tile2_bmp_1050_1538, PTR_LOOP_1050_038c);
+        pvStack60 = MakeProcInstance16(s_tile2_bmp_1050_1538, globals->PTR_LOOP_1050_038c);
         GetWindowRect16((HWND16)s_tile2_bmp_1050_1538, &local_6e);
         uStack114       = uStack106;
         iStack98        = uStack106 - local_6e.x;
@@ -766,7 +766,7 @@ void mixed_ui_op_1020_179c(astruct_1 *param_1)
     {
         win_1008_5c7c(_PTR_LOOP_1050_02a0, 0x9d0001, unaff_SS, uVar4, uStack58);
         (iVar9 + 0x8c) = uVar4;
-        pvStack60      = MakeProcInstance16(0x1008, PTR_LOOP_1050_038c);
+        pvStack60      = MakeProcInstance16(0x1008, globals->PTR_LOOP_1050_038c);
     }
     EnumChildWindows1((HWND16)s_tile2_bmp_1050_1538, 0x0, ZEXT24(pvStack60) << 0x10);
     FreeProcInstance16(s_tile2_bmp_1050_1538);
@@ -787,14 +787,14 @@ void mixed_ui_op_1020_179c(astruct_1 *param_1)
     }
     else
     {
-        load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
+        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
         GetDlgItem16(0x1010, 0x175);
         SetWindowText16((HWND16)s_tile2_bmp_1050_1538, (SEGPTR)local_178);
         in_resc_id_3 = local_178;
         in_buffer_4  = unaff_SS;
         unaff_SS     = 0x3fe;
     }
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), in_resc_id_3, in_buffer_4, (short)unaff_SS);
+    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), in_resc_id_3, in_buffer_4, (short)unaff_SS);
     SetWindowText16(0x1010, (SEGPTR)local_178);
 LAB_1020_1b24:
     MoveWindow16((HWND16)s_tile2_bmp_1050_1538, 0x0, (i1616)uStack74, (i1616)(uStack74 >> 0x10), uStack68._2_2_, (BOOL16)uStack68);
@@ -932,7 +932,7 @@ void mix_ui_op_1018_6adc(astruct_28 *param_1)
     uVar3 = ShowCursor16(0x1010);
     if((iVar5 + 0xee) != 0x0)
     {
-        win_1008_5c5c(unaff_SS, uVar3, uVar4, _PTR_LOOP_1050_02a0, (iVar5 + 0xee));
+        win_1008_5c5c(unaff_SS, uVar3, uVar4, globals->_PTR_LOOP_1050_02a0, (iVar5 + 0xee));
         (iVar5 + 0xf0) = uVar3;
     }
     paVar8 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, (iVar5 + 0xec), unaff_SS);
@@ -942,7 +942,7 @@ void mix_ui_op_1018_6adc(astruct_28 *param_1)
     return;
 }
 
-astruct_11 *pass1_1018_4ae0(astruct_11 *param_1, byte param_2, u16 param_3)
+astruct_11 *pass1_1018_4ae0(astruct_11 *param_1, u8 param_2, u16 param_3)
 
 {
     clenaup_win_ui_1018_4d22(param_1, param_3);
@@ -1039,7 +1039,7 @@ void unk_win_ui_op_1018_4f18(astruct_39 *param_1, u1616 param_2, u32 param_3)
 }
 
 
-astruct_11 *pass1_1018_5032(astruct_11 *param_1, byte param_2, u16 param_3)
+astruct_11 *pass1_1018_5032(astruct_11 *param_1, u8 param_2, u16 param_3)
 
 {
     clenaup_win_ui_1018_4d22(param_1, param_3);
@@ -1167,7 +1167,7 @@ void pass1_1018_2440(astruct_11 *param_1, u16 param_2)
     {
         piVar4 = &uVar5->field_0x1c;
     }
-    puStack6    = (u16 *)CONCAT22(uVar7, piVar4);
+    puStack6    = CONCAT22(uVar7, piVar4);
     *puStack6   = 0x389a;
     piVar4[0x1] = 0x1008;
     clenaup_win_ui_1018_4d22(param_1, param_2);
@@ -1532,7 +1532,7 @@ LAB_1010_72a7:
     return;
 }
 
-astruct_11 *pass1_1010_5074(astruct_11 *param_1, byte param_2)
+astruct_11 *pass1_1010_5074(astruct_11 *param_1, u8 param_2)
 
 {
     clenaup_win_ui_1018_4d22(param_1, 0x1018);
@@ -1631,7 +1631,7 @@ void win_ui_op_1010_3202(u32 param_1, i16 param_2, HWND16 param_3)
     return;
 }
 
-astruct_11 *pass1_1010_0ee6(astruct_11 *param_1, byte param_2)
+astruct_11 *pass1_1010_0ee6(astruct_11 *param_1, u8 param_2)
 
 {
     clenaup_win_ui_1018_4d22(param_1, 0x1018);

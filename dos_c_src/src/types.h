@@ -9,8 +9,9 @@ typedef int                i32;
 typedef unsigned long long u64;
 typedef long long          i64;
 
-typedef char* cstring;
+typedef char *cstring;
 
+typedef u8 bool;
 
 typedef u16 HANDLE16;
 
@@ -40,8 +41,6 @@ typedef HANDLE16 HMODULE16;
 
 typedef HANDLE16 HACCEL16;
 
-typedef void (*fn_ptr_1)();
-
 
 typedef struct WINDOWPLACEMENT16 WINDOWPLACEMENT16, *PWINDOWPLACEMENT16;
 
@@ -63,12 +62,12 @@ struct POINT
 
 struct WINDOWPLACEMENT16
 {
-    u16            length;
-    u16            flags;
-    u16            show_cmd;
-    struct POINT pt_min_position;
-    struct POINT pt_max_position;
-    struct RECT16  rc_normal_position;
+    u16           length;
+    u16           flags;
+    u16           show_cmd;
+    struct POINT  pt_min_position;
+    struct POINT  pt_max_position;
+    struct RECT16 rc_normal_position;
 };
 
 typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
@@ -83,8 +82,8 @@ struct WNDCLASS16
 {
     u16       style;
     LPVOID    lpfn_wnd_proc;
-    i16     cb_cls_extra;
-    i16     cb_wnd_extra;
+    i16       cb_cls_extra;
+    i16       cb_wnd_extra;
     HANDLE16  h_instance;
     HICON16   h_icon;
     HCURSOR16 h_cursor;
@@ -113,6 +112,9 @@ typedef HANDLE16 HPEN16;
 
 typedef u16 BOOL16;
 
+#define false 0
+#define true 1
+
 typedef HANDLE16 HGDIOBJ16;
 
 typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
@@ -135,11 +137,11 @@ typedef u32 DWORD;
 
 struct MSG16
 {
-    HWND16         hwnd;
-    u16            message;
-    WPARAM16       wparam;
-    LPARAM         lparam;
-    DWORD          time;
+    HWND16       hwnd;
+    u16          message;
+    WPARAM16     wparam;
+    LPARAM       lparam;
+    DWORD        time;
     struct POINT pt;
 };
 
@@ -220,7 +222,7 @@ typedef u16_PTR WPARAM;
 
 typedef struct tagPOINT tagPOINT, *PtagPOINT;
 
-//typedef struct tagPOINT POINT;
+// typedef struct tagPOINT POINT;
 
 struct tagPOINT
 {
@@ -253,3 +255,9 @@ struct _POINTL
     LONG x;
     LONG y;
 };
+
+struct CONTEXT
+{
+};
+
+#define NULL 0;

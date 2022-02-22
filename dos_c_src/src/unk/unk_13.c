@@ -243,22 +243,22 @@ bool pass1_1008_eeac(u16 param_1, u16 param_2, u32 param_3, u8 *param_4, i16 par
         {
             cVar2 = uVar7;
             uVar3 = uVar7 & 0xff00;
-            if((byte)(cVar2 + 0x8dU) == 0x0)
+            if((u8)(cVar2 + 0x8dU) == 0x0)
             {
                 uVar7 = 0x9;
-                uVar3 = uVar3 | (byte)(cVar2 + 0x8dU);
+                uVar3 = uVar3 | (u8)(cVar2 + 0x8dU);
             }
             else
             {
-                if((byte)(cVar2 + 0x89U) == 0x0)
+                if((u8)(cVar2 + 0x89U) == 0x0)
                 {
                     uVar7 = 0x2e;
-                    uVar3 = uVar3 | (byte)(cVar2 + 0x89U);
+                    uVar3 = uVar3 | (u8)(cVar2 + 0x89U);
                 }
                 else
                 {
-                    uVar3 = uVar3 | (byte)(cVar2 + 0x87U);
-                    if((byte)(cVar2 + 0x87U) == 0x0)
+                    uVar3 = uVar3 | (u8)(cVar2 + 0x87U);
+                    if((u8)(cVar2 + 0x87U) == 0x0)
                     {
                         uVar7 = 0x5b;
                     }
@@ -398,7 +398,7 @@ void pass1_1008_d7da(u16 *param_1, u16 param_2)
 }
 
 
-void __stdcall16far pass1_1008_dc80(u16 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6, i16 param_7, i16 param_8, byte param_9, u16 param_10)
+void  pass1_1008_dc80(u16 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6, i16 param_7, i16 param_8, u8 param_9, u16 param_10)
 
 {
     char *pcVar1;
@@ -408,15 +408,15 @@ void __stdcall16far pass1_1008_dc80(u16 param_1, u16 *param_2, u32 param_3, u32 
     u16   uVar5;
     char  cVar6;
     char  extraout_DL;
-    byte  bVar7;
+    u8  bVar7;
     i16   iVar8;
     u16   uVar9;
-    byte  bVar10;
+    u8  bVar10;
 
-    bVar7  = (byte)(param_10 >> 0x8);
-    bVar10 = (byte)param_10 + bVar7;
+    bVar7  = (u8)(param_10 >> 0x8);
+    bVar10 = (u8)param_10 + bVar7;
     cVar6  = bVar10 + param_9;
-    uVar2  = (CARRY1((byte)param_10, bVar7) || CARRY1(bVar10, param_9));
+    uVar2  = (CARRY1((u8)param_10, bVar7) || CARRY1(bVar10, param_9));
     uVar3  = param_5 + 0xeff0;
     bVar10 = param_5 < 0x1010 || uVar3 < uVar2;
     uVar5  = uVar3 - uVar2;
@@ -948,7 +948,7 @@ void load_string_1008_b65a(u32 param_1, LPSTR in_string_2, u32 param_3, u1616 pa
     u16 unaff_SS;
 
     pass1_1008_b9ce(param_1, CONCAT22(param_4, param_3._2_2_), unaff_SS);
-    load_string_1010_84e0(0x1010, _PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, in_string_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, in_string_2, (short)param_3);
     return;
 }
 
@@ -1090,7 +1090,7 @@ void pass1_1008_b9ce(u32 param_1, u32 param_2, u16 param_3)
 }
 
 
-u32 __stdcall16far pass1_1008_a8f4(u32 param_1, u16 *param_2, u16 *param_3, u16 *param_4, u16 param_5, u16 param_6, u16 param_7, u8 param_8)
+u32  pass1_1008_a8f4(u32 param_1, u16 *param_2, u16 *param_3, u16 *param_4, u16 param_5, u16 param_6, u16 param_7, u8 param_8)
 
 {
     i16        iVar1;
@@ -1316,7 +1316,7 @@ u16 pass1_1008_ab80(u16 param_1, u16 param_2, u16 param_3)
 }
 
 
-u16 *pass1_1008_ad0c(u16 *param_1, byte param_2)
+u16 *pass1_1008_ad0c(u16 *param_1, u8 param_2)
 
 {
     u16 uVar1;
@@ -1721,7 +1721,7 @@ void pass1_1008_a086(u16 *param_1, u16 param_2)
     return;
 }
 
-void __stdcall16far pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_3, u16 param_4, u32 param_5, u32 param_6, u16 param_7)
+void  pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_3, u16 param_4, u32 param_5, u32 param_6, u16 param_7)
 
 {
     long        lVar1;
@@ -1770,12 +1770,12 @@ void __stdcall16far pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_
     iVar5->field_0x2   = 0x1008;
     if(_PTR_LOOP_1050_0382 == 0x0)
     {
-        _PTR_LOOP_1050_0382 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2e, param_7, (puVar9 >> 0x10), unaff_DI);
+        globals->_PTR_LOOP_1050_0382 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2e, param_7, (puVar9 >> 0x10), unaff_DI);
     }
     uStack6           = pass1_1008_4772(iVar5->field_0x4);
     iVar5->field_0x12 = 0x2f - (uStack6 + 0x8);
     uVar8             = (_PTR_LOOP_1050_0382 >> 0x10);
-    iVar6             = _PTR_LOOP_1050_0382;
+    iVar6             = globals->_PTR_LOOP_1050_0382;
     iStack8           = (iVar6 + 0xa);
     iStack10          = (iVar6 + 0xc);
     iStack12          = (iVar6 + 0xe);
