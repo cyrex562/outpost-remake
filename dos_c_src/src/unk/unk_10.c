@@ -1,4 +1,5 @@
-
+#include "types.h"
+#include "unk_10.h"
 
 u16 * pass1_1020_d3a4(u16 *param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5)
 

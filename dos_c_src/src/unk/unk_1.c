@@ -1,16 +1,25 @@
-void  pass1_1040_d76e(u32 param_1)
+#include "types.h"
+#include "unk_10.h"
+#include "structs_1.h"
+
+typedef struct struct_1040_d76e_1 {
+  u16 field_0x94;
+  u16 *field_0x98;
+  u16 field_0x9c;
+} struct_1040_d76e_1;
+
+void  pass1_1040_d76e(struct_1040_d76e_1 *param_1)
 
 {
     u32 uVar1;
-    i16        iVar2;
-    u16        uVar3;
+//    u8*        param_1_lo;
+//    u8*        param_1_hi;
 
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    uVar1 = (iVar2 + 0x94);
-    pass1_1018_5742(uVar1, (uVar1 >> 0x10), (iVar2 + 0x9c), *(iVar2 + 0x98));
-    (iVar2 + 0x9c) = 0x0;
-    return;
+//    param_1_hi = (param_1 >> 0x10);
+//    param_1_lo = param_1;
+    uVar1 = (param_1->field_0x94);
+    pass1_1018_5742(uVar1, (uVar1 >> 0x10), (param_1->field_0x9c), *(param_1->field_0x98));
+    (param_1->field_0x9c) = 0x0;
 }
 
 

@@ -1,18 +1,22 @@
 
-void  struct_1040_b082(astruct_57 *param_1, u32 param_2)
+#include "types.h"
+#include "structs_1.h"
+#include "sys_ops_1.h"
+#include "globals.h"
+
+void struct_1040_b082(Globals *globals, astruct_57 *param_1, u32 param_2)
 
 {
-    astruct_437 *iVar1;
-    u16          uVar1;
+//    astruct_57 *iVar1;
+//    u16          uVar1;
 
     get_sys_metrics_1040_7728(param_1, 0x1, 0x0, param_2, (param_2 >> 0x10));
-    uVar1             = (param_1 >> 0x10);
-    iVar1             = (astruct_437 *)param_1;
-    iVar1->field_0x8e = 0x0;
-    iVar1->field_0x90 = 0x0;
-    param_1           = 0xb772;
-    iVar1->field_0x2  = &PTR_LOOP_1050_1040;
-    return;
+//    uVar1             = (param_1 >> 0x10);
+//    iVar1             = (astruct_57 *)param_1;
+    param_1->field_0x8e = 0x0;
+    param_1->field_0x90 = 0x0;
+    param_1->field_0x1           = 0xb772;
+    param_1->field_0x2  = &globals->PTR_LOOP_1050_1040;
 }
 
 void  pass1_1040_b040(astruct_57 *param_1, u32 param_2, u16 param_3)
@@ -133,7 +137,7 @@ void  pass1_1040_44d2(astruct_57 *param_1, u32 param_2, u16 param_3, u16 param_4
 
     iVar6 = param_1;
     uVar7 = (param_1 >> 0x10);
-    struct_1040_b082(param_1, CONCAT22(param_3, 0xfa2));
+    struct_1040_b082(NULL;
     param_1       = 0x4824;
     (iVar6 + 0x2) = &PTR_LOOP_1050_1040;
     mem_op_1000_179c(0x18, param_5, 0x1000);
@@ -272,7 +276,7 @@ void  pass1_1040_48a0(astruct_57 *param_1, u16 param_2, u32 param_3, u16 param_4
     u16         *puVar8;
     i16         *piStack8;
 
-    struct_1040_b082(param_1, CONCAT22(param_4, 0xfa1));
+    struct_1040_b082(NULL;
     uVar6                      = (param_1 >> 0x10);
     iVar5                      = (astruct_444 *)param_1;
     iVar5->field_0x94          = 0x0;
@@ -1206,7 +1210,7 @@ void  pass1_1038_9144(u16 *param_1, u16 param_2, u16 param_3)
     i16         *piStack8;
     astruct_432 *iVar8;
 
-    struct_1040_b082(param_1, CONCAT22(param_2, 0xfaa));
+    struct_1040_b082(NULL;
     uVar7          = (param_1 >> 0x10);
     iVar5          = param_1;
     (iVar5 + 0x94) = 0x0;
@@ -1342,7 +1346,7 @@ astruct_57 * pass1_1038_7d10(astruct_57 *param_1, u16 param_2, u8 *param_3, i16 
     u16          uVar1;
     u16         *puVar2;
 
-    struct_1040_b082(param_1, CONCAT22(param_2, 0x1853));
+    struct_1040_b082(NULL;
     uVar1              = (param_1 >> 0x10);
     iVar1              = (astruct_703 *)param_1;
     &iVar1->field_0x94 = 0x0;
