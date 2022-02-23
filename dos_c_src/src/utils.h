@@ -16,4 +16,6 @@ u32 CONCAT12(u8 a, u16 b);
 
 u32 CONCAT13(u8 a, u32 b);
 
+u32 SUB42(u32 a, u32 b);
+
 #endif // OUTPOST_1_SRC_UTILS_H_

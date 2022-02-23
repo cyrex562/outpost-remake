@@ -36,7 +36,7 @@ astruct_23 * unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
     iVar3->field_0x2   = 0x1008;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar3->field_0x4)), s_MicroSpinControl_1050_0370);
     iVar3->field_0x54 = 0x3;
-    HVar1             = LoadCursor16(0x1000, (LPCSTR)0x7f00);
+    HVar1             = LoadCursor16(0x1000, 0x7f00);
     iVar3->field_0x58 = HVar1;
     HVar2             = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
     iVar3->field_0x56 = HVar2;
@@ -53,12 +53,12 @@ void  pass1_1008_818c(astruct_23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *para
     u16        local_1c;
     u16        uStack26;
     u16        uStack24;
-    undefined4 uStack22;
+    u32 uStack22;
     u8        *puStack18;
     u16        uStack16;
     u16        uStack14;
     u16        uStack12;
-    undefined4 uStack10;
+    u32 uStack10;
     i16        iStack6;
     u16        uStack4;
 
@@ -214,7 +214,7 @@ astruct_20 * unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_2, u16 param_3
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar1->field_0x5b)), s_DanBrotherton_1050_0302);
     l_hgdiobj_1               = GetStockObject16(0x1000);
     iVar1->hgdiobj_field_0xc6 = l_hgdiobj_1;
-    l_hcursor_1               = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)0x7f00);
+    l_hcursor_1               = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
     iVar1->hcursor_field_0xc4 = l_hcursor_1;
     iVar1->field_0xc8         = 0x200b;
     iVar1->field_0xac         = 0x45000000;
@@ -323,7 +323,7 @@ void  create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE *in_log_palet
 void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     u16         b_force_background;
     COLORREF    color;
     COLORREF    color_00;
@@ -357,10 +357,10 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     pass1_1008_4834((astruct_76 *)param_1);
     init_data          = (DEVMODEA *)0x0;
     uVar6              = pass1_1008_4772((astruct_76 *)param_1);
-    output             = (LPCSTR)(uVar6 >> 0x10);
-    pCStack42          = (LPCSTR)uVar6;
+    output             = (uVar6 >> 0x10);
+    pCStack42          = uVar6;
     pCStack40          = output;
-    local_2c           = CreateDC16((LPCSTR)0x1010, pCStack42, output, init_data);
+    local_2c           = CreateDC16(0x1010, pCStack42, output, init_data);
     b_force_background = palette_op_1008_46e4(param_1, &local_2c, output, s_tile2_bmp_1050_1538);
     color              = SetBkColor16((HDC16)s_tile2_bmp_1050_1538, 0xffff);
     color_00           = SetTextColor16((HDC16)s_tile2_bmp_1050_1538, *(COLORREF *)(iVar3 + 0x22));
@@ -395,7 +395,7 @@ void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
 
 {
     i1616      info;
-    undefined4 uVar1;
+    u32 uVar1;
     bool       bVar2;
     i16        iVar3;
     i16        y_dest;
@@ -439,7 +439,7 @@ void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
 {
     PVOID      bits;
     i1616      height_src;
-    undefined4 uVar1;
+    u32 uVar1;
     bool       bVar2;
     i16        iVar3;
     i16        height_dst;
@@ -488,7 +488,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
     i16        iVar3;
     u16        uVar4;
     u32        uVar5;
-    undefined4 uVar6;
+    u32 uVar6;
 
     uVar4 = (param_1 >> 0x10);
     iVar3 = param_1;
@@ -538,17 +538,17 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 pa
     astruct_53 *uVar6;
     u16         uVar5;
     i1616       count;
-    undefined4  uVar7;
+    u32  uVar7;
     i16         iStack132;
-    undefined4  local_80;
+    u32  local_80;
     u16         uStack124;
     u16         uStack122;
     u16         uStack120;
     u16         uStack118;
     u16         uStack116;
     u16         uStack114;
-    undefined4  uStack112;
-    undefined4  uStack108;
+    u32  uStack112;
+    u32  uStack108;
     u16         uStack104;
     u16         uStack102;
     u16         uStack100;
@@ -557,28 +557,28 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 pa
     u16         uStack94;
     u16         uStack92;
     u16         uStack90;
-    undefined4  uStack88;
-    undefined4  uStack84;
+    u32  uStack88;
+    u32  uStack84;
     u16         uStack80;
     u16         uStack78;
-    undefined4  uStack76;
-    undefined4  uStack72;
-    undefined4  uStack68;
-    undefined4  uStack64;
-    undefined4  uStack60;
-    undefined4  uStack56;
-    undefined4  uStack52;
-    undefined4  uStack48;
-    undefined4  local_2c;
-    undefined4  uStack40;
-    undefined4  uStack36;
-    undefined4  uStack32;
-    undefined4  uStack28;
-    undefined4  uStack24;
-    undefined4  uStack20;
-    undefined4  uStack16;
-    undefined4  uStack12;
-    undefined4  uStack8;
+    u32  uStack76;
+    u32  uStack72;
+    u32  uStack68;
+    u32  uStack64;
+    u32  uStack60;
+    u32  uStack56;
+    u32  uStack52;
+    u32  uStack48;
+    u32  local_2c;
+    u32  uStack40;
+    u32  uStack36;
+    u32  uStack32;
+    u32  uStack28;
+    u32  uStack24;
+    u32  uStack20;
+    u32  uStack16;
+    u32  uStack12;
+    u32  uStack8;
     u16         uStack4;
 
     local_2c  = 0x70004;
@@ -689,7 +689,7 @@ void  fill_rect_1008_39ac(HWND16 in_win_handle_1)
 void  pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     code     **ppcVar2;
 
     set_sys_color_1008_357e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
@@ -733,9 +733,9 @@ void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
     (iVar5 + 0xc8)               = 0x2008;
     (iVar5 + 0xac)               = 0x0;
     (iVar5 + 0xae)               = 0x8700;
-    HVar1                        = LoadIcon16(param_2, (LPCSTR)0xd4);
+    HVar1                        = LoadIcon16(param_2, 0xd4);
     *(HICON16 *)(iVar5 + 0xc2)   = HVar1;
-    HVar2                        = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)0x7f00);
+    HVar2                        = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
     *(HCURSOR16 *)(iVar5 + 0xc4) = HVar2;
     HVar3                        = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
     *(HGDIOBJ16 *)(iVar5 + 0xc6) = HVar3;

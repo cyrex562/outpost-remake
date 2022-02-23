@@ -134,7 +134,7 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
     u16          uVar2;
     u8          *puVar3;
     u8          *puVar4;
-    undefined4   uVar5;
+    u32   uVar5;
     u8          *extraout_DX;
     u8          *puVar6;
     u8          *puVar7;
@@ -150,14 +150,14 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
     u16          uVar8;
     u16          uVar9;
     u32         *puVar10;
-    undefined4   uVar11;
+    u32   uVar11;
     u32         *puVar12;
     u8           uVar13;
-    undefined4   uStack36;
+    u32   uStack36;
     i16          iStack32;
     u16          uStack30;
     u16         *puStack28;
-    undefined4   uStack24;
+    u32   uStack24;
     u8           local_14[0x12];
 
     uVar8   = (param_1 >> 0x10);
@@ -502,7 +502,7 @@ LAB_1008_e0d3:
 void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
 
 {
-    undefined4  *puVar1;
+    u32  *puVar1;
     code       **ppcVar2;
     astruct_215 *uVar5;
     astruct_215 *paVar3;

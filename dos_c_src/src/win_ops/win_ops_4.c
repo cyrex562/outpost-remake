@@ -6,7 +6,7 @@ void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 pa
     HWND16      unaff_CS;
     u16         unaff_SS;
     u16         uVar2;
-    undefined4 *puStack6;
+    u32 *puStack6;
 
     uVar2    = SUB42(&USHORT_1050_1050, 0x0);
     puStack6 = GetWindowLong16(unaff_CS, 0x0);
@@ -116,7 +116,7 @@ void  window_op_1008_0af8(astruct *param_1, u8 *param_2, u16 param_3)
     u16         uVar2;
     code      **ppcVar3;
     u8         *puVar4;
-    undefined4  uVar5;
+    u32  uVar5;
     u8         *puVar6;
     u16         extraout_DX;
     u8         *extraout_DX_00;
@@ -212,7 +212,7 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
     i16         unaff_DI;
     HWND16      hwnd;
     u8          in_AF;
-    undefined4  uVar5;
+    u32  uVar5;
     LRESULT     LVar6;
     char       *pcVar7;
     u16        *puVar8;
@@ -222,10 +222,10 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
     u16         uVar12;
     u16         uVar13;
     u8          local_64[0x50];
-    undefined4  uStack20;
+    u32  uStack20;
     HCURSOR16   HStack16;
     HCURSOR16   HStack14;
-    undefined4  uStack6;
+    u32  uStack6;
     astruct_72 *struct_var15;
 
     uVar9        = param_1;
@@ -263,10 +263,10 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
         if(PTR_LOOP_1050_4fe8 != 0x0)
         {
             pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
-            BVar3  = MessageBox16(0x1010, (LPCSTR)&PTR_LOOP_1050_0010, (LPCSTR)pcVar7, (pcVar7 >> 0x10));
+            BVar3  = MessageBox16(0x1010, &PTR_LOOP_1050_0010, pcVar7, (pcVar7 >> 0x10));
             return BVar3;
         }
-        HStack14 = LoadCursor16(0x1030, (LPCSTR)0x7f02);
+        HStack14 = LoadCursor16(0x1030, 0x7f02);
         HStack16 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
         uStack20 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
         pass1_1018_262e(uStack20);
@@ -299,7 +299,7 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
         goto LAB_1008_0cba;
     case 0x6f:
         uStack6 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x1f8, param_5);
-        BVar3   = WinHelp16(0x1010, (LPCSTR)0x0, 0x0, CONCAT22(uStack6, 0x3));
+        BVar3   = WinHelp16(0x1010, 0x0, 0x0, CONCAT22(uStack6, 0x3));
         return BVar3;
     case 0x70:
         iVar11 = 0x1;
@@ -307,7 +307,7 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
         uVar5 = pass1_1038_af40(_PTR_LOOP_1050_5b7c, (uVar9 + 0x8), iVar11, param_6, uVar9, &PTR_LOOP_1050_1038, param_5);
         return (BOOL16)uVar5;
     case 0x71:
-        HVar2 = WinExec16((LPCSTR)0x1008, 0x3);
+        HVar2 = WinExec16(0x1008, 0x3);
         return HVar2;
     case 0x79:
         BVar3 = post_msg_1008_2d22(param_1);

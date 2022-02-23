@@ -77,13 +77,13 @@ void  pass1_1028_4db2(u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 pa
     u16        uVar7;
     u8         local_14e[0x124];
     u32        uStack42;
-    undefined4 uStack38;
+    u32 uStack38;
     i16        local_22;
     u8         local_20[0x2];
     u8         local_1e[0x2];
     u32        local_1c;
     i16        iStack24;
-    undefined4 uStack22;
+    u32 uStack22;
     i16       *piStack18;
     u16        uStack16;
     i16        local_e;
@@ -137,12 +137,12 @@ u32  pass1_1028_4faa(u32 param_1, u16 param_2)
 
 {
     u16         uVar1;
-    undefined4 *puVar2;
+    u32 *puVar2;
     u16         uVar3;
     u32         uVar4;
-    undefined4  local_c;
+    u32  local_c;
     u16         uStack8;
-    undefined4  uStack6;
+    u32  uStack6;
 
     uVar1 = pass1_1028_4f62(param_1);
     if(uVar1 != 0x0)
@@ -392,12 +392,12 @@ u32  pass1_1028_121e(u32 param_1, u16 param_2)
 {
     bool        bVar1;
     u8          extraout_AH;
-    undefined4 *puVar2;
+    u32 *puVar2;
     u16         uVar3;
     u32         uVar4;
-    undefined4  local_c;
+    u32  local_c;
     u16         uStack8;
-    undefined4  uStack6;
+    u32  uStack6;
 
     bVar1 = pass1_1028_11de(param_1);
     if(CONCAT11(extraout_AH, bVar1) != 0x0)
@@ -555,13 +555,13 @@ void  struct_1020_c444(astruct_75 *param_1, u32 param_2, u32 param_3)
 void  pass1_1020_afc4(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 *param_5, long param_6)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     u16         uVar3;
     u32         uVar4;
     u8        bStack27;
-    undefined4  local_a;
-    undefined4  uStack6;
+    u32  local_a;
+    u32  uStack6;
 
     puVar1 = &local_a;
     pass1_1030_64ce(param_1, puVar1, param_2, globals->_PTR_LOOP_1050_5740, param_5, param_6, CONCAT22(param_1, puVar1));
@@ -1702,7 +1702,7 @@ void  struct_1018_4920(u16 *param_1, u32 param_2, u32 param_3, u32 param_4)
 void  struct_1018_2b10(astruct_55 *param_1, u16 param_2, u16 param_3)
 
 {
-    undefined4  *puVar1;
+    u32  *puVar1;
     code       **ppcVar2;
     u16         *puVar3;
     u16          uVar4;
@@ -1971,13 +1971,13 @@ u16  pass1_1010_acc0(u16 param_1, u16 param_2, u32 param_3)
 void  struct_1010_9172(u32 param_1)
 
 {
-    undefined4  *puVar1;
+    u32  *puVar1;
     u16          uVar2;
     code       **ppcVar3;
     astruct_249 *iVar4;
     u16          uVar4;
     astruct_75  *paVar5;
-    undefined4   uVar6;
+    u32   uVar6;
 
     uVar4  = (param_1 >> 0x10);
     iVar4  = (astruct_249 *)param_1;

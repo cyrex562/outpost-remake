@@ -1055,7 +1055,7 @@ i16 pass1_1000_462e(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 para
     u16        uVar6;
     u16        uVar7;
     u16        uVar8;
-    undefined4 uVar9;
+    u32 uVar9;
     i16        iStack26;
     u8         local_16[0x4];
     u16        uStack18;

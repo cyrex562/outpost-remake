@@ -6,7 +6,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     u16        *puVar2;
     i16         iVar3;
     u16         uVar4;
-    undefined4  uVar5;
+    u32  uVar5;
     u8         *puVar6;
     u8         *extraout_DX;
     u8         *puVar7;
@@ -24,7 +24,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     CHAR        local_92[0x80];
     u16         uStack18;
     u8         *puStack16;
-    undefined4 *puStack14;
+    u32 *puStack14;
     u16         uStack10;
     u16         uStack8;
     u16         uStack6;
@@ -73,7 +73,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     {
         LoadString16(0x1000, 0x80, local_13e, param_2);
         LoadString16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x80, local_1be, param_2);
-        uVar4 = MessageBox16((HWND16)s_tile2_bmp_1050_1538, (LPCSTR)&PTR_LOOP_1050_0010, local_13e, param_2);
+        uVar4 = MessageBox16((HWND16)s_tile2_bmp_1050_1538, &PTR_LOOP_1050_0010, local_13e, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
     mem_op_1000_179c(0x4, puVar7, 0x1000);
@@ -266,7 +266,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
     u16          uStack22;
     u16          uVar13;
     u16          uVar14;
-    undefined4   uStack18;
+    u32   uStack18;
     u16          uStack14;
 
     if((param_4 != 0x0) && (param_3 != 0x0))
@@ -477,7 +477,7 @@ u16 dos3call_1000_4f54(u32 param_1, i16 param_2)
     u16        uVar3;
     char      *pcVar4;
     bool       bVar5;
-    undefined4 uVar6;
+    u32 uVar6;
 
     bVar5  = false;
     pcVar2 = (fn_ptr_1)swi(0x21);
@@ -692,7 +692,7 @@ u16 dos3_calls_1000_5198(i16 param_1)
 void fatal_app_exit_1000_3e9e(u16 app_exit_action)
 
 {
-    FatalAppExit16(app_exit_action, (LPCSTR)s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
+    FatalAppExit16(app_exit_action, s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
     return;
 }
 
@@ -944,7 +944,7 @@ void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3)
     u16        uVar8;
     u16        uVar9;
     bool       bVar10;
-    undefined4 uVar11;
+    u32 uVar11;
 
     uVar7           = (param_1 >> 0x10);
     iVar6           = param_1;
@@ -1066,7 +1066,7 @@ void mixed_dos3_call_1000_3636(u16 param_1, u16 param_2, u16 param_3, u16 param_
     u16        uVar3;
     i16        iVar4;
     bool       bVar5;
-    undefined4 uVar6;
+    u32 uVar6;
 
     if(((param_1 < DAT_1050_5f8a) || (PTR_LOOP_1050_61ec == 0x0)) || (0x2 < param_1))
     {
@@ -1331,7 +1331,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
     bool       bVar22;
     char       cVar23;
     char       cVar24;
-    undefined4 uVar25;
+    u32 uVar25;
     char      *pcVar26;
     i16       *piStack8;
     i16       *piStack6;
@@ -2189,7 +2189,7 @@ void pass1_1000_262c(u8 *param_1, u8 *param_2, cstring param_3, HINSTANCE16 para
     puStack4                    = in_DX;
     globals->PTR_LOOP_1050_5fc2 = param_1;
     globals->PTR_LOOP_1050_5fc4 = in_DX;
-    IVar5                       = GetModuleFileName16(param_4, (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x25), (i1616)param_1);
+    IVar5                       = GetModuleFileName16(param_4, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x25), (i1616)param_1);
     puStack4[IVar5]             = 0x0;
     iVar9                       = 0x1;
     globals->PTR_LOOP_1050_5fb8 = (&PTR_LOOP_1050_0000 + 0x1);

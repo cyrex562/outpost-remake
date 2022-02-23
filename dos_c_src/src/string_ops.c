@@ -18,8 +18,8 @@ void string_1040_a626(u16 *param_1, char *param_2, u16 param_3)
 char *pass1_1040_4dcc(u32 param_1, i16 param_2, u16 param_3)
 
 {
-    undefined4 uVar1;
-    undefined4 uVar2;
+    u32 uVar1;
+    u32 uVar2;
     u16        uVar3;
     char      *pcVar4;
 
@@ -593,14 +593,14 @@ void spri16f_op_1018_34b6(u32 param_1, u8 param_2)
     if(iVar1 == 0x188)
     {
         lVar4  = pass1_1008_57f0(uVar3, (iVar2 + 0x130), unaff_SS);
-        buffer = (LPSTR)0x1020;
+        buffer = 0x1020;
         string_1020_c0d8((lVar4 + 0xe));
     }
     else
     {
         if(iVar1 == 0x18b)
         {
-            buffer = (LPSTR)0x1008;
+            buffer = 0x1008;
             pass1_1008_57f0(uVar3, (iVar2 + 0x130), unaff_SS);
         }
         else
@@ -610,11 +610,11 @@ void spri16f_op_1018_34b6(u32 param_1, u8 param_2)
                 load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, (iVar2 + 0x22), (short)valist);
                 return;
             }
-            buffer = (LPSTR)0x1008;
+            buffer = 0x1008;
             pass1_1008_57f0(uVar3, (iVar2 + 0x130), unaff_SS);
         }
     }
-    wspri16f16(buffer, (LPCSTR)(iVar2 + 0x22), valist);
+    wspri16f16(buffer, (iVar2 + 0x22), valist);
     return;
 }
 
@@ -631,7 +631,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
     u16         uVar4;
     code      **ppcVar5;
     u16         uVar6;
-    undefined4 *puVar7;
+    u32 *puVar7;
     u16         uVar8;
     u16         uVar9;
     u16         extraout_DX;
@@ -639,7 +639,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
     WORD       *valist;
     bool        bVar11;
     u32         uVar12;
-    undefined4  uVar13;
+    u32  uVar13;
     i16         local_12;
     i16         local_10;
     long        lStack14;
@@ -686,7 +686,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
             *(uVar10 + 0x138) = uVar9;
             piVar2            = (uVar10 + 0x13a);
             *piVar2           = *piVar2 + 0x1;
-            wspri16f16((LPSTR)0x1030, (LPCSTR)(uVar10 + 0x22), valist);
+            wspri16f16(0x1030, (uVar10 + 0x22), valist);
             return;
         }
         *(uVar10 + 0x13e) = uStack6;
@@ -727,7 +727,7 @@ BOOL16 string_1018_39d8(u16 param_1, u32 param_2, u32 param_3, u32 param_4)
 u32 pass1_1018_3a7a(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     u32        uVar2;
 
     uVar1 = (param_1 + 0x122);
@@ -738,16 +738,16 @@ u32 pass1_1018_3a7a(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 void pass1_1010_dc36(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 *param_5, u16 param_6)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     u32         uVar3;
     i16         iVar4;
     u16         uVar5;
-    undefined4 *puVar6;
+    u32 *puVar6;
     u16         uVar7;
     u16         uStack90;
     u8         *local_54;
-    undefined4  local_52[0x14];
+    u32  local_52[0x14];
 
     local_54 = globals->PTR_s_New_failed_in_Op_Op_1050_0020_1050_393f;
     puVar6   = local_52;
@@ -913,8 +913,8 @@ char *load_string_1010_9432(HINSTANCE16 param_1)
 char *load_string_1010_847e(i16 param_1, i1616 in_buf_len_2, HINSTANCE16 in_hinstsance_3)
 
 {
-    LoadString16(in_hinstsance_3, 0x3ff, (LPSTR)(param_1 + 0x682), in_buf_len_2);
-    return CONCAT22(in_buf_len_2, (LPSTR)(param_1 + 0x682));
+    LoadString16(in_hinstsance_3, 0x3ff, (param_1 + 0x682), in_buf_len_2);
+    return CONCAT22(in_buf_len_2, (param_1 + 0x682));
 }
 
 
@@ -924,8 +924,8 @@ void load_string_1010_84ac(i16 param_1, i1616 param_2, HINSTANCE16 param_3)
     u16 uVar1;
 
     uVar1 = param_2;
-    LoadString16(param_3, 0x3ff, (LPSTR)(param_1 + 0x682), param_2);
-    str_op_1008_60e8(CONCAT22(param_2, (LPSTR)(param_1 + 0x682)), uVar1);
+    LoadString16(param_3, 0x3ff, (param_1 + 0x682), param_2);
+    str_op_1008_60e8(CONCAT22(param_2, (param_1 + 0x682)), uVar1);
     return;
 }
 
@@ -941,7 +941,7 @@ void load_string_1010_84e0(HINSTANCE16 in_hinstance_5, u16 param_2, u16 param_3,
 void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     u16        uStack780;
     char       local_308[0x100];
     u8         local_208[0x100];
@@ -1126,7 +1126,7 @@ void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *para
     astruct_25 *iVar5;
     u16         uVar5;
     astruct_26 *paVar6;
-    undefined4  uVar7;
+    u32  uVar7;
     i16         iStack516;
     char        local_202[0x100];
     CHAR        local_102[0x100];
@@ -1161,7 +1161,7 @@ void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *para
             }
             uVar3 = (uVar7 >> 0x10);
             uVar4 = uVar3;
-            wspri16f16((LPSTR)&globals->PTR_LOOP_1050_1000, local_102, param_2);
+            wspri16f16(&globals->PTR_LOOP_1050_1000, local_102, param_2);
             uVar2         = str_op_1008_60e8(CONCAT22(param_2, local_102), uVar4);
             (uVar7 + 0x4) = uVar2;
             (uVar7 + 0x6) = uVar4;
@@ -1184,7 +1184,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
     u16        uVar3;
     i16        iVar4;
     u16        uVar5;
-    undefined4 uVar6;
+    u32 uVar6;
     char       local_206[0x100];
     CHAR       local_106[0x100];
     i16        iStack6;
@@ -1206,7 +1206,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
     iVar4   = param_1;
     piVar1  = (iVar4 + 0x22);
     *piVar1 = *piVar1 + 0x1;
-    wspri16f16((LPSTR)0x1010, local_106, param_2);
+    wspri16f16(0x1010, local_106, param_2);
     iStack6         = uVar6;
     uVar3           = str_op_1008_60e8(CONCAT22(param_2, local_106), (uVar6 >> 0x10));
     iStack6         = uVar6;
@@ -1293,7 +1293,7 @@ void  pass1_1008_48de(u16 param_1, u32 param_2, i16 param_3, u16 param_4, u16 *p
 
 {
     u8        *pbVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     u8         bVar3;
     u16        uVar4;
     u8         bVar5;
@@ -1577,7 +1577,7 @@ i16 pass1_1000_3ec0(u16 param_1, u16 param_2)
     u16         uVar3;
     u16         unaff_SI;
     u16         uVar4;
-    undefined4 *puVar4;
+    u32 *puVar4;
 
     puVar4 = CONCAT22(PTR_LOOP_1050_5fc0, globals->PTR_LOOP_1050_5fbe);
     if(((PTR_LOOP_1050_5fc0 | globals->PTR_LOOP_1050_5fbe) != 0x0) && ((param_2 | param_1) != 0x0))

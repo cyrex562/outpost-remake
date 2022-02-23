@@ -35,12 +35,12 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
     u16        uStack44;
     u16        uStack34;
     u16        uStack32;
-    undefined4 local_1e;
+    u32 local_1e;
     i16        iStack26;
     u16        uStack22;
     u16        uStack20;
     u32        uStack18;
-    undefined4 uStack14;
+    u32 uStack14;
     u16        uStack10;
     u16        uStack8;
     u16        uStack6;

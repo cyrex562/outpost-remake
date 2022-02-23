@@ -482,17 +482,17 @@ LAB_1000_2da4:
     bVar2 = false;
     goto LAB_1000_2d71;
 }
-u32  mem_op_1000_1b68(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
+u32  mem_op_1000_1b68(u16 param_1, u16 param_2, u16 u16_addr_lo, u16 u16_addr_hi)
 
 {
     u32 uVar1;
 
-    if((param_3 + 0x14) != -0x4153)
+    if((u16_addr_lo + 0x14) != -0x4153)
     {
         pass1_1000_1e61(param_2, 0xa, 0x0, 0x0);
         return param_1 << 0x10;
     }
-    uVar1 = mem_op_1000_1b9a(0x0, param_3, param_4, param_2);
+    uVar1 = mem_op_1000_1b9a(0x0, u16_addr_lo, u16_addr_hi, param_2);
     return uVar1;
 }
 
@@ -501,7 +501,7 @@ u32  mem_op_1000_1b9a(u16 param_1, u1632 param_2, u16 param_3, u16 param_4)
 
 {
     u16        uVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     u16        uVar3;
     u16        uVar4;
     i16        iVar5;
@@ -698,7 +698,7 @@ void pass1_1000_201c(i16 param_1, i16 param_2, u16 param_3)
 
 {
     u16        uVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     u16        uVar3;
     BOOL16     BVar4;
     i16        iVar5;
@@ -784,8 +784,8 @@ i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONT
     CHAR      *unaff_SS;
     bool       bVar9;
     DWORD      DVar10;
-    undefined4 uVar11;
-    undefined4 uVar12;
+    u32 uVar11;
+    u32 uVar12;
     i16        iVar13;
     i16        iVar14;
     u8        *puVar15;
@@ -917,7 +917,7 @@ i16 *dos3_call_1000_23ea(u16 param_1, u16 param_2, i16 param_3, u16 param_4)
     u8        *pbVar19;
     char      *pcVar20;
     bool       bVar21;
-    undefined4 uVar22;
+    u32 uVar22;
     i16        iVar23;
     i16        iVar24;
 
@@ -1410,7 +1410,7 @@ u32  pass1_1000_1284(u32 param_1, u16 param_2)
 {
     u8         bVar1;
     u16        uVar2;
-    undefined4 uVar3;
+    u32 uVar3;
     u8         bVar4;
     u16        uVar5;
     bool       bVar6;
@@ -1898,7 +1898,7 @@ u32 mem_op_1000_0052(u16 param_1, u16 param_2)
     u16       *puVar1;
     u16        uVar2;
     i16        iVar3;
-    undefined4 uVar4;
+    u32 uVar4;
     u32        uVar5;
     i16        iStack14;
     i16        iStack12;

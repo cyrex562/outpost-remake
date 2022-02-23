@@ -5,7 +5,7 @@ void  pass1_1030_7226(u32 param_1)
 
 {
     u32        uVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     BOOL16     BVar3;
     i16        iVar4;
     u16        uVar5;
@@ -1121,7 +1121,7 @@ u16 * switch_1030_0000(u16 param_1, u16 param_2, i16 param_3, u8 *param_4, u16 p
 void  pass1_1028_dc52(astruct_92 *param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     astruct_92 *iVar2;
     u16         uVar2;
 
@@ -1209,7 +1209,7 @@ void  pass1_1028_c00a(u32 param_1, long param_2, i16 param_3, u16 param_4)
     u32         uVar9;
     u32         uStack26;
     u32         uStack22;
-    undefined4 *puStack18;
+    u32 *puStack18;
 
     pass1_1028_b58e(param_1);
     uVar8  = *(param_3 + 0x2e);
@@ -1276,7 +1276,7 @@ void  pass1_1028_c0f0(u32 param_1, long param_2, i16 param_3, u16 param_4, u16 p
     u32         uVar9;
     u32         uStack28;
     u32         uStack24;
-    undefined4 *puStack20;
+    u32 *puStack20;
     u32         uStack6;
 
     pass1_1028_b58e(param_1);
@@ -1635,10 +1635,10 @@ void  pass1_1028_780c(u16 param_1, u16 param_2, u32 param_3)
     u16         uVar6;
     u16         uVar7;
     u32        *puVar8;
-    undefined4 *puVar9;
+    u32 *puVar9;
     u32         uStack18;
     u32         uStack14;
-    undefined4 *puStack10;
+    u32 *puStack10;
 
     puVar8 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x25);
     puVar5 = (puVar8 >> 0x10);
@@ -1840,7 +1840,7 @@ void  pass1_1028_5a98(u16 param_1, i16 param_2, u16 param_3)
     long      *plVar1;
     i16        iVar2;
     code     **ppcVar3;
-    undefined4 uVar4;
+    u32 uVar4;
     u16        uVar5;
     u16        uVar6;
     u16        extraout_DX;
@@ -1914,8 +1914,8 @@ u16 * struct_1028_5c54(u16 *param_1)
 void  pass1_1028_5ca4(u16 param_1, i16 param_2, u16 param_3, u8 param_4)
 
 {
-    undefined4 uVar1;
-    undefined4 uVar2;
+    u32 uVar1;
+    u32 uVar2;
     u16        extraout_DX;
     u32        uVar3;
 
@@ -1962,7 +1962,7 @@ u16 * struct_1028_5ed8(u16 *param_1)
 u16 * struct_1028_60bc(u16 *param_1, u16 param_2, u8 *param_3)
 
 {
-    undefined4   uVar1;
+    u32   uVar1;
     u16          uVar2;
     astruct_187 *iVar2;
 

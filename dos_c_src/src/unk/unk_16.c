@@ -605,7 +605,7 @@ u16  pass1_1000_09ca(i16 param_1, u1632 *param_2)
 {
     u16       *puVar1;
     i16        iVar2;
-    undefined4 uVar3;
+    u32 uVar3;
     u16       *puVar4;
 
     puVar1       = param_2 + 0xa;
@@ -642,7 +642,7 @@ u32  pass1_1000_0c32(u16 param_1, u16 param_2, u16 param_3)
     u16       *puVar1;
     u8        *pbVar2;
     i16       *piVar3;
-    undefined4 uVar4;
+    u32 uVar4;
     u16        uVar5;
     u16       *puVar6;
     i16        iVar7;

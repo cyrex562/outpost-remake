@@ -48,8 +48,8 @@ void  unk_draw_op_1018_cda8(astruct_36 *param_1, u16 param_2)
     u16           uVar16;
     HDC16        *pHVar17;
     RECT16       *pRVar19;
-    undefined4    uVar18;
-    undefined4    local_34;
+    u32    uVar18;
+    u32    local_34;
     i16           iStack48;
     i16           iStack46;
     RECT16       *pRStack44;
@@ -147,9 +147,9 @@ void  unk_draw_op_1018_cfc0(astruct_36 *param_1, u16 param_2)
     u16           uVar15;
     HDC16        *pHVar16;
     RECT16       *pRVar18;
-    undefined4    uVar17;
+    u32    uVar17;
     HDC16         HVar19;
-    undefined4    local_34;
+    u32    local_34;
     i16           iStack48;
     i16           iStack46;
     RECT16       *pRStack44;
@@ -249,9 +249,9 @@ void  palette_op_1020_92c4(u16 *param_1, HDC16 param_2)
 void  mix_draw_op_1020_9312(u32 param_1, HWND16 param_2)
 
 {
-    undefined4   *puVar1;
+    u32   *puVar1;
     code        **ppcVar2;
-    undefined4    uVar3;
+    u32    uVar3;
     i16           iVar4;
     u16           uVar5;
     u16           uVar6;
@@ -275,7 +275,7 @@ void  draw_op_1020_9364(astruct_7 *param_1, HWND16 in_win_handle_2, i1616 param_
     i16       *piVar1;
     u16        uVar2;
     i16        iVar3;
-    undefined4 uVar4;
+    u32 uVar4;
     i16        iVar5;
     RECT16    *pRVar6;
     astruct_7 *local_struct_1;
@@ -287,16 +287,16 @@ void  draw_op_1020_9364(astruct_7 *param_1, HWND16 in_win_handle_2, i1616 param_
     HGDIOBJ16  HStack52;
     HPEN16     HStack50;
     u16        uStack48;
-    undefined4 uStack46;
-    undefined4 uStack42;
-    undefined4 uStack38;
-    undefined4 uStack34;
-    undefined4 uStack30;
+    u32 uStack46;
+    u32 uStack42;
+    u32 uStack38;
+    u32 uStack34;
+    u32 uStack30;
     u16       *puStack26;
     i16        iStack22;
     i16        iStack20;
     u32        local_12;
-    undefined4 uStack14;
+    u32 uStack14;
     RECT16     local_a;
     u32        uStack6;
 
@@ -438,7 +438,7 @@ void  pass1_1020_7824(astruct_666 *param_1, u16 param_2, u16 param_3, i16 param_
 
 {
     code     **ppcVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     i16        iVar3;
     u8        *extraout_DX;
     u16        uVar4;
@@ -531,7 +531,7 @@ void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3)
     HGDIOBJ16   handle_00;
     char       *count;
     LPCSTR      str;
-    undefined4 *puVar2;
+    u32 *puVar2;
     u16         in_DX;
     char       *str_00;
     astruct_6  *iVar4;
@@ -542,7 +542,7 @@ void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3)
     u32         uVar7;
     u32         uVar8;
     HBRUSH16    hbrush;
-    undefined4  uVar9;
+    u32  uVar9;
     HDC16       HVar10;
     u16         uVar11;
     i16         iStack66;
@@ -616,7 +616,7 @@ void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3)
         {
             SetBkColor16((HDC16)s_tile2_bmp_1050_1538, 0x0);
             SetTextColor16((HDC16)s_tile2_bmp_1050_1538, color);
-            str   = (LPCSTR)lstrlen16((LPCSTR)s_tile2_bmp_1050_1538);
+            str   = lstrlen16(s_tile2_bmp_1050_1538);
             DVar6 = GetTextExtent16((HDC16)s_tile2_bmp_1050_1538, str, (i1616)count);
             iVar3 = (DVar6 >> 0x10);
             if(is_iconic == 0x0)
@@ -671,7 +671,7 @@ void  unk_draw_op_1020_7f7a(astruct_20 *param_1, u16 param_2, u32 param_3)
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar4->field_0x5b)), s_VrMode_1050_4422);
     HVar2                     = GetStockObject16(0x1000);
     iVar4->hgdiobj_field_0xc6 = HVar2;
-    HVar3                     = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)0x7f00);
+    HVar3                     = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
     iVar4->hcursor_field_0xc4 = HVar3;
     iVar4->field_0xc8         = 0x2028;
     iVar4->field_0xac         = 0x47000000;
@@ -691,10 +691,10 @@ void  realize_palette_1020_8128(u32 param_1, i16 param_2, HGDIOBJ16 param_3, u16
 
 {
     code      **ppcVar1;
-    undefined4  uVar2;
+    u32  uVar2;
     u8         *puVar3;
-    undefined4 *puVar4;
-    undefined4 *puVar5;
+    u32 *puVar4;
+    u32 *puVar5;
     u16         extraout_DX;
     i16         iVar6;
     i16         iVar7;
@@ -703,7 +703,7 @@ void  realize_palette_1020_8128(u32 param_1, i16 param_2, HGDIOBJ16 param_3, u16
     u8          local_12[0x8];
     u16         uStack10;
     u16         uStack8;
-    undefined4 *puStack6;
+    u32 *puStack6;
 
     if(param_2 != 0x0)
     {
@@ -793,7 +793,7 @@ void  mix_draw_op_1020_650c(astruct_7 *param_1, HWND16 param_2, u16 param_3)
 
 {
     code        **ppcVar1;
-    undefined4    uVar2;
+    u32    uVar2;
     i16           iVar3;
     i16           iVar4;
     i16           iVar5;
@@ -801,7 +801,7 @@ void  mix_draw_op_1020_650c(astruct_7 *param_1, HWND16 param_2, u16 param_3)
     u16           uVar7;
     PAi16STRUCT16 local_28;
     i16           iStack8;
-    undefined4   *puStack6;
+    u32   *puStack6;
 
     uVar6    = (param_1 >> 0x10);
     iVar3    = param_1;
@@ -840,9 +840,9 @@ void  mix_draw_op_1020_650c(astruct_7 *param_1, HWND16 param_2, u16 param_3)
 void  realize_palette_1020_6896(u32 param_1, i16 param_2, HGDIOBJ16 param_3)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     code      **ppcVar2;
-    undefined4  uVar3;
+    u32  uVar3;
     i16         iVar4;
     u16         uVar5;
 
@@ -905,7 +905,7 @@ void  pt_in_rect_1020_68fc(u32 *param_1, u16 param_2, u16 param_3)
 void  destroy_icon_1020_6bd2(u32 param_1, u8 param_2, HICON16 param_3)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     code      **ppcVar3;
     i16         iVar4;
@@ -1002,10 +1002,10 @@ BOOL16  win_ui_op_1020_737a(u32 param_1, HWND16 param_2, u16 param_3)
 {
     u16           uVar1;
     code        **ppcVar2;
-    undefined4    uVar3;
+    u32    uVar3;
     BOOL16        BVar4;
     u8           *puVar5;
-    undefined4   *puVar6;
+    u32   *puVar6;
     u16           in_DX;
     u16           uVar7;
     i16           iVar8;
@@ -1014,7 +1014,7 @@ BOOL16  win_ui_op_1020_737a(u32 param_1, HWND16 param_2, u16 param_3)
     u16           uVar11;
     astruct_18   *paStack78;
     u8            local_42[0x6];
-    undefined4   *local_brush_handle;
+    u32   *local_brush_handle;
     i16           iStack56;
     HWND16        HStack54;
     HWND16        HStack52;
@@ -1098,9 +1098,9 @@ BOOL16  win_ui_op_1020_737a(u32 param_1, HWND16 param_2, u16 param_3)
 void  unk_draw_op_1020_3da4(astruct_24 *param_1, u32 param_2)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     code      **ppcVar2;
-    undefined4  uVar3;
+    u32  uVar3;
     i1616_t     iVar4;
     HGDIOBJ16   HVar5;
     HDC16      *pHVar6;
@@ -1177,7 +1177,7 @@ void  validate_rect_1020_3f12(u32 param_1, i16 param_2, HWND16 param_3)
 
 {
     RECT16     local_a;
-    undefined4 uStack6;
+    u32 uStack6;
 
     if(param_2 == 0x1)
     {
@@ -1206,16 +1206,16 @@ void  mixed_draw_op_1020_3fa0(u32 param_1, HWND16 param_2, u16 param_3)
 {
     u32           uVar1;
     code        **ppcVar2;
-    undefined4    uVar3;
+    u32    uVar3;
     i16           iVar4;
     u16           uVar5;
     u16           uVar6;
     i16           iStack56;
     u32           uStack54;
-    undefined4    local_32;
+    u32    local_32;
     i16           iStack46;
     u32           uStack44;
-    undefined4   *puStack40;
+    u32   *puStack40;
     u16           local_24;
     PAi16STRUCT16 local_22;
 
@@ -1333,13 +1333,13 @@ void  unk_draw_op_1020_41c8(astruct_20 *param_1, u16 param_2, u16 param_3, u16 p
     uVar5->field_0xe4          = 0x1020;
     puVar4                     = extraout_DX;
     puVar11                    = globals->PTR_LOOP_1050_038c;
-    HVar2                      = LoadCursor16(param_4, (LPCSTR)(s__s__ld_1050_019c + 0x2));
+    HVar2                      = LoadCursor16(param_4, (s__s__ld_1050_019c + 0x2));
     uVar5->field_0xf0          = HVar2;
     puVar10                    = globals->PTR_LOOP_1050_038c;
-    HVar2                      = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)(s__s__ld_1050_019c + 0x3));
+    HVar2                      = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (s__s__ld_1050_019c + 0x3));
     uVar5->field_0xf2          = HVar2;
     puVar9                     = globals->PTR_LOOP_1050_038c;
-    globals->PTR_LOOP_1050_0398         = LoadAccelerators16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)s_OpAccel_1050_43e8);
+    globals->PTR_LOOP_1050_0398         = LoadAccelerators16((HINSTANCE16)s_tile2_bmp_1050_1538, s_OpAccel_1050_43e8);
     puVar8                     = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, unaff_SS, puVar4, unaff_DI);
     &uVar5->field_0xfa         = puVar8;
     (&uVar5->field_0xfa + 0x2) = (puVar8 >> 0x10);
@@ -1395,7 +1395,7 @@ void  pass1_1020_2c72(u32 param_1, u16 param_2, u16 param_3)
 void  destroy_icon_1020_2c88(u32 param_1, HICON16 param_2)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     code      **ppcVar3;
     i16         iVar4;
@@ -1424,7 +1424,7 @@ void  destroy_icon_1020_2c88(u32 param_1, HICON16 param_2)
 void  load_draw_op_1020_2ede(u16 *param_1, u32 param_2, u16 param_3)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     code      **ppcVar2;
     HDC16       HVar3;
     i16         iVar4;
@@ -1458,7 +1458,7 @@ void  load_draw_op_1020_2ede(u16 *param_1, u32 param_2, u16 param_3)
     (**ppcVar2)(0x1010, uVar1, (uVar1 >> 0x10), 0x0, param_1);
     paVar9                   = (astruct_76 *)pass1_1018_0a50(*(iVar6 + 0x14));
     uVar10                   = pass1_1008_4772(paVar9);
-    HVar3                    = CreateDC16((LPCSTR)0x1008, (LPCSTR)uVar10, (LPCSTR)(uVar10 >> 0x10), (DEVMODEA *)0x0);
+    HVar3                    = CreateDC16(0x1008, uVar10, (uVar10 >> 0x10), (DEVMODEA *)0x0);
     *(HDC16 *)(iVar6 + 0x18) = HVar3;
     iVar4                    = iVar6 + 0x18;
     ppcVar2                  = (paVar9 + 0x8);
@@ -1496,14 +1496,14 @@ void  draw_op_1020_30be(u32 param_1, HWND16 param_2, u16 param_3)
 
 {
     code        **ppcVar1;
-    undefined4    uVar2;
+    u32    uVar2;
     BOOL16        BVar3;
     i16           iVar4;
     u16           uVar5;
     HWND16        hwnd;
     u16           uVar6;
     u16           uVar7;
-    undefined4   *local_3c;
+    u32   *local_3c;
     i16           iStack56;
     i16           iStack54;
     i16           iStack52;
@@ -1574,9 +1574,9 @@ void  draw_op_1020_30be(u32 param_1, HWND16 param_2, u16 param_3)
 void  unk_draw_op_1020_320e(u32 param_1, HDC16 param_2, u16 param_3)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     code      **ppcVar2;
-    undefined4  uVar3;
+    u32  uVar3;
     i16         iVar4;
     i16         iVar5;
     u16         uVar6;
@@ -1600,7 +1600,7 @@ void  unk_draw_op_1020_320e(u32 param_1, HDC16 param_2, u16 param_3)
         puVar1    = *(iVar5 + 0x24);
         init_data = (DEVMODEA *)0x0;
         uVar8     = pass1_1008_4772((astruct_76 *)(puVar1 & 0xffff | (iVar5 + 0x26) << 0x10));
-        local_4   = CreateDC16((LPCSTR)0x1008, (LPCSTR)uVar8, (LPCSTR)(uVar8 >> 0x10), init_data);
+        local_4   = CreateDC16(0x1008, uVar8, (uVar8 >> 0x10), init_data);
         pHStack6  = &local_4;
         ppcVar2   = (*puVar1 + 0x8);
         (**ppcVar2)(s_tile2_bmp_1050_1538, puVar1, (puVar1 >> 0x10), pHStack6, param_3);
@@ -1698,14 +1698,14 @@ void  draw_op_1020_3488(u32 param_1)
 {
     u16        uVar1;
     u32        uVar2;
-    undefined4 uVar3;
+    u32 uVar3;
     HPEN16     handle;
     HGDIOBJ16  handle_00;
     HGDIOBJ16  HVar4;
     u16        uVar5;
     u16        unaff_SS;
     i16        bottom;
-    undefined4 local_a;
+    u32 local_a;
     u16       *puStack6;
 
     uVar5    = (param_1 >> 0x10);
@@ -1752,7 +1752,7 @@ void  pass1_1020_3bd6(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
     i16        iVar1;
     u16        uVar2;
     u16        uVar3;
-    undefined4 uVar4;
+    u32 uVar4;
 
     uVar3 = (param_1 >> 0x10);
     uVar2 = param_1;
@@ -1803,8 +1803,8 @@ void  pass1_1020_3d08(u16 param_1,
     bool        bVar4;
     code      **ppcVar5;
     u16        *puVar6;
-    undefined4  uVar7;
-    undefined4 *puVar8;
+    u32  uVar7;
+    u32 *puVar8;
     u32         uVar9;
     u8        bVar10;
     u8        bVar12;
@@ -2073,8 +2073,8 @@ void  unk_draw_op_1020_2020(u32 param_1, HWND16 param_2, u16 param_3)
 
 {
     code        **ppcVar1;
-    undefined4    uVar2;
-    undefined4   *puVar3;
+    u32    uVar2;
+    u32   *puVar3;
     u16           uVar4;
     HDC16        *pHVar5;
     i16           iVar6;
@@ -2097,9 +2097,9 @@ void  unk_draw_op_1020_2020(u32 param_1, HWND16 param_2, u16 param_3)
     u8            local_38[0x6];
     u16           local_32;
     u16           uStack48;
-    undefined4    uStack46;
+    u32    uStack46;
     u16           uStack42;
-    undefined4   *puStack40;
+    u32   *puStack40;
     HDC16         local_24;
     PAi16STRUCT16 local_22;
 
@@ -2170,7 +2170,7 @@ void  unk_draw_op_1020_2020(u32 param_1, HWND16 param_2, u16 param_3)
         piVar18                = (puVar14 + -0x38);
         *piVar18               = *piVar18 + 0x1;
     }
-    puVar3  = *(undefined4 **)(puVar14 + -0x26);
+    puVar3  = (puVar14 + -0x26);
     ppcVar1 = (*puVar3 + 0x4);
     (**ppcVar1)(0x1008, puVar3, (puVar3 >> 0x10), 0x0, 0x0, puVar14 + -0x22, param_3);
     uVar11                          = extraout_DX;
@@ -2225,7 +2225,7 @@ void  draw_line_1020_229c(u32 param_1, HDC16 param_2)
 {
     i16        iVar1;
     i1616     *pIVar2;
-    undefined4 uVar3;
+    u32 uVar3;
     i16        iVar4;
     i16        iVar5;
     i16       *piVar6;
@@ -2319,7 +2319,7 @@ void  pass1_1020_27b0(astruct_664 *param_1, u16 param_2, u16 param_3, i16 param_
 
 {
     code     **ppcVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     i16        iVar3;
     u8        *extraout_DX;
     u16        uVar4;

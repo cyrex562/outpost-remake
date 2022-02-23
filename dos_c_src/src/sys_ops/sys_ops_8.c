@@ -1,5 +1,9 @@
+#include "sys_ops_8.h"
+#include "types.h"
+#include "globals.h"
+#include "utils.h"
 
-void pass1_1010_abd2(u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 param_5, u16 param_6)
+void pass1_1010_abd2(Globals *globals, u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 param_5, u16 param_6)
 
 {
     bool bVar1;
@@ -9,7 +13,7 @@ void pass1_1010_abd2(u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 par
     i16  iStack16;
     i16  iStack14;
 
-    puVar3    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x35, param_6, param_4, param_5);
+    puVar3    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x35, param_6, param_4, param_5);
     bVar1     = false;
     iStack16  = param_3;
     _iStack20 = CONCAT22(param_6, &stack0x000a);
@@ -120,9 +124,9 @@ u32  pass1_1010_8c32(astruct_640 *param_1, u16 param_2, u16 param_3, u16 param_4
 u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_4, u16 param_5)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     i1616       IVar2;
-    undefined4 *puVar3;
+    u32 *puVar3;
     i16         iVar4;
     u16         uVar5;
     u8         *in_DX;
@@ -135,7 +139,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
     LPCSTR      spec;
     WORD       *valist;
     u32         uStack46;
-    undefined4  local_10;
+    u32  local_10;
     i16         iStack12;
     i16         iStack10;
     u8         *puStack8;
@@ -146,7 +150,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
     iVar6  = param_3;
     uVar5  = (iVar6 + 0x6);
     uVar9  = uVar5;
-    spec   = (LPCSTR)param_2;
+    spec   = param_2;
     valist = (WORD *)(param_2 >> 0x10);
     if(uVar5 != 0x0)
     {
@@ -170,7 +174,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                     pcVar10 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4 = (pcVar10 >> 0x10);
                     uStack6 = SUB42(pcVar10, 0x0);
-                    IVar2   = wspri16f16((LPSTR)&USHORT_1050_1028, spec, valist);
+                    IVar2   = wspri16f16(&USHORT_1050_1028, spec, valist);
                     return CONCAT22(IVar2, uStack4);
                 }
                 break;
@@ -196,7 +200,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                     pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4  = (pcVar10 >> 0x10);
                     uStack6  = SUB42(pcVar10, 0x0);
-                    wspri16f16((LPSTR)&USHORT_1050_1028, spec, valist);
+                    wspri16f16(&USHORT_1050_1028, spec, valist);
                     goto LAB_1010_8def;
                 }
                 break;
@@ -233,7 +237,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                 pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                 uStack4  = (pcVar10 >> 0x10);
                 uStack6  = SUB42(pcVar10, 0x0);
-                wspri16f16((LPSTR)&USHORT_1050_1028, spec, valist);
+                wspri16f16(&USHORT_1050_1028, spec, valist);
             LAB_1010_8def:
                 fn_ptr_1000_17ce((astruct_18 *)(uStack46 & 0xffff | ZEXT24(in_DX) << 0x10), 0x1000);
                 return CONCAT22(uStack46, in_DX);
@@ -325,7 +329,7 @@ void  pass1_1010_9372(u32 *param_1, u16 param_2, i16 param_3, i16 param_4, i16 p
     i16        unaff_DI;
     u16        unaff_SS;
     bool       bVar5;
-    undefined4 uVar6;
+    u32 uVar6;
     u32        uVar7;
 
     if(0x0 < param_4)
@@ -356,10 +360,10 @@ void  pass1_1010_9794(u32 param_1, u16 param_2)
 {
     i16          iVar1;
     code       **ppcVar2;
-    undefined4  *puVar3;
+    u32  *puVar3;
     u16          uVar4;
     astruct_251 *puVar5;
-    undefined4  *puVar6;
+    u32  *puVar6;
     u8          *puVar7;
     u8          *extraout_DX;
     u16          extraout_DX_00;
@@ -882,8 +886,8 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
 {
     i16        *piVar1;
     u16       **ppuVar2;
-    undefined4  uVar3;
-    undefined4 *puVar4;
+    u32  uVar3;
+    u32 *puVar4;
     code      **ppcVar5;
     LPCSTR      pCVar6;
     i16         iVar7;
@@ -914,7 +918,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     u8         *puStack24;
     i16         iStack22;
     u16        *puStack20;
-    undefined4  uStack16;
+    u32  uStack16;
     i16         iStack12;
     i16         iStack10;
     u16         uStack8;
@@ -961,15 +965,15 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     uStack8  = SUB42(pcVar18, 0x0);
     puStack6 = puVar12;
     pass1_1000_3cea(param_1->field_0xe, pcVar18);
-    pCVar6             = (LPCSTR)str_op_1008_60e8(param_1->field_0xe, puVar12);
+    pCVar6             = str_op_1008_60e8(param_1->field_0xe, puVar12);
     param_1->field_0xa = pCVar6;
     param_1->field_0xc = puVar12;
     pcVar18            = param_1->field_0xe;
-    pCVar6             = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16((LPCSTR)0x1008, param_1->field_0xa, (LPCSTR)puVar12, (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar6             = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(0x1008, param_1->field_0xa, puVar12, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar6              = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar6              = &globals->PTR_LOOP_1050_1000;
         iStack22            = pass1_1000_3e2c(param_1->field_0xe);
         puVar19             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_4, puVar12, unaff_DI);
         puVar12             = (puVar19 >> 0x10);
@@ -981,11 +985,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar6, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar16 = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar16 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar16 = &globals->PTR_LOOP_1050_1000;
         iVar7   = pass1_1000_475e(param_1->field_0xe, 0x105013c4);
         if(iVar7 == 0x0)
         {
@@ -994,11 +998,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar16, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar6  = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar6 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar6 = &globals->PTR_LOOP_1050_1000;
         iVar7  = pass1_1000_475e(param_1->field_0xe, 0x105013c8);
         if(iVar7 == 0x0)
         {
@@ -1007,11 +1011,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar6, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar16 = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar16 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar16 = &globals->PTR_LOOP_1050_1000;
         iVar7   = pass1_1000_475e(param_1->field_0xe, 0x105013c8);
         if(iVar7 == 0x0)
         {
@@ -1020,11 +1024,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar16, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar6  = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar6 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar6 = &globals->PTR_LOOP_1050_1000;
         iVar7  = pass1_1000_475e(param_1->field_0xe, 0x105013c8);
         if(iVar7 == 0x0)
         {
@@ -1033,11 +1037,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar6, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar16 = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar16 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar16 = &globals->PTR_LOOP_1050_1000;
         iVar7   = pass1_1000_475e(param_1->field_0xe, 0x105013c8);
         if(iVar7 == 0x0)
         {
@@ -1046,12 +1050,12 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar16, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar6  = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     puVar11 = puVar12;
     if(*param_1->field_0xe != '\0')
     {
-        pCVar6    = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar6    = &globals->PTR_LOOP_1050_1000;
         uStack46  = pass1_1000_3e2c(param_1->field_0xe);
         puVar11   = (puVar12 | uStack46);
         puStack44 = puVar12;
@@ -1064,11 +1068,11 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar6, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar16 = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar16 = (LPCSTR)&globals->PTR_LOOP_1050_1000;
+        pCVar16 = &globals->PTR_LOOP_1050_1000;
         iVar7   = pass1_1000_475e(param_1->field_0xe, 0x105013c4);
         if(iVar7 == 0x0)
         {
@@ -1077,22 +1081,22 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar16, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar6  = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar6              = (LPCSTR)0x1008;
+        pCVar6              = 0x1008;
         uVar8               = str_op_1008_60e8(param_1->field_0xe, puVar11);
         param_1->field_0x1a = uVar8;
         param_1->field_0x1c = puVar11;
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = (LPCSTR)s_tile2_bmp_1050_1538;
-    GetPrivateProfileString16(pCVar6, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    pCVar16 = s_tile2_bmp_1050_1538;
+    GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
-        pCVar16             = (LPCSTR)0x1008;
+        pCVar16             = 0x1008;
         uVar8               = str_op_1008_60e8(param_1->field_0xe, puVar11);
         param_1->field_0x68 = uVar8;
         param_1->field_0x6a = puVar11;
@@ -1100,7 +1104,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
     index   = (i1616)s_tile2_bmp_1050_1538;
-    puVar9  = GetPrivateProfileString16(pCVar16, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    puVar9  = GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
         index               = 0x1008;
@@ -1175,7 +1179,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
     puVar12 = extraout_DX_00;
-    GetPrivateProfileString16((LPCSTR)&globals->PTR_LOOP_1050_1000, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (LPCSTR)(pcVar18 >> 0x10));
+    GetPrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
         pcVar18 = param_1->field_0xe;
@@ -1222,9 +1226,9 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
 void  write_private_profile_str_1010_5b10(u16 *param_1)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
-    undefined4  uVar3;
+    u32  uVar3;
     code      **ppcVar4;
     LPCSTR      pCVar5;
     u8         *in_DX;
@@ -1245,76 +1249,76 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
     sys_1000_3f9c(uVar3, (uVar3 >> 0x10), 0x149c, &USHORT_1050_1050, (puVar8 + 0xa), &stack0xfffe, uVar7, 0x1000, unaff_SS, in_AF);
     if((iVar6 + 0x80) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)&globals->PTR_LOOP_1050_1000, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPCSTR) * (iVar6 + 0xe));
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0xe));
     if((iVar6 + 0x1e) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x74) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x72) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x20) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xe);
     sys_1000_3f9c(uVar3, (uVar3 >> 0x10), 0x14a2, &USHORT_1050_1050, *(iVar6 + 0x76), &stack0xfffe, uVar7, 0x1000, unaff_SS, in_AF);
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)&globals->PTR_LOOP_1050_1000, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPCSTR) * (iVar6 + 0xe));
+    WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0xe));
     if((iVar6 + 0x7a) == 0x0)
     {
-        pCVar5 = (LPCSTR)0x13c8;
+        pCVar5 = 0x13c8;
     }
     else
     {
-        pCVar5 = (LPCSTR)0x13c4;
+        pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPCSTR) * (iVar6 + 0x1a));
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x1a));
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPCSTR) * (iVar6 + 0x68));
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x68));
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16((LPCSTR)s_tile2_bmp_1050_1538, (LPCSTR)uVar3, (LPCSTR)(uVar3 >> 0x10), (LPCSTR) * (iVar6 + 0x6c));
+    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x6c));
     iStack12 = 0x1;
     do
     {
@@ -1357,8 +1361,8 @@ void  pass1_1010_5d9c(u32 param_1, i16 param_2, u8 *param_3, i16 param_4, u16 pa
 void  get_private_profile_string_1010_6132(u32 param_1, i16 param_2, LPCSTR param_3)
 
 {
-    undefined4 uVar1;
-    undefined4 uVar2;
+    u32 uVar1;
+    u32 uVar2;
     u16        uVar3;
     i16        iVar4;
     u16        in_DX;
@@ -1372,7 +1376,7 @@ void  get_private_profile_string_1010_6132(u32 param_1, i16 param_2, LPCSTR para
     iVar7 = param_1;
     uVar1 = (iVar7 + 0xe);
     uVar2 = (iVar7 + 0xa);
-    GetPrivateProfileString16(param_3, (LPCSTR)uVar2, (LPCSTR)(uVar2 >> 0x10), (LPSTR)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), uVar1, (LPCSTR)(uVar1 >> 0x10));
+    GetPrivateProfileString16(param_3, uVar2, (uVar2 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), uVar1, (uVar1 >> 0x10));
     if(*(iVar7 + 0xe) != '\0')
     {
         uVar3 = pass1_1000_47a4(*(iVar7 + 0xe), 0x105014a6, unaff_SS);
@@ -1410,7 +1414,7 @@ void  get_private_profile_string_1010_6132(u32 param_1, i16 param_2, LPCSTR para
 void  switchD_1010: 2ab5 ::caseD_13(u32 param_1, i16 param_2)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     i16        iVar2;
     u16        unaff_SS;
     undefined1 in_AF;
@@ -1421,7 +1425,7 @@ void  switchD_1010: 2ab5 ::caseD_13(u32 param_1, i16 param_2)
         uVar1 = (param_1 + 0xe);
         sys_1000_3f9c(uVar1, (uVar1 >> 0x10), s__d__d__d__d_1050_14ae, &USHORT_1050_1050, *(param_2 * 0x8 + param_1 + 0x22), &stack0xfffe, param_1._2_2_, 0x1000, unaff_SS, in_AF);
         uVar1 = (param_1 + 0xa);
-        WritePrivateProfileString16((LPCSTR)&globals->PTR_LOOP_1050_1000, (LPCSTR)uVar1, (LPCSTR)(uVar1 >> 0x10), (LPCSTR) * (param_1 + 0xe));
+        WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar1, (uVar1 >> 0x10),  * (param_1 + 0xe));
     }
     return;
 }
@@ -1528,7 +1532,7 @@ void  pass1_1010_4a8a(astruct_637 *param_1, u16 param_2, u16 param_3, u16 param_
 void  struct_1010_4d5c(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u8 *param_7)
 
 {
-    undefined4   uVar1;
+    u32   uVar1;
     u16          uVar2;
     astruct_245 *iVar3;
     i16          iVar4;
@@ -1558,11 +1562,11 @@ void  struct_1010_4d5c(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 p
 void  pass1_1010_4f48(u32 param_1, u16 param_2)
 
 {
-    undefined4  *puVar1;
+    u32  *puVar1;
     u16          uVar2;
     code       **ppcVar3;
-    undefined4  *puVar4;
-    undefined4   uVar5;
+    u32  *puVar4;
+    u32   uVar5;
     astruct_482 *iVar6;
     astruct_483 *iVar7;
     u16          uVar6;
@@ -1629,7 +1633,7 @@ void  pass1_1010_503e(i16 param_1, u16 param_2, u16 param_3, u8 *param_4, u16 pa
 void  pass1_1010_519a(u32 param_1, i16 *param_2, u8 *param_3, u16 param_4)
 
 {
-    undefined4   uVar1;
+    u32   uVar1;
     u16          uVar2;
     u8          *puVar3;
     u8          *puVar4;
@@ -1641,7 +1645,7 @@ void  pass1_1010_519a(u32 param_1, i16 *param_2, u8 *param_3, u16 param_4)
     i16         *piStack44;
     u8           local_18[0xc];
     i16          iStack12;
-    undefined4   uStack6;
+    u32   uStack6;
 
     uStack6 = 0x0;
     pass1_1028_dc52((astruct_92 *)CONCAT22(param_4, local_18), 0x1, 0x0, 0x400);
@@ -1684,7 +1688,7 @@ void  pass1_1010_35a4(u32 *param_1, u32 param_2, u8 *param_3)
 
 {
     code     **ppcVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     u16        uVar3;
     u32       *puVar4;
     u16        uVar5;
@@ -1699,7 +1703,7 @@ void  pass1_1010_35a4(u32 *param_1, u32 param_2, u8 *param_3)
     uVar7    = (param_1 >> 0x10);
     uVar2    = (param_1 + 0x56);
     uVar2    = (uVar2 + 0x8);
-    puStack8 = *(u32 **)(uVar2 + (param_1 + 0x5a) * 0x4);
+    puStack8 = (uVar2 + (param_1 + 0x5a) * 0x4);
     uStack12 = param_2;
     if(param_2 != 0x0)
     {
@@ -1723,7 +1727,7 @@ void  pass1_1010_35a4(u32 *param_1, u32 param_2, u8 *param_3)
         for(; (uStack12 & 0xf) != 0x0; uStack12 = uStack12 >> 0x4)
         {
             uVar2    = (puStack8 + 0x8);
-            puStack8 = *(u32 **)((((u8)uStack12 & 0xf) - 0x1) * 0x4 + uVar2);
+            puStack8 = ((((u8)uStack12 & 0xf) - 0x1) * 0x4 + uVar2);
             uVar7    = 0x1000;
             puVar4   = puStack8;
             mem_op_1000_179c(0x4a, puVar6, 0x1000);
@@ -1857,7 +1861,7 @@ void  pass1_1010_41d6(u32 param_1, u32 param_2, u8 *param_3, u16 param_4, u8 par
 {
     u16         *puVar1;
     i16         *piVar2;
-    undefined4   uVar3;
+    u32   uVar3;
     u16          uVar4;
     u16          uVar5;
     i16          iVar6;
@@ -1880,9 +1884,9 @@ void  pass1_1010_41d6(u32 param_1, u32 param_2, u8 *param_3, u16 param_4, u8 par
     i16          iStack26;
     u16          uStack24;
     i16          iStack22;
-    undefined4   uStack20;
+    u32   uStack20;
     u16          uStack16;
-    undefined4   uStack14;
+    u32   uStack14;
     u32          uStack10;
     u16          uStack6;
     u16          uStack4;

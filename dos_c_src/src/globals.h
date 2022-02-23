@@ -2,8 +2,11 @@
 
 struct Globals
 {
+    u16 PTR_LOOP_1050_5fc9;
+    u16 USHORT_1050_1050;
     u16 DAT_1050_5f82;
     u16 DAT_1050_5f87;
+    u16 PTR_LOOP_1050_1050;
     u16 PTR_LOOP_1050_038c;
     u16 PTR_LOOP_1050_038e;
     u16 PTR_LOOP_1050_0390;
@@ -20,6 +23,7 @@ struct Globals
     u16 PTR_LOOP_1050_5f7e;
     u16 PTR_LOOP_1050_5f80;
     u16 PTR_LOOP_1050_5f84;
+    u16 PTR_LOOP_1050_6210;
     u32 PTR_LOOP_1050_029c;
     u32 PTR_LOOP_1050_03a0;
     u32 PTR_LOOP_1050_4fb8;
@@ -27,3 +31,5 @@ struct Globals
     u32 PTR_LOOP_1050_68a2;
     u16 PTR_LOOP_1050_63fe;
 };
+
+typedef struct Globals Globals;

@@ -5,7 +5,7 @@ void  pass1_1008_cbc4(u32 param_1, u32 param_2, u16 param_3)
     long        *plVar1;
     code       **ppcVar2;
     bool         bVar3;
-    undefined4  *puVar4;
+    u32  *puVar4;
     u16          uVar5;
     u8          *puVar6;
     u8          *extraout_DX;
@@ -50,7 +50,7 @@ void  pass1_1008_cbc4(u32 param_1, u32 param_2, u16 param_3)
         set_struct_1008_574a(CONCAT22(puVar8, puVar4));
         puVar8 = extraout_DX_00;
     }
-    *(undefined4 **)&iVar10->field_0x1e = puVar4;
+    &iVar10->field_0x1e = puVar4;
     (&iVar10->field_0x1e + 0x2)         = puVar8;
     lStack6                             = (param_2 + 0x200);
     pass1_1028_dc52((astruct_92 *)CONCAT22(param_3, local_18), 0x1, 0x0, 0x400);
@@ -126,9 +126,9 @@ void  pass1_1008_cda2(u32 param_1, u32 param_2, u16 param_3)
 
 {
     long        *plVar1;
-    undefined4  *puVar2;
+    u32  *puVar2;
     code       **ppcVar3;
-    undefined4  *puVar4;
+    u32  *puVar4;
     char        *pcVar5;
     u16          uVar6;
     u16          uVar7;
@@ -152,12 +152,12 @@ void  pass1_1008_cda2(u32 param_1, u32 param_2, u16 param_3)
     u16          uStack36;
     u32          uStack34;
     u32          uStack30;
-    undefined4   uStack26;
-    undefined4  *puStack18;
+    u32   uStack26;
+    u32  *puStack18;
     u8          *puStack16;
     u16         *puStack14;
     u16          uStack10;
-    undefined4   uStack8;
+    u32   uStack8;
     i16          iStack4;
 
     uVar14 = (param_1 >> 0x10);
@@ -187,7 +187,7 @@ void  pass1_1008_cda2(u32 param_1, u32 param_2, u16 param_3)
         set_struct_1008_574a(CONCAT22(puVar13, puVar4));
         uVar15 = extraout_DX_00;
     }
-    *(undefined4 **)&iVar15->field_0x1a = puVar4;
+    &iVar15->field_0x1a = puVar4;
     (&iVar15->field_0x1a + 0x2)         = uVar15;
     iStack4                             = 0x0;
     uVar15                              = (param_2 >> 0x10);
@@ -293,10 +293,10 @@ void  pass1_1008_cfa0(u32 param_1, u32 param_2)
 
 {
     u32         uVar1;
-    undefined4  uVar2;
+    u32  uVar2;
     code      **ppcVar3;
     bool        bVar4;
-    undefined4 *puVar5;
+    u32 *puVar5;
     u16         uVar6;
     u16         uVar7;
     u16         uVar8;
@@ -458,10 +458,10 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
 
 {
     i16         iVar1;
-    undefined4  uVar2;
+    u32  uVar2;
     code      **ppcVar3;
     bool        bVar4;
-    undefined4 *puVar5;
+    u32 *puVar5;
     u16         uVar6;
     u16         uVar7;
     u16         uVar8;
@@ -484,7 +484,7 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
     u16         uStack52;
     u32         uStack20;
     u32         uStack14;
-    undefined4 *puStack10;
+    u32 *puStack10;
 
     valist  = (WORD *)(param_1 >> 0x10);
     iVar16  = param_1;
@@ -532,7 +532,7 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
         {
             puVar13 = ((uVar15 + 0x6) & 0xff);
             pass1_1020_bd80((uVar15 + 0xc));
-            wspri16f16((LPSTR)0x1020, (LPCSTR)(iVar16 + 0x22), valist);
+            wspri16f16(0x1020, (iVar16 + 0x22), valist);
             uVar7   = str_op_1008_60e8((param_1 & 0xffff0000 | (iVar16 + 0x22)), puVar13);
             uVar17  = 0x1000;
             puVar14 = puVar13;
@@ -591,8 +591,8 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
 void  pass1_1008_d3ae(u32 param_1)
 
 {
-    undefined4  *puVar1;
-    undefined4  *puVar2;
+    u32  *puVar1;
+    u32  *puVar2;
     code       **ppcVar3;
     bool         bVar4;
     u16          uVar5;
@@ -605,7 +605,7 @@ void  pass1_1008_d3ae(u32 param_1)
     u16          uVar11;
     astruct_21  *paVar12;
     u32          uVar13;
-    undefined4   uVar14;
+    u32   uVar14;
     u32          uVar15;
     u16          uStack6;
 
@@ -689,7 +689,7 @@ void  pass1_1008_b200(u32 param_1, u16 param_2)
 {
     u32          uVar1;
     code       **ppcVar2;
-    undefined4  *puVar3;
+    u32  *puVar3;
     u8          *puVar4;
     astruct_195 *uVar5;
     u16          uVar6;
@@ -733,7 +733,7 @@ void  pass1_1008_b200(u32 param_1, u16 param_2)
         set_struct_1008_574a(CONCAT22(puVar9, puVar3));
         puVar9 = extraout_DX_00;
     }
-    *(undefined4 **)&iVar12->field_0xe = puVar3;
+    &iVar12->field_0xe = puVar3;
     (&iVar12->field_0xe + 0x2)         = puVar9;
     pass1_1028_dc52((astruct_92 *)CONCAT22(param_2, local_14), 0x1, 0x0, 0x400);
     while(true)
@@ -778,7 +778,7 @@ void  pass1_1008_b200(u32 param_1, u16 param_2)
 u32  pass1_1008_b38c(u32 param_1, u16 param_2, u8 *param_3)
 
 {
-    undefined4  *puVar1;
+    u32  *puVar1;
     code       **ppcVar2;
     u16          uVar3;
     astruct_197 *iVar3;
@@ -843,7 +843,7 @@ u32  pass1_1008_b38c(u32 param_1, u16 param_2, u8 *param_3)
 void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *param_5, u16 *param_6, u16 *param_7, u16 *param_8)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     code      **ppcVar2;
     u32         uVar3;
     u16         uVar4;
@@ -862,7 +862,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     u8          uVar15;
     u8          uVar16;
     char        local_106[0x100];
-    undefined4 *puStack6;
+    u32 *puStack6;
 
     uVar4          = 0x0;
     *param_8       = 0x0;
@@ -1119,7 +1119,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
 void  pass1_1008_a930(u32 param_1, i16 param_2, u16 param_3)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     code     **ppcVar2;
     u8        *puVar3;
     u16        extraout_DX;
@@ -1466,7 +1466,7 @@ void  pass1_1008_909c(u32 param_1, u16 param_2)
     u16          uVar4;
     long         lVar5;
     long         lStack10;
-    undefined4   uStack6;
+    u32   uStack6;
 
     uVar4 = (param_1 >> 0x10);
     iVar5 = (astruct_106 *)param_1;
@@ -1589,7 +1589,7 @@ astruct_20 * unk_draw_op_1008_7f62(astruct_20 *param_1, u16 param_2, u32 param_3
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar3->field_0x5b)), s_SOLChildPar_1050_0358);
     HVar1                     = GetStockObject16(0x1000);
     iVar3->hgdiobj_field_0xc6 = HVar1;
-    HVar2                     = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, (LPCSTR)0x7f00);
+    HVar2                     = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
     iVar3->hcursor_field_0xc4 = HVar2;
     iVar3->field_0xc8         = 0x2008;
     iVar3->field_0xac         = 0x44000000;
@@ -1603,7 +1603,7 @@ astruct_20 * unk_draw_op_1008_7f62(astruct_20 *param_1, u16 param_2, u32 param_3
 void  memcpy_op_1008_676e(u32 param_1, u16 param_2, u8 *param_3)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     long       lVar2;
     u16        uVar3;
     i16        iVar4;
@@ -1676,8 +1676,8 @@ i16  pass1_1008_7006(u16 param_1, u16 param_2, u32 param_3, u8 *param_4, i16 par
 
 {
     code      **ppcVar1;
-    undefined4 *puVar2;
-    undefined4  uVar3;
+    u32 *puVar2;
+    u32  uVar3;
     i16         iStack4;
 
     iStack4 = 0x0;
@@ -1705,8 +1705,8 @@ i16  pass1_1008_7056(u16 param_1, u16 param_2, u32 param_3, u8 *param_4, i16 par
 
 {
     code      **ppcVar1;
-    undefined4 *puVar2;
-    undefined4  uVar3;
+    u32 *puVar2;
+    u32  uVar3;
     i16         iStack4;
 
     iStack4 = 0x0;
@@ -1794,15 +1794,15 @@ void debug_pri16_1008_6048(u32 param_1, LPSTR param_2, WORD *param_3)
         args = param_3;
         if(DAT_1050_02ee == 0xffff)
         {
-            param_2       = (LPSTR)&globals->PTR_LOOP_1050_1000;
+            param_2       = &globals->PTR_LOOP_1050_1000;
             uVar1         = pass1_1000_3ec0(0x2f4, &USHORT_1050_1050);
             DAT_1050_02ee = ((in_DX | uVar1) != 0x0);
         }
         if(DAT_1050_02ee != 0x0)
         {
             wvspri16f16(param_2, &stack0x0008, args);
-            OutputDebugString16((LPCSTR)s_tile2_bmp_1050_1538);
-            OutputDebugString16((LPCSTR)s_tile2_bmp_1050_1538);
+            OutputDebugString16(s_tile2_bmp_1050_1538);
+            OutputDebugString16(s_tile2_bmp_1050_1538);
             if(_PTR_LOOP_1050_02f0 != 0x0)
             {
                 pass1_1000_2b5c(_PTR_LOOP_1050_02f0, (_PTR_LOOP_1050_02f0 >> 0x10), 0x2fd, &USHORT_1050_1050, unaff_ES, &stack0xfffe, 0x1000, param_3);
@@ -1908,7 +1908,7 @@ void  pass1_1008_6562(u32 *param_1, u32 param_2, i16 param_3, u16 param_4, u8 *p
 void  struct_op_1008_6604(astruct_85 *param_1, i16 param_2, i16 param_3)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     i16         iVar3;
     astruct_85 *iVar4;
     astruct_84 *iVar2;
@@ -2018,7 +2018,7 @@ void  pass1_1008_4d84(astruct_90 *param_1, u32 param_2, u8 *param_3)
 void  pass1_1008_405c(astruct_76 *param_1, u32 param_2, i16 param_3, i16 param_4)
 
 {
-    undefined4  uVar1;
+    u32  uVar1;
     sqword      sVar2;
     i16         iVar3;
     long        lVar4;
@@ -2124,7 +2124,7 @@ void  pass1_1008_4834(astruct_76 *param_1)
 
 {
     code      **ppcVar1;
-    undefined4 *puVar2;
+    u32 *puVar2;
     u32         uVar3;
     u8         *extraout_DX;
     u8         *puVar4;
@@ -2169,7 +2169,7 @@ i16  win_ui_op_1008_2b54(u16 param_1, u8 *param_2, u16 param_3)
     HWND16      hwnd;
     char       *pcVar5;
     u16         uVar6;
-    undefined4 *local_a6[0x14];
+    u32 *local_a6[0x14];
     u8          local_56[0x50];
     i16         iStack6;
     i16         iStack4;
@@ -2182,7 +2182,7 @@ i16  win_ui_op_1008_2b54(u16 param_1, u8 *param_2, u16 param_3)
         pcVar5 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_a6), pcVar5);
         hwnd    = (HWND16)s_tile2_bmp_1050_1538;
-        iStack4 = MessageBox16(0x1000, (LPCSTR)(s_New_failed_in_Op__Op_1050_0020 + 0x1), (LPCSTR)local_a6, param_3);
+        iStack4 = MessageBox16(0x1000, (s_New_failed_in_Op__Op_1050_0020 + 0x1), local_a6, param_3);
     }
     else
     {

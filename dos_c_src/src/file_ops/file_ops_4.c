@@ -43,9 +43,9 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 void  close_file_1008_496c(u16 *param_1)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
-    undefined4  uVar3;
+    u32  uVar3;
     code      **ppcVar4;
     i16         iVar5;
     u16         uVar6;
@@ -96,10 +96,10 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
     u16        unaff_SS;
     long       lVar9;
     i16        local_18;
-    undefined4 uStack22;
+    u32 uStack22;
     u16        uStack10;
     u8        *puStack8;
-    undefined4 uStack6;
+    u32 uStack6;
 
     uVar8 = (param_1 >> 0x10);
     iVar7 = param_1;
@@ -113,7 +113,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
         if((iVar7 + 0xc) == -0x1)
         {
             h_file                    = s_tile2_bmp_1050_1538;
-            HVar1                     = _lopen16((LPCSTR)param_2, 0x0);
+            HVar1                     = _lopen16(param_2, 0x0);
             *(HFILE16 *)(iVar7 + 0xc) = HVar1;
             if(HVar1 == 0xffff)
             {
@@ -196,7 +196,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
 
 {
     char        cVar1;
-    undefined4  uVar2;
+    u32  uVar2;
     i16         iVar3;
     u8         *puVar4;
     u16         uVar5;
@@ -217,7 +217,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     astruct_18 *paStack1646;
     u8          local_666[0x100];
     char       *pcStack1382;
-    undefined4  local_562;
+    u32  local_562;
     u16         uStack1374;
     char       *pcStack1370;
     u16         uStack1326;
@@ -352,8 +352,8 @@ LAB_1008_3461:
             paStack1654 = (astruct_18 *)CONCAT22(uVar7, uVar5);
             pcVar9      = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             UStack1648  = (pcVar9 >> 0x10);
-            pCStack1650 = (LPCSTR)pcVar9;
-            MessageBox16(0x1010, (LPCSTR)&PTR_LOOP_1050_0010, pCStack1650, UStack1648);
+            pCStack1650 = pcVar9;
+            MessageBox16(0x1010, &PTR_LOOP_1050_0010, pCStack1650, UStack1648);
             pcStack1382 = 0x0;
             paStack1646 = paStack1654;
             fn_ptr_1000_17ce(paStack1654, 0x1000);

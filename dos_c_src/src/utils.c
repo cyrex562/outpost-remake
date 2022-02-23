@@ -23,3 +23,7 @@ u32 CONCAT12(u8 a, u16 b) {
     c = c | (a << 16);
     return c;
 }
+
+u32 SUB42(u32 a, u32 b) {
+    return a - b;
+}

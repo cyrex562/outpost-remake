@@ -84,7 +84,7 @@ i16 *entry(struct Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 p
         }
         in_task_context = (struct CONTEXT *)s_tile2_bmp_1050_1538;
         param_8         = CONCAT11((param_8 >> 8), 0xff);
-        pass1_1000_24db(param_8, 0);
+        pass1_1000_24db(param_8, 0, globals);
         globals->PTR_LOOP_1050_5f84 = uVar11;
     } while(true);
     dos3_call_1000_23ea(param_2, param_5, 0, unaff_SS);
@@ -150,7 +150,7 @@ i16 *entry(struct Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 p
 void init_op_1008_54aa(u8 *param_1, char *param_2, u8 *param_3, u8 *param_4, u16 param_5, u16 param_6, u16 param_7, u16 param_8, struct Globals *globals)
 
 {
-    fn_ptr_1 *var_1;
+    fn_ptr_3 *fn_ptr_a;
     u16       var_3 = 0;
     u16       in_cx_reg;
     u16       in_dx_reg;
@@ -200,18 +200,18 @@ void init_op_1008_54aa(u8 *param_1, char *param_2, u8 *param_3, u8 *param_4, u16
     var_12 = CONCAT22(var_5, var_3);
     if(globals->PTR_LOOP_1050_0392 != 0x0)
     {
-        var_1 = (*var_12 + 0x4);
-        (**var_1)(0x1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
+        fn_ptr_a = (*var_12 + 0x4);
+        (*fn_ptr_a)(0x1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
     }
     var_13  = *var_12;
-    var_1   = var_13 + 0x4;
-    (**var_1)(0x1000, var_3, var_5);
+    fn_ptr_a = var_13 + 0x4;
+    (**fn_ptr_a)(0x1000, var_3, var_5, 0, 0);
     var_9 = var_8;
     win_msg_op_1008_9498(&globals->PTR_LOOP_1050_1000, param_8);
     if(var_12 != 0x0)
     {
-        var_1 = var_13;
-        (**var_1)(0x1000, var_3, var_5, 0x1);
+        fn_ptr_a = var_13;
+        (*fn_ptr_a)(0x1000, var_3, var_5, 0x1, 0);
         var_9 = var_10;
     }
     var_11 = mem_op_1000_1b68(var_9, 0x1000, globals->PTR_LOOP_1050_03a0, (globals->PTR_LOOP_1050_03a0 >> 0x10));
@@ -228,5 +228,4 @@ void init_1000_23be(struct Globals *globals, u16 param_1, u16 param_2, u16 param
 {
     init_op_1008_54aa(
       globals->PTR_LOOP_1050_5f52, CONCAT22(globals->PTR_LOOP_1050_5f50, globals->PTR_LOOP_1050_5f4e), globals->PTR_LOOP_1050_5f4a, globals->PTR_LOOP_1050_5f4c, &globals->PTR_LOOP_1050_1050, param_1, param_2, param_3, globals);
-    return;
 }

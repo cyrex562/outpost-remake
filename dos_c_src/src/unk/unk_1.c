@@ -1,14 +1,14 @@
 void  pass1_1040_d76e(u32 param_1)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     i16        iVar2;
     u16        uVar3;
 
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
     uVar1 = (iVar2 + 0x94);
-    pass1_1018_5742(uVar1, (uVar1 >> 0x10), *(u32 **)(iVar2 + 0x9c), *(iVar2 + 0x98));
+    pass1_1018_5742(uVar1, (uVar1 >> 0x10), (iVar2 + 0x9c), *(iVar2 + 0x98));
     (iVar2 + 0x9c) = 0x0;
     return;
 }
@@ -121,7 +121,7 @@ void  pass1_1040_c630(u32 *param_1, u16 param_2, u16 param_3)
 {
     i16          iVar1;
     code       **ppcVar2;
-    undefined4   uVar3;
+    u32   uVar3;
     u32          uVar4;
     astruct_165 *iVar4;
     u16          uVar5;
@@ -168,7 +168,7 @@ void  pass1_1040_c630(u32 *param_1, u16 param_2, u16 param_3)
 u16  pass1_1040_c60e(u32 param_1)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     u16        uVar2;
 
     uVar2 = (param_1 >> 0x10);
@@ -217,18 +217,18 @@ void  pass1_1040_bfde(u32 param_1, u32 *param_2, u16 param_3)
 
 {
     code     **ppcVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     i16        iVar3;
     u16        uVar4;
 
     uVar4                  = (param_1 >> 0x10);
     iVar3                  = param_1;
-    *(u32 **)(iVar3 + 0x6) = param_2;
+    (iVar3 + 0x6) = param_2;
     ppcVar1                = (*param_2 + 0x4);
     (**ppcVar1)();
     uVar2          = (iVar3 + 0x6);
     (uVar2 + 0x22) = (iVar3 + 0x4);
-    pass1_1010_2ee2(*(u32 **)(iVar3 + 0x6), param_3, 0x1010);
+    pass1_1010_2ee2((iVar3 + 0x6), param_3, 0x1010);
     return;
 }
 
@@ -285,11 +285,11 @@ u16  pass1_1040_b316(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, i16 pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1040_b17c(u32 param_1, undefined4 param_2, u8 *param_3, i16 param_4, i16 param_5, u16 param_6)
+void  pass1_1040_b17c(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, i16 param_5, u16 param_6)
 
 {
     i16       *piVar1;
-    undefined4 uVar2;
+    u32 uVar2;
     char      *pcVar3;
     u16        uVar4;
     i16        iVar5;
@@ -469,8 +469,8 @@ void  pass1_1040_807e(u32 param_1, u16 param_2, u16 param_3)
 {
     u16          uVar1;
     code       **ppcVar2;
-    undefined4  *puVar3;
-    undefined4  *puVar4;
+    u32  *puVar3;
+    u32  *puVar4;
     u8          *in_DX;
     u16          uVar5;
     u8          *extraout_DX;
@@ -502,7 +502,7 @@ void  pass1_1040_807e(u32 param_1, u16 param_2, u16 param_3)
         puVar6   = extraout_DX;
         if(iVar9->field_0x70 != (astruct_90 *)0x0)
         {
-            puVar4 = *(undefined4 **)&iVar9->field_0x70;
+            puVar4 = &iVar9->field_0x70;
             uVar1  = (&iVar9->field_0x70 + 0x2);
             puVar6 = (uVar1 | puVar4);
             if(puVar6 != 0x0)
@@ -523,7 +523,7 @@ void  pass1_1040_807e(u32 param_1, u16 param_2, u16 param_3)
         {
             struct_1008_4c58(CONCAT22(puVar6, puVar4));
         }
-        *(undefined4 **)&iVar9->field_0x70 = puVar4;
+        &iVar9->field_0x70 = puVar4;
         (&iVar9->field_0x70 + 0x2)         = puVar7;
         pass1_1008_4d84(iVar9->field_0x70, uStack10, puVar7);
         if(paVar9 != (astruct_43 *)0x0)
@@ -570,7 +570,7 @@ void  pass1_1040_78de(void)
 void  pass1_1040_741e(u32 param_1, u16 param_2)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     code      **ppcVar3;
     i16         iVar4;
@@ -967,7 +967,7 @@ u16  pass1_1040_68d2(u32 *param_1, i16 *param_2, u16 param_3, u16 param_4, i16 p
 void  pass1_1040_6cac(u32 param_1, u16 param_2)
 
 {
-    undefined4 *puVar1;
+    u32 *puVar1;
     u16         uVar2;
     code      **ppcVar3;
     i16         iVar4;
@@ -1009,7 +1009,7 @@ void  pass1_1040_6fb6(astruct_57 *param_1, u16 param_2)
 void  pass1_1040_4d7e(u32 param_1)
 
 {
-    undefined4 uVar1;
+    u32 uVar1;
     i16       *piVar2;
     u16        uVar3;
     i16        iStack8;
@@ -1017,7 +1017,7 @@ void  pass1_1040_4d7e(u32 param_1)
 
     uVar3    = (param_1 >> 0x10);
     uVar1    = (param_1 + 0x90);
-    puStack6 = *(u32 **)(uVar1 + 0x2);
+    puStack6 = (uVar1 + 0x2);
     iStack8  = 0x0;
     while((piVar2 = *(i16 **)(param_1 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2 && ((puStack6 + 0x4) != 0x1770)))
     {
