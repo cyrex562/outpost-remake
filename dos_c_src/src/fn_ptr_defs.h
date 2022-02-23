@@ -9,6 +9,6 @@
 
 typedef void (*fn_ptr_1)();
 
-typedef u32 (*fn_ptr_2);
+typedef u32 (*fn_ptr_2)(u16);
 
 #endif // OUTPOST_1_SRC_FN_PTR_DEFS_H_

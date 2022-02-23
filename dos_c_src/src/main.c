@@ -11,6 +11,7 @@
 #include "unk/unk_16.h"
 #include "utils.h"
 #include "winapi.h"
+#include "win_ops/win_ops_3.h"
 
 #include <fn_ptr_ops/fn_ptr_ops_6.h>
 #include <struct_ops/struct_ops_5.h>
@@ -31,12 +32,12 @@ i16 *entry(struct Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 p
     u16      uVar2;
     cstring  pcVar3;
     fn_ptr_2 pcVar4;
-    u16      uVar5;
+    u16      uVar5 = 0;
     cstring  string_1;
     u16     *pu_var_6;
     cstring  puVar7 = NULL;
     cstring  pcVar8;
-    cstring  unaff_SS;
+    cstring  unaff_SS = NULL;
     bool     bVar9;
     u32      DVar10;
     u32      uVar11;
@@ -127,7 +128,7 @@ i16 *entry(struct Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 p
     {
         puVar1   = puVar7;
         puVar7   = puVar7 + 1;
-        uVar2    = *puVar1;
+        uVar2    = puVar1;
         pu_var_6 = puVar7;
         if((uVar2 == uVar5) || (pu_var_6 = (uVar2 + 1), pu_var_6 == 0x0))
         {
@@ -149,75 +150,75 @@ i16 *entry(struct Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 p
 void init_op_1008_54aa(u8 *param_1, char *param_2, u8 *param_3, u8 *param_4, u16 param_5, u16 param_6, u16 param_7, u16 param_8, struct Globals *globals)
 
 {
-    fn_ptr_1 *ppcVar1;
-    u16       uVar3;
-    u16       in_CX;
-    u16       in_DX;
-    u8       *puVar4;
-    u16       extraout_DX;
-    u16       uVar5;
-    u16       extraout_DX_00;
-    u16       uVar6;
-    u16       extraout_DX_01;
-    u32       uVar7;
-    u32      *puStack12;
-    u32       uVar2;
-    u16       stack0xfffe;
+    fn_ptr_1 *var_1;
+    u16       var_3 = 0;
+    u16       in_cx_reg;
+    u16       in_dx_reg;
+    u32       var_4;
+    u16       var_7 = 0;
+    u16       var_5;
+    u16       var_8 = 0;
+    u16       var_9;
+    u16       var_10 = 0;
+    u32       var_11;
+    u32      *var_12;
+    u32       var_13;
+    u16       var_14;
 
     if(param_3 != 0x0)
     {
         return;
     }
-    dos3_call_op_1000_435c(0x0, in_CX, in_DX, &stack0xfffe, param_8);
+    dos3_call_op_1000_435c(0x0, in_cx_reg, in_dx_reg, &var_14, param_8);
     pass1_1000_4d0c(param_5);
     pass1_1000_1fea();
-    globals->PTR_LOOP_1050_03a0 = mem_op_1000_1902(0x0, 0x32, 0x0, 0x12, 0x1000, in_DX);
+    globals->PTR_LOOP_1050_03a0 = mem_op_1000_1902(0x0, 0x32, 0x0, 0x12, 0x1000, in_dx_reg);
     globals->PTR_LOOP_1050_029c = mem_op_1000_1902(0x0, 0x64, 0x0, 0xc, 0x1000, (globals->PTR_LOOP_1050_03a0 >> 0x10));
     globals->PTR_LOOP_1050_4fb8 = mem_op_1000_1902(0x0, 0x64, 0x0, 0x10, 0x1000, (globals->PTR_LOOP_1050_029c >> 0x10));
     globals->PTR_LOOP_1050_68a2 = mem_op_1000_1902(0x0, 0x64, 0x0, 0xe, 0x1000, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
     globals->PTR_LOOP_1050_5744 = mem_op_1000_1902(0x0, 0x1f4, 0x0, 0x42, 0x1000, (globals->PTR_LOOP_1050_68a2 >> 0x10));
-    uVar7                       = mem_op_1000_1902(0x0, 0x32, 0x0, 0x6, 0x1000, (globals->PTR_LOOP_1050_5744 >> 0x10));
-    puVar4                      = (uVar7 >> 0x10);
-    globals->PTR_LOOP_1050_5768 = uVar7;
+    var_11                      = mem_op_1000_1902(0x0, 0x32, 0x0, 0x6, 0x1000, (globals->PTR_LOOP_1050_5744 >> 0x10));
+    var_4                       = (var_11 >> 0x10);
+    globals->PTR_LOOP_1050_5768 = var_11;
     globals->PTR_LOOP_1050_038c = param_4;
     globals->PTR_LOOP_1050_038e = param_3;
     globals->PTR_LOOP_1050_0390 = param_1;
-    globals->PTR_LOOP_1050_576a = puVar4;
-    uVar3                       = str_op_1008_60e8(param_2, puVar4);
-    globals->PTR_LOOP_1050_0392 = CONCAT22(puVar4, uVar3);
-    mem_op_1000_179c(0xc, puVar4, 0x1000);
-    if((puVar4 | uVar3) == 0x0)
+    globals->PTR_LOOP_1050_576a = var_4;
+    var_3                       = str_op_1008_60e8(param_2, var_4);
+    globals->PTR_LOOP_1050_0392 = CONCAT22(var_4, var_3);
+    mem_op_1000_179c(0xc, var_4, 0x1000);
+    if((var_4 | var_3) == 0x0)
     {
-        uVar3 = 0x0;
-        uVar5 = 0x0;
+        var_3 = 0x0;
+        var_5 = 0x0;
     }
     else
     {
-        struct_op_1008_0000(CONCAT13((puVar4 >> 0x8), CONCAT12(puVar4, uVar3)));
-        uVar5 = extraout_DX;
+        struct_op_1008_0000(CONCAT13((var_4 >> 0x8), CONCAT12(var_4, var_3)));
+        var_5 = var_7;
     }
-    puStack12 = CONCAT22(uVar5, uVar3);
+    var_12 = CONCAT22(var_5, var_3);
     if(globals->PTR_LOOP_1050_0392 != 0x0)
     {
-        ppcVar1 = (*puStack12 + 0x4);
-        (**ppcVar1)(0x1000, uVar3, uVar5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
+        var_1 = (*var_12 + 0x4);
+        (**var_1)(0x1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
     }
-    uVar2   = *puStack12;
-    ppcVar1 = uVar2 + 0x4;
-    (**ppcVar1)(0x1000, uVar3, uVar5);
-    uVar6 = extraout_DX_00;
+    var_13  = *var_12;
+    var_1   = var_13 + 0x4;
+    (**var_1)(0x1000, var_3, var_5);
+    var_9 = var_8;
     win_msg_op_1008_9498(&globals->PTR_LOOP_1050_1000, param_8);
-    if(puStack12 != 0x0)
+    if(var_12 != 0x0)
     {
-        ppcVar1 = uVar2;
-        (**ppcVar1)(0x1000, uVar3, uVar5, 0x1);
-        uVar6 = extraout_DX_01;
+        var_1 = var_13;
+        (**var_1)(0x1000, var_3, var_5, 0x1);
+        var_9 = var_10;
     }
-    uVar7 = mem_op_1000_1b68(uVar6, 0x1000, globals->PTR_LOOP_1050_03a0, (globals->PTR_LOOP_1050_03a0 >> 0x10));
-    uVar7 = mem_op_1000_1b68((uVar7 >> 0x10), 0x1000, globals->PTR_LOOP_1050_029c, (globals->PTR_LOOP_1050_029c >> 0x10));
-    uVar7 = mem_op_1000_1b68((uVar7 >> 0x10), 0x1000, globals->PTR_LOOP_1050_4fb8, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
-    uVar7 = mem_op_1000_1b68((uVar7 >> 0x10), 0x1000, globals->PTR_LOOP_1050_68a2, (globals->PTR_LOOP_1050_68a2 >> 0x10));
-    mem_op_1000_1b68((uVar7 >> 0x10), 0x1000, globals->PTR_LOOP_1050_5744, (globals->PTR_LOOP_1050_5744 >> 0x10));
+    var_11 = mem_op_1000_1b68(var_9, 0x1000, globals->PTR_LOOP_1050_03a0, (globals->PTR_LOOP_1050_03a0 >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_029c, (globals->PTR_LOOP_1050_029c >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_4fb8, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_68a2, (globals->PTR_LOOP_1050_68a2 >> 0x10));
+    mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_5744, (globals->PTR_LOOP_1050_5744 >> 0x10));
     return;
 }
 
