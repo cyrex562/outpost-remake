@@ -97,7 +97,7 @@ void pass1_1010_32f4(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4)
     if(iVar10->field_0x52 != (astruct_65 *)0x0)
     {
         param_4 = 0x1000;
-        fn_ptr_1000_17ce((astruct_18 *)iVar10->field_0x52, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)iVar10->field_0x52, 0x1000);
         iVar10->field_0x52 = (astruct_65 *)0x0;
         iVar10->field_0x18 = 0x0;
     }
@@ -263,9 +263,9 @@ void pass1_1010_17c0(u32 param_1)
         (**ppcVar3)();
     }
     &iVar5->field_0x56 = 0x0;
-    fn_ptr_1000_17ce((astruct_18 *)iVar5->field_0x60, 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)iVar5->field_0x60, 0x1000);
     pass1_1000_4906(iVar5->field_0x64, 0x0, iVar5->field_0x68 << 0x2);
-    fn_ptr_1000_17ce((astruct_18 *)iVar5->field_0x64, 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)iVar5->field_0x64, 0x1000);
     iVar5->field_0x60 = 0x0;
     iVar5->field_0x64 = (astruct_20 *)0x0;
     return;
@@ -1106,7 +1106,7 @@ LAB_1010_0a36:
         unk_str_op_1000_3d3e(CONCAT22(param_6, uVar7), *param_4);
         pass1_1000_3cea(CONCAT22(param_6, uVar7), uStack10);
         pass1_1000_3cea(CONCAT22(param_6, uVar7), param_3 & 0xffff0000 | (param_3 + 0x2));
-        fn_ptr_1000_17ce((astruct_18 *)*param_4, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)*param_4, 0x1000);
         *param_4 = pcStack18;
     }
     return;
@@ -1781,7 +1781,7 @@ void pass1_1008_ddca(u16 *param_1, u16 param_2)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    fn_ptr_1000_17ce((astruct_18 *)iVar5->field_0x1e, 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)iVar5->field_0x1e, 0x1000);
     pass1_1010_1d80(param_1, param_2);
     return;
 }

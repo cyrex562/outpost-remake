@@ -685,7 +685,7 @@ void  send_msg_1038_c374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
     u16         uVar5;
     u16         uVar6;
     LRESULT     LVar7;
-    astruct_18 *paVar8;
+    Struct18 *paVar8;
     u16         uVar9;
     u32         uStack10;
     u32         uStack6;
@@ -709,7 +709,7 @@ void  send_msg_1038_c374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
         uVar4   = uStack6;
         (**ppcVar2)(uVar6, param_2, uStack10, (uStack10 >> 0x10), uVar5);
         uVar1  = (param_1 + 0x8e);
-        paVar8 = (astruct_18 *)string_1008_e586(uVar1, (uVar1 >> 0x10), uVar4 & 0xffff | extraout_DX_00 << 0x10, uVar4, extraout_DX_00);
+        paVar8 = (Struct18 *)string_1008_e586(uVar1, (uVar1 >> 0x10), uVar4 & 0xffff | extraout_DX_00 << 0x10, uVar4, extraout_DX_00);
         uVar5  = param_3;
         LVar7  = SendMessage16(0x1008, paVar8, (WPARAM16)(paVar8 >> 0x10), 0x4030000);
         uVar6  = 0x1000;
@@ -2367,7 +2367,7 @@ astruct_63 * pass1_1020_0ae8(astruct_63 *param_1, u8 param_2, u16 param_3)
     send_win_msg_1020_08fe(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((astruct_18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
     }
     return param_1;
 }

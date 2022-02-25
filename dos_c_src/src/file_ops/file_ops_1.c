@@ -362,7 +362,7 @@ void  file_1038_6118(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u16          uVar9;
     u16          uVar10;
     SEGPTR       SVar11;
-    astruct_18  *paStack1046;
+    Struct18  *paStack1046;
     u16          uStack1042;
     u8           local_408[0x400];
     u16          local_8;
@@ -398,7 +398,7 @@ void  file_1038_6118(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                     uVar5  = 0x54;
                     SVar11 = 0x54;
                     mem_op_1000_179c(0x54, param_4, 0x1000);
-                    paStack1046 = (astruct_18 *)CONCAT22(param_4, uVar4);
+                    paStack1046 = (Struct18 *)CONCAT22(param_4, uVar4);
                     BVar3       = read_file_1008_7dee(uVar9, uVar10, uVar4, uVar5, param_4, SVar11, 0x1008);
                     if(BVar3 == 0x0)
                     {
@@ -1779,7 +1779,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 if(puVar6 != 0x0)
                 {
                     uVar8 = &iVar12->field_0x10;
-                    fn_ptr_1000_17ce(*(astruct_18 **)(uVar8 + 0x4), 0x1000);
+                    fn_ptr_1000_17ce(*(Struct18 **)(uVar8 + 0x4), 0x1000);
                     uVar7            = str_op_1008_60e8(CONCAT22(param_5, local_408), puVar9);
                     uVar8            = &iVar12->field_0x10;
                     uVar10           = (uVar8 >> 0x10);

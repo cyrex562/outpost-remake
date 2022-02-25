@@ -1,5 +1,5 @@
 
-void  pass1_1038_9a48(astruct_18 *param_1)
+void  pass1_1038_9a48(Struct18 *param_1)
 
 {
     param_1->field_0x0 = 0x9af6;
@@ -9,7 +9,7 @@ void  pass1_1038_9a48(astruct_18 *param_1)
 }
 
 
-void  pass1_1038_7d5c(astruct_18 *param_1)
+void  pass1_1038_7d5c(Struct18 *param_1)
 
 {
     u16 uVar1;
@@ -384,7 +384,7 @@ void  draw_op_1020_9364(astruct_7 *param_1, HWND16 in_win_handle_2, i1616 param_
 }
 
 
-astruct_18 * pass1_1020_96a2(astruct_18 *param_1, u8 param_2, u16 param_3)
+Struct18 * pass1_1020_96a2(Struct18 *param_1, u8 param_2, u16 param_3)
 
 {
     palette_op_1020_92c4(&param_1->field_0x0, param_3);
@@ -395,7 +395,7 @@ astruct_18 * pass1_1020_96a2(astruct_18 *param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-astruct_18 * pass1_1020_7526(astruct_18 *param_1, u8 param_2, u16 param_3)
+Struct18 * pass1_1020_7526(Struct18 *param_1, u8 param_2, u16 param_3)
 
 {
     palette_op_1020_7270(&param_1->field_0x0, param_3);
@@ -959,7 +959,7 @@ void  palette_op_1020_7270(u16 *param_1, HDC16 param_2)
     i16         iVar4;
     u16         uVar5;
     u16         unaff_SS;
-    astruct_18 *paStack8;
+    Struct18 *paStack8;
 
     uVar5         = (param_1 >> 0x10);
     iVar4         = param_1;
@@ -972,7 +972,7 @@ void  palette_op_1020_7270(u16 *param_1, HDC16 param_2)
     }
     uVar1    = (iVar4 + 0x14);
     uVar2    = (iVar4 + 0x16);
-    paStack8 = (astruct_18 *)CONCAT22(uVar2, uVar1);
+    paStack8 = (Struct18 *)CONCAT22(uVar2, uVar1);
     if((uVar2 | uVar1) != 0x0)
     {
         pass1_1008_5118(CONCAT22(uVar2, uVar1));
@@ -1012,7 +1012,7 @@ BOOL16  win_ui_op_1020_737a(u32 param_1, HWND16 param_2, u16 param_3)
     u16           uVar9;
     u16           uVar10;
     u16           uVar11;
-    astruct_18   *paStack78;
+    Struct18   *paStack78;
     u8            local_42[0x6];
     u32   *local_brush_handle;
     i16           iStack56;
@@ -1049,7 +1049,7 @@ BOOL16  win_ui_op_1020_737a(u32 param_1, HWND16 param_2, u16 param_3)
         {
             uVar1     = (iVar8 + 0x14);
             uVar7     = (iVar8 + 0x16);
-            paStack78 = (astruct_18 *)CONCAT22(uVar7, uVar1);
+            paStack78 = (Struct18 *)CONCAT22(uVar7, uVar1);
             if((uVar7 | uVar1) != 0x0)
             {
                 pass1_1008_5118(CONCAT22(uVar7, uVar1));
@@ -1246,7 +1246,7 @@ void  mixed_draw_op_1020_3fa0(u32 param_1, HWND16 param_2, u16 param_3)
 }
 
 
-astruct_18 * pass1_1020_4064(astruct_18 *param_1, u8 param_2)
+Struct18 * pass1_1020_4064(Struct18 *param_1, u8 param_2)
 
 {
     win_ui_palette_op_1020_3e84((astruct_16 *)param_1);
@@ -1678,7 +1678,7 @@ void  draw_op_1020_33c0(u32 param_1, u32 param_2, i16 param_3, u32 param_4, i16 
             uVar3 = in_DX;
             draw_polygon_1020_3602(param_1, uVar4, CONCAT22(iVar1, uVar2), hdc);
             hdc = 0x1000;
-            fn_ptr_1000_17ce((astruct_18 *)CONCAT22(in_DX, iVar1), 0x1000);
+            fn_ptr_1000_17ce((Struct18 *)CONCAT22(in_DX, iVar1), 0x1000);
             puStack14 = (puStack14 & 0xffff0000 | (puStack14 + 0x6));
             in_DX     = uVar3;
         }

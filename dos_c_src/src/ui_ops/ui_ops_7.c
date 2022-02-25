@@ -346,7 +346,7 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
         MessageBox16((HWND16)s_tile2_bmp_1050_1538, 0x40, pcVar4, (pcVar4 >> 0x10));
         uStack16 = uStack36;
     }
-    fn_ptr_1000_17ce((astruct_18 *)(uStack16 & 0xffff | uVar3 << 0x10), 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)(uStack16 & 0xffff | uVar3 << 0x10), 0x1000);
     close_file_1008_6dd0(CONCAT22(param_4, local_c), 0x1000);
     return;
 }
@@ -408,7 +408,7 @@ void  win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCSTR param_3, u16
         puVar6  = type;
         MessageBeep16(0x1010);
         MessageBox16((HWND16)s_tile2_bmp_1050_1538, &PTR_LOOP_1050_0010, pcVar11, type);
-        fn_ptr_1000_17ce((astruct_18 *)CONCAT22(uVar7, uVar3), 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)CONCAT22(uVar7, uVar3), 0x1000);
         param_3 = &globals->PTR_LOOP_1050_1000;
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
@@ -455,7 +455,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
 {
     u32 *puVar1;
     u16         uVar2;
-    astruct_18 *paVar3;
+    Struct18 *paVar3;
     code      **ppcVar4;
     i16         iVar5;
     u16         uVar6;
@@ -470,7 +470,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
     *param_1      = 0x389e;
     (iVar5 + 0x2) = 0x1008;
     set_sys_color_1008_357e(param_1, 0x0, unaff_CS, unaff_SS);
-    paVar3 = *(astruct_18 **)(iVar5 + 0xf8);
+    paVar3 = *(Struct18 **)(iVar5 + 0xf8);
     uVar8  = (paVar3 >> 0x10);
     h_icon = 0x1000;
     fn_ptr_1000_17ce(paVar3, 0x1000);

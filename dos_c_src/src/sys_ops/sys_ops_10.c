@@ -1566,7 +1566,7 @@ u16 * pass1_1008_7e98(u16 *param_1, u8 param_2)
     uVar1->field_0x2 = 0x1008;
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((astruct_18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
     }
     return param_1;
 }
@@ -1999,7 +1999,7 @@ void  pass1_1008_4d84(astruct_90 *param_1, u32 param_2, u8 *param_3)
     if(iVar3->field_0x12 != 0x0)
     {
         iVar3->field_0xc = (param_2 + 0xc);
-        fn_ptr_1000_17ce((astruct_18 *)iVar3->field_0x4, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)iVar3->field_0x4, 0x1000);
         iVar3->field_0x4 = 0x0;
         uVar1            = iVar3->field_0xc << 0x2;
         mem_op_1000_179c(uVar1, param_3, 0x1000);

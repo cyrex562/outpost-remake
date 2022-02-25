@@ -1811,7 +1811,7 @@ u16  pass1_1028_ced2(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
 }
 
 
-astruct_18 * pass1_1028_cf44(astruct_18 *param_1, u8 param_2)
+Struct18 * pass1_1028_cf44(Struct18 *param_1, u8 param_2)
 
 {
     pass1_1028_b418(param_1);

@@ -331,7 +331,7 @@ void  win_ui_fn_1020_6e98(u32 param_1, HWND16 in_win_handle, u16 param_3)
 
 {
     i16        *piVar1;
-    astruct_18 *paVar2;
+    Struct18 *paVar2;
     HWND16      window_handle;
     u16         uVar3;
     u16         in_DX;
@@ -351,7 +351,7 @@ void  win_ui_fn_1020_6e98(u32 param_1, HWND16 in_win_handle, u16 param_3)
     uVar6 = (param_1 >> 0x10);
     iVar5 = param_1;
     GetClientRect16(in_win_handle, &rectangle);
-    window_name   = (astruct_18 *)0x0;
+    window_name   = (Struct18 *)0x0;
     window_handle = GetDlgItem16((HWND16)s_tile2_bmp_1050_1538, 0x1797);
     if(window_handle != 0x0)
     {
@@ -413,7 +413,7 @@ void  win_ui_fn_1020_6e98(u32 param_1, HWND16 in_win_handle, u16 param_3)
             }
             paVar2        = window_name;
             window_handle = (HWND16)s_tile2_bmp_1050_1538;
-            if(window_name != (astruct_18 *)0x0)
+            if(window_name != (Struct18 *)0x0)
             {
                 pass1_1018_2afa(window_name);
                 window_handle = 0x1000;
@@ -432,7 +432,7 @@ astruct_3 * pass1_1020_70c0(astruct_3 *param_1, u8 param_2, u16 param_3)
     cleanup_menu_ui_op_1020_795c(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((astruct_18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
     }
     return param_1;
 }
@@ -2356,7 +2356,7 @@ void  cleanup_win_ui_1020_2fea(astruct_12 *in_struct_1, HDC16 in_dc_handle_2)
     return;
 }
 
-astruct_18 * pass1_1020_3616(astruct_18 *param_1, u8 param_2, u16 param_3)
+Struct18 * pass1_1020_3616(Struct18 *param_1, u8 param_2, u16 param_3)
 
 {
     cleanup_win_ui_1020_2fea((astruct_12 *)param_1, param_3);

@@ -1251,7 +1251,7 @@ void pass1_1018_10c4(u16 param_1, u16 param_2, u32 param_3)
     uVar12  = (param_3 >> 0x10);
     iVar11  = param_3;
     iStack4 = (iVar11 + 0x86);
-    fn_ptr_1000_17ce(*(astruct_18 **)(iVar11 + 0x88), 0x1000);
+    fn_ptr_1000_17ce(*(Struct18 **)(iVar11 + 0x88), 0x1000);
     (iVar11 + 0x86) = 0x0;
     (iVar11 + 0x88) = 0x0;
     pass1_1028_dc52((astruct_92 *)CONCAT13((param_1 >> 0x8), CONCAT12(param_1, local_16)), 0x1, 0x0, 0x400);
@@ -1408,7 +1408,7 @@ void pass1_1018_1346(u16 param_1, u16 param_2, astruct_93 *param_3)
     uVar8   = (param_3 >> 0x10);
     iVar9   = (astruct_93 *)param_3;
     uStack4 = iVar9->field_0x8c;
-    fn_ptr_1000_17ce((astruct_18 *)iVar9->field_0x8e, 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)iVar9->field_0x8e, 0x1000);
     iVar9->field_0x8c = 0x0;
     iVar9->field_0x8e = 0x0;
     pass1_1028_dc52((astruct_92 *)CONCAT13((param_1 >> 0x8), CONCAT12(param_1, local_16)), 0x1, 0x0, 0x400);

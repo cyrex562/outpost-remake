@@ -1,8 +1,7 @@
 
-#include "types.h"
-#include "structs_1.h"
+#include "../types.h"
 #include "sys_ops_1.h"
-#include "globals.h"
+#include "../globals.h"
 
 void struct_1040_b082(Globals *globals, astruct_57 *param_1, u32 param_2)
 
@@ -184,11 +183,11 @@ void  pass1_1040_44d2(astruct_57 *param_1, u32 param_2, u16 param_3, u16 param_4
 void  pass1_1040_45e8(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *param_5, u16 param_6, u16 param_7)
 
 {
-    astruct_18 *paVar1;
+    Struct18 *paVar1;
     code      **ppcVar2;
     u32  uVar3;
     u16         uVar4;
-    astruct_18 *paVar5;
+    Struct18 *paVar5;
     u8         *puVar6;
     u8         *puVar7;
     i16         iVar8;
@@ -204,8 +203,8 @@ void  pass1_1040_45e8(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *pa
     }
     paVar10 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_7, param_5, unaff_DI);
     puVar6  = (paVar10 >> 0x10);
-    paVar1  = *(astruct_18 **)(param_1 + 0x90);
-    if(paVar1 != (astruct_18 *)0x0)
+    paVar1  = *(Struct18 **)(param_1 + 0x90);
+    if(paVar1 != (Struct18 *)0x0)
     {
         paVar5 = paVar1;
         mem_op_1000_179c(0x18, puVar6, 0x1000);
@@ -249,7 +248,7 @@ void  pass1_1040_45e8(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *pa
         uVar3          = (param_1 + 0x90);
         (uVar3 + 0x12) = (param_1 + 0xa);
         pass1_1010_a50c(paVar10, 0x10505d40, *(param_1 + 0x90));
-        if(paVar1 != (astruct_18 *)0x0)
+        if(paVar1 != (Struct18 *)0x0)
         {
             pass1_1040_a5d0(paVar1);
             fn_ptr_1000_17ce(paVar1, 0x1000);

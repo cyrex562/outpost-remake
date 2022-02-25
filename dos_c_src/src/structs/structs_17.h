@@ -1671,7 +1671,7 @@ struct astruct_599
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct astruct_18 *field_0x14;
+    struct Struct18 *field_0x14;
     i16                field_0x18;
 };
 
@@ -1757,7 +1757,7 @@ struct astruct_597
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct astruct_18 *field_0x14;
+    struct Struct18 *field_0x14;
     u8                 field_0x18;
     u8                 field_0x19;
     u8                 field_0x1a;

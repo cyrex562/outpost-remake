@@ -10,7 +10,7 @@ void  send_msg_1040_c85a(u32 param_1, HWND16 param_2)
 }
 
 
-astruct_18 * pass1_1040_a4c2(astruct_18 *param_1, u8 param_2, u16 param_3)
+Struct18 * pass1_1040_a4c2(Struct18 *param_1, u8 param_2, u16 param_3)
 
 {
     free_proc_inst_1040_a294(param_1, param_3);
@@ -136,7 +136,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
     u16         uVar9;
     u16         uVar10;
     HWND16      HVar11;
-    astruct_18 *paVar12;
+    Struct18 *paVar12;
     i1616      *pIVar13;
     LRESULT     LVar14;
     u32         uVar15;
@@ -145,7 +145,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
     RECT16      local_a[0x2];
 
     HVar11  = (HWND16)s_tile2_bmp_1050_1538;
-    paVar12 = (astruct_18 *)GetWindowLong16(param_5, 0x0);
+    paVar12 = (Struct18 *)GetWindowLong16(param_5, 0x0);
     puVar8  = (paVar12 >> 0x10);
     iVar5   = paVar12;
     uVar10  = ((paVar12 & 0xffff0000) >> 0x10);
@@ -433,7 +433,7 @@ void  make_proc_inst_1040_a234(u8 *param_1, u8 *param_2, u16 param_3, u32 param_
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  free_proc_inst_1040_a294(astruct_18 *param_1, u16 param_2)
+void  free_proc_inst_1040_a294(Struct18 *param_1, u16 param_2)
 
 {
     param_1->field_0x0 = 0xa4e8;
@@ -781,7 +781,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
             (**ppcVar4)();
         }
     }
-    fn_ptr_1000_17ce(*(astruct_18 **)(iVar5 + 0x4), 0x1000);
+    fn_ptr_1000_17ce(*(Struct18 **)(iVar5 + 0x4), 0x1000);
     uVar3 = (iVar5 + 0x14);
     SetWindowLong16(0x1000, (i1616)uVar3, CONCAT22(0xfffc, (uVar3 >> 0x10)));
     RemoveProp16((HWND16)s_tile2_bmp_1050_1538, s_thisLo_1050_5e1c);
@@ -988,7 +988,7 @@ u16 * pass1_1040_97da(u16 *param_1, u8 param_2)
     mix_win_ui_op_1040_911e(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((astruct_18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
     }
     return param_1;
 }
@@ -1154,7 +1154,7 @@ BOOL16  post_win_msg_1040_7b3c(u32 *param_1, u16 param_2, u16 param_3, i16 param
 }
 
 
-void  ui_cleanup_op_1040_782c(astruct_18 *param_1, HGDIOBJ16 param_2)
+void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2)
 
 {
     u32 *puVar1;
@@ -1978,7 +1978,7 @@ void  send_msg_1040_3374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
     u16         uVar4;
     u16         uVar5;
     LRESULT     LVar6;
-    astruct_18 *paVar7;
+    Struct18 *paVar7;
     u16         uVar8;
     u32         uStack10;
     u32         uStack6;
@@ -2001,7 +2001,7 @@ void  send_msg_1040_3374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
         ppcVar1 = (*param_2 + 0x4);
         uVar3   = uStack6;
         (**ppcVar1)(uVar5, param_2, uStack10, (uStack10 >> 0x10), uVar4);
-        paVar7 = (astruct_18 *)pass1_1018_3a7a(*(param_1 + 0x96), uVar3 & 0xffff | extraout_DX_00 << 0x10, uVar3, extraout_DX_00);
+        paVar7 = (Struct18 *)pass1_1018_3a7a(*(param_1 + 0x96), uVar3 & 0xffff | extraout_DX_00 << 0x10, uVar3, extraout_DX_00);
         uVar4  = param_3;
         LVar6  = SendMessage16(0x1018, paVar7, (WPARAM16)(paVar7 >> 0x10), 0x4030000);
         uVar5  = 0x1000;
@@ -2116,7 +2116,7 @@ void  send_msg_1040_1696(u32 param_1, u16 param_2, u16 param_3, HWND16 param_4)
     u8         *puVar5;
     u16         uVar6;
     LRESULT     LVar7;
-    astruct_18 *paVar8;
+    Struct18 *paVar8;
     char       *pcVar9;
     u16         uVar10;
     u16         uVar11;
@@ -2137,7 +2137,7 @@ void  send_msg_1040_1696(u32 param_1, u16 param_2, u16 param_3, HWND16 param_4)
         uVar10 = 0x0;
         uVar11 = 0x403;
         uVar2  = (param_1 + 0x8e);
-        paVar8 = (astruct_18 *)string_1010_5286(uVar2, (uVar2 >> 0x10), uVar1, uVar1, puVar5);
+        paVar8 = (Struct18 *)string_1010_5286(uVar2, (uVar2 >> 0x10), uVar1, uVar1, puVar5);
         LVar7  = SendMessage16(0x1010, paVar8, (WPARAM16)(paVar8 >> 0x10), CONCAT22(uVar11, uVar10));
         puVar5 = (LVar7 >> 0x10);
         fn_ptr_1000_17ce(paVar8, 0x1000);

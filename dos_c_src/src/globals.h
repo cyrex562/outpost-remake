@@ -31,6 +31,10 @@ struct Globals
     u32 PTR_LOOP_1050_68a2;
     u16 PTR_LOOP_1050_63fe;
     u16 PTR_LOOP_1050_1040;
+    u32 _PTR_LOOP_1050_5b7c;
+    u32 PTR_LOOP_1050_1038;
+    u32 PTR_LOOP_1050_5f10;
+    u32 _PTR_LOOP_1050_0ed0;
 };
 
 typedef struct Globals Globals;

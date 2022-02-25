@@ -61,7 +61,7 @@ void  close_file_1008_496c(u16 *param_1)
         ppcVar4 = *puVar1;
         (**ppcVar4)();
     }
-    fn_ptr_1000_17ce(*(astruct_18 **)(iVar5 + 0x8), 0x1000);
+    fn_ptr_1000_17ce(*(Struct18 **)(iVar5 + 0x8), 0x1000);
     if((iVar5 + 0x1a) != 0x0)
     {
         uVar3 = (iVar5 + 0x1a);
@@ -187,7 +187,7 @@ u32  file_1008_4c26(u32 param_1, u8 param_2)
     close_file_1008_496c(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((astruct_18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
     }
     return param_1;
 }
@@ -211,10 +211,10 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     u16         uVar10;
     char        local_782[0x104];
     u8          local_67e[0x8];
-    astruct_18 *paStack1654;
+    Struct18 *paStack1654;
     LPCSTR      pCStack1650;
     u16         UStack1648;
-    astruct_18 *paStack1646;
+    Struct18 *paStack1646;
     u8          local_666[0x100];
     char       *pcStack1382;
     u32  local_562;
@@ -242,14 +242,14 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     uVar10        = (iVar3 + 0x1c);
     if((uVar10 | uStack778) == 0x0)
     {
-        paStack1646 = *(astruct_18 **)(iVar3 + 0x64);
+        paStack1646 = *(Struct18 **)(iVar3 + 0x64);
         uVar10      = (iVar3 + 0x66);
         if((uVar10 | paStack1646) != 0x0)
         {
             pass1_1008_5784(CONCAT22(param_3, local_67e), paStack1646 & 0xffff | uVar10 << 0x10);
             puVar4 = local_67e;
             pass1_1008_5b12(puVar4, param_3);
-            paStack1654 = (astruct_18 *)CONCAT22(extraout_DX, puVar4);
+            paStack1654 = (Struct18 *)CONCAT22(extraout_DX, puVar4);
             if((extraout_DX | puVar4) != 0x0)
             {
                 uVar2           = (puVar4 + 0x4);
@@ -346,10 +346,10 @@ LAB_1008_3461:
     {
         if(uStack1326 < 0x0)
         {
-            paStack1654 = (astruct_18 *)load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+            paStack1654 = (Struct18 *)load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             uVar7       = (paStack1654 >> 0x10);
             uVar5       = str_op_1008_60e8(paStack1654, uVar7);
-            paStack1654 = (astruct_18 *)CONCAT22(uVar7, uVar5);
+            paStack1654 = (Struct18 *)CONCAT22(uVar7, uVar5);
             pcVar9      = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             UStack1648  = (pcVar9 >> 0x10);
             pCStack1650 = pcVar9;

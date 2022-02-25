@@ -218,7 +218,7 @@ void pass1_1028_0ea6(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
                     return;
                 }
                 fn_ptr_1000_17ce(iVar3->field_0x14, 0x1000);
-                iVar3->field_0x14 = (astruct_18 *)0x0;
+                iVar3->field_0x14 = (Struct18 *)0x0;
             LAB_1028_0f0a:
                 iVar3->field_0x12 = 0x9;
                 return;

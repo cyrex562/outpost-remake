@@ -463,7 +463,7 @@ struct astruct_606
     u16                field_0x2;
     u8                 field_0x4;
     u8                 field_0x5;
-    struct astruct_18 *field_0x6;
+    struct Struct18 *field_0x6;
     u32                field_0xa;
     u8                 field_0xe;
     u8                 field_0xf;

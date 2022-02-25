@@ -1309,7 +1309,7 @@ struct astruct_594
     u8                 field_0x0;
     u8                 field_0x1;
     u16                field_0x2;
-    struct astruct_18 *field_0x4;
+    struct Struct18 *field_0x4;
 };
 
 typedef struct astruct_176 astruct_176, *Pastruct_176;
@@ -1361,7 +1361,7 @@ struct astruct_604
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct astruct_18 *field_0x14;
+    struct Struct18 *field_0x14;
     i16                field_0x18;
 };
 

@@ -150,8 +150,8 @@ struct astruct_625
     u8                 field_0x91;
     u8                 field_0x92;
     u8                 field_0x93;
-    struct astruct_18 *field_0x94;
-    struct astruct_18 *field_0x98;
+    struct Struct18 *field_0x94;
+    struct Struct18 *field_0x98;
 };
 
 typedef struct astruct_628 astruct_628, *Pastruct_628;

@@ -1622,7 +1622,7 @@ struct astruct_516
     u8                 field_0x8b;
     u8                 field_0x8c;
     u8                 field_0x8d;
-    struct astruct_18 *field_0x8e;
+    struct Struct18 *field_0x8e;
     u32                field_0x92;
 };
 

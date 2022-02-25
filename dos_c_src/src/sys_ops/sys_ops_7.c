@@ -186,7 +186,7 @@ void  pass1_1010_d710(u32 param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 pa
         }
         while(iStack312 != 0x0)
         {
-            fn_ptr_1000_17ce((astruct_18 *)(&local_a2)[iStack312 + -0x1], 0x1000);
+            fn_ptr_1000_17ce((Struct18 *)(&local_a2)[iStack312 + -0x1], 0x1000);
             iStack312 = iStack312 + -0x1;
         }
         pass1_1010_dc36(uVar13, uVar14, uVar7, param_2, param_3, param_4);
@@ -1007,7 +1007,7 @@ void  pass1_1010_c58as(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 p
             return;
         }
         pass1_1040_a5d0(CONCAT22(puVar4, uVar1));
-        fn_ptr_1000_17ce((astruct_18 *)CONCAT22(puVar4, uVar1), 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)CONCAT22(puVar4, uVar1), 0x1000);
         return;
     case 0xa:
         ppuStack14 = (u8 **)&USHORT_1050_358c;
@@ -1144,7 +1144,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, astruct_104 *param_3, u8 *param
     u16         uVar16;
     u16         uVar17;
     u32  local_1f0;
-    astruct_18 *paStack412;
+    Struct18 *paStack412;
     u32  uStack408;
     u32  uStack404;
     u16         uStack400;
@@ -1178,9 +1178,9 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, astruct_104 *param_3, u8 *param
     uStack398       = 0x0;
     for(uStack400 = 0x1; uStack400 < 0x25; uStack400 = uStack400 + 0x1)
     {
-        uStack404       = (astruct_18 *)pass1_1030_7c28(*(iVar11 + 0x6), uStack400, uStack404, uStack404._2_2_, param_5);
+        uStack404       = (Struct18 *)pass1_1030_7c28(*(iVar11 + 0x6), uStack400, uStack404, uStack404._2_2_, param_5);
         uStack404._2_2_ = (uStack404 >> 0x10) | uStack404;
-        if(uStack404 != (astruct_18 *)0x0)
+        if(uStack404 != (Struct18 *)0x0)
         {
             pcVar5    = string_1020_c0d8(uStack400);
             uStack408 = CONCAT22(uStack404._2_2_, pcVar5);
@@ -1209,7 +1209,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, astruct_104 *param_3, u8 *param
     while(uVar8 = uStack398 - 0x1, uStack398 != 0x0)
     {
         uStack398._0_2_ = uVar8;
-        paStack412      = (astruct_18 *)(&local_f6)[uStack398];
+        paStack412      = (Struct18 *)(&local_f6)[uStack398];
         uStack404       = paStack412;
         uStack398       = uVar8;
         fn_ptr_1000_17ce(paStack412, 0x1000);
@@ -1220,7 +1220,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, astruct_104 *param_3, u8 *param
     uVar4     = (iVar11 + 0x6);
     uVar14    = (uVar4 >> 0x10);
     iVar12    = uVar4;
-    uStack404 = (astruct_18 *)(iVar12 + 0x1e);
+    uStack404 = (Struct18 *)(iVar12 + 0x1e);
     uVar9     = (iVar12 + 0x20) | uStack404;
     uVar8     = uVar9;
     if(uVar9 != 0x0)
@@ -1303,7 +1303,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, astruct_104 *param_3, u8 *param
         while(lVar2 = uStack398 + -0x1, uStack398 != 0x0)
         {
             uStack398._0_2_ = lVar2;
-            paStack412      = (astruct_18 *)(&local_f6)[uStack398];
+            paStack412      = (Struct18 *)(&local_f6)[uStack398];
             uStack398       = lVar2;
             fn_ptr_1000_17ce(paStack412, 0x1000);
         }
@@ -1625,7 +1625,7 @@ void  pass1_1010_cf36(u32 param_1, u32 param_2, u16 *param_3, u8 param_4, u8 *pa
         }
         while(iStack312 != 0x0)
         {
-            fn_ptr_1000_17ce((astruct_18 *)(&local_a2)[iStack312 + -0x1], 0x1000);
+            fn_ptr_1000_17ce((Struct18 *)(&local_a2)[iStack312 + -0x1], 0x1000);
             iStack312 = iStack312 + -0x1;
         }
         pass1_1010_dc36(uVar13, uVar14, uVar6, param_2, param_3, param_5);
@@ -1732,7 +1732,7 @@ void  pass1_1010_d24a(u32 param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 pa
         while(lStack318 != 0x0)
         {
             lStack318._0_2_ = (lStack318 + -0x1);
-            fn_ptr_1000_17ce((astruct_18 *)(&local_a6)[lStack318], 0x1000);
+            fn_ptr_1000_17ce((Struct18 *)(&local_a6)[lStack318], 0x1000);
             lStack318 = lStack318 + -0x1;
         }
         pass1_1010_dc36(uVar11, uVar12, uVar8, param_2, param_3, param_4);

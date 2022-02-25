@@ -288,7 +288,7 @@ u16 * pass1_1038_a33c(u16 *param_1, u16 param_2)
 }
 
 
-void  pass1_1038_a36a(astruct_18 *param_1)
+void  pass1_1038_a36a(Struct18 *param_1)
 
 {
     u16 uVar1;
@@ -315,7 +315,7 @@ u16 * pass1_1038_a494(u16 *param_1, u16 param_2)
 }
 
 
-void  pass1_1038_a4c2(astruct_18 *param_1)
+void  pass1_1038_a4c2(Struct18 *param_1)
 
 {
     u16 uVar1;
@@ -342,7 +342,7 @@ u16 * pass1_1038_a69a(u16 *param_1, u16 param_2)
 }
 
 
-void  pass1_1038_a6c8(astruct_18 *param_1)
+void  pass1_1038_a6c8(Struct18 *param_1)
 
 {
     u16 uVar1;
@@ -369,7 +369,7 @@ u16 * pass1_1038_a89e(u16 *param_1, u16 param_2)
 }
 
 
-void  pass1_1038_a8cc(astruct_18 *param_1)
+void  pass1_1038_a8cc(Struct18 *param_1)
 
 {
     u16 uVar1;

@@ -1739,7 +1739,7 @@ void  pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_3, u16 param_4
     u32  local_24;
     u16         uStack32;
     u32         uStack30;
-    astruct_18 *paStack26;
+    Struct18 *paStack26;
     u32  uStack18;
     i16         iStack14;
     i16         iStack12;
@@ -1790,7 +1790,7 @@ void  pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_3, u16 param_4
     uVar2             = iVar5->field_0x16 + 0x19;
     iVar5->field_0x1a = uVar2;
     mem_op_1000_179c(0x6, puVar5, 0x1000);
-    paStack26      = (astruct_18 *)CONCAT22(puVar5, uVar2);
+    paStack26      = (Struct18 *)CONCAT22(puVar5, uVar2);
     uStack18._2_2_ = puVar5 | uVar2;
     if(uStack18._2_2_ == 0x0)
     {
@@ -1806,7 +1806,7 @@ void  pass1_1008_87cc(astruct_86 *param_1, i16 param_2, i16 param_3, u16 param_4
     BVar3 = pass1_1008_aed8(*&iVar5->field_0x8);
     if(BVar3 == 0x0)
     {
-        paStack26 = *(astruct_18 **)&iVar5->field_0x8;
+        paStack26 = *(Struct18 **)&iVar5->field_0x8;
         uStack18  = paStack26;
         fn_ptr_1000_17ce(paStack26, 0x1000);
         &iVar5->field_0x8 = 0x0;

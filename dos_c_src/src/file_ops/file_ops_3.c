@@ -93,7 +93,7 @@ void pass1_1010_89f0(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HINSTAN
     {
         pass1_1008_64a2(CONCAT22(uVar1, uVar3));
         param_5 = 0x1000;
-        fn_ptr_1000_17ce((astruct_18 *)CONCAT22(uVar1, uVar3), 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)CONCAT22(uVar1, uVar3), 0x1000);
     }
     uVar7  = set_err_mode_1010_8b14(CONCAT22(param_2, param_1), *((param_1 + 0xe82) * 0x4 + 0x24be), param_6);
     puVar4 = (uVar7 >> 0x10);
@@ -293,8 +293,8 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
     u16          uVar8;
     SEGPTR       SVar9;
     u16          uVar10;
-    astruct_18  *paStack18;
-    astruct_18  *paStack10;
+    Struct18  *paStack18;
+    Struct18  *paStack10;
     i16          local_6;
     u16          uStack4;
 
@@ -313,7 +313,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
         uVar4 = 0x102;
         SVar9 = 0x102;
         mem_op_1000_179c(0x102, param_4, 0x1000);
-        paStack10 = (astruct_18 *)CONCAT22(param_4, param_3);
+        paStack10 = (Struct18 *)CONCAT22(param_4, param_3);
         puVar6    = param_4;
         BVar1     = read_file_1008_7dee(uVar8, uVar10, param_3, uVar4, param_4, SVar9, 0x1008);
         paStack18 = paStack10;
@@ -344,13 +344,13 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
         uVar5 = 0x2a;
         SVar9 = 0x2a;
         mem_op_1000_179c(0x2a, param_4, 0x1000);
-        paStack18 = (astruct_18 *)CONCAT22(param_4, uVar4);
+        paStack18 = (Struct18 *)CONCAT22(param_4, uVar4);
         BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, 0x1008);
         if(BVar1 == 0x0)
         {
         LAB_1010_692c:
             globals->PTR_LOOP_1050_0310 = 0x6d2;
-            fn_ptr_1000_17ce((astruct_18 *)(paStack18 & 0xffff | ZEXT24(param_4) << 0x10), 0x1000);
+            fn_ptr_1000_17ce((Struct18 *)(paStack18 & 0xffff | ZEXT24(param_4) << 0x10), 0x1000);
             return;
         }
         uStack4 = 0x0;
@@ -1815,7 +1815,7 @@ void close_file_1008_6dd0(u32 *param_1, HFILE16 param_2)
         _lclose16(param_2);
         (param_1 + 0x4) = 0xffff;
     }
-    fn_ptr_1000_17ce((astruct_18 *)*param_1, 0x1000);
+    fn_ptr_1000_17ce((Struct18 *)*param_1, 0x1000);
     return;
 }
 

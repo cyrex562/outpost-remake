@@ -1542,10 +1542,10 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
     u8         *local_c0;
     u16         uStack190;
     i16         iStack188;
-    astruct_18 *paStack184;
+    Struct18 *paStack184;
     i16         iStack180;
-    astruct_18 *paStack178;
-    astruct_18 *paStack174;
+    Struct18 *paStack178;
+    Struct18 *paStack174;
     u16         uStack170;
     u16         uStack168;
     u16         uStack166;
@@ -1575,7 +1575,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
     local_c4   = globals->PTR_LOOP_1050_5f2c;
     puStack194 = globals->PTR_LOOP_1050_5f2e;
     uVar2      = fn_ptr_op_1000_1708(0x20, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
-    paStack184 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
+    paStack184 = (Struct18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
     puVar4     = (PTR_LOOP_1050_5f2e | uVar2);
     if(puVar4 == 0x0)
     {
@@ -1693,7 +1693,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
             uVar2             = uStack164 * 0x6;
             uStack162         = uStack164;
             mem_op_1000_179c(uVar2, puVar4, 0x1000);
-            paStack184         = (astruct_18 *)CONCAT22(puVar4, uVar2);
+            paStack184         = (Struct18 *)CONCAT22(puVar4, uVar2);
             globals->PTR_LOOP_1050_5f2e = (puVar4 | uVar2);
             if(PTR_LOOP_1050_5f2e == 0x0)
             {
@@ -1713,7 +1713,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
             {
             }
             uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
-            paStack174 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
+            paStack174 = (Struct18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
             if(_PTR_LOOP_1050_5f2c == 0x0)
             {
                 globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(PTR_LOOP_1050_5f2e, 0x1000);
@@ -1722,7 +1722,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
             {
             }
             uVar2      = fn_ptr_op_1000_1708(uStack170, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
-            paStack178 = (astruct_18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
+            paStack178 = (Struct18 *)CONCAT22(PTR_LOOP_1050_5f2e, uVar2);
             iStack180  = 0x0;
         LAB_1030_4b57:
             uVar5 = uStack162;

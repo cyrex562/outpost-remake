@@ -717,7 +717,7 @@ void  pass1_1038_7356(u32 param_1, u32 param_2, u16 param_3, u16 param_4, u16 pa
     u8         **ppuVar1;
     u16         *puVar2;
     u32   uVar3;
-    astruct_18  *paVar4;
+    Struct18  *paVar4;
     long         lVar5;
     BOOL16       BVar6;
     u16          uVar7;
@@ -846,7 +846,7 @@ LAB_1038_7549:
     iVar9->field_0x12  = 0x0;
     iVar9->field_0x14  = 0x0;
     &iVar9->field_0x16 = 0x0;
-    paVar4             = *(astruct_18 **)&iVar9->field_0xe;
+    paVar4             = *(Struct18 **)&iVar9->field_0xe;
     uVar7              = iVar9->field_0x10;
     if((uVar7 | paVar4) != 0x0)
     {

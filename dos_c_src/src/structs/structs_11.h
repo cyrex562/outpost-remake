@@ -27,9 +27,9 @@ struct astruct_621
 
 typedef struct astruct_624 astruct_624, *Pastruct_624;
 
-typedef struct astruct_18 astruct_18, *Pastruct_18;
 
-struct astruct_18
+
+typedef struct Struct18
 {
     u16 field_0x0;
     u16 field_0x2;
@@ -172,7 +172,9 @@ struct astruct_18
     i16 field_0x8e;
     u16 field_0x90;
     u16 field_0x92;
-};
+    u16 field_0x9c;
+    u16 field_0x9e;
+} Struct18;
 
 struct astruct_624
 {
@@ -334,8 +336,8 @@ struct astruct_624
     u8                 field_0x9f;
     u8                 field_0xa0;
     u8                 field_0xa1;
-    struct astruct_18 *field_0xa2;
-    struct astruct_18 *field_0xa6;
+    struct Struct18 *field_0xa2;
+    struct Struct18 *field_0xa6;
 };
 
 typedef struct astruct_385 astruct_385, *Pastruct_385;

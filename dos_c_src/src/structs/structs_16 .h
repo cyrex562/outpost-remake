@@ -1106,8 +1106,8 @@ struct astruct_588
     u8                 field_0x4;
     u8                 field_0x5;
     i16                field_0x6;
-    struct astruct_18 *field_0x8;
-    struct astruct_18 *field_0xc;
+    struct Struct18 *field_0x8;
+    struct Struct18 *field_0xc;
 };
 
 typedef struct astruct_585 astruct_585, *Pastruct_585;

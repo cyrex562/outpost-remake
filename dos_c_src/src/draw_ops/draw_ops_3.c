@@ -1111,7 +1111,7 @@ void pass1_1018_5cc8(u16 *param_1, u16 param_2)
 
 {
     u16          uVar1;
-    astruct_18  *paVar2;
+    Struct18  *paVar2;
     astruct_508 *iVar3;
     u16          uVar3;
 
@@ -1119,7 +1119,7 @@ void pass1_1018_5cc8(u16 *param_1, u16 param_2)
     iVar3            = (astruct_508 *)param_1;
     *param_1         = &PTR_LOOP_1050_5e1a;
     iVar3->field_0x2 = 0x1018;
-    paVar2           = *(astruct_18 **)&iVar3->field_0x18;
+    paVar2           = *(Struct18 **)&iVar3->field_0x18;
     uVar1            = iVar3->field_0x1a;
     if((uVar1 | paVar2) != 0x0)
     {
@@ -2308,7 +2308,7 @@ void unk_draw_op_1008_da12(astruct_19 *param_1, u16 param_2, u16 param_3)
             }
         }
         hwnd = 0x1000;
-        fn_ptr_1000_17ce((astruct_18 *)CONCAT22(count, start), 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)CONCAT22(count, start), 0x1000);
     }
     ReleaseDC16(hwnd, hdc);
     return;

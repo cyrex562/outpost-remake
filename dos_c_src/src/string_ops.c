@@ -89,7 +89,7 @@ void pass1_1038_4d3c(u32 param_1, char *param_2, u16 param_3)
 
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
-    fn_ptr_1000_17ce(*(astruct_18 **)(iVar2 + 0x1fa), 0x1000);
+    fn_ptr_1000_17ce(*(Struct18 **)(iVar2 + 0x1fa), 0x1000);
     uVar1           = str_op_1008_60e8(param_2, param_3);
     (iVar2 + 0x1fa) = uVar1;
     (iVar2 + 0x1fc) = param_3;
@@ -1090,7 +1090,7 @@ void pass1_1008_e320(astruct_102 *param_1, u32 param_2, u32 param_3, u16 param_4
 
     uVar6 = (astruct_102 *)(param_1 >> 0x10);
     iVar5 = (astruct_102 *)param_1;
-    fn_ptr_1000_17ce(*(astruct_18 **)&iVar5->field_0x1e, 0x1000);
+    fn_ptr_1000_17ce(*(Struct18 **)&iVar5->field_0x1e, 0x1000);
     &iVar5->field_0x1e = 0x0;
     uVar7              = param_2;
     pcVar5             = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);

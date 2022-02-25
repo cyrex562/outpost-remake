@@ -1551,7 +1551,7 @@ void  pass1_1030_85be(long *param_1, u16 param_2, i16 param_3, i16 param_4, u16 
 }
 
 
-void  pass1_1030_86ec(astruct_18 **param_1, u16 param_2)
+void  pass1_1030_86ec(Struct18 **param_1, u16 param_2)
 
 {
     astruct_612 *iVar1;
@@ -1560,7 +1560,7 @@ void  pass1_1030_86ec(astruct_18 **param_1, u16 param_2)
     fn_ptr_1000_17ce(*param_1, 0x1000);
     uVar1            = (param_1 >> 0x10);
     iVar1            = (astruct_612 *)param_1;
-    *param_1         = (astruct_18 *)0x0;
+    *param_1         = (Struct18 *)0x0;
     iVar1->field_0x4 = 0x0;
     iVar1->field_0x6 = param_2;
     iVar1->field_0xe = 0x0;
