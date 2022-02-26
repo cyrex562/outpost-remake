@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic   ignored "readability-non-const-parameter"
 
 #include "main.h"
 
@@ -10,8 +12,8 @@
 #include "unk/unk_15.h"
 #include "unk/unk_16.h"
 #include "utils.h"
-#include "winapi.h"
 #include "win_ops/win_ops_3.h"
+#include "winapi.h"
 
 #include <fn_ptr_ops/fn_ptr_ops_6.h>
 #include <struct_ops/struct_ops_5.h>
@@ -203,7 +205,7 @@ void init_op_1008_54aa(u8 *param_1, char *param_2, u8 *param_3, u8 *param_4, u16
         fn_ptr_a = (*var_12 + 0x4);
         (*fn_ptr_a)(0x1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
     }
-    var_13  = *var_12;
+    var_13   = *var_12;
     fn_ptr_a = var_13 + 0x4;
     (**fn_ptr_a)(0x1000, var_3, var_5, 0, 0);
     var_9 = var_8;
@@ -229,3 +231,5 @@ void init_1000_23be(struct Globals *globals, u16 param_1, u16 param_2, u16 param
     init_op_1008_54aa(
       globals->PTR_LOOP_1050_5f52, CONCAT22(globals->PTR_LOOP_1050_5f50, globals->PTR_LOOP_1050_5f4e), globals->PTR_LOOP_1050_5f4a, globals->PTR_LOOP_1050_5f4c, &globals->PTR_LOOP_1050_1050, param_1, param_2, param_3, globals);
 }
+
+#pragma clang diagnostic pop

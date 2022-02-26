@@ -859,5 +859,4 @@ void init_globals_1020_96d4(Globals *globals)
         pu_var_3  = pu_var_3 + 0x1;
         *pu_var_1 = 0x0;
     }
-    return;
 }
