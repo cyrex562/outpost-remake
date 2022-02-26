@@ -751,7 +751,7 @@ void  send_dlg_item_msg_1038_8d22(u32 param_1, HWND16 param_2, u16 param_3)
     iStack4 = WStack6 >> 0xf;
     if(WStack6 != 0xffff)
     {
-        SendDlgItemMessage16((HWND16)s_tile2_bmp_1050_1538, (i1616)local_106, param_3, WStack6, 0x185b040a);
+        SendDlgItemMessage16((HWND16)s_tile2_bmp_1050_1538, (u16)local_106, param_3, WStack6, 0x185b040a);
         pass1_1008_c79a(*(param_1 + 0x94), CONCAT22(param_3, local_106), unaff_DI, param_3, in_AF);
     }
     return;

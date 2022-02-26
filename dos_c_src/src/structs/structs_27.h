@@ -1730,9 +1730,9 @@ struct astruct_65
     undefined field_0x1c;
     undefined field_0x1d;
     u16       field_0x1e;
-    i1616     field_0x20;
-    i1616     field_0x22;
-    i1616     field_0x24;
+    u16     field_0x20;
+    u16     field_0x22;
+    u16     field_0x24;
 };
 
 typedef struct astruct_66 astruct_66, *Pastruct_66;
@@ -1954,7 +1954,7 @@ struct astruct_52
     undefined  field_0x5;
     undefined  field_0x6;
     undefined  field_0x7;
-    i1616      field_0x8;
+    u16      field_0x8;
     undefined  field_0xa;
     undefined  field_0xb;
     undefined  field_0xc;

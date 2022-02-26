@@ -1426,7 +1426,7 @@ void  pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 param_4)
     }
     uVar1 = SUB42(puVar2, 0x0);
     iVar4 = (param_4 - 0x1U) * 0x12;
-    load_string_1010_84ac(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     uVar6         = (puStack8 >> 0x10);
     iVar5         = puStack8;
     *puStack8     = uVar1;
@@ -1599,7 +1599,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
         uVar2    = uStack14;
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar2, uVar5);
         uStack18         = CONCAT22(uVar5, uVar2);
-        pcStack150       = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+        pcStack150       = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar6            = (pcStack150 >> 0x10);
         uVar2            = pass1_1030_2a98(uStack18);
         uVar8            = (piStack6 >> 0x10);

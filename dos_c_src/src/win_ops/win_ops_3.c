@@ -1285,12 +1285,12 @@ void set_window_placement_1010_0070(u32 param_1, i16 param_2, u16 param_3, HWND1
     u32 *puVar3;
     long        lVar4;
     u8          local_18[0x6];
-    i1616       IStack18;
+    u16       IStack18;
     i16         iStack16;
-    i1616       IStack14;
-    i1616       IStack12;
-    i1616       IStack10;
-    i1616       IStack8;
+    u16       IStack14;
+    u16       IStack12;
+    u16       IStack10;
+    u16       IStack8;
     u16         uStack6;
     u16         uStack4;
 
@@ -1420,7 +1420,7 @@ WPARAM16 win_msg_op_1008_9498(MSG *in_msg_1, MSG16 *in_msg_2)
 
 {
     BOOL16 BVar1;
-    i1616  IVar2;
+    u16  IVar2;
     MSG16  local_msg_1;
 
 LAB_1008_949c:
@@ -1459,7 +1459,7 @@ void unk_win_msg_op_1008_9510(i16 *param_1, MSG16 *param_2, MSG16 *param_3)
 
 {
     BOOL16 has_message;
-    i1616  IVar1;
+    u16  IVar1;
     MSG16  local_14;
 
 LAB_1008_9578:
@@ -2125,7 +2125,7 @@ HWND16 create_window_1008_5e7e(u1616 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
             return 0x0;
         }
     }
-    window_handle_1 = CreateWindow16(s_tile2_bmp_1050_1538, 0x0, ZEXT24(globals->PTR_LOOP_1050_038c) << 0x10, 0x0, (i1616)PTR_LOOP_1050_0396, 0x1, 0x1, 0x8000, 0x8000, 0x0, 0xcf);
+    window_handle_1 = CreateWindow16(s_tile2_bmp_1050_1538, 0x0, ZEXT24(globals->PTR_LOOP_1050_038c) << 0x10, 0x0, (u16)PTR_LOOP_1050_0396, 0x1, 0x1, 0x8000, 0x8000, 0x0, 0xcf);
     return window_handle_1;
 }
 

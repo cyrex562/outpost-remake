@@ -174,6 +174,7 @@ typedef struct Struct18
     u16 field_0x92;
     u16 field_0x9c;
     u16 field_0x9e;
+    Struct18 *field_0x94;
 } Struct18;
 
 struct astruct_624

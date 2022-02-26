@@ -9,7 +9,7 @@ void  begin_end_pai16_1008_97c8(HWND16 param_1)
     return;
 }
 
-void  get_stock_obj_1008_9c56(i1616 param_1)
+void  get_stock_obj_1008_9c56(u16 param_1)
 
 {
     GetStockObject16(param_1);
@@ -38,7 +38,7 @@ astruct_23 * unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
     iVar3->field_0x54 = 0x3;
     HVar1             = LoadCursor16(0x1000, 0x7f00);
     iVar3->field_0x58 = HVar1;
-    HVar2             = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
+    HVar2             = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     iVar3->field_0x56 = HVar2;
     pass1_1008_818c((astruct_23 *)(param_1 & 0xffff | ZEXT24(uVar3) << 0x10), s_tile2_bmp_1050_1538, param_2);
     return param_1;
@@ -125,8 +125,8 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
 
     HStack74 = BeginPai1616(param_3, &local_3c);
     uStack4  = 0x0;
-    HStack76 = CreatePen16((i1616)s_tile2_bmp_1050_1538, (i1616)_PTR_LOOP_1050_0368, (COLORREF)(_PTR_LOOP_1050_0368 >> 0x10));
-    HStack78 = CreatePen16((i1616)s_tile2_bmp_1050_1538, (i1616)DAT_1050_0364, (COLORREF)(DAT_1050_0364 >> 0x10));
+    HStack76 = CreatePen16((u16)s_tile2_bmp_1050_1538, (u16)_PTR_LOOP_1050_0368, (COLORREF)(_PTR_LOOP_1050_0368 >> 0x10));
+    HStack78 = CreatePen16((u16)s_tile2_bmp_1050_1538, (u16)DAT_1050_0364, (COLORREF)(DAT_1050_0364 >> 0x10));
     HStack80 = CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, &local_58);
     uStack62 = uStack84;
@@ -135,9 +135,9 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     uStack68 = uStack82 >> 0x1;
     uStack70 = uStack84 >> 0x2;
     uStack72 = uStack82 >> 0x2;
-    HVar1    = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
+    HVar1    = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     HVar1    = SelectObject16((HDC16)s_tile2_bmp_1050_1538, HVar1);
-    HVar2    = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
+    HVar2    = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     HVar2    = SelectObject16((HDC16)s_tile2_bmp_1050_1538, HVar2);
     Rectangle16((HDC16)s_tile2_bmp_1050_1538, uStack82, uStack84, local_58.y, local_58.x);
     MoveTo16((HDC16)s_tile2_bmp_1050_1538, uStack68, 0x0);
@@ -177,8 +177,8 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     }
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HStack78);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HStack80);
-    Polygon16((HDC16)s_tile2_bmp_1050_1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (i1616)&local_10);
-    Polygon16((HDC16)s_tile2_bmp_1050_1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (i1616)&local_1c);
+    Polygon16((HDC16)s_tile2_bmp_1050_1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_10);
+    Polygon16((HDC16)s_tile2_bmp_1050_1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_1c);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HVar2);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HVar1);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
@@ -366,7 +366,7 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     color_00           = SetTextColor16((HDC16)s_tile2_bmp_1050_1538, *(COLORREF *)(iVar3 + 0x22));
     x                  = str_op_1000_3da4((iVar3 + 0x1e));
     uVar1              = (iVar3 + 0x1e);
-    TextOut16(0x1000, x, (i1616)uVar1, (uVar1 >> 0x10), 0x0);
+    TextOut16(0x1000, x, (u16)uVar1, (uVar1 >> 0x10), 0x0);
     SetBkColor16((HDC16)s_tile2_bmp_1050_1538, color);
     SetTextColor16((HDC16)s_tile2_bmp_1050_1538, color_00);
     SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, b_force_background);
@@ -394,13 +394,13 @@ BOOL16  cleanup_palette_1008_56e2(u32 param_1, HDC16 param_2)
 void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
 
 {
-    i1616      info;
+    u16      info;
     u32 uVar1;
     bool       bVar2;
     i16        iVar3;
     i16        y_dest;
     u16        uVar4;
-    i1616      cx;
+    u16      cx;
 
     uVar4 = (param_1 >> 0x10);
     iVar3 = param_1;
@@ -425,11 +425,11 @@ void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
         return;
     }
     uVar1  = (iVar3 + 0x10);
-    cx     = (i1616)(uVar1 >> 0x10);
+    cx     = (u16)(uVar1 >> 0x10);
     y_dest = uVar1;
     info   = (y_dest + 0x8);
     uVar1  = (iVar3 + 0x14);
-    SetDIBitsToDevice(param_2, 0x0, y_dest, cx, (i1616)uVar1, (i1616)(uVar1 >> 0x10), info, 0x0, 0x0, (LPCVOID)0x0, (BITMAPINFO *)info, (y_dest + 0x4));
+    SetDIBitsToDevice(param_2, 0x0, y_dest, cx, (u16)uVar1, (u16)(uVar1 >> 0x10), info, 0x0, 0x0, (LPCVOID)0x0, (BITMAPINFO *)info, (y_dest + 0x4));
     return;
 }
 
@@ -438,13 +438,13 @@ void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
 
 {
     PVOID      bits;
-    i1616      height_src;
+    u16      height_src;
     u32 uVar1;
     bool       bVar2;
     i16        iVar3;
     i16        height_dst;
     u16        uVar4;
-    i1616      x_src;
+    u16      x_src;
 
     uVar4 = (param_1 >> 0x10);
     iVar3 = param_1;
@@ -469,12 +469,12 @@ void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
         return;
     }
     uVar1      = (iVar3 + 0x10);
-    x_src      = (i1616)(uVar1 >> 0x10);
+    x_src      = (u16)(uVar1 >> 0x10);
     height_dst = uVar1;
     bits       = *(PVOID *)(height_dst + 0x4);
     height_src = (height_dst + 0x8);
     uVar1      = (iVar3 + 0x14);
-    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, (i1616)uVar1, (i1616)(uVar1 >> 0x10), height_src, bits, (BITMAPINFO *)0x0, 0x0, CONCAT22(bits, height_src));
+    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, (u16)uVar1, (u16)(uVar1 >> 0x10), height_src, bits, (BITMAPINFO *)0x0, 0x0, CONCAT22(bits, height_src));
     return;
 }
 
@@ -527,7 +527,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
 }
 
 
-void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 param_4)
+void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 param_4)
 
 {
     u16         uVar1;
@@ -537,7 +537,7 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 pa
     i16         iVar4;
     astruct_53 *uVar6;
     u16         uVar5;
-    i1616       count;
+    u16       count;
     u32  uVar7;
     i16         iStack132;
     u32  local_80;
@@ -639,13 +639,13 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 pa
             iVar4                                  = uVar7;
             *(COLORREF *)(iVar4 + iStack132 * 0x4) = colorref_var2;
             (iVar4 + iStack132 * 0x4 + 0x2)        = iVar2;
-            in_index_3                             = (i1616)s_tile2_bmp_1050_1538;
+            in_index_3                             = (u16)s_tile2_bmp_1050_1538;
         }
     }
     count = in_index_3;
     if(param_2 != 0x0)
     {
-        count         = (i1616)s_tile2_bmp_1050_1538;
+        count         = (u16)s_tile2_bmp_1050_1538;
         colorref_var2 = GetSysColor16(in_index_3);
         if((colorref_var2 == (COLORREF)local_80) && (iVar2 == local_80._2_2_))
         {
@@ -664,7 +664,7 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, i1616 in_index_3, u16 pa
     {
         uVar7 = CONCAT22(param_4, &local_80);
     }
-    SetSysColors16(count, (i1616 *)uVar7, (COLORREF *)(uVar7 >> 0x10));
+    SetSysColors16(count, (u16 *)uVar7, (COLORREF *)(uVar7 >> 0x10));
     return;
 }
 
@@ -737,7 +737,7 @@ void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
     *(HICON16 *)(iVar5 + 0xc2)   = HVar1;
     HVar2                        = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
     *(HCURSOR16 *)(iVar5 + 0xc4) = HVar2;
-    HVar3                        = GetStockObject16((i1616)s_tile2_bmp_1050_1538);
+    HVar3                        = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     *(HGDIOBJ16 *)(iVar5 + 0xc6) = HVar3;
     puVar8                       = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_3, puVar4, unaff_DI);
     puVar4                       = (puVar8 >> 0x10);

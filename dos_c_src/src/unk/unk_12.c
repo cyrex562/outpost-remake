@@ -367,7 +367,7 @@ void  pass1_1010_7b8c(u32 param_1, i16 param_2, u16 param_3)
 {
     u32 *puVar1;
     u16         uVar2;
-    code      **ppcVar3;
+    fn_ptr_1      **ppcVar3;
     u32  uVar4;
     u8         *puVar5;
     u16         extraout_DX;
@@ -2012,7 +2012,7 @@ void  string_1010_1722(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u32 p
     pass1_1028_b58e(param_5);
     if((extraout_DX | param_2) == 0x0)
     {
-        pcVar2 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
+        pcVar2 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
         uVar1  = (pcVar2 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(param_1, local_52), pcVar2);
         pcVar2 = CONCAT22(uVar1, local_52);

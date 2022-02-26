@@ -344,7 +344,7 @@ i16  string_1010_dcac(u16 param_1, u16 param_2, u16 param_3, i16 param_4, u32 pa
     u16          uVar7;
     char        *pcVar4;
 
-    pcVar4           = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), param_1);
+    pcVar4           = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), param_1);
     uVar6            = (param_6 >> 0x10);
     iVar5            = (astruct_104 *)param_6;
     uVar2            = (&iVar5->field_0x2 + 0x2);
@@ -935,7 +935,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     case 0x6:
         load_string_1010_84e0(0x1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
         uStack22 = str_op_1000_3da4(pcStack6);
-        pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
+        pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
         uVar7    = pcVar5;
         uVar6    = s_____s__lu_1050_38d7;
         goto LAB_1010_c4f9;
@@ -945,7 +945,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     case 0x8:
         load_string_1010_84e0(0x1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
         uStack22 = str_op_1000_3da4(pcStack6);
-        pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
+        pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
         uVar7    = pcVar5;
         uVar6    = s_____s__lu_1050_38cd;
     LAB_1010_c4f9:

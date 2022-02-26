@@ -1740,7 +1740,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
     bVar1   = false;
     do
     {
-        _llseek16(param_4, uStack6 << 0x10, (i1616)(uStack6 >> 0x10));
+        _llseek16(param_4, uStack6 << 0x10, (u16)(uStack6 >> 0x10));
         param_4 = (u16)s_tile2_bmp_1050_1538;
         lVar3   = WIN16_hread((HFILE16)s_tile2_bmp_1050_1538, 0x400, ZEXT24(local_406) << 0x10);
         for(uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 = uStack1040 + 0x1)
@@ -1758,7 +1758,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 if(uVar2 != 0x0)
                 {
                     lVar3 = uStack1040 + uStack6 + 0x7;
-                    _llseek16((HFILE16)s_tile2_bmp_1050_1538, lVar3 * 0x10000, (i1616)(lVar3 >> 0x10));
+                    _llseek16((HFILE16)s_tile2_bmp_1050_1538, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
                     return;
                 }
             }

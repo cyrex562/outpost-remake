@@ -398,9 +398,9 @@ struct astruct_56
     u16        field_0x4;
     u32 field_0x6;
     u32 field_0xa;
-    i1616      field_0xe;
-    i1616      field_0x10;
-    i1616      field_0x12;
+    u16      field_0xe;
+    u16      field_0x10;
+    u16      field_0x12;
 };
 
 typedef struct astruct_330 astruct_330, *Pastruct_330;

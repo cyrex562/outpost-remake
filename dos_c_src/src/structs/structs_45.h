@@ -1645,9 +1645,9 @@ struct astruct_4
 {
     undefined field_0x0;
     undefined field_0x1;
-    i1616     field_0x2;
-    i1616     field_0x4;
-    i1616     field_0x6;
+    u16     field_0x2;
+    u16     field_0x4;
+    u16     field_0x6;
 };
 
 typedef struct astruct_367 astruct_367, *Pastruct_367;
@@ -2085,3 +2085,13 @@ typedef struct Struct380
     u8  field_0x3c;
 
 } Struct380;
+
+typedef struct Struct381 {
+    u16 field_0x1;
+    u16 fielx_0x2;
+} Struct381;
+
+typedef struct Struct382
+{
+    astruct_440 *field_0x90;
+} Struct382;

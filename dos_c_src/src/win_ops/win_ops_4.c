@@ -18,7 +18,7 @@ void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 pa
             return;
         }
         puStack6 = *param_1;
-        SetWindowLong16((HWND16)s_tile2_bmp_1050_1538, (i1616)puStack6, puStack6 >> 0x10);
+        SetWindowLong16((HWND16)s_tile2_bmp_1050_1538, (u16)puStack6, puStack6 >> 0x10);
         pass1_1008_9628(puStack6, param_5);
     }
     ppcVar1 = (*puStack6 + 0x1c);
@@ -37,7 +37,7 @@ void  pass1_1008_3bd6(astruct_160 *param_1, u16 param_2, u16 param_3, u32 param_
     param_1->field_0x26        = 0x0;
     pass1_1040_9252(CONCAT22(param_2, param_1), &PTR_LOOP_1050_1040);
     create_window_1040_92dc(CONCAT22(param_2, param_1), &PTR_LOOP_1050_1040);
-    mov_update_win_1040_93aa((astruct_65 *)CONCAT22(param_2, param_1), (i1616)param_4, (param_4 >> 0x10), &PTR_LOOP_1050_1040);
+    mov_update_win_1040_93aa((astruct_65 *)CONCAT22(param_2, param_1), (u16)param_4, (param_4 >> 0x10), &PTR_LOOP_1050_1040);
     return;
 }
 
@@ -262,7 +262,7 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
         }
         if(PTR_LOOP_1050_4fe8 != 0x0)
         {
-            pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+            pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             BVar3  = MessageBox16(0x1010, &PTR_LOOP_1050_0010, pcVar7, (pcVar7 >> 0x10));
             return BVar3;
         }
@@ -274,7 +274,7 @@ BOOL16  mixed_win_op_1008_0c60(astruct_72 **param_1, u16 param_2, BOOL16 param_3
         uVar13                      = (_PTR_LOOP_1050_5748 >> 0x10);
         (_PTR_LOOP_1050_5748 + 0x8) = 0x1;
         pass1_1030_8326();
-        pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+        pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         sys_1000_3f9c(local_64, param_5, 0x19c, &USHORT_1050_1050, pcVar7, &stack0xfffe, uVar13, 0x1000, param_5, in_AF);
         ppcVar1 = (*param_1 + 0x14);
         (**ppcVar1)(0x1000, param_1, 0x0, 0x9c, param_5);

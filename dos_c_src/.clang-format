@@ -34,7 +34,7 @@ BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Allman
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
-BreakInheritanceList: AfterComma
+# BreakInheritanceList: AfterComma
 ColumnLimit: 240
 ContinuationIndentWidth: 2
 DerivePointerAlignment: true

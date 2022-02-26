@@ -309,8 +309,8 @@ struct astruct_440
     undefined field_0x3;
     undefined field_0x4;
     undefined field_0x5;
-    u16       field_0x6;
-    u16       field_0x8;
+    u16       field_0x6_addr_offset;
+    u16       field_0x8_addr_base;
 };
 
 typedef struct astruct_257 astruct_257, *Pastruct_257;

@@ -80,7 +80,7 @@ void  pass1_1040_4068(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
 void  get_sys_metrics_1040_7728(Struct57 *param_1, u16 param_2, u32 param_3, u16 param_4, u16 param_5)
 
 {
-    i1616       IVar1;
+    u16       IVar1;
     Struct57 *iVar2;
     u16         uVar2;
 
@@ -115,9 +115,9 @@ void  get_sys_metrics_1040_7728(Struct57 *param_1, u16 param_2, u32 param_3, u16
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar2->field_0x82), 0x0, 0x8);
     IVar1             = GetSystemMetrics16(0x1000);
     iVar2->field_0x62 = IVar1;
-    IVar1             = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
     iVar2->field_0x64 = IVar1;
-    IVar1             = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
     iVar2->field_0x66 = IVar1;
     return;
 }
@@ -787,7 +787,7 @@ void  pass1_1038_df86(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
         pass1_1038_af40(_PTR_LOOP_1050_5b7c, (uVar8 + 0x8), 0x1e, uVar5, uVar8, 0x1010, param_4);
         return;
     }
-    pcVar12 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar12 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     puVar6  = (pcVar12 >> 0x10);
     uVar4   = pcVar12;
     uVar10  = 0x0;

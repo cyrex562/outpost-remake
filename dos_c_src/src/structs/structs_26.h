@@ -2045,10 +2045,10 @@ struct astruct
     undefined  field_0xb1;
     undefined  field_0xb2;
     undefined  field_0xb3;
-    i1616      field_0xb4;
-    i1616      field_0xb6;
-    i1616      field_0xb8;
-    i1616      field_0xba;
+    u16      field_0xb4;
+    u16      field_0xb6;
+    u16      field_0xb8;
+    u16      field_0xba;
     u16        field_0xbc;
     undefined  field_0xbe;
     undefined  field_0xbf;

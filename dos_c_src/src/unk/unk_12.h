@@ -11,4 +11,6 @@ void  pass1_1010_1d80(u16 *param_1, u16 param_2);
 
 void  pass1_1010_682e(u32 param_1, u16 param_2, i16 param_3);
 
+void  pass1_1010_7b8c(u32 param_1, i16 param_2, u16 param_3);
+
 #endif // OUTPOST_1_SRC_UNK_UNK_12_H_

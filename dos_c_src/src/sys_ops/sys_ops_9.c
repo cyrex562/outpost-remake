@@ -922,7 +922,7 @@ void pass1_1010_0538(u32 param_1, char **param_2, char **param_3, u16 param_4, u
         pass1_1010_1f62(param_5, param_1, 0x3);
     }
     iVar5 = iVar1 + 0x757;
-    load_string_1010_84ac(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), param_4);
+    load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), param_4);
     param_3         = iVar5;
     (param_3 + 0x2) = puVar8;
     while(pcVar6 = pass1_1000_472c(*param_3, '%'), (puVar8 | pcVar6) != 0x0)
@@ -1672,7 +1672,7 @@ void unk_str_op_1008_d4f6(u32 param_1, u32 param_2)
     if(!bVar5)
     {
         puVar14 = extraout_DX_01;
-        load_string_1010_84ac(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+        load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar22  = 0x1000;
         puVar18 = puVar14;
         uVar10  = uVar12;

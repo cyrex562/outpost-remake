@@ -2166,7 +2166,7 @@ void pass1_1000_262c(u8 *param_1, u8 *param_2, cstring param_3, HINSTANCE16 para
     char   cVar2;
     u16    uVar3;
     u8    *puVar4;
-    i1616  IVar5;
+    u16  IVar5;
     u16    uVar6;
     u16    uVar7;
     u16    uVar8;
@@ -2189,7 +2189,7 @@ void pass1_1000_262c(u8 *param_1, u8 *param_2, cstring param_3, HINSTANCE16 para
     puStack4                    = in_DX;
     globals->PTR_LOOP_1050_5fc2 = param_1;
     globals->PTR_LOOP_1050_5fc4 = in_DX;
-    IVar5                       = GetModuleFileName16(param_4, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x25), (i1616)param_1);
+    IVar5                       = GetModuleFileName16(param_4, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x25), (u16)param_1);
     puStack4[IVar5]             = 0x0;
     iVar9                       = 0x1;
     globals->PTR_LOOP_1050_5fb8 = (&PTR_LOOP_1050_0000 + 0x1);

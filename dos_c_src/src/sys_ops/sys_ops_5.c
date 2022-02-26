@@ -1786,10 +1786,10 @@ void  pass1_1020_915a(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     return;
 }
 
-void  get_sys_metrics_1020_7c1a(u16 *param_1, u32 param_2, i1616 param_3)
+void  get_sys_metrics_1020_7c1a(u16 *param_1, u32 param_2, u16 param_3)
 
 {
-    i1616       IVar1;
+    u16       IVar1;
     astruct_56 *iVar3;
     u16         uVar3;
     u16         uVar4;
@@ -1816,9 +1816,9 @@ void  get_sys_metrics_1020_7c1a(u16 *param_1, u32 param_2, i1616 param_3)
     iVar3->field_0xa  = (param_2 + 0xe4);
     IVar1             = GetSystemMetrics16(param_3);
     iVar3->field_0xe  = IVar1;
-    IVar1             = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
     iVar3->field_0x10 = IVar1;
-    IVar1             = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
     iVar3->field_0x12 = IVar1;
     return;
 }

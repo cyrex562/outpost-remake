@@ -125,7 +125,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
 
 {
     u32  uVar1;
-    i1616       IVar2;
+    u16       IVar2;
     u32 *puVar3;
     i16         iVar4;
     u16         uVar5;
@@ -171,7 +171,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                 iStack10 = iVar4;
                 if(0x0 < iStack12)
                 {
-                    pcVar10 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
+                    pcVar10 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4 = (pcVar10 >> 0x10);
                     uStack6 = SUB42(pcVar10, 0x0);
                     IVar2   = wspri16f16(&USHORT_1050_1028, spec, valist);
@@ -197,7 +197,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                     uVar1 = (param_1 + 0xa);
                     pass1_1010_c3c2(uVar1, (uVar1 >> 0x10), 0x0, CONCAT22(in_DX, puVar3), in_DX, in_AF, param_5);
                     uStack46 = CONCAT22(in_DX, puVar3);
-                    pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
+                    pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4  = (pcVar10 >> 0x10);
                     uStack6  = SUB42(pcVar10, 0x0);
                     wspri16f16(&USHORT_1050_1028, spec, valist);
@@ -234,7 +234,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                 uVar1 = (param_1 + 0xa);
                 pass1_1010_c3c2(uVar1, (uVar1 >> 0x10), 0x0, CONCAT22(in_DX, uVar5), in_DX, in_AF, param_5);
                 uStack46 = CONCAT22(in_DX, uVar5);
-                pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
+                pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                 uStack4  = (pcVar10 >> 0x10);
                 uStack6  = SUB42(pcVar10, 0x0);
                 wspri16f16(&USHORT_1050_1028, spec, valist);
@@ -904,7 +904,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     i16         unaff_DI;
     u16         uVar15;
     LPCSTR      pCVar16;
-    i1616       index;
+    u16       index;
     astruct_79 *paVar17;
     char       *pcVar18;
     u16        *puVar19;
@@ -960,7 +960,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
         pcVar18                    = param_1->field_0xe;
         *(pcVar18 + uStack4 + 0x1) = 0x0;
     }
-    pcVar18  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
+    pcVar18  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
     puVar12  = (pcVar18 >> 0x10);
     uStack8  = SUB42(pcVar18, 0x0);
     puStack6 = puVar12;
@@ -1103,7 +1103,7 @@ void  win_sys_op_1010_5404(astruct_54 *param_1, u16 param_2, u16 param_3, u16 pa
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    index   = (i1616)s_tile2_bmp_1050_1538;
+    index   = (u16)s_tile2_bmp_1050_1538;
     puVar9  = GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1459,8 +1459,8 @@ void  get_sys_metrics_1010_46f6(u32 param_1)
 
 {
     u16   uVar1;
-    i1616 IVar2;
-    i1616 IVar3;
+    u16 IVar2;
+    u16 IVar3;
     u8   *in_DX;
     i16   iVar4;
     i16   unaff_DI;
@@ -1485,8 +1485,8 @@ void  get_sys_metrics_1010_46f6(u32 param_1)
     (iVar4 + 0x1a) = local_6 + 0x9;
     IVar2          = GetSystemMetrics16(0x1008);
     (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-    IVar2          = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
-    IVar3          = GetSystemMetrics16((i1616)s_tile2_bmp_1050_1538);
+    IVar2          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar3          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
     (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar7 + 0x8);
     return;
 }

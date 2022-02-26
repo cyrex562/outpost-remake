@@ -1782,9 +1782,9 @@ typedef struct Struct57
     u8         field_0x5e;
     u8         field_0x5f;
     u16        field_0x60;
-    i1616      field_0x62;
-    i1616      field_0x64;
-    i1616      field_0x66;
+    u16      field_0x62;
+    u16      field_0x64;
+    u16      field_0x66;
     u16        field_0x68;
     u32        field_0x6a;
     u16        field_0x6e;
@@ -1812,6 +1812,12 @@ typedef struct Struct57
     u16        field_0x8c;
     int        field_0x8e;
     int        field_0x90;
+    u16        field_0x94;
+    u16        field_0x98;
+    u16        field_0xb0;
+    u16        field_0xb4;
+    u16        field_0xb6;
+
 } Struct57;
 
 typedef struct astruct_55 astruct_55, *Pastruct_55;
@@ -1848,8 +1854,8 @@ struct astruct_55
     u16   field_0x28;
     u16   field_0x2a;
     u16   field_0x2c;
-    i1616 field_0x2e;
-    i1616 field_0x30;
+    u16 field_0x2e;
+    u16 field_0x30;
     u8    field_0x32;
     u8    field_0x33;
     u8    field_0x34;

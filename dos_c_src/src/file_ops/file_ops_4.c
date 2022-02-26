@@ -207,7 +207,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     i16         unaff_DI;
     u16         uVar8;
     char       *pcVar9;
-    i1616       in_buf_len_2;
+    u16       in_buf_len_2;
     u16         uVar10;
     char        local_782[0x104];
     u8          local_67e[0x8];
@@ -284,7 +284,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_202), (uStack778 & 0xffff | uVar10 << 0x10));
     }
     local_416[0] = '\0';
-    pcVar9       = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar9       = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     unk_str_op_1000_3d3e(CONCAT22(param_3, local_416), pcVar9);
     uStack1048 = str_op_1000_3da4(CONCAT22(param_3, local_416));
     uStack1038 = uStack1048;
@@ -297,7 +297,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         }
     }
     acStack1305[1] = 0x0;
-    pcVar9         = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar9         = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     uVar5          = (pcVar9 >> 0x10);
     unk_str_op_1000_3d3e(CONCAT22(param_3, acStack1305 + 0x1), pcVar9);
     uStack1038 = str_op_1000_3da4(CONCAT22(param_3, acStack1305 + 0x1));
@@ -317,7 +317,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     pcStack1370  = acStack1305 + 0x1;
     pcStack1382  = 0x0;
     local_666[0] = 0x0;
-    in_buf_len_2 = (i1616)(_PTR_LOOP_1050_14cc >> 0x10);
+    in_buf_len_2 = (u16)(_PTR_LOOP_1050_14cc >> 0x10);
     if(param_2 == 0x1)
     {
         pcVar9 = load_string_1010_847e(_PTR_LOOP_1050_14cc, in_buf_len_2, 0x1010);
@@ -346,11 +346,11 @@ LAB_1008_3461:
     {
         if(uStack1326 < 0x0)
         {
-            paStack1654 = (Struct18 *)load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+            paStack1654 = (Struct18 *)load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             uVar7       = (paStack1654 >> 0x10);
             uVar5       = str_op_1008_60e8(paStack1654, uVar7);
             paStack1654 = (Struct18 *)CONCAT22(uVar7, uVar5);
-            pcVar9      = load_string_1010_847e(_PTR_LOOP_1050_14cc, (i1616)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+            pcVar9      = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             UStack1648  = (pcVar9 >> 0x10);
             pCStack1650 = pcVar9;
             MessageBox16(0x1010, &PTR_LOOP_1050_0010, pCStack1650, UStack1648);

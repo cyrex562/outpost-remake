@@ -358,7 +358,7 @@ struct astruct_37
     undefined field_0x9b;
     undefined field_0x9c;
     undefined field_0x9d;
-    i1616     field_0x9e;
+    u16     field_0x9e;
     u16       field_0xa0;
 };
 
@@ -1014,16 +1014,16 @@ struct astruct_19
     undefined field_0x7;
     undefined field_0x8;
     undefined field_0x9;
-    i1616     field_0xa;
-    i1616     field_0xc;
+    u16     field_0xa;
+    u16     field_0xc;
     undefined field_0xe;
     undefined field_0xf;
     undefined field_0x10;
     undefined field_0x11;
     undefined field_0x12;
     undefined field_0x13;
-    i1616     field_0x14;
-    i1616     field_0x16;
+    u16     field_0x14;
+    u16     field_0x16;
     u16      *field_0x18;
 };
 
