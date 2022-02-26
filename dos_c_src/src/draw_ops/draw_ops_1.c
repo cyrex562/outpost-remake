@@ -5,6 +5,7 @@
 #include <globals.h>
 #include <structs/structs_40.h>
 #include "structs/structs_45.h"
+#include "unk/unk_17.h"
 
 void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 

@@ -2105,7 +2105,7 @@ void  pass1_1020_25c0(u32 param_1, u16 param_2, u16 param_3)
     u16          uVar4;
     astruct_277 *iVar3;
     u16          uVar5;
-    astruct_57  *paVar6;
+    Struct57  *paVar6;
     u32  *puStack6;
 
     paVar6 = CONCAT22(param_3, param_2);
@@ -2161,7 +2161,7 @@ void  pass1_1020_294a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, i16 pa
 }
 
 
-void  struct_1020_1738(astruct_57 *param_1, u16 param_2, u32 param_3)
+void  struct_1020_1738(Struct57 *param_1, u16 param_2, u32 param_3)
 
 {
     astruct_278 *iVar1;

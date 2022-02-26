@@ -68,7 +68,7 @@ void FatalAppExit16(u16 action, cstring str);
 // HPEN16                      CreatePen16(i1616 style, i1616 width, COLORREF color);
 // HBRUSH16                    CreateSolidBrush16(COLORREF color);
 // BOOL16                      DeleteDC16(HDC16 hdc);
-// BOOL16                      DeleteObject16(HGDIOBJ16 obj);
+ BOOL16                      DeleteObject16(HGDIOBJ16 obj);
 // DWORD                       GetCurrentPosition16(HDC16 hdc);
 // i1616                       GetDeviceCaps16(HDC16 hdc, i1616 cap);
 // HGDIOBJ16                   GetStockObject16(i1616 obj);

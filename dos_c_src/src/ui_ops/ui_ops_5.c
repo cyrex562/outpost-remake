@@ -1229,7 +1229,7 @@ void  win_ui_op_1020_5e76(u32 param_1, u16 param_2, u16 param_3)
 
 {
     code      **ppcVar1;
-    astruct_57 *paVar2;
+    Struct57 *paVar2;
     u16        *puVar3;
     u8         *puVar4;
     i16         iVar5;
@@ -1251,7 +1251,7 @@ void  win_ui_op_1020_5e76(u32 param_1, u16 param_2, u16 param_3)
     u8         *local_1aa[0x80];
     char        local_aa[0x80];
     u32  uStack42;
-    astruct_57 *paStack38;
+    Struct57 *paStack38;
     char        local_22[0x10];
     u8         *puStack18;
     u16         uStack16;

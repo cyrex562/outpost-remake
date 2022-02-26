@@ -23,7 +23,7 @@ void  pass1_1040_d76e(struct_1040_d76e_1 *param_1)
 }
 
 
-void  pass1_1040_d0f8(astruct_57 *param_1, u16 param_2)
+void  pass1_1040_d0f8(Struct57 *param_1, u16 param_2)
 
 {
     u16          uVar1;
@@ -76,7 +76,7 @@ void  pass1_1040_d0f8(astruct_57 *param_1, u16 param_2)
 }
 
 
-void  pass1_1040_ca16(astruct_57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
+void  pass1_1040_ca16(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
 
 {
     astruct_727 *iVar1;
@@ -341,7 +341,7 @@ void  pass1_1040_b17c(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, i16 pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1040_ac84(astruct_57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
+void  pass1_1040_ac84(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
 
 {
     astruct_726 *iVar1;
@@ -872,7 +872,7 @@ i16  pass1_1040_5eaa(u32 param_1)
 }
 
 
-void  pass1_1040_6402(astruct_57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
+void  pass1_1040_6402(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5)
 
 {
     code       **ppcVar1;
@@ -929,7 +929,7 @@ Struct18 * pass1_1040_6794(Struct18 *param_1, u8 param_2, u16 param_3)
 }
 
 
-void  pass1_1040_6826(astruct_57 *param_1, u16 param_2)
+void  pass1_1040_6826(Struct57 *param_1, u16 param_2)
 
 {
     i16 iVar1;
@@ -998,7 +998,7 @@ void  pass1_1040_6cac(u32 param_1, u16 param_2)
 }
 
 
-void  pass1_1040_6fb6(astruct_57 *param_1, u16 param_2)
+void  pass1_1040_6fb6(Struct57 *param_1, u16 param_2)
 
 {
     i16 iVar1;

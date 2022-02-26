@@ -1671,7 +1671,7 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
     u16         uVar9;
     LRESULT     LVar10;
     char       *pcVar11;
-    astruct_57 *paVar12;
+    Struct57 *paVar12;
     u32  uVar13;
     CHAR       *pCVar14;
     WNDCLASS16 *pWVar15;

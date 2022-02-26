@@ -1,4 +1,4 @@
-
+#include "types.h"
 
 typedef struct astruct_600 astruct_600, *Pastruct_600;
 
@@ -1691,9 +1691,7 @@ struct astruct_595
     u32 field_0x28;
 };
 
-typedef struct astruct_57 astruct_57, *Pastruct_57;
-
-struct astruct_57
+typedef struct Struct57
 {
     u8         field_0x0;
     u8         field_0x1;
@@ -1814,7 +1812,7 @@ struct astruct_57
     u16        field_0x8c;
     int        field_0x8e;
     int        field_0x90;
-};
+} Struct57;
 
 typedef struct astruct_55 astruct_55, *Pastruct_55;
 

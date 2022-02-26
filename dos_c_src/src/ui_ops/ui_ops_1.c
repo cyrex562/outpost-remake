@@ -1,33 +1,42 @@
+#include "ui_ops_1.h"
+#include "types.h"
+#include "structs/structs_11.h"
+#include "globals.h"
+#include "utils.h"
+#include "unk/unk_18.h"
+#include "string_consts.h"
+#include "winapi.h"
+#include "fn_ptr_ops/fn_ptr_ops_7.h"
 
-void unk_draw_op_1040_b0f8(Struct18 *param_1)
+void unk_draw_op_1040_b0f8(Globals *globals, Struct18 *param_1)
 
 {
     u16         uVar1;
     u16         uVar2;
     u8         *in_DX;
-    Struct18 *iVar3;
+//    Struct18 *iVar3;
     i16         unaff_DI;
-    u16         uVar3;
+//    u16         uVar3;
     u16         uVar4;
     u16         unaff_SS;
     u16        *puVar5;
     Struct18 *paStack10;
 
-    uVar3              = (param_1 >> 0x10);
-    iVar3              = (Struct18 *)param_1;
+//    uVar3              = (param_1 >> 0x10);
+//    iVar3              = (Struct18 *)param_1;
     param_1->field_0x0 = 0xb772;
-    iVar3->field_0x2   = &PTR_LOOP_1050_1040;
-    puVar5             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x32, unaff_SS, in_DX, unaff_DI);
+    param_1->field_0x2   = &globals->PTR_LOOP_1050_1040;
+    puVar5             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x32, unaff_SS, in_DX, unaff_DI);
     uVar4              = 0x1010;
-    pass1_1010_7b8c(puVar5, iVar3->field_0x6, unaff_SS);
-    if(iVar3->field_0x8e != 0x0)
+    pass1_1010_7b8c(puVar5, param_1->field_0x6, unaff_SS);
+    if(param_1->field_0x8e != 0x0)
     {
         uVar4 = SUB42(s_tile2_bmp_1050_1538, 0x0);
         DeleteObject16(0x1010);
-        iVar3->field_0x8e = 0x0;
+        param_1->field_0x8e = 0x0;
     }
-    uVar1     = iVar3->field_0x90;
-    uVar2     = iVar3->field_0x92;
+    uVar1     = param_1->field_0x90;
+    uVar2     = param_1->field_0x92;
     paStack10 = (Struct18 *)CONCAT22(uVar2, uVar1);
     if((uVar2 | uVar1) != 0x0)
     {
@@ -36,7 +45,6 @@ void unk_draw_op_1040_b0f8(Struct18 *param_1)
         fn_ptr_1000_17ce(paStack10, 0x1000);
     }
     ui_cleanup_op_1040_782c(param_1, uVar4);
-    return;
 }
 
 
@@ -1780,7 +1788,7 @@ void mov_update_win_1040_93aa(astruct_65 *param_1, i1616 param_2, u16 param_3, H
 }
 
 
-i16 string_1040_8520(astruct_57 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5, u16 param_6, u8 *param_7, u16 param_8)
+i16 string_1040_8520(Struct57 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5, u16 param_6, u8 *param_7, u16 param_8)
 
 {
     u32          UVar1;

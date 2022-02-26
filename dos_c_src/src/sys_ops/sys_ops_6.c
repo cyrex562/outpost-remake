@@ -135,7 +135,7 @@ LAB_1018_c4bb:
     return;
 }
 
-astruct_57 *pass1_1018_5e26(astruct_57 *param_1, u16 param_2)
+Struct57 *pass1_1018_5e26(Struct57 *param_1, u16 param_2)
 
 {
     u16 uVar1;

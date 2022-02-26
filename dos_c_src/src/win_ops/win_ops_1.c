@@ -994,7 +994,7 @@ u16 * pass1_1040_97da(u16 *param_1, u8 param_2)
 }
 
 
-astruct_57 * pass1_1040_8478(astruct_57 *param_1, u16 param_2, char *param_3, char *param_4, u16 param_5, u16 param_6)
+Struct57 * pass1_1040_8478(Struct57 *param_1, u16 param_2, char *param_3, char *param_4, u16 param_5, u16 param_6)
 
 {
     u16          uVar1;

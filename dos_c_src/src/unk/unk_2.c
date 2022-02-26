@@ -1,5 +1,8 @@
+#include "unk_2.h"
+#include "types.h"
+#include "unk_17.h"
 
-void  pass1_1040_5626(astruct_57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
+void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 
 {
     i16         *piVar1;
@@ -239,31 +242,6 @@ u32  pass1_1038_df5c(u32 param_1, u16 param_2, u16 param_3)
 }
 
 
-void  pass1_1038_b6e0(u32 param_1, i16 param_2)
-
-{
-    u32 uVar1;
-    i16        iVar2;
-    u16        uVar3;
-    u16        uStack4;
-
-    uStack4 = 0x1;
-    while(true)
-    {
-        if(0x2a < uStack4)
-        {
-            return;
-        }
-        uVar3 = (param_1 >> 0x10);
-        iVar2 = param_1;
-        if((((uStack4 * 0x4 + iVar2 + 0x2) | (uStack4 * 0x4 + iVar2)) != 0x0) && (uVar1 = (uStack4 * 0x4 + iVar2), (uVar1 + 0x6) == param_2))
-            break;
-        uStack4 = uStack4 + 0x1;
-    }
-    (uStack4 * 0x4 + iVar2) = 0x0;
-    return;
-}
-
 void  pass1_1038_a174(u32 param_1, i16 param_2)
 
 {
@@ -413,7 +391,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
     i16         unaff_DI;
     u16         uVar7;
     u16         uVar8;
-    astruct_57 *paVar9;
+    Struct57 *paVar9;
 
     puVar3 = bring_win_to_top_1038_b72e(param_1, param_3, param_6);
     iVar6  = param_1;

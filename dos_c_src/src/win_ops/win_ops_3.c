@@ -739,7 +739,7 @@ void unk_win_op_1010_7300(u32 param_1, u32 param_2, u16 param_3, u32 param_4)
     HWND16      HVar11;
     u16         unaff_SS;
     u32         uVar12;
-    astruct_57 *paVar13;
+    Struct57 *paVar13;
     u16        *puVar14;
     LRESULT     LVar15;
     u16         uVar16;

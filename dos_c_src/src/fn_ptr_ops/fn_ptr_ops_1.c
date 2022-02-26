@@ -1,10 +1,12 @@
 #include "fn_ptr_ops_1.h"
 #include "types.h"
-#include "structs_1.h"
+#include "structs/structs_1.h"
 #include "fn_ptr_ops_6.h"
 #include "fn_ptr_ops_7.h"
+#include "structs/structs_11.h"
+#include "draw_ops/draw_ops_1.h"
 
-Struct18 * pass1_1040_d89e(Struct18 *param_1, u8 param_2)
+Struct18 *pass1_1040_d89e(Globals *globals, Struct18 *param_1, u8 param_2)
 
 {
     pass1_1040_d1bc(globals, param_1);
@@ -15,7 +17,7 @@ Struct18 * pass1_1040_d89e(Struct18 *param_1, u8 param_2)
     return param_1;
 }
 
-Struct18 * pass1_1040_d056(Struct18 *param_1, u8 param_2)
+Struct18 *pass1_1040_d056(Globals *globals, Struct18 *param_1, u8 param_2)
 
 {
     pass1_1040_ca74(globals, param_1);

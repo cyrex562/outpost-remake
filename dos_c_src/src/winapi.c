@@ -56,3 +56,9 @@ i16 InitApp16(HINSTANCE16 h_instance)
   void                        FatalExit(void) {
       // TODO: implement
   }
+
+
+  BOOL16                      DeleteObject16(HGDIOBJ16 obj) {
+      // TODO: implement
+      return 0;
+  }
