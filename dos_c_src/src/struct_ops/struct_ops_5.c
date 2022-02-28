@@ -1,6 +1,13 @@
 
+#include "unk_6.h"
+#include "utils.h"
+#include "structs/structs_45.h"
+#include "globals.h"
+#include "unk_5.h"
 #include "struct_ops_5.h"
 #include "types.h"
+#include "unk/unk_6.h"
+
 
 u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3)
 
@@ -523,7 +530,7 @@ void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
 
     uVar10  = (param_1 >> 0x10);
     uVar11  = (astruct_214 *)param_1;
-    lStack6 = pass1_1008_e8cc(param_2, param_1, uVar11->field_0x1a, uVar11->field_0x16);
+    lStack6 = pass1_1008_e8cc(param_2, param_1, uVar11->field_0x1a_addr_offset, uVar11->field_0x16);
     uVar8   = (lStack6 >> 0x10);
     uVar5   = (astruct_215 *)lStack6;
     puVar5  = (uVar8 | uVar5);
@@ -532,7 +539,7 @@ void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
         pass1_1008_e852(uVar11, uVar10, uVar11->field_0x16, param_2, puVar5);
         paVar3 = uVar5;
         puVar6 = puVar5;
-        pass1_1008_e852(uVar11, uVar10, uVar11->field_0x1a, param_2, puVar5);
+        pass1_1008_e852(uVar11, uVar10, uVar11->field_0x1a_addr_offset, param_2, puVar5);
         paVar9 = paVar3;
         puVar7 = puVar6;
         mem_op_1000_179c(0x14, puVar6, 0x1000);
@@ -599,7 +606,7 @@ void pass1_1008_ca5a(astruct_639 *param_1, u16 param_2, u16 param_3)
     param_1->field_0xe         = 0x0;
     param_1->field_0x12        = 0x0;
     param_1->field_0x16        = 0x0;
-    param_1->field_0x1a        = 0x0;
+    param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e        = 0x0;
     CONCAT22(param_2, param_1) = 0xd71a;
     param_1->field_0x2         = 0x1008;
@@ -662,7 +669,7 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     uVar13               = (*param_1 >> 0x10);
     iVar5                = (astruct_142 *)*param_1;
     iVar5->field_0x18    = 0x6f2;
-    iVar5->field_0x1a    = &USHORT_1050_1050;
+    iVar5->field_0x1a_addr_offset = &USHORT_1050_1050;
     (*param_1 + 0x1c)    = 0x2;
     uVar13               = (*param_1 >> 0x10);
     iVar6                = (astruct_143 *)*param_1;
@@ -1008,7 +1015,7 @@ void pass1_1008_af94(astruct_643 *param_1, u16 param_2, u16 param_3)
     param_1->field_0xe         = 0x0;
     param_1->field_0x12        = 0x0;
     param_1->field_0x16        = 0x0;
-    param_1->field_0x1a        = 0x0;
+    param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e        = 0x0;
     param_1->field_0x22        = 0x0;
     CONCAT22(param_2, param_1) = 0xbdcc;
@@ -1069,7 +1076,7 @@ void struct_op_1008_8e9e(astruct_78 *param_1, u32 param_2, u32 param_3)
     iVar1->field_0xe   = param_3;
     iVar1->field_0x12  = 0x0;
     iVar1->field_0x16  = param_2;
-    iVar1->field_0x1a  = 0x1;
+    iVar1->field_0x1a_addr_offset = 0x1;
     param_1->field_0x0 = 0x9170;
     iVar1->field_0x2   = 0x1008;
     if(iVar1->field_0xe < 0x7)
@@ -1238,7 +1245,7 @@ void struct_op_1008_3f92(astruct_76 *param_1, astruct_83 *param_2)
     (&iVar2->field_0xe + 0x2) = 0x0;
     iVar2->field_0x14         = 0x0;
     &iVar2->field_0x18        = 0x0;
-    iVar2->field_0x1c         = 0x0;
+    iVar2->field_0x1c_addr_base = 0x0;
     param_1->field_0x0        = &PTR_LOOP_1050_48de;
     iVar2->field_0x2          = 0x1008;
     if(param_2 == (astruct_83 *)0x0)
@@ -1287,8 +1294,8 @@ void struct_op_1008_4214(astruct_76 *param_1, astruct_83 *param_2)
 
     uVar4             = (astruct_83 *)(param_2 >> 0x10);
     iVar4             = (astruct_83 *)param_2;
-    (param_1 + 0x6)   = iVar4->field_0x1a;
-    iVar4->field_0x1a = 0x0;
+    (param_1 + 0x6)   = iVar4->field_0x1a_addr_offset;
+    iVar4->field_0x1a_addr_offset = 0x0;
     puVar1            = iVar4->field_0x4;
     uVar2             = iVar4->field_0x6;
     if((uVar2 | puVar1) != 0x0)
@@ -1347,4 +1354,34 @@ void struct_op_1008_0000(u16 *param_1)
     *param_1      = 0x51e;
     (iVar1 + 0x2) = 0x1008;
     return;
+}
+Address2 struct_op_1030_73a8(Globals *globals, Struct383 *param_1)
+
+{
+    Address1   address_1_var_1;
+    u16        in_AX;
+    u16        in_DX;
+    Address2 result;
+    result.base = 0;
+    result.offset = 0;
+//    i16        iVar2;
+//    u16        uVar3;
+
+//    uVar3 = (param_1 >> 0x10);
+//    iVar2 = param_1;
+    if((param_1->field_0x16) == 0x0)
+    {
+        return result;
+    }
+    if((param_1->field_0x1a_addr_offset) == 0x0)
+    {
+        address_1_var_1 = (param_1->field_0x16);
+        pass1_1028_e1ec(globals->_PTR_LOOP_1050_65e2, address_1_var_1.offset, (address_1_var_1.base));
+        (param_1->field_0x1a_addr_offset) = in_AX;
+        (param_1->field_0x1c_addr_base) = in_DX;
+    }
+
+    result.base = param_1->field_0x1c_addr_base;
+    result.offset = param_1->field_0x1a_addr_offset;
+    return result;
 }

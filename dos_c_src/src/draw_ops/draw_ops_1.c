@@ -1864,7 +1864,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
     {
         paStack6 = (astruct_20 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
-        paVar5   = *(Struct18 **)(param_1 + 0x90);
+        paVar5   = (param_1 + 0x90);
         if(paVar5 != (Struct18 *)0x0)
         {
             paStack10 = paVar5;

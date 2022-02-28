@@ -1,5 +1,6 @@
 
 #include "types.h"
+#include "unk_6.h"
 u32 * pass1_1030_3af6(u32 *param_1, u16 param_2, u16 param_3, u32 *param_4, u16 param_5)
 
 {
@@ -1179,14 +1180,14 @@ void  bad_1028_e1bc(u32 param_1, u32 param_2)
 }
 
 
-void  pass1_1028_e1ec(u32 param_1, u16 param_2, u16 param_3)
+void  pass1_1028_e1ec(u32 param_1, u16 param_2_offset, u16 param_3_base)
 
 {
-    if(param_3._1_1_ == '\0')
+    if(param_3_base._1_1_ == '\0')
     {
         return;
     }
-    if(param_3._1_1_ == -0x1)
+    if(param_3_base._1_1_ == -0x1)
     {
         return;
     }

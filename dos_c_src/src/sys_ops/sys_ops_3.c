@@ -903,7 +903,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
             puVar17[0x1] = &USHORT_1050_1028;
             return;
         case0x6:
-            pass1_1030_145a(uVar20->field_0x1a, (long)local_6);
+            pass1_1030_145a(uVar20->field_0x1a_addr_offset, (long)local_6);
             for(local_30 = 0x0; local_30 < local_6; local_30 = ((long)local_30 + 0x1))
             {
                 puVar27 = local_6;
@@ -934,7 +934,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
                 puStack14 = uVar5;
                 pcStack12 = (fn_ptr_1)(uVar5 >> 0x10);
                 puVar17   = (uVar16 & 0xff);
-                pass1_1030_14b4(uVar20->field_0x1a, uStack44, uStack42, uVar5 & 0xffff | (uVar16 & 0xff) << 0x10, param_9);
+                pass1_1030_14b4(uVar20->field_0x1a_addr_offset, uStack44, uStack42, uVar5 & 0xffff | (uVar16 & 0xff) << 0x10, param_9);
             }
             break;
         default:
@@ -1634,8 +1634,8 @@ void  pass1_1028_d81c(u32 *param_1, u32 param_2, u8 *param_3, u16 param_4)
     {
         struct_1030_11aa(CONCAT22(puVar3, puVar1), 0x5, 0xa, param_4);
     }
-    iVar6->field_0x1a = puVar1;
-    iVar6->field_0x1c = puVar2;
+    iVar6->field_0x1a_addr_offset = puVar1;
+    iVar6->field_0x1c_addr_base = puVar2;
     mem_op_1000_179c(0x1c, puVar2, 0x1000);
     puVar3 = (puVar2 | puVar1);
     if(puVar3 == 0x0)

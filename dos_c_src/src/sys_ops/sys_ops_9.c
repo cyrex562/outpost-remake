@@ -10,7 +10,7 @@ void pass1_1010_28e6(astruct_631 *param_1, u8 *param_2, u16 param_3, u8 *param_4
     i16         iStack6;
 
     struct_op_1018_4cda(param_1, param_2, param_3);
-    &param_1->field_0x1c       = 0x0;
+    &param_1->field_0x1c_addr_base      = 0x0;
     param_1->field_0x20        = 0x0;
     param_1->field_0x22        = 0x0;
     param_1->field_0x24        = 0x0;
@@ -22,7 +22,7 @@ void pass1_1010_28e6(astruct_631 *param_1, u8 *param_2, u16 param_3, u8 *param_4
     pass1_1018_4dce(CONCAT13((param_2 >> 0x8), CONCAT12(param_2, param_1)), 0x56, param_4, param_5);
     paVar5              = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x4, param_5);
     globals->PTR_LOOP_1050_5f2e  = (paVar5 >> 0x10);
-    param_1->field_0x1c = paVar5;
+    param_1->field_0x1c_addr_base = paVar5;
     param_1->field_0x1e = globals->PTR_LOOP_1050_5f2e;
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
@@ -1728,7 +1728,7 @@ void struct_1008_dd4e(astruct_209 *param_1, u16 param_2, u16 param_3)
     param_1->field_0xe         = 0x0;
     param_1->field_0x12        = 0x0;
     param_1->field_0x16        = 0x0;
-    param_1->field_0x1a        = 0x0;
+    param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e        = 0x0;
     CONCAT22(param_2, param_1) = 0xeaac;
     param_1->field_0x2         = 0x1008;

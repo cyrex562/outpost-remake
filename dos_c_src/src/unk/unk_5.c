@@ -1,4 +1,12 @@
 
+#include "unk_5.h"
+#include "types.h"
+#include "globals.h"
+#include "structs/structs_45.h"
+#include "utils.h"
+#include "unk_6.h"
+#include "struct_ops_5.h"
+
 void  bad_1030_8cd2(void)
 
 {
@@ -763,32 +771,6 @@ void  pass1_1030_6f5a(u32 param_1, u16 param_2)
 }
 
 
-u32  struct_op_1030_73a8(u32 param_1)
-
-{
-    u32 uVar1;
-    u16        in_AX;
-    u16        in_DX;
-    i16        iVar2;
-    u16        uVar3;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if((iVar2 + 0x16) == 0x0)
-    {
-        return 0x0;
-    }
-    if((iVar2 + 0x1a) == 0x0)
-    {
-        uVar1 = (iVar2 + 0x16);
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar1, (uVar1 >> 0x10));
-        (iVar2 + 0x1a) = in_AX;
-        (iVar2 + 0x1c) = in_DX;
-    }
-    return CONCAT22((iVar2 + 0x1c), (iVar2 + 0x1a));
-}
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void  pass1_1030_73ee(u32 param_1, u32 param_2, u16 param_3)
@@ -872,7 +854,7 @@ void  pass1_1030_5d78(u16 *param_1)
     iVar3         = param_1;
     *param_1      = 0x613e;
     (iVar3 + 0x2) = 0x1030;
-    paVar2        = *(Struct18 **)(iVar3 + 0x10);
+    paVar2        = (iVar3 + 0x10);
     uVar1         = (iVar3 + 0x12);
     if((uVar1 | paVar2) != 0x0)
     {

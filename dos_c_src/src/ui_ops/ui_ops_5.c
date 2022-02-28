@@ -2343,7 +2343,7 @@ void  cleanup_win_ui_1020_2fea(astruct_12 *in_struct_1, HDC16 in_dc_handle_2)
         in_dc_handle_2 = 0x1010;
         pass1_1010_1ea6(iVar1->field_0x14, in_struct_1 & 0xffff | var2 << 0x10, unaff_SS);
     }
-    SelectObject16(in_dc_handle_2, iVar1->field_0x1c);
+    SelectObject16(in_dc_handle_2, iVar1->field_0x1c_addr_base);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, iVar1->field_0x1e);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, iVar1->field_0x20);

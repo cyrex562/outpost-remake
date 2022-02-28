@@ -3,6 +3,11 @@
 #include "types.h"
 #include <structs/structs_45.h>
 #include "struct_ops/struct_ops_1.h"
+#include "struct_ops/struct_ops_5.h"
+#include "fn_ptr_ops/fn_ptr_ops_7.h"
+#include "utils.h"
+#include "string_consts.h"
+#include "winapi.h"
 
 
 void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3)
@@ -13,7 +18,6 @@ void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3)
     uVar1              = str_op_1008_60e8(param_2, param_3);
     param_1->field_0x1 = uVar1;
     param_1->fielx_0x2 = param_3;
-    return;
 }
 
 
@@ -33,69 +37,67 @@ char *pass1_1040_4dcc(u32 param_1, i16 param_2, u16 param_3)
 }
 
 
-void pass1_1040_5d42(u32 param_1)
+void pass1_1040_5d42(Globals *globals, Struct382 *param_1)
 
 {
-    u16  uVar1;
-    char cVar2;
-    i16  iVar3;
-    u16  uVar4;
-    u32  uVar5;
+    char char_var_1;
+    char char_var_2;
+//    i16  iVar3;
+//    u16  uVar4;
+    Address2 address_2_var_5;
+    Struct384* struct384_var_6;
 
-    uVar5 = pass1_1040_5d12(param_1);
-    if(uVar5 != 0x0)
+    address_2_var_5 = pass1_1040_5d12(globals,param_1);
+    struct384_var_6 = (Struct384*)CONCAT22(address_2_var_5.base, address_2_var_5.offset);
+    if(address_2_var_5.base != 0 && address_2_var_5.offset != 0)
     {
-        uVar1 = *(uVar5 + 0xc);
-        iVar3 = param_1;
-        uVar4 = (param_1 >> 0x10);
-        if(uVar1 == 0x5f)
+        char_var_1 = *(struct384_var_6->field_0xc);
+//        iVar3 = param_1;
+//        uVar4 = (param_1 >> 0x10);
+        if(char_var_1 == 0x5f)
         {
-            (iVar3 + 0x96) = 0x53;
+            (param_1->field_0x96) = 0x53; // 'S'
             return;
         }
-        if(uVar1 < 0x60)
+        if(char_var_1 < 0x60)
         {
-            cVar2 = uVar1;
-            if(cVar2 == '(')
+            char_var_2 = char_var_1;
+            if(char_var_2 == '(')
             {
-                (iVar3 + 0x96) = 0x54;
+                (param_1->field_0x96) = 0x54; // 'T'
                 return;
             }
-            if(cVar2 == ')')
+            if(char_var_2 == ')')
             {
-                (iVar3 + 0x96) = 0x55;
+                (param_1->field_0x96) = 0x55; // 'U'
                 return;
             }
-            if(cVar2 == ']')
+            if(char_var_2 == ']')
             {
-                (iVar3 + 0x96) = 0x51;
+                (param_1->field_0x96) = 0x51; // 'Q'
                 return;
             }
-            if(cVar2 == '^')
+            if(char_var_2 == '^')
             {
-                (iVar3 + 0x96) = 0x52;
+                (param_1->field_0x96) = 0x52; // 'R'
                 return;
             }
         }
     }
-    return;
 }
 
 
-void pass1_1038_4d3c(u32 param_1, char *param_2, u16 param_3)
+void pass1_1038_4d3c(Struct385 *param_1, char *param_2, u16 param_3)
 
 {
-    u16 uVar1;
-    i16 iVar2;
-    u16 uVar3;
+    u16 u_var_1;
 
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar2 + 0x1fa), 0x1000);
-    uVar1           = str_op_1008_60e8(param_2, param_3);
-    (iVar2 + 0x1fa) = uVar1;
-    (iVar2 + 0x1fc) = param_3;
-    return;
+//    uVar3 = (param_1 >> 0x10);
+//    iVar2 = param_1;
+    fn_ptr_1000_17ce(param_1->field_0x1fa, 0x1000);
+    u_var_1                = str_op_1008_60e8(param_2, param_3);
+    (param_1->field_0x1fa) = u_var_1;
+    (param_1->field_0x1fc) = param_3;
 }
 
 
@@ -129,7 +131,7 @@ void pass1_1030_4dbc(u32 param_1, u32 param_2, long param_3)
     return;
 }
 
-u16 pass1_1020_bd80(u16 param_1)
+u16 pass1_1020_bd80(Globals *globals, u16 param_1)
 
 {
     char *pcVar1;
@@ -360,6 +362,9 @@ u16 pass1_1020_bd80(u16 param_1)
     case 0x88:
         break;
     case 0x89:
+        break;
+    default:
+        break;
     }
     pcVar1 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     return pcVar1;
@@ -903,20 +908,20 @@ u16 pass1_1010_ae12(u16 param_1, u16 param_2, u32 param_3, i16 param_4, u16 para
     return 0xffff;
 }
 
-char *load_string_1010_9432(HINSTANCE16 param_1)
+char *load_string_1010_9432(Globals *globals, HINSTANCE16 param_1)
 
 {
     char *pcVar1;
 
-    pcVar1 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), param_1);
+    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), param_1);
     return pcVar1;
 }
 
-char *load_string_1010_847e(i16 param_1, u16 in_buf_len_2, HINSTANCE16 in_hinstsance_3)
+char *load_string_1010_847e(cstring param_1_str_buf, u16 param_2_buf_len, HINSTANCE16 param_3_hinstance)
 
 {
-    LoadString16(in_hinstsance_3, 0x3ff, (param_1 + 0x682), in_buf_len_2);
-    return CONCAT22(in_buf_len_2, (param_1 + 0x682));
+    LoadString16(param_3_hinstance, 0x3ff, (param_1_str_buf + 0x682), param_2_buf_len);
+    return (char*)CONCAT22(param_2_buf_len, (param_1_str_buf + 0x682));
 }
 
 
@@ -1092,7 +1097,7 @@ void pass1_1008_e320(astruct_102 *param_1, u32 param_2, u32 param_3, u16 param_4
 
     uVar6 = (astruct_102 *)(param_1 >> 0x10);
     iVar5 = (astruct_102 *)param_1;
-    fn_ptr_1000_17ce(*(Struct18 **)&iVar5->field_0x1e, 0x1000);
+    fn_ptr_1000_17ce(&iVar5->field_0x1e, 0x1000);
     &iVar5->field_0x1e = 0x0;
     uVar7              = param_2;
     pcVar5             = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
@@ -1279,7 +1284,7 @@ void struct_op_1008_48fe(astruct_81 *param_1, u16 param_2, char *param_3, u16 pa
     iVar2->field_0xe  = 0x0;
     iVar2->field_0x12 = 0x0;
     iVar2->field_0x16 = 0x0;
-    iVar2->field_0x1a = 0x0;
+    iVar2->field_0x1a_addr_offset = 0x0;
     iVar2->field_0x1e = 0x0;
     iVar2->field_0x22 = param_2;
     param_1           = &PTR_LOOP_1050_4c4c;

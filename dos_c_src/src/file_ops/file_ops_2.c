@@ -146,7 +146,7 @@ void  pass1_1030_2aca(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
                             BVar4      = write_to_file_1008_7e1c(uVar3, uVar8, local_c, param_4, 0x2, 0x1008);
                             if(BVar4 != 0x0)
                             {
-                                local_c[0] = iVar6->field_0x1a;
+                                local_c[0] = iVar6->field_0x1a_addr_offset;
                                 BVar4      = write_to_file_1008_7e1c(uVar3, uVar8, local_c, param_4, 0x2, 0x1008);
                                 if(BVar4 != 0x0)
                                 {
@@ -267,7 +267,7 @@ void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                    && ((BVar3 = read_file_1008_7dee(uVar2, uVar9, &iVar14->field_0x18, 0x0, uVar10, 0x2, 0x1008), BVar3 != 0x0 && (BVar3 = read_file_1008_7dee(uVar2, uVar9, &local_406, 0x0, param_5, 0x2, 0x1008), BVar3 != 0x0))))
                 {
                     iVar14->field_0x16 = local_404;
-                    iVar14->field_0x1a = local_406;
+                    iVar14->field_0x1a_addr_offset = local_406;
                     puVar8             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_5, puVar6, unaff_DI);
                     pass1_1018_04a4(puVar8, iVar14->field_0x4);
                     pass1_1010_82f8(_PTR_LOOP_1050_14cc, *iVar14->field_0x10);

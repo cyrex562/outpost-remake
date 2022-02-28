@@ -801,7 +801,7 @@ void  pass1_1020_c6a4(u32 param_1, i16 param_2, u16 param_3)
     {
         lVar1 = iVar2->field_0x18;
         pass1_1000_4aea(lVar1, (lVar1 >> 0x10), iVar2->field_0x10, 0x6, 0xc7fa, &stack0xfffe, param_2, uVar2, 0x1000, param_3);
-        iVar2->field_0x1c = 0x0;
+        iVar2->field_0x1c_addr_base = 0x0;
     }
     return;
 }
@@ -820,7 +820,7 @@ void  pass1_1020_c6de(u32 param_1, long param_2)
 
     uVar3 = (param_1 >> 0x10);
     iVar3 = (astruct_360 *)param_1;
-    if(iVar3->field_0x1c != 0x0)
+    if(iVar3->field_0x1c_addr_base != 0x0)
     {
         pass1_1020_c6a4(param_1 & 0xffff | uVar3 << 0x10, unaff_DI, unaff_SS);
     }

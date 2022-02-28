@@ -1891,14 +1891,14 @@ void  pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     {
         iVar2->field_0x16 = 0x1;
     }
-    if(iVar2->field_0x1a == 0x0)
+    if(iVar2->field_0x1a_addr_offset == 0x0)
     {
-        iVar2->field_0x1a = 0x2;
+        iVar2->field_0x1a_addr_offset = 0x2;
     }
     if(iVar2->field_0x18 < 0x1)
     {
         iVar2->field_0x16 = 0x2;
-        iVar2->field_0x1a = 0x1;
+        iVar2->field_0x1a_addr_offset = 0x1;
         uVar8             = 0x0;
         iVar9             = 0x21;
         uVar6             = 0x1;

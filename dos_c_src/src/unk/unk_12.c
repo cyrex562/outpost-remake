@@ -1,7 +1,8 @@
 #include "unk_12.h"
 #include "types.h"
-#include "structs_1.h"
+#include "structs/structs_1.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "utils.h"
 
 void  pass1_1010_927a(AddrStruct *param_1)
 
@@ -51,7 +52,7 @@ void  pass1_1010_93f0(u32 param_1, u16 param_2)
         puVar5 = pass1_1010_9258(CONCAT22(param_2, local_1c));
         uVar2  = (puVar5 >> 0x10);
         puVar1 = local_1c;
-        pass1_1010_398e(CONCAT22(param_2, puVar1), 0x0, 0x0, 0x0, puVar1);
+        pass1_1010_398e(globals,CONCAT22(param_2, puVar1);
         (iVar3 + 0x56) = puVar1;
         (iVar3 + 0x58) = uVar2;
         pass1_1010_927a(CONCAT22(param_2, local_1c));
@@ -233,14 +234,14 @@ i16  pass1_1010_96d0(u32 param_1)
 
     uVar3 = (param_1 >> 0x10);
     iVar3 = (astruct_690 *)param_1;
-    if(iVar3->field_0x1a != 0x0)
+    if(iVar3->field_0x1a_addr_offset != 0x0)
     {
-        if(0x0 < iVar3->field_0x1c)
+        if(0x0 < iVar3->field_0x1c_addr_base)
         {
-            piVar1  = &iVar3->field_0x1c;
+            piVar1  = &iVar3->field_0x1c_addr_base;
             *piVar1 = *piVar1 + -0x1;
         }
-        if((iVar3->field_0x1c == 0x0) && (iVar3->field_0x1e != 0x0))
+        if((iVar3->field_0x1c_addr_base == 0x0) && (iVar3->field_0x1e != 0x0))
         {
             iStack8 = 0x1;
             uVar4   = pass1_1030_8326();
@@ -1453,17 +1454,14 @@ void  pass1_1010_5120(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
 u32  pass1_1010_375e(u32 param_1)
 
 {
-    u16 uVar1;
-
-    uVar1 = (param_1 >> 0x10);
     return CONCAT22((param_1 + 0xc), (param_1 + 0xa));
 }
 
-void  pass1_1010_398e(u32 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
+void pass1_1010_398e(Globals *globals, u32 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
     i16        *piVar1;
-    code      **ppcVar2;
+    fn_ptr_1      **ppcVar2;
     u32         uVar3;
     u32  uVar4;
     i16         iVar5;
@@ -1509,7 +1507,7 @@ void  pass1_1010_398e(u32 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 p
         for(uStack12 = 0x0; uStack12 < iVar5; uStack12 = uStack12 + 0x1)
         {
             uVar6 = uStack12;
-            pass1_1010_398e(param_1, uStack12, uStack12 >> 0xf, puStack6, uStack12);
+            pass1_1010_398e(globals,param_1;
             uVar4                 = (param_5 + 0x8);
             uVar10                = (uVar4 >> 0x10);
             iVar7                 = uVar4;

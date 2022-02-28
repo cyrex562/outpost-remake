@@ -1836,15 +1836,15 @@ void  pass1_1020_8360(u16 *param_1, u16 param_2)
     uVar4 = (param_1 >> 0x10);
     struct_1020_847a(param_1, 0x1, param_2);
     puVar3             = pass1_1008_3e38((param_1 & 0xffff0000 | &iVar4->field_0x16));
-    &iVar4->field_0x1c = 0x0;
+    &iVar4->field_0x1c_addr_base = 0x0;
     *param_1           = 0x8462;
     iVar4->field_0x2   = 0x1020;
     puVar3             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, param_2, (puVar3 >> 0x10), uVar4);
     uVar2              = (puVar3 >> 0x10);
-    iVar4->field_0x1c  = puVar3;
+    iVar4->field_0x1c_addr_base  = puVar3;
     iVar4->field_0x1e  = uVar2;
-    pass1_1018_26f8(iVar4->field_0x1c, uVar2, (param_1 & 0xffff0000 | &iVar4->field_0x16));
-    uVar1 = &iVar4->field_0x1c;
+    pass1_1018_26f8(iVar4->field_0x1c_addr_base, uVar2, (param_1 & 0xffff0000 | &iVar4->field_0x16));
+    uVar1 = &iVar4->field_0x1c_addr_base;
     pass1_1020_8712(param_1 & 0xffff | uVar4 << 0x10, iVar4->field_0x8, *(astruct_76 **)(uVar1 + 0x2a), (param_1 & 0xffff0000 | &iVar4->field_0x16));
     return;
 }

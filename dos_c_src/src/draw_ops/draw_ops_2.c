@@ -1161,8 +1161,8 @@ void  win_ui_palette_op_1020_3e84(astruct_16 *param_1)
     iVar1->field_0x2 = 0x1020;
     pass1_1010_1ea6(iVar1->field_0x14, param_1 & 0xffff | uVar1 << 0x10, unaff_SS);
     SelectObject16(0x1010, iVar1->field_0x18);
-    SelectObject16((HDC16)s_tile2_bmp_1050_1538, iVar1->field_0x1a);
-    SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, iVar1->field_0x1c);
+    SelectObject16((HDC16)s_tile2_bmp_1050_1538, iVar1->field_0x1a_addr_offset);
+    SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, iVar1->field_0x1c_addr_base);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     SetMapMode16((HDC16)s_tile2_bmp_1050_1538, iVar1->field_0x1e);
     param_1          = 0x3ab0;

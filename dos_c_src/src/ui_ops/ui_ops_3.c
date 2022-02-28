@@ -595,7 +595,7 @@ void  pass1_1038_e308(Struct18 *param_1)
     param_1->field_0x0 = 0xe62e;
     (iVar1 + 0x2)      = &PTR_LOOP_1050_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (iVar1 + 0x6));
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar1 + 0x8e), 0x1000);
+    fn_ptr_1000_17ce((iVar1 + 0x8e), 0x1000);
     ui_cleanup_op_1040_782c(param_1, &PTR_LOOP_1050_1040);
     return;
 }
@@ -1396,7 +1396,7 @@ void  pass1_1038_d7d0(Struct18 *param_1, u16 param_2)
         pass1_1010_1ea6(*(iVar1 + 0x92), (long)param_1, param_2);
     }
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (iVar1 + 0x6));
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar1 + 0x96), 0x1000);
+    fn_ptr_1000_17ce((iVar1 + 0x96), 0x1000);
     ui_cleanup_op_1040_782c(param_1, &PTR_LOOP_1050_1040);
     return;
 }

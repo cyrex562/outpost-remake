@@ -1051,7 +1051,7 @@ void  pass1_1038_3608(u32 param_1)
     u16 uVar1;
 
     uVar1 = (param_1 >> 0x10);
-    fn_ptr_1000_17ce(*(Struct18 **)(param_1 + 0x21a), 0x1000);
+    fn_ptr_1000_17ce((param_1 + 0x21a), 0x1000);
     (param_1 + 0x21a) = 0x0;
     return;
 }

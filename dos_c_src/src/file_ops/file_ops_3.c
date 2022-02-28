@@ -167,7 +167,7 @@ void write_to_file_1010_6372(u32 param_1, u32 param_2, u16 param_3)
                     BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
                     if(BVar1 != 0x0)
                     {
-                        local_8 = iVar2->field_0x1a;
+                        local_8 = iVar2->field_0x1a_addr_offset;
                         BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
                         if(BVar1 != 0x0)
                         {

@@ -61,7 +61,7 @@ void  close_file_1008_496c(u16 *param_1)
         ppcVar4 = *puVar1;
         (**ppcVar4)();
     }
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar5 + 0x8), 0x1000);
+    fn_ptr_1000_17ce((iVar5 + 0x8), 0x1000);
     if((iVar5 + 0x1a) != 0x0)
     {
         uVar3 = (iVar5 + 0x1a);
@@ -242,7 +242,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     uVar10        = (iVar3 + 0x1c);
     if((uVar10 | uStack778) == 0x0)
     {
-        paStack1646 = *(Struct18 **)(iVar3 + 0x64);
+        paStack1646 = (iVar3 + 0x64);
         uVar10      = (iVar3 + 0x66);
         if((uVar10 | paStack1646) != 0x0)
         {

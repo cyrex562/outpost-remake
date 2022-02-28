@@ -38,7 +38,7 @@ void  pass1_1038_33f8(u16 *param_1)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar4 + 0x1fa), 0x1000);
+    fn_ptr_1000_17ce((iVar4 + 0x1fa), 0x1000);
     puVar1 = (iVar4 + 0x210);
     uVar2  = (iVar4 + 0x212);
     if((uVar2 | puVar1) != 0x0)
@@ -46,7 +46,7 @@ void  pass1_1038_33f8(u16 *param_1)
         ppcVar3 = *puVar1;
         (**ppcVar3)(0x1000, puVar1, uVar2, 0x1);
     }
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar4 + 0x21a), 0x1000);
+    fn_ptr_1000_17ce((iVar4 + 0x21a), 0x1000);
     pass1_1030_18b2(param_1);
     return;
 }
@@ -1287,7 +1287,7 @@ void  pass1_1030_b96c(u16 *param_1)
     iVar3         = param_1;
     *param_1      = 0xbc0c;
     (iVar3 + 0x2) = 0x1030;
-    paVar2        = *(Struct18 **)(iVar3 + 0xe);
+    paVar2        = (iVar3 + 0xe);
     uVar1         = (iVar3 + 0x10);
     if((uVar1 | paVar2) != 0x0)
     {

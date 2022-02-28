@@ -1338,7 +1338,7 @@ void  pass1_1030_7e5a(u32 param_1, u32 param_2, u16 param_3)
     uVar1             = (param_1 >> 0x10);
     iVar1             = (astruct_358 *)param_1;
     iVar1->field_0x16 = param_2;
-    iVar1->field_0x1a = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
     pass1_1030_6fa0(param_1 & 0xffff | uVar1 << 0x10);
     if(iVar1->field_0x2e != 0x0)
     {
@@ -1523,7 +1523,7 @@ void  struct_1030_8544(u16 *param_1, u16 *param_2)
     iVar2->field_0xe  = iVar1->field_0xe;
     iVar2->field_0x12 = iVar1->field_0x12;
     iVar2->field_0x16 = iVar1->field_0x16;
-    iVar2->field_0x1a = iVar1->field_0x1a;
+    iVar2->field_0x1a_addr_offset = iVar1->field_0x1a_addr_offset;
     iVar2->field_0x1e = 0x0;
     return;
 }
@@ -1721,7 +1721,7 @@ void  pass1_1030_6c66(u32 param_1, i16 param_2, u32 param_3, u16 param_4, u8 *pa
             BVar5 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uVar4, 0x4);
             if(BVar5 != 0x0)
             {
-                pass1_1028_6356(iVar7->field_0x1a, 0x0, iVar6->field_0xa, 0x0, unaff_SS);
+                pass1_1028_6356(iVar7->field_0x1a_addr_offset, 0x0, iVar6->field_0xa, 0x0, unaff_SS);
             }
         }
     }

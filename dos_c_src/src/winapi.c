@@ -49,16 +49,25 @@ i16 InitApp16(HINSTANCE16 h_instance)
     return 0;
 }
 
- void                        FatalAppExit16(u16 action, cstring str) {
-     // TODO: implement
- }
+void FatalAppExit16(u16 action, cstring str)
+{
+    // TODO: implement
+}
 
-  void                        FatalExit(void) {
-      // TODO: implement
-  }
+void FatalExit(void)
+{
+    // TODO: implement
+}
 
 
-  BOOL16                      DeleteObject16(HGDIOBJ16 obj) {
-      // TODO: implement
-      return 0;
-  }
+BOOL16 DeleteObject16(HGDIOBJ16 obj)
+{
+    // TODO: implement
+    return 0;
+}
+
+u16 LoadString16(HINSTANCE16 instance, u16 resource_id, cstring buffer, u16 buf_len)
+{
+    // TODO:
+    return 0;
+}

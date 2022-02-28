@@ -1772,9 +1772,9 @@ void  struct_1018_229c(astruct_632 *param_1, u8 *param_2, u16 param_3, u8 *param
     i16         iStack4;
 
     struct_op_1018_4cda(param_1, param_2, param_3);
-    param_1->field_0x1c        = 0x389a;
+    param_1->field_0x1c_addr_base        = 0x389a;
     param_1->field_0x1e        = 0x1008;
-    param_1->field_0x1c        = 0x3aa8;
+    param_1->field_0x1c_addr_base        = 0x3aa8;
     param_1->field_0x1e        = 0x1008;
     param_1->field_0x20        = 0x0;
     param_1->field_0x24        = 0x0;
@@ -1787,7 +1787,7 @@ void  struct_1018_229c(astruct_632 *param_1, u8 *param_2, u16 param_3, u8 *param
     &param_1->field_0x6e       = 0x0;
     CONCAT22(param_2, param_1) = 0x2ada;
     param_1->field_0x2         = 0x1018;
-    param_1->field_0x1c        = s_fem132_wav_1050_2aec + 0x6;
+    param_1->field_0x1c_addr_base        = s_fem132_wav_1050_2aec + 0x6;
     param_1->field_0x1e        = 0x1018;
     globals->PTR_LOOP_1050_4230         = param_1;
     globals->PTR_LOOP_1050_4232         = param_2;
@@ -1827,7 +1827,7 @@ void  struct_1018_229c(astruct_632 *param_1, u8 *param_2, u16 param_3, u8 *param
     }
     else
     {
-        piVar1 = &param_1->field_0x1c;
+        piVar1 = &param_1->field_0x1c_addr_base;
     }
     pass1_1008_9262(_PTR_LOOP_1050_0388, (_PTR_LOOP_1050_0388 >> 0x10), 0x73, CONCAT22(param_2, piVar1), piVar1, param_2);
     return;
@@ -2021,8 +2021,8 @@ void  struct_1010_95aa(astruct_629 *param_1, u16 param_2, u16 param_3)
     param_1->field_0x12        = 0x0;
     param_1->field_0x16        = 0x0;
     param_1->field_0x18        = 0x0;
-    param_1->field_0x1a        = 0x0;
-    param_1->field_0x1c        = 0xa;
+    param_1->field_0x1a_addr_offset = 0x0;
+    param_1->field_0x1c_addr_base = 0xa;
     param_1->field_0x1e        = 0x0;
     CONCAT22(param_2, param_1) = 0xa1c8;
     param_1->field_0x2         = 0x1010;
@@ -2037,7 +2037,7 @@ void  struct_1010_6326(astruct_630 *param_1, u16 param_2, u16 param_3)
     param_1->field_0xe         = 0x0;
     param_1->field_0x12        = 0x0;
     param_1->field_0x16        = 0x0;
-    param_1->field_0x1a        = 0x0;
+    param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e        = 0x0;
     param_1->field_0x22        = 0x0;
     CONCAT22(param_2, param_1) = 0x66f0;

@@ -57,7 +57,7 @@ void  pass1_1030_67cc(u16 *param_1)
     iVar1->field_0x12 = 0x0;
     iVar1->field_0x14 = 0x0;
     iVar1->field_0x16 = 0x0;
-    iVar1->field_0x1a = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
     iVar1->field_0x1e = 0x0;
     iVar1->field_0x22 = 0x0;
     iVar1->field_0x26 = 0x0;
@@ -138,8 +138,8 @@ u16 * struct_1030_565a(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     iVar1             = (astruct_353 *)param_1;
     iVar1->field_0x10 = 0x0;
     pass1_1008_3e38((param_1 & 0xffff0000 | &iVar1->field_0x14));
-    iVar1->field_0x1a = 0x0;
-    iVar1->field_0x1c = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
+    iVar1->field_0x1c_addr_base = 0x0;
     *param_1          = s_procLo_1050_5bd0;
     iVar1->field_0x2  = 0x1030;
     return param_1;
@@ -313,7 +313,7 @@ void  pass1_1030_2958(u16 *param_1)
     iVar1->field_0x14 = 0x0;
     iVar1->field_0x16 = 0x0;
     iVar1->field_0x18 = 0x2710;
-    iVar1->field_0x1a = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
     *param_1          = 0x3130;
     iVar1->field_0x2  = 0x1030;
     return;
@@ -333,7 +333,7 @@ void  struct_1030_299a(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     iVar1->field_0x14 = 0x0;
     iVar1->field_0x16 = 0x0;
     iVar1->field_0x18 = 0x2710;
-    iVar1->field_0x1a = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
     *param_1          = 0x3130;
     iVar1->field_0x2  = 0x1030;
     return;
@@ -377,7 +377,7 @@ void  struct_1030_11aa(u16 *param_1, long param_2, long param_3, u16 param_4)
     iVar1->field_0xe  = param_3;
     iVar1->field_0x12 = 0x0;
     iVar1->field_0x16 = param_2;
-    iVar1->field_0x1a = 0x1;
+    iVar1->field_0x1a_addr_offset = 0x1;
     *param_1          = s_462_bmp_1050_1620 + 0x4;
     iVar1->field_0x2  = 0x1030;
     if(iVar1->field_0xe == 0x0)
@@ -1435,8 +1435,8 @@ void  struct_1028_b354(u16 *param_1)
     iVar1->field_0x10 = 0x0;
     iVar1->field_0x12 = 0x0;
     iVar1->field_0x18 = 0x0;
-    iVar1->field_0x1a = 0x0;
-    iVar1->field_0x1c = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
+    iVar1->field_0x1c_addr_base = 0x0;
     *param_1          = 0xcf6a;
     iVar1->field_0x2  = &USHORT_1050_1028;
     iVar1->field_0x16 = 0x0;
@@ -1459,8 +1459,8 @@ void  pass1_1028_b39e(u16 *param_1, i16 param_2, u32 param_3, u16 param_4)
     iVar1->field_0x10 = 0x0;
     iVar1->field_0x12 = 0x0;
     iVar1->field_0x18 = 0x0;
-    iVar1->field_0x1a = 0x0;
-    iVar1->field_0x1c = 0x0;
+    iVar1->field_0x1a_addr_offset = 0x0;
+    iVar1->field_0x1c_addr_base = 0x0;
     *param_1          = 0xcf6a;
     iVar1->field_0x2  = &USHORT_1050_1028;
     pass1_1028_bf76(param_1 & 0xffff | uVar1 << 0x10, 0x0);

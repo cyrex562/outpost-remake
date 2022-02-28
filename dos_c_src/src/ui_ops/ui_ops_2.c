@@ -26,7 +26,7 @@ void  win_ui_op_1040_5800(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
     {
         paStack6 = (astruct_20 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
-        paVar5   = *(Struct18 **)(param_1 + 0x90);
+        paVar5   = (param_1 + 0x90);
         if(paVar5 != (Struct18 *)0x0)
         {
             paStack10 = paVar5;
@@ -517,7 +517,7 @@ void  set_win_pos_1040_4ae4(i16 param_1, u16 param_2, u16 param_3, u32 param_4, 
     {
         paStack6 = (astruct_20 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
         puVar5   = (paStack6 >> 0x10);
-        paVar4   = *(Struct18 **)(param_1 + 0x90);
+        paVar4   = (param_1 + 0x90);
         if(paVar4 != (Struct18 *)0x0)
         {
             paStack10 = paVar4;
@@ -1283,7 +1283,7 @@ void  pass1_1040_0e86(Struct18 *param_1, u16 param_2)
     iVar4              = param_1;
     param_1->field_0x0 = s_overflow_on_node__d_1050_11ca + 0x8;
     (iVar4 + 0x2)      = &PTR_LOOP_1050_1040;
-    paVar2             = *(Struct18 **)(iVar4 + 0x92);
+    paVar2             = (iVar4 + 0x92);
     uVar1              = (iVar4 + 0x94);
     puVar3             = (uVar1 | paVar2);
     if(puVar3 != 0x0)
@@ -1951,7 +1951,7 @@ void  pass1_1038_ebd6(Struct18 *param_1)
     param_1->field_0x0 = 0xee6e;
     (iVar1 + 0x2)      = &PTR_LOOP_1050_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (iVar1 + 0x6));
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar1 + 0x8e), 0x1000);
+    fn_ptr_1000_17ce((iVar1 + 0x8e), 0x1000);
     ui_cleanup_op_1040_782c(param_1, &PTR_LOOP_1050_1040);
     return;
 }

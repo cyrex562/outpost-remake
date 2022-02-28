@@ -563,7 +563,7 @@ void unk_win_ui_op_1020_1418(astruct_40 *param_1, u32 param_2, u1616 param_3)
     puVar6 = extraout_DX;
     pass1_1008_4d84((astruct_90 *)(puVar5 & 0xffff | ZEXT24(extraout_DX) << 0x10), paVar2, extraout_DX);
     pHVar4            = (HDC16 *)palette_op_1008_4e08(paVar2, &local_8, puVar6, 0x1008);
-    iVar5->field_0x1c = pHVar4;
+    iVar5->field_0x1c_addr_base = pHVar4;
     return;
 }
 
@@ -1127,7 +1127,7 @@ void pass1_1018_2440(astruct_11 *param_1, u16 param_2)
     uVar5             = (astruct_502 *)param_1;
     param_1           = 0x2ada;
     uVar5->field_0x2  = 0x1018;
-    uVar5->field_0x1c = s_fem132_wav_1050_2aec + 0x6;
+    uVar5->field_0x1c_addr_base = s_fem132_wav_1050_2aec + 0x6;
     uVar5->field_0x1e = 0x1018;
     if(_PTR_LOOP_1050_0388 != 0x0)
     {
@@ -1138,7 +1138,7 @@ void pass1_1018_2440(astruct_11 *param_1, u16 param_2)
         }
         else
         {
-            piVar4 = &uVar5->field_0x1c;
+            piVar4 = &uVar5->field_0x1c_addr_base;
             uVar6  = uVar7;
         }
         param_2 = 0x1008;
@@ -1165,7 +1165,7 @@ void pass1_1018_2440(astruct_11 *param_1, u16 param_2)
     }
     else
     {
-        piVar4 = &uVar5->field_0x1c;
+        piVar4 = &uVar5->field_0x1c_addr_base;
     }
     puStack6    = CONCAT22(uVar7, piVar4);
     *puStack6   = 0x389a;
@@ -1412,7 +1412,7 @@ astruct_43 *unk_io_op_1010_830a(u32 param_1, u16 param_2, u16 param_3)
                 return (astruct_43 *)0x0;
             }
             iVar2 = (astruct_44 *)(param_2 * 0x10);
-            pass1_1008_6562((uVar5 + 0x67c), CONCAT22(iVar2->field_0x1c, iVar2->field_0x1e), iVar2->field_0x1a, in_AX, in_DX);
+            pass1_1008_6562((uVar5 + 0x67c), CONCAT22(iVar2->field_0x1c_addr_base, iVar2->field_0x1e), iVar2->field_0x1a_addr_offset, in_AX, in_DX);
             local_2e = (astruct_43 *)CONCAT22(in_DX, in_AX);
         }
         else
@@ -1556,16 +1556,16 @@ void pass1_1010_29c6(astruct_11 *param_1)
     iVar5            = (astruct_476 *)param_1;
     param_1          = s_add16_wav_1050_2bdc + 0x8;
     iVar5->field_0x2 = 0x1010;
-    if(&iVar5->field_0x1c != 0x0)
+    if(&iVar5->field_0x1c_addr_base != 0x0)
     {
-        puVar1 = *&iVar5->field_0x1c;
+        puVar1 = *&iVar5->field_0x1c_addr_base;
         uVar2  = iVar5->field_0x1e;
         if((uVar2 | puVar1) != 0x0)
         {
             ppcVar3 = *puVar1;
             (**ppcVar3)();
         }
-        &iVar5->field_0x1c = 0x0;
+        &iVar5->field_0x1c_addr_base = 0x0;
         fn_ptr_1000_17ce((Struct18 *)iVar5->field_0x28, 0x1000);
         iVar5->field_0x28 = 0x0;
     }

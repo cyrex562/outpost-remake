@@ -32,7 +32,7 @@ void  file_1038_774e(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
              && ((BVar2 = read_file_1008_7dee(uVar4, uVar6, &local_6, 0x0, param_4, 0x2, 0x1008), BVar2 != 0x0 && (BVar2 = read_file_1008_7dee(uVar4, uVar6, &local_8, 0x0, param_4, 0x2, 0x1008), BVar2 != 0x0))))
             && ((BVar2 = read_file_1008_7dee(uVar4, uVar6, &iVar2->field_0x16, 0x0, uVar1, 0x4, 0x1008),
                  BVar2 != 0x0
-                   && ((BVar2 = read_file_1008_7bc8(param_2, (param_1 & 0xffff0000 | &iVar2->field_0x1a), 0x1008, param_4),
+                   && ((BVar2 = read_file_1008_7bc8(param_2, (param_1 & 0xffff0000 | &iVar2->field_0x1a_addr_offset), 0x1008, param_4),
                         BVar2 != 0x0 && (BVar2 = read_file_1008_7dee(uVar4, uVar6, &iVar2->field_0x20, 0x0, uVar1, 0x4, 0x1008), BVar2 != 0x0))))))
            && ((BVar2 = read_file_1008_7dee(uVar4, uVar6, &iVar2->field_0x24, 0x0, uVar1, 0x2, 0x1008),
                 BVar2 != 0x0
@@ -385,11 +385,11 @@ void  file_1038_6118(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
         uVar10           = (param_2 >> 0x10);
         BVar3            = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x10, 0x0, uVar8, 0x4, 0x1008);
         if(((((BVar3 != 0x0) && (BVar3 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x18, 0x0, uVar8, 0x2, 0x1008), BVar3 != 0x0))
-             && (BVar3 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x1a, 0x0, uVar8, 0x2, 0x1008), BVar3 != 0x0))
+             && (BVar3 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x1a_addr_offset, 0x0, uVar8, 0x2, 0x1008), BVar3 != 0x0))
             && ((BVar3 = read_file_1008_7dee(uVar9, uVar10, &local_8, 0x0, param_5, 0x2, 0x1008), BVar3 != 0x0 && (BVar3 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x1e, 0x0, uVar8, 0x4, 0x1008), BVar3 != 0x0))))
            && (BVar3 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x22, 0x0, uVar8, 0x2, 0x1008), BVar3 != 0x0))
         {
-            iVar9->field_0x1c = local_8;
+            iVar9->field_0x1c_addr_base = local_8;
             BVar3             = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x24, 0x0, uVar8, 0x2, 0x1008);
             if((BVar3 != 0x0) && (uVar4 = read_file_1008_7dee(uVar9, uVar10, &iVar9->field_0x26, 0x0, uVar8, 0x94, 0x1008), uVar4 != 0x0))
             {
@@ -1779,7 +1779,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 if(puVar6 != 0x0)
                 {
                     uVar8 = &iVar12->field_0x10;
-                    fn_ptr_1000_17ce(*(Struct18 **)(uVar8 + 0x4), 0x1000);
+                    fn_ptr_1000_17ce((uVar8 + 0x4), 0x1000);
                     uVar7            = str_op_1008_60e8(CONCAT22(param_5, local_408), puVar9);
                     uVar8            = &iVar12->field_0x10;
                     uVar10           = (uVar8 >> 0x10);
@@ -1815,7 +1815,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                 goto LAB_1030_58a7;
                         }
                         BVar5 = read_file_1008_7bc8(param_2, (param_1 & 0xffff0000 | &iVar12->field_0x14), 0x1008, param_5);
-                        if((BVar5 != 0x0) && (BVar5 = read_file_1008_7dee(uVar4, uVar11, &iVar12->field_0x1c, 0x0, uVar12, 0x2, 0x1008), BVar5 != 0x0))
+                        if((BVar5 != 0x0) && (BVar5 = read_file_1008_7dee(uVar4, uVar11, &iVar12->field_0x1c_addr_base, 0x0, uVar12, 0x2, 0x1008), BVar5 != 0x0))
                         {
                             return;
                         }

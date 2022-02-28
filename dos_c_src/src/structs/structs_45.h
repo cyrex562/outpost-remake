@@ -1,5 +1,6 @@
 
 
+#include "structs_37.h"
 typedef struct astruct_379 astruct_379, *Pastruct_379;
 
 struct astruct_379
@@ -2094,4 +2095,30 @@ typedef struct Struct381 {
 typedef struct Struct382
 {
     astruct_440 *field_0x90;
+    int          field_0x96;
 } Struct382;
+
+typedef struct Address1 {
+    u16 offset;
+    u16 base;
+} Address1;
+
+typedef struct Address2 {
+    u16 base;
+    u16 offset;
+} Address2;
+
+typedef struct Struct383 {
+    Address1 field_0x16;
+    u16 field_0x1a_addr_offset;
+    u16 field_0x1c_addr_base;
+} Struct383;
+
+typedef struct Struct384 {
+    char* field_0xc;
+} Struct384;
+
+typedef struct Struct385 {
+    u16 field_0x1fa;
+    u16 field_0x1fc;
+} Struct385;

@@ -203,7 +203,7 @@ void  pass1_1040_45e8(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *pa
     }
     paVar10 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_7, param_5, unaff_DI);
     puVar6  = (paVar10 >> 0x10);
-    paVar1  = *(Struct18 **)(param_1 + 0x90);
+    paVar1  = (param_1 + 0x90);
     if(paVar1 != (Struct18 *)0x0)
     {
         paVar5 = paVar1;
@@ -1564,8 +1564,8 @@ void  pass1_1038_30aa(u16 *param_1, u16 param_2)
     iVar5->field_0x10   = 0x0;
     iVar5->field_0x14   = 0x0;
     iVar5->field_0x18   = 0x258;
-    iVar5->field_0x1a   = 0x258;
-    iVar5->field_0x1c   = 0x0;
+    iVar5->field_0x1a_addr_offset = 0x258;
+    iVar5->field_0x1c_addr_base = 0x0;
     iVar5->field_0x1e   = 0x0;
     iVar5->field_0x22   = 0x0;
     iVar5->field_0x24   = 0x32;
@@ -1637,8 +1637,8 @@ void  pass1_1038_3222(u16 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 *p
     iVar5->field_0x10   = param_2;
     iVar5->field_0x14   = 0x0;
     iVar5->field_0x18   = 0x258;
-    iVar5->field_0x1a   = 0x258;
-    iVar5->field_0x1c   = 0x0;
+    iVar5->field_0x1a_addr_offset = 0x258;
+    iVar5->field_0x1c_addr_base = 0x0;
     iVar5->field_0x1e   = 0x0;
     iVar5->field_0x22   = 0x0;
     iVar5->field_0x24   = 0x32;

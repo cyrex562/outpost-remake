@@ -444,7 +444,7 @@ void pass1_1040_b54a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *par
         {
             puVar9 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_7, param_5, unaff_DI);
             uVar7  = (puVar9 >> 0x10);
-            paVar1 = *(Struct18 **)(param_1 + 0x90);
+            paVar1 = (param_1 + 0x90);
             if(paVar1 != (Struct18 *)0x0)
             {
                 uVar8  = (paVar1 >> 0x10);
@@ -455,7 +455,7 @@ void pass1_1040_b54a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *par
                 (param_1 + 0x92) = uVar7;
                 if((uVar7 | (param_1 + 0x90)) == 0x0)
                 {
-                    *(Struct18 **)(param_1 + 0x90) = paVar1;
+                    (param_1 + 0x90) = paVar1;
                 }
                 else
                 {

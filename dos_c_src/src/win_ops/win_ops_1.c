@@ -781,7 +781,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
             (**ppcVar4)();
         }
     }
-    fn_ptr_1000_17ce(*(Struct18 **)(iVar5 + 0x4), 0x1000);
+    fn_ptr_1000_17ce((iVar5 + 0x4), 0x1000);
     uVar3 = (iVar5 + 0x14);
     SetWindowLong16(0x1000, (u16)uVar3, CONCAT22(0xfffc, (uVar3 >> 0x10)));
     RemoveProp16((HWND16)s_tile2_bmp_1050_1538, s_thisLo_1050_5e1c);

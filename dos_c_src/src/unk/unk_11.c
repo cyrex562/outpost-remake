@@ -1,6 +1,7 @@
 #include "unk_11.h"
 #include "types.h"
 #include "unk_12.h"
+#include "utils.h"
 
 u16  pass1_1018_5932(u32 param_1, u16 param_2, u16 param_3)
 
@@ -83,12 +84,12 @@ u32  switch_1018_3b9e(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
         uStack4 = (&iVar2->field_0x16 + 0x2);
         break;
     case 0x18c:
-        if(iVar2->field_0x1a == 0x0)
+        if(iVar2->field_0x1a_addr_offset == 0x0)
         {
             pass1_1008_cda2(param_1 & 0xffff | uVar2 << 0x10, uStack14, param_5);
         }
-        uStack6 = &iVar2->field_0x1a;
-        uStack4 = (&iVar2->field_0x1a + 0x2);
+        uStack6 = &iVar2->field_0x1a_addr_offset;
+        uStack4 = (&iVar2->field_0x1a_addr_offset + 0x2);
         break;
     case 0x18d:
         if(iVar2->field_0x1e == 0x0)

@@ -470,7 +470,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
     *param_1      = 0x389e;
     (iVar5 + 0x2) = 0x1008;
     set_sys_color_1008_357e(param_1, 0x0, unaff_CS, unaff_SS);
-    paVar3 = *(Struct18 **)(iVar5 + 0xf8);
+    paVar3 = (iVar5 + 0xf8);
     uVar8  = (paVar3 >> 0x10);
     h_icon = 0x1000;
     fn_ptr_1000_17ce(paVar3, 0x1000);
