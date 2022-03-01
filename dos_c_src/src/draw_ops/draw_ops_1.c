@@ -1,12 +1,18 @@
-#include <structs/structs_11.h>
-#include <types.h>
-#include <structs/structs_23.h>
-#include <fn_ptr_defs.h>
-#include <globals.h>
-#include <structs/structs_40.h>
-#include "structs/structs_45.h"
-#include "unk/unk_17.h"
-#include "ui_ops/ui_ops_1.h"
+#include"../structs/structs_11.h"
+#include "../types.h"
+#include "../structs/structs_23.h"
+#include "../fn_ptr_defs.h"
+#include "../globals.h"
+#include "../structs/structs_40.h"
+#include "../structs/structs_45.h"
+#include "../unk/unk_17.h"
+#include "../unk/unk_18.h"
+#include "../ui_ops/ui_ops_1.h"
+#include "../unk/unk_11.h"
+#include "../structs/structs_31.h"
+#include "../utils.h"
+#include "draw_ops_1.h"
+
 
 void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 
@@ -35,8 +41,7 @@ void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 void pass1_1040_ca74(Globals* globals, Struct18 *param_1)
 
 {
-    u16 u16_var_1;
-
+//    u16 u16_var_1;
     //uVar1              = (param_1 >> 0x10);
     param_1->field_0x0 = 0xd07c;
     (param_1->field_0x2)    = &globals->PTR_LOOP_1050_1040;
@@ -89,46 +94,46 @@ void pass1_1040_c94a(Globals* globals, Struct380* param_1, u16 param_2, u8 *para
 }
 
 
-void palette_op_1040_c886(u32 param_1, u8 param_2, u16 param_3, HDC16 param_4)
+void palette_op_1040_c886(Globals *globals, u32 param_1, u8 param_2, u16 param_3, HDC16 param_4)
 
 {
-    u16         uVar1;
-    code      **ppcVar2;
-    i16         iVar3;
-    u16         uVar4;
-    u16         uVar5;
-    u32 *puStack8;
-    HPALETTE16  HStack4;
+    u16            u_var_1;
+    fn_ptr_1      *ppc_var_2;
+//    i16            i_var_3;
+//    u16            u_var_4;
+    u16            u_var_5;
+    u32 *pu_stack_8;
+    HPALETTE16     h_stack_4;
 
-    uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    if(((iVar3 + 0xa) | (iVar3 + 0x8)) != 0x0)
+//    u_var_4 = (param_1 >> 0x10);
+//    i_var_3 = param_1;
+    if(((i_var_3 + 0xa) | (i_var_3 + 0x8)) != 0x0)
     {
-        HStack4 = 0x0;
-        if((iVar3 + 0x46) == 0x0)
+        h_stack_4 = 0x0;
+        if((i_var_3 + 0x46) == 0x0)
         {
-            uVar5   = (_PTR_LOOP_1050_4230 >> 0x10);
-            uVar1   = (_PTR_LOOP_1050_4230 + 0x10);
+            u_var_5 = (_PTR_LOOP_1050_4230 >> 0x10);
+            u_var_1 = (_PTR_LOOP_1050_4230 + 0x10);
             param_4 = 0x1008;
-            HStack4 = palette_op_1008_4e08((astruct_13 *)CONCAT22(uVar1, (_PTR_LOOP_1050_4230 + 0xe)), &param_3, uVar1, 0x1008);
+            h_stack_4 = palette_op_1008_4e08((astruct_13 *)CONCAT22(u_var_1, (_PTR_LOOP_1050_4230 + 0xe)), &param_3, u_var_1, 0x1008);
         }
-        puStack8 = (iVar3 + 0x8);
-        uVar5    = (iVar3 + 0xa);
-        if((((iVar3 + 0xe) | (iVar3 + 0xc)) != 0x0) && ((param_2 & 0x1) != 0x0))
+        pu_stack_8 = (i_var_3 + 0x8);
+        u_var_5  = (i_var_3 + 0xa);
+        if((((i_var_3 + 0xe) | (i_var_3 + 0xc)) != 0x0) && ((param_2 & 0x1) != 0x0))
         {
-            puStack8 = (iVar3 + 0xc);
-            uVar5    = (iVar3 + 0xe);
+            pu_stack_8 = (i_var_3 + 0xc);
+            u_var_5  = (i_var_3 + 0xe);
         }
-        if(((iVar3 + 0x10) != 0x0) && ((param_2 & 0x4) != 0x0))
+        if(((i_var_3 + 0x10) != 0x0) && ((param_2 & 0x4) != 0x0))
         {
-            puStack8 = (iVar3 + 0x10);
-            uVar5    = (iVar3 + 0x12);
+            pu_stack_8 = (i_var_3 + 0x10);
+            u_var_5  = (i_var_3 + 0x12);
         }
-        ppcVar2 = (*puStack8 + 0x4);
-        (**ppcVar2)(param_4, puStack8, uVar5, (iVar3 + 0x28), (iVar3 + 0x26), &param_3);
-        if((iVar3 + 0x46) == 0x0)
+        ppc_var_2 = (*pu_stack_8 + 0x4);
+        (**ppc_var_2)(param_4, pu_stack_8, u_var_5, (i_var_3 + 0x28), (i_var_3 + 0x26), &param_3);
+        if((i_var_3 + 0x46) == 0x0)
         {
-            SelectPalette16(param_4, 0x0, HStack4);
+            SelectPalette16(param_4, 0x0, h_stack_4);
             DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
         }
     }
