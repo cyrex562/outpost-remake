@@ -2122,3 +2122,8 @@ typedef struct Struct385 {
     u16 field_0x1fa;
     u16 field_0x1fc;
 } Struct385;
+
+typedef struct Struct386 {
+    u32* field_0x160;
+    long field_0x164;
+} Struct386;

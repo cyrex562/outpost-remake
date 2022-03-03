@@ -176,7 +176,7 @@ void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
     u16          uVar5;
     u8          *puVar6;
     astruct_374 *iVar7;
-    astruct_371 *iVar8;
+    Struct371 *iVar8;
     astruct_372 *iVar9;
     i16          unaff_DI;
     u16          uVar7;
@@ -246,7 +246,7 @@ void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                 {
                     puVar8   = iVar14->field_0x10;
                     unaff_DI = (puVar8 >> 0x10);
-                    iVar8    = (astruct_371 *)puVar8;
+                    iVar8    = (Struct371 *)puVar8;
                     uVar5    = iVar8->field_0x22 * 0x2;
                     mem_op_1000_179c(uVar5, puVar6, 0x1000);
                     iVar8->field_0x24 = uVar5;

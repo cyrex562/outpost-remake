@@ -1,4 +1,4 @@
-
+#include "types.h"
 
 typedef struct astruct_676 astruct_676, *Pastruct_676;
 

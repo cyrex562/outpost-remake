@@ -68,6 +68,6 @@ BOOL16 DeleteObject16(HGDIOBJ16 obj)
 
 u16 LoadString16(HINSTANCE16 instance, u16 resource_id, cstring buffer, u16 buf_len)
 {
-    // TODO:
+    // TODO: implement
     return 0;
 }
