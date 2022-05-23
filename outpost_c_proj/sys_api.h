@@ -179,6 +179,7 @@ DWORD mciSendCommand16(DWORD p2, DWORD dw_param1, UINT16 w_msg, UINT16 w_dev_id)
 BOOL16 mciGetErrorString16(UINT16 u_length, char * lp_str_buffer, DWORD w_error);
 BOOL16 GetOpenFileName16(u32 ofn);
 BOOL16 GetSaveFileName16(u32 ofn);
-
+void* swi(u16);
+u32 SegmentLimit(u32 a);
 
 #endif //OUTPOST_C_PROJ__SYS_API_H_

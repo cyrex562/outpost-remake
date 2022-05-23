@@ -5,6 +5,8 @@
 #ifndef OUTPOST_C_PROJ__TYPES_H_
 #define OUTPOST_C_PROJ__TYPES_H_
 
+#include <stdbool.h>
+
 typedef char i8;
 typedef unsigned char u8;
 typedef unsigned short u16;
@@ -16,9 +18,6 @@ typedef long long i64;
 
 typedef u16 UINT16;
 typedef u32 SEGPTR;
-
-// typedef void (*printer_t)(int);
-typedef void (*code)();
 
 typedef u16 HANDLE16;
 typedef HANDLE16 HCURSOR16;

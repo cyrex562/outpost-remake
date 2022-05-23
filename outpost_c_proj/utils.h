@@ -16,4 +16,6 @@ u16 CONCAT11(u8 a, u8 b);
 
 u32 SUB42(u32 a, u32 b);
 
+u32 CARRY4(u32 a, u32 b);
+
 #endif //OUTPOST_C_PROJ__UTILS_H_

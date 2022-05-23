@@ -40,4 +40,15 @@
     //     Impure (Non-shareable)
     //
 
+    // Segment:    2
+    // Offset:     000060e0
+    // Length:     efe0
+    // Min Alloc:  efe0
+    // Flags:      0d50
+    //     Code
+    //     Moveable
+    //     Preload
+    //     Impure (Non-shareable)
+    //
+
 #endif //OUTPOST_C_PROJ__PROGRAM_H_
