@@ -1,0 +1,3 @@
+C:/Users/cyrex/Projects/outpost-rs/outpost_c_proj/cmake-build-debug/CMakeFiles/outpost_c_proj.dir
+C:/Users/cyrex/Projects/outpost-rs/outpost_c_proj/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/cyrex/Projects/outpost-rs/outpost_c_proj/cmake-build-debug/CMakeFiles/rebuild_cache.dir

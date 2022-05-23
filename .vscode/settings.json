@@ -7,5 +7,6 @@
     "rust-analyzer.checkOnSave.allTargets": false,
     "files.autoSaveDelay": 60000,
     "files.autoSave": "onFocusChange",
-    "cmake.sourceDirectory": "${workspaceFolder}/dos_c_src"
+    "cmake.sourceDirectory": "${workspaceFolder}/dos_c_src",
+    "cmake.configureOnOpen": false
 }

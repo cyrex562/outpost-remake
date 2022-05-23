@@ -1,17 +1,6 @@
-[package]
-name = "outpost-rs"
-version = "0.1.0"
-authors = ["cyrex562"]
-edition = "2018"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-libc = "0.2.93"
-num = "0.4.0"
-
-[dependencies.sdl2]
-version = "0.35"
-# git = "https://github.com/rust-sdl2/rust-sdl2"
-default-features = true
-features = [ "ttf", "image", "gfx", "mixer", "bundled", "raw-window-handle"]
+members = [
+    "rs_sdl_app",
+    "outpost_rs"
+]
