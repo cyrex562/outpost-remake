@@ -60364,16 +60364,6 @@ struct astruct_376 {
     u32 field257_0x108;
 };
 
-typedef struct _astruct_7 {
-
-    int field_0x40;
-    int field_0x3e;
-    u16 field_0x36;
-    int field_0xa;
-    u16 field_0x16;
-} astruct_7;
-
-
 #define OUTPOST_C_PROJ__STRUCTS_H_
 
 #endif //OUTPOST_C_PROJ__STRUCTS_H_
