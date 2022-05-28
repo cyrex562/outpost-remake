@@ -2,7 +2,7 @@
 // Created by cyrex on 2022-05-22.
 //
 
-#include "1038.h"
+#include "block_1038.h"
 
 
 void pass1_1038_0000(u16 param_1,u8 *param_2,u32 param_3)
