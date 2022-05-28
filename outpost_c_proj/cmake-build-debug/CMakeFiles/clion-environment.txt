@@ -1,4 +1,4 @@
 ToolSet: 17.0 (local)@C:\Program Files\Microsoft Visual Studio\2022\Enterprise
 Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=C:/Users/cyrex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/win/ninja.exe
+Options:-DCMAKE_MAKE_PROGRAM=C:/Users/cyrex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/win/ninja.exe

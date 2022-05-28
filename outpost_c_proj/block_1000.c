@@ -10,6 +10,7 @@
 #include "utils.h"
 #include "structs_2.h"
 #include "func_ptrs.h"
+#include "entry.h"
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -263,7 +264,7 @@ bool mem_op_1000_01b0(astruct_7 *param_1)
 }
 
 u8 * mem_op_1000_0308(i16 param_1,
-                      astruct_7 *param_2)
+                      astruct_7 *pstruct7_param_2)
 {
     u8 *pu8_var1;
     i16 i16_var2;
@@ -271,23 +272,23 @@ u8 * mem_op_1000_0308(i16 param_1,
     u8 extraout_AH;
     i16 *pi16_var4;
 
-    if ((param_2 + 0xa) == 0x0) {
-        b_var3 = mem_op_1000_01b0(param_2);
+    if ((pstruct7_param_2 + 0xa) == 0x0) {
+        b_var3 = mem_op_1000_01b0(pstruct7_param_2);
         if (CONCAT11(extraout_AH,
                      b_var3) == 0x0) {
             return 0x0;
         }
     }
-    pu8_var1 = (param_2->field_0xa);
-    (param_2->field_0xa) = (pu8_var1 + 0x4);
-    pi16_var4 = (i16 *) (param_1 * 0x2 + param_2);
+    pu8_var1 = (pstruct7_param_2->field_0xa);
+    (pstruct7_param_2->field_0xa) = (pu8_var1 + 0x4);
+    pi16_var4 = (i16 *) (param_1 * 0x2 + pstruct7_param_2);
     if (*pi16_var4 == 0x0) {
-        (pu8_var1 + 0x6) = pu8_var1;
-        (pu8_var1 + 0x4) = pu8_var1;
+        *(pu8_var1 + 0x6) = pu8_var1;
+        *(pu8_var1 + 0x4) = pu8_var1;
     } else {
         i16_var2 = *pi16_var4;
-        (pu8_var1 + 0x6) = i16_var2;
-        (pu8_var1 + 0x4) = (i16_var2 + 0x4);
+        *(pu8_var1 + 0x6) = i16_var2;
+        *(pu8_var1 + 0x4) = (i16_var2 + 0x4);
         ((i16_var2 + 0x4) + 0x6) = pu8_var1;
         (i16_var2 + 0x4) = pu8_var1;
     }
@@ -2714,141 +2715,6 @@ BOOL16 pass1_1000_22c0(u16 param_1,
 // WARNING: Removing unreachable block (ram,0x1000234c)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16 *entry(u16 param_1,
-           u16 param_2,
-           i16 param_3,
-           u8 *param_4,
-           u8 *param_5,
-           u16 param_6)
-{
-    struct astruct_822 *paVar1;
-    i16 *piVar2;
-    code *pcVar3;
-    u16 uVar4;
-    struct astruct_822 *pcVar4;
-    i16 iVar5;
-    i16 *piVar4;
-    i16 iVar6;
-    u8 *unaff_SI;
-    i16 *piVar7;
-    HINSTANCE16 unaff_DI;
-    struct astruct_822 *paVar8;
-    char *unaff_SS;
-    bool bVar9;
-    u32 DVar10;
-    u32 uVar11;
-    u32 uVar10;
-    u32 uVar12;
-    struct astruct_825 *paVar13;
-    i16 *piVar1;
-
-    uVar11 = CONCAT22(param_6,
-                      PTR_LOOP_1050_5f84);
-    do {
-        InitTask16(NULL);
-        PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-        if (param_3 != 0x0) {
-            PTR_LOOP_1050_5f7e = (u8 *) &DAT_1050_1050;
-            bVar9 = param_5 < (u8 *) 0xff00;
-            param_5 = param_5 + 0x100;
-            if (bVar9) {
-                PTR_LOOP_1050_5f50 = (u8 *) &DAT_1050_1050;
-                PTR_LOOP_1050_5f48 = param_5;
-                PTR_LOOP_1050_5f4a = unaff_SI;
-                HINSTANCE16_1050_5f4c = unaff_DI;
-                PTR_LOOP_1050_5f4e = param_4;
-                LockSegment16(0xffff);
-                PTR_LOOP_1050_5f52 = (u8 *) (uVar11 >> 0x10);
-                PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-                DVar10 = GetVersion16();
-                PTR_LOOP_1050_5f52 = (u8 *) (uVar11 >> 0x10);
-                PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-                PTR_LOOP_1050_5f80 = (u8 *) CONCAT11((char) DVar10,
-                                                     (char) (DVar10 >> 0x8));
-                pcVar3 = (code *) swi(0x21);
-                uVar12 = uVar11;
-                uVar11 = (*pcVar3)();
-                PTR_LOOP_1050_5f52 = (u8 *) (uVar12 >> 0x10);
-                PTR_LOOP_1050_5f84 = (u8 *) uVar12;
-                _DAT_1050_5f82 = CONCAT11((char) uVar11,
-                                          (char) (uVar11 >> 0x8));
-                DAT_1050_5f87 = 0x0;
-                WaitEvent16(0x0);
-                PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-                param_3 = InitApp16(HINSTANCE16_1050_5f4c);
-                PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-                if (param_3 != 0x0) {
-                    break;
-                }
-            }
-        }
-        param_3 = CONCAT11((char) ( param_3 >> 0x8),
-                           0xff);
-        pass1_1000_24db(param_3);
-        PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-    } while (true);
-    dos3_call_1000_23ea( param_4,
-                         &DAT_1050_1050,
-                        0x0,
-                         &DAT_1050_1050);
-    PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-    pass1_1000_262c( (uVar11 >> 0x10),
-                    (u8 *) 0x238d,
-                    (u8 *) s_tile2_bmp_1050_1538);
-    PTR_LOOP_1050_5f84 = (u8 *) uVar11;
-    pass1_1000_27d6( (uVar11 >> 0x10));
-    uVar10 = ret_op_1000_55ac();
-    uVar4 =  uVar10;
-    init_1000_23be( param_5,
-                    (uVar10 >> 0x10));
-    fn_ptr_op_1000_24cd(uVar4);
-    paVar13 = (astruct_825 *) CONCAT22(uVar4,
-                                       0x15);
-    pass1_1000_25a8();
-    pass1_1000_2913(0x15);
-    pcVar4 = (astruct_822 *) poss_str_op_1000_28dc(paVar13);
-    if (pcVar4 != NULL) {
-        iVar5 = 0x9;
-        if (pcVar4->field0_0x0 == 'M') {
-            iVar5 = 0xf;
-        }
-        pcVar4 = pcVar4 + iVar5;
-        iVar6 = 0x22;
-        paVar8 = pcVar4;
-        do {
-            if (iVar6 == 0x0) {
-                break;
-            }
-            iVar6 += -0x1;
-            paVar1 = paVar8;
-            paVar8 = paVar8 + 0x1;
-        } while (paVar1->field0_0x0 != '\r');
-        (paVar8 + -0x1)->field0_0x0 = '\0';
-    }
-    FatalAppExit16((char *) CONCAT22(0x1050,
-                                     pcVar4),
-                   0x0);
-    FatalExit();
-    piVar7 = (i16 *) &PTR_LOOP_1050_63fe;
-    do {
-        piVar1 = piVar7;
-        piVar7 = piVar7 + 0x1;
-        piVar4 = piVar7;
-        if ((*piVar1 == param_2) || (piVar4 = (i16 *) (*piVar1 + 0x1), piVar4 == NULL)) {
-            return piVar4;
-        }
-        iVar6 = -0x1;
-        do {
-            if (iVar6 == 0x0) {
-                break;
-            }
-            iVar6 += -0x1;
-            piVar2 = piVar7;
-            piVar7 = (i16 *) ( piVar7 + 0x1);
-        } while (*(char *) piVar2 != '\0');
-    } while (true);
-}
-
 void init_1000_23be(u16 param_1,
                     u16 param_2)
 {
@@ -3426,20 +3292,20 @@ void pass1_1000_27d6(u16 param_1)
     } while (true);
 }
 
-PCHAR poss_str_op_1000_28dc(astruct_825 *param_1)
+char * poss_str_op_1000_28dc(astruct_825 *param_1)
 {
     struct astruct_825 **ppaVar1;
-    PCHAR piVar2;
+    char* piVar2;
     i16 iVar3;
-    PCHAR piVar3;
+    char* string_var3;
     struct astruct_825 *iVar2;
 
-    piVar3 = (PCHAR) & PTR_LOOP_1050_63fe;
+    string_var3 = PTR_LOOP_1050_63fe;
     do {
-        ppaVar1 = (astruct_825 **) piVar3;
-        piVar3 = (PCHAR)( piVar3 + 0x2);
+        ppaVar1 = (astruct_825 **) string_var3;
+        string_var3 = (PCHAR)(string_var3 + 0x2);
         iVar2 = *ppaVar1;
-        piVar2 = piVar3;
+        piVar2 = string_var3;
         if ((iVar2 == (astruct_825 *) param_1) || (piVar2 = (PCHAR)(iVar2 + 0x1), piVar2 == NULL)) {
             return (PCHAR)(astruct_825 * *)
             piVar2;
@@ -3450,8 +3316,8 @@ PCHAR poss_str_op_1000_28dc(astruct_825 *param_1)
                 break;
             }
             iVar3 += -0x1;
-            ppaVar1 = (astruct_825 **) piVar3;
-            piVar3 = (PCHAR)( piVar3 + 0x1);
+            ppaVar1 = (astruct_825 **) string_var3;
+            string_var3 = (PCHAR)(string_var3 + 0x1);
         } while (*(char *) ppaVar1 != '\0');
     } while (true);
 }
@@ -8299,10 +8165,19 @@ void pass1_1000_5586(code param_1,
     }
 }
 
-void ret_op_1000_55ac(void)
+u32 ret_op_1000_55ac(void)
 {
 }
 
 void exit_1000_25f2(i16 a, u16 b, u16 c, u16 d) {
+
+}
+
+
+//dos3_call_1000_23ea( param_4,
+//                         &DAT_1050_1050,
+//                        0x0,
+//                         &DAT_1050_1050);
+void dos3_call_1000_23ea(u8* a, u16 b, u16 c, u16 d) {
 
 }

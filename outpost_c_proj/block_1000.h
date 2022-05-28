@@ -50,7 +50,7 @@ u32 pass1_1000_0c32(u16 param_1,u16 param_2,u16 param_3);
 
 u32 mem_op_1000_0b20(u16 param_1,u16 param_2,u16 param_3);
 
-void ret_op_1000_55ac(void);
+u32 ret_op_1000_55ac(void);
 
 u32 pass1_1000_52be(u16 param_1,
                     u16 param_2,
@@ -125,5 +125,30 @@ BOOL16 pass1_1000_22c0(u16 param_1,
 
 u16 dos3_call_op_1000_35fe(u16 param_1,
                            i16 param_2);
+
+void pass1_1000_0368(u16 param_1,
+                     u16 param_2,
+                     u16 param_3);
+
+void pass1_1000_24db(u16 param_1);
+
+void dos3_call_1000_23ea(u8* a, u16 b, u16 c, u16 d);
+
+void pass1_1000_262c(u8 *param_1,
+                     u8 *param_2,
+                     u8 *param_3);
+
+void pass1_1000_27d6(u16 param_1);
+
+void init_1000_23be(u16 param_1,
+                    u16 param_2);
+
+void fn_ptr_op_1000_24cd(u16 param_1);
+
+void pass1_1000_25a8(void);
+
+void pass1_1000_2913(i16 param_1);
+
+char * poss_str_op_1000_28dc(astruct_825 *param_1);
 
 #endif //OUTPOST_C_PROJ_CMAKE_BUILD_DEBUG_BLOCK_1000_H_

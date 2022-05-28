@@ -316,4 +316,12 @@ typedef struct _astruct_172 {
     u16 field4_0x8;
 } astruct_172;
 
+typedef struct _astruct_822 {
+    char field0_0x0;
+} astruct_822;
+
+typedef struct _astruct_825 {
+    u8 field0_0x0;
+} astruct_825;
+
 #endif //OUTPOST_C_PROJ__STRUCTS_2_H_

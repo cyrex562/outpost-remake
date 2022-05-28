@@ -18372,9 +18372,6 @@ struct astruct_274 {
 
 
 
-struct astruct_822 {
-    char field0_0x0;
-};
 
 
 
@@ -55130,9 +55127,7 @@ struct astruct_383 {
 
 
 
-struct astruct_825 {
-    u8 field0_0x0;
-};
+
 
 
 
