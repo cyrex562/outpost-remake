@@ -115,7 +115,7 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
 {
   let mut iVar1: i16;
   HWND16 hwnd_1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   astruct_915 *paVar3;
   let mut uVar4: u16;
   let mut in_register_0000000a: u16;
@@ -478,7 +478,7 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
   let mut in_stack_0000f7be: u16;
   let mut in_stack_0000f7c4: u16;
   let mut in_stack_0000f7c8: u16;
-  let mut BVar9:bool;
+  let mut BVar9: bool;
   let mut in_stack_0000f7f2: u16;
   let mut uStack2060: u32;
   char local_806 [0x400];
@@ -625,7 +625,7 @@ pub fn pass1_1040_0a1a(mut param_1: u32)
 pub fn enable_window_1040_0acc(StructC *param_1,BOOL16 enable_3)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   HWND16 HVar2;
   let mut iVar3: i16;
   let mut uVar4: u16;
@@ -1277,7 +1277,7 @@ pub fn set_win_pos_1040_162a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u3
 
 {
   let mut uVar1: u16;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut iStack6: i16;
 
   if ((param_4 != (int)s_vrpal_bmp_1050_183a + 0x5) && (param_4 != (int)s_vrpal_bmp_1050_183a + 0x4)) {
@@ -1506,7 +1506,7 @@ pub fn unk_win_ui_op_1040_19ea(param_1: *mut astruct_32,mut param_2: i16,u8 *par
 pub fn pass1_1040_1ab0(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32) -> u32
 
 {
-  let mut BStack6:bool;
+  let mut BStack6: bool;
   let mut uStack4: u16;
 
   BStack6 = 0x0;
@@ -1697,7 +1697,7 @@ pub fn unk_win_ui_op_1040_1d7a(param_1: *mut astruct_33,mut param_2: i16)
 pub fn pass1_1040_1e80(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32) -> u32
 
 {
-  let mut BStack6:bool;
+  let mut BStack6: bool;
   let mut uStack4: u16;
 
   BStack6 = 0x0;
@@ -2044,7 +2044,7 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
   let mut uVar4: u16;
   let mut UVar4: u16;
   HWND16 HVar5;
-  let mut BVar6:bool;
+  let mut BVar6: bool;
   let mut iVar6: i16;
   let mut iVar7: i16;
   let mut UVar6: u16;
@@ -2069,7 +2069,7 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
   u32 *local_16 [0x2];
   let mut uStack12: u16;
   u32 *puStack10;
-  let mut BStack6:bool;
+  let mut BStack6: bool;
   let mut uStack4: u16;
   let mut piVar1: *mut i16;
   let mut in_stack_0000ffdc: u16;
@@ -2550,7 +2550,7 @@ pub fn win_dlg_item_1040_2d48(mut param_1: u32)
 {
   let mut UVar1: u16;
   let mut value: u16;
-  let mut local_4:bool;
+  let mut local_4: bool;
 
   pass1_1040_b45e(param_1);
   UVar1 = GetDlgItemInt16(0x1,&local_4,(INT16)&DAT_1050_1050,0x163);
@@ -2829,7 +2829,7 @@ pub fn enable_win_1040_32a8(mut param_1: u32)
 
 {
   let mut uVar1: u16;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u16;
   let mut uStack12: u32;
 
@@ -3026,7 +3026,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   let mut in_stack_0000fa50: u16;
   let mut local_59a: u32;
   let mut local_596: u32;
-  let mut BStack1426:bool;
+  let mut BStack1426: bool;
   let mut uStack1424: u16;
   WORD local_58e [0x41];
   WORD local_50c [0x80];
@@ -3292,7 +3292,7 @@ pub fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
 
 {
   let mut uVar1: u32;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   HWND16 HVar3;
   StructC *pSVar4;
   let mut in_register_0000000a: u16;
@@ -4413,7 +4413,7 @@ pub fn set_win_pos_1040_4f96
   let mut in_stack_0000ffba: u16;
   u8 uVar19;
   u8 uVar20;
-  let mut BVar21:bool;
+  let mut BVar21: bool;
   u8 *puVar22;
   astruct_57 *paVar13;
   code **fn_ptr_1;
@@ -4552,7 +4552,7 @@ pub fn destroy_win_1040_5256(param_1: *mut astruct_34)
 
 {
   u32 *pUVar1;
-  let mut bool3:bool;
+  let mut bool3: bool;
   astruct_34 *pstruct34_5;
   astruct_34 *pstruct34_hi;
   let mut unaff_CS: u16;
@@ -4591,7 +4591,7 @@ pub fn win_ui_op_1040_52c0(u8 *param_1,param_2: *mut astruct_894,mut param_3: u1
 {
   code **ppcVar1;
   u32 *puVar2;
-  let mut is_window:bool;
+  let mut is_window: bool;
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut uVar5: u16;
@@ -5913,7 +5913,7 @@ pub fn mixed_win_ui_op_1040_6942
   let mut uVar8: u16;
   u32 *puVar15;
   let mut puVar14: *mut u16;
-  let mut DVar16:u32;
+  let mut DVar16: u32;
   let mut in_stack_0000fdd4: u16;
   let mut in_stack_0000fdd6: u16;
   let mut in_stack_0000fdd8: u16;
@@ -5930,7 +5930,7 @@ pub fn mixed_win_ui_op_1040_6942
   let mut in_stack_0000ff60: u16;
   u8 uVar17;
   u8 uVar20;
-  let mut BVar21:bool;
+  let mut BVar21: bool;
   let mut uVar22: u16;
   char *pcVar23;
   HDC16 hdc;
@@ -6338,7 +6338,7 @@ pub fn mixed_win_ui_op_1040_70b4
   let mut in_stack_0000ff60: u16;
   u8 uVar11;
   u8 uVar12;
-  let mut BVar13:bool;
+  let mut BVar13: bool;
   let mut uVar16: u16;
   char *pcVar17;
   HDC16 hdc;
@@ -6893,7 +6893,7 @@ pub fn destroy_win_1040_7b98(mut param_1: u32)
 pub fn draw_op_1040_7bb2(astruct_14 *in_struct_1)
 
 {
-  let mut is_iconic:bool;
+  let mut is_iconic: bool;
   let mut x: i16;
   let mut y1: i16;
   let mut iVar5: i16;
@@ -6907,7 +6907,7 @@ pub fn draw_op_1040_7bb2(astruct_14 *in_struct_1)
   astruct_14 *struct_1;
   RECT16 *pRVar1;
   i32 win_long;
-  let mut DVar2:u32;
+  let mut DVar2: u32;
   RECT16 *rect;
   let mut count_01: i16;
   let mut local_rect_12: i16;
@@ -7220,7 +7220,7 @@ pub fn unk_win_ui_op_1040_8158(u32 *param_1,POINT16 param_2,mut param_3: i16)
 
 {
   code **ppcVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut iVar3: i16;
   let mut uVar4: u16;
 
@@ -7243,7 +7243,7 @@ pub fn unk_win_ui_op_1040_8158(u32 *param_1,POINT16 param_2,mut param_3: i16)
 pub fn check_dialog_msg_1040_81b6(mut param_1: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u16;
   MSG16 local_14;
 
@@ -7270,7 +7270,7 @@ pub fn win_ui_op_1040_81fe(mut param_1: u32)
 pub fn destroy_win_1040_8212(param_1: *mut astruct_899)
 
 {
-  let mut is_window:bool;
+  let mut is_window: bool;
   astruct_899 *struct_1;
   let mut uVar1: u16;
 
@@ -7322,7 +7322,7 @@ pub fn move_win_1040_826c(StructB *param_1,INT16 param_2,BOOL16 param_3)
   let mut iStack10: i16;
   let mut iStack8: i16;
   INT16 IStack6;
-  let mut BStack4:bool;
+  let mut BStack4: bool;
 
   struct_b_1_hi = ((u32)param_1 >> 0x10);
   GetWindowRect16((RECT16 *)CONCAT22(0x1050,&local_e),*(HWND16 *)((int)param_1 + 0x6));
@@ -7962,7 +7962,7 @@ pub fn pass1_1040_8e82(StructD *param_1)
 pub fn enable_window_1040_8ea0(u8 *param_1,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u32)
 
 {
-  let mut enable:bool;
+  let mut enable: bool;
   HWND16 hwnd;
 
   if (param_4 == 0xf8) {
@@ -8401,7 +8401,7 @@ pub fn call_win_proc_1040_9684(HWND16 win_handle_1,mut param_2: u16 ,WPARAM16 w_
 {
   HANDLE16 handle_1;
   HANDLE16 handle_2;
-  let mut bool_1:bool;
+  let mut bool_1: bool;
   let mut uVar2: u16;
   RECT16 local_1a [0x2];
   u32 *var18;
@@ -8524,7 +8524,7 @@ u16 * unk_win_ui_op_1040_9854(param_1: *mut astruct_787)
 pub fn reg_class_1040_98c0(mut param_1: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   ATOM AVar2;
   WNDCLASS16 wndclass;
 
@@ -8753,7 +8753,7 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,WPARAM16 wparam_param_2,u16 msg_pa
   let mut iVar2: i16;
   u8 bVar3;
   WPARAM16 WVar4;
-  let mut BVar5:bool;
+  let mut BVar5: bool;
   let mut uVar9: u32;
   let mut uVar6: u16;
   let mut uVar8: i16;
@@ -10477,7 +10477,7 @@ pub fn destroy_win_1040_bb78(param_1: *mut astruct_35)
 
 {
   let mut uVar1: u16;
-  let mut is_window:bool;
+  let mut is_window: bool;
   astruct_35 *pstruct35_5;
   astruct_35 *pstruct35_hi;
   let mut unaff_CS: u16;
@@ -10522,7 +10522,7 @@ pub fn win_ui_op_1040_bbe2(u8 *param_1,HWND16 param_2,param_3: *mut astruct_900,
   code **ppcVar3;
   u32 *puVar5;
   let mut uVar6: u16;
-  let mut BVar7:bool;
+  let mut BVar7: bool;
   let mut iVar7: i16;
   let mut uVar8: u16;
   let mut uVar7: u16;
@@ -10952,7 +10952,7 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
   let mut uVar9: u16;
   let mut uVar11: u16;
   let mut unaff_SS: u16;
-  let mut DVar10:u32;
+  let mut DVar10: u32;
   let mut DVar9: u32;
   HDC16 in_stack_00000008;
   let mut iStack26: i16;
@@ -11441,7 +11441,7 @@ pub fn win_ui_op_1040_cace(mut param_1: u16 ,mut param_2: u32)
   char local_108 [0x100];
   let mut UStack8: u16;
   let mut uStack6: u16;
-  let mut local_4:bool;
+  let mut local_4: bool;
 
   uVar6 = (param_2 >> 0x10);
   uVar5 = param_2;
@@ -11662,7 +11662,7 @@ LRESULT send_dlg_msg_1040_cf1c(mut param_1: u16 ,param_2: *mut astruct_903)
   let mut in_stack_0000fac0: u16;
   let mut in_stack_0000fac6: u16;
   let mut in_stack_0000faca: u16;
-  let mut enable:bool;
+  let mut enable: bool;
   let mut uVar6: u16;
   let mut in_stack_0000faf4: u16;
   char local_106 [0x100];

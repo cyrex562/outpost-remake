@@ -102,17 +102,17 @@ typedef HANDLE16 HINSTANCE16;
 
 
 typedef struct tagBITMAPINFOHEADER {
-    let mut biSize:u32;
+    let mut biSize: u32;
     LONG biWidth;
     LONG biHeight;
     WORD biPlanes;
     WORD biBitCount;
-    let mut biCompression:u32;
-    let mut biSizeImage:u32;
+    let mut biCompression: u32;
+    let mut biSizeImage: u32;
     LONG biXPelsPerMeter;
     LONG biYPelsPerMeter;
-    let mut biClrUsed:u32;
-    let mut biClrImportant:u32;
+    let mut biClrUsed: u32;
+    let mut biClrImportant: u32;
 } BITMAPINFO;
 
 typedef struct MSG16 {
@@ -120,7 +120,7 @@ typedef struct MSG16 {
     let mut message: u16;
     WPARAM16 wparam;
     LPARAM lparam;
-    let mut time:u32;
+    let mut time: u32;
     struct POINT16 pt;
 } MSG16;
 
@@ -128,10 +128,10 @@ typedef void * LPVOID;
 
 typedef struct PAINTSTRUCT16 {
     HDC16 hdc;
-    let mut f_erase:bool;
+    let mut f_erase: bool;
     struct RECT16 rc_paint;
-    let mut f_restore:bool;
-    let mut f_inc_update:bool;
+    let mut f_restore: bool;
+    let mut f_inc_update: bool;
     BYTE rgb_reserved[16];
 } PAINTSTRUCT16;
 
@@ -153,7 +153,7 @@ struct tagMSG {
     let mut message: u16;
     WPARAM16 wParam;
     LPARAM lParam;
-    let mut time:u32;
+    let mut time: u32;
     struct POINT16 pt;
 };
 
@@ -166,8 +166,8 @@ typedef struct _POINTL {
 
 struct _struct_657 {
     POINTL dmPosition;
-    let mut dmDisplayOrientation:u32;
-    let mut dmDisplayFixedOutput:u32;
+    let mut dmDisplayOrientation: u32;
+    let mut dmDisplayFixedOutput: u32;
 };
 
 struct _struct_656 {
@@ -189,8 +189,8 @@ union _union_655 {
 
 
 union _union_658 {
-    let mut dmDisplayFlags:u32;
-    let mut dmNup:u32;
+    let mut dmDisplayFlags: u32;
+    let mut dmNup: u32;
 };
 
 typedef struct _devicemodeA {
@@ -199,7 +199,7 @@ typedef struct _devicemodeA {
     WORD dmDriverVersion;
     WORD dmSize;
     WORD dmDriverExtra;
-    let mut dmFields:u32;
+    let mut dmFields: u32;
     union _union_655 field6_0x2c;
     short dmColor;
     short dmDuplex;
@@ -208,59 +208,59 @@ typedef struct _devicemodeA {
     short dmCollate;
     BYTE dmFormName[32];
     WORD dmLogPixels;
-    let mut dmBitsPerPel:u32;
-    let mut dmPelsWidth:u32;
-    let mut dmPelsHeight:u32;
+    let mut dmBitsPerPel: u32;
+    let mut dmPelsWidth: u32;
+    let mut dmPelsHeight: u32;
     union _union_658 field17_0x74;
-    let mut dmDisplayFrequency:u32;
-    let mut dmICMMethod:u32;
-    let mut dmICMIntent:u32;
-    let mut dmMediaType:u32;
-    let mut dmDitherType:u32;
-    let mut dmReserved1:u32;
-    let mut dmReserved2:u32;
-    let mut dmPanningWidth:u32;
-    let mut dmPanningHeight:u32;
+    let mut dmDisplayFrequency: u32;
+    let mut dmICMMethod: u32;
+    let mut dmICMIntent: u32;
+    let mut dmMediaType: u32;
+    let mut dmDitherType: u32;
+    let mut dmReserved1: u32;
+    let mut dmReserved2: u32;
+    let mut dmPanningWidth: u32;
+    let mut dmPanningHeight: u32;
 } DEVMODEA;
 
 
 typedef struct _FLOATING_SAVE_AREA {
-    let mut ControlWord:u32;
-    let mut StatusWord:u32;
-    let mut TagWord:u32;
-    let mut ErrorOffset:u32;
-    let mut ErrorSelector:u32;
-    let mut DataOffset:u32;
-    let mut DataSelector:u32;
+    let mut ControlWord: u32;
+    let mut StatusWord: u32;
+    let mut TagWord: u32;
+    let mut ErrorOffset: u32;
+    let mut ErrorSelector: u32;
+    let mut DataOffset: u32;
+    let mut DataSelector: u32;
     BYTE RegisterArea[80];
-    let mut Cr0NpxState:u32;
+    let mut Cr0NpxState: u32;
 } FLOATING_SAVE_AREA;
 
 typedef struct _CONTEXT {
-    let mut ContextFlags:u32;
-    let mut Dr0:u32;
-    let mut Dr1:u32;
-    let mut Dr2:u32;
-    let mut Dr3:u32;
-    let mut Dr6:u32;
-    let mut Dr7:u32;
+    let mut ContextFlags: u32;
+    let mut Dr0: u32;
+    let mut Dr1: u32;
+    let mut Dr2: u32;
+    let mut Dr3: u32;
+    let mut Dr6: u32;
+    let mut Dr7: u32;
     FLOATING_SAVE_AREA FloatSave;
-    let mut SegGs:u32;
-    let mut SegFs:u32;
-    let mut SegEs:u32;
-    let mut SegDs:u32;
-    let mut Edi:u32;
-    let mut Esi:u32;
-    let mut Ebx:u32;
-    let mut Edx:u32;
-    let mut Ecx:u32;
-    let mut Eax:u32;
-    let mut Ebp:u32;
-    let mut Eip:u32;
-    let mut SegCs:u32;
-    let mut EFlags:u32;
-    let mut Esp:u32;
-    let mut SegSs:u32;
+    let mut SegGs: u32;
+    let mut SegFs: u32;
+    let mut SegEs: u32;
+    let mut SegDs: u32;
+    let mut Edi: u32;
+    let mut Esi: u32;
+    let mut Ebx: u32;
+    let mut Edx: u32;
+    let mut Ecx: u32;
+    let mut Eax: u32;
+    let mut Ebp: u32;
+    let mut Eip: u32;
+    let mut SegCs: u32;
+    let mut EFlags: u32;
+    let mut Esp: u32;
+    let mut SegSs: u32;
     BYTE ExtendedRegisters[512];
 } CONTEXT;
 
@@ -278,7 +278,7 @@ typedef void * PVOID;
 
 typedef LONG_PTR LRESULT;
 
-typedef let mut COLORREF:u32;
+typedef let mut COLORREF: u32;
 
 #define NULL 0
 

@@ -7086,7 +7086,7 @@ LAB_1020_6a0b:
 
 
 
-void win_ui_op_1020_6ae6(astruct_877 *param_1,u16 param_2,i16 param_3,i16 param_4,u16_t param_5,u16_t param_6)
+void win_ui_op_1020_6ae6(astruct_877 *param_1,u16 param_2,i16 param_3,i16 param_4,u16 param_5,u16 param_6)
 
 {
   code **ppcVar1;
@@ -10808,7 +10808,7 @@ BOOL16 pass1_1020_a644(u16 param_1,u16 param_2,u32 param_3)
 
 
 
-BOOL16 read_file_1020_a65e(u16_t param_1,u32 param_2,HFILE16 *param_3)
+BOOL16 read_file_1020_a65e(u16 param_1,u32 param_2,HFILE16 *param_3)
 
 {
   BOOL16 BVar1;
@@ -10817,8 +10817,8 @@ BOOL16 read_file_1020_a65e(u16_t param_1,u32 param_2,HFILE16 *param_3)
   u8 local_8 [0x2];
   u8 local_6 [0x2];
   u8 local_4 [0x2];
-  u16_t uVar3;
-  u16_t uVar2;
+  u16 uVar3;
+  u16 uVar2;
 
   read_file_1008_7cfe((int)param_3,(int)((u32)param_3 >> 0x10),0xb);
   if (param_1 != 0x0) {

@@ -10,7 +10,7 @@ pub fn pass1_1018_0000(mut param_1: i16,u8 *param_2,mut param_3: u32,mut param_4
   let mut iVar2: i16;
   let mut uVar3: u32;
   let mut iVar4: i16;
-  let mut BVar5:bool;
+  let mut BVar5: bool;
   let mut uVar6: u16;
   let mut in_register_0000000a: u16;
   StructD *pSVar7;
@@ -1709,7 +1709,7 @@ pub fn pt_in_rect_1018_1bda(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 
   let mut piVar1: *mut i16;
   let mut uVar2: u16;
   let mut iVar3: i16;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   let mut iVar5: i16;
   let mut uVar6: u16;
   let mut iStack26: i16;
@@ -2073,7 +2073,7 @@ pub fn pass1_1018_209c(mut param_1: u32)
 pub fn pass1_1018_20ee(mut param_1: u32,i16 *param_2)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut in_DX: u16;
   let mut uVar2: u16;
 
@@ -5312,7 +5312,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
   let mut uVar3: u32;
   let mut uVar11: u16;
   let mut uVar4: u16;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   char *puVar5;
   astruct_11 *paVar5;
   char *pcVar6;
@@ -6987,7 +6987,7 @@ pub fn mix_ui_op_1018_6adc(param_1: *mut astruct_28,mut param_2: u16 ,mut param_
 pub fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   astruct_28 *struct_1;
   astruct_28 *uVar2;
 
@@ -9447,7 +9447,7 @@ LAB_1018_c4bb:
 pub fn destroy_window_1018_c518(param_1: *mut astruct_29)
 
 {
-  let mut is_window:bool;
+  let mut is_window: bool;
   astruct_29 *pstruct_29_1;
   astruct_29 *pstruct_29_hi;
 

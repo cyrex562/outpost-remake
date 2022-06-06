@@ -13624,7 +13624,7 @@ BOOL16 pass1_1028_d7a0(u16 param_1,u16 param_2,u32 param_3)
 
 
 
-i16 read_file_1028_d7ba(u16_t param_1,u16 param_2,u16 param_3,u32 param_4)
+i16 read_file_1028_d7ba(u16 param_1,u16 param_2,u16 param_3,u32 param_4)
 
 {
   read_file_1008_7cfe((int)param_4,(int)((u32)param_4 >> 0x10),0x8);
@@ -13954,7 +13954,7 @@ void pass1_1028_dc52(astruct_92 *param_1,i16 param_2,u16 param_3,u16 param_4)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u32 write_to_file_1028_dce2(u16_t param_1,u32 *param_2,u8 *param_3)
+u32 write_to_file_1028_dce2(u16 param_1,u32 *param_2,u8 *param_3)
 
 {
   code **ppcVar1;
@@ -14056,7 +14056,7 @@ u32 write_to_file_1028_dce2(u16_t param_1,u32 *param_2,u8 *param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void read_file_1028_def2(u16_t param_1,u8 *param_2,HFILE16 *param_3)
+void read_file_1028_def2(u16 param_1,u8 *param_2,HFILE16 *param_3)
 
 {
   code **ppcVar1;
@@ -14467,13 +14467,13 @@ void pass1_1028_e4ec(astruct_92 *param_1)
 
 
 
-u16_t write_file_fn_1028_e56c(u16_t param_1,u16 param_2,u16 param_3,u8 *param_4,u32 param_5)
+u16 write_file_fn_1028_e56c(u16 param_1,u16 param_2,u16 param_3,u8 *param_4,u32 param_5)
 
 {
   code **ppcVar1;
   astruct_92 *paVar2;
   BOOL16 BVar3;
-  u16_t extraout_DX;
+  u16 extraout_DX;
   HFILE16 in_stack_0000ffbe;
   u32 local_2a [0x3];
   u32 *puStack28;

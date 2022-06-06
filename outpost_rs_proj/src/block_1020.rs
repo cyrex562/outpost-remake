@@ -499,7 +499,7 @@ pub fn send_win_msg_1020_08fe(param_1: *mut astruct_63)
 {
   HWND16 hwnd;
   i32 lVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   astruct_63 *iVar2;
   astruct_63 *uVar2;
 
@@ -1298,7 +1298,7 @@ pub fn win_ui_op_1020_150e(StructD *param_1)
 pub fn invalidate_rect_1020_157c(mut param_1: u32,mut param_2: i16)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut iVar2: i16;
   let mut uVar3: u16;
   RECT16 local_a;
@@ -1330,7 +1330,7 @@ pub fn draw_op_1020_15de(param_1: *mut astruct_779)
 
 {
   code **ppcVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   astruct_779 *iVar3;
   let mut uVar3: u16;
   let mut uVar4: u16;
@@ -1803,7 +1803,7 @@ pub fn destroy_window_1020_1d4a(mut param_1: u32,mut param_2: i16)
 
 {
   let mut in_AX: u16;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut in_EDX: u32;
   let mut uVar2: u16;
 
@@ -1857,7 +1857,7 @@ u16 pass1_1020_1da8(mut param_1: i16,mut param_2: u16 ,StructB *param_3)
 BOOL16 destroy_win_1020_1dea(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 )
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   WORD WVar2;
 
   BVar1 = IsWindow16(param_3);
@@ -1876,7 +1876,7 @@ BOOL16 destroy_win_1020_1dea(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u1
 u16 destroy_win_1020_1e1e(mut param_1: u16 ,mut param_2: u16 ,HWND16 param_3)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   WORD WVar2;
 
   BVar1 = IsWindow16(param_3);
@@ -2813,7 +2813,7 @@ pub fn invalidate_rect_1020_2ae4(mut param_1: u16 ,u32 *param_2,mut param_3: u16
 BOOL16 enable_menu_item_1020_2c2a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,HMENmut param_5: u16 )
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut w_flags: u16;
 
   if (param_4 != 0x0) {
@@ -3056,7 +3056,7 @@ pub fn invalidate_rect_1020_3080(mut param_1: u32,mut param_2: i16)
 pub fn draw_op_1020_30be(astruct_762 *struct_param_1)
 
 {
-  let mut is_iconic:bool;
+  let mut is_iconic: bool;
   astruct_762 *iVar5;
   astruct_762 *uVar5;
   HDC16 *pHVar1;
@@ -4408,7 +4408,7 @@ pub fn mixed_menu_op_1020_44ec
   let mut uVar2: u32;
   let mut uVar3: u16;
   let mut UVar4: u16;
-  let mut BVar5:bool;
+  let mut BVar5: bool;
   HMENlet mut HVar6: u16;
   let mut uVar7: u16;
   let mut uVar8: u32;
@@ -5181,7 +5181,7 @@ pub fn win_ui_cursor_op_1020_522e(mut param_1: u16 ,param_2: *mut astruct_52,mut
 {
   let mut iVar1: i16;
   code **ppcVar2;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut in_register_0000000a: u16;
   astruct_57 *paVar4;
   astruct_52 *iVar4;
@@ -5595,7 +5595,7 @@ pub fn pt_in_rect_1020_5856(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32
 
 {
   u32 *puVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u32;
   let mut extraout_DX: u16;
   let mut uStack10: u32;
@@ -5632,7 +5632,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
   code **ppcVar3;
   let mut uVar4: u32;
   let mut uVar5: u16;
-  let mut BVar6:bool;
+  let mut BVar6: bool;
   let mut puVar7: *mut u16;
   let mut uVar8: u16;
   let mut in_register_0000000a: u16;
@@ -5807,7 +5807,7 @@ BOOL16 menu_ui_op_1020_5bf2(param_1: *mut astruct_52,INT16 param_2,INT16 param_3
 {
   let mut uVar1: u32;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   INT16 *pIVar4;
   HMENlet mut HVar5: u16;
   let mut in_DX: u16;
@@ -6465,7 +6465,7 @@ pub fn unk_win_op_1020_65cc(param_1: *mut astruct_60,mut param_2: i16)
 {
   code **ppcVar1;
   let mut uVar2: u32;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   astruct_59 *iVar4;
   astruct_60 *iVar5;
@@ -6655,7 +6655,7 @@ pub fn pt_in_rect_1020_68fc(u32 *param_1,mut param_2: u16 ,mut param_3: u16 )
 {
   code **ppcVar1;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   POINT16 PStack6;
 
@@ -6681,7 +6681,7 @@ u16 unk_destroy_win_op_1020_694c(mut param_1: u16 ,StructA *param_2,mut param_3:
 {
   let mut uVar1: u16;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   HWND16 HVar4;
   let mut uVar5: u16;
   let mut in_register_0000000a: u16;
@@ -7266,7 +7266,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
 
 {
   let mut uVar8: u16;
-  let mut is_iconic:bool;
+  let mut is_iconic: bool;
   char *puVar3;
   RECT16 RVar9;
   let mut in_DX: u16;
@@ -7285,7 +7285,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
   let mut iStack44: i16;
   let mut iStack42: i16;
   HGDIOBJ16 local_rect;
-  let mut hicon_38:bool;
+  let mut hicon_38: bool;
   HDC16 hdc_24;
   u8 local_paint_struct [0x20];
   astruct_126 *uVar3;
@@ -7696,7 +7696,7 @@ pub fn get_win_ui_info_op_1020_7a50(param_1: *mut astruct_868)
 
 {
   code **ppcVar1;
-  let mut b_var2:bool;
+  let mut b_var2: bool;
   astruct_868 *iVar2;
   let mut var5: u16;
 
@@ -7813,7 +7813,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
   astruct_781 *iVar7;
   let mut uVar7: u16;
   let mut uVar8: u16;
-  let mut DVar1:u32;
+  let mut DVar1: u32;
   RECT16 *rect;
   HDC16 hdc;
   let mut iVar2: i16;
@@ -7825,7 +7825,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
   HPALETTE16 hpalette_12;
   astruct_13 *paStack10;
   HDC16 win_hdc_1;
-  let mut is_iconic:bool;
+  let mut is_iconic: bool;
   u32 *puVar2;
   let mut style: i16;
   let mut iVar8: i16;
@@ -8106,7 +8106,7 @@ pub fn win_ui_palette_op_1020_81c0(mut param_1: u32)
 pub fn destroy_window_1020_8250(param_1: *mut astruct_879)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   astruct_879 *iVar2;
   let mut uVar3: u16;
 
@@ -10358,7 +10358,7 @@ pub fn pass1_1020_a54c(u8 *param_1,mut param_2: u16 ,mut param_3: u16 ,mut param
 BOOL16 pass1_1020_a644(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
 
   BVar1 = write_to_file_1008_7cac(param_3);
   if (BVar1 != 0x0) {
@@ -10372,7 +10372,7 @@ BOOL16 pass1_1020_a644(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 BOOL16 read_file_1020_a65e(u16_t param_1,mut param_2: u32,HFILE16 *param_3)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut in_DX: u16;
   u8 local_a [0x2];
   u8 local_8 [0x2];
@@ -10421,7 +10421,7 @@ pub fn pass1_1020_a6ee(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   let mut uVar4: u16;
   u8 local_13e [0x120];
   let mut uStack30: u32;
-  let mut BStack26:bool;
+  let mut BStack26: bool;
   let mut local_18: u32;
   let mut uStack20: u16;
   let mut iStack18: i16;
@@ -10641,7 +10641,7 @@ pub fn pass1_1020_abc0(mut param_1: u32,mut param_2: u16 ,mut param_3: u32)
   let mut puVar3: *mut u16;
   let mut uVar4: u16;
   u8 local_12e [0x124];
-  let mut BStack10:bool;
+  let mut BStack10: bool;
   let mut local_8: u32;
   let mut uStack4: u16;
 
@@ -13187,7 +13187,7 @@ LAB_1020_d10b:
 u16 pass1_1020_d118(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,param_4: *mut u16,mut param_5: u32,mut param_6: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u16;
   let mut uVar3: u16;
 
@@ -13368,7 +13368,7 @@ u16 * pass1_1020_d3a4(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: u1
 BOOL16 write_to_file_1020_d3d4(param_1: *mut astruct_731,u8 *param_2)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   HFILE16 in_stack_0000ffde;
   u16 local_c [0x5];
 
@@ -13390,7 +13390,7 @@ BOOL16 write_to_file_1020_d3d4(param_1: *mut astruct_731,u8 *param_2)
 BOOL16 pass1_1020_d41a(BOOL16 param_1,u8 *param_2,param_3: *mut astruct_373,HFILE16 *param_4)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut local_4: u16;
 
   file_1028_b81a(param_1,param_2,param_3,param_4);
@@ -13441,7 +13441,7 @@ u16 pass1_1020_d460(mut param_1: i16,mut param_2: u16 ,u32 *param_3,param_4: *mu
 pub fn pass1_1020_d4ca(mut param_1: i16,param_2: *mut astruct_15)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u32;
   let mut extraout_DX: u16;
   let mut uVar3: u16;
@@ -13802,7 +13802,7 @@ pub fn pass1_1020_da4e(mut param_1: u16 ,u32 *param_2,param_3: *mut u16,mut para
   code **ppcVar1;
   u32 *puVar2;
   let mut uVar3: u16;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   u8 *extraout_DX;
   u8 *puVar5;
   u8 *extraout_DX_00;
@@ -14019,7 +14019,7 @@ pub fn pass1_1020_de32(u8 *param_1,mut param_2: u32,mut param_3: u16 )
 
 {
   let mut uVar1: u16;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u16;
   let mut in_register_0000000a: u16;
   let mut uVar4: u16;
@@ -14092,7 +14092,7 @@ pub fn pass1_1020_df10(mut param_1: u16 ,u8 *param_2,mut param_3: u32,param_4: *
 {
   u32 *puVar1;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   let mut uVar5: u32;
   let mut uVar6: u16;
@@ -14574,7 +14574,7 @@ BOOL16 write_to_file_1020_e6a4(mut param_1: u32,u8 *param_2)
 
 {
   let mut in_AX: i16;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u16;
   HFILE16 in_stack_0000ffdc;
   u16 local_c [0x3];
@@ -14599,7 +14599,7 @@ BOOL16 write_to_file_1020_e6a4(mut param_1: u32,u8 *param_2)
 pub fn pass1_1020_e70e(mut param_1: i16,u8 *param_2,mut param_3: u32,mut param_4: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
 
   pass1_1030_dec4(param_1,param_2,(astruct_373 *)param_3,(HFILE16 *)param_4);
   if (param_1 != 0x0) {
@@ -14706,7 +14706,7 @@ u16 * pass1_1020_e91e(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut p
 BOOL16 pass1_1020_e94e(BOOL16 param_1,mut param_2: u32,mut param_3: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   HFILE16 in_stack_0000ffde;
   u16 local_c [0x5];
 
@@ -14725,7 +14725,7 @@ BOOL16 pass1_1020_e94e(BOOL16 param_1,mut param_2: u32,mut param_3: u32)
 pub fn pass1_1020_e994(mut param_1: i16,u8 *param_2,mut param_3: u32,mut param_4: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
 
   pass1_1030_dec4(param_1,param_2,(astruct_373 *)param_3,(HFILE16 *)param_4);
   if ((param_1 != 0x0) &&
@@ -14792,7 +14792,7 @@ pub fn pass1_1020_ea20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,para
   let mut iStack14: i16;
   u32 *puStack12;
   let mut uStack8: u32;
-  let mut BStack4:bool;
+  let mut BStack4: bool;
 
   uVar12 = param_3;
   uVar13 = (param_3 >> 0x10);

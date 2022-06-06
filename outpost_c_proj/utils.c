@@ -23,3 +23,7 @@ bool CARRY2(u16 a, u16 b) {
 u32 SUB42(u32 a, u32 b) {
     return a - b;
 }
+
+u16 SBORROW2(u16 a, u16 b) {
+    return 0;
+}

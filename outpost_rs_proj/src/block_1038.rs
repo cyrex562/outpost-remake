@@ -148,7 +148,7 @@ pub fn pass1_1038_01c0(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   astruct_419 *paVar5;
   let mut uVar6: u32;
   let mut uVar7: u16;
-  let mut BVar8:bool;
+  let mut BVar8: bool;
   u8 *puVar9;
   u32 *puVar10;
   let mut uVar11: u32;
@@ -1869,7 +1869,7 @@ pub fn pass1_1038_1c3e(mut param_1: u32,mut param_2: u32)
   let mut uVar4: u32;
   let mut uVar5: u16;
   let mut iVar6: i16;
-  let mut BVar7:bool;
+  let mut BVar7: bool;
   u32 *puVar8;
   let mut extraout_DX: u16;
   let mut extraout_DX_00: u16;
@@ -3457,7 +3457,7 @@ pub fn pass1_1038_3698(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   let mut uVar3: u32;
   code **ppcVar4;
   let mut uVar5: u16;
-  let mut BVar6:bool;
+  let mut BVar6: bool;
   let mut uVar7: u16;
   let mut uVar8: u16;
   i32 lVar9;
@@ -5119,7 +5119,7 @@ pub fn pass1_1038_4f54(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
 {
   code **ppcVar1;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u32;
   let mut extraout_DX: u16;
   let mut uVar5: u16;
@@ -5255,7 +5255,7 @@ pub fn pass1_1038_50e0(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
 {
   code **ppcVar1;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut extraout_DX: u16;
   let mut uVar4: u16;
   let mut uVar5: u16;
@@ -5790,7 +5790,7 @@ pub fn pass1_1038_58e6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
   let mut iVar1: i16;
   code **ppcVar2;
   let mut uVar3: u32;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   u32 *puVar5;
   let mut uVar6: u16;
   let mut iVar7: i16;
@@ -5847,7 +5847,7 @@ pub fn pass1_1038_5a16(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 {
   code **ppcVar1;
   let mut uVar2: u32;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut iVar4: i16;
   let mut uVar5: u16;
   let mut uStack6: u32;
@@ -5876,7 +5876,7 @@ pub fn pass1_1038_5a96(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 {
   code **ppcVar1;
   let mut uVar2: u32;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut iVar4: i16;
   let mut uVar5: u16;
   let mut uStack6: u32;
@@ -5912,7 +5912,7 @@ pub fn pass1_1038_5b3c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
   code **ppcVar1;
   let mut uVar2: u32;
   let mut uVar3: u32;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   let mut iVar5: i16;
   let mut uVar6: u16;
   let mut uStack6: u32;
@@ -5945,7 +5945,7 @@ u16 pass1_1038_5be8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut par
   let mut iVar1: i16;
   let mut uVar2: u16;
   let mut iVar3: i16;
-  let mut BVar4:bool;
+  let mut BVar4: bool;
   let mut uVar5: u16;
   let mut uVar6: u32;
   let mut iStack14: i16;
@@ -6055,7 +6055,7 @@ pub fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32,mut pa
 pub fn pass1_1038_5e16(mut param_1: i16,mut param_2: u32,mut param_3: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   u32 *puVar2;
   let mut iVar3: i16;
   let mut uVar4: u16;
@@ -6188,8 +6188,8 @@ pub fn file_1038_6118(mut param_1: i16,param_2: *mut astruct_57,param_3: *mut as
 
 {
   u32 *puVar1;
-  let mut BVar2:bool;
-  let mut BVar3:bool;
+  let mut BVar2: bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   let mut uVar5: u16;
   u8 *puVar6;
@@ -6635,7 +6635,7 @@ pub fn pass1_1038_6a0e(param_1: *mut astruct_419,param_2: *mut astruct_615)
 {
   let mut piVar1: *mut i16;
   let mut uVar2: u16;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar6: u16;
@@ -6883,7 +6883,7 @@ u16 pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,i32 *param_3)
 
 {
   let mut uVar1: u16;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u16;
   let mut uVar4: u16;
   u8 bStack21;
@@ -7212,7 +7212,7 @@ pub fn pass1_1038_7356(param_1: *mut astruct_615,param_2: *mut astruct_419)
   char *pcVar3;
   i32 lVar4;
   let mut in_AX: u16;
-  let mut BVar5:bool;
+  let mut BVar5: bool;
   let mut uVar6: u16;
   let mut uVar7: u16;
   let mut in_DX: u16;
@@ -7344,7 +7344,7 @@ LAB_1038_7549:
 pub fn pass1_1038_75ca(mut param_1: i16,mut param_2: u32,mut param_3: u32)
 
 {
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut iVar2: i16;
   let mut iVar3: i16;
   let mut uVar4: u16;
@@ -7411,7 +7411,7 @@ pub fn file_1038_774e(u8 *param_1,param_2: *mut astruct_169,mut param_3: u32)
 
 {
   astruct_169 *iVar2;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut iVar3: i16;
   let mut uVar4: u16;
   let mut uVar6: u16;
@@ -7655,7 +7655,7 @@ u16 pass1_1038_7b20(u32 *param_1,mut param_2: u32)
 
 {
   let mut uVar1: u32;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u16;
   let mut uVar4: u32;
   HFILE16 in_stack_0000ffce;
@@ -7710,7 +7710,7 @@ u16 read_file_1038_7c02(u16_t param_1,u16_t param_2,u32 *param_3,HFILE16 *param_
 
 {
   code **ppcVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u16;
   u8 *puVar4;
   let mut uVar5: u16;
@@ -8014,7 +8014,7 @@ pub fn enable_win_1038_806a(mut param_1: u16 ,param_2: *mut astruct_902)
 
 {
   HWND16 HVar1;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   astruct_902 *iVar3;
   let mut uVar3: u16;
   let mut uVar4: u32;
@@ -8177,7 +8177,7 @@ LRESULT send_dlg_item_msg_1038_844a(param_1: *mut astruct_903)
 
 {
   HWND16 hwnd;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut uVar2: u16;
   let mut uVar3: u16;
   astruct_903 *uVar4;
@@ -8482,7 +8482,7 @@ pub fn unk_win_ui_op_1038_8afe(mut param_1: u16 ,param_2: *mut astruct_50)
   astruct_57 *paVar2;
   astruct_50 *iVar4;
   astruct_50 *uVar4;
-  let mut local_4:bool;
+  let mut local_4: bool;
 
   paVar2 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   uVar4 = (astruct_50 *)((u32)param_2 >> 0x10);
@@ -8708,7 +8708,7 @@ LRESULT send_dlg_item_msg_1038_8f74(param_1: *mut astruct_903)
   let mut uVar4: u16;
   i32 lVar4;
   LRESULT LVar5;
-  let mut enable:bool;
+  let mut enable: bool;
   WORD local_50c [0x80];
   u8 local_40c [0x8];
   let mut local_404: u32;
@@ -8851,8 +8851,8 @@ pub fn win_dlg_op_1038_9294(mut param_1: u16 ,StructB *param_2)
   let mut UVar1: u16;
   let mut uVar1: u16;
   StructB *struct_b_1_hi;
-  let mut local_6:bool;
-  let mut local_4:bool;
+  let mut local_6: bool;
+  let mut local_4: bool;
 
   unk_win_ui_op_1040_b230(param_1,param_2);
   struct_b_1_hi = (StructB *)((u32)param_2 >> 0x10);
@@ -8987,7 +8987,7 @@ BOOL16 send_dlg_item_int_1038_94da(mut param_1: i16,mut param_2: u16 ,mut param_
   let mut iVar2: i16;
   HWND16 hwnd;
   i32 lVar3;
-  let mut local_c:bool;
+  let mut local_c: bool;
   let mut uStack10: u16;
   let mut iStack8: i16;
   let mut UStack6: u16;
@@ -9050,7 +9050,7 @@ pub fn win_msg_op_1038_95fc(mut param_1: u16 ,mut param_2: u32)
   let mut puStack30: *mut u16;
   let mut puStack24: *mut u16;
   let mut iStack20: i16;
-  let mut local_10:bool;
+  let mut local_10: bool;
   u32 *puStack14;
   u32 *puStack10;
   u32 *puStack6;
@@ -9133,7 +9133,7 @@ pub fn win_ui_op_1038_977a(param_1: *mut astruct_57,mut param_2: i16,mut param_3
   u32 *puStack12;
   let mut iStack8: i16;
   let mut uStack6: u16;
-  let mut local_4:bool;
+  let mut local_4: bool;
   let mut uVar5: u32;
 
   iStack8 = 0x0;
@@ -9179,8 +9179,8 @@ i32 unk_win_ui_op_1038_9820(StructB *param_1,mut param_2: i16,mut param_3: i16,m
   let mut uVar8: u16;
   StructB *iVar7;
   StructB *uVar7;
-  let mut local_6:bool;
-  let mut local_4:bool;
+  let mut local_6: bool;
+  let mut local_4: bool;
 
   uVar7 = (StructB *)((u32)param_1 >> 0x10);
   iVar7 = (StructB *)param_1;
@@ -9208,7 +9208,7 @@ pub fn win_ui_dlg_op_1038_98b4(StructB *param_1)
   LPVOID pvVar2;
   let mut iVar4: i16;
   let mut iStack8: i16;
-  let mut local_4:bool;
+  let mut local_4: bool;
 
   local_4 = 0x0;
   for (iStack8 = 0x0; iVar3 = (StructB *)param_1, uVar2 = (StructB *)((u32)param_1 >> 0x10), iStack8 < 0xf;
@@ -9278,7 +9278,7 @@ pub fn pass1_1038_9a48(StructD *param_1)
 pub fn enable_win_1038_9a66(u8 *param_1,astruct_903 *pstruct903_param_2,u16 in_b_enable_3,mut param_4: u32)
 
 {
-  let mut enable:bool;
+  let mut enable: bool;
   HWND16 hwnd;
 
   if (param_4 == 0xf8) {
@@ -9440,7 +9440,7 @@ pub fn enable_window_1038_9cec(u8 *param_1,param_2: *mut astruct_903,mut param_3
   let mut in_stack_0000ffb4: u16;
   let mut in_stack_0000ffba: u16;
   let mut in_stack_0000ffbe: u16;
-  let mut enable:bool;
+  let mut enable: bool;
   HWND16 HVar6;
   let mut iStack12: i16;
   astruct_905 *iVar2;
@@ -9696,7 +9696,7 @@ pub fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,StructB *param_2,mut par
   let mut uStack24: u32;
   u32 *puStack20;
   let mut local_10: i16;
-  let mut local_e:bool;
+  let mut local_e: bool;
   u8 local_c [0x6];
   u32 *puStack6;
 
@@ -10116,7 +10116,7 @@ pub fn enable_win_1038_a8f8(StructC *param_1,mut param_2: u16 ,TwoWords param_3)
 
 {
   HWND16 hwnd;
-  let mut enable:bool;
+  let mut enable: bool;
 
   if (param_3.b_0x2 == 0x116) {
     SendDlgItemMessage16(0x0,0x1,0x401,0x11a,*(HWND16 *)((int)param_1 + 0x6));
@@ -10142,7 +10142,7 @@ pub fn win_ui_op_1038_a972(StructB *struct_b_param_1)
 
 {
   HWND16 hwnd;
-  let mut BVar1:bool;
+  let mut BVar1: bool;
   let mut in_EDX: u32;
   let mut uVar3: u16;
   let mut uVar2: u32;
@@ -11027,7 +11027,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
   code **ppcVar2;
   let mut UVar3: u16;
   HWND16 HVar4;
-  let mut BVar5:bool;
+  let mut BVar5: bool;
   let mut uVar6: u16;
   let mut uVar7: u16;
   StructC *iVar8;
@@ -11051,7 +11051,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
   u32 *puStack14;
   let mut uStack10: u16;
   HWND16 HStack8;
-  let mut BStack6:bool;
+  let mut BStack6: bool;
   let mut uStack4: u16;
 
   BStack6 = 0x0;
@@ -11860,7 +11860,7 @@ pub fn win_ui_op_1038_c89c(StructB *struct_b_param_1)
   HWND16 HVar1;
   StructB *struct_b_4;
   let mut uVar3: u16;
-  let mut enable:bool;
+  let mut enable: bool;
   astruct_910 *iVar1;
   let mut uVar1: u32;
   let mut uVar2: u32;
@@ -12494,7 +12494,7 @@ pub fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,StructB *struct_b_param_1,mu
   astruct_57 *rect;
   let mut iVar1: i16;
   HWND16 hwnd_2;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut uVar3: u16;
   let mut uVar4: u16;
   astruct_912 *iVar5;
@@ -12594,7 +12594,7 @@ pub fn unk_win_ui_op_1038_d400
   HWND16 HVar1;
   let mut iVar2: i16;
   let mut uVar2: u16;
-  let mut BVar2:bool;
+  let mut BVar2: bool;
   let mut in_DX: u16;
   let mut in_register_0000000a: u16;
   let mut uVar4: u16;
@@ -13287,7 +13287,7 @@ pub fn pass1_1038_df86(StructD *param_1,mut param_2: u32)
 {
   char *pcVar1;
   code **ppcVar2;
-  let mut BVar3:bool;
+  let mut BVar3: bool;
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar6: u16;
@@ -13939,7 +13939,7 @@ pub fn win_ui_op_1038_ea18(StructB *param_1)
   StructB *iVar2;
   let mut uVar2: u16;
   let mut lparam: u32;
-  let mut in_stack_0000fff0:bool;
+  let mut in_stack_0000fff0: bool;
   let mut iStack14: i16;
 
   dialog_ui_fn_1040_78e2(param_1);

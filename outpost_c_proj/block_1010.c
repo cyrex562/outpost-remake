@@ -2727,7 +2727,7 @@ void pass1_1010_29c6(StructD *param_1)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
-u16_t FUN_1010_2a32(u8 *buffer_param_2,u32 param_2,HFILE16 *hfile_param,u16 param_4)
+u16 FUN_1010_2a32(u8 *buffer_param_2,u32 param_2,HFILE16 *hfile_param,u16 param_4)
 
 {
   i16 *piVar1;
@@ -2940,7 +2940,7 @@ u16_t FUN_1010_2a32(u8 *buffer_param_2,u32 param_2,HFILE16 *hfile_param,u16 para
                         (*(char **)(in_stack_00000000 + 0xa),*(char **)(in_stack_00000000 + 0xe),
                          *(char **)((int)buffer_param_2 * 0x4 + 0x1446),s_windows_1050_13b8);
     }
-    return (u16_t)in_BX;
+    return (u16)in_BX;
   case 0x14:
     ((int)buffer_param_2 + 0x24) = (u32 *)param_2;
     break;
@@ -3052,7 +3052,7 @@ LAB_1010_2ad8:
   in_BX = (u32 *)param_2;
   pass1_1010_1f62((astruct_27 *)buffer_param_2,0xc);
 switchD_1010_2ab5_caseD_0:
-  return (u16_t)in_BX;
+  return (u16)in_BX;
 }
 
 

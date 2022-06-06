@@ -324,4 +324,9 @@ typedef struct _astruct_825 {
     u8 field0_0x0;
 } astruct_825;
 
+typedef struct _struct_1000_0b20 {
+    u16 field_0x0;
+    code field_0x32;
+} struct_1000_0b20;
+
 #endif //OUTPOST_C_PROJ__STRUCTS_2_H_
