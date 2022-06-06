@@ -7927,7 +7927,7 @@ u16 pass1_1038_7b20(u32 *param_1,u32 param_2)
 
 
 
-u16 read_file_1038_7c02(u16_t param_1,u16_t param_2,u32 *param_3,HFILE16 *param_4)
+u16 read_file_1038_7c02(u16 param_1,u16 param_2,u32 *param_3,HFILE16 *param_4)
 
 {
   code **ppcVar1;

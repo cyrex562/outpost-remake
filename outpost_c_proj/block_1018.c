@@ -3271,7 +3271,7 @@ void get_sys_metrics_1018_2f56(u32 param_1)
 
 
 
-void pass1_1018_2fe8(astruct_126 *param_1,u16_t param_2,u16_t param_3)
+void pass1_1018_2fe8(astruct_126 *param_1,u16 param_2,u16 param_3)
 
 {
   i16 *piVar1;

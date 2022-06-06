@@ -9,7 +9,7 @@
 #include "utils.h"
 #include "globals.h"
 #include "sys_api.h"
-#include "block_1000.h"
+#include "ops_1.h"
 
 i16 *entry(u16 param_1,
            u16 param_2,
@@ -27,7 +27,7 @@ i16 *entry(u16 param_1,
     i16 iVar6;
 //    u8 *unaff_SI;
     i16 *piVar7;
-    HINSTANCE16 unaff_DI;
+//    HINSTANCE16 unaff_DI;
     char *paVar8;
     bool bVar9;
     u32 u32_var10;

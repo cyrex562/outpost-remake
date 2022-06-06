@@ -7538,10 +7538,10 @@ void file_fn_1008_6eee(u16 param_1,u16 param_2,u32 param_3)
 void read_file_1008_6f7a(u16 param_1,u16 param_2,u32 param_3,u8 *param_4)
 
 {
-  u16_t var5;
+  u16 var5;
   i16 i_var3;
   BOOL16 b_var4;
-  u16_t uVar1;
+  u16 uVar1;
   u16 *puVar2;
   u8 local_e [0x4];
   u32 uStack10;
@@ -7550,8 +7550,8 @@ void read_file_1008_6f7a(u16 param_1,u16 param_2,u32 param_3,u8 *param_4)
   puStack6 = (u32 *)*_u16_1050_5748;
   uStack10 = *puStack6;
   puVar2 = pass1_1020_a43e(param_4,(u16 *)CONCAT22(0x1050,local_e));
-  uVar1 = (u16_t)((u32)puVar2 >> 0x10);
-  var5 = read_file_1028_d7ba((u16_t)puVar2,(int)uStack10,(int)((u32)uStack10 >> 0x10),param_3);
+  uVar1 = (u16)((u32)puVar2 >> 0x10);
+  var5 = read_file_1028_d7ba((u16)puVar2,(int)uStack10,(int)((u32)uStack10 >> 0x10),param_3);
   if (var5 != 0x0) {
     var5 = read_file_1030_5c52(var5,_PTR_LOOP_1050_5736,param_3);
     if (var5 != 0x0) {
@@ -7559,7 +7559,7 @@ void read_file_1008_6f7a(u16 param_1,u16 param_2,u32 param_3,u8 *param_4)
       if (var5 != 0x0) {
         i_var3 = read_file_1038_7c02(var5,uVar1,_PTR_LOOP_1050_5a64,param_3);
         if (i_var3 != 0x0) {
-          b_var4 = read_file_1020_a65e((u16_t)local_e,CONCAT22(0x1050,local_e),param_3);
+          b_var4 = read_file_1020_a65e((u16)local_e,CONCAT22(0x1050,local_e),param_3);
           if (b_var4 != 0x0) {
             return;
           }
@@ -8290,20 +8290,20 @@ void pass1_1008_7898(u16 param_1,u32 param_2,u32 *param_3)
 
 
 
-u16_t write_to_file_1008_7954(u16_t param_1,u8 *param_2,u32 *param_3)
+u16 write_to_file_1008_7954(u16 param_1,u8 *param_2,u32 *param_3)
 
 {
   code **ppcVar1;
   BOOL16 BVar2;
   u32 uVar3;
-  u16_t extraout_DX;
-  u16_t uVar4;
-  u16_t extraout_DX_00;
+  u16 extraout_DX;
+  u16 uVar4;
+  u16 extraout_DX_00;
   HFILE16 in_stack_0000ffca;
-  u16_t local_20;
-  u16_t uStack30;
-  u16_t local_18;
-  u16_t uStack22;
+  u16 local_20;
+  u16 uStack30;
+  u16 local_18;
+  u16 uStack22;
   u32 uStack10;
   u32 uStack6;
 
@@ -8329,7 +8329,7 @@ u16_t write_to_file_1008_7954(u16_t param_1,u8 *param_2,u32 *param_3)
       ppcVar1 = (code **)((int)*param_3 + 0x4);
       uVar3 = uStack6;
       (**ppcVar1)();
-      local_20 = (u16_t)uVar3;
+      local_20 = (u16)uVar3;
       uVar4 = extraout_DX_00;
       uStack30 = extraout_DX_00;
       local_18 = local_20;
@@ -8348,7 +8348,7 @@ u16_t write_to_file_1008_7954(u16_t param_1,u8 *param_2,u32 *param_3)
 void pass1_1008_79f0(u32 param_1,i32 param_2)
 
 {
-  u16_t uVar1;
+  u16 uVar1;
   u16 uVar2;
   u16 uStack4;
 
@@ -8358,7 +8358,7 @@ void pass1_1008_79f0(u32 param_1,i32 param_2)
   }
   else {
     uVar2 = ((u32)param_2 >> 0x10);
-    uVar1 = *(u16_t *)((int)param_2 + 0x4);
+    uVar1 = *(u16 *)((int)param_2 + 0x4);
     uStack4 = ((int)param_2 + 0x6);
   }
   write_to_file_1008_7954(uVar1,param_1,(u32 *)CONCAT22(uStack4,uVar1));
@@ -8567,7 +8567,7 @@ void read_file_1008_7cfe(u16 param_1,u16 param_2,u16 param_3)
   u16 uVar2;
   i32 iVar3;
   u16 in_stack_0000fbd6;
-  u16_t in_stack_0000fbd8;
+  u16 in_stack_0000fbd8;
   u32 uStack1040;
   char local_406 [0x400];
   u32 uStack6;
@@ -8640,7 +8640,7 @@ BOOL16 write_to_file_1008_7e1c(u8 *buffer,u32 count,char *buf_to_write,HFILE16 p
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 pass1_1008_7e4a(char *param_1,u16 param_2,u16_t param_3)
+u16 pass1_1008_7e4a(char *param_1,u16 param_2,u16 param_3)
 
 {
   u16 uVar1;

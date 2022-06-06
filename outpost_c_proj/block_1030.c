@@ -1852,7 +1852,7 @@ u16 pass1_1030_1972(void)
 
 
 
-u16 pass1_1030_1978(u16_t param_1,astruct_731 *param_2,u32 param_3)
+u16 pass1_1030_1978(u16 param_1,astruct_731 *param_2,u32 param_3)
 
 {
   pass1_1030_16d6(param_2,param_3);
@@ -1937,7 +1937,7 @@ u16 pass1_1030_1a9c(u32 param_1,u32 param_2)
 
 {
   i16 *piVar1;
-  u16_t in_AX;
+  u16 in_AX;
   u16 uVar2;
   BOOL16 BVar3;
   i16 iVar4;
@@ -2475,7 +2475,7 @@ i16 pass1_1030_2242(astruct_168 *param_1,i16 param_2)
 
 
 
-void pass1_1030_227a(u16_t param_1,u32 param_2,u32 param_3)
+void pass1_1030_227a(u16 param_1,u32 param_2,u32 param_3)
 
 {
   u16 uVar1;
@@ -3035,7 +3035,7 @@ u16 pass1_1030_2aaa(u32 param_1)
 
 
 
-void pass1_1030_2aca(u16_t param_1,astruct_730 *param_2,u32 param_3)
+void pass1_1030_2aca(u16 param_1,astruct_730 *param_2,u32 param_3)
 
 {
   u16 *puVar1;
@@ -4594,7 +4594,7 @@ void pass1_1030_4bbe(u16 param_1,astruct_117 *param_2,i16 param_3)
 
 
 
-void pass1_1030_4c06(astruct_117 *param_1,i16 param_2,u16_t param_3)
+void pass1_1030_4c06(astruct_117 *param_1,i16 param_2,u16 param_3)
 
 {
   i32 *plVar1;
@@ -4888,7 +4888,7 @@ void pass1_1030_4f5a(u16 param_1,astruct_117 *param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1030_5044(u16_t param_1,astruct_117 *param_2)
+void pass1_1030_5044(u16 param_1,astruct_117 *param_2)
 
 {
   char *pcVar1;
@@ -5347,7 +5347,7 @@ void pass1_1030_56b0(u16 *param_1)
 
 
 
-void pass1_1030_56f6(u16_t param_1,astruct_731 *param_2,u32 param_3)
+void pass1_1030_56f6(u16 param_1,astruct_731 *param_2,u32 param_3)
 
 {
   i16 *piVar1;
@@ -5700,7 +5700,7 @@ BOOL16 pass1_1030_5c1a(u32 param_1,u32 param_2)
 
 
 
-BOOL16 read_file_1030_5c52(u16_t param_1,u8 *param_2,HFILE16 *param_3)
+BOOL16 read_file_1030_5c52(u16 param_1,u8 *param_2,HFILE16 *param_3)
 
 {
   BOOL16 BVar1;
@@ -5810,7 +5810,7 @@ void pass1_1030_5d78(u16 *param_1)
 
 
 
-void pass1_1030_5dbe(u16_t param_1,u32 param_2,u32 param_3)
+void pass1_1030_5dbe(u16 param_1,u32 param_2,u32 param_3)
 
 {
   u32 uVar1;

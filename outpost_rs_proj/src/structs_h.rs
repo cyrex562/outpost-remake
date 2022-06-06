@@ -6701,7 +6701,7 @@ struct astruct_248 {
     u8 field325_0x145;
     u8 field326_0x146;
     u8 field327_0x147;
-    BOOL16 field328_0x148;
+    let mut field328_0x148: bool;
 };
 
 
@@ -42809,7 +42809,7 @@ struct astruct_387 {
     u8 field38_0x28;
     u8 field39_0x29;
     i32 field40_0x2a;
-    BOOL16 field41_0x2e;
+    let mut field41_0x2e: bool;
     u8 * field42_0x30;
     u8 field43_0x32;
     u8 field44_0x33;
@@ -50783,7 +50783,7 @@ struct astruct_487 {
 
 
 struct astruct_909 {
-    BOOL16 field0_0x0;
+    let mut field0_0x0: bool;
     let mut field1_0x2: i16;
     let mut field2_0x4: i16;
 };

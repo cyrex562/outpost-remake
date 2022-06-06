@@ -24,4 +24,6 @@ typedef u16(*code7)(i16);
 
 typedef u32(*code8)();
 
+typedef i16(*code9)(u16, u16*, u16, u16);
+
 #endif //OUTPOST_C_PROJ_TYPES_H_FUNC_PTRS_H_
