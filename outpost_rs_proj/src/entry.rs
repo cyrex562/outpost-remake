@@ -19,14 +19,14 @@ i16 *entry(mut param_1: u16 ,
            mut param_6: u16 )
 {
     astruct_822 *paVar1;
-    i16 *piVar2;
+    let mut piVar2: *mut i16;
     let mut uVar4: u16;
     char *string_var4;
     let mut iVar5: i16;
-    i16 *piVar4;
+    let mut piVar4: *mut i16;
     let mut iVar6: i16;
 //    u8 *unaff_SI;
-    i16 *piVar7;
+    let mut piVar7: *mut i16;
     HINSTANCE16 unaff_DI;
     char *paVar8;
     let mut bVar9: bool;
@@ -35,7 +35,7 @@ i16 *entry(mut param_1: u16 ,
     let mut uVar10: u32;
     let mut u32_var12: u32;
     astruct_825 *paVar13;
-    i16 *piVar1;
+    let mut piVar1: *mut i16;
 
     u32_var11 = CONCAT22(param_6,
                          PTR_LOOP_1050_5f84);
@@ -85,7 +85,7 @@ i16 *entry(mut param_1: u16 ,
         param_3 = ((param_3 >> 0x8) << 0x8) | 0xff;
         pass1_1000_24db(param_3);
         PTR_LOOP_1050_5f84 = (u8 *) u32_var11;
-    } while (true);
+    } loop;
     // &DAT_1050_1050
     dos3_call_1000_23ea( param_4,
                          0x1050,
@@ -145,5 +145,5 @@ i16 *entry(mut param_1: u16 ,
             piVar2 = piVar7;
             piVar7 = (i16 *) ( piVar7 + 0x1);
         } while (*(char *) piVar2 != '\0');
-    } while (true);
+    } loop;
 }

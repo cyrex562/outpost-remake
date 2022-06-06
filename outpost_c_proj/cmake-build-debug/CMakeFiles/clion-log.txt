@@ -1,1 +1,4 @@
-Visual Studio not found at: C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional Configure Disable profile
+C:\Users\cyrex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\221.5591.52\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/cyrex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/win/ninja.exe -G Ninja -S C:\Users\cyrex\Projects\outpost-rs\outpost_c_proj -B C:\Users\cyrex\Projects\outpost-rs\outpost_c_proj\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/cyrex/Projects/outpost-rs/outpost_c_proj/cmake-build-debug

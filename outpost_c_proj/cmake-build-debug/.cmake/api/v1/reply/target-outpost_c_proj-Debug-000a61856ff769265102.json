@@ -254,12 +254,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "1038.c",
+			"path" : "block_1038.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "1038.h",
+			"path" : "block_1038.h",
 			"sourceGroupIndex" : 1
 		},
 		{

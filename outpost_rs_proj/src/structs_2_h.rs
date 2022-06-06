@@ -2,22 +2,24 @@
 // Created by cyrex on 2022-05-23.
 //
 
-#ifndef OUTPOST_C_PROJ__STRUCTS_2_H_
-#define OUTPOST_C_PROJ__STRUCTS_2_H_
+// #ifndef OUTPOST_C_PROJ__STRUCTS_2_H_
+// #define OUTPOST_C_PROJ__STRUCTS_2_H_
 
-#include "types.h"
+// #include "types.h"
 
-typedef struct _astruct_7 {
-    int field_0x40;
-    int field_0x3e;
-    let mut field_0x36: u16;
-    u8* field_0xa;
-    let mut field_0x16: u16;
-    let mut field_0x2: u16;
-    let mut field_0x4: u16;
-    int field_0x14;
-    let mut field_0x1e: u16;
-} astruct_7;
+#[derive(Default,Debug,Clone)]
+pub struct Struct7 {
+    pub field_0x0: u16,
+    pub field_0x14: i32,
+    pub field_0x16: u16,
+    pub field_0x1e: u16,
+    pub field_0x2: u16,
+    pub field_0x36: u16,
+    pub field_0x3e: i32,
+    pub field_0x40: i32,
+    pub field_0x4: u16,
+    pub field_0xa: *mut u8,
+} 
 
 typedef struct _astruct_99 {
     let mut field0_0x0: u16;
