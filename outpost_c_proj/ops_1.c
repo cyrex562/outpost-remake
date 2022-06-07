@@ -10,14 +10,15 @@
 #include "utils.h"
 #include "structs_2.h"
 #include "ops_3.h"
+#include "ops_5.h"
 
 void pass1_1000_24db(u16 param_1)
 {
     code *pcVar1;
-    //    i16 unaff_BP;
+    //    i16 BP_REG;
     i16 iVar2;
 
-    iVar2 = unaff_BP + 0x1;
+    iVar2 = BP_REG + 0x1;
     u8_1050_5fc9 = '\0';
     fn_ptr_op_1000_2594();
     fn_ptr_op_1000_2594();
@@ -29,15 +30,15 @@ void pass1_1000_24db(u16 param_1)
 void fn_ptr_op_1000_2594()
 {
     code **ppcVar1;
-    //    code **unaff_SI;
-    //    code **unaff_DI;
+    //    code **SI_REG;
+    //    code **DI_REG;
     code *ppcVar2;
     code *fn_ptr_1;
 
-    while (unaff_SI < unaff_DI) {
-        ppcVar2 = unaff_DI + -0x2;
-        ppcVar1 = unaff_DI + -0x1;
-        unaff_DI = ppcVar2;
+    while (SI_REG < DI_REG) {
+        ppcVar2 = DI_REG + -0x2;
+        ppcVar1 = DI_REG + -0x1;
+        DI_REG = ppcVar2;
         //        if ((ppcVar2 | ppcVar1) != 0x0) {
         if (ppcVar2 != 0) {
             fn_ptr_1 = ppcVar2;
@@ -90,7 +91,7 @@ void pass1_1000_262c(u8 *param_1,
     u16 pcVar7;
     char *pcVar8;
     u8 *pcVar9;
-    //    u16 unaff_ES;
+    //    u16 ES_REG;
     u16 uVar12;
     u16 uVar3;
     u8 *puVar3;
@@ -245,7 +246,7 @@ void pass1_1000_262c(u8 *param_1,
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
         ((code) (u32) &PTR_LOOP_1050_5fd2)();
-        //        _PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4,
+        //        PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4,
         //                                       PTR_LOOP_1050_5fc2);
         return;
     }
@@ -369,9 +370,9 @@ u16 *pass1_1000_2950(i16 param_1,
     i16 iVar6;
     u16 *puVar7;
     u16 *puVar8;
-    //    u16 unaff_BP;
+    //    u16 BP_REG;
     char *pcVar9;
-    //    u16 unaff_ES;
+    //    u16 ES_REG;
     struct astruct_825 *paVar10;
 
     puVar4 = PTR_LOOP_1050_6066;
@@ -384,7 +385,7 @@ u16 *pass1_1000_2950(i16 param_1,
     if (puVar8 != 0) {
         return puVar8;
     }
-    paVar10 = (astruct_825 *) CONCAT22(unaff_ES,
+    paVar10 = (astruct_825 *) CONCAT22(ES_REG,
                                        param_1);
     pass1_1000_25a8();
     pass1_1000_2913(param_1);
@@ -417,7 +418,7 @@ u16 *pass1_1000_2950(i16 param_1,
         puVar8 = puVar8 + 0x1;
         uVar2 = *puVar1;
         puVar7 = puVar8;
-        if ((uVar2 == unaff_BP) || (puVar7 = (u16 *) (uVar2 + 0x1), puVar7 == NULL)) {
+        if ((uVar2 == BP_REG) || (puVar7 = (u16 *) (uVar2 + 0x1), puVar7 == NULL)) {
             return puVar7;
         }
         iVar6 = -0x1;
@@ -511,7 +512,7 @@ i32 mem_op_1000_0a48(u8 param_1,
     u16 uVar4;
     u16 uVar3;
     //    u16 UVar4;
-//    u16 unaff_CS;
+//    u16 CS_REG;
     u32 uVar5;
     u8 in_stack_00000005;
     u16 *puVar1;
@@ -521,7 +522,7 @@ i32 mem_op_1000_0a48(u8 param_1,
         // (s_version__d__d_1050_0012 + 0x6)
         if ((param_3 == 0x0) && (param_2 <= 0x0018)) {
             if (param_2 == 0x0) {
-                pass1_1000_1e61(unaff_CS,
+                pass1_1000_1e61(CS_REG,
                                 0x4,
                                 param_4,
                                 0);
@@ -557,7 +558,7 @@ i32 mem_op_1000_0a48(u8 param_1,
         }
         return uVar5;
     }
-    pass1_1000_1e61(unaff_CS,
+    pass1_1000_1e61(CS_REG,
                     0xa,
                     0x0,
                     0);
@@ -909,10 +910,10 @@ u16 pass1_1000_1a54(u16 param_1,
 {
     u16 uVar1;
     u16 uVar2;
-//    u16 unaff_CS;
+//    u16 CS_REG;
 
     if ((param_2->field_0x14) != -0x4153) {
-        pass1_1000_1e61(unaff_CS,
+        pass1_1000_1e61(CS_REG,
                         0xa,
                         0x0,
                         0);
@@ -934,7 +935,7 @@ BOOL16 pass1_1000_1afe(u16 param_1,
                        u16 param_3)
 {
     u16 uVar1;
-//    u16 unaff_CS;
+//    u16 CS_REG;
 
     if (param_1 == 0x0) {
         uVar1 = 0x0;
@@ -943,7 +944,7 @@ BOOL16 pass1_1000_1afe(u16 param_1,
     }
     if ((param_2->field_0x14) == -0x4153) {
         if ((uVar1 < param_1) || ((param_2->field_0x1a) - 0x14U < uVar1)) {
-            pass1_1000_1e61(unaff_CS,
+            pass1_1000_1e61(CS_REG,
                             0x3,
                             param_2,
                             0);
@@ -953,7 +954,7 @@ BOOL16 pass1_1000_1afe(u16 param_1,
         }
         return 0x0;
     }
-    pass1_1000_1e61(unaff_CS,
+    pass1_1000_1e61(CS_REG,
                     0xa,
                     0x0,
                     0);
@@ -1061,61 +1062,6 @@ u32 pass1_1000_0c32(u16 param_1,
     }
     *(u16 *) (param_3 + 0x4) = uStack6 & 0xfffc;
     return 0x0;
-}
-
-void mem_op_1000_131c(u16 param_1,
-                      u32 param_2)
-{
-    HGLOBAL16 handle;
-    u16 flags;
-    bool bVar1;
-    i32 lVar2;
-    u16 uStack10;
-    u16 uStack8;
-    i16 iStack6;
-
-    lVar2 = CONCAT22(uStack8,
-                     uStack10);
-    flags = 0x32;
-    iStack6 = 0x1;
-    if (((param_1 & 0x1000) != 0x0) && ((param_2 != 0x0 || (0xfff0 <  param_2)))) {
-        param_2 = 0xfff0;
-    }
-    if ((param_1 & 0x100) != 0x0) {
-        flags = 0x72;
-    }
-    if ((param_1 & 0x1) != 0x0) {
-        flags |= 0x2000;
-    }
-    if ((param_1 & 0x4) != 0x0) {
-        flags &= 0xfffd;
-        lVar2 = mem_op_1000_1558( param_2,
-                                 param_2);
-    }
-    do {
-        handle = GLobalAlloc16(param_2 & 0xffff | (u32) param_2 << 0x10,
-                               flags);
-        uStack8 =  ((u32) lVar2 >> 0x10);
-        uStack10 =  lVar2;
-        if (handle != 0x0) {
-            break;
-        }
-        flags &= 0xffcf;
-        bVar1 = iStack6 != 0x0;
-        iStack6 = iStack6 + -0x1;
-    } while (bVar1);
-    if ((param_1 & 0x4) != 0x0) {
-        if (handle != 0x0) {
-            GlobalPageLock16(handle);
-        }
-        pass1_1000_15ce((u16 *) uStack10,
-                        uStack8);
-    }
-    if (handle == 0x0) {
-        return;
-    }
-    WIN16_GlobalLock16(handle);
-    return;
 }
 
 u8 * mem_op_1000_0308(i16 param_1,

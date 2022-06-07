@@ -26,9 +26,9 @@ i16 *entry(u16 param_1,
     i16 iVar5;
     i16 *piVar4;
     i16 iVar6;
-//    u8 *unaff_SI;
+//    u8 *SI_REG;
     i16 *piVar7;
-//    HINSTANCE16 unaff_DI;
+//    HINSTANCE16 DI_REG;
     char *paVar8;
     bool bVar9;
     u32 u32_var10;
@@ -51,8 +51,8 @@ i16 *entry(u16 param_1,
                 // (u8 *) &DAT_1050_1050
                 PTR_LOOP_1050_5f50 = 0x1050;
                 PTR_LOOP_1050_5f48 = param_5;
-                PTR_LOOP_1050_5f4a = unaff_SI;
-                HINSTANCE16_1050_5f4c = unaff_DI;
+                PTR_LOOP_1050_5f4a = SI_REG;
+                HINSTANCE16_1050_5f4c = DI_REG;
                 PTR_LOOP_1050_5f4e = param_4;
                 LockSegment16(0xffff);
 //                PTR_LOOP_1050_5f52 = (u8 *) (u32_var11 >> 0x10);
