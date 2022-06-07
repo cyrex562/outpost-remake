@@ -6,6 +6,7 @@
 #define OUTPOST_C_PROJ__STRUCTS_2_H_
 
 #include "types.h"
+#include "func_ptrs.h"
 
 typedef struct _astruct_7 {
     int field_0x40;
@@ -15,8 +16,11 @@ typedef struct _astruct_7 {
     u16 field_0x16;
     u16 field_0x2;
     u16 field_0x4;
+    u16 field_0xc;
     int field_0x14;
     u16 field_0x1e;
+    u16 field_0x1a;
+    u16 field_0x18;
 } astruct_7;
 
 typedef struct _astruct_99 {
@@ -322,11 +326,32 @@ typedef struct _astruct_822 {
 
 typedef struct _astruct_825 {
     u8 field0_0x0;
+    u16 field_0x1;
 } astruct_825;
 
 typedef struct _struct_1000_0b20 {
     u16 field_0x0;
-    code field_0x32;
+    code10 field_0x32;
+    u16 field_0x1a;
 } struct_1000_0b20;
+
+typedef struct _struct_1000_1a54 {
+    i16 field_0x14;
+    u16 field_0x18;
+    u16 field_0x1a;
+    u16 field_0x1c;
+
+} struct_1000_1a54;
+
+typedef struct _astruct_1000_0782 {
+    u16 field_0xe;
+    u16 field_0x10;
+    u16 field_0x8;
+    u16 field_0x14;
+} astruct_1000_0782;
+
+typedef struct _astruct_1000_1902 {
+
+} astruct_1000_1902;
 
 #endif //OUTPOST_C_PROJ__STRUCTS_2_H_

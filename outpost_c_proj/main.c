@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include "types.h"
+#include "entry.h"
 
-i16 main()
+
+int main()
 {
-    printf("Hello, World!\n");
+//    printf("Hello, World!\n");
+entry(0,0,0,0,0,0);
     return 0;
 }

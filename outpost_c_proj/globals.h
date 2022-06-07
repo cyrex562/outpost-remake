@@ -24,7 +24,7 @@ u16 u16_1050_0002;
 u16 u32_1050_0004;
 u16 u32_1050_0006;
 u8 DAT_1050_5f30;
-u8* PTR_LOOP_1050_000e;
+u16* PTR_LOOP_1050_000e;
 u8* PTR_LOOP_1050_5f48;
 u8* PTR_LOOP_1050_5f4e;
 char* PTR_LOOP_1050_63fe;
@@ -49,6 +49,10 @@ u16 DAT_1050_5f44;
 code PTR_PTR_1050_5f1a;
 u16 PTR_LOOP_1050_5f1c;
 code PTR_PTR_1050_1f7e;
+u16 u16_1050_61ec;
+u16 PTR_LOOP_1050_5f1e;
+u16 PTR_LOOP_1050_5f20;
+
 
 u16 unaff_BP;
 u16 unaff_CS;
@@ -58,6 +62,8 @@ u8 unaff_AF;
 u16 unaff_SI;
 u16 unaff_DI;
 u16 unaff_ES;
+u16 in_AX;
+u16 in_DX;
 
 
 #endif //OUTPOST_C_PROJ__GLOBALS_H_

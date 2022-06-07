@@ -44,7 +44,7 @@ u16 ___EXPORTEDSTUB();
 void empty_fn_1000_214a();
 
 u32 mem_op_1000_0b20(u16 param_1,
-                     struct_1000_0b20 param_2,
+                     struct_1000_0b20 *pstruct_param_2,
                      u16 param_3);
 
 u16 mem_op_1000_03c6(u16 param_1,
@@ -74,11 +74,11 @@ u32 mem_op_1000_18ec(u16 param_1,
                      u16 param_2);
 
 u16 pass1_1000_1a54(u16 param_1,
-                    i16 param_2,
+                    struct_1000_1a54 *param_2,
                     u16 param_3);
 
 BOOL16 pass1_1000_1afe(u16 param_1,
-                       u16 param_2,
+                       astruct_7 *param_2,
                        u16 param_3);
 
 #endif //OUTPOST_C_PROJ_CMAKE_BUILD_DEBUG_VISUAL_STUDIO_OPS_1_H_

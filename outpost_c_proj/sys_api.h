@@ -182,4 +182,6 @@ BOOL16 GetSaveFileName16(u32 ofn);
 void* swi(u16);
 u32 SegmentLimit(u32 a);
 
+u16 _SHI_INVOKEERRORHANDLER1(void);
+
 #endif //OUTPOST_C_PROJ__SYS_API_H_

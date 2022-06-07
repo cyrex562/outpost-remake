@@ -10,6 +10,7 @@
 #include "globals.h"
 #include "sys_api.h"
 #include "ops_1.h"
+#include "ops_4.h"
 
 i16 *entry(u16 param_1,
            u16 param_2,
