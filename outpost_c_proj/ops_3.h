@@ -29,21 +29,21 @@ BOOL16 msg_box_op_1000_214c(u16 param_1,
 
 void fatal_app_exit_1000_3e9e();
 
-u32 mem_op_1000_0838(astruct_7 *param_1);
+u32 mem_op_1000_0838(Struct7 *param_1);
 
 u32 pass1_1000_0c32(u16 param_1,
                     u16 param_2,
                     u16 param_3);
 
 u8 * mem_op_1000_0308(i16 param_1,
-                      astruct_7 *pstruct7_param_2);
+                      Struct7 *pstruct7_param_2);
 
-DWORD mem_op_1000_1532(astruct_7 *param_1,
+DWORD mem_op_1000_1532(Struct7 *param_1,
                        i16 selector);
 
 u16 pass1_1000_0782(u16 param_1,
                     u16 param_2,
-                    astruct_1000_0782 *param_3,
+                    Struct_1000_0782 *param_3,
                     u16 param_4);
 
 void pass1_1000_05b4(u8 param_1,
@@ -52,7 +52,7 @@ void pass1_1000_05b4(u8 param_1,
 u16 pass1_1000_09ca(i16 param_1,
                     u16 *param_2);
 
-u32 mem_op_1000_0052(astruct_7 *param_1);
+u32 mem_op_1000_0052(Struct7 *param_1);
 
 void pass1_1000_55b1(u32 a, i16 b);
 
@@ -64,14 +64,14 @@ i32 mem_op_1000_1558(u16 param_1,
 void pass1_1000_15ce(u16 *param_1,
                      u16 param_2);
 
-bool mem_op_1000_01b0(astruct_7 *param_1);
+bool mem_op_1000_01b0(Struct7 *param_1);
 
 void pass1_1000_07ac(u16 param_1,
                      i16 param_2,
                      i16 param_3);
 
 u32 mem_op_1000_0510(u16 param_1,
-                     astruct_7 *param_2);
+                     Struct7 *param_2);
 
 u16 pass1_1000_010c(i16 param_1,
                     u16 param_2,
@@ -81,7 +81,7 @@ u16 pass1_1000_010c(i16 param_1,
 
 BOOL16 mem_op_1000_14f2(u16 param_1,
                         u32 param_2,
-                        astruct_7 *param_4,
+                        Struct7 *param_4,
                         u16 param_5,
                         u16 param_3);
 

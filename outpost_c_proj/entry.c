@@ -20,7 +20,7 @@ i16 *entry(u16 param_1,
            u8 *param_5,
            u16 param_6)
 {
-    astruct_822 *paVar1;
+    Struct822 *paVar1;
     i16 *piVar2;
     u16 uVar4;
     char *string_var4;
@@ -36,7 +36,7 @@ i16 *entry(u16 param_1,
     u32 u32_var11;
     u32 uVar10;
     u32 u32_var12;
-    astruct_825 *paVar13;
+    Struct825 *paVar13;
     i16 *piVar1;
 
     u32_var11 = CONCAT22(param_6,
@@ -49,7 +49,7 @@ i16 *entry(u16 param_1,
             bVar9 = param_5 < (u8 *) 0xff00;
             param_5 = param_5 + 0x100;
             if (bVar9) {
-                // (u8 *) &DAT_1050_1050
+                // (u8 *) 0x1050
                 PTR_LOOP_1050_5f50 = 0x1050;
                 PTR_LOOP_1050_5f48 = param_5;
                 PTR_LOOP_1050_5f4a = SI_REG;
@@ -88,7 +88,7 @@ i16 *entry(u16 param_1,
         pass1_1000_24db(init_app_result);
         PTR_LOOP_1050_5f84 = (u8 *) u32_var11;
     } while (true);
-    // &DAT_1050_1050
+    // 0x1050
     dos3_call_1000_23ea( param_4,
                          0x1050,
                         0x0,
@@ -103,8 +103,8 @@ i16 *entry(u16 param_1,
     init_1000_23be( param_5,
                     (u32_var10 >> 0x10));
     fn_ptr_op_1000_24cd(uVar4);
-    paVar13 = (astruct_825 *) CONCAT22(uVar4,
-                                       0x15);
+    paVar13 = (Struct825 *) CONCAT22(uVar4,
+                                     0x15);
     pass1_1000_25a8();
     pass1_1000_2913(0x15);
     string_var4 = poss_str_op_1000_28dc(paVar13);

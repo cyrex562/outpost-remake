@@ -13,7 +13,7 @@ u16 _SHI_INVOKEERRORHANDLER1(void)
     u16 *puStack4;
     u16 uVar3;
 
-    puStack4 = (u16 *) &DAT_1050_1050;
+    puStack4 = (u16 *) 0x1050;
     if (( PTR_LOOP_1050_5f1c |  PTR_PTR_1050_5f1a) == 0x0) {
         pcStack6 = NULL;
         puStack4 = NULL;
@@ -31,7 +31,7 @@ u16 _SHI_INVOKEERRORHANDLER1(void)
     }
     if (( puStack4 |  pcStack6) != 0x0) {
         BVar2 = msg_box_op_1000_1f24( &PTR_PTR_1050_5f1a,
-                                      &DAT_1050_1050,
+                                      0x1050,
                                      0x0);
         if (BVar2 == 0x0) {
             uVar2 = (*pcStack6)();
