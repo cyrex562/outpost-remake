@@ -83,7 +83,7 @@ void mem_op_1000_1408(u16 param_1,
     HGLOBAL16 global_handle_2;
 
     global_handle_1 = GlobalHandle16(selector);
-    //  global_handle_1._0_2_ = (HGLOBAL16)global_handle_1;
+    //  global_handle_1 = (HGLOBAL16)global_handle_1;
     realloc_flags = 0x32;
     // (((param_1 & 0x1000) != 0x0) && ((re_alloc_size != 0x0 || (0xfff0 < re_alloc_size))))
     if (((param_1 & 0x1000) != 0x0) && ((re_alloc_size != 0x0 || 0xfff0 < re_alloc_size))) {

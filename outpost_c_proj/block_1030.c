@@ -4435,7 +4435,7 @@ void pass1_1030_4782(u32 param_1,u16 param_2,u16 param_3,i16 param_4,i16 param_5
     iVar10 = (int)piStack6;
     (iVar10 + 0x12) = uVar11;
     (iVar10 + 0x14) = (int)uVar7;
-    uVar14 = pass1_1008_4772(*(astruct_76 **)(iVar10 + 0xe));
+    uVar14 = pass1_1008_4772(*(Struct76 **)(iVar10 + 0xe));
     uVar4 = (uVar7 >> 0x10);
     iStack154 = (int)uVar14;
     uStack152 = (uVar14 >> 0x10);
@@ -5559,7 +5559,7 @@ void pass1_1030_5a80(u32 param_1,u32 param_2)
 
   uVar2 = (param_1 >> 0x10);
   (u32)((int)param_1 + 0x10) = param_2;
-  uVar3 = pass1_1008_4772(*(astruct_76 **)((int)param_2 + 0xe));
+  uVar3 = pass1_1008_4772(*(Struct76 **)((int)param_2 + 0xe));
   uStack4 = (uVar3 >> 0x10);
   iStack6 = (int)uVar3;
   uStack10 = (u32)(iStack6 + 0x4);
@@ -6251,12 +6251,12 @@ void pass1_1030_62e4(u32 *param_1,u16 *param_2,i32 param_3)
           pass1_1030_8b00(uStack6,(u16 *)CONCAT22(0x1050,local_64),(u16 *)CONCAT22(0x1050,&local_40));
           uStack60 = local_40;
           local_64[0] = iStack44;
-          uStack60._0_2_ = local_40;
+          uStack60 = local_40;
           uStack78 = uStack60;
           uStack76 = local_40;
           uStack76._1_1_ = (char)((u32)local_40 >> 0x18);
           if (uStack76._1_1_ == '\0') {
-            uStack60._0_2_ = 0x0;
+            uStack60 = 0x0;
             local_40 = 0x0;
           }
           uVar6 = (u32)local_40;
@@ -9080,7 +9080,7 @@ void pass1_1030_8c66(u32 param_1,i16 param_2,u8 *param_3,u16 param_4,u32 *param_
   u16 uVar2;
   u32 uStack6;
 
-  pass1_1008_4544(*(astruct_76 **)((int)param_1 + 0x12));
+  pass1_1008_4544(*(Struct76 **)((int)param_1 + 0x12));
   bVar1 = *param_3;
   uVar2 = bVar1;
   uStack6 = (u32)(uVar2 + 0x1);
@@ -11565,7 +11565,7 @@ u32 pass1_1030_b344(u32 param_1)
     pass1_1030_b2aa(NULL,param_1,(u16 *)CONCAT22(0x1050,puStack18));
     puVar1 = (u8 *)(puStack16 | puStack18);
     if (puVar1 == NULL) {
-      local_8._0_2_ = local_a + -0x1;
+      local_8 = local_a + -0x1;
       local_8 = local_c;
       puStack18 = &local_8;
       pass1_1030_b2aa(NULL,param_1,(u16 *)CONCAT22(0x1050,puStack18));

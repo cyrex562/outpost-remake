@@ -77,4 +77,8 @@ void pass1_1000_440c(u16 param_1);
 
 i16 pass1_1000_3e2c(u32 param_1);
 
+u8 str_op_1000_3dbe(char *param_1,
+                    char *param_2,
+                    u16 param_3);
+
 #endif //OUTPOST_C_PROJ__OPS_4_H_

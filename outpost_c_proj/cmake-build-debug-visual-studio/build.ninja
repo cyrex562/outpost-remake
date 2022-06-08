@@ -119,6 +119,27 @@ build CMakeFiles\outpost_c_proj.dir\ops_5.c.obj: C_COMPILER__outpost_c_proj_Debu
   TARGET_COMPILE_PDB = CMakeFiles\outpost_c_proj.dir\
   TARGET_PDB = outpost_c_proj.pdb
 
+build CMakeFiles\outpost_c_proj.dir\win_ops.c.obj: C_COMPILER__outpost_c_proj_Debug C$:\Users\cyrex\Projects\outpost-rs\outpost_c_proj\win_ops.c || cmake_object_order_depends_target_outpost_c_proj
+  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd -std:c11
+  OBJECT_DIR = CMakeFiles\outpost_c_proj.dir
+  OBJECT_FILE_DIR = CMakeFiles\outpost_c_proj.dir
+  TARGET_COMPILE_PDB = CMakeFiles\outpost_c_proj.dir\
+  TARGET_PDB = outpost_c_proj.pdb
+
+build CMakeFiles\outpost_c_proj.dir\mci_ops.c.obj: C_COMPILER__outpost_c_proj_Debug C$:\Users\cyrex\Projects\outpost-rs\outpost_c_proj\mci_ops.c || cmake_object_order_depends_target_outpost_c_proj
+  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd -std:c11
+  OBJECT_DIR = CMakeFiles\outpost_c_proj.dir
+  OBJECT_FILE_DIR = CMakeFiles\outpost_c_proj.dir
+  TARGET_COMPILE_PDB = CMakeFiles\outpost_c_proj.dir\
+  TARGET_PDB = outpost_c_proj.pdb
+
+build CMakeFiles\outpost_c_proj.dir\ops_6.c.obj: C_COMPILER__outpost_c_proj_Debug C$:\Users\cyrex\Projects\outpost-rs\outpost_c_proj\ops_6.c || cmake_object_order_depends_target_outpost_c_proj
+  FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd -std:c11
+  OBJECT_DIR = CMakeFiles\outpost_c_proj.dir
+  OBJECT_FILE_DIR = CMakeFiles\outpost_c_proj.dir
+  TARGET_COMPILE_PDB = CMakeFiles\outpost_c_proj.dir\
+  TARGET_PDB = outpost_c_proj.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target outpost_c_proj
@@ -127,7 +148,7 @@ build CMakeFiles\outpost_c_proj.dir\ops_5.c.obj: C_COMPILER__outpost_c_proj_Debu
 #############################################
 # Link the executable outpost_c_proj.exe
 
-build outpost_c_proj.exe: C_EXECUTABLE_LINKER__outpost_c_proj_Debug CMakeFiles\outpost_c_proj.dir\main.c.obj CMakeFiles\outpost_c_proj.dir\file2.c.obj CMakeFiles\outpost_c_proj.dir\sys_api.c.obj CMakeFiles\outpost_c_proj.dir\utils.c.obj CMakeFiles\outpost_c_proj.dir\entry.c.obj CMakeFiles\outpost_c_proj.dir\ops_1.c.obj CMakeFiles\outpost_c_proj.dir\ops_2.c.obj CMakeFiles\outpost_c_proj.dir\ops_3.c.obj CMakeFiles\outpost_c_proj.dir\ops_4.c.obj CMakeFiles\outpost_c_proj.dir\ops_5.c.obj
+build outpost_c_proj.exe: C_EXECUTABLE_LINKER__outpost_c_proj_Debug CMakeFiles\outpost_c_proj.dir\main.c.obj CMakeFiles\outpost_c_proj.dir\file2.c.obj CMakeFiles\outpost_c_proj.dir\sys_api.c.obj CMakeFiles\outpost_c_proj.dir\utils.c.obj CMakeFiles\outpost_c_proj.dir\entry.c.obj CMakeFiles\outpost_c_proj.dir\ops_1.c.obj CMakeFiles\outpost_c_proj.dir\ops_2.c.obj CMakeFiles\outpost_c_proj.dir\ops_3.c.obj CMakeFiles\outpost_c_proj.dir\ops_4.c.obj CMakeFiles\outpost_c_proj.dir\ops_5.c.obj CMakeFiles\outpost_c_proj.dir\win_ops.c.obj CMakeFiles\outpost_c_proj.dir\mci_ops.c.obj CMakeFiles\outpost_c_proj.dir\ops_6.c.obj
   FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

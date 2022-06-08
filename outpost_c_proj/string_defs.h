@@ -13,4 +13,20 @@ const char s_MciSoundWindow_1050_02bd[] = "";
 
 const char s_MciSound_registerClass_failed_1050_02cc[] = "";
 
+const char s__1050_4415[] = "";
+
+const char s_listbox_1050_4416[] = "";
+
+const char s__mid_1050_14c0[] = "";
+
+const char s__wav_1050_14ba[] = "";
+
+const char s_waveaudio_1050_02a4[] = "";
+
+const char s__mid_1050_02ae[] = "";
+
+const char s_sequencer_1050_02b3[] = "";
+
+
+
 #endif //OUTPOST_C_PROJ__STRING_DEFS_H_

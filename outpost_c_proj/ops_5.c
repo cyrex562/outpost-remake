@@ -964,3 +964,75 @@ void pass1_1010_2816(u32 param_1)
 
 }
 
+
+void fn_ptr_1000_17ce(char *param_1)
+{
+    if (param_1 != NULL) {
+        call_fn_ptr_1000_0dc6(param_1);
+    }
+    return;
+}
+
+
+
+u32 pass1_1008_4772(Struct76 *param_1)
+
+{
+  bool bVar1;
+  Struct76 *iVar2;
+  u16 uVar2;
+
+  uVar2 = ((u32)param_1 >> 0x10);
+  iVar2 = (Struct76 *)param_1;
+  if (*(i32 *)&iVar2->field3_0x6 == 0x0) {
+    pass1_1008_47cc((Struct76 *)((u32)param_1 & 0xffff | (u32)uVar2 << 0x10));
+  }
+  if (*(i32 *)&iVar2->field3_0x6 == 0x0) {
+    bVar1 = false;
+  }
+  else {
+    if (*(i32 *)&iVar2->field5_0xa == 0x0) {
+      pass1_1008_4834((Struct76 *)((u32)param_1 & 0xffff | (u32)uVar2 << 0x10));
+    }
+    bVar1 = true;
+  }
+  if (!bVar1) {
+    return 0x0;
+  }
+  return CONCAT22(((int)&iVar2->field8_0x10 + 0x2),&iVar2->field8_0x10);
+}
+
+
+
+void pass1_1008_47cc(Struct76 *param_1)
+
+{
+  u16 uVar1;
+  u32 uVar2;
+  u32 uVar3;
+  u16 uVar4;
+  Struct76 *iVar5;
+  i16 iVar6;
+  u16 uVar7;
+  u16 uVar8;
+  u32 uStack14;
+
+  uVar7 = ((u32)param_1 >> 0x10);
+  iVar5 = (Struct76 *)param_1;
+  if (*(i32 *)&iVar5->field3_0x6 != 0x0) {
+    uVar2 = (u32)&iVar5->field3_0x6;
+    uVar1 = iVar5->field4_0x8;
+    iVar6 = (int)uVar2;
+    uVar4 = iVar6 + 0xe;
+    iVar5->field8_0x10 = uVar2 & 0xffff0000 | (u32)uVar4;
+    iVar5->field9_0x14 = iVar6 + 0x436;
+    iVar5->field10_0x16 = uVar1 + (-(0xfbd7 < uVar4) & 0x6c);
+    uVar3 = iVar5->field8_0x10;
+    uVar8 = (uVar3 >> 0x10);
+    iVar6 = (int)uVar3;
+    uStack14 = (u32)(iVar6 + 0xe);
+    *(i32 *)&iVar5->field11_0x18 = (long)(uStack14 * *(i32 *)(iVar6 + 0x4) + 0x1f) / 0x20 << 0x2;
+  }
+  return;
+}
+
