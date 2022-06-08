@@ -74,7 +74,7 @@ void pass1_1000_20a2(u16 param_1,
 
 void mem_op_1000_1408(u16 param_1,
                       u32 re_alloc_size,
-                      astruct_7 *param_3,
+                      Struct7 *param_3,
                       i16 selector)
 {
     HGLOBAL16 handle;
@@ -231,7 +231,7 @@ u32 ret_op_1000_55ac(void)
 void init_1000_23be(u16 param_1,
                     u16 param_2)
 {
-    init_op_1008_54aa(0x1050, // &DAT_1050_1050
+    init_op_1008_54aa(0x1050, // 0x1050
                       param_1,
                       param_2,
                       PTR_LOOP_1050_5f52,
@@ -257,7 +257,7 @@ void init_op_1008_54aa(u16 param_1,
     //  u16 DX_REG;
     u16 uVar4;
     //  u16 in_register_0000000a;
-    astruct_57 *paVar5;
+    Struct57 *paVar5;
     //  u16 SI_REG;
     //  u16 DI_REG;
     //  u16 CS_REG;
@@ -310,8 +310,8 @@ void init_op_1008_54aa(u16 param_1,
                              0x0,
                              0x6);
     PTR_LOOP_1050_576a = (u8 *) (uVar6 >> 0x10);
-    paVar5 = (astruct_57 *) CONCAT22(AX_REG,
-                                     PTR_LOOP_1050_576a);
+    paVar5 = (Struct57 *) CONCAT22(AX_REG,
+                                   PTR_LOOP_1050_576a);
     PTR_LOOP_1050_5768 = (u8 *) uVar6;
     HINSTANCE16_1050_038c = (HINSTANCE16) param_7;
     PTR_LOOP_1050_038e = param_6;
@@ -394,7 +394,7 @@ void dos3_call_op_1000_435c(u16 param_1,
     //    u16 in_stack_00000002;
 
     pfn_var1 = (code11) swi(0x21);
-    //    (*pfn_var1)( &DAT_1050_1050);
+    //    (*pfn_var1)( 0x1050);
     pfn_var1(0x1050);
     code pfn_var2 = (code) swi(0x21);
     uVar3 = CX_REG;
@@ -449,10 +449,10 @@ u16 str_op_1008_60e8(u16 param_1,
 {
     u16 uVar1;
     u16 in_register_0000000a;
-    astruct_57 *paVar2;
+    Struct57 *paVar2;
 
-    paVar2 = (astruct_57 *) CONCAT22(in_register_0000000a,
-                                     param_1);
+    paVar2 = (Struct57 *) CONCAT22(in_register_0000000a,
+                                   param_1);
     if (param_2 != NULL) {
         uVar1 = str_op_1000_3da4(param_2);
         uVar1 += 0x1;
@@ -495,7 +495,7 @@ u16 str_op_1000_3da4(char *param_1)
 }
 
 void mem_op_1000_179c(i16 param_1,
-                      astruct_57 *param_2)
+                      Struct57 *param_2)
 {
     u8 *puVar1;
     u8 *puVar2;
@@ -618,7 +618,7 @@ i16 pass1_1000_462e(u16 param_1,
     u16 uVar13;
 
     iStack2 = BP_REG + 0x1;
-    local_4 = 0x1050; //&DAT_1050_1050;
+    local_4 = 0x1050; //0x1050;
     uVar7 = (param_3 * 0x2 + 0x61ae);
     if (((param_2 & 0x3) == 0x0) && (0x2 < param_3)) {
         uVar7 += 0x1;

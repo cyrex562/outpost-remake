@@ -17,7 +17,7 @@ void pass1_1000_20a2(u16 param_1,
 
 void mem_op_1000_1408(u16 param_1,
                       u32 re_alloc_size,
-                      astruct_7 *param_3,
+                      Struct7 *param_3,
                       i16 selector);
 
 void pass1_1000_27d6(u16 param_1);
@@ -46,7 +46,7 @@ u16 str_op_1008_60e8(u16 param_1,char *param_2);
 u16 str_op_1000_3da4(char *param_1);
 
 void mem_op_1000_179c(i16 param_1,
-                      astruct_57 *param_2);
+                      Struct57 *param_2);
 
 void struct_op_1008_0000(u16 *param_1);
 

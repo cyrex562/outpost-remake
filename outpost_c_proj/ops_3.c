@@ -136,7 +136,7 @@ void fatal_app_exit_1000_3e9e()
                    0x0);
 }
 
-u32 mem_op_1000_0838(astruct_7 *param_1)
+u32 mem_op_1000_0838(Struct7 *param_1)
 {
     u16 *puVar1;
     i16 *piVar2;
@@ -176,7 +176,7 @@ u32 mem_op_1000_0838(astruct_7 *param_1)
         } while (piVar9 != piStack4);
         LAB_1000_085b:
         if ((param_1 + 0x18) == 0x0) {
-            // &DAT_1050_1050
+            // 0x1050
             pass1_1000_1e61(CS_REG,
                             0x4,
                             param_1, 0);
@@ -212,7 +212,7 @@ u32 mem_op_1000_0838(astruct_7 *param_1)
             }
             uVar5 = uStack6 >> 0x1;
             if (uStack6 >> 0x1 < (param_1 + 0x18) + 0x14U) {
-                // &DAT_1050_1050
+                // 0x1050
                 UVar7 = pass1_1000_1e61(CS_REG,
                                         0x2,
                                         param_1, 0);
@@ -227,7 +227,7 @@ u32 mem_op_1000_0838(astruct_7 *param_1)
     } while (true);
 }
 
-DWORD mem_op_1000_1532(astruct_7 *param_1,
+DWORD mem_op_1000_1532(Struct7 *param_1,
                        i16 selector)
 {
     DWORD mem_size;
@@ -244,7 +244,7 @@ DWORD mem_op_1000_1532(astruct_7 *param_1,
 
 u16 pass1_1000_0782(u16 param_1,
                     u16 param_2,
-                    astruct_1000_0782 *param_3,
+                    Struct_1000_0782 *param_3,
                     u16 param_4)
 {
     (param_3->field_0xe) = 0x0;
@@ -299,7 +299,7 @@ u16 pass1_1000_09ca(i16 param_1,
 }
 
 
-u32 mem_op_1000_0052(astruct_7 *param_1)
+u32 mem_op_1000_0052(Struct7 *param_1)
 {
     u16 *puVar1;
     u16 uVar2;
@@ -439,7 +439,7 @@ void pass1_1000_15ce(u16 *param_1,
 }
 
 
-bool mem_op_1000_01b0(astruct_7 *param_1)
+bool mem_op_1000_01b0(Struct7 *param_1)
 {
     u16 *puVar1;
     i16 *piVar2;
@@ -569,7 +569,7 @@ void pass1_1000_07ac(u16 param_1,
 }
 
 u32 mem_op_1000_0510(u16 param_1,
-                     astruct_7 *param_2)
+                     Struct7 *param_2)
 {
     u16 *puVar1;
     i16 *piVar2;
@@ -590,12 +590,12 @@ u32 mem_op_1000_0510(u16 param_1,
     uVar5 = (param_2->field_0x2);
     uVar6 = (param_2->field_0x4);
     bVar3 = *(u8 *) (param_2 + 0xc);
-    // &DAT_1050_1050
+    // 0x1050
     DVar12 = mem_op_1000_1532(param_2,
                               0x1050);
     uVar9 =  (DVar12 >> 0x10);
     uVar8 =  DVar12;
-    //  uVar14 = &DAT_1050_1050;
+    //  uVar14 = 0x1050;
     uVar14 = 0x1050;
     if (param_1 != 0x0) {
         uVar7 = (iVar4 + 0x1e);
@@ -693,7 +693,7 @@ u16 pass1_1000_010c(i16 param_1,
 
 BOOL16 mem_op_1000_14f2(u16 param_1,
                         u32 param_2,
-                        astruct_7 *param_4,
+                        Struct7 *param_4,
                         u16 param_5,
                         u16 param_3)
 {
