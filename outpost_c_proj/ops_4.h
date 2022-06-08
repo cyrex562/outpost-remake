@@ -41,7 +41,7 @@ void pass1_1000_4d0c(u16 param_1);
 
 BOOL16 pass1_1000_1fea(void);
 
-u16 str_op_1008_60e8(u16 param_1,char *param_2);
+u16 str_op_1008_60e8(astruct_57 *param_1, char *param_2);
 
 u16 str_op_1000_3da4(char *param_1);
 

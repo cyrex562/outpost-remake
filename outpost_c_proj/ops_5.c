@@ -3,8 +3,6 @@
 //
 
 #include "ops_4.h"
-#include "string_defs.h"
-#include "ops_2.h"
 #include "ops_3.h"
 #include "structs_2.h"
 #include "utils.h"
@@ -56,7 +54,7 @@ u32 mem_op_1000_1902(u16 param_1,
     if ((uVar3 |  *pu_var1) != 0x0) {
         pu_var1[0x17] =  PTR_PTR_1050_5f1a;
 //        pu_var1[0x18] =  &DAT_1050_1050;
-        puVar1[0x18] = 0x1050;
+        pu_var1[0x18] = 0x1050;
         pu_var1[0x15] =  PTR_LOOP_1050_5f1e;
         pu_var1[0x16] =  PTR_LOOP_1050_5f20;
         pUVar6 = pu_var1;
@@ -122,15 +120,15 @@ void mem_op_1000_131c(u16 param_1,
     HGLOBAL16 handle;
     u16 flags;
     bool bVar1;
-    i32 lVar2;
+    i32 i32_var2;
     u16 uStack10;
-    u16 uStack8;
-    i16 iStack6;
+    u16 u16_stack8 = 0;
+    u16 u16_stack10 = 0;
+    i16 i16_stack6 = 0;
 
-    lVar2 = CONCAT22(uStack8,
-                     uStack10);
+    i32_var2 = CONCAT22(u16_stack8, u16_stack10);
     flags = 0x32;
-    iStack6 = 0x1;
+    i16_stack6 = 0x1;
     if (((param_1 & 0x1000) != 0x0) && ((param_2 != 0x0 || (0xfff0 <  param_2)))) {
         param_2 = 0xfff0;
     }
@@ -142,27 +140,27 @@ void mem_op_1000_131c(u16 param_1,
     }
     if ((param_1 & 0x4) != 0x0) {
         flags &= 0xfffd;
-        lVar2 = mem_op_1000_1558( param_2,
-                                 param_2);
+        i32_var2 = mem_op_1000_1558(param_2,
+                                    param_2);
     }
     do {
         handle = GLobalAlloc16(param_2 & 0xffff | (u32) param_2 << 0x10,
                                flags);
-        uStack8 =  ((u32) lVar2 >> 0x10);
-        uStack10 =  lVar2;
+        u16_stack8 =  ((u32) i32_var2 >> 0x10);
+        uStack10 =  i32_var2;
         if (handle != 0x0) {
             break;
         }
         flags &= 0xffcf;
-        bVar1 = iStack6 != 0x0;
-        iStack6 = iStack6 + -0x1;
+        bVar1 = i16_stack6 != 0x0;
+        i16_stack6 = i16_stack6 + -0x1;
     } while (bVar1);
     if ((param_1 & 0x4) != 0x0) {
         if (handle != 0x0) {
             GlobalPageLock16(handle);
         }
         pass1_1000_15ce((u16 *) uStack10,
-                        uStack8);
+                        u16_stack8);
     }
     if (handle == 0x0) {
         return;
@@ -253,7 +251,7 @@ u32 mem_op_1000_1b9a(u16 param_1,
     u16 uVar5;
     i16 iVar6;
     i32 lVar7;
-    u16 *puStack8;
+    u16 *pu16_stack8;
     u16 uStack4;
 
 //    (param_2 + 0x14) = 0x0;
@@ -274,12 +272,12 @@ u32 mem_op_1000_1b9a(u16 param_1,
     uVar4 = (param_2 + 0x10);
     uVar5 = (param_2 + 0x12);
     while (true) {
-        puStack8 = (u16 *) CONCAT22(uVar5,
+        pu16_stack8 = (u16 *) CONCAT22(uVar5,
                                     uVar4);
         if ((uVar5 | uVar4) == 0x0) {
             break;
         }
-        uVar1 = *puStack8;
+        uVar1 = *pu16_stack8;
         uVar2 = (uVar4 + 0x2);
         mem_op_1000_13ce(uVar4,
                          uVar5);
@@ -304,4 +302,85 @@ u32 pass1_1000_52be(u16 param_1,
     }
     return (u32) param_1 * (u32) param_3 & 0xffff
         | (u32) ( ((u32) param_1 * (u32) param_3 >> 0x10) + param_2 * param_3 + param_1 * param_4) << 0x10;
+}
+
+void fn_ptr_op_1000_24cd(u16 param_1)
+{
+    code *pcVar1;
+    i16 iVar2;
+    u16 uVar2;
+    u16 uVar6;
+    u16 uVar5;
+    u16 uVar3;
+    u16 uVar4;
+
+    U8_DAT_1050_5fc9 = '\0';
+    fn_ptr_op_1000_2594();
+    fn_ptr_op_1000_2594();
+    ret_op_1000_55ac();
+    fn_ptr_op_1000_2594();
+    fn_ptr_op_1000_2594();
+    dos3_op_1000_256b();
+    pcVar1 = (code *) swi(0x21);
+    (*pcVar1)();
+    return;
+}
+
+u16 pass1_1000_3de8(char *param_1,
+                    char *param_2,
+                    u16 param_3,
+                    u16 param_4,
+                    u16 param_5)
+{
+    u8 *pbVar1;
+    char *pcVar2;
+    char *pcVar3;
+    u8 bVar4;
+    u16 uVar5;
+    i16 iVar6;
+    char *pcVar7;
+    char *pcVar8;
+    u16 uVar9;
+    u16 uVar10;
+    bool bVar11;
+
+    if (param_3 != 0x0) {
+        uVar9 =  ((u32) param_1 >> 0x10);
+        pcVar8 = (char *) param_1;
+        uVar5 = param_3;
+        pcVar7 = pcVar8;
+        do {
+            if (uVar5 == 0x0) {
+                break;
+            }
+            uVar5 -= 0x1;
+            pcVar2 = pcVar7;
+            pcVar7 = pcVar7 + 0x1;
+        } while (*pcVar2 != '\0');
+        iVar6 = param_3 - uVar5;
+        uVar10 =  ((u32) param_2 >> 0x10);
+        pcVar7 = (char *) param_2;
+        do {
+            if (iVar6 == 0x0) {
+                break;
+            }
+            iVar6 += -0x1;
+            pcVar3 = pcVar8;
+            pcVar8 = pcVar8 + 0x1;
+            pcVar2 = pcVar7;
+            pcVar7 = pcVar7 + 0x1;
+        } while (*pcVar2 == *pcVar3);
+        bVar4 = pcVar7[-0x1];
+        uVar5 = 0x0;
+        pbVar1 = (u8 *) (pcVar8 + -0x1);
+        bVar11 = bVar4 == *pbVar1;
+        if (bVar4 < *pbVar1 || bVar11) {
+            if (bVar11) {
+                return 0x0;
+            }
+            uVar5 = 0xfffe;
+        }
+        param_3 = ~uVar5;
+    }
+    return param_3;
 }

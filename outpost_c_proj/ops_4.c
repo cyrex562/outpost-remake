@@ -10,6 +10,7 @@
 #include "string_defs.h"
 #include "utils.h"
 #include "ops_5.h"
+#include "ops_2.h"
 
 void pass1_1000_0368(u16 param_1,
                      u16 param_2,
@@ -130,8 +131,8 @@ void pass1_1000_27d6(u16 param_1)
     i16 iVar7;
     u16 uVar7;
     i16 iVar8;
-    u16 *puVar7;
-    u16 *puVar8;
+//    u16 *puVar7;
+    void* dos_env_2;
     i16 iVar9;
     char *piVar9;
     i16 *piVar10;
@@ -139,22 +140,23 @@ void pass1_1000_27d6(u16 param_1)
     char *piVar12;
     bool bVar13;
     void *dos_env;
-    u16 *puVar14;
+    void* dos_env_3;
     i16 *piVar1;
     u16 *puVar4;
     i16 *piVar4;
+    u8 u8_var4 = 0;
 
     dos_env = GetDOSEnvironment16();
-    puVar7 = (u16 *) ((u32) dos_env >> 0x10);
+//    puVar7 = (u16 *) ((u32) dos_env >> 0x10);
     if (dos_env != 0x0) {
-        puVar7 = NULL;
+//        puVar7 = NULL;
     }
     iVar9 = 0x0;
     pcVar11 = NULL;
     iVar7 = -0x1;
-    if (puVar7 != NULL) {
-        //        cVar4 = *NULL;
-        while (cVar4 != '\0') {
+    if (dos_env != NULL) {
+        //        u8_var4 = *NULL;
+        while (u8_var4 != '\0') {
             do {
                 if (iVar7 == 0x0) {
                     break;
@@ -170,17 +172,17 @@ void pass1_1000_27d6(u16 param_1)
         }
     }
     uVar7 = 0x9;
-    puVar8 = puVar7;
+    dos_env_2 = dos_env;
     //    puVar5 = pass1_1000_2950(0x9,
     //                             puVar7,
     //                              (pcVar11 + 0x1) & 0xfffe);
-    puVar14 = puVar8;
+    dos_env_3 = dos_env_2;
     ppuVar6 = (u16 **) pass1_1000_2950(uVar7,
-                                       puVar8,
+                                       dos_env_2,
                                        (iVar9 + 0x1) * 0x4);
     piVar9 = NULL;
     PTR_LOOP_1050_5fbe = (u8 *) ppuVar6;
-    PTR_LOOP_1050_5fc0 = (u8 *) puVar8;
+    PTR_LOOP_1050_5fc0 = (u8 *) dos_env_2;
     do {
         if (iVar9 == 0x0) {
             *ppuVar6 = NULL;
@@ -208,17 +210,17 @@ void pass1_1000_27d6(u16 param_1)
             }
         } else {
             LAB_1000_2867:
-            *ppuVar6 = puVar5;
-            ppuVar6[0x1] = puVar14;
+//            *ppuVar6 = puVar5;
+            ppuVar6[0x1] = dos_env_3;
             ppuVar6 = ppuVar6 + 0x2;
         }
         do {
             piVar2 = piVar9;
             piVar9 = (i16 *) (piVar9 + 0x1);
             cVar4 = *(char *) piVar2;
-            puVar4 = puVar5;
-            puVar5 = (u16 *) (puVar5 + 0x1);
-            *(char *) puVar4 = cVar4;
+//            puVar4 = puVar5;
+//            puVar5 = (u16 *) (puVar5 + 0x1);
+//            *(char *) puVar4 = cVar4;
         } while (cVar4 != '\0');
         iVar9 += -0x1;
     } while (true);
@@ -226,6 +228,7 @@ void pass1_1000_27d6(u16 param_1)
 
 u32 ret_op_1000_55ac(void)
 {
+    return 0;
 }
 
 void init_1000_23be(u16 param_1,
@@ -263,8 +266,8 @@ void init_op_1008_54aa(u16 param_1,
     //  u16 CS_REG;
     u32 uVar6;
     u32 uVar7;
-    u16 in_stack_0000ffea;
-    u16 in_stack_0000ffec;
+    u16 in_stack_0000ffea = 0;
+    u16 in_stack_0000ffec = 0;
     u32 *puStack12;
     u32 uVar2;
 
@@ -384,7 +387,7 @@ void dos3_call_op_1000_435c(u16 param_1,
     //    u16 CX_REG;
     u16 uVar3;
     //    u16 DX_REG;
-    u16 DX_REG_00;
+//    u16 DX_REG_00;
     //    u16 DX_REG;
     u16 uVar4;
     //    u16 SS_REG;
@@ -400,7 +403,7 @@ void dos3_call_op_1000_435c(u16 param_1,
     uVar3 = CX_REG;
     uVar2 = DX_REG;
     (pfn_var2)();
-    uVar6 = DX_REG_00 >> 0x8;
+    uVar6 = DX_REG >> 0x8;
     cVar7 = (char) uVar3;
     pfn_var1 = (code11) swi(0x21);
     (pfn_var1)(uVar3 >> 0x8);
@@ -444,23 +447,22 @@ BOOL16 pass1_1000_1fea(void)
     return 0x1;
 }
 
-u16 str_op_1008_60e8(u16 param_1,
+u16 str_op_1008_60e8(astruct_57 *param_1,
                      char *param_2)
 {
     u16 uVar1;
     u16 in_register_0000000a;
     astruct_57 *paVar2;
 
-    paVar2 = (astruct_57 *) CONCAT22(in_register_0000000a,
-                                     param_1);
+//    paVar2 = (astruct_57 *) CONCAT22(in_register_0000000a,
+//                                     param_1);
     if (param_2 != NULL) {
         uVar1 = str_op_1000_3da4(param_2);
         uVar1 += 0x1;
         mem_op_1000_179c(uVar1,
-                         paVar2);
-        if ((paVar2->field0_0x0 | uVar1) != 0x0) {
-            unk_str_op_1000_3d3e((char *) CONCAT22(paVar2,
-                                                   uVar1),
+                         param_1);
+        if ((param_1->field0_0x0 | uVar1) != 0x0) {
+            unk_str_op_1000_3d3e(param_1,
                                  param_2);
             return uVar1;
         }
@@ -571,7 +573,7 @@ u32 mem_op_1000_1b68(u16 param_1,
                      u16 param_2,
                      u16 param_3)
 {
-    //    u16 unaff_CS;
+    //    u16 CS_REG;
     u32 uVar1;
 
     if ((param_2 + 0x14) != -0x4153) {
@@ -818,7 +820,7 @@ void pass1_1000_440c(u16 param_1)
         uVar9 = 0x0;
         uVar8 = 0xe10;
         uVar3 = pass1_1000_3e2c((u32) pcStack8 & 0xffff | (u32) param_1 << 0x10);
-        _DAT_1050_61ce = pass1_1000_52be(uVar3,
+        DAT_1050_61ce = pass1_1000_52be(uVar3,
                                          uVar5,
                                          uVar8,
                                          uVar9);
@@ -836,35 +838,35 @@ void pass1_1000_440c(u16 param_1)
                                     uVar8,
                                     uVar9);
             uVar6 = (uVar7 >> 0x10);
-            _DAT_1050_61ce = uVar7 + _DAT_1050_61ce;
+            DAT_1050_61ce = uVar7 + DAT_1050_61ce;
             for (; (pcVar2 = pcStack8, '/' < *pcStack8 && (*pcStack8 < ':'));
                    pcStack8 = (char *) ((u32) pcStack8 & 0xffff0000 | (u32) (pcStack8 + 0x1))) {
             }
             if (*pcStack8 == ':') {
                 pcStack8 = (char *) ((u32) pcStack8 & 0xffff0000 | (u32) (pcStack8 + 0x1));
                 iVar4 = pass1_1000_3e2c((u32) pcVar2 & 0xffff0000 | (u32) (pcStack8 + 0x1));
-                _DAT_1050_61ce += CONCAT22(uVar6,
+                DAT_1050_61ce += CONCAT22(uVar6,
                                            iVar4);
                 for (; ('/' < *pcStack8 && (*pcStack8 < ':'));
                        pcStack8 = (char *) ((u32) pcStack8 & 0xffff0000 | (u32) (pcStack8 + 0x1))) {
                 }
             }
         }
-        PTR_LOOP_1050_61d0 = (u8 *) (_DAT_1050_61ce >> 0x10);
+        PTR_LOOP_1050_61d0 = (u8 *) (DAT_1050_61ce >> 0x10);
         if (cVar1 == '-') {
-            _DAT_1050_61ce = CONCAT22(-(PTR_LOOP_1050_61d0 + (DAT_1050_61ce != 0x0)),
+            DAT_1050_61ce = CONCAT22(-(PTR_LOOP_1050_61d0 + (DAT_1050_61ce != 0x0)),
                                       -DAT_1050_61ce);
         }
         DAT_1050_61d2 = *pcStack8;
         if (DAT_1050_61d2 == 0x0) {
-            *_PTR_PTR_1050_61e0 = '\0';
+            *DAT_1050_61e0 = '\0';
         } else {
-            str_op_1000_3dbe(_PTR_PTR_1050_61e0,
+            str_op_1000_3dbe(DAT_1050_61e0,
                              pcStack8,
                              0x3);
         }
     }
-    PTR_LOOP_1050_61d0 = (u8 *) (_DAT_1050_61ce >> 0x10);
+//    PTR_LOOP_1050_61d0 = (u8 *) (DAT_1050_61ce >> 0x10);
     return;
 }
 
@@ -933,15 +935,15 @@ i16 pass1_1000_3ec0(u16 param_1,
 
     puVar4 = (u32 *) CONCAT22(PTR_LOOP_1050_5fc0,
                               PTR_LOOP_1050_5fbe);
-    if (((PTR_LOOP_1050_5fc0 | PTR_LOOP_1050_5fbe) != 0x0) && ((param_2 | param_1) != 0x0)) {
+    if (((PTR_LOOP_1050_5fbe) != 0x0) && ((param_2 | param_1) != 0x0)) {
         uVar1 = str_op_1000_3da4((char *) CONCAT22(param_2,
                                                    param_1));
         while (true) {
             uVar4 = (u16) ((u32) puVar4 >> 0x10);
             uVar3 = (u16) puVar4;
-            if (((uVar3 + 0x2) | puVar4) == 0x0) {
-                break;
-            }
+//            if (((uVar3 + 0x2) | puVar4) == 0x0) {
+//                break;
+//            }
             uVar2 = str_op_1000_3da4((char *) CONCAT22((uVar3 + 0x2),
                                                        puVar4));
             if (((uVar1 < uVar2) && (*(char *) (*puVar4 + uVar1) == '=')) && (uVar2 =

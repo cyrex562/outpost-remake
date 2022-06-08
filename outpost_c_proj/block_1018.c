@@ -2274,7 +2274,7 @@ void struct_1018_229c(u8 *param_1,astruct_19 *param_2,u16 param_3)
   u16 in_register_0000000a;
   u32 uVar4;
   astruct_57 *paVar5;
-  u16 unaff_CS;
+  u16 CS_REG;
   i16 iVar6;
 
   uVar4 = CONCAT22(in_register_0000000a,param_1);
@@ -2299,7 +2299,7 @@ void struct_1018_229c(u8 *param_1,astruct_19 *param_2,u16 param_3)
   ((int)param_2 + 0x1e) = 0x1018;
   PTR_LOOP_1050_4230 = param_2;
   pass1_1018_4dce((u8 *)uVar4,param_2,0x105);
-  uVar1 = FUN_1010_830a(uVar1,uVar4,unaff_CS,_u16_1050_14cc,0x1a8);
+  uVar1 = FUN_1010_830a(uVar1,uVar4,CS_REG,_u16_1050_14cc,0x1a8);
   ((int)param_2 + 0x2a) = uVar1;
   ((int)param_2 + 0x2c) = (int)uVar4;
   pass1_1000_4906((StructD *)((u32)param_2 & 0xffff0000 | ZEXT24((u16 *)((int)param_2 + 0x2eU))),NULL,0x10);
@@ -2354,7 +2354,7 @@ void pass1_1018_2440(StructD *param_1)
   u16 uVar6;
   StructD *uVar5;
   u16 uVar7;
-  u16 unaff_CS;
+  u16 CS_REG;
   u16 *puStack6;
   u16 uVar2;
   u32 *puVar1;
@@ -2374,20 +2374,20 @@ void pass1_1018_2440(StructD *param_1)
       puVar5 = &uVar5->field_0x1c;
       uVar6 = uVar7;
     }
-    unaff_CS = 0x1008;
+    CS_REG = 0x1008;
     pass1_1008_92b2(_PTR_LOOP_1050_0388,0x73,CONCAT22(uVar6,puVar5));
   }
   puVar1 = (u32*)&uVar5->field_0x2a;
   uVar2 = &uVar5->field29_0x2c;
   if ((uVar2 | puVar1) != 0x0) {
     ppcVar4 = (code **)*puVar1;
-    (**ppcVar4)(unaff_CS,puVar1,uVar2,0x1);
+    (**ppcVar4)(CS_REG,puVar1,uVar2,0x1);
   }
   puVar2 = (u32*)&uVar5->field_0x6e;
   uVar3 = &uVar5->field_0x70;
   if ((uVar3 | puVar2) != 0x0) {
     ppcVar4 = (code **)*puVar2;
-    (**ppcVar4)(unaff_CS,puVar2,uVar3,0x1);
+    (**ppcVar4)(CS_REG,puVar2,uVar3,0x1);
   }
   if (param_1 == NULL) {
     puVar4 = NULL;
@@ -5322,7 +5322,7 @@ void unk_win_ui_op_1018_4f18(u32 param_1,astruct_57 *param_2,astruct_39 *param_3
   astruct_39 *iVar6;
   u16 uVar10;
   u8 uVar11;
-  u16 unaff_CS;
+  u16 CS_REG;
   HWND16 HVar12;
   RECT16 local_12;
   i16 iStack14;
@@ -5332,7 +5332,7 @@ void unk_win_ui_op_1018_4f18(u32 param_1,astruct_57 *param_2,astruct_39 *param_3
   u32 uVar5;
   astruct_57 *paVar8;
 
-  uVar2 = FUN_1010_830a((int)param_1,param_2,unaff_CS,_u16_1050_14cc,param_4);
+  uVar2 = FUN_1010_830a((int)param_1,param_2,CS_REG,_u16_1050_14cc,param_4);
   uVar5 = (u32)uVar2;
   uVar6 = SUB42(param_2,0x0);
   puStack6 = (u32 *)CONCAT22(uVar6,uVar2);
@@ -10198,7 +10198,7 @@ void draw_text_1018_c742(u16 param_1,astruct_36 *struct36_param_1,HDC16 hdc_2,i1
 {
   i16 *piVar2;
   i16 iVar3;
-  u8 extraout_AH;
+  u8 AH_REG;
   u8 uVar3;
   i16 iVar5;
   i16 iVar1;
@@ -10237,7 +10237,7 @@ void draw_text_1018_c742(u16 param_1,astruct_36 *struct36_param_1,HDC16 hdc_2,i1
     rect_12.x = pstruct36_4->field241_0xfa + pstruct36_4->field244_0x100;
     rect_12.y = pstruct36_4->field242_0xfc + pstruct36_4->field245_0x102;
     DrawText16(0x10,(RECT16 *)CONCAT22(0x1050,&rect_12),-0x1,pstruct36_4->string_0x108,*_hdc_2);
-    SetTextColor16(CONCAT22(param_1,CONCAT11(extraout_AH,uVar3)),*_hdc_2);
+    SetTextColor16(CONCAT22(param_1,CONCAT11(AH_REG,uVar3)),*_hdc_2);
     SetBkColor16(color,*_hdc_2);
   }
   return;

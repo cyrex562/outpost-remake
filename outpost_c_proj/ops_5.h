@@ -45,4 +45,12 @@ u8 str_op_1000_3dbe(char *param_1,
                        char *param_2,
                        u16 param_3);
 
+void fn_ptr_op_1000_24cd(u16 param_1);
+
+u16 pass1_1000_3de8(char *param_1,
+                    char *param_2,
+                    u16 param_3,
+                    u16 param_4,
+                    u16 param_5);
+
 #endif //OUTPOST_C_PROJ__OPS_5_H_

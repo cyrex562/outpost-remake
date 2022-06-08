@@ -9,7 +9,7 @@
 
 i16 *entry(u16 param_1,
            u16 param_2,
-           i16 param_3,
+           i16 init_app_result,
            u8 *param_4,
            u8 *param_5,
            u16 param_6);

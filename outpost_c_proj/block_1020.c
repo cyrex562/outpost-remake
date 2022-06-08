@@ -987,7 +987,7 @@ void win_help_op_1020_0ec4(u16 param_1,u32 *param_2,u16 param_3)
   u16 in_register_0000000a;
   astruct_57 *paVar6;
   u16 uVar7;
-  u16 unaff_CS;
+  u16 CS_REG;
   astruct_477 *paVar8;
   u32 *puVar9;
   u32 uVar10;
@@ -1043,7 +1043,7 @@ void win_help_op_1020_0ec4(u16 param_1,u32 *param_2,u16 param_3)
     }
     cVar2 = (char)param_3;
     if ((u8)(cVar2 + 0x91U) == 0x0) {
-      uVar4 = FUN_1010_830a(param_3 & 0xff00 | (u8)(cVar2 + 0x91U),paVar6,unaff_CS,_u16_1050_14cc,0x1f8);
+      uVar4 = FUN_1010_830a(param_3 & 0xff00 | (u8)(cVar2 + 0x91U),paVar6,CS_REG,_u16_1050_14cc,0x1f8);
       WinHelp16(0x28,0x1,(char *)CONCAT22((int)paVar6,uVar4),*(HWND16 *)(uVar3 + 0x8));
       return;
     }
@@ -2908,7 +2908,7 @@ void invalidate_rect_1020_2ae4(u16 param_1,u32 *param_2,u16 param_3,u16 param_4)
   astruct_57 *paVar7;
   u16 uVar8;
   u16 uVar9;
-  u16 unaff_CS;
+  u16 CS_REG;
   astruct_477 *paVar10;
   u32 *puVar11;
   u32 uVar12;
@@ -2968,7 +2968,7 @@ void invalidate_rect_1020_2ae4(u16 param_1,u32 *param_2,u16 param_3,u16 param_4)
     if (param_3 < 0xfc) {
       cVar3 = (char)param_3;
       if ((u8)(cVar3 + 0x91U) == 0x0) {
-        uVar5 = FUN_1010_830a(param_3 & 0xff00 | (u8)(cVar3 + 0x91U),paVar7,unaff_CS,_u16_1050_14cc,0x1f8);
+        uVar5 = FUN_1010_830a(param_3 & 0xff00 | (u8)(cVar3 + 0x91U),paVar7,CS_REG,_u16_1050_14cc,0x1f8);
         WinHelp16(0x2a,0x1,(char *)CONCAT22((int)paVar7,uVar5),*(HWND16 *)(uVar8 + 0x8));
         return;
       }
@@ -3144,7 +3144,7 @@ void load_draw_op_1020_2ede(astruct_57 *param_1,u16 param_2,astruct_40 *param_3,
   HGDIOBJ16 h_null_brush;
   u8 *in_DX;
   astruct_40 *struct_1;
-  i16 unaff_DI;
+  i16 DI_REG;
   u16 uVar5;
   u16 unaff_SS;
   u16 *puVar5;
@@ -3841,7 +3841,7 @@ void destroy_window_1020_3b3e(astruct_30 *param_1)
   astruct_30 *paVar6;
   astruct_30 *struct_5;
   astruct_30 *struct_6;
-  u16 unaff_CS;
+  u16 CS_REG;
 
   struct_6 = (astruct_30 *)((u32)param_1 >> 0x10);
   struct_5 = (astruct_30 *)param_1;
@@ -3849,14 +3849,14 @@ void destroy_window_1020_3b3e(astruct_30 *param_1)
   if (struct_5->field261_0x10a != 0x0) {
     lVar4 = struct_5->field261_0x10a;
     // 0x1538
-    unaff_CS = SUB42(s_tile2_bmp_1050_1538,0x0);
+    CS_REG = SUB42(s_tile2_bmp_1050_1538,0x0);
     DestroyWindow16(*(HWND16 *)((int)lVar4 + 0x6));
   }
   puVar1 = struct_5->field246_0xf6;
   uVar2 = struct_5->field247_0xf8;
   if ((uVar2 | puVar1) != 0x0) {
     ppcVar3 = (code **)*puVar1;
-    (**ppcVar3)(unaff_CS,puVar1);
+    (**ppcVar3)(CS_REG,puVar1);
   }
   (u32)&struct_5->field246_0xf6 = 0x0;
   if (struct_5->field248_0xfa != 0x0) {
@@ -6992,7 +6992,7 @@ u16 unk_destroy_win_op_1020_694c(u16 param_1,StructA *param_2,u16 param_3)
   u32 uVar6;
   StructA *iVar5;
   StructA *uVar4;
-  u16 unaff_CS;
+  u16 CS_REG;
   WPARAM16 wparam;
 
   uVar6 = CONCAT22(in_register_0000000a,param_1);
@@ -7002,7 +7002,7 @@ u16 unk_destroy_win_op_1020_694c(u16 param_1,StructA *param_2,u16 param_3)
     uVar4 = (StructA *)((u32)param_2 >> 0x10);
     if (param_3 < 0x12c) {
       if (param_3 == 0x6f) {
-        uVar2 = FUN_1010_830a(0x0,uVar6,unaff_CS,_u16_1050_14cc,0x1f8);
+        uVar2 = FUN_1010_830a(0x0,uVar6,CS_REG,_u16_1050_14cc,0x1f8);
         BVar3 = WinHelp16(0x29,0x1,(char *)CONCAT22((int)uVar6,uVar2),iVar5->field4_0x8);
         return BVar3;
       }
@@ -9280,7 +9280,7 @@ void pass1_1020_8eaa(astruct_20 *param_1,u32 param_2)
   astruct_57 *paVar6;
   astruct_20 *iVar4;
   u16 unaff_SI;
-  u16 unaff_DI;
+  u16 DI_REG;
   astruct_20 *uVar4;
   u16 *puVar8;
   u32 *puVar9;
@@ -9323,7 +9323,7 @@ void pass1_1020_8eaa(astruct_20 *param_1,u32 param_2)
   pass1_1020_8712((u32)param_1 & 0xffff | ZEXT24(uVar4) << 0x10,(i16 *)CONCAT22(0x1050,local_a),
                   (astruct_76 *)CONCAT22((int)paVar6,iVar4->field141_0xb4),
                   (u16 *)((u32)param_1 & 0xffff0000 | ZEXT24(puVar1)));
-  puVar9 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,(u8 **)CONCAT22(unaff_DI,0x2),in_stack_0000fe9c,
+  puVar9 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,(u8 **)CONCAT22(DI_REG,0x2),in_stack_0000fe9c,
                            in_stack_0000ffc0,in_stack_0000ffc6,in_stack_0000ffca);
   iVar4->field144_0xba = puVar9;
   iVar4->field145_0xbc = ((u32)puVar9 >> 0x10);

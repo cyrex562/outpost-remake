@@ -23,8 +23,8 @@ void pass1_1000_262c(u8 *param_1,
                      u8 *param_2,
                      u8 *param_3);
 
-u16 *pass1_1000_2950(i16 param_1,
-                     u16 param_2,
+u8 * pass1_1000_2950(i16 param_1,
+                     u8 *param_2,
                      u16 param_3);
 
 u16 mem_1000_167a(u16 param_1,
@@ -50,7 +50,7 @@ u32 mem_op_1000_0b20(u16 param_1,
 u16 mem_op_1000_03c6(u16 param_1,
                      i16 param_2,
                      u16 param_3,
-                     u16 param_4,
+                     astruct_7 *param_4,
                      u8 param_5,
                      u16 param_6);
 

@@ -11,10 +11,11 @@
 #include "sys_api.h"
 #include "ops_1.h"
 #include "ops_4.h"
+#include "ops_5.h"
 
 i16 *entry(u16 param_1,
            u16 param_2,
-           i16 param_3,
+           i16 init_app_result,
            u8 *param_4,
            u8 *param_5,
            u16 param_6)
@@ -43,7 +44,7 @@ i16 *entry(u16 param_1,
     do {
         InitTask16(NULL);
         PTR_LOOP_1050_5f84 = (u8 *) u32_var11;
-        if (param_3 != 0x0) {
+        if (init_app_result != 0x0) {
             PTR_LOOP_1050_5f7e = 0x1050;
             bVar9 = param_5 < (u8 *) 0xff00;
             param_5 = param_5 + 0x100;
@@ -74,17 +75,17 @@ i16 *entry(u16 param_1,
                 DAT_1050_5f87 = 0x0;
                 WaitEvent16(0x0);
                 PTR_LOOP_1050_5f84 = u32_var11;
-                param_3 = InitApp16(HINSTANCE16_1050_5f4c);
+                init_app_result = InitApp16(HINSTANCE16_1050_5f4c);
                 PTR_LOOP_1050_5f84 = u32_var11;
-                if (param_3 != 0x0) {
+                if (init_app_result != 0x0) {
                     break;
                 }
             }
         }
-//        param_3 = CONCAT11((char) ( param_3 >> 0x8),
+//        init_app_result = CONCAT11((char) ( init_app_result >> 0x8),
 //                           0xff);
-        param_3 = ((param_3 >> 0x8) << 0x8) | 0xff;
-        pass1_1000_24db(param_3);
+        init_app_result = ((init_app_result >> 0x8) << 0x8) | 0xff;
+        pass1_1000_24db(init_app_result);
         PTR_LOOP_1050_5f84 = (u8 *) u32_var11;
     } while (true);
     // &DAT_1050_1050
@@ -100,7 +101,7 @@ i16 *entry(u16 param_1,
     u32_var10 = ret_op_1000_55ac();
     uVar4 =  u32_var10;
     init_1000_23be( param_5,
-                    (uVar10 >> 0x10));
+                    (u32_var10 >> 0x10));
     fn_ptr_op_1000_24cd(uVar4);
     paVar13 = (astruct_825 *) CONCAT22(uVar4,
                                        0x15);
@@ -123,10 +124,9 @@ i16 *entry(u16 param_1,
             paVar1 = paVar8;
             paVar8 = paVar8 + 0x1;
         } while (paVar1->field0_0x0 != '\r');
-        (paVar8 + -0x1)->field0_0x0 = '\0';
+//        (paVar8 + -0x1)->field0_0x0 = '\0';
     }
-    FatalAppExit16((char *) CONCAT22(0x1050,
-                                     string_var4),
+    FatalAppExit16(string_var4,
                    0x0);
     FatalExit();
     piVar7 = (i16 *) &PTR_LOOP_1050_63fe;
