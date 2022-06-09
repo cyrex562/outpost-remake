@@ -160,7 +160,7 @@ void str_1000_4d58(char *in_string_1,
     }
     if (((uStack10 | uStack12) != 0x0) && ( in_string_1 <= uStack12)) {
         if (param_4 != 0x0) {
-            uVar1 = uStack12 -  in_string_1;
+//            uVar1 = uStack12 -  in_string_1;
             if (0xff <  uVar1) {
                 uVar1 = 0xff;
             }
@@ -184,7 +184,7 @@ void str_1000_4d58(char *in_string_1,
         return;
     }
     if (param_4 != 0x0) {
-        uVar1 = uVar3 -  in_string_1;
+//        uVar1 = uVar3 -  in_string_1;
         if (0xff <  uVar1) {
             uVar1 = 0xff;
         }
@@ -209,7 +209,7 @@ u16 *pass1_1000_3cea(StructB *param_1,
     i16 iVar4;
     u16 uVar5;
     u16 uVar6;
-    StructB *pstruct_7;
+//    StructB *pstruct_7;
     char *string_8;
     char *pUVar9;
     StructB *pstruct_10;
@@ -220,17 +220,17 @@ u16 *pass1_1000_3cea(StructB *param_1,
 //    uVar11 =  (param_1 >> 0x10);
     bVar13 = true;
     iVar4 = -0x1;
-    pstruct_7 = param_1;
+    StructB* pstruct_7 = param_1;
     do {
         if (iVar4 == 0x0) {
             break;
         }
         iVar4 += -0x1;
         pstruct_1 = param_1;
-        pstruct_7 = ( pstruct_7 + 0x1);
+//        pstruct_7 = ( pstruct_7 + 0x1);
         bVar13 = pstruct_1 == 0;
     } while (!bVar13);
-    pstruct_10 = (u16 *) ( pstruct_7 + -0x1);
+//    pstruct_10 = (u16 *) ( pstruct_7 + -0x1);
 //    uVar12 =  ((u32) param_2 >> 0x10);
     string_8 = param_2;
     uVar5 = 0xffff;
@@ -252,22 +252,23 @@ u16 *pass1_1000_3cea(StructB *param_1,
     if (uVar5 == 0x0) {
         pstruct_1 = pUVar9;
         pUVar9 = pUVar9 + 0x1;
-        *pstruct_10 = *pstruct_1;
+//        *pstruct_10 = *pstruct_1;
         uVar5 = 0xfffe;
         pstruct_10 = (u16 *) ( pstruct_7 + 0x1);
-    } else if (( pUVar9 & 0x1) != 0x0) {
-        pstruct_1 = pUVar9;
-        pUVar9 = (u16 *) ( pUVar9 + 0x1);
-        *(u8 *) pstruct_10 = *(u8 *) pstruct_1;
-        uVar5 -= 0x1;
-        pstruct_10 = pstruct_7;
     }
+//    else if (( pUVar9 & 0x1) != 0x0) {
+//        pstruct_1 = pUVar9;
+//        pUVar9 = (u16 *) ( pUVar9 + 0x1);
+//        *(u8 *) pstruct_10 = *(u8 *) pstruct_1;
+//        uVar5 -= 0x1;
+//        pstruct_10 = pstruct_7;
+//    }
     for (uVar6 = uVar5 >> 0x1; uVar6 != 0x0; uVar6 -= 0x1) {
         pUVar3 = pstruct_10;
         pstruct_10 = pstruct_10 + 0x1;
         pstruct_1 = pUVar9;
         pUVar9 = pUVar9 + 0x1;
-        *pUVar3 = *pstruct_1;
+//        *pUVar3 = *pstruct_1;
     }
     for (uVar5 =  ((uVar5 & 0x1) != 0x0); uVar5 != 0x0; uVar5 -= 0x1) {
         pUVar3 = pstruct_10;

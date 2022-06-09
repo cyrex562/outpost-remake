@@ -52,13 +52,7 @@ void pass1_1010_1f62(Struct27 *param_1,i16 param_2)
   }
 }
 
-void pass1_1008_5784(char *param_1,u32 param_2)
 
-{
-  param_1 = param_2;
-//    (char*)((u32)(param_1) + 0x4) = 0x0;
-
-}
 
 
 i32 pass1_1008_5b12(char *param_1)
