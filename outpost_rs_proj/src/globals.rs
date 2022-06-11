@@ -6,6 +6,7 @@
 // #ifndef OUTPOST_C_PROJ__GLOBALS_H_
 // #define OUTPOST_C_PROJ__GLOBALS_H_
 
+use std::ptr;
 // #include "types.h"
 // #include "func_ptrs.h"
 use crate::prog_types::{HINSTANCE16};
@@ -18,9 +19,9 @@ pub static mut PTR_LOOP_1050_5f26: u16 = 0;
 pub static mut PTR_LOOP_1050_5f4a: u16 = 0;
 pub static mut PTR_LOOP_1050_5f50: u16 = 0;
 pub static mut PTR_LOOP_1050_5f7e: u16 = 0;
-pub static mut PTR_LOOP_1050_5f80: u16 = 0;
+pub static mut WIN_VERSION_1050_5f80: u32 = 0;
 pub static mut DAT_1050_5f82: u16 = 0;
-pub static mut PTR_LOOP_1050_5f84: u16 = 0;
+pub static mut PTR_LOOP_1050_5f84: u32 = 0;
 pub static mut DAT_1050_5f87: u16 = 0;
 pub static mut u16_1050_0002: u16 = 0;
 pub static mut u32_1050_0004: u16 = 0;
@@ -29,13 +30,18 @@ pub static mut DAT_1050_5f30: u8 = 0;
 pub static mut PTR_LOOP_1050_000e: *mut u8 = &mut 0u8;
 pub static mut PTR_LOOP_1050_5f48: *mut u8 = &mut 0u8;
 pub static mut PTR_LOOP_1050_5f4e: *mut u8 = &mut 0u8;
-pub static mut PTR_LOOP_1050_63fe: String = "".to_string();
+pub static mut PTR_LOOP_1050_63fe: *mut char = ptr::null_mut();
+// pub static mut DAT_1050_5f82: u16 = 0;
 
-pub static mut unaff_BP: u16 = 0;
-pub static mut unaff_CS: u16 = 0;
-pub static mut unaff_DS: u16 = 0;
-pub static mut unaff_SS: u16 = 0;
-pub static mut unaff_AF: u8 = 0;
-pub static mut unaff_SI: u16 = 0;
+
+pub static mut REG_BP: u16 = 0;
+pub static mut REG_CS: u16 = 0;
+pub static mut REG_DS: u16 = 0;
+pub static mut REG_SS: u16 = 0;
+pub static mut REG_AF: u8 = 0;
+pub static mut REG_SI: u16 = 0;
+pub static mut REG_DI: u16 = 0;
+
+
 
 // #endif //OUTPOST_C_PROJ__GLOBALS_H_

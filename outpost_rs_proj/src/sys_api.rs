@@ -182,3 +182,111 @@
 // pub fn SegmentLimit(u32 a) -> u32;
 //
 // #endif //OUTPOST_C_PROJ__SYS_API_H_
+
+type HANDLE16 = u16;
+type HGLOBAL16 = HANDLE16;
+type HTASK16 = HANDLE16;
+
+
+pub struct CONTEXT
+{
+    // DWORD   ContextFlags;  /* 000 */
+    pub ContextFlags: u32,
+    /* These are selected by CONTEXT_DEBUG_REGISTERS */
+    // DWORD   Dr0;           /* 004 */
+    pub Dr0: u32,
+    // DWORD   Dr1;           /* 008 */
+    pub Dr1: u32,
+    // DWORD   Dr2;           /* 00c */
+    pub Dr2: u32,
+    // DWORD   Dr3;           /* 010 */
+    pub Dr3: u32,
+    // DWORD   Dr6;           /* 014 */
+    pub Dr6: u32,
+    // DWORD   Dr7;           /* 018 */
+    pub Dr7: u32,
+    /* These are selected by CONTEXT_FLOATING_POINT */
+    // FLOATING_SAVE_AREA FloatSave; /* 01c */
+    pub FloatSave: FLOATING_SAVE_AREA,
+    /* These are selected by CONTEXT_SEGMENTS */
+    // DWORD   SegGs;         /* 08c */
+    pub SegGs: u32,
+    // DWORD   SegFs;         /* 090 */
+    pub SegFs: u32,
+    // DWORD   SegEs;         /* 094 */
+    pub SegEs: u32,
+    // DWORD   SegDs;         /* 098 */
+    pub SegDs: u32,
+    /* These are selected by CONTEXT_INTEGER */
+    // DWORD   Edi;           /* 09c */
+    pub Edi: u32,
+    // DWORD   Esi;           /* 0a0 */
+    pub Esi: u32,
+    // DWORD   Ebx;           /* 0a4 */
+    pub Ebx: u32,
+    // DWORD   Edx;           /* 0a8 */
+    pub Edx: u32,
+    // DWORD   Ecx;           /* 0ac */
+    pub Ecx: u32,
+    // DWORD   Eax;           /* 0b0 */
+    pub Eax: u32,
+    /* These are selected by CONTEXT_CONTROL */
+    // DWORD   Ebp;           /* 0b4 */
+    pub Ebp: u32,
+    // DWORD   Eip;           /* 0b8 */
+    pub Eip: u32,
+    // DWORD   SegCs;         /* 0bc */
+    pub SegCs: u32,
+    // DWORD   EFlags;        /* 0c0 */
+    pub EFlags: u32,
+    // DWORD   Esp;           /* 0c4 */
+    pub Esp: u32,
+    // DWORD   SegSs;         /* 0c8 */
+    pub SegSs: u32,
+
+    // BYTE    ExtendedRegisters[MAXIMUM_SUPPORTED_EXTENSION];  /* 0xcc */
+    pub ExtendedRegisters: [u8;0xff]
+} // CONTEXT;
+
+pub const CONTEXT_X86:u32 =       0x00010000;
+pub const CONTEXT_i386: u32 =     CONTEXT_X86;
+pub const CONTEXT_i486: u32 =      CONTEXT_X86;
+
+pub const CONTEXT_CONTROL: u32 =  (CONTEXT_i386 | 0x0001); /* SS:SP, CS:IP, FLAGS, BP */
+pub const CONTEXT_INTEGER: u32 =   (CONTEXT_i386 | 0x0002); /* AX, BX, CX, DX, SI, DI */
+pub const CONTEXT_SEGMENTS: u32 =  (CONTEXT_i386 | 0x0004); /* DS, ES, FS, GS */
+pub const CONTEXT_FLOATING_POINT: u32 =  (CONTEXT_i386 | 0x0008); /* 387 state */
+pub const CONTEXT_DEBUG_REGISTERS: u32 = (CONTEXT_i386 | 0x0010); /* DB 0-3,6,7 */
+pub const CONTEXT_EXTENDED_REGISTERS: u32 = (CONTEXT_i386 | 0x0020);
+pub const CONTEXT_FULL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS);
+pub const CONTEXT_ALL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS | CONTEXT_EXTENDED_REGISTERS);
+
+
+// HGLOBAL16 WINAPI LockSegment16	(	HGLOBAL16 		)
+pub fn LockSegment(a: HGLOBAL16) -> HGLOBAL16 {
+    todo!()
+}
+
+pub fn WaitEvent16(a: HTASK16) -> bool {
+    todo!()
+}
+
+// void        WINAPI InitTask16(CONTEXT*);
+pub fn InitTask16(ctx: *mut CONTEXT) {
+    todo!()
+}
+
+// DWORD WINAPI GetVersion16(void)
+pub fn GetVersion16() -> u32 {
+    todo!()
+}
+
+// INT16       WINAPI InitApp16(HINSTANCE16);
+pub fn InitApp16(hinst: HINSTANCE16) -> i16 {
+    todo!()
+}
+
+// void        WINAPI FatalAppExit16(UINT16,LPCSTR);
+pub fn FatalAppExit16(action: u16, msg: *mut char) {
+    todo!()
+}

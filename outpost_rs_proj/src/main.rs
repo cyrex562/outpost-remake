@@ -19,6 +19,8 @@ mod structs_2_h;
 mod structs_h;
 mod sys_api;
 mod utils;
+mod mem_ops;
+mod block_1000_0000;
 
 pub fn main()
 {
