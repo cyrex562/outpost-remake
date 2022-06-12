@@ -13,9 +13,10 @@
 
 use std::ptr;
 use crate::block_1000::{dos3_call_1000_23ea, ret_op_1000_55ac};
-use crate::block_1000::block_1000_2000::{fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c, pass1_1000_27d6, pass1_1000_2913};
+use crate::block_1000::block_1000_2000::{fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c, pass1_1000_27d6, pass1_1000_2913, poss_str_op_1000_28dc};
+use crate::block_1000::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
 use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84, PTR_LOOP_1050_63fe, REG_DI, REG_SI, WIN_VERSION_1050_5f80};
-use crate::sys_api::{FatalAppExit16, GetVersion16, InitApp16, InitTask16, WaitEvent16};
+use crate::sys_api::{FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, WaitEvent16};
 use crate::utils::CONCAT22;
 
 pub unsafe fn entry(mut param_1: u16,
@@ -23,21 +24,21 @@ pub unsafe fn entry(mut param_1: u16,
                     mut param_3: i16,
                     param_4: *mut u8,
                     param_5: *mut u8,
-                    mut param_6: u16) -> *mut char {
+                    mut param_6: u16) -> *mut c_char {
     // astruct_822 *paVar1;
     let mut paVar1: *mut astruct_822;
-    let mut piVar2: *mut char;
+    let mut piVar2: *mut c_char;
     let mut uVar4: u16;
     // char *string_var4;
-    let mut string_var4: *mut char;
+    let mut string_var4: *mut c_char;
     let mut iVar5: i16;
-    let mut string_var5: *mut char;
+    let mut string_var5: *mut c_char;
     let mut iVar6: i16;
 //    u8 *unaff_SI;
-    let mut string_var7: *mut char;
+    let mut string_var7: *mut c_char;
     // HINSTANCE16 unaff_DI;
     // char *paVar8;
-    let mut string_var8: *mut char;
+    let mut string_var8: *mut c_char;
     let mut bVar9: bool;
     let mut win_version: u32 = 0u32;
     let mut u32_var11: u32;
@@ -45,7 +46,7 @@ pub unsafe fn entry(mut param_1: u16,
     let mut u32_var12: u32;
     // astruct_825 *paVar13;
     let mut pstruct_825_var13: *mut astruct_825 = ptr::null_mut();
-    let mut string_var1: *mut char;
+    let mut string_var1: *mut c_char;
 
     u32_var11 = CONCAT22(param_6, PTR_LOOP_1050_5f84 as u16);
     loop {

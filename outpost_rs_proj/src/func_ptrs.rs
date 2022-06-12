@@ -7,7 +7,7 @@
 
 #include "types.h"
 
-// typedef void (*printer_t)(int);
+// typedef void (*printer_t);
 typedef void (*code)();
 
 typedef i16* (*code2)();

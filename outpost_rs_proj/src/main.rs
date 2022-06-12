@@ -20,6 +20,9 @@ mod structs_h;
 mod sys_api;
 mod utils;
 mod mem_ops;
+mod win_ui;
+mod string_defs;
+mod sys_ops;
 
 
 pub fn main()

@@ -30,7 +30,7 @@ pub static mut DAT_1050_5f30: u8 = 0;
 pub static mut PTR_LOOP_1050_000e: *mut u8 = &mut 0u8;
 pub static mut PTR_LOOP_1050_5f48: *mut u8 = &mut 0u8;
 pub static mut PTR_LOOP_1050_5f4e: *mut u8 = &mut 0u8;
-pub static mut PTR_LOOP_1050_63fe: *mut char = ptr::null_mut();
+pub static mut PTR_LOOP_1050_63fe: *mut c_char = ptr::null_mut();
 // pub static mut DAT_1050_5f82: u16 = 0;
 
 

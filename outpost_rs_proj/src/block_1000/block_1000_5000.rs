@@ -39,7 +39,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
     i_stack2 = unaff_bp + 0x1;
     local_4 = SUB42(&DAT_1050_1050,
                     0x0);
-    u_stack304 = (char *) CONCAT22(0x1050,
+    u_stack304 =  CONCAT22(0x1050,
                                    &local_108);
     if (param_1 == 0x0) {
         param_1 = dos3_call_1000_4f94();
@@ -61,17 +61,17 @@ pub fn pass1_1000_5026(mut param_1: i16,
                                    (u16 *) CONCAT22(0x1050,
                                                     local_12c));
     if (i_stack280 == 0x0) {
-        u_var1 = str_op_1000_3da4((char *) CONCAT22(0x1050,
+        u_var1 = str_op_1000_3da4( CONCAT22(0x1050,
                                                     &local_108));
         u_var1 += 0x1;
-        u_stack304._0_2_ = param_2;
+        u_stack304 = param_2;
         u_stack304 = param_3;
         u_var2 = param_3 | param_2;
         if (u_var2 == 0x0) {
             if ( param_4 < u_var1) {
                 param_4 = u_var1;
             }
-            u_stack304._0_2_ = block_1000_1000::mem_1000_167a(0x0,
+            u_stack304 = block_1000_1000::mem_1000_167a(0x0,
                                                               param_4);
             u_stack304 = u_var2;
             if ((u_var2 | u_stack304) == 0x0) {
@@ -82,9 +82,9 @@ pub fn pass1_1000_5026(mut param_1: i16,
         if ( param_4 < u_var1) {
             PTR_LOOP_1050_5f78 =  ( s_New_failed_in_Op__Op_1050_0020 + 0x2);
         } else {
-            unk_str_op_1000_3d3e((char *) CONCAT22(u_stack304,
+            unk_str_op_1000_3d3e( CONCAT22(u_stack304,
                                                    u_stack304),
-                                 (char *) CONCAT22(0x1050,
+                                  CONCAT22(0x1050,
                                                    &local_108));
         }
     } else {
@@ -231,7 +231,7 @@ u32 pass1_1000_5224(mut param_1: u16 ,
     uVar9 = param_4;
     if (param_4 == 0x0) {
         uVar3 = param_2 / param_3;
-        iVar4 =  (((u32) param_2 % (u32) param_3 << 0x10 | (u32) param_1) / (u32) param_3);
+        iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
         do {
             uVar8 = uVar9 >> 0x1;
@@ -242,10 +242,10 @@ u32 pass1_1000_5224(mut param_1: u16 ,
             uVar9 = uVar8;
         } while (uVar8 != 0x0);
         uVar1 = CONCAT22(uVar7,
-                         uVar3) / (u32) uVar5;
+                         uVar3) /  uVar5;
         iVar4 =  uVar1;
-        lVar2 = (u32) param_3 * (uVar1 & 0xffff);
-        uVar3 =  ((u32) lVar2 >> 0x10);
+        lVar2 =  param_3 * (uVar1 & 0xffff);
+        uVar3 =  ( lVar2 >> 0x10);
         uVar5 = uVar3 + iVar4 * param_4;
         if (((CARRY2(uVar3,
                      iVar4 * param_4)) || (param_2 < uVar5)) || ((param_2 <= uVar5 && (param_1 <  lVar2)))) {
@@ -268,10 +268,10 @@ u32 pass1_1000_52be(mut param_1: u16 ,
                     mut param_4: u16 )
 {
     if ((param_4 | param_2) == 0x0) {
-        return (u32) param_1 * (u32) param_3;
+        return  param_1 *  param_3;
     }
-    return (u32) param_1 * (u32) param_3 & 0xffff
-        | (u32) ( ((u32) param_1 * (u32) param_3 >> 0x10) + param_2 * param_3 + param_1 * param_4) << 0x10;
+    return  param_1 *  param_3 & 0xffff
+        |  ( ( param_1 *  param_3 >> 0x10) + param_2 * param_3 + param_1 * param_4) << 0x10;
 }
 
 u32 pass1_1000_52f0(mut param_1: u16 ,
@@ -310,7 +310,7 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
     uVar8 = param_2;
     uVar9 = param_4;
     if (param_4 == 0x0) {
-        iVar5 =  (((u32) param_2 % (u32) param_3 << 0x10 | (u32) param_1) % (u32) param_3);
+        iVar5 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
         iVar6 = 0x0;
         if ( (uVar11 - 0x1) < 0x0) {
             goto LAB_1000_538a;
@@ -325,10 +325,10 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
             uVar9 = uVar10;
         } while (uVar10 != 0x0);
         uVar1 = CONCAT22(uVar7,
-                         uVar3) / (u32) uVar4;
+                         uVar3) /  uVar4;
         uVar3 =  uVar1 * param_4;
-        lVar2 = (uVar1 & 0xffff) * (u32) param_3;
-        uVar8 =  ((u32) lVar2 >> 0x10);
+        lVar2 = (uVar1 & 0xffff) *  param_3;
+        uVar8 =  ( lVar2 >> 0x10);
         uVar4 =  lVar2;
         uVar9 = uVar8 + uVar3;
         if (((CARRY2(uVar8,
@@ -372,7 +372,7 @@ u32 pass1_1000_5390(mut param_1: u16 ,
     uVar9 = param_3;
     if (param_4 == 0x0) {
         uVar3 = param_2 / param_3;
-        iVar4 =  (((u32) param_2 % (u32) param_3 << 0x10 | (u32) param_1) / (u32) param_3);
+        iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
         do {
             uVar5 = uVar8 >> 0x1;
@@ -383,10 +383,10 @@ u32 pass1_1000_5390(mut param_1: u16 ,
             uVar6 = uVar7;
         } while (uVar5 != 0x0);
         uVar1 = CONCAT22(uVar7,
-                         uVar3) / (u32) uVar9;
+                         uVar3) /  uVar9;
         iVar4 =  uVar1;
-        lVar2 = (u32) param_3 * (uVar1 & 0xffff);
-        uVar3 =  ((u32) lVar2 >> 0x10);
+        lVar2 =  param_3 * (uVar1 & 0xffff);
+        uVar3 =  ( lVar2 >> 0x10);
         uVar8 = uVar3 + iVar4 * param_4;
         if (((CARRY2(uVar3,
                      iVar4 * param_4)) || (param_2 < uVar8)) || ((param_2 <= uVar8 && (param_1 <  lVar2)))) {
@@ -420,7 +420,7 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
     uVar9 = param_2;
     uVar10 = param_3;
     if (param_4 == 0x0) {
-        iVar6 =  (((u32) param_2 % (u32) param_3 << 0x10 | (u32) param_1) % (u32) param_3);
+        iVar6 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
         iVar7 = 0x0;
     } else {
         do {
@@ -432,10 +432,10 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
             uVar9 = uVar8;
         } while (uVar5 != 0x0);
         uVar1 = CONCAT22(uVar8,
-                         uVar3) / (u32) uVar10;
+                         uVar3) /  uVar10;
         uVar3 =  uVar1 * param_4;
-        lVar2 = (uVar1 & 0xffff) * (u32) param_3;
-        uVar9 =  ((u32) lVar2 >> 0x10);
+        lVar2 = (uVar1 & 0xffff) *  param_3;
+        uVar9 =  ( lVar2 >> 0x10);
         uVar4 =  lVar2;
         uVar10 = uVar9 + uVar3;
         if (((CARRY2(uVar9,

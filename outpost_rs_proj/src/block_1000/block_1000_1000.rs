@@ -28,7 +28,7 @@ pub fn pass1_1000_1284(mut param_1: u32) -> u32
     if ((bVar1 & 0x7) != 0x0) {
         if (bVar4 == 0x1) {
             u_var3 = *NULL;
-            return (u32) ( u_var3 + 0x18);
+            return  ( u_var3 + 0x18);
         }
         if (bVar4 != 0x2) {
             if (bVar4 != 0x3) {
@@ -83,9 +83,9 @@ pub fn mem_op_1000_131c(mut param_1: u16,
                                  param_2);
     }
     do {
-        handle = GLobalAlloc16(param_2 & 0xffff | (u32) param_2 << 0x10,
+        handle = GLobalAlloc16(param_2 & 0xffff |  param_2 << 0x10,
                                flags);
-        u_stack8 =  ((u32) lVar2 >> 0x10);
+        u_stack8 =  ( lVar2 >> 0x10);
         u_stack10 =  lVar2;
         if (handle != 0x0) {
             break;
@@ -119,7 +119,7 @@ pub fn mem_op_1000_1408(mut param_1: u16,
     HGLOBAL16 global_handle_2;
 
     global_handle_1 = GlobalHandle16(selector);
-    //  global_handle_1._0_2_ = (HGLOBAL16)global_handle_1;
+    //  global_handle_1 = (HGLOBAL16)global_handle_1;
     realloc_flags = 0x32;
     // (((param_1 & 0x1000) != 0x0) && ((re_alloc_size != 0x0 || (0xfff0 < re_alloc_size))))
     if (((param_1 & 0x1000) != 0x0) && ((re_alloc_size != 0x0 || 0xfff0 < re_alloc_size))) {
@@ -196,7 +196,7 @@ pub fn pass1_1000_16ee(mut param_1: u16,
                        mut param_2: u16 )
 {
     if ((param_2 | param_1) != 0x0) {
-        block_1000_0000::call_fn_ptr_1000_0dc6((char *) CONCAT22(param_2,
+        block_1000_0000::call_fn_ptr_1000_0dc6( CONCAT22(param_2,
                                                                  param_1));
     }
     return;
@@ -234,7 +234,7 @@ pub fn pass1_1000_18d2(mut param_1: u16,
                        mut param_2: u16 )
 {
     if ((param_2 | param_1) != 0x0) {
-        block_1000_0000::call_fn_ptr_1000_0dc6((char *) CONCAT22(param_2,
+        block_1000_0000::call_fn_ptr_1000_0dc6( CONCAT22(param_2,
                                                                  param_1));
     }
     return;
@@ -320,7 +320,7 @@ pub fn mem_op_1000_13ce(mut param_1: u16,
         return CONCAT22(uVar2,
                          (HVar1 == 0x0));
     }
-    return (u32) uVar2 << 0x10;
+    return  uVar2 << 0x10;
 }
 
 pub fn mem_op_1000_14f2(mut param_1: u16,
@@ -375,7 +375,7 @@ pub fn mem_op_1000_1558(mut param_1: u16,
             uStack10 = uStack10 >> 0x1 |  (uVar2 != 0x0) << 0xf;
         } while ((param_2 < uStack8) || ((param_2 <= uStack8 && (param_1 <= uStack10))));
     }
-    return (u32) uStack12 << 0x10;
+    return  uStack12 << 0x10;
 }
 
 pub fn mem_op_1000_160a(param_1: *StructD) -> *const u8
@@ -548,7 +548,7 @@ pub fn pass1_1000_183c(mut param_1: u16, mut param_2: u16 ) -> u16
     i32 lVar2;
 
     pSVar1 = (StructD * )(in_EDX & 0xffff0000);
-    if ( ((u32) param_2 * (u32) param_1 >> 0x10) != 0x0) {
+    if ( ( param_2 *  param_1 >> 0x10) != 0x0) {
         return 0x0;
     }
     if (( PTR_LOOP_1050_5f2e |  PTR_LOOP_1050_5f2c) == 0x0) {
@@ -559,7 +559,7 @@ pub fn pass1_1000_183c(mut param_1: u16, mut param_2: u16 ) -> u16
         }
     }
     lVar2 = mem_op_1000_0a48(0x1,
-                              ((u32) param_2 * (u32) param_1),
+                              ( param_2 *  param_1),
                              0x0,
                              CONCAT22(PTR_LOOP_1050_5f2e,
                                       PTR_LOOP_1050_5f2c));
@@ -797,7 +797,7 @@ pub fn mem_op_1000_1b68(mut param_1: u16,
         pass1_1000_1e61(unaff_CS,
                         0xa,
                         0x0);
-        return (u32) param_1 << 0x10;
+        return  param_1 << 0x10;
     }
     uVar1 = mem_op_1000_1b9a(0x0,
                              param_2,
@@ -825,7 +825,7 @@ pub fn mem_op_1000_1b9a(mut param_1: u16,
         iVar6 = (uStack4 * 0x2);
         if (iVar6 != 0x0) {
             do {
-                uVar3 = (u32) (iVar6 + 0x8);
+                uVar3 =  (iVar6 + 0x8);
                 ( uVar3 + 0xc) = 0x0;
                 mem_op_1000_13ce((iVar6 + 0x8),
                                  (iVar6 + 0xa));
@@ -853,7 +853,7 @@ pub fn mem_op_1000_1b9a(mut param_1: u16,
                                      param_3);
     lVar7 = mem_op_1000_13ce(param_2,
                              param_3);
-    return CONCAT22( ((u32) lVar7 >> 0x10),
+    return CONCAT22( ( lVar7 >> 0x10),
                     0x1);
 }
 
@@ -913,7 +913,7 @@ pub fn pass1_1000_1f7e(param_1: *mut u16) -> bool
     let mut BVar2: bool;
     let mut uVar3: u16;
     let mut iVar4: i16;
-    char *pcVar5;
+    let mut pcVar5: *mut c_char;
 
     uVar3 = *param_1;
     if (uVar3 == 0xf) {//
@@ -938,17 +938,17 @@ pub fn pass1_1000_1f7e(param_1: *mut u16) -> bool
     BVar2 = msg_box_op_1000_214c(0x0,
                                  iVar4,
                                   pcVar5,
-                                  ((u32) pcVar5 >> 0x10));
+                                  ( pcVar5 >> 0x10));
     return BVar2;
 }
 
 
-pub fn ass1_1000_1fd2(mut param_1: i16) -> *mut char
+pub fn ass1_1000_1fd2(mut param_1: i16) -> *mut c_char
 {
     if (param_1 == 0x2) {
         return "Out of memory.  Please free some memory, then choose retry.";
     }
-    return (char *) CONCAT22(0x1000,
+    return  CONCAT22(0x1000,
                              param_1 * 0x17 + 0x1c7a);
 }
 

@@ -21,15 +21,15 @@ pub fn pass1_1000_201c(mut param_1: i16,
         BVar4 = pass1_1000_206c((param_2 + 0x4),
                                 (param_2 + 0x6));
         if (BVar4 == 0x0) {
-            u_var2 = (u32) (param_2 + 0x4);
-            u_var6 =  ((u32) u_var2 >> 0x10);
+            u_var2 =  (param_2 + 0x4);
+            u_var6 =  ( u_var2 >> 0x10);
             i_var5 = u_var2;
             u_var1 = (i_var5 + 0x2c);
             (param_2 + 0x4) = (i_var5 + 0x2a);
             (param_2 + 0x6) = u_var1;
         } else {
             block_1000_1000::mem_op_1000_1b9a(0x1,
-                                              *(u16 *) (param_2 + 0x4),
+                                               (param_2 + 0x4),
                                               (param_2 + 0x6));
         }
         u_var3 = (param_2 + 0x6) | (param_2 + 0x4);
@@ -194,7 +194,7 @@ pub fn pass1_1000_262c(param_1: u32,
                        param_2: u16,
                        param_3: u16)
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
     char cVar2;
     let mut i_var3: i16;
     let mut i_var5: i16;
@@ -208,9 +208,9 @@ pub fn pass1_1000_262c(param_1: u32,
     let mut u_var11: u16;
     let mut i_var4: i16;
     char **ppcVar6;
-    char *pcVar7;
-    char *pcVar8;
-    char *pcVar9;
+    let mut pcVar7: *mut c_char;
+    let mut pcVar8: *mut c_char;
+    let mut pcVar9: *mut c_char;
     let mut unaff_es: u16;
     let mut u_var12: u16;
     let mut u_var3: u16;
@@ -226,13 +226,13 @@ pub fn pass1_1000_262c(param_1: u32,
     PTR_LOOP_1050_5fc2 = param_2;
     PTR_LOOP_1050_5fc4 = param_1;
     i_var5 = GetModuleFileName16(0x104,
-                                 (char *) CONCAT22(param_1,
+                                  CONCAT22(param_1,
                                                   param_2),
                                  HINSTANCE16_1050_5f4c);
     param_2[i_var5] = '\0';
     i_var4 = 0x1;
     PTR_LOOP_1050_5fb8 =  ( &PTR_LOOP_1050_0000 + 0x1);
-    pcVar7 = (char *) ( s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);//
+    pcVar7 =  ( s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);//
 //    LAB_1000_266c:
     do {
         do {
@@ -329,7 +329,7 @@ pub fn pass1_1000_262c(param_1: u32,
     (&stack0xfffe + i_var3) = 0x271f;
     u_var4 = pass1_1000_29dc( &DAT_1050_1050);
     u_var3 = &PTR_LOOP_1050_5f7e;
-    pcVar7 = (char *) ( s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);//
+    pcVar7 =  ( s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);//
 //    LAB_1000_272e:
     do {
         do {
@@ -347,13 +347,13 @@ pub fn pass1_1000_262c(param_1: u32,
         ppcVar6[0x1] = NULL;
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
-        ((code) (u32) &PTR_LOOP_1050_5fd2)();
+        ((code)  &PTR_LOOP_1050_5fd2)();
         _PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4,
                                        PTR_LOOP_1050_5fc2);
         return;
     }
     *ppcVar6 = pcVar9;
-    ppcVar6[0x1] = (char *) &DAT_1050_1050;
+    ppcVar6[0x1] =  &DAT_1050_1050;
     ppcVar6 = ppcVar6 + 0x2;
     do {
         pcVar7 = pcVar7 + -0x1;//
@@ -460,7 +460,7 @@ pub fn pass1_1000_262c(param_1: u32,
 pub fn pass1_1000_27d6(mut param_1: u16 )
 {
     let mut piVar2: *mut i16;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     char cVar4;
     let mut pu_var5: *mut u16;
     u16 **ppuVar6;
@@ -472,7 +472,7 @@ pub fn pass1_1000_27d6(mut param_1: u16 )
     let mut i_var9: i16;
     let mut piVar9: *mut i16;
     let mut piVar10: *mut i16;
-    char *pcVar11;
+    let mut pcVar11: *mut c_char;
     let mut piVar12: *mut i16;
     let mut b_var13: bool;
 pub fn *dos_env;
@@ -482,7 +482,7 @@ pub fn *dos_env;
     let mut piVar4: *mut i16;
 
     dos_env = GetDOSEnvironment16();
-    pu_var7 = (u16 *) ((u32) dos_env >> 0x10);
+    pu_var7 = (u16 *) ( dos_env >> 0x10);
     if ( dos_env != 0x0) {
         pu_var7 = NULL;
     }
@@ -524,7 +524,7 @@ pub fn *dos_env;
             ppuVar6[0x1] = NULL;
             return;
         }
-        b_var13 = *piVar9 == s__C_FILE_INFO__1050_5f5c._0_2_;
+        b_var13 = *piVar9 == s__C_FILE_INFO__1050_5f5c;
         if (b_var13) {
             piVar12 =  s__C_FILE_INFO__1050_5f5c;
             i_var8 = 0x6;
@@ -563,8 +563,8 @@ pub fn *dos_env;
 
 pub fn pass1_1000_2913(mut param_1: i16)
 {
-    char *pcVar1;
-    char *pcVar2;
+    let mut pcVar1: *mut c_char;
+    let mut pcVar2: *mut c_char;
     let mut i_var3: i16;
     let mut unaff_di: u16;
     let mut unaff_es: u16;
@@ -586,7 +586,7 @@ pub fn pass1_1000_2913(mut param_1: i16)
                 pcVar1 = pcVar2;
                 pcVar2 = pcVar2 + 0x1;
             } while (*pcVar1 != '\0');
-            pass1_1000_55b1( ((u32) paVar4 >> 0x10),
+            pass1_1000_55b1( ( paVar4 >> 0x10),
             i_var5);
         }
     }
@@ -620,7 +620,7 @@ pub fn pass1_1000_29b5(mut param_1: u16 )
 //        LAB_1000_29cc:
         param_1 = 0x13;
     }
-    cVar1 = (u32) ((param_1 & 0xff) + 0x5fd6);//
+    cVar1 =  ((param_1 & 0xff) + 0x5fd6);//
 //    LAB_1000_29d2:
     PTR_LOOP_1050_5f78 =   cVar1;
     return;
@@ -751,7 +751,7 @@ pub fn msg_box_op_1000_214c(mut param_1: u16,
     do {
         IVar1 = MessageBox16(type,
                              "SmartHeap Library",
-                             (char *) CONCAT22(param_4,
+                              CONCAT22(param_4,
                                                param_3),
                              0x0);
         iVar2 = IVar1 + -0x1;
@@ -805,13 +805,13 @@ pub fn pass1_1000_21d2(param_1: u8,
                              param_4);
     if (BVar2 == 0x0) {
         if ((param_1 & 0x4) == 0x0) {
-            uVar1 = SegmentLimit((u32) param_4);
+            uVar1 = SegmentLimit( param_4);
             if ((bool) ((u8) ((u16) uVar1 >> 0x10) & 0x1)) {
                 if (param_2 == 0x0) {
                     return 0x1;
                 }
-                if ((!CARRY4((u32) param_3,
-                             param_2 - 0x1U)) && ((u32) param_3 + (param_2 - 0x1U) <= (u32)  uVar1)) {
+                if ((!CARRY4( param_3,
+                             param_2 - 0x1U)) && ( param_3 + (param_2 - 0x1U) <=   uVar1)) {
                     return 0x1;
                 }
             }
@@ -901,14 +901,14 @@ pub fn pass1_1000_25d2(mut param_1: i16,
                        mut param_4: i16) -> *mut i16
 {
     let mut piVar1: *mut i16;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     u8 *puVar3;
     StructD *pstruct_d_var4;
     let mut piVar5: *mut i16;
-    char *pcVar6;
+    let mut pcVar6: *mut c_char;
     let mut iVar7: i16;
     let mut piVar8: *mut i16;
-    char *pcVar9;
+    let mut pcVar9: *mut c_char;
     struct astruct_825 *paVar10;
 
     puVar3 =  (param_1 + 0x1U & 0xfffe);
@@ -922,7 +922,7 @@ pub fn pass1_1000_25d2(mut param_1: i16,
         piVar5 =  fn_ptr_param_3();
         return piVar5;
     }
-    paVar10 = (astruct_825 *) ((u32)  param_2 << 0x10);
+    paVar10 = (astruct_825 *) (  param_2 << 0x10);
     iVar7 = 0x0;
     pass1_1000_25a8();
     pass1_1000_2913(iVar7);
@@ -945,7 +945,7 @@ pub fn pass1_1000_25d2(mut param_1: i16,
         } while (*pcVar2 != '\r');
         pcVar9[-0x1] = '\0';
     }
-    FatalAppExit16((char *) CONCAT22(0x1050,
+    FatalAppExit16( CONCAT22(0x1050,
                                      pcVar6),
                    0x0);
     FatalExit();
@@ -970,7 +970,7 @@ pub fn pass1_1000_25d2(mut param_1: i16,
     } loop;
 }
 
-pub fn poss_str_op_1000_28dc(param_1: *mut astruct_825) -> *mut char
+pub fn poss_str_op_1000_28dc(param_1: *mut astruct_825) -> *mut c_char
 {
     struct astruct_825 **ppaVar1;
     char* piVar2;
@@ -1006,14 +1006,14 @@ pub fn pass1_1000_2950(mut param_1: i16,
 {
     u16_t *puVar1;
     u16_t uVar2;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     u8 *puVar4;
-    char *pcVar5;
+    let mut pcVar5: *mut c_char;
     let mut iVar6: i16;
     u16_t *puVar7;
     u16_t *puVar8;
     u16_t unaff_BP;
-    char *pcVar9;
+    let mut pcVar9: *mut c_char;
     let mut unaff_ES: u16;
     struct astruct_825 *paVar10;
 
@@ -1048,7 +1048,7 @@ pub fn pass1_1000_2950(mut param_1: i16,
         } while (*pcVar3 != '\r');
         pcVar9[-0x1] = '\0';
     }
-    FatalAppExit16((char *) CONCAT22(0x1050,
+    FatalAppExit16( CONCAT22(0x1050,
                                      pcVar5),
                    0x0);
     FatalExit();
@@ -1134,7 +1134,7 @@ pub fn pass1_1000_2a00(param_1: *mut u16) -> u16
         if (uStack6 == 0x0) {
             goto LAB_1000_2af2;
         }
-        block_1000::unk_str_op_1000_3d3e((char *) CONCAT22(0x1050,
+        block_1000::unk_str_op_1000_3d3e( CONCAT22(0x1050,
                                                            &local_10),
                                          s___1050_5fea);
         puStack20 = local_e;
@@ -1229,7 +1229,7 @@ pub fn mem_1000_2bb6(mut param_1: u16,
                 || (mem_1000_2ce8(param_1,
                                   param_3), (* (piVar3 + 0x5) & 0x8) == 0x0)))))))) {
             puVar5 = mixed_dos3_call_1000_39f2(puVar7,
-                                               (char *) CONCAT22(0x1050,
+                                                CONCAT22(0x1050,
                                                                  &param_2),
                                                 ( &PTR_LOOP_1050_0000 + 0x1));
             puVar6 =  ( &PTR_LOOP_1050_0000 + 0x1);
@@ -1250,7 +1250,7 @@ pub fn mem_1000_2bb6(mut param_1: u16,
                 }
             } else {
                 puVar5 = mixed_dos3_call_1000_39f2(puVar7,
-                                                   (char *) CONCAT22(piVar3[0x4],
+                                                    CONCAT22(piVar3[0x4],
                                                                      piVar3[0x3]),
                                                    puVar6);
             }
@@ -1304,7 +1304,7 @@ pub fn pass1_1000_2d34(mut param_1: u16,
 //    LAB_1000_2d6c:
     bVar2 = true;//
 //    LAB_1000_2d71:
-    param_3 =  ((u32) param_3 & 0xffff0000 | (u32) ( param_3 + 0x1));
+    param_3 =  ( param_3 & 0xffff0000 |  ( param_3 + 0x1));
     if ((*param_3 == 0x0) || (!bVar2)) {
         uVar4 = mixed_dos3_call_1000_370a(in_stack_0000ffd8,
                                           param_1,
@@ -1452,7 +1452,7 @@ u16 pass1_1000_2fa4(i16 *param_1)
         puVar4 =  (*param_1 - param_1[0x3]);
         if (0x0 <  puVar4) {
             puVar5 = mixed_dos3_call_1000_39f2(  * ( param_1 + 0xb),
-                                               (char *) CONCAT22(param_1[0x4],
+                                                CONCAT22(param_1[0x4],
                                                                  param_1[0x3]),
                                                puVar4);
             if (puVar5 == puVar4) {

@@ -56,13 +56,13 @@ u16 FUN_1000_30b4(void)
         return 0x0;
     }
     if ((u8) (bVar1 - 0x20) < 0x59) {
-        bVar2 = * (u32) ((u8) (bVar1 - 0x20) + 0x5ffe) & 0xf;
+        bVar2 = *  ((u8) (bVar1 - 0x20) + 0x5ffe) & 0xf;
     } else {
         bVar2 = 0x0;
     }
     // WARNING: Could not emulate address calculation at 0x10003101
     // WARNING: Treating indirect jump as call
-    uVar4 = (code) ((char) (* (u32) ((u8) (bVar2 * '\b') + 0x5ffe) >> 0x4) * 0x2 + 0x30a4))
+    uVar4 = (code) ((char) (*  ((u8) (bVar2 * '\b') + 0x5ffe) >> 0x4) * 0x2 + 0x30a4))
     (unaff_SI & 0xff00 |  bVar1, uVar4, iVar3);
     return uVar4;
 }
@@ -74,7 +74,7 @@ u16 FUN_1000_30b4(void)
 u16 pass1_1000_3113(void)
 {
     char cVar1;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     u8 bVar3;
     let mut uVar4: u16;
     let mut unaff_BP: i16;
@@ -86,11 +86,11 @@ u16 pass1_1000_3113(void)
     (unaff_BP + -0x4) = cVar1;
     if ((cVar1 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar1 - 0x20U) < 0x59) {
-            bVar3 = * (u32) ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
+            bVar3 = *  ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar3 = 0x0;
         }
-        bVar3 = * (u32) ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar3 = *  ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar3;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -107,7 +107,7 @@ u16 pass1_1000_3113(void)
 u16 pass1_1000_311e(void)
 {
     char cVar1;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     u8 bVar3;
     let mut uVar4: u16;
     let mut unaff_BP: i16;
@@ -123,11 +123,11 @@ u16 pass1_1000_311e(void)
     (unaff_BP + -0x4) = cVar1;
     if ((cVar1 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar1 - 0x20U) < 0x59) {
-            bVar3 = * (u32) ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
+            bVar3 = *  ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar3 = 0x0;
         }
-        bVar3 = * (u32) ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar3 = *  ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar3;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -145,7 +145,7 @@ u16 pass1_1000_3134(void)
 {
     u8 *pbVar1;
     char cVar2;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     u8 bVar4;
     let mut uVar5: u16;
     let mut unaff_BP: i16;
@@ -173,11 +173,11 @@ u16 pass1_1000_3134(void)
     (unaff_BP + -0x4) = cVar2;
     if ((cVar2 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar2 - 0x20U) < 0x59) {
-            bVar4 = * (u32) ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
+            bVar4 = *  ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar4 = 0x0;
         }
-        bVar4 = * (u32) ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar4 = *  ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar4;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -195,7 +195,7 @@ u16 pass1_1000_3168(void)
 {
     u8 *pbVar1;
     char cVar2;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     u8 bVar4;
     let mut uVar5: u16;
     let mut unaff_BP: i16;
@@ -218,11 +218,11 @@ u16 pass1_1000_3168(void)
     (unaff_BP + -0x4) = cVar2;
     if ((cVar2 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar2 - 0x20U) < 0x59) {
-            bVar4 = * (u32) ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
+            bVar4 = *  ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar4 = 0x0;
         }
-        bVar4 = * (u32) ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar4 = *  ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar4;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -239,7 +239,7 @@ u16 pass1_1000_3168(void)
 u16 pass1_1000_3194(void)
 {
     char cVar1;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     u8 bVar3;
     let mut uVar4: u16;
     let mut unaff_BP: i16;
@@ -251,11 +251,11 @@ u16 pass1_1000_3194(void)
     (unaff_BP + -0x4) = cVar1;
     if ((cVar1 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar1 - 0x20U) < 0x59) {
-            bVar3 = * (u32) ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
+            bVar3 = *  ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar3 = 0x0;
         }
-        bVar3 = * (u32) ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar3 = *  ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar3;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -272,7 +272,7 @@ u16 pass1_1000_3194(void)
 u16 pass1_1000_319c(void)
 {
     char cVar1;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     u8 bVar3;
     let mut uVar4: u16;
     let mut unaff_BP: i16;
@@ -293,11 +293,11 @@ u16 pass1_1000_319c(void)
     (unaff_BP + -0x4) = cVar1;
     if ((cVar1 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar1 - 0x20U) < 0x59) {
-            bVar3 = * (u32) ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
+            bVar3 = *  ((u8) (cVar1 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar3 = 0x0;
         }
-        bVar3 = * (u32) ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar3 = *  ((u8) (bVar3 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar3;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -315,7 +315,7 @@ u16 pass1_1000_31c5(void)
 {
     u8 *pbVar1;
     char cVar2;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     u8 bVar4;
     let mut uVar5: u16;
     let mut unaff_BP: i16;
@@ -343,11 +343,11 @@ u16 pass1_1000_31c5(void)
     (unaff_BP + -0x4) = cVar2;
     if ((cVar2 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar2 - 0x20U) < 0x59) {
-            bVar4 = * (u32) ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
+            bVar4 = *  ((u8) (cVar2 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar4 = 0x0;
         }
-        bVar4 = * (u32) ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar4 = *  ((u8) (bVar4 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar4;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -367,11 +367,11 @@ u16 pass1_1000_31f7(mut param_1: u16 )
     u8 *pbVar2;
     let mut puVar3: *mut u16;
     char cVar4;
-    char *pcVar5;
+    let mut pcVar5: *mut c_char;
     u8 bVar6;
     let mut uVar7: u16;
     let mut iVar8: i16;
-    char *pcVar9;
+    let mut pcVar9: *mut c_char;
     let mut uVar10: u16;
     let mut extraout_DX: u16;
     let mut extraout_DX_00: u16;
@@ -397,9 +397,9 @@ u16 pass1_1000_31f7(mut param_1: u16 )
         if ((* (unaff_BP + -0x6) & 0x10) == 0x0) {
             uVar7 = pass1_1000_34cf();
             if ((* (unaff_BP + -0x6) & 0x40) == 0x0) {
-                uVar13 = (u32) uVar7;
+                uVar13 =  uVar7;
             } else {
-                uVar13 = (u32)  uVar7;
+                uVar13 =   uVar7;
             }
         } else {
             uVar13 = pass1_1000_34d8();
@@ -422,7 +422,7 @@ u16 pass1_1000_31f7(mut param_1: u16 )
         }
         unaff_DI = (u16 *) (unaff_BP + -0x17);
         unaff_ES =  &DAT_1050_1050;
-        pcVar9 = (char *)  * (unaff_BP + -0x8);
+        pcVar9 =   * (unaff_BP + -0x8);
         pass1_1000_356e( uVar13,
                          pcVar9,
                         param_1);
@@ -463,7 +463,7 @@ u16 pass1_1000_31f7(mut param_1: u16 )
             unaff_ES =  &DAT_1050_1050;
             * (unaff_BP + -0x216) = (char) uVar7;
             unaff_DI = (u16 *) (unaff_BP + -0x216);
-            pcVar9 = (char *) 0x1;
+            pcVar9 =  0x1;
         } else if (cVar4 == 's') {
             uVar13 = pass1_1000_34e6(param_1);
             param_1 =  (uVar13 >> 0x10);
@@ -489,7 +489,7 @@ u16 pass1_1000_31f7(mut param_1: u16 )
                         puVar11 = (u16 *) ( puVar11 + -0x1);
                     }
                 }
-                pcVar9 = (char *) ( puVar11 -  unaff_DI);
+                pcVar9 =  ( puVar11 -  unaff_DI);
             }
         } else {
             if (cVar4 == 'n') {
@@ -554,19 +554,19 @@ u16 pass1_1000_31f7(mut param_1: u16 )
                     puVar3 = puVar11;
                     puVar11 = (u16 *) ( puVar11 + 0x1);
                 } while (puVar3 != '\0');
-                pcVar9 = (char *) ( puVar11 + (-0x1 -  unaff_DI));
+                pcVar9 =  ( puVar11 + (-0x1 -  unaff_DI));
                 goto LAB_1000_3444;
             }
             if ((* (unaff_BP + -0x6) & 0x30) == 0x0) {
                 uVar7 = pass1_1000_34cf();
-                uVar13 = (u32) uVar7;//
+                uVar13 =  uVar7;//
 //                LAB_1000_32d8:
                 * (unaff_BP + -0x3) = 0x7;
                 param_1 = 0x0;
                 pass1_1000_356e( uVar13,
                                 0x10,
                                 0x0);
-                pcVar9 = (char *) 0x4;
+                pcVar9 =  0x4;
             } else {
                 uVar13 = pass1_1000_34d8();
                 uVar10 =  (uVar13 >> 0x10);
@@ -582,7 +582,7 @@ u16 pass1_1000_31f7(mut param_1: u16 )
                                 0x10,
                                 0x0);
                 * (unaff_BP + -0x212) = 0x3a;
-                pcVar9 = (char *) 0x9;
+                pcVar9 =  0x9;
             }
             unaff_ES =  &DAT_1050_1050;
             unaff_DI = (u16 *) (unaff_BP + -0x216);
@@ -633,11 +633,11 @@ u16 pass1_1000_31f7(mut param_1: u16 )
     (unaff_BP + -0x4) = cVar4;
     if ((cVar4 != '\0') && (-0x1 < (unaff_BP + -0xa))) {
         if ((u8) (cVar4 - 0x20U) < 0x59) {
-            bVar6 = * (u32) ((u8) (cVar4 - 0x20U) + 0x5ffe) & 0xf;
+            bVar6 = *  ((u8) (cVar4 - 0x20U) + 0x5ffe) & 0xf;
         } else {
             bVar6 = 0x0;
         }
-        bVar6 = * (u32) ((u8) (bVar6 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
+        bVar6 = *  ((u8) (bVar6 * '\b' + (unaff_BP + -0x7)) + 0x5ffe) >> 0x4;
         * (unaff_BP + -0x7) = bVar6;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -666,7 +666,7 @@ pub fn pass1_1000_34d8(void) -> u32
     let mut pu_var3: *mut u16;
     let mut unaff_bp: i16;
 
-    pu_var3 = (u16 *) (u32) (unaff_bp + 0xe);
+    pu_var3 = (u16 *)  (unaff_bp + 0xe);
     u_var1 = *pu_var3;
     u_var2 = ( pu_var3 + 0x2);
     (unaff_bp + 0xe) =  pu_var3 + 0x4;
@@ -686,7 +686,7 @@ pub fn pass1_1000_34e6(mut param_1: u16 ) -> u32
     }
     u_var1 = pass1_1000_34cf();
     if (u_var1 == 0x0) {
-        return (u32) param_1 << 0x10;
+        return  param_1 << 0x10;
     }
     return CONCAT22(param_1,
                     u_var1);
@@ -696,7 +696,7 @@ i16 pass1_1000_3503(mut param_1: u16 ,
                     mut param_2: u16 )
 {
     let mut piVar1: *mut i16;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     char **ppcVar3;
     let mut uVar4: u16;
     let mut piVar5: *mut i16;
@@ -704,7 +704,7 @@ i16 pass1_1000_3503(mut param_1: u16 ,
     let mut uVar6: u16;
 
     ppcVar3 = (char **) *(i16 **) (unaff_BP + 0x6);
-    uVar6 =  ((u32) ppcVar3 >> 0x10);
+    uVar6 =  ( ppcVar3 >> 0x10);
     piVar5 =  ppcVar3;
     piVar1 = piVar5 + 0x2;
     *piVar1 = *piVar1 + -0x1;
@@ -790,11 +790,11 @@ pub fn pass1_1000_356e(mut param_1: u16 ,
     let mut unaff_es: u16;
 
     while (((0x0 < unaff_si || (param_1 != 0x0)) || (param_3 != 0x0))) {
-        u_var2 = (u32) param_3;
+        u_var2 =  param_3;
         param_3 /= param_2;
-        u_var2 = u_var2 % (u32) param_2 << 0x10 | (u32) param_1;
+        u_var2 = u_var2 %  param_2 << 0x10 |  param_1;
         param_1 =  (u_var2 / param_2);
-        bVar3 = (char) (u_var2 % (u32) param_2) + 0x30;
+        bVar3 = (char) (u_var2 %  param_2) + 0x30;
         if (0x39 < bVar3) {
             bVar3 += (unaff_bp + -0x3);
         }
@@ -894,7 +894,7 @@ pub fn mixed_dos3_call_1000_3636(mut param_1: u16 ,
             goto LAB_1000_299d;
         }
         if ((param_4 & 0x2) == 0x0) {
-            if (-0x1 <  ( ((u32) u_var6 >> 0x10) + param_3 +  CARRY2(u_var3,
+            if (-0x1 <  ( ( u_var6 >> 0x10) + param_3 +  CARRY2(u_var3,
                                                                      param_2))) {//
 //                LAB_1000_36e3:
                 bVar5 = false;
@@ -910,7 +910,7 @@ pub fn mixed_dos3_call_1000_3636(mut param_1: u16 ,
         } else {
             pcVar2 = (code *) swi(0x21);
             u_var6 = (*pcVar2)();
-            if (-0x1 <  ( ((u32) u_var6 >> 0x10) + param_3 +  CARRY2(u_var6,
+            if (-0x1 <  ( ( u_var6 >> 0x10) + param_3 +  CARRY2(u_var6,
                                                                      param_2))) {
                 goto LAB_1000_36e3;
             }
@@ -1155,7 +1155,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1,
     char cVar19;
     char cVar20;
     let mut uVar21: u32;
-    char *pcVar22;
+    let mut pcVar22: *mut c_char;
     u8 *puVar23;
     let mut in_stack_0000fff6: i16;
     let mut piStack8: *mut i16;
@@ -1209,7 +1209,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1,
             } else {
                 uVar15 = false;
                 if (puVar6 == NULL) {
-                    if (((puVar12[0x5f90] & 0x40) == 0x0) || (((u32) uVar21 >> 0x10) != '\x1a')) {
+                    if (((puVar12[0x5f90] & 0x40) == 0x0) || (( uVar21 >> 0x10) != '\x1a')) {
                         uVar15 = true;
                         puVar6 =  0x1c00;
                     } else {
@@ -1241,7 +1241,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1,
             }
             pcVar22 = param_2;
             uVar6 = pass1_1000_3bac();
-            pcVar22 =  ((u32) pcVar22 >> 0x10);
+            pcVar22 =  ( pcVar22 >> 0x10);
             pbVar10 =  pcVar22;
             if (uVar6 < 0xa9) {
                 exit_1000_25f2(-0x4,
@@ -1580,13 +1580,13 @@ u16 *pass1_1000_3cea(mut param_1: u32,
                      char *param_2)
 {
     let mut pUVar1: *mut u16;
-    char *pcVar2;
+    let mut pcVar2: *mut c_char;
     let mut pUVar3: *mut u16;
     let mut iVar4: i16;
     let mut uVar5: u16;
     let mut uVar6: u16;
     let mut pUVar7: *mut u16;
-    char *pcVar8;
+    let mut pcVar8: *mut c_char;
     let mut pUVar9: *mut u16;
     let mut pUVar10: *mut u16;
     let mut uVar11: u16;
@@ -1607,8 +1607,8 @@ u16 *pass1_1000_3cea(mut param_1: u32,
         bVar13 = pUVar1 == '\0';
     } while (!bVar13);
     pUVar10 = (u16 *) ( pUVar7 + -0x1);
-    uVar12 =  ((u32) param_2 >> 0x10);
-    pcVar8 = (char *) param_2;
+    uVar12 =  ( param_2 >> 0x10);
+    pcVar8 =  param_2;
     uVar5 = 0xffff;
     do {
         if (uVar5 == 0x0) {
@@ -1661,18 +1661,18 @@ pub fn unk_str_op_1000_3d3e(char *param_1,
     let mut pu_var5: *mut u16;
     let mut u_var6: u16;
     let mut u_var7: u16;
-    char *l_string_2;
-    char *puVar6;
-    char *puVar7;
+    let mut l_string_2: *mut c_char;
+    let mut puVar6: *mut c_char;
+    let mut puVar7: *mut c_char;
     let mut u_var8: u16;
-    char *l_string_1;
+    let mut l_string_1: *mut c_char;
     let mut l_b_var8: bool;
-    char *puVar3;
-    char *puVar2;
-    char *puVar1;
+    let mut puVar3: *mut c_char;
+    let mut puVar2: *mut c_char;
+    let mut puVar1: *mut c_char;
 
-    l_string_1 = (char *) ((u32) in_string_2 >> 0x10);
-    l_string_2 = (char *) in_string_2;
+    l_string_1 =  ( in_string_2 >> 0x10);
+    l_string_2 =  in_string_2;
     l_b_var8 = true;
     u_var6 = 0xffff;
     puVar6 = l_string_2;
@@ -1686,10 +1686,10 @@ pub fn unk_str_op_1000_3d3e(char *param_1,
         l_b_var8 = *puVar1 == '\0';
     } while (!l_b_var8);
     u_var6 = ~u_var6;
-    u_var8 =  ((u32) param_1 >> 0x10);
-    puVar7 = (char *) param_1;
+    u_var8 =  ( param_1 >> 0x10);
+    puVar7 =  param_1;
     if (l_b_var8) {
-        if (((u32) param_1 & 0x1) != 0x0) {
+        if (( param_1 & 0x1) != 0x0) {
             puVar7 = puVar7 + 0x1;
             l_string_2 = l_string_2 + 0x1;
             *param_1 = *in_string_2;
@@ -1703,16 +1703,16 @@ pub fn unk_str_op_1000_3d3e(char *param_1,
     }
     for (uVar7 = uVar6 >> 0x1; uVar7 != 0x0; uVar7 -= 0x1) {
         pu_var5 = (u16 *) puVar7;
-        puVar7 = (char *) ( puVar7 + 0x2);
+        puVar7 =  ( puVar7 + 0x2);
         pu_var4 = (u16 *) l_string_2;
-        l_string_2 = (char *) ( l_string_2 + 0x2);
+        l_string_2 =  ( l_string_2 + 0x2);
         *pu_var5 = *pu_var4;
     }
     for (uVar6 =  ((uVar6 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
         pu_var5 = (u16 *) puVar7;
-        puVar7 = (char *) ( puVar7 + 0x1);
+        puVar7 =  ( puVar7 + 0x1);
         pu_var4 = (u16 *) l_string_2;
-        l_string_2 = (char *) ( l_string_2 + 0x1);
+        l_string_2 =  ( l_string_2 + 0x1);
         * pu_var5 = * pu_var4;
     }
     return;
@@ -1725,20 +1725,20 @@ i16 pass1_1000_3d7a(char *param_1,
     u8 *pbVar3;
     let mut iVar4: i16;
     let mut uVar5: u16;
-    char *string_4;
-    char *string_1;
-    char *string_2;
-    char *string_6;
+    let mut string_4: *mut c_char;
+    let mut string_1: *mut c_char;
+    let mut string_2: *mut c_char;
+    let mut string_6: *mut c_char;
     let mut uVar6: u16;
     let mut bool_1: bool;
     let mut bool_2: bool;
-    char *pbVar4;
-    char *pbVar1;
-    char *string_3;
+    let mut pbVar4: *mut c_char;
+    let mut pbVar1: *mut c_char;
+    let mut string_3: *mut c_char;
 
-    string_1 = (char *) param_1;
-    uVar6 =  ((u32) param_2 >> 0x10);
-    string_2 = (char *) param_2;
+    string_1 =  param_1;
+    uVar6 =  ( param_2 >> 0x10);
+    string_2 =  param_2;
     iVar4 = 0x0;
     uVar5 = 0xffff;
     do {
@@ -1749,7 +1749,7 @@ i16 pass1_1000_3d7a(char *param_1,
         string_3 = string_2;
         string_2 = string_2 + 0x1;
     } while (*string_3 != '\0');
-    string_4 = (char *) ~uVar5;
+    string_4 =  ~uVar5;
     bool_1 = string_2 < string_4;
     string_6 = string_2 + - string_4;
     bool_2 = string_6 == NULL;
@@ -1759,9 +1759,9 @@ i16 pass1_1000_3d7a(char *param_1,
         }
         string_4 = string_4 + -0x1;
         pbVar3 =  string_6;
-        string_6 = (char *) ( string_6 + 0x1);
+        string_6 =  ( string_6 + 0x1);
         pbVar2 =  string_1;
-        string_1 = (char *) ( string_1 + 0x1);
+        string_1 =  ( string_1 + 0x1);
         bool_1 = *pbVar2 < *pbVar3;
         bool_2 = *pbVar2 == *pbVar3;
     } while (bool_2);
@@ -1773,12 +1773,12 @@ i16 pass1_1000_3d7a(char *param_1,
 
 u16 str_op_1000_3da4(char *param_1)
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
     let mut uVar2: u16;
-    char *pcVar3;
+    let mut pcVar3: *mut c_char;
     let mut bVar4: bool;
 
-    pcVar3 = (char *) param_1;
+    pcVar3 =  param_1;
     bVar4 = true;
     uVar2 = 0xffff;
     do {
@@ -1801,15 +1801,15 @@ uchar str_op_1000_3dbe(char *param_1,
                        char *param_2,
                        mut param_3: u16 )
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
     char cVar2;
-    char *pcVar3;
-    char *pcVar4;
+    let mut pcVar3: *mut c_char;
+    let mut pcVar4: *mut c_char;
     let mut uVar5: u16;
 
-    uVar5 =  ((u32) param_1 >> 0x10);
-    pcVar4 = (char *) param_1;
-    pcVar3 = (char *) param_2;
+    uVar5 =  ( param_1 >> 0x10);
+    pcVar4 =  param_1;
+    pcVar3 =  param_2;
     if (param_3 != 0x0) {
         do {
             pcVar1 = pcVar3;
@@ -1839,20 +1839,20 @@ u16 pass1_1000_3de8(char *param_1,
                     u16_t param_5)
 {
     u8 *pbVar1;
-    char *pcVar2;
-    char *pcVar3;
+    let mut pcVar2: *mut c_char;
+    let mut pcVar3: *mut c_char;
     u8 bVar4;
     let mut uVar5: u16;
     let mut iVar6: i16;
-    char *pcVar7;
-    char *pcVar8;
+    let mut pcVar7: *mut c_char;
+    let mut pcVar8: *mut c_char;
     let mut uVar9: u16;
     let mut uVar10: u16;
     let mut bVar11: bool;
 
     if (param_3 != 0x0) {
-        uVar9 =  ((u32) param_1 >> 0x10);
-        pcVar8 = (char *) param_1;
+        uVar9 =  ( param_1 >> 0x10);
+        pcVar8 =  param_1;
         uVar5 = param_3;
         pcVar7 = pcVar8;
         do {
@@ -1864,8 +1864,8 @@ u16 pass1_1000_3de8(char *param_1,
             pcVar7 = pcVar7 + 0x1;
         } while (*pcVar2 != '\0');
         iVar6 = param_3 - uVar5;
-        uVar10 =  ((u32) param_2 >> 0x10);
-        pcVar7 = (char *) param_2;
+        uVar10 =  ( param_2 >> 0x10);
+        pcVar7 =  param_2;
         do {
             if (iVar6 == 0x0) {
                 break;
@@ -2027,7 +2027,7 @@ u8 *pass1_1000_3e82(mut param_1: u16 ,
     if (param_3 == 0xa) {
         uVar6 =  param_1 >> 0xf;
     }
-    uVar12 =  ((u32) param_2 >> 0x10);
+    uVar12 =  ( param_2 >> 0x10);
     pbVar9 =  param_2;
     pbVar10 = pbVar9;
     pbVar8 = pbVar9;
@@ -2049,7 +2049,7 @@ u8 *pass1_1000_3e82(mut param_1: u16 ,
         uVar2 = CONCAT22(uVar7,
                          param_1);
         param_1 =  (uVar2 / param_3);
-        cVar4 = (char) (uVar2 % (u32) param_3);
+        cVar4 = (char) (uVar2 %  param_3);
         bVar3 = cVar4 + 0x30;
         if (0x39 < bVar3) {
             bVar3 = cVar4 + 0x57;
@@ -2086,26 +2086,26 @@ i16 pass1_1000_3ec0(mut param_1: u16 ,
     u16_t uVar3;
     u16_t unaff_SI;
     u16_t uVar4;
-    u32 *puVar4;
+    let mut puVar4: *mut u32;
 
-    puVar4 = (u32 *) CONCAT22(PTR_LOOP_1050_5fc0,
+    puVar4 =  CONCAT22(PTR_LOOP_1050_5fc0,
                               PTR_LOOP_1050_5fbe);
     if ((( PTR_LOOP_1050_5fc0 |  PTR_LOOP_1050_5fbe) != 0x0) && ((param_2 | param_1) != 0x0)) {
-        uVar1 = str_op_1000_3da4((char *) CONCAT22(param_2,
+        uVar1 = str_op_1000_3da4( CONCAT22(param_2,
                                                    param_1));
         loop {
-            uVar4 = (u16_t)((u32) puVar4 >> 0x10);
+            uVar4 = (u16_t)( puVar4 >> 0x10);
             uVar3 = (u16_t) puVar4;
             if (((uVar3 + 0x2) | puVar4) == 0x0) {
                 break;
             }
-            uVar2 = str_op_1000_3da4((char *) CONCAT22((uVar3 + 0x2),
+            uVar2 = str_op_1000_3da4( CONCAT22((uVar3 + 0x2),
                                                        puVar4));
             if (((uVar1 < uVar2) && (( *puVar4 + uVar1) == '=')) && (uVar2 =
-                                                                                        pass1_1000_3de8((char *) CONCAT22((uVar3
+                                                                                        pass1_1000_3de8( CONCAT22((uVar3
                                                                                                                               + 0x2),
                                                                                                                           puVar4),
-                                                                                                        (char *) CONCAT22(param_2,
+                                                                                                         CONCAT22(param_2,
                                                                                                                           param_1),
                                                                                                         uVar1,
                                                                                                         unaff_SI,
@@ -2113,7 +2113,7 @@ i16 pass1_1000_3ec0(mut param_1: u16 ,
                 == 0x0)) {
                 return puVar4 + uVar1 + 0x1;
             }
-            puVar4 = (u32 *) ((u32) puVar4 & 0xffff0000 | (u32) (uVar3 + 0x4));
+            puVar4 =  ( puVar4 & 0xffff0000 |  (uVar3 + 0x4));
         }
     }
     return 0x0;
@@ -2148,7 +2148,7 @@ u16 sys_1000_3f9c(char *param_1,
                   char *param_2,
                   mut param_3: u16 )
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
     let mut uVar2: u16;
     let mut unaff_CS: u16;
     let mut local_4: u16;
@@ -2165,9 +2165,9 @@ u16 sys_1000_3f9c(char *param_1,
                       0x0,
                        &u16_1050_68a8);
     } else {
-        _u16_1050_68a8 = (char *) ((u32) _u16_1050_68a8 & 0xffff0000 | (u32) (u16_1050_68a8 + 0x1));
+        _u16_1050_68a8 =  ( _u16_1050_68a8 & 0xffff0000 |  (u16_1050_68a8 + 0x1));
         *pcVar1 = '\0';
     }
-    PTR_LOOP_1050_68b0 =  ((u32) _PTR_LOOP_1050_68ae >> 0x10);
+    PTR_LOOP_1050_68b0 =  ( _PTR_LOOP_1050_68ae >> 0x10);
     return uVar2;
 }
