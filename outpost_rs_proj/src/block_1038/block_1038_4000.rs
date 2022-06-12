@@ -9,7 +9,7 @@ pub fn pass1_1038_42cc(mut param_1: u32)
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar6: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut extraout_DX: u16;
   let mut uVar8: u16;
   let mut extraout_DX_00: u16;
@@ -227,7 +227,7 @@ pub fn pass1_1038_45e4(mut param_1: u16 ,mut param_2: i16,mut param_3: u32)
   let mut iVar8: i16;
   let mut iVar9: i16;
   let mut iVar10: i16;
-  u8 *puVar11;
+  let mut puVar11: *mut u8,
   let mut iVar12: i16;
   let mut uVar13: u16;
   let mut uVar14: u16;
@@ -330,8 +330,8 @@ pub fn pass1_1038_4760(mut param_1: u32)
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar6: u16;
-  u8 *puVar7;
-  u8 *puVar8;
+  let mut puVar7: *mut u8,
+  let mut puVar8: *mut u8,
   let mut extraout_DX: u16;
   let mut extraout_DX_00: u16;
   let mut extraout_DX_01: u16;
@@ -345,7 +345,7 @@ pub fn pass1_1038_4760(mut param_1: u32)
   let mut uVar13: u32;
   let mut puVar14: *mut u32;
   u8 uVar15;
-  u8 *puVar16;
+  let mut puVar16: *mut u8,
   let mut uStack26: u32;
   let mut uStack22: u32;
   let mut puStack14: *mut u32;
@@ -569,7 +569,7 @@ switchD_1038_49cf_caseD_a:
     uStack28 = (iVar2 + -0x2);
     puStack326 = &local_20;
     puVar3 = &local_20;
-    pass1_1030_64ce(puVar3,uVar9,_PTR_LOOP_1050_5740,(u16 *)CONCAT22(0x1050,puVar3),*(i32 *)(iVar6 + 0x8),
+    pass1_1030_64ce(puVar3,uVar9,_PTR_LOOP_1050_5740,CONCAT22(0x1050,puVar3),*(i32 *)(iVar6 + 0x8),
                     CONCAT22(0x1050,local_14a));
     uStack26 = *puVar3;
     uVar5 = (puVar3 + 0x2);

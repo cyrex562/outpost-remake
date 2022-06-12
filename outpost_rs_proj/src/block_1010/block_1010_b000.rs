@@ -69,10 +69,10 @@ pub fn pass1_1010_bf1e(mut param_1: i16,u8 *param_2,mut param_3: u32,i16 *param_
     uVar1 = &paVar4->field6_0x10;
     if (uVar1 != 0x0) {
       uVar7 = uVar1 >> 0x10;
-      pass1_1008_3f62(puStack26,(u16 *)(uVar1 & 0xffff0000 | (uVar1 + 0x4)));
+      pass1_1008_3f62(puStack26,(uVar1 & 0xffff0000 | (uVar1 + 0x4)));
       (puStack26 + 0xc) = iStack36;
       iStack36 += 0x1;
-      puStack26 = (u16 *)(puStack26 & 0xffff0000 | (puStack26 + 0x18));
+      puStack26 = (puStack26 & 0xffff0000 | (puStack26 + 0x18));
     }
   }
   return;
@@ -130,7 +130,7 @@ pub fn pass1_1010_bffa(mut param_1: i16,u8 *param_2,mut param_3: u32)
     uVar5 = paVar9 | (param_1 + 0x4);
     if (uVar5 != 0x0) {
       uVar6 = FUN_1010_830a(uVar5,paVar9,0x1000,_u16_1050_14cc,0x1b4);
-      puVar1 = (u16 *)*puStack6;
+      puVar1 = *puStack6;
       *puVar1 = uVar6;
       (puVar1 + 0x2) = paVar9;
       (param_1 + 0x4) = 0x0;

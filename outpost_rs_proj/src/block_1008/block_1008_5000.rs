@@ -8,7 +8,8 @@ StructD * pass1_1008_507c(StructD *param_1,param_2: u8)
   }
   return param_1;
 }
-use crate::prog_types::LRESULT;
+use crate::prog_types::{HWND16, LPARAM, LRESULT, WPARAM16};
+use crate::structs_2_h::Struct57;
 
 pub fn pass1_1008_50c2(param_1: *mut astruct_110, mut param_2: u32, mut param_3: u32, param_4: *mut u16, param_5: *mut astruct_76)
 
@@ -70,7 +71,7 @@ pub fn pass1_1008_5134(mut param_1: u32)
   iVar5 = (iVar6 + 0x8);
   iVar2 = (iVar6 + 0xa);
   lVar4 = CONCAT22(iVar2 - (iVar5 == 0x0),iVar5 + -0x1) * *(i32 *)(iVar6 + 0x4);
-  puVar1 = (u16 *)(iVar6 + 0x10);
+  puVar1 = (iVar6 + 0x10);
   uVar3 = lVar4;
   uStack10 = CONCAT22(((lVar4 >> 0x10) + CARRY2(uVar3,*puVar1)) * 0x100 + (iVar6 + 0x12),
                       uVar3 + *puVar1);
@@ -300,7 +301,7 @@ pub fn init_op_1008_54aa(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,u
     extraout_DX = 0x0;
   }
   else {
-    struct_op_1008_0000((u16 *)CONCAT22(paVar5,uVar3));
+    struct_op_1008_0000(CONCAT22(paVar5,uVar3));
   }
   puStack12 = CONCAT22(extraout_DX,uVar3);
   uVar4 = extraout_DX;
@@ -915,7 +916,7 @@ pub fn win_ui_op_1008_5cfe(param_1: *mut astruct_27,char *param_2,WNDCLASS16 *in
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn def_win_proc_1008_5f44(mut param_1: u16 ,mut param_2: u16 ,param_3: LPARAM,in_wparam_2: WPARAM16,mut param_5: u16 ,param_6: HWND16) -> LRESULT
+pub fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
 
 {
   WORD WVar1;
@@ -968,7 +969,7 @@ u8 * pass1_1008_5fd8(u8 *param_1)
 
 {
   let mut puVar1: *mut u16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
   let mut pcVar4: *mut c_char;
@@ -977,13 +978,13 @@ u8 * pass1_1008_5fd8(u8 *param_1)
 
   paVar3 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   puVar2 = &stack0x0006;
-  puStack6 = (u16 *)CONCAT22(0x1050,puVar2);
+  puStack6 = CONCAT22(0x1050,puVar2);
   mem_op_1000_179c(0x1000,paVar3);
   pcVar4 = load_string_1010_847e(_u16_1050_14cc,in_stack_00000004);
   unk_str_op_1000_3d3e(CONCAT22(paVar3,puVar2),pcVar4);
   while( true ) {
     puVar1 = puStack6;
-    puStack6 = (u16 *)(puStack6 & 0xffff0000 | (puStack6 + 0x2));
+    puStack6 = (puStack6 & 0xffff0000 | (puStack6 + 0x2));
     if (*puVar1 == 0x0) break;
     pcVar4 = load_string_1010_847e(_u16_1050_14cc,*puVar1);
     pass1_1000_3cea(CONCAT22(paVar3,puVar2),pcVar4);

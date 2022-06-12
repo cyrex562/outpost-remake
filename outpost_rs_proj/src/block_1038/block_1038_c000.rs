@@ -82,7 +82,7 @@ LRESULT send_msg_1038_c228(mut param_1: u32)
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   LVar3 = SendMessage16(0x0,0x0,0x407,*(HWND16 *)(iVar1 + 0x92));
-  wparam = (WPARAM16)LVar3;
+  wparam = LVar3;
   SendMessage16(0x0,0x0,0x407,*(HWND16 *)(iVar1 + 0x94));
   wparam_00 = 0x408;
   SendMessage16(param_1 & 0xffff0000 | (iVar1 + 0x9e),wparam,0x408,*(HWND16 *)(iVar1 + 0x92));
@@ -416,7 +416,7 @@ pub fn destroy_window_1038_c836(param_1: *mut astruct_881,mut param_2: u32,mut p
   let mut uVar1: u32;
 
   if (param_3 == 0xfce) {
-    puVar1 = pass1_1008_941a((u16 *)CONCAT22(0x1050,local_6),0x1,0xac);
+    puVar1 = pass1_1008_941a(CONCAT22(0x1050,local_6),0x1,0xac);
     win_1008_5c9e(local_6,(puVar1 >> 0x10),_u16_1050_02a0,CONCAT22(0x1050,local_6));
     uVar1 = param_1->field141_0x8e;
     (uVar1 + 0xa) = 0x6;
@@ -636,7 +636,7 @@ pub fn show_win_1038_cb5c(mut param_1: u32,StructB *struct_b_param_1,mut param_3
   uVar3 = pass1_1008_eb6e();
   for (iStack10 = 0x0; iStack10 < uVar3; iStack10 += 0x1) {
     uVar1 = &struct_b_5[0x7].field1_0x2;
-    puVar9 = (u16 *)pass1_1008_eb5c(uVar1,(uVar1 >> 0x10),iStack10);
+    puVar9 = pass1_1008_eb5c(uVar1,(uVar1 >> 0x10),iStack10);
     paVar7 = (astruct_57 *)(param_1 & 0xffff0000 | puVar9 >> 0x10);
     paVar4 = (astruct_57 *)puVar9;
     uVar2 = (puVar9 >> 0x10);

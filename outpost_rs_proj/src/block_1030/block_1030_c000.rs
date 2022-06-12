@@ -468,8 +468,8 @@ pub fn pass1_1030_c7b0(mut param_1: u32)
   let mut iVar5: i16;
   let mut BVar6: bool;
   let mut uVar7: u32;
-  u8 *extraout_DX;
-  u8 *puVar8;
+  let mut extraout_DX: *mut u8,
+  let mut puVar8: *mut u8,
   let mut iVar9: i16;
   let mut uVar10: u16;
 
@@ -733,29 +733,29 @@ pub fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i16,mut p
 {
   code **ppcVar1;
   let mut iVar2: i16;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut extraout_DX: u16;
   let mut extraout_DX_00: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut extraout_DX_01: u16;
   astruct_304 *iVar7;
   astruct_303 *iVar8;
   u8 uVar8;
   let mut puVar9: *mut u32;
   let mut puVar10: *mut u32;
-  u8 *puVar11;
+  let mut puVar11: *mut u8,
   u8 local_32 [0x8];
   let mut puStack42: *mut u32;
   let mut uStack38: u32;
   let mut uStack34: u32;
   let mut puStack30: *mut u32;
   let mut uStack26: u16;
-  u8 *puStack24;
+  let mut puStack24: *mut u8,
   let mut uStack22: u16;
-  u8 *puStack20;
+  let mut puStack20: *mut u8,
   let mut puStack18: *mut u32;
   let mut iStack14: i16;
   let mut uStack12: u16;

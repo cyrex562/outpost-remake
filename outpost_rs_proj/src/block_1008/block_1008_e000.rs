@@ -392,7 +392,7 @@ pub fn pass1_1008_e5da(mut param_1: u32,mut param_2: u32)
 {
   let mut uVar1: u32;
   let mut BVar2: bool;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut extraout_DX: u16;
   let mut iVar4: i16;
   let mut uVar5: u16;
@@ -613,7 +613,7 @@ pub fn pass1_1008_e9a4(param_1: *mut astruct_102,param_2: *mut astruct_102,mut p
   uVar8 = pass1_1030_8326();
   uVar7 = (param_3 >> 0x10);
   iVar6 = param_3;
-  puVar1 = (u16 *)(iVar6 + 0xe);
+  puVar1 = (iVar6 + 0xe);
   uVar2 = uVar8 - *puVar1;
   iVar4 = ((uVar8 >> 0x10) - (iVar6 + 0x10)) - (uVar8 < *puVar1);
   uStack6 = CONCAT22(iVar4,uVar2);
@@ -769,7 +769,7 @@ u16 * pass1_1008_ec10(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
   (param_1 + 0xa) = 0x0;
   CONCAT22(param_2,param_1) = 0xec62;
   (param_1 + 0x2) = 0x1008;
-  return (u16 *)CONCAT22(param_2,param_1);
+  return CONCAT22(param_2,param_1);
 }
 
 
@@ -908,7 +908,7 @@ pub fn pass1_1008_ed8a(u32 *param_1,mut param_2: u16 ,mut param_3: i16,mut param
 pub fn pass1_1008_ee14(mut param_1: u32,mut param_2: u16 )
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut uVar2: u16;
   let mut iVar3: i16;
   let mut uVar4: u16;

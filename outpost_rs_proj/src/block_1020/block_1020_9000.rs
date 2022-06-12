@@ -33,7 +33,7 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
   }
   if (((iVar10 + 0xac) | (iVar10 + 0xaa)) != 0x0) {
     pass1_1020_915a(param_1,(astruct_669 *)(param_2 & 0xffff | uVar12 << 0x10),param_3);
-    pass1_1008_4480(paVar2,(u16 *)(param_2 & 0xffff0000 | (iVar10 + 0xae)),*(astruct_76 **)(iVar10 + 0xb4)
+    pass1_1008_4480(paVar2,(param_2 & 0xffff0000 | (iVar10 + 0xae)),*(astruct_76 **)(iVar10 + 0xb4)
                    );
     ppcVar3 = (code **)(*param_2 + 0x10);
     (**ppcVar3)();
@@ -173,7 +173,7 @@ pub fn set_struct_op_1020_921c(mut param_1: u16 ,StructA *pstructa_param_2,mut p
   HVar2 = GetDC16(iVar3->field2_0x4);
   iVar3->field5_0xa = HVar2;
   param_4 = (u8 **)CONCAT22(param_4,0x48);
-  pUVar3 = (u16 *)
+  pUVar3 = 
            mixed_1010_20ba(paVar3,_u16_1050_0ed0,param_4,in_stack_0000fe8c,in_stack_0000ffb0,in_stack_0000ffb6,
                            in_stack_0000ffba);
   uVar1 = (pUVar3 >> 0x10);
@@ -273,7 +273,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uStack14 = x_var_6;
   uStack20 = DAT_1050_4216;
   iStack22 = DAT_1050_422c;
-  puStack26 = (u16 *)PTR_u16_1050_4172_1050_4212;
+  puStack26 = PTR_u16_1050_4172_1050_4212;
   puStack30 = PTR_u16_1050_41b2_1050_4218;
   uStack34 = PTR_u16_1050_41da_1050_421c;
   uStack38 = PTR_u16_1050_4202_1050_4220;
@@ -304,7 +304,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
   iStack62 = 0x8;
-  puVar2 = (u16 *)&PTR_LOOP_1050_0000;
+  puVar2 = &PTR_LOOP_1050_0000;
   while (uStack58 = (astruct_737 *)(puVar2 + 0x1), uStack58 < 0xa) {
     brush_handle_var6 = CreateSolidBrush16(*(COLORREF *)(puStack30 + iStack62 * 0x4 + 0x4));
     x_var_6 = x_var_6 & 0xffff | (rect16_a.y - 0x1) << 0x10;
@@ -653,7 +653,7 @@ pub fn init_globals_1020_96d4(void)
   PTR_LOOP_1050_47ac = NULL;
   PTR_LOOP_1050_47b2 = NULL;
   PTR_LOOP_1050_47b8 = NULL;
-  puVar3 = (u16 *)0x47ba;
+  puVar3 = 0x47ba;
   for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
     puVar1 = puVar3;
     puVar3 = puVar3 + 0x1;
@@ -941,7 +941,7 @@ pub fn init_globals_1020_96d4(void)
   PTR_LOOP_1050_4ae8 = NULL;
   PTR_LOOP_1050_4aee = NULL;
   PTR_LOOP_1050_4af4 = NULL;
-  puVar3 = (u16 *)0x4af6;
+  puVar3 = 0x4af6;
   for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
     puVar1 = puVar3;
     puVar3 = puVar3 + 0x1;
@@ -1212,7 +1212,7 @@ pub fn init_globals_1020_96d4(void)
   PTR_LOOP_1050_4e24 = NULL;
   PTR_LOOP_1050_4e2a = NULL;
   PTR_LOOP_1050_4e30 = NULL;
-  puVar3 = (u16 *)0x4e32;
+  puVar3 = 0x4e32;
   for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
     puVar1 = puVar3;
     puVar3 = puVar3 + 0x1;

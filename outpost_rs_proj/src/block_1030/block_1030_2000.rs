@@ -724,7 +724,7 @@ pub fn pass1_1030_2c8a(mut param_1: i16,StructD *param_2,param_3: *mut astruct_3
   let mut puVar1: *mut u16;
   let mut uVar2: u16;
   let mut BVar3: bool;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut uVar5: u16;
   let mut paVar6: *mut Struct57;
   astruct_374 *iVar7;
@@ -759,7 +759,7 @@ pub fn pass1_1030_2c8a(mut param_1: i16,StructD *param_2,param_3: *mut astruct_3
   }
   uVar2 = fn_ptr_op_1000_1708(0x28,0x0,0x1,PTR_LOOP_1050_5f2c,param_2);
   uVar5 = param_2;
-  puStack1038 = (u16 *)CONCAT22(uVar5,uVar2);
+  puStack1038 = CONCAT22(uVar5,uVar2);
   paVar6 = (astruct_57 *)(param_2 & 0xffff0000 | (uVar5 | uVar2));
   if ((uVar5 | uVar2) == 0x0) {
     iVar14.field13_0x10 = NULL;
@@ -781,7 +781,7 @@ pub fn pass1_1030_2c8a(mut param_1: i16,StructD *param_2,param_3: *mut astruct_3
       iVar7.field2_0x2 = uVar2;
       iVar7.field3_0x4 = paVar6;
       puVar1 = iVar14.field13_0x10;
-      BVar3 = read_file_1008_7bc8(param_4,(u16 *)(puVar1 & 0xffff0000 | (puVar1 + 0x6)));
+      BVar3 = read_file_1008_7bc8(param_4,(puVar1 & 0xffff0000 | (puVar1 + 0x6)));
       if ((((BVar3 != 0x0) &&
            (puVar1 = iVar14.field13_0x10,
            BVar3 = read_file_1008_7dee(param_4,(puVar1 & 0xffff0000 | (puVar1 + 0xc)),0x2),

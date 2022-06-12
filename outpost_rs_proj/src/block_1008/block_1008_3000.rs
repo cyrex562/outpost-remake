@@ -58,7 +58,7 @@ pub fn pass1_1008_30cc(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
   let mut in_stack_0000fdb4: u16;
   let mut in_stack_0000fdba: u16;
   let mut in_stack_0000fdbe: u16;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut uVar4: u16;
   char local_210 [0xa];
   u8 local_206 [0x100];
@@ -128,12 +128,12 @@ pub fn save_file_1008_3178(mut param_1: u16 ,param_2: *mut astruct_72,mut param_
   let mut uStack1368: u16;
   let mut pcStack1354: *mut c_char;
   let mut uStack1350: u32;
-  u8 *puStack1346;
+  let mut puStack1346: *mut u8,
   let mut uStack1344: u16;
   let mut uStack1342: u32;
   let mut pcStack1338: *mut c_char;
   let mut uStack1336: u16;
-  u8 *puStack1334;
+  let mut puStack1334: *mut u8,
   let mut uStack1332: u16;
   let mut uStack1330: u32;
   let mut uStack1326: u16;
@@ -657,7 +657,7 @@ u16 * pass1_1008_3a40(param_1: *mut astruct_451,param_2: u8)
   if ((param_2 & 0x1) != 0x0) {
     fn_ptr_1000_17ce(param_1);
   }
-  return (u16 *)param_1;
+  return param_1;
 }
 
 

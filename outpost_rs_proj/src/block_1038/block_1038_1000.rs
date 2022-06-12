@@ -42,9 +42,9 @@ pub fn pass1_1038_1220(mut param_1: u32,mut param_2: u32,mut param_3: u32)
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut uVar5: u16;
-  u8 *puVar6;
-  u8 *puVar7;
-  u8 *puVar8;
+  let mut puVar6: *mut u8,
+  let mut puVar7: *mut u8,
+  let mut puVar8: *mut u8,
   let mut uVar10: u16;
   let mut uVar9: u32;
   let mut puVar11: *mut u32;
@@ -300,7 +300,7 @@ pub fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,u32 *param_3,u32 *para
       puStack54 = NULL;
       uStack56 = (puStack50 + 0x4);
       for (uStack58 = 0x0; uVar5 = uStack56, uStack58 < uStack56; uStack58 += 0x1) {
-        pass1_1020_bb16(puStack50,CONCAT22(0x1050,&local_46),(u16 *)CONCAT13(0x10,CONCAT12(0x50,local_42)),
+        pass1_1020_bb16(puStack50,CONCAT22(0x1050,&local_46),CONCAT13(0x10,CONCAT12(0x50,local_42)),
                         uStack58);
         if (((local_46 != 0x0) && (0xd < local_42[0])) && (local_42[0] < 0x1d)) {
           uVar15 = local_46;
@@ -542,7 +542,7 @@ pub fn pass1_1038_1940(mut param_1: u32,u32 *param_2,mut param_3: u32)
   code **ppcVar1;
   let mut uVar2: u16;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut extraout_DX: u16;
   let mut puVar5: *mut u32;
   let mut puStack10: *mut u32;
@@ -575,7 +575,7 @@ pub fn pass1_1038_19a0(mut param_1: u32,u32 *param_2,mut param_3: u32,mut param_
   let mut uVar2: u32;
   let mut uVar3: u16;
   let mut uVar4: u16;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut extraout_DX: u16;
   let mut puVar6: *mut u32;
   let mut puStack10: *mut u32;
@@ -693,7 +693,7 @@ pub fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   paVar1 = (astruct_57 *)(in_EDX & 0xffff0000);
   uStack16 = (param_5 + 0x4);
   for (uStack18 = 0x0; uVar2 = (paVar1 >> 0x10), uStack18 < uStack16; uStack18 += 0x1) {
-    pass1_1020_bb16(param_5,CONCAT22(0x1050,&local_1a),(u16 *)CONCAT22(0x1050,local_16),uStack18);
+    pass1_1020_bb16(param_5,CONCAT22(0x1050,&local_1a),CONCAT22(0x1050,local_16),uStack18);
     paVar1 = (astruct_57 *)CONCAT22(uVar2,uStack14);
     if (uStack14 < local_1a) {
       pass1_1030_7ddc(uStack14,paVar1,uStack6,uStack14,local_16[0]);
@@ -826,7 +826,7 @@ pub fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
   code **ppcVar6;
   let mut uVar7: u16;
   let mut bVar8: bool;
-  u8 *puVar9;
+  let mut puVar9: *mut u8,
   let mut uVar10: u32;
   let mut uVar11: u16;
   let mut uVar12: u16;

@@ -38,7 +38,7 @@ pub fn pass1_1028_b108(param_1: *mut astruct_341,mut param_2: u16 ,param_3: *mut
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x110,paVar5);
   uVar4 = paVar5;
-  puStack10 = (u16 *)CONCAT22(uVar4,param_1);
+  puStack10 = CONCAT22(uVar4,param_1);
   if ((uVar4 | param_1) != 0x0) {
     *puStack10 = 0x389a;
     param_1->field2_0x2 = 0x1008;

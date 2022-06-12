@@ -102,11 +102,11 @@ pub fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823)
   let mut uVar11: u16;
   let mut uVar8: u32;
   let mut DVar10: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut puVar14: u16;
   let mut uVar13: u16;
-  u8 *puVar12;
-  u8 *puVar13;
+  let mut puVar12: *mut u8,
+  let mut puVar13: *mut u8,
   let mut uVar7: u16;
   let mut in_EDX: u32;
   astruct_823 *struct_1;
@@ -197,7 +197,7 @@ pub fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823)
   (&struct_1.field5_0x8 + 0x2) = paVar14;
   uVar8 = struct_1.field5_0x8;
   puVar1 = struct_1.field5_0x8;
-  _PTR_LOOP_1050_0298 = (u16 *)uVar8;
+  _PTR_LOOP_1050_0298 = uVar8;
   *puVar1 = 0x70;
     // 0x1538
   (puVar1 + 0x2) = s_tile2_bmp_1050_1538;
@@ -296,7 +296,7 @@ pub fn pass1_1008_049c(mut param_1: u16 ,mut param_2: u16 ,char *param_3)
 
 {
   let mut uVar1: u16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
 
   if (param_3 != NULL) {
     uVar1 = str_op_1000_3da4(param_3);
@@ -681,7 +681,7 @@ pub fn window_op_1008_0af8(mut param_1: u16 ,StructA *struct_param_1)
   let mut HVar2: HWND16;
   let mut uVar3: u32;
   let mut uVar4: u16;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar6: *mut Struct57;
   let iVar8: *mut StructA;
@@ -716,7 +716,7 @@ pub fn window_op_1008_0af8(mut param_1: u16 ,StructA *struct_param_1)
     &iVar8[0x1].field10_0x14 = 0x0;
   }
   else {
-    pass1_1008_392e((u16 *)CONCAT22(paVar7,HVar2),iVar8.field4_0x8);
+    pass1_1008_392e(CONCAT22(paVar7,HVar2),iVar8.field4_0x8);
     iVar8[0x1].field10_0x14 = HVar2;
     iVar8[0x1].field11_0x16 = (i16)paVar6;
   }

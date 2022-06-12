@@ -28,7 +28,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
     u8 local_116;
     u8 uStack277;
     char cStack272;
-    u8 *puStack270;
+    let mut puStack270: *mut u8,
     u8 local_108;
     u8 uStack263;
     u8 uStack262;
@@ -58,7 +58,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
                                                             &local_116),
                                    (astruct_810 *) CONCAT22(0x1050,
                                                             local_124),
-                                   (u16 *) CONCAT22(0x1050,
+                                    CONCAT22(0x1050,
                                                     local_12c));
     if (i_stack280 == 0x0) {
         u_var1 = str_op_1000_3da4( CONCAT22(0x1050,
@@ -454,12 +454,12 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
 i16 pass1_1000_545a(mut param_1: u32,
                     mut param_2: u32)
 {
-    u8 *pbVar1;
+    let mut pbVar1: *mut u8,
     u8 bVar2;
     u8 bVar3;
     u8 bVar4;
-    u8 *pbVar5;
-    u8 *pbVar6;
+    let mut pbVar5: *mut u8,
+    let mut pbVar6: *mut u8,
 
     pbVar6 =  param_2;
     pbVar5 =  param_1;
@@ -499,14 +499,14 @@ u16 *pass1_1000_54a0(mut param_1: u32,
 
     if (param_3 != 0x0) {
         iVar8 =  (param_1 >> 0x10);
-        uVar5 = - (u16 *) param_1;
+        uVar5 = -  param_1;
         uVar6 = param_3;
         if (uVar5 != 0x0) {
             uVar6 = (uVar5 - param_3 & - (uVar5 < param_3)) + param_3;
             uVar5 = param_3 - uVar6;
         }
         uVar3 = param_2 & 0xff | param_2 << 0x8;
-        puVar7 = (u16 *) param_1;
+        puVar7 =  param_1;
         for (uVar4 = uVar6 >> 0x1; uVar4 != 0x0; uVar4 -= 0x1) {
             puVar1 = puVar7;
             puVar7 = puVar7 + 0x1;
@@ -514,7 +514,7 @@ u16 *pass1_1000_54a0(mut param_1: u32,
         }
         for (uVar6 =  ((uVar6 & 0x1) != 0x0); uVar2 = (u8) (param_2 & 0xff), uVar6 != 0x0; uVar6 -= 0x1) {
             puVar1 = puVar7;
-            puVar7 = (u16 *) ( puVar7 + 0x1);
+            puVar7 =  ( puVar7 + 0x1);
             * puVar1 = uVar2;
         }
         if (uVar5 != 0x0) {
@@ -525,12 +525,12 @@ u16 *pass1_1000_54a0(mut param_1: u32,
             }
             for (uVar6 =  ((uVar5 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
                 puVar1 = puVar7;
-                puVar7 = (u16 *) ( puVar7 + 0x1);
+                puVar7 =  ( puVar7 + 0x1);
                 * puVar1 = uVar2;
             }
         }
     }
-    return (u16 *) param_1;
+    return  param_1;
 }
 pub fn pass1_1000_54e8(u8 *param_1,
                      mut param_2: u16 ,

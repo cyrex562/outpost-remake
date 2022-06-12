@@ -296,7 +296,7 @@ pub fn pass1_1010_9372(u32 *param_1,mut param_2: u16 ,mut param_3: i16,mut param
 pub fn pass1_1010_93f0(mut param_1: u32)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut uVar2: u16;
   let mut iVar3: i16;
   let mut uVar4: u16;
@@ -312,7 +312,7 @@ pub fn pass1_1010_93f0(mut param_1: u32)
     pass1_1010_398e(puVar1,CONCAT22(0x1050,puVar1),0x0,0x0,0x0);
     (iVar3 + 0x56) = puVar1;
     (iVar3 + 0x58) = uVar2;
-    pass1_1010_927a((u16 *)CONCAT22(0x1050,local_1c));
+    pass1_1010_927a(CONCAT22(0x1050,local_1c));
   }
   return;
 }
@@ -879,7 +879,7 @@ pub fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,HFILE16 *param_3,mut par
         if (*(i32 *)(iVar7 + 0xa) == 0x0) {
           mem_op_1000_179c(0xc,paVar6);
           uVar5 = paVar6;
-          puStack22 = (u16 *)CONCAT22(uVar5,uVar2);
+          puStack22 = CONCAT22(uVar5,uVar2);
           paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
           if ((uVar5 | uVar2) == 0x0) {
             (iVar7 + 0xa) = 0x0;
@@ -894,7 +894,7 @@ pub fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,HFILE16 *param_3,mut par
           uVar2 = local_4;
           mem_op_1000_179c(0x8,paVar6);
           uVar5 = paVar6;
-          puStack22 = (u16 *)CONCAT22(uVar5,uVar2);
+          puStack22 = CONCAT22(uVar5,uVar2);
           paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
           if ((uVar5 | uVar2) == 0x0) {
             puStack14 = NULL;
@@ -930,7 +930,7 @@ LAB_1010_9c32:
           if (*(i32 *)(iVar7 + 0xe) == 0x0) {
             mem_op_1000_179c(0xc,paVar6);
             uVar5 = paVar6;
-            puStack46 = (u16 *)CONCAT22(uVar5,uVar2);
+            puStack46 = CONCAT22(uVar5,uVar2);
             paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
             if ((uVar5 | uVar2) == 0x0) {
               (iVar7 + 0xe) = 0x0;
@@ -945,7 +945,7 @@ LAB_1010_9c32:
             uVar2 = local_2a[0];
             mem_op_1000_179c(0x8,paVar6);
             uVar5 = paVar6;
-            puStack22 = (u16 *)CONCAT22(uVar5,uVar2);
+            puStack22 = CONCAT22(uVar5,uVar2);
             paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
             if ((uVar5 | uVar2) == 0x0) {
               puStack30 = NULL;
@@ -981,7 +981,7 @@ LAB_1010_9d5c:
             if (*(i32 *)(iVar7 + 0x12) == 0x0) {
               mem_op_1000_179c(0xc,paVar6);
               uVar5 = paVar6;
-              puStack22 = (u16 *)CONCAT22(uVar5,uVar2);
+              puStack22 = CONCAT22(uVar5,uVar2);
               paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
               if ((uVar5 | uVar2) == 0x0) {
                 (iVar7 + 0x12) = 0x0;
@@ -996,7 +996,7 @@ LAB_1010_9d5c:
               uVar2 = local_36[0];
               mem_op_1000_179c(0x8,paVar6);
               uVar5 = paVar6;
-              puStack46 = (u16 *)CONCAT22(uVar5,uVar2);
+              puStack46 = CONCAT22(uVar5,uVar2);
               paVar6 = (astruct_57 *)(paVar6 & 0xffff0000 | (uVar5 | uVar2));
               if ((uVar5 | uVar2) == 0x0) {
                 puStack38 = NULL;

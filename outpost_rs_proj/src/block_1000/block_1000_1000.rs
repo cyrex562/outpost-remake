@@ -1,5 +1,7 @@
+use std::os::raw::c_char;
 use crate::block_1000;
 use crate::block_1000::{block_1000_0000, block_1000_2000};
+use crate::block_1000::block_1000_0000::call_fn_ptr_1000_0dc6;
 use crate::globals::{DAT_1050_5f30, REG_CS};
 use crate::structs_2_h::Struct7;
 use crate::utils::CONCAT22;
@@ -98,7 +100,7 @@ pub fn mem_op_1000_131c(mut param_1: u16,
         if (handle != 0x0) {
             GlobalPageLock16(handle);
         }
-        pass1_1000_15ce((u16 *) u_stack10,
+        pass1_1000_15ce( u_stack10,
                         u_stack8);
     }
     if (handle == 0x0) {
@@ -182,7 +184,7 @@ pub fn pass1_1000_15ce(param_1: *mut u16,
 
     u_var2 = param_2 |  param_1;
     while (u_var2 != 0x0) {
-        pu_var1 = (u16 *) *param_1;
+        pu_var1 =  *param_1;
         u_var3 = param_1[0x1];
         GlobalDOSFree16(param_2);
         param_1 = pu_var1;
@@ -205,8 +207,8 @@ pub fn pass1_1000_16ee(mut param_1: u16,
 pub fn mem_op_1000_179c(mut param_1: i16,
                         param_2: *mut astruct_57)
 {
-    u8 *puVar1;
-    u8 *puVar2;
+    let mut puVar1: *mut u8,
+    let mut puVar2: *mut u8,
 
     puVar1 = PTR_LOOP_1050_5f2c;
     puVar2 = PTR_LOOP_1050_5f2e;
@@ -222,10 +224,10 @@ pub fn mem_op_1000_179c(mut param_1: i16,
     return;
 }
 
-pub fn fn_ptr_1000_17ce(char *param_1)
+pub fn fn_ptr_1000_17ce(param_1: *mut c_char)
 {
-    if (param_1 != NULL) {
-        block_1000_0000::call_fn_ptr_1000_0dc6(param_1);
+    if !param_1.is_null() {
+        call_fn_ptr_1000_0dc6(param_1);
     }
     return;
 }
@@ -251,7 +253,7 @@ pub unsafe fn pass1_1000_1e61(mut param_1: u16,
     let mut UStack62: u16;
     let mut UStack60: u16;
     code *pcStack6;
-    u8 *puStack4;
+    let mut puStack4: *mut u8,
     let mut uVar3: u16;
 
     // &DAT_1050_1050
@@ -380,7 +382,7 @@ pub fn mem_op_1000_1558(mut param_1: u16,
 
 pub fn mem_op_1000_160a(param_1: *StructD) -> *const u8
 {
-    u8 *puVar1;
+    let mut puVar1: *mut u8,
     let mut uVar1: u16;
     let mut uVar2: u32;
 
@@ -416,7 +418,7 @@ pub fn mem_op_1000_160a(param_1: *StructD) -> *const u8
 pub fn mem_1000_167a(mut param_1: u16,
                      mut param_2: u16 ) -> u16
 {
-    u8 *puVar1;
+    let mut puVar1: *mut u8,
     let mut in_register_0000000a: u16;
     StructD *pSVar2;
     i32 lVar3;
@@ -510,7 +512,7 @@ pub fn fn_ptr_op_1000_1708(mut param_1: u16,
 
 pub fn pass1_1000_17e8(param_1: *const u8, param_2: *const u8) -> *const u8
 {
-    u8 *puVar1;
+    let mut puVar1: *mut u8,
 
     puVar1 = PTR_LOOP_1050_5f34;
     PTR_LOOP_1050_5f34 = param_1;
@@ -520,7 +522,7 @@ pub fn pass1_1000_17e8(param_1: *const u8, param_2: *const u8) -> *const u8
 
 pub fn pass1_1000_180c(mut param_1: u16, mut param_2: u16 ) -> u16
 {
-    u8 *puVar1;
+    let mut puVar1: *mut u8,
     let mut in_register_0000000a: u16;
     StructD *pSVar2;
     i32 lVar3;
@@ -630,7 +632,7 @@ pub fn mem_op_1000_1902(mut param_1: u16,
     }
     do {
         uVar3 = UVar5;
-        pUVar1 = (u16 *) (param_2 & 0xfffb | 0x1000);
+        pUVar1 =  (param_2 & 0xfffb | 0x1000);
         mem_op_1000_131c( pUVar1,
                          0x100);
         UVar5 = uVar3 |  pUVar1;
@@ -837,7 +839,7 @@ pub fn mem_op_1000_1b9a(mut param_1: u16,
     uVar4 = (param_2 + 0x10);
     uVar5 = (param_2 + 0x12);
     loop {
-        puStack8 = (u16 *) CONCAT22(uVar5,
+        puStack8 =  CONCAT22(uVar5,
                                     uVar4);
         if ((uVar5 | uVar4) == 0x0) {
             break;
@@ -954,7 +956,7 @@ pub fn ass1_1000_1fd2(mut param_1: i16) -> *mut c_char
 
 pub fn pass1_1000_1fea() -> bool
 {
-    u8 *puVar1;
+    let mut puVar1: *mut u8,
     let mut bVar2: bool;
 
     puVar1 = PTR_LOOP_1050_5f22 + 0x1;

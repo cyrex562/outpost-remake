@@ -85,17 +85,17 @@ pub fn pass1_1028_5128(undefined1 param_1,mut param_2: u16 ,param_3: *mut astruc
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,uStack10);
   piStack18 = piVar1;
   uStack16 = uVar2;
-  pass1_1030_5b1c(CONCAT22(uVar2,piVar1),(u16 *)CONCAT22(uVar5,piVar4),(u16 *)CONCAT22(uVar7,puVar6));
+  pass1_1030_5b1c(CONCAT22(uVar2,piVar1),CONCAT22(uVar5,piVar4),CONCAT22(uVar7,puVar6));
   pass1_1028_b58e(param_3);
   uStack22 = CONCAT22(uVar2,piVar1);
   local_1c = (piVar1 + 0x6);
   iStack24 = piVar1[0x8];
-  pass1_1028_c8ee(param_3,0x1,(u16 *)CONCAT22(0x1050,&local_1c));
-  pass1_1008_3eb4((astruct_615 *)CONCAT22(0x1050,&local_1c),(u16 *)CONCAT22(0x1050,&local_22),
-                  (u16 *)CONCAT22(0x1050,local_20),(u16 *)CONCAT22(0x1050,local_1e));
+  pass1_1028_c8ee(param_3,0x1,CONCAT22(0x1050,&local_1c));
+  pass1_1008_3eb4((astruct_615 *)CONCAT22(0x1050,&local_1c),CONCAT22(0x1050,&local_22),
+                  CONCAT22(0x1050,local_20),CONCAT22(0x1050,local_1e));
   if (local_e < local_22) {
     pass1_1030_5b3e(CONCAT22(uStack16,piStack18),local_22,local_c);
-    pass1_1030_5b1c(CONCAT22(uStack16,piStack18),(u16 *)CONCAT22(0x1050,&local_e),(u16 *)CONCAT22(0x1050,&local_c)
+    pass1_1030_5b1c(CONCAT22(uStack16,piStack18),CONCAT22(0x1050,&local_e),CONCAT22(0x1050,&local_c)
                    );
   }
   uStack38 = (uStack22 + 0x2e);
@@ -103,7 +103,7 @@ pub fn pass1_1028_5128(undefined1 param_1,mut param_2: u16 ,param_3: *mut astruc
   struct_op_1028_87f0((astruct_97 *)CONCAT22(0x1050,local_14e),0x0,0x0,0x6f,&local_1c,&DAT_1050_1050,uStack42,
                       uStack10);
   fn_ptr_1030_835a(_u16_1050_5748,CONCAT22(0x1050,local_14e));
-  pass1_1028_ccd0(param_3,(u16 *)CONCAT22(0x1050,&local_1c));
+  pass1_1028_ccd0(param_3,CONCAT22(0x1050,&local_1c));
   return;
 }
 
@@ -559,7 +559,7 @@ pub fn FUN_1028_5a94(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct_1
 {
   code **ppcVar1;
   let mut uVar2: u16;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut uVar4: u32;
   let mut extraout_DX: u16;
   let mut uVar5: u16;
@@ -853,7 +853,7 @@ pub fn FUN_1028_5fc8(mut param_1: u16 ,param_2: *mut astruct_373,HFILE16 *param_
 {
   let mut in_AX: i16;
   let mut BVar1: bool;
-  u8 *in_DX;
+  let mut in_DX: *mut u8,
 
   file_1028_b81a(in_AX,in_DX,param_2,param_3);
   if ((in_AX != 0x0) &&

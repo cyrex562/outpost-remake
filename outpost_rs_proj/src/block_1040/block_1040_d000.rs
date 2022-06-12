@@ -101,7 +101,7 @@ pub fn pass1_1040_d1bc(StructD *param_1)
 pub fn send_dlg_item_msg_1040_d20c(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct_929,i32 param_4)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut uVar2: u16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
@@ -112,7 +112,7 @@ pub fn send_dlg_item_msg_1040_d20c(mut param_1: u16 ,mut param_2: u16 ,param_3: 
   let mut in_stack_0000feba: u16;
   let mut in_stack_0000fec0: u16;
   let mut in_stack_0000fec4: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut uVar8: u16;
   u8 local_106 [0x100];
   let mut uStack6: u16;
@@ -337,7 +337,7 @@ pub fn send_ldg_item_msg_1040_d79c(mut param_1: u16 ,param_2: *mut astruct_903)
 
 {
   i32 lVar1;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut uVar3: u16;
   let mut in_register_0000000a: u16;
   let mut iVar4: i16;

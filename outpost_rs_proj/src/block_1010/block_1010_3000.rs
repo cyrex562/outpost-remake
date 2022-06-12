@@ -706,7 +706,7 @@ pub fn pass1_1010_3adc(mut param_1: u32) -> u32
 {
   let mut puVar1: *mut u16;
 
-  puVar1 = (u16 *)(param_1 + 0x16);
+  puVar1 = (param_1 + 0x16);
   return CONCAT22((puVar1 + 0x2),*puVar1);
 }
 
@@ -781,7 +781,7 @@ pub fn pass1_1010_3bde(param_1: *mut astruct_455,mut param_2: u16 )
   else {
     puVar4 = &iVar4[0x1].field1_0x2;
   }
-  puStack14 = (u16 *)CONCAT22(uVar5,puVar4);
+  puStack14 = CONCAT22(uVar5,puVar4);
   *puStack14 = 0x389a;
   puVar4[0x1] = 0x1008;
   pass1_1010_1d80((StructD *)param_1);
@@ -987,7 +987,7 @@ pub fn pass1_1010_3e3c(param_1: *mut astruct_19,mut param_2: u16 ,mut param_3: u
   &iVar1[0x1].ver_res_0xc = 0x0;
   &iVar1[0x1].field8_0x10 = 0x0;
   iVar1[0x1].field10_0x14 = 0x0;
-  puVar4 = pass1_1008_3e54((u16 *)(param_1 & 0xffff0000 | ZEXT24(&iVar1[0x1].field11_0x16)),0x0,0x3,0x5);
+  puVar4 = pass1_1008_3e54((param_1 & 0xffff0000 | ZEXT24(&iVar1[0x1].field11_0x16)),0x0,0x3,0x5);
   uVar3 = CONCAT22(uVar2,(puVar4 >> 0x10));
   &iVar1[0x1].field15_0x1c = 0x0;
     // 0x4a46
@@ -1045,7 +1045,7 @@ pub fn pass1_1010_3f00(StructD *param_1)
   else {
     puVar4 = &iVar5->field19_0x20;
   }
-  puStack16 = (u16 *)CONCAT22(uVar5,puVar4);
+  puStack16 = CONCAT22(uVar5,puVar4);
   *puStack16 = 0x389a;
   puVar4[0x1] = 0x1008;
   pass1_1010_1d80(param_1);

@@ -171,10 +171,10 @@ pub fn big_switch_1008_15d4(param_1: *mut astruct_20,param_2: *mut astruct_72,i3
 
 {
   let mut var3: u16;
-  u8 *var2;
+  let mut var2: *mut u8,
   let mut var4: u16;
   astruct_20 *var5;
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut uVar3: u16;
   let mut in_EDX: *mut Struct57;
   let mut uVar4: u32;

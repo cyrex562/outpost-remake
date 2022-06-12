@@ -214,7 +214,7 @@ pub fn pass1_1000_262c(param_1: u32,
     let mut unaff_es: u16;
     let mut u_var12: u16;
     let mut u_var3: u16;
-    u8 *puVar3;
+    let mut puVar3: *mut u8,
 
     PTR_LOOP_1050_5fd2 = param_2;
     PTR_LOOP_1050_5fd4 = param_3;
@@ -482,7 +482,7 @@ pub fn *dos_env;
     let mut piVar4: *mut i16;
 
     dos_env = GetDOSEnvironment16();
-    pu_var7 = (u16 *) ( dos_env >> 0x10);
+    pu_var7 =  ( dos_env >> 0x10);
     if ( dos_env != 0x0) {
         pu_var7 = NULL;
     }
@@ -554,7 +554,7 @@ pub fn *dos_env;
             piVar9 =  ( piVar9 + 0x1);
             cVar4 = piVar2;
             pu_var4 = pu_var5;
-            pu_var5 = (u16 *) ( pu_var5 + 0x1);
+            pu_var5 =  ( pu_var5 + 0x1);
             pu_var4 = cVar4;
         } while (cVar4 != '\0');
         i_var9 += -0x1;
@@ -902,7 +902,7 @@ pub fn pass1_1000_25d2(mut param_1: i16,
 {
     let mut piVar1: *mut i16;
     let mut pcVar2: *mut c_char;
-    u8 *puVar3;
+    let mut puVar3: *mut u8,
     StructD *pstruct_d_var4;
     let mut piVar5: *mut i16;
     let mut pcVar6: *mut c_char;
@@ -1007,7 +1007,7 @@ pub fn pass1_1000_2950(mut param_1: i16,
     u16_t *puVar1;
     u16_t uVar2;
     let mut pcVar3: *mut c_char;
-    u8 *puVar4;
+    let mut puVar4: *mut u8,
     let mut pcVar5: *mut c_char;
     let mut iVar6: i16;
     u16_t *puVar7;
@@ -1090,7 +1090,7 @@ pub fn pass1_1000_2a00(param_1: *mut u16) -> u16
     let mut unaff_BP: i16;
     let mut uVar5: u16;
     let mut unaff_CS: u16;
-    u8 *puStack20;
+    let mut puStack20: *mut u8,
     char local_10;
     u8 uStack15;
     u8 local_e[0x8];
@@ -1191,7 +1191,7 @@ pub fn pass1_1000_2b5c(mut param_1: u16,
     let mut uVar1: u16;
     let mut uVar2: u16;
 
-    uVar1 = pass1_1000_2e74((u16 *) param_1);
+    uVar1 = pass1_1000_2e74( param_1);
     uVar2 = FUN_1000_30b4();
     pass1_1000_2f00(uVar1,
                      param_1);
@@ -1206,9 +1206,9 @@ pub fn mem_1000_2bb6(mut param_1: u16,
     let mut iVar2: i16;
     let mut piVar3: *mut i16;
     u8 bVar4;
-    u8 *puVar5;
-    u8 *puVar6;
-    u8 *puVar7;
+    let mut puVar5: *mut u8,
+    let mut puVar6: *mut u8,
+    let mut puVar7: *mut u8,
 
     piVar3 = param_3;
     bVar4 = * (param_3 + 0x5);
@@ -1382,8 +1382,8 @@ pub fn pass1_1000_2e74(param_1: *mut u16) -> u16
 
     if (u16_1050_61ec != 0x0) {
         puVar5 = param_1 + 0x78;
-        puVar4 = (u16 *) 0x5ff2;
-        if ((param_1 == (u16 *) 0x621c) || (puVar4 = (u16 *) &PTR_LOOP_1050_5ff6, param_1 == (u16 *) 0x6228)) {
+        puVar4 =  0x5ff2;
+        if ((param_1 ==  0x621c) || (puVar4 =  &PTR_LOOP_1050_5ff6, param_1 ==  0x6228)) {
             if (((* (param_1 + 0x5) & 0xc) == 0x0) && ((* puVar5 & 0x1) == 0x0)) {
                 uVar2 = *puVar4;
                 uVar3 = puVar4[0x1];
@@ -1418,7 +1418,7 @@ pub fn pass1_1000_2e74(param_1: *mut u16) -> u16
 pub fn pass1_1000_2f48(param_1: i32) -> u16
 {
     let mut uVar1: u16;
-    u8 *puVar2;
+    let mut puVar2: *mut u8,
 
     if (param_1 == 0x0) {
         uVar1 = pass1_1000_3038(0x0);
@@ -1442,8 +1442,8 @@ u16 pass1_1000_2fa4(i16 *param_1)
     let mut piVar1: *mut i16;
     u8 bVar2;
     let mut iVar3: i16;
-    u8 *puVar4;
-    u8 *puVar5;
+    let mut puVar4: *mut u8,
+    let mut puVar5: *mut u8,
     let mut uVar6: u16;
 
     uVar6 = 0x0;

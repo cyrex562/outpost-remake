@@ -164,7 +164,7 @@ pub fn call_win_proc_1040_a40e(mut param_1: u16 ,param_2: HWND16,mut param_3: u3
   let mut uVar5: u32;
 
   uStack6 = 0x0;
-  wparam = (WPARAM16)(param_3 >> 0x10);
+  wparam = (param_3 >> 0x10);
   if (param_4 == 0x19) {
     ppcVar2 = (code **)(_PTR_LOOP_1050_5ee0 + 0x34);
     uStack6 = (**ppcVar2)();
@@ -423,14 +423,14 @@ pub fn win_ui_dlg_op_1040_a94a(mut param_1: u16 ,mut param_2: u32)
   let mut piVar1: *mut i16;
   let mut uVar2: u32;
   let mut uVar3: u32;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut uVar5: u16;
-  u8 *value;
+  let mut value: *mut u8,
   let mut pcVar6: *mut c_char;
   let mut uVar7: u16;
   let mut HVar8: HWND16;
   let mut value_00: u16;
-  u8 *puVar9;
+  let mut puVar9: *mut u8,
   let mut in_register_0000000a: u16;
   let mut uVar10: u32;
   let mut iVar11: i16;
@@ -655,7 +655,7 @@ pub fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
   let mut iVar4: i16;
   let mut pcVar5: *mut c_char;
   i32 lVar6;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut uVar8: u16;
   let mut in_register_0000000a: u16;
   let mut iVar9: i16;

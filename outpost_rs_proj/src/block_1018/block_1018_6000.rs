@@ -8,7 +8,7 @@ piVar2: *mut i16;
   HBRUSH16 hgdiobj16_00;
   let mut uVar7: u16;
   HPALETTE16 obj;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   HGDIOBJ16 hgdiobj16_var7;
   let mut in_EDX: u32;
   let mut paVar25: *mut Struct57;
@@ -91,9 +91,9 @@ piVar2: *mut i16;
     pass1_1018_642e(uVar3,(uVar3 >> 0x10),CONCAT13(0x10,CONCAT12(0x50,&puVar11[-0x5].field_0x2)),
                     (uVar28 + 0x8));
     uVar9 = &puVar11[-0x5].field_0x2;
-    pass1_1008_3e76((u16 *)CONCAT22(0x1050,&puVar11[-0x6].field6_0x6),0x0,uVar9,(uVar9 >> 0x10));
+    pass1_1008_3e76(CONCAT22(0x1050,&puVar11[-0x6].field6_0x6),0x0,uVar9,(uVar9 >> 0x10));
     uVar23 = puVar11[-0x5].field6_0x6;
-    pass1_1008_4480(*(astruct_76 **)&puVar11[-0x4].field_0x2,(u16 *)CONCAT22(0x1050,&puVar11[-0x6].field6_0x6),
+    pass1_1008_4480(*(astruct_76 **)&puVar11[-0x4].field_0x2,CONCAT22(0x1050,&puVar11[-0x6].field6_0x6),
                     *(astruct_76 **)(iVar9 + uVar23));
     iVar29 = &puVar11[-0x6].field_0x4;
     uVar10 = &puVar11[-0x5].field_0x2;
@@ -228,9 +228,9 @@ pub fn draw_op_1018_6544(mut param_1: u32,i16 *param_2)
 
   if (param_2 != NULL) {
     uStack4 = ((param_2 + 0x4) - *param_2 >> 0x1) + *param_2;
-    puVar1 = pass1_1008_3e54((u16 *)CONCAT22(0x1050,local_a),0x0,0x57,uStack4);
+    puVar1 = pass1_1008_3e54(CONCAT22(0x1050,local_a),0x0,0x57,uStack4);
     uVar3 = (param_1 >> 0x10);
-    uVar2 = pass1_1018_659a((puVar1 >> 0x10),param_1,uVar3,(u16 *)CONCAT22(0x1050,local_a));
+    uVar2 = pass1_1018_659a((puVar1 >> 0x10),param_1,uVar3,CONCAT22(0x1050,local_a));
     draw_polygon_1018_661c(param_1,uVar3,0x3,uVar2,(uVar2 >> 0x10));
   }
   return;
@@ -251,7 +251,7 @@ pub fn pass1_1018_659a(u8 *param_1,mut param_2: u16 ,mut param_3: u16 ,param_4: 
 
   paVar3 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   piVar1 = &local_6;
-  pass1_1008_3e94(param_4,(u16 *)CONCAT22(0x1050,piVar1),CONCAT22(0x1050,&local_4));
+  pass1_1008_3e94(param_4,CONCAT22(0x1050,piVar1),CONCAT22(0x1050,&local_4));
   mem_op_1000_179c(0xc,paVar3);
   uVar2 = SUB42(paVar3,0x0);
   for (iStack18 = 0x0; iStack18 < 0x3; iStack18 += 0x1) {

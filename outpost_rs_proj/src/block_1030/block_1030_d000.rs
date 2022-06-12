@@ -246,7 +246,7 @@ pub fn pass1_1030_d3b2(mut param_1: i16,mut param_2: i16,mut param_3: u16 ,mut p
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut extraout_DX: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut extraout_DX_00: u16;
   let mut extraout_DX_01: u16;
   let mut uVar8: u16;
@@ -381,7 +381,7 @@ pub fn pass1_1030_d61c(mut param_1: u32,mut param_2: u32)
   let mut uVar3: u16;
   HFILE16 in_stack_0000ffcc;
   let mut local_1a: u32;
-  u8 *local_16;
+  let mut local_16: *mut u8,
   let mut local_14: u16;
   u32 local_12 [0x3];
   let mut iStack4: i16;
@@ -693,7 +693,7 @@ pub fn pass1_1030_db92(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u16,mut
 
 {
   let mut iVar1: i16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut uVar3: u32;
   let mut uVar4: u16;
   let mut uVar5: u32;
@@ -773,7 +773,7 @@ pub fn pass1_1030_dcf4(mut param_1: u16 ,param_2: *mut astruct_15)
   let mut uVar4: u16;
   let mut extraout_DX: u16;
   let mut uVar5: u16;
-  u8 *puVar6;
+  let mut puVar6: *mut u8,
   let mut extraout_DX_00: u16;
   let mut uVar7: u16;
   astruct_15 *iVar9;

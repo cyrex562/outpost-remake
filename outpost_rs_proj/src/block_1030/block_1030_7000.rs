@@ -127,7 +127,7 @@ pub fn pass1_1030_7176(mut param_1: u32)
     uVar1 = (iVar2 + 0x22);
     uStack14 = (uVar1 + 0x4);
     for (uStack18 = 0x0; uStack18 < uStack14; uStack18 += 0x1) {
-      pass1_1020_bb16((u32*)(iVar2 + 0x22),CONCAT22(0x1050,&local_1a),(u16 *)CONCAT22(0x1050,local_16),
+      pass1_1020_bb16((u32*)(iVar2 + 0x22),CONCAT22(0x1050,&local_1a),CONCAT22(0x1050,local_16),
                       uStack18);
       if (0x0 < local_16[0]) {
         lStack6 += local_1a;
@@ -306,7 +306,7 @@ pub fn pass1_1030_7418(mut param_1: i16,param_2: *mut astruct_731,mut param_3: u
   astruct_731 *iVar2;
   let mut iVar3: i16;
   let mut BVar4: bool;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut extraout_DX: u16;
   let mut extraout_DX_00: u16;
   let mut uVar6: u16;
@@ -535,7 +535,7 @@ pub fn file_1030_778c(mut param_1: i16,u8 *param_2,param_3: *mut astruct_373,HFI
   if (param_1 != 0x0) {
     iVar3 = (astruct_387 *)param_3;
     iVar3 = (astruct_387 *)&iVar3->field_0xc;
-    BVar2 = read_file_1008_7bc8(param_4,(u16 *)(param_3 & 0xffff0000 | ZEXT24(iVar3)));
+    BVar2 = read_file_1008_7bc8(param_4,(param_3 & 0xffff0000 | ZEXT24(iVar3)));
     if ((BVar2 != 0x0) && (BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,&local_4),0x2), BVar2 != 0x0)) {
       uVar13 = (param_3 >> 0x10);
       iVar3->field18_0x12 = local_4;

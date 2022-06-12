@@ -44,8 +44,8 @@ pub fn unk_win_ui_op_1020_717e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut
   let mut puVar6: *mut u32;
   let mut uVar6: u16;
   let mut uVar9: u16;
-  u8 *puVar7;
-  u8 *puVar10;
+  let mut puVar7: *mut u8,
+  let mut puVar10: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar11: *mut Struct57;
   astruct_40 *iVar7;
@@ -227,7 +227,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
     local_brush_handle = RVar9;
     pass1_1018_2e5e(SUB42(RVar9,0x0),in_DX,struct_1->field22_0x1c);
     rect_30 = RVar9 & 0xffff | in_DX << 0x10;
-    pass1_1008_3e54((u16 *)CONCAT13(0x10,CONCAT12(0x50,local_42)),0x0,0x35,0xc);
+    pass1_1008_3e54(CONCAT13(0x10,CONCAT12(0x50,local_42)),0x0,0x35,0xc);
     if (*(i32 *)&struct_1->field19_0x14 != 0x0) {
       pass1_1008_5236(*(astruct_109 **)&struct_1->field19_0x14);
     }
@@ -240,7 +240,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
         fn_ptr_1000_17ce(CONCAT22(uVar8,uVar1));
       }
       puVar3 = local_42;
-      pass1_1008_8ce4(rect_30,(u16 *)CONCAT22(0x1050,puVar3),local_brush_handle,uVar10);
+      pass1_1008_8ce4(rect_30,CONCAT22(0x1050,puVar3),local_brush_handle,uVar10);
       struct_1->field19_0x14 = puVar3;
       struct_1->field20_0x16 = uVar10;
     }
@@ -372,7 +372,7 @@ pub fn win_1020_75f0(param_1: *mut astruct_283,mut param_2: u32)
   }
   if (iVar7->field233_0xea == 0x0) {
     iVar7->field233_0xea = 0x1;
-    puVar10 = pass1_1008_941a((u16 *)CONCAT22(0x1050,local_6),0x1,0x91);
+    puVar10 = pass1_1008_941a(CONCAT22(0x1050,local_6),0x1,0x91);
     uVar4 = (puVar10 >> 0x10);
     paVar6 = (astruct_57 *)CONCAT22(uVar8,uVar4);
     uVar3 = ZEXT24(local_6);
@@ -467,7 +467,7 @@ pub fn pass1_1020_7824(mut param_1: u16 ,param_2: *mut astruct_666,mut param_3: 
   code **ppcVar1;
   let mut uVar2: u32;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar5: *mut Struct57;
   let mut puVar6: *mut u32;

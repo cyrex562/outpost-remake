@@ -129,7 +129,7 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
   let mut uVar3: u32;
   let mut iVar4: i16;
   let mut uVar5: u16;
-  u8 *puVar6;
+  let mut puVar6: *mut u8,
   let mut uVar7: u16;
   let mut paVar8: *mut Struct57;
   let mut uVar9: u32;
@@ -184,7 +184,7 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
   iVar9->field111_0x72 = paVar8;
   pass1_1030_8344(_u16_1050_5748,iVar9->field108_0x6c);
   uStack14 = CONCAT22(paVar8,iVar4);
-  uStack16 = (**(i16 **)(iVar4 + 0x10) == 0x9);
+  uStack16 = (*(iVar4 + 0x10) == 0x9);
   iStack22 = (uStack10 + 0x22);
   uVar7 = iStack22 * 0x6;
   mem_op_1000_179c(uVar7,paVar8);
@@ -202,15 +202,15 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
   while( true ) {
     puVar6 = uVar9;
     uVar13 = (uStack10 >> 0x10);
-    puVar1 = (u16 *)(uStack10 + 0x22);
+    puVar1 = (uStack10 + 0x22);
     if (*puVar1 < uStack24 || *puVar1 == uStack24) break;
     uVar3 = (uStack10 + 0x24);
     uVar7 = uStack24;
     pass1_1028_e0a0(puVar6,_PTR_LOOP_1050_65e2,(uVar3 + uStack24 * 0x2) << 0x10);
     pcStack34 = CONCAT22(puVar6,uVar7);
     uVar9 = pcStack20 >> 0x10;
-    pass1_1008_3f62((u16 *)(pcStack20 & 0xffff0000 | (uStack24 * 0x6 + pcStack20)),
-                    (u16 *)CONCAT22(puVar6,uVar7 + 0x8));
+    pass1_1008_3f62((pcStack20 & 0xffff0000 | (uStack24 * 0x6 + pcStack20)),
+                    CONCAT22(puVar6,uVar7 + 0x8));
     pcStack40 = pcStack34;
     pcStack30 = pcStack34;
     if (pcStack34 != NULL) {
@@ -220,8 +220,8 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
     uStack24 += 0x1;
   }
   for (iStack26 = 0x0; piVar2 = &iVar9->field112_0x74, *piVar2 != iStack26 && iStack26 <= *piVar2; iStack26 += 0x1) {
-    pass1_1008_3e94((u16 *)(pcStack20 & 0xffff0000 | (iStack26 * 0x6 + pcStack20)),
-                    (u16 *)CONCAT22(0x1050,&local_2e),CONCAT22(0x1050,&local_30));
+    pass1_1008_3e94((pcStack20 & 0xffff0000 | (iStack26 * 0x6 + pcStack20)),
+                    CONCAT22(0x1050,&local_2e),CONCAT22(0x1050,&local_30));
     iStack42 = pass1_1000_49b2(local_2e);
     iStack42 /= 0x5;
     if (0xc < iStack42) {
@@ -470,7 +470,7 @@ pub fn get_sys_metrics_1010_46f6(mut param_1: u32,param_2: *mut astruct_57)
   uVar8 = SUB42(&DAT_1050_1050,0x0);
   puVar5 = mixed_1010_20ba(param_2,_u16_1050_0ed0,(u8 **)CONCAT22(piVar7,0x48),in_stack_0000fe7c,
                            in_stack_0000ffa0,in_stack_0000ffa6,in_stack_0000ffaa);
-  pass1_1008_3e94((u16 *)(puVar5 & 0xffff0000 | (puVar5 + 0xe)),(u16 *)CONCAT22(uVar8,piVar7),pcVar9)
+  pass1_1008_3e94((puVar5 & 0xffff0000 | (puVar5 + 0xe)),CONCAT22(uVar8,piVar7),pcVar9)
   ;
   uVar4 = (param_1 >> 0x10);
   iVar3 = param_1;
@@ -524,8 +524,8 @@ pub fn draw_op_1010_47d0(param_1: *mut astruct_27,mut param_2: u16 ,mut param_3:
   HGDIOBJ16 hgdiobj16_00;
   astruct_797 *iVar4;
   let mut uVar5: u16;
-  u8 *extraout_DX;
-  u8 *puVar5;
+  let mut extraout_DX: *mut u8,
+  let mut puVar5: *mut u8,
   let mut iVar7: i16;
   astruct_739 *iVar8;
   let mut uVar11: u16;

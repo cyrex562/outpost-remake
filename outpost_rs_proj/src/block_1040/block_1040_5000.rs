@@ -245,7 +245,7 @@ pub fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut par
     iVar9[0x1].field2_0x4 = paVar5;
   }
   *(u16*)&iVar9[0x1].field1_0x2 = 0x6;
-  iVar6 = **(i16 **)&iVar9[0x1].field1_0x2;
+  iVar6 = *&iVar9[0x1].field1_0x2;
   uVar3 = iVar6 * 0xa + 0x2;
   mem_op_1000_179c(uVar3,paVar5);
   uVar4 = paVar5;
@@ -338,7 +338,7 @@ pub fn win_ui_op_1040_5800(u8 *param_1,param_2: *mut astruct_18,mut param_3: u16
   let mut uVar4: u16;
   let mut hwnd: HWND16;
   let mut uVar6: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar8: *mut Struct57;
   let mut paVar10: *mut Struct57;
@@ -382,7 +382,7 @@ pub fn win_ui_op_1040_5800(u8 *param_1,param_2: *mut astruct_18,mut param_3: u16
       param_2->field138_0x90 = uVar3;
       param_2->field139_0x92 = paVar10;
       *(u16*)&param_2->field138_0x90 = 0x6;
-      iStack12 = **(i16 **)&param_2->field138_0x90;
+      iStack12 = *&param_2->field138_0x90;
       uVar3 = iStack12 * 0xa + 0x2;
       mem_op_1000_179c(uVar3,paVar10);
       uVar6 = paVar10;

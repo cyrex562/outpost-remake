@@ -44,7 +44,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
   code **ppcVar5;
   let mut uVar6: u32;
   qword qVar7;
-  u8 *puVar8;
+  let mut puVar8: *mut u8,
   let mut uVar9: u32;
   let mut uVar10: u16;
   let mut uVar11: u16;

@@ -457,17 +457,17 @@ pub fn file_1008_7548(HFILE16 *hfile_param,i32 *param_2,mut param_3: u32)
   code **ppcVar1;
   let mut file_read_ok: bool;
   let mut uVar2: u16;
-  u8 *buffer_3;
+  let mut buffer_3: *mut u8,
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut buffer_4: *mut Struct57;
   let mut unaff_CS: u16;
   i32 lVar5;
-  u8 *read_buffer_1c;
+  let mut read_buffer_1c: *mut u8,
   u16 local_18 [0x5];
-  u8 *puStack14;
+  let mut puStack14: *mut u8,
   let mut uStack10: u32;
-  u8 *read_buffer;
+  let mut read_buffer: *mut u8,
 
   uVar4 = (param_3 >> 0x10);
   read_buffer = NULL;
@@ -568,8 +568,8 @@ pub fn file_1008_76e4(param_1: *mut astruct_57,HFILE16 *param_2,i32 *param_3)
   let mut BVar3: bool;
   let mut uVar4: u16;
   u8 local_18 [0xe];
-  u8 *puStack10;
-  u8 *buffer_6;
+  let mut puStack10: *mut u8,
+  let mut buffer_6: *mut u8,
 
   buffer_6 = NULL;
   uVar2 = read_file_1008_7dee(param_2,CONCAT22(0x1050,&buffer_6),0x4);
@@ -686,7 +686,7 @@ pub fn pass1_1008_7898(mut param_1: u16 ,mut param_2: u32,u32 *param_3)
       if (uStack6 <= uStack10) {
         return;
       }
-      pass1_1020_c4a8(param_3,(u16 *)CONCAT22(0x1050,local_14),CONCAT22(0x1050,&local_18),
+      pass1_1020_c4a8(param_3,CONCAT22(0x1050,local_14),CONCAT22(0x1050,&local_18),
                       uStack10);
       local_24[0] = local_18;
       BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_24),0x4,in_stack_0000ffc4);
@@ -807,7 +807,7 @@ pub fn write_to_file_1008_7a22(u8 *param_1,i32 param_2)
       if (uStack4 <= uStack6) {
         return;
       }
-      pass1_1020_bb16(param_2,CONCAT22(0x1050,&local_10),(u16 *)CONCAT22(0x1050,&local_12),uStack6)
+      pass1_1020_bb16(param_2,CONCAT22(0x1050,&local_10),CONCAT22(0x1050,&local_12),uStack6)
       ;
       uStack10 = local_12;
       local_1c[0] = local_12;
@@ -865,8 +865,8 @@ u16 write_to_file_1008_7b4c(u8 *param_1,param_2: *mut astruct_615)
   let mut local_6: u16;
   let mut local_4: u16;
 
-  pass1_1008_3eb4(param_2,(u16 *)CONCAT22(0x1050,&local_8),(u16 *)CONCAT22(0x1050,&local_6),
-                  (u16 *)CONCAT22(0x1050,&local_4));
+  pass1_1008_3eb4(param_2,CONCAT22(0x1050,&local_8),CONCAT22(0x1050,&local_6),
+                  CONCAT22(0x1050,&local_4));
   local_12[0] = local_4;
   BVar1 = write_to_file_1008_7e1c(param_1,CONCAT22(0x1050,local_12),0x2,in_stack_0000ffd4);
   if (BVar1 != 0x0) {
@@ -1077,7 +1077,7 @@ u16 * pass1_1008_7e98(param_1: *mut astruct_460,param_2: u8)
   if ((param_2 & 0x1) != 0x0) {
     fn_ptr_1000_17ce(param_1);
   }
-  return (u16 *)param_1;
+  return param_1;
 }
 
 

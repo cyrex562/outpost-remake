@@ -17,7 +17,7 @@ pub fn pass1_1008_9004(param_1: *mut astruct_78,mut param_2: u16 ,mut param_3: u
   pstruct78_var4 = (astruct_78 *)param_1;
   puVar1 = &pstruct78_var4->field4_0xa;
   if ((*puVar1 < param_4 || *puVar1 == param_4) || (pstruct78_var4->field3_0x6 == NULL)) {
-    puVar2 = (u16 *)(&pstruct78_var4->field6_0x12 + 0x2);
+    puVar2 = (&pstruct78_var4->field6_0x12 + 0x2);
     if ((*puVar2 < param_4 || *puVar2 == param_4) &&
        ((*puVar2 < param_4 ||
         (puVar3 = &pstruct78_var4->field6_0x12, puVar3 < param_4 || puVar3 == param_4))))
@@ -28,7 +28,7 @@ pub fn pass1_1008_9004(param_1: *mut astruct_78,mut param_2: u16 ,mut param_3: u
     if ((*puVar3 < param_4 || *puVar3 == param_4) || (pstruct78_var4->field3_0x6 == NULL)) {
       return;
     }
-    puVar4 = (u16 *)(&pstruct78_var4->field4_0xa + 0x2);
+    puVar4 = (&pstruct78_var4->field4_0xa + 0x2);
     bVar5 = *puVar4 < param_4;
     if ((bVar5 || *puVar4 == param_4) &&
        ((bVar5 || (puVar3 = &pstruct78_var4->field4_0xa,
@@ -209,7 +209,7 @@ pub fn pass1_1008_92b2(mut param_1: u32,i32 param_2,i32 param_3)
 
 {
   code **ppcVar1;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut extraout_DX: u16;
   u8 local_c [0x4];
   let mut uStack8: u32;
@@ -235,7 +235,7 @@ pub fn pass1_1008_932a(mut param_1: u32)
 {
   let mut uVar1: u16;
   code **ppcVar2;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut extraout_DX: u16;
   let mut iVar4: i16;
   let mut iVar5: i16;
@@ -629,7 +629,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
     if ((PTR_LOOP_1050_039a == NULL) && (ppcVar1 = (code **)(*param_1 + 0x48), iVar4 = (**ppcVar1)(), iVar4 != 0x0)
        ) {
       make_def_wnd_proc_1008_9ce6
-                (paVar6,UVar7,CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),(WPARAM16)param_4,0x112);
+                (paVar6,UVar7,CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),param_4,0x112);
     }
   }
   else if (param_5 < 0x113) {
@@ -656,7 +656,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
       }
 switchD_1008_9b30_caseD_4:
       if ((param_5 < 0x400) || (0x7ffe < param_5)) {
-        uVar8 = make_def_wnd_proc_1008_9ce6(paVar6,UVar7,CONCAT22(param_3,param_2),(WPARAM16)param_4,param_5);
+        uVar8 = make_def_wnd_proc_1008_9ce6(paVar6,UVar7,CONCAT22(param_3,param_2),param_4,param_5);
         return uVar8;
       }
       ppcVar1 = (code **)(*param_1 + 0x28);
@@ -756,7 +756,7 @@ LRESULT pass1_1008_9c16(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
 
   LVar1 = make_def_wnd_proc_1008_9ce6
                     ((astruct_864 *)param_1,param_2,CONCAT22(param_3,(param_2 >> 0x10)),
-                     (WPARAM16)(param_3 >> 0x10),0x85);
+                     (param_3 >> 0x10),0x85);
   return LVar1;
 }
 
@@ -769,7 +769,7 @@ LRESULT pass1_1008_9c30(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
 
   LVar1 = make_def_wnd_proc_1008_9ce6
                     ((astruct_864 *)param_1,param_2,CONCAT22(param_3,(param_2 >> 0x10)),
-                     (WPARAM16)(param_3 >> 0x10),0x86);
+                     (param_3 >> 0x10),0x86);
   return LVar1;
 }
 pub fn pass1_1008_9c4a(void)
@@ -906,7 +906,7 @@ pub fn pass1_1008_9d36(param_1: *mut astruct_19,param_2: *mut astruct_19,mut par
   uVar7 = pass1_1008_4772(*(astruct_76 **)&param_1->field18_0x22);
   uVar4 &= 0xffff0000;
   uVar3 = (uVar7 >> 0x10);
-  pass1_1008_3e76((u16 *)CONCAT22(param_2,&param_1->field44_0x52),0x0,(0x1e0 - (uVar7 + 0x8)) / 0x2 - 0x32,
+  pass1_1008_3e76(CONCAT22(param_2,&param_1->field44_0x52),0x0,(0x1e0 - (uVar7 + 0x8)) / 0x2 - 0x32,
                   (0x280 - (uVar7 + 0x4)) / 0x2);
   if (CONCAT22(param_2,param_1) == 0x0) {
     paVar2 = NULL;
@@ -930,7 +930,7 @@ pub fn pass1_1008_9e5a(StructD *structd_param_1)
   let mut puVar1: *mut u32;
   let mut uVar2: u16;
   code **ppcVar3;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut uVar5: u16;
   StructD *structd_5;
   let mut uVar6: u16;
@@ -971,7 +971,7 @@ pub fn pass1_1008_9e5a(StructD *structd_param_1)
   else {
     puVar4 = &structd_5->field_0x1c;
   }
-  puStack8 = (u16 *)CONCAT22(uVar6,puVar4);
+  puStack8 = CONCAT22(uVar6,puVar4);
   *puStack8 = 0x389a;
   (puVar4 + 0x2) = 0x1008;
   clenaup_win_ui_1018_4d22(structd_param_1);
@@ -1036,7 +1036,7 @@ pub fn pass1_1008_9fb2(mut param_1: u16 ,mut param_2: i16,param_3: u8,param_4: u
 
 {
   let mut pcVar1: *mut c_char;
-  u8 *pbVar2;
+  let mut pbVar2: *mut u8,
   u8 bVar3;
   code *pcVar4;
   u8 bVar5;

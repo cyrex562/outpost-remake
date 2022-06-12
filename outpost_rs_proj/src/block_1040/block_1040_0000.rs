@@ -228,8 +228,8 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
     paStack8 = paVar3;
     pass1_1030_8344(_u16_1050_5748,CONCAT22(uStack14,paVar3));
     paStack20 = (astruct_598 *)CONCAT22(uVar6,paVar3);
-    pass1_1030_2f1a(CONCAT22(uVar6,paVar3),(u16 *)CONCAT22(uVar11,pHVar10),
-                    (u16 *)CONCAT22(uVar14,CONCAT11(uVar13,uVar12)));
+    pass1_1030_2f1a(CONCAT22(uVar6,paVar3),CONCAT22(uVar11,pHVar10),
+                    CONCAT22(uVar14,CONCAT11(uVar13,uVar12)));
     paVar5 = (astruct_57 *)(uVar6 & 0xffff0000 | ((local_18 - local_16) >> 0xf));
     local_16 += (local_18 - local_16) / 0x2;
     uVar4 = pass1_1030_2fac(paStack20);
@@ -447,7 +447,7 @@ pub fn show_win_1040_0766(StructB *struct_b_param_1,mut param_2: u16 )
   uVar4 = SUB42(&DAT_1050_1050,0x0);
   puVar2 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,(u8 **)CONCAT22(piVar3,0x48),in_stack_0000fe7e,in_stack_0000ffa2
                            ,in_stack_0000ffa8,in_stack_0000ffac);
-  pass1_1008_3e94((u16 *)(puVar2 & 0xffff0000 | (puVar2 + 0xe)),(u16 *)CONCAT22(uVar4,piVar3),
+  pass1_1008_3e94((puVar2 & 0xffff0000 | (puVar2 + 0xe)),CONCAT22(uVar4,piVar3),
                   CONCAT22(uVar6,piVar5));
   move_win_1040_826c(struct_b_param_1,local_a + 0x8c,local_8 + 0xb9);
   ShowWindow16(0x5,*(HWND16 *)(struct_b_param_1 + 0x6));
@@ -462,9 +462,9 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
 {
   code **ppcVar1;
   INT16 IVar2;
-  u8 *puVar3;
-  u8 *puVar4;
-  u8 *puVar5;
+  let mut puVar3: *mut u8,
+  let mut puVar4: *mut u8,
+  let mut puVar5: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar6: *mut Struct57;
   let mut puVar7: *mut u32;
@@ -567,7 +567,7 @@ pub fn pass1_1040_0a1a(mut param_1: u32)
   let mut uVar4: u32;
   astruct_394 *paVar5;
   let mut uVar6: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut in_EDX: u32;
   let mut paVar8: *mut Struct57;
   let mut iVar9: i16;
@@ -713,8 +713,8 @@ pub fn show_win_1040_0c7c(StructB *param_1)
   dialog_ui_fn_1040_78e2(param_1);
   uVar2 = (param_1 >> 0x10);
   uVar1 = (param_1 + 0x8e);
-  pass1_1010_4f30(uVar1,(uVar1 >> 0x10),(u16 *)CONCAT22(0x1050,&local_6),
-                  (u16 *)CONCAT22(0x1050,&local_6 + 0x2));
+  pass1_1010_4f30(uVar1,(uVar1 >> 0x10),CONCAT22(0x1050,&local_6),
+                  CONCAT22(0x1050,&local_6 + 0x2));
   move_win_1040_826c(param_1,(INT16)local_6,(BOOL16)(local_6 >> 0x10));
   ShowWindow16(0x5,*(HWND16 *)(param_1 + 0x6));
   return;

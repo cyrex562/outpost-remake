@@ -1,4 +1,5 @@
 //
+#![allow(non_snake_case)]
 // Created by cyrex on 2022-05-22.
 //
 // //
@@ -14,10 +15,11 @@
 
 
 
+use std::ffi::c_void;
 use std::os::raw::c_char;
 use crate::block_1000::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
 use crate::block_1000::block_1000_2000::mem_op_1000_21b6;
-use crate::prog_types::{ATOM, FLOATING_SAVE_AREA, LRESULT, RECT16, WNDCLASS16};
+use crate::prog_types::{ATOM, FLOATING_SAVE_AREA, HGDIOBJ16, HGLOBAL16, HINSTANCE16, HMENU16, HTASK16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16};
 
 pub struct CONTEXT
 {
@@ -218,7 +220,9 @@ pub fn SetFocus16(hwnd: HWND16) -> HWND16 {
 // BOOL16 IsIconic16(HWND16 hwnd);
 // pub fn GetWindowRect16(RECT16 * rect, HWND16 hwnd);
 // pub fn GetClientRect16(RECT16 * rect, HWND16 hwnd);
-pub fn GetClientRect16(rect: *mut RECT16, hwnd: HWND16);
+pub fn GetClientRect16(rect: *mut RECT16, hwnd: HWND16) {
+    todo!()
+}
 // BOOL16 EnableWindow16(BOOL16 enable, HWND16 hwnd);
 // BOOL16 IsWindowEnabled16(HWND16 hwnd);
 // INT16 GetWindowText16(INT16 n_max_count, u32 lp_string, HWND16 hwnd);
@@ -226,7 +230,7 @@ pub fn GetClientRect16(rect: *mut RECT16, hwnd: HWND16);
 // HDC16 BeginPaint16(PAINTSTRUCT16 * lps, HWND16 hwnd);
 // BOOL16 EndPaint16(PAINTSTRUCT16 * lps, HWND16 hwnd);
 // HWND16 CreateWindow16(DWORD style, void * data, HINSTANCE16 instance, HMENU16 hmenu, HWND16 parent, INT16 height, INT16 width, INT16 y, INT16 x, char * window_name, char * class_name);
-pub fn CreateWindow16(style: u32, data: *mut u8, instance: HINSTANCE16, hmen: HMENU16, parent: HWND16, height: i16, width: i16, y: i16, x: i16, window_name: *const c_char, class_name: *const c_char) -> HWND16 {
+pub fn CreateWindow16(style: u32, data: *mut c_void, instance: HINSTANCE16, hmenu: HMENU16, parent: HWND16, height: i16, width: i16, y: i16, x: i16, window_name: *const c_char, class_name: *const c_char) -> HWND16 {
     todo!()
 }
 

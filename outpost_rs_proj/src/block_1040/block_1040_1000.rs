@@ -192,11 +192,11 @@ pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
   let mut HVar1: HWND16;
   let mut uVar4: u16;
   let mut iVar4: i16;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut iVar5: i16;
   let mut puVar4: *mut c_char;
-  u8 *puVar6;
-  u8 *puVar7;
+  let mut puVar6: *mut u8,
+  let mut puVar7: *mut u8,
   let mut in_EDX: u32;
   let mut uVar5: u16;
   let mut paVar2: *mut Struct57;
@@ -226,13 +226,13 @@ pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
     uStack88 = pass1_1000_3e2c(CONCAT22(0x1050,local_54));
     HVar1 = GetDlgItem16(s_vrpal_bmp_1050_183a + 0x4,struct_7.hwnd_0x6);
     lresult_4 = SendMessage16(0x0,0x0,0x407,HVar1);
-    if ((WPARAM16)lresult_4 != 0xffff) {
-      SendMessage16(CONCAT22(0x1050,local_aa),(WPARAM16)lresult_4,0x408,HVar1);
+    if (lresult_4 != 0xffff) {
+      SendMessage16(CONCAT22(0x1050,local_aa),lresult_4,0x408,HVar1);
     }
     HVar1 = GetDlgItem16(s_vrpal_bmp_1050_183a + 0x5,struct_7.hwnd_0x6);
     lresult_4 = SendMessage16(0x0,0x0,0x407,HVar1);
-    if ((WPARAM16)lresult_4 != 0xffff) {
-      SendMessage16(CONCAT22(0x1050,local_100),(WPARAM16)lresult_4,0x408,HVar1);
+    if (lresult_4 != 0xffff) {
+      SendMessage16(CONCAT22(0x1050,local_100),lresult_4,0x408,HVar1);
     }
     pcVar6 = load_string_1010_847e(_u16_1050_14cc,0x531);
     paVar2 = (astruct_57 *)CONCAT22(uVar5,local_aa);
@@ -273,7 +273,7 @@ pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
                           (uVar1 + 0x12),
                           (iVar6 + 0x16) & 0xffff | (iVar6 + 0x18) << 0x10);
           fn_ptr_1030_835a(_u16_1050_5748,CONCAT22(0x1050,&stack0xfdd2));
-          pass1_1028_8dec((u16 *)CONCAT22(0x1050,&stack0xfdd2));
+          pass1_1028_8dec(CONCAT22(0x1050,&stack0xfdd2));
           goto LAB_1040_1619;
         }
       }
@@ -334,8 +334,8 @@ pub fn send_msg_1040_1696(StructB *param_1,mut param_2: u16 )
   let mut uVar1: u32;
   let mut uVar2: u32;
   let mut puVar3: *mut u16;
-  u8 *puVar4;
-  u8 *puVar5;
+  let mut puVar4: *mut u8,
+  let mut puVar5: *mut u8,
   let mut uVar6: u16;
   let mut LVar7: LRESULT;
   let mut pcVar8: *mut c_char;

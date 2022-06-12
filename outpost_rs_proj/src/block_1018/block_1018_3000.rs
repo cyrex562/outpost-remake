@@ -52,7 +52,7 @@ pub unsafe fn pass1_1018_30fc(mut param_1: *mut Struct57 ,mut param_2: u32, mut 
     else {
       *pu32_var8 = 0x0;
       (u16_var4 + 0x4) = 0x0;
-      *param_3 = (u16 *)
+      *param_3 = 
         pu32_var8;
     }
     u16_var5 = u16_var1 * 0x2;
@@ -130,7 +130,7 @@ pub fn pass1_1018_31fa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
 u16 * pass1_1018_32a6(param_1: *mut u16,param_2: u8)
 
 {
-  param_1 = (u16 *)(param_1 & 0xffff0000 | (param_1 - 0x20));
+  param_1 = (param_1 & 0xffff0000 | (param_1 - 0x20));
   pass1_1018_2c60((StructD *)param_1);
   if ((param_2 & 0x1) != 0x0) {
     fn_ptr_1000_17ce(param_1);
@@ -368,8 +368,8 @@ pub fn unk_str_op_1018_35b0(mut param_1: u16 ,param_2: *mut astruct_263)
       uStack8 = uVar8;
       pass1_1018_427c(param_2,uVar11,uVar8);
       lStack14 = CONCAT22(uVar8,uVar11);
-      pass1_1018_3e8c(pstruct263_1,pstruct263_2,(u16 *)CONCAT22(0x1050,&local_12),
-                      (u16 *)CONCAT22(0x1050,&local_10));
+      pass1_1018_3e8c(pstruct263_1,pstruct263_2,CONCAT22(0x1050,&local_12),
+                      CONCAT22(0x1050,&local_10));
       if (lStack14 < local_12) {
         local_12 = lStack14;
       }
@@ -554,7 +554,7 @@ switchD_1018_393f_caseD_6:
   &iVar8[0x1].field9_0xc = 0x0;
   ppcVar2 = (code **)(param_3 + 0x10);
   (**ppcVar2)(0x1030,param_3);
-  pass1_1038_2a5c((u16 *)CONCAT22(0x1050,local_12a));
+  pass1_1038_2a5c(CONCAT22(0x1050,local_12a));
   return;
 }
 
@@ -795,7 +795,7 @@ pub fn pass1_1018_3d6c(param_1: *mut astruct_679)
 {
   u8 bVar1;
   let mut uVar2: u16;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut uVar4: u16;
   astruct_679 *iVar6;
   astruct_679 *uVar5;

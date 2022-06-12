@@ -177,8 +177,8 @@ pub fn win_ui_cursor_op_1020_1294(mut param_1: u16 ,mut param_2: u32,mut param_3
     puStack10 = pass1_1010_40cc(param_3,0x0,(iVar4 + 0xf2));
     uVar3 = CONCAT22(in_register_0000000a,(puStack10 >> 0x10));
     uVar1 = (iVar4 + 0xf2);
-    puStack14 = (u16 *)(uVar1 & 0xffff0000 | (uVar1 + 0x76));
-    pass1_1008_3e94(puStack14,(u16 *)CONCAT22(0x1050,&local_12),CONCAT22(0x1050,&local_10));
+    puStack14 = (uVar1 & 0xffff0000 | (uVar1 + 0x76));
+    pass1_1008_3e94(puStack14,CONCAT22(0x1050,&local_12),CONCAT22(0x1050,&local_10));
     local_6 -= local_10;
     iStack4 -= local_12;
     hcursor = pt_in_rect_1010_40f8
@@ -218,7 +218,7 @@ pub fn unk_win_ui_op_1020_1418(param_1: *mut astruct_40,param_2: *mut StructA,mu
   code **ppcVar3;
   HDC16 *pHVar4;
   let pSVar5: *mut StructA;
-  u8 *puVar6;
+  let mut puVar6: *mut u8,
   let mut in_EDX: u32;
   let mut paVar7: *mut Struct57;
   astruct_40 *iVar5;
@@ -353,7 +353,7 @@ pub fn draw_op_1020_15de(param_1: *mut astruct_779)
     if (((paVar3 >> 0x10) | paVar3) != 0x0) {
       uVar1 = iVar3.field20_0x14;
       uVar4 = 0x1008;
-      pass1_1008_4480(*(astruct_76 **)(iVar3 + 0x1),(u16 *)(uVar1 & 0xffff0000 | (uVar1 + 0x76)),paVar3);
+      pass1_1008_4480(*(astruct_76 **)(iVar3 + 0x1),(uVar1 & 0xffff0000 | (uVar1 + 0x76)),paVar3);
     }
     uVar2 = (iVar3 + 0x1);
     ppcVar1 = (code **)(*(u32*)(iVar3 + 0x1) + 0x4);
@@ -470,7 +470,7 @@ pub fn mixed_ui_op_1020_179c(mut param_1: u16 ,mut param_2: u16 ,StructB *struct
   let mut IVar2: i16;
   let mut HVar3: HWND16;
   let mut uVar8: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut uVar7: u16;
@@ -526,7 +526,7 @@ pub fn *pvStack60;
   let mut puVar1: *mut u32;
   let mut puVar2: u32;
   let mut uVar12: u16;
-  u8 *in_resc_id_3;
+  let mut in_resc_id_3: *mut u8,
   let mut uVar15: u16;
   let mut in_stack_0000fe88: u16;
   let mut uVar9: u32;

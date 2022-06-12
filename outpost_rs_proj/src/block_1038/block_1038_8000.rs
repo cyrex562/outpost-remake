@@ -47,7 +47,7 @@ u16 send_dlg_item_msg_1038_8164(mut param_1: u16 ,mut param_2: u16 ,u8 *param_3,
   *param_3 = '\0';
   LVar1 = SendDlgItemMessage16(0x0,0x0,0x409,param_4,*(HWND16 *)(param_1 + 0x6));
   if ((LVar1 != -0x1) &&
-     (LVar1 = SendDlgItemMessage16((LPARAM)param_3,(WPARAM16)LVar1,0x40a,param_4,*(HWND16 *)(param_1 + 0x6)),
+     (LVar1 = SendDlgItemMessage16((LPARAM)param_3,LVar1,0x40a,param_4,*(HWND16 *)(param_1 + 0x6)),
      LVar1 != -0x1)) {
     return 0x1;
   }
@@ -216,8 +216,8 @@ u16 send_dlg_item_msg_1038_8618s(mut param_1: u16 ,param_2: *mut astruct_903)
 {
   let mut in_AX: i16;
   let mut uVar1: u16;
-  u8 *puVar2;
-  u8 *puVar3;
+  let mut puVar2: *mut u8,
+  let mut puVar3: *mut u8,
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut LVar6: LRESULT;
@@ -490,7 +490,7 @@ pub fn send_dlg_item_msg_1038_8b58(param_1: *mut astruct_903)
 
 {
   let mut uVar1: u32;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut uVar3: u32;
   let mut uVar4: u16;
   let mut in_EDX: *mut Struct57;
@@ -599,7 +599,7 @@ pub fn send_dlg_item_msg_1038_8d22(mut param_1: u32,undefined1 param_2)
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   LVar3 = SendDlgItemMessage16(0x0,0x0,0x409,0x185b,*(HWND16 *)(iVar1 + 0x6));
-  WStack6 = (WPARAM16)LVar3;
+  WStack6 = LVar3;
   iStack4 = WStack6 >> 0xf;
   if (WStack6 != 0xffff) {
     SendDlgItemMessage16(CONCAT22(0x1050,local_106),WStack6,0x40a,0x185b,*(HWND16 *)(iVar1 + 0x6));

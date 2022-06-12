@@ -122,7 +122,7 @@ pub fn pass1_1008_c79a(mut param_1: u32,char *param_2)
   let mut iVar1: i16;
   astruct_117 *pstruct117_2;
   let mut extraout_DX: u16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut puVar5: *mut u16;
@@ -141,7 +141,7 @@ pub fn pass1_1008_c79a(mut param_1: u32,char *param_2)
     if (puVar2 == NULL) break;
     iVar1 = pass1_1000_3d7a(*(char **)(string_1 + 0x4),param_2);
     if (iVar1 == 0x0) {
-      puVar5 = pass1_1020_a43e(puVar2,(u16 *)CONCAT22(0x1050,local_12));
+      puVar5 = pass1_1020_a43e(puVar2,CONCAT22(0x1050,local_12));
       uVar3 = (puVar5 >> 0x10);
       pass1_1020_a6ee(local_12,uVar3,in_stack_0000fe70,CONCAT22(0x1050,local_12),(uStack14 + 0x12)
                      );

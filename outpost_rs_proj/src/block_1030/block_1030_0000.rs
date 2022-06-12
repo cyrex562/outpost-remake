@@ -3,7 +3,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
 
 {
   let mut uVar1: u16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut uVar3: u16;
   let mut paVar4: *mut Struct57;
   astruct_180 *paVar5;
@@ -30,7 +30,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
   case 0x9:
     mem_op_1000_179c(0x22,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1028_2bdc((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1028_2bdc(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -45,7 +45,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
     mem_op_1000_179c(0x2c,param_2);
     puVar2 = (param_2 | param_1);
     if (puVar2 != NULL) {
-      puVar6 = struct_1028_3670(puVar2,(u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1028_3670(puVar2,CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -63,7 +63,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
   case 0xd:
     mem_op_1000_179c(0x26,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1028_3484((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1028_3484(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -189,7 +189,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
   case 0x26:
     mem_op_1000_179c(0x20,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1020_d06c((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1020_d06c(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -315,7 +315,7 @@ joined_r0x103002a1:
   case 0x3d:
     mem_op_1000_179c(0x22,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1020_cde6((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1020_cde6(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -343,7 +343,7 @@ joined_r0x103002a1:
   case 0x40:
     mem_op_1000_179c(0x22,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1020_c9ea((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1020_c9ea(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -438,7 +438,7 @@ joined_r0x103002a1:
     mem_op_1000_179c(0x26,param_2);
     puVar2 = (param_2 | param_1);
     if (puVar2 != NULL) {
-      puVar6 = pass1_1028_5524(puVar2,(u16 *)CONCAT22(param_2,param_1));
+      puVar6 = pass1_1028_5524(puVar2,CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -508,7 +508,7 @@ joined_r0x103002a1:
   case 0x76:
     mem_op_1000_179c(0x26,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1020_e8f6((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1020_e8f6(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -527,7 +527,7 @@ joined_r0x103002a1:
   case 0x74:
     mem_op_1000_179c(0x24,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1028_178c((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1028_178c(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -536,7 +536,7 @@ joined_r0x103002a1:
   case 0x75:
     mem_op_1000_179c(0x24,param_2);
     if ((param_2 | param_1) != 0x0) {
-      puVar6 = struct_1028_2afa((u16 *)CONCAT22(param_2,param_1));
+      puVar6 = struct_1028_2afa(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
       goto LAB_1030_0058;
@@ -558,7 +558,7 @@ joined_r0x103002a1:
   param_1 = 0x0;
   uVar3 = 0x0;//
 LAB_1030_0058:
-  return (u16 *)CONCAT22(uVar3,param_1);
+  return CONCAT22(uVar3,param_1);
 }
 
 
@@ -567,7 +567,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
                          mut param_6: u16 ,mut param_7: u16 ,mut param_8: u32)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut uVar2: u16;
   let mut uVar3: u16;
   StructD *pSVar4;
@@ -1171,5 +1171,5 @@ joined_r0x10300adb:
   param_1 = NULL;
   pSVar4 = NULL;//
 LAB_1030_0818:
-  return (u16 *)CONCAT22(pSVar4,param_1);
+  return CONCAT22(pSVar4,param_1);
 }

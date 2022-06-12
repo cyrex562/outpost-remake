@@ -348,7 +348,7 @@ StructD * pass1_1018_df10(StructD *param_1,param_2: u8)
 pub fn win_1018_df40(mut param_1: u16 ,u8 *param_2,param_3: *mut StructA)
 
 {
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
   let struct_1: *mut StructA;
@@ -362,7 +362,7 @@ pub fn win_1018_df40(mut param_1: u16 ,u8 *param_2,param_3: *mut StructA)
   struct_1 = (StructA *)param_3;
   struct_1_hi = (param_3 >> 0x10);
   if (puVar2 != NULL) {
-    puVar1 = struct_1018_e100(puVar2,(u16 *)CONCAT22(paVar3,param_1),struct_1->field4_0x8);
+    puVar1 = struct_1018_e100(puVar2,CONCAT22(paVar3,param_1),struct_1->field4_0x8);
     struct_1[0x1].field11_0x16 = (i16)puVar1;
     struct_1[0x1].field12_0x18 = (i16)(puVar1 >> 0x10);
     return;

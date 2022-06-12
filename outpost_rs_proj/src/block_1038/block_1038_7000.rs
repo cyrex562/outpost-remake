@@ -118,7 +118,7 @@ pub fn pass1_1038_709c(u8 *param_1,param_2: *mut astruct_618,mut param_3: u32)
     puVar1 = iVar8->field13_0xe;
     uStack4 = (puVar1 + 0x4);
     for (uStack12 = 0x0; uStack12 < uStack4; uStack12 += 0x1) {
-      pass1_1020_bb16(iVar8->field13_0xe,CONCAT22(0x1050,&local_a),(u16 *)CONCAT22(0x1050,&local_6),uStack12
+      pass1_1020_bb16(iVar8->field13_0xe,CONCAT22(0x1050,&local_a),CONCAT22(0x1050,&local_6),uStack12
                      );
       if (local_a != 0x0) {
         paStack16 = pass1_1000_07fc(_PTR_LOOP_1050_68a2);
@@ -168,8 +168,8 @@ pub fn pass1_1038_7356(param_1: *mut astruct_615,param_2: *mut astruct_419)
   let mut uVar6: u16;
   let mut uVar7: u16;
   let mut in_DX: u16;
-  u8 *puVar8;
-  u8 *puVar9;
+  let mut puVar8: *mut u8,
+  let mut puVar9: *mut u8,
   astruct_615 *iVar9;
   let mut iVar10: i16;
   let mut uVar11: u16;
@@ -392,7 +392,7 @@ pub fn file_1038_774e(u8 *param_1,param_2: *mut astruct_169,mut param_3: u32)
                                        (param_2 & 0xffff0000 |
                                              ZEXT24((&iVar2[0x2].field4_0x4 + 0x2))),0x4),
           BVar1 != 0x0 &&
-          (BVar1 = read_file_1008_7bc8(param_3,(u16 *)(param_2 & 0xffff0000 | ZEXT24(&iVar2[0x3].field_0x2))),
+          (BVar1 = read_file_1008_7bc8(param_3,(param_2 & 0xffff0000 | ZEXT24(&iVar2[0x3].field_0x2))),
           BVar1 != 0x0)))))) &&
        (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x4)),0x4),
        BVar1 != 0x0)))) &&
@@ -532,7 +532,7 @@ pub fn pass1_1038_79f2(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
 
 {
   code **ppcVar1;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   let mut extraout_DX: u16;
   let mut iVar3: i16;
   let mut uVar4: u16;
@@ -664,7 +664,7 @@ u16 read_file_1038_7c02(u16_t param_1,u16_t param_2,u32 *param_3,HFILE16 *param_
   code **ppcVar1;
   let mut BVar2: bool;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut in_register_0000000a: u16;
@@ -894,8 +894,8 @@ LRESULT send_dlg_item_msg_1038_7eac(param_1: *mut astruct_903)
   pass1_1008_b1a6((iVar1 + 0x94),l_param);
   SendDlgItemMessage16(0x0,0x0,0xb,0x1854,*(HWND16 *)(iVar1 + 0x6));
   LVar4 = SendDlgItemMessage16(0x0,0x0,0x409,0x1854,*(HWND16 *)(iVar1 + 0x6));
-  if (((WPARAM16)LVar4 != 0xffff) || ((LVar4 >> 0x10) != -0x1)) {
-    SendDlgItemMessage16(0x0,(WPARAM16)LVar4,0x403,0x1854,*(HWND16 *)(iVar1 + 0x6));
+  if ((LVar4 != 0xffff) || ((LVar4 >> 0x10) != -0x1)) {
+    SendDlgItemMessage16(0x0,LVar4,0x403,0x1854,*(HWND16 *)(iVar1 + 0x6));
     SendDlgItemMessage16((LPARAM)l_param,0x0,0x401,0x1854,*(HWND16 *)(iVar1 + 0x6));
     SendDlgItemMessage16(0x0,0xffff,0x407,0x1854,*(HWND16 *)(iVar1 + 0x6));
     SendDlgItemMessage16(0x0,0x0,0x405,0x1855,*(HWND16 *)(iVar1 + 0x6));

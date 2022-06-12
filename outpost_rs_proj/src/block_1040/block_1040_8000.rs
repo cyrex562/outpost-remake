@@ -59,7 +59,7 @@ pub fn pass1_1040_807e(param_1: *mut astruct_395,mut param_2: u16 )
   astruct_394 *paVar4;
   let mut uVar5: u16;
   let mut uVar6: u16;
-  u8 *puVar7;
+  let mut puVar7: *mut u8,
   let mut in_EDX: u32;
   let mut paVar8: *mut Struct57;
   astruct_395 *iVar9;
@@ -361,10 +361,10 @@ i16 string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 
     iVar7[0x1].field4_0x8 = param_1;
     iStack16 = param_4 + -0x1;
   }
-  puStack14 = (u16 *)CONCAT22(0x1050,puVar2);
+  puStack14 = CONCAT22(0x1050,puVar2);
   iStack22 = 0x0;
   while (puVar3 = puStack14, iStack16 != 0x0) {
-    puStack14 = (u16 *)(puStack14 & 0xffff0000 | (puStack14 + 0x2));
+    puStack14 = (puStack14 & 0xffff0000 | (puStack14 + 0x2));
     pcVar6 = load_string_1010_847e(_u16_1050_14cc,*puVar3);
     param_1 = param_1 & 0xffff0000 | pcVar6 >> 0x10;
     uVar4 = str_op_1000_3da4(pcVar6);
@@ -375,10 +375,10 @@ i16 string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 
   mem_op_1000_179c(uVar5,(astruct_57 *)param_1);
   iVar7[0x1].field1_0x2 = uVar5;
   iVar7[0x1].field2_0x4 = param_1;
-  puStack14 = (u16 *)CONCAT22(0x1050,&param_5 + 0x2);
+  puStack14 = CONCAT22(0x1050,&param_5 + 0x2);
   iStack16 = param_4 + -0x1;
   if (param_4 + -0x1 != 0x0) {
-    puStack14 = (u16 *)CONCAT22(0x1050,&stack0x0012);
+    puStack14 = CONCAT22(0x1050,&stack0x0012);
     uVar1 = &iVar7[0x1].field1_0x2;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,uVar1,(short)(uVar1 >> 0x10)
@@ -386,7 +386,7 @@ i16 string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 
     iStack16 = param_4 + -0x2;
   }
   while (puVar3 = puStack14, iStack16 != 0x0) {
-    puStack14 = (u16 *)(puStack14 & 0xffff0000 | (puStack14 + 0x2));
+    puStack14 = (puStack14 & 0xffff0000 | (puStack14 + 0x2));
     pcVar6 = load_string_1010_847e(_u16_1050_14cc,*puVar3);
     pass1_1000_3cea(&iVar7[0x1].field1_0x2,pcVar6);
     iStack16 = iStack16 + -0x1;
@@ -843,7 +843,7 @@ u16 * pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut p
   pass1_1040_b040((astruct_57 *)CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),(param_4 >> 0x10));
   CONCAT22(param_2,param_1) = 0x8f3c;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
-  return (u16 *)CONCAT22(param_2,param_1);
+  return CONCAT22(param_2,param_1);
 }
 pub fn pass1_1040_8e82(StructD *param_1)
 

@@ -463,7 +463,7 @@ pub fn pass1_1040_78de(void)
 pub fn dialog_ui_fn_1040_78e2(StructB *in_struct_1)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   LPVOID dialog_handle;
   let mut uVar2: u16;
   StructB *struct_b_1;
@@ -658,7 +658,7 @@ pub fn draw_op_1040_7bb2(astruct_14 *in_struct_1)
   u8 uVar5;
   u8 uVar6;
   let mut uVar7: u32;
-  u8 *pcVar3;
+  let mut pcVar3: *mut u8,
   let mut uVar3: u16;
   code **func_ptr_1;
   HDC16 hdc16_dev_ctx_1;

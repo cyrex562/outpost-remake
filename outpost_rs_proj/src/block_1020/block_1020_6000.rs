@@ -38,7 +38,7 @@ pub fn pass1_1020_61c4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,para
                            in_stack_0000ffbe,in_stack_0000ffc4,in_stack_0000ffc8);
   uVar2 = (puVar3 >> 0x10);
   uVar1 = (puVar3 + 0x20);
-  pass1_1030_8308(uVar1,uVar2,_u16_1050_5748,(_u16_1050_5748 >> 0x10),(u16 *)param_3,
+  pass1_1030_8308(uVar1,uVar2,_u16_1050_5748,(_u16_1050_5748 >> 0x10),param_3,
                   param_4,uVar1);
   *param_4 = (puVar3 + 0x1e);
   return;
@@ -606,7 +606,7 @@ pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param
 {
   code **ppcVar1;
   let mut hwnd: HWND16;
-  u8 *puVar2;
+  let mut puVar2: *mut u8,
   astruct_877 *iVar3;
   let mut uVar3: u16;
   let mut LVar4: LRESULT;
@@ -619,7 +619,7 @@ pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param
       if (param_3 == 0x2) {
         LVar4 = SendMessage16(0x0,0x0,0x409,hwnd);
         if (LVar4 != -0x1) {
-          LVar4 = SendMessage16(CONCAT13(0x10,CONCAT12(0x50,&stack0xffa8)),(WPARAM16)LVar4,0x40a,hwnd);
+          LVar4 = SendMessage16(CONCAT13(0x10,CONCAT12(0x50,&stack0xffa8)),LVar4,0x40a,hwnd);
           puVar2 = &stack0xffa8;
           pass1_1018_30ca((LVar4 >> 0x10),(astruct_504 *)iVar3->field241_0xf2,
                           CONCAT22(0x1050,puVar2));
@@ -725,7 +725,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,StructA *struct_param_1,mut 
   (**ppcVar2)(s_tile2_bmp_1050_1538,uVar6,(uVar6 >> 0x10),HVar3);
   paVar4 = (astruct_57 *)(&local_6 + 0x2);
   pass1_1018_2d22(&struct_a_1[0x1].field20_0x26,CONCAT13(0x10,CONCAT12(0x50,&local_6)),
-                  (u16 *)CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbb8);
+                  CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbb8);
   mem_op_1000_179c(0x42,paVar9);
   uVar8 = (astruct_57 *)paVar9 | paVar4;
   paVar10 = (astruct_57 *)(paVar9 & 0xffff0000 | uVar8);
@@ -735,7 +735,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,StructA *struct_param_1,mut 
   }
   paVar4 = (astruct_57 *)(&local_6 + 0x2);
   pass1_1018_2d22(&struct_a_1[0x1].field20_0x26,CONCAT13(0x10,CONCAT12(0x50,&local_6)),
-                  (u16 *)CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbb9);
+                  CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbb9);
   mem_op_1000_179c(0x42,paVar10);
   uVar8 = (astruct_57 *)paVar10 | paVar4;
   paVar9 = (astruct_57 *)(paVar10 & 0xffff0000 | uVar8);
@@ -745,7 +745,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,StructA *struct_param_1,mut 
   }
   paVar4 = (astruct_57 *)(&local_6 + 0x2);
   pass1_1018_2d22(&struct_a_1[0x1].field20_0x26,CONCAT13(0x10,CONCAT12(0x50,&local_6)),
-                  (u16 *)CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbba);
+                  CONCAT13(0x10,CONCAT12(0x50,paVar4)),0xbba);
   mem_op_1000_179c(0x42,paVar9);
   uVar8 = (astruct_57 *)paVar9 | paVar4;
   paVar10 = (astruct_57 *)(paVar9 & 0xffff0000 | uVar8);

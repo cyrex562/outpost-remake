@@ -326,7 +326,7 @@ pub fn pass1_1010_6566(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
 
   uVar1 = param_1;
   uVar2 = (param_1 >> 0x10);
-  switch_1010_6646(uVar1,uVar2,(u16 *)CONCAT22(0x1050,&local_4),param_4);
+  switch_1010_6646(uVar1,uVar2,CONCAT22(0x1050,&local_4),param_4);
   if (local_4 != 0x0) {
     (uVar1 + local_4) = param_3;
     (uVar1 + local_4 + 0x2) = param_2;
@@ -345,7 +345,7 @@ i16 pass1_1010_659a(mut param_1: u32,mut param_2: u16 )
 
   uVar1 = param_1;
   uVar2 = (param_1 >> 0x10);
-  switch_1010_6646(uVar1,uVar2,(u16 *)CONCAT22(0x1050,&local_4),param_2);
+  switch_1010_6646(uVar1,uVar2,CONCAT22(0x1050,&local_4),param_2);
   if (local_4 == 0x0) {
     return 0x0;
   }
@@ -361,7 +361,7 @@ u16 pass1_1010_65d0(mut param_1: u32,mut param_2: u16 )
   let mut local_4: i16;
 
   uVar1 = (param_1 >> 0x10);
-  switch_1010_6646(param_1,uVar1,(u16 *)CONCAT22(0x1050,&local_4),param_2);
+  switch_1010_6646(param_1,uVar1,CONCAT22(0x1050,&local_4),param_2);
   if (local_4 == 0x0) {
     return 0x0;
   }
@@ -377,7 +377,7 @@ pub fn pass1_1010_6604(mut param_1: u32,mut param_2: u16 )
 
   uVar2 = param_1;
   uVar3 = (param_1 >> 0x10);
-  switch_1010_6646(uVar2,uVar3,(u16 *)CONCAT22(0x1050,&local_4),param_2);
+  switch_1010_6646(uVar2,uVar3,CONCAT22(0x1050,&local_4),param_2);
   if (local_4 != 0x0) {
     iVar1 = (uVar2 + local_4 + 0x2);
     (uVar2 + local_4) = (uVar2 + local_4);
@@ -749,7 +749,7 @@ pub fn pass1_1010_6bb2(param_1: *mut u16)
   else {
     iVar4 = uVar6 + 0xa;
   }
-  puStack14 = (u16 *)CONCAT22(uVar7,iVar4);
+  puStack14 = CONCAT22(uVar7,iVar4);
   *puStack14 = 0x389a;
   (iVar4 + 0x2) = 0x1008;
   pass1_1010_1d80((StructD *)param_1);
@@ -769,14 +769,14 @@ u16 pass1_1010_6ca2(mut param_1: u16 ,mut param_2: u32,mut param_3: i16)
   let mut iStack10: i16;
   let mut puStack8: *mut u16;
 
-  puStack8 = (u16 *)CONCAT22(0x1050,&stack0x000a);
+  puStack8 = CONCAT22(0x1050,&stack0x000a);
   iStack10 = param_3;
   do {
     puVar2 = puStack8;
     if (iStack10 == 0x0) {
       return 0x1;
     }
-    puStack8 = (u16 *)(puStack8 & 0xffff0000 | (puStack8 + 0x2));
+    puStack8 = (puStack8 & 0xffff0000 | (puStack8 + 0x2));
     uVar3 = *puVar2;
     uVar1 = (param_2 + 0x14);
     pass1_1010_a5ca(uVar3,param_1,uVar1,(uVar1 >> 0x10),uVar3);

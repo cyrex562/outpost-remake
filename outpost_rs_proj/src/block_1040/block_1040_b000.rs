@@ -104,7 +104,7 @@ pub fn pass1_1040_b17c(u8 *param_1,mut param_2: u32,mut param_3: u32)
   while( true ) {
     uVar7 = (param_2 >> 0x10);
     iVar6 = param_2;
-    piVar1 = *(i16 **)(iVar6 + 0x90);
+    piVar1 = (iVar6 + 0x90);
     if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
     paVar4 = (astruct_57 *)(paVar4 & 0xffff0000 | piVar1 >> 0x10);
     uVar2 = (piVar1 + 0x2);
@@ -117,14 +117,14 @@ pub fn pass1_1040_b17c(u8 *param_1,mut param_2: u32,mut param_3: u32)
   uVar5 = puVar8 >> 0x10;
   uVar2 = (iVar6 + 0x90);
   puStack12 = (u16*)(uVar2 + 0x2);
-  for (iStack4 = 0x0; piVar1 = *(i16 **)(iVar6 + 0x90), *piVar1 != iStack4 && iStack4 <= *piVar1; iStack4 += 0x1) {
+  for (iStack4 = 0x0; piVar1 = (iVar6 + 0x90), *piVar1 != iStack4 && iStack4 <= *piVar1; iStack4 += 0x1) {
     ppuVar9 = (u8 **)(ppuVar9 & 0xffff0000);
     uVar2 = (iVar6 + 0x90);
     uVar2 = (uVar2 + 0x6);
     pcVar3 = pass1_1010_b038(puVar8,uVar2,(uVar2 >> 0x10),
                              *(u8 **)(puStack12 + 0x4),(ppuVar9 >> 0x10));
     string_1040_a626(uVar5,puStack12,CONCAT22(uVar5,pcVar3));
-    puStack12 = (u16 *)(puStack12 & 0xffff0000 | (puStack12 + 0xa));
+    puStack12 = (puStack12 & 0xffff0000 | (puStack12 + 0xa));
   }
   return;
 }
@@ -169,7 +169,7 @@ pub fn unk_win_ui_op_1040_b230(mut param_1: u16 ,StructB *param_2)
   uVar4 = SUB42(&DAT_1050_1050,0x0);
   puStack10 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,(u8 **)CONCAT22(piVar3,0x48),in_stack_0000fe6e,
                               in_stack_0000ff92,in_stack_0000ff98,in_stack_0000ff9c);
-  pass1_1008_3e94((u16 *)(puStack10 & 0xffff0000 | (puStack10 + 0xe)),(u16 *)CONCAT22(uVar4,piVar3),
+  pass1_1008_3e94((puStack10 & 0xffff0000 | (puStack10 + 0xe)),CONCAT22(uVar4,piVar3),
                   pcVar5);
   uVar3 = (puStack10 >> 0x10);
   iStack12 = (puStack10 + 0xa);
@@ -297,11 +297,11 @@ pub fn pass1_1040_b45e(mut param_1: u32)
     uVar1 = (iVar3 + 0x90);
     (uVar1 + 0x14) = (iVar3 + 0x6);
     uVar1 = (iVar3 + 0x90);
-    puStack6 = (u16 *)(uVar1 + 0x2);
-    for (iStack8 = 0x0; piVar2 = *(i16 **)(iVar3 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2; iStack8 += 0x1) {
+    puStack6 = (uVar1 + 0x2);
+    for (iStack8 = 0x0; piVar2 = (iVar3 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2; iStack8 += 0x1) {
       uVar1 = (puStack6 + 0x2);
       SetDlgItemText16(CONCAT22(uVar1,*puStack6),(INT16)(uVar1 >> 0x10),*(HWND16 *)(iVar3 + 0x6));
-      puStack6 = (u16 *)(puStack6 & 0xffff0000 | (puStack6 + 0xa));
+      puStack6 = (puStack6 & 0xffff0000 | (puStack6 + 0xa));
     }
   }
   return;

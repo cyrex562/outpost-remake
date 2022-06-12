@@ -75,7 +75,7 @@ LRESULT send_msg_1040_323c(mut param_1: u32)
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   LVar3 = SendMessage16(0x0,0x0,0x407,*(HWND16 *)(iVar1 + 0x92));
-  wparam = (WPARAM16)LVar3;
+  wparam = LVar3;
   SendMessage16(0x0,0x0,0x407,*(HWND16 *)(iVar1 + 0x94));
   wparam_00 = 0x408;
   SendMessage16(param_1 & 0xffff0000 | (iVar1 + 0x9a),wparam,0x408,*(HWND16 *)(iVar1 + 0x92));
@@ -742,7 +742,7 @@ pub fn dialog_item_ui_op_1040_3e08(StructC *struct_c_param_1)
 pub fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *struct_c_param_2,mut param_3: u32)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut extraout_DX: u16;
   let mut iVar2: i16;
   let mut LVar3: LRESULT;

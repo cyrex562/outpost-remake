@@ -1,46 +1,47 @@
 //
-#![allow(non_camel_case_types)]
 // Created by cyrex on 2022-05-22.
 //
 
+use std::ffi::c_void;
 use std::os::raw::c_char;
 
-type HANDLE16 = u16;
-type HGLOBAL16 = HANDLE16;
-type HTASK16 = HANDLE16;
-type HINSTANCE16 = HANDLE16;
-type HWND16 = HANDLE16;
-type HMENU16 = HANDLE16;
+pub type HANDLE16 = u16;
+pub type HGLOBAL16 = HANDLE16;
+pub type HTASK16 = HANDLE16;
+pub type HINSTANCE16 = HANDLE16;
+pub type HWND16 = HANDLE16;
+pub type HMENU16 = HANDLE16;
 
 // typedef u32 SEGPTR;
-type SEGPTR = u32;
+pub type SEGPTR = u32;
 
 // typedef let mut HANDLE16: u16;
 // typedef HANDLE16 HCURSOR16;
-type HCURSOR16 = HANDLE16;
+pub type HCURSOR16 = HANDLE16;
 // typedef HANDLE16 HBRUSH16;
-type HBRUSH16 = HANDLE16;
+pub type HBRUSH16 = HANDLE16;
 // typedef HANDLE16 HMENU16;
 // typedef let mut WPARAM16: u16;
-type WPARAM16 = HANDLE16;
+pub type WPARAM16 = HANDLE16;
 // typedef HANDLE16 HWND16;
 // typedef HANDLE16 HMODULE16;
-type HMODULE16 = HANDLE16;
+pub type HMODULE16 = HANDLE16;
 // typedef HANDLE16 HACCEL16;
-type HACCEL16 = HANDLE16;
+pub type HACCEL16 = HANDLE16;
 // typedef HANDLE16 HDC16;
-type HDC16 = HANDLE16;
+pub type HDC16 = HANDLE16;
 // typedef HANDLE16 HFILE16;
-type HFILE16 = HANDLE16;
+pub type HFILE16 = HANDLE16;
 // typedef HANDLE16 HGLOBAL16;
 // typedef HANDLE16 HPEN16;
-type HPEN16 = HANDLE16;
+pub type HPEN16 = HANDLE16;
 // typedef HANDLE16 HGDIOBJ16;
-type HGDIOBJ16 = HANDLE16;
+pub type HGDIOBJ16 = HANDLE16;
 // typedef i32 LONG_PTR;
-type LONG_PTR = i32;
+pub type LONG_PTR = i32;
 // typedef LONG_PTR LPARAM;
-type LPARAM = LONG_PTR;
+pub type LPARAM = LONG_PTR;
+pub type OpLparam = *mut c_void;
 
 // typedef let mut BOOL16: u16;
 
@@ -51,7 +52,7 @@ type LPARAM = LONG_PTR;
 // typedef i16 INT16;
 // typedef let mut u16: u16;
 // typedef HANDLE16 HICON16;
-type HICON16 = HANDLE16;
+pub type HICON16 = HANDLE16;
 
 pub struct LOGPALETTE {
     // WORD pal_version;

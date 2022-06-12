@@ -596,7 +596,7 @@ pub fn unk_draw_op_1008_da12(param_1: *mut astruct_19,mut param_2: u16 )
   PALETTEENTRY *entries;
   let mut uVar4: u16;
   let mut start: u16;
-  u8 *count;
+  let mut count: *mut u8,
   let mut count_00: u16;
   let mut in_EDX: u32;
   let mut uVar5: u16;
@@ -628,7 +628,7 @@ pub fn unk_draw_op_1008_da12(param_1: *mut astruct_19,mut param_2: u16 )
   iVar2 = (param_1 + 0xc) + -0x1e0;
   count = (iVar2 >> 0xf);
   pSVar2 = (StructD *)CONCAT22(uVar5,count);
-  pass1_1008_3e76((u16 *)(param_1 & 0xffff0000 | (param_1 + 0xeU)),0x0,iVar2 / 0x2,
+  pass1_1008_3e76((param_1 & 0xffff0000 | (param_1 + 0xeU)),0x0,iVar2 / 0x2,
                   ((param_1 + 0xa) + -0x280) / 0x2);
   raster_caps = GetDeviceCaps16(RASTERCAPS,hdc);
   if ((raster_caps & 0x100) != 0x0) {
@@ -667,7 +667,7 @@ pub fn unk_draw_op_1008_da12(param_1: *mut astruct_19,mut param_2: u16 )
           bVar1 = (entries + iStack16)->pe_red;
           uVar3 = puStack32 >> 0x10;
           iVar6 = puStack32;
-          puStack32 = (u16 *)(puStack32 & 0xffff0000 | (iVar6 + 0x4));
+          puStack32 = (puStack32 & 0xffff0000 | (iVar6 + 0x4));
           *puVar2 = CONCAT11(entries[iStack16].pe_green,entries[iStack16].pe_blue);
           (iVar6 + 0x2) = bVar1;
         }
@@ -952,7 +952,7 @@ pub fn pass1_1008_df4a(param_1: *mut astruct_102,mut param_2: i16,mut param_3: u
 pub fn pass1_1008_dfa6(mut param_1: u32,i32 param_2,i32 param_3)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut extraout_DX: u16;
   u8 local_a [0x8];
 

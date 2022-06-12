@@ -627,7 +627,7 @@ pub fn pass1_1008_b820(mut param_1: i16,mut param_2: u16 ,mut param_3: u32) -> u
 pub fn pass1_1008_b85c(mut param_1: u32,i32 param_2)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut extraout_DX: u16;
   u8 local_a [0x8];
 
@@ -662,7 +662,7 @@ i32 pass1_1008_b8ac(mut param_1: u32,mut param_2: i16)
 pub fn pass1_1008_b8fa(mut param_1: u16 ,mut param_2: u32,char *param_3)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut iVar2: i16;
   let mut extraout_DX: u16;
   u8 local_a [0x8];
@@ -706,7 +706,7 @@ pub fn pass1_1008_b964(mut param_1: u32,char *param_2)
 pub fn pass1_1008_b9ce(mut param_1: u32,char *param_2)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut iVar2: i16;
   let mut extraout_DX: u16;
   u8 local_a [0x8];
@@ -730,7 +730,7 @@ pub fn pass1_1008_ba38(mut param_1: u32,mut param_2: u32)
 {
   let mut uVar1: u32;
   let mut BVar2: bool;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut extraout_DX: u16;
   let mut iVar4: i16;
   let mut uVar5: u16;
@@ -792,7 +792,7 @@ pub fn file_1008_bb5e(mut param_1: i16,StructD *param_2,param_3: *mut astruct_19
   let mut BVar2: bool;
   StructD *uVar3;
   astruct_200 *uVar4;
-  u8 *puVar3;
+  let mut puVar3: *mut u8,
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut uVar7: u16;

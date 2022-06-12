@@ -784,7 +784,7 @@ pub fn send_dlg_item_1040_ce76(param_1: *mut astruct_903)
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   LVar3 = SendDlgItemMessage16(0x0,0x0,0x409,s_vrpal_bmp_1050_183a + 0x8,*(HWND16 *)(iVar1 + 0x6));
-  WStack6 = (WPARAM16)LVar3;
+  WStack6 = LVar3;
   iStack4 = WStack6 >> 0xf;
   if (WStack6 != 0xffff) {
     SendDlgItemMessage16
@@ -807,7 +807,7 @@ pub fn send_dlg_item_1040_ce76(param_1: *mut astruct_903)
 LRESULT send_dlg_msg_1040_cf1c(mut param_1: u16 ,param_2: *mut astruct_903)
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   let mut hwnd: HWND16;
   let mut in_register_0000000a: u16;
   astruct_928 *uVar1;

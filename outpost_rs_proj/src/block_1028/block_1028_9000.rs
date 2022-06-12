@@ -139,7 +139,7 @@ pub fn pass1_1028_9264(mut param_1: u16 ,u8 *param_2,mut param_3: u32)
   paVar6 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x10a,paVar6);
   uVar5 = paVar6;
-  puStack10 = (u16 *)CONCAT22(uVar5,param_1);
+  puStack10 = CONCAT22(uVar5,param_1);
   if ((uVar5 | param_1) != 0x0) {
     *puStack10 = 0x389a;
     (param_1 + 0x2) = 0x1008;
@@ -212,7 +212,7 @@ pub fn pass1_1028_93d4(mut param_1: u16 ,mut param_2: u32)
   code **ppcVar1;
   let mut uVar2: u16;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut in_register_0000000a: u16;
   let mut iVar5: i16;
   let mut uVar6: u16;
@@ -267,7 +267,7 @@ pub fn pass1_1028_94e4(param_1: *mut astruct_328,u8 *param_2,param_3: *mut astru
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x124,paVar5);
   uVar4 = paVar5;
-  puStack10 = (u16 *)CONCAT22(uVar4,param_1);
+  puStack10 = CONCAT22(uVar4,param_1);
   if ((uVar4 | param_1) != 0x0) {
     *puStack10 = 0x389a;
     param_1->field2_0x2 = 0x1008;
@@ -305,7 +305,7 @@ pub fn pass1_1028_9600(u8 *param_1,mut param_2: u32)
   let mut puVar1: *mut u16;
   u8 local_6 [0x4];
 
-  puVar1 = pass1_1020_a43e(param_1,(u16 *)CONCAT22(0x1050,local_6));
+  puVar1 = pass1_1020_a43e(param_1,CONCAT22(0x1050,local_6));
   pass1_1020_a80e(local_6,(puVar1 >> 0x10),local_6,&DAT_1050_1050,
                   (param_2 + 0x11a));
   return;
@@ -334,8 +334,8 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
   let mut in_stack_0000fe78: u16;
   let mut in_stack_0000fe7e: u16;
   let mut in_stack_0000fe82: u16;
-  u8 *puVar11;
-  u8 *puVar12;
+  let mut puVar11: *mut u8,
+  let mut puVar12: *mut u8,
   let mut uStack332: u16;
   let mut uStack330: u16;
   let mut uStack64: u16;
@@ -346,7 +346,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
   let mut uStack42: u32;
   u8 local_26 [0x4];
   let mut uStack34: u16;
-  u8 *puStack32;
+  let mut puStack32: *mut u8,
   let mut uStack30: u32;
   let mut uStack26: u32;
   let mut puStack22: *mut u32;
@@ -368,7 +368,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
                              in_stack_0000fe78,in_stack_0000fe7e,in_stack_0000fe82);
   uStack10 = (puStack6 >> 0x10);
   puVar2 = &iVar9->field267_0x114;
-  pass1_1030_64ce(puVar2,uStack10,_PTR_LOOP_1050_5740,(u16 *)(param_3 & 0xffff0000 | ZEXT24(puVar2)),
+  pass1_1030_64ce(puVar2,uStack10,_PTR_LOOP_1050_5740,(param_3 & 0xffff0000 | ZEXT24(puVar2)),
                   iVar9->field264_0x108,CONCAT22(0x1050,local_26));
   uStack56 = *puVar2;
   uStack56._3_1_ = (char)(uStack56 >> 0x18);
@@ -377,8 +377,8 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
   puStack46 = uStack56;
   uStack10 = uStack56;
   pass1_1008_3eb4((astruct_615 *)(param_3 & 0xffff0000 | ZEXT24(&iVar9->field267_0x114)),
-                  (u16 *)CONCAT22(0x1050,local_12),(u16 *)CONCAT22(0x1050,local_10),
-                  (u16 *)CONCAT22(0x1050,local_e));
+                  CONCAT22(0x1050,local_12),CONCAT22(0x1050,local_10),
+                  CONCAT22(0x1050,local_e));
   if (uStack12 == 0x0) {
     puVar2 = &iVar9->field267_0x114;
     pass1_1028_e2ac(_PTR_LOOP_1050_65e2,0x500);
@@ -532,7 +532,7 @@ pub fn pass1_1028_9a02(mut param_1: u32,mut param_2: i16,StructD *param_3,mut pa
   let mut uVar3: u16;
   astruct_92 *paVar4;
   let mut uVar5: u32;
-  u8 *puVar6;
+  let mut puVar6: *mut u8,
   let mut uVar7: u16;
   let mut uVar8: u16;
   let mut iVar10: i16;
@@ -637,7 +637,7 @@ pub fn pass1_1028_9b48(param_1: *mut astruct_330,u8 *param_2,param_3: *mut astru
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x118,paVar5);
   uVar4 = paVar5;
-  puStack10 = (u16 *)CONCAT22(uVar4,param_1);
+  puStack10 = CONCAT22(uVar4,param_1);
   iVar5 = (astruct_331 *)param_3;
   uVar8 = (param_3 >> 0x10);
   if ((uVar4 | param_1) != 0x0) {
@@ -725,7 +725,7 @@ pub fn pass1_1028_9dee(param_1: *mut astruct_332,mut param_2: u16 ,param_3: *mut
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x10a,paVar5);
   uVar4 = paVar5;
-  puStack10 = (u16 *)CONCAT22(uVar4,param_1);
+  puStack10 = CONCAT22(uVar4,param_1);
   if ((uVar4 | param_1) != 0x0) {
     *puStack10 = 0x389a;
     param_1->field2_0x2 = 0x1008;

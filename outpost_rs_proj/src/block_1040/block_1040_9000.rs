@@ -671,7 +671,7 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,u16 msg_p
                      mut param_5: u16 ,mut param_6: u16 ,mut param_7: u32)
 
 {
-  u8 *pbVar1;
+  let mut pbVar1: *mut u8,
   let mut iVar2: i16;
   u8 bVar3;
   let mut WVar4: WPARAM16;

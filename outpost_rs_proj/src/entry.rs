@@ -34,7 +34,7 @@ pub unsafe fn entry(mut param_1: u16,
     let mut iVar5: i16;
     let mut string_var5: *mut c_char;
     let mut iVar6: i16;
-//    u8 *unaff_SI;
+//    let mut unaff_SI: *mut u8,
     let mut string_var7: *mut c_char;
     // HINSTANCE16 unaff_DI;
     // char *paVar8;

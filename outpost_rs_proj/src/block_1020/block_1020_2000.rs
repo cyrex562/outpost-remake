@@ -93,9 +93,9 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
     pass1_1020_2286(uVar6,(uVar6 >> 0x10),CONCAT13(0x10,CONCAT12(0x50,&puVar14[-0x5].field_0x2)),
                     (uVar16 + 0x8));
     uVar3 = &puVar14[-0x5].field_0x2;
-    pass1_1008_3e76((u16 *)CONCAT22(0x1050,&puVar14[-0x6].field6_0x6),0x0,uVar3,(uVar3 >> 0x10));
+    pass1_1008_3e76(CONCAT22(0x1050,&puVar14[-0x6].field6_0x6),0x0,uVar3,(uVar3 >> 0x10));
     uVar6 = puVar14[-0x5].field6_0x6;
-    pass1_1008_4480(*(astruct_76 **)&puVar14[-0x4].field_0x2,(u16 *)CONCAT22(0x1050,&puVar14[-0x6].field6_0x6),
+    pass1_1008_4480(*(astruct_76 **)&puVar14[-0x4].field_0x2,CONCAT22(0x1050,&puVar14[-0x6].field6_0x6),
                     *(astruct_76 **)(iVar11 + uVar6));
     iVar16 = &puVar14[-0x6].field_0x4;
     uVar3 = &puVar14[-0x5].field_0x2;
@@ -246,9 +246,9 @@ pub fn pass1_1020_239c(mut param_1: u32,i16 *param_2)
 
   if (param_2 != NULL) {
     uStack4 = ((param_2 + 0x4) - *param_2 >> 0x1) + *param_2;
-    puVar1 = pass1_1008_3e54((u16 *)CONCAT22(0x1050,local_a),0x0,0x57,uStack4);
+    puVar1 = pass1_1008_3e54(CONCAT22(0x1050,local_a),0x0,0x57,uStack4);
     uVar3 = (param_1 >> 0x10);
-    uVar2 = pass1_1020_23f2((puVar1 >> 0x10),param_1,uVar3,(u16 *)CONCAT22(0x1050,local_a));
+    uVar2 = pass1_1020_23f2((puVar1 >> 0x10),param_1,uVar3,CONCAT22(0x1050,local_a));
     draw_polygon_1020_2474(param_1,uVar3,0x3,uVar2,(uVar2 >> 0x10));
   }
   return;
@@ -269,7 +269,7 @@ pub fn pass1_1020_23f2(u8 *param_1,mut param_2: u16 ,mut param_3: u16 ,param_4: 
 
   paVar3 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   piVar1 = &local_6;
-  pass1_1008_3e94(param_4,(u16 *)CONCAT22(0x1050,piVar1),CONCAT22(0x1050,&local_4));
+  pass1_1008_3e94(param_4,CONCAT22(0x1050,piVar1),CONCAT22(0x1050,&local_4));
   mem_op_1000_179c(0xc,paVar3);
   uVar2 = SUB42(paVar3,0x0);
   for (iStack18 = 0x0; iStack18 < 0x3; iStack18 += 0x1) {
@@ -493,7 +493,7 @@ pub fn pass1_1020_27b0(mut param_1: u16 ,param_2: *mut astruct_664,mut param_3: 
   code **ppcVar1;
   let mut uVar2: u32;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar5: *mut Struct57;
   let mut puVar6: *mut u32;
@@ -652,7 +652,7 @@ u32 send_msg_1020_29d8(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut 
                         mut param_6: u16 )
 
 {
-  u8 *puVar1;
+  let mut puVar1: *mut u8,
   astruct_27 *paVar2;
   let mut in_stack_0000fe9e: u16;
   let mut in_stack_0000ffc2: u16;
@@ -953,7 +953,7 @@ pub fn load_draw_op_1020_2ede(param_1: *mut astruct_57,mut param_2: u16 ,param_3
   HPEN16 handle;
   HDC16 *pHVar2;
   HGDIOBJ16 h_null_brush;
-  u8 *in_DX;
+  let mut in_DX: *mut u8,
   astruct_40 *struct_1;
   let mut unaff_DI: i16;
   let mut uVar5: u16;
@@ -985,7 +985,7 @@ pub fn load_draw_op_1020_2ede(param_1: *mut astruct_57,mut param_2: u16 ,param_3
   (&struct_1[0x1].field0_0x0 + 0x1) = 0x0;
   param_3.field0_0x0 = 0x363c;
   struct_1.field1_0x2 = 0x1020;
-  puVar5 = (u16 *)mixed_1010_20ba(param_1,_u16_1050_0ed0,(u8 **)CONCAT22(param_2,param_4[0x1].field26_0x30),
+  puVar5 = mixed_1010_20ba(param_1,_u16_1050_0ed0,(u8 **)CONCAT22(param_2,param_4[0x1].field26_0x30),
                                   in_stack_0000fe92,in_stack_0000ffb6,in_stack_0000ffbc,in_stack_0000ffc0);
   struct_1.field17_0x14 = puVar5;
   &struct_1.field_0x16 = (puVar5 >> 0x10);

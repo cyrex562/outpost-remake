@@ -202,7 +202,7 @@ pub fn pass1_1010_a478(StructD *param_1)
   else {
     puVar1 = &uVar3->field6_0xa;
   }
-  puStack6 = (u16 *)CONCAT22(uVar4,puVar1);
+  puStack6 = CONCAT22(uVar4,puVar1);
   *puStack6 = 0x389a;
   puVar1[0x1] = 0x1008;
   pass1_1010_1d80(param_1);
@@ -327,7 +327,7 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
   let mut iVar1: i16;
   let mut uVar2: u16;
   let mut uVar3: u16;
-  u8 *puVar4;
+  let mut puVar4: *mut u8,
   let mut in_register_0000000a: u16;
   let mut paVar5: *mut Struct57;
   let mut puVar6: *mut u32;
@@ -654,7 +654,7 @@ pub fn pass1_1010_ad22(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 
   uVar1 = (param_2 + 0x138);
   puVar2 = &param_4;
-  pass1_1030_627e(puVar2,param_1,_PTR_LOOP_1050_5740,(u16 *)CONCAT22(0x1050,puVar2),
+  pass1_1030_627e(puVar2,param_1,_PTR_LOOP_1050_5740,CONCAT22(0x1050,puVar2),
                   *(i32 *)(uVar1 + 0x20));
   if ((param_1 | puVar2) == 0x0) {
     return;

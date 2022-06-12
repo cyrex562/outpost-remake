@@ -378,7 +378,7 @@ pub fn pass1_1010_1788(char *param_1,mut param_2: u16 ,mut param_3: u16 ,param_4
   let mut in_stack_0000ffc2: u16;
   let mut in_stack_0000ffc8: u16;
   let mut in_stack_0000ffcc: u16;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut in_stack_0000fff4: u32;
   u8 **ppuVar6;
   let mut iVar7: i16;
@@ -810,7 +810,7 @@ pub fn pass1_1010_1df2(param_1: *mut astruct_242,mut param_2: u16 ,mut param_3: 
   }
   mem_op_1000_179c(0xa,param_5);
   uVar2 = param_5;
-  puStack10 = (u16 *)CONCAT22(uVar2,in_AX);
+  puStack10 = CONCAT22(uVar2,in_AX);
   if ((uVar2 | in_AX) == 0x0) {
     puStack6 = NULL;
   }
@@ -834,7 +834,7 @@ pub fn pass1_1010_1ea6(mut param_1: u32,StructD *param_2)
   let mut uVar2: u16;
   code **ppcVar3;
   let mut puVar4: *mut u32;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut extraout_DX: u16;
   astruct_498 *iVar6;
   let mut uVar6: u16;

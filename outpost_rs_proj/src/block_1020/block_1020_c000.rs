@@ -578,7 +578,7 @@ pub fn pass1_1020_c73a(mut param_1: u32)
   }
   else {
     uVar2 = (iVar6 + 0x10);
-    puVar1 = (u16 *)(iVar6 + 0x14);
+    puVar1 = (iVar6 + 0x14);
     uVar4 = uVar2 + *puVar1;
     pSVar5 = (StructD *)
              (in_EDX & 0xffff0000 |
@@ -699,10 +699,10 @@ LAB_1020_c92d:
     (iVar7 + 0x4) = (iVar8 + 0x4);
   }
   else {
-    puVar1 = (u16 *)(uStack14 + 0xe);
+    puVar1 = (uStack14 + 0xe);
     bVar12 = *puVar1 < param_2;
     if ((bVar12 || *puVar1 == param_2) &&
-       ((bVar12 || (puVar1 = (u16 *)(uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
+       ((bVar12 || (puVar1 = (uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
     goto LAB_1020_c92d;
     bVar12 = false;
     while( true ) {
@@ -822,7 +822,7 @@ pub fn pass1_1020_cac2(u8 *param_1,mut param_2: u16 ,param_3: *mut astruct_15)
   let mut uVar3: u32;
   let mut uVar4: u32;
   let mut puVar3: *mut c_char;
-  u8 *puVar5;
+  let mut puVar5: *mut u8,
   let mut uVar6: u16;
   let mut iVar7: i16;
   let mut uVar8: u16;
@@ -835,13 +835,13 @@ pub fn pass1_1020_cac2(u8 *param_1,mut param_2: u16 ,param_3: *mut astruct_15)
   let mut in_stack_0000ff9c: u16;
   let mut in_stack_0000ffa0: u16;
   let mut iStack52: i16;
-  u8 *puStack36;
+  let mut puStack36: *mut u8,
   char local_1c [0x4];
   let mut uStack24: u32;
   let mut puStack20: *mut u32;
   let mut puStack16: *mut u32;
   let mut puStack12: *mut u32;
-  u8 *puStack8;
+  let mut puStack8: *mut u8,
   let mut uStack6: u16;
   let mut uStack4: u16;
 
@@ -1019,7 +1019,7 @@ u16 * pass1_1020_ce08(mut param_1: u16 ,param_2: *mut astruct_179,mut param_3: u
   pass1_1028_0982(param_1,(astruct_12 *)CONCAT22(param_3,param_2),param_4,param_5);
   CONCAT22(param_3,param_2) = 0xd004;
   param_2->field2_0x2 = 0x1020;
-  return (u16 *)CONCAT22(param_3,param_2);
+  return CONCAT22(param_3,param_2);
 }
 
 
@@ -1162,28 +1162,28 @@ pub fn pass1_1020_cf6c(param_1: *mut astruct_15,mut param_2: i16,mut param_3: u3
   uVar5 = (uVar4 >> 0x10);
   uVar7 = param_2 / 0x5;
   uVar8 = uVar7 * -0x4 + param_2;
-  puVar1 = (u16 *)(iVar6 + 0x50);
+  puVar1 = (iVar6 + 0x50);
   uVar3 = *puVar1;
   *puVar1 = *puVar1 + uVar8;
   piVar2 = (iVar6 + 0x52);
   *piVar2 = *piVar2 + (uVar8 >> 0xf) + CARRY2(uVar3,uVar8);
   iVar9 = uVar7 >> 0xf;
-  puVar1 = (u16 *)(iVar6 + 0x78);
+  puVar1 = (iVar6 + 0x78);
   uVar3 = *puVar1;
   *puVar1 = *puVar1 + uVar7;
   piVar2 = (iVar6 + 0x7a);
   *piVar2 = *piVar2 + iVar9 + CARRY2(uVar3,uVar7);
-  puVar1 = (u16 *)(iVar6 + 0xa0);
+  puVar1 = (iVar6 + 0xa0);
   uVar3 = *puVar1;
   *puVar1 = *puVar1 + uVar7;
   piVar2 = (iVar6 + 0xa2);
   *piVar2 = *piVar2 + iVar9 + CARRY2(uVar3,uVar7);
-  puVar1 = (u16 *)(iVar6 + 0xc8);
+  puVar1 = (iVar6 + 0xc8);
   uVar3 = *puVar1;
   *puVar1 = *puVar1 + uVar7;
   piVar2 = (iVar6 + 0xca);
   *piVar2 = *piVar2 + iVar9 + CARRY2(uVar3,uVar7);
-  puVar1 = (u16 *)(iVar6 + 0xf0);
+  puVar1 = (iVar6 + 0xf0);
   uVar3 = *puVar1;
   *puVar1 = *puVar1 + uVar7;
   piVar2 = (iVar6 + 0xf2);

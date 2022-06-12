@@ -42,9 +42,9 @@ pub fn draw_rect_1020_40ce(mut param_1: u32,mut param_2: i16,mut param_3: i16,HD
   HDC16 hdc16_var_fff2;
   let mut iVar1: i16;
 
-  pass1_1008_3e94((u16 *)(param_1 & 0xffff0000 | (param_1 + 0x10)),(u16 *)CONCAT22(0x1050,&local_6),
+  pass1_1008_3e94((param_1 & 0xffff0000 | (param_1 + 0x10)),CONCAT22(0x1050,&local_6),
                   CONCAT22(0x1050,&local_4));
-  pass1_1008_3e94((u16 *)param_1,(u16 *)CONCAT22(0x1050,&local_6),CONCAT22(0x1050,&local_4));
+  pass1_1008_3e94(param_1,CONCAT22(0x1050,&local_6),CONCAT22(0x1050,&local_4));
   iVar1 = (param_1 + 0xa);
   Ellipse16(iVar1 + local_6 + param_2,iVar1 + local_4 + param_3,(local_6 - (param_1 + 0xa)) + param_2,
             (local_4 - (param_1 + 0xa)) + param_3,hdc16_param_4);
@@ -211,7 +211,7 @@ pub fn mixed_menu_op_1020_44ec
   HMENlet mut HVar6: u16;
   let mut uVar7: u16;
   let mut uVar8: u32;
-  u8 *puVar9;
+  let mut puVar9: *mut u8,
   let mut uVar10: u16;
   let mut in_register_0000000a: u16;
   let mut paVar11: *mut Struct57;
@@ -373,7 +373,7 @@ LAB_1020_47e3:
       uStack300 = uVar1;
       if ((uVar7 | uStack300) != 0x0) {
         pass1_1030_8308(&stack0xfecc,uVar7,_u16_1050_5748,(_u16_1050_5748 >> 0x10),
-                        (u16 *)CONCAT22(0x1050,&stack0xfecc),(u16 *)CONCAT22(0x1050,&stack0xfec8),
+                        CONCAT22(0x1050,&stack0xfecc),CONCAT22(0x1050,&stack0xfec8),
                         uVar1 & 0xffff | uVar7 << 0x10);
       }
       UVar4 = 0x0;
@@ -456,8 +456,8 @@ pub fn win_sys_op_1020_493c
   let mut uStack26: u32;
   let mut uStack22: u32;
   let mut puStack18: *mut u32;
-  u8 *puStack14;
-  u8 *puStack12;
+  let mut puStack14: *mut u8,
+  let mut puStack12: *mut u8,
   let mut uStack10: u16;
   let mut uStack6: u32;
 
@@ -744,7 +744,7 @@ LAB_1020_4c5f:
           goto LAB_1020_4c5f;
         }
         if (param_4 == 0x12f) {
-          pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),(u16 *)CONCAT22(0x1050,&local_24e));
+          pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),CONCAT22(0x1050,&local_24e));
           iVar6 = local_24e + 0x6a;
         }
         else {
@@ -759,7 +759,7 @@ LAB_1020_4c5f:
             iVar6 = 0x7;
             goto LAB_1020_49b7;
           }
-          pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),(u16 *)CONCAT22(0x1050,&local_24e));
+          pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),CONCAT22(0x1050,&local_24e));
           iVar6 = local_24e + 0x68;
         }
         uStack320 = CONCAT22(uStack320,iVar6);

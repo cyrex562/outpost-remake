@@ -239,7 +239,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
   char local_464 [0x50];
   WORD local_414 [0x200];
   let mut puStack20: *mut u16;
-  u8 *puStack16;
+  let mut puStack16: *mut u8,
   let mut puStack14: *mut u32;
   let mut uStack10: u16;
   let mut HStack8: HWND16;
@@ -324,7 +324,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
       }
       uStack10 = (puStack16 * 0xc + 0x5b84) - 0x1;
       pass1_1008_612e(uStack10,0x0,uStack10);
-      puStack20 = (u16 *)pass1_1018_1e78(iVar8->field142_0x92,((puStack16 * 0x6 + uStack10) * 0x2 + 0x5b86)
+      puStack20 = pass1_1018_1e78(iVar8->field142_0x92,((puStack16 * 0x6 + uStack10) * 0x2 + 0x5b86)
                                         );
       load_string_1010_84e0
                 (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_464,(short)&DAT_1050_1050);
@@ -406,7 +406,7 @@ pub fn pass1_1038_bca8(mut param_1: u32)
   astruct_394 *paVar5;
   let mut puVar6: *mut u32;
   let mut uVar7: u16;
-  u8 *puVar8;
+  let mut puVar8: *mut u8,
   let mut in_EDX: u32;
   let mut paVar9: *mut Struct57;
   let mut iVar10: i16;

@@ -10,7 +10,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
     let mut puStack4: *mut u16;
     let mut uVar3: u16;
 
-    puStack4 = (u16 *) &DAT_1050_1050;
+    puStack4 =  &DAT_1050_1050;
     if (( PTR_LOOP_1050_5f1c |  PTR_PTR_1050_5f1a) == 0x0) {
         pcStack6 = NULL;
         puStack4 = NULL;
@@ -23,7 +23,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
             PTR_PTR_1050_5f1a =  &PTR_PTR_1050_1f7e;
             PTR_LOOP_1050_5f1c =  &PTR_LOOP_1050_1000;
             pcStack6 = (code *) &PTR_PTR_1050_1f7e;
-            puStack4 = (u16 *) &PTR_LOOP_1050_1000;
+            puStack4 =  &PTR_LOOP_1050_1000;
         }
     }
     if (( puStack4 |  pcStack6) != 0x0) {

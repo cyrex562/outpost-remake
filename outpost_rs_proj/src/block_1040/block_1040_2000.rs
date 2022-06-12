@@ -252,9 +252,9 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
   let mut UVar6: u16;
   let mut uVar7: u16;
   let mut uVar11: u16;
-  u8 *puVar8;
+  let mut puVar8: *mut u8,
   let mut uVar12: u16;
-  u8 *puVar9;
+  let mut puVar9: *mut u8,
   StructC *iVar8;
   let mut iVar9: i16;
   let mut uVar8: u16;
@@ -379,7 +379,7 @@ LAB_1040_2539:
           uVar13 = uVar14;
         }
         puStack10 = CONCAT22(uVar13,iVar7);
-        puVar15 = pass1_1008_941a((u16 *)CONCAT22(0x1050,local_1e),0x1,0xc2);
+        puVar15 = pass1_1008_941a(CONCAT22(0x1050,local_1e),0x1,0xc2);
         param_1 = (astruct_57 *)(uVar13 & 0xffff0000 | puVar15 >> 0x10);
         param_2 = &DAT_1050_1050;
         fn_ptr_21 = (code **)(*puStack10 + 0x6c);
@@ -485,7 +485,7 @@ pub fn pass1_1040_288e(mut param_1: u32)
   astruct_394 *paVar5;
   let mut puVar6: *mut u32;
   let mut uVar7: u16;
-  u8 *puVar8;
+  let mut puVar8: *mut u8,
   let mut in_EDX: u32;
   let mut paVar9: *mut Struct57;
   let mut iVar10: i16;
@@ -672,7 +672,7 @@ pub fn win_ui_op_1040_2bb2(u8 *param_1,astruct_903 *pstruct_903_param_2,mut para
   astruct_920 *iVar3;
   let mut uVar6: u16;
   let mut uVar7: u16;
-  u8 *id;
+  let mut id: *mut u8,
   let mut iStack8: i16;
   let mut iStack4: i16;
 
