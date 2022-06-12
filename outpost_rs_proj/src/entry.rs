@@ -12,9 +12,10 @@
 // #include "block_1000.h"
 
 use std::ptr;
-use crate::block_1000::{dos3_call_1000_23ea, fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c, pass1_1000_27d6, pass1_1000_2913, ret_op_1000_55ac};
-use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, WIN_VERSION_1050_5f80, PTR_LOOP_1050_5f84, REG_SI, PTR_LOOP_1050_63fe, REG_DI};
-use crate::sys_api::{WaitEvent16, InitTask16, GetVersion16, InitApp16, FatalAppExit16};
+use crate::block_1000::{dos3_call_1000_23ea, ret_op_1000_55ac};
+use crate::block_1000::block_1000_2000::{fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c, pass1_1000_27d6, pass1_1000_2913};
+use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84, PTR_LOOP_1050_63fe, REG_DI, REG_SI, WIN_VERSION_1050_5f80};
+use crate::sys_api::{FatalAppExit16, GetVersion16, InitApp16, InitTask16, WaitEvent16};
 use crate::utils::CONCAT22;
 
 pub unsafe fn entry(mut param_1: u16,
