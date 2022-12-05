@@ -193,7 +193,7 @@ typedef struct {
         _FP80 Fp80Value;
         _FP128 Fp128Value;
         _I16 I16Value;
-        _I32 I32Value;
+        _let mut I32Value: i32;
         _I64 I64Value;
         _U16 U16Value;
         _U32 U32Value;

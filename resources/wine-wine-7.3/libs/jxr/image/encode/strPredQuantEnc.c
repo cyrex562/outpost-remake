@@ -2,16 +2,16 @@
 //
 // Copyright © Microsoft Corp.
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
-// 
+//
 // • Redistributions of source code must retain the above copyright notice,
 //   this list of conditions and the following disclaimer.
 // • Redistributions in binary form must reproduce the above copyright notice,
 //   this list of conditions and the following disclaimer in the documentation
 //   and/or other materials provided with the distribution.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -37,7 +37,7 @@ I32 QUANT_Mulless(PixelI v, PixelI o, I32 r)
     return ((((v ^ m) - m + o) >> r) ^ m) - m;
 }
 
-I32 MUL32HR(U32 a, U32 b, U32 r)
+I32 MUL32HR(a: u32, b: u32, U32 r)
 {
     return (I32)((U32)((U64)a * b >> 32) >> r);
 }
@@ -80,7 +80,7 @@ Int quantizeMacroblock(CWMImageStrCodec* pSC)
                         pData[i] = (pQPHP->iMan == 0 ? QUANT_Mulless(pData[i], pQPHP->iOffset, pQPHP->iExp) : QUANT(pData[i], pQPHP->iOffset, pQPHP->iMan, pQPHP->iExp));
             }
         }
-    
+
     for(iChannel = 0; iChannel < (int)pSC->m_param.cNumChannels; iChannel ++){
         I32 * pDC = pSC->MBInfo.iBlockDC[iChannel];
         PixelI * pData = pSC->pPlane[iChannel];
@@ -126,7 +126,7 @@ Void predMacroblockEnc(CWMImageStrCodec * pSC)
 
     for(i = 0; i < iChannels; i ++){
         pOrg = pMBInfo->iBlockDC[i]; // current DC block
-        
+
         /* DC prediction */
         if(iDCPredMode == 1){ // predict DC from top
             pOrg[0] -= (pSC->PredInfoPrevRow[i] + mbX)->iDC;
@@ -147,7 +147,7 @@ Void predMacroblockEnc(CWMImageStrCodec * pSC)
             pRef = (pSC->PredInfo[i] + mbX - 1)->piAD;
             pOrg[1] -= pRef[0], pOrg[2] -= pRef[1], pOrg[3] -= pRef[2];
         }
-        
+
         pOrg = pSC->pPlane[i];
         /* AC prediction */
         if(iACPredMode == 1){ // predict from top
@@ -494,7 +494,7 @@ Void predCBPEnc(CWMImageStrCodec* pSC, CCodingContext *pContext)
                 }
             }
         }
-        
+
         pMBInfo->iCBP[iChannel] = (pSC->PredInfo[iChannel] + mbX)->iCBP = iCBP;
 
         if(iNumBlock == 16){
@@ -508,4 +508,3 @@ Void predCBPEnc(CWMImageStrCodec* pSC, CCodingContext *pContext)
         }
     }
 }
-

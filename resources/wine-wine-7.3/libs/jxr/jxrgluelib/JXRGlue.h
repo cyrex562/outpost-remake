@@ -2,16 +2,16 @@
 //
 // Copyright © Microsoft Corp.
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
-// 
+//
 // • Redistributions of source code must retain the above copyright notice,
 //   this list of conditions and the following disclaimer.
 // • Redistributions in binary form must reproduce the above copyright notice,
 //   this list of conditions and the following disclaimer in the documentation
 //   and/or other materials provided with the distribution.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -54,10 +54,10 @@ extern "C" {
 //================================================================
 typedef struct tagPKRect
 {
-    I32 X;
-    I32 Y;
-    I32 Width;
-    I32 Height;
+    let mut X: i32;
+    let mut Y: i32;
+    let mut Width: i32;
+    let mut Height: i32;
 } PKRect;
 
 //================================================================
@@ -273,7 +273,7 @@ typedef struct tagPKPixelInfo
     COLORFORMAT cfColorFormat;
     BITDEPTH_BITS bdBitDepth;
     U32 cbitUnit;
-    
+
     WMP_GRBIT grBit;
 
     // TIFF
@@ -396,7 +396,7 @@ typedef struct tagPKImageEncode
 
     // Banded encode API - currently only implemented for WMP encoder
     ERR (*WritePixelsBandedBegin)(PKImageEncode* pEncoder, struct WMPStream *pPlanarAlphaTempFile);
-    ERR (*WritePixelsBanded)(PKImageEncode* pEncoder, U32 cLines, U8* pbPixels, U32 cbStride, Bool fLastCall);
+    ERR (*WritePixelsBanded)(PKImageEncode* pEncoder, cLines: u32, U8* pbPixels, cbStride: u32, Bool fLastCall);
     ERR (*WritePixelsBandedEnd)(PKImageEncode* pEncoder);
 #define TEMPFILE_COPYBUF_SIZE 8192  // Means when using tempfile for planar alpha banded encode, copy this many bytes at a time
 
@@ -477,7 +477,7 @@ ERR PKImageEncode_SetSize(PKImageEncode* pIE, I32 iWidth, I32 iHeight);
 ERR PKImageEncode_SetResolution(PKImageEncode* pIE, Float rX, Float rY);
 ERR PKImageEncode_SetColorContext(PKImageEncode *pIE, const U8 *pbColorContext, U32 cbColorContext);
 ERR PKImageEncode_SetDescriptiveMetadata(PKImageEncode *pIE, const DESCRIPTIVEMETADATA *pDescMetadata);
-ERR PKImageEncode_WritePixels(PKImageEncode* pIE, U32 cLine, U8* pbPixel, U32 cbStride);
+ERR PKImageEncode_WritePixels(PKImageEncode* pIE, cLine: u32, U8* pbPixel, U32 cbStride);
 ERR PKImageEncode_CreateNewFrame(PKImageEncode* pIE, void* pvParam, size_t cbParam);
 ERR PKImageEncode_Release(PKImageEncode** ppIE);
 
@@ -516,7 +516,7 @@ typedef struct tagPKImageDecode
     struct WMPStream* pStream;
     Bool fStreamOwner;
     size_t offStart;
-    
+
     PKPixelFormatGUID guidPixFormat;
 
     U32 uWidth;
@@ -553,7 +553,7 @@ typedef struct tagPKImageDecode
 
         Bool fOrientationFromContainer;
         ORIENTATION oOrientationFromContainer; // Tag 0xBC02 in HD Photo container
-            
+
         DESCRIPTIVEMETADATA sDescMetadata;
     } WMP;
 
@@ -625,7 +625,7 @@ ERR PKFormatConverter_Release(PKFormatConverter** ppFC);
 
 // Think of this as static member of PKFormatConverter "class"
 ERR PKFormatConverter_EnumConversions(const PKPixelFormatGUID *pguidSourcePF,
-                                      const U32 iIndex,
+                                      const iIndex: u32,
                                       const PKPixelFormatGUID **ppguidTargetPF);
 
 ERR PKCodecFactory_CreateFormatConverter(PKFormatConverter** ppFConverter);
@@ -639,4 +639,3 @@ ERR PKFreeAligned(void** ppv);
 #ifdef __cplusplus
 } // extern "C"
 #endif
-

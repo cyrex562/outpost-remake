@@ -2,16 +2,16 @@
 //
 // Copyright © Microsoft Corp.
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
-// 
+//
 // • Redistributions of source code must retain the above copyright notice,
 //   this list of conditions and the following disclaimer.
 // • Redistributions in binary form must reproduce the above copyright notice,
 //   this list of conditions and the following disclaimer in the documentation
 //   and/or other materials provided with the distribution.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -130,7 +130,7 @@ typedef struct DPKPROPVARIANT
     DPKVARTYPE  vt;
     union
     {
-        U8 bVal;        // DPKVT_UI1
+        let mut bVal: u8;        // DPKVT_UI1
         U16 uiVal;      // DPKVT_UI2
         U32 ulVal;      // DPKVT_UI4
         char *pszVal;   // DPKVT_LPSTR
@@ -229,8 +229,8 @@ EXTERN_C ERR WriteWmpDE(
 
 EXTERN_C ERR ReadPropvar(__in_ecount(1) struct WMPStream* pWS,
                          const __in_win U16 uType,
-                         const __in_win U32 uCount,
-                         const __in_win U32 uValue,
+                         const __in_win uCount: u32,
+                         const __in_win uValue: u32,
                          __out_win DPKPROPVARIANT *pvar);
 
 
@@ -252,7 +252,7 @@ EXTERN_C ERR setbfw(U8* pb, size_t cb, size_t ofs, U16 dw);
 EXTERN_C ERR setbfdw(U8* pb, size_t cb, size_t ofs, U32 dw);
 EXTERN_C ERR setbfwbig(U8* pb, size_t cb, size_t ofs, U16 dw);
 EXTERN_C ERR setbfdwbig(U8* pb, size_t cb, size_t ofs, U32 dw);
-EXTERN_C ERR BufferCalcIFDSize(const U8* pb, size_t cb, U32 uIFDOfs, U8 endian, U32 *pcbifd);
-EXTERN_C ERR StreamCalcIFDSize(struct WMPStream* pWS, U32 uIFDOfs, U32 *pcbifd);
-EXTERN_C ERR BufferCopyIFD(const U8* pbsrc, U32 cbsrc, U32 ofssrc, U8 endian, U8* pbdest, U32 cbdest, U32* pofsdest);
-EXTERN_C ERR StreamCopyIFD(struct WMPStream* pWS, U32 ofssrc, U8* pbdest, U32 cbdest, U32* pofsdest);
+EXTERN_C ERR BufferCalcIFDSize(const U8* pb, size_t cb, uIFDOfs: u32, U8 endian, U32 *pcbifd);
+EXTERN_C ERR StreamCalcIFDSize(struct WMPStream* pWS, uIFDOfs: u32, U32 *pcbifd);
+EXTERN_C ERR BufferCopyIFD(const U8* pbsrc, cbsrc: u32, ofssrc: u32, U8 endian, U8* pbdest, cbdest: u32, U32* pofsdest);
+EXTERN_C ERR StreamCopyIFD(struct WMPStream* pWS, ofssrc: u32, U8* pbdest, cbdest: u32, U32* pofsdest);

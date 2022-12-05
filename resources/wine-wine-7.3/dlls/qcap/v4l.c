@@ -363,8 +363,8 @@ static NTSTATUS v4l_device_read_frame( void *args )
     return TRUE;
 }
 
-static void fill_caps(__u32 pixelformat, __u32 width, __u32 height,
-        __u32 max_fps, __u32 min_fps, struct caps *caps)
+static void fill_caps(__pixelformat: u32, __width: u32, __height: u32,
+        __max_fps: u32, __min_fps: u32, struct caps *caps)
 {
     LONG depth = 24;
 

@@ -2,16 +2,16 @@
 //
 // Copyright © Microsoft Corp.
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
-// 
+//
 // • Redistributions of source code must retain the above copyright notice,
 //   this list of conditions and the following disclaimer.
 // • Redistributions in binary form must reproduce the above copyright notice,
 //   this list of conditions and the following disclaimer in the documentation
 //   and/or other materials provided with the distribution.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -143,7 +143,7 @@ typedef struct tagIOContext
             struct WMPStream* pWS;    // pointer to WMPStream
             long offPacket; // byte offset into stream
 
-            //ULARGE_INTEGER u64Acc; 
+            //ULARGE_INTEGER u64Acc;
 
     //========================================
     // index packet, used for packet retrieval
@@ -156,7 +156,7 @@ typedef struct tagIOContext
 } IOContext;
 
 typedef struct tagMemReadState
-{    
+{
     U8* pbBuf;
     size_t cbBuf;
     size_t cbCur;
@@ -172,7 +172,7 @@ typedef struct tagBitIOInfo
     U32 cBitsUnused;  // # of bits remain unused in acc, [0,32]
 #endif
 
-    I32 iMask;  // mask used simulate pointer wrap around
+    let mut iMask: i32;  // mask used simulate pointer wrap around
 
     U8* pbStart;    // start pointer
 #ifndef ARMOPT_BITIO
@@ -189,25 +189,25 @@ typedef struct tagBitIOInfo
 
 //================================================================
 typedef struct tagCWMIQuantizer {
-    U8 iIndex;
-    I32 iQP;
-    I32 iOffset;
-    I32 iMan;
-    I32 iExp;
+    let mut iIndex: u8;
+    let mut iQP: i32;
+    let mut iOffset: i32;
+    let mut iMan: i32;
+    let mut iExp: i32;
 #if defined(WMP_OPT_QT)
     float f1_QP;
     double d1_QP;
-#endif    
+#endif
 } CWMIQuantizer;
 
 /* temporary bridge between old APIs and streaming APIs */
 typedef struct tagCWMIMBInfo {
     I32 iBlockDC[MAX_CHANNELS][16];
-    I32 iOrientation;
+    let mut iOrientation: i32;
     Int iCBP[MAX_CHANNELS];
     Int iDiffCBP[MAX_CHANNELS];
-    U8 iQIndexLP; // 0 - 15
-    U8 iQIndexHP; // 0 - 15
+    let mut iQIndexLP: u8; // 0 - 15
+    let mut iQIndexHP: u8; // 0 - 15
 } CWMIMBInfo;
 
 struct CWMImageStrCodec;
@@ -293,14 +293,14 @@ typedef struct CWMITile
     CWMIQuantizer * pQuantizerDC[MAX_CHANNELS];
     CWMIQuantizer * pQuantizerLP[MAX_CHANNELS];
     CWMIQuantizer * pQuantizerHP[MAX_CHANNELS];
-    U8 cNumQPLP;
-    U8 cNumQPHP;
-    U8 cBitsLP;
-    U8 cBitsHP;
+    let mut cNumQPLP: u8;
+    let mut cNumQPHP: u8;
+    let mut cBitsLP: u8;
+    let mut cBitsHP: u8;
 
     Bool bUseDC;
     Bool bUseLP;
-    U8 cChModeDC;
+    let mut cChModeDC: u8;
     U8 cChModeLP[16];
     U8 cChModeHP[16];
 } CWMITile;
@@ -311,7 +311,7 @@ typedef struct CWMITile
 
 struct tagPostProcInfo{
     Int iMBDC;                  // DC of MB
-    U8 ucMBTexture;             // MB texture   : 0(flat) 1(horizontal) 2(vertical) 3(bumpy)
+    let mut ucMBTexture: u8;             // MB texture   : 0(flat) 1(horizontal) 2(vertical) 3(bumpy)
     Int iBlockDC[4][4];         // DC of block
     U8 ucBlockTexture[4][4];    // block texture: 0(flat) 1(horizontal) 2(vertical) 3(bumpy)
 };
@@ -333,7 +333,7 @@ typedef struct CWMImageStrCodec {
 
     struct CWMDecoderParameters *m_Dparam;  // this is specified thru pointer because the same set of parameters may be used by multiple image planes
 
-    U8 cSB;
+    let mut cSB: u8;
 
     Bool m_bUVResolutionChange;
 
@@ -349,7 +349,7 @@ typedef struct CWMImageStrCodec {
     //============== tile related info begins here ===========
     // index table
     size_t *pIndexTable;
-  
+
     // current tile position
     size_t cTileRow;
     size_t cTileColumn;
@@ -362,7 +362,7 @@ typedef struct CWMImageStrCodec {
     Bool m_bResetContext;
 
     CWMITile * pTile;
-    
+
     // BitIOs
     BitIOInfo ** m_ppBitIO;
     size_t cNumBitIO;
@@ -375,7 +375,7 @@ typedef struct CWMImageStrCodec {
     //============== tile related info ends here  ===========
 
     size_t cNumOfQPIndex;        // number of QP indexes
-    U8 cBitsDQUANT;              // number of bits to encode DQUANT
+    let mut cBitsDQUANT: u8;              // number of bits to encode DQUANT
 
     size_t cRow;        // row for current macro block
     size_t cColumn;     // column for current macro block
@@ -420,7 +420,7 @@ typedef struct CWMImageStrCodec {
     ImageDataProc ProcessBottomLeft;
     ImageDataProc ProcessBottom;
     ImageDataProc ProcessBottomRight;
-    
+
 
     //================================
     // 2 MB working window for encoder
@@ -517,9 +517,9 @@ U32 getBit32(BitIOInfo* pIO, U32 cBits);
 U32 flushToByte(BitIOInfo* pIO);
 #endif  // ARMOPT_BITIO
 
-Void putBit16z(BitIOInfo* pIO, U32 uiBits, U32 cBits);
-Void putBit16(BitIOInfo* pIO, U32 uiBits, U32 cBits);
-Void putBit32(BitIOInfo* pIO, U32 uiBits, U32 cBits);
+Void putBit16z(BitIOInfo* pIO, uiBits: u32, U32 cBits);
+Void putBit16(BitIOInfo* pIO, uiBits: u32, U32 cBits);
+Void putBit32(BitIOInfo* pIO, uiBits: u32, U32 cBits);
 Void fillToByte(BitIOInfo* pIO);
 
 U32 getSizeRead(BitIOInfo* pIO);
@@ -561,7 +561,7 @@ typedef struct tagSimpleBitIO
 {
     struct WMPStream* pWS;
     U32 cbRead;
-    U8 bAccumulator;
+    let mut bAccumulator: u8;
     U32 cBitLeft;
 } SimpleBitIO;
 
@@ -649,7 +649,7 @@ U8 dquantBits(U8);
 #define getBit16    getBits
 #define getBit32    getBits
 #define getBit16s   getBitsS
-#define getBool16(pIO) getBits(pIO, 1)   
+#define getBool16(pIO) getBits(pIO, 1)
 
 U32 peekBits(BitIOInfo* pIO, U32 cBits);
 void flushBits(BitIOInfo* pIO, U32 cBits);

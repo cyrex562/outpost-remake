@@ -2,16 +2,16 @@
 //
 // Copyright © Microsoft Corp.
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
-// 
+//
 // • Redistributions of source code must retain the above copyright notice,
 //   this list of conditions and the following disclaimer.
 // • Redistributions in binary form must reproduce the above copyright notice,
 //   this list of conditions and the following disclaimer in the documentation
 //   and/or other materials provided with the distribution.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -183,7 +183,7 @@ Cleanup:
 
 
 
-ERR BufferCalcIFDSize(const U8* pbdata, size_t cbdata, U32 ofsifd, U8 endian, U32* pcbifd)
+ERR BufferCalcIFDSize(const U8* pbdata, size_t cbdata, ofsifd: u32, U8 endian, U32* pcbifd)
 {
     ERR err = WMP_errSuccess;
     U16 cDir;
@@ -246,7 +246,7 @@ Cleanup:
 }
 
 
-ERR StreamCalcIFDSize(struct WMPStream* pWS, U32 uIFDOfs, U32 *pcbifd)
+ERR StreamCalcIFDSize(struct WMPStream* pWS, uIFDOfs: u32, U32 *pcbifd)
 {
     ERR err = WMP_errSuccess;
     size_t offCurPos = 0;
@@ -319,7 +319,7 @@ Cleanup:
 // src IFD is arbitrary endian, arbitrary data arrangement
 // dst IFD is little endian, data arranged in tag order
 // dst IFD tags are ordered the same as src IFD so src IFD tags must be in order
-ERR BufferCopyIFD(const U8* pbsrc, U32 cbsrc, U32 ofssrc, U8 endian, U8* pbdst, U32 cbdst, U32* pofsdst)
+ERR BufferCopyIFD(const U8* pbsrc, cbsrc: u32, ofssrc: u32, U8 endian, U8* pbdst, cbdst: u32, U32* pofsdst)
 {
     ERR err = WMP_errSuccess;
     U16 cDir;
@@ -471,7 +471,7 @@ Cleanup:
 // src IFD is little endian, arbitrary data arrangement
 // dst IFD is little endian, data arranged in tag order
 // dst IFD tags are ordered the same as src IFD so src IFD tags must be in order
-ERR StreamCopyIFD(struct WMPStream* pWS, U32 ofssrc, U8* pbdst, U32 cbdst, U32* pofsdst)
+ERR StreamCopyIFD(struct WMPStream* pWS, ofssrc: u32, U8* pbdst, cbdst: u32, U32* pofsdst)
 {
     ERR err = WMP_errSuccess;
     size_t offCurPos = 0;
@@ -639,7 +639,7 @@ ERR GetULong(
     puValue[0] += ((U32) cVal) << 16;
     Call(pWS->Read(pWS, &cVal, sizeof(cVal)));
     puValue[0] += ((U32) cVal) << 24;
- 
+
 Cleanup:
     return err;
 }
@@ -667,8 +667,8 @@ Cleanup:
 
 
 ERR ReadBinaryData(__in_ecount(1) struct WMPStream* pWS,
-                   const __in_win U32 uCount,
-                   const __in_win U32 uValue,
+                   const __in_win uCount: u32,
+                   const __in_win uValue: u32,
                    U8 **ppbData)
 {
     ERR err = WMP_errSuccess;
@@ -705,8 +705,8 @@ Cleanup:
 
 ERR ReadPropvar(__in_ecount(1) struct WMPStream* pWS,
                 const __in_win U16 uType,
-                const __in_win U32 uCount,
-                const __in_win U32 uValue,
+                const __in_win uCount: u32,
+                const __in_win uValue: u32,
                 __out_win DPKPROPVARIANT *pvar)
 {
     ERR err = WMP_errSuccess;
@@ -869,7 +869,7 @@ ERR WriteWmpDE(
                 if (NULL == pbData)
                     pbData = (U8*)&pDE->uValueOrOffset;
 
-                Call(PutULong(pWS, offPos, *(U32*)pbData)); offPos += 4;
+                Call(PutULong(pWS, offPos, *pbData)); offPos += 4;
             }
             else
             {
@@ -883,7 +883,7 @@ ERR WriteWmpDE(
                     Call(pWS->SetPos(pWS, pDE->uValueOrOffset));
                     for (i = 0; i < pDE->uCount; i++)
                     {
-                        const U32 uLong = *(U32*)(pbData + i*sizeof(U32));
+                        const U32 uLong = *(pbData + i*sizeof(U32));
                         Call(PutULong(pWS, offPos, uLong)); // Write one at a time for endian purposes - but inefficient
                     }
                     Call(pWS->SetPos(pWS, offPos));
@@ -902,4 +902,3 @@ Cleanup:
     *pOffPos = offPos;
     return err;
 }
-

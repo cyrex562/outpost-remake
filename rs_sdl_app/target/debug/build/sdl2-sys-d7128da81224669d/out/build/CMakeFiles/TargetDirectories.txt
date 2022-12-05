@@ -1,0 +1,6 @@
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/SDL2main.dir
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/SDL2-static.dir
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/uninstall.dir
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/INSTALL.dir
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/cyrex/Projects/outpost-rs/rs_sdl_app/target/debug/build/sdl2-sys-d7128da81224669d/out/build/CMakeFiles/ZERO_CHECK.dir

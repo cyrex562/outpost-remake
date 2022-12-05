@@ -1,0 +1,20 @@
+# All platforms
+*.log
+
+# Linux - Makefile
+/.build/
+*.exe
+
+# Windows - Visual Studio
+Temporary/
+Release/
+Debug/
+x64/
+.vs/
+*.user
+/proj/vs2019/packages
+/OPHD/*.aps
+
+# MacOS
+*.DS_Store
+/Build/

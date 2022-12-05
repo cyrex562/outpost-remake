@@ -63,6 +63,6 @@ typedef struct MAPI_FUNCTIONS {
 } MAPI_FUNCTIONS;
 
 extern MAPI_FUNCTIONS mapiFunctions DECLSPEC_HIDDEN;
-extern HINSTANCE hInstMAPI32 DECLSPEC_HIDDEN;
+extern HINSTANCE hInstMAPlet mut DECLSPEC_HIDDEN: i32;
 
 #endif
