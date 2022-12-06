@@ -3,28 +3,28 @@
     uVar4 = uVar3;
     (**ppcVar1)(0x1008,uVar3,puVar6);
     uStack18 = CONCAT22(extraout_DX_00,uVar4);
-    for (uStack22 = 0x0; uStack22 < uStack18; uStack22 += 0x1) {
+    for (uStack22 = 0; uStack22 < uStack18; uStack22 += 1) {
       ppcVar1 = (code **)(*puStack14 + 0x4);
       uVar10 = uStack18;
       (**ppcVar1)();
       uVar4 = uVar10;
       uVar7 = extraout_DX_01 | uVar4;
-      if (uVar7 != 0x0) {
+      if (uVar7 != 0) {
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2,uVar10 & 0xffff | extraout_DX_01 << 0x10);
         uVar8 = 0x1030;
         uVar10 = struct_op_1030_73a8((astruct_419 *)CONCAT22(uVar7,uVar4),uVar4,uVar7);
-        if (((uVar10 >> 0x10) | uVar10) != 0x0) {
+        if (((uVar10 >> 0x10) | uVar10) != 0) {
           pass1_1038_0e00(uVar10,param_1,puStack10,uVar10);
         }
       }
     }
     if (puStack10 != NULL) {
       ppcVar1 = (code **)*puStack10;
-      (**ppcVar1)(uVar8,uVar2,puVar5,0x1);
+      (**ppcVar1)(uVar8,uVar2,puVar5,1);
     }
     if (puStack14 != NULL) {
       ppcVar1 = (code **)*puStack14;
-      (**ppcVar1)(uVar8,uVar3,puVar6,0x1);
+      (**ppcVar1)(uVar8,uVar3,puVar6,1);
     }
   }
   return;
@@ -71,12 +71,12 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
   let mut uStack6: u32;
 
   uStack6 = 0x64;
-  uStack8 = 0x0;
+  uStack8 = 0;
   ppcVar5 = (code **)(*param_5 + 0x10);
   puVar15 = param_5;
   (**ppcVar5)();
   uStack12 = CONCAT22(param_2,param_1);
-  uStack16 = 0x0;
+  uStack16 = 0;
   loop {
     if (uStack12 <= uStack16) {
       return;
@@ -90,7 +90,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
     uVar11 = uStack18 | uVar12;
     param_2 = uVar11;
     uStack20 = uVar12;
-    if (uVar11 != 0x0) {
+    if (uVar11 != 0) {
       pass1_1028_e1ec(_PTR_LOOP_1050_65e2,uVar9 & 0xffff | uStack18 << 0x10);
       uStack22 = uVar11;
       unaff_CS = 0x1030;
@@ -112,7 +112,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
           unaff_CS = 0x1008;
           pass1_1008_5b12(CONCAT22(0x1050,puVar8));
           param_2 = (uVar11 | puVar8);
-          if ((uVar11 | puVar8) == 0x0) break;
+          if ((uVar11 | puVar8) == 0) break;
           uVar2 = (puVar8 + 0x4);
           uVar3 = (puVar8 + 0x6);
           uVar4 = (puVar8 + 0x8);
@@ -125,11 +125,11 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
           }
           uVar10 = uStack36 | uVar9;
           param_2 = uVar10;
-          if (uVar10 == 0x0) break;
+          if (uVar10 == 0) break;
           qVar7 = (qword)(uVar9 & 0xffff | uStack36 << 0x10) / (qword)uVar6;
           param_2 = qVar7 >> 0x10;
           uStack76 = qVar7;
-          if (uStack76 == 0x0) break;
+          if (uStack76 == 0) break;
           if (uStack76 < uVar12) {
             piVar1 = (puVar8 + 0xc);
             *piVar1 = *piVar1 - uVar9;
@@ -139,23 +139,23 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
           else {
             ppcVar5 = (code **)(*puStack40 + 0xc);
             (**ppcVar5)(0x1008,puStack40,(puStack40 >> 0x10),puVar8,uVar11);
-            uStack44 = 0x0;
+            uStack44 = 0;
             uStack76 = uVar12;
           }
           paStack80 = pass1_1000_07fc(_PTR_LOOP_1050_68a2);
           uVar12 = (paStack80 >> 0x10);
           uVar11 = paStack80;
-          if ((uVar12 | uVar11) == 0x0) {
+          if ((uVar12 | uVar11) == 0) {
             paStack80 = NULL;
           }
           else {
             paStack80.field0_0x0 = 0x389a;
             (uVar11 + 0x2) = 0x1008;
-            (uVar11 + 0x4) = 0x0;
-            (uVar11 + 0x6) = 0x0;
-            (uVar11 + 0x8) = 0x0;
-            (uVar11 + 0xa) = 0x0;
-            (uVar11 + 0xc) = 0x0;
+            (uVar11 + 0x4) = 0;
+            (uVar11 + 0x6) = 0;
+            (uVar11 + 0x8) = 0;
+            (uVar11 + 0xa) = 0;
+            (uVar11 + 0xc) = 0;
             paStack80.field0_0x0 = 0x56ce;
             (uVar11 + 0x2) = 0x1018;
           }

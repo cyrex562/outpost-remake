@@ -14,7 +14,7 @@ pub fn pass1_1018_9036(StructD *param_1,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -33,7 +33,7 @@ pub fn pass1_1018_907e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -52,7 +52,7 @@ pub fn pass1_1018_90c6(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -71,7 +71,7 @@ pub fn pass1_1018_910e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -90,7 +90,7 @@ pub fn pass1_1018_9156(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -109,7 +109,7 @@ pub fn pass1_1018_919e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -128,7 +128,7 @@ pub fn pass1_1018_91e6(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -147,7 +147,7 @@ pub fn pass1_1018_922e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -166,7 +166,7 @@ pub fn pass1_1018_9276(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -185,7 +185,7 @@ pub fn pass1_1018_92be(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -204,7 +204,7 @@ pub fn pass1_1018_9306(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -223,7 +223,7 @@ pub fn pass1_1018_934e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -242,7 +242,7 @@ pub fn pass1_1018_9396(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;

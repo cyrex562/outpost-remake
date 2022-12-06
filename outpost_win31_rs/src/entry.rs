@@ -80,7 +80,7 @@ pub unsafe fn entry(mut param_1: u16,
 //                DAT_1050_5f82 = CONCAT11( u32_var11,
 //                                           (u32_var11 >> 0x8));
                 DAT_1050_5f82 = u32_var11 as u16;
-                DAT_1050_5f87 = 0x0;
+                DAT_1050_5f87 = 0;
                 WaitEvent16(0x0);
                 PTR_LOOP_1050_5f84 = u32_var11;
                 param_3 = InitApp16(HINSTANCE16_1050_5f4c);
@@ -131,21 +131,21 @@ pub unsafe fn entry(mut param_1: u16,
             }
             iVar6 += -0x1;
             paVar1 = string_var8;
-            string_var8 = string_var8 + 0x1;
+            string_var8 = string_var8 + 1;
             if !(paVar1.field0_0x0 != '\r') {
                 break;
             }
         } //while (paVar1.field0_0x0 != '\r');
-        (string_var8 + -0x1) = '\0';
+        (string_var8 + -1) = '\0';
     }
     FatalAppExit16(0x0, string_var4);
     FatalExit();
     string_var7 = PTR_LOOP_1050_63fe;
     loop {
         string_var1 = string_var7;
-        string_var7 = string_var7 + 0x1;
+        string_var7 = string_var7 + 1;
         string_var5 = string_var7;
-        string_var5 = string_var1 + 0x1;
+        string_var5 = string_var1 + 1;
         if (*string_var1 == param_2) || (string_var5 == NULL) {
             return string_var5;
         }
@@ -156,7 +156,7 @@ pub unsafe fn entry(mut param_1: u16,
             }
             iVar6 += -0x1;
             piVar2 = string_var7;
-            string_var7 = (string_var7 + 0x1);
+            string_var7 = (string_var7 + 1);
             if *piVar2 == '\0' {
                 break;
             }

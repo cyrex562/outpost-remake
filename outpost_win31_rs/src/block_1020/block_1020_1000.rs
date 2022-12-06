@@ -2,7 +2,7 @@
 pub fn enable_menu_1020_1000(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,HMENmut param_5: u16 )
 
 {
-  if (param_4 != 0x0) {
+  if (param_4 != 0) {
     return;
   }
   EnableMenuItem16(0x400,0x3,param_5);
@@ -31,17 +31,17 @@ pub fn cleanup_ui_op_1020_1038(param_1: *mut astruct_868)
   uVar4 = (param_1 >> 0x10);
   iVar4 = (astruct_868 *)param_1;
   DestroyIcon16(iVar4.hicon_0xc2);
-  iVar4.hicon_0xc2 = 0x0;
-  iVar4.field8_0x8 = 0x0;
+  iVar4.hicon_0xc2 = 0;
+  iVar4.field8_0x8 = 0;
   puVar1 = iVar4.field241_0xf6;
   uVar2 = iVar4.field242_0xf8;
-  if ((uVar2 | puVar1) != 0x0) {
+  if ((uVar2 | puVar1) != 0) {
     ppcVar3 = (code **)*puVar1;
-    (**ppcVar3)(s_tile2_bmp_1050_1538,puVar1,uVar2,0x1);
+    (**ppcVar3)(s_tile2_bmp_1050_1538,puVar1,uVar2,1);
   }
-  &iVar4.field241_0xf6 = 0x0;
+  &iVar4.field241_0xf6 = 0;
   pass1_1010_1dda(iVar4.field240_0xf2);
-  iVar4.field240_0xf2 = 0x0;
+  iVar4.field240_0xf2 = 0;
   return;
 }
 
@@ -77,21 +77,21 @@ pub fn window_op_1020_10a0(param_1: *mut astruct_57,param_2: *mut astruct_57,Str
   mem_op_1000_179c(0x42,param_2);
   uVar5 = (astruct_57 *)param_2 | param_1;
   paVar8 = (astruct_57 *)(param_2 & 0xffff0000 | uVar5);
-  if (uVar5 != 0x0) {
+  if (uVar5 != 0) {
     pass1_1008_3bd6(paVar8,param_1,(astruct_57 *)param_2,0x0,0x1f009b,0x0,0x740075,
                     CONCAT22(struct_1.field4_0x8,0xf1),param_4,param_6,param_7,param_10,param_11,param_12);
   }
   mem_op_1000_179c(0x42,paVar8);
   uVar5 = (astruct_57 *)paVar8 | param_1;
   paVar9 = (astruct_57 *)(paVar8 & 0xffff0000 | uVar5);
-  if (uVar5 != 0x0) {
+  if (uVar5 != 0) {
     pass1_1008_3bd6(paVar9,param_1,(astruct_57 *)paVar8,0x0,0x31009b,0x0,0x760077,
                     CONCAT22(struct_1.field4_0x8,0xf2),param_4,param_6,param_7,param_10,param_11,param_12);
   }
   mem_op_1000_179c(0x42,paVar9);
   uVar5 = (astruct_57 *)paVar9 | param_1;
   paVar8 = (astruct_57 *)(paVar9 & 0xffff0000 | uVar5);
-  if (uVar5 != 0x0) {
+  if (uVar5 != 0) {
     pass1_1008_3bd6(paVar8,param_1,(astruct_57 *)paVar9,0x0,0x77009b,0x0,0x780079,
                     CONCAT22(struct_1.field4_0x8,0xf3),param_4,param_6,param_7,param_10,param_11,param_12);
   }
@@ -112,8 +112,8 @@ pub fn window_op_1020_10a0(param_1: *mut astruct_57,param_2: *mut astruct_57,Str
   mem_op_1000_179c(0x24,paVar8);
   uVar5 = paVar8 | paVar3;
   paVar9 = (astruct_57 *)(paVar8 & 0xffff0000 | uVar5);
-  if (uVar5 == 0x0) {
-    &struct_1[0x1].field22_0x2a = 0x0;
+  if (uVar5 == 0) {
+    &struct_1[0x1].field22_0x2a = 0;
   }
   else {
     unk_win_ui_op_1020_1418((astruct_40 *)CONCAT22(paVar8,paVar3),struct_param_1,param_5);
@@ -169,7 +169,7 @@ pub fn win_ui_cursor_op_1020_1294(mut param_1: u16 ,mut param_2: u32,mut param_3
   let mut iStack4: i16;
 
   pass1_1030_8344(_u16_1050_5748,0x4000001);
-  if ((param_1 | in_AX) == 0x0) {
+  if ((param_1 | in_AX) == 0) {
     local_6 = param_4;
     iStack4 = param_3;
     uVar5 = (param_2 >> 0x10);
@@ -201,7 +201,7 @@ StructD * pass1_1020_135e(StructD *param_1,param_2: u8)
 
 {
   cleanup_menu_ui_op_1020_795c(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -237,7 +237,7 @@ pub fn unk_win_ui_op_1020_1418(param_1: *mut astruct_40,param_2: *mut StructA,mu
   get_sys_metrics_1020_7c1a(param_1,param_2);
   uVar9 = (param_1 >> 0x10);
   iVar5 = (astruct_40 *)param_1;
-  &iVar5.field17_0x14 = 0x0;
+  &iVar5.field17_0x14 = 0;
   iVar5.field20_0x18 = NULL;
   puVar10 = pass1_1008_3e38((astruct_19 *)(param_1 & 0xffff0000 | ZEXT24(&iVar5.field_0x1e)));
   paVar7 = (astruct_57 *)CONCAT22(uVar8,(puVar10 >> 0x10));
@@ -285,7 +285,7 @@ pub fn win_ui_op_1020_150e(StructD *param_1)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0x1730;
   iVar1.address_offset_field_0x2 = 0x1020;
-  if (iVar1.field12_0x14 != 0x0) {
+  if (iVar1.field12_0x14 != 0) {
     pass1_1010_1ea6(iVar1.field12_0x14,(param_1 & 0xffff | uVar2 << 0x10));
   }
   uVar1 = iVar1.field12_0x14;
@@ -309,13 +309,13 @@ pub fn invalidate_rect_1020_157c(mut param_1: u32,mut param_2: i16)
 
   iVar2 = param_1;
   uVar3 = (param_1 >> 0x10);
-  if (param_2 == 0x1) {
-    (iVar2 + 0x14) = 0x0;
+  if (param_2 == 1) {
+    (iVar2 + 0x14) = 0;
     return;
   }
   if (param_2 == 0x2) {
     BVar1 = IsIconic16(*(HWND16 *)(iVar2 + 0x4));
-    if (BVar1 == 0x0) {
+    if (BVar1 == 0) {
       local_a.x = *(INT16 *)(iVar2 + 0x4);
       GetClientRect16(&local_a,(HWND16)&DAT_1050_1050);
       uStack4 = 0x9a;
@@ -347,16 +347,16 @@ pub fn draw_op_1020_15de(param_1: *mut astruct_779)
   iVar3 = (astruct_779 *)param_1;
   local_24 = BeginPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,local_22),*(HWND16 *)&iVar3.field_0x4);
   BVar2 = IsIconic16(*(HWND16 *)&iVar3.field_0x4);
-  if (BVar2 == 0x0) {
+  if (BVar2 == 0) {
     uVar4 = 0x1010;
     paVar3 = (astruct_76 *)pass1_1010_454a(iVar3.field20_0x14);
-    if (((paVar3 >> 0x10) | paVar3) != 0x0) {
+    if (((paVar3 >> 0x10) | paVar3) != 0) {
       uVar1 = iVar3.field20_0x14;
       uVar4 = 0x1008;
-      pass1_1008_4480(*(astruct_76 **)(iVar3 + 0x1),(uVar1 & 0xffff0000 | (uVar1 + 0x76)),paVar3);
+      pass1_1008_4480(*(astruct_76 **)(iVar3 + 1),(uVar1 & 0xffff0000 | (uVar1 + 0x76)),paVar3);
     }
-    uVar2 = (iVar3 + 0x1);
-    ppcVar1 = (code **)(*(iVar3 + 0x1) + 0x4);
+    uVar2 = (iVar3 + 1);
+    ppcVar1 = (code **)(*(iVar3 + 1) + 0x4);
     (**ppcVar1)(uVar4,uVar2,(uVar2 >> 0x10),0x0,0x0,&local_24,&DAT_1050_1050);
   }
   else {
@@ -393,11 +393,11 @@ pub fn draw_op_1020_1674(param_1: *mut astruct_779)
     struct_1 = (astruct_779 *)param_1;
     fn_ptr_1 = (code **)(*struct_1.field20_0x14 + 0x2c);
     icon_handle = (**fn_ptr_1)();
-    if (icon_handle != 0x0) {
+    if (icon_handle != 0) {
       brush_handle = GetStockObject16(BLACK_BRUSH);
       GetClientRect16(&rect_e,(HWND16)&DAT_1050_1050);
-      rect_1a.x = 0x0;
-      rect_1a.y = 0x0;
+      rect_1a.x = 0;
+      rect_1a.y = 0;
       iStack22 = (iStack10 - rect_e.x) + -0x1;
       iStack20 = (iStack8 - rect_e.y) + -0x1;
       puVar1 = struct_1.field20_0x14;
@@ -417,7 +417,7 @@ StructD * pass1_1020_170a(StructD *param_1,param_2: u8)
 
 {
   win_ui_op_1020_150e(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -431,9 +431,9 @@ pub fn struct_1020_1738(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: 
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfcd,(param_3 + 0x8));
   uVar1 = (astruct_57 *)(param_1 >> 0x10);
   iVar1 = (astruct_57 *)param_1;
-  (iVar1 + 0x1) = 0x0;
-  &iVar1[0x1].field2_0x4 = 0x0;
-  iVar1[0x1].field4_0x8 = 0x0;
+  (iVar1 + 1) = 0;
+  &iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field4_0x8 = 0;
   param_1.field0_0x0 = 0x1e7a;
   iVar1.field1_0x2 = 0x1020;
   return;
@@ -539,10 +539,10 @@ pub fn *pvStack60;
                              in_stack_0000fe58,in_stack_0000fe5c);
   paVar8 = (astruct_57 *)(paVar8 & 0xffff0000 | puStack6 >> 0x10);
   uVar1 = pass1_1010_65d0(puStack6,uVar15);
-  uStack8 = (uVar1 == 0x0);
+  uStack8 = (uVar1 == 0);
   uVar2 = pass1_1010_65d0(puStack6,0x86);
-  if (uVar2 != 0x0) {
-    uStack8 = 0x0;
+  if (uVar2 != 0) {
+    uStack8 = 0;
   }
   puVar10 = mixed_1010_20ba(paVar8,_u16_1050_0ed0,(u8 **)CONCAT22(in_stack_0000fe88_00,0x39),in_stack_0000fd30,
                             in_stack_0000fe54,in_stack_0000fe5a,in_stack_0000fe5e);
@@ -562,7 +562,7 @@ pub fn *pvStack60;
   paVar8 = (astruct_57 *)(paVar8 & 0xffff0000 | ZEXT24(puVar4));
   uStack78 = pvVar1;
   if (puVar4 == NULL) {
-    &struct_9[0x7].lpvoid_field_0x8 = 0x0;
+    &struct_9[0x7].lpvoid_field_0x8 = 0;
   }
   else {
     pass1_1020_1eea(puVar4,(astruct_663 *)CONCAT22(uStack76,pvVar1),structb_param_1,(HWND16)struct_9.lpvoid_field_0x8);
@@ -587,7 +587,7 @@ pub fn *pvStack60;
   uVar9 = uVar5;
   *pIStack12 = iVar2 / 0x2;
   pass1_1028_dc52((astruct_92 *)CONCAT22(0x1050,&local_2e),0x1,0x0,0x100);
-  uStack56 = 0x0;
+  uStack56 = 0;
   while( true ) {
     uVar6 = uVar9;
     puVar11 = (astruct_816 *)&local_2e;
@@ -595,7 +595,7 @@ pub fn *pvStack60;
     uStack50 = CONCAT22(uVar6,puVar11);
     uVar7 = uVar6 | puVar11;
     uVar9 = uVar7;
-    if (uVar7 == 0x0) break;
+    if (uVar7 == 0) break;
     ppcStack54 = puVar11.field16_0x10;
     if (ppcStack54 != NULL) {
       pass1_1000_3cea(structb_param_1 & 0xffff0000 | ZEXT24(&struct_9.field8_0x10),*ppcStack54);
@@ -604,11 +604,11 @@ pub fn *pvStack60;
   uVar3 = pass1_1020_1da8(puVar11,0x0,structb_param_1);
   struct_9[0x7].field5_0xa = uVar3;
   uVar4 = pass1_1010_65d0(puStack6,0x86);
-  if ((uVar4 == 0x0) || (struct_9[0x7].field5_0xa != NULL)) {
+  if ((uVar4 == 0) || (struct_9[0x7].field5_0xa != NULL)) {
     puVar2 = &struct_9[0x7].field1_0x2;
-    (puVar2 + 0x2c) = 0x0;
+    (puVar2 + 0x2c) = 0;
     hwnd_10 = GetDlgItem16(0x175,(HWND16)struct_9.lpvoid_field_0x8);
-    if (uStack8 != 0x0) {
+    if (uStack8 != 0) {
       load_string_1010_84e0
                 (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,&stack0xfe88,(short)&DAT_1050_1050
                 );
@@ -638,7 +638,7 @@ pub fn *pvStack60;
   IVar2 = GetSystemMetrics16(SM_CYCAPTION);
   uStack68 = uStack68 & 0xffff | (uStack68 - IVar2) << 0x10;
   if (struct_9[0x7].field5_0xa == NULL) {
-    if (uStack8 == 0x0) goto LAB_1020_1b24;
+    if (uStack8 == 0) goto LAB_1020_1b24;
     in_buf_len_5 = 0x72e;
     in_resc_id_3 = &stack0xfe88;
     in_buffer_4 = &DAT_1050_1050;
@@ -677,11 +677,11 @@ pub fn pass1_1020_1b68(astruct *param_1)
   iVar4 = (astruct *)param_1;
   puVar1 = iVar4.field143_0x92;
   uVar2 = iVar4.field144_0x94;
-  if ((uVar2 | puVar1) != 0x0) {
+  if ((uVar2 | puVar1) != 0) {
     ppcVar3 = (code **)*puVar1;
     (**ppcVar3)();
   }
-  &iVar4.field143_0x92 = 0x0;
+  &iVar4.field143_0x92 = 0;
   pass1_1010_4f48(iVar4.field142_0x8e);
   iVar4.field142_0x8e = NULL;
   return;
@@ -717,7 +717,7 @@ pub fn enable_window_1020_1bd4
   paVar6 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   bVar2 = false;
   pass1_1020_1d8e(CONCAT13((param_4 >> 0x8),CONCAT12(param_4,param_3)),CONCAT22(param_6,param_5));
-  if (param_1 != 0x0) {
+  if (param_1 != 0) {
     if (param_1 < 0x2) {
       bVar2 = true;
     }
@@ -726,7 +726,7 @@ pub fn enable_window_1020_1bd4
       pass1_1010_4e8c(param_3.field141_0x8e);
       param_1 = EnableWindow16(0x1,hwnd);
       pass1_1010_4df0(paVar6,param_3.field141_0x8e);
-      if ((param_1 == 0x0) && (bVar2 = true, param_3.field146_0x96 == 0x0)) {
+      if ((param_1 == 0) && (bVar2 = true, param_3.field146_0x96 == 0)) {
         param_1 = EnableWindow16(0x0,hwnd);
       }
     }
@@ -736,9 +736,9 @@ pub fn enable_window_1020_1bd4
     mem_op_1000_179c(0xb4,paVar6);
     uVar4 = paVar6 | param_1;
     uVar7 = paVar6 & 0xffff0000 | uVar4;
-    if (uVar4 == 0x0) {
-      iVar3 = 0x0;
-      uVar5 = 0x0;
+    if (uVar4 == 0) {
+      iVar3 = 0;
+      uVar5 = 0;
     }
     else {
       uVar8 = SUB42(&PTR_LOOP_1050_1040,0x0);
@@ -767,16 +767,16 @@ BOOL16 post_win_msg_1020_1ca4(mut param_1: u32,param_2: *mut astruct_57,mut para
   let mut uVar5: u32;
 
   uVar6 = (param_1 >> 0x10);
-  if ((param_1 + 0x96) == 0x0) {
+  if ((param_1 + 0x96) == 0) {
     pass1_1010_4df0(param_2,(param_1 + 0x8e));
-    if (param_3 == 0x0) {
+    if (param_3 == 0) {
       uVar6 = 0x1000;
       mem_op_1000_179c(0xb4,param_2);
       uVar3 = param_2 | param_3;
       uVar5 = param_2 & 0xffff0000 | uVar3;
-      if (uVar3 == 0x0) {
-        iVar2 = 0x0;
-        uVar4 = 0x0;
+      if (uVar3 == 0) {
+        iVar2 = 0;
+        uVar4 = 0;
       }
       else {
         uVar6 = SUB42(&PTR_LOOP_1050_1040,0x0);
@@ -810,11 +810,11 @@ pub fn destroy_window_1020_1d4a(mut param_1: u32,mut param_2: i16)
   let mut in_EDX: u32;
   let mut uVar2: u16;
 
-  if (param_2 != 0x0) {
+  if (param_2 != 0) {
     BVar1 = post_win_msg_1020_1ca4(param_1,in_EDX,in_AX);
-    if (BVar1 != 0x0) {
+    if (BVar1 != 0) {
       uVar2 = (param_1 >> 0x10);
-      if ((param_1 + 0x96) != 0x0) {
+      if ((param_1 + 0x96) != 0) {
         PostMessage16(0x0,0xee,0x111,HWND16_1050_0396);
       }
       DestroyWindow16(*(HWND16 *)(param_1 + 0x6));
@@ -844,12 +844,12 @@ u16 pass1_1020_1da8(mut param_1: i16,mut param_2: u16 ,StructB *param_3)
   uVar3 = (param_3 >> 0x10);
   struct_b_1 = (StructB *)param_3;
   uVar1 = &struct_b_1[0x7].field1_0x2;
-  if ((uVar1 + 0x30) == 0x1) {
+  if ((uVar1 + 0x30) == 1) {
     return 0x1;
   }
   uVar2 = &struct_b_1[0x7].field1_0x2;
   if (((uVar2 + 0x30) < 0x3) &&
-     (pass1_1010_4df0(param_2,&struct_b_1[0x7].field1_0x2), param_1 == 0x0)) {
+     (pass1_1010_4df0(param_2,&struct_b_1[0x7].field1_0x2), param_1 == 0)) {
     return 0x1;
   }
   return 0x0;
@@ -864,7 +864,7 @@ BOOL16 destroy_win_1020_1dea(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u1
   WORD WVar2;
 
   BVar1 = IsWindow16(param_3);
-  if (BVar1 != 0x0) {
+  if (BVar1 != 0) {
     WVar2 = GetWindowWord16(-0xc,param_3);
     if (WVar2 == 0x175) {
       DestroyWindow16(param_3);
@@ -883,9 +883,9 @@ u16 destroy_win_1020_1e1e(mut param_1: u16 ,mut param_2: u16 ,param_3: HWND16)
   WORD WVar2;
 
   BVar1 = IsWindow16(param_3);
-  if (BVar1 != 0x0) {
+  if (BVar1 != 0) {
     WVar2 = GetWindowWord16(-0xc,param_3);
-    if ((WVar2 != 0x1) && (WVar2 != 0x175)) {
+    if ((WVar2 != 1) && (WVar2 != 0x175)) {
       DestroyWindow16(param_3);
     }
   }
@@ -898,7 +898,7 @@ StructD * pass1_1020_1e54(StructD *param_1,param_2: u8)
 
 {
   ui_cleanup_op_1040_782c(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -907,7 +907,7 @@ StructD * pass1_1020_1e54(StructD *param_1,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_1eea(u8 *param_1,param_2: *mut astruct_663,StructB *param_3,param_4: HWND16)
+pub fn pass1_1020_1eea(param_1: *mut u8,param_2: *mut astruct_663,StructB *param_3,param_4: HWND16)
 
 {
   code **ppcVar1;
@@ -979,8 +979,8 @@ pub fn invalidate_rect_1020_1fb2(mut param_1: u32,mut param_2: i16)
 
   iVar1 = param_1;
   uVar2 = (param_1 >> 0x10);
-  if (param_2 == 0x1) {
-    (iVar1 + 0x6) = 0x0;
+  if (param_2 == 1) {
+    (iVar1 + 0x6) = 0;
     return;
   }
   if (param_2 != 0xd) {

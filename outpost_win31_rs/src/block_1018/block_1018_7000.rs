@@ -71,7 +71,7 @@ StructD * pass1_1018_6102(StructD *param_1,param_2: u8)
 
 {
   pass1_1018_5e5a(&param_1->address_offset_field_0x0);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -80,7 +80,7 @@ StructD * pass1_1018_6102(StructD *param_1,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1018_6198(u8 *param_1,param_2: *mut astruct_657,StructB *param_3,mut param_4: u16 )
+pub fn pass1_1018_6198(param_1: *mut u8,param_2: *mut astruct_657,StructB *param_3,mut param_4: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -102,7 +102,7 @@ pub fn pass1_1018_6198(u8 *param_1,param_2: *mut astruct_657,StructB *param_3,mu
   iVar1->field3_0x4 = param_4;
   param_2 = 0x3ab0;
   iVar1->field2_0x2 = 0x1008;
-  &iVar1->field4_0x6 = 0x0;
+  &iVar1->field4_0x6 = 0;
   iVar1->field6_0xa = param_3;
   param_2 = 0x66c0;
   iVar1->field2_0x2 = 0x1018;
@@ -367,8 +367,8 @@ pub fn FUN_1018_742e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut p
   mixed_draw_op_1018_6a7a(param_2,param_3,param_5);
   if (PTR_LOOP_1050_4254 == NULL) {
     win_1008_5c5c(param_1,param_2,_u16_1050_02a0,0x1e9);
-    if (param_1 != 0x0) {
-      PTR_LOOP_1050_4254 = (&PTR_LOOP_1050_0000 + 0x1);
+    if (param_1 != 0) {
+      PTR_LOOP_1050_4254 = (&PTR_LOOP_1050_0000 + 1);
     }
   }
   return;
@@ -870,7 +870,7 @@ pub fn pass1_1018_7da6(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -888,7 +888,7 @@ pub fn pass1_1018_7dee(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -906,7 +906,7 @@ pub fn pass1_1018_7e36(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -924,7 +924,7 @@ pub fn pass1_1018_7e7e(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -942,7 +942,7 @@ pub fn pass1_1018_7ec6(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -961,7 +961,7 @@ pub fn pass1_1018_7f0e(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -979,7 +979,7 @@ pub fn pass1_1018_7f56(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -997,7 +997,7 @@ pub fn pass1_1018_7f9e(param_1: *mut u16,param_2: u8)
   (iVar1 + 0x2) = 0x1008;
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;
@@ -1016,7 +1016,7 @@ pub fn pass1_1018_7fe6(StructD *param_1,param_2: u8)
   iVar1->address_offset_field_0x2 = 0x1008;
   param_1->address_offset_field_0x0 = 0x389a;
   iVar1->address_offset_field_0x2 = 0x1008;
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return;

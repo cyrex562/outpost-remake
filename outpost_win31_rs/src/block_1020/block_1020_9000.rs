@@ -26,12 +26,12 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
   (iVar10 + 0xaa) = paVar6;
   (iVar10 + 0xac) = param_1;
   uVar5 = param_1 | (iVar10 + 0xaa);
-  if (uVar5 == 0x0) {
+  if (uVar5 == 0) {
     pass1_1018_2862(*(astruct_654 **)(iVar10 + 0x16));
     (iVar10 + 0xaa) = uVar5;
     (iVar10 + 0xac) = param_1;
   }
-  if (((iVar10 + 0xac) | (iVar10 + 0xaa)) != 0x0) {
+  if (((iVar10 + 0xac) | (iVar10 + 0xaa)) != 0) {
     pass1_1020_915a(param_1,(astruct_669 *)(param_2 & 0xffff | uVar12 << 0x10),param_3);
     pass1_1008_4480(paVar2,(param_2 & 0xffff0000 | (iVar10 + 0xae)),*(astruct_76 **)(iVar10 + 0xb4)
                    );
@@ -39,13 +39,13 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
     (**ppcVar3)();
     uVar4 = (iVar10 + 0xaa);
     iVar1 = (uVar4 + 0xa);
-    for (iStack10 = 0x0; iStack10 < iVar1; iStack10 += 0x1) {
+    for (iStack10 = 0; iStack10 < iVar1; iStack10 += 1) {
       uVar7 = iStack10;
       empty_1008_8fc4();
       uVar5 = uVar7;
       uVar8 = param_1 | uVar5;
       uVar9 = param_1 & 0xffff0000 | uVar8;
-      if (uVar8 != 0x0) {
+      if (uVar8 != 0) {
         pass1_1008_8c4e(uVar7 & 0xffff | param_1 << 0x10,paVar2,uVar9);
         uVar4 = (iVar10 + 0xc);
         uVar13 = (uVar4 >> 0x10);
@@ -63,7 +63,7 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_915a(u8 *param_1,param_2: *mut astruct_669,u8 **param_3)
+pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
 
 {
   let mut iVar1: i16;
@@ -90,22 +90,22 @@ pub fn pass1_1020_915a(u8 *param_1,param_2: *mut astruct_669,u8 **param_3)
   if (iVar2->field182_0xb8 != iVar1) {
     param_3 = 0x1ce;
     iVar3 = iVar1 + -0x1;
-    if (iVar3 == 0x0) {
+    if (iVar3 == 0) {
       param_3 = 0x1cf;
     }
     else {
       iVar3 = iVar1 + -0x2;
-      if (iVar3 == 0x0) {
+      if (iVar3 == 0) {
         param_3 = 0x1d0;
       }
       else {
         iVar3 = iVar1 + -0x3;
-        if (iVar3 == 0x0) {
+        if (iVar3 == 0) {
           param_3 = 0x1d1;
         }
         else {
           iVar3 = iVar1 + -0x4;
-          if (iVar3 == 0x0) {
+          if (iVar3 == 0) {
             param_3 = 0x1d2;
           }
         }
@@ -125,7 +125,7 @@ StructD * pass1_1020_91de(StructD *param_1,param_2: u8)
 
 {
   pass1_1020_8f74(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -162,12 +162,12 @@ pub fn set_struct_op_1020_921c(mut param_1: u16 ,StructA *pstructa_param_2,mut p
   iVar3->field2_0x4 = param_3;
   pstructa_param_2->field0_0x0 = 0x3ab0;
   iVar3->field1_0x2 = 0x1008;
-  &iVar3->field3_0x6 = 0x0;
-  iVar3->field5_0xa = 0x0;
-  iVar3->field6_0xc = 0x0;
-  iVar3->field7_0xe = 0x0;
-  iVar3->field8_0x10 = 0x0;
-  iVar3->field9_0x12 = 0x0;
+  &iVar3->field3_0x6 = 0;
+  iVar3->field5_0xa = 0;
+  iVar3->field6_0xc = 0;
+  iVar3->field7_0xe = 0;
+  iVar3->field8_0x10 = 0;
+  iVar3->field9_0x12 = 0;
   pstructa_param_2->field0_0x0 = 0x96c8;
   iVar3->field1_0x2 = 0x1020;
   HVar2 = GetDC16(iVar3->field2_0x4);
@@ -192,7 +192,7 @@ pub fn palette_op_1020_92c4(StructD *struct_param_1)
   struct_1 = struct_param_1;
   struct_param_1->address_offset_field_0x0 = 0x96c8;
   struct_1->address_offset_field_0x2 = 0x1020;
-  if (struct_1->field11_0x12 != 0x0) {
+  if (struct_1->field11_0x12 != 0) {
     obj = SelectPalette16(0x0,struct_1->field11_0x12,struct_1->field6_0xa);
     DeleteObject16(obj);
   }
@@ -281,7 +281,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uStack46 = PTR_u16_1050_41aa_1050_4228;
   uVar4 = &local_struct_1->field3_0x6;
   hdc16_var_48 = *(HDC16 *)(uVar4 + 0x12);
-  uStack58 = (astruct_737 *)(&u16_1050_0008 + 0x1);
+  uStack58 = (astruct_737 *)(&u16_1050_0008 + 1);
   loop {
     HVar3 = hdc16_var_48;
     HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack34),0x0,0x0);
@@ -293,7 +293,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
     LineTo16(*(INT16 *)(puStack26 + iVar4),(INT16)x_var_6,hdc16_var_48);
     SelectObject16(hgdiobj16_var_52,hdc16_var_48);
     DeleteObject16(HStack50);
-    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 0x1);
+    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 1);
   } while (uStack58 < (astruct_737 *)0x8000);
   brush_handle_var6 = CreateSolidBrush16(0x2000000);
   uVar7 = (puStack26 >> 0x10);
@@ -305,12 +305,12 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   DeleteObject16(brush_handle_var6);
   iStack62 = 0x8;
   puVar2 = &PTR_LOOP_1050_0000;
-  while (uStack58 = (astruct_737 *)(puVar2 + 0x1), uStack58 < 0xa) {
+  while (uStack58 = (astruct_737 *)(puVar2 + 1), uStack58 < 0xa) {
     brush_handle_var6 = CreateSolidBrush16(*(COLORREF *)(puStack30 + iStack62 * 0x4 + 0x4));
-    x_var_6 = x_var_6 & 0xffff | (rect16_a.y - 0x1) << 0x10;
-    rect16_var_12 = (RECT16)(rect16_var_12 & 0xffff | (uStack14 + 0x1) << 0x10);
+    x_var_6 = x_var_6 & 0xffff | (rect16_a.y - 1) << 0x10;
+    rect16_var_12 = (RECT16)(rect16_var_12 & 0xffff | (uStack14 + 1) << 0x10);
     uVar3 = (puStack26 >> 0x10);
-    rect16_a = (RECT16)(rect16_a & 0xffff | ((iStack62 * 0x2 + puStack26) + 0x1) << 0x10);
+    rect16_a = (RECT16)(rect16_a & 0xffff | ((iStack62 * 0x2 + puStack26) + 1) << 0x10);
     uStack14 = uStack14 & 0xffff | (uStack58 * 0x2 + puStack26 + 0x14) << 0x10;
     FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
     FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
@@ -322,12 +322,12 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   rect16_a = (RECT16)(rect16_a & 0xffff);
   x_var_6 = x_var_6 & 0xffff | *puStack26 << 0x10;
   rect16_var_12 =
-       (RECT16)(rect16_var_12 & 0xffff | ((uStack20 * 0x2 + puStack26) + 0x1) << 0x10);
+       (RECT16)(rect16_var_12 & 0xffff | ((uStack20 * 0x2 + puStack26) + 1) << 0x10);
   uStack14 = uStack14 & 0xffff | local_struct_1->field7_0xe << 0x10;
   FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
   FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
-  uStack58 = (astruct_737 *)(&u16_1050_0002 + 0x1);
+  uStack58 = (astruct_737 *)(&u16_1050_0002 + 1);
   loop {
     HVar3 = hdc16_var_48;
     HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack38),0x0,0x0);
@@ -344,9 +344,9 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
     LineTo16(*(INT16 *)((uStack20 - *piVar1) * 0x2 + puStack26),rect16_a.x,hdc16_var_48);
     SelectObject16(hgdiobj16_var_52,hdc16_var_48);
     DeleteObject16(HStack50);
-    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 0x1);
+    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 1);
   } while (uStack58 < (astruct_737 *)0x8000);
-  local_struct_1->field8_0x10 = 0x0;
+  local_struct_1->field8_0x10 = 0;
   return;
 }
 
@@ -356,7 +356,7 @@ StructD * pass1_1020_96a2(StructD *param_1,param_2: u8)
 
 {
   palette_op_1020_92c4(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -372,8 +372,8 @@ pub fn init_globals_1020_96d4()
   let mut iVar2: i16;
   let mut puVar3: *mut u16;
 
-  _PTR_LOOP_1050_4514 = 0x0;
-  _PTR_LOOP_1050_451a = 0x0;
+  _PTR_LOOP_1050_4514 = 0;
+  _PTR_LOOP_1050_451a = 0;
   PTR_LOOP_1050_4520 = 0x4430;
   PTR_LOOP_1050_4522 = &DAT_1050_1050;
   PTR_LOOP_1050_4526 = 0x4430;
@@ -386,8 +386,8 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4532 = 0x4430;
   PTR_LOOP_1050_4534 = &DAT_1050_1050;
   PTR_LOOP_1050_4536 = PTR_u16_1050_0002_1050_4434;
-  _PTR_LOOP_1050_4538 = 0x0;
-  _PTR_LOOP_1050_453e = 0x0;
+  _PTR_LOOP_1050_4538 = 0;
+  _PTR_LOOP_1050_453e = 0;
   PTR_LOOP_1050_4544 = 0x4436;
   PTR_LOOP_1050_4546 = &DAT_1050_1050;
   PTR_LOOP_1050_454a = 0x4436;
@@ -439,36 +439,36 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_45a4 = 0x4436;
   PTR_LOOP_1050_45a6 = &DAT_1050_1050;
   PTR_LOOP_1050_45a8 = PTR_u16_1050_0002_1050_443a;
-  _PTR_LOOP_1050_45aa = 0x0;
-  _PTR_LOOP_1050_45b0 = 0x0;
-  _PTR_LOOP_1050_45b6 = 0x0;
+  _PTR_LOOP_1050_45aa = 0;
+  _PTR_LOOP_1050_45b0 = 0;
+  _PTR_LOOP_1050_45b6 = 0;
   PTR_LOOP_1050_45bc = 0x443c;
   PTR_LOOP_1050_45be = &DAT_1050_1050;
   PTR_LOOP_1050_45c0 = DAT_1050_4446;
   PTR_LOOP_1050_45c2 = 0x443c;
   PTR_LOOP_1050_45c4 = &DAT_1050_1050;
   PTR_LOOP_1050_45c6 = DAT_1050_4446;
-  _PTR_LOOP_1050_45c8 = 0x0;
-  _PTR_LOOP_1050_45ce = 0x0;
-  _PTR_LOOP_1050_45d4 = 0x0;
-  _PTR_LOOP_1050_45da = 0x0;
+  _PTR_LOOP_1050_45c8 = 0;
+  _PTR_LOOP_1050_45ce = 0;
+  _PTR_LOOP_1050_45d4 = 0;
+  _PTR_LOOP_1050_45da = 0;
   PTR_LOOP_1050_45e0 = 0x443c;
   PTR_LOOP_1050_45e2 = &DAT_1050_1050;
   PTR_LOOP_1050_45e4 = DAT_1050_4446;
   PTR_LOOP_1050_45e6 = 0x443c;
   PTR_LOOP_1050_45e8 = &DAT_1050_1050;
   PTR_LOOP_1050_45ea = DAT_1050_4446;
-  _PTR_LOOP_1050_45ec = 0x0;
-  _PTR_LOOP_1050_45f2 = 0x0;
-  _PTR_LOOP_1050_45f8 = 0x0;
+  _PTR_LOOP_1050_45ec = 0;
+  _PTR_LOOP_1050_45f2 = 0;
+  _PTR_LOOP_1050_45f8 = 0;
   PTR_LOOP_1050_45fe = 0x443c;
   PTR_LOOP_1050_4600 = &DAT_1050_1050;
   PTR_LOOP_1050_4602 = DAT_1050_4446;
   PTR_LOOP_1050_4604 = 0x443c;
   PTR_LOOP_1050_4606 = &DAT_1050_1050;
   PTR_LOOP_1050_4608 = DAT_1050_4446;
-  _PTR_LOOP_1050_460a = 0x0;
-  _PTR_LOOP_1050_4610 = 0x0;
+  _PTR_LOOP_1050_460a = 0;
+  _PTR_LOOP_1050_4610 = 0;
   PTR_LOOP_1050_451e = 0xffff;
   PTR_LOOP_1050_45ae = 0xffff;
   PTR_LOOP_1050_45b4 = 0xffff;
@@ -479,12 +479,12 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_45fc = 0xffff;
   PTR_LOOP_1050_460e = 0xffff;
   PTR_LOOP_1050_4614 = 0xffff;
-  _PTR_LOOP_1050_4616 = 0x0;
-  _PTR_LOOP_1050_461c = 0x0;
-  _PTR_LOOP_1050_4622 = 0x0;
-  _PTR_LOOP_1050_4628 = 0x0;
-  _PTR_LOOP_1050_462e = 0x0;
-  _PTR_LOOP_1050_4634 = 0x0;
+  _PTR_LOOP_1050_4616 = 0;
+  _PTR_LOOP_1050_461c = 0;
+  _PTR_LOOP_1050_4622 = 0;
+  _PTR_LOOP_1050_4628 = 0;
+  _PTR_LOOP_1050_462e = 0;
+  _PTR_LOOP_1050_4634 = 0;
   PTR_LOOP_1050_4518 = NULL;
   PTR_LOOP_1050_453c = NULL;
   PTR_LOOP_1050_4542 = NULL;
@@ -498,12 +498,12 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_462c = NULL;
   PTR_LOOP_1050_4632 = NULL;
   PTR_LOOP_1050_4638 = NULL;
-  _PTR_LOOP_1050_463a = 0x0;
-  _PTR_LOOP_1050_4640 = 0x0;
-  _PTR_LOOP_1050_4646 = 0x0;
-  _PTR_LOOP_1050_464c = 0x0;
-  _PTR_LOOP_1050_4652 = 0x0;
-  _PTR_LOOP_1050_4658 = 0x0;
+  _PTR_LOOP_1050_463a = 0;
+  _PTR_LOOP_1050_4640 = 0;
+  _PTR_LOOP_1050_4646 = 0;
+  _PTR_LOOP_1050_464c = 0;
+  _PTR_LOOP_1050_4652 = 0;
+  _PTR_LOOP_1050_4658 = 0;
   PTR_LOOP_1050_465e = 0x4448;
   PTR_LOOP_1050_4660 = &DAT_1050_1050;
   PTR_LOOP_1050_4664 = 0x4448;
@@ -574,31 +574,31 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_46ee = 0x4448;
   PTR_LOOP_1050_46f0 = &DAT_1050_1050;
   PTR_LOOP_1050_46f2 = DAT_1050_4452;
-  _PTR_LOOP_1050_46f4 = 0x0;
-  _PTR_LOOP_1050_46fa = 0x0;
+  _PTR_LOOP_1050_46f4 = 0;
+  _PTR_LOOP_1050_46fa = 0;
   PTR_LOOP_1050_46f8 = 0xffff;
   PTR_LOOP_1050_46fe = 0xffff;
-  _PTR_LOOP_1050_4700 = 0x0;
-  _PTR_LOOP_1050_4706 = 0x0;
+  _PTR_LOOP_1050_4700 = 0;
+  _PTR_LOOP_1050_4706 = 0;
   PTR_LOOP_1050_470c = 0x4448;
   PTR_LOOP_1050_470e = &DAT_1050_1050;
   PTR_LOOP_1050_4710 = DAT_1050_4452;
   PTR_LOOP_1050_4712 = 0x4448;
   PTR_LOOP_1050_4714 = &DAT_1050_1050;
   PTR_LOOP_1050_4716 = DAT_1050_4452;
-  _PTR_LOOP_1050_4718 = 0x0;
-  _PTR_LOOP_1050_471e = 0x0;
-  _PTR_LOOP_1050_4724 = 0x0;
-  _PTR_LOOP_1050_472a = 0x0;
-  _PTR_LOOP_1050_4730 = 0x0;
-  _PTR_LOOP_1050_4736 = 0x0;
-  _PTR_LOOP_1050_473c = 0x0;
-  _PTR_LOOP_1050_4742 = 0x0;
-  _PTR_LOOP_1050_4748 = 0x0;
-  _PTR_LOOP_1050_474e = 0x0;
-  _PTR_LOOP_1050_4754 = 0x0;
-  _PTR_LOOP_1050_475a = 0x0;
-  _PTR_LOOP_1050_4760 = 0x0;
+  _PTR_LOOP_1050_4718 = 0;
+  _PTR_LOOP_1050_471e = 0;
+  _PTR_LOOP_1050_4724 = 0;
+  _PTR_LOOP_1050_472a = 0;
+  _PTR_LOOP_1050_4730 = 0;
+  _PTR_LOOP_1050_4736 = 0;
+  _PTR_LOOP_1050_473c = 0;
+  _PTR_LOOP_1050_4742 = 0;
+  _PTR_LOOP_1050_4748 = 0;
+  _PTR_LOOP_1050_474e = 0;
+  _PTR_LOOP_1050_4754 = 0;
+  _PTR_LOOP_1050_475a = 0;
+  _PTR_LOOP_1050_4760 = 0;
   PTR_LOOP_1050_463e = NULL;
   PTR_LOOP_1050_4644 = NULL;
   PTR_LOOP_1050_464a = NULL;
@@ -625,20 +625,20 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4758 = NULL;
   PTR_LOOP_1050_475e = NULL;
   PTR_LOOP_1050_4764 = NULL;
-  _PTR_LOOP_1050_4766 = 0x0;
-  _PTR_LOOP_1050_476c = 0x0;
-  _PTR_LOOP_1050_4772 = 0x0;
-  _PTR_LOOP_1050_4778 = 0x0;
-  _PTR_LOOP_1050_477e = 0x0;
-  _PTR_LOOP_1050_4784 = 0x0;
-  _PTR_LOOP_1050_478a = 0x0;
-  _PTR_LOOP_1050_4790 = 0x0;
-  _PTR_LOOP_1050_4796 = 0x0;
-  _PTR_LOOP_1050_479c = 0x0;
-  _PTR_LOOP_1050_47a2 = 0x0;
-  _PTR_LOOP_1050_47a8 = 0x0;
-  _PTR_LOOP_1050_47ae = 0x0;
-  _PTR_LOOP_1050_47b4 = 0x0;
+  _PTR_LOOP_1050_4766 = 0;
+  _PTR_LOOP_1050_476c = 0;
+  _PTR_LOOP_1050_4772 = 0;
+  _PTR_LOOP_1050_4778 = 0;
+  _PTR_LOOP_1050_477e = 0;
+  _PTR_LOOP_1050_4784 = 0;
+  _PTR_LOOP_1050_478a = 0;
+  _PTR_LOOP_1050_4790 = 0;
+  _PTR_LOOP_1050_4796 = 0;
+  _PTR_LOOP_1050_479c = 0;
+  _PTR_LOOP_1050_47a2 = 0;
+  _PTR_LOOP_1050_47a8 = 0;
+  _PTR_LOOP_1050_47ae = 0;
+  _PTR_LOOP_1050_47b4 = 0;
   PTR_LOOP_1050_476a = NULL;
   PTR_LOOP_1050_4770 = NULL;
   PTR_LOOP_1050_4776 = NULL;
@@ -654,13 +654,13 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_47b2 = NULL;
   PTR_LOOP_1050_47b8 = NULL;
   puVar3 = 0x47ba;
-  for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  for (iVar2 = 0x1b; iVar2 != 0; iVar2 += -1) {
     puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
+    puVar3 = puVar3 + 1;
+    *puVar1 = 0;
   }
-  _PTR_LOOP_1050_4850 = 0x0;
-  _PTR_LOOP_1050_4856 = 0x0;
+  _PTR_LOOP_1050_4850 = 0;
+  _PTR_LOOP_1050_4856 = 0;
   PTR_LOOP_1050_484e = PTR_u16_1050_0002_1050_4468;
   PTR_LOOP_1050_4860 = PTR_u16_1050_0002_1050_4468;
   PTR_LOOP_1050_485c = 0x4464;
@@ -674,8 +674,8 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_486e = 0x4464;
   PTR_LOOP_1050_4870 = &DAT_1050_1050;
   PTR_LOOP_1050_4872 = PTR_u16_1050_0002_1050_4468;
-  _PTR_LOOP_1050_4874 = 0x0;
-  _PTR_LOOP_1050_487a = 0x0;
+  _PTR_LOOP_1050_4874 = 0;
+  _PTR_LOOP_1050_487a = 0;
   PTR_LOOP_1050_4880 = 0x4436;
   PTR_LOOP_1050_4882 = &DAT_1050_1050;
   PTR_LOOP_1050_4886 = 0x4436;
@@ -729,23 +729,23 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_48e6 = 0x447a;
   PTR_LOOP_1050_48e8 = &DAT_1050_1050;
   PTR_LOOP_1050_48ea = DAT_1050_4480;
-  _PTR_LOOP_1050_48ec = 0x0;
-  _PTR_LOOP_1050_48f2 = 0x0;
+  _PTR_LOOP_1050_48ec = 0;
+  _PTR_LOOP_1050_48f2 = 0;
   PTR_LOOP_1050_48f8 = 0x447a;
   PTR_LOOP_1050_48fa = &DAT_1050_1050;
   PTR_LOOP_1050_48fc = DAT_1050_4480;
   PTR_LOOP_1050_48fe = 0x447a;
   PTR_LOOP_1050_4900 = &DAT_1050_1050;
   PTR_LOOP_1050_4902 = DAT_1050_4480;
-  _PTR_LOOP_1050_4904 = 0x0;
-  _PTR_LOOP_1050_490a = 0x0;
+  _PTR_LOOP_1050_4904 = 0;
+  _PTR_LOOP_1050_490a = 0;
   PTR_LOOP_1050_485a = 0xffff;
   PTR_LOOP_1050_48f0 = 0xffff;
   PTR_LOOP_1050_48f6 = 0xffff;
   PTR_LOOP_1050_4908 = 0xffff;
   PTR_LOOP_1050_490e = 0xffff;
-  _PTR_LOOP_1050_4910 = 0x0;
-  _PTR_LOOP_1050_4916 = 0x0;
+  _PTR_LOOP_1050_4910 = 0;
+  _PTR_LOOP_1050_4916 = 0;
   PTR_LOOP_1050_4854 = NULL;
   PTR_LOOP_1050_4878 = NULL;
   PTR_LOOP_1050_487e = NULL;
@@ -758,29 +758,29 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4922 = 0x4488;
   PTR_LOOP_1050_4924 = &DAT_1050_1050;
   PTR_LOOP_1050_4926 = PTR_u16_1050_0002_1050_448c;
-  _PTR_LOOP_1050_4928 = 0x0;
-  _PTR_LOOP_1050_492e = 0x0;
-  _PTR_LOOP_1050_4934 = 0x0;
+  _PTR_LOOP_1050_4928 = 0;
+  _PTR_LOOP_1050_492e = 0;
+  _PTR_LOOP_1050_4934 = 0;
   PTR_LOOP_1050_493a = 0x446a;
   PTR_LOOP_1050_493c = &DAT_1050_1050;
   PTR_LOOP_1050_4940 = 0x446a;
   PTR_LOOP_1050_4942 = &DAT_1050_1050;
   PTR_LOOP_1050_493e = PTR_u16_1050_0002_1050_446e;
   PTR_LOOP_1050_4944 = PTR_u16_1050_0002_1050_446e;
-  _PTR_LOOP_1050_4946 = 0x0;
-  _PTR_LOOP_1050_494c = 0x0;
-  _PTR_LOOP_1050_4952 = 0x0;
-  _PTR_LOOP_1050_4958 = 0x0;
-  _PTR_LOOP_1050_495e = 0x0;
-  _PTR_LOOP_1050_4964 = 0x0;
-  _PTR_LOOP_1050_496a = 0x0;
-  _PTR_LOOP_1050_4970 = 0x0;
-  _PTR_LOOP_1050_4976 = 0x0;
-  _PTR_LOOP_1050_497c = 0x0;
-  _PTR_LOOP_1050_4982 = 0x0;
-  _PTR_LOOP_1050_4988 = 0x0;
-  _PTR_LOOP_1050_498e = 0x0;
-  _PTR_LOOP_1050_4994 = 0x0;
+  _PTR_LOOP_1050_4946 = 0;
+  _PTR_LOOP_1050_494c = 0;
+  _PTR_LOOP_1050_4952 = 0;
+  _PTR_LOOP_1050_4958 = 0;
+  _PTR_LOOP_1050_495e = 0;
+  _PTR_LOOP_1050_4964 = 0;
+  _PTR_LOOP_1050_496a = 0;
+  _PTR_LOOP_1050_4970 = 0;
+  _PTR_LOOP_1050_4976 = 0;
+  _PTR_LOOP_1050_497c = 0;
+  _PTR_LOOP_1050_4982 = 0;
+  _PTR_LOOP_1050_4988 = 0;
+  _PTR_LOOP_1050_498e = 0;
+  _PTR_LOOP_1050_4994 = 0;
   PTR_LOOP_1050_499a = 0x4448;
   PTR_LOOP_1050_499c = &DAT_1050_1050;
   PTR_LOOP_1050_49a0 = 0x4448;
@@ -851,8 +851,8 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4a2a = 0x4448;
   PTR_LOOP_1050_4a2c = &DAT_1050_1050;
   PTR_LOOP_1050_4a2e = DAT_1050_4452;
-  _PTR_LOOP_1050_4a30 = 0x0;
-  _PTR_LOOP_1050_4a36 = 0x0;
+  _PTR_LOOP_1050_4a30 = 0;
+  _PTR_LOOP_1050_4a36 = 0;
   PTR_LOOP_1050_492c = 0xffff;
   PTR_LOOP_1050_4932 = 0xffff;
   PTR_LOOP_1050_4938 = 0xffff;
@@ -860,8 +860,8 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4950 = 0xffff;
   PTR_LOOP_1050_4a34 = 0xffff;
   PTR_LOOP_1050_4a3a = 0xffff;
-  _PTR_LOOP_1050_4a3c = 0x0;
-  _PTR_LOOP_1050_4a42 = 0x0;
+  _PTR_LOOP_1050_4a3c = 0;
+  _PTR_LOOP_1050_4a42 = 0;
   PTR_LOOP_1050_4956 = NULL;
   PTR_LOOP_1050_495c = NULL;
   PTR_LOOP_1050_4962 = NULL;
@@ -887,33 +887,33 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4a4e = 0x4448;
   PTR_LOOP_1050_4a50 = &DAT_1050_1050;
   PTR_LOOP_1050_4a52 = DAT_1050_4452;
-  _PTR_LOOP_1050_4a54 = 0x0;
-  _PTR_LOOP_1050_4a5a = 0x0;
-  _PTR_LOOP_1050_4a60 = 0x0;
-  _PTR_LOOP_1050_4a66 = 0x0;
-  _PTR_LOOP_1050_4a6c = 0x0;
-  _PTR_LOOP_1050_4a72 = 0x0;
-  _PTR_LOOP_1050_4a78 = 0x0;
-  _PTR_LOOP_1050_4a7e = 0x0;
-  _PTR_LOOP_1050_4a84 = 0x0;
-  _PTR_LOOP_1050_4a8a = 0x0;
-  _PTR_LOOP_1050_4a90 = 0x0;
-  _PTR_LOOP_1050_4a96 = 0x0;
-  _PTR_LOOP_1050_4a9c = 0x0;
-  _PTR_LOOP_1050_4aa2 = 0x0;
-  _PTR_LOOP_1050_4aa8 = 0x0;
-  _PTR_LOOP_1050_4aae = 0x0;
-  _PTR_LOOP_1050_4ab4 = 0x0;
-  _PTR_LOOP_1050_4aba = 0x0;
-  _PTR_LOOP_1050_4ac0 = 0x0;
-  _PTR_LOOP_1050_4ac6 = 0x0;
-  _PTR_LOOP_1050_4acc = 0x0;
-  _PTR_LOOP_1050_4ad2 = 0x0;
-  _PTR_LOOP_1050_4ad8 = 0x0;
-  _PTR_LOOP_1050_4ade = 0x0;
-  _PTR_LOOP_1050_4ae4 = 0x0;
-  _PTR_LOOP_1050_4aea = 0x0;
-  _PTR_LOOP_1050_4af0 = 0x0;
+  _PTR_LOOP_1050_4a54 = 0;
+  _PTR_LOOP_1050_4a5a = 0;
+  _PTR_LOOP_1050_4a60 = 0;
+  _PTR_LOOP_1050_4a66 = 0;
+  _PTR_LOOP_1050_4a6c = 0;
+  _PTR_LOOP_1050_4a72 = 0;
+  _PTR_LOOP_1050_4a78 = 0;
+  _PTR_LOOP_1050_4a7e = 0;
+  _PTR_LOOP_1050_4a84 = 0;
+  _PTR_LOOP_1050_4a8a = 0;
+  _PTR_LOOP_1050_4a90 = 0;
+  _PTR_LOOP_1050_4a96 = 0;
+  _PTR_LOOP_1050_4a9c = 0;
+  _PTR_LOOP_1050_4aa2 = 0;
+  _PTR_LOOP_1050_4aa8 = 0;
+  _PTR_LOOP_1050_4aae = 0;
+  _PTR_LOOP_1050_4ab4 = 0;
+  _PTR_LOOP_1050_4aba = 0;
+  _PTR_LOOP_1050_4ac0 = 0;
+  _PTR_LOOP_1050_4ac6 = 0;
+  _PTR_LOOP_1050_4acc = 0;
+  _PTR_LOOP_1050_4ad2 = 0;
+  _PTR_LOOP_1050_4ad8 = 0;
+  _PTR_LOOP_1050_4ade = 0;
+  _PTR_LOOP_1050_4ae4 = 0;
+  _PTR_LOOP_1050_4aea = 0;
+  _PTR_LOOP_1050_4af0 = 0;
   PTR_LOOP_1050_4a58 = NULL;
   PTR_LOOP_1050_4a5e = NULL;
   PTR_LOOP_1050_4a64 = NULL;
@@ -942,20 +942,20 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4aee = NULL;
   PTR_LOOP_1050_4af4 = NULL;
   puVar3 = 0x4af6;
-  for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  for (iVar2 = 0x1b; iVar2 != 0; iVar2 += -1) {
     puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
+    puVar3 = puVar3 + 1;
+    *puVar1 = 0;
   }
   PTR_LOOP_1050_4b9c = PTR_u16_1050_0002_1050_4434;
-  _PTR_LOOP_1050_4b9e = 0x0;
-  _PTR_LOOP_1050_4ba4 = 0x0;
-  _PTR_LOOP_1050_4baa = 0x0;
+  _PTR_LOOP_1050_4b9e = 0;
+  _PTR_LOOP_1050_4ba4 = 0;
+  _PTR_LOOP_1050_4baa = 0;
   PTR_LOOP_1050_4ba2 = 0xffff;
   PTR_LOOP_1050_4ba8 = 0xffff;
   PTR_LOOP_1050_4bae = 0xffff;
-  _PTR_LOOP_1050_4bb0 = 0x0;
-  _PTR_LOOP_1050_4bb6 = 0x0;
+  _PTR_LOOP_1050_4bb0 = 0;
+  _PTR_LOOP_1050_4bb6 = 0;
   PTR_LOOP_1050_4bbc = 0x448e;
   PTR_LOOP_1050_4bbe = &DAT_1050_1050;
   PTR_LOOP_1050_4bc2 = 0x448e;
@@ -1009,14 +1009,14 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4c22 = 0x448e;
   PTR_LOOP_1050_4c24 = &DAT_1050_1050;
   PTR_LOOP_1050_4c26 = DAT_1050_4494;
-  _PTR_LOOP_1050_4c28 = 0x0;
-  _PTR_LOOP_1050_4c2e = 0x0;
-  _PTR_LOOP_1050_4c34 = 0x0;
-  _PTR_LOOP_1050_4c3a = 0x0;
-  _PTR_LOOP_1050_4c40 = 0x0;
-  _PTR_LOOP_1050_4c46 = 0x0;
-  _u16_1050_4c4c = 0x0;
-  _PTR_LOOP_1050_4c52 = 0x0;
+  _PTR_LOOP_1050_4c28 = 0;
+  _PTR_LOOP_1050_4c2e = 0;
+  _PTR_LOOP_1050_4c34 = 0;
+  _PTR_LOOP_1050_4c3a = 0;
+  _PTR_LOOP_1050_4c40 = 0;
+  _PTR_LOOP_1050_4c46 = 0;
+  _u16_1050_4c4c = 0;
+  _PTR_LOOP_1050_4c52 = 0;
   PTR_LOOP_1050_4c1c = 0x44ac;
   PTR_LOOP_1050_4c1e = &DAT_1050_1050;
   PTR_LOOP_1050_4c58 = 0x44ac;
@@ -1026,17 +1026,17 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4c5e = 0x44ac;
   PTR_LOOP_1050_4c60 = &DAT_1050_1050;
   PTR_LOOP_1050_4c62 = DAT_1050_44b2;
-  _PTR_LOOP_1050_4c64 = 0x0;
-  _PTR_LOOP_1050_4c6a = 0x0;
-  _PTR_LOOP_1050_4c70 = 0x0;
+  _PTR_LOOP_1050_4c64 = 0;
+  _PTR_LOOP_1050_4c6a = 0;
+  _PTR_LOOP_1050_4c70 = 0;
   PTR_LOOP_1050_4c76 = 0x446a;
   PTR_LOOP_1050_4c78 = &DAT_1050_1050;
   PTR_LOOP_1050_4c7c = 0x446a;
   PTR_LOOP_1050_4c7e = &DAT_1050_1050;
   PTR_LOOP_1050_4c7a = PTR_u16_1050_0002_1050_446e;
   PTR_LOOP_1050_4c80 = PTR_u16_1050_0002_1050_446e;
-  _PTR_LOOP_1050_4c82 = 0x0;
-  _PTR_LOOP_1050_4c88 = 0x0;
+  _PTR_LOOP_1050_4c82 = 0;
+  _PTR_LOOP_1050_4c88 = 0;
   PTR_LOOP_1050_4c2c = 0xffff;
   PTR_LOOP_1050_4c32 = 0xffff;
   PTR_LOOP_1050_4c38 = 0xffff;
@@ -1048,18 +1048,18 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4c74 = 0xffff;
   PTR_LOOP_1050_4c86 = 0xffff;
   PTR_LOOP_1050_4c8c = 0xffff;
-  _PTR_LOOP_1050_4c8e = 0x0;
-  _PTR_LOOP_1050_4c94 = 0x0;
-  _PTR_LOOP_1050_4c9a = 0x0;
-  _PTR_LOOP_1050_4ca0 = 0x0;
-  _PTR_LOOP_1050_4ca6 = 0x0;
-  _PTR_LOOP_1050_4cac = 0x0;
-  _PTR_LOOP_1050_4cb2 = 0x0;
-  _PTR_LOOP_1050_4cb8 = 0x0;
-  _PTR_LOOP_1050_4cbe = 0x0;
-  _PTR_LOOP_1050_4cc4 = 0x0;
-  _PTR_LOOP_1050_4cca = 0x0;
-  _PTR_LOOP_1050_4cd0 = 0x0;
+  _PTR_LOOP_1050_4c8e = 0;
+  _PTR_LOOP_1050_4c94 = 0;
+  _PTR_LOOP_1050_4c9a = 0;
+  _PTR_LOOP_1050_4ca0 = 0;
+  _PTR_LOOP_1050_4ca6 = 0;
+  _PTR_LOOP_1050_4cac = 0;
+  _PTR_LOOP_1050_4cb2 = 0;
+  _PTR_LOOP_1050_4cb8 = 0;
+  _PTR_LOOP_1050_4cbe = 0;
+  _PTR_LOOP_1050_4cc4 = 0;
+  _PTR_LOOP_1050_4cca = 0;
+  _PTR_LOOP_1050_4cd0 = 0;
   PTR_LOOP_1050_4cd6 = 0x4496;
   PTR_LOOP_1050_4cd8 = &DAT_1050_1050;
   PTR_LOOP_1050_4cdc = 0x4496;
@@ -1111,8 +1111,8 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4d36 = 0x44a4;
   PTR_LOOP_1050_4d38 = &DAT_1050_1050;
   PTR_LOOP_1050_4d3a = DAT_1050_44aa;
-  _PTR_LOOP_1050_4d3c = 0x0;
-  _PTR_LOOP_1050_4d42 = 0x0;
+  _PTR_LOOP_1050_4d3c = 0;
+  _PTR_LOOP_1050_4d42 = 0;
   PTR_LOOP_1050_4c50 = NULL;
   PTR_LOOP_1050_4c56 = NULL;
   PTR_LOOP_1050_4c92 = NULL;
@@ -1129,9 +1129,9 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4cd4 = NULL;
   PTR_LOOP_1050_4d40 = NULL;
   PTR_LOOP_1050_4d46 = NULL;
-  _PTR_LOOP_1050_4d48 = 0x0;
-  _PTR_LOOP_1050_4d4e = 0x0;
-  _PTR_LOOP_1050_4d54 = 0x0;
+  _PTR_LOOP_1050_4d48 = 0;
+  _PTR_LOOP_1050_4d4e = 0;
+  _PTR_LOOP_1050_4d54 = 0;
   PTR_LOOP_1050_4d5a = 0x44a4;
   PTR_LOOP_1050_4d5c = &DAT_1050_1050;
   PTR_LOOP_1050_4d5e = DAT_1050_44aa;
@@ -1141,45 +1141,45 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4d68 = &DAT_1050_1050;
   PTR_LOOP_1050_4d64 = DAT_1050_44a2;
   PTR_LOOP_1050_4d6a = DAT_1050_44a2;
-  _PTR_LOOP_1050_4d6c = 0x0;
-  _PTR_LOOP_1050_4d72 = 0x0;
+  _PTR_LOOP_1050_4d6c = 0;
+  _PTR_LOOP_1050_4d72 = 0;
   PTR_LOOP_1050_4d70 = 0xffff;
   PTR_LOOP_1050_4d76 = 0xffff;
-  _PTR_LOOP_1050_4d78 = 0x0;
-  _PTR_LOOP_1050_4d7e = 0x0;
+  _PTR_LOOP_1050_4d78 = 0;
+  _PTR_LOOP_1050_4d7e = 0;
   PTR_LOOP_1050_4d84 = 0x4496;
   PTR_LOOP_1050_4d86 = &DAT_1050_1050;
   PTR_LOOP_1050_4d88 = DAT_1050_44a2;
   PTR_LOOP_1050_4d8a = 0x4496;
   PTR_LOOP_1050_4d8c = &DAT_1050_1050;
   PTR_LOOP_1050_4d8e = DAT_1050_44a2;
-  _PTR_LOOP_1050_4d90 = 0x0;
-  _PTR_LOOP_1050_4d96 = 0x0;
-  _PTR_LOOP_1050_4d9c = 0x0;
-  _PTR_LOOP_1050_4da2 = 0x0;
-  _PTR_LOOP_1050_4da8 = 0x0;
-  _PTR_LOOP_1050_4dae = 0x0;
-  _PTR_LOOP_1050_4db4 = 0x0;
-  _PTR_LOOP_1050_4dba = 0x0;
-  _PTR_LOOP_1050_4dc0 = 0x0;
-  _PTR_LOOP_1050_4dc6 = 0x0;
-  _PTR_LOOP_1050_4dcc = 0x0;
-  _PTR_LOOP_1050_4dd2 = 0x0;
-  _PTR_LOOP_1050_4dd8 = 0x0;
-  _PTR_LOOP_1050_4dde = 0x0;
-  _PTR_LOOP_1050_4de4 = 0x0;
-  _PTR_LOOP_1050_4dea = 0x0;
-  _PTR_LOOP_1050_4df0 = 0x0;
-  _PTR_LOOP_1050_4df6 = 0x0;
-  _PTR_LOOP_1050_4dfc = 0x0;
-  _PTR_LOOP_1050_4e02 = 0x0;
-  _PTR_LOOP_1050_4e08 = 0x0;
-  _PTR_LOOP_1050_4e0e = 0x0;
-  _PTR_LOOP_1050_4e14 = 0x0;
-  _PTR_LOOP_1050_4e1a = 0x0;
-  _PTR_LOOP_1050_4e20 = 0x0;
-  _PTR_LOOP_1050_4e26 = 0x0;
-  _PTR_LOOP_1050_4e2c = 0x0;
+  _PTR_LOOP_1050_4d90 = 0;
+  _PTR_LOOP_1050_4d96 = 0;
+  _PTR_LOOP_1050_4d9c = 0;
+  _PTR_LOOP_1050_4da2 = 0;
+  _PTR_LOOP_1050_4da8 = 0;
+  _PTR_LOOP_1050_4dae = 0;
+  _PTR_LOOP_1050_4db4 = 0;
+  _PTR_LOOP_1050_4dba = 0;
+  _PTR_LOOP_1050_4dc0 = 0;
+  _PTR_LOOP_1050_4dc6 = 0;
+  _PTR_LOOP_1050_4dcc = 0;
+  _PTR_LOOP_1050_4dd2 = 0;
+  _PTR_LOOP_1050_4dd8 = 0;
+  _PTR_LOOP_1050_4dde = 0;
+  _PTR_LOOP_1050_4de4 = 0;
+  _PTR_LOOP_1050_4dea = 0;
+  _PTR_LOOP_1050_4df0 = 0;
+  _PTR_LOOP_1050_4df6 = 0;
+  _PTR_LOOP_1050_4dfc = 0;
+  _PTR_LOOP_1050_4e02 = 0;
+  _PTR_LOOP_1050_4e08 = 0;
+  _PTR_LOOP_1050_4e0e = 0;
+  _PTR_LOOP_1050_4e14 = 0;
+  _PTR_LOOP_1050_4e1a = 0;
+  _PTR_LOOP_1050_4e20 = 0;
+  _PTR_LOOP_1050_4e26 = 0;
+  _PTR_LOOP_1050_4e2c = 0;
   PTR_LOOP_1050_4d4c = NULL;
   PTR_LOOP_1050_4d52 = NULL;
   PTR_LOOP_1050_4d58 = NULL;
@@ -1213,10 +1213,10 @@ pub fn init_globals_1020_96d4()
   PTR_LOOP_1050_4e2a = NULL;
   PTR_LOOP_1050_4e30 = NULL;
   puVar3 = 0x4e32;
-  for (iVar2 = 0x1b; iVar2 != 0x0; iVar2 += -0x1) {
+  for (iVar2 = 0x1b; iVar2 != 0; iVar2 += -1) {
     puVar1 = puVar3;
-    puVar3 = puVar3 + 0x1;
-    *puVar1 = 0x0;
+    puVar3 = puVar3 + 1;
+    *puVar1 = 0;
   }
   return;
 }

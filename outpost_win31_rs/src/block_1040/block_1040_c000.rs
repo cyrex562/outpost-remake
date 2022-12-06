@@ -130,10 +130,10 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
   iVar10 = (astruct_772 *)param_1;
   uVar2 = iVar10->field5_0x6;
   iVar1 = (uVar2 + 0x18);
-  if ((iVar1 != 0x0) && (uVar4 = iVar10->field5_0x6, (uVar4 + 0x16) != 0x0)) {
+  if ((iVar1 != 0) && (uVar4 = iVar10->field5_0x6, (uVar4 + 0x16) != 0)) {
     iVar5 = iVar1;
     pass1_1010_2ee2(iVar10->field5_0x6);
-    for (iStack26 = 0x0; iStack26 < iVar1; iStack26 += 0x1) {
+    for (iStack26 = 0; iStack26 < iVar1; iStack26 += 1) {
       uVar3 = (iStack26 * 0x4 + iVar5);
       iVar11 = uVar3;
       iVar11 = iVar11 + 0x1e;
@@ -145,17 +145,17 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
       DVar10 = GetCurrentPosition16(in_stack_00000008);
       y5 = (DVar10 >> 0x10);
       x3 = DVar10;
-      if (iStack26 == 0x0) {
+      if (iStack26 == 0) {
         x2 = x3;
         y4 = y5;
       }
     }
     uVar6 = iVar10->field5_0x6;
-    if ((uVar6 + 0x24) != 0x0) {
+    if ((uVar6 + 0x24) != 0) {
       y4 += -0xd;
     }
     uVar7 = iVar10->field5_0x6;
-    if ((uVar7 + 0x26) != 0x0) {
+    if ((uVar7 + 0x26) != 0) {
       y5 += 0xd;
     }
     uVar8 = iVar10->field5_0x6;
@@ -187,7 +187,7 @@ pub fn pass1_1040_c518(mut param_1: u32,param_2: u8) -> u32
 
 {
   pass1_1040_bf92(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -204,8 +204,8 @@ pub fn pass1_1040_c54a(param_1: *mut astruct_65,mut param_2: u16 ,u32 *param_3,m
   let mut uVar6: u32;
 
   iVar3 = (param_3 + 0x12) + 0xc8;
-  uVar6 = 0x0;
-  uVar5 = 0x0;
+  uVar6 = 0;
+  uVar5 = 0;
   ppcVar1 = (code **)(*param_3 + 0x14);
   puVar4 = param_3;
   (**ppcVar1)();
@@ -215,7 +215,7 @@ pub fn pass1_1040_c54a(param_1: *mut astruct_65,mut param_2: u16 ,u32 *param_3,m
   uVar4 = (astruct_65 *)(param_1 >> 0x10);
   iVar2 = (astruct_65 *)param_1;
   &iVar2[0x1].field13_0x1c = param_3;
-  iVar2[0x1].field15_0x20 = 0x0;
+  iVar2[0x1].field15_0x20 = 0;
   iVar2[0x1].field16_0x22 = param_2;
   param_1->field0_0x0 = 0xc9f2;
   iVar2->field1_0x2 = &PTR_LOOP_1050_1040;
@@ -239,13 +239,13 @@ pub fn pass1_1040_c5ac(StructD *param_1)
   if (PTR_LOOP_1050_5f02 == NULL) {
     puVar1 = iVar4->field5_0x8;
     uVar2 = iVar4->field6_0xa;
-    if ((uVar2 | puVar1) != 0x0) {
+    if ((uVar2 | puVar1) != 0) {
       ppcVar3 = (code **)*puVar1;
       (**ppcVar3)();
     }
     puVar1 = iVar4->field7_0xc;
     uVar2 = iVar4->field8_0xe;
-    if ((uVar2 | puVar1) != 0x0) {
+    if ((uVar2 | puVar1) != 0) {
       ppcVar3 = (code **)*puVar1;
       (**ppcVar3)();
     }
@@ -263,7 +263,7 @@ u16 pass1_1040_c60e(param_1: *mut astruct_65)
   let mut uVar2: u16;
 
   uVar2 = (param_1 >> 0x10);
-  if (*(i32 *)(param_1 + 0x42) != 0x0) {
+  if (*(i32 *)(param_1 + 0x42) != 0) {
     uVar1 = (param_1 + 0x42);
     return (uVar1 + 0x12);
   }
@@ -289,7 +289,7 @@ pub fn pass1_1040_c630(param_1: *mut astruct_65,mut param_2: u32)
   uVar3 = &iVar4[0x1].field13_0x1c;
   if ((uVar3 + 0x12) != 0x71) {
     iVar4[0x1].field8_0x10 = 0x5;
-    (iVar4 + 0x1)->field0_0x0 = 0x5;
+    (iVar4 + 1)->field0_0x0 = 0x5;
     iVar4[0x1].field1_0x2 = 0x5;
     uVar1 = iVar4[0x1].field8_0x10;
     iVar4[0x1].field5_0xa = uVar1;
@@ -301,11 +301,11 @@ pub fn pass1_1040_c630(param_1: *mut astruct_65,mut param_2: u32)
       uVar4 = FUN_1010_830a(uVar4,param_2,0x1010,_u16_1050_14cc,0x100);
       _PTR_LOOP_1050_5f08 = CONCAT22(param_2,uVar4);
     }
-    PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + 0x1;
+    PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + 1;
     &iVar4->field4_0x8 = _PTR_LOOP_1050_5f04;
     &iVar4->field6_0xc = _PTR_LOOP_1050_5f08;
     pass1_1040_9618((astruct_65 *)(param_1 & 0xffff | uVar5 << 0x10));
-    iVar4->field15_0x20 = 0x0;
+    iVar4->field15_0x20 = 0;
     iVar4->field14_0x1e = 0xc8;
     iVar4->field16_0x22 = 0xa0;
     iVar4->field17_0x24 = iVar4[0x1].field3_0x6 + iVar4[0x1].field8_0x10;
@@ -376,7 +376,7 @@ pub fn draw_op_1040_c74c(param_1: *mut astruct_738,mut param_2: u16 ,HDC16 hdc16
   (**func_ptr_1)(s_tile2_bmp_1050_1538,param_1,_param_2);
   func_ptr_1 = (code **)(uVar3 + 0x14);
   (**func_ptr_1)(s_tile2_bmp_1050_1538,struct_1,(param_1 >> 0x10),hdc16_param_3);
-  struct_1->field66_0x46 = 0x0;
+  struct_1->field66_0x46 = 0;
   hpalette_1 = SelectPalette16(0x0,hpalette_1,hdc16_param_3);
   DeleteObject16(hpalette_1);
   return;
@@ -417,9 +417,9 @@ pub fn palette_op_1040_c886(astruct_769 *struct_param_1,param_2: u8,HDC16 hdc_pa
 
   uVar2 = (struct_param_1 >> 0x10);
   struct_2 = (astruct_769 *)struct_param_1;
-  if (((&struct_2->field8_0x8 + 0x2) | &struct_2->field8_0x8) != 0x0) {
-    palette = 0x0;
-    if (struct_2->field59_0x46 == 0x0) {
+  if (((&struct_2->field8_0x8 + 0x2) | &struct_2->field8_0x8) != 0) {
+    palette = 0;
+    if (struct_2->field59_0x46 == 0) {
       uVar3 = (_PTR_LOOP_1050_4230 >> 0x10);
       uVar1 = (_PTR_LOOP_1050_4230 + 0x10);
       unaff_CS = 0x1008;
@@ -429,20 +429,20 @@ pub fn palette_op_1040_c886(astruct_769 *struct_param_1,param_2: u8,HDC16 hdc_pa
                            (HDC16 *)CONCAT22(0x1050,&hdc_param_3));
     }
     puStack8 = struct_2->field8_0x8;
-    uVar4 = (&struct_2->field8_0x8 + 0x2);
-    if ((((&struct_2->field9_0xc + 0x2) | &struct_2->field9_0xc) != 0x0) &&
-       ((param_2 & 0x1) != 0x0)) {
+    uVar4 = (&struct_2->field8_0x8 + 2);
+    if ((((&struct_2->field9_0xc + 0x2) | &struct_2->field9_0xc) != 0) &&
+       ((param_2 & 1) != 0)) {
       puStack8 = struct_2->field9_0xc;
-      uVar4 = (&struct_2->field9_0xc + 0x2);
+      uVar4 = (&struct_2->field9_0xc + 2);
     }
-    if ((struct_2->field10_0x10 != NULL) && ((param_2 & 0x4) != 0x0)) {
+    if ((struct_2->field10_0x10 != NULL) && ((param_2 & 0x4) != 0)) {
       puStack8 = struct_2->field10_0x10;
-      uVar4 = (&struct_2->field10_0x10 + 0x2);
+      uVar4 = (&struct_2->field10_0x10 + 2);
     }
     fn_ptr_1 = (code **)(*puStack8 + 0x4);
     (**fn_ptr_1)(unaff_CS,puStack8,uVar4,struct_2->field30_0x28,struct_2->field29_0x26,&hdc_param_3,
                  &DAT_1050_1050);
-    if (struct_2->field59_0x46 == 0x0) {
+    if (struct_2->field59_0x46 == 0) {
       palette_2 = SelectPalette16(0x0,palette,hdc_param_3);
       DeleteObject16(palette_2);
     }
@@ -453,7 +453,7 @@ pub fn palette_op_1040_c886(astruct_769 *struct_param_1,param_2: u8,HDC16 hdc_pa
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_c94a(u8 *param_1,param_2: *mut astruct_37,HDC16 param_3,mut param_4: u16 )
+pub fn pass1_1040_c94a(param_1: *mut u8,param_2: *mut astruct_37,HDC16 param_3,mut param_4: u16 )
 
 {
   let mut uVar1: u16;
@@ -467,7 +467,7 @@ pub fn pass1_1040_c94a(u8 *param_1,param_2: *mut astruct_37,HDC16 param_3,mut pa
   let mut in_stack_0000ffc2: u16;
   let mut in_stack_0000ffc6: u16;
 
-  if ((param_2 + 0x48) != 0x0) {
+  if ((param_2 + 0x48) != 0) {
     puVar5 = mixed_1010_20ba((astruct_57 *)CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,
                              (u8 **)CONCAT22(param_4,0x3),in_stack_0000fe98,in_stack_0000ffbc,in_stack_0000ffc2,
                              in_stack_0000ffc6);
@@ -479,7 +479,7 @@ pub fn pass1_1040_c94a(u8 *param_1,param_2: *mut astruct_37,HDC16 param_3,mut pa
     if (uVar4 == 0xffff) {
       (param_2 + 0x3c) = 0xf9;
     }
-    else if (uVar4 == 0x0) {
+    else if (uVar4 == 0) {
       (param_2 + 0x3c) = 0x25;
       if ((uVar1 == 0x5b) || (uVar1 == 0x9)) {
         (param_2 + 0x3c) = 0xfe;
@@ -499,7 +499,7 @@ StructD * pass1_1040_c9cc(StructD *param_1,param_2: u8)
 
 {
   pass1_1040_c5ac(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -508,7 +508,7 @@ StructD * pass1_1040_c9cc(StructD *param_1,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_ca16(u8 *param_1,param_2: *mut astruct_57,mut param_3: u16 )
+pub fn pass1_1040_ca16(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -527,9 +527,9 @@ pub fn pass1_1040_ca16(u8 *param_1,param_2: *mut astruct_57,mut param_3: u16 )
   uVar2 = (param_2 >> 0x10);
   iVar1 = (astruct_57 *)param_2;
   &iVar1[0x1].field3_0x6 = _PTR_LOOP_1050_5f0c;
-  &iVar1[0x1].field5_0xa = 0x0;
-  iVar1[0x1].field7_0xe = 0x0;
-  iVar1[0x1].field8_0x10 = 0x0;
+  &iVar1[0x1].field5_0xa = 0;
+  iVar1[0x1].field7_0xe = 0;
+  iVar1[0x1].field8_0x10 = 0;
   param_2->field0_0x0 = 0xd07c;
   iVar1->field1_0x2 = &PTR_LOOP_1050_1040;
   puVar3 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,(u8 **)CONCAT22(unaff_BP,0x3e),in_stack_0000fea6,
@@ -560,7 +560,7 @@ pub fn pass1_1040_ca74(StructD *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_caa6(u8 *param_1,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1040_caa6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_register_0000000a: u16;
@@ -571,7 +571,7 @@ pub fn pass1_1040_caa6(u8 *param_1,mut param_2: u16 ,mut param_3: u32)
   let mut in_stack_0000ffce: u16;
   let mut iVar2: i16;
 
-  iVar2 = 0x0;
+  iVar2 = 0;
   paVar1 = (astruct_27 *)
            mixed_1010_20ba((astruct_57 *)CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,(u8 **)0x2b,
                            in_stack_0000fea0,in_stack_0000ffc4,in_stack_0000ffca,in_stack_0000ffce);
@@ -604,7 +604,7 @@ pub fn win_ui_op_1040_cace(mut param_1: u16 ,mut param_2: u32)
   uVar5 = param_2;
   uStack6 = GetDlgItemInt16(0x0,&local_4,(INT16)&DAT_1050_1050,0x18e);
   UStack8 = GetDlgItemInt16(0x0,&local_4,(INT16)&DAT_1050_1050,0x191);
-  if (uStack6 == 0x0) {
+  if (uStack6 == 0) {
     return;
   }
   pass1_1018_50ea((uVar5 + 0x98),uStack6,(uVar5 + 0x94));
@@ -612,7 +612,7 @@ pub fn win_ui_op_1040_cace(mut param_1: u16 ,mut param_2: u32)
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_208,(short)&DAT_1050_1050);
   uVar1 = (uVar5 + 0x94);
   uVar8 = (_u16_1050_14cc >> 0x10);
-  if (*(i32 *)(uVar1 + 0x36) == 0x0) {
+  if (*(i32 *)(uVar1 + 0x36) == 0) {
     load_string_1010_84e0(_u16_1050_14cc,uVar8,0x3ff,local_108,(short)&DAT_1050_1050);
     iVar3 = MessageBox16(0x34,CONCAT22(0x1050,local_208),CONCAT22(0x1050,local_108),
                          *(HWND16 *)(uVar5 + 0x8));
@@ -624,7 +624,7 @@ pub fn win_ui_op_1040_cace(mut param_1: u16 ,mut param_2: u32)
   }
   bVar2 = iVar3 == 0x6;
   bVar7 = false;
-  if ((!bVar2) && (uVar1 = (uVar5 + 0x94), (uVar1 + 0x34) < 0x1)) {
+  if ((!bVar2) && (uVar1 = (uVar5 + 0x94), (uVar1 + 0x34) < 1)) {
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_108,(short)&DAT_1050_1050);
     IVar4 = MessageBox16(0x34,CONCAT22(0x1050,local_208),CONCAT22(0x1050,local_108),
@@ -661,7 +661,7 @@ LRESULT pass1_1040_cc66(mut param_1: u32)
   LVar2 = send_dlg_msg_1040_cf1c(extraout_DX,(astruct_903 *)param_1);
   return LVar2;
 }
-pub fn pass1_1040_cc8c(u8 *param_1,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 )
+pub fn pass1_1040_cc8c(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 )
 
 {
   if (param_5 == 0xeb) {
@@ -677,7 +677,7 @@ pub fn pass1_1040_cc8c(u8 *param_1,param_2: *mut astruct_903,mut param_3: u16 ,m
         pass1_1040_b54a(param_1,param_2,param_3,_param_4);
         return;
       }
-      if (param_4 == 0x1) {
+      if (param_4 == 1) {
         send_dlg_item_1040_ce76(param_2);
       }
     }
@@ -688,7 +688,7 @@ pub fn pass1_1040_cc8c(u8 *param_1,param_2: *mut astruct_903,mut param_3: u16 ,m
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn msg_box_op_1040_cce4(char *param_1,mut param_2: u16 ,param_3: *mut astruct_903)
+pub fn msg_box_op_1040_cce4(param_1: *mut c_char,mut param_2: u16 ,param_3: *mut astruct_903)
 
 {
   short in_buf_len_5;
@@ -732,16 +732,16 @@ u16 pass1_1040_cdac(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut par
   bVar3 = false;
   iVar4 = param_1;
   uVar5 = (param_1 >> 0x10);
-  if (param_4 == 0x0) {
+  if (param_4 == 0) {
     iVar2 = (iVar4 + 0x9e);
     piVar1 = (iVar4 + 0x9c);
     if (*piVar1 == iVar2 || *piVar1 < iVar2) goto LAB_1040_cdef;
     piVar1 = (iVar4 + 0x9e);
-    *piVar1 = *piVar1 + 0x1;
+    *piVar1 = *piVar1 + 1;
   }
   else {
-    if (param_4 != 0x1) goto LAB_1040_cdef;
-    if ((iVar4 + 0x9e) < 0x1) goto LAB_1040_cdef;
+    if (param_4 != 1) goto LAB_1040_cdef;
+    if ((iVar4 + 0x9e) < 1) goto LAB_1040_cdef;
     piVar1 = (iVar4 + 0x9e);
     *piVar1 = *piVar1 + -0x1;
   }
@@ -763,7 +763,7 @@ pub fn send_dlg_item_msg_1040_ce12(mut param_1: u16 ,mut param_2: u16 ,mut param
   pass1_1008_5784(CONCAT22(0x1050,local_a),param_3);
   while( true ) {
     lVar2 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (lVar2 == 0x0) break;
+    if (lVar2 == 0) break;
     uVar1 = (lVar2 + 0x4);
     wsprintf16(local_10a,0x5f121050,CONCAT22(uVar1,0x1050),(uVar1 >> 0x10));
     SendDlgItemMessage16(CONCAT22(0x1050,local_10a),0x0,0x401,param_4,*(HWND16 *)(param_1 + 0x6));
@@ -790,9 +790,9 @@ pub fn send_dlg_item_1040_ce76(param_1: *mut astruct_903)
     SendDlgItemMessage16
               (CONCAT22(0x1050,local_106),WStack6,0x40a,s_vrpal_bmp_1050_183a + 0x8,*(HWND16 *)(iVar1 + 0x6));
     uVar4 = pass1_1018_5206((iVar1 + 0x98),CONCAT22(0x1050,local_106));
-    if (uVar4 != 0x0) {
+    if (uVar4 != 0) {
       (iVar1 + 0x9c) = (uVar4 + 0x8);
-      (iVar1 + 0x9e) = 0x0;
+      (iVar1 + 0x9e) = 0;
       SetDlgItemInt16(0x0,0x0,0x18e,*(HWND16 *)(iVar1 + 0x6));
       SetDlgItemInt16(0x0,(iVar1 + 0x9c),0x191,*(HWND16 *)(iVar1 + 0x6));
     }
@@ -838,12 +838,12 @@ LRESULT send_dlg_msg_1040_cf1c(mut param_1: u16 ,param_2: *mut astruct_903)
   uVar4 = pass1_1018_526a(uVar1->field148_0x98,uVar1->field147_0x94);
   send_dlg_item_msg_1040_ce12(uVar1,uVar2,uVar4,uVar6);
   LVar5 = SendDlgItemMessage16(0x0,0x0,0x40c,s_vrpal_bmp_1050_183a + 0x8,uVar1->field6_0x6);
-  if (((LVar5 >> 0x10) < 0x1) && ((LVar5 < 0x0 || (LVar5 == 0x0)))) {
+  if (((LVar5 >> 0x10) < 1) && ((LVar5 < 0x0 || (LVar5 == 0)))) {
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,&stack0xfaf4,(short)&DAT_1050_1050);
     SendDlgItemMessage16(CONCAT22(0x1050,&stack0xfaf4),0x0,0x401,s_vrpal_bmp_1050_183a + 0x8,uVar1->field6_0x6);
     hwnd = GetDlgItem16(0x1,uVar1->field6_0x6);
-    enable = 0x0;
+    enable = 0;
   }
   else {
     hwnd = GetDlgItem16(0x1,uVar1->field6_0x6);

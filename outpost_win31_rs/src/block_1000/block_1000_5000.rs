@@ -36,12 +36,12 @@ pub fn pass1_1000_5026(mut param_1: i16,
     let mut local_4: u16;
     let mut i_stack2: i16;
 
-    i_stack2 = unaff_bp + 0x1;
+    i_stack2 = unaff_bp + 1;
     local_4 = SUB42(&DAT_1050_1050,
                     0x0);
     u_stack304 =  CONCAT22(0x1050,
                                    &local_108);
-    if (param_1 == 0x0) {
+    if (param_1 == 0) {
         param_1 = dos3_call_1000_4f94();
     }
     *u_stack304 =  param_1 + '@';
@@ -60,27 +60,27 @@ pub fn pass1_1000_5026(mut param_1: i16,
                                                             local_124),
                                     CONCAT22(0x1050,
                                                     local_12c));
-    if (i_stack280 == 0x0) {
+    if (i_stack280 == 0) {
         u_var1 = str_op_1000_3da4( CONCAT22(0x1050,
                                                     &local_108));
         u_var1 += 0x1;
         u_stack304 = param_2;
         u_stack304 = param_3;
         u_var2 = param_3 | param_2;
-        if (u_var2 == 0x0) {
+        if (u_var2 == 0) {
             if ( param_4 < u_var1) {
                 param_4 = u_var1;
             }
             u_stack304 = block_1000_1000::mem_1000_167a(0x0,
                                                               param_4);
             u_stack304 = u_var2;
-            if ((u_var2 | u_stack304) == 0x0) {
+            if ((u_var2 | u_stack304) == 0) {
                 PTR_LOOP_1050_5f78 =  &PTR_LOOP_1050_000c;
                 return;
             }
         }
         if ( param_4 < u_var1) {
-            PTR_LOOP_1050_5f78 =  ( s_New_failed_in_Op__Op_1050_0020 + 0x2);
+            PTR_LOOP_1050_5f78 =  ( s_New_failed_in_Op__Op_1050_0020 + 2);
         } else {
             unk_str_op_1000_3d3e( CONCAT22(u_stack304,
                                                    u_stack304),
@@ -88,7 +88,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
                                                    &local_108));
         }
     } else {
-        PTR_LOOP_1050_5f78 =  ( &PTR_LOOP_1050_000c + 0x1);
+        PTR_LOOP_1050_5f78 =  ( &PTR_LOOP_1050_000c + 1);
         PTR_LOOP_1050_5f88 = local_124[0];
     }
     return;
@@ -108,7 +108,7 @@ u16 dos3_call_1000_514e()
     bVar2 = false;
     pcVar1 =  swi(0x21);
     uVar2 = (*pcVar1)( &DAT_1050_1050,
-                      unaff_BP + 0x1);
+                      unaff_BP + 1);
     if (bVar2) {
         pass1_1000_29b5(uVar2);
         return 0xffff;
@@ -129,7 +129,7 @@ u16 dos3_call_1000_5174()
 
     bVar2 = false;
     pcVar1 =  swi(0x21);
-    uVar2 = (*pcVar1)(unaff_BP + 0x1);
+    uVar2 = (*pcVar1)(unaff_BP + 1);
     if (!bVar2) {
         return 0x0;
     }
@@ -159,7 +159,7 @@ u16 dos3_calls_1000_5198(mut param_1: u16 ,
     (*pcVar1)();
     pcVar1 =  swi(0x21);
     (*pcVar1)();
-    if ((param_2 & 0x100) == 0x0) {
+    if ((param_2 & 0x100) == 0) {
         return 0x0;
     }
     pass1_1000_29b5(param_3);
@@ -188,7 +188,7 @@ u16 dos3_call_1000_51aa(mut param_1: u16 ,
     (*pcVar1)();
     pcVar1 =  swi(0x21);
     (*pcVar1)();
-    if ((param_2 & 0x100) == 0x0) {
+    if ((param_2 & 0x100) == 0) {
         return 0x0;
     }
     uStack000a = param_3;
@@ -215,13 +215,13 @@ u32 pass1_1000_5224(mut param_1: u16 ,
 
     cVar11 =  param_2 < 0x0;
     if ( cVar11) {
-        bVar10 = param_1 != 0x0;
+        bVar10 = param_1 != 0;
         param_1 = -param_1;
         param_2 = - bVar10 - param_2;
     }
     if ( param_4 < 0x0) {
         cVar11 += '\x01';
-        bVar10 = param_3 != 0x0;
+        bVar10 = param_3 != 0;
         param_3 = -param_3;
         param_4 = - bVar10 - param_4;
     }
@@ -229,18 +229,18 @@ u32 pass1_1000_5224(mut param_1: u16 ,
     uVar5 = param_3;
     uVar6 = param_2;
     uVar9 = param_4;
-    if (param_4 == 0x0) {
+    if (param_4 == 0) {
         uVar3 = param_2 / param_3;
         iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
         loop {
             uVar8 = uVar9 >> 0x1;
-            uVar5 = uVar5 >> 0x1 |  ((uVar9 & 0x1) != 0x0) << 0xf;
+            uVar5 = uVar5 >> 0x1 |  ((uVar9 & 1) != 0) << 0xf;
             uVar7 = uVar6 >> 0x1;
-            uVar3 = uVar3 >> 0x1 |  ((uVar6 & 0x1) != 0x0) << 0xf;
+            uVar3 = uVar3 >> 0x1 |  ((uVar6 & 1) != 0) << 0xf;
             uVar6 = uVar7;
             uVar9 = uVar8;
-        } while (uVar8 != 0x0);
+        } while (uVar8 != 0);
         uVar1 = CONCAT22(uVar7,
                          uVar3) /  uVar5;
         iVar4 =  uVar1;
@@ -251,10 +251,10 @@ u32 pass1_1000_5224(mut param_1: u16 ,
                      iVar4 * param_4)) || (param_2 < uVar5)) || ((param_2 <= uVar5 && (param_1 <  lVar2)))) {
             iVar4 += -0x1;
         }
-        uVar3 = 0x0;
+        uVar3 = 0;
     }
     if (cVar11 == '\x01') {
-        bVar10 = iVar4 != 0x0;
+        bVar10 = iVar4 != 0;
         iVar4 = -iVar4;
         uVar3 = - bVar10 - uVar3;
     }
@@ -267,7 +267,7 @@ u32 pass1_1000_52be(mut param_1: u16 ,
                     mut param_3: u16 ,
                     mut param_4: u16 )
 {
-    if ((param_4 | param_2) == 0x0) {
+    if ((param_4 | param_2) == 0) {
         return  param_1 *  param_3;
     }
     return  param_1 *  param_3 & 0xffff
@@ -295,13 +295,13 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
 
     bVar13 =  param_2 < 0x0;
     if (bVar13) {
-        bVar12 = param_1 != 0x0;
+        bVar12 = param_1 != 0;
         param_1 = -param_1;
         param_2 = - bVar12 - param_2;
     }
     uVar11 =  bVar13;
     if ( param_4 < 0x0) {
-        bVar13 = param_3 != 0x0;
+        bVar13 = param_3 != 0;
         param_3 = -param_3;
         param_4 = - bVar13 - param_4;
     }
@@ -309,21 +309,21 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
     uVar4 = param_3;
     uVar8 = param_2;
     uVar9 = param_4;
-    if (param_4 == 0x0) {
+    if (param_4 == 0) {
         iVar5 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
-        iVar6 = 0x0;
-        if ( (uVar11 - 0x1) < 0x0) {
+        iVar6 = 0;
+        if ( (uVar11 - 1) < 0x0) {
         // TODO: goto LAB_1000_538a;
         }
     } else {
         loop {
             uVar10 = uVar9 >> 0x1;
-            uVar4 = uVar4 >> 0x1 |  ((uVar9 & 0x1) != 0x0) << 0xf;
+            uVar4 = uVar4 >> 0x1 |  ((uVar9 & 1) != 0) << 0xf;
             uVar7 = uVar8 >> 0x1;
-            uVar3 = uVar3 >> 0x1 |  ((uVar8 & 0x1) != 0x0) << 0xf;
+            uVar3 = uVar3 >> 0x1 |  ((uVar8 & 1) != 0) << 0xf;
             uVar8 = uVar7;
             uVar9 = uVar10;
-        } while (uVar10 != 0x0);
+        } while (uVar10 != 0);
         uVar1 = CONCAT22(uVar7,
                          uVar3) /  uVar4;
         uVar3 =  uVar1 * param_4;
@@ -339,11 +339,11 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
         }
         iVar5 = uVar4 - param_1;
         iVar6 = (uVar9 - param_2) -  (uVar4 < param_1);
-        if (-0x1 <  (uVar11 - 0x1)) {
+        if (-0x1 <  (uVar11 - 1)) {
         // TODO: goto LAB_1000_538a;
         }
     }
-    bVar13 = iVar5 != 0x0;
+    bVar13 = iVar5 != 0;
     iVar5 = -iVar5;
     iVar6 = - bVar13 - iVar6;//
 //    LAB_1000_538a:
@@ -370,18 +370,18 @@ u32 pass1_1000_5390(mut param_1: u16 ,
     uVar8 = param_4;
     uVar6 = param_2;
     uVar9 = param_3;
-    if (param_4 == 0x0) {
+    if (param_4 == 0) {
         uVar3 = param_2 / param_3;
         iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
         loop {
             uVar5 = uVar8 >> 0x1;
-            uVar9 = uVar9 >> 0x1 |  ((uVar8 & 0x1) != 0x0) << 0xf;
+            uVar9 = uVar9 >> 0x1 |  ((uVar8 & 1) != 0) << 0xf;
             uVar7 = uVar6 >> 0x1;
-            uVar3 = uVar3 >> 0x1 |  ((uVar6 & 0x1) != 0x0) << 0xf;
+            uVar3 = uVar3 >> 0x1 |  ((uVar6 & 1) != 0) << 0xf;
             uVar8 = uVar5;
             uVar6 = uVar7;
-        } while (uVar5 != 0x0);
+        } while (uVar5 != 0);
         uVar1 = CONCAT22(uVar7,
                          uVar3) /  uVar9;
         iVar4 =  uVar1;
@@ -392,7 +392,7 @@ u32 pass1_1000_5390(mut param_1: u16 ,
                      iVar4 * param_4)) || (param_2 < uVar8)) || ((param_2 <= uVar8 && (param_1 <  lVar2)))) {
             iVar4 += -0x1;
         }
-        uVar3 = 0x0;
+        uVar3 = 0;
     }
     return CONCAT22(uVar3,
                     iVar4);
@@ -419,18 +419,18 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
     uVar4 = param_4;
     uVar9 = param_2;
     uVar10 = param_3;
-    if (param_4 == 0x0) {
+    if (param_4 == 0) {
         iVar6 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
-        iVar7 = 0x0;
+        iVar7 = 0;
     } else {
         loop {
             uVar5 = uVar4 >> 0x1;
-            uVar10 = uVar10 >> 0x1 |  ((uVar4 & 0x1) != 0x0) << 0xf;
+            uVar10 = uVar10 >> 0x1 |  ((uVar4 & 1) != 0) << 0xf;
             uVar8 = uVar9 >> 0x1;
-            uVar3 = uVar3 >> 0x1 |  ((uVar9 & 0x1) != 0x0) << 0xf;
+            uVar3 = uVar3 >> 0x1 |  ((uVar9 & 1) != 0) << 0xf;
             uVar4 = uVar5;
             uVar9 = uVar8;
-        } while (uVar5 != 0x0);
+        } while (uVar5 != 0);
         uVar1 = CONCAT22(uVar8,
                          uVar3) /  uVar10;
         uVar3 =  uVar1 * param_4;
@@ -445,7 +445,7 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
             uVar10 = (uVar10 - param_4) -  bVar11;
         }
         iVar6 = -(uVar4 - param_1);
-        iVar7 = - (uVar4 - param_1 != 0x0) - ((uVar10 - param_2) -  (uVar4 < param_1));
+        iVar7 = - (uVar4 - param_1 != 0) - ((uVar10 - param_2) -  (uVar4 < param_1));
     }
     return CONCAT22(iVar7,
                     iVar6);
@@ -466,20 +466,20 @@ i16 pass1_1000_545a(mut param_1: u32,
     bVar4 = 0xff;
     loop {
         loop {
-            if (bVar4 == 0x0) {
+            if (bVar4 == 0) {
             // TODO: goto LAB_1000_5499;
             }
             pbVar1 = pbVar6;
-            pbVar6 = pbVar6 + 0x1;
+            pbVar6 = pbVar6 + 1;
             bVar4 = *pbVar1;
             bVar3 = *pbVar5;
-            pbVar5 = pbVar5 + 0x1;
+            pbVar5 = pbVar5 + 1;
         } while (bVar3 == bVar4);
-        bVar2 = bVar4 + 0xbf + (-( (bVar4 + 0xbf) < 0x1a) & 0x20U) + 0x41;
+        bVar2 = bVar4 + 0xbf + (-( (bVar4 + 0xbf) < 0x1a) & 0x20) + 0x41;
         bVar3 += 0xbf;
-        bVar4 = bVar3 + (-(bVar3 < 0x1a) & 0x20U) + 0x41;
+        bVar4 = bVar3 + (-(bVar3 < 0x1a) & 0x20) + 0x41;
     } while (bVar4 == bVar2);
-    bVar4 = (bVar4 < bVar2) * -0x2 + 0x1;//
+    bVar4 = (bVar4 < bVar2) * -0x2 + 1;//
 //    LAB_1000_5499:
     return   bVar4;
 }
@@ -497,42 +497,42 @@ u16 *pass1_1000_54a0(mut param_1: u32,
     let mut puVar7: *mut u16;
     let mut iVar8: i16;
 
-    if (param_3 != 0x0) {
+    if (param_3 != 0) {
         iVar8 =  (param_1 >> 0x10);
         uVar5 = -  param_1;
         uVar6 = param_3;
-        if (uVar5 != 0x0) {
+        if (uVar5 != 0) {
             uVar6 = (uVar5 - param_3 & - (uVar5 < param_3)) + param_3;
             uVar5 = param_3 - uVar6;
         }
         uVar3 = param_2 & 0xff | param_2 << 0x8;
         puVar7 =  param_1;
-        for (uVar4 = uVar6 >> 0x1; uVar4 != 0x0; uVar4 -= 0x1) {
+        for (uVar4 = uVar6 >> 0x1; uVar4 != 0; uVar4 -= 1) {
             puVar1 = puVar7;
-            puVar7 = puVar7 + 0x1;
+            puVar7 = puVar7 + 1;
             *puVar1 = uVar3;
         }
-        for (uVar6 =  ((uVar6 & 0x1) != 0x0); uVar2 =  (param_2 & 0xff), uVar6 != 0x0; uVar6 -= 0x1) {
+        for (uVar6 =  ((uVar6 & 1) != 0); uVar2 =  (param_2 & 0xff), uVar6 != 0; uVar6 -= 1) {
             puVar1 = puVar7;
-            puVar7 =  ( puVar7 + 0x1);
+            puVar7 =  ( puVar7 + 1);
             * puVar1 = uVar2;
         }
-        if (uVar5 != 0x0) {
-            for (uVar6 = uVar5 >> 0x1; uVar6 != 0x0; uVar6 -= 0x1) {
+        if (uVar5 != 0) {
+            for (uVar6 = uVar5 >> 0x1; uVar6 != 0; uVar6 -= 1) {
                 puVar1 = puVar7;
-                puVar7 = puVar7 + 0x1;
+                puVar7 = puVar7 + 1;
                 *puVar1 = uVar3;
             }
-            for (uVar6 =  ((uVar5 & 0x1) != 0x0); uVar6 != 0x0; uVar6 -= 0x1) {
+            for (uVar6 =  ((uVar5 & 1) != 0); uVar6 != 0; uVar6 -= 1) {
                 puVar1 = puVar7;
-                puVar7 =  ( puVar7 + 0x1);
+                puVar7 =  ( puVar7 + 1);
                 * puVar1 = uVar2;
             }
         }
     }
     return  param_1;
 }
-pub fn pass1_1000_54e8(u8 *param_1,
+pub fn pass1_1000_54e8(param_1: *mut u8,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -547,7 +547,7 @@ pub fn pass1_1000_54e8(u8 *param_1,
     }
     return;
 }
-pub fn pass1_1000_5512(u8 *param_1,
+pub fn pass1_1000_5512(param_1: *mut u8,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -561,7 +561,7 @@ pub fn pass1_1000_5512(u8 *param_1,
                     param_5,
                     0x0);
     while (true) {
-        b_var1 = param_3 == 0x0;
+        b_var1 = param_3 == 0;
         param_3 += -0x1;
         param_4 -= b_var1;
         if (param_4 < 0x0) {

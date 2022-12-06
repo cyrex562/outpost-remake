@@ -29,26 +29,26 @@ pub fn create_window_1008_5e7e() ->HWND16
   puVar5 = local_12.as_mut_ptr();
   string_1 = s_MciSoundWindow_1050_02bd.into_raw();
     iVar5 = 0x3;
-  // for (iVar5 = 0x3; iVar5 != 0x0; iVar5 += -0x1) {
+  // for (iVar5 = 0x3; iVar5 != 0; iVar5 += -1) {
     while iVar5 != 0 {
         puVar2 = puVar5;
-        puVar5 = puVar5 + 0x1;
+        puVar5 = puVar5 + 1;
         puVar1 = string_1;
         string_1 = (string_1 + 0x4);
         puVar2 = puVar1;
         iVar5 -= 1;
     }
   puVar5 = string_1;
-  (puVar5 + 0x2) = (string_1 + 0x2);
+  (puVar5 + 0x2) = (string_1 + 2);
   wndclass_44.style = 0x2000;
   // wndclass_44.lpfn_wnd_proc = SUB42(&DAT_1050_5f44,0x0);
   // wndclass_44.lpfn_wnd_proc = 0x1008;
     wndclass_44.lpfn_wnd_proc = win_proc_1008_5f44;
   wndclass_44.cb_wnd_extra = 0x2;
   wndclass_44.h_instance = HINSTANCE16_1050_038c;
-  wndclass_44.h_icon = 0x0;
-  wndclass_44.h_cursor = 0x0;
-  wndclass_44.cb_cls_extra = 0x0;
+  wndclass_44.h_icon = 0;
+  wndclass_44.h_cursor = 0;
+  wndclass_44.cb_cls_extra = 0;
   wndclass_44.hbr_background = GetStockObject16(WHITE_BRUSH);
   wndclass_44.lpsz_menu_name = ptr::null_mut();
   wndclass_44.lpsz_class_name = local_12.as_mut_ptr();
@@ -97,7 +97,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
   pstructa_var6 = param_2;
     let rect_ptr: *mut RECT16 = &mut rectangle;
   GetClientRect16(rect_ptr,0);
-  win_style = 0x0;
+  win_style = 0;
   window_handle = GetDlgItem16(0x1797, pstructa_var6.field4_0x8);
   if window_handle != 0x0 {
     DestroyWindow16(window_handle);
@@ -122,7 +122,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
       lresult_var8 = SendMessage16(0x0, 0x0, 0xb, window_handle);
       u16_var5 = (lresult_var8 >> 0x10);
       if (win_style + 0x4) == 0x0 {
-        wparam_var10 = 0x0;
+        wparam_var10 = 0;
         u16_var11 = 0x401;
         hwnd_var12 = window_handle;
         string_var9 = load_string_1010_847e(_u16_1050_14cc, 0x531);
@@ -133,13 +133,13 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
         loop {
           ppaVar1 = (astruct_878 **)(win_style + 0x4);
           if *ppaVar1 == iVar9 || *ppaVar1 < iVar9 { break; };
-          wparam_var10 = 0x0;
+          wparam_var10 = 0;
           u16_var11 = 0x401;
           hwnd_var12 = window_handle;
           u16_var3 = pass1_1020_bd80((win_style + iVar9 * 0x2));
           lresult_var8 = SendMessage16(u16_var3, wparam_var10, u16_var11, hwnd_var12);
           // u16_var5 = (lresult_var8 >> 0x10);
-          iVar9 = (astruct_878 *)(u16_var11 + 0x1);
+          iVar9 = (astruct_878 *)(u16_var11 + 1);
         }
       }
       lresult_var8 = SendMessage16(0x0, 0x1, 0xb, window_handle);
@@ -151,11 +151,11 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
       pass1_1018_2d84(u16_var3, &pstructa_var6[0x1].field20_0x26);
       lresult_var8 = SendMessage16(u16_var3, wparam_var10, u16_var11, hwnd_var12);
       wparam_var10 = lresult_var8;
-      if (wparam_var10 != 0xffff) || ((lresult_var8 >> 0x10) != -0x1) {
+      if (wparam_var10 != 0xffff) || ((lresult_var8 >> 0x10) != -1) {
         SendMessage16(0x0, wparam_var10, 0x407, window_handle);
         SendMessage16(0x0, wparam_var10, 0x418, window_handle);
       }
-      if (win_style != 0x0) {
+      if (win_style != 0) {
         string_var9 = win_style;
         pass1_1018_2afa(win_style);
         fn_ptr_1000_17ce(string_var9);

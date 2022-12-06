@@ -20,8 +20,8 @@ i16 win_ui_op_1008_2b54(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   let mut uVar6: u32;
 
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
-  iStack4 = 0x0;
-  if (_PTR_LOOP_1050_4230 == 0x0) {
+  iStack4 = 0;
+  if (_PTR_LOOP_1050_4230 == 0) {
     pcVar8 = load_string_1010_847e(_u16_1050_14cc,0x5f2);
     unk_str_op_1000_3d3e(CONCAT22(0x1050,local_56),pcVar8);
     pcVar8 = load_string_1010_847e(_u16_1050_14cc,0x57b);
@@ -34,9 +34,9 @@ i16 win_ui_op_1008_2b54(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
     mem_op_1000_179c(0xb4,paVar5);
     uVar3 = paVar5 | param_1;
     uVar6 = paVar5 & 0xffff0000 | uVar3;
-    if (uVar3 == 0x0) {
-      iVar2 = 0x0;
-      uVar4 = 0x0;
+    if (uVar3 == 0) {
+      iVar2 = 0;
+      uVar4 = 0;
     }
     else {
       uVar7 = SUB42(&PTR_LOOP_1050_1040,0x0);
@@ -48,14 +48,14 @@ i16 win_ui_op_1008_2b54(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
     iStack4 = (**ppcVar1)(uVar7,iVar2,uVar4,param_1);
   }
   iStack6 = iStack4;
-  if (iStack4 != 0x1) {
-    iStack6 = 0x0;
+  if (iStack4 != 1) {
+    iStack6 = 0;
   }
-  if (((iStack6 != 0x0) && (_u16_1050_5748 != 0x0)) &&
+  if (((iStack6 != 0) && (_u16_1050_5748 != 0)) &&
      (uVar3 = (_u16_1050_5748 + 0x8),
-     local_a6[0] = (local_a6[0] & 0xffff0000 | uVar3), uVar3 != 0x0)) {
+     local_a6[0] = (local_a6[0] & 0xffff0000 | uVar3), uVar3 != 0)) {
     PostMessage16(0x0,0xb4,0x111,*(HWND16 *)(param_3 + 0x8));
-    iStack6 = 0x0;
+    iStack6 = 0;
   }
   return iStack6;
 }
@@ -81,9 +81,9 @@ pub fn ui_op_1008_2c4e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
   hcursor_5 = SetCursor16(hcursor_5);
   uVar5 = (astruct_20 *)CONCAT22(param_1,hcursor_5);
   ppaVar1 = (astruct_20 *)&((astruct_20 *)param_3)[0x1].field7_0x10;
-  ppaVar1.offset_0x0 = ppaVar1.offset_0x0 + 0x1;
+  ppaVar1.offset_0x0 = ppaVar1.offset_0x0 + 1;
   paVar2 = (astruct_20 *)param_3;
-  if (*(i32 *)&((astruct_20 *)param_3)[0x1].field5_0xc != 0x0) {
+  if (*(i32 *)&((astruct_20 *)param_3)[0x1].field5_0xc != 0) {
     uVar2 = &((astruct_20 *)param_3)[0x1].field5_0xc;
     paVar2 = (astruct_20 *)*&((astruct_20 *)param_3)[0x1].field5_0xc;
     fn_ptr_1 = (code **)&paVar2.field_0x90;
@@ -95,8 +95,8 @@ pub fn ui_op_1008_2c4e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
   ((astruct_20 *)param_3)[0x1].field6_0xe = uVar3;
   fn_ptr_1 = (code **)(*&((astruct_20 *)param_3)[0x1].field5_0xc + 0x8);
   (**fn_ptr_1)(s_tile2_bmp_1050_1538,((astruct_20 *)param_3)[0x1].field5_0xc,uVar3);
-  if (*(i32 *)(&((astruct_20 *)param_3)[0x1].field2_0x4 + 0x2) != 0x0) {
-    uVar1 = (&((astruct_20 *)param_3)[0x1].field2_0x4 + 0x2);
+  if (*(i32 *)(&((astruct_20 *)param_3)[0x1].field2_0x4 + 0x2) != 0) {
+    uVar1 = (&((astruct_20 *)param_3)[0x1].field2_0x4 + 2);
     fn_ptr_1 = (code **)((&((astruct_20 *)param_3)[0x1].field2_0x4 + 0x2) + 0xc)
     ;
     (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar1,(uVar1 >> 0x10),0x0);
@@ -130,12 +130,12 @@ pub fn post_msg_1008_2d22(param_1: *mut astruct_72)
   uVar4 = (param_1 >> 0x10);
   iVar4 = (astruct_72 *)param_1;
   if ((iVar4.field230_0xee != NULL) &&
-     (piVar1 = &iVar4.field231_0xf2, *piVar1 = *piVar1 + -0x1, iVar4.field231_0xf2 < 0x1)) {
+     (piVar1 = &iVar4.field231_0xf2, *piVar1 = *piVar1 + -0x1, iVar4.field231_0xf2 < 1)) {
     puVar7 = iVar4.field230_0xee;
     ppcVar3 = (code **)(*iVar4.field230_0xee + 0x90);
     (**ppcVar3)();
     iVar4.field230_0xee = NULL;
-    iVar4.field231_0xf2 = 0x0;
+    iVar4.field231_0xf2 = 0;
     if (iVar4.field227_0xe8 != NULL) {
       uVar6 = 0x3;
       puVar5 = iVar4.field227_0xe8;
@@ -165,9 +165,9 @@ pub fn cursor_op_1008_2dcc(mut param_1: u16 ,param_2: *mut astruct_20,mut param_
   hcursor = SetCursor16(cursor_handle);
   paVar3 = (astruct_20 *)param_2;
   cursor_handle = hcursor;
-  if (*(i32 *)(&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) != 0x0) {
-    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
-    paVar3 = (astruct_20 *)(&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
+  if (*(i32 *)(&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) != 0) {
+    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
+    paVar3 = (astruct_20 *)(&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
     ppcVar2 = (code **)&paVar3.field_0x90;
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar1,(uVar1 >> 0x10));
     param_1 = extraout_DX;
@@ -175,20 +175,20 @@ pub fn cursor_op_1008_2dcc(mut param_1: u16 ,param_2: *mut astruct_20,mut param_
   big_switch_1008_15d4(paVar3,(astruct_72 *)param_2,CONCAT22(param_5,param_3));
   *(HCURSOR16 *)(&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) = cursor_handle;
   ((astruct_20 *)param_2)[0x1].field3_0x8 = param_1;
-  uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
-  if ((uVar1 + 0xe0) == 0x0) {
-    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
+  uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
+  if ((uVar1 + 0xe0) == 0) {
+    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
     ppcVar2 = (code **)((&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) + 0x8);
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar1,(uVar1 >> 0x10));
-    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
+    uVar1 = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
     ppcVar2 = (code **)((&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) + 0xc);
     (**ppcVar2)(s_tile2_bmp_1050_1538,uVar1,(uVar1 >> 0x10),0x3);
-    ((astruct_20 *)param_2)->field153_0xce = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2);
+    ((astruct_20 *)param_2)->field153_0xce = (&((astruct_20 *)param_2)[0x1].field2_0x4 + 2);
   }
   else {
-    (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) = 0x0;
+    (&((astruct_20 *)param_2)[0x1].field2_0x4 + 0x2) = 0;
     ui_op_1008_2c4e(param_1,param_4,(astruct_72 *)param_2,param_3);
-    ((astruct_20 *)param_2)->field153_0xce = 0x0;
+    ((astruct_20 *)param_2)->field153_0xce = 0;
   }
   SetCursor16(hcursor);
   return;
@@ -233,12 +233,12 @@ pub fn win_ui_cursor_op_1008_2e9a
   uVar9 = param_1 & 0xffff0000 | uVar5;
   uStack266 = pcVar1;
   uStack266 = uVar5 | uStack266;
-  if (uStack266 == 0x0) {
-    save_file_1008_3178(uVar5,param_2,0x1);
+  if (uStack266 == 0) {
+    save_file_1008_3178(uVar5,param_2,1);
     uVar5 = uVar9;
     uVar8 = uVar5 | uStack266;
     uVar9 = uVar9 & 0xffff0000 | uVar8;
-    if (uVar8 == 0x0) {
+    if (uVar8 == 0) {
       PostMessage16(0x0,0x13d,0x111,HWND16_1050_0396);
       return;
     }

@@ -28,7 +28,7 @@ pub fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,
     pass1_1018_3cda(*(astruct_506 **)(param_1 + 0x96),CONCAT22(param_2,param_1 + 0x19a),
                     CONCAT22(param_2,iVar1));
     pass1_1018_3424(iVar7,uVar3,(param_1 + 0x96));
-    if (iVar7 == 0x0) {
+    if (iVar7 == 0) {
       iVar7 = 0x21;
     }
     else {
@@ -38,7 +38,7 @@ pub fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,
       pass1_1030_8344(_u16_1050_5748,uVar2);
       PTR_LOOP_1050_5f0c = uVar2;
       PTR_LOOP_1050_5f0e = uVar3;
-      PTR_LOOP_1050_5f10 = (&PTR_LOOP_1050_0000 + 0x1);
+      PTR_LOOP_1050_5f10 = (&PTR_LOOP_1050_0000 + 1);
       iVar7 = 0x25;
     }
     pass1_1038_af40(param_1,uVar3,_PTR_LOOP_1050_5b7c,(param_1 + 0x8),iVar7);
@@ -109,7 +109,7 @@ BOOL16 set_win_pos_1040_331a(mut param_1: u32,mut param_2: u16 ,mut param_3: i16
 {
   let mut iStack10: i16;
 
-  if (param_3 == 0x1) {
+  if (param_3 == 1) {
     enable_win_1040_32a8(param_1);
   }
   else {
@@ -141,7 +141,7 @@ pub fn send_msg_1040_3374(mut param_1: u32,u32 *param_2,mut param_3: u16 )
   ppcVar1 = (code **)(*param_2 + 0x10);
   (**ppcVar1)(s_tile2_bmp_1050_1538,param_2);
   uStack6 = CONCAT22(extraout_DX,uVar2);
-  uStack10 = 0x0;
+  uStack10 = 0;
   while( true ) {
     if (uStack6 <= uStack10) {
       return;
@@ -155,7 +155,7 @@ pub fn send_msg_1040_3374(mut param_1: u32,u32 *param_2,mut param_3: u16 )
     LVar5 = SendMessage16((LPARAM)lparam,0x0,0x403,param_3);
     uVar4 = 0x1000;
     fn_ptr_1000_17ce(lparam);
-    if (LVar5 == -0x1) break;
+    if (LVar5 == -1) break;
     if (LVar5 == -0x2) {
       return;
     }
@@ -170,7 +170,7 @@ StructD * pass1_1040_3410(StructD *param_1,param_2: u8)
 
 {
   pass1_1040_2f06(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -197,16 +197,16 @@ pub fn pass1_1040_34a2(StructD *param_1,param_2: *mut astruct_57,mut param_3: u3
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0x192,param_6);
   uVar1 = (astruct_57 *)(param_2 >> 0x10);
   iVar1 = (astruct_57 *)param_2;
-  (iVar1 + 0x1) = 0x0;
-  iVar1[0x1].field2_0x4 = 0x0;
-  iVar1[0x1].field3_0x6 = 0x0;
-  iVar1[0x1].field4_0x8 = 0x0;
-  iVar1[0x1].field5_0xa = 0x0;
+  (iVar1 + 1) = 0;
+  iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field3_0x6 = 0;
+  iVar1[0x1].field4_0x8 = 0;
+  iVar1[0x1].field5_0xa = 0;
   param_2->field0_0x0 = s_Null_Ptr_1050_38f3 + 0x7;
   iVar1->field1_0x2 = &PTR_LOOP_1050_1040;
   puVar2 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,(u8 **)CONCAT22(unaff_BP,0x3c),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
-  (iVar1 + 0x1)->field0_0x0 = puVar2;
+  (iVar1 + 1)->field0_0x0 = puVar2;
   iVar1[0x1].field1_0x2 = (puVar2 >> 0x10);
   return;
 }
@@ -230,7 +230,7 @@ pub fn pass1_1040_3506(StructD *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_3532(u8 *param_1,mut param_2: u16 ,mut param_3: u16 )
+pub fn pass1_1040_3532(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -241,7 +241,7 @@ pub fn pass1_1040_3532(u8 *param_1,mut param_2: u16 ,mut param_3: u16 )
   let mut in_stack_0000ffce: u16;
   let mut iVar2: i16;
 
-  iVar2 = 0x0;
+  iVar2 = 0;
   paVar1 = (astruct_27 *)
            mixed_1010_20ba((astruct_57 *)CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,(u8 **)0x2b,
                            in_stack_0000fea0,in_stack_0000ffc4,in_stack_0000ffca,in_stack_0000ffce);
@@ -303,7 +303,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   wsprintf16(local_58e,CONCAT13((local_50c >> 0x8),CONCAT12(uVar6,0x1050)),uVar6,
              CONCAT22(uStack1036,0x1050),(uStack1036 >> 0x10));
   BStack1426 = SetWindowText16(CONCAT22(0x1050,local_58e),iVar5->field6_0x6);
-  sprintf_op_1018_34b6((uchar)BStack1426,uVar4,(astruct_263 *)iVar5->field141_0x8e);
+  sprintf_op_1018_34b6(BStack1426,uVar4,(astruct_263 *)iVar5->field141_0x8e);
   uStack1424 = uVar4;
   pass1_1018_3d44(iVar5->field141_0x8e,CONCAT22(0x1050,&local_59a),CONCAT22(0x1050,&local_596));
   HVar1 = GetDlgItem16(0x193,iVar5->field6_0x6);
@@ -317,7 +317,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   SetWindowText16(CONCAT22(0x1050,local_50c),HVar1);
   HVar2 = GetDlgItem16(0x196,iVar5->field6_0x6);
   HVar1 = HVar2;
-  sprintf_op_1018_34b6((uchar)HVar2,uVar4,(astruct_263 *)iVar5->field141_0x8e);
+  sprintf_op_1018_34b6(HVar2,uVar4,(astruct_263 *)iVar5->field141_0x8e);
   SetWindowText16(CONCAT22(uVar4,HVar2),HVar1);
   HVar1 = GetDlgItem16(0x197,iVar5->field6_0x6);
   load_string_1010_84e0
@@ -332,7 +332,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   uVar3 = GetDlgItem16(0x199,iVar5->field6_0x6);
   HVar1 = uVar3;
   unk_str_op_1018_35b0(uVar3,(astruct_263 *)iVar5->field141_0x8e);
-  if ((uVar4 | uVar3) == 0x0) {
+  if ((uVar4 | uVar3) == 0) {
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
     SetWindowText16(CONCAT22(0x1050,local_404),HVar1);
@@ -406,7 +406,7 @@ StructD * pass1_1040_38d4(StructD *param_1,param_2: u8)
 
 {
   pass1_1040_3506(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
@@ -415,7 +415,7 @@ StructD * pass1_1040_38d4(StructD *param_1,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_3966(u8 *param_1,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub fn pass1_1040_3966(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -433,20 +433,20 @@ pub fn pass1_1040_3966(u8 *param_1,param_2: *mut astruct_57,mut param_3: u32,mut
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0x185,param_6);
   uVar1 = (astruct_57 *)(param_2 >> 0x10);
   iVar1 = (astruct_57 *)param_2;
-  (iVar1 + 0x1) = 0x0;
-  &iVar1[0x1].field2_0x4 = 0x0;
-  &iVar1[0x1].field4_0x8 = 0x0;
-  iVar1[0x1].field6_0xc = 0x0;
-  iVar1[0x1].field7_0xe = 0x0;
-  iVar1[0x1].field8_0x10 = 0x0;
-  iVar1[0x1].field9_0x12 = 0x0;
-  &iVar1[0x1].field10_0x14 = 0x0;
+  (iVar1 + 1) = 0;
+  &iVar1[0x1].field2_0x4 = 0;
+  &iVar1[0x1].field4_0x8 = 0;
+  iVar1[0x1].field6_0xc = 0;
+  iVar1[0x1].field7_0xe = 0;
+  iVar1[0x1].field8_0x10 = 0;
+  iVar1[0x1].field9_0x12 = 0;
+  &iVar1[0x1].field10_0x14 = 0;
   (&iVar1[0x1].field10_0x14 + 0x2) = 0x5;
   param_2->field0_0x0 = 0x3ffc;
   iVar1->field1_0x2 = &PTR_LOOP_1050_1040;
   puVar2 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,(u8 **)CONCAT22(unaff_BP,0x3c),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
-  (iVar1 + 0x1)->field0_0x0 = puVar2;
+  (iVar1 + 1)->field0_0x0 = puVar2;
   iVar1[0x1].field1_0x2 = (puVar2 >> 0x10);
   return;
 }
@@ -470,7 +470,7 @@ pub fn pass1_1040_39e2(StructD *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_3a0e(u8 *param_1,mut param_2: u16 ,mut param_3: u16 )
+pub fn pass1_1040_3a0e(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -481,7 +481,7 @@ pub fn pass1_1040_3a0e(u8 *param_1,mut param_2: u16 ,mut param_3: u16 )
   let mut in_stack_0000ffce: u16;
   let mut iVar2: i16;
 
-  iVar2 = 0x0;
+  iVar2 = 0;
   paVar1 = (astruct_27 *)
            mixed_1010_20ba((astruct_57 *)CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,(u8 **)0x2b,
                            in_stack_0000fea0,in_stack_0000ffc4,in_stack_0000ffca,in_stack_0000ffce);
@@ -503,14 +503,14 @@ u16 enable_win_1040_3a36(param_1: *mut astruct_924,mut param_2: u16 ,mut param_3
   bVar2 = false;
   iVar3 = (astruct_924 *)param_1;
   uVar3 = (param_1 >> 0x10);
-  if (param_4 == 0x0) {
+  if (param_4 == 0) {
     if (iVar3->field155_0x9e <= iVar3->field154_0x9c) goto LAB_1040_3a79;
     puVar1 = &iVar3->field154_0x9c;
-    *puVar1 = *puVar1 + 0x1;
+    *puVar1 = *puVar1 + 1;
   }
   else {
-    if (param_4 != 0x1) goto LAB_1040_3a79;
-    if (iVar3->field154_0x9c == 0x0) goto LAB_1040_3a79;
+    if (param_4 != 1) goto LAB_1040_3a79;
+    if (iVar3->field154_0x9c == 0) goto LAB_1040_3a79;
     puVar1 = &iVar3->field154_0x9c;
     *puVar1 = *puVar1 - 0x1;
   }
@@ -519,12 +519,12 @@ LAB_1040_3a79:
   if (bVar2) {
     SetDlgItemInt16(0x0,iVar3->field154_0x9c,0x18e,iVar3->field6_0x6);
   }
-  if ((iVar3->field154_0x9c != 0x0) && (iVar3->field158_0xa2 == 0x0)) {
+  if ((iVar3->field154_0x9c != 0) && (iVar3->field158_0xa2 == 0)) {
     iVar3->field158_0xa2 = 0x1;
     EnableWindow16(0x1,iVar3->field153_0x9a);
   }
-  if ((iVar3->field154_0x9c == 0x0) && (iVar3->field158_0xa2 != 0x0)) {
-    iVar3->field158_0xa2 = 0x0;
+  if ((iVar3->field154_0x9c == 0) && (iVar3->field158_0xa2 != 0)) {
+    iVar3->field158_0xa2 = 0;
     EnableWindow16(0x0,iVar3->field153_0x9a);
   }
   return 0x0;
@@ -646,7 +646,7 @@ LAB_1040_3c7f:
     }
     else {
       if (param_5 - 0x188 != 0x8) goto LAB_1040_3c7f;
-      if (param_5 != 0x1) {
+      if (param_5 != 1) {
         return;
       }
     }
@@ -708,10 +708,10 @@ pub fn dialog_item_ui_op_1040_3e08(StructC *struct_c_param_1)
   var3 = (struct_c_param_1 >> 0x10);
   struct_c_1 = (StructC *)struct_c_param_1;
   CheckRadioButton16(struct_c_1->field149_0xa0,0x18d,0x188,struct_c_1->field6_0x6);
-  struct_c_1->field147_0x9c = 0x0;
-  struct_c_1->field148_0x9e = 0x0;
+  struct_c_1->field147_0x9c = 0;
+  struct_c_1->field148_0x9e = 0;
   LVar2 = SendDlgItemMessage16(0x0,0x0,0x409,0x190,struct_c_1->field6_0x6);
-  if (LVar2 != -0x1) {
+  if (LVar2 != -1) {
     uVar1 = pass1_1018_3ab2(struct_c_1->field141_0x8e,LVar2,struct_c_1->field149_0xa0);
     struct_c_1->field148_0x9e = uVar1;
   }
@@ -754,10 +754,10 @@ pub fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *struct_c_p
   while( true ) {
     puVar1 = local_a;
     pass1_1008_5b12(CONCAT22(0x1050,puVar1));
-    if ((extraout_DX | puVar1) == 0x0) break;
+    if ((extraout_DX | puVar1) == 0) break;
     LVar3 = SendDlgItemMessage16(*(LPARAM *)(puVar1 + 0x4),0x0,0x401,0x190,struct_c_param_1->field6_0x6);
     iVar2 = (LVar3 >> 0x10);
-    if (((LVar3 == -0x1) && (iVar2 == -0x1)) || ((LVar3 == -0x2 && (iVar2 == -0x1)))) break;
+    if (((LVar3 == -1) && (iVar2 == -1)) || ((LVar3 == -0x2 && (iVar2 == -1)))) break;
   }
   SendDlgItemMessage16(0x0,0x0,0x407,0x190,struct_c_param_1->field6_0x6);
   SendDlgItemMessage16(0x0,0x1,0xb,0x190,struct_c_param_1->field6_0x6);
@@ -770,7 +770,7 @@ StructD * pass1_1040_3fd6(StructD *param_1,param_2: u8)
 
 {
   pass1_1040_39e2(param_1);
-  if ((param_2 & 0x1) != 0x0) {
+  if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
