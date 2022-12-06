@@ -363,8 +363,8 @@ pub fn win_1018_df40(mut param_1: u16 ,u8 *param_2,param_3: *mut StructA)
   struct_1_hi = (param_3 >> 0x10);
   if (puVar2 != NULL) {
     puVar1 = struct_1018_e100(puVar2,CONCAT22(paVar3,param_1),struct_1->field4_0x8);
-    struct_1[0x1].field11_0x16 = (i16)puVar1;
-    struct_1[0x1].field12_0x18 = (i16)(puVar1 >> 0x10);
+    struct_1[0x1].field11_0x16 = puVar1;
+    struct_1[0x1].field12_0x18 = (puVar1 >> 0x10);
     return;
   }
   &struct_1[0x1].field11_0x16 = 0x0;

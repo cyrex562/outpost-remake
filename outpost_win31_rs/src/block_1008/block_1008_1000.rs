@@ -196,7 +196,7 @@ pub fn big_switch_1008_15d4(param_1: *mut astruct_20,param_2: *mut astruct_72,i3
   var3 = param_2;
   var3 = var3 + 0xd2;
   pass1_1008_57a4(CONCAT22(0x1050,local_e),param_2 & 0xffff0000 | var3);
-  do {
+  loop {
     var2 = local_e;
     pass1_1008_5b12(CONCAT22(0x1050,var2));
     uVar3 = in_EDX;
@@ -224,7 +224,7 @@ LAB_1008_162a:
 LAB_1008_169a:
       puVar1 = uVar4;
       uStack6 = 0x0;
-      goto LAB_1008_2b3a;
+  // TODO: goto LAB_1008_2b3a;
     }
     piVar1 = (var3 + 0xcc);
     *piVar1 = *piVar1 + 0x1;
@@ -234,7 +234,7 @@ LAB_1008_169a:
     debug_print_1008_6048(in_EDX,s_OpWnd__getKid__Unknown_target_mo_1050_01a3);
     puVar1 = in_EDX;
     fn_ptr_op_1000_24cd(0x1);
-    goto LAB_1008_2b3a;
+// TODO: goto LAB_1008_2b3a;
   case 0x2:
     mem_op_1000_179c(0xfa,in_EDX);
     puVar1 = (in_EDX | param_1);

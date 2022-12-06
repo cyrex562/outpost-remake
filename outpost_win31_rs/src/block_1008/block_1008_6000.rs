@@ -65,7 +65,7 @@ pub fn pass1_1008_612e(mut param_1: u16 ,mut param_2: i16,mut param_3: i16)
   }
   iStack16 = 0x1;
   iStack18 = param_2;
-  do {
+  loop {
     if (param_3 < iStack18) {
       return;
     }
@@ -161,17 +161,17 @@ pub fn fill_rect_1008_62c0(param_1: *mut astruct_838,mut param_2: u16 )
   DeleteObject16(hbrush_var38);
   return;
 }
-pub fn FUN_1008_6324(void)
+pub fn FUN_1008_6324()
 
 {
   return;
 }
-pub fn FUN_1008_6328(void)
+pub fn FUN_1008_6328()
 
 {
   return;
 }
-pub fn FUN_1008_632c(void)
+pub fn FUN_1008_632c()
 
 {
   return;
@@ -398,7 +398,7 @@ pub fn pass1_1008_6732(param_1: *mut astruct_288)
   param_1 = 0x685a;
   iVar2->field2_0x2 = 0x1008;
   if (*(i32 *)&iVar2[0x1].field2_0x2 != 0x0) {
-    call_fn_ptr_1000_0dc6(*(char **)&iVar2[0x1].field2_0x2);
+    call_fn_ptr_1000_0dc6(*&iVar2[0x1].field2_0x2);
   }
   &iVar2[0x1].field2_0x2 = 0x0;
   pass1_1008_41bc(param_1);
@@ -448,17 +448,17 @@ pub fn memcpy_op_1008_676e(param_1: *mut astruct_830,mut param_2: u16 ,param_3: 
   param_1->field22_0x1c = 0x1;
   return;
 }
-pub fn FUN_1008_6814(void)
+pub fn FUN_1008_6814()
 
 {
   return;
 }
-pub fn FUN_1008_681a(void)
+pub fn FUN_1008_681a()
 
 {
   return;
 }
-pub fn FUN_1008_681e(void)
+pub fn FUN_1008_681e()
 
 {
   return;
@@ -466,17 +466,17 @@ pub fn FUN_1008_681e(void)
 
 
 
-u16 FUN_1008_6822(void)
+u16 FUN_1008_6822()
 
 {
   return 0x0;
 }
-pub fn FUN_1008_6824(void)
+pub fn FUN_1008_6824()
 
 {
   return;
 }
-pub fn FUN_1008_6828(void)
+pub fn FUN_1008_6828()
 
 {
   return;
@@ -484,7 +484,7 @@ pub fn FUN_1008_6828(void)
 
 
 
-u16 FUN_1008_682e(void)
+u16 FUN_1008_682e()
 
 {
   return 0x0;
@@ -550,7 +550,7 @@ pub fn pass1_1008_68ea(mut param_1: i16,mut param_2: u16 ,u32 *param_3,mut param
     }
   }
   else {
-    pass1_1008_3e0e((StructA *)CONCAT13((char)(param_2 >> 0x8),CONCAT12((char)param_2,param_1)));
+    pass1_1008_3e0e((StructA *)CONCAT13((param_2 >> 0x8),CONCAT12(param_2,param_1)));
   }
   return;
 }
@@ -624,7 +624,7 @@ pub fn pass1_1008_6a4a(mut param_1: u32,mut param_2: i16,mut param_3: u16 ,mut p
   if (param_4 == 0x2) {
     iVar2 = param_1;
     pass1_1008_57a4(CONCAT22(0x1050,local_e),param_1 & 0xffff0000 | (iVar2 + 0xd2));
-    do {
+    loop {
       puVar3 = local_e;
       pass1_1008_5b12(CONCAT22(0x1050,puVar3));
       uStack6 = CONCAT22(extraout_DX,puVar3);
@@ -812,7 +812,7 @@ pub fn close_file_1008_6dd0(StructD *param_1)
     _lclose16(struct_1->hfile_0x4);
     struct_1->hfile_0x4 = 0xffff;
   }
-  fn_ptr_1000_17ce(*(char **)param_1);
+  fn_ptr_1000_17ce(*param_1);
   return;
 }
 
@@ -938,10 +938,10 @@ pub fn file_fn_1008_6eee(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 pub fn read_file_1008_6f7a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,u8 *param_4)
 
 {
-  u16_t var5;
+  let mut var5: u16;
   let mut i_var3: i16;
   let mut b_var4: bool;
-  u16_t uVar1;
+  let mut uVar1: u16;
   let mut puVar2: *mut u16;
   u8 local_e [0x4];
   let mut uStack10: u32;

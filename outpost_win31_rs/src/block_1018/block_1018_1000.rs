@@ -68,7 +68,7 @@ pub fn pass1_1018_10c4(mut param_1: u16 ,mut param_2: u32)
   uVar13 = (param_2 >> 0x10);
   iVar12 = param_2;
   iVar1 = (iVar12 + 0x86);
-  fn_ptr_1000_17ce(*(char **)(iVar12 + 0x88));
+  fn_ptr_1000_17ce(*(iVar12 + 0x88));
   (iVar12 + 0x86) = 0x0;
   (iVar12 + 0x88) = 0x0;
   pass1_1028_dc52((astruct_92 *)CONCAT13(0x10,CONCAT12(0x50,&local_16)),0x1,0x0,0x400);
@@ -447,7 +447,7 @@ pub fn pass1_1018_17ce(mut param_1: u32,mut param_2: u32,mut param_3: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16 pass1_1018_17f0(void)
+i16 pass1_1018_17f0()
 
 {
   let mut iStack4: i16;
@@ -592,7 +592,7 @@ pub fn pass1_1018_1a04(StructD *param_1)
     ppcVar3 = (code **)*puVar1;
     (**ppcVar3)();
   }
-  fn_ptr_1000_17ce(*(char **)&iVar5.field_0x40);
+  fn_ptr_1000_17ce(*&iVar5.field_0x40);
   if (param_1 == NULL) {
     puVar4 = NULL;
     uVar5 = NULL;
@@ -807,7 +807,7 @@ pub fn pass1_1018_1ce8(mut param_1: u32)
   iVar3 = param_1;
   uStack6 = (iVar3 + 0x40);
   iStack8 = 0x0;
-  do {
+  loop {
     piVar1 = (iVar3 + 0x44);
     if (*piVar1 == iStack8 || *piVar1 < iStack8) {
       return;
@@ -887,8 +887,8 @@ pub fn pass1_1018_1e78(mut param_1: u32,mut param_2: i16) -> u32
 pub fn get_sys_metrics_1018_1ea0(param_1: *mut astruct_19)
 
 {
-  INT16 IVar1;
-  INT16 IVar2;
+  let mut IVar1: i16;
+  let mut IVar2: i16;
   astruct_19 *iVar3;
   astruct_19 *uVar3;
 
@@ -959,7 +959,7 @@ StructD * pass1_1018_1f6a(mut param_1: u16 ,StructD *param_2,param_3: u8)
   }
   return param_2;
 }
-pub fn FUN_1018_1f76(void)
+pub fn FUN_1018_1f76()
 
 {
   return;

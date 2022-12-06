@@ -8,7 +8,7 @@ pub fn pass1_1010_6006(mut param_1: u16 ,param_2: *mut astruct_486,char *param_3
 
   uVar2 = (astruct_486 *)(param_2 >> 0x10);
   iVar3 = (astruct_486 *)param_2;
-  fn_ptr_1000_17ce(*(char **)&iVar3->field108_0x6c);
+  fn_ptr_1000_17ce(*&iVar3->field108_0x6c);
   uVar1 = str_op_1008_60e8(param_1,param_3);
   iVar3->field108_0x6c = uVar1;
   iVar3->field109_0x6e = param_1;
@@ -50,7 +50,7 @@ pub fn pass1_1010_60a0(param_1: *mut astruct_19)
 
 
 
-u16 pass1_1010_60b4(void)
+u16 pass1_1010_60b4()
 
 {
   return 0x1;
@@ -58,7 +58,7 @@ u16 pass1_1010_60b4(void)
 
 
 
-u16 pass1_1010_60ba(void)
+u16 pass1_1010_60ba()
 
 {
   return 0x1;
@@ -66,7 +66,7 @@ u16 pass1_1010_60ba(void)
 
 
 
-u16 pass1_1010_60c0(void)
+u16 pass1_1010_60c0()
 
 {
   return 0x1;
@@ -74,7 +74,7 @@ u16 pass1_1010_60c0(void)
 
 
 
-u16 pass1_1010_60c6(void)
+u16 pass1_1010_60c6()
 
 {
   return 0x1;
@@ -88,7 +88,7 @@ pub fn pass1_1010_60cc(mut param_1: u16 ,param_2: *mut astruct_487,char *param_3
 
   uVar2 = (astruct_487 *)(param_2 >> 0x10);
   iVar3 = (astruct_487 *)param_2;
-  fn_ptr_1000_17ce(*(char **)&iVar3->field26_0x1a);
+  fn_ptr_1000_17ce(*&iVar3->field26_0x1a);
   uVar1 = str_op_1008_60e8(param_1,param_3);
   iVar3->field26_0x1a = uVar1;
   iVar3->field27_0x1c = param_1;
@@ -144,9 +144,9 @@ pub fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut param_2
   uVar9 = (param_1 >> 0x10);
   iVar5 = (astruct_19 *)param_1;
   GetPrivateProfileString16
-            (*(char **)&iVar5->horiz_res_0xa,0x100,*(char **)&iVar5->field_0xe,s_playerName_1050_148e + 0xc,
-             *(char **)(param_2 * 0x4 + 0x1446),s_windows_1050_13b8);
-  if (**(char **)&iVar5->field_0xe != '\0') {
+            (*&iVar5->horiz_res_0xa,0x100,*&iVar5->field_0xe,s_playerName_1050_148e + 0xc,
+             *(param_2 * 0x4 + 0x1446),s_windows_1050_13b8);
+  if (**&iVar5->field_0xe != '\0') {
     uVar2 = pass1_1000_47a4(&iVar5->field_0xe,s___1050_14a6);
     uVar6 = in_DX | uVar2;
     if (uVar6 != 0x0) {
@@ -181,10 +181,10 @@ pub fn caseD_13(mut param_1: u32,mut param_2: i16)
   iVar1 = (astruct_833 *)(param_2 * 0x8 + param_1);
   if ((((iVar1->field34_0x22 != 0x0) || (iVar1->field35_0x24 != 0x0)) || (iVar1->field36_0x26 != 0x0)) ||
      (iVar1->field37_0x28 != 0x0)) {
-    sys_1000_3f9c(*(char **)(param_1 + 0xe),s__d__d__d__d_1050_14ae,
+    sys_1000_3f9c(*(param_1 + 0xe),s__d__d__d__d_1050_14ae,
                   (param_2 * 0x8 + param_1 + 0x22));
     WritePrivateProfileString16
-              (*(char **)(param_1 + 0xa),*(char **)(param_1 + 0xe),*(char **)(param_2 * 0x4 + 0x1446),
+              (*(param_1 + 0xa),*(param_1 + 0xe),*(param_2 * 0x4 + 0x1446),
                s_windows_1050_13b8);
   }
   return;
@@ -565,7 +565,7 @@ pub fn pass1_1010_68c6(mut param_1: u16 ,u8 *param_2,mut param_3: u32,mut param_
     pcStack18 = pcStack10;
     if (BVar1 == 0x0) goto LAB_1010_692c;
     uStack4 = 0x1;
-    do {
+    loop {
       iVar3 = switch_1008_73ea(uVar9,uVar10,uStack4);
       (&iVar2->field_0xa + iVar3 * 0x2) = (uStack4 * 0x2 + param_1);
       uStack4 += 0x1;
@@ -594,7 +594,7 @@ LAB_1010_692c:
       return;
     }
     uStack4 = 0x0;
-    do {
+    loop {
       uVar5 = switch_1008_72bc((HFILE16 *)param_4,uStack4);
       (&iVar2->field_0x11e + uVar5 * 0x2) = (uStack4 * 0x2 + BVar1);
       uStack4 += 0x1;
@@ -771,7 +771,7 @@ u16 pass1_1010_6ca2(mut param_1: u16 ,mut param_2: u32,mut param_3: i16)
 
   puStack8 = CONCAT22(0x1050,&stack0x000a);
   iStack10 = param_3;
-  do {
+  loop {
     puVar2 = puStack8;
     if (iStack10 == 0x0) {
       return 0x1;
@@ -849,10 +849,10 @@ u16 pass1_1010_6cf8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut pa
       return 0x1;
     }
     uVar1 = 0x9;
-    goto code_r0x10106d4c;
+// TODO: goto code_r0x10106d4c;
   case 0xe:
     uVar1 = 0xc;
-    goto code_r0x10106d4c;
+// TODO: goto code_r0x10106d4c;
   case 0x10:
   case 0x11:
   case 0x13:

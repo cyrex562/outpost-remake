@@ -62,7 +62,7 @@ pub fn pass1_1030_9048(mut param_1: u32,mut param_2: i16,mut param_3: u32)
     if (uVar6 <= uStack36) {
       if (uStack12 != NULL) {
         ppcVar2 = (code **)*uStack12;
-        (**ppcVar2)(uVar14,uStack12,(char)(uStack12 >> 0x10),0x1,uVar11,uVar13,uStack12,uStack12);
+        (**ppcVar2)(uVar14,uStack12,(uStack12 >> 0x10),0x1,uVar11,uVar13,uStack12,uStack12);
       }
       return;
     }
@@ -99,7 +99,7 @@ LAB_1030_91fa:
       iStack16 = local_16;
       local_12 = local_14 + -0x1;
       BVar3 = pass1_1030_8fe4(&local_12,uVar7,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
-      goto joined_r0x1030911e;
+  // TODO: goto joined_r0x1030911e;
     }//
 LAB_1030_9144:
     break;
@@ -109,7 +109,7 @@ LAB_1030_9144:
     BVar3 = pass1_1030_8fe4(&local_12,uVar9,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
     if (BVar3 == 0x0) {
       iStack16 = local_16 + 0x1;
-      goto LAB_1030_912c;
+  // TODO: goto LAB_1030_912c;
     }
     if (uStack12 == NULL) {
       return;
@@ -117,7 +117,7 @@ LAB_1030_9144:
     uVar14 = (uStack12 >> 0x10);
     puVar12 = uStack12;
     uVar20 = (uStack12 >> 0x10);
-    goto LAB_1030_90e6;
+// TODO: goto LAB_1030_90e6;
   case 0x7c:
   case 0x7d:
     local_12 = local_14 + -0x1;
@@ -128,7 +128,7 @@ joined_r0x1030911e:
 LAB_1030_912c:
       BVar3 = pass1_1030_8fe4(&local_12,uVar7,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
       if (BVar3 != 0x0) goto LAB_1030_9144;
-      goto LAB_1030_91fa;
+  // TODO: goto LAB_1030_91fa;
     }//
 LAB_1030_91cb:
   }
@@ -452,7 +452,7 @@ pub fn pass1_1030_951a(mut param_1: u16 ,mut param_2: u32,u32 *param_3,mut param
       paStack58->field0_0x0 = 0x389a;
       puVar12[0x1] = 0x1008;
       puVar12[0x2] = 0x36;
-      goto LAB_1030_9728;
+  // TODO: goto LAB_1030_9728;
     }
   }
   else {
@@ -487,7 +487,7 @@ LAB_1030_9728:
         paStack58->field0_0x0 = 0x389a;
         puVar12[0x1] = 0x1008;
         puVar12[0x2] = 0x27;
-        goto LAB_1030_9879;
+    // TODO: goto LAB_1030_9879;
       }
     }
     else {
@@ -498,7 +498,7 @@ LAB_1030_9728:
         paStack58->field0_0x0 = 0x389a;
         puVar12[0x1] = 0x1008;
         puVar12[0x2] = 0x26;
-        goto LAB_1030_9879;
+    // TODO: goto LAB_1030_9879;
       }
     }//
 LAB_1030_97d0:
@@ -536,7 +536,7 @@ LAB_1030_97e8:
     for (uStack62 = 0x0; uVar7 = uVar17, uStack62 < uStack70; uStack62 += 0x1) {
       ppcVar1 = (code **)(*puStack76 + 0x4);
       uVar17 = uStack70;
-      (**ppcVar1)(uVar15,(char)uVar6,uVar14,uStack62,(uStack62 >> 0x10));
+      (**ppcVar1)(uVar15,uVar6,uVar14,uStack62,(uStack62 >> 0x10));
       uVar8 = uVar17;
       iVar11 = 0xd;
       local_36 = uVar8;
@@ -821,7 +821,7 @@ pub fn pass1_1030_9d42(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,u32
     puVar5 = pass1_1000_4906(CONCAT22(0x1050,&local_98),NULL,0x94);
     uVar8 = ZEXT24(puVar5);
     iStack154 = 0x11;
-    do {
+    loop {
       empty_1038_540a();
       uVar11 = uVar8;
       (&local_98 + iStack154) = uVar11;
@@ -915,7 +915,7 @@ u16 pass1_1030_9ef2(u32 *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1030_9f40(uchar param_1,mut param_2: u32,mut param_3: u16 )
+pub fn pass1_1030_9f40(param_1: u8,mut param_2: u32,mut param_3: u16 )
 
 {
   let mut uVar1: u16;

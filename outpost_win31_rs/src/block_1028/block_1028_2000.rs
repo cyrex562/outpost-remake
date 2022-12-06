@@ -33,7 +33,7 @@ pub fn pass1_1028_2042(param_1: *mut astruct_15)
 
 
 
-u16 pass1_1028_20b0(void)
+u16 pass1_1028_20b0()
 
 {
   return 0x0;
@@ -526,7 +526,7 @@ u16 pass1_1028_2844(mut param_1: u32,u32 *param_2,mut param_3: u16 ,mut param_4:
 u16 pass1_1028_297c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4: *mut u16,i32 param_5)
 
 {
-  char cVar1;
+  let mut cVar1: u8;
   let mut uVar2: u16;
   let mut uVar3: u32;
 
@@ -555,14 +555,14 @@ u16 pass1_1028_297c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4
         case 0x77:
         case 0x78:
         case 0x79:
-          goto switchD_1028_2a0b_caseD_4c;
+      // TODO: goto switchD_1028_2a0b_caseD_4c;
         default:
-          goto switchD_1028_2a0b_caseD_4f;
+      // TODO: goto switchD_1028_2a0b_caseD_4f;
         }
       }
       if ((uVar2 < 0x48) && (uVar2 != 0x41)) {
         if (uVar2 < 0x42) {
-          cVar1 = (char)uVar2;
+          cVar1 = uVar2;
           if (cVar1 < '5') {
             if ('2' < cVar1) {
               return 0x0;
@@ -618,12 +618,12 @@ u16 * pass1_1028_2b1c(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut p
   (param_2 + 0x2) = 0x1028;
   return CONCAT22(param_3,param_2);
 }
-pub fn FUN_1028_2b46(void)
+pub fn FUN_1028_2b46()
 
 {
   return;
 }
-pub fn FUN_1028_2b4a(void)
+pub fn FUN_1028_2b4a()
 
 {
   return;
@@ -741,7 +741,7 @@ u16 pass1_1028_2c28(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,u32 *pa
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_2e40(uchar param_1,mut param_2: i16,u8 *param_3,u32 *param_4)
+pub fn pass1_1028_2e40(param_1: u8,mut param_2: i16,u8 *param_3,u32 *param_4)
 
 {
   let mut in_register_0000000a: u16;
@@ -836,7 +836,7 @@ pub fn pass1_1028_2e84(StructD *param_1,param_2: *mut astruct_15,mut param_3: u1
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_2f18(uchar param_1,mut param_2: i16,param_3: *mut astruct_15)
+pub fn pass1_1028_2f18(param_1: u8,mut param_2: i16,param_3: *mut astruct_15)
 
 {
   let mut iVar1: i16;

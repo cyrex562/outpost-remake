@@ -138,7 +138,7 @@ u16 * pass1_1028_3580(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i1
 
 
 
-u16 pass1_1028_35aa(void)
+u16 pass1_1028_35aa()
 
 {
   return 0x1;
@@ -311,7 +311,7 @@ pub fn pass1_1028_388e(param_1: *mut u16)
   iVar3 = param_1;
   *param_1 = 0x3e2c;
   (iVar3 + 0x2) = 0x1028;
-  pcVar2 = *(char **)(iVar3 + 0x28);
+  pcVar2 = *(iVar3 + 0x28);
   uVar1 = (iVar3 + 0x2a);
   if ((uVar1 | pcVar2) != 0x0) {
     fn_ptr_1020_ba7e((pcVar2 & 0xffff | uVar1 << 0x10));
@@ -501,7 +501,7 @@ LAB_1028_3b14:
           (iVar8 + 0x26) = (iVar2 - uVar5) - (uVar6 < uVar4 * 0x3);
           if (uStack52 != 0x0) {
             uVar10 = 0x16;
-            goto LAB_1028_3b14;
+        // TODO: goto LAB_1028_3b14;
           }
         }
         if (((uStack30 | uStack30) != 0x0) && (iStack36 != 0x0)) {

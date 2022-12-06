@@ -19,7 +19,7 @@ use std::ffi::c_void;
 use std::os::raw::c_char;
 use crate::block_1000::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
 use crate::block_1000::block_1000_2000::mem_op_1000_21b6;
-use crate::prog_types::{ATOM, FLOATING_SAVE_AREA, HGDIOBJ16, HGLOBAL16, HINSTANCE16, HMENU16, HTASK16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16};
+use crate::prog_types::{ATOM, FLOATING_SAVE_AREA, HGDIOBJ16, HGLOBAL16, HINSTANCE16, HMENU16, HTASK16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16, SEGPTR};
 
 pub struct CONTEXT
 {
@@ -109,7 +109,7 @@ pub fn InitTask16(ctx: *mut CONTEXT) {
     todo!()
 }
 
-// DWORD WINAPI GetVersion16(void)
+// DWORD WINAPI GetVersion16()
 pub fn GetVersion16() -> u32 {
     todo!()
 }
@@ -128,7 +128,7 @@ pub fn FatalExit() {
     todo!()
 }
 
-// DWORD GetVersion16(void);
+// DWORD GetVersion16();
 // HGLOBAL16 GLobalAlloc16(DWORD size, UINT16 flags);
 // HGLOBAL16 GlobalReAlloc16(UINT16 flags, DWORD size, HGLOBAL16 handle);
 // HGLOBAL16 GlobalFree16(HGLOBAL16 handle);
@@ -153,18 +153,22 @@ pub fn FatalExit() {
 // pub fn InitTask16(CONTEXT * context);
 // pub fn DOS3Call(CONTEXT * context);
 // u16 SetErrorMode16(u16 mode);
-// pub fn __AHSHIFT(void);
-// pub fn __AHINCR(void);
+// pub fn __AHSHIFT();
+// pub fn __AHINCR();
 // pub fn OutputDebugString16(char * str);
 pub fn OutputDebugString16(in_str: *const c_char) {
     todo!()
 }
 // i16 GetPrivateProfileString16(char * filename, u16 len, char * buffer, char * def_val, char * entry, char * section);
 // BOOL16 WritePrivateProfileString16(char * filename, char * string, char * entry, char * section);
-// pub fn * GetDOSEnvironment16(void);
+// pub fn * GetDOSEnvironment16();
+pub fn GetDOSEnvironment16() -> SEGPTR {
+    todo!()
+}
+
 // pub fn FatalAppExit16(char * str, u16 action);
 // HINSTANCE16 WinExec16(u16 n_cmd_show, char * lp_cmd_line);
-// pub fn __WINFLAGS(void);
+// pub fn __WINFLAGS();
 // pub fn GlobalDOSAlloc16(u32 size) -> u32;
 // u16 GlobalDOSFree16(u16 sel);
 // u16 GlobalPageLock16(HGLOBAL16 handle);
@@ -207,7 +211,7 @@ pub fn GetStockObject16(obj: i16) -> HGDIOBJ16 {
 // BOOL16 KillTimer16(UINT16 id, HWND16 hwnd);
 // BOOL16 GetCursorPos16(POINT16 * pt);
 // HWND16 SetCapture16(HWND16 hwnd);
-// BOOL16 ReleaseCapture16(void);
+// BOOL16 ReleaseCapture16();
 // HWND16 SetFocus16(HWND16 hwnd);
 pub fn SetFocus16(hwnd: HWND16) -> HWND16 {
     todo!()
@@ -333,5 +337,5 @@ pub fn GetClassInfo16(wc: *mut WNDCLASS16, name: *const c_char, h_inst16: HINSTA
 // BOOL16 mciGetErrorString16(UINT16 u_length, char * lp_str_buffer, DWORD w_error);
 // BOOL16 GetOpenFileName16(u32 ofn);
 // BOOL16 GetSaveFileName16(u32 ofn);
-// void* swi(u16);
+// void* swi;
 // pub fn SegmentLimit(u32 a) -> u32;

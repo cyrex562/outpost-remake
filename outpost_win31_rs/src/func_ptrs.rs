@@ -18,9 +18,9 @@ typedef u8(*code4)();
 
 typedef i16(*code5)();
 
-typedef bool(*code6)(u16);
+typedef bool(*code6);
 
-typedef u16(*code7)(i16);
+typedef u16(*code7);
 
 typedef u32(*code8)();
 

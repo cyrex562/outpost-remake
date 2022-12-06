@@ -8,7 +8,7 @@ pub fn enable_menu_1020_1000(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u1
   EnableMenuItem16(0x400,0x3,param_5);
   return;
 }
-pub fn FUN_1020_101f(void)
+pub fn FUN_1020_101f()
 
 {
   return;
@@ -101,7 +101,7 @@ pub fn window_op_1020_10a0(param_1: *mut astruct_57,param_2: *mut astruct_57,Str
   struct_1[0x1].field20_0x26 = (astruct_243 *)puVar10;
   uVar6 = (puVar10 >> 0x10);
   struct_1[0x1].field21_0x28 = uVar6;
-  struct_1[0x1].field10_0x14 = (i16)struct_1[0x1].field20_0x26;
+  struct_1[0x1].field10_0x14 = struct_1[0x1].field20_0x26;
   struct_1[0x1].field11_0x16 = uVar6;
   paVar3 = (astruct_160 *)LoadIcon16(s_PLNTICON_1050_4267,HINSTANCE16_1050_038c);
   *(astruct_160 **)&struct_1.field_0xc2 = paVar3;
@@ -133,7 +133,7 @@ pub fn window_op_1020_10a0(param_1: *mut astruct_57,param_2: *mut astruct_57,Str
   pIVar4 = (INT16 *)uVar12;
   uVar1 = struct_param_1;
   ppcVar2 = (code **)(uVar1 + 0x14);
-  (**ppcVar2)(0x1010,struct_param_1,0x0,(char)uVar12,uVar7);
+  (**ppcVar2)(0x1010,struct_param_1,0x0,uVar12,uVar7);
   uVar13 = 0x1;
   ppcVar2 = (code **)(uVar1 + 0x10);
   (**ppcVar2)();
@@ -576,7 +576,7 @@ pub fn *pvStack60;
   GetClientRect16(&local_1c,(HWND16)&DAT_1050_1050);
   IVar1 = GetSystemMetrics16(SM_CYCAPTION);
   uVar13 = (pIStack12 >> 0x10);
-  iVar9 = (i16)pIStack12;
+  iVar9 = pIStack12;
   (iVar9 + 0x6) = IVar1 + iStack22;
   uVar11 = (puStack16 >> 0x10);
   iStack18 = (puStack16 + 0xa);
@@ -596,7 +596,7 @@ pub fn *pvStack60;
     uVar7 = uVar6 | puVar11;
     uVar9 = uVar7;
     if (uVar7 == 0x0) break;
-    ppcStack54 = (char **)puVar11.field16_0x10;
+    ppcStack54 = puVar11.field16_0x10;
     if (ppcStack54 != NULL) {
       pass1_1000_3cea(structb_param_1 & 0xffff0000 | ZEXT24(&struct_9.field8_0x10),*ppcStack54);
     }
@@ -716,7 +716,7 @@ pub fn enable_window_1020_1bd4
 
   paVar6 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
   bVar2 = false;
-  pass1_1020_1d8e(CONCAT13((char)(param_4 >> 0x8),CONCAT12((char)param_4,param_3)),CONCAT22(param_6,param_5));
+  pass1_1020_1d8e(CONCAT13((param_4 >> 0x8),CONCAT12(param_4,param_3)),CONCAT22(param_6,param_5));
   if (param_1 != 0x0) {
     if (param_1 < 0x2) {
       bVar2 = true;

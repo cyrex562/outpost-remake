@@ -170,8 +170,8 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
   iVar4->field249_0x10c = iVar3 + iVar2 + iVar4->field251_0x110;
   fn_ptr_1 = (code **)(uVar4 + 0x4);
   (**fn_ptr_1)(0x1008,uVar10,uVar11,iVar4->field242_0xfc + iVar4->field243_0xfe + iVar3,
-               iVar4->field241_0xfa + (0x280 - iVar1) / 0x2,(char)&hdc_2a,&DAT_1050_1050);
-  draw_text_1018_c742(extraout_DX,param_2,(HDC16)&hdc_2a,(i16)&DAT_1050_1050,uVar10);
+               iVar4->field241_0xfa + (0x280 - iVar1) / 0x2,&hdc_2a,&DAT_1050_1050);
+  draw_text_1018_c742(extraout_DX,param_2,(HDC16)&hdc_2a,&DAT_1050_1050,uVar10);
   obj = SelectPalette16(0x0,(HPALETTE16)hpal,hdc_2a);
   DeleteObject16(obj);
   EndPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,&paintstruct_22),iVar4->hwnd_0x8);
@@ -658,8 +658,8 @@ pub fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut para
   }
   fn_ptr_2 = (code **)(paVar1 + 0x4);
   (**fn_ptr_2)(0x1008,uVar13,uVar8,struct36_var3->field242_0xfc + struct36_var3->field243_0xfe + iVar2,
-               struct36_var3->field241_0xfa + iVar4,(char)&hdc_2a,&DAT_1050_1050);
-  draw_text_1018_c742(uVar12,struct36_param_1,(HDC16)&hdc_2a,(i16)&DAT_1050_1050,uVar13);
+               struct36_var3->field241_0xfa + iVar4,&hdc_2a,&DAT_1050_1050);
+  draw_text_1018_c742(uVar12,struct36_param_1,(HDC16)&hdc_2a,&DAT_1050_1050,uVar13);
   selected_obj = SelectPalette16(0x0,(HPALETTE16)hpalette_var1,hdc_2a);
   DeleteObject16(selected_obj);
   EndPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,paintstruct_var_22),struct36_var3->hwnd_0x8);
@@ -779,8 +779,8 @@ pub fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,astruct_
   }
   fn_ptr_2 = (code **)(struct76_var1 + 0x4);
   (**fn_ptr_2)(0x1008,uVar11,uVar8,struct36_var5->field242_0xfc + struct36_var5->field243_0xfe + iVar4,
-               struct36_var5->field241_0xfa + iVar3,(char)&local_2a,&DAT_1050_1050);
-  draw_text_1018_c742(uVar10,struct36_param_1,(HDC16)&local_2a,(i16)&DAT_1050_1050,uVar11);
+               struct36_var5->field241_0xfa + iVar3,&local_2a,&DAT_1050_1050);
+  draw_text_1018_c742(uVar10,struct36_param_1,(HDC16)&local_2a,&DAT_1050_1050,uVar11);
   obj = SelectPalette16(0x0,(HPALETTE16)hpal,local_2a);
   DeleteObject16(obj);
   EndPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,paintstruct_22),struct36_var5->hwnd_0x8);

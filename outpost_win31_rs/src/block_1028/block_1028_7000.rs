@@ -67,7 +67,7 @@ pub fn pass1_1028_740c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,mut 
   lStack14 = CONCAT22(extraout_DX,uVar4);
   if (puStack10 != NULL) {
     ppcVar1 = (code **)uVar2;
-    (**ppcVar1)(&u16_1050_1038,uVar3,(char)puVar5,0x1);
+    (**ppcVar1)(&u16_1050_1038,uVar3,puVar5,0x1);
   }
   if (lStack14 != 0x0) {
     return;
@@ -103,7 +103,7 @@ astruct_97 * pass1_1028_74ae(param_1: *mut astruct_97)
 
 
 
-u16 pass1_1028_74e4(uchar param_1,param_2: *mut astruct_57,mut param_3: u32)
+u16 pass1_1028_74e4(param_1: u8,param_2: *mut astruct_57,mut param_3: u32)
 
 {
   let mut iVar1: i16;
@@ -160,7 +160,7 @@ pub fn pass1_1028_752e(mut param_1: u16 ,u8 *param_2,mut param_3: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_75bc(void)
+pub fn pass1_1028_75bc()
 
 {
   astruct_92 *paVar1;
@@ -235,7 +235,7 @@ pub fn pass1_1028_767e(mut param_1: i16,mut param_2: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn post_msg_1028_76da(void)
+pub fn post_msg_1028_76da()
 
 {
   let mut lVar1: i32;
@@ -314,12 +314,12 @@ pub fn pass1_1028_7742(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,para
   uVar10 = pass1_1030_bcae(local_16,&DAT_1050_1050);
   uVar7 = (uVar10 >> 0x10);
   uStack26 = 0x0;
-  do {
+  loop {
     if (uStack20 <= uStack26) {//
 LAB_1028_77e7:
       if (puStack14 != NULL) {
         ppcVar1 = (code **)*puStack14;
-        (**ppcVar1)(0x1030,puStack14,(char)(puStack14 >> 0x10),0x1,uVar13,puVar6,puStack14,puStack14);
+        (**ppcVar1)(0x1030,puStack14,(puStack14 >> 0x10),0x1,uVar13,puVar6,puStack14,puStack14);
       }
       return;
     }
@@ -335,7 +335,7 @@ LAB_1028_77e7:
     pass1_1030_bd74(puVar4,&DAT_1050_1050,CONCAT22(extraout_DX_00,uVar5),paVar2);
     if (puVar4 <= param_3) {
       uStack16 = 0x1;
-      goto LAB_1028_77e7;
+  // TODO: goto LAB_1028_77e7;
     }
     uStack26 += 0x1;
   } while( true );
@@ -396,7 +396,7 @@ pub fn pass1_1028_780c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   }
   if (puStack10 != NULL) {
     ppcVar1 = (code **)*puStack10;
-    (**ppcVar1)(uVar8,uVar2,(char)paVar7,0x1);
+    (**ppcVar1)(uVar8,uVar2,paVar7,0x1);
   }
   return;
 }
@@ -405,7 +405,7 @@ pub fn pass1_1028_780c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_78b8(uchar param_1,i32 param_2,mut param_3: u32)
+pub fn pass1_1028_78b8(param_1: u8,i32 param_2,mut param_3: u32)
 
 {
   let mut puVar1: *mut u8;
@@ -480,7 +480,7 @@ pub fn pass1_1028_78b8(uchar param_1,i32 param_2,mut param_3: u32)
   if ((0xe < uStack6) && (uStack6 < 0x16)) {
     puVar18 = pass1_1020_a43e(puVar9,CONCAT22(0x1050,local_1e));
     local_18 = uStack6 - 0xf;
-    pass1_1020_a54c((puVar18 >> 0x10),local_1e,&DAT_1050_1050,(i16)local_18);
+    pass1_1020_a54c((puVar18 >> 0x10),local_1e,&DAT_1050_1050,local_18);
   }
   paVar13 = (astruct_57 *)((qword)uStack6 % 0x7d);
   paVar14 = paVar13;
@@ -489,7 +489,7 @@ pub fn pass1_1028_78b8(uchar param_1,i32 param_2,mut param_3: u32)
     local_1e[0] = paVar13;
     if (local_1e[0] < 0x1a) {
       pass1_1028_dc52((astruct_92 *)CONCAT22(0x1050,&local_30),0x1,0x0,0x400);
-      do {
+      loop {
         paVar13 = (astruct_57 *)ZEXT24(&local_30);
         pass1_1028_e4ec((astruct_92 *)CONCAT22(0x1050,&local_30));
         uVar3 = paVar13;
@@ -614,7 +614,7 @@ LAB_1028_7b74:
             bVar16 = SBORROW2(puVar5,0x19);
             puVar1 = puVar5 + -0x19;
             bVar15 = puVar1 == NULL;
-            goto LAB_1028_7b74;
+        // TODO: goto LAB_1028_7b74;
           }
         }
         local_1e[0] = puVar5;
@@ -864,7 +864,7 @@ pub fn pass1_1028_7dfc(undefined1 param_1,u8 *param_2,mut param_3: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_7fb6(uchar param_1,mut param_2: u32)
+pub fn pass1_1028_7fb6(param_1: u8,mut param_2: u32)
 
 {
   code **ppcVar1;

@@ -81,7 +81,7 @@ u16 win_ui_op_1008_8214(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mu
 
 {
   let mut uVar1: u16;
-  INT16 IVar2;
+  let mut IVar2: i16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
   let mut puVar4: *mut u32;
@@ -256,7 +256,7 @@ pub fn win_sys_op_1008_84f2(LPARAM lparam_param_1,wparam_param_2: WPARAM16,u16 m
 
 {
   let mut puVar1: *mut u16;
-  char cVar2;
+  let mut cVar2: u8;
   let mut BVar3: bool;
   let mut uVar4: u16;
   let mut win_long_1: i32;
@@ -278,9 +278,9 @@ pub fn win_sys_op_1008_84f2(LPARAM lparam_param_1,wparam_param_2: WPARAM16,u16 m
   else if (msg_param_3 < 0x20) {
     if (msg_param_3 != 0x14) {
       if (0x14 < msg_param_3) goto LAB_1008_8771;
-      cVar2 = (char)msg_param_3;
-      uVar4 = msg_param_3 & 0xff00 | (cVar2 - 0x1U);
-      if ((cVar2 - 0x1U) == 0x0) {//
+      cVar2 = msg_param_3;
+      uVar4 = msg_param_3 & 0xff00 | (cVar2 - 0x1);
+      if ((cVar2 - 0x1) == 0x0) {//
 LAB_1008_8560:
         win_ui_op_1008_8214(uVar4,win_long_1,hwnd_param_4,msg_param_3,wparam_param_2,lparam_param_1);
         return;
@@ -711,7 +711,7 @@ pub fn pass1_1008_8d8a(param_1: *mut astruct_76,param_2: *mut astruct_76,mut par
 
 {
   let mut uVar1: u16;
-  char cVar2;
+  let mut cVar2: u8;
   let mut puVar3: *mut u16;
   let mut uVar4: u16;
   let mut uVar5: u16;
@@ -731,7 +731,7 @@ pub fn pass1_1008_8d8a(param_1: *mut astruct_76,param_2: *mut astruct_76,mut par
       if (0x23 < uVar1) {
         return;
       }
-      cVar2 = (char)uVar1;
+      cVar2 = uVar1;
       if (((cVar2 != '\v') && (cVar2 != '\x0f')) && (cVar2 != '!')) {
         return;
       }

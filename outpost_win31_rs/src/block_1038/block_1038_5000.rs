@@ -131,7 +131,7 @@ pub fn pass1_1038_518c(mut param_1: u16 ,mut param_2: u32)
       uVar2 = (iVar7 + 0xc);
       ppcVar3 = (code **)((iVar7 + 0xc) + 0x4);
       uVar5 = uStack6;
-      (**ppcVar3)(unaff_CS,(char)uVar2,(uVar2 >> 0x10),uStack10,(uStack10 >> 0x10));
+      (**ppcVar3)(unaff_CS,uVar2,(uVar2 >> 0x10),uStack10,(uStack10 >> 0x10));
       uVar4 = uVar5;
       uVar6 = extraout_DX_00 | uVar4;
       if (uVar6 != 0x0) {
@@ -215,7 +215,7 @@ pub fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
       puVar1 = iVar10->field12_0xc;
       ppcVar2 = (code **)(*iVar10->field12_0xc + 0x4);
       uVar9 = uStack10;
-      (**ppcVar2)(unaff_CS,(char)puVar1,(puVar1 >> 0x10),uStack14,(uStack14 >> 0x10));
+      (**ppcVar2)(unaff_CS,puVar1,(puVar1 >> 0x10),uStack14,(uStack14 >> 0x10));
       uVar5 = uVar9;
       uVar7 = extraout_DX_00 | uVar5;
       if (uVar7 != 0x0) {
@@ -260,7 +260,7 @@ pub fn pass1_1038_53ba(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn empty_1038_540a(void)
+pub fn empty_1038_540a()
 
 {
   return;
@@ -320,7 +320,7 @@ pub fn pass1_1038_5464(mut param_1: u16 ,mut param_2: u32)
     uVar1 = (iVar6 + 0xc);
     ppcVar2 = (code **)((iVar6 + 0xc) + 0x4);
     uVar4 = uStack10;
-    (**ppcVar2)(unaff_CS,(char)uVar1,(uVar1 >> 0x10),uStack14,(uStack14 >> 0x10));
+    (**ppcVar2)(unaff_CS,uVar1,(uVar1 >> 0x10),uStack14,(uStack14 >> 0x10));
     uVar3 = uVar4;
     uVar5 = extraout_DX_02 | uVar3;
     uStack18 = uVar3;
@@ -360,7 +360,7 @@ pub fn pass1_1038_5464(mut param_1: u16 ,mut param_2: u32)
       for (uStack30 = 0x0; uStack30 < uStack28; uStack30 += 0x1) {
         ppcVar2 = (code **)(*puStack34 + 0x4);
         uVar3 = uStack28;
-        (**ppcVar2)(unaff_CS,(char)puStack34,(puStack34 >> 0x10),uStack30,0x0);
+        (**ppcVar2)(unaff_CS,puStack34,(puStack34 >> 0x10),uStack30,0x0);
         uVar5 = extraout_DX_01 | uVar3;
         local_2a = uVar3;
         uStack40 = extraout_DX_01;
@@ -798,7 +798,7 @@ pub fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32,mut pa
 
   puVar6 = pass1_1008_3e38((astruct_19 *)CONCAT22(0x1050,&local_a));
   uVar4 = (puVar6 >> 0x10);
-  do {
+  loop {
     iStack4 = 0x0;
     for (uStack14 = 0x0; uStack14 < param_2; uStack14 += 0x1) {
       uVar5 = (param_4 >> 0x10);
@@ -899,7 +899,7 @@ pub fn pass1_1038_5e16(mut param_1: i16,mut param_2: u32,mut param_3: u32)
                                            in_stack_0000ffb6);
                         if (BVar1 != 0x0) {
                           write_to_file_1030_32e4((iVar3 + 0x1f6),param_3);
-                          BVar1 = pass1_1008_7c2a(param_3,*(char **)(iVar3 + 0x1fa));
+                          BVar1 = pass1_1008_7c2a(param_3,*(iVar3 + 0x1fa));
                           if (BVar1 != 0x0) {
                             local_c = local_c & 0xffff0000 | (iVar3 + 0x1fe);
                             BVar1 = write_to_file_1008_7e1c

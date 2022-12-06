@@ -1,7 +1,7 @@
 )CONCAT22(puVar6,uVar3);
     ppcVar1 = (code **)(*puStack14 + 0x10);
     uVar4 = uVar3;
-    (**ppcVar1)(0x1008,(char)uVar3,puVar6);
+    (**ppcVar1)(0x1008,uVar3,puVar6);
     uStack18 = CONCAT22(extraout_DX_00,uVar4);
     for (uStack22 = 0x0; uStack22 < uStack18; uStack22 += 0x1) {
       ppcVar1 = (code **)(*puStack14 + 0x4);
@@ -20,11 +20,11 @@
     }
     if (puStack10 != NULL) {
       ppcVar1 = (code **)*puStack10;
-      (**ppcVar1)(uVar8,uVar2,(char)puVar5,0x1);
+      (**ppcVar1)(uVar8,uVar2,puVar5,0x1);
     }
     if (puStack14 != NULL) {
       ppcVar1 = (code **)*puStack14;
-      (**ppcVar1)(uVar8,uVar3,(char)puVar6,0x1);
+      (**ppcVar1)(uVar8,uVar3,puVar6,0x1);
     }
   }
   return;
@@ -77,14 +77,14 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
   (**ppcVar5)();
   uStack12 = CONCAT22(param_2,param_1);
   uStack16 = 0x0;
-  do {
+  loop {
     if (uStack12 <= uStack16) {
       return;
     }
     ppcVar5 = (code **)(*param_5 + 0x4);
     uVar9 = uStack12;
     uVar11 = param_2;
-    (**ppcVar5)(unaff_CS,param_5,(char)uStack16,(uStack16 >> 0x10),puVar15);
+    (**ppcVar5)(unaff_CS,param_5,uStack16,(uStack16 >> 0x10),puVar15);
     uStack18 = uVar11;
     uVar12 = uVar9;
     uVar11 = uStack18 | uVar12;
@@ -99,7 +99,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
       param_2 = puStack28 >> 0x10;
       puVar8 = local_20;
       ppcVar5 = (code **)(*puStack28 + 0x40);
-      (**ppcVar5)(0x1030,puStack28,(puStack28 >> 0x10),(char)puVar8,&DAT_1050_1050);
+      (**ppcVar5)(0x1030,puStack28,(puStack28 >> 0x10),puVar8,&DAT_1050_1050);
       if (puVar8 == NULL) {
         uStack36 = pass1_1028_62c8(puStack28);
         uVar9 = uStack36 >> 0x10;
@@ -138,7 +138,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
           }
           else {
             ppcVar5 = (code **)(*puStack40 + 0xc);
-            (**ppcVar5)(0x1008,puStack40,(puStack40 >> 0x10),(char)puVar8,uVar11);
+            (**ppcVar5)(0x1008,puStack40,(puStack40 >> 0x10),puVar8,uVar11);
             uStack44 = 0x0;
             uStack76 = uVar12;
           }
@@ -173,7 +173,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
       }
       else {
         ppcVar5 = (code **)(*param_5 + 0x8);
-        (**ppcVar5)(0x1030,param_5,0x0,0x0,(char)uStack16,(uStack16 >> 0x10));
+        (**ppcVar5)(0x1030,param_5,0x0,0x0,uStack16,(uStack16 >> 0x10));
       }
     }
     uStack16 += 0x1;

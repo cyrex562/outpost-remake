@@ -18,7 +18,7 @@ pub fn pass1_1030_301a(mut param_1: u16 ,mut param_2: u32,char *param_3)
   iVar4 = param_2;
   if (*(i32 *)(iVar4 + 0x10) != 0x0) {
     uVar1 = (iVar4 + 0x10);
-    fn_ptr_1000_17ce(*(char **)(uVar1 + 0x2));
+    fn_ptr_1000_17ce(*(uVar1 + 0x2));
     uVar2 = str_op_1008_60e8(param_1,param_3);
     uVar1 = (iVar4 + 0x10);
     uVar5 = (uVar1 >> 0x10);
@@ -299,7 +299,7 @@ pub fn pass1_1030_355c(mut param_1: u32,mut param_2: u32)
   let mut iStack4: i16;
 
   iStack4 = 0x0;
-  do {
+  loop {
     iVar1 = iStack4 * 0x4;
     uVar2 = (param_1 >> 0x10);
     *(i32 *)(param_1 + iVar1 + 0x4) = *(i32 *)(iVar1 + param_2) + *(i32 *)(param_1 + 0x4 + iVar1);
@@ -342,7 +342,7 @@ pub fn pass1_1030_35a4(u8 *param_1,mut param_2: u32,i32 param_3)
   uVar6 = (&local_a + 0x2U);
   pass1_1030_3948(param_2,CONCAT22(0x1050,&local_a + 0x2U),CONCAT13(0x10,CONCAT12(0x50,local_c)),
                   0x4);
-  do {
+  loop {
     uVar5 = uVar6;
     if (param_3 < 0x1) break;
     pass1_1008_612e(uVar5,local_a,(local_a >> 0x10));
@@ -389,9 +389,9 @@ pub fn pass1_1030_3694(u8 *param_1,mut param_2: u32,mut param_3: i16,i32 param_4
   }
   uVar4 = fn_ptr_op_1000_1708(0x16c,0x0,0x1,PTR_LOOP_1050_5f2c,pSVar8);
   uVar7 = SUB42(pSVar8,0x0);
-  uVar6 = (param_3 - 0x1U);
+  uVar6 = (param_3 - 0x1);
   if (((param_3 < 0x1) || (SBORROW2(param_3,0x1))) ||
-     (uVar6 = (param_3 - 0x5), param_3 - 0x5 != 0x0 && 0x3 < (param_3 - 0x1U))) {
+     (uVar6 = (param_3 - 0x5), param_3 - 0x5 != 0x0 && 0x3 < (param_3 - 0x1))) {
     while (uVar5 = uVar6, 0x0 < param_4) {
       pass1_1008_612e(uVar5,0x0,0x5a);
       uVar6 = ZEXT24(&param_4);
@@ -405,7 +405,7 @@ pub fn pass1_1030_3694(u8 *param_1,mut param_2: u32,mut param_3: i16,i32 param_4
   }
   else {
     pass1_1030_39dc(param_2,(i32 *)CONCAT22(0x1050,&param_4),
-                    CONCAT13((char)(pSVar8 >> 0x8),CONCAT12((char)pSVar8,uVar4)),param_3);
+                    CONCAT13((pSVar8 >> 0x8),CONCAT12(pSVar8,uVar4)),param_3);
   }
   pass1_1000_4906((param_2 & 0xffff0000 | (param_2 + 0x18c)),NULL,0x18);
   return;
@@ -470,20 +470,20 @@ pub fn pass1_1030_387c(mut param_1: u32)
   let mut iStack4: i16;
 
   iStack4 = 0x5a;
-  do {
+  loop {
     (iStack4 * 0x4 + param_1 + 0x4) = (iStack4 * 0x4 + param_1);
     iStack4 += -0x1;
   } while (0x0 < iStack4);
   (param_1 + 0x4) = 0x0;
   return;
 }
-pub fn pass1_1030_38b8(void)
+pub fn pass1_1030_38b8()
 
 {
   let mut iStack8: i16;
 
   iStack8 = 0x0;
-  do {
+  loop {
     iStack8 += 0x1;
   } while (iStack8 < 0x5b);
   return;
@@ -502,7 +502,7 @@ pub fn pass1_1030_38f2(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn pass1_1030_3948(mut param_1: u32,param_2: *mut u16,i16 *param_3,mut param_4: i16)
+pub fn pass1_1030_3948(mut param_1: u32,param_2: *mut u16,param_3: *mut i16,mut param_4: i16)
 
 {
   let mut uVar1: u16;
@@ -630,7 +630,7 @@ u32 * pass1_1030_3af6(u32 *param_1,mut param_2: u16 ,mut param_3: u16 ,u32 *para
 
 
 
-u16 pass1_1030_3b28(void)
+u16 pass1_1030_3b28()
 
 {
   let mut puVar1: *mut u16;

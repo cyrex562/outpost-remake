@@ -137,7 +137,7 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
   }
   puVar4 = &puVar14[-0x4].field_0x2;
   fn_ptr_1 = (code **)(*puVar4 + 0x4);
-  (**fn_ptr_1)(uVar14,puVar4,(puVar4 >> 0x10),0x0,0x0,(char)puVar14 + -0x22,&DAT_1050_1050);
+  (**fn_ptr_1)(uVar14,puVar4,(puVar4 >> 0x10),0x0,0x0,puVar14 + -0x22,&DAT_1050_1050);
   extraout_DX = paVar14;
   hgdiobj16_var8 = CreatePen16(0x1000025,0x1,0x0);
   *(HGDIOBJ16 *)&puVar14[-0x6].field_0x2 = hgdiobj16_var8;
@@ -184,7 +184,7 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
              *(HWND16 *)(uVar6 + 0x4));
   return;
 }
-pub fn pass1_1020_2286(mut param_1: u16 ,mut param_2: u16 ,i16 *param_3,mut param_4: i16)
+pub fn pass1_1020_2286(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut i16,mut param_4: i16)
 
 {
   *param_3 = 0x64 - param_4 >> 0x1;
@@ -235,7 +235,7 @@ pub fn draw_line_1020_229c(mut param_1: u32,mut param_2: u16 )
   }
   return;
 }
-pub fn pass1_1020_239c(mut param_1: u32,i16 *param_2)
+pub fn pass1_1020_239c(mut param_1: u32,param_2: *mut i16)
 
 {
   let mut puVar1: *mut u16;
@@ -292,7 +292,7 @@ pub fn pass1_1020_2488(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   let mut uVar3: u16;
   let mut iVar4: i16;
   let mut uVar5: u16;
-  INT16 in_stack_0000fff2;
+  let mut in_stack_0000fff2: i16;
   let mut iStack12: i16;
   let mut uStack10: u16;
 
@@ -585,7 +585,7 @@ pub fn post_win_msg_1020_291a(mut param_1: u32)
   PostMessage16(0x0,0x0,0x10,*(HWND16 *)(param_1 + 0x8));
   return;
 }
-pub fn pass1_1020_2936(void)
+pub fn pass1_1020_2936()
 
 {
   pass1_1020_79ae();
@@ -719,7 +719,7 @@ pub fn invalidate_rect_1020_2ae4(mut param_1: u16 ,u32 *param_2,mut param_3: u16
 {
   code **ppcVar1;
   let mut uVar2: u16;
-  char cVar3;
+  let mut cVar3: u8;
   let mut iVar4: i16;
   let mut uVar5: u16;
   let mut uVar6: u16;
@@ -785,7 +785,7 @@ pub fn invalidate_rect_1020_2ae4(mut param_1: u16 ,u32 *param_2,mut param_3: u16
       return;
     }
     if (param_3 < 0xfc) {
-      cVar3 = (char)param_3;
+      cVar3 = param_3;
       if ((cVar3 + 0x91U) == 0x0) {
         uVar5 = FUN_1010_830a(param_3 & 0xff00 | (cVar3 + 0x91U),paVar7,unaff_CS,_u16_1050_14cc,0x1f8);
         WinHelp16(0x2a,0x1,CONCAT22(paVar7,uVar5),*(HWND16 *)(uVar8 + 0x8));
@@ -896,7 +896,7 @@ pub fn win_ui_op_1020_2cf0(param_1: *mut astruct_57,param_2: *mut StructA,mut pa
   pSVar11[0x1].field20_0x26 = (astruct_243 *)puVar9;
   uVar5 = (puVar9 >> 0x10);
   pSVar11[0x1].field21_0x28 = uVar5;
-  pSVar11[0x1].field10_0x14 = (i16)pSVar11[0x1].field20_0x26;
+  pSVar11[0x1].field10_0x14 = pSVar11[0x1].field20_0x26;
   pSVar11[0x1].field11_0x16 = uVar5;
   paVar3 = (astruct_160 *)LoadIcon16(s_SITEICON_1050_428d,HINSTANCE16_1050_038c);
   *(astruct_160 **)&pSVar11.field_0xc2 = paVar3;

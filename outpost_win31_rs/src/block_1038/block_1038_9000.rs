@@ -214,7 +214,7 @@ pub fn draw_op_1038_92f6(u8 *param_1,mut param_2: u16 ,mut param_3: u16 ,mut par
   }
   else {
     if (param_5 != 0xf9) {
-      pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),param_4,
+      pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),param_4,
                       param_5);
       return;
     }
@@ -223,7 +223,7 @@ pub fn draw_op_1038_92f6(u8 *param_1,mut param_2: u16 ,mut param_3: u16 ,mut par
       hfile_param = *(HFILE16 **)(param_2 + 0x6);
       UStack22 = GetDlgItemInt16(0x1,local_1a,(INT16)&DAT_1050_1050,*(HWND16 *)(iVar4 * 0xe + 0x5a72));
       if (local_1a[0] != 0x0) {
-        FUN_1010_2a32(*(u8 **)(param_2 + 0x98),CONCAT22((iVar4 * 0xe + 0x5a72),UStack22),hfile_param,
+        FUN_1010_2a32((param_2 + 0x98),CONCAT22((iVar4 * 0xe + 0x5a72),UStack22),hfile_param,
                       unaff_SI);
       }
     }
@@ -575,7 +575,7 @@ pub fn pass1_1038_9b72(param_1: *mut astruct_57,param_2: *mut astruct_57,mut par
   CONCAT22(param_2,param_1) = 0x9efa;
   param_1->field1_0x2 = &u16_1050_1038;
   iStack4 = 0x0;
-  do {
+  loop {
     (&param_1[0x1].field3_0x6)[iStack4] = 0x0;
     iStack4 += 0x1;
   } while (iStack4 < 0x4a);
@@ -592,7 +592,7 @@ pub fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: 
   let mut IVar2: i16;
   let mut iVar2: i16;
   HDC16 hdc;
-  INT16 IVar1;
+  let mut IVar1: i16;
   let mut HVar2: HWND16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;

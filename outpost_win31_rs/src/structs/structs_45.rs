@@ -526,7 +526,7 @@ struct astruct_793 {
     let mut field29_0x1d: u8;
     let mut field30_0x1e: u8;
     let mut field31_0x1f: u8;
-    INT16 field32_0x20;
+    let mut field32_0x20: i16;
     let mut field33_0x22: i16;
 };
 

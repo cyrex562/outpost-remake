@@ -23,14 +23,14 @@ pub fn pass1_1008_3018(u8 *param_1,mut param_2: u32)
                               ,in_stack_0000feb8);
   uVar2 = (uStack262 >> 0x10);
   iVar3 = uStack262;
-  pcVar1 = *(char **)(iVar3 + 0x12);
+  pcVar1 = *(iVar3 + 0x12);
   uVar4 = (iVar3 + 0x14);
   uStack266 = pcVar1;
   if ((uVar4 | uStack266) == 0x0) {
     pass1_1008_30cc(0x0,uVar4,(astruct_72 *)param_2);
   }
   else {
-    unk_str_op_1000_3d3e(CONCAT22(0x1050,local_102),*(char **)(iVar3 + 0x1a));
+    unk_str_op_1000_3d3e(CONCAT22(0x1050,local_102),*(iVar3 + 0x1a));
     uVar4 = str_op_1000_3da4(CONCAT22(0x1050,local_102));
     if (local_102[uVar4 - 0x1] != '\\') {
       local_102[uVar4] = '\\';
@@ -139,7 +139,7 @@ pub fn save_file_1008_3178(mut param_1: u16 ,param_2: *mut astruct_72,mut param_
   let mut uStack1326: u16;
   let mut pcStack1322: *mut c_char;
   let mut uStack1320: u16;
-  char cStack1306;
+  let mut cStack1306: u8;
   char acStack1305 [0x101];
   let mut uStack1048: u16;
   char local_416 [0x8];
@@ -163,7 +163,7 @@ pub fn save_file_1008_3178(mut param_1: u16 ,param_2: *mut astruct_72,mut param_
   uStack778 = (iVar2 + 0x1a);
   uVar5 = (iVar2 + 0x1c);
   if ((uVar5 | uStack778) == 0x0) {
-    pcStack1646 = *(char **)(iVar2 + 0x64);
+    pcStack1646 = *(iVar2 + 0x64);
     uVar5 = (iVar2 + 0x66);
     if ((uVar5 | pcStack1646) != 0x0) {
       pass1_1008_5784(CONCAT22(0x1050,local_67e),pcStack1646 & 0xffff | uVar5 << 0x10);
@@ -174,7 +174,7 @@ pub fn save_file_1008_3178(mut param_1: u16 ,param_2: *mut astruct_72,mut param_
         uVar1 = (puVar3 + 0x2);
         uStack778 = uVar1;
         uVar5 = (uVar1 >> 0x10);
-        goto LAB_1008_3206;
+    // TODO: goto LAB_1008_3206;
       }
     }
   }
@@ -251,7 +251,7 @@ LAB_1008_3206:
   else {
     if (param_3 != 0x2) {
       debug_print_1008_6048(uVar7,s_Unsupported_FileStructType_in_Op_1050_01ca);
-      goto LAB_1008_3461;
+  // TODO: goto LAB_1008_3461;
     }
     uStack1330 = 0x6;
     pcVar9 = load_string_1010_847e(_u16_1050_14cc,0x74e);
@@ -437,37 +437,37 @@ pub fn pass1_1008_372c(mut param_1: i16,mut param_2: u16 ) -> u32
 {
   return CONCAT22(param_2,param_1 + 0xa);
 }
-pub fn pass1_1008_373c(void)
+pub fn pass1_1008_373c()
 
 {
   return;
 }
-pub fn pass1_1008_3740(void)
+pub fn pass1_1008_3740()
 
 {
   return;
 }
-pub fn pass1_1008_3744(void)
+pub fn pass1_1008_3744()
 
 {
   return;
 }
-pub fn pass1_1008_3748(void)
+pub fn pass1_1008_3748()
 
 {
   return;
 }
-pub fn pass1_1008_374c(void)
+pub fn pass1_1008_374c()
 
 {
   return;
 }
-pub fn pass1_1008_3750(void)
+pub fn pass1_1008_3750()
 
 {
   return;
 }
-pub fn pass1_1008_3754(void)
+pub fn pass1_1008_3754()
 
 {
   return;
@@ -475,47 +475,47 @@ pub fn pass1_1008_3754(void)
 
 
 
-u16 pass1_1008_3758(void)
+u16 pass1_1008_3758()
 
 {
   return 0x1;
 }
-pub fn pass1_1008_375e(void)
+pub fn pass1_1008_375e()
 
 {
   return;
 }
-pub fn pass1_1008_3762(void)
+pub fn pass1_1008_3762()
 
 {
   return;
 }
-pub fn pass1_1008_3766(void)
+pub fn pass1_1008_3766()
 
 {
   return;
 }
-pub fn FUN_1008_376a(void)
+pub fn FUN_1008_376a()
 
 {
   return;
 }
-pub fn FUN_1008_376e(void)
+pub fn FUN_1008_376e()
 
 {
   return;
 }
-pub fn FUN_1008_3772(void)
+pub fn FUN_1008_3772()
 
 {
   return;
 }
-pub fn FUN_1008_3776(void)
+pub fn FUN_1008_3776()
 
 {
   return;
 }
-pub fn pass1_1008_377a(void)
+pub fn pass1_1008_377a()
 
 {
   return;
@@ -621,7 +621,7 @@ pub fn fill_rect_1008_39ac(astruct_930 *in_win_handle_1,mut param_2: u16 )
   DeleteObject16(hbrush);
   return;
 }
-pub fn pass1_1008_3a10(void)
+pub fn pass1_1008_3a10()
 
 {
   return;
@@ -690,7 +690,7 @@ astruct_20 * pass1_1008_3ab8(param_1: *mut astruct_20)
             ((param_1 & 0xffff0000 | ZEXT24(&iVar1.field60_0x5b)),s_SOLDefaultWindowClass_1050_01fe);
   return param_1;
 }
-pub fn post_quit_msg_1008_3af4(void)
+pub fn post_quit_msg_1008_3af4()
 
 {
   PostQuitMessage16(0x0);
@@ -769,7 +769,7 @@ pub fn win_ui_op_1008_3c34(mut param_1: u32,param_2: u8,HDC16 hdc_param_3)
   }
   return;
 }
-pub fn FUN_1008_3cd2(void)
+pub fn FUN_1008_3cd2()
 
 {
   return;
@@ -795,7 +795,7 @@ pub fn post_msg_1008_3d20(mut param_1: u32)
   PostMessage16(0x0,*(WPARAM16 *)(param_1 + 0xcc),0x111,*(HWND16 *)(param_1 + 0xbc));
   return;
 }
-pub fn FUN_1008_3d40(void)
+pub fn FUN_1008_3d40()
 
 {
   return;
@@ -890,7 +890,7 @@ pub fn pass1_1008_3eb4(param_1: *mut astruct_615,param_2: *mut u16,param_3: *mut
   *param_2 = (param_1 + 0x4);
   return;
 }
-pub fn pass1_1008_3ee2(i16 *param_1,i16 *param_2)
+pub fn pass1_1008_3ee2(param_1: *mut i16,param_2: *mut i16)
 
 {
   let mut iVar1: i16;
@@ -918,7 +918,7 @@ pub fn pass1_1008_3ee2(i16 *param_1,i16 *param_2)
   (iVar2 + 0x4) = iVar1 + 0x1;
   return;
 }
-pub fn pass1_1008_3f32(i16 *param_1,i16 *param_2)
+pub fn pass1_1008_3f32(param_1: *mut i16,param_2: *mut i16)
 
 {
   let mut piVar1: *mut i16;

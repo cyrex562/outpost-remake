@@ -64,7 +64,7 @@ LAB_1038_626a:
             return;
           }
           uStack1042 = 0x0;
-          do {
+          loop {
             uVar4 = switch_1008_72bc(param_4,uStack1042);
             uVar9 = (uStack1042 * 0x4 + BVar2 + 0x2);
             (&iVar9[0xb].field19_0x1a)[uVar4 * 0x2] = *(astruct_430 **)(uStack1042 * 0x4 + BVar2);
@@ -74,7 +74,7 @@ LAB_1038_626a:
           BVar3 = read_file_1008_7dee(param_4,puStack1046,0x54);
           if (BVar3 == 0x0) goto LAB_1038_626a;
           uStack1042 = 0x0;
-          do {
+          loop {
             uVar5 = switch_1008_72bc(param_4,uStack1042);
             uVar4 = (uStack1042 * 0x4 + BVar2 + 0x2);
             (&iVar9[0xe].field19_0x1a)[uVar5 * 0x2] = *(astruct_430 **)(uStack1042 * 0x4 + BVar2);
@@ -110,8 +110,8 @@ LAB_1038_626a:
                                                     ZEXT24((&iVar9[0x12].field4_0x4 + 0x2))),0x2);
           if (((((BVar2 != 0x0) &&
                 (BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 |
-                                                           CONCAT11((char)(param_3 >> 0x8) + '\x02',
-                                                                           (char)param_3)),0x4), BVar2 != 0x0)) &&
+                                                           CONCAT11((param_3 >> 0x8) + '\x02',
+                                                                           param_3)),0x4), BVar2 != 0x0)) &&
                (BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | ZEXT24(&iVar9[0x12].field_0xc))
                                             ,0x2), BVar2 != 0x0)) &&
               (((BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | ZEXT24(&iVar9[0x12].field_0xe)
@@ -713,7 +713,7 @@ u16 pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,i32 *param_3)
   uVar1 = bStack21;
   if (bStack21 == 0x0) {
     uStack4 = param_3;
-    goto switchD_1038_6eab_caseD_9;
+// TODO: goto switchD_1038_6eab_caseD_9;
   }
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,*param_3);
   uVar3 = pass1_1030_6fa0(CONCAT22(uVar4,uVar1));
@@ -736,19 +736,19 @@ u16 pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,i32 *param_3)
       break;
     case 0x5:
     case 0x9:
-      goto switchD_1038_6eab_caseD_5;
+  // TODO: goto switchD_1038_6eab_caseD_5;
     }
   }
   else {
     BVar2 = pass1_1008_c6ae(_u16_1050_06e0,uVar3,0x41);
     if (BVar2 != 0x0) {
       uStack4 = 0xa;
-      goto switchD_1038_6eab_caseD_9;
+  // TODO: goto switchD_1038_6eab_caseD_9;
     }
     BVar2 = pass1_1008_c6ae(_u16_1050_06e0,uVar3,0x42);
     if ((BVar2 != 0x0) || (uVar3 == 0x3f)) {
       uStack4 = 0xb;
-      goto switchD_1038_6eab_caseD_9;
+  // TODO: goto switchD_1038_6eab_caseD_9;
     }
 switchD_1038_6eab_caseD_5:
     uStack4 = 0x5;

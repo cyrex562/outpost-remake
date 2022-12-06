@@ -688,7 +688,7 @@ struct astruct_498 {
 struct astruct_859 {
     u8 field0_0x0;
     u8 field1_0x1;
-    INT16 field2_0x2;
+    let mut field2_0x2: i16;
     let mut field3_0x4: HWND16;
     HMENlet mut field4_0x6: u16;
 };
@@ -871,9 +871,9 @@ struct astruct_792 {
     u8 field9_0x9;
     u8 field10_0xa;
     u8 field11_0xb;
-    INT16 field12_0xc;
-    INT16 field13_0xe;
-    INT16 field14_0x10;
+    let mut field12_0xc: i16;
+    let mut field13_0xe: i16;
+    let mut field14_0x10: i16;
 };
 
 

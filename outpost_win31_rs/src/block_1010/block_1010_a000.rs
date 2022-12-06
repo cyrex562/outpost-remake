@@ -34,7 +34,7 @@ pub fn pass1_1010_a0a0(mut param_1: u16 ,param_2: *mut astruct_252)
      (PTR_LOOP_1050_13ae != (&PTR_LOOP_1050_0000 + 0x1))) {
     iStack12 = 0x2;
   }
-  do {
+  loop {
     while( true ) {
       uVar6 = uVar9;
       uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
@@ -64,9 +64,9 @@ LAB_1010_a153:
         iVar2 = *piVar1;
         iVar3 = iVar2 + -0x1;
         bVar10 = iVar2 == 0x1;
-        goto LAB_1010_a151;
+    // TODO: goto LAB_1010_a151;
       }
-      goto LAB_1010_a153;
+  // TODO: goto LAB_1010_a153;
     }
     iVar2 = (uVar4 + 0x6);
     uVar7 = iVar2 >> 0xf;
@@ -146,7 +146,7 @@ pub fn struct_1010_a1d8(param_1: *mut astruct_19,mut param_2: u16 )
   pass1_1000_4906((param_1 & 0xffff0000 | (param_1 + 0xa4)),NULL,0x94);
   pass1_1000_4906((param_1 & 0xffff0000 | (param_1 + 0xe)),NULL,0x96);
   uStack4 = 0x0;
-  do {
+  loop {
     iVar1 = param_1 + uStack4 * 0x6;
     *(code **)(iVar1 + 0xe) = pass1_1010_c7e2;
     (iVar1 + 0x12) = 0x0;
@@ -226,7 +226,7 @@ pub fn pass1_1010_a50c(param_1: *mut astruct_20,u8 **param_2,StructD *param_3)
   iVar1 = (param_3 + 0xa);
   local_8 = (&struct_1->field6_0xe + iVar1 * 0x3);
   iStack4 = (&struct_1->field7_0x10 + iVar1 * 0x6 + 0x2);
-  ((code)local_8)(0x1000,&struct_1->offset_0x0 + iStack4,param_1,param_2,param_3);
+  (local_8)(0x1000,&struct_1->offset_0x0 + iStack4,param_1,param_2,param_3);
   return;
 }
 
@@ -367,7 +367,7 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
         pass1_1030_25d8(CONCAT22(uVar3,param_1),uStack22,iStack20);
       }
     }
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   }
   pass1_1030_25f0(CONCAT22(uVar3,param_1),0x0,param_4);
   puVar6 = mixed_1010_20ba(paVar5,_u16_1050_0ed0,(u8 **)CONCAT22(in_stack_0000ffd2,0x35),in_stack_0000fe7a,
@@ -382,35 +382,35 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
     iVar1 = 0x1b;
     break;
   default:
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   case 0x10:
     pass1_1010_682e(puVar6,0x1,0x2d);
     if ((param_1 + 0x160) == 0x0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x2d;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x12:
     pass1_1010_682e(puVar6,0x1,0x16);
     pass1_1010_682e(puVar6,0x1,0x17);
     pass1_1010_682e(puVar6,0x1,0x18);
     pass1_1010_682e(puVar6,0x1,0x40);
     iVar1 = 0x3f;
-    goto LAB_1010_a96c;
+// TODO: goto LAB_1010_a96c;
   case 0x13:
     iVar1 = 0x35;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x19:
-    goto switchD_1010_aaef_caseD_19;
+// TODO: goto switchD_1010_aaef_caseD_19;
   case 0x1a:
     iVar1 = 0xf;
-    goto LAB_1010_a96c;
+// TODO: goto LAB_1010_a96c;
   case 0x1c:
     iVar1 = 0x11;
-    goto LAB_1010_a96c;
+// TODO: goto LAB_1010_a96c;
   case 0x1d:
   case 0x24:
     pass1_1010_abd2(puVar4,uVar2,uVar10,0x1e);
     iVar1 = 0x5b;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x1e:
     uVar2 = 0x1;
     iVar1 = 0x2;
@@ -423,13 +423,13 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
                              in_stack_0000ff9e,in_stack_0000ffa4,in_stack_0000ffa8);
     paVar5 = (astruct_57 *)(paVar5 & 0xffff0000 | paVar7 >> 0x10);
     load_str_and_sprintf_1008_b69c((paVar7 >> 0x10),paVar7);
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   case 0x22:
     iVar1 = 0x8;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x23:
     iVar1 = 0xc;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x25:
     pass1_1010_abd2(puVar4,uVar2,uVar10,0x14);
     pass1_1010_abd2(paVar5,uVar2,uVar10,0x1b);
@@ -456,58 +456,58 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
     pass1_1010_abd2(paVar5,uVar2,uVar10,0x66);
     pass1_1010_abd2(paVar5,uVar2,uVar10,0x68);
     pass1_1010_abd2(paVar5,uVar2,uVar10,0x6c);
-    goto switchD_1010_aaef_caseD_19;
+// TODO: goto switchD_1010_aaef_caseD_19;
   case 0x29:
     iVar1 = 0x25;
     break;
   case 0x2a:
     iVar1 = 0xf;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x2b:
     iVar1 = 0x6e;
-    goto LAB_1010_a96c;
+// TODO: goto LAB_1010_a96c;
   case 0x30:
     iVar1 = 0x54;
     break;
   case 0x33:
     pass1_1010_abd2(puVar4,uVar2,uVar10,0x31);
     iVar1 = 0x6c;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x36:
     iVar1 = 0x13;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x37:
     iVar1 = 0x2c;//
 LAB_1010_a96c:
     pass1_1010_682e(puVar6,0x1,iVar1);
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   case 0x38:
     pass1_1010_682e(puVar6,0x1,0x28);
     if ((param_1 + 0x160) == 0x0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x28;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x39:
     iVar1 = 0x10;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x3a:
     iVar1 = 0x11;
-    goto LAB_1010_aabe;
+// TODO: goto LAB_1010_aabe;
   case 0x3b:
     iVar1 = 0x12;//
 LAB_1010_aabe:
     pass1_1010_6814(puVar6,0x1,iVar1);
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   case 0x3c:
     pass1_1010_abd2(puVar4,uVar2,uVar10,0x14);
     iVar1 = 0x62;
-    goto LAB_1010_a91f;
+// TODO: goto LAB_1010_a91f;
   case 0x3d:
     pass1_1010_682e(puVar6,0x1,0x66);
     if ((param_1 + 0x160) == 0x0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x66;//
 LAB_1010_a91f:
     pass1_1010_abd2(paVar5,uVar2,uVar10,iVar1);
-    goto switchD_1010_aaef_caseD_b;
+// TODO: goto switchD_1010_aaef_caseD_b;
   case 0x3e:
     iVar1 = 0x5d;
     break;
@@ -772,7 +772,7 @@ pub fn pass1_1010_ae92(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
     }
   }
   else if (param_3 < 0x16) {
-    bVar1 = (char)param_3 - 0x6;
+    bVar1 = param_3 - 0x6;
     uVar3 = param_3 & 0xff00 | bVar1;
     if (bVar1 == 0x0) {
       pass1_1030_7f1a(param_4,param_2);
@@ -799,7 +799,7 @@ pub fn pass1_1010_ae92(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
         return;
       }
     }
-    else if ((char)param_3 == '\a') {
+    else if (param_3 == '\a') {
       pass1_1030_7eda(param_4,param_2);
       return;
     }

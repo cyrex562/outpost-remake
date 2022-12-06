@@ -160,7 +160,7 @@ pub fn pass1_1020_b2da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,para
   }
   uStack18 = SUB42(&DAT_1050_1050,0x0);
   piStack16 = CONCAT22(0x1050,uStack20);
-  do {
+  loop {
     if (param_3 == 0x0) {
       ppaVar7 = &PTR_1048_4230;
     }
@@ -459,7 +459,7 @@ pub fn pass1_1020_b97e(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut 
   pass1_1008_3e76(0x10484236,0x1,local_e - 0x2,local_c);
   return;
 }
-pub fn pass1_1020_ba2b(void)
+pub fn pass1_1020_ba2b()
 
 {
   init_globals_1020_96d4();

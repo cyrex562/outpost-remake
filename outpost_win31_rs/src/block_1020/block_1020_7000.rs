@@ -149,18 +149,18 @@ pub fn palette_op_1020_7270(StructD *pstruct_param_1)
 pub fn post_win_msg_1020_7308(mut param_1: u32,mut param_2: u16 )
 
 {
-  char cVar1;
+  let mut cVar1: u8;
   let mut uVar2: u16;
 
   uVar2 = (param_1 >> 0x10);
   if (param_2 != 0x12) {
     if (param_2 < 0x13) {
-      cVar1 = (char)param_2;
+      cVar1 = param_2;
       if (cVar1 == '\x01') {
         (param_1 + 0x1c) = 0x0;
         return;
       }
-      if (('\x03' < (char)(cVar1 + -0x1)) && ((char)(cVar1 + -0x5) < '\x02')) goto LAB_1020_7310;
+      if (('\x03' < (cVar1 + -0x1)) && ((cVar1 + -0x5) < '\x02')) goto LAB_1020_7310;
     }
     return;
   }//
@@ -388,7 +388,7 @@ pub fn win_1020_75f0(param_1: *mut astruct_283,mut param_2: u32)
     else {
       pUVar1 = &iVar7->field204_0xcc;
       *pUVar1 = *pUVar1 + 0x1;
-      struct_1020_3644(uVar7,(StructA *)CONCAT13((char)(paVar6 >> 0x8),CONCAT12((char)paVar6,uVar3)),
+      struct_1020_3644(uVar7,(StructA *)CONCAT13((paVar6 >> 0x8),CONCAT12(paVar6,uVar3)),
                        iVar7->field204_0xcc,param_1 & 0xffff | uVar9 << 0x10,in_stack_0000ff4c,
                        in_stack_0000ff62);
       uVar9 = uVar3;
@@ -567,7 +567,7 @@ pub fn cleanup_menu_ui_op_1020_795c(StructD *in_struct_1)
 
 
 
-u16 pass1_1020_79ae(void)
+u16 pass1_1020_79ae()
 
 {
   return 0x1;
@@ -610,7 +610,7 @@ pub fn post_win_msg_1020_79fc(param_1: *mut astruct_69,mut param_2: u16 ,mut par
     PostMessage16(0x0,0x0,0x85,iVar4->field8_0x8);
     puVar1 = iVar4->field223_0xe0;
     ppcVar2 = (code **)(*iVar4->field223_0xe0 + 0x28);
-    (**ppcVar2)(s_tile2_bmp_1050_1538,(char)puVar1,(puVar1 >> 0x10),param_4,uVar5);
+    (**ppcVar2)(s_tile2_bmp_1050_1538,puVar1,(puVar1 >> 0x10),param_4,uVar5);
   }
   return;
 }
@@ -675,7 +675,7 @@ StructD * pass1_1020_7b60(StructD *param_1,param_2: u8)
 pub fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40,param_2: *mut StructA)
 
 {
-  INT16 IVar1;
+  let mut IVar1: i16;
   astruct_40 *iVar3;
   let mut uVar3: u16;
   astruct_40 *uVar4;
@@ -779,7 +779,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
     iVar7 = (astruct_781 *)puVar2;
     puVar6 = &iVar7->field_0xe0;
     style = iVar7->field226_0xe2;
-    width = (i16)puVar6;
+    width = puVar6;
     fn_ptr_1 = (code **)(*puVar6 + 0x24);
     (**fn_ptr_1)(s_tile2_bmp_1050_1538,width,style,0x0,0x0,iVar2);
     iVar5 = (-(puVar6 == 0x0) & 0x1e) + 0x25;
@@ -803,9 +803,9 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
       SetTextColor16(CONCAT22(0x100,iVar5),win_hdc_1);
       str46_len = lstrlen16(string_46);
       DVar1 = GetTextExtent16(str46_len,
-                              (LPCSTR)CONCAT13((char)(extraout_DX >> 0x8),CONCAT12((char)extraout_DX,string_1)),
+                              (LPCSTR)CONCAT13((extraout_DX >> 0x8),CONCAT12(extraout_DX,string_1)),
                               win_hdc_1);
-      iVar6 = (i16)(DVar1 >> 0x10);
+      iVar6 = (DVar1 >> 0x10);
       if (is_iconic == 0x0) {
         iVar9 = (iVar3 - iVar1) / 0x2 - iVar6 / 0x2;
         iVar8 = x / 0x2 - DVar1 / 0x2;

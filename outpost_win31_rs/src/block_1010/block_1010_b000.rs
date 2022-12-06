@@ -21,7 +21,7 @@ pub fn bad_1010_bf08(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   bad_1028_e1bc();
   return;
 }
-pub fn pass1_1010_bf1e(mut param_1: i16,u8 *param_2,mut param_3: u32,i16 *param_4)
+pub fn pass1_1010_bf1e(mut param_1: i16,u8 *param_2,mut param_3: u32,param_4: *mut i16)
 
 {
   let mut uVar1: u32;

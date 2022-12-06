@@ -26,7 +26,7 @@ pub fn pass1_1030_2068(param_1: *mut astruct_180)
   pass1_1000_4906((param_1 & 0xffff0000 | ZEXT24(&iVar1[0xc].field18_0x1c)),NULL,0xa);
   pass1_1000_4906((param_1 & 0xffff0000 | ZEXT24(&iVar1[0x15].field10_0xc)),NULL,0x106);
   iStack4 = 0x0;
-  do {
+  loop {
     (&iVar1.field12_0x10)[iStack4] = 0xffff;
     (&iVar1[0xd].field_0x6 + iStack4 * 0x2) = 0x19;
     iStack4 += 0x1;
@@ -48,7 +48,7 @@ pub fn struct_1030_2112(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_366,
   param_3.field0_0x0 = 0x293c;
   pstruct_1.field1_0x2 = 0x1030;
   iStack4 = 0x0;
-  do {
+  loop {
     (&pstruct_1.field14_0x10)[iStack4] = 0xffff;
     (&pstruct_1.field405_0x1a6)[iStack4] = 0x19;
     iStack4 += 0x1;
@@ -356,7 +356,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
   let mut uVar2: u32;
   let mut iVar3: i16;
   let mut uVar4: u16;
-  char cVar5;
+  let mut cVar5: u8;
   astruct_92 *paVar6;
   let mut uVar7: u16;
   let mut iVar8: i16;
@@ -427,12 +427,12 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
     if (0x12 < param_3) {
       return;
     }
-    cVar5 = (char)param_3;
+    cVar5 = param_3;
     if (cVar5 != '\n') {
-      if ((char)(cVar5 + -0xa) < '\x06') {
+      if ((cVar5 + -0xa) < '\x06') {
         return;
       }
-      if ('\x01' < (char)(cVar5 + -0x10)) {
+      if ('\x01' < (cVar5 + -0x10)) {
         return;
       }
     }
@@ -449,7 +449,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
       iVar8 = uVar2 + 0x180;
       uVar4 = (uVar2 >> 0x10);
       iStack38 = 0x1;
-      do {
+      loop {
         iVar3 = iStack38 * 0x2;
         piVar1 = (iVar3 + iVar8);
         *piVar1 = *piVar1 + -0x1;
@@ -468,7 +468,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1030_2852(void)
+pub fn pass1_1030_2852()
 
 {
   return;
@@ -551,7 +551,7 @@ pub fn pass1_1030_29e6(StructD *param_1)
   iVar4 = param_1;
   param_1.address_offset_field_0x0 = 0x3130;
   iVar4.address_offset_field_0x2 = 0x1030;
-  pcVar2 = *(char **)&iVar4.field_0x10;
+  pcVar2 = *&iVar4.field_0x10;
   uVar1 = iVar4.field11_0x12;
   if ((uVar1 | pcVar2) != 0x0) {
     pass1_1030_8496(pcVar2 & 0xffff | uVar1 << 0x10);
@@ -665,7 +665,7 @@ pub fn pass1_1030_2aca(u16_t param_1,param_2: *mut astruct_730,mut param_3: u32)
   local_c[0] = *iVar6.field16_0x10;
   BVar3 = write_to_file_1008_7e1c(param_3,CONCAT22(0x1050,local_c),0x2,in_stack_0000ffc8);
   if (((BVar3 != 0x0) &&
-      (puVar1 = iVar6.field16_0x10, BVar3 = pass1_1008_7c2a(param_3,*(char **)(puVar1 + 0x2)), BVar3 != 0x0)) &&
+      (puVar1 = iVar6.field16_0x10, BVar3 = pass1_1008_7c2a(param_3,*(puVar1 + 0x2)), BVar3 != 0x0)) &&
      (puVar1 = iVar6.field16_0x10,
      iVar4 = write_to_file_1008_7b4c(param_3,(astruct_615 *)(puVar1 & 0xffff0000 | (puVar1 + 0x6))),
      iVar4 != 0x0)) {
@@ -846,7 +846,7 @@ i16 pass1_1030_2f1a(mut param_1: u32,param_2: *mut u16,param_3: *mut u16)
   uVar2 = (param_1 + 0x10);
   iVar3 = uVar2;
   iVar1 = (iVar3 + 0xc);
-  if (iVar1 - 0x1U < 0x9) {
+  if (iVar1 - 0x1 < 0x9) {
     switch(iVar1) {
     default:
       *param_3 = 0x19;

@@ -762,8 +762,8 @@ struct astruct_738 {
     u8 field31_0x1f;
     u8 field32_0x20;
     u8 field33_0x21;
-    INT16 field34_0x22;
-    INT16 field35_0x24;
+    let mut field34_0x22: i16;
+    let mut field35_0x24: i16;
     u8 field36_0x26;
     u8 field37_0x27;
     u8 field38_0x28;

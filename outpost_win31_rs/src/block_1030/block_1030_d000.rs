@@ -300,12 +300,12 @@ pub fn pass1_1030_d3b2(mut param_1: i16,mut param_2: i16,mut param_3: u16 ,mut p
   uStack18 = CONCAT22(extraout_DX_01,uVar8);
   bVar4 = false;
   uStack14 = 0x0;
-  do {
+  loop {
     if (uStack18 <= uStack14) {//
 LAB_1030_d51b:
       if (puStack26 != NULL) {
         ppcVar3 = (code **)*puStack26;
-        (**ppcVar3)(uVar9,(char)uVar6,(char)puVar7,0x1);
+        (**ppcVar3)(uVar9,uVar6,puVar7,0x1);
       }
       if (!bVar4) {
         return;
@@ -325,7 +325,7 @@ LAB_1030_d51b:
         uVar9 = 0x1028;
         pass1_1028_6228(uVar11,0x1,0x0,0x7);
         bVar4 = true;
-        goto LAB_1030_d51b;
+    // TODO: goto LAB_1030_d51b;
       }
     }
     uStack14 += 0x1;
@@ -648,7 +648,7 @@ pub fn pass1_1030_dace(mut param_1: u32)
   (**ppcVar2)(0x1028,puVar1,(uVar9 + 0xe));
   uStack20 = 0x0;
   uVar8 = extraout_DX;
-  do {
+  loop {
     if ((puVar6 & 0xffff | extraout_DX << 0x10) <= uStack20) {
       return;
     }
@@ -669,7 +669,7 @@ pub fn pass1_1030_dace(mut param_1: u32)
 
 
 
-u16 pass1_1030_db72(void)
+u16 pass1_1030_db72()
 
 {
   return 0x1;
@@ -716,7 +716,7 @@ pub fn pass1_1030_db92(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u16,mut
 
 
 
-u16 pass1_1030_dc02(void)
+u16 pass1_1030_dc02()
 
 {
   return 0x1;

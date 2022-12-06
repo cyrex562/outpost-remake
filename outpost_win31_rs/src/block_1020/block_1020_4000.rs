@@ -122,11 +122,11 @@ pub fn post_msg_1020_4394(mut param_1: u32,mut param_2: u16 )
     }
   }
   else if (param_2 < 0x11) {
-    if ((char)param_2 == '\x01') {
+    if (param_2 == '\x01') {
       (iVar2 + 0x18) = 0x0;
       return;
     }
-    if ((char)param_2 == '\v') {
+    if (param_2 == '\v') {
       uVar1 = (iVar2 + 0x2c);
       (uVar1 + 0xe) = (iVar2 + -0xda);
       return;
@@ -249,7 +249,7 @@ pub fn mixed_menu_op_1020_44ec
       uVar14 = (uVar2 >> 0x10);
       iVar12 = uVar2;
       uVar1 = (iVar12 + 0x42);
-      puVar9 = *(u8 **)(iVar12 + 0x44);
+      puVar9 = (iVar12 + 0x44);
       bStack293 = (uVar1 >> 0x18);
       uVar7 = bStack293;
       if (bStack293 == 0x0) {
@@ -275,7 +275,7 @@ pub fn mixed_menu_op_1020_44ec
         HVar6 = iVar9->hmenu_0x106;
         w_flags = 0x1;
         UVar4 = 0x77;
-        goto LAB_1020_464c;
+    // TODO: goto LAB_1020_464c;
       }
       HVar6 = iVar9->hmenu_0x106;
       UVar4 = 0x77;
@@ -330,7 +330,7 @@ pub fn mixed_menu_op_1020_44ec
       UVar4 = 0x200;
     }
     w_flags = 0x0;
-    goto LAB_1020_464c;
+// TODO: goto LAB_1020_464c;
   }//
 LAB_1020_479e:
   iVar12 = param_3 + -0x1;
@@ -342,7 +342,7 @@ LAB_1020_479e:
       HVar6 = 0x1;//
 LAB_1020_47e3:
       w_flags = 0x401;
-      goto LAB_1020_464c;
+  // TODO: goto LAB_1020_464c;
     }
     UVar4 = 0x0;
     EnableMenuItem16(0x400,0x0,param_4);
@@ -377,7 +377,7 @@ LAB_1020_47e3:
                         uVar1 & 0xffff | uVar7 << 0x10);
       }
       UVar4 = 0x0;
-      do {
+      loop {
         CheckMenuItem16(0x400,UVar4,param_4);
         w_item_id = param_4;
         EnableMenuItem16(0x401,UVar4,param_4);
@@ -520,7 +520,7 @@ pub fn win_sys_op_1020_493c
       return;
     }
     uVar16 = 0xffff;
-    goto LAB_1020_4ef8;
+// TODO: goto LAB_1020_4ef8;
   }
   if (param_4 < 0x133) {
     if (param_4 == 0x102) {
@@ -634,7 +634,7 @@ LAB_1020_4c5f:
           return;
         }
         pass1_1028_84ca((astruct_97 *)CONCAT22(0x1050,&local_13c),uStack22,uVar13,uStack10,puStack14);
-        goto LAB_1020_4b6c;
+    // TODO: goto LAB_1020_4b6c;
       }
     }
     else {
@@ -644,7 +644,7 @@ LAB_1020_4c5f:
             local_144 = mixed_1010_20ba((astruct_57 *)param_2,_u16_1050_0ed0,(u8 **)CONCAT22(param_7,0x2f),
                                         in_stack_0000fb52,in_stack_0000fc76,in_stack_0000fc7c,in_stack_0000fc80);
             uVar16 = (local_144 >> 0x10);
-            uStack320 = *(char **)(local_144 + 0x24);
+            uStack320 = *(local_144 + 0x24);
             uVar11 = (local_144 + 0x26);
             paVar15 = (astruct_57 *)(param_2 & 0xffff0000 | uVar11);
             uStack34 = uVar11 | uStack320;
@@ -741,7 +741,7 @@ LAB_1020_4c5f:
               uStack852 = uVar11;
             }
           }
-          goto LAB_1020_4c5f;
+      // TODO: goto LAB_1020_4c5f;
         }
         if (param_4 == 0x12f) {
           pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),CONCAT22(0x1050,&local_24e));
@@ -757,7 +757,7 @@ LAB_1020_4c5f:
               return;
             }
             iVar6 = 0x7;
-            goto LAB_1020_49b7;
+        // TODO: goto LAB_1020_49b7;
           }
           pass1_1020_61c4(uVar9,uVar13,CONCAT22(0x1050,&local_144),CONCAT22(0x1050,&local_24e));
           iVar6 = local_24e + 0x68;
@@ -871,7 +871,7 @@ LAB_1020_49b7:
       iVar6 = 0x27;
       u16_1050_5a68 = uVar5;
     }
-    goto LAB_1020_49b7;
+// TODO: goto LAB_1020_49b7;
   }
   switch(param_4) {
   case 0x133:
@@ -888,7 +888,7 @@ LAB_1020_49b7:
       return;
     }
     uVar16 = 0x1;
-    goto LAB_1020_4ef8;
+// TODO: goto LAB_1020_4ef8;
   case 0x135:
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0x0) {
@@ -903,7 +903,7 @@ LAB_1020_49b7:
       return;
     }
     uVar16 = 0xfffb;
-    goto LAB_1020_4ef8;
+// TODO: goto LAB_1020_4ef8;
   case 0x137:
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0x0) {
@@ -930,14 +930,14 @@ LAB_1020_4ef8:
     uVar16 = 0x0;
     break;
   default:
-    goto switchD_1020_518a_caseD_13a;
+// TODO: goto switchD_1020_518a_caseD_13a;
   case 0x13c:
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x2);
     if (uVar10 != 0x0) {
       iVar6 = 0x1a;
-      goto LAB_1020_49b7;
+  // TODO: goto LAB_1020_49b7;
     }
-    goto switchD_1020_518a_caseD_13a;
+// TODO: goto switchD_1020_518a_caseD_13a;
   }
   pass1_1020_2a94(&uVar9->field_0xce,CONCAT22(uVar16,uVar12));
 switchD_1020_518a_caseD_13a:

@@ -582,7 +582,7 @@ struct astruct_52 {
     u8 field5_0x5;
     u8 field6_0x6;
     u8 field7_0x7;
-    INT16 field8_0x8;
+    let mut field8_0x8: i16;
     u8 field9_0xa;
     u8 field10_0xb;
     u8 field11_0xc;

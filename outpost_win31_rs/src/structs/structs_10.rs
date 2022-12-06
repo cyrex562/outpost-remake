@@ -9,7 +9,7 @@ struct astruct_270 {
     u8 field5_0x7;
     u8 field6_0x8;
     u8 field7_0x9;
-    char field8_0xa;
+    let mut field8_0xa: u8;
     u8 field9_0xb;
     u8 field10_0xc;
     u8 field11_0xd;

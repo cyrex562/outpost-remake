@@ -117,7 +117,7 @@ astruct_97 * struct_op_1028_d1dc(param_1: *mut astruct_97,mut param_2: u16 )
 
 
 
-u16 FUN_1028_d222(void)
+u16 FUN_1028_d222()
 
 {
   return 0x1;
@@ -125,7 +125,7 @@ u16 FUN_1028_d222(void)
 
 
 
-u16 FUN_1028_d228(void)
+u16 FUN_1028_d228()
 
 {
   return 0x1;

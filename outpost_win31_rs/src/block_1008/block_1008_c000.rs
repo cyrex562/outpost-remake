@@ -71,7 +71,7 @@ BOOL16 pass1_1008_c6ae(mut param_1: u32,mut param_2: i16,mut param_3: i16)
 
 
 
-u32 * pass1_1008_c6fa(i16 *param_1,mut param_2: i16)
+u32 * pass1_1008_c6fa(param_1: *mut i16,mut param_2: i16)
 
 {
   if ((0x0 < param_2) && (param_2 < 0x47)) {
@@ -139,7 +139,7 @@ pub fn pass1_1008_c79a(mut param_1: u32,char *param_2)
     uStack14 = CONCAT22(extraout_DX,string_1);
     puVar2 = (extraout_DX | string_1);
     if (puVar2 == NULL) break;
-    iVar1 = pass1_1000_3d7a(*(char **)(string_1 + 0x4),param_2);
+    iVar1 = pass1_1000_3d7a(*(string_1 + 0x4),param_2);
     if (iVar1 == 0x0) {
       puVar5 = pass1_1020_a43e(puVar2,CONCAT22(0x1050,local_12));
       uVar3 = (puVar5 >> 0x10);
@@ -622,7 +622,7 @@ pub fn pass1_1008_cda2(param_1: *mut astruct_263,mut param_2: u32)
           local_2e._8_2_ = pass1_1030_ce2e(uStack34,(uStack34 >> 0x10),uStack36);
           if (local_2e._8_2_ != 0x0) {
             pass1_1008_5784(CONCAT22(0x1050,local_2e),iVar15->field16_0x1a);
-            do {
+            loop {
               puVar9 = (astruct_206 *)local_2e;
               pass1_1008_5b12(CONCAT22(0x1050,puVar9));
               uVar5 = paVar10;

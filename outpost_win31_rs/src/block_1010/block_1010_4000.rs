@@ -68,7 +68,7 @@ i16 pt_in_rect_1010_40f8(param_1: *mut astruct_57,mut param_2: u32,POINT16 *para
 
   iStack6 = 0x0;
   uStack4 = 0x0;
-  do {
+  loop {
     uVar11 = (param_2 >> 0x10);
     iVar10 = param_2;
     piVar1 = (iVar10 + 0x74);
@@ -111,7 +111,7 @@ LAB_1010_413e:
     BVar3 = PtInRect16(*param_3,(RECT16 *)((iStack6 * 0x10 + (iVar10 + 0x24)) * 0x8 + (iVar10 + 0x70)));
     if (BVar3 != 0x0) {
       uStack4 = 0x1;
-      goto LAB_1010_413e;
+  // TODO: goto LAB_1010_413e;
     }
     iStack6 += 0x1;
   } while( true );
@@ -173,7 +173,7 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
   paVar8 = (astruct_57 *)(uVar9 & 0xffff0000 | uStack10 >> 0x10);
   iVar9->field112_0x74 = (uStack10 + 0x22);
   if (*(i32 *)&iVar9->field_0x70 != 0x0) {
-    pcStack34 = *(char **)&iVar9->field_0x70;
+    pcStack34 = *&iVar9->field_0x70;
     pcStack30 = pcStack34;
     fn_ptr_1000_17ce(pcStack34);
     &iVar9->field_0x70 = 0x0;
@@ -427,14 +427,14 @@ LAB_1010_469a:
       if ((paVar2[0x1].field19_0x14 != 0x0) && (paVar2[0x1].field19_0x14 != 0x4)) {
         pass1_1010_459e(param_1);
       }
-      goto LAB_1010_46e8;
+  // TODO: goto LAB_1010_46e8;
     }
     piVar1 = (&paVar2->field30_0x22 + 0x2);
     *piVar1 = *piVar1 + -0x1;
     if (*piVar1 < 0x0) {
       (&paVar2->field30_0x22 + 0x2) = 0xf;
     }
-    goto LAB_1010_469a;
+// TODO: goto LAB_1010_469a;
   }
   pass1_1010_1f62(param_1,0x2);
   pass1_1010_45d6(param_1);//
@@ -449,8 +449,8 @@ LAB_1010_46e8:
 pub fn get_sys_metrics_1010_46f6(mut param_1: u32,param_2: *mut astruct_57)
 
 {
-  INT16 IVar1;
-  INT16 IVar2;
+  let mut IVar1: i16;
+  let mut IVar2: i16;
   let mut iVar3: i16;
   let mut uVar4: u16;
   let mut puVar5: *mut u32;
@@ -502,7 +502,7 @@ pub fn draw_1010_47ae(mut param_1: u32)
   let mut uStack4: u16;
 
   uStack4 = 0x0;
-  do {
+  loop {
     draw_op_1010_47d0((astruct_27 *)param_1,(param_1 >> 0x10),uStack4);
     uStack4 += 0x1;
   } while (uStack4 < 0x10);
@@ -568,7 +568,7 @@ pub fn draw_op_1010_47d0(param_1: *mut astruct_27,mut param_2: u16 ,mut param_3:
   pass1_1010_8170(puVar5,_u16_1050_14cc,iVar5);
   iVar8 = (astruct_739 *)(param_3 * 0x4);
   (iVar8 + (&param_1->field_0x0 + 0x26)) = iVar5;
-  *(u8 **)(iVar8 + (&param_1->field_0x0 + 0x28)) = puVar5;
+  (iVar8 + (&param_1->field_0x0 + 0x28)) = puVar5;
   base_addr_1 = &DAT_1050_1050;
   offset_1 = 0x1380;
   uVar16 = 0x0;
@@ -599,7 +599,7 @@ pub fn draw_op_1010_47d0(param_1: *mut astruct_27,mut param_2: u16 ,mut param_3:
     if (uVar5 != 0x0) {
       uVar4 = &param_1[0x1].field23_0x1a;
       uVar11 = (uVar4 >> 0x10);
-      iVar7 = (i16)uVar4;
+      iVar7 = uVar4;
       Rectangle16(*(INT16 *)(iVar4 + iVar7 + 0x6),*(INT16 *)(iVar4 + iVar7 + 0x4),*(INT16 *)(iVar4 + iVar7 + 0x2),
                   *(INT16 *)(iVar4 + iVar7),hdc16_var_1);
     }
@@ -735,7 +735,7 @@ pub fn pass1_1010_4a8a(mut param_1: u32,param_2: *mut astruct_19,param_3: *mut a
                     mut param_6: u16 ,mut param_7: u16 ,mut param_8: u16 ,mut param_9: u16 )
 
 {
-  INT16 IVar1;
+  let mut IVar1: i16;
   let mut uVar3: u16;
   let mut paVar2: *mut Struct57;
   let mut unaff_CS: u16;
@@ -826,15 +826,15 @@ pub fn free_rsrc_1010_4b3e(StructD *param_1)
     }
   }
   uVar5 = &pstructd_1->field11_0x12;
-  fn_ptr_1000_17ce(*(char **)(uVar5 + 0x4));
-  fn_ptr_1000_17ce(*(char **)&pstructd_1->field11_0x12);
+  fn_ptr_1000_17ce(*(uVar5 + 0x4));
+  fn_ptr_1000_17ce(*&pstructd_1->field11_0x12);
   puVar1 = (&pstructd_1->field12_0x14 + 0x2);
   uVar2 = pstructd_1->field13_0x18;
   if ((uVar2 | puVar1) != 0x0) {
     fn_ptr_1 = (code **)*puVar1;
     (**fn_ptr_1)(0x1000,puVar1,uVar2,0x1);
   }
-  fn_ptr_1000_17ce(*(char **)&pstructd_1->field14_0x1a);
+  fn_ptr_1000_17ce(*&pstructd_1->field14_0x1a);
   pass1_1010_1d80(param_1);
   return;
 }
@@ -1009,7 +1009,7 @@ pub fn pt_in_rect_1010_4e08(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 
   (iVar4 + 0x24) = 0x0;
   iStack12 = 0x0;
   iStack10 = 0x0;
-  do {
+  loop {
     piVar1 = (iVar4 + 0x30);
     if (*piVar1 == iStack12 || *piVar1 < iStack12) {//
 LAB_1010_4e67:
@@ -1025,7 +1025,7 @@ LAB_1010_4e67:
     if (BVar3 != 0x0) {
       iStack10 = iStack12;
       bVar2 = true;
-      goto LAB_1010_4e67;
+  // TODO: goto LAB_1010_4e67;
     }
     iStack12 += 0x1;
   } while( true );

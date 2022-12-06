@@ -194,8 +194,8 @@ pub fn win_1020_0316(mut param_1: u16 ,param_2: *mut StructA)
   paVar4 = (astruct_57 *)(paVar4 & 0xffff0000 | puVar6 >> 0x10);
   uVar5 = (param_2 >> 0x10);
   iVar1 = (StructA *)param_2;
-  iVar1[0x1].field11_0x16 = (i16)puVar6;
-  iVar1[0x1].field12_0x18 = (i16)(puVar6 >> 0x10);
+  iVar1[0x1].field11_0x16 = puVar6;
+  iVar1[0x1].field12_0x18 = (puVar6 >> 0x10);
   uVar1 = &iVar1[0x1].field11_0x16;
   (uVar1 + 0x16) = iVar1[0x1].field15_0x1e;
   paVar2 = iVar1[0x1].field18_0x22;
@@ -552,7 +552,7 @@ pub fn win_1020_09ba(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut StructA)
   if (puVar1 != NULL) {
     struct_1020_0baa(puVar1,CONCAT22(paVar2,param_1),iVar1.field4_0x8);
     iVar1[0x1].field11_0x16 = param_1;
-    iVar1[0x1].field12_0x18 = (i16)puVar1;
+    iVar1[0x1].field12_0x18 = puVar1;
     return;
   }
   &iVar1[0x1].field11_0x16 = 0x0;
@@ -900,7 +900,7 @@ pub fn win_help_op_1020_0ec4(mut param_1: u16 ,u32 *param_2,mut param_3: u16 )
 
 {
   code **ppcVar1;
-  char cVar2;
+  let mut cVar2: u8;
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut uVar5: u16;
@@ -961,7 +961,7 @@ pub fn win_help_op_1020_0ec4(mut param_1: u16 ,u32 *param_2,mut param_3: u16 )
     if (0xf3 < param_3) {
       return;
     }
-    cVar2 = (char)param_3;
+    cVar2 = param_3;
     if ((cVar2 + 0x91U) == 0x0) {
       uVar4 = FUN_1010_830a(param_3 & 0xff00 | (cVar2 + 0x91U),paVar6,unaff_CS,_u16_1050_14cc,0x1f8);
       WinHelp16(0x28,0x1,CONCAT22(paVar6,uVar4),*(HWND16 *)(uVar3 + 0x8));

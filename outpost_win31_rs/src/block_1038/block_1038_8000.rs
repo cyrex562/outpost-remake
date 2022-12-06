@@ -306,17 +306,17 @@ pub fn pass1_1038_8810(mut param_1: u32)
 
 
 
-u16 FUN_1038_8842(void)
+u16 FUN_1038_8842()
 
 {
   return 0x0;
 }
-pub fn pass1_1038_8848(void)
+pub fn pass1_1038_8848()
 
 {
   return;
 }
-pub fn pass1_1038_884c(void)
+pub fn pass1_1038_884c()
 
 {
   return;

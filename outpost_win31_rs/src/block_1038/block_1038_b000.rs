@@ -261,7 +261,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
       if (uStack10 == 0x2) {
         BStack6 = 0x0;
         uStack4 = 0x0;
-        goto LAB_1038_bc26;
+    // TODO: goto LAB_1038_bc26;
       }
       SendMessage16(0x0,(uStack10 == 0x0),0x401,HStack8);
       UVar3 = IsDlgButtonChecked(param_4,iVar8->field6_0x6);
@@ -309,7 +309,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
         UVar3 = IsDlgButtonChecked(uVar6,iVar8->field6_0x6);
         if (UVar3 == 0x1) {
           pass1_1008_d818(iVar8->field141_0x8e,uVar6);
-          goto LAB_1038_bba2;
+      // TODO: goto LAB_1038_bba2;
         }
       }
     }
@@ -333,7 +333,7 @@ pub fn win_ui_op_1038_b922(StructD *param_1,StructC *param_2,mut param_3: u32,mu
       paVar12 = (astruct_57 *)CONCAT22(uVar9,uVar15);
       uVar13 = SUB21(local_464,0x0);
       uVar6 = wsprintf16(local_414,0x5bc01050,
-                         CONCAT13((char)(local_464 >> 0x8),CONCAT12(uVar13,0x1050)),uVar13,
+                         CONCAT13((local_464 >> 0x8),CONCAT12(uVar13,0x1050)),uVar13,
                          &DAT_1050_1050,pcVar11,uVar15);
       uVar9 = 0x1000;
       mem_op_1000_179c(0xb4,paVar12);
@@ -445,7 +445,7 @@ pub fn pass1_1038_bca8(mut param_1: u32)
     struct_1008_4c58(paVar5);
   }
   *(astruct_394 **)(iVar10 + 0x70) = paVar5;
-  *(u8 **)(iVar10 + 0x72) = puVar8;
+  (iVar10 + 0x72) = puVar8;
   pass1_1008_4d84(puVar8,*(astruct_90 **)(iVar10 + 0x70),puVar6 & 0xffff | uVar4);
   return;
 }

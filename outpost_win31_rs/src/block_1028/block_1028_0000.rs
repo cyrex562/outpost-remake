@@ -283,7 +283,7 @@ u16 pass1_1028_04ee(mut param_1: u32,u32 *param_2)
 
   *param_2 = 0x0;
   pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0x22));
-  do {
+  loop {
     lVar5 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     if (lVar5 == 0x0) {
       return 0x0;
@@ -656,12 +656,12 @@ u16 * pass1_1028_0b64(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i1
   (param_2 + 0x2) = 0x1028;
   return &param_2.field0_0x0;
 }
-pub fn FUN_1028_0b8e(void)
+pub fn FUN_1028_0b8e()
 
 {
   return;
 }
-pub fn FUN_1028_0b92(void)
+pub fn FUN_1028_0b92()
 
 {
   return;

@@ -663,7 +663,7 @@ struct astruct_37 {
     u8 field141_0x9b;
     u8 field142_0x9c;
     u8 field143_0x9d;
-    INT16 field144_0x9e;
+    let mut field144_0x9e: i16;
     let mut field145_0xa0: u16;
 };
 
@@ -978,4 +978,3 @@ struct astruct_397 {
     u8 field33_0x21;
     i32 * field34_0x22;
 };
-

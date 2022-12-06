@@ -122,7 +122,7 @@ pub fn pass1_1040_b17c(u8 *param_1,mut param_2: u32,mut param_3: u32)
     uVar2 = (iVar6 + 0x90);
     uVar2 = (uVar2 + 0x6);
     pcVar3 = pass1_1010_b038(puVar8,uVar2,(uVar2 >> 0x10),
-                             *(u8 **)(puStack12 + 0x4),(ppuVar9 >> 0x10));
+                             (puStack12 + 0x4),(ppuVar9 >> 0x10));
     string_1040_a626(uVar5,puStack12,CONCAT22(uVar5,pcVar3));
     puStack12 = (puStack12 & 0xffff0000 | (puStack12 + 0xa));
   }
@@ -136,7 +136,7 @@ pub fn unk_win_ui_op_1040_b230(mut param_1: u16 ,StructB *param_2)
 
 {
   code **ppcVar1;
-  INT16 cy_caption_1;
+  let mut cy_caption_1: i16;
   let mut in_register_0000000a: u16;
   let mut paVar2: *mut Struct57;
   let mut uVar3: u16;
@@ -250,19 +250,19 @@ LAB_1040_b3ea:
     if (dlg_ctrl_id == 0x14c) {
       uVar3 = 0xffff;
       uVar6 = 0x0;
-      goto LAB_1040_b41a;
+  // TODO: goto LAB_1040_b41a;
     }
     if (dlg_ctrl_id == 0x175) {
       uVar3 = 0xff;
       uVar6 = 0x0;
-      goto LAB_1040_b41a;
+  // TODO: goto LAB_1040_b41a;
     }
   }
   else if (param_3 != 0x4) {
     if ((param_3 == 0x4) || (0x1 < param_3 - 0x5)) {
       return;
     }
-    goto LAB_1040_b3ea;
+// TODO: goto LAB_1040_b3ea;
   }
   uVar3 = _PTR_LOOP_1050_5efa;
   uVar6 = (_PTR_LOOP_1050_5efa >> 0x10);//
@@ -354,7 +354,7 @@ LAB_1040_b50f:
       ui_op_1010_79aa(puVar8,0xfda,0x0);
       if (iVar4 == 0x0) {
         uVar7 = 0xd;
-        goto LAB_1040_b50f;
+    // TODO: goto LAB_1040_b50f;
       }
     }
   }
@@ -559,7 +559,7 @@ pub fn pass1_1040_b7ee(param_1: *mut astruct_57,i32 param_2,mut param_3: u16 )
 
 
 
-u16 pass1_1040_b864(u32 *param_1,i16 *param_2,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
+u16 pass1_1040_b864(u32 *param_1,param_2: *mut i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
 
 {
   code **ppcVar1;
@@ -885,7 +885,7 @@ LAB_1040_be78:
                     mixed_1010_20ba(paVar14,_u16_1050_0ed0,(u8 **)CONCAT22(param_2,0x32),in_stack_0000fe86,
                                     in_stack_0000ffaa,in_stack_0000ffb0,in_stack_0000ffb4);
           uVar15 = paVar14 & 0xffff0000 | paVar17 >> 0x10;
-          iVar7 = (i16)paVar17;
+          iVar7 = paVar17;
           ui_op_1010_79aa(paVar17,0xfc6,param_3->field169_0xb0);
           if (iVar7 != 0x0) {
             return;
@@ -910,7 +910,7 @@ LAB_1040_be78:
             EnableWindow16(0x0,hwnd);
             return;
           }
-          goto LAB_1040_be78;
+      // TODO: goto LAB_1040_be78;
         }
         if ((param_3->field171_0xb6 == 0x0) || (BVar7 = IsWindow16(param_3->field171_0xb6), BVar7 == 0x0)) {
           uVar16 = pass1_1038_af40(param_3,paVar14,_PTR_LOOP_1050_5b7c,param_3->field6_0x6,0x1b);
@@ -919,7 +919,7 @@ LAB_1040_be78:
           return;
         }
         param_2 = param_3->field171_0xb6;
-        goto LAB_1040_bd39;
+    // TODO: goto LAB_1040_bd39;
       }
       puVar16 = mixed_1010_20ba(paVar14,_u16_1050_0ed0,(u8 **)CONCAT22(param_2,0x3),in_stack_0000fe86,
                                 in_stack_0000ffaa,in_stack_0000ffb0,in_stack_0000ffb4);
@@ -1084,7 +1084,7 @@ pub fn invalidate_rect_1040_c028(mut param_1: u32,mut param_2: i16)
       rect = &local_a;
       hwnd = (HWND16)&DAT_1050_1050;
       erase = NULL;
-      goto LAB_1040_c19d;
+  // TODO: goto LAB_1040_c19d;
     }
     local_a.x = 0x0;
     local_a.y = 0x0;

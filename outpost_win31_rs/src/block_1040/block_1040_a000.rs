@@ -57,7 +57,7 @@ pub fn pass1_1040_a2cc(mut param_1: u16 ,u8 *param_2,mut param_3: i16,mut param_
   let mut uVar1: u16;
 
   if (param_5 == 0x1826) {
-    if ((param_5 == 0x1) || ((0x1 < param_5 - 0x1U && (param_5 - 0x3 < 0x2)))) {
+    if ((param_5 == 0x1) || ((0x1 < param_5 - 0x1 && (param_5 - 0x3 < 0x2)))) {
       uVar1 = 0x1;
     }
     else {
@@ -257,7 +257,7 @@ pub fn pass1_1040_a5d0(StructD *param_1)
     pass1_1000_54e8(0xa582,&PTR_LOOP_1050_1040,(uVar1 - 0x2),0xa,uVar1,uVar2);
     fn_ptr_1000_17ce(CONCAT22(uVar2,uVar1 - 0x2));
   }
-  fn_ptr_1000_17ce(*(char **)&iVar4->field7_0xc);
+  fn_ptr_1000_17ce(*&iVar4->field7_0xc);
   return;
 }
 pub fn string_1040_a626(mut param_1: u16 ,param_2: *mut u16,char *param_3)

@@ -282,7 +282,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uVar4 = &local_struct_1->field3_0x6;
   hdc16_var_48 = *(HDC16 *)(uVar4 + 0x12);
   uStack58 = (astruct_737 *)(&u16_1050_0008 + 0x1);
-  do {
+  loop {
     HVar3 = hdc16_var_48;
     HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack34),0x0,0x0);
     hgdiobj16_var_52 = SelectObject16(HStack50,HVar3);
@@ -328,7 +328,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
   uStack58 = (astruct_737 *)(&u16_1050_0002 + 0x1);
-  do {
+  loop {
     HVar3 = hdc16_var_48;
     HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack38),0x0,0x0);
     hgdiobj16_var_52 = SelectObject16(HStack50,HVar3);
@@ -365,7 +365,7 @@ StructD * pass1_1020_96a2(StructD *param_1,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn init_globals_1020_96d4(void)
+pub fn init_globals_1020_96d4()
 
 {
   let mut puVar1: *mut u16;

@@ -413,8 +413,8 @@ pub fn set_di_bits_to_device_1008_45d6(param_1: *mut astruct_76,INT16 param_2,HD
 pub fn stretch_di_bits_1008_465a(param_1: *mut astruct_76,HDC16 hdc_param_2)
 
 {
-  INT16 x_src;
-  INT16 y_src;
+  let mut x_src: i16;
+  let mut y_src: i16;
   let mut uVar2: u32;
   let mut bVar3: bool;
   astruct_76 *iVar3;
@@ -631,7 +631,7 @@ pub fn pass1_1008_48de(param_1: *mut u16,mut param_2: i16,char param_3,mut param
   let mut unaff_ES: u16;
   let mut uVar9: u16;
 
-  uVar6 = param_4 & 0xff | ((char)(param_4 >> 0x8) + (char)param_4 + param_3) << 0x8;
+  uVar6 = param_4 & 0xff | ((param_4 >> 0x8) + param_4 + param_3) << 0x8;
   puVar7 = (unaff_BP + 0x1);
   pbVar1 = (param_1 + unaff_SI);
   bVar5 = (param_4 & 0xff);
@@ -676,7 +676,7 @@ pub fn pass1_1008_48de(param_1: *mut u16,mut param_2: i16,char param_3,mut param
   param_1[0x11] = (puVar7 + 0xa);
   *param_1 = &u16_1050_4c4c;
   param_1[0x1] = 0x1008;
-  uVar4 = str_op_1008_60e8(uVar6,*(char **)(puVar7 + 0xc));
+  uVar4 = str_op_1008_60e8(uVar6,*(puVar7 + 0xc));
   uVar2 = (puVar7 + 0x6);
   uVar9 = (uVar2 >> 0x10);
   iVar8 = uVar2;
@@ -787,7 +787,7 @@ u16 read_file_1008_49e8(HFILE16 param_1,mut param_2: u16 ,astruct_81 *struct_par
       return 0x1;
     }
     if (struct_1->hfile_0xc == -0x1) {
-      hfile_1 = _lopen16(0x0,*(char **)&struct_1->field3_0x8);
+      hfile_1 = _lopen16(0x0,*&struct_1->field3_0x8);
       struct_1->hfile_0xc = hfile_1;
       if (hfile_1 == 0xffff) {
         return 0x0;
@@ -799,7 +799,7 @@ u16 read_file_1008_49e8(HFILE16 param_1,mut param_2: u16 ,astruct_81 *struct_par
        (iStack6 = CONCAT22(uStack20,param_2), param_1 == &PTR_LOOP_1050_4d42)) {
       _llseek16(0x0,0x0,struct_1->hfile_0xc);
       lVar10 = mem_op_1000_0a48(0x1,iStack6,(iStack6 >> 0x10),_PTR_LOOP_1050_5f2c);
-      lVar5 = (i16)(lVar10 >> 0x10);
+      lVar5 = (lVar10 >> 0x10);
       &struct_1->buffer_0x1a = lVar10;
       (&struct_1->buffer_0x1a + 0x2) = lVar5;
       if ((lVar5 | &struct_1->buffer_0x1a) != 0x0) {
@@ -813,7 +813,7 @@ u16 read_file_1008_49e8(HFILE16 param_1,mut param_2: u16 ,astruct_81 *struct_par
         struct_1->field10_0x1e = 0x1;
         struct_1->field6_0xe = struct_1->buffer_0x1a;
         uVar3 = struct_1->buffer_0x1a;
-        iVar1 = (i16)uVar3;
+        iVar1 = uVar3;
         iVar1 = iVar1 + 0xe;
         struct_1->field7_0x12 = uVar3 & 0xffff0000 | iVar1;
         uVar1 = iVar1 + 0x436;
@@ -837,7 +837,7 @@ u16 read_file_1008_49e8(HFILE16 param_1,mut param_2: u16 ,astruct_81 *struct_par
           param_1 = (HFILE16)(uVar4 >> 0x10);
           struct_op_1008_4c98((astruct_76 *)(uVar1 & 0xffff | uVar2 << 0x10),uVar6,0x100);
           &struct_1->field2_0x4 = uVar6;
-          *(u8 **)(&struct_1->field2_0x4 + 0x2) = extraout_DX;
+          (&struct_1->field2_0x4 + 0x2) = extraout_DX;
         }
         if (struct_1->field13_0x22 == 0x0) {
           return 0x1;

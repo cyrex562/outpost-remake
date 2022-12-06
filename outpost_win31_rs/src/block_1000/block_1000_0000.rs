@@ -101,7 +101,7 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32
         }
     } //while u_stack8 < 0x5;
     if (pstruct7_param_1.field_0x32) != 0x0 {
-        ((code) (pstruct7_param_1.field_0x32))();
+        ( (pstruct7_param_1.field_0x32))();
     }
     // TODO:
 //    LAB_1000_00f9:
@@ -233,7 +233,7 @@ pub unsafe fn mem_op_1000_01b0(param_1: *mut Struct7) -> bool
                                                          0x2,
                                                          param_1);
                 if uvar4 == 0x0 {
-                    return (bool) ('\x01' - ((*param_1.field_0xa) == 0x0));
+                    return  ('\x01' - ((*param_1.field_0xa) == 0x0));
                 }
                 dvar6 = mem_op_1000_1532(param_1, 0x1050);
                 u16_var5 = u16_var9 & 0xfffe;
@@ -971,7 +971,7 @@ pub unsafe fn mem_op_1000_0b20(mut param_1: u16,
         }
 //        LAB_1000_0b64:
         if (((((uStack20 & 0x2) == 0x0) || ((uStack20 & 0x40) != 0x0)) || ((param_2 + 0x32) == 0x0))
-            || (uVar3 = ((code) (param_2 + 0x32))(), uVar3 < uVar5)) {
+            || (uVar3 = ( (param_2 + 0x32))(), uVar3 < uVar5)) {
             if (((uStack20 & 0x10) != 0x0) || (uVar3 = uVar2, UVar6 = mem_op_1000_03c6((param_2 + 0x1a),
                                                                                        0x0,
                                                                                        uVar2,
@@ -1104,7 +1104,7 @@ pub unsafe fn pass1_1000_0c32(mut param_1: u16,
         if ((iVar7 + 0x34) == 0x0) {
             break;
         }
-        uStack6 = ((code) (iVar7 + 0x34))();
+        uStack6 = ( (iVar7 + 0x34))();
         if ((uStack6 < param_1) || (puVar6 =  (param_3 + 0xe), puVar6 == NULL)) {
             break;
         }

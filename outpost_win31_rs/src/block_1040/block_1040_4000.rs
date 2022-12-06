@@ -297,7 +297,7 @@ pub fn pass1_1040_45e8(u8 *param_1,mut param_2: i16,mut param_3: u16 ,mut param_
 
   paVar7 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   if (param_5 != 0xeb) {
-    pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),param_4,
+    pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),param_4,
                     param_5);
     return;
   }
@@ -651,7 +651,7 @@ pub fn set_win_pos_1040_4ae4(mut param_1: i16,mut param_2: u16 ,mut param_3: u16
   }
   else {
     if (param_4 != 0x1770) {
-      pass1_1040_b54a(in_EDX,(astruct_903 *)CONCAT13((char)(param_2 >> 0x8),CONCAT12((char)param_2,param_1)),
+      pass1_1040_b54a(in_EDX,(astruct_903 *)CONCAT13((param_2 >> 0x8),CONCAT12(param_2,param_1)),
                       param_3,param_4);
       return;
     }
@@ -816,7 +816,7 @@ pub fn pass1_1040_4f0a(StructD *param_1)
 
 
 
-u16 pass1_1040_4f28(u32 *param_1,i16 *param_2,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16,mut param_6: u16 )
+u16 pass1_1040_4f28(u32 *param_1,param_2: *mut i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16,mut param_6: u16 )
 
 {
   code **ppcVar1;
@@ -916,7 +916,7 @@ pub fn set_win_pos_1040_4f96
     &struct_b_11[0x7].max_count_field_0x10 = 0x0;
   }
   else {
-    puVar18 = struct_1040_bf3e((astruct_442 *)CONCAT13((char)(paVar12 >> 0x8),CONCAT12((char)paVar12,paVar5)),
+    puVar18 = struct_1040_bf3e((astruct_442 *)CONCAT13((paVar12 >> 0x8),CONCAT12(paVar12,paVar5)),
                                struct_b_11->lpvoid_field_0x8);
     paVar13 = (astruct_57 *)(paVar13 & 0xffff0000 | puVar18 >> 0x10);
     paVar5 = (astruct_57 *)puVar18;
@@ -983,7 +983,7 @@ pub fn set_win_pos_1040_4f96
   else {
     pvVar1 = struct_b_11->lpvoid_field_0x8;
     pass1_1008_3bd6(paVar14,paVar5,(astruct_57 *)paVar13,0x1,0xa00a0,0x8e,0x8c008d,
-                    CONCAT13((char)(pvVar1 >> 0x8),CONCAT12((char)pvVar1,0xbbc)),param_3,in_stack_0000fe34,
+                    CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,0xbbc)),param_3,in_stack_0000fe34,
                     in_stack_0000fe38,in_stack_0000ff5e,in_stack_0000ff62,in_stack_0000ff66);
     paVar12 = paVar14;
   }

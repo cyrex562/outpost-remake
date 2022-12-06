@@ -69,3 +69,9 @@ dos_c_src/cmake-build-debug-visual-studio/.cmake/api/v1/reply/codemodel-v2-069e0
 dos_c_src/cmake-build-debug-visual-studio/.cmake/api/v1/reply/index-2022-02-22T21-04-40-0343.json
 dos_c_src/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-efs_cpp-Debug-b9722e04374800bf8717.json
 outpost_c_proj/cmake-build-debug/*
+
+rs_sdl_app/target/debug/build/sdl2-sys-c5c9dba93404e7e5/out/build/
+
+rs_sdl_app/target/
+
+outpost_win31_rs/target/

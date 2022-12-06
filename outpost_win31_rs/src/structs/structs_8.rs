@@ -978,7 +978,7 @@ struct astruct_71 {
     let mut field3_0x3: u8;
     let mut field4_0x4: u8;
     let mut field5_0x5: u8;
-    char field6_0x6;
+    let mut field6_0x6: u8;
     let mut field7_0x7: u8;
     let mut field8_0x8: u8;
     let mut field9_0x9: u8;

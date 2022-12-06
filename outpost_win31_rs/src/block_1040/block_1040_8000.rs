@@ -34,7 +34,7 @@ pub fn win_help_1040_800c(mut param_1: u32)
 
 
 
-u16 pass1_1040_8054(void)
+u16 pass1_1040_8054()
 
 {
   return 0x0;
@@ -89,7 +89,7 @@ pub fn pass1_1040_807e(param_1: *mut astruct_395,mut param_2: u16 )
       paVar8 = (astruct_57 *)(paVar8 & 0xffff0000 | (uVar5 | paVar4));
       if ((uVar5 | paVar4) != 0x0) {
         ppcVar1 = (code **)paVar4;
-        (**ppcVar1)(0x1010,paVar4,(char)uVar5,0x1);
+        (**ppcVar1)(0x1010,paVar4,uVar5,0x1);
       }
     }
     mem_op_1000_179c(0x14,paVar8);
@@ -102,11 +102,11 @@ pub fn pass1_1040_807e(param_1: *mut astruct_395,mut param_2: u16 )
       struct_1008_4c58(paVar4);
     }
     *(astruct_394 **)&iVar9->field112_0x70 = paVar4;
-    *(u8 **)(&iVar9->field112_0x70 + 0x2) = puVar7;
+    (&iVar9->field112_0x70 + 0x2) = puVar7;
     pass1_1008_4d84(puVar7,iVar9->field112_0x70,CONCAT22(uVar6,paVar3));
     if (puStack6 != NULL) {
       ppcVar1 = (code **)*puStack6;
-      (**ppcVar1)(0x1008,paVar2,(char)in_EDX,0x1);
+      (**ppcVar1)(0x1008,paVar2,in_EDX,0x1);
     }
     return;
   }
@@ -195,7 +195,7 @@ u16 pass1_1040_824a(mut param_1: u32,mut param_2: i16)
 
 
 
-u16 FUN_1040_8260(void)
+u16 FUN_1040_8260()
 
 {
   return 0x0;
@@ -203,7 +203,7 @@ u16 FUN_1040_8260(void)
 
 
 
-u16 FUN_1040_8266(void)
+u16 FUN_1040_8266()
 
 {
   return 0x0;
@@ -211,13 +211,13 @@ u16 FUN_1040_8266(void)
 pub fn move_win_1040_826c(StructB *param_1,INT16 param_2,BOOL16 param_3)
 
 {
-  INT16 IVar1;
+  let mut IVar1: i16;
   let mut struct_b_1_hi: u16;
   let mut local_e: i16;
   let mut iStack12: i16;
   let mut iStack10: i16;
   let mut iStack8: i16;
-  INT16 IStack6;
+  let mut IStack6: i16;
   let mut BStack4: bool;
 
   struct_b_1_hi = (param_1 >> 0x10);
@@ -405,8 +405,8 @@ pub fn pass1_1040_869a(StructD *param_1)
   iVar1 = param_1;
   param_1->address_offset_field_0x0 = 0x8ddc;
   iVar1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
-  fn_ptr_1000_17ce(*(char **)&iVar1->field_0x90);
-  fn_ptr_1000_17ce(*(char **)&iVar1->field_0x94);
+  fn_ptr_1000_17ce(*&iVar1->field_0x90);
+  fn_ptr_1000_17ce(*&iVar1->field_0x94);
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
@@ -470,7 +470,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
   PTR_LOOP_1050_5df6 = (&paVar12->field1_0x4 + 0x2);
   if (*(i32 *)&paVar12->field_0x94 != 0x0) {
     unk_str_op_1000_3d3e
-              ((param_1 & 0xffff0000 | ZEXT24(&paVar12->field_0x10)),*(char **)&paVar12->field_0x94);
+              ((param_1 & 0xffff0000 | ZEXT24(&paVar12->field_0x10)),*&paVar12->field_0x94);
   }
   get_sys_metrics_1040_8c66(param_1);
   uStack4 = paVar12->field138_0x98 & 0xf;
@@ -507,7 +507,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
       uVar11 = (uVar2 >> 0x10);
       uVar5 = 0x1;
       uVar9 = 0x1;
-      goto LAB_1040_88a5;
+  // TODO: goto LAB_1040_88a5;
     }
     iVar3 = &paVar12[0x1].field_0x8 + -0xc4;
     paVar6 = (astruct_57 *)CONCAT22(uVar5,iVar3 >> 0xf);
@@ -637,7 +637,7 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
   let mut uVar5: u16;
   astruct_766 *iVar2;
 
-  count = (i16)(param_2 >> 0x10);
+  count = (param_2 >> 0x10);
   iVar10 = (astruct_765 *)param_2;
   hdc_local_24 = BeginPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,&paintstruct_22),iVar10->hwnd_field6_0x6);
   paVar1 = *(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe);
@@ -674,7 +674,7 @@ pub fn pass1_1040_8b3c(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
 {
   if ((param_3 != NULL) &&
      ((param_3 == (&PTR_LOOP_1050_0000 + 0x1) || param_3 == &u16_1050_0002 ||
-      (((&u16_1050_0002 + 0x1U) < param_3 + -0x2 &&
+      (((&u16_1050_0002 + 0x1) < param_3 + -0x2 &&
        (param_3 + -0x6 < &u16_1050_0002)))))) {
     PTR_LOOP_1050_5df4 = NULL;
     PTR_LOOP_1050_5df8 = param_3;
@@ -754,7 +754,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
   let mut piVar1: *mut i16;
   u8 bVar2;
   HDC16 HVar3;
-  INT16 IVar4;
+  let mut IVar4: i16;
   astruct_37 *struct_1;
   let mut uVar5: u16;
 
@@ -762,7 +762,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
   struct_1 = (astruct_37 *)param_1;
   HVar3 = GetDC16(*(HWND16 *)(&struct_1->field1_0x4 + 0x2));
   draw_text_1040_8d14(param_1,HVar3);
-  struct_1[0x1].field1_0x4 = *(char **)&struct_1->field144_0x9e;
+  struct_1[0x1].field1_0x4 = *&struct_1->field144_0x9e;
   *(RECT16 **)&struct_1[0x1].field_0x8 = (struct_1 + 0x1)->field0_0x0;
   IVar4 = GetSystemMetrics16(SM_CYCAPTION);
   piVar1 = &struct_1[0x1].field_0xa;
@@ -791,7 +791,7 @@ pub fn draw_text_1040_8d14(param_1: *mut astruct_37,HDC16 hdc_param_2)
 {
   LPCSTR in_string;
   u8 bVar1;
-  INT16 IVar2;
+  let mut IVar2: i16;
   HANDLE16 handle;
   astruct_37 *struct_1;
   let mut uVar3: u16;

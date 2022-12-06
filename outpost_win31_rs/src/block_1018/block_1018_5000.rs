@@ -148,14 +148,14 @@ pub fn pass1_1018_5206(mut param_1: u32,char *param_2) -> u32
   iVar3 = param_1;
   (iVar3 + 0xa) = 0x0;
   pass1_1008_5784(CONCAT22(0x1050,local_a),(iVar3 + 0xe));
-  do {
+  loop {
     uVar5 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     uVar2 = (uVar5 >> 0x10);
     (iVar3 + 0xa) = uVar5;
     (iVar3 + 0xc) = uVar2;
     if ((uVar2 | (iVar3 + 0xa)) == 0x0) break;
     uVar5 = (iVar3 + 0xa);
-    iVar1 = pass1_1000_3d7a(*(char **)(uVar5 + 0x4),param_2);
+    iVar1 = pass1_1000_3d7a(*(uVar5 + 0x4),param_2);
   } while (iVar1 != 0x0);
   return CONCAT22((iVar3 + 0xc),(iVar3 + 0xa));
 }
@@ -508,7 +508,7 @@ pub fn pass1_1018_5742(mut param_1: u16 ,mut param_2: u16 ,u32 *param_3,param_4:
   (**ppcVar2)();
   uVar3 = puVar5 & 0xffff | extraout_DX << 0x10;
   uStack16 = 0x0;
-  do {
+  loop {
     if (uVar3 <= uStack16) {//
 LAB_1018_579f:
       if (!bVar4) {
@@ -526,7 +526,7 @@ LAB_1018_579f:
     (**ppcVar2)();
     if ((extraout_DX_00 | uVar6) != 0x0) {
       bVar4 = true;
-      goto LAB_1018_579f;
+  // TODO: goto LAB_1018_579f;
     }
     uStack16 += 0x1;
   } while( true );
@@ -832,7 +832,7 @@ pub fn pass1_1018_5cc8(StructD *param_1)
   iVar3 = param_1;
   param_1->address_offset_field_0x0 = &u16_1050_5e1a;
   iVar3->address_offset_field_0x2 = 0x1018;
-  pcVar2 = *(char **)&iVar3->field13_0x18;
+  pcVar2 = *&iVar3->field13_0x18;
   uVar1 = iVar3->field14_0x1a;
   if ((uVar1 | pcVar2) != 0x0) {
     pass1_1008_5118(pcVar2 & 0xffff | uVar1 << 0x10);
@@ -952,7 +952,7 @@ pub fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
 {
   char **ppcVar1;
   LPVOID pvVar2;
-  INT16 IVar3;
+  let mut IVar3: i16;
   astruct_92 **ppaVar4;
   let mut puVar5: *mut u8;
   let mut uVar6: u16;

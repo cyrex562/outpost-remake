@@ -33,7 +33,7 @@ pub fn pass1_1010_8096(u32 *param_1,mut param_2: i16)
 
   uVar4 = (param_1 >> 0x10);
   uVar3 = param_1;
-  str_1000_4d58(*(char **)((uVar3 + 0xe82) * 0x4 + 0x2526),NULL,0x0,CONCAT22(0x1050,local_206),
+  str_1000_4d58(*((uVar3 + 0xe82) * 0x4 + 0x2526),NULL,0x0,CONCAT22(0x1050,local_206),
                 (WNDCLASS16 *)CONCAT22(0x1050,local_306));
   unk_str_op_1000_3d3e(CONCAT22(0x1050,local_106),CONCAT22(0x1050,local_206));
   if (param_2 == 0x2) {
@@ -267,7 +267,7 @@ pub fn pass1_1010_84f8(mut param_1: u32,mut param_2: i16)
   if ((param_2 * 0x10 + 0x10) == 0x3) {
     uVar1 = (param_1 + 0xe88);
     iStack4 = (uVar1 + 0x70);
-    str_1000_4d58(*(char **)(param_2 * 0x10 + 0x12),NULL,0x0,CONCAT22(0x1050,local_208),
+    str_1000_4d58(*(param_2 * 0x10 + 0x12),NULL,0x0,CONCAT22(0x1050,local_208),
                   (WNDCLASS16 *)CONCAT22(0x1050,local_308));
     unk_str_op_1000_3d3e(CONCAT22(0x1050,local_108),CONCAT22(0x1050,local_208));
     if (local_308[0] == '\0') {
@@ -313,7 +313,7 @@ pub fn pass1_1010_866c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 
 {
   astruct_828 *paVar1;
-  char cVar2;
+  let mut cVar2: u8;
   let mut iVar3: i16;
   let mut bVar4: bool;
 
@@ -322,7 +322,7 @@ pub fn pass1_1010_866c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
       if (0x23 < param_5) {
         return;
       }
-      cVar2 = (char)param_5;
+      cVar2 = param_5;
       if (((cVar2 != '\v') && (cVar2 != '\x0f')) && (cVar2 != '!')) {
         return;
       }
@@ -372,7 +372,7 @@ pub fn pass1_1010_86de(mut param_1: u16 ,mut param_2: u16 ,uchar param_3,param_4
   uVar6 = pass1_1008_4772(param_4);
   uVar4 = (uVar6 >> 0x10);
   uStack10 = 0x0;
-  do {
+  loop {
     plVar1 = (i32 *)(uVar6 + 0x8);
     if (*plVar1 == uStack10 || *plVar1 < uStack10) {
       return;
@@ -434,7 +434,7 @@ pub fn pass1_1010_878c(astruct_87 **param_1,mut param_2: i16)
     paVar3 = (astruct_57 *)(paVar3 & 0xffff0000 | (uVar1 | uVar4));
     if ((uVar1 | uVar4) == 0x0) {
       &uVar6->field1660_0x67c = 0x0;
-      goto LAB_1010_8869;
+  // TODO: goto LAB_1010_8869;
     }
     paVar6 = *param_1;//
 LAB_1010_8853:
@@ -621,14 +621,14 @@ pub fn set_err_mode_1010_8b14(mut param_1: u32,mut param_2: u32) -> u32
   uVar3 = (param_1 >> 0x10);
   pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0xe84));
   mode = SetErrorMode16(SEM_FAILCRITICALERRORS);
-  do {
+  loop {
     lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     if (lVar4 == 0x0) {
       SetErrorMode16(mode);
       return param_2;
     }
     uVar1 = param_1 + 0xa82;
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | uVar1),*(char **)(lVar4 + 0x4));
+    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | uVar1),*(lVar4 + 0x4));
     pass1_1000_3cea(param_1 & 0xffff0000 | uVar1,param_2);
     uVar2 = dos3_call_1000_51aa(uVar1,uVar3,0x1);
   } while (uVar2 != 0x0);
@@ -701,7 +701,7 @@ pub fn unk_load_str_op_1010_8c96(u8 *param_1,mut param_2: u32,mut param_3: u32,m
 
 {
   let mut uVar1: u32;
-  INT16 IVar2;
+  let mut IVar2: i16;
   let mut puVar3: *mut u32;
   let mut iVar4: i16;
   let mut uVar5: u16;
@@ -771,16 +771,16 @@ pub fn unk_load_str_op_1010_8c96(u8 *param_1,mut param_2: u32,mut param_3: u32,m
           uStack4 = (pcVar11 >> 0x10);
           uStack6 = SUB42(pcVar11,0x0);
           wsprintf16(valist,CONCAT22(uStack6,in_buf_len_5),CONCAT22(puVar3,uStack4),puVar12);
-          goto LAB_1010_8def;
+      // TODO: goto LAB_1010_8def;
         }
         break;
       default:
-        goto switchD_1010_8e11_caseD_4;
+    // TODO: goto switchD_1010_8e11_caseD_4;
       case 0x4:
       case 0x7:
       case 0x8:
       case 0xa:
-        goto LAB_1010_8ea5;
+    // TODO: goto LAB_1010_8ea5;
       }
       uVar10 = ZEXT24(&local_10);
     }

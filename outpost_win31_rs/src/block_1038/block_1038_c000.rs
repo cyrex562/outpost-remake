@@ -157,10 +157,10 @@ pub fn send_msg_1038_c374(mut param_1: u32,u32 *param_2,mut param_3: u16 )
     }
     ppcVar2 = (code **)(*param_2 + 0x4);
     uVar4 = uStack6;
-    (**ppcVar2)(uVar5,param_2,(char)uStack10,(uStack10 >> 0x10));
+    (**ppcVar2)(uVar5,param_2,uStack10,(uStack10 >> 0x10));
     uVar1 = (param_1 + 0x8e);
     lparam = string_1008_e586(uVar1,(uVar1 >> 0x10),
-                                      CONCAT13((char)(extraout_DX_00 >> 0x8),CONCAT12((char)extraout_DX_00,uVar4))
+                                      CONCAT13((extraout_DX_00 >> 0x8),CONCAT12(extraout_DX_00,uVar4))
                                       ,uVar4,extraout_DX_00);
     LVar6 = SendMessage16((LPARAM)lparam,0x0,0x403,param_3);
     uVar5 = 0x1000;
@@ -328,7 +328,7 @@ pub fn message_box_op_1038_c672(undefined1 param_1,mut param_2: i16,mut param_3:
   uVar1 = (_u16_1050_14cc >> 0x10);
   if (param_5 == 0x17d) {
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,(short)&DAT_1050_1050);
-    MessageBox16(0x30,*(char **)(param_2 + 0x92),CONCAT22(0x1050,local_404),*(HWND16 *)(param_2 + 0x6));
+    MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),*(HWND16 *)(param_2 + 0x6));
   }
   else {
     if (param_5 != 0x17e) {
@@ -336,7 +336,7 @@ pub fn message_box_op_1038_c672(undefined1 param_1,mut param_2: i16,mut param_3:
       return;
     }
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,(short)&DAT_1050_1050);
-    MessageBox16(0x30,*(char **)(param_2 + 0x92),CONCAT22(0x1050,local_404),*(HWND16 *)(param_2 + 0x6));
+    MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),*(HWND16 *)(param_2 + 0x6));
     pass1_1008_e164(*(astruct_102 **)(param_2 + 0x8e));
   }
   PostMessage16(0x0,0x2,0x111,*(HWND16 *)(param_2 + 0x6));
@@ -466,7 +466,7 @@ LAB_1038_c8da:
     if (((iVar1 + -0x5) < 0x1) || (SBORROW2((iVar1 + -0x5),0x1))) goto LAB_1038_c93c;
     if (iVar1 != (astruct_910 *)&u16_1050_0008 && 0x0 < (iVar1 + -0x7)) {
       if (iVar1 != (astruct_910 *)(&u16_1050_0008 + 0x1)) goto LAB_1038_c93c;
-      goto LAB_1038_c8da;
+  // TODO: goto LAB_1038_c8da;
     }
     HVar1 = GetDlgItem16(0xfce,(HWND16)struct_b_4->lpvoid_field_0x8);
     if (HVar1 == 0x0) goto LAB_1038_c93c;
@@ -540,7 +540,7 @@ pub fn win_dlg_op_1038_c95e(astruct_882 *struct_param_1,mut param_2: i16)
   PTR_LOOP_1050_5b80 = NULL;
   return;
 }
-pub fn FUN_1038_ca42(void)
+pub fn FUN_1038_ca42()
 
 {
   return;
@@ -836,7 +836,7 @@ pub fn check_dlg_btn_checked_1038_cdd6(param_1: *mut astruct_61,mut param_2: i16
   iVar3->field143_0x92 = 0x0;
   return;
 }
-pub fn FUN_1038_ced6(void)
+pub fn FUN_1038_ced6()
 
 {
   return;

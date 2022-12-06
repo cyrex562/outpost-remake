@@ -243,7 +243,7 @@ pub fn pass1_1030_c2fa(mut param_1: i16,u8 *param_2,mut param_3: u32)
     pass1_1030_355c(uVar3,uVar6 & 0xffff | (long)paVar8 << 0x10);
     uVar10 = (uVar3 >> 0x10);
     iStack56 = 0x0;
-    do {
+    loop {
       iVar5 = (astruct_698 *)(iStack56 * 0x2);
       (iVar5 + uVar3 + 0x174) = (iVar5 + uVar2 + 0x174);
       uVar5 = (iVar5 + uVar2 + 0x180);
@@ -675,7 +675,7 @@ pub fn pass1_1030_cac2(mut param_1: i16,u32 *param_2)
     while ((uStack34 < uVar4 && (iStack30 != 0x0))) {
       ppcVar3 = (code **)(*puVar2 + 0x4);
       uVar8 = uVar4;
-      (**ppcVar3)(0x1028,puVar2,(puVar2 >> 0x10),(char)uStack34,(uStack34 >> 0x10));
+      (**ppcVar3)(0x1028,puVar2,(puVar2 >> 0x10),uStack34,(uStack34 >> 0x10));
       uVar5 = uVar8;
       uVar9 = extraout_DX_01 | uVar5;
       if (uVar9 != 0x0) {
@@ -766,7 +766,7 @@ pub fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i16,mut p
   iStack4 = 0x0;
   uStack8 = (param_4 + 0x4);
   iStack10 = 0x0;
-  do {
+  loop {
     if (0x9 < iStack10) {
       return;
     }
@@ -779,7 +779,7 @@ pub fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i16,mut p
         iStack14 = iVar2;
         uStack12 = extraout_DX_00;
         pass1_1030_6e9c((astruct_301 *)
-                        CONCAT13((char)(extraout_DX_00 >> 0x8),CONCAT12((char)extraout_DX_00,iStack14)),0x1,
+                        CONCAT13((extraout_DX_00 >> 0x8),CONCAT12(extraout_DX_00,iStack14)),0x1,
                         iVar8->field33_0x24);
         iVar8->field32_0x20 = 0x0;
         iVar8->field33_0x24 = 0x0;
@@ -814,7 +814,7 @@ pub fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i16,mut p
           if (uVar6 != 0x0) {
             puVar3 = local_32;
             ppcVar1 = (code **)(*puVar9 + 0x40);
-            (**ppcVar1)(0x38,(char)puVar9,uVar5,puVar3,&DAT_1050_1050);
+            (**ppcVar1)(0x38,puVar9,uVar5,puVar3,&DAT_1050_1050);
             uVar6 = extraout_DX;
             if (puVar3 == NULL) {
               uVar8 = 0x28;
@@ -891,7 +891,7 @@ pub fn pass1_1030_ce72(mut param_1: u32,mut param_2: i16,mut param_3: u32,mut pa
 
   lVar1 = *(i32 *)(param_3 + 0x4);
   iStack10 = 0x0;
-  do {
+  loop {
     if (0x9 < iStack10) {
       return;
     }

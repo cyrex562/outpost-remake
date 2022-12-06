@@ -7,7 +7,7 @@ pub fn destroy_window_1038_a072(param_1: *mut astruct_880,mut param_2: u16 ,mut 
   }
   return;
 }
-pub fn FUN_1038_a08c(void)
+pub fn FUN_1038_a08c()
 
 {
   return;
@@ -63,7 +63,7 @@ pub fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,StructB *param_2,mut par
   code **ppcVar1;
   let mut puVar2: *mut u8;
   let mut uVar3: u16;
-  INT16 IVar4;
+  let mut IVar4: i16;
   let mut uVar5: u32;
   let mut puVar6: *mut u16;
   let mut in_stack_0000fe56: u16;
@@ -129,7 +129,7 @@ pub fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,StructB *param_2,mut par
 
 
 
-u16 FUN_1038_a2a4(void)
+u16 FUN_1038_a2a4()
 
 {
   return 0x0;
@@ -707,18 +707,18 @@ LAB_1038_acf0:
     if (IVar1 == 0xfd4) {
       uVar2 = _u16_1050_5b70;
       uVar5 = (_u16_1050_5b70 >> 0x10);
-      goto LAB_1038_ad0e;
+  // TODO: goto LAB_1038_ad0e;
     }
     if (IVar1 != 0xfd5) {
       if (IVar1 == 0xfd6) {
         uVar2 = _u16_1050_5b6c;
         uVar5 = (_u16_1050_5b6c >> 0x10);
-        goto LAB_1038_ad0e;
+    // TODO: goto LAB_1038_ad0e;
       }
       if (IVar1 == 0xfd7) {
         uVar2 = _u16_1050_5b74;
         uVar5 = (_u16_1050_5b74 >> 0x10);
-        goto LAB_1038_ad0e;
+    // TODO: goto LAB_1038_ad0e;
       }
     }
   }
@@ -726,7 +726,7 @@ LAB_1038_acf0:
     if ((param_4 == 0x4) || (0x1 < param_4 - 0x5)) {
       return;
     }
-    goto LAB_1038_acf0;
+// TODO: goto LAB_1038_acf0;
   }
   uVar2 = _u16_1050_5b78;
   uVar5 = (_u16_1050_5b78 >> 0x10);//
@@ -811,7 +811,7 @@ StructD * pass1_1038_aeca(StructD *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_af34(void)
+pub fn pass1_1038_af34()
 
 {
   _PTR_LOOP_1050_5b7c = 0x0;
@@ -1048,7 +1048,7 @@ LAB_1038_afa0:
     param_1 = paVar12;
     break;
   default:
-    goto switchD_1038_b581_caseD_18;
+// TODO: goto switchD_1038_b581_caseD_18;
   case 0x19:
     mem_op_1000_179c(0x96,paVar12);
     pSVar6 = (paVar12 | param_1);

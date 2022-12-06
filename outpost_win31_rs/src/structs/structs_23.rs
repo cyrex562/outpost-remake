@@ -194,7 +194,7 @@ struct astruct_14 {
     u8 field12_0xd;
     u8 field13_0xe;
     u8 field14_0xf;
-    char field15_0x10;
+    let mut field15_0x10: u8;
     u8 field16_0x11;
     u8 field17_0x12;
     u8 field18_0x13;

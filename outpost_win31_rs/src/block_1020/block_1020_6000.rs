@@ -267,17 +267,17 @@ pub fn mix_draw_op_1020_650c(param_1: *mut StructA)
     }
   }
   iStack8 = 0x0;
-  do {
+  loop {
     if (*(i32 *)(&struct_1->field12_0x18 + iStack8 * 0x2) != 0x0) {
       uVar2 = (&struct_1->field12_0x18 + iStack8 * 0x2);
       ppcVar1 = (code **)(*(&struct_1->field12_0x18 + iStack8 * 0x2) + 0x8);
-      (**ppcVar1)(0x1020,(char)uVar2,(uVar2 >> 0x10),puStack6,(puStack6 >> 0x10));
+      (**ppcVar1)(0x1020,uVar2,(uVar2 >> 0x10),puStack6,(puStack6 >> 0x10));
     }
     iStack8 += 0x1;
   } while (iStack8 < 0x5);
   BeginPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,local_28),struct_1->field2_0x4);
   ppcVar1 = (code **)(*puStack6 + 0x4);
-  (**ppcVar1)(s_tile2_bmp_1050_1538,puStack6,(char)(puStack6 >> 0x10),0x0,0x0,&struct_1->field5_0xa,
+  (**ppcVar1)(s_tile2_bmp_1050_1538,puStack6,(puStack6 >> 0x10),0x0,0x0,&struct_1->field5_0xa,
               uVar3);
   EndPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,local_28),struct_1->field2_0x4);
   return;
@@ -568,7 +568,7 @@ LAB_1020_6a0b:
       if (param_3 == 0x12c) {
         HVar4 = iVar5->field4_0x8;
         wparam = 0xf020;
-        goto LAB_1020_69c3;
+    // TODO: goto LAB_1020_69c3;
       }
       uVar1 = param_3 - 0x12d;
       if (param_3 != 0x12c) {
@@ -583,7 +583,7 @@ LAB_1020_6a0b:
       uVar1 = pass1_1018_31d0(*(astruct_126 **)&iVar5[0x1].field20_0x26);
       if (uVar1 != 0x0) {
         uVar1 = pass1_1018_2dde(*(astruct_126 **)&iVar5[0x1].field20_0x26);
-        goto LAB_1020_6a0b;
+    // TODO: goto LAB_1020_6a0b;
       }
     }
     else {
@@ -595,7 +595,7 @@ LAB_1020_6a0b:
           BVar3 = DestroyWindow16(uVar1);
           return BVar3;
         }
-        goto LAB_1020_6a6f;
+    // TODO: goto LAB_1020_6a6f;
       }
     }
   }
@@ -716,7 +716,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,StructA *struct_param_1,mut 
   struct_a_1[0x1].field20_0x26 = (astruct_243 *)puVar11;
   uVar7 = (puVar11 >> 0x10);
   struct_a_1[0x1].field21_0x28 = uVar7;
-  struct_a_1[0x1].field10_0x14 = (i16)struct_a_1[0x1].field20_0x26;
+  struct_a_1[0x1].field10_0x14 = struct_a_1[0x1].field20_0x26;
   struct_a_1[0x1].field11_0x16 = uVar7;
   HVar3 = LoadIcon16(s_TILEICON_1050_440c,HINSTANCE16_1050_038c);
   *(HICON16 *)&struct_a_1->field_0xc2 = HVar3;
@@ -767,7 +767,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,StructA *struct_param_1,mut 
   &struct_a_1[0x1].field14_0x1c = uVar6;
   uVar1 = &struct_a_1[0x1].field20_0x26;
   ppcVar2 = (code **)(*&struct_a_1[0x1].field20_0x26 + 0x10);
-  (**ppcVar2)(0x1000,(char)uVar1,(uVar1 >> 0x10));
+  (**ppcVar2)(0x1000,uVar1,(uVar1 >> 0x10));
   pIVar5 = (INT16 *)uVar6;
   MoveWindow16(0x1,pIVar5[0x3],pIVar5[0x2],pIVar5[0x1],*pIVar5,struct_a_1->field4_0x8);
   uVar12 = (struct_param_1 >> 0x10);

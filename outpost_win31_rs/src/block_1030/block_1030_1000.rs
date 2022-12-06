@@ -125,7 +125,7 @@ pub fn pass1_1030_1244(StructD *param_1)
       uStack6 += 0x1;
     }
   }
-  fn_ptr_1000_17ce(*(char **)&iVar6.field_0x6);
+  fn_ptr_1000_17ce(*&iVar6.field_0x6);
   param_1.address_offset_field_0x0 = 0x389a;
   iVar6.address_offset_field_0x2 = 0x1008;
   return;
@@ -154,7 +154,7 @@ pub fn pass1_1030_12ca(param_1: *mut astruct_176)
   }
   return;
 }
-pub fn bad_1030_1312(void)
+pub fn bad_1030_1312()
 
 {
   return;
@@ -300,7 +300,7 @@ pub fn pass1_1030_14b4(param_1: *mut astruct_156,mut param_2: u16 ,mut param_3: 
   (iVar4 + param_4 * 0x4 + 0x2) = param_3;
   return;
 }
-pub fn pass1_1030_154c(void)
+pub fn pass1_1030_154c()
 
 {
   return;
@@ -473,7 +473,7 @@ pub fn pass1_1030_177a(mut param_1: u32,mut param_2: u32)
   (param_1 + 0x8) = param_2;
   return;
 }
-pub fn FUN_1030_178e(void)
+pub fn FUN_1030_178e()
 
 {
   return;
@@ -611,7 +611,7 @@ pub fn pass1_1030_18f0(mut param_1: u16 ,mut param_2: u32,mut param_3: i16,mut p
 
 
 
-u16 pass1_1030_1972(void)
+u16 pass1_1030_1972()
 
 {
   return 0x1;
@@ -700,7 +700,7 @@ u16 pass1_1030_1a9c(mut param_1: u32,mut param_2: u32)
 
 {
   let mut piVar1: *mut i16;
-  u16_t in_AX;
+  let mut in_AX: u16;
   let mut uVar2: u16;
   let mut BVar3: bool;
   let mut iVar4: i16;
@@ -783,7 +783,7 @@ u16 file_1030_1b18(mut param_1: i16,u8 *param_2,mut param_3: u32,mut param_4: u3
       iVar7.field2_0x2 = uVar6;
       iVar7.field3_0x4 = paVar8;
       uVar3 = (iVar9 + 0x10);
-      BVar5 = read_file_1008_7dee((HFILE16 *)param_4,*(u8 **)(uVar3 + 0x2),uVar1);
+      BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(uVar3 + 0x2),uVar1);
       if (BVar5 != 0x0) {
         return 0x1;
       }
@@ -871,7 +871,7 @@ pub fn pass1_1030_1d28(StructD *param_1)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0x2044;
   iVar1.address_offset_field_0x2 = 0x1030;
-  fn_ptr_1000_17ce(*(char **)&iVar1.hfile_0x4);
+  fn_ptr_1000_17ce(*&iVar1.hfile_0x4);
   param_1.address_offset_field_0x0 = 0x389a;
   iVar1.address_offset_field_0x2 = 0x1008;
   return;
@@ -917,7 +917,7 @@ pub fn pass1_1030_1daa(mut param_1: u32) -> u32
   uVar1 = (param_1 >> 0x10);
   return CONCAT22((param_1 + 0xa),(param_1 + 0x8));
 }
-pub fn pass1_1030_1dbc(void)
+pub fn pass1_1030_1dbc()
 
 {
   return;
@@ -1023,7 +1023,7 @@ pub fn pass1_1030_1f16(u32 *param_1,mut param_2: u32)
   *plVar1 = *plVar1 + 0x1;
   return;
 }
-pub fn FUN_1030_1f6c(void)
+pub fn FUN_1030_1f6c()
 
 {
   return;

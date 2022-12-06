@@ -290,9 +290,9 @@ struct astruct_65 {
     let mut field12_0x1a: u16;
     let mut field13_0x1c: u16;
     let mut field14_0x1e: u16;
-    INT16 field15_0x20;
-    INT16 field16_0x22;
-    INT16 field17_0x24;
+    let mut field15_0x20: i16;
+    let mut field16_0x22: i16;
+    let mut field17_0x24: i16;
 };
 
 

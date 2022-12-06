@@ -33,7 +33,7 @@ pub fn set_window_text_1018_6086(mut param_1: u32,mut param_2: u16 ,mut param_3:
   SetWindowText16(CONCAT22(0x1050,&stack0xfff4),hwnd_1);
   return;
 }
-pub fn FUN_1018_60ea(void)
+pub fn FUN_1018_60ea()
 
 {
   return;
@@ -41,7 +41,7 @@ pub fn FUN_1018_60ea(void)
 
 
 
-u16 FUN_1018_60ee(void)
+u16 FUN_1018_60ee()
 
 {
   return 0x0;
@@ -49,17 +49,17 @@ u16 FUN_1018_60ee(void)
 
 
 
-u16 FUN_1018_60f4(void)
+u16 FUN_1018_60f4()
 
 {
   return 0x0;
 }
-pub fn FUN_1018_60fa(void)
+pub fn FUN_1018_60fa()
 
 {
   return;
 }
-pub fn FUN_1018_60fe(void)
+pub fn FUN_1018_60fe()
 
 {
   return;

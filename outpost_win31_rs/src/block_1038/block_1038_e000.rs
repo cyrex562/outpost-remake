@@ -109,7 +109,7 @@ LAB_1038_e229:
   DestroyWindow16(param_1->field6_0x6);
   return;
 }
-pub fn FUN_1038_e23a(void)
+pub fn FUN_1038_e23a()
 
 {
   return;
@@ -156,7 +156,7 @@ pub fn pass1_1038_e308(StructD *param_1)
   param_1->address_offset_field_0x0 = 0xe62e;
   iVar1->address_offset_field_0x2 = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,&iVar1->field_0x6);
-  fn_ptr_1000_17ce(*(char **)&iVar1->field_0x8e);
+  fn_ptr_1000_17ce(*&iVar1->field_0x8e);
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
@@ -240,7 +240,7 @@ pub fn win_ui_op_1038_e348(StructB *param_1,param_2: u8,StructD *param_3,mut par
     else {
       pvVar1 = struct_b_5->lpvoid_field_0x8;
       pass1_1008_3bd6(uVar6,rect,(astruct_57 *)paVar8,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
-                      CONCAT13((char)(pvVar1 >> 0x8),CONCAT12((char)pvVar1,(puStack26 + 0x4)))
+                      CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,(puStack26 + 0x4)))
                       ,param_4,in_stack_0000fe2a,in_stack_0000fe2e,in_stack_0000ff54,in_stack_0000ff58,in_stack_0000ff5c
                      );
       uVar2 = &struct_b_5[0x7].field1_0x2;
@@ -328,22 +328,22 @@ pub fn pass1_1038_e4bc(u8 *param_1,mut param_2: u16 ,mut param_3: u32,mut param_
         if (uVar3 == 0x0) {
           if (puStack22 != NULL) {
             ppcVar1 = (code **)uVar2;
-            (**ppcVar1)(0x1008,uVar4,(char)paVar11,0x1);
+            (**ppcVar1)(0x1008,uVar4,paVar11,0x1);
           }
         }
         else {
           ppcVar1 = (code **)(*puStack22 + 0x4);
           uVar3 = uVar4;
           (**ppcVar1)(0x8,uVar4,uVar15,0x0,0x0);
-          pass1_1028_e1ec(_PTR_LOOP_1050_65e2,CONCAT13((char)(paVar6 >> 0x8),CONCAT12((char)paVar6,uVar5)));
+          pass1_1028_e1ec(_PTR_LOOP_1050_65e2,CONCAT13((paVar6 >> 0x8),CONCAT12(paVar6,uVar5)));
           puVar9 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,(u8 **)CONCAT22(uVar3,0x32),in_stack_0000fe66,
                                    in_stack_0000ff8a,in_stack_0000ff90,in_stack_0000ff94);
           pass1_1010_71d6(uVar5 + 0xc,(puVar9 >> 0x10),puVar9,0x1,
-                          ((paVar6 & 0xff00) << 0x10 | CONCAT12((char)paVar6,uVar5 + 0xc)),
+                          ((paVar6 & 0xff00) << 0x10 | CONCAT12(paVar6,uVar5 + 0xc)),
                           &DAT_1050_1050);
           if (puStack22 != NULL) {
             ppcVar1 = (code **)*puStack22;
-            (**ppcVar1)(0x1010,uVar4,(char)paVar11,0x1);
+            (**ppcVar1)(0x1010,uVar4,paVar11,0x1);
           }
         }
       }
@@ -356,7 +356,7 @@ pub fn pass1_1038_e4bc(u8 *param_1,mut param_2: u16 ,mut param_3: u32,mut param_
     else {
       if (param_4 != 0x1c6) {
         post_win_msg_1040_7b3c
-                  ((StructC *)CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),(param_3 >> 0x10)
+                  ((StructC *)CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),(param_3 >> 0x10)
                    ,param_4,param_4);
         return;
       }
@@ -535,7 +535,7 @@ pub fn chk_is_dlg_btn_checked_1038_e7a0(param_1: *mut astruct_62,mut param_2: i1
   iVar3->field143_0x92 = 0x0;
   return;
 }
-pub fn FUN_1038_e904(void)
+pub fn FUN_1038_e904()
 
 {
   return;
@@ -605,7 +605,7 @@ pub fn win_ui_op_1038_ea18(StructB *param_1)
 
 {
   let mut hwnd: HWND16;
-  INT16 IVar1;
+  let mut IVar1: i16;
   StructB *iVar2;
   let mut uVar2: u16;
   let mut lparam: u32;
@@ -644,7 +644,7 @@ pub fn win_ui_op_1038_eaa2(param_1: *mut astruct_888,mut param_2: i16)
   DestroyWindow16(struct_1->field6_0x6);
   return;
 }
-pub fn FUN_1038_eb08(void)
+pub fn FUN_1038_eb08()
 
 {
   return;
@@ -691,7 +691,7 @@ pub fn pass1_1038_ebd6(StructD *param_1)
   param_1->address_offset_field_0x0 = 0xee6e;
   (iVar1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(iVar1 + 0x6));
-  fn_ptr_1000_17ce(*(char **)(iVar1 + 0x8e));
+  fn_ptr_1000_17ce(*(iVar1 + 0x8e));
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
@@ -769,7 +769,7 @@ pub fn FUN_1038_ec16(mut param_1: u16 ,StructB *param_2,param_3: *mut astruct_57
     else {
       uVar10 = (iVar7 + 0x6);
       pass1_1008_3bd6(pSVar5,rect,(astruct_57 *)paVar6,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
-                      CONCAT13((char)(uVar10 >> 0x8),CONCAT12((char)uVar10,(puStack26 + 0x4)))
+                      CONCAT13((uVar10 >> 0x8),CONCAT12(uVar10,(puStack26 + 0x4)))
                       ,param_4,in_stack_0000fe2a,in_stack_0000fe2e,in_stack_0000ff54,in_stack_0000ff58,in_stack_0000ff5c
                      );
       uVar1 = (iVar7 + 0x8e);

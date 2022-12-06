@@ -56,7 +56,7 @@ pub fn pass1_1028_9114(StructD *param_1,mut param_2: u32,mut param_3: u16 )
   uVar2 = (param_1 >> 0x10);
   uVar3 = param_2;
   iVar1 = (uVar3 + 0x108);
-  if (iVar1 - 0x1U < 0x8) {
+  if (iVar1 - 0x1 < 0x8) {
     uStack10 = *_PTR_LOOP_1050_65e2;
     iVar8 = (*_PTR_LOOP_1050_65e2 >> 0x10);
     switch(iVar1) {
@@ -228,7 +228,7 @@ pub fn pass1_1028_93d4(mut param_1: u16 ,mut param_2: u32)
   uVar2 = uStack6;
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,uStack6 & 0xffff | ZEXT24(puVar4) << 0x10);
   (iVar5 + 0x11e) = uVar2;
-  *(u8 **)(iVar5 + 0x120) = puVar4;
+  (iVar5 + 0x120) = puVar4;
   uVar3 = iVar5 + 0x114;
   ppcVar1 = (code **)((iVar5 + 0x11e) + 0x1c);
   (**ppcVar1)();
@@ -371,7 +371,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
   pass1_1030_64ce(puVar2,uStack10,_PTR_LOOP_1050_5740,(param_3 & 0xffff0000 | ZEXT24(puVar2)),
                   iVar9->field264_0x108,CONCAT22(0x1050,local_26));
   uStack56 = *puVar2;
-  uStack56._3_1_ = (char)(uStack56 >> 0x18);
+  uStack56._3_1_ = (uStack56 >> 0x18);
   uStack12 = (uStack56._3_1_ != '\0');
   uVar10 = 0x1008;
   puStack46 = uStack56;
@@ -389,14 +389,14 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
     if ((iVar9->field270_0x11a == 0xa) || (iVar9->field270_0x11a == 0x37)) {
       if (iVar9->field270_0x11a == 0x37) {
         uStack56 = iVar9->field273_0x11e;
-        uStack10 = *(u8 **)(&iVar9->field273_0x11e + 0x2);
+        uStack10 = (&iVar9->field273_0x11e + 0x2);
         uStack42 = iVar9->field265_0x10c;
         (uStack56 + 0x20) = uStack42;
       }
       puVar2 = &iVar9->field267_0x114;
       pass1_1028_e2ac(_PTR_LOOP_1050_65e2,0x400);
       &iVar9->field265_0x10c = puVar2;
-      *(u8 **)(&iVar9->field265_0x10c + 0x2) = uStack10;
+      (&iVar9->field265_0x10c + 0x2) = uStack10;
       uVar10 = 0x1018;
       pass1_1018_0196(puVar2,uStack10,puStack6,
                       CONCAT22(uStack10,&iVar9->field265_0x10c),iVar9->field264_0x108);
@@ -407,7 +407,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
     }
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2,iVar9->field265_0x10c);
     &iVar9->field266_0x110 = puVar2;
-    *(u8 **)(&iVar9->field266_0x110 + 0x2) = uStack10;
+    (&iVar9->field266_0x110 + 0x2) = uStack10;
     uVar4 = uStack10 | &iVar9->field266_0x110;
     puVar6 = uVar4;
     if (uVar4 == 0x0) goto LAB_1028_9807;
@@ -421,7 +421,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,u8 *param_2,param_3: *mut astruct_688)
     if (iVar9->field270_0x11a != 0x75) goto LAB_1028_9807;
     uVar3 = SUB42(uStack10,0x0);
     puVar12 = uStack10;
-    puVar11 = *(u8 **)(&iVar9->field266_0x110 + 0x2);
+    puVar11 = (&iVar9->field266_0x110 + 0x2);
   }
   ppcVar1 = (code **)(*iVar9->field266_0x110 + 0x8);
   (**ppcVar1)(uVar10,&iVar9->field266_0x110,puVar11,0x0,uVar3,puVar12,0x0);//
@@ -501,7 +501,7 @@ pub fn pass1_1028_9992(param_1: *mut u16)
   iVar1 = param_1;
   *param_1 = 0x9c52;
   (iVar1 + 0x2) = 0x1028;
-  fn_ptr_1000_17ce(*(char **)(iVar1 + 0x114));
+  fn_ptr_1000_17ce(*(iVar1 + 0x114));
   *param_1 = 0x389a;
   (iVar1 + 0x2) = 0x1008;
   return;
@@ -702,7 +702,7 @@ u16 pass1_1028_9c90(mut param_1: u32)
   if ((uVar1 < 0x3a99) && (uVar1 % 0x3e8 == 0x0)) {
     // WARNING: Could not recover jumptable at 0x10289dc0. Too many branches
     // WARNING: Treating indirect jump as call
-    uVar2 = (code)((uVar1 / 0x3e8) * 0x2 + -0x623a))();
+    uVar2 = ((uVar1 / 0x3e8) * 0x2 + -0x623a))();
     return uVar2;
   }
   return 0x1;

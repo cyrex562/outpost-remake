@@ -582,9 +582,9 @@ struct astruct_790 {
     u8 field9_0x9;
     u8 field10_0xa;
     u8 field11_0xb;
-    INT16 field12_0xc;
-    INT16 field13_0xe;
-    INT16 field14_0x10;
+    let mut field12_0xc: i16;
+    let mut field13_0xe: i16;
+    let mut field14_0x10: i16;
 };
 
 

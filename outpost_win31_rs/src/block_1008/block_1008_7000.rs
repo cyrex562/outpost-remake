@@ -510,7 +510,7 @@ pub fn file_1008_7548(HFILE16 *hfile_param,i32 *param_2,mut param_3: u32)
         return;
       }
       ppcVar1 = (code **)(*param_2 + 0x28);
-      (**ppcVar1)(unaff_CS,*param_2,(char)(*param_2 >> 0x10),local_18[0],read_buffer_1c);
+      (**ppcVar1)(unaff_CS,*param_2,(*param_2 >> 0x10),local_18[0],read_buffer_1c);
     }
     ppcVar1 = (code **)(*param_2 + 0x1c);
     (**ppcVar1)(unaff_CS,*param_2,lVar5);
@@ -712,14 +712,14 @@ u16_t write_to_file_1008_7954(u16_t param_1,u8 *param_2,u32 *param_3)
   code **ppcVar1;
   let mut BVar2: bool;
   let mut uVar3: u32;
-  u16_t extraout_DX;
-  u16_t uVar4;
-  u16_t extraout_DX_00;
+  let mut extraout_DX: u16;
+  let mut uVar4: u16;
+  let mut extraout_DX_00: u16;
   HFILE16 in_stack_0000ffca;
-  u16_t local_20;
-  u16_t uStack30;
-  u16_t local_18;
-  u16_t uStack22;
+  let mut local_20: u16;
+  let mut uStack30: u16;
+  let mut local_18: u16;
+  let mut uStack22: u16;
   let mut uStack10: u32;
   let mut uStack6: u32;
 
@@ -761,7 +761,7 @@ u16_t write_to_file_1008_7954(u16_t param_1,u8 *param_2,u32 *param_3)
 pub fn pass1_1008_79f0(mut param_1: u32,i32 param_2)
 
 {
-  u16_t uVar1;
+  let mut uVar1: u16;
   let mut uVar2: u16;
   let mut uStack4: u16;
 
@@ -771,7 +771,7 @@ pub fn pass1_1008_79f0(mut param_1: u32,i32 param_2)
   }
   else {
     uVar2 = (param_2 >> 0x10);
-    uVar1 = *(u16_t *)(param_2 + 0x4);
+    uVar1 = *(param_2 + 0x4);
     uStack4 = (param_2 + 0x6);
   }
   write_to_file_1008_7954(uVar1,param_1,CONCAT22(uStack4,uVar1));
@@ -973,14 +973,14 @@ pub fn read_file_1008_7cfe(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 
   let mut uVar2: u16;
   let mut iVar3: i32;
   let mut in_stack_0000fbd6: u16;
-  u16_t in_stack_0000fbd8;
+  let mut in_stack_0000fbd8: u16;
   let mut uStack1040: u32;
   char local_406 [0x400];
   let mut uStack6: u32;
 
   uStack6 = 0x0;
   bVar1 = false;
-  do {
+  loop {
     _llseek16(0x0,uStack6,*(HFILE16 *)CONCAT22(param_2,param_1));
     iVar3 = WIN16_hread(0x400,(void *)CONCAT22(0x1050,local_406),*(HFILE16 *)CONCAT22(param_2,param_1));
     for (uStack1040 = 0x0; uStack1040 < iVar3; uStack1040 += 0x1) {

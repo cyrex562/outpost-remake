@@ -272,7 +272,7 @@ char * string_op_1020_c2f8(mut param_1: u16 )
 
 
 
-u16 pass1_1020_c3ae(void)
+u16 pass1_1020_c3ae()
 
 {
   return 0x1;
@@ -357,7 +357,7 @@ pub fn pass1_1020_c47a(param_1: *mut u16)
   uVar1 = (param_1 >> 0x10);
   *param_1 = 0xc834;
   (param_1 + 0x2) = 0x1020;
-  fn_ptr_1000_17ce(*(char **)(param_1 + 0x18));
+  fn_ptr_1000_17ce(*(param_1 + 0x18));
   pass1_1030_1d28(param_1);
   return;
 }
@@ -426,7 +426,7 @@ pub fn pass1_1020_c54a(mut param_1: u32)
 
 
 
-u16 FUN_1020_c5ae(void)
+u16 FUN_1020_c5ae()
 
 {
   return 0x0;
@@ -472,7 +472,7 @@ pub fn FUN_1020_c5b4(mut param_1: u16 ,u32 *param_2,mut param_3: u32)
   (puStack12 + 0x4) = (uVar3 * 0x2 + 0x4ea4);
   return;
 }
-pub fn FUN_1020_c640(void)
+pub fn FUN_1020_c640()
 
 {
   return;
@@ -703,7 +703,7 @@ LAB_1020_c92d:
     bVar12 = *puVar1 < param_2;
     if ((bVar12 || *puVar1 == param_2) &&
        ((bVar12 || (puVar1 = (uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
-    goto LAB_1020_c92d;
+// TODO: goto LAB_1020_c92d;
     bVar12 = false;
     while( true ) {
       if (uStack14 == 0x0) break;
@@ -862,10 +862,10 @@ pub fn pass1_1020_cac2(u8 *param_1,mut param_2: u16 ,param_3: *mut astruct_15)
   puStack16 = (puStack12 + 0xa);
   puStack20 = (puStack12 + 0xe);
   pass1_1008_5784(CONCAT22(0x1050,local_1c),puStack16);
-  do {
-    do {
+  loop {
+    loop {
       while( true ) {
-        do {
+        loop {
           puVar3 = local_1c;
           pass1_1008_5b12(CONCAT22(0x1050,puVar3));
           uVar8 = paVar9;
@@ -889,7 +889,7 @@ LAB_1020_cc34:
           iVar7 = (puVar3 + 0x6) * 0x3;
           uVar4 = (iVar7 >> 0xf) & 0xffff0003;
           iStack52 = iVar7 + uVar4 >> 0x2;
-          goto LAB_1020_cc34;
+      // TODO: goto LAB_1020_cc34;
         }
         piVar1 = (puVar3 + 0x6);
         *piVar1 = *piVar1 - iStack52;
@@ -900,7 +900,7 @@ LAB_1020_cc34:
         (puStack16 + 0xa) = 0x1;
         uStack24 = 0x0;
         ppcVar2 = (code **)(*puStack20 + 0x4);
-        (**ppcVar2)(0x1008,puStack20,(puStack20 >> 0x10),(char)puVar3,uVar8);
+        (**ppcVar2)(0x1008,puStack20,(puStack20 >> 0x10),puVar3,uVar8);
       }
     } while (iVar7 != 0x81);
     puStack36 = NULL;
@@ -918,12 +918,12 @@ LAB_1020_cbb0:
         iVar7 = (puVar3 + 0x6);
         uVar4 = (iVar7 >> 0xf);
         puVar5 = (iVar7 / 0x2);
-        goto LAB_1020_cbb0;
+    // TODO: goto LAB_1020_cbb0;
       }
       puVar5 = puStack8 + -0x4;
       if (puVar5 == NULL) {
         iVar7 = (puVar3 + 0x6) * 0x3;
-        goto LAB_1020_cba7;
+    // TODO: goto LAB_1020_cba7;
       }
     }
     pass1_1028_b58e(param_3);

@@ -335,11 +335,11 @@ pub fn pass1_1008_9466(param_1: *mut u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-WPARAM16 win_msg_op_1008_9498(void)
+WPARAM16 win_msg_op_1008_9498()
 
 {
   let mut BVar1: bool;
-  INT16 IVar2;
+  let mut IVar2: i16;
   MSG16 local_msg_1;//
 //
 LAB_1008_949c:
@@ -366,11 +366,11 @@ LAB_1008_94dc:
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn unk_win_msg_op_1008_9510(i16 *param_1)
+pub fn unk_win_msg_op_1008_9510(param_1: *mut i16)
 
 {
   let mut has_message: bool;
-  INT16 IVar1;
+  let mut IVar1: i16;
   MSG16 local_14;//
 //
 LAB_1008_9578:
@@ -378,7 +378,7 @@ LAB_1008_9578:
     has_message = GetMessage16(0x0,0x0,0x0,&local_14);
     if (has_message != 0x0) {
       if ((_u16_1050_5bc8 + 0x8) != 0x0) goto code_r0x10089538;
-      goto LAB_1008_9547;
+  // TODO: goto LAB_1008_9547;
     }
   }
   return;
@@ -542,7 +542,7 @@ pub fn begin_end_paint_1008_97c8(param_1: *mut astruct_837,mut param_2: u16 )
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *param_4,mut param_5: u16 ) -> u32
+pub fn unk_win_op_1008_97f2(u32 *param_1,param_2: *mut i16,param_3: WPARAM16,u8 *param_4,mut param_5: u16 ) -> u32
 
 {
   code **ppcVar1;
@@ -568,7 +568,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
       (**ppcVar1)();
     }
     uVar5 = 0x1;
-    goto LAB_1008_9a95;
+// TODO: goto LAB_1008_9a95;
   }
   uVar10 = (param_1 >> 0x10);
   uVar9 = SUB41(param_1,0x0);
@@ -591,7 +591,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
       (**ppcVar1)(0x8,uVar9,UVar7,param_3,param_2);
       break;
     default:
-      goto switchD_1008_9b30_caseD_4;
+  // TODO: goto switchD_1008_9b30_caseD_4;
     case 0x5:
       ppcVar1 = (code **)(*param_1 + 0x58);
       (**ppcVar1)(0x8,uVar9,uVar10,param_3,param_2,param_4);
@@ -607,7 +607,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
     case 0xd:
       ppcVar1 = (code **)(*param_1 + 0x84);
       iVar4 = (**ppcVar1)(0x8,uVar9,uVar10,param_2,CONCAT12(param_4._0_1_,param_3));
-      goto LAB_1008_9ada;
+  // TODO: goto LAB_1008_9ada;
     case 0xf:
       ppcVar1 = (code **)(*param_1 + 0x34);
       (**ppcVar1)(0x1008,param_1);
@@ -629,7 +629,7 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
     if ((PTR_LOOP_1050_039a == NULL) && (ppcVar1 = (code **)(*param_1 + 0x48), iVar4 = (**ppcVar1)(), iVar4 != 0x0)
        ) {
       make_def_wnd_proc_1008_9ce6
-                (paVar6,UVar7,CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),param_4,0x112);
+                (paVar6,UVar7,CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),param_4,0x112);
     }
   }
   else if (param_5 < 0x113) {
@@ -645,13 +645,13 @@ pub fn unk_win_op_1008_97f2(u32 *param_1,i16 *param_2,param_3: WPARAM16,u8 *para
         return uVar8;
       }
       if (param_5 < 0x86) {
-        if ((char)param_5 == '7') {
+        if (param_5 == '7') {
           return &paVar6[0x13].field_0x4;
         }
-        if ((char)param_5 == 'A') {
+        if (param_5 == 'A') {
           ppcVar1 = (code **)(*param_1 + 0x2c);
           (**ppcVar1)();
-          goto switchD_1008_9b30_caseD_1;
+      // TODO: goto switchD_1008_9b30_caseD_1;
         }
       }
 switchD_1008_9b30_caseD_4:
@@ -660,7 +660,7 @@ switchD_1008_9b30_caseD_4:
         return uVar8;
       }
       ppcVar1 = (code **)(*param_1 + 0x28);
-      (**ppcVar1)(unaff_CS,uVar9,uVar10,(char)param_2,param_3,CONCAT22(param_5,param_4));
+      (**ppcVar1)(unaff_CS,uVar9,uVar10,param_2,param_3,CONCAT22(param_5,param_4));
     }
     else if (param_5 == 0x100) {
       if (PTR_LOOP_1050_039a == NULL) {
@@ -772,22 +772,22 @@ LRESULT pass1_1008_9c30(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
                      (param_3 >> 0x10),0x86);
   return LVar1;
 }
-pub fn pass1_1008_9c4a(void)
+pub fn pass1_1008_9c4a()
 
 {
   return;
 }
-pub fn pass1_1008_9c4e(void)
+pub fn pass1_1008_9c4e()
 
 {
   return;
 }
-pub fn pass1_1008_9c52(void)
+pub fn pass1_1008_9c52()
 
 {
   return;
 }
-pub fn get_stock_obj_1008_9c56(void)
+pub fn get_stock_obj_1008_9c56()
 
 {
   GetStockObject16(HOLLOW_BRUSH);
@@ -830,7 +830,7 @@ BOOL16 pass1_1008_9cc4(mut param_1: u32,mut param_2: i16)
 
 
 
-u16 pass1_1008_9ce0(void)
+u16 pass1_1008_9ce0()
 
 {
   return 0x0;
@@ -896,7 +896,7 @@ pub fn pass1_1008_9d36(param_1: *mut astruct_19,param_2: *mut astruct_19,mut par
   pass1_1018_4dce(uVar4,(astruct_19 *)CONCAT22(param_2,param_1),0x1c0);
   iStack4 = 0x0;
   uVar3 = 0x1018;
-  do {
+  loop {
     uVar1 = FUN_1010_830a(iStack4 + 0x1c0,uVar4,uVar3,_u16_1050_14cc,iStack4 + 0x1c0);
     (&param_1->field18_0x22)[iStack4 * 0x2] = uVar1;
     (&param_1->field19_0x24)[iStack4 * 0x2] = uVar4;
@@ -955,7 +955,7 @@ pub fn pass1_1008_9e5a(StructD *structd_param_1)
     pass1_1008_92b2(_PTR_LOOP_1050_0388,0x50,CONCAT22(uVar5,puVar4));
   }
   iStack4 = 0x0;
-  do {
+  loop {
     puVar1 = (&structd_5->field20_0x22)[iStack4 * 0x2];
     uVar2 = (&structd_5->field_0x24 + iStack4 * 0x4);
     if ((uVar2 | puVar1) != 0x0) {
@@ -1064,7 +1064,7 @@ pub fn pass1_1008_9fb2(mut param_1: u16 ,mut param_2: i16,param_3: u8,param_4: u
   if (SBORROW2(param_1,0x1010) != SBORROW2(uVar9,uVar7)) {
     (*pcVar4)();
   }
-  bVar5 = ((char)(uVar6 + 0xeff0) - bVar13) % 0x1d;
+  bVar5 = ((uVar6 + 0xeff0) - bVar13) % 0x1d;
   pcVar1 = (param_2 + unaff_SI);
   bVar8 = uVar10;
   *pcVar1 = *pcVar1 + bVar8 + (uVar6 < 0x1010 || uVar6 + 0xeff0 < bVar13);
@@ -1079,7 +1079,7 @@ pub fn pass1_1008_9fb2(mut param_1: u16 ,mut param_2: i16,param_3: u8,param_4: u
   bVar3 = *pbVar2 + bVar5 + 0x4e;
   *pbVar2 = bVar3 + bVar15;
   pcVar1 = (param_2 + unaff_SI);
-  *pcVar1 = *pcVar1 + (char)param_2 + (CARRY1(bVar13,bVar5 + 0x4e) || CARRY1(bVar3,bVar15));
+  *pcVar1 = *pcVar1 + param_2 + (CARRY1(bVar13,bVar5 + 0x4e) || CARRY1(bVar3,bVar15));
   pbVar2 = (param_2 + unaff_SI);
   *pbVar2 = *pbVar2 | bVar8;
   paVar16 = struct_op_1010_1d48((astruct_19 *)CONCAT22(param_8,param_7),param_9);

@@ -195,14 +195,14 @@ struct astruct_19 {
     let mut segment_0x2: u16;
     let mut field2_0x4: u32;
     let mut field3_0x8: u16;
-    INT16 horiz_res_0xa;
+    let mut horiz_res_0xa: i16;
     let mut ver_res_0xc: u16;
     u8 field6_0xe;
     u8 field7_0xf;
     let mut field8_0x10: u16;
     let mut field9_0x12: u16;
-    INT16 field10_0x14;
-    INT16 field11_0x16;
+    let mut field10_0x14: i16;
+    let mut field11_0x16: i16;
     let mut field12_0x18: u16;
     u8 field13_0x1a;
     u8 field14_0x1b;

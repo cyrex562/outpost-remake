@@ -27,7 +27,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
     let mut i_stack280: i16;
     u8 local_116;
     u8 uStack277;
-    char cStack272;
+    let mut cStack272: u8;
     let mut puStack270: *mut u8;
     u8 local_108;
     u8 uStack263;
@@ -44,12 +44,12 @@ pub fn pass1_1000_5026(mut param_1: i16,
     if (param_1 == 0x0) {
         param_1 = dos3_call_1000_4f94();
     }
-    *u_stack304 = (char) param_1 + '@';
+    *u_stack304 =  param_1 + '@';
     uStack263 = 0x3a;
     puStack270 = auStack261;
     uStack262 = 0x5c;
     uStack277 = 0x47;
-    cStack272 = (char) param_1;
+    cStack272 =  param_1;
     local_12c[0] = SUB42(&DAT_1050_1050,
                          0x0);
     u_stack294 = SUB42(&DAT_1050_1050,
@@ -98,7 +98,7 @@ pub fn pass1_1000_5026(mut param_1: i16,
 
 // WARNING: Removing unreachable block (ram,0x10005167)
 
-u16 dos3_call_1000_514e(void)
+u16 dos3_call_1000_514e()
 {
     code *pcVar1;
     let mut uVar2: u16;
@@ -120,7 +120,7 @@ u16 dos3_call_1000_514e(void)
 
 // WARNING: Removing unreachable block (ram,0x1000518c)
 
-u16 dos3_call_1000_5174(void)
+u16 dos3_call_1000_5174()
 {
     code *pcVar1;
     let mut uVar2: u16;
@@ -210,11 +210,11 @@ u32 pass1_1000_5224(mut param_1: u16 ,
     let mut uVar7: u16;
     let mut uVar8: u16;
     let mut bVar10: bool;
-    char cVar11;
+    let mut cVar11: u8;
     let mut uVar9: u16;
 
     cVar11 =  param_2 < 0x0;
-    if ((bool) cVar11) {
+    if ( cVar11) {
         bVar10 = param_1 != 0x0;
         param_1 = -param_1;
         param_2 = - bVar10 - param_2;
@@ -233,7 +233,7 @@ u32 pass1_1000_5224(mut param_1: u16 ,
         uVar3 = param_2 / param_3;
         iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
-        do {
+        loop {
             uVar8 = uVar9 >> 0x1;
             uVar5 = uVar5 >> 0x1 |  ((uVar9 & 0x1) != 0x0) << 0xf;
             uVar7 = uVar6 >> 0x1;
@@ -313,10 +313,10 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
         iVar5 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
         iVar6 = 0x0;
         if ( (uVar11 - 0x1) < 0x0) {
-            goto LAB_1000_538a;
+        // TODO: goto LAB_1000_538a;
         }
     } else {
-        do {
+        loop {
             uVar10 = uVar9 >> 0x1;
             uVar4 = uVar4 >> 0x1 |  ((uVar9 & 0x1) != 0x0) << 0xf;
             uVar7 = uVar8 >> 0x1;
@@ -340,7 +340,7 @@ u32 pass1_1000_52f0(mut param_1: u16 ,
         iVar5 = uVar4 - param_1;
         iVar6 = (uVar9 - param_2) -  (uVar4 < param_1);
         if (-0x1 <  (uVar11 - 0x1)) {
-            goto LAB_1000_538a;
+        // TODO: goto LAB_1000_538a;
         }
     }
     bVar13 = iVar5 != 0x0;
@@ -374,7 +374,7 @@ u32 pass1_1000_5390(mut param_1: u16 ,
         uVar3 = param_2 / param_3;
         iVar4 =  (( param_2 %  param_3 << 0x10 |  param_1) /  param_3);
     } else {
-        do {
+        loop {
             uVar5 = uVar8 >> 0x1;
             uVar9 = uVar9 >> 0x1 |  ((uVar8 & 0x1) != 0x0) << 0xf;
             uVar7 = uVar6 >> 0x1;
@@ -423,7 +423,7 @@ u32 pass1_1000_53f0(mut param_1: u16 ,
         iVar6 =  (( param_2 %  param_3 << 0x10 |  param_1) %  param_3);
         iVar7 = 0x0;
     } else {
-        do {
+        loop {
             uVar5 = uVar4 >> 0x1;
             uVar10 = uVar10 >> 0x1 |  ((uVar4 & 0x1) != 0x0) << 0xf;
             uVar8 = uVar9 >> 0x1;
@@ -464,10 +464,10 @@ i16 pass1_1000_545a(mut param_1: u32,
     pbVar6 =  param_2;
     pbVar5 =  param_1;
     bVar4 = 0xff;
-    do {
-        do {
+    loop {
+        loop {
             if (bVar4 == 0x0) {
-                goto LAB_1000_5499;
+            // TODO: goto LAB_1000_5499;
             }
             pbVar1 = pbVar6;
             pbVar6 = pbVar6 + 0x1;
@@ -481,7 +481,7 @@ i16 pass1_1000_545a(mut param_1: u32,
     } while (bVar4 == bVar2);
     bVar4 = (bVar4 < bVar2) * -0x2 + 0x1;//
 //    LAB_1000_5499:
-    return  (char) bVar4;
+    return   bVar4;
 }
 
 u16 *pass1_1000_54a0(mut param_1: u32,
@@ -543,7 +543,7 @@ pub fn pass1_1000_54e8(u8 *param_1,
 
     i_var1 = param_3;
     while (i_var1 += -0x1, -0x1 < i_var1) {
-        ((code) param_1)();
+        ( param_1)();
     }
     return;
 }
@@ -568,7 +568,7 @@ pub fn pass1_1000_5512(u8 *param_1,
             break;
         }
         u_stack4 = param_2;
-        ((code) param_1)();
+        ( param_1)();
     }
 }
 
@@ -588,7 +588,7 @@ pub fn pass1_1000_5586(code param_1,
 
     i_var1 = param_3;
     while (i_var1 += -0x1, -0x1 < i_var1) {
-        ((code) param_1)();
+        ( param_1)();
     }
 }
 

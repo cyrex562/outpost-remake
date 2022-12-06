@@ -259,7 +259,7 @@ pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
                                        0x7d2057b);
               uVar5 = uVar3;
             }
-            fn_ptr_1 = (code **)(CONCAT13((char)(uVar5 >> 0x8),CONCAT12((char)uVar5,iVar5)) +
+            fn_ptr_1 = (code **)(CONCAT13((uVar5 >> 0x8),CONCAT12(uVar5,iVar5)) +
                                 0x74);
             (**fn_ptr_1)();
             return;
@@ -267,14 +267,14 @@ pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
           uVar1 = struct_7.field141_0x8e;
           uVar2 = struct_7.field141_0x8e;
           uVar6 = (uVar2 >> 0x10);
-          iVar6 = (i16)uVar2;
+          iVar6 = uVar2;
           uVar3 = struct_7.field141_0x8e;
           pass1_1028_8d9e((astruct_97 *)CONCAT22(0x1050,&stack0xfdd2),(uVar3 + 0xa),
                           (uVar1 + 0x12),
                           (iVar6 + 0x16) & 0xffff | (iVar6 + 0x18) << 0x10);
           fn_ptr_1030_835a(_u16_1050_5748,CONCAT22(0x1050,&stack0xfdd2));
           pass1_1028_8dec(CONCAT22(0x1050,&stack0xfdd2));
-          goto LAB_1040_1619;
+      // TODO: goto LAB_1040_1619;
         }
       }
     }
@@ -318,7 +318,7 @@ pub fn set_win_pos_1040_162a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u3
   }
   else if ((param_4 != 0x9) && (param_4 != 0xa)) {
     uVar1 = 0x0;
-    goto LAB_1040_164d;
+// TODO: goto LAB_1040_164d;
   }
   uVar1 = 0x1;//
 LAB_1040_164d:
@@ -372,7 +372,7 @@ pub fn send_msg_1040_1696(StructB *param_1,mut param_2: u16 )
   SendMessage16(0x0,0x1,0xb,param_2);
   return;
 }
-pub fn FUN_1040_1786(void)
+pub fn FUN_1040_1786()
 
 {
   return;
@@ -597,7 +597,7 @@ pub fn check_dialog_btn_1040_1b8a(StructC *param_1)
   CheckDlgButton16(check,0xfdc,check);
   return;
 }
-pub fn FUN_1040_1c1e(void)
+pub fn FUN_1040_1c1e()
 
 {
   return;
@@ -738,7 +738,7 @@ pub fn pass1_1040_1e80(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut 
   }
   return CONCAT22(uStack4,BStack6);
 }
-pub fn FUN_1040_1ec4(void)
+pub fn FUN_1040_1ec4()
 
 {
   return;
@@ -818,6 +818,6 @@ pub fn pass1_1040_1f5a(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u
            mixed_1010_20ba((astruct_57 *)(paVar3 & 0xffff0000 | puVar5 >> 0x10),_u16_1050_0ed0,
                            (u8 **)CONCAT22(puVar7,0x2b),in_stack_0000fe70,in_stack_0000ff94,in_stack_0000ff9a,
                            in_stack_0000ff9e);
-  pass1_1010_0538(paVar6,(char **)CONCAT22(uVar6,puVar7),(char **)CONCAT22(uVar9,puVar8));
+  pass1_1010_0538(paVar6,CONCAT22(uVar6,puVar7),CONCAT22(uVar9,puVar8));
   return;
 }

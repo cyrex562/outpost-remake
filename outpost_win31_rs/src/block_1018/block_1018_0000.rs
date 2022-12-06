@@ -497,10 +497,10 @@ pub fn pass1_1018_078e(StructD *param_1)
     fn_ptr_1000_17ce(_PTR_LOOP_1050_3962);
     _PTR_LOOP_1050_3962 = NULL;
   }
-  fn_ptr_1000_17ce(*(char **)&pstruct_5.field_0x94);
-  fn_ptr_1000_17ce(*(char **)&pstruct_5.field_0x9a);
-  fn_ptr_1000_17ce(*(char **)&pstruct_5.field_0x88);
-  fn_ptr_1000_17ce(*(char **)&pstruct_5.field_0x8e);
+  fn_ptr_1000_17ce(*&pstruct_5.field_0x94);
+  fn_ptr_1000_17ce(*&pstruct_5.field_0x9a);
+  fn_ptr_1000_17ce(*&pstruct_5.field_0x88);
+  fn_ptr_1000_17ce(*&pstruct_5.field_0x8e);
   if (pstruct_5.field29_0x2c != NULL) {
     if (param_1 == NULL) {
       puVar3 = NULL;
@@ -593,8 +593,8 @@ pub fn get_sys_metrics_1018_09a8(mut param_1: u16 ,mut param_2: u32)
 
 {
   let mut uVar1: u32;
-  INT16 IVar2;
-  INT16 IVar3;
+  let mut IVar2: i16;
+  let mut IVar3: i16;
   let mut in_register_0000000a: u16;
   let mut paVar4: *mut Struct57;
   let mut iVar5: i16;
@@ -610,7 +610,7 @@ pub fn get_sys_metrics_1018_09a8(mut param_1: u16 ,mut param_2: u32)
   let mut local_a: i16;
   let mut local_8: i16;
   let mut iStack6: i16;
-  INT16 IStack4;
+  let mut IStack4: i16;
 
   paVar4 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
   IStack4 = GetSystemMetrics16(SM_CYCAPTION);
@@ -796,7 +796,7 @@ pub fn pass1_1018_0bf4(mut param_1: i16,mut param_2: u32,mut param_3: i16,mut pa
     pass1_1008_6c90(CONCAT22(0x1050,local_14));
     pass1_1018_0b1e((astruct_74 *)(param_2 & 0xffff0000 | (param_2 - 0x20)),
                     CONCAT22(0x1050,local_14));
-    goto LAB_1018_0c71;
+// TODO: goto LAB_1018_0c71;
   case 0x5:
   case 0x6:
     uVar6 = param_4 & 0xffff0000 | param_2;
@@ -968,7 +968,7 @@ LAB_1018_0f74:
     return;
   }
   uStack44 = paVar2[0x1c].field4_0x8;
-  pcVar5 = *(char **)&paVar2.field6_0x10;
+  pcVar5 = *&paVar2.field6_0x10;
   pcStack40 = pcVar5;
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,pcVar5);
   pcStack36 = (pcVar5 & 0xffff | uVar8 << 0x10);

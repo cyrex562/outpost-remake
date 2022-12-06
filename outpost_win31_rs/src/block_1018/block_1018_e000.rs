@@ -216,7 +216,7 @@ pub fn pass1_1018_e2cc(mut param_1: u32)
     else {
       piVar1 = &iVar7->field204_0xcc;
       *piVar1 = *piVar1 + 0x1;
-      struct_1020_3644(uVar7,(StructA *)CONCAT13((char)(paVar6 >> 0x8),CONCAT12((char)paVar6,uVar3)),
+      struct_1020_3644(uVar7,(StructA *)CONCAT13((paVar6 >> 0x8),CONCAT12(paVar6,uVar3)),
                        iVar7->field204_0xcc,param_1 & 0xffff | uVar9 << 0x10,in_stack_0000ff4c,in_stack_0000ff62)
       ;
       uVar9 = uVar3;

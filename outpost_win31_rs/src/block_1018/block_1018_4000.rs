@@ -44,10 +44,10 @@ pub fn pass1_1018_435e(mut param_1: u16 ,mut param_2: u32,i32 param_3,mut param_
   uVar2 = 0x0;
   uVar4 = (param_2 >> 0x10);
   uVar1 = (param_2 + 0x122);
-  pass1_1008_e852(param_1,uVar1,(uVar1 >> 0x10),*(char **)(param_2 + 0x126));
+  pass1_1008_e852(param_1,uVar1,(uVar1 >> 0x10),*(param_2 + 0x126));
   pass1_1030_8344(_u16_1050_5748,CONCAT22(param_1,uVar2));
-  do {
-    do {
+  loop {
+    loop {
       uVar3 = uVar2;
       pass1_1008_612e(uVar3,param_5,param_4);
       uVar2 = (uVar3 * 0x2 + 0x411c);
@@ -307,7 +307,7 @@ pub fn pass1_1018_4760(StructD *param_1)
   iVar2 = param_1;
   param_1->address_offset_field_0x0 = &PTR_LOOP_1050_4aa6;
   iVar2->address_offset_field_0x2 = 0x1018;
-  fn_ptr_1000_17ce(*(char **)&iVar2->hfile_0x4);
+  fn_ptr_1000_17ce(*&iVar2->hfile_0x4);
   param_1->address_offset_field_0x0 = 0x389a;
   iVar2->address_offset_field_0x2 = 0x1008;
   return;
@@ -388,7 +388,7 @@ pub fn pass1_1018_4882(StructD *param_1)
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = &PTR_LOOP_1050_4a8e;
   (param_1 + 0x2) = 0x1018;
-  fn_ptr_1000_17ce(*(char **)(param_1 + 0x10));
+  fn_ptr_1000_17ce(*(param_1 + 0x10));
   pass1_1018_4760(param_1);
   return;
 }

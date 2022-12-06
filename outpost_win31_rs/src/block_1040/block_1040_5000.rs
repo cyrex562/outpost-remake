@@ -159,7 +159,7 @@ LAB_1040_5560:
             EnableWindow16(0x0,hwnd_8);
             return;
           }
-          goto LAB_1040_5560;
+      // TODO: goto LAB_1040_5560;
         }
         if ((param_2->field171_0xb6 == 0x0) || (is_window = IsWindow16(param_2->field171_0xb6), is_window == 0x0)) {
           paVar11 = (astruct_940 *)
@@ -170,7 +170,7 @@ LAB_1040_5560:
           return;
         }
         hwnd_8 = param_2->field171_0xb6;
-        goto LAB_1040_5417;
+    // TODO: goto LAB_1040_5417;
       }
       puVar10 = mixed_1010_20ba(paVar8,_u16_1050_0ed0,(u8 **)CONCAT22(in_stack_0000ffde,0x3),in_stack_0000fe86,
                                 in_stack_0000ffaa,in_stack_0000ffb0,in_stack_0000ffb4);
@@ -432,7 +432,7 @@ pub fn win_ui_op_1040_5800(u8 *param_1,param_2: *mut astruct_18,mut param_3: u16
   }
   else {
     if (param_5 != 0x13b) {
-      pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((char)(param_3 >> 0x8),CONCAT12((char)param_3,param_2)),param_4,
+      pass1_1040_b54a(param_1,(astruct_903 *)CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),param_4,
                       param_5);
       return;
     }
@@ -515,7 +515,7 @@ pub fn draw_op_1040_5a06(mut param_1: u32,astruct_741 *struct741_param_1)
         puVar2 = puStack54;
         if (puStack54 != NULL) {
           fn_ptr_1 = (code **)*puStack54;
-          (**fn_ptr_1)(0x8,uVar1,(char)param_1,0x1,uVar14);
+          (**fn_ptr_1)(0x8,uVar1,param_1,0x1,uVar14);
           puVar2 = puStack54;
         }
       }
@@ -528,14 +528,14 @@ pub fn draw_op_1040_5a06(mut param_1: u32,astruct_741 *struct741_param_1)
     caption_height_px = GetSystemMetrics16(SM_CYCAPTION);
     puVar2 = -(caption_height_px + -0x23);
     fn_ptr_1 = (code **)(*puStack54 + 0x4);
-    (**fn_ptr_1)(0x38,(char)puStack54,(char)(puStack54 >> 0x10),-(caption_height_px + -0x23),uVar10,uVar13);
+    (**fn_ptr_1)(0x38,puStack54,(puStack54 >> 0x10),-(caption_height_px + -0x23),uVar10,uVar13);
   }
   if (puStack54 != NULL) {
     uVar1 = (puStack54 >> 0x10);
     puVar2 = puStack54;
     if (puStack54 != NULL) {
       fn_ptr_1 = (code **)*puStack54;
-      (**fn_ptr_1)((char)base_addr,(char)puStack54,uVar1,0x1,puStack54,uVar1);
+      (**fn_ptr_1)(base_addr,puStack54,uVar1,0x1,puStack54,uVar1);
       puVar2 = puStack54;
     }
   }
@@ -547,28 +547,28 @@ pub fn draw_op_1040_5a06(mut param_1: u32,astruct_741 *struct741_param_1)
   IVar2 = GetSystemMetrics16(SM_CYCAPTION);
   uVar3 = *puStack54;
   fn_ptr_1 = (code **)uVar3 + 0x2;
-  (**fn_ptr_1)(0x38,(char)uVar1,(char)uVar7,-(IVar2 + -0x23),uVar10,uVar14);
+  (**fn_ptr_1)(0x38,uVar1,uVar7,-(IVar2 + -0x23),uVar10,uVar14);
   if (puStack54 != NULL) {
     if (puStack54 != NULL) {
       fn_ptr_1 = (code **)uVar3;
-      (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar1,(char)uVar7,0x1);
+      (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar1,uVar7,0x1);
     }
   }
   handle = CreatePen16(0x1000025,0x0,0x0);
   handle_00 = SelectObject16(handle,hdc16_2c);
   uVar14 = FUN_1010_830a(handle_00,uVar8,s_tile2_bmp_1050_1538,_u16_1050_14cc,0x4f);
   puStack54 = CONCAT22(uVar8,uVar14);
-  uVar12 = pass1_1008_4772((astruct_76 *)CONCAT13((char)(uVar8 >> 0x8),CONCAT12((char)uVar8,uVar14)));
+  uVar12 = pass1_1008_4772((astruct_76 *)CONCAT13((uVar8 >> 0x8),CONCAT12(uVar8,uVar14)));
   uVar1 = (uVar12 >> 0x10);
   uVar4 = (uVar12 + 0x4);
   uVar2 = (uVar12 + 0x8);
   IVar3 = GetSystemMetrics16(SM_CYCAPTION);
   y = -(IVar3 + -0xc1);
   IVar4 = GetSystemMetrics16(SM_CYCAPTION);
-  iStack72 = (i16)uVar2;
+  iStack72 = uVar2;
   y_00 = 0xc5 - (IVar4 - iStack72);
   MoveTo16(y,0x82,hdc16_2c);
-  iStack68 = (i16)uVar4;
+  iStack68 = uVar4;
   x = iStack68 * 0xa + 0x85;
   LineTo16(y,x,hdc16_2c);
   LineTo16(y_00,x,hdc16_2c);
@@ -577,7 +577,7 @@ pub fn draw_op_1040_5a06(mut param_1: u32,astruct_741 *struct741_param_1)
   for (uStack82 = 0x0; puVar1 = &struct_1->field147_0x94, uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 += 0x1) {
     IVar5 = GetSystemMetrics16(SM_CYCAPTION);
     fn_ptr_1 = (code **)(*puStack54 + 0x4);
-    (**fn_ptr_1)(s_tile2_bmp_1050_1538,(char)uVar14,uVar8,-(IVar5 + -0xc4));
+    (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar14,uVar8,-(IVar5 + -0xc4));
   }
   if (puStack54 != NULL) {
     if (puStack54 != NULL) {
@@ -645,7 +645,7 @@ pub fn pass1_1040_5d42(StructB *param_1)
 
 {
   let mut uVar1: u16;
-  char cVar2;
+  let mut cVar2: u8;
   let mut iVar3: i16;
   let mut uVar4: u16;
   let mut uVar5: u32;
@@ -660,7 +660,7 @@ pub fn pass1_1040_5d42(StructB *param_1)
       return;
     }
     if (uVar1 < 0x60) {
-      cVar2 = (char)uVar1;
+      cVar2 = uVar1;
       if (cVar2 == '(') {
         (iVar3 + 0x96) = 0x54;
         return;

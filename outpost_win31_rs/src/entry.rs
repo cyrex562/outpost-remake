@@ -69,16 +69,16 @@ pub unsafe fn entry(mut param_1: u16,
                 win_version = GetVersion16();
 //                PTR_LOOP_1050_5f52 =  (u32_var11 >> 0x10);
                 PTR_LOOP_1050_5f84 = u32_var11;
-//                PTR_LOOP_1050_5f80 =  CONCAT11((char) u32_var10,
-//                                                     (char) (u32_var10 >> 0x8));
+//                PTR_LOOP_1050_5f80 =  CONCAT11( u32_var10,
+//                                                      (u32_var10 >> 0x8));
                 WIN_VERSION_1050_5f80 = win_version;
                 let mut func_ptr_3: code8 = swi(0x21);
                 u32_var12 = u32_var11;
                 u32_var11 = func_ptr_3();
 //                PTR_LOOP_1050_5f52 =  (u32_var12 >> 0x10);
                 PTR_LOOP_1050_5f84 = u32_var12;
-//                DAT_1050_5f82 = CONCAT11((char) u32_var11,
-//                                          (char) (u32_var11 >> 0x8));
+//                DAT_1050_5f82 = CONCAT11( u32_var11,
+//                                           (u32_var11 >> 0x8));
                 DAT_1050_5f82 = u32_var11 as u16;
                 DAT_1050_5f87 = 0x0;
                 WaitEvent16(0x0);
@@ -90,7 +90,7 @@ pub unsafe fn entry(mut param_1: u16,
                 }
             }
         }
-//        param_3 = CONCAT11((char) ( param_3 >> 0x8),
+//        param_3 = CONCAT11( ( param_3 >> 0x8),
 //                           0xff);
         param_3 = ((param_3 >> 0x8) << 0x8) | 0xff;
         pass1_1000_24db(param_3 as u16);
@@ -112,7 +112,7 @@ pub unsafe fn entry(mut param_1: u16,
                    (uVar10 >> 0x10) as u16);
     fn_ptr_op_1000_24cd(uVar4);
     // TODO
-    // paVar13 = (astruct_825 *) CONCAT22(uVar4,
+    // paVar13 =  CONCAT22(uVar4,
     //                                    0x15);
     pass1_1000_25a8();
     pass1_1000_2913(0x15);

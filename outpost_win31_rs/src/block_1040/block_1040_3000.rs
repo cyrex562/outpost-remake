@@ -148,9 +148,9 @@ pub fn send_msg_1040_3374(mut param_1: u32,u32 *param_2,mut param_3: u16 )
     }
     ppcVar1 = (code **)(*param_2 + 0x4);
     uVar3 = uStack6;
-    (**ppcVar1)(uVar4,param_2,(char)uStack10,(uStack10 >> 0x10));
+    (**ppcVar1)(uVar4,param_2,uStack10,(uStack10 >> 0x10));
     lparam = pass1_1018_3a7a(uVar3,extraout_DX_00,(param_1 + 0x96),
-                                     CONCAT13((char)(extraout_DX_00 >> 0x8),CONCAT12((char)extraout_DX_00,uVar3)))
+                                     CONCAT13((extraout_DX_00 >> 0x8),CONCAT12(extraout_DX_00,uVar3)))
     ;
     LVar5 = SendMessage16((LPARAM)lparam,0x0,0x403,param_3);
     uVar4 = 0x1000;
@@ -300,7 +300,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   iVar5 = (astruct_923 *)param_2;
   GetWindowText16(0x80,CONCAT22(0x1050,local_50c),iVar5->field6_0x6);
   uVar6 = SUB21(local_50c,0x0);
-  wsprintf16(local_58e,CONCAT13((char)(local_50c >> 0x8),CONCAT12(uVar6,0x1050)),uVar6,
+  wsprintf16(local_58e,CONCAT13((local_50c >> 0x8),CONCAT12(uVar6,0x1050)),uVar6,
              CONCAT22(uStack1036,0x1050),(uStack1036 >> 0x10));
   BStack1426 = SetWindowText16(CONCAT22(0x1050,local_58e),iVar5->field6_0x6);
   sprintf_op_1018_34b6((uchar)BStack1426,uVar4,(astruct_263 *)iVar5->field141_0x8e);
@@ -375,7 +375,7 @@ pub fn message_box_op_1040_37f0(mut param_1: u16 ,mut param_2: i16,mut param_3: 
                mixed_1010_20ba(paVar3,_u16_1050_0ed0,(u8 **)CONCAT22(in_stack_0000fbec,0x2),in_stack_0000fa94,
                                in_stack_0000fbb8,in_stack_0000fbbe,in_stack_0000fbc2);
     uVar2 = (paStack6 >> 0x10);
-    pcStack10 = *(char **)(paStack6 + 0x68);
+    pcStack10 = *(paStack6 + 0x68);
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,(short)&DAT_1050_1050);
     uVar1 = MessageBox16(0x30,pcStack10,CONCAT22(0x1050,local_40c),*(HWND16 *)(param_2 + 0x6));

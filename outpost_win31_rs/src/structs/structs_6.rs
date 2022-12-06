@@ -103,8 +103,8 @@ struct astruct_862 {
     let mut field22_0x18: HWND16;
     HINSTANCE16 field23_0x1a;
     let mut field24_0x1c: u16;
-    INT16 field25_0x1e;
-    INT16 field26_0x20;
+    let mut field25_0x1e: i16;
+    let mut field26_0x20: i16;
     let mut field27_0x22: u8;
     let mut field28_0x23: u8;
     let mut field29_0x24: u8;

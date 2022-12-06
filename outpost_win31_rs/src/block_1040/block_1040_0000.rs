@@ -135,7 +135,7 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
   let mut uVar14: u16;
   let mut w_param: WPARAM16;
   let mut msg: u16;
-  INT16 id;
+  let mut id: i16;
   let mut in_stack_0000fedc: u32;
   let mut uVar15: u32;
   HCURSOR16 local_18;
@@ -194,13 +194,13 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
       uVar6 = win_ui_op_1040_0558((StructB *)param_3,paStack8);
       paVar5 = (astruct_57 *)(paVar5 & 0xffff0000 | uVar6 >> 0x10);
     }
-    goto LAB_1040_04da;
+// TODO: goto LAB_1040_04da;
   case 0x16c:
     hwnd_1 = GetDlgItem16(0x16d,*(HWND16 *)(param_3 + 0x6));
     EnableWindow16(0x1,hwnd_1);
     iStack4 = 0x5;
     (param_3 + 0x94) = 0x5;
-    goto LAB_1040_04da;
+// TODO: goto LAB_1040_04da;
   case 0x16d:
     hwnd_1 = GetDlgItem16(0x16d,*(HWND16 *)(param_3 + 0x6));
     BVar2 = EnableWindow16(0x0,hwnd_1);
@@ -234,7 +234,7 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
     local_16 += (local_18 - local_16) / 0x2;
     uVar4 = pass1_1030_2fac(paStack20);
     set_window_text_1018_6086((param_3 + 0x96),uVar4,local_16);
-    goto LAB_1040_04da;
+// TODO: goto LAB_1040_04da;
   case 0x16e:
     puVar8 = mixed_1010_20ba(paVar5,_u16_1050_0ed0,(u8 **)CONCAT22(unaff_SI,0x39),in_stack_0000fd7c,
                              in_stack_0000fea0,in_stack_0000fea6,in_stack_0000feaa);
@@ -249,7 +249,7 @@ pub fn win_ui_op_1040_0170(undefined1 param_1,mut param_2: u16 ,struct *param_3,
     SetCursor16(local_16);
     PostMessage16(0x0,0x7e,0x111,HWND16_1050_0396);
     DestroyWindow16(*(HWND16 *)(param_3 + 0x6));
-    goto LAB_1040_04da;
+// TODO: goto LAB_1040_04da;
   default:
     post_win_msg_1040_7b3c((StructC *)param_3,param_4,param_5,param_6);
     return;
@@ -293,7 +293,7 @@ LRESULT win_ui_op_1040_0558(StructB *param_1,param_2: *mut astruct_915)
   let mut uVar5: u16;
   let mut w_param: WPARAM16;
   let mut msg: u16;
-  INT16 id;
+  let mut id: i16;
   LPVOID hwnd_00;
   astruct_913 *iVar1;
 
@@ -461,7 +461,7 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
 
 {
   code **ppcVar1;
-  INT16 IVar2;
+  let mut IVar2: i16;
   let mut puVar3: *mut u8;
   let mut puVar4: *mut u8;
   let mut puVar5: *mut u8;
@@ -517,16 +517,16 @@ LAB_1040_09f9:
         post_win_msg_1040_7b3c(pstruct_c_param_2,param_3,param_4,param_5);
         return;
       }
-      if ((char)param_5 == '\x02') {//
+      if (param_5 == '\x02') {//
 LAB_1040_09b4:
         post_win_msg_1040_7b3c(pstruct_c_param_2,0x0,0x0,0x2);
         PostMessage16(0x0,0xee,0x111,HWND16_1050_0396);
         return;
       }
-      if ((char)param_5 != 'd') goto LAB_1040_09f9;
+      if (param_5 != 'd') goto LAB_1040_09f9;
       PostMessage16(0x0,0x64,0x111,HWND16_1050_0396);
       BVar9 = 0x0;
-      goto LAB_1040_0821;
+  // TODO: goto LAB_1040_0821;
     }
     if (param_5 != 0x74) {
       if (param_5 == 0xee) goto LAB_1040_09b4;
@@ -534,7 +534,7 @@ LAB_1040_09b4:
         enable_window_1040_0acc(pstruct_c_param_2,0x1);
         return;
       }
-      goto LAB_1040_09f9;
+  // TODO: goto LAB_1040_09f9;
     }
     enable_window_1040_0acc(pstruct_c_param_2,0x0);
     load_string_1010_84e0
@@ -613,7 +613,7 @@ pub fn pass1_1040_0a1a(mut param_1: u32)
     struct_1008_4c58(paVar5);
   }
   *(astruct_394 **)(iVar9 + 0x70) = paVar5;
-  *(u8 **)(iVar9 + 0x72) = puVar7;
+  (iVar9 + 0x72) = puVar7;
   pass1_1008_4d84(puVar7,*(astruct_90 **)(iVar9 + 0x70),uStack10);
   return;
 }
@@ -765,12 +765,12 @@ pub fn post_win_msg_1040_0d5e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i
 
 
 
-u16 pass1_1040_0d80(void)
+u16 pass1_1040_0d80()
 
 {
   return 0x1;
 }
-pub fn FUN_1040_0d86(void)
+pub fn FUN_1040_0d86()
 
 {
   return;
@@ -848,7 +848,7 @@ pub fn pass1_1040_0e86(StructD *param_1)
   iVar5 = param_1;
   param_1.address_offset_field_0x0 = s_overflow_on_node__d_1050_11ca + 0x8;
   (iVar5 + 0x2) = &PTR_LOOP_1050_1040;
-  pcVar2 = *(char **)(iVar5 + 0x92);
+  pcVar2 = *(iVar5 + 0x92);
   uVar1 = (iVar5 + 0x94);
   uVar3 = uVar1 | pcVar2;
   paVar4 = (astruct_57 *)(in_EDX & 0xffff0000 | uVar3);
@@ -888,7 +888,7 @@ pub fn FUN_1040_0f0c(mut param_1: u16 ,StructB *param_2)
   let mut in_stack_0000ff92: u16;
   let mut in_stack_0000ff98: u16;
   let mut in_stack_0000ff9c: u16;
-  INT16 id;
+  let mut id: i16;
   let mut in_stack_0000ffc6: u16;
   u8 local_2e [0x2];
   let mut iStack44: i16;

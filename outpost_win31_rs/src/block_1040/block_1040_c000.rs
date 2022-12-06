@@ -135,7 +135,7 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
     pass1_1010_2ee2(iVar10->field5_0x6);
     for (iStack26 = 0x0; iStack26 < iVar1; iStack26 += 0x1) {
       uVar3 = (iStack26 * 0x4 + iVar5);
-      iVar11 = (i16)uVar3;
+      iVar11 = uVar3;
       iVar11 = iVar11 + 0x1e;
       x1 = (uVar3 & 0xffff0000 | iVar11);
       uVar9 = ((uVar3 & 0xffff0000) >> 0x10);
@@ -143,8 +143,8 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
       MoveTo16(y1,*x1,in_stack_00000008);
       LineTo16(y1,*x1 + -0xf,in_stack_00000008);
       DVar10 = GetCurrentPosition16(in_stack_00000008);
-      y5 = (i16)(DVar10 >> 0x10);
-      x3 = (i16)DVar10;
+      y5 = (DVar10 >> 0x10);
+      x3 = DVar10;
       if (iStack26 == 0x0) {
         x2 = x3;
         y4 = y5;
@@ -161,7 +161,7 @@ pub fn draw_op_1040_c38e(param_1: *mut astruct_772)
     uVar8 = iVar10->field5_0x6;
     uVar5 = iVar10->field5_0x6;
     uVar1 = (uVar8 + (uVar5 + 0x16) * 0x4 + 0x26);
-    iVar12 = (i16)uVar1;
+    iVar12 = uVar1;
     iVar12 = iVar12 + 0x1e;
     uVar11 = ((uVar1 & 0xffff0000) >> 0x10);
     MoveTo16((iVar12 + 0x24) / 0x2 + (iVar12 + 0x20),
@@ -317,7 +317,7 @@ pub fn pass1_1040_c630(param_1: *mut astruct_65,mut param_2: u32)
     ppcVar2 = (code **)(uVar3 + 0x4);
     (**ppcVar2)(unaff_CS,param_1);
     ppcVar2 = (code **)(uVar3 + 0x8);
-    (**ppcVar2)(unaff_CS,(char)param_1,uVar5);
+    (**ppcVar2)(unaff_CS,param_1,uVar5);
   }
   return;
 }
@@ -375,7 +375,7 @@ pub fn draw_op_1040_c74c(param_1: *mut astruct_738,mut param_2: u16 ,HDC16 hdc16
   func_ptr_1 = (code **)(uVar3 + 0x10);
   (**func_ptr_1)(s_tile2_bmp_1050_1538,param_1,_param_2);
   func_ptr_1 = (code **)(uVar3 + 0x14);
-  (**func_ptr_1)(s_tile2_bmp_1050_1538,struct_1,(char)(param_1 >> 0x10),hdc16_param_3);
+  (**func_ptr_1)(s_tile2_bmp_1050_1538,struct_1,(param_1 >> 0x10),hdc16_param_3);
   struct_1->field66_0x46 = 0x0;
   hpalette_1 = SelectPalette16(0x0,hpalette_1,hdc16_param_3);
   DeleteObject16(hpalette_1);
@@ -392,7 +392,7 @@ pub fn send_msg_1040_c85a(mut param_1: u32)
   SendMessage16(0x0,0xfa,0x111,*(HWND16 *)(param_1 + 0x1a));
   return;
 }
-pub fn FUN_1040_c882(void)
+pub fn FUN_1040_c882()
 
 {
   return;
@@ -589,7 +589,7 @@ pub fn win_ui_op_1040_cace(mut param_1: u16 ,mut param_2: u32)
   let mut uVar1: u32;
   let mut bVar2: bool;
   let mut iVar3: i16;
-  INT16 IVar4;
+  let mut IVar4: i16;
   let mut uVar5: u16;
   let mut uVar6: u16;
   let mut bVar7: bool;

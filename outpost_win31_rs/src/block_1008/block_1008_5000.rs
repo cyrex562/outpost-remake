@@ -35,7 +35,7 @@ pub fn pass1_1008_5118(mut param_1: u32)
 
   uVar1 = (param_1 >> 0x10);
   if (*(i32 *)(param_1 + 0x10) != 0x0) {
-    call_fn_ptr_1000_0dc6(*(char **)(param_1 + 0x10));
+    call_fn_ptr_1000_0dc6(*(param_1 + 0x10));
   }
   return;
 }
@@ -185,7 +185,7 @@ u32 * pass1_1008_5394(u32 *param_1)
   *param_1 = 0x0;
   return param_1;
 }
-pub fn pass1_1008_53aa(void)
+pub fn pass1_1008_53aa()
 
 {
   return;
@@ -451,7 +451,7 @@ i32 pass1_1008_57f0(mut param_1: u32,mut param_2: i16)
 
   pass1_1008_5784(CONCAT22(0x1050,local_a),param_1);
   iStack12 = 0x0;
-  do {
+  loop {
     lVar2 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     if (lVar2 == 0x0) {
       return 0x0;
@@ -582,7 +582,7 @@ pub fn pass1_1008_593c(u32 *param_1,mut param_2: u32)
     return;
   }
   (paStack6 + 0x8) = param_2;
-  do {
+  loop {
     param_1 = (param_1 + 0x4);
     uVar7 = (param_1 >> 0x10);
   } while (*(i32 *)(param_1 + 0x4) != 0x0);
@@ -613,7 +613,7 @@ pub fn pass1_1008_59f4(mut param_1: u32,i32 param_2)
   uVar9 = (param_1 >> 0x10);
   puVar6 = puStack6;
   puVar4 = param_1;
-  do {
+  loop {
     puStack6 = puVar6;
     uVar10 = (puVar4 >> 0x10);
     iVar8 = puVar4;

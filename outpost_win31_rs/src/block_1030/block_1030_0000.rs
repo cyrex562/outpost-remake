@@ -24,7 +24,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_489e((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x9:
@@ -33,14 +33,14 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_2bdc(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0xa:
     mem_op_1000_179c(0x26,param_2);
     uVar1 = param_2;
     uVar3 = uVar1 | param_1;
-    goto joined_r0x103002a1;
+// TODO: goto joined_r0x103002a1;
   case 0xb:
     mem_op_1000_179c(0x2c,param_2);
     puVar2 = (param_2 | param_1);
@@ -48,7 +48,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_3670(puVar2,CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0xc:
@@ -57,7 +57,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_355e((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0xd:
@@ -66,7 +66,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_3484(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0xe:
@@ -75,7 +75,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_406c((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0xf:
@@ -88,7 +88,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_0c24((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x10:
@@ -97,7 +97,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_0b42((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x11:
@@ -106,7 +106,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_4354((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x12:
@@ -119,7 +119,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_4b84((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x15:
@@ -130,7 +130,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_1bbc((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   default:
@@ -138,7 +138,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
     uVar3 = param_2 | param_1;
     if (uVar3 != 0x0) {
       struct_1028_b354((astruct_180 *)CONCAT22(param_2,param_1));
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x1a:
@@ -149,7 +149,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       paVar5 = set_fn_ptr_1030_be34((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x1d:
@@ -161,7 +161,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
     if (uVar3 != 0x0) {
       struct_1028_0068(paVar4,(astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = paVar4;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x20:
@@ -170,7 +170,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_50d8((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x21:
@@ -181,7 +181,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_3e94((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x24:
@@ -192,7 +192,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1020_d06c(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x27:
@@ -205,7 +205,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       paVar5 = struct_1030_c6f6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x29:
@@ -215,7 +215,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1020_cce4((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x2b:
@@ -224,7 +224,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_26b4((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x2c:
@@ -234,7 +234,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1028_49aa((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x2e:
@@ -244,7 +244,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1020_e7fa((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x30:
@@ -256,7 +256,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       puVar6 = struct_1020_d37c((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x34:
@@ -267,7 +267,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
     if (uVar3 != 0x0) {
       struct_1028_37a6(paVar4,(astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = paVar4;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x36:
@@ -277,7 +277,7 @@ u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
 joined_r0x103002a1:
     if (uVar3 != 0x0) {
       struct_1030_c06e((astruct_180 *)CONCAT22(uVar1,param_1));
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x37:
@@ -287,7 +287,7 @@ joined_r0x103002a1:
       paVar5 = struct_1030_c9a8((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x39:
@@ -299,7 +299,7 @@ joined_r0x103002a1:
                                 param_2 & 0xffff0000 | uVar3,param_1);
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x3b:
@@ -309,7 +309,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_44d2((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x3d:
@@ -318,7 +318,7 @@ joined_r0x103002a1:
       puVar6 = struct_1020_cde6(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x3e:
@@ -328,7 +328,7 @@ joined_r0x103002a1:
     if (uVar3 != 0x0) {
       struct_1028_1f56(paVar4,(astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = paVar4;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x3f:
@@ -337,7 +337,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_25da((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x40:
@@ -346,7 +346,7 @@ joined_r0x103002a1:
       puVar6 = struct_1020_c9ea(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x46:
@@ -356,7 +356,7 @@ joined_r0x103002a1:
       puVar6 = struct_1020_d5a6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x47:
@@ -367,7 +367,7 @@ joined_r0x103002a1:
       puVar6 = struct_1020_d866((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x4b:
@@ -378,7 +378,7 @@ joined_r0x103002a1:
       paVar5 = struct_1030_d8f6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x4e:
@@ -389,7 +389,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_5c54((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x51:
@@ -399,7 +399,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_5966((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x53:
@@ -410,7 +410,7 @@ joined_r0x103002a1:
       paVar5 = set_fn_ptr_1028_5ed8((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x56:
@@ -421,7 +421,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_53c6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x59:
@@ -430,7 +430,7 @@ joined_r0x103002a1:
       puVar6 = pass1_1028_5884((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x5a:
@@ -441,7 +441,7 @@ joined_r0x103002a1:
       puVar6 = pass1_1028_5524(puVar2,CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x63:
@@ -450,7 +450,7 @@ joined_r0x103002a1:
       paVar5 = set_fn_ptr_1028_5df6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (paVar5 >> 0x10);
       param_1 = paVar5;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x64:
@@ -459,7 +459,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_5a48((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x65:
@@ -469,7 +469,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_52e8((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x67:
@@ -479,7 +479,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_57a6((astruct_180 *)CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x6d:
@@ -487,7 +487,7 @@ joined_r0x103002a1:
     uVar3 = param_2 | param_1;
     if (uVar3 != 0x0) {
       param_1 = struct_1028_5630((astruct_180 *)CONCAT22(param_2,param_1));
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x6f:
@@ -511,7 +511,7 @@ joined_r0x103002a1:
       puVar6 = struct_1020_e8f6(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x73:
@@ -521,7 +521,7 @@ joined_r0x103002a1:
     uVar3 = param_2 | param_1;
     if (uVar3 != 0x0) {
       struct_1020_d954((astruct_180 *)CONCAT22(param_2,param_1));
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x74:
@@ -530,7 +530,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_178c(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x75:
@@ -539,7 +539,7 @@ joined_r0x103002a1:
       puVar6 = struct_1028_2afa(CONCAT22(param_2,param_1));
       uVar3 = (puVar6 >> 0x10);
       param_1 = puVar6;
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
     break;
   case 0x79:
@@ -552,7 +552,7 @@ joined_r0x103002a1:
     uVar3 = param_2 | param_1;
     if (uVar3 != 0x0) {
       param_1 = struct_1028_27f0((astruct_180 *)CONCAT22(param_2,param_1));
-      goto LAB_1030_0058;
+  // TODO: goto LAB_1030_0058;
     }
   }
   param_1 = 0x0;
@@ -594,7 +594,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_48c0(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x9:
@@ -604,14 +604,14 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_2bfe(uVar3,(astruct_179 *)param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0xa:
     mem_op_1000_179c(0x26,paVar5);
     uVar3 = paVar5;
     pSVar4 = (uVar3 | param_1);
-    goto joined_r0x10300adb;
+// TODO: goto joined_r0x10300adb;
   case 0xb:
     mem_op_1000_179c(0x2c,paVar5);
     puVar1 = (paVar5 | param_1);
@@ -619,7 +619,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_3692(puVar1,param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0xc:
@@ -629,7 +629,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_3580(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0xd:
@@ -639,7 +639,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_34a6(puVar1,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0xe:
@@ -649,7 +649,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_408e(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0xf:
@@ -663,7 +663,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_0c50(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x10:
@@ -673,7 +673,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_0b64(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x11:
@@ -683,7 +683,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_4376(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x12:
@@ -697,7 +697,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_4ba6(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x15:
@@ -709,7 +709,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_1be8(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   default:
@@ -717,7 +717,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
     pSVar4 = (paVar5 | param_1);
     if (pSVar4 != NULL) {
       pass1_1028_b39e(pSVar4,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x1a:
@@ -729,7 +729,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1030_be56(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x1d:
@@ -739,7 +739,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
     pSVar4 = (paVar5 | param_1);
     if (pSVar4 != NULL) {
       pass1_1028_00cc(pSVar4,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x20:
@@ -749,7 +749,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_50fa(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x21:
@@ -761,7 +761,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       uVar7 = pass1_1028_3ec8(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (uVar7 >> 0x10);
       param_1 = (astruct_12 *)uVar7;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x24:
@@ -773,7 +773,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1020_d08e(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x27:
@@ -787,7 +787,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1030_c71e(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x29:
@@ -798,7 +798,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1020_cd06(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x2b:
@@ -808,7 +808,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1028_26d6(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x2c:
@@ -819,7 +819,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       uVar7 = pass1_1028_49de(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (uVar7 >> 0x10);
       param_1 = (astruct_12 *)uVar7;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x2e:
@@ -830,7 +830,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1020_e81c(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x30:
@@ -843,7 +843,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
       puVar8 = pass1_1020_d3a4(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x34:
@@ -854,7 +854,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
     if (uVar3 != 0x0) {
       pass1_1028_3816(paVar6,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = paVar6;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x36:
@@ -864,7 +864,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
 joined_r0x10300adb:
     if (pSVar4 != NULL) {
       pass1_1030_c09c(pSVar4,(astruct_12 *)CONCAT22(uVar3,param_1),param_6,param_8);
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x37:
@@ -875,7 +875,7 @@ joined_r0x10300adb:
       uVar7 = pass1_1030_c9e4(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (uVar7 >> 0x10);
       param_1 = (astruct_12 *)uVar7;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x39:
@@ -887,7 +887,7 @@ joined_r0x10300adb:
                               param_8);
       pSVar4 = (uVar7 >> 0x10);
       param_1 = (astruct_12 *)uVar7;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x3b:
@@ -898,7 +898,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_44fe(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x3d:
@@ -908,7 +908,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1020_ce08(uVar3,(astruct_179 *)param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x3e:
@@ -916,7 +916,7 @@ joined_r0x10300adb:
     pSVar4 = (paVar5 | param_1);
     if (pSVar4 != NULL) {
       pass1_1028_1fc8(pSVar4,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x3f:
@@ -926,7 +926,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_25fc(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x40:
@@ -936,7 +936,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1020_ca0c(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x46:
@@ -947,7 +947,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1020_d5c8(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x47:
@@ -959,7 +959,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1020_d888(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x4b:
@@ -971,7 +971,7 @@ joined_r0x10300adb:
       uVar7 = pass1_1030_d942(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (uVar7 >> 0x10);
       param_1 = (astruct_12 *)uVar7;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x4e:
@@ -983,7 +983,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5c76(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x51:
@@ -994,7 +994,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5988(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x53:
@@ -1006,7 +1006,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5f00(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x56:
@@ -1018,7 +1018,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_53e8(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x59:
@@ -1028,7 +1028,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_58a6(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x5a:
@@ -1039,7 +1039,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5546(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x63:
@@ -1049,7 +1049,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5e18(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x64:
@@ -1059,7 +1059,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5a6a(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x65:
@@ -1070,7 +1070,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_530a(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x67:
@@ -1081,7 +1081,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_57c8(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x6d:
@@ -1091,7 +1091,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_5652(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x6f:
@@ -1117,7 +1117,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1020_e91e(uVar3,param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x73:
@@ -1130,7 +1130,7 @@ joined_r0x10300adb:
                                 (astruct_12 *)CONCAT22(paVar5,param_1),param_5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x74:
@@ -1140,7 +1140,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_17ae(uVar3,param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x75:
@@ -1150,7 +1150,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_2b1c(uVar3,param_1,paVar5,param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
     break;
   case 0x79:
@@ -1165,7 +1165,7 @@ joined_r0x10300adb:
       puVar8 = pass1_1028_2812(uVar3,(astruct_12 *)CONCAT22(paVar5,param_1),param_6,param_8);
       pSVar4 = (puVar8 >> 0x10);
       param_1 = (astruct_12 *)puVar8;
-      goto LAB_1030_0818;
+  // TODO: goto LAB_1030_0818;
     }
   }
   param_1 = NULL;

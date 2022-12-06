@@ -86,7 +86,7 @@ piVar2: *mut i16;
     puVar7 = (uVar28 >> 0x10);
     paVar25 = (astruct_57 *)CONCAT22(uVar27,puVar7);
     &puVar11[-0x7].field_0x2 = uVar28;
-    *(u8 **)&puVar11[-0x7].field_0x4 = puVar7;
+    &puVar11[-0x7].field_0x4 = puVar7;
     uVar3 = puVar11->field6_0x6;
     pass1_1018_642e(uVar3,(uVar3 >> 0x10),CONCAT13(0x10,CONCAT12(0x50,&puVar11[-0x5].field_0x2)),
                     (uVar28 + 0x8));
@@ -135,7 +135,7 @@ piVar2: *mut i16;
   }
   puVar4 = &puVar11[-0x4].field_0x2;
   fn_ptr_1 = (code **)(*puVar4 + 0x4);
-  (**fn_ptr_1)(uVar13,puVar4,(puVar4 >> 0x10),0x0,0x0,(char)puVar11 + -0x22,&DAT_1050_1050);
+  (**fn_ptr_1)(uVar13,puVar4,(puVar4 >> 0x10),0x0,0x0,puVar11 + -0x22,&DAT_1050_1050);
   handle = CreatePen16(0x1000025,0x1,0x0);
   *(HPEN16 *)&puVar11[-0x6].field_0x2 = handle;
   hgdiobj16_var7 = SelectObject16(handle,*(HDC16 *)&puVar11[-0x4].field6_0x6);
@@ -150,7 +150,7 @@ piVar2: *mut i16;
   uVar26 = piVar16 >> 0x10;
   uVar24 = piVar16 & 0xffff;
   draw_op_1018_6544(puVar11->field6_0x6,
-                    (piVar16 & 0xff000000 | CONCAT12((char)(piVar16 >> 0x10),uVar24)));
+                    (piVar16 & 0xff000000 | CONCAT12((piVar16 >> 0x10),uVar24)));
   pass1_1018_6630((uVar26 & 0xffff | uVar24 << 0x10),(astruct_2 *)puVar11->field6_0x6);
   uVar5 = puVar11->field6_0x6;
   obj = SelectPalette16(0x0,*(HPALETTE16 *)(uVar5 + 0x10),*(HDC16 *)&puVar11[-0x4].field6_0x6);
@@ -164,7 +164,7 @@ piVar2: *mut i16;
              *(HWND16 *)(uVar15 + 0x4));
   return;
 }
-pub fn pass1_1018_642e(mut param_1: u16 ,mut param_2: u16 ,i16 *param_3,mut param_4: i16)
+pub fn pass1_1018_642e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut i16,mut param_4: i16)
 
 {
   *param_3 = 0x64 - param_4 >> 0x1;
@@ -217,7 +217,7 @@ pub fn draw_line_1018_6444(mut param_1: u32,HDC16 hdc_param_2)
   }
   return;
 }
-pub fn draw_op_1018_6544(mut param_1: u32,i16 *param_2)
+pub fn draw_op_1018_6544(mut param_1: u32,param_2: *mut i16)
 
 {
   let mut puVar1: *mut u16;
@@ -557,7 +557,7 @@ struct_op_1018_6a0e(param_1: *mut astruct_20,mut param_2: u16 ,mut param_3: u16 
   (iVar1 + 0xe6) = 0x1df027f;
   return param_1;
 }
-pub fn FUN_1018_6a76(void)
+pub fn FUN_1018_6a76()
 
 {
   return;
