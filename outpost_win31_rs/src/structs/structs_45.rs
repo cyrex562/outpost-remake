@@ -564,7 +564,7 @@ struct astruct_5 {
     let mut field28_0x1f: u8;
     let mut field29_0x20: u8;
     let mut field30_0x21: u8;
-    WORD field31_0x22;
+    field31_0x22: u16;
 };
 
 
@@ -590,7 +590,7 @@ struct astruct_807 {
     let mut field4_0x4: i16;
     u8 * field5_0x6;
     char * path_0x8;
-    HFILE16 hfile_0xc;
+    hfile_0xc: mut HFILE16;
     let mut field8_0xe: u32;
     let mut field9_0x12: u32;
     let mut field10_0x16: u32;

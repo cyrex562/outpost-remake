@@ -25,26 +25,26 @@ pub unsafe fn entry(mut param_1: u16,
                     param_4: *mut u8;
                     param_5: *mut u8;
                     mut param_6: u16) -> *mut c_char {
-    // astruct_822 *paVar1;
+    // paVar1: *mut astruct_822;
     let mut paVar1: *mut astruct_822;
     let mut piVar2: *mut c_char;
     let mut uVar4: u16;
-    // char *string_var4;
+    // string_var4: *mut c_char;
     let mut string_var4: *mut c_char;
     let mut iVar5: i16;
     let mut string_var5: *mut c_char;
     let mut iVar6: i16;
 //    let mut unaff_SI: *mut u8;
     let mut string_var7: *mut c_char;
-    // HINSTANCE16 unaff_DI;
-    // char *paVar8;
+    // let mut unaff_DI: HISTANCE16;
+    // paVar8: *mut c_char;
     let mut string_var8: *mut c_char;
     let mut bVar9: bool;
     let mut win_version: u32 = 0u32;
     let mut u32_var11: u32;
     let mut uVar10: u32 = 0u32;
     let mut u32_var12: u32;
-    // astruct_825 *paVar13;
+    // paVar13: *mut astruct_825;
     let mut pstruct_825_var13: *mut astruct_825 = ptr::null_mut();
     let mut string_var1: *mut c_char;
 
@@ -117,7 +117,7 @@ pub unsafe fn entry(mut param_1: u16,
     pass1_1000_25a8();
     pass1_1000_2913(0x15);
     string_var4 = poss_str_op_1000_28dc(pstruct_825_var13);
-    if string_var4 != NULL {
+    if string_var4.is_null() == false {
         iVar5 = 0x9;
         if string_var4[0] == 'M' {
             iVar5 = 0xf;
@@ -146,7 +146,7 @@ pub unsafe fn entry(mut param_1: u16,
         string_var7 = string_var7 + 1;
         string_var5 = string_var7;
         string_var5 = string_var1 + 1;
-        if (*string_var1 == param_2) || (string_var5 == NULL) {
+        if (*string_var1 == param_2) || (string_var5.is_null()) {
             return string_var5;
         }
         iVar6 = -0x1;

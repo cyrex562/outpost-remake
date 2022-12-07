@@ -109,12 +109,12 @@ pub fn InitTask16(ctx: *mut CONTEXT) {
     todo!()
 }
 
-// DWORD WINAPI GetVersion16()
+// DWINAPI: u16 GetVersion16()
 pub fn GetVersion16() -> u32 {
     todo!()
 }
 
-// INT16       WINAPI InitApp16(HINSTANCE16);
+// INT16       WINAPI InitApp16;
 pub fn InitApp16(hinst: HINSTANCE16) -> i16 {
     todo!()
 }
@@ -128,19 +128,19 @@ pub fn FatalExit() {
     todo!()
 }
 
-// DWORD GetVersion16();
-// HGLOBAL16 GLobalAlloc16(DWORD size, UINT16 flags);
+// DGetVersion16: u16();
+// HGLOBAL16 GLobalAlloc16(Dsize: u16, Uflags: INT16);
 pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 {
     todo!()
 }
 
-// HGLOBAL16 GlobalReAlloc16(UINT16 flags, DWORD size, HGLOBAL16 handle);
+// HGLOBAL16 GlobalReAlloc16(Uflags: INT16, Dsize: u16, HGLOBAL16 handle);
 // HGLOBAL16 GlobalFree16(HGLOBAL16 handle);
 // pub fn * WIN16_GlobalLock16(HGLOBAL16 handle);
 // BOOL16 GlobalUnlock16(HGLOBAL16 handle);
-// DWORD GlobalSize16(HGLOBAL16 handle);
-// DWORD GlobalHandle16(WORD sel);
+// DGlobalSize16: u16(HGLOBAL16 handle);
+// DGlobalHandle16: u16(sel: u16);
 // HGLOBAL16 LockSegment16(HGLOBAL16 handle);
 // BOOL16 WaitEvent16(HTASK16 h_task);
 // i16 GetModuleFileName16(i16 n_size, char * lp_file_name, HINSTANCE16 h_module);
@@ -150,10 +150,10 @@ pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 // HGLOBAL16 LoadResource16(HRSRC16 h_rsrc, HMODULE16 h_module);
 // SEGPTR WIN16_LockResource16(HGLOBAL16 handle);
 // BOOL16 FreeResource16(HGLOBAL16 handle);
-// HFILE16 _lclose16(HFILE16 h_file);
-// HFILE16 _lcreat16(i16 attr, char * path);
-// i32 _llseek16(i16 n_origin, i32 l_offset, HFILE16 h_file);
-// HFILE16 _lopen16(i16 mode, char * path);
+// _lclose16: mut HFILE16(h_file: mut HFILE16);
+// _lcreat16: mut HFILE16(i16 attr, char * path);
+// _llseek16: i32(i16 n_origin, l_offset: i32, h_file: mut HFILE16);
+// _lopen16: mut HFILE16(i16 mode, char * path);
 // i16 lstrlen16(char * in_string);
 // pub fn InitTask16(CONTEXT * context);
 // pub fn DOS3Call(CONTEXT * context);
@@ -164,7 +164,7 @@ pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 pub fn OutputDebugString16(in_str: *const c_char) {
     todo!()
 }
-// i16 GetPrivateProfileString16(char * filename, u16 len, char * buffer, char * def_val, char * entry, char * section);
+// i16 GetPrivateProfileString16(char * filename, len: u16, char * buffer, char * def_val, char * entry, char * section);
 // BOOL16 WritePrivateProfileString16(char * filename, char * string, char * entry, char * section);
 // pub fn * GetDOSEnvironment16();
 pub fn GetDOSEnvironment16() -> SEGPTR {
@@ -172,48 +172,48 @@ pub fn GetDOSEnvironment16() -> SEGPTR {
 }
 
 // pub fn FatalAppExit16(char * str, u16 action);
-// HINSTANCE16 WinExec16(u16 n_cmd_show, char * lp_cmd_line);
+// HINSTANCE16 WinExec16(n_cmd_show: u16, char * lp_cmd_line);
 // pub fn __WINFLAGS();
 // pub fn GlobalDOSAlloc16(u32 size) -> u32;
 // u16 GlobalDOSFree16(u16 sel);
 // u16 GlobalPageLock16(HGLOBAL16 handle);
 // u16 GlobalPageUnlock16(HGLOBAL16 handle);
-// pub fn hmemcpy16(i32 count, void * src, void * dst);
-// i32 WIN16_hread(i32 count, void * buffer, HFILE16 h_file);
-// pub fn _hwrite16(count: u32, u8 * buffer, HFILE16 h_file) -> u32;
-// COLORREF SetBkColor16(COLORREF color, HDC16 hdc);
-// i16 SetMapMode16(i16 mode, HDC16 hdc);
-// u8 SetTextColor16(COLORREF color, HDC16 hdc);
-// BOOL16 LineTo16(INT16 y, INT16 x, HDC16 hdc);
-// DWORD MoveTo16(INT16 y, INT16 x, HDC16 hdc);
-// BOOL16 Ellipse16(INT16 bottom, INT16 right, INT16 top, INT16 left, HDC16 hdc);
-// BOOL16 Rectangle16(INT16 bottom, INT16 right, INT16 top, INT16 left, HDC16 hdc);
-// BOOL16 TextOut16(i16 count, char * str, i16 y, i16 x, HDC16 hdc);
-// BOOL16 Polygon16(i16 count, POINT16 * pt, HDC16 hdc);
-// HGDIOBJ16 SelectObject16(HGDIOBJ16 handle, HDC16 hdc);
-// HDC16 CreateDC16(DEVMODEA * init_data, char * output, char * device, char * driver);
-// HPEN16 CreatePen16(COLORREF color, INT16 width, INT16 style);
+// pub fn hmemcpy16(count: i32, void * src, void * dst);
+// WIN16_hread: i32(count: i32, void * buffer, h_file: mut HFILE16);
+// pub fn _hwrite16(count: u32, u8 * buffer, h_file: mut HFILE16) -> u32;
+// COLORREF SetBkColor16(COLORREF color, hdc: HDC16);
+// i16 SetMapMode16(i16 mode, hdc: HDC16);
+// u8 SetTextColor16(COLORREF color, hdc: HDC16);
+// BOOL16 LineTo16(y: INT16, x: INT16, hdc: HDC16);
+// DMoveTo16: u16(y: INT16, x: INT16, hdc: HDC16);
+// BOOL16 Ellipse16(bottom: INT16, right: INT16, top: INT16, left: INT16, hdc: HDC16);
+// BOOL16 Rectangle16(bottom: INT16, right: INT16, top: INT16, left: INT16, hdc: HDC16);
+// BOOL16 TextOut16(i16 count, char * str, i16 y, i16 x, hdc: HDC16);
+// BOOL16 Polygon16(i16 count, POINT16 * pt, hdc: HDC16);
+// HGDIOBJ16 SelectObject16(HGDIOBJ16 handle, hdc: HDC16);
+// CreateDC16: HDC16(DEVMODEA * init_data, char * output, char * device, char * driver);
+// HPEN16 CreatePen16(COLORREF color, width: INT16, style: INT16);
 // HBRUSH16 CreateSolidBrush16(COLORREF color);
-// BOOL16 DeleteDC16(HDC16 hdc);
+// BOOL16 DeleteDC16(hdc: HDC16);
 // BOOL16 DeleteObject16(HGDIOBJ16 obj);
-// DWORD GetCurrentPosition16(HDC16 hdc);
-// INT16 GetDeviceCaps16(INT16 cap, HDC16 hdc);
-// HGDIOBJ16 GetStockObject16(INT16 obj);
+// DGetCurrentPosition16: u16(hdc: HDC16);
+// GetDeviceCaps16: INT16(cap: INT16, hdc: HDC16);
+// HGDIOBJ16 GetStockObject16(obj: INT16);
 pub fn GetStockObject16(obj: i16) -> HGDIOBJ16 {
     todo!()
 }
-// DWORD GetTextExtent16(INT16 count, LPCSTR str, HDC16 hdc);
+// DGetTextExtent16: u16(count: INT16, LPCSTR str, hdc: HDC16);
 // BOOL16 UnrealizeObject16(HGDIOBJ16 obj);
-// HPALETTE16 CreatePalette16(LOGPALETTE * palette);
-// UINT16 GetSystemPaletteEntries(PALETTEENTRY * entries, UINT16 count, UINT16 start, HDC16 hdc);
-// INT16 StretchDIBits16(DWORD dw_rop, UINT16 w_usage, BITMAPINFO * info, PVOID bits, INT16 height_src, INT16 width_src, INT16 y_src, INT16 x_src, INT16 height_dst, INT16 width_dst, INT16 y_dst, INT16 x_dst, HDC16 hdc);
-// INT16 SetDIBitsToDevice(UINT16 coloruse, BITMAPINFO * info, void * bits, UINT16 lines, UINT16 startscan, INT16 y_src, INT16 x_src, INT16 cy, INT16 cx, INT16 y_dest, INT16 x_dest, HDC16 hdc);
-// BOOL16 MoveToEx16(POINT16 * pt, INT16 y, INT16 x, HDC16 hdc);
-// INT16 MessageBox16(UINT16 type, char * title, char * text, HWND16 hwnd);
-// INT16 InitApp16(HINSTANCE16 h_instance);
-// pub fn PostQuitMessage16(INT16 exit_code);
-// UINT16 SetTimer16(void * proc, UINT16 timeout, UINT16 id, HWND16 hwnd);
-// BOOL16 KillTimer16(UINT16 id, HWND16 hwnd);
+// CreatePalette16: HPALETTE16(LOGPALETTE * palette);
+// UGetSystemPaletteEntries: INT16(PALETTEENTRY * entries, Ucount: INT16, Ustart: INT16, hdc: HDC16);
+// StretchDIBits16: INT16(Ddw_rop: u16, Uw_usage: INT16, BITMAPINFO * info, bits: mut PVOID, height_src: INT16, width_src: INT16, y_src: INT16, x_src: INT16, height_dst: INT16, width_dst: INT16, y_dst: INT16, x_dst: INT16, hdc: HDC16);
+// SetDIBitsToDevice: INT16(Ucoloruse: INT16, BITMAPINFO * info, void * bits, Ulines: INT16, Ustartscan: INT16, y_src: INT16, x_src: INT16, cy: INT16, cx: INT16, y_dest: INT16, x_dest: INT16, hdc: HDC16);
+// BOOL16 MoveToEx16(POINT16 * pt, y: INT16, x: INT16, hdc: HDC16);
+// MessageBox16: INT16(Utype: INT16, char * title, char * text, HWND16 hwnd);
+// InitApp16: INT16(HINSTANCE16 h_instance);
+// pub fn PostQuitMessage16(exit_code: INT16);
+// USetTimer16: INT16(void * proc, Utimeout: INT16, Uid: INT16, HWND16 hwnd);
+// BOOL16 KillTimer16(Uid: INT16, HWND16 hwnd);
 // BOOL16 GetCursorPos16(POINT16 * pt);
 // HWND16 SetCapture16(HWND16 hwnd);
 // BOOL16 ReleaseCapture16();
@@ -234,16 +234,16 @@ pub fn GetClientRect16(rect: *mut RECT16, hwnd: HWND16) {
 }
 // BOOL16 EnableWindow16(BOOL16 enable, HWND16 hwnd);
 // BOOL16 IsWindowEnabled16(HWND16 hwnd);
-// INT16 GetWindowText16(INT16 n_max_count, lp_string: u32, HWND16 hwnd);
+// GetWindowText16: INT16(n_max_count: INT16, lp_string: u32, HWND16 hwnd);
 // BOOL16 SetWindowText16(lp_string: u32, HWND16 hwnd);
-// HDC16 BeginPaint16(PAINTSTRUCT16 * lps, HWND16 hwnd);
+// BeginPaint16: HDC16(PAINTSTRUCT16 * lps, HWND16 hwnd);
 // BOOL16 EndPaint16(PAINTSTRUCT16 * lps, HWND16 hwnd);
-// HWND16 CreateWindow16(DWORD style, void * data, HINSTANCE16 instance, HMENU16 hmenu, HWND16 parent, INT16 height, INT16 width, INT16 y, INT16 x, char * window_name, char * class_name);
+// HWND16 CreateWindow16(Dstyle: u16, void * data, HINSTANCE16 instance, HMENU16 hmenu, HWND16 parent, height: INT16, width: INT16, y: INT16, x: INT16, char * window_name, char * class_name);
 pub fn CreateWindow16(style: u32, data: *mut c_void, instance: HINSTANCE16, hmenu: HMENU16, parent: HWND16, height: i16, width: i16, y: i16, x: i16, window_name: *const c_char, class_name: *const c_char) -> HWND16 {
     todo!()
 }
 
-// BOOL16 ShowWindow16(INT16 cmd, HWND16 hwnd);
+// BOOL16 ShowWindow16(cmd: INT16, HWND16 hwnd);
 pub fn ShowWindow16(cmd: i16, hwnd: HWND16) -> bool {
     todo!()
 }
@@ -254,92 +254,95 @@ pub fn DestroyWindow16(hwnd: HWND16) -> bool {
 todo!()
 }
 // BOOL16 EnumChildWindows1(LPARAM lparam, void * func, HWND16 parent);
-// BOOL16 MoveWindow16(BOOL16 repaint, INT16 cy, INT16 cx, INT16 y, INT16 x, HWND16 hwnd);
+// BOOL16 MoveWindow16(BOOL16 repaint, cy: INT16, cx: INT16, y: INT16, x: INT16, HWND16 hwnd);
 // ATOM RegisterClass16(WNDCLASS16 * wc);
 pub fn RegisterClass16(wc: *mut WNDCLASS16) -> ATOM {
     todo!()
 }
-// HDC16 GetDC16(HWND16 hwnd);
-// HDC16 GetWindowDC16(HWND16 hwnd);
-// INT16 ReleaseDC16(HDC16 hdc, HWND16 hwnd);
+// GetDC16: HDC16(HWND16 hwnd);
+// GetWindowDC16: HDC16(HWND16 hwnd);
+// ReleaseDC16: INT16(hdc: HDC16, HWND16 hwnd);
 // HCURSOR16 SetCursor16(HCURSOR16 hcursor);
-// INT16 ShowCursor16(BOOL16 b_show);
-// BOOL16 PtInRect16(POINT16 pt, RECT16 * rect);
-// i16 FillRect16(HBRUSH16 hbrush, RECT16 * rect, HDC16 hdc);
-// INT16 FrameRect16(HBRUSH16 hbrush, RECT16 * rect, HDC16 hdc);
-// BOOL16 DrawIcon16(HICON16 h_icon, INT16 y, INT16 x, HDC16 hdc);
-// INT16 DrawText16(UINT16 flags, RECT16 * rect, INT16 count, LPCSTR in_string, HDC16 hdc);
+// ShowCursor16: INT16(BOOL16 b_show);
+// BOOL16 PtInRect16(POpt: INT16, RECT16 * rect);
+// i16 FillRect16(HBRUSH16 hbrush, RECT16 * rect, hdc: HDC16);
+// FrameRect16: INT16(HBRUSH16 hbrush, RECT16 * rect, hdc: HDC16);
+// BOOL16 DrawIcon16(HICON16 h_icon, y: INT16, x: INT16, hdc: HDC16);
+// DrawText16: INT16(Uflags: INT16, RECT16 * rect, count: INT16, LPCSTR in_string, hdc: HDC16);
 // HWND16 CreateDialog16(void * dlg_proc, HWND16 owner, char * dlg_template, HINSTANCE16 hinst);
 // BOOL16 IsDialogMessage16(MSG16 * msg16, HWND16 hwnd_dlg);
-// HWND16 GetDlgItem16(INT16 id, HWND16 hwnd_dlg);
+// HWND16 GetDlgItem16(id: INT16, HWND16 hwnd_dlg);
 pub fn GetDlgItem16(id: i16, hwnd_dlg: HWND16) -> HWND16 {
     todo!();
 }
-// pub fn SetDlgItemText16(lp_string: u32, INT16 id, HWND16 hwnd);
-// pub fn SetDlgItemInt16(BOOL16 f_signed, UINT16 value, INT16 id, HWND16 hwnd);
-// UINT16 GetDlgItemInt16(BOOL16 f_signed, BOOL16 * translated, INT16 id, HWND16 hwnd);
-// BOOL16 CheckRadioButton16(UINT16 check_id, UINT16 last_id, UINT16 first_id, HWND16 hwnd_dlg);
-// BOOL16 CheckDlgButton16(UINT16 check, INT16 id, HWND16 hwnd);
-// UINT16 IsDlgButtonChecked(UINT16 id, HWND16 hwnd);
-// LRESULT SendDlgItemMessage16(LPARAM l_param, w_param: WPARAM16, UINT16 msg, INT16 id, HWND16 hwnd);
+// pub fn SetDlgItemText16(lp_string: u32, id: INT16, HWND16 hwnd);
+// pub fn SetDlgItemInt16(BOOL16 f_signed, Uvalue: INT16, id: INT16, HWND16 hwnd);
+// UGetDlgItemInt16: INT16(BOOL16 f_signed, BOOL16 * translated, id: INT16, HWND16 hwnd);
+// BOOL16 CheckRadioButton16(Ucheck_id: INT16, Ulast_id: INT16, Ufirst_id: INT16, HWND16 hwnd_dlg);
+// BOOL16 CheckDlgButton16(Ucheck: INT16, id: INT16, HWND16 hwnd);
+// UIsDlgButtonChecked: INT16(Uid: INT16, HWND16 hwnd);
+// LRESULT SendDlgItemMessage16(LPARAM l_param, w_param: WPARAM16, Umsg: INT16, id: INT16, HWND16 hwnd);
 // pub fn MapDialogRect16(RECT16 * rect, HWND16 hwnd);
-// pub fn MessageBeep16(UINT16 i);
-// LRESULT DefWindowProc16(LPARAM lparam, wparam: WPARAM16, UINT16 msg, HWND16 hwnd);
-// BOOL16 GetMessage16(UINT16 last, UINT16 first, HWND16 hwnd, MSG16 * msg);
-// BOOL16 PostMessage16(LPARAM lparam, wparam: WPARAM16, UINT16 msg, HWND16 hwnd);
-// LRESULT SendMessage16(LPARAM lparam, wparam: WPARAM16, UINT16 msg, HWND16 hwnd);
+// pub fn MessageBeep16(Ui: INT16);
+// LRESULT DefWindowProc16(LPARAM lparam, wparam: WPARAM16, Umsg: INT16, HWND16 hwnd);
+// BOOL16 GetMessage16(Ulast: INT16, Ufirst: INT16, HWND16 hwnd, MSG16 * msg);
+// BOOL16 PostMessage16(LPARAM lparam, wparam: WPARAM16, Umsg: INT16, HWND16 hwnd);
+// LRESULT SendMessage16(LPARAM lparam, wparam: WPARAM16, Umsg: INT16, HWND16 hwnd);
 pub fn SendMessage16(lparam: LPARAM, wparam: WPARAM16, msg: u16, hwnd: HWND16) -> LRESULT {
     todo!()
 }
 // BOOL16 TranslateMessage16(MSG16 * msg);
 // long DispatchMessage16(MSG16 * msg);
-// LRESULT CallWindowProc16(LPARAM lparam, wparam: WPARAM16, UINT16 msg, HWND16 hwnd, LPVOID func);
+// LRESULT CallWindowProc16(LPARAM lparam, wparam: WPARAM16, Umsg: INT16, HWND16 hwnd, LPVOID func);
 // pub fn UpdateWindow16(HWND16 hwnd);
 // pub fn InvalidateRect16(BOOL16 erase, RECT16 * rect, HWND16 hwnd);
 // pub fn ValidateRect16(RECT16 * rect, HWND16 hwnd);
-// WORD GetWindowWord16(INT16 offset, HWND16 hwnd);
-// WORD SetWindowWord16(WORD newval, INT16 offset, HWND16 hwnd);
-// long GetWindowLong16(INT16 offset, HWND16 hwnd);
+// GetWindowWord16: u16(offset: INT16, HWND16 hwnd);
+// SetWindowWord16: u16(newval: u16, offset: INT16, HWND16 hwnd);
+// long GetWindowLong16(offset: INT16, HWND16 hwnd);
 // long SetWindowLong16(long newval, i16 offset, HWND16 hwnd);
 // HMENU16 LoadMenu16(char * name, HINSTANCE16 instance);
 // BOOL16 DestroyMenu16(HMENU16 menu);
-// BOOL16 CheckMenuItem16(UINT16 w_flags, UINT16 w_item_id, HMENU16 hmenu);
-// BOOL16 EnableMenuItem16(UINT16 w_flags, UINT16 w_item_id, HMENU16 hmenu);
-// HMENU16 GetSubMenu16(INT16 n_pos, HMENU16 h_menu);
-// BOOL16 WinHelp16(DWORD dw_data, UINT16 w_command, char * lp_help_file, HWND16 hwnd);
+// BOOL16 CheckMenuItem16(Uw_flags: INT16, Uw_item_id: INT16, HMENU16 hmenu);
+// BOOL16 EnableMenuItem16(Uw_flags: INT16, Uw_item_id: INT16, HMENU16 hmenu);
+// HMENU16 GetSubMenu16(n_pos: INT16, HMENU16 h_menu);
+// BOOL16 WinHelp16(Ddw_data: u16, Uw_command: INT16, char * lp_help_file, HWND16 hwnd);
 // HCURSOR16 LoadCursor16(char * name, HINSTANCE16 h_instance);
 // HICON16 LoadIcon16(char * name, HINSTANCE16 h_instance);
-// INT16 LoadString16(INT16 buf_len, char * buffer, UINT16 resource_id, HINSTANCE16 instance);
+// LoadString16: INT16(buf_len: INT16, char * buffer, Uresource_id: INT16, HINSTANCE16 instance);
 // HACCEL16 LoadAccelerators16(char * lp_table_name, HINSTANCE16 instance);
-// INT16 TranslateAccelerator16(MSG16 * msg, HACCEL16 haccel, HWND16 hwnd);
-// INT16 GetSystemMetrics16(INT16 index);
-// COLORREF GetSysColor16(INT16 index);
-// pub fn SetSysColors16(COLORREF * values, INT16 * list, INT16 count);
-// BOOL16 GrayString16(INT16 cy, INT16 cx, INT16 y, INT16 x, INT16 cch, LPARAM lparam, void * gsprc, HBRUSH16 param_8, HDC16 hdc);
+// TranslateAccelerator16: INT16(MSG16 * msg, HACCEL16 haccel, HWND16 hwnd);
+// GetSystemMetrics16: INT16(index: INT16);
+// COLORREF GetSysColor16(index: INT16);
+// pub fn SetSysColors16(COLORREF * values, INT16 * list, count: INT16);
+// BOOL16 GrayString16(cy: INT16, cx: INT16, y: INT16, x: INT16, cch: INT16, LPARAM lparam, void * gsprc, HBRUSH16 param_8, hdc: HDC16);
 // HWND16 SetSysModalWindow(HWND16 hwnd);
 // HWND16 GetNextDlgTabItem16(BOOL16 f_previous, HWND16 hwnd_ctrl, HWND16 hwnd_dlg);
-// BOOL16 SetWindowPos16(WORD flags, INT16 cy, INT16 cx, INT16 y, INT16 x, HWND16 hwnd_insert_after, HWND16 hwnd);
-// UINT16 GetMenuState16(UINT16 w_flags, UINT16 w_item_id, HMENU16 hmenu);
-// INT16 GetDlgCtrlID16(HWND16 hwnd);
-// HPALETTE16 SelectPalette16(BOOL16 b_force_background, HPALETTE16 hpal, HDC16 hdc);
-// UINT16 RealizePalette16(HDC16 hdc);
+// BOOL16 SetWindowPos16(flags: u16, cy: INT16, cx: INT16, y: INT16, x: INT16, HWND16 hwnd_insert_after, HWND16 hwnd);
+// UGetMenuState16: INT16(Uw_flags: INT16, Uw_item_id: INT16, HMENU16 hmenu);
+// GetDlgCtrlID16: INT16(HWND16 hwnd);
+// SelectPalette16: HPALETTE16(BOOL16 b_force_background, hpal: HPALETTE16, hdc: HDC16);
+// URealizePalette16: INT16(hdc: HDC16);
 // BOOL16 GetWindowPlacement16(WINDOWPLACEMENT16 * wp16, HWND16 hwnd);
 // BOOL16 SetWindowPlacement16(WINDOWPLACEMENT16 * wp16, HWND16 hwnd);
 // BOOL16 GetClassInfo16(WNDCLASS16 * wc, char * name, HINSTANCE16 h_inst16);
 pub fn GetClassInfo16(wc: *mut WNDCLASS16, name: *const c_char, h_inst16: HINSTANCE16) -> bool {
     todo!()
 }
-// BOOL16 InsertMenu16(data: u32, UINT16 id, UINT16 flags, UINT16 pos, HMENU16 hmenu);
-// BOOL16 DeleteMenu16(UINT16 wflags, UINT16 npos, HMENU16 hmenu);
-// BOOL16 ModifyMenu16(data: u32, UINT16 id, UINT16 flags, UINT16 pos, HMENU16 hmenu);
-// BOOL16 TrackPopupMenu16(RECT16 * lp_rect, HWND16 hwnd, INT16 n_reserved, INT16 y, INT16 x, UINT16 wflags, HMENU16 hmenu);
-// INT16 wsprintf16(WORD * valist, char * spec, char * buffer, ...);
-// INT16 wvsprintf16(WORD * args, char * spec, char * buffer);
-// HWND16 CreateWIndowEx16(void * data, HINSTANCE16 instance, HMENU16 hmenu, HWND16 parent, INT16 height, INT16 width, INT16 y, INT16 x, DWORD style, char * window_name, char * class_name, DWORD ex_style);
+// BOOL16 InsertMenu16(data: u32, Uid: INT16, Uflags: INT16, Upos: INT16, HMENU16 hmenu);
+// BOOL16 DeleteMenu16(Uwflags: INT16, Unpos: INT16, HMENU16 hmenu);
+// BOOL16 ModifyMenu16(data: u32, Uid: INT16, Uflags: INT16, Upos: INT16, HMENU16 hmenu);
+// BOOL16 TrackPopupMenu16(RECT16 * lp_rect, HWND16 hwnd, n_reserved: INT16, y: INT16, x: INT16, Uwflags: INT16, HMENU16 hmenu);
+// wsprintf16: INT16(WORD * valist, char * spec, char * buffer, ...);
+// wvsprintf16: INT16(WORD * args, char * spec, char * buffer);
+// HWND16 CreateWIndowEx16(void * data, HINSTANCE16 instance, HMENU16 hmenu, HWND16 parent, height: INT16, width: INT16, y: INT16, x: INT16, Dstyle: u16, char * window_name, char * class_name, Dex_style: u16);
 // BOOL16 DestroyIcon16(HICON16 h_icon);
 // BOOL16 DestroyCursor16(HCURSOR16 h_cursor);
-// DWORD mciSendCommand16(DWORD p2, DWORD dw_param1, UINT16 w_msg, UINT16 w_dev_id);
-// BOOL16 mciGetErrorString16(UINT16 u_length, char * lp_str_buffer, DWORD w_error);
+// DmciSendCommand16: u16(Dp2: u16, Ddw_param1: u16, Uw_msg: INT16, Uw_dev_id: INT16);
+pub fn mciSendCommand16(p2: u32, dw_param1: u32, i16: uw_msg, i16: uw_dev_id) -> u32 {
+    todo!()
+}
+// BOOL16 mciGetErrorString16(Uu_length: INT16, char * lp_str_buffer, Dw_error: u16);
 // BOOL16 GetOpenFileName16(u32 ofn);
 // BOOL16 GetSaveFileName16(u32 ofn);
 // void* swi;

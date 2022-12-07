@@ -90,7 +90,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
   let mut rectangle: RECT16;
   let mut hwnd_var13: HWND16 = 0;
   let mut i16_var4: i16 = 0i16;
-  // astruct_878 *iVar9;
+  // iVar9: *mut astruct_878;
     let mut iVar9: *mut Struct878;
 
   // uVar5 = (param_2 >> 0x10);
@@ -139,7 +139,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
           u16_var3 = pass1_1020_bd80((win_style + iVar9 * 0x2));
           lresult_var8 = SendMessage16(u16_var3, wparam_var10, u16_var11, hwnd_var12);
           // u16_var5 = (lresult_var8 >> 0x10);
-          iVar9 = (astruct_878 *)(u16_var11 + 1);
+          iVar9 = (u16_var11 + 1);
         }
       }
       lresult_var8 = SendMessage16(0x0, 0x1, 0xb, window_handle);

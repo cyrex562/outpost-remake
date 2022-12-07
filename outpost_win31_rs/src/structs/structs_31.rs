@@ -690,8 +690,9 @@ struct astruct_859 {
     let mut field1_0x1: u8;
     let mut field2_0x2: i16;
     let mut field3_0x4: HWND16;
-    HMENlet mut field4_0x6: u16;
-};
+    // HMENlet mut field4_0x6: u16;
+    pub field4_0x6: u16,
+}
 
 
 

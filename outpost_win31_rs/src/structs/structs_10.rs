@@ -274,14 +274,14 @@ struct astruct_768 {
     let mut field5_0x7: u8;
     let mut field6_0x8: u8;
     let mut field7_0x9: u8;
-    HDC16 hdc_0xa;
+    hdc_0xa: HDC16;
     let mut field9_0xc: u8;
     let mut field10_0xd: u8;
     let mut field11_0xe: u8;
     let mut field12_0xf: u8;
     let mut field13_0x10: u8;
     let mut field14_0x11: u8;
-    HPALETTE16 hpalette_0x12;
+    let mut hpalette_0x12: HPALETTE16;
 };
 
 

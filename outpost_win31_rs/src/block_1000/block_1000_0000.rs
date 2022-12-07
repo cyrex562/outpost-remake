@@ -507,7 +507,7 @@ pub unsafe fn mem_op_1000_03c6(mut param_1: u16,
         if ((uVar3 | uStack20) != 0) {
             puVar5 =  mem_op_1000_0308(param_3,
                                               param_4);
-            if (puVar5 != NULL) {
+            if (puVar5.is_null() == false) {
                 puVar5[0x4] = uStack20;
                 puVar5[0x5] = uVar3;
                 PTR_LOOP_1050_000c = param_3 | 0xcad0;
@@ -701,7 +701,7 @@ pub unsafe fn mem_1000_0670(mut param_1: u16,
     iVar6 = param_3 +  (0xffeb < param_1);
     uVar7 = *param_2;
     uVar8 = - ((param_4 & 1) != 0) & 0x100 | - ((param_4 & 0x4) != 0) & 0x400 | ( uVar7 + 0x16);
-    if param_5 == NULL {
+    if param_5.is_null() {
         //  &DAT_1050_1050
         BVar11 = mem_op_1000_14f2(uVar8 | 0x2000,
                                   param_1 + 0x14,
@@ -819,13 +819,13 @@ pub unsafe fn pass1_1000_09a0(param_1: *mut u16) -> *mut u8
     let mut uVar2: u32;
 
     *param_1 = PTR_LOOP_1050_000e;
-    if (PTR_LOOP_1050_000e == NULL) {
+    if (PTR_LOOP_1050_000e.is_null()) {
         u32_1050_0004 = 0x1;
     }
     PTR_LOOP_1050_000a = PTR_LOOP_1050_000a + -0x1;
     puVar1 = PTR_LOOP_1050_000e;
     PTR_LOOP_1050_000e =  param_1;
-    if (PTR_LOOP_1050_000a == NULL) {
+    if (PTR_LOOP_1050_000a.is_null()) {
         uVar2 = mem_op_1000_0510(0x1,
                                  0x0);
         puVar1 =  uVar2;
@@ -953,7 +953,7 @@ pub unsafe fn mem_op_1000_0b20(mut param_1: u16,
     pu16_var7 =  (uVar2 * 0x2 + param_2);
     uStack20 = param_1;
     puStack6 = pu16_var7;
-    if (pu16_var7 == NULL) {
+    if (pu16_var7.is_null()) {
         // goto LAB_1000_0b64;
     }
     loop {
@@ -1105,7 +1105,7 @@ pub unsafe fn pass1_1000_0c32(mut param_1: u16,
             break;
         }
         uStack6 = ( (iVar7 + 0x34))();
-        if ((uStack6 < param_1) || (puVar6 =  (param_3 + 0xe), puVar6 == NULL)) {
+        if ((uStack6 < param_1) || (puVar6 =  (param_3 + 0xe), puVar6.is_null())) {
             break;
         }
     }
@@ -1176,7 +1176,7 @@ pub unsafe fn pass1_1000_0e08(mut param_1: i16) -> u16
         PTR_LOOP_1050_0010.address_offset_field_0x2 =  puVar5;
     }
     PTR_LOOP_1050_000a = PTR_LOOP_1050_000a + -0x1;
-    if (PTR_LOOP_1050_000a == NULL) {
+    if (PTR_LOOP_1050_000a.is_null()) {
         uVar7 = mem_op_1000_0510(0x1,
                                  0x0);
         uVar3 =  uVar7;

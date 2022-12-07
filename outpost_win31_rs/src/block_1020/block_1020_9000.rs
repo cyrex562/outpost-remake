@@ -1,13 +1,13 @@
 
-pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
+pub fn pass1_1020_9068(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 {
   let mut iVar1: i16;
-  astruct_76 *paVar2;
-  code **ppcVar3;
+  paVar2: *mut astruct_76;
+  let mut ppcVar3: *mut *mut code;
   let mut uVar4: u32;
   let mut uVar5: u16;
-  astruct_76 *paVar6;
+  paVar6: *mut astruct_76;
   let mut uVar7: u32;
   let mut uVar8: u16;
   let mut iVar10: i16;
@@ -20,7 +20,7 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
   uVar12 = (param_2 >> 0x10);
   iVar10 = param_2;
   uVar4 = (iVar10 + 0x16);
-  paVar2 = *(astruct_76 **)(uVar4 + 0xa);
+  paVar2 = (uVar4 + 0xa);
   paVar6 = paVar2;
   pass1_1018_280c((iVar10 + 0x16));
   (iVar10 + 0xaa) = paVar6;
@@ -32,10 +32,10 @@ pub fn pass1_1020_9068(mut param_1: u32,u32 *param_2,mut param_3: u32)
     (iVar10 + 0xac) = param_1;
   }
   if (((iVar10 + 0xac) | (iVar10 + 0xaa)) != 0) {
-    pass1_1020_915a(param_1,(astruct_669 *)(param_2 & 0xffff | uVar12 << 0x10),param_3);
-    pass1_1008_4480(paVar2,(param_2 & 0xffff0000 | (iVar10 + 0xae)),*(astruct_76 **)(iVar10 + 0xb4)
+    pass1_1020_915a(param_1,(param_2 & 0xffff | uVar12 << 0x10),param_3);
+    pass1_1008_4480(paVar2,(param_2 & 0xffff0000 | (iVar10 + 0xae)),(iVar10 + 0xb4)
                    );
-    ppcVar3 = (code **)(*param_2 + 0x10);
+    ppcVar3 = (*param_2 + 0x10);
     (**ppcVar3)();
     uVar4 = (iVar10 + 0xaa);
     iVar1 = (uVar4 + 0xa);
@@ -71,7 +71,7 @@ pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
   let mut in_register_0000000a: u16;
   let mut paVar4: *mut Struct57;
   let mut uVar5: u32;
-  astruct_669 *iVar2;
+  iVar2: *mut astruct_669;
   let mut uVar6: u16;
   let mut puVar7: *mut u32;
   let mut in_stack_0000fe9c: u16;
@@ -79,15 +79,15 @@ pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
   let mut in_stack_0000ffc6: u16;
   let mut in_stack_0000ffca: u16;
 
-  paVar4 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
-  param_3 = (u8 **)CONCAT22(param_3,0x2f);
+  paVar4 = CONCAT22(in_register_0000000a,param_1);
+  param_3 = CONCAT22(param_3,0x2f);
   puVar7 = mixed_1010_20ba(paVar4,_u16_1050_0ed0,param_3,in_stack_0000fe9c,in_stack_0000ffc0,in_stack_0000ffc6,
                            in_stack_0000ffca);
   uVar5 = paVar4 & 0xffff0000 | puVar7 >> 0x10;
   iVar1 = (puVar7 + 0x1e);
   uVar6 = (param_2 >> 0x10);
-  iVar2 = (astruct_669 *)param_2;
-  if (iVar2->field182_0xb8 != iVar1) {
+  iVar2 = param_2;
+  if (iVar2.field182_0xb8 != iVar1) {
     param_3 = 0x1ce;
     iVar3 = iVar1 + -0x1;
     if (iVar3 == 0) {
@@ -112,16 +112,16 @@ pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
       }
     }
     iVar3 = FUN_1010_830a(iVar3,uVar5,0x1010,_u16_1050_14cc,param_3);
-    iVar2->field180_0xb4 = iVar3;
-    iVar2->field181_0xb6 = uVar5;
-    iVar2->field182_0xb8 = iVar1;
+    iVar2.field180_0xb4 = iVar3;
+    iVar2.field181_0xb6 = uVar5;
+    iVar2.field182_0xb8 = iVar1;
   }
   return;
 }
 
 
 
-StructD * pass1_1020_91de(StructD *param_1,param_2: u8)
+pub fn pass1_1020_91de(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1020_8f74(param_1);
@@ -135,11 +135,11 @@ StructD * pass1_1020_91de(StructD *param_1,param_2: u8)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn set_struct_op_1020_921c(mut param_1: u16 ,StructA *pstructa_param_2,mut param_3: u16 ,u8 **param_4)
+pub fn set_struct_op_1020_921c(mut param_1: u16 ,pstructa_param_2: *mut StructA,mut param_3: u16 ,u8 **param_4)
 
 {
   let mut uVar1: u16;
-  HDC16 HVar2;
+  HVar2: HDC16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
   let iVar3: *mut StructA;
@@ -152,48 +152,48 @@ pub fn set_struct_op_1020_921c(mut param_1: u16 ,StructA *pstructa_param_2,mut p
   let mut in_stack_0000ffe2: u32;
   let mut uVar2: u16;
 
-  paVar3 = (astruct_57 *)CONCAT22(in_register_0000000a,param_1);
-  uVar3 = (StructA *)(pstructa_param_2 >> 0x10);
-  iVar3 = (StructA *)pstructa_param_2;
-  pstructa_param_2->field0_0x0 = 0x389a;
-  iVar3->field1_0x2 = 0x1008;
-  pstructa_param_2->field0_0x0 = 0x3aa8;
-  iVar3->field1_0x2 = 0x1008;
-  iVar3->field2_0x4 = param_3;
-  pstructa_param_2->field0_0x0 = 0x3ab0;
-  iVar3->field1_0x2 = 0x1008;
-  &iVar3->field3_0x6 = 0;
-  iVar3->field5_0xa = 0;
-  iVar3->field6_0xc = 0;
-  iVar3->field7_0xe = 0;
-  iVar3->field8_0x10 = 0;
-  iVar3->field9_0x12 = 0;
-  pstructa_param_2->field0_0x0 = 0x96c8;
-  iVar3->field1_0x2 = 0x1020;
-  HVar2 = GetDC16(iVar3->field2_0x4);
-  iVar3->field5_0xa = HVar2;
-  param_4 = (u8 **)CONCAT22(param_4,0x48);
+  paVar3 = CONCAT22(in_register_0000000a,param_1);
+  uVar3 = (pstructa_param_2 >> 0x10);
+  iVar3 = pstructa_param_2;
+  pstructa_param_2.field0_0x0 = 0x389a;
+  iVar3.field1_0x2 = 0x1008;
+  pstructa_param_2.field0_0x0 = 0x3aa8;
+  iVar3.field1_0x2 = 0x1008;
+  iVar3.field2_0x4 = param_3;
+  pstructa_param_2.field0_0x0 = 0x3ab0;
+  iVar3.field1_0x2 = 0x1008;
+  &iVar3.field3_0x6 = 0;
+  iVar3.field5_0xa = 0;
+  iVar3.field6_0xc = 0;
+  iVar3.field7_0xe = 0;
+  iVar3.field8_0x10 = 0;
+  iVar3.field9_0x12 = 0;
+  pstructa_param_2.field0_0x0 = 0x96c8;
+  iVar3.field1_0x2 = 0x1020;
+  HVar2 = GetDC16(iVar3.field2_0x4);
+  iVar3.field5_0xa = HVar2;
+  param_4 = CONCAT22(param_4,0x48);
   pUVar3 =
            mixed_1010_20ba(paVar3,_u16_1050_0ed0,param_4,in_stack_0000fe8c,in_stack_0000ffb0,in_stack_0000ffb6,
                            in_stack_0000ffba);
   uVar1 = (pUVar3 >> 0x10);
-  iVar3->field6_0xc = (pUVar3 + 0xa);
-  iVar3->field7_0xe = (pUVar3 + 0xc);
+  iVar3.field6_0xc = (pUVar3 + 0xa);
+  iVar3.field7_0xe = (pUVar3 + 0xc);
   return;
 }
-pub fn palette_op_1020_92c4(StructD *struct_param_1)
+pub fn palette_op_1020_92c4(struct_param_1: *mut StructD)
 
 {
-  HPALETTE16 obj;
-  StructD *struct_1;
-  StructD *uVar2;
+  let mut obj: HPALETTE16;
+  let mut struct_1: *mut StructD;
+  let mut uVar2: *mut StructD;
 
   uVar2 = (struct_param_1 >> 0x10);
   struct_1 = struct_param_1;
   struct_param_1->address_offset_field_0x0 = 0x96c8;
   struct_1->address_offset_field_0x2 = 0x1020;
-  if (struct_1->field11_0x12 != 0) {
-    obj = SelectPalette16(0x0,struct_1->field11_0x12,struct_1->field6_0xa);
+  if (struct_1.field11_0x12 != 0) {
+    obj = SelectPalette16(0x0,struct_1.field11_0x12,struct_1.field6_0xa);
     DeleteObject16(obj);
   }
   struct_param_1->address_offset_field_0x0 = 0x3ab0;
@@ -206,21 +206,21 @@ pub fn mix_draw_op_1020_9312(mut param_1: u32)
 
 {
   let mut puVar1: *mut u32;
-  code **ppcVar2;
+  let mut ppcVar2: *mut *mut code;
   let mut uVar3: u32;
   let mut iVar4: i16;
   let mut uVar5: u16;
-  u8 local_22 [0x20];
+  let mut local_22: [u8;0x20] = [0;0x20];
 
   uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
-  BeginPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,local_22),*(HWND16 *)(iVar4 + 0x4));
+  BeginPaint16(CONCAT22(0x1050,local_22),(iVar4 + 0x4));
   uVar3 = (iVar4 + 0x6);
   puVar1 = (uVar3 + 0xa);
-  ppcVar2 = (code **)(*puVar1 + 0x4);
+  ppcVar2 = (*puVar1 + 0x4);
   (**ppcVar2)(s_tile2_bmp_1050_1538,puVar1,(puVar1 >> 0x10),0x0,
               param_1 & 0xffff0000 | (iVar4 + 0xa));
-  EndPaint16((PAINTSTRUCT16 *)CONCAT22(0x1050,local_22),*(HWND16 *)(iVar4 + 0x4));
+  EndPaint16(CONCAT22(0x1050,local_22),(iVar4 + 0x4));
   return;
 }
 
@@ -233,19 +233,19 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
 {
   let mut piVar1: *mut i16;
   let mut puVar2: *mut u16;
-  HBRUSH16 brush_handle_var6;
+  let mut brush_handle_var6: HBRUSH16;
   let local_struct_1: *mut StructA;
   let mut var7: u16;
   let mut uVar7: u16;
   let mut uVar3: u16;
   let mut uVar8: u16;
-  HDC16 HVar3;
+  HVar3: HDC16;
   let mut iStack62: i16;
-  astruct_737 *uStack58;
-  POINT16 point16_38;
-  HGDIOBJ16 hgdiobj16_var_52;
+  uStack58: *mut astruct_737;
+  POpoint16_38: INT16;
+  let mut hgdiobj16_var_52: HGDIOBJ16;
   HPEN16 HStack50;
-  HDC16 hdc16_var_48;
+  hdc16_var_48: HDC16;
   let mut uStack46: u32;
   let mut uStack42: u32;
   let mut uStack38: u32;
@@ -263,12 +263,12 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   let mut piVar2: *mut i16;
   let mut uVar4: u32;
   let mut iVar4: i16;
-  u8 uVar10;
-  u8 uVar11;
+  let mut uVar10: u8;
+  let mut uVar11: u8;
 
   var7 = (param_1 >> 0x10);
-  local_struct_1 = (StructA *)param_1;
-  GetClientRect16(&rect16_a,(HWND16)&DAT_1050_1050);
+  local_struct_1 = param_1;
+  GetClientRect16(&rect16_a,&DAT_1050_1050);
   rect16_var_12 = rect16_a;
   uStack14 = x_var_6;
   uStack20 = DAT_1050_4216;
@@ -279,34 +279,34 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uStack38 = PTR_u16_1050_4202_1050_4220;
   uStack42 = PTR_u16_1050_419a_1050_4224;
   uStack46 = PTR_u16_1050_41aa_1050_4228;
-  uVar4 = &local_struct_1->field3_0x6;
-  hdc16_var_48 = *(HDC16 *)(uVar4 + 0x12);
-  uStack58 = (astruct_737 *)(&u16_1050_0008 + 1);
+  uVar4 = &local_struct_1.field3_0x6;
+  hdc16_var_48 = *(uVar4 + 0x12);
+  uStack58 = (&u16_1050_0008 + 1);
   loop {
     HVar3 = hdc16_var_48;
-    HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack34),0x0,0x0);
+    HStack50 = CreatePen16(*(uStack58 * 0x4 + uStack34),0x0,0x0);
     hgdiobj16_var_52 = SelectObject16(HStack50,HVar3);
-    MoveToEx16(&point16_38,(INT16)&DAT_1050_1050,*(INT16 *)(uStack58 * 0x2 + puStack26),rect16_a.x);
-    LineTo16(*(INT16 *)(puStack26 + uStack58 * 0x2),(INT16)x_var_6,hdc16_var_48);
+    MoveToEx16(&point16_38,&DAT_1050_1050,(uStack58 * 0x2 + puStack26),rect16_a.x);
+    LineTo16((puStack26 + uStack58 * 0x2),x_var_6,hdc16_var_48);
     iVar4 = (uStack20 - uStack58) * 0x2;
-    MoveToEx16(&point16_38,(INT16)&DAT_1050_1050,*(INT16 *)(iVar4 + puStack26),rect16_a.x);
-    LineTo16(*(INT16 *)(puStack26 + iVar4),(INT16)x_var_6,hdc16_var_48);
+    MoveToEx16(&point16_38,&DAT_1050_1050,(iVar4 + puStack26),rect16_a.x);
+    LineTo16((puStack26 + iVar4),x_var_6,hdc16_var_48);
     SelectObject16(hgdiobj16_var_52,hdc16_var_48);
     DeleteObject16(HStack50);
-    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 1);
-  } while (uStack58 < (astruct_737 *)0x8000);
+    uStack58 = (&uStack58[-0x1].field0_0x0 + 1);
+  } while (uStack58 < 0x8000);
   brush_handle_var6 = CreateSolidBrush16(0x2000000);
   uVar7 = (puStack26 >> 0x10);
   rect16_a = (RECT16)CONCAT22((puStack26 + 0x12) + 0x1,rect16_a.x);
   uVar2 = (puStack26 + 0x14);
   uStack14 = uStack14 & 0xffff | uVar2 << 0x10;
-  x_var_6 = CONCAT22(uVar2,(INT16)x_var_6);
+  x_var_6 = CONCAT22(uVar2,x_var_6);
   FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
   iStack62 = 0x8;
   puVar2 = &PTR_LOOP_1050_0000;
-  while (uStack58 = (astruct_737 *)(puVar2 + 1), uStack58 < 0xa) {
-    brush_handle_var6 = CreateSolidBrush16(*(COLORREF *)(puStack30 + iStack62 * 0x4 + 0x4));
+  while (uStack58 = (puVar2 + 1), uStack58 < 0xa) {
+    brush_handle_var6 = CreateSolidBrush16(*(puStack30 + iStack62 * 0x4 + 0x4));
     x_var_6 = x_var_6 & 0xffff | (rect16_a.y - 1) << 0x10;
     rect16_var_12 = (RECT16)(rect16_var_12 & 0xffff | (uStack14 + 1) << 0x10);
     uVar3 = (puStack26 >> 0x10);
@@ -316,43 +316,43 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
     FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
     DeleteObject16(brush_handle_var6);
     iStack62 += -0x1;
-    puVar2 = &uStack58->field0_0x0;
+    puVar2 = &uStack58.field0_0x0;
   }
   brush_handle_var6 = CreateSolidBrush16(*puStack30);
   rect16_a = (RECT16)(rect16_a & 0xffff);
   x_var_6 = x_var_6 & 0xffff | *puStack26 << 0x10;
   rect16_var_12 =
        (RECT16)(rect16_var_12 & 0xffff | ((uStack20 * 0x2 + puStack26) + 1) << 0x10);
-  uStack14 = uStack14 & 0xffff | local_struct_1->field7_0xe << 0x10;
+  uStack14 = uStack14 & 0xffff | local_struct_1.field7_0xe << 0x10;
   FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
   FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
-  uStack58 = (astruct_737 *)(&u16_1050_0002 + 1);
+  uStack58 = (&u16_1050_0002 + 1);
   loop {
     HVar3 = hdc16_var_48;
-    HStack50 = CreatePen16(*(COLORREF *)(uStack58 * 0x4 + uStack38),0x0,0x0);
+    HStack50 = CreatePen16(*(uStack58 * 0x4 + uStack38),0x0,0x0);
     hgdiobj16_var_52 = SelectObject16(HStack50,HVar3);
     iVar2 = uStack58 * 0x2;
     rect16_a.x = (iVar2 + uStack42) + rect16_a.x;
     uVar8 = (uStack46 >> 0x10);
     piVar1 = (iVar2 + uStack46);
-    MoveToEx16(&point16_38,(INT16)&DAT_1050_1050,*(INT16 *)((iVar2 + uStack46) * 0x2 + puStack26),
+    MoveToEx16(&point16_38,&DAT_1050_1050,((iVar2 + uStack46) * 0x2 + puStack26),
                rect16_a.x);
-    LineTo16(*(INT16 *)((uStack20 - *piVar1) * 0x2 + puStack26),rect16_a.x,hdc16_var_48);
+    LineTo16(((uStack20 - *piVar1) * 0x2 + puStack26),rect16_a.x,hdc16_var_48);
     rect16_a.x = ((iStack22 - uStack58) * 0x2 + uStack42) + rect16_a.x;
-    MoveToEx16(&point16_38,(INT16)&DAT_1050_1050,*(INT16 *)(*piVar1 * 0x2 + puStack26),rect16_a.x);
-    LineTo16(*(INT16 *)((uStack20 - *piVar1) * 0x2 + puStack26),rect16_a.x,hdc16_var_48);
+    MoveToEx16(&point16_38,&DAT_1050_1050,(*piVar1 * 0x2 + puStack26),rect16_a.x);
+    LineTo16(((uStack20 - *piVar1) * 0x2 + puStack26),rect16_a.x,hdc16_var_48);
     SelectObject16(hgdiobj16_var_52,hdc16_var_48);
     DeleteObject16(HStack50);
-    uStack58 = (astruct_737 *)(&uStack58[-0x1].field0_0x0 + 1);
-  } while (uStack58 < (astruct_737 *)0x8000);
-  local_struct_1->field8_0x10 = 0;
+    uStack58 = (&uStack58[-0x1].field0_0x0 + 1);
+  } while (uStack58 < 0x8000);
+  local_struct_1.field8_0x10 = 0;
   return;
 }
 
 
 
-StructD * pass1_1020_96a2(StructD *param_1,param_2: u8)
+pub fn pass1_1020_96a2(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   palette_op_1020_92c4(param_1);

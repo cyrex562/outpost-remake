@@ -257,7 +257,7 @@ struct astruct_28 {
     let mut field226_0xe4: i16;
     let mut field227_0xe6: i16;
     let mut field228_0xe8: i16;
-    WPARAM field229_0xea;
+    field229_0xea: WPARAM;
     let mut field230_0xec: u16;
     let mut field231_0xee: u16;
     let mut hwnd_0xf0: HWND16;

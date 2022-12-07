@@ -941,7 +941,8 @@ struct astruct_853 {
     let mut field232_0xe9: u8;
     let mut field233_0xea: u8;
     let mut field234_0xeb: u8;
-    HMENlet mut field235_0xec: u16;
+    // HMENlet mut field235_0xec: u16;
+    pub fields235_0xec: HMENU16,
 };
 
 

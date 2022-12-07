@@ -73,7 +73,7 @@ use crate::*;
  * Field           Type                    Description
  * -----           ----                    -----------
  * name            unsigned char[40]       Application-defined entry identifier, stored in hexadecimal big-endian
- *                                         ASCII. Usually N-char tag followed by (40 - N)-char hash.
+ *                                         ASCII. Usually N-tag: u8 followed by (40 - N)-hash: u8.
  * stored_size     uint32_t                Size of the payload as stored in this file.
  * flags           uint32_t                Flags for this entry (e.g. compression). See below.
  * crc32           uint32_t                CRC32 of the payload as stored in this file.

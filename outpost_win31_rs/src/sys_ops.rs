@@ -6,7 +6,7 @@ pub fn _SHI_INVOKEERRORHANDLER1() -> u16
     let mut iVar1: i16;
     let mut BVar2: bool;
     let mut uVar2: u16;
-    code *pcStack6;
+    let mut pcStack6: *mut code;
     let mut puStack4: *mut u16;
     let mut uVar3: u16;
 

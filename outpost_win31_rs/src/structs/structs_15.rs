@@ -595,7 +595,7 @@ struct astruct_10 {
     let mut field139_0x8b: u8;
     let mut field140_0x8c: u8;
     let mut field141_0x8d: u8;
-    HBRUSH16 brush_handle_field_0x8e;
+    let mut brush_handle_field_0x8e: HBRUSH16;
     let mut field143_0x90: u8;
     let mut field144_0x91: u8;
     let mut field145_0x92: u8;
@@ -863,7 +863,7 @@ struct astruct_800 {
 
 struct astruct_802 {
     char * filename_0x0;
-    HFILE16 hfile_0x4;
+    hfile_0x4: mut HFILE16;
 };
 
 

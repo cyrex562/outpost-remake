@@ -352,9 +352,10 @@ struct astruct_855 {
     let mut field100_0x65: u8;
     let mut field101_0x66: u8;
     let mut field102_0x67: u8;
-    HMENlet mut field103_0x68: u16;
+    // HMENlet mut field103_0x68: u16;
+    pub field103_0x68: HMENU16,
     char * field104_0x6a;
-};
+}
 
 
 

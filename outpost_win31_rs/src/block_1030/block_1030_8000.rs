@@ -3,7 +3,7 @@ pub fn pass1_1030_8030(mut param_1: u16 ,mut param_2: u32)
 
 {
   let mut iVar1: i16;
-  astruct_15 *paVar2;
+  paVar2: *mut astruct_15;
   let mut uVar3: u32;
   let mut in_AX: u16;
   let mut iVar4: i16;
@@ -12,8 +12,8 @@ pub fn pass1_1030_8030(mut param_1: u16 ,mut param_2: u32)
 
   uVar5 = (param_2 >> 0x10);
   iVar4 = param_2;
-  if (*(i32 *)(iVar4 + 0x1a) == 0) {
-    uVar6 = struct_op_1030_73a8((astruct_419 *)(param_2 & 0xffff | uVar5 << 0x10),in_AX,param_1);
+  if ((iVar4 + 0x1a) == 0) {
+    uVar6 = struct_op_1030_73a8((param_2 & 0xffff | uVar5 << 0x10),in_AX,param_1);
     param_1 = (uVar6 >> 0x10);
   }
   uVar3 = (iVar4 + 0x1a);
@@ -44,8 +44,8 @@ pub fn pass1_1030_809c(mut param_1: u32)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  if (*(i32 *)(param_1 + 0x1a) == 0) {
-    struct_op_1030_73a8((astruct_419 *)(param_1 & 0xffff | uVar1 << 0x10),in_AX,in_DX);
+  if ((param_1 + 0x1a) == 0) {
+    struct_op_1030_73a8((param_1 & 0xffff | uVar1 << 0x10),in_AX,in_DX);
   }
   return;
 }
@@ -70,57 +70,57 @@ pub fn struct_1030_8128(param_1: *mut astruct_57,param_2: *mut astruct_135)
 {
   let mut uVar1: u16;
   let mut uVar2: u16;
-  StructD *pSVar3;
+  let mut pSVar3: *mut StructD;
   let mut paVar5: *mut Struct57;
-  astruct_135 *iVar4;
+  iVar4: *mut astruct_135;
   let mut uVar5: u16;
   let mut paVar4: *mut Struct57;
 
   uVar5 = (param_2 >> 0x10);
-  iVar4 = (astruct_135 *)param_2;
+  iVar4 = param_2;
   uVar1 = 0;
   param_2 = 0;
-  &iVar4->field2_0x4 = 0;
-  iVar4->field4_0x8 = 0;
+  &iVar4.field2_0x4 = 0;
+  iVar4.field4_0x8 = 0;
   _u16_1050_5748 = param_2;
   mem_op_1000_179c(0x56,param_1);
   uVar2 = param_1 | uVar1;
-  paVar4 = (astruct_57 *)(param_1 & 0xffff0000 | uVar2);
+  paVar4 = (param_1 & 0xffff0000 | uVar2);
   if (uVar2 != 0) {
-    pass1_1028_d81c(paVar4,(astruct_136 *)CONCAT22(param_1,uVar1),param_2);
+    pass1_1028_d81c(paVar4,CONCAT22(param_1,uVar1),param_2);
   }
   mem_op_1000_179c(0x8,paVar4);
   uVar2 = paVar4 | uVar1;
-  paVar5 = (astruct_57 *)(paVar4 & 0xffff0000 | uVar2);
+  paVar5 = (paVar4 & 0xffff0000 | uVar2);
   if (uVar2 == 0) {
     param_2 = 0;
   }
   else {
     struct_1028_d22e(paVar5,CONCAT22(paVar4,uVar1),param_2);
-    param_2->field0_0x0 = uVar1;
-    iVar4->field1_0x2 = paVar5;
+    param_2.field0_0x0 = uVar1;
+    iVar4.field1_0x2 = paVar5;
   }
   mem_op_1000_179c(0x8,paVar5);
   uVar2 = paVar5 | uVar1;
-  paVar4 = (astruct_57 *)(paVar5 & 0xffff0000 | uVar2);
+  paVar4 = (paVar5 & 0xffff0000 | uVar2);
   if (uVar2 == 0) {
-    &iVar4->field2_0x4 = 0;
+    &iVar4.field2_0x4 = 0;
   }
   else {
     pass1_1028_cfd2(CONCAT22(paVar5,uVar1),param_2);
-    iVar4->field2_0x4 = uVar1;
-    iVar4->field3_0x6 = paVar4;
+    iVar4.field2_0x4 = uVar1;
+    iVar4.field3_0x6 = paVar4;
   }
   mem_op_1000_179c(0x24,paVar4);
   uVar2 = paVar4 | uVar1;
-  paVar5 = (astruct_57 *)(paVar4 & 0xffff0000 | uVar2);
+  paVar5 = (paVar4 & 0xffff0000 | uVar2);
   if (uVar2 != 0) {
     pass1_1030_5bec(CONCAT22(paVar4,uVar1));
   }
   mem_op_1000_179c(0x8,paVar5);
   pSVar3 = (paVar5 | uVar1);
-  if (pSVar3 != NULL) {
-    pass1_1038_78e2(pSVar3,(astruct_431 *)CONCAT22(paVar5,uVar1));
+  if (pSVar3.is_null() == false) {
+    pass1_1038_78e2(pSVar3,CONCAT22(paVar5,uVar1));
   }
   u16_1050_574a = (_u16_1050_5748 >> 0x10);
   return;
@@ -141,7 +141,7 @@ pub fn pass1_1030_8210(param_1: *mut u16)
   let mut pcStack6: *mut c_char;
 
   pcVar3 = _PTR_LOOP_1050_65e2;
-  if (_PTR_LOOP_1050_65e2 != NULL) {
+  if (_PTR_LOOP_1050_65e2.is_null() == false) {
     pass1_1028_daba(_PTR_LOOP_1050_65e2);
     fn_ptr_1000_17ce(pcVar3);
   }
@@ -151,7 +151,7 @@ pub fn pass1_1030_8210(param_1: *mut u16)
   uVar2 = (iVar4 + 2);
   pcStack10 = CONCAT22(uVar2,uVar1);
   if ((uVar2 | uVar1) != 0) {
-    pass1_1028_d282((astruct_446 *)CONCAT22(uVar2,uVar1));
+    pass1_1028_d282(CONCAT22(uVar2,uVar1));
     fn_ptr_1000_17ce(pcStack10);
   }
   uVar1 = (iVar4 + 0x4);
@@ -162,7 +162,7 @@ pub fn pass1_1030_8210(param_1: *mut u16)
     fn_ptr_1000_17ce(pcStack6);
   }
   pcVar3 = _PTR_LOOP_1050_5736;
-  if (_PTR_LOOP_1050_5736 != NULL) {
+  if (_PTR_LOOP_1050_5736.is_null() == false) {
     pass1_1030_5c0e();
     fn_ptr_1000_17ce(pcVar3);
   }
@@ -224,10 +224,10 @@ pub fn pass1_1030_8344(mut param_1: u32,mut param_2: u32)
 pub fn fn_ptr_1030_835a(u32 **param_1,param_2: *mut c_char)
 
 {
-  fn_ptr_1028_d566(*param_1,(astruct_97 *)param_2);
+  fn_ptr_1028_d566(*param_1,param_2);
   return;
 }
-pub fn pass1_1030_8372(u32 **param_1,mut param_2: u32,u32 *param_3)
+pub fn pass1_1030_8372(u32 **param_1,mut param_2: u32,param_3: *mut u32)
 
 {
   pass1_1028_d52c(*param_1,param_2,param_3);
@@ -237,7 +237,7 @@ pub fn pass1_1030_8372(u32 **param_1,mut param_2: u32,u32 *param_3)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1030_838e(u32 *param_1)
+pub fn pass1_1030_838e(param_1: u32)
 
 {
   struct_1028_d2b0(*param_1);
@@ -249,7 +249,7 @@ pub fn pass1_1030_838e(u32 *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1030_83ba(param_1: u8,u32 **param_2,i32 param_3)
+pub fn pass1_1030_83ba(param_1: u8,u32 **param_2,param_3: i32)
 
 {
   let mut lVar1: i32;
@@ -273,12 +273,12 @@ pub fn vsprintf_op_1030_840a(mut param_1: u16 ,mut param_2: u32)
 
 {
   WORD *pWVar1;
-  u8 local_106 [0x100];
+  let mut local_106: [u8;0x100] = [0;0x100];
   WORD *pWStack6;
   let mut uStack4: u16;
 
   if (u16_1050_574c != 0) {
-    pWVar1 = (WORD *)&stack0x0008;
+    pWVar1 = &stack0x0008;
     uStack4 = SUB42(&DAT_1050_1050,0x0);
     pWStack6 = pWVar1;
     if (u16_1050_5750 == 0) {
@@ -294,7 +294,7 @@ pub fn vsprintf_op_1030_840a(mut param_1: u16 ,mut param_2: u32)
   }
   return;
 }
-pub fn pass1_1030_8480(StructD *param_1)
+pub fn pass1_1030_8480(param_1: *mut StructD)
 
 {
   fn_ptr_1000_17ce(*param_1);
@@ -309,7 +309,7 @@ pub fn pass1_1030_8496(mut param_1: u32)
 pub fn pass1_1030_84ae(mut param_1: u32)
 
 {
-  pass1_1008_3e38((astruct_19 *)(param_1 & 0xffff0000 | (param_1 + 0x8)));
+  pass1_1008_3e38((param_1 & 0xffff0000 | (param_1 + 0x8)));
   (param_1 + 0x1e) = 0x1;
   return;
 }
@@ -318,7 +318,7 @@ pub fn fn_ptr_1030_84d0(mut param_1: u32)
 {
   let mut puVar1: *mut u32;
   let mut uVar2: u16;
-  code **ppcVar3;
+  let mut ppcVar3: *mut *mut code;
   let mut iVar4: i16;
   let mut uVar5: u16;
 
@@ -328,13 +328,13 @@ pub fn fn_ptr_1030_84d0(mut param_1: u32)
     puVar1 = (iVar4 + 0xe);
     uVar2 = (iVar4 + 0x10);
     if ((uVar2 | puVar1) != 0) {
-      ppcVar3 = (code **)*puVar1;
+      ppcVar3 = *puVar1;
       (**ppcVar3)();
     }
     puVar1 = (iVar4 + 0x12);
     uVar2 = (iVar4 + 0x14);
     if ((uVar2 | puVar1) != 0) {
-      ppcVar3 = (code **)*puVar1;
+      ppcVar3 = *puVar1;
       (**ppcVar3)();
     }
     fn_ptr_1000_17ce(*(iVar4 + 0x4));
@@ -345,46 +345,46 @@ pub fn fn_ptr_1030_84d0(mut param_1: u32)
 pub fn struct_1030_8544(param_1: *mut astruct_355,param_2: *mut astruct_356)
 
 {
-  astruct_356 *iVar1;
-  astruct_355 *iVar2;
-  astruct_356 *uVar1;
-  astruct_355 *uVar2;
+  iVar1: *mut astruct_356;
+  iVar2: *mut astruct_355;
+  uVar1: *mut astruct_356;
+  uVar2: *mut astruct_355;
 
-  param_1->field0_0x0 = param_2->field0_0x0;
-  uVar1 = (astruct_356 *)(param_2 >> 0x10);
-  iVar1 = (astruct_356 *)param_2;
-  uVar2 = (astruct_355 *)(param_1 >> 0x10);
-  iVar2 = (astruct_355 *)param_1;
-  iVar2->field2_0x4 = iVar1->field3_0x4;
-  pass1_1008_3f62((param_1 & 0xffff0000 | ZEXT24(&iVar2->field_0x8)),
-                  (param_2 & 0xffff0000 | ZEXT24(&iVar1->field_0x8)));
-  iVar2->field9_0xe = iVar1->field10_0xe;
-  iVar2->field10_0x12 = iVar1->field11_0x12;
-  iVar2->field11_0x16 = iVar1->field12_0x16;
-  iVar2->field12_0x1a = iVar1->field13_0x1a;
-  iVar2->field15_0x1e = 0;
+  param_1.field0_0x0 = param_2.field0_0x0;
+  uVar1 = (param_2 >> 0x10);
+  iVar1 = param_2;
+  uVar2 = (param_1 >> 0x10);
+  iVar2 = param_1;
+  iVar2.field2_0x4 = iVar1.field3_0x4;
+  pass1_1008_3f62((param_1 & 0xffff0000 | ZEXT24(&iVar2.field_0x8)),
+                  (param_2 & 0xffff0000 | ZEXT24(&iVar1.field_0x8)));
+  iVar2.field9_0xe = iVar1.field10_0xe;
+  iVar2.field10_0x12 = iVar1.field11_0x12;
+  iVar2.field11_0x16 = iVar1.field12_0x16;
+  iVar2.field12_0x1a = iVar1.field13_0x1a;
+  iVar2.field15_0x1e = 0;
   return;
 }
 pub fn pass1_1030_85be(param_1: *mut astruct_172,mut param_2: u16 ,mut param_3: i16)
 
 {
-  astruct_172 *iVar1;
-  astruct_172 *uVar1;
+  iVar1: *mut astruct_172;
+  uVar1: *mut astruct_172;
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   param_1 = 0;
-  iVar1->field2_0x4 = 0;
-  iVar1->field3_0x6 = param_3;
-  iVar1->field4_0x8 = param_2;
+  iVar1.field2_0x4 = 0;
+  iVar1.field3_0x6 = param_3;
+  iVar1.field4_0x8 = param_2;
   iVar1[0x1].field2_0x4 = 0;
-  if (iVar1->field3_0x6 == 0) {
-    iVar1->field3_0x6 = 0x5;
+  if (iVar1.field3_0x6 == 0) {
+    iVar1.field3_0x6 = 0x5;
   }
   pass1_1030_878c(param_1);
   return;
 }
-pub fn pass1_1030_8604(StructD *param_1)
+pub fn pass1_1030_8604(param_1: *mut StructD)
 
 {
   fn_ptr_1000_17ce(*param_1);
@@ -405,7 +405,7 @@ pub fn pass1_1030_861a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   }
   return;
 }
-pub fn pass1_1030_8660(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,u32 *param_4,mut param_5: u16 )
+pub fn pass1_1030_8660(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4: *mut u32,mut param_5: u16 )
 
 {
   let mut uVar1: u16;
@@ -442,34 +442,34 @@ pub fn pass1_1030_8660(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,u32 
 pub fn pass1_1030_86ec(param_1: *mut astruct_612,mut param_2: u16 )
 
 {
-  astruct_612 *iVar1;
+  iVar1: *mut astruct_612;
   let mut uVar1: u16;
 
   fn_ptr_1000_17ce(*param_1);
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (astruct_612 *)param_1;
+  iVar1 = param_1;
   param_1 = 0;
-  iVar1->field4_0x4 = 0;
-  iVar1->field5_0x6 = param_2;
-  iVar1->field12_0xe = 0;
+  iVar1.field4_0x4 = 0;
+  iVar1.field5_0x6 = param_2;
+  iVar1.field12_0xe = 0;
   return;
 }
-pub fn pass1_1030_871e(i32 *param_1,u32 *param_2,mut param_3: u16 )
+pub fn pass1_1030_871e(i32 *param_1,param_2: *mut u32,mut param_3: u16 )
 
 {
   let mut piVar1: *mut i16;
-  astruct_681 *iVar2;
+  iVar2: *mut astruct_681;
   let mut uVar2: u16;
 
   uVar2 = (param_1 >> 0x10);
-  iVar2 = (astruct_681 *)param_1;
+  iVar2 = param_1;
   if (*param_1 == 0) {
     pass1_1030_878c((param_1 & 0xffff | uVar2 << 0x10));
   }
-  piVar1 = &iVar2->field14_0xe;
+  piVar1 = &iVar2.field14_0xe;
   *piVar1 = *piVar1 + 1;
-  (*param_1 + iVar2->field14_0xe * 0x6 + 0x4) = param_3;
-  (iVar2->field14_0xe * 0x6 + *param_1) = *param_2;
+  (*param_1 + iVar2.field14_0xe * 0x6 + 0x4) = param_3;
+  (iVar2.field14_0xe * 0x6 + *param_1) = *param_2;
   return;
 }
 pub fn pass1_1030_877c(param_1: *mut u16)
@@ -489,26 +489,26 @@ pub fn pass1_1030_878c(param_1: *mut astruct_172)
   let mut uVar2: u16;
   let mut uVar3: u16;
   let mut in_EDX: u32;
-  StructD *pSVar4;
-  astruct_172 *iVar4;
-  astruct_172 *uVar4;
+  let mut pSVar4: *mut StructD;
+  iVar4: *mut astruct_172;
+  uVar4: *mut astruct_172;
   let mut lVar5: i32;
   let mut uStack12: u32;
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  if (iVar4->field2_0x4 == 0) {
+  if (iVar4.field2_0x4 == 0) {
     pSVar4 = (in_EDX & 0xffff0000);
-    uVar2 = iVar4->field3_0x6;
+    uVar2 = iVar4.field3_0x6;
   }
   else {
-    uVar3 = iVar4->field2_0x4;
-    puVar1 = &iVar4->field4_0x8;
+    uVar3 = iVar4.field2_0x4;
+    puVar1 = &iVar4.field4_0x8;
     uVar2 = uVar3 + *puVar1;
     pSVar4 = (in_EDX & 0xffff0000 | CARRY2(uVar3,*puVar1));
   }
   if (pSVar4 == 0) {
-    if (*(i32 *)param_1 == 0) {
+    if (param_1 == 0) {
       if (_PTR_LOOP_1050_5f2c == 0) {
         PTR_LOOP_1050_5f2c = mem_op_1000_160a(pSVar4);
         PTR_LOOP_1050_5f2e = pSVar4;
@@ -525,7 +525,7 @@ pub fn pass1_1030_878c(param_1: *mut astruct_172)
     }
     uStack12 = CONCAT22(PTR_LOOP_1050_5f2e,uVar3);
     if ((PTR_LOOP_1050_5f2e | uVar3) != 0) {
-      iVar4->field2_0x4 = uVar2;
+      iVar4.field2_0x4 = uVar2;
       param_1 = uStack12;
       pass1_1030_8834((param_1 & 0xffff | ZEXT24(uVar4) << 0x10));
     }
@@ -558,7 +558,7 @@ pub fn pass1_1030_8854(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 )
 
 
 
-u16 pass1_1030_888e(mut param_1: u32,mut param_2: u32)
+pub unsafe fn pass1_1030_888e(mut param_1: u32,mut param_2: u32) -> u16
 
 {
   let mut piVar1: *mut i16;
@@ -587,16 +587,16 @@ pub fn pass1_1030_88ce(param_1: *mut u16,mut param_2: u32,mut param_3: u32)
   let mut in_EDX: u32;
   let mut uVar6: u16;
   let mut paVar4: *mut Struct57;
-  astruct_354 *iVar4;
+  iVar4: *mut astruct_354;
   let mut uVar7: u16;
   let mut uVar8: u32;
   let mut puStack38: *mut u16;
   let mut iStack34: i16;
-  u8 local_20 [0x2];
+  let mut local_20: [u8;0x2] = [0;0x2];
   let mut local_1e: i16;
   let mut local_1c: i16;
-  u8 local_1a [0x6];
-  u8 local_14 [0x6];
+  let mut local_1a: [u8;0x6] = [0;0x6];
+  let mut local_14: [u8;0x6] = [0;0x6];
   let mut uStack14: u32;
   let mut uStack10: u32;
   let mut iStack6: i16;
@@ -604,19 +604,19 @@ pub fn pass1_1030_88ce(param_1: *mut u16,mut param_2: u32,mut param_3: u32)
   let mut paVar5: *mut Struct57;
 
   uVar7 = (param_1 >> 0x10);
-  iVar4 = (astruct_354 *)param_1;
+  iVar4 = param_1;
   *param_1 = 0x389a;
-  iVar4->field2_0x2 = 0x1008;
+  iVar4.field2_0x2 = 0x1008;
   uVar6 = (in_EDX >> 0x10);
-  pass1_1030_84ae(param_1 & 0xffff0000 | ZEXT24(&iVar4->field_0x4));
-  iVar4->field32_0x24 = param_3;
-  puStack38 = (param_1 & 0xffff0000 | ZEXT24(&iVar4->field_0x28));
-  pass1_1008_6c90((param_1 & 0xffff0000 | ZEXT24(&iVar4->field_0x28)));
-  &iVar4->field45_0x34 = 0;
+  pass1_1030_84ae(param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x4));
+  iVar4.field32_0x24 = param_3;
+  puStack38 = (param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x28));
+  pass1_1008_6c90((param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x28)));
+  &iVar4.field45_0x34 = 0;
   *param_1 = 0x8e38;
-  iVar4->field2_0x2 = 0x1030;
-  struct_1030_8544((astruct_355 *)(param_1 & 0xffff0000 | ZEXT24(&iVar4->field_0x4)),(astruct_356 *)param_2);
-  uVar8 = pass1_1008_4772(iVar4->field17_0x12);
+  iVar4.field2_0x2 = 0x1030;
+  struct_1030_8544((param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x4)),param_2);
+  uVar8 = pass1_1008_4772(iVar4.field17_0x12);
   uStack4 = (uVar8 >> 0x10);
   iStack6 = uVar8;
   uStack10 = (iStack6 + 0x4);
@@ -625,17 +625,17 @@ pub fn pass1_1030_88ce(param_1: *mut u16,mut param_2: u32,mut param_3: u32)
   pass1_1008_3e54(CONCAT22(0x1050,local_1a),0x0,0x0,0x0);
   pass1_1008_6d18(puStack38,CONCAT22(0x1050,local_14),CONCAT22(0x1050,local_1a));
   pass1_1008_6d64(puStack38,CONCAT22(0x1050,local_1a));
-  pass1_1008_3eb4((astruct_615 *)CONCAT22(0x1050,local_1a),CONCAT22(0x1050,local_20),
+  pass1_1008_3eb4(CONCAT22(0x1050,local_1a),CONCAT22(0x1050,local_20),
                   CONCAT22(0x1050,&local_1e),CONCAT22(0x1050,&local_1c));
   puVar2 = ((local_1e * local_1c) >> 0x10);
   uVar1 = local_1e * local_1c & 0xffff;
-  iVar4->field45_0x34 = uVar1;
-  iVar4->field46_0x36 = puVar2;
-  paVar4 = (astruct_57 *)CONCAT22(uVar6,puVar2);
+  iVar4.field45_0x34 = uVar1;
+  iVar4.field46_0x36 = puVar2;
+  paVar4 = CONCAT22(uVar6,puVar2);
   for (iStack34 = 0; iStack34 < 0x5; iStack34 += 1) {
     mem_op_1000_179c(0x10,paVar4);
     uVar3 = paVar4 | uVar1;
-    paVar5 = (astruct_57 *)(paVar4 & 0xffff0000 | uVar3);
+    paVar5 = (paVar4 & 0xffff0000 | uVar3);
     if (uVar3 == 0) {
       (&iVar4[0x1].field_0x0 + iStack34 * 0x4) = 0;
     }
@@ -648,12 +648,12 @@ pub fn pass1_1030_88ce(param_1: *mut u16,mut param_2: u32,mut param_3: u32)
   }
   return;
 }
-pub fn pass1_1030_8a2c(StructD *param_1)
+pub fn pass1_1030_8a2c(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;
   let mut pcVar2: *mut c_char;
-  StructD *iVar3;
+  let mut iVar3: *mut StructD;
   let mut uVar3: u16;
   let mut iStack4: i16;
 
@@ -663,8 +663,8 @@ pub fn pass1_1030_8a2c(StructD *param_1)
   iVar3->address_offset_field_0x2 = 0x1030;
   iStack4 = 0;
   loop {
-    pcVar2 = *(&iVar3->field_0x38 + iStack4 * 0x4);
-    uVar1 = (&iVar3->field_0x3a + iStack4 * 0x4);
+    pcVar2 = *(&iVar3.field_0x38 + iStack4 * 0x4);
+    uVar1 = (&iVar3.field_0x3a + iStack4 * 0x4);
     if ((uVar1 | pcVar2) != 0) {
       pass1_1030_8604((pcVar2 & 0xffff | uVar1 << 0x10));
       fn_ptr_1000_17ce(pcVar2);
@@ -683,12 +683,12 @@ pub fn pass1_1030_8aa0(mut param_1: u32,mut param_2: u32,param_3: *mut u16,mut p
   let mut local_12: u32;
   let mut puStack14: *mut u8;
   let mut uStack12: u32;
-  u8 local_8 [0x2];
-  u8 local_6 [0x2];
-  u8 local_4 [0x2];
+  let mut local_8: [u8;0x2] = [0;0x2];
+  let mut local_6: [u8;0x2] = [0;0x2];
+  let mut local_4: [u8;0x2] = [0;0x2];
 
   puStack14 = local_8;
-  pass1_1008_3eb4((astruct_615 *)param_3,CONCAT13(0x10,CONCAT12(0x50,puStack14)),
+  pass1_1008_3eb4(param_3,CONCAT13(0x10,CONCAT12(0x50,puStack14)),
                   CONCAT22(0x1050,local_6),CONCAT22(0x1050,local_4));
   bad_1030_8cd2();
   uStack12 = CONCAT22(param_4,puStack14);
@@ -717,13 +717,13 @@ pub fn pass1_1030_8b00(mut param_1: u32,param_2: *mut u16,param_3: *mut u16)
   let mut puStack16: *mut u32;
   let mut piStack14: *mut i16;
   let mut local_c: i16;
-  u8 local_a [0x4];
+  let mut local_a: [u8;0x4] = [0;0x4];
   let mut uStack6: u32;
 
   uStack6 = 0;
   puVar1 = (local_a + 2);
   piVar2 = &local_c;
-  pass1_1008_3eb4((astruct_615 *)param_2,CONCAT13(0x10,CONCAT12(0x50,piVar2)),
+  pass1_1008_3eb4(param_2,CONCAT13(0x10,CONCAT12(0x50,piVar2)),
                   CONCAT22(0x1050,local_a),CONCAT22(0x1050,puVar1));
   bad_1030_8cd2();
   puStack16 = puVar1;
@@ -766,16 +766,16 @@ pub fn pass1_1030_8bdc(mut param_1: u32,mut param_2: u32,param_3: *mut u16)
   let mut local_12: u32;
   let mut puStack14: *mut u8;
   i32 *plStack12;
-  u8 local_8 [0x2];
-  u8 local_6 [0x2];
-  u8 local_4 [0x2];
+  let mut local_8: [u8;0x2] = [0;0x2];
+  let mut local_6: [u8;0x2] = [0;0x2];
+  let mut local_4: [u8;0x2] = [0;0x2];
 
   puStack14 = local_4;
   puVar1 = local_8;
-  pass1_1008_3eb4((astruct_615 *)param_3,CONCAT13(0x10,CONCAT12(0x50,puVar1)),
+  pass1_1008_3eb4(param_3,CONCAT13(0x10,CONCAT12(0x50,puVar1)),
                   CONCAT22(0x1050,local_6),CONCAT22(0x1050,puStack14));
   bad_1030_8cd2();
-  plStack12 = (i32 *)CONCAT22(puVar1,puStack14);
+  plStack12 = CONCAT22(puVar1,puStack14);
   pass1_1030_8d9e(param_1);
   local_12 = param_2;
   pass1_1030_871e(plStack12,CONCAT22(0x1050,&local_12),puStack14);
@@ -793,14 +793,14 @@ pub fn pass1_1030_8c38(mut param_1: u32)
   } while (iStack4 < 0x5);
   return;
 }
-pub fn pass1_1030_8c66(mut param_1: u32,mut param_2: i16,param_3: *mut u8,mut param_4: u16 ,u32 *param_5,mut param_6: u16 )
+pub fn pass1_1030_8c66(mut param_1: u32,mut param_2: i16,param_3: *mut u8,mut param_4: u16 ,param_5: *mut u32,mut param_6: u16 )
 
 {
   let mut bVar1: u8;
   let mut uVar2: u16;
   let mut uStack6: u32;
 
-  pass1_1008_4544(*(astruct_76 **)(param_1 + 0x12));
+  pass1_1008_4544((param_1 + 0x12));
   bVar1 = *param_3;
   uVar2 = bVar1;
   uStack6 = (uVar2 + 1);
@@ -838,10 +838,10 @@ pub fn pass1_1030_8d08(mut param_1: u32,mut param_2: u16 )
   let mut paVar5: *mut Struct57;
   let mut uVar6: u16;
   let mut uVar7: u32;
-  astruct_358 *paStack16;
+  paStack16: *mut astruct_358;
   let mut iStack4: i16;
 
-  paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
+  paVar5 = CONCAT22(in_register_0000000a,param_2);
   iStack4 = 0;
   while( true ) {
     uVar6 = (param_1 >> 0x10);
@@ -852,9 +852,9 @@ pub fn pass1_1030_8d08(mut param_1: u32,mut param_2: u16 )
     (uVar2 + iVar3 + 0x4) = 0;
     pass1_1028_e2ac(_PTR_LOOP_1050_65e2,0x500);
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2,CONCAT22(paVar5,iVar3));
-    paStack16 = (astruct_358 *)CONCAT22(paVar5,iVar3);
+    paStack16 = CONCAT22(paVar5,iVar3);
     uVar7 = pass1_1028_e2e0(paVar5,_PTR_LOOP_1050_65e2,0x7);
-    paVar5 = (astruct_57 *)(paVar5 & 0xffff0000 | uVar7 >> 0x10);
+    paVar5 = (paVar5 & 0xffff0000 | uVar7 >> 0x10);
     uVar4 = (uVar7 >> 0x10);
     pass1_1030_7e5a(uVar4,paStack16,uVar7 & 0xffff | uVar4 << 0x10);
     iStack4 += 0x1;
@@ -864,11 +864,11 @@ pub fn pass1_1030_8d08(mut param_1: u32,mut param_2: u16 )
 pub fn pass1_1030_8d9e(mut param_1: u32)
 
 {
-  u8 local_c [0x2];
-  u8 local_a [0x2];
-  u8 local_8 [0x6];
+  let mut local_c: [u8;0x2] = [0;0x2];
+  let mut local_a: [u8;0x2] = [0;0x2];
+  let mut local_8: [u8;0x6] = [0;0x6];
 
-  pass1_1008_3e38((astruct_19 *)CONCAT22(0x1050,local_8));
+  pass1_1008_3e38(CONCAT22(0x1050,local_8));
   pass1_1008_6d64((param_1 & 0xffff0000 | (param_1 + 0x28)),CONCAT22(0x1050,local_8));
   pass1_1008_3e94(CONCAT22(0x1050,local_8),CONCAT22(0x1050,local_c),CONCAT22(0x1050,local_a));
   return;
@@ -876,7 +876,7 @@ pub fn pass1_1030_8d9e(mut param_1: u32)
 
 
 
-StructD * pass1_1030_8e12(StructD *param_1,param_2: u8)
+pub fn pass1_1030_8e12(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1030_8a2c(param_1);
@@ -890,7 +890,7 @@ StructD * pass1_1030_8e12(StructD *param_1,param_2: u8)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1030_8e3c(StructD *param_1,mut param_2: u32,mut param_3: u32,mut param_4: u16 ) -> u32
+pub fn pass1_1030_8e3c(param_1: *mut StructD,mut param_2: u32,mut param_3: u32,mut param_4: u16 ) -> u32
 
 {
   let mut uVar1: u16;
@@ -910,21 +910,21 @@ pub fn pass1_1030_8e3c(StructD *param_1,mut param_2: u32,mut param_3: u32,mut pa
   let mut paVar8: *mut Struct57;
 
   uVar1 = (param_1 >> 0x10);
-  paVar7 = (astruct_57 *)(param_1 & 0xffff0000 | param_1 & 0xffff);
+  paVar7 = (param_1 & 0xffff0000 | param_1 & 0xffff);
   mem_op_1000_179c(0xc,paVar7);
   uVar4 = paVar7 | uVar1;
-  paVar9 = (astruct_57 *)(paVar7 & 0xffff0000);
-  paVar8 = (astruct_57 *)(paVar9 | uVar4);
+  paVar9 = (paVar7 & 0xffff0000);
+  paVar8 = (paVar9 | uVar4);
   if (uVar4 == 0) {
     uVar2 = 0;
   }
   else {
-    uVar2 = set_struct_1008_574a((astruct_57 *)CONCAT22(paVar7,uVar1));
+    uVar2 = set_struct_1008_574a(CONCAT22(paVar7,uVar1));
     paVar9 = paVar8;
   }
   uVar5 = SUB42(paVar9,0x0);
   if (param_3._3_1_ == '\x04') {
-    puVar10 = mixed_1010_20ba(paVar9,_u16_1050_0ed0,(u8 **)CONCAT22(param_4,0x2f),in_stack_0000fe8a,
+    puVar10 = mixed_1010_20ba(paVar9,_u16_1050_0ed0,CONCAT22(param_4,0x2f),in_stack_0000fe8a,
                               in_stack_0000ffae,in_stack_0000ffb4,in_stack_0000ffb8);
     uVar4 = (puVar10 >> 0x10);
     uVar1 = (puVar10 + 0x1e);
@@ -1009,7 +1009,7 @@ pub fn pass1_1030_8f04(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1030_8fe4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,i32 param_6)
+BOOL16 pass1_1030_8fe4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32)
 
 {
   let mut iVar1: i16;
@@ -1021,7 +1021,7 @@ BOOL16 pass1_1030_8fe4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   if (uVar2 != 0) {
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2,CONCAT22(param_2,param_1));
     if ((uVar2 | param_1) != 0) {
-      uVar3 = struct_op_1030_73a8((astruct_419 *)CONCAT22(uVar2,param_1),param_1,uVar2 | param_1);
+      uVar3 = struct_op_1030_73a8(CONCAT22(uVar2,param_1),param_1,uVar2 | param_1);
       if ((uVar3 != 0) && ((iVar1 = (uVar3 + 0xc), iVar1 == 0x5 || (iVar1 == 0x9)))) {
         return 0x1;
       }

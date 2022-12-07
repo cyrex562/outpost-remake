@@ -1,8 +1,8 @@
 
-pub fn pass1_1018_9036(StructD *param_1,param_2: u8)
+pub fn pass1_1018_9036(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
@@ -19,14 +19,14 @@ pub fn pass1_1018_9036(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_907e(StructD *param_1,param_2: u8)
+pub fn pass1_1018_907e(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -38,14 +38,14 @@ pub fn pass1_1018_907e(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_90c6(StructD *param_1,param_2: u8)
+pub fn pass1_1018_90c6(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -57,14 +57,14 @@ pub fn pass1_1018_90c6(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_910e(StructD *param_1,param_2: u8)
+pub fn pass1_1018_910e(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -76,14 +76,14 @@ pub fn pass1_1018_910e(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9156(StructD *param_1,param_2: u8)
+pub fn pass1_1018_9156(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -95,14 +95,14 @@ pub fn pass1_1018_9156(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_919e(StructD *param_1,param_2: u8)
+pub fn pass1_1018_919e(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -114,14 +114,14 @@ pub fn pass1_1018_919e(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_91e6(StructD *param_1,param_2: u8)
+pub fn pass1_1018_91e6(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -133,14 +133,14 @@ pub fn pass1_1018_91e6(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_922e(StructD *param_1,param_2: u8)
+pub fn pass1_1018_922e(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -152,14 +152,14 @@ pub fn pass1_1018_922e(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9276(StructD *param_1,param_2: u8)
+pub fn pass1_1018_9276(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -171,14 +171,14 @@ pub fn pass1_1018_9276(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_92be(StructD *param_1,param_2: u8)
+pub fn pass1_1018_92be(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -190,14 +190,14 @@ pub fn pass1_1018_92be(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9306(StructD *param_1,param_2: u8)
+pub fn pass1_1018_9306(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -209,14 +209,14 @@ pub fn pass1_1018_9306(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_934e(StructD *param_1,param_2: u8)
+pub fn pass1_1018_934e(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;
@@ -228,14 +228,14 @@ pub fn pass1_1018_934e(StructD *param_1,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9396(StructD *param_1,param_2: u8)
+pub fn pass1_1018_9396(param_1: *mut StructD,param_2: u8)
 
 {
-  StructD *iVar1;
+  let mut iVar1: *mut StructD;
   let mut uVar1: u16;
 
   iVar1 = param_1;
-  iVar1 = &iVar1->field192_0xd2;
+  iVar1 = &iVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
   uVar1 = (param_1 >> 0x10);
   param_1->address_offset_field_0x0 = 0x380a;

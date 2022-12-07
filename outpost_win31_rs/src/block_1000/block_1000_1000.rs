@@ -253,7 +253,7 @@ pub unsafe fn pass1_1000_1e61(mut param_1: u16,
     let mut UStack64: u16;
     let mut UStack62: u16;
     let mut UStack60: u16;
-    code *pcStack6;
+    let mut pcStack6: *mut code;
     let mut puStack4: *mut u8;
     let mut uVar3: u16;
 
@@ -389,7 +389,7 @@ pub unsafe fn mem_op_1000_160a(param_1: *mut StructD) -> *const u8
 
     uVar1 =  param_1;
     puVar1 =  ret_true_1000_2146();
-    if (puVar1 == NULL) {
+    if (puVar1.is_null()) {
         return puVar1;
     }
     if (( PTR_LOOP_1050_5f2e |  PTR_LOOP_1050_5f2c) == 0) {
@@ -400,7 +400,7 @@ pub unsafe fn mem_op_1000_160a(param_1: *mut StructD) -> *const u8
         PTR_LOOP_1050_5f2e =  (uVar2 >> 0x10);
         PTR_LOOP_1050_5f2c =  uVar2;
         if (( PTR_LOOP_1050_5f2e |  PTR_LOOP_1050_5f2c) != 0) {
-            if (PTR_LOOP_1050_5f42 != NULL) {
+            if (PTR_LOOP_1050_5f42.is_null() == false) {
                 pass1_1000_1a54( PTR_LOOP_1050_5f42,
                                  PTR_LOOP_1050_5f2c,
                                  PTR_LOOP_1050_5f2e);
@@ -421,7 +421,7 @@ pub unsafe fn mem_1000_167a(mut param_1: u16,
 {
     let mut puVar1: *mut u8;
     let mut in_register_0000000a: u16;
-    StructD *pSVar2;
+    let mut pSVar2: *mut StructD;
     let mut lVar3: i32;
 
     pSVar2 =  CONCAT22(in_register_0000000a,
@@ -526,7 +526,7 @@ pub unsafe fn pass1_1000_180c(mut param_1: u16, mut param_2: u16 ) -> u16
 {
     let mut puVar1: *mut u8;
     let mut in_register_0000000a: u16;
-    StructD *pSVar2;
+    let mut pSVar2: *mut StructD;
     let mut lVar3: i32;
 
     pSVar2 =  CONCAT22(in_register_0000000a,
@@ -548,7 +548,7 @@ pub unsafe fn pass1_1000_180c(mut param_1: u16, mut param_2: u16 ) -> u16
 pub unsafe fn pass1_1000_183c(mut param_1: u16, mut param_2: u16 ) -> u16
 {
     let mut in_EDX: u32;
-    StructD *pSVar1;
+    let mut pSVar1: *mut StructD;
     let mut lVar2: i32;
 
     pSVar1 = (in_EDX & 0xffff0000);
@@ -968,7 +968,7 @@ pub fn pass1_1000_1fea() -> bool
     let mut bVar2: bool;
 
     puVar1 = PTR_LOOP_1050_5f22 + 1;
-    bVar2 = PTR_LOOP_1050_5f22 == NULL;
+    bVar2 = PTR_LOOP_1050_5f22.is_null();
     PTR_LOOP_1050_5f22 = puVar1;
     if ((bVar2) && (( PTR_LOOP_1050_5f20 |  PTR_LOOP_1050_5f1e) != 0)) {
         PTR_LOOP_1050_5f22 =  &u16_1050_0002;

@@ -426,7 +426,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16 ) -> u16
         pass1_1000_356e( uVar13,
                          pcVar9,
                         param_1);
-        if (((* (unaff_BP + -0x5) & 0x2) != 0) && ((pcVar9 == NULL || (unaff_DI != '0')))) {
+        if (((* (unaff_BP + -0x5) & 0x2) != 0) && ((pcVar9.is_null() || (unaff_DI != '0')))) {
             unaff_DI =  (unaff_BP + -0x18);
             unaff_DI = '0';
             pcVar9 = pcVar9 + 1;
@@ -467,7 +467,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16 ) -> u16
         } else if (cVar4 == 's') {
             uVar13 = pass1_1000_34e6(param_1);
             param_1 =  (uVar13 >> 0x10);
-            if ((unaff_DI == NULL) && (unaff_ES == 0)) {
+            if ((unaff_DI.is_null()) && (unaff_ES == 0)) {
                 unaff_ES =  &DAT_1050_1050;
                 unaff_DI =  0x6057;
                 pcVar9 = DAT_1050_605d;
@@ -841,7 +841,7 @@ pub unsafe fn pass1_1000_35aa() -> *mut u16
 pub unsafe fn dos3_call_op_1000_35fe(mut param_1: u16 ,
                            mut param_2: i16) -> u16
 {
-//    code *pcVar1;
+//    let mut pcVar1: *mut code;
     let mut uVar2: u16;
     let mut u16_var2: bool;
 
@@ -875,7 +875,7 @@ pub unsafe fn mixed_dos3_call_1000_3636(mut param_1: u16 ,
                                mut param_4: u16 )
 {
     let mut pbVar1: *mut u8;
-    code *pcVar2;
+    let mut pcVar2: *mut code;
     let mut u_var3: u16;
     let mut unaff_bp: i16;
     let mut i_var4: i16;
@@ -963,7 +963,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(mut param_1: u16 ,
                               param_5: u8,
                               mut param_6: u16 ) -> u16
 {
-    code *fn_ptr_1;
+    let mut fn_ptr_1: *mut code;
     let mut uVar3: u16;
     let mut uVar2: u16;
     let mut iVar3: i16;
@@ -1073,7 +1073,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(mut param_1: u16 ,
                     if (((uVar10 & 0x80) != 0) && ((param_4 & 0x2) != 0)) {
                         // TODO: code fn_ptr_1 =  swi(0x21);
                         (fn_ptr_1)();
-                        // TODO: code5 fn_ptr_2 = (code5) swi(0x21);
+                        // TODO: code5 fn_ptr_2 =  swi(0x21);
                         iVar3 = (fn_ptr_2)();
                         if ((iVar3 != 0) && (param_1 =  (uVar3 >> 0x8), param_1 == '\x1a')) {
                             fn_ptr_1 =  swi(0x21);
@@ -1135,7 +1135,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
     let mut pbVar2: *mut u8;
     let mut puVar3: *mut u8;
     let mut uVar4: u16;
-    code *pcVar5;
+    let mut pcVar5: *mut code;
     let mut puVar6: *mut u8;
     let mut uVar6: u16;
     let mut uVar7: u16;
@@ -1194,7 +1194,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
 //        LAB_1000_3acf:
         uVar15 = false;
         puVar6 = param_3;
-        if (param_3 != NULL) {
+        if (param_3.is_null() == false) {
             uVar15 = puVar12 < puVar23;
             if ( uVar15) {
                 uVar15 = 0;
@@ -1212,7 +1212,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
                                           uVar21);
             } else {
                 uVar15 = false;
-                if (puVar6 == NULL) {
+                if (puVar6.is_null()) {
                     if (((puVar12[0x5f90] & 0x40) == 0) || (( uVar21 >> 0x10) != '\x1a')) {
                         uVar15 = true;
                         puVar6 =  0x1c00;
@@ -1229,9 +1229,9 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
         piStack8 = NULL;
         piVar9 =  param_3;
         pbVar13 = pbVar12;
-        if (param_3 != NULL) {
+        if (param_3.is_null() == false) {
             loop {
-                if (piVar9 == NULL) {
+                if (piVar9.is_null()) {
                     break;
                 }
                 piVar9 =  ( piVar9 + -1);
@@ -1288,7 +1288,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
                 uVar4 =
                       (cVar20 << 0x7 | cVar19 << 0x6 | in_AF << 0x4 | cVar17 << 0x2 | 0x2 | bVar16) << 0x8;
                 puVar6 =  ( piVar7 & 0xff | uVar4);
-                if (piStack6 == NULL) {
+                if (piStack6.is_null()) {
                     uVar15 = (uVar4 & 0x100) != 0;
                     if ( uVar15) {
                         puVar6 =  CONCAT11(0x9,
@@ -1346,7 +1346,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(param_1: *mut u8,
                     puVar12 = puVar12 + 1;
                     *puVar2 =  uVar6;
                     param_3 = param_3 + -0x1;
-                    if param_3 == null_mut() { break;}
+                    if param_3.is_null(){ break;}
                 }
                 (&stack0xffee + iVar10) = 0x3ab1;
                 mixed_dos3_call_1000_3ad9(uVar6,
@@ -1377,7 +1377,7 @@ pub unsafe fn mixed_dos3_call_1000_3ad9(mut param_1: u16 ,
                               mut param_4: u16 ) -> u16
 {
     let mut uVar2: u16;
-    code *pcVar3;
+    let mut pcVar3: *mut code;
     let mut uVar4: u16;
     let mut piVar5: *mut i16;
     let mut uVar5: u16;
@@ -1773,9 +1773,9 @@ pub unsafe fn pass1_1000_3d7a(param_1: *mut c_char,
     string_4 =  !u_var5;
     bool_1 = string_2 < string_4;
     string_6 = string_2 + - string_4;
-    bool_2 = string_6 == NULL;
+    bool_2 = string_6.is_null();
     loop {
-        if (string_4 == NULL) {
+        if (string_4.is_null()) {
             break;
         }
         string_4 = string_4 + -0x1;

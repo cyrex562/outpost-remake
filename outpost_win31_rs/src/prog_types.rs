@@ -55,9 +55,9 @@ pub type OpLparam = *mut c_void;
 pub type HICON16 = HANDLE16;
 
 pub struct LOGPALETTE {
-    // WORD pal_version;
+    // pal_version: u16;
     pub pal_version: u16,
-    // WORD pal_num_entries;
+    // pal_num_entries: u16;
     pub pal_num_entries: u16,
 } //LOGPALETTE;
 
@@ -73,16 +73,16 @@ pub struct PALETTEENTRY {
  } // PALETTEENTRY;
 
 pub struct RECT16 {
-    // INT16 x;
+    // x: INT16;
     pub x: i16,
-    // INT16 y;
+    // y: INT16;
     pub y: i16,
 } //RECT16;
 
 pub struct POINT16 {
-    // INT16 x;
+    // x: INT16;
     pub x: i16,
-    // INT16 y;
+    // y: INT16;
     pub y: i16,
  } // POINT16;
 
@@ -93,9 +93,9 @@ pub struct WINDOWPLACEMENT16 {
     pub flags: u16,
     // let mut show_cmd: u16;
     pub show_cmd: u16,
-    // struct POINT16 pt_min_position;
+    // struct POpt_min_position: INT16;
     pub pt_min_position: POINT16,
-    // struct POINT16 pt_max_position;
+    // struct POpt_max_position: INT16;
     pub pt_max_position: POINT16,
     // struct let mut rc_normal_position: RECT16;
     pub rc_normal_position: RECT16,
@@ -106,17 +106,17 @@ pub struct WNDCLASS16 {
     pub sytle: u16,
     // pub fn * lpfn_wnd_proc;
     pub lpfn_wnd_proc: fn(u16, u16, LPARAM, WPARAM16, u16, HWND16) -> LRESULT,
-    // INT16 cb_cls_extra;
+    // cb_cls_extra: INT16;
     pub cb_cls_extra: i16,
-    // INT16 cb_wnd_extra;
+    // cb_wnd_extra: INT16;
     pub cb_wnd_extra: i16,
     // HANDLE16 h_instance;
     pub h_instance: HANDLE16,
-    // HICON16 h_icon;
+    // let mut h_icon: HICON16;
     pub h_icon: HICON16,
-    // HCURSOR16 h_cursor;
+    // let mut h_cursor: HCURSOR16;
     pub h_cursor: HCURSOR16,
-    // HBRUSH16 hbr_background;
+    // let mut hbr_background: HBRUSH16;
     pub hbr_background: HBRUSH16,
     // let mut lpsz_menu_name: u32;
     pub lpsz_menu_name: *mut c_char,
@@ -149,9 +149,9 @@ pub struct tagBITMAPINFOHEADER {
     pub biWidth: i32,
     // LONG biHeight;
     pub biHeight: i32,
-    // WORD biPlanes;
+    // biPlanes: u16;
     pub biPlanes: u8,
-    // WORD biBitCount;
+    // biBitCount: u16;
     pub biBitCount: u8,
     // let mut biCompression: u32;
     pub biCompression: u32,
@@ -178,14 +178,14 @@ pub struct MSG16 {
     pub lparam: LPARAM,
     // let mut time: u32;
     pub time: u32,
-    // struct POINT16 pt;
+    // struct POpt: INT16;
     pub pt: POINT16,
 } //MSG16;
 
 // typedef void * LPVOID;
 
 pub struct PAINTSTRUCT16 {
-    // HDC16 hdc;
+    // hdc: HDC16;
     pub hdc: HDC16,
     // let mut f_erase: bool;
     pub bool: f_erase,
@@ -226,7 +226,7 @@ pub struct tagMSG {
     pub lParam: LPARAM,
     // let mut time: u32;
     pub time: u32,
-    // struct POINT16 pt;
+    // struct POpt: INT16;
     pub pt: POINT16
 }
 
@@ -288,13 +288,13 @@ pub union _union_658 {
 pub struct DEVMODEA {
     // BYTE dmDeviceName[32];
     pub dmDeviceName: [u8;32],
-    // WORD dmSpecVersion;
+    // dmSpecVersion: u16;
     pub dmSpecVersion: u16,
-    // WORD dmDriverVersion;
+    // dmDriverVersion: u16;
     pub dmDriverVersion: u16,
-    // WORD dmSize;
+    // dmSize: u16;
     pub dmSize: u16,
-    // WORD dmDriverExtra;
+    // dmDriverExtra: u16;
     pub dmDriverExtra: u16,
     // let mut dmFields: u32;
     pub dmFields: u32,
@@ -312,7 +312,7 @@ pub struct DEVMODEA {
     pub dmCollate: i16,
     // BYTE dmFormName[32];
     pub dmFormName: [u8;32],
-    // WORD dmLogPixels;
+    // dmLogPixels: u16;
     pub dmLogPixels: i16,
     // let mut dmBitsPerPel: u32;
     pub dmBitsPerPel: u32,
@@ -405,7 +405,7 @@ pub struct tagRECT {
     pub bottom: i32,
 } //RECT;
 
-// typedef WORD ATOM;
+// typedef ATOM: u16;
 pub type ATOM = u16;
 
 // typedef void * PVOID;
