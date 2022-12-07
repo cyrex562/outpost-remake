@@ -385,8 +385,8 @@ pub fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb8: u16;
   let mut in_stack_0000ffbc: u16;
-  u8 uVar13;
-  u8 uVar14;
+  let mut uVar13: u8;
+  let mut uVar14: u8;
   let mut uVar15: u16;
   let mut uVar16: u16;
   let mut uVar17: u16;

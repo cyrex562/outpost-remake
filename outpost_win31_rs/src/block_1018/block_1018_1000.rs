@@ -52,7 +52,7 @@ pub fn pass1_1018_10c4(mut param_1: u16 ,mut param_2: u32)
   let mut uVar11: u32;
   let mut iVar12: i16;
   let mut uVar13: u16;
-  u8 uVar14;
+  let mut uVar14: u8;
   let mut bVar15: bool;
   let mut puVar16: *mut u32;
   let mut uStack60: u32;
@@ -192,7 +192,7 @@ pub fn pass1_1018_1346(mut param_1: u16 ,param_2: *mut astruct_93)
   let mut paVar8: *mut Struct57;
   astruct_93 *iVar9;
   let mut uVar9: u16;
-  u8 uVar10;
+  let mut uVar10: u8;
   let mut puVar11: *mut u32;
   let mut uVar12: u32;
   let mut uVar13: u32;

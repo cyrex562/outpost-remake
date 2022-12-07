@@ -130,8 +130,8 @@ pub fn win_ui_op_1040_0170(param_1: u8,mut param_2: u16 ,struct *param_3,mut par
   let mut in_stack_0000feb4: u16;
   HCURSOR16 *pHVar10;
   let mut uVar11: u16;
-  u8 uVar12;
-  u8 uVar13;
+  let mut uVar12: u8;
+  let mut uVar13: u8;
   let mut uVar14: u16;
   let mut w_param: WPARAM16;
   let mut msg: u16;

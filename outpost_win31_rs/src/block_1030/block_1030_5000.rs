@@ -264,7 +264,7 @@ pub fn pass1_1030_53f4(mut param_1: u16 ,mut param_2: u32)
   let mut iVar5: i16;
   let mut uVar6: u16;
   let mut uVar7: u32;
-  u8 bStack291;
+  let mut bStack291: u8;
   u8 local_11e [0x10e];
   let mut uStack16: u32;
   let mut uStack12: u32;

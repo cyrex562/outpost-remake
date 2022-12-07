@@ -743,7 +743,7 @@ pub fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i16,mut p
   let mut extraout_DX_01: u16;
   astruct_304 *iVar7;
   astruct_303 *iVar8;
-  u8 uVar8;
+  let mut uVar8: u8;
   let mut puVar9: *mut u32;
   let mut puVar10: *mut u32;
   let mut puVar11: *mut u8;

@@ -187,8 +187,8 @@ pub fn draw_text_1018_c742(mut param_1: u16 ,astruct_36 *struct36_param_1,HDC16 
 {
   let mut piVar2: *mut i16;
   let mut iVar3: i16;
-  u8 extraout_AH;
-  u8 uVar3;
+  let mut extraout_AH: u8;
+  let mut uVar3: u8;
   let mut iVar5: i16;
   let mut iVar1: i16;
   astruct_36 *pstruct36_4;

@@ -889,8 +889,8 @@ pub fn set_win_pos_1040_4f96
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb6: u16;
   let mut in_stack_0000ffba: u16;
-  u8 uVar19;
-  u8 uVar20;
+  let mut uVar19: u8;
+  let mut uVar20: u8;
   let mut BVar21: bool;
   let mut puVar22: *mut u8;
   let mut paVar13: *mut Struct57;

@@ -87,7 +87,7 @@ pub fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
 {
   astruct_13 *paVar1;
   code **ppcVar2;
-  u8 uVar4;
+  let mut uVar4: u8;
   HPALETTE16 hpalette_7;
   let mut uVar7: u16;
   HANDLE16 handle;
@@ -101,7 +101,7 @@ pub fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
   HGDIOBJ16 handle_00;
   HDC16 hdc_24;
   PAINTSTRUCT16 *paintstruct_22;
-  u8 uVar1;
+  let mut uVar1: u8;
   let mut uVar2: *mut u32;
   let mut uVar3: u16;
   astruct_764 *iVar5;

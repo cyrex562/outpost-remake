@@ -618,7 +618,7 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
 
 {
   astruct_13 *paVar1;
-  u8 uVar6;
+  let mut uVar6: u8;
   HPALETTE16 HVar7;
   HANDLE16 handle;
   let mut extraout_var: u32;
@@ -630,9 +630,9 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
   let mut color_00: u32;
   HDC16 hdc_local_24;
   PAINTSTRUCT16 paintstruct_22;
-  u8 uVar1;
-  u8 uVar2;
-  u8 uVar3;
+  let mut uVar1: u8;
+  let mut uVar2: u8;
+  let mut uVar3: u8;
   LPCSTR uVar4;
   let mut uVar5: u16;
   astruct_766 *iVar2;
@@ -693,7 +693,7 @@ pub fn destroy_win_1040_8b7e(mut param_1: u32)
 pub fn load_icon_1040_8b92(param_1: *mut astruct_57)
 
 {
-  u8 bVar1;
+  let mut bVar1: u8;
   HICON16 HVar2;
   let mut uVar3: u16;
   let mut uVar4: u16;
@@ -752,7 +752,7 @@ pub fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
 
 {
   let mut piVar1: *mut i16;
-  u8 bVar2;
+  let mut bVar2: u8;
   HDC16 HVar3;
   let mut IVar4: i16;
   astruct_37 *struct_1;
@@ -790,7 +790,7 @@ pub fn draw_text_1040_8d14(param_1: *mut astruct_37,HDC16 hdc_param_2)
 
 {
   LPCSTR in_string;
-  u8 bVar1;
+  let mut bVar1: u8;
   let mut IVar2: i16;
   HANDLE16 handle;
   astruct_37 *struct_1;

@@ -107,7 +107,7 @@ pub fn pass1_1030_b2aa(param_1: *mut u8,mut param_2: u32,param_3: *mut u16)
   let mut uVar1: u16;
   let mut BVar2: bool;
   let mut uVar3: u32;
-  u8 bStack23;
+  let mut bStack23: u8;
   let mut local_6: u32;
 
   pass1_1030_b718(param_1,param_2,(param_2 >> 0x10),param_3,CONCAT22(0x1050,&local_6));

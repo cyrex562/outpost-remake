@@ -469,7 +469,7 @@ pub fn draw_op_1040_5a06(mut param_1: u32,astruct_741 *struct741_param_1)
   let mut base_addr: u16;
   let mut uVar11: u32;
   let mut uVar12: u32;
-  u8 uVar10;
+  let mut uVar10: u8;
   let mut uVar14: u16;
   let mut uStack82: u16;
   let mut iStack72: i16;

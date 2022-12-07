@@ -995,7 +995,7 @@ pub unsafe fn pass1_1000_25d2(mut param_1: i16,
 
 pub unsafe fn poss_str_op_1000_28dc(param_1: *mut astruct_825) -> *mut c_char
 {
-    // struct astruct_825 **ppaVar1;
+    // let mut ppaVar1: *mut *mut struct_825;
     let mut ppaVar1: *mut *mut astruct_825;
     char* piVar2;
     let mut iVar3: i16;

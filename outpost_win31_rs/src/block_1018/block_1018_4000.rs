@@ -818,7 +818,7 @@ pub fn unk_win_ui_op_1018_4f18(mut param_1: u32,param_2: *mut astruct_57,param_3
   let mut paVar9: *mut Struct57;
   astruct_39 *iVar6;
   let mut uVar10: u16;
-  u8 uVar11;
+  let mut uVar11: u8;
   let mut unaff_CS: u16;
   let mut HVar12: HWND16;
   let mut local_12: RECT16;

@@ -1193,7 +1193,7 @@ pub unsafe fn pass1_1000_0ed4(mut param_1: u16,
     let mut paVar1: *mut astruct_172;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
-        // struct astruct_172 **ppaVar4;
+        // let mut ppaVar4: *mut *mut struct_172;
     let mut ppaVar4: *mut *mut astruct_172;
     let mut uVar5: u16;
     let mut uVar6: u16;

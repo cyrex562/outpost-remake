@@ -359,7 +359,7 @@ pub fn pass1_1030_a57e(mut param_1: i16,mut param_2: i16,mut param_3: u32,param_
   let mut puVar19: *mut u32;
   let mut puVar20: *mut u16;
   let mut uVar21: u32;
-  u8 uVar22;
+  let mut uVar22: u8;
   let mut uStack40: u32;
   u8 local_1c [0x2];
   let mut local_1a: i16;
@@ -627,7 +627,7 @@ pub fn pass1_1030_aa18(mut param_1: u32,param_2: *mut u16)
   let mut puVar19: *mut u32;
   let mut puVar20: *mut u16;
   let mut uVar21: u32;
-  u8 uVar22;
+  let mut uVar22: u8;
   let mut uStack38: u32;
   u8 local_1a [0x2];
   let mut local_18: i16;

@@ -74,8 +74,8 @@ pub fn mixed_win_ui_op_1040_70b4
   let mut in_stack_0000ff56: u16;
   let mut in_stack_0000ff5c: u16;
   let mut in_stack_0000ff60: u16;
-  u8 uVar11;
-  u8 uVar12;
+  let mut uVar11: u8;
+  let mut uVar12: u8;
   let mut BVar13: bool;
   let mut uVar16: u16;
   let mut pcVar17: *mut c_char;
@@ -90,8 +90,8 @@ pub fn mixed_win_ui_op_1040_70b4
   let mut uStack4: u16;
   let mut uVar1: u32;
   let mut uVar2: u32;
-  u8 uVar14;
-  u8 uVar15;
+  let mut uVar14: u8;
+  let mut uVar15: u8;
   let mut in_stack_0000ff8a: u16;
   let mut paVar6: *mut Struct57;
   let mut uVar9: u32;
@@ -655,8 +655,8 @@ pub fn draw_op_1040_7bb2(astruct_14 *in_struct_1)
   HPALETTE16 HStack10;
   let mut uStack8: u32;
   HDC16 win_hdc16_4;
-  u8 uVar5;
-  u8 uVar6;
+  let mut uVar5: u8;
+  let mut uVar6: u8;
   let mut uVar7: u32;
   let mut pcVar3: *mut u8;
   let mut uVar3: u16;

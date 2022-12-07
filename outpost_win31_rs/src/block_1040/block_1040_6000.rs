@@ -348,8 +348,8 @@ pub fn mixed_win_ui_op_1040_6942
   let mut in_stack_0000ff56: u16;
   let mut in_stack_0000ff5c: u16;
   let mut in_stack_0000ff60: u16;
-  u8 uVar17;
-  u8 uVar20;
+  let mut uVar17: u8;
+  let mut uVar20: u8;
   let mut BVar21: bool;
   let mut uVar22: u16;
   let mut pcVar23: *mut c_char;
@@ -365,8 +365,8 @@ pub fn mixed_win_ui_op_1040_6942
   let mut uVar1: u32;
   let mut uVar2: u32;
   let mut uVar3: u16;
-  u8 uVar18;
-  u8 uVar19;
+  let mut uVar18: u8;
+  let mut uVar19: u8;
   let mut in_stack_0000ff8a: u16;
   let mut paVar11: *mut Struct57;
   let mut paVar12: *mut Struct57;

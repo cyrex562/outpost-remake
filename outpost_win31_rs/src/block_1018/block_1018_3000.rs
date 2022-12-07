@@ -793,7 +793,7 @@ pub fn pass1_1018_3d44(mut param_1: u32,u32 *param_2,u32 *param_3)
 pub fn pass1_1018_3d6c(param_1: *mut astruct_679)
 
 {
-  u8 bVar1;
+  let mut bVar1: u8;
   let mut uVar2: u16;
   let mut puVar3: *mut u8;
   let mut uVar4: u16;

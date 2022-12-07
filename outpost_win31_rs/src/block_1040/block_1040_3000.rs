@@ -279,7 +279,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   let mut in_stack_0000fa1c: u16;
   let mut in_stack_0000fa22: u16;
   let mut in_stack_0000fa26: u16;
-  u8 uVar6;
+  let mut uVar6: u8;
   let mut in_stack_0000fa50: u16;
   let mut local_59a: u32;
   let mut local_596: u32;

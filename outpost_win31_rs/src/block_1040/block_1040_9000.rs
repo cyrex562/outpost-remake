@@ -525,11 +525,11 @@ pub fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   let mut y7: i16;
   let mut iVar1: i16;
   astruct_782 *iVar2;
-  u8 uVar8;
-  u8 uVar9;
+  let mut uVar8: u8;
+  let mut uVar9: u8;
   let mut uVar14: u16;
-  u8 uVar10;
-  u8 uVar11;
+  let mut uVar10: u8;
+  let mut uVar11: u8;
   let mut uVar12: u16;
   let mut uVar13: u16;
   let mut uVar4_00: u16;
@@ -673,7 +673,7 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,u16 msg_p
 {
   let mut pbVar1: *mut u8;
   let mut iVar2: i16;
-  u8 bVar3;
+  let mut bVar3: u8;
   let mut WVar4: WPARAM16;
   let mut BVar5: bool;
   let mut uVar9: u32;
@@ -684,8 +684,8 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,u16 msg_p
   WPARAM16 *pWVar11;
   let mut LVar12: LRESULT;
   let mut uVar13: u32;
-  u8 uVar14;
-  u8 uVar15;
+  let mut uVar14: u8;
+  let mut uVar15: u8;
   RECT16 rect_a [0x2];
   let mut iVar3: i16;
   let mut paVar7: *mut Struct57;

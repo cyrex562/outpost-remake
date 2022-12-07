@@ -635,7 +635,7 @@ pub fn mixed_sys_op_1018_2978(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   astruct_394 local_2a;
   let mut uStack6: u16;
   let mut uStack4: u16;
-  u8 uVar10;
+  let mut uVar10: u8;
   let mut paVar6: *mut Struct57;
 
   paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);

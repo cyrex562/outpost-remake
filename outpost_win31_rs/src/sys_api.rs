@@ -130,6 +130,11 @@ pub fn FatalExit() {
 
 // DWORD GetVersion16();
 // HGLOBAL16 GLobalAlloc16(DWORD size, UINT16 flags);
+pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
+{
+    todo!()
+}
+
 // HGLOBAL16 GlobalReAlloc16(UINT16 flags, DWORD size, HGLOBAL16 handle);
 // HGLOBAL16 GlobalFree16(HGLOBAL16 handle);
 // pub fn * WIN16_GlobalLock16(HGLOBAL16 handle);

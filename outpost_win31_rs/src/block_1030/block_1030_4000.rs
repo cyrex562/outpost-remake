@@ -207,8 +207,8 @@ pub fn pass1_1030_4782(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
   let mut in_stack_0000fef6: u16;
   let mut in_stack_0000fef8: u16;
   let mut in_stack_0000fefa: u16;
-  u8 uVar15;
-  u8 uVar16;
+  let mut uVar15: u8;
+  let mut uVar16: u8;
   let mut local_c4: *mut u8;
   let mut uStack194: u16;
   let mut local_c0: *mut u8;

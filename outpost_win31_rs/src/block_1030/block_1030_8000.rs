@@ -796,7 +796,7 @@ pub fn pass1_1030_8c38(mut param_1: u32)
 pub fn pass1_1030_8c66(mut param_1: u32,mut param_2: i16,param_3: *mut u8,mut param_4: u16 ,u32 *param_5,mut param_6: u16 )
 
 {
-  u8 bVar1;
+  let mut bVar1: u8;
   let mut uVar2: u16;
   let mut uStack6: u32;
 
