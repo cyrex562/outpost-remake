@@ -919,7 +919,7 @@ pub fn destroy_win_1038_ef3a(param_1: *mut StructD)
   if (&iVar1.field_0x96 != 0) {
     uVar2 = &iVar1.field_0x96;
     DestroyWindow16((uVar2 + 0x6));
-    &iVar1.field_0x96 = 0;
+    iVar1.field_0x96 = 0;
   }
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,&iVar1.field_0x6);
   ui_cleanup_op_1040_782c(param_1);

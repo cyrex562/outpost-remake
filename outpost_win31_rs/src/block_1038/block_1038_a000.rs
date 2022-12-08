@@ -1182,7 +1182,7 @@ pub fn pass1_1038_af40(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
     param_1 = paVar12;
   }
   (param_5 * 0x4 + iVar9) = param_1;
-  *(StructD **)(param_5 * 0x4 + iVar9 + 0x2) = pSVar6;
+  (param_5 * 0x4 + iVar9 + 0x2) = pSVar6;
 switchD_1038_b581_caseD_18:
   if ((param_5 * 0x4 + iVar9) != 0) {
     if ((iVar9 + 0xae) != 0) {

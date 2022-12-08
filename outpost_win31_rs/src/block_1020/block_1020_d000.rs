@@ -148,7 +148,7 @@ pub fn pass1_1020_d194(param_1: *mut astruct_15)
       (**ppcVar1)(&u16_1050_1038,uVar4,uVar10);
       uStack38 = CONCAT22(paVar13,uVar5);
       uStack42 = 0;
-      while( true ) {
+      loop {
         if (uStack38 <= uStack42) {
           if (puStack34.is_null()) {
             return;
@@ -590,15 +590,15 @@ pub fn struct_1020_d954(param_1: *mut astruct_180)
   struct_1030_dc96(param_1);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1[0x1].field_0x4 = 0;
-  &iVar1[0x1].field_0x6 = 0;
-  &iVar1[0x1].field_0x8 = 0;
+  iVar1[0x1].field_0x4 = 0;
+  iVar1[0x1].field_0x6 = 0;
+  iVar1[0x1].field_0x8 = 0;
   param_1.field0_0x0 = 0xe792;
   iVar1.field1_0x2 = 0x1020;
   puVar2 = mixed_1010_20ba(in_EDX,_u16_1050_0ed0,CONCAT22(unaff_BP,0x2f),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
-  &iVar1[0x1].field_0x8 = puVar2;
-  &iVar1[0x1].field_0xa = (puVar2 >> 0x10);
+  iVar1[0x1].field_0x8 = puVar2;
+  iVar1[0x1].field_0xa = (puVar2 >> 0x10);
   return;
 }
 
@@ -624,14 +624,14 @@ pub fn struct_1020_d99e(param_1: *mut astruct_57,param_2: *mut astruct_12,mut pa
   iVar1 = param_2;
   iVar1.field23_0x24 = param_3;
   (iVar1 + 1).field0_0x0 = 0;
-  &iVar1[0x1].field1_0x2 = 0;
+  iVar1[0x1].field1_0x2 = 0;
   param_2.field0_0x0 = 0xe792;
   iVar1.field1_0x2 = 0x1020;
   puVar3 = mixed_1010_20ba((param_1 & 0xffff0000 | puVar2 >> 0x10),_u16_1050_0ed0,
                            CONCAT22(unaff_BP,0x2f),in_stack_0000fea6,in_stack_0000ffca,in_stack_0000ffd0,
                            in_stack_0000ffd4);
   iVar1[0x1].field1_0x2 = puVar3;
-  &iVar1[0x1].field_0x4 = (puVar3 >> 0x10);
+  iVar1[0x1].field_0x4 = (puVar3 >> 0x10);
   iVar1.field12_0x10 = 0x49;
   return &param_2.field0_0x0;
 }

@@ -867,7 +867,7 @@ struct astruct_893 {
     let mut field139_0x8c: u8;
     let mut field140_0x8d: u8;
     let mut field141_0x8e: u32;
-    LPARAM field142_0x92;
+    field142_0x92: LPARAM;
     let mut field143_0x96: u8;
     let mut field144_0x97: u8;
     let mut field145_0x98: u8;

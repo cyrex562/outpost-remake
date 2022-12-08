@@ -80,7 +80,7 @@ pub fn struct_1030_8128(param_1: *mut astruct_57,param_2: *mut astruct_135)
   iVar4 = param_2;
   uVar1 = 0;
   param_2 = 0;
-  &iVar4.field2_0x4 = 0;
+  iVar4.field2_0x4 = 0;
   iVar4.field4_0x8 = 0;
   _u16_1050_5748 = param_2;
   mem_op_1000_179c(0x56,param_1);
@@ -104,7 +104,7 @@ pub fn struct_1030_8128(param_1: *mut astruct_57,param_2: *mut astruct_135)
   uVar2 = paVar5 | uVar1;
   paVar4 = (paVar5 & 0xffff0000 | uVar2);
   if (uVar2 == 0) {
-    &iVar4.field2_0x4 = 0;
+    iVar4.field2_0x4 = 0;
   }
   else {
     pass1_1028_cfd2(CONCAT22(paVar5,uVar1),param_2);
@@ -612,7 +612,7 @@ pub fn pass1_1030_88ce(param_1: *mut u16,mut param_2: u32,mut param_3: u32)
   iVar4.field32_0x24 = param_3;
   puStack38 = (param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x28));
   pass1_1008_6c90((param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x28)));
-  &iVar4.field45_0x34 = 0;
+  iVar4.field45_0x34 = 0;
   *param_1 = 0x8e38;
   iVar4.field2_0x2 = 0x1030;
   struct_1030_8544((param_1 & 0xffff0000 | ZEXT24(&iVar4.field_0x4)),param_2);
@@ -788,7 +788,7 @@ pub fn pass1_1030_8c38(mut param_1: u32)
 
   iStack4 = 0;
   loop {
-    pass1_1030_877c((u16*)(param_1 + 0x38 + iStack4 * 0x4));
+    pass1_1030_877c((param_1 + 0x38 + iStack4 * 0x4));
     iStack4 += 0x1;
   } while (iStack4 < 0x5);
   return;
@@ -843,7 +843,7 @@ pub fn pass1_1030_8d08(mut param_1: u32,mut param_2: u16 )
 
   paVar5 = CONCAT22(in_register_0000000a,param_2);
   iStack4 = 0;
-  while( true ) {
+  loop {
     uVar6 = (param_1 >> 0x10);
     piVar1 = (param_1 + 0x1e);
     if (*piVar1 == iStack4 || *piVar1 < iStack4) break;

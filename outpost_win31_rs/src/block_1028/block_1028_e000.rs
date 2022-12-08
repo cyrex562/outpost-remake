@@ -29,7 +29,7 @@ pub fn pass1_1028_e0bc(param_1: u32,param_2: *mut astruct_57,mut param_3: u32,mu
   uVar5 = param_2;
   puVar3 = param_1;
   paVar5 = uVar5;
-  pass1_1030_4bbe(uVar5,*(astruct_117 **)(param_3 + 0x52),param_4);
+  pass1_1030_4bbe(uVar5,(param_3 + 0x52),param_4);
   puVar6 = param_1;
   for (iVar4 = 0x26; iVar4 != 0; iVar4 += -1) {
     puVar2 = puVar6;
@@ -83,7 +83,7 @@ pub fn pass1_1028_e100(param_1: *mut u8,mut param_2: u32,mut param_3: u16 )
     uVar3 = uStack10;
   }
   puVar7 = uVar3;
-  pass1_1030_4c06(*(astruct_117 **)(param_2 + 0x52),param_3,uVar5);
+  pass1_1030_4c06((param_2 + 0x52),param_3,uVar5);
   uVar9 = (uStack6 >> 0x10);
   puVar8 = uStack6;
   for (iVar4 = 0x2b; iVar4 != 0; iVar4 += -1) {
@@ -318,11 +318,11 @@ pub unsafe fn write_file_fn_1028_e56c(param_1: u16,mut param_2: u16 ,mut param_3
   let mut local_2a: [u32;0x3] = [0;0x3];
   let mut puStack28: *mut u32;
   let mut uStack24: u32;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,param_5,(param_5 >> 0x10));
   uStack24 = 0;
-  while( true ) {
+  loop {
     paVar2 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar2));
     puStack28 = CONCAT22(param_1,paVar2);
@@ -692,7 +692,7 @@ pub fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
       pass1_1030_145a(uVar20.field18_0x1e,local_6);
       pass1_1030_66de(_PTR_LOOP_1050_5740,local_6);
       local_30 = NULL;
-      while( true ) {
+      loop {
         if (local_6 <= local_30) {
           pass1_1030_154c();
           pass1_1030_6740(_PTR_LOOP_1050_5740);

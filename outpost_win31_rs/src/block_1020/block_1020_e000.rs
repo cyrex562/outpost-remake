@@ -412,7 +412,7 @@ pub fn pass1_1020_e558(mut param_1: i16,param_2: *mut astruct_15)
 
 
 
-u32 * pass1_1020_e652(mut param_1: u32,param_2: *mut u32,mut param_3: u16 ,param_4: i32)
+pub unsafe fn pass1_1020_e652(mut param_1: u32,param_2: *mut u32,mut param_3: u16 ,param_4: i32) -> *mut u32
 
 {
   let mut puVar1: *mut u32;

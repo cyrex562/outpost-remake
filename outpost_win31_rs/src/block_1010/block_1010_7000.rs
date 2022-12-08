@@ -584,7 +584,7 @@ pub fn show_win_1010_7a76(mut param_1: u32)
   if ((iVar2 + 0x20) == 0) {
     (iVar2 + 0x20) = 0x1;
     pass1_1008_5784(CONCAT22(0x1050,local_a),(iVar2 + 0x1c));
-    while( true ) {
+    loop {
       lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       if (lVar4 == 0) break;
       uVar1 = (lVar4 + 0x8);
@@ -607,7 +607,7 @@ pub fn show_window_1010_7ace(mut param_1: u32)
   if ((iVar2 + 0x20) != 0) {
     (iVar2 + 0x20) = 0;
     pass1_1008_5784(CONCAT22(0x1050,local_a),(iVar2 + 0x1c));
-    while( true ) {
+    loop {
       lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       if (lVar4 == 0) break;
       uVar1 = (lVar4 + 0x8);
@@ -704,7 +704,7 @@ pub fn send_msg_1010_7c42(mut param_1: u32)
   iVar2 = param_1;
   if (((iVar2 + 0x1e) | (iVar2 + 0x1c)) != 0) {
     pass1_1008_5784(CONCAT22(0x1050,local_a),(iVar2 + 0x1c));
-    while( true ) {
+    loop {
       lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       if (lVar4 == 0) break;
       uVar1 = (lVar4 + 0x8);
@@ -734,13 +734,13 @@ pub fn send_msg_1010_7c9e(mut param_1: u32,mut param_2: i16)
   iVar5 = param_1;
   if ((((iVar5 + 0x1e) | (iVar5 + 0x1c)) != 0) && (param_2 != 0)) {
     pass1_1008_5784(CONCAT22(0x1050,local_a),(iVar5 + 0x1c));
-    while( true ) {
+    loop {
       lVar7 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       uVar4 = (lVar7 >> 0x10);
       uVar2 = lVar7;
       if (lVar7 == 0) break;
       if ((uVar2 + 0x4) != 0) {
-        uVar8 = struct_op_1030_73a8(*(astruct_419 **)(uVar2 + 0x4),uVar2,uVar4 | uVar2);
+        uVar8 = struct_op_1030_73a8((uVar2 + 0x4),uVar2,uVar4 | uVar2);
         BVar3 = pass1_1008_c6ae(_u16_1050_06e0,(uVar8 + 0xc),param_2);
         if (BVar3 != 0) {
           uVar1 = (uVar2 + 0x8);
@@ -943,7 +943,7 @@ pub fn pass1_1010_7fd6(param_1: *mut astruct_489)
     pass1_1008_64a2(CONCAT22(uVar2,uVar1));
     fn_ptr_1000_17ce(pcStack6);
   }
-  &iVar3.field1660_0x67c = 0;
+  iVar3.field1660_0x67c = 0;
   iVar3.field1662_0x680 = 0;
   return;
 }

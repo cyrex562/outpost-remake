@@ -102,7 +102,7 @@ pub fn pass1_1018_6198(param_1: *mut u8,param_2: *mut astruct_657,StructB *param
   iVar1.field3_0x4 = param_4;
   param_2 = 0x3ab0;
   iVar1.field2_0x2 = 0x1008;
-  &iVar1.field4_0x6 = 0;
+  iVar1.field4_0x6 = 0;
   iVar1.field6_0xa = param_3;
   param_2 = 0x66c0;
   iVar1.field2_0x2 = 0x1018;

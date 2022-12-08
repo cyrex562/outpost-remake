@@ -120,7 +120,7 @@ pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
   }
   else {
     pass1_1020_87c2(CONCAT22(in_EDX,puVar3));
-    (u16*)(param_1 + 0x1c) = puVar3;
+    (param_1 + 0x1c) = puVar3;
     (param_1 + 0x1e) = paVar7;
   }
   mem_op_1000_179c(0x26,paVar7);
@@ -135,7 +135,7 @@ pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
                     in_stack_0000ff62,in_stack_0000fe3e);
     paVar9 = paVar8;
   }
-  (u16*)(param_1 + 0x20) = puVar3;
+  (param_1 + 0x20) = puVar3;
   (param_1 + 0x22) = paVar9;
   mem_op_1000_179c(0xbe,paVar9);
   uVar5 = paVar9 | puVar3;
@@ -148,7 +148,7 @@ pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
     pass1_1020_8eaa(CONCAT22(paVar9,puVar3),paVar8);
     paVar7 = paVar8;
   }
-  (u16*)(param_1 + 0x24) = puVar3;
+  (param_1 + 0x24) = puVar3;
   (param_1 + 0x26) = paVar7;
   mem_op_1000_179c(0x20,paVar7);
   uVar5 = paVar7 | puVar3;
@@ -161,7 +161,7 @@ pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
     pass1_1020_8360(CONCAT22(paVar7,puVar3));
     paVar9 = paVar8;
   }
-  (u16*)(param_1 + 0x28) = puVar3;
+  (param_1 + 0x28) = puVar3;
   (param_1 + 0x2a) = paVar9;
   pass1_1020_6746(CONCAT22(param_2,param_1),0x1,0x4);
   puVar10 = mixed_1010_20ba(paVar9,_u16_1050_0ed0,CONCAT22(in_stack_0000ffee,0x29),in_stack_0000fe96,
@@ -455,7 +455,7 @@ pub fn realize_palette_1020_6896(mut param_1: u32,mut param_2: i16)
     puVar4 = iVar4.field36_0x24;
     ppcVar1 = (puVar4 + 0x18);
     (**ppcVar1)();
-    UnrealizeObject16((HGDIOBJ16)puVar4);
+    UnrealizeObject16(puVar4);
     uVar3 = (param_1 + 0xf2);
     RealizePalette16(*(uVar3 + 0x178));
   }
@@ -481,7 +481,7 @@ pub fn pt_in_rect_1020_68fc(param_1: u32,mut param_2: u16 ,mut param_3: u16 )
   let mut uVar4: u16;
   POPStack6: INT16;
 
-  PStack6 = (POINT16)CONCAT22(param_2,param_3);
+  PStack6 = CONCAT22(param_2,param_3);
   uVar4 = (param_1 >> 0x10);
   uVar2 = pass1_1018_31d0(*(astruct_126 **)(param_1 + 0xf2));
   if (uVar2 != 0) {

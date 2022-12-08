@@ -69,7 +69,7 @@ pub fn pass1_1038_201a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
       puVar12 = (paVar13 | uVar8);
       if (puVar12.is_null()) goto LAB_1038_20fa;
       pass1_1038_6838(CONCAT22(paVar13,uVar8),uVar11,uVar5.field6_0x8,uStack10,
-                      &iVar12.field_0x4);
+                      iVar12.field_0x4);
     }
     else {
       uVar9 = switch_1020_c3b4(uVar5.field5_0x6);
@@ -95,7 +95,7 @@ pub fn pass1_1038_201a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
       puVar12 = (paVar13 | uVar8);
       if (puVar12.is_null()) goto LAB_1038_20fa;
       pass1_1038_675c(CONCAT22(paVar13,uVar8),uVar11,uVar5.field5_0x6,uStack10,
-                      &iVar12.field_0x4);
+                      iVar12.field_0x4);
     }
   }
   else {
@@ -125,7 +125,7 @@ pub fn pass1_1038_201a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   // TODO: goto LAB_1038_2102;
     }
     pass1_1038_6590(CONCAT22(paVar13,uVar8),uVar14,puVar15,uVar5.field4_0x4,uStack10,
-                    &iVar12.field_0x4);
+                    iVar12.field_0x4);
   }
   uVar17 = 0x1000;
   lStack20 = CONCAT22(puVar12,uVar8);//
@@ -190,7 +190,7 @@ pub fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
   uStack12 = 0x64;
   paVar2 = *(astruct_57 **)(uVar12 + 0x22);
   puVar7 = paVar2;
-  while( true ) {
+  loop {
     uVar6 = paVar8;
     ppcVar3 = (paVar2 + 0x10);
     (**ppcVar3)(uVar11,paVar2,(paVar2 >> 0x10));
@@ -627,8 +627,8 @@ pub fn pass1_1038_2a0e(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u3
   struct_op_1028_d1dc(param_1,0x2af7);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field259_0x108 = param_5;
-  &iVar1.field262_0x10c = param_4;
+  iVar1.field259_0x108 = param_5;
+  iVar1.field262_0x10c = param_4;
   iVar1.field264_0x110 = param_3;
   iVar1.field265_0x114 = param_2;
   param_1.offset_0x0 = 0x309a;
@@ -823,7 +823,7 @@ pub fn pass1_1038_2c82(param_1: u8,mut param_2: u16 ,mut param_3: u16 ,param_4: 
     }
     pass1_1020_a43e(puVar19,CONCAT22(0x1050,&local_12));
     uStack22 = (paStack14 + 0x8);
-    while( true ) {
+    loop {
       uStack22 += -0x1;
       if ((uStack22 | uStack22) == 0) break;
       pass1_1020_a6ee(&local_12,uStack22 | uStack22,in_stack_0000fe64,

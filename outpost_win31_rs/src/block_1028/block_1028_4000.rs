@@ -619,7 +619,7 @@ pub fn pass1_1028_4920() -> u32
 {
   let mut unaff_BP: i16;
 
-  pass1_1028_b418((u16*)(unaff_BP + 0x6));
+  pass1_1028_b418((unaff_BP + 0x6));
   if ((*(unaff_BP + 0xa) & 1) != 0) {
     fn_ptr_1000_17ce(*(unaff_BP + 0x6));
   }

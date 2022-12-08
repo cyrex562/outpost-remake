@@ -66,7 +66,7 @@ pub fn draw_op_1020_30be(struct_param_1: *mut astruct_762)
     if (hicon_38 != 0) {
       hbrush_40 = GetStockObject16(BLACK_BRUSH);
       GetClientRect16(rect_30,&DAT_1050_1050);
-      FillRect16(hbrush_40,&stack0xffc4,(HDC16)&DAT_1050_1050);
+      FillRect16(hbrush_40,&stack0xffc4,&DAT_1050_1050);
       DrawIcon16(hicon_38,0x2,0x2,local_24);
     }
   }
@@ -156,7 +156,7 @@ pub fn draw_op_1020_33c0(mut param_1: u16 ,mut param_2: u32,COLORREF colorref_pa
                       hdc16_param_6: HDC16)
 
 {
-  HPEN16 pen_handle;
+  pen_handle: HPEN16;
   let mut object_handle: HGDIOBJ16;
   let mut brush_handle: HBRUSH16;
   let mut obj_handle_2: HGDIOBJ16;
@@ -212,7 +212,7 @@ pub fn draw_op_1020_3488(param_1: *mut astruct_762)
 
 {
   let mut uVar6: u32;
-  HPEN16 handle;
+  handle: HPEN16;
   let mut handle_00: HGDIOBJ16;
   let mut obj_handle_7: HGDIOBJ16;
   let mut uVar5: u16;
@@ -391,7 +391,7 @@ pub fn win_ui_op_1020_36f6(mut param_1: u32,mut param_2: i16)
   pcVar4 = pass1_1000_472c(CONCAT22(0x1050,local_406),':');
   puStack1034 = CONCAT22(uVar7,pcVar4 + 2);
   *puStack1034 = 0;
-  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_406,(short)&DAT_1050_1050);
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_406,&DAT_1050_1050);
   uVar3 = (iVar9 + 0x18);
   ppcVar2 = ((iVar9 + 0x18) + 0x18);
   (**ppcVar2)(0x1010,uVar3,(uVar3 >> 0x10),local_406,&DAT_1050_1050);
@@ -892,7 +892,7 @@ code_r0x10203db1:
         (puVar6 + 0x2) = 0x1020;
         puVar30 = mixed_1010_20ba(paVar23,_u16_1050_0ed0,CONCAT22(uStack30,0x6),in_stack_0000fe8a,
                                   in_stack_0000ffae,in_stack_0000ffb4,in_stack_0000ffb8);
-        hdc = (HDC16)(puVar30 >> 0x10);
+        hdc = (puVar30 >> 0x10);
         uVar7 = (param_4 + 0x6);
         uVar26 = (uVar7 >> 0x10);
         iVar13 = uVar7;
@@ -1036,7 +1036,7 @@ pub fn unk_draw_op_1020_3da4(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut a
   pstruct24_1.base_0x2 = 0x1020;
   puVar6 = mixed_1010_20ba(paVar5,_u16_1050_0ed0,CONCAT22(param_2,0x6),in_stack_0000fe92,in_stack_0000ffb6
                            ,in_stack_0000ffbc,in_stack_0000ffc0);
-  hdc = (HDC16)(puVar6 >> 0x10);
+  hdc = (puVar6 >> 0x10);
   &pstruct24_1.field17_0x14 = puVar6;
   *(&pstruct24_1.field17_0x14 + 0x2) = hdc;
   hdc_00 = 0;

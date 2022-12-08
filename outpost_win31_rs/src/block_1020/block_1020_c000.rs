@@ -10,7 +10,7 @@ pub fn string_1020_c0ca(mut param_1: u16 )
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * string_1020_c0d8(mut param_1: u16 )
+pub unsafe fn string_1020_c0d8(mut param_1: u16 ) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
@@ -130,7 +130,7 @@ char * string_1020_c0d8(mut param_1: u16 )
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * string_op_1020_c222(mut param_1: u16 )
+pub unsafe fn string_op_1020_c222(mut param_1: u16 ) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
@@ -208,7 +208,7 @@ char * string_op_1020_c222(mut param_1: u16 )
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * string_op_1020_c2f8(mut param_1: u16 )
+pub unsafe fn string_op_1020_c2f8(mut param_1: u16 ) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
@@ -344,7 +344,7 @@ pub fn struct_1020_c444(param_1: *mut astruct_75,mut param_2: u32,mut param_3: u
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 1) = 0;
-  &iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field2_0x4 = 0;
   param_1.field0_0x0 = 0xc834;
   iVar1.field1_0x2 = 0x1020;
   return;
@@ -540,7 +540,7 @@ pub fn pass1_1020_c6de(param_1: *mut astruct_360,param_2: i32)
     pass1_1020_c6a4((param_1 & 0xffff | ZEXT24(uVar3) << 0x10));
   }
   uStack6 = 0;
-  while( true ) {
+  loop {
     puVar1 = &iVar3.field16_0x10;
     if (*puVar1 < uStack6 || *puVar1 == uStack6) {
       return;
@@ -705,7 +705,7 @@ pub fn pass1_1020_c872(mut param_1: u32,mut param_2: u32,mut param_3: u32)
        ((bVar12 || (puVar1 = (uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
 // TODO: goto LAB_1020_c92d;
     bVar12 = false;
-    while( true ) {
+    loop {
       if (uStack14 == 0) break;
       uVar11 = (uStack14 >> 0x10);
       puVar2 = (uStack14 + 0xc);
@@ -864,7 +864,7 @@ pub fn pass1_1020_cac2(param_1: *mut u8,mut param_2: u16 ,param_3: *mut astruct_
   pass1_1008_5784(CONCAT22(0x1050,local_1c),puStack16);
   loop {
     loop {
-      while( true ) {
+      loop {
         loop {
           puVar3 = local_1c;
           pass1_1008_5b12(CONCAT22(0x1050,puVar3));

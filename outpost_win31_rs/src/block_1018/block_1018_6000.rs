@@ -4,7 +4,7 @@ piVar2: *mut i16;
   pHVar14: *mut HDC16;
   let mut iVar7: i16;
   let mut iVar11: i16;
-  HPEN16 handle;
+  handle: HPEN16;
   let mut hgdiobj16_00: HBRUSH16;
   let mut uVar7: u16;
   let mut obj: HPALETTE16;
@@ -114,7 +114,7 @@ piVar2: *mut i16;
     if (&iVar16.field_0x1a == 0) {
       uVar6 = iVar16.field47_0x30 << 0x3;
       mem_op_1000_179c(uVar6,paVar25);
-      &iVar16.field_0x1a = uVar6;
+      iVar16.field_0x1a = uVar6;
       iVar16.field28_0x1c = paVar25;
     }
     uVar3_00 = &iVar16.field_0x1a;
@@ -141,7 +141,7 @@ piVar2: *mut i16;
   hgdiobj16_var7 = SelectObject16(handle,*&puVar11[-0x4].field6_0x6);
   (puVar11 + -0x6) = hgdiobj16_var7;
   hgdiobj16_00 = CreateSolidBrush16(0x1000025);
-  *(HBRUSH16 *)(&puVar11[-0x7].field6_0x6 + 0x2) = hgdiobj16_00;
+  (&puVar11[-0x7].field6_0x6 + 0x2) = hgdiobj16_00;
   hgdiobj16_var7 = SelectObject16(hgdiobj16_00,*&puVar11[-0x4].field6_0x6);
   &puVar11[-0x7].field6_0x6 = hgdiobj16_var7;
   draw_line_1018_6444(puVar11.field6_0x6,*&puVar11[-0x4].field6_0x6);
@@ -331,7 +331,7 @@ pub fn struct_1018_66cc(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   unk_draw_op_1020_7f7a(param_2,0xa,CONCAT22(param_4,param_3),param_5);
   uVar2 = (param_2 >> 0x10);
   iVar2 = param_2;
-  &iVar2[0x1].field5_0xc = 0;
+  iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
   param_2.offset_0x0 = 0x6880;
   iVar2.base_0x2 = 0x1018;
@@ -340,9 +340,9 @@ pub fn struct_1018_66cc(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   puVar3 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0xb),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
   uVar1 = (puVar3 >> 0x10);
-  &iVar2[0x1].field7_0x10 = puVar3;
+  iVar2[0x1].field7_0x10 = puVar3;
   (&iVar2[0x1].field7_0x10 + 0x2) = uVar1;
-  &iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
+  iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
   (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
   return;
 }
@@ -356,8 +356,8 @@ pub fn pass1_1018_673c(param_1: *mut StructD)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0x6880;
   iVar1.address_offset_field_0x2 = 0x1018;
-  &iVar1.field_0xe2 = 0x691c;
-  &iVar1.field_0xe4 = 0x1018;
+  iVar1.field_0xe2 = 0x691c;
+  iVar1.field_0xe4 = 0x1018;
   pass1_1020_808e(param_1);
   return;
 }

@@ -264,7 +264,7 @@ pub fn win_ui_op_1040_0170(param_1: u8,mut param_2: u16 ,struct *param_3,mut par
     msg = 0xc;
     l_param = load_string_1010_847e(_u16_1050_14cc,(iStack4 * 0xe + 0x5c6a));
     uVar6 = paVar5 & 0xffff0000;
-    uVar9 = SendDlgItemMessage16((LPARAM)l_param,w_param,msg,id,uVar15);
+    uVar9 = SendDlgItemMessage16(l_param,w_param,msg,id,uVar15);
     uVar11 = (uVar15 >> 0x10);
     paVar5 = (uVar6 & 0xffff0000 | uVar9 >> 0x10);
   }
@@ -281,7 +281,7 @@ pub fn win_ui_op_1040_0170(param_1: u8,mut param_2: u16 ,struct *param_3,mut par
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT win_ui_op_1040_0558(StructB *param_1,param_2: *mut astruct_915)
+pub unsafe fn win_ui_op_1040_0558(StructB *param_1,param_2: *mut astruct_915) -> LRESULT
 
 {
   let mut hwnd: HWND16;
@@ -317,7 +317,7 @@ LRESULT win_ui_op_1040_0558(StructB *param_1,param_2: *mut astruct_915)
   msg = 0xc;
   w_param = 0;
   l_param = load_string_1010_847e(_u16_1050_14cc,uVar5);
-  LVar4 = SendDlgItemMessage16((LPARAM)l_param,w_param,msg,id,hwnd_00);
+  LVar4 = SendDlgItemMessage16(l_param,w_param,msg,id,hwnd_00);
   return LVar4;
 }
 
@@ -334,7 +334,7 @@ pub fn enable_win_1040_060e(mut param_1: u32,mut param_2: i16)
 
   pIStack8 = CONCAT22(0x1050,&stack0x000a);
   iStack10 = param_2;
-  while( true ) {
+  loop {
     pIVar1 = pIStack8;
     if (iStack10 == 0) break;
     pIStack8 = (pIStack8 & 0xffff0000 | (pIStack8 + 0x2));
@@ -489,7 +489,7 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
     uStack2060 = CONCAT22(puVar4,puVar3);
     puVar5 = puVar4;
     load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_806,(short)&DAT_1050_1050);
+              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_806,&DAT_1050_1050);
     IVar2 = MessageBox16(0x34,CONCAT13(0x10,CONCAT12(0x50,local_806)),CONCAT22(puVar4,puVar3),
                          HWND16_1050_0396);
     local_406[0] = uStack2060;
@@ -539,9 +539,9 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
     enable_window_1040_0acc(pstruct_c_param_2,0x0);
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_406,
-               (short)&DAT_1050_1050);
+               &DAT_1050_1050);
     load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_806,(short)&DAT_1050_1050);
+              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_806,&DAT_1050_1050);
     IVar2 = MessageBox16(0x34,CONCAT13(0x10,CONCAT12(0x50,local_406)),CONCAT22(0x1050,local_806),
                          HWND16_1050_0396);
     if (IVar2 == 0x6) {
@@ -724,7 +724,7 @@ pub fn show_win_1040_0c7c(StructB *param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn set_text_bk_color_1040_0cc0(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,HWND16 hwnd_param_4) -> u32
+pub fn set_text_bk_color_1040_0cc0(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,hwnd_param_4: HWND16) -> u32
 
 {
   iVar1: *mut astruct_783;
@@ -810,7 +810,7 @@ pub fn pass1_1040_0e1c(param_1: *mut StructD,param_2: *mut astruct_57,mut param_
   uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
   (iVar1 + 1) = 0;
-  &iVar1[0x1].field2_0x4 = param_4;
+  iVar1[0x1].field2_0x4 = param_4;
   iVar1[0x1].field4_0x8 = 0;
   iVar1[0x1].field5_0xa = param_3;
     // just 0x11d2
@@ -930,7 +930,7 @@ pub fn FUN_1040_0f0c(mut param_1: u16 ,StructB *param_2)
   }
   else {
     uVar1 = (iVar4 + 0x92);
-    uVar6 = struct_op_1030_73a8(*(astruct_419 **)(uVar1 + 0x6),in_AX,in_EDX);
+    uVar6 = struct_op_1030_73a8((uVar1 + 0x6),in_AX,in_EDX);
     uVar3 = (in_EDX >> 0x10);
     if ((uVar6 + 0x20) == 0x2) {
       HVar2 = (iVar4 + 0x6);

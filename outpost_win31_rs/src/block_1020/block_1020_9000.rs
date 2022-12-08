@@ -162,7 +162,7 @@ pub fn set_struct_op_1020_921c(mut param_1: u16 ,pstructa_param_2: *mut StructA,
   iVar3.field2_0x4 = param_3;
   pstructa_param_2.field0_0x0 = 0x3ab0;
   iVar3.field1_0x2 = 0x1008;
-  &iVar3.field3_0x6 = 0;
+  iVar3.field3_0x6 = 0;
   iVar3.field5_0xa = 0;
   iVar3.field6_0xc = 0;
   iVar3.field7_0xe = 0;
@@ -244,7 +244,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uStack58: *mut astruct_737;
   POpoint16_38: INT16;
   let mut hgdiobj16_var_52: HGDIOBJ16;
-  HPEN16 HStack50;
+  HStack50: HPEN16;
   hdc16_var_48: HDC16;
   let mut uStack46: u32;
   let mut uStack42: u32;
@@ -301,7 +301,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   uVar2 = (puStack26 + 0x14);
   uStack14 = uStack14 & 0xffff | uVar2 << 0x10;
   x_var_6 = CONCAT22(uVar2,x_var_6);
-  FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
+  FillRect16(brush_handle_var6,&rect16_a,&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
   iStack62 = 0x8;
   puVar2 = &PTR_LOOP_1050_0000;
@@ -312,8 +312,8 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
     uVar3 = (puStack26 >> 0x10);
     rect16_a = (RECT16)(rect16_a & 0xffff | ((iStack62 * 0x2 + puStack26) + 1) << 0x10);
     uStack14 = uStack14 & 0xffff | (uStack58 * 0x2 + puStack26 + 0x14) << 0x10;
-    FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
-    FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
+    FillRect16(brush_handle_var6,&rect16_a,&DAT_1050_1050);
+    FillRect16(brush_handle_var6,&rect16_var_12,&DAT_1050_1050);
     DeleteObject16(brush_handle_var6);
     iStack62 += -0x1;
     puVar2 = &uStack58.field0_0x0;
@@ -324,8 +324,8 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   rect16_var_12 =
        (RECT16)(rect16_var_12 & 0xffff | ((uStack20 * 0x2 + puStack26) + 1) << 0x10);
   uStack14 = uStack14 & 0xffff | local_struct_1.field7_0xe << 0x10;
-  FillRect16(brush_handle_var6,&rect16_a,(HDC16)&DAT_1050_1050);
-  FillRect16(brush_handle_var6,&rect16_var_12,(HDC16)&DAT_1050_1050);
+  FillRect16(brush_handle_var6,&rect16_a,&DAT_1050_1050);
+  FillRect16(brush_handle_var6,&rect16_var_12,&DAT_1050_1050);
   DeleteObject16(brush_handle_var6);
   uStack58 = (&u16_1050_0002 + 1);
   loop {

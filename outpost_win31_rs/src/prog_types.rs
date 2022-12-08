@@ -168,13 +168,13 @@ pub struct tagBITMAPINFOHEADER {
 } //BITMAPINFO;
 
 pub struct MSG16 {
-    // HWND16 hwnd;
+    // hwnd: HWND16;
     pub hwnd: HWND16,
     // let mut message: u16;
     pub message: u16,
     // let mut wparam: WPARAM16;
     pub wparam: WPARAM16,
-    // LPARAM lparam;
+    // lparam: LPARAM;
     pub lparam: LPARAM,
     // let mut time: u32;
     pub time: u32,
@@ -216,13 +216,13 @@ pub struct tagPOINT {
 
 #[allow(non_snake_case)]
 pub struct tagMSG {
-    // HWND16 hwnd;
+    // hwnd: HWND16;
     pub hwnd: HWND16,
     // let mut message: u16;
     pub message: u16,
     // let mut wParam: WPARAM16;
     pub wParam: WPARAM16,
-    // LPARAM lParam;
+    // lParam: LPARAM;
     pub lParam: LPARAM,
     // let mut time: u32;
     pub time: u32,

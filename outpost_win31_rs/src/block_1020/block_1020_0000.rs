@@ -210,7 +210,7 @@ pub fn win_1020_0316(mut param_1: u16 ,param_2: *mut StructA)
     iVar1[0x1].field14_0x1c = puVar3;
     return;
   }
-  &iVar1[0x1].field13_0x1a = 0;
+  iVar1[0x1].field13_0x1a = 0;
   return;
 }
 pub fn post_msg_1020_03b2(mut param_1: u32)
@@ -305,7 +305,7 @@ pub fn pass1_1020_04f6(param_1: *mut u8,param_2: *mut astruct_662,mut param_3: u
   puVar6 = mixed_1010_20ba(paVar4,_u16_1050_0ed0,ppuVar8,in_stack_0000fe8a,in_stack_0000ffae,in_stack_0000ffb4,
                            in_stack_0000ffb8);
   paVar4 = (paVar4 & 0xffff0000 | puVar6 >> 0x10);
-  &iVar4.field4_0x6 = puVar6;
+  iVar4.field4_0x6 = puVar6;
   uVar3 = (puVar6 >> 0x10);
   (&iVar4.field4_0x6 + 0x2) = uVar3;
   uVar7 = &iVar4.field4_0x6;
@@ -389,7 +389,7 @@ pub fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754)
     rect_1.y = 0;
     iStack48 = struct754_var1.field7_0xa + -0x1;
     iStack46 = struct754_var1.field8_0xc + -0x1;
-    FillRect16(brush_handle_1,&rect_1,(HDC16)&DAT_1050_1050);
+    FillRect16(brush_handle_1,&rect_1,&DAT_1050_1050);
     DeleteObject16(brush_handle_1);
   }
   uVar2 = struct754_var1.field6_0x6;
@@ -404,7 +404,7 @@ pub fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754)
   (**fn_ptr_1)(s_tile2_bmp_1050_1538,puStack40,(puStack40 >> 0x10),struct754_var1.field10_0x10,
                struct754_var1.field9_0xe,&hdc_var_24,&DAT_1050_1050,uVar3);
   palette_handle_var42 = SelectPalette16(0x0,palette_handle_var42,hdc_var_24);
-  DeleteObject16((HGDIOBJ16)palette_handle_var42);
+  DeleteObject16(palette_handle_var42);
   EndPaint16(CONCAT22(0x1050,paintstruct_22),&struct754_var1.field_0x4);
   return;
 }
@@ -482,7 +482,7 @@ pub fn pass1_1020_08b6(param_1: *mut astruct_20,mut param_2: u16 ,mut param_3: u
   paVar2 = unk_draw_op_1008_61b2(in_stack_0000ffd6,param_1,0x1,param_2,param_3);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field2_0x4 = 0;
   (&iVar1[0x1].field2_0x4 + 0x2) = 0;
   param_1.offset_0x0 = 0xb0e;
   iVar1.base_0x2 = 0x1020;
@@ -555,7 +555,7 @@ pub fn win_1020_09ba(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut StructA)
     iVar1[0x1].field12_0x18 = puVar1;
     return;
   }
-  &iVar1[0x1].field11_0x16 = 0;
+  iVar1[0x1].field11_0x16 = 0;
   return;
 }
 pub fn pass1_1020_0a0c(mut param_1: u32)
@@ -669,7 +669,7 @@ pub fn struct_1020_0baa(param_1: *mut u8,param_2: *mut u16,mut param_3: u16 )
   iVar2.field3_0x4 = param_3;
   *param_2 = 0x3ab0;
   iVar2.field2_0x2 = 0x1008;
-  &iVar2.field4_0x6 = 0;
+  iVar2.field4_0x6 = 0;
   iVar2.field6_0xa = 0;
   iVar2.field7_0xc = 0;
   *param_2 = 0xdbc;
@@ -811,7 +811,7 @@ pub fn pass1_1020_0dc4(param_1: *mut StructA,mut param_2: u16 ,mut param_3: u32,
                     mut param_6: u16 )
 
 {
-  char **ppcVar1;
+  ppcVar1: *mut *mut c_char;
   let iVar1: *mut StructA;
   let mut uVar2: u16;
   let mut in_stack_0000fe16: u16;
@@ -829,8 +829,8 @@ pub fn pass1_1020_0dc4(param_1: *mut StructA,mut param_2: u16 ,mut param_3: u32,
   struct_1020_790e(&param_1.field0_0x0,s_PCPOPMENU_1050_4256,param_2,param_3);
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1[0x1].field20_0x26 = 0;
-  &iVar1[0x1].field22_0x2a = 0;
+  iVar1[0x1].field20_0x26 = 0;
+  iVar1[0x1].field22_0x2a = 0;
   iVar1[0x1].field25_0x2e = 0;
   param_1.field0_0x0 = 0x1384;
   iVar1.field1_0x2 = 0x1020;
@@ -874,7 +874,7 @@ pub fn realize_palette_1020_0e46(mut param_1: u32,mut param_2: i16)
     puVar2 = iVar4.field102_0x66;
     fn_ptr_1 = (*puVar2 + 0x18);
     (**fn_ptr_1)();
-    UnrealizeObject16((HGDIOBJ16)puVar2);
+    UnrealizeObject16(puVar2);
     uVar1 = (param_1 + 0xf2);
     RealizePalette16(*(uVar1 + 0x7c));
   }

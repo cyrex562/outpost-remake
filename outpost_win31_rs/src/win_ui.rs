@@ -15,7 +15,7 @@ pub fn create_window_1008_5e7e() ->HWND16
 {
   let mut puVar2: *mut c_char;
   let mut BVar3: bool;
-  // ATOM AVar4;
+  // AVar4: ATOM;
     let mut AVar4: ATOM;
   let mut window_handle_1: HWND16;
   let mut iVar5: i16;

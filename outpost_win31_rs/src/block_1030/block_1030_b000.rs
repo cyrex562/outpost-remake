@@ -52,7 +52,7 @@ pub fn pass1_1030_b142(mut param_1: u32,mut param_2: u32)
   }
   if ((bVar4) || (uStack12 != 0)) {
     bVar4 = false;
-    while( true ) {
+    loop {
       if (((uStack12 & 0x10000) != 0) && (uStack12 == 0)) goto LAB_1030_b239;
       if (((uStack12 & 0x20000) != 0) && (uStack12 == 0)) goto LAB_1030_b247;
       if (((uStack12 & 0x40000) != 0) && (uStack12 == 0)) goto LAB_1030_b255;
@@ -217,7 +217,7 @@ pub fn pass1_1030_b454(mut param_1: u32,mut param_2: u32)
   uVar7 = (param_1 >> 0x10);
   iVar6 = param_1;
   pass1_1008_5784(CONCAT22(0x1050,local_12),(iVar6 + 0x10));
-  while( true ) {
+  loop {
     puVar3 = local_12;
     pass1_1008_5b12(CONCAT22(0x1050,puVar3));
     uStack10 = CONCAT22(extraout_DX,puVar3);
@@ -476,7 +476,7 @@ pub fn file_1030_b836(param_1: *mut u8,param_2: *mut astruct_401,mut param_3: u3
     iVar4.field13_0xe = local_4;
     BVar2 = read_file_1008_7dee(param_3,CONCAT22(0x1050,local_12),0x2);
     if (BVar2 != 0) {
-      while( true ) {
+      loop {
         if (local_12[0] == 0) {
           return;
         }
@@ -581,7 +581,7 @@ pub fn pass1_1030_b9da(param_1: *mut astruct_57,param_2: *mut astruct_172,param_
     uVar3 = (param_1 | param_2);
     paVar6 = ZEXT24(uVar3);
     if (uVar3.is_null()) {
-      &iVar7.field14_0xe = 0;
+      iVar7.field14_0xe = 0;
     }
     else {
       pass1_1020_ba3e((param_2 & 0xffff | param_1 << 0x10),0x5,0x5);
@@ -961,7 +961,7 @@ pub fn struct_1030_c06e(param_1: *mut astruct_180)
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 1) = 0;
-  &iVar1[0x1].field_0x4 = 0;
+  iVar1[0x1].field_0x4 = 0;
   param_1.field0_0x0 = 0xc68e;
   iVar1.field1_0x2 = 0x1030;
   return;

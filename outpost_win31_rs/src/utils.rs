@@ -16,7 +16,7 @@ pub unsafe fn CONCAT11(u8 a, u8 b) -> u16 {
     return a << 8 | b;
 }
 
-bool CARRY2(a: u16, u16 b) {
+pub unsafe fn CARRY2(a: u16, b: u16) -> bool {
     // TODO: implement CARRY2 op
     return false;
 }

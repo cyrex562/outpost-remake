@@ -68,7 +68,7 @@ pub fn pass1_1030_e0d4(param_1: *mut u8)
     uStack14 = CONCAT22(uVar6,uVar2);
     uStack16 = ((uVar2 + 0x154) != 0);
     pass1_1008_5784(CONCAT22(0x1050,local_1c),uStack10);
-    while( true ) {
+    loop {
       uVar2 = uVar6;
       paVar3 = local_1c;
       pass1_1008_5b12(CONCAT22(0x1050,paVar3));
@@ -170,9 +170,9 @@ pub fn struct_1030_e2be(param_1: *mut astruct_97,mut param_2: u16 ,mut param_3: 
   struct_op_1028_d1dc(param_1,0x2af7);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field259_0x108 = param_4;
-  &iVar1.field262_0x10c = param_3;
-  &iVar1.field264_0x110 = param_2;
+  iVar1.field259_0x108 = param_4;
+  iVar1.field262_0x10c = param_3;
+  iVar1.field264_0x110 = param_2;
   param_1.offset_0x0 = 0xe4ea;
   iVar1.segment_0x2 = 0x1030;
   return;
@@ -323,11 +323,11 @@ pub fn struct_1030_e4fa(param_1: *mut astruct_97,mut param_2: u32)
   struct_op_1028_d1dc(param_1,0x3e80);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field259_0x108 = param_2;
+  iVar1.field259_0x108 = param_2;
   param_1.offset_0x0 = 0xe62e;
   iVar1.segment_0x2 = 0x1030;
   sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),s_SCKillBldg__0x_08lx_1050_597c,
-                &iVar1.field259_0x108);
+                iVar1.field259_0x108);
   return;
 }
 
@@ -589,13 +589,13 @@ pub fn pass1_1030_e8a0(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u1
   struct_op_1028_d1dc(param_1,0x2710);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field259_0x108 = param_2;
-  &iVar1.field262_0x10c = param_4;
-  &iVar1.field264_0x110 = param_3;
+  iVar1.field259_0x108 = param_2;
+  iVar1.field262_0x10c = param_4;
+  iVar1.field264_0x110 = param_3;
   param_1.offset_0x0 = 0xeb40;
   iVar1.segment_0x2 = 0x1030;
   sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),s_SCMoveBas_to_0x_08lx_1050_59b0,
-                &iVar1.field262_0x10c);
+                iVar1.field262_0x10c);
   return;
 }
 
@@ -716,7 +716,7 @@ pub fn pass1_1030_ea50(mut param_1: u32,mut param_2: u32)
   uVar1 = (iVar5 + 0x108);
   uStack8 = (uVar1 + 0x4);
   uStack10 = 0;
-  while( true ) {
+  loop {
     uVar4 = (in_EDX >> 0x10);
     if (uStack8 <= uStack10) {
       return;
@@ -774,10 +774,10 @@ pub unsafe fn pass1_1030_eb86(mut param_1: u16 ) -> u16
   let mut uVar4: u16;
   let mut extraout_DX: u16;
   let mut puStack24: *mut u32;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x700);
-  while( true ) {
+  loop {
     uVar4 = param_1;
     paVar3 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar3));
@@ -894,7 +894,7 @@ pub fn pass1_1030_ecf8(param_1: u8,param_2: *mut astruct_57,mut param_3: u32)
   let mut iStack56: i16;
   let mut uStack54: u16;
   paStack38: *mut astruct_685;
-  astruct_92 local_22;
+  let mut local_22: *mut astruct_92;
   let mut uStack12: u16;
   let mut paVar12: *mut Struct57;
   let mut pSVar14: *mut StructD;
@@ -936,7 +936,7 @@ pub fn pass1_1030_ecf8(param_1: u8,param_2: *mut astruct_57,mut param_3: u32)
   }//
 // LAB_1030_ed5b:
   pass1_1028_dc52(CONCAT13(0x10,CONCAT12(0x50,&local_22)),0x1,0x0,0x400);
-  while( true ) {
+  loop {
     paVar6 = &local_22;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
     uVar10 = pSVar13;

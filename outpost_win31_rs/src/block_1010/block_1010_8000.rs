@@ -226,7 +226,7 @@ pub unsafe fn FUN_1010_830a(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 
 
 
 
-char * load_string_1010_847e(mut param_1: u32,mut param_2: u16 )
+pub unsafe fn load_string_1010_847e(mut param_1: u32,mut param_2: u16 ) -> *mut c_char
 
 {
   LoadString16(0x3ff,(param_1 & 0xffff0000 | (param_1 + 0x682U)),param_2,HINSTANCE16_1050_038c);
@@ -727,7 +727,7 @@ pub fn unk_load_str_op_1010_8c96(param_1: *mut u8,mut param_2: u32,mut param_3: 
   uVar5 = (iVar6 + 0x6);
   uVar10 = uVar5;
   valist = param_3;
-  in_buf_len_5 = (short)(param_3 >> 0x10);
+  in_buf_len_5 = (param_3 >> 0x10);
   if (uVar5 != 0) {
     uVar8 = (param_2 >> 0x10);
     if (uVar5 == 1) {
@@ -846,15 +846,15 @@ pub fn pass1_1010_8ef2(param_1: *mut astruct_57,param_2: *mut astruct_170,mut pa
   param_2.field0_0x0 = 0x389a;
   iVar3.field1_0x2 = 0x1008;
   uVar1 = 0;
-  &iVar3.field2_0x4 = 0;
-  &iVar3.field4_0x8 = 0;
+  iVar3.field2_0x4 = 0;
+  iVar3.field4_0x8 = 0;
   param_2.field0_0x0 = 0x9254;
   iVar3.field1_0x2 = 0x1010;
   mem_op_1000_179c(0x18,param_1);
   uVar2 = param_1 | uVar1;
   paVar3 = (param_1 & 0xffff0000 | uVar2);
   if (uVar2 == 0) {
-    &iVar3.field2_0x4 = 0;
+    iVar3.field2_0x4 = 0;
   }
   else {
     struct_op_1030_1cd8(CONCAT22(param_1,uVar1),0x5,0x5);
@@ -907,7 +907,7 @@ pub fn pass1_1010_8fba(mut param_1: u16 ,param_2: *mut astruct_411)
   (**ppcVar1)();
   uStack10 = CONCAT22(extraout_DX,param_1);
   uStack14 = 0;
-  while( true ) {
+  loop {
     if (uStack10 <= uStack14) {
       return;
     }

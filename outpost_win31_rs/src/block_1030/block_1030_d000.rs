@@ -9,7 +9,7 @@ pub fn pass1_1030_d00c(param_1: *mut astruct_15,mut param_2: u16 )
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     if (0x9 < iStack4) {
       return;
     }
@@ -113,7 +113,7 @@ pub fn pass1_1030_d180(mut param_1: u32,mut param_2: u16 )
   let mut paVar2: *mut Struct57;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     if (0x9 < iStack4) {
       return;
     }
@@ -147,7 +147,7 @@ pub unsafe fn pass1_1030_d230(mut param_1: u32) -> u16
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     if (0x9 < iStack4) {
       return 0x1;
     }
@@ -222,7 +222,7 @@ pub unsafe fn pass1_1030_d36e(mut param_1: u32,mut param_2: i16) -> u16
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     if (0x9 < iStack4) {
       return 0x0;
     }
@@ -433,7 +433,7 @@ pub fn pass1_1030_d72e(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_3
     return;
   }
   iStack10 = 0;
-  while( true ) {
+  loop {
     if (0x9 < iStack10) {
     // just 0x5812
       if ((0x3 < u16_1050_0312) &&
@@ -606,7 +606,7 @@ pub fn pass1_1030_da22(mut param_1: u32)
   puVar6 = puVar1;
   (**ppcVar2)(0x1028,puVar1,(uVar9 + 0xe));
   uStack18 = 0;
-  while( true ) {
+  loop {
     if ((puVar6 & 0xffff | extraout_DX << 0x10) <= uStack18) {
       return;
     }

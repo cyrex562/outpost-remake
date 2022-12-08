@@ -23,28 +23,28 @@ pub fn pass1_1038_30aa(param_1: *mut astruct_180,mut param_2: u32)
   paVar3 = (param_2 & 0xffff0000 | puVar5 >> 0x10);
   uVar5 = (param_1 >> 0x10);
   iVar5 = param_1;
-  &iVar5.field12_0x10 = 0;
-  &iVar5.field14_0x14 = 0;
+  iVar5.field12_0x10 = 0;
+  iVar5.field14_0x14 = 0;
   iVar5.field16_0x18 = 0x258;
   iVar5.field17_0x1a = 0x258;
-  &iVar5.field18_0x1c = 0;
+  iVar5.field18_0x1c = 0;
   (&iVar5.field18_0x1c + 0x2) = 0;
   iVar5[0x1].field1_0x2 = 0;
-  &iVar5[0x1].field_0x4 = 0x32;
-  &iVar5[0xf].field15_0x16 = 0;
-  &iVar5[0xf].field17_0x1a = 0;
+  iVar5[0x1].field_0x4 = 0x32;
+  iVar5[0xf].field15_0x16 = 0;
+  iVar5[0xf].field17_0x1a = 0;
   (&iVar5[0xf].field18_0x1c + 0x2) = 0;
   (iVar5 + 0x10) = 0x8000001;
-  &iVar5[0x10].field_0x4 = 0;
-  &iVar5[0x10].field_0x6 = 0;
-  &iVar5[0x10].field_0x8 = 0x1;
-  &iVar5[0x10].field_0xa = 0;
+  iVar5[0x10].field_0x4 = 0;
+  iVar5[0x10].field_0x6 = 0;
+  iVar5[0x10].field_0x8 = 0x1;
+  iVar5[0x10].field_0xa = 0;
   iVar5[0x10].field10_0xc = 0;
   iVar5[0x10].field11_0xe = 0;
-  &iVar5[0x10].field12_0x10 = 0;
+  iVar5[0x10].field12_0x10 = 0;
   iVar5[0x10].field14_0x14 = 0;
-  &iVar5[0x10].field15_0x16 = 0;
-  &iVar5[0x10].field17_0x1a = 0;
+  iVar5[0x10].field15_0x16 = 0;
+  iVar5[0x10].field17_0x1a = 0;
   param_1.field0_0x0 = 0x6504;
   iVar5.field1_0x2 = &u16_1050_1038;
   pass1_1000_4906((param_1 & 0xffff0000 | ZEXT24(&iVar5[0x1].field_0x6)),NULL,0x94);
@@ -55,7 +55,7 @@ pub fn pass1_1038_30aa(param_1: *mut astruct_180,mut param_2: u32)
   uVar2 = paVar3 | puVar1;
   paVar4 = (paVar3 & 0xffff0000 | uVar2);
   if (uVar2 == 0) {
-    &iVar5[0xf].field15_0x16 = 0;
+    iVar5[0xf].field15_0x16 = 0;
   }
   else {
     pass1_1030_314c(uVar2,CONCAT22(paVar3,puVar1),&iVar5.field_0x4);
@@ -100,8 +100,8 @@ pub fn pass1_1038_3222(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut 
   iVar5.field17_0x1e = 0;
   iVar5.field18_0x22 = 0;
   iVar5.field19_0x24 = 0x32;
-  &iVar5.field484_0x1f6 = 0;
-  &iVar5.field486_0x1fa = 0;
+  iVar5.field484_0x1f6 = 0;
+  iVar5.field486_0x1fa = 0;
   iVar5.field488_0x1fe = 0;
   iVar5.field489_0x200 = 0x8000001;
   iVar5.field490_0x204 = 0;
@@ -124,7 +124,7 @@ pub fn pass1_1038_3222(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut 
   uVar2 = paVar4 | puVar1;
   uVar5 = paVar4 & 0xffff0000 | uVar2;
   if (uVar2 == 0) {
-    &iVar5.field484_0x1f6 = 0;
+    iVar5.field484_0x1f6 = 0;
   }
   else {
     pass1_1030_314c(uVar2,CONCAT22(paVar4,puVar1),&iVar5.field_0x4);
@@ -139,7 +139,7 @@ pub fn pass1_1038_3222(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut 
   mem_op_1000_179c(0x1e,paVar4);
   uVar3 = paVar4 | uVar2;
   if (uVar3 == 0) {
-    &iVar5.field10_0xc = 0;
+    iVar5.field10_0xc = 0;
   }
   else {
     struct_1020_c444(CONCAT22(paVar4,uVar2),0x64,0xc8);
@@ -247,11 +247,11 @@ pub fn pass1_1038_354a(param_1: *mut astruct_424,mut param_2: u16 ,param_3: *mut
     mem_op_1000_179c(0xa,paVar2);
     uVar1 = paVar2 | param_2;
     if (uVar1 == 0) {
-      &iVar1.field_0x21a = 0;
+      iVar1.field_0x21a = 0;
     }
     else {
       pass1_1030_9ecc(CONCAT22(paVar2,param_2),param_1);
-      &iVar1.field_0x21a = param_2;
+      iVar1.field_0x21a = param_2;
       iVar1.field540_0x21c = uVar1;
     }
   }
@@ -678,7 +678,7 @@ pub fn pass1_1038_3ba0(param_1: *mut astruct_428)
     uVar12 = (uVar5 >> 0xf);
     uVar14 = 0x1030;
     struct_1030_11aa(CONCAT22(paVar11,uVar10),0x5,uVar5);
-    &iVar13.field528_0x210 = uVar5;
+    iVar13.field528_0x210 = uVar5;
     (&iVar13.field528_0x210 + 0x2) = uVar12;
   }
   uVar16 = iVar13.field528_0x210;

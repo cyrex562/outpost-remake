@@ -57,7 +57,7 @@ pub fn pass1_1030_9048(mut param_1: u32,mut param_2: i16,mut param_3: u32)
   (**ppcVar2)(0x1008,uVar11,uVar13);
   uVar6 = uVar6 & 0xffff | uVar7 << 0x10;
   uStack36 = 0;
-  while( true ) {
+  loop {
     uVar9 = uVar7;
     if (uVar6 <= uStack36) {
       if (uStack12.is_null() == false) {
@@ -194,7 +194,7 @@ pub fn pass1_1030_9296(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
       iVar11 = pstruct99_18;
       pstruct99_18.field0_0x0 = 0x389a;
       iVar11.field1_0x2 = 0x1008;
-      &iVar11.field2_0x4 = 0x73;
+      iVar11.field2_0x4 = 0x73;
       pstruct99_18.field0_0x0 = 0x9ec8;
       iVar11.field1_0x2 = 0x1030;
       in_EAX = pstruct99_18;
@@ -246,7 +246,7 @@ pub fn pass1_1030_9296(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
       iVar9 = pstruct99_18;
       pstruct99_18.field0_0x0 = 0x389a;
       iVar9.field1_0x2 = 0x1008;
-      &iVar9.field2_0x4 = 0x75;
+      iVar9.field2_0x4 = 0x75;
       pstruct99_18.field0_0x0 = 0x9ec8;
       iVar9.field1_0x2 = 0x1030;
       in_EAX = pstruct99_18;
@@ -284,7 +284,7 @@ pub fn pass1_1030_9296(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
   uVar3 = uVar4;
   if ((uVar4 | uStack14) != 0) {
     pass1_1008_5784(CONCAT22(0x1050,local_3a),uStack14 & 0xffff | uVar4 << 0x10);
-    while( true ) {
+    loop {
       uVar4 = uVar3;
       puVar2 = local_3a;
       pass1_1008_5b12(CONCAT22(0x1050,puVar2));
@@ -388,7 +388,7 @@ pub fn pass1_1030_951a(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
     uVar17 = uVar6;
     if ((uVar6 | puStack36) != 0) {
       pass1_1008_5784(CONCAT22(0x1050,&local_36),puStack36 & 0xffff | uVar6 << 0x10);
-      while( true ) {
+      loop {
         uVar6 = uVar17;
         puVar12 = &local_36;
         pass1_1008_5b12(CONCAT22(0x1050,puVar12));
@@ -685,7 +685,7 @@ pub fn pass1_1030_9adc(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
       iVar6 = pstruct99_6;
       pstruct99_6.field0_0x0 = 0x389a;
       iVar6.field1_0x2 = 0x1008;
-      &iVar6.field2_0x4 = 0x78;
+      iVar6.field2_0x4 = 0x78;
       pstruct99_6.field0_0x0 = 0x9ec8;
       iVar6.field1_0x2 = 0x1030;
       pstruct99_2 = pstruct99_6;
@@ -831,8 +831,8 @@ pub fn pass1_1030_9d42(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,par
     empty_1038_540a();
     uStack158 = CONCAT22(param_1,uVar11);
     pass1_1008_5784(CONCAT22(0x1050,string_a6),param_4);
-    pstruct117_2 = *(astruct_117 **)(_PTR_LOOP_1050_65e2 + 0x52);
-    while( true ) {
+    pstruct117_2 = (_PTR_LOOP_1050_65e2 + 0x52);
+    loop {
       pcVar6 = string_a6;
       pass1_1008_5b12(CONCAT22(0x1050,pcVar6));
       uVar9 = extraout_DX | pcVar6;

@@ -265,7 +265,7 @@ pub fn pass1_1028_2418(mut param_1: u32,mut param_2: u32) -> BOOL16
       u16_1050_0310 = 0x6d0;
       return BVar2;
     }
-    while( true ) {
+    loop {
       uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       iStack14 = uVar4;
       if (uVar4 == 0) break;

@@ -126,7 +126,7 @@ pub fn unk_win_ui_op_1040_8158(param_1: u32,POparam_2: INT16,mut param_3: i16)
     if ((iVar3 + 0x76) != 0) {
       ScreenToClient16(CONCAT22(0x1050,&stack0xfffa),(iVar3 + 0x6));
       GetSystemMetrics16(SM_CYCAPTION);
-      BVar2 = PtInRect16((POINT16)(param_1 & 0xffff0000 | ZEXT24((iVar3 + 0x82))),
+      BVar2 = PtInRect16((param_1 & 0xffff0000 | ZEXT24((iVar3 + 0x82))),
                          (iVar3 + 0x82));
       if (BVar2 != 0) {
         ppcVar1 = (*param_1 + 0x14);
@@ -141,11 +141,11 @@ pub fn check_dialog_msg_1040_81b6(mut param_1: u32)
 {
   let mut BVar1: bool;
   let mut uVar2: u16;
-  MSG16 local_14;
+  local_14: MSG16;
 
   uVar2 = (param_1 >> 0x10);
   (param_1 + 0x78) = 0x1;
-  while( true ) {
+  loop {
     BVar1 = IsWindow16((param_1 + 0x6));
     if (BVar1 == 0) {
       return;
@@ -251,7 +251,7 @@ pub fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
   let mut iStack6: i16;
   let mut iStack4: i16;
 
-  struct_1_hi = (HDC16)(astruct14_param_1 >> 0x10);
+  struct_1_hi = (astruct14_param_1 >> 0x10);
   struct_1 = astruct14_param_1;
   iStack6 = (struct_1.field118_0x80 - struct_1.field116_0x7c) + -0x2;
   iStack8 = (-(struct_1.field95_0x60 == 0) & 0x1e) + 0x25;
@@ -271,7 +271,7 @@ pub fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
   iStack12 = (struct_1[0x1].hwnd16_field6_0x6 - &struct_1[0x1].field_0x2) / 0x2 +
              &struct_1[0x1].field_0x2 + 2;
   FrameRect16(brush_handle_1,(struct_1 + 1),struct_1_hi);
-  FrameRect16(brush_handle_1,&rect_var_12,(HDC16)&DAT_1050_1050);
+  FrameRect16(brush_handle_1,&rect_var_12,&DAT_1050_1050);
   DeleteObject16(brush_handle_1);
   struct_1.field115_0x7a = &struct_1[0x1].field_0x4 + 2;
   return;
@@ -305,10 +305,10 @@ pass1_1040_8478(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,par
   (iVar2 + 1).field0_0x0 = 0;
   iVar2[0x1].field5_0xa = param_3;
   iVar2[0x1].field6_0xc = 0;
-  &iVar2[0x1].field_0x24 = 0;
+  iVar2[0x1].field_0x24 = 0;
   param_2.field0_0x0 = 0x8ddc;
   iVar2.field1_0x2 = &PTR_LOOP_1050_1040;
-  &iVar2[0x1].field8_0x10 = 0;
+  iVar2[0x1].field8_0x10 = 0;
   iVar2[0x1].field10_0x14 = 0x12c;
   uVar1 = str_op_1008_60e8(param_1,param_5);
   iVar2[0x1].field1_0x2 = uVar1;
@@ -347,10 +347,10 @@ pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut par
   (iVar7 + 1).field0_0x0 = 0;
   iVar7[0x1].field5_0xa = param_4;
   iVar7[0x1].field6_0xc = 0;
-  &iVar7[0x1].field_0x24 = 0;
+  iVar7[0x1].field_0x24 = 0;
   param_2.field0_0x0 = 0x8ddc;
   iVar7.field1_0x2 = &PTR_LOOP_1050_1040;
-  &iVar7[0x1].field8_0x10 = 0;
+  iVar7[0x1].field8_0x10 = 0;
   iVar7[0x1].field10_0x14 = 0x12c;
   puVar2 = &param_5;
   iStack16 = param_4;
@@ -381,7 +381,7 @@ pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut par
     puStack14 = CONCAT22(0x1050,&stack0x0012);
     uVar1 = &iVar7[0x1].field1_0x2;
     load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,uVar1,(short)(uVar1 >> 0x10)
+              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,uVar1,(uVar1 >> 0x10)
               );
     iStack16 = param_4 + -0x2;
   }
@@ -480,7 +480,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
     &paVar12[0x1].field_0xc = iVar3 / 0x2;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               (short)&DAT_1050_1050);
+               &DAT_1050_1050);
     uVar2 = &paVar12[0x1].field_0xc;
     create_window_1040_8bea
               (paVar12,uVar12,0x1,0x1,uVar2,(uVar2 >> 0x10),CONCAT22(0x1050,local_104));
@@ -488,7 +488,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
     *piVar1 = *piVar1 + 0x6c;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               (short)&DAT_1050_1050);
+               &DAT_1050_1050);
     uVar2 = &paVar12[0x1].field_0xc;
     uVar10 = uVar2;
     uVar11 = (uVar2 >> 0x10);
@@ -501,7 +501,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
       &paVar12[0x1].field_0xc = iVar3 / 0x2;
       load_string_1010_84e0
                 (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-                 (short)&DAT_1050_1050);
+                 &DAT_1050_1050);
       uVar2 = &paVar12[0x1].field_0xc;
       uVar10 = uVar2;
       uVar11 = (uVar2 >> 0x10);
@@ -514,7 +514,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
     &paVar12[0x1].field_0xc = iVar3 / 0x2;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               (short)&DAT_1050_1050);
+               &DAT_1050_1050);
     uVar2 = &paVar12[0x1].field_0xc;
     create_window_1040_8bea
               (paVar12,uVar12,0x1,0x6,uVar2,(uVar2 >> 0x10),CONCAT22(0x1050,local_104));
@@ -522,7 +522,7 @@ u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
     *piVar1 = *piVar1 + 0x6c;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               (short)&DAT_1050_1050);
+               &DAT_1050_1050);
     uVar2 = &paVar12[0x1].field_0xc;
     uVar10 = uVar2;
     uVar11 = (uVar2 >> 0x10);
@@ -814,7 +814,7 @@ pub fn draw_text_1040_8d14(param_1: *mut astruct_37,hdc_param_2: HDC16)
     SelectObject16(handle,hdc_param_2);
   }
   in_string = struct_1.field133_0x90;
-  obj_handle_1 = (HGDIOBJ16)(in_string >> 0x10);
+  obj_handle_1 = (in_string >> 0x10);
   DrawText16(0x410,(param_1 & 0xffff0000 | ZEXT24(&struct_1.field144_0x9e)),-0x1,in_string,hdc_param_2
             );
   if (obj_handle_1 != 0) {
@@ -912,17 +912,17 @@ pub fn mixed_struct_op_1040_8fb8
   iVar3 = param_2;
   param_2.field0_0x0 = 0x389a;
   iVar3.field1_0x2 = 0x1008;
-  &iVar3.field2_0x4 = 0;
-  &iVar3.field4_0x8 = 0;
-  &iVar3.field6_0xc = 0;
-  &iVar3.field8_0x10 = 0;
+  iVar3.field2_0x4 = 0;
+  iVar3.field4_0x8 = 0;
+  iVar3.field6_0xc = 0;
+  iVar3.field8_0x10 = 0;
   iVar3.field10_0x14 = 0;
   iVar3.field11_0x18 = 0;
   iVar3.field12_0x1a = param_9;
   iVar3.field13_0x1c = param_8;
   iVar3[0x1].field8_0x10 = 0x5;
   iVar3[0x1].field9_0x12 = 0;
-  &iVar3[0x1].field10_0x14 = 0;
+  iVar3[0x1].field10_0x14 = 0;
   (&iVar3[0x1].field10_0x14 + 0x2) = 0x2;
   iVar3[0x1].field11_0x18 = 0;
   iVar3[0x1].field12_0x1a = param_3;
@@ -943,7 +943,7 @@ pub fn mixed_struct_op_1040_8fb8
     iVar3.field6_0xc = uVar5;
     iVar3.field7_0xe = param_1;
     if (param_5 == 0) {
-      &iVar3.field8_0x10 = 0;
+      iVar3.field8_0x10 = 0;
     }
     else {
       uVar5 = FUN_1010_830a(uVar5,param_1,0x1010,_u16_1050_14cc,param_5);
@@ -955,13 +955,13 @@ pub fn mixed_struct_op_1040_8fb8
   uVar2 = iVar3[0x1].field8_0x10;
   iVar3[0x1].field5_0xa = uVar2;
   iVar3[0x1].field4_0x8 = uVar2;
-  &iVar3[0x1].field6_0xc = 0;
+  iVar3[0x1].field6_0xc = 0;
   if (param_4.is_null() == false) {
     uVar3 = str_op_1008_60e8(uVar6,param_4);
     iVar3.field2_0x4 = uVar3;
     iVar3.field3_0x6 = uVar6;
   }
-  &iVar3.field16_0x22 = 0;
+  iVar3.field16_0x22 = 0;
   iVar3.field14_0x1e = 0;
   iVar3.field15_0x20 = 0;
   if (_u16_1050_5e18.is_null()) {

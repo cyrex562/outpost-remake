@@ -421,7 +421,7 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
 // WARNING: Unable to use type for symbol uVar6
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn draw_ui_op_1040_27cc(param_1: *mut astruct_752,HWND16 hwnd16_param_2,mut param_3: u16 ,hdc_param_4: HDC16) -> u32
+pub fn draw_ui_op_1040_27cc(param_1: *mut astruct_752,hwnd16_param_2: HWND16,mut param_3: u16 ,hdc_param_4: HDC16) -> u32
 
 {
   let mut uVar1: u32;
@@ -615,7 +615,7 @@ pub fn dlg_ui_op_1040_2a64(mut param_1: u16 ,StructB *struct_b_param_1)
   uVar7 = (struct_b_param_1 >> 0x10);
   struct_b_6 = (StructB *)struct_b_param_1;
   uVar1 = &struct_b_6[0x7].hwnd_0x6;
-  uStack12 = struct_op_1030_73a8(*(astruct_419 **)(uVar1 + 0x6),in_AX,param_1);
+  uStack12 = struct_op_1030_73a8((uVar1 + 0x6),in_AX,param_1);
   paVar5 = CONCAT22(in_register_0000000a,(uStack12 >> 0x10));
   PTR_LOOP_1050_5d04 = pass1_1028_4a9a(uStack12,iVar9);
   for (iStack14 = 0; iStack14 < iStack4; iStack14 += 1) {
@@ -773,7 +773,7 @@ pub fn pass1_1040_2dac(mut param_1: u32)
   let mut iStack10: i16;
 
   uVar1 = (param_1 + 0x90);
-  uVar2 = struct_op_1030_73a8(*(astruct_419 **)(uVar1 + 0x6),in_AX,in_DX);
+  uVar2 = struct_op_1030_73a8((uVar1 + 0x6),in_AX,in_DX);
   for (iStack10 = 0; iStack10 < 0x5; iStack10 += 1) {
     pass1_1028_4ab2(uVar2,(&PTR_LOOP_1050_5d04 + iStack10 * 0xc),(iStack10 * 0xc + 0x5d02));
   }
@@ -817,7 +817,7 @@ pub fn pass1_1040_2ea2(param_1: *mut StructD,param_2: *mut astruct_57,mut param_
   iVar1[0x1].field1_0x2 = 0;
   iVar1[0x1].field2_0x4 = 0;
   iVar1[0x1].field3_0x6 = 0;
-  &iVar1[0x1].field4_0x8 = 0;
+  iVar1[0x1].field4_0x8 = 0;
   param_2.field0_0x0 = 0x3436;
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   puVar2 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(unaff_BP,0x3c),in_stack_0000fea6,
@@ -905,7 +905,7 @@ pub fn win_dlg_op_1040_2f90(mut param_1: u16 ,mut param_2: u32)
   let mut in_stack_0000fed4: u16;
   let mut local_116: *mut u32;
   let mut local_112: *mut u32;
-  local_10e: u16 [0x41];
+  let mut local_10e: [u16;0x41] = [0;0x41];
   let mut local_8c: [u8;0x82] = [0;0x82];
   let mut uStack10: u32;
   let mut puStack6: *mut u32;
@@ -935,8 +935,8 @@ pub fn win_dlg_op_1040_2f90(mut param_1: u16 ,mut param_2: u32)
   iVar4.field144_0x94 = HVar2;
   send_msg_1040_3374(param_2,local_116,HVar2);
   l_param = load_string_1010_847e(_u16_1050_14cc,0x531);
-  SendDlgItemMessage16((LPARAM)l_param,0x0,0x403,0x183,iVar4.field6_0x6);
-  SendDlgItemMessage16((LPARAM)l_param,0xffff,0x40d,0x183,iVar4.field6_0x6);
+  SendDlgItemMessage16(l_param,0x0,0x403,0x183,iVar4.field6_0x6);
+  SendDlgItemMessage16(l_param,0xffff,0x40d,0x183,iVar4.field6_0x6);
   HVar2 = GetDlgItem16(0x181,iVar4.field6_0x6);
   iVar4.field141_0x8e = HVar2;
   HVar2 = GetDlgItem16(0x184,iVar4.field6_0x6);

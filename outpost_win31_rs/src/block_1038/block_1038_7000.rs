@@ -279,14 +279,14 @@ code_r0x10387545:
   iVar9.field9_0xc = 0;
   iVar9.field13_0x12 = 0;
   iVar9.field14_0x14 = 0;
-  &iVar9.field15_0x16 = 0;
+  iVar9.field15_0x16 = 0;
   pcVar3 = *&iVar9.field_0xe;
   uVar6 = iVar9.field12_0x10;
   if ((uVar6 | pcVar3) != 0) {
     fn_ptr_1020_ba7e((pcVar3 & 0xffff | uVar6 << 0x10));
     fn_ptr_1000_17ce(pcVar3);
   }
-  &iVar9.field_0xe = 0;
+  iVar9.field_0xe = 0;
   return;
 }
 
@@ -405,10 +405,10 @@ pub fn file_1038_774e(param_1: *mut u8,param_2: *mut astruct_169,mut param_3: u3
       && (BVar1 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x5)),0x2),
          BVar1 != 0)))) {
     uVar6 = (param_2 >> 0x10);
-    &iVar2[0x1].field4_0x4 = local_4;
+    iVar2[0x1].field4_0x4 = local_4;
     uVar4 = switch_1008_72bc(param_3,local_6);
-    &iVar2[0x2].field_0x2 = uVar4;
-    &iVar2[0x2].field4_0x4 = local_8;
+    iVar2[0x2].field_0x2 = uVar4;
+    iVar2[0x2].field4_0x4 = local_8;
     return;
   }
   u16_1050_0310 = 0x6d2;
@@ -446,7 +446,7 @@ pub fn pass1_1038_78e2(param_1: *mut StructD,param_2: *mut astruct_431)
   iVar4 = param_2;
   uVar1 = 0;
   param_2 = 0;
-  &iVar4.field2_0x4 = 0;
+  iVar4.field2_0x4 = 0;
   _PTR_LOOP_1050_5a64 = param_2;
   mem_op_1000_179c(0xc,paVar3);
   uVar2 = paVar3 | uVar1;
@@ -574,7 +574,7 @@ pub fn pass1_1038_7a76(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut para
   let mut uStack6: u32;
 
   pass1_1008_5784(CONCAT22(0x1050,local_a),*param_1);
-  while( true ) {
+  loop {
     paVar3 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     if (paVar3.is_null()) break;
     pass1_1038_6a0e(CONCAT22(paVar3,(paVar3 >> 0x10) | paVar3),paVar3);
@@ -585,7 +585,7 @@ pub fn pass1_1038_7a76(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut para
       uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       if (uVar4 == 0) {
         pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0x4));
-        while( true ) {
+        loop {
           uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
           if (uVar4 == 0) break;
           pass1_1030_affc(uVar4);
@@ -709,7 +709,7 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,pa
     local_4 = local_4 - 0x1;
     BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_12),0x2);
     if (BVar2 != 0) {
-      while( true ) {
+      loop {
         if (local_12[0] == 0) {
           return 0x1;
         }
@@ -761,7 +761,7 @@ astruct_57 * pass1_1038_7d10(mut param_1: u16 ,param_2: *mut astruct_57,mut para
   struct_1040_b082(param_2,CONCAT22(param_3,0x1853));
   uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
-  &iVar1[0x1].field3_0x6 = 0;
+  iVar1[0x1].field3_0x6 = 0;
   param_2.field0_0x0 = 0x8876;
   iVar1.field1_0x2 = &u16_1050_1038;
   puVar2 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(unaff_BP,0x40),in_stack_0000fea6,
@@ -800,7 +800,7 @@ pub fn destroy_window_1038_7d88(mut param_1: u32,mut param_2: u16 ,mut param_3: 
 
 
 
-LRESULT pass1_1038_7dac(param_1: *mut astruct_903,mut param_2: u16 )
+pub unsafe fn pass1_1038_7dac(param_1: *mut astruct_903,mut param_2: u16 ) -> LRESULT
 
 {
   let mut LVar1: LRESULT;
@@ -871,7 +871,7 @@ pub fn pass1_1038_7dc6(param_1: *mut u8,pstruct903_param_2: *mut astruct_903,mut
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT send_dlg_item_msg_1038_7eac(param_1: *mut astruct_903)
+pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut astruct_903) -> LRESULT
 
 {
   let mut in_EDX: *mut Struct57;
@@ -896,7 +896,7 @@ LRESULT send_dlg_item_msg_1038_7eac(param_1: *mut astruct_903)
   LVar4 = SendDlgItemMessage16(0x0,0x0,0x409,0x1854,(iVar1 + 0x6));
   if ((LVar4 != 0xffff) || ((LVar4 >> 0x10) != -1)) {
     SendDlgItemMessage16(0x0,LVar4,0x403,0x1854,(iVar1 + 0x6));
-    SendDlgItemMessage16((LPARAM)l_param,0x0,0x401,0x1854,(iVar1 + 0x6));
+    SendDlgItemMessage16(l_param,0x0,0x401,0x1854,(iVar1 + 0x6));
     SendDlgItemMessage16(0x0,0xffff,0x407,0x1854,(iVar1 + 0x6));
     SendDlgItemMessage16(0x0,0x0,0x405,0x1855,(iVar1 + 0x6));
     LVar4 = SendDlgItemMessage16(0x0,0x0,0x405,0x1856,(iVar1 + 0x6));

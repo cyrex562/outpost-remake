@@ -886,7 +886,7 @@ pub fn pass1_1018_0dc6(param_1: *mut astruct_57,param_2: *mut astruct_91)
   let mut pcStack32: *mut c_char;
   let mut uStack28: u32;
   let mut uStack24: u32;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
   uVar9 = (param_2 >> 0x10);
@@ -900,7 +900,7 @@ pub fn pass1_1018_0dc6(param_1: *mut astruct_57,param_2: *mut astruct_91)
   iVar13.field149_0x9a = 0;
   iVar13.field146_0x92 = 0;
   iVar13.field148_0x98 = 0;
-  while( true ) {
+  loop {
     paVar2 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar2));
     uVar6 = param_1;

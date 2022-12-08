@@ -328,7 +328,7 @@ pub unsafe fn post_msg_1020_55b0(param_1: *mut StructD,mut param_2: u32,mut para
                               in_stack_0000fea4,in_stack_0000feaa,in_stack_0000feae);
   uVar6 = (paVar4 >> 0x10);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_10c,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_10c,&DAT_1050_1050);
   puVar7 = pass1_1008_9436(CONCAT22(0x1050,local_112));
   pcVar8 = pass1_1008_a8f4((puVar7 >> 0x10),puStack12,
                                    CONCAT22(0x1050,&local_114),CONCAT22(0x1050,local_112),
@@ -458,7 +458,7 @@ pub fn pt_in_rect_1020_5856(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32
   pass1_1018_2862(*(astruct_654 **)(param_3 + 0xfa));
   if ((param_2 | param_1) != 0) {
     uStack10 = 0;
-    while( true ) {
+    loop {
       puVar1 = (param_1 + 0xa);
       if (*puVar1 < uStack10 || *puVar1 == uStack10) break;
       uVar3 = uStack10;
@@ -537,7 +537,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
         paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
         for (iStack26 = 0; iStack26 < 0x4; iStack26 += 1) {
           paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
-          BVar6 = PtInRect16((POINT16)CONCAT22(uStack4,local_6),(iStack26 * 0x8 + uVar14));
+          BVar6 = PtInRect16(CONCAT22(uStack4,local_6),(iStack26 * 0x8 + uVar14));
           if (BVar6 != 0) {
             local_18[0] = 0;
             uStack20 = 0;
@@ -611,7 +611,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
     paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
     pRStack14 = uVar14;
     uStack12 = (uVar14 >> 0x10);
-    BVar6 = PtInRect16((POINT16)CONCAT22(uStack4,local_6),pRStack14);
+    BVar6 = PtInRect16(CONCAT22(uStack4,local_6),pRStack14);
     if (BVar6 == 0) goto LAB_1020_5a16;
     uStack18 = mixed_1010_20ba(paVar9,_u16_1050_0ed0,CONCAT22(in_stack_0000ffcc,0x2),in_stack_0000fe74,
                                in_stack_0000ff98,in_stack_0000ff9e,in_stack_0000ffa2);
@@ -642,7 +642,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
     paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
     pRStack14 = uVar14;
     uStack12 = (uVar14 >> 0x10);
-    BVar6 = PtInRect16((POINT16)CONCAT22(uStack4,local_6),pRStack14);
+    BVar6 = PtInRect16(CONCAT22(uStack4,local_6),pRStack14);
     if (BVar6 == 0) goto LAB_1020_5942;
     wparam = 0x68;
   }
@@ -684,7 +684,7 @@ let mut in_DX: u16;
   if (uVar2 != 0) {
     uStack10 = pass1_1020_6498(iVar5.field243_0xf6,0x2);
     in_DX = (uStack10 >> 0x10);
-    BVar3 = PtInRect16((POINT16)CONCAT22(IStack4,local_6),uStack10);
+    BVar3 = PtInRect16(CONCAT22(IStack4,local_6),uStack10);
     if (BVar3 != 0) {
       PostMessage16(0x0,0x131,0x111,HWND16_1050_0396);
       return 0x1;
@@ -939,10 +939,10 @@ pub fn win_ui_op_1020_5e76(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 )
     }
     if (puVar3 == 0x6b6) {
       load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_aa,(short)&DAT_1050_1050);
+                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_aa,&DAT_1050_1050);
       load_string_1010_84e0
                 (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_1aa,
-                 (short)&DAT_1050_1050);
+                 &DAT_1050_1050);
       uVar5 = sys_1000_3f9c(CONCAT13(0x10,CONCAT12(0x50,&stack0xfd56)),CONCAT22(0x1050,local_1aa),
                             PTR_LOOP_1050_50cc);
       uVar14 = 0;

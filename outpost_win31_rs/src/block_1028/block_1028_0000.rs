@@ -11,18 +11,18 @@ pub fn struct_1028_0068(param_1: *mut astruct_57,param_2: *mut astruct_180)
   iVar2 = param_2;
   uVar1 = 0;
   (iVar2 + 1).field0_0x0 = 0;
-  &iVar2[0x1].field1_0x2 = 0;
+  iVar2[0x1].field1_0x2 = 0;
   param_2.field0_0x0 = 0x8ec;
   iVar2.field1_0x2 = 0x1028;
   mem_op_1000_179c(0xc,param_1);
   uVar2 = param_1 | uVar1;
   if (uVar2 == 0) {
-    &iVar2[0x1].field1_0x2 = 0;
+    iVar2[0x1].field1_0x2 = 0;
   }
   else {
     set_struct_1008_574a(CONCAT22(param_1,uVar1));
     iVar2[0x1].field1_0x2 = uVar1;
-    &iVar2[0x1].field_0x4 = uVar2;
+    iVar2[0x1].field_0x4 = uVar2;
   }
   return;
 }
@@ -220,7 +220,7 @@ pub fn pass1_1028_0374(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_3
       BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,&local_4),0x2);
       if (BVar2 != 0) {
         uStack6 = 0;
-        while( true ) {
+        loop {
           if (local_4 <= uStack6) {
             return;
           }

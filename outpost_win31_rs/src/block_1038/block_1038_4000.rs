@@ -734,7 +734,7 @@ pub fn pass1_1038_4d0e(param_1: *mut astruct_685,mut param_2: u16 )
 
 
 
-char * pass1_1038_4d28(param_1: *mut c_char)
+pub unsafe fn pass1_1038_4d28(param_1: *mut c_char) -> *mut c_char
 
 {
   let mut uVar1: u16;
@@ -820,7 +820,7 @@ pub fn pass1_1038_4d6e(mut param_1: u16 ,param_2: *mut u8,param_3: *mut astruct_
       paStack26 = CONCAT22(uVar7,uVar3);
       uVar4 = pass1_1030_6fa0(CONCAT22(uVar7,uVar3));
       iStack30 = 0;
-      while( true ) {
+      loop {
         piVar1 = (param_4 + 0x4);
         if (*piVar1 == iStack30 || *piVar1 < iStack30) break;
         if ((*param_4 + iStack30 * 0x2) == uVar4) {
@@ -890,7 +890,7 @@ pub fn pass1_1038_4e78(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
     if (uVar6 != 0) {
       uVar3 = pass1_1030_6fa0(uVar4 & 0xffff | uVar5 << 0x10);
       iStack26 = 0;
-      while( true ) {
+      loop {
         piVar1 = (param_4 + 0x4);
         if (*piVar1 == iStack26 || *piVar1 < iStack26) break;
         if ((*param_4 + iStack26 * 0x2) == uVar3) {

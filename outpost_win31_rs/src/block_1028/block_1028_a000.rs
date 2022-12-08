@@ -415,10 +415,10 @@ pub unsafe fn pass1_1028_a73c(mut param_1: u16 ) -> u16
   paVar1: *mut astruct_92;
   paVar2: *mut astruct_92;
   let mut uVar3: u16;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-  while( true ) {
+  loop {
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     uVar3 = param_1 | paVar1;
@@ -503,10 +503,10 @@ pub unsafe fn pass1_1028_a89c(mut param_1: u16 ) -> u16
 {
   paVar1: *mut astruct_92;
   let mut uVar2: u16;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-  while( true ) {
+  loop {
     uVar2 = param_1;
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
@@ -596,10 +596,10 @@ pub unsafe fn pass1_1028_a9f4(mut param_1: u16 ) -> u16
   let mut uVar4: u16;
   let mut extraout_DX: u16;
   let mut puStack24: *mut u32;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x700);
-  while( true ) {
+  loop {
     paVar2 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar2));
     puStack24 = CONCAT22(param_1,paVar2);
@@ -694,7 +694,7 @@ pub unsafe fn pass1_1028_ab68(mut param_1: u16 ) -> u16
   let mut uVar5: u16;
   let mut extraout_DX: u16;
   let mut puStack24: *mut u32;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT13(0x10,CONCAT12(0x50,&local_14)),0x1,0x0,0x700);//
 // LAB_1028_ab7e:
@@ -797,10 +797,10 @@ pub unsafe fn pass1_1028_acec(mut param_1: u16 ) -> u16
   paVar1: *mut astruct_92;
   paVar2: *mut astruct_92;
   let mut uVar3: u16;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-  while( true ) {
+  loop {
     uVar3 = param_1;
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
@@ -816,7 +816,7 @@ pub unsafe fn pass1_1028_acec(mut param_1: u16 ) -> u16
   local_14 = 0x389a;
   local_14.field2_0x2 = 0x1008;
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x800);
-  while( true ) {
+  loop {
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     uVar3 = param_1 | paVar1;
@@ -887,10 +887,10 @@ pub fn pass1_1028_ae66(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u3
   struct_op_1028_d1dc(param_1,0x1387);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field259_0x108 = param_4;
-  &iVar1.field262_0x10c = param_3;
+  iVar1.field259_0x108 = param_4;
+  iVar1.field262_0x10c = param_3;
   iVar1.field264_0x110 = param_2;
-  &iVar1.field265_0x114 = 0;
+  iVar1.field265_0x114 = 0;
   param_1.offset_0x0 = 0xb0ce;
   iVar1.segment_0x2 = 0x1028;
   unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),s_SCStarve_1050_5156);

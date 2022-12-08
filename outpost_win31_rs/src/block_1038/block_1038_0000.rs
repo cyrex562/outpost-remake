@@ -106,7 +106,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
         uStack8 = 0x1;
         puStack40 = (param_6 + 0x22);
         pass1_1008_5784(CONCAT22(0x1050,local_30),puStack40);
-        while( true ) {
+        loop {
           uVar11 = uVar9;
           puVar8 = local_30;
           unaff_CS = 0x1008;

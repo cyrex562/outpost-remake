@@ -176,11 +176,11 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
     pcStack34 = *&iVar9.field_0x70;
     pcStack30 = pcStack34;
     fn_ptr_1000_17ce(pcStack34);
-    &iVar9.field_0x70 = 0;
+    iVar9.field_0x70 = 0;
   }
   iVar4 = iVar9.field112_0x74 << 0x7;
   mem_op_1000_179c(iVar4,paVar8);
-  &iVar9.field_0x70 = iVar4;
+  iVar9.field_0x70 = iVar4;
   iVar9.field111_0x72 = paVar8;
   pass1_1030_8344(_u16_1050_5748,iVar9.field108_0x6c);
   uStack14 = CONCAT22(paVar8,iVar4);
@@ -199,7 +199,7 @@ pub fn pass1_1010_41d6(param_1: *mut astruct_57,param_2: *mut astruct_243,mut pa
     pcStack20 = pcStack30;
   }
   uStack24 = 0;
-  while( true ) {
+  loop {
     puVar6 = uVar9;
     uVar13 = (uStack10 >> 0x10);
     puVar1 = (uStack10 + 0x22);
@@ -539,7 +539,7 @@ pub fn draw_op_1010_47d0(param_1: *mut astruct_27,mut param_2: u16 ,mut param_3:
   let mut uStack10: u16;
   let mut uStack8: u16;
   let mut stock_obj_handle: HGDIOBJ16;
-  HPEN16 pen_handle;
+  pen_handle: HPEN16;
   let mut uVar4: u32;
   let mut puVar2: *mut u32;
   let mut uVar13: u16;
@@ -590,7 +590,7 @@ pub fn draw_op_1010_47d0(param_1: *mut astruct_27,mut param_2: u16 ,mut param_3:
   handle = SelectObject16(pen_handle,hdc16_var_1);
   hgdiobj16_00 = SelectObject16(stock_obj_handle,hdc16_var_1);
   iStack32 = 0;
-  while( true ) {
+  loop {
     piVar1 = &param_1[0x1].field_0x1e;
     if (*piVar1 == iStack32 || *piVar1 < iStack32) break;
     iVar4 = ((iStack32 * 0x10 + param_3) * 0x8);
@@ -810,7 +810,7 @@ pub fn free_rsrc_1010_4b3e(param_1: *mut StructD)
   &pstructd_1.field_0x2a = 0;
   if (**(i32 **)&pstructd_1.field11_0x12 != 0) {
     iStack4 = 0;
-    while( true ) {
+    loop {
       puVar3 = &pstructd_1.field11_0x12;
       piVar1 = (puVar3 + 0x8);
       if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
@@ -909,7 +909,7 @@ pub fn pass1_1010_4c3e(mut param_1: u32,mut param_2: i16,mut param_3: i16,param_
     pass1_1008_3e38(CONCAT22(0x1050,local_c));
     uStack6 = 0;
     iStack14 = 0;
-    while( true ) {
+    loop {
       piVar1 = (iVar5 + 0x30);
       if (*piVar1 == iStack14 || *piVar1 < iStack14) break;
       uVar4 = (iVar5 + 0x12);
@@ -948,7 +948,7 @@ pub fn struct_1010_4d5c(param_1: *mut u8,param_2: *mut astruct_245,mut param_3: 
   if (&iVar3.field_0x1a == 0) {
     iVar4 = iVar3.field47_0x30 << 0x3;
     mem_op_1000_179c(iVar4,paVar5);
-    &iVar3.field_0x1a = iVar4;
+    iVar3.field_0x1a = iVar4;
     iVar3.field28_0x1c = paVar5;
   }
   uVar2 = &iVar3.field_0x1a;
@@ -1001,7 +1001,7 @@ pub fn pt_in_rect_1010_4e08(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 
   let mut iStack10: i16;
   POPStack8: INT16;
 
-  PStack8 = (POINT16)CONCAT22(param_2,param_3);
+  PStack8 = CONCAT22(param_2,param_3);
   uVar5 = (param_1 >> 0x10);
   iVar4 = param_1;
   (iVar4 + 0x22) = (iVar4 + 0x20);

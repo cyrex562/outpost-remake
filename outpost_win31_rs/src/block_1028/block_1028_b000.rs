@@ -222,7 +222,7 @@ pub fn pass1_1028_b39e(param_1: *mut StructD,param_2: *mut astruct_12,mut param_
   param_2.field0_0x0 = 0xcf6a;
   iVar1.field1_0x2 = 0x1028;
   pass1_1028_bf76(0x0,(param_2 & 0xffff | uVar1 << 0x10));
-  &iVar1.field_0x14 = 0;
+  iVar1.field_0x14 = 0;
   if ((0x4e < iVar1.field10_0xc) && (iVar1.field10_0xc < 0x70)) {
     iVar1.field11_0xe = 0x6b;
   }
@@ -884,7 +884,7 @@ pub fn pass1_1028_bd38(mut param_1: u16 ,param_2: *mut astruct_15)
   let mut extraout_DX: u16;
   let mut iStack20: i16;
 
-  pstruct117_5 = *(astruct_117 **)(_PTR_LOOP_1050_65e2 + 0x52);
+  pstruct117_5 = (_PTR_LOOP_1050_65e2 + 0x52);
   pass1_1030_4bbe(param_1,pstruct117_5,(param_2 + 0xc));
   pstruct117_4 = pstruct117_5;
   pstruct117_6 = pstruct117_4;

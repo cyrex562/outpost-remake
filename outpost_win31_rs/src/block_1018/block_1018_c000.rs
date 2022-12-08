@@ -41,7 +41,7 @@ pub fn pass1_1018_c402(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: u
   else {
     load_string_1010_84ac(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),param_4);
   }
-  (u16*)&iVar4[0x1].field15_0x26 = puVar2;
+  &iVar4[0x1].field15_0x26 = puVar2;
   (&iVar4[0x1].field15_0x26 + 0x2) = paVar3;//
 // LAB_1018_c4bb:
   puVar4 = mixed_1010_20ba(paVar3,_u16_1050_0ed0,CONCAT22(in_stack_0000ffe6,0x48),in_stack_0000fe8e,
@@ -150,7 +150,7 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
   rect_34 = (RECT16)0x0;
   iStack48 = iVar4.field239_0xf6 + -0x1;
   iStack46 = iVar4.field240_0xf8 + -0x1;
-  FillRect16(hbrush_44,&rect_34,(HDC16)&DAT_1050_1050);
+  FillRect16(hbrush_44,&rect_34,&DAT_1050_1050);
   DeleteObject16(hbrush_44);
   uVar3 = iVar4.field225_0xe2;
   paVar1 = (uVar3 + 0xe);
@@ -171,7 +171,7 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
   fn_ptr_1 = (uVar4 + 0x4);
   (**fn_ptr_1)(0x1008,uVar10,uVar11,iVar4.field242_0xfc + iVar4.field243_0xfe + iVar3,
                iVar4.field241_0xfa + (0x280 - iVar1) / 0x2,&hdc_2a,&DAT_1050_1050);
-  draw_text_1018_c742(extraout_DX,param_2,(HDC16)&hdc_2a,&DAT_1050_1050,uVar10);
+  draw_text_1018_c742(extraout_DX,param_2,&hdc_2a,&DAT_1050_1050,uVar10);
   obj = SelectPalette16(0x0,hpal,hdc_2a);
   DeleteObject16(obj);
   EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar4.hwnd_0x8);
@@ -635,7 +635,7 @@ pub fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut para
   rect_var34 = (RECT16)0x0;
   iStack48 = struct36_var3.field239_0xf6 + -0x1;
   iStack46 = struct36_var3.field240_0xf8 + -0x1;
-  FillRect16(brush_handle_var44,&rect_var34,(HDC16)&DAT_1050_1050);
+  FillRect16(brush_handle_var44,&rect_var34,&DAT_1050_1050);
   DeleteObject16(brush_handle_var44);
   uVar2 = struct36_var3.field225_0xe2;
   paVar1 = (uVar2 + 0xe);
@@ -659,7 +659,7 @@ pub fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut para
   fn_ptr_2 = (paVar1 + 0x4);
   (**fn_ptr_2)(0x1008,uVar13,uVar8,struct36_var3.field242_0xfc + struct36_var3.field243_0xfe + iVar2,
                struct36_var3.field241_0xfa + iVar4,&hdc_2a,&DAT_1050_1050);
-  draw_text_1018_c742(uVar12,struct36_param_1,(HDC16)&hdc_2a,&DAT_1050_1050,uVar13);
+  draw_text_1018_c742(uVar12,struct36_param_1,&hdc_2a,&DAT_1050_1050,uVar13);
   selected_obj = SelectPalette16(0x0,hpalette_var1,hdc_2a);
   DeleteObject16(selected_obj);
   EndPaint16(CONCAT22(0x1050,paintstruct_var_22),struct36_var3.hwnd_0x8);
@@ -756,7 +756,7 @@ pub fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,struct36
   rect_34 = (RECT16)0x0;
   iStack48 = struct36_var5.field239_0xf6 + -0x1;
   iStack46 = struct36_var5.field240_0xf8 + -0x1;
-  FillRect16(hbrush_44,&rect_34,(HDC16)&DAT_1050_1050);
+  FillRect16(hbrush_44,&rect_34,&DAT_1050_1050);
   DeleteObject16(hbrush_44);
   uVar3 = struct36_var5.field225_0xe2;
   struct76_var1 = (uVar3 + 0xe);
@@ -780,7 +780,7 @@ pub fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,struct36
   fn_ptr_2 = (struct76_var1 + 0x4);
   (**fn_ptr_2)(0x1008,uVar11,uVar8,struct36_var5.field242_0xfc + struct36_var5.field243_0xfe + iVar4,
                struct36_var5.field241_0xfa + iVar3,&local_2a,&DAT_1050_1050);
-  draw_text_1018_c742(uVar10,struct36_param_1,(HDC16)&local_2a,&DAT_1050_1050,uVar11);
+  draw_text_1018_c742(uVar10,struct36_param_1,&local_2a,&DAT_1050_1050,uVar11);
   obj = SelectPalette16(0x0,hpal,local_2a);
   DeleteObject16(obj);
   EndPaint16(CONCAT22(0x1050,paintstruct_22),struct36_var5.hwnd_0x8);

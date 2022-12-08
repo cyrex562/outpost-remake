@@ -70,9 +70,9 @@ pub fn unk_win_ui_op_1020_717e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut
   get_sys_metrics_1020_7c1a(param_3,param_4);
   uVar7 = (param_3 >> 0x10);
   iVar7 = param_3;
-  &iVar7.field17_0x14 = 0;
+  iVar7.field17_0x14 = 0;
   iVar7.field20_0x18 = param_4;
-  &iVar7.field21_0x1c = 0;
+  iVar7.field21_0x1c = 0;
   (&iVar7[0x1].field0_0x0 + 1) = 0;
   param_3.field0_0x0 = 0x754c;
   iVar7.field1_0x2 = 0x1020;
@@ -81,7 +81,7 @@ pub fn unk_win_ui_op_1020_717e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut
   uVar5 = (paVar11 >> 0x10);
   iVar7.field21_0x1c = puVar12;
   uVar9 = (puVar12 >> 0x10);
-  &iVar7.field_0x1e = uVar9;
+  iVar7.field_0x1e = uVar9;
   ppcVar2 = (*&iVar7.field21_0x1c + 0x4);
   (**ppcVar2)(0x1010,iVar7.field21_0x1c,uVar9,0x0,param_3);
   local_4 = GetDC16(iVar7.hwnd_0x4);
@@ -229,7 +229,7 @@ pub fn win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788) -> BOOL1
     rect_30 = RVar9 & 0xffff | in_DX << 0x10;
     pass1_1008_3e54(CONCAT13(0x10,CONCAT12(0x50,local_42)),0x0,0x35,0xc);
     if (&struct_1.field19_0x14 != 0) {
-      pass1_1008_5236(*(astruct_109 **)&struct_1.field19_0x14);
+      pass1_1008_5236(&struct_1.field19_0x14);
     }
     if (rect_30 != 0) {
       uVar1 = struct_1.field19_0x14;
@@ -267,7 +267,7 @@ pub fn win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788) -> BOOL1
       HStack54 = (iStack42 - rect_30.y) - 0x1;
       HStack52 = HStack54;
       iStack50 = iStack56;
-      FillRect16(local_rect,&local_brush_handle,(HDC16)&DAT_1050_1050);
+      FillRect16(local_rect,&local_brush_handle,&DAT_1050_1050);
       DrawIcon16(hicon_38,0x2,0x2,hdc_24);
     }
   }
@@ -309,7 +309,7 @@ pub fn struct_1020_7554(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   unk_draw_op_1020_7f7a(param_2,0x5,CONCAT22(param_4,param_3),param_5);
   uVar3 = (param_2 >> 0x10);
   iVar2 = param_2;
-  &iVar2[0x1].field5_0xc = 0;
+  iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
   param_2.offset_0x0 = 0x7780;
   iVar2.base_0x2 = 0x1020;
@@ -318,9 +318,9 @@ pub fn struct_1020_7554(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   puVar4 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0x25),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
   uVar1 = (puVar4 >> 0x10);
-  &iVar2[0x1].field7_0x10 = puVar4;
+  iVar2[0x1].field7_0x10 = puVar4;
   (&iVar2[0x1].field7_0x10 + 0x2) = uVar1;
-  &iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
+  iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
   (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
   return;
 }
@@ -334,8 +334,8 @@ pub fn pass1_1020_75c4(param_1: *mut StructD)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0x7780;
   iVar1.address_offset_field_0x2 = 0x1020;
-  &iVar1.field_0xe2 = 0x781c;
-  &iVar1.field_0xe4 = 0x1020;
+  iVar1.field_0xe2 = 0x781c;
+  iVar1.field_0xe4 = 0x1020;
   pass1_1020_808e(param_1);
   return;
 }
@@ -420,7 +420,7 @@ pub fn window_op_1020_76aa(param_1: *mut StructA,param_2: *mut astruct_666)
     iVar1[0x1].field19_0x24 = uVar3;
     return;
   }
-  &iVar1[0x1].field18_0x22 = 0;
+  iVar1[0x1].field18_0x22 = 0;
   return;
 }
 pub fn pass1_1020_770e(mut param_1: u32)
@@ -694,19 +694,19 @@ pub fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40,param_2: *mut StructA)
   param_1.field0_0x0 = 0x3ab0;
   iVar3.field1_0x2 = 0x1008;
   *(StructA **)&iVar3.field_0x6 = param_2;
-  &iVar3.field_0xa = 0;
-  &iVar3.field_0xe = 0;
-  &iVar3.field_0x10 = 0;
-  &iVar3.field_0x12 = 0;
+  iVar3.field_0xa = 0;
+  iVar3.field_0xe = 0;
+  iVar3.field_0x10 = 0;
+  iVar3.field_0x12 = 0;
   param_1.field0_0x0 = 0x7f72;
   iVar3.field1_0x2 = 0x1020;
-  &iVar3.field_0xa = (param_2 + 0xe4);
+  iVar3.field_0xa = (param_2 + 0xe4);
   IVar1 = GetSystemMetrics16(SM_CYCAPTION);
-  &iVar3.field_0xe = IVar1;
+  iVar3.field_0xe = IVar1;
   IVar1 = GetSystemMetrics16(SM_CXBORDER);
-  &iVar3.field_0x10 = IVar1;
+  iVar3.field_0x10 = IVar1;
   IVar1 = GetSystemMetrics16(SM_CYBORDER);
-  &iVar3.field_0x12 = IVar1;
+  iVar3.field_0x12 = IVar1;
   return;
 }
 
@@ -727,7 +727,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
   let mut iVar9: i16;
   let mut puVar6: *mut u32;
   let mut iVar5: i16;
-  HPEN16 handle;
+  handle: HPEN16;
   let mut string_1: *mut c_char;
   let mut y: i16;
   let mut extraout_DX: u16;

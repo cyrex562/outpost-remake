@@ -35,7 +35,7 @@ pub fn pass1_1010_a0a0(mut param_1: u16 ,param_2: *mut astruct_252)
     iStack12 = 0x2;
   }
   loop {
-    while( true ) {
+    loop {
       uVar6 = uVar9;
       uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       uVar9 = (uVar6 | uVar4);
@@ -570,7 +570,7 @@ pub fn pass1_1010_abd2(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut 
   bVar1 = false;
   iStack16 = param_4;
   piStack20 = CONCAT22(0x1050,&stack0x000a);
-  while( true ) {
+  loop {
     piVar2 = piStack20;
     if (iStack16 == 0) {
       return;
@@ -603,7 +603,7 @@ pub unsafe fn pass1_1010_ac62(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * load_string_1010_ac92(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16)
+pub unsafe fn load_string_1010_ac92(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
@@ -680,7 +680,7 @@ pub fn pass1_1010_ad64(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * string_op_1010_ada6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,mut param_5: i16)
+pub unsafe fn string_op_1010_ada6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,mut param_5: i16) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;

@@ -237,14 +237,14 @@ pub fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut par
   uVar4 = param_1 | uVar3;
   paVar5 = (param_1 & 0xffff0000 | uVar4);
   if (uVar4 == 0) {
-    &iVar9[0x1].field1_0x2 = 0;
+    iVar9[0x1].field1_0x2 = 0;
   }
   else {
     struct_1040_a598(CONCAT22(param_1,uVar3));
     iVar9[0x1].field1_0x2 = uVar3;
     iVar9[0x1].field2_0x4 = paVar5;
   }
-  *(u16*)&iVar9[0x1].field1_0x2 = 0x6;
+  *&iVar9[0x1].field1_0x2 = 0x6;
   iVar6 = *&iVar9[0x1].field1_0x2;
   uVar3 = iVar6 * 0xa + 2;
   mem_op_1000_179c(uVar3,paVar5);
@@ -363,7 +363,7 @@ pub fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3
                mixed_1010_20ba(paVar8,_u16_1050_0ed0,CONCAT22(unaff_SI,0x3),in_stack_0000fe80,
                                in_stack_0000ffa4,in_stack_0000ffaa,in_stack_0000ffae);
     paVar8 = (paVar8 & 0xffff0000 | paStack6 >> 0x10);
-    pSVar5 = *(StructD **)&param_2.field138_0x90;
+    pSVar5 = &param_2.field138_0x90;
     if (pSVar5.is_null() == false) {
       pSStack10 = pSVar5;
     // 0x0018
@@ -381,7 +381,7 @@ pub fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3
       }
       param_2.field138_0x90 = uVar3;
       param_2.field139_0x92 = paVar10;
-      *(u16*)&param_2.field138_0x90 = 0x6;
+      *&param_2.field138_0x90 = 0x6;
       iStack12 = *&param_2.field138_0x90;
       uVar3 = iStack12 * 0xa + 2;
       mem_op_1000_179c(uVar3,paVar10);
@@ -409,7 +409,7 @@ pub fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3
       uVar2 = &param_2.field138_0x90;
       (uVar2 + 0x12) = &param_2.field_0xa;
       uVar12 = 0x1010;
-      pass1_1010_a50c(paStack6,&u32_1050_5d78,*(StructD **)&param_2.field138_0x90);
+      pass1_1010_a50c(paStack6,&u32_1050_5d78,&param_2.field138_0x90);
       if (pSStack10.is_null() == false) {
         pass1_1040_a5d0(pSStack10);
         uVar12 = 0x1000;
@@ -451,7 +451,7 @@ pub fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct_741)
   let mut uVar1: u16;
   let mut caption_height_px: i16;
   let mut IVar2: i16;
-  HPEN16 handle;
+  handle: HPEN16;
   let mut handle_00: HGDIOBJ16;
   let mut IVar3: i16;
   let mut y: i16;
@@ -718,7 +718,7 @@ pub fn pass1_1040_5dc4(param_1: *mut u8,StructB *param_2)
   pass1_1010_a5ca(uVar3,uVar5,uVar3,uVar5,iVar7[0x7].field7_0xe);
   if (uVar3 == 0) {
     iVar7[0x7].max_count_field_0x10 = 0;
-    &iVar7[0x7].field8_0x10 = 0x1;
+    iVar7[0x7].field8_0x10 = 0x1;
   }
   if (-0x1 < uVar3) {
     if (iVar7[0x7].field7_0xe < 0x72) {

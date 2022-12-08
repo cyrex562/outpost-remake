@@ -312,7 +312,7 @@ pub fn pass1_1028_c3aa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u16,mut
       (**ppcVar1)(&u16_1050_1038,uVar4,uVar10);
       uStack36 = CONCAT22(uVar13,uVar5);
       uStack40 = 0;
-      while( true ) {
+      loop {
         if (uStack36 <= uStack40) {
           if (puStack32.is_null() == false) {
             ppcVar1 = *puStack32;
@@ -1041,7 +1041,7 @@ pub fn pass1_1028_d01a(param_1: u32)
 
   puVar1 = **param_1;
   puStack14 = puVar1;
-  while( true ) {
+  loop {
     uVar4 = puStack14;
     fn_ptr_1028_d728(puVar1);
     puStack14 = CONCAT22(extraout_DX,uVar4);

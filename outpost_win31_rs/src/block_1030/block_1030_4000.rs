@@ -161,7 +161,7 @@ pub fn pass1_1030_4628(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut 
     uVar4 = ((uVar2 * 0x5e + 0x534e) + iVar7) - 0x1;
     pass1_1008_612e(uVar4,iVar7,uVar4);
     iStack24 = 0;
-    while( true ) {
+    loop {
       if (iStack10 < iStack24) {
         uVar1 = (iVar6 + 0x24);
         (uVar1 + iStack10 * 0x2) = uVar4;
@@ -387,7 +387,7 @@ pub fn pass1_1030_4782(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
           uStack166 = uVar4;
           pass1_1008_612e(uVar4,0x0,iStack158);
           param_7 = 0;
-          while( true ) {
+          loop {
             iVar10 = pcStack174;
             uVar11 = (pcStack174 >> 0x10);
             uVar12 = (pcStack178 >> 0x10);
@@ -485,7 +485,7 @@ pub fn pass1_1030_4c52(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     uVar1 = pass1_1000_47a4(param_4,s___1050_518a);
     pcStack8 = CONCAT22(param_5,uVar1);
     if ((param_5 | uVar1) == 0) break;
@@ -538,7 +538,7 @@ pub fn pass1_1030_4d3a(mut param_1: u16 ,param_2: *mut astruct_117,param_3: *mut
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     uVar1 = pass1_1000_47a4(param_4,s___1050_518a);
     pcStack8 = CONCAT22(param_1,uVar1);
     if ((param_1 | uVar1) == 0) break;
@@ -575,12 +575,12 @@ pub fn pass1_1030_4dbc(param_1: *mut astruct_117,mut param_2: u32,param_3: i32)
   iVar5 = param_1;
   uVar5 = (param_1 >> 0x10);
   if (0x0 < param_3) {
-    &iVar5[0xd].field_0xe = param_2;
+    iVar5[0xd].field_0xe = param_2;
     iVar5[0xd].field15_0x12 = param_3;
   }
   if ((&iVar5[0xd].field_0xe == 0) ||
      (lVar3 = iVar5[0xd].field15_0x12, plVar1 = &iVar5[0xd].field15_0x12, *plVar1 = *plVar1 + -0x1, lVar3 == 0)) {
-    &iVar5[0xd].field_0xe = 0;
+    iVar5[0xd].field_0xe = 0;
   }
   else {
     uVar4 = str_op_1000_3da4(*&iVar5[0xd].field_0xe);

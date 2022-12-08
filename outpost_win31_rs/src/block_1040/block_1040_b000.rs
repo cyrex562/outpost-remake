@@ -9,7 +9,7 @@ pub fn struct_1040_b082(param_1: *mut astruct_57,mut param_2: u32)
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 1).field0_0x0 = 0;
-  &iVar1[0x1].field1_0x2 = 0;
+  iVar1[0x1].field1_0x2 = 0;
   param_1.field0_0x0 = 0xb772;
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   return;
@@ -24,7 +24,7 @@ pub fn pass1_1040_b0bc(param_1: *mut astruct_57,mut param_2: u32,mut param_3: u3
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
   (iVar1 + 1).field0_0x0 = 0;
-  &iVar1[0x1].field1_0x2 = param_2;
+  iVar1[0x1].field1_0x2 = param_2;
   param_1.field0_0x0 = 0xb772;
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   return;
@@ -61,7 +61,7 @@ pub fn unk_draw_op_1040_b0f8(mut param_1: u16 ,param_2: *mut StructD)
   pass1_1010_7b8c(puVar3,&iVar3.field_0x6);
   if (&iVar3.field_0x8e != 0) {
     DeleteObject16(&iVar3.field_0x8e);
-    &iVar3.field_0x8e = 0;
+    iVar3.field_0x8e = 0;
   }
   uVar1 = &iVar3.field_0x90;
   uVar2 = &iVar3.field_0x92;
@@ -101,7 +101,7 @@ pub fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32)
 
   paVar4 = CONCAT22(in_register_0000000a,param_1);
   iStack4 = 0;
-  while( true ) {
+  loop {
     uVar7 = (param_2 >> 0x10);
     iVar6 = param_2;
     piVar1 = (iVar6 + 0x90);
@@ -116,7 +116,7 @@ pub fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32)
                            in_stack_0000ffc2);
   uVar5 = puVar8 >> 0x10;
   uVar2 = (iVar6 + 0x90);
-  puStack12 = (u16*)(uVar2 + 2);
+  puStack12 = (uVar2 + 2);
   for (iStack4 = 0; piVar1 = (iVar6 + 0x90), *piVar1 != iStack4 && iStack4 <= *piVar1; iStack4 += 1) {
     ppuVar9 = (ppuVar9 & 0xffff0000);
     uVar2 = (iVar6 + 0x90);
@@ -219,7 +219,7 @@ pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_ui_op_1040_b372(mut param_1: u32,HWND16 hwnd_param_2,mut param_3: u16 ,hdc_param_4: HDC16)
+pub fn win_ui_op_1040_b372(mut param_1: u32,hwnd_param_2: HWND16,mut param_3: u16 ,hdc_param_4: HDC16)
 
 {
   let mut uVar1: u16;
@@ -236,7 +236,7 @@ pub fn win_ui_op_1040_b372(mut param_1: u32,HWND16 hwnd_param_2,mut param_3: u16
   uVar5 = (param_1 >> 0x10);
   if ((param_1 + 0x8e) == 0) {
     local_brush_handle = CreateSolidBrush16(WHITE_BRUSH);
-    *(HBRUSH16 *)(param_1 + 0x8e) = local_brush_handle;
+    (param_1 + 0x8e) = local_brush_handle;
   }
   if (_PTR_LOOP_1050_5efa == 0) {
     uVar2 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
@@ -401,7 +401,7 @@ pub fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u
     puVar11 = mixed_1010_20ba(paVar8,_u16_1050_0ed0,CONCAT22(in_stack_0000ffe6,0x3),in_stack_0000fe8e,
                               in_stack_0000ffb2,in_stack_0000ffb8,in_stack_0000ffbc);
     uVar7 = (puVar11 >> 0x10);
-    pSVar1 = *(StructD **)(param_2 + 0x90);
+    pSVar1 = (param_2 + 0x90);
     if (pSVar1.is_null() == false) {
       uVar10 = (pSVar1 >> 0x10);
       uVar15 = 0x1010;
@@ -411,7 +411,7 @@ pub fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u
       (param_2 + 0x90) = pSVar6;
       (param_2 + 0x92) = uVar7;
       if ((uVar7 | (param_2 + 0x90)) == 0) {
-        *(StructD **)(param_2 + 0x90) = pSVar1;
+        (param_2 + 0x90) = pSVar1;
       }
       else {
         if (pSVar1.is_null() == false) {
@@ -542,16 +542,16 @@ pub fn pass1_1040_b7ee(param_1: *mut astruct_57,param_2: i32,mut param_3: u16 )
   pass1_1040_b0bc(param_1,0x0,CONCAT22(param_3,0xfab));
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1[0x1].field3_0x6 = 0;
-  &iVar1[0x1].field5_0xa = 0;
-  &iVar1[0x1].field18_0x22 = 0;
+  iVar1[0x1].field3_0x6 = 0;
+  iVar1[0x1].field5_0xa = 0;
+  iVar1[0x1].field18_0x22 = 0;
   iVar1[0x1].field21_0x26 = 0;
-  &iVar1[0x1].field_0x28 = 0;
+  iVar1[0x1].field_0x28 = 0;
   param_1.field0_0x0 = 0xbeba;
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   if (param_2 != 0) {
     uVar2 = (param_2 >> 0x10);
-    &iVar1[0x1].field18_0x22 = (param_2 + 0x6);
+    iVar1[0x1].field18_0x22 = (param_2 + 0x6);
     iVar1[0x1].field21_0x26 = (param_2 + 0x14);
   }
   return;

@@ -39,7 +39,7 @@ pub fn pass1_1038_9144(mut param_1: u16 ,param_2: *mut u16,mut param_3: u16 )
   iVar6 = param_2;
   iVar6[0x1].field3_0x6 = 0;
   iVar6[0x1].field4_0x8 = 0;
-  &iVar6[0x1].field5_0xa = 0;
+  iVar6[0x1].field5_0xa = 0;
   *param_2 = 0x99a2;
   iVar6.field1_0x2 = &u16_1050_1038;
   iVar6.field105_0x8a = 0x27;
@@ -53,14 +53,14 @@ pub fn pass1_1038_9144(mut param_1: u16 ,param_2: *mut u16,mut param_3: u16 )
   uVar3 = paVar4 | uVar2;
   paVar5 = (paVar4 & 0xffff0000 | uVar3);
   if (uVar3 == 0) {
-    &iVar6[0x1].field1_0x2 = 0;
+    iVar6[0x1].field1_0x2 = 0;
   }
   else {
     struct_1040_a598(CONCAT22(paVar4,uVar2));
     iVar6[0x1].field1_0x2 = uVar2;
     iVar6[0x1].field2_0x4 = paVar5;
   }
-  *(u16*)&iVar6[0x1].field1_0x2 = 0x11;
+  *&iVar6[0x1].field1_0x2 = 0x11;
   iVar7 = *&iVar6[0x1].field1_0x2;
   uVar2 = iVar7 * 0xa + 2;
   mem_op_1000_179c(uVar2,paVar5);
@@ -155,7 +155,7 @@ pub fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mu
                mixed_1010_20ba(paVar7,_u16_1050_0ed0,CONCAT22(unaff_SI,0x3),in_stack_0000fe88,
                                in_stack_0000ffac,in_stack_0000ffb2,in_stack_0000ffb6);
     paVar7 = (paVar7 & 0xffff0000 | paStack6 >> 0x10);
-    pSVar5 = *(StructD **)(param_2 + 0x90);
+    pSVar5 = (param_2 + 0x90);
     if (pSVar5.is_null() == false) {
       pSStack10 = pSVar5;
       mem_op_1000_179c(0x18,paVar7);
@@ -200,7 +200,7 @@ pub fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mu
       uVar2 = (param_2 + 0x90);
       (uVar2 + 0x12) = (param_2 + 0xa);
       uVar10 = 0x1010;
-      pass1_1010_a50c(paStack6,&u32_1050_5b42,*(StructD **)(param_2 + 0x90));
+      pass1_1010_a50c(paStack6,&u32_1050_5b42,(param_2 + 0x90));
       pSStack20 = pSStack10;
       pSStack16 = pSStack10;
       if (pSStack10.is_null() == false) {
@@ -484,7 +484,7 @@ pub unsafe fn pass1_1038_993a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i
   let mut iStack6: i16;
 
   iStack6 = 0;
-  while( true ) {
+  loop {
     if (0xe < iStack6) {
       return -0x1;
     }

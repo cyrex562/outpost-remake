@@ -154,7 +154,7 @@ pub fn mov_update_win_1040_93aa(param_1: *mut astruct_65,param_2: INT16,mut para
 
 
 
-LRESULT pass1_1040_93e6(mut param_1: u32)
+pub unsafe fn pass1_1040_93e6(mut param_1: u32) -> LRESULT
 
 {
   let mut uVar1: u16;
@@ -167,7 +167,7 @@ LRESULT pass1_1040_93e6(mut param_1: u32)
 
 
 
-LRESULT send_msg_1040_9404(mut param_1: u32)
+pub unsafe fn send_msg_1040_9404(mut param_1: u32) -> LRESULT
 
 {
   let mut uVar1: u16;
@@ -318,7 +318,7 @@ pub fn draw_text_1040_9650(param_1: *mut astruct_65)
   ReleaseDC16(hdc,0x0);
   return;
 }
-pub fn call_win_proc_1040_9684(HWND16 win_handle_1,mut param_2: u16 ,w_param_1: WPARAM16,LPARAM l_param_1)
+pub fn call_win_proc_1040_9684(win_handle_1: HWND16,mut param_2: u16 ,w_param_1: WPARAM16,l_param_1: LPARAM)
 
 {
   HANDLE16 handle_1;
@@ -359,7 +359,7 @@ pub fn call_win_proc_1040_9684(HWND16 win_handle_1,mut param_2: u16 ,w_param_1: 
       if (handle_1 == 0) {
         uVar2 = (var10 + 0x18);
         GetClientRect16(local_1a,&DAT_1050_1050);
-        bool_1 = PtInRect16((POINT16)CONCAT22(param_2,win_handle_1),local_1a);
+        bool_1 = PtInRect16(CONCAT22(param_2,win_handle_1),local_1a);
         if (bool_1 == 0) {
           return;
         }
@@ -373,7 +373,7 @@ pub fn call_win_proc_1040_9684(HWND16 win_handle_1,mut param_2: u16 ,w_param_1: 
       uVar2 = (handle_2 + 0x18);
       var4 = uVar1;
       GetClientRect16(local_1a,&DAT_1050_1050);
-      bool_1 = PtInRect16((POINT16)CONCAT22(param_2,win_handle_1),local_1a);
+      bool_1 = PtInRect16(CONCAT22(param_2,win_handle_1),local_1a);
       if (bool_1 == 0) {
         return;
       }
@@ -447,7 +447,7 @@ pub fn reg_class_1040_98c0(mut param_1: u32)
 
 {
   let mut BVar1: bool;
-  ATOM AVar2;
+  AVar2: ATOM;
   let mut wndclass: WNDCLASS16;
 
   wndclass.lpsz_class_name = param_1 + 0x4;
@@ -460,7 +460,7 @@ pub fn reg_class_1040_98c0(mut param_1: u32)
     wndclass.h_instance = HINSTANCE16_1050_038c;
     wndclass.h_icon = 0;
     wndclass.h_cursor = (param_1 + 0x58);
-    wndclass.hbr_background = *(HBRUSH16 *)(param_1 + 0x56);
+    wndclass.hbr_background = (param_1 + 0x56);
     wndclass.lpsz_menu_name = 0;
     wndclass.lpsz_class_name = param_1;
     AVar2 = RegisterClass16(&wndclass);
@@ -485,8 +485,8 @@ pub fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   hdc16_dev_ctx_1: HDC16;
   let mut mode: i16;
   let mut uVar3: u16;
-  HPEN16 handle;
-  HPEN16 hgdiobj16_00;
+  handle: HPEN16;
+  hgdiobj16_00: HPEN16;
   let mut hgdiobj_2: HGDIOBJ16;
   let mut hdc_lt_gray_brush_1: HGDIOBJ16;
   let mut cch_1: u16;
@@ -667,7 +667,7 @@ pub fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   EndPaint16(CONCAT22(0x1050,paintstruct_42),param_1);
   return;
 }
-pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,msg_param_3: u16,HWND16 hwnd_param_4,
+pub fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,msg_param_3: u16,hwnd_param_4: HWND16,
                      mut param_5: u16 ,mut param_6: u16 ,mut param_7: u32)
 
 {
@@ -791,7 +791,7 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,msg_param
       }
       GetClientRect16(rect_a,&DAT_1050_1050);
       iVar2 = (iVar3 + 0x4);
-      BVar5 = PtInRect16((POINT16)lparam_param_1,rect_a);
+      BVar5 = PtInRect16(lparam_param_1,rect_a);
       if (BVar5 == 0) {
         pbVar1 = (iVar3 + 0x4);
         *pbVar1 = *pbVar1 & 0xfd;
@@ -878,7 +878,7 @@ pub fn win_op_1040_9cde(LPARAM lparam_param_1,wparam_param_2: WPARAM16,msg_param
         *pbVar1 = *pbVar1 & 0xfc;
         InvalidateRect16(0x1,NULL,0x0);
         UpdateWindow16(hwnd_param_4);
-        BVar5 = PtInRect16((POINT16)lparam_param_1,rect_a);
+        BVar5 = PtInRect16(lparam_param_1,rect_a);
         if (BVar5 == 0) {
           return;
         }

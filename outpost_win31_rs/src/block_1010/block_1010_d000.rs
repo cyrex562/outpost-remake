@@ -129,7 +129,7 @@ pub fn pass1_1010_d448(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u8,mut 
 
   uVar10 = (param_5 >> 0x10);
   iVar10 = param_5;
-  uStack1030 = struct_op_1030_73a8(*(astruct_419 **)(iVar10 + 1),param_1,param_2);
+  uStack1030 = struct_op_1030_73a8((iVar10 + 1),param_1,param_2);
   uVar8 = (uStack1030 >> 0x10);
   uVar1 = uStack1030;
   if ((uVar8 | uVar1) != 0) {
@@ -193,7 +193,7 @@ pub fn pass1_1010_d5ae(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u8,mut 
 
   uVar11 = (param_5 >> 0x10);
   iVar10 = param_5;
-  paStack1030 = struct_op_1030_73a8(*(astruct_419 **)(iVar10 + 0x6),param_1,param_2);
+  paStack1030 = struct_op_1030_73a8((iVar10 + 0x6),param_1,param_2);
   uStack1034 = paStack1030;
   uVar7 = (paStack1030 >> 0x10) | uStack1034;
   uVar9 = CONCAT22(in_register_0000000a,uVar7);
@@ -206,7 +206,7 @@ pub fn pass1_1010_d5ae(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u8,mut 
       uVar13 = (param_3 >> 0x10);
       pass1_1010_d984(param_3,uVar13,CONCAT22(0x1050,puVar4),0x3,CONCAT22(uStack1032,uStack1034),
                       &PTR_DAT_1050_1805_1050_3706,param_5);
-      puVar1 = (u16*)(iVar10 + 2);
+      puVar1 = (iVar10 + 2);
       uVar8 = (iVar10 + 0x4);
       (puVar1 + 0x4) = PTR_DAT_1050_1805_1050_3706;
       uVar9 = (iVar10 + 0x6);
@@ -457,7 +457,7 @@ u16 pass1_1010_db2e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut pa
   uStack94 = param_3;
   uStack90 = param_3;
   iStack92 = 0;
-  while( true ) {
+  loop {
     uVar7 = (param_7 >> 0x10);
     iVar4 = param_7;
     if (param_7.field0_0x0 - 0x1 < uStack94) {
@@ -510,7 +510,7 @@ pub fn pass1_1010_dc36(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   puVar6 = 0;
   (puVar6 + 0x2) = 0;
   uStack90 = param_3;
-  while( true ) {
+  loop {
     uVar7 = (param_5 >> 0x10);
     if (param_5.field0_0x0 < uStack90 || param_5.field0_0x0 == uStack90) break;
     uVar3 = (param_5 + 2);
@@ -596,7 +596,7 @@ pub fn load_str_1010_ddf6(mut param_1: u32,mut param_2: u32)
   short in_buf_len_5;
   let mut uVar1: u32;
 
-  in_buf_len_5 = (short)(param_1 >> 0x10);
+  in_buf_len_5 = (param_1 >> 0x10);
   *(param_1 + 0x13c) = 0;
   uVar1 = struct_op_1030_73a8(param_2,in_AX,in_DX);
   switch((uVar1 + 0x12)) {
@@ -631,7 +631,7 @@ pub fn pass1_1010_de78(mut param_1: u32,mut param_2: u32)
 {
   short in_buf_len_5;
 
-  in_buf_len_5 = (short)(param_1 >> 0x10);
+  in_buf_len_5 = (param_1 >> 0x10);
   *(param_1 + 0x13c) = 0;
   pass1_1030_809c(param_2);
   load_string_1010_84e0

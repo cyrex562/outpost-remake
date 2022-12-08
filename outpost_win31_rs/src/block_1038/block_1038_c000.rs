@@ -32,10 +32,10 @@ pub fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 
   if (param_4 == 0x177) {
     pass1_1008_e05e(*(astruct_102 **)(param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19eU),
                     CONCAT22(param_2,param_1 + 0x9e));
-    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x200,local_40c,(short)&DAT_1050_1050)
+    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x200,local_40c,&DAT_1050_1050)
     ;
     sys_1000_3f9c(CONCAT22(0x1050,local_70c),CONCAT22(0x1050,local_40c),param_1 + 0x19eU);
-    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_50c,(short)&DAT_1050_1050)
+    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_50c,&DAT_1050_1050)
     ;
     MessageBox16(0x30,CONCAT22(0x1050,local_50c),CONCAT22(0x1050,local_70c),(param_1 + 0x6));
   }
@@ -54,9 +54,9 @@ pub fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 
                             CONCAT22(param_2,param_1 + 0x9e),param_2,&DAT_1050_1050);
     if (iVar1 == 0) {
       load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,(short)&DAT_1050_1050);
+                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,&DAT_1050_1050);
       load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_50c,(short)&DAT_1050_1050);
+                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_50c,&DAT_1050_1050);
       MessageBox16(0x30,CONCAT22(0x1050,local_50c),CONCAT22(0x1050,local_40c),(param_1 + 0x6)
                   );
       return;
@@ -70,7 +70,7 @@ pub fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 
 
 
 
-LRESULT send_msg_1038_c228(mut param_1: u32)
+pub unsafe fn send_msg_1038_c228(mut param_1: u32) -> LRESULT
 
 {
   let mut wparam: WPARAM16;
@@ -151,7 +151,7 @@ pub fn send_msg_1038_c374(mut param_1: u32,param_2: *mut u32,mut param_3: u16 )
   (**ppcVar2)(s_tile2_bmp_1050_1538,param_2);
   uStack6 = CONCAT22(extraout_DX,uVar3);
   uStack10 = 0;
-  while( true ) {
+  loop {
     if (uStack6 <= uStack10) {
       return;
     }
@@ -162,9 +162,9 @@ pub fn send_msg_1038_c374(mut param_1: u32,param_2: *mut u32,mut param_3: u16 )
     lparam = string_1008_e586(uVar1,(uVar1 >> 0x10),
                                       CONCAT13((extraout_DX_00 >> 0x8),CONCAT12(extraout_DX_00,uVar4))
                                       ,uVar4,extraout_DX_00);
-    LVar6 = SendMessage16((LPARAM)lparam,0x0,0x403,param_3);
+    LVar6 = SendMessage16(lparam,0x0,0x403,param_3);
     uVar5 = 0x1000;
-    fn_ptr_1000_17ce(lparam);
+    fn_ptr_1000_17ce;
     if (LVar6 == -1) break;
     if (LVar6 == -0x2) {
       return;
@@ -208,8 +208,8 @@ pub fn pass1_1038_c4a2(param_1: *mut StructD,param_2: *mut astruct_57,mut param_
   uVar2 = (param_2 >> 0x10);
   iVar1 = param_2;
   (iVar1 + 1) = 0;
-  &iVar1[0x1].field2_0x4 = 0;
-  &iVar1[0x1].field4_0x8 = 0;
+  iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field4_0x8 = 0;
   param_2.field0_0x0 = 0xc74c;
   iVar1.field1_0x2 = &u16_1050_1038;
   puVar3 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(unaff_BP,0x3b),in_stack_0000fea6,
@@ -288,8 +288,8 @@ pub fn win_dlg_op_1038_c58e(mut param_1: u16 ,mut param_2: u32)
   let mut in_stack_0000f7b8: u16;
   let mut in_stack_0000f7bc: u16;
   let mut puStack2070: *mut u32;
-  local_80e: u16 [0x201];
-  local_40c: u16 [0x201];
+  let mut local_80e: [u16;0x201] = [0;0x201];
+  let mut local_40c: [u16;0x201] = [0;0x201];
   let mut uStack10: u32;
   let mut puStack6: *mut u32;
 
@@ -308,7 +308,7 @@ pub fn win_dlg_op_1038_c58e(mut param_1: u16 ,mut param_2: u32)
                   (param_2 & 0xffff0000 | (iVar2 + 0x96U)));
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x400,local_80e,
-             (short)&DAT_1050_1050);
+             &DAT_1050_1050);
   uVar1 = (iVar2 + 0x92);
   wsprintf16(local_40c,CONCAT22(local_80e,0x1050),CONCAT22(*puStack2070,0x1050),
              (*puStack2070 >> 0x10),uVar1,(uVar1 >> 0x10));
@@ -327,7 +327,7 @@ pub fn message_box_op_1038_c672(param_1: u8,mut param_2: i16,mut param_3: u16 ,m
 
   uVar1 = (_u16_1050_14cc >> 0x10);
   if (param_5 == 0x17d) {
-    load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,(short)&DAT_1050_1050);
+    load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,&DAT_1050_1050);
     MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),(param_2 + 0x6));
   }
   else {
@@ -335,7 +335,7 @@ pub fn message_box_op_1038_c672(param_1: u8,mut param_2: i16,mut param_3: u16 ,m
       post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
       return;
     }
-    load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,(short)&DAT_1050_1050);
+    load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,&DAT_1050_1050);
     MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),(param_2 + 0x6));
     pass1_1008_e164(*(astruct_102 **)(param_2 + 0x8e));
   }
@@ -868,7 +868,7 @@ pub fn *pvVar1;
   iVar1 = param_2;
   param_2 = 0x389a;
   iVar1.field2_0x2 = 0x1008;
-  &iVar1.field3_0x4 = 0;
+  iVar1.field3_0x4 = 0;
   iVar1.field5_0x8 = 0;
   param_2 = 0xd23e;
   iVar1.field2_0x2 = &u16_1050_1038;
@@ -897,7 +897,7 @@ pub fn free_proc_inst_1038_cfda(param_1: *mut StructD)
   iVar1.address_offset_field_0x2 = &u16_1050_1038;
   FreeProcInstance16(*(void **)&iVar1.hfile_0x4);
   FreeProcInstance16(_u16_1050_5bcc);
-  &iVar1.hfile_0x4 = 0;
+  iVar1.hfile_0x4 = 0;
   param_1.address_offset_field_0x0 = 0x389a;
   iVar1.address_offset_field_0x2 = 0x1008;
   return;

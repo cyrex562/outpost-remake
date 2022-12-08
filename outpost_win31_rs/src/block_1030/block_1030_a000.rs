@@ -664,7 +664,7 @@ pub fn pass1_1030_aa18(mut param_1: u32,param_2: *mut u16)
   (**ppcVar2)(0x1008,uVar12,uVar16);
   uVar6 = uVar6 & 0xffff | uVar10 << 0x10;
   uStack38 = 0;
-  while( true ) {
+  loop {
     uVar8 = uVar10;
     if (uVar6 <= uStack38) {
       if (uStack14.is_null() == false) {
@@ -893,13 +893,13 @@ pub fn pass1_1030_ae6c(param_1: *mut astruct_399)
   paVar4 = CONCAT22(uVar5,(puVar6 >> 0x10));
   uVar2 = 0;
   iVar4.field8_0xe = 0;
-  &iVar4.field9_0x10 = 0;
+  iVar4.field9_0x10 = 0;
   param_1.field0_0x0 = 0xb932;
   iVar4.field1_0x2 = 0x1030;
   mem_op_1000_179c(0xc,paVar4);
   uVar3 = paVar4 | uVar2;
   if (uVar3 == 0) {
-    &iVar4.field9_0x10 = 0;
+    iVar4.field9_0x10 = 0;
   }
   else {
     set_struct_1008_574a(CONCAT22(paVar4,uVar2));
@@ -937,7 +937,7 @@ pub fn pass1_1030_aefa(param_1: *mut astruct_400,mut param_2: u32)
   puVar8 = pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&iVar5.field3_0x8)));
   paVar5 = CONCAT22(uVar6,(puVar8 >> 0x10));
   iVar5.field8_0xe = 0;
-  &iVar5.field9_0x10 = 0;
+  iVar5.field9_0x10 = 0;
   param_1.field0_0x0 = 0xb932;
   iVar5.field1_0x2 = 0x1030;
   iVar5.field2_0x4 = (param_2 + 0x4);

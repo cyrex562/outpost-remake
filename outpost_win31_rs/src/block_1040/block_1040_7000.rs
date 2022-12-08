@@ -178,7 +178,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   enable_win_1040_9234(CONCAT13((uStack4 >> 0x8),CONCAT12(uStack4,paVar2)),BVar13);
   HStack8 = GetDC16(struct_b_5.lpvoid_field_0x8);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_58,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_58,&DAT_1050_1050);
   uVar16 = SUB42(&DAT_1050_1050,0x0);
   uVar11 = SUB21(local_58,0x0);
   uVar12 = (local_58 >> 0x8);
@@ -191,7 +191,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
                  HStack92,0xad,0x22,0x0,s_Rebel_1050_4ffc + 0x4,CONCAT13(0x10,CONCAT12(0x50,local_58)),
                  s_static_1050_5d9a);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_58,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_58,&DAT_1050_1050);
   uVar14 = HStack8;
   uVar15 = (HStack8 >> 0x8);
   pcVar17 = local_58;
@@ -389,7 +389,7 @@ pub fn get_sys_metrics_1040_7728(param_1: *mut astruct_57,mut param_2: u16 ,mut 
   iVar2.field3_0x6 = 0;
   iVar2.field4_0x8 = param_5;
   iVar2.field5_0xa = param_4;
-  &iVar2.field6_0xc = 0;
+  iVar2.field6_0xc = 0;
   iVar2.field78_0x60 = 0;
   iVar2.field79_0x62 = 0;
   iVar2.field80_0x64 = 0;
@@ -636,7 +636,7 @@ pub fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
   let mut x: i16;
   let mut y1: i16;
   let mut iVar5: i16;
-  HPEN16 pen_handle;
+  pen_handle: HPEN16;
   let mut obj_handle: HGDIOBJ16;
   let mut y: i16;
   let mut brush_handle: HGDIOBJ16;

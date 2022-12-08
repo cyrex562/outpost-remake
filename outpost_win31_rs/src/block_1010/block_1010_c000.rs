@@ -4,11 +4,11 @@ pub fn pass1_1010_c1ba(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 {
   paVar1: *mut astruct_92;
   let mut iStack28: i16;
-  astruct_92 local_16;
+  let mut local_16: *mut astruct_92;
 
   pass1_1028_dc52(CONCAT22(0x1050,&local_16),0x1,0x0,0x200);
   iStack28 = 0x1;
-  while( true ) {
+  loop {
     paVar1 = &local_16;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     param_1 |= paVar1;
@@ -20,7 +20,7 @@ pub fn pass1_1010_c1ba(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 
 
 
-char * pass1_1010_c234(mut param_1: u16 ,param_2: *mut u8)
+pub unsafe fn pass1_1010_c234(mut param_1: u16 ,param_2: *mut u8) -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
@@ -141,7 +141,7 @@ pub fn pass1_1010_c320(param_1: *mut c_char,mut param_2: u16 ,mut param_3: u16 ,
   }
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,puStack6,
-             (short)(puStack6 >> 0x10));
+             (puStack6 >> 0x10));
   return;
 }
 pub fn pass1_1010_c3c2(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32,mut param_5: u32)
@@ -205,7 +205,7 @@ pub fn string_op_1010_c446(mut param_1: u16 ,mut param_2: u32,param_3: *mut c_ch
     return;
   }
   in_buffer_4 = pcStack6;
-  in_buf_len_5 = (short)(pcStack6 >> 0x10);
+  in_buf_len_5 = (pcStack6 >> 0x10);
   uVar6 = _u16_1050_14cc;
   uVar7 = (_u16_1050_14cc >> 0x10);
   switch(iVar1) {
@@ -377,7 +377,7 @@ pub fn pass1_1010_c7e2(mut param_1: u32,mut param_2: u32,param_3: *mut i16)
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     uVar4 = (param_3 >> 0x10);
     iVar3 = param_3;
     if (*param_3 == iStack4 || *param_3 < iStack4) break;
@@ -385,7 +385,7 @@ pub fn pass1_1010_c7e2(mut param_1: u32,mut param_2: u32,param_3: *mut i16)
     (iStack4 * 0xa + uVar1 + 0x4) = (iStack4 * 0x2 + param_2);
     iStack4 += 0x1;
   }
-  puStack8 = (u16*)(iVar3 + 2);
+  puStack8 = (iVar3 + 2);
   for (iStack4 = 0; *param_3 != iStack4 && iStack4 <= *param_3; iStack4 += 1) {
     uVar1 = (iVar3 + 0x6);
     pcVar2 = pass1_1010_b038(param_1,uVar1,(uVar1 >> 0x10),
@@ -501,7 +501,7 @@ pub fn pass1_1010_c864(param_1: *mut c_char,mut param_2: u32,param_3: *mut u16,p
   uVar7 = uVar8;
   if (uVar8 != 0) {
     uStack398 = 0;
-    while( true ) {
+    loop {
       uVar4 = *_uStack404;
       ppcVar3 = (uVar4 + 0x10);
       (**ppcVar3)(uVar13,_uStack404,(_uStack404 >> 0x10));

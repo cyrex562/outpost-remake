@@ -33,9 +33,9 @@ pub fn pass1_1040_d0f8(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u
   struct_1040_b082(param_1,CONCAT22(param_2,0x1845));
   uVar7 = (param_1 >> 0x10);
   iVar5 = param_1;
-  &iVar5[0x1].field3_0x6 = 0;
-  &iVar5[0x1].field5_0xa = _PTR_LOOP_1050_5f16;
-  &iVar5[0x1].field7_0xe = 0;
+  iVar5[0x1].field3_0x6 = 0;
+  iVar5[0x1].field5_0xa = _PTR_LOOP_1050_5f16;
+  iVar5[0x1].field7_0xe = 0;
   iVar5[0x1].field9_0x12 = 0;
   param_1.field0_0x0 = 0xd8c4;
   iVar5.field1_0x2 = &PTR_LOOP_1050_1040;
@@ -56,7 +56,7 @@ pub fn pass1_1040_d0f8(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u
     uVar3 = paVar4 | uVar1;
     paVar6 = (paVar4 & 0xffff0000 | uVar3);
     if (uVar3 == 0) {
-      &iVar5[0x1].field7_0xe = 0;
+      iVar5[0x1].field7_0xe = 0;
     }
     else {
       pass1_1010_8ef2(paVar6,CONCAT22(paVar4,uVar1),param_13,param_5,param_7,param_8,param_9);
@@ -219,43 +219,43 @@ pub fn msg_box_op_1040_d3d0(param_1: *mut c_char,mut param_2: u16 ,mut param_3: 
 
   paVar1 = CONCAT22(in_register_0000000a,param_2);
   mem_op_1000_179c(0x1000,paVar1);
-  in_buf_len_5 = (short)paVar1;
+  in_buf_len_5 = paVar1;
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,&DAT_1050_1050);
   load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   uVar2 = (param_3 >> 0x10);
   MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
                (param_3 + 0x6));
   load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
                (param_3 + 0x6));
@@ -311,7 +311,7 @@ pub fn enable_win_1040_d6be(param_1: *mut astruct_903)
   EnableWindow16(0x0,HVar1);
   HVar1 = GetDlgItem16(s_dibtext_bmp_1050_1844 + 0x7,iVar2.field6_0x6);
   EnableWindow16(0x0,HVar1);
-  &iVar2[0x1].field_0x8 = 0x1;
+  iVar2[0x1].field_0x8 = 0x1;
   return;
 }
 pub fn pass1_1040_d76e(mut param_1: u32)

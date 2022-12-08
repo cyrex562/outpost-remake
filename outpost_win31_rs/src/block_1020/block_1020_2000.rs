@@ -19,7 +19,7 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
   let mut hgdiobj16_var9: HGDIOBJ16;
   let mut hgdiobj16_var10: HGDIOBJ16;
   let mut HVar10: HBRUSH16;
-  HPEN16 HVar11;
+  HVar11: HPEN16;
   let mut uVar11: u16;
   let mut obj: HPALETTE16;
   let mut uVar13: u16;
@@ -116,7 +116,7 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
     if (&iVar14.field_0x1a == 0) {
       iVar8 = iVar14.field47_0x30 << 0x3;
       mem_op_1000_179c(iVar8,paVar14);
-      &iVar14.field_0x1a = iVar8;
+      iVar14.field_0x1a = iVar8;
       iVar14.field28_0x1c = paVar14;
     }
     uVar3 = &iVar14.field_0x1a;
@@ -156,7 +156,7 @@ pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743)
     hgdiobj16_var10 = SelectObject16(&puVar14[-0x7].field6_0x6,*&puVar14[-0x4].field6_0x6);
     DeleteObject16(hgdiobj16_var10);
     HVar10 = CreateSolidBrush16(0xff);
-    *(HBRUSH16 *)(&puVar14[-0x7].field6_0x6 + 0x2) = HVar10;
+    (&puVar14[-0x7].field6_0x6 + 0x2) = HVar10;
     HVar11 = CreatePen16(0xff,0x1,0x0);
     *(HPEN16 *)&puVar14[-0x6].field_0x2 = HVar11;
     SelectObject16((&puVar14[-0x7].field6_0x6 + 0x2),*&puVar14[-0x4].field6_0x6);
@@ -349,7 +349,7 @@ pub fn struct_1020_2524(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   unk_draw_op_1020_7f7a(param_2,0x7,CONCAT22(param_4,param_3),param_5);
   uVar3 = (param_2 >> 0x10);
   iVar2 = param_2;
-  &iVar2[0x1].field5_0xc = 0;
+  iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
   param_2.offset_0x0 = 0x270c;
   iVar2.base_0x2 = 0x1020;
@@ -358,9 +358,9 @@ pub fn struct_1020_2524(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   puVar4 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0x2a),in_stack_0000fea6,
                            in_stack_0000ffca,in_stack_0000ffd0,in_stack_0000ffd4);
   uVar1 = (puVar4 >> 0x10);
-  &iVar2[0x1].field7_0x10 = puVar4;
+  iVar2[0x1].field7_0x10 = puVar4;
   (&iVar2[0x1].field7_0x10 + 0x2) = uVar1;
-  &iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
+  iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
   (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
   return;
 }
@@ -374,8 +374,8 @@ pub fn pass1_1020_2594(param_1: *mut StructD)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0x270c;
   iVar1.address_offset_field_0x2 = 0x1020;
-  &iVar1.field_0xe2 = 0x27a8;
-  &iVar1.field_0xe4 = 0x1020;
+  iVar1.field_0xe2 = 0x27a8;
+  iVar1.field_0xe4 = 0x1020;
   pass1_1020_808e(param_1);
   return;
 }
@@ -437,7 +437,7 @@ pub fn window_op_1020_2642(param_1: *mut astruct_664,param_2: *mut astruct_57,pa
     iVar2[0x1].field19_0x24 = uVar1;
     return;
   }
-  &iVar2[0x1].field18_0x22 = 0;
+  iVar2[0x1].field18_0x22 = 0;
   return;
 }
 pub fn pass1_1020_26a6(mut param_1: u32)
@@ -950,7 +950,7 @@ pub fn load_draw_op_1020_2ede(param_1: *mut astruct_57,mut param_2: u16 ,param_3
 {
   hdc_dev_ctx_1: HDC16;
   StructA **ppSVar1;
-  HPEN16 handle;
+  handle: HPEN16;
   pHVar2: *mut HDC16;
   let mut h_null_brush: HGDIOBJ16;
   let mut in_DX: *mut u8;

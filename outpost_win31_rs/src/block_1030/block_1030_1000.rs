@@ -109,7 +109,7 @@ pub fn pass1_1030_1244(param_1: *mut StructD)
   iVar6.address_offset_field_0x2 = 0x1030;
   if (iVar6.field14_0x1a != 0) {
     uStack6 = 0x1;
-    while( true ) {
+    loop {
       puVar1 = &iVar6.field6_0xa;
       if (*puVar1 < uStack6 || *puVar1 == uStack6) break;
       iVar8 = uStack6 * 0x4;
@@ -140,7 +140,7 @@ pub fn pass1_1030_12ca(param_1: *mut astruct_176)
   let mut uStack6: u32;
 
   uStack6 = 0x1;
-  while( true ) {
+  loop {
     uVar3 = (param_1 >> 0x10);
     iVar3 = param_1;
     puVar1 = &iVar3.field6_0xa;
@@ -387,8 +387,8 @@ pub fn struct_1030_1628(param_1: *mut astruct_180)
   iVar1 = param_1;
   param_1.field0_0x0 = 0x389a;
   iVar1.field1_0x2 = 0x1008;
-  &iVar1.field_0x4 = 0;
-  &iVar1.field_0x8 = 0;
+  iVar1.field_0x4 = 0;
+  iVar1.field_0x8 = 0;
   param_1.field0_0x0 = 0x17ba;
   iVar1.field1_0x2 = 0x1030;
   return;
@@ -409,7 +409,7 @@ pub fn pass1_1030_165e(param_1: *mut astruct_57,param_2: *mut astruct_175,mut pa
   iVar1 = param_2;
   param_2.field0_0x0 = 0x389a;
   iVar1.field1_0x2 = 0x1008;
-  &iVar1.field2_0x4 = 0;
+  iVar1.field2_0x4 = 0;
   iVar1.field4_0x8 = param_4;
   param_2.field0_0x0 = 0x17ba;
   iVar1.field1_0x2 = 0x1030;
@@ -505,7 +505,7 @@ pub fn struct_1030_17ce(param_1: *mut astruct_180,mut param_2: u32,mut param_3: 
   uVar1 = struct_1030_1628(param_1);
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  &iVar4.field10_0xc = 0;
+  iVar4.field10_0xc = 0;
   param_1.field0_0x0 = 0x1a16;
   iVar4.field1_0x2 = 0x1030;
   if ((param_3 != 0) || (param_2 != 0)) {
@@ -822,7 +822,7 @@ pub fn pass1_1030_1be2(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u
       (iVar3 + 0xe) = param_2;
     }
   }
-  for (uStack4 = 0; puVar2 = (u16*)(iVar3 + 0x10), uStack4 <= *puVar2 && *puVar2 != uStack4; uStack4 += 1) {
+  for (uStack4 = 0; puVar2 = (iVar3 + 0x10), uStack4 <= *puVar2 && *puVar2 != uStack4; uStack4 += 1) {
     uVar5 = pass1_1028_e2e0(param_2,_PTR_LOOP_1050_65e2,1);
     param_2 = (param_2 & 0xffff0000 | uVar5 >> 0x10);
     ppcVar1 = ((iVar3 + 0xc) + 0x8);
@@ -973,7 +973,7 @@ pub fn pass1_1030_1e96(param_1: u32)
   let mut uStack6: u32;
 
   uStack6 = 0;
-  while( true ) {
+  loop {
     uVar4 = (param_1 >> 0x10);
     puVar1 = (param_1 + 0x8);
     if ((*puVar1 < uStack6 || *puVar1 == uStack6) ||

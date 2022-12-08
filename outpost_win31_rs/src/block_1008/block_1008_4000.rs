@@ -218,7 +218,7 @@ pub unsafe fn pass1_1008_431c(param_1: *mut astruct_76,param_2: u8)
       return;
     }
     uStack6 = 0;
-    while( true ) {
+    loop {
       uVar2 = iVar5.field8_0x10;
       puVar1 = (uVar2 + 0x8);
       if (*puVar1 == uStack6 || *puVar1 < uStack6) {break;}
@@ -1108,7 +1108,7 @@ pub unsafe fn create_palette_1008_4e38(in_struct_1: *mut astruct_13,mut param_2:
     puStack8 = (pLVar2 & 0xffff0000 | (pLVar2 + 0x4));
     puStack12 = local_struct_1.field4_0x4;
     iStack14 = 0;
-    while( true ) {
+    loop {
       piVar1 = &local_struct_1.field9_0xc;
       if (*piVar1 == iStack14 || *piVar1 < iStack14) {break;}
       uVar9 = (puStack12 >> 0x10);

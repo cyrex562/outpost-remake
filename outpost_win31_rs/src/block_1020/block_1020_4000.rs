@@ -31,7 +31,7 @@ pub fn pass1_1020_4092(param_1: *mut u16) -> *mut u16
 pub fn draw_rect_1020_40ce(mut param_1: u32,mut param_2: i16,mut param_3: i16,hdc16_param_4: HDC16,mut param_5: u16 )
 
 {
-  HPEN16 pen_handle;
+  pen_handle: HPEN16;
   let mut brush_handle_1: HGDIOBJ16;
   let mut right: i16;
   let mut bottom: i16;

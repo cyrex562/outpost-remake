@@ -318,7 +318,7 @@ pub fn pass1_1030_25f0(mut param_1: u32,mut param_2: i16,mut param_3: i16)
 
 
 
-bool pass1_1030_2622(mut param_1: u32,mut param_2: i16)
+pub unsafe fn pass1_1030_2622(mut param_1: u32,mut param_2: i16) -> bool
 
 {
   let mut iVar1: i16;
@@ -335,7 +335,7 @@ bool pass1_1030_2622(mut param_1: u32,mut param_2: i16)
 
 
 
-bool pass1_1030_266c(mut param_1: u16 ,mut param_2: u32)
+pub unsafe fn pass1_1030_266c(mut param_1: u16 ,mut param_2: u32) -> bool
 
 {
   let mut iVar1: i16;
@@ -365,7 +365,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
   let mut iVar11: i16;
   let mut uVar12: u16;
   let mut iStack38: i16;
-  astruct_92 local_14;
+  let mut local_14: *mut astruct_92;
 
   iVar11 = param_2;
   uVar12 = (param_2 >> 0x10);
@@ -385,7 +385,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
         }
       }
       pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-      while( true ) {
+      loop {
         uVar10 = param_1;
         paVar6 = &local_14;
         pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
@@ -403,7 +403,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
     }
     if (param_3 == 0x12) {
       pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-      while( true ) {
+      loop {
         uVar10 = param_1;
         paVar6 = &local_14;
         pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
@@ -438,7 +438,7 @@ pub fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
     }
   }
   pass1_1028_dc52(CONCAT22(0x1050,&local_14),0x1,0x0,0x400);
-  while( true ) {
+  loop {
     uVar10 = param_1;
     paVar6 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
@@ -482,7 +482,7 @@ pub unsafe fn pass1_1030_28dc(mut param_1: u32,mut param_2: i16) -> i16
   let mut iStack4: i16;
 
   iStack4 = 0;
-  while( true ) {
+  loop {
     if (0x4 < iStack4) {
       return -0x1;
     }

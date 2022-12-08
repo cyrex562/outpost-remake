@@ -63,7 +63,7 @@ pub fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,
 
 
 
-LRESULT send_msg_1040_323c(mut param_1: u32)
+pub unsafe fn send_msg_1040_323c(mut param_1: u32) -> LRESULT
 
 {
   let mut wparam: WPARAM16;
@@ -142,7 +142,7 @@ pub fn send_msg_1040_3374(mut param_1: u32,param_2: *mut u32,mut param_3: u16 )
   (**ppcVar1)(s_tile2_bmp_1050_1538,param_2);
   uStack6 = CONCAT22(extraout_DX,uVar2);
   uStack10 = 0;
-  while( true ) {
+  loop {
     if (uStack6 <= uStack10) {
       return;
     }
@@ -152,9 +152,9 @@ pub fn send_msg_1040_3374(mut param_1: u32,param_2: *mut u32,mut param_3: u16 )
     lparam = pass1_1018_3a7a(uVar3,extraout_DX_00,(param_1 + 0x96),
                                      CONCAT13((extraout_DX_00 >> 0x8),CONCAT12(extraout_DX_00,uVar3)))
     ;
-    LVar5 = SendMessage16((LPARAM)lparam,0x0,0x403,param_3);
+    LVar5 = SendMessage16(lparam,0x0,0x403,param_3);
     uVar4 = 0x1000;
-    fn_ptr_1000_17ce(lparam);
+    fn_ptr_1000_17ce;
     if (LVar5 == -1) break;
     if (LVar5 == -0x2) {
       return;
@@ -285,8 +285,8 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   let mut local_596: u32;
   let mut BStack1426: bool;
   let mut uStack1424: u16;
-  local_58e: u16 [0x41];
-  local_50c: u16 [0x80];
+  let mut local_58e: [u16;0x41] = [0;0x41];
+  let mut local_50c: [u16;0x80] = [0;0x80];
   let mut uStack1036: u32;
   let mut puStack1032: *mut u32;
   let mut local_404: [u8;0x402] = [0;0x402];
@@ -310,7 +310,7 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   iVar5.field148_0x98 = HVar1;
   EnableWindow16(0x1,HVar1);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,&DAT_1050_1050);
   wsprintf16(local_50c,0x50,CONCAT22(local_404,0x1050),CONCAT22(local_596,0x1050),
              (local_596 >> 0x10));
   HVar1 = GetDlgItem16(0x195,iVar5.field6_0x6);
@@ -321,10 +321,10 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   SetWindowText16(CONCAT22(uVar4,HVar2),HVar1);
   HVar1 = GetDlgItem16(0x197,iVar5.field6_0x6);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,&DAT_1050_1050);
   SetWindowText16(CONCAT22(0x1050,local_404),HVar1);
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,&DAT_1050_1050);
   wsprintf16(local_50c,CONCAT22(local_404,0x1050),CONCAT22(local_59a,0x1050),
              (local_59a >> 0x10));
   HVar1 = GetDlgItem16(0x198,iVar5.field6_0x6);
@@ -334,11 +334,11 @@ pub fn set_win_text_1040_3590(mut param_1: u16 ,param_2: *mut astruct_923)
   unk_str_op_1018_35b0(uVar3,iVar5.field141_0x8e);
   if ((uVar4 | uVar3) == 0) {
     load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
+              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_404,&DAT_1050_1050);
     SetWindowText16(CONCAT22(0x1050,local_404),HVar1);
     GetDlgItem16(0x19a,iVar5.field6_0x6);
     HVar1 = _u16_1050_14cc;
-    load_string_1010_84e0(HVar1,(_u16_1050_14cc >> 0x10),0x3ff,local_404,(short)&DAT_1050_1050);
+    load_string_1010_84e0(HVar1,(_u16_1050_14cc >> 0x10),0x3ff,local_404,&DAT_1050_1050);
     SetWindowText16(CONCAT22(0x1050,local_404),HVar1);
     EnableWindow16(0x0,iVar5.field148_0x98);
     return;
@@ -377,7 +377,7 @@ pub fn message_box_op_1040_37f0(mut param_1: u16 ,mut param_2: i16,mut param_3: 
     uVar2 = (paStack6 >> 0x10);
     pcStack10 = *(paStack6 + 0x68);
     load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,(short)&DAT_1050_1050);
+              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,&DAT_1050_1050);
     uVar1 = MessageBox16(0x30,pcStack10,CONCAT22(0x1050,local_40c),(param_2 + 0x6));
     pass1_1018_3710(uVar1,uVar2,*(astruct_263 **)(param_2 + 0x8e));
     PostMessage16(0x0,0x2,0x111,(param_2 + 0x6));
@@ -434,13 +434,13 @@ pub fn pass1_1040_3966(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u3
   uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
   (iVar1 + 1) = 0;
-  &iVar1[0x1].field2_0x4 = 0;
-  &iVar1[0x1].field4_0x8 = 0;
+  iVar1[0x1].field2_0x4 = 0;
+  iVar1[0x1].field4_0x8 = 0;
   iVar1[0x1].field6_0xc = 0;
   iVar1[0x1].field7_0xe = 0;
   iVar1[0x1].field8_0x10 = 0;
   iVar1[0x1].field9_0x12 = 0;
-  &iVar1[0x1].field10_0x14 = 0;
+  iVar1[0x1].field10_0x14 = 0;
   (&iVar1[0x1].field10_0x14 + 0x2) = 0x5;
   param_2.field0_0x0 = 0x3ffc;
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
@@ -562,8 +562,8 @@ pub fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
   let mut in_stack_0000feb4: u16;
   let mut in_stack_0000feb8: u16;
   let mut puStack282: *mut u32;
-  local_10e: u16 [0x41];
-  local_8c: u16 [0x41];
+  let mut local_10e: [u16;0x41] = [0;0x41];
+  let mut local_8c: [u16;0x41] = [0;0x41];
   let mut uStack10: u32;
   let mut puStack6: *mut u32;
 
@@ -583,7 +583,7 @@ pub fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
                   (struct_c_param_1 & 0xffff0000 | ZEXT24(&struct_c_4.field142_0x92)),
                   (struct_c_param_1 & 0xffff0000 | ZEXT24(&struct_c_4.field_0x96)));
   load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x80,local_10e,(short)&DAT_1050_1050
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x80,local_10e,&DAT_1050_1050
             );
   uVar1 = struct_c_4.field142_0x92;
   wsprintf16(local_8c,CONCAT22(local_10e,0x1050),CONCAT22(*puStack282,0x1050),
@@ -751,7 +751,7 @@ pub fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *struct_c_p
   SendDlgItemMessage16(0x0,0x0,0xb,0x190,struct_c_param_1.field6_0x6);
   SendDlgItemMessage16(0x0,0x0,0x405,0x190,struct_c_param_1.field6_0x6);
   pass1_1008_5784(CONCAT22(0x1050,local_a),param_3);
-  while( true ) {
+  loop {
     puVar1 = local_a;
     pass1_1008_5b12(CONCAT22(0x1050,puVar1));
     if ((extraout_DX | puVar1) == 0) break;

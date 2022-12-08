@@ -68,7 +68,7 @@ pub fn pass1_1010_9092(mut param_1: u16 ,mut param_2: u32)
   }
   uVar4 = SUB42(paVar6,0x0);
   uStack14 = 0;
-  while( true ) {
+  loop {
     uVar3 = paVar6;
     if (uStack6 <= uStack14) break;
     ppcVar1 = ((iVar7 + 0x4) + 0x4);
@@ -321,13 +321,13 @@ pub fn pass1_1010_93f0(mut param_1: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * load_string_1010_9432()
+pub unsafe fn load_string_1010_9432() -> *mut c_char
 
 {
   let mut pcVar1: *mut c_char;
   let mut in_stack_00000004: u32;
 
-  pcVar1 = load_string_1010_847e(_u16_1050_14cc,*(u16*)(in_stack_00000004 + 0x16));
+  pcVar1 = load_string_1010_847e(_u16_1050_14cc,*(in_stack_00000004 + 0x16));
   return pcVar1;
 }
 pub fn pass1_1010_944e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16)
@@ -357,7 +357,7 @@ pub unsafe fn FUN_1010_9482() -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-bool pass1_1010_9488(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32)
+pub unsafe fn pass1_1010_9488(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> bool
 
 {
   let mut uVar1: u16;
@@ -643,10 +643,10 @@ pub fn pass1_1010_9794(param_1: *mut astruct_250)
     else {
       set_struct_1008_574a((puVar5 & 0xffff | paVar7 << 0x10));
     }
-    &iVar9.field11_0xe = uVar4;
+    iVar9.field11_0xe = uVar4;
     (&iVar9.field11_0xe + 0x2) = uVar8;
     pass1_1008_5784(CONCAT22(0x1050,local_a),iVar9.field10_0xa);
-    while( true ) {
+    loop {
       uVar4 = uVar8;
       pchar_5 = local_a;
       pass1_1008_5b12(CONCAT22(0x1050,pchar_5));
@@ -1079,7 +1079,7 @@ pub unsafe fn pass1_1010_9fa6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
   if (param_3 != 0) {
     pass1_1008_5784(CONCAT22(0x1050,local_a),param_3);
-    while( true ) {
+    loop {
       lVar2 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       uVar1 = (lVar2 >> 0x10);
       if (lVar2 == 0) break;
@@ -1119,7 +1119,7 @@ pub fn pass1_1010_9fee(param_1: *mut StructD,param_2: *mut astruct_252,mut param
     }
     else {
       set_struct_1008_574a(CONCAT22(uVar1,iVar5));
-      *(StructD **)&iVar3.field18_0x12 = iVar5;
+      iVar3.field18_0x12 = iVar5;
       (&iVar3.field18_0x12 + 0x2) = paVar3;
     }
   }

@@ -107,7 +107,7 @@ pub fn pass1_1018_31fa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
   if (((param_2 | pstruct126_5.field374_0x17e) != 0) &&
      (uVar2 = &pstruct126_5.field374_0x17e, iVar4 = (uVar2 + 0xa), iVar4 != 0)) {
     pstruct126_5.field369_0x174 = 0;
-    while( true ) {
+    loop {
       if (iVar4 <= pstruct126_5.field369_0x174) break;
       iVar3 = pstruct126_5.field369_0x174;
       empty_1008_8fc4();
@@ -210,7 +210,7 @@ pub fn pass1_1018_33b4(param_1: *mut astruct_455)
     ppcVar3 = *puVar1;
     (**ppcVar3)();
   }
-  &iVar5[0x26].field3_0x6 = 0;
+  iVar5[0x26].field3_0x6 = 0;
   fn_ptr_1000_17ce(*&iVar5[0x24].field3_0x6);
   fn_ptr_1000_17ce(*&iVar5[0x25].field1_0x2);
   pass1_1008_caa0(param_1);
@@ -274,7 +274,7 @@ pub fn sprintf_op_1018_34b6(param_1: u8,mut param_2: u16 ,param_3: *mut astruct_
   let mut uVar10: u16;
   let mut uVar11: u16;
 
-  in_buf_len_5 = (short)(param_3 >> 0x10);
+  in_buf_len_5 = (param_3 >> 0x10);
   iVar6 = param_3;
   uVar7 = switch_1018_3b9e(CONCAT31(in_register_00000001,param_1),param_2,param_3,(iVar6 + 0x12e));
   uVar4 = param_3 & 0xffff0000 | (iVar6 + 0x22);
@@ -551,7 +551,7 @@ switchD_1018_393f_caseD_6:
   pass1_1038_2a0e(CONCAT22(0x1050,local_12a),&iVar8[0x1].field9_0xc,paStack6,
                   uStack18,paStack14);
   fn_ptr_1030_835a(_u16_1050_5748,CONCAT22(0x1050,local_12a));
-  &iVar8[0x1].field9_0xc = 0;
+  iVar8[0x1].field9_0xc = 0;
   ppcVar2 = (param_3 + 0x10);
   (**ppcVar2)(0x1030,param_3);
   pass1_1038_2a5c(CONCAT22(0x1050,local_12a));
@@ -666,7 +666,7 @@ pub unsafe fn pass1_1018_3ab2(mut param_1: u32,mut param_2: i16,mut param_3: i16
   uStack6 = CONCAT22(uVar2,uVar1);
   iStack8 = 0;
   pass1_1008_5784(CONCAT22(0x1050,local_10),uStack6);
-  while( true ) {
+  loop {
     lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_10));
     uVar2 = (lVar4 >> 0x10);
     if ((lVar4 == 0) || (iStack8 == param_2)) break;
@@ -871,7 +871,7 @@ pub fn pass1_1018_3d6c(param_1: *mut astruct_679)
     uVar7 = 0x5;
     uVar6 = pass1_1030_8326();
     if (uVar6 % uVar7 == 0) {
-      &iVar6.field322_0x142 = 0;
+      iVar6.field322_0x142 = 0;
       return;
     }
   }
@@ -902,7 +902,7 @@ pub fn pass1_1018_3ea4(param_1: *mut astruct_455)
     ppcVar3 = *puVar1;
     (**ppcVar3)(0x1008,puVar1,uVar2,1);
   }
-  &iVar4[0x26].field3_0x6 = 0;
+  iVar4[0x26].field3_0x6 = 0;
   return;
 }
 

@@ -165,7 +165,7 @@ pub fn pass1_1028_533c() -> u32
 {
   let mut unaff_BP: i16;
 
-  pass1_1028_b418((u16*)(unaff_BP + 0x6));
+  pass1_1028_b418((unaff_BP + 0x6));
   if ((*(unaff_BP + 0xa) & 1) != 0) {
     fn_ptr_1000_17ce(*(unaff_BP + 0x6));
   }
@@ -408,7 +408,7 @@ pub fn pass1_1028_57fa() -> u32
 {
   let mut unaff_BP: i16;
 
-  pass1_1028_b418((u16*)(unaff_BP + 0x6));
+  pass1_1028_b418((unaff_BP + 0x6));
   if ((*(unaff_BP + 0xa) & 1) != 0) {
     fn_ptr_1000_17ce(*(unaff_BP + 0x6));
   }
@@ -466,7 +466,7 @@ pub fn pass1_1028_58dc() -> u32
 {
   let mut unaff_BP: i16;
 
-  pass1_1028_b418((u16*)(unaff_BP + 0x6));
+  pass1_1028_b418((unaff_BP + 0x6));
   if ((*(unaff_BP + 0xa) & 1) != 0) {
     fn_ptr_1000_17ce(*(unaff_BP + 0x6));
   }
@@ -525,7 +525,7 @@ pub fn pass1_1028_59be() -> u32
 {
   let mut unaff_BP: i16;
 
-  pass1_1028_b418((u16*)(unaff_BP + 0x6));
+  pass1_1028_b418((unaff_BP + 0x6));
   if ((*(unaff_BP + 0xa) & 1) != 0) {
     fn_ptr_1000_17ce(*(unaff_BP + 0x6));
   }
@@ -581,7 +581,7 @@ pub fn FUN_1028_5a94(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct_1
   uVar6 = pass1_1030_bcae(local_a,&DAT_1050_1050);
   uVar5 = (uVar6 >> 0x10);
   uStack14 = 0;
-  while( true ) {
+  loop {
     if (uStack6 <= uStack14) {
       return;
     }

@@ -59,7 +59,7 @@ pub unsafe fn pass1_1030_3058(mut param_1: u16 ,param_2: *mut astruct_57,param_3
     }
     else {
       uVar4 = struct_op_1030_1cd8(CONCAT22(uVar5,param_1),0x5,0x5);
-      &iVar4.field12_0xc = uVar4;
+      iVar4.field12_0xc = uVar4;
       (&iVar4.field12_0xc + 0x2) = param_2;
     }
   }
@@ -168,7 +168,7 @@ pub fn pass1_1030_326a(mut param_1: u32,mut param_2: u16 ,param_3: *mut astruct_
     uVar2 = uVar1;
     uVar3 = param_2;
   }
-  &iVar4.field426_0x1aa = uVar2;
+  iVar4.field426_0x1aa = uVar2;
   (&iVar4.field426_0x1aa + 0x2) = uVar3;
   pass1_1030_375a(param_3 & 0xffff | uVar4 << 0x10,0x0,uVar2 & 0xffff | uVar3 << 0x10);
   return;
@@ -266,13 +266,13 @@ pub fn pass1_1030_34da(param_1: *mut astruct_364)
   iVar1.field369_0x176 = 0x1;
   iVar1.field370_0x178 = 0x1;
   iVar1.field371_0x17a = 0x1;
-  &iVar1.field372_0x17c = 0x1;
+  iVar1.field372_0x17c = 0x1;
   (&iVar1.field372_0x17c + 0x2) = 0x4;
-  &iVar1.field_0x182 = 0x32;
-  &iVar1.field_0x184 = 0xa;
-  &iVar1.field_0x186 = 0xa;
-  &iVar1.field_0x188 = 0xa;
-  &iVar1.field_0x18a = 0x4b;
+  iVar1.field_0x182 = 0x32;
+  iVar1.field_0x184 = 0xa;
+  iVar1.field_0x186 = 0xa;
+  iVar1.field_0x188 = 0xa;
+  iVar1.field_0x18a = 0x4b;
   pass1_1000_4906((param_1 & 0xffff0000 | ZEXT24(&iVar1.field_0x18c)),NULL,0x18);
   return;
 }
@@ -549,7 +549,7 @@ pub fn pass1_1030_39dc(mut param_1: u32,param_2: *mut i32,mut param_3: u32,mut p
 
   pass1_1030_3948(param_1,CONCAT22(0x1050,&local_6),CONCAT22(0x1050,&local_4),param_4);
   iStack8 = local_6;
-  while( true ) {
+  loop {
     if (iStack8 < local_4) {
       return;
     }
@@ -613,7 +613,7 @@ pub fn pass1_1030_3ac6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u32 * pass1_1030_3af6(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u32,mut param_5: u16 )
+pub unsafe fn pass1_1030_3af6(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u32,mut param_5: u16 ) -> *mut u32
 
 {
   let mut iVar1: i16;

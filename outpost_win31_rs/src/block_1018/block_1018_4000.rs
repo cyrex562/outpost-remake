@@ -244,7 +244,7 @@ pass1_1018_4608: i32(mut param_1: u32,param_2: *mut c_char,param_3: *mut c_char)
 
   uVar1 = (param_1 + 0x122);
   pass1_1008_5784(CONCAT22(0x1050,local_a),(uVar1 + 0xa));
-  while( true ) {
+  loop {
     lVar7 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     uVar5 = (lVar7 >> 0x10);
     uVar2 = lVar7;
@@ -290,8 +290,8 @@ pub fn struct_1018_4720(param_1: *mut astruct_203,mut param_2: u32,mut param_3: 
   iVar1 = param_1;
   param_1.field0_0x0 = 0x389a;
   iVar1.field1_0x2 = 0x1008;
-  &iVar1.field2_0x4 = param_3;
-  &iVar1.field4_0x8 = param_2;
+  iVar1.field2_0x4 = param_3;
+  iVar1.field4_0x8 = param_2;
   iVar1.field6_0xc = 0;
   param_1.field0_0x0 = &PTR_LOOP_1050_4aa6;
   iVar1.field1_0x2 = 0x1018;
@@ -324,7 +324,7 @@ astruct_203 * struct_1018_4790(param_1: *mut astruct_203,mut param_2: u32,mut pa
   struct_1018_4720(param_1,param_2,param_3);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field7_0xe = param_4;
+  iVar1.field7_0xe = param_4;
   param_1.field0_0x0 = 0x4a92;
   iVar1.field1_0x2 = 0x1018;
   iVar1.field6_0xc = 0x1;
@@ -373,7 +373,7 @@ astruct_203 * struct_1018_4842(param_1: *mut astruct_203,mut param_2: u32,mut pa
   struct_1018_4720(param_1,param_2,param_3);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field7_0xe = param_4;
+  iVar1.field7_0xe = param_4;
   (&iVar1.field7_0xe + 0x2) = 0;
   param_1.field0_0x0 = &PTR_LOOP_1050_4a8e;
   iVar1.field1_0x2 = 0x1018;
@@ -404,7 +404,7 @@ astruct_203 * struct_1018_48b0(param_1: *mut astruct_203,mut param_2: u32,mut pa
   struct_1018_4720(param_1,param_2,param_3);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field7_0xe = param_4;
+  iVar1.field7_0xe = param_4;
   param_1.field0_0x0 = &PTR_LOOP_1050_4a96;
   iVar1.field1_0x2 = 0x1018;
   iVar1.field6_0xc = 0x5;
@@ -422,7 +422,7 @@ pub fn struct_1018_48e8(param_1: *mut astruct_203,mut param_2: u32,mut param_3: 
   struct_1018_4720(param_1,param_2,param_3);
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  &iVar1.field7_0xe = param_4;
+  iVar1.field7_0xe = param_4;
   param_1.field0_0x0 = 0x4a9e;
   iVar1.field1_0x2 = 0x1018;
   iVar1.field6_0xc = 0x6;
@@ -869,7 +869,7 @@ pub fn unk_win_ui_op_1018_4f18(mut param_1: u32,param_2: *mut astruct_57,param_3
   mem_op_1000_179c(0x1e,paVar9);
   uVar7 = paVar9 | rect;
   if (uVar7 == 0) {
-    &iVar6.field10_0xa = 0;
+    iVar6.field10_0xa = 0;
   }
   else {
     iVar4 = (iStack12 - local_12.y) + 1;

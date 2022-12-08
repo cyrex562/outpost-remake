@@ -410,7 +410,7 @@ pub fn pass1_1018_268e(param_1: *mut astruct_287) -> u32
   uVar3 = (param_1 >> 0x10);
   iVar1 = param_1;
   if (iVar1.field65_0x42 != 0) {
-    &iVar1.field_0x40 = 0;
+    iVar1.field_0x40 = 0;
     iVar1.field66_0x44 = 0x1;
   }
   iVar2 = iVar1.field62_0x3e * 0x4;
@@ -475,7 +475,7 @@ pub fn pass1_1018_270e(param_1: *mut u8,param_2: *mut astruct_27,mut param_3: i1
         }
         pass1_1010_1ea6(&iVar5.field_0x20,CONCAT22(uVar4,puVar3));
       }
-      &iVar5.field_0x20 = puVar7;
+      iVar5.field_0x20 = puVar7;
       if (param_2.is_null()) {
         param_4 = 0;
         uVar4 = 0;
@@ -506,7 +506,7 @@ pub fn pass1_1018_270e(param_1: *mut u8,param_2: *mut astruct_27,mut param_3: i1
       uVar4 = uVar6;
     }
     pass1_1010_1ea6(&iVar5.field_0x20,CONCAT22(uVar4,puVar3));
-    &iVar5.field_0x20 = 0;
+    iVar5.field_0x20 = 0;
     return;
   }
   return;
@@ -687,7 +687,7 @@ pub fn mixed_sys_op_1018_2978(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   mem_op_1000_179c(0x1e,paVar7);
   uVar6 = paVar7 | rect;
   if (uVar6 == 0) {
-    &iVar9.field10_0xa = 0;
+    iVar9.field10_0xa = 0;
   }
   else {
     iVar4 = (iStack52 - local_3a.y) + 1;
@@ -1075,7 +1075,7 @@ pub fn pass1_1018_2fe8(param_1: *mut astruct_126,param_2: u16,param_3: u16)
     if (pstruct126_9[0x1].field4_0x4.is_null() == false) {
       uVar3 = str_op_1000_3da4(pstruct126_9[0x1].field4_0x4);
       pstruct126_9.field369_0x174 = 0;
-      while( true ) {
+      loop {
         if (iVar7 <= pstruct126_9.field369_0x174) break;
         uVar4 = pstruct126_9.field369_0x174;
         empty_1008_8fc4();

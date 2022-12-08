@@ -250,7 +250,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
   pstruct9_v18.field14_0xe = uVar9;
   pstruct9_v18.field15_0x10 = paVar15;
   uStack4 = 0x21;
-  while( true ) {
+  loop {
     if (uStack4 < 0x0) break;
     uStack22 = pass1_1030_7c28(uVar9,paVar15,param_2,uStack4);
     uVar9 = uStack22 & 0xffff;
@@ -289,7 +289,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
     uStack30 = uStack8;
     uStack26 = (uStack8 + 0x20);
     pass1_1008_5784(CONCAT22(0x1050,local_26),uStack26);
-    while( true ) {
+    loop {
       puVar5 = local_26;
       pass1_1008_5b12(CONCAT22(0x1050,puVar5));
       uVar12 = paVar13;
@@ -356,7 +356,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
   uStack50 = uVar3;
   if ((uVar12 | uStack50) != 0) {
     pass1_1008_5784(CONCAT22(0x1050,local_26),uVar3 & 0xffff | uVar12 << 0x10);
-    while( true ) {
+    loop {
       pcVar6 = local_26;
       pass1_1008_5b12(CONCAT22(0x1050,pcVar6));
       uVar12 = paVar13;
@@ -576,7 +576,7 @@ pub fn struct_1018_5840(param_1: *mut astruct_57,param_2: *mut astruct_20,mut pa
   unk_draw_op_1020_7f7a(param_2,0x6,CONCAT22(param_4,param_3),param_5);
   uVar2 = (param_2 >> 0x10);
   iVar2 = param_2;
-  &iVar2[0x1].field5_0xc = 0;
+  iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
   iVar2[0x1].field8_0x14 = 0;
   param_2.offset_0x0 = s_Alloc__s_1050_5a5b + 0x7;
@@ -586,9 +586,9 @@ pub fn struct_1018_5840(param_1: *mut astruct_57,param_2: *mut astruct_20,mut pa
   puVar2 = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(unaff_BP,0x27),param_6,param_7,param_8,param_9)
   ;
   uVar1 = (puVar2 >> 0x10);
-  &iVar2[0x1].field7_0x10 = puVar2;
+  iVar2[0x1].field7_0x10 = puVar2;
   (&iVar2[0x1].field7_0x10 + 0x2) = uVar1;
-  &iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
+  iVar2[0x1].field2_0x4 = &iVar2[0x1].field7_0x10;
   (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
   return;
 }
@@ -950,7 +950,7 @@ pub fn pass1_1018_5e86(param_1: u32)
 pub fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
 
 {
-  char **ppcVar1;
+  ppcVar1: *mut *mut c_char;
   LPVOID pvVar2;
   let mut IVar3: i16;
   astruct_92 **ppaVar4;
@@ -1017,7 +1017,7 @@ pub fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
   uVar9 = (iStack16 >> 0xf);
   *pIStack6 = iStack16 / 0x2 + 0x3;
   pass1_1028_dc52(CONCAT22(0x1050,&local_28),0x1,0x0,0x100);
-  while( true ) {
+  loop {
     uVar6 = uVar9;
     ppaVar4 = &local_28;
     pass1_1028_e4ec(CONCAT22(0x1050,ppaVar4));

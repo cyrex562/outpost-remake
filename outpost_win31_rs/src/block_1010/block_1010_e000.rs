@@ -77,7 +77,7 @@ pub fn pass1_1010_e1f4(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
   short in_buf_len_5;
   let mut uVar7: u32;
 
-  in_buf_len_5 = (short)(param_2 >> 0x10);
+  in_buf_len_5 = (param_2 >> 0x10);
   iVar6 = param_2;
   *(iVar6 + 0x13c) = 0;
   uVar7 = struct_op_1030_73a8(param_3,in_AX,param_1);
@@ -162,7 +162,7 @@ pub fn pass1_1010_e58a(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
   let mut in_stack_0000ffee: u16;
 
   paVar6 = CONCAT22(in_register_0000000a,param_1);
-  in_buf_len_5 = (short)(param_2 >> 0x10);
+  in_buf_len_5 = (param_2 >> 0x10);
   iVar7 = param_2;
   *(iVar7 + 0x13c) = 0;
   uVar8 = (param_3 >> 0x10);
@@ -662,7 +662,7 @@ pub fn write_to_file_1010_ed58(mut param_1: u32,mut param_2: u32)
               BVar3 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,&local_a),0x2,in_stack_0000ffc4);
               if (BVar3 != 0) {
                 iStack4 = 0;
-                while( true ) {
+                loop {
                   piVar1 = (iVar6 + 0x30);
                   if (*piVar1 == iStack4 || *piVar1 < iStack4) {
                     return;

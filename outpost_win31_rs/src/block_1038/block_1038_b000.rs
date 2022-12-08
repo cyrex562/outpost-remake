@@ -50,7 +50,7 @@ pub fn pass1_1038_b6e0(mut param_1: u32,mut param_2: i16)
   let mut uStack4: u16;
 
   uStack4 = 0x1;
-  while( true ) {
+  loop {
     if (0x2a < uStack4) {
       return;
     }
@@ -107,7 +107,7 @@ pub fn pass1_1038_b772(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u1
   uVar2 = (param_2 >> 0x10);
   iVar2 = param_2;
   (iVar2 + 1) = 0;
-  &iVar2[0x1].field2_0x4 = 0;
+  iVar2[0x1].field2_0x4 = 0;
   iVar2[0x1].field4_0x8 = 0x1;
   iVar2[0x1].field5_0xa = 0;
   param_2.field0_0x0 = 0xbd70;
@@ -237,7 +237,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
   let mut uVar15: u16;
   let mut puStack1128: *mut u32;
   let mut local_464: [u8;0x50] = [0;0x50];
-  local_414: u16 [0x200];
+  let mut local_414: [u16;0x200] = [0;0x200];
   let mut puStack20: *mut u16;
   let mut puStack16: *mut u8;
   let mut puStack14: *mut u32;
@@ -284,7 +284,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
         }
         if (&iVar8.field_0x96 < 0x0) {
           CheckDlgButton16(0x0,iVar8.field145_0x98,iVar8.field6_0x6);
-          &iVar8.field_0x96 = 0;
+          iVar8.field_0x96 = 0;
         }
         iVar8.field145_0x98 = param_4;
         pass1_1018_1c9a(iVar8.field142_0x92,param_4);
@@ -327,7 +327,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
       puStack20 = pass1_1018_1e78(iVar8.field142_0x92,((puStack16 * 0x6 + uStack10) * 0x2 + 0x5b86)
                                         );
       load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_464,(short)&DAT_1050_1050);
+                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_464,&DAT_1050_1050);
       pcVar11 = load_string_1010_847e(_u16_1050_14cc,*puStack20);
       uVar15 = (pcVar11 >> 0x10);
       paVar12 = CONCAT22(uVar9,uVar15);
@@ -569,7 +569,7 @@ pub fn win_dlg_op_1038_bea4(mut param_1: u16 ,mut param_2: u32)
   let mut in_stack_0000fed4: u16;
   let mut local_116: *mut u32;
   let mut local_112: *mut u32;
-  local_10e: u16 [0x41];
+  let mut local_10e: [u16;0x41] = [0;0x41];
   let mut local_8c: [u8;0x82] = [0;0x82];
   let mut uStack10: u32;
   let mut puStack6: *mut u32;
@@ -601,9 +601,9 @@ pub fn win_dlg_op_1038_bea4(mut param_1: u16 ,mut param_2: u32)
   (iVar5 + 0x94) = HVar3;
   send_msg_1038_c374(param_2,local_116,HVar3);
   lparam = load_string_1010_847e(_u16_1050_14cc,0x531);
-  LVar9 = SendMessage16((LPARAM)lparam,0x0,0x403,(iVar5 + 0x94));
+  LVar9 = SendMessage16(lparam,0x0,0x403,(iVar5 + 0x94));
   (iVar5 + 0x9c) = LVar9;
-  SendMessage16((LPARAM)lparam,0xffff,0x40d,(iVar5 + 0x94));
+  SendMessage16(lparam,0xffff,0x40d,(iVar5 + 0x94));
   HVar3 = GetDlgItem16(0x178,(iVar5 + 0x6));
   (iVar5 + 0x96) = HVar3;
   HVar3 = GetDlgItem16(0x177,(iVar5 + 0x6));

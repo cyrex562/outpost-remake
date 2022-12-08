@@ -17,7 +17,7 @@ pub fn pass1_1010_2024(param_1: *mut StructD) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1010_2050(mut param_1: u32)
+pub unsafe fn pass1_1010_2050(mut param_1: u32)
 
 {
   let mut puVar1: *mut u32;
@@ -51,15 +51,15 @@ pub fn pass1_1010_209e(mut param_1: u32,mut param_2: u16 )
 
 
 
-u32 * mixed_1010_20ba(param_1: *mut astruct_57,mut param_2: u32,u8 **param_3,mut param_4: u16 ,mut param_5: u16 ,
-                     mut param_6: u16 ,mut param_7: u16 )
+pub unsafe fn mixed_1010_20ba(param_1: *mut astruct_57,mut param_2: u32,u8 **param_3,mut param_4: u16 ,mut param_5: u16 ,
+                     mut param_6: u16 ,mut param_7: u16 ) -> *mut u32
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut puVar2: *mut u8;
   let mut uVar3: u16;
   let mut uVar4: u16;
-  paVar5: *mut astruct_638;
+  let mut paVar5: *mut astruct_638;
   let mut unaff_SI: u16;
   let mut iVar6: i16;
   let mut uVar7: u16;
@@ -68,7 +68,7 @@ u32 * mixed_1010_20ba(param_1: *mut astruct_57,mut param_2: u32,u8 **param_3,mut
   let mut uVar10: u32;
   let mut puVar11: *mut u16;
   let mut uVar12: u32;
-  paVar13: *mut astruct_19;
+  let mut paVar13: *mut astruct_19;
   let mut in_stack_0000fe8a: u16;
   let mut in_stack_0000ffae: u16;
   let mut in_stack_0000ffb4: u16;
@@ -565,9 +565,9 @@ pub fn pass1_1010_29c6(param_1: *mut StructD)
       ppcVar3 = *puVar1;
       (**ppcVar3)();
     }
-    &iVar5.field_0x1c = 0;
+    iVar5.field_0x1c = 0;
     fn_ptr_1000_17ce(*&iVar5.field_0x28);
-    &iVar5.field_0x28 = 0;
+    iVar5.field_0x28 = 0;
   }
   clenaup_win_ui_1018_4d22(param_1);
   return;
@@ -806,7 +806,7 @@ pub unsafe fn FUN_1010_2a32(buffer_param_2: *mut u8,mut param_2: u32,hfile_param
     (buffer_param_2 + 0x12) = in_BX;
     (buffer_param_2 + 0x14) = uVar21;
     uStack42 = 0;
-    while( true ) {
+    loop {
       if (uStack54 <= uStack42) {
         uVar38 = (buffer_param_2 >> 0x10);
         BVar15 = read_file_1008_7dee(param_2,
@@ -999,7 +999,7 @@ pub fn pass1_1010_2bfc(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-char * unk_load_str_op_1010_2c34(param_1: u32)
+pub unsafe fn unk_load_str_op_1010_2c34(param_1: u32) -> *mut c_char
 
 {
   let mut in_buffer_4: *mut c_char;
@@ -1020,7 +1020,7 @@ char * unk_load_str_op_1010_2c34(param_1: u32)
   paVar3 = (in_EDX & 0xffff0000 | puVar4 >> 0x10);
   in_buffer_4 = puVar4;
   mem_op_1000_179c(0x80,paVar3);
-  in_buf_len_5 = (short)paVar3;
+  in_buf_len_5 = paVar3;
   sVar2 = in_buf_len_5;
   load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x80,in_buffer_4,in_buf_len_5);
   pUVar1 = pass1_1000_3cea(CONCAT22(in_buf_len_5,in_buffer_4),s__1050_11c8);
@@ -1225,7 +1225,7 @@ pub fn unk_destroy_win_op_1010_2fa0(param_1: *mut astruct_873)
   iVar3 = param_1;
   iVar3.field39_0x28 = 0;
   iStack4 = NULL;
-  while( true ) {
+  loop {
     ppaVar1 = &iVar3.field22_0x16;
     if (*ppaVar1 == iStack4 || *ppaVar1 < iStack4) break;
     uVar3 = (&iVar3.field_0x2a + iStack4 * 0x4);
@@ -1247,7 +1247,7 @@ pub fn unk_destroy_win_op_1010_2fa0(param_1: *mut astruct_873)
       iStack4 = iStack4 + 1;
     } while (iStack4 < 0xa);
     fn_ptr_1000_17ce(*&iVar3.field_0x52);
-    &iVar3.field_0x52 = 0;
+    iVar3.field_0x52 = 0;
   }
   return;
 }

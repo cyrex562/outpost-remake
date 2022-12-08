@@ -988,7 +988,7 @@ pub unsafe fn pass1_1008_5fd8(param_1: *mut u8) -> *mut u8
   mem_op_1000_179c(0x1000,paVar3);
   pcVar4 = load_string_1010_847e(_u16_1050_14cc,in_stack_00000004);
   unk_str_op_1000_3d3e(CONCAT22(paVar3,puVar2),pcVar4);
-  while( true ) {
+  loop {
     puVar1 = puStack6;
     puStack6 = (puStack6 & 0xffff0000 | (puStack6 + 0x2));
     if (*puVar1 == 0) {break;}

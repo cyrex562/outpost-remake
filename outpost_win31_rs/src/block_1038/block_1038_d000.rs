@@ -2,8 +2,8 @@
 
 
 call_win_proc_1038_d020: i32
-               (base_param_6: u16,HWND16 win_handle_1,mut param_3: u32,HWND16 l_param,HWND16 hwnd_param_4,
-               HWND16 win_handle_2)
+               (base_param_6: u16,win_handle_1: HWND16,mut param_3: u32,l_param: HWND16,hwnd_param_4: HWND16,
+               win_handle_2: HWND16)
 
 {
   HANDLE16 handle_1;
@@ -58,7 +58,7 @@ call_win_proc_1038_d020: i32
 
 
 // WARNING: Unable to use type for symbol uVar2
-pub fn win_prop_op_1038_d118(base_addr_param_4: u16,mut param_2: u32,mut param_3: u32,HWND16 hwnd_param_3)
+pub fn win_prop_op_1038_d118(base_addr_param_4: u16,mut param_2: u32,mut param_3: u32,hwnd_param_3: HWND16)
 
 {
   let mut uVar1: u32;
@@ -247,7 +247,7 @@ pub fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,StructB *struct_b_param_1,mu
     id = 0x144;
     w_param = 0;
     l_param = load_string_1010_847e(_u16_1050_14cc,0x531);
-    LVar8 = SendDlgItemMessage16((LPARAM)l_param,w_param,msg,id,hwnd);
+    LVar8 = SendDlgItemMessage16(l_param,w_param,msg,id,hwnd);
     uVar4 = (LVar8 >> 0x10);
   }
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
@@ -322,7 +322,7 @@ pub fn unk_win_ui_op_1038_d400
     IVar10 = 0x13f;
     WVar8 = 0;
     pcVar7 = load_string_1010_847e(_u16_1050_14cc,0x649);
-    LVar6 = SendDlgItemMessage16((LPARAM)pcVar7,WVar8,UVar9,IVar10,HVar1);
+    LVar6 = SendDlgItemMessage16(pcVar7,WVar8,UVar9,IVar10,HVar1);
     paVar3 = CONCAT22(uVar4,(LVar6 >> 0x10));
     HVar1 = GetDlgItem16(0x146,param_2.field6_0x6);
     EnableWindow16(0x0,HVar1);
@@ -336,7 +336,7 @@ pub fn unk_win_ui_op_1038_d400
       IVar10 = 0x144;
       WVar8 = 0;
       pcVar7 = load_string_1010_847e(_u16_1050_14cc,0x531);
-      LVar6 = SendDlgItemMessage16((LPARAM)pcVar7,WVar8,UVar9,IVar10,HVar1);
+      LVar6 = SendDlgItemMessage16(pcVar7,WVar8,UVar9,IVar10,HVar1);
       paVar3 = CONCAT22(uVar4,(LVar6 >> 0x10));
     }
     puVar5 = mixed_1010_20ba(paVar3,_u16_1050_0ed0,CONCAT22(in_stack_0000ffe6,0x2),in_stack_0000fe8e,
@@ -372,7 +372,7 @@ pub fn unk_win_ui_op_1038_d400
     IVar10 = 0x140;
     WVar8 = 0;
     pcVar7 = load_string_1010_847e(_u16_1050_14cc,0x649);
-    SendDlgItemMessage16((LPARAM)pcVar7,WVar8,UVar9,IVar10,HVar1);
+    SendDlgItemMessage16(pcVar7,WVar8,UVar9,IVar10,HVar1);
     break;
   case 0x14b:
     HVar1 = GetDlgItem16(0x147,param_2.field6_0x6);
@@ -387,7 +387,7 @@ pub fn unk_win_ui_op_1038_d400
     WVar8 = 0;
     UVar9 = 0xc;
     pcVar7 = load_string_1010_847e(_u16_1050_14cc,uStack6);
-    SendDlgItemMessage16((LPARAM)pcVar7,WVar8,UVar9,uStack6,HVar1);
+    SendDlgItemMessage16(pcVar7,WVar8,UVar9,uStack6,HVar1);
   }
   if (WStack8 != 0) {
     PostMessage16(0x0,WStack8,0x111,HWND16_1050_0396);
@@ -432,8 +432,8 @@ astruct_57 * pass1_1038_d756(param_1: *mut StructD,param_2: *mut astruct_57,mut 
   iVar2 = param_2;
   (iVar2 + 1).field0_0x0 = 0;
   iVar2[0x1].field1_0x2 = 0;
-  &iVar2[0x1].field2_0x4 = 0;
-  &iVar2[0x1].field4_0x8 = 0;
+  iVar2[0x1].field2_0x4 = 0;
+  iVar2[0x1].field4_0x8 = 0;
   param_2.field0_0x0 = 0xe0d4;
   iVar2.field1_0x2 = &u16_1050_1038;
   puVar3 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0x2b),in_stack_0000fea6,

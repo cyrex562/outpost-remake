@@ -29,7 +29,7 @@ pub unsafe fn pass1_1028_1024(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
   local_16 = (uVar6 + 0xc);
   iStack26 = 0;
   iStack24 = 0;
-  while( true ) {
+  loop {
     if (uStack8 < iStack26) {
       return iStack24;
     }
@@ -91,7 +91,7 @@ pub unsafe fn pass1_1028_1106(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
   local_16 = (uVar5 + 0xc);
   iStack26 = 0;
   iStack24 = 0;
-  while( true ) {
+  loop {
     if (uStack8 < iStack26) {
       return iStack24;
     }
@@ -121,7 +121,7 @@ pub unsafe fn pass1_1028_1106(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
 
 
 
-bool pass1_1028_11de(param_1: *mut astruct_15)
+pub unsafe fn pass1_1028_11de(param_1: *mut astruct_15) -> bool
 
 {
   let mut uVar1: u32;
@@ -375,7 +375,7 @@ pub unsafe fn pass1_1028_1556(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
   uStack14 = (uVar7 >> 0x10);
   local_16 = (uVar7 + 0xc);
   iStack26 = 0x1;
-  while( true ) {
+  loop {
     if (uStack8 < iStack26) {
       return 0x0;
     }
@@ -954,7 +954,7 @@ pub fn struct_1028_1f56(param_1: *mut astruct_57,param_2: *mut astruct_180)
   iVar3 = param_2;
   uVar2 = 0;
   (iVar3 + 1) = 0;
-  &iVar3[0x1].field_0x4 = 0;
+  iVar3[0x1].field_0x4 = 0;
   param_2.field0_0x0 = 0x2572;
   iVar3.field1_0x2 = 0x1028;
   mem_op_1000_179c(0xc,param_1);

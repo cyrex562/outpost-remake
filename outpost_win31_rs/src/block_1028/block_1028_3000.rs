@@ -216,7 +216,7 @@ pub unsafe fn pass1_1028_36bc(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   uVar4 = (param_3 >> 0x10);
   if ((param_3 + 0x28) != 0) {
     iStack4 = 0x4;
-    while( true ) {
+    loop {
       if (0x1c < iStack4) break;
       uVar3 = (param_3 + 0x28);
       uVar5 = pass1_1020_bae6(uVar5,(uVar5 >> 0x10),uVar3,
@@ -258,19 +258,19 @@ pub fn struct_1028_37a6(param_1: *mut astruct_57,param_2: *mut astruct_180)
   iVar3 = param_2;
   uVar1 = 0;
   (iVar3 + 1) = 0;
-  &iVar3[0x1].field_0x4 = 0;
-  &iVar3[0x1].field_0x8 = 0;
+  iVar3[0x1].field_0x4 = 0;
+  iVar3[0x1].field_0x8 = 0;
   param_2.field0_0x0 = 0x3e2c;
   iVar3.field1_0x2 = 0x1028;
   mem_op_1000_179c(0xa,param_1);
   uVar2 = param_1 | uVar1;
   if (uVar2 == 0) {
-    &iVar3[0x1].field_0x8 = 0;
+    iVar3[0x1].field_0x8 = 0;
   }
   else {
     pass1_1020_ba3e(CONCAT22(param_1,uVar1),0x5,0x5);
-    &iVar3[0x1].field_0x8 = uVar1;
-    &iVar3[0x1].field_0xa = uVar2;
+    iVar3[0x1].field_0x8 = uVar1;
+    iVar3[0x1].field_0xa = uVar2;
   }
   return;
 }
@@ -551,7 +551,7 @@ pub fn pass1_1028_3c60(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,para
   iVar4 = param_3;
   if ((iVar4 + 0x28) != 0) {
     iStack8 = 0x4;
-    while( true ) {
+    loop {
       if (0x1c < iStack8) break;
       uVar3 = (iVar4 + 0x28);
       uVar6 = pass1_1020_bae6(uVar6,(uVar6 >> 0x10),uVar3,
@@ -569,7 +569,7 @@ pub fn pass1_1028_3c60(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,para
   uVar6 = (iVar4 + 0x28);
   uStack4 = (uVar6 + 0x4);
   uStack6 = 0;
-  while( true ) {
+  loop {
     if (uStack4 <= uStack6) {
       return;
     }
