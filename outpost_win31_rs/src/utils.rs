@@ -6,7 +6,7 @@
 
 pub fn CONCAT22(a: u16, b: u16) -> u32
 {
-    // u32 c = 0;
+    // c: u32 = 0;
     // c = a << 16 | b;
     // return c;
     (a << 16 | b) as u32
@@ -21,6 +21,6 @@ bool CARRY2(a: u16, u16 b) {
     return false;
 }
 
-pub fn SUB42(a: u32, u32 b) -> u32 {
+pub fn SUB42(a: u32, b: u32) -> u32 {
     return a - b;
 }

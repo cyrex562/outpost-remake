@@ -117,7 +117,7 @@ pub fn pass1_1030_227a(param_1: u16,mut param_2: u32,mut param_3: u32)
   let mut uVar1: u16;
   let mut iVar2: i16;
   let mut BVar3: bool;
-  in_stack_0000ffe8: mut HFILE16;
+  in_stack_0000ffe8: HFILE16;
 
   uVar1 = pass1_1030_1978(param_1,param_2,param_3);
   if (uVar1 != 0) {
@@ -155,18 +155,18 @@ pub fn pass1_1030_232e(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
   let mut iVar1: i16;
   let mut BVar2: bool;
 
-  file_1030_19b4(param_1,param_2,param_3,(HFILE16 *)param_4);
+  file_1030_19b4(param_1,param_2,param_3,param_4);
   if (param_1 != 0) {
     iVar1 = param_3;
-    BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar1 + 0x10)),0x106);
+    BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar1 + 0x10)),0x106);
     if (BVar2 != 0) {
-      BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar1 + 0x116)),0x86);
+      BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar1 + 0x116)),0x86);
       if (BVar2 != 0) {
-        BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar1 + 0x19c)),0xa);
+        BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar1 + 0x19c)),0xa);
         if (BVar2 != 0) {
-          BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar1 + 0x1a6)),0x106);
+          BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar1 + 0x1a6)),0x106);
           if (BVar2 != 0) {
-            BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar1 + 0x2ac)),0x106);
+            BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar1 + 0x2ac)),0x106);
             if (BVar2 != 0) {
               return;
             }
@@ -289,7 +289,7 @@ pub fn pass1_1030_23e2(mut param_1: i16,param_2: *mut u8,mut param_3: u32,mut pa
 
 
 
-BOOL16 pass1_1030_25b2(mut param_1: u32,mut param_2: i16)
+pub fn pass1_1030_25b2(mut param_1: u32,mut param_2: i16) -> BOOL16
 
 {
   if ((param_1 + 0x10 + param_2 * 0x2) == 0) {
@@ -651,10 +651,10 @@ pub fn pass1_1030_2aca(param_1: u16,param_2: *mut astruct_730,mut param_3: u32)
   iVar6: *mut astruct_730;
   let mut uVar5: u16;
   let mut uVar6: u16;
-  in_stack_0000ffc8: mut HFILE16;
-  u32 local_18 [0x3];
-  u16 local_c [0x3];
-  u16 local_6 [0x2];
+  in_stack_0000ffc8: HFILE16;
+  let mut local_18: [u32;0x3] = [0;0x3];
+  let mut local_c: [u16;0x3] = [0;0x3];
+  let mut local_6: [u16;0x2] = [0;0x2];
 
   uVar2 = pass1_1030_1978(param_1,param_2,param_3);
   if (uVar2 == 0) {
@@ -718,7 +718,7 @@ pub fn pass1_1030_2aca(param_1: u16,param_2: *mut astruct_730,mut param_3: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1030_2c8a(mut param_1: i16,param_2: *mut StructD,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1030_2c8a(mut param_1: i16,param_2: *mut StructD,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut puVar1: *mut u16;

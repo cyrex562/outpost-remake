@@ -648,7 +648,7 @@ pub fn realize_palette_1020_2992(mut param_1: u32,mut param_2: i16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u32 send_msg_1020_29d8(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut astruct_69,mut param_4: u16 ,mut param_5: u32,
+send_msg_1020_29d8: u32(mut param_1: u16 ,param_2: *mut astruct_57,param_3: *mut astruct_69,mut param_4: u16 ,mut param_5: u32,
                         mut param_6: u16 )
 
 {
@@ -814,7 +814,7 @@ pub fn invalidate_rect_1020_2ae4(mut param_1: u16 ,param_2: *mut u32,mut param_3
 
 
 
-BOOL16 enable_menu_item_1020_2c2a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,HMENmut param_5: u16 )
+pub fn enable_menu_item_1020_2c2a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,HMENmut param_5: u16 ) -> BOOL16
 
 {
   let mut BVar1: bool;

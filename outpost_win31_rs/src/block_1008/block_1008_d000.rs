@@ -382,7 +382,7 @@ pub fn unk_str_op_1008_d4f6(param_1: *mut astruct_263,param_2: *mut astruct_6)
 
 
 
-u16 * pass1_1008_d6f4(param_1: *mut u16,param_2: u8)
+pub fn pass1_1008_d6f4(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1008_caa0(param_1);
@@ -394,19 +394,19 @@ u16 * pass1_1008_d6f4(param_1: *mut u16,param_2: u8)
 
 
 
-u16 * pass1_1008_d72e(param_1: *mut astruct_19,mut param_2: u16 )
+pub fn pass1_1008_d72e(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut u16
 
 {
   struct_op_1010_1d48(param_1,param_2);
   (param_1 + 0xa) = 0;
-  param_1->offset_0x0 = 0xd780;
+  param_1.offset_0x0 = 0xd780;
   (param_1 + 0x2) = 0x1008;
-  return &param_1->offset_0x0;
+  return &param_1.offset_0x0;
 }
 
 
 
-u16 * pass1_1008_d75a(param_1: *mut u16,param_2: u8)
+pub fn pass1_1008_d75a(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_1d80(param_1);
@@ -431,13 +431,13 @@ pub fn pass1_1008_d790(param_1: *mut astruct_19,param_2: *mut astruct_19,mut par
   uVar3 = (in_EDX >> 0x10);
   paVar4 = struct_op_1010_1d48(CONCAT22(param_2,param_1),param_3);
   uVar2 = CONCAT22(uVar3,(paVar4 >> 0x10));
-  &param_1->horiz_res_0xa = 0;
+  &param_1.horiz_res_0xa = 0;
   &param_1.field_0xe = 0;
   CONCAT22(param_2,param_1) = 0xd98e;
-  param_1->segment_0x2 = 0x1008;
+  param_1.segment_0x2 = 0x1008;
   IVar1 = FUN_1010_830a(0x0,uVar2,0x1010,_u16_1050_14cc,0x9b);
-  param_1->horiz_res_0xa = IVar1;
-  param_1->ver_res_0xc = uVar2;
+  param_1.horiz_res_0xa = IVar1;
+  param_1.ver_res_0xc = uVar2;
   return;
 }
 pub fn pass1_1008_d7da(param_1: *mut u16)
@@ -545,7 +545,7 @@ pub fn pass1_1008_d818(param_1: *mut astruct_263,mut param_2: i16)
 pub fn pass1_1008_d968(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_d7da(&param_1->address_offset_field_0x0);
+  pass1_1008_d7da(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -559,7 +559,7 @@ pub fn pass1_1008_d99e(param_1: *mut u8,param_2: *mut astruct_19,mut param_3: u1
 
 {
   struct_op_1018_4cda(param_2,param_3);
-  param_2->offset_0x0 = 0xd9fa;
+  param_2.offset_0x0 = 0xd9fa;
   (param_2 + 0x2) = 0x1008;
   pass1_1018_4dce(param_1,param_2,0x9a);
   _PTR_LOOP_1050_4230 = param_2;
@@ -618,7 +618,7 @@ pub fn unk_draw_op_1008_da12(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x14) = 0;
   (param_1 + 0x16) = 0;
   (param_1 + 0x18) = 0;
-  param_1->offset_0x0 = 0xdc80;
+  param_1.offset_0x0 = 0xdc80;
   (param_1 + 0x2) = 0x1008;
   hdc = GetDC16(0x0);
   horiz_res = GetDeviceCaps16(HORZRES,hdc);
@@ -696,7 +696,7 @@ pub fn pass1_1008_dc2c(param_1: *mut u16)
 pub fn pass1_1008_dc5a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_dc2c(&param_1->address_offset_field_0x0);
+  pass1_1008_dc2c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -791,7 +791,7 @@ pub fn struct_1008_dcdc(param_1: *mut astruct_220)
 
 
 
-u16 * pass1_1008_dd1e(param_1: *mut u16,param_2: u8)
+pub fn pass1_1008_dd1e(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -821,7 +821,7 @@ pub fn struct_1008_dd4e(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x16) = 0;
   (param_1 + 0x1a) = 0;
   (param_1 + 0x1e) = 0;
-  param_1->offset_0x0 = 0xeaac;
+  param_1.offset_0x0 = 0xeaac;
   (param_1 + 0x2) = 0x1008;
   mem_op_1000_179c(0xc,paVar3);
   uVar2 = paVar3 | uVar1;

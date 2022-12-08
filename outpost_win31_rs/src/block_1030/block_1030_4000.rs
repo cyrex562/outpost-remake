@@ -444,16 +444,16 @@ pub fn pass1_1030_4bbe(mut param_1: u16 ,param_2: *mut astruct_117,mut param_3: 
   }
   return;
 }
-pub fn pass1_1030_4c06(param_1: *mut astruct_117,mut param_2: i16,u16_t param_3)
+pub fn pass1_1030_4c06(param_1: *mut astruct_117,mut param_2: i16,param_3: u16)
 
 {
-  i32 *plVar1;
-  i32 *plVar2;
+  plVar1: *mut i32;
+  plVar2: *mut i32;
   let mut uVar3: u16;
   let mut iVar4: i16;
   iVar5: *mut astruct_117;
-  i32 *plVar5;
-  i32 *plVar6;
+  plVar5: *mut i32;
+  plVar6: *mut i32;
   uVar7: *mut astruct_117;
 
   uVar7 = (param_1 >> 0x10);
@@ -565,7 +565,7 @@ pub fn pass1_1030_4d3a(mut param_1: u16 ,param_2: *mut astruct_117,param_3: *mut
 pub fn pass1_1030_4dbc(param_1: *mut astruct_117,mut param_2: u32,param_3: i32)
 
 {
-  i32 *plVar1;
+  plVar1: *mut i32;
   let mut piVar2: *mut i16;
   let mut lVar3: i32;
   let mut uVar4: u16;
@@ -611,7 +611,7 @@ pub unsafe fn read_file_1030_4e70(param_1: *mut astruct_117,param_2: *mut u32,u8
 
 {
   let mut uVar1: u16;
-  h_file: mut HFILE16;
+  h_file: HFILE16;
   let mut unaff_SS: u16;
   let mut path: *mut c_char;
   let mut lVar1: i32;
@@ -663,7 +663,7 @@ pub fn pass1_1030_4f5a(mut param_1: u16 ,param_2: *mut astruct_117)
 
 {
   let mut pcVar1: *mut c_char;
-  i32 *plVar2;
+  plVar2: *mut i32;
   let mut uVar3: u16;
   iVar4: *mut astruct_118;
   let mut pcVar4: *mut c_char;

@@ -11,8 +11,8 @@ pub fn pass1_1040_205e(param_1: *mut StructD)
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  param_1->address_offset_field_0x0 = 0x237e;
-  iVar4->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x237e;
+  iVar4.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   puVar1 = &iVar4.field_0x8e;
   uVar2 = &iVar4.field_0x90;
   if ((uVar2 | puVar1) != 0) {
@@ -66,15 +66,15 @@ pub fn create_win_1040_20d4(mut param_1: u32,StructB *struct_b_param_2,mut param
   cx = (uStack18 + 0x4);
   iStack4 = (iStack8 - cx) / 0x2;
   uStack6 = 0x5;
-  SetWindowPos16(0x6,0x1d6,cx,0x5,iStack4,0x0,struct_b_1->lpvoid_field_0x8);
+  SetWindowPos16(0x6,0x1d6,cx,0x5,iStack4,0x0,struct_b_1.lpvoid_field_0x8);
   GetClientRect16(&local_1e,&DAT_1050_1050);
   window_name = load_string_1010_847e(_u16_1050_14cc,0x592);
   uStack22 = 0x50010001;
-  CreateWindow16(0x0,CONCAT22(0x1,HINSTANCE16_1050_038c),struct_b_1->lpvoid_field_0x8,0x19,0x58,
+  CreateWindow16(0x0,CONCAT22(0x1,HINSTANCE16_1050_038c),struct_b_1.lpvoid_field_0x8,0x19,0x58,
                  (iStack24 + -0x28),(iStack26 + -0x58) / 0x2,0x1,s_Rebel_1050_4ffc + 0x5,window_name,
                  s_OPButton_1050_5ce4);
   SetWindowPos16(0x45,iStack10 + -0xa,(uStack18 + 0x4),0x5,iStack4,0x0,
-                 struct_b_1->lpvoid_field_0x8);
+                 struct_b_1.lpvoid_field_0x8);
   return;
 }
 
@@ -129,7 +129,7 @@ pub fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
     handle_00 = SelectObject16(handle,hdc_24);
   }
   DrawText16(0x10,
-                  (param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10),&iVar10->rect_0x92)),
+                  (param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10),&iVar10.rect_0x92)),
              -0x1,(LPCSTR)iVar10.field152_0xa2,hdc_24);
   SetTextColor16(CONCAT22(CONCAT11(0x2,iVar5.field_0x94),CONCAT11(iVar5.field_0x95,iVar5.field_0x96)),hdc_24);
   DrawText16(0x10,(param_1 & 0xffff0000 | ZEXT24(&iVar10.field147_0x9a)),-0x1,
@@ -204,7 +204,7 @@ pub fn pass1_1040_2464(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x2956;
+  param_1.address_offset_field_0x0 = 0x2956;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -222,13 +222,13 @@ pub fn show_win_1040_2490(StructB *struct_b_param_1)
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar3 = (struct_b_param_1 >> 0x10);
   struct_b_4 = (StructB *)struct_b_param_1;
-  hwnd = GetDlgItem16(0xfb1,struct_b_4->lpvoid_field_0x8);
+  hwnd = GetDlgItem16(0xfb1,struct_b_4.lpvoid_field_0x8);
   EnableWindow16(0x0,hwnd);
   ppcVar1 = (*&struct_b_4[0x7].field1_0x2 + 0x10);
   piVar2 = (**ppcVar1)(s_tile2_bmp_1050_1538,&struct_b_4[0x7].field1_0x2);
   piVar2 = (piVar2 >> 0x10);
   move_win_1040_826c(struct_b_param_1,(piVar2 + 0x2) + -0x2,(piVar2 + 0x4) + *piVar2 + 0x3);
-  ShowWindow16(0x5,struct_b_4->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_4.lpvoid_field_0x8);
   pass1_1018_1c9a(*(astruct_263 **)&struct_b_4[0x7].field1_0x2,0x1a0);
   return;
 }
@@ -442,10 +442,10 @@ pub fn draw_ui_op_1040_27cc(param_1: *mut astruct_752,HWND16 hwnd16_param_2,mut 
   uVar7 = SUB42(&PTR_LOOP_1050_1040,0x0);
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
-  if (iVar3->brush_handle_field4_0x4 == 0) {
+  if (iVar3.brush_handle_field4_0x4 == 0) {
     uVar7 = SUB42(s_tile2_bmp_1050_1538,0x0);
     brush_handle_var8 = CreateSolidBrush16(WHITE_BRUSH);
-    iVar3->brush_handle_field4_0x4 = brush_handle_var8;
+    iVar3.brush_handle_field4_0x4 = brush_handle_var8;
   }
   if (_u16_1050_5cf8 == 0) {
     fn_ptr_1 = (param_1 + 0x68);
@@ -473,7 +473,7 @@ pub fn draw_ui_op_1040_27cc(param_1: *mut astruct_752,HWND16 hwnd16_param_2,mut 
 // LAB_1040_286e:
   SetTextColor16(CONCAT22(uVar6,uVar5),hdc);
   SetBkColor16(0x1000000,hdc_param_4);
-  return CONCAT22(0x1050,iVar3->brush_handle_field4_0x4);
+  return CONCAT22(0x1050,iVar3.brush_handle_field4_0x4);
 }
 pub fn pass1_1040_288e(mut param_1: u32)
 
@@ -573,8 +573,8 @@ pub fn pass1_1040_2a22(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x2e26;
-  iVar1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x2e26;
+  iVar1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   fn_ptr_1000_17ce(*&iVar1.field_0x94);
   fn_ptr_1000_17ce(*&iVar1.field_0x98);
   unk_draw_op_1040_b0f8(in_stack_0000ffd2,param_1);
@@ -638,7 +638,7 @@ pub fn dlg_ui_op_1040_2a64(mut param_1: u16 ,StructB *struct_b_param_1)
     }
     else {
       pass1_1008_3bd6(paVar6,paVar2,paVar5,0x1,CONCAT22(local_16.x,local_16.y),0x101,0xff0100,
-                      CONCAT22(struct_b_6->lpvoid_field_0x8,(iVar9 + 0x5d00)),in_stack_0000ffa2,
+                      CONCAT22(struct_b_6.lpvoid_field_0x8,(iVar9 + 0x5d00)),in_stack_0000ffa2,
                       in_stack_0000fe30,in_stack_0000fe34,in_stack_0000ff5a,in_stack_0000ff5e,in_stack_0000ff62);
       paVar5 = paVar6;
     }
@@ -655,7 +655,7 @@ pub fn dlg_ui_op_1040_2a64(mut param_1: u16 ,StructB *struct_b_param_1)
       if (uVar3 != 0) {
         (iVar8 + 0x5d04) = 0x1;
         SetDlgItemText16(&struct_b_6[0x7].field6_0xc,(iVar8 + 0x5d06),
-                         struct_b_6->lpvoid_field_0x8);
+                         struct_b_6.lpvoid_field_0x8);
       }
     }
   }
@@ -836,7 +836,7 @@ pub fn pass1_1040_2f06(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x3436;
+  param_1.address_offset_field_0x0 = 0x3436;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);

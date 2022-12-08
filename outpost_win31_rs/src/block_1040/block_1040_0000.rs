@@ -477,7 +477,7 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
   let mut in_stack_0000f7f2: u16;
   let mut uStack2060: u32;
   let mut local_806: [u8;0x400] = [0;0x400];
-  u32 local_406 [0x100];
+  let mut local_406: [u32;0x100] = [0;0x100];
   let mut uStack6: u32;
 
   paVar6 = CONCAT22(in_register_0000000a,param_1);

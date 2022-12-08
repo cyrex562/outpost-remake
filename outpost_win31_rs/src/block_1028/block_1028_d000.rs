@@ -105,13 +105,13 @@ astruct_97 * struct_op_1028_d1dc(param_1: *mut astruct_97,mut param_2: u16 )
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->offset_0x0 = 0x389a;
-  iVar1->segment_0x2 = 0x1008;
+  param_1.offset_0x0 = 0x389a;
+  iVar1.segment_0x2 = 0x1008;
   &iVar1.field_0x4 = param_2;
   &iVar1.field_0x6 = 0;
-  param_1->offset_0x0 = 0x6ad2;
-  iVar1->segment_0x2 = 0x1028;
-  sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1->string_0x8)),s_ctor_1050_5160,in_stack_0000fffa);
+  param_1.offset_0x0 = 0x6ad2;
+  iVar1.segment_0x2 = 0x1028;
+  sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),s_ctor_1050_5160,in_stack_0000fffa);
   return param_1;
 }
 
@@ -242,7 +242,7 @@ pub fn struct_1028_d2b0(param_1: u32)
 
 
 
-BOOL16 pass1_1028_d52c(param_1: u32,mut param_2: u32,param_3: *mut u32)
+pub fn pass1_1028_d52c(param_1: u32,mut param_2: u32,param_3: *mut u32) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -262,7 +262,7 @@ BOOL16 pass1_1028_d52c(param_1: u32,mut param_2: u32,param_3: *mut u32)
 
 
 
-BOOL16 fn_ptr_1028_d566(param_1: u32,param_2: *mut astruct_97)
+pub fn fn_ptr_1028_d566(param_1: u32,param_2: *mut astruct_97) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -431,7 +431,7 @@ pub unsafe fn fn_ptr_1028_d742(mut param_1: u32,param_2: *mut u32) -> u16
 
 
 
-BOOL16 pass1_1028_d776(mut param_1: u32,mut param_2: u32,param_3: *mut u32)
+pub fn pass1_1028_d776(mut param_1: u32,mut param_2: u32,param_3: *mut u32) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -445,7 +445,7 @@ BOOL16 pass1_1028_d776(mut param_1: u32,mut param_2: u32,param_3: *mut u32)
 
 
 
-BOOL16 pass1_1028_d7a0(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1028_d7a0(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -796,9 +796,9 @@ pub fn write_to_file_1028_dce2(param_1: u16,param_2: *mut u32,param_3: *mut u8) 
   let mut uVar4: u16;
   let mut iVar5: i16;
   let mut uVar6: u16;
-  in_stack_0000ffc0: mut HFILE16;
-  u32 local_26 [0x2];
-  u16 local_1e [0x3];
+  in_stack_0000ffc0: HFILE16;
+  let mut local_26: [u32;0x2] = [0;0x2];
+  let mut local_1e: [u16;0x3] = [0;0x3];
   let mut uStack24: u32;
   astruct_92 local_14;
 
@@ -887,7 +887,7 @@ pub fn write_to_file_1028_dce2(param_1: u16,param_2: *mut u32,param_3: *mut u8) 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn read_file_1028_def2(param_1: u16,param_2: *mut u8,HFILE16 *param_3)
+pub fn read_file_1028_def2(param_1: u16,param_2: *mut u8,param_3: *mut HFILE16)
 
 {
   let mut ppcVar1: *mut *mut code;

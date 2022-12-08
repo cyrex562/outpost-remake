@@ -12,7 +12,7 @@ pub type HINSTANCE16 = HANDLE16;
 pub type HWND16 = HANDLE16;
 pub type HMENU16 = HANDLE16;
 
-// typedef u32 SEGPTR;
+// typedef SEGPTR: u32;
 pub type SEGPTR = u32;
 
 // typedef let mut HANDLE16: u16;
@@ -137,7 +137,7 @@ pub struct tagRGBQUAD {
 }
 
 // typedef let mut LONG: i32;
-// typedef u32 DWORD;
+// typedef DWORD: u32;
 // typedef HANDLE16 HINSTANCE16;
 
 

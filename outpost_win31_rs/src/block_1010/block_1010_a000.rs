@@ -83,7 +83,7 @@ pub fn pass1_1010_a0a0(mut param_1: u16 ,param_2: *mut astruct_252)
 
 
 
-u16 * pass1_1010_a172(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_a172(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_95f8(param_1);
@@ -95,7 +95,7 @@ u16 * pass1_1010_a172(param_1: *mut u16,param_2: u8)
 
 
 
-u16 * pass1_1010_a198(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_a198(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -132,7 +132,7 @@ pub fn struct_1010_a1d8(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0xa) = 0x3aa8;
   (param_1 + 0xc) = 0x1008;
   (param_1 + 0x138) = 0;
-  param_1->offset_0x0 = 0xe9cc;
+  param_1.offset_0x0 = 0xe9cc;
   (param_1 + 0x2) = 0x1010;
   (param_1 + 0xa) = 0xe9dc;
   (param_1 + 0xc) = 0x1010;
@@ -179,8 +179,8 @@ pub fn pass1_1010_a478(param_1: *mut StructD)
 
   uVar4 = (param_1 >> 0x10);
   uVar3 = param_1;
-  param_1->address_offset_field_0x0 = 0xe9cc;
-  uVar3->address_offset_field_0x2 = 0x1010;
+  param_1.address_offset_field_0x0 = 0xe9cc;
+  uVar3.address_offset_field_0x2 = 0x1010;
   uVar3.field6_0xa = 0xe9dc;
   uVar3.field7_0xc = 0x1010;
   if (&uVar3[0x1].field_0x4a != 0) {
@@ -226,7 +226,7 @@ pub fn pass1_1010_a50c(param_1: *mut astruct_20,u8 **param_2,param_3: *mut Struc
   iVar1 = (param_3 + 0xa);
   local_8 = (&struct_1.field6_0xe + iVar1 * 0x3);
   iStack4 = (&struct_1.field7_0x10 + iVar1 * 0x6 + 2);
-  (local_8)(0x1000,&struct_1->offset_0x0 + iStack4,param_1,param_2,param_3);
+  (local_8)(0x1000,&struct_1.offset_0x0 + iStack4,param_1,param_2,param_3);
   return;
 }
 

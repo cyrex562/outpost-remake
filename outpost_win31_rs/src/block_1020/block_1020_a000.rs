@@ -13,7 +13,7 @@ pub unsafe fn pass1_1020_a426() -> u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 * pass1_1020_a43e(param_1: *mut u8,param_2: *mut u16)
+pub fn pass1_1020_a43e(param_1: *mut u8,param_2: *mut u16) -> *mut u16
 
 {
   let mut in_register_0000000a: u16;
@@ -162,7 +162,7 @@ pub fn pass1_1020_a54c(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut 
 
 
 
-BOOL16 pass1_1020_a644(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1020_a644(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -176,7 +176,7 @@ BOOL16 pass1_1020_a644(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 
 
 
-BOOL16 read_file_1020_a65e(param_1: u16,mut param_2: u32,HFILE16 *param_3)
+pub fn read_file_1020_a65e(param_1: u16,mut param_2: u32,param_3: *mut HFILE16) -> BOOL16
 
 {
   let mut BVar1: bool;

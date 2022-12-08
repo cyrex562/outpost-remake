@@ -69,7 +69,7 @@ pub fn pass1_1038_e16e(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xe264;
+  param_1.address_offset_field_0x0 = 0xe264;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -153,8 +153,8 @@ pub fn pass1_1038_e308(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0xe62e;
-  iVar1->address_offset_field_0x2 = &u16_1050_1038;
+  param_1.address_offset_field_0x0 = 0xe62e;
+  iVar1.address_offset_field_0x2 = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,&iVar1.field_0x6);
   fn_ptr_1000_17ce(*&iVar1.field_0x8e);
   ui_cleanup_op_1040_782c(param_1);
@@ -238,7 +238,7 @@ pub fn win_ui_op_1038_e348(StructB *param_1,param_2: u8,param_3: *mut StructD,mu
       (uVar3 + iStack10 * 0x4) = 0;
     }
     else {
-      pvVar1 = struct_b_5->lpvoid_field_0x8;
+      pvVar1 = struct_b_5.lpvoid_field_0x8;
       pass1_1008_3bd6(uVar6,rect,paVar8,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
                       CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,(puStack26 + 0x4)))
                       ,param_4,in_stack_0000fe2a,in_stack_0000fe2e,in_stack_0000ff54,in_stack_0000ff58,in_stack_0000ff5c
@@ -257,7 +257,7 @@ pub fn win_ui_op_1038_e348(StructB *param_1,param_2: u8,param_3: *mut StructD,mu
     }
   }
   move_win_1040_826c(param_1,-0x1,0xffff);
-  ShowWindow16(0x5,struct_b_5->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_5.lpvoid_field_0x8);
   return;
 }
 
@@ -430,7 +430,7 @@ pub fn pass1_1038_e6f0(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xe92e;
+  param_1.address_offset_field_0x0 = 0xe92e;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -454,10 +454,10 @@ pub fn unk_win_ui_op_1038_e71c(mut param_1: u16 ,StructB *param_2)
              CONCAT22(extraout_DX,param_1));
   fn_ptr_1000_17ce(pcStack6);
   move_win_1040_826c(param_2,-0x1,0xffff);
-  ShowWindow16(0x5,struct_1->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_1.lpvoid_field_0x8);
   struct_1[0x7].lpvoid_field_0x8 = (LPVOID)(&PTR_LOOP_1050_0000 + 1);
   unk_win_msg_op_1008_9510((param_2 & 0xffff0000 | ZEXT24(&struct_1[0x7].lpvoid_field_0x8)));
-  DestroyWindow16(struct_1->lpvoid_field_0x8);
+  DestroyWindow16(struct_1.lpvoid_field_0x8);
   return;
 }
 pub fn chk_is_dlg_btn_checked_1038_e7a0(param_1: *mut astruct_62,mut param_2: i16)
@@ -595,7 +595,7 @@ pub fn pass1_1038_e9ec(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xeb32;
+  param_1.address_offset_field_0x0 = 0xeb32;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -616,12 +616,12 @@ pub fn win_ui_op_1038_ea18(StructB *param_1)
   uVar2 = (param_1 >> 0x10);
   iVar2 = (StructB *)param_1;
   lparam = pass1_1010_375e(&iVar2[0x7].field1_0x2);
-  hwnd = GetDlgItem16(0xfa5,iVar2->lpvoid_field_0x8);
+  hwnd = GetDlgItem16(0xfa5,iVar2.lpvoid_field_0x8);
   SendMessage16(lparam,0x0,0xc,hwnd);
-  GetWindowRect16(CONCAT22(0x1050,&stack0xfff0),iVar2->max_count_field_0x10);
+  GetWindowRect16(CONCAT22(0x1050,&stack0xfff0),iVar2.max_count_field_0x10);
   IVar1 = GetSystemMetrics16(SM_CYCAPTION);
   move_win_1040_826c(param_1,IVar1 + iStack14 + 0x5,in_stack_0000fff0);
-  ShowWindow16(0x5,iVar2->lpvoid_field_0x8);
+  ShowWindow16(0x5,iVar2.lpvoid_field_0x8);
   return;
 }
 pub fn win_ui_op_1038_eaa2(param_1: *mut astruct_888,mut param_2: i16)
@@ -688,7 +688,7 @@ pub fn pass1_1038_ebd6(param_1: *mut StructD)
 
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0xee6e;
+  param_1.address_offset_field_0x0 = 0xee6e;
   (iVar1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(iVar1 + 0x6));
   fn_ptr_1000_17ce(*(iVar1 + 0x8e));
@@ -914,8 +914,8 @@ pub fn destroy_win_1038_ef3a(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x67c;
-  iVar1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x67c;
+  iVar1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   if (&iVar1.field_0x96 != 0) {
     uVar2 = &iVar1.field_0x96;
     DestroyWindow16((uVar2 + 0x6));

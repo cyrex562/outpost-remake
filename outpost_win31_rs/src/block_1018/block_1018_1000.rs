@@ -472,7 +472,7 @@ pub fn pass1_1018_181c(param_1: *mut astruct_610,mut param_2: u32,param_3: *mut 
 
 
 
-u16 * pass1_1018_1842(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_1842(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   param_1 = (param_1 & 0xffff0000 | (param_1 - 0x20));
@@ -975,7 +975,7 @@ pub fn pass1_1018_1f7a(mut param_1: i16,mut param_2: u16 ) -> u32
 
 
 
-u16 * pass1_1018_1f8a(param_1: *mut StructD,param_2: u8)
+pub fn pass1_1018_1f8a(param_1: *mut StructD,param_2: u8) -> *mut u16
 
 {
   pass1_1018_1a04(param_1);

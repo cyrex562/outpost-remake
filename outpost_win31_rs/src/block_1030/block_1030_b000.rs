@@ -402,13 +402,13 @@ pub fn pass1_1030_b768(mut param_1: u32,mut param_2: u32)
   let mut extraout_DX: u16;
   let mut iVar5: i16;
   let mut uVar6: u16;
-  in_stack_0000ffc8: mut HFILE16;
-  u16 local_22 [0x4];
+  in_stack_0000ffc8: HFILE16;
+  let mut local_22: [u16;0x4] = [0;0x4];
   let mut local_1a: [u8;0xa] = [0;0xa];
   let mut local_10: u32;
   let mut puStack12: *mut u8;
   let mut uStack10: u16;
-  u16 local_8 [0x3];
+  let mut local_8: [u16;0x3] = [0;0x3];
 
   uVar6 = (param_1 >> 0x10);
   iVar5 = param_1;
@@ -457,24 +457,24 @@ pub fn file_1030_b836(param_1: *mut u8,param_2: *mut astruct_401,mut param_3: u3
   let mut paVar6: *mut Struct57;
   let mut uVar8: u16;
   let mut uVar9: u32;
-  u16 local_12 [0x7];
+  let mut local_12: [u16;0x7] = [0;0x7];
   let mut local_4: u16;
   let mut paVar7: *mut Struct57;
 
   paVar6 = CONCAT22(in_register_0000000a,param_1);
   iVar4 = param_2;
   iVar4 = &iVar4.field4_0x4;
-  BVar2 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | ZEXT24(iVar4)),0x4);
+  BVar2 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | ZEXT24(iVar4)),0x4);
   if (((BVar2 == 0) ||
       (BVar2 = read_file_1008_7bc8(param_3,(param_2 & 0xffff0000 | ZEXT24(&iVar4.field_0x8))),
       BVar2 == 0)) ||
-     (BVar2 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,&local_4),0x2), BVar2 == 0)) {
+     (BVar2 = read_file_1008_7dee(param_3,CONCAT22(0x1050,&local_4),0x2), BVar2 == 0)) {
     u16_1050_0310 = 0x6d2;
   }
   else {
     uVar8 = (param_2 >> 0x10);
     iVar4.field13_0xe = local_4;
-    BVar2 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,local_12),0x2);
+    BVar2 = read_file_1008_7dee(param_3,CONCAT22(0x1050,local_12),0x2);
     if (BVar2 != 0) {
       while( true ) {
         if (local_12[0] == 0) {
@@ -676,7 +676,7 @@ pub fn pass1_1030_bb0e(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,mut p
 pub fn pass1_1030_bbe6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1030_b96c(&param_1->address_offset_field_0x0);
+  pass1_1030_b96c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -685,7 +685,7 @@ pub fn pass1_1030_bbe6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1030_bc24(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
+pub fn pass1_1030_bc24(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32) -> *mut u16
 
 {
   pass1_1028_b22c(param_1,CONCAT22(param_3,param_2),param_4,param_5);
@@ -712,7 +712,7 @@ pub fn FUN_1030_bc6c()
 pub fn pass1_1030_bc70(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1030_bc4e(&param_1->address_offset_field_0x0);
+  pass1_1030_bc4e(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -814,7 +814,7 @@ astruct_180 * set_fn_ptr_1030_be34(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1030_be56(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1030_be56(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -945,7 +945,7 @@ pub unsafe fn pass1_1030_bfb8(mut param_1: u32) -> u16
 pub fn pass1_1030_bfe0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }

@@ -112,7 +112,7 @@ pub fn enable_win_1038_c294(mut param_1: u32)
 
 
 
-BOOL16 set_win_pos_1038_c31a(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
+pub fn set_win_pos_1038_c31a(mut param_1: u32,mut param_2: u16 ,mut param_3: i16) -> BOOL16
 
 {
   let mut iStack10: i16;
@@ -228,7 +228,7 @@ pub fn pass1_1038_c4fe(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xc74c;
+  param_1.address_offset_field_0x0 = 0xc74c;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -397,7 +397,7 @@ pub fn pass1_1038_c80a(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xca6c;
+  param_1.address_offset_field_0x0 = 0xca6c;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -447,18 +447,18 @@ pub fn win_ui_op_1038_c89c(StructB *struct_b_param_1)
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar3 = (struct_b_param_1 >> 0x10);
   struct_b_4 = (StructB *)struct_b_param_1;
-  CheckRadioButton16(0xfac,0xfad,0xfac,struct_b_4->lpvoid_field_0x8);
+  CheckRadioButton16(0xfac,0xfad,0xfac,struct_b_4.lpvoid_field_0x8);
   uVar1 = &struct_b_4[0x7].field1_0x2;
   (uVar1 + 0xa) = 0x1;
   uVar2 = &struct_b_4[0x7].field1_0x2;
   iVar1 = *(astruct_910 **)(uVar2 + 0x12);
   if (iVar1 == &u32_1050_0004) {//
 // LAB_1038_c8da:
-    HVar1 = GetDlgItem16(0xfce,struct_b_4->lpvoid_field_0x8);
+    HVar1 = GetDlgItem16(0xfce,struct_b_4.lpvoid_field_0x8);
     if (HVar1 != 0) {
       EnableWindow16(0x1,HVar1);
     }
-    HVar1 = GetDlgItem16(0x1,struct_b_4->lpvoid_field_0x8);
+    HVar1 = GetDlgItem16(0x1,struct_b_4.lpvoid_field_0x8);
     if (HVar1 == 0) goto LAB_1038_c93c;
     enable = 0;
   }
@@ -468,14 +468,14 @@ pub fn win_ui_op_1038_c89c(StructB *struct_b_param_1)
       if (iVar1 != (&u16_1050_0008 + 1)) goto LAB_1038_c93c;
   // TODO: goto LAB_1038_c8da;
     }
-    HVar1 = GetDlgItem16(0xfce,struct_b_4->lpvoid_field_0x8);
+    HVar1 = GetDlgItem16(0xfce,struct_b_4.lpvoid_field_0x8);
     if (HVar1 == 0) goto LAB_1038_c93c;
     enable = 0x1;
   }
   EnableWindow16(enable,HVar1);//
 // LAB_1038_c93c:
   move_win_1040_826c(struct_b_param_1,0xc8,0x0);
-  ShowWindow16(0x5,struct_b_4->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_4.lpvoid_field_0x8);
   return;
 }
 
@@ -600,7 +600,7 @@ pub fn pass1_1038_cb30(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xcc9a;
+  param_1.address_offset_field_0x0 = 0xcc9a;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -646,12 +646,12 @@ pub fn show_win_1038_cb5c(mut param_1: u32,StructB *struct_b_param_1,mut param_3
     param_1 = paVar7 & 0xffff0000 | uVar6;
     if (uVar6 != 0) {
       pass1_1008_3bd6(param_1,paVar5,paVar7,0x0,CONCAT22(*puVar9,paVar4.field1_0x2),0x101,0xff0100,
-                      CONCAT22(struct_b_5->lpvoid_field_0x8,paVar4.field2_0x4),param_3,in_stack_0000fe48,
+                      CONCAT22(struct_b_5.lpvoid_field_0x8,paVar4.field2_0x4),param_3,in_stack_0000fe48,
                       in_stack_0000fe4c,in_stack_0000ff72,in_stack_0000ff76,in_stack_0000ff7a);
     }
   }
   win_1008_5c7c(uVar3,param_1,_u16_1050_02a0,0x90001);
-  ShowWindow16(0x5,struct_b_5->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_5.lpvoid_field_0x8);
   return;
 }
 
@@ -755,7 +755,7 @@ pub fn pass1_1038_cd5c(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xcf00;
+  param_1.address_offset_field_0x0 = 0xcf00;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -771,10 +771,10 @@ pub fn destroy_window_1038_cd88(StructB *struct_b_param_1)
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
   uVar1 = (struct_b_param_1 >> 0x10);
   struct_1 = (StructB *)struct_b_param_1;
-  ShowWindow16(0x5,struct_1->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_1.lpvoid_field_0x8);
   struct_1[0x7].lpvoid_field_0x8 = (LPVOID)(&PTR_LOOP_1050_0000 + 1);
   unk_win_msg_op_1008_9510((struct_b_param_1 & 0xffff0000 | ZEXT24(&struct_1[0x7].lpvoid_field_0x8)));
-  DestroyWindow16(struct_1->lpvoid_field_0x8);
+  DestroyWindow16(struct_1.lpvoid_field_0x8);
   return;
 }
 pub fn check_dlg_btn_checked_1038_cdd6(param_1: *mut astruct_61,mut param_2: i16)
@@ -893,12 +893,12 @@ pub fn free_proc_inst_1038_cfda(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0xd23e;
-  iVar1->address_offset_field_0x2 = &u16_1050_1038;
-  FreeProcInstance16(*(void **)&iVar1->hfile_0x4);
+  param_1.address_offset_field_0x0 = 0xd23e;
+  iVar1.address_offset_field_0x2 = &u16_1050_1038;
+  FreeProcInstance16(*(void **)&iVar1.hfile_0x4);
   FreeProcInstance16(_u16_1050_5bcc);
-  &iVar1->hfile_0x4 = 0;
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar1->address_offset_field_0x2 = 0x1008;
+  &iVar1.hfile_0x4 = 0;
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar1.address_offset_field_0x2 = 0x1008;
   return;
 }

@@ -153,7 +153,7 @@ pub fn pass1_1038_d276(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xd6ea;
+  param_1.address_offset_field_0x0 = 0xd6ea;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -223,7 +223,7 @@ pub fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,StructB *struct_b_param_1,mu
     }
     else {
       pass1_1008_3bd6(paVar5,rect,param_1,0x1,CONCAT22(local_16,uStack20),0x104,0x1020103,
-                      CONCAT22(struct_b_6->lpvoid_field_0x8,(iVar5 + 0x5c10)),param_3,in_stack_0000fe2e,
+                      CONCAT22(struct_b_6.lpvoid_field_0x8,(iVar5 + 0x5c10)),param_3,in_stack_0000fe2e,
                       in_stack_0000fe32,in_stack_0000ff58,in_stack_0000ff5c,in_stack_0000ff60);
       param_1 = paVar5;
     }
@@ -240,9 +240,9 @@ pub fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,StructB *struct_b_param_1,mu
   uStack12 = uVar4;
   iVar1 = pass1_1010_659a(puVar7,uVar9);
   if (iVar1 == 0) {
-    hwnd_2 = GetDlgItem16(0x14a,struct_b_6->lpvoid_field_0x8);
+    hwnd_2 = GetDlgItem16(0x14a,struct_b_6.lpvoid_field_0x8);
     EnableWindow16(0x0,hwnd_2);
-    hwnd = struct_b_6->lpvoid_field_0x8;
+    hwnd = struct_b_6.lpvoid_field_0x8;
     msg = 0xc;
     id = 0x144;
     w_param = 0;
@@ -251,7 +251,7 @@ pub fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,StructB *struct_b_param_1,mu
     uVar4 = (LVar8 >> 0x10);
   }
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
-  BVar2 = ShowWindow16(0x5,struct_b_6->lpvoid_field_0x8);
+  BVar2 = ShowWindow16(0x5,struct_b_6.lpvoid_field_0x8);
   win_1008_5c7c(BVar2,uVar4,_u16_1050_02a0,0x9a0001);
   (struct_b_6 + 0x7).field0_0x0 = BVar2;
   return;
@@ -456,8 +456,8 @@ pub fn pass1_1038_d7d0(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0xe0d4;
-  iVar1->address_offset_field_0x2 = &u16_1050_1038;
+  param_1.address_offset_field_0x0 = 0xe0d4;
+  iVar1.address_offset_field_0x2 = &u16_1050_1038;
   if (&iVar1.field_0x90 != 0) {
     pass1_1010_1ea6(_u16_1050_02a0,param_1);
   }
@@ -569,7 +569,7 @@ pub fn FUN_1038_d8ae(param_1: *mut StructD,mut param_2: u16 ,StructB *struct_b_p
       (uVar2 + iStack10 * 0x4) = 0;
     }
     else {
-      pvVar1 = struct_b_1->lpvoid_field_0x8;
+      pvVar1 = struct_b_1.lpvoid_field_0x8;
       pass1_1008_3bd6(param_1,rect,paVar5,0x0,CONCAT22(local_26,uStack36),0x101,0xff0100,
                       CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,(puStack30 + 0x4)))
                       ,param_4,in_stack_0000fe24,in_stack_0000fe28,in_stack_0000ff4e,in_stack_0000ff52,in_stack_0000ff56
@@ -592,8 +592,8 @@ pub fn FUN_1038_d8ae(param_1: *mut StructD,mut param_2: u16 ,StructB *struct_b_p
   }
   puStack14 = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(param_5,0x2),in_stack_0000fe78
                               ,in_stack_0000ff9c,in_stack_0000ffa2,in_stack_0000ffa6);
-  SetWindowText16((puStack14 + 0x68),struct_b_1->lpvoid_field_0x8);
-  ShowWindow16(0x5,struct_b_1->lpvoid_field_0x8);
+  SetWindowText16((puStack14 + 0x68),struct_b_1.lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_1.lpvoid_field_0x8);
   SetCursor16(HStack6);
   return;
 }

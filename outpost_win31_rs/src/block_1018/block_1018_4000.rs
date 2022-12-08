@@ -271,7 +271,7 @@ pass1_1018_4608: i32(mut param_1: u32,param_2: *mut c_char,param_3: *mut c_char)
 
 
 
-u16 * pass1_1018_46e6(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_46e6(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1018_33b4(param_1);
@@ -305,11 +305,11 @@ pub fn pass1_1018_4760(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar2 = param_1;
-  param_1->address_offset_field_0x0 = &PTR_LOOP_1050_4aa6;
-  iVar2->address_offset_field_0x2 = 0x1018;
-  fn_ptr_1000_17ce(*&iVar2->hfile_0x4);
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar2->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = &PTR_LOOP_1050_4aa6;
+  iVar2.address_offset_field_0x2 = 0x1018;
+  fn_ptr_1000_17ce(*&iVar2.hfile_0x4);
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar2.address_offset_field_0x2 = 0x1008;
   return;
 }
 
@@ -386,7 +386,7 @@ pub fn pass1_1018_4882(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = &PTR_LOOP_1050_4a8e;
+  param_1.address_offset_field_0x0 = &PTR_LOOP_1050_4a8e;
   (param_1 + 0x2) = 0x1018;
   fn_ptr_1000_17ce(*(param_1 + 0x10));
   pass1_1018_4760(param_1);
@@ -413,7 +413,7 @@ astruct_203 * struct_1018_48b0(param_1: *mut astruct_203,mut param_2: u32,mut pa
 
 
 
-u16 * struct_1018_48e8(param_1: *mut astruct_203,mut param_2: u32,mut param_3: u32,mut param_4: u16 )
+pub fn struct_1018_48e8(param_1: *mut astruct_203,mut param_2: u32,mut param_3: u32,mut param_4: u16 ) -> *mut u16
 
 {
   iVar1: *mut astruct_203;
@@ -548,7 +548,7 @@ pub fn pass1_1018_4aaa(param_1: *mut u8,param_2: *mut astruct_19,mut param_3: u1
 
 {
   struct_op_1018_4cda(param_2,param_3);
-  param_2->offset_0x0 = 0x4b06;
+  param_2.offset_0x0 = 0x4b06;
   (param_2 + 0x2) = 0x1018;
   pass1_1018_4dce(param_1,param_2,0x9a);
   _PTR_LOOP_1050_4230 = param_2;
@@ -569,7 +569,7 @@ struct * pass1_1018_4ae0(param_1: *mut StructD,param_2: u8)
 
 
 
-u16 * get_sys_metrics_1018_4b1e(param_1: *mut astruct_19,mut param_2: u16 ,mut param_3: u16 )
+pub fn get_sys_metrics_1018_4b1e(param_1: *mut astruct_19,mut param_2: u16 ,mut param_3: u16 ) -> *mut u16
 
 {
   pstruct19_1: *mut astruct_19;
@@ -581,14 +581,14 @@ u16 * get_sys_metrics_1018_4b1e(param_1: *mut astruct_19,mut param_2: u16 ,mut p
   pstruct19_1.field9_0x12 = param_2;
   pstruct19_1.field10_0x14 = 0;
     // 0x4c9e val
-  param_1->offset_0x0 = &PTR_LOOP_1050_4c9e;
-  pstruct19_1->segment_0x2 = 0x1018;
+  param_1.offset_0x0 = &PTR_LOOP_1050_4c9e;
+  pstruct19_1.segment_0x2 = 0x1018;
   if (G_SM_CYCAPTION_1050_416c == 0) {
     G_SM_CYCAPTION_1050_416c = GetSystemMetrics16(SM_CYCAPTION);
     G_SM_CXBORDER_1050_416e = GetSystemMetrics16(SM_CXBORDER);
     G_SM_CYBORDER_1050_4170 = GetSystemMetrics16(SM_CYBORDER);
   }
-  return &param_1->offset_0x0;
+  return &param_1.offset_0x0;
 }
 
 
@@ -656,7 +656,7 @@ pub fn pass1_1018_4c2c(mut param_1: u32,param_2: *mut u32,mut param_3: u16 )
 
 
 
-u16 * pass1_1018_4c78(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_4c78(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_1d80(param_1);
@@ -676,7 +676,7 @@ pub fn struct_op_1018_4cda(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x16) = 0;
   (param_1 + 0x18) = 0x1;
   (param_1 + 0x1a) = 0;
-  param_1->offset_0x0 = s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
+  param_1.offset_0x0 = s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
   (param_1 + 0x2) = 0x1018;
   return;
 }
@@ -702,8 +702,8 @@ pub fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD)
   uVar4 = (in_struct_1 >> 0x10);
   local_struct_1 = in_struct_1;
     // just 0x5058
-  in_struct_1->address_offset_field_0x0 = s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
-  local_struct_1->address_offset_field_0x2 = 0x1018;
+  in_struct_1.address_offset_field_0x0 = s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
+  local_struct_1.address_offset_field_0x2 = 0x1018;
   if (local_struct_1.field11_0x12 != 0) {
     obj = SelectPalette16(0x0,local_struct_1.field14_0x1a,local_struct_1.field11_0x12);
     DeleteObject16(obj);

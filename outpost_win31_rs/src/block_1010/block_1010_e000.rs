@@ -445,7 +445,7 @@ pub fn struct_1010_e9e4(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x2c) = 0;
   (param_1 + 0x30) = 0;
   (param_1 + 0x32) = 0;
-  param_1->offset_0x0 = 0x558;
+  param_1.offset_0x0 = 0x558;
   (param_1 + 0x2) = 0x1018;
   (param_1 + 0xa) = 0x568;
   (param_1 + 0xc) = 0x1018;
@@ -500,8 +500,8 @@ pub fn pass1_1010_eb66(param_1: *mut StructD)
 
   uVar5 = (param_1 >> 0x10);
   iVar5 = param_1;
-  param_1->address_offset_field_0x0 = 0x558;
-  iVar5->address_offset_field_0x2 = 0x1018;
+  param_1.address_offset_field_0x0 = 0x558;
+  iVar5.address_offset_field_0x2 = 0x1018;
   iVar5.field6_0xa = 0x568;
   iVar5.field7_0xc = 0x1018;
   puVar1 = iVar5.field8_0xe;
@@ -632,10 +632,10 @@ pub fn write_to_file_1010_ed58(mut param_1: u32,mut param_2: u32)
   let mut puVar5: *mut u32;
   let mut iVar6: i16;
   let mut uVar7: u16;
-  in_stack_0000ffc4: mut HFILE16;
+  in_stack_0000ffc4: HFILE16;
   let mut local_22: u32;
   let mut uStack30: u16;
-  u32 local_12 [0x2];
+  let mut local_12: [u32;0x2] = [0;0x2];
   let mut local_a: u32;
   let mut iStack4: i16;
 

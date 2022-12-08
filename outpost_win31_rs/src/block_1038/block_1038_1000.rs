@@ -234,7 +234,7 @@ pub fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,para
   let mut uVar18: u8;
   let mut lStack74: i32;
   let mut local_46: u32;
-  u16 local_42 [0x4];
+  let mut local_42: [u16;0x4] = [0;0x4];
   let mut uStack58: u16;
   let mut uStack56: u16;
   let mut puStack54: *mut u32;
@@ -389,7 +389,7 @@ pub fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,para
 pub fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,param_4: *mut u32)
 
 {
-  i32 *plVar1;
+  plVar1: *mut i32;
   let mut ppcVar2: *mut *mut code;
   let mut uVar3: u32;
   let mut uVar4: u16;
@@ -412,7 +412,7 @@ pub fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,para
   let mut lStack68: i32;
   let mut puStack56: *mut u32;
   let mut puStack52: *mut u32;
-  i32 *plStack50;
+  plStack50: *mut i32;
   let mut uStack46: u16;
   let mut uStack42: u32;
   let mut uStack22: u32;
@@ -679,7 +679,7 @@ pub fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   let mut uVar2: u16;
   let mut paVar1: *mut Struct57;
   let mut local_1a: u32;
-  u16 local_16 [0x2];
+  let mut local_16: [u16;0x2] = [0;0x2];
   let mut uStack18: u16;
   let mut uStack16: u16;
   let mut uStack14: u32;

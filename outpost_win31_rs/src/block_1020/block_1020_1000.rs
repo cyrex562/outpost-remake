@@ -755,7 +755,7 @@ pub fn enable_window_1020_1bd4
 
 
 
-BOOL16 post_win_msg_1020_1ca4(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 )
+pub fn post_win_msg_1020_1ca4(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 ) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -857,7 +857,7 @@ pub unsafe fn pass1_1020_1da8(mut param_1: i16,mut param_2: u16 ,StructB *param_
 
 
 
-BOOL16 destroy_win_1020_1dea(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 )
+pub fn destroy_win_1020_1dea(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ) -> BOOL16
 
 {
   let mut BVar1: bool;

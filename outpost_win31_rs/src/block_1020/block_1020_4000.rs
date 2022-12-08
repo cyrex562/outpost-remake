@@ -11,7 +11,7 @@ pub fn pass1_1020_4064(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1020_4092(param_1: *mut u16)
+pub fn pass1_1020_4092(param_1: *mut u16) -> *mut u16
 
 {
   let mut iVar1: i16;
@@ -80,8 +80,8 @@ pub fn destroy_cursor_1020_42f4(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   struct_1 = param_1;
-  param_1->address_offset_field_0x0 = 0x623c;
-  struct_1->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x623c;
+  struct_1.address_offset_field_0x2 = 0x1020;
   &struct_1.field_0xe2 = 0x62d8;
   &struct_1.field_0xe4 = 0x1020;
   if (struct_1[0x1].field13_0x18 != 0) {
@@ -234,15 +234,15 @@ let mut uStack300: u16;
   let mut bStack293: u8;
   let mut uStack278: u16;
   let mut uStack268: u32;
-  u32 local_108 [0x40];
+  let mut local_108: [u32;0x40] = [0;0x40];
   let mut uStack8: u16;
   let mut puStack6: *mut u32;
 
   paVar11 = CONCAT22(in_register_0000000a,param_5);
   uVar13 = (param_1 >> 0x10);
   iVar9 = param_1;
-  if (iVar9->hmenu_0x106 != 0) {
-    if (iVar9->hmenu_0x106 == param_4) {
+  if (iVar9.hmenu_0x106 != 0) {
+    if (iVar9.hmenu_0x106 == param_4) {
       puStack6 = mixed_1010_20ba(paVar11,_u16_1050_0ed0,CONCAT22(in_stack_0000fec8,0x3),in_stack_0000fd70,
                                  in_stack_0000fe94,in_stack_0000fe9a,in_stack_0000fe9e);
       uVar2 = iVar9.field257_0x108;
@@ -263,27 +263,27 @@ let mut uStack300: u16;
         pass1_1010_c3c2(puVar9,puStack6,(puStack6 >> 0x10),CONCAT22(0x1050,local_108),
                         CONCAT22(puVar9,uVar7));
       }
-      ModifyMenu16(CONCAT22(0x1050,local_108),0x76,0x0,0x76,iVar9->hmenu_0x106);
-      UVar4 = GetMenuState16(0x0,0x13c,iVar9->hmenu_0x106);
+      ModifyMenu16(CONCAT22(0x1050,local_108),0x76,0x0,0x76,iVar9.hmenu_0x106);
+      UVar4 = GetMenuState16(0x0,0x13c,iVar9.hmenu_0x106);
       if (UVar4 != 0xffff) {
-        DeleteMenu16(0x0,0x13c,iVar9->hmenu_0x106);
+        DeleteMenu16(0x0,0x13c,iVar9.hmenu_0x106);
       }
       BVar5 = pass1_1008_c6ae(_u16_1050_06e0,uStack8,0x20);
       if (BVar5 != 0) {
         data = load_string_1010_847e(_u16_1050_14cc,0x74b);
-        InsertMenu16(data,0x13c,0x400,0xffff,iVar9->hmenu_0x106);
+        InsertMenu16(data,0x13c,0x400,0xffff,iVar9.hmenu_0x106);
       }
       if ((s_VrMode_1050_42ca + 0x8 + uStack8 * 0x2) == 0) {
-        HVar6 = iVar9->hmenu_0x106;
+        HVar6 = iVar9.hmenu_0x106;
         w_flags = 0x1;
         UVar4 = 0x77;
     // TODO: goto LAB_1020_464c;
       }
-      HVar6 = iVar9->hmenu_0x106;
+      HVar6 = iVar9.hmenu_0x106;
       UVar4 = 0x77;
     }
     else {
-      HVar6 = GetSubMenu16(0x1,iVar9->hmenu_0x106);
+      HVar6 = GetSubMenu16(0x1,iVar9.hmenu_0x106);
       if (HVar6 != param_4) goto LAB_1020_479e;
       EnableMenuItem16(0x1,0x200,HVar6);
       uVar10 = paVar11;

@@ -199,8 +199,8 @@ pub fn pass1_1020_6466(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x67c2;
-  iVar1->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x67c2;
+  iVar1.address_offset_field_0x2 = 0x1020;
   if (iVar1.field12_0x14 != 0) {
     pass1_1010_1ea6(iVar1.field12_0x14,(param_1 & 0xffff | uVar1 << 0x10));
   }
@@ -601,7 +601,7 @@ pub unsafe fn unk_destroy_win_op_1020_694c(mut param_1: u16 ,param_2: *mut Struc
   }
   return uVar1;
 }
-pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param_3: i16,mut param_4: i16,param_5: u16,u16_t param_6)
+pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param_3: i16,mut param_4: i16,param_5: u16,param_6: u16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -667,8 +667,8 @@ pub fn destroy_icon_1020_6bd2(param_1: *mut astruct_868,param_2: u8)
 
   uVar4 = (param_1 >> 0x10);
   struct_1 = param_1;
-  DestroyIcon16(struct_1->hicon_0xc2);
-  struct_1->hicon_0xc2 = 0;
+  DestroyIcon16(struct_1.hicon_0xc2);
+  struct_1.hicon_0xc2 = 0;
   struct_1.field8_0x8 = 0;
   puVar1 = struct_1.field241_0xf6;
   uVar2 = struct_1.field242_0xf8;

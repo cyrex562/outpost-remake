@@ -863,7 +863,7 @@ struct astruct_800 {
 
 struct astruct_802 {
     char * filename_0x0;
-    hfile_0x4: mut HFILE16;
+    hfile_0x4: HFILE16;
 };
 
 

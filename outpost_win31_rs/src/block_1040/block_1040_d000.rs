@@ -82,8 +82,8 @@ pub fn pass1_1040_d1bc(param_1: *mut StructD)
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  param_1->address_offset_field_0x0 = 0xd8c4;
-  iVar4->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0xd8c4;
+  iVar4.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,&iVar4.field_0x6);
   puVar1 = &iVar4.field_0x9c;
   uVar2 = &iVar4.field_0x9e;

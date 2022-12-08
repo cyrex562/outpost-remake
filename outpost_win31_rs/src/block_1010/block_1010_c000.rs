@@ -349,13 +349,13 @@ pub fn pass1_1010_c58as(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruc
     uVar3 = paVar4;
     pUStack26 = CONCAT22(uVar3,pstructd_lo_11);
     if ((uVar3 | pstructd_lo_11) == 0) {
-      &pstructd_1_lo->address_offset_field_0x2 = 0;
+      &pstructd_1_lo.address_offset_field_0x2 = 0;
     }
     else {
-      pUStack26->address_offset_field_0x0 = UStack16;
+      pUStack26.address_offset_field_0x0 = UStack16;
       pass1_1000_5586(0xa564,&PTR_LOOP_1050_1040,UStack16,0xa,pstructd_lo_11 + 0x2,uVar3);
-      pstructd_1_lo->address_offset_field_0x2 = pstructd_lo_11 + 2;
-      pstructd_1_lo->hfile_0x4 = uVar3;
+      pstructd_1_lo.address_offset_field_0x2 = pstructd_lo_11 + 2;
+      pstructd_1_lo.hfile_0x4 = uVar3;
     }
     &pstructd_1_lo.field_0x6 = param_5;
     pstructd_1_lo.field6_0xa = param_4;
@@ -732,7 +732,7 @@ pub fn pass1_1010_cf36(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,param
   let mut iStack316: i16;
   let mut uStack314: u16;
   let mut iStack312: i16;
-  u16 local_136 [0x4a];
+  let mut local_136: [u16;0x4a] = [0;0x4a];
   let mut local_a2: u32;
   let mut iStack14: i16;
   let mut uStack12: u32;

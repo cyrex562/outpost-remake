@@ -490,7 +490,7 @@ pub fn fn_ptr_1020_ba7e(param_1: u32)
   fn_ptr_1000_17ce(*param_1);
   return;
 }
-pub fn pass1_1020_ba94(i32 *param_1)
+pub fn pass1_1020_ba94(param_1: *mut i32)
 
 {
   let mut puVar1: *mut u16;
@@ -534,7 +534,7 @@ pub fn pass1_1020_bb16(param_1: u32,param_2: *mut u32,param_3: *mut u16,mut para
   *param_2 = (*param_1 + param_4 * 0x6);
   return;
 }
-pub fn pass1_1020_bb70(i32 *param_1,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1020_bb70(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_AX: u16;
@@ -543,7 +543,7 @@ pub fn pass1_1020_bb70(i32 *param_1,mut param_2: u16 ,mut param_3: u32)
   pass1_1020_bba4(param_1,0x1,param_2,param_3,(param_3 >> 0x10),in_AX,in_DX);
   return;
 }
-pub fn pass1_1020_bb8a(i32 *param_1,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1020_bb8a(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_AX: u16;

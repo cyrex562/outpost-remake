@@ -16,7 +16,7 @@ pub fn pass1_1018_5070(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0xe) = 0;
   (param_1 + 0x12) = 0;
   (param_1 + 0x16) = 0;
-  param_1->offset_0x0 = 0x56d2;
+  param_1.offset_0x0 = 0x56d2;
   (param_1 + 0x2) = 0x1018;
   return;
 }
@@ -435,7 +435,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
 
 
 
-u16 * pass1_1018_567c(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_567c(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -460,14 +460,14 @@ pub fn pass1_1018_56a8(mut param_1: u32,param_2: u8) -> u32
 
 
 
-u16 * pass1_1018_56e6(param_1: *mut astruct_19,mut param_2: u16 )
+pub fn pass1_1018_56e6(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut u16
 
 {
   struct_op_1010_1d48(param_1,param_2);
   (param_1 + 0xa) = 0;
-  param_1->offset_0x0 = 0x5830;
+  param_1.offset_0x0 = 0x5830;
   (param_1 + 0x2) = 0x1018;
-  return &param_1->offset_0x0;
+  return &param_1.offset_0x0;
 }
 pub fn pass1_1018_5714(param_1: *mut u16)
 
@@ -550,7 +550,7 @@ pub fn pass1_1018_57e6(mut param_1: u32,param_2: i32,mut param_3: u16 ,mut param
 
 
 
-u16 * pass1_1018_580a(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_580a(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1018_5714(param_1);
@@ -579,8 +579,8 @@ pub fn struct_1018_5840(param_1: *mut astruct_57,param_2: *mut astruct_20,mut pa
   &iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
   iVar2[0x1].field8_0x14 = 0;
-  param_2->offset_0x0 = s_Alloc__s_1050_5a5b + 0x7;
-  iVar2->base_0x2 = 0x1018;
+  param_2.offset_0x0 = s_Alloc__s_1050_5a5b + 0x7;
+  iVar2.base_0x2 = 0x1018;
   (iVar2 + 1)->offset_0x0 = 0x5afe;
   iVar2[0x1].base_0x2 = 0x1018;
   puVar2 = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(unaff_BP,0x27),param_6,param_7,param_8,param_9)
@@ -728,7 +728,7 @@ pub fn pass1_1018_5a2e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub fn FUN_1018_5a3c(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mut StructD
 
 {
-  pass1_1018_58b6(&param_2->address_offset_field_0x0);
+  pass1_1018_58b6(&param_2.address_offset_field_0x0);
   if ((param_3 & 1) != 0) {
     fn_ptr_1000_17ce(param_2);
   }
@@ -830,8 +830,8 @@ pub fn pass1_1018_5cc8(param_1: *mut StructD)
 
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
-  param_1->address_offset_field_0x0 = &u16_1050_5e1a;
-  iVar3->address_offset_field_0x2 = 0x1018;
+  param_1.address_offset_field_0x0 = &u16_1050_5e1a;
+  iVar3.address_offset_field_0x2 = 0x1018;
   pcVar2 = *&iVar3.field13_0x18;
   uVar1 = iVar3.field14_0x1a;
   if ((uVar1 | pcVar2) != 0) {
@@ -880,9 +880,9 @@ pub fn misc_draw_op_1018_5d6c(param_1: *mut astruct_839)
   uVar5 = (param_1 >> 0x10);
   struct_4 = param_1;
   BeginPaint16(CONCAT22(0x1050,&local_22),struct_4.field4_0x4);
-  uVar4 = struct_4->pstruct134_0x14;
+  uVar4 = struct_4.pstruct134_0x14;
   paVar1 = (uVar4 + 0xa);
-  paVar2 = pass1_1008_9f48(struct_4->pstruct134_0x14);
+  paVar2 = pass1_1008_9f48(struct_4.pstruct134_0x14);
   pass1_1008_5236(struct_4.field20_0x18);
   pass1_1008_4480(paVar1,(param_1 & 0xffff0000 | ZEXT24(struct_4 + 1)),paVar2);
   fn_ptr_1 = (paVar1 + 0x4);
@@ -894,7 +894,7 @@ pub fn misc_draw_op_1018_5d6c(param_1: *mut astruct_839)
 
 
 
-u16 * pass1_1018_5df4(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_5df4(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1018_5cc8(param_1);
@@ -997,7 +997,7 @@ pub fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
   }
   else {
     pass1_1018_6198(puVar5,CONCAT22(paVar7,pvVar2),structb_param_1,
-                    structb_9->lpvoid_field_0x8);
+                    structb_9.lpvoid_field_0x8);
     structb_9[0x7].lpvoid_field_0x8 = pvVar2;
     structb_9[0x7].max_count_field_0x10 = paVar8;
   }
@@ -1031,7 +1031,7 @@ pub fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
   uVar12 = (pIStack6 >> 0x10);
   iVar10 = pIStack6;
   SetWindowPos16(0x44,(iVar10 + 0x6),(iVar10 + 0x4),(iVar10 + 0x2),*pIStack6,0x0,
-                 structb_9->lpvoid_field_0x8);
+                 structb_9.lpvoid_field_0x8);
   return;
 }
 pub fn pass1_1018_5ffa(mut param_1: u32)

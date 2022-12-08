@@ -262,7 +262,7 @@ pub fn pass1_1010_d710(param_1: u8,mut param_2: u16 ,mut param_3: u32,mut param_
   let mut iStack316: i16;
   let mut iStack314: i16;
   let mut iStack312: i16;
-  u16 local_136 [0x4a];
+  let mut local_136: [u16;0x4a] = [0;0x4a];
   let mut local_a2: u32;
   let mut iStack14: i16;
   let mut uStack12: u32;
@@ -498,7 +498,7 @@ pub fn pass1_1010_dc36(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   let mut uVar7: u16;
   let mut uStack90: u16;
   let mut string_54: *mut c_char;
-  u32 local_52 [0x14];
+  let mut local_52: [u32;0x14] = [0;0x14];
 
   string_54 = PTR_s_New_failed_in_Op_Op_1050_0020_1050_393f;
   puVar6 = local_52;
@@ -565,7 +565,7 @@ pub fn struct_1010_dd5e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
   let mut in_DX: u16;
   let mut uVar3: u16;
   let mut uVar4: u32;
-  i32 *plStack16;
+  plStack16: *mut i32;
 
   if (param_3 != 0) {
     uVar4 = struct_op_1030_73a8(param_3,in_AX,in_DX);

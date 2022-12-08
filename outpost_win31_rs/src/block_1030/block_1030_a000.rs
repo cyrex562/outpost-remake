@@ -761,7 +761,7 @@ joined_r0x1030ab9e:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1030_acbe(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32)
+pub fn pass1_1030_acbe(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32) -> BOOL16
 
 {
   let mut iVar1: i16;
@@ -786,7 +786,7 @@ BOOL16 pass1_1030_acbe(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1030_ad22(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32)
+pub fn pass1_1030_ad22(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -971,8 +971,8 @@ pub fn pass1_1030_afa6(param_1: *mut StructD)
 
   uVar5 = (param_1 >> 0x10);
   iVar5 = param_1;
-  param_1->address_offset_field_0x0 = 0xb932;
-  iVar5->address_offset_field_0x2 = 0x1030;
+  param_1.address_offset_field_0x0 = 0xb932;
+  iVar5.address_offset_field_0x2 = 0x1030;
   if (&iVar5.field_0x10 != 0) {
     uVar4 = &iVar5.field_0x10;
     (uVar4 + 0xa) = 0x1;
@@ -983,8 +983,8 @@ pub fn pass1_1030_afa6(param_1: *mut StructD)
     ppcVar3 = *puVar1;
     (**ppcVar3)();
   }
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar5->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar5.address_offset_field_0x2 = 0x1008;
   return;
 }
 

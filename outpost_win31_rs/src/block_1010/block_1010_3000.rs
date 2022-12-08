@@ -394,7 +394,7 @@ pub fn pass1_1010_36b4(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1010_3702(param_1: *mut astruct_19,mut param_2: u16 )
+pub fn pass1_1010_3702(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut u16
 
 {
   struct_op_1010_1d48(param_1,param_2);
@@ -444,7 +444,7 @@ pub fn pass1_1010_3770(mut param_1: u16 ,param_2: *mut astruct_477,param_3: *mut
 
 
 
-u16 * pass1_1010_379e(param_1: *mut u16,param_2: u8,mut param_3: u16 )
+pub fn pass1_1010_379e(param_1: *mut u16,param_2: u8,mut param_3: u16 ) -> *mut u16
 
 {
   pass1_1010_3730(param_1);
@@ -1060,9 +1060,9 @@ pub unsafe fn FUN_1010_3fc2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u8)
   let mut BVar1: bool;
   let mut iVar2: i16;
   let mut uVar3: u16;
-  in_stack_0000ffda: mut HFILE16;
-  u16 local_c [0x3];
-  u16 local_6 [0x2];
+  in_stack_0000ffda: HFILE16;
+  let mut local_c: [u16;0x3] = [0;0x3];
+  let mut local_6: [u16;0x2] = [0;0x2];
 
   BVar1 = write_to_file_1008_7cac(param_3);
   if (BVar1 != 0) {

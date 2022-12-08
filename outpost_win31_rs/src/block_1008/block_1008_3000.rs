@@ -115,7 +115,7 @@ pub fn save_file_1008_3178(mut param_1: u16 ,param_2: *mut astruct_72,mut param_
   let mut in_stack_0000f84a: u16;
   let mut in_stack_0000f84e: u16;
   let mut local_782: [u8;0x104] = [0;0x104];
-//   u16 local_67e [0x4];
+//   let mut local_67e: [u16;0x4] = [0;0x4];
     let local_67e: [u16;4] = [0;4];
 let mut pcStack1654: *mut c_char;
   let mut atype: u16;

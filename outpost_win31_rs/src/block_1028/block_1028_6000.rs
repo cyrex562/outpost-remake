@@ -30,7 +30,7 @@ pub fn pass1_1028_602e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1028_60bc(param_1: *mut astruct_180,param_2: *mut astruct_57,mut param_3: u16 )
+pub fn struct_1028_60bc(param_1: *mut astruct_180,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut u16
 
 {
   let mut uVar1: u16;
@@ -332,13 +332,13 @@ pub unsafe fn pass1_1028_64d6(mut param_1: u32,mut param_2: u32) -> u16
   let mut BVar2: bool;
   let mut puVar3: *mut u16;
   let mut uVar4: u16;
-  in_stack_0000ffc4: mut HFILE16;
+  in_stack_0000ffc4: HFILE16;
   let mut local_26: u16;
   let mut local_24: u16;
   let mut local_22: u16;
   let mut local_20: u16;
   let mut local_1e: u16;
-  u16 local_1c [0x6];
+  let mut local_1c: [u16;0x6] = [0;0x6];
   let mut uStack16: u16;
   let mut lStack14: i32;
   let mut local_a: [u8;0x8] = [0;0x8];
@@ -381,7 +381,7 @@ pub unsafe fn pass1_1028_64d6(mut param_1: u32,mut param_2: u32) -> u16
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1028_65e2(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1028_65e2(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -392,8 +392,8 @@ pub fn pass1_1028_65e2(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_3
   let mut uVar6: u16;
   let mut local_16: u16;
   paStack20: *mut astruct_99;
-  u16 local_10 [0x2];
-  u16 local_c [0x3];
+  let mut local_10: [u16;0x2] = [0;0x2];
+  let mut local_c: [u16;0x3] = [0;0x3];
   let mut uStack6: u16;
   let mut local_4: u16;
 
@@ -551,9 +551,9 @@ pub fn pass1_1028_68de(param_1: *mut astruct_97,mut param_2: u16 ,mut param_3: u
   iVar1 = param_1;
   &iVar1.field259_0x108 = param_3;
   iVar1.field262_0x10c = param_2;
-  param_1->offset_0x0 = 0x6ae2;
-  iVar1->segment_0x2 = 0x1028;
-  unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar1->string_0x8)),s_SCAddSpew_1050_4fd2);
+  param_1.offset_0x0 = 0x6ae2;
+  iVar1.segment_0x2 = 0x1028;
+  unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),s_SCAddSpew_1050_4fd2);
   return;
 }
 
@@ -652,7 +652,7 @@ pub fn pass1_1028_69cc(param_1: *mut astruct_317,param_2: *mut astruct_57,param_
 pub fn pass1_1028_6a7a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -665,7 +665,7 @@ pub fn pass1_1028_6a7a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub fn pass1_1028_6aa6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -683,8 +683,8 @@ pub fn pass1_1028_6af2(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u3
   iVar1 = param_1;
   &iVar1.field259_0x108 = param_3;
   &iVar1.field262_0x10c = param_2;
-  param_1->offset_0x0 = 0x6e50;
-  iVar1->segment_0x2 = 0x1028;
+  param_1.offset_0x0 = 0x6e50;
+  iVar1.segment_0x2 = 0x1028;
   return;
 }
 
@@ -861,7 +861,7 @@ pub fn pass1_1028_6daa(param_1: *mut astruct_15,mut param_2: u32,param_3: *mut u
 pub fn pass1_1028_6e24(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -875,7 +875,7 @@ astruct_97 * pass1_1028_6e60(param_1: u8,param_2: *mut astruct_97)
 
 {
   struct_op_1028_d1dc(param_2,0x32c7);
-  param_2->offset_0x0 = 0x6fb0;
+  param_2.offset_0x0 = 0x6fb0;
   (param_2 + 0x2) = 0x1028;
   unk_str_op_1000_3d3e((param_2 & 0xffff0000 | (param_2 + 0x8)),s_SCConstruct_1050_4fdc);
   return param_2;
@@ -956,7 +956,7 @@ pub fn pass1_1028_6ef6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 pub fn pass1_1028_6f84(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -970,7 +970,7 @@ astruct_97 * pass1_1028_6fc0(param_1: u8,param_2: *mut astruct_97)
 
 {
   struct_op_1028_d1dc(param_2,0x3e7);
-  param_2->offset_0x0 = 0x749e;
+  param_2.offset_0x0 = 0x749e;
   (param_2 + 0x2) = 0x1028;
   unk_str_op_1000_3d3e((param_2 & 0xffff0000 | (param_2 + 0x8)),s_SCEndSim_1050_4fea);
   return param_2;

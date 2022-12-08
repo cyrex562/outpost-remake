@@ -47,7 +47,7 @@ pub fn pass1_1040_40e2(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x4466;
+  param_1.address_offset_field_0x0 = 0x4466;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -97,11 +97,11 @@ pub fn win_ui_op_1040_410e(param_1: u8,StructB *struct_b_param_1)
   struct_b_3 = (StructB *)struct_b_param_1;
   uVar1 = &struct_b_3[0x7].field1_0x2;
   sys_1000_3f9c(CONCAT22(0x1050,local_c),s__lu_1050_5d38,(uVar1 + 0x76));
-  HStack14 = GetDlgItem16(0xfb5,struct_b_3->lpvoid_field_0x8);
+  HStack14 = GetDlgItem16(0xfb5,struct_b_3.lpvoid_field_0x8);
   SendMessage16(CONCAT22(0x1050,local_c),0x0,0xc,HStack14);
   SetFocus16(HStack14);
   SendMessage16(-0x10000,0x0,0x401,HStack14);
-  GetWindowRect16(CONCAT22(0x1050,&local_16),struct_b_3->lpvoid_field_0x8);
+  GetWindowRect16(CONCAT22(0x1050,&local_16),struct_b_3.lpvoid_field_0x8);
   pass1_1000_4906(CONCAT22(0x1050,&local_1e),NULL,0x8);
   uVar1 = &struct_b_3[0x7].field1_0x2;
   uStack34 = pass1_1010_5f7a(uVar1,(uVar1 >> 0x10),0x0,0x7);
@@ -128,7 +128,7 @@ pub fn win_ui_op_1040_410e(param_1: u8,StructB *struct_b_param_1)
                         local_34 + local_2a[0]);
   }
   move_win_1040_826c(struct_b_param_1,local_1e,local_1e);
-  ShowWindow16(0x5,struct_b_3->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_3.lpvoid_field_0x8);
   return;
 }
 pub fn win_ui_op_1040_42b2(mut param_1: u32,mut param_2: i16)
@@ -528,7 +528,7 @@ LRESULT send_win_msg_1040_4a0a(struct_param_1: *mut astruct_48)
   iVar5 = struct_param_1;
   ppcVar2 = (struct_param_1 + 0x74);
   (**ppcVar2)();
-  dlg_item = GetDlgItem16(0x1770,iVar5->hwnd_0x6);
+  dlg_item = GetDlgItem16(0x1770,iVar5.hwnd_0x6);
   SendMessage16(0x0,0x0,0x40b,dlg_item);
   lresult_6 = SendMessage16(0x0,0x0,0xb,dlg_item);
   uVar5 = (lresult_6 >> 0x10);
@@ -808,7 +808,7 @@ pub fn pass1_1040_4f0a(param_1: *mut StructD)
 {
   let mut in_stack_0000ffde: u16;
 
-  param_1->address_offset_field_0x0 = 0x55a2;
+  param_1.address_offset_field_0x0 = 0x55a2;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
@@ -917,7 +917,7 @@ pub fn set_win_pos_1040_4f96
   }
   else {
     puVar18 = struct_1040_bf3e(CONCAT13((paVar12 >> 0x8),CONCAT12(paVar12,paVar5)),
-                               struct_b_11->lpvoid_field_0x8);
+                               struct_b_11.lpvoid_field_0x8);
     paVar13 = (paVar13 & 0xffff0000 | puVar18 >> 0x10);
     paVar5 = puVar18;
     struct_b_11[0x7].max_count_field_0x10 = paVar5;
@@ -929,7 +929,7 @@ pub fn set_win_pos_1040_4f96
   paVar12 = (paVar13 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar12,paVar5,paVar13,0x1,0xa000a,0x0,0x800081,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0x10a),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0x10a),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   mem_op_1000_179c(0x42,paVar12);
@@ -937,7 +937,7 @@ pub fn set_win_pos_1040_4f96
   paVar13 = (paVar12 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar13,paVar5,paVar12,0x1,0xa0028,0x0,0x840085,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0x10b),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0x10b),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   mem_op_1000_179c(0x42,paVar13);
@@ -945,7 +945,7 @@ pub fn set_win_pos_1040_4f96
   paVar12 = (paVar13 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar12,paVar5,paVar13,0x1,0xa0046,0x0,0x860087,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0x10d),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0x10d),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   mem_op_1000_179c(0x42,paVar12);
@@ -953,7 +953,7 @@ pub fn set_win_pos_1040_4f96
   paVar13 = (paVar12 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar13,paVar5,paVar12,0x1,0xa0064,0x0,0x880089,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0x10e),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0x10e),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   mem_op_1000_179c(0x42,paVar13);
@@ -961,7 +961,7 @@ pub fn set_win_pos_1040_4f96
   paVar12 = (paVar13 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar12,paVar5,paVar13,0x1,0xa0082,0x0,0x820083,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0x10c),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0x10c),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   mem_op_1000_179c(0x42,paVar12);
@@ -969,7 +969,7 @@ pub fn set_win_pos_1040_4f96
   paVar13 = (paVar12 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar13,paVar5,paVar12,0x1,0xa00d2,0x0,0x8a008b,
-                    CONCAT22(struct_b_11->lpvoid_field_0x8,0xbbb),param_4,in_stack_0000fe36,in_stack_0000fe3a,
+                    CONCAT22(struct_b_11.lpvoid_field_0x8,0xbbb),param_4,in_stack_0000fe36,in_stack_0000fe3a,
                     in_stack_0000ff60,in_stack_0000ff64,in_stack_0000ff68);
   }
   BVar21 = 0;
@@ -981,7 +981,7 @@ pub fn set_win_pos_1040_4f96
     paVar5 = NULL;
   }
   else {
-    pvVar1 = struct_b_11->lpvoid_field_0x8;
+    pvVar1 = struct_b_11.lpvoid_field_0x8;
     pass1_1008_3bd6(paVar14,paVar5,paVar13,0x1,0xa00a0,0x8e,0x8c008d,
                     CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,0xbbc)),param_3,in_stack_0000fe34,
                     in_stack_0000fe38,in_stack_0000ff5e,in_stack_0000ff62,in_stack_0000ff66);
@@ -1011,6 +1011,6 @@ pub fn set_win_pos_1040_4f96
   uVar2 &= 0xffff0000;
   uVar16 = (uVar2 >> 0x10);
   SetWindowPos16(0x40,(iVar8 + 0x10),(iVar8 + 0xe),(iVar8 + 0xc),
-                 (uVar2 | iVar8 + 0xa),0x0,struct_b_11->lpvoid_field_0x8);
+                 (uVar2 | iVar8 + 0xa),0x0,struct_b_11.lpvoid_field_0x8);
   return;
 }

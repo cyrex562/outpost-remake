@@ -403,8 +403,8 @@ pub fn pass1_1040_869a(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x8ddc;
-  iVar1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x8ddc;
+  iVar1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   fn_ptr_1000_17ce(*&iVar1.field_0x90);
   fn_ptr_1000_17ce(*&iVar1.field_0x94);
   ui_cleanup_op_1040_782c(param_1);
@@ -639,7 +639,7 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
 
   count = (param_2 >> 0x10);
   iVar10 = param_2;
-  hdc_local_24 = BeginPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10->hwnd_field6_0x6);
+  hdc_local_24 = BeginPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10.hwnd_field6_0x6);
   paVar1 = (_PTR_LOOP_1050_4230 + 0xe);
   HVar7 = palette_op_1008_4e08(&hdc_local_24,param_1,paVar1,CONCAT22(0x1050,&hdc_local_24));
   uVar8 = pass1_1008_4d72(paVar1);
@@ -653,11 +653,11 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
   extraout_DX = (color >> 0x10);
   uVar6 = SetTextColor16(CONCAT22(CONCAT11(0x2,uVar3),CONCAT11(uVar1,uVar2)),hdc_local_24);
   color_00 = CONCAT31(extraout_var,uVar6) & 0xffff | extraout_DX << 0x10;
-  handle = GetProp16(s_hfont_1050_5dfa,iVar10->hwnd_field6_0x6);
+  handle = GetProp16(s_hfont_1050_5dfa,iVar10.hwnd_field6_0x6);
   if (handle != 0) {
     SelectObject16(handle,hdc_local_24);
   }
-  DrawText16(0x10,(param_2 & 0xffff0000 | ZEXT24(&iVar10->rect_0x9e)),-0x1,
+  DrawText16(0x10,(param_2 & 0xffff0000 | ZEXT24(&iVar10.rect_0x9e)),-0x1,
              (LPCSTR)iVar10.field142_0x90,hdc_local_24);
   if (handle != 0) {
     SelectObject16(hdc_local_24,hdc_local_24);
@@ -666,7 +666,7 @@ pub fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
   SetTextColor16(color_00,hdc_local_24);
   HVar7 = SelectPalette16(0x0,HVar7,hdc_local_24);
   DeleteObject16(HVar7);
-  EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10->hwnd_field6_0x6);
+  EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10.hwnd_field6_0x6);
   return;
 }
 pub fn pass1_1040_8b3c(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
@@ -837,7 +837,7 @@ pub fn pass1_1040_8db6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32)
+pub fn pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> *mut u16
 
 {
   pass1_1040_b040(CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),(param_4 >> 0x10));
@@ -850,7 +850,7 @@ pub fn pass1_1040_8e82(param_1: *mut StructD)
 {
   let mut in_stack_0000ffde: u16;
 
-  param_1->address_offset_field_0x0 = 0x8f3c;
+  param_1.address_offset_field_0x0 = 0x8f3c;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;

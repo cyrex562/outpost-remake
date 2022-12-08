@@ -366,7 +366,7 @@ pub fn pass1_1038_893a(param_1: *mut StructD)
   let mut in_stack_0000ffde: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x8c2e;
+  param_1.address_offset_field_0x0 = 0x8c2e;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
@@ -580,7 +580,7 @@ pub fn pass1_1038_8cf6(param_1: *mut StructD)
   let mut in_stack_0000ffde: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x90c8;
+  param_1.address_offset_field_0x0 = 0x90c8;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);

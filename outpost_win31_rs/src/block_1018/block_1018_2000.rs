@@ -1051,7 +1051,7 @@ pub fn get_sys_metrics_1018_2f56(mut param_1: u32)
   (iVar3 + 0x1e) = IVar2 + IVar1 + (uVar6 + 0x8);
   return;
 }
-pub fn pass1_1018_2fe8(param_1: *mut astruct_126,u16_t param_2,u16_t param_3)
+pub fn pass1_1018_2fe8(param_1: *mut astruct_126,param_2: u16,param_3: u16)
 
 {
   let mut piVar1: *mut i16;

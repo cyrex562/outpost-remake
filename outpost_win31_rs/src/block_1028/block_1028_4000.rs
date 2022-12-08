@@ -1,5 +1,5 @@
 
-u16 * struct_1028_406c(param_1: *mut astruct_180)
+pub fn struct_1028_406c(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -10,7 +10,7 @@ u16 * struct_1028_406c(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1028_408e(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1028_408e(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -197,7 +197,7 @@ pub fn FUN_1028_42c6(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mu
 
 
 
-u16 * struct_1028_4354(param_1: *mut astruct_180)
+pub fn struct_1028_4354(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -208,7 +208,7 @@ u16 * struct_1028_4354(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1028_4376(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1028_4376(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -305,7 +305,7 @@ pub fn pass1_1028_4444(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1028_44d2(param_1: *mut astruct_180)
+pub fn struct_1028_44d2(param_1: *mut astruct_180) -> *mut u16
 
 {
   let mut uVar1: u16;
@@ -320,7 +320,7 @@ u16 * struct_1028_44d2(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1028_44fe(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1028_44fe(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -552,7 +552,7 @@ pub fn pass1_1028_4810(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1028_489e(param_1: *mut astruct_180)
+pub fn struct_1028_489e(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -563,7 +563,7 @@ u16 * struct_1028_489e(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1028_48c0(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1028_48c0(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -628,7 +628,7 @@ pub fn pass1_1028_4920() -> u32
 
 
 
-u16 * struct_1028_49aa(param_1: *mut astruct_180)
+pub fn struct_1028_49aa(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -653,7 +653,7 @@ pub fn pass1_1028_4a1a(mut param_1: u32,mut param_2: u32)
 
 {
   let mut BVar1: bool;
-  in_stack_0000ffe8: mut HFILE16;
+  in_stack_0000ffe8: HFILE16;
 
   BVar1 = write_to_file_1028_b5ec(param_1,param_2);
   if ((BVar1 != 0) &&
@@ -665,7 +665,7 @@ pub fn pass1_1028_4a1a(mut param_1: u32,mut param_2: u32)
   }
   return;
 }
-pub fn pass1_1028_4a5a(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1028_4a5a(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut BVar1: bool;
@@ -737,7 +737,7 @@ pub fn pass1_1028_4af6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1028_4b84(param_1: *mut astruct_180)
+pub fn struct_1028_4b84(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -749,7 +749,7 @@ u16 * struct_1028_4b84(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1028_4ba6(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1028_4ba6(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);

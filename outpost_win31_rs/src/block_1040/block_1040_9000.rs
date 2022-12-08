@@ -15,8 +15,8 @@ pub fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
 
   uVar5 = (param_1 >> 0x10);
   struct_1 = param_1;
-  param_1->address_offset_field_0x0 = 0x9800;
-  struct_1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x9800;
+  struct_1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   if (&struct_1.field_0x38 != 0) {
     puVar1 = struct_1.field5_0x8;
     uVar2 = struct_1.field6_0xa;
@@ -37,7 +37,7 @@ pub fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
       (**fn_ptr_1)();
     }
   }
-  fn_ptr_1000_17ce(*&struct_1->hfile_0x4);
+  fn_ptr_1000_17ce(*&struct_1.hfile_0x4);
   SetWindowLong16(struct_1.field12_0x14,-0x4,struct_1.field13_0x18);
   RemoveProp16(s_thisLo_1050_5e1c,struct_1.field13_0x18);
   RemoveProp16(s_thisHi_1050_5e23,struct_1.field13_0x18);
@@ -49,8 +49,8 @@ pub fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
     FreeProcInstance16(_u16_1050_5e18);
     _u16_1050_5e18 = NULL;
   }
-  param_1->address_offset_field_0x0 = 0x389a;
-  struct_1->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  struct_1.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn enable_win_1040_9234(mut param_1: u32,BOOL16 param_2)
@@ -420,7 +420,7 @@ pub fn pass1_1040_9824(param_1: u32)
 
 
 
-u16 * unk_win_ui_op_1040_9854(param_1: *mut astruct_787)
+pub fn unk_win_ui_op_1040_9854(param_1: *mut astruct_787) -> *mut u16
 
 {
   let mut HVar1: HCURSOR16;
@@ -430,10 +430,10 @@ u16 * unk_win_ui_op_1040_9854(param_1: *mut astruct_787)
 
   uVar3 = (param_1 >> 0x10);
   struct_1 = param_1;
-  param_1->offset = 0x389a;
-  struct_1->base = 0x1008;
-  param_1->offset = 0xa230;
-  struct_1->base = &PTR_LOOP_1050_1040;
+  param_1.offset = 0x389a;
+  struct_1.base = 0x1008;
+  param_1.offset = 0xa230;
+  struct_1.base = &PTR_LOOP_1050_1040;
   unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&struct_1.field_0x4)),s_OPButton_1050_5ece);
   struct_1.field82_0x54 = 0x3;
   HVar1 = LoadCursor16(0x7f00,0x0);
@@ -441,7 +441,7 @@ u16 * unk_win_ui_op_1040_9854(param_1: *mut astruct_787)
   HVar2 = GetStockObject16(BLACK_BRUSH);
   struct_1.field83_0x56 = HVar2;
   reg_class_1040_98c0(param_1 & 0xffff | uVar3 << 0x10);
-  return &param_1->offset;
+  return &param_1.offset;
 }
 pub fn reg_class_1040_98c0(mut param_1: u32)
 
@@ -559,8 +559,8 @@ pub fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   }
   if (struct71_var4.field6_0x6 != '\0') {
     iStack28 = 0x1;
-    if (struct71_var4->hgdiobj_field90_0x5a != 0) {
-      hgdiobj_1 = SelectObject16(struct71_var4->hgdiobj_field90_0x5a,hdc16_dev_ctx_1);
+    if (struct71_var4.hgdiobj_field90_0x5a != 0) {
+      hgdiobj_1 = SelectObject16(struct71_var4.hgdiobj_field90_0x5a,hdc16_dev_ctx_1);
     }
     pcVar1 = &struct71_var4.field6_0x6;
     uVar2 = uVar7;

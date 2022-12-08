@@ -389,7 +389,7 @@ pub fn pass1_1028_c522(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u16,mut
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1028_c5a6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16,param_6: *mut u16,param_7: i32)
+pub fn pass1_1028_c5a6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16,param_6: *mut u16,param_7: i32) -> BOOL16
 
 {
   let mut iVar1: i16;
@@ -432,7 +432,7 @@ BOOL16 pass1_1028_c5a6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
 
 // WARNING: Could not reconcile some variable overlaps
 
-BOOL16 pass1_1028_c64a(mut param_1: u32,param_2: *mut u32,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,param_6: i32)
+pub fn pass1_1028_c64a(mut param_1: u32,param_2: *mut u32,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,param_6: i32) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -575,7 +575,7 @@ pub fn pass1_1028_c89c(mut param_1: i16,param_2: *mut astruct_15,param_3: *mut u
   let mut puVar1: *mut u32;
   let mut extraout_DX: u16;
   let mut uVar2: u16;
-  u32 local_16 [0x3];
+  let mut local_16: [u32;0x3] = [0;0x3];
   let mut lStack10: i32;
   let mut uStack6: u32;
 
@@ -999,7 +999,7 @@ pub unsafe fn pass1_1028_ced2(param_1: *mut astruct_15) -> u16
 pub fn pass1_1028_cf44(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }

@@ -166,7 +166,7 @@ pub fn pass1_1028_e2e0(param_1: *mut astruct_57,mut param_2: u32,param_3: u8) ->
   let mut iVar1: i16;
   let mut uVar2: u16;
   let mut uVar3: u32;
-  u16 auStack10 [0x3];
+  let mut auStack10: [u16;0x3] = [0;0x3];
   let mut uStack4: u16;
 
   uStack4 = param_3;
@@ -266,7 +266,7 @@ pub fn pass1_1028_e4ec(param_1: *mut astruct_92)
 
 {
   let mut puVar1: *mut u32;
-  i32 *plVar2;
+  plVar2: *mut i32;
   let mut uVar3: u32;
   let mut uVar4: u16;
   let mut uVar5: u32;
@@ -307,15 +307,15 @@ pub fn pass1_1028_e4ec(param_1: *mut astruct_92)
 
 
 
-u16_t write_file_fn_1028_e56c(param_1: u16,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u8,mut param_5: u32)
+pub unsafe fn write_file_fn_1028_e56c(param_1: u16,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u8,mut param_5: u32) -> u16
 
 {
   let mut ppcVar1: *mut *mut code;
   paVar2: *mut astruct_92;
   let mut BVar3: bool;
   let mut extraout_DX: u16;
-  in_stack_0000ffbe: mut HFILE16;
-  u32 local_2a [0x3];
+  in_stack_0000ffbe: HFILE16;
+  let mut local_2a: [u32;0x3] = [0;0x3];
   let mut puStack28: *mut u32;
   let mut uStack24: u32;
   astruct_92 local_14;
@@ -452,7 +452,7 @@ pub fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
   uVar39 = (in_EDX >> 0x10);
   uVar23 = SUB42(&DAT_1050_1050,0x0);
   uVar21 = unaff_SI;
-  BVar11 = read_file_1008_7dee((HFILE16 *)CONCAT22(param_3,param_2),CONCAT22(0x1050,&local_6),0x4);
+  BVar11 = read_file_1008_7dee(CONCAT22(param_3,param_2),CONCAT22(0x1050,&local_6),0x4);
   if (BVar11 == 0) {
     u16_1050_0310 = 0x6d2;
     return;
@@ -891,7 +891,7 @@ code_r0x10287b17:
       uVar39 = 0;
       uVar23 = 0;
       while (CONCAT22(uVar23,uVar39) < local_6) {
-        BVar11 = read_file_1008_7dee((HFILE16 *)CONCAT22(param_3,param_2),CONCAT22(0x1050,&local_30),0x2);
+        BVar11 = read_file_1008_7dee(CONCAT22(param_3,param_2),CONCAT22(0x1050,&local_30),0x2);
         if (BVar11 == 0) {
           u16_1050_0310 = 0x6d2;
           return;

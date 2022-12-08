@@ -1,5 +1,5 @@
 
-u16 * pass1_1008_b05a(param_1: *mut StructD)
+pub fn pass1_1008_b05a(param_1: *mut StructD) -> *mut u16
 
 {
   let mut iVar1: *mut StructD;
@@ -7,12 +7,12 @@ u16 * pass1_1008_b05a(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar1->address_offset_field_0x2 = 0x1008;
-  &iVar1->hfile_0x4 = 0;
-  param_1->address_offset_field_0x0 = 0xbdc8;
-  iVar1->address_offset_field_0x2 = 0x1008;
-  return &param_1->address_offset_field_0x0;
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar1.address_offset_field_0x2 = 0x1008;
+  &iVar1.hfile_0x4 = 0;
+  param_1.address_offset_field_0x0 = 0xbdc8;
+  iVar1.address_offset_field_0x2 = 0x1008;
+  return &param_1.address_offset_field_0x0;
 }
 pub fn pass1_1008_b08c(param_1: *mut u16)
 
@@ -42,14 +42,14 @@ pub fn set_stuct_1008_b0bc(param_1: *mut StructD)
   &iVar1.field6_0xa = 0;
   iVar1.field8_0xe = 0;
   &iVar1.field_0x10 = 0;
-  param_1->address_offset_field_0x0 = 0xbdc4;
-  iVar1->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0xbdc4;
+  iVar1.address_offset_field_0x2 = 0x1008;
   return;
 }
 
 
 
-u16 * pass1_1008_b0f2(param_1: *mut StructD)
+pub fn pass1_1008_b0f2(param_1: *mut StructD) -> *mut u16
 
 {
   let mut uVar1: *mut StructD;
@@ -57,14 +57,14 @@ u16 * pass1_1008_b0f2(param_1: *mut StructD)
   pass1_1008_b05a(param_1);
   uVar1 = (param_1 >> 0x10);
   (param_1 + 0x8) = 0;
-  param_1->address_offset_field_0x0 = 0xbdc0;
+  param_1.address_offset_field_0x0 = 0xbdc0;
   (param_1 + 0x2) = 0x1008;
-  return &param_1->address_offset_field_0x0;
+  return &param_1.address_offset_field_0x0;
 }
 
 
 
-u16 * pass1_1008_b11e(param_1: *mut StructD)
+pub fn pass1_1008_b11e(param_1: *mut StructD) -> *mut u16
 
 {
   let mut uVar1: *mut StructD;
@@ -72,9 +72,9 @@ u16 * pass1_1008_b11e(param_1: *mut StructD)
   pass1_1008_b05a(param_1);
   uVar1 = (param_1 >> 0x10);
   (param_1 + 0x8) = 0;
-  param_1->address_offset_field_0x0 = 0xbddc;
+  param_1.address_offset_field_0x0 = 0xbddc;
   (param_1 + 0x2) = 0x1008;
-  return &param_1->address_offset_field_0x0;
+  return &param_1.address_offset_field_0x0;
 }
 
 
@@ -734,13 +734,13 @@ pub fn pass1_1008_ba38(mut param_1: u32,mut param_2: u32)
   let mut extraout_DX: u16;
   let mut iVar4: i16;
   let mut uVar5: u16;
-  in_stack_0000ffc0: mut HFILE16;
-  u32 local_2a [0x3];
-  u16 local_1e [0x5];
+  in_stack_0000ffc0: HFILE16;
+  let mut local_2a: [u32;0x3] = [0;0x3];
+  let mut local_1e: [u16;0x5] = [0;0x5];
   let mut local_14: [u8;0x8] = [0;0x8];
   let mut local_c: u16;
   let mut uStack10: u32;
-  u16 local_6 [0x2];
+  let mut local_6: [u16;0x2] = [0;0x2];
 
   BVar2 = write_to_file_1008_7cac(param_2);
   if (BVar2 != 0) {
@@ -804,8 +804,8 @@ pub fn file_1008_bb5e(mut param_1: i16,param_2: *mut StructD,param_3: *mut astru
   paStack286: *mut astruct_200;
   let mut puStack284: *mut u32;
   let mut local_118: [u8;0x100] = [0;0x100];
-  u16 local_18 [0x2];
-  u16 local_14 [0x2];
+  let mut local_18: [u16;0x2] = [0;0x2];
+  let mut local_14: [u16;0x2] = [0;0x2];
   local_10: *mut astruct_200 [0x4];
   let mut local_8: u32;
   uVar12: *mut astruct_199;
@@ -825,9 +825,9 @@ pub fn file_1008_bb5e(mut param_1: i16,param_2: *mut StructD,param_3: *mut astru
   else {
     iVar3 = param_3;
     iVar3 = &iVar3.field31_0x22;
-    BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | ZEXT24(iVar3)),0x2);
+    BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | ZEXT24(iVar3)),0x2);
     if ((BVar2 != 0) &&
-       (uVar3 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_10),0x2), uVar3.is_null() == false))
+       (uVar3 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_10),0x2), uVar3.is_null() == false))
     {
       if (local_10[0].is_null()) {
         return;
@@ -868,9 +868,9 @@ pub fn file_1008_bb5e(mut param_1: i16,param_2: *mut StructD,param_3: *mut astru
         puVar3 = local_118;
         read_file_1008_7c6e(param_4,uVar14,CONCAT22(0x1050,puVar3));
         if ((((puVar3.is_null()) ||
-             (BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_14),0x2), BVar2 == 0)) ||
-            (BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,&local_8),0x4), BVar2 == 0)) ||
-           (BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_18),0x2), BVar2 == 0)) break;
+             (BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_14),0x2), BVar2 == 0)) ||
+            (BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,&local_8),0x4), BVar2 == 0)) ||
+           (BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_18),0x2), BVar2 == 0)) break;
         uVar5 = str_op_1008_60e8(paVar10,CONCAT22(0x1050,local_118));
         uVar4.field3_0x4 = uVar5;
         uVar4.field4_0x6 = paVar10;
@@ -908,7 +908,7 @@ pub fn pass1_1008_bd02(mut param_1: u32,param_2: u8) -> u32
 pub fn pass1_1008_bd28(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_b08c(&param_1->address_offset_field_0x0);
+  pass1_1008_b08c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -920,7 +920,7 @@ pub fn pass1_1008_bd28(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub fn pass1_1008_bd4e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_b08c(&param_1->address_offset_field_0x0);
+  pass1_1008_b08c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -932,7 +932,7 @@ pub fn pass1_1008_bd4e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub fn pass1_1008_bd74(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_b08c(&param_1->address_offset_field_0x0);
+  pass1_1008_b08c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -944,7 +944,7 @@ pub fn pass1_1008_bd74(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub fn pass1_1008_bd9a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1008_b08c(&param_1->address_offset_field_0x0);
+  pass1_1008_b08c(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }

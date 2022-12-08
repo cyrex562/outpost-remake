@@ -300,8 +300,8 @@ pub fn pass1_1038_75ca(mut param_1: i16,mut param_2: u32,mut param_3: u32)
   let mut iVar2: i16;
   let mut iVar3: i16;
   let mut uVar4: u16;
-  in_stack_0000ffca: mut HFILE16;
-  u32 local_10 [0x2];
+  in_stack_0000ffca: HFILE16;
+  let mut local_10: [u32;0x2] = [0;0x2];
   let mut local_8: u32;
 
   uVar4 = (param_2 >> 0x10);
@@ -380,33 +380,33 @@ pub fn file_1038_774e(param_1: *mut u8,param_2: *mut astruct_169,mut param_3: u3
   paVar5 = (param_2 & 0xffff0000 | ZEXT24(iVar2));
   pass1_1008_766e(param_1,param_3,paVar5);
   if (((((paVar5 != 0) &&
-        (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 1)),0x4),
+        (BVar1 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 1)),0x4),
         BVar1 != 0)) &&
        (iVar3 = file_1008_77cc(param_1,param_3,
                                (param_2 & 0xffff0000 |
                                        ZEXT24((&iVar2[0x1].field4_0x4 + 0x2)))), iVar3 != 0)) &&
-      ((((BVar1 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,&local_4),0x2), BVar1 != 0x0 &&
-         (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,&local_6),0x2), BVar1 != 0)) &&
-        ((BVar1 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,&local_8),0x2), BVar1 != 0x0 &&
-         ((BVar1 = read_file_1008_7dee((HFILE16 *)param_3,
+      ((((BVar1 = read_file_1008_7dee(param_3,CONCAT22(0x1050,&local_4),0x2), BVar1 != 0x0 &&
+         (BVar1 = read_file_1008_7dee(param_3,CONCAT22(0x1050,&local_6),0x2), BVar1 != 0)) &&
+        ((BVar1 = read_file_1008_7dee(param_3,CONCAT22(0x1050,&local_8),0x2), BVar1 != 0x0 &&
+         ((BVar1 = read_file_1008_7dee(param_3,
                                        (param_2 & 0xffff0000 |
                                              ZEXT24((&iVar2[0x2].field4_0x4 + 0x2))),0x4),
           BVar1 != 0x0 &&
           (BVar1 = read_file_1008_7bc8(param_3,(param_2 & 0xffff0000 | ZEXT24(&iVar2[0x3].field_0x2))),
           BVar1 != 0)))))) &&
-       (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x4)),0x4),
+       (BVar1 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x4)),0x4),
        BVar1 != 0)))) &&
-     (((BVar1 = read_file_1008_7dee((HFILE16 *)param_3,
+     (((BVar1 = read_file_1008_7dee(param_3,
                                     (param_2 & 0xffff0000 | ZEXT24(&iVar2[0x4].field4_0x4)),0x2),
        BVar1 != 0x0 &&
-       (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,
+       (BVar1 = read_file_1008_7dee(param_3,
                                     (param_2 & 0xffff0000 |
                                           ZEXT24((&iVar2[0x4].field4_0x4 + 0x2))),0x2), BVar1 != 0))
-      && (BVar1 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x5)),0x2),
+      && (BVar1 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | ZEXT24(iVar2 + 0x5)),0x2),
          BVar1 != 0)))) {
     uVar6 = (param_2 >> 0x10);
     &iVar2[0x1].field4_0x4 = local_4;
-    uVar4 = switch_1008_72bc((HFILE16 *)param_3,local_6);
+    uVar4 = switch_1008_72bc(param_3,local_6);
     &iVar2[0x2].field_0x2 = uVar4;
     &iVar2[0x2].field4_0x4 = local_8;
     return;
@@ -420,7 +420,7 @@ pub fn file_1038_774e(param_1: *mut u8,param_2: *mut astruct_169,mut param_3: u3
 pub fn pass1_1038_78b8(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1038_6912(&param_1->address_offset_field_0x0);
+  pass1_1038_6912(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -610,7 +610,7 @@ pub unsafe fn pass1_1038_7b20(param_1: u32,mut param_2: u32) -> u16
   let mut BVar2: bool;
   let mut uVar3: u16;
   let mut uVar4: u32;
-  in_stack_0000ffce: mut HFILE16;
+  in_stack_0000ffce: HFILE16;
   let mut local_1c: u16;
   let mut uStack26: u16;
   let mut uStack24: u16;
@@ -658,7 +658,7 @@ pub unsafe fn pass1_1038_7b20(param_1: u32,mut param_2: u32) -> u16
 
 
 
-pub unsafe fn read_file_1038_7c02(param_1: u16,u16_t param_2,param_3: *mut u32,HFILE16 *param_4) -> u16
+pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,param_4: *mut HFILE16) -> u16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -670,8 +670,8 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,u16_t param_2,param_3: *mut u32,H
   let mut in_register_0000000a: u16;
   let mut paVar7: *mut Struct57;
   let mut paVar8: *mut Struct57;
-  HFILE16 *pHVar9;
-  u16 local_12 [0x2];
+  pHVar9: *mut HFILE16;
+  let mut local_12: [u16;0x2] = [0;0x2];
   let mut uStack14: u32;
   let mut local_4: u16;
 
@@ -781,7 +781,7 @@ pub fn pass1_1038_7d5c(param_1: *mut StructD)
   let mut in_stack_0000ffde: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x8876;
+  param_1.address_offset_field_0x0 = 0x8876;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);

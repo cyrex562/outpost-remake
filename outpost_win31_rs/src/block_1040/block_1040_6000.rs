@@ -43,8 +43,8 @@ pub fn pass1_1040_6470(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x67ba;
-  iVar1->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0x67ba;
+  iVar1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   if (&iVar1.field_0x92 != 0) {
     pass1_1010_1ea6(&iVar1.field_0x92,param_1);
   }
@@ -160,7 +160,7 @@ pub fn show_win_1040_65ba(param_1: *mut StructD,StructB *struct_b_param_1,mut pa
       (uVar2 + iStack10 * 0x4) = 0;
     }
     else {
-      pvVar1 = struct_b_4->lpvoid_field_0x8;
+      pvVar1 = struct_b_4.lpvoid_field_0x8;
       pass1_1008_3bd6(uVar5,rect,paVar5,0x0,CONCAT22(local_22,uStack32),0x101,0xff0100,
                       CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,(puStack26 + 0x4)))
                       ,param_3,in_stack_0000fe2a,in_stack_0000fe2e,in_stack_0000ff54,in_stack_0000ff58,in_stack_0000ff5c
@@ -180,7 +180,7 @@ pub fn show_win_1040_65ba(param_1: *mut StructD,StructB *struct_b_param_1,mut pa
     }
   }
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
-  ShowWindow16(0x5,struct_b_4->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_4.lpvoid_field_0x8);
   return;
 }
 
@@ -243,7 +243,7 @@ pub fn pass1_1040_6862(param_1: *mut StructD)
 {
   let mut in_stack_0000ffde: u16;
 
-  param_1->address_offset_field_0x0 = 0x6f32;
+  param_1.address_offset_field_0x0 = 0x6f32;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
@@ -392,7 +392,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   }
   else {
     puVar14 = struct_1040_bf3e(CONCAT13((paVar11 >> 0x8),CONCAT12(paVar11,paVar3)),
-                               struct_b_6->lpvoid_field_0x8);
+                               struct_b_6.lpvoid_field_0x8);
     paVar12 = (paVar12 & 0xffff0000 | puVar14 >> 0x10);
     paVar3 = puVar14;
     struct_b_6[0x7].field6_0xc = paVar3;
@@ -405,7 +405,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar11 = (paVar12 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar11,paVar3,paVar12,0x1,0xa000a,0x0,0x800081,
-                    CONCAT22(struct_b_6->lpvoid_field_0x8,0x10a),param_5,in_stack_0000fdd6,in_stack_0000fdda,
+                    CONCAT22(struct_b_6.lpvoid_field_0x8,0x10a),param_5,in_stack_0000fdd6,in_stack_0000fdda,
                     in_stack_0000ff00,in_stack_0000ff04,in_stack_0000ff08);
   }
   mem_op_1000_179c(0x42,paVar11);
@@ -413,7 +413,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar12 = (paVar11 & 0xffff0000 | uVar10);
   if (uVar10 != 0) {
     pass1_1008_3bd6(paVar12,paVar3,paVar11,0x1,0xa0028,0x0,0x820083,
-                    CONCAT22(struct_b_6->lpvoid_field_0x8,0x10c),param_5,in_stack_0000fdd6,in_stack_0000fdda,
+                    CONCAT22(struct_b_6.lpvoid_field_0x8,0x10c),param_5,in_stack_0000fdd6,in_stack_0000fdda,
                     in_stack_0000ff00,in_stack_0000ff04,in_stack_0000ff08);
   }
   BVar21 = 0;
@@ -425,7 +425,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
     paVar3 = NULL;
   }
   else {
-    pvVar1 = struct_b_6->lpvoid_field_0x8;
+    pvVar1 = struct_b_6.lpvoid_field_0x8;
     pass1_1008_3bd6(paVar13,paVar3,paVar12,0x1,0xa00aa,0x101,0xff0100,
                     CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,0x107)),param_4,in_stack_0000fdd4,
                     in_stack_0000fdd8,in_stack_0000fefe,in_stack_0000ff02,in_stack_0000ff06);
@@ -443,7 +443,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
     uStack4 = 0;
   }
   else {
-    pvVar1 = struct_b_6->lpvoid_field_0x8;
+    pvVar1 = struct_b_6.lpvoid_field_0x8;
     pass1_1008_3bd6(uVar14,paVar3,paVar11,0x1,0xa00c2,0x101,0xff0100,
                     CONCAT13((pvVar1 >> 0x8),CONCAT12(pvVar1,0x108)),param_4,in_stack_0000fdd4,
                     in_stack_0000fdd8,in_stack_0000fefe,in_stack_0000ff02,in_stack_0000ff06);
@@ -451,7 +451,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   }
   paStack6 = paVar3;
   enable_win_1040_9234(CONCAT13((uStack4 >> 0x8),CONCAT12(uStack4,paVar3)),BVar21);
-  hdc_8 = GetDC16(struct_b_6->lpvoid_field_0x8);
+  hdc_8 = GetDC16(struct_b_6.lpvoid_field_0x8);
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x50,local_58,(short)&DAT_1050_1050);
   uVar22 = SUB42(&DAT_1050_1050,0x0);
@@ -462,7 +462,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   DVar16 = GetTextExtent16(uVar10,(LPCSTR)CONCAT22(uVar22,CONCAT11(uVar20,uVar17)),hdc);
   HStack90 = (HMENU16)(DVar16 >> 0x10);
   HStack92 = DVar16;
-  CreateWindow16(0x0,CONCAT22(0x7cd,HINSTANCE16_1050_038c),struct_b_6->lpvoid_field_0x8,HStack90,
+  CreateWindow16(0x0,CONCAT22(0x7cd,HINSTANCE16_1050_038c),struct_b_6.lpvoid_field_0x8,HStack90,
                  HStack92,0xad,0x22,0x0,s_Rebel_1050_4ffc + 0x4,CONCAT13(0x10,CONCAT12(0x50,local_58)),
                  s_static_1050_5d84);
   load_string_1010_84e0
@@ -475,8 +475,8 @@ let mut local_58: [u8;0x50] = [0;0x50];
   DVar16 = GetTextExtent16(uVar10,(LPCSTR)CONCAT22(uVar22,pcVar23),CONCAT11(uVar19,uVar18));
   HStack90 = (HMENU16)(DVar16 >> 0x10);
   HStack92 = DVar16;
-  ReleaseDC16(hdc_8,struct_b_6->lpvoid_field_0x8);
-  CreateWindow16(0x0,CONCAT22(0x7ce,HINSTANCE16_1050_038c),struct_b_6->lpvoid_field_0x8,HStack90,
+  ReleaseDC16(hdc_8,struct_b_6.lpvoid_field_0x8);
+  CreateWindow16(0x0,CONCAT22(0x7ce,HINSTANCE16_1050_038c),struct_b_6.lpvoid_field_0x8,HStack90,
                  HStack92,0xc5,0x22,0x0,s_Rebel_1050_4ffc + 0x4,CONCAT22(0x1050,local_58),
                  s_static_1050_5d8b);
   local_64 = 0x5a000a;
@@ -493,13 +493,13 @@ let mut local_58: [u8;0x50] = [0;0x50];
   iVar3 = &iVar3.field_0xa;
   uVar9 = ((uVar1 & 0xffff0000) >> 0x10);
   SetWindowPos16(0x40,iVar3.field14_0x10,iVar3.field13_0xe,iVar3.field12_0xc,
-                 (uVar1 & 0xffff0000 | ZEXT24(iVar3)),0x0,struct_b_6->lpvoid_field_0x8);
+                 (uVar1 & 0xffff0000 | ZEXT24(iVar3)),0x0,struct_b_6.lpvoid_field_0x8);
   DAT_1050_0ecc = 0;
   uVar2 = &struct_b_6[0x7].max_count_field_0x10;
   ppcVar2 = (*&struct_b_6[0x7].max_count_field_0x10 + 0x10);
   (**ppcVar2)(s_tile2_bmp_1050_1538,uVar2,(uVar2 >> 0x10));
   pass1_1010_2ee2(&struct_b_6[0x7].max_count_field_0x10);
-  PostMessage16(0x0,0x10a,0x111,struct_b_6->lpvoid_field_0x8);
+  PostMessage16(0x0,0x10a,0x111,struct_b_6.lpvoid_field_0x8);
   return;
 }
 pub fn pass1_1040_6cac(mut param_1: u32)

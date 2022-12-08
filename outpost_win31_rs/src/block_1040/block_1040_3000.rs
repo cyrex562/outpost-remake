@@ -104,7 +104,7 @@ pub fn enable_win_1040_32a8(mut param_1: u32)
 
 
 
-BOOL16 set_win_pos_1040_331a(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
+pub fn set_win_pos_1040_331a(mut param_1: u32,mut param_2: u16 ,mut param_3: i16) -> BOOL16
 
 {
   let mut iStack10: i16;
@@ -220,7 +220,7 @@ pub fn pass1_1040_3506(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = s_Null_Ptr_1050_38f3 + 0x7;
+  param_1.address_offset_field_0x0 = s_Null_Ptr_1050_38f3 + 0x7;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -460,7 +460,7 @@ pub fn pass1_1040_39e2(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x3ffc;
+  param_1.address_offset_field_0x0 = 0x3ffc;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);

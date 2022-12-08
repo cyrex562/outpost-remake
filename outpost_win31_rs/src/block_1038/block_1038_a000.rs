@@ -40,7 +40,7 @@ astruct_57 * pass1_1038_a122(param_1: *mut astruct_57,param_2: *mut astruct_57,m
 pub fn pass1_1038_a156(param_1: *mut StructD)
 
 {
-  param_1->address_offset_field_0x0 = 0xa2d0;
+  param_1.address_offset_field_0x0 = 0xa2d0;
   (param_1 + 0x2) = &u16_1050_1038;
   ui_cleanup_op_1040_782c(param_1);
   return;
@@ -149,7 +149,7 @@ pub fn pass1_1038_a2aa(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_a33c(param_1: *mut u16,mut param_2: u16 )
+pub fn pass1_1038_a33c(param_1: *mut u16,mut param_2: u16 ) -> *mut u16
 
 {
   let mut paVar1: *mut Struct57;
@@ -170,7 +170,7 @@ pub fn pass1_1038_a36a(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xa428;
+  param_1.address_offset_field_0x0 = 0xa428;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   pass1_1038_a156(param_1);
@@ -222,7 +222,7 @@ pub fn pass1_1038_a402(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_a494(param_1: *mut u16,mut param_2: u16 )
+pub fn pass1_1038_a494(param_1: *mut u16,mut param_2: u16 ) -> *mut u16
 
 {
   let mut paVar1: *mut Struct57;
@@ -243,7 +243,7 @@ pub fn pass1_1038_a4c2(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xa62e;
+  param_1.address_offset_field_0x0 = 0xa62e;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   pass1_1038_a156(param_1);
@@ -282,12 +282,12 @@ pub fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,StructB *struct_b
                            in_stack_0000ffb8,in_stack_0000ffbe,in_stack_0000ffc2);
   uVar2 = (paVar1 >> 0x10);
   lp_string = (puVar4 + 0x6c);
-  hwnd = GetDlgItem16(0x114,struct_b_1->lpvoid_field_0x8);
+  hwnd = GetDlgItem16(0x114,struct_b_1.lpvoid_field_0x8);
   SetWindowText16(lp_string,hwnd);
   SetFocus16(hwnd);
   LVar5 = SendMessage16(-0x10000,0x0,0x401,hwnd);
   unk_win_ui_op_1038_a18c(CONCAT22(uVar2,(LVar5 >> 0x10)),struct_b_param_1,in_stack_0000ff9e);
-  ShowWindow16(0x5,struct_b_1->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_1.lpvoid_field_0x8);
   return;
 }
 
@@ -345,7 +345,7 @@ pub fn pass1_1038_a608(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_a69a(param_1: *mut u16,mut param_2: u16 )
+pub fn pass1_1038_a69a(param_1: *mut u16,mut param_2: u16 ) -> *mut u16
 
 {
   let mut paVar1: *mut Struct57;
@@ -366,7 +366,7 @@ pub fn pass1_1038_a6c8(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xa832;
+  param_1.address_offset_field_0x0 = 0xa832;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   pass1_1038_a156(param_1);
@@ -405,7 +405,7 @@ pub fn win_ui_op_1038_a6f4(mut param_1: u16 ,StructB *param_2)
   lp_string = (puVar6 + 0x68);
   uVar5 = (param_2 >> 0x10);
   struct_b_3 = (StructB *)param_2;
-  hwnd = GetDlgItem16(0x115,struct_b_3->lpvoid_field_0x8);
+  hwnd = GetDlgItem16(0x115,struct_b_3.lpvoid_field_0x8);
   SetWindowText16(lp_string,hwnd);
   SetFocus16(hwnd);
   LVar7 = SendMessage16(-0x10000,0x0,0x401,hwnd);
@@ -414,7 +414,7 @@ pub fn win_ui_op_1038_a6f4(mut param_1: u16 ,StructB *param_2)
   unk_win_ui_op_1038_a18c(uVar3,param_2,in_stack_0000ff9e);
   win_1008_5c7c(uVar1,uVar3,_u16_1050_02a0,0x30001);
   (struct_b_3 + 0x7).field0_0x0 = uVar1;
-  ShowWindow16(0x5,struct_b_3->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_3.lpvoid_field_0x8);
   return;
 }
 
@@ -475,7 +475,7 @@ pub fn pass1_1038_a80c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_a89e(param_1: *mut u16,mut param_2: u16 )
+pub fn pass1_1038_a89e(param_1: *mut u16,mut param_2: u16 ) -> *mut u16
 
 {
   let mut paVar1: *mut Struct57;
@@ -496,7 +496,7 @@ pub fn pass1_1038_a8cc(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xab16;
+  param_1.address_offset_field_0x0 = 0xab16;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   pass1_1038_a156(param_1);
@@ -545,15 +545,15 @@ pub fn win_ui_op_1038_a972(StructB *struct_b_param_1)
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar4 = (struct_b_param_1 >> 0x10);
   struct_b_3 = (StructB *)struct_b_param_1;
-  SendDlgItemMessage16(0x0,0x1,0x401,0x116,struct_b_3->lpvoid_field_0x8);
-  LVar5 = SendDlgItemMessage16(0x0,0x1,0x401,0x11a,struct_b_3->lpvoid_field_0x8);
+  SendDlgItemMessage16(0x0,0x1,0x401,0x116,struct_b_3.lpvoid_field_0x8);
+  LVar5 = SendDlgItemMessage16(0x0,0x1,0x401,0x11a,struct_b_3.lpvoid_field_0x8);
   uVar2 = CONCAT22(uVar3,(LVar5 >> 0x10));
-  hwnd = GetDlgItem16(0x11a,struct_b_3->lpvoid_field_0x8);
+  hwnd = GetDlgItem16(0x11a,struct_b_3.lpvoid_field_0x8);
   BVar1 = EnableWindow16(0x0,hwnd);
   win_1008_5c7c(BVar1,uVar2,_u16_1050_02a0,0x40001);
   (struct_b_3 + 0x7).field0_0x0 = BVar1;
   unk_win_ui_op_1038_a18c(uVar2,struct_b_param_1,in_stack_0000ffaa);
-  ShowWindow16(0x5,struct_b_3->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_3.lpvoid_field_0x8);
   return;
 }
 
@@ -643,7 +643,7 @@ pub fn pass1_1038_abb0(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xad72;
+  param_1.address_offset_field_0x0 = 0xad72;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -750,7 +750,7 @@ pub fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_adde(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32)
+pub fn pass1_1038_adde(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> *mut u16
 
 {
   pass1_1038_9b72(param_1,param_2,param_3,param_4);
@@ -763,7 +763,7 @@ pub fn pass1_1038_ae08(param_1: *mut StructD)
 {
   let mut in_stack_0000ffda: u16;
 
-  param_1->address_offset_field_0x0 = 0xae4e;
+  param_1.address_offset_field_0x0 = 0xae4e;
   (param_1 + 0x2) = &u16_1050_1038;
   unk_draw_op_1040_b0f8(in_stack_0000ffda,param_1);
   return;

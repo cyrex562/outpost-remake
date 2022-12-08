@@ -867,7 +867,7 @@ pub fn pass1_1030_9d42(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,par
 
 
 
-u16 * pass1_1030_9e9c(param_1: *mut u16,param_2: u8)
+pub fn pass1_1030_9e9c(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;

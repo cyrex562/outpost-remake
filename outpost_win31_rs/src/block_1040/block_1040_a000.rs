@@ -1,6 +1,6 @@
 
 
-u16 * pass1_1040_a204(param_1: *mut u16,param_2: u8)
+pub fn pass1_1040_a204(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -38,7 +38,7 @@ pub fn free_proc_inst_1040_a294(param_1: *mut StructD)
 {
   let mut in_stack_0000ffde: u16;
 
-  param_1->address_offset_field_0x0 = 0xa4e8;
+  param_1.address_offset_field_0x0 = 0xa4e8;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + -0x1;
   if (PTR_LOOP_1050_5eda.is_null()) {
@@ -251,8 +251,8 @@ pub fn pass1_1040_a5d0(param_1: *mut StructD)
 
   uVar3 = (param_1 >> 0x10);
   iVar4 = param_1;
-  uVar1 = iVar4->address_offset_field_0x2;
-  uVar2 = iVar4->hfile_0x4;
+  uVar1 = iVar4.address_offset_field_0x2;
+  uVar2 = iVar4.hfile_0x4;
   if ((uVar2 | uVar1) != 0) {
     pass1_1000_54e8(0xa582,&PTR_LOOP_1050_1040,(uVar1 - 0x2),0xa,uVar1,uVar2);
     fn_ptr_1000_17ce(CONCAT22(uVar2,uVar1 - 0x2));
@@ -305,9 +305,9 @@ pub fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750,mut param_2: i16,mu
 
   uVar3 = (struct750_param_1 >> 0x10);
   struct750_var4 = struct750_param_1;
-  if (struct750_var4->hbrush16_field142_0x8e == 0) {
+  if (struct750_var4.hbrush16_field142_0x8e == 0) {
     brush_handle_var2 = CreateSolidBrush16(WHITE_BRUSH);
-    struct750_var4->hbrush16_field142_0x8e = brush_handle_var2;
+    struct750_var4.hbrush16_field142_0x8e = brush_handle_var2;
   }
   if (_u16_1050_5ee8 == 0) {
     uVar4 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
@@ -586,7 +586,7 @@ pub fn pass1_1040_ace8(param_1: *mut StructD)
   let mut in_stack_0000ffde: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xafc4;
+  param_1.address_offset_field_0x0 = 0xafc4;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
@@ -659,7 +659,7 @@ pub fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
   let mut uVar8: u16;
   let mut in_register_0000000a: u16;
   let mut iVar9: i16;
-  i32 *plVar10;
+  plVar10: *mut i32;
   let mut unaff_SI: u16;
   let mut uVar11: u16;
   let mut uVar12: u16;

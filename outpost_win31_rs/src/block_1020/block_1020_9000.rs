@@ -190,16 +190,16 @@ pub fn palette_op_1020_92c4(struct_param_1: *mut StructD)
 
   uVar2 = (struct_param_1 >> 0x10);
   struct_1 = struct_param_1;
-  struct_param_1->address_offset_field_0x0 = 0x96c8;
-  struct_1->address_offset_field_0x2 = 0x1020;
+  struct_param_1.address_offset_field_0x0 = 0x96c8;
+  struct_1.address_offset_field_0x2 = 0x1020;
   if (struct_1.field11_0x12 != 0) {
     obj = SelectPalette16(0x0,struct_1.field11_0x12,struct_1.field6_0xa);
     DeleteObject16(obj);
   }
-  struct_param_1->address_offset_field_0x0 = 0x3ab0;
-  struct_1->address_offset_field_0x2 = 0x1008;
-  struct_param_1->address_offset_field_0x0 = 0x389a;
-  struct_1->address_offset_field_0x2 = 0x1008;
+  struct_param_1.address_offset_field_0x0 = 0x3ab0;
+  struct_1.address_offset_field_0x2 = 0x1008;
+  struct_param_1.address_offset_field_0x0 = 0x389a;
+  struct_1.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn mix_draw_op_1020_9312(mut param_1: u32)

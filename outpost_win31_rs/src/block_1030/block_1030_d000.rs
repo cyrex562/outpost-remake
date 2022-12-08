@@ -379,11 +379,11 @@ pub fn pass1_1030_d61c(mut param_1: u32,mut param_2: u32)
   let mut BVar1: bool;
   let mut iVar2: i16;
   let mut uVar3: u16;
-  in_stack_0000ffcc: mut HFILE16;
+  in_stack_0000ffcc: HFILE16;
   let mut local_1a: u32;
   let mut local_16: *mut u8;
   let mut local_14: u16;
-  u32 local_12 [0x3];
+  let mut local_12: [u32;0x3] = [0;0x3];
   let mut iStack4: i16;
 
   BVar1 = write_to_file_1028_b5ec(param_1,param_2);
@@ -418,7 +418,7 @@ pub fn pass1_1030_d61c(mut param_1: u32,mut param_2: u32)
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn pass1_1030_d72e(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1030_d72e(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut uVar1: u16;
@@ -486,7 +486,7 @@ pub fn pass1_1030_d72e(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_3
 pub fn pass1_1030_d868(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -727,7 +727,7 @@ pub unsafe fn pass1_1030_dc02() -> u16
 pub fn pass1_1030_dc08(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -751,7 +751,7 @@ astruct_180 * struct_1030_dc96(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1030_dcc2(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1030_dcc2(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -860,8 +860,8 @@ pub fn pass1_1030_de7c(mut param_1: u32,mut param_2: u32)
 
 {
   let mut BVar1: bool;
-  in_stack_0000ffda: mut HFILE16;
-  u32 local_10 [0x3];
+  in_stack_0000ffda: HFILE16;
+  let mut local_10: [u32;0x3] = [0;0x3];
 
   BVar1 = write_to_file_1028_b5ec(param_1,param_2);
   if (BVar1 != 0) {
@@ -874,7 +874,7 @@ pub fn pass1_1030_de7c(mut param_1: u32,mut param_2: u32)
   }
   return;
 }
-pub fn pass1_1030_dec4(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1030_dec4(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut BVar1: bool;

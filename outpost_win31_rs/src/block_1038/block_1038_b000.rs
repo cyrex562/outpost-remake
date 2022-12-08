@@ -66,7 +66,7 @@ pub fn pass1_1038_b6e0(mut param_1: u32,mut param_2: i16)
 
 
 
-BOOL16 bring_win_to_top_1038_b72e(mut param_1: u32,mut param_2: i16)
+pub fn bring_win_to_top_1038_b72e(mut param_1: u32,mut param_2: i16) -> BOOL16
 
 {
   let mut hwnd: HWND16;
@@ -134,7 +134,7 @@ pub fn pass1_1038_b7f0(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xbd70;
+  param_1.address_offset_field_0x0 = 0xbd70;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -191,19 +191,19 @@ pub fn win_ui_op_1038_b81c(mut param_1: u16 ,StructB *struct_b_param_1)
       iStack10 += 0x1;
     }
     else {
-      CheckDlgButton16(0x2,iStack12,struct_b_8->lpvoid_field_0x8);
+      CheckDlgButton16(0x2,iStack12,struct_b_8.lpvoid_field_0x8);
     }
   }
-  HVar5 = GetDlgItem16(0xfb1,struct_b_8->lpvoid_field_0x8);
+  HVar5 = GetDlgItem16(0xfb1,struct_b_8.lpvoid_field_0x8);
   win_enabled = EnableWindow16(0x0,HVar5);
   uVar2 = &struct_b_8[0x7].lpvoid_field_0x8;
   ppcVar3 = (*&struct_b_8[0x7].lpvoid_field_0x8 + 0x10);
   (**ppcVar3)(s_tile2_bmp_1050_1538,uVar2,(uVar2 >> 0x10));
   piStack16 = CONCAT22(extraout_DX,win_enabled);
   move_win_1040_826c(struct_b_param_1,win_enabled.field1_0x2 + -0x2,win_enabled.field2_0x4 + *piStack16 + 0x3);
-  ShowWindow16(0x5,struct_b_8->lpvoid_field_0x8);
+  ShowWindow16(0x5,struct_b_8.lpvoid_field_0x8);
   pass1_1018_1c9a(*(astruct_263 **)&struct_b_8[0x7].lpvoid_field_0x8,*piVar6);
-  HVar5 = GetDlgItem16(*piVar6,struct_b_8->lpvoid_field_0x8);
+  HVar5 = GetDlgItem16(*piVar6,struct_b_8.lpvoid_field_0x8);
   SetFocus16(HVar5);
   return;
 }
@@ -508,7 +508,7 @@ pub fn pass1_1038_be4a(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xc436;
+  param_1.address_offset_field_0x0 = 0xc436;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);

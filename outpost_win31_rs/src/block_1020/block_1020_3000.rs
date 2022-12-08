@@ -1088,10 +1088,10 @@ pub fn win_ui_palette_op_1020_3e84(param_1: *mut StructD)
   obj = SelectPalette16(0x0,&struct_v1.field_0x1c,hdc);
   DeleteObject16(obj);
   SetMapMode16(*(int16_t *)&struct_v1.field_0x1e,hdc);
-  param_1->address_offset_field_0x0 = 0x3ab0;
-  struct_v1->address_offset_field_0x2 = 0x1008;
-  param_1->address_offset_field_0x0 = 0x389a;
-  struct_v1->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x3ab0;
+  struct_v1.address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  struct_v1.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn validate_rect_1020_3f12(mut param_1: u32,mut param_2: i16)

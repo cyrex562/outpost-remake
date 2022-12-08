@@ -22,7 +22,7 @@ pub fn create_window_1008_5e7e() ->HWND16
   let mut string_1: *mut c_char;
   let mut puVar5: *mut c_char;
   let mut wndclass_44: WNDCLASS16;
-  // u32 local_12 [0x4];
+  // let mut local_12: [u32;0x4] = [0;0x4];
   let mut local_12: [c_char;16] = [0;16];
     let mut puVar1: *mut c_char;
 

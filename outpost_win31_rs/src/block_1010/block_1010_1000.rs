@@ -458,7 +458,7 @@ pub unsafe fn FUN_1010_18ee() -> u16
 
 
 
-u16 * pass1_1010_18f4(param_1: *mut u16,param_2: u8,mut param_3: u16 )
+pub fn pass1_1010_18f4(param_1: *mut u16,param_2: u8,mut param_3: u16 ) -> *mut u16
 
 {
   pass1_1010_0f76(param_1);
@@ -592,7 +592,7 @@ pass1_1010_1a66: u8(mut param_1: u32,param_2: *mut astruct_15)
 
 
 
-u16 * pass1_1010_1b04(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_1b04(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_0f76(param_1);
@@ -702,7 +702,7 @@ u8 pass1_1010_1c40(mut param_1: u32,param_2: *mut astruct_15)
 
 
 
-u16 * pass1_1010_1cde(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_1cde(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_0f76(param_1);
@@ -900,7 +900,7 @@ pub fn pass1_1010_1f62(param_1: *mut astruct_27,mut param_2: i16)
 
 
 
-u16 * pass1_1010_1fbe(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_1fbe(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -913,7 +913,7 @@ u16 * pass1_1010_1fbe(param_1: *mut u16,param_2: u8)
 
 
 
-u16 * pass1_1010_1fea(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_1fea(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_1d80(param_1);

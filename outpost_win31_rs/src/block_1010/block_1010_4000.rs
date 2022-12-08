@@ -12,11 +12,11 @@ pub fn pass1_1010_404a(mut param_1: i16,mut param_2: u32,mut param_3: u32)
   }
   else {
     iVar1 = param_2;
-    BVar2 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | (iVar1 + 0x24)),0x2);
+    BVar2 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | (iVar1 + 0x24)),0x2);
     if (BVar2 != 0) {
-      BVar2 = read_file_1008_7dee((HFILE16 *)param_3,CONCAT22(0x1050,&local_4),0x2);
+      BVar2 = read_file_1008_7dee(param_3,CONCAT22(0x1050,&local_4),0x2);
       if (BVar2 != 0) {
-        BVar2 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | (iVar1 + 0x7e)),0x2);
+        BVar2 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | (iVar1 + 0x7e)),0x2);
         if (BVar2 != 0) {
           (iVar1 + 0x6a) = local_4;
           return;
@@ -718,7 +718,7 @@ pub unsafe fn pass1_1010_4a12(mut param_1: u32) -> u16
 
 
 
-u16 * pass1_1010_4a20(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_4a20(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_3f00(param_1);
@@ -761,7 +761,7 @@ pub fn pass1_1010_4a8a(mut param_1: u32,param_2: *mut astruct_19,param_3: *mut a
   param_2.field25_0x32 = 0;
     // just 0x5024
   CONCAT22(param_3,param_2) = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
-  param_2->segment_0x2 = 0x1010;
+  param_2.segment_0x2 = 0x1010;
   IVar1 = FUN_1010_830a(0x0,paVar2,unaff_CS,_u16_1050_14cc,0x1b3);
   param_2.field11_0x16 = IVar1;
   param_2.field12_0x18 = paVar2;
@@ -770,9 +770,9 @@ pub fn pass1_1010_4a8a(mut param_1: u32,param_2: *mut astruct_19,param_3: *mut a
   (&param_2.field20_0x26 + 0x2) = (puVar5 >> 0x10);
   pass1_1008_4772(&param_2.field11_0x16);
   &param_2.field_0xe = 0x13c;
-  param_2->horiz_res_0xa = 0;
+  param_2.horiz_res_0xa = 0;
   param_2.field8_0x10 = 0;
-  param_2->ver_res_0xc = 0;
+  param_2.ver_res_0xc = 0;
   return;
 }
 pub fn free_rsrc_1010_4b3e(param_1: *mut StructD)
@@ -797,8 +797,8 @@ pub fn free_rsrc_1010_4b3e(param_1: *mut StructD)
   pstructd_1_hi = (param_1 >> 0x10);
   pstructd_1 = param_1;
     // really just 0x5024
-  param_1->address_offset_field_0x0 = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
-  pstructd_1->address_offset_field_0x2 = 0x1010;
+  param_1.address_offset_field_0x0 = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
+  pstructd_1.address_offset_field_0x2 = 0x1010;
   if (&pstructd_1.field_0x2a != 0) {
     unaff_CS = SUB42(s_tile2_bmp_1050_1538,0x0);
     BVar6 = GlobalUnlock16(*(HGLOBAL16 *)&pstructd_1.field_0x2a);
@@ -1055,10 +1055,10 @@ pub fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812)
   uVar3 = (struct_param_1 >> 0x10);
   struct_1 = struct_param_1;
   if (struct_1.field29_0x20 != 0) {
-    if (struct_1->hglobal_0x2a != 0) {
-      BVar1 = GlobalUnlock16(struct_1->hglobal_0x2a);
+    if (struct_1.hglobal_0x2a != 0) {
+      BVar1 = GlobalUnlock16(struct_1.hglobal_0x2a);
       if (BVar1 == 0) {
-        FreeResource16(struct_1->hglobal_0x2a);
+        FreeResource16(struct_1.hglobal_0x2a);
       }
     }
     uVar1 = struct_1.field18_0x12;
@@ -1067,7 +1067,7 @@ pub fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812)
                             ((uVar2 + struct_1.field29_0x20 * 0x2) * 0x2 + 0x1384)
                             ,HINSTANCE16_1050_038c);
     handle = LoadResource16(h_rsrc,HINSTANCE16_1050_038c);
-    struct_1->hglobal_0x2a = handle;
+    struct_1.hglobal_0x2a = handle;
     if (handle != 0) {
       WIN16_LockResource16(handle);
       return;

@@ -127,7 +127,7 @@ pub fn pass1_1018_31fa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct
 
 
 
-u16 * pass1_1018_32a6(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_32a6(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   param_1 = (param_1 & 0xffff0000 | (param_1 - 0x20));
@@ -326,7 +326,7 @@ pub fn sprintf_op_1018_34b6(param_1: u8,mut param_2: u16 ,param_3: *mut astruct_
 pub fn unk_str_op_1018_35b0(mut param_1: u16 ,param_2: *mut astruct_263)
 
 {
-  i32 *plVar1;
+  plVar1: *mut i32;
   let mut piVar2: *mut i16;
   let mut uVar3: u16;
   let mut uVar4: u16;
@@ -562,7 +562,7 @@ switchD_1018_393f_caseD_6:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 string_1018_39d8(mut param_1: u32,param_2: *mut c_char,param_3: *mut c_char)
+pub fn string_1018_39d8(mut param_1: u32,param_2: *mut c_char,param_3: *mut c_char) -> BOOL16
 
 {
   let mut iVar1: i16;

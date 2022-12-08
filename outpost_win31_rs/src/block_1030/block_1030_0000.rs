@@ -1,5 +1,5 @@
 
-u16 * switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
+pub fn switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16) -> *mut u16
 
 {
   let mut uVar1: u16;

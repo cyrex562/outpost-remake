@@ -179,7 +179,7 @@ astruct_29 * pass1_1018_d3ac(param_1: *mut astruct_29,param_2: u8)
 
 
 
-u16 * pass1_1018_dcf6(param_1: *mut u16)
+pub fn pass1_1018_dcf6(param_1: *mut u16) -> *mut u16
 
 {
   let mut uVar1: u16;
@@ -338,7 +338,7 @@ pub fn pass1_1018_dd7c(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
 pub fn pass1_1018_df10(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);

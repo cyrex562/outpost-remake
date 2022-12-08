@@ -10,8 +10,8 @@ pub fn pass1_1020_808e(param_1: *mut StructD)
 
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
-  param_1->address_offset_field_0x0 = 0x82bc;
-  iVar3->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x82bc;
+  iVar3.address_offset_field_0x2 = 0x1020;
   &iVar3.field_0xe2 = 0x8358;
   &iVar3.field_0xe4 = 0x1020;
   if (param_1.is_null()) {
@@ -26,10 +26,10 @@ pub fn pass1_1020_808e(param_1: *mut StructD)
   *puStack6 = 0x389a;
   (puVar1 + 0x2) = 0x1008;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(&iVar3.field192_0xd2)));
-  param_1->address_offset_field_0x0 = 0x380a;
-  iVar3->address_offset_field_0x2 = 0x1008;
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar3->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x380a;
+  iVar3.address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar3.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn pass1_1020_8106(mut param_1: u32)
@@ -191,8 +191,8 @@ pub fn pass1_1020_8360(param_1: *mut astruct_20)
   struct_1020_847a(param_1,1);
   puVar4 = pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&iVar4.field9_0x16)));
   &iVar4.field12_0x1c = 0;
-  param_1->offset_0x0 = 0x8462;
-  iVar4->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x8462;
+  iVar4.base_0x2 = 0x1020;
   puVar5 = mixed_1010_20ba(CONCAT22(uVar3,(puVar4 >> 0x10)),_u16_1050_0ed0,
                            CONCAT22(unaff_SI,0x29),in_stack_0000fe96,in_stack_0000ffba,in_stack_0000ffc0,
                            in_stack_0000ffc4);
@@ -266,16 +266,16 @@ pub fn struct_1020_847a(param_1: *mut astruct_20,mut param_2: i16)
   uVar4 = (in_EDX >> 0x10);
   uVar5 = (param_1 >> 0x10);
   iVar3 = param_1;
-  param_1->offset_0x0 = 0x389a;
-  iVar3->base_0x2 = 0x1008;
+  param_1.offset_0x0 = 0x389a;
+  iVar3.base_0x2 = 0x1008;
   &iVar3.field2_0x4 = 0;
   (&iVar3.field2_0x4 + 0x2) = param_2;
   &iVar3.field3_0x8 = 0;
   &iVar3.field5_0xc = 0;
   puVar6 = pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&iVar3.field7_0x10)));
   paVar3 = CONCAT22(uVar4,(puVar6 >> 0x10));
-  param_1->offset_0x0 = 0x87aa;
-  iVar3->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x87aa;
+  iVar3.base_0x2 = 0x1020;
   puVar7 = mixed_1010_20ba(paVar3,_u16_1050_0ed0,CONCAT22(unaff_SI,0x48),in_stack_0000fe92,
                            in_stack_0000ffb6,in_stack_0000ffbc,in_stack_0000ffc0);
   paVar3 = (paVar3 & 0xffff0000 | puVar7 >> 0x10);
@@ -313,8 +313,8 @@ pub fn pass1_1020_8556(param_1: *mut StructD)
 
   uVar7 = (param_1 >> 0x10);
   iVar5 = param_1;
-  param_1->address_offset_field_0x0 = 0x87aa;
-  iVar5->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x87aa;
+  iVar5.address_offset_field_0x2 = 0x1020;
   fn_ptr_1000_17ce(*&iVar5.field5_0x8);
   if ((iVar5.field8_0xe | iVar5.field7_0xc) != 0) {
     iStack12 = 0;
@@ -337,8 +337,8 @@ pub fn pass1_1020_8556(param_1: *mut StructD)
     }
     fn_ptr_1000_17ce(*&iVar5.field7_0xc);
   }
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar5->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar5.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn pass1_1020_85f6(param_1: *mut astruct_590)
@@ -515,8 +515,8 @@ pub fn pass1_1020_87c2(param_1: *mut astruct_20)
   (&iVar2.field17_0x2c + 0x2) = 0;
   puVar4 = pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&iVar2.field_0x32)));
   &iVar2.field_0x38 = 0;
-  param_1->offset_0x0 = 0x8a84;
-  iVar2->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x8a84;
+  iVar2.base_0x2 = 0x1020;
   puVar5 = mixed_1010_20ba(CONCAT22(uVar2,(puVar4 >> 0x10)),_u16_1050_0ed0,
                            CONCAT22(unaff_SI,0x29),in_stack_0000fe80,in_stack_0000ffa4,in_stack_0000ffaa,
                            in_stack_0000ffae);
@@ -670,8 +670,8 @@ pub fn pass1_1020_8a9c(param_1: *mut astruct_20,mut param_2: u32,mut param_3: u1
   puVar7 = pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(&iVar9.field12_0x1c)));
   paVar6 = CONCAT22(uVar4,(puVar7 >> 0x10));
   iVar9.field14_0x22 = NULL;
-  param_1->offset_0x0 = 0x8e92;
-  iVar9->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x8e92;
+  iVar9.base_0x2 = 0x1020;
   puVar8 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,CONCAT22(unaff_SI,0x29),param_6,param_5,param_3,param_4);
   uVar4 = (paVar6 >> 0x10);
   &iVar9.field14_0x22 = puVar8;
@@ -860,7 +860,7 @@ pub fn invalidate_rect_1020_8d90
 pub fn pass1_1020_8e6c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1020_8bae(&param_1->address_offset_field_0x0);
+  pass1_1020_8bae(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -907,8 +907,8 @@ pub fn pass1_1020_8eaa(param_1: *mut astruct_20,mut param_2: u32)
   &iVar4.field141_0xb4 = 0;
   iVar4.field143_0xb8 = 0xffff;
   &iVar4.field144_0xba = 0;
-  param_1->offset_0x0 = 0x9204;
-  iVar4->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x9204;
+  iVar4.base_0x2 = 0x1020;
   puVar9 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,CONCAT22(unaff_SI,0x29),in_stack_0000fe9a,
                            in_stack_0000ffbe,in_stack_0000ffc4,in_stack_0000ffc8);
   paVar6 = (paVar6 & 0xffff0000 | puVar9 >> 0x10);
@@ -940,8 +940,8 @@ pub fn pass1_1020_8f74(param_1: *mut StructD)
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  param_1->address_offset_field_0x0 = 0x9204;
-  iVar4->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x9204;
+  iVar4.address_offset_field_0x2 = 0x1020;
   puVar1 = &iVar4.field_0xb4;
   uVar2 = &iVar4.field_0xb6;
   if ((uVar2 | puVar1) != 0) {

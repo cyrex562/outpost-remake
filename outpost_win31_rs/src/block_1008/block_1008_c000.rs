@@ -49,7 +49,7 @@ pub unsafe fn pass1_1008_c646(mut param_1: u16 ,mut param_2: u32) -> i16
 
 
 
-BOOL16 pass1_1008_c6ae(mut param_1: u32,mut param_2: i16,mut param_3: i16)
+pub fn pass1_1008_c6ae(mut param_1: u32,mut param_2: i16,mut param_3: i16) -> BOOL16
 
 {
   let mut piVar1: *mut i16;
@@ -85,7 +85,7 @@ pub fn pass1_1008_c72a(param_1: *mut astruct_19,mut param_2: u16 ,mut param_3: u
   struct_op_1010_1d48(param_1,param_2);
   (param_1 + 0xa) = 0;
   (param_1 + 0xe) = 0;
-  param_1->offset_0x0 = 0xca4a;
+  param_1.offset_0x0 = 0xca4a;
   (param_1 + 0x2) = 0x1008;
   return;
 }
@@ -276,8 +276,8 @@ pub fn pass1_1008_c98e(mut param_1: u32,mut param_2: u32)
 
 {
   let mut BVar1: bool;
-  in_stack_0000ffda: mut HFILE16;
-  u32 local_10 [0x3];
+  in_stack_0000ffda: HFILE16;
+  let mut local_10: [u32;0x3] = [0;0x3];
 
   BVar1 = write_to_file_1008_7cac(param_2);
   if (BVar1 != 0) {
@@ -301,7 +301,7 @@ pub fn pass1_1008_c9d4(mut param_1: i16,mut param_2: u32,mut param_3: u32)
       u16_1050_0310 = 0x6d4;
       return;
     }
-    BVar1 = read_file_1008_7dee((HFILE16 *)param_3,(param_2 & 0xffff0000 | (param_2 + 0xe)),0x4);
+    BVar1 = read_file_1008_7dee(param_3,(param_2 & 0xffff0000 | (param_2 + 0xe)),0x4);
     if (BVar1 == 0) {
       u16_1050_0310 = 0x6d2;
       return;
@@ -331,7 +331,7 @@ pub fn pass1_1008_ca5a(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x16) = 0;
   (param_1 + 0x1a) = 0;
   (param_1 + 0x1e) = 0;
-  param_1->offset_0x0 = 0xd71a;
+  param_1.offset_0x0 = 0xd71a;
   (param_1 + 0x2) = 0x1008;
   return;
 }
@@ -544,7 +544,7 @@ pub fn pass1_1008_cbc4(param_1: *mut astruct_263,mut param_2: u32)
 pub fn pass1_1008_cda2(param_1: *mut astruct_263,mut param_2: u32)
 
 {
-  i32 *plVar1;
+  plVar1: *mut i32;
   let mut lVar2: i32;
   let mut ppcVar3: *mut *mut code;
   let mut puVar4: *mut u32;

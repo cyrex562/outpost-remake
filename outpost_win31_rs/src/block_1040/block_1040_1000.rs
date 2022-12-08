@@ -571,8 +571,8 @@ pub fn check_dialog_btn_1040_1afe(StructB *param_1)
   check_01 = (uVar2 + 0x72);
   CheckDlgButton16((uVar1 + 0x1e),0xfdb,iVar3.lpvoid_field_0x8);
   CheckDlgButton16(check_00,0xfdd,iVar3.lpvoid_field_0x8);
-  CheckDlgButton16(check_01,0xfde,iVar3->lpvoid_field_0x8);
-  CheckDlgButton16(check,0xfdc,iVar3->lpvoid_field_0x8);
+  CheckDlgButton16(check_01,0xfde,iVar3.lpvoid_field_0x8);
+  CheckDlgButton16(check,0xfdc,iVar3.lpvoid_field_0x8);
   return;
 }
 pub fn check_dialog_btn_1040_1b8a(StructC *param_1)
@@ -663,7 +663,7 @@ pub fn pass1_1040_1d24(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x1eee;
+  param_1.address_offset_field_0x0 = 0x1eee;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -689,33 +689,33 @@ pub fn unk_win_ui_op_1040_1d7a(param_1: *mut astruct_33,mut param_2: i16)
   iVar3 = param_1;
   uVar3 = (param_1 >> 0x10);
   if ((param_2 != 0) && (uVar1 = iVar3.field141_0x8e, (uVar1 + 0x72) != 0)) {
-    UVar2 = IsDlgButtonChecked(0xe1,iVar3->hwnd_0x6);
+    UVar2 = IsDlgButtonChecked(0xe1,iVar3.hwnd_0x6);
     if (UVar2 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1d5);
     }
-    UVar1 = IsDlgButtonChecked(0xe2,iVar3->hwnd_0x6);
+    UVar1 = IsDlgButtonChecked(0xe2,iVar3.hwnd_0x6);
     if (UVar1 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1d6);
     }
-    UVar1 = IsDlgButtonChecked(0xe3,iVar3->hwnd_0x6);
+    UVar1 = IsDlgButtonChecked(0xe3,iVar3.hwnd_0x6);
     if (UVar1 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1d7);
     }
-    UVar1 = IsDlgButtonChecked(0xe5,iVar3->hwnd_0x6);
+    UVar1 = IsDlgButtonChecked(0xe5,iVar3.hwnd_0x6);
     if (UVar1 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1d8);
     }
-    UVar1 = IsDlgButtonChecked(0xe6,iVar3->hwnd_0x6);
+    UVar1 = IsDlgButtonChecked(0xe6,iVar3.hwnd_0x6);
     if (UVar1 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1e2);
     }
-    UVar1 = IsDlgButtonChecked(0xe7,iVar3->hwnd_0x6);
+    UVar1 = IsDlgButtonChecked(0xe7,iVar3.hwnd_0x6);
     if (UVar1 != 0) {
       pass1_1008_a930(iVar3.field142_0x92,0x1dc);
     }
     return;
   }
-  DestroyWindow16(iVar3->hwnd_0x6);
+  DestroyWindow16(iVar3.hwnd_0x6);
   return;
 }
 

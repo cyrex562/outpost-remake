@@ -333,8 +333,8 @@ pub fn struct_1018_66cc(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   iVar2 = param_2;
   &iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
-  param_2->offset_0x0 = 0x6880;
-  iVar2->base_0x2 = 0x1018;
+  param_2.offset_0x0 = 0x6880;
+  iVar2.base_0x2 = 0x1018;
   (iVar2 + 1)->offset_0x0 = 0x691c;
   iVar2[0x1].base_0x2 = 0x1018;
   puVar3 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0xb),in_stack_0000fea6,
@@ -354,8 +354,8 @@ pub fn pass1_1018_673c(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x6880;
-  iVar1->address_offset_field_0x2 = 0x1018;
+  param_1.address_offset_field_0x0 = 0x6880;
+  iVar1.address_offset_field_0x2 = 0x1018;
   &iVar1.field_0xe2 = 0x691c;
   &iVar1.field_0xe4 = 0x1018;
   pass1_1020_808e(param_1);
@@ -510,8 +510,8 @@ pub fn pass1_1018_69ac(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x6a02;
-  iVar1->address_offset_field_0x2 = 0x1018;
+  param_1.address_offset_field_0x0 = 0x6a02;
+  iVar1.address_offset_field_0x2 = 0x1018;
   if (iVar1.field12_0x14 != 0) {
     pass1_1010_1dda(iVar1.field12_0x14);
   }
@@ -549,7 +549,7 @@ struct_op_1018_6a0e(param_1: *mut astruct_20,mut param_2: u16 ,mut param_3: u16 
   (iVar1 + 0xec) = param_4;
   (iVar1 + 0xee) = param_2;
   (iVar1 + 0xf0) = 0;
-  param_1->offset_0x0 = 0x6c66;
+  param_1.offset_0x0 = 0x6c66;
   (iVar1 + 0x2) = 0x1018;
   (iVar1 + 0xe0) = 0x1;
   (iVar1 + 0xe2) = 0;
@@ -641,7 +641,7 @@ pub fn mix_ui_op_1018_6adc(param_1: *mut astruct_28,mut param_2: u16 ,mut param_
   if (pstruct28_1.field231_0xee != 0) {
     uVar7 = 0x1008;
     win_1008_5c5c(uVar3,uVar6,_u16_1050_02a0,pstruct28_1.field231_0xee);
-    pstruct28_1->hwnd_0xf0 = uVar3;
+    pstruct28_1.hwnd_0xf0 = uVar3;
   }
   uVar7 = FUN_1010_830a(uVar3,uVar6,uVar7,_u16_1050_14cc,pstruct28_1.field230_0xec);
   mci_send_command_1008_53ae(CONCAT22(uVar6,uVar7),pstruct28_1.field8_0x8);
@@ -662,11 +662,11 @@ pub fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28)
     PostMessage16(0x0,struct_1.field229_0xea,0x111,HWND16_1050_0396);
   }
   PostMessage16(0x0,0x79,0x111,HWND16_1050_0396);
-  if (struct_1->hwnd_0xf0 != 0) {
-    BVar1 = IsWindow16(struct_1->hwnd_0xf0);
+  if (struct_1.hwnd_0xf0 != 0) {
+    BVar1 = IsWindow16(struct_1.hwnd_0xf0);
     if (BVar1 != 0) {
-      DestroyWindow16(struct_1->hwnd_0xf0);
-      struct_1->hwnd_0xf0 = 0;
+      DestroyWindow16(struct_1.hwnd_0xf0);
+      struct_1.hwnd_0xf0 = 0;
     }
   }
   return;
@@ -681,10 +681,10 @@ pub fn pass1_1018_6c1e(param_1: *mut StructD,param_2: u8)
   uVar1 = &uVar1.field192_0xd2;
   pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
   uVar2 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x380a;
-  uVar1->address_offset_field_0x2 = 0x1008;
-  param_1->address_offset_field_0x0 = 0x389a;
-  uVar1->address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x380a;
+  uVar1.address_offset_field_0x2 = 0x1008;
+  param_1.address_offset_field_0x0 = 0x389a;
+  uVar1.address_offset_field_0x2 = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -697,7 +697,7 @@ astruct_20 * struct_1018_6d02(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0xb,0x9c,0x8b,param_2,param_3);
-  param_1->offset_0x0 = 0xa27e;
+  param_1.offset_0x0 = 0xa27e;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -708,7 +708,7 @@ astruct_20 * struct_1018_6d38(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0xc,0x9d,0xd0,param_2,param_3);
-  param_1->offset_0x0 = 0xb562;
+  param_1.offset_0x0 = 0xb562;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -719,7 +719,7 @@ astruct_20 * struct_1018_6d6e(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0xd,0x9e,0xd1,param_2,param_3);
-  param_1->offset_0x0 = 0x9822;
+  param_1.offset_0x0 = 0x9822;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -730,7 +730,7 @@ astruct_20 * struct_1018_6da4(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0xe,0x9f,0xd2,param_2,param_3);
-  param_1->offset_0x0 = 0xab06;
+  param_1.offset_0x0 = 0xab06;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -741,7 +741,7 @@ astruct_20 * struct_1018_6dda(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0xf,0xa0,0xd4,param_2,param_3);
-  param_1->offset_0x0 = 0xbdea;
+  param_1.offset_0x0 = 0xbdea;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -752,7 +752,7 @@ astruct_20 * struct_1018_6e10(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x10,0xa1,0xda,param_2,param_3);
-  param_1->offset_0x0 = 0xa0aa;
+  param_1.offset_0x0 = 0xa0aa;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -763,7 +763,7 @@ astruct_20 * struct_1018_6e46(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x11,0xa2,0xdc,param_2,param_3);
-  param_1->offset_0x0 = 0xb38e;
+  param_1.offset_0x0 = 0xb38e;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -774,7 +774,7 @@ astruct_20 * struct_1018_6e7c(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x12,0xa3,0xd3,param_2,param_3);
-  param_1->offset_0x0 = 0x964e;
+  param_1.offset_0x0 = 0x964e;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -785,7 +785,7 @@ astruct_20 * struct_1018_6eb2(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x13,0xa4,0xdb,param_2,param_3);
-  param_1->offset_0x0 = 0xa932;
+  param_1.offset_0x0 = 0xa932;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -796,7 +796,7 @@ astruct_20 * struct_1018_6ee8(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x14,0xa5,0xa5,param_2,param_3);
-  param_1->offset_0x0 = 0xbc16;
+  param_1.offset_0x0 = 0xbc16;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -807,7 +807,7 @@ astruct_20 * struct_1018_6f1e(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x15,0xa7,0xb2,param_2,param_3);
-  param_1->offset_0x0 = 0x9e3a;
+  param_1.offset_0x0 = 0x9e3a;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -818,7 +818,7 @@ astruct_20 * struct_1018_6f54(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x16,0xa8,0x0,param_2,param_3);
-  param_1->offset_0x0 = 0xb11e;
+  param_1.offset_0x0 = 0xb11e;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -829,7 +829,7 @@ astruct_20 * struct_1018_6f8a(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x17,0xaf,0xc0,param_2,param_3);
-  param_1->offset_0x0 = 0x93de;
+  param_1.offset_0x0 = 0x93de;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -840,7 +840,7 @@ astruct_20 * struct_1018_6fc0(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x18,0xb0,0xc1,param_2,param_3);
-  param_1->offset_0x0 = 0xa6c2;
+  param_1.offset_0x0 = 0xa6c2;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }
@@ -851,7 +851,7 @@ astruct_20 * struct_1018_6ff6(param_1: *mut astruct_20,mut param_2: u16 ,mut par
 
 {
   struct_op_1018_6a0e(param_1,0x0,0x19,0xb1,0x80,param_2,param_3);
-  param_1->offset_0x0 = 0xb9a6;
+  param_1.offset_0x0 = 0xb9a6;
   (param_1 + 0x2) = 0x1018;
   return param_1;
 }

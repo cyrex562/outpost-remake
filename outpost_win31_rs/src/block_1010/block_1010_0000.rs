@@ -169,7 +169,7 @@ pub fn pass1_1010_01f8(mut param_1: u32,mut param_2: u32,mut param_3: i16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 win_ui_op_1010_0240(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 )
+pub fn win_ui_op_1010_0240(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -205,7 +205,7 @@ BOOL16 win_ui_op_1010_0240(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 
 
 
 
-u16 * pass1_1010_02a2(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_02a2(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_0052(param_1,&DAT_1050_1050);
@@ -311,7 +311,7 @@ pub fn pass1_1010_038e(param_1: *mut astruct_27,mut param_2: i16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1010_041a()
+pub fn pass1_1010_041a() -> BOOL16
 
 {
   let mut uVar1: u32;
@@ -728,11 +728,11 @@ pub fn pass1_1010_0ad2(mut param_1: u32,mut param_2: u32)
   let mut extraout_DX: u16;
   let mut iVar4: i16;
   let mut uVar5: u16;
-  in_stack_0000ffbc: mut HFILE16;
-  u32 local_2a [0x2];
-  u16 local_22 [0x2];
-  u16 local_1e [0x3];
-  u16 local_18 [0x3];
+  in_stack_0000ffbc: HFILE16;
+  let mut local_2a: [u32;0x2] = [0;0x2];
+  let mut local_22: [u16;0x2] = [0;0x2];
+  let mut local_1e: [u16;0x3] = [0;0x3];
+  let mut local_18: [u16;0x3] = [0;0x3];
   let mut uStack18: u32;
   let mut local_e: [u8;0x8] = [0;0x8];
   let mut uStack6: u16;
@@ -831,11 +831,11 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
   let mut paVar6: *mut Struct57;
   iVar6: *mut astruct_228;
   let mut uVar7: u16;
-  u16 local_2a [0x2];
+  let mut local_2a: [u16;0x2] = [0;0x2];
   let mut uStack38: u16;
   let mut puStack26: *mut u32;
   let mut puStack22: *mut u32;
-  u16 local_12 [0x5];
+  let mut local_12: [u16;0x5] = [0;0x5];
   paStack8: *mut astruct_229;
   local_6: *mut astruct_229;
   let mut uStack4: u16;
@@ -847,7 +847,7 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
     u16_1050_0310 = 0x6d4;
   }
   else {
-    BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,&local_6),0x2);
+    BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,&local_6),0x2);
     if (BVar2 != 0) {
       for (paStack8 = NULL; iVar6 = param_3, paStack8 < local_6;
           paStack8 = &paStack8.field_1) {
@@ -866,9 +866,9 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
           uVar4.field2_0x2 = 0x1010;
           puStack22 = puStack26;
         }
-        BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_12),0x2);
+        BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_12),0x2);
         if ((BVar2 == 0) ||
-           (BVar2 = read_file_1008_7dee((HFILE16 *)param_4,
+           (BVar2 = read_file_1008_7dee(param_4,
                                         (puStack22 & 0xffff0000 | (puStack22 + 0x6)),0x4),
            BVar2 == 0)) {
           puStack26 = puStack22;
@@ -882,14 +882,14 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
         ppcVar1 = (*iVar6.field10_0xa + 0x8);
         (**ppcVar1)();
       }
-      BVar2 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | ZEXT24(&iVar6.field_0xe)),0x2
+      BVar2 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | ZEXT24(&iVar6.field_0xe)),0x2
                                  );
       if ((BVar2 != 0) &&
-         (BVar2 = read_file_1008_7dee((HFILE16 *)param_4,
+         (BVar2 = read_file_1008_7dee(param_4,
                                       (param_3 & 0xffff0000 | ZEXT24(&iVar6.field_0x10)),0x2),
          BVar2 != 0)) {
         for (uStack4 = 0; uStack4 < 0xa; uStack4 += 1) {
-          BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_2a),0x2);
+          BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_2a),0x2);
           if (BVar2 == 0) goto LAB_1010_0cb1;
           uVar3 = uStack4;
           if (u16_1050_0312 < 0x2) {
@@ -901,7 +901,7 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
         if (0x2 < u16_1050_0312) {
           uStack4 = 0;
           loop {
-            BVar2 = read_file_1008_7dee((HFILE16 *)param_4,CONCAT22(0x1050,local_2a),0x2);
+            BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_2a),0x2);
             if (BVar2 == 0) goto LAB_1010_0cb1;
             (uStack4 * 0x8 + 0xea8) = local_2a[0];
             uStack4 += 0x1;
@@ -918,7 +918,7 @@ pub fn file_1010_0c7c(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_22
 
 
 
-u16 * pass1_1010_0e46(param_1: *mut u16,param_2: u8,mut param_3: u16 )
+pub fn pass1_1010_0e46(param_1: *mut u16,param_2: u8,mut param_3: u16 ) -> *mut u16
 
 {
   pass1_1010_0350(param_1);
@@ -930,7 +930,7 @@ u16 * pass1_1010_0e46(param_1: *mut u16,param_2: u8,mut param_3: u16 )
 
 
 
-u16 * pass1_1010_0e6c(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_0e6c(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;

@@ -454,7 +454,7 @@ pub fn pass1_1030_86ec(param_1: *mut astruct_612,mut param_2: u16 )
   iVar1.field12_0xe = 0;
   return;
 }
-pub fn pass1_1030_871e(i32 *param_1,param_2: *mut u32,mut param_3: u16 )
+pub fn pass1_1030_871e(param_1: *mut i32,param_2: *mut u32,mut param_3: u16 )
 
 {
   let mut piVar1: *mut i16;
@@ -659,8 +659,8 @@ pub fn pass1_1030_8a2c(param_1: *mut StructD)
 
   uVar3 = (param_1 >> 0x10);
   iVar3 = param_1;
-  param_1->address_offset_field_0x0 = 0x8e38;
-  iVar3->address_offset_field_0x2 = 0x1030;
+  param_1.address_offset_field_0x0 = 0x8e38;
+  iVar3.address_offset_field_0x2 = 0x1030;
   iStack4 = 0;
   loop {
     pcVar2 = *(&iVar3.field_0x38 + iStack4 * 0x4);
@@ -671,9 +671,9 @@ pub fn pass1_1030_8a2c(param_1: *mut StructD)
     }
     iStack4 += 0x1;
   } while (iStack4 < 0x5);
-  fn_ptr_1030_84d0(param_1 & 0xffff0000 | ZEXT24(&iVar3->hfile_0x4));
-  param_1->address_offset_field_0x0 = 0x389a;
-  iVar3->address_offset_field_0x2 = 0x1008;
+  fn_ptr_1030_84d0(param_1 & 0xffff0000 | ZEXT24(&iVar3.hfile_0x4));
+  param_1.address_offset_field_0x0 = 0x389a;
+  iVar3.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn pass1_1030_8aa0(mut param_1: u32,mut param_2: u32,param_3: *mut u16,mut param_4: u16 )
@@ -765,7 +765,7 @@ pub fn pass1_1030_8bdc(mut param_1: u32,mut param_2: u32,param_3: *mut u16)
   let mut puVar1: *mut u8;
   let mut local_12: u32;
   let mut puStack14: *mut u8;
-  i32 *plStack12;
+  plStack12: *mut i32;
   let mut local_8: [u8;0x2] = [0;0x2];
   let mut local_6: [u8;0x2] = [0;0x2];
   let mut local_4: [u8;0x2] = [0;0x2];
@@ -1009,7 +1009,7 @@ pub fn pass1_1030_8f04(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1030_8fe4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32)
+pub fn pass1_1030_8fe4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,param_6: i32) -> BOOL16
 
 {
   let mut iVar1: i16;

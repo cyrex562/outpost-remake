@@ -84,7 +84,7 @@ pub fn unk_win_ui_op_1020_717e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut
   &iVar7.field_0x1e = uVar9;
   ppcVar2 = (*&iVar7.field21_0x1c + 0x4);
   (**ppcVar2)(0x1010,iVar7.field21_0x1c,uVar9,0x0,param_3);
-  local_4 = GetDC16(iVar7->hwnd_0x4);
+  local_4 = GetDC16(iVar7.hwnd_0x4);
   uVar3 = &iVar7.field21_0x1c;
   *(uVar3 + 0x178) = local_4;
   uVar4 = &iVar7.field21_0x1c;
@@ -123,8 +123,8 @@ pub fn palette_op_1020_7270(pstruct_param_1: *mut StructD)
 
   uVar4 = (pstruct_param_1 >> 0x10);
   struct767_var1 = pstruct_param_1;
-  pstruct_param_1->address_offset_field_0x0 = 0x754c;
-  struct767_var1->address_offset_field_0x2 = 0x1020;
+  pstruct_param_1.address_offset_field_0x0 = 0x754c;
+  struct767_var1.address_offset_field_0x2 = 0x1020;
   if (&struct767_var1.field_0x1c != 0) {
     pass1_1010_1ea6(&struct767_var1.field_0x1c,
                     (pstruct_param_1 & 0xffff | uVar4 << 0x10));
@@ -140,10 +140,10 @@ pub fn palette_op_1020_7270(pstruct_param_1: *mut StructD)
   obj = SelectPalette16(0x0,struct767_var1.field19_0x20,*(uVar3 + 0x178));
   struct767_var1.field19_0x20 = obj;
   DeleteObject16(obj);
-  pstruct_param_1->address_offset_field_0x0 = 0x3ab0;
-  struct767_var1->address_offset_field_0x2 = 0x1008;
-  pstruct_param_1->address_offset_field_0x0 = 0x389a;
-  struct767_var1->address_offset_field_0x2 = 0x1008;
+  pstruct_param_1.address_offset_field_0x0 = 0x3ab0;
+  struct767_var1.address_offset_field_0x2 = 0x1008;
+  pstruct_param_1.address_offset_field_0x0 = 0x389a;
+  struct767_var1.address_offset_field_0x2 = 0x1008;
   return;
 }
 pub fn post_win_msg_1020_7308(mut param_1: u32,mut param_2: u16 )
@@ -184,7 +184,7 @@ pub fn invalidate_rect_1020_735a(mut param_1: u32)
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Unable to use type for symbol uVar4
 
-BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
+pub fn win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788) -> BOOL16
 
 {
   let mut uVar8: u16;
@@ -219,8 +219,8 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
 
   uVar6 = (param_2 >> 0x10);
   struct_1 = param_2;
-  hdc_24 = BeginPaint16(CONCAT13(0x10,CONCAT12(0x50,local_paint_struct)),struct_1->hwnd_0x4);
-  is_iconic = IsIconic16(struct_1->hwnd_0x4);
+  hdc_24 = BeginPaint16(CONCAT13(0x10,CONCAT12(0x50,local_paint_struct)),struct_1.hwnd_0x4);
+  is_iconic = IsIconic16(struct_1.hwnd_0x4);
   if (is_iconic == 0) {
     uVar4 = struct_1.field22_0x1c;
     RVar9 = *(uVar4 + 0x24);
@@ -249,7 +249,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
                  &DAT_1050_1050);
     fn_ptr_1 = (*struct_1.field21_0x18 + 0x94);
     (**fn_ptr_1)(0x1008,struct_1.field21_0x18,1);
-    HStack52 = GetDlgItem16(0x1797,struct_1->hwnd_0x4);
+    HStack52 = GetDlgItem16(0x1797,struct_1.hwnd_0x4);
     if (HStack52 != 0) {
       ShowWindow16(0x1,HStack52);
     }
@@ -271,7 +271,7 @@ BOOL16 win_ui_op_1020_737a(mut param_1: u16 ,param_2: *mut astruct_788)
       DrawIcon16(hicon_38,0x2,0x2,hdc_24);
     }
   }
-  is_iconic = EndPaint16(CONCAT22(0x1050,local_paint_struct),struct_1->hwnd_0x4);
+  is_iconic = EndPaint16(CONCAT22(0x1050,local_paint_struct),struct_1.hwnd_0x4);
   return is_iconic;
 }
 
@@ -311,8 +311,8 @@ pub fn struct_1020_7554(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: 
   iVar2 = param_2;
   &iVar2[0x1].field5_0xc = 0;
   iVar2[0x1].field7_0x10 = NULL;
-  param_2->offset_0x0 = 0x7780;
-  iVar2->base_0x2 = 0x1020;
+  param_2.offset_0x0 = 0x7780;
+  iVar2.base_0x2 = 0x1020;
   (iVar2 + 1)->offset_0x0 = 0x781c;
   iVar2[0x1].base_0x2 = 0x1020;
   puVar4 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(unaff_BP,0x25),in_stack_0000fea6,
@@ -332,8 +332,8 @@ pub fn pass1_1020_75c4(param_1: *mut StructD)
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
-  param_1->address_offset_field_0x0 = 0x7780;
-  iVar1->address_offset_field_0x2 = 0x1020;
+  param_1.address_offset_field_0x0 = 0x7780;
+  iVar1.address_offset_field_0x2 = 0x1020;
   &iVar1.field_0xe2 = 0x781c;
   &iVar1.field_0xe4 = 0x1020;
   pass1_1020_808e(param_1);
@@ -520,7 +520,7 @@ pub fn pass1_1020_78ac(param_1: *mut u16)
 pub fn pass1_1020_78dc(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1020_78ac(&param_1->address_offset_field_0x0);
+  pass1_1020_78ac(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -552,16 +552,16 @@ pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD)
 
   uVar1 = (in_struct_1 >> 0x10);
   local_struct_1 = in_struct_1;
-  in_struct_1->address_offset_field_0x0 = 0x7b86;
-  local_struct_1->address_offset_field_0x2 = 0x1020;
-  if (local_struct_1->hmenu_0xec != 0) {
-    DestroyMenu16(local_struct_1->hmenu_0xec);
+  in_struct_1.address_offset_field_0x0 = 0x7b86;
+  local_struct_1.address_offset_field_0x2 = 0x1020;
+  if (local_struct_1.hmenu_0xec != 0) {
+    DestroyMenu16(local_struct_1.hmenu_0xec);
   }
   pass1_1008_57c4((in_struct_1 & 0xffff0000 | ZEXT24(&local_struct_1.field192_0xd2)));
-  in_struct_1->address_offset_field_0x0 = 0x380a;
-  local_struct_1->address_offset_field_0x2 = 0x1008;
-  in_struct_1->address_offset_field_0x0 = 0x389a;
-  local_struct_1->address_offset_field_0x2 = 0x1008;
+  in_struct_1.address_offset_field_0x0 = 0x380a;
+  local_struct_1.address_offset_field_0x2 = 0x1008;
+  in_struct_1.address_offset_field_0x0 = 0x389a;
+  local_struct_1.address_offset_field_0x2 = 0x1008;
   return;
 }
 
@@ -690,7 +690,7 @@ pub fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40,param_2: *mut StructA)
   iVar3.field1_0x2 = 0x1008;
   param_1.field0_0x0 = 0x3aa8;
   iVar3.field1_0x2 = 0x1008;
-  iVar3->hwnd_0x4 = uVar1;
+  iVar3.hwnd_0x4 = uVar1;
   param_1.field0_0x0 = 0x3ab0;
   iVar3.field1_0x2 = 0x1008;
   *(StructA **)&iVar3.field_0x6 = param_2;
@@ -757,12 +757,12 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
 
   uVar7 = (struct_e_param_1 >> 0x10);
   struct_e_1 = (StructE *)struct_e_param_1;
-  is_iconic = IsIconic16(struct_e_1->hwnd16_field4_0x4);
+  is_iconic = IsIconic16(struct_e_1.hwnd16_field4_0x4);
   if ((is_iconic == 0) || (PTR_LOOP_1050_0010.is_null() == false)) {
-    win_hdc_1 = GetWindowDC16(struct_e_1->hwnd16_field4_0x4);
+    win_hdc_1 = GetWindowDC16(struct_e_1.hwnd16_field4_0x4);
     paStack10 = (_PTR_LOOP_1050_4230 + 0xe);
     hpalette_12 = palette_op_1008_4e08(&win_hdc_1,param_1,paStack10,CONCAT22(0x1050,&win_hdc_1));
-    GetWindowRect16(CONCAT22(0x1050,&local_rect_1),struct_e_1->hwnd16_field4_0x4);
+    GetWindowRect16(CONCAT22(0x1050,&local_rect_1),struct_e_1.hwnd16_field4_0x4);
     x = (iStack16 - local_rect_1) + -0x1;
     y = (iStack14 - iStack18) + -0x1;
     iVar1 = struct_e_1.field12_0x12;
@@ -821,7 +821,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16 ,StructE *struct_e_param_1)
     DeleteObject16(hpalette_12);
     SelectObject16(brush_handle_2,win_hdc_1);
     DeleteObject16(handle);
-    ReleaseDC16(win_hdc_1,struct_e_1->hwnd16_field4_0x4);
+    ReleaseDC16(win_hdc_1,struct_e_1.hwnd16_field4_0x4);
   }
   return;
 }
@@ -834,9 +834,9 @@ pub fn pass1_1020_7f38(param_1: *mut StructD,param_2: u8) -> *mut StructD
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0x3ab0;
+  param_1.address_offset_field_0x0 = 0x3ab0;
   (param_1 + 0x2) = 0x1008;
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -881,15 +881,15 @@ pub fn unk_draw_op_1020_7f7a(param_1: *mut astruct_20,mut param_2: u16 ,mut para
   struct_1[0x1].field2_0x4 = 0;
   struct_1[0x1].field3_0x8 = 0;
   struct_1[0x1].field4_0xa = 0;
-  param_1->offset_0x0 = 0x82bc;
-  struct_1->base_0x2 = 0x1020;
+  param_1.offset_0x0 = 0x82bc;
+  struct_1.base_0x2 = 0x1020;
   (struct_1 + 1)->offset_0x0 = 0x8358;
   struct_1[0x1].base_0x2 = 0x1020;
   unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&struct_1.field60_0x5b)),s_VrMode_1050_4422);
   HVar1 = GetStockObject16(HOLLOW_BRUSH);
-  struct_1->hgdiobj_field_0xc6 = HVar1;
+  struct_1.hgdiobj_field_0xc6 = HVar1;
   hcursor2 = LoadCursor16(0x7f00,0x0);
-  struct_1->hcursor_field_0xc4 = hcursor2;
+  struct_1.hcursor_field_0xc4 = hcursor2;
   struct_1.field150_0xc8 = 0x2028;
   struct_1.field139_0xac = 0x47000000;
   struct_1.field145_0xbc = (param_3 + 0x8);

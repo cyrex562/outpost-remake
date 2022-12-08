@@ -189,7 +189,7 @@ pub unsafe fn big_switch_1008_15d4(param_1: *mut astruct_20,param_2: *mut astruc
   let mut local_e: [u8;0x8] = [0;0x8];
   let mut uStack6: u32;
   let mut uVar2: u32;
-  i32 *var_1;
+  let mut var_1: *mut i32;
   let mut piVar1: *mut i16;
 
   uStack6 = 0;

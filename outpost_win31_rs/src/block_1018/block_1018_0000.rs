@@ -30,17 +30,17 @@ pub fn pass1_1018_0000(mut param_1: i16,param_2: *mut u8,mut param_3: u32,mut pa
   }
   else {
     iVar4 = param_3;
-    BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x16)),0x4);
+    BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x16)),0x4);
     if ((((BVar5 != 0) &&
-         (BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x1a)),0x4),
+         (BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x1a)),0x4),
          BVar5 != 0)) &&
-        (BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x20)),0x4),
+        (BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x20)),0x4),
         BVar5 != 0)) &&
-       (((BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x24)),0x4),
+       (((BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x24)),0x4),
          BVar5 != 0x0 &&
-         (BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x30)),0x2),
+         (BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x30)),0x2),
          BVar5 != 0)) &&
-        (BVar5 = read_file_1008_7dee((HFILE16 *)param_4,(param_3 & 0xffff0000 | (iVar4 + 0x32)),0x2),
+        (BVar5 = read_file_1008_7dee(param_4,(param_3 & 0xffff0000 | (iVar4 + 0x32)),0x2),
         BVar5 != 0)))) {
       uVar8 = (param_3 >> 0x10);
       if ((iVar4 + 0x30) != 0) {
@@ -332,7 +332,7 @@ pub fn pass1_1018_04f2(param_1: *mut StructD)
 
 
 
-u16 * pass1_1018_0526(param_1: *mut u16,param_2: u8)
+pub fn pass1_1018_0526(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   param_1 = (param_1 & 0xffff0000 | (param_1 - 0xa));

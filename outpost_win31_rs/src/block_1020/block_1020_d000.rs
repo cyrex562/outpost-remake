@@ -1,5 +1,5 @@
 
-u16 * struct_1020_d06c(param_1: *mut u16)
+pub fn struct_1020_d06c(param_1: *mut u16) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -10,7 +10,7 @@ u16 * struct_1020_d06c(param_1: *mut u16)
 
 
 
-u16 * pass1_1020_d08e(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1020_d08e(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -187,7 +187,7 @@ pub fn pass1_1020_d194(param_1: *mut astruct_15)
 pub fn pass1_1020_d2ee(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -196,7 +196,7 @@ pub fn pass1_1020_d2ee(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1020_d37c(param_1: *mut astruct_180)
+pub fn struct_1020_d37c(param_1: *mut astruct_180) -> *mut u16
 
 {
   let mut uVar1: u16;
@@ -211,7 +211,7 @@ u16 * struct_1020_d37c(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1020_d3a4(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: u16 ,mut param_4: i16,mut param_5: u32)
+pub fn pass1_1020_d3a4(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: u16 ,mut param_4: i16,mut param_5: u32) -> *mut u16
 
 {
   let mut uVar1: u16;
@@ -226,12 +226,12 @@ u16 * pass1_1020_d3a4(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: u1
 
 
 
-BOOL16 write_to_file_1020_d3d4(param_1: *mut astruct_731,param_2: *mut u8)
+pub fn write_to_file_1020_d3d4(param_1: *mut astruct_731,param_2: *mut u8) -> BOOL16
 
 {
   let mut BVar1: bool;
-  in_stack_0000ffde: mut HFILE16;
-  u16 local_c [0x5];
+  in_stack_0000ffde: HFILE16;
+  let mut local_c: [u16;0x5] = [0;0x5];
 
   BVar1 = write_to_file_1028_b5ec(param_1,param_2);
   if (BVar1 != 0) {
@@ -248,7 +248,7 @@ BOOL16 write_to_file_1020_d3d4(param_1: *mut astruct_731,param_2: *mut u8)
 
 
 
-BOOL16 pass1_1020_d41a(BOOL16 param_1,param_2: *mut u8,param_3: *mut astruct_373,HFILE16 *param_4)
+pub fn pass1_1020_d41a(BOOL16 param_1,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -328,7 +328,7 @@ pub fn pass1_1020_d4ca(mut param_1: i16,param_2: *mut astruct_15)
 pub fn pass1_1020_d518(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -337,7 +337,7 @@ pub fn pass1_1020_d518(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1020_d5a6(param_1: *mut astruct_180)
+pub fn struct_1020_d5a6(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -348,7 +348,7 @@ u16 * struct_1020_d5a6(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1020_d5c8(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1020_d5c8(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -505,7 +505,7 @@ pub fn pass1_1020_d6e6(mut param_1: i16,param_2: *mut astruct_15)
 pub fn pass1_1020_d7d8(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_1->address_offset_field_0x0);
+  pass1_1028_b418(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -514,7 +514,7 @@ pub fn pass1_1020_d7d8(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * struct_1020_d866(param_1: *mut astruct_180)
+pub fn struct_1020_d866(param_1: *mut astruct_180) -> *mut u16
 
 {
   struct_1028_b354(param_1);
@@ -525,7 +525,7 @@ u16 * struct_1020_d866(param_1: *mut astruct_180)
 
 
 
-u16 * pass1_1020_d888(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32)
+pub fn pass1_1020_d888(mut param_1: u16 ,param_2: *mut astruct_12,mut param_3: i16,mut param_4: u32) -> *mut u16
 
 {
   pass1_1028_b39e(param_1,param_2,param_3,param_4);
@@ -564,7 +564,7 @@ pub fn FUN_1020_d8c2()
 pub fn FUN_1020_d8c6(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mut StructD
 
 {
-  pass1_1028_b418(&param_2->address_offset_field_0x0);
+  pass1_1028_b418(&param_2.address_offset_field_0x0);
   if ((param_3 & 1) != 0) {
     fn_ptr_1000_17ce(param_2);
   }
@@ -606,7 +606,7 @@ pub fn struct_1020_d954(param_1: *mut astruct_180)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 * struct_1020_d99e(param_1: *mut astruct_57,param_2: *mut astruct_12,mut param_3: u16 ,mut param_4: i16,mut param_5: u32)
+pub fn struct_1020_d99e(param_1: *mut astruct_57,param_2: *mut astruct_12,mut param_3: u16 ,mut param_4: i16,mut param_5: u32) -> *mut u16
 
 {
   iVar1: *mut astruct_12;
@@ -914,7 +914,7 @@ pub fn pass1_1020_de32(param_1: *mut u8,mut param_2: u32,mut param_3: u16 )
 
 
 
-BOOL16 pass1_1020_deac(mut param_1: i16,param_2: *mut u8,mut param_3: u32,param_4: *mut u16,param_5: i32)
+pub fn pass1_1020_deac(mut param_1: i16,param_2: *mut u8,mut param_3: u32,param_4: *mut u16,param_5: i32) -> BOOL16
 
 {
   let mut uVar1: u16;

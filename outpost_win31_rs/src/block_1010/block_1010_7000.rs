@@ -809,7 +809,7 @@ pub fn pass1_1010_7dc6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1010_7dd2(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_7dd2(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   *param_1 = 0x389a;
@@ -825,7 +825,7 @@ u16 * pass1_1010_7dd2(param_1: *mut u16,param_2: u8)
 pub fn FUN_1010_7dfe(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mut StructD
 
 {
-  pass1_1010_6bb2(&param_2->address_offset_field_0x0);
+  pass1_1010_6bb2(&param_2.address_offset_field_0x0);
   if ((param_3 & 1) != 0) {
     fn_ptr_1000_17ce(param_2);
   }

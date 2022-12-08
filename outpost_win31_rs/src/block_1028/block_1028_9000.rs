@@ -2,7 +2,7 @@
 pub fn pass1_1028_90aa(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -20,7 +20,7 @@ astruct_97 * pass1_1028_90e6(param_1: *mut astruct_97,mut param_2: u16 )
   struct_op_1028_d1dc(param_1,0x1387);
   uVar1 = (param_1 >> 0x10);
   (param_1 + 0x108) = param_2;
-  param_1->offset_0x0 = 0x932c;
+  param_1.offset_0x0 = 0x932c;
   (param_1 + 0x2) = 0x1028;
   return param_1;
 }
@@ -169,7 +169,7 @@ pub fn pass1_1028_9264(mut param_1: u16 ,param_2: *mut u8,mut param_3: u32)
 pub fn pass1_1028_9300(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -196,9 +196,9 @@ pub fn struct_op_1028_933c(param_1: *mut astruct_97,mut param_2: u16 ,mut param_
   iVar1.field270_0x120 = 0;
   iVar1.field269_0x11e = 0;
   iVar1.field271_0x122 = param_3;
-  param_1->offset_0x0 = 0x9934;
-  iVar1->segment_0x2 = 0x1028;
-  sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1->string_0x8)),
+  param_1.offset_0x0 = 0x9934;
+  iVar1.segment_0x2 = 0x1028;
+  sys_1000_3f9c((param_1 & 0xffff0000 | ZEXT24(&iVar1.string_0x8)),
                 s_SCPutBldg_site_0x_08lx__bldg__u__1050_50ce,param_8);
   return;
 }
@@ -467,7 +467,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,param_2: *mut u8,param_3: *mut astruct_
 pub fn pass1_1028_9908(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -487,8 +487,8 @@ pub fn pass1_1028_9944(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u3
   &iVar1.field262_0x10c = param_3;
   iVar1.field264_0x110 = param_2;
   iVar1.field265_0x114 = 0;
-  param_1->offset_0x0 = 0x9c52;
-  iVar1->segment_0x2 = 0x1028;
+  param_1.offset_0x0 = 0x9c52;
+  iVar1.segment_0x2 = 0x1028;
   return;
 }
 pub fn pass1_1028_9992(param_1: *mut u16)
@@ -671,7 +671,7 @@ pub fn pass1_1028_9b48(param_1: *mut astruct_330,param_2: *mut u8,param_3: *mut 
 pub fn pass1_1028_9c2c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1028_9992(&param_1->address_offset_field_0x0);
+  pass1_1028_9992(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -685,7 +685,7 @@ astruct_97 * struct_1028_9c62(param_1: *mut astruct_97,mut param_2: u16 )
 {
   struct_op_1028_d1dc(param_1,param_2);
   (param_1 + 0x108) = param_2;
-  param_1->offset_0x0 = 0x9eb6;
+  param_1.offset_0x0 = 0x9eb6;
   (param_1 + 0x2) = 0x1028;
   return param_1;
 }
@@ -755,7 +755,7 @@ pub fn pass1_1028_9dee(param_1: *mut astruct_332,mut param_2: u16 ,param_3: *mut
 pub fn pass1_1028_9e8a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -769,7 +769,7 @@ astruct_97 * pass1_1028_9ec6(param_1: *mut astruct_97)
 
 {
   struct_op_1028_d1dc(param_1,s_noth_bmp_1050_2321 + 0x6);
-  param_1->offset_0x0 = 0xa6f6;
+  param_1.offset_0x0 = 0xa6f6;
   (param_1 + 0x2) = 0x1028;
   unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)),0x105050f0);
   return param_1;

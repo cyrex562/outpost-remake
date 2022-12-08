@@ -3,7 +3,7 @@
 pub fn pass1_1030_6118(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  pass1_1030_5d78(&param_1->address_offset_field_0x0);
+  pass1_1030_5d78(&param_1.address_offset_field_0x0);
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
   }
@@ -108,7 +108,7 @@ pub unsafe fn pass1_1030_6222(mut param_1: u16 ,param_2: *mut u8,mut param_3: u3
 pub fn pass1_1030_627e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4: *mut u16,param_5: i32)
 
 {
-  u32 local_12 [0x2];
+  let mut local_12: [u32;0x2] = [0;0x2];
   let mut uStack10: u32;
   let mut uStack6: u32;
 

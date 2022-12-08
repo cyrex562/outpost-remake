@@ -581,7 +581,7 @@ pub fn pass1_1010_29c6(param_1: *mut StructD)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
-u16_t FUN_1010_2a32(buffer_param_2: *mut u8,mut param_2: u32,HFILE16 *hfile_param,mut param_4: u16 )
+pub unsafe fn FUN_1010_2a32(buffer_param_2: *mut u8,mut param_2: u32,hfile_param: *mut HFILE16,mut param_4: u16 ) -> u16
 
 {
   let mut piVar1: *mut i16;
@@ -809,14 +809,14 @@ u16_t FUN_1010_2a32(buffer_param_2: *mut u8,mut param_2: u32,HFILE16 *hfile_para
     while( true ) {
       if (uStack54 <= uStack42) {
         uVar38 = (buffer_param_2 >> 0x10);
-        BVar15 = read_file_1008_7dee((HFILE16 *)param_2,
+        BVar15 = read_file_1008_7dee(param_2,
                                      ((buffer_param_2 & 0xff00) << 0x10 |
                                            CONCAT12(uVar38,buffer_param_2 + 0x1a)),0x2);
         if (((BVar15 != 0) &&
-            (BVar15 = read_file_1008_7dee((HFILE16 *)param_2,
+            (BVar15 = read_file_1008_7dee(param_2,
                                           ((buffer_param_2 & 0xff00) << 0x10 |
                                                 CONCAT12(uVar38,buffer_param_2 + 0x1c)),0x2), BVar15 != 0)
-            ) && (BVar15 = read_file_1008_7dee((HFILE16 *)param_2,
+            ) && (BVar15 = read_file_1008_7dee(param_2,
                                                ((buffer_param_2 & 0xff00) << 0x10 |
                                                      CONCAT12(uVar38,buffer_param_2 + 0x1e)),0x2),
                  BVar15 != 0)) {
@@ -840,9 +840,9 @@ u16_t FUN_1010_2a32(buffer_param_2: *mut u8,mut param_2: u32,HFILE16 *hfile_para
         (uVar10 + 0x2) = 0x1010;
         read_buffer_38 = puStack46;
       }
-      BVar15 = read_file_1008_7dee((HFILE16 *)param_2,CONCAT13(0x10,CONCAT12(0x50,&read_buffer_22)),0x2);
+      BVar15 = read_file_1008_7dee(param_2,CONCAT13(0x10,CONCAT12(0x50,&read_buffer_22)),0x2);
       if ((BVar15 == 0) ||
-         (BVar15 = read_file_1008_7dee((HFILE16 *)param_2,
+         (BVar15 = read_file_1008_7dee(param_2,
                                        (read_buffer_38 & 0xff000000 |
                                              CONCAT12((read_buffer_38 >> 0x10),
                                                              read_buffer_38 + 0x6)),0x2), BVar15 == 0)) break;
@@ -982,7 +982,7 @@ pub fn pass1_1010_2bbe(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1010_2bfc(param_1: *mut astruct_19,mut param_2: u16 )
+pub fn pass1_1010_2bfc(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut u16
 
 {
   struct_op_1010_1d48(param_1,param_2);
@@ -1031,7 +1031,7 @@ char * unk_load_str_op_1010_2c34(param_1: u32)
 
 
 
-u16 * pass1_1010_2c9c(param_1: *mut u16,param_2: u8)
+pub fn pass1_1010_2c9c(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
   pass1_1010_1d80(param_1);

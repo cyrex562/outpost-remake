@@ -139,7 +139,7 @@ pub fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mu
   let mut in_stack_0000ffac: u16;
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb6: u16;
-  HFILE16 *hfile_param;
+  hfile_param: *mut HFILE16;
   BOOL16 local_1a [0x2];
   let mut UStack22: u16;
   let mut pSStack20: *mut StructD;
@@ -233,7 +233,7 @@ pub fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mu
 
 
 
-BOOL16 send_dlg_item_int_1038_94da(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
+pub fn send_dlg_item_int_1038_94da(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16) -> BOOL16
 
 {
   let mut pUVar1: *mut u16;
@@ -467,12 +467,12 @@ pub fn win_ui_dlg_op_1038_98b4(StructB *param_1)
   for (iStack8 = 0; iVar3 = (StructB *)param_1, uVar2 = (StructB *)(param_1 >> 0x10), iStack8 < 0xf;
       iStack8 += 1) {
     iVar4 = 0x1;
-    pvVar2 = iVar3->lpvoid_field_0x8;
+    pvVar2 = iVar3.lpvoid_field_0x8;
     UVar1 = GetDlgItemInt16(0x1,&local_4,&DAT_1050_1050,(iStack8 * 0xe + 0x5a72));
     unk_win_ui_op_1038_9820(param_1,UVar1,pvVar2,iVar4);
   }
-  SetDlgItemInt16(0x1,iVar3[0x7].max_count_field_0x10,0xfa9,iVar3->lpvoid_field_0x8);
-  SetDlgItemInt16(0x1,iVar3[0x7].field5_0xa,0xfa8,iVar3->lpvoid_field_0x8);
+  SetDlgItemInt16(0x1,iVar3[0x7].max_count_field_0x10,0xfa9,iVar3.lpvoid_field_0x8);
+  SetDlgItemInt16(0x1,iVar3[0x7].field5_0xa,0xfa8,iVar3.lpvoid_field_0x8);
   return;
 }
 
@@ -510,7 +510,7 @@ pub fn pass1_1038_997c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-u16 * pass1_1038_9a1e(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32)
+pub fn pass1_1038_9a1e(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32) -> *mut u16
 
 {
   pass1_1040_b040(CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),(param_4 >> 0x10));
@@ -523,7 +523,7 @@ pub fn pass1_1038_9a48(param_1: *mut StructD)
 {
   let mut in_stack_0000ffde: u16;
 
-  param_1->address_offset_field_0x0 = 0x9af6;
+  param_1.address_offset_field_0x0 = 0x9af6;
   (param_1 + 0x2) = &u16_1050_1038;
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
@@ -648,14 +648,14 @@ pub fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: 
   uStack14 = CONCAT22(iVar2 + local_4,iVar2 + local_6);
   uVar4 = (param_4 >> 0x10);
   struct_b_7 = (StructB *)param_4;
-  GetWindowRect16(CONCAT22(0x1050,local_16),struct_b_7->lpvoid_field_0x8);
+  GetWindowRect16(CONCAT22(0x1050,local_16),struct_b_7.lpvoid_field_0x8);
   hdc = GetDC16(0x0);
   IVar1 = GetDeviceCaps16(VERTRES,hdc);
   ReleaseDC16(hdc,0x0);
   if (IVar1 < iStack16) {
     uStack14 = uStack14 & 0xffff0000 | ((iStack20 - (iStack16 - IVar1)) + 1);
   }
-  SetWindowPos16(0x1,0x0,0x0,uStack14,(uStack14 >> 0x10),0x0,struct_b_7->lpvoid_field_0x8);
+  SetWindowPos16(0x1,0x0,0x0,uStack14,(uStack14 >> 0x10),0x0,struct_b_7.lpvoid_field_0x8);
   _param_3 = CONCAT22(param_2,0x3);
   uVar9 = 0x1010;
   puVar5 = mixed_1010_20ba(paVar3,_u16_1050_0ed0,_param_3,in_stack_0000fe70,in_stack_0000ff94,in_stack_0000ff9a,
@@ -665,7 +665,7 @@ pub fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: 
   while (iVar3 = (iStack36 * 0x2), (&iVar3[0x52].field_0x0 + puVar5) != 0) {
     _param_3 = (_param_3 & 0xffff0000);
     uVar9 = SUB42(s_tile2_bmp_1050_1538,0x0);
-    HVar2 = GetDlgItem16((&iVar3[0x52].field_0x0 + puVar5),struct_b_7->lpvoid_field_0x8);
+    HVar2 = GetDlgItem16((&iVar3[0x52].field_0x0 + puVar5),struct_b_7.lpvoid_field_0x8);
     (&iVar3[0x4a].field_0x0 + &struct_b_7.field0_0x0) = HVar2;
     iStack36 += 0x1;
     piVar1 = &struct_b_7[0xe].field8_0x10;
@@ -752,9 +752,9 @@ pub fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10,mut param_2: i16,mut param
 
   struct10_5_hi = (in_struct_1 >> 0x10);
   struct10_5 = in_struct_1;
-  if (struct10_5->brush_handle_field_0x8e == 0) {
+  if (struct10_5.brush_handle_field_0x8e == 0) {
     local_brush_handle = CreateSolidBrush16(WHITE_BRUSH);
-    struct10_5->brush_handle_field_0x8e = local_brush_handle;
+    struct10_5.brush_handle_field_0x8e = local_brush_handle;
   }
   if (_u16_1050_5b64 == 0) {
     uVar3 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
@@ -820,7 +820,7 @@ pub fn pass1_1038_9fa4(param_1: *mut StructD)
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xa0b6;
+  param_1.address_offset_field_0x0 = 0xa0b6;
   (param_1 + 0x2) = &u16_1050_1038;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   ui_cleanup_op_1040_782c(param_1);
@@ -849,16 +849,16 @@ pub unsafe fn call_fn_ptr_1038_9ffa(mut param_1: u32,pstruct_param_2: *mut astru
   hdc: HDC16;
   let mut var_5: u16;
 
-  hdc = GetDC16(pstruct_param_2->hwnd_0x6);
+  hdc = GetDC16(pstruct_param_2.hwnd_0x6);
   struct_2 = FUN_1010_830a(hdc,param_1,s_tile2_bmp_1050_1538,_u16_1050_14cc,0x3);
   puStack8 = CONCAT22(param_1,struct_2);
   struct_3 = *puStack8;
-  ppcVar1 = &struct_3->fn_ptr_field_0x8;
+  ppcVar1 = &struct_3.fn_ptr_field_0x8;
   (**ppcVar1)(0x1010,struct_2,param_1,&hdc,&DAT_1050_1050);
-  ppcVar1 = &struct_3->fn_ptr_field_0x4;
+  ppcVar1 = &struct_3.fn_ptr_field_0x4;
   (**ppcVar1)(0x1010,puStack8,0x50005,&hdc,&DAT_1050_1050);
-  ppcVar1 = &struct_3->fn_ptr_field_0xc;
+  ppcVar1 = &struct_3.fn_ptr_field_0xc;
   (**ppcVar1)(0x1010,puStack8,&hdc,&DAT_1050_1050);
-  ReleaseDC16(hdc,pstruct_param_2->hwnd_0x6);
+  ReleaseDC16(hdc,pstruct_param_2.hwnd_0x6);
   return 0x0;
 }

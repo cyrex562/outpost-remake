@@ -80,7 +80,7 @@ pub fn pass1_1028_740c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,mut 
 pub fn pass1_1028_7472(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
-  param_1->address_offset_field_0x0 = 0x389a;
+  param_1.address_offset_field_0x0 = 0x389a;
   (param_1 + 0x2) = 0x1008;
   if ((param_2 & 1) != 0) {
     fn_ptr_1000_17ce(param_1);
@@ -94,7 +94,7 @@ astruct_97 * pass1_1028_74ae(param_1: *mut astruct_97)
 
 {
   struct_op_1028_d1dc(param_1,0x1387);
-  param_1->offset_0x0 = 0x819a;
+  param_1.offset_0x0 = 0x819a;
     // just 0x1028
   (param_1 + 0x2) = 0x1028;
   unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)),s_SCEvent_1050_4ff4);

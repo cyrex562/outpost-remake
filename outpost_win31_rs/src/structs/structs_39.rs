@@ -918,7 +918,7 @@ struct astruct_803 {
     u32 * field2_0x4;
     let mut field3_0x6: u16;
     struct StructD * field4_0x8;
-    field5_0xc: mut HFILE16;
+    field5_0xc: HFILE16;
     let mut field6_0xe: u8;
     let mut field7_0xf: u8;
     let mut field8_0x10: u8;

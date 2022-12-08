@@ -150,10 +150,10 @@ pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 // HGLOBAL16 LoadResource16(HRSRC16 h_rsrc, HMODULE16 h_module);
 // SEGPTR WIN16_LockResource16(HGLOBAL16 handle);
 // BOOL16 FreeResource16(HGLOBAL16 handle);
-// _lclose16: mut HFILE16(h_file: mut HFILE16);
-// _lcreat16: mut HFILE16(i16 attr, char * path);
-// _llseek16: i32(i16 n_origin, l_offset: i32, h_file: mut HFILE16);
-// _lopen16: mut HFILE16(i16 mode, char * path);
+// _lclose16: HFILE16(h_file: HFILE16);
+// _lcreat16: HFILE16(i16 attr, char * path);
+// _llseek16: i32(i16 n_origin, l_offset: i32, h_file: HFILE16);
+// _lopen16: HFILE16(i16 mode, char * path);
 // i16 lstrlen16(char * in_string);
 // pub fn InitTask16(CONTEXT * context);
 // pub fn DOS3Call(CONTEXT * context);
@@ -174,13 +174,13 @@ pub fn GetDOSEnvironment16() -> SEGPTR {
 // pub fn FatalAppExit16(char * str, u16 action);
 // HINSTANCE16 WinExec16(n_cmd_show: u16, char * lp_cmd_line);
 // pub fn __WINFLAGS();
-// pub fn GlobalDOSAlloc16(u32 size) -> u32;
+// pub fn GlobalDOSAlloc16(size: u32) -> u32;
 // u16 GlobalDOSFree16(u16 sel);
 // u16 GlobalPageLock16(HGLOBAL16 handle);
 // u16 GlobalPageUnlock16(HGLOBAL16 handle);
 // pub fn hmemcpy16(count: i32, void * src, void * dst);
-// WIN16_hread: i32(count: i32, void * buffer, h_file: mut HFILE16);
-// pub fn _hwrite16(count: u32, u8 * buffer, h_file: mut HFILE16) -> u32;
+// WIN16_hread: i32(count: i32, void * buffer, h_file: HFILE16);
+// pub fn _hwrite16(count: u32, u8 * buffer, h_file: HFILE16) -> u32;
 // COLORREF SetBkColor16(COLORREF color, hdc: HDC16);
 // i16 SetMapMode16(i16 mode, hdc: HDC16);
 // u8 SetTextColor16(COLORREF color, hdc: HDC16);
@@ -343,7 +343,7 @@ pub fn mciSendCommand16(p2: u32, dw_param1: u32, i16: uw_msg, i16: uw_dev_id) ->
     todo!()
 }
 // BOOL16 mciGetErrorString16(Uu_length: INT16, char * lp_str_buffer, Dw_error: u16);
-// BOOL16 GetOpenFileName16(u32 ofn);
-// BOOL16 GetSaveFileName16(u32 ofn);
+// BOOL16 GetOpenFileName16(ofn: u32);
+// BOOL16 GetSaveFileName16(ofn: u32);
 // void* swi;
-// pub fn SegmentLimit(u32 a) -> u32;
+// pub fn SegmentLimit(a: u32) -> u32;

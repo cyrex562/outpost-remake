@@ -508,7 +508,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
   let mut in_stack_0000ffcc: u16;
   let mut uStack46: u16;
   let mut iStack26: i16;
-  u16 local_18 [0x2];
+  let mut local_18: [u16;0x2] = [0;0x2];
   let mut uStack20: u16;
   let mut uStack18: u32;
   pRStack14: *mut RECT16;
@@ -657,7 +657,7 @@ pub fn pt_in_rect_op_1020_58ce(mut param_1: u16 ,mut param_2: u32,mut param_3: u
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 menu_ui_op_1020_5bf2(param_1: *mut astruct_52,param_2: INT16,param_3: INT16)
+pub fn menu_ui_op_1020_5bf2(param_1: *mut astruct_52,param_2: INT16,param_3: INT16) -> BOOL16
 
 {
   let mut uVar1: u32;

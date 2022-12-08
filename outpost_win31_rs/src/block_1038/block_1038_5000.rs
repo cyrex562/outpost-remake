@@ -851,8 +851,8 @@ pub fn pass1_1038_5e16(mut param_1: i16,mut param_2: u32,mut param_3: u32)
   let mut puVar2: *mut u32;
   let mut iVar3: i16;
   let mut uVar4: u16;
-  in_stack_0000ffb6: mut HFILE16;
-  u32 local_14 [0x2];
+  in_stack_0000ffb6: HFILE16;
+  let mut local_14: [u32;0x2] = [0;0x2];
   let mut local_c: u32;
   let mut puStack6: *mut u32;
 

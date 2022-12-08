@@ -22,7 +22,7 @@ pub fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
 
   uVar4 = (struct_param_1 >> 0x10);
   iVar3 = struct_param_1;
-  hdc16_var36 = BeginPaint16(CONCAT22(0x1050,&paintstruct_22),iVar3->hwnd_0x4);
+  hdc16_var36 = BeginPaint16(CONCAT22(0x1050,&paintstruct_22),iVar3.hwnd_0x4);
   hbrush_var38 = CreateSolidBrush16(0x8000);
   GetClientRect16(&rect_var_32,&DAT_1050_1050);
   uVar1 = iVar3.field5_0x6;
@@ -42,7 +42,7 @@ pub fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
   draw_op_1040_c38e(struct_param_1);
   obj_handle_var3 = SelectObject16(obj_handle_var3,hdc16_var36);
   DeleteObject16(obj_handle_var3);
-  EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar3->hwnd_0x4);
+  EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar3.hwnd_0x4);
   return;
 }
 
@@ -233,8 +233,8 @@ pub fn pass1_1040_c5ac(param_1: *mut StructD)
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
-  param_1->address_offset_field_0x0 = 0xc9f2;
-  iVar4->address_offset_field_0x2 = &PTR_LOOP_1050_1040;
+  param_1.address_offset_field_0x0 = 0xc9f2;
+  iVar4.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
   PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + -0x1;
   if (PTR_LOOP_1050_5f02.is_null()) {
     puVar1 = iVar4.field5_0x8;
@@ -549,7 +549,7 @@ pub fn pass1_1040_ca74(param_1: *mut StructD)
   let mut in_stack_0000ffde: u16;
 
   uVar1 = (param_1 >> 0x10);
-  param_1->address_offset_field_0x0 = 0xd07c;
+  param_1.address_offset_field_0x0 = 0xd07c;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
   PTR_LOOP_1050_5f10 = NULL;
