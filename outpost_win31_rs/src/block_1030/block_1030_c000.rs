@@ -683,7 +683,7 @@ pub fn pass1_1030_cac2(mut param_1: i16,param_2: *mut u32)
         uVar5 = (uVar5 + 0xc);
         if ((0x0 < uVar5) && (!SBORROW2(uVar5,1))) {
           if (uVar5 != 0x3 && 0x0 < (uVar5 - 0x2)) {
-            if (uVar5 != 0x4) goto LAB_1030_cbbc;
+//            if (uVar5 != 0x4) goto LAB_1030_cbbc;
             iStack28 += 0x1;
           }
           pass1_1030_6e9c((uVar6 & 0xffff | uVar10 << 0x10),0x1,uVar5);

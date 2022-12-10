@@ -410,7 +410,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,param_2: *mut u8,param_3: *mut astruct_
     (&iVar9.field266_0x110 + 0x2) = uStack10;
     uVar4 = uStack10 | &iVar9.field266_0x110;
     puVar6 = uVar4;
-    if (uVar4 == 0) goto LAB_1028_9807;
+//    if (uVar4 == 0) goto LAB_1028_9807;
     uVar3 = SUB42(puStack22,0x0);
     puVar12 = (puStack22 >> 0x10);
     puVar11 = uStack10;
@@ -418,7 +418,7 @@ pub fn pass1_1028_9624(mut param_1: u16 ,param_2: *mut u8,param_3: *mut astruct_
   else {
     puStack22 = uStack10;
     puVar6 = uStack10;
-    if (iVar9.field270_0x11a != 0x75) goto LAB_1028_9807;
+//    if (iVar9.field270_0x11a != 0x75) goto LAB_1028_9807;
     uVar3 = SUB42(uStack10,0x0);
     puVar12 = uStack10;
     puVar11 = (&iVar9.field266_0x110 + 2);

@@ -391,7 +391,7 @@ pub fn pass1_1038_4760(mut param_1: u32)
       uVar11 = 0x1028;
       FUN_1028_5a94(uVar5,0x1030,(uVar13 & 0xffff | uVar9 << 0x10),puVar14);
       if (uVar5 == 0x2) {
-        if ((*_PTR_LOOP_1050_65e2 & 1) == 0) goto LAB_1038_485e;
+//        if ((*_PTR_LOOP_1050_65e2 & 1) == 0) goto LAB_1038_485e;
       }
       else if (uVar5 != 0x3) {//
 // LAB_1038_485e:

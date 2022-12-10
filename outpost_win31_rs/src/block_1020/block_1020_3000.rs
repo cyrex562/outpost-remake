@@ -952,7 +952,7 @@ code_r0x10203db1:
       pcVar1 = (param_4 + iVar13);
       *pcVar1 = *pcVar1 + bVar28;
       uVar22 = (param_3 + iVar13) * 0x10;
-      if ((POPCOUNT(*pcVar1) & 1) == 0) goto code_r0x10203db1;
+//      if ((POPCOUNT(*pcVar1) & 1) == 0) goto code_r0x10203db1;
     }
     pbVar2 = (param_3 + iVar13);
     bVar11 = paVar23;
@@ -992,7 +992,7 @@ code_r0x10203db1:
     *pbVar2 = *pbVar2 | bVar11;
     param_1 = uVar22 - 0x1;
     bVar10 = bVar4 | bVar20;
-    if (param_1 == 0x0 || *pbVar2 == 0) goto code_r0x10203d96;
+//    if (param_1 == 0x0 || *pbVar2 == 0) goto code_r0x10203d96;
   } while( true );
 }
 

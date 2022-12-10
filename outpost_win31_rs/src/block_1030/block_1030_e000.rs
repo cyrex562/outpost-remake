@@ -926,7 +926,7 @@ pub fn pass1_1030_ecf8(param_1: u8,param_2: *mut astruct_57,mut param_3: u32)
       iVar1 = uStack12 - 0x4;
     }
     else {
-      if (PTR_LOOP_1050_13ae != (&u16_1050_0002 + 1)) goto LAB_1030_ed5b;
+//      if (PTR_LOOP_1050_13ae != (&u16_1050_0002 + 1)) goto LAB_1030_ed5b;
       bVar16 = SBORROW2(uStack12,0x7);
       iVar1 = uStack12 - 0x7;
     }

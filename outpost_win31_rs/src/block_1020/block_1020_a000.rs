@@ -202,7 +202,7 @@ pub fn read_file_1020_a65e(param_1: u16,mut param_2: u32,param_3: *mut HFILE16) 
         BVar1 = read_file_1008_7dee(param_3,CONCAT22(0x1050,local_6),0x2);
         if (BVar1 != 0) {
           param_1 = read_file_1008_7dee(param_3,CONCAT22(0x1050,local_a),0x2);
-          if (param_1 != 0) goto LAB_1020_a6dc;
+//          if (param_1 != 0) goto LAB_1020_a6dc;
         }
       }
     }
@@ -653,7 +653,7 @@ pub fn pass1_1020_ad90(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,par
             uVar8 = 0x7;
           }
           else {
-            if (iVar4 != 0x9) goto LAB_1020_af1c;
+//            if (iVar4 != 0x9) goto LAB_1020_af1c;
             pass1_1008_3e76(param_4,local_8,uStack70,puStack78);
             uVar9 = uStack32;
             uVar10 = (uStack32 >> 0x10);

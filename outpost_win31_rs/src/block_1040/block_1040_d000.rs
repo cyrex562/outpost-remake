@@ -184,7 +184,7 @@ pub fn win_ui_op_1040_d2ac(mut param_1: u16 ,pstruct_param_2: *mut astruct_903,m
       PostMessage16(0x0,0x203,0x111,HWND16_1050_0396);
     }
     else {
-      if (param_4 != s_dibtext_bmp_1050_1844 + 0x7U) goto LAB_1040_d3b3;
+//      if (param_4 != s_dibtext_bmp_1050_1844 + 0x7U) goto LAB_1040_d3b3;
       _u16_1050_5a68 = (pstruct_param_2 + 0x98);
       pass1_1038_af40(pstruct_param_2,param_1,_PTR_LOOP_1050_5b7c,(pstruct_param_2 + 0x6),
                       0x27);

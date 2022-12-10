@@ -497,7 +497,7 @@ pub fn pass1_1028_78b8(param_1: u8,param_2: i32,mut param_3: u32)
         local_18 = paVar13 & 0xffff | paVar14 << 0x10;
         uVar11 = uVar10 | uVar3;
         paVar14 = (paVar14 & 0xffff0000 | uVar11);
-        if (uVar11 == 0) goto LAB_1028_79d6;
+//        if (uVar11 == 0) goto LAB_1028_79d6;
       } while ((uVar3 + 0x200) == 0x8000002);
       pass1_1038_43cc(uVar3,uVar11,uVar3,uVar10,0x1,0x4);//
 // LAB_1028_79d6:
@@ -633,7 +633,7 @@ pub fn pass1_1028_78b8(param_1: u8,param_2: i32,mut param_3: u32)
           iVar12 = puVar6 >> 0xf;
         }
         else {
-          if (puStack70 != 0x8) goto LAB_1028_7ba0;
+//          if (puStack70 != 0x8) goto LAB_1028_7ba0;
           iVar24 = 0x8;
           puVar6 = puVar7 + 0x32;
           iVar12 = (puVar7 >> 0xf) + (0xff9b < puVar7);

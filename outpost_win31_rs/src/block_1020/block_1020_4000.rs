@@ -284,7 +284,7 @@ let mut uStack300: u16;
     }
     else {
       HVar6 = GetSubMenu16(0x1,iVar9.hmenu_0x106);
-      if (HVar6 != param_4) goto LAB_1020_479e;
+//      if (HVar6 != param_4) goto LAB_1020_479e;
       EnableMenuItem16(0x1,0x200,HVar6);
       uVar10 = paVar11;
       EnableMenuItem16(0x1,0x201,HVar6);
@@ -362,7 +362,7 @@ let mut uStack300: u16;
     }
     HVar6 = 0x1;
     EnableMenuItem16(UVar4,0x1,param_4);
-    if ((PTR_LOOP_1050_0010.is_null() == false) || (iVar9.field255_0x102 == 0)) goto LAB_1020_47e3;
+//    if ((PTR_LOOP_1050_0010.is_null() == false) || (iVar9.field255_0x102 == 0)) goto LAB_1020_47e3;
   }
   else {
     if (param_3 == 0x3) {

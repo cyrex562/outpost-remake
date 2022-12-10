@@ -252,7 +252,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
   uVar8 = (StructC *)(param_2 >> 0x10);
   if (param_4 < 0x1b5) {
     if (param_4 < 0x1a0) {
-      if (param_4 != 0x2) goto LAB_1038_bbbf;
+//      if (param_4 != 0x2) goto LAB_1038_bbbf;
     }
     else {
       HStack8 = GetDlgItem16(param_4,iVar8.field6_0x6);
@@ -314,7 +314,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
       }
     }
     else {
-      if (param_4 != 0xfbe) goto LAB_1038_bbbf;
+//      if (param_4 != 0xfbe) goto LAB_1038_bbbf;
       puStack14 = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(param_5,0x2),
                                   in_stack_0000fa38,in_stack_0000fb5c,in_stack_0000fb62,in_stack_0000fb66);
       uVar9 = (param_1 >> 0x10);
@@ -356,7 +356,7 @@ pub fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u
       puStack1128 = (paVar12 & 0xffff0000 | uVar6);
       ppcVar2 = (*puStack1128 + 0x74);
       HStack8 = (**ppcVar2)(uVar9,uVar6,(paVar12 >> 0x10));
-      if (HStack8 != 1) goto LAB_1038_bc26;
+//      if (HStack8 != 1) goto LAB_1038_bc26;
       pass1_1008_d818(iVar8.field141_0x8e,(puStack20 + 0x1a));//
 // LAB_1038_bba2:
       win_ui_cursor_op_1038_bc30(param_2);

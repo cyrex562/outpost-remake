@@ -208,7 +208,7 @@ pub fn pass1_1020_b2da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,para
     if (uVar3 != 0) {
       puVar4 = local_1a;
       pass1_1020_b240(uVar5,CONCAT22(param_2,param_1),CONCAT22(0x1050,puVar4),param_5);
-      if (puVar4.is_null() == false) goto LAB_1020_b46e;
+//      if (puVar4.is_null() == false) goto LAB_1020_b46e;
     }
     iStack28 = *piStack12 + 1;
     if (0x2 < iStack28) {

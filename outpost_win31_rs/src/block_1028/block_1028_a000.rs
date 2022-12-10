@@ -708,7 +708,7 @@ pub unsafe fn pass1_1028_ab68(mut param_1: u16 ) -> u16
   }
   uVar1 = &paVar3.field5_0xc;
   BVar4 = pass1_1008_c6ae(_u16_1050_06e0,uVar1,0x11);
-  if (BVar4 == 0) goto code_r0x1028abad;
+//  if (BVar4 == 0) goto code_r0x1028abad;
   goto LAB_1028_abc0;
 code_r0x1028abad:
   BVar4 = pass1_1008_c6ae(_u16_1050_06e0,uVar1,0x12);
@@ -951,7 +951,7 @@ pub unsafe fn pass1_1028_af08(param_1: *mut astruct_57,param_2: *mut astruct_693
   // TODO: goto LAB_1028_af42;
     }
     puVar1 = PTR_LOOP_1050_13ae + -0x4;
-    if (puVar1.is_null() == false) goto LAB_1028_af27;
+//    if (puVar1.is_null() == false) goto LAB_1028_af27;
     iStack10 = 0x2;
   }
   iStack12 = 0x3;

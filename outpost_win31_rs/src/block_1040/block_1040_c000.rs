@@ -735,13 +735,13 @@ pub unsafe fn pass1_1040_cdac(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
   if (param_4 == 0) {
     iVar2 = (iVar4 + 0x9e);
     piVar1 = (iVar4 + 0x9c);
-    if (*piVar1 == iVar2 || *piVar1 < iVar2) goto LAB_1040_cdef;
+//    if (*piVar1 == iVar2 || *piVar1 < iVar2) goto LAB_1040_cdef;
     piVar1 = (iVar4 + 0x9e);
     *piVar1 = *piVar1 + 1;
   }
   else {
-    if (param_4 != 1) goto LAB_1040_cdef;
-    if ((iVar4 + 0x9e) < 1) goto LAB_1040_cdef;
+//    if (param_4 != 1) goto LAB_1040_cdef;
+//    if ((iVar4 + 0x9e) < 1) goto LAB_1040_cdef;
     piVar1 = (iVar4 + 0x9e);
     *piVar1 = *piVar1 + -0x1;
   }

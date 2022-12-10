@@ -722,7 +722,7 @@ pub fn win_ui_1040_b8d2(mut param_1: u16 ,StructB *param_2)
     pass1_1010_a5ca(uVar6,uVar9,uVar2,uVar3,uVar5);
     if (0x0 < uVar6) {
       pass1_1010_a58a(uVar6,uVar9,uVar2,uVar3,uVar5);
-      if (uVar6 == 0) goto LAB_1040_bb26;
+//      if (uVar6 == 0) goto LAB_1040_bb26;
     }
   }
   enable_win_1040_9234(CONCAT22(paVar10,paVar4),0x0);//

@@ -891,7 +891,7 @@ pub fn pass1_1028_0ea6(mut param_1: u16 ,param_2: *mut astruct_15)
       BVar2 = pass1_1008_c6ae(_u16_1050_06e0,iVar3.field10_0xc,0x2);
       if (((BVar2 != 0) && (iVar3.field15_0x12 != 0x7)) && (iVar3.field15_0x12 != 0x4)) {
         uVar3 = pass1_1028_1556(BVar2,param_1,(param_2 & 0xffff | ZEXT24(uVar4) << 0x10));
-        if (uVar3 == 0) goto LAB_1028_0f0a;
+//        if (uVar3 == 0) goto LAB_1028_0f0a;
         if (iVar3.field15_0x12 == 0x9) {
           iVar3.field15_0x12 = 0x5;
         }

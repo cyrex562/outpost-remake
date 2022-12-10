@@ -523,13 +523,13 @@ pub fn win_ui_op_1040_07dc(mut param_1: u16 ,StructC *pstruct_c_param_2,mut para
         PostMessage16(0x0,0xee,0x111,HWND16_1050_0396);
         return;
       }
-      if (param_5 != 'd') goto LAB_1040_09f9;
+//      if (param_5 != 'd') goto LAB_1040_09f9;
       PostMessage16(0x0,0x64,0x111,HWND16_1050_0396);
       BVar9 = 0;
   // TODO: goto LAB_1040_0821;
     }
     if (param_5 != 0x74) {
-      if (param_5 == 0xee) goto LAB_1040_09b4;
+//      if (param_5 == 0xee) goto LAB_1040_09b4;
       if (param_5 == 0x13d) {
         enable_window_1040_0acc(pstruct_c_param_2,1);
         return;

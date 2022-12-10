@@ -160,7 +160,7 @@ pub fn post_win_msg_1020_7308(mut param_1: u32,mut param_2: u16 )
         (param_1 + 0x1c) = 0;
         return;
       }
-      if (('\x03' < (cVar1 + -1)) && ((cVar1 + -0x5) < '\x02')) goto LAB_1020_7310;
+//      if (('\x03' < (cVar1 + -1)) && ((cVar1 + -0x5) < '\x02')) goto LAB_1020_7310;
     }
     return;
   }//

@@ -796,13 +796,13 @@ pub fn pass1_1038_3cc0(mut param_1: u32,mut param_2: u16 ,param_3: *mut u8,mut p
         paVar15 = pass1_1030_1d7c(uVar6,paVar10,puStack26);
         uVar8 = (paVar15 >> 0x10) | paVar15;
         paVar10 = (paVar10 & 0xffff0000 | uVar8);
-        if (uVar8 == 0) goto LAB_1038_3e98;
+//        if (uVar8 == 0) goto LAB_1038_3e98;
         uVar13 = 0x1028;
         uVar16 = pass1_1028_45e2(paVar15,uVar8,paVar15);
         uVar8 = uVar16;
         uVar9 = (uVar16 >> 0x10) | uVar8;
         paVar10 = (paVar10 & 0xffff0000 | uVar9);
-        if (uVar9 == 0) goto LAB_1038_3e98;
+//        if (uVar9 == 0) goto LAB_1038_3e98;
         pass1_1028_b58e(paVar15);
         uVar12 = SUB42(paVar10,0x0);
         uVar5 = CONCAT22(param_3,param_2);

@@ -35,7 +35,7 @@ pub fn pass1_1018_c402(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: u
   iVar4.base_0x2 = 0x1018;
   puVar2 = pass1_1000_4906((param_2 & 0xffff0000 | ZEXT24(&iVar4[0x1].field13_0x1e)),NULL,0x8);
   if ((param_4 == 0) || (param_3 != 0)) {
-    if ((param_3 & param_4) == 0) goto LAB_1018_c4bb;
+//    if ((param_3 & param_4) == 0) goto LAB_1018_c4bb;
     puVar2 = pass1_1008_5fd8(paVar3);
   }
   else {

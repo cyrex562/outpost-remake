@@ -476,7 +476,7 @@ pub fn pass1_1030_56f6(param_1: u16,param_2: *mut astruct_731,mut param_3: u32)
             uVar2 = (uVar3 + 0x16);
             iVar6 = write_to_file_1008_7b4c
                               (param_3,(uVar2 & 0xffff0000 | (uVar2 + iStack4 * 0x6)));
-            if (iVar6 == 0) goto LAB_1030_5734;
+//            if (iVar6 == 0) goto LAB_1030_5734;
           }
           iVar6 = write_to_file_1008_7b4c
                             (param_3,(param_2 & 0xffff0000 | ZEXT24(&iVar7.field19_0x14)));
@@ -596,7 +596,7 @@ pub fn file_1030_581e(mut param_1: i16,param_2: *mut u8,param_3: *mut astruct_38
               uVar3 = (uVar8 + 0x16);
               BVar5 = read_file_1008_7bc8(param_4,
                                                   (uVar3 & 0xffff0000 | (uVar3 + iStack1036 * 0x6)));
-              if (BVar5 == 0) goto LAB_1030_58a7;
+//              if (BVar5 == 0) goto LAB_1030_58a7;
             }
             BVar5 = read_file_1008_7bc8(param_4,(param_3 & 0xffff0000 | ZEXT24(&iVar12.field_0x14)));
             if ((BVar5 != 0) &&
@@ -1008,7 +1008,7 @@ pub fn file_1030_5e70(mut param_1: i16,param_2: *mut u8,mut param_3: u32,mut par
           (iVar11 + 0xe) = paVar10;
           uVar3 = (iVar15 + 0x10);
           BVar6 = read_file_1008_7dee(param_4,(uVar3 + 0xc),uVar7);
-          if (BVar6 != 0) goto LAB_1030_5fb7;
+//          if (BVar6 != 0) goto LAB_1030_5fb7;
         }
       }
     }

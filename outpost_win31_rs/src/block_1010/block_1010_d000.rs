@@ -700,7 +700,7 @@ pub fn pass1_1010_debe(mut param_1: u32,mut param_2: u16 ,param_3: *mut u16,para
       for (uStack30 = 0; uVar2 = uStack30, *param_3 != uStack30 && uStack30 <= *param_3; uStack30 += 1) {
         loop {
           iStack34 += 0x1;
-          if (0x42 < iStack34) goto LAB_1010_e0d4;
+//          if (0x42 < iStack34) goto LAB_1010_e0d4;
           uVar2 = pass1_1010_ac62(uVar2,paVar6,uVar5,uVar11,iStack34);
         } while (uVar2 == 0);
         (uStack30 * 0x2 + *param_4) = iStack34;//

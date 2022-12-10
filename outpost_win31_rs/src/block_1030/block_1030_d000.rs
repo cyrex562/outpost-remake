@@ -393,16 +393,16 @@ pub fn pass1_1030_d61c(mut param_1: u32,mut param_2: u32)
       iVar2 = param_1;
       local_12[0] = (iVar2 + iStack4 * 0xc + 0x20);
       BVar1 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_12),0x4,in_stack_0000ffcc);
-      if (BVar1 == 0) goto LAB_1030_d701;
+//      if (BVar1 == 0) goto LAB_1030_d701;
       local_14 = (iVar2 + iStack4 * 0xc + 0x24);
       BVar1 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,&local_14),0x2,in_stack_0000ffcc);
-      if (BVar1 == 0) goto LAB_1030_d701;
+//      if (BVar1 == 0) goto LAB_1030_d701;
       local_16 = (iVar2 + iStack4 * 0xc + 0x26);
       BVar1 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,&local_16),0x2,in_stack_0000ffcc);
-      if (BVar1 == 0) goto LAB_1030_d701;
+//      if (BVar1 == 0) goto LAB_1030_d701;
       local_1a = (iVar2 + iStack4 * 0xc + 0x28);
       BVar1 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,&local_1a),0x4,in_stack_0000ffcc);
-      if (BVar1 == 0) goto LAB_1030_d701;
+//      if (BVar1 == 0) goto LAB_1030_d701;
     }
     local_16 = PTR_LOOP_1050_5812;
     BVar1 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,&local_16),0x2,in_stack_0000ffcc);
@@ -961,7 +961,7 @@ pub unsafe fn pass1_1030_dfcc(mut param_1: u32) -> u16
       if (iVar1 == 0x75) {
         return 0x3;
       }
-      if (iVar1 == 0x77) goto LAB_1030_dfde;
+//      if (iVar1 == 0x77) goto LAB_1030_dfde;
       if (iVar1 != 0x78) {
         return 0x0;
       }

@@ -693,7 +693,7 @@ pub fn unk_win_sys_op_1038_da68(param_1: *mut StructD,mut param_2: i16,mut param
           param_5 = WinHelp16(0x0,0x3,CONCAT22(paVar5,uVar3),(param_2 + 0x6));
         }
         else {
-          if (param_5 - 0x127 != 0) goto LAB_1038_dc20;
+//          if (param_5 - 0x127 != 0) goto LAB_1038_dc20;
           param_5 = param_5 - 0x127;
           post_win_msg_1038_dcb0(0x0,paVar5,CONCAT22(param_3,param_2));
         }

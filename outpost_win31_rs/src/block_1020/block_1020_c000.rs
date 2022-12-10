@@ -719,7 +719,7 @@ pub fn pass1_1020_c872(mut param_1: u32,mut param_2: u32,mut param_3: u32)
       uStack14 = (uStack14 + 0x4);
     }
     param_1 = uStack10;
-    if (bVar12) goto LAB_1020_c9ab;
+//    if (bVar12) goto LAB_1020_c9ab;
   }
   uVar11 = (param_1 >> 0x10);
   (param_1 + 0x4) = iVar7;

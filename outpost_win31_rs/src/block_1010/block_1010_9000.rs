@@ -910,14 +910,14 @@ pub fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,param_3: *mut HFILE16,mu
           if (BVar3 == 0) {//
 // LAB_1010_9c32:
             puStack22 = puStack14;
-            if (puStack14.is_null()) goto LAB_1010_9ba1;
+//            if (puStack14.is_null()) goto LAB_1010_9ba1;
             uVar9 = (puStack14 >> 0x10);
             puVar8 = puStack14;
         // TODO: goto LAB_1010_9e9e;
           }
           BVar3 = read_file_1008_7dee(param_3,(puStack14 & 0xffff0000 | (puStack14 + 0x6)),0x2)
           ;
-          if (BVar3 == 0) goto LAB_1010_9c32;
+//          if (BVar3 == 0) goto LAB_1010_9c32;
           iVar4 = switch_1008_73ea(uVar10,uVar11,local_a[0]);
           (puStack14 + 0x4) = iVar4;
           ppcVar1 = ((iVar7 + 0xa) + 0x4);
@@ -961,14 +961,14 @@ pub fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,param_3: *mut HFILE16,mu
             if (BVar3 == 0) {//
 // LAB_1010_9d5c:
               puStack22 = puStack30;
-              if (puStack30.is_null()) goto LAB_1010_9ba1;
+//              if (puStack30.is_null()) goto LAB_1010_9ba1;
               uVar9 = (puStack30 >> 0x10);
               puVar8 = puStack30;
           // TODO: goto LAB_1010_9e9e;
             }
             BVar3 = read_file_1008_7dee(param_3,(puStack30 & 0xffff0000 | (puStack30 + 0x6)),
                                         0x2);
-            if (BVar3 == 0) goto LAB_1010_9d5c;
+//            if (BVar3 == 0) goto LAB_1010_9d5c;
             iVar4 = switch_1008_73ea(uVar10,uVar11,local_1a[0]);
             (puStack30 + 0x4) = iVar4;
             ppcVar1 = ((iVar7 + 0xe) + 0x4);
@@ -1024,7 +1024,7 @@ pub fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,param_3: *mut HFILE16,mu
               }
               BVar3 = read_file_1008_7dee(param_3,(puStack38 & 0xffff0000 | (puStack38 + 0x6)),
                                           0x2);
-              if (BVar3 == 0) goto LAB_1010_9e86;
+//              if (BVar3 == 0) goto LAB_1010_9e86;
               iVar4 = switch_1008_73ea(uVar10,uVar11,auStack34[0]);
               (puStack38 + 0x4) = iVar4;
               ppcVar1 = ((iVar7 + 0x12) + 0x4);

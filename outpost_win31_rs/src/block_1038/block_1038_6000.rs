@@ -72,7 +72,7 @@ pub fn file_1038_6118(mut param_1: i16,param_2: *mut astruct_57,param_3: *mut as
             uStack1042 += 0x1;
           } while (uStack1042 < 0x15);
           BVar3 = read_file_1008_7dee(param_4,puStack1046,0x54);
-          if (BVar3 == 0) goto LAB_1038_626a;
+//          if (BVar3 == 0) goto LAB_1038_626a;
           uStack1042 = 0;
           loop {
             uVar5 = switch_1008_72bc(param_4,uStack1042);

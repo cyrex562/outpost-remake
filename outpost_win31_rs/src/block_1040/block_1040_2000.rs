@@ -340,7 +340,7 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
     // TODO: goto LAB_1040_266d;
       }
       uVar4 = param_5 - 0xfb1;
-      if (uVar4 != 0) goto LAB_1040_2539;
+//      if (uVar4 != 0) goto LAB_1040_2539;
       if (&iVar8.field142_0x92 < 0x0) {
         mem_op_1000_179c(0xb4,param_1);
         uStack24 = param_1;
@@ -384,7 +384,7 @@ pub fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *p
         param_2 = &DAT_1050_1050;
         fn_ptr_21 = (*puStack10 + 0x6c);
         uVar10 = (**fn_ptr_21)(0x1008,puStack10,(puStack10 >> 0x10),local_1e);
-        if (uVar10 == 0x2) goto LAB_1040_27c0;
+//        if (uVar10 == 0x2) goto LAB_1040_27c0;
       }
       local_16[0] = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(param_2,0x6),in_stack_0000fe84,
                                     in_stack_0000ffa8,in_stack_0000ffae,in_stack_0000ffb2);

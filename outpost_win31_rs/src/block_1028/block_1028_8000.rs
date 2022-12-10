@@ -49,9 +49,9 @@ switchD_1028_8225_caseD_0:
         return 0x1;
       }
       iVar1 = &paVar3.field5_0xc;
-      if (iVar1 < 0x35) goto code_r0x10288222;
+//      if (iVar1 < 0x35) goto code_r0x10288222;
       if (0x61 < iVar1) break;
-      if ((iVar1 < 0x5d) && ((iVar1 != 0x37 && (iVar1 != 0x47)))) goto switchD_1028_8225_caseD_1;
+//      if ((iVar1 < 0x5d) && ((iVar1 != 0x37 && (iVar1 != 0x47)))) goto switchD_1028_8225_caseD_1;
     }
   } while ((iVar1 == 0x6a) ||
           ((0x8 < iVar1 + -0x6a &&

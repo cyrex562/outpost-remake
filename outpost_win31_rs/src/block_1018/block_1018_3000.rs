@@ -1035,7 +1035,7 @@ pub fn switch_1018_3ee6(mut param_1: u16 ,mut param_2: u32,param_3: i32,mut para
     }
   }
   else {
-    if (iVar11 != 0x4) goto LAB_1018_425e;
+//    if (iVar11 != 0x4) goto LAB_1018_425e;
     iVar1 = (iVar1 + 2);
     uVar4 = iVar1 - 0x1;
     iVar11 = _u16_1050_14cc;
@@ -1086,7 +1086,7 @@ pub fn switch_1018_3ee6(mut param_1: u16 ,mut param_2: u32,param_3: i32,mut para
         }
         else {
           uVar4 = iVar1 - 0x4;
-          if (uVar4 != 0) goto LAB_1018_425e;
+//          if (uVar4 != 0) goto LAB_1018_425e;
           load_string_1010_84ac(iVar11,IVar13,0x433);
           uVar7 = SUB42(paVar8,0x0);
           uVar5 = uVar4;

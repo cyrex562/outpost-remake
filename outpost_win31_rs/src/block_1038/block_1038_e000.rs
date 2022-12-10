@@ -97,7 +97,7 @@ pub fn destroy_win_1038_e1dc(param_1: *mut astruct_886,mut param_2: u16 ,mut par
     UVar1 = IsDlgButtonChecked(0x1807,param_1.field6_0x6);
     if (UVar1 == 0) {
       UVar1 = IsDlgButtonChecked(0x1806,param_1.field6_0x6);
-      if (UVar1 == 0) goto LAB_1038_e229;
+//      if (UVar1 == 0) goto LAB_1038_e229;
       uVar2 = 0x1110130;
     }
     else {

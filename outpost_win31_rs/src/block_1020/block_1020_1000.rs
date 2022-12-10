@@ -638,7 +638,7 @@ pub fn *pvStack60;
   IVar2 = GetSystemMetrics16(SM_CYCAPTION);
   uStack68 = uStack68 & 0xffff | (uStack68 - IVar2) << 0x10;
   if (struct_9[0x7].field5_0xa.is_null()) {
-    if (uStack8 == 0) goto LAB_1020_1b24;
+//    if (uStack8 == 0) goto LAB_1020_1b24;
     in_buf_len_5 = 0x72e;
     in_resc_id_3 = &stack0xfe88;
     in_buffer_4 = &DAT_1050_1050;

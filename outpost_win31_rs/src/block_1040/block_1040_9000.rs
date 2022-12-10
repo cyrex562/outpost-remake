@@ -706,7 +706,7 @@ pub fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,msg_para
         ReleaseCapture16();
         return;
       }
-      if (0x1f < msg_param_3) goto LAB_1040_a1ae;
+//      if (0x1f < msg_param_3) goto LAB_1040_a1ae;
       bVar3 = msg_param_3;
       if (bVar3 == 0x8) {
         pbVar1 = (iVar3 + 0x4);
@@ -751,7 +751,7 @@ pub fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,msg_para
           SetWindowLong16(0x0,0x0,hwnd_param_4);
           return;
         }
-        if (bVar3 != 0x7) goto LAB_1040_a1ae;
+//        if (bVar3 != 0x7) goto LAB_1040_a1ae;
         pbVar1 = (iVar3 + 0x4);
         *pbVar1 = *pbVar1 | 0x8;
         LVar12 = SendMessage16(0x0,0x0,0x400,(iVar3 + 0x2));
@@ -885,8 +885,8 @@ pub fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,msg_para
         PostMessage16(0x0,win_long_11,0x111,(iVar3 + 0x2));
         return;
       }
-      if (msg_param_3 == 0x203) goto LAB_1040_9e74;
-      if (msg_param_3 != 0x404) goto LAB_1040_a1ae;
+//      if (msg_param_3 == 0x203) goto LAB_1040_9e74;
+//      if (msg_param_3 != 0x404) goto LAB_1040_a1ae;
       if (wparam_param_2 == 1) {
         (iVar3 + 0x56) = 0x1;
       }

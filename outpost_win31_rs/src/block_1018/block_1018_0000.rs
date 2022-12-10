@@ -118,7 +118,7 @@ pub fn pass1_1018_0196(mut param_1: u16 ,param_2: *mut u8,mut param_3: u32,mut p
   }
   else {
     uVar4 = (iVar8 + 0x30) + 1;
-    if (uVar4 < (iVar8 + 0x32)) goto LAB_1018_022a;
+//    if (uVar4 < (iVar8 + 0x32)) goto LAB_1018_022a;
     piVar1 = (iVar8 + 0x32);
     *piVar1 = *piVar1 + 0x5;
     uVar3 = (iVar8 + 0x2c);
@@ -975,7 +975,7 @@ pub fn pass1_1018_0dc6(param_1: *mut astruct_57,param_2: *mut astruct_91)
   local_32 = (pcVar5 + 0xc);
   uStack46 = (pcVar5 + 0x10);
   puVar4 = &local_32;
-  if (uStack44 != 0x8000001) goto LAB_1018_0ffc;
+//  if (uStack44 != 0x8000001) goto LAB_1018_0ffc;
   iVar3 = &iVar13.field147_0x94;
   uVar6 = (&iVar13.field147_0x94 + 2);
   uStack28 = uStack28 & 0xffff | (uStack28 + 1) << 0x10;

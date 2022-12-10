@@ -612,7 +612,7 @@ pub fn pass1_1030_6a2c(mut param_1: u16 ,param_2: *mut StructD,param_3: *mut ast
       uVar4 = paVar6;
       iVar2 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       paVar6 = (uVar4 | iVar2);
-      if ((uVar4 | iVar2) == 0) goto LAB_1030_6af4;
+//      if ((uVar4 | iVar2) == 0) goto LAB_1030_6af4;
       uVar2 = (param_4 >> 0x10);
       iVar5 = param_4;
     } while ((iVar2.field5_0x6 != iVar5.field5_0x6) || (iVar2.field4_0x4 != iVar5.field4_0x4));

@@ -1027,7 +1027,7 @@ pub fn pass1_1028_6ff6(param_1: *mut StructD,mut param_2: u32,mut param_3: u16 )
       pass1_1028_e4ec(CONCAT22(0x1050,paVar4));
       uVar7 = param_1;
       param_1 = (param_1 & 0xffff0000 | (uVar7 | paVar4));
-      if ((uVar7 | paVar4) == 0) goto LAB_1028_7066;
+//      if ((uVar7 | paVar4) == 0) goto LAB_1028_7066;
     } while (((&paVar4[0x1c].field3_0x4 + 0x2) == 0) || (paVar4[0x1c].field4_0x8 == 0x8000002));
     bVar2 = true;
     iVar16 = &paVar4[0x1b].field6_0x10;
@@ -1125,7 +1125,7 @@ pub fn pass1_1028_6ff6(param_1: *mut StructD,mut param_2: u32,mut param_3: u16 )
         pass1_1028_e4ec(CONCAT22(0x1050,paVar5));
         uVar7 = paVar8;
         paVar8 = (paVar8 & 0xffff0000 | (uVar7 | paVar5));
-        if ((uVar7 | paVar5) == 0) goto LAB_1028_72d3;
+//        if ((uVar7 | paVar5) == 0) goto LAB_1028_72d3;
       } while (paVar5[0x1c].field4_0x8 == 0x8000002);
       uVar20 = (param_2 >> 0x10);
       paVar4 = paVar5;

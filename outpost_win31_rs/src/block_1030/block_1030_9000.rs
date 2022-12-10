@@ -92,7 +92,7 @@ pub fn pass1_1030_9048(mut param_1: u32,mut param_2: i16,mut param_3: u32)
   default:
     iStack16 = local_16 + -0x1;
     BVar3 = pass1_1030_8fe4(&local_12,uVar9,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
-    if (BVar3 != 0) goto LAB_1030_91cb;
+//    if (BVar3 != 0) goto LAB_1030_91cb;
     iStack16 = local_16 + 1;
     BVar3 = pass1_1030_8fe4(&local_12,uVar7,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
     if (BVar3 == 0) {
@@ -127,7 +127,7 @@ joined_r0x1030911e:
       local_12 = local_14 + 1;//
 // LAB_1030_912c:
       BVar3 = pass1_1030_8fe4(&local_12,uVar7,uVar18,uVar19,CONCAT22(0x1050,&local_12),uVar1);
-      if (BVar3 != 0) goto LAB_1030_9144;
+//      if (BVar3 != 0) goto LAB_1030_9144;
   // TODO: goto LAB_1030_91fa;
     }//
 // LAB_1030_91cb:
@@ -448,7 +448,7 @@ pub fn pass1_1030_951a(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
       paStack58 = pass1_1000_07fc(_PTR_LOOP_1050_5768);
       uVar6 = (paStack58 >> 0x10);
       puVar12 = paStack58;
-      if ((uVar6 | puVar12) == 0) goto LAB_1030_973e;
+//      if ((uVar6 | puVar12) == 0) goto LAB_1030_973e;
       paStack58.field0_0x0 = 0x389a;
       puVar12[0x1] = 0x1008;
       puVar12[0x2] = 0x36;
@@ -479,7 +479,7 @@ pub fn pass1_1030_951a(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
   iVar11 = uStack14;
   if ((iVar11 + 0x4a) == 0) {
     if ((iVar11 + 0x4c) == 0) {
-      if ((iVar11 + 0x4e) == 0) goto LAB_1030_97e8;
+//      if ((iVar11 + 0x4e) == 0) goto LAB_1030_97e8;
       paStack58 = pass1_1000_07fc(_PTR_LOOP_1050_5768);
       uVar6 = (paStack58 >> 0x10);
       puVar12 = paStack58;
@@ -508,7 +508,7 @@ pub fn pass1_1030_951a(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,mut 
     paStack58 = pass1_1000_07fc(_PTR_LOOP_1050_5768);
     uVar6 = (paStack58 >> 0x10);
     puVar12 = paStack58;
-    if ((uVar6 | puVar12) == 0) goto LAB_1030_97d0;
+//    if ((uVar6 | puVar12) == 0) goto LAB_1030_97d0;
     paStack58.field0_0x0 = 0x389a;
     puVar12[0x1] = 0x1008;
     puVar12[0x2] = 0x25;//
@@ -846,7 +846,7 @@ pub fn pass1_1030_9d42(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,par
              (pSVar3 = (&local_98)[iStack154], ppSVar2 = (StructD **)(pcVar7 + iVar10),
              pSVar3 <= *ppSVar2 && *ppSVar2 != pSVar3)) {
             puVar1 = (pcVar7 + iVar10);
-            if (uStack158 <= *puVar1 && *puVar1 != uStack158) goto LAB_1030_9e17;
+//            if (uStack158 <= *puVar1 && *puVar1 != uStack158) goto LAB_1030_9e17;
             uStack158 -= (pcVar7 + iVar10);
           }
         }

@@ -492,7 +492,7 @@ pub fn pass1_1028_c724(param_1: *mut astruct_295)
 // TODO: goto LAB_1028_c770;
   }
   if (uVar1 < 0xe) {
-    if (uVar1 == '\0') goto LAB_1028_c770;
+//    if (uVar1 == '\0') goto LAB_1028_c770;
     if (uVar1 == '\a') {
       uVar2 = iVar3.field20_0x14;
       (uVar2 + 0xac) = 0xa;
@@ -936,7 +936,7 @@ pub fn pass1_1028_ccd0(param_1: *mut astruct_15,param_2: *mut u16)
             uVar7 = 0x7;
           }
           else {
-            if (iVar4 != 0x9) goto LAB_1028_ce2c;
+//            if (iVar4 != 0x9) goto LAB_1028_ce2c;
             pass1_1008_3e76(param_2,local_8,uStack64,uStack72);
             uVar10 = uStack52;
             uVar11 = (uStack52 >> 0x10);

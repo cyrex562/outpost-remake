@@ -995,7 +995,7 @@ pub fn pass1_1018_2ee4(param_1: *mut astruct_126,mut param_2: u16 )
         (param_1 + 0x162) = 0;
         return;
       }
-      if (('\x02' < (cVar2 + -1)) && ((cVar2 + -0x4) < '\x03')) goto LAB_1018_2f06;
+//      if (('\x02' < (cVar2 + -1)) && ((cVar2 + -0x4) < '\x03')) goto LAB_1018_2f06;
     }
     return;
   }

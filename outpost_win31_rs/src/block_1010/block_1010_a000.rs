@@ -385,7 +385,7 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
 // TODO: goto switchD_1010_aaef_caseD_b;
   case 0x10:
     pass1_1010_682e(puVar6,0x1,0x2d);
-    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
+//    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x2d;
 // TODO: goto LAB_1010_a91f;
   case 0x12:
@@ -483,7 +483,7 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
 // TODO: goto switchD_1010_aaef_caseD_b;
   case 0x38:
     pass1_1010_682e(puVar6,0x1,0x28);
-    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
+//    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x28;
 // TODO: goto LAB_1010_a91f;
   case 0x39:
@@ -503,7 +503,7 @@ pub fn pass1_1010_a69c(mut param_1: i16,mut param_2: u16 ,mut param_3: u32,mut p
 // TODO: goto LAB_1010_a91f;
   case 0x3d:
     pass1_1010_682e(puVar6,0x1,0x66);
-    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
+//    if ((param_1 + 0x160) == 0) goto switchD_1010_aaef_caseD_b;
     iVar1 = 0x66;//
 // LAB_1010_a91f:
     pass1_1010_abd2(paVar5,uVar2,uVar10,iVar1);
@@ -688,14 +688,14 @@ pub unsafe fn string_op_1010_ada6(mut param_1: u16 ,mut param_2: u16 ,mut param_
 
   pcStack6 = NULL;
   if (param_5 == 0x6) {
-    if (param_4 == 0) goto LAB_1010_adee;
+//    if (param_4 == 0) goto LAB_1010_adee;
     pcVar1 = string_op_1020_c222(param_4);
   }
   else {
     if (param_5 != 0x7) {
       return NULL;
     }
-    if (param_4 == 0) goto LAB_1010_adee;
+//    if (param_4 == 0) goto LAB_1010_adee;
     pcVar1 = string_op_1020_c2f8(param_4);
   }
   pcStack6 = CONCAT22(param_1,pcVar1);//

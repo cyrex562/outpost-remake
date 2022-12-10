@@ -791,7 +791,7 @@ pub fn pass1_1038_1c3e(mut param_1: u32,mut param_2: u32)
               if (BVar7 == 0) {
                 unaff_CS = 0x1008;
                 BVar7 = pass1_1008_c6ae(_u16_1050_06e0,uVar1,0x6);
-                if (BVar7 == 0) goto LAB_1038_1c76;
+//                if (BVar7 == 0) goto LAB_1038_1c76;
               }
               unaff_CS = 0x1008;
               pass1_1038_2306(uVar12,uVar13,paStack26);

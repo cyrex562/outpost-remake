@@ -504,13 +504,13 @@ pub unsafe fn enable_win_1040_3a36(param_1: *mut astruct_924,mut param_2: u16 ,m
   iVar3 = param_1;
   uVar3 = (param_1 >> 0x10);
   if (param_4 == 0) {
-    if (iVar3.field155_0x9e <= iVar3.field154_0x9c) goto LAB_1040_3a79;
+//    if (iVar3.field155_0x9e <= iVar3.field154_0x9c) goto LAB_1040_3a79;
     puVar1 = &iVar3.field154_0x9c;
     *puVar1 = *puVar1 + 1;
   }
   else {
-    if (param_4 != 1) goto LAB_1040_3a79;
-    if (iVar3.field154_0x9c == 0) goto LAB_1040_3a79;
+//    if (param_4 != 1) goto LAB_1040_3a79;
+//    if (iVar3.field154_0x9c == 0) goto LAB_1040_3a79;
     puVar1 = &iVar3.field154_0x9c;
     *puVar1 = *puVar1 - 0x1;
   }
@@ -645,7 +645,7 @@ pub fn unk_win_ui_op_1040_3c64
       send_dlg_item_msg_1040_3f12(struct_c_param_1,struct_c_param_2,uVar3);
     }
     else {
-      if (param_5 - 0x188 != 0x8) goto LAB_1040_3c7f;
+//      if (param_5 - 0x188 != 0x8) goto LAB_1040_3c7f;
       if (param_5 != 1) {
         return;
       }

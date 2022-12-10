@@ -786,7 +786,7 @@ pub fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut 
       else {
         uVar39 = 0x7af0;
         pass1_1028_780c(uVar21,unaff_DI,CONCAT22(in_stack_0000ffcc,in_stack_0000ffca));
-        if (param_4 == 0) goto code_r0x10287b17;
+//        if (param_4 == 0) goto code_r0x10287b17;
       }
       uVar31 = 0;
       uVar32 = 0x4;
@@ -863,7 +863,7 @@ code_r0x10287b17:
             }
             else {
               uVar23 = uVar39;
-              if (CONCAT11(uVar34,uVar33) != 0x8) goto LAB_1028_7ba0;
+//              if (CONCAT11(uVar34,uVar33) != 0x8) goto LAB_1028_7ba0;
               iVar38 = 0x8;
               puVar16 = puVar16 + 0x32;
               iVar14 = (puVar16 >> 0xf) + (0xff9b < puVar16);

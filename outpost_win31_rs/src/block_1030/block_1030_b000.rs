@@ -30,7 +30,7 @@ pub fn pass1_1030_b142(mut param_1: u32,mut param_2: u32)
     uVar3 = (iVar1 + 0x22);
   }
   else {
-    if (iVar2 != 0x3f) goto LAB_1030_b1a6;
+//    if (iVar2 != 0x3f) goto LAB_1030_b1a6;
     uStack12 = pass1_1028_20b0();
     uVar3 = (iVar1 + 0x24);
   }
@@ -53,10 +53,10 @@ pub fn pass1_1030_b142(mut param_1: u32,mut param_2: u32)
   if ((bVar4) || (uStack12 != 0)) {
     bVar4 = false;
     loop {
-      if (((uStack12 & 0x10000) != 0) && (uStack12 == 0)) goto LAB_1030_b239;
-      if (((uStack12 & 0x20000) != 0) && (uStack12 == 0)) goto LAB_1030_b247;
-      if (((uStack12 & 0x40000) != 0) && (uStack12 == 0)) goto LAB_1030_b255;
-      if (((uStack12 & 0x80000) != 0) && (uStack12 == 0)) goto LAB_1030_b263;
+//      if (((uStack12 & 0x10000) != 0) && (uStack12 == 0)) goto LAB_1030_b239;
+//      if (((uStack12 & 0x20000) != 0) && (uStack12 == 0)) goto LAB_1030_b247;
+//      if (((uStack12 & 0x40000) != 0) && (uStack12 == 0)) goto LAB_1030_b255;
+//      if (((uStack12 & 0x80000) != 0) && (uStack12 == 0)) goto LAB_1030_b263;
       if (bVar4) break;
       uStack12._1_3_ = (uStack12 >> 0x8) & 0xffff00;
       iVar1 = (iVar2 + 0xe);
@@ -318,11 +318,11 @@ pub fn pass1_1030_b578(mut param_1: u32)
     }
     uVar6 = struct_op_1030_73a8(CONCAT22(puVar4,puVar2),puVar2,puVar4 | puVar2);
     uVar3 = (uVar6 + 0xc);
-    if (uVar3 == 0x3f) goto LAB_1030_b6e0;
+//    if (uVar3 == 0x3f) goto LAB_1030_b6e0;
     if (0x3f < uVar3) {
       return;
     }
-    if (uVar3 == '\x16') goto LAB_1030_b6e0;
+//    if (uVar3 == '\x16') goto LAB_1030_b6e0;
     bVar5 = uVar3 == '\x18';
   }
   else {
@@ -354,7 +354,7 @@ pub fn pass1_1030_b578(mut param_1: u32)
     if (SBORROW2(iVar1,0x17)) {
       return;
     }
-    if (iVar1 == 0x18 || iVar1 + -0x17 < 1) goto LAB_1030_b6e0;
+//    if (iVar1 == 0x18 || iVar1 + -0x17 < 1) goto LAB_1030_b6e0;
     bVar5 = iVar1 == 0x3f;
   }
   if (!bVar5) {
