@@ -1008,7 +1008,8 @@ pub unsafe fn FUN_1010_9b72(mut param_1: u16 ,mut param_2: u32,param_3: *mut HFI
                 (iVar7 + 0x14) = paVar6;
               }
             }
-            for (local_2a[0] = 0; local_2a[0] < local_36[0]; local_2a[0] += 1) {
+            for (local_2a[0] = 0; local_2a[0] < local_36[0]; local_2a[0] += 1) 
+            {
               uVar2 = local_36[0];
               mem_op_1000_179c(0x8,paVar6);
               uVar5 = paVar6;
