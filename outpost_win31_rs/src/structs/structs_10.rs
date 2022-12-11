@@ -274,7 +274,7 @@ struct astruct_768 {
     let mut field5_0x7: u8;
     let mut field6_0x8: u8;
     let mut field7_0x9: u8;
-    hdc_0xa: HDC16;
+    let mut hdc_0xa: HDC16;
     let mut field9_0xc: u8;
     let mut field10_0xd: u8;
     let mut field11_0xe: u8;

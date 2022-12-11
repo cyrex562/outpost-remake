@@ -343,7 +343,7 @@ struct astruct_828 {
     let mut field3_0x3: u8;
     let mut field4_0x4: u8;
     let mut field5_0x5: u8;
-pub fn * field6_0x6;
+pub unsafe fn * field6_0x6;
     let mut field7_0xa: u8;
     let mut field8_0xb: u8;
     let mut field9_0xc: u8;

@@ -1,6 +1,6 @@
 
 struct struct {
-    hdc_field_0x0: HDC16;
+    let mut hdc_field_0x0: HDC16;
     let mut u16_field_0x2: u16;
 };
 

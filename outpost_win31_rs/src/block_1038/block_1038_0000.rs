@@ -34,7 +34,7 @@
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u32,mut param_6: u32)
+pub unsafe fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u32,mut param_6: u32)
 
 {
   let mut piVar1: *mut i16;
@@ -53,7 +53,7 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
   let mut uVar14: u16;
   let mut unaff_CS: u16;
   let mut puVar15: *mut u32;
-  paStack80: *mut astruct_99;
+  let mut paStack80: *mut astruct_99;
   let mut uStack76: u16;
   let mut local_30: [u8;0x4] = [0;0x4];
   let mut uStack44: u32;
@@ -177,5 +177,5 @@ pub fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut 
       }
     }
     uStack16 += 0x1;
-  } while( true );
+  }
 }

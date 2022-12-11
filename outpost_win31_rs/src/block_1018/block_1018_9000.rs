@@ -1,5 +1,5 @@
 
-pub fn pass1_1018_9036(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_9036(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -19,7 +19,7 @@ pub fn pass1_1018_9036(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_907e(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_907e(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -38,7 +38,7 @@ pub fn pass1_1018_907e(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_90c6(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_90c6(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -57,7 +57,7 @@ pub fn pass1_1018_90c6(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_910e(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_910e(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -76,7 +76,7 @@ pub fn pass1_1018_910e(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9156(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_9156(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -95,7 +95,7 @@ pub fn pass1_1018_9156(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_919e(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_919e(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -114,7 +114,7 @@ pub fn pass1_1018_919e(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_91e6(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_91e6(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -133,7 +133,7 @@ pub fn pass1_1018_91e6(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_922e(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_922e(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -152,7 +152,7 @@ pub fn pass1_1018_922e(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9276(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_9276(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -171,7 +171,7 @@ pub fn pass1_1018_9276(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_92be(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_92be(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -190,7 +190,7 @@ pub fn pass1_1018_92be(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9306(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_9306(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -209,7 +209,7 @@ pub fn pass1_1018_9306(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_934e(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_934e(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;
@@ -228,7 +228,7 @@ pub fn pass1_1018_934e(param_1: *mut StructD,param_2: u8)
   }
   return;
 }
-pub fn pass1_1018_9396(param_1: *mut StructD,param_2: u8)
+pub unsafe fn pass1_1018_9396(param_1: *mut StructD,param_2: u8)
 
 {
   let mut iVar1: *mut StructD;

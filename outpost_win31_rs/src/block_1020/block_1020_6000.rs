@@ -1,5 +1,5 @@
 
-pub fn pass1_1020_6184(mut param_1: u32,mut param_2: u16 )
+pub unsafe fn pass1_1020_6184(mut param_1: u32,mut param_2: u16 )
 
 {
   let mut HVar1: HCURSOR16;
@@ -21,7 +21,7 @@ pub fn pass1_1020_6184(mut param_1: u32,mut param_2: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_61c4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4: *mut u16)
+pub unsafe fn pass1_1020_61c4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,param_4: *mut u16)
 
 {
   let mut uVar1: u32;
@@ -46,7 +46,7 @@ pub fn pass1_1020_61c4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,para
 
 
 
-pub fn pass1_1020_6208(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1020_6208(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   param_1 = (param_1 & 0xffff0000 | (param_1 - 0xe2));
@@ -59,7 +59,7 @@ pub fn pass1_1020_6208(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub fn FUN_1020_6216(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mut StructD
+pub unsafe fn FUN_1020_6216(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mut StructD
 
 {
   destroy_cursor_1020_42f4(param_2);
@@ -72,7 +72,7 @@ pub fn FUN_1020_6216(mut param_1: u16 ,param_2: *mut StructD,param_3: u8) -> *mu
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
+pub unsafe fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
 
 {
   let mut puVar1: *mut u32;
@@ -191,7 +191,7 @@ pub fn pass1_1020_62e0(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 )
   (param_1 + 0x2e) = (puVar10 >> 0x10);
   return;
 }
-pub fn pass1_1020_6466(param_1: *mut StructD)
+pub unsafe fn pass1_1020_6466(param_1: *mut StructD)
 
 {
   let mut iVar1: *mut StructD;
@@ -210,7 +210,7 @@ pub fn pass1_1020_6466(param_1: *mut StructD)
 
 
 
-pub fn pass1_1020_6498(mut param_1: u32,mut param_2: i16) -> u32
+pub unsafe fn pass1_1020_6498(mut param_1: u32,mut param_2: i16) -> u32
 
 {
   let mut uVar1: u32;
@@ -242,7 +242,7 @@ pub unsafe fn pass1_1020_64d4(mut param_1: u32,mut param_2: i16) -> u16
   }
   return 0x0;
 }
-pub fn mix_draw_op_1020_650c(param_1: *mut StructA)
+pub unsafe fn mix_draw_op_1020_650c(param_1: *mut StructA)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -282,17 +282,17 @@ pub fn mix_draw_op_1020_650c(param_1: *mut StructA)
   EndPaint16(CONCAT22(0x1050,local_28),struct_1.field2_0x4);
   return;
 }
-pub fn unk_win_op_1020_65cc(param_1: *mut astruct_60,mut param_2: i16)
+pub unsafe fn unk_win_op_1020_65cc(param_1: *mut astruct_60,mut param_2: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut uVar2: u32;
   let mut BVar3: bool;
   let mut uVar4: u16;
-  iVar4: *mut astruct_59;
-  iVar5: *mut astruct_60;
+  let mut iVar4: *mut astruct_59;
+  let mut iVar5: *mut astruct_60;
   let mut iVar6: i16;
-  uVar7: *mut astruct_60;
+  let mut uVar7: *mut astruct_60;
   let mut iStack4: i16;
 
   iVar5 = param_1;
@@ -347,7 +347,7 @@ pub fn unk_win_op_1020_65cc(param_1: *mut astruct_60,mut param_2: i16)
   }
   return;
 }
-pub fn pass1_1020_6746(mut param_1: u32,mut param_2: i16,mut param_3: i16)
+pub unsafe fn pass1_1020_6746(mut param_1: u32,mut param_2: i16,mut param_3: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -373,7 +373,7 @@ pub fn pass1_1020_6746(mut param_1: u32,mut param_2: i16,mut param_3: i16)
 
 
 
-pub fn pass1_1020_679c(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1020_679c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1020_6466(param_1);
@@ -382,7 +382,7 @@ pub fn pass1_1020_679c(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub fn unk_win_ui_op_1020_67ce(in_struct_1: *mut StructA,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
+pub unsafe fn unk_win_ui_op_1020_67ce(in_struct_1: *mut StructA,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
   let mut HVar1: HGDIOBJ16;
@@ -423,7 +423,7 @@ pub fn unk_win_ui_op_1020_67ce(in_struct_1: *mut StructA,mut param_2: u16 ,mut p
                       in_stack_0000ff42);
   return;
 }
-pub fn pass1_1020_687c(param_1: *mut astruct_868)
+pub unsafe fn pass1_1020_687c(param_1: *mut astruct_868)
 
 {
   let mut unaff_BP: u8;
@@ -436,13 +436,13 @@ pub fn pass1_1020_687c(param_1: *mut astruct_868)
 
 
 // WARNING: Unable to use type for symbol uVar2
-pub fn realize_palette_1020_6896(mut param_1: u32,mut param_2: i16)
+pub unsafe fn realize_palette_1020_6896(mut param_1: u32,mut param_2: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut uVar3: u32;
   let mut puVar4: u32;
-  iVar4: *mut astruct_801;
+  let mut iVar4: *mut astruct_801;
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar2: u32;
@@ -461,7 +461,7 @@ pub fn realize_palette_1020_6896(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn pass1_1020_68de(mut param_1: u32)
+pub unsafe fn pass1_1020_68de(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -472,7 +472,7 @@ pub fn pass1_1020_68de(mut param_1: u32)
   }
   return;
 }
-pub fn pt_in_rect_1020_68fc(param_1: u32,mut param_2: u16 ,mut param_3: u16 )
+pub unsafe fn pt_in_rect_1020_68fc(param_1: u32,mut param_2: u16 ,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -601,13 +601,13 @@ pub unsafe fn unk_destroy_win_op_1020_694c(mut param_1: u16 ,param_2: *mut Struc
   }
   return uVar1;
 }
-pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param_3: i16,mut param_4: i16,param_5: u16,param_6: u16)
+pub unsafe fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param_3: i16,mut param_4: i16,param_5: u16,param_6: u16)
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut hwnd: HWND16;
   let mut puVar2: *mut u8;
-  iVar3: *mut astruct_877;
+  let mut iVar3: *mut astruct_877;
   let mut uVar3: u16;
   let mut LVar4: LRESULT;
 
@@ -639,7 +639,7 @@ pub fn win_ui_op_1020_6ae6(param_1: *mut astruct_877,mut param_2: u16 ,mut param
   }
   return;
 }
-pub fn enable_menu_item_1020_6b9a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,HMENmut param_5: u16 )
+pub unsafe fn enable_menu_item_1020_6b9a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,HMENmut param_5: u16 )
 
 {
   if (param_4 != 0) {
@@ -648,7 +648,7 @@ pub fn enable_menu_item_1020_6b9a(mut param_1: u16 ,mut param_2: u16 ,mut param_
   EnableMenuItem16(0x400,0x0,param_5);
   return;
 }
-pub fn pass1_1020_6bbc(mut param_1: u32)
+pub unsafe fn pass1_1020_6bbc(mut param_1: u32)
 
 {
   let mut in_DX: u16;
@@ -656,7 +656,7 @@ pub fn pass1_1020_6bbc(mut param_1: u32)
   win_ui_op_1020_737a(in_DX,*(astruct_788 **)(param_1 + 0xf6));
   return;
 }
-pub fn destroy_icon_1020_6bd2(param_1: *mut astruct_868,param_2: u8)
+pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868,param_2: u8)
 
 {
   let mut puVar1: *mut u32;
@@ -685,7 +685,7 @@ pub fn destroy_icon_1020_6bd2(param_1: *mut astruct_868,param_2: u8)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn window_op_1020_6c3a(param_1: *mut astruct_57,struct_param_1: *mut StructA,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,
+pub unsafe fn window_op_1020_6c3a(param_1: *mut astruct_57,struct_param_1: *mut StructA,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,
                         mut param_6: u16 ,mut param_7: u16 ,mut param_8: u16 ,mut param_9: u16 ,mut param_10: u16 ,
                         mut param_11: u16 ,mut param_12: u16 )
 
@@ -783,7 +783,7 @@ pub fn window_op_1020_6c3a(param_1: *mut astruct_57,struct_param_1: *mut StructA
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_6e52(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,mut param_5: i16)
+pub unsafe fn pass1_1020_6e52(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,mut param_5: i16)
 
 {
   let mut uVar1: u16;

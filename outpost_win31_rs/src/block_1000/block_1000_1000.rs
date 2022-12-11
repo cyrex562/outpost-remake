@@ -101,7 +101,7 @@ pub unsafe fn mem_op_1000_131c(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub fn mem_op_1000_1408(mut param_1: u16, re_alloc_size: u32, mut param_3: u16, selector: i16) {
+pub unsafe fn mem_op_1000_1408(mut param_1: u16, re_alloc_size: u32, mut param_3: u16, selector: i16) {
     let mut handle: HGLOBAL16;
     let mut global_handle_1: u32;
     let mut realloc_flags: u16;
@@ -143,7 +143,7 @@ pub fn mem_op_1000_1408(mut param_1: u16, re_alloc_size: u32, mut param_3: u16, 
     return;
 }
 
-pub fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 {
+pub unsafe fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 {
     let mut mem_size: u32;
 
     // get handle to global memory
@@ -259,14 +259,14 @@ pub unsafe fn pass1_1000_1e61(mut param_1: u16, mut param_2: u16, param_3: *mut 
     return u16_var3;
 }
 
-pub fn pass1_1000_1f68() {
+pub unsafe fn pass1_1000_1f68() {
     PTR_LOOP_1050_5f26 -= 1;
     if (PTR_LOOP_1050_5f26 < 0x0) {
         PTR_LOOP_1050_5f26 = 0;
     }
 }
 
-pub fn mem_op_1000_13ce(mut param_1: u16, mut param_2: u16) -> i32 {
+pub unsafe fn mem_op_1000_13ce(mut param_1: u16, mut param_2: u16) -> i32 {
     let mut HVar1: HGLOBAL16;
     let mut uVar2: u16;
     let mut DVar3: u32;
@@ -280,7 +280,7 @@ pub fn mem_op_1000_13ce(mut param_1: u16, mut param_2: u16) -> i32 {
     return uVar2 << 0x10;
 }
 
-pub fn mem_op_1000_14f2(
+pub unsafe fn mem_op_1000_14f2(
     mut param_1: u16,
     mut param_2: u32,
     param_4: *mut Struct7,
@@ -303,7 +303,7 @@ pub fn mem_op_1000_14f2(
     return 0x0;
 }
 
-pub fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
+pub unsafe fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
     let mut uVar1: u16;
     let mut uVar3: u32;
     let mut uStack12: u16;
@@ -406,7 +406,7 @@ pub unsafe fn pass1_1000_16aa(
     return lVar2;
 }
 
-pub fn fn_ptr_op_1000_1708(
+pub unsafe fn fn_ptr_op_1000_1708(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -449,7 +449,7 @@ pub fn fn_ptr_op_1000_1708(
     }
 }
 
-pub fn pass1_1000_17e8(param_1: *const u8, param_2: *const u8) -> *const u8 {
+pub unsafe fn pass1_1000_17e8(param_1: *const u8, param_2: *const u8) -> *const u8 {
     let mut puVar1: *mut u8;
 
     puVar1 = PTR_LOOP_1050_5f34;
@@ -640,7 +640,7 @@ pub unsafe fn pass1_1000_1a54(mut param_1: u16, mut param_2: i16, mut param_3: u
     return uVar2;
 }
 
-pub fn pass1_1000_1ab0(mut param_1: u16) -> u16 {
+pub unsafe fn pass1_1000_1ab0(mut param_1: u16) -> u16 {
     let mut uVar1: u16;
     let mut uVar2: u16;
 
@@ -754,7 +754,7 @@ pub unsafe fn mem_op_1000_1b9a(mut param_1: u16, mut param_2: u16, mut param_3: 
     return CONCAT22((lVar7 >> 0x10), 1);
 }
 
-pub fn mem_op_1000_1dfa(mut param_1: i16, param_2: u8, mut param_3: u16, mut param_4: u16) -> bool {
+pub unsafe fn mem_op_1000_1dfa(mut param_1: i16, param_2: u8, mut param_3: u16, mut param_4: u16) -> bool {
     let mut uVar1: u32;
     let mut uVar2: u16;
 
@@ -826,14 +826,14 @@ pub unsafe fn pass1_1000_1f7e(param_1: *mut u16) -> bool {
     return BVar2;
 }
 
-pub fn ass1_1000_1fd2(mut param_1: i16) -> *mut c_char {
+pub unsafe fn ass1_1000_1fd2(mut param_1: i16) -> *mut c_char {
     if (param_1 == 0x2) {
         return "Out of memory.  Please free some memory, then choose retry.";
     }
     return CONCAT22(0x1000, param_1 * 0x17 + 0x1c7a);
 }
 
-pub fn pass1_1000_1fea() -> bool {
+pub unsafe fn pass1_1000_1fea() -> bool {
     let mut puVar1: *mut u8;
     let mut bVar2: bool;
 

@@ -135,7 +135,7 @@ pub unsafe fn set_win_placement_1010_010e(mut param_1: u16, mut param_2: u16, mu
     }
     return;
 }
-pub fn enum_child_windows_1010_01be() {
+pub unsafe fn enum_child_windows_1010_01be() {
     if (PTR_LOOP_1050_0010.is_null()) {
         let func = MakeProcInstance16(HINSTANCE16_1050_038c, win_ui_op_1010_0240);
         EnumChildWindows1(0x0, func, func);
@@ -144,7 +144,7 @@ pub fn enum_child_windows_1010_01be() {
     return;
 }
 
-pub fn pass1_1010_01f8(mut param_1: u32, mut param_2: u32, mut param_3: i16) {
+pub unsafe fn pass1_1010_01f8(mut param_1: u32, mut param_2: u32, mut param_3: i16) {
     let mut iVar1: i16;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -212,7 +212,7 @@ pub unsafe fn pass1_1010_02a2(param_1: *mut u16, param_2: u8) -> *mut u16 {
     }
     return param_1;
 }
-pub fn struct_1010_02e0(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1010_02e0(param_1: *mut astruct_19, mut param_2: u16) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut in_EDX: u32;
@@ -261,7 +261,7 @@ pub unsafe fn pass1_1010_0350(param_1: *mut astruct_455) {
     pass1_1010_1d80(param_1);
     return;
 }
-pub fn pass1_1010_038e(param_1: *mut astruct_27, mut param_2: i16) {
+pub unsafe fn pass1_1010_038e(param_1: *mut astruct_27, mut param_2: i16) {
     let mut bVar1: bool;
     let mut iVar2: *mut astruct_27;
     let mut uVar2: u16;
@@ -300,7 +300,7 @@ pub fn pass1_1010_038e(param_1: *mut astruct_27, mut param_2: i16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_041a() -> BOOL16 {
+pub unsafe fn pass1_1010_041a() -> BOOL16 {
     let mut uVar1: u32;
 
     uVar1 = pass1_1030_8326();
@@ -546,18 +546,18 @@ pub unsafe fn pass1_1010_0892() -> u16 {
 pub unsafe fn pass1_1010_0898() -> u16 {
     return 0x3;
 }
-pub fn pass1_1010_089e(param_1: *mut astruct_27, mut param_2: u16, mut param_3: i16) {
+pub unsafe fn pass1_1010_089e(param_1: *mut astruct_27, mut param_2: u16, mut param_3: i16) {
     ((param_3 + -1) * 0x8 + 0xe28) = param_2;
     pass1_1010_1f62(param_1, 0x3);
     return;
 }
-pub fn pass1_1010_08c0(mut param_1: u32, mut param_2: u16, mut param_3: i16) {
+pub unsafe fn pass1_1010_08c0(mut param_1: u32, mut param_2: u16, mut param_3: i16) {
     ((param_3 + -1) * 0x8 + 0xea8) = param_2;
     pass1_1010_1f62(param_1, 0x3);
     return;
 }
 
-pub fn pass1_1010_08e2(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
+pub unsafe fn pass1_1010_08e2(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
     if (PTR_LOOP_1050_4fe8.is_null() == false) {
         DAT_1050_0e28 = 0;
         PTR_LOOP_1050_0e30 = NULL;
@@ -571,17 +571,17 @@ pub fn pass1_1010_08e2(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> 
     return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe22);
 }
 
-pub fn pass1_1010_091e(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
+pub unsafe fn pass1_1010_091e(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
     return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe72);
 }
 
-pub fn pass1_1010_0932(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
+pub unsafe fn pass1_1010_0932(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
     return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe8a);
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1010_0946(
+pub unsafe fn pass1_1010_0946(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: i16,
@@ -717,7 +717,7 @@ pub unsafe fn pass1_1010_09b4(
     }
     return;
 }
-pub fn pass1_1010_0ad2(mut param_1: u32, mut param_2: u32) {
+pub unsafe fn pass1_1010_0ad2(mut param_1: u32, mut param_2: u32) {
     let mut uVar1: u32;
     let mut BVar2: bool;
     let mut puVar3: *mut u8;
@@ -1004,7 +1004,7 @@ pub unsafe fn pass1_1010_0eac(
     return param_2;
 }
 
-pub fn pass1_1010_0ee6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub unsafe fn pass1_1010_0ee6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     clenaup_win_ui_1018_4d22(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -1013,7 +1013,7 @@ pub fn pass1_1010_0ee6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1010_0f24(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) {
+pub unsafe fn pass1_1010_0f24(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut unaff_BP: u16;
@@ -1045,7 +1045,7 @@ pub fn pass1_1010_0f24(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: 
     (param_2 + 0x6c) = (puVar2 >> 0x10);
     return;
 }
-pub fn pass1_1010_0f76(param_1: *mut astruct_455) {
+pub unsafe fn pass1_1010_0f76(param_1: *mut astruct_455) {
     let mut uVar1: *mut astruct_455;
 
     uVar1 = (param_1 >> 0x10);

@@ -947,7 +947,7 @@ pub unsafe fn pass1_1008_ae26(param_1: *mut i16) {
     return;
 }
 
-pub fn pass1_1008_aed8(mut param_1: u32) -> BOOL16 {
+pub unsafe fn pass1_1008_aed8(mut param_1: u32) -> BOOL16 {
     if (((param_1 + 0x4) * 0x6 + 0x3a4) != 0) {
         return 0x1;
     }
@@ -956,7 +956,7 @@ pub fn pass1_1008_aed8(mut param_1: u32) -> BOOL16 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_aefe(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) -> u32 {
+pub unsafe fn pass1_1008_aefe(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) -> u32 {
     struct_op_1018_4cda(param_2, param_3);
     param_2.offset_0x0 = 0xaf7c;
     (param_2 + 0x2) = 0x1008;
@@ -964,21 +964,21 @@ pub fn pass1_1008_aefe(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: 
     pass1_1018_4dce(param_1, param_2, 0x1b3);
     return param_2;
 }
-pub fn pass1_1008_af38(param_1: *mut StructD) {
+pub unsafe fn pass1_1008_af38(param_1: *mut StructD) {
     param_1.address_offset_field_0x0 = 0xaf7c;
     (param_1 + 0x2) = 0x1008;
     clenaup_win_ui_1018_4d22(param_1);
     return;
 }
 
-pub fn pass1_1008_af56(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub unsafe fn pass1_1008_af56(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1008_af38(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
     return param_1;
 }
-pub fn pass1_1008_af94(param_1: *mut astruct_19, mut param_2: u16, mut param_3: u16) {
+pub unsafe fn pass1_1008_af94(param_1: *mut astruct_19, mut param_2: u16, mut param_3: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;

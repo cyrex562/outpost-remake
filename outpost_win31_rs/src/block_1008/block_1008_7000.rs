@@ -219,7 +219,7 @@ pub unsafe fn read_file_1008_71a0(param_1: *mut astruct_806, mut param_2: u16) -
     return uStack4;
 }
 
-pub fn file_fn_1008_726c(param_1: *mut astruct_802, mut param_2: u16) -> BOOL16 {
+pub unsafe fn file_fn_1008_726c(param_1: *mut astruct_802, mut param_2: u16) -> BOOL16 {
     let hfile_1: HFILE16;
 
     if (param_1.hfile_0x4 != 0xffff) {
@@ -334,7 +334,7 @@ pub unsafe fn switch_1008_72bc(param_1: *mut HFILE16, mut param_2: u16) -> u16 {
             0x13 => {
                 return 0x13;
             }
-            // default:
+            // _ =>
             _ => {
                 return 0x0;
             }
@@ -378,7 +378,7 @@ pub unsafe fn pass1_1008_738c(mut param_1: u16, mut param_2: u16, mut param_3: u
         7 => {
             return 0xa;
         }
-        //   default:
+        //   _ =>
         _ => {
             u_var1 = 0;
         }
@@ -773,7 +773,7 @@ pub unsafe fn pass1_1008_79f0(mut param_1: u32, param_2: i32) {
     write_to_file_1008_7954(uVar1, param_1, CONCAT22(uStack4, uVar1));
     return;
 }
-pub fn write_to_file_1008_7a22(param_1: *mut u8, param_2: i32) {
+pub unsafe fn write_to_file_1008_7a22(param_1: *mut u8, param_2: i32) {
     let mut BVar1: bool;
     let mut in_stack_0000ffc6: HFILE16;
     let mut local_24: [u32; 0x2] = [0; 0x2];
@@ -917,7 +917,7 @@ pub unsafe fn read_file_1008_7bc8(mut param_1: u32, param_2: *mut u16) -> BOOL16
     return 0x0;
 }
 
-pub fn pass1_1008_7c2a(mut param_1: u32, param_2: *mut c_char) -> BOOL16 {
+pub unsafe fn pass1_1008_7c2a(mut param_1: u32, param_2: *mut c_char) -> BOOL16 {
     let mut uVar1: u16;
     let mut BVar2: bool;
     let mut in_stack_0000ffe6: HFILE16;
@@ -954,7 +954,7 @@ pub unsafe fn read_file_1008_7c6e(param_1: HFILE16, mut param_2: u16, param_3: *
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
+pub unsafe fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
     let mut uVar1: u16;
     let mut BVar2: bool;
     let mut in_stack_0000ffde: HFILE16;
@@ -1042,7 +1042,7 @@ pub unsafe fn read_file_1008_7dee(
     return 0x0;
 }
 
-pub fn write_to_file_1008_7e1c(
+pub unsafe fn write_to_file_1008_7e1c(
     buffer: *mut u8,
     count: u32,
     buf_to_write: *mut c_char,
@@ -1083,7 +1083,7 @@ pub unsafe fn pass1_1008_7e4a(param_1: *mut c_char, mut param_2: u16, param_3: u
     return 0x0;
 }
 
-pub fn pass1_1008_7e98(param_1: *mut astruct_460, param_2: u8) -> *mut u16 {
+pub unsafe fn pass1_1008_7e98(param_1: *mut astruct_460, param_2: u8) -> *mut u16 {
     let mut uVar1: *mut astruct_460;
     let mut uVar2: *mut astruct_460;
 
@@ -1132,7 +1132,7 @@ pub unsafe fn unk_draw_op_1008_7f62(
     win_ui_reg_class_1008_96d2(param_1);
     return param_1;
 }
-pub fn pass1_1008_7ffa(param_1: *mut astruct_461, param_2: u8) {
+pub unsafe fn pass1_1008_7ffa(param_1: *mut astruct_461, param_2: u8) {
     let mut uVar1: *mut astruct_461;
     let mut uVar2: u16;
 

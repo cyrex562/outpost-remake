@@ -24,7 +24,7 @@ mod string_defs;
 mod sys_ops;
 
 
-pub fn main()
+pub unsafe fn main()
 {
 
     // printf("Hello, World!\n");

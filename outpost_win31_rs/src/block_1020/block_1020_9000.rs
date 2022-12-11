@@ -1,13 +1,13 @@
 
-pub fn pass1_1020_9068(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
+pub unsafe fn pass1_1020_9068(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 {
   let mut iVar1: i16;
-  paVar2: *mut astruct_76;
+  let mut paVar2: *mut astruct_76;
   let mut ppcVar3: *mut *mut code;
   let mut uVar4: u32;
   let mut uVar5: u16;
-  paVar6: *mut astruct_76;
+  let mut paVar6: *mut astruct_76;
   let mut uVar7: u32;
   let mut uVar8: u16;
   let mut iVar10: i16;
@@ -63,7 +63,7 @@ pub fn pass1_1020_9068(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
+pub unsafe fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
 
 {
   let mut iVar1: i16;
@@ -71,7 +71,7 @@ pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
   let mut in_register_0000000a: u16;
   let mut paVar4: *mut Struct57;
   let mut uVar5: u32;
-  iVar2: *mut astruct_669;
+  let mut iVar2: *mut astruct_669;
   let mut uVar6: u16;
   let mut puVar7: *mut u32;
   let mut in_stack_0000fe9c: u16;
@@ -121,7 +121,7 @@ pub fn pass1_1020_915a(param_1: *mut u8,param_2: *mut astruct_669,u8 **param_3)
 
 
 
-pub fn pass1_1020_91de(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1020_91de(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1020_8f74(param_1);
@@ -135,11 +135,11 @@ pub fn pass1_1020_91de(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn set_struct_op_1020_921c(mut param_1: u16 ,pstructa_param_2: *mut StructA,mut param_3: u16 ,u8 **param_4)
+pub unsafe fn set_struct_op_1020_921c(mut param_1: u16 ,pstructa_param_2: *mut StructA,mut param_3: u16 ,u8 **param_4)
 
 {
   let mut uVar1: u16;
-  HVar2: HDC16;
+  let mut HVar2: HDC16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
   let iVar3: *mut StructA;
@@ -181,7 +181,7 @@ pub fn set_struct_op_1020_921c(mut param_1: u16 ,pstructa_param_2: *mut StructA,
   iVar3.field7_0xe = (pUVar3 + 0xc);
   return;
 }
-pub fn palette_op_1020_92c4(struct_param_1: *mut StructD)
+pub unsafe fn palette_op_1020_92c4(struct_param_1: *mut StructD)
 
 {
   let mut obj: HPALETTE16;
@@ -202,7 +202,7 @@ pub fn palette_op_1020_92c4(struct_param_1: *mut StructD)
   struct_1.address_offset_field_0x2 = 0x1008;
   return;
 }
-pub fn mix_draw_op_1020_9312(mut param_1: u32)
+pub unsafe fn mix_draw_op_1020_9312(mut param_1: u32)
 
 {
   let mut puVar1: *mut u32;
@@ -228,7 +228,7 @@ pub fn mix_draw_op_1020_9312(mut param_1: u32)
 
 // WARNING: Unable to use type for symbol uVar4
 // WARNING: Could not reconcile some variable overlaps
-pub fn draw_op_1020_9364(param_1: *mut StructA)
+pub unsafe fn draw_op_1020_9364(param_1: *mut StructA)
 
 {
   let mut piVar1: *mut i16;
@@ -239,13 +239,13 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
   let mut uVar7: u16;
   let mut uVar3: u16;
   let mut uVar8: u16;
-  HVar3: HDC16;
+  let mut HVar3: HDC16;
   let mut iStack62: i16;
   uStack58: *mut astruct_737;
   POpoint16_38: INT16;
   let mut hgdiobj16_var_52: HGDIOBJ16;
   HStack50: HPEN16;
-  hdc16_var_48: HDC16;
+  let mut hdc16_var_48: HDC16;
   let mut uStack46: u32;
   let mut uStack42: u32;
   let mut uStack38: u32;
@@ -352,7 +352,7 @@ pub fn draw_op_1020_9364(param_1: *mut StructA)
 
 
 
-pub fn pass1_1020_96a2(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1020_96a2(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   palette_op_1020_92c4(param_1);
@@ -365,7 +365,7 @@ pub fn pass1_1020_96a2(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn init_globals_1020_96d4()
+pub unsafe fn init_globals_1020_96d4()
 
 {
   let mut puVar1: *mut u16;

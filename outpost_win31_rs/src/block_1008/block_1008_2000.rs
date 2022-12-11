@@ -199,7 +199,7 @@ pub unsafe fn cursor_op_1008_2dcc(mut param_1: u16 ,param_2: *mut astruct_20,mut
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_ui_cursor_op_1008_2e9a
+pub unsafe fn win_ui_cursor_op_1008_2e9a
                (param_1: *mut astruct_57,param_2: *mut astruct_72,param_3: *mut WNDCLASS16 ,mut param_4: u16 ,mut param_5: u16 ,
                mut param_6: u16 )
 

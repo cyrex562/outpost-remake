@@ -1,6 +1,6 @@
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1018_c402(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u32,
+pub unsafe fn pass1_1018_c402(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u32,
                     mut param_7: u32,mut param_8: u32,mut param_9: u32)
 
 {
@@ -48,13 +48,13 @@ pub fn pass1_1018_c402(mut param_1: u16 ,param_2: *mut astruct_20,mut param_3: u
                            in_stack_0000ffb2,in_stack_0000ffb8,in_stack_0000ffbc);
   iVar1 = puVar4;
   iVar4[0x1].field8_0x14 = (iVar1 + 0xa);
-  iVar4[0x1].field9_0x16 = *(astruct_19 **)(iVar1 + 0xc);
+  iVar4[0x1].field9_0x16 = (iVar1 + 0xc);
   pass1_1008_3e94((puVar4 & 0xffff0000 | (iVar1 + 0xe)),
                   (param_2 & 0xffff0000 | ZEXT24(&iVar4[0x1].field11_0x1a)),
                   (param_2 & 0xffff0000 | ZEXT24(&iVar4[0x1].field10_0x18)));
   return;
 }
-pub fn destroy_window_1018_c518(param_1: *mut astruct_29)
+pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29)
 
 {
   let mut is_window: bool;
@@ -83,10 +83,10 @@ pub fn destroy_window_1018_c518(param_1: *mut astruct_29)
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Unable to use type for symbol puVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
+pub unsafe fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
 
 {
-  paVar1: *mut astruct_76;
+  let mut paVar1: *mut astruct_76;
   let mut uVar2: u16;
   let mut uVar5: u16;
   hpal: *mut HDC16;
@@ -97,10 +97,10 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
   let mut uVar7: u16;
   let mut extraout_DX: u16;
   let mut obj: HPALETTE16;
-  iVar4: *mut astruct_36;
+  let mut iVar4: *mut astruct_36;
   let mut uVar10: u16;
   let mut unaff_SI: u16;
-  uVar8: *mut astruct_36;
+  let mut uVar8: *mut astruct_36;
   let mut uVar11: u16;
   let mut uVar12: u32;
   let mut in_stack_0000fe56: u16;
@@ -111,7 +111,7 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
   let mut iStack48: i16;
   let mut iStack46: i16;
   let mut hbrush_44: HBRUSH16;
-  hdc_2a: HDC16;
+  let mut hdc_2a: HDC16;
   let mut uStack40: u16;
   let mut puStack38: *mut u32;
   PAINTSTRUCT16 paintstruct_22;
@@ -182,7 +182,7 @@ pub fn unk_draw_op_1018_c578(param_1: *mut astruct_57,param_2: *mut astruct_36)
 
 // WARNING: Variable defined which should be unmapped: iStack22
 // WARNING: Variable defined which should be unmapped: iStack20
-pub fn draw_text_1018_c742(mut param_1: u16 ,struct36_param_1: *mut astruct_36,hdc_2: HDC16,i16 count_param_3,mut param_5: u16 )
+pub unsafe fn draw_text_1018_c742(mut param_1: u16 ,struct36_param_1: *mut astruct_36,hdc_2: HDC16,i16 count_param_3,mut param_5: u16 )
 
 {
   let mut piVar2: *mut i16;
@@ -569,10 +569,10 @@ astruct_20 * pass1_1018_cd60(param_1: *mut astruct_20,mut param_2: u16 ,mut para
 // WARNING: Unable to use type for symbol iVar1
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u16 ,struct36_param_1: *mut astruct_36)
+pub unsafe fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u16 ,struct36_param_1: *mut astruct_36)
 
 {
-  paVar1: *mut astruct_76;
+  let mut paVar1: *mut astruct_76;
   let mut uVar9: u16;
   let mut uVar4: u16;
   let mut uVar11: u16;
@@ -598,7 +598,7 @@ pub fn unk_draw_op_1018_cda8(param_1: *mut astruct_57,mut param_2: u16 ,mut para
   let mut iStack48: i16;
   let mut iStack46: i16;
   let mut brush_handle_var44: HBRUSH16;
-  hdc_2a: HDC16;
+  let mut hdc_2a: HDC16;
   let mut uStack40: u16;
   let mut puStack38: *mut u32;
   let mut paintstruct_var_22: [u8;0x20] = [0;0x20];
@@ -693,7 +693,7 @@ astruct_20 * pass1_1018_cf74(param_1: *mut astruct_20,mut param_2: u16 ,mut para
 // WARNING: Unable to use type for symbol iVar1
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,struct36_param_1: *mut astruct_36)
+pub unsafe fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,struct36_param_1: *mut astruct_36)
 
 {
   let mut uVar1: u16;
@@ -720,7 +720,7 @@ pub fn unk_draw_op_1018_cfc0(param_1: *mut astruct_57,mut param_2: u16 ,struct36
   let mut iStack48: i16;
   let mut iStack46: i16;
   let mut hbrush_44: HBRUSH16;
-  local_2a: HDC16;
+  let mut local_2a: HDC16;
   let mut iStack40: i16;
   let mut puStack38: *mut u32;
   let mut paintstruct_22: [u8;0x20] = [0;0x20];

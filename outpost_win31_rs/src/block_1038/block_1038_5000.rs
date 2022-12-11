@@ -1,6 +1,6 @@
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_5050(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
+pub unsafe fn pass1_1038_5050(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -42,7 +42,7 @@ pub fn pass1_1038_5050(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_50e0(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
+pub unsafe fn pass1_1038_50e0(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -89,7 +89,7 @@ pub fn pass1_1038_50e0(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_518c(mut param_1: u16 ,mut param_2: u32)
+pub unsafe fn pass1_1038_518c(mut param_1: u16 ,mut param_2: u32)
 
 {
   let mut puVar1: *mut u16;
@@ -173,7 +173,7 @@ pub fn pass1_1038_518c(mut param_1: u16 ,mut param_2: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
+pub unsafe fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
 
 {
   let mut puVar1: *mut u32;
@@ -191,10 +191,10 @@ pub fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
   let mut uVar10: u16;
   let mut uStack26: u16;
   let mut iStack24: i16;
-  paStack22: *mut astruct_397;
+  let mut paStack22: *mut astruct_397;
   let mut uStack14: u32;
   let mut uStack10: u32;
-  iVar10: *mut astruct_601;
+  let mut iVar10: *mut astruct_601;
 
   iVar4 = -param_2;
   iVar10 = param_1;
@@ -249,7 +249,7 @@ pub fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16 )
   }
   return;
 }
-pub fn pass1_1038_53ba(mut param_1: u32,mut param_2: i16)
+pub unsafe fn pass1_1038_53ba(mut param_1: u32,mut param_2: i16)
 
 {
   let mut uVar1: u16;
@@ -260,7 +260,7 @@ pub fn pass1_1038_53ba(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn empty_1038_540a()
+pub unsafe fn empty_1038_540a()
 
 {
   return;
@@ -270,7 +270,7 @@ pub fn empty_1038_540a()
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_5464(mut param_1: u16 ,mut param_2: u32)
+pub unsafe fn pass1_1038_5464(mut param_1: u16 ,mut param_2: u32)
 
 {
   let mut uVar1: u32;
@@ -392,7 +392,7 @@ pub fn pass1_1038_5464(mut param_1: u16 ,mut param_2: u32)
 
 
 
-pub fn pass1_1038_565e(param_1: *mut u8,mut param_2: u32) -> u32
+pub unsafe fn pass1_1038_565e(param_1: *mut u8,mut param_2: u32) -> u32
 
 {
   let mut iVar1: i16;
@@ -408,7 +408,7 @@ pub fn pass1_1038_565e(param_1: *mut u8,mut param_2: u32) -> u32
   pass1_1038_582c(param_2,uVar3);
   return CONCAT22((iVar1 + 0x16),(iVar1 + 0x14));
 }
-pub fn pass1_1038_5694(mut param_1: u32,param_2: i32,mut param_3: i16)
+pub unsafe fn pass1_1038_5694(mut param_1: u32,param_2: i32,mut param_3: i16)
 
 {
   let mut uVar1: u16;
@@ -417,7 +417,7 @@ pub fn pass1_1038_5694(mut param_1: u32,param_2: i32,mut param_3: i16)
   (param_1 + param_3 * 0x4 + 0x26) = (param_1 + 0x26 + param_3 * 0x4) + param_2;
   return;
 }
-pub fn pass1_1038_56ba(mut param_1: u32)
+pub unsafe fn pass1_1038_56ba(mut param_1: u32)
 
 {
   pass1_1000_4906((param_1 & 0xffff0000 | (param_1 + 0x26)),NULL,0x94);
@@ -427,7 +427,7 @@ pub fn pass1_1038_56ba(mut param_1: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_56d6(mut param_1: u32,mut param_2: i16)
+pub unsafe fn pass1_1038_56d6(mut param_1: u32,mut param_2: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -474,7 +474,7 @@ pub fn pass1_1038_56d6(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn pass1_1038_5770(mut param_1: u32,param_2: i32,mut param_3: i16)
+pub unsafe fn pass1_1038_5770(mut param_1: u32,param_2: i32,mut param_3: i16)
 
 {
   let mut uVar1: u16;
@@ -483,7 +483,7 @@ pub fn pass1_1038_5770(mut param_1: u32,param_2: i32,mut param_3: i16)
   (param_1 + param_3 * 0x4 + 0xba) = (param_1 + 0xba + param_3 * 0x4) + param_2;
   return;
 }
-pub fn pass1_1038_5798(mut param_1: u32,param_2: i32,mut param_3: i16)
+pub unsafe fn pass1_1038_5798(mut param_1: u32,param_2: i32,mut param_3: i16)
 
 {
   let mut uVar1: u16;
@@ -492,13 +492,13 @@ pub fn pass1_1038_5798(mut param_1: u32,param_2: i32,mut param_3: i16)
   (param_1 + param_3 * 0x4 + 0x14e) = (param_1 + 0x14e + param_3 * 0x4) + param_2;
   return;
 }
-pub fn pass1_1038_57c0(mut param_1: u32)
+pub unsafe fn pass1_1038_57c0(mut param_1: u32)
 
 {
   pass1_1000_4906((param_1 & 0xffff0000 | (param_1 + 0x14e)),NULL,0x54);
   return;
 }
-pub fn pass1_1038_57dc(mut param_1: u32,param_2: i32,mut param_3: i16)
+pub unsafe fn pass1_1038_57dc(mut param_1: u32,param_2: i32,mut param_3: i16)
 
 {
   let mut uVar1: u16;
@@ -507,7 +507,7 @@ pub fn pass1_1038_57dc(mut param_1: u32,param_2: i32,mut param_3: i16)
   (param_1 + param_3 * 0x4 + 0x1a2) = (param_1 + 0x1a2 + param_3 * 0x4) + param_2;
   return;
 }
-pub fn pass1_1038_5804(mut param_1: u32,param_2: i32,mut param_3: i16)
+pub unsafe fn pass1_1038_5804(mut param_1: u32,param_2: i32,mut param_3: i16)
 
 {
   let mut uVar1: u16;
@@ -516,7 +516,7 @@ pub fn pass1_1038_5804(mut param_1: u32,param_2: i32,mut param_3: i16)
   (param_1 + param_3 * 0x4 + 0x1a2) = (param_1 + 0x1a2 + param_3 * 0x4) - param_2;
   return;
 }
-pub fn pass1_1038_582c(mut param_1: u32,mut param_2: u32)
+pub unsafe fn pass1_1038_582c(mut param_1: u32,mut param_2: u32)
 
 {
   let mut puVar1: *mut u32;
@@ -536,7 +536,7 @@ pub fn pass1_1038_582c(mut param_1: u32,mut param_2: u32)
   (iVar4 + 0x14) = param_2;
   return;
 }
-pub fn pass1_1038_5860(mut param_1: u32,mut param_2: u16 ,mut param_3: u32,mut param_4: i16)
+pub unsafe fn pass1_1038_5860(mut param_1: u32,mut param_2: u16 ,mut param_3: u32,mut param_4: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -576,7 +576,7 @@ pub fn pass1_1038_5860(mut param_1: u32,mut param_2: u16 ,mut param_3: u32,mut p
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_58e6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32,mut param_5: u32,mut param_6: i16)
+pub unsafe fn pass1_1038_58e6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32,mut param_5: u32,mut param_6: i16)
 
 {
   let mut iVar1: i16;
@@ -634,7 +634,7 @@ pub fn pass1_1038_58e6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_5a16(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
+pub unsafe fn pass1_1038_5a16(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -663,7 +663,7 @@ pub fn pass1_1038_5a16(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_5a96(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
+pub unsafe fn pass1_1038_5a96(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -698,7 +698,7 @@ pub fn pass1_1038_5a96(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1038_5b3c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
+pub unsafe fn pass1_1038_5b3c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -741,7 +741,7 @@ pub unsafe fn pass1_1038_5be8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   let mut uVar5: u16;
   let mut uVar6: u32;
   let mut iStack14: i16;
-  paStack10: *mut astruct_419;
+  let mut paStack10: *mut astruct_419;
 
   pass1_1030_627e(param_1,param_2,_PTR_LOOP_1050_5740,param_6,(param_3 + 0x8));
   uVar5 = param_2 | param_1;
@@ -779,7 +779,7 @@ pub unsafe fn pass1_1038_5be8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32,mut param_4: u32,mut param_5: i16,mut param_6: u16 )
+pub unsafe fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32,mut param_4: u32,mut param_5: i16,mut param_6: u16 )
 
 {
   let mut uVar1: u32;
@@ -844,7 +844,7 @@ pub fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32,mut pa
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn pass1_1038_5e16(mut param_1: i16,mut param_2: u32,mut param_3: u32)
+pub unsafe fn pass1_1038_5e16(mut param_1: i16,mut param_2: u32,mut param_3: u32)
 
 {
   let mut BVar1: bool;

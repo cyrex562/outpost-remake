@@ -1,5 +1,5 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
+pub unsafe fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
     let mut pcVar1: *mut c_char;
     let mut uVar2: u16;
     let mut iVar3: i16;
@@ -48,7 +48,7 @@ pub fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut astruct_72) {
+pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut astruct_72) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut paVar2: *mut astruct_484;
@@ -102,7 +102,7 @@ pub fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut astruct
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mut param_3: i16) {
+pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mut param_3: i16) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut puVar3: *mut u16;
@@ -317,7 +317,7 @@ pub fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mut param
 }
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16, mut param_3: u32) {
+pub unsafe fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16, mut param_3: u32) {
     let mut uVar1: u16;
     let mut paVar2: *mut Struct57;
     let mut iVar3: *mut astruct_53;
@@ -449,56 +449,56 @@ pub unsafe fn pass1_1008_3714(param_1: *mut StructA) {
     return;
 }
 
-pub fn pass1_1008_372c(mut param_1: i16, mut param_2: u16) -> u32 {
+pub unsafe fn pass1_1008_372c(mut param_1: i16, mut param_2: u16) -> u32 {
     return CONCAT22(param_2, param_1 + 0xa);
 }
-pub fn pass1_1008_373c() {
+pub unsafe fn pass1_1008_373c() {
     return;
 }
-pub fn pass1_1008_3740() {
+pub unsafe fn pass1_1008_3740() {
     return;
 }
-pub fn pass1_1008_3744() {
+pub unsafe fn pass1_1008_3744() {
     return;
 }
-pub fn pass1_1008_3748() {
+pub unsafe fn pass1_1008_3748() {
     return;
 }
-pub fn pass1_1008_374c() {
+pub unsafe fn pass1_1008_374c() {
     return;
 }
-pub fn pass1_1008_3750() {
+pub unsafe fn pass1_1008_3750() {
     return;
 }
-pub fn pass1_1008_3754() {
+pub unsafe fn pass1_1008_3754() {
     return;
 }
 
 pub unsafe fn pass1_1008_3758() -> u16 {
     return 0x1;
 }
-pub fn pass1_1008_375e() {
+pub unsafe fn pass1_1008_375e() {
     return;
 }
-pub fn pass1_1008_3762() {
+pub unsafe fn pass1_1008_3762() {
     return;
 }
-pub fn pass1_1008_3766() {
+pub unsafe fn pass1_1008_3766() {
     return;
 }
-pub fn FUN_1008_376a() {
+pub unsafe fn FUN_1008_376a() {
     return;
 }
-pub fn FUN_1008_376e() {
+pub unsafe fn FUN_1008_376e() {
     return;
 }
-pub fn FUN_1008_3772() {
+pub unsafe fn FUN_1008_3772() {
     return;
 }
-pub fn FUN_1008_3776() {
+pub unsafe fn FUN_1008_3776() {
     return;
 }
-pub fn pass1_1008_377a() {
+pub unsafe fn pass1_1008_377a() {
     return;
 }
 
@@ -527,7 +527,7 @@ pub unsafe fn pass1_1008_37aa(param_1: *mut astruct_450, param_2: u8) -> *mut as
     return param_1;
 }
 
-pub fn pass1_1008_37e4(mut param_1: u32, param_2: u8) -> u32 {
+pub unsafe fn pass1_1008_37e4(mut param_1: u32, param_2: u8) -> u32 {
     cleanup_ui_op_1008_0618(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -552,7 +552,7 @@ pub unsafe fn pass1_1008_392e(param_1: *mut u16, mut param_2: u16) -> *mut u16 {
     (iVar1 + 0x2) = 0x1008;
     return param_1;
 }
-pub fn pass1_1008_397a(param_1: *mut astruct_452) {
+pub unsafe fn pass1_1008_397a(param_1: *mut astruct_452) {
     let mut iVar1: *mut astruct_452;
     let mut uVar1: *mut astruct_452;
 
@@ -568,7 +568,7 @@ pub fn pass1_1008_397a(param_1: *mut astruct_452) {
 }
 
 // l
-pub fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2: u16) {
+pub unsafe fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2: u16) {
     let mut hbrush: HBRUSH16;
     let mut local_paint_struct: [u8; 0x20] = [0; 0x20];
 
@@ -586,7 +586,7 @@ pub fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2: u16) 
     DeleteObject16(hbrush);
     return;
 }
-pub fn pass1_1008_3a10() {
+pub unsafe fn pass1_1008_3a10() {
     return;
 }
 
@@ -615,7 +615,7 @@ pub unsafe fn pass1_1008_3a40(param_1: *mut astruct_451, param_2: u8) -> *mut u1
     return param_1;
 }
 
-pub fn pass1_1008_3a7a(mut param_1: u32, param_2: u8) -> u32 {
+pub unsafe fn pass1_1008_3a7a(mut param_1: u32, param_2: u8) -> u32 {
     pass1_1008_397a(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -639,7 +639,7 @@ pub unsafe fn pass1_1008_3ab8(param_1: *mut astruct_20) -> *mut astruct_20 {
     );
     return param_1;
 }
-pub fn post_quit_msg_1008_3af4() {
+pub unsafe fn post_quit_msg_1008_3af4() {
     PostQuitMessage16(0x0);
     return;
 }
@@ -659,7 +659,7 @@ pub unsafe fn pass1_1008_3afe(param_1: *mut u16, param_2: u8) {
     }
     return;
 }
-pub fn pass1_1008_3bd6(
+pub unsafe fn pass1_1008_3bd6(
     mut param_1: u32,
     param_2: *mut astruct_57,
     param_3: *mut astruct_57,
@@ -732,7 +732,7 @@ pub unsafe fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HD
     }
     return;
 }
-pub fn FUN_1008_3cd2() {
+pub unsafe fn FUN_1008_3cd2() {
     return;
 }
 
@@ -743,14 +743,14 @@ pub unsafe fn pass1_1008_3cd6(param_1: *mut StructD, param_2: u8) -> *mut Struct
     }
     return param_1;
 }
-pub fn post_msg_1008_3d20(mut param_1: u32) {
+pub unsafe fn post_msg_1008_3d20(mut param_1: u32) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
     PostMessage16(0x0, (param_1 + 0xcc), 0x111, (param_1 + 0xbc));
     return;
 }
-pub fn FUN_1008_3d40() {
+pub unsafe fn FUN_1008_3d40() {
     return;
 }
 

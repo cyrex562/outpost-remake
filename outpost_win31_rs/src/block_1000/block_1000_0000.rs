@@ -337,7 +337,7 @@ pub unsafe fn pass1_1000_0368(mut param_1: u16,
     (param_3 + 0xa) = param_1;
 }
 
-pub fn pass1_1000_05b4(param_1: u8,
+pub unsafe fn pass1_1000_05b4(param_1: u8,
                        param_2: *mut u16)
 {
     *(param_2 + 0xa) = 0x1;

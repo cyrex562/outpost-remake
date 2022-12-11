@@ -783,7 +783,7 @@ struct astruct_826 {
     let mut field3_0x3: u8;
     let mut field4_0x4: u8;
     let mut field5_0x5: u8;
-pub fn * pvoid32_0x6;
+pub unsafe fn * pvoid32_0x6;
 };
 
 

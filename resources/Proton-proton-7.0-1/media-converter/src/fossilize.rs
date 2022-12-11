@@ -210,7 +210,7 @@ pub enum CRCCheck {
 
 impl StreamArchive {
 
-    pub fn new<P: AsRef<std::path::Path>>(filename: P, fileopts: &OpenOptions, num_tags: usize) -> Result<Self, Error> {
+    pub unsafe fn new<P: AsRef<std::path::Path>>(filename: P, fileopts: &OpenOptions, num_tags: usize) -> Result<Self, Error> {
 
         let file = fileopts.open(filename)?;
 
@@ -230,7 +230,7 @@ impl StreamArchive {
         Ok(ret)
     }
 
-    pub fn prepare(&mut self) -> Result<(), Error> {
+    pub unsafe fn prepare(&mut self) -> Result<(), Error> {
         self.write_pos = self.file.seek(io::SeekFrom::Start(0))?;
 
         if self.file.metadata().unwrap().len() > 0 {
@@ -299,22 +299,22 @@ impl StreamArchive {
         Ok(())
     }
 
-    pub fn has_entry(&self, tag: FossilizeTag, hash: FossilizeHash) -> bool {
+    pub unsafe fn has_entry(&self, tag: FossilizeTag, hash: FossilizeHash) -> bool {
         self.seen_blobs[tag as usize].contains_key(&hash)
     }
 
-    pub fn iter_tag(&self, tag: FossilizeTag) -> std::collections::hash_map::Keys<FossilizeHash, PayloadEntry> {
+    pub unsafe fn iter_tag(&self, tag: FossilizeTag) -> std::collections::hash_map::Keys<FossilizeHash, PayloadEntry> {
         self.seen_blobs[tag as usize].keys()
     }
 
-    pub fn entry_size(&self, tag: FossilizeTag, hash: FossilizeHash) -> Result<usize, Error> {
+    pub unsafe fn entry_size(&self, tag: FossilizeTag, hash: FossilizeHash) -> Result<usize, Error> {
         match self.seen_blobs[tag as usize].get(&hash) {
             None => Err(Error::EntryNotFound),
             Some(e) => Ok(e.payload_info.full_size as usize),
         }
     }
 
-    pub fn read_entry(&mut self, tag: FossilizeTag, hash: FossilizeHash, offset: u64, buf: &mut [u8], crc_opt: CRCCheck) -> Result<usize, Error> {
+    pub unsafe fn read_entry(&mut self, tag: FossilizeTag, hash: FossilizeHash, offset: u64, buf: &mut [u8], crc_opt: CRCCheck) -> Result<usize, Error> {
         if tag as usize >= self.seen_blobs.len() {
             return Err(Error::InvalidTag);
         }
@@ -355,7 +355,7 @@ impl StreamArchive {
         Ok(to_copy)
     }
 
-    pub fn write_entry(&mut self, tag: FossilizeTag, hash: FossilizeHash, data: &mut dyn Read, crc_opt: CRCCheck) -> Result<(), Error> {
+    pub unsafe fn write_entry(&mut self, tag: FossilizeTag, hash: FossilizeHash, data: &mut dyn Read, crc_opt: CRCCheck) -> Result<(), Error> {
         if self.has_entry(tag, hash) {
             return Ok(());
         }
@@ -434,7 +434,7 @@ impl StreamArchive {
     }
 
     /* rewrites the database, discarding entries listed in 'to_discard' */
-    pub fn discard_entries(&mut self, to_discard: &Vec<(FossilizeTag, FossilizeHash)>) -> Result<(), Error> {
+    pub unsafe fn discard_entries(&mut self, to_discard: &Vec<(FossilizeTag, FossilizeHash)>) -> Result<(), Error> {
         self.write_pos = self.file.seek(io::SeekFrom::Start(0))?;
         for v in self.seen_blobs.iter_mut() {
             v.clear();

@@ -1,9 +1,9 @@
-pub fn pass1_1000_3024() {
+pub unsafe fn pass1_1000_3024() {
     pass1_1000_3038(1);
     return;
 }
 
-pub fn pass1_1000_3038(mut param_1: i16) -> i16 {
+pub unsafe fn pass1_1000_3038(mut param_1: i16) -> i16 {
     let mut uVar1: u16;
     let mut puVar2: *mut u8;
     let mut iVar3: i16;
@@ -1055,7 +1055,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
     }
     return uVar2;
 }
-pub fn pass1_1000_39e1() {}
+pub unsafe fn pass1_1000_39e1() {}
 
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Removing unreachable block (ram,0x10003afe)
@@ -1496,7 +1496,7 @@ pub unsafe fn pass1_1000_3cb7(mut param_1: i16) {
     }
     return;
 }
-pub fn pass1_1000_3cd8(mut param_1: u16, mut param_2: u16) {
+pub unsafe fn pass1_1000_3cd8(mut param_1: u16, mut param_2: u16) {
     free_mem_1000_407a(param_1, param_2);
     return;
 }
@@ -2041,7 +2041,7 @@ pub unsafe fn pass1_1000_3e82(mut param_1: u16, param_2: *mut u8, mut param_3: u
     }
     return pb_var9;
 }
-pub fn fatal_app_exit_1000_3e9e() {
+pub unsafe fn fatal_app_exit_1000_3e9e() {
     FatalAppExit16(s_ABNORMAL_PROGRAM_TERMINATION_1050_6544, 0x0);
     return;
 }

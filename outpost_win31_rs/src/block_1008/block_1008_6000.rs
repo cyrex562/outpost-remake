@@ -1,5 +1,5 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
+pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
     let mut uVar1: u16;
     let mut local_106: [u8; 0x100] = [0; 0x100];
 
@@ -47,7 +47,7 @@ pub unsafe fn str_op_1008_60e8(mut param_1: u16, param_2: *mut c_char) -> u16 {
     }
     return 0x0;
 }
-pub fn pass1_1008_612e(mut param_1: u16, mut param_2: i16, mut param_3: i16) {
+pub unsafe fn pass1_1008_612e(mut param_1: u16, mut param_2: i16, mut param_3: i16) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut lVar3: i32;
@@ -152,7 +152,7 @@ pub unsafe fn destroy_win_1008_628e(mut param_1: u32) {
     (param_1 + 0x8) = 0;
     return;
 }
-pub fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
+pub unsafe fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
     //   RECT16 rect_2e [0x2];
     let mut rect_2e: [RECt16; 2] = [RECT16::default(); 2];
     let mut hbrush_var38: HBRUSH16;
@@ -167,16 +167,16 @@ pub fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
     DeleteObject16(hbrush_var38);
     return;
 }
-pub fn FUN_1008_6324() {
+pub unsafe fn FUN_1008_6324() {
     return;
 }
-pub fn FUN_1008_6328() {
+pub unsafe fn FUN_1008_6328() {
     return;
 }
-pub fn FUN_1008_632c() {
+pub unsafe fn FUN_1008_632c() {
     return;
 }
-pub fn pass1_1008_6330(param_1: *mut astruct_456, param_2: u8) {
+pub unsafe fn pass1_1008_6330(param_1: *mut astruct_456, param_2: u8) {
     let mut uVar1: *mut astruct_456;
     let mut uVar2: u16;
 
@@ -294,7 +294,7 @@ pub unsafe fn pass1_1008_64c8(
     return;
 }
 
-pub fn pass1_1008_6562(
+pub unsafe fn pass1_1008_6562(
     param_1: *mut astruct_57,
     param_2: *mut astruct_76,
     mut param_3: u32,
@@ -401,7 +401,7 @@ pub unsafe fn struct_op_1008_6604(param_1: *mut astruct_76, mut param_2: i16, pa
     return;
 }
 
-pub fn pass1_1008_6732(param_1: *mut astruct_288) {
+pub unsafe fn pass1_1008_6732(param_1: *mut astruct_288) {
     let mut iVar2: *mut astruct_288;
     let mut uVar1: u16;
 
@@ -466,23 +466,23 @@ pub unsafe fn memcpy_op_1008_676e(
     param_1.field22_0x1c = 0x1;
     return;
 }
-pub fn FUN_1008_6814() {
+pub unsafe fn FUN_1008_6814() {
     return;
 }
-pub fn FUN_1008_681a() {
+pub unsafe fn FUN_1008_681a() {
     return;
 }
-pub fn FUN_1008_681e() {
+pub unsafe fn FUN_1008_681e() {
     return;
 }
 
 pub unsafe fn FUN_1008_6822() -> u16 {
     return 0x0;
 }
-pub fn FUN_1008_6824() {
+pub unsafe fn FUN_1008_6824() {
     return;
 }
-pub fn FUN_1008_6828() {
+pub unsafe fn FUN_1008_6828() {
     return;
 }
 
@@ -490,14 +490,14 @@ pub unsafe fn FUN_1008_682e() -> u16 {
     return 0x0;
 }
 
-pub fn pass1_1008_6834(mut param_1: u32, param_2: u8) -> u32 {
+pub unsafe fn pass1_1008_6834(mut param_1: u32, param_2: u8) -> u32 {
     pass1_1008_6732(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
     return param_1;
 }
-pub fn set_struct_1008_687a(param_1: *mut astruct_20, mut param_2: u32) {
+pub unsafe fn set_struct_1008_687a(param_1: *mut astruct_20, mut param_2: u32) {
     let mut iVar1: *mut astruct_20;
     let mut uVar1: *mut astruct_20;
 
@@ -713,7 +713,7 @@ pub unsafe fn pass1_1008_6b5a(param_1: *mut astruct_458, param_2: u8) -> *mut u1
     }
     return param_1;
 }
-pub fn pass1_1008_6bb4(param_1: *mut astruct_459, param_2: u8) {
+pub unsafe fn pass1_1008_6bb4(param_1: *mut astruct_459, param_2: u8) {
     let mut uVar1: *mut astruct_459;
     let mut uVar2: u16;
 
@@ -730,7 +730,7 @@ pub fn pass1_1008_6bb4(param_1: *mut astruct_459, param_2: u8) {
     }
     return;
 }
-pub fn pass1_1008_6c90(param_1: *mut u16) {
+pub unsafe fn pass1_1008_6c90(param_1: *mut u16) {
     pass1_1008_3e38(param_1);
     pass1_1008_3e38((param_1 & 0xffff0000 | (param_1 + 0x6)));
     return;
@@ -754,7 +754,7 @@ pub unsafe fn pass1_1008_6cb4(
     iVar1.field6_0xa = (param_2 + 1);
     return param_1;
 }
-pub fn pass1_1008_6cec(
+pub unsafe fn pass1_1008_6cec(
     param_1: *mut u16,
     mut param_2: u16,
     mut param_3: u32,
@@ -770,17 +770,17 @@ pub fn pass1_1008_6cec(
     );
     return;
 }
-pub fn pass1_1008_6d18(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
+pub unsafe fn pass1_1008_6d18(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
     pass1_1008_3f62(param_1, param_3);
     pass1_1008_3f62((param_1 & 0xffff0000 | (param_1 + 0x6)), param_2);
     return;
 }
-pub fn pass1_1008_6d3e(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
+pub unsafe fn pass1_1008_6d3e(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
     pass1_1008_3f62(param_3, param_1);
     pass1_1008_3f62(param_2, (param_1 & 0xffff0000 | (param_1 + 0x6)));
     return;
 }
-pub fn pass1_1008_6d64(param_1: *mut u16, param_2: *mut u16) {
+pub unsafe fn pass1_1008_6d64(param_1: *mut u16, param_2: *mut u16) {
     pass1_1008_3f62(param_2, param_1);
     pass1_1008_3ee2(param_2, (param_1 & 0xffff0000 | (param_1 + 0x6)));
     return;

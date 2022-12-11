@@ -298,7 +298,7 @@ pub unsafe fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823) {
     return;
 }
 
-pub fn pass1_1008_049c(mut param_1: u16, mut param_2: u16, param_3: *mut c_char) {
+pub unsafe fn pass1_1008_049c(mut param_1: u16, mut param_2: u16, param_3: *mut c_char) {
     let mut uVar1: u16;
     let mut puVar2: *mut u8;
 
@@ -332,7 +332,7 @@ pub unsafe fn pass1_1008_04f8(param_1: *mut u16, param_2: u8) -> *mut u16 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Restarted to delay deadcode elimination for space: stack
-pub fn set_struct_op_1008_0536(param_1: *mut astruct_20, mut param_2: u16) {
+pub unsafe fn set_struct_op_1008_0536(param_1: *mut astruct_20, mut param_2: u16) {
     let mut hicon_1: HICON16;
     let mut hcursor_1: HCURSOR16;
     let mut hbrush_1: HGDIOBJ16;
@@ -568,7 +568,7 @@ pub unsafe fn pass1_1008_07d8(
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut StructD) {
+pub unsafe fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut StructD) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut uVar2: u32;
@@ -606,7 +606,7 @@ pub fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut StructD) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn pass1_1008_0932() -> u32 {
+pub unsafe fn pass1_1008_0932() -> u32 {
     let mut uVar1: u32;
 
     if (_u16_1050_14cc.is_null() == false) {
@@ -631,7 +631,7 @@ pub unsafe fn pass1_1008_0984(mut param_1: i16, mut param_2: u16, mut param_3: i
     }
     return;
 }
-pub fn menu_ui_op_1008_09ba(param_1: *mut astruct_853, param_2: HWND16, param_3: *mut RECT16) {
+pub unsafe fn menu_ui_op_1008_09ba(param_1: *mut astruct_853, param_2: HWND16, param_3: *mut RECT16) {
     let mut HVar1: HMENU16;
     let mut iVar2: *mut astruct_853;
     let mut uVar2: u16;
@@ -966,7 +966,7 @@ pub unsafe fn mixed_win_op_1008_0c60(
             uVar11 = '\x11';
         }
         // TODO: goto LAB_1008_0e3d;
-        //   default:
+        //   _ =>
         _ => {
             if (((&struct_var5.field227_0xe8 + 0x2) | &struct_var5.field227_0xe8) == 0) {
                 return 0x0;
@@ -1552,14 +1552,14 @@ pub unsafe fn mixed_win_op_1008_0c60(
     ui_op_1008_2c4e(pSVar8, param_8, param_5, uVar14);
     return param_1;
 }
-pub fn caseD_a7(mut param_1: u16, mut param_2: u16) {
+pub unsafe fn caseD_a7(mut param_1: u16, mut param_2: u16) {
     let mut unaff_BP: i16;
     let mut uVar1: *mut astruct_72;
 
     ui_op_1008_2c4e(param_1, param_2, (unaff_BP + 0x6), 0x57);
     return;
 }
-pub fn caseD_aa() {
+pub unsafe fn caseD_aa() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1567,7 +1567,7 @@ pub fn caseD_aa() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x58);
     return;
 }
-pub fn caseD_ac() {
+pub unsafe fn caseD_ac() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1575,7 +1575,7 @@ pub fn caseD_ac() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x59);
     return;
 }
-pub fn caseD_ad() {
+pub unsafe fn caseD_ad() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1583,7 +1583,7 @@ pub fn caseD_ad() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x5a);
     return;
 }
-pub fn caseD_ae() {
+pub unsafe fn caseD_ae() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1591,7 +1591,7 @@ pub fn caseD_ae() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x5b);
     return;
 }
-pub fn caseD_b1() {
+pub unsafe fn caseD_b1() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1599,7 +1599,7 @@ pub fn caseD_b1() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x5c);
     return;
 }
-pub fn caseD_b3() {
+pub unsafe fn caseD_b3() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -1607,7 +1607,7 @@ pub fn caseD_b3() {
     ui_op_1008_2c4e(in_DX, in_stack_0000ffee, (unaff_BP + 0x6), 0x5d);
     return;
 }
-pub fn draw_op_1008_1230(mut param_1: u32) {
+pub unsafe fn draw_op_1008_1230(mut param_1: u32) {
     let mut uVar1: u32;
 
     uVar1 = (param_1 + 0xe0);

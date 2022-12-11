@@ -11,7 +11,7 @@ use crate::structs_2_h::{Struct57, StructA};
 use crate::sys_api::{CreateWindow16, DestroyWindow16, GetClassInfo16, GetClientRect16, GetDlgItem16, GetStockObject16, OutputDebugString16, RegisterClass16, SendMessage16, SetFocus16, ShowWindow16};
 use crate::utils::{CONCAT22, SUB42};
 
-pub fn create_window_1008_5e7e() ->HWND16
+pub unsafe fn create_window_1008_5e7e() ->HWND16
 {
   let mut puVar2: *mut c_char;
   let mut BVar3: bool;

@@ -37,7 +37,7 @@ glib::wrapper! {
     pub struct VideoConv(ObjectSubclass<imp::VideoConv>) @extends gst::Element, gst::Object;
 }
 
-pub fn register(plugin: &gst::Plugin) -> Result<(), glib::BoolError> {
+pub unsafe fn register(plugin: &gst::Plugin) -> Result<(), glib::BoolError> {
     gst::Element::register(
         Some(plugin),
         "protonvideoconverter",

@@ -8,7 +8,7 @@ pub unsafe fn pass1_1040_5238(mut param_1: u32) -> u16
   (**ppcVar1)();
   return 0x0;
 }
-pub fn destroy_win_1040_5256(param_1: *mut astruct_34)
+pub unsafe fn destroy_win_1040_5256(param_1: *mut astruct_34)
 
 {
   let mut pUVar1: *mut u32;
@@ -46,7 +46,7 @@ pub fn destroy_win_1040_5256(param_1: *mut astruct_34)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_ui_op_1040_52c0(param_1: *mut u8,param_2: *mut astruct_894,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
+pub unsafe fn win_ui_op_1040_52c0(param_1: *mut u8,param_2: *mut astruct_894,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -61,7 +61,7 @@ pub fn win_ui_op_1040_52c0(param_1: *mut u8,param_2: *mut astruct_894,mut param_
   let mut paVar8: *mut Struct57;
   let mut uVar9: u32;
   let mut puVar10: *mut u32;
-  paVar11: *mut astruct_940;
+  let mut paVar11: *mut astruct_940;
   let mut in_stack_0000fe84: u16;
   let mut in_stack_0000fe86: u16;
   let mut in_stack_0000ffa8: u16;
@@ -195,7 +195,7 @@ pub fn win_ui_op_1040_52c0(param_1: *mut u8,param_2: *mut astruct_894,mut param_
 
 
 
-pub fn pass1_1040_557c(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1040_557c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1040_4f0a(param_1);
@@ -208,7 +208,7 @@ pub fn pass1_1040_557c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Unable to use type for symbol uVar1
-pub fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 )
+pub unsafe fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 )
 
 {
   let mut uVar2: u32;
@@ -283,7 +283,7 @@ pub fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut par
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn enable_win_1040_5780(param_1: u32)
+pub unsafe fn enable_win_1040_5780(param_1: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -291,14 +291,14 @@ pub fn enable_win_1040_5780(param_1: u32)
   let mut uVar3: u16;
   let mut hwnd: HWND16;
   let mut in_EDX: *mut Struct57;
-  iVar4: *mut astruct_945;
+  let mut iVar4: *mut astruct_945;
   let mut uVar4: u16;
   let mut puVar5: *mut u32;
   let mut in_stack_0000fe98: u16;
   let mut in_stack_0000ffbc: u16;
   let mut in_stack_0000ffc2: u16;
   let mut in_stack_0000ffc6: u16;
-  paVar6: *mut astruct_945;
+  let mut paVar6: *mut astruct_945;
 
   uVar4 = (param_1 >> 0x10);
   iVar4 = param_1;
@@ -315,7 +315,7 @@ pub fn enable_win_1040_5780(param_1: u32)
   }
   return;
 }
-pub fn pass1_1040_57d4(param_1: *mut u8,StructB *param_2)
+pub unsafe fn pass1_1040_57d4(param_1: *mut u8,StructB *param_2)
 
 {
   pass1_1040_5d42(param_2);
@@ -328,12 +328,12 @@ pub fn pass1_1040_57d4(param_1: *mut u8,StructB *param_2)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
+pub unsafe fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut uVar2: u32;
-  paVar5: *mut astruct_18;
+  let mut paVar5: *mut astruct_18;
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut hwnd: HWND16;
@@ -445,7 +445,7 @@ pub fn win_ui_op_1040_5800(param_1: *mut u8,param_2: *mut astruct_18,mut param_3
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct_741)
+pub unsafe fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct_741)
 
 {
   let mut uVar1: u16;
@@ -475,7 +475,7 @@ pub fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct_741)
   let mut iStack72: i16;
   let mut iStack68: i16;
   let mut puStack54: *mut u32;
-  hdc16_2c: HDC16;
+  let mut hdc16_2c: HDC16;
   let mut paint_struct_2a: [u8;0x20] = [0;0x20];
   let mut rect_array_local_a: [u8;0x8] = [0;0x8];
   let mut uVar13: u16;
@@ -618,13 +618,13 @@ pub unsafe fn pass1_1040_5cd6(mut param_1: u32) -> u16
 
 // WARNING: Unable to use type for symbol uVar3
 
-pub fn pass1_1040_5d12(mut param_1: u32) -> u32
+pub unsafe fn pass1_1040_5d12(mut param_1: u32) -> u32
 
 {
   let mut uVar1: u16;
   let mut uVar2: u16;
   let mut uVar4: u16;
-  iVar4: *mut astruct_440;
+  let mut iVar4: *mut astruct_440;
   let mut uVar5: u16;
   let mut uVar6: u32;
   let mut uVar3: u32;
@@ -641,7 +641,7 @@ pub fn pass1_1040_5d12(mut param_1: u32) -> u32
   }
   return 0x0;
 }
-pub fn pass1_1040_5d42(StructB *param_1)
+pub unsafe fn pass1_1040_5d42(StructB *param_1)
 
 {
   let mut uVar1: u16;
@@ -685,7 +685,7 @@ pub fn pass1_1040_5d42(StructB *param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1040_5dc4(param_1: *mut u8,StructB *param_2)
+pub unsafe fn pass1_1040_5dc4(param_1: *mut u8,StructB *param_2)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -763,261 +763,261 @@ pub unsafe fn pass1_1040_5eaa(StructB *param_1) -> i16
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
   switch((iVar1 + 0x9a)) {
-  case 0x0:
-  case 0x70:
-  case 0x71:
+  0x0 =>
+  0x70 =>
+  0x71 =>
     (iVar1 + 0x98) = 0;
     return iVar1;
-  case 0x1:
-  case 0x2:
+  0x1 =>
+  0x2 =>
     (iVar1 + 0x98) = 0xd;
     return iVar1;
-  case 0x3:
+  0x3 =>
     (iVar1 + 0x98) = 0xe;
     return iVar1;
-  case 0x4:
-  case 0x4b:
+  0x4 =>
+  0x4b =>
     (iVar1 + 0x98) = 0xf;
     break;
-  case 0x5:
+  0x5 =>
     (iVar1 + 0x98) = 0x10;
     return iVar1;
-  case 0x6:
+  0x6 =>
     (iVar1 + 0x98) = 0x11;
     return iVar1;
-  case 0x7:
+  0x7 =>
     (iVar1 + 0x98) = 0x12;
     break;
-  case 0x8:
+  0x8 =>
     (iVar1 + 0x98) = 0x13;
     break;
-  case 0x9:
-  case 0xa:
-  case 0xb:
+  0x9 =>
+  0xa =>
+  0xb =>
     (iVar1 + 0x98) = 0x14;
     break;
-  case 0xc:
+  0xc =>
     (iVar1 + 0x98) = 0x18;
     break;
-  case 0xd:
+  0xd =>
     (iVar1 + 0x98) = 0x19;
     break;
-  case 0xe:
-  case 0x76:
+  0xe =>
+  0x76 =>
     (iVar1 + 0x98) = 0x17;
     break;
-  case 0xf:
-  case 0x10:
-  case 0x11:
+  0xf =>
+  0x10 =>
+  0x11 =>
     (iVar1 + 0x98) = 0x1a;
     break;
-  case 0x12:
+  0x12 =>
     (iVar1 + 0x98) = 0x1b;
     break;
-  case 0x13:
+  0x13 =>
     (iVar1 + 0x98) = 0x1c;
     break;
-  case 0x14:
+  0x14 =>
     (iVar1 + 0x98) = 0x1d;
     break;
-  case 0x15:
-  case 0x16:
-  case 0x17:
-  case 0x18:
-  case 0x19:
+  0x15 =>
+  0x16 =>
+  0x17 =>
+  0x18 =>
+  0x19 =>
     (iVar1 + 0x98) = 0x1e;
     break;
-  case 0x1a:
+  0x1a =>
     (iVar1 + 0x98) = 0x1f;
     break;
-  case 0x1b:
+  0x1b =>
     (iVar1 + 0x98) = 0x20;
     break;
-  case 0x1c:
-  case 0x1d:
-  case 0x1e:
+  0x1c =>
+  0x1d =>
+  0x1e =>
     (iVar1 + 0x98) = 0x21;
     break;
-  case 0x1f:
+  0x1f =>
     (iVar1 + 0x98) = 0x22;
     break;
-  case 0x20:
+  0x20 =>
     (iVar1 + 0x98) = 0x23;
     break;
-  case 0x21:
+  0x21 =>
     (iVar1 + 0x98) = 0x24;
     break;
-  case 0x22:
+  0x22 =>
     (iVar1 + 0x98) = 0x25;
     break;
-  case 0x23:
-  case 0x24:
-  case 0x25:
-  case 0x26:
-  case 0x27:
-  case 0x28:
-  case 0x29:
-  case 0x2a:
-  case 0x2b:
+  0x23 =>
+  0x24 =>
+  0x25 =>
+  0x26 =>
+  0x27 =>
+  0x28 =>
+  0x29 =>
+  0x2a =>
+  0x2b =>
     (iVar1 + 0x98) = 0x26;
     break;
-  case 0x2c:
+  0x2c =>
     (iVar1 + 0x98) = 0x27;
     break;
-  case 0x2d:
+  0x2d =>
     (iVar1 + 0x98) = 0x28;
     break;
-  case 0x2e:
-  case 0x2f:
-  case 0x30:
-  case 0x31:
+  0x2e =>
+  0x2f =>
+  0x30 =>
+  0x31 =>
     (iVar1 + 0x98) = 0x29;
     break;
-  case 0x32:
-  case 0x33:
-  case 0x34:
-  case 0x35:
-  case 0x4d:
+  0x32 =>
+  0x33 =>
+  0x34 =>
+  0x35 =>
+  0x4d =>
     (iVar1 + 0x98) = 0x2a;
     break;
-  case 0x36:
+  0x36 =>
     (iVar1 + 0x98) = 0x2b;
     break;
-  case 0x37:
-  case 0x38:
-  case 0x39:
+  0x37 =>
+  0x38 =>
+  0x39 =>
     (iVar1 + 0x98) = 0x2c;
     break;
-  case 0x3a:
+  0x3a =>
     (iVar1 + 0x98) = 0x2d;
     break;
-  case 0x3b:
-  case 0x3c:
+  0x3b =>
+  0x3c =>
     (iVar1 + 0x98) = 0x2e;
     break;
-  case 0x3d:
+  0x3d =>
     (iVar1 + 0x98) = 0x2f;
     break;
-  case 0x3e:
+  0x3e =>
     (iVar1 + 0x98) = 0x30;
     break;
-  case 0x3f:
+  0x3f =>
     (iVar1 + 0x98) = 0x31;
     break;
-  case 0x40:
+  0x40 =>
     (iVar1 + 0x98) = 0x32;
     break;
-  case 0x41:
+  0x41 =>
     (iVar1 + 0x98) = 0x33;
     break;
-  case 0x42:
+  0x42 =>
     (iVar1 + 0x98) = 0x34;
     break;
-  case 0x43:
+  0x43 =>
     (iVar1 + 0x98) = 0x35;
     break;
-  case 0x44:
+  0x44 =>
     (iVar1 + 0x98) = 0x36;
     break;
-  case 0x45:
+  0x45 =>
     (iVar1 + 0x98) = 0x37;
     break;
-  case 0x46:
+  0x46 =>
     (iVar1 + 0x98) = 0x38;
     break;
-  case 0x47:
+  0x47 =>
     (iVar1 + 0x98) = 0x39;
     break;
-  case 0x48:
-  case 0x49:
-  case 0x4a:
+  0x48 =>
+  0x49 =>
+  0x4a =>
     (iVar1 + 0x98) = 0x3a;
     break;
-  case 0x4c:
+  0x4c =>
     (iVar1 + 0x98) = 0x3b;
     break;
-  case 0x4e:
+  0x4e =>
     (iVar1 + 0x98) = 0x3c;
     break;
-  case 0x4f:
-  case 0x50:
+  0x4f =>
+  0x50 =>
     (iVar1 + 0x98) = 0x3d;
     break;
-  case 0x51:
-  case 0x52:
-  case 0x53:
-  case 0x54:
-  case 0x55:
+  0x51 =>
+  0x52 =>
+  0x53 =>
+  0x54 =>
+  0x55 =>
     (iVar1 + 0x98) = 0x3e;
     break;
-  case 0x56:
-  case 0x57:
-  case 0x58:
-  case 0x59:
-  case 0x5a:
+  0x56 =>
+  0x57 =>
+  0x58 =>
+  0x59 =>
+  0x5a =>
     (iVar1 + 0x98) = 0x3f;
     break;
-  case 0x5b:
+  0x5b =>
     (iVar1 + 0x98) = 0x40;
     break;
-  case 0x5c:
-  case 0x5d:
-  case 0x5e:
+  0x5c =>
+  0x5d =>
+  0x5e =>
     (iVar1 + 0x98) = 0x41;
     break;
-  case 0x5f:
-  case 0x60:
-  case 0x61:
+  0x5f =>
+  0x60 =>
+  0x61 =>
     (iVar1 + 0x98) = 0x42;
     break;
-  case 0x62:
-  case 0x63:
-  case 0x64:
-  case 0x65:
-  case 0x66:
+  0x62 =>
+  0x63 =>
+  0x64 =>
+  0x65 =>
+  0x66 =>
     (iVar1 + 0x98) = 0x43;
     break;
-  case 0x67:
-  case 0x68:
+  0x67 =>
+  0x68 =>
     (iVar1 + 0x98) = 0x44;
     break;
-  case 0x69:
+  0x69 =>
     (iVar1 + 0x98) = 0x45;
     break;
-  case 0x6a:
+  0x6a =>
     (iVar1 + 0x98) = 0x46;
     break;
-  case 0x6b:
+  0x6b =>
     (iVar1 + 0x98) = 0x47;
     break;
-  case 0x6c:
+  0x6c =>
     (iVar1 + 0x98) = 0x48;
     break;
-  case 0x6d:
+  0x6d =>
     (iVar1 + 0x98) = 0x49;
     break;
-  case 0x6e:
+  0x6e =>
     (iVar1 + 0x98) = 0x4a;
     break;
-  case 0x6f:
+  0x6f =>
     (iVar1 + 0x98) = 0x4b;
     break;
-  case 0x74:
+  0x74 =>
     (iVar1 + 0x98) = 0x15;
     break;
-  case 0x75:
+  0x75 =>
     (iVar1 + 0x98) = 0x16;
     break;
-  case 0x78:
-  case 0x7a:
-  case 0x7b:
-  case 0x7c:
-  case 0x7d:
-  case 0x7e:
-  case 0x7f:
-  case 0x80:
-  case 0x81:
-  case 0x82:
+  0x78 =>
+  0x7a =>
+  0x7b =>
+  0x7c =>
+  0x7d =>
+  0x7e =>
+  0x7f =>
+  0x80 =>
+  0x81 =>
+  0x82 =>
     (iVar1 + 0x98) = 0x4c;
   }
   return iVar1;
@@ -1025,7 +1025,7 @@ pub unsafe fn pass1_1040_5eaa(StructB *param_1) -> i16
 
 
 
-pub fn pass1_1040_6360(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1040_6360(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   let mut in_stack_0000ffda: u16;

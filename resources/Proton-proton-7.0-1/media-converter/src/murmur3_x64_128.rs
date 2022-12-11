@@ -23,7 +23,7 @@ pub struct murmur3_x64_128_state {
 }
 
 impl murmur3_x64_128_state {
-    pub fn new(seed: u32) -> Self {
+    pub unsafe fn new(seed: u32) -> Self {
         murmur3_x64_128_state {
             seed,
             h1: seed as u64,
@@ -33,7 +33,7 @@ impl murmur3_x64_128_state {
     }
 
     #[allow(dead_code)]
-    pub fn reset(&mut self) {
+    pub unsafe fn reset(&mut self) {
         self.h1 = self.seed as u64;
         self.h2 = self.seed as u64;
         self.processed = 0;
@@ -48,12 +48,12 @@ impl murmur3_x64_128_state {
 /// use murmur3::murmur3_x64_128;
 /// let hash_result = murmur3_x64_128(&mut Cursor::new("hello world"), 0);
 /// ```
-pub fn murmur3_x64_128<T: Read>(source: &mut T, seed: u32) -> Result<u128> {
+pub unsafe fn murmur3_x64_128<T: Read>(source: &mut T, seed: u32) -> Result<u128> {
     let mut state = murmur3_x64_128_state::new(seed);
     murmur3_x64_128_full(source, &mut state)
 }
 
-pub fn murmur3_x64_128_full<T: Read>(source: &mut T, state: &mut murmur3_x64_128_state) -> Result<u128> {
+pub unsafe fn murmur3_x64_128_full<T: Read>(source: &mut T, state: &mut murmur3_x64_128_state) -> Result<u128> {
     const C1: u64 = 0x87c3_7b91_1142_53d5;
     const C2: u64 = 0x4cf5_ad43_2745_937f;
     const C3: u64 = 0x52dc_e729;
@@ -221,7 +221,7 @@ mod tests {
         let full_hash = murmur3_x64_128(&mut TestReader::new(&CONST_DATA), TEST_SEED).unwrap();
         assert_eq!(full_hash, 0xeb91a9599de8337d969b1e101c4ee3bc);
 
-        /* accumulate hash across 16-byte chunks (short reads change hash due to 0-padding) */
+        /* accumulate hash across 16-byte chunks (reads: mut i16 change hash due to 0-padding) */
         let mut hash_state = murmur3_x64_128_state::new(TEST_SEED);
         murmur3_x64_128_full(&mut TestReader::new(&CONST_DATA[0..16]), &mut hash_state).unwrap();
         murmur3_x64_128_full(&mut TestReader::new(&CONST_DATA[16..32]), &mut hash_state).unwrap();

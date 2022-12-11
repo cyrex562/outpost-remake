@@ -16,7 +16,7 @@ struct astruct_8 {
     let mut field12_0xf: u8;
     let mut field13_0x10: u8;
     let mut field14_0x11: u8;
-    field15_0x12: HDC16;
+    let mut field15_0x12: HDC16;
     let mut field16_0x14: u8;
     let mut field17_0x15: u8;
     let mut field18_0x16: u8;
@@ -164,7 +164,7 @@ struct astruct_827 {
     let mut field3_0x3: u8;
     let mut field4_0x4: u8;
     let mut field5_0x5: u8;
-pub fn * field6_0x6;
+pub unsafe fn * field6_0x6;
     let mut field7_0xa: u8;
     let mut field8_0xb: u8;
     let mut field9_0xc: u8;

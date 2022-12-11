@@ -1,5 +1,5 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_c626(param_1: u32) {
+pub unsafe fn pass1_1008_c626(param_1: u32) {
     _u16_1050_06e0 = 0;
     fn_ptr_1000_17ce(*param_1);
     return;
@@ -79,7 +79,7 @@ pub unsafe fn pass1_1008_c6fa(param_1: *mut i16, mut param_2: i16) -> *mut u32 {
     }
     return NULL;
 }
-pub fn pass1_1008_c72a(param_1: *mut astruct_19, mut param_2: u16, mut param_3: u16) {
+pub unsafe fn pass1_1008_c72a(param_1: *mut astruct_19, mut param_2: u16, mut param_3: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;
@@ -109,7 +109,7 @@ pub unsafe fn pass1_1008_c75c(param_1: *mut astruct_455) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_c79a(mut param_1: u32, param_2: *mut c_char) {
+pub unsafe fn pass1_1008_c79a(mut param_1: u32, param_2: *mut c_char) {
     let mut string_1: *mut c_char;
     let mut iVar1: i16;
     let mut pstruct117_2: *mut astruct_117;
@@ -153,7 +153,7 @@ pub fn pass1_1008_c79a(mut param_1: u32, param_2: *mut c_char) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_c83a(param_1: *mut astruct_201) {
+pub unsafe fn pass1_1008_c83a(param_1: *mut astruct_201) {
     if (*_PTR_LOOP_1050_65e2 <= (param_1 + 0xe)) {
         return;
     }
@@ -272,7 +272,7 @@ pub unsafe fn pass1_1008_c882(param_1: *mut astruct_201) {
     }
     return;
 }
-pub fn pass1_1008_c98e(mut param_1: u32, mut param_2: u32) {
+pub unsafe fn pass1_1008_c98e(mut param_1: u32, mut param_2: u32) {
     let mut BVar1: bool;
     let mut in_stack_0000ffda: HFILE16;
     let mut local_10: [u32; 0x3] = [0; 0x3];
@@ -289,7 +289,7 @@ pub fn pass1_1008_c98e(mut param_1: u32, mut param_2: u32) {
     }
     return;
 }
-pub fn pass1_1008_c9d4(mut param_1: i16, mut param_2: u32, mut param_3: u32) {
+pub unsafe fn pass1_1008_c9d4(mut param_1: i16, mut param_2: u32, mut param_3: u32) {
     let mut BVar1: bool;
 
     if (0x1 < u16_1050_0312) {
@@ -314,7 +314,7 @@ pub unsafe fn pass1_1008_ca24(mut param_1: u32, param_2: u8) -> u32 {
     }
     return param_1;
 }
-pub fn pass1_1008_ca5a(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn pass1_1008_ca5a(param_1: *mut astruct_19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;

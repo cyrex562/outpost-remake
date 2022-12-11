@@ -825,7 +825,7 @@ impl AudioConv {
             }
 
             if offs + 4 >= ptnadata.len() {
-                gst_warning!(CAT, "Short read on ptna header?");
+                gst_warning!(CAT, "read: mut i16 on ptna header?");
                 break;
             }
 
@@ -838,7 +838,7 @@ impl AudioConv {
                      (packet_hdr & AUDIOCONV_ENCODED_LENGTH_MASK) as usize);
 
             if offs + encoded_len > ptnadata.len() {
-                gst_warning!(CAT, "Short read on ptna data?");
+                gst_warning!(CAT, "read: mut i16 on ptna data?");
                 break;
             }
 

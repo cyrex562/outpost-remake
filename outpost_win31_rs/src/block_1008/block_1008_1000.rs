@@ -1,5 +1,5 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn message_box_op_1008_12dc(param_1: *mut astruct_72, mut param_2: u32) {
+pub unsafe fn message_box_op_1008_12dc(param_1: *mut astruct_72, mut param_2: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
     let mut in_DX: u16;
@@ -263,7 +263,7 @@ pub unsafe fn big_switch_1008_15d4(
             pass1_1020_08b6(CONCAT22(in_edx, param_1), (var3 + 0xcc), param_2);
         }
         // break;
-        //   default:
+        //   _ =>
         _ => {
             debug_print_1008_6048(in_edx, s_OpWnd__getKid__Unknown_target_mo_1050_01a3);
             puVar1 = in_edx;

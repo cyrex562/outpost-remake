@@ -1,5 +1,5 @@
 
-pub fn pass1_1010_6006(mut param_1: u16 ,param_2: *mut astruct_486,param_3: *mut c_char)
+pub unsafe fn pass1_1010_6006(mut param_1: u16 ,param_2: *mut astruct_486,param_3: *mut c_char)
 
 {
   let mut uVar1: u16;
@@ -18,7 +18,7 @@ pub fn pass1_1010_6006(mut param_1: u16 ,param_2: *mut astruct_486,param_3: *mut
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut astruct_19)
+pub unsafe fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut astruct_19)
 
 {
   let mut puVar1: *mut u16;
@@ -41,7 +41,7 @@ pub fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut astruct_19)
   struct_1[0x1].field_0xe = param_1;
   return;
 }
-pub fn pass1_1010_60a0(param_1: *mut astruct_19)
+pub unsafe fn pass1_1010_60a0(param_1: *mut astruct_19)
 
 {
   (param_1 + 0x76) = 0x5;
@@ -79,7 +79,7 @@ pub unsafe fn pass1_1010_60c6() -> u16
 {
   return 0x1;
 }
-pub fn pass1_1010_60cc(mut param_1: u16 ,param_2: *mut astruct_487,param_3: *mut c_char)
+pub unsafe fn pass1_1010_60cc(mut param_1: u16 ,param_2: *mut astruct_487,param_3: *mut c_char)
 
 {
   let mut uVar1: u16;
@@ -94,7 +94,7 @@ pub fn pass1_1010_60cc(mut param_1: u16 ,param_2: *mut astruct_487,param_3: *mut
   iVar3.field27_0x1c = param_1;
   return;
 }
-pub fn pass1_1010_60fa(mut param_1: u32)
+pub unsafe fn pass1_1010_60fa(mut param_1: u32)
 
 {
   let mut iVar1: i16;
@@ -107,7 +107,7 @@ pub fn pass1_1010_60fa(mut param_1: u32)
   (iVar1 + 0x20) = 0x1;
   return;
 }
-pub fn pass1_1010_6118(mut param_1: u32)
+pub unsafe fn pass1_1010_6118(mut param_1: u32)
 
 {
   let mut iVar1: i16;
@@ -120,7 +120,7 @@ pub fn pass1_1010_6118(mut param_1: u32)
   }
   return;
 }
-pub fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut param_2: i16)
+pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut param_2: i16)
 
 {
   let mut uVar2: u16;
@@ -173,7 +173,7 @@ pub fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut param_2
   }
   return;
 }
-pub fn caseD_13(mut param_1: u32,mut param_2: i16)
+pub unsafe fn caseD_13(mut param_1: u32,mut param_2: i16)
 
 {
   let mut iVar1: *mut astruct_833;
@@ -189,7 +189,7 @@ pub fn caseD_13(mut param_1: u32,mut param_2: i16)
   }
   return;
 }
-pub fn pass1_1010_62a4(param_1: *mut astruct_488,param_2: u8)
+pub unsafe fn pass1_1010_62a4(param_1: *mut astruct_488,param_2: u8)
 
 {
   let mut uVar2: *mut astruct_488;
@@ -210,7 +210,7 @@ pub fn pass1_1010_62a4(param_1: *mut astruct_488,param_2: u8)
 
 
 
-pub fn pass1_1010_62ec(param_1: u8,mut param_2: u16 ,param_3: *mut StructD,param_4: u8) -> *mut StructD
+pub unsafe fn pass1_1010_62ec(param_1: u8,mut param_2: u16 ,param_3: *mut StructD,param_4: u8) -> *mut StructD
 
 {
   write_private_profile_str_1010_5b10(param_2,param_3);
@@ -219,7 +219,7 @@ pub fn pass1_1010_62ec(param_1: u8,mut param_2: u16 ,param_3: *mut StructD,param
   }
   return param_3;
 }
-pub fn struct_1010_6326(param_1: *mut astruct_19,mut param_2: u16 )
+pub unsafe fn struct_1010_6326(param_1: *mut astruct_19,mut param_2: u16 )
 
 {
   struct_op_1010_1d48(param_1,param_2);
@@ -234,7 +234,7 @@ pub fn struct_1010_6326(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x2) = 0x1010;
   return;
 }
-pub fn write_to_file_1010_6372(param_1: *mut astruct_729,mut param_2: u32)
+pub unsafe fn write_to_file_1010_6372(param_1: *mut astruct_729,mut param_2: u32)
 
 {
   let mut BVar1: bool;
@@ -282,7 +282,7 @@ pub fn write_to_file_1010_6372(param_1: *mut astruct_729,mut param_2: u32)
   }
   return;
 }
-pub fn pass1_1010_648a(mut param_1: i16,mut param_2: u32,mut param_3: u32)
+pub unsafe fn pass1_1010_648a(mut param_1: i16,mut param_2: u32,mut param_3: u32)
 
 {
   let mut iVar1: i16;
@@ -421,7 +421,7 @@ match param_4
 0x89 =>{
     *param_3 = 0x22;}
     // return;
-//   default:
+//   _ =>
 _ =>{
     *param_3 = 0;}
     // return;
@@ -495,19 +495,19 @@ pub unsafe fn pass1_1010_6700(param_1: *mut astruct_19,mut param_2: u16 ) -> *mu
   (param_1 + 0x138) = 0x1;
   return param_1;
 }
-pub fn pass1_1010_6814(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
+pub unsafe fn pass1_1010_6814(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
 
 {
   (param_1 + param_3 * 0x2 + 0x11e) = param_2;
   return;
 }
-pub fn pass1_1010_682e(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
+pub unsafe fn pass1_1010_682e(mut param_1: u32,mut param_2: u16 ,mut param_3: i16)
 
 {
   (param_1 + param_3 * 0x2 + 0xa) = param_2;
   return;
 }
-pub fn write_to_file_1010_6846(mut param_1: u32,param_2: *mut u8)
+pub unsafe fn write_to_file_1010_6846(mut param_1: u32,param_2: *mut u8)
 
 {
   let mut BVar1: bool;
@@ -535,7 +535,7 @@ pub fn write_to_file_1010_6846(mut param_1: u32,param_2: *mut u8)
   }
   return;
 }
-pub fn pass1_1010_68c6(mut param_1: u16 ,param_2: *mut u8,mut param_3: u32,mut param_4: u32)
+pub unsafe fn pass1_1010_68c6(mut param_1: u16 ,param_2: *mut u8,mut param_3: u32,mut param_4: u32)
 
 {
   let mut iVar2: *mut astruct_248;
@@ -814,7 +814,7 @@ match param_5
     pass1_1010_715c(param_1,param_2,param_4,1);
     send_msg_1010_7c9e(param_4,0x12);
     return 0x1;}
-//   default:
+//   _ =>
 _ =>{
     return 0x0;}
 //   0x4 =>

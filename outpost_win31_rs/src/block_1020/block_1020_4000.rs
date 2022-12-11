@@ -1,5 +1,5 @@
 
-pub fn pass1_1020_4064(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub unsafe fn pass1_1020_4064(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   win_ui_palette_op_1020_3e84(param_1);
@@ -11,7 +11,7 @@ pub fn pass1_1020_4064(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub fn pass1_1020_4092(param_1: *mut u16) -> *mut u16
+pub unsafe fn pass1_1020_4092(param_1: *mut u16) -> *mut u16
 
 {
   let mut iVar1: i16;
@@ -28,7 +28,7 @@ pub fn pass1_1020_4092(param_1: *mut u16) -> *mut u16
   pass1_1008_3e38((param_1 & 0xffff0000 | (iVar1 + 0x10)));
   return param_1;
 }
-pub fn draw_rect_1020_40ce(mut param_1: u32,mut param_2: i16,mut param_3: i16,hdc16_param_4: HDC16,mut param_5: u16 )
+pub unsafe fn draw_rect_1020_40ce(mut param_1: u32,mut param_2: i16,mut param_3: i16,hdc16_param_4: HDC16,mut param_5: u16 )
 
 {
   pen_handle: HPEN16;
@@ -36,10 +36,10 @@ pub fn draw_rect_1020_40ce(mut param_1: u32,mut param_2: i16,mut param_3: i16,hd
   let mut right: i16;
   let mut bottom: i16;
   let mut unaff_SS: u16;
-  hdc: HDC16;
+  let mut hdc: HDC16;
   let mut local_6: i16;
   let mut local_4: i16;
-  hdc16_var_fff2: HDC16;
+  let mut hdc16_var_fff2: HDC16;
   let mut iVar1: i16;
 
   pass1_1008_3e94((param_1 & 0xffff0000 | (param_1 + 0x10)),CONCAT22(0x1050,&local_6),
@@ -72,7 +72,7 @@ Unable to decompile 'unk_draw_op_1020_41c8'
 Cause:
 Low-level Error: Symbol $$undef0000000d extends beyond the end of the address space
 */
-pub fn destroy_cursor_1020_42f4(param_1: *mut StructD)
+pub unsafe fn destroy_cursor_1020_42f4(param_1: *mut StructD)
 
 {
   let mut struct_1: *mut StructD;
@@ -92,7 +92,7 @@ pub fn destroy_cursor_1020_42f4(param_1: *mut StructD)
   pass1_1020_808e(param_1);
   return;
 }
-pub fn pass1_1020_434c(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,param_4: *mut u32,mut param_5: u16 ,mut param_6: u16 ,mut param_7: i16)
+pub unsafe fn pass1_1020_434c(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,param_4: *mut u32,mut param_5: u16 ,mut param_6: u16 ,mut param_7: i16)
 
 {
   if (param_7 == 1) {
@@ -106,7 +106,7 @@ pub fn pass1_1020_434c(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,para
   pass1_1008_68ea(param_2,param_3,param_4,param_5,param_6,param_7);
   return;
 }
-pub fn post_msg_1020_4394(mut param_1: u32,mut param_2: u16 )
+pub unsafe fn post_msg_1020_4394(mut param_1: u32,mut param_2: u16 )
 
 {
   let mut uVar1: u32;
@@ -138,12 +138,12 @@ pub fn post_msg_1020_4394(mut param_1: u32,mut param_2: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_1020_43f6(param_1: *mut astruct_57,param_2: *mut StructA,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,
+pub unsafe fn win_1020_43f6(param_1: *mut astruct_57,param_2: *mut StructA,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ,
                   mut param_6: u16 ,mut param_7: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
-  paVar2: *mut astruct_160;
+  let mut paVar2: *mut astruct_160;
   let mut uVar3: u16;
   let mut paVar4: *mut Struct57;
   let mut puVar5: *mut u32;
@@ -176,7 +176,7 @@ pub fn win_1020_43f6(param_1: *mut astruct_57,param_2: *mut StructA,mut param_3:
   ui_op_1020_536e(uVar3,param_2,0x0,-0x1,0x3);
   return;
 }
-pub fn pass1_1020_44b0(param_1: u32)
+pub unsafe fn pass1_1020_44b0(param_1: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -199,7 +199,7 @@ pub fn pass1_1020_44b0(param_1: u32)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn mixed_menu_op_1020_44ec
+pub unsafe fn mixed_menu_op_1020_44ec
                (param_1: *mut astruct_850,mut param_2: u16 ,mut param_3: i16,HMENmut param_4: u16 ,mut param_5: u16 ,undefined1 param_6)
 
 {
@@ -216,7 +216,7 @@ let mut uVar7: u16;
   let mut uVar10: u16;
   let mut in_register_0000000a: u16;
   let mut paVar11: *mut Struct57;
-  iVar9: *mut astruct_850;
+  let mut iVar9: *mut astruct_850;
   let mut iVar12: i16;
   let mut uVar13: u16;
   let mut uVar14: u16;
@@ -408,7 +408,7 @@ let mut uStack300: u16;
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_sys_op_1020_493c
+pub unsafe fn win_sys_op_1020_493c
                (mut param_1: u16 ,param_2: *mut StructD,param_3: *mut StructD,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ,
                param_7: *mut u32)
 
@@ -431,7 +431,7 @@ pub fn win_sys_op_1020_493c
   let mut uVar16: u16;
   let mut uVar17: u32;
   let mut puVar18: *mut u32;
-  paVar19: *mut astruct_97;
+  let mut paVar19: *mut astruct_97;
   let mut pcVar20: *mut c_char;
   let mut in_stack_0000fb4e: u16;
   let mut in_stack_0000fb50: u16;
@@ -470,24 +470,24 @@ pub fn win_sys_op_1020_493c
   uVar13 = (param_3 >> 0x10);
   if (param_4 < 0xea) {
     switch(param_4) {
-    case 0x69:
+    0x69 =>
       iVar6 = 0;
       break;
-    case 0x6a:
+    0x6a =>
       iVar6 = 0x1;
       break;
-    case 0x6b:
+    0x6b =>
       iVar6 = 0x2;
       break;
-    case 0x6c:
+    0x6c =>
       iVar6 = 0x3;
       break;
-    case 0x6d:
+    0x6d =>
       iVar6 = 0x4;
       break;
-    default:
+    _ =>
       return;
-    case 0x77:
+    0x77 =>
       if ((&uVar9[0x1].field_0x1c | uVar9[0x1].field14_0x1a) == 0) {
         return;
       }
@@ -505,7 +505,7 @@ pub fn win_sys_op_1020_493c
                                   uStack26 & 0xff | (uStack26 >> 0x8) << 0x8))
                 ,0x1,CONCAT22(param_2,uVar16),param_7);
       return;
-    case 0x78:
+    0x78 =>
       puVar18 = mixed_1010_20ba(param_2,_u16_1050_0ed0,CONCAT22(param_7,0x45),
                                 in_stack_0000fb52,in_stack_0000fc76,in_stack_0000fc7c,in_stack_0000fc80);
       uStack588 = (puVar18 >> 0x10);
@@ -554,12 +554,12 @@ pub fn win_sys_op_1020_493c
     }
     if (param_4 < 0x103) {
       switch(param_4) {
-      case 0xf0:
+      0xf0 =>
         ui_op_1020_536e(param_2,param_3,0x0,-0x1,1);
         return;
-      default:
+      _ =>
         return;
-      case 0xf6:
+      0xf6 =>
         if (&uVar9[0x1].field_0x28 != 0) {
           if (param_3.is_null()) {
             param_7 = NULL;
@@ -575,10 +575,10 @@ pub fn win_sys_op_1020_493c
         }
         iVar6 = 0x12;
         break;
-      case 0xf7:
+      0xf7 =>
         unk_win_op_1010_7300(param_2,*(astruct_57 **)&uVar9[0x1].field19_0x20,0x0,0x9,0x0);
         return;
-      case 0xfb:
+      0xfb =>
         local_144 = mixed_1010_20ba(param_2,_u16_1050_0ed0,CONCAT22(param_7,0x3),
                                     in_stack_0000fb52,in_stack_0000fc76,in_stack_0000fc7c,in_stack_0000fc80);
         uStack320 = mixed_1010_20ba((param_2 & 0xffff0000 | local_144 >> 0x10),
@@ -588,10 +588,10 @@ pub fn win_sys_op_1020_493c
         pass1_1010_c25e(pcVar20,(pcVar20 >> 0x10),local_144,
                         (local_144 >> 0x10),pcVar20);
         return;
-      case 0xfc:
+      0xfc =>
         post_msg_1020_55b0(param_2,param_3,param_5,param_6);
         return;
-      case 0x101:
+      0x101 =>
         uStack26 = mixed_1010_20ba(param_2,_u16_1050_0ed0,CONCAT22(param_7,0x2f),
                                    in_stack_0000fb52,in_stack_0000fc76,in_stack_0000fc7c,in_stack_0000fc80);
         uVar16 = (uStack26 >> 0x10);
@@ -876,7 +876,7 @@ pub fn win_sys_op_1020_493c
 // TODO: goto LAB_1020_49b7;
   }
   switch(param_4) {
-  case 0x133:
+  0x133 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
@@ -884,14 +884,14 @@ pub fn win_sys_op_1020_493c
     uVar12 = 0xffff;
     uVar16 = 0;
     break;
-  case 0x134:
+  0x134 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
     }
     uVar16 = 0x1;
 // TODO: goto LAB_1020_4ef8;
-  case 0x135:
+  0x135 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
@@ -899,14 +899,14 @@ pub fn win_sys_op_1020_493c
     uVar12 = 0x1;
     uVar16 = 0;
     break;
-  case 0x136:
+  0x136 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
     }
     uVar16 = 0xfffb;
 // TODO: goto LAB_1020_4ef8;
-  case 0x137:
+  0x137 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
@@ -914,7 +914,7 @@ pub fn win_sys_op_1020_493c
     uVar12 = 0xfffb;
     uVar16 = 0;
     break;
-  case 0x138:
+  0x138 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
@@ -923,7 +923,7 @@ pub fn win_sys_op_1020_493c
 // LAB_1020_4ef8:
     uVar12 = 0;
     break;
-  case 0x139:
+  0x139 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {
       return;
@@ -931,9 +931,9 @@ pub fn win_sys_op_1020_493c
     uVar12 = 0x5;
     uVar16 = 0;
     break;
-  default:
+  _ =>
 // TODO: goto switchD_1020_518a_caseD_13a;
-  case 0x13c:
+  0x13c =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x2);
     if (uVar10 != 0) {
       iVar6 = 0x1a;

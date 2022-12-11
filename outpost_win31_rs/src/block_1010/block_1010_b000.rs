@@ -15,19 +15,19 @@ Low-level Error: Overlapping input varnodes
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn bad_1010_bf08(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
+pub unsafe fn bad_1010_bf08(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 
 {
   bad_1028_e1bc();
   return;
 }
-pub fn pass1_1010_bf1e(mut param_1: i16,param_2: *mut u8,mut param_3: u32,param_4: *mut i16)
+pub unsafe fn pass1_1010_bf1e(mut param_1: i16,param_2: *mut u8,mut param_3: u32,param_4: *mut i16)
 
 {
   let mut uVar1: u32;
   let mut iVar2: i16;
   let mut uVar3: u16;
-  paVar4: *mut astruct_92;
+  let mut paVar4: *mut astruct_92;
   let mut uVar5: u16;
   let mut in_register_0000000a: u16;
   let mut paVar6: *mut Struct57;
@@ -81,7 +81,7 @@ pub fn pass1_1010_bf1e(mut param_1: i16,param_2: *mut u8,mut param_3: u32,param_
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1010_bffa(mut param_1: i16,param_2: *mut u8,mut param_3: u32)
+pub unsafe fn pass1_1010_bffa(mut param_1: i16,param_2: *mut u8,mut param_3: u32)
 
 {
   let mut puVar1: *mut u16;
@@ -95,9 +95,9 @@ pub fn pass1_1010_bffa(mut param_1: i16,param_2: *mut u8,mut param_3: u32)
   let mut uVar8: u16;
   let mut in_register_0000000a: u16;
   let mut paVar9: *mut Struct57;
-  iVar6: *mut astruct_254;
-  iVar7: *mut astruct_255;
-  iVar8: *mut astruct_256;
+  let mut iVar6: *mut astruct_254;
+  let mut iVar7: *mut astruct_255;
+  let mut iVar8: *mut astruct_256;
   let mut iVar10: i16;
   let mut uVar11: u16;
   let mut iStack34: i16;
@@ -152,43 +152,43 @@ pub fn pass1_1010_bffa(mut param_1: i16,param_2: *mut u8,mut param_3: u32)
         if (uVar5 < 0xa) {
           uVar6 = 0x1010;
           switch(uVar5) {
-          case 0x0:
+          0x0 =>
             iStack34 = 0x1b5;
             uVar5 = uVar8;
             break;
-          case 0x1:
+          0x1 =>
             iStack34 = 0x1b6;
             uVar5 = uVar8;
             break;
-          case 0x2:
+          0x2 =>
             iStack34 = 0x1b7;
             uVar5 = uVar8;
             break;
-          case 0x3:
+          0x3 =>
             iStack34 = 0x1b8;
             uVar5 = uVar8;
             break;
-          case 0x4:
+          0x4 =>
             iStack34 = 0x1b9;
             uVar5 = uVar8;
             break;
-          case 0x5:
+          0x5 =>
             iStack34 = 0x1ba;
             uVar5 = uVar8;
             break;
-          case 0x6:
+          0x6 =>
             iStack34 = 0x1bb;
             uVar5 = uVar8;
             break;
-          case 0x7:
+          0x7 =>
             iStack34 = 0x1bc;
             uVar5 = uVar8;
             break;
-          case 0x8:
+          0x8 =>
             iStack34 = 0x1bd;
             uVar5 = uVar8;
             break;
-          case 0x9:
+          0x9 =>
             iStack34 = 0x1be;
             uVar5 = uVar8;
           }

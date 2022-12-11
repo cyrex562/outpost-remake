@@ -2,7 +2,7 @@ use crate::block_1000;
 use crate::block_1000_1000;
 use crate::utils::CONCAT22;
 
-pub fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
+pub unsafe fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
     let mut u_var1: u16;
     let mut u_var2: u32;
     let mut u_var3: u16;
@@ -32,7 +32,7 @@ pub fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
     return;
 }
 
-pub fn pass1_1000_20a2(mut param_1: u16, mut param_2: u16) {
+pub unsafe fn pass1_1000_20a2(mut param_1: u16, mut param_2: u16) {
     let mut i_var1: i16;
     let mut u_var2: u16;
     let mut u_var3: u16;
@@ -75,13 +75,13 @@ pub fn pass1_1000_20a2(mut param_1: u16, mut param_2: u16) {
     }
 }
 
-pub fn empty_fn_1000_214a() {
+pub unsafe fn empty_fn_1000_214a() {
     return;
 }
 
 // WARNING: Removing unreachable block (ram,0x1000234c)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn init_1000_23be(mut param_1: *mut u8, mut param_2: u16) {
+pub unsafe fn init_1000_23be(mut param_1: *mut u8, mut param_2: u16) {
     init_op_1008_54aa(
         &DAT_1050_1050,
         param_1,
@@ -610,12 +610,12 @@ pub unsafe fn pass1_1000_2913(mut param_1: i16) {
     return;
 }
 
-pub fn pass1_1000_29af(mut param_1: u16) {
+pub unsafe fn pass1_1000_29af(mut param_1: u16) {
     pass1_1000_29b5(param_1 & 0xff);
     return;
 }
 
-pub fn pass1_1000_29b5(mut param_1: u16) {
+pub unsafe fn pass1_1000_29b5(mut param_1: u16) {
     let mut cVar1: u8;
 
     PTR_LOOP_1050_5f88._0_1_ = param_1;
@@ -654,7 +654,7 @@ pub unsafe fn pass1_1000_2b3c(
     return;
 }
 
-pub fn pass1_1000_2ba0(param_1: u8) {
+pub unsafe fn pass1_1000_2ba0(param_1: u8) {
     pass1_1000_3024();
     if (u8_1050_5fc9 != '\0') {
         pass1_1000_3f5c();
@@ -719,7 +719,7 @@ pub unsafe fn pass1_1000_2f00(mut param_1: i16, param_2: *mut i16) {
     return;
 }
 
-pub fn pass1_1000_206c(mut param_1: u16, mut param_2: u16) -> bool {
+pub unsafe fn pass1_1000_206c(mut param_1: u16, mut param_2: u16) -> bool {
     let mut uVar1: u16;
 
     uVar1 = pass1_1000_21d2(0x2, 0x42, param_1, param_2, 1);
@@ -729,11 +729,11 @@ pub fn pass1_1000_206c(mut param_1: u16, mut param_2: u16) -> bool {
     return 0x0;
 }
 
-pub fn ret_true_1000_2146() -> u16 {
+pub unsafe fn ret_true_1000_2146() -> u16 {
     return 0x1;
 }
 
-pub fn msg_box_op_1000_214c(
+pub unsafe fn msg_box_op_1000_214c(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,
@@ -775,14 +775,14 @@ pub fn msg_box_op_1000_214c(
     }
 }
 
-pub fn mem_op_1000_21b6(mut param_1: u16, mut param_2: u16) -> bool {
+pub unsafe fn mem_op_1000_21b6(mut param_1: u16, mut param_2: u16) -> bool {
     let mut BVar1: bool;
 
     BVar1 = mem_op_1000_1dfa(0x0, 0x4, param_1, param_2);
     return BVar1 == 0;
 }
 
-pub fn pass1_1000_21d2(
+pub unsafe fn pass1_1000_21d2(
     param_1: u8,
     param_2: i32,
     mut param_3: u16,
@@ -814,7 +814,7 @@ pub fn pass1_1000_21d2(
     return 0x0;
 }
 
-pub fn pass1_1000_2242(
+pub unsafe fn pass1_1000_2242(
     mut param_1: u16,
     param_2: *mut u8,
     mut param_3: u16,
@@ -853,7 +853,7 @@ pub fn pass1_1000_2242(
     return CONCAT22(param_4 + CARRY2(uVar2, param_3), uVar2 + param_3);
 }
 
-pub fn pass1_1000_22c0(
+pub unsafe fn pass1_1000_22c0(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -1057,7 +1057,7 @@ pub unsafe fn pass1_1000_2950(mut param_1: i16, mut param_2: u16, mut param_3: u
     }
 }
 
-pub fn pass1_1000_29dc(mut param_1: u16) -> u16 {
+pub unsafe fn pass1_1000_29dc(mut param_1: u16) -> u16 {
     if (___EXPORTEDSTUB != 0xb8) {
         return &DAT_1050_1050;
     }

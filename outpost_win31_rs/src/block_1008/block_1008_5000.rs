@@ -29,7 +29,7 @@ pub unsafe fn pass1_1008_50c2(param_1: *mut astruct_110, mut param_2: u32, mut p
 }
 
 
-pub fn pass1_1008_5118(mut param_1: u32)
+pub unsafe fn pass1_1008_5118(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -136,7 +136,7 @@ pub unsafe fn pass1_1008_5236(param_1: *mut astruct_109)
   }
   return;
 }
-pub fn pass1_1008_52fc(param_1: *mut astruct_110)
+pub unsafe fn pass1_1008_52fc(param_1: *mut astruct_110)
 
 {
   let mut puVar1: *mut u32;
@@ -187,12 +187,12 @@ pub unsafe fn pass1_1008_5394(param_1: u32) -> *mut u32
   *param_1 = 0;
   return param_1;
 }
-pub fn pass1_1008_53aa()
+pub unsafe fn pass1_1008_53aa()
 
 {
   return;
 }
-pub fn mci_send_command_1008_53ae(mut param_1: u32,mut param_2: u16 )
+pub unsafe fn mci_send_command_1008_53ae(mut param_1: u32,mut param_2: u16 )
 
 {
   let mut DVar1: u32;
@@ -397,7 +397,7 @@ pub unsafe fn pass1_1008_570e(param_1: *mut u16,param_2: u8) -> *mut u16
   }
   return param_1;
 }
-pub fn set_struct_1008_574a(param_1: *mut astruct_57)
+pub unsafe fn set_struct_1008_574a(param_1: *mut astruct_57)
 
 {
   let mut iVar1: *mut StructD;
@@ -415,14 +415,14 @@ pub fn set_struct_1008_574a(param_1: *mut astruct_57)
   iVar1.address_offset_field_0x2 = 0x1008;
   return;
 }
-pub fn pass1_1008_5784(param_1: *mut c_char,mut param_2: u32)
+pub unsafe fn pass1_1008_5784(param_1: *mut c_char,mut param_2: u32)
 
 {
   param_1 = param_2;
   (param_1 + 0x4) = 0;
   return;
 }
-pub fn pass1_1008_57a4(param_1: u32,mut param_2: u32)
+pub unsafe fn pass1_1008_57a4(param_1: u32,mut param_2: u32)
 
 {
   *param_1 = param_2;
@@ -686,7 +686,7 @@ pub unsafe fn pass1_1008_5ab8(mut param_1: u32)
   *piVar1 = *piVar1 + -0x1;
   return;
 }
-pub fn pass1_1008_5b12(param_1: *mut c_char)
+pub unsafe fn pass1_1008_5b12(param_1: *mut c_char)
 
 {
   let mut uVar1: u32;
@@ -743,7 +743,7 @@ pub unsafe fn pass1_1008_5b9a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_5bdc(param_1: *mut c_char)
+pub unsafe fn pass1_1008_5bdc(param_1: *mut c_char)
 
 {
   let mut in_EDX: u32;
@@ -780,7 +780,7 @@ pub fn pass1_1008_5bdc(param_1: *mut c_char)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1008_5c34(param_1: *mut c_char)
+pub unsafe fn pass1_1008_5c34(param_1: *mut c_char)
 
 {
   param_1 = 0x5fc8;
@@ -793,7 +793,7 @@ pub fn pass1_1008_5c34(param_1: *mut c_char)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
+pub unsafe fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
 
 {
   pass1_1010_84f8(_u16_1050_14cc,param_4);
@@ -804,7 +804,7 @@ pub fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut pa
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn win_1008_5c7c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
+pub unsafe fn win_1008_5c7c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
   pass1_1010_85be(_u16_1050_14cc,param_4,(param_4 >> 0x10));
@@ -817,7 +817,7 @@ pub unsafe fn win_1008_5c9e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32
   win_1008_5c7c(param_1,param_2,param_3,*param_4);
   return;
 }
-pub fn mci_send_command_1008_5cb6(param_1: *mut astruct_27,mut param_2: i16)
+pub unsafe fn mci_send_command_1008_5cb6(param_1: *mut astruct_27,mut param_2: i16)
 
 {
   let mut iVar1: *mut astruct_27;
@@ -838,7 +838,7 @@ pub fn mci_send_command_1008_5cb6(param_1: *mut astruct_27,mut param_2: i16)
   pass1_1010_1f62(param_1,iVar2);
   return;
 }
-pub fn win_ui_op_1008_5cfe(param_1: *mut astruct_27,param_2: *mut c_char,in_wnd_class: *mut WNDCLASS16 )
+pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut astruct_27,param_2: *mut c_char,in_wnd_class: *mut WNDCLASS16 )
 
 {
   let mut uVar1: u32;
@@ -922,7 +922,7 @@ pub fn win_ui_op_1008_5cfe(param_1: *mut astruct_27,param_2: *mut c_char,in_wnd_
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
+pub unsafe fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
 
 {
   let mut WVar1: u16;
@@ -956,7 +956,7 @@ pub fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, i
 
 
 
-pub fn pass1_1008_5fa2(mut param_1: u32,param_2: u8) -> u32
+pub unsafe fn pass1_1008_5fa2(mut param_1: u32,param_2: u8) -> u32
 
 {
   pass1_1008_5c34(param_1);

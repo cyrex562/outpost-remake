@@ -25,7 +25,7 @@ pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
 
 // WARNING: Removing unreachable block (ram,0x10004090)
 // WARNING: Removing unreachable block (ram,0x1000409a)
-pub fn free_mem_1000_407a(mut param_1: u16, mut param_2: u16) {
+pub unsafe fn free_mem_1000_407a(mut param_1: u16, mut param_2: u16) {
     GlobalFree16(&DAT_1050_1050);
     return;
 }
@@ -45,7 +45,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
     let mut u_var8: u16;
     let mut i_var8: i16;
     let mut hglobal_7: HGLOBAL16;
-    // pub fn *SVar8;
+    // pub unsafe fn *SVar8;
     let mut ppa_var8: *mut *mut struct_824;
     let mut unaff_si: i16;
     let mut pi_var9: *mut i16;
@@ -55,7 +55,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
     let mut unaff_cs: u8;
     let mut unaff_ss: u16;
     let mut b_var12: bool;
-    // pub fn *pvVar13;
+    // pub unsafe fn *pvVar13;
     let mut pa_var14: *mut astruct_825;
     let mut pu_var3: *mut u16;
     let mut u_var13: u8;
@@ -1175,7 +1175,7 @@ pub unsafe fn pass1_1000_4ceb(mut param_1: u16) {
     }
     return;
 }
-pub fn pass1_1000_4d0c(mut param_1: u16) {
+pub unsafe fn pass1_1000_4d0c(mut param_1: u16) {
     DAT_1050_61e8 = param_1;
     PTR_LOOP_1050_61ea = NULL;
     return;

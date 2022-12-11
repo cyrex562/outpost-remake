@@ -1,5 +1,5 @@
 
-pub fn pass1_1000_5008(mut param_1: u16 ,
+pub unsafe fn pass1_1000_5008(mut param_1: u16 ,
                      mut param_2: u16 ,
                      mut param_3: u16 )
 {
@@ -12,7 +12,7 @@ pub fn pass1_1000_5008(mut param_1: u16 ,
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn pass1_1000_5026(mut param_1: i16,
+pub unsafe fn pass1_1000_5026(mut param_1: i16,
                      mut param_2: u16 ,
                      mut param_3: u16 ,
                      mut param_4: u16 )
@@ -552,7 +552,7 @@ pub unsafe fn pass1_1000_54a0(mut param_1: u32,
     }
     return  param_1;
 }
-pub fn pass1_1000_54e8(param_1: *mut u8,
+pub unsafe fn pass1_1000_54e8(param_1: *mut u8,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -597,7 +597,7 @@ Unable to decompile 'pass1_1000_55b1'
 Cause:
 Low-level Error: Symbol $$undef00000007 extends beyond the end of the address space
 */
-pub fn pass1_1000_5586(param_1: code,
+pub unsafe fn pass1_1000_5586(param_1: code,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -612,12 +612,12 @@ pub fn pass1_1000_5586(param_1: code,
     }
 }
 
-pub fn ret_op_1000_55ac() -> u32
+pub unsafe fn ret_op_1000_55ac() -> u32
 {
     todo!()
 }
 
-pub fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
+pub unsafe fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
     todo!()
 }
 
@@ -626,6 +626,6 @@ pub fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
 //                         &DAT_1050_1050,
 //                        0x0,
 //                         &DAT_1050_1050);
-pub fn dos3_call_1000_23ea( a: *mut u8, b: u16, c: u16, d: u16) {
+pub unsafe fn dos3_call_1000_23ea( a: *mut u8, b: u16, c: u16, d: u16) {
     todo!()
 }

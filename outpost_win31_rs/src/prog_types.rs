@@ -104,7 +104,7 @@ pub struct WINDOWPLACEMENT16 {
 pub struct WNDCLASS16 {
     // let mut style: u16;
     pub sytle: u16,
-    // pub fn * lpfn_wnd_proc;
+    // pub unsafe fn * lpfn_wnd_proc;
     pub lpfn_wnd_proc: fn(u16, u16, LPARAM, WPARAM16, u16, HWND16) -> LRESULT,
     // cb_cls_extra: INT16;
     pub cb_cls_extra: i16,
@@ -185,7 +185,7 @@ pub struct MSG16 {
 // typedef void * LPVOID;
 
 pub struct PAINTSTRUCT16 {
-    // hdc: HDC16;
+    // let mut hdc: HDC16;
     pub hdc: HDC16,
     // let mut f_erase: bool;
     pub bool: f_erase,
@@ -251,21 +251,21 @@ pub struct _struct_657 {
 
 #[allow(non_snake_case)]
 pub struct _struct_656 {
-    // short dmOrientation;
+    // let mut dmOrientation: i16;
     pub dmOrientation: i16,
-    // short dmPaperSize;
+    // let mut dmPaperSize: i16;
     pub dmPaperSize: i16,
-    // short dmPaperLength;
+    // let mut dmPaperLength: i16;
     pub dmPaperLength: i16,
-    // short dmPaperWidth;
+    // let mut dmPaperWidth: i16;
     pub dmPaperWidth: i16,
-    // short dmScale;
+    // let mut dmScale: i16;
     pub dmScale: i16,
-    // short dmCopies;
+    // let mut dmCopies: i16;
     pub dmCopies: i16,
-    // short dmDefaultSource;
+    // let mut dmDefaultSource: i16;
     pub dmDefaultSource: i16,
-    // short dmPrintQuality;
+    // let mut dmPrintQuality: i16;
     pub dmPrintQuality: i16,
 }
 
@@ -300,15 +300,15 @@ pub struct DEVMODEA {
     pub dmFields: u32,
     // union _union_655 field6_0x2c;
     pub field6_0x2c: _union_655,
-    // short dmColor;
+    // let mut dmColor: i16;
     pub dmColor: i16,
-    // short dmDuplex;
+    // let mut dmDuplex: i16;
     pub dmDuplex: i16,
-    // short dmYResolution;
+    // let mut dmYResolution: i16;
     pub dmYResolution: i16,
-    // short dmTTOption;
+    // let mut dmTTOption: i16;
     pub dmTTOption: i16,
-    // short dmCollate;
+    // let mut dmCollate: i16;
     pub dmCollate: i16,
     // BYTE dmFormName[32];
     pub dmFormName: [u8;32],

@@ -1,6 +1,6 @@
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_b0aa(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16)
+pub unsafe fn pass1_1020_b0aa(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16)
 
 {
   let mut puVar1: *mut u32;
@@ -82,7 +82,7 @@ pub unsafe fn pass1_1020_b1ae(mut param_1: i16,mut param_2: u16 ,mut param_3: u1
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_b240(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,mut param_4: u32)
+pub unsafe fn pass1_1020_b240(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,mut param_4: u32)
 
 {
   let mut puVar1: *mut u32;
@@ -125,7 +125,7 @@ pub fn pass1_1020_b240(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,mut p
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub fn pass1_1020_b2da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,param_4: *mut u16,mut param_5: u32)
+pub unsafe fn pass1_1020_b2da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,param_4: *mut u16,mut param_5: u32)
 
 {
   let mut iVar1: i16;
@@ -217,14 +217,14 @@ pub fn pass1_1020_b2da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,para
     }
     *piStack12 = iStack28;
     pass1_1020_ac6e(in_stack_0000fe78,CONCAT22(param_2,param_1),param_3,*piStack16,iStack28);
-  } while( true );
+  }
 }
 
 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_b482(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
+pub unsafe fn pass1_1020_b482(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 {
   let mut puVar1: *mut u8;
@@ -383,7 +383,7 @@ pub fn pass1_1020_b482(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_b872(mut param_1: u32,mut param_2: u32)
+pub unsafe fn pass1_1020_b872(mut param_1: u32,mut param_2: u32)
 
 {
   let mut uVar1: u16;
@@ -433,7 +433,7 @@ pub fn pass1_1020_b872(mut param_1: u32,mut param_2: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_b97e(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
+pub unsafe fn pass1_1020_b97e(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
 
 {
   let mut uVar1: u32;
@@ -459,18 +459,18 @@ pub fn pass1_1020_b97e(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut 
   pass1_1008_3e76(0x10484236,0x1,local_e - 0x2,local_c);
   return;
 }
-pub fn pass1_1020_ba2b()
+pub unsafe fn pass1_1020_ba2b()
 
 {
   init_globals_1020_96d4();
   pass1_1020_a426();
   return;
 }
-pub fn pass1_1020_ba3e(param_1: *mut astruct_172,mut param_2: u16 ,mut param_3: i16)
+pub unsafe fn pass1_1020_ba3e(param_1: *mut astruct_172,mut param_2: u16 ,mut param_3: i16)
 
 {
-  iVar1: *mut astruct_172;
-  uVar1: *mut astruct_172;
+  let mut iVar1: *mut astruct_172;
+  let mut uVar1: *mut astruct_172;
 
   uVar1 = (param_1 >> 0x10);
   iVar1 = param_1;
@@ -484,13 +484,13 @@ pub fn pass1_1020_ba3e(param_1: *mut astruct_172,mut param_2: u16 ,mut param_3: 
   pass1_1020_bcc4(param_1);
   return;
 }
-pub fn fn_ptr_1020_ba7e(param_1: u32)
+pub unsafe fn fn_ptr_1020_ba7e(param_1: u32)
 
 {
   fn_ptr_1000_17ce(*param_1);
   return;
 }
-pub fn pass1_1020_ba94(param_1: *mut i32)
+pub unsafe fn pass1_1020_ba94(param_1: *mut i32)
 
 {
   let mut puVar1: *mut u16;
@@ -510,7 +510,7 @@ pub fn pass1_1020_ba94(param_1: *mut i32)
 
 
 
-pub fn pass1_1020_bae6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> u32
+pub unsafe fn pass1_1020_bae6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> u32
 
 {
   let mut puStack6: *mut u16;
@@ -522,7 +522,7 @@ pub fn pass1_1020_bae6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut
   }
   return 0x0;
 }
-pub fn pass1_1020_bb16(param_1: u32,param_2: *mut u32,param_3: *mut u16,mut param_4: u16 )
+pub unsafe fn pass1_1020_bb16(param_1: u32,param_2: *mut u32,param_3: *mut u16,mut param_4: u16 )
 
 {
   if ((param_1 + 0x4) < param_4) {
@@ -534,7 +534,7 @@ pub fn pass1_1020_bb16(param_1: u32,param_2: *mut u32,param_3: *mut u16,mut para
   *param_2 = (*param_1 + param_4 * 0x6);
   return;
 }
-pub fn pass1_1020_bb70(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
+pub unsafe fn pass1_1020_bb70(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_AX: u16;
@@ -543,7 +543,7 @@ pub fn pass1_1020_bb70(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
   pass1_1020_bba4(param_1,0x1,param_2,param_3,(param_3 >> 0x10),in_AX,in_DX);
   return;
 }
-pub fn pass1_1020_bb8a(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
+pub unsafe fn pass1_1020_bb8a(param_1: *mut i32,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_AX: u16;
@@ -603,7 +603,7 @@ BOOL16 pass1_1020_bba4(param_1: *mut astruct_172,mut param_2: i16,mut param_3: u
   }
   return 0x1;
 }
-pub fn pass1_1020_bc72(param_1: *mut astruct_172)
+pub unsafe fn pass1_1020_bc72(param_1: *mut astruct_172)
 
 {
   let mut uVar1: u32;
@@ -612,7 +612,7 @@ pub fn pass1_1020_bc72(param_1: *mut astruct_172)
   pass1_1000_4aea(param_1.field0_0x0,uVar1,(uVar1 >> 0x10),0x6,0xbd6c);
   return;
 }
-pub fn pass1_1020_bc92(param_1: *mut u16,mut param_2: u16 )
+pub unsafe fn pass1_1020_bc92(param_1: *mut u16,mut param_2: u16 )
 
 {
   let mut uVar1: u32;
@@ -629,7 +629,7 @@ pub fn pass1_1020_bc92(param_1: *mut u16,mut param_2: u16 )
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub fn pass1_1020_bcc4(param_1: *mut astruct_172)
+pub unsafe fn pass1_1020_bcc4(param_1: *mut astruct_172)
 
 {
   let mut puVar1: *mut u16;
@@ -700,312 +700,312 @@ pub unsafe fn pass1_1020_bd80(mut param_1: u16 ) -> u16
   let mut uStack6: u16;
 
   switch(param_1) {
-  case 0x1:
-  case 0x6:
+  0x1 =>
+  0x6 =>
     uVar2 = 0x427;
     break;
-  case 0x2:
+  0x2 =>
     uVar2 = 0x428;
     break;
-  case 0x3:
-  case 0x7:
+  0x3 =>
+  0x7 =>
     uVar2 = 0x429;
     break;
-  case 0x4:
-  case 0x8:
+  0x4 =>
+  0x8 =>
     uVar2 = 0x425;
     break;
-  case 0x5:
-  case 0x9:
+  0x5 =>
+  0x9 =>
     uVar2 = 0x426;
     break;
-  case 0xa:
+  0xa =>
     uVar2 = 0x402;
     break;
-  case 0xb:
-  case 0x37:
+  0xb =>
+  0x37 =>
     uVar2 = 0x418;
     break;
-  case 0xc:
-  case 0x35:
-  case 0x36:
+  0xc =>
+  0x35 =>
+  0x36 =>
     uVar2 = 0x42a;
     break;
-  case 0xd:
+  0xd =>
     uVar2 = 0x5f7;
     break;
-  case 0xe:
+  0xe =>
     uVar2 = 0x5f6;
     break;
-  case 0xf:
+  0xf =>
     uVar2 = 0x403;
     break;
-  case 0x10:
+  0x10 =>
     uVar2 = 0x5f8;
     break;
-  case 0x11:
+  0x11 =>
     uVar2 = 0x404;
     break;
-  case 0x12:
+  0x12 =>
     uVar2 = 0x405;
     break;
-  case 0x13:
-  case 0x14:
-  case 0x15:
+  0x13 =>
+  0x14 =>
+  0x15 =>
     uVar2 = 0x406;
     break;
-  case 0x16:
-  case 0x19:
+  0x16 =>
+  0x19 =>
     uVar2 = 0x5f9;
     break;
-  case 0x17:
-  case 0x1a:
+  0x17 =>
+  0x1a =>
     uVar2 = 0x5fa;
     break;
-  case 0x18:
+  0x18 =>
     uVar2 = 0x5fb;
     break;
-  case 0x1b:
-  case 0x1c:
-  case 0x1d:
+  0x1b =>
+  0x1c =>
+  0x1d =>
     uVar2 = 0x408;
     break;
-  case 0x1e:
-  case 0x1f:
-  case 0x20:
+  0x1e =>
+  0x1f =>
+  0x20 =>
     uVar2 = 0x409;
     break;
-  case 0x21:
+  0x21 =>
     uVar2 = 0x42c;
     break;
-  case 0x22:
-  case 0x23:
-  case 0x24:
+  0x22 =>
+  0x23 =>
+  0x24 =>
     uVar2 = 0x40a;
     break;
-  case 0x25:
-  case 0x26:
-  case 0x27:
+  0x25 =>
+  0x26 =>
+  0x27 =>
     uVar2 = 0x40b;
     break;
-  case 0x28:
-  case 0x29:
+  0x28 =>
+  0x29 =>
     uVar2 = 0x40c;
     break;
-  case 0x2a:
-  case 0x2b:
+  0x2a =>
+  0x2b =>
     uVar2 = 0x40d;
     break;
-  case 0x2c:
+  0x2c =>
     uVar2 = 0x40e;
     break;
-  case 0x2d:
-  case 0x2e:
+  0x2d =>
+  0x2e =>
     uVar2 = 0x40f;
     break;
-  case 0x2f:
-  case 0x30:
+  0x2f =>
+  0x30 =>
     uVar2 = 0x410;
     break;
-  case 0x31:
-  case 0x32:
+  0x31 =>
+  0x32 =>
     uVar2 = 0x411;
     break;
-  case 0x33:
-  case 0x34:
+  0x33 =>
+  0x34 =>
     uVar2 = 0x416;
     break;
-  case 0x38:
-  case 0x39:
+  0x38 =>
+  0x39 =>
     uVar2 = 0x5fc;
     break;
-  case 0x3a:
-  case 0x3b:
+  0x3a =>
+  0x3b =>
     uVar2 = 0x419;
     break;
-  case 0x3c:
-  case 0x3d:
+  0x3c =>
+  0x3d =>
     uVar2 = 0x5fd;
     break;
-  case 0x3e:
+  0x3e =>
     uVar2 = 0x5fe;
     break;
-  case 0x3f:
+  0x3f =>
     uVar2 = 0x5ff;
     break;
-  case 0x40:
+  0x40 =>
     uVar2 = 0x600;
     break;
-  case 0x41:
+  0x41 =>
     uVar2 = 0x601;
     break;
-  case 0x42:
-  case 0x46:
-  case 0x6b:
+  0x42 =>
+  0x46 =>
+  0x6b =>
     uVar2 = 0x602;
     break;
-  case 0x43:
+  0x43 =>
     uStack6 = s_bidLRoadConst_1050_4e7a;
     return uStack6;
-  case 0x44:
+  0x44 =>
     uStack6 = s_bidRRoadConst_1050_4e88;
     return uStack6;
-  case 0x45:
+  0x45 =>
     uStack6 = s_bidXRoadConst_1050_4e96;
     return uStack6;
-  case 0x47:
+  0x47 =>
     uVar2 = 0x42b;
     break;
-  case 0x48:
-  case 0x49:
-  case 0x4a:
-  case 0x70:
-  case 0x71:
-  case 0x72:
+  0x48 =>
+  0x49 =>
+  0x4a =>
+  0x70 =>
+  0x71 =>
+  0x72 =>
     uVar2 = 0x603;
     break;
-  case 0x4b:
+  0x4b =>
     uVar2 = 0x42d;
     break;
-  case 0x4c:
+  0x4c =>
     uVar2 = 0x604;
     break;
-  case 0x4d:
+  0x4d =>
     uVar2 = 0x605;
     break;
-  case 0x4e:
+  0x4e =>
     uVar2 = 0x606;
     break;
-  case 0x4f:
-  case 0x50:
-  case 0x51:
+  0x4f =>
+  0x50 =>
+  0x51 =>
     uVar2 = 0x41a;
     break;
-  case 0x52:
-  case 0x53:
+  0x52 =>
+  0x53 =>
     uVar2 = 0x41b;
     break;
-  case 0x54:
-  case 0x55:
-  case 0x56:
+  0x54 =>
+  0x55 =>
+  0x56 =>
     uVar2 = 0x41d;
     break;
-  case 0x57:
-  case 0x58:
-  case 0x59:
+  0x57 =>
+  0x58 =>
+  0x59 =>
     uVar2 = 0x41e;
     break;
-  case 0x5a:
+  0x5a =>
     uVar2 = 0x41f;
     break;
-  case 0x5b:
-  case 0x5c:
+  0x5b =>
+  0x5c =>
     uVar2 = 0x421;
     break;
-  case 0x5d:
-  case 0x5e:
-  case 0x5f:
+  0x5d =>
+  0x5e =>
+  0x5f =>
     uVar2 = 0x420;
     break;
-  case 0x60:
-  case 0x61:
+  0x60 =>
+  0x61 =>
     uVar2 = 0x607;
     break;
-  case 0x62:
-  case 0x63:
+  0x62 =>
+  0x63 =>
     uVar2 = 0x608;
     break;
-  case 0x64:
+  0x64 =>
     uVar2 = 0x609;
     break;
-  case 0x65:
+  0x65 =>
     uVar2 = 0x422;
     break;
-  case 0x66:
-  case 0x67:
+  0x66 =>
+  0x67 =>
     uVar2 = 0x423;
     break;
-  case 0x68:
-  case 0x69:
+  0x68 =>
+  0x69 =>
     uVar2 = 0x60a;
     break;
-  case 0x6a:
+  0x6a =>
     uVar2 = 0x60b;
     break;
-  case 0x6c:
-  case 0x6d:
+  0x6c =>
+  0x6d =>
     uVar2 = 0x41c;
     break;
-  case 0x6e:
+  0x6e =>
     uVar2 = 0x60c;
     break;
-  case 0x6f:
+  0x6f =>
     uVar2 = 0x60d;
     break;
-  case 0x73:
-  case 0x77:
+  0x73 =>
+  0x77 =>
     uVar2 = 0x415;
     break;
-  case 0x74:
-  case 0x78:
-  case 0x79:
+  0x74 =>
+  0x78 =>
+  0x79 =>
     uVar2 = 0x412;
     break;
-  case 0x75:
+  0x75 =>
     uVar2 = 0x413;
     break;
-  case 0x76:
+  0x76 =>
     uVar2 = 0x414;
     break;
-  case 0x7a:
+  0x7a =>
     uVar2 = 0x60e;
     break;
-  case 0x7b:
+  0x7b =>
     uVar2 = 0x60f;
     break;
-  case 0x7c:
+  0x7c =>
     uVar2 = 0x610;
     break;
-  case 0x7d:
+  0x7d =>
     uVar2 = 0x611;
     break;
-  case 0x7e:
+  0x7e =>
     uVar2 = 0x612;
     break;
-  case 0x7f:
+  0x7f =>
     uVar2 = 0x613;
     break;
-  case 0x80:
+  0x80 =>
     uVar2 = 0x614;
     break;
-  case 0x81:
+  0x81 =>
     uVar2 = 0x615;
     break;
-  case 0x82:
+  0x82 =>
     uVar2 = 0x616;
     break;
-  case 0x83:
+  0x83 =>
     uVar2 = 0x617;
     break;
-  case 0x84:
+  0x84 =>
     uVar2 = 0x618;
     break;
-  case 0x85:
+  0x85 =>
     uVar2 = 0x619;
     break;
-  case 0x86:
+  0x86 =>
     uVar2 = 0x61a;
     break;
-  case 0x87:
+  0x87 =>
     uVar2 = 0x61b;
     break;
-  case 0x88:
+  0x88 =>
     uVar2 = 0x61c;
     break;
-  case 0x89:
+  0x89 =>
     uVar2 = 0x61d;
     break;
-  default:
+  _ =>
     uVar2 = 0x424;
   }
   pcVar1 = load_string_1010_847e(_u16_1050_14cc,uVar2);
