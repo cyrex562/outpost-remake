@@ -133,7 +133,7 @@ pub unsafe fn draw_op_1040_c38e(param_1: *mut astruct_772)
   if ((iVar1 != 0) && (uVar4 = iVar10.field5_0x6, (uVar4 + 0x16) != 0)) {
     iVar5 = iVar1;
     pass1_1010_2ee2(iVar10.field5_0x6);
-    for (iStack26 = 0; iStack26 < iVar1; iStack26 += 1) {
+    for iStack26 in 0 .. iVar1 {
       uVar3 = (iStack26 * 0x4 + iVar5);
       iVar11 = uVar3;
       iVar11 = iVar11 + 0x1e;
@@ -552,7 +552,7 @@ pub unsafe fn pass1_1040_ca74(param_1: *mut StructD)
   param_1.address_offset_field_0x0 = 0xd07c;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,(param_1 + 0x6));
-  PTR_LOOP_1050_5f10 = NULL;
+  PTR_LOOP_1050_5f10 = null_mut();
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }

@@ -307,7 +307,7 @@ pub unsafe fn file_1028_24a2(mut param_1: i16,param_2: *mut u8,param_3: *mut ast
       u16_1050_0310 = 0x6d2;
       return 0x0;
     }
-    for (uStack6 = 0; uStack6 < local_4; uStack6 += 1) {
+    for uStack6 in 0 .. local_4 {
       uVar3 = local_4;
       pHVar7 = param_4;
       mem_op_1000_179c(0x2a,paVar5);
@@ -441,7 +441,7 @@ pub unsafe fn pass1_1028_2762(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_180 * struct_1028_27f0(param_1: *mut astruct_180)
+pub unsafe fn struct_1028_27f0(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   struct_1028_b354(param_1);

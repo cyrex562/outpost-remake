@@ -90,17 +90,17 @@ pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char,mut param_2: u16 ,mut
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,StructB *struct_b_param_1,mut param_3: u16 )
+pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,struct_b_param_1: *mut StructB,mut param_3: u16 )
 
 {
-  LPVOID pvVar1;
+  let mut pvVar1: LPVOID = null_mut();
   let mut uVar2: u32;
   let mut uVar3: u16;
   let mut rect: *mut Struct57;
   let mut uVar4: u16;
   let mut uVar5: *mut StructD;
   let mut paVar5: *mut Struct57;
-  StructB *struct_b_4;
+  struct_b_4: *mut StructB;
   let mut iVar6: i16;
   let mut unaff_SI: u16;
   let mut unaff_DI: i16;
@@ -139,7 +139,7 @@ pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,StructB *struct_b_param_1
   puStack26 = CONCAT22(uVar5,PTR_LOOP_1050_5f2c);
   uVar3 = fn_ptr_op_1000_1708((uStack8 + 0x2) * 0x4,0x0,0x1,PTR_LOOP_1050_5f2c,uVar5);
   uVar7 = (struct_b_param_1 >> 0x10);
-  struct_b_4 = (StructB *)struct_b_param_1;
+  struct_b_4 = struct_b_param_1;
   struct_b_4[0x7].field1_0x2 = uVar3;
   struct_b_4[0x7].hwnd_0x6 = uVar5;
   for (iStack10 = 0x1; iStack10 <= uStack8; iStack10 += 1) {
@@ -168,7 +168,7 @@ pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,StructB *struct_b_param_1
       uVar2 = &struct_b_4[0x7].field1_0x2;
       uVar8 = (uVar2 >> 0x10);
       iVar6 = uVar2;
-      *(astruct_57 **)(iVar6 + iStack10 * 0x4) = rect;
+      (iVar6 + iStack10 * 0x4) = rect;
       (iVar6 + iStack10 * 0x4 + 0x2) = uVar5;
     }
     uVar2 = &struct_b_4[0x7].field1_0x2;
@@ -314,10 +314,10 @@ pub unsafe fn pass1_1040_692e(param_1: u32)
 // WARNING: Unable to use type for symbol uVar19
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn mixed_win_ui_op_1040_6942
-               (param_1: *mut astruct_57,mut param_2: u16 ,StructB *struct_b_param_1,mut param_4: u16 ,mut param_5: u16 )
+               (param_1: *mut astruct_57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
 {
-  LPVOID pvVar1;
+  let mut pvVar1: LPVOID = null_mut();
   let mut ppcVar2: *mut *mut code;
   let mut paVar3: *mut Struct57;
   let mut hwnd: *mut u32;
@@ -326,7 +326,7 @@ pub unsafe fn mixed_win_ui_op_1040_6942
   let mut uVar10: u16;
   let mut uVar5: u16;
   let mut paVar13: *mut Struct57;
-  StructB *struct_b_6;
+  struct_b_6: *mut StructB;
   let mut uVar6: u16;
   let mut uVar9: u16;
   let mut uVar7: u16;
@@ -379,7 +379,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar11 = (param_1 & 0xffff0000 | puVar15 >> 0x10);
   paVar3 = puVar15;
   uVar6 = (struct_b_param_1 >> 0x10);
-  struct_b_6 = (StructB *)struct_b_param_1;
+  struct_b_6 = struct_b_param_1;
   struct_b_6[0x7].max_count_field_0x10 = paVar3;
   struct_b_6[0x7].field5_0xa = (puVar15 >> 0x10);
   ppcVar2 = (*&struct_b_6[0x7].max_count_field_0x10 + 0x4);
@@ -388,7 +388,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar10 = paVar11 | paVar3;
   paVar12 = (paVar11 & 0xffff0000 | uVar10);
   if (uVar10 == 0) {
-    &struct_b_6[0x7].field6_0xc = 0;
+    struct_b_6[0x7].field6_0xc = 0;
   }
   else {
     puVar14 = struct_1040_bf3e(CONCAT13((paVar11 >> 0x8),CONCAT12(paVar11,paVar3)),
@@ -422,7 +422,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar11 = (paVar12 & 0xffff0000);
   paVar13 = (paVar11 | uVar10);
   if (uVar10 == 0) {
-    paVar3 = NULL;
+    paVar3 = null_mut();
   }
   else {
     pvVar1 = struct_b_6.lpvoid_field_0x8;
@@ -439,7 +439,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar5 = paVar11 | paVar3;
   uVar14 = paVar11 & 0xffff0000 | uVar5;
   if (uVar5 == 0) {
-    paVar3 = NULL;
+    paVar3 = null_mut();
     uStack4 = 0;
   }
   else {
@@ -459,7 +459,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar20 = (local_58 >> 0x8);
   hdc = hdc_8;
   uVar10 = str_op_1000_3da4(CONCAT22(0x1050,local_58));
-  DVar16 = GetTextExtent16(uVar10,(LPCSTR)CONCAT22(uVar22,CONCAT11(uVar20,uVar17)),hdc);
+  DVar16 = GetTextExtent16(uVar10,CONCAT22(uVar22,CONCAT11(uVar20,uVar17)),hdc);
   HStack90 = (HMENU16)(DVar16 >> 0x10);
   HStack92 = DVar16;
   CreateWindow16(0x0,CONCAT22(0x7cd,HINSTANCE16_1050_038c),struct_b_6.lpvoid_field_0x8,HStack90,
@@ -472,7 +472,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   pcVar23 = local_58;
   uVar22 = SUB42(&DAT_1050_1050,0x0);
   uVar10 = str_op_1000_3da4(CONCAT13(0x10,CONCAT12(0x50,pcVar23)));
-  DVar16 = GetTextExtent16(uVar10,(LPCSTR)CONCAT22(uVar22,pcVar23),CONCAT11(uVar19,uVar18));
+  DVar16 = GetTextExtent16(uVar10,CONCAT22(uVar22,pcVar23),CONCAT11(uVar19,uVar18));
   HStack90 = (HMENU16)(DVar16 >> 0x10);
   HStack92 = DVar16;
   ReleaseDC16(hdc_8,struct_b_6.lpvoid_field_0x8);
@@ -585,7 +585,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
     PostMessage16(0x0,0x10a,0x111,param_1.field6_0x6);
     break;
   0x107 =>
-    iVar3 = NULL;
+    iVar3 = null_mut();
 // TODO: goto LAB_1040_6e48;
   0x108 =>
     iVar3 = (&PTR_LOOP_1050_0000 + 1);//

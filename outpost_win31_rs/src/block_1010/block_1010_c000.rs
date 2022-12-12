@@ -283,7 +283,7 @@ pub unsafe fn pass1_1010_c58as(
     paVar6 = (paVar4 & 0xffff0000);
     paVar5 = (paVar6 | ZEXT24(pstructd_1_hi));
     if (pstructd_1_hi.is_null()) {
-        pstructd_1_lo = NULL;
+        pstructd_1_lo = null_mut();
     } else {
         struct_1040_a598((uVar1 & 0xffff | paVar4 << 0x10));
         paVar6 = paVar5;
@@ -294,7 +294,7 @@ pub unsafe fn pass1_1010_c58as(
     if ((uVar2 | pstructd_1_lo) == 0) {
         return;
     }
-    ppuStack14 = NULL;
+    ppuStack14 = null_mut();
     HStack18 = 0;
     UStack16 = 0;
     match param_4 {
@@ -484,11 +484,11 @@ pub unsafe fn pass1_1010_c864(
     let mut puStack86: *mut u8;
     let mut string_1: [u8; 0x52] = [0; 0x52];
 
-    puStack86 = NULL;
+    puStack86 = null_mut();
     struct_1_seg = (param_4 >> 0x10);
     struct_1 = param_4;
     struct_2 = param_4.field0_0x0;
-    uVar12 = NULL;
+    uVar12 = null_mut();
     uStack92 = 0;
     uVar14 = param_2;
     uVar15 = (param_2 >> 0x10);

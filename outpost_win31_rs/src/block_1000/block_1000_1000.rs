@@ -229,8 +229,8 @@ pub unsafe fn pass1_1000_1e61(mut param_1: u16, mut param_2: u16, param_3: *mut 
     puStack4 = 0x1050; // &DAT_1050_1050;
     pcStack6 = &PTR_PTR_1050_5f1a;
     if (PTR_LOOP_1050_5f1c | PTR_PTR_1050_5f1a) == 0x0 {
-        pcStack6 = NULL;
-        puStack4 = NULL;
+        pcStack6 = null_mut();
+        puStack4 = null_mut();
     } else {
         iVar1 = mem_op_1000_21b6(PTR_PTR_1050_5f1a, PTR_LOOP_1050_5f1c);
         pcStack6 = PTR_PTR_1050_5f1a;
@@ -249,8 +249,8 @@ pub unsafe fn pass1_1000_1e61(mut param_1: u16, mut param_2: u16, param_3: *mut 
     if (BVar2 == 0) {
         u16_var3 = (*pcStack6)(0x1000, &UStack64, &DAT_1050_1050, uVar3);
     } else {
-        puStack4 = NULL;
-        pcStack6 = NULL;
+        puStack4 = null_mut();
+        pcStack6 = null_mut();
         u16_var3 = 0;
     }
     if ((puStack4 | pcStack6) != 0) {

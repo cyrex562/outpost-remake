@@ -522,7 +522,7 @@ pub unsafe fn pass1_1008_58a6(mut param_1: u32,mut param_2: u32)
   uVar3 = (paStack6 >> 0x10);
   uVar2 = paStack6;
   if ((uVar3 | uVar2) == 0) {
-    paStack6 = NULL;
+    paStack6 = null_mut();
   }
   else {
     paStack6.field0_0x0 = 0x389a;
@@ -572,7 +572,7 @@ pub unsafe fn pass1_1008_593c(param_1: u32,mut param_2: u32)
   uVar4 = (paStack6 >> 0x10);
   uVar3 = paStack6;
   if ((uVar4 | uVar3) == 0) {
-    paStack6 = NULL;
+    paStack6 = null_mut();
   }
   else {
     paStack6.field0_0x0 = 0x389a;
@@ -614,7 +614,7 @@ pub unsafe fn pass1_1008_59f4(mut param_1: u32,param_2: i32)
   let mut uStack10: u16;
   let mut puStack6: *mut u32;
 
-  puStack6 = NULL;
+  puStack6 = null_mut();
   uVar9 = (param_1 >> 0x10);
   puVar6 = puStack6;
   puVar4 = param_1;

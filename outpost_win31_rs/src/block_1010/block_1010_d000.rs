@@ -459,7 +459,7 @@ pub unsafe fn pass1_1010_d984(
             return;
         }
         uStack18 = (puVar2 + 0xa);
-        pcStack22 = NULL;
+        pcStack22 = null_mut();
         if ((puVar2 + 0x4) == 0) {
             if ((puVar2 + 0x6) == 0) {
                 if ((puVar2 + 0x8) == 0) {

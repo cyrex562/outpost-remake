@@ -21,7 +21,7 @@ pub unsafe fn pass1_1028_c00a(mut param_1: i16,param_2: *mut astruct_15,param_3:
   let mut puStack18: *mut u32;
 
   pass1_1028_b58e(param_2);
-  paVar1 = *(astruct_691 **)(param_1 + 0x2e);
+  paVar1 = (param_1 + 0x2e);
   puVar8 = pass1_1008_c6fa(_u16_1050_06e0,0x4);
   puVar5 = (puVar8 >> 0x10);
   uVar3 = puVar8;
@@ -89,7 +89,7 @@ pub unsafe fn pass1_1028_c0f0(mut param_1: i16,param_2: *mut astruct_15,param_3:
 
   pass1_1028_b58e(param_2);
   paStack6 = CONCAT22(extraout_DX,param_1);
-  paVar1 = *(astruct_691 **)(param_1 + 0x2e);
+  paVar1 = (param_1 + 0x2e);
   pass1_1028_cb04(param_2);
   uVar8 = (paVar1 >> 0x10);
   if (((paVar1 + 0x204) == 0) && ((paVar1 + 0x206) == 0)) {
@@ -104,7 +104,7 @@ pub unsafe fn pass1_1028_c0f0(mut param_1: i16,param_2: *mut astruct_15,param_3:
     (**ppcVar2)(&u16_1050_1038,uVar3,puVar5);
     uStack24 = CONCAT22(extraout_DX_00,uVar6);
     puVar7 = extraout_DX_00;
-    for (uStack28 = 0; uStack28 < uStack24; uStack28 += 1) {
+    for uStack28 in 0 .. uStack24 {
       ppcVar2 = (*puStack20 + 0x4);
       uVar10 = uStack24;
       (**ppcVar2)(uVar8,uVar3,puVar5,uStack28,(uStack28 >> 0x10));
@@ -204,7 +204,7 @@ pub unsafe fn pass1_1028_c23e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 pass1_1028_c314(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,mut param_6: u16 ,
+pass1_1028_c314: BOOL16(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u16,mut param_6: u16 ,
                       mut param_7: u16 ,mut param_8: u32)
 
 {
@@ -669,7 +669,7 @@ pub unsafe fn pass1_1028_c952(param_1: *mut astruct_15)
       }
       uVar12 = (uVar1 >> 0x10);
       if ((uStack14 + 0x204) == 0) {
-        for (uStack16 = 0; uStack16 < 0x25; uStack16 += 1) {
+        for uStack16 in 0 .. 0x25 {
           uStack30 = (&uVar3.field_0x0 + uStack16 * 0x4);
           uVar7 = uStack30;
           uVar9 = (&uVar3.field_0x2 + uStack16 * 0x4) | uVar7;

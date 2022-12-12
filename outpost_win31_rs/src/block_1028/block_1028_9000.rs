@@ -12,7 +12,7 @@ pub unsafe fn pass1_1028_90aa(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_90e6(param_1: *mut astruct_97,mut param_2: u16 )
+pub unsafe fn pass1_1028_90e6(param_1: *mut astruct_97,mut param_2: u16 ) -> *mut astruct_97
 
 {
   let mut uVar1: u16;
@@ -219,8 +219,8 @@ pub unsafe fn pass1_1028_93d4(mut param_1: u16 ,mut param_2: u32)
   let mut local_112: [u8;0x10c] = [0;0x10c];
   let mut uStack6: u32;
 
-  PTR_LOOP_1050_50ca = NULL;
-  PTR_LOOP_1050_50cc = NULL;
+  PTR_LOOP_1050_50ca = null_mut();
+  PTR_LOOP_1050_50cc = null_mut();
   uVar6 = (param_2 >> 0x10);
   iVar5 = param_2;
   uStack6 = pass1_1028_e2e0(CONCAT22(in_register_0000000a,param_1),_PTR_LOOP_1050_65e2,0x7);
@@ -680,7 +680,7 @@ pub unsafe fn pass1_1028_9c2c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * struct_1028_9c62(param_1: *mut astruct_97,mut param_2: u16 )
+pub unsafe fn struct_1028_9c62(param_1: *mut astruct_97,mut param_2: u16 ) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,param_2);
@@ -765,7 +765,7 @@ pub unsafe fn pass1_1028_9e8a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_9ec6(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_9ec6(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,s_noth_bmp_1050_2321 + 0x6);

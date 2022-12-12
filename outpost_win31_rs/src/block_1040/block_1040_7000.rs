@@ -39,10 +39,10 @@ pub unsafe fn pass1_1040_70a0(param_1: u32)
 // WARNING: Unable to use type for symbol uVar15
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn mixed_win_ui_op_1040_70b4
-               (param_1: *mut astruct_57,mut param_2: u16 ,StructB *struct_b_param_1,mut param_4: u16 ,mut param_5: u16 )
+               (param_1: *mut astruct_57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
 {
-  LPVOID pvVar1;
+  let mut pvVar1: LPVOID = null_mut();
   let mut paVar2: *mut Struct57;
   let mut uVar3: u16;
   let mut count: u16;
@@ -52,7 +52,7 @@ pub unsafe fn mixed_win_ui_op_1040_70b4
   let mut uVar5: u16;
   let mut paVar5: *mut Struct57;
   let mut paVar7: *mut Struct57;
-  StructB *struct_b_5;
+  struct_b_5: *mut StructB;
   let mut uVar6: u16;
   let mut uVar7: u16;
   let mut uVar8: u16;
@@ -104,7 +104,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar5 = (param_1 & 0xffff0000 | puVar10 >> 0x10);
   paVar2 = puVar10;
   uVar6 = (struct_b_param_1 >> 0x10);
-  struct_b_5 = (StructB *)struct_b_param_1;
+  struct_b_5 = struct_b_param_1;
   struct_b_5[0x7].max_count_field_0x10 = paVar2;
   struct_b_5[0x7].field5_0xa = (puVar10 >> 0x10);
   fn_ptr_1 = (*&struct_b_5[0x7].max_count_field_0x10 + 0x4);
@@ -113,7 +113,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar4 = paVar5 | paVar2;
   paVar6 = (paVar5 & 0xffff0000 | uVar4);
   if (uVar4 == 0) {
-    &struct_b_5[0x7].field6_0xc = 0;
+    struct_b_5[0x7].field6_0xc = 0;
   }
   else {
     puVar11 = struct_1040_bf3e(CONCAT13((paVar5 >> 0x8),CONCAT12(paVar5,paVar2)),
@@ -147,7 +147,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   paVar5 = (paVar6 & 0xffff0000);
   paVar7 = (paVar5 | uVar4);
   if (uVar4 == 0) {
-    paVar2 = NULL;
+    paVar2 = null_mut();
   }
   else {
     pvVar1 = struct_b_5.lpvoid_field_0x8;
@@ -164,7 +164,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar5 = paVar5 | paVar2;
   uVar9 = paVar5 & 0xffff0000 | uVar5;
   if (uVar5 == 0) {
-    paVar2 = NULL;
+    paVar2 = null_mut();
     uStack4 = 0;
   }
   else {
@@ -184,7 +184,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   uVar12 = (local_58 >> 0x8);
   hdc = HStack8;
   uVar3 = str_op_1000_3da4(CONCAT22(0x1050,local_58));
-  DVar11 = GetTextExtent16(uVar3,(LPCSTR)CONCAT22(uVar16,CONCAT11(uVar12,uVar11)),hdc);
+  DVar11 = GetTextExtent16(uVar3,CONCAT22(uVar16,CONCAT11(uVar12,uVar11)),hdc);
   HStack90 = (HMENU16)(DVar11 >> 0x10);
   HStack92 = DVar11;
   CreateWindow16(0x0,CONCAT22(0x7cd,HINSTANCE16_1050_038c),struct_b_5.lpvoid_field_0x8,HStack90,
@@ -197,7 +197,7 @@ let mut local_58: [u8;0x50] = [0;0x50];
   pcVar17 = local_58;
   uVar16 = SUB42(&DAT_1050_1050,0x0);
   count = str_op_1000_3da4(CONCAT13(0x10,CONCAT12(0x50,pcVar17)));
-  DVar12 = GetTextExtent16(count,(LPCSTR)CONCAT22(uVar16,pcVar17),CONCAT11(uVar15,uVar14));
+  DVar12 = GetTextExtent16(count,CONCAT22(uVar16,pcVar17),CONCAT11(uVar15,uVar14));
   HStack90 = (HMENU16)(DVar12 >> 0x10);
   HStack92 = DVar12;
   ReleaseDC16(HStack8,struct_b_5.lpvoid_field_0x8);
@@ -461,14 +461,14 @@ pub unsafe fn pass1_1040_78de()
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn dialog_ui_fn_1040_78e2(StructB *in_struct_1)
+pub unsafe fn dialog_ui_fn_1040_78e2(in_struct_1: *mut StructB)
 
 {
   let mut puVar1: *mut u8;
-  LPVOID dialog_handle;
+  let mut dialog_handle: LPVOID = null_mut();
   let mut uVar2: u16;
-  StructB *struct_b_1;
-  StructB *local_string_1;
+  struct_b_1: *mut StructB;
+  local_string_1: *mut StructB;
   let mut uVar3: u16;
   let mut lVar4: i32;
   HANDLE16 local_string_2;
@@ -476,8 +476,8 @@ pub unsafe fn dialog_ui_fn_1040_78e2(StructB *in_struct_1)
 pub unsafe fn *pvStack6;
   let mut fn_ptr_1: *mut *mut code;
 
-  local_string_1 = (StructB *)(in_struct_1 >> 0x10);
-  struct_b_1 = (StructB *)in_struct_1;
+  local_string_1 = (in_struct_1 >> 0x10);
+  struct_b_1 = in_struct_1;
   if (&struct_b_1.field6_0xc == 0) {
     uVar3 = (_u16_1050_5bc8 >> 0x10);
     puVar1 = (_u16_1050_5bc8 + 0x4);
@@ -489,7 +489,7 @@ pub unsafe fn *pvStack6;
   }
   pvStack6 = CONCAT22(uVar2,puVar1);
   dialog_handle =
-       (LPVOID)CreateDialog16(pvStack6,struct_b_1.max_count_field_0x10,ZEXT24(struct_b_1.field5_0xa),
+       CreateDialog16(pvStack6,struct_b_1.max_count_field_0x10,ZEXT24(struct_b_1.field5_0xa),
                               HINSTANCE16_1050_038c);
   struct_b_1.lpvoid_field_0x8 = dialog_handle;
   GetWindowText16(0x50,in_struct_1 & 0xffff0000 | ZEXT24(&struct_b_1.field8_0x10),dialog_handle);
@@ -712,7 +712,7 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
           hdc16_dev_ctx_1 = win_hdc16_4;
           SetTextColor16(CONCAT22(0x100,iVar5),win_hdc16_4);
           count = lstrlen16(CONCAT22(hdc16_dev_ctx_1,count_01));
-          DVar2 = GetTextExtent16(count,(LPCSTR)CONCAT22(count_01,win_hdc16_4),win_hdc16_4);
+          DVar2 = GetTextExtent16(count,CONCAT22(count_01,win_hdc16_4),win_hdc16_4);
           count_00 = ((struct_1.field117_0x7e - struct_1.field115_0x7a) / 0x2 - DVar2 / 0x2) +
                      struct_1.field115_0x7a;
           brush_handle = (struct_1.field118_0x80 - struct_1.field116_0x7c) / 0x2 - (DVar2 >> 0x10) / 0x2;

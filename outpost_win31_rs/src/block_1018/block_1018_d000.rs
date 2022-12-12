@@ -1,5 +1,5 @@
 
-astruct_29 * pass1_1018_d198(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d198(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -11,7 +11,7 @@ astruct_29 * pass1_1018_d198(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d1be(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d1be(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -23,7 +23,7 @@ astruct_29 * pass1_1018_d1be(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d1e4(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d1e4(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -35,7 +35,7 @@ astruct_29 * pass1_1018_d1e4(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d20a(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d20a(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -47,7 +47,7 @@ astruct_29 * pass1_1018_d20a(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d230(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d230(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -59,7 +59,7 @@ astruct_29 * pass1_1018_d230(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d256(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d256(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -71,7 +71,7 @@ astruct_29 * pass1_1018_d256(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d27c(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d27c(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -83,7 +83,7 @@ astruct_29 * pass1_1018_d27c(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d2a2(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d2a2(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -95,7 +95,7 @@ astruct_29 * pass1_1018_d2a2(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d2c8(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d2c8(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -107,7 +107,7 @@ astruct_29 * pass1_1018_d2c8(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d2ee(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d2ee(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -119,7 +119,7 @@ astruct_29 * pass1_1018_d2ee(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d314(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d314(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -131,7 +131,7 @@ astruct_29 * pass1_1018_d314(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d33a(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d33a(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -143,7 +143,7 @@ astruct_29 * pass1_1018_d33a(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d360(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d360(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -155,7 +155,7 @@ astruct_29 * pass1_1018_d360(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d386(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d386(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -167,7 +167,7 @@ astruct_29 * pass1_1018_d386(param_1: *mut astruct_29,param_2: u8)
 
 
 
-astruct_29 * pass1_1018_d3ac(param_1: *mut astruct_29,param_2: u8)
+pub unsafe fn pass1_1018_d3ac(param_1: *mut astruct_29,param_2: u8) -> *mut astruct_29
 
 {
   destroy_window_1018_c518(param_1);
@@ -367,7 +367,7 @@ pub unsafe fn win_1018_df40(mut param_1: u16 ,param_2: *mut u8,param_3: *mut Str
     struct_1[0x1].field12_0x18 = (puVar1 >> 0x10);
     return;
   }
-  &struct_1[0x1].field11_0x16 = 0;
+  struct_1[0x1].field11_0x16 = 0;
   return;
 }
 pub unsafe fn pass1_1018_df92(mut param_1: u32)
@@ -412,7 +412,7 @@ pub unsafe fn pass1_1018_dfd4(param_1: *mut u8,mut param_2: u32)
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   uVar3 = (param_2 >> 0x10);
   uVar2 = param_2;
-  delete_palette_1018_e16c(*(astruct_795 **)(uVar2 + 0xe2));
+  delete_palette_1018_e16c((uVar2 + 0xe2));
   if ((uVar2 + 0xe6) == 0) {
     (uVar2 + 0xe6) = 0x1;
     puVar4 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(in_stack_0000fff4,0x36),in_stack_0000fe9c,

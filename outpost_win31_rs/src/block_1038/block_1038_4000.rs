@@ -39,7 +39,7 @@ pub unsafe fn pass1_1038_42cc(mut param_1: u32)
   uStack18 = CONCAT22(extraout_DX,uVar5);
   bVar3 = false;
   uVar8 = extraout_DX;
-  for (uStack24 = 0; uStack24 < uStack18; uStack24 += 1) {
+  for uStack24 in 0 .. uStack18 {
     uVar11 = 0x1030;
     puVar13 = pass1_1030_1d7c(uVar5,uVar8,puStack10);
     uVar6 = puVar13;
@@ -63,7 +63,7 @@ pub unsafe fn pass1_1038_42cc(mut param_1: u32)
     uVar8 |= uStack18;
     if (uVar8 != 0) {
       uVar11 = 0x1030;
-      pass1_1030_326a(uStack18,uVar8,*(astruct_692 **)(iVar9 + 0x1f6));
+      pass1_1030_326a(uStack18,uVar8,(iVar9 + 0x1f6));
     }
   }
   if (puStack10.is_null() == false) {
@@ -121,7 +121,7 @@ pub unsafe fn pass1_1038_43cc(mut param_1: i16,mut param_2: i16,mut param_3: i16
     uVar3 = uVar2;
     (**ppcVar1)(0x1008,uVar2,paVar6);
     uStack18 = CONCAT22(paVar7,uVar3);
-    for (uStack22 = 0; uStack22 < uStack18; uStack22 += 1) {
+    for uStack22 in 0 .. uStack18 {
       paVar12 = pass1_1030_1d7c(uVar3,paVar7,puStack14);
       paVar7 = (paVar12 >> 0x10);
       uVar5 = paVar12 & 0xffff;
@@ -190,7 +190,7 @@ pub unsafe fn pass1_1038_44d8(mut param_1: i16,mut param_2: i16,mut param_3: i16
     uVar3 = uVar2;
     (**ppcVar1)(0x1008,uVar2,paVar6);
     uStack18 = CONCAT22(paVar7,uVar3);
-    for (uStack22 = 0; uStack22 < uStack18; uStack22 += 1) {
+    for uStack22 in 0 .. uStack18 {
       paVar11 = pass1_1030_1d7c(uVar3,paVar7,puStack14);
       paVar7 = (paVar11 >> 0x10);
       uVar5 = paVar11 & 0xffff;
@@ -383,7 +383,7 @@ pub unsafe fn pass1_1038_4760(mut param_1: u32)
     (**ppcVar2)();
     uStack22 = CONCAT22(extraout_DX_03,uVar4);
     uVar9 = extraout_DX_03;
-    for (uStack26 = 0; uStack26 < uStack22; uStack26 += 1) {
+    for uStack26 in 0 .. uStack22 {
       puVar14 = puStack14;
       uVar13 = pass1_1030_1d7c(uVar4,uVar9,puStack10);
       uVar9 = (uVar13 >> 0x10);
@@ -603,7 +603,7 @@ pub unsafe fn pass1_1038_4b20(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
 {
   let mut paVar1: *mut astruct_360;
 
-  paVar1 = *(astruct_360 **)(param_2 + 0xc);
+  paVar1 = (param_2 + 0xc);
   pass1_1020_c4f4(paVar1,param_1,paVar1,param_3,(param_3 >> 0x10),param_4);
   return;
 }
@@ -639,7 +639,7 @@ pub unsafe fn pass1_1038_4b40(mut param_1: u16 ,mut param_2: u32)
     uVar4 = extraout_DX;
   }
   uStack10 = CONCAT22(uVar4,param_1);
-  for (uStack14 = 0; uStack14 < uStack10; uStack14 += 1) {
+  for uStack14 in 0 .. uStack10 {
     ppcVar1 = ((iVar6 + 0xc) + 0x4);
     uVar3 = uStack10;
     (**ppcVar1)(unaff_CS,(iVar6 + 0xc));

@@ -37,7 +37,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
         uVar8 = (paStack40 >> 0x10);
         uVar3 = paStack40;
         if ((uVar8 | uVar3) == 0) {
-          paStack40 = NULL;
+          paStack40 = null_mut();
         }
         else {
           paStack40.field0_0x0 = 0x389a;
@@ -62,7 +62,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
         uVar8 = (paStack40 >> 0x10);
         uVar4 = paStack40;
         if ((uVar8 | uVar4) == 0) {
-          paStack40 = NULL;
+          paStack40 = null_mut();
         }
         else {
           paStack40.field0_0x0 = 0x389a;
@@ -92,7 +92,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
       uVar5 = paStack40;
       pSVar9 = (uVar8 | uVar5);
       if (pSVar9.is_null()) {
-        paStack40 = NULL;
+        paStack40 = null_mut();
       }
       else {
         paStack40.field0_0x0 = 0x389a;
@@ -117,7 +117,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
   else {
     puVar1 = iVar8.field13_0xe;
     uStack4 = (puVar1 + 0x4);
-    for (uStack12 = 0; uStack12 < uStack4; uStack12 += 1) {
+    for uStack12 in 0 .. uStack4 {
       pass1_1020_bb16(iVar8.field13_0xe,CONCAT22(0x1050,&local_a),CONCAT22(0x1050,&local_6),uStack12
                      );
       if (local_a != 0) {
@@ -125,7 +125,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
         uVar8 = (paStack16 >> 0x10);
         uVar6 = paStack16;
         if ((uVar8 | uVar6) == 0) {
-          paStack16 = NULL;
+          paStack16 = null_mut();
         }
         else {
           paStack16.field0_0x0 = 0x389a;
@@ -220,7 +220,7 @@ code_r0x10387545:
         uVar6 = (paStack50 >> 0x10);
         uVar10 = paStack50;
         if ((uVar6 | uVar10) == 0) {
-          paStack50 = NULL;
+          paStack50 = null_mut();
         }
         else {
           paStack50.field0_0x0 = 0x389a;
@@ -244,7 +244,7 @@ code_r0x10387545:
         uVar6 = (paStack26 >> 0x10);
         uVar8 = paStack26;
         if ((uVar6 | uVar8) == 0) {
-          paStack26 = NULL;
+          paStack26 = null_mut();
         }
         else {
           paStack26.field0_0x0 = 0x389a;
@@ -743,7 +743,7 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 * pass1_1038_7d10(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 )
+pub unsafe fn pass1_1038_7d10(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;

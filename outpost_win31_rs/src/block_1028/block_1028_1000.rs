@@ -135,7 +135,7 @@ pub unsafe fn pass1_1028_11de(param_1: *mut astruct_15) -> bool
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_15 * pass1_1028_121e(mut param_1: u16 ,param_2: *mut astruct_15)
+pub unsafe fn pass1_1028_121e(mut param_1: u16 ,param_2: *mut astruct_15) -> *mut astruct_15
 
 {
   let mut bVar1: bool;
@@ -247,7 +247,7 @@ pub unsafe fn pass1_1028_134a(param_1: *mut astruct_15)
     uVar7 = SUB42(paVar8,0x0);
     pass1_1028_b58e(paVar8);
     uStack18 = CONCAT22(uVar5,uVar7);
-    for (iStack22 = 0; iStack22 < 0xa; iStack22 += 1) {
+    for iStack22 in 0 .. 0xa {
       uStack10 = (iStack22 * 0x2 + 0x4fbe);
       paVar6 = (uStack10 >> 0x10);
       if (uStack10 < uStack10) {
@@ -410,7 +410,7 @@ pub unsafe fn pass1_1028_1556(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
 
 
 
-astruct_409 * pass1_1028_1646(param_1: *mut astruct_409)
+pub unsafe fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409
 
 {
   let mut paVar1: *mut astruct_409;

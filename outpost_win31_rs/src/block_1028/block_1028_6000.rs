@@ -136,7 +136,7 @@ pub unsafe fn pass1_1028_61c4(mut param_1: u16 ,param_2: *mut astruct_15,mut par
   mem_op_1000_179c(0xc,paVar3);
   uVar2 = paVar3 | paVar1;
   if (uVar2 == 0) {
-    paVar1 = NULL;
+    paVar1 = null_mut();
     uVar2 = 0;
   }
   else {
@@ -410,7 +410,7 @@ pub unsafe fn pass1_1028_65e2(mut param_1: i16,param_2: *mut u8,param_3: *mut as
         uVar5 = (paStack20 >> 0x10);
         uVar2 = paStack20;
         if ((uVar5 | uVar2) == 0) {
-          paStack20 = NULL;
+          paStack20 = null_mut();
         }
         else {
           paStack20.field0_0x0 = 0x389a;
@@ -871,7 +871,7 @@ pub unsafe fn pass1_1028_6e24(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_6e60(param_1: u8,param_2: *mut astruct_97)
+pub unsafe fn pass1_1028_6e60(param_1: u8,param_2: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_2,0x32c7);
@@ -888,7 +888,7 @@ pub unsafe fn pass1_1028_6e96(mut param_1: u16 ) -> u16
 {
   let mut paVar1: *mut astruct_92;
   let mut ppcVar2: *mut *mut code;
-  astruct_92 **ppaVar3;
+  let mut ppaVar3: *mut *mut astruct_92 = null_mut();
   let mut uVar4: u16;
   let mut extraout_DX: u16;
   let mut puStack24: *mut u32;
@@ -966,7 +966,7 @@ pub unsafe fn pass1_1028_6f84(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_6fc0(param_1: u8,param_2: *mut astruct_97)
+pub unsafe fn pass1_1028_6fc0(param_1: u8,param_2: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_2,0x3e7);

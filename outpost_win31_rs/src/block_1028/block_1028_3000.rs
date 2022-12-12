@@ -395,7 +395,7 @@ pub unsafe fn pass1_1028_3958(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
     uStack4 = param_2;
     if (u16_1050_574c != 0) {
       uStack30 = (puStack10 + 0x4);
-      for (uStack34 = 0; uStack34 < uStack30; uStack34 += 1) {
+      for uStack34 in 0 .. uStack30 {
         pass1_1020_bb16(puStack10,CONCAT22(0x1050,local_2c),CONCAT22(0x1050,&local_28),uStack34
                        );
       }

@@ -293,7 +293,7 @@ pub unsafe fn pass1_1008_e3ec(param_1: *mut astruct_218, param_2: *mut u32, para
     uVar8 = paVar6 & 0xffff0000;
     uVar7 = uVar8 | uVar4;
     if (uVar4 == 0) {
-        puVar3 = NULL;
+        puVar3 = null_mut();
     } else {
         struct_op_1030_1cd8(
             CONCAT13((paVar6 >> 0x8), CONCAT12(paVar6, puVar3)),
@@ -333,7 +333,7 @@ pub unsafe fn pass1_1008_e3ec(param_1: *mut astruct_218, param_2: *mut u32, para
     mem_op_1000_179c(0x18, paVar6);
     uVar4 = paVar6 | puVar3;
     if (uVar4 == 0) {
-        puVar3 = NULL;
+        puVar3 = null_mut();
         uVar4 = 0;
     } else {
         struct_op_1030_1cd8(

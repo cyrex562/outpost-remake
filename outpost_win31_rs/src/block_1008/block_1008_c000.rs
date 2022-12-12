@@ -431,7 +431,7 @@ pub unsafe fn pass1_1008_cbc4(param_1: *mut astruct_263, mut param_2: u32) {
     paVar15 = (paVar13 & 0xffff0000);
     paVar14 = (paVar15 | uVar9);
     if (uVar9 == 0) {
-        puVar5 = NULL;
+        puVar5 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar13, puVar5));
         paVar15 = paVar14;
@@ -511,7 +511,7 @@ pub unsafe fn pass1_1008_cbc4(param_1: *mut astruct_263, mut param_2: u32) {
         mem_op_1000_179c(0x12, paVar15);
         uVar9 = paVar15 | paVar7;
         if (uVar9 == 0) {
-            paVar7 = NULL;
+            paVar7 = null_mut();
             uVar9 = 0;
         } else {
             uVar17 = 0x18;
@@ -583,7 +583,7 @@ pub unsafe fn pass1_1008_cda2(param_1: *mut astruct_263, mut param_2: u32) {
     uVar11 = uVar7 | (uStack16 | puVar4);
     puStack18 = puVar4;
     if ((uStack16 | puVar4) == 0) {
-        puVar4 = NULL;
+        puVar4 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(uStack16, puVar4));
         uVar7 = uVar11;
@@ -740,7 +740,7 @@ pub unsafe fn pass1_1008_cfa0(param_1: *mut astruct_263, mut param_2: u32) {
     paVar16 = (paVar14 & 0xffff0000);
     paVar15 = (paVar16 | uVar10);
     if (uVar10 == 0) {
-        puVar5 = NULL;
+        puVar5 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar14, puVar5));
         paVar16 = paVar15;

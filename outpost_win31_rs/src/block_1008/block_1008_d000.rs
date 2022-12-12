@@ -45,7 +45,7 @@ pub unsafe fn unk_str_op_1008_d1c6(param_1: *mut astruct_263, mut param_2: u32) 
     uVar16 = paVar14 & 0xffff0000;
     uVar22 = uVar16 | uVar9;
     if (uVar9 == 0) {
-        puVar5 = NULL;
+        puVar5 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar14, puVar5));
         uVar16 = uVar22;
@@ -300,7 +300,7 @@ pub unsafe fn unk_str_op_1008_d4f6(param_1: *mut astruct_263, param_2: *mut astr
     uVar17 = paVar15 & 0xffff0000;
     uVar11 = uVar17 | uVar12;
     if (uVar12 == 0) {
-        puVar6 = NULL;
+        puVar6 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar15, puVar6));
         uVar17 = uVar11;
@@ -954,7 +954,7 @@ pub unsafe fn pass1_1008_de58(param_1: *mut astruct_211, param_2: i32, param_3: 
         mem_op_1000_179c(0x14, in_EDX);
         uVar3 = in_EDX | pcVar4;
         if (uVar3 == 0) {
-            pcVar4 = NULL;
+            pcVar4 = null_mut();
             uVar3 = 0;
         } else {
             struct_1008_dc90(CONCAT22(in_EDX, pcVar4), param_2, param_3);

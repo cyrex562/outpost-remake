@@ -423,7 +423,7 @@ pub unsafe fn pass1_1028_45fe(mut param_1: i16,param_2: *mut astruct_15,mut para
   let mut paStack34: *mut astruct_21;
   let mut uStack32: u16;
   let mut paStack30: *mut astruct_99;
-  local_1a: i16[0x4];
+  let mut local_1a: [i16;0x4] = [0;0x4];
   let mut uStack18: u32;
   let mut uStack14: u32;
   let mut puStack10: *mut u32;
@@ -449,7 +449,7 @@ pub unsafe fn pass1_1028_45fe(mut param_1: i16,param_2: *mut astruct_15,mut para
   uVar4 = uStack32 | paVar3;
   paStack34 = paVar3;
   if (uVar4 == 0) {
-    paVar3 = NULL;
+    paVar3 = null_mut();
     uVar4 = 0;
   }
   else {
@@ -459,14 +459,14 @@ pub unsafe fn pass1_1028_45fe(mut param_1: i16,param_2: *mut astruct_15,mut para
   pstruct15_1.field25_0x22 = uVar4;
   if (puStack10.is_null() == false) {
     uStack14 = (puStack10 + 0x4);
-    for (uStack18 = 0; uStack18 < uStack14; uStack18 += 1) {
+    for uStack18 in 0 .. uStack14 {
       pass1_1020_bb16(puStack10,CONCAT22(0x1050,&local_28),CONCAT22(0x1050,local_1a),uStack18);
       if ((local_28 != 0) && (local_1a[0] != 0)) {
         paStack30 = pass1_1000_07fc(_PTR_LOOP_1050_68a2);
         uVar4 = (paStack30 >> 0x10);
         uVar2 = paStack30;
         if ((uVar4 | uVar2) == 0) {
-          paStack44 = NULL;
+          paStack44 = null_mut();
         }
         else {
           paStack30.field0_0x0 = 0x389a;
@@ -514,7 +514,7 @@ pub unsafe fn pass1_1028_478a(mut param_1: i16,param_2: *mut astruct_15)
 {
   let mut extraout_DX: u16;
   let mut local_1e: i32;
-  local_1a: i16[0x4];
+  let mut local_1a: [i16;0x4] = [0;0x4];
   let mut uStack18: u16;
   let mut uStack16: u16;
   let mut lStack14: i32;
@@ -529,7 +529,7 @@ pub unsafe fn pass1_1028_478a(mut param_1: i16,param_2: *mut astruct_15)
     return;
   }
   uStack16 = (puStack10 + 0x4);
-  for (uStack18 = 0; uStack18 < uStack16; uStack18 += 1) {
+  for uStack18 in 0 .. uStack16 {
     pass1_1020_bb16(puStack10,CONCAT22(0x1050,&local_1e),CONCAT22(0x1050,local_1a),uStack18);
     if (0x0 < local_1a[0]) {
       lStack14 += local_1e;

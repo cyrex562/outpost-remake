@@ -547,7 +547,7 @@ pub unsafe fn pass1_1030_a844(mut param_1: i16,mut param_2: i16,param_3: *mut as
     puVar14 = pass1_1008_3e38(CONCAT22(0x1050,&local_16));
     uVar9 = (puVar14 >> 0x10);
     iVar1 = (param_4 + 0x4);
-    for (uStack34 = 0; uStack34 < uStack10; uStack34 += 1) {
+    for uStack34 in 0 .. uStack10 {
       uVar15 = pass1_1030_1d7c(uStack10,uVar9,puStack6);
       uVar4 = (uVar15 >> 0x10);
       uVar10 = uVar4 | uVar15;

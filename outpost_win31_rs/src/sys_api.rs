@@ -181,9 +181,9 @@ pub fn GetDOSEnvironment16() -> SEGPTR {
 // pub fn hmemcpy16(count: i32, void * src, void * dst);
 // WIN16_hread: i32(count: i32, void * buffer, h_file: HFILE16);
 // pub fn _hwrite16(count: u32, u8 * buffer, h_file: HFILE16) -> u32;
-// COLORREF SetBkColor16(COLORREF color, hdc: HDC16);
+// SetBkColor16: COLORREF(color: COLORREF, hdc: HDC16);
 // i16 SetMapMode16(i16 mode, hdc: HDC16);
-// u8 SetTextColor16(COLORREF color, hdc: HDC16);
+// u8 SetTextColor16(color: COLORREF, hdc: HDC16);
 // BOOL16 LineTo16(y: INT16, x: INT16, hdc: HDC16);
 // DMoveTo16: u16(y: INT16, x: INT16, hdc: HDC16);
 // BOOL16 Ellipse16(bottom: INT16, right: INT16, top: INT16, left: INT16, hdc: HDC16);
@@ -192,8 +192,8 @@ pub fn GetDOSEnvironment16() -> SEGPTR {
 // BOOL16 Polygon16(i16 count, POINT16 * pt, hdc: HDC16);
 // HGDIOBJ16 SelectObject16(HGDIOBJ16 handle, hdc: HDC16);
 // CreateDC16: HDC16(DEVMODEA * init_data, char * output, char * device, char * driver);
-// CreatePen16: HPEN16(COLORREF color, width: INT16, style: INT16);
-// HBRUSH16 CreateSolidBrush16(COLORREF color);
+// CreatePen16: HPEN16(color: COLORREF, width: INT16, style: INT16);
+// HBRUSH16 CreateSolidBrush16(color: COLORREF);
 // BOOL16 DeleteDC16(hdc: HDC16);
 // BOOL16 DeleteObject16(HGDIOBJ16 obj);
 // DGetCurrentPosition16: u16(hdc: HDC16);
@@ -313,7 +313,7 @@ pub fn SendMessage16(lparam: LPARAM, wparam: WPARAM16, msg: u16, hwnd: HWND16) -
 // HACCEL16 LoadAccelerators16(char * lp_table_name, HINSTANCE16 instance);
 // TranslateAccelerator16: INT16(MSG16 * msg, HACCEL16 haccel, hwnd: HWND16);
 // GetSystemMetrics16: INT16(index: INT16);
-// COLORREF GetSysColor16(index: INT16);
+// GetSysColor16: COLORREF(index: INT16);
 // pub fn SetSysColors16(COLORREF * values, INT16 * list, count: INT16);
 // BOOL16 GrayString16(cy: INT16, cx: INT16, y: INT16, x: INT16, cch: INT16, lparam: LPARAM, void * gsprc, HBRUSH16 param_8, hdc: HDC16);
 // SetSysModalWindow: HWND16(hwnd: HWND16);

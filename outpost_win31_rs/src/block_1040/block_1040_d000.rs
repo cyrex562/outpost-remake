@@ -164,7 +164,7 @@ pub unsafe fn win_ui_op_1040_d2ac(mut param_1: u16 ,pstruct_param_2: *mut astruc
   if (param_4 == s_dibtext_bmp_1050_1844 + 0x4U) {
     LVar1 = SendDlgItemMessage16
                       (0x0,0x0,0x405,s_dibtext_bmp_1050_1844 + 0x3,(pstruct_param_2 + 0x6));
-    struct_1010_9172(*(astruct_249 **)(pstruct_param_2 + 0x9c),
+    struct_1010_9172((pstruct_param_2 + 0x9c),
                      CONCAT22(in_register_0000000a,(LVar1 >> 0x10)));
   }
   else if (s_dibtext_bmp_1050_1844 + 0x4U < param_4) {
@@ -324,7 +324,7 @@ pub unsafe fn pass1_1040_d76e(mut param_1: u32)
   uVar3 = (param_1 >> 0x10);
   iVar2 = param_1;
   uVar1 = (iVar2 + 0x94);
-  pass1_1018_5742(uVar1,(uVar1 >> 0x10),(iVar2 + 0x9c),*(astruct_299 **)(iVar2 + 0x98)
+  pass1_1018_5742(uVar1,(uVar1 >> 0x10),(iVar2 + 0x9c),(iVar2 + 0x98)
                  );
   (iVar2 + 0x9c) = 0;
   return;

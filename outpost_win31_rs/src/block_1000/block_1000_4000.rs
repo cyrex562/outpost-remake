@@ -18,7 +18,7 @@ pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
             pu_var1 = 0xffff;
         }
     } else {
-        pu_var1 = NULL;
+        pu_var1 = null_mut();
     }
     return pu_var1;
 }
@@ -67,7 +67,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
         u_var7 = (param_1 * param_3);
         u_var8 = param_2 * param_3 + (param_1 * param_3 >> 0x10);
         if ((u_var8 | u_var7) != 0) {
-            pi_var9 = NULL;
+            pi_var9 = null_mut();
             if ((u_var8 < 0x3) && (u_var8 < 0x2 || (u_var7 == 0))) {
                 if (u_var8 == 0) {
                     u_var7 = u_var7 + 0xfff & 0xf000;
@@ -118,7 +118,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
             }
             unaff_cs = 0x38;
             if (hglobal_7 != 0) {
-                pu_var11 = NULL;
+                pu_var11 = null_mut();
                 // for (; unaff_si != 0; unaff_si += -1)
                 while unaff_si != 0 {
                     // for (iVar6 = -0x8000; i_var6 != 0; i_var6 += -1)
@@ -1177,7 +1177,7 @@ pub unsafe fn pass1_1000_4ceb(mut param_1: u16) {
 }
 pub unsafe fn pass1_1000_4d0c(mut param_1: u16) {
     DAT_1050_61e8 = param_1;
-    PTR_LOOP_1050_61ea = NULL;
+    PTR_LOOP_1050_61ea = null_mut();
     return;
 }
 
@@ -1401,7 +1401,7 @@ pub unsafe fn dos3_call_1000_4f94() -> i16 {
 // WARNING: Removing unreachable block (ram,0x10004feb)
 
 pub unsafe fn dos3_call_1000_4fbe(param_1: u8) -> u16 {
-    //    i16 unaff_BP;
+    //    unaff_BP: i16;
 
     let fn_ptr_var1: code6 = swi(0x21);
     (fn_ptr_var1)(unaff_BP + 1);

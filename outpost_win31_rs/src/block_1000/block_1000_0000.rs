@@ -1213,7 +1213,7 @@ pub unsafe fn pass1_1000_0ed4(mut param_1: u16,
             //  &DAT_1050_1050;
             uVar6 = 0x1050;
         } else {
-            ppaVar4 = NULL;
+            ppaVar4 = null_mut();
             uVar6 = 0;
         }
         uVar6 = pass1_1000_0fb8(param_2,

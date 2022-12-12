@@ -129,7 +129,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
         SendMessage16(string_var9, wparam_var10, u16_var11, hwnd_var12);
       }
       else {
-        iVar9 = NULL;
+        iVar9 = null_mut();
         loop {
           ppaVar1 = (astruct_878 **)(win_style + 0x4);
           if *ppaVar1 == iVar9 || *ppaVar1 < iVar9 { break; };

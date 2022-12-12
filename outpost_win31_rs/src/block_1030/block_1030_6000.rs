@@ -136,7 +136,7 @@ pub unsafe fn pass1_1030_62e4(param_1: u32,param_2: *mut u16,param_3: i32)
   let mut uVar6: u32;
   let mut uVar7: u16;
   let mut puVar8: *mut u16;
-  local_64: i16[0x3];
+  let mut local_64: [i16;0x3] = [0;0x3];
   let mut uStack94: u32;
   let mut uStack88: u16;
   let mut uStack78: u16;
@@ -180,7 +180,7 @@ pub unsafe fn pass1_1030_62e4(param_1: u32,param_2: *mut u16,param_3: i32)
   uVar3 = uStack52 | puVar2;
   puStack54 = puVar2;
   if (uVar3 == 0) {
-    puVar2 = NULL;
+    puVar2 = null_mut();
     uVar3 = 0;
   }
   else {
@@ -315,7 +315,7 @@ pub unsafe fn pass1_1030_6522(param_1: u32,mut param_2: u32,mut param_3: u32)
   uVar3 = uStack52 | puVar2;
   puStack54 = puVar2;
   if (uVar3 == 0) {
-    puVar2 = NULL;
+    puVar2 = null_mut();
     uVar3 = 0;
   }
   else {
@@ -598,7 +598,7 @@ pub unsafe fn pass1_1030_6a2c(mut param_1: u16 ,param_2: *mut StructD,param_3: *
     uVar5 = uVar4 | param_1;
     paVar6 = uVar5;
     if (uVar5 == 0) {
-      iVar4.field62_0x3e = NULL;
+      iVar4.field62_0x3e = null_mut();
     }
     else {
       uVar3 = set_struct_1008_574a(CONCAT22(uVar4,param_1));
@@ -619,7 +619,7 @@ pub unsafe fn pass1_1030_6a2c(mut param_1: u16 ,param_2: *mut StructD,param_3: *
   } while (iVar2.field6_0x8 != iVar5.field6_0x8);
   iVar2.field7_0xa = iVar2.field7_0xa + iVar5.field7_0xa;
   iVar2.field8_0xc = iVar2.field8_0xc + iVar5.field8_0xc;
-  param_4 = NULL;//
+  param_4 = null_mut();//
 // LAB_1030_6af4:
   if (param_4.is_null() == false) {
     ppcVar1 = (*iVar4.field62_0x3e + 0x8);
@@ -690,7 +690,7 @@ pub unsafe fn pass1_1030_6b86(mut param_1: u16 ,mut param_2: u32)
     uVar3 = extraout_DX;
   }
   uStack8 = CONCAT22(uVar3,param_1);
-  for (uStack12 = 0; uStack12 < uStack8; uStack12 += 1) {
+  for uStack12 in 0 .. uStack8 {
     ppcVar1 = ((iVar4 + 0x1e) + 0x4);
     uVar2 = uStack8;
     (**ppcVar1)(unaff_CS,(iVar4 + 0x1e));
@@ -767,7 +767,7 @@ pub unsafe fn pass1_1030_6c66(mut param_1: u16 ,param_2: *mut u8,param_3: *mut a
     uVar4 = uVar5 | param_1;
     paVar6 = (paVar6 & 0xffff0000 | uVar4);
     if (uVar4 == 0) {
-      iVar7.field55_0x3a = NULL;
+      iVar7.field55_0x3a = null_mut();
     }
     else {
       uVar9 = 0x1008;
@@ -952,7 +952,7 @@ pub unsafe fn pass1_1030_6e9c(param_1: *mut astruct_301,param_2: i32,mut param_3
     ppcVar1 = (*iVar6.field30_0x1e + 0x10);
     (**ppcVar1)();
     uStack6 = CONCAT22(extraout_DX,uVar2);
-    for (uStack10 = 0; uStack10 < uStack6; uStack10 += 1) {
+    for uStack10 in 0 .. uStack6 {
       ppcVar1 = (*iVar6.field30_0x1e + 0x4);
       uVar4 = uStack6;
       (**ppcVar1)();

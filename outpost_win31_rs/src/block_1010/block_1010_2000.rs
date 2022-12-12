@@ -36,7 +36,7 @@ pub unsafe fn pass1_1010_2050(mut param_1: u32) {
     _u16_1050_0ed0 = 0;
     return;
 }
-pub unsafe fn pass1_1010_209e(mut param_1: u32, mut param_2: u16) {
+pub unsafe fn pass1_1010_209e(param_1: u32, mut param_2: u16) {
     pass1_1010_2816(param_1);
     (param_1 + 0x124) = param_2;
     return;
@@ -86,8 +86,8 @@ pub unsafe fn mixed_1010_20ba(
             if (puVar2.is_null()) {
                 //
                 // LAB_1010_2126:
-                paVar5 = NULL;
-                puVar2 = NULL;
+                paVar5 = null_mut();
+                puVar2 = null_mut();
             } else {
                 struct_1010_3b7a(CONCAT22(param_1, paVar5), param_3);
             }
@@ -274,8 +274,8 @@ pub unsafe fn mixed_1010_20ba(
                 //
                 // LAB_1010_2680:
                 uVar8 = 0x1000;
-                paVar5 = NULL;
-                puVar2 = NULL;
+                paVar5 = null_mut();
+                puVar2 = null_mut();
             } else {
                 uVar10 =
                     pass1_1010_9298(CONCAT22(paVar5, uVar4), CONCAT22(param_1, paVar5), param_3);
@@ -912,7 +912,7 @@ pub unsafe fn FUN_1010_2a32(
                 puStack46 = CONCAT22(uVar21, uVar10);
                 paVar22 = (paVar22 & 0xffff0000 | (uVar21 | uVar10));
                 if ((uVar21 | uVar10) == 0) {
-                    read_buffer_38 = NULL;
+                    read_buffer_38 = null_mut();
                 } else {
                     *puStack46 = 0x389a;
                     (uVar10 + 0x2) = 0x1008;
@@ -1302,7 +1302,7 @@ pub unsafe fn unk_destroy_win_op_1010_2fa0(param_1: *mut astruct_873) {
     uVar4 = (param_1 >> 0x10);
     iVar3 = param_1;
     iVar3.field39_0x28 = 0;
-    iStack4 = NULL;
+    iStack4 = null_mut();
     loop {
         ppaVar1 = &iVar3.field22_0x16;
         if (*ppaVar1 == iStack4 || *ppaVar1 < iStack4) {
@@ -1312,9 +1312,9 @@ pub unsafe fn unk_destroy_win_op_1010_2fa0(param_1: *mut astruct_873) {
         DestroyWindow16((uVar3 + 0x18));
         iStack4 = iStack4 + 1;
     }
-    iVar3.field22_0x16 = NULL;
+    iVar3.field22_0x16 = null_mut();
     if ((iVar3.field82_0x54 | &iVar3.field_0x52) != 0) {
-        iStack4 = NULL;
+        iStack4 = null_mut();
         loop {
             uVar2 = &iVar3.field_0x52;
             if ((uVar2 + iStack4 * 0x4) != 0) {

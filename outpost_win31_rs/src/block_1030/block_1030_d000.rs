@@ -172,7 +172,7 @@ pub unsafe fn pass1_1030_d26c(mut param_1: u32)
   let mut iStack8: i16;
 
   uVar2 = *_PTR_LOOP_1050_65e2;
-  for (iStack8 = 0; iStack8 < 0xa; iStack8 += 1) {
+  for iStack8 in 0 .. 0xa {
     iVar5 = iStack8 * 0xc + param_1;
     if ((((iVar5 + 0x22) | (iVar5 + 0x20)) != 0) &&
        (puVar1 = (iVar5 + 0x20), *puVar1 < uVar2 || *puVar1 == uVar2)) {
@@ -258,7 +258,7 @@ pub unsafe fn pass1_1030_d3b2(mut param_1: i16,mut param_2: i16,mut param_3: u16
   let mut uStack14: u32;
 
   pass1_1028_b58e(CONCAT22(param_3,param_2));
-  paVar2 = *(astruct_691 **)(param_1 + 0x2e);
+  paVar2 = (param_1 + 0x2e);
   uVar5 = pass1_1030_d36e(CONCAT22(param_3,param_2),param_4);
   if (uVar5 == 0) {
     puVar10 = pass1_1008_c6fa(_u16_1050_06e0,0x1e);
@@ -271,7 +271,7 @@ pub unsafe fn pass1_1030_d3b2(mut param_1: i16,mut param_2: i16,mut param_3: u16
     (**ppcVar3)(&u16_1050_1038,uVar6,puVar7);
     uStack18 = CONCAT22(extraout_DX_00,uVar8);
     bVar4 = false;
-    for (uStack14 = 0; uStack14 < uStack18; uStack14 += 1) {
+    for uStack14 in 0 .. uStack18 {
       uVar11 = pass1_1030_1d7c(uStack14,uStack14,puStack26);
       uVar8 = (uVar11 >> 0x10);
       if ((((uVar8 | uVar11) != 0) && ((uVar11 + 0x4) != (param_2 + 0x4))) &&
@@ -388,7 +388,7 @@ pub unsafe fn pass1_1030_d61c(mut param_1: u32,mut param_2: u32)
 
   BVar1 = write_to_file_1028_b5ec(param_1,param_2);
   if (BVar1 != 0) {
-    for (iStack4 = 0; iStack4 < 0xa; iStack4 += 1) {
+    for iStack4 in 0 .. 0xa {
       uVar3 = (param_1 >> 0x10);
       iVar2 = param_1;
       local_12[0] = (iVar2 + iStack4 * 0xc + 0x20);
@@ -495,7 +495,7 @@ pub unsafe fn pass1_1030_d868(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_180 * struct_1030_d8f6(param_1: *mut astruct_180)
+pub unsafe fn struct_1030_d8f6(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   let mut iVar1: *mut astruct_180;
@@ -736,7 +736,7 @@ pub unsafe fn pass1_1030_dc08(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_180 * struct_1030_dc96(param_1: *mut astruct_180)
+pub unsafe fn struct_1030_dc96(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   let mut uVar1: u16;
@@ -811,7 +811,7 @@ pub unsafe fn pass1_1030_dcf4(mut param_1: u16 ,param_2: *mut astruct_15)
       (**ppcVar1)(&u16_1050_1038,uVar3,puVar6);
       uStack24 = CONCAT22(extraout_DX_00,uVar5);
       uVar2 = extraout_DX_00;
-      for (uStack28 = 0; uStack28 < uStack24; uStack28 += 1) {
+      for uStack28 in 0 .. uStack24 {
         uVar10 = pass1_1030_1d7c(uVar5,uVar2,puStack20);
         uVar7 = (uVar10 >> 0x10);
         uVar2 = uVar7 | uVar10;

@@ -100,7 +100,7 @@ pub unsafe fn pass1_1038_201a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   }
   else {
     uVar14 = uVar5.field7_0xa;
-    puVar15 = NULL;
+    puVar15 = null_mut();
     if ((puVar12 < 1) && ((0x7fff < puVar12 || (uVar8 < uVar14)))) {
       uVar14 = uVar8;
       puVar15 = puVar12;
@@ -188,7 +188,7 @@ pub unsafe fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   iVar11 = param_3;
   iStack8 = iVar11.field49_0x34;
   uStack12 = 0x64;
-  paVar2 = *(astruct_57 **)(uVar12 + 0x22);
+  paVar2 = (uVar12 + 0x22);
   puVar7 = paVar2;
   loop {
     uVar6 = paVar8;
@@ -243,7 +243,7 @@ pub unsafe fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
         (**ppcVar3)();
       }
       uStack12 -= uStack34;
-      puVar7 = NULL;
+      puVar7 = null_mut();
       uStack42 = 0;
       iVar12 = uVar13;
       if (iVar12.field6_0x6 == 0) {
@@ -538,7 +538,7 @@ pub unsafe fn pass1_1038_26ee(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-astruct_97 * pass1_1038_28d8(param_1: *mut astruct_97)
+pub unsafe fn pass1_1038_28d8(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x3a97);
@@ -553,7 +553,7 @@ astruct_97 * pass1_1038_28d8(param_1: *mut astruct_97)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1038_290e(mut param_1: u16 ,undefined1 param_2,mut param_3: u16 ) -> u16
+pub unsafe fn pass1_1038_290e(mut param_1: u16 ,param_2: u8,mut param_3: u16 ) -> u16
 
 {
   let mut unaff_SI: u16;
@@ -683,8 +683,8 @@ pub unsafe fn pass1_1038_2ac2(mut param_1: u16 ,mut param_2: u16 ,param_3: u8,mu
   uStack6 = CONCAT22(param_2,param_1);
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,(uVar1 + 0x10c));
   uStack10 = CONCAT22(param_2,param_1);
-  pass1_1038_2c82(param_3,uVar1,uVar2,*(astruct_702 **)(uVar1 + 0x110),CONCAT22(param_2,param_1),uStack6);
-  pass1_1038_2c82(param_3,uVar1,uVar2,*(astruct_702 **)(uVar1 + 0x114),uStack6,uStack10);
+  pass1_1038_2c82(param_3,uVar1,uVar2,(uVar1 + 0x110),CONCAT22(param_2,param_1),uStack6);
+  pass1_1038_2c82(param_3,uVar1,uVar2,(uVar1 + 0x114),uStack6,uStack10);
   return 0x1;
 }
 

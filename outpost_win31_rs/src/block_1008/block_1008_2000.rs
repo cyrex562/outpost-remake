@@ -135,7 +135,7 @@ pub unsafe fn post_msg_1008_2d22(param_1: *mut astruct_72)
     puVar7 = iVar4.field230_0xee;
     ppcVar3 = (*iVar4.field230_0xee + 0x90);
     (**ppcVar3)();
-    iVar4.field230_0xee = NULL;
+    iVar4.field230_0xee = null_mut();
     iVar4.field231_0xf2 = 0;
     if (iVar4.field227_0xe8.is_null() == false) {
       uVar6 = 0x3;

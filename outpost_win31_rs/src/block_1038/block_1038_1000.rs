@@ -297,7 +297,7 @@ pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
       uStack46 = struct_op_1030_73a8(CONCAT22(uStack40,uVar6),uVar6,uStack40);
       paVar14 = (uVar15 & 0xffff0000);
       puStack50 = (uStack46 + 0x28);
-      puStack54 = NULL;
+      puStack54 = null_mut();
       uStack56 = (puStack50 + 0x4);
       for (uStack58 = 0; uVar5 = uStack56, uStack58 < uStack56; uStack58 += 1) {
         pass1_1020_bb16(puStack50,CONCAT22(0x1050,&local_46),CONCAT13(0x10,CONCAT12(0x50,local_42)),
@@ -344,7 +344,7 @@ pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
           paVar14 = paVar13;
           if (local_a == 0) {
             pass1_1038_1b3a(uVar7,uVar3,uVar16,uStack14,puStack54,unaff_DI);
-            puStack54 = NULL;
+            puStack54 = null_mut();
             uVar7 = ZEXT24(&local_a);
             pass1_1038_134a(&local_a,uVar3,uVar16,CONCAT22(0x1050,&local_a),CONCAT22(0x1050,&local_6),
                             param_4);
@@ -375,7 +375,7 @@ pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
       }
       if (puStack54.is_null() == false) {
         pass1_1038_1b3a(uVar5,uVar3,uVar16,uStack14,puStack54,unaff_DI);
-        puStack54 = NULL;
+        puStack54 = null_mut();
       }
     }
     uStack22 += 0x1;
@@ -435,7 +435,7 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
     puVar19 = param_3;
     (**ppcVar2)();
     uStack18 = CONCAT22(uVar9,puVar7);
-    for (uStack22 = 0; uStack22 < uStack18; uStack22 += 1) {
+    for uStack22 in 0 .. uStack18 {
       ppcVar2 = (*param_3 + 0x4);
       uVar16 = uStack18;
       uVar10 = uVar9;
@@ -454,9 +454,9 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
         paVar13 = uVar12;
         uStack46 = plVar1;
         if ((uVar12 | uStack46) != 0) {
-          plStack50 = NULL;
+          plStack50 = null_mut();
           puVar7 = pass1_1028_0d80(uVar16);
-          puStack56 = NULL;
+          puStack56 = null_mut();
           puStack52 = puVar7;
           loop {
             lVar17 = pass1_1020_bae6(puStack52,paVar13,uStack46,
@@ -490,7 +490,7 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
                 uVar12 = paVar15 | puVar5;
                 paVar13 = (paVar15 & 0xffff0000 | uVar12);
                 if (uVar12 == 0) {
-                  puVar5 = NULL;
+                  puVar5 = null_mut();
                   paVar13 = (paVar15 & 0xffff0000);
                 }
                 else {
@@ -505,7 +505,7 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
               puVar8 = puStack52;
               if (local_a == 0) {
                 pass1_1038_1ac6(puStack52,uVar4,uVar18,uStack14,plStack50);
-                plStack50 = NULL;
+                plStack50 = null_mut();
                 puVar8 = &local_a;
                 pass1_1038_13da(puVar8,uVar4,uVar18,CONCAT22(0x1050,puVar8),
                                 CONCAT22(0x1050,&local_6),param_4);
@@ -568,7 +568,7 @@ pub unsafe fn pass1_1038_1940(mut param_1: u32,param_2: *mut u32,mut param_3: u3
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1038_19a0(mut param_1: u32,param_2: *mut u32,mut param_3: u32,mut param_4: u16 ,undefined1 param_5)
+pub unsafe fn pass1_1038_19a0(mut param_1: u32,param_2: *mut u32,mut param_3: u32,mut param_4: u16 ,param_5: u8)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -637,7 +637,7 @@ pub unsafe fn pass1_1038_1a30(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
     uVar6 = uStack6;
     (**ppcVar2)();
     uStack10 = CONCAT22(extraout_DX,uVar3);
-    for (uStack18 = 0; uStack18 < uStack10; uStack18 += 1) {
+    for uStack18 in 0 .. uStack10 {
       ppcVar2 = (*puVar1 + 0x4);
       uVar4 = uStack10;
       (**ppcVar2)(unaff_CS,uStack6,(puVar1 >> 0x10),uStack18,uVar6,uVar7);
@@ -932,7 +932,7 @@ pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
             uVar11 = (paStack82 >> 0x10);
             uVar12 = paStack82;
             if ((uVar11 | uVar12) == 0) {
-              paStack82 = NULL;
+              paStack82 = null_mut();
             }
             else {
               paStack82.field0_0x0 = 0x389a;

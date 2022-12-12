@@ -632,7 +632,7 @@ pub unsafe fn pass1_1010_eb66(param_1: *mut StructD) {
     pass1_1018_04f2(param_1);
     fn_ptr_1000_17ce(iVar5.field29_0x2c);
     if (param_1.is_null()) {
-        puVar4 = NULL;
+        puVar4 = null_mut();
         uVar5 = 0;
     } else {
         puVar4 = &iVar5.field6_0xa;

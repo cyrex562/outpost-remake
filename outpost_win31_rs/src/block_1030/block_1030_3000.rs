@@ -55,7 +55,7 @@ pub unsafe fn pass1_1030_3058(mut param_1: u16 ,param_2: *mut astruct_57,param_3
     uVar6 = uVar5 | param_1;
     param_2 = (param_2 & 0xffff0000 | uVar6);
     if (uVar6 == 0) {
-      iVar4.field12_0xc = NULL;
+      iVar4.field12_0xc = null_mut();
     }
     else {
       uVar4 = struct_op_1030_1cd8(CONCAT22(uVar5,param_1),0x5,0x5);

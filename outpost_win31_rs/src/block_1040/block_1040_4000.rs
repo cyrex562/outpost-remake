@@ -58,13 +58,13 @@ pub unsafe fn pass1_1040_40e2(param_1: *mut StructD)
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1040_410e(param_1: u8,StructB *struct_b_param_1)
+pub unsafe fn win_ui_op_1040_410e(param_1: u8,struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u32;
   let mut in_EDX: u32;
   let mut paVar2: *mut Struct57;
-  StructB *struct_b_3;
+  struct_b_3: *mut StructB;
   let mut uVar3: u16;
   let mut puVar4: *mut u16;
   let mut puVar5: *mut u32;
@@ -79,7 +79,7 @@ pub unsafe fn win_ui_op_1040_410e(param_1: u8,StructB *struct_b_param_1)
   let mut local_34: i16;
   let mut local_32: i16;
   let mut local_30: [u8;0x6] = [0;0x6];
-  local_2a: i16[0x4];
+  let mut local_2a: [i16;0x4] = [0;0x4];
   let mut uStack34: u32;
   let mut local_1e: u32;
   let mut uStack26: u32;
@@ -94,7 +94,7 @@ pub unsafe fn win_ui_op_1040_410e(param_1: u8,StructB *struct_b_param_1)
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   pass1_1000_4906(CONCAT22(0x1050,local_c),NULL,0xa);
   uVar3 = (struct_b_param_1 >> 0x10);
-  struct_b_3 = (StructB *)struct_b_param_1;
+  struct_b_3 = struct_b_param_1;
   uVar1 = &struct_b_3[0x7].field1_0x2;
   sys_1000_3f9c(CONCAT22(0x1050,local_c),s__lu_1050_5d38,(uVar1 + 0x76));
   HStack14 = GetDlgItem16(0xfb5,struct_b_3.lpvoid_field_0x8);
@@ -372,7 +372,7 @@ pub unsafe fn pass1_1040_4766(param_1: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_477e(mut param_1: u16 ,StructB *param_2)
+pub unsafe fn pass1_1040_477e(mut param_1: u16 ,param_2: *mut StructB)
 
 {
   let mut puVar1: *mut u8;
@@ -577,7 +577,7 @@ pub unsafe fn set_win_pos_1040_4ae4(mut param_1: i16,mut param_2: u16 ,mut param
   let mut in_stack_0000ffa4: u16;
   let mut in_stack_0000ffaa: u16;
   let mut in_stack_0000ffae: u16;
-  local_24: i16[0x2];
+  let mut local_24: [i16;0x2] = [0;0x2];
   let mut iStack32: i16;
   let mut pSStack20: *mut StructD;
   let mut pSStack16: *mut StructD;
@@ -851,10 +851,10 @@ pub unsafe fn pass1_1040_4f82(param_1: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn set_win_pos_1040_4f96
-               (param_1: *mut StructD,StructB *struct_b_param_1,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 )
+               (param_1: *mut StructD,struct_b_param_1: *mut StructB,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 )
 
 {
-  LPVOID pvVar1;
+  let mut pvVar1: LPVOID = null_mut();
   let mut uVar2: u32;
   let mut uVar3: u16;
   let mut uVar4: u16;
@@ -867,7 +867,7 @@ pub unsafe fn set_win_pos_1040_4f96
   let mut uVar11: u16;
   let mut paVar12: *mut Struct57;
   let mut paVar14: *mut Struct57;
-  StructB *struct_b_11;
+  struct_b_11: *mut StructB;
   let mut uVar15: u16;
   let mut uVar16: u16;
   let mut puVar17: *mut u32;
@@ -902,7 +902,7 @@ pub unsafe fn set_win_pos_1040_4f96
   paVar12 = (param_1 & 0xffff0000 | puVar17 >> 0x10);
   paVar5 = puVar17;
   uVar15 = (struct_b_param_1 >> 0x10);
-  struct_b_11 = (StructB *)struct_b_param_1;
+  struct_b_11 = struct_b_param_1;
   struct_b_11[0x7].field6_0xc = paVar5;
   uVar9 = (puVar17 >> 0x10);
   struct_b_11[0x7].field7_0xe = uVar9;
@@ -913,7 +913,7 @@ pub unsafe fn set_win_pos_1040_4f96
   uVar10 = paVar12 | paVar5;
   paVar13 = (paVar12 & 0xffff0000 | uVar10);
   if (uVar10 == 0) {
-    &struct_b_11[0x7].max_count_field_0x10 = 0;
+    struct_b_11[0x7].max_count_field_0x10 = 0;
   }
   else {
     puVar18 = struct_1040_bf3e(CONCAT13((paVar12 >> 0x8),CONCAT12(paVar12,paVar5)),
@@ -978,7 +978,7 @@ pub unsafe fn set_win_pos_1040_4f96
   paVar12 = (paVar13 & 0xffff0000);
   paVar14 = (paVar12 | uVar10);
   if (uVar10 == 0) {
-    paVar5 = NULL;
+    paVar5 = null_mut();
   }
   else {
     pvVar1 = struct_b_11.lpvoid_field_0x8;

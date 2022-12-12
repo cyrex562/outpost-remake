@@ -12,7 +12,7 @@ pub unsafe fn pass1_1028_816e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_81aa(param_1: u8,param_2: *mut astruct_97)
+pub unsafe fn pass1_1028_81aa(param_1: u8,param_2: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_2,0x1b57);
@@ -138,7 +138,7 @@ pub unsafe fn pass1_1028_8342(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_837e(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_837e(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0xf9f);
@@ -335,7 +335,7 @@ pub unsafe fn pass1_1028_865c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_8698(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u32)
+pub unsafe fn pass1_1028_8698(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u32) -> *mut astruct_97
 
 {
   pass1_1028_6af2(param_1,param_2,param_3);
@@ -496,9 +496,9 @@ pub unsafe fn struct_op_1028_8888(param_1: *mut astruct_97,mut param_2: u16 ,mut
 pub unsafe fn pass1_1028_8920(mut param_1: u16 ,mut param_2: u32)
 
 {
-  u32 **ppuVar1;
+  let mut ppuVar1: *mut *mut u32 = null_mut();
   let mut ppcVar2: *mut *mut code;
-  u32 **ppuVar3;
+  let mut ppuVar3: *mut *mut u32 = null_mut();
   let mut iVar4: i16;
   let mut BVar5: bool;
   let mut uVar6: u32;
@@ -541,7 +541,7 @@ pub unsafe fn pass1_1028_8920(mut param_1: u16 ,mut param_2: u32)
 
   uVar12 = (param_2 >> 0x10);
   iVar11 = param_2;
-  ppuVar1 = (u32 **)(iVar11 + 0x114);
+  ppuVar1 =(iVar11 + 0x114);
   ppuVar3 = ppuVar1;
   pass1_1030_64ce(ppuVar1,param_1,_PTR_LOOP_1050_5740,(param_2 & 0xffff0000 | ZEXT24(ppuVar1)),
                   (iVar11 + 0x108),CONCAT22(0x1050,local_26));
@@ -561,7 +561,7 @@ pub unsafe fn pass1_1028_8920(mut param_1: u16 ,mut param_2: u32)
     pass1_1030_61fe(uVar6,paVar10,_PTR_LOOP_1050_5740,uVar6 & 0xffff | paVar10 << 0x10,
                     param_2 & 0xff000000 | CONCAT12((param_2 >> 0x10),iVar11 + 0x114U),
                     (iVar11 + 0x108));
-    uStack56 = NULL;
+    uStack56 = null_mut();
     if (((iVar11 + 0x11a) == 0xa) || ((iVar11 + 0x11a) == 0x37)) {
       if ((iVar11 + 0x11a) == 0x37) {
         uStack56 = (iVar11 + 0x10c);
@@ -843,7 +843,7 @@ pub unsafe fn pass1_1028_8f8a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_8fc0(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u32)
+pub unsafe fn pass1_1028_8fc0(param_1: *mut astruct_97,mut param_2: u32,mut param_3: u32) -> *mut astruct_97
 
 {
   pass1_1028_6af2(param_1,param_2,param_3);

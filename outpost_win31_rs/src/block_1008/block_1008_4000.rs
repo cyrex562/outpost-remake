@@ -158,7 +158,7 @@ pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
             mem_op_1000_179c(0x1e, paVar2);
             uVar2 = paVar2 | uVar3;
             if (uVar2 == 0) {
-                uVar3 = NULL;
+                uVar3 = null_mut();
                 uVar2 = 0;
             } else {
                 pass1_1008_4016(CONCAT22(paVar2, uVar3));

@@ -187,7 +187,7 @@ pub unsafe fn pass1_1010_a478(param_1: *mut StructD) {
     uVar3.field7_0xc = 0x1010;
     if (&uVar3[0x1].field_0x4a != 0) {
         if (param_1.is_null()) {
-            puVar1 = NULL;
+            puVar1 = null_mut();
             uVar2 = 0;
         } else {
             puVar1 = &uVar3.field6_0xa;
@@ -197,7 +197,7 @@ pub unsafe fn pass1_1010_a478(param_1: *mut StructD) {
     }
     uVar3[0x1].field_0x4a = 0;
     if (param_1.is_null()) {
-        puVar1 = NULL;
+        puVar1 = null_mut();
         uVar4 = 0;
     } else {
         puVar1 = &uVar3.field6_0xa;
@@ -772,7 +772,7 @@ pub unsafe fn string_op_1010_ada6(
     let mut pcVar1: *mut c_char;
     let mut pcStack6: *mut c_char;
 
-    pcStack6 = NULL;
+    pcStack6 = null_mut();
     if (param_5 == 0x6) {
         //    if (param_4 == 0) goto LAB_1010_adee;
         pcVar1 = string_op_1020_c222(param_4);

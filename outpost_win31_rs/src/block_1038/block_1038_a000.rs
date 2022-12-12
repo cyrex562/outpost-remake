@@ -27,7 +27,7 @@ pub unsafe fn pass1_1038_a090(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_57 * pass1_1038_a122(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32)
+pub unsafe fn pass1_1038_a122(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> *mut astruct_57
 
 {
   get_sys_metrics_1040_7728
@@ -57,7 +57,7 @@ pub unsafe fn pass1_1038_a174(mut param_1: u32,mut param_2: i16)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,StructB *param_2,mut param_3: u16 )
+pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,param_2: *mut StructB,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -76,7 +76,7 @@ pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,StructB *param_2,
   let mut piVar7: *mut i16;
   let mut uVar8: u8;
   let mut uVar9: u8;
-  local_2c: i16[0x2];
+  let mut local_2c: [i16;0x2] = [0;0x2];
   let mut iStack40: i16;
   let mut puStack36: *mut u32;
   let mut iStack32: i16;
@@ -180,7 +180,7 @@ pub unsafe fn pass1_1038_a36a(param_1: *mut StructD)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn show_win_1038_a396(mut param_1: u16 ,mut param_2: u16 ,StructB *param_3)
+pub unsafe fn show_win_1038_a396(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut StructB)
 
 {
   let mut in_register_0000000a: u16;
@@ -253,7 +253,7 @@ pub unsafe fn pass1_1038_a4c2(param_1: *mut StructD)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,StructB *struct_b_param_1)
+pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,struct_b_param_1: *mut StructB)
 
 {
   let mut lp_string: u32;
@@ -261,7 +261,7 @@ pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,StructB *s
   let mut in_register_0000000a: u16;
   let mut paVar1: *mut Struct57;
   let mut uVar2: u16;
-  StructB *struct_b_1;
+  struct_b_1: *mut StructB;
   let mut uVar3: u16;
   let mut puVar4: *mut u32;
   let mut LVar5: LRESULT;
@@ -276,7 +276,7 @@ pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,StructB *s
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   win_1008_5c7c(param_1,paVar1,_u16_1050_02a0,0x20001);
   uVar3 = (struct_b_param_1 >> 0x10);
-  struct_b_1 = (StructB *)struct_b_param_1;
+  struct_b_1 = struct_b_param_1;
   (struct_b_1 + 0x7).field0_0x0 = param_1;
   puVar4 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(in_stack_0000ffec,0x2),in_stack_0000fe94,
                            in_stack_0000ffb8,in_stack_0000ffbe,in_stack_0000ffc2);
@@ -376,7 +376,7 @@ pub unsafe fn pass1_1038_a6c8(param_1: *mut StructD)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,StructB *param_2)
+pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,param_2: *mut StructB)
 
 {
   let mut lp_string: u32;
@@ -385,7 +385,7 @@ pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,StructB *param_2)
   let mut in_register_0000000a: u16;
   let mut paVar2: *mut Struct57;
   let mut uVar3: u32;
-  StructB *struct_b_3;
+  struct_b_3: *mut StructB;
   let mut uVar5: u16;
   let mut puVar6: *mut u32;
   let mut LVar7: LRESULT;
@@ -404,7 +404,7 @@ pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,StructB *param_2)
   uVar4 = (paVar2 >> 0x10);
   lp_string = (puVar6 + 0x68);
   uVar5 = (param_2 >> 0x10);
-  struct_b_3 = (StructB *)param_2;
+  struct_b_3 = param_2;
   hwnd = GetDlgItem16(0x115,struct_b_3.lpvoid_field_0x8);
   SetWindowText16(lp_string,hwnd);
   SetFocus16(hwnd);
@@ -528,7 +528,7 @@ pub unsafe fn enable_win_1038_a8f8(StructC *param_1,mut param_2: u16 ,TwoWords p
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1038_a972(StructB *struct_b_param_1)
+pub unsafe fn win_ui_op_1038_a972(struct_b_param_1: *mut StructB)
 
 {
   let mut hwnd: HWND16;
@@ -536,7 +536,7 @@ pub unsafe fn win_ui_op_1038_a972(StructB *struct_b_param_1)
   let mut in_EDX: u32;
   let mut uVar3: u16;
   let mut uVar2: u32;
-  StructB *struct_b_3;
+  struct_b_3: *mut StructB;
   let mut uVar4: u16;
   let mut LVar5: LRESULT;
   let mut in_stack_0000ffaa: u16;
@@ -544,7 +544,7 @@ pub unsafe fn win_ui_op_1038_a972(StructB *struct_b_param_1)
   uVar3 = (in_EDX >> 0x10);
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar4 = (struct_b_param_1 >> 0x10);
-  struct_b_3 = (StructB *)struct_b_param_1;
+  struct_b_3 = struct_b_param_1;
   SendDlgItemMessage16(0x0,0x1,0x401,0x116,struct_b_3.lpvoid_field_0x8);
   LVar5 = SendDlgItemMessage16(0x0,0x1,0x401,0x11a,struct_b_3.lpvoid_field_0x8);
   uVar2 = CONCAT22(uVar3,(LVar5 >> 0x10));
@@ -625,7 +625,7 @@ pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_57 * pass1_1038_ab82(param_1: *mut astruct_57,mut param_2: u16 )
+pub unsafe fn pass1_1038_ab82(param_1: *mut astruct_57,mut param_2: u16 ) -> *mut astruct_57
 
 {
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfd3,param_2);
@@ -864,7 +864,7 @@ pub unsafe fn pass1_1038_af40(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 // LAB_1038_afa0:
       uVar11 = 0x1000;
       param_1 = 0;
-      pSVar6 = NULL;
+      pSVar6 = null_mut();
     }
     else {
       paVar12 = pass1_1038_9f76(CONCAT22(paVar12,param_1),0x0,0x0,0x0,param_4);

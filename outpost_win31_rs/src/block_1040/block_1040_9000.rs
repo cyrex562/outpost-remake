@@ -47,13 +47,13 @@ pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
   PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + -0x1;
   if (PTR_LOOP_1050_5e16.is_null()) {
     FreeProcInstance16(_u16_1050_5e18);
-    _u16_1050_5e18 = NULL;
+    _u16_1050_5e18 = null_mut();
   }
   param_1.address_offset_field_0x0 = 0x389a;
   struct_1.address_offset_field_0x2 = 0x1008;
   return;
 }
-pub unsafe fn enable_win_1040_9234(mut param_1: u32,BOOL16 param_2)
+pub unsafe fn enable_win_1040_9234(mut param_1: u32,param_2: BOOL16)
 
 {
   let mut uVar1: u16;
@@ -124,7 +124,7 @@ pub unsafe fn create_window_1040_92dc(param_1: *mut astruct_65)
     pstruct65_2.field11_0x18 = hwnd;
     lVar1 = SetWindowLong16(_u16_1050_5e18,-0x4,hwnd);
     lVar1 = (HANDLE16)(lVar1 >> 0x10);
-    &pstruct65_2.field10_0x14 = lVar1;
+    pstruct65_2.field10_0x14 = lVar1;
     *(HANDLE16 *)(&pstruct65_2.field10_0x14 + 0x2) = lVar1;
     SetProp16(lVar1,s_procHi_1050_5e46,pstruct65_2.field11_0x18);
     SetProp16(*(HANDLE16 *)&pstruct65_2.field10_0x14,s_procLo_1050_5e4d,pstruct65_2.field11_0x18);
@@ -385,7 +385,7 @@ pub unsafe fn call_win_proc_1040_9684(win_handle_1: HWND16,mut param_2: u16 ,w_p
   }
   if (var6 != 0) {
     CallWindowProc16(CONCAT13((param_2 >> 0x8),CONCAT12(param_2,win_handle_1)),w_param_1,l_param_1,
-                     l_param_1,(LPVOID)var6);
+                     l_param_1,var6);
   }
   return;
 }
@@ -566,7 +566,7 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
     uVar2 = uVar7;
     HVar3 = hdc16_dev_ctx_1;
     uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(pcVar1)));
-    DrawText16(0x400,CONCAT22(0x1050,&rect_a),uVar3,(LPCSTR)CONCAT22(uVar2,pcVar1),HVar3);
+    DrawText16(0x400,CONCAT22(0x1050,&rect_a),uVar3,CONCAT22(uVar2,pcVar1),HVar3);
     iStack8 = ((y3 - y7) + iStack8) / 0x2 + rect_12.y;
     y7 += iStack8;
     rect_a = ((x3 - x6) + rect_a) / 0x2 + rect_12.x;
@@ -640,7 +640,7 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
       pcVar1 = &struct71_var4.field6_0x6;
       HVar3 = hdc16_dev_ctx_1;
       uVar6 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(pcVar1)));
-      DrawText16(0x1,CONCAT22(0x1050,&rect_a),uVar6,(LPCSTR)CONCAT22(uVar7,pcVar1),HVar3);
+      DrawText16(0x1,CONCAT22(0x1050,&rect_a),uVar6,CONCAT22(uVar7,pcVar1),HVar3);
       uVar13 = s_tile2_bmp_1050_1538;
       uVar14 = 0x9c8d;
       SetTextColor16(CONCAT22(HVar3,uVar7),hdc16_dev_ctx_1);
@@ -846,7 +846,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,m
           return;
         }
         if ((msg_param_3 == 0x101) && (PTR_LOOP_1050_5ed8.is_null() == false)) {
-          PTR_LOOP_1050_5ed8 = NULL;
+          PTR_LOOP_1050_5ed8 = null_mut();
           pbVar1 = (iVar3 + 0x4);
           *pbVar1 = *pbVar1 & 0xfd;
           InvalidateRect16(0x1,NULL,0x0);

@@ -1163,8 +1163,8 @@ pub unsafe fn mixed_dos3_call_1000_39f2(
     } else {
         in_stack_0000fff6 = &DAT_1050_1050;
         bVar18 = true;
-        piStack6 = NULL;
-        piStack8 = NULL;
+        piStack6 = null_mut();
+        piStack8 = null_mut();
         piVar9 = param_3;
         pbVar13 = pbVar12;
         if (param_3.is_null() == false) {

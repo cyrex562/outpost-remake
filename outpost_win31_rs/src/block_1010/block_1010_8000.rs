@@ -179,7 +179,7 @@ pub unsafe fn FUN_1010_830a(
         mem_op_1000_179c(0x1e, paVar5);
         uVar4 = paVar5 | puVar2;
         if (uVar4 == 0) {
-            paVar3 = NULL;
+            paVar3 = null_mut();
             uVar4 = 0;
         } else {
             paVar3 = &local_2e;
@@ -475,7 +475,7 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
         paVar3 = (paVar3 & 0xffff0000 | (uVar1 | uVar4));
         //    if ((uVar1 | uVar4) != 0) goto LAB_1010_8853;
         uVar4 = 0;
-        puVar2 = NULL;
+        puVar2 = null_mut();
     }
     uVar6.field1660_0x67c = uVar4;
     uVar6.field1661_0x67e = puVar2; //
@@ -615,7 +615,7 @@ pub unsafe fn pass1_1010_89f0(
     paVar5 = (paVar4 & 0xffff0000 | uVar2);
     if (uVar2 == 0) {
         uVar1 = 0;
-        paVar5 = NULL;
+        paVar5 = null_mut();
     } else {
         file_1008_6414(paVar5, CONCAT22(paVar4, uVar1), pcVar8);
     }

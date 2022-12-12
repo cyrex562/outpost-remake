@@ -259,7 +259,7 @@ pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mu
     uStack1336 = SUB42(&DAT_1050_1050, 0x0);
     pcStack1322 = local_416;
     uStack1320 = SUB42(&DAT_1050_1050, 0x0);
-    pcStack1382 = NULL;
+    pcStack1382 = null_mut();
     local_666[0] = 0;
     if (param_3 == 1) {
         uStack1330 = 0x1804;
@@ -297,7 +297,7 @@ pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mu
             text = (pcVar9 >> 0x10);
             atype = SUB42(pcVar9, 0x0);
             MessageBox16(0x10, pcVar9, pcStack1654, (param_2 + 0x8));
-            pcStack1382 = NULL;
+            pcStack1382 = null_mut();
             pcStack1646 = pcStack1654;
             fn_ptr_1000_17ce(pcStack1654);
         } else {

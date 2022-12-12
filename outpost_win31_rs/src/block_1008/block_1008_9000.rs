@@ -193,7 +193,7 @@ pub unsafe fn pass1_1008_9262(
     mem_op_1000_179c(0x12, param_2);
     uVar2 = param_2 | param_1;
     if (uVar2 == 0) {
-        param_1 = NULL;
+        param_1 = null_mut();
         uVar2 = 0;
     } else {
         struct_op_1008_9174(CONCAT22(param_2, param_1), param_5, param_6);
@@ -310,7 +310,7 @@ pub unsafe fn pass1_1008_9466(param_1: *mut u16) {
     *param_1 = 0x52a;
     (param_1 + 0x2) = 0x1008;
     fn_ptr_1000_17ce(_PTR_LOOP_1050_0392);
-    _PTR_LOOP_1050_0392 = NULL;
+    _PTR_LOOP_1050_0392 = null_mut();
     return;
 }
 
@@ -927,7 +927,7 @@ pub unsafe fn pass1_1008_9d36(
         (0x280 - (uVar7 + 0x4)) / 0x2,
     );
     if (CONCAT22(param_2, param_1) == 0) {
-        paVar2 = NULL;
+        paVar2 = null_mut();
         paVar5 = (uVar4 & 0xffff0000);
     } else {
         paVar5 = (uVar4 & 0xffff0000 | ZEXT24(param_2));
@@ -964,7 +964,7 @@ pub unsafe fn pass1_1008_9e5a(structd_param_1: *mut StructD) {
     structd_5.field_0x1e = 0x1008;
     if (_PTR_LOOP_1050_0388 != 0) {
         if (structd_param_1.is_null()) {
-            puVar4 = NULL;
+            puVar4 = null_mut();
             uVar5 = 0;
         } else {
             puVar4 = &structd_5.field_0x1c;
@@ -986,7 +986,7 @@ pub unsafe fn pass1_1008_9e5a(structd_param_1: *mut StructD) {
         }
     }
     if (structd_param_1.is_null()) {
-        puVar4 = NULL;
+        puVar4 = null_mut();
         uVar6 = 0;
     } else {
         puVar4 = &structd_5.field_0x1c;

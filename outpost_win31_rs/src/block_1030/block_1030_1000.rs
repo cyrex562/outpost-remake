@@ -23,7 +23,7 @@ pub unsafe fn pass1_1030_10b0(param_1: *mut astruct_12,param_2: *mut astruct_12,
     pass1_1030_7e5a(uVar5,(uVar2 & 0xffff | uVar4 << 0x10),uVar1);
   }
   uStack8 = (uVar1 >> 0x10);
-  pass1_1030_1358(*(astruct_291 **)(param_3 + 0x26),puVar6,uVar3,
+  pass1_1030_1358((param_3 + 0x26),puVar6,uVar3,
                   uVar1 & 0xffff | (uStack8 & 0xff) << 0x10);
   return;
 }
@@ -36,12 +36,12 @@ pub unsafe fn pass1_1030_1120(mut param_1: u16 ,param_2: *mut astruct_57,mut par
   puVar1 = (param_2 | param_1);
   if (puVar1.is_null()) {
     param_1 = 0;
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_2112(param_1,puVar1,CONCAT22(param_2,param_1),0x0);
   }
-  pass1_1030_1358(*(astruct_291 **)(param_3 + 0x2a),param_1,puVar1,
+  pass1_1030_1358((param_3 + 0x2a),param_1,puVar1,
                   (param_1 + 0x4) & 0xffff | ((param_1 + 0x6) & 0xff) << 0x10);
   return;
 }
@@ -69,7 +69,7 @@ pub unsafe fn struct_1030_11aa(param_1: *mut astruct_156,param_2: i32,param_3: i
   param_1.field0_0x0 = 0x389a;
   iVar1.field1_0x2 = 0x1008;
   iVar1.field2_0x4 = 0;
-  iVar1.field3_0x6 = NULL;
+  iVar1.field3_0x6 = null_mut();
   iVar1.field4_0xa = 0;
   iVar1.field5_0xe = param_3;
   iVar1.field6_0x12 = 0;
@@ -252,7 +252,7 @@ pub unsafe fn pass1_1030_145a(param_1: *mut astruct_346,param_2: i32)
     uVar1 = &pstruct_1.field8_0xe;
     uVar2 = (&pstruct_1.field8_0xe + 2);
   }
-  &pstruct_1.field8_0xe = uVar1;
+  pstruct_1.field8_0xe = uVar1;
   (&pstruct_1.field8_0xe + 0x2) = uVar2;
   pstruct_1.field9_0x12 = 0;
   return;
@@ -289,7 +289,7 @@ pub unsafe fn pass1_1030_14b4(param_1: *mut astruct_156,mut param_2: u16 ,mut pa
     if ((bVar5 || *puVar2 == param_4) &&
        ((bVar5 || (puVar3 = &pstruct_1.field4_0xa, puVar3 < param_4 || puVar3 == param_4)
         ))) {
-      &pstruct_1.field4_0xa = (param_4 + 1);
+      pstruct_1.field4_0xa = (param_4 + 1);
       (&pstruct_1.field4_0xa + 0x2) = (param_4 + 0x1 >> 0x10);
     }
   }
@@ -596,7 +596,7 @@ pub unsafe fn pass1_1030_18f0(mut param_1: u16 ,mut param_2: u32,mut param_3: i1
     ppcVar1 = ((iVar3 + 0xc) + 0x10);
     (**ppcVar1)();
     uStack6 = CONCAT22(extraout_DX,param_1);
-    for (uStack10 = 0; uStack10 < uStack6; uStack10 += 1) {
+    for uStack10 in 0 .. uStack6 {
       ppcVar1 = ((iVar3 + 0xc) + 0x4);
       uVar2 = uStack6;
       (**ppcVar1)();

@@ -90,7 +90,7 @@ pub unsafe fn pass1_1028_7472(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_74ae(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_74ae(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x1387);
@@ -544,7 +544,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8,param_2: i32,mut param_3: u32)
         local_18 = CONCAT22(uVar3,paVar4);
         paVar14 = (paVar14 & 0xffff0000 | (uVar3 | paVar4));
         if ((uVar3 | paVar4) == 0) { break; }
-        paStack16 = *(astruct_364 **)&paVar4[0x1b].field6_0x10;
+        paStack16 = &paVar4[0x1b].field6_0x10;
         pass1_1030_34da(paStack16);
       }
       uVar23 = 0x400;
@@ -605,7 +605,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8,param_2: i32,mut param_3: u32)
           bVar15 = puVar5 == (s_New_failed_in_Op__Op_1050_0020 + 0x12);//
 // LAB_1028_7b74:
           if (!bVar15 && bVar16 == puVar1 < 0x0) {
-            local_30 = NULL;
+            local_30 = null_mut();
           }
         }
         else {
@@ -719,7 +719,7 @@ pub unsafe fn pass1_1028_7c4e(param_1: *mut astruct_57,mut param_2: u32)
           else {
             uStack52 = 0xc;
           }
-          for (uStack56 = 0; uStack56 < uStack50; uStack56 += 1) {
+          for uStack56 in 0 .. uStack50 {
             paStack64 = pass1_1030_1d7c(uStack50,uVar6,puStack46);
             uVar6 = paStack64 >> 0x10;
             iVar4 = paStack64;
@@ -831,7 +831,7 @@ pub unsafe fn pass1_1028_7dfc(param_1: u8,param_2: *mut u8,mut param_3: u32)
         else {
           iStack52 = 0x1e;
         }
-        for (uStack60 = 0; uStack60 < uStack50; uStack60 += 1) {
+        for uStack60 in 0 .. uStack50 {
           paStack68 = pass1_1030_1d7c(uStack50,uVar5,puStack46);
           uVar5 = uVar5 & 0xffff0000 | paStack68 >> 0x10;
           uVar4 = paStack68;
@@ -933,7 +933,7 @@ pub unsafe fn pass1_1028_7fb6(param_1: u8,mut param_2: u32)
         else {
           iStack52 = 0x14;
         }
-        for (uStack56 = 0; uStack56 < uStack44; uStack56 += 1) {
+        for uStack56 in 0 .. uStack44 {
           uVar6 = 0x30;
           paStack64 = pass1_1030_1d7c(uStack44,uVar4,puStack40);
           uVar4 = uVar4 & 0xffff0000 | paStack64 >> 0x10;

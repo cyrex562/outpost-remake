@@ -239,7 +239,7 @@ pub unsafe fn unk_win_op_1010_7300(
                 //
                 // LAB_1010_73fe:
                 uVar12 = 0x1000;
-                paVar5 = NULL;
+                paVar5 = null_mut();
                 paVar10 = (paVar10 & 0xffff0000);
             } else {
                 uVar12 = SUB42(&PTR_LOOP_1050_1040, 0x0);
@@ -504,7 +504,7 @@ pub unsafe fn unk_win_op_1010_7300(
             uVar8 = paVar13;
             puStack14 = CONCAT22(uVar8, uVar6);
             if ((uVar8 | uVar6) == 0) {
-                puStack20 = NULL;
+                puStack20 = null_mut();
             } else {
                 *puStack14 = 0x389a;
                 (uVar6 + 0x2) = 0x1008;

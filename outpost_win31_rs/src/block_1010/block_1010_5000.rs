@@ -541,7 +541,7 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut astruct_19, m
     paVar13 = (paVar14 & 0xffff0000);
     paVar15 = (paVar13 | uVar6);
     if (uVar6 == 0) {
-        puVar9 = NULL;
+        puVar9 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar14, puVar9));
         paVar13 = paVar15;

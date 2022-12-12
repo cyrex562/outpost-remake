@@ -444,7 +444,7 @@ pub unsafe fn memcpy_op_1008_676e(
     mem_op_1000_179c(0x1e, paVar1);
     uVar3 = paVar1 | param_1;
     if (uVar3 == 0) {
-        param_1 = NULL;
+        param_1 = null_mut();
         uVar3 = 0;
     } else {
         uVar1 = iVar1.field13_0x10;
@@ -572,7 +572,7 @@ pub unsafe fn pass1_1008_6978(
     uVar2 = paVar3;
     puStack10 = CONCAT22(uVar2, param_1);
     if ((uVar2 | param_1) == 0) {
-        puStack6 = NULL;
+        puStack6 = null_mut();
     } else {
         if (param_4 == 0) {
             param_4 = (param_3 + 0xcc);

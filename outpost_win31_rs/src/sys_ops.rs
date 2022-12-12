@@ -12,8 +12,8 @@ pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
 
     puStack4 =  &DAT_1050_1050;
     if (( PTR_LOOP_1050_5f1c |  PTR_PTR_1050_5f1a) == 0) {
-        pcStack6 = NULL;
-        puStack4 = NULL;
+        pcStack6 = null_mut();
+        puStack4 = null_mut();
     } else {
         iVar1 = mem_op_1000_21b6( PTR_PTR_1050_5f1a,
                                   PTR_LOOP_1050_5f1c);
@@ -33,8 +33,8 @@ pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
         if (BVar2 == 0) {
             uVar2 = (*pcStack6)();
         } else {
-            puStack4 = NULL;
-            pcStack6 = NULL;
+            puStack4 = null_mut();
+            pcStack6 = null_mut();
             uVar2 = 0;
         }
         if (( puStack4 |  pcStack6) != 0) {

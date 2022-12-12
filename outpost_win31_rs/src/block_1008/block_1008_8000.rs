@@ -95,7 +95,7 @@ pub unsafe fn win_ui_op_1008_8214(
         mem_op_1000_179c(0x6, paVar3);
         if ((paVar3 | param_1) == 0) {
             uVar1 = 0;
-            puVar4 = NULL;
+            puVar4 = null_mut();
         } else {
             puVar4 = pass1_1008_80d2(CONCAT22(paVar3, param_1));
             uVar1 = puVar4;
@@ -730,7 +730,7 @@ pub unsafe fn pass1_1008_8ce4(mut param_1: u32, param_2: *mut u16, mut param_3: 
     mem_op_1000_179c(0x14, paVar3);
     uVar2 = paVar3 | puVar1;
     if (uVar2 == 0) {
-        puVar1 = NULL;
+        puVar1 = null_mut();
         uVar2 = 0;
     } else {
         uVar6 = (uStack6 >> 0x10);
@@ -837,7 +837,7 @@ pub unsafe fn struct_op_1008_8e9e(param_1: *mut astruct_78, mut param_2: u32, mu
     param_1.field0_0x0 = 0x389a;
     iVar1.field1_0x2 = 0x1008;
     iVar1.field2_0x4 = 0;
-    iVar1.field3_0x6 = NULL;
+    iVar1.field3_0x6 = null_mut();
     iVar1.field4_0xa = 0;
     iVar1.field5_0xe = param_3;
     iVar1.field6_0x12 = 0;

@@ -57,7 +57,7 @@ pub unsafe fn pass1_1030_5044(param_1: u16,param_2: *mut astruct_117)
     uVar5 = uVar8;
     pass1_1030_4dbc(param_2,local_6,pcVar7 & 0xffff);
     uStack22 = CONCAT22(uVar10,uVar5);
-    for (uStack24 = 0; uStack24 < uVar3; uStack24 += 1) {
+    for uStack24 in 0 .. uVar3 {
       uVar10 = (&pstruct117_10[0xd].field10_0xa + 2);
       iVar6 = &pstruct117_10[0xd].field10_0xa + uStack24 * 0xae;
       pass1_1030_4c52(pstruct117_10,pstruct117_10_hi,CONCAT22(uVar10,iVar6),uStack22,uVar10);
@@ -543,7 +543,7 @@ pub unsafe fn file_1030_581e(mut param_1: i16,param_2: *mut u8,param_3: *mut ast
     paVar13 = (pSVar11 & 0xffff0000);
     paVar12 = (paVar13 | uVar9);
     if (uVar9 == 0) {
-      paVar4 = NULL;
+      paVar4 = null_mut();
     }
     else {
       pass1_1030_84ae(CONCAT22(pSVar11,paVar4));

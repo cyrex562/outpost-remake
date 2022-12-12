@@ -1102,7 +1102,7 @@ joined_r0x10300adb:
     uVar2 = uVar3 | param_1;
     paVar5 = (paVar5 & 0xffff0000);
     if (uVar2 == 0) {
-      param_1 = NULL;
+      param_1 = null_mut();
     }
     else {
       puVar8 = pass1_1020_d888(uVar2,CONCAT22(uVar3,param_1),param_6,param_8);
@@ -1168,8 +1168,8 @@ joined_r0x10300adb:
   // TODO: goto LAB_1030_0818;
     }
   }
-  param_1 = NULL;
-  pSVar4 = NULL;//
+  param_1 = null_mut();
+  pSVar4 = null_mut();//
 // LAB_1030_0818:
   return CONCAT22(pSVar4,param_1);
 }

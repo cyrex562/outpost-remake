@@ -512,7 +512,7 @@ pub unsafe fn pass1_1030_2958(param_1: *mut astruct_180,mut param_2: u32)
   struct_1030_17ce(param_1,0x5,0xf,param_2);
   pstruct_1_hi = (param_1 >> 0x10);
   pstruct_1 = param_1;
-  &pstruct_1.field12_0x10 = 0;
+  pstruct_1.field12_0x10 = 0;
   pstruct_1.field14_0x14 = 0;
   pstruct_1.field15_0x16 = 0;
   pstruct_1.field16_0x18 = 0x2710;
@@ -762,7 +762,7 @@ pub unsafe fn pass1_1030_2c8a(mut param_1: i16,param_2: *mut StructD,param_3: *m
   puStack1038 = CONCAT22(uVar5,uVar2);
   paVar6 = (param_2 & 0xffff0000 | (uVar5 | uVar2));
   if ((uVar5 | uVar2) == 0) {
-    iVar14.field13_0x10 = NULL;
+    iVar14.field13_0x10 = null_mut();
   }
   else {
     puVar8 = pass1_1008_3e38(CONCAT22(uVar5,uVar2 + 0x6));

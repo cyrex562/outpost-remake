@@ -25,7 +25,7 @@ pub unsafe fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3
     uVar3 = CONCAT22(uVar4,param_2);
     iVar1 = param_1 + 0x9a;
     iVar7 = iVar1;
-    pass1_1018_3cda(*(astruct_506 **)(param_1 + 0x96),CONCAT22(param_2,param_1 + 0x19a),
+    pass1_1018_3cda((param_1 + 0x96),CONCAT22(param_2,param_1 + 0x19a),
                     CONCAT22(param_2,iVar1));
     pass1_1018_3424(iVar7,uVar3,(param_1 + 0x96));
     if (iVar7 == 0) {
@@ -249,7 +249,7 @@ pub unsafe fn pass1_1040_3532(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
   destroy_win_1040_7b98(CONCAT22(param_3,param_2));
   return;
 }
-pub unsafe fn show_win_1040_355a(StructB *param_1)
+pub unsafe fn show_win_1040_355a(param_1: *mut StructB)
 
 {
   let mut uVar1: u16;
@@ -379,7 +379,7 @@ pub unsafe fn message_box_op_1040_37f0(mut param_1: u16 ,mut param_2: i16,mut pa
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,&DAT_1050_1050);
     uVar1 = MessageBox16(0x30,pcStack10,CONCAT22(0x1050,local_40c),(param_2 + 0x6));
-    pass1_1018_3710(uVar1,uVar2,*(astruct_263 **)(param_2 + 0x8e));
+    pass1_1018_3710(uVar1,uVar2,(param_2 + 0x8e));
     PostMessage16(0x0,0x2,0x111,(param_2 + 0x6));
   }
   else {
@@ -529,7 +529,7 @@ pub unsafe fn enable_win_1040_3a36(param_1: *mut astruct_924,mut param_2: u16 ,m
   }
   return 0x0;
 }
-pub unsafe fn show_win_1040_3ae8(StructB *param_1)
+pub unsafe fn show_win_1040_3ae8(param_1: *mut StructB)
 
 {
   let mut uVar1: u16;
@@ -692,7 +692,7 @@ pub unsafe fn invalidate_rect_1040_3ddc(StructC *in_struct_1)
   let mut rect: RECT16;
   let mut uStack6: u32;
 
-  rect = (RECT16)0x780005;
+  rect = 0x780005;
   uStack6 = 0xdc0069;
   InvalidateRect16(0x0,&rect,&DAT_1050_1050);
   return;

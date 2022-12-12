@@ -803,7 +803,7 @@ pub unsafe fn pass1_1030_bd74(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-astruct_180 * set_fn_ptr_1030_be34(param_1: *mut astruct_180)
+pub unsafe fn set_fn_ptr_1030_be34(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   struct_1028_b354(param_1);

@@ -332,7 +332,7 @@ struct StructB {
     let mut field0_0x0: u16;
     let mut field1_0x2: u16;
     let mut hwnd_0x6: HWND16;
-    LPVOID lpvoid_field_0x8;
+    let mut lpvoid_field_0x8: LPVOID = null_mut();
     let mut max_count_field_0x10: u16; // Created by retype action
     u32 * field5_0xa;
     u8 * field6_0xc;

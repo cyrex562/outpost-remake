@@ -13,7 +13,7 @@ pub unsafe fn pass1_1030_e010(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1030_e09e(param_1: *mut astruct_97)
+pub unsafe fn pass1_1030_e09e(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x2af7);
@@ -410,7 +410,7 @@ pub unsafe fn pass1_1030_e602(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1030_e63e(param_1: *mut astruct_97,mut param_2: u16 )
+pub unsafe fn pass1_1030_e63e(param_1: *mut astruct_97,mut param_2: u16 ) -> *mut astruct_97
 
 {
   let mut iVar1: *mut astruct_97;
@@ -510,7 +510,7 @@ pub unsafe fn pass1_1030_e75e(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1030_e79a(param_1: *mut astruct_97)
+pub unsafe fn pass1_1030_e79a(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0xf9f);
@@ -753,7 +753,7 @@ pub unsafe fn pass1_1030_eb14(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1030_eb50(param_1: *mut astruct_97)
+pub unsafe fn pass1_1030_eb50(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x1f3f);
@@ -851,7 +851,7 @@ pub unsafe fn pass1_1030_ec86(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1030_ecc2(param_1: u8,param_2: *mut astruct_97)
+pub unsafe fn pass1_1030_ecc2(param_1: u8,param_2: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_2,0xf9f);
@@ -972,7 +972,7 @@ pub unsafe fn pass1_1030_ecf8(param_1: u8,param_2: *mut astruct_57,mut param_3: 
           uStack54 += 0x1;
         }
         pSVar13 = (uVar8 & 0xffff0000 | iVar1 % 0xa & 0xffffU);
-        for (uStack64 = 0; uStack64 < uVar5; uStack64 += 1) {
+        for uStack64 in 0 .. uVar5 {
           ppcVar3 = (*puVar2 + 0x4);
           uVar8 = uVar5;
           (**ppcVar3)(uVar15,puVar2,(puVar2 >> 0x10),uStack64,(uStack64 >> 0x10));

@@ -240,7 +240,7 @@ pub unsafe fn send_dlg_item_msg_1038_8618s(mut param_1: u16 ,param_2: *mut astru
       puVar3 = (LVar6 >> 0x10);
       puVar2 = local_106;
       pass1_1008_b4a0(puVar2,puVar3,(uVar4 + 0x94),CONCAT22(0x1050,puVar2));
-      pass1_1008_b200(*(astruct_194 **)(uVar4 + 0x94));
+      pass1_1008_b200((uVar4 + 0x94));
       uVar7 = CONCAT22(puVar3 | puVar2,puVar2);
       if ((puVar3 | puVar2) != 0) {
         send_dlg_item_msg_1038_8400(uVar4,uVar5,CONCAT22(puVar3,puVar2),0x1855);
@@ -250,7 +250,7 @@ pub unsafe fn send_dlg_item_msg_1038_8618s(mut param_1: u16 ,param_2: *mut astru
           uVar7 = SendDlgItemMessage16(l_param,0xffff,0x40d,0x1855,(uVar4 + 0x6));
         }
       }
-      uVar7 = pass1_1008_b38c(CONCAT22(uVar7,(uVar7 >> 0x10)),*(astruct_196 **)(uVar4 + 0x94));
+      uVar7 = pass1_1008_b38c(CONCAT22(uVar7,(uVar7 >> 0x10)),(uVar4 + 0x94));
       if (uVar7 != 0) {
         send_dlg_item_msg_1038_8400(uVar4,uVar5,uVar7,0x1856);
         uVar7 = pass1_1008_b47a((uVar4 + 0x94));
@@ -479,7 +479,7 @@ pub unsafe fn unk_win_ui_op_1038_8afe(mut param_1: u16 ,param_2: *mut astruct_50
   dlg_item = GetDlgItemInt16(0x0,&local_4,&DAT_1050_1050,s_dibtext_bmp_1050_1844 + 0x9);
   pass1_1030_6c1a(iVar4.field148_0x94,dlg_item);
   uVar1 = iVar4.field148_0x94;
-  pass1_1038_387e(paVar2,*(astruct_302 **)(uVar1 + 0x2e),dlg_item,iVar4.field153_0x9c,iVar4.field148_0x94);
+  pass1_1038_387e(paVar2,(uVar1 + 0x2e),dlg_item,iVar4.field153_0x9c,iVar4.field148_0x94);
   return;
 }
 
@@ -542,7 +542,7 @@ pub unsafe fn pass1_1038_8c08(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 * pass1_1038_8caa(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 )
+pub unsafe fn pass1_1038_8caa(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;
@@ -586,7 +586,7 @@ pub unsafe fn pass1_1038_8cf6(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn send_dlg_item_msg_1038_8d22(mut param_1: u32,undefined1 param_2)
+pub unsafe fn send_dlg_item_msg_1038_8d22(mut param_1: u32,param_2: u8)
 
 {
   let mut iVar1: i16;

@@ -37,7 +37,7 @@ pub unsafe fn pass1_1028_d078(mut param_1: u32,mut param_2: u32)
   uVar3 = uVar7 | (uStack16 | puStack6);
   puStack18 = puStack6;
   if ((uStack16 | puStack6) == 0) {
-    puStack6 = NULL;
+    puStack6 = null_mut();
   }
   else {
     struct_op_1008_8e9e(CONCAT22(uStack16,puStack6),0x6,0x24);
@@ -96,7 +96,7 @@ pub unsafe fn pass1_1028_d172(mut param_1: u32,mut param_2: u32)
 
 
 
-astruct_97 * struct_op_1028_d1dc(param_1: *mut astruct_97,mut param_2: u16 )
+pub unsafe fn struct_op_1028_d1dc(param_1: *mut astruct_97,mut param_2: u16 ) -> *mut astruct_97
 
 {
   let mut iVar1: *mut astruct_97;
@@ -160,8 +160,8 @@ pub unsafe fn pass1_1028_d282(param_1: *mut astruct_446)
   let mut uVar1: *mut astruct_446;
   let mut uVar2: *mut astruct_446;
 
-  uVar1 = *(astruct_446 **)param_1;
-  uVar2 = *(astruct_446 **)(param_1 + 2);
+  uVar1 = param_1;
+  uVar2 = (param_1 + 2);
   pcStack6 = CONCAT22(uVar2,uVar1);
   if ((uVar2 | uVar1) != 0) {
     pass1_1028_d658(CONCAT22(uVar2,uVar1));
@@ -301,8 +301,8 @@ pub unsafe fn struct_1028_d59c(param_1: *mut StructD,param_2: *mut astruct_158)
   uVar5 = (param_2 >> 0x10);
   iVar5 = param_2;
   param_2 = 0;
-  iVar5.field3_0x4 = NULL;
-  iVar5.field4_0x8 = NULL;
+  iVar5.field3_0x4 = null_mut();
+  iVar5.field4_0x8 = null_mut();
   puVar2 = *_u16_1050_5748;
   param_2 = puVar2;
   mem_op_1000_179c(0xc,paVar5);
@@ -310,7 +310,7 @@ pub unsafe fn struct_1028_d59c(param_1: *mut StructD,param_2: *mut astruct_158)
   uVar3 = paVar5 | puVar2;
   paVar6 = (paVar5 & 0xffff0000 | uVar3);
   if (uVar3 == 0) {
-    iVar5.field3_0x4 = NULL;
+    iVar5.field3_0x4 = null_mut();
   }
   else {
     set_struct_1008_574a((puVar2 & 0xffff | paVar5 << 0x10));
@@ -324,7 +324,7 @@ pub unsafe fn struct_1028_d59c(param_1: *mut StructD,param_2: *mut astruct_158)
   uVar4 = paVar6;
   puStack14 = CONCAT22(uVar4,uVar3);
   if ((uVar4 | uVar3) == 0) {
-    iVar5.field4_0x8 = NULL;
+    iVar5.field4_0x8 = null_mut();
   }
   else {
     set_struct_1008_574a(CONCAT22(uVar4,uVar3));
@@ -570,7 +570,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar6 = (paVar7 & 0xffff0000);
   paVar8 = (paVar6 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar7,puVar1),0x5,0xa);
@@ -583,7 +583,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar7 = (paVar6 & 0xffff0000);
   paVar8 = (paVar7 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar6,puVar1),0x5,0x19);
@@ -596,7 +596,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar6 = (paVar7 & 0xffff0000);
   paVar8 = (paVar6 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar7,puVar1),0x5,0xa);
@@ -609,7 +609,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar7 = (paVar6 & 0xffff0000);
   paVar8 = (paVar7 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar6,puVar1),0x64,0x1f4);
@@ -622,7 +622,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar6 = (paVar7 & 0xffff0000);
   paVar8 = (paVar6 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar7,puVar1),0x19,0x64);
@@ -635,7 +635,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   paVar7 = (paVar6 & 0xffff0000);
   paVar8 = (paVar7 | uVar4);
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
   }
   else {
     struct_1030_11aa(CONCAT22(paVar6,puVar1),0x64,0x1f4);
@@ -646,7 +646,7 @@ pub unsafe fn pass1_1028_d81c(param_1: *mut astruct_57,param_2: *mut astruct_136
   mem_op_1000_179c(0x1c,paVar7);
   uVar4 = paVar7 | puVar1;
   if (uVar4 == 0) {
-    puVar1 = NULL;
+    puVar1 = null_mut();
     uVar4 = 0;
   }
   else {

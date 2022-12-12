@@ -437,7 +437,7 @@ pub unsafe fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut p
     let mut read_buffer: *mut u8;
 
     uVar4 = (param_3 >> 0x10);
-    read_buffer = NULL;
+    read_buffer = null_mut();
     file_read_ok = read_file_1008_7dee(hfile_param, CONCAT22(0x1050, &read_buffer), 0x4);
     if (file_read_ok == 0) {
         return;
@@ -467,7 +467,7 @@ pub unsafe fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut p
         lVar5 = *param_2;
         ppcVar1 = (*param_2 + 0x24);
         (**ppcVar1)();
-        // for (puStack14 = NULL; puStack14 < read_buffer; puStack14 = puStack14 + 1)
+        // for (puStack14 = null_mut(); puStack14 < read_buffer; puStack14 = puStack14 + 1)
         puStack14 = null_mut();
         while puStack14 < read_buffer {
             file_read_ok = read_file_1008_7dee(hfile_param, CONCAT22(0x1050, &read_buffer_1c), 0x4);
@@ -522,7 +522,7 @@ pub unsafe fn pass1_1008_766e(param_1: *mut u8, mut param_2: u32, param_3: *mut 
             uVar2 = paVar4 | puVar1;
             paVar5 = (paVar4 & 0xffff0000 | uVar2);
             if (uVar2 == 0) {
-                puVar1 = NULL;
+                puVar1 = null_mut();
                 uVar3 = 0;
             } else {
                 pass1_1010_8ef2(
@@ -553,7 +553,7 @@ pub unsafe fn file_1008_76e4(param_1: *mut astruct_57, param_2: *mut HFILE16, pa
     let mut puStack10: *mut u8;
     let mut buffer_6: *mut u8;
 
-    buffer_6 = NULL;
+    buffer_6 = null_mut();
     uVar2 = read_file_1008_7dee(param_2, CONCAT22(0x1050, &buffer_6), 0x4);
     if (uVar2 == 0) {
         return;
@@ -572,7 +572,7 @@ pub unsafe fn file_1008_76e4(param_1: *mut astruct_57, param_2: *mut HFILE16, pa
         }
         ppcVar1 = (*param_3 + 0x14);
         (**ppcVar1)();
-        // for (puStack10 = NULL; puStack10 < buffer_6; puStack10 = puStack10 + 1)
+        // for (puStack10 = null_mut(); puStack10 < buffer_6; puStack10 = puStack10 + 1)
         puStack10 = null_mut();
         while puStack10 < buffer_6 {
             BVar3 = read_file_1008_7dee(param_2, CONCAT22(0x1050, local_18), 0x4);

@@ -160,7 +160,7 @@ pub unsafe fn pass1_1008_b200(param_1: *mut astruct_194) {
     paVar13 = (paVar11 & 0xffff0000);
     paVar12 = (paVar13 | uVar9);
     if (uVar9 == 0) {
-        puVar4 = NULL;
+        puVar4 = null_mut();
     } else {
         set_struct_1008_574a(CONCAT22(paVar11, puVar4));
         paVar13 = paVar12;
@@ -263,7 +263,7 @@ pub unsafe fn pass1_1008_b38c(param_1: *mut StructD, param_2: *mut astruct_196) 
         uVar5 = paVar7 | uVar3;
         paVar8 = (paVar7 & 0xffff0000 | uVar5);
         if (uVar5 == 0) {
-            iVar4.field18_0x12 = NULL;
+            iVar4.field18_0x12 = null_mut();
         } else {
             uVar3 = set_struct_1008_574a(CONCAT22(paVar7, uVar3));
             iVar4.field18_0x12 = uVar3;
@@ -280,7 +280,7 @@ pub unsafe fn pass1_1008_b38c(param_1: *mut StructD, param_2: *mut astruct_196) 
                 mem_op_1000_179c(0xa, paVar8);
                 uVar9 = paVar8 & 0xffff0000;
                 if ((paVar8 | uVar3) == 0) {
-                    iVar3 = NULL;
+                    iVar3 = null_mut();
                     paVar8 = (paVar8 & 0xffff0000);
                 } else {
                     puVar10 = pass1_1008_b11e(CONCAT22(paVar8, uVar3));
@@ -832,7 +832,7 @@ pub unsafe fn file_1008_bb5e(
             paVar10 = (paVar8 & 0xffff0000);
             paVar9 = (paVar10 | uVar6);
             if (uVar6 == 0) {
-                uVar3 = NULL;
+                uVar3 = null_mut();
             } else {
                 set_struct_1008_574a(CONCAT22(paVar8, uVar3));
                 paVar10 = paVar9;
@@ -840,7 +840,7 @@ pub unsafe fn file_1008_bb5e(
             uVar13 = (param_3 >> 0x10);
             iVar3.field10_0xa = uVar3;
             (iVar3.field10_0xa + 0x2) = paVar10;
-            paStack286 = NULL;
+            paStack286 = null_mut();
             loop {
                 if (local_10[0] <= paStack286) {
                     return;
@@ -850,7 +850,7 @@ pub unsafe fn file_1008_bb5e(
                 uVar6 = paVar10 | uVar4;
                 paVar8 = (paVar10 & 0xffff0000 | uVar6);
                 if (uVar6 == 0) {
-                    uVar4 = NULL;
+                    uVar4 = null_mut();
                     paVar10 = (paVar10 & 0xffff0000);
                 } else {
                     set_stuct_1008_b0bc(CONCAT22(paVar10, uVar4));

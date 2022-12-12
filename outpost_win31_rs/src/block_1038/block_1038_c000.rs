@@ -1,5 +1,5 @@
 
-pub unsafe fn show_win_1038_c044(StructB *struct_b_param_1)
+pub unsafe fn show_win_1038_c044(struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u16;
@@ -30,7 +30,7 @@ pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_
   send_msg_1038_c228(CONCAT22(param_2,param_1));
   uStack6 = load_string_1010_847e(_u16_1050_14cc,0x531);
   if (param_4 == 0x177) {
-    pass1_1008_e05e(*(astruct_102 **)(param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19eU),
+    pass1_1008_e05e((param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19eU),
                     CONCAT22(param_2,param_1 + 0x9e));
     load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x200,local_40c,&DAT_1050_1050)
     ;
@@ -50,7 +50,7 @@ pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_
     }
     uStack10 = CONCAT22(param_2,param_1 + 0x9e);
     uVar2 = param_2;
-    iVar1 = pass1_1008_e10c(*(astruct_102 **)(param_1 + 0x8e),CONCAT22(param_2,param_1 + 0x19e),
+    iVar1 = pass1_1008_e10c((param_1 + 0x8e),CONCAT22(param_2,param_1 + 0x19e),
                             CONCAT22(param_2,param_1 + 0x9e),param_2,&DAT_1050_1050);
     if (iVar1 == 0) {
       load_string_1010_84e0
@@ -100,10 +100,10 @@ pub unsafe fn enable_win_1038_c294(mut param_1: u32)
   uVar1 = param_1 + 0x9e;
   pcStack12 = (param_1 & 0xffff0000 | uVar1);
   uVar3 = param_1;
-  pass1_1008_e320(*(astruct_102 **)(param_1 + 0x8e),(param_1 & 0xffff0000 | (param_1 + 0x19eU))
+  pass1_1008_e320((param_1 + 0x8e),(param_1 & 0xffff0000 | (param_1 + 0x19eU))
                   ,(param_1 & 0xffff0000 | uVar1));
   SetWindowText16(CONCAT22(uVar3,uVar1),(param_1 + 0x9a));
-  uVar2 = pass1_1008_e2a4(*(astruct_102 **)(param_1 + 0x8e),
+  uVar2 = pass1_1008_e2a4((param_1 + 0x8e),
                           (param_1 & 0xffff0000 | (param_1 + 0x19eU)),pcStack12);
   EnableWindow16(uVar2 & 0x1,(param_1 + 0x96));
   EnableWindow16(uVar2 & 0x2,(param_1 + 0x98));
@@ -259,7 +259,7 @@ pub unsafe fn pass1_1038_c52a(param_1: *mut u8,mut param_2: u16 ,mut param_3: u3
   destroy_win_1040_7b98(CONCAT22(param_3,param_2));
   return;
 }
-pub unsafe fn show_win_1038_c558(StructB *struct_b_param_1)
+pub unsafe fn show_win_1038_c558(struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u16;
@@ -337,7 +337,7 @@ pub unsafe fn message_box_op_1038_c672(param_1: u8,mut param_2: i16,mut param_3:
     }
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,&DAT_1050_1050);
     MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),(param_2 + 0x6));
-    pass1_1008_e164(*(astruct_102 **)(param_2 + 0x8e));
+    pass1_1008_e164((param_2 + 0x8e));
   }
   PostMessage16(0x0,0x2,0x111,(param_2 + 0x6));
   return;
@@ -421,7 +421,7 @@ pub unsafe fn destroy_window_1038_c836(param_1: *mut astruct_881,mut param_2: u3
     uVar1 = param_1.field141_0x8e;
     (uVar1 + 0xa) = 0x6;
     DestroyWindow16(param_1.field6_0x6);
-    PTR_LOOP_1050_5b80 = NULL;
+    PTR_LOOP_1050_5b80 = null_mut();
     return;
   }
   post_win_msg_1040_7b3c
@@ -433,11 +433,11 @@ pub unsafe fn destroy_window_1038_c836(param_1: *mut astruct_881,mut param_2: u3
 
 // WARNING: Unable to use type for symbol uVar1
 // WARNING: Unable to use type for symbol uVar2
-pub unsafe fn win_ui_op_1038_c89c(StructB *struct_b_param_1)
+pub unsafe fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
 
 {
   let mut HVar1: HWND16;
-  StructB *struct_b_4;
+  struct_b_4: *mut StructB;
   let mut uVar3: u16;
   let mut enable: bool;
   let mut iVar1: *mut astruct_910;
@@ -446,12 +446,12 @@ pub unsafe fn win_ui_op_1038_c89c(StructB *struct_b_param_1)
 
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar3 = (struct_b_param_1 >> 0x10);
-  struct_b_4 = (StructB *)struct_b_param_1;
+  struct_b_4 = struct_b_param_1;
   CheckRadioButton16(0xfac,0xfad,0xfac,struct_b_4.lpvoid_field_0x8);
   uVar1 = &struct_b_4[0x7].field1_0x2;
   (uVar1 + 0xa) = 0x1;
   uVar2 = &struct_b_4[0x7].field1_0x2;
-  iVar1 = *(astruct_910 **)(uVar2 + 0x12);
+  iVar1 = (uVar2 + 0x12);
   if (iVar1 == &u32_1050_0004) {//
 // LAB_1038_c8da:
     HVar1 = GetDlgItem16(0xfce,struct_b_4.lpvoid_field_0x8);
@@ -537,7 +537,7 @@ pub unsafe fn win_dlg_op_1038_c95e(struct_param_1: *mut astruct_882,mut param_2:
     }
   }
   DestroyWindow16(iVar3.field6_0x6);
-  PTR_LOOP_1050_5b80 = NULL;
+  PTR_LOOP_1050_5b80 = null_mut();
   return;
 }
 pub unsafe fn FUN_1038_ca42()
@@ -562,7 +562,7 @@ pub unsafe fn pass1_1038_ca46(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 * pass1_1038_cad8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 )
+pub unsafe fn pass1_1038_cad8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;
@@ -610,7 +610,7 @@ pub unsafe fn pass1_1038_cb30(param_1: *mut StructD)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn show_win_1038_cb5c(mut param_1: u32,StructB *struct_b_param_1,mut param_3: u16 )
+pub unsafe fn show_win_1038_cb5c(mut param_1: u32,struct_b_param_1: *mut StructB,mut param_3: u16 )
 
 {
   let mut uVar1: u32;
@@ -620,7 +620,7 @@ pub unsafe fn show_win_1038_cb5c(mut param_1: u32,StructB *struct_b_param_1,mut 
   let mut paVar5: *mut Struct57;
   let mut uVar6: u16;
   let mut paVar7: *mut Struct57;
-  StructB *struct_b_5;
+  struct_b_5: *mut StructB;
   let mut uVar8: u16;
   let mut puVar9: *mut u16;
   let mut in_stack_0000fe48: u16;
@@ -632,9 +632,9 @@ pub unsafe fn show_win_1038_cb5c(mut param_1: u32,StructB *struct_b_param_1,mut 
 
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   uVar8 = (struct_b_param_1 >> 0x10);
-  struct_b_5 = (StructB *)struct_b_param_1;
+  struct_b_5 = struct_b_param_1;
   uVar3 = pass1_1008_eb6e();
-  for (iStack10 = 0; iStack10 < uVar3; iStack10 += 1) {
+  for iStack10 in 0 .. uVar3 {
     uVar1 = &struct_b_5[0x7].field1_0x2;
     puVar9 = pass1_1008_eb5c(uVar1,(uVar1 >> 0x10),iStack10);
     paVar7 = (param_1 & 0xffff0000 | puVar9 >> 0x10);
@@ -761,18 +761,18 @@ pub unsafe fn pass1_1038_cd5c(param_1: *mut StructD)
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
-pub unsafe fn destroy_window_1038_cd88(StructB *struct_b_param_1)
+pub unsafe fn destroy_window_1038_cd88(struct_b_param_1: *mut StructB)
 
 {
-  StructB *struct_1;
+  struct_1: *mut StructB;
   let mut uVar1: u16;
 
   dialog_ui_fn_1040_78e2(struct_b_param_1);
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
   uVar1 = (struct_b_param_1 >> 0x10);
-  struct_1 = (StructB *)struct_b_param_1;
+  struct_1 = struct_b_param_1;
   ShowWindow16(0x5,struct_1.lpvoid_field_0x8);
-  struct_1[0x7].lpvoid_field_0x8 = (LPVOID)(&PTR_LOOP_1050_0000 + 1);
+  struct_1[0x7].lpvoid_field_0x8 = (&PTR_LOOP_1050_0000 + 1);
   unk_win_msg_op_1008_9510((struct_b_param_1 & 0xffff0000 | ZEXT24(&struct_1[0x7].lpvoid_field_0x8)));
   DestroyWindow16(struct_1.lpvoid_field_0x8);
   return;

@@ -207,7 +207,7 @@ pub unsafe fn pass1_1010_41d6(
     pcStack30 = CONCAT22(uVar5, uVar7);
     uVar9 = (uVar5 | uVar7);
     if ((uVar5 | uVar7) == 0) {
-        pcStack20 = NULL;
+        pcStack20 = null_mut();
     } else {
         pass1_1000_5586(0x3e38, 0x1008, iStack22, 0x6, uVar7, uVar5);
         pcStack20 = pcStack30;
@@ -364,7 +364,7 @@ pub unsafe fn pass1_1010_459e(param_1: *mut astruct_27) {
     let mut paVar2: *mut Struct57;
 
     if (param_1.is_null()) {
-        paVar1 = NULL;
+        paVar1 = null_mut();
         paVar2 = (in_EDX & 0xffff0000);
     } else {
         paVar2 = (in_EDX & 0xffff0000 | param_1);
@@ -755,7 +755,7 @@ pub unsafe fn pass1_1010_4a8a(
     param_2.field17_0x20 = 0x1;
     param_2.field18_0x22 = 0;
     param_2.field19_0x24 = 0;
-    param_2.field20_0x26 = NULL;
+    param_2.field20_0x26 = null_mut();
     param_2.field21_0x2a = 0;
     param_2.field22_0x2c = 0x1;
     param_2.field23_0x2e = 0;

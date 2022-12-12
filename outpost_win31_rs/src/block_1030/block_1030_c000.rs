@@ -402,7 +402,7 @@ pub unsafe fn pass1_1030_c668(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_180 * struct_1030_c6f6(param_1: *mut astruct_180)
+pub unsafe fn struct_1030_c6f6(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   let mut uVar1: u16;
@@ -524,7 +524,7 @@ pub unsafe fn pass1_1030_c84e(mut param_1: u32,mut param_2: u32) -> BOOL16
 
 
 
-pub unsafe fn pass1_1030_c894(BOOL16 param_1,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16) -> BOOL16
+pub unsafe fn pass1_1030_c894(param_1: BOOL16,param_2: *mut u8,param_3: *mut astruct_373,param_4: *mut HFILE16) -> BOOL16
 
 {
   let mut BVar1: bool;
@@ -574,7 +574,7 @@ pub unsafe fn pass1_1030_c91a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_180 * struct_1030_c9a8(param_1: *mut astruct_180)
+pub unsafe fn struct_1030_c9a8(param_1: *mut astruct_180) -> *mut astruct_180
 
 {
   let mut iVar1: *mut astruct_180;
@@ -784,8 +784,8 @@ pub unsafe fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i1
         iVar8.field32_0x20 = 0;
         iVar8.field33_0x24 = 0;
         iVar8.field34_0x26 = 0;
-        puStack42 = NULL;
-        puStack18 = NULL;
+        puStack42 = null_mut();
+        puStack18 = null_mut();
         _DAT_0000_0006 = param_5;
         uRam0000000a = 0x1;
         uVar4 = switch_1020_c3b4(param_5);
@@ -807,7 +807,7 @@ pub unsafe fn pass1_1030_cc44(mut param_1: i16,mut param_2: u16 ,mut param_3: i1
         (**ppcVar1)(&u16_1050_1038,uVar6,puVar7);
         uStack34 = CONCAT22(extraout_DX_01,uVar6);
         uVar6 = extraout_DX_01;
-        for (uStack38 = 0; uStack38 < uStack34; uStack38 += 1) {
+        for uStack38 in 0 .. uStack34 {
           puVar9 = pass1_1030_1d7c(uStack34,uVar6,puStack30);
           uVar5 = (puVar9 >> 0x10);
           uVar6 = uVar5 | puVar9;

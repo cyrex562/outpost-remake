@@ -69,7 +69,7 @@ pub unsafe fn post_win_msg_1008_a0e4(
         uVar7 = (paStack14 >> 0x10);
         uVar3 = paStack14;
         if ((uVar7 | uVar3) == 0) {
-            paStack14 = NULL;
+            paStack14 = null_mut();
         } else {
             paStack14.field0_0x0 = 0x389a;
             (uVar3 + 0x2) = 0x1008;
@@ -529,7 +529,7 @@ pub unsafe fn pass1_1008_a930(mut param_1: u32, mut param_2: i16) {
             uVar3 = in_EDX;
             puStack24 = CONCAT22(uVar3, puVar2);
             if ((uVar3 | puVar2) == 0) {
-                puStack18 = NULL;
+                puStack18 = null_mut();
             } else {
                 *puStack24 = 0x389a;
                 (puVar2 + 0x2) = 0x1008;

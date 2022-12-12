@@ -77,7 +77,7 @@ pub unsafe fn pass1_1030_4594(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
   puStack8 = (puVar2 & 0xffff | paVar4 << 0x10);
   uVar3 = paVar4 | puVar2;
   if (uVar3 == 0) {
-    puStack8 = NULL;
+    puStack8 = null_mut();
   }
   else {
     puVar8 = pass1_1008_3e38(CONCAT22(paVar4,puVar2 + 0x4));
@@ -123,7 +123,7 @@ pub unsafe fn pass1_1030_4628(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
   uVar4 = paVar5;
   piStack20 = CONCAT22(uVar4,uVar3);
   if ((uVar4 | uVar3) == 0) {
-    piStack8 = NULL;
+    piStack8 = null_mut();
   }
   else {
     pass1_1008_3e38(CONCAT22(uVar4,uVar3 + 0x6));
@@ -620,7 +620,7 @@ pub unsafe fn read_file_1030_4e70(param_1: *mut astruct_117,param_2: *mut u32,pa
   let mut iStack56: i32;
   let mut uStack20: u32;
 
-  *param_3 = NULL;
+  *param_3 = null_mut();
   *param_2 = 0;
   if (param_4 != 0) {
     uVar2 = 0;
@@ -700,11 +700,11 @@ pub unsafe fn pass1_1030_4f5a(mut param_1: u16 ,param_2: *mut astruct_117)
     else {
     }
     uVar3 = fn_ptr_op_1000_1708(pcVar4 * 0x98,0x0,0x1,PTR_LOOP_1050_5f2c,PTR_LOOP_1050_5f2e);
-    &paVar8.field15_0x12 = uVar3;
+    paVar8.field15_0x12 = uVar3;
     (&paVar8.field15_0x12 + 0x2) = PTR_LOOP_1050_5f2e;
     pass1_1030_4dbc(param_2,local_6,pcVar4 & 0xffff);
     uStack20 = CONCAT22(PTR_LOOP_1050_5f2e,uVar3);
-    for (uStack22 = 0; uStack22 < pcVar4; uStack22 += 1) {
+    for uStack22 in 0 .. pcVar4 {
       uVar6 = (&paVar8.field15_0x12 + 2);
       iVar4 = (&paVar8.field15_0x12 + uStack22 * 0x98);
       pass1_1030_4d3a(uVar6,(param_2 & 0xffff | ZEXT24(paVar9) << 0x10),

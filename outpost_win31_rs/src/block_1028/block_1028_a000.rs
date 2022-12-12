@@ -397,7 +397,7 @@ pub unsafe fn pass1_1028_a6ca(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_a706(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_a706(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0xbb7);
@@ -486,7 +486,7 @@ pub unsafe fn pass1_1028_a82a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_a866(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_a866(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x36af);
@@ -573,7 +573,7 @@ pub unsafe fn pass1_1028_a982(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_a9be(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_a9be(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x176f);
@@ -670,7 +670,7 @@ pub unsafe fn pass1_1028_aaf6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_ab32(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_ab32(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x2edf);
@@ -777,7 +777,7 @@ pub unsafe fn pass1_1028_ac7a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_97 * pass1_1028_acb6(param_1: *mut astruct_97)
+pub unsafe fn pass1_1028_acb6(param_1: *mut astruct_97) -> *mut astruct_97
 
 {
   struct_op_1028_d1dc(param_1,0x3e7f);

@@ -53,7 +53,7 @@ pub unsafe fn pass1_1010_9092(mut param_1: u16, mut param_2: u32) {
     paVar6 = (in_EDX & 0xffff0000 | uVar3);
     if (uVar3 == 0) {
         param_1 = 0;
-        paVar6 = NULL;
+        paVar6 = null_mut();
     } else {
         pass1_1010_8ef2(
             paVar6,
@@ -130,7 +130,7 @@ pub unsafe fn struct_1010_9172(param_1: *mut astruct_249, mut param_2: u32) {
     mem_op_1000_179c(0x18, paVar4);
     uVar3 = paVar4 | puVar2;
     if (uVar3 == 0) {
-        puVar2 = NULL;
+        puVar2 = null_mut();
         uVar3 = 0;
     } else {
         puVar2 = struct_op_1030_1cd8(CONCAT22(paVar4, puVar2), 0x5, 0x5);
@@ -921,7 +921,7 @@ pub unsafe fn FUN_1010_9b72(
                     puStack22 = CONCAT22(uVar5, uVar2);
                     paVar6 = (paVar6 & 0xffff0000 | (uVar5 | uVar2));
                     if ((uVar5 | uVar2) == 0) {
-                        puStack14 = NULL;
+                        puStack14 = null_mut();
                     } else {
                         *puStack22 = 0x389a;
                         (uVar2 + 0x2) = 0x1008;
@@ -976,7 +976,7 @@ pub unsafe fn FUN_1010_9b72(
                         puStack22 = CONCAT22(uVar5, uVar2);
                         paVar6 = (paVar6 & 0xffff0000 | (uVar5 | uVar2));
                         if ((uVar5 | uVar2) == 0) {
-                            puStack30 = NULL;
+                            puStack30 = null_mut();
                         } else {
                             *puStack22 = 0x389a;
                             (uVar2 + 0x2) = 0x1008;
@@ -1032,7 +1032,7 @@ pub unsafe fn FUN_1010_9b72(
                             puStack46 = CONCAT22(uVar5, uVar2);
                             paVar6 = (paVar6 & 0xffff0000 | (uVar5 | uVar2));
                             if ((uVar5 | uVar2) == 0) {
-                                puStack38 = NULL;
+                                puStack38 = null_mut();
                             } else {
                                 *puStack46 = 0x389a;
                                 (uVar2 + 0x2) = 0x1008;
@@ -1163,7 +1163,7 @@ pub unsafe fn pass1_1010_9fee(
         uVar2 = uVar1 | iVar5;
         paVar3 = (paVar3 & 0xffff0000 | uVar2);
         if (uVar2 == 0) {
-            iVar3.field18_0x12 = NULL;
+            iVar3.field18_0x12 = null_mut();
         } else {
             set_struct_1008_574a(CONCAT22(uVar1, iVar5));
             iVar3.field18_0x12 = iVar5;
@@ -1174,7 +1174,7 @@ pub unsafe fn pass1_1010_9fee(
     uVar1 = paVar3;
     puStack10 = CONCAT22(uVar1, iVar5);
     if ((uVar1 | iVar5) == 0) {
-        pSStack6 = NULL;
+        pSStack6 = null_mut();
     } else {
         puStack10.address_offset_field_0x0 = 0x389a;
         iVar5.address_offset_field_0x2 = 0x1008;

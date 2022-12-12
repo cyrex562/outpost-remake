@@ -3,7 +3,7 @@
     uVar4 = uVar3;
     (**ppcVar1)(0x1008,uVar3,puVar6);
     uStack18 = CONCAT22(extraout_DX_00,uVar4);
-    for (uStack22 = 0; uStack22 < uStack18; uStack22 += 1) {
+    for uStack22 in 0 .. uStack18 {
       ppcVar1 = (*puStack14 + 0x4);
       uVar10 = uStack18;
       (**ppcVar1)();
@@ -146,7 +146,7 @@ pub unsafe fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
           uVar12 = (paStack80 >> 0x10);
           uVar11 = paStack80;
           if ((uVar12 | uVar11) == 0) {
-            paStack80 = NULL;
+            paStack80 = null_mut();
           }
           else {
             paStack80.field0_0x0 = 0x389a;

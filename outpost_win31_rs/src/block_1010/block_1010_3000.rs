@@ -25,10 +25,10 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
     iVar4 = param_2;
     iVar4.field18_0x12 = uVar8;
     iVar4.field19_0x14 = 0;
-    paStack6 = NULL;
+    paStack6 = null_mut();
     bVar6 = false;
     iVar4.field33_0x28 = 0;
-    paStack8 = NULL;
+    paStack8 = null_mut();
     loop {
         ppaVar1 = &iVar4.field20_0x16;
         if (*ppaVar1 == paStack8 || *ppaVar1 < paStack8) {
@@ -68,7 +68,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
             }
             if (param_3 == 0) {
                 if (iVar4.field69_0x52 != 0) {
-                    paStack8 = NULL;
+                    paStack8 = null_mut();
                     loop {
                         lVar4 = iVar4.field69_0x52;
                         uVar10 = (lVar4 >> 0x10);
@@ -762,7 +762,7 @@ pub unsafe fn pass1_1010_3bde(param_1: *mut astruct_455, mut param_2: u16) {
         (**ppcVar3)();
     }
     if (param_1.is_null()) {
-        puVar4 = NULL;
+        puVar4 = null_mut();
         uVar5 = 0;
     } else {
         puVar4 = &iVar4[0x1].field1_0x2;
@@ -809,7 +809,7 @@ pub unsafe fn pass1_1010_3c9e(param_1: i32) {
     let mut paVar2: *mut Struct57;
 
     if (param_1 == 0) {
-        paVar1 = NULL;
+        paVar1 = null_mut();
         paVar2 = (in_EDX & 0xffff0000);
     } else {
         paVar2 = (in_EDX & 0xffff0000 | param_1);
@@ -1012,8 +1012,8 @@ pub unsafe fn pass1_1010_3f00(param_1: *mut StructD) {
     }
     fn_ptr_1000_17ce(*&iVar5.field_0x70);
     if (param_1.is_null()) {
-        puVar4 = NULL;
-        uVar5 = NULL;
+        puVar4 = null_mut();
+        uVar5 = null_mut();
     } else {
         puVar4 = &iVar5.field19_0x20;
     }

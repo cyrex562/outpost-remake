@@ -43,7 +43,7 @@ pub unsafe fn free_proc_inst_1040_a294(param_1: *mut StructD)
   PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + -0x1;
   if (PTR_LOOP_1050_5eda.is_null()) {
     FreeProcInstance16(_PTR_LOOP_1050_5edc);
-    _PTR_LOOP_1050_5edc = NULL;
+    _PTR_LOOP_1050_5edc = null_mut();
   }
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
@@ -153,7 +153,7 @@ pub unsafe fn get_dlg_item_1040_a3d0(param_1: *mut astruct_49)
 pub unsafe fn call_win_proc_1040_a40e(mut param_1: u16 ,param_2: HWND16,mut param_3: u32,param_4: LPARAM) -> u32
 
 {
-  LPVOID func;
+  let mut func: LPVOID = null_mut();
   let mut uVar1: u16;
   let mut ppcVar2: *mut *mut code;
   let mut wparam: WPARAM16;

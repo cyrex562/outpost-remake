@@ -344,8 +344,8 @@ pub unsafe fn pass1_1000_262c(param_1: u32, param_2: u16, param_3: u16) {
         (&param_3 + i_var3) = s_tile2_bmp_1050_1538;
         (&param_2 + i_var3) = 0x27c5;
         u_var5 = pass1_1000_29dc(&DAT_1050_1050);
-        *ppcVar6 = NULL;
-        ppcVar6[0x1] = NULL;
+        *ppcVar6 = null_mut();
+        ppcVar6[0x1] = null_mut();
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
         (&PTR_LOOP_1050_5fd2)();
@@ -495,10 +495,10 @@ pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
     let dos_env = GetDOSEnvironment16();
     let pu_var7 = (dos_env >> 0x10);
     if (dos_env != 0) {
-        pu_var7 = NULL;
+        pu_var7 = null_mut();
     }
     i_var9 = 0;
-    pcVar11 = NULL;
+    pcVar11 = null_mut();
     i_var7 = -0x1;
     if (pu_var7.is_null() == false) {
         cVar4 = *NULL;
@@ -525,13 +525,13 @@ pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
     pu_var5 = pass1_1000_2950(0x9, pu_var7, (pcVar11 + 1) & 0xfffe);
     pu_var14 = pu_var8;
     ppuVar6 = pass1_1000_2950(u_var7, pu_var8, (i_var9 + 1) * 0x4);
-    piVar9 = NULL;
+    piVar9 = null_mut();
     PTR_LOOP_1050_5fbe = ppuVar6;
     PTR_LOOP_1050_5fc0 = pu_var8;
     loop {
         if (i_var9 == 0) {
-            *ppuVar6 = NULL;
-            ppuVar6[0x1] = NULL;
+            *ppuVar6 = null_mut();
+            ppuVar6[0x1] = null_mut();
             return;
         }
         b_var13 = *piVar9 == s__C_FILE_INFO__1050_5f5c;
@@ -1145,7 +1145,7 @@ pub unsafe fn pass1_1000_2b02(
 
     puVar1 = pass1_1000_35aa();
     if ((param_1 | puVar1) == 0) {
-        puVar1 = NULL;
+        puVar1 = null_mut();
     } else {
         puVar1 = pass1_1000_2d34(
             param_2,
@@ -1218,10 +1218,10 @@ pub unsafe fn mem_1000_2bb6(mut param_1: u16, mut param_2: u16, param_3: *mut i1
             *piVar3 = iVar2 + 1;
             piVar3[0x2] = piVar3[0x79] + -0x1;
             if (puVar6.is_null()) {
-                puVar5 = NULL;
+                puVar5 = null_mut();
                 if ((puVar7[0x5f90] & 0x20) != 0) {
                     mixed_dos3_call_1000_3636(puVar7, 0x0, 0x0, 0x2);
-                    puVar5 = NULL;
+                    puVar5 = null_mut();
                     puVar6 = puVar5;
                 }
             } else {
