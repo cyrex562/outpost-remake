@@ -460,7 +460,7 @@ pub unsafe fn pt_in_rect_1020_5856(mut param_1: u16 ,mut param_2: u16 ,mut param
     uStack10 = 0;
     loop {
       puVar1 = (param_1 + 0xa);
-      if (*puVar1 < uStack10 || *puVar1 == uStack10) break;
+      if (*puVar1 < uStack10 || *puVar1 == uStack10) { break; }
       uVar3 = uStack10;
       empty_1008_8fc4();
       if ((extraout_DX | uVar3) != 0) {

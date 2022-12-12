@@ -297,7 +297,7 @@ pub unsafe fn unk_win_ui_op_1038_d400
 
   uStack6 = 0;
   WStack8 = 0;
-  switch(param_7) {
+  match param_7 {
   0x145 =>
     HVar1 = GetDlgItem16(0x146,param_2.field6_0x6);
     uVar2 = EnableWindow16(0x1,HVar1);
@@ -865,7 +865,7 @@ pub unsafe fn pass1_1038_de20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   paVar4 = CONCAT22(in_register_0000000a,param_2);
   iStack4 = 0x644;
   uStack6 = 0;
-  switch(param_6 + -0x11c) {
+  match param_6 + -0x11c {
   0x0 =>
     iStack4 = 0x635;
     uStack6 = 0x3a;

@@ -16,7 +16,7 @@ pub unsafe fn string_1020_c0d8(mut param_1: u16 ) -> *mut c_char
   let mut pcVar1: *mut c_char;
   let mut uVar2: u16;
 
-  switch(param_1) {
+  match param_1 {
   0x1 =>
     uVar2 = 0x5b7;
     break;
@@ -136,7 +136,7 @@ pub unsafe fn string_op_1020_c222(mut param_1: u16 ) -> *mut c_char
   let mut pcVar1: *mut c_char;
   let mut uVar2: u16;
 
-  switch(param_1) {
+  match param_1 {
   0x1 =>
     uVar2 = 0x57f;
     break;
@@ -214,7 +214,7 @@ pub unsafe fn string_op_1020_c2f8(mut param_1: u16 ) -> *mut c_char
   let mut pcVar1: *mut c_char;
   let mut uVar2: u16;
 
-  switch(param_1) {
+  match param_1 {
   0x1 =>
     uVar2 = 0x583;
     break;
@@ -286,7 +286,7 @@ pub unsafe fn switch_1020_c3b4(mut param_1: u16 ) -> u16
   let mut uStack6: u16;
 
   uStack6 = 0x1;
-  switch(param_1) {
+  match param_1 {
   0x1 =>
   0x2 =>
   0x3 =>
@@ -546,7 +546,7 @@ pub unsafe fn pass1_1020_c6de(param_1: *mut astruct_360,param_2: i32)
       return;
     }
     uVar2 = iVar3.field21_0x18;
-    if ((uVar2 + uStack6 * 0x6) == param_2) break;
+    if ((uVar2 + uStack6 * 0x6) == param_2) { break; }
     uStack6 += 0x1;
   }
   return;
@@ -706,7 +706,7 @@ pub unsafe fn pass1_1020_c872(mut param_1: u32,mut param_2: u32,mut param_3: u32
 // TODO: goto LAB_1020_c92d;
     bVar12 = false;
     loop {
-      if (uStack14 == 0) break;
+      if (uStack14 == 0) { break; }
       uVar11 = (uStack14 >> 0x10);
       puVar2 = (uStack14 + 0xc);
       if (*puVar2 < param_2 || *puVar2 == param_2) {
@@ -876,7 +876,7 @@ pub unsafe fn pass1_1020_cac2(param_1: *mut u8,mut param_2: u16 ,param_3: *mut a
           }
           iVar7 = (puVar3 + 0x4);
         } while ((iVar7 < 0x12) || (SBORROW2(iVar7,0x12)));
-        if (iVar7 != 0x13 && 0x0 < iVar7 + -0x12) break;
+        if (iVar7 != 0x13 && 0x0 < iVar7 + -0x12) { break; }
         iStack52 = 0;
         if (puStack8 == (&u16_1050_0002 + 1)) {
           iStack52 = (puVar3 + 0x6);

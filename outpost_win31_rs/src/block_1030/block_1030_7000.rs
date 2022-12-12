@@ -441,7 +441,7 @@ pub unsafe fn pass1_1030_7418(mut param_1: i16,param_2: *mut astruct_731,mut par
         }
         local_c = (puVar5 + 0x8);
         BVar4 = write_to_file_1008_7e1c(param_3,CONCAT22(0x1050,&local_c),0x2,in_stack_0000ffac);
-        if (BVar4 == 0) break;
+        if (BVar4 == 0) { break; }
         local_c = (puVar5 + 0xa);
         BVar4 = write_to_file_1008_7e1c(param_3,CONCAT22(0x1050,&local_c),0x2,in_stack_0000ffac);
         if (BVar4 == 0) {
@@ -466,7 +466,7 @@ pub unsafe fn pass1_1030_7418(mut param_1: i16,param_2: *mut astruct_731,mut par
     }
     local_6[0] = (local_14[0] + 0x6);
     BVar4 = write_to_file_1008_7e1c(param_3,CONCAT22(0x1050,local_6),0x2,in_stack_0000ffac);
-    if (BVar4 == 0) break;
+    if (BVar4 == 0) { break; }
     local_6[0] = (local_14[0] + 0x8);
     BVar4 = write_to_file_1008_7e1c(param_3,CONCAT22(0x1050,local_6),0x2,in_stack_0000ffac);
     if (BVar4 == 0) {

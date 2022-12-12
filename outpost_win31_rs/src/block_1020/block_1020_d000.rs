@@ -168,7 +168,7 @@ pub unsafe fn pass1_1020_d194(param_1: *mut astruct_15)
         uVar14 = 0x1030;
         pass1_1030_bd74(puVar2,&DAT_1050_1050,uVar15 & 0xffff | paVar13 << 0x10,
                         CONCAT22(uVar20,CONCAT11(uVar19,uVar18)));
-        if ((0x0 < puVar2) && (puVar2 < 0x1f)) break;
+        if ((0x0 < puVar2) && (puVar2 < 0x1f)) { break; }
         uStack42 += 0x1;
       }
       if (puStack34.is_null()) {
@@ -992,7 +992,7 @@ pub unsafe fn pass1_1020_df10(mut param_1: u16 ,param_2: *mut u8,mut param_3: u3
   }
   else if (((0x5 < param_1) && (!SBORROW2(param_1,0x6))) && ((param_1 - 0x6) < 0x4)) {
     pass1_1020_de32(param_2,param_3,param_1);
-    switch((uVar6 + 0x24)) {
+    match (uVar6 + 0x24) {
     0x1 =>
       BVar3 = pass1_1020_e044(param_3);
       if (BVar3 != 0) {

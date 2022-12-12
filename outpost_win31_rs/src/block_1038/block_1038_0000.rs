@@ -112,7 +112,7 @@ pub unsafe fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
           unaff_CS = 0x1008;
           pass1_1008_5b12(CONCAT22(0x1050,puVar8));
           param_2 = (uVar11 | puVar8);
-          if ((uVar11 | puVar8) == 0) break;
+          if ((uVar11 | puVar8) == 0) { break; }
           uVar2 = (puVar8 + 0x4);
           uVar3 = (puVar8 + 0x6);
           uVar4 = (puVar8 + 0x8);
@@ -125,11 +125,11 @@ pub unsafe fn pass1_1038_0f8c(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
           }
           uVar10 = uStack36 | uVar9;
           param_2 = uVar10;
-          if (uVar10 == 0) break;
+          if (uVar10 == 0) { break; }
           qVar7 = (uVar9 & 0xffff | uStack36 << 0x10) / uVar6;
           param_2 = qVar7 >> 0x10;
           uStack76 = qVar7;
-          if (uStack76 == 0) break;
+          if (uStack76 == 0) { break; }
           if (uStack76 < uVar12) {
             piVar1 = (puVar8 + 0xc);
             *piVar1 = *piVar1 - uVar9;

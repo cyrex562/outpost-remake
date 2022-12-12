@@ -169,7 +169,7 @@ pub unsafe fn pass1_1030_4628(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
     // TODO: goto LAB_1030_474c;
       }
       uVar1 = (iVar6 + 0x24);
-      if ((uVar1 + iStack24 * 0x2) == uVar4) break;
+      if ((uVar1 + iStack24 * 0x2) == uVar4) { break; }
       iStack24 += 0x1;
     }
   }
@@ -183,7 +183,7 @@ pub unsafe fn pass1_1030_4782(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
 {
   let mut iVar1: i16;
   let mut uVar2: u16;
-  u8 **ppuVar3;
+  ppuVar3: *mut *mut u8;
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut paVar6: *mut Struct57;
@@ -223,7 +223,7 @@ pub unsafe fn pass1_1030_4782(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
   let mut uStack166: u16;
   let mut uStack164: u16;
   let mut uStack162: u16;
-  u8 **ppuStack160;
+  ppuStack160: *mut *mut u8;
   let mut iStack158: i16;
   let mut iStack156: i16;
   let mut iStack154: i16;
@@ -403,7 +403,7 @@ pub unsafe fn pass1_1030_4782(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
           // TODO: goto LAB_1030_4b57;
             }
             if (((param_7 * 0x2 + iVar10) == uStack166) && ((param_7 * 0x2 + pcStack178) == uVar4)
-               ) break;
+               ) { break; }
             param_7 += 0x1;
           }
         }
@@ -488,7 +488,7 @@ pub unsafe fn pass1_1030_4c52(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   loop {
     uVar1 = pass1_1000_47a4(param_4,s___1050_518a);
     pcStack8 = CONCAT22(param_5,uVar1);
-    if ((param_5 | uVar1) == 0) break;
+    if ((param_5 | uVar1) == 0) { break; }
     if (*pcStack8 != '\"') {
       iVar2 = pass1_1000_3e2c(CONCAT22(param_5,uVar1));
       iVar3 = param_3;
@@ -541,7 +541,7 @@ pub unsafe fn pass1_1030_4d3a(mut param_1: u16 ,param_2: *mut astruct_117,param_
   loop {
     uVar1 = pass1_1000_47a4(param_4,s___1050_518a);
     pcStack8 = CONCAT22(param_1,uVar1);
-    if ((param_1 | uVar1) == 0) break;
+    if ((param_1 | uVar1) == 0) { break; }
     if (*pcStack8 != '\"') {
       iVar2 = pass1_1000_3e2c(CONCAT22(param_1,uVar1));
       pstruct118_3 = param_3;
@@ -607,7 +607,7 @@ pub unsafe fn pass1_1030_4e34(param_1: *mut astruct_117,param_2: *mut astruct_11
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn read_file_1030_4e70(param_1: *mut astruct_117,param_2: *mut u32,u8 **param_3,param_4: i32,mut param_5: u16 ) -> u16
+pub unsafe fn read_file_1030_4e70(param_1: *mut astruct_117,param_2: *mut u32,param_3: *mut *mut u8,param_4: i32,mut param_5: u16 ) -> u16
 
 {
   let mut uVar1: u16;

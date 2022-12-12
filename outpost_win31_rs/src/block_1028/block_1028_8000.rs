@@ -50,7 +50,7 @@ switchD_1028_8225_caseD_0:
       }
       iVar1 = &paVar3.field5_0xc;
 //      if (iVar1 < 0x35) goto code_r0x10288222;
-      if (0x61 < iVar1) break;
+      if (0x61 < iVar1) { break; }
 //      if ((iVar1 < 0x5d) && ((iVar1 != 0x37 && (iVar1 != 0x47)))) goto switchD_1028_8225_caseD_1;
     }
   } while ((iVar1 == 0x6a) ||
@@ -59,7 +59,7 @@ switchD_1028_8225_caseD_0:
   goto switchD_1028_8225_caseD_1;
 code_r0x10288222:
   unaff_CS = 0x1028;
-  switch(iVar1) {
+  match iVar1 {
   0x1 =>
   0x2 =>
   0x3 =>
@@ -160,7 +160,7 @@ pub unsafe fn pass1_1028_83b4(mut param_1: u16 ) -> u16
   loop {
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
-    if ((param_1 | paVar1) == 0) break;
+    if ((param_1 | paVar1) == 0) { break; }
     (&paVar1[0x1c].field5_0xc + 0x2) = 0x1;
     param_1 = param_1 | paVar1;
   }
@@ -518,7 +518,7 @@ pub unsafe fn pass1_1028_8920(mut param_1: u16 ,mut param_2: u32)
   let mut in_stack_0000fe7c: u16;
   let mut uVar14: u8;
   let mut uVar15: u16;
-  u8 **local_156 [0x43];
+  local_156: *mut *mut u8 [0x43];
   let mut local_4a: u32;
   let mut iStack70: i16;
   let mut uStack68: u32;

@@ -175,16 +175,16 @@ pub unsafe fn write_to_file_1028_0234(mut param_1: u32,mut param_2: u32) -> u16
         }
         local_14[0] = (lStack14 + 0x4);
         BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_14),0x2,in_stack_0000ffba);
-        if (BVar2 == 0) break;
+        if (BVar2 == 0) { break; }
         local_14[0] = (lStack14 + 0x6);
         BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_14),0x2,in_stack_0000ffba);
-        if (BVar2 == 0) break;
+        if (BVar2 == 0) { break; }
         local_14[0] = (lStack14 + 0x8);
         BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_14),0x2,in_stack_0000ffba);
-        if (BVar2 == 0) break;
+        if (BVar2 == 0) { break; }
         local_14[0] = (lStack14 + 0xa);
         BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_14),0x2,in_stack_0000ffba);
-        if (BVar2 == 0) break;
+        if (BVar2 == 0) { break; }
         local_14[0] = (lStack14 + 0xc);
         BVar2 = write_to_file_1008_7e1c(param_2,CONCAT22(0x1050,local_14),0x2,in_stack_0000ffba);
       }
@@ -242,17 +242,17 @@ pub unsafe fn pass1_1028_0374(mut param_1: i16,param_2: *mut u8,param_3: *mut as
             uVar2.field2_0x2 = 0x1018;
           }
           BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_10),0x2);
-          if (BVar2 == 0) break;
+          if (BVar2 == 0) { break; }
           BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_c),0x2);
-          if (BVar2 == 0) break;
+          if (BVar2 == 0) { break; }
           BVar2 = read_file_1008_7dee(param_4,CONCAT22(0x1050,local_18),0x2);
-          if (BVar2 == 0) break;
+          if (BVar2 == 0) { break; }
           BVar2 = read_file_1008_7dee(param_4,(paStack20 & 0xffff0000 | (paStack20 + 0xa)),0x2)
           ;
-          if (BVar2 == 0) break;
+          if (BVar2 == 0) { break; }
           BVar2 = read_file_1008_7dee(param_4,(paStack20 & 0xffff0000 | (paStack20 + 0xc)),0x2)
           ;
-          if (BVar2 == 0) break;
+          if (BVar2 == 0) { break; }
           (paStack20 + 0x4) = local_10[0];
           uVar3 = switch_1008_72bc(param_4,local_c[0]);
           uVar5 = (paStack20 >> 0x10);

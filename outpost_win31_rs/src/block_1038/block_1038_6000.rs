@@ -496,7 +496,7 @@ pub unsafe fn pass1_1038_6a0e(param_1: *mut astruct_419,param_2: *mut astruct_61
         paStack6 = (uStack22 & 0xffff | uVar5 << 0x10);
       }
       uVar4 = pass1_1038_6e1a(uVar7,uVar8,CONCAT22(0x1050,local_10));
-      if (&uVar7.field_0x24 < uVar4) break;
+      if (&uVar7.field_0x24 < uVar4) { break; }
       piVar1 = &uVar7.field_0x24;
       *piVar1 = *piVar1 - uVar4;
       pass1_1008_3f62((param_2 & 0xffff0000 | ZEXT24(&uVar7.field_0x1a)),
@@ -718,7 +718,7 @@ pub unsafe fn pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,*param_3);
   uVar3 = pass1_1030_6fa0(CONCAT22(uVar4,uVar1));
   if (uVar3 < 0xa) {
-    switch(uVar3) {
+    match uVar3 {
     0x1 =>
       uStack4 = 0x1;
       break;
@@ -754,7 +754,7 @@ switchD_1038_6eab_caseD_5:
     uStack4 = 0x5;
   }
 switchD_1038_6eab_caseD_9:
-  switch(uStack4) {
+  match uStack4 {
   0x1 =>
     return 0x14;
   0x2 =>

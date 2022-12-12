@@ -69,7 +69,7 @@ pub unsafe fn switch_1018_43ec(mut param_1: u16 ,mut param_2: u16 ,mut param_3: 
 {
   let mut uStack6: u16;
 
-  switch(param_3) {
+  match param_3 {
   0xf =>
   0x35 =>
   0x36 =>
@@ -181,7 +181,7 @@ pub unsafe fn pass1_1018_456a(param_1: *mut astruct_263,param_2: *mut astruct_26
 {
   let mut uStack6: u16;
 
-  switch(param_3) {
+  match param_3 {
   0x11 =>
   0x12 =>
   0x13 =>
@@ -260,7 +260,7 @@ pass1_1018_4608: i32(mut param_1: u32,param_2: *mut c_char,param_3: *mut c_char)
     pcVar8 = pass1_1038_4d28(pcStack22);
     pcVar9 = pass1_1038_4d28(pcStack26);
     iVar4 = pass1_1000_3d7a(param_3,pcVar8);
-    if ((iVar4 == 0) && (iVar4 = pass1_1000_3d7a(param_2,pcVar9), iVar4 == 0)) break;
+    if ((iVar4 == 0) && (iVar4 = pass1_1000_3d7a(param_2,pcVar9), iVar4 == 0)) { break; }
     iVar4 = pass1_1000_3d7a(param_2,pcVar8);
     if ((iVar4 == 0) && (iVar4 = pass1_1000_3d7a(param_3,pcVar9), iVar4 == 0)) {
       return lVar7;
@@ -754,7 +754,7 @@ pub unsafe fn pass1_1018_4dce(param_1: *mut u8,param_2: *mut astruct_19,mut para
   let mut in_stack_0000ffb4: u16;
   let mut in_stack_0000ffb8: u16;
   let mut in_stack_0000ffe0: u32;
-  u8 **ppuVar4;
+  ppuVar4: *mut *mut u8;
 
   ppuVar4 = CONCAT22((in_stack_0000ffe0 >> 0x10),0x48);
   puVar3 = mixed_1010_20ba(CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,ppuVar4,in_stack_0000fe8a

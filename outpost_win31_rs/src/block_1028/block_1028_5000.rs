@@ -594,7 +594,7 @@ pub unsafe fn FUN_1028_5a94(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut as
     puVar3 = local_a;
     uVar5 = extraout_DX_00;
     pass1_1030_bd74(puVar3,&DAT_1050_1050,CONCAT22(extraout_DX_00,uVar2),paVar7);
-    if (puVar3 < 0x5) break;
+    if (puVar3 < 0x5) { break; }
     uStack14 += 0x1;
   }
   struct_op_1030_73a8((uVar4 & 0xffff | uVar6 << 0x10),puVar3,uVar5);

@@ -95,7 +95,7 @@ pub unsafe fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32
   let mut in_stack_0000ffb8: u16;
   let mut in_stack_0000ffbe: u16;
   let mut in_stack_0000ffc2: u16;
-  u8 **ppuVar9;
+  ppuVar9: *mut *mut u8;
   let mut puStack12: *mut u16;
   let mut iStack4: i16;
 
@@ -105,7 +105,7 @@ pub unsafe fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32
     uVar7 = (param_2 >> 0x10);
     iVar6 = param_2;
     piVar1 = (iVar6 + 0x90);
-    if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
+    if (*piVar1 == iStack4 || *piVar1 < iStack4) { break; }
     paVar4 = (paVar4 & 0xffff0000 | piVar1 >> 0x10);
     uVar2 = (piVar1 + 2);
     (iStack4 * 0xa + uVar2 + 0x4) = (iStack4 * 0x2 + param_3);

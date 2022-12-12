@@ -699,7 +699,7 @@ pub unsafe fn pass1_1020_afc4(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   uVar4 = struct_op_1030_73a8(CONCAT22(uVar3,uVar2),uVar2,uVar3);
   uVar3 = (uVar4 >> 0x10);
   if ((uVar3 | uVar4) != 0) {
-    switch((uVar4 + 0xc)) {
+    match (uVar4 + 0xc) {
     0x1 =>
       break;
     0x2 =>

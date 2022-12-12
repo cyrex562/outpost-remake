@@ -856,7 +856,7 @@ pub unsafe fn pass1_1038_af40(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 //  if (puVar3.is_null() == false) goto LAB_1038_b61f;
   uVar11 = SUB42(&u16_1050_1038,0x0);
   PTR_LOOP_1050_5b82 = puVar3;
-  switch(param_5) {
+  match param_5 {
   0x1 =>
     uVar11 = 0x1000;
     mem_op_1000_179c(0x8e,paVar12);

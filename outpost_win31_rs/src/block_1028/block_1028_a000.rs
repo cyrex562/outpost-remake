@@ -422,7 +422,7 @@ pub unsafe fn pass1_1028_a73c(mut param_1: u16 ) -> u16
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     uVar3 = param_1 | paVar1;
-    if (uVar3 == 0) break;
+    if (uVar3 == 0) { break; }
     paVar2 = paVar1;
     pass1_1038_5464(paVar1,CONCAT22(param_1,paVar1));
     pass1_1038_56d6(CONCAT22(param_1,paVar1),0x0);
@@ -511,7 +511,7 @@ pub unsafe fn pass1_1028_a89c(mut param_1: u16 ) -> u16
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     param_1 = uVar2 | paVar1;
-    if (param_1 == 0) break;
+    if (param_1 == 0) { break; }
     if (paVar1[0x1c].field4_0x8 != 0x8000002) {
       pass1_1038_3fca(paVar1,CONCAT22(uVar2,paVar1));
     }
@@ -604,7 +604,7 @@ pub unsafe fn pass1_1028_a9f4(mut param_1: u16 ) -> u16
     pass1_1028_e4ec(CONCAT22(0x1050,paVar2));
     puStack24 = CONCAT22(param_1,paVar2);
     uVar4 = param_1 | paVar2;
-    if (uVar4 == 0) break;
+    if (uVar4 == 0) { break; }
     BVar3 = pass1_1008_c6ae(_u16_1050_06e0,&paVar2.field5_0xc,0xc);
     param_1 = uVar4;
     if (BVar3 != 0) {
@@ -805,7 +805,7 @@ pub unsafe fn pass1_1028_acec(mut param_1: u16 ) -> u16
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     param_1 = uVar3 | paVar1;
-    if (param_1 == 0) break;
+    if (param_1 == 0) { break; }
     paVar2 = paVar1;
     vsprintf_op_1030_840a(param_1,s_SCSetup__calcMe_clearing_colony_0_1050_512c);
     if (paVar1[0x1c].field4_0x8 != 0x8000002) {
@@ -820,7 +820,7 @@ pub unsafe fn pass1_1028_acec(mut param_1: u16 ) -> u16
     paVar1 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
     uVar3 = param_1 | paVar1;
-    if (uVar3 == 0) break;
+    if (uVar3 == 0) { break; }
     pass1_1030_2690(CONCAT22(param_1,paVar1));
     param_1 = uVar3;
   }

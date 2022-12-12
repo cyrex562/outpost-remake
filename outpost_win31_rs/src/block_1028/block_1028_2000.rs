@@ -268,7 +268,7 @@ pub unsafe fn pass1_1028_2418(mut param_1: u32,mut param_2: u32) -> BOOL16
     loop {
       uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
       iStack14 = uVar4;
-      if (uVar4 == 0) break;
+      if (uVar4 == 0) { break; }
       pass1_1038_75ca(iStack14,uVar4,param_2);
       uStack12 = (uVar4 >> 0x10);
       if (uVar4 == 0) {
@@ -539,7 +539,7 @@ pub unsafe fn pass1_1028_297c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
       uVar3 = struct_op_1030_73a8(CONCAT22(uVar2,param_1),param_1,uVar2);
       uVar2 = (uVar3 + 0xc);
       if (0x4a < uVar2) {
-        switch(uVar2) {
+        match uVar2 {
         0x4c =>
         0x4d =>
         0x4e =>

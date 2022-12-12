@@ -59,7 +59,7 @@ pub unsafe fn pass1_1028_9114(param_1: *mut StructD,mut param_2: u32,mut param_3
   if (iVar1 - 0x1 < 0x8) {
     uStack10 = *_PTR_LOOP_1050_65e2;
     iVar8 = (*_PTR_LOOP_1050_65e2 >> 0x10);
-    switch(iVar1) {
+    match iVar1 {
     0x1 =>
       iVar1 = 0x16;
       break;
@@ -596,7 +596,7 @@ pub unsafe fn pass1_1028_9a02(mut param_1: u32,mut param_2: i16,param_3: *mut St
       uVar7 = paVar9;
       uVar8 = uVar7 | paVar4;
       paVar9 = (paVar9 & 0xffff0000 | uVar8);
-      if (uVar8 == 0) break;
+      if (uVar8 == 0) { break; }
       if (paVar4[0x1c].field4_0x8 != 0x8000002) {
         bVar2 = true;
       }
@@ -814,7 +814,7 @@ pub unsafe fn pass1_1028_9efc(param_1: *mut u16,param_2: *mut StructD,mut param_
       pass1_1028_e4ec(CONCAT22(0x1050,paVar3));
       uVar8 = paVar11;
       paVar12 = (paVar11 & 0xffff0000 | (uVar8 | paVar3));
-      if ((uVar8 | paVar3) == 0) break;
+      if ((uVar8 | paVar3) == 0) { break; }
       lVar1 = paVar3[0x1c].field4_0x8;
       uVar4 = (&paVar3[0x1c].field4_0x8 + 2);
       paVar11 = (paVar11 & 0xffff0000 | uVar4);

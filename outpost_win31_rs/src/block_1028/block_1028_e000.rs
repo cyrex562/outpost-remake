@@ -327,7 +327,7 @@ pub unsafe fn write_file_fn_1028_e56c(param_1: u16,mut param_2: u16 ,mut param_3
     pass1_1028_e4ec(CONCAT22(0x1050,paVar2));
     puStack28 = CONCAT22(param_1,paVar2);
     param_1 |= paVar2;
-    if (param_1 == 0) break;
+    if (param_1 == 0) { break; }
     uStack24 += 0x1;
   }
   local_2a[0] = uStack24;
@@ -439,7 +439,7 @@ pub unsafe fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
   let mut uStack30: u16;
   let mut uStack28: u16;
   let mut uStack26: u16;
-  u8 **ppuStack24;
+  ppuStack24: *mut *mut u8;
   let mut local_16: *mut u8;
   let mut local_14: *mut u8;
   let mut local_12: i16;
@@ -466,7 +466,7 @@ pub unsafe fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
     }
     uVar35 = (param_1 >> 0x10);
     uVar20 = param_1;
-    switch(puVar16) {
+    match puVar16 {
     NULL =>
       pass1_1030_145a(uVar20.field14_0xe,local_6);
       uStack28 = 0;
@@ -716,7 +716,7 @@ pub unsafe fn pass1_1028_e628(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
         uStack44 = uVar12;
         uStack42 = uVar9;
         (**ppcVar8)();
-        if (uVar12 == 0) break;
+        if (uVar12 == 0) { break; }
         uVar19 = (uStack44 + 0x4);
         puStack14 = uVar19;
         pcStack12 = (uVar19 >> 0x10);

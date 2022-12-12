@@ -275,7 +275,7 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
   let mut iStack4: i16;
   let mut fn_ptr_1: *mut *mut code;
 
-  switch(param_5) {
+  match param_5 {
   0xfa =>
     fn_ptr_1 = (*param_2.field144_0x94 + 0x18);
     (**fn_ptr_1)();

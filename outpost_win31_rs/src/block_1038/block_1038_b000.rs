@@ -57,7 +57,7 @@ pub unsafe fn pass1_1038_b6e0(mut param_1: u32,mut param_2: i16)
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
     if ((((uStack4 * 0x4 + iVar2 + 0x2) | (uStack4 * 0x4 + iVar2)) != 0) &&
-       (uVar1 = (uStack4 * 0x4 + iVar2), (uVar1 + 0x6) == param_2)) break;
+       (uVar1 = (uStack4 * 0x4 + iVar2), (uVar1 + 0x6) == param_2)) { break; }
     uStack4 += 0x1;
   }
   (uStack4 * 0x4 + iVar2) = 0;
@@ -100,7 +100,7 @@ pub unsafe fn pass1_1038_b772(param_1: *mut u8,param_2: *mut astruct_57,mut para
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  u8 **ppuVar3;
+  ppuVar3: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x9a,0x0,0xfbf,param_3);

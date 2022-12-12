@@ -183,7 +183,7 @@ pub unsafe fn pass1_1028_75bc()
       uStack28 = CONCAT22(uVar4,paVar1);
       uVar2 = uVar4 | paVar1;
       uVar4 = uVar4 & 0xffff0000 | uVar2;
-      if (uVar2 == 0) break;
+      if (uVar2 == 0) { break; }
       pass1_1008_612e(paVar1,0x1,0x64);
       if (paVar1 < 0x6) {
         pass1_1038_362e(uStack28,paVar1,uVar5,uVar4);
@@ -202,7 +202,7 @@ pub unsafe fn pass1_1028_75bc()
       pass1_1028_e4ec(CONCAT22(0x1050,paVar1));
       uVar3 = uVar2 | paVar1;
       uVar4 = uVar3;
-      if (uVar3 == 0) break;
+      if (uVar3 == 0) { break; }
       pass1_1038_3698(paVar1,uVar3,CONCAT22(uVar2,paVar1));
     }
   }
@@ -381,7 +381,7 @@ pub unsafe fn pass1_1028_780c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   uStack18 = 0;
   loop {
     uVar3 = uVar5;
-    if (uStack14 <= uStack18) break;
+    if (uStack14 <= uStack18) { break; }
     ppcVar1 = (*puStack10 + 0x4);
     uVar5 = uStack14;
     (**ppcVar1)();
@@ -543,7 +543,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8,param_2: i32,mut param_3: u32)
         uVar3 = paVar14;
         local_18 = CONCAT22(uVar3,paVar4);
         paVar14 = (paVar14 & 0xffff0000 | (uVar3 | paVar4));
-        if ((uVar3 | paVar4) == 0) break;
+        if ((uVar3 | paVar4) == 0) { break; }
         paStack16 = *(astruct_364 **)&paVar4[0x1b].field6_0x10;
         pass1_1030_34da(paStack16);
       }
@@ -700,7 +700,7 @@ pub unsafe fn pass1_1028_7c4e(param_1: *mut astruct_57,mut param_2: u32)
         pass1_1028_e4ec(CONCAT22(0x1050,paVar3));
         paStack38 = CONCAT22(uVar5,paVar3);
         uVar6 = (uVar5 | paVar3);
-        if ((uVar5 | paVar3) == 0) break;
+        if ((uVar5 | paVar3) == 0) { break; }
         if (paVar3[0x1c].field4_0x8 != 0x8000002) {
           puVar8 = pass1_1008_c6fa(_u16_1050_06e0,0x2a);
           uVar6 = puVar8 >> 0x10;
@@ -807,7 +807,7 @@ pub unsafe fn pass1_1028_7dfc(param_1: u8,param_2: *mut u8,mut param_3: u32)
       uVar4 = uVar5;
       paStack38 = CONCAT22(uVar4,paVar3);
       uVar5 = uVar5 & 0xffff0000 | (uVar4 | paVar3);
-      if ((uVar4 | paVar3) == 0) break;
+      if ((uVar4 | paVar3) == 0) { break; }
       if (paVar3[0x1c].field4_0x8 != 0x8000002) {
         puVar8 = pass1_1008_c6fa(_u16_1050_06e0,0x29);
         paVar6 = (uVar5 & 0xffff0000 | puVar8 >> 0x10);
@@ -908,7 +908,7 @@ pub unsafe fn pass1_1028_7fb6(param_1: u8,mut param_2: u32)
       uVar3 = uVar4;
       paStack32 = CONCAT22(uVar3,paVar2);
       uVar4 = uVar4 & 0xffff0000 | (uVar3 | paVar2);
-      if ((uVar3 | paVar2) == 0) break;
+      if ((uVar3 | paVar2) == 0) { break; }
       if (paVar2[0x1c].field4_0x8 != 0x8000002) {
         puVar7 = pass1_1008_c6fa(_u16_1050_06e0,0x11);
         paVar5 = (uVar4 & 0xffff0000 | puVar7 >> 0x10);

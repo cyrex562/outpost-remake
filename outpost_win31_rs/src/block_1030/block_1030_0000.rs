@@ -9,7 +9,7 @@ pub unsafe fn switch_1030_0000(mut param_1: u16 ,param_2: *mut astruct_57,mut pa
   let mut paVar5: *mut astruct_180;
   let mut puVar6: *mut u16;
 
-  switch(param_5 + -1) {
+  match param_5 + -1 {
   0x0 =>
   0x1 =>
   0x2 =>
@@ -578,7 +578,7 @@ u16 * switch_1030_07ac(param_1: *mut astruct_12,param_2: *mut astruct_12,mut par
   let mut puVar8: *mut u16;
 
   paVar5 = CONCAT22(in_register_0000000a,param_2);
-  switch(param_6 - 1) {
+  match param_6 - 1 {
   0x0 =>
   0x1 =>
   0x2 =>

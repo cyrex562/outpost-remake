@@ -551,7 +551,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
   iStack4: *mut astruct_896;
   let mut iVar3: *mut astruct_895;
 
-  switch(param_4) {
+  match param_4 {
   0xfa =>
     ppcVar1 = (param_1.field144_0x94 + 0x18);
     (**ppcVar1)();

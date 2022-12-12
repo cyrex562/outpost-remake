@@ -153,7 +153,7 @@ pub unsafe fn pass1_1018_5206(mut param_1: u32,param_2: *mut c_char) -> u32
     uVar2 = (uVar5 >> 0x10);
     (iVar3 + 0xa) = uVar5;
     (iVar3 + 0xc) = uVar2;
-    if ((uVar2 | (iVar3 + 0xa)) == 0) break;
+    if ((uVar2 | (iVar3 + 0xa)) == 0) { break; }
     uVar5 = (iVar3 + 0xa);
     iVar1 = pass1_1000_3d7a(*(uVar5 + 0x4),param_2);
   } while (iVar1 != 0);
@@ -251,7 +251,7 @@ pub unsafe fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
   pstruct9_v18.field15_0x10 = paVar15;
   uStack4 = 0x21;
   loop {
-    if (uStack4 < 0x0) break;
+    if (uStack4 < 0x0) { break; }
     uStack22 = pass1_1030_7c28(uVar9,paVar15,param_2,uStack4);
     uVar9 = uStack22 & 0xffff;
     uVar11 = uVar9;
@@ -295,7 +295,7 @@ pub unsafe fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
       uVar12 = paVar13;
       uStack22 = CONCAT22(uVar12,puVar5);
       paVar13 = (paVar13 & 0xffff0000 | (uVar12 | puVar5));
-      if ((uVar12 | puVar5) == 0) break;
+      if ((uVar12 | puVar5) == 0) { break; }
       iVar1 = *(astruct_11 **)(puVar5 + 0x6);
       paVar5 = iVar1 + -0x7;
       if (paVar5.is_null()) {//
@@ -361,7 +361,7 @@ pub unsafe fn pass1_1018_5292(param_1: *mut astruct_9,mut param_2: u32)
       pass1_1008_5b12(CONCAT22(0x1050,pcVar6));
       uVar12 = paVar13;
       paVar13 = (paVar13 & 0xffff0000 | (uVar12 | pcVar6));
-      if ((uVar12 | pcVar6) == 0) break;
+      if ((uVar12 | pcVar6) == 0) { break; }
       if ((pcVar6 + 0x4) != 0) {
         pcVar9 = string_1020_c0d8((pcVar6 + 0x4));
         uVar10 = str_op_1008_60e8(paVar13,CONCAT22(paVar13,pcVar9));
@@ -1022,7 +1022,7 @@ pub unsafe fn win_ui_op_1018_5e9a(mut param_1: u16 ,StructB *structb_param_1)
     ppaVar4 = &local_28;
     pass1_1028_e4ec(CONCAT22(0x1050,ppaVar4));
     uVar9 = (uVar6 | ppaVar4);
-    if ((uVar6 | ppaVar4) == 0) break;
+    if ((uVar6 | ppaVar4) == 0) { break; }
     ppcVar1 = *(char ***)(ppaVar4 + 0x8);
     if (ppcVar1.is_null() == false) {
       pass1_1000_3cea(structb_param_1 & 0xffff0000 | ZEXT24(&structb_9.field8_0x10),*ppcVar1);

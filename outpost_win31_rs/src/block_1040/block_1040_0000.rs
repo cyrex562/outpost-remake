@@ -153,7 +153,7 @@ pub unsafe fn win_ui_op_1040_0170(param_1: u8,mut param_2: u16 ,struct *param_3,
   paVar5 = CONCAT22(in_register_0000000a,param_2);
   iStack4 = 0x8;
   WStack6 = 0;
-  switch(param_6) {
+  match param_6 {
   0x167 =>
     enable_win_1040_060e(param_3,0x3);
     hwnd_1 = GetDlgItem16(0x16b,(param_3 + 0x6));
@@ -336,7 +336,7 @@ pub unsafe fn enable_win_1040_060e(mut param_1: u32,mut param_2: i16)
   iStack10 = param_2;
   loop {
     pIVar1 = pIStack8;
-    if (iStack10 == 0) break;
+    if (iStack10 == 0) { break; }
     pIStack8 = (pIStack8 & 0xffff0000 | (pIStack8 + 0x2));
     hwnd = GetDlgItem16(*pIVar1,(param_1 + 0x6));
     EnableWindow16(0x0,hwnd);

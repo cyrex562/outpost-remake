@@ -152,7 +152,7 @@ pub unsafe fn check_dialog_msg_1040_81b6(mut param_1: u32)
     }
     local_14.hwnd = &DAT_1050_1050;
     BVar1 = GetMessage16(0x0,0x0,0x0,&local_14);
-    if (BVar1 == 0) break;
+    if (BVar1 == 0) { break; }
     IsDialogMessage16(&local_14,&DAT_1050_1050);
   }
   return;

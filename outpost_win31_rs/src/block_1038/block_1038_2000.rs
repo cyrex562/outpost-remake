@@ -197,7 +197,7 @@ pub unsafe fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
     uVar9 = puVar7;
     uVar13 = (puVar7 & 0xffff);
     puVar5 = (uVar13 | uVar6 << 0x10);
-    if ((uVar6 | uVar9) == 0) break;
+    if ((uVar6 | uVar9) == 0) { break; }
     if (uVar9.field8_0xa == 0) {
       paVar8 = (uVar6 | uVar9);
       if ((uVar6 | uVar9) != 0) {
@@ -279,7 +279,7 @@ pub unsafe fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
       if (uStack42 != 0) {
         pass1_1038_7a5a(_PTR_LOOP_1050_5a64);
         iStack8 += -0x1;
-        if (iStack8 == 0) break;
+        if (iStack8 == 0) { break; }
         uStack12 = 0x64;
       }
     }
@@ -381,7 +381,7 @@ pub unsafe fn pass1_1038_24e8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
         }
         puStack28 = (uVar3 & 0xffff | paVar8 << 0x10);
         iStack8 += -0x1;
-        if (iStack8 == 0) break;
+        if (iStack8 == 0) { break; }
         uStack16 = 0x64;
       }
     }
@@ -505,7 +505,7 @@ pub unsafe fn pass1_1038_26ee(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
         uStack18 = paVar8;
         iStack8 += -0x1;
         uStack20 = uStack10;
-        if (iStack8 == 0) break;
+        if (iStack8 == 0) { break; }
         uStack16 = 0x64;
       }
     }
@@ -825,7 +825,7 @@ pub unsafe fn pass1_1038_2c82(param_1: u8,mut param_2: u16 ,mut param_3: u16 ,pa
     uStack22 = (paStack14 + 0x8);
     loop {
       uStack22 += -0x1;
-      if ((uStack22 | uStack22) == 0) break;
+      if ((uStack22 | uStack22) == 0) { break; }
       pass1_1020_a6ee(&local_12,uStack22 | uStack22,in_stack_0000fe64,
                       CONCAT13(0x10,CONCAT12(0x50,&local_12)),(paStack14 + 0x12));
     }

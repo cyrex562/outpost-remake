@@ -1101,8 +1101,8 @@ pub unsafe fn pass1_1008_7e98(param_1: *mut astruct_460, param_2: u8) -> *mut u1
 
 pub unsafe fn unk_draw_op_1008_7f62(
     param_1: *mut astruct_20,
-    mut param_2: u16,
-    mut param_3: u32,
+    param_2: u16,
+    param_3: u32,
 ) -> *mut astruct_20 {
     let mut HVar1: HGDIOBJ16;
     let mut HVar2: HCURSOR16;

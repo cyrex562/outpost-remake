@@ -390,7 +390,7 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
         paVar6 = &local_14;
         pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
         param_1 = uVar10 | paVar6;
-        if (param_1 == 0) break;
+        if (param_1 == 0) { break; }
         if ((iVar11 + 0x4) == paVar6[0x1c].field4_0x8) {
           uVar7 = (&paVar6[0x1].field3_0x4 + 0x2) + 0x19;
           if (0x3e8 < uVar7) {
@@ -408,7 +408,7 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
         paVar6 = &local_14;
         pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
         param_1 = uVar10 | paVar6;
-        if (param_1 == 0) break;
+        if (param_1 == 0) { break; }
         if ((iVar11 + 0x4) == paVar6[0x1c].field4_0x8) {
           uVar2 = &paVar6[0x1b].field6_0x10;
           iVar9 = uVar2;
@@ -443,7 +443,7 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
     paVar6 = &local_14;
     pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
     param_1 = uVar10 | paVar6;
-    if (param_1 == 0) break;
+    if (param_1 == 0) { break; }
     if ((iVar11 + 0x4) == paVar6[0x1c].field4_0x8) {
       uVar2 = &paVar6[0x1b].field6_0x10;
       iVar8 = uVar2 + 0x180;
@@ -486,7 +486,7 @@ pub unsafe fn pass1_1030_28dc(mut param_1: u32,mut param_2: i16) -> i16
     if (0x4 < iStack4) {
       return -0x1;
     }
-    if ((param_1 + 0x19c + iStack4 * 0x2) == param_2) break;
+    if ((param_1 + 0x19c + iStack4 * 0x2) == param_2) { break; }
     iStack4 += 0x1;
   }
   return iStack4;
@@ -847,7 +847,7 @@ pub unsafe fn pass1_1030_2f1a(mut param_1: u32,param_2: *mut u16,param_3: *mut u
   iVar3 = uVar2;
   iVar1 = (iVar3 + 0xc);
   if (iVar1 - 0x1 < 0x9) {
-    switch(iVar1) {
+    match iVar1 {
     _ =>
       *param_3 = 0x19;
       *param_2 = 0x2d;

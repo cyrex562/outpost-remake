@@ -754,7 +754,7 @@ pub unsafe fn struct_1018_2b10(param_1: *mut astruct_19,mut param_2: u16 )
   let mut uVar12: u16;
   let mut in_stack_0000fff0: u32;
   let mut uVar14: u16;
-  u8 **ppuVar13;
+  ppuVar13: *mut *mut u8;
   let mut uVar11: *mut astruct_19;
   let mut uVar9: *mut astruct_19;
 
@@ -1076,14 +1076,14 @@ pub unsafe fn pass1_1018_2fe8(param_1: *mut astruct_126,param_2: u16,param_3: u1
       uVar3 = str_op_1000_3da4(pstruct126_9[0x1].field4_0x4);
       pstruct126_9.field369_0x174 = 0;
       loop {
-        if (iVar7 <= pstruct126_9.field369_0x174) break;
+        if (iVar7 <= pstruct126_9.field369_0x174) { break; }
         uVar4 = pstruct126_9.field369_0x174;
         empty_1008_8fc4();
         uVar8 = extraout_DX;
         pass1_1018_2e28(param_1);
         uVar4 = pass1_1020_bd80(uVar4);
         uVar5 = pass1_1000_3de8(CONCAT22(uVar8,uVar4),pstruct126_9[0x1].field4_0x4,uVar3,param_2,param_3);
-        if (uVar5 == 0) break;
+        if (uVar5 == 0) { break; }
         piVar1 = &pstruct126_9.field369_0x174;
         *piVar1 = *piVar1 + 1;
       }

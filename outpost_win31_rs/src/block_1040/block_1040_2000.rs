@@ -161,7 +161,7 @@ pub unsafe fn pass1_1040_2358(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1040_23ea(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ,
-                    u8 **param_7)
+                    param_7: *mut *mut u8)
 
 {
   let mut uVar1: u32;

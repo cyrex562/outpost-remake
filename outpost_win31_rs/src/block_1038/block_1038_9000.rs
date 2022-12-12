@@ -488,7 +488,7 @@ pub unsafe fn pass1_1038_993a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i
     if (0xe < iStack6) {
       return -0x1;
     }
-    if ((iStack6 * 0xe + 0x5a70) == param_3) break;
+    if ((iStack6 * 0xe + 0x5a70) == param_3) { break; }
     iStack6 += 0x1;
   }
   return iStack6;

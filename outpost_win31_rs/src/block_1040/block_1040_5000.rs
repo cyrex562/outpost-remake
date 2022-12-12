@@ -762,7 +762,7 @@ pub unsafe fn pass1_1040_5eaa(StructB *param_1) -> i16
 
   uVar2 = (param_1 >> 0x10);
   iVar1 = param_1;
-  switch((iVar1 + 0x9a)) {
+  match (iVar1 + 0x9a) {
   0x0 =>
   0x70 =>
   0x71 =>

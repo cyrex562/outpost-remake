@@ -631,7 +631,7 @@ pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut astruct_57,mut
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  u8 **ppuVar3;
+  ppuVar3: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0xe8,param_6);

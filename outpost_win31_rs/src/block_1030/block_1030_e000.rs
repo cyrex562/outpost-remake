@@ -74,7 +74,7 @@ pub unsafe fn pass1_1030_e0d4(param_1: *mut u8)
       pass1_1008_5b12(CONCAT22(0x1050,paVar3));
       uStack20 = CONCAT22(uVar2,paVar3);
       uVar6 = (uVar2 | paVar3);
-      if ((uVar2 | paVar3) == 0) break;
+      if ((uVar2 | paVar3) == 0) { break; }
       if (&paVar3.field_0x8 != 0) {
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2,&paVar3.field_0xa);
         paVar4 = paVar3;
@@ -732,7 +732,7 @@ pub unsafe fn pass1_1030_ea50(mut param_1: u32,mut param_2: u32)
       uStack6 -= local_12;
       pass1_1030_7ddc(local_12,in_EDX,param_2,local_12,local_e);
     }
-    if ((uStack6 | uStack6) == 0) break;
+    if ((uStack6 | uStack6) == 0) { break; }
     uStack10 += 0x1;
   }
   return;
@@ -783,7 +783,7 @@ pub unsafe fn pass1_1030_eb86(mut param_1: u16 ) -> u16
     pass1_1028_e4ec(CONCAT22(0x1050,paVar3));
     puStack24 = CONCAT22(uVar4,paVar3);
     param_1 = uVar4 | paVar3;
-    if (param_1 == 0) break;
+    if (param_1 == 0) { break; }
     if ((paVar3 + 1) == 0x5) {
       iVar1 = &paVar3.field5_0xc;
       if (((0x32 < iVar1) && (!SBORROW2(iVar1,0x33))) &&
@@ -941,7 +941,7 @@ pub unsafe fn pass1_1030_ecf8(param_1: u8,param_2: *mut astruct_57,mut param_3: 
     pass1_1028_e4ec(CONCAT22(0x1050,paVar6));
     uVar10 = pSVar13;
     paStack38 = CONCAT22(uVar10,paVar6);
-    if ((uVar10 | paVar6) == 0) break;
+    if ((uVar10 | paVar6) == 0) { break; }
     uVar9 = &paVar6[0x1b].field6_0x10;
     pSVar13 = (pSVar13 & 0xffff0000 | (paVar6 + 0x1c));
     if (((&paVar6[0x1c].field3_0x4 + 0x2) != 0) && (paVar6[0x1c].field4_0x8 != 0x8000002)) {

@@ -846,7 +846,7 @@ pub unsafe fn pass1_1030_8d08(mut param_1: u32,mut param_2: u16 )
   loop {
     uVar6 = (param_1 >> 0x10);
     piVar1 = (param_1 + 0x1e);
-    if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
+    if (*piVar1 == iStack4 || *piVar1 < iStack4) { break; }
     iVar3 = iStack4 * 0x6;
     uVar2 = (param_1 + 0x1a);
     (uVar2 + iVar3 + 0x4) = 0;

@@ -25,7 +25,7 @@ pub unsafe fn pass1_1038_11b0(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
     param_2 = param_2 & 0xffff0000 | uVar4 >> 0x10;
     uVar3 = uVar4;
     pass1_1038_0f8c(uVar3,param_2,param_3,(param_3 >> 0x10),param_4,uVar4);
-    if (uVar3 == 0) break;
+    if (uVar3 == 0) { break; }
     uStack10 += 0x1;
   }
   return;
@@ -370,7 +370,7 @@ pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
             }
           }
           uVar5 = uVar7;
-          if ((uStack34 == 0) || (local_a == 0)) break;
+          if ((uStack34 == 0) || (local_a == 0)) { break; }
         }
       }
       if (puStack54.is_null() == false) {
@@ -518,10 +518,10 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
               }
             }
             unaff_CS = 0x1020;
-            if ((uStack42 == 0) || (local_a == 0)) break;
+            if ((uStack42 == 0) || (local_a == 0)) { break; }
             unaff_CS = 0x1028;
             puVar8 = pass1_1028_0d80(uVar16);
-            if ((puVar8 == puStack56) || ((puStack52 = puVar8, puStack56.is_null() && (puVar8 == puVar7)))) break;
+            if ((puVar8 == puStack56) || ((puStack52 = puVar8, puStack56.is_null() && (puVar8 == puVar7)))) { break; }
           }
           if (plStack50.is_null() == false) {
             pass1_1038_1ac6(puVar8,uVar4,uVar18,uStack14,plStack50);
@@ -703,7 +703,7 @@ pub unsafe fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
       uStack14 -= local_1a;
       pass1_1030_7ddc(local_1a,paVar1,uStack6,local_1a,local_16[0]);
     }
-    if (uStack14 == 0) break;
+    if (uStack14 == 0) { break; }
   }
   if (param_5.is_null() == false) {
     fn_ptr_1020_ba7e(param_5);
@@ -894,7 +894,7 @@ pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
           pass1_1008_5b12(CONCAT22(0x1050,puVar9));
           uStack52 = CONCAT22(uVar12,puVar9);
           uVar13 = (uVar12 | puVar9);
-          if ((uVar12 | puVar9) == 0) break;
+          if ((uVar12 | puVar9) == 0) { break; }
           uVar2 = (puVar9 + 0x4);
           iVar3 = (puVar9 + 0x6);
           uVar4 = (puVar9 + 0x8);
@@ -914,7 +914,7 @@ pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
             }
             uVar11 = uStack36 | uVar10;
             uVar13 = uVar11;
-            if (uVar11 == 0) break;
+            if (uVar11 == 0) { break; }
             uStack78 = ((uVar10 & 0xffff | uStack36 << 0x10) / uVar7);
             if (uStack78 < uVar5) {
               piVar1 = (puVar9 + 0xc);
@@ -998,7 +998,7 @@ pub unsafe fn pass1_1038_1faa(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
     param_2 = param_2 & 0xffff0000 | uVar4 >> 0x10;
     uVar3 = uVar4;
     pass1_1038_1d68(uVar3,param_2,param_3,(param_3 >> 0x10),param_4,uVar4);
-    if (uVar3 == 0) break;
+    if (uVar3 == 0) { break; }
     uStack10 += 0x1;
   }
   return;

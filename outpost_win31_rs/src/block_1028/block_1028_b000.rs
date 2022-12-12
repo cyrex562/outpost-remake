@@ -578,7 +578,7 @@ pub unsafe fn file_1028_b81a(mut param_1: i16,param_2: *mut u8,param_3: *mut ast
   if (iStack10 == 0x6) {
     iStack10 = (temp_7fffad5008a + 0x6);
   }
-  switch(iStack10) {
+  match iStack10 {
   0x1 =>
   0x2 =>
   0x3 =>

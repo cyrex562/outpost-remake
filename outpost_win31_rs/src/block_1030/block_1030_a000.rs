@@ -422,7 +422,7 @@ pub unsafe fn pass1_1030_a57e(mut param_1: i16,mut param_2: i16,mut param_3: u32
         iVar13 = (uVar21 + 0xc);
 //        if (0x5 < iVar13 - 0x7aU) goto LAB_1030_a660;
         uVar18 = 0x1030;
-        switch(iVar13) {
+        match iVar13 {
         _ =>
           iStack20 = local_1a + -0x1;
           piVar6 = &local_16;
@@ -677,7 +677,7 @@ pub unsafe fn pass1_1030_aa18(mut param_1: u32,param_2: *mut u16)
     pass1_1030_1d58(uStack14);
     uVar7 = uVar8 | uVar21;
     uVar10 = uVar7;
-    if (uVar7 != 0) break;//
+    if (uVar7 != 0) { break; }//
 // LAB_1030_aadc:
     uStack38 += 0x1;
   }
@@ -699,7 +699,7 @@ pub unsafe fn pass1_1030_aa18(mut param_1: u32,param_2: *mut u16)
   iVar13 = (uVar21 + 0xc);
 //  if (0x5 < iVar13 - 0x7aU) goto LAB_1030_aadc;
   uVar18 = 0x1030;
-  switch(iVar13) {
+  match iVar13 {
   _ =>
     iStack18 = local_18 + -0x1;
     BVar5 = pass1_1030_acbe(&local_14,uVar8,uVar11,uVar15,CONCAT22(0x1050,&local_14),uVar1);

@@ -327,7 +327,7 @@ pub unsafe fn pass1_1020_e4fa(param_1: *mut astruct_15,mut param_2: u16 ) -> i16
   let mut uVar1: u32;
   let mut iStack4: i16;
 
-  switch(param_2) {
+  match param_2 {
   0x2 =>
   0x5 =>
   0x6 =>
@@ -818,7 +818,7 @@ pub unsafe fn pass1_1020_ecb0(mut param_1: i16,mut param_2: u16 ,mut param_3: u3
   iVar1 = param_3;
   pass1_1028_e1ec(_PTR_LOOP_1050_65e2,(iVar1 + 0x8));
   if ((iVar1 + 0x12) == 1) {
-    switch((param_1 + 0x14)) {
+    match (param_1 + 0x14) {
     0x2 =>
     0x7 =>
       uStack8 = 0x2;

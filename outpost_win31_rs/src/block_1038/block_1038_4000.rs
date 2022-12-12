@@ -128,10 +128,10 @@ pub unsafe fn pass1_1038_43cc(mut param_1: i16,mut param_2: i16,mut param_3: i16
       for (; uVar4 = uVar5, param_5 != 0; param_5 -= 1) {
         pass1_1030_cf78(paVar12,param_6);
         uVar5 = uVar4;
-        if (uVar4 == 0) break;
+        if (uVar4 == 0) { break; }
       }
       uVar10 = 0x1030;
-      if (param_5 == 0) break;
+      if (param_5 == 0) { break; }
     }
     if (puStack14.is_null() == false) {
       ppcVar1 = *puStack14;
@@ -197,10 +197,10 @@ pub unsafe fn pass1_1038_44d8(mut param_1: i16,mut param_2: i16,mut param_3: i16
       for (; uVar4 = uVar5, param_5 != 0; param_5 -= 1) {
         pass1_1030_d00c(paVar11,param_6);
         uVar5 = uVar4;
-        if (uVar4 == 0) break;
+        if (uVar4 == 0) { break; }
       }
       uVar9 = 0x1030;
-      if (param_5 == 0) break;
+      if (param_5 == 0) { break; }
     }
     if (puStack14.is_null() == false) {
       ppcVar1 = *puStack14;
@@ -520,7 +520,7 @@ pub unsafe fn pass1_1038_4918(mut param_1: i16,mut param_2: u16 ,mut param_3: u3
     return;
   }
   uStack14 = 0;
-  switch((iVar6 + 0x20e)) {
+  match (iVar6 + 0x20e) {
   0x1 =>
     uStack14 = 0x1e;
     break;
@@ -822,7 +822,7 @@ pub unsafe fn pass1_1038_4d6e(mut param_1: u16 ,param_2: *mut u8,param_3: *mut a
       iStack30 = 0;
       loop {
         piVar1 = (param_4 + 0x4);
-        if (*piVar1 == iStack30 || *piVar1 < iStack30) break;
+        if (*piVar1 == iStack30 || *piVar1 < iStack30) { break; }
         if ((*param_4 + iStack30 * 0x2) == uVar4) {
           uVar10 = struct_op_1030_73a8(paStack26,uVar4,uVar7);
           uVar7 = uVar10 >> 0x10;
@@ -892,7 +892,7 @@ pub unsafe fn pass1_1038_4e78(mut param_1: u16 ,param_2: *mut astruct_57,mut par
       iStack26 = 0;
       loop {
         piVar1 = (param_4 + 0x4);
-        if (*piVar1 == iStack26 || *piVar1 < iStack26) break;
+        if (*piVar1 == iStack26 || *piVar1 < iStack26) { break; }
         if ((*param_4 + iStack26 * 0x2) == uVar3) {
           ppcVar2 = (*puStack6 + 0xc);
           (**ppcVar2)();

@@ -159,7 +159,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
 pub unsafe fn pass1_1038_7356(param_1: *mut astruct_615,param_2: *mut astruct_419)
 
 {
-  u8 **ppuVar1;
+  ppuVar1: *mut *mut u8;
   let mut puVar2: *mut u16;
   let mut pcVar3: *mut c_char;
   let mut lVar4: i32;
@@ -576,7 +576,7 @@ pub unsafe fn pass1_1038_7a76(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
   pass1_1008_5784(CONCAT22(0x1050,local_a),*param_1);
   loop {
     paVar3 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (paVar3.is_null()) break;
+    if (paVar3.is_null()) { break; }
     pass1_1038_6a0e(CONCAT22(paVar3,(paVar3 >> 0x10) | paVar3),paVar3);
   }
   loop {
@@ -587,7 +587,7 @@ pub unsafe fn pass1_1038_7a76(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
         pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0x4));
         loop {
           uVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-          if (uVar4 == 0) break;
+          if (uVar4 == 0) { break; }
           pass1_1030_affc(uVar4);
         }
         return;
@@ -729,7 +729,7 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,pa
           paVar7 = paVar8;
         }
         file_1030_b836(paVar7,CONCAT22(paVar7,uVar3),pHVar9);
-        if (uVar3 == 0) break;
+        if (uVar3 == 0) { break; }
         ppcVar1 = ((param_3 + 0x4) + 0x4);
         (**ppcVar1)();
       }

@@ -165,7 +165,7 @@ pub unsafe fn send_msg_1038_c374(mut param_1: u32,param_2: *mut u32,mut param_3:
     LVar6 = SendMessage16(lparam,0x0,0x403,param_3);
     uVar5 = 0x1000;
     fn_ptr_1000_17ce;
-    if (LVar6 == -1) break;
+    if (LVar6 == -1) { break; }
     if (LVar6 == -0x2) {
       return;
     }

@@ -282,7 +282,7 @@ pub unsafe fn pass1_1020_04f6(param_1: *mut u8,param_2: *mut astruct_662,mut par
   let mut in_stack_0000ffb8: u16;
   let mut uVar7: u16;
   let mut in_stack_0000ffe0: u32;
-  u8 **ppuVar8;
+  ppuVar8: *mut *mut u8;
 
   paVar4 = CONCAT22(in_register_0000000a,param_1);
   uVar5 = (param_2 >> 0x10);
@@ -940,7 +940,7 @@ pub unsafe fn win_help_op_1020_0ec4(mut param_1: u16 ,param_2: *mut u32,mut para
     return;
   }
   if (0xfb < param_3) {
-    switch(param_3) {
+    match param_3 {
     _ =>
       return;
     0x12a =>

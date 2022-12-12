@@ -344,7 +344,7 @@ pub unsafe fn pass1_1030_35a4(param_1: *mut u8,mut param_2: u32,param_3: i32)
                   0x4);
   loop {
     uVar5 = uVar6;
-    if (param_3 < 1) break;
+    if (param_3 < 1) { break; }
     pass1_1008_612e(uVar5,local_a,(local_a >> 0x10));
     uVar6 = ZEXT24(&param_3);
     pass1_1030_3a3a(param_2,CONCAT13(0x10,CONCAT12(0x50,&param_3)),uVar5);
@@ -558,7 +558,7 @@ pub unsafe fn pass1_1030_39dc(mut param_1: u32,param_2: *mut i32,mut param_3: u3
     uVar2 = (param_3 >> 0x10);
     (iStack8 * 0x4 + param_3) = iVar1;
     (iStack8 * 0x4 + param_3 + 0x2) = in_DX;
-    if (*param_2 == 0) break;
+    if (*param_2 == 0) { break; }
     iStack8 += -0x1;
   }
   return;

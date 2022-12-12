@@ -209,7 +209,7 @@ pub unsafe fn pass1_1030_62e4(param_1: u32,param_2: *mut u16,param_3: i32)
       loop {
         uVar4 = uVar6;
         uVar3 = local_28 + local_1c;
-        if (uVar3 <= uStack46) break;
+        if (uVar3 <= uStack46) { break; }
         for (uStack56 = local_1a; uStack56 < (local_26 + local_1a); uStack56 += 1) {
           uStack88 = local_1e;
           pass1_1008_3e54(CONCAT13(0x10,CONCAT12(0x50,local_64)),local_1e,uStack46,uStack56);
@@ -344,7 +344,7 @@ pub unsafe fn pass1_1030_6522(param_1: u32,mut param_2: u32,mut param_3: u32)
       loop {
         uVar4 = uVar6;
         uVar3 = local_28 + local_1c;
-        if (uVar3 <= uStack46) break;
+        if (uVar3 <= uStack46) { break; }
         for (uStack56 = local_1a; uStack56 < (local_26 + local_1a); uStack56 += 1) {
           uStack88 = local_1e;
           pass1_1008_3e54(CONCAT13(0x10,CONCAT12(0x50,local_64)),local_1e,uStack46,uStack56);
@@ -375,7 +375,7 @@ pub unsafe fn pass1_1030_66de(mut param_1: u32,mut param_2: u32)
   pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0x4));
   loop {
     uVar1 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (uVar1 == 0) break;
+    if (uVar1 == 0) { break; }
     pass1_1030_8bac(uVar1,param_2);
   }
   return;
@@ -396,7 +396,7 @@ pub unsafe fn pass1_1030_6740(mut param_1: u32)
   pass1_1008_5784(CONCAT22(0x1050,local_a),(param_1 + 0x4));
   loop {
     uVar1 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (uVar1 == 0) break;
+    if (uVar1 == 0) { break; }
     pass1_1030_8c38(uVar1);
   }
   return;

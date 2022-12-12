@@ -108,11 +108,11 @@ pub unsafe fn pass1_1018_31fa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
      (uVar2 = &pstruct126_5.field374_0x17e, iVar4 = (uVar2 + 0xa), iVar4 != 0)) {
     pstruct126_5.field369_0x174 = 0;
     loop {
-      if (iVar4 <= pstruct126_5.field369_0x174) break;
+      if (iVar4 <= pstruct126_5.field369_0x174) { break; }
       iVar3 = pstruct126_5.field369_0x174;
       empty_1008_8fc4();
       pass1_1018_2e28(param_3);
-      if (pstruct126_5.field370_0x176 == iVar3) break;
+      if (pstruct126_5.field370_0x176 == iVar3) { break; }
       piVar1 = &pstruct126_5.field369_0x174;
       *piVar1 = *piVar1 + 1;
     }
@@ -449,7 +449,7 @@ pub unsafe fn pass1_1018_3710(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   uStack10 = switch_1018_3b9e(param_1,param_2,param_3,iVar8[0x1].field4_0x4);
   uVar4 = iVar8[0x1].field4_0x4 - 0x188;
   uStack18 = (uStack10 & 0xffff0000 | uVar4);
-  switch(uVar4) {
+  match uVar4 {
   0x0 =>
     lVar9 = pass1_1008_57f0(uStack10,iVar8[0x1].field5_0x6);
     uVar3 = (lVar9 >> 0x10);
@@ -638,7 +638,7 @@ pub unsafe fn pass1_1018_3ab2(mut param_1: u32,mut param_2: i16,mut param_3: i16
   }
   iVar3 = param_1;
   uVar2 = (param_1 >> 0x10);
-  switch(param_3) {
+  match param_3 {
   0x188 =>
     uVar1 = (iVar3 + 0xa);
     uVar2 = (iVar3 + 0xc);
@@ -669,7 +669,7 @@ pub unsafe fn pass1_1018_3ab2(mut param_1: u32,mut param_2: i16,mut param_3: i16
   loop {
     lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_10));
     uVar2 = (lVar4 >> 0x10);
-    if ((lVar4 == 0) || (iStack8 == param_2)) break;
+    if ((lVar4 == 0) || (iStack8 == param_2)) { break; }
     iStack8 += 0x1;
   }
   uStack22 = 0;
@@ -706,7 +706,7 @@ pub unsafe fn switch_1018_3b9e(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut
   pass1_1008_e852(param_2,uVar1,(uVar1 >> 0x10),pstruct_1_1.field275_0x126);
   pass1_1030_8344(_u16_1050_5748,CONCAT22(param_2,param_1));
   paStack14 = CONCAT22(param_2,param_1);
-  switch(param_4) {
+  match param_4 {
   0x188 =>
     if (&pstruct_1_1.field8_0xa == 0) {
       pass1_1008_d3ae((param_3 & 0xffff | ZEXT24(pstruct_1_2) << 0x10));
@@ -937,7 +937,7 @@ pub unsafe fn switch_1018_3ee6(mut param_1: u16 ,mut param_2: u32,param_3: i32,m
   let mut piStack6: *mut i16;
 
   paVar8 = CONCAT22(in_register_0000000a,param_1);
-  switch(param_5) {
+  match param_5 {
   0x1 =>
     iVar1 = param_4 * 0x4 + 0x40b6;
     break;

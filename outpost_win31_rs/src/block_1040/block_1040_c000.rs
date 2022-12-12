@@ -763,7 +763,7 @@ pub unsafe fn send_dlg_item_msg_1040_ce12(mut param_1: u16 ,mut param_2: u16 ,mu
   pass1_1008_5784(CONCAT22(0x1050,local_a),param_3);
   loop {
     lVar2 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (lVar2 == 0) break;
+    if (lVar2 == 0) { break; }
     uVar1 = (lVar2 + 0x4);
     wsprintf16(local_10a,0x5f121050,CONCAT22(uVar1,0x1050),(uVar1 >> 0x10));
     SendDlgItemMessage16(CONCAT22(0x1050,local_10a),0x0,0x401,param_4,(param_1 + 0x6));

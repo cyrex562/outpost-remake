@@ -151,7 +151,7 @@ pub unsafe fn send_dlg_item_msg_1038_8400(mut param_1: u16 ,mut param_2: u16 ,mu
   pass1_1008_5784(CONCAT22(0x1050,local_a),param_3);
   loop {
     lVar1 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
-    if (lVar1 == 0) break;
+    if (lVar1 == 0) { break; }
     SendDlgItemMessage16(*(LPARAM *)(lVar1 + 0x4),0x0,0x401,param_4,(param_1 + 0x6));
   }
   return;
@@ -712,7 +712,7 @@ pub unsafe fn send_dlg_item_msg_1038_8f74(param_1: *mut astruct_903) -> LRESULT
     pass1_1008_5784(CONCAT22(0x1050,local_40c),local_404);
     loop {
       lVar4 = pass1_1008_5b12(CONCAT22(0x1050,local_40c));
-      if (lVar4 == 0) break;
+      if (lVar4 == 0) { break; }
       uVar1 = (lVar4 + 0x4);
       wsprintf16(local_50c,0x5a6c1050,CONCAT22(uVar1,0x1050),(uVar1 >> 0x10));
       SendDlgItemMessage16(CONCAT22(0x1050,local_50c),0x0,0x401,0x185b,iVar2.field6_0x6);

@@ -155,7 +155,7 @@ pub unsafe fn send_msg_1040_3374(mut param_1: u32,param_2: *mut u32,mut param_3:
     LVar5 = SendMessage16(lparam,0x0,0x403,param_3);
     uVar4 = 0x1000;
     fn_ptr_1000_17ce;
-    if (LVar5 == -1) break;
+    if (LVar5 == -1) { break; }
     if (LVar5 == -0x2) {
       return;
     }
@@ -717,7 +717,7 @@ pub unsafe fn dialog_item_ui_op_1040_3e08(StructC *struct_c_param_1)
   }
   SetDlgItemInt16(0x0,struct_c_1.field147_0x9c,0x18e,struct_c_1.field6_0x6);
   SetDlgItemInt16(0x0,struct_c_1.field148_0x9e,0x191,struct_c_1.field6_0x6);
-  switch(struct_c_1.field149_0xa0) {
+  match struct_c_1.field149_0xa0 {
   0x188 =>
     struct_c_1.field152_0xa4 = 0x5;
     break;
@@ -754,10 +754,10 @@ pub unsafe fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *str
   loop {
     puVar1 = local_a;
     pass1_1008_5b12(CONCAT22(0x1050,puVar1));
-    if ((extraout_DX | puVar1) == 0) break;
+    if ((extraout_DX | puVar1) == 0) { break; }
     LVar3 = SendDlgItemMessage16(*(LPARAM *)(puVar1 + 0x4),0x0,0x401,0x190,struct_c_param_1.field6_0x6);
     iVar2 = (LVar3 >> 0x10);
-    if (((LVar3 == -1) && (iVar2 == -1)) || ((LVar3 == -0x2 && (iVar2 == -1)))) break;
+    if (((LVar3 == -1) && (iVar2 == -1)) || ((LVar3 == -0x2 && (iVar2 == -1)))) { break; }
   }
   SendDlgItemMessage16(0x0,0x0,0x407,0x190,struct_c_param_1.field6_0x6);
   SendDlgItemMessage16(0x0,0x1,0xb,0x190,struct_c_param_1.field6_0x6);

@@ -13,7 +13,7 @@ pub unsafe fn pass1_1040_4068(param_1: *mut u8,param_2: *mut astruct_57,mut para
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  u8 **ppuVar4;
+  ppuVar4: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0xfb7,param_6);

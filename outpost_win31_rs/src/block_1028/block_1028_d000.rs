@@ -52,7 +52,7 @@ pub unsafe fn pass1_1028_d078(mut param_1: u32,mut param_2: u32)
     puVar6 = pass1_1018_dcf6(CONCAT22(0x1050,local_16));
     uVar7 = pass1_1018_dd1e(local_16,(uVar7 & 0xffff0000 | puVar6 >> 0x10),local_16,
                             &DAT_1050_1050,0x0,0xa0000);
-    pass1_1008_8faa(*(astruct_78 **)(iVar4 + 0x4),uVar7);
+    pass1_1008_8faa((iVar4 + 0x4),uVar7);
     return;
   }
   uVar7 = pass1_1038_565e((uStack4 | puStack6),CONCAT22(uStack4,puStack6));
@@ -85,11 +85,11 @@ pub unsafe fn pass1_1028_d172(mut param_1: u32,mut param_2: u32)
     uVar1 = pass1_1008_5b12(CONCAT22(0x1050,local_e));
     uVar2 = uVar3 | uVar1;
     paVar4 = (uVar3 & 0xffff0000 | uVar2);
-    if (uVar2 == 0) break;
+    if (uVar2 == 0) { break; }
     uVar7 = pass1_1018_dd1e(local_6,paVar4,local_6,&DAT_1050_1050,0x0,
                             (uVar1 + 0x4) << 0x10);
     uVar3 = paVar4 & 0xffff0000 | uVar7 >> 0x10;
-    pass1_1008_8faa(*(astruct_78 **)(param_1 + 0x4),uVar7);
+    pass1_1008_8faa((param_1 + 0x4),uVar7);
   }
   return;
 }
@@ -855,7 +855,7 @@ pub unsafe fn write_to_file_1028_dce2(param_1: u16,param_2: *mut u32,param_3: *m
                                             pass1_1028_e4ec(CONCAT22(0x1050,paVar3));
                                             uStack24 = CONCAT22(uVar4,paVar3);
                                             param_1 = uVar4 | paVar3;
-                                            if (param_1 == 0) break;
+                                            if (param_1 == 0) { break; }
                                             if (paVar3[0x1c].field4_0x8 != 0x8000002) {
                                               pass1_1038_3ba0(CONCAT22(uVar4,paVar3));
                                             }

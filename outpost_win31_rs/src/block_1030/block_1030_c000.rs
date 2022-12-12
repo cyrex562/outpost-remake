@@ -349,7 +349,7 @@ pub unsafe fn pass1_1030_c52e(mut param_1: i16,mut param_2: u16 ,mut param_3: u3
           puVar4 = &local_20;
           uStack16 = uVar7;
           pass1_1030_bcde(puVar4,&DAT_1050_1050,uVar5 & 0xffff | uVar7 << 0x10,puVar10,uVar8);
-          if (puVar4 < 0x0) break;
+          if (puVar4 < 0x0) { break; }
           uVar6 = uVar7;
           puStack24 = puVar4;
           if (puVar4 < 0x1f) {
@@ -716,7 +716,7 @@ pub unsafe fn pass1_1030_cbf0(mut param_1: i16,mut param_2: u16 ,mut param_3: i1
       return 0x0;
     }
     iVar1 = (iStack4 * 0xc + param_1);
-    if ((iVar1.field36_0x24 == param_3) && (iVar1.field37_0x26 == 0x3)) break;
+    if ((iVar1.field36_0x24 == param_3) && (iVar1.field37_0x26 == 0x3)) { break; }
     iStack4 += 0x1;
   }
   iVar1.field37_0x26 = 0;
@@ -858,7 +858,7 @@ pub unsafe fn pass1_1030_cde8(mut param_1: i16,mut param_2: u16 ,mut param_3: i1
       return -0x1;
     }
     iVar1 = iStack4 * 0xc + param_1;
-    if (((iVar1 + 0x24) == param_3) && ((iVar1 + 0x26) == 0)) break;
+    if (((iVar1 + 0x24) == param_3) && ((iVar1 + 0x26) == 0)) { break; }
     iStack4 += 0x1;
   }
   return iStack4;
@@ -942,7 +942,7 @@ pub unsafe fn pass1_1030_cf3a(mut param_1: u32,mut param_2: i16) -> u16
     if (0x9 < iStack4) {
       return 0x0;
     }
-    if ((param_1 + iStack4 * 0xc + 0x24) == param_2) break;
+    if ((param_1 + iStack4 * 0xc + 0x24) == param_2) { break; }
     iStack4 += 0x1;
   }
   return 0x1;
@@ -963,7 +963,7 @@ pub unsafe fn pass1_1030_cf78(param_1: *mut astruct_15,mut param_2: u16 )
     }
     uVar1 = param_2;
     uVar2 = (param_1 >> 0x10);
-    if ((param_1 + iStack4 * 0xc + 0x24) == param_2) break;
+    if ((param_1 + iStack4 * 0xc + 0x24) == param_2) { break; }
     iStack4 += 0x1;
   }
   pass1_1028_b58e(param_1);

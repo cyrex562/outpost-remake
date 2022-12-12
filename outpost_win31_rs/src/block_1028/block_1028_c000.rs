@@ -334,7 +334,7 @@ pub unsafe fn pass1_1028_c3aa(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
         uVar14 = 0x1030;
         pass1_1030_bcde(puVar7,&DAT_1050_1050,uVar9 & 0xffff | uVar13 << 0x10,puVar18,
                         CONCAT22(uVar21,CONCAT11(uVar20,uVar19)));
-        if ((0x0 < puVar7) && (puVar7 < 0x1f)) break;
+        if ((0x0 < puVar7) && (puVar7 < 0x1f)) { break; }
         if (puVar7 < puStack24) {
           puStack24 = puVar7;
         }
@@ -541,7 +541,7 @@ pub unsafe fn pass1_1028_c7b6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   uVar4 = struct_op_1030_73a8(CONCAT22(uVar3,uVar2),uVar2,uVar3);
   uVar3 = (uVar4 >> 0x10);
   if ((uVar3 | uVar4) != 0) {
-    switch((uVar4 + 0xc)) {
+    match (uVar4 + 0xc) {
     0x1 =>
       break;
     0x2 =>
@@ -1045,7 +1045,7 @@ pub unsafe fn pass1_1028_d01a(param_1: u32)
     uVar4 = puStack14;
     fn_ptr_1028_d728(puVar1);
     puStack14 = CONCAT22(extraout_DX,uVar4);
-    if ((extraout_DX | uVar4) == 0) break;
+    if ((extraout_DX | uVar4) == 0) { break; }
     uVar3 = *puStack14;
     ppcVar2 = uVar3 + 2;
     (**ppcVar2)();

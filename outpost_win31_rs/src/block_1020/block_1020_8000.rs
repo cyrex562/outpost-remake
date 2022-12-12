@@ -74,7 +74,7 @@ pub unsafe fn realize_palette_1020_8128(mut param_1: u32,mut param_2: i16)
     loop {
       puVar3 = local_12;
       pass1_1008_5b12(CONCAT22(0x1050,puVar3));
-      if ((extraout_DX | puVar3) == 0) break;
+      if ((extraout_DX | puVar3) == 0) { break; }
       uVar2 = (puVar3 + 0x4);
       uVar7 = (puVar3 + 0x6);
       puVar4 = uVar2;
@@ -320,7 +320,7 @@ pub unsafe fn pass1_1020_8556(param_1: *mut StructD)
     iStack12 = 0;
     loop {
       piVar1 = &iVar5.field_0x6;
-      if (*piVar1 == iStack12 || *piVar1 < iStack12) break;
+      if (*piVar1 == iStack12 || *piVar1 < iStack12) { break; }
       iVar6 = iStack12 * 0x4;
       uVar4 = &iVar5.field7_0xc;
       uVar8 = (uVar4 >> 0x10);
@@ -359,7 +359,7 @@ pub unsafe fn pass1_1020_85f6(param_1: *mut astruct_590)
     uVar7 = (param_1 >> 0x10);
     iVar6 = param_1;
     piVar1 = &iVar6.field6_0x6;
-    if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
+    if (*piVar1 == iStack4 || *piVar1 < iStack4) { break; }
     uVar4 = iVar6.field11_0xc;
     uVar6 = (uVar4 >> 0x10);
     iVar5 = uVar4;
@@ -395,7 +395,7 @@ pub unsafe fn pass1_1020_865a(mut param_1: u32)
     uVar9 = (param_1 >> 0x10);
     iVar5 = param_1;
     piVar1 = (iVar5 + 0x6);
-    if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
+    if (*piVar1 == iStack4 || *piVar1 < iStack4) { break; }
     iVar8 = iStack4 * 0x4;
     uVar4 = (iVar5 + 0xc);
     uVar10 = (uVar4 >> 0x10);
@@ -431,7 +431,7 @@ pub unsafe fn pass1_1020_86d8(mut param_1: u32)
   loop {
     uVar4 = (param_1 >> 0x10);
     piVar1 = (param_1 + 0x6);
-    if (*piVar1 == iStack4 || *piVar1 < iStack4) break;
+    if (*piVar1 == iStack4 || *piVar1 < iStack4) { break; }
     uVar2 = (param_1 + 0xc);
     uVar4 = (uVar2 >> 0x10);
     iVar3 = uVar2;

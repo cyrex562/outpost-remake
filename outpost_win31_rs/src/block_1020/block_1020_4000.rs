@@ -469,7 +469,7 @@ pub unsafe fn win_sys_op_1020_493c
   uVar9 = param_3;
   uVar13 = (param_3 >> 0x10);
   if (param_4 < 0xea) {
-    switch(param_4) {
+    match param_4 {
     0x69 =>
       iVar6 = 0;
       break;
@@ -553,7 +553,7 @@ pub unsafe fn win_sys_op_1020_493c
       return;
     }
     if (param_4 < 0x103) {
-      switch(param_4) {
+      match param_4 {
       0xf0 =>
         ui_op_1020_536e(param_2,param_3,0x0,-0x1,1);
         return;
@@ -875,7 +875,7 @@ pub unsafe fn win_sys_op_1020_493c
     }
 // TODO: goto LAB_1020_49b7;
   }
-  switch(param_4) {
+  match param_4 {
   0x133 =>
     uVar10 = pass1_1020_64d4(&uVar9[0x1].field5_0x8,0x3);
     if (uVar10 == 0) {

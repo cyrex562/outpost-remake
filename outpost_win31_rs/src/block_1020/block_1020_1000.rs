@@ -595,7 +595,7 @@ pub unsafe fn *pvStack60;
     uStack50 = CONCAT22(uVar6,puVar11);
     uVar7 = uVar6 | puVar11;
     uVar9 = uVar7;
-    if (uVar7 == 0) break;
+    if (uVar7 == 0) { break; }
     ppcStack54 = puVar11.field16_0x10;
     if (ppcStack54.is_null() == false) {
       pass1_1000_3cea(structb_param_1 & 0xffff0000 | ZEXT24(&struct_9.field8_0x10),*ppcStack54);
@@ -921,7 +921,7 @@ pub unsafe fn pass1_1020_1eea(param_1: *mut u8,param_2: *mut astruct_663,StructB
   let mut in_stack_0000ffc0: u16;
   let mut in_stack_0000ffc4: u16;
   let mut in_stack_0000ffec: u32;
-  u8 **ppuVar5;
+  ppuVar5: *mut *mut u8;
 
   uVar3 = (param_2 >> 0x10);
   iVar3 = param_2;

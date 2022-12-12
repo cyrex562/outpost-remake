@@ -111,7 +111,7 @@ pub unsafe fn pass1_1030_1244(param_1: *mut StructD)
     uStack6 = 0x1;
     loop {
       puVar1 = &iVar6.field6_0xa;
-      if (*puVar1 < uStack6 || *puVar1 == uStack6) break;
+      if (*puVar1 < uStack6 || *puVar1 == uStack6) { break; }
       iVar8 = uStack6 * 0x4;
       uVar5 = &iVar6.field_0x6;
       uVar10 = (uVar5 >> 0x10);
@@ -149,7 +149,7 @@ pub unsafe fn pass1_1030_12ca(param_1: *mut astruct_176)
       return;
     }
     uVar2 = iVar3.field5_0x6;
-    if ((uVar2 + uStack6 * 0x4) == 0) break;
+    if ((uVar2 + uStack6 * 0x4) == 0) { break; }
     uStack6 += 0x1;
   }
   return;
@@ -977,7 +977,7 @@ pub unsafe fn pass1_1030_1e96(param_1: u32)
     uVar4 = (param_1 >> 0x10);
     puVar1 = (param_1 + 0x8);
     if ((*puVar1 < uStack6 || *puVar1 == uStack6) ||
-       (uVar3 = (param_1 + 0x4), (uVar3 + uStack6 * 0x4) == 0)) break;
+       (uVar3 = (param_1 + 0x4), (uVar3 + uStack6 * 0x4) == 0)) { break; }
     uStack6 += 0x1;
   }
   ppcVar2 = (*param_1 + 0x8);
