@@ -28,7 +28,7 @@ pub unsafe fn pass1_1040_109c(param_1: *mut u8,mut param_2: i16,mut param_3: u16
   }
   else {
     if (param_5 != 0x1830) {
-      post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+      post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
       return;
     }
     paVar6 =
@@ -102,8 +102,8 @@ pub unsafe fn pass1_1040_11ac(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 *
-pass1_1040_123e(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn
+pass1_1040_123e(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;
@@ -309,7 +309,7 @@ pub unsafe fn set_win_pos_1040_162a(mut param_1: u16 ,mut param_2: u16 ,mut para
 
   if ((param_4 != s_vrpal_bmp_1050_183a + 0x5) && (param_4 != s_vrpal_bmp_1050_183a + 0x4)) {
     BVar2 = post_win_msg_1040_7b3c
-                      ((StructC *)CONCAT22(param_3,param_2),param_3,param_4,param_4);
+                      (CONCAT22(param_3,param_2),param_3,param_4,param_4);
     return CONCAT22(param_1,BVar2);
   }
   if (param_4 == 0x7) {
@@ -541,10 +541,10 @@ pub unsafe fn pass1_1040_1ab0(mut param_1: u16 ,mut param_2: i16,mut param_3: u1
   if (param_5 == 0x1831) {
     (param_2 + 0x92) = 0x1;
     (param_2 + 0x94) = 0x1;
-    check_dialog_btn_1040_1b8a((StructC *)CONCAT22(param_3,param_2));
+    check_dialog_btn_1040_1b8a(CONCAT22(param_3,param_2));
   }
   else {
-    BStack6 = post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+    BStack6 = post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
     uStack4 = param_1;
   }
   return CONCAT22(uStack4,BStack6);
@@ -575,17 +575,17 @@ pub unsafe fn check_dialog_btn_1040_1afe(param_1: *mut StructB)
   CheckDlgButton16(check,0xfdc,iVar3.lpvoid_field_0x8);
   return;
 }
-pub unsafe fn check_dialog_btn_1040_1b8a(StructC *param_1)
+pub unsafe fn check_dialog_btn_1040_1b8a(param_1: *mut StructC)
 
 {
   let mut check: u16;
   let mut check_00: u16;
   let mut check_01: u16;
-  StructC *iVar1;
+  let mut iVar1: *mut StructC;
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
-  iVar1 = (StructC *)param_1;
+  iVar1 = param_1;
   check_00 = pass1_1010_60b4();
   pass1_1010_60c6();
   check_01 = pass1_1010_60c0();
@@ -631,7 +631,7 @@ pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut astruct_57,mut
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  ppuVar3: *mut *mut u8;
+  let mut ppuVar3: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0xe8,param_6);
@@ -733,7 +733,7 @@ pub unsafe fn pass1_1040_1e80(mut param_1: u16 ,mut param_2: i16,mut param_3: u1
     pass1_1008_a9ec((param_2 + 0x92));
   }
   else {
-    BStack6 = post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+    BStack6 = post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
     uStack4 = param_1;
   }
   return CONCAT22(uStack4,BStack6);

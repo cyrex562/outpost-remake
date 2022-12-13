@@ -24,14 +24,16 @@ pub unsafe fn pass1_1038_e03e(mut param_1: u32)
 
   uVar4 = (param_1 >> 0x10);
   uVar2 = pass1_1010_0886();
-  for (iStack6 = 0x1; iStack6 <= uVar2; iStack6 += 1) {
+//   for (iStack6 = 0x1; iStack6 <= uVar2; iStack6 += 1)
+  for iStack6 in 1 .. uVar2
+  {
     uVar1 = (param_1 + 0x92);
     uVar6 = pass1_1010_08e2(uVar1,(uVar1 >> 0x10),iStack6);
     uVar1 = (param_1 + 0x96);
     uVar5 = (uVar1 >> 0x10);
     iVar3 = uVar1;
     if ((iVar3 + iStack6 * 0x4) != 0) {
-      enable_win_1040_9234((iVar3 + iStack6 * 0x4),*(BOOL16 *)(uVar6 + 0x6));
+      enable_win_1040_9234((iVar3 + iStack6 * 0x4),(uVar6 + 0x6));
     }
   }
   return;
@@ -220,7 +222,11 @@ pub unsafe fn win_ui_op_1038_e348(param_1: *mut StructB,param_2: u8,param_3: *mu
   struct_b_5 = param_1;
   struct_b_5[0x7].field1_0x2 = uVar4;
   struct_b_5[0x7].hwnd_0x6 = uVar6;
-  for (iStack10 = 0x1; uVar11 = (uVar6 >> 0x10), iStack10 <= uStack8; iStack10 += 1) {
+//   for (iStack10 = 0x1; uVar11 = (uVar6 >> 0x10), iStack10 <= uStack8; iStack10 += 1)
+  iStack10 = 1;
+  uVar11 = uVar6 >> 0x10;
+  while iStack10 <= uStack8
+  {
     puStack26 = pass1_1010_091e(puStack6,(puStack6 >> 0x10),iStack10);
     uVar5 = (puStack26 >> 0x10);
     paVar8 = CONCAT22(uVar11,uVar5);
@@ -253,8 +259,9 @@ pub unsafe fn win_ui_op_1038_e348(param_1: *mut StructB,param_2: u8,param_3: *mu
     uVar10 = (uVar3 >> 0x10);
     iVar12 = uVar3;
     if ((iVar12 + iStack10 * 0x4) != 0) {
-      enable_win_1040_9234((iVar12 + iStack10 * 0x4),*(BOOL16 *)(puStack26 + 0x6));
+      enable_win_1040_9234((iVar12 + iStack10 * 0x4),(puStack26 + 0x6));
     }
+    iStack10 += 1;
   }
   move_win_1040_826c(param_1,-0x1,0xffff);
   ShowWindow16(0x5,struct_b_5.lpvoid_field_0x8);
@@ -356,7 +363,7 @@ pub unsafe fn pass1_1038_e4bc(param_1: *mut u8,mut param_2: u16 ,mut param_3: u3
     else {
       if (param_4 != 0x1c6) {
         post_win_msg_1040_7b3c
-                  ((StructC *)CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),(param_3 >> 0x10)
+                  (CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),(param_3 >> 0x10)
                    ,param_4,param_4);
         return;
       }
@@ -557,8 +564,8 @@ pub unsafe fn pass1_1038_e908(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 *
-pass1_1038_e99a(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn
+pass1_1038_e99a(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;
@@ -749,7 +756,11 @@ pub unsafe fn FUN_1038_ec16(mut param_1: u16 ,param_2: *mut StructB,param_3: *mu
   iVar7 = param_2;
   (iVar7 + 0x8e) = uVar2;
   (iVar7 + 0x90) = pSVar5;
-  for (iStack10 = 0x1; uVar10 = (pSVar5 >> 0x10), iStack10 <= uStack8; iStack10 += 1) {
+//   for (iStack10 = 0x1; uVar10 = (pSVar5 >> 0x10), iStack10 <= uStack8; iStack10 += 1)
+  iStack10 = 1;
+  uVar10 = pSVar5 >> 0x10;
+  while iStack10 <= uStack8
+  {
     puStack26 = pass1_1010_0932(puStack6,(puStack6 >> 0x10),iStack10);
     uVar3 = (puStack26 >> 0x10);
     paVar6 = CONCAT22(uVar10,uVar3);
@@ -782,8 +793,9 @@ pub unsafe fn FUN_1038_ec16(mut param_1: u16 ,param_2: *mut StructB,param_3: *mu
     uVar10 = (uVar1 >> 0x10);
     iVar8 = uVar1;
     if ((iVar8 + iStack10 * 0x4) != 0) {
-      enable_win_1040_9234((iVar8 + iStack10 * 0x4),*(BOOL16 *)(puStack26 + 0x6));
+      enable_win_1040_9234((iVar8 + iStack10 * 0x4),(puStack26 + 0x6));
     }
+    iStack10 += 1;
   }
   move_win_1040_826c(param_2,-0x1,0xffff);
   ShowWindow16(0x5,(iVar7 + 0x6));
@@ -848,7 +860,7 @@ pub unsafe fn send_msg_1038_ed8a(mut param_1: u16 ,mut param_2: u16 ,mut param_3
     }
     else if (param_4 != 0x1ca) {
       post_win_msg_1040_7b3c
-                ((StructC *)CONCAT22(param_3,param_2),(param_3 >> 0x10),param_4,param_4);
+                (CONCAT22(param_3,param_2),(param_3 >> 0x10),param_4,param_4);
       return;
     }
   }

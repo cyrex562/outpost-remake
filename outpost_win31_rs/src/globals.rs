@@ -32,9 +32,6 @@ pub static mut PTR_LOOP_1050_000e: *mut u8 = ptr::null_mut();
 pub static mut PTR_LOOP_1050_5f48: *mut u8 = ptr::null_mut();
 pub static mut PTR_LOOP_1050_5f4e: *mut u8 = ptr::null_mut();
 pub static mut PTR_LOOP_1050_63fe: *mut c_char = ptr::null_mut();
-// pub static mut DAT_1050_5f82: u16 = 0;
-pub static mut u32_1050_0004: u32 = 0;
-pub static mut u16_1050_0002: u16 = 0;
 pub static mut DAT_1050_422c: u16 = 0;
 pub static mut DAT_1050_4216: u16 = 0;
 

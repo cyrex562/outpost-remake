@@ -140,7 +140,7 @@ pub unsafe fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: 
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb6: u16;
    let mut hfile_param: *mut HFILE16;
-  local_1a: BOOL16 [0x2];
+  let mut local_1a: [BOOL16;0x2] = [false;2];
   let mut UStack22: u16;
   let mut pSStack20: *mut StructD;
   let mut pSStack16: *mut StructD;
@@ -220,7 +220,7 @@ pub unsafe fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: 
     }
     iVar4 = pass1_1038_993a(param_2,param_3,param_4);
     if (-0x1 < iVar4) {
-      hfile_param = *(HFILE16 **)(param_2 + 0x6);
+      hfile_param = (param_2 + 0x6);
       UStack22 = GetDlgItemInt16(0x1,local_1a,&DAT_1050_1050,(iVar4 * 0xe + 0x5a72));
       if (local_1a[0] != 0) {
         FUN_1010_2a32((param_2 + 0x98),CONCAT22((iVar4 * 0xe + 0x5a72),UStack22),hfile_param,
@@ -420,7 +420,7 @@ pub unsafe fn win_ui_op_1038_977a(param_1: *mut astruct_57,mut param_2: i16,mut 
 
 
 
-unk_win_ui_op_1038_9820: i32(param_1: *mut StructB,mut param_2: i16,mut param_3: i16,mut param_4: i16)
+pub unsafe fn unk_win_ui_op_1038_9820(param_1: *mut StructB,mut param_2: i16,mut param_3: i16,mut param_4: i16) -> i32
 
 {
   let mut puVar1: *mut u16;
@@ -464,12 +464,18 @@ pub unsafe fn win_ui_dlg_op_1038_98b4(param_1: *mut StructB)
   let mut local_4: bool;
 
   local_4 = 0;
-  for (iStack8 = 0; iVar3 = param_1, uVar2 = (param_1 >> 0x10), iStack8 < 0xf;
-      iStack8 += 1) {
+//   for (iStack8 = 0; iVar3 = param_1, uVar2 = (param_1 >> 0x10), iStack8 < 0xf;
+//       iStack8 += 1)
+      iStack8 = 0;
+      iVar3 = param_1;
+      uVar2 = param_1 >> 0x10;
+      while iStack8 < 0xf
+      {
     iVar4 = 0x1;
     pvVar2 = iVar3.lpvoid_field_0x8;
     UVar1 = GetDlgItemInt16(0x1,&local_4,&DAT_1050_1050,(iStack8 * 0xe + 0x5a72));
     unk_win_ui_op_1038_9820(param_1,UVar1,pvVar2,iVar4);
+    iStack8 += 1;
   }
   SetDlgItemInt16(0x1,iVar3[0x7].max_count_field_0x10,0xfa9,iVar3.lpvoid_field_0x8);
   SetDlgItemInt16(0x1,iVar3[0x7].field5_0xa,0xfa8,iVar3.lpvoid_field_0x8);
@@ -578,7 +584,8 @@ pub unsafe fn pass1_1038_9b72(param_1: *mut astruct_57,param_2: *mut astruct_57,
   loop {
     (&param_1[0x1].field3_0x6)[iStack4] = 0;
     iStack4 += 0x1;
-  } while (iStack4 < 0x4a);
+    if iStack4 >= 0x4a {break;}
+  }
   return CONCAT22(param_2,param_1);
 }
 
@@ -769,12 +776,18 @@ pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10,mut param_2: i16,mu
       return;
     }
     bVar1 = false;
-    for (uStack14 = 0; puVar1 = &struct10_5.field295_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14;
-        uStack14 += 1) {
+    // for (uStack14 = 0; puVar1 = &struct10_5.field295_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14;
+    //     uStack14 += 1)
+    uStack14 = 0;
+    puVar1 = struct10_5.fiel295_0x128;
+    while uStack14 <= *puvar1 && *puvar1 != uStack14
+
+        {
       if ((&struct10_5.field_0x94 + uStack14 * 0x2) == param_2) {
         bVar1 = true;
         break;
       }
+      uStack14 += 1;
     }
     if (bVar1) {
       u16_1050_5b64 = u16_1050_5b68;

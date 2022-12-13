@@ -299,7 +299,7 @@ pub unsafe fn dos3_call_set_struct_1000_42de(
     iVar5.field5_0x8 = u_var1;
     iVar5.field6_0xa = u_var2;
     if (b_var5) {
-        block_1000_2000::pass1_1000_29af(u_var12);
+       pass1_1000_29af(u_var12);
     }
     iVar5.field7_0xc = b_var5;
     return;

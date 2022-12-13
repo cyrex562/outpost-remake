@@ -158,7 +158,7 @@ pub unsafe fn pass1_1038_2306(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   let mut piVar1: *mut i16;
   let mut paVar2: *mut Struct57;
   let mut ppcVar3: *mut *mut code;
-  qqVar4: u16;
+  let mut qqVar4: u16;
   let mut puVar5: *mut u32;
   let mut in_AX: u16;
   let mut uVar9: *mut astruct_417;
@@ -339,7 +339,11 @@ pub unsafe fn pass1_1038_24e8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
     paVar8 = paVar7;
   }
   puStack28 = CONCAT22(paVar8,uVar5);
-  for (uStack30 = 0; uVar3 = uStack18, uStack30 < uStack18; uStack30 += 1) {
+//   for (uStack30 = 0; uVar3 = uStack18, uStack30 < uStack18; uStack30 += 1)
+  uStack30 = 0;
+  uVar3 = uStack18;
+  while uStack30 < uStack18
+  {
     pass1_1020_bb16(puStack12,CONCAT22(0x1050,&local_18),CONCAT22(0x1050,&local_14),uStack30);
     if (local_18 != 0) {
       uVar3 = local_18;
@@ -385,6 +389,7 @@ pub unsafe fn pass1_1038_24e8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
         uStack16 = 0x64;
       }
     }
+    uStack30 += 1;
   }
   pass1_1020_ba94(puStack28);
   uVar5 = paVar8 | uVar3;
@@ -514,7 +519,8 @@ pub unsafe fn pass1_1038_26ee(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
     if (uStack12 == 0) {
       uStack12 = uStack10;
     }
-  } while (uStack12 != uStack10);
+    if uStack12 == uStack18 {break;}
+  }
   pass1_1020_ba94(CONCAT22(uStack18,uStack20));
   uVar3 = paVar8 | uStack10;
   paVar8 = (paVar8 & 0xffff0000 | uVar3);

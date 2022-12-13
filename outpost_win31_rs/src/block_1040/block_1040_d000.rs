@@ -161,13 +161,13 @@ pub unsafe fn win_ui_op_1040_d2ac(mut param_1: u16 ,pstruct_param_2: *mut astruc
   let mut in_register_0000000a: u16;
   let mut LVar1: LRESULT;
 
-  if (param_4 == s_dibtext_bmp_1050_1844 + 0x4U) {
+  if (param_4 == s_dibtext_bmp_1050_1844 + 0x4) {
     LVar1 = SendDlgItemMessage16
                       (0x0,0x0,0x405,s_dibtext_bmp_1050_1844 + 0x3,(pstruct_param_2 + 0x6));
     struct_1010_9172((pstruct_param_2 + 0x9c),
                      CONCAT22(in_register_0000000a,(LVar1 >> 0x10)));
   }
-  else if (s_dibtext_bmp_1050_1844 + 0x4U < param_4) {
+  else if (s_dibtext_bmp_1050_1844 + 0x4 < param_4) {
     if (param_4 == s_dibtext_bmp_1050_1844 + 0x5) {
       LVar1 = SendDlgItemMessage16
                         (0x0,0x0,0x40c,s_dibtext_bmp_1050_1844 + 0x3,(pstruct_param_2 + 0x6));
@@ -178,7 +178,7 @@ pub unsafe fn win_ui_op_1040_d2ac(mut param_1: u16 ,pstruct_param_2: *mut astruc
         pass1_1010_91cc((pstruct_param_2 + 0x9c));
       }
     }
-    else if (param_4 == s_dibtext_bmp_1050_1844 + 0x6U) {
+    else if (param_4 == s_dibtext_bmp_1050_1844 + 0x6) {
       enable_win_1040_d6be(pstruct_param_2);
       pass1_1018_57d2((pstruct_param_2 + 0x94),pstruct_param_2);
       PostMessage16(0x0,0x203,0x111,HWND16_1050_0396);
@@ -194,7 +194,7 @@ pub unsafe fn win_ui_op_1040_d2ac(mut param_1: u16 ,pstruct_param_2: *mut astruc
     send_ldg_item_msg_1040_d79c(param_1,pstruct_param_2);
   }
   else {
-    if (param_4 != s_vrpal_bmp_1050_183a + 0x7U) {//
+    if (param_4 != s_vrpal_bmp_1050_183a + 0x7) {//
 // LAB_1040_d3b3:
       pass1_1040_b54a(param_1,pstruct_param_2,param_3,param_4);
       return;

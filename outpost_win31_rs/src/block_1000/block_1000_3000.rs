@@ -870,7 +870,7 @@ pub unsafe fn mixed_dos3_call_1000_3636(
     b_var5 = true; //
                    //    LAB_1000_299d:
     if (b_var5) {
-        block_1000_2000::pass1_1000_29b5(u_var3);
+        pass1_1000_29b5(u_var3);
     }
     return;
 }
@@ -1419,7 +1419,7 @@ pub unsafe fn pass1_1000_3bc0(mut param_1: i16, mut param_2: i16) {
         if (u_var5 != 0) {
             u_var4 = param_1 + 0x2 + u_var5;
             if (!CARRY2(param_1 + 0x2, u_var5)) {
-                uVar3 = block_1000_2000::pass1_1000_29dc(&DAT_1050_1050);
+                uVar3 = pass1_1000_29dc(&DAT_1050_1050);
                 u_var5 = &PTR_LOOP_1050_6066;
                 if (u_var5 == 0x1000) {
                     // TODO: goto LAB_1000_3c12;
@@ -1887,91 +1887,91 @@ pub unsafe fn pass1_1000_3e2c(mut param_1: u32) -> i16 {
     return i_var4;
 }
 
-pub unsafe fn pass1_1000_3e2c(mut param_1: u32) -> i16 {
-    let mut pbVar1: *mut u8;
-    let mut bVar2: u8;
-    let mut bVar3: u8;
-    let mut iVar4: i16;
-    let mut pbVar5: *mut u8;
-    let mut uVar6: u16;
+// pub unsafe fn pass1_1000_3e2c(mut param_1: u32) -> i16 {
+//     let mut pbVar1: *mut u8;
+//     let mut bVar2: u8;
+//     let mut bVar3: u8;
+//     let mut iVar4: i16;
+//     let mut pbVar5: *mut u8;
+//     let mut uVar6: u16;
 
-    uVar6 = (param_1 >> 0x10);
-    pbVar5 = param_1;
-    iVar4 = 0;
-    loop {
-        loop {
-            pbVar1 = pbVar5;
-            pbVar5 = pbVar5 + 1;
-            bVar2 = *pbVar1;
-            if bvar2 != 0x20 {
-                break;
-            }
-        }
-        if bVar2 != 0x9 {
-            break;
-        }
-    }
-    if ((bVar2 != 0x2d) && (bVar3 = bVar2, bVar2 != 0x2b)) {
-        // TODO: goto LAB_1000_3e4d;
-    }
-    loop {
-        pbVar1 = pbVar5;
-        pbVar5 = pbVar5 + 1;
-        bVar3 = *pbVar1; //
-                         //        LAB_1000_3e4d:
-        if ((0x39 < bVar3) || (bVar3 < 0x30)) {
-            break;
-        }
-        iVar4 = iVar4 * 0xa + (bVar3 - 0x30);
-    }
-    if (bVar2 == 0x2d) {
-        iVar4 = -iVar4;
-    }
-    return iVar4;
-}
+//     uVar6 = (param_1 >> 0x10);
+//     pbVar5 = param_1;
+//     iVar4 = 0;
+//     loop {
+//         loop {
+//             pbVar1 = pbVar5;
+//             pbVar5 = pbVar5 + 1;
+//             bVar2 = *pbVar1;
+//             if bvar2 != 0x20 {
+//                 break;
+//             }
+//         }
+//         if bVar2 != 0x9 {
+//             break;
+//         }
+//     }
+//     if ((bVar2 != 0x2d) && (bVar3 = bVar2, bVar2 != 0x2b)) {
+//         // TODO: goto LAB_1000_3e4d;
+//     }
+//     loop {
+//         pbVar1 = pbVar5;
+//         pbVar5 = pbVar5 + 1;
+//         bVar3 = *pbVar1; //
+//                          //        LAB_1000_3e4d:
+//         if ((0x39 < bVar3) || (bVar3 < 0x30)) {
+//             break;
+//         }
+//         iVar4 = iVar4 * 0xa + (bVar3 - 0x30);
+//     }
+//     if (bVar2 == 0x2d) {
+//         iVar4 = -iVar4;
+//     }
+//     return iVar4;
+// }
 
-pub unsafe fn pass1_1000_3e2c(mut param_1: u32) -> i16 {
-    let mut pbVar1: *mut u8;
-    let mut bVar2: u8;
-    let mut bVar3: u8;
-    let mut iVar4: i16;
-    let mut pbVar5: *mut u8;
-    let mut uVar6: u16;
+// pub unsafe fn pass1_1000_3e2c(mut param_1: u32) -> i16 {
+//     let mut pbVar1: *mut u8;
+//     let mut bVar2: u8;
+//     let mut bVar3: u8;
+//     let mut iVar4: i16;
+//     let mut pbVar5: *mut u8;
+//     let mut uVar6: u16;
 
-    uVar6 = (param_1 >> 0x10);
-    pbVar5 = param_1;
-    iVar4 = 0;
-    loop {
-        loop {
-            pbVar1 = pbVar5;
-            pbVar5 = pbVar5 + 1;
-            bVar2 = *pbVar1;
-            if bVar2 != 0x20 {
-                break;
-            }
-        }
-        if bVar2 != 0x9 {
-            break;
-        }
-    }
-    if ((bVar2 != 0x2d) && (bVar3 = bVar2, bVar2 != 0x2b)) {
-        // TODO: goto LAB_1000_3e4d;
-    }
-    loop {
-        pbVar1 = pbVar5;
-        pbVar5 = pbVar5 + 1;
-        bVar3 = *pbVar1; //
-                         //        LAB_1000_3e4d:
-        if ((0x39 < bVar3) || (bVar3 < 0x30)) {
-            break;
-        }
-        iVar4 = iVar4 * 0xa + (bVar3 - 0x30);
-    }
-    if (bVar2 == 0x2d) {
-        iVar4 = -iVar4;
-    }
-    return iVar4;
-}
+//     uVar6 = (param_1 >> 0x10);
+//     pbVar5 = param_1;
+//     iVar4 = 0;
+//     loop {
+//         loop {
+//             pbVar1 = pbVar5;
+//             pbVar5 = pbVar5 + 1;
+//             bVar2 = *pbVar1;
+//             if bVar2 != 0x20 {
+//                 break;
+//             }
+//         }
+//         if bVar2 != 0x9 {
+//             break;
+//         }
+//     }
+//     if ((bVar2 != 0x2d) && (bVar3 = bVar2, bVar2 != 0x2b)) {
+//         // TODO: goto LAB_1000_3e4d;
+//     }
+//     loop {
+//         pbVar1 = pbVar5;
+//         pbVar5 = pbVar5 + 1;
+//         bVar3 = *pbVar1; //
+//                          //        LAB_1000_3e4d:
+//         if ((0x39 < bVar3) || (bVar3 < 0x30)) {
+//             break;
+//         }
+//         iVar4 = iVar4 * 0xa + (bVar3 - 0x30);
+//     }
+//     if (bVar2 == 0x2d) {
+//         iVar4 = -iVar4;
+//     }
+//     return iVar4;
+// }
 
 pub unsafe fn pass1_1000_3e82(mut param_1: u16, param_2: *mut u8, mut param_3: u16) -> *mut u8 {
     let mut pb_var1: *mut u8;

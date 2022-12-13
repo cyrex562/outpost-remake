@@ -142,7 +142,9 @@ pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,struct_b_param_1: *mut St
   struct_b_4 = struct_b_param_1;
   struct_b_4[0x7].field1_0x2 = uVar3;
   struct_b_4[0x7].hwnd_0x6 = uVar5;
-  for (iStack10 = 0x1; iStack10 <= uStack8; iStack10 += 1) {
+//   for (iStack10 = 0x1; iStack10 <= uStack8; iStack10 += 1)
+for iStack10 in 1 .. uStack8
+{
     puStack26 = pass1_1010_0946(puStack6,(puStack6 >> 0x10),iStack10,uVar5,unaff_DI,
                                        &DAT_1050_1050);
     paVar5 = (uVar5 & 0xffff0000 | puStack26 >> 0x10);
@@ -176,7 +178,7 @@ pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,struct_b_param_1: *mut St
     iVar6 = uVar2;
     if ((iVar6 + iStack10 * 0x4) != 0) {
       unaff_DI = puStack26;
-      enable_win_1040_9234((iVar6 + iStack10 * 0x4),*(BOOL16 *)(unaff_DI + 0x6));
+      enable_win_1040_9234((iVar6 + iStack10 * 0x4),(unaff_DI + 0x6));
     }
   }
   move_win_1040_826c(struct_b_param_1,-0x1,0xffff);
@@ -201,7 +203,7 @@ pub unsafe fn post_win_msg_1040_672e(mut param_1: u16 ,mut param_2: i16,mut para
     }
     else {
       if (param_5 != 0x1852) {
-        post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+        post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
         return;
       }
       iVar1 = 0x29;
@@ -266,10 +268,10 @@ pub unsafe fn enable_win_1040_6880(param_1: *mut astruct_925,mut param_2: i16)
     iVar3 = param_1;
     HVar3 = GetDlgItem16(0x107,iVar3.field6_0x6);
     uVar1 = iVar3.field147_0x94;
-    EnableWindow16(*(BOOL16 *)(uVar1 + 0x24),HVar3);
+    EnableWindow16((uVar1 + 0x24),HVar3);
     HVar3 = GetDlgItem16(0x108,iVar3.field6_0x6);
     uVar2 = iVar3.field147_0x94;
-    EnableWindow16(*(BOOL16 *)(uVar2 + 0x26),HVar3);
+    EnableWindow16((uVar2 + 0x26),HVar3);
   }
   return;
 }
@@ -552,27 +554,27 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
   let mut iVar3: *mut astruct_895;
 
   match param_4 {
-  0xfa =>
+  0xfa =>{
     ppcVar1 = (param_1.field144_0x94 + 0x18);
-    (**ppcVar1)();
-    break;
-  _ =>
+    (**ppcVar1)();}
+    // break;
+  _ =>{
     pass1_1040_b54a(in_DX,CONCAT13((param_2 >> 0x8),CONCAT12(param_2,param_1)),param_3,
                     param_4);
-    return;
-  0xfd =>
+    return;}
+  0xfd =>{
     if (DAT_1050_0ecc == 0) {
       return;
     }
-    DAT_1050_0ecc = 0;
+    DAT_1050_0ecc = 0;}
 // TODO: goto LAB_1040_6deb;
-  0xfe =>
+  0xfe =>{
     if (DAT_1050_0ecc == 1) {
       return;
     }
-    DAT_1050_0ecc = 0x1;
+    DAT_1050_0ecc = 0x1;}
 // TODO: goto LAB_1040_6deb;
-  0xff =>
+  0xff =>{
     if (DAT_1050_0ecc == 0x2) {
       return;
     }
@@ -582,17 +584,17 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
     ppcVar1 = (param_1.field144_0x94 + 0x10);
     (**ppcVar1)(&PTR_LOOP_1050_1040,paVar2,(paVar2 >> 0x10));
     pass1_1010_2ee2(param_1.field144_0x94);
-    PostMessage16(0x0,0x10a,0x111,param_1.field6_0x6);
-    break;
-  0x107 =>
-    iVar3 = null_mut();
+    PostMessage16(0x0,0x10a,0x111,param_1.field6_0x6);}
+    // break;
+  0x107 =>{
+    iVar3 = null_mut();}
 // TODO: goto LAB_1040_6e48;
-  0x108 =>
+  0x108 =>{
     iVar3 = (&PTR_LOOP_1050_0000 + 1);//
 // LAB_1040_6e48:
-    win_ui_op_1010_3202(param_1.field144_0x94,iVar3);
-    break;
-  0x10a =>
+    win_ui_op_1010_3202(param_1.field144_0x94,iVar3);}
+    // break;
+  0x10a =>{
     GetClientRect16(&local_a,&DAT_1050_1050);
     paVar2 = param_1.field144_0x94;
     local_a.y += 0x3;
@@ -602,10 +604,10 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
     InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
     unk_destroy_win_op_1010_2fa0(param_1.field144_0x94);
     pass1_1010_32c0(param_1.field144_0x94,0x0);
-    pass1_1010_2ee2(param_1.field144_0x94);
-    break;
-  0x10c =>
-    DestroyWindow16(param_1.field6_0x6);
+    pass1_1010_2ee2(param_1.field144_0x94);}
+    // break;
+  0x10c =>{
+    DestroyWindow16(param_1.field6_0x6);}
   }
   return;
 }
@@ -629,7 +631,7 @@ pub unsafe fn create_window_1040_6eae(mut param_1: u32,mut param_2: i16,pstruct_
   }
   uVar1 = (pstruct_param_3 >> 0x10);
   pstruct_1 = pstruct_param_3;
-  CreateWindow16(0x0,CONCAT22(param_5,HINSTANCE16_1050_038c),*(HINSTANCE16 *)(param_1 + 0x6),
+  CreateWindow16(0x0,CONCAT22(param_5,HINSTANCE16_1050_038c),(param_1 + 0x6),
                  pstruct_1.field4_0x6,pstruct_1.field3_0x4,pstruct_1.field2_0x2,pstruct_param_3,
                  _h_instance,(_h_instance >> 0x10),window_name,s_button_1050_5d92);
   return;
@@ -674,10 +676,10 @@ pub unsafe fn enable_win_1040_6ff2(mut param_1: u32,mut param_2: i16)
     iVar3 = param_1;
     HVar2 = GetDlgItem16(0x107,iVar3.field6_0x6);
     uVar1 = iVar3.field147_0x94;
-    EnableWindow16(*(BOOL16 *)(uVar1 + 0x24),HVar2);
+    EnableWindow16((uVar1 + 0x24),HVar2);
     HVar2 = GetDlgItem16(0x108,iVar3.field6_0x6);
     uVar1 = iVar3.field147_0x94;
-    EnableWindow16(*(BOOL16 *)(uVar1 + 0x26),HVar2);
+    EnableWindow16((uVar1 + 0x26),HVar2);
   }
   return;
 }

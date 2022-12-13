@@ -149,7 +149,9 @@ pub unsafe fn pass1_1038_518c(mut param_1: u16 ,mut param_2: u32)
           uStack32 = uVar5;
         }
         if (uStack32 != 0) {
-          for (iStack34 = 0x11; iStack34 < 0x25; iStack34 += 1) {
+        //   for (iStack34 = 0x11; iStack34 < 0x25; iStack34 += 1)
+        for iStack34 in 0x11 .. 0x25
+        {
             if ((((iVar7 + 0x204) == 0) || (iStack34 == 0x23)) || (iStack34 == 0x24)) {
               empty_1038_540a();
               iVar8 = iStack34 * 0x4;
@@ -211,7 +213,11 @@ pub unsafe fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16
       uVar6 = extraout_DX;
     }
     uStack10 = CONCAT22(uVar6,iVar4);
-    for (uStack14 = 0; uVar3 = param_2, uStack14 < uStack10; uStack14 += 1) {
+    // for (uStack14 = 0; uVar3 = param_2, uStack14 < uStack10; uStack14 += 1)
+    uStack14 = 0;
+    uVar3 = param_2;
+    while uStack14 < uStack10
+    {
       puVar1 = iVar10.field12_0xc;
       ppcVar2 = (*iVar10.field12_0xc + 0x4);
       uVar9 = uStack10;
@@ -245,6 +251,7 @@ pub unsafe fn pass1_1038_52b8(mut param_1: u32,mut param_2: u32,mut param_3: u16
           }
         }
       }
+      uStack14 += 1;
     }
   }
   return;
@@ -837,7 +844,8 @@ pub unsafe fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32
         }
       }
     }
-  } while (iStack4 != 0);
+    if iStack4 == 0 {break;}
+  }
   return;
 }
 

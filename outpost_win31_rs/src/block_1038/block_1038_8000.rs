@@ -152,7 +152,7 @@ pub unsafe fn send_dlg_item_msg_1038_8400(mut param_1: u16 ,mut param_2: u16 ,mu
   loop {
     lVar1 = pass1_1008_5b12(CONCAT22(0x1050,local_a));
     if (lVar1 == 0) { break; }
-    SendDlgItemMessage16(*(LPARAM *)(lVar1 + 0x4),0x0,0x401,param_4,(param_1 + 0x6));
+    SendDlgItemMessage16((lVar1 + 0x4),0x0,0x401,param_4,(param_1 + 0x6));
   }
   return;
 }

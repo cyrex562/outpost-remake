@@ -1,6 +1,5 @@
 use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
 use crate::block_1008::block_1008_8000::empty_1008_8fc4;
-use crate::structs_2_h::Struct57;
 use crate::utils::CONCAT22;
 use std::ptr;
 

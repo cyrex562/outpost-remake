@@ -701,7 +701,11 @@ pub unsafe fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
   uStack14 = pass1_1028_45e2(param_4,in_EDX,param_4);
   paVar1 = (in_EDX & 0xffff0000);
   uStack16 = (param_5 + 0x4);
-  for (uStack18 = 0; uVar2 = (paVar1 >> 0x10), uStack18 < uStack16; uStack18 += 1) {
+//   for (uStack18 = 0; uVar2 = (paVar1 >> 0x10), uStack18 < uStack16; uStack18 += 1)
+uStack18 = 0;
+uVar2 = paVar1 >> 0x10;
+while uStack18 < uStack16
+  {
     pass1_1020_bb16(param_5,CONCAT22(0x1050,&local_1a),CONCAT22(0x1050,local_16),uStack18);
     paVar1 = CONCAT22(uVar2,uStack14);
     if (uStack14 < local_1a) {
@@ -713,6 +717,7 @@ pub unsafe fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
       pass1_1030_7ddc(local_1a,paVar1,uStack6,local_1a,local_16[0]);
     }
     if (uStack14 == 0) { break; }
+    uStack18 += 1;
   }
   if (param_5.is_null() == false) {
     fn_ptr_1020_ba7e(param_5);

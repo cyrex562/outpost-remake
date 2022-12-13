@@ -18,7 +18,7 @@ fn main() -> Result<(), String> {
     let sdl_context = sdl2::init()?;
     let video_subsystem = sdl_context.video()?;
 
-    let _image_context = image::init(InitFlag::PNG | InitFlag::JPG)?;
+    // let _image_context = image::init(InitFlag::PNG | InitFlag::JPG)?;
 
     let window = video_subsystem
         .window("rust-sdl2-test", 800, 600)

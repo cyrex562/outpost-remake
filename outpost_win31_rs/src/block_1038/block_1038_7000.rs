@@ -159,7 +159,7 @@ pub unsafe fn pass1_1038_709c(param_1: *mut u8,param_2: *mut astruct_618,mut par
 pub unsafe fn pass1_1038_7356(param_1: *mut astruct_615,param_2: *mut astruct_419)
 
 {
-  ppuVar1: *mut *mut u8;
+  let mut ppuVar1: *mut *mut u8;
   let mut puVar2: *mut u16;
   let mut pcVar3: *mut c_char;
   let mut lVar4: i32;
@@ -192,7 +192,7 @@ pub unsafe fn pass1_1038_7356(param_1: *mut astruct_615,param_2: *mut astruct_41
   if (BVar5 == 0) {
     uVar7 = pass1_1008_c6ae(_u16_1050_06e0,(uVar6 + 0xc),0x3);
     if (uVar7 == 0) {
-code_r0x10387545:
+// code_r0x10387545:
       pass1_1038_6f5a(uVar7,puVar9,param_1,param_2);
   // TODO: goto LAB_1038_7549;
     }
@@ -203,7 +203,9 @@ code_r0x10387545:
       ppuVar1 = &iVar9.field16_0x18;
       bVar13 = *ppuVar1 < puVar9;
       if ((bVar13 || *ppuVar1 == puVar9) &&
-         ((bVar13 || (puVar2 = &iVar9.field15_0x16, *puVar2 < uVar7 || *puVar2 == uVar7)))) goto code_r0x10387545;
+         ((bVar13 || (puVar2 = &iVar9.field15_0x16, *puVar2 < uVar7 || *puVar2 == uVar7)))){
+            // goto code_r0x10387545;
+        }
     }
   }
   else {
@@ -549,7 +551,8 @@ pub unsafe fn pass1_1038_79f2(mut param_1: u32,mut param_2: u32,mut param_3: u16
     if ((extraout_DX | puVar2) == 0) {
       return;
     }
-  } while ((puVar2 + 0x4) != lStack6);
+    if !((puVar2 + 0x4) != lStack6) { break;}
+  }
   ppcVar1 = ((iVar3 + 0x4) + 0xc);
   (**ppcVar1)(0x1008,(iVar3 + 0x4),puVar2,extraout_DX);
   return;
@@ -593,7 +596,8 @@ pub unsafe fn pass1_1038_7a76(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
         return;
       }
       uVar2 = pass1_1038_6b3c(uVar4);
-    } while (uVar2 == 0);
+      if uVar2 != 0 {break;}
+    }
     ppcVar1 = (*param_1 + 0xc);
     (**ppcVar1)(0x1008);
   }
@@ -645,12 +649,14 @@ pub unsafe fn pass1_1038_7b20(param_1: u32,mut param_2: u32) -> u16
             }
             pass1_1030_b768(uVar4,param_2);
             uStack24 = (uVar4 >> 0x10);
-          } while (uVar4 != 0);
+            if uVar4 == 0 {break;}
+          }
           return 0x0;
         }
         pass1_1038_75ca(uStack16,uStack16,param_2);
         uStack16 = (uStack16 >> 0x10);
-      } while (uStack16 != 0);
+        if uStack16 == 0 {break;}
+      }
     }
   }
   return 0x0;

@@ -5,7 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/outpost_rs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rs_sdl_app/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/outpost_win31_rs/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rs_sdl_app/target" />
+      <excludeFolder url="file://$MODULE_DIR$/outpost_win31_rs/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

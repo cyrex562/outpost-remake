@@ -433,8 +433,8 @@ pub unsafe fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409 {
     uVar2 = param_1;
     paVar1 = (uVar2.field32_0x20 + -0x4);
     if (paVar1 < (&u16_1050_0008 + 1)) {
-        match paVar1 {
-            NULL => {
+        match *paVar1 {
+            0 => {
                 uVar2.field32_0x20 = 0x5;
             }
             //   break;

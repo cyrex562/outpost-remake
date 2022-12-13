@@ -2,9 +2,10 @@ use crate::block_1000;
 use crate::block_1000::block_1000_0000::call_fn_ptr_1000_0dc6;
 use crate::block_1000::{block_1000_0000, block_1000_2000};
 use crate::globals::{DAT_1050_5f30, REG_CS};
-use crate::structs_2_h::Struct7;
 use crate::utils::CONCAT22;
 use std::os::raw::c_char;
+use crate::mem_ops::mem_op_1000_1532;
+use crate::structs::struct_7::Struct7;
 
 pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
     let mut bVar1: u8;
@@ -101,7 +102,7 @@ pub unsafe fn mem_op_1000_131c(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn mem_op_1000_1408(mut param_1: u16, re_alloc_size: u32, mut param_3: u16, selector: i16) {
+pub unsafe fn mem_op_1000_1408(mut param_1: *mut u8, re_alloc_size: u32, mut param_3: *mut Struct7, selector: u16) {
     let mut handle: HGLOBAL16;
     let mut global_handle_1: u32;
     let mut realloc_flags: u16;
@@ -266,7 +267,7 @@ pub unsafe fn pass1_1000_1f68() {
     }
 }
 
-pub unsafe fn mem_op_1000_13ce(mut param_1: u16, mut param_2: u16) -> i32 {
+pub unsafe fn mem_op_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) -> i32 {
     let mut HVar1: HGLOBAL16;
     let mut uVar2: u16;
     let mut DVar3: u32;

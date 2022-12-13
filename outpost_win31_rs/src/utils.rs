@@ -12,7 +12,7 @@ pub unsafe fn CONCAT22(a: u16, b: u16) -> u32
     (a << 16 | b) as u32
 }
 
-pub unsafe fn CONCAT11(u8 a, u8 b) -> u16 {
+pub unsafe fn CONCAT11(a: u8, b: u8) -> u16 {
     return a << 8 | b;
 }
 

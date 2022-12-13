@@ -13,7 +13,7 @@ pub unsafe fn pass1_1040_4068(param_1: *mut u8,param_2: *mut astruct_57,mut para
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  ppuVar4: *mut *mut u8;
+  let mut ppuVar4: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x1,param_3,0xfb7,param_6);
@@ -171,7 +171,7 @@ pub unsafe fn win_ui_op_1040_42b2(mut param_1: u32,mut param_2: i16)
   HVar2 = GetDlgItem16(0x1,iVar5.field6_0x6);
   EnableWindow16(0x0,HVar2);
   uVar1 = iVar5.field141_0x8e;
-  *(LPARAM *)(uVar1 + 0x76) = iVar5.field142_0x92;
+  (uVar1 + 0x76) = iVar5.field142_0x92;
   PostMessage16(iVar5.field142_0x92,0x0,0x400,HWND16_1050_0396);
   HVar2 = GetDlgItem16(0x1,iVar5.field6_0x6);
   EnableWindow16(0x1,HVar2);
@@ -532,8 +532,14 @@ pub unsafe fn send_win_msg_1040_4a0a(struct_param_1: *mut astruct_48) -> LRESULT
   SendMessage16(0x0,0x0,0x40b,dlg_item);
   lresult_6 = SendMessage16(0x0,0x0,0xb,dlg_item);
   uVar5 = (lresult_6 >> 0x10);
-  for (WStack10 = 0; uVar3 = iVar5.field143_0x90, pWVar1 = (WPARAM16 *)(uVar3 + 0x10),
-      *pWVar1 != WStack10 && WStack10 <= *pWVar1; WStack10 += 1) {
+//   for (WStack10 = 0; uVar3 = iVar5.field143_0x90, pWVar1 = (uVar3 + 0x10),
+//       *pWVar1 != WStack10 && WStack10 <= *pWVar1; WStack10 += 1)
+WStack10 = 0;
+uVar3 = iVar5.field143_0x90;
+pWVar1 = uVar3 + 0x10;
+while *pWVar1 != WStack10 && WStack10 <= *pWVar1
+
+      {
     wparam = 0;
     UVar7 = 0x403;
     uVar3 = iVar5.field143_0x90;
@@ -669,7 +675,7 @@ pub unsafe fn set_win_pos_1040_4ae4(mut param_1: i16,mut param_2: u16 ,mut param
 pub unsafe fn send_msg_1040_4cb2(mut param_1: u16 ,mut param_2: u32) -> LRESULT
 
 {
-  let mut uVar1: u8
+  let mut uVar1: u8;
   let mut HVar1: HWND16;
   let mut uVar2: u32;
   let mut LVar2: LRESULT;
@@ -923,7 +929,7 @@ pub unsafe fn set_win_pos_1040_4f96
     struct_b_11[0x7].max_count_field_0x10 = paVar5;
     struct_b_11[0x7].field5_0xa = (puVar18 >> 0x10);
   }
-  pass1_1040_bfde(*(void **)&struct_b_11[0x7].max_count_field_0x10,&struct_b_11[0x7].field6_0xc);
+  pass1_1040_bfde(&struct_b_11[0x7].max_count_field_0x10,&struct_b_11[0x7].field6_0xc);
   mem_op_1000_179c(0x42,paVar13);
   uVar10 = paVar13 | paVar5;
   paVar12 = (paVar13 & 0xffff0000 | uVar10);

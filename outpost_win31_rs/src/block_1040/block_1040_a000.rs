@@ -23,7 +23,7 @@ pub unsafe fn make_proc_inst_1040_a234(param_1: *mut u8,param_2: *mut u8,mut par
   if (_PTR_LOOP_1050_5edc.is_null()) {
     _PTR_LOOP_1050_5edc = MakeProcInstance16(HINSTANCE16_1050_038c,call_win_proc_1040_a40e);
   }
-  *(void **)(param_1 + 0xc) = _PTR_LOOP_1050_5edc;
+  (param_1 + 0xc) = _PTR_LOOP_1050_5edc;
   PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + 1;
   PTR_LOOP_1050_5ee0 = param_1;
   PTR_LOOP_1050_5ee2 = param_2;
@@ -112,8 +112,13 @@ pub unsafe fn win_msg_1040_a308(param_1: *mut astruct_49,mut param_2: u16 ,mut p
     puVar7 = mixed_1010_20ba(CONCAT22(uVar3,(LVar6 >> 0x10)),_u16_1050_0ed0,
                              CONCAT22(in_stack_0000fff2,0x3),in_stack_0000fe9a,in_stack_0000ffbe,
                              in_stack_0000ffc4,in_stack_0000ffc8);
-    for (iStack12 = 0; uVar2 = (iVar4 + 0x90), piVar1 = (uVar2 + 0x10),
-        *piVar1 != iStack12 && iStack12 <= *piVar1; iStack12 += 1) {
+    // for (iStack12 = 0; uVar2 = (iVar4 + 0x90), piVar1 = (uVar2 + 0x10),
+    //     *piVar1 != iStack12 && iStack12 <= *piVar1; iStack12 += 1)
+    iStack12 = 0;
+    uVar2 = iVar4 + 0x90;
+    piVar1 = uVar2 + 0x10;
+    while *piVar1 != iStack12 && iStack12 <= *piVar1
+    {
       WVar9 = 0;
       UVar10 = 0x401;
       uVar2 = (iVar4 + 0x90);
@@ -122,6 +127,7 @@ pub unsafe fn win_msg_1040_a308(param_1: *mut astruct_49,mut param_2: u16 ,mut p
       pcVar8 = load_string_1010_ac92
                          (puVar7,(puVar7 >> 0x10),(uVar2 + iStack12 * 0x2));
       SendMessage16(pcVar8,WVar9,UVar10,uVar11);
+      iStack12 += 1;
     }
   }
   LVar6 = SendMessage16(0x0,0x1,0xb,param_4);
@@ -185,7 +191,7 @@ pub unsafe fn call_win_proc_1040_a40e(mut param_1: u16 ,param_2: HWND16,mut para
     return uStack6 & 0xffff | param_1 << 0x10;
   }
   uVar6 = (_u16_1050_5bc8 >> 0x10);
-  func = *(LPVOID *)(_u16_1050_5bc8 + 0x4);
+  func = (_u16_1050_5bc8 + 0x4);
   uVar1 = (_u16_1050_5bc8 + 0x6);
   if ((uVar1 | func) == 0) {
     return uVar1 << 0x10;
@@ -322,12 +328,17 @@ pub unsafe fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750,mut param_2:
       return;
     }
     bVar1 = false;
-    for (iStack14 = 0; piVar1 = &struct750_var4.field233_0xea, *piVar1 != iStack14 && iStack14 <= *piVar1;
-        iStack14 += 1) {
+    // for (iStack14 = 0; piVar1 = &struct750_var4.field233_0xea, *piVar1 != iStack14 && iStack14 <= *piVar1;
+    //     iStack14 += 1)
+        iStack14 = 0;
+        piVar1 = struct750_param_1.field233_0xea;
+        while *piVar1 != iStack14 && iStack14 <= *piVar1
+        {
       if ((&struct750_var4.field_0x9a + iStack14 * 0x2) == param_2) {
         bVar1 = true;
         break;
       }
+      iStack14 += 1;
     }
     if (bVar1) {
       u16_1050_5ee8 = u16_1050_5eec;
@@ -481,7 +492,9 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(mut param_1: u16 ,mut param_2: u32)
       iStack278 = 0x17c3;
       (iVar11 + 0xea) = 0;
       uVar17 = uVar2;
-      for (uStack288 = 0x1; uStack288 < 0x25; uStack288 += 1) {
+    //   for (uStack288 = 0x1; uStack288 < 0x25; uStack288 += 1)
+      for uStack288 in 1 .. 0x25
+      {
         if (uVar2 == 0) {
           value_00 = 0;
           uVar10 = 0;
@@ -651,7 +664,7 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
 {
   let mut iVar1: i16;
   let mut bVar2: bool;
-  WORD *pWVar3;
+  let mut pWVar3: *mut WORD;
   let mut iVar4: i16;
   let mut pcVar5: *mut c_char;
   let mut lVar6: i32;
@@ -690,7 +703,11 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
   uVar16 = uVar15 >> 0x10;
   iVar1 = 0;
   bVar2 = false;
-  for (iStack280 = 0; uVar8 = uVar16, iStack280 < 0xa; iStack280 += 1) {
+//   for (iStack280 = 0; uVar8 = uVar16, iStack280 < 0xa; iStack280 += 1)
+  iStack280 = 0;
+  uVar8 = uVar16;
+  while iStack280 < 0xa
+  {
     uVar12 = ((uVar14 & 0xffff0000) >> 0x10);
     if (((iStack280 * 0xc + iVar4 + 0x2) | (iStack280 * 0xc + iVar4)) != 0) {
       plVar10 = (iStack280 * 0xc + iVar4);
@@ -707,6 +724,7 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
       iVar1 += 0x1;
       bVar2 = true;
     }
+    iStack280 += 1;
   }
   if (!bVar2) {
     lp_string = load_string_1010_847e(_u16_1050_14cc,0x531);

@@ -30,22 +30,22 @@ pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_
   send_msg_1038_c228(CONCAT22(param_2,param_1));
   uStack6 = load_string_1010_847e(_u16_1050_14cc,0x531);
   if (param_4 == 0x177) {
-    pass1_1008_e05e((param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19eU),
+    pass1_1008_e05e((param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19e),
                     CONCAT22(param_2,param_1 + 0x9e));
     load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x200,local_40c,&DAT_1050_1050)
     ;
-    sys_1000_3f9c(CONCAT22(0x1050,local_70c),CONCAT22(0x1050,local_40c),param_1 + 0x19eU);
+    sys_1000_3f9c(CONCAT22(0x1050,local_70c),CONCAT22(0x1050,local_40c),param_1 + 0x19e);
     load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_50c,&DAT_1050_1050)
     ;
     MessageBox16(0x30,CONCAT22(0x1050,local_50c),CONCAT22(0x1050,local_70c),(param_1 + 0x6));
   }
   else {
     if (param_4 != 0x178) {
-      if ((param_4 != 0x178) && (param_4 - 0x179U < 0x2)) {
+      if ((param_4 != 0x178) && (param_4 - 0x179 < 0x2)) {
         set_win_pos_1038_c31a(CONCAT22(param_2,param_1),param_3,param_4);
         return;
       }
-      post_win_msg_1040_7b3c((StructC *)CONCAT22(param_2,param_1),param_3,param_4,param_4);
+      post_win_msg_1040_7b3c(CONCAT22(param_2,param_1),param_3,param_4,param_4);
       return;
     }
     uStack10 = CONCAT22(param_2,param_1 + 0x9e);
@@ -100,11 +100,11 @@ pub unsafe fn enable_win_1038_c294(mut param_1: u32)
   uVar1 = param_1 + 0x9e;
   pcStack12 = (param_1 & 0xffff0000 | uVar1);
   uVar3 = param_1;
-  pass1_1008_e320((param_1 + 0x8e),(param_1 & 0xffff0000 | (param_1 + 0x19eU))
+  pass1_1008_e320((param_1 + 0x8e),(param_1 & 0xffff0000 | (param_1 + 0x19e))
                   ,(param_1 & 0xffff0000 | uVar1));
   SetWindowText16(CONCAT22(uVar3,uVar1),(param_1 + 0x9a));
   uVar2 = pass1_1008_e2a4((param_1 + 0x8e),
-                          (param_1 & 0xffff0000 | (param_1 + 0x19eU)),pcStack12);
+                          (param_1 & 0xffff0000 | (param_1 + 0x19e)),pcStack12);
   EnableWindow16(uVar2 & 0x1,(param_1 + 0x96));
   EnableWindow16(uVar2 & 0x2,(param_1 + 0x98));
   return;
@@ -303,9 +303,9 @@ pub unsafe fn win_dlg_op_1038_c58e(mut param_1: u16 ,mut param_2: u32)
   wsprintf16(local_80e,CONCAT22(local_40c,0x1050),CONCAT22(uStack10,0x1050),
              (uStack10 >> 0x10));
   SetWindowText16(CONCAT22(0x1050,local_80e),(iVar2 + 0x6));
-  puStack2070 = (param_2 & 0xffff0000 | (iVar2 + 0x96U));
+  puStack2070 = (param_2 & 0xffff0000 | (iVar2 + 0x96));
   pass1_1008_e038((iVar2 + 0x8e),(param_2 & 0xffff0000 | ZEXT24((iVar2 + 0x92))),
-                  (param_2 & 0xffff0000 | (iVar2 + 0x96U)));
+                  (param_2 & 0xffff0000 | (iVar2 + 0x96)));
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x400,local_80e,
              &DAT_1050_1050);
@@ -332,7 +332,7 @@ pub unsafe fn message_box_op_1038_c672(param_1: u8,mut param_2: i16,mut param_3:
   }
   else {
     if (param_5 != 0x17e) {
-      post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+      post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
       return;
     }
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,&DAT_1050_1050);
@@ -359,8 +359,8 @@ pub unsafe fn pass1_1038_c726(StructD_32: *mut StructD,param_2: u8) -> *mut Stru
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-astruct_57 *
-pass1_1038_c7b8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn
+pass1_1038_c7b8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut astruct_57
 
 {
   let mut in_register_0000000a: u16;
@@ -425,7 +425,7 @@ pub unsafe fn destroy_window_1038_c836(param_1: *mut astruct_881,mut param_2: u3
     return;
   }
   post_win_msg_1040_7b3c
-            ((StructC *)CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
+            (CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
   return;
 }
 
@@ -658,7 +658,7 @@ pub unsafe fn show_win_1038_cb5c(mut param_1: u32,struct_b_param_1: *mut StructB
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn destroy_window_1038_cc00(StructC *param_1,mut param_2: u16 ,mut param_3: u32,param_4: *mut u8)
+pub unsafe fn destroy_window_1038_cc00(param_1: *mut StructC,mut param_2: u16 ,mut param_3: u32,param_4: *mut u8)
 
 {
   let mut uVar1: u16;
@@ -862,7 +862,7 @@ pub unsafe fn make_proc_inst_1038_cf6c(param_1: *mut u8,param_2: *mut astruct_83
 {
   let mut iVar1: *mut astruct_831;
   let mut uVar1: u16;
-pub unsafe fn *pvVar1;
+// pub unsafe fn *pvVar1;
 
   uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
@@ -895,7 +895,7 @@ pub unsafe fn free_proc_inst_1038_cfda(param_1: *mut StructD)
   iVar1 = param_1;
   param_1.address_offset_field_0x0 = 0xd23e;
   iVar1.address_offset_field_0x2 = &u16_1050_1038;
-  FreeProcInstance16(*(void **)&iVar1.hfile_0x4);
+  FreeProcInstance16(&iVar1.hfile_0x4);
   FreeProcInstance16(_u16_1050_5bcc);
   iVar1.hfile_0x4 = 0;
   param_1.address_offset_field_0x0 = 0x389a;

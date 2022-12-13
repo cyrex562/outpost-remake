@@ -276,27 +276,27 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
   let mut fn_ptr_1: *mut *mut code;
 
   match param_5 {
-  0xfa =>
+  0xfa =>{
     fn_ptr_1 = (*param_2.field144_0x94 + 0x18);
-    (**fn_ptr_1)();
-    break;
-  _ =>
+    (**fn_ptr_1)();}
+    // break;
+  _ =>{
     pass1_1040_b54a(param_1,CONCAT13((param_3 >> 0x8),CONCAT12(param_3,param_2)),param_4,
                     param_5);
-    return;
-  0xfd =>
+    return;}
+  0xfd =>{
     if (DAT_1050_0ecc == 0) {
       return;
     }
-    DAT_1050_0ecc = 0;
+    DAT_1050_0ecc = 0;}
 // TODO: goto LAB_1040_755d;
-  0xfe =>
+  0xfe =>{
     if (DAT_1050_0ecc == 1) {
       return;
     }
-    DAT_1050_0ecc = 0x1;
+    DAT_1050_0ecc = 0x1;}
 // TODO: goto LAB_1040_755d;
-  0xff =>
+  0xff =>{
     if (DAT_1050_0ecc == 0x2) {
       return;
     }
@@ -306,17 +306,17 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
     fn_ptr_1 = (*param_2.field144_0x94 + 0x10);
     (**fn_ptr_1)(&PTR_LOOP_1050_1040,puVar1,(puVar1 >> 0x10));
     pass1_1010_2ee2(param_2.field144_0x94);
-    PostMessage16(0x0,0x10a,0x111,param_2.field6_0x6);
-    break;
-  0x107 =>
-    iVar2 = 0;
+    PostMessage16(0x0,0x10a,0x111,param_2.field6_0x6);}
+    // break;
+  0x107 =>{
+    iVar2 = 0;}
 // TODO: goto LAB_1040_75ba;
-  0x108 =>
+  0x108 =>{
     iVar2 = 0x1;//
 // LAB_1040_75ba:
-    win_ui_op_1010_3202(param_2.field144_0x94,iVar2);
-    break;
-  0x10a =>
+    win_ui_op_1010_3202(param_2.field144_0x94,iVar2);}
+    // break;
+  0x10a =>{
     GetClientRect16(&local_a,&DAT_1050_1050);
     puVar1 = param_2.field144_0x94;
     local_a.y += 0x3;
@@ -326,10 +326,10 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
     InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
     unk_destroy_win_op_1010_2fa0(param_2.field144_0x94);
     pass1_1010_32c0(param_2.field144_0x94,0x0);
-    pass1_1010_2ee2(param_2.field144_0x94);
-    break;
-  0x10c =>
-    DestroyWindow16(param_2.field6_0x6);
+    pass1_1010_2ee2(param_2.field144_0x94);}
+    // break;
+  0x10c =>{
+    DestroyWindow16(param_2.field6_0x6);}
   }
   return;
 }
@@ -353,7 +353,7 @@ pub unsafe fn create_window_1040_7620(mut param_1: u32,mut param_2: i16,pstruct_
   }
   uVar1 = (pstruct_param_3 >> 0x10);
   iVar1 = pstruct_param_3;
-  CreateWindow16(0x0,CONCAT22(param_5,HINSTANCE16_1050_038c),*(HINSTANCE16 *)(param_1 + 0x6),
+  CreateWindow16(0x0,CONCAT22(param_5,HINSTANCE16_1050_038c),(param_1 + 0x6),
                  iVar1.field4_0x6,iVar1.field3_0x4,iVar1.field2_0x2,pstruct_param_3,_h_instance,
                  (_h_instance >> 0x10),window_name,s_button_1050_5da8);
   return;
@@ -471,9 +471,9 @@ pub unsafe fn dialog_ui_fn_1040_78e2(in_struct_1: *mut StructB)
    let mut local_string_1: *mut StructB;
   let mut uVar3: u16;
   let mut lVar4: i32;
-  HANDLE16 local_string_2;
-  HANDLE16 HStack8;
-pub unsafe fn *pvStack6;
+  let mut local_string_2: HANDLE16;
+  let mut HStack8: HANDLE16;
+// pub unsafe fn *pvStack6;
   let mut fn_ptr_1: *mut *mut code;
 
   local_string_1 = (in_struct_1 >> 0x10);
@@ -495,11 +495,11 @@ pub unsafe fn *pvStack6;
   GetWindowText16(0x50,in_struct_1 & 0xffff0000 | ZEXT24(&struct_b_1.field8_0x10),dialog_handle);
   lVar4 = GetWindowLong16(-0x4,struct_b_1.lpvoid_field_0x8);
   SetWindowLong16(_u16_1050_5bcc,-0x4,struct_b_1.lpvoid_field_0x8);
-  SetProp16((HANDLE16)struct_b_1,s_thisLo_1050_5dcd,struct_b_1.lpvoid_field_0x8);
-  SetProp16((HANDLE16)local_string_1,s_thisHi_1050_5dd4,struct_b_1.lpvoid_field_0x8);
-  local_string_2 = (HANDLE16)lVar4;
+  SetProp16(struct_b_1,s_thisLo_1050_5dcd,struct_b_1.lpvoid_field_0x8);
+  SetProp16(local_string_1,s_thisHi_1050_5dd4,struct_b_1.lpvoid_field_0x8);
+  local_string_2 = lVar4;
   SetProp16(local_string_2,s_procLo_1050_5ddb,struct_b_1.lpvoid_field_0x8);
-  HStack8 = (HANDLE16)(lVar4 >> 0x10);
+  HStack8 = (lVar4 >> 0x10);
   SetProp16(HStack8,s_procHi_1050_5de2,struct_b_1.lpvoid_field_0x8);
   fn_ptr_1 = (in_struct_1 + 0x50);
   (**fn_ptr_1)(s_tile2_bmp_1050_1538,in_struct_1);
@@ -533,7 +533,7 @@ pub unsafe fn pass1_1040_79c0(param_1: u32,param_2: *mut i16,mut param_3: u16 ,m
         (**ppcVar1)();
         return 0x1;
       }
-      if (cVar2 == '\f') {
+      if (cVar2 == '\x0f') {
         ppcVar1 = (*param_1 + 0x18);
         (**ppcVar1)();
         return 0x1;
@@ -593,7 +593,7 @@ pub unsafe fn pass1_1040_79c0(param_1: u32,param_2: *mut i16,mut param_3: u16 ,m
 
 
 
-pub unsafe fn post_win_msg_1040_7b3c(StructC *param_1,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16) -> BOOL16
+pub unsafe fn post_win_msg_1040_7b3c(param_1: *mut StructC,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16) -> BOOL16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -636,11 +636,11 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
   let mut x: i16;
   let mut y1: i16;
   let mut iVar5: i16;
-  pen_handle: HPEN16;
+  let mut pen_handle: HPEN16;
   let mut obj_handle: HGDIOBJ16;
   let mut y: i16;
   let mut brush_handle: HGDIOBJ16;
-  HANDLE16 handle;
+  let mut handle: HANDLE16;
   let mut count: u16;
   let mut count_00: i16;
    let mut struct_1: *mut astruct_14;
@@ -687,7 +687,7 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
       LineTo16(y1,0x0,win_hdc16_4);
       LineTo16(0x0,0x0,win_hdc16_4);
       win_i32 = GetWindowLong16(-0x10,struct_1.hwnd16_field6_0x6);
-      if (((win_i32 & 0x800000U) != 0) && ((win_i32 & 0x400000U) != 0)) {
+      if (((win_i32 & 0x800000) != 0) && ((win_i32 & 0x400000) != 0)) {
         y = struct_1.field96_0x62 - struct_1.field98_0x66;
         MoveTo16(y,0x0,win_hdc16_4);
         LineTo16(y,x,win_hdc16_4);
@@ -818,7 +818,7 @@ pub unsafe fn menu_ui_op_1040_7f86(param_1: *mut astruct_855)
 {
 //   HMENlet mut HVar1: u16;
 let mut HVar1: HMENU16;
-iVar2: *mut astruct_855;
+let mut iVar2: *mut astruct_855;
   let mut uVar2: u16;
 
   uVar2 = (param_1 >> 0x10);

@@ -11,7 +11,9 @@ pub unsafe fn show_win_1038_b634(mut param_1: u32)
   iVar2 = param_1;
   if ((iVar2 + 0xac) == 0) {
     (iVar2 + 0xac) = 0x1;
-    for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 1) {
+    // for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 1)
+    for uStack4 in 0x1 .. 0x2b
+    {
       if (((uStack4 * 0x4 + iVar2 + 0x2) | (uStack4 * 0x4 + iVar2)) != 0) {
         uVar1 = (uStack4 * 0x4 + iVar2);
         ShowWindow16(0x0,(uVar1 + 0x6));
@@ -32,7 +34,9 @@ pub unsafe fn show_win_1038_b68a(mut param_1: u32)
   iVar2 = param_1;
   if ((iVar2 + 0xac) != 0) {
     (iVar2 + 0xac) = 0;
-    for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 1) {
+    // for (uStack4 = 0x1; uStack4 < 0x2b; uStack4 += 1)
+    for uStack4 in 0x1 .. 0x2b
+    {
       if (((uStack4 * 0x4 + iVar2 + 0x2) | (uStack4 * 0x4 + iVar2)) != 0) {
         uVar1 = (uStack4 * 0x4 + iVar2);
         ShowWindow16(0x1,(uVar1 + 0x6));
@@ -100,7 +104,7 @@ pub unsafe fn pass1_1038_b772(param_1: *mut u8,param_2: *mut astruct_57,mut para
   let mut in_stack_0000ffca: u16;
   let mut in_stack_0000ffd0: u16;
   let mut in_stack_0000ffd4: u16;
-  ppuVar3: *mut *mut u8;
+  let mut ppuVar3: *mut *mut u8;
 
   paVar1 = CONCAT22(in_register_0000000a,param_1);
   get_sys_metrics_1040_7728(param_2,0x9a,0x0,0xfbf,param_3);
@@ -186,13 +190,18 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16 ,struct_b_param_1: *mut Struc
   uVar1 &= 0xffff0000;
   piVar6 = (uVar1 | uVar4);
   iStack10 = 0;
-  for (iStack12 = 0x1a0; extraout_DX = uVar9, iStack12 < 0x1b5; iStack12 += 1) {
+//   for (iStack12 = 0x1a0; extraout_DX = uVar9, iStack12 < 0x1b5; iStack12 += 1)
+  iStack12 = 0x1a0;
+  extraout_DX = uVar9;
+  while iStack12 < 0x1b5
+  {
     if ((iStack10 * 0x2 + uVar4) == iStack12) {
       iStack10 += 0x1;
     }
     else {
       CheckDlgButton16(0x2,iStack12,struct_b_8.lpvoid_field_0x8);
     }
+    iStack12 += 1;
   }
   HVar5 = GetDlgItem16(0xfb1,struct_b_8.lpvoid_field_0x8);
   win_enabled = EnableWindow16(0x0,HVar5);
@@ -212,7 +221,7 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16 ,struct_b_param_1: *mut Struc
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ) -> u32
+pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,param_2: *mut StructC,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ) -> u32
 
 {
   let mut piVar1: *mut i16;
@@ -222,8 +231,8 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut par
   let mut BVar5: bool;
   let mut uVar6: u16;
   let mut uVar7: u16;
-  StructC *iVar8;
-  StructC *uVar8;
+  let mut iVar8: *mut StructC;
+  let mut uVar8: *mut StructC;
   let mut uVar9: u16;
   let mut LVar10: LRESULT;
   let mut pcVar11: *mut c_char;
@@ -233,7 +242,7 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut par
   let mut in_stack_0000fb62: u16;
   let mut in_stack_0000fb66: u16;
   let mut uVar13: u8;
-  WORD *pWVar14;
+  let mut pWVar14: *mut WORD;
   let mut uVar15: u16;
   let mut puStack1128: *mut u32;
   let mut local_464: [u8;0x50] = [0;0x50];
@@ -248,8 +257,8 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut par
 
   BStack6 = 0;
   uStack4 = 0;
-  iVar8 = (StructC *)param_2;
-  uVar8 = (StructC *)(param_2 >> 0x10);
+  iVar8 = param_2;
+  uVar8 = (param_2 >> 0x10);
   if (param_4 < 0x1b5) {
     if (param_4 < 0x1a0) {
 //      if (param_4 != 0x2) goto LAB_1038_bbbf;
@@ -305,7 +314,9 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut par
   }
   else {
     if (param_4 == 0xfb1) {
-      for (uVar6 = 0x1a0; uVar6 < 0x1b5; uVar6 += 1) {
+    //   for (uVar6 = 0x1a0; uVar6 < 0x1b5; uVar6 += 1)
+    for uVar6 in 0x1a0 .. 0x1b5
+    {
         UVar3 = IsDlgButtonChecked(uVar6,iVar8.field6_0x6);
         if (UVar3 == 1) {
           pass1_1008_d818(iVar8.field141_0x8e,uVar6);
@@ -375,7 +386,7 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,StructC *param_2,mut par
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_cursor_op_1038_bc30(StructC *param_1)
+pub unsafe fn win_ui_cursor_op_1038_bc30(param_1: *mut StructC)
 
 {
   let mut uVar1: u32;

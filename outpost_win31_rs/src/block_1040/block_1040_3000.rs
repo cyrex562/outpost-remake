@@ -52,8 +52,8 @@ pub unsafe fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3
     pass1_1010_038e(paVar6,iVar7);
   }
   else {
-    if ((param_4 == 0x181) || (0x1 < param_4 - 0x182U)) {
-      post_win_msg_1040_7b3c((StructC *)CONCAT22(param_2,param_1),param_3,param_4,param_4);
+    if ((param_4 == 0x181) || (0x1 < param_4 - 0x182)) {
+      post_win_msg_1040_7b3c(CONCAT22(param_2,param_1),param_3,param_4,param_4);
       return;
     }
     set_win_pos_1040_331a(CONCAT22(param_2,param_1),param_3,param_4);
@@ -93,11 +93,11 @@ pub unsafe fn enable_win_1040_32a8(mut param_1: u32)
   uVar1 = param_1 + 0x19a;
   uStack12 = param_1 & 0xffff0000 | uVar1;
   uVar2 = param_1;
-  pass1_1018_3a5c((param_1 + 0x96),(param_1 & 0xffff0000 | (param_1 + 0x9aU)),
+  pass1_1018_3a5c((param_1 + 0x96),(param_1 & 0xffff0000 | (param_1 + 0x9a)),
                   (param_1 & 0xffff0000 | uVar1));
   SetWindowText16(CONCAT22(uVar2,uVar1),(param_1 + 0x90));
   BVar1 = string_1018_39d8((param_1 + 0x96),
-                           (param_1 & 0xffff0000 | (param_1 + 0x9aU)),uStack12);
+                           (param_1 & 0xffff0000 | (param_1 + 0x9a)),uStack12);
   EnableWindow16(BVar1 & 0x1,(param_1 + 0x8e));
   return;
 }
@@ -384,7 +384,7 @@ pub unsafe fn message_box_op_1040_37f0(mut param_1: u16 ,mut param_2: i16,mut pa
   }
   else {
     if (param_5 != 0x194) {
-      post_win_msg_1040_7b3c((StructC *)CONCAT22(param_3,param_2),param_4,param_5,param_5);
+      post_win_msg_1040_7b3c(CONCAT22(param_3,param_2),param_4,param_5,param_5);
       return;
     }
     pass1_1038_af40(param_2,param_1,_PTR_LOOP_1050_5b7c,(param_2 + 0x8),0x21);
@@ -545,17 +545,17 @@ pub unsafe fn show_win_1040_3ae8(param_1: *mut StructB)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
+pub unsafe fn win_ui_op_1040_3b1e(mut param_1: u16 ,struct_c_param_1: *mut StructC)
 
 {
   let mut uVar1: u32;
   let mut BVar2: bool;
   let mut HVar3: HWND16;
-  StructC *pSVar4;
+  let mut pSVar4: *mut StructC;
   let mut in_register_0000000a: u16;
-  StructC *struct_c_4;
+  let mut struct_c_4: *mut StructC;
   let mut unaff_SI: u16;
-  StructC *struct_c_param_2;
+  let mut struct_c_param_2: *mut StructC;
   let mut uVar5: u32;
   let mut in_stack_0000fd8a: u16;
   let mut in_stack_0000feae: u16;
@@ -571,8 +571,8 @@ pub unsafe fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
                              CONCAT22(unaff_SI,0x2),in_stack_0000fd8a,in_stack_0000feae,in_stack_0000feb4,
                              in_stack_0000feb8);
   uStack10 = (puStack6 + 0x68);
-  struct_c_param_2 = (StructC *)(struct_c_param_1 >> 0x10);
-  struct_c_4 = (StructC *)struct_c_param_1;
+  struct_c_param_2 = (struct_c_param_1 >> 0x10);
+  struct_c_4 = struct_c_param_1;
   GetWindowText16(0x80,CONCAT22(0x1050,local_8c),struct_c_4.field6_0x6);
   wsprintf16(local_10e,CONCAT22(local_8c,0x1050),CONCAT22(uStack10,0x1050),
              (uStack10 >> 0x10));
@@ -603,7 +603,7 @@ pub unsafe fn win_ui_op_1040_3b1e(mut param_1: u16 ,StructC *struct_c_param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn unk_win_ui_op_1040_3c64
-               (mut param_1: u16 ,StructC *struct_c_param_1,StructC *struct_c_param_2,mut param_4: u16 ,mut param_5: u32)
+               (mut param_1: u16 ,struct_c_param_1: *mut StructC,struct_c_param_2: *mut StructC,mut param_4: u16 ,mut param_5: u32)
 
 {
   let mut UVar1: u16;
@@ -636,7 +636,7 @@ pub unsafe fn unk_win_ui_op_1040_3c64
     if (param_5 - 0x186 < 0x2) {//
 // LAB_1040_3c7f:
       post_win_msg_1040_7b3c
-                ((StructC *)CONCAT22(struct_c_param_2,struct_c_param_1),param_4,param_5,param_5);
+                (CONCAT22(struct_c_param_2,struct_c_param_1),param_4,param_5,param_5);
       return;
     }
     if (param_5 - 0x188 < 0x5 || param_5 == 0x18d) {
@@ -650,7 +650,7 @@ pub unsafe fn unk_win_ui_op_1040_3c64
         return;
       }
     }
-    dialog_item_ui_op_1040_3e08((StructC *)CONCAT22(struct_c_param_2,struct_c_param_1));
+    dialog_item_ui_op_1040_3e08(CONCAT22(struct_c_param_2,struct_c_param_1));
   }
   return;
 }
@@ -686,7 +686,7 @@ pub unsafe fn get_dc_op_1040_3d5e(param_1: *mut astruct_1) -> u16
   ReleaseDC16(local_4,iVar4.field6_0x6);
   return 0x0;
 }
-pub unsafe fn invalidate_rect_1040_3ddc(StructC *in_struct_1)
+pub unsafe fn invalidate_rect_1040_3ddc(in_struct_1: *mut StructC)
 
 {
   let mut rect: RECT16;
@@ -697,16 +697,16 @@ pub unsafe fn invalidate_rect_1040_3ddc(StructC *in_struct_1)
   InvalidateRect16(0x0,&rect,&DAT_1050_1050);
   return;
 }
-pub unsafe fn dialog_item_ui_op_1040_3e08(StructC *struct_c_param_1)
+pub unsafe fn dialog_item_ui_op_1040_3e08(struct_c_param_1: *mut StructC)
 
 {
   let mut uVar1: u16;
-  StructC *struct_c_1;
+  let mut struct_c_1: *mut StructC;
   let mut var3: u16;
   let mut LVar2: LRESULT;
 
   var3 = (struct_c_param_1 >> 0x10);
-  struct_c_1 = (StructC *)struct_c_param_1;
+  struct_c_1 = struct_c_param_1;
   CheckRadioButton16(struct_c_1.field149_0xa0,0x18d,0x188,struct_c_1.field6_0x6);
   struct_c_1.field147_0x9c = 0;
   struct_c_1.field148_0x9e = 0;
@@ -718,28 +718,28 @@ pub unsafe fn dialog_item_ui_op_1040_3e08(StructC *struct_c_param_1)
   SetDlgItemInt16(0x0,struct_c_1.field147_0x9c,0x18e,struct_c_1.field6_0x6);
   SetDlgItemInt16(0x0,struct_c_1.field148_0x9e,0x191,struct_c_1.field6_0x6);
   match struct_c_1.field149_0xa0 {
-  0x188 =>
-    struct_c_1.field152_0xa4 = 0x5;
-    break;
-  0x189 =>
-    struct_c_1.field152_0xa4 = 0x6;
-    break;
-  0x18a =>
-    struct_c_1.field152_0xa4 = 0x7;
-    break;
-  0x18b =>
-    struct_c_1.field152_0xa4 = 0x8;
-    break;
-  0x18c =>
-    struct_c_1.field152_0xa4 = 0x9;
-    break;
-  0x18d =>
-    struct_c_1.field152_0xa4 = 0xa;
+  0x188 =>{
+    struct_c_1.field152_0xa4 = 0x5;}
+    // break;
+  0x189 =>{
+    struct_c_1.field152_0xa4 = 0x6;}
+    // break;
+  0x18a =>{
+    struct_c_1.field152_0xa4 = 0x7;}
+    // break;
+  0x18b =>{
+    struct_c_1.field152_0xa4 = 0x8;}
+    // break;
+  0x18c =>{
+    struct_c_1.field152_0xa4 = 0x9;}
+    // break;
+  0x18d =>{
+    struct_c_1.field152_0xa4 = 0xa;}
   }
   invalidate_rect_1040_3ddc(struct_c_param_1);
   return;
 }
-pub unsafe fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *struct_c_param_2,mut param_3: u32)
+pub unsafe fn send_dlg_item_msg_1040_3f12(struct_c_param_1: *mut StructC,struct_c_param_2: *mut StructC,mut param_3: u32)
 
 {
   let mut puVar1: *mut u8;
@@ -755,7 +755,7 @@ pub unsafe fn send_dlg_item_msg_1040_3f12(StructC *struct_c_param_1,StructC *str
     puVar1 = local_a;
     pass1_1008_5b12(CONCAT22(0x1050,puVar1));
     if ((extraout_DX | puVar1) == 0) { break; }
-    LVar3 = SendDlgItemMessage16(*(LPARAM *)(puVar1 + 0x4),0x0,0x401,0x190,struct_c_param_1.field6_0x6);
+    LVar3 = SendDlgItemMessage16((puVar1 + 0x4),0x0,0x401,0x190,struct_c_param_1.field6_0x6);
     iVar2 = (LVar3 >> 0x10);
     if (((LVar3 == -1) && (iVar2 == -1)) || ((LVar3 == -0x2 && (iVar2 == -1)))) { break; }
   }

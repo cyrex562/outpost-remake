@@ -1,5 +1,4 @@
 use crate::block_1000;
-use crate::block_1000_1000;
 use crate::utils::CONCAT22;
 
 pub unsafe fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
@@ -668,7 +667,7 @@ pub unsafe fn pass1_1000_2cb0(param_1: *mut u16) {
 
     bVar2 = *(param_1 + 0x5);
     if (((bVar2 & 0x83) != 0) && ((bVar2 & 0x8) != 0)) {
-        block_1000_1000::pass1_1000_16ee(param_1[0x3], param_1[0x4]);
+        pass1_1000_16ee(param_1[0x3], param_1[0x4]);
         pu_var1 = param_1 + 0x5;
         *pu_var1 = *pu_var1 & 0xf7;
         param_1[0x3] = 0;
@@ -684,7 +683,7 @@ pub unsafe fn mem_1000_2ce8(mut param_1: u16, param_2: *mut i16) {
     let mut piVar1: *mut i16;
     let mut u_var2: u16;
 
-    u_var2 = block_1000_1000::mem_1000_167a(param_1, 0x200);
+    u_var2 = mem_1000_167a(param_1, 0x200);
     if (param_1 == 0) {
         piVar1 = param_2 + 0x5;
         *piVar1 = *piVar1 | 0x4;

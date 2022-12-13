@@ -1,1706 +1,1706 @@
 
 struct astruct_894 {
-    let mut field0_0x0: u8;
-    let mut field1_0x1: u8;
-    let mut field2_0x2: u8;
-    let mut field3_0x3: u8;
-    let mut field4_0x4: u8;
-    let mut field5_0x5: u8;
-    let mut hwnd_0x6: HWND16;
-    let mut field7_0x8: u8;
-    let mut field8_0x9: u8;
-    let mut field9_0xa: u8;
-    let mut field10_0xb: u8;
-    let mut field11_0xc: u8;
-    let mut field12_0xd: u8;
-    let mut field13_0xe: u8;
-    let mut field14_0xf: u8;
-    let mut field15_0x10: u8;
-    let mut field16_0x11: u8;
-    let mut field17_0x12: u8;
-    let mut field18_0x13: u8;
-    let mut field19_0x14: u8;
-    let mut field20_0x15: u8;
-    let mut field21_0x16: u8;
-    let mut field22_0x17: u8;
-    let mut field23_0x18: u8;
-    let mut field24_0x19: u8;
-    let mut field25_0x1a: u8;
-    let mut field26_0x1b: u8;
-    let mut field27_0x1c: u8;
-    let mut field28_0x1d: u8;
-    let mut field29_0x1e: u8;
-    let mut field30_0x1f: u8;
-    let mut field31_0x20: u8;
-    let mut field32_0x21: u8;
-    let mut field33_0x22: u8;
-    let mut field34_0x23: u8;
-    let mut field35_0x24: u8;
-    let mut field36_0x25: u8;
-    let mut field37_0x26: u8;
-    let mut field38_0x27: u8;
-    let mut field39_0x28: u8;
-    let mut field40_0x29: u8;
-    let mut field41_0x2a: u8;
-    let mut field42_0x2b: u8;
-    let mut field43_0x2c: u8;
-    let mut field44_0x2d: u8;
-    let mut field45_0x2e: u8;
-    let mut field46_0x2f: u8;
-    let mut field47_0x30: u8;
-    let mut field48_0x31: u8;
-    let mut field49_0x32: u8;
-    let mut field50_0x33: u8;
-    let mut field51_0x34: u8;
-    let mut field52_0x35: u8;
-    let mut field53_0x36: u8;
-    let mut field54_0x37: u8;
-    let mut field55_0x38: u8;
-    let mut field56_0x39: u8;
-    let mut field57_0x3a: u8;
-    let mut field58_0x3b: u8;
-    let mut field59_0x3c: u8;
-    let mut field60_0x3d: u8;
-    let mut field61_0x3e: u8;
-    let mut field62_0x3f: u8;
-    let mut field63_0x40: u8;
-    let mut field64_0x41: u8;
-    let mut field65_0x42: u8;
-    let mut field66_0x43: u8;
-    let mut field67_0x44: u8;
-    let mut field68_0x45: u8;
-    let mut field69_0x46: u8;
-    let mut field70_0x47: u8;
-    let mut field71_0x48: u8;
-    let mut field72_0x49: u8;
-    let mut field73_0x4a: u8;
-    let mut field74_0x4b: u8;
-    let mut field75_0x4c: u8;
-    let mut field76_0x4d: u8;
-    let mut field77_0x4e: u8;
-    let mut field78_0x4f: u8;
-    let mut field79_0x50: u8;
-    let mut field80_0x51: u8;
-    let mut field81_0x52: u8;
-    let mut field82_0x53: u8;
-    let mut field83_0x54: u8;
-    let mut field84_0x55: u8;
-    let mut field85_0x56: u8;
-    let mut field86_0x57: u8;
-    let mut field87_0x58: u8;
-    let mut field88_0x59: u8;
-    let mut field89_0x5a: u8;
-    let mut field90_0x5b: u8;
-    let mut field91_0x5c: u8;
-    let mut field92_0x5d: u8;
-    let mut field93_0x5e: u8;
-    let mut field94_0x5f: u8;
-    let mut field95_0x60: u8;
-    let mut field96_0x61: u8;
-    let mut field97_0x62: u8;
-    let mut field98_0x63: u8;
-    let mut field99_0x64: u8;
-    let mut field100_0x65: u8;
-    let mut field101_0x66: u8;
-    let mut field102_0x67: u8;
-    let mut field103_0x68: u8;
-    let mut field104_0x69: u8;
-    let mut field105_0x6a: u8;
-    let mut field106_0x6b: u8;
-    let mut field107_0x6c: u8;
-    let mut field108_0x6d: u8;
-    let mut field109_0x6e: u8;
-    let mut field110_0x6f: u8;
-    let mut field111_0x70: u8;
-    let mut field112_0x71: u8;
-    let mut field113_0x72: u8;
-    let mut field114_0x73: u8;
-    let mut field115_0x74: u8;
-    let mut field116_0x75: u8;
-    let mut field117_0x76: u8;
-    let mut field118_0x77: u8;
-    let mut field119_0x78: u8;
-    let mut field120_0x79: u8;
-    let mut field121_0x7a: u8;
-    let mut field122_0x7b: u8;
-    let mut field123_0x7c: u8;
-    let mut field124_0x7d: u8;
-    let mut field125_0x7e: u8;
-    let mut field126_0x7f: u8;
-    let mut field127_0x80: u8;
-    let mut field128_0x81: u8;
-    let mut field129_0x82: u8;
-    let mut field130_0x83: u8;
-    let mut field131_0x84: u8;
-    let mut field132_0x85: u8;
-    let mut field133_0x86: u8;
-    let mut field134_0x87: u8;
-    let mut field135_0x88: u8;
-    let mut field136_0x89: u8;
-    let mut field137_0x8a: u8;
-    let mut field138_0x8b: u8;
-    let mut field139_0x8c: u8;
-    let mut field140_0x8d: u8;
-    let mut field141_0x8e: u8;
-    let mut field142_0x8f: u8;
-    struct astruct_18 * field143_0x90;
-    let mut field144_0x94: u8;
-    let mut field145_0x95: u8;
-    let mut field146_0x96: u8;
-    let mut field147_0x97: u8;
-    u32 * field148_0x98;
-    let mut field149_0x9c: u8;
-    let mut field150_0x9d: u8;
-    let mut field151_0x9e: u8;
-    let mut field152_0x9f: u8;
-    let mut field153_0xa0: u8;
-    let mut field154_0xa1: u8;
-    let mut field155_0xa2: u8;
-    let mut field156_0xa3: u8;
-    let mut field157_0xa4: u8;
-    let mut field158_0xa5: u8;
-    let mut field159_0xa6: u8;
-    let mut field160_0xa7: u8;
-    let mut field161_0xa8: u8;
-    let mut field162_0xa9: u8;
-    let mut field163_0xaa: u8;
-    let mut field164_0xab: u8;
-    let mut field165_0xac: u8;
-    let mut field166_0xad: u8;
-    let mut field167_0xae: u8;
-    let mut field168_0xaf: u8;
-    let mut field169_0xb0: u32;
-    let mut hwnd_0xb4: HWND16;
-    let mut field171_0xb6: HWND16;
-};
+    pub field0_0x0: u8,
+    pub field1_0x1: u8,
+    pub field2_0x2: u8,
+    pub field3_0x3: u8,
+    pub field4_0x4: u8,
+    pub field5_0x5: u8,
+    pub hwnd_0x6: HWND16,
+    pub field7_0x8: u8,
+    pub field8_0x9: u8,
+    pub field9_0xa: u8,
+    pub field10_0xb: u8,
+    pub field11_0xc: u8,
+    pub field12_0xd: u8,
+    pub field13_0xe: u8,
+    pub field14_0xf: u8,
+    pub field15_0x10: u8,
+    pub field16_0x11: u8,
+    pub field17_0x12: u8,
+    pub field18_0x13: u8,
+    pub field19_0x14: u8,
+    pub field20_0x15: u8,
+    pub field21_0x16: u8,
+    pub field22_0x17: u8,
+    pub field23_0x18: u8,
+    pub field24_0x19: u8,
+    pub field25_0x1a: u8,
+    pub field26_0x1b: u8,
+    pub field27_0x1c: u8,
+    pub field28_0x1d: u8,
+    pub field29_0x1e: u8,
+    pub field30_0x1f: u8,
+    pub field31_0x20: u8,
+    pub field32_0x21: u8,
+    pub field33_0x22: u8,
+    pub field34_0x23: u8,
+    pub field35_0x24: u8,
+    pub field36_0x25: u8,
+    pub field37_0x26: u8,
+    pub field38_0x27: u8,
+    pub field39_0x28: u8,
+    pub field40_0x29: u8,
+    pub field41_0x2a: u8,
+    pub field42_0x2b: u8,
+    pub field43_0x2c: u8,
+    pub field44_0x2d: u8,
+    pub field45_0x2e: u8,
+    pub field46_0x2f: u8,
+    pub field47_0x30: u8,
+    pub field48_0x31: u8,
+    pub field49_0x32: u8,
+    pub field50_0x33: u8,
+    pub field51_0x34: u8,
+    pub field52_0x35: u8,
+    pub field53_0x36: u8,
+    pub field54_0x37: u8,
+    pub field55_0x38: u8,
+    pub field56_0x39: u8,
+    pub field57_0x3a: u8,
+    pub field58_0x3b: u8,
+    pub field59_0x3c: u8,
+    pub field60_0x3d: u8,
+    pub field61_0x3e: u8,
+    pub field62_0x3f: u8,
+    pub field63_0x40: u8,
+    pub field64_0x41: u8,
+    pub field65_0x42: u8,
+    pub field66_0x43: u8,
+    pub field67_0x44: u8,
+    pub field68_0x45: u8,
+    pub field69_0x46: u8,
+    pub field70_0x47: u8,
+    pub field71_0x48: u8,
+    pub field72_0x49: u8,
+    pub field73_0x4a: u8,
+    pub field74_0x4b: u8,
+    pub field75_0x4c: u8,
+    pub field76_0x4d: u8,
+    pub field77_0x4e: u8,
+    pub field78_0x4f: u8,
+    pub field79_0x50: u8,
+    pub field80_0x51: u8,
+    pub field81_0x52: u8,
+    pub field82_0x53: u8,
+    pub field83_0x54: u8,
+    pub field84_0x55: u8,
+    pub field85_0x56: u8,
+    pub field86_0x57: u8,
+    pub field87_0x58: u8,
+    pub field88_0x59: u8,
+    pub field89_0x5a: u8,
+    pub field90_0x5b: u8,
+    pub field91_0x5c: u8,
+    pub field92_0x5d: u8,
+    pub field93_0x5e: u8,
+    pub field94_0x5f: u8,
+    pub field95_0x60: u8,
+    pub field96_0x61: u8,
+    pub field97_0x62: u8,
+    pub field98_0x63: u8,
+    pub field99_0x64: u8,
+    pub field100_0x65: u8,
+    pub field101_0x66: u8,
+    pub field102_0x67: u8,
+    pub field103_0x68: u8,
+    pub field104_0x69: u8,
+    pub field105_0x6a: u8,
+    pub field106_0x6b: u8,
+    pub field107_0x6c: u8,
+    pub field108_0x6d: u8,
+    pub field109_0x6e: u8,
+    pub field110_0x6f: u8,
+    pub field111_0x70: u8,
+    pub field112_0x71: u8,
+    pub field113_0x72: u8,
+    pub field114_0x73: u8,
+    pub field115_0x74: u8,
+    pub field116_0x75: u8,
+    pub field117_0x76: u8,
+    pub field118_0x77: u8,
+    pub field119_0x78: u8,
+    pub field120_0x79: u8,
+    pub field121_0x7a: u8,
+    pub field122_0x7b: u8,
+    pub field123_0x7c: u8,
+    pub field124_0x7d: u8,
+    pub field125_0x7e: u8,
+    pub field126_0x7f: u8,
+    pub field127_0x80: u8,
+    pub field128_0x81: u8,
+    pub field129_0x82: u8,
+    pub field130_0x83: u8,
+    pub field131_0x84: u8,
+    pub field132_0x85: u8,
+    pub field133_0x86: u8,
+    pub field134_0x87: u8,
+    pub field135_0x88: u8,
+    pub field136_0x89: u8,
+    pub field137_0x8a: u8,
+    pub field138_0x8b: u8,
+    pub field139_0x8c: u8,
+    pub field140_0x8d: u8,
+    pub field141_0x8e: u8,
+    pub field142_0x8f: u8,
+    pub field143_0x90: *mut astruct_18,
+    pub field144_0x94: u8,
+    pub field145_0x95: u8,
+    pub field146_0x96: u8,
+    pub field147_0x97: u8,
+    pub field148_0x98: *mut u32,
+    pub field149_0x9c: u8,
+    pub field150_0x9d: u8,
+    pub field151_0x9e: u8,
+    pub field152_0x9f: u8,
+    pub field153_0xa0: u8,
+    pub field154_0xa1: u8,
+    pub field155_0xa2: u8,
+    pub field156_0xa3: u8,
+    pub field157_0xa4: u8,
+    pub field158_0xa5: u8,
+    pub field159_0xa6: u8,
+    pub field160_0xa7: u8,
+    pub field161_0xa8: u8,
+    pub field162_0xa9: u8,
+    pub field163_0xaa: u8,
+    pub field164_0xab: u8,
+    pub field165_0xac: u8,
+    pub field166_0xad: u8,
+    pub field167_0xae: u8,
+    pub field168_0xaf: u8,
+    pub field169_0xb0: u32,
+    pub hwnd_0xb4: HWND16,
+    pub field171_0xb6: HWND16,
+}
 
 
 
 struct astruct_197 {
-    let mut field0_0x0: u8;
-    let mut field1_0x1: u8;
-    let mut field2_0x2: u8;
-    let mut field3_0x3: u8;
-    let mut field4_0x4: i16;
-    let mut field5_0x6: i16;
-    let mut field6_0x8: i16;
-};
+    pub field0_0x0: u8,
+    pub field1_0x1: u8,
+    pub field2_0x2: u8,
+    pub field3_0x3: u8,
+    pub field4_0x4: i16,
+    pub field5_0x6: i16,
+    pub field6_0x8: i16,
+}
 
 
 
 struct astruct_49 {
-    let mut field0_0x0: u8;
-    let mut field1_0x1: u8;
-    let mut field2_0x2: u8;
-    let mut field3_0x3: u8;
-    let mut field4_0x4: u8;
-    let mut field5_0x5: u8;
-    let mut field6_0x6: HWND16;
-    let mut field7_0x8: u8;
-    let mut field8_0x9: u8;
-    let mut field9_0xa: u8;
-    let mut field10_0xb: u8;
-    let mut field11_0xc: u8;
-    let mut field12_0xd: u8;
-    let mut field13_0xe: u8;
-    let mut field14_0xf: u8;
-    let mut field15_0x10: u8;
-    let mut field16_0x11: u8;
-    let mut field17_0x12: u8;
-    let mut field18_0x13: u8;
-    let mut field19_0x14: u8;
-    let mut field20_0x15: u8;
-    let mut field21_0x16: u8;
-    let mut field22_0x17: u8;
-    let mut field23_0x18: u8;
-    let mut field24_0x19: u8;
-    let mut field25_0x1a: u8;
-    let mut field26_0x1b: u8;
-    let mut field27_0x1c: u8;
-    let mut field28_0x1d: u8;
-    let mut field29_0x1e: u8;
-    let mut field30_0x1f: u8;
-    let mut field31_0x20: u8;
-    let mut field32_0x21: u8;
-    let mut field33_0x22: u8;
-    let mut field34_0x23: u8;
-    let mut field35_0x24: u8;
-    let mut field36_0x25: u8;
-    let mut field37_0x26: u8;
-    let mut field38_0x27: u8;
-    let mut field39_0x28: u8;
-    let mut field40_0x29: u8;
-    let mut field41_0x2a: u8;
-    let mut field42_0x2b: u8;
-    let mut field43_0x2c: u8;
-    let mut field44_0x2d: u8;
-    let mut field45_0x2e: u8;
-    let mut field46_0x2f: u8;
-    let mut field47_0x30: u8;
-    let mut field48_0x31: u8;
-    let mut field49_0x32: u8;
-    let mut field50_0x33: u8;
-    let mut field51_0x34: u8;
-    let mut field52_0x35: u8;
-    let mut field53_0x36: u8;
-    let mut field54_0x37: u8;
-    let mut field55_0x38: u8;
-    let mut field56_0x39: u8;
-    let mut field57_0x3a: u8;
-    let mut field58_0x3b: u8;
-    let mut field59_0x3c: u8;
-    let mut field60_0x3d: u8;
-    let mut field61_0x3e: u8;
-    let mut field62_0x3f: u8;
-    let mut field63_0x40: u8;
-    let mut field64_0x41: u8;
-    let mut field65_0x42: u8;
-    let mut field66_0x43: u8;
-    let mut field67_0x44: u8;
-    let mut field68_0x45: u8;
-    let mut field69_0x46: u8;
-    let mut field70_0x47: u8;
-    let mut field71_0x48: u8;
-    let mut field72_0x49: u8;
-    let mut field73_0x4a: u8;
-    let mut field74_0x4b: u8;
-    let mut field75_0x4c: u8;
-    let mut field76_0x4d: u8;
-    let mut field77_0x4e: u8;
-    let mut field78_0x4f: u8;
-    let mut field79_0x50: u8;
-    let mut field80_0x51: u8;
-    let mut field81_0x52: u8;
-    let mut field82_0x53: u8;
-    let mut field83_0x54: u8;
-    let mut field84_0x55: u8;
-    let mut field85_0x56: u8;
-    let mut field86_0x57: u8;
-    let mut field87_0x58: u8;
-    let mut field88_0x59: u8;
-    let mut field89_0x5a: u8;
-    let mut field90_0x5b: u8;
-    let mut field91_0x5c: u8;
-    let mut field92_0x5d: u8;
-    let mut field93_0x5e: u8;
-    let mut field94_0x5f: u8;
-    let mut field95_0x60: u8;
-    let mut field96_0x61: u8;
-    let mut field97_0x62: u8;
-    let mut field98_0x63: u8;
-    let mut field99_0x64: u8;
-    let mut field100_0x65: u8;
-    let mut field101_0x66: u8;
-    let mut field102_0x67: u8;
-    let mut field103_0x68: u8;
-    let mut field104_0x69: u8;
-    let mut field105_0x6a: u8;
-    let mut field106_0x6b: u8;
-    let mut field107_0x6c: u8;
-    let mut field108_0x6d: u8;
-    let mut field109_0x6e: u8;
-    let mut field110_0x6f: u8;
-    let mut field111_0x70: u8;
-    let mut field112_0x71: u8;
-    let mut field113_0x72: u8;
-    let mut field114_0x73: u8;
-    let mut field115_0x74: u8;
-    let mut field116_0x75: u8;
-    let mut field117_0x76: u8;
-    let mut field118_0x77: u8;
-    let mut field119_0x78: u8;
-    let mut field120_0x79: u8;
-    let mut field121_0x7a: u8;
-    let mut field122_0x7b: u8;
-    let mut field123_0x7c: u8;
-    let mut field124_0x7d: u8;
-    let mut field125_0x7e: u8;
-    let mut field126_0x7f: u8;
-    let mut field127_0x80: u8;
-    let mut field128_0x81: u8;
-    let mut field129_0x82: u8;
-    let mut field130_0x83: u8;
-    let mut field131_0x84: u8;
-    let mut field132_0x85: u8;
-    let mut field133_0x86: u8;
-    let mut field134_0x87: u8;
-    let mut field135_0x88: u8;
-    let mut field136_0x89: u8;
-    let mut field137_0x8a: u8;
-    let mut field138_0x8b: u8;
-    let mut field139_0x8c: u8;
-    let mut field140_0x8d: u8;
-    let mut field141_0x8e: u8;
-    let mut field142_0x8f: u8;
-    let mut field143_0x90: i32;
-};
+    pub field0_0x0: u8,
+    pub field1_0x1: u8,
+    pub field2_0x2: u8,
+    pub field3_0x3: u8,
+    pub field4_0x4: u8,
+    pub field5_0x5: u8,
+    pub field6_0x6: HWND16,
+    pub field7_0x8: u8,
+    pub field8_0x9: u8,
+    pub field9_0xa: u8,
+    pub field10_0xb: u8,
+    pub field11_0xc: u8,
+    pub field12_0xd: u8,
+    pub field13_0xe: u8,
+    pub field14_0xf: u8,
+    pub field15_0x10: u8,
+    pub field16_0x11: u8,
+    pub field17_0x12: u8,
+    pub field18_0x13: u8,
+    pub field19_0x14: u8,
+    pub field20_0x15: u8,
+    pub field21_0x16: u8,
+    pub field22_0x17: u8,
+    pub field23_0x18: u8,
+    pub field24_0x19: u8,
+    pub field25_0x1a: u8,
+    pub field26_0x1b: u8,
+    pub field27_0x1c: u8,
+    pub field28_0x1d: u8,
+    pub field29_0x1e: u8,
+    pub field30_0x1f: u8,
+    pub field31_0x20: u8,
+    pub field32_0x21: u8,
+    pub field33_0x22: u8,
+    pub field34_0x23: u8,
+    pub field35_0x24: u8,
+    pub field36_0x25: u8,
+    pub field37_0x26: u8,
+    pub field38_0x27: u8,
+    pub field39_0x28: u8,
+    pub field40_0x29: u8,
+    pub field41_0x2a: u8,
+    pub field42_0x2b: u8,
+    pub field43_0x2c: u8,
+    pub field44_0x2d: u8,
+    pub field45_0x2e: u8,
+    pub field46_0x2f: u8,
+    pub field47_0x30: u8,
+    pub field48_0x31: u8,
+    pub field49_0x32: u8,
+    pub field50_0x33: u8,
+    pub field51_0x34: u8,
+    pub field52_0x35: u8,
+    pub field53_0x36: u8,
+    pub field54_0x37: u8,
+    pub field55_0x38: u8,
+    pub field56_0x39: u8,
+    pub field57_0x3a: u8,
+    pub field58_0x3b: u8,
+    pub field59_0x3c: u8,
+    pub field60_0x3d: u8,
+    pub field61_0x3e: u8,
+    pub field62_0x3f: u8,
+    pub field63_0x40: u8,
+    pub field64_0x41: u8,
+    pub field65_0x42: u8,
+    pub field66_0x43: u8,
+    pub field67_0x44: u8,
+    pub field68_0x45: u8,
+    pub field69_0x46: u8,
+    pub field70_0x47: u8,
+    pub field71_0x48: u8,
+    pub field72_0x49: u8,
+    pub field73_0x4a: u8,
+    pub field74_0x4b: u8,
+    pub field75_0x4c: u8,
+    pub field76_0x4d: u8,
+    pub field77_0x4e: u8,
+    pub field78_0x4f: u8,
+    pub field79_0x50: u8,
+    pub field80_0x51: u8,
+    pub field81_0x52: u8,
+    pub field82_0x53: u8,
+    pub field83_0x54: u8,
+    pub field84_0x55: u8,
+    pub field85_0x56: u8,
+    pub field86_0x57: u8,
+    pub field87_0x58: u8,
+    pub field88_0x59: u8,
+    pub field89_0x5a: u8,
+    pub field90_0x5b: u8,
+    pub field91_0x5c: u8,
+    pub field92_0x5d: u8,
+    pub field93_0x5e: u8,
+    pub field94_0x5f: u8,
+    pub field95_0x60: u8,
+    pub field96_0x61: u8,
+    pub field97_0x62: u8,
+    pub field98_0x63: u8,
+    pub field99_0x64: u8,
+    pub field100_0x65: u8,
+    pub field101_0x66: u8,
+    pub field102_0x67: u8,
+    pub field103_0x68: u8,
+    pub field104_0x69: u8,
+    pub field105_0x6a: u8,
+    pub field106_0x6b: u8,
+    pub field107_0x6c: u8,
+    pub field108_0x6d: u8,
+    pub field109_0x6e: u8,
+    pub field110_0x6f: u8,
+    pub field111_0x70: u8,
+    pub field112_0x71: u8,
+    pub field113_0x72: u8,
+    pub field114_0x73: u8,
+    pub field115_0x74: u8,
+    pub field116_0x75: u8,
+    pub field117_0x76: u8,
+    pub field118_0x77: u8,
+    pub field119_0x78: u8,
+    pub field120_0x79: u8,
+    pub field121_0x7a: u8,
+    pub field122_0x7b: u8,
+    pub field123_0x7c: u8,
+    pub field124_0x7d: u8,
+    pub field125_0x7e: u8,
+    pub field126_0x7f: u8,
+    pub field127_0x80: u8,
+    pub field128_0x81: u8,
+    pub field129_0x82: u8,
+    pub field130_0x83: u8,
+    pub field131_0x84: u8,
+    pub field132_0x85: u8,
+    pub field133_0x86: u8,
+    pub field134_0x87: u8,
+    pub field135_0x88: u8,
+    pub field136_0x89: u8,
+    pub field137_0x8a: u8,
+    pub field138_0x8b: u8,
+    pub field139_0x8c: u8,
+    pub field140_0x8d: u8,
+    pub field141_0x8e: u8,
+    pub field142_0x8f: u8,
+    pub field143_0x90: i32,
+}
 
 
 
 struct astruct_138 {
-    let mut field0_0x0: u8;
-    let mut field1_0x1: u8;
-    let mut field2_0x2: u8;
-    let mut field3_0x3: u8;
-    let mut field4_0x4: u8;
-    let mut field5_0x5: u8;
-    let mut field6_0x6: u8;
-    let mut field7_0x7: u8;
-    let mut field8_0x8: u32;
-    let mut field9_0xc: u8;
-    let mut field10_0xd: u8;
-    let mut field11_0xe: u8;
-    let mut field12_0xf: u8;
-    let mut field13_0x10: u8;
-    let mut field14_0x11: u8;
-    let mut field15_0x12: u32;
-    let mut field16_0x16: u8;
-    let mut field17_0x17: u8;
-    let mut field18_0x18: u8;
-    let mut field19_0x19: u8;
-    let mut field20_0x1a: u8;
-    let mut field21_0x1b: u8;
-    let mut field22_0x1c: u8;
-    let mut field23_0x1d: u8;
-    let mut field24_0x1e: u8;
-    let mut field25_0x1f: u8;
-    let mut field26_0x20: u8;
-    let mut field27_0x21: u8;
-    let mut field28_0x22: u8;
-    let mut field29_0x23: u8;
-    let mut field30_0x24: u8;
-    let mut field31_0x25: u8;
-    let mut field32_0x26: u8;
-    let mut field33_0x27: u8;
-    let mut field34_0x28: u8;
-    let mut field35_0x29: u8;
-    let mut field36_0x2a: u8;
-    let mut field37_0x2b: u8;
-    let mut field38_0x2c: u8;
-    let mut field39_0x2d: u8;
-    let mut field40_0x2e: u8;
-    let mut field41_0x2f: u8;
-    let mut field42_0x30: u8;
-    let mut field43_0x31: u8;
-    let mut field44_0x32: u8;
-    let mut field45_0x33: u8;
-    let mut field46_0x34: u8;
-    let mut field47_0x35: u8;
-    let mut field48_0x36: u8;
-    let mut field49_0x37: u8;
-    let mut field50_0x38: u8;
-    let mut field51_0x39: u8;
-    let mut field52_0x3a: u8;
-    let mut field53_0x3b: u8;
-    let mut field54_0x3c: u8;
-    let mut field55_0x3d: u8;
-    let mut field56_0x3e: u8;
-    let mut field57_0x3f: u8;
-    let mut field58_0x40: u8;
-    let mut field59_0x41: u8;
-    let mut field60_0x42: u8;
-    let mut field61_0x43: u8;
-    let mut field62_0x44: u8;
-    let mut field63_0x45: u8;
-    let mut field64_0x46: u8;
-    let mut field65_0x47: u8;
-    let mut field66_0x48: u8;
-    let mut field67_0x49: u8;
-    let mut field68_0x4a: u8;
-    let mut field69_0x4b: u8;
-    let mut field70_0x4c: u8;
-    let mut field71_0x4d: u8;
-    let mut field72_0x4e: u8;
-    let mut field73_0x4f: u8;
-    let mut field74_0x50: u8;
-    let mut field75_0x51: u8;
-    let mut field76_0x52: u8;
-    let mut field77_0x53: u8;
-    let mut field78_0x54: u8;
-    let mut field79_0x55: u8;
-    let mut field80_0x56: u8;
-    let mut field81_0x57: u8;
-    let mut field82_0x58: u8;
-    let mut field83_0x59: u8;
-    let mut field84_0x5a: u8;
-    let mut field85_0x5b: u8;
-    let mut field86_0x5c: u8;
-    let mut field87_0x5d: u8;
-    let mut field88_0x5e: u8;
-    let mut field89_0x5f: u8;
-    let mut field90_0x60: u8;
-    let mut field91_0x61: u8;
-    let mut field92_0x62: u8;
-    let mut field93_0x63: u8;
-    let mut field94_0x64: u8;
-    let mut field95_0x65: u8;
-    let mut field96_0x66: u8;
-    let mut field97_0x67: u8;
-    let mut field98_0x68: u8;
-    let mut field99_0x69: u8;
-    let mut field100_0x6a: u8;
-    let mut field101_0x6b: u8;
-    let mut field102_0x6c: u8;
-    let mut field103_0x6d: u8;
-    let mut field104_0x6e: u8;
-    let mut field105_0x6f: u8;
-    let mut field106_0x70: u8;
-    let mut field107_0x71: u8;
-    let mut field108_0x72: u8;
-    let mut field109_0x73: u8;
-    let mut field110_0x74: u8;
-    let mut field111_0x75: u8;
-    let mut field112_0x76: u8;
-    let mut field113_0x77: u8;
-    let mut field114_0x78: u8;
-    let mut field115_0x79: u8;
-    let mut field116_0x7a: u8;
-    let mut field117_0x7b: u8;
-    let mut field118_0x7c: u8;
-    let mut field119_0x7d: u8;
-    let mut field120_0x7e: u8;
-    let mut field121_0x7f: u8;
-    let mut field122_0x80: u8;
-    let mut field123_0x81: u8;
-    let mut field124_0x82: u8;
-    let mut field125_0x83: u8;
-    let mut field126_0x84: u8;
-    let mut field127_0x85: u8;
-    let mut field128_0x86: u8;
-    let mut field129_0x87: u8;
-    let mut field130_0x88: u8;
-    let mut field131_0x89: u8;
-    let mut field132_0x8a: u8;
-    let mut field133_0x8b: u8;
-    let mut field134_0x8c: u8;
-    let mut field135_0x8d: u8;
-    let mut field136_0x8e: u8;
-    let mut field137_0x8f: u8;
-    let mut field138_0x90: u8;
-    let mut field139_0x91: u8;
-    let mut field140_0x92: u8;
-    let mut field141_0x93: u8;
-    let mut field142_0x94: u8;
-    let mut field143_0x95: u8;
-    let mut field144_0x96: u8;
-    let mut field145_0x97: u8;
-    let mut field146_0x98: u8;
-    let mut field147_0x99: u8;
-    let mut field148_0x9a: u8;
-    let mut field149_0x9b: u8;
-    let mut field150_0x9c: u8;
-    let mut field151_0x9d: u8;
-    let mut field152_0x9e: u8;
-    let mut field153_0x9f: u8;
-    let mut field154_0xa0: u8;
-    let mut field155_0xa1: u8;
-    let mut field156_0xa2: u8;
-    let mut field157_0xa3: u8;
-    let mut field158_0xa4: u8;
-    let mut field159_0xa5: u8;
-    let mut field160_0xa6: u8;
-    let mut field161_0xa7: u8;
-    let mut field162_0xa8: u8;
-    let mut field163_0xa9: u8;
-    let mut field164_0xaa: u8;
-    let mut field165_0xab: u8;
-    let mut field166_0xac: u8;
-    let mut field167_0xad: u8;
-    let mut field168_0xae: u8;
-    let mut field169_0xaf: u8;
-    let mut field170_0xb0: u8;
-    let mut field171_0xb1: u8;
-    let mut field172_0xb2: u8;
-    let mut field173_0xb3: u8;
-    let mut field174_0xb4: u8;
-    let mut field175_0xb5: u8;
-    let mut field176_0xb6: u8;
-    let mut field177_0xb7: u8;
-    let mut field178_0xb8: u8;
-    let mut field179_0xb9: u8;
-    let mut field180_0xba: u8;
-    let mut field181_0xbb: u8;
-    let mut field182_0xbc: u8;
-    let mut field183_0xbd: u8;
-    let mut field184_0xbe: u8;
-    let mut field185_0xbf: u8;
-    let mut field186_0xc0: u8;
-    let mut field187_0xc1: u8;
-    let mut field188_0xc2: u8;
-    let mut field189_0xc3: u8;
-    let mut field190_0xc4: u8;
-    let mut field191_0xc5: u8;
-    let mut field192_0xc6: u8;
-    let mut field193_0xc7: u8;
-    let mut field194_0xc8: u8;
-    let mut field195_0xc9: u8;
-    let mut field196_0xca: u8;
-    let mut field197_0xcb: u8;
-    let mut field198_0xcc: u8;
-    let mut field199_0xcd: u8;
-    let mut field200_0xce: u8;
-    let mut field201_0xcf: u8;
-    let mut field202_0xd0: u8;
-    let mut field203_0xd1: u8;
-    let mut field204_0xd2: u8;
-    let mut field205_0xd3: u8;
-    let mut field206_0xd4: u8;
-    let mut field207_0xd5: u8;
-    let mut field208_0xd6: u8;
-    let mut field209_0xd7: u8;
-    let mut field210_0xd8: u8;
-    let mut field211_0xd9: u8;
-    let mut field212_0xda: u8;
-    let mut field213_0xdb: u8;
-    let mut field214_0xdc: u8;
-    let mut field215_0xdd: u8;
-    let mut field216_0xde: u8;
-    let mut field217_0xdf: u8;
-    let mut field218_0xe0: u8;
-    let mut field219_0xe1: u8;
-    let mut field220_0xe2: u8;
-    let mut field221_0xe3: u8;
-    let mut field222_0xe4: u8;
-    let mut field223_0xe5: u8;
-    let mut field224_0xe6: u8;
-    let mut field225_0xe7: u8;
-    let mut field226_0xe8: u8;
-    let mut field227_0xe9: u8;
-    let mut field228_0xea: u8;
-    let mut field229_0xeb: u8;
-    let mut field230_0xec: u8;
-    let mut field231_0xed: u8;
-    let mut field232_0xee: u8;
-    let mut field233_0xef: u8;
-    let mut field234_0xf0: u8;
-    let mut field235_0xf1: u8;
-    let mut field236_0xf2: u8;
-    let mut field237_0xf3: u8;
-    let mut field238_0xf4: u8;
-    let mut field239_0xf5: u8;
-    let mut field240_0xf6: u8;
-    let mut field241_0xf7: u8;
-    let mut field242_0xf8: u8;
-    let mut field243_0xf9: u8;
-    let mut field244_0xfa: u8;
-    let mut field245_0xfb: u8;
-    let mut field246_0xfc: u8;
-    let mut field247_0xfd: u8;
-    let mut field248_0xfe: u8;
-    let mut field249_0xff: u8;
-    let mut field250_0x100: u8;
-    let mut field251_0x101: u8;
-    let mut field252_0x102: u8;
-    let mut field253_0x103: u8;
-    let mut field254_0x104: u8;
-    let mut field255_0x105: u8;
-    let mut field256_0x106: u8;
-    let mut field257_0x107: u8;
-    let mut field258_0x108: u8;
-    let mut field259_0x109: u8;
-    let mut field260_0x10a: u8;
-    let mut field261_0x10b: u8;
-    let mut field262_0x10c: u8;
-    let mut field263_0x10d: u8;
-    let mut field264_0x10e: u8;
-    let mut field265_0x10f: u8;
-    let mut field266_0x110: u8;
-    let mut field267_0x111: u8;
-    let mut field268_0x112: u8;
-    let mut field269_0x113: u8;
-    let mut field270_0x114: u8;
-    let mut field271_0x115: u8;
-    let mut field272_0x116: u8;
-    let mut field273_0x117: u8;
-    let mut field274_0x118: u8;
-    let mut field275_0x119: u8;
-    let mut field276_0x11a: u8;
-    let mut field277_0x11b: u8;
-    let mut field278_0x11c: u8;
-    let mut field279_0x11d: u8;
-    let mut field280_0x11e: u8;
-    let mut field281_0x11f: u8;
-    let mut field282_0x120: u8;
-    let mut field283_0x121: u8;
-    let mut field284_0x122: u8;
-    let mut field285_0x123: u8;
-    let mut field286_0x124: u8;
-    let mut field287_0x125: u8;
-    let mut field288_0x126: u8;
-    let mut field289_0x127: u8;
-    let mut field290_0x128: u8;
-    let mut field291_0x129: u8;
-    let mut field292_0x12a: u8;
-    let mut field293_0x12b: u8;
-    let mut field294_0x12c: u8;
-    let mut field295_0x12d: u8;
-    let mut field296_0x12e: u8;
-    let mut field297_0x12f: u8;
-    let mut field298_0x130: u8;
-    let mut field299_0x131: u8;
-    let mut field300_0x132: u8;
-    let mut field301_0x133: u8;
-    let mut field302_0x134: u8;
-    let mut field303_0x135: u8;
-    let mut field304_0x136: u8;
-    let mut field305_0x137: u8;
-    let mut field306_0x138: u8;
-    let mut field307_0x139: u8;
-    let mut field308_0x13a: u8;
-    let mut field309_0x13b: u8;
-    let mut field310_0x13c: u8;
-    let mut field311_0x13d: u8;
-    let mut field312_0x13e: u8;
-    let mut field313_0x13f: u8;
-    let mut field314_0x140: u8;
-    let mut field315_0x141: u8;
-    let mut field316_0x142: u8;
-    let mut field317_0x143: u8;
-    let mut field318_0x144: u8;
-    let mut field319_0x145: u8;
-    let mut field320_0x146: u8;
-    let mut field321_0x147: u8;
-    let mut field322_0x148: u8;
-    let mut field323_0x149: u8;
-    let mut field324_0x14a: u8;
-    let mut field325_0x14b: u8;
-    let mut field326_0x14c: u8;
-    let mut field327_0x14d: u8;
-    let mut field328_0x14e: u8;
-    let mut field329_0x14f: u8;
-    let mut field330_0x150: u8;
-    let mut field331_0x151: u8;
-    let mut field332_0x152: u16;
-    let mut field333_0x154: u16;
-    let mut field334_0x156: u16;
-    let mut field335_0x158: u16;
-    let mut field336_0x15a: u16;
-    let mut field337_0x15c: u32;
-    let mut field338_0x160: u32;
-    let mut field339_0x164: u32;
-    let mut field340_0x168: u8;
-    let mut field341_0x169: u8;
-    let mut field342_0x16a: u8;
-    let mut field343_0x16b: u8;
-    let mut field344_0x16c: u8;
-    let mut field345_0x16d: u8;
-    let mut field346_0x16e: u8;
-    let mut field347_0x16f: u8;
-    let mut field348_0x170: u8;
-    let mut field349_0x171: u8;
-    let mut field350_0x172: u8;
-    let mut field351_0x173: u8;
-    let mut field352_0x174: u8;
-    let mut field353_0x175: u8;
-    let mut field354_0x176: u8;
-    let mut field355_0x177: u8;
-    let mut field356_0x178: u8;
-    let mut field357_0x179: u8;
-    let mut field358_0x17a: u8;
-    let mut field359_0x17b: u8;
-    let mut field360_0x17c: u8;
-    let mut field361_0x17d: u8;
-    let mut field362_0x17e: u8;
-    let mut field363_0x17f: u8;
-    let mut field364_0x180: u8;
-    let mut field365_0x181: u8;
-    let mut field366_0x182: u8;
-    let mut field367_0x183: u8;
-    let mut field368_0x184: u8;
-    let mut field369_0x185: u8;
-    let mut field370_0x186: u8;
-    let mut field371_0x187: u8;
-    let mut field372_0x188: u8;
-    let mut field373_0x189: u8;
-    let mut field374_0x18a: u8;
-    let mut field375_0x18b: u8;
-    let mut field376_0x18c: u8;
-    let mut field377_0x18d: u8;
-    let mut field378_0x18e: u8;
-    let mut field379_0x18f: u8;
-    let mut field380_0x190: u8;
-    let mut field381_0x191: u8;
-    let mut field382_0x192: u8;
-    let mut field383_0x193: u8;
-    let mut field384_0x194: u8;
-    let mut field385_0x195: u8;
-    let mut field386_0x196: u8;
-    let mut field387_0x197: u8;
-    let mut field388_0x198: u8;
-    let mut field389_0x199: u8;
-    let mut field390_0x19a: u8;
-    let mut field391_0x19b: u8;
-    let mut field392_0x19c: u8;
-    let mut field393_0x19d: u8;
-    let mut field394_0x19e: u8;
-    let mut field395_0x19f: u8;
-    let mut field396_0x1a0: u8;
-    let mut field397_0x1a1: u8;
-    let mut field398_0x1a2: u8;
-    let mut field399_0x1a3: u8;
-    let mut field400_0x1a4: u8;
-    let mut field401_0x1a5: u8;
-    let mut field402_0x1a6: u8;
-    let mut field403_0x1a7: u8;
-    let mut field404_0x1a8: u8;
-    let mut field405_0x1a9: u8;
-    let mut field406_0x1aa: u8;
-    let mut field407_0x1ab: u8;
-    let mut field408_0x1ac: u8;
-    let mut field409_0x1ad: u8;
-    let mut field410_0x1ae: u8;
-    let mut field411_0x1af: u8;
-    let mut field412_0x1b0: u8;
-    let mut field413_0x1b1: u8;
-    let mut field414_0x1b2: u8;
-    let mut field415_0x1b3: u8;
-    let mut field416_0x1b4: u8;
-    let mut field417_0x1b5: u8;
-    let mut field418_0x1b6: u8;
-    let mut field419_0x1b7: u8;
-    let mut field420_0x1b8: u8;
-    let mut field421_0x1b9: u8;
-    let mut field422_0x1ba: u8;
-    let mut field423_0x1bb: u8;
-    let mut field424_0x1bc: u8;
-    let mut field425_0x1bd: u8;
-    let mut field426_0x1be: u8;
-    let mut field427_0x1bf: u8;
-    let mut field428_0x1c0: u8;
-    let mut field429_0x1c1: u8;
-    let mut field430_0x1c2: u8;
-    let mut field431_0x1c3: u8;
-    let mut field432_0x1c4: u8;
-    let mut field433_0x1c5: u8;
-    let mut field434_0x1c6: u8;
-    let mut field435_0x1c7: u8;
-    let mut field436_0x1c8: u8;
-    let mut field437_0x1c9: u8;
-    let mut field438_0x1ca: u8;
-    let mut field439_0x1cb: u8;
-    let mut field440_0x1cc: u8;
-    let mut field441_0x1cd: u8;
-    let mut field442_0x1ce: u8;
-    let mut field443_0x1cf: u8;
-    let mut field444_0x1d0: u8;
-    let mut field445_0x1d1: u8;
-    let mut field446_0x1d2: u8;
-    let mut field447_0x1d3: u8;
-    let mut field448_0x1d4: u8;
-    let mut field449_0x1d5: u8;
-    let mut field450_0x1d6: u8;
-    let mut field451_0x1d7: u8;
-    let mut field452_0x1d8: u8;
-    let mut field453_0x1d9: u8;
-    let mut field454_0x1da: u8;
-    let mut field455_0x1db: u8;
-    let mut field456_0x1dc: u8;
-    let mut field457_0x1dd: u8;
-    let mut field458_0x1de: u8;
-    let mut field459_0x1df: u8;
-    let mut field460_0x1e0: u8;
-    let mut field461_0x1e1: u8;
-    let mut field462_0x1e2: u8;
-    let mut field463_0x1e3: u8;
-    let mut field464_0x1e4: u8;
-    let mut field465_0x1e5: u8;
-    let mut field466_0x1e6: u8;
-    let mut field467_0x1e7: u8;
-    let mut field468_0x1e8: u8;
-    let mut field469_0x1e9: u8;
-    let mut field470_0x1ea: u8;
-    let mut field471_0x1eb: u8;
-    let mut field472_0x1ec: u8;
-    let mut field473_0x1ed: u8;
-    let mut field474_0x1ee: u8;
-    let mut field475_0x1ef: u8;
-    let mut field476_0x1f0: u8;
-    let mut field477_0x1f1: u8;
-    let mut field478_0x1f2: u8;
-    let mut field479_0x1f3: u8;
-    let mut field480_0x1f4: u8;
-    let mut field481_0x1f5: u8;
-    let mut field482_0x1f6: u8;
-    let mut field483_0x1f7: u8;
-    let mut field484_0x1f8: u8;
-    let mut field485_0x1f9: u8;
-    let mut field486_0x1fa: u8;
-    let mut field487_0x1fb: u8;
-    let mut field488_0x1fc: u8;
-    let mut field489_0x1fd: u8;
-    let mut field490_0x1fe: u8;
-    let mut field491_0x1ff: u8;
-    let mut field492_0x200: u8;
-    let mut field493_0x201: u8;
-    let mut field494_0x202: u8;
-    let mut field495_0x203: u8;
-    let mut field496_0x204: u8;
-    let mut field497_0x205: u8;
-    let mut field498_0x206: u8;
-    let mut field499_0x207: u8;
-    let mut field500_0x208: u8;
-    let mut field501_0x209: u8;
-    let mut field502_0x20a: u8;
-    let mut field503_0x20b: u8;
-    let mut field504_0x20c: u8;
-    let mut field505_0x20d: u8;
-    let mut field506_0x20e: u8;
-    let mut field507_0x20f: u8;
-    let mut field508_0x210: u8;
-    let mut field509_0x211: u8;
-    let mut field510_0x212: u8;
-    let mut field511_0x213: u8;
-    let mut field512_0x214: u8;
-    let mut field513_0x215: u8;
-    let mut field514_0x216: u8;
-    let mut field515_0x217: u8;
-    let mut field516_0x218: u8;
-    let mut field517_0x219: u8;
-    let mut field518_0x21a: u8;
-    let mut field519_0x21b: u8;
-    let mut field520_0x21c: u8;
-    let mut field521_0x21d: u8;
-    let mut field522_0x21e: u8;
-    let mut field523_0x21f: u8;
-    let mut field524_0x220: u8;
-    let mut field525_0x221: u8;
-    let mut field526_0x222: u8;
-    let mut field527_0x223: u8;
-    let mut field528_0x224: u8;
-    let mut field529_0x225: u8;
-    let mut field530_0x226: u8;
-    let mut field531_0x227: u8;
-    let mut field532_0x228: u8;
-    let mut field533_0x229: u8;
-    let mut field534_0x22a: u8;
-    let mut field535_0x22b: u8;
-    let mut field536_0x22c: u8;
-    let mut field537_0x22d: u8;
-    let mut field538_0x22e: u8;
-    let mut field539_0x22f: u8;
-    let mut field540_0x230: u8;
-    let mut field541_0x231: u8;
-    let mut field542_0x232: u8;
-    let mut field543_0x233: u8;
-    let mut field544_0x234: u8;
-    let mut field545_0x235: u8;
-    let mut field546_0x236: u8;
-    let mut field547_0x237: u8;
-    let mut field548_0x238: u8;
-    let mut field549_0x239: u8;
-    let mut field550_0x23a: u8;
-    let mut field551_0x23b: u8;
-    let mut field552_0x23c: u8;
-    let mut field553_0x23d: u8;
-    let mut field554_0x23e: u8;
-    let mut field555_0x23f: u8;
-    let mut field556_0x240: u8;
-    let mut field557_0x241: u8;
-    let mut field558_0x242: u8;
-    let mut field559_0x243: u8;
-    let mut field560_0x244: u8;
-    let mut field561_0x245: u8;
-    let mut field562_0x246: u8;
-    let mut field563_0x247: u8;
-    let mut field564_0x248: u8;
-    let mut field565_0x249: u8;
-    let mut field566_0x24a: u8;
-    let mut field567_0x24b: u8;
-    let mut field568_0x24c: u8;
-    let mut field569_0x24d: u8;
-    let mut field570_0x24e: u8;
-    let mut field571_0x24f: u8;
-    let mut field572_0x250: u8;
-    let mut field573_0x251: u8;
-    let mut field574_0x252: u8;
-    let mut field575_0x253: u8;
-    let mut field576_0x254: u8;
-    let mut field577_0x255: u8;
-    let mut field578_0x256: u8;
-    let mut field579_0x257: u8;
-    let mut field580_0x258: u8;
-    let mut field581_0x259: u8;
-    let mut field582_0x25a: u8;
-    let mut field583_0x25b: u8;
-    let mut field584_0x25c: u8;
-    let mut field585_0x25d: u8;
-    let mut field586_0x25e: u8;
-    let mut field587_0x25f: u8;
-    let mut field588_0x260: u8;
-    let mut field589_0x261: u8;
-    let mut field590_0x262: u8;
-    let mut field591_0x263: u8;
-    let mut field592_0x264: u8;
-    let mut field593_0x265: u8;
-    let mut field594_0x266: u8;
-    let mut field595_0x267: u8;
-    let mut field596_0x268: u8;
-    let mut field597_0x269: u8;
-    let mut field598_0x26a: u8;
-    let mut field599_0x26b: u8;
-    let mut field600_0x26c: u8;
-    let mut field601_0x26d: u8;
-    let mut field602_0x26e: u8;
-    let mut field603_0x26f: u8;
-    let mut field604_0x270: u8;
-    let mut field605_0x271: u8;
-    let mut field606_0x272: u8;
-    let mut field607_0x273: u8;
-    let mut field608_0x274: u8;
-    let mut field609_0x275: u8;
-    let mut field610_0x276: u8;
-    let mut field611_0x277: u8;
-    let mut field612_0x278: u8;
-    let mut field613_0x279: u8;
-    let mut field614_0x27a: u8;
-    let mut field615_0x27b: u8;
-    let mut field616_0x27c: u8;
-    let mut field617_0x27d: u8;
-    let mut field618_0x27e: u8;
-    let mut field619_0x27f: u8;
-    let mut field620_0x280: u8;
-    let mut field621_0x281: u8;
-    let mut field622_0x282: u8;
-    let mut field623_0x283: u8;
-    let mut field624_0x284: u8;
-    let mut field625_0x285: u8;
-    let mut field626_0x286: u8;
-    let mut field627_0x287: u8;
-    let mut field628_0x288: u8;
-    let mut field629_0x289: u8;
-    let mut field630_0x28a: u8;
-    let mut field631_0x28b: u8;
-    let mut field632_0x28c: u8;
-    let mut field633_0x28d: u8;
-    let mut field634_0x28e: u8;
-    let mut field635_0x28f: u8;
-    let mut field636_0x290: u8;
-    let mut field637_0x291: u8;
-    let mut field638_0x292: u8;
-    let mut field639_0x293: u8;
-    let mut field640_0x294: u8;
-    let mut field641_0x295: u8;
-    let mut field642_0x296: u8;
-    let mut field643_0x297: u8;
-    let mut field644_0x298: u8;
-    let mut field645_0x299: u8;
-    let mut field646_0x29a: u8;
-    let mut field647_0x29b: u8;
-    let mut field648_0x29c: u8;
-    let mut field649_0x29d: u8;
-    let mut field650_0x29e: u8;
-    let mut field651_0x29f: u8;
-    let mut field652_0x2a0: u8;
-    let mut field653_0x2a1: u8;
-    let mut field654_0x2a2: u8;
-    let mut field655_0x2a3: u8;
-    let mut field656_0x2a4: u8;
-    let mut field657_0x2a5: u8;
-    let mut field658_0x2a6: u8;
-    let mut field659_0x2a7: u8;
-    let mut field660_0x2a8: u8;
-    let mut field661_0x2a9: u8;
-    let mut field662_0x2aa: u8;
-    let mut field663_0x2ab: u8;
-    let mut field664_0x2ac: u8;
-    let mut field665_0x2ad: u8;
-    let mut field666_0x2ae: u8;
-    let mut field667_0x2af: u8;
-    let mut field668_0x2b0: u8;
-    let mut field669_0x2b1: u8;
-    let mut field670_0x2b2: u8;
-    let mut field671_0x2b3: u8;
-    let mut field672_0x2b4: u8;
-    let mut field673_0x2b5: u8;
-    let mut field674_0x2b6: u8;
-    let mut field675_0x2b7: u8;
-    let mut field676_0x2b8: u8;
-    let mut field677_0x2b9: u8;
-    let mut field678_0x2ba: u8;
-    let mut field679_0x2bb: u8;
-    let mut field680_0x2bc: u8;
-    let mut field681_0x2bd: u8;
-    let mut field682_0x2be: u8;
-    let mut field683_0x2bf: u8;
-    let mut field684_0x2c0: u8;
-    let mut field685_0x2c1: u8;
-    let mut field686_0x2c2: u8;
-    let mut field687_0x2c3: u8;
-    let mut field688_0x2c4: u8;
-    let mut field689_0x2c5: u8;
-    let mut field690_0x2c6: u8;
-    let mut field691_0x2c7: u8;
-    let mut field692_0x2c8: u8;
-    let mut field693_0x2c9: u8;
-    let mut field694_0x2ca: u8;
-    let mut field695_0x2cb: u8;
-    let mut field696_0x2cc: u8;
-    let mut field697_0x2cd: u8;
-    let mut field698_0x2ce: u8;
-    let mut field699_0x2cf: u8;
-    let mut field700_0x2d0: u8;
-    let mut field701_0x2d1: u8;
-    let mut field702_0x2d2: u8;
-    let mut field703_0x2d3: u8;
-    let mut field704_0x2d4: u8;
-    let mut field705_0x2d5: u8;
-    let mut field706_0x2d6: u8;
-    let mut field707_0x2d7: u8;
-    let mut field708_0x2d8: u8;
-    let mut field709_0x2d9: u8;
-    let mut field710_0x2da: u8;
-    let mut field711_0x2db: u8;
-    let mut field712_0x2dc: u8;
-    let mut field713_0x2dd: u8;
-    let mut field714_0x2de: u8;
-    let mut field715_0x2df: u8;
-    let mut field716_0x2e0: u8;
-    let mut field717_0x2e1: u8;
-    let mut field718_0x2e2: u8;
-    let mut field719_0x2e3: u8;
-    let mut field720_0x2e4: u8;
-    let mut field721_0x2e5: u8;
-    let mut field722_0x2e6: u8;
-    let mut field723_0x2e7: u8;
-    let mut field724_0x2e8: u8;
-    let mut field725_0x2e9: u8;
-    let mut field726_0x2ea: u8;
-    let mut field727_0x2eb: u8;
-    let mut field728_0x2ec: u8;
-    let mut field729_0x2ed: u8;
-    let mut field730_0x2ee: u8;
-    let mut field731_0x2ef: u8;
-    let mut field732_0x2f0: u8;
-    let mut field733_0x2f1: u8;
-    let mut field734_0x2f2: u8;
-    let mut field735_0x2f3: u8;
-    let mut field736_0x2f4: u8;
-    let mut field737_0x2f5: u8;
-    let mut field738_0x2f6: u8;
-    let mut field739_0x2f7: u8;
-    let mut field740_0x2f8: u8;
-    let mut field741_0x2f9: u8;
-    let mut field742_0x2fa: u8;
-    let mut field743_0x2fb: u8;
-    let mut field744_0x2fc: u8;
-    let mut field745_0x2fd: u8;
-    let mut field746_0x2fe: u8;
-    let mut field747_0x2ff: u8;
-    let mut field748_0x300: u8;
-    let mut field749_0x301: u8;
-    let mut field750_0x302: u8;
-    let mut field751_0x303: u8;
-    let mut field752_0x304: u8;
-    let mut field753_0x305: u8;
-    let mut field754_0x306: u8;
-    let mut field755_0x307: u8;
-    let mut field756_0x308: u8;
-    let mut field757_0x309: u8;
-    let mut field758_0x30a: u8;
-    let mut field759_0x30b: u8;
-    let mut field760_0x30c: u8;
-    let mut field761_0x30d: u8;
-    let mut field762_0x30e: u8;
-    let mut field763_0x30f: u8;
-    let mut field764_0x310: u8;
-    let mut field765_0x311: u8;
-    let mut field766_0x312: u8;
-    let mut field767_0x313: u8;
-    let mut field768_0x314: u8;
-    let mut field769_0x315: u8;
-    let mut field770_0x316: u8;
-    let mut field771_0x317: u8;
-    let mut field772_0x318: u8;
-    let mut field773_0x319: u8;
-    let mut field774_0x31a: u8;
-    let mut field775_0x31b: u8;
-    let mut field776_0x31c: u8;
-    let mut field777_0x31d: u8;
-    let mut field778_0x31e: u8;
-    let mut field779_0x31f: u8;
-    let mut field780_0x320: u8;
-    let mut field781_0x321: u8;
-    let mut field782_0x322: u8;
-    let mut field783_0x323: u8;
-    let mut field784_0x324: u8;
-    let mut field785_0x325: u8;
-    let mut field786_0x326: u8;
-    let mut field787_0x327: u8;
-    let mut field788_0x328: u8;
-    let mut field789_0x329: u8;
-    let mut field790_0x32a: u8;
-    let mut field791_0x32b: u8;
-    let mut field792_0x32c: u8;
-    let mut field793_0x32d: u8;
-    let mut field794_0x32e: u8;
-    let mut field795_0x32f: u8;
-    let mut field796_0x330: u8;
-    let mut field797_0x331: u8;
-    let mut field798_0x332: u8;
-    let mut field799_0x333: u8;
-    let mut field800_0x334: u8;
-    let mut field801_0x335: u8;
-    let mut field802_0x336: u8;
-    let mut field803_0x337: u8;
-    let mut field804_0x338: u8;
-    let mut field805_0x339: u8;
-    let mut field806_0x33a: u8;
-    let mut field807_0x33b: u8;
-    let mut field808_0x33c: u8;
-    let mut field809_0x33d: u8;
-    let mut field810_0x33e: u8;
-    let mut field811_0x33f: u8;
-    let mut field812_0x340: u8;
-    let mut field813_0x341: u8;
-    let mut field814_0x342: u8;
-    let mut field815_0x343: u8;
-    let mut field816_0x344: u8;
-    let mut field817_0x345: u8;
-    let mut field818_0x346: u8;
-    let mut field819_0x347: u8;
-    let mut field820_0x348: u8;
-    let mut field821_0x349: u8;
-    let mut field822_0x34a: u8;
-    let mut field823_0x34b: u8;
-    let mut field824_0x34c: u8;
-    let mut field825_0x34d: u8;
-    let mut field826_0x34e: u8;
-    let mut field827_0x34f: u8;
-    let mut field828_0x350: u8;
-    let mut field829_0x351: u8;
-    let mut field830_0x352: u8;
-    let mut field831_0x353: u8;
-    let mut field832_0x354: u8;
-    let mut field833_0x355: u8;
-    let mut field834_0x356: u8;
-    let mut field835_0x357: u8;
-    let mut field836_0x358: u8;
-    let mut field837_0x359: u8;
-    let mut field838_0x35a: u8;
-    let mut field839_0x35b: u8;
-    let mut field840_0x35c: u8;
-    let mut field841_0x35d: u8;
-    let mut field842_0x35e: u8;
-    let mut field843_0x35f: u8;
-    let mut field844_0x360: u8;
-    let mut field845_0x361: u8;
-    let mut field846_0x362: u8;
-    let mut field847_0x363: u8;
-    let mut field848_0x364: u8;
-    let mut field849_0x365: u8;
-    let mut field850_0x366: u8;
-    let mut field851_0x367: u8;
-    let mut field852_0x368: u8;
-    let mut field853_0x369: u8;
-    let mut field854_0x36a: u8;
-    let mut field855_0x36b: u8;
-    let mut field856_0x36c: u8;
-    let mut field857_0x36d: u8;
-    let mut field858_0x36e: u8;
-    let mut field859_0x36f: u8;
-    let mut field860_0x370: u8;
-    let mut field861_0x371: u8;
-    let mut field862_0x372: u8;
-    let mut field863_0x373: u8;
-    let mut field864_0x374: u8;
-    let mut field865_0x375: u8;
-    let mut field866_0x376: u8;
-    let mut field867_0x377: u8;
-    let mut field868_0x378: u8;
-    let mut field869_0x379: u8;
-    let mut field870_0x37a: u8;
-    let mut field871_0x37b: u8;
-    let mut field872_0x37c: u8;
-    let mut field873_0x37d: u8;
-    let mut field874_0x37e: u8;
-    let mut field875_0x37f: u8;
-    let mut field876_0x380: u8;
-    let mut field877_0x381: u8;
-    let mut field878_0x382: u8;
-    let mut field879_0x383: u8;
-    let mut field880_0x384: u8;
-    let mut field881_0x385: u8;
-    let mut field882_0x386: u8;
-    let mut field883_0x387: u8;
-    let mut field884_0x388: u8;
-    let mut field885_0x389: u8;
-    let mut field886_0x38a: u8;
-    let mut field887_0x38b: u8;
-    let mut field888_0x38c: u8;
-    let mut field889_0x38d: u8;
-    let mut field890_0x38e: u8;
-    let mut field891_0x38f: u8;
-    let mut field892_0x390: u8;
-    let mut field893_0x391: u8;
-    let mut field894_0x392: u8;
-    let mut field895_0x393: u8;
-    let mut field896_0x394: u8;
-    let mut field897_0x395: u8;
-    let mut field898_0x396: u8;
-    let mut field899_0x397: u8;
-    let mut field900_0x398: u8;
-    let mut field901_0x399: u8;
-    let mut field902_0x39a: u8;
-    let mut field903_0x39b: u8;
-    let mut field904_0x39c: u8;
-    let mut field905_0x39d: u8;
-    let mut field906_0x39e: u8;
-    let mut field907_0x39f: u8;
-    let mut field908_0x3a0: u8;
-    let mut field909_0x3a1: u8;
-    let mut field910_0x3a2: u8;
-    let mut field911_0x3a3: u8;
-    let mut field912_0x3a4: u8;
-    let mut field913_0x3a5: u8;
-    let mut field914_0x3a6: u8;
-    let mut field915_0x3a7: u8;
-    let mut field916_0x3a8: u8;
-    let mut field917_0x3a9: u8;
-    let mut field918_0x3aa: u8;
-    let mut field919_0x3ab: u8;
-    let mut field920_0x3ac: u8;
-    let mut field921_0x3ad: u8;
-    let mut field922_0x3ae: u8;
-    let mut field923_0x3af: u8;
-    let mut field924_0x3b0: u8;
-    let mut field925_0x3b1: u8;
-    let mut field926_0x3b2: u8;
-    let mut field927_0x3b3: u8;
-    let mut field928_0x3b4: u8;
-    let mut field929_0x3b5: u8;
-    let mut field930_0x3b6: u8;
-    let mut field931_0x3b7: u8;
-    let mut field932_0x3b8: u8;
-    let mut field933_0x3b9: u8;
-    let mut field934_0x3ba: u8;
-    let mut field935_0x3bb: u8;
-    let mut field936_0x3bc: u8;
-    let mut field937_0x3bd: u8;
-    let mut field938_0x3be: u8;
-    let mut field939_0x3bf: u8;
-    let mut field940_0x3c0: u8;
-    let mut field941_0x3c1: u8;
-    let mut field942_0x3c2: u8;
-    let mut field943_0x3c3: u8;
-    let mut field944_0x3c4: u8;
-    let mut field945_0x3c5: u8;
-    let mut field946_0x3c6: u8;
-    let mut field947_0x3c7: u8;
-    let mut field948_0x3c8: u8;
-    let mut field949_0x3c9: u8;
-    let mut field950_0x3ca: u8;
-    let mut field951_0x3cb: u8;
-    let mut field952_0x3cc: u8;
-    let mut field953_0x3cd: u8;
-    let mut field954_0x3ce: u8;
-    let mut field955_0x3cf: u8;
-    let mut field956_0x3d0: u8;
-    let mut field957_0x3d1: u8;
-    let mut field958_0x3d2: u8;
-    let mut field959_0x3d3: u8;
-    let mut field960_0x3d4: u8;
-    let mut field961_0x3d5: u8;
-    let mut field962_0x3d6: u8;
-    let mut field963_0x3d7: u8;
-    let mut field964_0x3d8: u8;
-    let mut field965_0x3d9: u8;
-    let mut field966_0x3da: u8;
-    let mut field967_0x3db: u8;
-    let mut field968_0x3dc: u8;
-    let mut field969_0x3dd: u8;
-    let mut field970_0x3de: u8;
-    let mut field971_0x3df: u8;
-    let mut field972_0x3e0: u8;
-    let mut field973_0x3e1: u8;
-    let mut field974_0x3e2: u8;
-    let mut field975_0x3e3: u8;
-    let mut field976_0x3e4: u8;
-    let mut field977_0x3e5: u8;
-    let mut field978_0x3e6: u8;
-    let mut field979_0x3e7: u8;
-    let mut field980_0x3e8: u8;
-    let mut field981_0x3e9: u8;
-    let mut field982_0x3ea: u8;
-    let mut field983_0x3eb: u8;
-    let mut field984_0x3ec: u8;
-    let mut field985_0x3ed: u8;
-    let mut field986_0x3ee: u8;
-    let mut field987_0x3ef: u8;
-    let mut field988_0x3f0: u8;
-    let mut field989_0x3f1: u8;
-    let mut field990_0x3f2: u8;
-    let mut field991_0x3f3: u8;
-    let mut field992_0x3f4: u8;
-    let mut field993_0x3f5: u8;
-    let mut field994_0x3f6: u8;
-    let mut field995_0x3f7: u8;
-    let mut field996_0x3f8: u8;
-    let mut field997_0x3f9: u8;
-    let mut field998_0x3fa: u8;
-    let mut field999_0x3fb: u8;
-    let mut field1000_0x3fc: u8;
-    let mut field1001_0x3fd: u8;
-    let mut field1002_0x3fe: u8;
-    let mut field1003_0x3ff: u8;
-    let mut field1004_0x400: u8;
-    let mut field1005_0x401: u8;
-    let mut field1006_0x402: u8;
-    let mut field1007_0x403: u8;
-    let mut field1008_0x404: u8;
-    let mut field1009_0x405: u8;
-    let mut field1010_0x406: u8;
-    let mut field1011_0x407: u8;
-    let mut field1012_0x408: u8;
-    let mut field1013_0x409: u8;
-    let mut field1014_0x40a: u8;
-    let mut field1015_0x40b: u8;
-    let mut field1016_0x40c: u8;
-    let mut field1017_0x40d: u8;
-    let mut field1018_0x40e: u8;
-    let mut field1019_0x40f: u8;
-    let mut field1020_0x410: u8;
-    let mut field1021_0x411: u8;
-    let mut field1022_0x412: u8;
-    let mut field1023_0x413: u8;
-    let mut field1024_0x414: u8;
-    let mut field1025_0x415: u8;
-    let mut field1026_0x416: u8;
-    let mut field1027_0x417: u8;
-    let mut field1028_0x418: u8;
-    let mut field1029_0x419: u8;
-    let mut field1030_0x41a: u8;
-    let mut field1031_0x41b: u8;
-    let mut field1032_0x41c: u8;
-    let mut field1033_0x41d: u8;
-    let mut field1034_0x41e: u8;
-    let mut field1035_0x41f: u8;
-    let mut field1036_0x420: u8;
-    let mut field1037_0x421: u8;
-    let mut field1038_0x422: u8;
-    let mut field1039_0x423: u8;
-    let mut field1040_0x424: u8;
-    let mut field1041_0x425: u8;
-    let mut field1042_0x426: u8;
-    let mut field1043_0x427: u8;
-    let mut field1044_0x428: u8;
-    let mut field1045_0x429: u8;
-    let mut field1046_0x42a: u8;
-    let mut field1047_0x42b: u8;
-    let mut field1048_0x42c: u8;
-    let mut field1049_0x42d: u8;
-    let mut field1050_0x42e: u8;
-    let mut field1051_0x42f: u8;
-    let mut field1052_0x430: u8;
-    let mut field1053_0x431: u8;
-    let mut field1054_0x432: u8;
-    let mut field1055_0x433: u8;
-    let mut field1056_0x434: u8;
-    let mut field1057_0x435: u8;
-    let mut field1058_0x436: u8;
-    let mut field1059_0x437: u8;
-    let mut field1060_0x438: u8;
-    let mut field1061_0x439: u8;
-    let mut field1062_0x43a: u8;
-    let mut field1063_0x43b: u8;
-    let mut field1064_0x43c: u8;
-    let mut field1065_0x43d: u8;
-    let mut field1066_0x43e: u8;
-    let mut field1067_0x43f: u8;
-    let mut field1068_0x440: u8;
-    let mut field1069_0x441: u8;
-    let mut field1070_0x442: u8;
-    let mut field1071_0x443: u8;
-    let mut field1072_0x444: u8;
-    let mut field1073_0x445: u8;
-    let mut field1074_0x446: u8;
-    let mut field1075_0x447: u8;
-    let mut field1076_0x448: u8;
-    let mut field1077_0x449: u8;
-    let mut field1078_0x44a: u8;
-    let mut field1079_0x44b: u8;
-    let mut field1080_0x44c: u8;
-    let mut field1081_0x44d: u8;
-    let mut field1082_0x44e: u8;
-    let mut field1083_0x44f: u8;
-    let mut field1084_0x450: u8;
-    let mut field1085_0x451: u8;
-    let mut field1086_0x452: u8;
-    let mut field1087_0x453: u8;
-    let mut field1088_0x454: u8;
-    let mut field1089_0x455: u8;
-    let mut field1090_0x456: u8;
-    let mut field1091_0x457: u8;
-    let mut field1092_0x458: u8;
-    let mut field1093_0x459: u8;
-    let mut field1094_0x45a: u8;
-    let mut field1095_0x45b: u8;
-    let mut field1096_0x45c: u8;
-    let mut field1097_0x45d: u8;
-    let mut field1098_0x45e: u8;
-    let mut field1099_0x45f: u8;
-    let mut field1100_0x460: u8;
-    let mut field1101_0x461: u8;
-    let mut field1102_0x462: u8;
-    let mut field1103_0x463: u8;
-    let mut field1104_0x464: u8;
-    let mut field1105_0x465: u8;
-    let mut field1106_0x466: u8;
-    let mut field1107_0x467: u8;
-    let mut field1108_0x468: u8;
-    let mut field1109_0x469: u8;
-    let mut field1110_0x46a: u8;
-    let mut field1111_0x46b: u8;
-    let mut field1112_0x46c: u8;
-    let mut field1113_0x46d: u8;
-    let mut field1114_0x46e: u8;
-    let mut field1115_0x46f: u8;
-    let mut field1116_0x470: u8;
-    let mut field1117_0x471: u8;
-    let mut field1118_0x472: u8;
-    let mut field1119_0x473: u8;
-    let mut field1120_0x474: u8;
-    let mut field1121_0x475: u8;
-    let mut field1122_0x476: u8;
-    let mut field1123_0x477: u8;
-    let mut field1124_0x478: u8;
-    let mut field1125_0x479: u8;
-    let mut field1126_0x47a: u8;
-    let mut field1127_0x47b: u8;
-    let mut field1128_0x47c: u8;
-    let mut field1129_0x47d: u8;
-    let mut field1130_0x47e: u8;
-    let mut field1131_0x47f: u8;
-    let mut field1132_0x480: u8;
-    let mut field1133_0x481: u8;
-    let mut field1134_0x482: u8;
-    let mut field1135_0x483: u8;
-    let mut field1136_0x484: u8;
-    let mut field1137_0x485: u8;
-    let mut field1138_0x486: u8;
-    let mut field1139_0x487: u8;
-    let mut field1140_0x488: u8;
-    let mut field1141_0x489: u8;
-    let mut field1142_0x48a: u8;
-    let mut field1143_0x48b: u8;
-    let mut field1144_0x48c: u8;
-    let mut field1145_0x48d: u8;
-    let mut field1146_0x48e: u8;
-    let mut field1147_0x48f: u8;
-    let mut field1148_0x490: u8;
-    let mut field1149_0x491: u8;
-    let mut field1150_0x492: u8;
-    let mut field1151_0x493: u8;
-    let mut field1152_0x494: u8;
-    let mut field1153_0x495: u8;
-    let mut field1154_0x496: u8;
-    let mut field1155_0x497: u8;
-    let mut field1156_0x498: u8;
-    let mut field1157_0x499: u8;
-    let mut field1158_0x49a: u8;
-    let mut field1159_0x49b: u8;
-    let mut field1160_0x49c: u8;
-    let mut field1161_0x49d: u8;
-    let mut field1162_0x49e: u8;
-    let mut field1163_0x49f: u8;
-    let mut field1164_0x4a0: u8;
-    let mut field1165_0x4a1: u8;
-    let mut field1166_0x4a2: u8;
-    let mut field1167_0x4a3: u8;
-    let mut field1168_0x4a4: u8;
-    let mut field1169_0x4a5: u8;
-    let mut field1170_0x4a6: u8;
-    let mut field1171_0x4a7: u8;
-    let mut field1172_0x4a8: u8;
-    let mut field1173_0x4a9: u8;
-    let mut field1174_0x4aa: u8;
-    let mut field1175_0x4ab: u8;
-    let mut field1176_0x4ac: u8;
-    let mut field1177_0x4ad: u8;
-    let mut field1178_0x4ae: u8;
-    let mut field1179_0x4af: u8;
-    let mut field1180_0x4b0: u8;
-    let mut field1181_0x4b1: u8;
-    let mut field1182_0x4b2: u8;
-    let mut field1183_0x4b3: u8;
-    let mut field1184_0x4b4: u8;
-    let mut field1185_0x4b5: u8;
-    let mut field1186_0x4b6: u8;
-    let mut field1187_0x4b7: u8;
-    let mut field1188_0x4b8: u8;
-    let mut field1189_0x4b9: u8;
-    let mut field1190_0x4ba: u8;
-    let mut field1191_0x4bb: u8;
-    let mut field1192_0x4bc: u8;
-    let mut field1193_0x4bd: u8;
-    let mut field1194_0x4be: u8;
-    let mut field1195_0x4bf: u8;
-    let mut field1196_0x4c0: u8;
-    let mut field1197_0x4c1: u8;
-    let mut field1198_0x4c2: u8;
-    let mut field1199_0x4c3: u8;
-    let mut field1200_0x4c4: u8;
-    let mut field1201_0x4c5: u8;
-    let mut field1202_0x4c6: u8;
-    let mut field1203_0x4c7: u8;
-    let mut field1204_0x4c8: u8;
-    let mut field1205_0x4c9: u8;
-    let mut field1206_0x4ca: u8;
-    let mut field1207_0x4cb: u8;
-    let mut field1208_0x4cc: u8;
-    let mut field1209_0x4cd: u8;
-    let mut field1210_0x4ce: u8;
-    let mut field1211_0x4cf: u8;
-    let mut field1212_0x4d0: u8;
-    let mut field1213_0x4d1: u8;
-    let mut field1214_0x4d2: u8;
-    let mut field1215_0x4d3: u8;
-    let mut field1216_0x4d4: u8;
-    let mut field1217_0x4d5: u8;
-    let mut field1218_0x4d6: u8;
-    let mut field1219_0x4d7: u8;
-    let mut field1220_0x4d8: u8;
-    let mut field1221_0x4d9: u8;
-    let mut field1222_0x4da: u8;
-    let mut field1223_0x4db: u8;
-    let mut field1224_0x4dc: u8;
-    let mut field1225_0x4dd: u8;
-    let mut field1226_0x4de: u8;
-    let mut field1227_0x4df: u8;
-    let mut field1228_0x4e0: u8;
-    let mut field1229_0x4e1: u8;
-    let mut field1230_0x4e2: u8;
-    let mut field1231_0x4e3: u8;
-    let mut field1232_0x4e4: u8;
-    let mut field1233_0x4e5: u8;
-    let mut field1234_0x4e6: u8;
-    let mut field1235_0x4e7: u8;
-    let mut field1236_0x4e8: u8;
-    let mut field1237_0x4e9: u8;
-    let mut field1238_0x4ea: u8;
-    let mut field1239_0x4eb: u8;
-    let mut field1240_0x4ec: u8;
-    let mut field1241_0x4ed: u8;
-    let mut field1242_0x4ee: u8;
-    let mut field1243_0x4ef: u8;
-    let mut field1244_0x4f0: u8;
-    let mut field1245_0x4f1: u8;
-    let mut field1246_0x4f2: u8;
-    let mut field1247_0x4f3: u8;
-    let mut field1248_0x4f4: u8;
-    let mut field1249_0x4f5: u8;
-    let mut field1250_0x4f6: u8;
-    let mut field1251_0x4f7: u8;
-    let mut field1252_0x4f8: u8;
-    let mut field1253_0x4f9: u8;
-    let mut field1254_0x4fa: u8;
-    let mut field1255_0x4fb: u8;
-    let mut field1256_0x4fc: u8;
-    let mut field1257_0x4fd: u8;
-    let mut field1258_0x4fe: u8;
-    let mut field1259_0x4ff: u8;
-    let mut field1260_0x500: u8;
-    let mut field1261_0x501: u8;
-    let mut field1262_0x502: u8;
-    let mut field1263_0x503: u8;
-    let mut field1264_0x504: u8;
-    let mut field1265_0x505: u8;
-    let mut field1266_0x506: u8;
-    let mut field1267_0x507: u8;
-    let mut field1268_0x508: u8;
-    let mut field1269_0x509: u8;
-    let mut field1270_0x50a: u8;
-    let mut field1271_0x50b: u8;
-    let mut field1272_0x50c: u8;
-    let mut field1273_0x50d: u8;
-    let mut field1274_0x50e: u8;
-    let mut field1275_0x50f: u8;
-    let mut field1276_0x510: u8;
-    let mut field1277_0x511: u8;
-    let mut field1278_0x512: u8;
-    let mut field1279_0x513: u8;
-    let mut field1280_0x514: u8;
-    let mut field1281_0x515: u8;
-    let mut field1282_0x516: u8;
-    let mut field1283_0x517: u8;
-    let mut field1284_0x518: u8;
-    let mut field1285_0x519: u8;
-    let mut field1286_0x51a: u8;
-    let mut field1287_0x51b: u8;
-    let mut field1288_0x51c: u8;
-    let mut field1289_0x51d: u8;
-    let mut field1290_0x51e: u8;
-    let mut field1291_0x51f: u8;
-    let mut field1292_0x520: u8;
-    let mut field1293_0x521: u8;
-    let mut field1294_0x522: u8;
-    let mut field1295_0x523: u8;
-    let mut field1296_0x524: u8;
-    let mut field1297_0x525: u8;
-    let mut field1298_0x526: u8;
-    let mut field1299_0x527: u8;
-    let mut field1300_0x528: u8;
-    let mut field1301_0x529: u8;
-    let mut field1302_0x52a: u8;
-    let mut field1303_0x52b: u8;
-    let mut field1304_0x52c: u8;
-    let mut field1305_0x52d: u8;
-    let mut field1306_0x52e: u8;
-    let mut field1307_0x52f: u8;
-    let mut field1308_0x530: u8;
-    let mut field1309_0x531: u8;
-    let mut field1310_0x532: u8;
-    let mut field1311_0x533: u8;
-    let mut field1312_0x534: u8;
-    let mut field1313_0x535: u8;
-    let mut field1314_0x536: u8;
-    let mut field1315_0x537: u8;
-    let mut field1316_0x538: u8;
-    let mut field1317_0x539: u8;
-    let mut field1318_0x53a: u8;
-    let mut field1319_0x53b: u8;
-    let mut field1320_0x53c: u8;
-    let mut field1321_0x53d: u8;
-    let mut field1322_0x53e: u8;
-    let mut field1323_0x53f: u8;
-    let mut field1324_0x540: u8;
-    let mut field1325_0x541: u8;
-    let mut field1326_0x542: u8;
-    let mut field1327_0x543: u8;
-    let mut field1328_0x544: u8;
-    let mut field1329_0x545: u8;
-    let mut field1330_0x546: u8;
-    let mut field1331_0x547: u8;
-    let mut field1332_0x548: u8;
-    let mut field1333_0x549: u8;
-    let mut field1334_0x54a: u8;
-    let mut field1335_0x54b: u8;
-    let mut field1336_0x54c: u8;
-    let mut field1337_0x54d: u8;
-    let mut field1338_0x54e: u8;
-    let mut field1339_0x54f: u8;
-    let mut field1340_0x550: u8;
-    let mut field1341_0x551: u8;
-    let mut field1342_0x552: u8;
-    let mut field1343_0x553: u8;
-    let mut field1344_0x554: u8;
-    let mut field1345_0x555: u8;
-    let mut field1346_0x556: u8;
-    let mut field1347_0x557: u8;
-    let mut field1348_0x558: u8;
-    let mut field1349_0x559: u8;
-    let mut field1350_0x55a: u8;
-    let mut field1351_0x55b: u8;
-    let mut field1352_0x55c: u8;
-    let mut field1353_0x55d: u8;
-    let mut field1354_0x55e: u8;
-    let mut field1355_0x55f: u8;
-    let mut field1356_0x560: u8;
-    let mut field1357_0x561: u8;
-    let mut field1358_0x562: u8;
-    let mut field1359_0x563: u8;
-    let mut field1360_0x564: u8;
-    let mut field1361_0x565: u8;
-    let mut field1362_0x566: u8;
-    let mut field1363_0x567: u8;
-    let mut field1364_0x568: u32;
-};
+    pub field0_0x0: u8,
+    pub field1_0x1: u8,
+    pub field2_0x2: u8,
+    pub field3_0x3: u8,
+    pub field4_0x4: u8,
+    pub field5_0x5: u8,
+    pub field6_0x6: u8,
+    pub field7_0x7: u8,
+    pub field8_0x8: u32,
+    pub field9_0xc: u8,
+    pub field10_0xd: u8,
+    pub field11_0xe: u8,
+    pub field12_0xf: u8,
+    pub field13_0x10: u8,
+    pub field14_0x11: u8,
+    pub field15_0x12: u32,
+    pub field16_0x16: u8,
+    pub field17_0x17: u8,
+    pub field18_0x18: u8,
+    pub field19_0x19: u8,
+    pub field20_0x1a: u8,
+    pub field21_0x1b: u8,
+    pub field22_0x1c: u8,
+    pub field23_0x1d: u8,
+    pub field24_0x1e: u8,
+    pub field25_0x1f: u8,
+    pub field26_0x20: u8,
+    pub field27_0x21: u8,
+    pub field28_0x22: u8,
+    pub field29_0x23: u8,
+    pub field30_0x24: u8,
+    pub field31_0x25: u8,
+    pub field32_0x26: u8,
+    pub field33_0x27: u8,
+    pub field34_0x28: u8,
+    pub field35_0x29: u8,
+    pub field36_0x2a: u8,
+    pub field37_0x2b: u8,
+    pub field38_0x2c: u8,
+    pub field39_0x2d: u8,
+    pub field40_0x2e: u8,
+    pub field41_0x2f: u8,
+    pub field42_0x30: u8,
+    pub field43_0x31: u8,
+    pub field44_0x32: u8,
+    pub field45_0x33: u8,
+    pub field46_0x34: u8,
+    pub field47_0x35: u8,
+    pub field48_0x36: u8,
+    pub field49_0x37: u8,
+    pub field50_0x38: u8,
+    pub field51_0x39: u8,
+    pub field52_0x3a: u8,
+    pub field53_0x3b: u8,
+    pub field54_0x3c: u8,
+    pub field55_0x3d: u8,
+    pub field56_0x3e: u8,
+    pub field57_0x3f: u8,
+    pub field58_0x40: u8,
+    pub field59_0x41: u8,
+    pub field60_0x42: u8,
+    pub field61_0x43: u8,
+    pub field62_0x44: u8,
+    pub field63_0x45: u8,
+    pub field64_0x46: u8,
+    pub field65_0x47: u8,
+    pub field66_0x48: u8,
+    pub field67_0x49: u8,
+    pub field68_0x4a: u8,
+    pub field69_0x4b: u8,
+    pub field70_0x4c: u8,
+    pub field71_0x4d: u8,
+    pub field72_0x4e: u8,
+    pub field73_0x4f: u8,
+    pub field74_0x50: u8,
+    pub field75_0x51: u8,
+    pub field76_0x52: u8,
+    pub field77_0x53: u8,
+    pub field78_0x54: u8,
+    pub field79_0x55: u8,
+    pub field80_0x56: u8,
+    pub field81_0x57: u8,
+    pub field82_0x58: u8,
+    pub field83_0x59: u8,
+    pub field84_0x5a: u8,
+    pub field85_0x5b: u8,
+    pub field86_0x5c: u8,
+    pub field87_0x5d: u8,
+    pub field88_0x5e: u8,
+    pub field89_0x5f: u8,
+    pub field90_0x60: u8,
+    pub field91_0x61: u8,
+    pub field92_0x62: u8,
+    pub field93_0x63: u8,
+    pub field94_0x64: u8,
+    pub field95_0x65: u8,
+    pub field96_0x66: u8,
+    pub field97_0x67: u8,
+    pub field98_0x68: u8,
+    pub field99_0x69: u8,
+    pub field100_0x6a: u8,
+    pub field101_0x6b: u8,
+    pub field102_0x6c: u8,
+    pub field103_0x6d: u8,
+    pub field104_0x6e: u8,
+    pub field105_0x6f: u8,
+    pub field106_0x70: u8,
+    pub field107_0x71: u8,
+    pub field108_0x72: u8,
+    pub field109_0x73: u8,
+    pub field110_0x74: u8,
+    pub field111_0x75: u8,
+    pub field112_0x76: u8,
+    pub field113_0x77: u8,
+    pub field114_0x78: u8,
+    pub field115_0x79: u8,
+    pub field116_0x7a: u8,
+    pub field117_0x7b: u8,
+    pub field118_0x7c: u8,
+    pub field119_0x7d: u8,
+    pub field120_0x7e: u8,
+    pub field121_0x7f: u8,
+    pub field122_0x80: u8,
+    pub field123_0x81: u8,
+    pub field124_0x82: u8,
+    pub field125_0x83: u8,
+    pub field126_0x84: u8,
+    pub field127_0x85: u8,
+    pub field128_0x86: u8,
+    pub field129_0x87: u8,
+    pub field130_0x88: u8,
+    pub field131_0x89: u8,
+    pub field132_0x8a: u8,
+    pub field133_0x8b: u8,
+    pub field134_0x8c: u8,
+    pub field135_0x8d: u8,
+    pub field136_0x8e: u8,
+    pub field137_0x8f: u8,
+    pub field138_0x90: u8,
+    pub field139_0x91: u8,
+    pub field140_0x92: u8,
+    pub field141_0x93: u8,
+    pub field142_0x94: u8,
+    pub field143_0x95: u8,
+    pub field144_0x96: u8,
+    pub field145_0x97: u8,
+    pub field146_0x98: u8,
+    pub field147_0x99: u8,
+    pub field148_0x9a: u8,
+    pub field149_0x9b: u8,
+    pub field150_0x9c: u8,
+    pub field151_0x9d: u8,
+    pub field152_0x9e: u8,
+    pub field153_0x9f: u8,
+    pub field154_0xa0: u8,
+    pub field155_0xa1: u8,
+    pub field156_0xa2: u8,
+    pub field157_0xa3: u8,
+    pub field158_0xa4: u8,
+    pub field159_0xa5: u8,
+    pub field160_0xa6: u8,
+    pub field161_0xa7: u8,
+    pub field162_0xa8: u8,
+    pub field163_0xa9: u8,
+    pub field164_0xaa: u8,
+    pub field165_0xab: u8,
+    pub field166_0xac: u8,
+    pub field167_0xad: u8,
+    pub field168_0xae: u8,
+    pub field169_0xaf: u8,
+    pub field170_0xb0: u8,
+    pub field171_0xb1: u8,
+    pub field172_0xb2: u8,
+    pub field173_0xb3: u8,
+    pub field174_0xb4: u8,
+    pub field175_0xb5: u8,
+    pub field176_0xb6: u8,
+    pub field177_0xb7: u8,
+    pub field178_0xb8: u8,
+    pub field179_0xb9: u8,
+    pub field180_0xba: u8,
+    pub field181_0xbb: u8,
+    pub field182_0xbc: u8,
+    pub field183_0xbd: u8,
+    pub field184_0xbe: u8,
+    pub field185_0xbf: u8,
+    pub field186_0xc0: u8,
+    pub field187_0xc1: u8,
+    pub field188_0xc2: u8,
+    pub field189_0xc3: u8,
+    pub field190_0xc4: u8,
+    pub field191_0xc5: u8,
+    pub field192_0xc6: u8,
+    pub field193_0xc7: u8,
+    pub field194_0xc8: u8,
+    pub field195_0xc9: u8,
+    pub field196_0xca: u8,
+    pub field197_0xcb: u8,
+    pub field198_0xcc: u8,
+    pub field199_0xcd: u8,
+    pub field200_0xce: u8,
+    pub field201_0xcf: u8,
+    pub field202_0xd0: u8,
+    pub field203_0xd1: u8,
+    pub field204_0xd2: u8,
+    pub field205_0xd3: u8,
+    pub field206_0xd4: u8,
+    pub field207_0xd5: u8,
+    pub field208_0xd6: u8,
+    pub field209_0xd7: u8,
+    pub field210_0xd8: u8,
+    pub field211_0xd9: u8,
+    pub field212_0xda: u8,
+    pub field213_0xdb: u8,
+    pub field214_0xdc: u8,
+    pub field215_0xdd: u8,
+    pub field216_0xde: u8,
+    pub field217_0xdf: u8,
+    pub field218_0xe0: u8,
+    pub field219_0xe1: u8,
+    pub field220_0xe2: u8,
+    pub field221_0xe3: u8,
+    pub field222_0xe4: u8,
+    pub field223_0xe5: u8,
+    pub field224_0xe6: u8,
+    pub field225_0xe7: u8,
+    pub field226_0xe8: u8,
+    pub field227_0xe9: u8,
+    pub field228_0xea: u8,
+    pub field229_0xeb: u8,
+    pub field230_0xec: u8,
+    pub field231_0xed: u8,
+    pub field232_0xee: u8,
+    pub field233_0xef: u8,
+    pub field234_0xf0: u8,
+    pub field235_0xf1: u8,
+    pub field236_0xf2: u8,
+    pub field237_0xf3: u8,
+    pub field238_0xf4: u8,
+    pub field239_0xf5: u8,
+    pub field240_0xf6: u8,
+    pub field241_0xf7: u8,
+    pub field242_0xf8: u8,
+    pub field243_0xf9: u8,
+    pub field244_0xfa: u8,
+    pub field245_0xfb: u8,
+    pub field246_0xfc: u8,
+    pub field247_0xfd: u8,
+    pub field248_0xfe: u8,
+    pub field249_0xff: u8,
+    pub field250_0x100: u8,
+    pub field251_0x101: u8,
+    pub field252_0x102: u8,
+    pub field253_0x103: u8,
+    pub field254_0x104: u8,
+    pub field255_0x105: u8,
+    pub field256_0x106: u8,
+    pub field257_0x107: u8,
+    pub field258_0x108: u8,
+    pub field259_0x109: u8,
+    pub field260_0x10a: u8,
+    pub field261_0x10b: u8,
+    pub field262_0x10c: u8,
+    pub field263_0x10d: u8,
+    pub field264_0x10e: u8,
+    pub field265_0x10f: u8,
+    pub field266_0x110: u8,
+    pub field267_0x111: u8,
+    pub field268_0x112: u8,
+    pub field269_0x113: u8,
+    pub field270_0x114: u8,
+    pub field271_0x115: u8,
+    pub field272_0x116: u8,
+    pub field273_0x117: u8,
+    pub field274_0x118: u8,
+    pub field275_0x119: u8,
+    pub field276_0x11a: u8,
+    pub field277_0x11b: u8,
+    pub field278_0x11c: u8,
+    pub field279_0x11d: u8,
+    pub field280_0x11e: u8,
+    pub field281_0x11f: u8,
+    pub field282_0x120: u8,
+    pub field283_0x121: u8,
+    pub field284_0x122: u8,
+    pub field285_0x123: u8,
+    pub field286_0x124: u8,
+    pub field287_0x125: u8,
+    pub field288_0x126: u8,
+    pub field289_0x127: u8,
+    pub field290_0x128: u8,
+    pub field291_0x129: u8,
+    pub field292_0x12a: u8,
+    pub field293_0x12b: u8,
+    pub field294_0x12c: u8,
+    pub field295_0x12d: u8,
+    pub field296_0x12e: u8,
+    pub field297_0x12f: u8,
+    pub field298_0x130: u8,
+    pub field299_0x131: u8,
+    pub field300_0x132: u8,
+    pub field301_0x133: u8,
+    pub field302_0x134: u8,
+    pub field303_0x135: u8,
+    pub field304_0x136: u8,
+    pub field305_0x137: u8,
+    pub field306_0x138: u8,
+    pub field307_0x139: u8,
+    pub field308_0x13a: u8,
+    pub field309_0x13b: u8,
+    pub field310_0x13c: u8,
+    pub field311_0x13d: u8,
+    pub field312_0x13e: u8,
+    pub field313_0x13f: u8,
+    pub field314_0x140: u8,
+    pub field315_0x141: u8,
+    pub field316_0x142: u8,
+    pub field317_0x143: u8,
+    pub field318_0x144: u8,
+    pub field319_0x145: u8,
+    pub field320_0x146: u8,
+    pub field321_0x147: u8,
+    pub field322_0x148: u8,
+    pub field323_0x149: u8,
+    pub field324_0x14a: u8,
+    pub field325_0x14b: u8,
+    pub field326_0x14c: u8,
+    pub field327_0x14d: u8,
+    pub field328_0x14e: u8,
+    pub field329_0x14f: u8,
+    pub field330_0x150: u8,
+    pub field331_0x151: u8,
+    pub field332_0x152: u16,
+    pub field333_0x154: u16,
+    pub field334_0x156: u16,
+    pub field335_0x158: u16,
+    pub field336_0x15a: u16,
+    pub field337_0x15c: u32,
+    pub field338_0x160: u32,
+    pub field339_0x164: u32,
+    pub field340_0x168: u8,
+    pub field341_0x169: u8,
+    pub field342_0x16a: u8,
+    pub field343_0x16b: u8,
+    pub field344_0x16c: u8,
+    pub field345_0x16d: u8,
+    pub field346_0x16e: u8,
+    pub field347_0x16f: u8,
+    pub field348_0x170: u8,
+    pub field349_0x171: u8,
+    pub field350_0x172: u8,
+    pub field351_0x173: u8,
+    pub field352_0x174: u8,
+    pub field353_0x175: u8,
+    pub field354_0x176: u8,
+    pub field355_0x177: u8,
+    pub field356_0x178: u8,
+    pub field357_0x179: u8,
+    pub field358_0x17a: u8,
+    pub field359_0x17b: u8,
+    pub field360_0x17c: u8,
+    pub field361_0x17d: u8,
+    pub field362_0x17e: u8,
+    pub field363_0x17f: u8,
+    pub field364_0x180: u8,
+    pub field365_0x181: u8,
+    pub field366_0x182: u8,
+    pub field367_0x183: u8,
+    pub field368_0x184: u8,
+    pub field369_0x185: u8,
+    pub field370_0x186: u8,
+    pub field371_0x187: u8,
+    pub field372_0x188: u8,
+    pub field373_0x189: u8,
+    pub field374_0x18a: u8,
+    pub field375_0x18b: u8,
+    pub field376_0x18c: u8,
+    pub field377_0x18d: u8,
+    pub field378_0x18e: u8,
+    pub field379_0x18f: u8,
+    pub field380_0x190: u8,
+    pub field381_0x191: u8,
+    pub field382_0x192: u8,
+    pub field383_0x193: u8,
+    pub field384_0x194: u8,
+    pub field385_0x195: u8,
+    pub field386_0x196: u8,
+    pub field387_0x197: u8,
+    pub field388_0x198: u8,
+    pub field389_0x199: u8,
+    pub field390_0x19a: u8,
+    pub field391_0x19b: u8,
+    pub field392_0x19c: u8,
+    pub field393_0x19d: u8,
+    pub field394_0x19e: u8,
+    pub field395_0x19f: u8,
+    pub field396_0x1a0: u8,
+    pub field397_0x1a1: u8,
+    pub field398_0x1a2: u8,
+    pub field399_0x1a3: u8,
+    pub field400_0x1a4: u8,
+    pub field401_0x1a5: u8,
+    pub field402_0x1a6: u8,
+    pub field403_0x1a7: u8,
+    pub field404_0x1a8: u8,
+    pub field405_0x1a9: u8,
+    pub field406_0x1aa: u8,
+    pub field407_0x1ab: u8,
+    pub field408_0x1ac: u8,
+    pub field409_0x1ad: u8,
+    pub field410_0x1ae: u8,
+    pub field411_0x1af: u8,
+    pub field412_0x1b0: u8,
+    pub field413_0x1b1: u8,
+    pub field414_0x1b2: u8,
+    pub field415_0x1b3: u8,
+    pub field416_0x1b4: u8,
+    pub field417_0x1b5: u8,
+    pub field418_0x1b6: u8,
+    pub field419_0x1b7: u8,
+    pub field420_0x1b8: u8,
+    pub field421_0x1b9: u8,
+    pub field422_0x1ba: u8,
+    pub field423_0x1bb: u8,
+    pub field424_0x1bc: u8,
+    pub field425_0x1bd: u8,
+    pub field426_0x1be: u8,
+    pub field427_0x1bf: u8,
+    pub field428_0x1c0: u8,
+    pub field429_0x1c1: u8,
+    pub field430_0x1c2: u8,
+    pub field431_0x1c3: u8,
+    pub field432_0x1c4: u8,
+    pub field433_0x1c5: u8,
+    pub field434_0x1c6: u8,
+    pub field435_0x1c7: u8,
+    pub field436_0x1c8: u8,
+    pub field437_0x1c9: u8,
+    pub field438_0x1ca: u8,
+    pub field439_0x1cb: u8,
+    pub field440_0x1cc: u8,
+    pub field441_0x1cd: u8,
+    pub field442_0x1ce: u8,
+    pub field443_0x1cf: u8,
+    pub field444_0x1d0: u8,
+    pub field445_0x1d1: u8,
+    pub field446_0x1d2: u8,
+    pub field447_0x1d3: u8,
+    pub field448_0x1d4: u8,
+    pub field449_0x1d5: u8,
+    pub field450_0x1d6: u8,
+    pub field451_0x1d7: u8,
+    pub field452_0x1d8: u8,
+    pub field453_0x1d9: u8,
+    pub field454_0x1da: u8,
+    pub field455_0x1db: u8,
+    pub field456_0x1dc: u8,
+    pub field457_0x1dd: u8,
+    pub field458_0x1de: u8,
+    pub field459_0x1df: u8,
+    pub field460_0x1e0: u8,
+    pub field461_0x1e1: u8,
+    pub field462_0x1e2: u8,
+    pub field463_0x1e3: u8,
+    pub field464_0x1e4: u8,
+    pub field465_0x1e5: u8,
+    pub field466_0x1e6: u8,
+    pub field467_0x1e7: u8,
+    pub field468_0x1e8: u8,
+    pub field469_0x1e9: u8,
+    pub field470_0x1ea: u8,
+    pub field471_0x1eb: u8,
+    pub field472_0x1ec: u8,
+    pub field473_0x1ed: u8,
+    pub field474_0x1ee: u8,
+    pub field475_0x1ef: u8,
+    pub field476_0x1f0: u8,
+    pub field477_0x1f1: u8,
+    pub field478_0x1f2: u8,
+    pub field479_0x1f3: u8,
+    pub field480_0x1f4: u8,
+    pub field481_0x1f5: u8,
+    pub field482_0x1f6: u8,
+    pub field483_0x1f7: u8,
+    pub field484_0x1f8: u8,
+    pub field485_0x1f9: u8,
+    pub field486_0x1fa: u8,
+    pub field487_0x1fb: u8,
+    pub field488_0x1fc: u8,
+    pub field489_0x1fd: u8,
+    pub field490_0x1fe: u8,
+    pub field491_0x1ff: u8,
+    pub field492_0x200: u8,
+    pub field493_0x201: u8,
+    pub field494_0x202: u8,
+    pub field495_0x203: u8,
+    pub field496_0x204: u8,
+    pub field497_0x205: u8,
+    pub field498_0x206: u8,
+    pub field499_0x207: u8,
+    pub field500_0x208: u8,
+    pub field501_0x209: u8,
+    pub field502_0x20a: u8,
+    pub field503_0x20b: u8,
+    pub field504_0x20c: u8,
+    pub field505_0x20d: u8,
+    pub field506_0x20e: u8,
+    pub field507_0x20f: u8,
+    pub field508_0x210: u8,
+    pub field509_0x211: u8,
+    pub field510_0x212: u8,
+    pub field511_0x213: u8,
+    pub field512_0x214: u8,
+    pub field513_0x215: u8,
+    pub field514_0x216: u8,
+    pub field515_0x217: u8,
+    pub field516_0x218: u8,
+    pub field517_0x219: u8,
+    pub field518_0x21a: u8,
+    pub field519_0x21b: u8,
+    pub field520_0x21c: u8,
+    pub field521_0x21d: u8,
+    pub field522_0x21e: u8,
+    pub field523_0x21f: u8,
+    pub field524_0x220: u8,
+    pub field525_0x221: u8,
+    pub field526_0x222: u8,
+    pub field527_0x223: u8,
+    pub field528_0x224: u8,
+    pub field529_0x225: u8,
+    pub field530_0x226: u8,
+    pub field531_0x227: u8,
+    pub field532_0x228: u8,
+    pub field533_0x229: u8,
+    pub field534_0x22a: u8,
+    pub field535_0x22b: u8,
+    pub field536_0x22c: u8,
+    pub field537_0x22d: u8,
+    pub field538_0x22e: u8,
+    pub field539_0x22f: u8,
+    pub field540_0x230: u8,
+    pub field541_0x231: u8,
+    pub field542_0x232: u8,
+    pub field543_0x233: u8,
+    pub field544_0x234: u8,
+    pub field545_0x235: u8,
+    pub field546_0x236: u8,
+    pub field547_0x237: u8,
+    pub field548_0x238: u8,
+    pub field549_0x239: u8,
+    pub field550_0x23a: u8,
+    pub field551_0x23b: u8,
+    pub field552_0x23c: u8,
+    pub field553_0x23d: u8,
+    pub field554_0x23e: u8,
+    pub field555_0x23f: u8,
+    pub field556_0x240: u8,
+    pub field557_0x241: u8,
+    pub field558_0x242: u8,
+    pub field559_0x243: u8,
+    pub field560_0x244: u8,
+    pub field561_0x245: u8,
+    pub field562_0x246: u8,
+    pub field563_0x247: u8,
+    pub field564_0x248: u8,
+    pub field565_0x249: u8,
+    pub field566_0x24a: u8,
+    pub field567_0x24b: u8,
+    pub field568_0x24c: u8,
+    pub field569_0x24d: u8,
+    pub field570_0x24e: u8,
+    pub field571_0x24f: u8,
+    pub field572_0x250: u8,
+    pub field573_0x251: u8,
+    pub field574_0x252: u8,
+    pub field575_0x253: u8,
+    pub field576_0x254: u8,
+    pub field577_0x255: u8,
+    pub field578_0x256: u8,
+    pub field579_0x257: u8,
+    pub field580_0x258: u8,
+    pub field581_0x259: u8,
+    pub field582_0x25a: u8,
+    pub field583_0x25b: u8,
+    pub field584_0x25c: u8,
+    pub field585_0x25d: u8,
+    pub field586_0x25e: u8,
+    pub field587_0x25f: u8,
+    pub field588_0x260: u8,
+    pub field589_0x261: u8,
+    pub field590_0x262: u8,
+    pub field591_0x263: u8,
+    pub field592_0x264: u8,
+    pub field593_0x265: u8,
+    pub field594_0x266: u8,
+    pub field595_0x267: u8,
+    pub field596_0x268: u8,
+    pub field597_0x269: u8,
+    pub field598_0x26a: u8,
+    pub field599_0x26b: u8,
+    pub field600_0x26c: u8,
+    pub field601_0x26d: u8,
+    pub field602_0x26e: u8,
+    pub field603_0x26f: u8,
+    pub field604_0x270: u8,
+    pub field605_0x271: u8,
+    pub field606_0x272: u8,
+    pub field607_0x273: u8,
+    pub field608_0x274: u8,
+    pub field609_0x275: u8,
+    pub field610_0x276: u8,
+    pub field611_0x277: u8,
+    pub field612_0x278: u8,
+    pub field613_0x279: u8,
+    pub field614_0x27a: u8,
+    pub field615_0x27b: u8,
+    pub field616_0x27c: u8,
+    pub field617_0x27d: u8,
+    pub field618_0x27e: u8,
+    pub field619_0x27f: u8,
+    pub field620_0x280: u8,
+    pub field621_0x281: u8,
+    pub field622_0x282: u8,
+    pub field623_0x283: u8,
+    pub field624_0x284: u8,
+    pub field625_0x285: u8,
+    pub field626_0x286: u8,
+    pub field627_0x287: u8,
+    pub field628_0x288: u8,
+    pub field629_0x289: u8,
+    pub field630_0x28a: u8,
+    pub field631_0x28b: u8,
+    pub field632_0x28c: u8,
+    pub field633_0x28d: u8,
+    pub field634_0x28e: u8,
+    pub field635_0x28f: u8,
+    pub field636_0x290: u8,
+    pub field637_0x291: u8,
+    pub field638_0x292: u8,
+    pub field639_0x293: u8,
+    pub field640_0x294: u8,
+    pub field641_0x295: u8,
+    pub field642_0x296: u8,
+    pub field643_0x297: u8,
+    pub field644_0x298: u8,
+    pub field645_0x299: u8,
+    pub field646_0x29a: u8,
+    pub field647_0x29b: u8,
+    pub field648_0x29c: u8,
+    pub field649_0x29d: u8,
+    pub field650_0x29e: u8,
+    pub field651_0x29f: u8,
+    pub field652_0x2a0: u8,
+    pub field653_0x2a1: u8,
+    pub field654_0x2a2: u8,
+    pub field655_0x2a3: u8,
+    pub field656_0x2a4: u8,
+    pub field657_0x2a5: u8,
+    pub field658_0x2a6: u8,
+    pub field659_0x2a7: u8,
+    pub field660_0x2a8: u8,
+    pub field661_0x2a9: u8,
+    pub field662_0x2aa: u8,
+    pub field663_0x2ab: u8,
+    pub field664_0x2ac: u8,
+    pub field665_0x2ad: u8,
+    pub field666_0x2ae: u8,
+    pub field667_0x2af: u8,
+    pub field668_0x2b0: u8,
+    pub field669_0x2b1: u8,
+    pub field670_0x2b2: u8,
+    pub field671_0x2b3: u8,
+    pub field672_0x2b4: u8,
+    pub field673_0x2b5: u8,
+    pub field674_0x2b6: u8,
+    pub field675_0x2b7: u8,
+    pub field676_0x2b8: u8,
+    pub field677_0x2b9: u8,
+    pub field678_0x2ba: u8,
+    pub field679_0x2bb: u8,
+    pub field680_0x2bc: u8,
+    pub field681_0x2bd: u8,
+    pub field682_0x2be: u8,
+    pub field683_0x2bf: u8,
+    pub field684_0x2c0: u8,
+    pub field685_0x2c1: u8,
+    pub field686_0x2c2: u8,
+    pub field687_0x2c3: u8,
+    pub field688_0x2c4: u8,
+    pub field689_0x2c5: u8,
+    pub field690_0x2c6: u8,
+    pub field691_0x2c7: u8,
+    pub field692_0x2c8: u8,
+    pub field693_0x2c9: u8,
+    pub field694_0x2ca: u8,
+    pub field695_0x2cb: u8,
+    pub field696_0x2cc: u8,
+    pub field697_0x2cd: u8,
+    pub field698_0x2ce: u8,
+    pub field699_0x2cf: u8,
+    pub field700_0x2d0: u8,
+    pub field701_0x2d1: u8,
+    pub field702_0x2d2: u8,
+    pub field703_0x2d3: u8,
+    pub field704_0x2d4: u8,
+    pub field705_0x2d5: u8,
+    pub field706_0x2d6: u8,
+    pub field707_0x2d7: u8,
+    pub field708_0x2d8: u8,
+    pub field709_0x2d9: u8,
+    pub field710_0x2da: u8,
+    pub field711_0x2db: u8,
+    pub field712_0x2dc: u8,
+    pub field713_0x2dd: u8,
+    pub field714_0x2de: u8,
+    pub field715_0x2df: u8,
+    pub field716_0x2e0: u8,
+    pub field717_0x2e1: u8,
+    pub field718_0x2e2: u8,
+    pub field719_0x2e3: u8,
+    pub field720_0x2e4: u8,
+    pub field721_0x2e5: u8,
+    pub field722_0x2e6: u8,
+    pub field723_0x2e7: u8,
+    pub field724_0x2e8: u8,
+    pub field725_0x2e9: u8,
+    pub field726_0x2ea: u8,
+    pub field727_0x2eb: u8,
+    pub field728_0x2ec: u8,
+    pub field729_0x2ed: u8,
+    pub field730_0x2ee: u8,
+    pub field731_0x2ef: u8,
+    pub field732_0x2f0: u8,
+    pub field733_0x2f1: u8,
+    pub field734_0x2f2: u8,
+    pub field735_0x2f3: u8,
+    pub field736_0x2f4: u8,
+    pub field737_0x2f5: u8,
+    pub field738_0x2f6: u8,
+    pub field739_0x2f7: u8,
+    pub field740_0x2f8: u8,
+    pub field741_0x2f9: u8,
+    pub field742_0x2fa: u8,
+    pub field743_0x2fb: u8,
+    pub field744_0x2fc: u8,
+    pub field745_0x2fd: u8,
+    pub field746_0x2fe: u8,
+    pub field747_0x2ff: u8,
+    pub field748_0x300: u8,
+    pub field749_0x301: u8,
+    pub field750_0x302: u8,
+    pub field751_0x303: u8,
+    pub field752_0x304: u8,
+    pub field753_0x305: u8,
+    pub field754_0x306: u8,
+    pub field755_0x307: u8,
+    pub field756_0x308: u8,
+    pub field757_0x309: u8,
+    pub field758_0x30a: u8,
+    pub field759_0x30b: u8,
+    pub field760_0x30c: u8,
+    pub field761_0x30d: u8,
+    pub field762_0x30e: u8,
+    pub field763_0x30f: u8,
+    pub field764_0x310: u8,
+    pub field765_0x311: u8,
+    pub field766_0x312: u8,
+    pub field767_0x313: u8,
+    pub field768_0x314: u8,
+    pub field769_0x315: u8,
+    pub field770_0x316: u8,
+    pub field771_0x317: u8,
+    pub field772_0x318: u8,
+    pub field773_0x319: u8,
+    pub field774_0x31a: u8,
+    pub field775_0x31b: u8,
+    pub field776_0x31c: u8,
+    pub field777_0x31d: u8,
+    pub field778_0x31e: u8,
+    pub field779_0x31f: u8,
+    pub field780_0x320: u8,
+    pub field781_0x321: u8,
+    pub field782_0x322: u8,
+    pub field783_0x323: u8,
+    pub field784_0x324: u8,
+    pub field785_0x325: u8,
+    pub field786_0x326: u8,
+    pub field787_0x327: u8,
+    pub field788_0x328: u8,
+    pub field789_0x329: u8,
+    pub field790_0x32a: u8,
+    pub field791_0x32b: u8,
+    pub field792_0x32c: u8,
+    pub field793_0x32d: u8,
+    pub field794_0x32e: u8,
+    pub field795_0x32f: u8,
+    pub field796_0x330: u8,
+    pub field797_0x331: u8,
+    pub field798_0x332: u8,
+    pub field799_0x333: u8,
+    pub field800_0x334: u8,
+    pub field801_0x335: u8,
+    pub field802_0x336: u8,
+    pub field803_0x337: u8,
+    pub field804_0x338: u8,
+    pub field805_0x339: u8,
+    pub field806_0x33a: u8,
+    pub field807_0x33b: u8,
+    pub field808_0x33c: u8,
+    pub field809_0x33d: u8,
+    pub field810_0x33e: u8,
+    pub field811_0x33f: u8,
+    pub field812_0x340: u8,
+    pub field813_0x341: u8,
+    pub field814_0x342: u8,
+    pub field815_0x343: u8,
+    pub field816_0x344: u8,
+    pub field817_0x345: u8,
+    pub field818_0x346: u8,
+    pub field819_0x347: u8,
+    pub field820_0x348: u8,
+    pub field821_0x349: u8,
+    pub field822_0x34a: u8,
+    pub field823_0x34b: u8,
+    pub field824_0x34c: u8,
+    pub field825_0x34d: u8,
+    pub field826_0x34e: u8,
+    pub field827_0x34f: u8,
+    pub field828_0x350: u8,
+    pub field829_0x351: u8,
+    pub field830_0x352: u8,
+    pub field831_0x353: u8,
+    pub field832_0x354: u8,
+    pub field833_0x355: u8,
+    pub field834_0x356: u8,
+    pub field835_0x357: u8,
+    pub field836_0x358: u8,
+    pub field837_0x359: u8,
+    pub field838_0x35a: u8,
+    pub field839_0x35b: u8,
+    pub field840_0x35c: u8,
+    pub field841_0x35d: u8,
+    pub field842_0x35e: u8,
+    pub field843_0x35f: u8,
+    pub field844_0x360: u8,
+    pub field845_0x361: u8,
+    pub field846_0x362: u8,
+    pub field847_0x363: u8,
+    pub field848_0x364: u8,
+    pub field849_0x365: u8,
+    pub field850_0x366: u8,
+    pub field851_0x367: u8,
+    pub field852_0x368: u8,
+    pub field853_0x369: u8,
+    pub field854_0x36a: u8,
+    pub field855_0x36b: u8,
+    pub field856_0x36c: u8,
+    pub field857_0x36d: u8,
+    pub field858_0x36e: u8,
+    pub field859_0x36f: u8,
+    pub field860_0x370: u8,
+    pub field861_0x371: u8,
+    pub field862_0x372: u8,
+    pub field863_0x373: u8,
+    pub field864_0x374: u8,
+    pub field865_0x375: u8,
+    pub field866_0x376: u8,
+    pub field867_0x377: u8,
+    pub field868_0x378: u8,
+    pub field869_0x379: u8,
+    pub field870_0x37a: u8,
+    pub field871_0x37b: u8,
+    pub field872_0x37c: u8,
+    pub field873_0x37d: u8,
+    pub field874_0x37e: u8,
+    pub field875_0x37f: u8,
+    pub field876_0x380: u8,
+    pub field877_0x381: u8,
+    pub field878_0x382: u8,
+    pub field879_0x383: u8,
+    pub field880_0x384: u8,
+    pub field881_0x385: u8,
+    pub field882_0x386: u8,
+    pub field883_0x387: u8,
+    pub field884_0x388: u8,
+    pub field885_0x389: u8,
+    pub field886_0x38a: u8,
+    pub field887_0x38b: u8,
+    pub field888_0x38c: u8,
+    pub field889_0x38d: u8,
+    pub field890_0x38e: u8,
+    pub field891_0x38f: u8,
+    pub field892_0x390: u8,
+    pub field893_0x391: u8,
+    pub field894_0x392: u8,
+    pub field895_0x393: u8,
+    pub field896_0x394: u8,
+    pub field897_0x395: u8,
+    pub field898_0x396: u8,
+    pub field899_0x397: u8,
+    pub field900_0x398: u8,
+    pub field901_0x399: u8,
+    pub field902_0x39a: u8,
+    pub field903_0x39b: u8,
+    pub field904_0x39c: u8,
+    pub field905_0x39d: u8,
+    pub field906_0x39e: u8,
+    pub field907_0x39f: u8,
+    pub field908_0x3a0: u8,
+    pub field909_0x3a1: u8,
+    pub field910_0x3a2: u8,
+    pub field911_0x3a3: u8,
+    pub field912_0x3a4: u8,
+    pub field913_0x3a5: u8,
+    pub field914_0x3a6: u8,
+    pub field915_0x3a7: u8,
+    pub field916_0x3a8: u8,
+    pub field917_0x3a9: u8,
+    pub field918_0x3aa: u8,
+    pub field919_0x3ab: u8,
+    pub field920_0x3ac: u8,
+    pub field921_0x3ad: u8,
+    pub field922_0x3ae: u8,
+    pub field923_0x3af: u8,
+    pub field924_0x3b0: u8,
+    pub field925_0x3b1: u8,
+    pub field926_0x3b2: u8,
+    pub field927_0x3b3: u8,
+    pub field928_0x3b4: u8,
+    pub field929_0x3b5: u8,
+    pub field930_0x3b6: u8,
+    pub field931_0x3b7: u8,
+    pub field932_0x3b8: u8,
+    pub field933_0x3b9: u8,
+    pub field934_0x3ba: u8,
+    pub field935_0x3bb: u8,
+    pub field936_0x3bc: u8,
+    pub field937_0x3bd: u8,
+    pub field938_0x3be: u8,
+    pub field939_0x3bf: u8,
+    pub field940_0x3c0: u8,
+    pub field941_0x3c1: u8,
+    pub field942_0x3c2: u8,
+    pub field943_0x3c3: u8,
+    pub field944_0x3c4: u8,
+    pub field945_0x3c5: u8,
+    pub field946_0x3c6: u8,
+    pub field947_0x3c7: u8,
+    pub field948_0x3c8: u8,
+    pub field949_0x3c9: u8,
+    pub field950_0x3ca: u8,
+    pub field951_0x3cb: u8,
+    pub field952_0x3cc: u8,
+    pub field953_0x3cd: u8,
+    pub field954_0x3ce: u8,
+    pub field955_0x3cf: u8,
+    pub field956_0x3d0: u8,
+    pub field957_0x3d1: u8,
+    pub field958_0x3d2: u8,
+    pub field959_0x3d3: u8,
+    pub field960_0x3d4: u8,
+    pub field961_0x3d5: u8,
+    pub field962_0x3d6: u8,
+    pub field963_0x3d7: u8,
+    pub field964_0x3d8: u8,
+    pub field965_0x3d9: u8,
+    pub field966_0x3da: u8,
+    pub field967_0x3db: u8,
+    pub field968_0x3dc: u8,
+    pub field969_0x3dd: u8,
+    pub field970_0x3de: u8,
+    pub field971_0x3df: u8,
+    pub field972_0x3e0: u8,
+    pub field973_0x3e1: u8,
+    pub field974_0x3e2: u8,
+    pub field975_0x3e3: u8,
+    pub field976_0x3e4: u8,
+    pub field977_0x3e5: u8,
+    pub field978_0x3e6: u8,
+    pub field979_0x3e7: u8,
+    pub field980_0x3e8: u8,
+    pub field981_0x3e9: u8,
+    pub field982_0x3ea: u8,
+    pub field983_0x3eb: u8,
+    pub field984_0x3ec: u8,
+    pub field985_0x3ed: u8,
+    pub field986_0x3ee: u8,
+    pub field987_0x3ef: u8,
+    pub field988_0x3f0: u8,
+    pub field989_0x3f1: u8,
+    pub field990_0x3f2: u8,
+    pub field991_0x3f3: u8,
+    pub field992_0x3f4: u8,
+    pub field993_0x3f5: u8,
+    pub field994_0x3f6: u8,
+    pub field995_0x3f7: u8,
+    pub field996_0x3f8: u8,
+    pub field997_0x3f9: u8,
+    pub field998_0x3fa: u8,
+    pub field999_0x3fb: u8,
+    pub field1000_0x3fc: u8,
+    pub field1001_0x3fd: u8,
+    pub field1002_0x3fe: u8,
+    pub field1003_0x3ff: u8,
+    pub field1004_0x400: u8,
+    pub field1005_0x401: u8,
+    pub field1006_0x402: u8,
+    pub field1007_0x403: u8,
+    pub field1008_0x404: u8,
+    pub field1009_0x405: u8,
+    pub field1010_0x406: u8,
+    pub field1011_0x407: u8,
+    pub field1012_0x408: u8,
+    pub field1013_0x409: u8,
+    pub field1014_0x40a: u8,
+    pub field1015_0x40b: u8,
+    pub field1016_0x40c: u8,
+    pub field1017_0x40d: u8,
+    pub field1018_0x40e: u8,
+    pub field1019_0x40f: u8,
+    pub field1020_0x410: u8,
+    pub field1021_0x411: u8,
+    pub field1022_0x412: u8,
+    pub field1023_0x413: u8,
+    pub field1024_0x414: u8,
+    pub field1025_0x415: u8,
+    pub field1026_0x416: u8,
+    pub field1027_0x417: u8,
+    pub field1028_0x418: u8,
+    pub field1029_0x419: u8,
+    pub field1030_0x41a: u8,
+    pub field1031_0x41b: u8,
+    pub field1032_0x41c: u8,
+    pub field1033_0x41d: u8,
+    pub field1034_0x41e: u8,
+    pub field1035_0x41f: u8,
+    pub field1036_0x420: u8,
+    pub field1037_0x421: u8,
+    pub field1038_0x422: u8,
+    pub field1039_0x423: u8,
+    pub field1040_0x424: u8,
+    pub field1041_0x425: u8,
+    pub field1042_0x426: u8,
+    pub field1043_0x427: u8,
+    pub field1044_0x428: u8,
+    pub field1045_0x429: u8,
+    pub field1046_0x42a: u8,
+    pub field1047_0x42b: u8,
+    pub field1048_0x42c: u8,
+    pub field1049_0x42d: u8,
+    pub field1050_0x42e: u8,
+    pub field1051_0x42f: u8,
+    pub field1052_0x430: u8,
+    pub field1053_0x431: u8,
+    pub field1054_0x432: u8,
+    pub field1055_0x433: u8,
+    pub field1056_0x434: u8,
+    pub field1057_0x435: u8,
+    pub field1058_0x436: u8,
+    pub field1059_0x437: u8,
+    pub field1060_0x438: u8,
+    pub field1061_0x439: u8,
+    pub field1062_0x43a: u8,
+    pub field1063_0x43b: u8,
+    pub field1064_0x43c: u8,
+    pub field1065_0x43d: u8,
+    pub field1066_0x43e: u8,
+    pub field1067_0x43f: u8,
+    pub field1068_0x440: u8,
+    pub field1069_0x441: u8,
+    pub field1070_0x442: u8,
+    pub field1071_0x443: u8,
+    pub field1072_0x444: u8,
+    pub field1073_0x445: u8,
+    pub field1074_0x446: u8,
+    pub field1075_0x447: u8,
+    pub field1076_0x448: u8,
+    pub field1077_0x449: u8,
+    pub field1078_0x44a: u8,
+    pub field1079_0x44b: u8,
+    pub field1080_0x44c: u8,
+    pub field1081_0x44d: u8,
+    pub field1082_0x44e: u8,
+    pub field1083_0x44f: u8,
+    pub field1084_0x450: u8,
+    pub field1085_0x451: u8,
+    pub field1086_0x452: u8,
+    pub field1087_0x453: u8,
+    pub field1088_0x454: u8,
+    pub field1089_0x455: u8,
+    pub field1090_0x456: u8,
+    pub field1091_0x457: u8,
+    pub field1092_0x458: u8,
+    pub field1093_0x459: u8,
+    pub field1094_0x45a: u8,
+    pub field1095_0x45b: u8,
+    pub field1096_0x45c: u8,
+    pub field1097_0x45d: u8,
+    pub field1098_0x45e: u8,
+    pub field1099_0x45f: u8,
+    pub field1100_0x460: u8,
+    pub field1101_0x461: u8,
+    pub field1102_0x462: u8,
+    pub field1103_0x463: u8,
+    pub field1104_0x464: u8,
+    pub field1105_0x465: u8,
+    pub field1106_0x466: u8,
+    pub field1107_0x467: u8,
+    pub field1108_0x468: u8,
+    pub field1109_0x469: u8,
+    pub field1110_0x46a: u8,
+    pub field1111_0x46b: u8,
+    pub field1112_0x46c: u8,
+    pub field1113_0x46d: u8,
+    pub field1114_0x46e: u8,
+    pub field1115_0x46f: u8,
+    pub field1116_0x470: u8,
+    pub field1117_0x471: u8,
+    pub field1118_0x472: u8,
+    pub field1119_0x473: u8,
+    pub field1120_0x474: u8,
+    pub field1121_0x475: u8,
+    pub field1122_0x476: u8,
+    pub field1123_0x477: u8,
+    pub field1124_0x478: u8,
+    pub field1125_0x479: u8,
+    pub field1126_0x47a: u8,
+    pub field1127_0x47b: u8,
+    pub field1128_0x47c: u8,
+    pub field1129_0x47d: u8,
+    pub field1130_0x47e: u8,
+    pub field1131_0x47f: u8,
+    pub field1132_0x480: u8,
+    pub field1133_0x481: u8,
+    pub field1134_0x482: u8,
+    pub field1135_0x483: u8,
+    pub field1136_0x484: u8,
+    pub field1137_0x485: u8,
+    pub field1138_0x486: u8,
+    pub field1139_0x487: u8,
+    pub field1140_0x488: u8,
+    pub field1141_0x489: u8,
+    pub field1142_0x48a: u8,
+    pub field1143_0x48b: u8,
+    pub field1144_0x48c: u8,
+    pub field1145_0x48d: u8,
+    pub field1146_0x48e: u8,
+    pub field1147_0x48f: u8,
+    pub field1148_0x490: u8,
+    pub field1149_0x491: u8,
+    pub field1150_0x492: u8,
+    pub field1151_0x493: u8,
+    pub field1152_0x494: u8,
+    pub field1153_0x495: u8,
+    pub field1154_0x496: u8,
+    pub field1155_0x497: u8,
+    pub field1156_0x498: u8,
+    pub field1157_0x499: u8,
+    pub field1158_0x49a: u8,
+    pub field1159_0x49b: u8,
+    pub field1160_0x49c: u8,
+    pub field1161_0x49d: u8,
+    pub field1162_0x49e: u8,
+    pub field1163_0x49f: u8,
+    pub field1164_0x4a0: u8,
+    pub field1165_0x4a1: u8,
+    pub field1166_0x4a2: u8,
+    pub field1167_0x4a3: u8,
+    pub field1168_0x4a4: u8,
+    pub field1169_0x4a5: u8,
+    pub field1170_0x4a6: u8,
+    pub field1171_0x4a7: u8,
+    pub field1172_0x4a8: u8,
+    pub field1173_0x4a9: u8,
+    pub field1174_0x4aa: u8,
+    pub field1175_0x4ab: u8,
+    pub field1176_0x4ac: u8,
+    pub field1177_0x4ad: u8,
+    pub field1178_0x4ae: u8,
+    pub field1179_0x4af: u8,
+    pub field1180_0x4b0: u8,
+    pub field1181_0x4b1: u8,
+    pub field1182_0x4b2: u8,
+    pub field1183_0x4b3: u8,
+    pub field1184_0x4b4: u8,
+    pub field1185_0x4b5: u8,
+    pub field1186_0x4b6: u8,
+    pub field1187_0x4b7: u8,
+    pub field1188_0x4b8: u8,
+    pub field1189_0x4b9: u8,
+    pub field1190_0x4ba: u8,
+    pub field1191_0x4bb: u8,
+    pub field1192_0x4bc: u8,
+    pub field1193_0x4bd: u8,
+    pub field1194_0x4be: u8,
+    pub field1195_0x4bf: u8,
+    pub field1196_0x4c0: u8,
+    pub field1197_0x4c1: u8,
+    pub field1198_0x4c2: u8,
+    pub field1199_0x4c3: u8,
+    pub field1200_0x4c4: u8,
+    pub field1201_0x4c5: u8,
+    pub field1202_0x4c6: u8,
+    pub field1203_0x4c7: u8,
+    pub field1204_0x4c8: u8,
+    pub field1205_0x4c9: u8,
+    pub field1206_0x4ca: u8,
+    pub field1207_0x4cb: u8,
+    pub field1208_0x4cc: u8,
+    pub field1209_0x4cd: u8,
+    pub field1210_0x4ce: u8,
+    pub field1211_0x4cf: u8,
+    pub field1212_0x4d0: u8,
+    pub field1213_0x4d1: u8,
+    pub field1214_0x4d2: u8,
+    pub field1215_0x4d3: u8,
+    pub field1216_0x4d4: u8,
+    pub field1217_0x4d5: u8,
+    pub field1218_0x4d6: u8,
+    pub field1219_0x4d7: u8,
+    pub field1220_0x4d8: u8,
+    pub field1221_0x4d9: u8,
+    pub field1222_0x4da: u8,
+    pub field1223_0x4db: u8,
+    pub field1224_0x4dc: u8,
+    pub field1225_0x4dd: u8,
+    pub field1226_0x4de: u8,
+    pub field1227_0x4df: u8,
+    pub field1228_0x4e0: u8,
+    pub field1229_0x4e1: u8,
+    pub field1230_0x4e2: u8,
+    pub field1231_0x4e3: u8,
+    pub field1232_0x4e4: u8,
+    pub field1233_0x4e5: u8,
+    pub field1234_0x4e6: u8,
+    pub field1235_0x4e7: u8,
+    pub field1236_0x4e8: u8,
+    pub field1237_0x4e9: u8,
+    pub field1238_0x4ea: u8,
+    pub field1239_0x4eb: u8,
+    pub field1240_0x4ec: u8,
+    pub field1241_0x4ed: u8,
+    pub field1242_0x4ee: u8,
+    pub field1243_0x4ef: u8,
+    pub field1244_0x4f0: u8,
+    pub field1245_0x4f1: u8,
+    pub field1246_0x4f2: u8,
+    pub field1247_0x4f3: u8,
+    pub field1248_0x4f4: u8,
+    pub field1249_0x4f5: u8,
+    pub field1250_0x4f6: u8,
+    pub field1251_0x4f7: u8,
+    pub field1252_0x4f8: u8,
+    pub field1253_0x4f9: u8,
+    pub field1254_0x4fa: u8,
+    pub field1255_0x4fb: u8,
+    pub field1256_0x4fc: u8,
+    pub field1257_0x4fd: u8,
+    pub field1258_0x4fe: u8,
+    pub field1259_0x4ff: u8,
+    pub field1260_0x500: u8,
+    pub field1261_0x501: u8,
+    pub field1262_0x502: u8,
+    pub field1263_0x503: u8,
+    pub field1264_0x504: u8,
+    pub field1265_0x505: u8,
+    pub field1266_0x506: u8,
+    pub field1267_0x507: u8,
+    pub field1268_0x508: u8,
+    pub field1269_0x509: u8,
+    pub field1270_0x50a: u8,
+    pub field1271_0x50b: u8,
+    pub field1272_0x50c: u8,
+    pub field1273_0x50d: u8,
+    pub field1274_0x50e: u8,
+    pub field1275_0x50f: u8,
+    pub field1276_0x510: u8,
+    pub field1277_0x511: u8,
+    pub field1278_0x512: u8,
+    pub field1279_0x513: u8,
+    pub field1280_0x514: u8,
+    pub field1281_0x515: u8,
+    pub field1282_0x516: u8,
+    pub field1283_0x517: u8,
+    pub field1284_0x518: u8,
+    pub field1285_0x519: u8,
+    pub field1286_0x51a: u8,
+    pub field1287_0x51b: u8,
+    pub field1288_0x51c: u8,
+    pub field1289_0x51d: u8,
+    pub field1290_0x51e: u8,
+    pub field1291_0x51f: u8,
+    pub field1292_0x520: u8,
+    pub field1293_0x521: u8,
+    pub field1294_0x522: u8,
+    pub field1295_0x523: u8,
+    pub field1296_0x524: u8,
+    pub field1297_0x525: u8,
+    pub field1298_0x526: u8,
+    pub field1299_0x527: u8,
+    pub field1300_0x528: u8,
+    pub field1301_0x529: u8,
+    pub field1302_0x52a: u8,
+    pub field1303_0x52b: u8,
+    pub field1304_0x52c: u8,
+    pub field1305_0x52d: u8,
+    pub field1306_0x52e: u8,
+    pub field1307_0x52f: u8,
+    pub field1308_0x530: u8,
+    pub field1309_0x531: u8,
+    pub field1310_0x532: u8,
+    pub field1311_0x533: u8,
+    pub field1312_0x534: u8,
+    pub field1313_0x535: u8,
+    pub field1314_0x536: u8,
+    pub field1315_0x537: u8,
+    pub field1316_0x538: u8,
+    pub field1317_0x539: u8,
+    pub field1318_0x53a: u8,
+    pub field1319_0x53b: u8,
+    pub field1320_0x53c: u8,
+    pub field1321_0x53d: u8,
+    pub field1322_0x53e: u8,
+    pub field1323_0x53f: u8,
+    pub field1324_0x540: u8,
+    pub field1325_0x541: u8,
+    pub field1326_0x542: u8,
+    pub field1327_0x543: u8,
+    pub field1328_0x544: u8,
+    pub field1329_0x545: u8,
+    pub field1330_0x546: u8,
+    pub field1331_0x547: u8,
+    pub field1332_0x548: u8,
+    pub field1333_0x549: u8,
+    pub field1334_0x54a: u8,
+    pub field1335_0x54b: u8,
+    pub field1336_0x54c: u8,
+    pub field1337_0x54d: u8,
+    pub field1338_0x54e: u8,
+    pub field1339_0x54f: u8,
+    pub field1340_0x550: u8,
+    pub field1341_0x551: u8,
+    pub field1342_0x552: u8,
+    pub field1343_0x553: u8,
+    pub field1344_0x554: u8,
+    pub field1345_0x555: u8,
+    pub field1346_0x556: u8,
+    pub field1347_0x557: u8,
+    pub field1348_0x558: u8,
+    pub field1349_0x559: u8,
+    pub field1350_0x55a: u8,
+    pub field1351_0x55b: u8,
+    pub field1352_0x55c: u8,
+    pub field1353_0x55d: u8,
+    pub field1354_0x55e: u8,
+    pub field1355_0x55f: u8,
+    pub field1356_0x560: u8,
+    pub field1357_0x561: u8,
+    pub field1358_0x562: u8,
+    pub field1359_0x563: u8,
+    pub field1360_0x564: u8,
+    pub field1361_0x565: u8,
+    pub field1362_0x566: u8,
+    pub field1363_0x567: u8,
+    pub field1364_0x568: u32,
+}

@@ -5,23 +5,6 @@
 use std::os::raw::c_char;
 use crate::prog_types::{HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HMENU16, HWND16};
 
-pub struct Struct7 {
-    pub field_0x02: u16,
-    pub field_0x04: u16,
-    pub field_0x0a: *mut u8;
-    pub field_0x14: i16,
-    pub field_0x16: u16,
-    pub field_0x19: u16,
-    pub field_0x1a: u16,
-    pub field_0x1e: u16,
-    pub field_0x20: *mut i16,
-    pub field_0x26: *mut u8;
-    pub field_0x28: *mut u8;
-    pub field_0x36: u16,
-    pub field_0x3e: i16,
-    pub field_0x40: i16,
-}
-
 pub struct Struct99 {
     pub field0_0x0: u16,
     pub field1_0x2: u16,
@@ -452,7 +435,7 @@ pub struct StructA {
     pub field11_0x16: i16,
     pub field12_0x18: i16,
     pub field13_0x1a: u16,
-    pub field14_0x1c: *mut u8;
+    pub field14_0x1c: *mut u8,
     pub field15_0x1e: u16,
     pub field16_0x20: u8,
     pub field17_0x21: u8,
@@ -470,7 +453,7 @@ pub struct StructA {
     pub field29_0x34: u16,
     pub field30_0x36: u8,
     pub field31_0x37: u8,
-    pub field32_0x38: *mut u8;
+    pub field32_0x38: *mut u8,
     pub field33_0x3a: u8,
     pub field34_0x3b: u8,
     pub field35_0x3c: u8,
@@ -605,6 +588,8 @@ pub struct Struct878 {
 }
 
 pub struct Struct_1000_07ac_1 {
-    pub field_0x10: *mut u16,
-    pub field_0x0e: *mut u16,
+    pub field_0x08: u16,
+    pub field_0x14: u16,
+    pub field_0x10: u16,
+    pub field_0x0e: u16,
 }

@@ -11,20 +11,30 @@
 // #include "sys_api.h"
 // #include "block_1000.h"
 
-use std::ptr;
-use crate::block_1000::{dos3_call_1000_23ea, ret_op_1000_55ac};
-use crate::block_1000::block_1000_2000::{fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c, pass1_1000_27d6, pass1_1000_2913, poss_str_op_1000_28dc};
+use crate::block_1000::block_1000_2000::{
+    fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_24db, pass1_1000_25a8, pass1_1000_262c,
+    pass1_1000_27d6, pass1_1000_2913, poss_str_op_1000_28dc,
+};
 use crate::block_1000::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
-use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84, PTR_LOOP_1050_63fe, REG_DI, REG_SI, WIN_VERSION_1050_5f80};
-use crate::sys_api::{FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, WaitEvent16};
+use crate::globals::{
+    DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a,
+    PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84,
+    PTR_LOOP_1050_63fe, WIN_VERSION_1050_5f80, REG_DI, REG_SI,
+};
+use crate::sys_api::{
+    FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, WaitEvent16,
+};
 use crate::utils::CONCAT22;
+use std::ptr;
 
-pub unsafe fn entry(mut param_1: u16,
-                    mut param_2: u16,
-                    mut param_3: i16,
-                     let mut param_4: *mut u8;
-                     let mut param_5: *mut u8;
-                    mut param_6: u16) -> *mut c_char {
+pub unsafe fn entry(
+    mut param_1: u16,
+    mut param_2: u16,
+    mut param_3: i16,
+    param_4: *mut u8,
+    param_5: *mut u8,
+    param_6: u16,
+) -> *mut c_char {
     // paVar1: *mut astruct_822;
     let mut paVar1: *mut astruct_822;
     let mut piVar2: *mut c_char;
@@ -34,7 +44,7 @@ pub unsafe fn entry(mut param_1: u16,
     let mut iVar5: i16;
     let mut string_var5: *mut c_char;
     let mut iVar6: i16;
-//    let mut unaff_SI: *mut u8;
+    //    let mut unaff_SI: *mut u8;
     let mut string_var7: *mut c_char;
     // let mut unaff_DI: HISTANCE16;
     // paVar8: *mut c_char;
@@ -64,21 +74,21 @@ pub unsafe fn entry(mut param_1: u16,
                 HINSTANCE16_1050_5f4c = REG_DI;
                 PTR_LOOP_1050_5f4e = param_4;
                 LockSegment16(0xffff);
-//                PTR_LOOP_1050_5f52 =  (u32_var11 >> 0x10);
+                //                PTR_LOOP_1050_5f52 =  (u32_var11 >> 0x10);
                 PTR_LOOP_1050_5f84 = u32_var11;
                 win_version = GetVersion16();
-//                PTR_LOOP_1050_5f52 =  (u32_var11 >> 0x10);
+                //                PTR_LOOP_1050_5f52 =  (u32_var11 >> 0x10);
                 PTR_LOOP_1050_5f84 = u32_var11;
-//                PTR_LOOP_1050_5f80 =  CONCAT11( u32_var10,
-//                                                      (u32_var10 >> 0x8));
+                //                PTR_LOOP_1050_5f80 =  CONCAT11( u32_var10,
+                //                                                      (u32_var10 >> 0x8));
                 WIN_VERSION_1050_5f80 = win_version;
                 let mut func_ptr_3: code8 = swi(0x21);
                 u32_var12 = u32_var11;
                 u32_var11 = func_ptr_3();
-//                PTR_LOOP_1050_5f52 =  (u32_var12 >> 0x10);
+                //                PTR_LOOP_1050_5f52 =  (u32_var12 >> 0x10);
                 PTR_LOOP_1050_5f84 = u32_var12;
-//                DAT_1050_5f82 = CONCAT11( u32_var11,
-//                                           (u32_var11 >> 0x8));
+                //                DAT_1050_5f82 = CONCAT11( u32_var11,
+                //                                           (u32_var11 >> 0x8));
                 DAT_1050_5f82 = u32_var11 as u16;
                 DAT_1050_5f87 = 0;
                 WaitEvent16(0x0);
@@ -90,17 +100,14 @@ pub unsafe fn entry(mut param_1: u16,
                 }
             }
         }
-//        param_3 = CONCAT11( ( param_3 >> 0x8),
-//                           0xff);
+        //        param_3 = CONCAT11( ( param_3 >> 0x8),
+        //                           0xff);
         param_3 = ((param_3 >> 0x8) << 0x8) | 0xff;
         pass1_1000_24db(param_3 as u16);
         PTR_LOOP_1050_5f84 = u32_var11;
     }
     // &DAT_1050_1050
-    dos3_call_1000_23ea(param_4,
-                        0x1050,
-                        0x0,
-                        0x1050);
+    dos3_call_1000_23ea(param_4, 0x1050, 0x0, 0x1050);
     PTR_LOOP_1050_5f84 = u32_var11;
     //  s_tile2_bmp_1050_1538
     pass1_1000_262c(u32_var11, 0x238d, 0x1538);
@@ -108,8 +115,7 @@ pub unsafe fn entry(mut param_1: u16,
     pass1_1000_27d6(u32_var11 as u16);
     win_version = ret_op_1000_55ac();
     uVar4 = win_version as u16;
-    init_1000_23be(param_5,
-                   (uVar10 >> 0x10) as u16);
+    init_1000_23be(param_5, (uVar10 >> 0x10) as u16);
     fn_ptr_op_1000_24cd(uVar4);
     // TODO
     // paVar13 =  CONCAT22(uVar4,

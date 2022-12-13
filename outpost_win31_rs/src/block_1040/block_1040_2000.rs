@@ -90,7 +90,7 @@ pub unsafe fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
   let mut uVar4: u8;
   let mut hpalette_7: HPALETTE16;
   let mut uVar7: u16;
-  HANDLE16 handle;
+  let mut handle: HANDLE16;
   let mut extraout_var: u32;
   let mut in_DX: u16;
   let mut extraout_DX: u16;
@@ -237,7 +237,7 @@ pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,StructC *param_3,mut param_4: u32,mut param_5: u16 ) -> u32
+pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,param_3: *mut StructC,mut param_4: u32,mut param_5: u16 ) -> u32
 
 {
   let mut puVar1: *mut u32;
@@ -255,7 +255,7 @@ pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,Str
   let mut puVar8: *mut u8;
   let mut uVar12: u16;
   let mut puVar9: *mut u8;
-  StructC *iVar8;
+  let mut iVar8: *mut StructC;
   let mut iVar9: i16;
   let mut uVar8: u16;
   let mut uVar9: u16;
@@ -268,7 +268,7 @@ pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,Str
   let mut local_1e: [u8;0x4] = [0;0x4];
   let mut uStack26: u16;
   let mut uStack24: u16;
-  local_16: *mut u32 [0x2];
+  let mut local_16: [*mut u32;0x2];
   let mut uStack12: u16;
   let mut puStack10: *mut u32;
   let mut BStack6: bool;
@@ -287,7 +287,7 @@ pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,Str
     uStack4 = 0;
   }
   else {
-    iVar8 = (StructC *)param_3;
+    iVar8 = param_3;
     if (param_5 - 0x2 < 0x19e) {//
 // LAB_1040_2539:
       param_2 = param_5;
@@ -400,7 +400,8 @@ pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,Str
           *piVar1 = *piVar1 + 1;
         }
         uStack12 += 0x1;
-      } while (uStack12 < 0x1b5);
+        if uStack12 >= 0x1b5 {break;}
+      }
       uVar2 = &iVar8.field142_0x92;
       puStack10 = (puStack10 & 0xffff0000 | uVar2);
       paVar3 = iVar8.field141_0x8e;
@@ -679,7 +680,9 @@ pub unsafe fn win_ui_op_1040_2bb2(param_1: *mut u8,pstruct_903_param_2: *mut ast
   if (param_4 == 0x158) {
     PTR_LOOP_1050_5d04 = (PTR_LOOP_1050_5d04.is_null());
     if (PTR_LOOP_1050_5d04.is_null()) {
-      for (iStack8 = 0x1; iStack8 < 0x5; iStack8 += 1) {
+    //   for (iStack8 = 0x1; iStack8 < 0x5; iStack8 += 1)
+    for iStack8 in 1 .. 5
+    {
         iVar5 = iStack8 * 0xc;
         HVar3 = GetDlgItem16((iVar5 + 0x5d00),(pstruct_903_param_2 + 0x6));
         EnableWindow16(0x0,HVar3);
@@ -695,7 +698,9 @@ pub unsafe fn win_ui_op_1040_2bb2(param_1: *mut u8,pstruct_903_param_2: *mut ast
       id = PTR_s_post_1050_015d_1050_5d06;
   // TODO: goto LAB_1040_2ccc;
     }
-    for (iStack8 = 0x1; iStack8 < 0x5; iStack8 += 1) {
+    // for (iStack8 = 0x1; iStack8 < 0x5; iStack8 += 1)
+    for iStack8 in 1..5
+    {
       iVar3 = (iStack8 * 0xc);
       HVar3 = GetDlgItem16((iVar3 + 0x5d00),(pstruct_903_param_2 + 0x6));
       EnableWindow16(0x1,HVar3);

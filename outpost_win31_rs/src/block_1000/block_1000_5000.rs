@@ -74,7 +74,7 @@ pub unsafe fn pass1_1000_5026(mut param_1: i16,
             if ( param_4 < u_var1) {
                 param_4 = u_var1;
             }
-            u_stack304 = block_1000_1000::mem_1000_167a(0x0,
+            u_stack304 = mem_1000_167a(0x0,
                                                               param_4);
             u_stack304 = u_var2;
             if ((u_var2 | u_stack304) == 0) {
@@ -356,10 +356,9 @@ pub unsafe fn pass1_1000_52f0(mut param_1: u16 ,
                     iVar5);
 }
 
-pub unsafe fn pass1_1000_5390(mut param_1: u16 ,
-                    mut param_2: u16 ,
-                    mut param_3: u16 ,
-                    mut param_4: u16 ) -> u32
+pub unsafe fn pass1_1000_5390(mut param_1: u32,
+                              mut param_3: u16,
+                              mut param_4: *mut u8) -> u32
 {
     let mut uVar1: u32;
     let mut lVar2: i32;

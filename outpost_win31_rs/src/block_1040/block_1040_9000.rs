@@ -1,3 +1,5 @@
+use crate::prog_types::RECT16;
+
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
@@ -123,13 +125,13 @@ pub unsafe fn create_window_1040_92dc(param_1: *mut astruct_65)
                           0x4000,s__1050_5e3e,s_button_1050_5e3f);
     pstruct65_2.field11_0x18 = hwnd;
     lVar1 = SetWindowLong16(_u16_1050_5e18,-0x4,hwnd);
-    lVar1 = (HANDLE16)(lVar1 >> 0x10);
+    lVar1 = (lVar1 >> 0x10);
     pstruct65_2.field10_0x14 = lVar1;
-    *(HANDLE16 *)(&pstruct65_2.field10_0x14 + 0x2) = lVar1;
+   (&pstruct65_2.field10_0x14 + 0x2) = lVar1;
     SetProp16(lVar1,s_procHi_1050_5e46,pstruct65_2.field11_0x18);
-    SetProp16(*(HANDLE16 *)&pstruct65_2.field10_0x14,s_procLo_1050_5e4d,pstruct65_2.field11_0x18);
-    SetProp16((HANDLE16)pstruct65_1,s_thisHi_1050_5e54,pstruct65_2.field11_0x18);
-    SetProp16((HANDLE16)pstruct65_2,s_thisLo_1050_5e5b,pstruct65_2.field11_0x18);
+    SetProp16(&pstruct65_2.field10_0x14,s_procLo_1050_5e4d,pstruct65_2.field11_0x18);
+    SetProp16(pstruct65_1,s_thisHi_1050_5e54,pstruct65_2.field11_0x18);
+    SetProp16(pstruct65_2,s_thisLo_1050_5e5b,pstruct65_2.field11_0x18);
     if (pstruct65_2[0x1].field12_0x1a != 0) {
       SetProp16(0x1,s_IsDlg_1050_5e62,pstruct65_2.field11_0x18);
     }
@@ -255,8 +257,8 @@ pub unsafe fn win_ui_get_prop_op_1040_9566(param_1: *mut i16)
   let mut uVar1: u16;
   let mut iVar2: i16;
   let mut ppcVar3: *mut *mut code;
-  HANDLE16 HVar4;
-  HANDLE16 HVar5;
+  let mut HVar4: HANDLE16;
+  let mut HVar5: HANDLE16;
   let mut iVar6: i16;
   let mut uVar7: u16;
   let mut puStack12: *mut u32;
@@ -314,18 +316,18 @@ pub unsafe fn draw_text_1040_9650(param_1: *mut astruct_65)
 
   hdc = GetDC16(0x0);
   DrawText16(0x410,(param_1 & 0xffff0000 | (param_1 + 0x2e)),-0x1,
-             *(LPCSTR *)(param_1 + 0x4),hdc);
+             (param_1 + 0x4),hdc);
   ReleaseDC16(hdc,0x0);
   return;
 }
 pub unsafe fn call_win_proc_1040_9684(win_handle_1: HWND16,mut param_2: u16 ,w_param_1: WPARAM16,l_param_1: LPARAM)
 
 {
-  HANDLE16 handle_1;
-  HANDLE16 handle_2;
+  let mut handle_1: HANDLE16;
+  let mut handle_2: HANDLE16;
   let mut bool_1: bool;
   let mut uVar2: u16;
-  RECT16 local_1a [0x2];
+  let mut local_1a: [RECT16;0x2] = [RECT16::default();2];
   let mut var18: *mut u32;
   let mut var14: *mut u32;
   let mut var10: *mut u32;
@@ -447,7 +449,7 @@ pub unsafe fn reg_class_1040_98c0(mut param_1: u32)
 
 {
   let mut BVar1: bool;
-  AVar2: ATOM;
+  let mut AVar2: ATOM;
   let mut wndclass: WNDCLASS16;
 
   wndclass.lpsz_class_name = param_1 + 0x4;
@@ -485,8 +487,8 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   let mut hdc16_dev_ctx_1: HDC16;
   let mut mode: i16;
   let mut uVar3: u16;
-  handle: HPEN16;
-  hgdiobj16_00: HPEN16;
+  let mut handle: HPEN16;
+  let mut hgdiobj16_00: HPEN16;
   let mut hgdiobj_2: HGDIOBJ16;
   let mut hdc_lt_gray_brush_1: HGDIOBJ16;
   let mut cch_1: u16;
@@ -590,7 +592,8 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
       x5 += -0x1;
       y4 += -0x1;
       iStack78 += 0x1;
-    } while (iStack78 < 1);
+      if iStack78 >= 1 {break;}
+    }
   }
   if ((struct71_var4.field4_0x4 & 0x2) == 0) {
     y2 = (rect_12 >> 0x10);
@@ -607,13 +610,15 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
         SelectObject16(hgdiobj16_00,hdc16_dev_ctx_1);
         LineTo16(y2,x1,hdc16_dev_ctx_1);
         LineTo16(y1,x1,hdc16_dev_ctx_1);
-      } while ((hdc16_dev_ctx_1 + 1) < 0x2);
+        if !((hdc16_dev_ctx_1 + 1) < 0x2) {break;}
+      }
       y2 += 0x1;
       x1 += 0x1;
       x2 += -0x1;
       y1 += -0x1;
       iStack78 += 0x1;
-    } while (iStack78 < 0x2);
+      if iStack78 >= 0x2 {break;}
+    }
   }
   else {
     MoveTo16(y3,rect_12.x,hdc16_dev_ctx_1);
@@ -686,7 +691,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,m
   let mut uVar13: u32;
   let mut uVar14: u8;
   let mut uVar15: u8;
-  RECT16 rect_a [0x2];
+  let mut rect_a: [RECT16;0x2] = [RECT16::default();2];
   let mut iVar3: i16;
   let mut paVar7: *mut Struct57;
   let mut hwnd_dlg_8: HWND16;
@@ -695,7 +700,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,m
   win_long_11 = GetWindowLong16(0x0,hwnd_param_4);
   paVar7 = CONCAT22(uVar10,(win_long_11 >> 0x10));
   iVar3 = win_long_11;
-  uVar8 = ((win_long_11 & 0xffff0000U) >> 0x10);
+  uVar8 = ((win_long_11 & 0xffff0000) >> 0x10);
   if (msg_param_3 == 0x30) {
     (iVar3 + 0x5a) = wparam_param_2;
   }
@@ -726,7 +731,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,m
       }
       else if (bVar3 < 0x9) {
         if (bVar3 == 1) {
-          pWVar11 = (WPARAM16 *)GetWindowLong16(0x0,hwnd_param_4);
+          pWVar11 = GetWindowLong16(0x0,hwnd_param_4);
           iVar2 = pWVar11;
           uVar10 = ((pWVar11 & 0xffff0000) >> 0x10);
           (iVar2 + 0x2) = (lparam_param_1 + 0x8);
@@ -780,7 +785,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM,wparam_param_2: WPARAM16,m
       // TODO: goto LAB_1040_a1ae;
         }
         if (lparam_param_1 != 0) {
-          unk_str_op_1000_3d3e((win_long_11 & 0xffff0000U | (iVar3 + 0x6)),lparam_param_1);
+          unk_str_op_1000_3d3e((win_long_11 & 0xffff0000 | (iVar3 + 0x6)),lparam_param_1);
         }
       }
   // TODO: goto LAB_1040_9e20;

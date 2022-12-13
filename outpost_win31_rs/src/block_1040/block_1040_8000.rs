@@ -141,7 +141,7 @@ pub unsafe fn check_dialog_msg_1040_81b6(mut param_1: u32)
 {
   let mut BVar1: bool;
   let mut uVar2: u16;
-  local_14: MSG16;
+  let mut local_14: MSG16;
 
   uVar2 = (param_1 >> 0x10);
   (param_1 + 0x78) = 0x1;
@@ -291,8 +291,7 @@ pub unsafe fn pass1_1040_83e6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-astruct_57 *
-pass1_1040_8478(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 )
+pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 ) -> *mut astruct_57
 
 {
   let mut uVar1: u16;
@@ -432,7 +431,7 @@ pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u8 * win_ui_op_1040_8718(param_1: *mut astruct_37)
+pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
 
 {
   let mut piVar1: *mut i16;
@@ -620,7 +619,7 @@ pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_76
   let mut paVar1: *mut astruct_13;
   let mut uVar6: u8;
   let mut HVar7: HPALETTE16;
-  HANDLE16 handle;
+  let mut handle: HANDLE16;
   let mut extraout_var: u32;
   let mut extraout_DX: u16;
   let mut iVar10: *mut astruct_765;
@@ -633,7 +632,7 @@ pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_76
   let mut uVar1: u8;
   let mut uVar2: u8;
   let mut uVar3: u8;
-  LPCSTR uVar4;
+  let mut uVar4: LPCSTR;
   let mut uVar5: u16;
   let mut iVar2: *mut astruct_766;
 
@@ -681,7 +680,7 @@ pub unsafe fn pass1_1040_8b3c(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
     return;
   }
   post_win_msg_1040_7b3c
-            ((StructC *)CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
+            (CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
   return;
 }
 pub unsafe fn destroy_win_1040_8b7e(mut param_1: u32)
@@ -722,12 +721,12 @@ pub unsafe fn load_icon_1040_8b92(param_1: *mut astruct_57)
 
 
 
-HANDLE16 create_window_1040_8bea
-                   (param_1: *mut astruct_37,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,param_5: INT16,param_6: INT16,param_7: *mut c_char)
+pub unsafe fn create_window_1040_8bea
+                   (param_1: *mut astruct_37,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,param_5: INT16,param_6: INT16,param_7: *mut c_char) -> HANDLE16
 
 {
   let mut hwnd: HWND16;
-  HANDLE16 wparam;
+  let mut wparam: HANDLE16;
   let mut LVar1: LRESULT;
   let mut uStack6: u32;
 
@@ -739,12 +738,12 @@ HANDLE16 create_window_1040_8bea
     uStack6 |= 0x8000000;
   }
   hwnd = CreateWindow16(0x0,CONCAT22(param_4,HINSTANCE16_1050_038c),
-                        *(HINSTANCE16 *)(&param_1.field1_0x4 + 0x2),0x17,0x58,param_6,param_5,uStack6,
+                        (&param_1.field1_0x4 + 0x2),0x17,0x58,param_6,param_5,uStack6,
                         (uStack6 >> 0x10),param_7,s_OPButton_1050_5e00);
   wparam = GetProp16(s_hfont_1050_5e09,(&param_1.field1_0x4 + 0x2));
   if (wparam != 0) {
     LVar1 = SendMessage16(0x1,wparam,0x30,hwnd);
-    wparam = (HANDLE16)LVar1;
+    wparam = LVar1;
   }
   return wparam;
 }
@@ -763,7 +762,7 @@ pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
   HVar3 = GetDC16((&struct_1.field1_0x4 + 0x2));
   draw_text_1040_8d14(param_1,HVar3);
   struct_1[0x1].field1_0x4 = *&struct_1.field144_0x9e;
-  *(RECT16 **)&struct_1[0x1].field_0x8 = (struct_1 + 1).field0_0x0;
+  &struct_1[0x1].field_0x8 = (struct_1 + 1).field0_0x0;
   IVar4 = GetSystemMetrics16(SM_CYCAPTION);
   piVar1 = &struct_1[0x1].field_0xa;
   *piVar1 = *piVar1 + IVar4;
@@ -789,10 +788,10 @@ pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
 pub unsafe fn draw_text_1040_8d14(param_1: *mut astruct_37,hdc_param_2: HDC16)
 
 {
-  LPCSTR in_string;
+  let mut in_string: LPCSTR;
   let mut bVar1: u8;
   let mut IVar2: i16;
-  HANDLE16 handle;
+  let mut handle: HANDLE16;
    let mut struct_1: *mut astruct_37;
   let mut uVar3: u16;
   let mut obj_handle_1: HGDIOBJ16;

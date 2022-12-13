@@ -4,7 +4,7 @@
 pub unsafe fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
 
 {
-  handle: HPEN16;
+  let mut handle: HPEN16;
   let mut obj_handle_var3: HGDIOBJ16;
   let mut iVar3: *mut astruct_772;
   let mut uVar4: u16;
@@ -16,8 +16,9 @@ pub unsafe fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
   let mut iStack40: i16;
   let mut hbrush_var38: HBRUSH16;
   let mut hdc16_var36: HDC16;
-  PAINTSTRUCT16 *paintstruct_22;
-  let mut uVar1: u32;
+//   PAINTSTRUCT16 *paintstruct_22;
+let mut paintstruct_22: *mut PAINTSTRUCT16;
+let mut uVar1: u32;
   let mut uVar2: u32;
 
   uVar4 = (struct_param_1 >> 0x10);
@@ -342,7 +343,7 @@ pub unsafe fn draw_op_1040_c74c(param_1: *mut astruct_738,mut param_2: u16 ,hdc1
 {
   let mut uVar2: u16;
   let mut hdc_black_brush_1: HGDIOBJ16;
-  pen_handle_1: HPEN16;
+  let mut pen_handle_1: HPEN16;
   let mut handle: HGDIOBJ16;
   let mut hpalette_1: HPALETTE16;
    let mut struct_1: *mut astruct_738;
@@ -669,11 +670,11 @@ pub unsafe fn pass1_1040_cc8c(param_1: *mut u8,param_2: *mut astruct_903,mut par
   }
   else {
     // just 0x1756
-    if (param_5 == s_vrpal_bmp_1050_183a + 0x7U) {
+    if (param_5 == s_vrpal_bmp_1050_183a + 0x7) {
       msg_box_op_1040_cce4(0x0,param_1,param_2);
     }
     else {
-      if (param_5 != s_vrpal_bmp_1050_183a + 0x8U) {
+      if (param_5 != s_vrpal_bmp_1050_183a + 0x8) {
         pass1_1040_b54a(param_1,param_2,param_3,_param_4);
         return;
       }

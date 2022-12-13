@@ -7,7 +7,6 @@ use crate::block_1018::block_1018_2000::{pass1_1018_2afa, pass1_1018_2d84};
 use crate::block_1018::block_1018_3000::pass1_1018_30fc;
 use crate::prog_types::{ATOM, HMENU16, HWND16, LRESULT, RECT16, WNDCLASS16, WPARAM16};
 use crate::string_defs::{s__1050_4415, s_listbox_1050_4416, s_MciSound_registerClass_failed_1050_02cc, s_MciSoundWindow_1050_02bd};
-use crate::structs_2_h::{Struct57, StructA};
 use crate::sys_api::{CreateWindow16, DestroyWindow16, GetClassInfo16, GetClientRect16, GetDlgItem16, GetStockObject16, OutputDebugString16, RegisterClass16, SendMessage16, SetFocus16, ShowWindow16};
 use crate::utils::{CONCAT22, SUB42};
 
@@ -113,7 +112,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
     u32_var2 = win_style;
     if window_handle == 0x0 {
       if (win_style) != 0x0 {
-        pass1_1018_2afa(win_style, 0);
+        pass1_1018_2afa(win_style);
         fn_ptr_1000_17ce(u32_var2);
         return;
       }
@@ -131,7 +130,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57 ,param_2: *mut Stru
       else {
         iVar9 = null_mut();
         loop {
-          ppaVar1 = (astruct_878 **)(win_style + 0x4);
+          ppaVar1 = (win_style + 0x4);
           if *ppaVar1 == iVar9 || *ppaVar1 < iVar9 { break; };
           wparam_var10 = 0;
           u16_var11 = 0x401;

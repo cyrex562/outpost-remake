@@ -70,7 +70,8 @@ pub unsafe fn file_1038_6118(mut param_1: i16,param_2: *mut astruct_57,param_3: 
             (&iVar9[0xb].field19_0x1a)[uVar4 * 0x2] = (uStack1042 * 0x4 + BVar2);
             (&iVar9[0xc].field_0x0 + uVar4 * 0x4) = uVar9;
             uStack1042 += 0x1;
-          } while (uStack1042 < 0x15);
+            if uStack1042 >= 0x15 {break;}
+          }
           BVar3 = read_file_1008_7dee(param_4,puStack1046,0x54);
 //          if (BVar3 == 0) goto LAB_1038_626a;
           uStack1042 = 0;
@@ -80,7 +81,8 @@ pub unsafe fn file_1038_6118(mut param_1: i16,param_2: *mut astruct_57,param_3: 
             (&iVar9[0xe].field19_0x1a)[uVar5 * 0x2] = (uStack1042 * 0x4 + BVar2);
             (&iVar9[0xf].field_0x0 + uVar5 * 0x4) = uVar4;
             uStack1042 += 0x1;
-          } while (uStack1042 < 0x15);
+            if uStack1042 >= 0x15 {break;}
+          }
           fn_ptr_1000_17ce(puStack1046);
         }
         else {
@@ -719,23 +721,23 @@ pub unsafe fn pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
   uVar3 = pass1_1030_6fa0(CONCAT22(uVar4,uVar1));
   if (uVar3 < 0xa) {
     match uVar3 {
-    0x1 =>
-      uStack4 = 0x1;
-      break;
-    0x2 =>
-    0x6 =>
-      uStack4 = 0x2;
-      break;
-    0x3 =>
-    0x7 =>
-      uStack4 = 0x3;
-      break;
-    0x4 =>
-    0x8 =>
-      uStack4 = 0x4;
-      break;
-    0x5 =>
-    0x9 =>
+    0x1 =>{
+      uStack4 = 0x1;}
+    //   break;
+    0x2 |
+    0x6 =>{
+      uStack4 = 0x2;}
+    //   break;
+    0x3 |
+    0x7 =>{
+      uStack4 = 0x3;}
+    //   break;
+    0x4 |
+    0x8 =>{
+      uStack4 = 0x4;}
+    //   break;
+    0x5 |
+    0x9 =>{}
   // TODO: goto switchD_1038_6eab_caseD_5;
     }
   }
@@ -750,33 +752,33 @@ pub unsafe fn pass1_1038_6e1a(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
       uStack4 = 0xb;
   // TODO: goto switchD_1038_6eab_caseD_9;
     }
-switchD_1038_6eab_caseD_5:
+// switchD_1038_6eab_caseD_5:
     uStack4 = 0x5;
   }
-switchD_1038_6eab_caseD_9:
+// switchD_1038_6eab_caseD_9:
   match uStack4 {
-  0x1 =>
-    return 0x14;
-  0x2 =>
-  0x7 =>
-    return 0x3c;
-  0x3 =>
-  0x8 =>
-    return 0x78;
-  0x4 =>
-  0x9 =>
-    return 0xf0;
-  0x5 =>
-  0x6 =>
-    return 0xf;
-  0xa =>
-    uVar3 = 0xc;
-    break;
-  0xb =>
-    uVar3 = 0xa;
-    break;
-  _ =>
-    uVar3 = 0xffff;
+  0x1 =>{
+    return 0x14;}
+  0x2 |
+  0x7 =>{
+    return 0x3c;}
+  0x3 |
+  0x8 =>{
+    return 0x78;}
+  0x4 |
+  0x9 =>{
+    return 0xf0;}
+  0x5 |
+  0x6 =>{
+    return 0xf;}
+  0xa =>{
+    uVar3 = 0xc;}
+    // break;
+  0xb =>{
+    uVar3 = 0xa;}
+    // break;
+  _ =>{
+    uVar3 = 0xffff;}
   }
   return uVar3;
 }
