@@ -295,7 +295,7 @@ pub unsafe fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750,mut param_2:
 {
   let mut bVar1: bool;
   let mut brush_handle_var2: HBRUSH16;
-  struct750_var4: *mut astruct_750;
+   let mut struct750_var4: *mut astruct_750;
   let mut uVar3: u16;
   let mut uVar4: u32;
   let mut iStack14: i16;
@@ -659,7 +659,7 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
   let mut uVar8: u16;
   let mut in_register_0000000a: u16;
   let mut iVar9: i16;
-  plVar10: *mut i32;
+   let mut plVar10: *mut i32;
   let mut unaff_SI: u16;
   let mut uVar11: u16;
   let mut uVar12: u16;

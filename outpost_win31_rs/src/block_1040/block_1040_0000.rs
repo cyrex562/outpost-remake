@@ -286,7 +286,7 @@ pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB,param_2: *mut astruct_91
 {
   let mut hwnd: HWND16;
   let mut iVar2: i16;
-  iVar3: *mut StructB;
+   let mut iVar3: *mut StructB;
   let mut uVar3: u16;
   let mut l_param: *mut c_char;
   let mut LVar4: LRESULT;

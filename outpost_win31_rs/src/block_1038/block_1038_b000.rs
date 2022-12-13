@@ -152,12 +152,12 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16 ,struct_b_param_1: *mut Struc
   let mut ppcVar3: *mut *mut code;
   let mut uVar4: u16;
   let mut HVar5: HWND16;
-  win_enabled: *mut astruct_909;
+   let mut win_enabled: *mut astruct_909;
   let mut extraout_DX: u16;
   let mut in_register_0000000a: u16;
   let mut paVar7: *mut Struct57;
   let mut uVar9: u32;
-  struct_b_8: *mut StructB;
+   let mut struct_b_8: *mut StructB;
   let mut unaff_SI: u16;
   let mut uVar7: u16;
   let mut puVar10: *mut u32;
@@ -168,7 +168,7 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16 ,struct_b_param_1: *mut Struc
   let mut piStack16: *mut i16;
   let mut iStack12: i16;
   let mut iStack10: i16;
-  iVar7: *mut StructB;
+   let mut iVar7: *mut StructB;
   let mut uVar8: u16;
   let mut piVar6: *mut i16;
 

@@ -167,7 +167,7 @@ pub unsafe fn destroy_win_1040_8212(param_1: *mut astruct_899)
 
 {
   let mut is_window: bool;
-  struct_1: *mut astruct_899;
+   let mut struct_1: *mut astruct_899;
   let mut uVar1: u16;
 
   uVar1 = (param_1 >> 0x10);
@@ -239,7 +239,7 @@ pub unsafe fn move_win_1040_826c(param_1: *mut StructB,param_2: INT16,param_3: B
 pub unsafe fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
 
 {
-  struct_1: *mut astruct_14;
+   let mut struct_1: *mut astruct_14;
   let mut struct_1_hi: HDC16;
   let mut local_1a: u32;
   let mut uStack22: u32;
@@ -755,7 +755,7 @@ pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
   let mut bVar2: u8;
   let mut HVar3: HDC16;
   let mut IVar4: i16;
-  struct_1: *mut astruct_37;
+   let mut struct_1: *mut astruct_37;
   let mut uVar5: u16;
 
   uVar5 = (param_1 >> 0x10);
@@ -793,7 +793,7 @@ pub unsafe fn draw_text_1040_8d14(param_1: *mut astruct_37,hdc_param_2: HDC16)
   let mut bVar1: u8;
   let mut IVar2: i16;
   HANDLE16 handle;
-  struct_1: *mut astruct_37;
+   let mut struct_1: *mut astruct_37;
   let mut uVar3: u16;
   let mut obj_handle_1: HGDIOBJ16;
 

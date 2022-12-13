@@ -173,7 +173,7 @@ pub unsafe fn win_ui_op_1038_d2a2(param_1: *mut astruct_57,struct_b_param_1: *mu
   let mut uVar3: u16;
   let mut uVar4: u16;
   let mut iVar5: *mut astruct_912;
-  struct_b_6: *mut StructB;
+   let mut struct_b_6: *mut StructB;
   let mut uVar6: u16;
   let mut puVar7: *mut u32;
   let mut l_param: *mut c_char;
@@ -510,7 +510,7 @@ pub unsafe fn FUN_1038_d8ae(param_1: *mut StructD,mut param_2: u16 ,struct_b_par
   let mut rect: *mut Struct57;
   let mut uVar4: u16;
   let mut paVar5: *mut Struct57;
-  struct_b_1: *mut StructB;
+   let mut struct_b_1: *mut StructB;
   let mut iVar6: i16;
   let mut uVar7: u16;
   let mut uVar9: u16;

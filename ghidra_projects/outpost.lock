@@ -1,9 +1,9 @@
 #Ghidra Lock File
-#Wed Jun 08 08:46:04 EDT 2022
-OS\ Name=Windows 10
-OS\ Version=10.0
-Username=cyrex
-Hostname=dark-angels
+#Tue Dec 13 09:12:41 EST 2022
 <META>\ Supports\ File\ Channel\ Locking=Channel Lock
+Hostname=jam2-ub2104-621
 OS\ Architecture=amd64
-Timestamp=6/8/22, 8\:46 AM
+OS\ Name=Linux
+OS\ Version=5.15.2-051502-generic
+Timestamp=12/13/22, 9\:12 AM
+Username=jam2

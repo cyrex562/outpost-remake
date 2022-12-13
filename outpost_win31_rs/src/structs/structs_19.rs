@@ -469,7 +469,7 @@ struct astruct_595 {
 
 struct astruct_806 {
     char * path_0x0;
-    hfile_0x4: HFILE16;
+     let mut hfile_0x4: HFILE16;
 };
 
 

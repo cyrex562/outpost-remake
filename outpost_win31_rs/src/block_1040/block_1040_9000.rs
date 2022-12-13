@@ -111,8 +111,8 @@ pub unsafe fn create_window_1040_92dc(param_1: *mut astruct_65)
 
 {
   let mut hwnd: HWND16;
-  pstruct65_2: *mut astruct_65;
-  pstruct65_1: *mut astruct_65;
+   let mut pstruct65_2: *mut astruct_65;
+   let mut pstruct65_1: *mut astruct_65;
   let mut lVar1: i32;
 
   pstruct65_1 = (param_1 >> 0x10);
@@ -231,7 +231,7 @@ pub unsafe fn unk_draw_op_1040_9458(param_1: *mut astruct_17,param_2: u8,mut par
 pub unsafe fn draw_text_1040_94fc(struct_param_1: *mut astruct_37,hdc_param_2: HDC16)
 
 {
-  struct_1: *mut astruct_37;
+   let mut struct_1: *mut astruct_37;
   let mut struct_1_lo: u16;
   let mut colorref_2: COLORREF;
   let mut u16_var_1: u16;
@@ -425,7 +425,7 @@ pub unsafe fn unk_win_ui_op_1040_9854(param_1: *mut astruct_787) -> *mut u16
 {
   let mut HVar1: HCURSOR16;
   let mut HVar2: HGDIOBJ16;
-  struct_1: *mut astruct_787;
+   let mut struct_1: *mut astruct_787;
   let mut uVar3: u16;
 
   uVar3 = (param_1 >> 0x10);
@@ -496,7 +496,7 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   let mut uVar4: u16;
   let mut extraout_DX: u16;
   let mut extraout_DX_00: u16;
-  struct71_var4: *mut astruct_71;
+   let mut struct71_var4: *mut astruct_71;
   let mut uVar7: u16;
   let mut pcVar1: *mut c_char;
   let mut uVar2: u16;

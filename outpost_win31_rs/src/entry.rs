@@ -22,8 +22,8 @@ use crate::utils::CONCAT22;
 pub unsafe fn entry(mut param_1: u16,
                     mut param_2: u16,
                     mut param_3: i16,
-                    param_4: *mut u8;
-                    param_5: *mut u8;
+                     let mut param_4: *mut u8;
+                     let mut param_5: *mut u8;
                     mut param_6: u16) -> *mut c_char {
     // paVar1: *mut astruct_822;
     let mut paVar1: *mut astruct_822;

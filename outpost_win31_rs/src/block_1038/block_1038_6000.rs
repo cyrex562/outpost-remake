@@ -157,8 +157,8 @@ pub unsafe fn pass1_1038_64de(param_1: *mut StructD,param_2: u8) -> *mut StructD
 pub unsafe fn struct_1038_6520(param_1: *mut astruct_308)
 
 {
-  pstruct308_1: *mut astruct_308;
-  pstruct308_2: *mut astruct_308;
+   let mut pstruct308_1: *mut astruct_308;
+   let mut pstruct308_2: *mut astruct_308;
 
   pstruct308_2 = (param_1 >> 0x10);
   pstruct308_1 = param_1;
@@ -421,7 +421,7 @@ pub unsafe fn pass1_1038_6984(mut param_1: u32)
     return;
   }
   if ((iVar1 + 0xe) != 0) {
-    pass1_1020_ba94(*(i32 **)(iVar1 + 0xe));
+    pass1_1020_ba94((iVar1 + 0xe));
     return;
   }
   if ((iVar1 + 0x12) == 0) {

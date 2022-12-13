@@ -64,7 +64,7 @@ pub unsafe fn win_ui_op_1040_410e(param_1: u8,struct_b_param_1: *mut StructB)
   let mut uVar1: u32;
   let mut in_EDX: u32;
   let mut paVar2: *mut Struct57;
-  struct_b_3: *mut StructB;
+   let mut struct_b_3: *mut StructB;
   let mut uVar3: u16;
   let mut puVar4: *mut u16;
   let mut puVar5: *mut u32;
@@ -867,7 +867,7 @@ pub unsafe fn set_win_pos_1040_4f96
   let mut uVar11: u16;
   let mut paVar12: *mut Struct57;
   let mut paVar14: *mut Struct57;
-  struct_b_11: *mut StructB;
+   let mut struct_b_11: *mut StructB;
   let mut uVar15: u16;
   let mut uVar16: u16;
   let mut puVar17: *mut u32;

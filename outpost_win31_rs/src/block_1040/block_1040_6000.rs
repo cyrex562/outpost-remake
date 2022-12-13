@@ -100,7 +100,7 @@ pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,struct_b_param_1: *mut St
   let mut uVar4: u16;
   let mut uVar5: *mut StructD;
   let mut paVar5: *mut Struct57;
-  struct_b_4: *mut StructB;
+   let mut struct_b_4: *mut StructB;
   let mut iVar6: i16;
   let mut unaff_SI: u16;
   let mut unaff_DI: i16;
@@ -326,7 +326,7 @@ pub unsafe fn mixed_win_ui_op_1040_6942
   let mut uVar10: u16;
   let mut uVar5: u16;
   let mut paVar13: *mut Struct57;
-  struct_b_6: *mut StructB;
+   let mut struct_b_6: *mut StructB;
   let mut uVar6: u16;
   let mut uVar9: u16;
   let mut uVar7: u16;
@@ -548,7 +548,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
   let mut in_DX: *mut u8;
   let mut local_a: RECT16;
   let mut iStack6: i16;
-  iStack4: *mut astruct_896;
+   let mut iStack4: *mut astruct_896;
   let mut iVar3: *mut astruct_895;
 
   match param_4 {
@@ -617,7 +617,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
 pub unsafe fn create_window_1040_6eae(mut param_1: u32,mut param_2: i16,pstruct_param_3: *mut astruct_859,mut param_4: u16 ,mut param_5: u16 )
 
 {
-  pstruct_1: *mut astruct_859;
+   let mut pstruct_1: *mut astruct_859;
   let mut uVar1: u16;
   let mut window_name: *mut c_char;
   let mut h_instance: HISTANCE16;

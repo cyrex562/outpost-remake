@@ -176,7 +176,7 @@ pub unsafe fn win_ui_op_1038_e348(param_1: *mut StructB,param_2: u8,param_3: *mu
   let mut uVar7: u16;
   let mut uVar6: *mut StructD;
   let mut uVar11: u16;
-  struct_b_5: *mut StructB;
+   let mut struct_b_5: *mut StructB;
   let mut iVar12: i16;
   let mut unaff_SI: u16;
   let mut uVar8: u16;
@@ -440,7 +440,7 @@ pub unsafe fn unk_win_ui_op_1038_e71c(mut param_1: u16 ,param_2: *mut StructB)
 
 {
   let mut extraout_DX: u16;
-  struct_1: *mut StructB;
+   let mut struct_1: *mut StructB;
   let mut struct_1_lo: u16;
   let mut pcStack6: *mut c_char;
 
@@ -606,7 +606,7 @@ pub unsafe fn win_ui_op_1038_ea18(param_1: *mut StructB)
 {
   let mut hwnd: HWND16;
   let mut IVar1: i16;
-  iVar2: *mut StructB;
+   let mut iVar2: *mut StructB;
   let mut uVar2: u16;
   let mut lparam: u32;
   let mut in_stack_0000fff0: bool;
@@ -628,7 +628,7 @@ pub unsafe fn win_ui_op_1038_eaa2(param_1: *mut astruct_888,mut param_2: i16)
 
 {
   let mut hwnd: HWND16;
-  struct_1: *mut astruct_888;
+   let mut struct_1: *mut astruct_888;
   let mut struct_1_lo: u16;
   let mut LVar1: LRESULT;
 

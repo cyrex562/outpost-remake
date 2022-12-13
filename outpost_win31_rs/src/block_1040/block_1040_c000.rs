@@ -345,7 +345,7 @@ pub unsafe fn draw_op_1040_c74c(param_1: *mut astruct_738,mut param_2: u16 ,hdc1
   pen_handle_1: HPEN16;
   let mut handle: HGDIOBJ16;
   let mut hpalette_1: HPALETTE16;
-  struct_1: *mut astruct_738;
+   let mut struct_1: *mut astruct_738;
   let mut uVar4: u16;
   let mut uVar5: u16;
   let mut uVar3: u32;
@@ -407,7 +407,7 @@ pub unsafe fn palette_op_1040_c886(struct_param_1: *mut astruct_769,param_2: u8,
   let mut uVar1: u16;
   let mut palette_2: HPALETTE16;
   let mut uVar4: u16;
-  struct_2: *mut astruct_769;
+   let mut struct_2: *mut astruct_769;
   let mut uVar2: u16;
   let mut uVar3: u16;
   let mut unaff_CS: u16;

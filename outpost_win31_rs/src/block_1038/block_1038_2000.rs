@@ -591,7 +591,7 @@ pub unsafe fn pass1_1038_2944(mut param_1: u16 ,param_2: *mut u8,mut param_3: u3
     (param_1 + 0x4) = (param_3 + 0x4);
     puVar3 = (param_3 + 0x8);
     puVar7 = (param_1 + 0x8);
-    for (iVar4 = 0x40; iVar4 != 0; iVar4 += -1) {
+    for iVar4 in 0x40 .. 0 {
       puVar2 = puVar7;
       puVar7 = puVar7 + 1;
       puVar1 = puVar3;
@@ -735,7 +735,7 @@ pub unsafe fn pass1_1038_2b9a(param_1: *mut astruct_422,param_2: *mut u8,param_3
     param_1.field3_0x4 = iVar5.field4_0x4;
     puVar5 = &iVar5.field5_0x8;
     puVar6 = &param_1.field4_0x8;
-    for (iVar3 = 0x40; iVar3 != 0; iVar3 += -1) {
+    for iVar3 in 0x40 .. 0 {
       puVar2 = puVar6;
       puVar6 = puVar6 + 1;
       puVar1 = puVar5;

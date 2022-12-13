@@ -608,8 +608,8 @@ pub unsafe fn win_ui_1040_b8d2(mut param_1: u16 ,param_2: *mut StructB)
   let mut in_register_0000000a: u16;
   let mut paVar10: *mut Struct57;
   let mut paVar12: *mut Struct57;
-  struct_b_10: *mut StructB;
-  struct_b_10_hi: *mut StructB;
+   let mut struct_b_10: *mut StructB;
+   let mut struct_b_10_hi: *mut StructB;
   let mut uVar13: u16;
   let mut puVar14: *mut u32;
   let mut puVar15: *mut u16;
@@ -752,8 +752,8 @@ pub unsafe fn destroy_win_1040_bb78(param_1: *mut astruct_35)
 {
   let mut uVar1: u16;
   let mut is_window: bool;
-  pstruct35_5: *mut astruct_35;
-  pstruct35_hi: *mut astruct_35;
+   let mut pstruct35_5: *mut astruct_35;
+   let mut pstruct35_hi: *mut astruct_35;
   let mut unaff_CS: u16;
   let mut puVar1: *mut u32;
   let mut fn_ptr_1: *mut *mut code;
@@ -1026,8 +1026,8 @@ pub unsafe fn invalidate_rect_1040_c028(mut param_1: u32,mut param_2: i16)
   let mut uVar7: u16;
   let mut iVar8: i16;
   let mut uVar10: u16;
-  erase: *mut RECT16;
-  rect: *mut RECT16;
+   let mut erase: *mut RECT16;
+   let mut rect: *mut RECT16;
   let mut hwnd: HWND16;
   let mut local_a: RECT16;
   let mut iStack6: i16;

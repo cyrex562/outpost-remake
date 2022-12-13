@@ -437,7 +437,7 @@ pub unsafe fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
 
 {
   let mut HVar1: HWND16;
-  struct_b_4: *mut StructB;
+   let mut struct_b_4: *mut StructB;
   let mut uVar3: u16;
   let mut enable: bool;
   let mut iVar1: *mut astruct_910;
@@ -620,7 +620,7 @@ pub unsafe fn show_win_1038_cb5c(mut param_1: u32,struct_b_param_1: *mut StructB
   let mut paVar5: *mut Struct57;
   let mut uVar6: u16;
   let mut paVar7: *mut Struct57;
-  struct_b_5: *mut StructB;
+   let mut struct_b_5: *mut StructB;
   let mut uVar8: u16;
   let mut puVar9: *mut u16;
   let mut in_stack_0000fe48: u16;
@@ -764,7 +764,7 @@ pub unsafe fn pass1_1038_cd5c(param_1: *mut StructD)
 pub unsafe fn destroy_window_1038_cd88(struct_b_param_1: *mut StructB)
 
 {
-  struct_1: *mut StructB;
+   let mut struct_1: *mut StructB;
   let mut uVar1: u16;
 
   dialog_ui_fn_1040_78e2(struct_b_param_1);

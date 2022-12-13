@@ -103,7 +103,7 @@ pub unsafe fn win_dlg_op_1038_9294(mut param_1: u16 ,param_2: *mut StructB)
 {
   let mut UVar1: u16;
   let mut uVar1: u16;
-  struct_b_1_hi: *mut StructB;
+   let mut struct_b_1_hi: *mut StructB;
   let mut local_6: bool;
   let mut local_4: bool;
 
@@ -139,7 +139,7 @@ pub unsafe fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: 
   let mut in_stack_0000ffac: u16;
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb6: u16;
-  hfile_param: *mut HFILE16;
+   let mut hfile_param: *mut HFILE16;
   local_1a: BOOL16 [0x2];
   let mut UStack22: u16;
   let mut pSStack20: *mut StructD;
@@ -430,8 +430,8 @@ unk_win_ui_op_1038_9820: i32(param_1: *mut StructB,mut param_2: i16,mut param_3:
   let mut iVar5: i16;
   let mut iVar6: i16;
   let mut uVar8: u16;
-  iVar7: *mut StructB;
-  uVar7: *mut StructB;
+   let mut iVar7: *mut StructB;
+   let mut uVar7: *mut StructB;
   let mut local_6: bool;
   let mut local_4: bool;
 
@@ -456,8 +456,8 @@ pub unsafe fn win_ui_dlg_op_1038_98b4(param_1: *mut StructB)
 
 {
   let mut UVar1: u16;
-  iVar3: *mut StructB;
-  uVar2: *mut StructB;
+   let mut iVar3: *mut StructB;
+   let mut uVar2: *mut StructB;
   let mut pvVar2: LPVOID = null_mut();
   let mut iVar4: i16;
   let mut iStack8: i16;
@@ -596,7 +596,7 @@ pub unsafe fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut pa
   let mut HVar2: HWND16;
   let mut in_register_0000000a: u16;
   let mut paVar3: *mut Struct57;
-  struct_b_7: *mut StructB;
+   let mut struct_b_7: *mut StructB;
   let mut uVar4: u16;
   let mut puVar5: *mut u32;
   let mut in_stack_0000fe60: u16;
@@ -742,8 +742,8 @@ pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10,mut param_2: i16,mu
 {
   let mut bVar1: bool;
   let mut local_brush_handle: HBRUSH16;
-  struct10_5: *mut astruct_10;
-  struct10_5_hi: *mut astruct_10;
+   let mut struct10_5: *mut astruct_10;
+   let mut struct10_5_hi: *mut astruct_10;
   let mut uVar3: u32;
   let mut uStack14: u16;
   let mut puVar1: *mut u16;
@@ -843,8 +843,8 @@ pub unsafe fn call_fn_ptr_1038_9ffa(mut param_1: u32,pstruct_param_2: *mut astru
 
 {
   let mut ppcVar1: *mut *mut code;
-  struct_3: *mut astruct_43;
-  struct_2: *mut astruct_43;
+   let mut struct_3: *mut astruct_43;
+   let mut struct_2: *mut astruct_43;
   let mut puStack8: *mut u32;
   let mut hdc: HDC16;
   let mut var_5: u16;

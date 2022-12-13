@@ -300,7 +300,7 @@ pub unsafe fn pass1_1038_75ca(mut param_1: i16,mut param_2: u32,mut param_3: u32
   let mut iVar2: i16;
   let mut iVar3: i16;
   let mut uVar4: u16;
-  in_stack_0000ffca: HFILE16;
+   let mut in_stack_0000ffca: HFILE16;
   let mut local_10: [u32;0x2] = [0;0x2];
   let mut local_8: u32;
 
@@ -610,7 +610,7 @@ pub unsafe fn pass1_1038_7b20(param_1: u32,mut param_2: u32) -> u16
   let mut BVar2: bool;
   let mut uVar3: u16;
   let mut uVar4: u32;
-  in_stack_0000ffce: HFILE16;
+   let mut in_stack_0000ffce: HFILE16;
   let mut local_1c: u16;
   let mut uStack26: u16;
   let mut uStack24: u16;
@@ -670,7 +670,7 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,pa
   let mut in_register_0000000a: u16;
   let mut paVar7: *mut Struct57;
   let mut paVar8: *mut Struct57;
-  pHVar9: *mut HFILE16;
+   let mut pHVar9: *mut HFILE16;
   let mut local_12: [u16;0x2] = [0;0x2];
   let mut uStack14: u32;
   let mut local_4: u16;

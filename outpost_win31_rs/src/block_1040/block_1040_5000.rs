@@ -13,8 +13,8 @@ pub unsafe fn destroy_win_1040_5256(param_1: *mut astruct_34)
 {
   let mut pUVar1: *mut u32;
   let mut bool3: bool;
-  pstruct34_5: *mut astruct_34;
-  pstruct34_hi: *mut astruct_34;
+   let mut pstruct34_5: *mut astruct_34;
+   let mut pstruct34_hi: *mut astruct_34;
   let mut unaff_CS: u16;
   let mut uVar2: u16;
   let mut fn_ptr_1: *mut *mut code;
@@ -464,7 +464,7 @@ pub unsafe fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct
   let mut palette_handle_7: HPALETTE16;
   let mut puVar2: *mut u32;
   let mut uVar8: u32;
-  struct_1: *mut astruct_741;
+   let mut struct_1: *mut astruct_741;
   let mut uVar9: u16;
   let mut base_addr: u16;
   let mut uVar11: u32;
@@ -696,7 +696,7 @@ pub unsafe fn pass1_1040_5dc4(param_1: *mut u8,param_2: *mut StructB)
   let mut uVar6: u16;
   let mut in_register_0000000a: u16;
   let mut paVar7: *mut Struct57;
-  iVar7: *mut StructB;
+   let mut iVar7: *mut StructB;
   let mut unaff_SI: u16;
   let mut uVar8: u16;
   let mut puVar9: *mut u32;

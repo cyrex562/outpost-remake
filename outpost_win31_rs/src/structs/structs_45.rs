@@ -590,7 +590,7 @@ struct astruct_807 {
     let mut field4_0x4: i16;
     u8 * field5_0x6;
     char * path_0x8;
-    hfile_0xc: HFILE16;
+     let mut hfile_0xc: HFILE16;
     let mut field8_0xe: u32;
     let mut field9_0x12: u32;
     let mut field10_0x16: u32;

@@ -33,7 +33,7 @@ pub unsafe fn create_win_1040_20d4(mut param_1: u32,struct_b_param_2: *mut Struc
 
 {
   let mut cx: i16;
-  struct_b_1: *mut StructB;
+   let mut struct_b_1: *mut StructB;
   let mut uVar1: u16;
   let mut puVar2: *mut u32;
   let mut window_name: *mut c_char;
@@ -43,7 +43,7 @@ pub unsafe fn create_win_1040_20d4(mut param_1: u32,struct_b_param_2: *mut Struc
   let mut in_stack_0000ffa0: u16;
   let mut local_1e: RECT16;
   let mut iStack26: i16;
-  iStack24: *mut astruct_858;
+   let mut iStack24: *mut astruct_858;
   let mut uStack22: u32;
   let mut uStack18: u32;
   let mut iStack14: i16;
@@ -215,7 +215,7 @@ pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
 {
   let mut ppcVar1: *mut *mut code;
   let mut hwnd: HWND16;
-  struct_b_4: *mut StructB;
+   let mut struct_b_4: *mut StructB;
   let mut uVar3: u16;
   let mut piVar2: *mut i16;
 
@@ -590,7 +590,7 @@ pub unsafe fn dlg_ui_op_1040_2a64(mut param_1: u16 ,struct_b_param_1: *mut Struc
   let mut uVar4: u16;
   let mut in_register_0000000a: u16;
   let mut paVar5: *mut Struct57;
-  struct_b_6: *mut StructB;
+   let mut struct_b_6: *mut StructB;
   let mut iVar8: *mut astruct_918;
   let mut uVar7: u16;
   let mut in_stack_0000fe30: u16;

@@ -52,7 +52,7 @@ pub unsafe fn mixed_win_ui_op_1040_70b4
   let mut uVar5: u16;
   let mut paVar5: *mut Struct57;
   let mut paVar7: *mut Struct57;
-  struct_b_5: *mut StructB;
+   let mut struct_b_5: *mut StructB;
   let mut uVar6: u16;
   let mut uVar7: u16;
   let mut uVar8: u16;
@@ -467,8 +467,8 @@ pub unsafe fn dialog_ui_fn_1040_78e2(in_struct_1: *mut StructB)
   let mut puVar1: *mut u8;
   let mut dialog_handle: LPVOID = null_mut();
   let mut uVar2: u16;
-  struct_b_1: *mut StructB;
-  local_string_1: *mut StructB;
+   let mut struct_b_1: *mut StructB;
+   let mut local_string_1: *mut StructB;
   let mut uVar3: u16;
   let mut lVar4: i32;
   HANDLE16 local_string_2;
@@ -643,11 +643,11 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
   HANDLE16 handle;
   let mut count: u16;
   let mut count_00: i16;
-  struct_1: *mut astruct_14;
-  pRVar1: *mut RECT16;
+   let mut struct_1: *mut astruct_14;
+   let mut pRVar1: *mut RECT16;
   let mut win_long: i32;
   let mut DVar2: u32;
-  rect: *mut RECT16;
+   let mut rect: *mut RECT16;
   let mut count_01: i16;
   let mut local_rect_12: i16;
   let mut iStack16: i16;

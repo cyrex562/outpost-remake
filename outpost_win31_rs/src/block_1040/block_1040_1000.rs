@@ -155,7 +155,7 @@ pub unsafe fn win_ui_op_1040_12bc(param_1: u8,struct_b_param_1: *mut StructB)
 {
   let mut uVar1: u32;
   let mut HVar2: HWND16;
-  struct_b_3: *mut StructB;
+   let mut struct_b_3: *mut StructB;
   let mut uVar3: u16;
   let mut lparam: *mut c_char;
   let mut local_54: [u8;0x52] = [0;0x52];
@@ -200,7 +200,7 @@ pub unsafe fn win_msg_op_1040_13b2(param_1: *mut astruct_892,mut param_2: i16)
   let mut in_EDX: u32;
   let mut uVar5: u16;
   let mut paVar2: *mut Struct57;
-  struct_7: *mut astruct_892;
+   let mut struct_7: *mut astruct_892;
   let mut iVar6: i16;
   let mut struct_5_lo: u16;
   let mut uVar6: u16;
@@ -446,7 +446,7 @@ pub unsafe fn show_win_1040_18a2(struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u32;
-  struct_b_2: *mut StructB;
+   let mut struct_b_2: *mut StructB;
   let mut uVar2: u16;
   let mut local_304: [u16;0x80] = [0;0x80];
   let mut local_204: [u8;0x100] = [0;0x100];
@@ -499,8 +499,8 @@ pub unsafe fn unk_win_ui_op_1040_19ea(param_1: *mut astruct_32,mut param_2: i16,
 {
   let mut pSVar1: *mut StructD;
   let mut UVar2: u16;
-  pstruct32_1: *mut astruct_32;
-  pstruct_32_hi: *mut astruct_32;
+   let mut pstruct32_1: *mut astruct_32;
+   let mut pstruct_32_hi: *mut astruct_32;
 
   pstruct32_1 = param_1;
   pstruct_32_hi = (param_1 >> 0x10);
@@ -556,7 +556,7 @@ pub unsafe fn check_dialog_btn_1040_1afe(param_1: *mut StructB)
   let mut check_00: u16;
   let mut uVar1: u32;
   let mut uVar2: u32;
-  iVar3: *mut StructB;
+   let mut iVar3: *mut StructB;
   let mut uVar3: u16;
   let mut check_01: u16;
 

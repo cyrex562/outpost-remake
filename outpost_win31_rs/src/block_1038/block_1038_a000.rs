@@ -261,7 +261,7 @@ pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,struct_b_p
   let mut in_register_0000000a: u16;
   let mut paVar1: *mut Struct57;
   let mut uVar2: u16;
-  struct_b_1: *mut StructB;
+   let mut struct_b_1: *mut StructB;
   let mut uVar3: u16;
   let mut puVar4: *mut u32;
   let mut LVar5: LRESULT;
@@ -385,7 +385,7 @@ pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,param_2: *mut StructB)
   let mut in_register_0000000a: u16;
   let mut paVar2: *mut Struct57;
   let mut uVar3: u32;
-  struct_b_3: *mut StructB;
+   let mut struct_b_3: *mut StructB;
   let mut uVar5: u16;
   let mut puVar6: *mut u32;
   let mut LVar7: LRESULT;
@@ -536,7 +536,7 @@ pub unsafe fn win_ui_op_1038_a972(struct_b_param_1: *mut StructB)
   let mut in_EDX: u32;
   let mut uVar3: u16;
   let mut uVar2: u32;
-  struct_b_3: *mut StructB;
+   let mut struct_b_3: *mut StructB;
   let mut uVar4: u16;
   let mut LVar5: LRESULT;
   let mut in_stack_0000ffaa: u16;
