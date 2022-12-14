@@ -5,10 +5,10 @@ use crate::block_1000::block_1000_1000::fn_ptr_1000_17ce;
 use crate::block_1008::block_1008_5000::win_proc_1008_5f44;
 use crate::block_1018::block_1018_2000::{pass1_1018_2afa, pass1_1018_2d84};
 use crate::block_1018::block_1018_3000::pass1_1018_30fc;
-use crate::prog_types::{ATOM, HMENU16, HWND16, LRESULT, RECT16, WNDCLASS16, WPARAM16};
 use crate::string_defs::{s__1050_4415, s_listbox_1050_4416, s_MciSound_registerClass_failed_1050_02cc, s_MciSoundWindow_1050_02bd};
-use crate::sys_api::{CreateWindow16, DestroyWindow16, GetClassInfo16, GetClientRect16, GetDlgItem16, GetStockObject16, OutputDebugString16, RegisterClass16, SendMessage16, SetFocus16, ShowWindow16};
+use crate::winbase::{CreateWindow16, DestroyWindow16, GetClassInfo16, GetClientRect16, GetDlgItem16, GetStockObject16, OutputDebugString16, RegisterClass16, SendMessage16, SetFocus16, ShowWindow16};
 use crate::utils::{CONCAT22, SUB42};
+use crate::windef::{ATOM, HMENU16, HWND16, LRESULT, RECT16, WNDCLASS16, WPARAM16};
 
 pub unsafe fn create_window_1008_5e7e() ->HWND16
 {

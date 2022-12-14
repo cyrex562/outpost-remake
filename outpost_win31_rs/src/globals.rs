@@ -10,7 +10,7 @@ use std::os::raw::c_char;
 use std::ptr;
 // #include "types.h"
 // #include "func_ptrs.h"
-use crate::prog_types::{HINSTANCE16};
+use crate::windef::HINSTANCE16;
 
 pub static mut HINSTANCE16_1050_5f4c: HINSTANCE16 = 0;
 pub static mut u16_1050_0008: Option<code> = None;

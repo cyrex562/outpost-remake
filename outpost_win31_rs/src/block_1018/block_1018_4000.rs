@@ -1,7 +1,7 @@
 use crate::{
-    globals::{DAT_1050_422c, DAT_1050_4216},
-    prog_types::{DEVMODEA, HDC16},
+    globals::{DAT_1050_4216, DAT_1050_422c},
 };
+use crate::windef::{DEVMODEA, HDC16};
 
 pub unsafe fn pass1_1018_427c(param_1: *mut astruct_263, mut param_2: u16, mut param_3: u16) {
     let mut uVar1: u16;

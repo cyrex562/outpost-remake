@@ -1,7 +1,5 @@
-use crate::{
-    prog_types::{COLORREF, DEVMODEA, HDC16, HGDIOBJ16, HPEN16},
-    utils::CONCAT22,
-};
+use crate::utils::CONCAT22;
+use crate::windef::{COLORREF, DEVMODEA, HDC16, HGDIOBJ16, HPEN16};
 
 // WARNING: Inlined function: struct_1010_4d5c
 // WARNING: Unable to use type for symbol puVar4

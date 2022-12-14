@@ -1,4 +1,4 @@
-use crate::prog_types::{HWND16, LPARAM, LRESULT, WPARAM16};
+use crate::windef::{HWND16, LPARAM, LRESULT, WPARAM16};
 
 
 pub unsafe fn pass1_1008_507c(param_1: *mut StructD,param_2: u8) -> *mut StructD

@@ -1,4 +1,4 @@
-use crate::prog_types::HWND16;
+use crate::windef::HWND16;
 
 
 pub unsafe fn destroy_window_1038_a072(param_1: *mut astruct_880,mut param_2: u16 ,mut param_3: i16)

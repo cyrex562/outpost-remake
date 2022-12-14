@@ -21,7 +21,7 @@ use crate::globals::{
     PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84,
     PTR_LOOP_1050_63fe, WIN_VERSION_1050_5f80, REG_DI, REG_SI,
 };
-use crate::sys_api::{
+use crate::winbase::{
     FatalAppExit16, FatalExit, GetVersion16, InitApp16, InitTask16, LockSegment16, WaitEvent16,
 };
 use crate::utils::CONCAT22;

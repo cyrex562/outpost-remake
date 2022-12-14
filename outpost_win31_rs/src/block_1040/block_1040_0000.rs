@@ -27,15 +27,15 @@ use crate::block_1040::block_1040_7000::{
 use crate::block_1040::block_1040_8000::move_win_1040_826c;
 use crate::block_1040::block_1040_a000::pass1_1040_a5d0;
 use crate::globals::u32_1050_0004;
-use crate::prog_types::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
 use crate::structs::struct_394::astruct_394;
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_915::astruct_915;
 use crate::structs::struct_d::StructD;
-use crate::sys_api::{DestroyWindow16, GetDlgItem16, GetStockObject16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
+use crate::winbase::{DestroyWindow16, GetDlgItem16, GetStockObject16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
 use crate::utils::{CONCAT11, CONCAT22, SUB42};
 use std::os::raw::c_char;
 use std::ptr::null_mut;
+use crate::windef::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
 
 pub unsafe fn win_ui_op_1040_0000(
     ctx: &mut AppContext,

@@ -16,10 +16,12 @@
 
 
 use std::ffi::c_void;
+use std::io::stdout;
 use std::os::raw::c_char;
+use std::os::windows::raw::HANDLE;
 use crate::block_1000::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
 use crate::block_1000::block_1000_2000::mem_op_1000_21b6;
-use crate::prog_types::{ATOM, FLOATING_SAVE_AREA, HGDIOBJ16, HGLOBAL16, HINSTANCE16, HMENU16, HTASK16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16, SEGPTR};
+use crate::windef::{ATOM, COLORREF, DEVMODEA, FLOATING_SAVE_AREA, HANDLE16, HBRUSH16, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HINSTANCE16, HMENU16, HMODULE16, HPEN16, HRSRC16, HTASK16, HWND16, LOGPALETTE, LPARAM, LRESULT, PALETTEENTRY, POINT16, RECT16, SEGPTR, WNDCLASS16, WPARAM16};
 
 pub struct CONTEXT
 {
@@ -94,6 +96,8 @@ pub const CONTEXT_EXTENDED_REGISTERS: u32 = (CONTEXT_i386 | 0x0020);
 pub const CONTEXT_FULL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS);
 pub const CONTEXT_ALL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS | CONTEXT_EXTENDED_REGISTERS);
 
+pub type FARPROC16 = fn() -> LRESULT;
+
 
 // HGLOBAL16 WINAPI LockSegment16	(	HGLOBAL16 		)
 pub fn LockSegment16(a: HGLOBAL16) -> HGLOBAL16 {
@@ -128,7 +132,6 @@ pub fn FatalExit() {
     todo!()
 }
 
-// DGetVersion16: u16();
 // HGLOBAL16 GLobalAlloc16(Dsize: u16, Uflags: INT16);
 pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 {
@@ -136,77 +139,196 @@ pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 }
 
 // HGLOBAL16 GlobalReAlloc16(Uflags: INT16, Dsize: u16, HGLOBAL16 handle);
+pub fn GlobalReAlloc16(flags: i16, size: u16, handle: HGLOBAL16) -> HGLOBAL16 {todo!()}
+
 // HGLOBAL16 GlobalFree16(HGLOBAL16 handle);
+pub fn GlobalFree16(handle: HGLOBAL16) -> HGLOBAL16 {todo!()}
+
 // pub fn * WIN16_GlobalLock16(HGLOBAL16 handle);
+pub fn GlobalLock16(handle: HGLOBAL16) -> *mut c_void {todo!()}
+
 // BOOL16 GlobalUnlock16(HGLOBAL16 handle);
+pub fn GlobalUnlock16(handle: HGLOBAL16) -> bool {todo!()}
+
 // DGlobalSize16: u16(HGLOBAL16 handle);
+pub fn GlobalSize16(handle: HGLOBAL16) -> u32 {todo!()}
+
 // DGlobalHandle16: u16(sel: u16);
-// HGLOBAL16 LockSegment16(HGLOBAL16 handle);
-// BOOL16 WaitEvent16(HTASK16 h_task);
+pub fn GlobalHandle16(selector: u16) -> u32 {todo!()}
+
 // i16 GetModuleFileName16(i16 n_size, char * lp_file_name, HINSTANCE16 h_module);
+pub fn GetModuleFileName16(size: i16, filename: *mut c_char, h_module: HINSTANCE16) -> i16 {todo!()}
+
 // pub fn * MakeProcInstance16(HANDLE16 h_instance, void * func);
+pub fn MakeProcInstance16(h_instance: HANDLE16, func: FARPROC16) -> FARPROC16 {todo!()}
+
 // pub fn FreeProcInstance16(void * func);
+pub fn FreeProcInstance(func: FARPROC16) {todo!()}
+
 // HRSRC16 FindResource16(char * type, char * name, HMODULE16 h_module);
+pub fn FindResource16(rsrc_tyoe: *mut c_char, name: *mut c_char, h_module: HMODULE16) -> HRSRC16 {todo!()}
+
 // HGLOBAL16 LoadResource16(HRSRC16 h_rsrc, HMODULE16 h_module);
+pub fn LoadResource16(h_rsrc: HRSRC16, h_module: HMODULE16) -> HGLOBAL16 { todo!()}
+
 // SEGPTR WIN16_LockResource16(HGLOBAL16 handle);
+pub fn LockResource16(handle: HGLOBAL16) -> SEGPTR {todo!()}
+
 // BOOL16 FreeResource16(HGLOBAL16 handle);
+pub fn FreeResource16(handle: HGLOBAL16) -> bool {todo!()}
+
 // _lclose16: HFILE16(h_file: HFILE16);
+pub fn _lclose16(h_file: HFILE16) -> HFILE16 {todo!()}
+
 // _lcreat16: HFILE16(i16 attr, char * path);
+// HFILE16     WINAPI _lcreat16(LPCSTR,INT16);
+pub fn _lcreat16(attr: i16, path: *mut c_char) -> HFILE16 {todo!()}
+
 // _llseek16: i32(i16 n_origin, l_offset: i32, h_file: HFILE16);
+pub fn _llseek16(n_origin: i16, l_offset: i32, h_file: HFILE16) -> i32 {todo!()}
+
 // _lopen16: HFILE16(i16 mode, char * path);
+pub fn _lopen16(mode: i16, path: *mut c_char) -> HFILE16 {todo!()}
+
 // i16 lstrlen16(char * in_string);
-// pub fn InitTask16(CONTEXT * context);
+pub fn lstrlen16(in_str: *const c_char) -> i16 {todo!()}
+
 // pub fn DOS3Call(CONTEXT * context);
+pub fn DOS3Call(context: *mut CONTEXT) {todo!()}
+
 // u16 SetErrorMode16(u16 mode);
+pub fn SetErrorMode16(mode: u16) -> u16 {todo!()}
+
 // pub fn __AHSHIFT();
+pub fn __AHSHIFT() {todo!()}
+
 // pub fn __AHINCR();
+pub fn __AHINCR() {todo!()}
+
 // pub fn OutputDebugString16(char * str);
 pub fn OutputDebugString16(in_str: *const c_char) {
     todo!()
 }
+
 // i16 GetPrivateProfileString16(char * filename, len: u16, char * buffer, char * def_val, char * entry, char * section);
+pub fn GetPrivateProfileString16(filename: *const c_char, len: u16, buffer: *mut c_char, def_val: *const c_char, entry: *mut c_char, section: *mut c_char) -> i16 {todo!()}
+
 // BOOL16 WritePrivateProfileString16(char * filename, char * string, char * entry, char * section);
+pub fn WritePrivateProfileString16(filename: *const c_char, str_to_write: *const c_char, entry: *const c_char, section: *const c_char) -> bool {todo!()}
+
 // pub fn * GetDOSEnvironment16();
 pub fn GetDOSEnvironment16() -> SEGPTR {
     todo!()
 }
 
-// pub fn FatalAppExit16(char * str, u16 action);
 // HINSTANCE16 WinExec16(n_cmd_show: u16, char * lp_cmd_line);
+pub fn WinExec16(n_cmd_show: u16, lp_cmd_line: *const c_char) -> HINSTANCE16 {todo!()}
+
 // pub fn __WINFLAGS();
+pub fn __WINFLAGS() {todo!()}
+
 // pub fn GlobalDOSAlloc16(size: u32) -> u32;
+pub fn GlobalDOSAlloc16(size: u32) -> u32 {todo!()}
+
 // u16 GlobalDOSFree16(u16 sel);
+pub fn GlobalDOSFree16(sel: u16) -> u16 {todo!()}
+
 // u16 GlobalPageLock16(HGLOBAL16 handle);
+pub fn GlobalPageLock16(handle: HGLOBAL16) -> u16 {todo!()}
+
 // u16 GlobalPageUnlock16(HGLOBAL16 handle);
+pub fn GlobalPageUnlock16(handle: HGLOBAL16) -> u16 {todo!()}
+
 // pub fn hmemcpy16(count: i32, void * src, void * dst);
+pub fn hmemcpy16(count: i32, src: *mut c_void, dst: *c_void) {todo!()}
+
 // WIN16_hread: i32(count: i32, void * buffer, h_file: HFILE16);
+pub fn hread(count: i32, buffer: *mut c_void, h_file: HFILE16) -> i32 {todo!()}
+
 // pub fn _hwrite16(count: u32, u8 * buffer, h_file: HFILE16) -> u32;
+pub fn _hwrite16(count: u32, buffer: *mut u8, h_file: HFILE16) -> u32 {todo!()}
+
 // SetBkColor16: COLORREF(color: COLORREF, hdc: HDC16);
+pub fn SetBkColor16(color: COLORREF, hdc: HDC16) -> COLORREF {todo!()}
+
 // i16 SetMapMode16(i16 mode, hdc: HDC16);
+pub fn SetMapMode16(mode: i16, hdc: HDC16) -> i16 {todo!()}
+
 // u8 SetTextColor16(color: COLORREF, hdc: HDC16);
+pub fn SetTextColor16(color: COLORREF, hdc: HDC16) -> u8 {
+    todo!()
+}
+
 // BOOL16 LineTo16(y: INT16, x: INT16, hdc: HDC16);
+pub fn LineTo16(y: i16, x: i16, hdc: HDC16) -> bool {
+    todo!()
+}
+
 // DMoveTo16: u16(y: INT16, x: INT16, hdc: HDC16);
+pub fn MoveTo16(y: i16, x: i16, hdc: HDC16) -> u16 { todo!()}
+
 // BOOL16 Ellipse16(bottom: INT16, right: INT16, top: INT16, left: INT16, hdc: HDC16);
+pub fn Ellipse16(bottom: i16, right: i16, top: i16, left: i16, hdc: HDC16) -> bool {
+    todo!()
+}
+
 // BOOL16 Rectangle16(bottom: INT16, right: INT16, top: INT16, left: INT16, hdc: HDC16);
+pub fn Rectangle16(bottom: i16, right: i16, top: i16, left: i16, hdc: HDC16) -> bool {
+    todo!()
+}
+
 // BOOL16 TextOut16(i16 count, char * str, i16 y, i16 x, hdc: HDC16);
+pub fn TextOut16(count: i16, text: *mut c_char, y: i16, x: i16, hdc: HDC16) -> bool {
+    todo!()
+}
+
 // BOOL16 Polygon16(i16 count, POINT16 * pt, hdc: HDC16);
+pub fn Polygon16(count: i16, pt: *const POINT16, hdc: HDC16) -> bool {todo!()}
+
 // HGDIOBJ16 SelectObject16(HGDIOBJ16 handle, hdc: HDC16);
+pub fn SelectObject16(handle: HGDIOBJ16, hdc: HDC16) -> HGDIOBJ16 {todo!()}
+
 // CreateDC16: HDC16(DEVMODEA * init_data, char * output, char * device, char * driver);
+pub fn CreateDC16(init_data: *const DEVMODEA, output: *mut c_char, device: *const c_char, driver: *const c_char) -> HDC16 {todo!()}
+
 // CreatePen16: HPEN16(color: COLORREF, width: INT16, style: INT16);
+pub fn CreatePen16(color: COLORREF, width: i16, style: i16) -> HPEN16 {todo!()}
+
 // HBRUSH16 CreateSolidBrush16(color: COLORREF);
+pub fn CreateSolidBrush16(color: COLORREF) -> HBRUSH16 {todo!()}
+
 // BOOL16 DeleteDC16(hdc: HDC16);
+pub fn DeleteDC16(hdc: HDC16) -> bool {todo!()}
+
 // BOOL16 DeleteObject16(HGDIOBJ16 obj);
+pub fn DeleteObject16(obj: HGDIOBJ16) -> bool {todo!()}
+
 // DGetCurrentPosition16: u16(hdc: HDC16);
+pub fn GetCurrentPosition16(hdc: HDC16) -> u16 { todo!()}
+
 // GetDeviceCaps16: INT16(cap: INT16, hdc: HDC16);
+pub fn GetDeviceCaps16(cap: i16, hdc: HDC16) -> i16 {todo!()}
+
 // HGDIOBJ16 GetStockObject16(obj: INT16);
 pub fn GetStockObject16(obj: i16) -> HGDIOBJ16 {
     todo!()
 }
+
 // DGetTextExtent16: u16(count: INT16, LPCSTR str, hdc: HDC16);
+pub fn GetTextExtent16(count: i16, text: *const c_char, hdc: HDC16) -> u16 {todo!()}
+
 // BOOL16 UnrealizeObject16(HGDIOBJ16 obj);
+pub fn UnrealizeObject16(obj: HGDIOBJ16) -> bool {todo!()}
+
 // CreatePalette16: HPALETTE16(LOGPALETTE * palette);
+pub fn CreatePalette16(palette: *mut LOGPALETTE) -> HPALETTE16 {todo!()}
+
 // UGetSystemPaletteEntries: INT16(PALETTEENTRY * entries, Ucount: INT16, Ustart: INT16, hdc: HDC16);
+pub fn GetSystemPaletteEntries(entries: *mut PALETTEENTRY, count: i16, start: i16, hdc: HDC16) -> i16 { todo!()}
+
 // StretchDIBits16: INT16(Ddw_rop: u16, Uw_usage: INT16, BITMAPINFO * info, bits: mut PVOID, height_src: INT16, width_src: INT16, y_src: INT16, x_src: INT16, height_dst: INT16, width_dst: INT16, y_dst: INT16, x_dst: INT16, hdc: HDC16);
+pub fn StrechDIBits16(dw_rop: u16, w_usage: i16, info: *mut BITMAPINFO, bits: *mut c_void, height_src: i16, width_src: i16, )
+
 // SetDIBitsToDevice: INT16(Ucoloruse: INT16, BITMAPINFO * info, void * bits, Ulines: INT16, Ustartscan: INT16, y_src: INT16, x_src: INT16, cy: INT16, cx: INT16, y_dest: INT16, x_dest: INT16, hdc: HDC16);
 // BOOL16 MoveToEx16(POINT16 * pt, y: INT16, x: INT16, hdc: HDC16);
 // MessageBox16: INT16(Utype: INT16, char * title, char * text, hwnd: HWND16);

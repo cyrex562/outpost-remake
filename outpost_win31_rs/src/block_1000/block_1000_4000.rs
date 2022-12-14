@@ -1,4 +1,4 @@
-use crate::sys_api::GLobalAlloc16;
+use crate::winbase::GLobalAlloc16;
 
 pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
     let mut pu_var1: *mut u8;

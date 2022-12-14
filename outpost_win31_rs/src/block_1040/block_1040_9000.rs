@@ -1,4 +1,4 @@
-use crate::prog_types::RECT16;
+use crate::windef::RECT16;
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
