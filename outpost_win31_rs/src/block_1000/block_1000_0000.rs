@@ -31,6 +31,16 @@ pub unsafe fn mem_1000_0016(ctx: &mut AppContext, mut param_1: u32) -> u32 {
     return u_var1;
 }
 
+pub unsafe fn goto_lab_1000_00f9(pstruct7_param_1: *mut Struct7) -> u32{
+    // let mut pu8_var1 = pstruct7_param_1.field_0x1e.clone();
+    // let mut pu16_var2 = pstruct7_param_1.field_0x1e as *mut u16;
+    // let mut i16_var3 = (*pstruct7_param_1.field_0x20).clone();
+    // let a = (i16_var3 - (pstruct7_param_1.field_0x20)) - (pu8_var1 < (*pu16_var2).clone() as u8);
+    // let b = pu8_var1 - (*pu16_var2).clone();
+    // TODO: I'm not sure but I think all of this is concatenating the 16-bit pointer addresses for field_0x1e and field_x20 into a single address segment:offset
+    return CONCAT22(a, b);
+}
+
 pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
     let mut pu16_var1: *mut u16;
     let mut u_var4: u32;
@@ -39,8 +49,8 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
     let mut pu8_var12: *mut u8 = ptr::null_mut();
     let mut pu8_var10: *mut u8 = ptr::null_mut();
 
-    let mut u_var2 = (pstruct7_param_1.field_0x1e.clone());
-    let mut i_var3 = (*pstruct7_param_1.field_0x20).clone();
+
+
     let mut u_stack8 = 0u16;
     loop {
         pu8_var10 = (u_stack8.clone() * 0x2 + pstruct7_param_1);
@@ -53,6 +63,7 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
                     u_var5 = mem_op_1000_0510(0x1, ptr::null_mut());
                     if u_var5 == 0x0 {
                         // goto LAB_1000_00f9;
+                        return goto_lab_1000_00f9(pstruct7_param_1);
                     }
                     if pu8_var12 == pu8_var10 {
                         pu8_var12 = ptr::null_mut();
@@ -75,10 +86,11 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
         (pstruct7_param_1.field_0x32)();
     }
     // TODO: LAB_1000_00f9:
-    pu16_var1 = pstruct7_param_1.field_0x1e as *mut u16;
-    let a = (i_var3 - (pstruct7_param_1.field_0x20)) - (u_var2 < (*pu16_var1).clone() as u8);
-    let b = u_var2 - (*pu16_var1).clone();
-    return CONCAT22(a, b);
+    // pu16_var1 = pstruct7_param_1.field_0x1e as *mut u16;
+    // let a = (i_var3 - (pstruct7_param_1.field_0x20)) - (u_var2 < (*pu16_var1).clone() as u8);
+    // let b = u_var2 - (*pu16_var1).clone();
+    // return CONCAT22(a, b);
+    return goto_lab_1000_00f9(pstruct7_param_1);
 }
 
 pub unsafe fn pass1_1000_010c(
@@ -139,7 +151,7 @@ pub unsafe fn pass1_1000_010c(
 
 pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struct7) -> bool {
     let mut pu16_var1: *mut u16 = null_mut();
-    let mut pi16_var2: *mut i16 = null_mut();
+    // let mut pi16_var2: *mut i16 = null_mut();
     let mut bvar3: bool = false;
     let mut uvar4: u16 = 0;
     let mut u16_var5: u16 = 0;
@@ -195,13 +207,13 @@ pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struc
         u16_var5 = u_var8 * 0xc + struct7_param_1 + 0x42;
     }
     // pu_var1 =  (param_1 + 0x1e);
-    pu16_var1 = struct7_param_1.field_0x1e as *mut u16;
+    pu16_var1 = struct7_param_1.segment_field_0x1e as *mut u16;
     // u16_var9 = *pu_var1;
     u16_var9 = (*pu16_var1).clone();
     *pu16_var1 = (*pu16_var1).clone() - u32_var6.clone();
     // pi_var2 =  (param_1 + 0x20);
-    pi16_var2 = struct7_param_1.field_0x20;
-    *pi16_var2 = ((*pi16_var2).clone() - (u32_var6.clone() >> 0x10)) - (u16_var9 < u32_var6.clone() as u16);
+    let mut pi16_var2 = struct7_param_1.offset_field_0x20;
+    pi16_var2 = ((pi16_var2).clone() - (u32_var6.clone() >> 0x10)) - (u16_var9 < u32_var6.clone() as u16);
     if u16_var5 != 0x0 {
         pu8_var10 = ptr::null_mut();
         u16_var9 = 0xc;
@@ -215,11 +227,11 @@ pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struc
     }
     i_stack10 = (u32_var7.clone() >> 0x10) as i16;
     u_stack12 = u32_var7.clone() as u16;
-    pu16_var1 = struct7_param_1.field_0x1e as *mut u16;
+    pu16_var1 = struct7_param_1.segment_field_0x1e as *mut u16;
     u16_var9 = (*pu16_var1).clone();
     *pu16_var1 = (*pu16_var1).clone() + u_stack12;
-    pi16_var2 = struct7_param_1.field_0x20;
-    *pi16_var2 = (*pi16_var2).clone() + i_stack10 + CARRY2(u16_var9, u_stack12.clone());
+    pi16_var2 = struct7_param_1.offset_field_0x20;
+    pi16_var2 = (pi16_var2).clone() + i_stack10 + CARRY2(u16_var9, u_stack12.clone());
     u16_var9 = (struct7_param_1.field_0xa);
     loop {
         *pu8_var10 = u16_var5 as u8;
@@ -246,7 +258,7 @@ pub unsafe fn mem_op_1000_0308(
 
     if (pstruct7_param_2 + 0xa) == 0x0 {
         b_var3 = mem_op_1000_01b0(ctx, pstruct7_param_2);
-        if ctx.AH_REG == 0 && b_var == false { return null_mut(); }
+        if ctx.AH_REG == 0 && b_var3 == false { return null_mut(); }
     }
     pu8_var1 = (pstruct7_param_2.field_0x0a);
     (pstruct7_param_2.field_0xa) = (pu8_var1 + 0x4);
@@ -265,17 +277,17 @@ pub unsafe fn mem_op_1000_0308(
     return pu8_var1;
 }
 
-pub unsafe fn pass1_1000_0368(mut param_1: *mut u8, mut param_2: *mut u8, mut param_3: *mut u8) {
-    let mut pu16_var1: *mut u16 = ptr::null_mut();
+pub unsafe fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: *mut u8) {
+    let mut pu16_var1 = 0u16;
 
     if (param_1 + 0x4) == param_1 {
         (param_3 + param_2 * 0x2) = 0;
     } else {
         ((param_1 + 0x6) + 0x4) = (param_1 + 0x4);
         ((param_1 + 0x4) + 0x6) = (param_1 + 0x6);
-        *pu16_var1 = (param_2 * 0x2 + param_3);
-        if *pu16_var1 == param_1 {
-            *pu16_var1 = (param_1 + 0x4);
+        pu16_var1 = (param_2 * 0x2 + param_3);
+        if pu16_var1 == param_1 {
+            pu16_var1 = (param_1 + 0x4);
         }
     }
     (param_1 + 0x4) = (param_3 + 0xa);
@@ -307,17 +319,17 @@ pub unsafe fn pass1_1000_07ac(
     (param_3.field_0x0e) = pu_var1;
     let mut u_var3 = param_2 + (param_3 - pu_var1);
     let mut i_var2 = pu_var1 + (u_var3 - u_var3 % param_1);
-    *(param_3.field_0x10) = i_var2;
-    while *pu_var1 < (i_var2 - param_1.clone()) {
-        *pu_var1 = (pu_var1 + param_1.clone());
+    (param_3.field_0x10) = i_var2;
+    while pu_var1 < (i_var2 - param_1.clone()) {
+        pu_var1 = (pu_var1 + param_1.clone());
         pu_var1 = (pu_var1 + param_1.clone());
     }
-    *pu_var1 = 0;
+    pu_var1 = 0;
     return;
 }
 
 pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut Struct7) -> u32 {
-    let mut pu8_var1: *mut u8;
+    // let mut pu8_var1: *mut u8;
     let mut pu8_var2: *mut u8;
     let mut u16_var3: u16;
     let mut pu8_var4: *mut u8;
@@ -369,17 +381,17 @@ pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut S
             if (u16_var8 | u16_var5) != 0x0 {
                 break;
             }
-            u16_var5 = (pstruct7_param1.field_0x1e.clone()) as u16;
+            u16_var5 = (pstruct7_param1.segment_field_0x1e.clone()) as u16;
             u16_var6 = u16_var5 + u16_var11.clone();
-            u16_var5 = (pstruct7_param1.field_0x20) + CARRY2(u16_var5.clone(), u16_var11.clone());
-            pu8_var1 = (pstruct7_param1.field_0x28);
-            b_var10 = *pu8_var1 <= u16_var5 as u8;
+            u16_var5 = (pstruct7_param1.offset_field_0x20) + CARRY2(u16_var5.clone(), u16_var11.clone());
+            let mut u16_var1 = (pstruct7_param1.addr_part_field_0x28);
+            b_var10 = u16_var1 <= u16_var5;
             if b_var10 {
-                if b_var10 && (u16_var5 != (*pu8_var1).clone() as u16) {
+                if b_var10 && (u16_var5 != (u16_var1).clone() as u16) {
                     return 0x0;
                 }
-                pu8_var1 = (pstruct7_param1.field_0x26);
-                if (*pu8_var1 <= u16_var6 as u8) && (u16_var6 != (*pu8_var1).clone() as u16) {
+                u16_var1 = (pstruct7_param1.addr_part_field_0x26);
+                if (u16_var1 <= u16_var6) && (u16_var6 != (u16_var1).clone() as u16) {
                     return 0x0;
                 }
             }
@@ -401,7 +413,7 @@ pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut S
 pub unsafe fn mem_op_1000_03c6(
     ctx: &mut AppContext,
     mut param_1: u16,
-    mut param_2: i16,
+    mut param_2: u16,
     mut param_3: u16,
     mut struct7_param_4: *mut Struct7,
     param_5: u8,
@@ -415,23 +427,23 @@ pub unsafe fn mem_op_1000_03c6(
 
     let mut u16_var7 = CONCAT11(param_6 as u8, param_5);
     let mut u16_var3 = param_1 + 0xfff & 0xf000;
-    let mut pu_var1 = (struct7_param_4.field_0x1e);
-    let mut u_var4 = u16_var3 + (*(pu_var1 as *mut u16)).clone();
-    u16_var3 = param_2 + (0xf000 < param_1) + struct7_param_4.field_0x20 + CARRY2(u16_var3, (*pu_var1).clone() as u16);
-    pu_var1 = struct7_param_4.field_0x28;
-    let mut b_var8 = u16_var3 < *pu_var1;
-    pu_var1 = struct7_param_4.field_0x26;
-    if b_var8 || (b_var8.clone() || u16_var3 == *pu_var1 && (
-        u_var4 < *pu_var1 || u_var4 == *pu_var1
+    let mut u16_var1 = (struct7_param_4.segment_field_0x1e);
+    let mut u_var4 = u16_var3 + (*(u16_var1 as *mut u16)).clone();
+    u16_var3 = param_2 + (0xf000 < param_1) + struct7_param_4.offset_field_0x20 + CARRY2(u16_var3, (u16_var1).clone() as u16);
+    u16_var1 = struct7_param_4.addr_part_field_0x28;
+    let mut b_var8 = u16_var3 < u16_var1;
+    u16_var1 = struct7_param_4.addr_part_field_0x26;
+    if b_var8 || (b_var8.clone() || u16_var3 == u16_var1 && (
+        u_var4 < u16_var1 || u_var4 == u16_var1
     )) {
         let mut pstruct7_var20: *mut Struct7 = null_mut();
         if param_3 == 0x3 {
             pstruct7_var20 = ((-((param_5.clone() & 1) != 0) >> 0x8) & 0x1 | 0x20) << 0x8;
         } else {
-            pstruct7_var20.field_0x0 = 0x1000;
+            pstruct7_var20.addr_offset_field_0x0 = 0x1000;
         }
         pstruct7_var20 = struct7_param_4.field_0x16.clone() | pstruct7_var20;
-        mem_op_1000_131c(pstruct7_var20.field_0x0.clone(),
+        mem_op_1000_131c(pstruct7_var20.addr_offset_field_0x0.clone(),
                          CONCAT22(param_2.clone() as u16,
                                   param_1.clone()));
         if (u16_var3 | pstruct7_var20.clone()) != 0 {
@@ -449,20 +461,20 @@ pub unsafe fn mem_op_1000_03c6(
                 u16_var6 = u32_var9.clone() as u16;
                 if param_3 == 1 {
                     // &DAT_1050_1050
-                    u16_var7 = pass1_1000_0782(ctx, struct7_param_4, u16_var6, 0x0, 0x1050);
+                    u16_var7 = pass1_1000_0782(ctx, struct7_param_4, u16_var6, null_mut(), 0x1050);
                 } else if param_3 == 0x3 {
                     pass1_1000_05b4(param_5.clone(), null_mut());
                 } else {
                     u16_var7 = pass1_1000_09ca(u16_var6 as i16, null_mut());
                 }
-                param_2 = (u32_var9.clone() >> 0x10);
+                param_2 = (u32_var9.clone() >> 0x10) as u16;
                 *pu16_var5 = u16_var7;
                 pu16_var5[0x1] = 0x8000;
-                pu_var1 = (struct7_param_4.field_0x1e);
-                u_var4 = (*pu_var1).clone();
-                *pu_var1 = (*pu_var1).clone() + u16_var6.clone();
-                pi16_var2 = (struct7_param_4.field_0x20);
-                *pi16_var2 = (*pi16_var2).clone() + param_2 + CARRY2(u_var4, u16_var6.clone());
+                u16_var1 = (struct7_param_4.segment_field_0x1e);
+                u_var4 = (u16_var1).clone();
+                u16_var1 = (u16_var1).clone() + u16_var6.clone();
+                let mut u16_var2 = (struct7_param_4.offset_field_0x20);
+                u16_var2 = (u16_var2).clone() + param_2 + CARRY2(u_var4, u16_var6.clone());
                 return u16_var3;
             }
             mem_op_1000_13ce(pstruct7_var20.clone(), u16_var3);
@@ -477,9 +489,7 @@ pub unsafe fn mem_op_1000_03c6(
 pub unsafe fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7) -> u32 {
     let mut u16_var10: u16;
     let mut b_var11: bool;
-    let mut i32_var13: i32;
-
-
+    let mut i32_var13 = 0i32;
     let mut pstruct7_var4 = pstruct7_param_2;
     let mut u16_var15 = (pstruct7_param_2.field_0x2);
     let mut u16_var6 = (pstruct7_param_2.field_0x4);
@@ -490,32 +500,37 @@ pub unsafe fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7)
 
     let mut pu16_var1: *mut u16 = null_mut();
     let mut u16_var14 = 0x1050;
-    let mut pu8_var7: *mut u8 = null_mut();
+    let mut u16_var7 = 0u16;
     if param_1 != 0 {
-        pu8_var7 = (pstruct7_var4.field_0x1e);
-        u16_var10 = ((pstruct7_var4.field_0x20) - u16_var9) - (pu8_var7 < u32_var8);
+        u16_var7 = (pstruct7_var4.segment_field_0x1e);
+        u16_var10 = ((pstruct7_var4.offset_field_0x20) - u16_var9) - (u16_var7 < u32_var8 as  u16);
         pu16_var1 = (pstruct7_var4.field_0x24);
         b_var11 = u16_var10 < *pu16_var1;
-        if (b_var11 || u16_var10 == *pu16_var1) && (b_var11.clone() || (pu8_var7 - u32_var8 < (pstruct7_var4 + 0x22))) {
+        if (b_var11 || u16_var10 == *pu16_var1) && (b_var11.clone() || (u16_var7 - u32_var8 < (pstruct7_var4 + 0x22))) {
             b_var11 = false;
             u16_var9 = u16_var10;
             // TODO
             //goto LAB_1000_0595;
+            return lab_1000_0595(pstruct7_param_2, &mut b_var11, i32_var13, &mut u16_var9, u16_var14);
         }
     }
     pass1_1000_0368(u16_var6, u8_var3 & 0x7, null_mut());
     // TODO: pu16_var1 = 0x001e;
-    pu8_var7 = pu16_var1 as *mut u8;
+    u16_var7 = pu16_var1;
     *pu16_var1 = (*pu16_var1).clone() - u32_var8.clone();
     // s_New_failed_in_Op__Op_1050_0020;
     // TODO: pu8_var2 = 0x0020;
     // *pu8_var2 = ((*pu8_var2).clone() - u16_var9) - (pu8_var7 < u32_var8);
     b_var11 = true; //
     //    LAB_1000_0595:
+    return lab_1000_0595(pstruct7_param_2, &mut b_var11, i32_var13, &mut u16_var9, u16_var14);
+}
+
+unsafe fn lab_1000_0595(pstruct7_param_2: *mut Struct7, b_var11: &mut bool, mut i32_var13: i32, u16_var9: &mut u32, mut u16_var14: u16) -> u32{
     if b_var11 {
         pstruct7_param_2.field_0xc = 0;
         i32_var13 = mem_op_1000_13ce(pstruct7_param_2, u16_var14);
-        return CONCAT22((i32_var13 >> 0x10), 1);
+        return CONCAT22((i32_var13 >> 0x10) as u16, 1);
     }
     return u16_var9 << 0x10;
 }
@@ -553,7 +568,7 @@ pub unsafe fn mem_op_1000_05e2(
         pu16_var1 = (param_4 + 0x28);
         b_var5 = u16_var3 < *pu16_var1;
         // &DAT_1050_1050)
-         pu16_var1 = (param_4.field_0x26) as *mut u16;
+         pu16_var1 = (param_4.addr_part_field_0x26) as *mut u16;
         u16_var5 = pass1_1000_1e61(ctx.CS_REG.clone(), 0x2, param_4);
         if (((b_var5 || u16_var3 == *pu16_var1) && (b_var5.clone() || (
             u16_var4 < *pu16_var1 || u16_var4 == *pu16_var1
@@ -588,7 +603,7 @@ pub unsafe fn mem_1000_0670(
     // &DAT_1050_1050
     let mut u32_var14 = mem_op_1000_1532(pstruct7_param_2, 0x1050);
     let mut u16_var6: u16 = param_3 + (0xffeb < param_1);
-    let mut u16_var7 = pstruct7_param_2.field_0x0.clone();
+    let mut u16_var7 = pstruct7_param_2.addr_offset_field_0x0.clone();
     let mut u16_var8 = -((param_4 & 1) != 0) & 0x100 | -((param_4.clone() & 0x4) != 0) & 0x400 | (u16_var7 + 0x16);
     if param_5.is_null() {
         //  &DAT_1050_1050
@@ -635,10 +650,10 @@ pub unsafe fn mem_1000_0670(
     }
     let mut u32_var15 = mem_op_1000_1532(pstruct7_param_2, u16_var16.clone());
     let mut u16_var12 = (u32_var15 - u32_var14);
-    let mut pu8_var1 = pstruct7_var3.field_0x1e;
+    let mut pu8_var1 = pstruct7_var3.segment_field_0x1e;
     u16_var8 = (*pu8_var1).clone() as u16;
     *pu8_var1 = (*pu8_var1).clone() + u16_var12;
-    let mut pi16_var2 = pstruct7_var3.field_0x20;
+    let mut pi16_var2 = pstruct7_var3.offset_field_0x20;
     *pi16_var2 = (*pi16_var2).clone() + (u32_var15.clone() - u32_var14.clone() >> 0x10) + CARRY2(u16_var8, u16_var12);
     return 0x1;
 }
@@ -738,7 +753,7 @@ pub unsafe fn pass1_1000_09ca(mut param_1: i16, param_2: *mut u16) -> u16 {
 }
 
 pub unsafe fn mem_op_1000_0a48(
-    ctx: AppContext,
+    ctx: &mut AppContext,
     param_1: u8,
     mut param_2: u16,
     mut param_3: i16,
@@ -793,7 +808,7 @@ pub unsafe fn mem_op_1000_0a48(
 }
 
 pub unsafe fn mem_op_1000_0b20(
-    ctx: AppContext,
+    ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -1040,7 +1055,7 @@ pub unsafe fn pass1_1000_0e08(mut param_1: i16) -> u16 {
 }
 
 pub unsafe fn pass1_1000_0ed4(
-    ctx: AppContext,
+    ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,

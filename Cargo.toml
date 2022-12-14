@@ -1,6 +1,5 @@
 [workspace]
 
 members = [
-    "rs_sdl_app",
     "outpost_win31_rs"
 ]
