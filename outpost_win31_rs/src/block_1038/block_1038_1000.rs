@@ -917,7 +917,7 @@ pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
           uVar7 = uVar11 / uVar5;
           uVar13 = uVar11 % uVar5;
           bVar8 = false;
-          if (((0x0 < iVar3) && (!SBORROW2(iVar3,1))) && ((iVar3 == 0x5 || iVar3 + -0x1 < 0x4 || (iVar3 == 0x8)))) {
+          if (((0x0 < iVar3) && (!SBORROW2(iVar3,1))) && ((iVar3 == 0x5 || iVar3 -0x1 < 0x4 || (iVar3 == 0x8)))) {
             bVar8 = true;
           }
           if (bVar8) {

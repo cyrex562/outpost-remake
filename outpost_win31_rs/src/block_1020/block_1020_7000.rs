@@ -175,7 +175,7 @@ pub unsafe fn post_win_msg_1020_7308(mut param_1: u32, mut param_2: u16) {
                 (param_1 + 0x1c) = 0;
                 return;
             }
-            //      if (('\x03' < (cVar1 + -1)) && ((cVar1 + -0x5) < '\x02')) goto LAB_1020_7310;
+            //      if (('\x03' < (cVar1 -1)) && ((cVar1 -0x5) < '\x02')) goto LAB_1020_7310;
         }
         return;
     } //
@@ -286,7 +286,7 @@ pub unsafe fn win_ui_op_1020_737a(mut param_1: u16, param_2: *mut astruct_788) -
             local_rect = GetStockObject16(BLACK_BRUSH);
             GetClientRect16(&rect_30, &DAT_1050_1050);
             local_brush_handle = 0x0;
-            iStack56 = (iStack44 - rect_30.x) + -0x1;
+            iStack56 = (iStack44 - rect_30.x) -0x1;
             HStack54 = (iStack42 - rect_30.y) - 0x1;
             HStack52 = HStack54;
             iStack50 = iStack56;
@@ -784,8 +784,8 @@ pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE
             CONCAT22(0x1050, &local_rect_1),
             struct_e_1.hwnd16_field4_0x4,
         );
-        x = (iStack16 - local_rect_1) + -0x1;
-        y = (iStack14 - iStack18) + -0x1;
+        x = (iStack16 - local_rect_1) -0x1;
+        y = (iStack14 - iStack18) -0x1;
         iVar1 = struct_e_1.field12_0x12;
         iVar3 = y;
         if (is_iconic == 0) {

@@ -40,7 +40,7 @@ pub unsafe fn free_proc_inst_1040_a294(param_1: *mut StructD)
 
   param_1.address_offset_field_0x0 = 0xa4e8;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
-  PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + -0x1;
+  PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda -0x1;
   if (PTR_LOOP_1050_5eda.is_null()) {
     FreeProcInstance16(_PTR_LOOP_1050_5edc);
     _PTR_LOOP_1050_5edc = null_mut();

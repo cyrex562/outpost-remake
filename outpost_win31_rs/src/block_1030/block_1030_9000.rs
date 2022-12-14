@@ -101,7 +101,7 @@ pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u
     uVar19 = (param_1 >> 0x10);
     match iVar4 {
         _ => {
-            iStack16 = local_16 + -0x1;
+            iStack16 = local_16 -0x1;
             BVar3 = pass1_1030_8fe4(
                 &local_12,
                 uVar9,
@@ -122,7 +122,7 @@ pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u
             );
             if (BVar3 == 0) {
                 iStack16 = local_16;
-                local_12 = local_14 + -0x1;
+                local_12 = local_14 -0x1;
                 BVar3 = pass1_1030_8fe4(
                     &local_12,
                     uVar7,
@@ -137,7 +137,7 @@ pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u
               // break;
         }
         0x7b | 0x7e => {
-            iStack16 = local_16 + -0x1;
+            iStack16 = local_16 -0x1;
             BVar3 = pass1_1030_8fe4(
                 &local_12,
                 uVar9,
@@ -159,7 +159,7 @@ pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u
         }
         // TODO: goto LAB_1030_90e6;
         0x7c | 0x7d => {
-            local_12 = local_14 + -0x1;
+            local_12 = local_14 -0x1;
             BVar3 = pass1_1030_8fe4(
                 &local_12,
                 uVar9,

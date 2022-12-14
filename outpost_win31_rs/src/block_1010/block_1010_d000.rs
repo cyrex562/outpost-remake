@@ -105,9 +105,9 @@ pub unsafe fn pass1_1010_d24a(
             (&iVar9[0x3].field1_0x2 + 0x2) = 0x1;
         }
         while (lStack318 != 0) {
-            lStack318 = (lStack318 + -1);
+            lStack318 = (lStack318 -1);
             fn_ptr_1000_17ce((&local_a6)[lStack318]);
-            lStack318 = lStack318 + -0x1;
+            lStack318 = lStack318 -0x1;
         }
         pass1_1010_dc36(uVar11, uVar12, uVar8, param_4, param_5);
     }
@@ -413,8 +413,8 @@ pub unsafe fn pass1_1010_d710(
             (&iVar9[0x3].field1_0x2 + 0x2) = 0x1;
         }
         while (iStack312 != 0) {
-            fn_ptr_1000_17ce((&local_a2)[iStack312 + -0x1]);
-            iStack312 = iStack312 + -0x1;
+            fn_ptr_1000_17ce((&local_a2)[iStack312 -0x1]);
+            iStack312 = iStack312 -0x1;
         }
         pass1_1010_dc36(uVar13, uVar14, uVar6, param_4, param_5);
     }

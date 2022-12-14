@@ -666,7 +666,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8, param_2: i32, mut param_3: u32) {
                 puVar7 = (puStack70 - 0x7);
                 if (puVar7.is_null()) {
                     bVar16 = SBORROW2(puVar5, 0x32);
-                    puVar1 = puVar5 + -0x32;
+                    puVar1 = puVar5 -0x32;
                     bVar15 = puVar5 == (s_New_failed_in_Op__Op_1050_0020 + 0x12); //
                                                                                   // LAB_1028_7b74:
                     if (!bVar15 && bVar16 == (puVar1 < 0x0)) {
@@ -676,7 +676,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8, param_2: i32, mut param_3: u32) {
                     puVar7 = (puStack70 - 0x8);
                     if (puVar7.is_null()) {
                         bVar16 = SBORROW2(puVar5, 0x19);
-                        puVar1 = puVar5 + -0x19;
+                        puVar1 = puVar5 -0x19;
                         bVar15 = puVar1.is_null();
                         // TODO: goto LAB_1028_7b74;
                     }

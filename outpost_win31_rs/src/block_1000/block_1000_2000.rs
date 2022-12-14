@@ -152,8 +152,8 @@ pub unsafe fn fn_ptr_op_1000_2594() {
     let mut fn_ptr_1: *mut *mut code;
 
     while (unaff_SI < unaff_DI) {
-        ppcVar2 = unaff_DI + -0x2;
-        ppcVar1 = unaff_DI + -0x1;
+        ppcVar2 = unaff_DI -0x2;
+        ppcVar1 = unaff_DI -0x1;
         unaff_DI = ppcVar2;
         if ((*ppcVar2 | *ppcVar1) != 0) {
             fn_ptr_1 = ppcVar2;
@@ -227,7 +227,7 @@ pub unsafe fn pass1_1000_262c(param_1: u32, param_2: u16, param_3: u16) {
     if ((cVar2 != '\r') && (cVar2 != '\0')) {
         PTR_LOOP_1050_5fb8 = PTR_LOOP_1050_5fb8 + 1;
         loop {
-            pcVar7 = pcVar7 + -0x1; //
+            pcVar7 = pcVar7 -0x1; //
                                     //            LAB_1000_267f:
             pcVar1 = pcVar7;
             pcVar7 = pcVar7 + 1;
@@ -355,7 +355,7 @@ pub unsafe fn pass1_1000_262c(param_1: u32, param_2: u16, param_3: u16) {
     ppcVar6[0x1] = &DAT_1050_1050;
     ppcVar6 = ppcVar6 + 2;
     loop {
-        pcVar7 = pcVar7 + -0x1; //
+        pcVar7 = pcVar7 -0x1; //
                                 //        LAB_1000_274f:
         pcVar1 = pcVar7;
         pcVar7 = pcVar7 + 1;
@@ -751,12 +751,12 @@ pub unsafe fn msg_box_op_1000_214c(
             CONCAT22(param_4, param_3),
             0x0,
         );
-        iVar2 = IVar1 + -0x1;
+        iVar2 = IVar1 -0x1;
         if (iVar2 == 0) {
             return 0x0;
         }
         if ((0x0 < iVar2) && (!SBORROW2(iVar2, 1))) {
-            if (IVar1 == 0x3 || IVar1 + -0x2 < 1) {
+            if (IVar1 == 0x3 || IVar1 -0x2 < 1) {
                 fatal_app_exit_1000_3e9e();
                 return 0x0;
             }
@@ -1215,7 +1215,7 @@ pub unsafe fn mem_1000_2bb6(mut param_1: u16, mut param_2: u16, param_3: *mut i1
             iVar2 = piVar3[0x3];
             puVar6 = (*piVar3 - iVar2);
             *piVar3 = iVar2 + 1;
-            piVar3[0x2] = piVar3[0x79] + -0x1;
+            piVar3[0x2] = piVar3[0x79] -0x1;
             if (puVar6.is_null()) {
                 puVar5 = null_mut();
                 if ((puVar7[0x5f90] & 0x20) != 0) {

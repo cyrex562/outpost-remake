@@ -343,8 +343,8 @@ pub unsafe fn pass1_1018_161c(
         CONCAT22(0x1050, &local_6),
         CONCAT22(0x1050, &local_6 + 0x2),
     );
-    uVar1 = local_6 + param_4 + -0x3;
-    uVar2 = local_6 + param_3 + -0x3;
+    uVar1 = local_6 + param_4 -0x3;
+    uVar2 = local_6 + param_3 -0x3;
     local_6 = CONCAT22(uVar1, uVar2);
     pass1_1008_3e76(param_2, (param_1 + 0x44), uVar2, uVar1);
     return;
@@ -390,10 +390,10 @@ pub unsafe fn pass1_1018_16b8(mut param_1: u32, mut param_2: u16, mut param_3: u
     let mut uVar2: u32;
 
     uVar6 = (in_EDX >> 0x10);
-    if (param_3 + -0x3 < 1) {
+    if (param_3 -0x3 < 1) {
         param_3 = CONCAT22(0x3, param_3);
     }
-    if (param_3 + -0x3 < 1) {
+    if (param_3 -0x3 < 1) {
         param_3 = CONCAT22(param_3, 0x3);
     }
     uVar8 = (param_1 >> 0x10);
@@ -704,7 +704,7 @@ pub unsafe fn pass1_1018_1b02(param_1: *mut astruct_95, mut param_2: i16) {
         uVar2 = pstruct96_2 & 0xffff0000;
         uVar3 = ZEXT24(pstruct96_4);
         piVar1 = &pstruct96_4.field6_0x6;
-        *piVar1 = *piVar1 + param_2 * 0x2 + -0x1;
+        *piVar1 = *piVar1 + param_2 * 0x2 -0x1;
         uVar4 = (uVar2 >> 0x10);
         if (0x23 < pstruct96_4.field6_0x6) {
             pstruct96_4.field6_0x6 = 0;
@@ -774,9 +774,9 @@ pub unsafe fn pt_in_rect_1018_1bda(mut param_1: u32, mut param_2: u16, mut param
             CONCAT22(0x1050, &local_a + 0x2),
             CONCAT22(0x1050, &local_a),
         );
-        local_a += local_12 + -0x6;
+        local_a += local_12 -0x6;
         iStack6 = local_a + 0xc;
-        local_a += local_14 + -0x6;
+        local_a += local_14 -0x6;
         iStack4 = local_a + 0xc;
         BVar4 = PtInRect16(PStack24, &local_a);
         if (BVar4 != 0) {
@@ -869,7 +869,7 @@ pub unsafe fn pass1_1018_1ce8(mut param_1: u32) {
             if (local_e < 0x0) {
                 iVar2 = iStack16;
                 if (0x2 < iStack16) {
-                    iVar2 = iStack16 + -0x5;
+                    iVar2 = iStack16 -0x5;
                 }
                 local_e += iVar2;
             } else if (iStack16 < 0x3) {

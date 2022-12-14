@@ -598,9 +598,9 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
     GetClientRect16(&local_a,&DAT_1050_1050);
     paVar2 = param_1.field144_0x94;
     local_a.y += 0x3;
-    local_a.x = (paVar2 + 0x1a) + -0x9;
+    local_a.x = (paVar2 + 0x1a) -0x9;
     iStack6 += -0x3;
-    iStack4 = iStack4 + -0x3;
+    iStack4 = iStack4 -0x3;
     InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
     unk_destroy_win_op_1010_2fa0(param_1.field144_0x94);
     pass1_1010_32c0(param_1.field144_0x94,0x0);

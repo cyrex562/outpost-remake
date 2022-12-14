@@ -440,12 +440,6 @@ struct astruct_379 {
 }
 
 
-
-struct astruct_915 {
-}
-
-
-
 struct astruct_918 {
     pub field0_0x0: u8,
 }

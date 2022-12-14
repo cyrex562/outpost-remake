@@ -409,7 +409,7 @@ pub unsafe fn write_to_file_1028_b5ec(param_1: *mut astruct_731, mut param_2: u3
     if (SBORROW2(iStack4, 1)) {
         return 0x1;
     }
-    if (iStack4 == 0x3 || iStack4 + -0x2 < 1) {
+    if (iStack4 == 0x3 || iStack4 -0x2 < 1) {
         local_8[0] = (iVar3 + 0x14);
     } else if (iStack4 == 0x4) {
         if ((iVar3 + 0x14) == 0) {
@@ -944,7 +944,7 @@ pub unsafe fn pass1_1028_be9e(param_1: *mut astruct_15) {
         if ((iVar3 + 0x200) == 0x8000002) {
             pSVar2 = pstruct15_4.field16_0x14;
             piVar1 = (pSVar2 + 0x94);
-            *piVar1 = *piVar1 + -0x1;
+            *piVar1 = *piVar1 -0x1;
         } else {
             pass1_1028_cb04(param_1);
             if (iVar3 == 0) {
@@ -952,7 +952,7 @@ pub unsafe fn pass1_1028_be9e(param_1: *mut astruct_15) {
             }
             pSVar2 = pstruct15_4.field16_0x14;
             piVar1 = (pSVar2 + 0x94);
-            *piVar1 = *piVar1 + -0x1;
+            *piVar1 = *piVar1 -0x1;
             pass1_1028_c952(param_1);
         }
         uVar2 = pstruct15_4.field16_0x14;

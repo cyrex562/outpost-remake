@@ -277,7 +277,7 @@ pub unsafe fn pass1_1028_e4ec(param_1: *mut astruct_92) {
                 return;
             }
             plVar2 = (iVar6 + 0x8);
-            *plVar2 = *plVar2 + -0x1;
+            *plVar2 = *plVar2 -0x1;
             bad_1030_1312();
             in_DX |= uVar5;
             if in_DX != 0 {
@@ -1035,7 +1035,7 @@ pub unsafe fn pass1_1028_e628(
                     CONCAT22(0x1050, &local_14),
                     CONCAT22(0x1050, &local_12),
                 );
-                ppuStack24 = (local_14 + -1);
+                ppuStack24 = (local_14 -1);
                 puVar15 = paVar17;
                 puStack14 = ppuStack24;
                 uVar9 = pass1_1028_21ba(
@@ -1059,7 +1059,7 @@ pub unsafe fn pass1_1028_e628(
                     );
                     if (uVar9 == 0) {
                         puStack14 = local_14;
-                        ppuStack24 = (local_12 + -1);
+                        ppuStack24 = (local_12 -1);
                         local_10 = ppuStack24;
                         uVar9 = pass1_1028_21ba(
                             &local_10,

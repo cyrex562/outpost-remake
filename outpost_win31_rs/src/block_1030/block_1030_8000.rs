@@ -17,8 +17,8 @@ pub unsafe fn pass1_1030_8030(mut param_1: u16, mut param_2: u32) {
     iVar1 = (uVar3 + 0xc);
     if (((0x32 < iVar1) && (!SBORROW2(iVar1, 0x33)))
         && (iVar1 == 0x34
-            || iVar1 + -0x33 < 0x1
-            || (0x2b < iVar1 + -0x34 && (iVar1 + -0x60 < 0x2))))
+            || iVar1 -0x33 < 0x1
+            || (0x2b < iVar1 -0x34 && (iVar1 -0x60 < 0x2))))
     {
         paVar2 = (iVar4 + 0x1a);
         pass1_1028_1106(paVar2, param_1, paVar2);
@@ -218,7 +218,7 @@ pub unsafe fn pass1_1030_838e(param_1: u32) {
 pub unsafe fn pass1_1030_83ba(param_1: u8, param_2: *mut *mut u32, param_3: i32) {
     let mut lVar1: i32;
 
-    while (lVar1 = param_3 + -0x1, param_3 != 0) {
+    while (lVar1 = param_3 -0x1, param_3 != 0) {
         struct_1028_d2b0(*param_2);
         pass1_1028_d01a((param_2 + 0x4));
         param_3 = lVar1;

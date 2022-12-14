@@ -749,8 +749,8 @@ pub unsafe fn pass1_1030_eb86(mut param_1: u16) -> u16 {
             iVar1 = &paVar3.field5_0xc;
             if (((0x32 < iVar1) && (!SBORROW2(iVar1, 0x33)))
                 && (iVar1 == 0x34
-                    || iVar1 + -0x33 < 0x1
-                    || (0x2b < iVar1 + -0x34 && (iVar1 + -0x60 < 0x2))))
+                    || iVar1 -0x33 < 0x1
+                    || (0x2b < iVar1 -0x34 && (iVar1 -0x60 < 0x2))))
             {
                 ppcVar2 = (*puStack24 + 0x2c);
                 (**ppcVar2)(0x1028);
@@ -884,7 +884,7 @@ pub unsafe fn pass1_1030_ecf8(param_1: u8, param_2: *mut astruct_57, mut param_3
     );
     pSVar13 = (paVar12 & 0xffff0000 | puVar17 >> 0x10);
     if ((0x0 < PTR_LOOP_1050_13ae) && (!SBORROW2(PTR_LOOP_1050_13ae, 1))) {
-        if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae + -1) < 1) {
+        if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae -1) < 1) {
             if (0x6 < uStack12) {
                 uStack12 -= 0x2;
                 // TODO: goto LAB_1030_ed5b;

@@ -947,19 +947,19 @@ pub unsafe fn pass1_1028_af08(
         in_stack_0000ffb4,
     );
     paVar5 = (param_1 & 0xffff0000 | puVar7 >> 0x10);
-    puVar1 = PTR_LOOP_1050_13ae + -0x1;
+    puVar1 = PTR_LOOP_1050_13ae -0x1;
     if ((PTR_LOOP_1050_13ae < 1) || (SBORROW2(PTR_LOOP_1050_13ae, 1))) {
         //
         // LAB_1028_af27:
         iStack10 = 0x1;
     } else {
-        puVar2 = PTR_LOOP_1050_13ae + -0x2;
+        puVar2 = PTR_LOOP_1050_13ae -0x2;
         if (puVar2.is_null() || puVar1 < 1) {
             iStack12 = 0x1;
             iStack10 = 0x1;
             // TODO: goto LAB_1028_af42;
         }
-        puVar1 = PTR_LOOP_1050_13ae + -0x4;
+        puVar1 = PTR_LOOP_1050_13ae -0x4;
         //    if (puVar1.is_null() == false) goto LAB_1028_af27;
         iStack10 = 0x2;
     }

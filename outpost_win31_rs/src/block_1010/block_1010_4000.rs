@@ -352,8 +352,8 @@ pub unsafe fn pass1_1010_4566(mut param_1: i16, mut param_2: u16, mut param_3: i
     if (param_3 != 0x2) {
         return;
     }
-    pass1_1010_4956(CONCAT22(param_2, param_1 + -0x20));
-    pass1_1010_1f62(CONCAT22(param_2, param_1 + -0x20), 0x2);
+    pass1_1010_4956(CONCAT22(param_2, param_1 -0x20));
+    pass1_1010_1f62(CONCAT22(param_2, param_1 -0x20), 0x2);
     return;
 }
 
@@ -453,7 +453,7 @@ pub unsafe fn pass1_1010_4674(
             // TODO: goto LAB_1010_46e8;
         }
         piVar1 = (&paVar2.field30_0x22 + 2);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         if (*piVar1 < 0x0) {
             (&paVar2.field30_0x22 + 0x2) = 0xf;
         }
@@ -669,7 +669,7 @@ pub unsafe fn pass1_1010_4956(mut param_1: u32) {
             return;
         }
         piVar1 = (iVar3 + 0x24);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         if (*piVar1 < 0x0) {
             (iVar3 + 0x24) = 0xf;
         }

@@ -36,7 +36,7 @@ pub unsafe fn pass1_1010_bf1e(
 
     paVar6 = CONCAT22(in_register_0000000a, param_2);
     bad_1010_bf08(param_3, (param_3 >> 0x10), 0x1000000);
-    iVar2 = param_1 + -0x1;
+    iVar2 = param_1 -0x1;
     *param_4 = iVar2;
     uVar3 = iVar2 * 0x18;
     mem_op_1000_179c(uVar3, paVar6);

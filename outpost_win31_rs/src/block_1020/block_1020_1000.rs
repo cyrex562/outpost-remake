@@ -478,8 +478,8 @@ pub unsafe fn draw_op_1020_1674(param_1: *mut astruct_779) {
             GetClientRect16(&rect_e, &DAT_1050_1050);
             rect_1a.x = 0;
             rect_1a.y = 0;
-            iStack22 = (iStack10 - rect_e.x) + -0x1;
-            iStack20 = (iStack8 - rect_e.y) + -0x1;
+            iStack22 = (iStack10 - rect_e.x) -0x1;
+            iStack20 = (iStack8 - rect_e.y) -0x1;
             puVar1 = struct_1.field20_0x14;
             hdc = *(puVar1 + 0x7c);
             iStack18 = iStack20;

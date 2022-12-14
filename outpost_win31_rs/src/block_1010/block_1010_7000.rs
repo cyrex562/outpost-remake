@@ -475,7 +475,7 @@ pub unsafe fn unk_win_op_1010_7300(
     if (param_4 != 0x17) {
         //    if (0x17 < param_4) goto LAB_1010_7710;
         cVar4 = param_4;
-        //    if ((cVar4 != '\x05') && (((cVar4 + -0x5) < '\x05' || ('\x02' < (cVar4 + -0xa))))) goto LAB_1010_7710;
+        //    if ((cVar4 != '\x05') && (((cVar4 -0x5) < '\x05' || ('\x02' < (cVar4 -0xa))))) goto LAB_1010_7710;
     }
     if ((uStack6 + 0x16) != 0) {
         uVar12 = SUB42(s_tile2_bmp_1050_1538, 0x0);

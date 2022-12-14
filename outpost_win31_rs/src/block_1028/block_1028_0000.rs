@@ -517,7 +517,7 @@ pub unsafe fn pass1_1028_081e(mut param_1: i16,mut param_2: u16 ,param_3: *mut a
     return;
   }
   piVar1 = (iVar6 + 0x20);
-  *piVar1 = *piVar1 + -0x1;
+  *piVar1 = *piVar1 -0x1;
   return;
 }
 

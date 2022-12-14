@@ -627,7 +627,7 @@ pub unsafe fn pass1_1010_c864(
                 param_4,
             );
         }
-        while (lVar2 = uStack398 + -0x1, uStack398 != 0) {
+        while (lVar2 = uStack398 -0x1, uStack398 != 0) {
             uStack398 = lVar2;
             pcStack412 = (&local_f6)[uStack398];
             uStack398 = lVar2;
@@ -951,8 +951,8 @@ pub unsafe fn pass1_1010_cf36(
             (&struct_104_1[0x3].field1_0x2 + 0x2) = 0x1;
         }
         while (iStack312 != 0) {
-            fn_ptr_1000_17ce((&local_a2)[iStack312 + -0x1]);
-            iStack312 = iStack312 + -0x1;
+            fn_ptr_1000_17ce((&local_a2)[iStack312 -0x1]);
+            iStack312 = iStack312 -0x1;
         }
         pass1_1010_dc36(uVar13, uVar14, uVar4, param_3, param_4);
     }

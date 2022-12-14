@@ -320,7 +320,7 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
     GetClientRect16(&local_a,&DAT_1050_1050);
     puVar1 = param_2.field144_0x94;
     local_a.y += 0x3;
-    local_a.x = (puVar1 + 0x1a) + -0x9;
+    local_a.x = (puVar1 + 0x1a) -0x9;
     iStack6 += -0x3;
     iStack4 += -0x3;
     InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
@@ -676,8 +676,8 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
                            (&win_hdc16_4,(uStack8 >> 0x10) | uStack8,uStack8,
                             CONCAT22(0x1050,&win_hdc16_4));
       GetWindowRect16(CONCAT13(0x10,CONCAT12(0x50,&local_rect_12)),struct_1.hwnd16_field6_0x6);
-      x = (iStack14 - local_rect_12) + -0x1;
-      y1 = (iStack12 - iStack16) + -0x1;
+      x = (iStack14 - local_rect_12) -0x1;
+      y1 = (iStack12 - iStack16) -0x1;
       iVar5 = (-(struct_1.field95_0x60 == 0) & 0x1e) + 0x25;
       pen_handle = CreatePen16(CONCAT13(0x1,iVar5),0x0,0x0);
       obj_handle = SelectObject16(pen_handle,win_hdc16_4);

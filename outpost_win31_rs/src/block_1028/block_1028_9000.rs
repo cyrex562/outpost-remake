@@ -761,7 +761,7 @@ pub unsafe fn pass1_1028_9c90(mut param_1: u32) -> u16 {
     if ((uVar1 < 0x3a99) && (uVar1 % 0x3e8 == 0)) {
         // WARNING: Could not recover jumptable at 0x10289dc0. Too many branches
         // WARNING: Treating indirect jump as call
-        uVar2 = ((uVar1 / 0x3e8) * 0x2 + -0x623a);
+        uVar2 = ((uVar1 / 0x3e8) * 0x2 -0x623a);
         return uVar2;
     }
     return 0x1;

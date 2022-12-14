@@ -431,7 +431,7 @@ pub unsafe fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409 {
 
     uVar3 = (param_1 >> 0x10);
     uVar2 = param_1;
-    paVar1 = (uVar2.field32_0x20 + -0x4);
+    paVar1 = (uVar2.field32_0x20 -0x4);
     if (paVar1 < (&u16_1050_0008 + 1)) {
         match *paVar1 {
             0 => {
@@ -678,7 +678,7 @@ pub unsafe fn pass1_1028_199a(mut param_1: i16, param_2: *mut astruct_15) {
     let mut uStack4: u16;
 
     piVar1 = (param_2 + 0x14);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
     if (*piVar1 == 0) {
         pass1_1028_b58e(param_2);
         uStack4 = in_EDX;
@@ -907,7 +907,7 @@ pub unsafe fn pass1_1028_1cca(
             param_6,
         );
         if (uVar1 == 0) {
-            local_8 = local_a + -0x1;
+            local_8 = local_a -0x1;
             local_8 = local_c;
             uVar1 = pass1_1028_1e14(
                 &local_8,

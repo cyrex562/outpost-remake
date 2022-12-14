@@ -48,10 +48,10 @@ pub unsafe fn pass1_1028_81e0(mut param_1: u16) -> u16 {
             //      if ((iVar1 < 0x5d) && ((iVar1 != 0x37 && (iVar1 != 0x47)))) goto switchD_1028_8225_caseD_1;
         }
         if !((iVar1 == 0x6a)
-            || (0x8 < iVar1 + -0x6a
+            || (0x8 < iVar1 -0x6a
                 && (iVar1 == 0x75
-                    || iVar1 + -0x74 < 0x1
-                    || (0x0 < iVar1 + -0x76 && (iVar1 + -0x78 < 0x2)))))
+                    || iVar1 -0x74 < 0x1
+                    || (0x0 < iVar1 -0x76 && (iVar1 -0x78 < 0x2)))))
         {
             break;
         }

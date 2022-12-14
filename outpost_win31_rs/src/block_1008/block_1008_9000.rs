@@ -999,8 +999,8 @@ pub unsafe fn pass1_1008_9e5a(structd_param_1: *mut StructD) {
 }
 pub unsafe fn pass1_1008_9f18(mut param_1: i16, mut param_2: u16, mut param_3: i16) {
     if (param_3 == 0x2) {
-        pass1_1008_9f64(CONCAT22(param_2, param_1 + -0x1c));
-        pass1_1010_1f62(CONCAT22(param_2, param_1 + -0x1c), 0x2);
+        pass1_1008_9f64(CONCAT22(param_2, param_1 -0x1c));
+        pass1_1010_1f62(CONCAT22(param_2, param_1 -0x1c), 0x2);
     }
     return;
 }

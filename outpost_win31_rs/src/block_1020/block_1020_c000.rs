@@ -889,7 +889,7 @@ pub unsafe fn pass1_1020_cac2(param_1: *mut u8, mut param_2: u16, param_3: *mut 
                         break;
                     }
                 }
-                if (iVar7 != 0x13 && 0x0 < iVar7 + -0x12) {
+                if (iVar7 != 0x13 && 0x0 < iVar7 -0x12) {
                     break;
                 }
                 iStack52 = 0;
@@ -936,7 +936,7 @@ pub unsafe fn pass1_1020_cac2(param_1: *mut u8, mut param_2: u16, param_3: *mut 
                 puVar5 = (iVar7 / 0x2);
                 // TODO: goto LAB_1020_cbb0;
             }
-            puVar5 = puStack8 + -0x4;
+            puVar5 = puStack8 -0x4;
             if (puVar5.is_null()) {
                 iVar7 = (puVar3 + 0x6) * 0x3;
                 // TODO: goto LAB_1020_cba7;

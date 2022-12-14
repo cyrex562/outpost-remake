@@ -178,8 +178,8 @@ pub unsafe fn unk_draw_op_1018_c578(param_1: *mut astruct_57, param_2: *mut astr
     hdc_2a = BeginPaint16(CONCAT22(0x1050, &paintstruct_22), iVar4.hwnd_0x8);
     hbrush_44 = CreateSolidBrush16(0x2000000);
     rect_34 = 0x0;
-    iStack48 = iVar4.field239_0xf6 + -0x1;
-    iStack46 = iVar4.field240_0xf8 + -0x1;
+    iStack48 = iVar4.field239_0xf6 -0x1;
+    iStack46 = iVar4.field240_0xf8 -0x1;
     FillRect16(hbrush_44, &rect_34, &DAT_1050_1050);
     DeleteObject16(hbrush_44);
     uVar3 = iVar4.field225_0xe2;
@@ -384,7 +384,7 @@ pub unsafe fn pass1_1018_c9f4(
     param_1.offset_0x0 = 0xda86;
     (param_1 + 0x2) = 0x1018;
     piVar1 = (param_1 + 0x10e);
-    *piVar1 = *piVar1 + -0x19;
+    *piVar1 = *piVar1 -0x19;
     return param_1;
 }
 
@@ -814,8 +814,8 @@ pub unsafe fn unk_draw_op_1018_cda8(
     hdc_2a = BeginPaint16(CONCAT22(0x1050, paintstruct_var_22), struct36_var3.hwnd_0x8);
     brush_handle_var44 = CreateSolidBrush16(0x2000000);
     rect_var34 = 0x0;
-    iStack48 = struct36_var3.field239_0xf6 + -0x1;
-    iStack46 = struct36_var3.field240_0xf8 + -0x1;
+    iStack48 = struct36_var3.field239_0xf6 -0x1;
+    iStack46 = struct36_var3.field240_0xf8 -0x1;
     FillRect16(brush_handle_var44, &rect_var34, &DAT_1050_1050);
     DeleteObject16(brush_handle_var44);
     uVar2 = struct36_var3.field225_0xe2;
@@ -969,8 +969,8 @@ pub unsafe fn unk_draw_op_1018_cfc0(
     local_2a = BeginPaint16(CONCAT22(0x1050, paintstruct_22), struct36_var5.hwnd_0x8);
     hbrush_44 = CreateSolidBrush16(0x2000000);
     rect_34 = 0x0;
-    iStack48 = struct36_var5.field239_0xf6 + -0x1;
-    iStack46 = struct36_var5.field240_0xf8 + -0x1;
+    iStack48 = struct36_var5.field239_0xf6 -0x1;
+    iStack46 = struct36_var5.field240_0xf8 -0x1;
     FillRect16(hbrush_44, &rect_34, &DAT_1050_1050);
     DeleteObject16(hbrush_44);
     uVar3 = struct36_var5.field225_0xe2;

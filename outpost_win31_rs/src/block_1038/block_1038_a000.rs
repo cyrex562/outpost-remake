@@ -668,7 +668,7 @@ pub unsafe fn set_win_pos_1038_abdc(param_1: *mut astruct_940)
   hwnd = GetDlgItem16(0xfd7,iVar1.field6_0x6);
   GetWindowRect16(CONCAT22(0x1050,&stack0xffee),hwnd);
   iStack6 -= local_a;
-  iStack4 = (in_stack_0000fff0 - iStack8) + -0x2;
+  iStack4 = (in_stack_0000fff0 - iStack8) -0x2;
   SetWindowPos16(0x6,iStack4,iStack6,0x0,0x0,0x0,iVar1.field6_0x6);
   return;
 }

@@ -281,7 +281,7 @@ pub unsafe fn pass1_1018_5292(param_1: *mut astruct_9, mut param_2: u32) {
                 break;
             }
             iVar1 = (puVar5 + 0x6);
-            paVar5 = iVar1 + -0x7;
+            paVar5 = iVar1 -0x7;
             if (paVar5.is_null()) {
                 //
                 // LAB_1018_53f0:
@@ -309,7 +309,7 @@ pub unsafe fn pass1_1018_5292(param_1: *mut astruct_9, mut param_2: u32) {
                 uVar1 = &pstruct9_v18.field14_0xe;
                 fn_ptr_2 = (*&pstruct9_v18.field14_0xe + 0x4);
                 (**fn_ptr_2)(0x0, uVar1, (uVar1 >> 0x10), uVar17, paVar13);
-            } else if (((0x5 < paVar5) && (!SBORROW2(paVar5, 0x6))) && ((iVar1 + -0xd) < 0x2)) {
+            } else if (((0x5 < paVar5) && (!SBORROW2(paVar5, 0x6))) && ((iVar1 -0xd) < 0x2)) {
             }
             // goto LAB_1018_53f0;
             uVar17 = (uStack22 >> 0x10);

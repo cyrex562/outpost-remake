@@ -284,7 +284,7 @@ pub unsafe fn pass1_1010_9372(
         uVar8 = pass1_1010_2e02(_PTR_LOOP_1050_3528, (uVar2 + 0x12));
         uVar5 = param_2 + 1;
         uVar6 = param_3 + (0xfffe < param_2);
-        // for (cVar4 = (param_4 + -1) * '\x04'; cVar4 != '\0'; cVar4 += -1)
+        // for (cVar4 = (param_4 -1) * '\x04'; cVar4 != '\0'; cVar4 += -1)
 
         cVar4 = param_4 - 1 * '\x04';
         while cVar4 != '\0' {
@@ -528,7 +528,7 @@ pub unsafe fn pass1_1010_96d0(param_1: *mut astruct_690) -> i16 {
     if (iVar3.field26_0x1a != 0) {
         if (0x0 < iVar3.field27_0x1c) {
             piVar1 = &iVar3.field27_0x1c;
-            *piVar1 = *piVar1 + -0x1;
+            *piVar1 = *piVar1 -0x1;
         }
         if ((iVar3.field27_0x1c == 0) && (iVar3.field28_0x1e != 0)) {
             iStack8 = 0x1;
@@ -660,7 +660,7 @@ pub unsafe fn pass1_1010_988c(mut param_1: u32, mut param_2: i16) {
             break;
         }
     }
-    iVar4 = (iVar3 + 0x6) + -0x1;
+    iVar4 = (iVar3 + 0x6) -0x1;
     (iVar3 + 0x6) = iVar4;
     if ((iVar4 < 1)
         && (

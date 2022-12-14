@@ -31,7 +31,7 @@ pub unsafe fn pass1_1020_a43e(param_1: *mut u8, param_2: *mut u16) -> *mut u16 {
         in_stack_0000ffca,
     );
     if ((0x0 < PTR_LOOP_1050_13ae) && (!SBORROW2(PTR_LOOP_1050_13ae, 1))) {
-        if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae + -1) < 1) {
+        if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae -1) < 1) {
             PTR_LOOP_1050_4e74 = 0x44b4;
             // TODO: goto LAB_1020_a482;
         }
@@ -558,7 +558,7 @@ pub unsafe fn pass1_1020_a89e(mut param_1: u32, param_2: *mut u32, mut param_3: 
             );
             fn_ptr_1030_835a(_u16_1050_5748, CONCAT22(0x1050, &local_5ee));
             piVar1 = (uStack1212 + 0x6);
-            *piVar1 = *piVar1 + -0x1;
+            *piVar1 = *piVar1 -0x1;
             local_5ee = 0x389a;
             uStack1516 = 0x1008;
         }
@@ -793,19 +793,19 @@ pub unsafe fn pass1_1020_ad90(
         CONCAT22(0x1050, &local_22),
     );
     iStack14 = local_4 + 1;
-    uStack12 = CONCAT22(local_4 + -0x1, local_6 - 1);
+    uStack12 = CONCAT22(local_4 -0x1, local_6 - 1);
     iStack16 = local_6 + 1;
-    if (local_4 + -0x1 < 0x0) {
+    if (local_4 -0x1 < 0x0) {
         uStack12 = (local_6 - 1);
     }
     if (local_22 <= iStack14) {
-        iStack14 = local_22 + -0x1;
+        iStack14 = local_22 -0x1;
     }
     if (uStack12 < 0x0) {
         uStack12 &= 0xffff0000;
     }
     if (local_24 <= iStack16) {
-        iStack16 = local_24 + -0x1;
+        iStack16 = local_24 -0x1;
     }
     pass1_1008_6c90(CONCAT22(0x1050, local_3a));
     pass1_1008_6cec(

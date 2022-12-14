@@ -285,7 +285,7 @@ pub unsafe fn pass1_1020_e44c(param_1: u8, mut param_2: u16, mut param_3: u32) {
     iVar2 = param_3;
     if ((iVar2 + 0x12) == 0x2) {
         piVar1 = (iVar2 + 0x14);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         if (((iVar2 + 0x26) == 0) && ((iVar2 + 0xc) == 0x78)) {
             pass1_1020_e294((param_3 & 0xffff | uVar3 << 0x10));
         }
@@ -308,19 +308,19 @@ pub unsafe fn pass1_1020_e49a(param_1: *mut astruct_15) {
     uVar3 = pass1_1028_b58e(param_1);
     iVar1 = (uVar3 + 0x14);
     uStack10 = 0;
-    iVar2 = iVar1 + -0x6;
+    iVar2 = iVar1 -0x6;
     if (iVar2 == 0) {
         uStack10 = 0x9;
     } else {
-        iVar2 = iVar1 + -0x7;
+        iVar2 = iVar1 -0x7;
         if (iVar2 == 0) {
             uStack10 = 0x6;
         } else {
-            iVar2 = iVar1 + -0x8;
+            iVar2 = iVar1 -0x8;
             if (iVar2 == 0) {
                 uStack10 = 0x7;
             } else {
-                iVar2 = iVar1 + -0x9;
+                iVar2 = iVar1 -0x9;
                 if (iVar2 == 0) {
                     uStack10 = 0x8;
                 }
@@ -887,7 +887,7 @@ pub unsafe fn pass1_1020_ed3c(mut param_1: i16, param_2: *mut astruct_15) {
     pstruct15_5 = (param_2 >> 0x10);
     pstruct15_5_1 = param_2;
     ppSVar1 = &pstruct15_5_1.field16_0x14;
-    ppSVar1 = ppSVar1 + -0x1;
+    ppSVar1 = ppSVar1 -0x1;
     if (ppSVar1 == 0) {
         pstruct15_5_1.field15_0x12 = 0;
         pass1_1028_b58e(param_2);

@@ -335,7 +335,7 @@ pub unsafe fn unk_win_op_1020_65cc(param_1: *mut astruct_60, mut param_2: i16) {
                 (**ppcVar1)();
             }
         }
-    } else if (((0x0 < param_2 + -0x3) && (!SBORROW2(param_2 + -0x3, 1))) && (param_2 + -0x4 < 0x4))
+    } else if (((0x0 < param_2 -0x3) && (!SBORROW2(param_2 -0x3, 1))) && (param_2 -0x4 < 0x4))
     {
         BVar3 = IsIconic16(HWND16_1050_0396);
         if (BVar3 == 0) {

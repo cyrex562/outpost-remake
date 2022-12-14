@@ -177,8 +177,8 @@ pub unsafe fn draw_op_1008_8288(
     }
     local_10.x = (x2 >> 1) + uStack4;
     iVar1 = (param_1 >> 0x2) + uStack4;
-    local_10.y = iVar1 + -0x2;
-    iStack12 = local_10.x + -0x3;
+    local_10.y = iVar1 -0x2;
+    iStack12 = local_10.x -0x3;
     iStack10 = iVar1 + 1;
     iStack8 = local_10.x + 0x3;
     iStack6 = iStack10;
@@ -198,8 +198,8 @@ pub unsafe fn draw_op_1008_8288(
     point_1c.x = (x2 >> 1) + uStack4;
     iVar2 = (param_1 - (param_1 >> 0x2)) + uStack4;
     point_1c.y = iVar2 + 1;
-    iStack24 = point_1c.x + -0x3;
-    iStack22 = iVar2 + -0x2;
+    iStack24 = point_1c.x -0x3;
+    iStack22 = iVar2 -0x2;
     iStack20 = point_1c.x + 0x3;
     iStack18 = iStack22;
     if (uStack4 == 0) {
@@ -485,7 +485,7 @@ pub unsafe fn pass1_1008_87cc(
         (iVar7 - iVar5.field5_0xe) * iStack12 + iVar5.field6_0x10 + iStack8,
     );
     iVar5.field8_0x14 = &iVar5.field12_0x1c + 0x20;
-    iVar5.field9_0x16 = (uStack6 + 0x8) + (&iVar5.field12_0x1c + 0x2) + -0x25;
+    iVar5.field9_0x16 = (uStack6 + 0x8) + (&iVar5.field12_0x1c + 0x2) -0x25;
     iVar5.field10_0x18 = iVar5.field8_0x14 + 0x32;
     uVar2 = iVar5.field9_0x16 + 0x19;
     iVar5.field11_0x1a = uVar2;

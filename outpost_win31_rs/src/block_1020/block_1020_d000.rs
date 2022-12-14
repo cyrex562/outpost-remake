@@ -820,7 +820,7 @@ pub unsafe fn pass1_1020_db86(
             return;
         }
         PTR_LOOP_1050_50ca = 0x6b6;
-        PTR_LOOP_1050_50cc = puVar2 + -0x1e;
+        PTR_LOOP_1050_50cc = puVar2 -0x1e;
     }
     return;
 }
@@ -861,8 +861,8 @@ pub unsafe fn pass1_1020_dc1c(param_1: *mut astruct_15, param_2: *mut u16) {
         iVar1 = (puVar7 + 0xc);
         if (((iVar1 < 1) || (SBORROW2(iVar1, 1)))
             || (iVar1 != 0x9
-                && 0x7 < iVar1 + -0x1
-                && (iVar1 + -0x9 < 0x6a || (0x6 < iVar1 + -0x73))))
+                && 0x7 < iVar1 -0x1
+                && (iVar1 -0x9 < 0x6a || (0x6 < iVar1 -0x73))))
         {
             ppcVar2 = (*puVar7 + 0x24);
             (**ppcVar2)();
@@ -1006,7 +1006,7 @@ pub unsafe fn pass1_1020_deac(
     if (SBORROW2(param_1, 1)) {
         return 0x0;
     }
-    if (param_1 != 0x3 && 0x0 < param_1 + -0x2) {
+    if (param_1 != 0x3 && 0x0 < param_1 -0x2) {
         if (param_1 == 0x4) {
             pass1_1020_de32(param_2, param_3, 0x4);
             if ((uVar1 + 0x24) == 0x6) {

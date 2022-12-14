@@ -868,8 +868,8 @@ pub unsafe fn pass1_1018_3d6c(param_1: *mut astruct_679) {
                     if (SBORROW2(PTR_LOOP_1050_13ae, 1)) {
                         return;
                     }
-                    if (PTR_LOOP_1050_13ae != &u16_1050_0002 && 0x0 < (PTR_LOOP_1050_13ae + -1)) {
-                        puVar3 = PTR_LOOP_1050_13ae + -0x3;
+                    if (PTR_LOOP_1050_13ae != &u16_1050_0002 && 0x0 < (PTR_LOOP_1050_13ae -1)) {
+                        puVar3 = PTR_LOOP_1050_13ae -0x3;
                         if (puVar3.is_null()) {
                             pass1_1008_612e(0x0, 0x1, 0x64);
                             if (puVar3 < 0x32) {

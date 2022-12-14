@@ -1,3 +1,4 @@
+#[derive(Default,Debug,Clone)]
 pub struct Struct7 {
     pub addr_offset_field_0x0: u16,
     pub field_0x01: u16,
@@ -12,8 +13,10 @@ pub struct Struct7 {
     pub field_0x1a: u16,
     pub segment_field_0x1e: u16,
     pub offset_field_0x20: u16,
+    pub addr_part_field_0x24: u16,
     pub addr_part_field_0x26: u16,
     pub addr_part_field_0x28: u16,
+    pub addr_part_field_0x32: u16,
     pub field_0x36: u16,
     pub field_0x3e: i16,
     pub field_0x40: i16,

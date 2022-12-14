@@ -198,9 +198,9 @@ pub unsafe fn read_file_1008_71a0(param_1: *mut astruct_806, mut param_2: u16) -
     }
     iStack26 = 0x2;
     while (iStack24 != 0) {
-        iStack22 = iStack22 * 0xa + local_e[iStack26] + -0x30;
+        iStack22 = iStack22 * 0xa + local_e[iStack26] -0x30;
         iStack26 += 0x1;
-        iStack24 = iStack24 + -0x1;
+        iStack24 = iStack24 -0x1;
     }
     if (iStack22 == 1) {
         u16_1050_0312 = 0x1;

@@ -463,8 +463,8 @@ pub unsafe fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
     enable = 0;
   }
   else {
-//    if (((iVar1 + -0x5) < 1) || (SBORROW2((iVar1 + -0x5),1))) goto LAB_1038_c93c;
-    if (iVar1 != &u16_1050_0008 && 0x0 < (iVar1 + -0x7)) {
+//    if (((iVar1 -0x5) < 1) || (SBORROW2((iVar1 -0x5),1))) goto LAB_1038_c93c;
+    if (iVar1 != &u16_1050_0008 && 0x0 < (iVar1 -0x7)) {
 //      if (iVar1 != (&u16_1050_0008 + 1)) goto LAB_1038_c93c;
   // TODO: goto LAB_1038_c8da;
     }

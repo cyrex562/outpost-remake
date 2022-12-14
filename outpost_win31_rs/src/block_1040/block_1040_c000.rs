@@ -31,7 +31,7 @@ let mut uVar1: u32;
   uVar2 = iVar3.field5_0x6;
   uStack42 = (uVar2 + 0x1c);
   rect_var_32.y += 0x2;
-  rect_var_32.x = iStack40 + -0xa;
+  rect_var_32.x = iStack40 -0xa;
   iStack46 += -0x2;
   iStack44 += -0x2;
   FrameRect16(hbrush_var38,&rect_var_32,&DAT_1050_1050);
@@ -78,7 +78,7 @@ pub unsafe fn draw_line_1040_c302(param_1: *mut astruct_772,param_2: HDC16)
     uVar7 = ((uVar1 & 0xffff0000) >> 0x10);
     MoveTo16(iVar7.field32_0x20 + iVar7.field34_0x24,
              iVar7.field33_0x22 / 0x2 + (uVar1 & 0xffff0000 | ZEXT24(iVar7)),param_2);
-    uVar3 = (uVar5 + iVar1 * 0x4 + -0x4);
+    uVar3 = (uVar5 + iVar1 * 0x4 -0x4);
     iVar6 = uVar3;
     iVar6 = &iVar6.field_0x1e;
     uVar3 &= 0xffff0000;
@@ -142,7 +142,7 @@ pub unsafe fn draw_op_1040_c38e(param_1: *mut astruct_772)
       uVar9 = ((uVar3 & 0xffff0000) >> 0x10);
       y1 = (iVar11 + 0x24) / 0x2 + (iVar11 + 0x20);
       MoveTo16(y1,*x1,in_stack_00000008);
-      LineTo16(y1,*x1 + -0xf,in_stack_00000008);
+      LineTo16(y1,*x1 -0xf,in_stack_00000008);
       DVar10 = GetCurrentPosition16(in_stack_00000008);
       y5 = (DVar10 >> 0x10);
       x3 = DVar10;
@@ -236,7 +236,7 @@ pub unsafe fn pass1_1040_c5ac(param_1: *mut StructD)
   iVar4 = param_1;
   param_1.address_offset_field_0x0 = 0xc9f2;
   iVar4.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
-  PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 + -0x1;
+  PTR_LOOP_1050_5f02 = PTR_LOOP_1050_5f02 -0x1;
   if (PTR_LOOP_1050_5f02.is_null()) {
     puVar1 = iVar4.field5_0x8;
     uVar2 = iVar4.field6_0xa;
@@ -744,7 +744,7 @@ pub unsafe fn pass1_1040_cdac(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
 //    if (param_4 != 1) goto LAB_1040_cdef;
 //    if ((iVar4 + 0x9e) < 1) goto LAB_1040_cdef;
     piVar1 = (iVar4 + 0x9e);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
   }
   bVar3 = true;//
 // LAB_1040_cdef:

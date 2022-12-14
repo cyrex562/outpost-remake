@@ -905,7 +905,7 @@ pub unsafe fn pass1_1030_7c50(
         puStack18 = CONCAT22(param_2, uVar3);
         ppcVar2 = (*puStack18 + 0x14);
         (**ppcVar2)(0x1028, uVar3, param_2, param_3, puVar7, uVar8);
-        param_4 = param_4 + -0x1;
+        param_4 = param_4 -0x1;
     }
     return;
 }
@@ -1137,8 +1137,8 @@ pub unsafe fn pass1_1030_7fd6(mut param_1: u16, mut param_2: u32) {
     iVar1 = (uVar2 + 0xc);
     if (((0x32 < iVar1) && (!SBORROW2(iVar1, 0x33)))
         && (iVar1 == 0x34
-            || iVar1 + -0x33 < 0x1
-            || (0x2b < iVar1 + -0x34 && (iVar1 + -0x60 < 0x2))))
+            || iVar1 -0x33 < 0x1
+            || (0x2b < iVar1 -0x34 && (iVar1 -0x60 < 0x2))))
     {
         pass1_1028_1416(param_1, (iVar3 + 0x1a));
     }

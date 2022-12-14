@@ -669,7 +669,7 @@ pub unsafe fn FUN_1018_ea2c(mut param_1: u16, mut param_2: u32, mut param_3: i16
         return;
     }
     uVar1 = (iVar2 + 0x14);
-    (uVar1 + 0xe) = (iVar2 + -0xda);
+    (uVar1 + 0xe) = (iVar2 -0xda);
     return;
 }
 

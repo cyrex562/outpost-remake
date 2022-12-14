@@ -71,7 +71,7 @@ pub unsafe fn pass1_1008_5134(mut param_1: u32)
   }
   iVar5 = (iVar6 + 0x8);
   iVar2 = (iVar6 + 0xa);
-  lVar4 = CONCAT22(iVar2 - (iVar5 == 0),iVar5 + -1) * (iVar6 + 0x4);
+  lVar4 = CONCAT22(iVar2 - (iVar5 == 0),iVar5 -1) * (iVar6 + 0x4);
   puVar1 = (iVar6 + 0x10);
   uVar3 = lVar4;
   uStack10 = CONCAT22(((lVar4 >> 0x10) + CARRY2(uVar3,*puVar1)) * 0x100 + (iVar6 + 0x12),
@@ -89,7 +89,7 @@ pub unsafe fn pass1_1008_5134(mut param_1: u32)
                         (CARRY2(uStack10,uVar3) - ((iVar6 + 0x6) + (iVar5 != 0))) * 0x100,
                         uStack10 + uVar3);
     iStack16 = iVar2;
-    lStack14 = lStack14 + -0x1;
+    lStack14 = lStack14 -0x1;
   }
   return;
 }
@@ -114,7 +114,7 @@ pub unsafe fn pass1_1008_5236(param_1: *mut astruct_109)
   pstruct109_6 = param_1;
   iVar5 = pstruct109_6.field6_0x8;
   iVar2 = pstruct109_6.field7_0xa;
-  lVar4 = CONCAT22(iVar2 - (iVar5 == 0),iVar5 + -1) * &pstruct109_6.field_0x4;
+  lVar4 = CONCAT22(iVar2 - (iVar5 == 0),iVar5 -1) * &pstruct109_6.field_0x4;
   puVar1 = &pstruct109_6.field9_0x10;
   uVar3 = lVar4;
   uStack6 = uVar3 + *puVar1;
@@ -132,7 +132,7 @@ pub unsafe fn pass1_1008_5236(param_1: *mut astruct_109)
     uStack6 += uVar3;
     iStack4 += (bVar7 - (pstruct109_6.field5_0x6 + (iVar5 != 0))) * 0x100;
     iStack12 = iVar2;
-    lStack10 = lStack10 + -0x1;
+    lStack10 = lStack10 -0x1;
   }
   return;
 }
@@ -160,7 +160,7 @@ pub unsafe fn pass1_1008_52fc(param_1: *mut astruct_110)
   iVar6 = (iVar7 + 0x4);
   uVar3 = iVar6 - 0x1;
   iVar6 = (iVar7 + 0x6) - (iVar6 == 0);
-  lVar4 = (iVar7 + 0x8) + -0x1;
+  lVar4 = (iVar7 + 0x8) -0x1;
   uVar2 = param_1.field0_0x0;
   puVar1 = &pstruct110_8.field2_0x4;
   iVar7 = (uVar2 >> 0xf) + (&pstruct110_8.field2_0x4 + 0x2) + CARRY2(uVar2,puVar1);
@@ -655,7 +655,7 @@ pub unsafe fn pass1_1008_59f4(mut param_1: u32,param_2: i32)
       (**ppcVar5)();
     }
     piVar1 = (param_1 + 0x8);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
     return;
   }
   return;
@@ -683,7 +683,7 @@ pub unsafe fn pass1_1008_5ab8(mut param_1: u32)
     (**ppcVar2)();
   }
   piVar1 = (iVar4 + 0x8);
-  *piVar1 = *piVar1 + -0x1;
+  *piVar1 = *piVar1 -0x1;
   return;
 }
 pub unsafe fn pass1_1008_5b12(param_1: *mut c_char)

@@ -318,7 +318,7 @@ pub unsafe fn pass1_1008_4480(
                 (pcStack20 >> 0x10) + (-(0xfffe < pcStack20) & 0x6c),
                 pcStack20 + 1,
             );
-            iStack26 = iStack26 + -0x1;
+            iStack26 = iStack26 -0x1;
         }
     }
     return;

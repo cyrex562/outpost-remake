@@ -547,12 +547,12 @@ pub unsafe fn pass1_1010_0898() -> u16 {
     return 0x3;
 }
 pub unsafe fn pass1_1010_089e(param_1: *mut astruct_27, mut param_2: u16, mut param_3: i16) {
-    ((param_3 + -1) * 0x8 + 0xe28) = param_2;
+    ((param_3 -1) * 0x8 + 0xe28) = param_2;
     pass1_1010_1f62(param_1, 0x3);
     return;
 }
 pub unsafe fn pass1_1010_08c0(mut param_1: u32, mut param_2: u16, mut param_3: i16) {
-    ((param_3 + -1) * 0x8 + 0xea8) = param_2;
+    ((param_3 -1) * 0x8 + 0xea8) = param_2;
     pass1_1010_1f62(param_1, 0x3);
     return;
 }
@@ -568,15 +568,15 @@ pub unsafe fn pass1_1010_08e2(mut param_1: u16, mut param_2: u16, mut param_3: i
         DAT_1050_0e60 = 0;
         PTR_LOOP_1050_0e70 = null_mut();
     }
-    return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe22);
+    return CONCAT22(0x1050, (param_3 -1) * 0x8 + 0xe22);
 }
 
 pub unsafe fn pass1_1010_091e(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
-    return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe72);
+    return CONCAT22(0x1050, (param_3 -1) * 0x8 + 0xe72);
 }
 
 pub unsafe fn pass1_1010_0932(mut param_1: u16, mut param_2: u16, mut param_3: i16) -> u32 {
-    return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xe8a);
+    return CONCAT22(0x1050, (param_3 -1) * 0x8 + 0xe8a);
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -623,7 +623,7 @@ pub unsafe fn pass1_1010_0946(
             PTR_LOOP_1050_0ea8 = (&PTR_LOOP_1050_0000 + 1);
         }
     }
-    return CONCAT22(0x1050, (param_3 + -1) * 0x8 + 0xea2);
+    return CONCAT22(0x1050, (param_3 -1) * 0x8 + 0xea2);
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address

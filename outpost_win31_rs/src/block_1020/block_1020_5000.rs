@@ -1218,7 +1218,7 @@ pub unsafe fn win_ui_op_1020_5e76(mut param_1: u32, mut param_2: u16, mut param_
             );
             uVar12 = uVar7;
         }
-        local_1aa[0] = puStack18 + -0x608;
+        local_1aa[0] = puStack18 -0x608;
         pass1_1008_941a(CONCAT13(0x10, CONCAT12(0x50, local_aa)), 0x1, local_1aa[0]);
         pcVar17 = local_aa;
         puVar9 = &DAT_1050_1050;

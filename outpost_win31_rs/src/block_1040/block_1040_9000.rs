@@ -46,7 +46,7 @@ pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
   RemoveProp16(s_procLo_1050_5e2a,struct_1.field13_0x18);
   RemoveProp16(s_procHi_1050_5e31,struct_1.field13_0x18);
   RemoveProp16(s_IsDlg_1050_5e38,struct_1.field13_0x18);
-  PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 + -0x1;
+  PTR_LOOP_1050_5e16 = PTR_LOOP_1050_5e16 -0x1;
   if (PTR_LOOP_1050_5e16.is_null()) {
     FreeProcInstance16(_u16_1050_5e18);
     _u16_1050_5e18 = null_mut();
@@ -550,14 +550,14 @@ pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
   mode = SetMapMode16(0x1,hdc16_dev_ctx_1);
   GetClientRect16(&rect_12,&DAT_1050_1050);
   iVar2 = (_x3 >> 0x10);
-  _x3 = CONCAT22(iVar2 + -0x1,x3 + -1);
+  _x3 = CONCAT22(iVar2 -0x1,x3 -1);
   if (uStack34 != 0) {
     x4 = rect_12;
     y6 = (rect_12 >> 0x10);
     rect_12 = CONCAT22(y6 + 0x2,x4 + 2);
-    _x3 = CONCAT22(iVar2 + -0x3,x3 + -0x3);
-    x5 = x3 + -0x1;
-    y4 = (iVar2 + -1);
+    _x3 = CONCAT22(iVar2 -0x3,x3 -0x3);
+    x5 = x3 -0x1;
+    y4 = (iVar2 -1);
   }
   if (struct71_var4.field6_0x6 != '\0') {
     iStack28 = 0x1;

@@ -391,13 +391,13 @@ pub unsafe fn pass1_1038_8966(mut param_1: u32,mut param_2: u16 ,mut param_3: u1
     piVar1 = (iVar3 + 0x9a);
     *piVar1 = *piVar1 + 1;
     piVar1 = (iVar3 + 0x98);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
   }
   else {
 //    if (param_4 != 1) goto LAB_1038_89af;
 //    if ((iVar3 + 0x9a) < 1) goto LAB_1038_89af;
     piVar1 = (iVar3 + 0x9a);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
     piVar1 = (iVar3 + 0x98);
     *piVar1 = *piVar1 + 1;
   }

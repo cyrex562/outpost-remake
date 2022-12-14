@@ -793,7 +793,7 @@ pub unsafe fn pass1_1010_6ca2(mut param_1: u16 ,mut param_2: u32,mut param_3: i1
     uVar3 = *puVar2;
     uVar1 = (param_2 + 0x14);
     pass1_1010_a5ca(uVar3,param_1,uVar1,(uVar1 >> 0x10),uVar3);
-    iStack10 = iStack10 + -0x1;
+    iStack10 = iStack10 -0x1;
     if uVar3 != 0 {break;}
   }
   return 0x0;

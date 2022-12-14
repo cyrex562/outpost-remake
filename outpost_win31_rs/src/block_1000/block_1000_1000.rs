@@ -38,7 +38,7 @@ pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
             return CONCAT22((DVar7 >> 0x10) - (DVar7 < 0x14), DVar7 - 0x14);
         }
     }
-    u_var2 = (param_1 + -0x2);
+    u_var2 = (param_1 -0x2);
     u_var5 = u_var2 & 0x7ffc;
     u_stack6 = u_var5 - 0x2;
     i_stack4 = 0;
@@ -84,7 +84,7 @@ pub unsafe fn mem_op_1000_131c(mut param_1: u16, mut param_2: u32) {
         }
         flags &= 0xffcf;
         b_var1 = i_stack6 != 0;
-        i_stack6 = i_stack6 + -0x1;
+        i_stack6 = i_stack6 -0x1;
         if b_var1 == false {
             break;
         }
@@ -178,7 +178,7 @@ pub unsafe fn pass1_1000_15ce(param_1: *mut u16, mut param_2: u16) {
 
 pub unsafe fn pass1_1000_16ee(mut param_1: u16, mut param_2: u16) {
     if ((param_2 | param_1) != 0) {
-        block_1000_0000::call_fn_ptr_1000_0dc6(CONCAT22(param_2, param_1));
+        block_1000_0000::call_fn_ptr_1000_0dc6(ctx, CONCAT22(param_2, param_1));
     }
     return;
 }
@@ -199,14 +199,14 @@ pub unsafe fn mem_op_1000_179c(mut param_1: i16, param_2: *mut astruct_57) {
 
 pub unsafe fn fn_ptr_1000_17ce(param_1: *mut c_char) {
     if !param_1.is_null() {
-        call_fn_ptr_1000_0dc6(param_1);
+        call_fn_ptr_1000_0dc6(ctx, param_1);
     }
     return;
 }
 
 pub unsafe fn pass1_1000_18d2(mut param_1: u16, mut param_2: u16) {
     if ((param_2 | param_1) != 0) {
-        call_fn_ptr_1000_0dc6(CONCAT22(param_2, param_1));
+        call_fn_ptr_1000_0dc6(ctx, CONCAT22(param_2, param_1));
     }
     return;
 }
@@ -813,7 +813,7 @@ pub unsafe fn pass1_1000_1f7e(param_1: *mut u16) -> bool {
             if (cVar1 == '\x02') {
                 // TODO: goto LAB_1000_1fb6;
             }
-            if (('\0' < (cVar1 + -0x2)) && ((cVar1 + -0x3) < '\x0f')) {
+            if (('\0' < (cVar1 -0x2)) && ((cVar1 -0x3) < '\x0f')) {
                 iVar4 = 0;
                 // TODO: goto LAB_1000_1fbe;
             }

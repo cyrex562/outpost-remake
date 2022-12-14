@@ -86,8 +86,8 @@ pub unsafe fn pass1_1020_b1ae(
         CONCAT22(0x1050, &local_14),
         CONCAT22(0x1050, &local_12),
     );
-    if ((((0xb < local_e) && (0xb < local_10)) && (local_e < local_12 + -0xb))
-        && (local_10 < local_14 + -0xb))
+    if ((((0xb < local_e) && (0xb < local_10)) && (local_e < local_12 -0xb))
+        && (local_10 < local_14 -0xb))
     {
         return 0x1;
     }
@@ -202,11 +202,11 @@ pub unsafe fn pass1_1020_b2da(
         );
         iVar1 = *piStack12;
         if (iVar1 == 0) {
-            local_6 = CONCAT22(local_6 + *piStack16, local_6 + -1);
+            local_6 = CONCAT22(local_6 + *piStack16, local_6 -1);
         } else if (iVar1 == 1) {
-            local_6 = CONCAT22(local_6 + -0x1, local_6 + *piStack16);
+            local_6 = CONCAT22(local_6 -0x1, local_6 + *piStack16);
         } else if (iVar1 == 0x2) {
-            local_6 = CONCAT22(local_6 - *piStack16, local_6 + -1);
+            local_6 = CONCAT22(local_6 - *piStack16, local_6 -1);
         }
         puVar6 = pass1_1008_3e54(
             CONCAT22(0x1050, local_1a),

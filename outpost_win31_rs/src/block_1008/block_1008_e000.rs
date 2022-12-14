@@ -77,7 +77,7 @@ pub unsafe fn pass1_1008_e10c(
         if (iVar1 < 0x2) {
             return 0x1;
         }
-        if ((0x0 < iVar1 + -1) && (iVar2 = iVar1 + -0x3, iVar2 == 0x0 || iVar1 + -0x2 < 1)) {
+        if ((0x0 < iVar1 -1) && (iVar2 = iVar1 -0x3, iVar2 == 0x0 || iVar1 -0x2 < 1)) {
             pass1_1008_e9a4(param_1, (param_1 >> 0x10), uVar3);
             return iVar2;
         }
@@ -140,11 +140,11 @@ pub unsafe fn pass1_1008_e164(param_1: *mut astruct_102) {
         (**ppcVar1)(0x1030, &uVar11.field_0xa, iVar12, uVar7);
     } else {
         iVar1 = (uVar5 + 0xc);
-        paVar2 = iVar1 + -0x1;
+        paVar2 = iVar1 -0x1;
         if (paVar2.is_null()) {
             return;
         }
-        if (((0x0 < paVar2) && (!SBORROW2(paVar2, 1))) && ((iVar1 + -0x2) < 0x2)) {
+        if (((0x0 < paVar2) && (!SBORROW2(paVar2, 1))) && ((iVar1 -0x2) < 0x2)) {
             (uVar5 + 0x12) = 0x1;
         }
         (uVar5 + 0xc) = 0x1;
@@ -184,7 +184,7 @@ pub unsafe fn pass1_1008_e2a4(
     lVar3 = pass1_1008_e8cc(param_1, param_2, param_3);
     if (lVar3 != 0) {
         iVar1 = (lVar3 + 0xc);
-        iVar2 = iVar1 + -0x1;
+        iVar2 = iVar1 -0x1;
         if (iVar2 == 0) {
             return 0x2;
         }
@@ -194,7 +194,7 @@ pub unsafe fn pass1_1008_e2a4(
         if (SBORROW2(iVar2, 1)) {
             return 0x0;
         }
-        if (0x1 < iVar1 + -0x2) {
+        if (0x1 < iVar1 -0x2) {
             return 0x0;
         }
     }
@@ -695,7 +695,7 @@ pub unsafe fn pass1_1008_e9a4(
     );
     uStack16 = 0;
     //   if ((PTR_LOOP_1050_13ae < 1) || (SBORROW2(PTR_LOOP_1050_13ae,1))) goto LAB_1008_ea2b;
-    if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae + -1) < 1) {
+    if (PTR_LOOP_1050_13ae == &u16_1050_0002 || (PTR_LOOP_1050_13ae -1) < 1) {
         if ((iVar6 + 0x12) == 0) {
             //
             // LAB_1008_ea20:
@@ -937,7 +937,7 @@ pub unsafe fn pass1_1008_ed8a(
         uVar8 = pass1_1010_2e02(_PTR_LOOP_1050_0df6, (uVar2 + 0x12));
         uVar5 = param_2 + 1;
         uVar6 = param_3 + (0xfffe < param_2);
-        // for (cVar4 = (param_4 + -1) * '\x04'; cVar4 != '\0'; cVar4 += -1)
+        // for (cVar4 = (param_4 -1) * '\x04'; cVar4 != '\0'; cVar4 += -1)
         for cVar4 in (param_4 - 1) * 0x4..0 {
             bVar7 = CARRY2(uVar5, uVar5);
             uVar5 *= 0x2;

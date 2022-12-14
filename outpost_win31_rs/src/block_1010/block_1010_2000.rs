@@ -792,7 +792,7 @@ pub unsafe fn FUN_1010_2a32(
             bVar4 = *pbVar3 + in_EDX;
             *pbVar3 = bVar4 + (uVar10 < 0x1c);
             puVar5 = (CARRY1(bVar26, in_EDX) || CARRY1(bVar4, uVar10 < 0x1c));
-            puVar6 = in_BX + -0x404;
+            puVar6 = in_BX -0x404;
             bVar26 = in_BX < 0x1010 || puVar6 < puVar5;
             uVar21 = puVar6 - puVar5;
             pcVar8 = swi(0x4);
@@ -1049,8 +1049,8 @@ pub unsafe fn pass1_1010_2b98(mut param_1: u32, mut param_2: i16) -> *mut astruc
     uVar3 = (uVar1 >> 0x10);
     iVar2 = uVar1;
     return CONCAT22(
-        (param_2 * 0x4 + iVar2 + -0x156),
-        (param_2 * 0x4 + iVar2 + -0x158),
+        (param_2 * 0x4 + iVar2 -0x156),
+        (param_2 * 0x4 + iVar2 -0x158),
     );
 }
 pub unsafe fn pass1_1010_2bb9() {

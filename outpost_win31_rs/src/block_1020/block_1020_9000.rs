@@ -92,19 +92,19 @@ pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param
     iVar2 = param_2;
     if (iVar2.field182_0xb8 != iVar1) {
         param_3 = 0x1ce;
-        iVar3 = iVar1 + -0x1;
+        iVar3 = iVar1 -0x1;
         if (iVar3 == 0) {
             param_3 = 0x1cf;
         } else {
-            iVar3 = iVar1 + -0x2;
+            iVar3 = iVar1 -0x2;
             if (iVar3 == 0) {
                 param_3 = 0x1d0;
             } else {
-                iVar3 = iVar1 + -0x3;
+                iVar3 = iVar1 -0x3;
                 if (iVar3 == 0) {
                     param_3 = 0x1d1;
                 } else {
-                    iVar3 = iVar1 + -0x4;
+                    iVar3 = iVar1 -0x4;
                     if (iVar3 == 0) {
                         param_3 = 0x1d2;
                     }

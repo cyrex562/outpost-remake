@@ -931,7 +931,7 @@ pub unsafe fn pass1_1020_3d08(
     *pbVar2 = *pbVar2 | bVar20;
     pbVar2 = (param_3 + 0x203d);
     *pbVar2 = *pbVar2 & bVar20;
-    pcVar25 = CONCAT11(0x79, param_5 + -0x37);
+    pcVar25 = CONCAT11(0x79, param_5 -0x37);
     pbVar2 = (param_3 + 0x203d);
     *pbVar2 = *pbVar2 | bVar20;
     pbVar2 = (param_3 + 0x203d);
@@ -975,7 +975,7 @@ pub unsafe fn pass1_1020_3d08(
         *pcVar1 = *pcVar1
             + (paVar23 >> 0x8)
             + (CARRY1(bVar12, bVar24) || CARRY1(bVar11 + bVar24, bVar29));
-        pcVar1 = (param_3 + iVar13 + -0x64);
+        pcVar1 = (param_3 + iVar13 -0x64);
         *pcVar1 = *pcVar1 + bVar17 + '\x01';
         pbVar2 = (param_3 + iVar13);
         *pbVar2 = *pbVar2 | bVar21;
@@ -1040,7 +1040,7 @@ pub unsafe fn pass1_1020_3d08(
                 (**ppcVar5)(0x1010, (iVar13 + 0x14), hdc, 0x0, iVar13, uVar26);
                 uVar7 = (param_4 + 0x6);
                 hdc_00 = GetDC16((uVar7 + 0x4));
-                *(param_4 + -0x2) = hdc_00;
+                *(param_4 -0x2) = hdc_00;
                 iVar14 = SetMapMode16(0x1, hdc_00);
                 uVar7 = (param_4 + 0x6);
                 (uVar7 + 0x1e) = iVar14;
@@ -1054,9 +1054,9 @@ pub unsafe fn pass1_1020_3d08(
                 (uVar7 + 0x1a) = HVar15;
                 uVar7 = (param_4 + 0x6);
                 uVar7 = (uVar7 + 0x14);
-                (param_4 + -0x6) = (uVar7 + 0x24);
-                puVar16 = (param_4 + -0x2);
-                puVar8 = (param_4 + -0x6);
+                (param_4 -0x6) = (uVar7 + 0x24);
+                puVar16 = (param_4 -0x2);
+                puVar8 = (param_4 -0x6);
                 ppcVar5 = (*puVar8 + 0x8);
                 (**ppcVar5)(
                     s_tile2_bmp_1050_1538,
@@ -1069,8 +1069,8 @@ pub unsafe fn pass1_1020_3d08(
                 uVar27 = (uVar7 >> 0x10);
                 iVar13 = uVar7;
                 (iVar13 + 0x1c) = puVar16;
-                uVar26 = (param_4 + -0x2);
-                (param_4 + -0x14) = uVar26;
+                uVar26 = (param_4 -0x2);
+                (param_4 -0x14) = uVar26;
                 uVar7 = (iVar13 + 0x14);
                 (uVar7 + 0x4c) = uVar26;
                 return;

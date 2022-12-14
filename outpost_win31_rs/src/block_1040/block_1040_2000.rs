@@ -71,9 +71,9 @@ pub unsafe fn create_win_1040_20d4(mut param_1: u32,struct_b_param_2: *mut Struc
   window_name = load_string_1010_847e(_u16_1050_14cc,0x592);
   uStack22 = 0x50010001;
   CreateWindow16(0x0,CONCAT22(0x1,HINSTANCE16_1050_038c),struct_b_1.lpvoid_field_0x8,0x19,0x58,
-                 (iStack24 + -0x28),(iStack26 + -0x58) / 0x2,0x1,s_Rebel_1050_4ffc + 0x5,window_name,
+                 (iStack24 -0x28),(iStack26 -0x58) / 0x2,0x1,s_Rebel_1050_4ffc + 0x5,window_name,
                  s_OPButton_1050_5ce4);
-  SetWindowPos16(0x45,iStack10 + -0xa,(uStack18 + 0x4),0x5,iStack4,0x0,
+  SetWindowPos16(0x45,iStack10 -0xa,(uStack18 + 0x4),0x5,iStack4,0x0,
                  struct_b_1.lpvoid_field_0x8);
   return;
 }
@@ -227,7 +227,7 @@ pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
   ppcVar1 = (*&struct_b_4[0x7].field1_0x2 + 0x10);
   piVar2 = (**ppcVar1)(s_tile2_bmp_1050_1538,&struct_b_4[0x7].field1_0x2);
   piVar2 = (piVar2 >> 0x10);
-  move_win_1040_826c(struct_b_param_1,(piVar2 + 0x2) + -0x2,(piVar2 + 0x4) + *piVar2 + 0x3);
+  move_win_1040_826c(struct_b_param_1,(piVar2 + 0x2) -0x2,(piVar2 + 0x4) + *piVar2 + 0x3);
   ShowWindow16(0x5,struct_b_4.lpvoid_field_0x8);
   pass1_1018_1c9a(&struct_b_4[0x7].field1_0x2,0x1a0);
   return;
@@ -310,7 +310,7 @@ pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,par
         }
         else {
           puVar1 = &iVar8.field142_0x92;
-          puVar1 = puVar1 + -0x1;
+          puVar1 = puVar1 -0x1;
           HVar5 = GetDlgItem16(0xfb1,iVar8.field6_0x6);
           BVar6 = IsWindowEnabled16(HVar5);
           if (BVar6 == 0) {

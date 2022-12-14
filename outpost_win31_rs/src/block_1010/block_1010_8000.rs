@@ -416,7 +416,7 @@ pub unsafe fn pass1_1010_86de(
                 }
             } else {
                 //        if (*(lStack20 + iVar2) == -1) goto LAB_1010_86fc;
-                *(lStack20 + iVar2 + -1) = param_3;
+                *(lStack20 + iVar2 -1) = param_3;
                 bVar3 = true;
             }
             lStack20 += 1;
@@ -774,7 +774,7 @@ pub unsafe fn unk_load_str_op_1010_8c96(
         if (uVar5 == 1) {
             uVar10 = param_4 & 0xffff;
             iVar4 = uVar10;
-            match ((iVar6 + 0x4) + -1) {
+            match ((iVar6 + 0x4) -1) {
                 0x0 | 0x1 => {
                     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (iVar6 + 0x8));
                     local_10 = (iVar4 + 0xc);

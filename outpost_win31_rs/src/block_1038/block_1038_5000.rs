@@ -614,7 +614,7 @@ pub unsafe fn pass1_1038_58e6(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
       iStack12 = (iVar1 + 0x10);
       iStack14 = iStack12;
       if (iStack12 == param_6) {
-        iStack14 = iStack12 + -0x1;
+        iStack14 = iStack12 -0x1;
         uVar10 = pass1_1028_bb24((uStack6 * 0x4 + iVar7));
         uVar6 = (uVar10 >> 0x10);
         puVar5 = &local_12;
@@ -758,12 +758,12 @@ pub unsafe fn pass1_1038_5be8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
     iVar3 = (param_6 + 0x4);
     iStack14 = 0x7a;
     if (0x0 < iVar3) {
-      iVar3 = param_5 + -0x7b;
+      iVar3 = param_5 -0x7b;
       if (iVar3 == 0) {
         param_5 = 0x7e;
       }
       else {
-        iVar3 = param_5 + -0x7c;
+        iVar3 = param_5 -0x7c;
         if (iVar3 == 0) {
           param_5 = 0x7d;
         }
@@ -819,7 +819,7 @@ pub unsafe fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32
           if (((uStack14 * 0x4 + param_3) != 0) &&
              (uVar2 = (uStack14 * 0x4 + param_3),
              ((uVar2 + 0x1a) & param_6) != 0)) {
-            iStack8 = local_12 + -0x1;
+            iStack8 = local_12 -0x1;
             uVar3 = pass1_1038_5be8(&local_a,uVar4,param_1,param_6,0x7b,CONCAT22(0x1050,&local_a));
             if (uVar3 != 0) {
               iStack4 = 0x1;
@@ -830,7 +830,7 @@ pub unsafe fn pass1_1038_5cc6(mut param_1: u32,mut param_2: u32,mut param_3: u32
               iStack4 = 0x1;
             }
             iStack8 = local_12;
-            local_a = local_10 + -0x1;
+            local_a = local_10 -0x1;
             uVar3 = pass1_1038_5be8(&local_a,uVar4,param_1,param_6,0x7c,CONCAT22(0x1050,&local_a));
             if (uVar3 != 0) {
               iStack4 = 0x1;

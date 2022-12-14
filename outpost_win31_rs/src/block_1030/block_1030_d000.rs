@@ -189,7 +189,7 @@ pub unsafe fn pass1_1030_d340(mut param_1: u16, mut param_2: u16, mut param_3: u
     iVar2 = param_3;
     iVar1 = (iVar2 + 0x4);
     if (((0x0 < iVar1) && (!SBORROW2(iVar1, 1)))
-        && (iVar1 == 0x4 || iVar1 + -0x1 < 0x3 || (iVar1 == 0xc)))
+        && (iVar1 == 0x4 || iVar1 -0x1 < 0x3 || (iVar1 == 0xc)))
     {
         (iVar2 + 0x6) = 0;
         return;
@@ -323,7 +323,7 @@ pub unsafe fn pass1_1030_d56a(mut param_1: u32) -> i16 {
 
     uVar2 = (param_1 >> 0x10);
     iVar1 = param_1;
-    match (iVar1 + 0x98) + -1 {
+    match (iVar1 + 0x98) -1 {
         0x0 => {
             (iVar1 + 0x98) = 0x2;
         }
@@ -559,7 +559,7 @@ pub unsafe fn pass1_1030_d994(param_1: u32) {
     if ((iVar3 + 0x200) == 0x8000002) {
         uVar2 = (iVar4 + 0x14);
         piVar1 = (uVar2 + 0x94);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
     } else {
         pass1_1028_cb04(param_1);
         if (iVar3 == 0) {
@@ -571,7 +571,7 @@ pub unsafe fn pass1_1030_d994(param_1: u32) {
         }
         uVar2 = (iVar4 + 0x14);
         piVar1 = (uVar2 + 0x94);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         pass1_1028_c952(param_1);
         pass1_1030_da22(param_1);
     }

@@ -228,11 +228,13 @@ pub fn SetFocus16(hwnd: HWND16) -> HWND16 {
 // pub fn ScreenToClient16(POINT16 * lppnt, hwnd: HWND16);
 // BOOL16 IsIconic16(hwnd: HWND16);
 // pub fn GetWindowRect16(RECT16 * rect, hwnd: HWND16);
+pub fn GetWindowRect16(rect: *mut RECT16, hwnd: HWND16) { todo!()}
 // pub fn GetClientRect16(RECT16 * rect, hwnd: HWND16);
 pub fn GetClientRect16(rect: *mut RECT16, hwnd: HWND16) {
     todo!()
 }
 // BOOL16 EnableWindow16(BOOL16 enable, hwnd: HWND16);
+pub fn EnableWindow16(enable: bool, hwnd: HWND16) -> bool {todo!()}
 // BOOL16 IsWindowEnabled16(hwnd: HWND16);
 // GetWindowText16: INT16(n_max_count: INT16, lp_string: u32, hwnd: HWND16);
 // BOOL16 SetWindowText16(lp_string: u32, hwnd: HWND16);
@@ -283,6 +285,7 @@ pub fn GetDlgItem16(id: i16, hwnd_dlg: HWND16) -> HWND16 {
 // UIsDlgButtonChecked: INT16(Uid: INT16, hwnd: HWND16);
 // LRESULT SendDlgItemMessage16(l_param: LPARAM, w_param: WPARAM16, Umsg: INT16, id: INT16, hwnd: HWND16);
 // pub fn MapDialogRect16(RECT16 * rect, hwnd: HWND16);
+pub fn MapDialogRect16(rect: *mut RECT16, hwnd: HWND16) {todo!()}
 // pub fn MessageBeep16(Ui: INT16);
 // LRESULT DefWindowProc16(lparam: LPARAM, wparam: WPARAM16, Umsg: INT16, hwnd: HWND16);
 // BOOL16 GetMessage16(Ulast: INT16, Ufirst: INT16, hwnd: HWND16, MSG16 * msg);
@@ -319,6 +322,7 @@ pub fn SendMessage16(lparam: LPARAM, wparam: WPARAM16, msg: u16, hwnd: HWND16) -
 // SetSysModalWindow: HWND16(hwnd: HWND16);
 // GetNextDlgTabItem16: HWND16(BOOL16 f_previous, hwnd_ctrl: HWND16, hwnd_dlg: HWND16);
 // BOOL16 SetWindowPos16(flags: u16, cy: INT16, cx: INT16, y: INT16, x: INT16, hwnd_insert_after: HWND16, hwnd: HWND16);
+pub fn SetWindowPos16(flags: u16, cy: i16, cx: i16, y: i16, x: i16, hwnd_insert_after: HWND16, hwnd: HWND16) -> bool {todo!()}
 // UGetMenuState16: INT16(Uw_flags: INT16, Uw_item_id: INT16, HMENU16 hmenu);
 // GetDlgCtrlID16: INT16(hwnd: HWND16);
 // SelectPalette16: HPALETTE16(BOOL16 b_force_background, hpal: HPALETTE16, hdc: HDC16);

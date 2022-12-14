@@ -155,7 +155,7 @@ pub unsafe fn pass1_1030_b344(mut param_1: u32) -> u32 {
         pass1_1030_b2aa(NULL, param_1, CONCAT22(0x1050, puStack18));
         puVar1 = (puStack16 | puStack18);
         if (puVar1.is_null()) {
-            local_8 = local_a + -0x1;
+            local_8 = local_a -0x1;
             local_8 = local_c;
             puStack18 = &local_8;
             pass1_1030_b2aa(NULL, param_1, CONCAT22(0x1050, puStack18));
@@ -361,7 +361,7 @@ pub unsafe fn pass1_1030_b578(mut param_1: u32) {
         if (SBORROW2(iVar1, 0x17)) {
             return;
         }
-        //    if (iVar1 == 0x18 || iVar1 + -0x17 < 1) goto LAB_1030_b6e0;
+        //    if (iVar1 == 0x18 || iVar1 -0x17 < 1) goto LAB_1030_b6e0;
         bVar5 = iVar1 == 0x3f;
     }
     if (!bVar5) {
@@ -904,17 +904,17 @@ pub unsafe fn pass1_1030_be80(param_1: *mut u8, param_2: *mut astruct_15) {
         uVar2 = pstruct15_7.field16_0x14;
         (uVar2 + 0xac) = 0x1;
         iVar8 = pstruct15_7.field10_0xc;
-        iVar3 = iVar8 + -0x1b;
+        iVar3 = iVar8 -0x1b;
         if (iVar3 == 0) {
             pSVar2 = pstruct15_7.field16_0x14;
             (pSVar2 + 0xaa) = 0xa;
         } else {
-            iVar3 = iVar8 + -0x1c;
+            iVar3 = iVar8 -0x1c;
             if (iVar3 == 0) {
                 pSVar2 = pstruct15_7.field16_0x14;
                 (pSVar2 + 0xaa) = 0xb;
             } else {
-                iVar3 = iVar8 + -0x1d;
+                iVar3 = iVar8 -0x1d;
                 if (iVar3 == 0) {
                     pSVar2 = pstruct15_7.field16_0x14;
                     (pSVar2 + 0xaa) = 0xc;

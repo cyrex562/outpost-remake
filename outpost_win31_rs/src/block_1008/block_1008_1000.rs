@@ -136,7 +136,7 @@ pub unsafe fn win_ui_op_1008_1414(
     pass1_1030_8344(_u16_1050_5748, uVar6);
     uStack20 = uVar6 & 0xffff | paVar7 << 0x10;
     uStack24 = (uVar6 + 0x10);
-    iVar5 = (uStack24 + 0x2) + -0x1;
+    iVar5 = (uStack24 + 0x2) -0x1;
     uVar1 = (&iVar17[0x1].field2_0x4 + 2);
     ppcVar2 = ((&iVar17[0x1].field2_0x4 + 0x2) + 0x4);
     (**ppcVar2)(

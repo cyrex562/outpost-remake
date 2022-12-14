@@ -804,7 +804,7 @@ pub unsafe fn pass1_1040_1f5a(param_1: *mut astruct_57,mut param_2: u16 ,mut par
   puVar5 = mixed_1010_20ba(paVar3,_u16_1050_0ed0,CONCAT22(unaff_DI,0x48),in_stack_0000fe78,
                            in_stack_0000ff9c,in_stack_0000ffa2,in_stack_0000ffa6);
   local_16 = CONCAT22((uVar4 + 0x8) + 0xa,0xa);
-  uStack18 = CONCAT22(0x1d6,(uVar4 + 0x4) + -0xa);
+  uStack18 = CONCAT22(0x1d6,(uVar4 + 0x4) -0xa);
   iVar6[0x1].field2_0x4 = local_16;
   iVar6[0x1].field4_0x8 = uStack18;
   iVar6[0x1].field6_0xc = local_16;

@@ -251,8 +251,8 @@ pub unsafe fn pass1_1028_c314(
         CONCAT22(0x1050, &local_14),
         CONCAT22(0x1050, &local_12),
     );
-    if ((((0x1 < local_e) && (0x1 < local_10)) && (local_e < local_12 + -1))
-        && (local_10 < local_14 + -1))
+    if ((((0x1 < local_e) && (0x1 < local_10)) && (local_e < local_12 -1))
+        && (local_10 < local_14 -1))
     {
         return 0x1;
     }
@@ -361,7 +361,7 @@ pub unsafe fn pass1_1028_c3aa(
                         );
                     }
                     PTR_LOOP_1050_50ca = 0x6b6;
-                    PTR_LOOP_1050_50cc = puStack24 + -0x1e;
+                    PTR_LOOP_1050_50cc = puStack24 -0x1e;
                     return;
                 }
                 uVar19 = param_5;
@@ -438,7 +438,7 @@ pub unsafe fn pass1_1028_c522(
             return;
         }
         PTR_LOOP_1050_50ca = 0x6b6;
-        PTR_LOOP_1050_50cc = puVar2 + -0x1e;
+        PTR_LOOP_1050_50cc = puVar2 -0x1e;
     }
     return;
 }
@@ -468,11 +468,11 @@ pub unsafe fn pass1_1028_c5a6(
         iVar1 = (param_6 + 0x4);
         iStack14 = 0x7a;
         if (0x0 < iVar1) {
-            iVar1 = param_5 + -0x7b;
+            iVar1 = param_5 -0x7b;
             if (iVar1 == 0) {
                 param_5 = 0x7e;
             } else {
-                iVar1 = param_5 + -0x7c;
+                iVar1 = param_5 -0x7c;
                 if (iVar1 == 0) {
                     param_5 = 0x7d;
                 }
@@ -545,7 +545,7 @@ pub unsafe fn pass1_1028_c64a(
             param_6,
         );
         if (BVar1 == 0) {
-            local_8 = local_a + -0x1;
+            local_8 = local_a -0x1;
             local_8 = local_c;
             BVar1 = pass1_1028_c5a6(
                 &local_8,
@@ -1043,13 +1043,13 @@ pub unsafe fn pass1_1028_ccd0(param_1: *mut astruct_15, param_2: *mut u16) {
         uStack10 = 0;
     }
     if (local_1e <= iStack14) {
-        iStack14 = local_1e + -0x1;
+        iStack14 = local_1e -0x1;
     }
     if (uStack12 < 0x0) {
         uStack12 = 0;
     }
     if (local_20 <= iStack16) {
-        iStack16 = local_20 + -0x1;
+        iStack16 = local_20 -0x1;
     }
     pass1_1008_6c90(CONCAT22(0x1050, local_2c));
     pass1_1008_6cec(

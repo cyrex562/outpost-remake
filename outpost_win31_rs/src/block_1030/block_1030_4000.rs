@@ -340,8 +340,8 @@ pub unsafe fn pass1_1030_4782(
         uVar4 = (uVar7 >> 0x10);
         iStack154 = uVar14;
         uStack152 = (uVar14 >> 0x10);
-        iStack156 = (iStack154 + 0x4) + -0x1;
-        iStack158 = (iStack154 + 0x8) + -0x1;
+        iStack156 = (iStack154 + 0x4) -0x1;
+        iStack158 = (iStack154 + 0x8) -0x1;
         if (param_4 != 0) {
             ppuStack160 = (&PTR_LOOP_1050_000e + 1);
             if (uStack14 == 0) {
@@ -640,7 +640,7 @@ pub unsafe fn pass1_1030_4dbc(param_1: *mut astruct_117, mut param_2: u32, param
         || (
             lVar3 = iVar5[0xd].field15_0x12,
             plVar1 = &iVar5[0xd].field15_0x12,
-            *plVar1 = *plVar1 + -0x1,
+            *plVar1 = *plVar1 -0x1,
             lVar3 == 0,
         ))
     {
@@ -663,7 +663,7 @@ pub unsafe fn pass1_1030_4e34(
             *param_4 = '\0';
         }
         param_4 = (param_4 & 0xffff0000 | (param_4 + 1));
-        param_3 = param_3 + -0x1;
+        param_3 = param_3 -0x1;
     }
     return;
 }
@@ -714,7 +714,7 @@ pub unsafe fn read_file_1030_4e70(
                             *pbStack60 = *pbStack60 + 0x80;
                         }
                         pbStack60 = (pbStack60 & 0xffff0000 | (pbStack60 + 1));
-                        iStack56 = iStack56 + -0x1;
+                        iStack56 = iStack56 -0x1;
                     }
                     return uVar2;
                 }

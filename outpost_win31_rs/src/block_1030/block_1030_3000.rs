@@ -564,7 +564,7 @@ pub unsafe fn pass1_1030_375a(mut param_1: u32, mut param_2: i16, param_3: i32) 
             iVar2 = (iVar6 + iVar7 + 0x6);
             if ((uStack18 | uStack18) != 0) {
                 iVar1 = (iVar6 + iVar7 + 0x4);
-                (iVar6 + iVar7 + 0x4) = iVar1 + -0x1;
+                (iVar6 + iVar7 + 0x4) = iVar1 -0x1;
                 (iVar6 + iVar7 + 0x6) = iVar2 - (iVar1 == 0);
                 uStack18 += -0x1;
             }

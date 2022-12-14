@@ -478,7 +478,7 @@ pub unsafe fn pass1_1038_4900(mut param_1: u32)
 
   uVar2 = (param_1 >> 0x10);
   piVar1 = (param_1 + 0x20e);
-  *piVar1 = *piVar1 + -0x1;
+  *piVar1 = *piVar1 -0x1;
   if (*piVar1 < 0x0) {
     (param_1 + 0x20e) = 0;
   }
@@ -568,13 +568,13 @@ pub unsafe fn pass1_1038_4918(mut param_1: i16,mut param_2: u16 ,mut param_3: u3
   if ((uStack14 != 0) &&
      (((uStack18 & 0xffff | (_PTR_LOOP_1050_65e2 + 0x2) << 0x10) % uStack14) == 0)) {
     piVar1 = (iVar7 + 0x1c);
-    *piVar1 = *piVar1 + -0x1;
+    *piVar1 = *piVar1 -0x1;
     piVar1 = (iVar7 + 0x1a);
     *piVar1 = *piVar1 + 1;
     iVar2 = (iVar7 + 0x1a) * 0x6 + (iVar7 + 0x16);
     uVar9 = (iVar7 + 0x18);
-    local_20 = (iVar2 + -0x6);
-    uStack28 = (iVar2 + -0x2);
+    local_20 = (iVar2 -0x6);
+    uStack28 = (iVar2 -0x2);
     puStack326 = &local_20;
     puVar3 = &local_20;
     pass1_1030_64ce(puVar3,uVar9,_PTR_LOOP_1050_5740,CONCAT22(0x1050,puVar3),(iVar6 + 0x8),
@@ -595,7 +595,7 @@ pub unsafe fn pass1_1038_4918(mut param_1: i16,mut param_2: u16 ,mut param_3: u3
         if (SBORROW2(iVar7,1)) {
           return;
         }
-        if (0x8 < iVar7 + -1) {
+        if (0x8 < iVar7 -1) {
           return;
         }
       }

@@ -88,7 +88,7 @@ pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
     uVar14 = 0x1008;
     puVar15 = pass1_1008_3e38(CONCAT22(0x1050, local_38));
     paVar14 = CONCAT22(uVar24, (puVar15 >> 0x10));
-    while (&puVar14[-0x6].field_0x4 < (puVar14 + -0x4)) {
+    while (&puVar14[-0x6].field_0x4 < (puVar14 -0x4)) {
         iVar11 = (&puVar14[-0x6].field_0x4 * 0x4);
         uVar6 = puVar14[-0x5].field6_0x6;
         uVar16 = pass1_1008_4772((iVar11 + uVar6));
@@ -162,14 +162,14 @@ pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
         (puVar4 >> 0x10),
         0x0,
         0x0,
-        puVar14 + -0x22,
+        puVar14 -0x22,
         &DAT_1050_1050,
     );
     extraout_DX = paVar14;
     hgdiobj16_var8 = CreatePen16(0x1000025, 0x1, 0x0);
     puVar14[-0x6].field_0x2 = hgdiobj16_var8;
     hgdiobj16_var10 = SelectObject16(hgdiobj16_var8, *&puVar14[-0x4].field6_0x6);
-    (puVar14 + -0x6) = hgdiobj16_var10;
+    (puVar14 -0x6) = hgdiobj16_var10;
     hgdiobj16_var9 = CreateSolidBrush16(0x1000025);
     (&puVar14[-0x7].field6_0x6 + 0x2) = hgdiobj16_var9;
     hgdiobj16_var10 = SelectObject16(hgdiobj16_var9, *&puVar14[-0x4].field6_0x6);
@@ -178,7 +178,7 @@ pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
     uVar1 = puVar14.field6_0x6;
     pass1_1010_4df0(extraout_DX, (uVar1 + 0x6));
     if (hgdiobj16_var10 == 0) {
-        hgdiobj16_var10 = SelectObject16((puVar14 + -0x6), *&puVar14[-0x4].field6_0x6);
+        hgdiobj16_var10 = SelectObject16((puVar14 -0x6), *&puVar14[-0x4].field6_0x6);
         DeleteObject16(hgdiobj16_var10);
         hgdiobj16_var10 = SelectObject16(&puVar14[-0x7].field6_0x6, *&puVar14[-0x4].field6_0x6);
         DeleteObject16(hgdiobj16_var10);
@@ -205,7 +205,7 @@ pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
     uVar6 = puVar14.field6_0x6;
     obj = SelectPalette16(0x0, (uVar6 + 0x10), *&puVar14[-0x4].field6_0x6);
     DeleteObject16(obj);
-    hgdiobj16_var10 = SelectObject16((puVar14 + -0x6), *&puVar14[-0x4].field6_0x6);
+    hgdiobj16_var10 = SelectObject16((puVar14 -0x6), *&puVar14[-0x4].field6_0x6);
     DeleteObject16(hgdiobj16_var10);
     hgdiobj16_var10 = SelectObject16(&puVar14[-0x7].field6_0x6, *&puVar14[-0x4].field6_0x6);
     DeleteObject16(hgdiobj16_var10);
@@ -249,7 +249,7 @@ pub unsafe fn draw_line_1020_229c(mut param_1: u32, mut param_2: u16) {
     MoveTo16(0x5, *pIVar1, param_2);
     uVar6 = (pIVar1 >> 0x10);
     iVar3 = pIVar1;
-    LineTo16(0x5, (iVar3 + iVar1 * 0x8 + -0x4), param_2);
+    LineTo16(0x5, (iVar3 + iVar1 * 0x8 -0x4), param_2);
     for iStack10 in 0..iVar1 {
         piVar4 = (iStack10 * 0x8 + iVar3);
         x = (piVar4[0x2] - *piVar4 >> 1) + *piVar4;
@@ -257,7 +257,7 @@ pub unsafe fn draw_line_1020_229c(mut param_1: u32, mut param_2: u16) {
         LineTo16(0xa, x, param_2);
     }
     MoveTo16(0x5f, *pIVar1, param_2);
-    LineTo16(0x5f, (iVar3 + iVar1 * 0x8 + -0x4), param_2);
+    LineTo16(0x5f, (iVar3 + iVar1 * 0x8 -0x4), param_2);
     for iStack10 in 0..iVar1 {
         piVar4 = (iStack10 * 0x8 + iVar3);
         x_00 = param_2;

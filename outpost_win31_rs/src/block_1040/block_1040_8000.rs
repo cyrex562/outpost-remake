@@ -253,7 +253,7 @@ pub unsafe fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
 
   struct_1_hi = (astruct14_param_1 >> 0x10);
   struct_1 = astruct14_param_1;
-  iStack6 = (struct_1.field118_0x80 - struct_1.field116_0x7c) + -0x2;
+  iStack6 = (struct_1.field118_0x80 - struct_1.field116_0x7c) -0x2;
   iStack8 = (-(struct_1.field95_0x60 == 0) & 0x1e) + 0x25;
   iStack4 = iStack6;
   brush_handle_1 = CreateSolidBrush16(CONCAT22(0x100,iStack8));
@@ -267,7 +267,7 @@ pub unsafe fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
   rect_var_12.y =
        (struct_1[0x1].hwnd16_field6_0x6 - &struct_1[0x1].field_0x2) / 0x2 + &struct_1[0x1].field_0x2 +
        -0x2;
-  iStack14 = &struct_1[0x1].field_0x4 + -0x2;
+  iStack14 = &struct_1[0x1].field_0x4 -0x2;
   iStack12 = (struct_1[0x1].hwnd16_field6_0x6 - &struct_1[0x1].field_0x2) / 0x2 +
              &struct_1[0x1].field_0x2 + 2;
   FrameRect16(brush_handle_1,(struct_1 + 1),struct_1_hi);
@@ -358,7 +358,7 @@ pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut par
     load_string_1010_84ac(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),param_5);
     iVar7[0x1].field3_0x6 = param_5;
     iVar7[0x1].field4_0x8 = param_1;
-    iStack16 = param_4 + -0x1;
+    iStack16 = param_4 -0x1;
   }
   puStack14 = CONCAT22(0x1050,puVar2);
   iStack22 = 0;
@@ -368,27 +368,27 @@ pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut par
     param_1 = param_1 & 0xffff0000 | pcVar6 >> 0x10;
     uVar4 = str_op_1000_3da4(pcVar6);
     iStack22 += uVar4;
-    iStack16 = iStack16 + -0x1;
+    iStack16 = iStack16 -0x1;
   }
   uVar5 = iStack22 + 1;
   mem_op_1000_179c(uVar5,param_1);
   iVar7[0x1].field1_0x2 = uVar5;
   iVar7[0x1].field2_0x4 = param_1;
   puStack14 = CONCAT22(0x1050,&param_5 + 2);
-  iStack16 = param_4 + -0x1;
-  if (param_4 + -0x1 != 0) {
+  iStack16 = param_4 -0x1;
+  if (param_4 -0x1 != 0) {
     puStack14 = CONCAT22(0x1050,&stack0x0012);
     uVar1 = &iVar7[0x1].field1_0x2;
     load_string_1010_84e0
               (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,uVar1,(uVar1 >> 0x10)
               );
-    iStack16 = param_4 + -0x2;
+    iStack16 = param_4 -0x2;
   }
   while (puVar3 = puStack14, iStack16 != 0) {
     puStack14 = (puStack14 & 0xffff0000 | (puStack14 + 0x2));
     pcVar6 = load_string_1010_847e(_u16_1050_14cc,*puVar3);
     pass1_1000_3cea(&iVar7[0x1].field1_0x2,pcVar6);
-    iStack16 = iStack16 + -0x1;
+    iStack16 = iStack16 -0x1;
   }
   load_icon_1040_8b92(param_2);
   PTR_LOOP_1050_5df8 = null_mut();
@@ -474,7 +474,7 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
   get_sys_metrics_1040_8c66(param_1);
   uStack4 = paVar12.field138_0x98 & 0xf;
   if (uStack4 == 1) {
-    iVar3 = &paVar12[0x1].field_0x8 + -0xc4;
+    iVar3 = &paVar12[0x1].field_0x8 -0xc4;
     paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
     paVar12[0x1].field_0xc = iVar3 / 0x2;
     load_string_1010_84e0
@@ -495,7 +495,7 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
   }
   else {
     if (uStack4 != 0x4) {
-      iVar3 = &paVar12[0x1].field_0x8 + -0x58;
+      iVar3 = &paVar12[0x1].field_0x8 -0x58;
       paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
       paVar12[0x1].field_0xc = iVar3 / 0x2;
       load_string_1010_84e0
@@ -508,7 +508,7 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
       uVar9 = 0x1;
   // TODO: goto LAB_1040_88a5;
     }
-    iVar3 = &paVar12[0x1].field_0x8 + -0xc4;
+    iVar3 = &paVar12[0x1].field_0x8 -0xc4;
     paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
     paVar12[0x1].field_0xc = iVar3 / 0x2;
     load_string_1010_84e0
@@ -673,8 +673,8 @@ pub unsafe fn pass1_1040_8b3c(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
 {
   if ((param_3.is_null() == false) &&
      ((param_3 == (&PTR_LOOP_1050_0000 + 1) || param_3 == &u16_1050_0002 ||
-      (((&u16_1050_0002 + 1) < param_3 + -0x2 &&
-       (param_3 + -0x6 < &u16_1050_0002)))))) {
+      (((&u16_1050_0002 + 1) < param_3 -0x2 &&
+       (param_3 -0x6 < &u16_1050_0002)))))) {
     PTR_LOOP_1050_5df4 = null_mut();
     PTR_LOOP_1050_5df8 = param_3;
     return;

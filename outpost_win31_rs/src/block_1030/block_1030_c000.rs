@@ -37,7 +37,7 @@ pub unsafe fn pass1_1030_c10e(mut param_1: u32) {
     iVar2 = param_1;
     if (0x0 < (iVar2 + 0x24)) {
         piVar1 = (iVar2 + 0x24);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         return;
     }
     (iVar2 + 0xc) = 0x37;
@@ -69,7 +69,7 @@ pub unsafe fn pass1_1030_c12e(mut param_1: i16, mut param_2: u32, mut param_3: i
         }
         pass1_1030_7d1c(iVar3, extraout_DX, paStack6, uVar6, 0x230000);
         piVar1 = (iVar4 + 0x24);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
     }
     if ((0x0 < (iVar4 + 0x24)) && ((iVar4 + 0x24) < 0x19)) {
         (iVar3 + 0x1fe) = 0x1;
@@ -478,7 +478,7 @@ pub unsafe fn pass1_1030_c76c(param_1: u32) {
     }
     iVar1 = (iVar1 + 0x20);
     if (iVar1 != 0) {
-        if (((iVar1 < 0x70) || (SBORROW2(iVar1, 0x70))) || (0x1 < iVar1 + -0x70)) {
+        if (((iVar1 < 0x70) || (SBORROW2(iVar1, 0x70))) || (0x1 < iVar1 -0x70)) {
             pass1_1028_be2a(param_1);
             return;
         }
@@ -505,10 +505,10 @@ pub unsafe fn pass1_1030_c7b0(mut param_1: u32) {
     iVar9 = param_1;
     iVar1 = (iVar9 + 0x20);
     if (iVar1 != 0) {
-        iVar4 = iVar1 + -0x70;
+        iVar4 = iVar1 -0x70;
         iVar5 = iVar4;
         if (((iVar1 < 0x70) || (SBORROW2(iVar1, 0x70)))
-            || (iVar5 = iVar1 + -0x71, iVar5 != 0x0 && 0x0 < iVar4))
+            || (iVar5 = iVar1 -0x71, iVar5 != 0x0 && 0x0 < iVar4))
         {
             pass1_1028_b58e((param_1 & 0xffff | uVar10 << 0x10));
             uVar2 = (iVar5 + 0x2e);

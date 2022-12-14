@@ -662,14 +662,14 @@ pub unsafe fn unk_draw_op_1008_da12(param_1: *mut astruct_19, mut param_2: u16) 
     (param_1 + 0xa) = horiz_res;
     vert_res = GetDeviceCaps16(VERTRES, hdc);
     (param_1 + 0xc) = vert_res;
-    iVar2 = (param_1 + 0xc) + -0x1e0;
+    iVar2 = (param_1 + 0xc) -0x1e0;
     count = (iVar2 >> 0xf);
     pSVar2 = CONCAT22(uVar5, count);
     pass1_1008_3e76(
         (param_1 & 0xffff0000 | (param_1 + 0xe)),
         0x0,
         iVar2 / 0x2,
-        ((param_1 + 0xa) + -0x280) / 0x2,
+        ((param_1 + 0xa) -0x280) / 0x2,
     );
     raster_caps = GetDeviceCaps16(RASTERCAPS, hdc);
     if ((raster_caps & 0x100) != 0) {

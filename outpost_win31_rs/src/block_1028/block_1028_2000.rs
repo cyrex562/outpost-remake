@@ -81,7 +81,7 @@ pub unsafe fn pass1_1028_20b6(param_1: *mut astruct_15) {
                 uStack6,
             );
             if (uVar1 == 0) {
-                uStack16 = CONCAT22(iStack20, iStack18 + -1);
+                uStack16 = CONCAT22(iStack20, iStack18 -1);
                 uVar1 = pass1_1028_21ba(
                     &uStack16,
                     puVar2,
@@ -218,7 +218,7 @@ pub unsafe fn pass1_1028_2290(
             param_6,
         );
         if (iVar1 == 0) {
-            local_8 = local_a + -0x1;
+            local_8 = local_a -0x1;
             local_8 = local_c;
             iVar1 = pass1_1028_2220(
                 &local_8,
@@ -578,7 +578,7 @@ pub unsafe fn pass1_1028_2844(
                     param_6,
                 );
                 if (uVar2 == 0) {
-                    local_8 = local_a + -0x1;
+                    local_8 = local_a -0x1;
                     local_8 = local_c;
                     BVar1 = pass1_1028_c5a6(
                         &local_8,

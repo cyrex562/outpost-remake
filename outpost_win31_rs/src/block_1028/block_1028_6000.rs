@@ -8,7 +8,7 @@ pub unsafe fn pass1_1028_6008(param_1: u32) {
     iVar2 = param_1;
     if (((iVar2 + 0x12) == 0x5) && (0x0 < (iVar2 + 0x20))) {
         piVar1 = (iVar2 + 0x20);
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
     }
     return;
 }
@@ -889,8 +889,8 @@ pub unsafe fn pass1_1028_6d24(
         iVar1 = (puVar6 + 0xc);
         if (((iVar1 < 1) || (SBORROW2(iVar1, 1)))
             || (iVar1 != 0x9
-                && 0x7 < iVar1 + -0x1
-                && (iVar1 + -0x9 < 0x6a || (0x6 < iVar1 + -0x73))))
+                && 0x7 < iVar1 -0x1
+                && (iVar1 -0x9 < 0x6a || (0x6 < iVar1 -0x73))))
         {
             ppcVar2 = (*puVar6 + 0x24);
             (**ppcVar2)();

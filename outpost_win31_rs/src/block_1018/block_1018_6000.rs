@@ -91,7 +91,7 @@ pub unsafe fn fn_xyz() {
     paVar25 = (uVar22 << 0x10);
     while (
         uVar27 = (paVar25 >> 0x10),
-        &puVar11[-0x6].field_0x4 < (puVar11 + -0x4),
+        &puVar11[-0x6].field_0x4 < (puVar11 -0x4),
     ) {
         iVar9 = (&puVar11[-0x6].field_0x4 * 0x4);
         uVar8 = puVar11[-0x5].field6_0x6;
@@ -166,13 +166,13 @@ pub unsafe fn fn_xyz() {
         (puVar4 >> 0x10),
         0x0,
         0x0,
-        puVar11 + -0x22,
+        puVar11 -0x22,
         &DAT_1050_1050,
     );
     handle = CreatePen16(0x1000025, 0x1, 0x0);
     &puVar11[-0x6].field_0x2 = handle;
     hgdiobj16_var7 = SelectObject16(handle, *&puVar11[-0x4].field6_0x6);
-    (puVar11 + -0x6) = hgdiobj16_var7;
+    (puVar11 -0x6) = hgdiobj16_var7;
     hgdiobj16_00 = CreateSolidBrush16(0x1000025);
     (&puVar11[-0x7].field6_0x6 + 0x2) = hgdiobj16_00;
     hgdiobj16_var7 = SelectObject16(hgdiobj16_00, *&puVar11[-0x4].field6_0x6);
@@ -190,7 +190,7 @@ pub unsafe fn fn_xyz() {
     uVar5 = puVar11.field6_0x6;
     obj = SelectPalette16(0x0, (uVar5 + 0x10), *&puVar11[-0x4].field6_0x6);
     DeleteObject16(obj);
-    hgdiobj16_var7 = SelectObject16((puVar11 + -0x6), *&puVar11[-0x4].field6_0x6);
+    hgdiobj16_var7 = SelectObject16((puVar11 -0x6), *&puVar11[-0x4].field6_0x6);
     DeleteObject16(hgdiobj16_var7);
     hgdiobj16_var7 = SelectObject16(&puVar11[-0x7].field6_0x6, *&puVar11[-0x4].field6_0x6);
     DeleteObject16(hgdiobj16_var7);
@@ -237,7 +237,7 @@ pub unsafe fn draw_line_1018_6444(mut param_1: u32, hdc_param_2: HDC16) {
     MoveTo16(0x5, *x1, hdc_param_2);
     uVar7 = (x1 >> 0x10);
     iVar4 = x1;
-    LineTo16(0x5, (iVar4 + iVar1 * 0x8 + -0x4), hdc_param_2);
+    LineTo16(0x5, (iVar4 + iVar1 * 0x8 -0x4), hdc_param_2);
     for iStack10 in 0..iVar1 {
         piVar5 = (iVar4 + iStack10 * 0x8);
         x = (piVar5[0x2] - *piVar5 >> 1) + *piVar5;
@@ -245,7 +245,7 @@ pub unsafe fn draw_line_1018_6444(mut param_1: u32, hdc_param_2: HDC16) {
         LineTo16(0xa, x, hdc_param_2);
     }
     MoveTo16(0x5f, *x1, hdc_param_2);
-    LineTo16(0x5f, (iVar4 + iVar1 * 0x8 + -0x4), hdc_param_2);
+    LineTo16(0x5f, (iVar4 + iVar1 * 0x8 -0x4), hdc_param_2);
     for iStack10 in 0..iVar1 {
         piVar4 = (iVar4 + iStack10 * 0x8);
         x_00 = hdc_param_2;

@@ -142,7 +142,7 @@ pub unsafe fn entry(
                 break;
             }
         } //while (paVar1.field0_0x0 != '\r');
-        (string_var8 + -1) = '\0';
+        (string_var8 -1) = '\0';
     }
     FatalAppExit16(0x0, string_var4);
     FatalExit();

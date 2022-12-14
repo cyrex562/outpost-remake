@@ -479,7 +479,7 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16, mut param_2: u32, mut param_3: u
                     iVar9 = uVar2;
                     uVar4 = (uVar2 >> 0x10);
                     piVar1 = (iVar9 + 0x182);
-                    *piVar1 = *piVar1 + -0x19;
+                    *piVar1 = *piVar1 -0x19;
                     iVar8 = (iVar9 + 0x182);
                     if (iVar8 < 1) {
                         iVar8 = 0x1;
@@ -494,10 +494,10 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16, mut param_2: u32, mut param_3: u
         }
         cVar5 = param_3;
         if (cVar5 != '\n') {
-            if ((cVar5 + -0xa) < '\x06') {
+            if ((cVar5 -0xa) < '\x06') {
                 return;
             }
-            if ('\x01' < (cVar5 + -0x10)) {
+            if ('\x01' < (cVar5 -0x10)) {
                 return;
             }
         }
@@ -519,7 +519,7 @@ pub unsafe fn pass1_1030_26ac(mut param_1: u16, mut param_2: u32, mut param_3: u
             loop {
                 iVar3 = iStack38 * 0x2;
                 piVar1 = (iVar3 + iVar8);
-                *piVar1 = *piVar1 + -0x1;
+                *piVar1 = *piVar1 -0x1;
                 iVar9 = (iVar3 + iVar8);
                 if (iVar9 < 1) {
                     iVar9 = 0x1;
@@ -649,7 +649,7 @@ pub unsafe fn pass1_1030_2a2c(param_1: *mut StructD, param_2: *mut astruct_678) 
     iVar2 = param_2;
     if (0x0 < iVar2.field23_0x18) {
         piVar1 = &iVar2.field23_0x18;
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
     }
     if (iVar2.field22_0x16 == 0) {
         iVar2.field22_0x16 = 0x1;

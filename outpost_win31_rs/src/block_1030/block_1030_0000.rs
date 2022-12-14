@@ -12,7 +12,7 @@ pub unsafe fn switch_1030_0000(
     let mut paVar5: *mut astruct_180;
     let mut puVar6: *mut u16;
 
-    match param_5 + -1 {
+    match param_5 -1 {
         0x0 | 0x1 | 0x2 | 0x3 | 0x4 | 0x5 | 0x6 | 0x7 | 0x8 => {
             mem_op_1000_179c(0x20, param_2);
             if ((param_2 | param_1) != 0) {

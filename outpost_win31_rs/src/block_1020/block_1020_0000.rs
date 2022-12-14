@@ -406,8 +406,8 @@ pub unsafe fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754) {
         brush_handle_1 = CreateSolidBrush16(0x210070b);
         rect_1.x = 0;
         rect_1.y = 0;
-        iStack48 = struct754_var1.field7_0xa + -0x1;
-        iStack46 = struct754_var1.field8_0xc + -0x1;
+        iStack48 = struct754_var1.field7_0xa -0x1;
+        iStack46 = struct754_var1.field8_0xc -0x1;
         FillRect16(brush_handle_1, &rect_1, &DAT_1050_1050);
         DeleteObject16(brush_handle_1);
     }

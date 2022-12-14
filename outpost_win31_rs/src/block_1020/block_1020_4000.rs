@@ -68,8 +68,8 @@ pub unsafe fn draw_rect_1020_40ce(
         Rectangle16(
             bottom,
             right,
-            local_6 + param_2 + -0x5,
-            local_4 + param_3 + -0x5,
+            local_6 + param_2 -0x5,
+            local_4 + param_3 -0x5,
             hdc16_param_4,
         );
         brush_handle_1 = GetStockObject16(WHITE_BRUSH);
@@ -149,7 +149,7 @@ pub unsafe fn post_msg_1020_4394(mut param_1: u32, mut param_2: u16) {
         }
         // if (param_2 == '\v') {
         //   uVar1 = (iVar2 + 0x2c);
-        //   (uVar1 + 0xe) = (iVar2 + -0xda);
+        //   (uVar1 + 0xe) = (iVar2 -0xda);
         //   return;
         // }
     }
@@ -382,7 +382,7 @@ pub unsafe fn mixed_menu_op_1020_44ec(
         // TODO: goto LAB_1020_464c;
     } //
       // LAB_1020_479e:
-    iVar12 = param_3 + -0x1;
+    iVar12 = param_3 -0x1;
     if (iVar12 == 0) {
         pass1_1018_2504(0x0, paVar11);
         if (iVar12 == 0) {

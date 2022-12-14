@@ -209,7 +209,7 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16 ,struct_b_param_1: *mut Struc
   ppcVar3 = (*&struct_b_8[0x7].lpvoid_field_0x8 + 0x10);
   (**ppcVar3)(s_tile2_bmp_1050_1538,uVar2,(uVar2 >> 0x10));
   piStack16 = CONCAT22(extraout_DX,win_enabled);
-  move_win_1040_826c(struct_b_param_1,win_enabled.field1_0x2 + -0x2,win_enabled.field2_0x4 + *piStack16 + 0x3);
+  move_win_1040_826c(struct_b_param_1,win_enabled.field1_0x2 -0x2,win_enabled.field2_0x4 + *piStack16 + 0x3);
   ShowWindow16(0x5,struct_b_8.lpvoid_field_0x8);
   pass1_1018_1c9a(&struct_b_8[0x7].lpvoid_field_0x8,*piVar6);
   HVar5 = GetDlgItem16(*piVar6,struct_b_8.lpvoid_field_0x8);
@@ -284,7 +284,7 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD,param_2: *mut StructC,mu
       }
       else {
         piVar1 = &iVar8.field_0x96;
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         HVar4 = GetDlgItem16(0xfb1,iVar8.field6_0x6);
         BVar5 = IsWindowEnabled16(HVar4);
         if (BVar5 == 0) {

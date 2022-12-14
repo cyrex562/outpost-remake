@@ -920,7 +920,7 @@ pub unsafe fn pass1_1008_ae26(param_1: *mut i16) {
     iVar2 = ((iVar3 + 0x4) * 0x6 + 0x3a8);
     if (iVar2 == 0x2) {
         if ((iVar3 + 0x2) == 1) {
-            *param_1 = *param_1 + -0x1;
+            *param_1 = *param_1 -0x1;
             iVar2 = (iVar3 + 0x4) * 0x6;
             piVar1 = (iVar2 + 0x3a4);
             if (*piVar1 != *param_1 && *param_1 <= *piVar1) {
@@ -932,7 +932,7 @@ pub unsafe fn pass1_1008_ae26(param_1: *mut i16) {
             *param_1 = *param_1 + 1;
             iVar2 = (iVar3 + 0x4) * 0x6;
             if ((iVar2 + 0x3a6) < *param_1) {
-                *param_1 = (iVar2 + 0x3a6) + -0x1;
+                *param_1 = (iVar2 + 0x3a6) -0x1;
                 (iVar3 + 0x2) = 0x1;
                 return;
             }

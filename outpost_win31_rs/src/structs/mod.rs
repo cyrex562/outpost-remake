@@ -1,7 +1,15 @@
-pub mod structs_2;
+pub mod struct_1000_07ac_1;
 pub mod struct_97;
 pub mod struct_394;
 pub mod struct_288;
 pub mod struct_7;
 pub mod struct_99;
 pub mod struct_611;
+pub mod struct_57;
+pub mod struct_d;
+pub mod struct_172;
+pub mod struct_822;
+pub mod struct_825;
+pub mod struct_a;
+pub mod struct_878;
+pub mod struct_915;

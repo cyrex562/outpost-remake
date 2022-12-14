@@ -52,7 +52,7 @@ pub unsafe fn pass1_1010_a0a0(mut param_1: u16, param_2: *mut astruct_252) {
             }
             piVar1 = (uVar4 + 0x6);
             bVar11 = SBORROW2(*piVar1, 0x2);
-            iVar3 = *piVar1 + -0x2;
+            iVar3 = *piVar1 -0x2;
             bVar10 = iVar3 == 0; //
                                  // LAB_1010_a151:
             if (!bVar10 && bVar11 == (iVar3 < 0x0)) {
@@ -69,7 +69,7 @@ pub unsafe fn pass1_1010_a0a0(mut param_1: u16, param_2: *mut astruct_252) {
                 piVar1 = (uVar4 + 0x6);
                 bVar11 = SBORROW2(*piVar1, 1);
                 iVar2 = *piVar1;
-                iVar3 = iVar2 + -0x1;
+                iVar3 = iVar2 -0x1;
                 bVar10 = iVar2 == 0x1;
                 // TODO: goto LAB_1010_a151;
             }

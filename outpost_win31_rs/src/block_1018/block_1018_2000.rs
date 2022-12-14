@@ -552,7 +552,7 @@ pub unsafe fn pass1_1018_289c(mut param_1: u16, mut param_2: u32, mut param_3: i
     if (param_3 == 0x2) {
         pass1_1018_2922(param_2 & 0xffff0000 | (param_2 - 0x1c));
     } else {
-        if ((((param_3 + -0x3 < 1) || (SBORROW2(param_3 + -0x3, 1))) || (0x1 < param_3 + -0x5))
+        if ((((param_3 -0x3 < 1) || (SBORROW2(param_3 -0x3, 1))) || (0x1 < param_3 -0x5))
             || ((param_2 + 0x4) == 0))
         {
             return;
@@ -882,7 +882,7 @@ pub unsafe fn pass1_1018_2d22(
     *param_3 = 0;
     *param_2 = 0;
     uVar1 = pass1_1008_4772((param_1 + 0x24));
-    *param_2 = (uVar1 + 0x8) + -0x14;
+    *param_2 = (uVar1 + 0x8) -0x14;
     if (param_4 == 0xbb8) {
         *param_3 = 0x5;
     }
@@ -911,7 +911,7 @@ pub unsafe fn pass1_1018_2d9a(param_1: *mut astruct_126) {
     uVar3 = iVar4.field375_0x180 | iVar4.field374_0x17e;
     if (uVar3 != 0) {
         piVar1 = &iVar4.field369_0x174;
-        *piVar1 = *piVar1 + -0x1;
+        *piVar1 = *piVar1 -0x1;
         if (*piVar1 < 0x0) {
             uVar2 = &iVar4.field374_0x17e;
             uVar3 = (uVar2 + 0xa) - 0x1;
@@ -993,7 +993,7 @@ pub unsafe fn pass1_1018_2ee4(param_1: *mut astruct_126, mut param_2: u16) {
                 (param_1 + 0x162) = 0;
                 return;
             }
-            //      if (('\x02' < (cVar2 + -1)) && ((cVar2 + -0x4) < '\x03')) goto LAB_1018_2f06;
+            //      if (('\x02' < (cVar2 -1)) && ((cVar2 -0x4) < '\x03')) goto LAB_1018_2f06;
         }
         return;
     }

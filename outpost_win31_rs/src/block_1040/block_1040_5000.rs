@@ -93,7 +93,7 @@ pub unsafe fn win_ui_op_1040_52c0(param_1: *mut u8,param_2: *mut astruct_894,mut
         GetClientRect16(&local_a,&DAT_1050_1050);
         puVar2 = param_2.field148_0x98;
         local_a.y += 0x3;
-        local_a.x = (puVar2 + 0x1a) + -0x9;
+        local_a.x = (puVar2 + 0x1a) -0x9;
         iStack6 += -0x3;
         iStack4 += -0x3;
         InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
@@ -526,9 +526,9 @@ pub unsafe fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct
     uVar10 = SUB21(&hdc16_2c,0x0);
     base_addr = s_tile2_bmp_1050_1538;
     caption_height_px = GetSystemMetrics16(SM_CYCAPTION);
-    puVar2 = -(caption_height_px + -0x23);
+    puVar2 = -(caption_height_px -0x23);
     fn_ptr_1 = (*puStack54 + 0x4);
-    (**fn_ptr_1)(0x38,puStack54,(puStack54 >> 0x10),-(caption_height_px + -0x23),uVar10,uVar13);
+    (**fn_ptr_1)(0x38,puStack54,(puStack54 >> 0x10),-(caption_height_px -0x23),uVar10,uVar13);
   }
   if (puStack54.is_null() == false) {
     uVar1 = (puStack54 >> 0x10);
@@ -547,7 +547,7 @@ pub unsafe fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct
   IVar2 = GetSystemMetrics16(SM_CYCAPTION);
   uVar3 = *puStack54;
   fn_ptr_1 = uVar3 + 2;
-  (**fn_ptr_1)(0x38,uVar1,uVar7,-(IVar2 + -0x23),uVar10,uVar14);
+  (**fn_ptr_1)(0x38,uVar1,uVar7,-(IVar2 -0x23),uVar10,uVar14);
   if (puStack54.is_null() == false) {
     if (puStack54.is_null() == false) {
       fn_ptr_1 = uVar3;
@@ -563,7 +563,7 @@ pub unsafe fn draw_op_1040_5a06(mut param_1: u32,struct741_param_1: *mut astruct
   uVar4 = (uVar12 + 0x4);
   uVar2 = (uVar12 + 0x8);
   IVar3 = GetSystemMetrics16(SM_CYCAPTION);
-  y = -(IVar3 + -0xc1);
+  y = -(IVar3 -0xc1);
   IVar4 = GetSystemMetrics16(SM_CYCAPTION);
   iStack72 = uVar2;
   y_00 = 0xc5 - (IVar4 - iStack72);
@@ -581,7 +581,7 @@ while uStack82 <= *puVar1 && *puVar1 != uStack82
 {
     IVar5 = GetSystemMetrics16(SM_CYCAPTION);
     fn_ptr_1 = (*puStack54 + 0x4);
-    (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar14,uVar8,-(IVar5 + -0xc4));
+    (**fn_ptr_1)(s_tile2_bmp_1050_1538,uVar14,uVar8,-(IVar5 -0xc4));
     uStack82 += 1;
   }
   if (puStack54.is_null() == false) {

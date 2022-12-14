@@ -347,7 +347,7 @@ pub unsafe fn pass1_1040_b4c8(param_1: *mut u8,mut param_2: u32)
     uVar3 = puVar8;
     uVar2 = (param_2 + 0x90);
     iVar1 = (uVar2 + 0xa);
-    iVar4 = iVar1 + -0x4;
+    iVar4 = iVar1 -0x4;
     if (iVar4 == 0) {
       ui_op_1010_79aa(puVar8,0xfd9,0x0);
       if (iVar4 == 0) {
@@ -359,8 +359,8 @@ pub unsafe fn pass1_1040_b4c8(param_1: *mut u8,mut param_2: u32)
         return;
       }
     }
-    else if (((0x0 < iVar1 + -0x5) && (!SBORROW2(iVar1 + -0x5,1))) &&
-            (iVar4 = iVar1 + -0x7, iVar4 == 0x0 || iVar1 + -0x6 < 1)) {
+    else if (((0x0 < iVar1 -0x5) && (!SBORROW2(iVar1 -0x5,1))) &&
+            (iVar4 = iVar1 -0x7, iVar4 == 0x0 || iVar1 -0x6 < 1)) {
       ui_op_1010_79aa(puVar8,0xfda,0x0);
       if (iVar4 == 0) {
         uVar7 = 0xd;
@@ -855,7 +855,7 @@ pub unsafe fn win_ui_op_1040_bbe2(param_1: *mut u8,param_2: HWND16,param_3: *mut
         GetClientRect16(&local_a,&DAT_1050_1050);
         puVar5 = param_3.field148_0x98;
         local_a.y += 0x3;
-        local_a.x = (puVar5 + 0x1a) + -0x9;
+        local_a.x = (puVar5 + 0x1a) -0x9;
         iStack6 += -0x3;
         iStack4 += -0x3;
         InvalidateRect16(0x1,&local_a,&DAT_1050_1050);
@@ -1082,12 +1082,12 @@ pub unsafe fn invalidate_rect_1040_c028(mut param_1: u32,mut param_2: i16)
         return;
       }
       uVar3 = (iVar8 + 0x6);
-      uVar2 = (((uVar3 + 0x16) + -1) * 0x4 + uVar7);
+      uVar2 = (((uVar3 + 0x16) -1) * 0x4 + uVar7);
       iVar8 = uVar2;
       uVar2 &= 0xffff0000;
       piVar9 = (uVar2 | iVar8 + 0x1e);
       uVar10 = (uVar2 >> 0x10);
-      local_a.y = (iVar8 + 0x20) + -0x8;
+      local_a.y = (iVar8 + 0x20) -0x8;
       local_a.x = *piVar9;
       iStack6 = (iVar8 + 0x22) + *piVar9;
       iStack4 = (iVar8 + 0x20);

@@ -541,8 +541,8 @@ pub unsafe fn pass1_1018_078e(param_1: *mut StructD) {
     pstruct_5.address_offset_field_0x2 = 0x1018;
     pstruct_5.field19_0x20 = 0x18b0;
     pstruct_5.field20_0x22 = 0x1018;
-    PTR_LOOP_1050_3960 = PTR_LOOP_1050_3960 + -0x1;
-    (_PTR_LOOP_1050_3962 + pstruct_5.field11_0x12 * 0x2 + -0x4) = 0;
+    PTR_LOOP_1050_3960 = PTR_LOOP_1050_3960 -0x1;
+    (_PTR_LOOP_1050_3962 + pstruct_5.field11_0x12 * 0x2 -0x4) = 0;
     if (PTR_LOOP_1050_3960.is_null()) {
         fn_ptr_1000_17ce(_PTR_LOOP_1050_3962);
         _PTR_LOOP_1050_3962 = null_mut();
@@ -660,7 +660,7 @@ pub unsafe fn get_sys_metrics_1018_09a8(mut param_1: u16, mut param_2: u32) {
     IStack4 = GetSystemMetrics16(SM_CYCAPTION);
     uVar6 = (param_2 >> 0x10);
     iVar5 = param_2;
-    iStack6 = (iVar5 + 0x12) + -0x2;
+    iStack6 = (iVar5 + 0x12) -0x2;
     pcVar10 = CONCAT22(0x1050, &local_8);
     piVar8 = &local_a;
     uVar9 = SUB42(&DAT_1050_1050, 0x0);
@@ -772,29 +772,29 @@ pub unsafe fn pass1_1018_0b1e(param_1: *mut astruct_74, param_2: *mut u16) {
         CONCAT22(0x1050, &local_6),
         CONCAT22(0x1050, &local_4),
     );
-    if (local_4 + -0x3 < 1) {
+    if (local_4 -0x3 < 1) {
         local_4 = 0x3;
     }
-    if (local_6 + -0x3 < 1) {
+    if (local_6 -0x3 < 1) {
         local_6 = 0x3;
     }
     uVar3 = (param_1 >> 0x10);
     uVar2 = iVar3.field90_0x5a;
     iVar1 = (uVar2 + 0x4);
     if (iVar1 <= local_4 + 0x2) {
-        local_4 = iVar1 + -0x3;
+        local_4 = iVar1 -0x3;
     }
     uVar2 = iVar3.field90_0x5a;
     iVar1 = (uVar2 + 0x8);
     if (iVar1 <= local_6 + 0x2) {
-        local_6 = iVar1 + -0x3;
+        local_6 = iVar1 -0x3;
     }
     pass1_1008_6cec(
         (param_1 & 0xffff0000 | ZEXT24(&iVar3.field_0x40)),
         local_8,
         CONCAT22(local_4 + 0x2, local_6 + 0x2),
         local_8,
-        CONCAT22(local_4 + -0x3, local_6 + -0x3),
+        CONCAT22(local_4 -0x3, local_6 -0x3),
     );
     pass1_1008_3f62(param_2, (param_1 & 0xffff0000 | ZEXT24(&iVar3.field_0x40)));
     pass1_1008_3f62(

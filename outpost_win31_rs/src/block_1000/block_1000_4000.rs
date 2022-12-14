@@ -131,7 +131,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
                     unaff_si -= 1;
                 }
                 if (hglobal_di.is_null() == false) {
-                    // for (; hglobal_di.is_null() == false; hglobal_di = hglobal_di + -1)
+                    // for (; hglobal_di.is_null() == false; hglobal_di = hglobal_di -1)
                     while hglobal_di.is_null() == false {
                         pu_var4 = pu_var11;
                         pu_var11 = (pu_var11 + 1);
@@ -573,7 +573,7 @@ pub unsafe fn pass1_1000_462e(
     i_stack26 = (u_var8 + param_7 + CONCAT22(PTR_LOOP_1050_61d0, DAT_1050_61ce));
     i_stack8 = param_4 + u_var7;
     i_stack12 = param_2 + 0x50;
-    i_stack14 = param_3 + -0x1;
+    i_stack14 = param_3 -0x1;
     u_stack18 = param_5;
     if (DAT_1050_61d2 != 0) {
         uvar4 = pass1_1000_455a(local_16, &DAT_1050_1050);
@@ -628,7 +628,7 @@ pub unsafe fn pass1_1000_472c(mut param_1: u32, param_2: u8) -> *mut c_char {
         }
         pc_var3 = pc_var3 + 1;
     }
-    return pc_var3 + -0x1;
+    return pc_var3 -0x1;
 }
 
 pub unsafe fn pass1_1000_475e(mut param_1: u32, mut param_2: u32) -> i16 {
@@ -1022,7 +1022,7 @@ pub unsafe fn pass1_1000_4aea(
     if ((param_4 != 0) && (param_3 != 0)) {
         u_stack_y14 = param_1;
         u_var11 = param_2;
-        // for (iVar6 = param_3 + -0x1; iVar6 != 0; iVar6 += -1)
+        // for (iVar6 = param_3 -0x1; iVar6 != 0; iVar6 += -1)
         for i_var6 in param_34 - 1..0 {
             u_var9 = u_stack_y14 + param_4;
             u_var11 += -CARRY2(u_stack_y14, param_4) & 0x6c;
