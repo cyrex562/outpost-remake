@@ -1,6 +1,0 @@
-EXTRADEFS = -DWINE_NO_LONG_TYPES
-TESTDLL   = d3dxof.dll
-IMPORTS   = d3dxof
-
-C_SRCS = \
-	d3dxof.c

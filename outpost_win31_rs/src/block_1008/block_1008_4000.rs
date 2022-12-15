@@ -1,3 +1,23 @@
+use std::ptr::null_mut;
+use crate::block_1000::block_1000_0000::{call_fn_ptr_1000_0dc6, mem_op_1000_0a48};
+use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c, pass1_1000_1284};
+use crate::block_1000::block_1000_3000::str_op_1000_3da4;
+use crate::block_1000::block_1000_4000::{pass1_1000_48a8, pass1_1000_4906};
+use crate::block_1008::block_1008_3000::pass1_1008_3e94;
+use crate::block_1008::block_1008_5000::struct_op_1008_56b4;
+use crate::block_1008::block_1008_6000::str_op_1008_60e8;
+use crate::block_1010::block_1010_2000::mixed_1010_20ba;
+use crate::block_1010::block_1010_8000::FUN_1010_830a;
+use crate::file_ops;
+use crate::globals::DAT_1050_1050;
+use crate::structs::struct_288::astruct_288;
+use crate::structs::struct_394::astruct_394;
+use crate::structs::struct_57::Struct57;
+use crate::structs::struct_d::StructD;
+use crate::utils::CONCAT22;
+use crate::winbase::{_lclose16, _llseek16, _lopen16, CreateDC16, CreatePalette16, DeleteDC16, DeleteObject16, hmemcpy16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, TextOut16};
+use crate::windef::{COLORREF, HDC16, HFILE16, HPALETTE16, LOGPALETTE};
+
 pub unsafe fn pass1_1008_4016(param_1: *mut astruct_76) {
     let mut iVar1: *mut astruct_76;
     let mut uVar1: u16;
@@ -706,147 +726,7 @@ pub unsafe fn struct_op_1008_48fe(
     return;
 }
 
-pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar5: *mut astruct_803;
-    let mut uVar2: u16;
-    let mut puVar1: *mut u32;
-    let mut uVar1: u16;
-    let mut lVar1: i32;
-
-    uVar2 = (param_1 >> 0x10);
-    iVar5 = param_1;
-    param_1.offset_0x0 = &u16_1050_4c4c;
-    iVar5.base_0x2 = 0x1008;
-    puVar1 = iVar5.field2_0x4;
-    uVar1 = iVar5.field3_0x6;
-    if ((uVar1 | puVar1) != 0) {
-        ppcVar1 = *puVar1;
-        (**ppcVar1)();
-    }
-    fn_ptr_1000_17ce(iVar5.field4_0x8);
-    if (iVar5.field18_0x1a != 0) {
-        call_fn_ptr_1000_0dc6(iVar5.field18_0x1a);
-    }
-    if (iVar5.field5_0xc != 0xffff) {
-        _lclose16(iVar5.field5_0xc);
-    }
-    param_1.offset_0x0 = 0x389a;
-    iVar5.base_0x2 = 0x1008;
-    return;
-}
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-pub unsafe fn read_file_1008_49e8(
-    param_1: HFILE16,
-    mut param_2: u16,
-    struct_param_1: *mut astruct_81,
-    mut param_4: u32,
-) -> u16 {
-    let mut uVar4: u32;
-    let mut hfile_1: HFILE16;
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-    let mut uVar1: u32;
-    let mut lVar5: i16;
-    let mut puVar5: *mut u8;
-    let mut extraout_DX: *mut u8;
-    let mut uVar8: u16;
-    let mut paVar7: *mut Struct57;
-    let mut struct_1: *mut astruct_81;
-    let mut unaff_DI: i16;
-    let mut uVar5: u16;
-    let mut unaff_SS: u16;
-    let mut iVar9: i32;
-    let mut lVar10: i32;
-    let mut uStack20: u16;
-    let mut uStack10: u16;
-    let mut uStack8: u16;
-    let mut iStack6: i32;
-    let mut in_stack_0000ffe8: i16;
-    let mut uVar3: u32;
-    let mut in_stack_0000ffea: u16;
-    let mut in_stack_0000ffe8_00: u16;
-    let mut uVar6: u32;
-
-    uVar8 = (param_4 >> 0x10);
-    uVar5 = (struct_param_1 >> 0x10);
-    struct_1 = struct_param_1;
-    if (&struct_1.field3_0x8 != 0) {
-        if (struct_1.field10_0x1e != 0) {
-            return 0x1;
-        }
-        if (struct_1.hfile_0xc == -1) {
-            hfile_1 = _lopen16(0x0, *&struct_1.field3_0x8);
-            struct_1.hfile_0xc = hfile_1;
-            if (hfile_1 == 0xffff) {
-                return 0x0;
-            }
-        }
-        iStack6 = 0;
-        iVar9 = WIN16_hread(0xe, CONCAT22(0x1050, &param_1), struct_1.hfile_0xc);
-        if (((iVar9 == 0xe) && ((iVar9 >> 0x10) == 0))
-            && (
-                iStack6 = CONCAT22(uStack20, param_2),
-                param_1 == &PTR_LOOP_1050_4d42,
-            ))
-        {
-            _llseek16(0x0, 0x0, struct_1.hfile_0xc);
-            lVar10 = mem_op_1000_0a48(0x1, iStack6, (iStack6 >> 0x10), _PTR_LOOP_1050_5f2c);
-            lVar5 = (lVar10 >> 0x10);
-            struct_1.buffer_0x1a = lVar10;
-            (&struct_1.buffer_0x1a + 0x2) = lVar5;
-            if ((lVar5 | &struct_1.buffer_0x1a) != 0) {
-                iVar9 = WIN16_hread(iStack6, struct_1.buffer_0x1a, struct_1.hfile_0xc);
-                uStack8 = (iVar9 >> 0x10);
-                paVar7 = CONCAT22(uVar8, uStack8);
-                uStack10 = iVar9;
-                param_1 = struct_1.hfile_0xc;
-                _lclose16(param_1);
-                struct_1.hfile_0xc = 0xffff;
-                struct_1.field10_0x1e = 0x1;
-                struct_1.field6_0xe = struct_1.buffer_0x1a;
-                uVar3 = struct_1.buffer_0x1a;
-                iVar1 = uVar3;
-                iVar1 = iVar1 + 0xe;
-                struct_1.field7_0x12 = uVar3 & 0xffff0000 | iVar1;
-                uVar1 = iVar1 + 0x436;
-                uVar1 = uVar3 & 0xffff0000 | uVar1;
-                struct_1.field8_0x16 = uVar1;
-                param_2 = 0x14;
-                param_1 = s_tile2_bmp_1050_1538;
-                mem_op_1000_179c(0x14, paVar7);
-                puVar5 = (paVar7 | uVar1);
-                extraout_DX = puVar5;
-                if (puVar5.is_null()) {
-                    struct_1.field2_0x4 = 0;
-                } else {
-                    param_2 = 0x100;
-                    uVar4 = struct_1.field7_0x12;
-                    uVar2 = uVar4;
-                    uVar2 = uVar2 + 0x28;
-                    uVar4 &= 0xffff0000;
-                    uVar6 = uVar4 | uVar2;
-                    param_1 = (uVar4 >> 0x10);
-                    struct_op_1008_4c98((uVar1 & 0xffff | uVar2 << 0x10), uVar6, 0x100);
-                    struct_1.field2_0x4 = uVar6;
-                    (&struct_1.field2_0x4 + 0x2) = extraout_DX;
-                }
-                if (struct_1.field13_0x22 == 0) {
-                    return 0x1;
-                }
-                _param_1 = struct_param_1;
-                pass1_1008_4b8e(extraout_DX, struct_param_1);
-                return 0x1;
-            }
-        } else {
-            _lclose16(struct_1.hfile_0xc);
-            struct_1.hfile_0xc = 0xffff;
-        }
-    }
-    return 0x0;
-}
 
 pub unsafe fn pass1_1008_4b5e(param_1: u32) -> u32 {
     let mut ppcVar1: *mut *mut code;
@@ -915,13 +795,6 @@ pub unsafe fn pass1_1008_4b8e(param_1: *mut u8, param_2: *mut astruct_807) {
     return;
 }
 
-pub unsafe fn file_1008_4c26(param_1: *mut astruct_803, param_2: u8) -> *mut astruct_803 {
-    close_file_1008_496c(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 pub unsafe fn struct_1008_4c58(param_1: *mut astruct_394) {
     let mut iVar1: *mut astruct_394;
     let mut in_stack_00000006: u16;
@@ -1164,7 +1037,7 @@ pub unsafe fn file_and_draw_op_1008_4f20(
         0x1,
         CONCAT22(param_1, uVar1),
     );
-    read_file_1008_49e8(param_6, param_7, CONCAT22(0x1050, &struct81_26), param_1);
+    file_ops::read_file_1008_49e8(param_6, param_7, CONCAT22(0x1050, &struct81_26), param_1);
     pass1_1008_5068(param_2, CONCAT22(0x1050, &struct81_26));
     pass1_1008_47cc(param_2);
     pass1_1008_4834(param_2);
@@ -1194,7 +1067,7 @@ pub unsafe fn file_and_draw_op_1008_4f20(
     hpalette_a = SelectPalette16(0x0, uVar2, hdc_a);
     DeleteObject16(hpalette_a);
     DeleteDC16(hdc_a);
-    close_file_1008_496c(CONCAT22(0x1050, &struct81_26));
+    file_ops::close_file_1008_496c(CONCAT22(0x1050, &struct81_26));
     return;
 }
 

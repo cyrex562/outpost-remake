@@ -1,3 +1,5 @@
+use crate::file_ops;
+
 pub unsafe fn struct_1030_44be(
     param_1: *mut astruct_57,
     param_2: *mut astruct_138,
@@ -671,59 +673,6 @@ pub unsafe fn pass1_1030_4e34(
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn read_file_1030_4e70(
-    param_1: *mut astruct_117,
-    param_2: *mut u32,
-    param_3: *mut *mut u8,
-    param_4: i32,
-    mut param_5: u16,
-) -> u16 {
-    let mut uVar1: u16;
-    let mut h_file: HFILE16;
-    let mut unaff_SS: u16;
-    let mut path: *mut c_char;
-    let mut lVar1: i32;
-    let mut uVar2: u16;
-    let mut pbStack60: *mut u8;
-    let mut iStack56: i32;
-    let mut uStack20: u32;
-
-    *param_3 = null_mut();
-    *param_2 = 0;
-    if (param_4 != 0) {
-        uVar2 = 0;
-        path = pass1_1030_5164(param_1, param_4);
-        param_5 = (path >> 0x10);
-        uVar1 = dos3_call_1000_51aa(path, param_5, uVar2);
-        if (uVar1 == 0) {
-            *param_2 = uStack20;
-            h_file = _lopen16(0x0, path);
-            if (h_file != 0xffff) {
-                lVar1 = mem_op_1000_0a48(0x1, *param_2, (*param_2 >> 0x10), _PTR_LOOP_1050_5f2c);
-                lVar1 = (lVar1 >> 0x10);
-                param_3 = lVar1;
-                (param_3 + 0x2) = lVar1;
-                param_5 = lVar1;
-                if ((lVar1 | param_3) != 0) {
-                    iStack56 = WIN16_hread(*param_2, *param_3, h_file);
-                    uVar2 = (iStack56 >> 0x10);
-                    _lclose16(h_file);
-                    pbStack60 = *param_3;
-                    while (iStack56 != 0) {
-                        if ((*(*pbStack60 + 0x608b) & 0x20) == 0) {
-                            *pbStack60 = *pbStack60 + 0x80;
-                        }
-                        pbStack60 = (pbStack60 & 0xffff0000 | (pbStack60 + 1));
-                        iStack56 = iStack56 -0x1;
-                    }
-                    return uVar2;
-                }
-            }
-        }
-    }
-    return param_5;
-}
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1030_4f5a(mut param_1: u16, param_2: *mut astruct_117) {
     let mut pcVar1: *mut c_char;
@@ -748,7 +697,7 @@ pub unsafe fn pass1_1030_4f5a(mut param_1: u16, param_2: *mut astruct_117) {
     let mut pSVar7: *mut StructD;
 
     plVar2 = &local_a;
-    uVar5 = read_file_1030_4e70(
+    uVar5 = file_ops::read_file_1030_4e70(
         param_2,
         CONCAT22(0x1050, plVar2),
         CONCAT22(0x1050, &local_6),

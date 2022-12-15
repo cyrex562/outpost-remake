@@ -1,6 +1,0 @@
-EXTRADEFS = -DWINE_NO_LONG_TYPES
-TESTDLL   = iphlpapi.dll
-IMPORTS   = iphlpapi
-
-C_SRCS = \
-	iphlpapi.c

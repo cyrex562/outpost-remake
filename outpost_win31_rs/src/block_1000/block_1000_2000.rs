@@ -1,5 +1,14 @@
+use std::os::raw::c_char;
+use std::ptr::null_mut;
+use crate::app_context::AppContext;
 use crate::block_1000;
-use crate::utils::CONCAT22;
+use crate::block_1000::block_1000_1000::mem_1000_167a;
+use crate::globals::{DAT_1050_1050, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_1000, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_6066, PTR_LOOP_1050_63fe, u8_1050_5fc9};
+use crate::structs::struct_825::Struct825;
+use crate::structs::struct_d::StructD;
+use crate::sys_ops::___EXPORTEDSTUB;
+use crate::utils::{CONCAT22, SUB42};
+use crate::winbase::{FatalAppExit16, FatalExit, GetModuleFileName16};
 
 pub unsafe fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
     let mut u_var1: u16;
@@ -80,7 +89,7 @@ pub unsafe fn empty_fn_1000_214a() {
 
 // WARNING: Removing unreachable block (ram,0x1000234c)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn init_1000_23be(mut param_1: *mut u8, mut param_2: u16) {
+pub unsafe fn init_1000_23be(mut param_1: u16, mut param_2: u16) {
     init_op_1008_54aa(
         &DAT_1050_1050,
         param_1,
@@ -112,23 +121,6 @@ pub unsafe fn fn_ptr_op_1000_24cd(mut param_1: u16) {
     dos3_op_1000_256b();
     pcVar1 = swi(0x21);
     (*pcVar1)();
-    return;
-}
-
-// WARNING: Removing unreachable block (ram,0x10002513)
-// WARNING: Removing unreachable block (ram,0x10002557)
-pub unsafe fn pass1_1000_24db(mut param_1: u16) {
-    let mut pcVar1: *mut code;
-    let mut unaff_bp: i16;
-    let mut i_var2: i16;
-
-    i_var2 = unaff_bp + 1;
-    u8_1050_5fc9 = '\0';
-    fn_ptr_op_1000_2594();
-    fn_ptr_op_1000_2594();
-    dos3_op_1000_256b();
-    pcVar1 = swi(0x21);
-    (*pcVar1)(i_var2);
     return;
 }
 
@@ -168,306 +160,6 @@ pub unsafe fn pass1_1000_25a8() {
     pass1_1000_2913(0xfc);
     pass1_1000_2913(0xff);
     return;
-}
-
-// WARNING (jumptable): Unable to track spacebase fully for stack
-// WARNING (jumptable): Heritage AFTER dead removal. Example location: r0x10505fc2 : 0x1000270c
-// WARNING: Unable to track spacebase fully for stack
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// WARNING: Restarted to delay deadcode elimination for space: ram
-pub unsafe fn pass1_1000_262c(param_1: u32, param_2: u16, param_3: u16) {
-    let mut pcVar1: *mut c_char;
-    let mut cVar2: u8;
-    let mut i_var3: i16;
-    let mut i_var5: i16;
-    let mut u_var4: u16;
-    let mut u_var5: u16;
-    let mut u_var6: u16;
-    let mut u_var7: u16;
-    let mut u_var8: u16;
-    let mut u_var9: u16;
-    let mut u_var10: u16;
-    let mut u_var11: u16;
-    let mut i_var4: i16;
-    let mut ppcVar6: *mut *mut c_char;
-    let mut pcVar7: *mut c_char;
-    let mut pcVar8: *mut c_char;
-    let mut pcVar9: *mut c_char;
-    let mut unaff_es: u16;
-    let mut u_var12: u16;
-    let mut u_var3: u16;
-    let mut puVar3: *mut u8;
-
-    PTR_LOOP_1050_5fd2 = param_2;
-    PTR_LOOP_1050_5fd4 = param_3;
-    param_3 = 0x263d;
-    param_2 = pass1_1000_2950(0x8, param_1, 0x104);
-    param_3 = param_1;
-    PTR_LOOP_1050_5fc2 = param_2;
-    PTR_LOOP_1050_5fc4 = param_1;
-    i_var5 = GetModuleFileName16(0x104, CONCAT22(param_1, param_2), HINSTANCE16_1050_5f4c);
-    param_2[i_var5] = '\0';
-    i_var4 = 0x1;
-    PTR_LOOP_1050_5fb8 = (&PTR_LOOP_1050_0000 + 1);
-    pcVar7 = (s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe); //
-                                                                   //    LAB_1000_266c:
-    loop {
-        loop {
-            pcVar1 = pcVar7;
-            pcVar7 = pcVar7 + 1;
-            cVar2 = *pcVar1;
-            if cVar2 != ' ' {
-                break;
-            }
-        }
-        if cVar2 != '\t' {
-            break;
-        }
-    }
-    if ((cVar2 != '\r') && (cVar2 != '\0')) {
-        PTR_LOOP_1050_5fb8 = PTR_LOOP_1050_5fb8 + 1;
-        loop {
-            pcVar7 = pcVar7 -0x1; //
-                                    //            LAB_1000_267f:
-            pcVar1 = pcVar7;
-            pcVar7 = pcVar7 + 1;
-            cVar2 = *pcVar1;
-            if ((cVar2 == ' ') || (cVar2 == '\t')) {
-                // TODO: goto LAB_1000_266c;
-            }
-            if ((cVar2 == '\r') || (cVar2 == '\0')) {
-                break;
-            }
-            if (cVar2 == '\"') {
-                //
-                //                LAB_1000_26b8:
-                loop {
-                    loop {
-                        loop {
-                            pcVar1 = pcVar7;
-                            pcVar7 = pcVar7 + 1;
-                            cVar2 = *pcVar1;
-                            if ((cVar2 == '\r') || (cVar2 == '\0')) {
-                                // TODO: goto LAB_1000_26e8;
-                            }
-                            if (cVar2 == '\"') {
-                                // TODO: goto LAB_1000_267f;
-                            }
-                            if (cVar2 == '\\') {
-                                break;
-                            }
-                            i_var4 += 0x1;
-                        }
-                        u_var7 = 0;
-                        loop {
-                            pcVar9 = pcVar7;
-                            u_var7 += 0x1;
-                            pcVar7 = pcVar9 + 1;
-                            cVar2 = *pcVar9;
-                            if cVar2 != '\\' {
-                                break;
-                            }
-                        }
-                        if (cVar2 == '\"') {
-                            break;
-                        }
-                        i_var4 += u_var7;
-                        pcVar7 = pcVar9;
-                    }
-                    i_var4 = i_var4 + (u_var7 >> 1) + ((u_var7 & 1) != 0);
-                    if (u_var7 & 1) == 0 {
-                        break;
-                    }
-                }
-                // TODO: goto LAB_1000_267f;
-            }
-            if (cVar2 != '\\') {
-                i_var4 += 0x1;
-                // TODO: goto LAB_1000_267f;
-            }
-            u_var6 = 0;
-            loop {
-                u_var6 += 0x1;
-                pcVar1 = pcVar7;
-                pcVar7 = pcVar7 + 1;
-                cVar2 = *pcVar1;
-                if cVar2 != '\\' {
-                    break;
-                }
-            }
-            if (cVar2 == '\"') {
-                i_var4 = i_var4 + (u_var6 >> 1) + ((u_var6 & 1) != 0);
-                if ((u_var6 & 1) == 0) {
-                    // TODO: goto LAB_1000_26b8;
-                }
-                // TODO: goto LAB_1000_267f;
-            }
-            i_var4 += u_var6;
-        }
-    } //
-      //    LAB_1000_26e8:
-    param_3 = &DAT_1050_1050;
-    i_var3 = -((PTR_LOOP_1050_5fb8 + (PTR_LOOP_1050_5fb8 + 1) * 0x4 + i_var4 + 1) & 0xfffe);
-    PTR_LOOP_1050_5fba = &stack0x0004 + i_var3;
-    PTR_LOOP_1050_5fbc = &DAT_1050_1050;
-    pcVar9 = &stack0x0004 + (PTR_LOOP_1050_5fb8 + 1) * 0x4 + i_var3;
-    (&param_3 + i_var3) = &DAT_1050_1050;
-    puVar3 = PTR_LOOP_1050_5fc4;
-    u_var12 = (&param_3 + i_var3);
-    (&stack0x0004 + i_var3) = PTR_LOOP_1050_5fc2;
-    (&stack0x0006 + i_var3) = puVar3;
-    ppcVar6 = (&stack0x0008 + i_var3);
-    (&param_3 + i_var3) = &stack0x0004 + i_var3;
-    (&param_2 + i_var3) = s_tile2_bmp_1050_1538;
-    (&stack0xfffe + i_var3) = 0x271f;
-    u_var4 = pass1_1000_29dc(&DAT_1050_1050);
-    u_var3 = &PTR_LOOP_1050_5f7e;
-    pcVar7 = (s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe); //
-                                                                   //    LAB_1000_272e:
-    loop {
-        loop {
-            pcVar1 = pcVar7;
-            pcVar7 = pcVar7 + 1;
-            cVar2 = *pcVar1;
-            if cVar2 != ' ' {
-                break;
-            }
-        }
-        if cVar2 != '\t' {
-            break;
-        }
-    }
-    if ((cVar2 == '\r') || (cVar2 == '\0')) {
-        //
-        //        LAB_1000_27c1:
-        (&param_3 + i_var3) = s_tile2_bmp_1050_1538;
-        (&param_2 + i_var3) = 0x27c5;
-        u_var5 = pass1_1000_29dc(&DAT_1050_1050);
-        *ppcVar6 = null_mut();
-        ppcVar6[0x1] = null_mut();
-        // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
-        // WARNING: Treating indirect jump as call
-        (&PTR_LOOP_1050_5fd2)();
-        _PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4, PTR_LOOP_1050_5fc2);
-        return;
-    }
-    *ppcVar6 = pcVar9;
-    ppcVar6[0x1] = &DAT_1050_1050;
-    ppcVar6 = ppcVar6 + 2;
-    loop {
-        pcVar7 = pcVar7 -0x1; //
-                                //        LAB_1000_274f:
-        pcVar1 = pcVar7;
-        pcVar7 = pcVar7 + 1;
-        cVar2 = *pcVar1;
-        if ((cVar2 == ' ') || (cVar2 == '\t')) {
-            pcVar1 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            *pcVar1 = '\0';
-            // TODO: goto LAB_1000_272e;
-        }
-        if ((cVar2 == '\r') || (cVar2 == '\0')) {
-            //
-            //            LAB_1000_27be:
-            *pcVar9 = '\0';
-            // TODO: goto LAB_1000_27c1;
-        }
-        pcVar8 = pcVar7;
-        if (cVar2 == '\"') {
-            //
-            //            LAB_1000_278b:
-            loop {
-                pcVar7 = pcVar8 + 1;
-                cVar2 = *pcVar8;
-                if ((cVar2 == '\r') || (cVar2 == '\0')) {
-                    // TODO: goto LAB_1000_27be;
-                }
-                if (cVar2 == '\"') {
-                    break;
-                }
-                if (cVar2 == '\\') {
-                    u_var10 = 0;
-                    loop {
-                        pcVar8 = pcVar7;
-                        u_var10 += 0x1;
-                        pcVar7 = pcVar8 + 1;
-                        cVar2 = *pcVar8;
-                        if cVar2 != '\\' {
-                            break;
-                        }
-                    }
-                    if (cVar2 == '\"') {
-                        // for (uVar11 = uVar10 >> 0x1; uVar11 != 0; uVar11 -= 1)
-                        for uVar11 in uVar10 >> 1..0 {
-                            pcVar1 = pcVar9;
-                            pcVar9 = pcVar9 + 1;
-                            *pcVar1 = '\\';
-                        }
-                        if ((u_var10 & 1) == 0) {
-                            break;
-                        }
-                        pcVar1 = pcVar9;
-                        pcVar9 = pcVar9 + 1;
-                        *pcVar1 = '\"';
-                        pcVar8 = pcVar7;
-                    } else {
-                        // for (; uVar10 != 0; uVar10 -= 1) {
-                        while uVar10 != 0 {
-                            pcVar1 = pcVar9;
-                            pcVar9 = pcVar9 + 1;
-                            *pcVar1 = '\\';
-                            uVar10 -= 1;
-                        }
-                    }
-                } else {
-                    pcVar1 = pcVar9;
-                    pcVar9 = pcVar9 + 1;
-                    *pcVar1 = cVar2;
-                    pcVar8 = pcVar7;
-                }
-            }
-            // TODO: goto LAB_1000_274f;
-        }
-        if (cVar2 != '\\') {
-            pcVar1 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            *pcVar1 = cVar2;
-            // TODO: goto LAB_1000_274f;
-        }
-        u_var8 = 0;
-        loop {
-            u_var8 += 0x1;
-            pcVar1 = pcVar7;
-            pcVar7 = pcVar7 + 1;
-            cVar2 = *pcVar1;
-            if cVar2 != '\\' {
-                break;
-            }
-        }
-        if (cVar2 == '\"') {
-            // for (uVar9 = uVar8 >> 0x1; uVar9 != 0; uVar9 -= 1)
-            for uVar9 in uVar8 >> 0x1..0 {
-                pcVar1 = pcVar9;
-                pcVar9 = pcVar9 + 1;
-                *pcVar1 = '\\';
-            }
-            pcVar8 = pcVar7;
-            if ((u_var8 & 1) == 0) {
-                // TODO: goto LAB_1000_278b;
-            }
-            pcVar1 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            *pcVar1 = '\"';
-            // TODO: goto LAB_1000_274f;
-        }
-        // for (; uVar8 != 0; uVar8 -= 1)
-        while uVar8 != 0 {
-            pcVar1 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            *pcVar1 = '\\';
-            uVar8 -= 1;
-        }
-    }
 }
 
 pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
@@ -521,9 +213,9 @@ pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
     }
     u_var7 = 0x9;
     pu_var8 = pu_var7;
-    pu_var5 = pass1_1000_2950(0x9, pu_var7, (pcVar11 + 1) & 0xfffe);
+    pu_var5 = exit_op_1000_2950(ctx, 0x9, pu_var7, (pcVar11 + 1) & 0xfffe);
     pu_var14 = pu_var8;
-    ppuVar6 = pass1_1000_2950(u_var7, pu_var8, (i_var9 + 1) * 0x4);
+    ppuVar6 = exit_op_1000_2950(ctx, u_var7, pu_var8, (i_var9 + 1) * 0x4);
     piVar9 = null_mut();
     PTR_LOOP_1050_5fbe = ppuVar6;
     PTR_LOOP_1050_5fc0 = pu_var8;
@@ -577,13 +269,13 @@ pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
     }
 }
 
-pub unsafe fn pass1_1000_2913(mut param_1: i16) {
+pub unsafe fn pass1_1000_2913(mut param_1: u16) {
     let mut pcVar1: *mut c_char;
     let mut pcVar2: *mut c_char;
     let mut i_var3: i16;
     let mut unaff_di: u16;
     let mut unaff_es: u16;
-    let mut paVar4: *mut astruct_825;
+    let mut paVar4: *mut Struct825;
     let mut i_var5: i16;
 
     i_var5 = &DAT_1050_1050;
@@ -862,10 +554,10 @@ pub unsafe fn pass1_1000_22c0(
     let mut u32_var1: u32;
 
     u32_var1 = pass1_1000_2242(param_2, 0x1dfa, param_1, param_3, param_4, param_5);
-    if (u32_var1 == 0) {
-        return 0x1;
+    if u32_var1 == 0 {
+        return true;
     }
-    return 0x0;
+    return false;
 }
 
 pub unsafe fn pass1_1000_25d2(
@@ -873,92 +565,86 @@ pub unsafe fn pass1_1000_25d2(
     mut param_2: i16,
     fn_ptr_param_3: code2,
     mut param_4: i16,
-) -> *mut i16 {
-    let mut piVar1: *mut i16;
-    let mut pcVar2: *mut c_char;
-    let mut puVar3: *mut u8;
-    let mut pstruct_d_var4: *mut StructD;
-    let mut piVar5: *mut i16;
-    let mut pcVar6: *mut c_char;
-    let mut iVar7: i16;
-    let mut piVar8: *mut i16;
-    let mut pcVar9: *mut c_char;
-    let mut paVar10: *mut astruct_825;
+) -> u16 {
+    let mut var1: *mut i16;
+    let mut var2: *mut c_char;
+    // let mut pstruct_d_var4: *mut StructD;
+    let mut var8: *mut i16;
+    let mut string9: *mut c_char;
+    let mut var3 = (param_1 + 0x1 & 0xfffe);
 
-    puVar3 = (param_1 + 0x1 & 0xfffe);
-    if ((puVar3 < &param_2)
-        && (
-            pstruct_d_var4 = -(puVar3 - &param_2),
-            PTR_LOOP_1050_000a <= pstruct_d_var4.address_offset_field_0x0,
-        ))
+    let mut var5 = 0u16;
+    let mut pstruct_d_var4 = -(var3 - &param_2);
+    if (var3 < &param_2) && (PTR_LOOP_1050_000a <= pstruct_d_var4.address_offset_field_0x0)
     {
-        if (pstruct_d_var4.address_offset_field_0x0 < PTR_LOOP_1050_000c) {
+        if pstruct_d_var4.address_offset_field_0x0 < PTR_LOOP_1050_000c {
             PTR_LOOP_1050_000c = pstruct_d_var4.address_offset_field_0x0;
         }
         // WARNING: Could not recover jumptable at 0x100025f0. Too many branches
         // WARNING: Treating indirect jump as call
-        piVar5 = fn_ptr_param_3();
-        return piVar5;
+        var5 = fn_ptr_param_3();
+        return var5;
     }
-    paVar10 = (param_2 << 0x10);
-    iVar7 = 0;
+    let mut paVar10 = (param_2 << 0x10);
+    let mut offset7 = 0;
     pass1_1000_25a8();
-    pass1_1000_2913(iVar7);
-    pcVar6 = poss_str_op_1000_28dc(paVar10);
-    if (pcVar6.is_null() == false) {
-        iVar7 = 0x9;
-        if (*pcVar6 == 'M') {
-            iVar7 = 0xf;
+    pass1_1000_2913(offset7);
+    let mut string6 = poss_str_op_1000_28dc(paVar10);
+    if string6.is_null() == false {
+        offset7 = 0x9;
+        if *string6 == 'M' as i8 {
+            offset7 = 0xf;
         }
-        pcVar6 = pcVar6 + iVar7;
-        iVar7 = 0x22;
-        pcVar9 = pcVar6;
+        string6 = string6 + offset7;
+        offset7 = 0x22;
+        string9 = string6;
         loop {
-            if (iVar7 == 0) {
+            if offset7 == 0 {
                 break;
             }
-            iVar7 += -0x1;
-            pcVar2 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            if *pcVar2 == '\r' {
+            offset7 += -0x1;
+            var2 = string9;
+            string9 = string9 + 1;
+            if *var2 == '\r' as c_char {
                 break;
             }
         }
-        pcVar9[-0x1] = '\0';
+        string9[-0x1] = '\0';
     }
-    FatalAppExit16(CONCAT22(0x1050, pcVar6), 0x0);
+    // FatalAppExit16( 0x0, CONCAT22(0x1050, pcVar6));
+    FatalAppExit16(0x0, string6);
     FatalExit();
-    piVar5 = &PTR_LOOP_1050_63fe;
+    var5 = PTR_LOOP_1050_63fe;
     loop {
-        piVar1 = piVar5;
-        piVar5 = piVar5 + 1;
-        iVar7 = *piVar1;
-        piVar8 = piVar5;
-        if ((iVar7 == param_4) || (piVar8 = (iVar7 + 1), piVar8.is_null())) {
-            return piVar8;
+        var1 = var5;
+        var5 = var5 + 1;
+        offset7 = *var1;
+        var8 = var5;
+        if (offset7 == param_4) || (var8 = (offset7 + 1), var8.is_null()) {
+            return var8;
         }
-        iVar7 = -0x1;
+        offset7 = -0x1;
         loop {
-            if (iVar7 == 0) {
+            if (offset7 == 0) {
                 break;
             }
-            iVar7 += -0x1;
-            piVar1 = piVar5;
-            piVar5 = (piVar5 + 1);
-            if piVar1 == '\0' {
+            offset7 += -0x1;
+            var1 = var5;
+            var5 = (var5 + 1);
+            if var1 == '\0' {
                 break;
             }
         }
     }
 }
 
-pub unsafe fn poss_str_op_1000_28dc(param_1: *mut astruct_825) -> *mut c_char {
+pub unsafe fn poss_str_op_1000_28dc(param_1: *mut Struct825) -> *mut c_char {
     // let mut ppaVar1: *mut *mut struct_825;
-    let mut ppaVar1: *mut *mut astruct_825;
+    let mut ppaVar1: *mut *mut Struct825;
     char * piVar2;
     let mut iVar3: i16;
     char * string_var3;
-    let mut iVar2: *mut astruct_825;
+    let mut iVar2: *mut Struct825;
 
     string_var3 = PTR_LOOP_1050_63fe;
     loop {
@@ -984,72 +670,68 @@ pub unsafe fn poss_str_op_1000_28dc(param_1: *mut astruct_825) -> *mut c_char {
     }
 }
 
-pub unsafe fn pass1_1000_2950(mut param_1: i16, mut param_2: u16, mut param_3: u16) -> *mut u16 {
-    u16_t * puVar1;
-    let mut uVar2: u16;
-    let mut pcVar3: *mut c_char;
-    let mut puVar4: *mut u8;
-    let mut pcVar5: *mut c_char;
-    let mut iVar6: i16;
-    u16_t * puVar7;
-    u16_t * puVar8;
-    let mut unaff_BP: u16;
-    let mut pcVar9: *mut c_char;
-    let mut unaff_ES: u16;
-    let mut paVar10: *mut astruct_825;
+pub unsafe fn exit_op_1000_2950(ctx: &mut AppContext, mut param_1: u16, mut param_2: u16, mut param_3: u16) -> u16 {
+    let mut var2: u16;
+    let mut var3: *mut c_char;
+    let mut var6: i16;
 
-    puVar4 = PTR_LOOP_1050_6066;
-    PTR_LOOP_1050_6066 = &PTR_LOOP_1050_1000;
-    puVar8 = mem_1000_167a(param_2, param_3);
-    PTR_LOOP_1050_6066 = puVar4;
-    if ((param_2 | puVar8) != 0) {
-        return puVar8;
+    let mut var9: *mut c_char;
+
+    // let mut paVar10: *mut Struct825;
+
+    let mut var4 = PTR_LOOP_1050_6066;
+    PTR_LOOP_1050_6066 = PTR_LOOP_1050_1000;
+    let mut var8 = mem_1000_167a(param_2, param_3);
+    PTR_LOOP_1050_6066 = var4;
+    if (param_2 | var8) != 0 {
+        return var8;
     }
-    paVar10 = CONCAT22(unaff_ES, param_1);
+    let mut var10 = CONCAT22(ctx.ES_REG, param_1);
     pass1_1000_25a8();
     pass1_1000_2913(param_1);
-    pcVar5 = poss_str_op_1000_28dc(paVar10);
-    if (pcVar5.is_null() == false) {
-        iVar6 = 0x9;
-        if (*pcVar5 == 'M') {
-            iVar6 = 0xf;
+    let mut var5 = poss_str_op_1000_28dc(var10);
+    if var5.is_null() == false {
+        var6 = 0x9;
+        if *var5 == 'M' as i8 {
+            var6 = 0xf;
         }
-        pcVar5 = pcVar5 + iVar6;
-        iVar6 = 0x22;
-        pcVar9 = pcVar5;
+        var5 = var5 + var6;
+        var6 = 0x22;
+        var9 = var5;
         loop {
-            if (iVar6 == 0) {
+            if var6 == 0 {
                 break;
             }
-            iVar6 += -0x1;
-            pcVar3 = pcVar9;
-            pcVar9 = pcVar9 + 1;
-            if *pcVar3 == '\r' {
+            var6 += -0x1;
+            var3 = var9;
+            var9 = var9 + 1;
+            if *var3 == '\r' as i8 {
                 break;
             }
         }
-        pcVar9[-0x1] = '\0';
+        var9[-0x1] = '\0';
     }
-    FatalAppExit16(pcVar5, 0x0);
+    FatalAppExit16(0, var5);
     FatalExit();
-    puVar8 = &PTR_LOOP_1050_63fe;
+    var8 = PTR_LOOP_1050_63fe;
     loop {
-        puVar1 = puVar8;
-        puVar8 = puVar8 + 1;
-        uVar2 = *puVar1;
-        puVar7 = puVar8;
-        if ((uVar2 == unaff_BP) || (puVar7 = (uVar2 + 1), puVar7.is_null())) {
-            return puVar7;
+        let mut var1 = var8;
+        var8 = var8 + 1;
+        var2 = var1;
+        let mut var7 = var8;
+        var7 = var2 + 1;
+        if var2 == ctx.BP_REG || var7.is_null() {
+            return var7;
         }
-        iVar6 = -0x1;
+        var6 = -0x1;
         loop {
-            if (iVar6 == 0) {
+            if var6 == 0 {
                 break;
             }
-            iVar6 += -0x1;
-            puVar1 = puVar8;
-            puVar8 = (puVar8 + 1);
-            if puVar1 == '\0' {
+            var6 += -0x1;
+            var1 = var8;
+            var8 = (var8 + 1);
+            if var1 == '\0' {
                 break;
             }
         }
@@ -1057,8 +739,8 @@ pub unsafe fn pass1_1000_2950(mut param_1: i16, mut param_2: u16, mut param_3: u
 }
 
 pub unsafe fn pass1_1000_29dc(mut param_1: u16) -> u16 {
-    if (___EXPORTEDSTUB != 0xb8) {
-        return &DAT_1050_1050;
+    if ___EXPORTEDSTUB != 0xb8 {
+        return DAT_1050_1050;
     }
     return uRam100029ed;
 }
@@ -1081,7 +763,7 @@ pub unsafe fn pass1_1000_2a00(param_1: *mut u16) -> u16 {
     let mut iStack2: i16;
 
     iStack2 = unaff_BP + 1;
-    local_4 = SUB42(&DAT_1050_1050, 0x0);
+    local_4 = SUB42(DAT_1050_1050, 0x0);
     uVar5 = 0xffff;
     if ((*(param_1 + 0x5) & 0x40) != 0) {
         *(param_1 + 0x5) = 0;

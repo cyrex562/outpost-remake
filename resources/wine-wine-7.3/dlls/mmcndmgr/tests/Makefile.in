@@ -1,6 +1,0 @@
-EXTRADEFS = -DWINE_NO_LONG_TYPES
-TESTDLL   = mmcndmgr.dll
-IMPORTS   = ole32 shlwapi uuid
-
-C_SRCS = \
-	mmcndmgr.c

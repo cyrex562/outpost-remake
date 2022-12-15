@@ -1,6 +1,0 @@
-EXTRADEFS = -DWINE_NO_LONG_TYPES
-TESTDLL   = inetmib1.dll
-IMPORTS   = snmpapi
-
-C_SRCS = \
-	main.c

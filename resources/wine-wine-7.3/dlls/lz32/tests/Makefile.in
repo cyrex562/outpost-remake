@@ -1,6 +1,0 @@
-EXTRADEFS = -DWINE_NO_LONG_TYPES
-TESTDLL   = lz32.dll
-IMPORTS   = lz32
-
-C_SRCS = \
-	lzexpand_main.c

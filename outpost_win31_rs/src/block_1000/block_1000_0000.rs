@@ -6,13 +6,13 @@ use crate::globals::{
     DAT_1050_5f30, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_000e, REG_CS, u16_1050_0002,
     u16_1050_0008, u32_1050_0004, u32_1050_0006,
 };
-use crate::mem_ops::mem_op_1000_1532;
+use crate::mem_ops::{alloc_mem_1000_131c, free_mem_1000_13ce, mem_op_1000_1532, realloc_1000_1408};
 use crate::structs::struct_1000_07ac_1::Struct_1000_07ac_1;
 use crate::utils::{CARRY2, CONCAT11, CONCAT22};
 use std::os::raw::c_char;
 use std::ptr;
 use std::ptr::null_mut;
-use crate::block_1000::block_1000_1000::{mem_op_1000_131c, mem_op_1000_13ce, mem_op_1000_1408, mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61};
+use crate::block_1000::block_1000_1000::{mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61};
 use crate::mem_container::MemContainer;
 use crate::structs::struct_611::Struct611;
 use crate::structs::struct_7::Struct7;
@@ -440,8 +440,8 @@ pub unsafe fn mem_op_1000_03c6(
             pstruct7_var20.addr_offset_field_0x0 = 0x1000;
         }
         pstruct7_var20 = struct7_param_4.field_0x16.clone() | pstruct7_var20;
-        mem_op_1000_131c(pstruct7_var20.addr_offset_field_0x0.clone(),
-                         CONCAT22(param_2.clone() as u16,
+        alloc_mem_1000_131c(pstruct7_var20.addr_offset_field_0x0.clone(),
+                            CONCAT22(param_2.clone() as u16,
                                   param_1.clone()));
         if (u16_var3 | pstruct7_var20.clone()) != 0 {
             pu16_var5 = mem_op_1000_0308(ctx, param_3 as i16, struct7_param_4) as *mut u16;
@@ -474,7 +474,7 @@ pub unsafe fn mem_op_1000_03c6(
                 u16_var2 = (u16_var2).clone() + param_2 + CARRY2(u_var4, u16_var6.clone());
                 return u16_var3;
             }
-            mem_op_1000_13ce(pstruct7_var20.clone(), u16_var3);
+            free_mem_1000_13ce(pstruct7_var20.clone(), u16_var3);
         }
     } else {
         // &DAT_1050_1050
@@ -526,7 +526,7 @@ pub unsafe fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7)
 unsafe fn lab_1000_0595(pstruct7_param_2: *mut Struct7, b_var11: &mut bool, mut i32_var13: i32, u16_var9: &mut u32, mut u16_var14: u16) -> u32{
     if b_var11 {
         pstruct7_param_2.field_0xc = 0;
-        i32_var13 = mem_op_1000_13ce(pstruct7_param_2, u16_var14);
+        i32_var13 = free_mem_1000_13ce(pstruct7_param_2, u16_var14);
         return CONCAT22((i32_var13 >> 0x10) as u16, 1);
     }
     return u16_var9 << 0x10;
@@ -616,7 +616,7 @@ pub unsafe fn mem_1000_0670(
             u16_var16 = u16_var13;
             pu8_var9 = (u16_var8.clone() | 0x2000);
             // &DAT_1050_1050
-            mem_op_1000_1408(
+            realloc_1000_1408(
                 pu8_var9,
                 CONCAT22(u16_var6.clone(), param_1.clone() + 0x14),
                 pstruct7_param_2,

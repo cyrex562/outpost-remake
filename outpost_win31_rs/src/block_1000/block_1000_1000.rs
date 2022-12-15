@@ -1,11 +1,18 @@
-use crate::block_1000;
-use crate::block_1000::block_1000_0000::call_fn_ptr_1000_0dc6;
+use crate::{block_1000, mem_ops};
+use crate::block_1000::block_1000_0000::{call_fn_ptr_1000_0dc6, mem_op_1000_0a48, pass1_1000_010c, pass1_1000_0ed4};
 use crate::block_1000::{block_1000_0000, block_1000_2000};
-use crate::globals::{DAT_1050_5f30, REG_CS};
-use crate::utils::CONCAT22;
+use crate::globals::{DAT_1050_1050, DAT_1050_5f30, PTR_LOOP_1050_000c, PTR_LOOP_1050_1000, PTR_LOOP_1050_1040, PTR_LOOP_1050_5f26, REG_CS, u16_1050_0002};
+use crate::utils::{CARRY2, CONCAT22};
 use std::os::raw::c_char;
+use std::ptr::null_mut;
+use crate::block_1000::block_1000_2000::{mem_op_1000_21b6, msg_box_op_1000_214c, ret_true_1000_2146};
+use crate::block_1000::block_1000_5000::pass1_1000_52be;
 use crate::mem_ops::mem_op_1000_1532;
 use crate::structs::struct_7::Struct7;
+use crate::structs::struct_d::StructD;
+use crate::sys_ops::_SHI_INVOKEERRORHANDLER1;
+use crate::winbase::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
+use crate::windef::HGLOBAL16;
 
 pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
     let mut bVar1: u8;
@@ -34,7 +41,7 @@ pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
             if (bVar4 != 0x3) {
                 return 0xffffffff;
             }
-            DVar7 = get_mem_sz_1000_1532(0x0, param_1);
+            DVar7 = mem_ops::get_mem_sz_1000_1532(0x0, param_1);
             return CONCAT22((DVar7 >> 0x10) - (DVar7 < 0x14), DVar7 - 0x14);
         }
     }
@@ -50,132 +57,6 @@ pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
     return CONCAT22(i_stack4, u_stack6);
 }
 
-pub unsafe fn mem_op_1000_131c(mut param_1: u16, mut param_2: u32) {
-    let mut handle: HGLOBAL16;
-    let mut flags: u16;
-    let mut b_var1: bool;
-    let mut lVar2: i32;
-    let mut u_stack10: u16;
-    let mut u_stack8: u16;
-    let mut i_stack6: i16;
-
-    lVar2 = CONCAT22(u_stack8, u_stack10);
-    flags = 0x32;
-    i_stack6 = 0x1;
-    if (((param_1 & 0x1000) != 0) && (param_2 != 0x0 || (0xfff0 < param_2))) {
-        param_2 = 0xfff0;
-    }
-    if ((param_1 & 0x100) != 0) {
-        flags = 0x72;
-    }
-    if ((param_1 & 1) != 0) {
-        flags |= 0x2000;
-    }
-    if ((param_1 & 0x4) != 0) {
-        flags &= 0xfffd;
-        lVar2 = mem_op_1000_1558(param_2, param_2);
-    }
-    loop {
-        handle = GLobalAlloc16(param_2 & 0xffff | param_2 << 0x10, flags);
-        u_stack8 = (lVar2 >> 0x10);
-        u_stack10 = lVar2;
-        if (handle != 0) {
-            break;
-        }
-        flags &= 0xffcf;
-        b_var1 = i_stack6 != 0;
-        i_stack6 = i_stack6 -0x1;
-        if b_var1 == false {
-            break;
-        }
-    }
-    if ((param_1 & 0x4) != 0) {
-        if (handle != 0) {
-            GlobalPageLock16(handle);
-        }
-        pass1_1000_15ce(u_stack10, u_stack8);
-    }
-    if (handle == 0) {
-        return;
-    }
-    WIN16_GlobalLock16(handle);
-    return;
-}
-
-pub unsafe fn mem_op_1000_1408(mut param_1: *mut u8, re_alloc_size: u32, mut param_3: *mut Struct7, selector: u16) {
-    let mut handle: HGLOBAL16;
-    let mut global_handle_1: u32;
-    let mut realloc_flags: u16;
-    let mut global_handle_2: HGLOBAL16;
-
-    global_handle_1 = GlobalHandle16(selector);
-    //  global_handle_1 = global_handle_1;
-    realloc_flags = 0x32;
-    // (((param_1 & 0x1000) != 0) && ((re_alloc_size != 0x0 || (0xfff0 < re_alloc_size))))
-    if (((param_1 & 0x1000) != 0) && (re_alloc_size != 0x0 || 0xfff0 < re_alloc_size)) {
-        re_alloc_size = 0xfff0;
-    }
-    if ((param_1 & 0x100) != 0) {
-        realloc_flags = 0x72;
-    }
-    if ((param_1 & 0x804) != 0) {
-        realloc_flags &= 0xfffd;
-    }
-    if (global_handle_1 != 0) {
-        if ((param_1 & 0x4) != 0) {
-            GlobalPageUnlock16(global_handle_1);
-        }
-        while (global_handle_2 != 0) {
-            global_handle_2 = global_handle_1;
-            handle = GlobalReAlloc16(realloc_flags, re_alloc_size, global_handle_1);
-            if (handle != 0) {
-                break;
-            }
-            realloc_flags &= 0xffcf;
-        }
-        if ((handle != 0) && ((param_1 & 0x4) != 0)) {
-            GlobalPageLock16(handle);
-        }
-        if (handle != 0) {
-            WIN16_GlobalLock16(handle);
-            return;
-        }
-    }
-    return;
-}
-
-pub unsafe fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 {
-    let mut mem_size: u32;
-
-    // get handle to global memory
-    mem_size = GlobalHandle16(selector);
-    if mem_size != 0x0 {
-        // get size of memory area
-        mem_size = GlobalSize16(mem_size);
-        return mem_size;
-    }
-    return 0x0;
-}
-
-// WARNING: Unable to use type for symbol uVar3
-pub unsafe fn pass1_1000_15ce(param_1: *mut u16, mut param_2: u16) {
-    let mut pu_var1: *mut u16;
-    let mut u_var2: u16;
-    let mut pu_var2: *mut u16;
-    let mut u_var3: u16;
-
-    u_var2 = param_2 | param_1;
-    while (u_var2 != 0) {
-        pu_var1 = *param_1;
-        u_var3 = param_1[0x1];
-        GlobalDOSFree16(param_2);
-        param_1 = pu_var1;
-        param_2 = u_var3;
-        u_var2 = u_var3 | pu_var1;
-    }
-    return;
-}
-
 pub unsafe fn pass1_1000_16ee(mut param_1: u16, mut param_2: u16) {
     if ((param_2 | param_1) != 0) {
         block_1000_0000::call_fn_ptr_1000_0dc6(ctx, CONCAT22(param_2, param_1));
@@ -189,7 +70,7 @@ pub unsafe fn mem_op_1000_179c(mut param_1: i16, param_2: *mut astruct_57) {
 
     puVar1 = PTR_LOOP_1050_5f2c;
     puVar2 = PTR_LOOP_1050_5f2e;
-    if ((PTR_LOOP_1050_5f2e | PTR_LOOP_1050_5f2c) == 0) {
+    if (PTR_LOOP_1050_5f2e | PTR_LOOP_1050_5f2c) == 0 {
         puVar1 = mem_op_1000_160a(param_2);
         puVar2 = param_2;
     }
@@ -267,20 +148,6 @@ pub unsafe fn pass1_1000_1f68() {
     }
 }
 
-pub unsafe fn mem_op_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) -> i32 {
-    let mut HVar1: HGLOBAL16;
-    let mut uVar2: u16;
-    let mut DVar3: u32;
-
-    DVar3 = GlobalHandle16(param_2);
-    uVar2 = (DVar3 >> 0x10);
-    if (DVar3 != 0) {
-        HVar1 = GlobalFree16(DVar3);
-        return CONCAT22(uVar2, (HVar1 == 0));
-    }
-    return uVar2 << 0x10;
-}
-
 pub unsafe fn mem_op_1000_14f2(
     mut param_1: u16,
     mut param_2: u32,
@@ -291,7 +158,7 @@ pub unsafe fn mem_op_1000_14f2(
     let mut in_DX: u16;
 
     if (((param_1 & 0x1000) != 0) || (param_3 == 0x0 && (param_2 < 0xfff1))) {
-        mem_op_1000_1408(
+        mem_ops::realloc_1000_1408(
             param_1 & 0xfdff | 0x800,
             CONCAT22(param_3, param_2),
             param_4,
@@ -561,7 +428,7 @@ pub unsafe fn mem_op_1000_1902(
     loop {
         uVar3 = UVar5;
         pUVar1 = (param_2 & 0xfffb | 0x1000);
-        mem_op_1000_131c(pUVar1, 0x100);
+        mem_ops::alloc_mem_1000_131c(pUVar1, 0x100);
         UVar5 = uVar3 | pUVar1;
         if (UVar5 != 0) {
             break;
@@ -725,7 +592,7 @@ pub unsafe fn mem_op_1000_1b9a(mut param_1: u16, mut param_2: u16, mut param_3: 
             loop {
                 uVar3 = (iVar6 + 0x8);
                 (uVar3 + 0xc) = 0;
-                mem_op_1000_13ce((iVar6 + 0x8), (iVar6 + 0xa));
+                mem_ops::free_mem_1000_13ce((iVar6 + 0x8), (iVar6 + 0xa));
                 iVar6 = (iVar6 + 0x4);
                 if (uStack4 * 0x2) == iVar6 {
                     break;
@@ -746,12 +613,12 @@ pub unsafe fn mem_op_1000_1b9a(mut param_1: u16, mut param_2: u16, mut param_3: 
         }
         uVar1 = *puStack8;
         uVar2 = (uVar4 + 2);
-        mem_op_1000_13ce(uVar4, uVar5);
+        mem_ops::free_mem_1000_13ce(uVar4, uVar5);
         uVar4 = uVar1;
         uVar5 = uVar2;
     }
     block_1000_2000::pass1_1000_20a2(param_2, param_3);
-    lVar7 = mem_op_1000_13ce(param_2, param_3);
+    lVar7 = mem_ops::free_mem_1000_13ce(param_2, param_3);
     return CONCAT22((lVar7 >> 0x10), 1);
 }
 

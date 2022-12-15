@@ -627,4 +627,124 @@ pub unsafe fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
 //                         &DAT_1050_1050);
 pub unsafe fn dos3_call_1000_23ea( a: *mut u8, b: u16, c: u16, d: u16) {
     todo!()
+    //                              **************************************************************
+    //                              *                          FUNCTION                          *
+    //                              **************************************************************
+    //                              int * __cdecl16far dos3_call_1000_23ea(ushort param_1, u
+    //                                assume DS = 0x1050
+    //                                assume SS = 0x1050
+    //              int *             AX:2           <RETURN>
+    //              ushort            BX:2           param_1
+    //              ushort            ES:2           param_2
+    //                              dos3_call_1000_23ea                             XREF[1]:     entry:1000:2385(c)
+    //        1000:23ea 8c d8           MOV        AX,DS
+    //        1000:23ec 90              NOP
+    //        1000:23ed 45              INC        BP
+    //        1000:23ee 55              PUSH       BP
+    //        1000:23ef 8b ec           MOV        BP,SP
+    //        1000:23f1 1e              PUSH       DS
+    //        1000:23f2 8e d8           MOV        DS,AX
+    //        1000:23f4 b8 00 35        MOV        AX,0x3500
+    //        1000:23f7 2e f7 06        TEST       word ptr CS:[DAT_1000_22f6],0x1                  = 0088h
+    //                  f6 22 01 00
+    //        1000:23fe 74 07           JZ         LAB_1000_2407
+    //        1000:2400 9a 60 00        CALLF      KERNEL::DOS3Call                                 void DOS3Call(CONTEXT * context)
+    //                  38 15
+    //        1000:2405 eb 02           JMP        LAB_1000_2409
+    //                              LAB_1000_2407                                   XREF[1]:     1000:23fe(j)
+    //        1000:2407 cd 21           INT        0x21
+    //                              LAB_1000_2409                                   XREF[1]:     1000:2405(j)
+    //        1000:2409 89 1e 6a 5f     MOV        word ptr [PTR_LOOP_1050_5f6a],param_1            = 1050:0000
+    //        1000:240d 8c 06 6c 5f     MOV        word ptr [PTR_LOOP_1050_5f6c],param_2            = 1050:0000
+    //        1000:2411 0e              PUSH       CS
+    //        1000:2412 1f              POP        DS
+    //        1000:2413 b8 00 25        MOV        AX,0x2500
+    //        1000:2416 ba 90 28        MOV        DX,0x2890
+    //        1000:2419 2e f7 06        TEST       word ptr CS:[DAT_1000_22f6],0x1                  = 0088h
+    //                  f6 22 01 00
+    //        1000:2420 74 07           JZ         LAB_1000_2429
+    //        1000:2422 9a 60 00        CALLF      KERNEL::DOS3Call                                 void DOS3Call(CONTEXT * context)
+    //                  38 15
+    //        1000:2427 eb 02           JMP        LAB_1000_242b
+    //                              LAB_1000_2429                                   XREF[1]:     1000:2420(j)
+    //        1000:2429 cd 21           INT        0x21
+    //                              LAB_1000_242b                                   XREF[1]:     1000:2427(j)
+    //        1000:242b 0e              PUSH       CS
+    //        1000:242c e8 ad 05        CALL       pass1_1000_29dc                                  uint16_t pass1_1000_29dc(undefin
+    //        1000:242f 8e d8           MOV        DS,AX
+    //        1000:2431 8b 0e 02 62     MOV        CX,word ptr [0x6202]
+    //        1000:2435 e3 29           JCXZ       LAB_1000_2460
+    //        1000:2437 8e 06 7e 5f     MOV        param_2,word ptr [0x5f7e]
+    //        1000:243b 26 8b 36        MOV        SI,word ptr param_2:[0x2c]
+    //                  2c 00
+    //        1000:2440 a1 04 62        MOV        AX,[0x6204]
+    //        1000:2443 8b 16 06 62     MOV        DX,word ptr [0x6206]
+    //        1000:2447 33 db           XOR        param_1,param_1
+    //        1000:2449 ff 1e 00 62     CALLF      [0x6200]
+    //        1000:244d 73 03           JNC        LAB_1000_2452
+    //        1000:244f e9 7a 01        JMP        exit_1000_25cc
+    //                              LAB_1000_2452                                   XREF[1]:     1000:244d(j)
+    //        1000:2452 a1 08 62        MOV        AX,[0x6208]
+    //        1000:2455 8b 16 0a 62     MOV        DX,word ptr [0x620a]
+    //        1000:2459 bb 03 00        MOV        param_1,0x3
+    //        1000:245c ff 1e 00 62     CALLF      [0x6200]
+    //                              LAB_1000_2460                                   XREF[1]:     1000:2435(j)
+    //        1000:2460 8e 06 7e 5f     MOV        param_2,word ptr [0x5f7e]
+    //        1000:2464 26 8b 0e        MOV        CX,word ptr param_2:[0x2c]
+    //                  2c 00
+    //        1000:2469 e3 3e           JCXZ       LAB_1000_24a9
+    //        1000:246b 8e c1           MOV        param_2,CX
+    //        1000:246d 33 ff           XOR        DI,DI
+    //                              LAB_1000_246f                                   XREF[1]:     1000:2488(j)
+    //        1000:246f 26 80 3d 00     CMP        byte ptr param_2:[DI],0x0
+    //        1000:2473 74 34           JZ         LAB_1000_24a9
+    //        1000:2475 b9 0d 00        MOV        CX,0xd
+    //        1000:2478 be 5c 5f        MOV        SI,0x5f5c
+    //        1000:247b f3 a6           CMPSB.REPE param_2:DI,SI
+    //        1000:247d 74 0b           JZ         LAB_1000_248a
+    //        1000:247f b9 ff 7f        MOV        CX,0x7fff
+    //        1000:2482 33 c0           XOR        AX,AX
+    //        1000:2484 f2 ae           SCASB.RE   param_2:DI
+    //        1000:2486 75 21           JNZ        LAB_1000_24a9
+    //        1000:2488 eb e5           JMP        LAB_1000_246f
+    //                              LAB_1000_248a                                   XREF[1]:     1000:247d(j)
+    //        1000:248a 06              PUSH       param_2
+    //        1000:248b 1e              PUSH       DS
+    //        1000:248c 07              POP        param_2
+    //        1000:248d 1f              POP        DS
+    //        1000:248e 8b f7           MOV        SI,DI
+    //        1000:2490 bf 90 5f        MOV        DI,0x5f90
+    //        1000:2493 b1 04           MOV        CL,0x4
+    //                              LAB_1000_2495                                   XREF[1]:     1000:24a5(j)
+    //        1000:2495 ac              LODSB      SI
+    //        1000:2496 2c 41           SUB        AL,0x41
+    //        1000:2498 72 0d           JC         LAB_1000_24a7
+    //        1000:249a d2 e0           SHL        AL,CL
+    //        1000:249c 92              XCHG       AX,DX
+    //        1000:249d ac              LODSB      SI
+    //        1000:249e 2c 41           SUB        AL,0x41
+    //        1000:24a0 72 05           JC         LAB_1000_24a7
+    //        1000:24a2 0a c2           OR         AL,DL
+    //        1000:24a4 aa              STOSB      param_2:DI
+    //        1000:24a5 eb ee           JMP        LAB_1000_2495
+    //                              LAB_1000_24a7                                   XREF[2]:     1000:2498(j), 1000:24a0(j)
+    //        1000:24a7 06              PUSH       param_2
+    //        1000:24a8 1f              POP        DS
+    //                              LAB_1000_24a9                                   XREF[3]:     1000:2469(j), 1000:2473(j),
+    //                                                                                           1000:2486(j)
+    //        1000:24a9 be 0c 62        MOV        SI,0x620c
+    //        1000:24ac bf 0c 62        MOV        DI,0x620c
+    //        1000:24af e8 e2 00        CALL       fn_ptr_op_1000_2594                              void fn_ptr_op_1000_2594(void)
+    //        1000:24b2 be 0c 62        MOV        SI,0x620c
+    //        1000:24b5 bf 0c 62        MOV        DI,0x620c
+    //        1000:24b8 e8 d9 00        CALL       fn_ptr_op_1000_2594                              void fn_ptr_op_1000_2594(void)
+    //        1000:24bb be ee 61        MOV        SI,0x61ee
+    //        1000:24be bf fe 61        MOV        DI,0x61fe
+    //        1000:24c1 e8 d0 00        CALL       fn_ptr_op_1000_2594                              void fn_ptr_op_1000_2594(void)
+    //        1000:24c4 83 ed 02        SUB        BP,0x2
+    //        1000:24c7 8b e5           MOV        SP,BP
+    //        1000:24c9 1f              POP        DS
+    //        1000:24ca 5d              POP        BP
+    //        1000:24cb 4d              DEC        BP
+    //        1000:24cc cb              RETF
 }

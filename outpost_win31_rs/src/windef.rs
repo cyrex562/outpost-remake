@@ -2,6 +2,10 @@ use std::os::raw::c_char;
 use std::ffi::c_void;
 use crate::prog_types::{_union_655, _union_658, HANDLE16};
 
+
+
+
+
 pub type HRSRC16 = HANDLE16;
 
 pub type HANDLE16 = u16;
@@ -321,3 +325,90 @@ pub type LRESULT = *mut i32;
 
 // typedef let mut COLORREF: u32;
 pub type COLORREF = u32;
+
+pub struct CONTEXT
+{
+    // DWORD   ContextFlags;  /* 000 */
+    pub ContextFlags: u32,
+    /* These are selected by CONTEXT_DEBUG_REGISTERS */
+    // DWORD   Dr0;           /* 004 */
+    pub Dr0: u32,
+    // DWORD   Dr1;           /* 008 */
+    pub Dr1: u32,
+    // DWORD   Dr2;           /* 00c */
+    pub Dr2: u32,
+    // DWORD   Dr3;           /* 010 */
+    pub Dr3: u32,
+    // DWORD   Dr6;           /* 014 */
+    pub Dr6: u32,
+    // DWORD   Dr7;           /* 018 */
+    pub Dr7: u32,
+    /* These are selected by CONTEXT_FLOATING_POINT */
+    // FLOATING_SAVE_AREA FloatSave; /* 01c */
+    pub FloatSave: FLOATING_SAVE_AREA,
+    /* These are selected by CONTEXT_SEGMENTS */
+    // DWORD   SegGs;         /* 08c */
+    pub SegGs: u32,
+    // DWORD   SegFs;         /* 090 */
+    pub SegFs: u32,
+    // DWORD   SegEs;         /* 094 */
+    pub SegEs: u32,
+    // DWORD   SegDs;         /* 098 */
+    pub SegDs: u32,
+    /* These are selected by CONTEXT_INTEGER */
+    // DWORD   Edi;           /* 09c */
+    pub Edi: u32,
+    // DWORD   Esi;           /* 0a0 */
+    pub Esi: u32,
+    // DWORD   Ebx;           /* 0a4 */
+    pub Ebx: u32,
+    // DWORD   Edx;           /* 0a8 */
+    pub Edx: u32,
+    // DWORD   Ecx;           /* 0ac */
+    pub Ecx: u32,
+    // DWORD   Eax;           /* 0b0 */
+    pub Eax: u32,
+    /* These are selected by CONTEXT_CONTROL */
+    // DWORD   Ebp;           /* 0b4 */
+    pub Ebp: u32,
+    // DWORD   Eip;           /* 0b8 */
+    pub Eip: u32,
+    // DWORD   SegCs;         /* 0bc */
+    pub SegCs: u32,
+    // DWORD   EFlags;        /* 0c0 */
+    pub EFlags: u32,
+    // DWORD   Esp;           /* 0c4 */
+    pub Esp: u32,
+    // DWORD   SegSs;         /* 0c8 */
+    pub SegSs: u32,
+
+    // BYTE    ExtendedRegisters[MAXIMUM_SUPPORTED_EXTENSION];  /* 0xcc */
+    pub ExtendedRegisters: [u8;0xff]
+}
+
+pub const CONTEXT_X86:u32 =       0x00010000;
+pub const CONTEXT_i386: u32 =     CONTEXT_X86;
+pub const CONTEXT_i486: u32 =      CONTEXT_X86;
+
+pub const CONTEXT_CONTROL: u32 =  (CONTEXT_i386 | 0x0001);
+pub const CONTEXT_INTEGER: u32 =   (CONTEXT_i386 | 0x0002);
+pub const CONTEXT_SEGMENTS: u32 =  (CONTEXT_i386 | 0x0004);
+pub const CONTEXT_FLOATING_POINT: u32 =  (CONTEXT_i386 | 0x0008);
+pub const CONTEXT_DEBUG_REGISTERS: u32 = (CONTEXT_i386 | 0x0010);
+pub const CONTEXT_EXTENDED_REGISTERS: u32 = (CONTEXT_i386 | 0x0020);
+pub const CONTEXT_FULL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS);
+pub const CONTEXT_ALL: u32 = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS | CONTEXT_EXTENDED_REGISTERS);
+
+pub type FARPROC16 = fn() -> LRESULT;
+
+pub type TIMERPROC16 = fn(HWND16, u16, u16, u32);
+
+pub type WNDENUMPROC16 = fn(HWND16, LPARAM) -> LRESULT;
+
+pub type DLGPROC16 = fn(u32, u16, WPARAM16, LPARAM) -> bool;
+
+pub type WNDPROC16 = fn(HWND16, u16, WPARAM16, LPARAM) -> LRESULT;
+
+pub type GRAYSTRINGPROC16 = fn(HDC16, LPARAM, i16) -> bool;
+
+pub type HPALETTE16 = HANDLE16;

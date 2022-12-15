@@ -1,3 +1,5 @@
+use crate::winbase::MakeProcInstance16;
+
 pub unsafe fn pass1_1010_0000(param_1: *mut astruct_19, mut param_2: u16) -> *mut astruct_19 {
     let mut in_EDX: u32;
     let mut uVar1: u16;

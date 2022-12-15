@@ -45,7 +45,7 @@ pub unsafe fn pass1_1010_209e(param_1: u32, mut param_2: u16) {
 pub unsafe fn mixed_1010_20ba(
     param_1: *mut astruct_57,
     mut param_2: u32,
-    param_3: *mut *mut u8,
+    param_3: u32,
     mut param_4: u16,
     mut param_5: u16,
     mut param_6: u16,
