@@ -7,4 +7,5 @@ pub struct AppContext {
     pub DI_REG: u16,
     pub ES_REG: u16,
     pub BP_REG: u16,
+    pub DS_REG: u16,
 }

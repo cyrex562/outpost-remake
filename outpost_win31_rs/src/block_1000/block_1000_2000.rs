@@ -3,6 +3,8 @@ use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::block_1000;
 use crate::block_1000::block_1000_1000::mem_1000_167a;
+use crate::block_1000::block_1000_5000::ret_op_1000_55ac;
+use crate::dos_interrupt::swi;
 use crate::globals::{DAT_1050_1050, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_1000, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_6066, PTR_LOOP_1050_63fe, u8_1050_5fc9};
 use crate::structs::struct_825::Struct825;
 use crate::structs::struct_d::StructD;
@@ -99,40 +101,6 @@ pub unsafe fn init_1000_23be(mut param_1: u16, mut param_2: u16) {
         PTR_LOOP_1050_5f4a,
         HINSTANCE16_1050_5f4c,
     );
-    return;
-}
-
-// WARNING: Removing unreachable block (ram,0x10002557)
-pub unsafe fn fn_ptr_op_1000_24cd(mut param_1: u16) {
-    let mut pcVar1: *mut code;
-    let mut i_var2: i16;
-    let mut u_var2: u16;
-    let mut u_var6: u16;
-    let mut u_var5: u16;
-    let mut u_var3: u16;
-    let mut uVar4: u16;
-
-    u8_1050_5fc9 = '\0';
-    fn_ptr_op_1000_2594();
-    fn_ptr_op_1000_2594();
-    ret_op_1000_55ac();
-    fn_ptr_op_1000_2594();
-    fn_ptr_op_1000_2594();
-    dos3_op_1000_256b();
-    pcVar1 = swi(0x21);
-    (*pcVar1)();
-    return;
-}
-
-// WARNING: Removing unreachable block (ram,0x10002589)
-pub unsafe fn dos3_op_1000_256b() {
-    let mut pcVar1: *mut code;
-
-    if (PTR_LOOP_1050_6202.is_null() == false) {
-        (PTR_LOOP_1050_6200)();
-    }
-    pcVar1 = swi(0x21);
-    (*pcVar1)();
     return;
 }
 

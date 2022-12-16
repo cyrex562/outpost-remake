@@ -13,7 +13,7 @@
 
 use std::os::raw::c_char;
 use crate::block_1000::block_1000_2000::{
-    fn_ptr_op_1000_24cd, init_1000_23be, pass1_1000_25a8,
+    init_1000_23be, pass1_1000_25a8,
     pass1_1000_27d6, pass1_1000_2913, poss_str_op_1000_28dc,
 };
 use crate::block_1000::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
@@ -24,6 +24,7 @@ use std::ptr;
 use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::block_1000::block_1000_2000;
+use crate::dos_interrupt;
 use crate::dos_interrupt::swi;
 use crate::structs::struct_822::Struct822;
 use crate::structs::struct_825::Struct825;
@@ -153,7 +154,7 @@ pub unsafe fn entry_1000_24db(ctx: &mut AppContext, mut param_1: u16) {
     u8_1050_5fc9 = 0;
     block_1000_2000::fn_ptr_op_1000_2594();
     block_1000_2000::fn_ptr_op_1000_2594();
-    block_1000_2000::dos3_op_1000_256b();
+    dos_interrupt::dos3_op_1000_256b();
     let sys_call_ptr = swi(ctx, 0x21);
     sys_call_ptr::CODE(i_var2);
     return;
@@ -454,4 +455,29 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
             uVar8 -= 1;
         }
     }
+}
+
+// WARNING: Removing unreachable block (ram,0x10002557)
+pub unsafe fn fn_ptr_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
+    let mut var1: *mut code;
+    let mut var2: i16;
+    let mut var3: u16;
+    let mut var4: u16;
+    let mut var5: u16;
+    let mut var6: u16;
+    let mut var7: u16;
+
+    u8_1050_5fc9 = '\0';
+    block_1000_2000::fn_ptr_op_1000_2594();
+    block_1000_2000::fn_ptr_op_1000_2594();
+    ret_op_1000_55ac();
+    block_1000_2000::fn_ptr_op_1000_2594();
+    block_1000_2000::fn_ptr_op_1000_2594();
+    dos_interrupt::dos3_op_1000_256b();
+    // terminate with return code
+    ctx.AH_REG = 0x4c;
+    let result = swi(ctx, 0x21);
+    // (*pcVar1)();
+    todo!();
+    return;
 }
