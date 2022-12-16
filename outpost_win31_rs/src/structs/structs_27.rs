@@ -286,7 +286,7 @@ struct astruct_415 {
     pub field6_0x12: u16,
     pub field7_0x14: u16,
     pub field8_0x16: u32,
-    pub field9_0x1a: *mut astruct_19,
+    pub field9_0x1a: *mut Struct19,
     pub field10_0x1c: u8,
     pub field11_0x1d: u8,
     pub field12_0x1e: u8,

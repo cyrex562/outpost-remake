@@ -103,7 +103,7 @@ pub unsafe fn pass1_1040_11ac(param_1: *mut StructD,param_2: u8) -> *mut StructD
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn
-pass1_1040_123e(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut astruct_57
+pass1_1040_123e(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut Struct57
 
 {
   let mut in_register_0000000a: u16;
@@ -393,7 +393,7 @@ pub unsafe fn pass1_1040_178a(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_181c(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1040_181c(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -618,7 +618,7 @@ pub unsafe fn pass1_1040_1c22(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -760,7 +760,7 @@ pub unsafe fn pass1_1040_1ec8(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Unable to use type for symbol uVar6
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_1f5a(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u32)
+pub unsafe fn pass1_1040_1f5a(param_1: *mut Struct57,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut puVar1: *mut u16;
@@ -770,7 +770,7 @@ pub unsafe fn pass1_1040_1f5a(param_1: *mut astruct_57,mut param_2: u16 ,mut par
   let mut unaff_CS: u16;
   let mut uVar4: u32;
   let mut puVar5: *mut u32;
-  let mut paVar6: *mut astruct_27;
+  let mut paVar6: *mut Struct27;
   let mut in_stack_0000fe70: u16;
   let mut in_stack_0000fe78: u16;
   let mut in_stack_0000ff94: u16;

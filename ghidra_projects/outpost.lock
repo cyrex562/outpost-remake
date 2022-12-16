@@ -1,9 +1,9 @@
 #Ghidra Lock File
-#Tue Dec 13 09:12:41 EST 2022
+#Fri Dec 16 10:55:30 EST 2022
+OS\ Name=Windows 11
+OS\ Version=10.0
+Username=cyrex
+Hostname=stormwing
 <META>\ Supports\ File\ Channel\ Locking=Channel Lock
-Hostname=jam2-ub2104-621
 OS\ Architecture=amd64
-OS\ Name=Linux
-OS\ Version=5.15.2-051502-generic
-Timestamp=12/13/22, 9\:12 AM
-Username=jam2
+Timestamp=12/16/22, 10\:55 AM

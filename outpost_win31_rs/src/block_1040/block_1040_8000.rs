@@ -291,7 +291,7 @@ pub unsafe fn pass1_1040_83e6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 ) -> *mut astruct_57
+pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 ) -> *mut Struct57
 
 {
   let mut uVar1: u16;
@@ -325,7 +325,7 @@ pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut astruct_57,mut par
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> i16
+pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> i16
 
 {
   let mut uVar1: u32;
@@ -431,7 +431,7 @@ pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
+pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
 
 {
   let mut piVar1: *mut i16;
@@ -458,8 +458,8 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut astruct_37) -> *mut u8
   let mut local_104: [i16;0x80] = [0;0x80];
   let mut uStack4: u16;
   let mut uVar8: u16;
-  let mut paVar12: *mut astruct_37;
-  let mut uVar12: *mut astruct_37;
+  let mut paVar12: *mut Struct37;
+  let mut uVar12: *mut Struct37;
 
   uVar5 = (in_EDX >> 0x10);
   unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
@@ -689,7 +689,7 @@ pub unsafe fn destroy_win_1040_8b7e(mut param_1: u32)
   DestroyWindow16((param_1 + 0x6));
   return;
 }
-pub unsafe fn load_icon_1040_8b92(param_1: *mut astruct_57)
+pub unsafe fn load_icon_1040_8b92(param_1: *mut Struct57)
 
 {
   let mut bVar1: u8;
@@ -722,7 +722,7 @@ pub unsafe fn load_icon_1040_8b92(param_1: *mut astruct_57)
 
 
 pub unsafe fn create_window_1040_8bea
-                   (param_1: *mut astruct_37,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,param_5: INT16,param_6: INT16,param_7: *mut c_char) -> HANDLE16
+                   (param_1: *mut Struct37,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,param_5: INT16,param_6: INT16,param_7: *mut c_char) -> HANDLE16
 
 {
   let mut hwnd: HWND16;
@@ -747,14 +747,14 @@ pub unsafe fn create_window_1040_8bea
   }
   return wparam;
 }
-pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
+pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut Struct37)
 
 {
   let mut piVar1: *mut i16;
   let mut bVar2: u8;
   let mut HVar3: HDC16;
   let mut IVar4: i16;
-   let mut struct_1: *mut astruct_37;
+   let mut struct_1: *mut Struct37;
   let mut uVar5: u16;
 
   uVar5 = (param_1 >> 0x10);
@@ -785,14 +785,14 @@ pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut astruct_37)
   ReleaseDC16(HVar3,HVar3);
   return;
 }
-pub unsafe fn draw_text_1040_8d14(param_1: *mut astruct_37,hdc_param_2: HDC16)
+pub unsafe fn draw_text_1040_8d14(param_1: *mut Struct37,hdc_param_2: HDC16)
 
 {
   let mut in_string: LPCSTR;
   let mut bVar1: u8;
   let mut IVar2: i16;
   let mut handle: HANDLE16;
-   let mut struct_1: *mut astruct_37;
+   let mut struct_1: *mut Struct37;
   let mut uVar3: u16;
   let mut obj_handle_1: HGDIOBJ16;
 
@@ -854,7 +854,7 @@ pub unsafe fn pass1_1040_8e82(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn enable_window_1040_8ea0(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u32)
+pub unsafe fn enable_window_1040_8ea0(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
   let mut enable: bool;

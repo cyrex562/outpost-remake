@@ -1093,7 +1093,7 @@ pub unsafe fn pass1_1020_ce9e(mut param_1: u16, param_2: *mut astruct_15) {
     let mut in_EDX: u32;
     let mut uVar2: u16;
     let mut uVar3: u32;
-    let mut paVar4: *mut astruct_27;
+    let mut paVar4: *mut Struct27;
     let mut in_stack_0000fe92: u16;
     let mut in_stack_0000ffb6: u16;
     let mut in_stack_0000ffbc: u16;

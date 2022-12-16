@@ -158,7 +158,7 @@ pub unsafe fn post_msg_1020_4394(mut param_1: u32, mut param_2: u16) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn win_1020_43f6(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut StructA,
     mut param_3: u16,
     mut param_4: u16,

@@ -581,7 +581,7 @@ struct astruct_420 {
     pub field8_0x14: u16,
     pub field9_0x16: u16,
     pub field10_0x18: u16,
-    pub field11_0x1a: *mut astruct_19,
+    pub field11_0x1a: *mut Struct19,
     pub field12_0x1c: u8,
     pub field13_0x1d: u8,
     pub field14_0x1e: u8,

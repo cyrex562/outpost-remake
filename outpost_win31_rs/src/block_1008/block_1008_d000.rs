@@ -416,7 +416,7 @@ pub unsafe fn pass1_1008_d6f4(param_1: *mut u16, param_2: u8) -> *mut u16 {
     return param_1;
 }
 
-pub unsafe fn pass1_1008_d72e(param_1: *mut astruct_19, mut param_2: u16) -> *mut u16 {
+pub unsafe fn pass1_1008_d72e(param_1: *mut Struct19, mut param_2: u16) -> *mut u16 {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     param_1.offset_0x0 = 0xd780;
@@ -434,15 +434,15 @@ pub unsafe fn pass1_1008_d75a(param_1: *mut u16, param_2: u8) -> *mut u16 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1008_d790(
-    param_1: *mut astruct_19,
-    param_2: *mut astruct_19,
+    param_1: *mut Struct19,
+    param_2: *mut Struct19,
     mut param_3: u16,
 ) {
     let mut IVar1: i16;
     let mut in_EDX: u32;
     let mut uVar3: u16;
     let mut uVar2: u32;
-    let mut paVar4: *mut astruct_19;
+    let mut paVar4: *mut Struct19;
 
     uVar3 = (in_EDX >> 0x10);
     paVar4 = struct_op_1010_1d48(CONCAT22(param_2, param_1), param_3);
@@ -603,7 +603,7 @@ pub unsafe fn pass1_1008_d968(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) {
+pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
     param_2.offset_0x0 = 0xd9fa;
     (param_2 + 0x2) = 0x1008;
@@ -622,7 +622,7 @@ pub unsafe fn pass1_1008_d9d4(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn unk_draw_op_1008_da12(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn unk_draw_op_1008_da12(param_1: *mut Struct19, mut param_2: u16) {
     let mut bVar1: u8;
     let mut hdc: HDC16;
     let mut horiz_res: i16;
@@ -846,13 +846,13 @@ pub unsafe fn pass1_1008_dd1e(param_1: *mut u16, param_2: u8) -> *mut u16 {
     }
     return param_1;
 }
-pub unsafe fn struct_1008_dd4e(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1008_dd4e(param_1: *mut Struct19, mut param_2: u16) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut in_EDX: u32;
     let mut uVar4: u16;
     let mut paVar3: *mut Struct57;
-    let mut paVar5: *mut astruct_19;
+    let mut paVar5: *mut Struct19;
 
     uVar4 = (in_EDX >> 0x10);
     paVar5 = struct_op_1010_1d48(param_1, param_2);

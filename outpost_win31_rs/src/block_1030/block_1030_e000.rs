@@ -177,7 +177,7 @@ pub unsafe fn struct_1030_e2be(
 
 pub unsafe fn pass1_1030_e300(param_1: *mut u8, mut param_2: u32) -> u16 {
     let mut in_register_0000000a: u16;
-    let mut paVar1: *mut astruct_27;
+    let mut paVar1: *mut Struct27;
     let mut in_stack_0000fea2: u16;
     let mut in_stack_0000ffc6: u16;
     let mut in_stack_0000ffcc: u16;
@@ -819,7 +819,7 @@ pub unsafe fn pass1_1030_ecc2(param_1: u8, param_2: *mut astruct_97) -> *mut ast
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1030_ecf8(param_1: u8, param_2: *mut astruct_57, mut param_3: u32) {
+pub unsafe fn pass1_1030_ecf8(param_1: u8, param_2: *mut Struct57, mut param_3: u32) {
     let mut iVar1: i16;
     let mut puVar2: *mut u32;
     let mut ppcVar3: *mut *mut code;

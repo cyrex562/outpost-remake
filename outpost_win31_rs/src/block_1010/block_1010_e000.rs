@@ -532,7 +532,7 @@ pub unsafe fn FUN_1010_e9a6(mut param_1: u16, param_2: *mut StructD, param_3: u8
     }
     return param_2;
 }
-pub unsafe fn struct_1010_e9e4(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1010_e9e4(param_1: *mut Struct19, mut param_2: u16) {
     let mut puVar1: *mut u16;
     let mut uVar2: u16;
     let mut iVar3: i16;
@@ -543,7 +543,7 @@ pub unsafe fn struct_1010_e9e4(param_1: *mut astruct_19, mut param_2: u16) {
     let mut uVar8: u16;
     let mut paVar7: *mut Struct57;
     let mut iVar9: i16;
-    let mut paVar10: *mut astruct_19;
+    let mut paVar10: *mut Struct19;
     let mut puVar11: *mut u16;
     let mut iStack4: i16;
 

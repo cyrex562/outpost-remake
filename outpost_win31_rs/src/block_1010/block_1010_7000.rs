@@ -173,8 +173,8 @@ pub unsafe fn pass1_1010_71d6(
 
 // WARNING: Could not reconcile some variable overlaps
 pub unsafe fn unk_win_op_1010_7300(
-    param_1: *mut astruct_57,
-    param_2: *mut astruct_57,
+    param_1: *mut Struct57,
+    param_2: *mut Struct57,
     mut param_3: u32,
     mut param_4: u16,
     mut param_5: u32,

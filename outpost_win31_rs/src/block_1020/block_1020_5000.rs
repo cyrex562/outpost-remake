@@ -163,7 +163,7 @@ pub unsafe fn ui_op_1020_536e(
     let mut uVar16: u16;
     let mut puVar17: *mut u32;
     let pSVar18: *mut StructA;
-    let mut paVar19: *mut astruct_27;
+    let mut paVar19: *mut Struct27;
     let mut in_stack_0000fe88: u16;
     let mut in_stack_0000fe8a: u16;
     let mut in_stack_0000ff5c: u16;

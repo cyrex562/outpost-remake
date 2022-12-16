@@ -612,7 +612,7 @@ pub unsafe fn struct_1020_d954(param_1: *mut astruct_180) {
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn struct_1020_d99e(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_12,
     mut param_3: u16,
     mut param_4: i16,

@@ -1,5 +1,5 @@
 
-pub unsafe fn file_1038_6118(mut param_1: i16,param_2: *mut astruct_57,param_3: *mut astruct_373,param_4: *mut HFILE16)
+pub unsafe fn file_1038_6118(mut param_1: i16,param_2: *mut Struct57,param_3: *mut astruct_373,param_4: *mut HFILE16)
 
 {
   let mut puVar1: *mut u32;

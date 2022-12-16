@@ -165,7 +165,7 @@ pub unsafe fn pass1_1020_b2da(
     let mut uVar5: u16;
     let mut puVar6: *mut u16;
     let mut in_stack_0000fe78: u16;
-    astruct_19 * *ppaVar7;
+    Struct19 * *ppaVar7;
     let mut iStack28: i16;
     let mut local_1a: [u8; 0x6] = [0; 0x6];
     let mut uStack20: u16;

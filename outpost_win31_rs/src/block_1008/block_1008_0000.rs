@@ -534,8 +534,8 @@ pub unsafe fn win_ui_cursor_op_1008_06c0(
 
 pub unsafe fn pass1_1008_07d8(
     mut param_1: u16,
-    param_2: *mut astruct_57,
-    param_3: *mut astruct_72,
+    param_2: *mut Struct57,
+    param_3: *mut Struct72,
 ) -> BOOL16 {
     let mut uVar2: u16;
     let mut uVar1: u16;
@@ -804,7 +804,7 @@ pub unsafe fn mixed_win_op_1008_0c60(
     param_2: *mut StructD,
     mut param_3: u16,
     mut param_4: u16,
-    param_5: *mut astruct_72,
+    param_5: *mut Struct72,
     mut param_6: u16,
     mut param_7: u16,
     mut param_8: u16,
@@ -816,7 +816,7 @@ pub unsafe fn mixed_win_op_1008_0c60(
     let mut uVar7: u16;
     let mut pSVar8: *mut StructD;
     let mut uVar15: u16;
-    let mut struct_var5: *mut astruct_72;
+    let mut struct_var5: *mut Struct72;
     let mut uVar6: u16;
     let mut in_AF: u8;
     let mut uVar5: u32;
@@ -846,7 +846,7 @@ pub unsafe fn mixed_win_op_1008_0c60(
     let mut uVar10: u8;
     let mut iVar12: i16;
     let mut uVar13: u16;
-    let mut struct_var15: *mut astruct_72;
+    let mut struct_var15: *mut Struct72;
     let mut uVar14: u16;
     let mut in_stack_0000ff92: u16;
     let mut uVar11: u8;
@@ -1554,7 +1554,7 @@ pub unsafe fn mixed_win_op_1008_0c60(
 }
 pub unsafe fn caseD_a7(mut param_1: u16, mut param_2: u16) {
     let mut unaff_BP: i16;
-    let mut uVar1: *mut astruct_72;
+    let mut uVar1: *mut Struct72;
 
     ui_op_1008_2c4e(param_1, param_2, (unaff_BP + 0x6), 0x57);
     return;

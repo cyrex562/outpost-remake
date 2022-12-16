@@ -44,8 +44,8 @@ pub unsafe fn cleanup_ui_op_1020_1038(param_1: *mut astruct_868) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn window_op_1020_10a0(
-    param_1: *mut astruct_57,
-    param_2: *mut astruct_57,
+    param_1: *mut Struct57,
+    param_2: *mut Struct57,
     struct_param_1: *mut StructA,
     mut param_4: u16,
     mut param_5: u16,
@@ -498,7 +498,7 @@ pub unsafe fn pass1_1020_170a(param_1: *mut StructD, param_2: u8) -> *mut Struct
     }
     return param_1;
 }
-pub unsafe fn struct_1020_1738(param_1: *mut astruct_57, mut param_2: u16, mut param_3: u32) {
+pub unsafe fn struct_1020_1738(param_1: *mut Struct57, mut param_2: u16, mut param_3: u32) {
     let mut iVar1: *mut Struct57;
     let mut uVar1: *mut Struct57;
 
@@ -886,7 +886,7 @@ pub unsafe fn enable_window_1020_1bd4(
 
 pub unsafe fn post_win_msg_1020_1ca4(
     mut param_1: u32,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u16,
 ) -> BOOL16 {
     let mut ppcVar1: *mut *mut code;

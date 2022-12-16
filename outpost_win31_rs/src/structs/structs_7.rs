@@ -10,7 +10,7 @@ struct astruct_240 {
     pub field6_0x6: u8,
     pub field7_0x7: u8,
     pub field8_0x8: u16,
-    pub field9_0xa: *mut astruct_57
+    pub field9_0xa: *mut Struct57
 }
 
 

@@ -839,7 +839,7 @@ pub unsafe fn pass1_1028_cb04(param_1: *mut astruct_15) {
     let mut uVar11: u16;
     let mut uVar12: u16;
     let mut bVar13: bool;
-    let mut paVar14: *mut astruct_27;
+    let mut paVar14: *mut Struct27;
     let mut in_stack_0000fe70: u16;
     let mut in_stack_0000ff94: u16;
     let mut in_stack_0000ff9a: u16;

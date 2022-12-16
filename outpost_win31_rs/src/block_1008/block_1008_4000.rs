@@ -693,7 +693,7 @@ pub unsafe fn pass1_1008_48de(
     return;
 }
 pub unsafe fn struct_op_1008_48fe(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_81,
     mut param_3: u16,
     param_4: *mut c_char,
@@ -988,7 +988,7 @@ pub unsafe fn pass1_1008_4ef6(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn file_and_draw_op_1008_4f20(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_76,
     mut param_3: u32,
     mut param_4: u16,

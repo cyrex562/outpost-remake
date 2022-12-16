@@ -749,7 +749,7 @@ pub unsafe fn read_file_1038_7c02(param_1: u16,param_2: u16,param_3: *mut u32,pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1038_7d10(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut astruct_57
+pub unsafe fn pass1_1038_7d10(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u16 ) -> *mut Struct57
 
 {
   let mut in_register_0000000a: u16;
@@ -806,7 +806,7 @@ pub unsafe fn destroy_window_1038_7d88(mut param_1: u32,mut param_2: u16 ,mut pa
 
 
 
-pub unsafe fn pass1_1038_7dac(param_1: *mut astruct_903,mut param_2: u16 ) -> LRESULT
+pub unsafe fn pass1_1038_7dac(param_1: *mut Struct903,mut param_2: u16 ) -> LRESULT
 
 {
   let mut LVar1: LRESULT;
@@ -815,7 +815,7 @@ pub unsafe fn pass1_1038_7dac(param_1: *mut astruct_903,mut param_2: u16 ) -> LR
   LVar1 = send_dlg_item_msg_1038_844a(param_1);
   return LVar1;
 }
-pub unsafe fn pass1_1038_7dc6(param_1: *mut u8,pstruct903_param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u32)
+pub unsafe fn pass1_1038_7dc6(param_1: *mut u8,pstruct903_param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
   let mut bVar1: bool;
@@ -877,7 +877,7 @@ pub unsafe fn pass1_1038_7dc6(param_1: *mut u8,pstruct903_param_2: *mut astruct_
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut astruct_903) -> LRESULT
+pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut Struct903) -> LRESULT
 
 {
   let mut in_EDX: *mut Struct57;
@@ -932,7 +932,7 @@ pub unsafe fn send_dlg_item_msg_1038_7fae(mut param_1: u16 ,mut param_2: u16 ,mu
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1038_801a(mut param_1: u16 ,param_2: *mut astruct_903) -> u32
+pub unsafe fn pass1_1038_801a(mut param_1: u16 ,param_2: *mut Struct903) -> u32
 
 {
   let mut uVar1: u16;

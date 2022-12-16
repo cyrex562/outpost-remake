@@ -28,7 +28,7 @@ pub unsafe fn pass1_1030_301a(mut param_1: u16, mut param_2: u32, param_3: *mut 
 
 pub unsafe fn pass1_1030_3058(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     param_3: *mut astruct_375,
 ) -> u16 {
     let mut puVar1: *mut u16;

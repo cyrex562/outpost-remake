@@ -130,7 +130,7 @@ pub unsafe fn FUN_1028_d222() -> u16 {
 pub unsafe fn FUN_1028_d228() -> u16 {
     return 0x1;
 }
-pub unsafe fn struct_1028_d22e(param_1: *mut astruct_57, param_2: *mut u32, mut param_3: u32) {
+pub unsafe fn struct_1028_d22e(param_1: *mut Struct57, param_2: *mut u32, mut param_3: u32) {
     let mut uVar1: u16;
     let mut pSVar2: *mut StructD;
     let mut uVar3: u16;
@@ -439,7 +439,7 @@ pub unsafe fn pass1_1028_d7de(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1028_d81c(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_136,
     mut param_3: u32,
 ) {

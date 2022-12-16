@@ -208,7 +208,7 @@ pub unsafe fn pass1_1040_557c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Unable to use type for symbol uVar1
-pub unsafe fn pass1_1040_5626(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 )
+pub unsafe fn pass1_1040_5626(param_1: *mut Struct57,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 )
 
 {
   let mut uVar2: u32;

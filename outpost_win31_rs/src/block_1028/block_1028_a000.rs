@@ -60,7 +60,7 @@ pub unsafe fn pass1_1028_a188(
     let mut unaff_SI: u16;
     let mut uVar14: u16;
     let mut paVar15: *mut astruct_67;
-    let mut paVar16: *mut astruct_27;
+    let mut paVar16: *mut Struct27;
     let mut in_stack_0000fe70: u16;
     let mut in_stack_0000ff94: u16;
     let mut in_stack_0000ff9a: u16;
@@ -212,7 +212,7 @@ pub unsafe fn pass1_1028_a3ae(
     let mut paVar4: *mut Struct57;
     let mut uVar5: u16;
     let mut unaff_SI: u16;
-    let mut paVar6: *mut astruct_27;
+    let mut paVar6: *mut Struct27;
     let mut in_stack_0000fd5a: u16;
     let mut in_stack_0000fe7e: u16;
     let mut in_stack_0000fe84: u16;
@@ -390,7 +390,7 @@ pub unsafe fn pass1_1028_a61e(
     let mut uVar2: u32;
     let mut iVar3: i16;
     let mut uVar4: u16;
-    let mut paVar5: *mut astruct_27;
+    let mut paVar5: *mut Struct27;
     let mut in_stack_0000fe84: u16;
     let mut in_stack_0000ffa8: u16;
     let mut in_stack_0000ffae: u16;
@@ -916,7 +916,7 @@ pub unsafe fn pass1_1028_aec0(mut param_1: i16, mut param_2: u16, mut param_3: u
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn pass1_1028_af08(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_693,
     mut param_3: u16,
 ) -> u16 {
@@ -929,7 +929,7 @@ pub unsafe fn pass1_1028_af08(
     let mut uVar6: u16;
     let mut puVar7: *mut u32;
     let mut paVar8: *mut astruct_67;
-    let mut paVar9: *mut astruct_27;
+    let mut paVar9: *mut Struct27;
     let mut in_stack_0000fe86: u16;
     let mut in_stack_0000ffaa: u16;
     let mut in_stack_0000ffb0: u16;

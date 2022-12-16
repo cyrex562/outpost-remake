@@ -1,5 +1,5 @@
 
-pub unsafe fn struct_1040_b082(param_1: *mut astruct_57,mut param_2: u32)
+pub unsafe fn struct_1040_b082(param_1: *mut Struct57,mut param_2: u32)
 
 {
   let mut iVar1: *mut Struct57;
@@ -14,7 +14,7 @@ pub unsafe fn struct_1040_b082(param_1: *mut astruct_57,mut param_2: u32)
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   return;
 }
-pub unsafe fn pass1_1040_b0bc(param_1: *mut astruct_57,mut param_2: u32,mut param_3: u32)
+pub unsafe fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_3: u32)
 
 {
   let mut iVar1: *mut Struct57;
@@ -374,7 +374,7 @@ pub unsafe fn pass1_1040_b4c8(param_1: *mut u8,mut param_2: u32)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u32)
+pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
   let mut pSVar1: *mut StructD;
@@ -542,7 +542,7 @@ pub unsafe fn pass1_1040_b74c(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub unsafe fn pass1_1040_b7ee(param_1: *mut astruct_57,param_2: i32,mut param_3: u16 )
+pub unsafe fn pass1_1040_b7ee(param_1: *mut Struct57,param_2: i32,mut param_3: u16 )
 
 {
   let mut iVar1: *mut Struct57;

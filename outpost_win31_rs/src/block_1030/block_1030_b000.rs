@@ -590,7 +590,7 @@ pub unsafe fn pass1_1030_b9b2(mut param_1: u32) {
     return;
 }
 pub unsafe fn pass1_1030_b9da(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_172,
     param_3: *mut astruct_402,
     mut param_4: u32,

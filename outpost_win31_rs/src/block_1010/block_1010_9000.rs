@@ -184,7 +184,7 @@ pub unsafe fn pass1_1010_927a(param_1: *mut u16) {
 
 pub unsafe fn pass1_1010_9298(
     param_1: *mut StructD,
-    param_2: *mut astruct_19,
+    param_2: *mut Struct19,
     mut param_3: u16,
 ) -> u32 {
     let mut uVar1: u16;
@@ -431,7 +431,7 @@ pub unsafe fn pass1_1010_9540(param_1: *mut u16, param_2: u8) -> *mut u16 {
     }
     return param_1;
 }
-pub unsafe fn struct_1010_95aa(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1010_95aa(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;

@@ -6,7 +6,7 @@ pub struct StructA {
     pub field1_0x2: u16,
     pub field2_0x4: u16,
     pub field3_0x6: u16,
-    pub field4_0x8: HWND16,
+    pub win_handle_0x8: HWND16,
     pub field5_0xa: u16,
     pub field6_0xc: u16,
     pub field7_0xe: u16,

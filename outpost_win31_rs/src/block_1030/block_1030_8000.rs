@@ -53,7 +53,7 @@ pub unsafe fn pass1_1030_80ee(param_1: *mut astruct_611, param_2: u8) -> *mut as
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn struct_1030_8128(param_1: *mut astruct_57, param_2: *mut astruct_135) {
+pub unsafe fn struct_1030_8128(param_1: *mut Struct57, param_2: *mut astruct_135) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut pSVar3: *mut StructD;

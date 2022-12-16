@@ -1,6 +1,6 @@
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_6402(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u16 )
+pub unsafe fn pass1_1040_6402(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -225,7 +225,7 @@ pub unsafe fn pass1_1040_6794(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub unsafe fn pass1_1040_6826(param_1: *mut astruct_57,mut param_2: u16 )
+pub unsafe fn pass1_1040_6826(param_1: *mut Struct57,mut param_2: u16 )
 
 {
   let mut iVar1: *mut Struct57;
@@ -316,7 +316,7 @@ pub unsafe fn pass1_1040_692e(param_1: u32)
 // WARNING: Unable to use type for symbol uVar19
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn mixed_win_ui_op_1040_6942
-               (param_1: *mut astruct_57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
+               (param_1: *mut Struct57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
 {
   let mut pvVar1: LPVOID = null_mut();
@@ -546,7 +546,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
 
 {
   let mut ppcVar1: *mut *mut code;
-  let mut paVar2: *mut astruct_27;
+  let mut paVar2: *mut Struct27;
   let mut in_DX: *mut u8;
   let mut local_a: RECT16;
   let mut iStack6: i16;
@@ -648,7 +648,7 @@ pub unsafe fn pass1_1040_6f0c(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub unsafe fn pass1_1040_6fb6(param_1: *mut astruct_57,mut param_2: u16 )
+pub unsafe fn pass1_1040_6fb6(param_1: *mut Struct57,mut param_2: u16 )
 
 {
   let mut iVar1: *mut Struct57;

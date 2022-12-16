@@ -740,7 +740,7 @@ pub unsafe fn pass1_1008_ea86(param_1: *mut u16, param_2: u8, mut param_3: u16) 
     return param_1;
 }
 
-pub unsafe fn pass1_1008_eabc(param_1: *mut astruct_19, mut param_2: u16) -> *mut u16 {
+pub unsafe fn pass1_1008_eabc(param_1: *mut Struct19, mut param_2: u16) -> *mut u16 {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     pass1_1008_3e38((param_1 & 0xffff0000 | (param_1 + 0xc)));
@@ -756,7 +756,7 @@ pub unsafe fn pass1_1008_eaf4(param_1: *mut u16, param_2: u8, mut param_3: u16) 
     }
     return param_1;
 }
-pub unsafe fn pass1_1008_eb2a(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn pass1_1008_eb2a(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xc) = 0;
@@ -838,9 +838,9 @@ pub unsafe fn pass1_1008_ec94(param_1: *mut StructD) {
 pub unsafe fn struct_1008_ecb2(
     mut param_1: u16,
     mut param_2: u16,
-    param_3: *mut astruct_19,
+    param_3: *mut Struct19,
     mut param_4: u16,
-) -> *mut astruct_19 {
+) -> *mut Struct19 {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
 

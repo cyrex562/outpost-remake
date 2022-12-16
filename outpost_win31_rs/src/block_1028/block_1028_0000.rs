@@ -1,4 +1,4 @@
-pub unsafe fn struct_1028_0068(param_1: *mut astruct_57,param_2: *mut astruct_180)
+pub unsafe fn struct_1028_0068(param_1: *mut Struct57,param_2: *mut astruct_180)
 
 {
   let mut uVar1: u16;
@@ -211,7 +211,7 @@ pub unsafe fn pass1_1028_0374(mut param_1: i16,param_2: *mut u8,param_3: *mut as
   let mut local_c: [u16;0x3] = [0;0x3];
   let mut uStack6: u16;
   let mut local_4: u16;
-  let mut uVar2: *mut astruct_728;
+  let mut uVar2: *mut Struct728;
 
   file_1028_b81a(param_1,param_2,param_3,param_4);
   if (param_1 != 0) {

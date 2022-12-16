@@ -39,7 +39,7 @@ use crate::windef::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
 
 pub unsafe fn win_ui_op_1040_0000(
     ctx: &mut AppContext,
-    pstruct57_param_1: *mut astruct_57,
+    pstruct57_param_1: *mut Struct57,
     pstructb_param_2: *mut StructB,
     mut param_3: u16,
 ) {
@@ -445,12 +445,12 @@ pub unsafe fn pass1_1040_0656(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 pub unsafe fn pass1_1040_06e8(
     param_1: *mut StructD,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u32,
     mut param_4: u16,
     mut param_5: u16,
     mut param_6: u16,
-) -> *mut astruct_57 {
+) -> *mut Struct57 {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut iVar1: *mut Struct57;
@@ -791,12 +791,12 @@ pub unsafe fn pass1_1040_0b6a(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 pub unsafe fn pass1_1040_0bfc(
     param_1: *mut StructD,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u32,
     mut param_4: u16,
     mut param_5: u16,
     mut param_6: u16,
-) -> *mut astruct_57 {
+) -> *mut Struct57 {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut iVar1: *mut Struct57;
@@ -920,7 +920,7 @@ pub unsafe fn pass1_1040_0d8a(param_1: *mut StructD, param_2: u8) -> *mut Struct
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1040_0e1c(
     param_1: *mut StructD,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u16,
     mut param_4: u32,
     mut param_5: u16,

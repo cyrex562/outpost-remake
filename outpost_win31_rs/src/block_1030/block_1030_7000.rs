@@ -859,7 +859,7 @@ pub unsafe fn pass1_1030_7c28(
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1030_7c50(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     param_3: *mut astruct_305,
     param_4: i32,
     mut param_5: i16,
@@ -971,7 +971,7 @@ pub unsafe fn pass1_1030_7d7c(
 }
 pub unsafe fn pass1_1030_7ddc(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u32,
     param_4: i32,
     mut param_5: u16,

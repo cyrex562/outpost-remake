@@ -420,7 +420,7 @@ pub unsafe fn pass1_1008_87cc(
     let mut in_stack_0000ff9a: u16;
     let mut in_stack_0000ff9e: u16;
     let mut piStack48: *mut i16;
-    let mut local_24: *mut astruct_19;
+    let mut local_24: *mut Struct19;
     let mut uStack32: u16;
     let mut uStack30: u32;
     let mut pcStack26: *mut c_char;

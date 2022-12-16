@@ -557,7 +557,7 @@ pub unsafe fn struct_1020_790e(
     mut param_3: u16,
     mut param_4: u32,
 ) {
-    let mut iVar1: *mut astruct_271;
+    let mut iVar1: *mut Struct271;
     let mut uVar1: u16;
 
     unk_draw_op_1008_7f62(param_1, param_3, param_4);

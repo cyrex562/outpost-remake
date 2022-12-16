@@ -95,7 +95,7 @@ pub unsafe fn pass1_1028_74ae(param_1: *mut astruct_97) -> *mut astruct_97 {
     return param_1;
 }
 
-pub unsafe fn pass1_1028_74e4(param_1: u8, param_2: *mut astruct_57, mut param_3: u32) -> u16 {
+pub unsafe fn pass1_1028_74e4(param_1: u8, param_2: *mut Struct57, mut param_3: u32) -> u16 {
     let mut iVar1: i16;
 
     pass1_1028_7fb6(param_1, param_3);
@@ -431,7 +431,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8, param_2: i32, mut param_3: u32) {
     let mut bVar16: bool;
     let mut puVar17: *mut u16;
     let mut puVar18: *mut u16;
-    let mut paVar19: *mut astruct_27;
+    let mut paVar19: *mut Struct27;
     let mut puVar20: *mut u32;
     let mut in_stack_0000fd48: u16;
     let mut in_stack_0000fd4e: u16;
@@ -712,7 +712,7 @@ pub unsafe fn pass1_1028_78b8(param_1: u8, param_2: i32, mut param_3: u32) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1028_7c4e(param_1: *mut astruct_57, mut param_2: u32) {
+pub unsafe fn pass1_1028_7c4e(param_1: *mut Struct57, mut param_2: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut puVar2: *mut u8;
     let mut paVar3: *mut astruct_92;

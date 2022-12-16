@@ -1,5 +1,5 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn message_box_op_1008_12dc(param_1: *mut astruct_72, mut param_2: u32) {
+pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
     let mut in_DX: u16;
@@ -67,11 +67,11 @@ pub unsafe fn win_ui_op_1008_1414(
     let mut iVar17: *mut astruct_20;
     let mut unaff_SI: u16;
     let mut unaff_DI: u16;
-    let mut uVar16: *mut astruct_72;
+    let mut uVar16: *mut Struct72;
     let mut puVar9: *mut u32;
     let mut pcVar10: *mut c_char;
     let mut puVar11: *mut u32;
-    let mut paVar12: *mut astruct_27;
+    let mut paVar12: *mut Struct27;
     let mut in_stack_0000fe3c: u16;
     let mut in_stack_0000fe3e: u16;
     let mut in_stack_0000fe4e: u16;
@@ -193,7 +193,7 @@ pub unsafe fn win_ui_op_1008_1414(
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn big_switch_1008_15d4(
     param_1: *mut astruct_20,
-    param_2: *mut astruct_72,
+    param_2: *mut Struct72,
     param_3: i32,
 ) {
     let mut var3: u16;

@@ -330,7 +330,7 @@ pub unsafe fn pass1_1020_3540(
     let mut iVar1: i16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
-    let mut iVar2: *mut astruct_279;
+    let mut iVar2: *mut Struct279;
     let mut iStack18: i16;
     let mut iStack12: i16;
     let mut iStack10: i16;
@@ -399,7 +399,7 @@ pub unsafe fn struct_1020_3644(
     let mut in_stack_0000ff76: u16;
     let mut in_stack_0000ff7c: u16;
     let mut in_stack_0000ff80: u16;
-    let mut iVar1: *mut astruct_270;
+    let mut iVar1: *mut Struct270;
 
     struct_1020_790e(&param_2.field0_0x0, NULL, param_3, param_4);
     in_buf_len_5 = (param_2 >> 0x10);
@@ -527,7 +527,7 @@ pub unsafe fn pass1_1020_3898(param_1: *mut astruct_30) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn window_op_1020_38aa(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut StructA,
     mut param_3: u16,
     mut param_4: u16,

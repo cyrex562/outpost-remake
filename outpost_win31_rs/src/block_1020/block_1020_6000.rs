@@ -721,7 +721,7 @@ pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn window_op_1020_6c3a(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     struct_param_1: *mut StructA,
     mut param_3: u16,
     mut param_4: u16,

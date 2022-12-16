@@ -14,6 +14,7 @@ pub type HTASK16 = HANDLE16;
 pub type HINSTANCE16 = HANDLE16;
 pub type HWND16 = HANDLE16;
 pub type HMENU16 = HANDLE16;
+pub type BOOL16 = u16;
 
 // typedef SEGPTR: u32;
 pub type SEGPTR = u32;

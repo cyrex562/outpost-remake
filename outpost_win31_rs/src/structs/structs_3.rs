@@ -1031,5 +1031,5 @@ struct astruct_897 {
     pub field141_0x8e: u8,
     pub field142_0x8f: u8,
     pub field143_0x90: *mut astruct_18,
-    pub field144_0x94: *mut astruct_27
+    pub field144_0x94: *mut Struct27
 }

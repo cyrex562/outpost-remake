@@ -888,7 +888,7 @@ pub unsafe fn pass1_1028_2c28(
 pub unsafe fn pass1_1028_2e40(param_1: u8, mut param_2: i16, param_3: *mut u8, param_4: *mut u32) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
-    let mut paVar2: *mut astruct_27;
+    let mut paVar2: *mut Struct27;
     let mut in_stack_0000fe9e: u16;
     let mut in_stack_0000ffc2: u16;
     let mut in_stack_0000ffc8: u16;
@@ -926,7 +926,7 @@ pub unsafe fn pass1_1028_2e84(
 ) {
     let mut paVar1: *mut Struct57;
     let mut paVar2: *mut astruct_67;
-    let mut paVar3: *mut astruct_27;
+    let mut paVar3: *mut Struct27;
     let mut puVar4: *mut u32;
     let mut in_stack_0000fe88: u16;
     let mut in_stack_0000fe90: u16;

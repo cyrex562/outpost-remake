@@ -581,7 +581,7 @@ pub unsafe fn pass1_1030_2958(param_1: *mut astruct_180, mut param_2: u32) {
 }
 pub unsafe fn struct_1030_299a(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     param_3: *mut astruct_352,
     mut param_4: u32,
 ) {

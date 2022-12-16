@@ -11,7 +11,7 @@ pub unsafe fn win_ui_op_1040_311a(mut param_1: i16,mut param_2: u16 ,mut param_3
   let mut uVar4: u16;
   let mut uVar3: u32;
   let mut LVar5: LRESULT;
-  let mut paVar6: *mut astruct_27;
+  let mut paVar6: *mut Struct27;
   let mut in_stack_0000fe8e: u16;
   let mut in_stack_0000ffb2: u16;
   let mut in_stack_0000ffb8: u16;
@@ -179,7 +179,7 @@ pub unsafe fn pass1_1040_3410(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_34a2(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1040_34a2(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -234,7 +234,7 @@ pub unsafe fn pass1_1040_3532(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
 
 {
   let mut in_register_0000000a: u16;
-  let mut paVar1: *mut astruct_27;
+  let mut paVar1: *mut Struct27;
   let mut in_stack_0000fea0: u16;
   let mut in_stack_0000ffc4: u16;
   let mut in_stack_0000ffca: u16;
@@ -367,7 +367,7 @@ pub unsafe fn message_box_op_1040_37f0(mut param_1: u16 ,mut param_2: i16,mut pa
   let mut iVar6: i16;
   let mut local_40c: [u8;0x402] = [0;0x402];
   let mut pcStack10: *mut c_char;
-  let mut paStack6: *mut astruct_27;
+  let mut paStack6: *mut Struct27;
 
   paVar3 = CONCAT22(in_register_0000000a,param_1);
   if (param_5 == 0x193) {
@@ -415,7 +415,7 @@ pub unsafe fn pass1_1040_38d4(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_3966(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1040_3966(param_1: *mut u8,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -474,7 +474,7 @@ pub unsafe fn pass1_1040_3a0e(param_1: *mut u8,mut param_2: u16 ,mut param_3: u1
 
 {
   let mut in_register_0000000a: u16;
-  let mut paVar1: *mut astruct_27;
+  let mut paVar1: *mut Struct27;
   let mut in_stack_0000fea0: u16;
   let mut in_stack_0000ffc4: u16;
   let mut in_stack_0000ffca: u16;
@@ -611,7 +611,7 @@ pub unsafe fn unk_win_ui_op_1040_3c64
   let mut in_register_0000000a: u16;
   let mut uVar3: u32;
   let mut LVar4: LRESULT;
-  let mut paVar5: *mut astruct_27;
+  let mut paVar5: *mut Struct27;
   let mut in_stack_0000fe9a: u16;
   let mut in_stack_0000ffbe: u16;
   let mut in_stack_0000ffc4: u16;

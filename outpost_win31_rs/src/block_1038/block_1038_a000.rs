@@ -29,7 +29,7 @@ pub unsafe fn pass1_1038_a090(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1038_a122(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> *mut astruct_57
+pub unsafe fn pass1_1038_a122(param_1: *mut Struct57,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> *mut Struct57
 
 {
   get_sys_metrics_1040_7728
@@ -59,7 +59,7 @@ pub unsafe fn pass1_1038_a174(mut param_1: u32,mut param_2: i16)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut astruct_57,param_2: *mut StructB,mut param_3: u16 )
+pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut Struct57,param_2: *mut StructB,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -626,7 +626,7 @@ pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1038_ab82(param_1: *mut astruct_57,mut param_2: u16 ) -> *mut astruct_57
+pub unsafe fn pass1_1038_ab82(param_1: *mut Struct57,mut param_2: u16 ) -> *mut Struct57
 
 {
   get_sys_metrics_1040_7728(param_1,0x1,0x0,0xfd3,param_2);

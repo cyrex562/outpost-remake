@@ -193,7 +193,7 @@ pub unsafe fn pass1_1008_6330(param_1: *mut astruct_456, param_2: u8) {
     }
     return;
 }
-pub unsafe fn file_1008_6414(param_1: *mut astruct_57, param_2: *mut u32, param_3: *mut c_char) {
+pub unsafe fn file_1008_6414(param_1: *mut Struct57, param_2: *mut u32, param_3: *mut c_char) {
     let mut ppcVar1: *mut *mut code;
     let mut paVar2: *mut astruct_76;
     let mut pstruct81_3: *mut astruct_81;
@@ -295,7 +295,7 @@ pub unsafe fn pass1_1008_64c8(
 }
 
 pub unsafe fn pass1_1008_6562(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_76,
     mut param_3: u32,
     mut param_4: i16,

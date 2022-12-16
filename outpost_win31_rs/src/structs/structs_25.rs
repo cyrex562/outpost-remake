@@ -1,5 +1,5 @@
 
-struct astruct_276 {
+struct Struct276 {
     pub field0_0x0: u8,
     pub field1_0x1: u8,
     pub field2_0x2: u16,
@@ -12,7 +12,7 @@ struct astruct_276 {
 
 
 
-struct astruct_278 {
+struct Struct278 {
     pub field0_0x0: u8,
     pub field1_0x1: u8,
     pub field2_0x2: u16,
@@ -682,7 +682,7 @@ struct astruct_414 {
     pub field6_0x12: u16,
     pub field7_0x14: u16,
     pub field8_0x16: u32,
-    pub field9_0x1a: *mut astruct_19,
+    pub field9_0x1a: *mut Struct19,
     pub field10_0x1c: u8,
     pub field11_0x1d: u8,
     pub field12_0x1e: u8,

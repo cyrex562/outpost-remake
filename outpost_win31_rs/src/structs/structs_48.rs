@@ -71,7 +71,7 @@ struct astruct_384 {
 
 
 
-struct astruct_728 {
+struct Struct728 {
     pub field0_0x0: u8,
     pub field1_0x1: u8,
     pub field2_0x2: u16,

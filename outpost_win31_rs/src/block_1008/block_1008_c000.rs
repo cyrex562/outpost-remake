@@ -79,7 +79,7 @@ pub unsafe fn pass1_1008_c6fa(param_1: *mut i16, mut param_2: i16) -> *mut u32 {
     }
     return NULL;
 }
-pub unsafe fn pass1_1008_c72a(param_1: *mut astruct_19, mut param_2: u16, mut param_3: u16) {
+pub unsafe fn pass1_1008_c72a(param_1: *mut Struct19, mut param_2: u16, mut param_3: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;
@@ -153,15 +153,15 @@ pub unsafe fn pass1_1008_c79a(mut param_1: u32, param_2: *mut c_char) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1008_c83a(param_1: *mut astruct_201) {
+pub unsafe fn pass1_1008_c83a(param_1: *mut Struct201) {
     if (*_PTR_LOOP_1050_65e2 <= (param_1 + 0xe)) {
         return;
     }
     return;
 }
 
-pub unsafe fn pass1_1008_c85e(param_1: *mut astruct_201) -> u32 {
-    let mut iVar1: *mut astruct_201;
+pub unsafe fn pass1_1008_c85e(param_1: *mut Struct201) -> u32 {
+    let mut iVar1: *mut Struct201;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -173,7 +173,7 @@ pub unsafe fn pass1_1008_c85e(param_1: *mut astruct_201) -> u32 {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1008_c882(param_1: *mut astruct_201) {
+pub unsafe fn pass1_1008_c882(param_1: *mut Struct201) {
     let mut piVar1: *mut i16;
     let mut uVar2: u16;
     let mut puVar3: *mut u32;
@@ -187,7 +187,7 @@ pub unsafe fn pass1_1008_c882(param_1: *mut astruct_201) {
     let mut paVar10: *mut Struct57;
     let mut uVar12: u32;
     let mut paVar13: *mut Struct57;
-    let mut iVar9: *mut astruct_201;
+    let mut iVar9: *mut Struct201;
     let mut unaff_SI: u16;
     let mut uVar14: u16;
     let mut uVar15: u8;
@@ -314,7 +314,7 @@ pub unsafe fn pass1_1008_ca24(mut param_1: u32, param_2: u8) -> u32 {
     }
     return param_1;
 }
-pub unsafe fn pass1_1008_ca5a(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn pass1_1008_ca5a(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;

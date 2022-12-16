@@ -441,7 +441,7 @@ struct astruct_66 {
 
 
 
-struct astruct_279 {
+struct Struct279 {
 }
 
 

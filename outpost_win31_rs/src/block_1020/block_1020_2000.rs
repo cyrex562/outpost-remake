@@ -426,7 +426,7 @@ pub unsafe fn pass1_1020_25c0(mut param_1: u16, mut param_2: u16, mut param_3: u
     let mut uVar3: u16;
     let mut in_register_0000000a: u16;
     let mut paVar4: *mut Struct57;
-    let mut iVar3: *mut astruct_277;
+    let mut iVar3: *mut Struct277;
     let mut uVar5: u16;
     let mut paStack10: *mut Struct57;
     let mut puStack6: *mut u32;
@@ -462,7 +462,7 @@ pub unsafe fn pass1_1020_25c0(mut param_1: u16, mut param_2: u16, mut param_3: u
 }
 pub unsafe fn window_op_1020_2642(
     param_1: *mut astruct_664,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     param_3: *mut StructA,
 ) {
     let mut uVar1: u16;
@@ -686,14 +686,14 @@ pub unsafe fn realize_palette_1020_2992(mut param_1: u32, mut param_2: i16) {
 
 pub unsafe fn send_msg_1020_29d8(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     param_3: *mut astruct_69,
     mut param_4: u16,
     mut param_5: u32,
     mut param_6: u16,
 ) -> u32 {
     let mut puVar1: *mut u8;
-    let mut paVar2: *mut astruct_27;
+    let mut paVar2: *mut Struct27;
     let mut in_stack_0000fe9e: u16;
     let mut in_stack_0000ffc2: u16;
     let mut in_stack_0000ffc8: u16;
@@ -922,7 +922,7 @@ pub unsafe fn destroy_icon_1020_2c88(param_1: *mut astruct_869) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn win_ui_op_1020_2cf0(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut StructA,
     mut param_3: u16,
     mut param_4: u16,
@@ -1011,7 +1011,7 @@ pub unsafe fn pass1_1020_2e24(param_1: *mut StructD, param_2: u8) -> *mut Struct
 // WARNING: Unable to use type for symbol puVar2
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn load_draw_op_1020_2ede(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     mut param_2: u16,
     param_3: *mut astruct_40,
     param_4: *mut StructA,

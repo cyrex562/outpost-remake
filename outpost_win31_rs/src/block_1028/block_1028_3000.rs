@@ -239,7 +239,7 @@ pub unsafe fn pass1_1028_3718(param_1: *mut StructD, param_2: u8) -> *mut Struct
     }
     return param_1;
 }
-pub unsafe fn struct_1028_37a6(param_1: *mut astruct_57, param_2: *mut astruct_180) {
+pub unsafe fn struct_1028_37a6(param_1: *mut Struct57, param_2: *mut astruct_180) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut iVar3: *mut astruct_180;
@@ -266,7 +266,7 @@ pub unsafe fn struct_1028_37a6(param_1: *mut astruct_57, param_2: *mut astruct_1
     return;
 }
 pub unsafe fn pass1_1028_3816(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_12,
     mut param_3: i16,
     mut param_4: u32,

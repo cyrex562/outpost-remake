@@ -588,7 +588,7 @@ pub unsafe fn pass1_1028_9a02(
     let mut uVar8: u16;
     let mut iVar10: i16;
     let mut uVar11: u16;
-    let mut paVar12: *mut astruct_27;
+    let mut paVar12: *mut Struct27;
     let mut paVar13: *mut astruct_67;
     let mut in_stack_0000fe62: u16;
     let mut in_stack_0000fe70: u16;
@@ -849,7 +849,7 @@ pub unsafe fn pass1_1028_9efc(
     let mut paVar12: *mut Struct57;
     let mut paVar13: *mut astruct_67;
     let mut paVar14: *mut astruct_690;
-    let mut paVar15: *mut astruct_27;
+    let mut paVar15: *mut Struct27;
     let mut in_stack_0000fe6e: u16;
     let mut in_stack_0000ff92: u16;
     let mut in_stack_0000ff98: u16;

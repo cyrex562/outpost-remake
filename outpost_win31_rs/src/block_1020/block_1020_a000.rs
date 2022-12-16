@@ -128,10 +128,10 @@ pub unsafe fn pass1_1020_a54c(
     let mut uVar6: u16;
     let mut uVar7: u16;
     let mut local_140: [u8; 0x124] = [0; 0x124];
-    let mut ppaStack28: *mut *mut astruct_19 = null_mut();
+    let mut ppaStack28: *mut *mut Struct19 = null_mut();
     let mut local_18: i16;
     let mut local_16: u16;
-    let mut local_14: *mut astruct_19;
+    let mut local_14: *mut Struct19;
     let mut puStack16: *mut u8;
     let mut uStack14: u16;
     let mut uStack12: u16;

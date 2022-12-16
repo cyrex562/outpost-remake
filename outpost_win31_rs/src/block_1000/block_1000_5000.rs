@@ -1,98 +1,89 @@
+use std::ptr::null_mut;
+use crate::app_context::AppContext;
+use crate::block_1000::block_1000_1000::mem_1000_167a;
+use crate::block_1000::block_1000_2000::pass1_1000_29b5;
+use crate::block_1000::block_1000_3000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
+use crate::block_1000::block_1000_4000::dos3_call_set_struct_1000_42de;
+use crate::dos_interrupt::{dos3_call_1000_4f94, swi};
+use crate::utils::{CARRY2, CONCAT22, SUB42};
 
-pub unsafe fn pass1_1000_5008(mut param_1: u16 ,
-                     mut param_2: u16 ,
-                     mut param_3: u16 )
+pub unsafe fn pass1_1000_5008(mut param_1: u16,
+                              mut param_2: u16,
+                              mut param_3: u16 )
 {
-    pass1_1000_5026(0x0,
-                    param_1,
-                    param_2,
-                    param_3);
+    pass1_1000_5026(
+        ctx, 0x0,
+        param_1,
+        param_2,
+        param_3);
 }
 
 
 
 // WARNING: Could not reconcile some variable overlaps
-pub unsafe fn pass1_1000_5026(mut param_1: i16,
-                     mut param_2: u16 ,
-                     mut param_3: u16 ,
-                     mut param_4: u16 )
+pub unsafe fn pass1_1000_5026(
+    ctx: &mut AppContext, mut param_1: i16,
+    mut param_2: u16,
+    mut param_3: u16,
+    mut param_4: u16)
 {
-    let mut u_var1: u16;
-    let mut u_var2: u16;
-    let mut unaff_bp: i16;
-    let mut u_stack304: u32;
-    // u16 local_12c[0x3];
-    let mut local_12c: [u16;3] = [0;3];
-    let mut u_stack294: u16;
-    // local_124: *mut u8[0x6];
-    let mut local_124: [*mut u8;6] = [null_mut();6];
-    let mut i_stack280: i16;
-    let mut local_116: u8;
-    let mut uStack277: u8;
-    let mut cStack272: u8;
-    let mut puStack270: *mut u8;
-    let mut local_108: u8;
-    let mut uStack263: u8;
-    let mut uStack262: u8;
-    //  261[0x101];
-    let mut auStack261: [u8;0x101] = [0;0x101];
-    let mut local_4: u16;
-    let mut i_stack2: i16;
+    let mut var1: u16;
+    let mut var2: u16;
+    let mut var4: [u16;3] = [0;3];
+    let mut var5: u16;
+    let mut var6: [*mut u8;6] = [null_mut();6];
+    let mut var7: i16;
+    let mut var8: u8;
+    let mut var9: u8;
+    let mut var10: u8;
+    // let mut var11: *mut u8;
+    let mut var12: u8;
+    let mut var13: u8;
+    let mut var14: u8;
+    let mut var15: [u8;0x101] = [0;0x101];
 
-    i_stack2 = unaff_bp + 1;
-    local_4 = SUB42(&DAT_1050_1050,
-                    0x0);
-    u_stack304 =  CONCAT22(0x1050,
-                                   &local_108);
-    if (param_1 == 0) {
+
+    let mut var17 = ctx.BP_REG + 1;
+    let var16 = 0x1050u16;
+    let mut var3 =  &var12;
+    if param_1 == 0 {
         param_1 = dos3_call_1000_4f94();
     }
-    *u_stack304 =  param_1 + '@';
-    uStack263 = 0x3a;
-    puStack270 = auStack261;
-    uStack262 = 0x5c;
-    uStack277 = 0x47;
-    cStack272 =  param_1;
-    local_12c[0] = SUB42(&DAT_1050_1050,
-                         0x0);
-    u_stack294 = SUB42(&DAT_1050_1050,
-                       0x0);
-    dos3_call_set_struct_1000_42de( CONCAT22(0x1050,
-                                                            &local_116),
-                                    CONCAT22(0x1050,
-                                                            local_124),
-                                    CONCAT22(0x1050,
-                                                    local_12c));
-    if (i_stack280 == 0) {
-        u_var1 = str_op_1000_3da4( CONCAT22(0x1050,
-                                                    &local_108));
-        u_var1 += 0x1;
-        u_stack304 = param_2;
-        u_stack304 = param_3;
-        u_var2 = param_3 | param_2;
-        if (u_var2 == 0) {
-            if ( param_4 < u_var1) {
-                param_4 = u_var1;
+    *var3 =  param_1 + '@';
+    let mut var13 = 0x3au8;
+    let mut var11 = var15;
+    let mut var14 = 0x5cu8;
+    let mut var9 = 0x47u8;
+    let mut var10 =  param_1;
+    var4[0] = 0x1050u16;
+    let mut var5 = 0x1050u16;
+    dos3_call_set_struct_1000_42de(&mut var8,&mut var6, &mut var4);
+    if var7 == 0 {
+        var1 = str_op_1000_3da4( &var12);
+        var1 += 0x1;
+        var3 = param_2;
+        var3 = param_3;
+        var2 = param_3 | param_2;
+        if var2 == 0 {
+            if param_4 < var1 {
+                param_4 = var1;
             }
-            u_stack304 = mem_1000_167a(0x0,
-                                                              param_4);
-            u_stack304 = u_var2;
-            if ((u_var2 | u_stack304) == 0) {
-                PTR_LOOP_1050_5f78 =  &PTR_LOOP_1050_000c;
+            var3 = mem_1000_167a(0x0,
+                                 param_4);
+            var3 = var2;
+            if (var2 | var3) == 0 {
+                PTR_LOOP_1050_5f78 =  0xc;
                 return;
             }
         }
-        if ( param_4 < u_var1) {
-            PTR_LOOP_1050_5f78 =  ( s_New_failed_in_Op__Op_1050_0020 + 2);
+        if param_4 < var1 {
+            PTR_LOOP_1050_5f78 = 0x22;
         } else {
-            unk_str_op_1000_3d3e( CONCAT22(u_stack304,
-                                                   u_stack304),
-                                  CONCAT22(0x1050,
-                                                   &local_108));
+            unk_str_op_1000_3d3e(var3,&var12);
         }
     } else {
-        PTR_LOOP_1050_5f78 =  ( &PTR_LOOP_1050_000c + 1);
-        PTR_LOOP_1050_5f88 = local_124[0];
+        PTR_LOOP_1050_5f78 =  0xd;
+        PTR_LOOP_1050_5f88 = var6[0];
     }
     return;
 }

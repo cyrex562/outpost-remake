@@ -20,7 +20,7 @@ struct astruct_20 {
     pub field6_0xe: u16,
     pub field7_0x10: *mut astruct_20,
     pub field8_0x14: u16,
-    pub field9_0x16: *mut astruct_19,
+    pub field9_0x16: *mut Struct19,
     pub field10_0x18: u16,
     pub field11_0x1a: u16,
     pub field12_0x1c: u16,

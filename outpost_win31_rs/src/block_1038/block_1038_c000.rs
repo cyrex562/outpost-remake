@@ -189,7 +189,7 @@ pub unsafe fn pass1_1038_c410(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1038_c4a2(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1038_c4a2(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -242,7 +242,7 @@ pub unsafe fn pass1_1038_c52a(param_1: *mut u8,mut param_2: u16 ,mut param_3: u3
 
 {
   let mut in_register_0000000a: u16;
-  let mut paVar1: *mut astruct_27;
+  let mut paVar1: *mut Struct27;
   let mut in_stack_0000fea0: u16;
   let mut in_stack_0000ffc4: u16;
   let mut in_stack_0000ffca: u16;
@@ -360,7 +360,7 @@ pub unsafe fn pass1_1038_c726(StructD_32: *mut StructD,param_2: u8) -> *mut Stru
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 pub unsafe fn
-pass1_1038_c7b8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut astruct_57
+pass1_1038_c7b8(param_1: *mut u8,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut Struct57
 
 {
   let mut in_register_0000000a: u16;
@@ -562,7 +562,7 @@ pub unsafe fn pass1_1038_ca46(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1038_cad8(param_1: *mut u8,param_2: *mut astruct_57,mut param_3: u16 ) -> *mut astruct_57
+pub unsafe fn pass1_1038_cad8(param_1: *mut u8,param_2: *mut Struct57,mut param_3: u16 ) -> *mut Struct57
 
 {
   let mut in_register_0000000a: u16;
@@ -717,7 +717,7 @@ pub unsafe fn pass1_1038_cc74(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1038_cd06(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1038_cd06(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;

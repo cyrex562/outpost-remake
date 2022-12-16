@@ -1,6 +1,6 @@
 pub unsafe fn switch_1030_0000(
     mut param_1: u16,
-    param_2: *mut astruct_57,
+    param_2: *mut Struct57,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: i16,

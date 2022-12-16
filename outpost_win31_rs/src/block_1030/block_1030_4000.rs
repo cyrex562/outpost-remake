@@ -1,7 +1,7 @@
 use crate::file_ops;
 
 pub unsafe fn struct_1030_44be(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_138,
     mut param_3: u16,
     mut param_4: u16,

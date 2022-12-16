@@ -103,7 +103,7 @@ pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29) {
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Unable to use type for symbol puVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn unk_draw_op_1018_c578(param_1: *mut astruct_57, param_2: *mut astruct_36) {
+pub unsafe fn unk_draw_op_1018_c578(param_1: *mut Struct57, param_2: *mut astruct_36) {
     let mut paVar1: *mut astruct_76;
     let mut uVar2: u16;
     let mut uVar5: u16;
@@ -741,7 +741,7 @@ pub unsafe fn pass1_1018_cd60(
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn unk_draw_op_1018_cda8(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     mut param_2: u16,
     mut param_3: u16,
     struct36_param_1: *mut astruct_36,
@@ -895,7 +895,7 @@ pub unsafe fn pass1_1018_cf74(
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn unk_draw_op_1018_cfc0(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     mut param_2: u16,
     struct36_param_1: *mut astruct_36,
 ) {

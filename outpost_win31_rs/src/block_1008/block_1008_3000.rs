@@ -48,7 +48,7 @@ pub unsafe fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut astruct_72) {
+pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut Struct72) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut paVar2: *mut astruct_484;
@@ -102,7 +102,7 @@ pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut astruct_72, mut param_3: i16) {
+pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3: i16) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut puVar3: *mut u16;
@@ -661,8 +661,8 @@ pub unsafe fn pass1_1008_3afe(param_1: *mut u16, param_2: u8) {
 }
 pub unsafe fn pass1_1008_3bd6(
     mut param_1: u32,
-    param_2: *mut astruct_57,
-    param_3: *mut astruct_57,
+    param_2: *mut Struct57,
+    param_3: *mut Struct57,
     mut param_4: u16,
     mut param_5: u32,
     mut param_6: u16,
@@ -782,7 +782,7 @@ pub unsafe fn pass1_1008_3e0e(param_1: *mut StructA) {
     return;
 }
 
-pub unsafe fn pass1_1008_3e38(param_1: *mut astruct_19) -> *mut u16 {
+pub unsafe fn pass1_1008_3e38(param_1: *mut Struct19) -> *mut u16 {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);

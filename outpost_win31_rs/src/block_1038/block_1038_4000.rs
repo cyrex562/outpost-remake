@@ -851,7 +851,7 @@ pub unsafe fn pass1_1038_4d6e(mut param_1: u16 ,param_2: *mut u8,param_3: *mut a
     uStack14 += 0x1;
   }
 }
-pub unsafe fn pass1_1038_4e78(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u32,param_4: *mut u32)
+pub unsafe fn pass1_1038_4e78(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32,param_4: *mut u32)
 
 {
   let mut piVar1: *mut i16;

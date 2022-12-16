@@ -7,7 +7,7 @@ pub unsafe fn pass1_1010_5004(param_1: *mut StructD, param_2: u8, mut param_3: u
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_503e(param_1: *mut u8, param_2: *mut astruct_19, mut param_3: u16) {
+pub unsafe fn pass1_1010_503e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
     // just 0x5099
     // 0x1010:509a = ptr to fn ptr in table
@@ -25,7 +25,7 @@ pub unsafe fn pass1_1010_5074(param_1: *mut StructD, param_2: u8) -> *mut Struct
     }
     return param_1;
 }
-pub unsafe fn struct_1010_50b2(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1010_50b2(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xc) = 0;
@@ -241,7 +241,7 @@ pub unsafe fn pass1_1010_53ce(param_1: *mut u16, param_2: u8) -> *mut u16 {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut astruct_19, mut param_3: u16) {
+pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut param_3: u16) {
     let mut piVar1: *mut i16;
     let mut ppuVar2: *mut *mut u16;
     let mut uVar3: u32;
@@ -261,7 +261,7 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut astruct_19, m
     let mut puVar16: *mut u8;
     let mut uVar17: u16;
     let mut uVar18: u16;
-    let mut paVar19: *mut astruct_19;
+    let mut paVar19: *mut Struct19;
     let mut pcVar20: *mut c_char;
     let mut puVar21: *mut u32;
     let mut in_stack_0000fd74: u16;

@@ -106,13 +106,13 @@ pub unsafe fn pass1_1010_a198(param_1: *mut u16, param_2: u8) -> *mut u16 {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn struct_1010_a1d8(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn struct_1010_a1d8(param_1: *mut Struct19, mut param_2: u16) {
     let mut iVar1: i16;
     let mut ppcVar2: *mut *mut code;
     let mut in_EDX: u32;
     let mut uVar3: u16;
     let mut unaff_SI: u16;
-    let mut paVar4: *mut astruct_19;
+    let mut paVar4: *mut Struct19;
     let mut puVar5: *mut u32;
     let mut in_stack_0000fe4e: u16;
     let mut in_stack_0000ff72: u16;
@@ -339,7 +339,7 @@ pub unsafe fn pass1_1010_a69c(mut param_1: i16, mut param_2: u16, param_3: u32, 
     let mut puVar6: *mut u32;
     let mut paVar7: *mut astruct_25;
     let mut paVar8: *mut astruct_67;
-    let mut paVar9: *mut astruct_27;
+    let mut paVar9: *mut Struct27;
     let mut in_stack_0000fe74: u16;
     let mut in_stack_0000fe76: u16;
     let mut in_stack_0000fe78: u16;

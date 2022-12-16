@@ -202,7 +202,7 @@ pub unsafe fn pass1_1030_c2fa(mut param_1: i16, param_2: *mut u8, mut param_3: u
     let mut uVar9: u16;
     let mut uVar10: u16;
     let mut puVar11: *mut u32;
-    let mut paVar12: *mut astruct_27;
+    let mut paVar12: *mut Struct27;
     let mut in_stack_0000fe4e: u16;
     let mut in_stack_0000ff72: u16;
     let mut in_stack_0000ff78: u16;

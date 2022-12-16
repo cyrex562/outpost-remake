@@ -230,10 +230,10 @@ pub unsafe fn unk_draw_op_1040_9458(param_1: *mut astruct_17,param_2: u8,mut par
   }
   return;
 }
-pub unsafe fn draw_text_1040_94fc(struct_param_1: *mut astruct_37,hdc_param_2: HDC16)
+pub unsafe fn draw_text_1040_94fc(struct_param_1: *mut Struct37,hdc_param_2: HDC16)
 
 {
-   let mut struct_1: *mut astruct_37;
+   let mut struct_1: *mut Struct37;
   let mut struct_1_lo: u16;
   let mut colorref_2: COLORREF;
   let mut u16_var_1: u16;

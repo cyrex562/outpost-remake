@@ -463,7 +463,7 @@ struct astruct_353 {
     pub field13_0xe: u8,
     pub field14_0xf: u8,
     pub field15_0x10: u32,
-    pub field16_0x14: *mut astruct_19,
+    pub field16_0x14: *mut Struct19,
     pub field17_0x16: u8,
     pub field18_0x17: u8,
     pub field19_0x18: u8,

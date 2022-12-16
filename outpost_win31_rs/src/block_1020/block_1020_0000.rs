@@ -476,9 +476,9 @@ pub unsafe fn struct_1020_0762(
     iVar1.base_0x2 = 0x1020;
     return;
 }
-pub unsafe fn pass1_1020_07aa(mut param_1: u16, param_2: *mut astruct_19) {
-    let mut iVar1: *mut astruct_19;
-    let mut uVar2: *mut astruct_19;
+pub unsafe fn pass1_1020_07aa(mut param_1: u16, param_2: *mut Struct19) {
+    let mut iVar1: *mut Struct19;
+    let mut uVar2: *mut Struct19;
     let mut local_16: [u8; 0x14] = [0; 0x14];
 
     draw_op_1020_041e(param_2);
@@ -653,7 +653,7 @@ pub unsafe fn pass1_1020_0ae8(param_1: *mut astruct_63, param_2: u8) -> *mut ast
 pub unsafe fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
-    let mut iVar2: *mut astruct_276;
+    let mut iVar2: *mut Struct276;
     let mut uVar2: u16;
     let mut puVar3: *mut u32;
     let mut in_stack_0000fe82: u16;

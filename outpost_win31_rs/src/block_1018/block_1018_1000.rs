@@ -503,14 +503,14 @@ pub unsafe fn FUN_1018_184e(mut param_1: u16, param_2: *mut StructD, param_3: u8
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1018_18b8(param_1: *mut astruct_19, mut param_2: u16) {
+pub unsafe fn pass1_1018_18b8(param_1: *mut Struct19, mut param_2: u16) {
     let mut uVar2: u16;
     let mut uVar4: u16;
     let mut in_EDX: u32;
     let mut paVar5: *mut Struct57;
     let mut uVar6: u32;
-    let mut iVar3: *mut astruct_19;
-    let mut uVar3: *mut astruct_19;
+    let mut iVar3: *mut Struct19;
+    let mut uVar3: *mut Struct19;
     let mut puVar7: *mut u16;
     let mut puVar8: *mut u32;
     let mut uVar9: u32;
@@ -918,11 +918,11 @@ pub unsafe fn pass1_1018_1e78(mut param_1: u32, mut param_2: i16) -> u32 {
     }
     return CONCAT22(0x1050, param_2 * 0x1e + 0x3c18);
 }
-pub unsafe fn get_sys_metrics_1018_1ea0(param_1: *mut astruct_19) {
+pub unsafe fn get_sys_metrics_1018_1ea0(param_1: *mut Struct19) {
     let mut IVar1: i16;
     let mut IVar2: i16;
-    let mut iVar3: *mut astruct_19;
-    let mut uVar3: *mut astruct_19;
+    let mut iVar3: *mut Struct19;
+    let mut uVar3: *mut Struct19;
 
     IVar1 = GetSystemMetrics16(SM_CXBORDER);
     uVar3 = (param_1 >> 0x10);
@@ -1005,11 +1005,11 @@ pub unsafe fn pass1_1018_1f8a(param_1: *mut StructD, param_2: u8) -> *mut u16 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1018_1ff4(param_1: *mut astruct_19, mut param_2: u16) -> u32 {
+pub unsafe fn pass1_1018_1ff4(param_1: *mut Struct19, mut param_2: u16) -> u32 {
     let mut piVar1: *mut i16;
     let mut in_EDX: u32;
     let mut uVar2: u16;
-    let mut paVar3: *mut astruct_19;
+    let mut paVar3: *mut Struct19;
     let mut puVar4: *mut u32;
     let mut in_stack_0000fe82: u16;
     let mut in_stack_0000ffa6: u16;

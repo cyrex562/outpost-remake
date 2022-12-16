@@ -39,7 +39,7 @@ pub unsafe fn pass1_1040_70a0(param_1: u32)
 // WARNING: Unable to use type for symbol uVar15
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn mixed_win_ui_op_1040_70b4
-               (param_1: *mut astruct_57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
+               (param_1: *mut Struct57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
 {
   let mut pvVar1: LPVOID = null_mut();
@@ -372,7 +372,7 @@ pub unsafe fn pass1_1040_767e(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub unsafe fn get_sys_metrics_1040_7728(param_1: *mut astruct_57,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 )
+pub unsafe fn get_sys_metrics_1040_7728(param_1: *mut Struct57,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 )
 
 {
   let mut IVar1: i16;

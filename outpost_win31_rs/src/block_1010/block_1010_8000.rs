@@ -696,11 +696,11 @@ pub unsafe fn msg_box_op_1010_8bb4(mut param_1: u16, mut param_2: u16, mut param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pass1_1010_8c32(param_1: *mut astruct_19, mut param_2: u16) -> u32 {
+pub unsafe fn pass1_1010_8c32(param_1: *mut Struct19, mut param_2: u16) -> u32 {
     let mut in_EDX: u32;
     let mut uVar1: u16;
     let mut unaff_BP: u16;
-    let mut paVar2: *mut astruct_19;
+    let mut paVar2: *mut Struct19;
     let mut puVar3: *mut u32;
     let mut in_stack_0000fea6: u16;
     let mut in_stack_0000ffca: u16;
@@ -900,7 +900,7 @@ pub unsafe fn pass1_1010_8ebc(mut param_1: u32, param_2: u8) -> u32 {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1010_8ef2(
-    param_1: *mut astruct_57,
+    param_1: *mut Struct57,
     param_2: *mut astruct_170,
     mut param_3: u16,
     mut param_4: u16,

@@ -1147,22 +1147,6 @@ Low-level Error: Symbol $$undef00000008 extends beyond the end of the address sp
 
 // WARNING: Removing unreachable block (ram,0x10004f47)
 
-pub unsafe fn dos3_call_1000_4f20() -> u16 {
-    let mut pcVar1: *mut code;
-    let mut uVar2: u16;
-    let mut unaff_BP: i16;
-    let mut bVar2: bool;
-
-    bVar2 = false;
-    pcVar1 = swi(0x21);
-    uVar2 = (*pcVar1)(&DAT_1050_1050, unaff_BP + 1);
-    if (bVar2) {
-        pass1_1000_29b5(uVar2);
-        return 0xffff;
-    }
-    return 0x0;
-}
-
 // WARNING: Removing unreachable block (ram,0x10004f47)
 
 pub unsafe fn pass1_1000_4f2e() -> u16 {
@@ -1184,64 +1168,7 @@ pub unsafe fn pass1_1000_4f2e() -> u16 {
 
 // WARNING: Removing unreachable block (ram,0x10004f6d)
 
-pub unsafe fn dos3call_1000_4f54(mut param_1: u32) -> u16 {
-    let mut c_var1: u8;
-    let mut pc_var2: *mut code;
-    let mut u_var3: u16;
-    let mut unaff_bp: i16;
-    let mut b_var3: bool;
-    let mut u_var5: u32;
-
-    b_var3 = false;
-    pc_var2 = swi(0x21);
-    u_var5 = (*pc_var2)(&DAT_1050_1050, unaff_bp + 1);
-    u_var5 = (u_var5 >> 0x10);
-    u_var5 = u_var5;
-    u_var3 = u_var5;
-    if ((b_var3) && (b_var3 = u_var5 < 0x10, u_var5 == 0x10)) {
-        loop {
-            c_var1 = *u_var5;
-            u_var5 = u_var5 + 1;
-            if (c_var1 == '\0') {
-                // TODO: goto LAB_1000_4f90;
-            }
-            if !((c_var1 != '?') && (c_var1 != '*')) {
-                break;
-            }
-        }
-        u_var3 = 0x3; //
-                      //        LAB_1000_4f90:
-        b_var3 = true;
-    }
-    if (!b_var3) {
-        return 0x0;
-    }
-    pass1_1000_29b5(u_var3);
-    return 0xffff;
-}
-
 // WARNING: Removing unreachable block (ram,0x10004fa9)
-
-pub unsafe fn dos3_call_1000_4f94() -> i16 {
-    let fn_ptr_1: code6 = swi(0x21);
-    //    bVar2 = (*pcVar1)(unaff_BP + 1);
-    let b_var2: i16 = fn_ptr_1(unaff_BP + 1);
-    return b_var2 + 1;
-}
 
 // WARNING: Removing unreachable block (ram,0x10004fd7)
 // WARNING: Removing unreachable block (ram,0x10004feb)
-
-pub unsafe fn dos3_call_1000_4fbe(param_1: u8) -> u16 {
-    //    unaff_BP: i16;
-
-    let fn_ptr_var1: code6 = swi(0x21);
-    (fn_ptr_var1)(unaff_BP + 1);
-    let fn_ptr_var2: code4 = swi(0x21);
-    let c_var2 = fn_ptr_var2();
-    let u_var3 = 0xffff;
-    if (c_var2 + '\x01' == param_1) {
-        u_var3 = 0;
-    }
-    return u_var3;
-}

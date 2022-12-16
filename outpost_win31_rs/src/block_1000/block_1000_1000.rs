@@ -64,7 +64,7 @@ pub unsafe fn pass1_1000_16ee(mut param_1: u16, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn mem_op_1000_179c(mut param_1: i16, param_2: *mut astruct_57) {
+pub unsafe fn mem_op_1000_179c(mut param_1: i16, param_2: *mut Struct57) {
     let mut puVar1: *mut u8;
     let mut puVar2: *mut u8;
 

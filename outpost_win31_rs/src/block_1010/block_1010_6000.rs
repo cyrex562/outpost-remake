@@ -18,12 +18,12 @@ pub unsafe fn pass1_1010_6006(mut param_1: u16 ,param_2: *mut astruct_486,param_
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut astruct_19)
+pub unsafe fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut Struct19)
 
 {
   let mut puVar1: *mut u16;
-  let mut struct_1: *mut astruct_19;
-  let mut struct_1_hi: *mut astruct_19;
+  let mut struct_1: *mut Struct19;
+  let mut struct_1_hi: *mut Struct19;
 
   struct_1_hi = (param_2 >> 0x10);
   struct_1 = param_2;
@@ -41,7 +41,7 @@ pub unsafe fn pass1_1010_6034(mut param_1: u16 ,param_2: *mut astruct_19)
   struct_1[0x1].field_0xe = param_1;
   return;
 }
-pub unsafe fn pass1_1010_60a0(param_1: *mut astruct_19)
+pub unsafe fn pass1_1010_60a0(param_1: *mut Struct19)
 
 {
   (param_1 + 0x76) = 0x5;
@@ -120,7 +120,7 @@ pub unsafe fn pass1_1010_6118(mut param_1: u32)
   }
   return;
 }
-pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut param_2: i16)
+pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut Struct19,mut param_2: i16)
 
 {
   let mut uVar2: u16;
@@ -135,7 +135,7 @@ pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut astruct_19,mut 
   let mut uVar6: u16;
   let mut uVar7: u16;
   let mut uVar8: u16;
-  let mut iVar5: *mut astruct_19;
+  let mut iVar5: *mut Struct19;
   let mut iVar6: i16;
   let mut uVar9: u16;
   let mut unaff_SS: u16;
@@ -219,7 +219,7 @@ pub unsafe fn pass1_1010_62ec(param_1: u8,mut param_2: u16 ,param_3: *mut Struct
   }
   return param_3;
 }
-pub unsafe fn struct_1010_6326(param_1: *mut astruct_19,mut param_2: u16 )
+pub unsafe fn struct_1010_6326(param_1: *mut Struct19,mut param_2: u16 )
 
 {
   struct_op_1010_1d48(param_1,param_2);
@@ -234,11 +234,11 @@ pub unsafe fn struct_1010_6326(param_1: *mut astruct_19,mut param_2: u16 )
   (param_1 + 0x2) = 0x1010;
   return;
 }
-pub unsafe fn write_to_file_1010_6372(param_1: *mut astruct_729,mut param_2: u32)
+pub unsafe fn write_to_file_1010_6372(param_1: *mut Struct729,mut param_2: u32)
 
 {
   let mut BVar1: bool;
-  let mut iVar2: *mut astruct_729;
+  let mut iVar2: *mut Struct729;
   let mut uVar2: u16;
   let mut in_stack_0000ffce: HFILE16;
   //let mut local_10: [u32;0x2] = [0;0x2];
@@ -443,7 +443,7 @@ pub unsafe fn  pass1_1010_66ca(param_1: *mut u16,param_2: u8) -> *mut u16
 
 
 
-pub unsafe fn pass1_1010_6700(param_1: *mut astruct_19,mut param_2: u16 ) -> *mut astruct_19
+pub unsafe fn pass1_1010_6700(param_1: *mut Struct19,mut param_2: u16 ) -> *mut Struct19
 
 {
   struct_op_1010_1d48(param_1,param_2);
@@ -646,14 +646,14 @@ pub unsafe fn pass1_1010_6a86(param_1: *mut u16,param_2: u8) -> *mut u16
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_6abc(param_1: *mut astruct_19,mut param_2: u16 ,mut param_3: u16 )
+pub unsafe fn pass1_1010_6abc(param_1: *mut Struct19,mut param_2: u16 ,mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
   let mut in_EDX: u32;
   let mut uVar3: u16;
   let mut paVar2: *mut Struct57;
-  let mut paVar4: *mut astruct_19;
+  let mut paVar4: *mut Struct19;
   let mut puVar5: *mut u32;
   let mut in_stack_0000fe94: u16;
   let mut in_stack_0000fe9e: u16;

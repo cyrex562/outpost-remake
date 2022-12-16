@@ -160,7 +160,7 @@ pub unsafe fn pass1_1040_2358(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_23ea(mut param_1: u16 ,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ,
+pub unsafe fn pass1_1040_23ea(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ,
                     param_7: *mut *mut u8)
 
 {
@@ -237,7 +237,7 @@ pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn win_ui_op_1040_2512(param_1: *mut astruct_57,mut param_2: u16 ,param_3: *mut StructC,mut param_4: u32,mut param_5: u16 ) -> u32
+pub unsafe fn win_ui_op_1040_2512(param_1: *mut Struct57,mut param_2: u16 ,param_3: *mut StructC,mut param_4: u32,mut param_5: u16 ) -> u32
 
 {
   let mut puVar1: *mut u32;
@@ -546,7 +546,7 @@ pub unsafe fn pass1_1040_2930(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn pas1_1040_29c2(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut astruct_57,mut param_4: u32,mut param_5: u16 ) -> *mut astruct_57
+pub unsafe fn pas1_1040_29c2(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut Struct57,mut param_4: u32,mut param_5: u16 ) -> *mut Struct57
 
 {
   let mut iVar1: *mut Struct57;
@@ -662,7 +662,7 @@ pub unsafe fn dlg_ui_op_1040_2a64(mut param_1: u16 ,struct_b_param_1: *mut Struc
   }
   return;
 }
-pub unsafe fn win_ui_op_1040_2bb2(param_1: *mut u8,pstruct_903_param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u32)
+pub unsafe fn win_ui_op_1040_2bb2(param_1: *mut u8,pstruct_903_param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
   let mut uVar1: u32;
@@ -800,7 +800,7 @@ pub unsafe fn pass1_1040_2e00(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1040_2ea2(param_1: *mut StructD,param_2: *mut astruct_57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub unsafe fn pass1_1040_2ea2(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -855,7 +855,7 @@ pub unsafe fn pass1_1040_2f32(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 {
   let mut in_register_0000000a: u16;
-  let mut paVar1: *mut astruct_27;
+  let mut paVar1: *mut Struct27;
   let mut in_stack_0000fea0: u16;
   let mut in_stack_0000ffc4: u16;
   let mut in_stack_0000ffca: u16;

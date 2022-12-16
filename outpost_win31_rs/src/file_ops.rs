@@ -544,7 +544,7 @@ pub unsafe fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut p
     return;
 }
 
-pub unsafe fn file_1008_76e4(param_1: *mut astruct_57, param_2: *mut HFILE16, param_3: *mut i32) {
+pub unsafe fn file_1008_76e4(param_1: *mut Struct57, param_2: *mut HFILE16, param_3: *mut i32) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut BVar3: bool;

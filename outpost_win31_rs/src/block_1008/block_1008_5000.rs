@@ -397,7 +397,7 @@ pub unsafe fn pass1_1008_570e(param_1: *mut u16,param_2: u8) -> *mut u16
   }
   return param_1;
 }
-pub unsafe fn set_struct_1008_574a(param_1: *mut astruct_57)
+pub unsafe fn set_struct_1008_574a(param_1: *mut Struct57)
 
 {
   let mut iVar1: *mut StructD;
@@ -748,10 +748,10 @@ pub unsafe fn pass1_1008_5bdc(param_1: *mut c_char)
 {
   let mut in_EDX: u32;
   let mut uVar1: u16;
-  let mut pstruct19_1: *mut astruct_19;
+  let mut pstruct19_1: *mut Struct19;
   let mut unaff_BP: u16;
-  let mut pstruct19_param_1: *mut astruct_19;
-  let mut paVar2: *mut astruct_19;
+  let mut pstruct19_param_1: *mut Struct19;
+  let mut paVar2: *mut Struct19;
   let mut puVar3: *mut u32;
   let mut in_stack_0000fea6: u16;
   let mut in_stack_0000ffca: u16;
@@ -817,10 +817,10 @@ pub unsafe fn win_1008_5c9e(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32
   win_1008_5c7c(param_1,param_2,param_3,*param_4);
   return;
 }
-pub unsafe fn mci_send_command_1008_5cb6(param_1: *mut astruct_27,mut param_2: i16)
+pub unsafe fn mci_send_command_1008_5cb6(param_1: *mut Struct27,mut param_2: i16)
 
 {
-  let mut iVar1: *mut astruct_27;
+  let mut iVar1: *mut Struct27;
   let mut uVar1: u16;
   let mut iVar2: i16;
 
@@ -838,12 +838,12 @@ pub unsafe fn mci_send_command_1008_5cb6(param_1: *mut astruct_27,mut param_2: i
   pass1_1010_1f62(param_1,iVar2);
   return;
 }
-pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut astruct_27,param_2: *mut c_char,in_wnd_class: *mut WNDCLASS16 )
+pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut Struct27,param_2: *mut c_char,in_wnd_class: *mut WNDCLASS16 )
 
 {
   let mut uVar1: u32;
   let mut iVar2: i16;
-  let mut iVar3: *mut astruct_27;
+  let mut iVar3: *mut Struct27;
   let mut uVar3: u16;
   let mut DVar4: u32;
   let mut iVar5: i16;

@@ -373,7 +373,7 @@ pub unsafe fn win_msg_op_1038_95fc(mut param_1: u16 ,mut param_2: u32)
   PostMessage16(0x0,0xed,0x111,HWND16_1050_0396);
   return;
 }
-pub unsafe fn win_ui_op_1038_977a(param_1: *mut astruct_57,mut param_2: i16,mut param_3: u16 ,mut param_4: i16)
+pub unsafe fn win_ui_op_1038_977a(param_1: *mut Struct57,mut param_2: i16,mut param_3: u16 ,mut param_4: i16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -516,7 +516,7 @@ pub unsafe fn pass1_1038_997c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1038_9a1e(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32) -> *mut u16
+pub unsafe fn pass1_1038_9a1e(param_1: *mut Struct57,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32) -> *mut u16
 
 {
   pass1_1040_b040(CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),(param_4 >> 0x10));
@@ -534,7 +534,7 @@ pub unsafe fn pass1_1038_9a48(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn enable_win_1038_9a66(param_1: *mut u8,pstruct903_param_2: *mut astruct_903,in_b_enable_3: u16,mut param_4: u32)
+pub unsafe fn enable_win_1038_9a66(param_1: *mut u8,pstruct903_param_2: *mut Struct903,in_b_enable_3: u16,mut param_4: u32)
 
 {
   let mut enable: bool;
@@ -571,7 +571,7 @@ pub unsafe fn pass1_1038_9ad0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1038_9b72(param_1: *mut astruct_57,param_2: *mut astruct_57,mut param_3: u16 ,mut param_4: u32) -> u32
+pub unsafe fn pass1_1038_9b72(param_1: *mut Struct57,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32) -> u32
 
 {
   let mut iStack4: i16;
@@ -686,7 +686,7 @@ pub unsafe fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut pa
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn enable_window_1038_9cec(param_1: *mut u8,param_2: *mut astruct_903,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
+pub unsafe fn enable_window_1038_9cec(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
 
 {
   let mut piVar1: *mut i16;
@@ -815,7 +815,7 @@ pub unsafe fn pass1_1038_9ed4(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1038_9f76(param_1: *mut astruct_57,mut param_2: u32,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ) -> *mut astruct_57
+pub unsafe fn pass1_1038_9f76(param_1: *mut Struct57,mut param_2: u32,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ) -> *mut Struct57
 
 {
   get_sys_metrics_1040_7728(param_1,0x1,param_2,0xfba,param_5);
