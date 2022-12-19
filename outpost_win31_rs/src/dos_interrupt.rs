@@ -153,9 +153,19 @@ type code = fn(u16);
 type code8 = fn() -> u32;
 
 pub enum InterruptResult {
-    CODE = code,
-    CODE8 = code8,
+    None,
+    TerminateWithReturnCode41h,
+}
 
+impl InterruptResult {
+    pub fn call(&self, ctx: &mut AppContext) {
+        match self {
+            _ => {},
+            InterruptResult::TerminateWithReturnCode41h => {
+                std::process::exit(exitcode::OK);
+            }
+        }
+    }
 }
 
 pub fn swi(ctx: &mut AppContext, int_code: u16) -> InterruptResult {
@@ -239,7 +249,7 @@ pub unsafe fn dos3_call_1000_4fbe(ctx: &mut AppContext, param_1: u8) -> u16 {
 pub unsafe fn dos3_op_1000_256b(ctx: &mut AppContext) {
     // let mut pcVar1: *mut code;
 
-    if (PTR_LOOP_1050_6202.is_null() == false) {
+    if PTR_LOOP_1050_6202.is_null() == false {
         (PTR_LOOP_1050_6200)();
     }
     // SetInterruptVector

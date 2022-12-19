@@ -24,27 +24,6 @@ pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
     return pu_var1;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-
-pub unsafe fn pass1_1000_41e0(mut param_1: i16) -> u16 {
-    let mut pi_stack6: *mut i16;
-
-    pi_stack6 = CONCAT22(PTR_LOOP_1050_6192, PTR_LOOP_1050_6190);
-    loop {
-        if (PTR_LOOP_1050_6190 + (PTR_LOOP_1050_6194 & 0xfffc) <= pi_stack6) {
-            return 0x0;
-        }
-        if (*pi_stack6 == param_1) {
-            break;
-        }
-        pi_stack6 = (pi_stack6 & 0xffff0000 | ZEXT24(pi_stack6 + 0x4));
-    }
-    *pi_stack6 = 0;
-    return (pi_stack6 + 2);
-}
-
-// WARNING: Could not reconcile some variable overlaps
-
 pub unsafe fn pass1_1000_422a(mut param_1: i16, mut param_2: u16) -> i16 {
     let mut pu_var1: *mut u8;
     let mut pu_var2: *mut u8;
@@ -1165,10 +1144,3 @@ pub unsafe fn pass1_1000_4f2e() -> u16 {
     }
     return 0x0;
 }
-
-// WARNING: Removing unreachable block (ram,0x10004f6d)
-
-// WARNING: Removing unreachable block (ram,0x10004fa9)
-
-// WARNING: Removing unreachable block (ram,0x10004fd7)
-// WARNING: Removing unreachable block (ram,0x10004feb)

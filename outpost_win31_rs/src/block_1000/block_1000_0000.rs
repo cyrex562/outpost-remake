@@ -14,6 +14,7 @@ use std::ptr;
 use std::ptr::null_mut;
 use crate::block_1000::block_1000_1000::{mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61};
 use crate::mem_container::MemContainer;
+use crate::structs::struct_1000_05b4_1::Struct100005b41;
 use crate::structs::struct_611::Struct611;
 use crate::structs::struct_7::Struct7;
 use crate::structs::struct_99::astruct_99;
@@ -48,8 +49,6 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
     let mut pu8_var14: *mut u8 = ptr::null_mut();
     let mut pu8_var12: *mut u8 = ptr::null_mut();
     let mut pu8_var10: *mut u8 = ptr::null_mut();
-
-
 
     let mut u_stack8 = 0u16;
     loop {
@@ -274,7 +273,7 @@ pub unsafe fn mem_op_1000_0308(
     return pu8_var1;
 }
 
-pub unsafe fn pass1_1000_0368(mut param_1: *mut u8, mut param_2: u8, mut param_3: *mut u8) {
+pub unsafe fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: u16) {
     let mut pu16_var1 = 0u16;
 
     if (param_1 + 0x4) == param_1 {
@@ -282,7 +281,7 @@ pub unsafe fn pass1_1000_0368(mut param_1: *mut u8, mut param_2: u8, mut param_3
     } else {
         ((param_1 + 0x6) + 0x4) = (param_1 + 0x4);
         ((param_1 + 0x4) + 0x6) = (param_1 + 0x6);
-        pu16_var1 = (param_2 * 0x2 + param_3);
+        pu16_var1 = (param_2 * 0x2) as u16 + param_3;
         if pu16_var1 == param_1 {
             pu16_var1 = (param_1 + 0x4);
         }
@@ -291,20 +290,21 @@ pub unsafe fn pass1_1000_0368(mut param_1: *mut u8, mut param_2: u8, mut param_3
     (param_3 + 0xa) = param_1;
 }
 
-pub unsafe fn pass1_1000_05b4(param_1: u8, param_2: *mut u16) {
-    *(param_2 + 0xa) = 0x1;
-    *(param_2 + 0x8) = 0x668;
-    *(param_2 + 0x13) = -((param_1 & 0x2) != 0) & 0x2;
-    *(param_2 + 0x10) = 0;
-    *(param_2 + 0xe) = 0;
+// TODO: this looks like its referring to a struct
+pub unsafe fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct100005b41) {
+    // *(param_2 + 0xa)
+    param_2.field_0xa = 0x1;
+    // *(param_2 + 0x8)
+    param_2.field_0x8    = 0x668;
+    // *(param_2 + 0x13)
+    param_2.field_0x13    = (-(param_1 & 0x2) != 0) & 0x2;
+    // *(param_2 + 0x10)
+    param_2.field_0x10    = 0;
+    // *(param_2 + 0xe)
+    param_2.field_0xe    = 0;
 }
 
-pub unsafe fn mem_1000_0668() -> u32 {
-    let mut u_var1: u32;
 
-    u_var1 = mem_op_1000_0510(0x0, ptr::null_mut());
-    return u_var1;
-}
 
 pub unsafe fn pass1_1000_07ac(
     ctx: &mut AppContext,
@@ -488,7 +488,6 @@ pub unsafe fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7)
     let mut b_var11: bool;
     let mut i32_var13 = 0i32;
     let mut pstruct7_var4 = pstruct7_param_2;
-    let mut u16_var15 = (pstruct7_param_2.field_0x2);
     let mut u16_var6 = (pstruct7_param_2.field_0x4);
     let mut u8_var3 = (pstruct7_param_2.field_0xc.clone());
     let mut u32_var12 = mem_op_1000_1532(pstruct7_param_2, 0x1050);
@@ -696,25 +695,6 @@ pub unsafe fn pass1_1000_093a(ctx: &mut AppContext, param_1: *mut Struct611) -> 
         mem_op_1000_0510(0x1, null_mut());
     }
     return true;
-}
-
-pub unsafe fn pass1_1000_09a0(mut param_1: *mut u8) -> *mut u8 {
-    let mut puVar1: *mut u8 = null_mut();
-    let mut uVar2: u32;
-
-    param_1 = PTR_LOOP_1050_000e;
-    if PTR_LOOP_1050_000e.is_null() {
-        u32_1050_0004 = 0x1;
-    }
-    PTR_LOOP_1050_000a = PTR_LOOP_1050_000a -0x1;
-    puVar1 = PTR_LOOP_1050_000e;
-    PTR_LOOP_1050_000e = param_1;
-    if PTR_LOOP_1050_000a.is_null() {
-        uVar2 = mem_op_1000_0510(0x1, null_mut());
-        // TODO: is this setting the pointer's address?
-        // puVar1 = uVar2;
-    }
-    return puVar1;
 }
 
 pub unsafe fn pass1_1000_09ca(mut param_1: i16, param_2: *mut u16) -> u16 {

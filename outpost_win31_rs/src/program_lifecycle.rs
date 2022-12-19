@@ -12,10 +12,7 @@
 // #include "block_1000.h"
 
 use std::os::raw::c_char;
-use crate::block_1000::block_1000_2000::{
-    init_1000_23be, pass1_1000_25a8,
-    pass1_1000_27d6, pass1_1000_2913, poss_str_op_1000_28dc,
-};
+use crate::block_1000::block_1000_2000::{exit_op_1000_2950, fn_ptr_op_1000_2594, init_1000_23be, pass1_1000_25a8, pass1_1000_27d6, pass1_1000_2913, pass1_1000_29dc, poss_str_op_1000_28dc};
 use crate::block_1000::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
 use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_0000, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84, PTR_LOOP_1050_5fb8, PTR_LOOP_1050_5fc2, PTR_LOOP_1050_5fc4, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_63fe, REG_DI, REG_SI, u8_1050_5fc9, WIN_VERSION_1050_5f80};
 use crate::winbase::{FatalAppExit16, FatalExit, GetModuleFileName16, GetVersion16, InitApp16, InitTask16, LockSegment16, WaitEvent16};
@@ -25,7 +22,8 @@ use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::block_1000::block_1000_2000;
 use crate::dos_interrupt;
-use crate::dos_interrupt::swi;
+use crate::dos_interrupt::{dos3_op_1000_256b, swi};
+use crate::mem_container::MemContainer;
 use crate::structs::struct_822::Struct822;
 use crate::structs::struct_825::Struct825;
 
@@ -89,7 +87,7 @@ pub unsafe fn entry(
     win_version = ret_op_1000_55ac();
     let var4 = win_version as u16;
     init_1000_23be(param_5, (var10 >> 0x10) as u16);
-    fn_ptr_op_1000_24cd(var4);
+    exit_op_1000_24cd(ctx, var4);
     // TODO
     // paVar13 =  CONCAT22(uVar4, 0x15);
     pass1_1000_25a8();
@@ -185,16 +183,19 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
     PTR_LOOP_1050_5fd2 = param_2;
     PTR_LOOP_1050_5fd4 = param_3;
     param_3 = 0x263d;
-    param_2 = block_1000_2000::exit_op_1000_2950(ctx, 0x8, param_1, 0x104);
+    param_2 = exit_op_1000_2950(ctx, 0x8, param_1, 0x104);
     param_3 = param_1;
     PTR_LOOP_1050_5fc2 = param_2;
     PTR_LOOP_1050_5fc4 = param_1;
-    let mut result_str_len = GetModuleFileName16(0x104, CONCAT22(param_1, param_2), HINSTANCE16_1050_5f4c);
+    CONCAT22(param_1, param_2);
+
+    let mut out_module_fname: Vec<u8> = Vec::with_capacity(512);
+    let mut result_str_len = GetModuleFileName16(0x104, out_module_fname.as_mut_ptr() as *mut c_char, HINSTANCE16_1050_5f4c);
     param_2[result_str_len] = '\0';
     let mut i_var4 = 0x1;
     PTR_LOOP_1050_5fb8 = (PTR_LOOP_1050_0000 + 1);
-    // let mut pcVar7 = (s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe); //
-    //    LAB_1000_266c:
+// TODO:
+// LAB_1000_266c:
     let mut var1 = 0u16;
     let mut var2 = 0u16;
     let mut var7 = PTR_LOOP_1050_5f7e;
@@ -214,20 +215,21 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
     if (var2 != '\r') && (var2 != '\0') {
         PTR_LOOP_1050_5fb8 = PTR_LOOP_1050_5fb8 + 1;
         loop {
-            var7 -= 1; //
-                                    //            LAB_1000_267f:
+            var7 -= 1;
+// TODO:
+// LAB_1000_267f:
             var1 = var7;
             var7 += 1;
             var2 = *var1;
             if (var2 == ' ') || (var2 == '\t') {
-                // TODO: goto LAB_1000_266c;
+                // TODO:
+                // goto LAB_1000_266c;
             }
             if (var2 == '\r') || (var2 == '\0') {
                 break;
             }
             if var2 == '\"' {
-                //
-                //                LAB_1000_26b8:
+// LAB_1000_26b8:
                 loop {
                     loop {
                         loop {
@@ -235,10 +237,12 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
                             var7 = var7 + 1;
                             var2 = *var1;
                             if (var2 == '\r') || (var2 == '\0') {
-                                // TODO: goto LAB_1000_26e8;
+                                // TODO:
+                                // goto LAB_1000_26e8;
                             }
                             if var2 == '\"' {
-                                // TODO: goto LAB_1000_267f;
+                                // TODO:
+                                // goto LAB_1000_267f;
                             }
                             if var2 == '\\' {
                                 break;
@@ -266,11 +270,13 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
                         break;
                     }
                 }
-                // TODO: goto LAB_1000_267f;
+                // TODO:
+                // goto LAB_1000_267f;
             }
             if var2 != '\\' {
                 i_var4 += 0x1;
-                // TODO: goto LAB_1000_267f;
+                // TODO:
+                // goto LAB_1000_267f;
             }
             var6 = 0;
             loop {
@@ -285,32 +291,36 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
             if var2 == '\"' {
                 i_var4 = i_var4 + (var6 >> 1) + ((var6 & 1) != 0);
                 if (var6 & 1) == 0 {
-                    // TODO: goto LAB_1000_26b8;
+                    // TODO:
+                    // goto LAB_1000_26b8;
                 }
-                // TODO: goto LAB_1000_267f;
+                // TODO:
+                // goto LAB_1000_267f;
             }
             i_var4 += var6;
         }
-    } //
-      //    LAB_1000_26e8:
-    param_3 = &DAT_1050_1050;
+    }
+// TODO:
+// LAB_1000_26e8:
+    param_3 = 0x1050u16;
     var3 = -((PTR_LOOP_1050_5fb8 + (PTR_LOOP_1050_5fb8 + 1) * 0x4 + i_var4 + 1) & 0xfffe);
     PTR_LOOP_1050_5fba = &stack0x0004 + var3;
-    PTR_LOOP_1050_5fbc = &DAT_1050_1050;
-    var13 = &stack0x0004 + (PTR_LOOP_1050_5fb8 + 1) * 0x4 + var3;
-    (&param_3 + var3) = &DAT_1050_1050;
+    PTR_LOOP_1050_5fbc = 0x1050u16;
+    var13 = stack0x0004 + (PTR_LOOP_1050_5fb8 + 1) * 0x4 + var3;
+    param_3 + var3 = 0x1050u16;
     var16 = PTR_LOOP_1050_5fc4;
-    var14 = (&param_3 + var3);
+    var14 = (param_3 + var3);
     (&stack0x0004 + var3) = PTR_LOOP_1050_5fc2;
     (&stack0x0006 + var3) = var16;
     var11 = (&stack0x0008 + var3);
-    (&param_3 + var3) = &stack0x0004 + var3;
-    (&param_2 + var3) = s_tile2_bmp_1050_1538;
-    (&stack0xfffe + var3) = 0x271f;
-    var4 = block_1000_2000::pass1_1000_29dc(&DAT_1050_1050);
+    param_3 + var3 = stack0x0004 + var3;
+    param_2 + var3 = 0x1538;
+    stack0xfffe + var3 = 0x271f;
+    var4 = pass1_1000_29dc(0x1050);
     var15 = &PTR_LOOP_1050_5f7e;
-    var7 = (s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe); //
-                                                                   //    LAB_1000_272e:
+    var7 = 0x0081;
+// TODO:
+// LAB_1000_272e:
     loop {
         loop {
             var1 = var7;
@@ -324,26 +334,27 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
             break;
         }
     }
-    if ((var2 == '\r') || (var2 == '\0')) {
-        //
-        //        LAB_1000_27c1:
-        (&param_3 + var3) = s_tile2_bmp_1050_1538;
-        (&param_2 + var3) = 0x27c5;
-        var5 = block_1000_2000::pass1_1000_29dc(&DAT_1050_1050);
+    if (var2 == '\r') || (var2 == '\0') {
+//  TODO:
+//  LAB_1000_27c1:
+        (param_3 + var3) = 0x1538;
+        (param_2 + var3) = 0x27c5;
+        var5 = block_1000_2000::pass1_1000_29dc(0x1050);
         *var11 = null_mut();
         var11[0x1] = null_mut();
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
-        (&PTR_LOOP_1050_5fd2)();
+        PTR_LOOP_1050_5fd2();
         _PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4, PTR_LOOP_1050_5fc2);
         return;
     }
     *var11 = var13;
-    var11[0x1] = &DAT_1050_1050;
+    var11[0x1] = 0x1050;
     var11 = var11 + 2;
     loop {
-        var7 = var7 -0x1; //
-                                //        LAB_1000_274f:
+        var7 = var7 -0x1;
+//  TODO:
+//  LAB_1000_274f:
         var1 = var7;
         var7 = var7 + 1;
         var2 = *var1;
@@ -351,23 +362,26 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
             var1 = var13;
             var13 = var13 + 1;
             *var1 = '\0';
-            // TODO: goto LAB_1000_272e;
+            // TODO:
+            // goto LAB_1000_272e;
         }
         if (var2 == '\r') || (var2 == '\0') {
             //
             //            LAB_1000_27be:
             *var13 = '\0';
-            // TODO: goto LAB_1000_27c1;
+            // TODO:
+            // goto LAB_1000_27c1;
         }
         var12 = var7;
         if var2 == '\"' {
-            //
-            //            LAB_1000_278b:
+// TODO:
+// LAB_1000_278b:
             loop {
                 var7 = var12 + 1;
                 var2 = *var12;
                 if (var2 == '\r') || (var2 == '\0') {
-                    // TODO: goto LAB_1000_27be;
+                    // TODO:
+                    // goto LAB_1000_27be;
                 }
                 if var2 == '\"' {
                     break;
@@ -413,13 +427,15 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
                     var12 = var7;
                 }
             }
-            // TODO: goto LAB_1000_274f;
+            // TODO:
+            // goto LAB_1000_274f;
         }
         if var2 != '\\' {
             var1 = var13;
             var13 = var13 + 1;
             *var1 = var2;
-            // TODO: goto LAB_1000_274f;
+            // TODO:
+            // goto LAB_1000_274f;
         }
         var8 = 0;
         loop {
@@ -440,7 +456,8 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
             }
             var12 = var7;
             if (var8 & 1) == 0 {
-                // TODO: goto LAB_1000_278b;
+                // TODO:
+                // goto LAB_1000_278b;
             }
             var1 = var13;
             var13 = var13 + 1;
@@ -458,8 +475,7 @@ pub unsafe fn entry_1000_262c(param_1: u16, mut param_2: u16, mut param_3: u16) 
 }
 
 // WARNING: Removing unreachable block (ram,0x10002557)
-pub unsafe fn fn_ptr_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
-    let mut var1: *mut code;
+pub unsafe fn exit_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
     let mut var2: i16;
     let mut var3: u16;
     let mut var4: u16;
@@ -467,17 +483,15 @@ pub unsafe fn fn_ptr_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
     let mut var6: u16;
     let mut var7: u16;
 
-    u8_1050_5fc9 = '\0';
-    block_1000_2000::fn_ptr_op_1000_2594();
-    block_1000_2000::fn_ptr_op_1000_2594();
+    u8_1050_5fc9 = u8::try_from('\0').unwrap();
+    fn_ptr_op_1000_2594();
+    fn_ptr_op_1000_2594();
     ret_op_1000_55ac();
-    block_1000_2000::fn_ptr_op_1000_2594();
-    block_1000_2000::fn_ptr_op_1000_2594();
-    dos_interrupt::dos3_op_1000_256b();
+    fn_ptr_op_1000_2594();
+    fn_ptr_op_1000_2594();
+    dos3_op_1000_256b(ctx);
     // terminate with return code
     ctx.AH_REG = 0x4c;
     let result = swi(ctx, 0x21);
-    // (*pcVar1)();
-    todo!();
-    return;
+    result.call(ctx);
 }

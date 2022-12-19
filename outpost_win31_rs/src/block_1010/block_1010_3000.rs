@@ -581,28 +581,7 @@ pub unsafe fn struct_1010_38f8(
     }
     return NULL;
 }
-pub unsafe fn pass1_1010_394a(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-    mut param_5: i16,
-) {
-    let mut in_register_0000000a: u16;
-    let mut paVar1: *mut Struct57;
 
-    paVar1 = CONCAT22(in_register_0000000a, param_2);
-    if (param_5 != 0) {
-        mem_op_1000_179c(param_5 << 0x2, paVar1);
-        return;
-    }
-    mem_op_1000_179c(0x16, paVar1);
-    if ((paVar1 | param_1) != 0) {
-        struct_1010_383a(CONCAT22(paVar1, param_1));
-        return;
-    }
-    return;
-}
 pub unsafe fn pass1_1010_398e(
     mut param_1: u16,
     param_2: *mut u32,
@@ -672,58 +651,17 @@ pub unsafe fn pass1_1010_398e(
     return;
 }
 
-pub unsafe fn pass1_1010_3a86(mut param_1: u32) -> u16 {
-    return (param_1 + 0x10);
-}
-pub unsafe fn pass1_1010_3a94(mut param_1: u32, mut param_2: u16) {
-    (param_1 + 0x12) = param_2;
-    return;
-}
-pub unsafe fn FUN_1010_3aa6() {
-    return;
-}
 
-pub unsafe fn pass1_1010_3aaa(mut param_1: u32) -> u32 {
-    let mut uVar1: u16;
 
-    uVar1 = (param_1 >> 0x10);
-    return CONCAT22((param_1 + 0x6), (param_1 + 0x4));
-}
 
-pub unsafe fn FUN_1010_3abc() -> u16 {
-    return 0x0;
-}
-pub unsafe fn pass1_1010_3ac2(mut param_1: u32, mut param_2: u16, mut param_3: u32) {
-    let mut uVar1: u16;
 
-    uVar1 = (param_1 >> 0x10);
-    (param_1 + 0x16) = param_3;
-    (param_1 + 0x12) = param_2;
-    return;
-}
 
-pub unsafe fn pass1_1010_3adc(mut param_1: u32) -> u32 {
-    let mut puVar1: *mut u16;
 
-    puVar1 = (param_1 + 0x16);
-    return CONCAT22((puVar1 + 0x2), *puVar1);
-}
 
-pub unsafe fn pass1_1010_3af2(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1010_3800(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
-pub unsafe fn pass1_1010_3b18(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1010_3880(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
+
+
 pub unsafe fn struct_1010_3b7a(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0x389a;
@@ -847,30 +785,11 @@ pub unsafe fn pass1_1010_3cd0(param_1: i32) {
     }
     return;
 }
-pub unsafe fn pass1_1010_3d0a(mut param_1: i16, mut param_2: u16, mut param_3: i16, mut param_4: u16) {
-    if (param_3 == 0x2) {
-        pass1_1010_3cd0(CONCAT22(param_2, param_1 -0xa));
-        pass1_1010_1f62(CONCAT22(param_2, param_1 -0xa), 0x2);
-    }
-    return;
-}
 
-pub unsafe fn pass1_1010_3d38(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    param_1 = (param_1 & 0xffff0000 | (param_1 - 0xa));
-    pass1_1010_3bde(param_1, &DAT_1050_1050);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
-pub unsafe fn FUN_1010_3d44(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    pass1_1010_3bde(param_2, &DAT_1050_1050);
-    if ((param_3 & 1) != 0) {
-        fn_ptr_1000_17ce(param_2);
-    }
-    return param_2;
-}
+
+
+
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
@@ -916,14 +835,6 @@ pub unsafe fn pass1_1010_3dc8(param_1: *mut astruct_455, mut param_2: u16) {
     }
     pass1_1010_1d80(param_1);
     return;
-}
-
-pub unsafe fn pass1_1010_3e06(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1010_3dc8(param_1, &DAT_1050_1050);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -1022,40 +933,4 @@ pub unsafe fn pass1_1010_3f00(param_1: *mut StructD) {
     puVar4[0x1] = 0x1008;
     pass1_1010_1d80(param_1);
     return;
-}
-
-pub unsafe fn FUN_1010_3fc2(mut param_1: u16, mut param_2: u32, param_3: *mut u8) -> u16 {
-    let mut BVar1: bool;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
-    let mut in_stack_0000ffda: HFILE16;
-    let mut local_c: [u16; 0x3] = [0; 0x3];
-    let mut local_6: [u16; 0x2] = [0; 0x2];
-
-    BVar1 = write_to_file_1008_7cac(param_3);
-    if (BVar1 != 0) {
-        uVar3 = (param_2 >> 0x10);
-        iVar2 = param_2;
-        local_c[0] = (iVar2 + 0x24);
-        BVar1 = write_to_file_1008_7e1c(param_3, CONCAT22(0x1050, local_c), 0x2, in_stack_0000ffda);
-        if (BVar1 != 0) {
-            local_6[0] = (iVar2 + 0x6a);
-            BVar1 =
-                write_to_file_1008_7e1c(param_3, CONCAT22(0x1050, local_6), 0x2, in_stack_0000ffda);
-            if (BVar1 != 0) {
-                local_6[0] = (iVar2 + 0x7e);
-                BVar1 = write_to_file_1008_7e1c(
-                    param_3,
-                    CONCAT22(0x1050, local_6),
-                    0x2,
-                    in_stack_0000ffda,
-                );
-                if (BVar1 != 0) {
-                    return 0x1;
-                }
-            }
-        }
-        u16_1050_0310 = 0x6d0;
-    }
-    return 0x0;
 }

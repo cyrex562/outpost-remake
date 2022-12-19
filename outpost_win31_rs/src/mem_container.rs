@@ -1,14 +1,28 @@
+use std::ptr::null_mut;
+use crate::mem_address::MemAddress;
 use crate::structs::struct_99::astruct_99;
 
 #[derive(Default,Debug,Clone)]
 pub struct MemContainer {
-    pub high_word: u16,
-    pub low_word: u16,
-    pub dword: u32,
-    pub ptr: *mut MemType,
+    pub address: MemAddress
+    pub len: usize,
+    pub ptr: *mut u8,
+    pub buffer: Vec<u8>,
+    pub data_type: MemContainerDataType
 }
 
-pub enum MemType {
-    Raw = u8,
-    Struct99 = astruct_99
+impl Default for MemContainer {
+    fn default() -> Self {
+        Self {
+            address: MemAddress::default(),
+            len: 0,
+            ptr: null_mut(),
+            buffer: vec![],
+            data_type: MemContainerDataType::None
+        }
+    }
+}
+
+pub enum MemContainerDataType {
+    None,
 }

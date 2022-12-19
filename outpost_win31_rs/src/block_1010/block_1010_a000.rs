@@ -88,22 +88,7 @@ pub unsafe fn pass1_1010_a0a0(mut param_1: u16, param_2: *mut astruct_252) {
     }
 }
 
-pub unsafe fn pass1_1010_a172(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    pass1_1010_95f8(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
-pub unsafe fn pass1_1010_a198(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    *param_1 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn struct_1010_a1d8(param_1: *mut Struct19, mut param_2: u16) {

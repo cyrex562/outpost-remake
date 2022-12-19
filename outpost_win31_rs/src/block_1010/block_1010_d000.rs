@@ -677,55 +677,6 @@ pub unsafe fn struct_1010_dd5e(mut param_1: u16, mut param_2: u16, mut param_3: 
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn load_str_1010_ddf6(mut param_1: u32, mut param_2: u32) {
-    let mut in_AX: u16;
-    let mut in_DX: u16;
-    let mut in_buf_len_5: i16;
-    let mut uVar1: u32;
-
-    in_buf_len_5 = (param_1 >> 0x10);
-    *(param_1 + 0x13c) = 0;
-    uVar1 = struct_op_1030_73a8(param_2, in_AX, in_DX);
-    match (uVar1 + 0x12) {
-        0x1 | 0x2 | 0x4 | 0x7 | 0x9 => {}
-        // break;
-        0x3 | 0x5 => {}
-        // break;
-        0x6 => {}
-        // break;
-        0x8 => {}
-        // break;
-        _ => {} // TODO: goto switchD_1010_de53_caseD_9;
-    }
-    load_string_1010_84e0(
-        _u16_1050_14cc,
-        (_u16_1050_14cc >> 0x10),
-        0x3ff,
-        (param_1 + 0x13c),
-        in_buf_len_5,
-    );
-    // switchD_1010_de53_caseD_9:
-    return;
-}
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_de78(mut param_1: u32, mut param_2: u32) {
-    let mut in_buf_len_5: i16;
-
-    in_buf_len_5 = (param_1 >> 0x10);
-    *(param_1 + 0x13c) = 0;
-    pass1_1030_809c(param_2);
-    load_string_1010_84e0(
-        _u16_1050_14cc,
-        (_u16_1050_14cc >> 0x10),
-        0x3ff,
-        (param_1 + 0x13c),
-        in_buf_len_5,
-    );
-    return;
-}
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1010_debe(
     mut param_1: u32,
     mut param_2: u16,

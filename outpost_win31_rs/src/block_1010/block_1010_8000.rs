@@ -890,13 +890,7 @@ pub unsafe fn unk_load_str_op_1010_8c96(
     return CONCAT22(uVar10, param_1);
 }
 
-pub unsafe fn pass1_1010_8ebc(mut param_1: u32, param_2: u8) -> u32 {
-    pass1_1010_8c78(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1010_8ef2(

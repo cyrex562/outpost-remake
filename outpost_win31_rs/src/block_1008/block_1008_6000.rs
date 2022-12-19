@@ -152,47 +152,8 @@ pub unsafe fn destroy_win_1008_628e(mut param_1: u32) {
     (param_1 + 0x8) = 0;
     return;
 }
-pub unsafe fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
-    //   RECT16 rect_2e [0x2];
-    let mut rect_2e: [RECt16; 2] = [RECT16::default(); 2];
-    let mut hbrush_var38: HBRUSH16;
-    let mut hbrush_var36: HDC16;
-    let mut paintstruct_22: [u8; 0x20] = [0; 0x20];
 
-    hbrush_var36 = BeginPaint16(CONCAT22(0x1050, paintstruct_22), param_1.field8_0x8);
-    hbrush_var38 = CreateSolidBrush16(0x210070b);
-    GetClientRect16(rect_2e, &DAT_1050_1050);
-    FillRect16(hbrush_var38, rect_2e, &DAT_1050_1050);
-    EndPaint16(CONCAT22(0x1050, paintstruct_22), param_1.field8_0x8);
-    DeleteObject16(hbrush_var38);
-    return;
-}
-pub unsafe fn FUN_1008_6324() {
-    return;
-}
-pub unsafe fn FUN_1008_6328() {
-    return;
-}
-pub unsafe fn FUN_1008_632c() {
-    return;
-}
-pub unsafe fn pass1_1008_6330(param_1: *mut astruct_456, param_2: u8) {
-    let mut uVar1: *mut astruct_456;
-    let mut uVar2: u16;
 
-    uVar1 = param_1;
-    uVar1 = uVar1 + 1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
-    uVar2 = (param_1 >> 0x10);
-    param_1 = 0x380a;
-    uVar1.field2_0x2 = 0x1008;
-    param_1 = 0x389a;
-    uVar1.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
 pub unsafe fn file_1008_6414(param_1: *mut Struct57, param_2: *mut u32, param_3: *mut c_char) {
     let mut ppcVar1: *mut *mut code;
     let mut paVar2: *mut astruct_76;
@@ -466,37 +427,8 @@ pub unsafe fn memcpy_op_1008_676e(
     param_1.field22_0x1c = 0x1;
     return;
 }
-pub unsafe fn FUN_1008_6814() {
-    return;
-}
-pub unsafe fn FUN_1008_681a() {
-    return;
-}
-pub unsafe fn FUN_1008_681e() {
-    return;
-}
 
-pub unsafe fn FUN_1008_6822() -> u16 {
-    return 0x0;
-}
-pub unsafe fn FUN_1008_6824() {
-    return;
-}
-pub unsafe fn FUN_1008_6828() {
-    return;
-}
 
-pub unsafe fn FUN_1008_682e() -> u16 {
-    return 0x0;
-}
-
-pub unsafe fn pass1_1008_6834(mut param_1: u32, param_2: u8) -> u32 {
-    pass1_1008_6732(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 pub unsafe fn set_struct_1008_687a(param_1: *mut astruct_20, mut param_2: u32) {
     let mut iVar1: *mut astruct_20;
     let mut uVar1: *mut astruct_20;
@@ -612,124 +544,8 @@ pub unsafe fn pass1_1008_6a04(mut param_1: u16, mut param_2: u32) {
 }
 
 // WARNING: Could not reconcile some variable overlaps
-pub unsafe fn pass1_1008_6a4a(
-    mut param_1: u32,
-    mut param_2: i16,
-    mut param_3: u16,
-    mut param_4: i16,
-) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar2: i16;
-    let mut puVar3: *mut u8;
-    let mut extraout_DX: u16;
-    let mut extraout_DX_00: u16;
-    let mut local_e: [u8; 0x4] = [0; 0x4];
-    let mut uStack10: u32;
-    let mut uStack6: u32;
 
-    if (param_4 == 0x2) {
-        iVar2 = param_1;
-        pass1_1008_57a4(
-            CONCAT22(0x1050, local_e),
-            param_1 & 0xffff0000 | (iVar2 + 0xd2),
-        );
-        loop {
-            puVar3 = local_e;
-            pass1_1008_5b12(CONCAT22(0x1050, puVar3));
-            uStack6 = CONCAT22(extraout_DX, puVar3);
-            if ((extraout_DX | puVar3) == 0) {
-                break;
-            }
-            if !((puVar3 + 0x8) != param_2) {
-                break;
-            }
-        }
-        if (uStack6 != 0) {
-            ppcVar1 = ((iVar2 + 0xd2) + 0xc);
-            (**ppcVar1)();
-            uStack10 = 0;
-            uStack6 = local_e;
-            pass1_1008_5b12(CONCAT22(0x1050, uStack6));
-            if ((extraout_DX_00 | uStack6) != 0) {
-                ppcVar1 = (*(uStack6 + 0x4) + 0x10);
-                uStack6 = extraout_DX_00;
-                (**ppcVar1)();
-                (iVar2 + 0xce) = (uStack6 + 0x4);
-                return;
-            }
-            (iVar2 + 0xce) = 0;
-        }
-    }
-    return;
-}
-pub unsafe fn pass1_1008_6b02(mut param_1: u32) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
 
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if (((iVar2 + 0xd0) | (iVar2 + 0xce)) != 0) {
-        ppcVar1 = ((iVar2 + 0xce) + 0x6c);
-        (**ppcVar1)();
-    }
-    return;
-}
-pub unsafe fn pass1_1008_6b2e(mut param_1: u32) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if (((iVar2 + 0xd0) | (iVar2 + 0xce)) != 0) {
-        ppcVar1 = ((iVar2 + 0xce) + 0x68);
-        (**ppcVar1)();
-    }
-    return;
-}
-
-pub unsafe fn pass1_1008_6b5a(param_1: *mut astruct_458, param_2: u8) -> *mut u16 {
-    let mut puVar1: *mut u32;
-    let mut uVar2: u16;
-    let mut ppcVar3: *mut *mut code;
-    let mut uVar4: *mut astruct_458;
-    let mut uVar5: u16;
-
-    uVar5 = (param_1 >> 0x10);
-    uVar4 = param_1;
-    param_1 = 0x6c8c;
-    uVar4.field2_0x2 = 0x1008;
-    puVar1 = uVar4.field3_0x4;
-    uVar2 = uVar4.field4_0x6;
-    if ((uVar2 | puVar1) != 0) {
-        ppcVar3 = *puVar1;
-        (**ppcVar3)();
-    }
-    param_1 = 0x389a;
-    uVar4.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-pub unsafe fn pass1_1008_6bb4(param_1: *mut astruct_459, param_2: u8) {
-    let mut uVar1: *mut astruct_459;
-    let mut uVar2: u16;
-
-    uVar1 = param_1;
-    uVar1 = uVar1 + 1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
-    uVar2 = (param_1 >> 0x10);
-    param_1 = 0x380a;
-    uVar1.field2_0x2 = 0x1008;
-    param_1 = 0x389a;
-    uVar1.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
 pub unsafe fn pass1_1008_6c90(param_1: *mut u16) {
     pass1_1008_3e38(param_1);
     pass1_1008_3e38((param_1 & 0xffff0000 | (param_1 + 0x6)));
@@ -770,11 +586,7 @@ pub unsafe fn pass1_1008_6cec(
     );
     return;
 }
-pub unsafe fn pass1_1008_6d18(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
-    pass1_1008_3f62(param_1, param_3);
-    pass1_1008_3f62((param_1 & 0xffff0000 | (param_1 + 0x6)), param_2);
-    return;
-}
+
 pub unsafe fn pass1_1008_6d3e(param_1: *mut u16, param_2: *mut u16, param_3: *mut u16) {
     pass1_1008_3f62(param_3, param_1);
     pass1_1008_3f62(param_2, (param_1 & 0xffff0000 | (param_1 + 0x6)));

@@ -317,22 +317,14 @@ pub unsafe fn fn_ptr_op_1000_1708(
     }
 }
 
-pub unsafe fn pass1_1000_17e8(param_1: *const u8, param_2: *const u8) -> *const u8 {
-    let mut puVar1: *mut u8;
 
-    puVar1 = PTR_LOOP_1050_5f34;
-    PTR_LOOP_1050_5f34 = param_1;
-    PTR_LOOP_1050_5f36 = param_2;
-    return puVar1;
-}
 
-pub unsafe fn pass1_1000_180c(mut param_1: u16, mut param_2: u16) -> u16 {
+pub unsafe fn pass1_1000_180c(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> u16 {
     let mut puVar1: *mut u8;
-    let mut in_register_0000000a: u16;
     let mut pSVar2: *mut StructD;
     let mut lVar3: i32;
 
-    pSVar2 = CONCAT22(in_register_0000000a, param_1);
+    pSVar2 = CONCAT22(param_3, param_1);
     if ((PTR_LOOP_1050_5f2e | PTR_LOOP_1050_5f2c) == 0) {
         puVar1 = mem_op_1000_160a(pSVar2);
         if ((pSVar2 | puVar1) == 0) {
@@ -346,52 +338,6 @@ pub unsafe fn pass1_1000_180c(mut param_1: u16, mut param_2: u16) -> u16 {
         CONCAT22(PTR_LOOP_1050_5f2e, PTR_LOOP_1050_5f2c),
     );
     return lVar3;
-}
-
-pub unsafe fn pass1_1000_183c(mut param_1: u16, mut param_2: u16) -> u16 {
-    let mut in_EDX: u32;
-    let mut pSVar1: *mut StructD;
-    let mut lVar2: i32;
-
-    pSVar1 = (in_EDX & 0xffff0000);
-    if ((param_2 * param_1 >> 0x10) != 0) {
-        return 0x0;
-    }
-    if ((PTR_LOOP_1050_5f2e | PTR_LOOP_1050_5f2c) == 0) {
-        PTR_LOOP_1050_5f2c = mem_op_1000_160a(pSVar1);
-        PTR_LOOP_1050_5f2e = pSVar1;
-        if ((PTR_LOOP_1050_5f2e | PTR_LOOP_1050_5f2c) == 0) {
-            return 0x0;
-        }
-    }
-    lVar2 = mem_op_1000_0a48(
-        0x1,
-        (param_2 * param_1),
-        0x0,
-        CONCAT22(PTR_LOOP_1050_5f2e, PTR_LOOP_1050_5f2c),
-    );
-    return lVar2;
-}
-
-pub unsafe fn pass1_1000_188e(
-    mut param_1: u16,
-    param_2: *mut u16,
-    mut param_3: u16,
-    mut param_4: u16,
-) -> u16 {
-    let mut uVar1: u16;
-    let mut lVar2: i32;
-
-    if ((param_3 | param_2) == 0) {
-        uVar1 = pass1_1000_180c(param_1, param_4);
-        return uVar1;
-    }
-    if (param_4 == 0) {
-        pass1_1000_18d2(param_2, param_3);
-        return 0x0;
-    }
-    lVar2 = pass1_1000_0ed4(0x0, param_4, 0x0, param_2, param_3);
-    return lVar2;
 }
 
 pub unsafe fn mem_op_1000_18ec(mut param_1: u16, mut param_2: u16) -> u32 {
@@ -662,39 +608,7 @@ pub unsafe fn msg_box_op_1000_1f24(mut param_1: i16, mut param_2: u16, mut param
     return 0x0;
 }
 
-pub unsafe fn pass1_1000_1f7e(param_1: *mut u16) -> bool {
-    let mut cVar1: u8;
-    let mut BVar2: bool;
-    let mut uVar3: u16;
-    let mut iVar4: i16;
-    let mut pcVar5: *mut c_char;
-
-    uVar3 = *param_1;
-    if (uVar3 == 0xf) {
-        //
-        //        LAB_1000_1fb6:
-        iVar4 = 0x1;
-    } else {
-        if (uVar3 < 0x10) {
-            cVar1 = uVar3;
-            if (cVar1 == '\x02') {
-                // TODO: goto LAB_1000_1fb6;
-            }
-            if (('\0' < (cVar1 -0x2)) && ((cVar1 -0x3) < '\x0f')) {
-                iVar4 = 0;
-                // TODO: goto LAB_1000_1fbe;
-            }
-        }
-        iVar4 = 0;
-        uVar3 = 0x1;
-    } //
-      //    LAB_1000_1fbe:
-    pcVar5 = pass1_1000_1fd2(uVar3);
-    BVar2 = msg_box_op_1000_214c(0x0, iVar4, pcVar5, (pcVar5 >> 0x10));
-    return BVar2;
-}
-
-pub unsafe fn ass1_1000_1fd2(mut param_1: i16) -> *mut c_char {
+pub unsafe fn pass1_1000_1fd2(mut param_1: i16) -> *mut c_char {
     if (param_1 == 0x2) {
         return "Out of memory.  Please free some memory, then choose retry.";
     }

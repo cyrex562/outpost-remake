@@ -1,3 +1,7 @@
+use std::collections::HashMap;
+use crate::mem_address::MemAddress;
+use crate::mem_container::MemContainer;
+
 //noinspection ALL
 #[derive(Default,Debug,Clone,Copy)]
 pub struct AppContext {
@@ -8,4 +12,6 @@ pub struct AppContext {
     pub ES_REG: u16,
     pub BP_REG: u16,
     pub DS_REG: u16,
+    pub data_map: HashMap<MemAddress, MemContainer>,
+    pub function_address_table: HashMap<MemAddress, fn(&mut AppContext)>
 }

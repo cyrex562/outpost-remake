@@ -492,22 +492,6 @@ pub unsafe fn pass1_1008_7e4a(param_1: *mut c_char, mut param_2: u16, param_3: u
     return 0x0;
 }
 
-pub unsafe fn pass1_1008_7e98(param_1: *mut astruct_460, param_2: u8) -> *mut u16 {
-    let mut uVar1: *mut astruct_460;
-    let mut uVar2: *mut astruct_460;
-
-    uVar2 = (param_1 >> 0x10);
-    uVar1 = param_1;
-    param_1 = 0x380a;
-    uVar1.field2_0x2 = 0x1008;
-    param_1 = 0x389a;
-    uVar1.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 pub unsafe fn unk_draw_op_1008_7f62(
     param_1: *mut astruct_20,
     param_2: u16,
@@ -540,21 +524,4 @@ pub unsafe fn unk_draw_op_1008_7f62(
     iVar4.field151_0xca = iVar4.field164_0xde;
     win_ui_reg_class_1008_96d2(param_1);
     return param_1;
-}
-pub unsafe fn pass1_1008_7ffa(param_1: *mut astruct_461, param_2: u8) {
-    let mut uVar1: *mut astruct_461;
-    let mut uVar2: u16;
-
-    uVar1 = param_1;
-    uVar1 = uVar1 + 1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
-    uVar2 = (param_1 >> 0x10);
-    param_1 = 0x380a;
-    uVar1.field2_0x2 = 0x1008;
-    param_1 = 0x389a;
-    uVar1.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
 }

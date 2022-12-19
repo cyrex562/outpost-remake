@@ -21,15 +21,15 @@ pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
     iVar5.base_0x2 = 0x1008;
     puVar1 = iVar5.field2_0x4;
     uVar1 = iVar5.field3_0x6;
-    if ((uVar1 | puVar1) != 0) {
+    if (uVar1 | puVar1) != 0 {
         ppcVar1 = *puVar1;
         (**ppcVar1)();
     }
     fn_ptr_1000_17ce(iVar5.field4_0x8);
-    if (iVar5.field18_0x1a != 0) {
+    if iVar5.field18_0x1a != 0 {
         call_fn_ptr_1000_0dc6(iVar5.field18_0x1a);
     }
-    if (iVar5.field5_0xc != 0xffff) {
+    if iVar5.field5_0xc != 0xffff {
         _lclose16(iVar5.field5_0xc);
     }
     param_1.offset_0x0 = 0x389a;

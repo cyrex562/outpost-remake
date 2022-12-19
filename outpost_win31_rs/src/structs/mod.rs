@@ -21,3 +21,4 @@ pub mod struct_27;
 pub mod struct_37;
 pub mod struct_638;
 pub mod struct_19;
+pub mod struct_1000_05b4_1;

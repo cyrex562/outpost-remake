@@ -444,83 +444,13 @@ pub unsafe fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16
     return;
 }
 
-pub unsafe fn pass1_1008_3714(param_1: *mut StructA) {
-    pass1_1008_3e0e(param_1);
-    return;
-}
 
-pub unsafe fn pass1_1008_372c(mut param_1: i16, mut param_2: u16) -> u32 {
-    return CONCAT22(param_2, param_1 + 0xa);
-}
-pub unsafe fn pass1_1008_373c() {
-    return;
-}
-pub unsafe fn pass1_1008_3740() {
-    return;
-}
-pub unsafe fn pass1_1008_3744() {
-    return;
-}
-pub unsafe fn pass1_1008_3748() {
-    return;
-}
-pub unsafe fn pass1_1008_374c() {
-    return;
-}
-pub unsafe fn pass1_1008_3750() {
-    return;
-}
-pub unsafe fn pass1_1008_3754() {
-    return;
-}
 
-pub unsafe fn pass1_1008_3758() -> u16 {
-    return 0x1;
-}
-pub unsafe fn pass1_1008_375e() {
-    return;
-}
-pub unsafe fn pass1_1008_3762() {
-    return;
-}
-pub unsafe fn pass1_1008_3766() {
-    return;
-}
-pub unsafe fn FUN_1008_376a() {
-    return;
-}
-pub unsafe fn FUN_1008_376e() {
-    return;
-}
-pub unsafe fn FUN_1008_3772() {
-    return;
-}
-pub unsafe fn FUN_1008_3776() {
-    return;
-}
-pub unsafe fn pass1_1008_377a() {
-    return;
-}
+
 
 pub unsafe fn pass1_1008_377e(param_1: *mut u16, param_2: u8) -> *mut u16 {
     *param_1 = 0x389a;
     (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn pass1_1008_37aa(param_1: *mut astruct_450, param_2: u8) -> *mut astruct_450 {
-    let mut uVar1: *mut astruct_450;
-    let mut uVar2: *mut astruct_450;
-
-    uVar2 = (param_1 >> 0x10);
-    uVar1 = param_1;
-    param_1.field0_0x0 = 0x380a;
-    uVar1.field1_0x2 = 0x1008;
-    param_1.field0_0x0 = 0x389a;
-    uVar1.field1_0x2 = 0x1008;
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
@@ -586,42 +516,6 @@ pub unsafe fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2
     DeleteObject16(hbrush);
     return;
 }
-pub unsafe fn pass1_1008_3a10() {
-    return;
-}
-
-pub unsafe fn pass1_1008_3a14(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    *param_1 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn pass1_1008_3a40(param_1: *mut astruct_451, param_2: u8) -> *mut u16 {
-    let mut uVar1: *mut astruct_451;
-    let mut uVar2: *mut astruct_451;
-
-    uVar2 = (param_1 >> 0x10);
-    uVar1 = param_1;
-    param_1 = 0x3ab0;
-    uVar1.field2_0x2 = 0x1008;
-    param_1 = 0x389a;
-    uVar1.field2_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn pass1_1008_3a7a(mut param_1: u32, param_2: u8) -> u32 {
-    pass1_1008_397a(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 pub unsafe fn pass1_1008_3ab8(param_1: *mut astruct_20) -> *mut astruct_20 {
     let mut iVar1: *mut astruct_20;
@@ -639,26 +533,12 @@ pub unsafe fn pass1_1008_3ab8(param_1: *mut astruct_20) -> *mut astruct_20 {
     );
     return param_1;
 }
+
 pub unsafe fn post_quit_msg_1008_3af4() {
     PostQuitMessage16(0x0);
     return;
 }
-pub unsafe fn pass1_1008_3afe(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
 
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
 pub unsafe fn pass1_1008_3bd6(
     mut param_1: u32,
     param_2: *mut Struct57,
@@ -731,43 +611,6 @@ pub unsafe fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HD
         DeleteObject16(HVar3);
     }
     return;
-}
-pub unsafe fn FUN_1008_3cd2() {
-    return;
-}
-
-pub unsafe fn pass1_1008_3cd6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    mix_win_ui_op_1040_911e(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-pub unsafe fn post_msg_1008_3d20(mut param_1: u32) {
-    let mut uVar1: u16;
-
-    uVar1 = (param_1 >> 0x10);
-    PostMessage16(0x0, (param_1 + 0xcc), 0x111, (param_1 + 0xbc));
-    return;
-}
-pub unsafe fn FUN_1008_3d40() {
-    return;
-}
-
-pub unsafe fn pass_1008_3d44(param_1: *mut astruct_453, param_2: u8) -> *mut u16 {
-    let mut uVar1: *mut astruct_453;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    uVar1 = param_1;
-    param_1.field0_0x0 = 0x380a;
-    uVar1.field1_0x2 = 0x1008;
-    param_1.field0_0x0 = 0x389a;
-    uVar1.field1_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return &param_1.field0_0x0;
 }
 
 pub unsafe fn pass1_1008_3e0e(param_1: *mut StructA) {

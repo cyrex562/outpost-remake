@@ -1094,18 +1094,9 @@ pub unsafe fn pass1_1010_2b98(mut param_1: u32, mut param_2: i16) -> *mut astruc
         (param_2 * 0x4 + iVar2 -0x158),
     );
 }
-pub unsafe fn pass1_1010_2bb9() {
-    pass1_1010_286c();
-    return;
-}
 
-pub unsafe fn pass1_1010_2bbe(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1010_29c6(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
+
 
 pub unsafe fn pass1_1010_2bfc(param_1: *mut Struct19, mut param_2: u16) -> *mut u16 {
     struct_op_1010_1d48(param_1, param_2);
@@ -1161,13 +1152,7 @@ pub unsafe fn unk_load_str_op_1010_2c34(param_1: u32) -> *mut c_char {
     return in_buffer_4;
 }
 
-pub unsafe fn pass1_1010_2c9c(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    pass1_1010_1d80(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn struct_1010_2cd2(param_1: *mut Struct19, mut param_2: u16) {

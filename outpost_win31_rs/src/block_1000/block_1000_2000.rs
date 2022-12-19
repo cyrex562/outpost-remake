@@ -1,46 +1,21 @@
+use std::ffi::c_void;
 use std::os::raw::c_char;
 use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::block_1000;
-use crate::block_1000::block_1000_1000::mem_1000_167a;
+use crate::block_1000::block_1000_1000::{mem_1000_167a, mem_op_1000_1b9a};
 use crate::block_1000::block_1000_5000::ret_op_1000_55ac;
 use crate::dos_interrupt::swi;
 use crate::globals::{DAT_1050_1050, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_1000, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_6066, PTR_LOOP_1050_63fe, u8_1050_5fc9};
+use crate::mem_address::MemAddress;
 use crate::structs::struct_825::Struct825;
 use crate::structs::struct_d::StructD;
 use crate::sys_ops::___EXPORTEDSTUB;
 use crate::utils::{CONCAT22, SUB42};
 use crate::winbase::{FatalAppExit16, FatalExit, GetModuleFileName16};
+use crate::windef::BOOL16;
 
-pub unsafe fn pass1_1000_201c(mut param_1: i16, mut param_2: i16) {
-    let mut u_var1: u16;
-    let mut u_var2: u32;
-    let mut u_var3: u16;
-    let mut BVar4: bool;
-    let mut i_var5: i16;
-    let mut u_var6: u16;
 
-    if (param_1 == 0) {
-        (param_2 + 0x6) = 0;
-        (param_2 + 0x4) = 0;
-    }
-    u_var3 = (param_2 + 0x6) | (param_2 + 0x4);
-    while (u_var3 != 0) {
-        BVar4 = pass1_1000_206c((param_2 + 0x4), (param_2 + 0x6));
-        if (BVar4 == 0) {
-            u_var2 = (param_2 + 0x4);
-            u_var6 = (u_var2 >> 0x10);
-            i_var5 = u_var2;
-            u_var1 = (i_var5 + 0x2c);
-            (param_2 + 0x4) = (i_var5 + 0x2a);
-            (param_2 + 0x6) = u_var1;
-        } else {
-            mem_op_1000_1b9a(0x1, (param_2 + 0x4), (param_2 + 0x6));
-        }
-        u_var3 = (param_2 + 0x6) | (param_2 + 0x4);
-    }
-    return;
-}
 
 pub unsafe fn pass1_1000_20a2(mut param_1: u16, mut param_2: u16) {
     let mut i_var1: i16;
@@ -104,21 +79,23 @@ pub unsafe fn init_1000_23be(mut param_1: u16, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn fn_ptr_op_1000_2594() {
-    let mut ppcVar1: *mut *mut code;
-    let mut unaff_SI: *mut *mut code;
-    let mut unaff_DI: *mut *mut code;
-    let mut ppcVar2: *mut *mut code;
-    let mut fn_ptr_1: *mut *mut code;
+pub unsafe fn fn_ptr_op_1000_2594(ctx: &mut AppContext) {
+    let mut ptr_1: MemAddress = MemAddress::default();
+    let mut ptr_2: MemAddress = MemAddress::default();
 
-    while (unaff_SI < unaff_DI) {
-        ppcVar2 = unaff_DI -0x2;
-        ppcVar1 = unaff_DI -0x1;
-        unaff_DI = ppcVar2;
-        if ((*ppcVar2 | *ppcVar1) != 0) {
-            fn_ptr_1 = ppcVar2;
-            (**fn_ptr_1)();
-        }
+    while ctx.SI_REG < ctx.DI_REG {
+        // ptr_2 = ctx.DI_REG - 0x2;
+        ptr_2.offset = ctx.DI_REG - 2;
+        // ptr_1 = ctx.DI_REG - 0x1;
+        ptr_1.offset = ctx.DI_REG - 1;
+        ctx.DI_REG = ptr_2.offset;
+        // if (*ptr_2 | *ptr_1) != 0 {
+        //     // fn_ptr_1 = ppcVar2;
+        //     (**fn_ptr_1)();
+        // }
+        let mut func_ptr_addr = ptr_2.clone();
+        let func = ctx.function_address_table.get(&func_ptr_addr).unwrap();
+        func(ctx);
     }
     return;
 }
@@ -313,13 +290,7 @@ pub unsafe fn pass1_1000_2b3c(
     return;
 }
 
-pub unsafe fn pass1_1000_2ba0(param_1: u8) {
-    pass1_1000_3024();
-    if (u8_1050_5fc9 != '\0') {
-        pass1_1000_3f5c();
-    }
-    return;
-}
+
 
 pub unsafe fn pass1_1000_2cb0(param_1: *mut u16) {
     let mut pu_var1: *mut u16;
@@ -528,83 +499,6 @@ pub unsafe fn pass1_1000_22c0(
     return false;
 }
 
-pub unsafe fn pass1_1000_25d2(
-    mut param_1: i16,
-    mut param_2: i16,
-    fn_ptr_param_3: code2,
-    mut param_4: i16,
-) -> u16 {
-    let mut var1: *mut i16;
-    let mut var2: *mut c_char;
-    // let mut pstruct_d_var4: *mut StructD;
-    let mut var8: *mut i16;
-    let mut string9: *mut c_char;
-    let mut var3 = (param_1 + 0x1 & 0xfffe);
-
-    let mut var5 = 0u16;
-    let mut pstruct_d_var4 = -(var3 - &param_2);
-    if (var3 < &param_2) && (PTR_LOOP_1050_000a <= pstruct_d_var4.address_offset_field_0x0)
-    {
-        if pstruct_d_var4.address_offset_field_0x0 < PTR_LOOP_1050_000c {
-            PTR_LOOP_1050_000c = pstruct_d_var4.address_offset_field_0x0;
-        }
-        // WARNING: Could not recover jumptable at 0x100025f0. Too many branches
-        // WARNING: Treating indirect jump as call
-        var5 = fn_ptr_param_3();
-        return var5;
-    }
-    let mut paVar10 = (param_2 << 0x10);
-    let mut offset7 = 0;
-    pass1_1000_25a8();
-    pass1_1000_2913(offset7);
-    let mut string6 = poss_str_op_1000_28dc(paVar10);
-    if string6.is_null() == false {
-        offset7 = 0x9;
-        if *string6 == 'M' as i8 {
-            offset7 = 0xf;
-        }
-        string6 = string6 + offset7;
-        offset7 = 0x22;
-        string9 = string6;
-        loop {
-            if offset7 == 0 {
-                break;
-            }
-            offset7 += -0x1;
-            var2 = string9;
-            string9 = string9 + 1;
-            if *var2 == '\r' as c_char {
-                break;
-            }
-        }
-        string9[-0x1] = '\0';
-    }
-    // FatalAppExit16( 0x0, CONCAT22(0x1050, pcVar6));
-    FatalAppExit16(0x0, string6);
-    FatalExit();
-    var5 = PTR_LOOP_1050_63fe;
-    loop {
-        var1 = var5;
-        var5 = var5 + 1;
-        offset7 = *var1;
-        var8 = var5;
-        if (offset7 == param_4) || (var8 = (offset7 + 1), var8.is_null()) {
-            return var8;
-        }
-        offset7 = -0x1;
-        loop {
-            if (offset7 == 0) {
-                break;
-            }
-            offset7 += -0x1;
-            var1 = var5;
-            var5 = (var5 + 1);
-            if var1 == '\0' {
-                break;
-            }
-        }
-    }
-}
 
 pub unsafe fn poss_str_op_1000_28dc(param_1: *mut Struct825) -> *mut c_char {
     // let mut ppaVar1: *mut *mut struct_825;

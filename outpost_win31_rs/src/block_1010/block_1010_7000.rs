@@ -1,88 +1,13 @@
-pub unsafe fn FUN_1010_702e() -> u16 {
-    let mut in_AX: u16;
-    let mut in_DX: u16;
-    let mut unaff_BP: i16;
 
-    pass1_1010_715c(in_AX, in_DX, (unaff_BP + 0x6), 0x3c);
-    pass1_1010_715c(in_AX, in_DX, (unaff_BP + 0x6), 0x3e);
-    return 0x1;
-}
 
-pub unsafe fn FUN_1010_703e() -> u16 {
-    return 0x0;
-}
-pub unsafe fn FUN_1010_7041() {
-    return;
-}
+
+
 pub unsafe fn pass1_1010_715c(mut param_1: u16, mut param_2: u16, mut param_3: u32, mut param_4: u16) {
     pass1_1010_a69c(param_1, param_2, (param_3 + 0x14), param_4);
     return;
 }
-pub unsafe fn FUN_1010_7174(mut param_1: u16, mut param_2: u32, mut param_3: u16) {
-    let mut uVar1: u32;
-    let mut in_DX: u16;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
 
-    iVar2 = param_2;
-    uVar3 = (param_2 >> 0x10);
-    if (param_3 == 0x13) {
-        uVar1 = (iVar2 + 0x18);
-        destroy_window_1010_7b26(in_DX, param_2 & 0xffff0000 | (iVar2 - 0xa), (uVar1 + 0x28));
-        return;
-    }
-    if (param_3 < 0x14) {
-        if (param_3 == '\x01') {
-            (iVar2 + 0xa) = 0;
-            (iVar2 + 0x18) = 0;
-            return;
-        }
-        if (param_3 == '\x05') {
-            send_msg_1010_7c42(param_2 & 0xffff0000 | (iVar2 - 0xa));
-            return;
-        }
-    }
-    return;
-}
-pub unsafe fn pass1_1010_71b0() {
-    let mut uVar1: u32;
-    let mut unaff_BP: i16;
 
-    uVar1 = (unaff_BP + 0x6);
-    send_msg_1010_7c42(uVar1 & 0xffff0000 | (uVar1 - 0xa));
-    return;
-}
-pub unsafe fn pass1_1010_71c2(mut param_1: u16, mut param_2: u16) {
-    let mut uVar1: u32;
-    let mut uVar2: u32;
-    let mut iVar3: i16;
-    let mut unaff_BP: i16;
-    let mut uVar4: u16;
-
-    if (param_1 == 0x13) {
-        uVar2 = (unaff_BP + 0x6);
-        uVar2 = (uVar2 + 0x18);
-        uVar1 = (unaff_BP + 0x6);
-        destroy_window_1010_7b26(param_2, uVar1 & 0xffff0000 | (uVar1 - 0xa), (uVar2 + 0x28));
-        return;
-    }
-    if (param_1 < 0x14) {
-        if (param_1 == '\x01') {
-            uVar2 = (unaff_BP + 0x6);
-            uVar4 = (uVar2 >> 0x10);
-            iVar3 = uVar2;
-            (iVar3 + 0xa) = 0;
-            (iVar3 + 0x18) = 0;
-            return;
-        }
-        if (param_1 == '\x05') {
-            uVar1 = (unaff_BP + 0x6);
-            send_msg_1010_7c42(uVar1 & 0xffff0000 | (uVar1 - 0xa));
-            return;
-        }
-    }
-    return;
-}
 pub unsafe fn pass1_1010_71d6(
     mut param_1: u16,
     mut param_2: u16,
@@ -885,31 +810,7 @@ pub unsafe fn pass1_1010_7d7e(
     return 0x1;
 }
 
-pub unsafe fn pass1_1010_7dc6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    param_1 = (param_1 & 0xffff0000 | (param_1 - 0xa));
-    pass1_1010_6bb2(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
-pub unsafe fn pass1_1010_7dd2(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    *param_1 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn FUN_1010_7dfe(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    pass1_1010_6bb2(&param_2.address_offset_field_0x0);
-    if ((param_3 & 1) != 0) {
-        fn_ptr_1000_17ce(param_2);
-    }
-    return param_2;
-}
 
 // WARNING: Unable to use type for symbol uVar1
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address

@@ -408,28 +408,12 @@ pub unsafe fn unk_str_op_1008_d4f6(param_1: *mut astruct_263, param_2: *mut astr
     return;
 }
 
-pub unsafe fn pass1_1008_d6f4(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    pass1_1008_caa0(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 pub unsafe fn pass1_1008_d72e(param_1: *mut Struct19, mut param_2: u16) -> *mut u16 {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     param_1.offset_0x0 = 0xd780;
     (param_1 + 0x2) = 0x1008;
     return &param_1.offset_0x0;
-}
-
-pub unsafe fn pass1_1008_d75a(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    pass1_1010_1d80(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -594,14 +578,6 @@ pub unsafe fn pass1_1008_d818(param_1: *mut astruct_263, mut param_2: i16) {
     return;
 }
 
-pub unsafe fn pass1_1008_d968(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1008_d7da(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
@@ -612,13 +588,7 @@ pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut Struct19, mut para
     return;
 }
 
-pub unsafe fn pass1_1008_d9d4(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    clenaup_win_ui_1018_4d22(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -743,66 +713,8 @@ pub unsafe fn pass1_1008_dc2c(param_1: *mut u16) {
     return;
 }
 
-pub unsafe fn pass1_1008_dc5a(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1008_dc2c(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
-// WARNING: Variable defined which should be unmapped: param_9
-pub unsafe fn pass1_1008_dc80(
-    mut param_1: u16,
-    mut param_2: i16,
-    param_3: u8,
-    param_4: u8,
-    mut param_5: u16,
-    param_6: *mut u16,
-    mut param_7: u32,
-    mut param_8: u32,
-    mut param_9: u16,
-) {
-    let mut pcVar1: *mut c_char;
-    let mut uVar2: u16;
-    let mut uVar3: u16;
-    let mut pcVar4: *mut code;
-    let mut uVar5: u16;
-    let mut cVar6: u8;
-    let mut extraout_DL: u8;
-    let mut bVar7: u8;
-    let mut iVar8: i16;
-    let mut unaff_SI: i16;
-    let mut uVar9: u16;
-    let mut bVar10: u8;
 
-    bVar7 = (param_9 >> 0x8);
-    bVar10 = param_9 + bVar7;
-    cVar6 = bVar10 + param_3;
-    uVar2 = (CARRY1(param_9, bVar7) || CARRY1(bVar10, param_3));
-    uVar3 = param_1 + 0xeff0;
-    bVar10 = param_1 < 0x1010 || uVar3 < uVar2;
-    uVar5 = uVar3 - uVar2;
-    pcVar4 = swi(0x4);
-    if (SBORROW2(param_1, 0x1010) != SBORROW2(uVar3, uVar2)) {
-        (*pcVar4)();
-        cVar6 = extraout_DL;
-    }
-    pcVar1 = (param_2 + unaff_SI);
-    *pcVar1 = *pcVar1 + cVar6 + (uVar5 < 0x1010 || uVar5 + 0xeff0 < bVar10);
-    uVar9 = (param_6 >> 0x10);
-    iVar8 = param_6;
-    *param_6 = 0x389a;
-    (iVar8 + 0x2) = 0x1008;
-    (iVar8 + 0x4) = param_8;
-    (iVar8 + 0x8) = param_7;
-    (iVar8 + 0xc) = 0;
-    (iVar8 + 0xe) = 0;
-    (iVar8 + 0x12) = 0;
-    *param_6 = 0xdd4a;
-    (iVar8 + 0x2) = 0x1008;
-    return;
-}
 pub unsafe fn struct_1008_dc90(param_1: *mut astruct_212, mut param_2: u32, mut param_3: u32) {
     let mut iVar1: *mut astruct_212;
     let mut uVar1: u16;
@@ -838,14 +750,6 @@ pub unsafe fn struct_1008_dcdc(param_1: *mut astruct_220) {
     return;
 }
 
-pub unsafe fn pass1_1008_dd1e(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    *param_1 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 pub unsafe fn struct_1008_dd4e(param_1: *mut Struct19, mut param_2: u16) {
     let mut uVar1: u16;
     let mut uVar2: u16;
