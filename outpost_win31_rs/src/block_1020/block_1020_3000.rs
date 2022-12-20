@@ -1,14 +1,4 @@
-pub unsafe fn invalidate_rect_1020_3080(mut param_1: u32, mut param_2: i16) {
-    if (param_2 == 1) {
-        (param_1 + 0x14) = 0;
-        return;
-    }
-    if ((param_2 != 0x4) && (param_2 != 0x6)) {
-        return;
-    }
-    InvalidateRect16(0x0, NULL, 0x0);
-    return;
-}
+
 
 // WARNING: Unable to use type for symbol uVar1
 // WARNING: Unable to use type for symbol uVar2
@@ -376,14 +366,6 @@ pub unsafe fn draw_polygon_1020_3602(
     return;
 }
 
-pub unsafe fn pass1_1020_3616(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    cleanup_win_ui_1020_2fea(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn struct_1020_3644(
     mut param_1: u32,
@@ -441,89 +423,7 @@ pub unsafe fn struct_1020_3644(
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_op_1020_36f6(mut param_1: u32, mut param_2: i16) {
-    let mut iVar1: i16;
-    let mut ppcVar2: *mut *mut code;
-    let mut uVar3: u32;
-    let mut pcVar4: *mut c_char;
-    let mut uVar5: u16;
-    let mut HVar6: HWND16;
-    let mut uVar7: u16;
-    let mut uVar8: u16;
-    let mut iVar9: i16;
-    let mut uVar10: u16;
-    let mut pcVar11: *mut c_char;
-    let mut uVar12: u8;
-    let mut uVar13: u8;
-    let mut puStack1034: *mut u8;
-    let mut local_406: [u8; 0x400] = [0; 0x400];
-    let mut uStack6: u32;
 
-    iVar9 = param_1;
-    uVar10 = (param_1 >> 0x10);
-    if (param_2 == 1) {
-        (iVar9 + 0x8) = 0;
-        return;
-    }
-    if (param_2 != 0xd) {
-        return;
-    }
-    uStack6 = pass1_1018_1e78((iVar9 + 0x8), -1);
-    uVar7 = (uStack6 >> 0x10);
-    uVar3 = (iVar9 + 0x18);
-    GetWindowText16(0x3ff, CONCAT22(0x1050, local_406), (uVar3 + 0x6));
-    pcVar4 = pass1_1000_472c(CONCAT22(0x1050, local_406), ':');
-    puStack1034 = CONCAT22(uVar7, pcVar4 + 2);
-    *puStack1034 = 0;
-    load_string_1010_84e0(
-        _u16_1050_14cc,
-        (_u16_1050_14cc >> 0x10),
-        0x3ff,
-        local_406,
-        &DAT_1050_1050,
-    );
-    uVar3 = (iVar9 + 0x18);
-    ppcVar2 = ((iVar9 + 0x18) + 0x18);
-    (**ppcVar2)(0x1010, uVar3, (uVar3 >> 0x10), local_406, &DAT_1050_1050);
-    uVar3 = (iVar9 + 0x8);
-    iVar1 = (uVar3 + 0x4a);
-    uVar3 = (iVar9 + 0x18);
-    HVar6 = (uVar3 + 0x6);
-    SetDlgItemText16((uStack6 + 0x2), 0x10f, HVar6);
-    SetDlgItemText16((uStack6 + 0xa), 0x110, HVar6);
-    SetDlgItemText16((uStack6 + 0x12), 0x112, HVar6);
-    SetDlgItemText16((uStack6 + 0xe), 0x113, HVar6);
-    if (iVar1 != 0) {
-        uVar5 = pass1_1018_1f1a((iVar9 + 0x8), (uStack6 + 0x1a));
-        if (uVar5 != 0) {
-            uVar12 = 0x11;
-            uVar13 = 0x1;
-            uVar3 = (uStack6 + 0x16);
-            uVar7 = uVar3;
-            uVar8 = (uVar3 >> 0x10);
-            // TODO: goto LAB_1020_3846;
-        }
-    }
-    uVar12 = 0x11;
-    uVar13 = 0x1;
-    pcVar11 = load_string_1010_847e(_u16_1050_14cc, 0x5d9);
-    uVar8 = (pcVar11 >> 0x10);
-    uVar7 = SUB42(pcVar11, 0x0); //
-                                 // LAB_1020_3846:
-    SetDlgItemText16(CONCAT22(uVar8, uVar7), CONCAT11(uVar13, uVar12), HVar6);
-    if ((iVar9 + 0x1c) != 0) {
-        uVar3 = (iVar9 + 0x1c);
-        HVar6 = GetDlgItem16((uStack6 + 0x1a), (uVar3 + 0x6));
-        SetFocus16(HVar6);
-        return;
-    }
-    InvalidateRect16(0x0, NULL, 0x0);
-    return;
-}
-pub unsafe fn pass1_1020_3898(param_1: *mut astruct_30) {
-    destroy_window_1020_3b3e(param_1);
-    return;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn window_op_1020_38aa(
@@ -753,29 +653,7 @@ pub unsafe fn destroy_window_1020_3b3e(param_1: *mut astruct_30) {
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1020_3bd6(mut param_1: u16, mut param_2: u32) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-    let mut uVar3: u16;
-    let mut uVar4: u32;
 
-    uVar3 = (param_2 >> 0x10);
-    uVar2 = param_2;
-    mixed_draw_op_1020_3fa0((uVar2 + 0xf6));
-    if ((uVar2 + 0x100) == 0) {
-        (uVar2 + 0x100) = 0x1;
-        uVar4 = (uVar2 + 0xfa);
-        if ((uVar4 + 0x56) == 0) {
-            iVar1 = 0x5;
-        } else {
-            iVar1 = 0x8;
-        }
-        uVar4 = pass1_1038_af40(uVar2, param_1, _PTR_LOOP_1050_5b7c, (uVar2 + 0x8), iVar1);
-        (uVar2 + 0x10e) = uVar4;
-        (uVar2 + 0x110) = (uVar4 >> 0x10);
-    }
-    return;
-}
 pub unsafe fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
     let mut cVar1: u8;
     let mut iVar2: i16;
@@ -798,357 +676,18 @@ pub unsafe fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u
     pass1_1020_3c32(param_1, param_2, param_3);
     return;
 }
-pub unsafe fn pass1_1020_3c74(mut param_1: u16, mut param_2: u32, mut param_3: u16) {
-    pass1_1020_3c8c(
-        CONCAT22(param_2, param_1),
-        CONCAT22(param_3, (param_2 >> 0x10)),
-    );
-    return;
-}
+
 pub unsafe fn pass1_1020_3c8c(mut param_1: u32, mut param_2: u32) {
     pt_in_rect_1018_1bda((param_1 + 0xfa), param_2, (param_2 >> 0x10));
     return;
 }
 
-pub unsafe fn pass1_1020_3ca6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    let mut uVar1: u32;
-    let mut puStack10: *mut StructD;
-
-    uVar1 = param_1 & 0xffff0000;
-    param_1 = (uVar1 | param_1 - 0xf2);
-    param_1 = (uVar1 >> 0x10);
-    if (param_1.is_null()) {
-        param_1 = 0;
-        param_1 = 0;
-    }
-    puStack10 = CONCAT22(param_1, param_1);
-    puStack10.address_offset_field_0x0 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    cleanup_menu_ui_op_1020_795c(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-pub unsafe fn FUN_1020_3cb4() {
-    return;
-}
-
-pub unsafe fn FUN_1020_3cb8(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    let mut iVar1: i16;
-    let mut puStack10: *mut u16;
-
-    if (param_2.is_null()) {
-        iVar1 = 0;
-        param_2 = 0;
-    } else {
-        iVar1 = param_2 + 0xf2;
-    }
-    puStack10 = CONCAT22(param_2, iVar1);
-    *puStack10 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    cleanup_menu_ui_op_1020_795c(param_2);
-    if ((param_3 & 1) != 0) {
-        fn_ptr_1000_17ce(param_2);
-    }
-    return param_2;
-}
 
 // WARNING: Instruction at (ram,0x10203dab) overlaps instruction at (ram,0x10203da8)
 //
 // WARNING: Variable defined which should be unmapped: param_16
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1020_3d08(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-    mut param_5: u16,
-    mut param_6: u16,
-    mut param_7: u16,
-    mut param_8: u16,
-    mut param_9: u16,
-    mut param_15: u32,
-    mut param_16: u16,
-    mut param_17: u16,
-    mut param_18: u16,
-    mut param_19: u16,
-) {
-    let mut pcVar1: *mut c_char;
-    let mut pbVar2: *mut u8;
-    let mut bVar3: bool;
-    let mut bVar4: bool;
-    let mut ppcVar5: *mut *mut code;
-    let mut puVar6: *mut u16;
-    let mut uVar7: u32;
-    let mut puVar8: *mut u32;
-    let mut hdc: HDC16;
-    let pSVar9: *mut StructA;
-    let mut bVar10: u8;
-    let mut bVar12: u8;
-    let mut iVar13: i16;
-    let mut bVar17: u8;
-    let mut cVar18: u8;
-    let mut hdc_00: HDC16;
-    let mut iVar14: i16;
-    let mut HVar15: HGDIOBJ16;
-    let mut puVar16: *mut u8;
-    let mut uVar19: u16;
-    let mut bVar20: u8;
-    let mut bVar21: u8;
-    let mut uVar22: u16;
-    let mut in_register_0000000a: u16;
-    let mut bVar24: u8;
-    let mut pcVar25: *mut c_char;
-    let mut uVar26: u16;
-    let mut uVar27: u16;
-    let mut bVar28: bool;
-    let mut bVar29: bool;
-    let mut puVar30: *mut u32;
-    let mut in_stack_0000fe8a: u16;
-    let mut in_stack_0000ffae: u16;
-    let mut in_stack_0000ffb4: u16;
-    let mut in_stack_0000ffb8: u16;
-    let mut uStack30: u16;
-    let mut pcStack4: *mut code;
-    let mut bVar11: u8;
-    let mut paVar23: *mut Struct57;
-
-    pSVar9 = CONCAT22(param_19, param_18);
-    bVar20 = param_2 + (param_1 >> 0x8) + param_10;
-    *param_6 = 0x3c;
-    paVar23 = CONCAT22(
-        in_register_0000000a,
-        CONCAT11(
-            (param_2 >> 0x8) + '<' + (*(param_3 + param_5) < 0x20),
-            bVar20,
-        ),
-    );
-    pcStack4 = caseD_a7;
-    iVar13 = 0x203d;
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 | bVar20;
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 & bVar20;
-    pcVar25 = CONCAT11(0x79, param_5 -0x37);
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 | bVar20;
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 | bVar20;
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 | bVar20;
-    bVar10 = (param_6 + 2);
-    bVar12 = 0x9 < (bVar10 & 0xf) | param_11;
-    bVar11 = bVar10 + bVar12 * '\x06' & 0xf;
-    pbVar2 = (param_3 + 0x203d);
-    *pbVar2 = *pbVar2 | bVar20;
-    bVar10 = 0x9 < bVar11 | bVar12;
-    uVar19 = CONCAT11(
-        (param_6 + 0x2 >> 0x8) + bVar12 + bVar10,
-        bVar11 + bVar10 * '\x06',
-    ) & 0xff0f;
-    loop {
-        pbVar2 = (param_3 + iVar13);
-        bVar21 = paVar23;
-        *pbVar2 = *pbVar2 | bVar21;
-        bVar12 = (uVar19 - 1);
-        bVar3 = 0x9 < (bVar12 & 0xf);
-        bVar20 = bVar3 | bVar10;
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar21;
-        bVar4 = 0x9 < (bVar12 + bVar20 * '\x06' & 0xf);
-        bVar17 = (uVar19 - 0x1 >> 0x8) + bVar20 + (bVar4 | bVar20);
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar21;
-        uVar19 = 0;
-        bVar28 = &pcStack4 < (param_3 + iVar13);
-        pbVar2 = (param_3 + iVar13 + 0x896);
-        bVar24 = param_3;
-        bVar29 = CARRY1(*pbVar2, bVar24) || CARRY1(*pbVar2 + bVar24, bVar28);
-        *pbVar2 = *pbVar2 + bVar24 + bVar28;
-        pbVar2 = (param_3 + iVar13 + 0x2038);
-        bVar12 = *pbVar2;
-        bVar11 = *pbVar2;
-        *pbVar2 = bVar11 + bVar24 + bVar29;
-        pcVar1 = (param_4 + iVar13);
-        *pcVar1 = *pcVar1
-            + (paVar23 >> 0x8)
-            + (CARRY1(bVar12, bVar24) || CARRY1(bVar11 + bVar24, bVar29));
-        pcVar1 = (param_3 + iVar13 -0x64);
-        *pcVar1 = *pcVar1 + bVar17 + '\x01';
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar21;
-        pcVar1 = pcVar25;
-        pcVar25 = pcVar25 + 1;
-        bVar28 = *pcVar1 != '\0';
-        if (-*pcVar1 < '\0') {
-            pcVar1 = (param_4 + 0x37);
-            *pcVar1 = *pcVar1 + bVar24 + bVar28;
-            pbVar2 = (param_3 + iVar13);
-            *pbVar2 = *pbVar2 | bVar21;
-            iVar13 += -0x1;
-            pbVar2 = (param_3 + iVar13);
-            *pbVar2 = *pbVar2 | bVar21;
-            pbVar2 = (param_3 + iVar13);
-            *pbVar2 = *pbVar2 | bVar21;
-            uVar22 = paVar23 - 0x1;
-            paVar23 = (paVar23 & 0xffff0000 | uVar22);
-            pbVar2 = (param_3 + iVar13);
-            bVar12 = uVar22;
-            *pbVar2 = *pbVar2 | bVar12;
-            if (*pbVar2 == 0) {
-                pbVar2 = (param_3 + iVar13);
-                *pbVar2 = *pbVar2 & bVar12;
-                // code_r0x10203d96:
-                pbVar2 = (param_3 + iVar13);
-                bVar12 = paVar23;
-                *pbVar2 = *pbVar2 | bVar12;
-                pbVar2 = (param_3 + iVar13);
-                *pbVar2 = *pbVar2 & bVar12;
-                paVar23 = (paVar23 & 0xffff0000
-                    | CONCAT11((paVar23 >> 0x8) * '\x02' + (uVar19 < 0x20), bVar12));
-                pbVar2 = (param_3 + iVar13 + 1);
-                *pbVar2 = *pbVar2 & bVar12;
-                param_4 = &stack0xfff6;
-                param_16 = pcStack4;
-                param_17 = (pcStack4 >> 0x10);
-                pSVar9 = param_15;
-                // code_r0x10203db1:
-                get_sys_metrics_1020_7c1a(CONCAT22(param_17, param_16), pSVar9);
-                puVar6 = (param_4 + 0x6);
-                uVar26 = (puVar6 >> 0x10);
-                (puVar6 + 0x14) = 0;
-                *puVar6 = 0x408a;
-                (puVar6 + 0x2) = 0x1020;
-                puVar30 = mixed_1010_20ba(
-                    paVar23,
-                    _u16_1050_0ed0,
-                    CONCAT22(uStack30, 0x6),
-                    in_stack_0000fe8a,
-                    in_stack_0000ffae,
-                    in_stack_0000ffb4,
-                    in_stack_0000ffb8,
-                );
-                hdc = (puVar30 >> 0x10);
-                uVar7 = (param_4 + 0x6);
-                uVar26 = (uVar7 >> 0x10);
-                iVar13 = uVar7;
-                (iVar13 + 0x14) = puVar30;
-                *(iVar13 + 0x16) = hdc;
-                ppcVar5 = ((iVar13 + 0x14) + 0x4);
-                (**ppcVar5)(0x1010, (iVar13 + 0x14), hdc, 0x0, iVar13, uVar26);
-                uVar7 = (param_4 + 0x6);
-                hdc_00 = GetDC16((uVar7 + 0x4));
-                *(param_4 -0x2) = hdc_00;
-                iVar14 = SetMapMode16(0x1, hdc_00);
-                uVar7 = (param_4 + 0x6);
-                (uVar7 + 0x1e) = iVar14;
-                HVar15 = GetStockObject16(0x0);
-                HVar15 = SelectObject16(HVar15, hdc);
-                uVar7 = (param_4 + 0x6);
-                (uVar7 + 0x18) = HVar15;
-                HVar15 = GetStockObject16(0x6);
-                HVar15 = SelectObject16(HVar15, 0x0);
-                uVar7 = (param_4 + 0x6);
-                (uVar7 + 0x1a) = HVar15;
-                uVar7 = (param_4 + 0x6);
-                uVar7 = (uVar7 + 0x14);
-                (param_4 -0x6) = (uVar7 + 0x24);
-                puVar16 = (param_4 -0x2);
-                puVar8 = (param_4 -0x6);
-                ppcVar5 = (*puVar8 + 0x8);
-                (**ppcVar5)(
-                    s_tile2_bmp_1050_1538,
-                    puVar8,
-                    (puVar8 >> 0x10),
-                    puVar16,
-                    &DAT_1050_1050,
-                );
-                uVar7 = (param_4 + 0x6);
-                uVar27 = (uVar7 >> 0x10);
-                iVar13 = uVar7;
-                (iVar13 + 0x1c) = puVar16;
-                uVar26 = (param_4 -0x2);
-                (param_4 -0x14) = uVar26;
-                uVar7 = (iVar13 + 0x14);
-                (uVar7 + 0x4c) = uVar26;
-                return;
-            }
-            pbVar2 = (param_3 + iVar13);
-            *pbVar2 = *pbVar2 & bVar12;
-            pcVar1 = (param_4 + iVar13 + 0x20);
-            bVar11 = param_1 & 0x1f;
-            cVar18 = *pcVar1;
-            *pcVar1 = *pcVar1 >> bVar11;
-            pcVar1 = (param_4 + iVar13 + 0x6a);
-            *pcVar1 =
-                *pcVar1 + param_1 + ((param_1 & 0x1f) != 0x0 && (cVar18 >> bVar11 - 0x1 & 1) != 0);
-            pbVar2 = (param_3 + iVar13);
-            *pbVar2 = *pbVar2 | bVar12;
-            uVar19 = (param_3 + iVar13) * 0x10;
-            pbVar2 = (pcVar25 + param_4 + 0x8);
-            bVar12 = (uVar19 >> 0x8);
-            uVar22 = uVar19 & 0xff | (bVar12 + *pbVar2) << 0x8;
-            pcVar1 = (param_4 + iVar13 + 0x37);
-            *pcVar1 = *pcVar1 + (param_3 >> 0x8) + CARRY1(bVar12, *pbVar2);
-        } else {
-            pcVar1 = (param_4 + iVar13);
-            *pcVar1 = *pcVar1 + bVar28;
-            uVar22 = (param_3 + iVar13) * 0x10;
-            //      if ((POPCOUNT(*pcVar1) & 1) == 0) goto code_r0x10203db1;
-        }
-        pbVar2 = (param_3 + iVar13);
-        bVar11 = paVar23;
-        *pbVar2 = *pbVar2 | bVar11;
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar11;
-        param_16 = (param_14 & 1) * 0x4000
-            | (param_13 & 1) * 0x200
-            | (param_12 & 1) * 0x100
-            | (*pbVar2 < '\0') * 0x80
-            | (*pbVar2 == 0) * 0x40
-            | (bVar4 | bVar3 | bVar10 & 1) * 0x10
-            | ((POPCOUNT(*pbVar2) & 1) == 0) * 0x4;
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar11;
-        // TODO: bVar12 = in(0x79);
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 & bVar11;
-        if (-0x1 < *pbVar2) {
-            pSVar9 = CONCAT22(param_19, param_18);
-            if ((bVar17 | *(param_4 - 1)) == 0) {
-                param_16 = param_7;
-                pSVar9 = CONCAT22(param_19, param_18);
-            }
-            // TODO: goto code_r0x10203db1;
-        }
-        pbVar2 = (param_4 + 0x89c);
-        bVar28 = CARRY1(*pbVar2, bVar12);
-        *pbVar2 = *pbVar2 + bVar12;
-        bVar21 = bVar17 + bVar12;
-        cVar18 = bVar21 + bVar28;
-        uVar19 = CONCAT11(cVar18, bVar12);
-        pcStack4._0_3_ = CONCAT21(
-            (param_14 & 1) * 0x4000
-                | (SCARRY1(bVar17, bVar12) != SCARRY1(bVar21, bVar28)) * 0x800
-                | (param_13 & 1) * 0x200
-                | (param_12 & 1) * 0x100
-                | (cVar18 < '\0') * 0x80
-                | (cVar18 == '\0') * 0x40
-                | (bVar4 | bVar3 | bVar10 & 1) * 0x10
-                | ((POPCOUNT(cVar18) & 1) == 0) * 0x4
-                | (CARRY1(bVar17, bVar12) || CARRY1(bVar21, bVar28)),
-            pcStack4._0_1_,
-        );
-        pcStack4 = (pcStack4 & 0xff000000 | pcStack4);
-        pbVar2 = (param_3 + iVar13);
-        *pbVar2 = *pbVar2 | bVar11;
-        param_1 = uVar22 - 0x1;
-        bVar10 = bVar4 | bVar20;
-        //    if (param_1 == 0x0 || *pbVar2 == 0) goto code_r0x10203d96;
-    }
-}
 
 // WARNING: Unable to use type for symbol uVar4
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -1258,28 +797,7 @@ pub unsafe fn win_ui_palette_op_1020_3e84(param_1: *mut StructD) {
     struct_v1.address_offset_field_0x2 = 0x1008;
     return;
 }
-pub unsafe fn validate_rect_1020_3f12(mut param_1: u32, mut param_2: i16) {
-    let mut local_a: RECT16;
-    let mut uStack6: u32;
 
-    if (param_2 == 1) {
-        (param_1 + 0x14) = 0;
-        return;
-    }
-    if (param_2 != 0xd) {
-        return;
-    }
-    local_a = 0x8000e;
-    uStack6 = 0x1100116;
-    InvalidateRect16(0x0, &local_a, &DAT_1050_1050);
-    local_a = 0xf10000;
-    uStack6 = 0x1220030;
-    ValidateRect16(&local_a, &DAT_1050_1050);
-    local_a = 0xf100f5;
-    uStack6 = 0x1220127;
-    ValidateRect16(&local_a, &DAT_1050_1050);
-    return;
-}
 pub unsafe fn mixed_draw_op_1020_3fa0(mut param_1: u32) {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut code;

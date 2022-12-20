@@ -6,6 +6,28 @@ pub mod e;
 pub mod f;
 pub mod g;
 pub mod h;
+pub mod i;
+pub mod j;
+pub mod k;
+pub mod l;
+pub mod m;
+pub mod n;
+pub mod o;
+pub mod p;
+pub mod q;
+pub mod r;
+pub mod s;
+pub mod t;
+pub mod u;
+pub mod v;
+pub mod w;
+pub mod x;
+pub mod y;
+pub mod z;
+pub mod aa;
+pub mod ab;
+pub mod ac;
+pub mod ad;
 
 pub unsafe fn pass1_1000_0000(mut param_1: *mut u16, mut param_2: *mut u16, mut param_3: u16) {
     let mut pu_var1: *mut u16;

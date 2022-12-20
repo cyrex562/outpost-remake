@@ -23,51 +23,10 @@ pub unsafe fn struct_1010_50b2(param_1: *mut Struct19, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn pass1_1010_50f2(param_1: *mut u16) {
-    let mut uVar1: u16;
 
-    uVar1 = (param_1 >> 0x10);
-    *param_1 = 0x53f4;
-    (param_1 + 0x2) = 0x1010;
-    fn_ptr_1000_17ce(*(param_1 + 0xc));
-    pass1_1010_1d80(param_1);
-    return;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_5120(mut param_1: u16, mut param_2: u16, mut param_3: u32, mut param_4: u16) {
-    let mut uVar1: u32;
-    let mut uVar2: u16;
-    let mut uVar3: u16;
-    let mut uVar4: u32;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut iVar7: i16;
-    let mut iVar8: i16;
-    let mut uVar9: u16;
 
-    uVar9 = (param_3 >> 0x10);
-    iVar8 = param_3;
-    if ((iVar8 + 0x16) != 0) {
-        pass1_1028_e1ec(_PTR_LOOP_1050_65e2, (iVar8 + 0x16));
-        uVar5 = param_2 | param_1;
-        if (uVar5 != 0) {
-            uVar1 = (param_1 + 0x1f6);
-            uVar4 = uVar1;
-            pass1_1030_38f2(uVar1, 0x3);
-            uVar2 = uVar4;
-            uVar6 = uVar5;
-            uVar3 = uVar2;
-            pass1_1030_38f2(uVar1, 0x4);
-            iVar7 = uVar6 + uVar5 + CARRY2(uVar3, uVar2);
-            if ((0x0 < iVar7) || (-0x1 < iVar7 && (param_4 <= uVar3 + uVar2))) {
-                (iVar8 + 0xa) = param_4;
-                return;
-            }
-        }
-    }
-    return;
-}
 
 pub unsafe fn pass1_1010_519a(param_1: *mut u8, mut param_2: u32, param_3: *mut c_char) {
     let mut uVar1: u16;
@@ -159,69 +118,11 @@ pub unsafe fn string_1010_5286(
     return CONCAT22(in_buf_len_5, param_1);
 }
 
-pub unsafe fn pass1_1010_52fc(
-    mut param_1: u16,
-    param_2: *mut u8,
-    mut param_3: u32,
-    mut param_4: u32,
-) {
-    let mut uVar1: u16;
 
-    pass1_1010_533c(param_2, param_3, param_4);
-    uVar1 = (param_3 >> 0x10);
-    (param_3 + 0x12) = param_1;
-    (param_3 + 0x14) = param_2;
-    return;
-}
 
-pub unsafe fn pass1_1010_531c(
-    mut param_1: u16,
-    param_2: *mut u8,
-    mut param_3: u32,
-    mut param_4: u32,
-) {
-    let mut uVar1: u16;
 
-    pass1_1010_533c(param_2, param_3, param_4);
-    uVar1 = (param_3 >> 0x10);
-    (param_3 + 0x16) = param_1;
-    (param_3 + 0x18) = param_2;
-    return;
-}
 
-pub unsafe fn pass1_1010_533c(param_1: *mut u8, mut param_2: u32, param_3: *mut c_char) {
-    let mut puVar1: *mut u16;
-    let mut uVar2: u32;
-    let mut uVar3: u32;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut pcVar7: *mut c_char;
-    let mut uStack6: u16;
-    let mut local_4: [u8; 0x2] = [0; 0x2];
 
-    pass1_1010_519a(param_1, param_2, CONCAT22(0x1050, local_4));
-    uStack6 = 0;
-    loop {
-        uVar6 = (param_2 >> 0x10);
-        uVar5 = param_2;
-        puVar1 = (uVar5 + 0x10);
-        if (*puVar1 < uStack6 || *puVar1 == uStack6) {
-            return;
-        }
-        uVar3 = (uVar5 + 0xc);
-        uVar2 = (uVar3 + uStack6 * 0x4);
-        pcVar7 = string_1010_5286(uVar2, param_1, uVar5, uVar6, uVar2);
-        param_1 = (pcVar7 >> 0x10);
-        iVar4 = pass1_1000_3d7a(param_3, (pcVar7 & 0xffff | ZEXT24(param_1) << 0x10));
-        if (iVar4 == 0) {
-            break;
-        }
-        fn_ptr_1000_17ce(pcVar7);
-        uStack6 += 0x1;
-    }
-    return;
-}
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -777,101 +678,14 @@ pub unsafe fn write_private_profile_str_1010_5b10(mut param_1: u16, param_2: *mu
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1010_5d9c(param_1: *mut u8, mut param_2: u32, mut param_3: i16) {
-    let mut in_register_0000000a: u16;
-    let mut puVar1: *mut u32;
-    let mut in_stack_0000fea2: u16;
-    let mut in_stack_0000ffc6: u16;
-    let mut in_stack_0000ffcc: u16;
-    let mut in_stack_0000ffd0: u16;
-    let mut in_stack_0000fffa: u16;
 
-    (param_2 + 0x1e) = param_3;
-    if (param_3 == 0) {
-        puVar1 = mixed_1010_20ba(
-            CONCAT22(in_register_0000000a, param_1),
-            _u16_1050_0ed0,
-            CONCAT22(in_stack_0000fffa, 0x2e),
-            in_stack_0000fea2,
-            in_stack_0000ffc6,
-            in_stack_0000ffcc,
-            in_stack_0000ffd0,
-        );
-        pass1_1018_209c(puVar1);
-    }
-    return;
-}
 
-pub unsafe fn struct_1010_5f1e(mut param_1: u16, param_2: *mut astruct_73, param_3: *mut c_char) {
-    let mut uVar1: u16;
-    let mut iVar3: *mut astruct_73;
-    let mut uVar3: *mut astruct_73;
 
-    uVar3 = (param_2 >> 0x10);
-    iVar3 = param_2;
-    fn_ptr_1000_17ce(iVar3.field22_0x16);
-    uVar1 = str_op_1008_60e8(param_1, param_3);
-    iVar3.field22_0x16 = uVar1;
-    (&iVar3.field22_0x16 + 0x2) = param_1;
-    return;
-}
 
-pub unsafe fn pass1_1010_5f4c(mut param_1: u16, param_2: *mut astruct_484, param_3: *mut c_char) {
-    let mut uVar1: u16;
-    let mut iVar3: *mut astruct_484;
-    let mut uVar2: *mut astruct_484;
 
-    uVar2 = (param_2 >> 0x10);
-    iVar3 = param_2;
-    fn_ptr_1000_17ce(*&iVar3.field18_0x12);
-    uVar1 = str_op_1008_60e8(param_1, param_3);
-    iVar3.field18_0x12 = uVar1;
-    iVar3.field19_0x14 = param_1;
-    return;
-}
 
-pub unsafe fn pass1_1010_5f7a(
-    mut param_1: i16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: i16,
-) -> u32 {
-    let mut iVar1: i16;
 
-    iVar1 = param_4 * 0x8 + param_1;
-    if (((iVar1 + 0x26) == 0) && ((iVar1 + 0x28) == 0)) {
-        return 0x0;
-    }
-    return CONCAT22(param_2, param_4 * 0x8 + param_1 + 0x22);
-}
 
-pub unsafe fn pass1_1010_5fb0(
-    mut param_1: u32,
-    mut param_2: u16,
-    param_3: *mut u32,
-    mut param_4: u16,
-    mut param_5: i16,
-) {
-    let mut uVar1: u16;
-    let mut iVar1: *mut astruct_656;
 
-    uVar1 = (param_1 >> 0x10);
-    iVar1 = (param_1 + param_5 * 0x8);
-    iVar1.field34_0x22 = *param_3;
-    iVar1.field35_0x26 = param_3[0x1];
-    return;
-}
 
-pub unsafe fn pass1_1010_5fd8(mut param_1: u16, param_2: *mut astruct_485, param_3: *mut c_char) {
-    let mut uVar1: u16;
-    let mut iVar3: *mut astruct_485;
-    let mut uVar2: *mut astruct_485;
 
-    uVar2 = (param_2 >> 0x10);
-    iVar3 = param_2;
-    fn_ptr_1000_17ce(*&iVar3.field104_0x68);
-    uVar1 = str_op_1008_60e8(param_1, param_3);
-    iVar3.field104_0x68 = uVar1;
-    iVar3.field105_0x6a = param_1;
-    return;
-}

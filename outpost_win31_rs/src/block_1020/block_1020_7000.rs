@@ -1,33 +1,3 @@
-pub unsafe fn draw_op_1020_7070(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-    hdc_param_5: HDC16,
-) -> u16 {
-    let mut hgdi_obj: u16;
-
-    GetStockObject16(BLACK_BRUSH);
-    if (COLORREF_1050_441e == 0) {
-        COLORREF_1050_441e = 0x1000002;
-    }
-    if (0x6 < param_4) {
-        return 0x0;
-    }
-    SetTextColor16(COLORREF_1050_441e, hdc_param_5);
-    hgdi_obj = 0x100;
-    SetBkColor16(0x1000000, hdc_param_5);
-    return hgdi_obj;
-}
-
-pub unsafe fn pass1_1020_70c0(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    cleanup_menu_ui_op_1020_795c(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn unk_win_ui_op_1020_717e(
@@ -163,27 +133,7 @@ pub unsafe fn palette_op_1020_7270(pstruct_param_1: *mut StructD) {
     struct767_var1.address_offset_field_0x2 = 0x1008;
     return;
 }
-pub unsafe fn post_win_msg_1020_7308(mut param_1: u32, mut param_2: u16) {
-    let mut cVar1: u8;
-    let mut uVar2: u16;
 
-    uVar2 = (param_1 >> 0x10);
-    if (param_2 != 0x12) {
-        if (param_2 < 0x13) {
-            cVar1 = param_2;
-            if (cVar1 == '\x01') {
-                (param_1 + 0x1c) = 0;
-                return;
-            }
-            //      if (('\x03' < (cVar1 -1)) && ((cVar1 -0x5) < '\x02')) goto LAB_1020_7310;
-        }
-        return;
-    } //
-      // LAB_1020_7310:
-    PostMessage16(0x0, 0xeb, 0x111, (param_1 + 0x4));
-    invalidate_rect_1020_735a(param_1);
-    return;
-}
 pub unsafe fn invalidate_rect_1020_735a(mut param_1: u32) {
     let mut uVar1: u32;
 
@@ -286,7 +236,7 @@ pub unsafe fn win_ui_op_1020_737a(mut param_1: u16, param_2: *mut astruct_788) -
             local_rect = GetStockObject16(BLACK_BRUSH);
             GetClientRect16(&rect_30, &DAT_1050_1050);
             local_brush_handle = 0x0;
-            iStack56 = (iStack44 - rect_30.x) -0x1;
+            iStack56 = (iStack44 - rect_30.x) - 0x1;
             HStack54 = (iStack42 - rect_30.y) - 0x1;
             HStack52 = HStack54;
             iStack50 = iStack56;
@@ -298,13 +248,6 @@ pub unsafe fn win_ui_op_1020_737a(mut param_1: u16, param_2: *mut astruct_788) -
     return is_iconic;
 }
 
-pub unsafe fn pass1_1020_7526(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    palette_op_1020_7270(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn struct_1020_7554(
@@ -352,6 +295,7 @@ pub unsafe fn struct_1020_7554(
     (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
     return;
 }
+
 pub unsafe fn pass1_1020_75c4(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
@@ -368,113 +312,6 @@ pub unsafe fn pass1_1020_75c4(param_1: *mut StructD) {
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_1020_75f0(param_1: *mut astruct_283, mut param_2: u32) {
-    let mut pUVar1: *mut u16;
-    let mut ppcVar2: *mut *mut code;
-    let mut uVar3: u32;
-    let mut uVar4: u16;
-    let mut uVar5: u16;
-    let mut uVar8: u16;
-    let mut iVar7: *mut astruct_283;
-    let mut uVar9: u16;
-    let mut puVar10: *mut u16;
-    let mut in_stack_0000ff4c: u16;
-    let mut in_stack_0000ff62: u16;
-    let mut uStack10: u32;
-    let mut local_6: [u8; 0x4] = [0; 0x4];
-    let mut paVar6: *mut Struct57;
-    let mut uVar7: u32;
-
-    uVar8 = (param_2 >> 0x10);
-    uVar9 = (param_1 >> 0x10);
-    iVar7 = param_1;
-    if (iVar7.field235_0xee.is_null() == false) {
-        ppcVar2 = (*iVar7.field235_0xee + 0x8);
-        (**ppcVar2)();
-    }
-    if (iVar7.field233_0xea == 0) {
-        iVar7.field233_0xea = 0x1;
-        puVar10 = pass1_1008_941a(CONCAT22(0x1050, local_6), 0x1, 0x91);
-        uVar4 = (puVar10 >> 0x10);
-        paVar6 = CONCAT22(uVar8, uVar4);
-        uVar3 = ZEXT24(local_6);
-        win_1008_5c9e(local_6, uVar4, _u16_1050_02a0, CONCAT22(0x1050, local_6));
-        iVar7.field234_0xec = uVar3;
-        mem_op_1000_179c(0x112, paVar6);
-        uVar5 = paVar6 | uVar3;
-        uVar7 = paVar6 & 0xffff0000 | uVar5;
-        if (uVar5 == 0) {
-            uVar9 = 0;
-            uStack10 = null_mut();
-        } else {
-            pUVar1 = &iVar7.field204_0xcc;
-            *pUVar1 = *pUVar1 + 1;
-            struct_1020_3644(
-                uVar7,
-                CONCAT13((paVar6 >> 0x8), CONCAT12(paVar6, uVar3)),
-                iVar7.field204_0xcc,
-                param_1 & 0xffff | uVar9 << 0x10,
-                in_stack_0000ff4c,
-                in_stack_0000ff62,
-            );
-            uVar9 = uVar3;
-            uStack10 = (uVar3 & 0xffff | uVar7 << 0x10);
-        }
-        pass1_1008_6978(uVar9, uVar7, param_1, 0x0, uStack10 & 0xffff0000 | uVar9);
-        ppcVar2 = (*uStack10 + 0xc);
-        (**ppcVar2)(0x8, uStack10, uStack10, 0x5);
-    }
-    return;
-}
-pub unsafe fn window_op_1020_76aa(param_1: *mut StructA, param_2: *mut astruct_666) {
-    let mut uVar3: u16;
-    let mut in_EDX: *mut Struct57;
-    let iVar1: *mut StructA;
-    let mut uVar2: u16;
-
-    create_window_ex_1008_9760(param_1);
-    uVar2 = (param_1 >> 0x10);
-    iVar1 = param_1;
-    get_dc_1018_4db0(&iVar1[0x1].field20_0x26, iVar1.field4_0x8);
-    mem_op_1000_179c(0x18, in_EDX);
-    uVar3 = in_EDX | param_2;
-    if (uVar3 != 0) {
-        pass1_1020_7824(uVar3, param_2, in_EDX, iVar1.field4_0x8);
-        iVar1[0x1].field18_0x22 = param_2;
-        iVar1[0x1].field19_0x24 = uVar3;
-        return;
-    }
-    iVar1[0x1].field18_0x22 = 0;
-    return;
-}
-pub unsafe fn pass1_1020_770e(mut param_1: u32) {
-    let mut puVar1: *mut u32;
-    let mut uVar2: u16;
-    let mut ppcVar3: *mut *mut code;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-
-    uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    puVar1 = (iVar4 + 0xee);
-    uVar2 = (iVar4 + 0xf0);
-    if ((uVar2 | puVar1) != 0) {
-        ppcVar3 = *puVar1;
-        (**ppcVar3)();
-    }
-    (iVar4 + 0xee) = 0;
-    destroy_win_1008_628e(param_1 & 0xffff | uVar5 << 0x10);
-    return;
-}
-
-pub unsafe fn pass1_1020_774c(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    param_1 = (param_1 & 0xffff0000 | (param_1 - 0xe2));
-    pass1_1020_75c4(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1020_7824(
@@ -529,6 +366,7 @@ pub unsafe fn pass1_1020_7824(
     draw_op_1020_9364(CONCAT22(param_3, param_2));
     return;
 }
+
 pub unsafe fn pass1_1020_78ac(param_1: *mut u16) {
     let mut iVar1: i16;
     let mut uVar1: u16;
@@ -544,13 +382,7 @@ pub unsafe fn pass1_1020_78ac(param_1: *mut u16) {
     return;
 }
 
-pub unsafe fn pass1_1020_78dc(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1020_78ac(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 pub unsafe fn struct_1020_790e(
     param_1: *mut u16,
     param_2: *mut c_char,
@@ -572,6 +404,7 @@ pub unsafe fn struct_1020_790e(
     iVar1.field2_0x2 = 0x1020;
     return;
 }
+
 pub unsafe fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD) {
     let mut local_struct_1: *mut StructD;
     let mut uVar1: *mut StructD;
@@ -594,6 +427,7 @@ pub unsafe fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD) {
 pub unsafe fn pass1_1020_79ae() -> u16 {
     return 0x1;
 }
+
 pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut c_char) {
     let mut in_DX: u16;
 
@@ -603,12 +437,14 @@ pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut
     }
     return;
 }
+
 pub unsafe fn pass1_1020_79e4(mut param_1: u32) {
     let mut in_DX: u16;
 
     draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));
     return;
 }
+
 pub unsafe fn post_win_msg_1020_79fc(
     param_1: *mut astruct_69,
     mut param_2: u16,
@@ -641,6 +477,7 @@ pub unsafe fn post_win_msg_1020_79fc(
     }
     return;
 }
+
 pub unsafe fn get_win_ui_info_op_1020_7a50(param_1: *mut astruct_868) {
     let mut ppcVar1: *mut *mut code;
     let mut b_var2: bool;
@@ -659,43 +496,8 @@ pub unsafe fn get_win_ui_info_op_1020_7a50(param_1: *mut astruct_868) {
     (**ppcVar1)();
     return;
 }
-pub unsafe fn win_ui_menu_op_1020_7ad2(
-    param_1: *mut astruct_854,
-    param_2: HWND16,
-    param_3: *mut RECT16,
-) {
-    //   HMENlet mut HVar1: u16;
-    let mut HVar1: HMENU16;
-    let mut iVar2: *mut astruct_854;
-    let mut uVar2: u16;
 
-    uVar2 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if ((iVar2.field236_0xee.is_null() == false) && (iVar2.field235_0xec == 0)) {
-        HVar1 = LoadMenu16(iVar2.field236_0xee, HINSTANCE16_1050_038c);
-        iVar2.field235_0xec = HVar1;
-        if (HVar1 == 0) {
-            return;
-        }
-        HVar1 = GetSubMenu16(0x0, iVar2.field235_0xec);
-        iVar2.field235_0xec = HVar1;
-        if (HVar1 == 0) {
-            return;
-        }
-    }
-    ClientToScreen16(CONCAT22(0x1050, &stack0xfffa), iVar2.field8_0x8);
-    HVar1 = iVar2.field235_0xec;
-    TrackPopupMenu16(NULL, iVar2.field8_0x8, 0x0, HVar1, 0x0, 0x0, HVar1);
-    return;
-}
 
-pub unsafe fn pass1_1020_7b60(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    cleanup_menu_ui_op_1020_795c(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 pub unsafe fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut StructA) {
     let mut IVar1: i16;
     let mut iVar3: *mut astruct_40;
@@ -778,14 +580,13 @@ pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE
     if ((is_iconic == 0) || (PTR_LOOP_1050_0010.is_null() == false)) {
         win_hdc_1 = GetWindowDC16(struct_e_1.hwnd16_field4_0x4);
         paStack10 = (_PTR_LOOP_1050_4230 + 0xe);
-        hpalette_12 =
-            palette_op_1008_4e08(&win_hdc_1, param_1, paStack10, CONCAT22(0x1050, &win_hdc_1));
+        hpalette_12 = palette_op_1008_4e08(&win_hdc_1, param_1, paStack10, CONCAT22(0x1050, &win_hdc_1));
         GetWindowRect16(
             CONCAT22(0x1050, &local_rect_1),
             struct_e_1.hwnd16_field4_0x4,
         );
-        x = (iStack16 - local_rect_1) -0x1;
-        y = (iStack14 - iStack18) -0x1;
+        x = (iStack16 - local_rect_1) - 0x1;
+        y = (iStack14 - iStack18) - 0x1;
         iVar1 = struct_e_1.field12_0x12;
         iVar3 = y;
         if (is_iconic == 0) {
@@ -854,19 +655,6 @@ pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE
     return;
 }
 
-pub unsafe fn pass1_1020_7f38(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    let mut uVar1: u16;
-
-    uVar1 = (param_1 >> 0x10);
-    param_1.address_offset_field_0x0 = 0x3ab0;
-    (param_1 + 0x2) = 0x1008;
-    param_1.address_offset_field_0x0 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn unk_draw_op_1020_7f7a(

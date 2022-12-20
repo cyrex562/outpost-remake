@@ -88,13 +88,11 @@ pub unsafe fn pass1_1018_31fa(mut param_1: u16, mut param_2: u16, param_3: *mut 
     pass1_1030_82f0(_u16_1050_5748, pstruct126_5.field373_0x17a);
     pstruct126_5.field374_0x17e = param_1;
     pstruct126_5.field375_0x180 = param_2;
-    if (((param_2 | pstruct126_5.field374_0x17e) != 0)
-        && (
-            uVar2 = &pstruct126_5.field374_0x17e,
-            iVar4 = (uVar2 + 0xa),
-            iVar4 != 0,
-        ))
-    {
+    if (((param_2 | pstruct126_5.field374_0x17e) != 0) && (
+        uVar2 = &pstruct126_5.field374_0x17e,
+        iVar4 = (uVar2 + 0xa),
+        iVar4 != 0,
+    )) {
         pstruct126_5.field369_0x174 = 0;
         loop {
             if (iVar4 <= pstruct126_5.field369_0x174) {
@@ -118,22 +116,6 @@ pub unsafe fn pass1_1018_31fa(mut param_1: u16, mut param_2: u16, param_3: *mut 
     return;
 }
 
-pub unsafe fn pass1_1018_32a6(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    param_1 = (param_1 & 0xffff0000 | (param_1 - 0x20));
-    pass1_1018_2c60(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn FUN_1018_32b2(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    pass1_1018_2c60(param_2);
-    if ((param_3 & 1) != 0) {
-        fn_ptr_1000_17ce(param_2);
-    }
-    return param_2;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1018_331c(
@@ -184,6 +166,7 @@ pub unsafe fn pass1_1018_331c(
     param_2.field280_0x13c = uVar1;
     return;
 }
+
 pub unsafe fn pass1_1018_33b4(param_1: *mut astruct_455) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
@@ -234,6 +217,7 @@ pub unsafe fn pass1_1018_3424(mut param_1: i16, mut param_2: u16, mut param_3: u
     }
     return;
 }
+
 pub unsafe fn pass1_1018_34a6(param_1: *mut astruct_679) {
     pass1_1018_3d6c(param_1);
     return;
@@ -407,6 +391,7 @@ pub unsafe fn unk_str_op_1018_35b0(mut param_1: u16, param_2: *mut astruct_263) 
     }
     return;
 }
+
 pub unsafe fn pass1_1018_36e6(
     mut param_1: u32,
     mut param_2: u16,
@@ -625,6 +610,7 @@ pub unsafe fn string_1018_39d8(
     }
     return 0x0;
 }
+
 pub unsafe fn pass1_1018_3a42(mut param_1: u16, mut param_2: u32, mut param_3: u32) {
     let mut uVar1: u32;
 
@@ -632,6 +618,7 @@ pub unsafe fn pass1_1018_3a42(mut param_1: u16, mut param_2: u32, mut param_3: u
     pass1_1008_e852(param_1, uVar1, (uVar1 >> 0x10), param_3);
     return;
 }
+
 pub unsafe fn pass1_1018_3a5c(mut param_1: u32, param_2: *mut c_char, param_3: *mut c_char) {
     pass1_1008_e320((param_1 + 0x122), param_2, param_3);
     return;
@@ -650,6 +637,7 @@ pub unsafe fn pass1_1018_3a7a(
     uVar2 = string_1008_e586(uVar1, (uVar1 >> 0x10), param_4, param_1, param_2);
     return uVar2;
 }
+
 pub unsafe fn pass1_1018_3a94(mut param_1: u32, param_2: *mut u32, param_3: *mut u32) {
     pass1_1008_e3ec((param_1 + 0x122), param_2, param_3);
     return;
@@ -797,6 +785,7 @@ pub unsafe fn switch_1018_3b9e(
     };
     return CONCAT22(uStack4, uStack6);
 }
+
 pub unsafe fn pass1_1018_3cda(
     param_1: *mut astruct_506,
     param_2: *mut c_char,
@@ -824,6 +813,7 @@ pub unsafe fn pass1_1018_3cda(
     iVar5.field297_0x12c = uVar3;
     return;
 }
+
 pub unsafe fn pass1_1018_3d44(mut param_1: u32, param_2: *mut u32, param_3: *mut u32) {
     let mut uVar1: u16;
 
@@ -856,7 +846,7 @@ pub unsafe fn pass1_1018_3d6c(param_1: *mut astruct_679) {
             bVar1 = uVar2;
             if (bVar1 == 0x14) {
                 iVar6.field322_0x142 = 0xffec; //
-                                               // LAB_1018_3e3d:
+                // LAB_1018_3e3d:
                 iVar6.field323_0x144 = -0x1;
                 return;
             }
@@ -868,8 +858,8 @@ pub unsafe fn pass1_1018_3d6c(param_1: *mut astruct_679) {
                     if (SBORROW2(PTR_LOOP_1050_13ae, 1)) {
                         return;
                     }
-                    if (PTR_LOOP_1050_13ae != &u16_1050_0002 && 0x0 < (PTR_LOOP_1050_13ae -1)) {
-                        puVar3 = PTR_LOOP_1050_13ae -0x3;
+                    if (PTR_LOOP_1050_13ae != &u16_1050_0002 && 0x0 < (PTR_LOOP_1050_13ae - 1)) {
+                        puVar3 = PTR_LOOP_1050_13ae - 0x3;
                         if (puVar3.is_null()) {
                             pass1_1008_612e(0x0, 0x1, 0x64);
                             if (puVar3 < 0x32) {
@@ -916,6 +906,7 @@ pub unsafe fn pass1_1018_3d6c(param_1: *mut astruct_679) {
     }
     return;
 }
+
 pub unsafe fn pass1_1018_3e8c(
     param_1: *mut astruct_263,
     param_2: *mut astruct_263,
@@ -926,25 +917,7 @@ pub unsafe fn pass1_1018_3e8c(
     *param_3 = 0x19;
     return;
 }
-pub unsafe fn pass1_1018_3ea4(param_1: *mut astruct_455) {
-    let mut puVar1: *mut u32;
-    let mut uVar2: u16;
-    let mut ppcVar3: *mut *mut code;
-    let mut iVar4: *mut astruct_455;
-    let mut uVar4: *mut astruct_455;
 
-    pass1_1008_cac6(param_1);
-    uVar4 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    puVar1 = iVar4[0x26].field3_0x6;
-    uVar2 = (iVar4 + 0x27).field0_0x0;
-    if ((uVar2 | puVar1) != 0) {
-        ppcVar3 = *puVar1;
-        (**ppcVar3)(0x1008, puVar1, uVar2, 1);
-    }
-    iVar4[0x26].field3_0x6 = 0;
-    return;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn switch_1018_3ee6(
@@ -1106,9 +1079,8 @@ pub unsafe fn switch_1018_3ee6(
             if ((paVar8 | uVar5) != 0) {
                 uVar15 = 0x2;
                 lVar10 = 0x14; //
-                               // LAB_1018_4230:
-                paVar9 =
-                    struct_1018_4842(paStack22, param_3 / lVar10, CONCAT22(uVar7, uVar4), uVar15);
+                // LAB_1018_4230:
+                paVar9 = struct_1018_4842(paStack22, param_3 / lVar10, CONCAT22(uVar7, uVar4), uVar15);
                 uStack8 = (paVar9 >> 0x10);
                 iStack10 = paVar9;
                 // TODO: goto LAB_1018_425e;
@@ -1158,7 +1130,7 @@ pub unsafe fn switch_1018_3ee6(
     }
     iStack10 = 0;
     uStack8 = 0; //
-                 // LAB_1018_425e:
+    // LAB_1018_425e:
     if ((iStack10 + 0x8) == 0) {
         (iStack10 + 0x8) = 0x1;
     }

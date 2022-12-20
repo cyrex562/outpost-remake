@@ -1,139 +1,4 @@
-pub unsafe fn pass1_1020_51c6(mut param_1: u32, mut param_2: u16, mut param_3: u32) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar2: i16;
-    let mut in_DX: u16;
-    let mut uVar3: u16;
-    let mut uVar4: u16;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = (param_1 + 0xf4);
-    uVar4 = param_3;
-    if (iVar2 == 0x2) {
-        win_ui_op_1020_5e76(param_1 & 0xffff | uVar3 << 0x10, param_2, uVar4);
-        return;
-    }
-    iVar2 += -0x3;
-    if (iVar2 != 0) {
-        pt_in_rect_op_1020_58ce(
-            in_DX,
-            param_1 & 0xffff | uVar3 << 0x10,
-            param_2,
-            uVar4,
-            (param_3 >> 0x10),
-        );
-        if (iVar2 == 0) {
-            ppcVar1 = ((param_1 + 0x4) + 0x5c);
-            (**ppcVar1)();
-        }
-        return;
-    }
-    win_ui_op_1020_5de8(param_1 & 0xffff | uVar3 << 0x10, param_2, uVar4);
-    return;
-}
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn win_ui_cursor_op_1020_522e(
-    mut param_1: u16,
-    param_2: *mut astruct_52,
-    mut param_3: u16,
-    mut param_4: u16,
-) {
-    let mut iVar1: i16;
-    let mut ppcVar2: *mut *mut code;
-    let mut BVar3: bool;
-    let mut in_register_0000000a: u16;
-    let mut paVar4: *mut Struct57;
-    let mut iVar4: *mut astruct_52;
-    let mut uVar4: *mut astruct_52;
-    let mut puVar5: *mut u32;
-    let mut in_stack_0000fea0: u16;
-    let mut in_stack_0000ffc4: u16;
-    let mut in_stack_0000ffca: u16;
-    let mut in_stack_0000ffce: u16;
-    let mut uVar6: u8;
-    let mut uVar7: u8;
-    let mut uVar8: u16;
-
-    paVar4 = CONCAT22(in_register_0000000a, param_1);
-    uVar4 = (param_2 >> 0x10);
-    iVar4 = param_2;
-    iVar1 = iVar4.field242_0xf4;
-    if (iVar1 == 0x2) {
-        SetCursor16(iVar4.field237_0xee);
-        iVar4.field237_0xee = 0;
-        iVar4.field242_0xf4 = 0x1;
-        (iVar4 + 1) = 0;
-        ReleaseCapture16();
-        return;
-    }
-    if (iVar1 == 0x3) {
-        SetCursor16(iVar4.field237_0xee);
-        iVar4.field237_0xee = 0;
-        iVar4.field242_0xf4 = 0x1;
-        (iVar4 + 1) = 0;
-        ReleaseCapture16();
-        uVar6 = 0;
-        uVar7 = 0;
-        uVar8 = 0;
-        puVar5 = mixed_1010_20ba(
-            paVar4,
-            _u16_1050_0ed0,
-            0x47,
-            in_stack_0000fea0,
-            in_stack_0000ffc4,
-            in_stack_0000ffca,
-            in_stack_0000ffce,
-        );
-        pass1_1018_57e6(
-            puVar5,
-            CONCAT22(uVar8, CONCAT11(uVar7, uVar6)),
-            puVar5,
-            (puVar5 >> 0x10),
-        );
-        return;
-    }
-    BVar3 = menu_ui_op_1020_5bf2(param_2, param_3, param_4);
-    if (BVar3 == 0) {
-        ppcVar2 = (*&iVar4.field_0x4 + 0x60);
-        (**ppcVar2)();
-    }
-    return;
-}
-pub unsafe fn pass1_1020_52de(mut param_1: u32) {
-    let mut puVar1: *mut u32;
-    let mut uVar2: u16;
-    let mut ppcVar3: *mut *mut code;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut iVar6: i16;
-    let mut uVar7: u16;
-
-    uVar7 = (param_1 >> 0x10);
-    iVar6 = param_1;
-    puVar1 = (iVar6 + 0xf6);
-    uVar2 = (iVar6 + 0xf8);
-    if ((uVar2 | puVar1) != 0) {
-        ppcVar3 = *puVar1;
-        (**ppcVar3)();
-    }
-    (iVar6 + 0xf6) = 0;
-    if ((iVar6 + 0xfa) != 0) {
-        if (param_1 == 0) {
-            iVar4 = 0;
-            uVar5 = 0;
-        } else {
-            iVar4 = iVar6 + 0xe2;
-            uVar5 = uVar7;
-        }
-        pass1_1010_1ea6((iVar6 + 0xfa), CONCAT22(uVar5, iVar4));
-    }
-    destroy_win_1008_628e(param_1);
-    if ((iVar6 + 0xfa) != 0) {
-        pass1_1010_1dda((iVar6 + 0xfa));
-    }
-    (iVar6 + 0xfa) = 0;
-    return;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn ui_op_1020_536e(
@@ -314,7 +179,7 @@ pub unsafe fn ui_op_1020_536e(
             uVar3 = (iVar24 + 0x102);
             uVar16 = (uVar3 >> 0x10);
             puVar15 = uVar3; //
-                             // LAB_1020_53f3:
+            // LAB_1020_53f3:
             ppcVar4 = (*puVar15 + 0xc);
             (**ppcVar4)(0x8, uVar22, uVar23, 0x5);
             return;
@@ -537,6 +402,7 @@ pub unsafe fn set_cursor_1020_5764(mut param_1: u32, mut param_2: i16) {
     }
     return;
 }
+
 pub unsafe fn pt_in_rect_1020_5856(
     mut param_1: u16,
     mut param_2: u16,
@@ -780,7 +646,7 @@ pub unsafe fn pt_in_rect_op_1020_58ce(
         wparam = 0x68;
     }
     puVar7 = null_mut(); //
-                   // LAB_1020_5936:
+    // LAB_1020_5936:
     PostMessage16(CONCAT22(puVar7, puVar7), wparam, 0x111, HWND16_1050_0396);
     return;
 }
@@ -974,7 +840,7 @@ pub unsafe fn win_ui_op_1020_5de8(mut param_1: u32, mut param_2: u16, mut param_
     }
     uStack18 = 0;
     uVar3 = 0; //
-               // LAB_1020_5e62:
+    // LAB_1020_5e62:
     pass1_1018_57e6(puVar7, CONCAT22(uVar3, uStack18), puVar2, uVar4);
     return;
 }
@@ -1065,7 +931,7 @@ pub unsafe fn win_ui_op_1020_5e76(mut param_1: u32, mut param_2: u16, mut param_
         }
         uStack38 = CONCAT22(uVar12, iVar4);
         uVar18 = 0xa5; //
-                       // LAB_1020_5f84:
+        // LAB_1020_5f84:
         pass1_1008_941a(CONCAT13(0x10, CONCAT12(0x50, local_22)), 0x1, uVar18);
         pcVar17 = local_22;
         uVar12 = (uStack38 >> 0x10);
@@ -1135,7 +1001,7 @@ pub unsafe fn win_ui_op_1020_5e76(mut param_1: u32, mut param_2: u16, mut param_
             uStack38 = paVar15 & 0xffff0000 | ZEXT24(puVar9);
             puVar10 = puVar9;
             puVar13 = ((paVar15 & 0xffff0000) >> 0x10); //
-                                                        // LAB_1020_6027:
+            // LAB_1020_6027:
             ppcVar1 = (*puVar10 + 0x74);
             (**ppcVar1)(uVar14, puVar9);
             // TODO: goto LAB_1020_6176;
@@ -1157,22 +1023,18 @@ pub unsafe fn win_ui_op_1020_5e76(mut param_1: u32, mut param_2: u16, mut param_
                     return;
                 }
             }
-            if ((((((iVar8 + 0x10c) == 0x6c) || ((iVar8 + 0x10c) == 0x6d))
-                || ((iVar8 + 0x10c) == 0x31))
-                || ((iVar8 + 0x10c) == 0x32))
-                && (
-                    puVar16 = mixed_1010_20ba(
-                        paVar15,
-                        _u16_1050_0ed0,
-                        CONCAT22(in_stack_0000fd58, 0x3a),
-                        in_stack_0000fc00,
-                        in_stack_0000fd24,
-                        in_stack_0000fd2a,
-                        in_stack_0000fd2e,
-                    ),
-                    (puVar16 + 0xa) == 0,
-                ))
-            {
+            if ((((((iVar8 + 0x10c) == 0x6c) || ((iVar8 + 0x10c) == 0x6d)) || ((iVar8 + 0x10c) == 0x31)) || ((iVar8 + 0x10c) == 0x32)) && (
+                puVar16 = mixed_1010_20ba(
+                    paVar15,
+                    _u16_1050_0ed0,
+                    CONCAT22(in_stack_0000fd58, 0x3a),
+                    in_stack_0000fc00,
+                    in_stack_0000fd24,
+                    in_stack_0000fd2a,
+                    in_stack_0000fd2e,
+                ),
+                (puVar16 + 0xa) == 0,
+            )) {
                 return;
             }
             pass1_1020_68de((iVar8 + 0xfe));
@@ -1218,14 +1080,14 @@ pub unsafe fn win_ui_op_1020_5e76(mut param_1: u32, mut param_2: u16, mut param_
             );
             uVar12 = uVar7;
         }
-        local_1aa[0] = puStack18 -0x608;
+        local_1aa[0] = puStack18 - 0x608;
         pass1_1008_941a(CONCAT13(0x10, CONCAT12(0x50, local_aa)), 0x1, local_1aa[0]);
         pcVar17 = local_aa;
         puVar9 = &DAT_1050_1050;
     }
     ppcVar1 = (*puVar9 + 0x6c);
     (**ppcVar1)(0x1008, puVar9, uVar12, pcVar17); //
-                                                  // LAB_1020_6176:
+    // LAB_1020_6176:
     (iVar8 + 0x10c) = 0;
     return;
 }

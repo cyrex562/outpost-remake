@@ -1,10 +1,3 @@
-pub unsafe fn pass1_1018_6048(mut param_1: u32) -> u16 {
-    let mut ppcVar1: *mut *mut code;
-
-    ppcVar1 = ((param_1 + 0x92) + 0x8);
-    (**ppcVar1)();
-    return 0x0;
-}
 pub unsafe fn set_window_text_1018_6066(
     param_1: *mut astruct_937,
     mut param_2: u16,
@@ -17,6 +10,7 @@ pub unsafe fn set_window_text_1018_6066(
     SetWindowText16(in_win_text_3, hwnd);
     return;
 }
+
 pub unsafe fn set_window_text_1018_6086(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
     let mut hwnd_1: HWND16;
     let mut uVar2: u16;
@@ -30,31 +24,7 @@ pub unsafe fn set_window_text_1018_6086(mut param_1: u32, mut param_2: u16, mut 
     SetWindowText16(CONCAT22(0x1050, &stack0xfff4), hwnd_1);
     return;
 }
-pub unsafe fn FUN_1018_60ea() {
-    return;
-}
 
-pub unsafe fn FUN_1018_60ee() -> u16 {
-    return 0x0;
-}
-
-pub unsafe fn FUN_1018_60f4() -> u16 {
-    return 0x0;
-}
-pub unsafe fn FUN_1018_60fa() {
-    return;
-}
-pub unsafe fn FUN_1018_60fe() {
-    return;
-}
-
-pub unsafe fn pass1_1018_6102(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1018_5e5a(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1018_6198(
@@ -99,6 +69,7 @@ pub unsafe fn pass1_1018_6198(
     iVar1.field5_0x8 = (puVar2 >> 0x10);
     return;
 }
+
 pub unsafe fn pass1_1018_620c(struct_param_1: *mut StructD) {
     let mut struct_1: *mut StructD;
     let mut struct_1_lo: u16;
@@ -128,9 +99,7 @@ pub unsafe fn pass1_1018_620c(struct_param_1: *mut StructD) {
 // WARNING: Unable to use type for symbol uVar2_00
 // WARNING: Unable to use type for symbol uVar3_00
 // WARNING: Unable to use type for symbol uVar23
-pub unsafe fn unk_draw_op_1018_623e(param_1: *mut astruct_742) {
-    todo!()
-}
+
 
 pub unsafe fn struct_1018_702c(
     param_1: *mut astruct_20,
@@ -343,22 +312,7 @@ pub unsafe fn struct_1018_73f8(
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn FUN_1018_742e(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-    param_5: *mut astruct_28,
-) {
-    mixed_draw_op_1018_6a7a(param_2, param_3, param_5);
-    if (PTR_LOOP_1050_4254.is_null()) {
-        win_1008_5c5c(param_1, param_2, _u16_1050_02a0, 0x1e9);
-        if (param_1 != 0) {
-            PTR_LOOP_1050_4254 = (&PTR_LOOP_1050_0000 + 1);
-        }
-    }
-    return;
-}
+
 
 pub unsafe fn struct_1018_745e(
     param_1: *mut astruct_20,
@@ -842,150 +796,4 @@ pub unsafe fn struct_1018_7d70(
     param_1.offset_0x0 = 0xa75e;
     (param_1 + 0x2) = 0x1018;
     return param_1;
-}
-pub unsafe fn pass1_1018_7da6(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7dee(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7e36(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7e7e(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7ec6(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7f0e(param_1: *mut StructD, param_2: u8) {
-    let mut iVar1: *mut StructD;
-    let mut uVar1: u16;
-
-    iVar1 = param_1;
-    iVar1 = &iVar1.field192_0xd2;
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
-    uVar1 = (param_1 >> 0x10);
-    param_1.address_offset_field_0x0 = 0x380a;
-    iVar1.address_offset_field_0x2 = 0x1008;
-    param_1.address_offset_field_0x0 = 0x389a;
-    iVar1.address_offset_field_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7f56(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7f9e(param_1: *mut u16, param_2: u8) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    iVar1 = param_1;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
-    uVar2 = (param_1 >> 0x10);
-    *param_1 = 0x380a;
-    (iVar1 + 0x2) = 0x1008;
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
-}
-pub unsafe fn pass1_1018_7fe6(param_1: *mut StructD, param_2: u8) {
-    let mut iVar1: *mut StructD;
-    let mut uVar1: u16;
-
-    iVar1 = param_1;
-    iVar1 = &iVar1.field192_0xd2;
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
-    uVar1 = (param_1 >> 0x10);
-    param_1.address_offset_field_0x0 = 0x380a;
-    iVar1.address_offset_field_0x2 = 0x1008;
-    param_1.address_offset_field_0x0 = 0x389a;
-    iVar1.address_offset_field_0x2 = 0x1008;
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return;
 }

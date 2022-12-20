@@ -696,11 +696,7 @@ pub unsafe fn pass1_1020_b97e(
     pass1_1008_3e76(0x10484236, 0x1, local_e - 0x2, local_c);
     return;
 }
-pub unsafe fn pass1_1020_ba2b() {
-    init_globals_1020_96d4();
-    pass1_1020_a426();
-    return;
-}
+
 pub unsafe fn pass1_1020_ba3e(param_1: *mut astruct_172, mut param_2: u16, mut param_3: i16) {
     let mut iVar1: *mut astruct_172;
     let mut uVar1: *mut astruct_172;
@@ -929,9 +925,6 @@ pub unsafe fn pass1_1020_bcc4(param_1: *mut astruct_172) {
     return;
 }
 
-pub unsafe fn pass1_1020_bd6c(mut param_1: u32, mut param_2: u32) -> i16 {
-    return (param_1 + 0x4) - (param_2 + 0x4);
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 

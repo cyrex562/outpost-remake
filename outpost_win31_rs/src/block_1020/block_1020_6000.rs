@@ -56,22 +56,6 @@ pub unsafe fn pass1_1020_61c4(
     return;
 }
 
-pub unsafe fn pass1_1020_6208(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    param_1 = (param_1 & 0xffff0000 | (param_1 - 0xe2));
-    destroy_cursor_1020_42f4(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
-pub unsafe fn FUN_1020_6216(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    destroy_cursor_1020_42f4(param_2);
-    if ((param_3 & 1) != 0) {
-        fn_ptr_1000_17ce(param_2);
-    }
-    return param_2;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn pass1_1020_62e0(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
@@ -222,6 +206,7 @@ pub unsafe fn pass1_1020_62e0(mut param_1: i16, mut param_2: u16, mut param_3: u
     (param_1 + 0x2e) = (puVar10 >> 0x10);
     return;
 }
+
 pub unsafe fn pass1_1020_6466(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
@@ -263,115 +248,7 @@ pub unsafe fn pass1_1020_64d4(mut param_1: u32, mut param_2: i16) -> u16 {
     }
     return 0x0;
 }
-pub unsafe fn mix_draw_op_1020_650c(param_1: *mut StructA) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar2: u32;
-    let struct_1: *mut StructA;
-    let mut uVar3: u16;
-    let mut local_28: [u8; 0x20] = [0; 0x20];
-    let mut iStack8: i16;
-    let mut puStack6: *mut u32;
 
-    uVar3 = (param_1 >> 0x10);
-    struct_1 = param_1;
-    uVar2 = &struct_1.field10_0x14;
-    puStack6 = (uVar2 + 0xa);
-    if ((struct_1.field8_0x10 != 0) || (uVar2 = &struct_1.field10_0x14, (uVar2 + 0x24) != 0)) {
-        draw_op_1020_9364(param_1);
-        if (&struct_1.field19_0x24 != 0) {
-            uVar2 = &struct_1.field19_0x24;
-            ppcVar1 = (*&struct_1.field19_0x24 + 0x14);
-            (**ppcVar1)(0x1020, uVar2, (uVar2 >> 0x10));
-        }
-    }
-    iStack8 = 0;
-    loop {
-        if ((&struct_1.field12_0x18 + iStack8 * 0x2) != 0) {
-            uVar2 = (&struct_1.field12_0x18 + iStack8 * 0x2);
-            ppcVar1 = (*(&struct_1.field12_0x18 + iStack8 * 0x2) + 0x8);
-            (**ppcVar1)(0x1020, uVar2, (uVar2 >> 0x10), puStack6, (puStack6 >> 0x10));
-        }
-        iStack8 += 0x1;
-        if iStack8 >= 0x5 {
-            break;
-        }
-    }
-    BeginPaint16(CONCAT22(0x1050, local_28), struct_1.field2_0x4);
-    ppcVar1 = (*puStack6 + 0x4);
-    (**ppcVar1)(
-        s_tile2_bmp_1050_1538,
-        puStack6,
-        (puStack6 >> 0x10),
-        0x0,
-        0x0,
-        &struct_1.field5_0xa,
-        uVar3,
-    );
-    EndPaint16(CONCAT22(0x1050, local_28), struct_1.field2_0x4);
-    return;
-}
-pub unsafe fn unk_win_op_1020_65cc(param_1: *mut astruct_60, mut param_2: i16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar2: u32;
-    let mut BVar3: bool;
-    let mut uVar4: u16;
-    let mut iVar4: *mut astruct_59;
-    let mut iVar5: *mut astruct_60;
-    let mut iVar6: i16;
-    let mut uVar7: *mut astruct_60;
-    let mut iStack4: i16;
-
-    iVar5 = param_1;
-    uVar7 = (param_1 >> 0x10);
-    if (param_2 == 1) {
-        iVar5.field20_0x14 = 0;
-        return;
-    }
-    if (param_2 == 0x2) {
-        for iStack4 in 0..0x5 {
-            iVar6 = iStack4 * 0x4;
-            if (((&iVar5.field_0x1a + iVar6) | (&iVar5.field_0x18 + iVar6)) != 0) {
-                ppcVar1 = (*(&iVar5.field_0x18 + iVar6) + 0x4);
-                (**ppcVar1)();
-            }
-        }
-    } else if (((0x0 < param_2 -0x3) && (!SBORROW2(param_2 -0x3, 1))) && (param_2 -0x4 < 0x4))
-    {
-        BVar3 = IsIconic16(HWND16_1050_0396);
-        if (BVar3 == 0) {
-            BVar3 = IsIconic16(&iVar5.field_0x4);
-            if ((BVar3 == 0) && (uVar2 = iVar5.field20_0x14, (uVar2 + 0x24) != 0)) {
-                InvalidateRect16(0x0, NULL, 0x0);
-                uVar4 = pass1_1020_64d4(param_1, 0x2);
-                if (uVar4 == 0) {
-                    pass1_1020_6746(param_1, 0x1, 0x2);
-                }
-                uVar4 = pass1_1020_64d4(param_1, 0x3);
-                if (uVar4 == 0) {
-                    pass1_1020_6746(param_1, 0x1, 0x3);
-                }
-                uVar4 = pass1_1018_255e(iVar5.field20_0x14);
-                if (uVar4 == 0) {
-                    SendMessage16(0x0, 0x69, 0x111, &iVar5.field_0x4);
-                } else {
-                    uVar4 = pass1_1020_64d4(param_1, 1);
-                    if (uVar4 == 0) {
-                        pass1_1020_6746(param_1, 0x1, 1);
-                    }
-                }
-                SendMessage16(0x0, 0xf0, 0x111, &iVar5.field_0x4);
-                uVar2 = iVar5.field41_0x2c;
-                if ((uVar2 + 0x7a) != 0) {
-                    uVar2 = iVar5.field41_0x2c;
-                    (uVar2 + 0x7a) = 0;
-                    SendMessage16(0x0, 0x131, 0x111, &iVar5.field_0x4);
-                    return;
-                }
-            }
-        }
-    }
-    return;
-}
 pub unsafe fn pass1_1020_6746(mut param_1: u32, mut param_2: i16, mut param_3: i16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u32;
@@ -394,13 +271,7 @@ pub unsafe fn pass1_1020_6746(mut param_1: u32, mut param_2: i16, mut param_3: i
     return;
 }
 
-pub unsafe fn pass1_1020_679c(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1020_6466(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 pub unsafe fn unk_win_ui_op_1020_67ce(
     in_struct_1: *mut StructA,
     mut param_2: u16,
@@ -463,38 +334,10 @@ pub unsafe fn unk_win_ui_op_1020_67ce(
     );
     return;
 }
-pub unsafe fn pass1_1020_687c(param_1: *mut astruct_868) {
-    let mut unaff_BP: u8;
 
-    get_win_ui_info_op_1020_7a50(param_1);
-    destroy_icon_1020_6bd2(param_1, unaff_BP);
-    return;
-}
 
 // WARNING: Unable to use type for symbol uVar2
-pub unsafe fn realize_palette_1020_6896(mut param_1: u32, mut param_2: i16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar3: u32;
-    let mut puVar4: u32;
-    let mut iVar4: *mut astruct_801;
-    let mut uVar4: u16;
-    let mut uVar5: u16;
-    let mut uVar2: u32;
 
-    if (param_2 != 0) {
-        uVar4 = (param_1 >> 0x10);
-        uVar2 = (param_1 + 0xf2);
-        uVar5 = (uVar2 >> 0x10);
-        iVar4 = uVar2;
-        puVar4 = iVar4.field36_0x24;
-        ppcVar1 = (puVar4 + 0x18);
-        (**ppcVar1)();
-        UnrealizeObject16(puVar4);
-        uVar3 = (param_1 + 0xf2);
-        RealizePalette16(*(uVar3 + 0x178));
-    }
-    return;
-}
 pub unsafe fn pass1_1020_68de(mut param_1: u32) {
     let mut uVar1: u16;
 
@@ -504,197 +347,11 @@ pub unsafe fn pass1_1020_68de(mut param_1: u32) {
     }
     return;
 }
-pub unsafe fn pt_in_rect_1020_68fc(param_1: u32, mut param_2: u16, mut param_3: u16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar2: u16;
-    let mut BVar3: bool;
-    let mut uVar4: u16;
-    let mut POPStack6: INT16;
 
-    PStack6 = CONCAT22(param_2, param_3);
-    uVar4 = (param_1 >> 0x10);
-    uVar2 = pass1_1018_31d0((param_1 + 0xf2));
-    if (uVar2 != 0) {
-        BVar3 = PtInRect16(PStack6, ((param_1 + 0xf2) + 0x16c));
-        if (BVar3 != 0) {
-            ppcVar1 = (*param_1 + 0x40);
-            (**ppcVar1)(s_tile2_bmp_1050_1538, param_1, 0xef);
-        }
-    }
-    return;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-pub unsafe fn unk_destroy_win_op_1020_694c(
-    mut param_1: u16,
-    param_2: *mut StructA,
-    mut param_3: u16,
-) -> u16 {
-    let mut uVar1: u16;
-    let mut uVar2: u16;
-    let mut BVar3: bool;
-    let mut HVar4: HWND16;
-    let mut uVar5: u16;
-    let mut in_register_0000000a: u16;
-    let mut uVar6: u32;
-    let iVar5: *mut StructA;
-    let uVar4: *mut StructA;
-    let mut unaff_CS: u16;
-    let mut wparam: WPARAM16;
 
-    uVar6 = CONCAT22(in_register_0000000a, param_1);
-    uVar1 = param_3;
-    if (param_3 != 0x12b) {
-        iVar5 = param_2;
-        uVar4 = (param_2 >> 0x10);
-        if (param_3 < 0x12c) {
-            if (param_3 == 0x6f) {
-                uVar2 = FUN_1010_830a(0x0, uVar6, unaff_CS, _u16_1050_14cc, 0x1f8);
-                BVar3 = WinHelp16(0x29, 0x1, CONCAT22(uVar6, uVar2), iVar5.field4_0x8);
-                return BVar3;
-            }
-            if (param_3 == 0xeb) {
-                uVar1 = GetDlgItem16(0x1797, iVar5.field4_0x8);
-                uVar5 = uVar6;
-                if (uVar1 != 0) {
-                    //
-                    // LAB_1020_6a6f:
-                    win_ui_fn_1020_6e98(uVar5, param_2);
-                    return uVar1;
-                }
-            } else {
-                uVar1 = param_3 - 0xef;
-                if (uVar1 == 0) {
-                    pass1_1018_2e28(&iVar5[0x1].field20_0x26);
-                    pass1_1008_3e0e(param_2);
-                } else {
-                    uVar1 = param_3 - 0x129;
-                    if ((uVar1 != 0) && (uVar1 = param_3 - 0x12a, uVar1 == 0)) {
-                        HVar4 = iVar5.field4_0x8;
-                        wparam = 0xf012; //
-                                         // LAB_1020_69c3:
-                        BVar3 = PostMessage16(0x0, wparam, 0x112, HVar4);
-                        return BVar3;
-                    }
-                }
-            }
-        } else if (param_3 == 0xbb8) {
-            HVar4 = GetDlgItem16(0x1797, iVar5.field4_0x8);
-            if (HVar4 != 0) {
-                DestroyWindow16(HVar4);
-            }
-            uVar1 = pass1_1018_31d0(&iVar5[0x1].field20_0x26);
-            if (uVar1 != 0) {
-                uVar1 = pass1_1018_2d9a(&iVar5[0x1].field20_0x26); //
-                                                                   // LAB_1020_6a0b:
-                invalidate_rect_1020_735a(&iVar5[0x1].field22_0x2a);
-                return uVar1;
-            }
-        } else if (param_3 < 0xbb9) {
-            if (param_3 == 0x12c) {
-                HVar4 = iVar5.field4_0x8;
-                wparam = 0xf020;
-                // TODO: goto LAB_1020_69c3;
-            }
-            uVar1 = param_3 - 0x12d;
-            if (param_3 != 0x12c) {
-                uVar1 = param_3 - 0x12e;
-            }
-        } else if (param_3 == 0xbb9) {
-            HVar4 = GetDlgItem16(0x1797, iVar5.field4_0x8);
-            if (HVar4 != 0) {
-                DestroyWindow16(HVar4);
-            }
-            uVar1 = pass1_1018_31d0(&iVar5[0x1].field20_0x26);
-            if (uVar1 != 0) {
-                uVar1 = pass1_1018_2dde(&iVar5[0x1].field20_0x26);
-                // TODO: goto LAB_1020_6a0b;
-            }
-        } else {
-            uVar1 = param_3 - 0xbba;
-            if (uVar1 == 0) {
-                uVar1 = GetDlgItem16(0x1797, iVar5.field4_0x8);
-                uVar5 = uVar6;
-                if (uVar1 != 0) {
-                    BVar3 = DestroyWindow16(uVar1);
-                    return BVar3;
-                }
-                // TODO: goto LAB_1020_6a6f;
-            }
-        }
-    }
-    return uVar1;
-}
-pub unsafe fn win_ui_op_1020_6ae6(
-    param_1: *mut astruct_877,
-    mut param_2: u16,
-    mut param_3: i16,
-    mut param_4: i16,
-    param_5: u16,
-    param_6: u16,
-) {
-    let mut ppcVar1: *mut *mut code;
-    let mut hwnd: HWND16;
-    let mut puVar2: *mut u8;
-    let mut iVar3: *mut astruct_877;
-    let mut uVar3: u16;
-    let mut LVar4: LRESULT;
-
-    if (param_4 == 0x1797) {
-        uVar3 = (param_1 >> 0x10);
-        iVar3 = param_1;
-        hwnd = GetDlgItem16(0x1797, iVar3.field8_0x8);
-        if (hwnd != 0) {
-            if (param_3 == 0x2) {
-                LVar4 = SendMessage16(0x0, 0x0, 0x409, hwnd);
-                if (LVar4 != -1) {
-                    LVar4 = SendMessage16(
-                        CONCAT13(0x10, CONCAT12(0x50, &stack0xffa8)),
-                        LVar4,
-                        0x40a,
-                        hwnd,
-                    );
-                    puVar2 = &stack0xffa8;
-                    pass1_1018_30ca(
-                        (LVar4 >> 0x10),
-                        iVar3.field241_0xf2,
-                        CONCAT22(0x1050, puVar2),
-                    );
-                    pass1_1018_2fe8(iVar3.field241_0xf2, param_5, param_6);
-                    if (puVar2.is_null() == false) {
-                        invalidate_rect_1020_735a(iVar3.field242_0xf6);
-                        ppcVar1 = (param_1 + 0x40);
-                        (**ppcVar1)(0x1018, iVar3);
-                    }
-                }
-            } else if (param_3 != 0x3) {
-                return;
-            }
-            DestroyWindow16(hwnd);
-        }
-    }
-    return;
-}
-pub unsafe fn enable_menu_item_1020_6b9a(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: i16,
-    param_5: HMENU16,
-) {
-    if (param_4 != 0) {
-        return;
-    }
-    EnableMenuItem16(0x400, 0x0, param_5);
-    return;
-}
-pub unsafe fn pass1_1020_6bbc(mut param_1: u32) {
-    let mut in_DX: u16;
-
-    win_ui_op_1020_737a(in_DX, (param_1 + 0xf6));
-    return;
-}
 pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
@@ -892,27 +549,6 @@ pub unsafe fn window_op_1020_6c3a(
 }
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn pass1_1020_6e52(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: i16,
-    mut param_4: u16,
-    mut param_5: i16,
-) {
-    let mut uVar1: u16;
-    let mut pcVar2: *mut c_char;
-
-    pass1_1018_2e5e(param_1, param_2, (param_3 + 0xf2));
-    uVar1 = param_2 | param_1;
-    if (uVar1 == 0) {
-        pcVar2 = load_string_1010_847e(_u16_1050_14cc, 0x5a1);
-    } else {
-        pass1_1018_2d84(param_1, (param_3 + 0xf2));
-        pcVar2 = CONCAT22(uVar1, param_1);
-    }
-    string_1020_79b4(CONCAT22(param_4, param_3), param_5, pcVar2);
-    return;
-}
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address

@@ -1,63 +1,3 @@
-pub unsafe fn pass1_1020_9068(mut param_1: u32, param_2: *mut u32, mut param_3: u32) {
-    let mut iVar1: i16;
-    let mut paVar2: *mut astruct_76;
-    let mut ppcVar3: *mut *mut code;
-    let mut uVar4: u32;
-    let mut uVar5: u16;
-    let mut paVar6: *mut astruct_76;
-    let mut uVar7: u32;
-    let mut uVar8: u16;
-    let mut iVar10: i16;
-    let mut iVar11: i16;
-    let mut uVar12: u16;
-    let mut uVar13: u16;
-    let mut iStack10: i16;
-    let mut uVar9: u32;
-
-    uVar12 = (param_2 >> 0x10);
-    iVar10 = param_2;
-    uVar4 = (iVar10 + 0x16);
-    paVar2 = (uVar4 + 0xa);
-    paVar6 = paVar2;
-    pass1_1018_280c((iVar10 + 0x16));
-    (iVar10 + 0xaa) = paVar6;
-    (iVar10 + 0xac) = param_1;
-    uVar5 = param_1 | (iVar10 + 0xaa);
-    if (uVar5 == 0) {
-        pass1_1018_2862((iVar10 + 0x16));
-        (iVar10 + 0xaa) = uVar5;
-        (iVar10 + 0xac) = param_1;
-    }
-    if (((iVar10 + 0xac) | (iVar10 + 0xaa)) != 0) {
-        pass1_1020_915a(param_1, (param_2 & 0xffff | uVar12 << 0x10), param_3);
-        pass1_1008_4480(
-            paVar2,
-            (param_2 & 0xffff0000 | (iVar10 + 0xae)),
-            (iVar10 + 0xb4),
-        );
-        ppcVar3 = (*param_2 + 0x10);
-        (**ppcVar3)();
-        uVar4 = (iVar10 + 0xaa);
-        iVar1 = (uVar4 + 0xa);
-        for iStack10 in 0..iVar1 {
-            uVar7 = iStack10;
-            empty_1008_8fc4();
-            uVar5 = uVar7;
-            uVar8 = param_1 | uVar5;
-            uVar9 = param_1 & 0xffff0000 | uVar8;
-            if (uVar8 != 0) {
-                pass1_1008_8c4e(uVar7 & 0xffff | param_1 << 0x10, paVar2, uVar9);
-                uVar4 = (iVar10 + 0xc);
-                uVar13 = (uVar4 >> 0x10);
-                iVar11 = uVar4;
-                (iVar11 + iStack10 * 0x4) = uVar5;
-                (iVar11 + iStack10 * 0x4 + 0x2) = uVar9;
-            }
-            param_1 = uVar9;
-        }
-    }
-    return;
-}
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -119,13 +59,6 @@ pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param
     return;
 }
 
-pub unsafe fn pass1_1020_91de(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1020_8f74(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -203,30 +136,7 @@ pub unsafe fn palette_op_1020_92c4(struct_param_1: *mut StructD) {
     struct_1.address_offset_field_0x2 = 0x1008;
     return;
 }
-pub unsafe fn mix_draw_op_1020_9312(mut param_1: u32) {
-    let mut puVar1: *mut u32;
-    let mut ppcVar2: *mut *mut code;
-    let mut uVar3: u32;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut local_22: [u8; 0x20] = [0; 0x20];
 
-    uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    BeginPaint16(CONCAT22(0x1050, local_22), (iVar4 + 0x4));
-    uVar3 = (iVar4 + 0x6);
-    puVar1 = (uVar3 + 0xa);
-    ppcVar2 = (*puVar1 + 0x4);
-    (**ppcVar2)(
-        s_tile2_bmp_1050_1538,
-        puVar1,
-        (puVar1 >> 0x10),
-        0x0,
-        param_1 & 0xffff0000 | (iVar4 + 0xa),
-    );
-    EndPaint16(CONCAT22(0x1050, local_22), (iVar4 + 0x4));
-    return;
-}
 
 // WARNING: Unable to use type for symbol uVar4
 // WARNING: Could not reconcile some variable overlaps
@@ -378,13 +288,6 @@ pub unsafe fn draw_op_1020_9364(param_1: *mut StructA) {
     return;
 }
 
-pub unsafe fn pass1_1020_96a2(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    palette_op_1020_92c4(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 pub unsafe fn init_globals_1020_96d4() {
