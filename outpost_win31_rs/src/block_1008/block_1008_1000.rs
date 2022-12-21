@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
@@ -45,7 +45,7 @@ pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32)
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1008_1414(
     mut param_1: u32,
     param_2: *mut astruct_20,
@@ -190,7 +190,7 @@ pub unsafe fn win_ui_op_1008_1414(
 }
 
 // WARNING: Unable to use type for symbol uVar2
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn big_switch_1008_15d4(
     param_1: *mut astruct_20,
     param_2: *mut Struct72,

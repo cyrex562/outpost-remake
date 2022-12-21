@@ -33,7 +33,7 @@ pub unsafe fn pass1_1038_11b0(mut param_1: u16 ,mut param_2: u32,mut param_3: u3
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1220(mut param_1: u32,mut param_2: u32,mut param_3: u32)
 
 {
@@ -117,7 +117,7 @@ pub unsafe fn pass1_1038_1220(mut param_1: u32,mut param_2: u32,mut param_3: u32
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_134a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u32,param_5: *mut u32,param_6: *mut u32)
 
 {
@@ -161,7 +161,7 @@ pub unsafe fn pass1_1038_134a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_13da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u32,param_5: *mut u32,param_6: *mut u32)
 
 {
@@ -211,8 +211,8 @@ pub unsafe fn pass1_1038_13da(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,param_4: *mut u32)
 
 {
@@ -393,8 +393,8 @@ pub unsafe fn pass1_1038_1482(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u32,param_4: *mut u32)
 
 {
@@ -544,7 +544,7 @@ pub unsafe fn pass1_1038_16f2(mut param_1: u16 ,mut param_2: u32,param_3: *mut u
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1940(mut param_1: u32,param_2: *mut u32,mut param_3: u32)
 
 {
@@ -576,7 +576,7 @@ pub unsafe fn pass1_1038_1940(mut param_1: u32,param_2: *mut u32,mut param_3: u3
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_19a0(mut param_1: u32,param_2: *mut u32,mut param_3: u32,mut param_4: u16 ,param_5: u8)
 
 {
@@ -618,7 +618,7 @@ pub unsafe fn pass1_1038_19a0(mut param_1: u32,param_2: *mut u32,mut param_3: u3
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1a30(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
 
 {
@@ -662,7 +662,7 @@ pub unsafe fn pass1_1038_1a30(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1ac6(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32,mut param_5: u32)
 
 {
@@ -680,7 +680,7 @@ pub unsafe fn pass1_1038_1ac6(mut param_1: i16,mut param_2: u16 ,mut param_3: u1
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1038_1b3a(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32,param_5: *mut u32,mut param_6: u16 )
 
 {
@@ -741,7 +741,7 @@ pub unsafe fn pass1_1038_1c02(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1c3e(mut param_1: u32,mut param_2: u32)
 
 {
@@ -827,8 +827,8 @@ pub unsafe fn pass1_1038_1c3e(mut param_1: u32,mut param_2: u32)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u16 ,mut param_4: u16 ,param_5: *mut u32,mut param_6: u32)
 
 {
@@ -984,7 +984,7 @@ pub unsafe fn pass1_1038_1d68(mut param_1: u16 ,mut param_2: u32,mut param_3: u1
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_1faa(mut param_1: u16 ,mut param_2: u32,mut param_3: u32,param_4: *mut u32,param_5: *mut u32)
 
 {

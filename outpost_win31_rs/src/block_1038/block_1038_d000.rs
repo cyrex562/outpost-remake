@@ -146,7 +146,7 @@ pub unsafe fn pass1_1038_d242(param_1: *mut Struct57,mut param_2: u16 ) -> *mut 
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_d276(param_1: *mut StructD)
 
 {
@@ -162,7 +162,7 @@ pub unsafe fn pass1_1038_d276(param_1: *mut StructD)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1038_d2a2(param_1: *mut Struct57,struct_b_param_1: *mut StructB,mut param_3: u16 )
 
 {
@@ -265,8 +265,8 @@ pub unsafe fn win_ui_op_1038_d2a2(param_1: *mut Struct57,struct_b_param_1: *mut 
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn unk_win_ui_op_1038_d400
                (mut param_1: u16 ,param_2: *mut astruct_885,param_3: u8,param_4: u8,mut param_5: u16 ,mut param_6: u16 ,
                mut param_7: u32)
@@ -415,7 +415,7 @@ pub unsafe fn pass1_1038_d6c4(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1038_d756(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u16 ) -> *mut Struct57
 
@@ -453,7 +453,7 @@ pub unsafe fn pass1_1038_d756(param_1: *mut StructD,param_2: *mut Struct57,mut p
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_d7d0(param_1: *mut StructD)
 
 {
@@ -506,7 +506,7 @@ pub unsafe fn post_win_msg_1038_d840(param_1: *mut astruct_70,mut param_2: u16 )
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn FUN_1038_d8ae(param_1: *mut StructD,mut param_2: u16 ,struct_b_param_2: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
 {
@@ -611,7 +611,7 @@ pub unsafe fn FUN_1038_d8ae(param_1: *mut StructD,mut param_2: u16 ,struct_b_par
 
 // WARNING: Removing unreachable block (ram,0x1038dad3)
 // WARNING: Removing unreachable block (ram,0x1038daea)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_win_sys_op_1038_da68(param_1: *mut StructD,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
@@ -747,7 +747,7 @@ pub unsafe fn unk_win_sys_op_1038_da68(param_1: *mut StructD,mut param_2: i16,mu
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn post_win_msg_1038_dcb0(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32)
 
 {
@@ -947,7 +947,7 @@ pub unsafe fn pass1_1038_de20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1038_df5c(mut param_1: u16 ,mut param_2: u32) -> u32
 
@@ -965,7 +965,7 @@ pub unsafe fn pass1_1038_df5c(mut param_1: u16 ,mut param_2: u32) -> u32
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_df86(param_1: *mut StructD,mut param_2: u32)
 
 {

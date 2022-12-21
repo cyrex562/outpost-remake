@@ -65,7 +65,7 @@ pub unsafe fn empty_fn_1000_214a() {
 }
 
 // WARNING: Removing unreachable block (ram,0x1000234c)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn init_1000_23be(mut param_1: u16, mut param_2: u16) {
     init_op_1008_54aa(
         &DAT_1050_1050,
@@ -530,81 +530,6 @@ pub unsafe fn poss_str_op_1000_28dc(param_1: *mut Struct825) -> *mut c_char {
             }
         }
     }
-}
-
-pub unsafe fn exit_op_1000_2950(ctx: &mut AppContext, mut param_1: u16, mut param_2: u16, mut param_3: u16) -> u16 {
-    let mut var2: u16;
-    let mut var3: *mut c_char;
-    let mut var6: i16;
-
-    let mut var9: *mut c_char;
-
-    // let mut paVar10: *mut Struct825;
-
-    let mut var4 = PTR_LOOP_1050_6066;
-    PTR_LOOP_1050_6066 = PTR_LOOP_1050_1000;
-    let mut var8 = mem_1000_167a(param_2, param_3);
-    PTR_LOOP_1050_6066 = var4;
-    if (param_2 | var8) != 0 {
-        return var8;
-    }
-    let mut var10 = CONCAT22(ctx.ES_REG, param_1);
-    pass1_1000_25a8();
-    pass1_1000_2913(param_1);
-    let mut var5 = poss_str_op_1000_28dc(var10);
-    if var5.is_null() == false {
-        var6 = 0x9;
-        if *var5 == 'M' as i8 {
-            var6 = 0xf;
-        }
-        var5 = var5 + var6;
-        var6 = 0x22;
-        var9 = var5;
-        loop {
-            if var6 == 0 {
-                break;
-            }
-            var6 += -0x1;
-            var3 = var9;
-            var9 = var9 + 1;
-            if *var3 == '\r' as i8 {
-                break;
-            }
-        }
-        var9[-0x1] = '\0';
-    }
-    FatalAppExit16(0, var5);
-    FatalExit();
-    var8 = PTR_LOOP_1050_63fe;
-    loop {
-        let mut var1 = var8;
-        var8 = var8 + 1;
-        var2 = var1;
-        let mut var7 = var8;
-        var7 = var2 + 1;
-        if var2 == ctx.BP_REG || var7.is_null() {
-            return var7;
-        }
-        var6 = -0x1;
-        loop {
-            if var6 == 0 {
-                break;
-            }
-            var6 += -0x1;
-            var1 = var8;
-            var8 = (var8 + 1);
-            if var1 == '\0' {
-                break;
-            }
-        }
-    }
-}
-
-pub unsafe fn pass1_1000_29dc(mut param_1: u16) -> u16 {
-    if ___EXPORTEDSTUB != 0xb8 {
-        return DAT_1050_1050;
-    }
-    return uRam100029ed;
 }
 
 pub unsafe fn pass1_1000_2a00(param_1: *mut u16) -> u16 {

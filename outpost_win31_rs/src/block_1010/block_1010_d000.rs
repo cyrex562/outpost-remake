@@ -1,4 +1,4 @@
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1010_d24a(
     param_1: u8,
     mut param_2: u16,
@@ -114,7 +114,7 @@ pub unsafe fn pass1_1010_d24a(
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1010_d448(
     mut param_1: u16,
     mut param_2: u16,
@@ -282,7 +282,7 @@ pub unsafe fn pass1_1010_d5ae(
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1010_d710(
     param_1: u8,
     mut param_2: u16,
@@ -612,7 +612,7 @@ pub unsafe fn pass1_1010_dc36(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn string_1010_dcac(
     mut param_1: u16,
@@ -672,6 +672,3 @@ pub unsafe fn struct_1010_dd5e(mut param_1: u16, mut param_2: u16, mut param_3: 
     }
     return;
 }
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-

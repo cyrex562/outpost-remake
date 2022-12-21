@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 use std::ptr::null_mut;
 use crate::file_ops;
@@ -49,7 +49,7 @@ pub unsafe fn pass1_1008_7006(
     return iVar2;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1008_7056(
     param_1: *mut u8,
@@ -96,12 +96,12 @@ pub unsafe fn pass1_1008_7056(
     return iVar2;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
 // WARNING: Removing unreachable block (ram,0x100871e6)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1008_72a8(param_1: *mut u16, mut param_2: u16) -> *mut u16 {
     *param_1 = param_2;
@@ -472,9 +472,9 @@ pub unsafe fn pass1_1008_7c2a(mut param_1: u32, param_2: *mut c_char) -> BOOL16 
     return 0x1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1008_7e4a(param_1: *mut c_char, mut param_2: u16, param_3: u16) -> u16 {
     let mut uVar1: u16;

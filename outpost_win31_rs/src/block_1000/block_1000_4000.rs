@@ -180,8 +180,8 @@ pub unsafe fn pass1_1000_43f0(param_1: u16) {
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1000_440c(mut param_1: u16) {
     let mut c_var1: u8;
     let mut pc_var2: *mut c_char;

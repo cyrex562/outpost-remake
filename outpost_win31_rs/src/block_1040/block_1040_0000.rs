@@ -156,7 +156,7 @@ pub unsafe fn win_ui_op_1040_0000(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1040_0170(
     param_1: u8,
     mut param_2: u16,
@@ -372,7 +372,7 @@ pub unsafe fn win_ui_op_1040_0170(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_915) -> LRESULT {
     let mut hwnd: HWND16;
@@ -411,7 +411,7 @@ pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_9
     return LVar4;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn enable_win_1040_060e(mut param_1: u32, mut param_2: i16) {
     let mut pIVar1: *mut INT16 = null_mut();
     let mut hwnd: HWND16;
@@ -441,7 +441,7 @@ pub unsafe fn pass1_1040_0656(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1040_06e8(
     param_1: *mut StructD,
@@ -483,7 +483,7 @@ pub unsafe fn pass1_1040_06e8(
     return param_2;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_073a(param_1: *mut StructD) {
     let mut uVar1: u16;
 
@@ -495,7 +495,7 @@ pub unsafe fn pass1_1040_073a(param_1: *mut StructD) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
@@ -556,7 +556,7 @@ pub unsafe fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u1
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1040_07dc(
     mut param_1: u16,
     pstruct_c_param_2: *mut StructC,
@@ -787,7 +787,7 @@ pub unsafe fn pass1_1040_0b6a(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1040_0bfc(
     param_1: *mut StructD,
@@ -858,7 +858,7 @@ pub unsafe fn show_win_1040_0c7c(param_1: *mut StructB) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn set_text_bk_color_1040_0cc0(
     param_1: u32,
@@ -917,7 +917,7 @@ pub unsafe fn pass1_1040_0d8a(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_0e1c(
     param_1: *mut StructD,
     param_2: *mut Struct57,
@@ -962,7 +962,7 @@ pub unsafe fn pass1_1040_0e1c(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_0e86(param_1: *mut StructD) {
     let mut uVar1: u16;
     let mut pcVar2: *mut c_char;
@@ -1009,7 +1009,7 @@ pub unsafe fn pass1_1040_0e86(param_1: *mut StructD) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn FUN_1040_0f0c(mut param_1: u16, param_2: *mut StructB) {
     let mut uVar1: u32;
     let mut in_AX: u16;

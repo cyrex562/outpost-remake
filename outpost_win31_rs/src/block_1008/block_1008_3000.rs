@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
     let mut pcVar1: *mut c_char;
     let mut uVar2: u16;
@@ -47,7 +47,7 @@ pub unsafe fn pass1_1008_3018(param_1: *mut u8, mut param_2: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut Struct72) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
@@ -100,8 +100,8 @@ pub unsafe fn pass1_1008_30cc(mut param_1: u16, mut param_2: u16, param_3: *mut 
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3: i16) {
     let mut uVar1: u32;
     let mut iVar2: i16;
@@ -316,7 +316,7 @@ pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut 
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16, mut param_3: u32) {
     let mut uVar1: u16;
     let mut paVar2: *mut Struct57;
@@ -577,7 +577,7 @@ pub unsafe fn pass1_1008_3bd6(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HDC16) {
     let mut uVar1: u16;
     let mut ppcVar2: *mut *mut code;

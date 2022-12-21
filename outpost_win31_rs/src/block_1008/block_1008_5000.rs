@@ -33,8 +33,8 @@ pub unsafe fn pass1_1008_5118(mut param_1: u32)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1008_5134(mut param_1: u32)
 
 {
@@ -243,7 +243,7 @@ pub unsafe fn mci_send_command_1008_53ae(mut param_1: u32,mut param_2: u16 )
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn init_op_1008_54aa(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut u8,param_5: *mut c_char,param_6: *mut u8,
                       param_7: *mut u8)
 
@@ -450,11 +450,11 @@ pub unsafe fn pass1_1008_5830(mut param_1: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1008_5b12(param_1: *mut c_char)
 
@@ -491,7 +491,7 @@ pub unsafe fn pass1_1008_5b12(param_1: *mut c_char)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_5bdc(param_1: *mut c_char)
 
 {
@@ -528,7 +528,7 @@ pub unsafe fn pass1_1008_5bdc(param_1: *mut c_char)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_5c34(param_1: *mut c_char)
 
 {
@@ -541,7 +541,7 @@ pub unsafe fn pass1_1008_5c34(param_1: *mut c_char)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
 
 {
@@ -552,7 +552,7 @@ pub unsafe fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_1008_5c7c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u32)
 
 {
@@ -669,7 +669,7 @@ pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut Struct27,param_2: *mut c_char,in
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
 
@@ -707,8 +707,8 @@ pub unsafe fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LP
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1008_5fd8(param_1: *mut u8) -> *mut u8
 

@@ -1,7 +1,7 @@
 use crate::windef::RECT16;
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
 
 {
@@ -108,7 +108,7 @@ pub unsafe fn pass1_1040_9252(param_1: *mut astruct_65)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn create_window_1040_92dc(param_1: *mut astruct_65)
 
 {
@@ -480,7 +480,7 @@ pub unsafe fn reg_class_1040_98c0(mut param_1: u32)
 // WARNING: Variable defined which should be unmapped: y2
 // WARNING: Variable defined which should be unmapped: x2
 // WARNING: Variable defined which should be unmapped: y1
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn draw_op_1040_9948(mut param_1: u16 ,param_2: *mut astruct_71)
 
 {

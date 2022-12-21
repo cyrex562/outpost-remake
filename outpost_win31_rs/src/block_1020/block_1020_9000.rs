@@ -1,6 +1,6 @@
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param_3: *mut *mut u8) {
     let mut iVar1: i16;
     let mut iVar3: i16;
@@ -60,8 +60,8 @@ pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param
 }
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn set_struct_op_1020_921c(
     mut param_1: u16,
     pstructa_param_2: *mut StructA,
@@ -139,7 +139,7 @@ pub unsafe fn palette_op_1020_92c4(struct_param_1: *mut StructD) {
 
 
 // WARNING: Unable to use type for symbol uVar4
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn draw_op_1020_9364(param_1: *mut StructA) {
     let mut piVar1: *mut i16;
     let mut puVar2: *mut u16;
@@ -289,7 +289,7 @@ pub unsafe fn draw_op_1020_9364(param_1: *mut StructA) {
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn init_globals_1020_96d4() {
     let mut puVar1: *mut u16;
     let mut iVar2: i16;

@@ -26,7 +26,7 @@ pub unsafe fn set_window_text_1018_6086(mut param_1: u32, mut param_2: u16, mut 
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_6198(
     param_1: *mut u8,
     param_2: *mut astruct_657,
@@ -311,7 +311,7 @@ pub unsafe fn struct_1018_73f8(
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 pub unsafe fn struct_1018_745e(

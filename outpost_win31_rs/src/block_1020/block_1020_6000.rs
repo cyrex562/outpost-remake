@@ -15,7 +15,7 @@ pub unsafe fn pass1_1020_6184(mut param_1: u32, mut param_2: u16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1020_61c4(
     mut param_1: u16,
     mut param_2: u16,
@@ -57,7 +57,7 @@ pub unsafe fn pass1_1020_61c4(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1020_62e0(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
     let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut code;
@@ -349,7 +349,7 @@ pub unsafe fn pass1_1020_68de(mut param_1: u32) {
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
@@ -376,7 +376,7 @@ pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn window_op_1020_6c3a(
     param_1: *mut Struct57,
     struct_param_1: *mut StructA,
@@ -547,8 +547,3 @@ pub unsafe fn window_op_1020_6c3a(
     UpdateWindow16(struct_a_1.field4_0x8);
     return;
 }
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address

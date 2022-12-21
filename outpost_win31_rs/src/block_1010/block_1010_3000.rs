@@ -159,7 +159,7 @@ pub unsafe fn pass1_1010_32da(param_1: *mut Struct27, param_2: *mut astruct_65) 
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_32f4(param_1: *mut Struct27, param_2: *mut astruct_65) {
     let mut piVar1: *mut i16;
     let mut puVar2: *mut u32;
@@ -312,7 +312,7 @@ pub unsafe fn pass1_1010_32f4(param_1: *mut Struct27, param_2: *mut astruct_65) 
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1010_35a4(mut param_1: u16, param_2: *mut u32, mut param_3: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u32;
@@ -712,7 +712,7 @@ pub unsafe fn pass1_1010_3bde(param_1: *mut astruct_455, mut param_2: u16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn struct_1010_3c52(mut param_1: u32, mut param_2: u32, mut param_3: u16) {
     let mut uVar1: u16;
     let mut ppcVar2: *mut *mut code;
@@ -740,7 +740,7 @@ pub unsafe fn struct_1010_3c52(mut param_1: u32, mut param_2: u32, mut param_3: 
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_3c9e(param_1: i32) {
     let mut paVar1: *mut Struct57;
     let mut in_EDX: u32;
@@ -764,7 +764,7 @@ pub unsafe fn pass1_1010_3c9e(param_1: i32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_3cd0(param_1: i32) {
     let mut iVar1: i16;
     let mut uVar2: u16;
@@ -791,7 +791,7 @@ pub unsafe fn pass1_1010_3cd0(param_1: i32) {
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1010_3d82(
     mut param_1: u32,
@@ -837,7 +837,7 @@ pub unsafe fn pass1_1010_3dc8(param_1: *mut astruct_455, mut param_2: u16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_3e3c(param_1: *mut Struct19, mut param_2: u16, mut param_3: u16) {
     let mut puVar1: *mut u16;
     let mut uVar2: u16;

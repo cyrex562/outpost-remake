@@ -20,7 +20,7 @@ pub unsafe fn pass1_1000_5008(mut param_1: u16,
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1000_5026(
     ctx: &mut AppContext, mut param_1: i16,
     mut param_2: u16,

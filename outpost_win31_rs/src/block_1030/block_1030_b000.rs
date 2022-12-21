@@ -2,7 +2,7 @@ pub unsafe fn pass1_1030_b13c() {
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1030_b142(mut param_1: u32, mut param_2: u32) {
     let mut iVar1: i16;
     let mut in_AX: u16;
@@ -90,7 +90,7 @@ pub unsafe fn pass1_1030_b142(mut param_1: u32, mut param_2: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_b2aa(param_1: *mut u8, mut param_2: u32, param_3: *mut u16) {
     let mut uVar1: u16;
     let mut BVar2: bool;
@@ -124,7 +124,7 @@ pub unsafe fn pass1_1030_b2aa(param_1: *mut u8, mut param_2: u32, param_3: *mut 
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 
 pub unsafe fn pass1_1030_b344(mut param_1: u32) -> u32 {
     let mut puVar1: *mut u8;
@@ -182,7 +182,7 @@ pub unsafe fn pass1_1030_b344(mut param_1: u32) -> u32 {
     return CONCAT22(puStack16, puStack18);
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1030_b454(mut param_1: u32, mut param_2: u32) {
     let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut code;
@@ -256,8 +256,8 @@ pub unsafe fn pass1_1030_b454(mut param_1: u32, mut param_2: u32) {
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1030_b578(mut param_1: u32) {
     let mut iVar1: i16;
     let mut puVar2: *mut u32;
@@ -375,7 +375,7 @@ pub unsafe fn pass1_1030_b578(mut param_1: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_b718(
     param_1: *mut u8,
     mut param_2: u16,

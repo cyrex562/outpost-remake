@@ -27,7 +27,7 @@ pub unsafe fn pass1_1018_427c(param_1: *mut astruct_263, mut param_2: u16, mut p
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_435e(
     mut param_1: u16,
     mut param_2: u32,
@@ -177,7 +177,7 @@ pub unsafe fn pass1_1018_45d4(
     return uStack6;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1018_4608(mut param_1: u32, param_2: *mut c_char, param_3: *mut c_char) -> i32 {
     let mut uVar1: u32;
@@ -402,7 +402,7 @@ pub unsafe fn struct_1018_4920(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_4aaa(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
     param_2.offset_0x0 = 0x4b06;
@@ -437,7 +437,7 @@ pub unsafe fn get_sys_metrics_1018_4b1e(
     return &param_1.offset_0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_4b78(param_1: *mut Struct19) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
@@ -480,7 +480,7 @@ pub unsafe fn pass1_1018_4b78(param_1: *mut Struct19) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 pub unsafe fn struct_op_1018_4cda(param_1: *mut Struct19, mut param_2: u16) {
@@ -497,7 +497,7 @@ pub unsafe fn struct_op_1018_4cda(param_1: *mut Struct19, mut param_2: u16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD) {
     let mut obj: HPALETTE16;
     let mut local_struct_1: *mut StructD;
@@ -554,7 +554,7 @@ pub unsafe fn get_dc_1018_4db0(param_1: *mut astruct_126, mut param_2: u16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_4dce(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
@@ -631,5 +631,3 @@ pub unsafe fn create_dc_1018_4e04(
     DAT_1050_422e = 0;
     return;
 }
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address

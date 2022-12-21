@@ -28,6 +28,9 @@ pub mod aa;
 pub mod ab;
 pub mod ac;
 pub mod ad;
+pub mod ae;
+pub mod af;
+pub mod ag;
 
 pub unsafe fn pass1_1000_0000(mut param_1: *mut u16, mut param_2: *mut u16, mut param_3: u16) {
     let mut pu_var1: *mut u16;
@@ -199,84 +202,6 @@ pub unsafe fn pass1_1000_2ba0(param_1: u8) {
         pass1_1000_3f5c();
     }
     return;
-}
-
-pub unsafe fn pass1_1000_25d2(
-    mut param_1: i16,
-    mut param_2: i16,
-    fn_ptr_param_3: code2,
-    mut param_4: i16,
-) -> u16 {
-    let mut var1: *mut i16;
-    let mut var2: *mut c_char;
-    // let mut pstruct_d_var4: *mut StructD;
-    let mut var8: *mut i16;
-    let mut string9: *mut c_char;
-    let mut var3 = (param_1 + 0x1 & 0xfffe);
-
-    let mut var5 = 0u16;
-    let mut pstruct_d_var4 = -(var3 - &param_2);
-    if (var3 < &param_2) && (PTR_LOOP_1050_000a <= pstruct_d_var4.address_offset_field_0x0)
-    {
-        if pstruct_d_var4.address_offset_field_0x0 < PTR_LOOP_1050_000c {
-            PTR_LOOP_1050_000c = pstruct_d_var4.address_offset_field_0x0;
-        }
-        // WARNING: Could not recover jumptable at 0x100025f0. Too many branches
-        // WARNING: Treating indirect jump as call
-        var5 = fn_ptr_param_3();
-        return var5;
-    }
-    let mut paVar10 = (param_2 << 0x10);
-    let mut offset7 = 0;
-    pass1_1000_25a8();
-    pass1_1000_2913(offset7);
-    let mut string6 = poss_str_op_1000_28dc(paVar10);
-    if string6.is_null() == false {
-        offset7 = 0x9;
-        if *string6 == 'M' as i8 {
-            offset7 = 0xf;
-        }
-        string6 = string6 + offset7;
-        offset7 = 0x22;
-        string9 = string6;
-        loop {
-            if offset7 == 0 {
-                break;
-            }
-            offset7 += -0x1;
-            var2 = string9;
-            string9 = string9 + 1;
-            if *var2 == '\r' as c_char {
-                break;
-            }
-        }
-        string9[-0x1] = '\0';
-    }
-    // FatalAppExit16( 0x0, CONCAT22(0x1050, pcVar6));
-    FatalAppExit16(0x0, string6);
-    FatalExit();
-    var5 = PTR_LOOP_1050_63fe;
-    loop {
-        var1 = var5;
-        var5 = var5 + 1;
-        offset7 = *var1;
-        var8 = var5;
-        if (offset7 == param_4) || (var8 = (offset7 + 1), var8.is_null()) {
-            return var8;
-        }
-        offset7 = -0x1;
-        loop {
-            if (offset7 == 0) {
-                break;
-            }
-            offset7 += -0x1;
-            var1 = var5;
-            var5 = (var5 + 1);
-            if var1 == '\0' {
-                break;
-            }
-        }
-    }
 }
 
 

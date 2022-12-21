@@ -84,12 +84,3 @@ pub unsafe fn destroy_cursor_1020_42f4(param_1: *mut StructD) {
     pass1_1020_808e(param_1);
     return;
 }
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address

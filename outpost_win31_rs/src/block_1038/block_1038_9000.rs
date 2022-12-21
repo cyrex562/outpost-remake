@@ -11,7 +11,7 @@ pub unsafe fn pass1_1038_90a2(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_9144(mut param_1: u16 ,param_2: *mut u16,mut param_3: u16 )
 
 {
@@ -97,7 +97,7 @@ pub unsafe fn pass1_1038_927c(param_1: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_dlg_op_1038_9294(mut param_1: u16 ,param_2: *mut StructB)
 
 {
@@ -120,7 +120,7 @@ pub unsafe fn win_dlg_op_1038_9294(mut param_1: u16 ,param_2: *mut StructB)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
@@ -278,7 +278,7 @@ pub unsafe fn send_dlg_item_int_1038_94da(mut param_1: i16,mut param_2: u16 ,mut
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_msg_op_1038_95fc(mut param_1: u16 ,mut param_2: u32)
 
 {
@@ -591,8 +591,8 @@ pub unsafe fn pass1_1038_9b72(param_1: *mut Struct57,param_2: *mut Struct57,mut 
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,param_4: *mut StructB)
 
 {
@@ -685,7 +685,7 @@ pub unsafe fn unk_win_ui_op_1038_9bc8(mut param_1: u16 ,mut param_2: u16 ,mut pa
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn enable_window_1038_9cec(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16)
 
 {
@@ -743,7 +743,7 @@ pub unsafe fn enable_window_1038_9cec(param_1: *mut u8,param_2: *mut Struct903,m
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10,mut param_2: i16,mut param_3: u16 ,in_hdc_param_4: u16,mut param_5: u16 )
 
 {
@@ -826,7 +826,7 @@ pub unsafe fn pass1_1038_9f76(param_1: *mut Struct57,mut param_2: u32,mut param_
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1038_9fa4(param_1: *mut StructD)
 
 {
@@ -850,7 +850,7 @@ pub unsafe fn show_win_1038_9fd0(param_1: *mut StructB)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn call_fn_ptr_1038_9ffa(mut param_1: u32,pstruct_param_2: *mut astruct_733,mut param_3: u16 ) -> u16
 

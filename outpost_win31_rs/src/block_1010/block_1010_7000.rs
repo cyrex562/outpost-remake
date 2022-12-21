@@ -9,19 +9,16 @@ pub unsafe fn pass1_1010_715c(mut param_1: u16, mut param_2: u16, mut param_3: u
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
+
+
+
 
 
 
 // WARNING: Unable to use type for symbol uVar1
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address

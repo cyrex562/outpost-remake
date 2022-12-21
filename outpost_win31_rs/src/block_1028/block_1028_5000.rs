@@ -18,7 +18,7 @@ pub unsafe fn pass1_1028_50fa(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 pub unsafe fn struct_1028_52e8(param_1: *mut astruct_180) -> *mut u16 {
@@ -241,13 +241,7 @@ pub unsafe fn FUN_1028_5a94(
     return;
 }
 
-pub unsafe fn pass1_1028_5bc6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1028_b418(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 
 pub unsafe fn struct_1028_5c54(param_1: *mut astruct_180) -> *mut u16 {
     struct_1028_b354(param_1);
@@ -269,35 +263,10 @@ pub unsafe fn pass1_1028_5c76(
     return &param_2.field0_0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-pub unsafe fn FUN_1028_5ca0(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) {
-    let mut extraout_DX: u16;
-    let mut uVar1: u32;
-    let mut local_12e: [u8; 0x124] = [0; 0x124];
-    let mut uStack10: u32;
-    let mut iStack6: i16;
-    let mut uStack4: u16;
 
-    pass1_1028_b58e(param_3);
-    uStack10 = (param_1 + 0x2e);
-    iStack6 = param_1;
-    uStack4 = extraout_DX;
-    uVar1 = pass1_1028_bb24(param_3);
-    struct_op_1028_87f0(
-        CONCAT22(0x1050, local_12e),
-        0x0,
-        0x0,
-        0x65,
-        (iStack6 + 0xc),
-        uStack4,
-        (uStack10 + 0x4),
-        uVar1,
-    );
-    fn_ptr_1030_835a(_u16_1050_5748, CONCAT22(0x1050, local_12e));
-    return;
-}
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 
 pub unsafe fn set_fn_ptr_1028_5df6(param_1: *mut astruct_180) -> *mut astruct_180 {

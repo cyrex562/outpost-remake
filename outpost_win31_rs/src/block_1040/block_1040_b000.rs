@@ -32,8 +32,8 @@ pub unsafe fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn unk_draw_op_1040_b0f8(mut param_1: u16 ,param_2: *mut StructD)
 
 {
@@ -77,7 +77,7 @@ pub unsafe fn unk_draw_op_1040_b0f8(mut param_1: u16 ,param_2: *mut StructD)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32)
 
 {
@@ -136,7 +136,7 @@ pub unsafe fn pass1_1040_b17c(param_1: *mut u8,mut param_2: u32,mut param_3: u32
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_win_ui_op_1040_b230(mut param_1: u16 ,param_2: *mut StructB)
 
 {
@@ -223,7 +223,7 @@ pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1040_b372(mut param_1: u32,hwnd_param_2: HWND16,mut param_3: u16 ,hdc_param_4: HDC16)
 
 {
@@ -319,7 +319,7 @@ pub unsafe fn pass1_1040_b45e(mut param_1: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_b4c8(param_1: *mut u8,mut param_2: u32)
 
 {
@@ -373,7 +373,7 @@ pub unsafe fn pass1_1040_b4c8(param_1: *mut u8,mut param_2: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
@@ -602,7 +602,7 @@ pub unsafe fn pass1_1040_b8be(param_1: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_1040_b8d2(mut param_1: u16 ,param_2: *mut StructB)
 
 {
@@ -798,7 +798,7 @@ pub unsafe fn destroy_win_1040_bb78(param_1: *mut astruct_35)
 // WARNING: Unable to use type for symbol puVar4
 // WARNING: Unable to use type for symbol uVar18
 // WARNING: Unable to use type for symbol uVar19
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1040_bbe2(param_1: *mut u8,param_2: HWND16,param_3: *mut astruct_900,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u32)
 
 {

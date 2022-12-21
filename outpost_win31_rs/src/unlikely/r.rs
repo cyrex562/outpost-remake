@@ -143,7 +143,7 @@ pub unsafe fn pass1_1018_df92(mut param_1: u32)
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_dfd4(param_1: *mut u8, mut param_2: u32)
 
 {

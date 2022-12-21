@@ -77,7 +77,7 @@ pub unsafe fn pass1_1030_c12e(mut param_1: i16, mut param_2: u32, mut param_3: i
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_c1b2(param_1: *mut u8, param_2: *mut astruct_695) {
     let mut iVar1: i16;
     let mut in_register_0000000a: u16;
@@ -187,7 +187,7 @@ pub unsafe fn pass1_1030_c29c(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_c2fa(mut param_1: i16, param_2: *mut u8, mut param_3: u32) {
     let mut uVar1: u32;
     let mut uVar2: u32;
@@ -304,7 +304,7 @@ pub unsafe fn pass1_1030_c2fa(mut param_1: i16, param_2: *mut u8, mut param_3: u
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_c52e(
     mut param_1: i16,
     mut param_2: u16,
@@ -408,7 +408,7 @@ pub unsafe fn pass1_1030_c52e(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 // WARNING: Restarted to delay deadcode elimination for space: stack
 pub unsafe fn pass1_1030_c652(param_1: *mut u8, mut param_2: u16) {
     let mut in_register_0000000a: u16;
@@ -487,7 +487,7 @@ pub unsafe fn pass1_1030_c76c(param_1: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_c7b0(mut param_1: u32) {
     let mut iVar1: i16;
     let mut uVar2: u32;
@@ -649,7 +649,7 @@ pub unsafe fn pass1_1030_ca26(mut param_1: u16, param_2: *mut astruct_15, mut pa
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_cac2(mut param_1: i16, param_2: *mut u32) {
     let mut uVar1: u32;
     let mut puVar2: *mut u32;
@@ -741,8 +741,8 @@ pub unsafe fn pass1_1030_cbf0(mut param_1: i16, mut param_2: u16, mut param_3: i
     return 0x1;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1030_cc44(
     mut param_1: i16,
     mut param_2: u16,
@@ -888,7 +888,7 @@ pub unsafe fn pass1_1030_cde8(mut param_1: i16, mut param_2: u16, mut param_3: i
     return iStack4;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 
 pub unsafe fn pass1_1030_ce2e(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> i16 {
     let mut iVar1: i16;

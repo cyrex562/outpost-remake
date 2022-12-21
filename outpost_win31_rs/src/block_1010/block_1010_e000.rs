@@ -1,17 +1,17 @@
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
+
+
+
+
+
+
 pub unsafe fn pass1_1010_e8f6(
     mut param_1: u16,
     mut param_2: u16,
@@ -47,7 +47,7 @@ pub unsafe fn pass1_1010_e8f6(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_e964(mut param_1: u16) {
     let mut uVar1: u32;
     let mut uVar2: u16;
@@ -154,10 +154,10 @@ pub unsafe fn struct_1010_e9e4(param_1: *mut Struct19, mut param_2: u16) {
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1010_ec40(
     mut param_1: i16,
@@ -169,13 +169,3 @@ pub unsafe fn pass1_1010_ec40(
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_5);
     return CONCAT22((param_1 + 0x12), (param_1 + 0x10));
 }
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address

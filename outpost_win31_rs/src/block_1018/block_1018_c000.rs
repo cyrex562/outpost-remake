@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_c402(
     mut param_1: u16,
     param_2: *mut astruct_20,
@@ -103,7 +103,7 @@ pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29) {
 // WARNING: Unable to use type for symbol iVar2
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Unable to use type for symbol puVar3
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 // WARNING: Variable defined which should be unmapped: iStack22
@@ -623,7 +623,7 @@ pub unsafe fn pass1_1018_cd60(
 
 // WARNING: Unable to use type for symbol iVar1
 // WARNING: Unable to use type for symbol uVar2
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 pub unsafe fn pass1_1018_cf74(
@@ -659,5 +659,3 @@ pub unsafe fn pass1_1018_cf74(
 
 // WARNING: Unable to use type for symbol iVar1
 // WARNING: Unable to use type for symbol uVar3
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-

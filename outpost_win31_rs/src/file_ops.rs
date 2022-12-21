@@ -260,7 +260,7 @@ pub unsafe fn read_file_1008_6e78(
     return 0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
@@ -295,7 +295,7 @@ pub unsafe fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3:
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn read_file_1008_6f7a(
     mut param_1: u16,
     mut param_2: u16,
@@ -842,8 +842,8 @@ pub unsafe fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
     return 0x1;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn read_file_1008_7cfe(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
     let mut bVar1: bool;
     let mut uVar2: u16;

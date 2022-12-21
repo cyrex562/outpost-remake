@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_str_op_1008_d1c6(param_1: *mut astruct_263, mut param_2: u32) {
     let mut iVar1: i16;
     let mut puVar2: *mut u32;
@@ -152,7 +152,7 @@ pub unsafe fn unk_str_op_1008_d1c6(param_1: *mut astruct_263, mut param_2: u32) 
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_d3ae(param_1: *mut astruct_263) {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut code;
@@ -250,7 +250,7 @@ pub unsafe fn pass1_1008_d3ae(param_1: *mut astruct_263) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_str_op_1008_d4f6(param_1: *mut astruct_263, param_2: *mut astruct_6) {
     let mut iVar1: i16;
     let mut lVar2: i32;
@@ -416,7 +416,7 @@ pub unsafe fn pass1_1008_d72e(param_1: *mut Struct19, mut param_2: u16) -> *mut 
     return &param_1.offset_0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_d790(
     param_1: *mut Struct19,
     param_2: *mut Struct19,
@@ -578,7 +578,7 @@ pub unsafe fn pass1_1008_d818(param_1: *mut astruct_263, mut param_2: i16) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
     param_2.offset_0x0 = 0xd9fa;
@@ -591,7 +591,7 @@ pub unsafe fn pass1_1008_d99e(param_1: *mut u8, param_2: *mut Struct19, mut para
 
 
 // WARNING: Unable to use type for symbol uVar3
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_draw_op_1008_da12(param_1: *mut Struct19, mut param_2: u16) {
     let mut bVar1: u8;
     let mut hdc: HDC16;
@@ -816,7 +816,7 @@ pub unsafe fn pass1_1008_ddca(param_1: *mut astruct_455) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_de58(param_1: *mut astruct_211, param_2: i32, param_3: i32) {
     let mut ppcVar1: *mut *mut code;
     let mut bVar2: bool;

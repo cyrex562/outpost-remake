@@ -1,7 +1,7 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn win_ui_cursor_op_1020_1294(
     mut param_1: u16,
     mut param_2: u32,
@@ -61,7 +61,7 @@ pub unsafe fn win_ui_cursor_op_1020_1294(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_win_ui_op_1020_1418(
     param_1: *mut astruct_40,
     param_2: *mut StructA,
@@ -487,8 +487,8 @@ pub unsafe fn struct_1020_1738(param_1: *mut Struct57, mut param_2: u16, mut par
 
 
 // WARNING: Unable to use type for symbol puVar2
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 
 pub unsafe fn set_win_tet_1020_1d2a(
@@ -575,7 +575,7 @@ pub unsafe fn pass1_1020_1e54(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1020_1eea(
     param_1: *mut u8,
     param_2: *mut astruct_663,

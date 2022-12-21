@@ -37,7 +37,7 @@ pub unsafe fn pass1_1040_70a0(param_1: u32)
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Unable to use type for symbol uVar14
 // WARNING: Unable to use type for symbol uVar15
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mixed_win_ui_op_1040_70b4
                (param_1: *mut Struct57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
@@ -264,7 +264,7 @@ pub unsafe fn pass1_1040_746c(mut param_1: u32) -> u16
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_898,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
@@ -336,8 +336,8 @@ pub unsafe fn win_cleanup_op_1040_748c(param_1: *mut u8,param_2: *mut astruct_89
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn create_window_1040_7620(mut param_1: u32,mut param_2: i16,pstruct_param_3: *mut astruct_860,mut param_4: u16 ,mut param_5: u16 )
 
 {
@@ -460,7 +460,7 @@ pub unsafe fn pass1_1040_78de()
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn dialog_ui_fn_1040_78e2(in_struct_1: *mut StructB)
 
 {
@@ -628,7 +628,7 @@ pub unsafe fn destroy_win_1040_7b98(mut param_1: u32)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
 
 {

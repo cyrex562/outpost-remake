@@ -1,5 +1,5 @@
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_help_1040_800c(mut param_1: u32)
 
 {
@@ -48,7 +48,7 @@ Low-level Error: Symbol $$undef00000006 extends beyond the end of the address sp
 */
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_807e(param_1: *mut astruct_395,mut param_2: u16 )
 
 {
@@ -322,8 +322,8 @@ pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut Struct57,mut param
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> i16
 
@@ -429,7 +429,7 @@ pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
 
@@ -557,7 +557,7 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_8978(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u32,mut param_4: u16 )
 
 {
@@ -572,7 +572,7 @@ pub unsafe fn pass1_1040_8978(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut 
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_89a4(param_1: *mut u8,param_2: *mut u32,param_3: *mut u16)
 
 {
@@ -612,7 +612,7 @@ pub unsafe fn pass1_1040_89a4(param_1: *mut u8,param_2: *mut u32,param_3: *mut u
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
 
 {
@@ -892,7 +892,7 @@ pub unsafe fn pass1_1040_8f16(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mixed_struct_op_1040_8fb8
                (mut param_1: u32,param_2: *mut astruct_65,mut param_3: u16 ,param_4: *mut c_char,mut param_5: u16 ,mut param_6: u16 ,mut param_7: u16 ,
                mut param_8: u16 ,mut param_9: u16 ,mut param_10: u16 )

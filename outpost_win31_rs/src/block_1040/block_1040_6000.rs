@@ -1,5 +1,5 @@
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_6402(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u16 )
 
 {
@@ -34,7 +34,7 @@ pub unsafe fn pass1_1040_6402(param_1: *mut StructD,param_2: *mut Struct57,mut p
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1040_6470(param_1: *mut StructD)
 
 {
@@ -56,7 +56,7 @@ pub unsafe fn pass1_1040_6470(param_1: *mut StructD)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char,mut param_2: u16 ,mut param_3: u32)
 
 {
@@ -89,7 +89,7 @@ pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char,mut param_2: u16 ,mut
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn show_win_1040_65ba(param_1: *mut StructD,struct_b_param_1: *mut StructB,mut param_3: u16 )
 
 {
@@ -188,7 +188,7 @@ for iStack10 in 1 .. uStack8
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn post_win_msg_1040_672e(mut param_1: u16 ,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
 
 {
@@ -314,7 +314,7 @@ pub unsafe fn pass1_1040_692e(param_1: u32)
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Unable to use type for symbol uVar18
 // WARNING: Unable to use type for symbol uVar19
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mixed_win_ui_op_1040_6942
                (param_1: *mut Struct57,mut param_2: u16 ,struct_b_param_1: *mut StructB,mut param_4: u16 ,mut param_5: u16 )
 
@@ -541,7 +541,7 @@ pub unsafe fn pass1_1040_6cfa(mut param_1: u32) -> u16
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32)
 
 {
@@ -614,8 +614,8 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897,mut param_2: u16 ,mu
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn create_window_1040_6eae(mut param_1: u32,mut param_2: i16,pstruct_param_3: *mut astruct_859,mut param_4: u16 ,mut param_5: u16 )
 
 {

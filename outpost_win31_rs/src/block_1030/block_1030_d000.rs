@@ -39,7 +39,7 @@ pub unsafe fn pass1_1030_d0a8(mut param_1: u32) -> u16 {
     return uVar1;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 
 pub unsafe fn pass1_1030_d0c6(mut param_1: u32) -> i16 {
     let mut uStack6: u32;
@@ -54,7 +54,7 @@ pub unsafe fn pass1_1030_d0c6(mut param_1: u32) -> i16 {
     return uStack6;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 
 pub unsafe fn pass1_1030_d102(mut param_1: i16, mut param_2: u16) -> i16 {
     let mut iVar1: i16;
@@ -71,7 +71,7 @@ pub unsafe fn pass1_1030_d102(mut param_1: i16, mut param_2: u16) -> i16 {
     return uStack6;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 
 pub unsafe fn pass1_1030_d144(mut param_1: u32) -> i16 {
     let mut uStack6: u32;
@@ -86,7 +86,7 @@ pub unsafe fn pass1_1030_d144(mut param_1: u32) -> i16 {
     return uStack6;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_d180(mut param_1: u32, mut param_2: u16) {
     let mut uVar1: u16;
     let mut in_EDX: u32;
@@ -141,7 +141,7 @@ pub unsafe fn pass1_1030_d230(mut param_1: u32) -> u16 {
     return 0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_d26c(mut param_1: u32) {
     let mut puVar1: *mut u32;
     let mut uVar2: u32;
@@ -214,8 +214,8 @@ pub unsafe fn pass1_1030_d36e(mut param_1: u32, mut param_2: i16) -> u16 {
     return 0x1;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1030_d3b2(
     mut param_1: i16,
     mut param_2: i16,
@@ -424,7 +424,7 @@ pub unsafe fn pass1_1030_d61c(mut param_1: u32, mut param_2: u32) {
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
+
 pub unsafe fn pass1_1030_d72e(
     mut param_1: i16,
     param_2: *mut u8,
@@ -582,7 +582,7 @@ pub unsafe fn pass1_1030_d994(param_1: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_da22(mut param_1: u32) {
     let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut code;
@@ -625,7 +625,7 @@ pub unsafe fn pass1_1030_da22(mut param_1: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_dace(mut param_1: u32) {
     let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut code;
@@ -683,7 +683,7 @@ pub unsafe fn pass1_1030_db78(mut param_1: u32) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_db92(
     mut param_1: u16,
     mut param_2: u16,
@@ -755,7 +755,7 @@ pub unsafe fn pass1_1030_dcc2(
     return &param_2.field0_0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_dcf4(mut param_1: u16, param_2: *mut astruct_15) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;

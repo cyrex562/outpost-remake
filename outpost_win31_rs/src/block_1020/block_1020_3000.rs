@@ -366,7 +366,7 @@ pub unsafe fn draw_polygon_1020_3602(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn struct_1020_3644(
     mut param_1: u32,
     param_2: *mut StructA,
@@ -422,10 +422,10 @@ pub unsafe fn struct_1020_3644(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn window_op_1020_38aa(
     param_1: *mut Struct57,
     param_2: *mut StructA,
@@ -652,7 +652,7 @@ pub unsafe fn destroy_window_1020_3b3e(param_1: *mut astruct_30) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
     let mut cVar1: u8;
@@ -686,11 +686,11 @@ pub unsafe fn pass1_1020_3c8c(mut param_1: u32, mut param_2: u32) {
 // WARNING: Instruction at (ram,0x10203dab) overlaps instruction at (ram,0x10203da8)
 //
 // WARNING: Variable defined which should be unmapped: param_16
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 // WARNING: Unable to use type for symbol uVar4
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_draw_op_1020_3da4(
     mut param_1: u16,
     mut param_2: u16,

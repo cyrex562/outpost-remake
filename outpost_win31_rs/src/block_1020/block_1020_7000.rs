@@ -1,5 +1,5 @@
 // WARNING: Unable to use type for symbol uVar3
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_win_ui_op_1020_717e(
     mut param_1: u16,
     mut param_2: u16,
@@ -249,7 +249,7 @@ pub unsafe fn win_ui_op_1020_737a(mut param_1: u16, param_2: *mut astruct_788) -
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn struct_1020_7554(
     mut param_1: u16,
     param_2: *mut astruct_20,
@@ -310,10 +310,10 @@ pub unsafe fn pass1_1020_75c4(param_1: *mut StructD) {
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
 pub unsafe fn pass1_1020_7824(
     mut param_1: u16,
     param_2: *mut astruct_666,
@@ -535,7 +535,7 @@ pub unsafe fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut 
 
 // WARNING: Unable to use type for symbol puVar2
 // WARNING: Unable to use type for symbol iVar1
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE) {
     let mut y_00: i16;
     let mut str46_len: i16;
@@ -656,7 +656,7 @@ pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn unk_draw_op_1020_7f7a(
     param_1: *mut astruct_20,
     mut param_2: u16,

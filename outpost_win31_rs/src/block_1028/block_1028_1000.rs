@@ -63,7 +63,7 @@ pub unsafe fn pass1_1028_1024(mut param_1: i16, mut param_2: u16, param_3: *mut 
     return iStack24;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1028_1106(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> i16 {
     let mut BVar1: bool;
@@ -135,8 +135,8 @@ pub unsafe fn pass1_1028_11de(param_1: *mut astruct_15) -> bool {
     return (uVar1 + 0x10) == 0;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1028_121e(mut param_1: u16, param_2: *mut astruct_15) -> *mut astruct_15 {
     let mut bVar1: bool;
@@ -174,8 +174,8 @@ pub unsafe fn pass1_1028_121e(mut param_1: u16, param_2: *mut astruct_15) -> *mu
     return paVar5;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1028_1416(mut param_1: u16, mut param_2: u32) -> i16 {
     let mut bVar1: bool;
@@ -195,7 +195,7 @@ pub unsafe fn pass1_1028_1416(mut param_1: u16, mut param_2: u32) -> i16 {
     return iVar2 * 0xf;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1028_1556(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> u16 {
     let mut iVar1: i16;
@@ -340,10 +340,10 @@ pub unsafe fn pass1_1028_17ae(
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
 
 
 pub unsafe fn struct_1028_1bbc(param_1: *mut astruct_180) -> *mut u16 {
@@ -381,12 +381,12 @@ pub unsafe fn pass1_1028_1c1c() -> u16 {
 
 
 
-// WARNING: Could not reconcile some variable overlaps
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
 
 pub unsafe fn pass1_1028_1e14(
     mut param_1: u16,

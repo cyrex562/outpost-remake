@@ -63,7 +63,7 @@ pub unsafe fn struct_1030_4574(param_1: *mut astruct_159) -> u32 {
     return param_1 & 0xffff0000 | ZEXT24(&iVar1.field12_0xc);
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_4594(
     param_1: *mut u8,
     mut param_2: u16,
@@ -199,7 +199,7 @@ pub unsafe fn pass1_1030_4628(
     }
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1030_4782(
     mut param_1: u32,
     mut param_2: u16,
@@ -670,10 +670,10 @@ pub unsafe fn pass1_1030_4e34(
     return;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
 pub unsafe fn pass1_1030_4f5a(mut param_1: u16, param_2: *mut astruct_117) {
     let mut pcVar1: *mut c_char;
     let mut plVar2: *mut i32;

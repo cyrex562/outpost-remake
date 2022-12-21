@@ -147,7 +147,7 @@ pub unsafe fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruc
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn struct_1018_66cc(
     mut param_1: u16,
     param_2: *mut astruct_20,
@@ -207,14 +207,14 @@ pub unsafe fn pass1_1018_673c(param_1: *mut StructD) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 
 
 
 
 // WARNING: Unable to use type for symbol uVar2
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_6924(mut param_1: u16, param_2: *mut StructA, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar3: u16;
@@ -302,7 +302,7 @@ pub unsafe fn struct_op_1018_6a0e(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mixed_draw_op_1018_6a7a(
     mut param_1: u16,
     mut param_2: u16,
@@ -343,7 +343,7 @@ pub unsafe fn mixed_draw_op_1018_6a7a(
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn mix_ui_op_1018_6adc(
     param_1: *mut astruct_28,
     mut param_2: u16,

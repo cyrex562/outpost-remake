@@ -397,7 +397,7 @@ pub unsafe fn mem_1008_ed1e(
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1008_ed8a(
     param_1: u32,
     mut param_2: u16,

@@ -30,8 +30,8 @@
 //   return;
 // }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1038_0f8c(
     mut param_1: u16,
     mut param_2: u32,

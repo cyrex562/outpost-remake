@@ -443,7 +443,7 @@ pub unsafe fn pass1_1010_a198(param_1: *mut u16, param_2: u8) -> *mut u16 {
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn load_str_1010_ddf6(mut param_1: u32, mut param_2: u32) {
     let mut in_AX: u16;
     let mut in_DX: u16;
@@ -476,7 +476,7 @@ pub unsafe fn load_str_1010_ddf6(mut param_1: u32, mut param_2: u32) {
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_de78(mut param_1: u32, mut param_2: u32) {
     let mut in_buf_len_5: i16;
 

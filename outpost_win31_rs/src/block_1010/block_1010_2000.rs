@@ -1,4 +1,4 @@
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 use std::os::raw::c_char;
 use std::ptr::null_mut;
@@ -50,7 +50,7 @@ pub unsafe fn pass1_1010_2024(param_1: *mut StructD) -> *mut StructD {
     return param_1;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1010_2050(mut param_1: u32) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
@@ -638,8 +638,8 @@ pub unsafe fn pass1_1010_29c6(param_1: *mut StructD) {
 
 // WARNING: Instruction at (ram,0x10104b2b) overlaps instruction at (ram,0x10104b2a)
 //
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
 pub unsafe fn FUN_1010_2a32(
@@ -1109,7 +1109,7 @@ pub unsafe fn pass1_1010_2bfc(param_1: *mut Struct19, mut param_2: u16) -> *mut 
     return &param_1.offset_0x0;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn unk_load_str_op_1010_2c34(param_1: u32) -> *mut c_char {
     let mut in_buffer_4: *mut c_char;
@@ -1154,7 +1154,7 @@ pub unsafe fn unk_load_str_op_1010_2c34(param_1: u32) -> *mut c_char {
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn struct_1010_2cd2(param_1: *mut Struct19, mut param_2: u16) {
     let mut in_EDX: u32;
     let mut uVar1: u16;

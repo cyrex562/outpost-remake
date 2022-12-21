@@ -4,7 +4,7 @@
 
 // #include "block_1020.h"
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1020_e044(mut param_1: u32) -> BOOL16 {
     let mut uVar1: u32;
@@ -23,8 +23,8 @@ pub unsafe fn pass1_1020_e044(mut param_1: u32) -> BOOL16 {
     return 0x0;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 pub unsafe fn pass1_1020_e08e(mut param_1: u16, param_2: *mut astruct_15) {
     let mut uVar1: u16;
     let mut uVar2: u32;
@@ -171,7 +171,7 @@ pub unsafe fn pass1_1020_e08e(mut param_1: u16, param_2: *mut astruct_15) {
     return;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1020_e294(param_1: *mut astruct_15) {
     let mut uVar1: u32;
     let mut puVar2: *mut u32;
@@ -240,7 +240,7 @@ pub unsafe fn pass1_1020_e294(param_1: *mut astruct_15) {
 
 // WARNING: Unable to use type for symbol uVar1
 // WARNING: Unable to use type for symbol uVar2
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1020_e39c(mut param_1: i16, param_2: *mut astruct_15, mut param_3: u16) {
     let mut uVar3: u16;
     let mut extraout_DX: u16;
@@ -354,8 +354,8 @@ pub unsafe fn pass1_1020_e4fa(param_1: *mut astruct_15, mut param_2: u16) -> i16
     return iStack4;
 }
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
 
 pub unsafe fn pass1_1020_e652(
     mut param_1: u32,
@@ -434,15 +434,15 @@ pub unsafe fn pass1_1020_e91e(
 }
 
 
-// WARNING: Could not reconcile some variable overlaps
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+
+
+
+
 pub unsafe fn pass1_1020_ee3a(mut param_1: i16, param_2: *mut astruct_15, mut param_3: u16) {
     let mut uVar1: u32;
     let mut extraout_DX: u16;
@@ -481,5 +481,3 @@ pub unsafe fn pass1_1020_ef5e(param_1: *mut u16) {
     pass1_1028_b418(param_1);
     return;
 }
-
-

@@ -1192,11 +1192,6 @@ pub unsafe fn pass1_1000_3e82(mut param_1: u16, param_2: *mut u8, mut param_3: u
     return pb_var9;
 }
 
-pub unsafe fn fatal_app_exit_1000_3e9e() {
-    FatalAppExit16(0x0, s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
-    return;
-}
-
 pub unsafe fn pass1_1000_3ec0(mut param_1: u16, mut param_2: u16) -> i16 {
     let mut u_var1: u16;
     let mut u_var2: u16;
@@ -1255,7 +1250,7 @@ pub unsafe fn pass1_1000_3f5c() -> i16 {
     return i_var3;
 }
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn sys_1000_3f9c(param_1: *mut c_char, param_2: *mut c_char, mut param_3: u16) -> u16 {
     let mut pc_var1: *mut c_char;

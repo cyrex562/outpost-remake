@@ -12,7 +12,7 @@ pub unsafe fn pass1_1018_dcf6(param_1: *mut u16) -> *mut u16
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 
 pub unsafe fn pass1_1018_dd1e(mut param_1: u16, param_2: *mut Struct57, mut param_3: u16, mut param_4: u16, mut param_5: i16, mut param_6: u32) -> u32
 
@@ -41,7 +41,7 @@ pub unsafe fn pass1_1018_dd1e(mut param_1: u16, param_2: *mut Struct57, mut para
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1018_dd7c(mut param_1: u32, mut param_2: u16, mut param_3: u16, mut param_4: u32, mut param_5: u32, mut param_6: u16,
                               mut param_7: u16, mut param_8: u16, mut param_9: u16, mut param_10: u16)
 

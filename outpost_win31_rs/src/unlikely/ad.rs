@@ -104,7 +104,7 @@ pub unsafe fn pass1_1028_6fc0(param_1: u8, param_2: *mut astruct_97) -> *mut ast
 }
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 pub unsafe fn pass1_1028_6ff6(param_1: *mut StructD, mut param_2: u32, mut param_3: u16) {
     let mut bVar1: bool;
     let mut bVar2: bool;
@@ -758,4 +758,158 @@ pub unsafe fn pass1_1028_865c(param_1: *mut StructD, param_2: u8) -> *mut Struct
         fn_ptr_1000_17ce(param_1);
     }
     return param_1;
+}
+
+pub unsafe fn pass1_1028_5bc6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+    pass1_1028_b418(&param_1.address_offset_field_0x0);
+    if ((param_2 & 1) != 0) {
+        fn_ptr_1000_17ce(param_1);
+    }
+    return param_1;
+}
+
+pub unsafe fn FUN_1028_5ca0(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) {
+    let mut extraout_DX: u16;
+    let mut uVar1: u32;
+    let mut local_12e: [u8; 0x124] = [0; 0x124];
+    let mut uStack10: u32;
+    let mut iStack6: i16;
+    let mut uStack4: u16;
+
+    pass1_1028_b58e(param_3);
+    uStack10 = (param_1 + 0x2e);
+    iStack6 = param_1;
+    uStack4 = extraout_DX;
+    uVar1 = pass1_1028_bb24(param_3);
+    struct_op_1028_87f0(
+        CONCAT22(0x1050, local_12e),
+        0x0,
+        0x0,
+        0x65,
+        (iStack6 + 0xc),
+        uStack4,
+        (uStack10 + 0x4),
+        uVar1,
+    );
+    fn_ptr_1030_835a(_u16_1050_5748, CONCAT22(0x1050, local_12e));
+    return;
+}
+
+pub unsafe fn pass1_1028_61c4(mut param_1: u16, param_2: *mut astruct_15, mut param_3: u32) {
+    let mut paVar1: *mut astruct_21;
+    let mut uVar4: *mut astruct_21;
+    let mut uVar2: u16;
+    let mut in_EDX: u32;
+    let mut uVar5: u16;
+    let mut iVar5: *mut astruct_15;
+    let mut uVar6: u16;
+    let mut puVar1: *mut astruct_21;
+    let mut paVar3: *mut Struct57;
+    let mut fn_ptr_1: *mut *mut code;
+
+    uVar5 = (in_EDX >> 0x10);
+    pass1_1028_b46e(param_1, param_2, param_3);
+    uVar6 = (param_2 >> 0x10);
+    iVar5 = param_2;
+    paVar1 = iVar5.field24_0x20;
+    uVar2 = iVar5.field25_0x22;
+    uVar4 = (uVar2 | paVar1);
+    paVar3 = CONCAT22(uVar5, uVar4);
+    if (uVar4.is_null() == false) {
+        fn_ptr_1 = paVar1;
+        paVar1 = (**fn_ptr_1)();
+    }
+    mem_op_1000_179c(0xc, paVar3);
+    uVar2 = paVar3 | paVar1;
+    if (uVar2 == 0) {
+        paVar1 = null_mut();
+        uVar2 = 0;
+    } else {
+        paVar1 = set_struct_1008_574a(CONCAT22(paVar3, paVar1));
+    }
+    iVar5.field24_0x20 = paVar1;
+    iVar5.field25_0x22 = uVar2;
+    return;
+}
+
+
+pub unsafe fn pass1_1028_64d6(mut param_1: u32, mut param_2: u32) -> u16 {
+    let mut uVar1: u32;
+    let mut BVar2: bool;
+    let mut puVar3: *mut u16;
+    let mut uVar4: u16;
+    let mut in_stack_0000ffc4: HFILE16;
+    let mut local_26: u16;
+    let mut local_24: u16;
+    let mut local_22: u16;
+    let mut local_20: u16;
+    let mut local_1e: u16;
+    let mut local_1c: [u16; 0x6] = [0; 0x6];
+    let mut uStack16: u16;
+    let mut lStack14: i32;
+    let mut local_a: [u8; 0x8] = [0; 0x8];
+
+    BVar2 = write_to_file_1028_b5ec(param_1, param_2);
+    if (BVar2 != 0) {
+        uVar4 = (param_1 >> 0x10);
+        pass1_1008_5784(CONCAT22(0x1050, local_a), (param_1 + 0x20));
+        uVar1 = (param_1 + 0x20);
+        local_1c[0] = (uVar1 + 0x8);
+        puVar3 = local_1c;
+        uStack16 = local_1c[0];
+        loop {
+            BVar2 = write_to_file_1008_7e1c(param_2, CONCAT22(0x1050, puVar3), 0x2, in_stack_0000ffc4);
+            if (BVar2 == 0) {
+                break;
+            }
+            lStack14 = pass1_1008_5b12(CONCAT22(0x1050, local_a));
+            if (lStack14 == 0) {
+                return 0x1;
+            }
+            local_1e = (lStack14 + 0x4);
+            BVar2 = write_to_file_1008_7e1c(
+                param_2,
+                CONCAT22(0x1050, &local_1e),
+                0x2,
+                in_stack_0000ffc4,
+            );
+            if (BVar2 == 0) {
+                break;
+            }
+            local_20 = (lStack14 + 0x6);
+            BVar2 = write_to_file_1008_7e1c(
+                param_2,
+                CONCAT22(0x1050, &local_20),
+                0x2,
+                in_stack_0000ffc4,
+            );
+            if (BVar2 == 0) {
+                break;
+            }
+            local_22 = (lStack14 + 0x8);
+            BVar2 = write_to_file_1008_7e1c(
+                param_2,
+                CONCAT22(0x1050, &local_22),
+                0x2,
+                in_stack_0000ffc4,
+            );
+            if (BVar2 == 0) {
+                break;
+            }
+            local_24 = (lStack14 + 0xa);
+            BVar2 = write_to_file_1008_7e1c(
+                param_2,
+                CONCAT22(0x1050, &local_24),
+                0x2,
+                in_stack_0000ffc4,
+            );
+            if (BVar2 == 0) {
+                break;
+            }
+            local_26 = (lStack14 + 0xc);
+            puVar3 = &local_26;
+        }
+        u16_1050_0310 = 0x6d0;
+    }
+    return 0x0;
 }
