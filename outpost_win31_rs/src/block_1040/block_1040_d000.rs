@@ -19,16 +19,6 @@ use crate::win_ui;
 use crate::winbase::{EnableWindow16, GetDlgItem16, MessageBox16, PostMessage16, SendDlgItemMessage16};
 use crate::windef::{HWND16, LRESULT};
 
-pub unsafe fn pass1_1040_d056(param_1: *mut StructD, param_2: u8) -> *mut StructD
-
-{
-    pass1_1040_ca74(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
-
 
 
 pub unsafe fn pass1_1040_d0f8(param_1: *mut Struct57, mut param_2: u16, mut param_3: u16, param_4: *mut StructD, mut param_5: u16,
@@ -97,40 +87,4 @@ pub unsafe fn pass1_1040_d1bc(param_1: *mut StructD)
     }
     unk_draw_op_1040_b0f8(in_stack_0000ffd4, param_1);
     return;
-}
-
-pub unsafe fn pass1_1040_d29c(mut param_1: u32)
-
-{
-    let mut in_DX: u16;
-
-    win_ui::send_dlg_item_msg_1040_d79c(in_DX, param_1);
-    return;
-}
-
-pub unsafe fn pass1_1040_d76e(mut param_1: u32)
-
-{
-    let mut uVar1: u32;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    uVar1 = (iVar2 + 0x94);
-    pass1_1018_5742(uVar1, (uVar1 >> 0x10), (iVar2 + 0x9c), (iVar2 + 0x98),
-    );
-    (iVar2 + 0x9c) = 0;
-    return;
-}
-
-
-pub unsafe fn pass1_1040_d89e(param_1: *mut StructD, param_2: u8) -> *mut StructD
-
-{
-    pass1_1040_d1bc(param_1);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
 }

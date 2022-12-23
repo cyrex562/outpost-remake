@@ -40,6 +40,14 @@ pub mod am;
 pub mod an;
 pub mod ao;
 pub mod ap;
+pub mod aq;
+pub mod ar;
+pub mod ax;
+pub mod at;
+pub mod au;
+pub mod av;
+pub mod aw;
+pub mod ay;
 
 pub unsafe fn pass1_1000_0000(mut param_1: *mut u16, mut param_2: *mut u16, mut param_3: u16) {
     let mut pu_var1: *mut u16;

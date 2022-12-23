@@ -1,44 +1,8 @@
 
 
-pub unsafe fn win_help_1040_800c(mut param_1: u32)
-
-{
-  let mut in_AX: u16;
-  let mut uVar1: u16;
-  let mut in_EDX: u32;
-  let mut iVar2: i16;
-  let mut uVar3: u16;
-  let mut unaff_CS: u16;
-  let mut iVar4: i16;
-  let mut w_command: u16;
-  let mut hwnd: HWND16;
-
-  uVar1 = FUN_1010_830a(in_AX,in_EDX,unaff_CS,_u16_1050_14cc,0x1f8);
-  uVar3 = (param_1 >> 0x10);
-  iVar2 = param_1;
-  if ((iVar2 + 0x8a) == 0) {
-    hwnd = (iVar2 + 0x6);
-    iVar4 = 0;
-    w_command = 0x3;
-    iVar2 = 0;
-  }
-  else {
-    hwnd = (iVar2 + 0x6);
-    w_command = 0x1;
-    iVar2 = (iVar2 + 0x8a);
-    iVar4 = iVar2 >> 0xf;
-  }
-  WinHelp16(CONCAT22(iVar4,iVar2),w_command,CONCAT22(in_EDX,uVar1),hwnd);
-  return;
-}
 
 
 
-pub unsafe fn pass1_1040_8054() -> u16
-
-{
-  return 0x0;
-}
 
 
 /*
@@ -49,165 +13,13 @@ Low-level Error: Symbol $$undef00000006 extends beyond the end of the address sp
 
 
 
-pub unsafe fn pass1_1040_807e(param_1: *mut astruct_395,mut param_2: u16 )
-
-{
-  let mut ppcVar1: *mut *mut code;
-  let mut in_AX: u16;
-  let mut paVar2: *mut astruct_394;
-  let mut paVar3: *mut astruct_394;
-  let mut paVar4: *mut astruct_394;
-  let mut uVar5: u16;
-  let mut uVar6: u16;
-  let mut puVar7: *mut u8;
-  let mut in_EDX: u32;
-  let mut paVar8: *mut Struct57;
-  let mut iVar9: *mut astruct_395;
-  let mut uVar9: *mut astruct_395;
-  let mut unaff_CS: u16;
-  let mut puStack6: *mut u32;
-
-  if (param_2 == 1) {
-    pass1_1040_805a(in_EDX);
-    return;
-  }
-  paVar2 = FUN_1010_830a(in_AX,in_EDX,unaff_CS,_u16_1050_14cc,param_2);
-  uVar5 = in_EDX;
-  puStack6 = CONCAT22(uVar5,paVar2);
-  paVar8 = (in_EDX & 0xffff0000 | (uVar5 | paVar2));
-  if ((uVar5 | paVar2) != 0) {
-    ppcVar1 = (*puStack6 + 0x14);
-    paVar3 = paVar2;
-    (**ppcVar1)(0x1010,paVar2,uVar5);
-    uVar6 = SUB42(paVar8,0x0);
-    uVar9 = (param_1 >> 0x10);
-    iVar9 = param_1;
-    paVar4 = paVar3;
-    if (iVar9.field112_0x70.is_null() == false) {
-      paVar4 = &iVar9.field112_0x70;
-      uVar5 = (&iVar9.field112_0x70 + 2);
-      paVar8 = (paVar8 & 0xffff0000 | (uVar5 | paVar4));
-      if ((uVar5 | paVar4) != 0) {
-        ppcVar1 = paVar4;
-        (**ppcVar1)(0x1010,paVar4,uVar5,1);
-      }
-    }
-    mem_op_1000_179c(0x14,paVar8);
-    puVar7 = (paVar8 | paVar4);
-    if (puVar7.is_null()) {
-      paVar4 = null_mut();
-      puVar7 = null_mut();
-    }
-    else {
-      struct_1008_4c58(paVar4);
-    }
-    iVar9.field112_0x70 = paVar4;
-    (&iVar9.field112_0x70 + 0x2) = puVar7;
-    pass1_1008_4d84(puVar7,iVar9.field112_0x70,CONCAT22(uVar6,paVar3));
-    if (puStack6.is_null() == false) {
-      ppcVar1 = *puStack6;
-      (**ppcVar1)(0x1008,paVar2,in_EDX,1);
-    }
-    return;
-  }
-  return;
-}
-pub unsafe fn unk_win_ui_op_1040_8158(param_1: u32,POparam_2: INT16,mut param_3: i16)
-
-{
-  let mut ppcVar1: *mut *mut code;
-  let mut BVar2: bool;
-  let mut iVar3: i16;
-  let mut uVar4: u16;
-
-  if (param_3 == 0x2) {
-    uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    if ((iVar3 + 0x76) != 0) {
-      ScreenToClient16(CONCAT22(0x1050,&stack0xfffa),(iVar3 + 0x6));
-      GetSystemMetrics16(SM_CYCAPTION);
-      BVar2 = PtInRect16((param_1 & 0xffff0000 | ZEXT24((iVar3 + 0x82))),
-                         (iVar3 + 0x82));
-      if (BVar2 != 0) {
-        ppcVar1 = (*param_1 + 0x14);
-        (**ppcVar1)(s_tile2_bmp_1050_1538,iVar3);
-      }
-    }
-  }
-  return;
-}
-pub unsafe fn check_dialog_msg_1040_81b6(mut param_1: u32)
-
-{
-  let mut BVar1: bool;
-  let mut uVar2: u16;
-  let mut local_14: MSG16;
-
-  uVar2 = (param_1 >> 0x10);
-  (param_1 + 0x78) = 0x1;
-  loop {
-    BVar1 = IsWindow16((param_1 + 0x6));
-    if (BVar1 == 0) {
-      return;
-    }
-    local_14.hwnd = &DAT_1050_1050;
-    BVar1 = GetMessage16(0x0,0x0,0x0,&local_14);
-    if (BVar1 == 0) { break; }
-    IsDialogMessage16(&local_14,&DAT_1050_1050);
-  }
-  return;
-}
-pub unsafe fn win_ui_op_1040_81fe(mut param_1: u32)
-
-{
-  SetSysModalWindow((param_1 + 0x6));
-  return;
-}
-pub unsafe fn destroy_win_1040_8212(param_1: *mut astruct_899)
-
-{
-  let mut is_window: bool;
-   let mut struct_1: *mut astruct_899;
-  let mut uVar1: u16;
-
-  uVar1 = (param_1 >> 0x10);
-  struct_1 = param_1;
-  if (struct_1.field140_0x8c != 0) {
-    is_window = IsWindow16(struct_1.field140_0x8c);
-    if (is_window != 0) {
-      DestroyWindow16(struct_1.field140_0x8c);
-      struct_1.field140_0x8c = 0;
-    }
-  }
-  return;
-}
 
 
 
-pub unsafe fn pass1_1040_824a(mut param_1: u32,mut param_2: i16) -> u16
-
-{
-  if ((param_1 + 0x6) != param_2) {
-    return 0x1;
-  }
-  return 0x0;
-}
 
 
 
-pub unsafe fn FUN_1040_8260() -> u16
 
-{
-  return 0x0;
-}
-
-
-
-pub unsafe fn FUN_1040_8266() -> u16
-
-{
-  return 0x0;
-}
 pub unsafe fn move_win_1040_826c(param_1: *mut StructB,param_2: INT16,param_3: BOOL16)
 
 {
@@ -431,258 +243,15 @@ pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
 
 
 
-pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
-
-{
-  let mut piVar1: *mut i16;
-  let mut uVar2: u32;
-  let mut iVar3: i16;
-  let mut uVar4: u16;
-  let mut uVar5: u16;
-  let mut in_EDX: u32;
-  let mut paVar6: *mut Struct57;
-  let mut puVar7: *mut u32;
-  let mut in_stack_0000fd88: u16;
-  let mut in_stack_0000fd8a: u16;
-  let mut in_stack_0000feac: u16;
-  let mut in_stack_0000feae: u16;
-  let mut in_stack_0000feb2: u16;
-  let mut in_stack_0000feb4: u16;
-  let mut in_stack_0000feb6: u16;
-  let mut in_stack_0000feb8: u16;
-  let mut uVar9: u16;
-  let mut uVar10: u16;
-  let mut uVar11: u16;
-  let mut in_stack_0000fee0: u16;
-  let mut in_stack_0000fee2: u16;
-  let mut local_104: [i16;0x80] = [0;0x80];
-  let mut uStack4: u16;
-  let mut uVar8: u16;
-  let mut paVar12: *mut Struct37;
-  let mut uVar12: *mut Struct37;
-
-  uVar5 = (in_EDX >> 0x10);
-  unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-  paVar12 = param_1;
-  uVar12 = (param_1 >> 0x10);
-  dialog_ui_fn_1040_78e2(param_1);
-  PTR_LOOP_1050_5df6 = (&paVar12.field1_0x4 + 2);
-  if (&paVar12.field_0x94 != 0) {
-    unk_str_op_1000_3d3e
-              ((param_1 & 0xffff0000 | ZEXT24(&paVar12.field_0x10)),*&paVar12.field_0x94);
-  }
-  get_sys_metrics_1040_8c66(param_1);
-  uStack4 = paVar12.field138_0x98 & 0xf;
-  if (uStack4 == 1) {
-    iVar3 = &paVar12[0x1].field_0x8 -0xc4;
-    paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
-    paVar12[0x1].field_0xc = iVar3 / 0x2;
-    load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               &DAT_1050_1050);
-    uVar2 = &paVar12[0x1].field_0xc;
-    create_window_1040_8bea
-              (paVar12,uVar12,0x1,0x1,uVar2,(uVar2 >> 0x10),CONCAT22(0x1050,local_104));
-    piVar1 = &paVar12[0x1].field_0xc;
-    *piVar1 = *piVar1 + 0x6c;
-    load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               &DAT_1050_1050);
-    uVar2 = &paVar12[0x1].field_0xc;
-    uVar10 = uVar2;
-    uVar11 = (uVar2 >> 0x10);
-    uVar9 = 0x2;
-  }
-  else {
-    if (uStack4 != 0x4) {
-      iVar3 = &paVar12[0x1].field_0x8 -0x58;
-      paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
-      paVar12[0x1].field_0xc = iVar3 / 0x2;
-      load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-                 &DAT_1050_1050);
-      uVar2 = &paVar12[0x1].field_0xc;
-      uVar10 = uVar2;
-      uVar11 = (uVar2 >> 0x10);
-      uVar5 = 0x1;
-      uVar9 = 0x1;
-  // TODO: goto LAB_1040_88a5;
-    }
-    iVar3 = &paVar12[0x1].field_0x8 -0xc4;
-    paVar6 = CONCAT22(uVar5,iVar3 >> 0xf);
-    paVar12[0x1].field_0xc = iVar3 / 0x2;
-    load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               &DAT_1050_1050);
-    uVar2 = &paVar12[0x1].field_0xc;
-    create_window_1040_8bea
-              (paVar12,uVar12,0x1,0x6,uVar2,(uVar2 >> 0x10),CONCAT22(0x1050,local_104));
-    piVar1 = &paVar12[0x1].field_0xc;
-    *piVar1 = *piVar1 + 0x6c;
-    load_string_1010_84e0
-              (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0xff,local_104,
-               &DAT_1050_1050);
-    uVar2 = &paVar12[0x1].field_0xc;
-    uVar10 = uVar2;
-    uVar11 = (uVar2 >> 0x10);
-    uVar9 = 0x7;
-  }
-  uVar5 = 0;//
-// LAB_1040_88a5:
-  create_window_1040_8bea(paVar12,uVar12,uVar5,uVar9,uVar10,uVar11,CONCAT22(0x1050,local_104));
-  puVar7 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,CONCAT22(in_stack_0000fee0,0x48),in_stack_0000fd88,
-                           in_stack_0000feac,in_stack_0000feb2,in_stack_0000feb6);
-  uVar5 = (puVar7 >> 0x10);
-  local_104[0] = (puVar7 + 0xa);
-  uStack4 = (puVar7 + 0xc);
-  iVar3 = uStack4 - &paVar12[0x1].field_0xa;
-  paVar6 = (paVar6 & 0xffff0000 | (iVar3 >> 0xf));
-  SetWindowPos16(0x40,&paVar12[0x1].field_0xa,&paVar12[0x1].field_0x8,iVar3 / 0x2,
-                 (local_104[0] - &paVar12[0x1].field_0x8) / 0x2,0x0,(&paVar12.field1_0x4 + 0x2)
-                );
-  PTR_LOOP_1050_5df4 = (&PTR_LOOP_1050_0000 + 1);
-  unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-  destroy_win_1040_8b7e(param_1);
-  PTR_LOOP_1050_5df6 = null_mut();
-  if (&paVar12[0x1].field_0x10 != 0) {
-    puVar7 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,CONCAT22(in_stack_0000fee2,0x37),in_stack_0000fd8a,
-                             in_stack_0000feae,in_stack_0000feb4,in_stack_0000feb8);
-    uVar4 = pass1_1008_ab54(puVar7);
-    if (uVar4 != 0) {
-      PostMessage16(0x0,0xfc,0x111,HWND16_1050_0396);
-    }
-  }
-  return PTR_LOOP_1050_5df8;
-}
 
 
 
 
-pub unsafe fn pass1_1040_8978(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut u32,mut param_4: u16 )
-
-{
-  let mut ppcVar1: *mut *mut code;
-
-  unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-  win_1008_5c5c(param_1,param_2,_u16_1050_02a0,param_4);
-  ppcVar1 = (*param_3 + 0x74);
-  (**ppcVar1)(0x1008,param_3);
-  return;
-}
 
 
 
 
-pub unsafe fn pass1_1040_89a4(param_1: *mut u8,param_2: *mut u32,param_3: *mut u16)
 
-{
-  let mut uVar1: u16;
-  let mut uVar2: u16;
-  let mut ppcVar3: *mut *mut code;
-  let mut uVar4: u16;
-  let mut uVar5: u16;
-  let mut in_register_0000000a: u16;
-  let mut paVar6: *mut Struct57;
-  let mut uVar7: u16;
-  let mut puVar8: *mut u32;
-  let mut in_stack_0000fe98: u16;
-  let mut in_stack_0000ffbc: u16;
-  let mut in_stack_0000ffc2: u16;
-  let mut in_stack_0000ffc6: u16;
-  let mut in_stack_0000fff0: u16;
-
-  paVar6 = CONCAT22(in_register_0000000a,param_1);
-  unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-  uVar1 = (param_3 + 2);
-  uVar2 = *param_3;
-  uVar7 = 0x1010;
-  puVar8 = mixed_1010_20ba(paVar6,_u16_1050_0ed0,CONCAT22(in_stack_0000fff0,0x2),in_stack_0000fe98,
-                           in_stack_0000ffbc,in_stack_0000ffc2,in_stack_0000ffc6);
-  uVar4 = (puVar8 >> 0x10);
-  uVar5 = puVar8;
-  if ((uVar5 + 0x72) != 0) {
-    uVar7 = 0x1008;
-    win_1008_5c7c(uVar5,uVar4,_u16_1050_02a0,CONCAT22(uVar1,uVar2));
-    (param_2 + 0x8c) = uVar5;
-  }
-  ppcVar3 = (*param_2 + 0x74);
-  (**ppcVar3)(uVar7,param_2);
-  return;
-}
-
-
-
-
-pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16 ,param_2: *mut astruct_765)
-
-{
-  let mut paVar1: *mut astruct_13;
-  let mut uVar6: u8;
-  let mut HVar7: HPALETTE16;
-  let mut handle: HANDLE16;
-  let mut extraout_var: u32;
-  let mut extraout_DX: u16;
-  let mut iVar10: *mut astruct_765;
-  let mut count: i16;
-  let mut uVar8: u32;
-  let mut color: COLORREF;
-  let mut color_00: u32;
-  let mut hdc_local_24: HDC16;
-  let mut paintstruct_22: PAINTSTRUCT16 = PAINTSTRUCT16::default();
-  let mut uVar1: u8;
-  let mut uVar2: u8;
-  let mut uVar3: u8;
-  let mut uVar4: LPCSTR;
-  let mut uVar5: u16;
-  let mut iVar2: *mut astruct_766;
-
-  count = (param_2 >> 0x10);
-  iVar10 = param_2;
-  hdc_local_24 = BeginPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10.hwnd_field6_0x6);
-  paVar1 = (_PTR_LOOP_1050_4230 + 0xe);
-  HVar7 = palette_op_1008_4e08(&hdc_local_24,param_1,paVar1,CONCAT22(0x1050,&hdc_local_24));
-  uVar8 = pass1_1008_4d72(paVar1);
-  uVar5 = (uVar8 >> 0x10);
-  iVar2 = uVar8;
-  uVar1 = iVar2.field149_0x95;
-  uVar2 = iVar2.field150_0x96;
-  uVar3 = iVar2.field148_0x94;
-  DrawIcon16(iVar10.field141_0x8e,0xa,0x14,hdc_local_24);
-  color = SetBkColor16(0x0,hdc_local_24);
-  extraout_DX = (color >> 0x10);
-  uVar6 = SetTextColor16(CONCAT22(CONCAT11(0x2,uVar3),CONCAT11(uVar1,uVar2)),hdc_local_24);
-  color_00 = CONCAT31(extraout_var,uVar6) & 0xffff | extraout_DX << 0x10;
-  handle = GetProp16(s_hfont_1050_5dfa,iVar10.hwnd_field6_0x6);
-  if (handle != 0) {
-    SelectObject16(handle,hdc_local_24);
-  }
-  DrawText16(0x10,(param_2 & 0xffff0000 | ZEXT24(&iVar10.rect_0x9e)),-0x1,
-             iVar10.field142_0x90,hdc_local_24);
-  if (handle != 0) {
-    SelectObject16(hdc_local_24,hdc_local_24);
-  }
-  SetBkColor16(color,hdc_local_24);
-  SetTextColor16(color_00,hdc_local_24);
-  HVar7 = SelectPalette16(0x0,HVar7,hdc_local_24);
-  DeleteObject16(HVar7);
-  EndPaint16(CONCAT22(0x1050,&paintstruct_22),iVar10.hwnd_field6_0x6);
-  return;
-}
-pub unsafe fn pass1_1040_8b3c(mut param_1: u16 ,mut param_2: u32,mut param_3: u32)
-
-{
-  if ((param_3.is_null() == false) &&
-     ((param_3 == (&PTR_LOOP_1050_0000 + 1) || param_3 == &u16_1050_0002 ||
-      (((&u16_1050_0002 + 1) < param_3 -0x2 &&
-       (param_3 -0x6 < &u16_1050_0002)))))) {
-    PTR_LOOP_1050_5df4 = null_mut();
-    PTR_LOOP_1050_5df8 = param_3;
-    return;
-  }
-  post_win_msg_1040_7b3c
-            (CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
-  return;
-}
 pub unsafe fn destroy_win_1040_8b7e(mut param_1: u32)
 
 {
@@ -824,16 +393,6 @@ pub unsafe fn draw_text_1040_8d14(param_1: *mut Struct37,hdc_param_2: HDC16)
 
 
 
-pub unsafe fn pass1_1040_8db6(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1040_869a(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
-
 
 
 pub unsafe fn pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> *mut u16
@@ -853,41 +412,6 @@ pub unsafe fn pass1_1040_8e82(param_1: *mut StructD)
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
-}
-pub unsafe fn enable_window_1040_8ea0(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
-
-{
-  let mut enable: bool;
-  let mut hwnd: HWND16;
-
-  if (param_4 == 0xf8) {
-    hwnd = GetDlgItem16(0x17d8,(param_2 + 0x6));
-    enable = 0x1;
-  }
-  else {
-    if (param_4 != 0x17d8) {
-      pass1_1040_b54a(param_1,param_2,param_3,param_4);
-      return;
-    }
-    SetWindowPos16(0x6,0xf6,0x269,0x0,0x0,0x0,(param_2 + 0x6));
-    enable = s_tile2_bmp_1050_1538;
-    GetDlgItem16(0x17d8,(param_2 + 0x6));
-    hwnd = 0;
-  }
-  EnableWindow16(enable,hwnd);
-  return;
-}
-
-
-
-pub unsafe fn pass1_1040_8f16(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1040_8e82(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
 }
 
 

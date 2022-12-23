@@ -1,16 +1,5 @@
 
 
-pub unsafe fn pass1_1040_a204(param_1: *mut u16,param_2: u8) -> *mut u16
-
-{
-  *param_1 = 0x389a;
-  (param_1 + 0x2) = 0x1008;
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
-
 
 
 
@@ -50,24 +39,6 @@ pub unsafe fn free_proc_inst_1040_a294(param_1: *mut StructD)
 }
 
 
-
-pub unsafe fn pass1_1040_a2cc(mut param_1: u16 ,param_2: *mut u8,mut param_3: i16,mut param_4: u32,mut param_5: u32) -> u32
-
-{
-  let mut uVar1: u16;
-
-  if (param_5 == 0x1826) {
-    if ((param_5 == 1) || ((0x1 < param_5 - 0x1 && (param_5 - 0x3 < 0x2)))) {
-      uVar1 = 0x1;
-    }
-    else {
-      uVar1 = 0;
-    }
-    return uVar1;
-  }
-  pass1_1040_b54a(param_2,CONCAT22(param_4,param_3),(param_4 >> 0x10),param_5);
-  return CONCAT22(param_2,param_1);
-}
 
 
 
@@ -133,24 +104,6 @@ pub unsafe fn win_msg_1040_a308(param_1: *mut astruct_49,mut param_2: u16 ,mut p
   LVar6 = SendMessage16(0x0,0x1,0xb,param_4);
   return CONCAT22((LVar6 >> 0x10),1);
 }
-pub unsafe fn get_dlg_item_1040_a3d0(param_1: *mut astruct_49)
-
-{
-  let mut lVar1: i32;
-  let mut dlg_item: HWND16;
-  let mut iVar3: *mut astruct_49;
-  let mut uVar2: *mut astruct_49;
-
-  uVar2 = (param_1 >> 0x10);
-  iVar3 = param_1;
-  if (iVar3.field143_0x90 != 0) {
-    lVar1 = iVar3.field143_0x90;
-    (lVar1 + 0x14) = iVar3.field6_0x6;
-    dlg_item = GetDlgItem16(0x1826,iVar3.field6_0x6);
-    win_msg_1040_a308(param_1,0x0,0x0,dlg_item);
-  }
-  return;
-}
 
 
 
@@ -202,32 +155,7 @@ pub unsafe fn call_win_proc_1040_a40e(mut param_1: u16 ,param_2: HWND16,mut para
 
 
 
-pub unsafe fn pass1_1040_a4c2(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  free_proc_inst_1040_a294(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
-pub unsafe fn pass1_1040_a564(param_1: u32)
-
-{
-  let mut uVar1: u16;
-
-  uVar1 = (param_1 >> 0x10);
-  *param_1 = 0;
-  (param_1 + 0x4) = 0;
-  (param_1 + 0x6) = 0;
-  return;
-}
-pub unsafe fn pass1_1040_a582(param_1: u32)
-
-{
-  fn_ptr_1000_17ce(*param_1);
-  return;
-}
 pub unsafe fn struct_1040_a598(param_1: *mut astruct_259)
 
 {
@@ -296,101 +224,7 @@ pub unsafe fn pass1_1040_a640(param_1: *mut Struct57,mut param_2: u32,mut param_
 
 
 
-pub unsafe fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 )
 
-{
-  let mut bVar1: bool;
-  let mut brush_handle_var2: HBRUSH16;
-   let mut struct750_var4: *mut astruct_750;
-  let mut uVar3: u16;
-  let mut uVar4: u32;
-  let mut iStack14: i16;
-  let mut piVar1: *mut i16;
-  let mut uVar2: u16;
-  let mut iVar2: *mut astruct_751;
-
-  uVar3 = (struct750_param_1 >> 0x10);
-  struct750_var4 = struct750_param_1;
-  if (struct750_var4.hbrush16_field142_0x8e == 0) {
-    brush_handle_var2 = CreateSolidBrush16(WHITE_BRUSH);
-    struct750_var4.hbrush16_field142_0x8e = brush_handle_var2;
-  }
-  if (_u16_1050_5ee8 == 0) {
-    uVar4 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
-    uVar2 = (uVar4 >> 0x10);
-    iVar2 = uVar4;
-    _u16_1050_5ee8 = CONCAT12(iVar2.field_0x94,CONCAT11(iVar2.field_0x95,iVar2.field_0x96));
-    u16_1050_5eec = CONCAT11(iVar2.field_0x3e5,iVar2.field_0x3e6);
-    u16_1050_5eee = iVar2.field996_0x3e4;
-  }
-  if (0x5 < param_3) {
-    if (param_3 != 0x6) {
-      return;
-    }
-    bVar1 = false;
-    // for (iStack14 = 0; piVar1 = &struct750_var4.field233_0xea, *piVar1 != iStack14 && iStack14 <= *piVar1;
-    //     iStack14 += 1)
-        iStack14 = 0;
-        piVar1 = struct750_param_1.field233_0xea;
-        while *piVar1 != iStack14 && iStack14 <= *piVar1
-        {
-      if ((&struct750_var4.field_0x9a + iStack14 * 0x2) == param_2) {
-        bVar1 = true;
-        break;
-      }
-      iStack14 += 1;
-    }
-    if (bVar1) {
-      u16_1050_5ee8 = u16_1050_5eec;
-      u16_1050_5eea = u16_1050_5eee;
-    }
-  }
-  SetTextColor16(CONCAT22(u16_1050_5eea,u16_1050_5ee8),param_4);
-  SetBkColor16(0x1000000,param_4);
-  return;
-}
-
-
-
-
-pub unsafe fn win_ui_op_1040_a784(param_1: u8,mut param_2: u16 ,mut param_3: i16,mut param_4: i16,mut param_5: u16 ,mut param_6: u32)
-
-{
-  let mut hwnd: HWND16;
-  let mut iVar1: i16;
-
-  iVar1 = param_3;
-  if (param_6 != 0xeb) {
-    if (param_6 == 0x1f4) {
-      msg_box_op_1040_a85a(0x0,param_2,CONCAT22(param_4,param_3));
-      return;
-    }
-    if (param_6 == 0x1f7) {
-      _PTR_LOOP_1050_5ef0 = (param_3 + 0x94);
-      pass1_1038_af40(param_3,param_2,_PTR_LOOP_1050_5b7c,(param_3 + 0x8),0x23);
-      PostMessage16(0x0,0x2,0x111,(param_3 + 0x6));
-      return;
-    }
-    if (param_6 != 0x17d8) {
-      pass1_1040_b54a(param_2,CONCAT22(param_4,param_3),param_5,param_6);
-      return;
-    }
-    SetWindowPos16(0x6,0xed,0x237,0x0,0x0,0x0,(param_3 + 0x6));
-    hwnd = GetDlgItem16(0x17d8,(param_3 + 0x6));
-    iVar1 = s_tile2_bmp_1050_1538;
-    EnableWindow16(0x0,hwnd);
-    (param_3 + 0x98) = 0x1;
-    param_4 = param_3;
-  }
-  win_ui_dlg_op_1040_a94a(param_2,CONCAT22(param_4,iVar1));
-  return;
-}
-pub unsafe fn pass1_1040_a84a(param_1: u8,mut param_2: u16 ,mut param_3: u32)
-
-{
-  win_ui_dlg_op_1040_a94a(param_2,param_3);
-  return;
-}
 
 
 
@@ -543,18 +377,6 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(mut param_1: u16 ,mut param_2: u32)
 
 
 
-pub unsafe fn pass1_1040_abe2(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  let mut in_stack_0000ffda: u16;
-
-  unk_draw_op_1040_b0f8(in_stack_0000ffda,param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
-
 
 
 
@@ -605,29 +427,7 @@ pub unsafe fn pass1_1040_ace8(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn pass1_1040_ad14(mut param_1: u32)
 
-{
-  let mut in_DX: u16;
-
-  win_ui_op_1040_ae04(in_DX,param_1);
-  return;
-}
-pub unsafe fn pass1_1040_ad24(param_1: *mut u8,mut param_2: i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u32)
-
-{
-  if (param_5 == 0xeb) {
-    win_ui_op_1040_ae04(param_1,CONCAT22(param_3,param_2));
-  }
-  else {
-    if (param_5 != 0x1f0) {
-      pass1_1040_b54a(param_1,CONCAT22(param_3,param_2),param_4,param_5);
-      return;
-    }
-    msg_box_ui_op_1040_ad66(0x0,param_1,CONCAT22(param_3,param_2));
-  }
-  return;
-}
 
 
 
@@ -735,15 +535,6 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16 ,mut param_2: u32)
 
 
 
-pub unsafe fn pass1_1040_af9e(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1040_ace8(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 pub unsafe fn pass1_1040_b040(param_1: *mut Struct57,mut param_2: u32,mut param_3: u16 )
 
 {

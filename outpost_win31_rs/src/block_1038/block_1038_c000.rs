@@ -3,57 +3,7 @@
 
 
 
-pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32)
 
-{
-  let mut iVar1: i16;
-  let mut uVar2: u16;
-  let mut local_70c: [u8;0x200] = [0;0x200];
-  let mut local_50c: [u8;0x100] = [0;0x100];
-  let mut local_40c: [u8;0x402] = [0;0x402];
-  let mut uStack10: u32;
-  let mut uStack6: u32;
-
-  send_msg_1038_c228(CONCAT22(param_2,param_1));
-  uStack6 = load_string_1010_847e(_u16_1050_14cc,0x531);
-  if (param_4 == 0x177) {
-    pass1_1008_e05e((param_1 + 0x8e),0x2,CONCAT22(param_2,param_1 + 0x19e),
-                    CONCAT22(param_2,param_1 + 0x9e));
-    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x200,local_40c,&DAT_1050_1050)
-    ;
-    sys_1000_3f9c(CONCAT22(0x1050,local_70c),CONCAT22(0x1050,local_40c),param_1 + 0x19e);
-    load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_50c,&DAT_1050_1050)
-    ;
-    MessageBox16(0x30,CONCAT22(0x1050,local_50c),CONCAT22(0x1050,local_70c),(param_1 + 0x6));
-  }
-  else {
-    if (param_4 != 0x178) {
-      if ((param_4 != 0x178) && (param_4 - 0x179 < 0x2)) {
-        set_win_pos_1038_c31a(CONCAT22(param_2,param_1),param_3,param_4);
-        return;
-      }
-      post_win_msg_1040_7b3c(CONCAT22(param_2,param_1),param_3,param_4,param_4);
-      return;
-    }
-    uStack10 = CONCAT22(param_2,param_1 + 0x9e);
-    uVar2 = param_2;
-    iVar1 = pass1_1008_e10c((param_1 + 0x8e),CONCAT22(param_2,param_1 + 0x19e),
-                            CONCAT22(param_2,param_1 + 0x9e),param_2,&DAT_1050_1050);
-    if (iVar1 == 0) {
-      load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_40c,&DAT_1050_1050);
-      load_string_1010_84e0
-                (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_50c,&DAT_1050_1050);
-      MessageBox16(0x30,CONCAT22(0x1050,local_50c),CONCAT22(0x1050,local_40c),(param_1 + 0x6)
-                  );
-      return;
-    }
-    pass1_1008_e01c((param_1 + 0x8e),CONCAT22(param_2,param_1 + 0x19e),uStack10);
-    pass1_1038_af40(param_1,uVar2,_PTR_LOOP_1050_5b7c,(param_1 + 0x8),0x1f);
-  }
-  PostMessage16(0x0,0x2,0x111,(param_1 + 0x6));
-  return;
-}
 
 
 
@@ -275,26 +225,7 @@ pub unsafe fn pass1_1038_c80a(param_1: *mut StructD)
 
 // WARNING: Unable to use type for symbol uVar1
 
-pub unsafe fn destroy_window_1038_c836(param_1: *mut astruct_881,mut param_2: u32,mut param_3: u32)
 
-{
-  let mut puVar1: *mut u16;
-  let mut local_6: [u8;0x4] = [0;0x4];
-  let mut uVar1: u32;
-
-  if (param_3 == 0xfce) {
-    puVar1 = pass1_1008_941a(CONCAT22(0x1050,local_6),0x1,0xac);
-    win_1008_5c9e(local_6,(puVar1 >> 0x10),_u16_1050_02a0,CONCAT22(0x1050,local_6));
-    uVar1 = param_1.field141_0x8e;
-    (uVar1 + 0xa) = 0x6;
-    DestroyWindow16(param_1.field6_0x6);
-    PTR_LOOP_1050_5b80 = null_mut();
-    return;
-  }
-  post_win_msg_1040_7b3c
-            (CONCAT22(param_2,param_1),(param_2 >> 0x10),param_3,param_3);
-  return;
-}
 
 
 
