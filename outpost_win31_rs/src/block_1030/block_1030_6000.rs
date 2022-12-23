@@ -1,10 +1,4 @@
-pub unsafe fn pass1_1030_6118(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1030_5d78(&param_1.address_offset_field_0x0);
-    if ((param_2 & 1) != 0) {
-        fn_ptr_1000_17ce(param_1);
-    }
-    return param_1;
-}
+
 
 
 pub unsafe fn pass1_1030_615a(param_1: *mut StructD, param_2: *mut astruct_137) {
@@ -1026,17 +1020,7 @@ pub unsafe fn pass1_1030_6e9c(param_1: *mut astruct_301, param_2: i32, mut param
 }
 
 
-pub unsafe fn pass1_1030_6f5a(mut param_1: u32) {
-    let mut uVar1: u16;
-    let mut BVar2: bool;
 
-    uVar1 = pass1_1030_6fa0(param_1);
-    BVar2 = pass1_1008_c6ae(_u16_1050_06e0, uVar1, 0x4);
-    if (BVar2 != 0) {
-        pass1_1028_6302((param_1 + 0x1a));
-    }
-    return;
-}
 
 pub unsafe fn pass1_1030_6fa0(mut param_1: u32) -> u16 {
     let mut uVar1: u32;
@@ -1055,20 +1039,4 @@ pub unsafe fn pass1_1030_6fa0(mut param_1: u32) -> u16 {
         return (uVar1 + 0xc);
     }
     return 0x0;
-}
-pub unsafe fn pass1_1030_6fd4(mut param_1: u32) {
-    let mut uVar1: u32;
-    let mut in_AX: u16;
-    let mut in_DX: u16;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    if ((param_1 + 0x1a) == 0) {
-        struct_op_1030_73a8((param_1 & 0xffff | uVar2 << 0x10), in_AX, in_DX);
-    }
-    uVar1 = (param_1 + 0x1a);
-    if ((uVar1 + 0x12) == 0x5) {
-        return;
-    }
-    return;
 }

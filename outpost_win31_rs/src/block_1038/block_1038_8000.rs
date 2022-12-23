@@ -306,33 +306,11 @@ pub unsafe fn pass1_1038_8810(mut param_1: u32)
 
 
 
-pub unsafe fn FUN_1038_8842() -> u16
-
-{
-  return 0x0;
-}
-pub unsafe fn pass1_1038_8848()
-
-{
-  return;
-}
-pub unsafe fn pass1_1038_884c()
-
-{
-  return;
-}
 
 
 
-pub unsafe fn pass1_1038_8850(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  pass1_1038_7d5c(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
+
 
 
 
@@ -375,61 +353,8 @@ pub unsafe fn pass1_1038_893a(param_1: *mut StructD)
 
 
 
-pub unsafe fn pass1_1038_8966(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut param_4: i16,mut param_5: u16 ) -> u16
 
-{
-  let mut piVar1: *mut i16;
-  let mut bVar2: bool;
-  let mut iVar3: i16;
-  let mut uVar4: u16;
 
-  bVar2 = false;
-  iVar3 = param_1;
-  uVar4 = (param_1 >> 0x10);
-  if (param_4 == 0) {
-//    if ((iVar3 + 0x98) < 1) goto LAB_1038_89af;
-    piVar1 = (iVar3 + 0x9a);
-    *piVar1 = *piVar1 + 1;
-    piVar1 = (iVar3 + 0x98);
-    *piVar1 = *piVar1 -0x1;
-  }
-  else {
-//    if (param_4 != 1) goto LAB_1038_89af;
-//    if ((iVar3 + 0x9a) < 1) goto LAB_1038_89af;
-    piVar1 = (iVar3 + 0x9a);
-    *piVar1 = *piVar1 -0x1;
-    piVar1 = (iVar3 + 0x98);
-    *piVar1 = *piVar1 + 1;
-  }
-  bVar2 = true;//
-// LAB_1038_89af:
-  if (bVar2) {
-    SetDlgItemInt16(0x0,(iVar3 + 0x9a),s_dibtext_bmp_1050_1844 + 0x9,(iVar3 + 0x6));
-    SetDlgItemInt16(0x0,(iVar3 + 0x98),s_dibtext_bmp_1050_1844 + 0xb,(iVar3 + 0x6));
-  }
-  return 0x0;
-}
-pub unsafe fn pass1_1038_89e8(mut param_1: u32)
-
-{
-  send_dlg_item_msg_1038_8b58(param_1);
-  return;
-}
-pub unsafe fn pass1_1038_89f8(param_1: *mut Struct903,mut param_2: u16 ,mut param_3: u32,param_4: *mut u8,mut param_5: u16 )
-
-{
-  if (param_3 == 0xeb) {
-    send_dlg_item_msg_1038_8b58(param_1);
-  }
-  else {
-    if (param_3 != s_vrpal_bmp_1050_183a + 0x7) {
-      pass1_1040_b54a(param_4,param_1,param_2,param_3);
-      return;
-    }
-    msg_box_ui_op_1038_8a3a(0x0,param_4,param_1,&DAT_1050_1050);
-  }
-  return;
-}
 
 
 
@@ -462,26 +387,7 @@ pub unsafe fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char,mut param_2: u16 ,par
   fn_ptr_1000_17ce(CONCAT22(sStack262,pcStack264));
   return;
 }
-pub unsafe fn unk_win_ui_op_1038_8afe(mut param_1: u16 ,param_2: *mut astruct_50)
 
-{
-  let mut uVar1: u32;
-  let mut dlg_item: u16;
-  let mut in_register_0000000a: u16;
-  let mut paVar2: *mut Struct57;
-  let mut iVar4: *mut astruct_50;
-  let mut uVar4: *mut astruct_50;
-  let mut local_4: bool;
-
-  paVar2 = CONCAT22(in_register_0000000a,param_1);
-  uVar4 = (param_2 >> 0x10);
-  iVar4 = param_2;
-  dlg_item = GetDlgItemInt16(0x0,&local_4,&DAT_1050_1050,s_dibtext_bmp_1050_1844 + 0x9);
-  pass1_1030_6c1a(iVar4.field148_0x94,dlg_item);
-  uVar1 = iVar4.field148_0x94;
-  pass1_1038_387e(paVar2,(uVar1 + 0x2e),dlg_item,iVar4.field153_0x9c,iVar4.field148_0x94);
-  return;
-}
 
 
 
@@ -528,15 +434,7 @@ pub unsafe fn send_dlg_item_msg_1038_8b58(param_1: *mut Struct903)
 
 
 
-pub unsafe fn pass1_1038_8c08(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  pass1_1038_893a(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 
@@ -586,54 +484,11 @@ pub unsafe fn pass1_1038_8cf6(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn send_dlg_item_msg_1038_8d22(mut param_1: u32,param_2: u8)
-
-{
-  let mut iVar1: i16;
-  let mut uVar2: u16;
-  let mut LVar3: LRESULT;
-  let mut local_106: [u8;0x100] = [0;0x100];
-  let mut WStack6: WPARAM16;
-  let mut iStack4: i16;
-
-  uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  LVar3 = SendDlgItemMessage16(0x0,0x0,0x409,0x185b,(iVar1 + 0x6));
-  WStack6 = LVar3;
-  iStack4 = WStack6 >> 0xf;
-  if (WStack6 != 0xffff) {
-    SendDlgItemMessage16(CONCAT22(0x1050,local_106),WStack6,0x40a,0x185b,(iVar1 + 0x6));
-    pass1_1008_c79a((iVar1 + 0x94),CONCAT22(0x1050,local_106));
-  }
-  return;
-}
 
 
 
-pub unsafe fn pass1_1038_8d7e(param_1: *mut Struct903) -> LRESULT
 
-{
-  let mut LVar1: LRESULT;
 
-  pass1_1040_78de();
-  LVar1 = send_dlg_item_msg_1038_8f74(param_1);
-  return LVar1;
-}
-pub unsafe fn pass1_1038_8d98(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
-
-{
-  if (param_4 == 0xeb) {
-    send_dlg_item_msg_1038_8f74(param_2);
-  }
-  else {
-    if (param_4 != s_vrpal_bmp_1050_183a + 0x7) {
-      pass1_1040_b54a(param_1,param_2,param_3,param_4);
-      return;
-    }
-    msg_box_op_1038_8dda(0x0,param_1,param_2);
-  }
-  return;
-}
 
 
 

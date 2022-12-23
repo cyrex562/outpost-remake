@@ -1,31 +1,12 @@
 use crate::windef::HWND16;
 
 
-pub unsafe fn destroy_window_1038_a072(param_1: *mut astruct_880,mut param_2: u16 ,mut param_3: i16)
-
-{
-  if (param_3 != 0) {
-    DestroyWindow16(param_1.field6_0x6);
-  }
-  return;
-}
-pub unsafe fn FUN_1038_a08c()
-
-{
-  return;
-}
 
 
 
-pub unsafe fn pass1_1038_a090(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  pass1_1038_9fa4(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
+
+
 
 
 
@@ -47,14 +28,7 @@ pub unsafe fn pass1_1038_a156(param_1: *mut StructD)
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
-pub unsafe fn pass1_1038_a174(mut param_1: u32,mut param_2: i16)
 
-{
-  if (param_2 == 1) {
-    (param_1 + 0x8e) = 0;
-  }
-  return;
-}
 
 
 
@@ -131,23 +105,11 @@ pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut Struct57,param_2: *mut Struc
 
 
 
-pub unsafe fn FUN_1038_a2a4() -> u16
-
-{
-  return 0x0;
-}
 
 
 
-pub unsafe fn pass1_1038_a2aa(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  pass1_1038_a156(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
+
 
 
 
@@ -182,44 +144,12 @@ pub unsafe fn pass1_1038_a36a(param_1: *mut StructD)
 
 
 
-pub unsafe fn show_win_1038_a396(mut param_1: u16 ,mut param_2: u16 ,param_3: *mut StructB)
-
-{
-  let mut in_register_0000000a: u16;
-  let mut uVar1: u32;
-  let mut uVar2: u16;
-  let mut in_stack_0000ffaa: u16;
-
-  uVar1 = CONCAT22(in_register_0000000a,param_2);
-  dialog_ui_fn_1040_78e2(param_3);
-  unk_win_ui_op_1038_a18c(uVar1,param_3,in_stack_0000ffaa);
-  win_1008_5c7c(param_1,uVar1,_u16_1050_02a0,0x10001);
-  uVar2 = (param_3 >> 0x10);
-  (param_3 + 0x8c) = param_1;
-  ShowWindow16(0x5,(param_3 + 0x6));
-  return;
-}
-pub unsafe fn destroy_win_1038_a3d2(mut param_1: u32)
-
-{
-  let mut hwnd: HWND16;
-  hwnd = GetWindowWord16(-0x8,(param_1 + 0x6));
-  PostMessage16(0x0,0x105,0x111,hwnd);
-  destroy_win_1040_7b98(param_1);
-  return;
-}
 
 
 
-pub unsafe fn pass1_1038_a402(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
-{
-  pass1_1038_a36a(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
+
+
 
 
 
@@ -254,95 +184,10 @@ pub unsafe fn pass1_1038_a4c2(param_1: *mut StructD)
 
 
 
-pub unsafe fn win_ui_op_1038_a4ee(mut param_1: u16 ,mut param_2: u16 ,struct_b_param_1: *mut StructB)
-
-{
-  let mut lp_string: u32;
-  let mut hwnd: HWND16;
-  let mut in_register_0000000a: u16;
-  let mut paVar1: *mut Struct57;
-  let mut uVar2: u16;
-   let mut struct_b_1: *mut StructB;
-  let mut uVar3: u16;
-  let mut puVar4: *mut u32;
-  let mut LVar5: LRESULT;
-  let mut in_stack_0000fe94: u16;
-  let mut in_stack_0000ff9e: u16;
-  let mut in_stack_0000ffb8: u16;
-  let mut in_stack_0000ffbe: u16;
-  let mut in_stack_0000ffc2: u16;
-  let mut in_stack_0000ffec: u16;
-
-  paVar1 = CONCAT22(in_register_0000000a,param_2);
-  dialog_ui_fn_1040_78e2(struct_b_param_1);
-  win_1008_5c7c(param_1,paVar1,_u16_1050_02a0,0x20001);
-  uVar3 = (struct_b_param_1 >> 0x10);
-  struct_b_1 = struct_b_param_1;
-  (struct_b_1 + 0x7).field0_0x0 = param_1;
-  puVar4 = mixed_1010_20ba(paVar1,_u16_1050_0ed0,CONCAT22(in_stack_0000ffec,0x2),in_stack_0000fe94,
-                           in_stack_0000ffb8,in_stack_0000ffbe,in_stack_0000ffc2);
-  uVar2 = (paVar1 >> 0x10);
-  lp_string = (puVar4 + 0x6c);
-  hwnd = GetDlgItem16(0x114,struct_b_1.lpvoid_field_0x8);
-  SetWindowText16(lp_string,hwnd);
-  SetFocus16(hwnd);
-  LVar5 = SendMessage16(-0x10000,0x0,0x401,hwnd);
-  unk_win_ui_op_1038_a18c(CONCAT22(uVar2,(LVar5 >> 0x10)),struct_b_param_1,in_stack_0000ff9e);
-  ShowWindow16(0x5,struct_b_1.lpvoid_field_0x8);
-  return;
-}
 
 
 
 
-pub unsafe fn win_ui_op_1038_a584(mut param_1: u16 ,mut param_2: u16 ,mut param_3: i16,mut param_4: i16)
-
-{
-  let mut hwnd: HWND16;
-  let mut uVar1: u16;
-  let mut hwnd_00: u16;
-  let mut in_register_0000000a: u16;
-  let mut paVar2: *mut Struct57;
-  let mut paVar3: *mut astruct_486;
-  let mut in_stack_0000fe4c: u16;
-  let mut in_stack_0000ff70: u16;
-  let mut in_stack_0000ff76: u16;
-  let mut in_stack_0000ff7a: u16;
-  let mut puVar4: *mut u8;
-  let mut uVar5: u16;
-  let mut local_52: [u8;0x50] = [0;0x50];
-
-  paVar2 = CONCAT22(in_register_0000000a,param_1);
-  if (param_4 != 0) {
-    hwnd = GetDlgItem16(0x114,(param_2 + 0x6));
-    GetWindowText16(0x50,CONCAT22(0x1050,local_52),hwnd);
-    uVar1 = str_op_1000_3da4(CONCAT22(0x1050,local_52));
-    if (uVar1 != 0) {
-      puVar4 = local_52;
-      uVar5 = SUB42(&DAT_1050_1050,0x0);
-      paVar3 =
-               mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(puVar4,0x2),in_stack_0000fe4c,
-                               in_stack_0000ff70,in_stack_0000ff76,in_stack_0000ff7a);
-      pass1_1010_6006((paVar3 >> 0x10),paVar3,CONCAT22(uVar5,puVar4));
-      hwnd_00 = GetWindowWord16(-0x8,(param_2 + 0x6));
-      PostMessage16(0x0,0x105,0x111,hwnd_00);
-      destroy_win_1040_7b98(CONCAT22(param_3,param_2));
-    }
-  }
-  return;
-}
-
-
-
-pub unsafe fn pass1_1038_a608(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_a4c2(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 
@@ -377,102 +222,10 @@ pub unsafe fn pass1_1038_a6c8(param_1: *mut StructD)
 
 
 
-pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16 ,param_2: *mut StructB)
-
-{
-  let mut lp_string: u32;
-  let mut hwnd: HWND16;
-  let mut uVar1: u16;
-  let mut in_register_0000000a: u16;
-  let mut paVar2: *mut Struct57;
-  let mut uVar3: u32;
-   let mut struct_b_3: *mut StructB;
-  let mut uVar5: u16;
-  let mut puVar6: *mut u32;
-  let mut LVar7: LRESULT;
-  let mut in_stack_0000fe94: u16;
-  let mut in_stack_0000ff9e: u16;
-  let mut in_stack_0000ffb8: u16;
-  let mut in_stack_0000ffbe: u16;
-  let mut in_stack_0000ffc2: u16;
-  let mut in_stack_0000ffec: u16;
-  let mut uVar4: u16;
-
-  paVar2 = CONCAT22(in_register_0000000a,param_1);
-  dialog_ui_fn_1040_78e2(param_2);
-  puVar6 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(in_stack_0000ffec,0x2),in_stack_0000fe94,
-                           in_stack_0000ffb8,in_stack_0000ffbe,in_stack_0000ffc2);
-  uVar4 = (paVar2 >> 0x10);
-  lp_string = (puVar6 + 0x68);
-  uVar5 = (param_2 >> 0x10);
-  struct_b_3 = param_2;
-  hwnd = GetDlgItem16(0x115,struct_b_3.lpvoid_field_0x8);
-  SetWindowText16(lp_string,hwnd);
-  SetFocus16(hwnd);
-  LVar7 = SendMessage16(-0x10000,0x0,0x401,hwnd);
-  uVar3 = CONCAT22(uVar4,(LVar7 >> 0x10));
-  uVar1 = LVar7;
-  unk_win_ui_op_1038_a18c(uVar3,param_2,in_stack_0000ff9e);
-  win_1008_5c7c(uVar1,uVar3,_u16_1050_02a0,0x30001);
-  (struct_b_3 + 0x7).field0_0x0 = uVar1;
-  ShowWindow16(0x5,struct_b_3.lpvoid_field_0x8);
-  return;
-}
 
 
 
 
-pub unsafe fn win_ui_op_1038_a788(mut param_1: u16 ,mut param_2: u32,mut param_3: i16)
-
-{
-  let mut hwnd: HWND16;
-  let mut uVar1: u16;
-  let mut hwnd_00: u16;
-  let mut in_register_0000000a: u16;
-  let mut paVar2: *mut Struct57;
-  let mut uVar3: u16;
-  let mut pUVar2: *mut u16;
-  let mut in_stack_0000fe4c: u16;
-  let mut in_stack_0000ff70: u16;
-  let mut in_stack_0000ff76: u16;
-  let mut in_stack_0000ff7a: u16;
-  let mut puVar4: *mut u8;
-  let mut uVar5: u16;
-  let mut local_52: [u8;0x50] = [0;0x50];
-  let mut puVar3: *mut u8;
-
-  paVar2 = CONCAT22(in_register_0000000a,param_1);
-  if (param_3 != 0) {
-    uVar3 = (param_2 >> 0x10);
-    hwnd = GetDlgItem16(0x115,(param_2 + 0x6));
-    GetWindowText16(0x50,CONCAT22(0x1050,local_52),hwnd);
-    uVar1 = str_op_1000_3da4(CONCAT22(0x1050,local_52));
-    if (uVar1 != 0) {
-      puVar4 = local_52;
-      uVar5 = SUB42(&DAT_1050_1050,0x0);
-      pUVar2 =
-               mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(puVar4,0x2),in_stack_0000fe4c,
-                               in_stack_0000ff70,in_stack_0000ff76,in_stack_0000ff7a);
-      pass1_1010_5fd8((pUVar2 >> 0x10),pUVar2,CONCAT22(uVar5,puVar4));
-      hwnd_00 = GetWindowWord16(-0x8,(param_2 + 0x6));
-      PostMessage16(0x0,0x105,0x111,hwnd_00);
-      destroy_win_1040_7b98(param_2);
-    }
-  }
-  return;
-}
-
-
-
-pub unsafe fn pass1_1038_a80c(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_a6c8(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 
@@ -503,126 +256,14 @@ pub unsafe fn pass1_1038_a8cc(param_1: *mut StructD)
   pass1_1038_a156(param_1);
   return;
 }
-pub unsafe fn enable_win_1038_a8f8(param_1: *mut StructC,mut param_2: u16 ,param_3: TwoWords)
-
-{
-  let mut hwnd: HWND16;
-  let mut enable: bool;
-
-  if (param_3.b_0x2 == 0x116) {
-    SendDlgItemMessage16(0x0,0x1,0x401,0x11a,(param_1 + 0x6));
-    hwnd = GetDlgItem16(0x11a,(param_1 + 0x6));
-    enable = 0;
-  }
-  else {
-    if ((param_3.b_0x2 == 0x116) || (0x2 < param_3.b_0x2 - 0x117)) {
-      post_win_msg_1040_7b3c(param_1,param_2,param_3,param_3.b_0x2);
-      return;
-    }
-    hwnd = GetDlgItem16(0x11a,(param_1 + 0x6));
-    enable = 0x1;
-  }
-  EnableWindow16(enable,hwnd);
-  return;
-}
 
 
 
 
-pub unsafe fn win_ui_op_1038_a972(struct_b_param_1: *mut StructB)
-
-{
-  let mut hwnd: HWND16;
-  let mut BVar1: bool;
-  let mut in_EDX: u32;
-  let mut uVar3: u16;
-  let mut uVar2: u32;
-   let mut struct_b_3: *mut StructB;
-  let mut uVar4: u16;
-  let mut LVar5: LRESULT;
-  let mut in_stack_0000ffaa: u16;
-
-  uVar3 = (in_EDX >> 0x10);
-  dialog_ui_fn_1040_78e2(struct_b_param_1);
-  uVar4 = (struct_b_param_1 >> 0x10);
-  struct_b_3 = struct_b_param_1;
-  SendDlgItemMessage16(0x0,0x1,0x401,0x116,struct_b_3.lpvoid_field_0x8);
-  LVar5 = SendDlgItemMessage16(0x0,0x1,0x401,0x11a,struct_b_3.lpvoid_field_0x8);
-  uVar2 = CONCAT22(uVar3,(LVar5 >> 0x10));
-  hwnd = GetDlgItem16(0x11a,struct_b_3.lpvoid_field_0x8);
-  BVar1 = EnableWindow16(0x0,hwnd);
-  win_1008_5c7c(BVar1,uVar2,_u16_1050_02a0,0x40001);
-  (struct_b_3 + 0x7).field0_0x0 = BVar1;
-  unk_win_ui_op_1038_a18c(uVar2,struct_b_param_1,in_stack_0000ffaa);
-  ShowWindow16(0x5,struct_b_3.lpvoid_field_0x8);
-  return;
-}
 
 
 
 
-pub unsafe fn win_sys_op_1038_a9fa(mut param_1: u32,mut param_2: i16)
-
-{
-  let mut hwnd: u16;
-  let mut in_EDX: *mut Struct57;
-  let mut iVar1: i16;
-  let mut uVar2: u16;
-  let mut puVar3: *mut u32;
-  let mut LVar4: LRESULT;
-  let mut in_stack_0000fe98: u16;
-  let mut in_stack_0000ffbc: u16;
-  let mut in_stack_0000ffc2: u16;
-  let mut in_stack_0000ffc6: u16;
-  let mut in_stack_0000fff0: u16;
-
-  if (param_2 != 0) {
-    puVar3 = mixed_1010_20ba(in_EDX,_u16_1050_0ed0,CONCAT22(in_stack_0000fff0,0x2),in_stack_0000fe98,
-                             in_stack_0000ffbc,in_stack_0000ffc2,in_stack_0000ffc6);
-    uVar2 = (param_1 >> 0x10);
-    iVar1 = param_1;
-    LVar4 = SendDlgItemMessage16(0x0,0x0,0x400,0x116,(iVar1 + 0x6));
-    if (((LVar4 >> 0x10) | LVar4) == 0) {
-      LVar4 = SendDlgItemMessage16(0x0,0x0,0x400,0x117,(iVar1 + 0x6));
-      if (((LVar4 >> 0x10) | LVar4) == 0) {
-        LVar4 = SendDlgItemMessage16(0x0,0x0,0x400,0x118,(iVar1 + 0x6));
-        if (((LVar4 >> 0x10) | LVar4) == 0) {
-          LVar4 = SendDlgItemMessage16(0x0,0x0,0x400,0x119,(iVar1 + 0x6));
-          if (((LVar4 >> 0x10) | LVar4) != 0) {
-            PTR_LOOP_1050_13ae = &u32_1050_0004;
-          }
-        }
-        else {
-          PTR_LOOP_1050_13ae = (&u16_1050_0002 + 1);
-        }
-      }
-      else {
-        PTR_LOOP_1050_13ae = &u16_1050_0002;
-      }
-    }
-    else {
-      PTR_LOOP_1050_13ae = (&PTR_LOOP_1050_0000 + 1);
-    }
-    LVar4 = SendDlgItemMessage16(0x0,0x0,0x400,0x11a,(iVar1 + 0x6));
-    (puVar3 + 0x82) = LVar4;
-    hwnd = GetWindowWord16(-0x8,(iVar1 + 0x6));
-    PostMessage16(0x0,0x105,0x111,hwnd);
-    destroy_win_1040_7b98(param_1);
-  }
-  return;
-}
-
-
-
-pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_a8cc(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 
@@ -678,76 +319,8 @@ pub unsafe fn set_win_pos_1038_abdc(param_1: *mut astruct_940)
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Unable to use type for symbol uVar5
 
-pub unsafe fn unk_win_ui_op_1038_ac38(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,hdc_param_5: HDC16)
-
-{
-  let mut IVar1: i16;
-  let mut uVar3: u32;
-  let mut extraout_DX: u16;
-  let mut uVar6: u32;
-  let mut uVar4: u8;
-  let mut iVar1: *mut astruct_46;
-  let mut iVar2: *mut astruct_786;
-  let mut uVar2: u16;
-  let mut uVar5: u16;
-  let mut uVar1: u16;
-
-  GetStockObject16(BLACK_BRUSH);
-  if (_u16_1050_5b78 == 0) {
-    uVar6 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
-    uVar1 = (uVar6 >> 0x10);
-    iVar2 = uVar6;
-    _u16_1050_5b6c = CONCAT12(iVar2.field_0x3ec,CONCAT11(iVar2.field_0x3ed,iVar2.field_0x3ee));
-    _u16_1050_5b70 = CONCAT12(iVar2.field_0x3e4,CONCAT11(iVar2.field_0x3e5,iVar2.field_0x3e6));
-    _u16_1050_5b74 = CONCAT12(iVar2.field_0x3f8,CONCAT11(iVar2.field_0x3f9,iVar2.field_0x3fa));
-    _u16_1050_5b78 = CONCAT12(iVar2.field_0x94,CONCAT11(iVar2.field_0x95,iVar2.field_0x96));
-  }
-  if (param_4 < 0x4) {//
-// LAB_1038_acf0:
-    IVar1 = GetDlgCtrlID16(param_3);
-    if (IVar1 == 0xfd4) {
-      uVar2 = _u16_1050_5b70;
-      uVar5 = (_u16_1050_5b70 >> 0x10);
-  // TODO: goto LAB_1038_ad0e;
-    }
-    if (IVar1 != 0xfd5) {
-      if (IVar1 == 0xfd6) {
-        uVar2 = _u16_1050_5b6c;
-        uVar5 = (_u16_1050_5b6c >> 0x10);
-    // TODO: goto LAB_1038_ad0e;
-      }
-      if (IVar1 == 0xfd7) {
-        uVar2 = _u16_1050_5b74;
-        uVar5 = (_u16_1050_5b74 >> 0x10);
-    // TODO: goto LAB_1038_ad0e;
-      }
-    }
-  }
-  else if (param_4 != 0x4) {
-    if ((param_4 == 0x4) || (0x1 < param_4 - 0x5)) {
-      return;
-    }
-// TODO: goto LAB_1038_acf0;
-  }
-  uVar2 = _u16_1050_5b78;
-  uVar5 = (_u16_1050_5b78 >> 0x10);//
-// LAB_1038_ad0e:
-  SetTextColor16(CONCAT22(uVar5,uVar2),hdc_param_5);
-  SetBkColor16(0x1000000,hdc_param_5);
-  return;
-}
 
 
-
-pub unsafe fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_abb0(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 
@@ -771,16 +344,6 @@ pub unsafe fn pass1_1038_ae08(param_1: *mut StructD)
 }
 
 
-
-pub unsafe fn pass1_1038_ae28(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_ae08(param_1);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 
 
 

@@ -968,14 +968,7 @@ pub unsafe fn pass1_1030_9d42(
     return;
 }
 
-pub unsafe fn pass1_1030_9e9c(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    *param_1 = 0x389a;
-    (param_1 + 0x2) = 0x1008;
-    if ((param_2 & 1) != 0) {
-        pass1_1000_093a(param_1);
-    }
-    return param_1;
-}
+
 pub unsafe fn pass1_1030_9ecc(param_1: u32, param_2: *mut astruct_424) {
     let mut uVar1: u16;
 

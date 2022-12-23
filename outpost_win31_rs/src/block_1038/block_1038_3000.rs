@@ -1,13 +1,4 @@
 
-pub unsafe fn pass1_1038_3074(param_1: *mut StructD,param_2: u8) -> *mut StructD
-
-{
-  pass1_1038_2a5c(&param_1.address_offset_field_0x0);
-  if ((param_2 & 1) != 0) {
-    fn_ptr_1000_17ce(param_1);
-  }
-  return param_1;
-}
 pub unsafe fn pass1_1038_30aa(param_1: *mut astruct_180,mut param_2: u32)
 
 {

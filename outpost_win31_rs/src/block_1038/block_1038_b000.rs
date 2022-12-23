@@ -203,28 +203,3 @@ pub unsafe fn pass1_1038_be4a(param_1: *mut StructD)
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
-
-
-
-
-pub unsafe fn pass1_1038_be76(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
-
-{
-  let mut in_register_0000000a: u16;
-  let mut paVar1: *mut Struct27;
-  let mut in_stack_0000fea0: u16;
-  let mut in_stack_0000ffc4: u16;
-  let mut in_stack_0000ffca: u16;
-  let mut in_stack_0000ffce: u16;
-  let mut iVar2: i16;
-
-  if (param_3 == 0) {
-    iVar2 = 0;
-    paVar1 =
-             mixed_1010_20ba(CONCAT22(in_register_0000000a,param_1),_u16_1050_0ed0,0x2b,
-                             in_stack_0000fea0,in_stack_0000ffc4,in_stack_0000ffca,in_stack_0000ffce);
-    pass1_1010_038e(paVar1,iVar2);
-  }
-  destroy_win_1040_7b98(CONCAT22(param_3,param_2));
-  return;
-}

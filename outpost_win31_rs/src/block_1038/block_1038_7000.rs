@@ -793,85 +793,10 @@ pub unsafe fn pass1_1038_7d5c(param_1: *mut StructD)
   unk_draw_op_1040_b0f8(in_stack_0000ffde,param_1);
   return;
 }
-pub unsafe fn destroy_window_1038_7d88(mut param_1: u32,mut param_2: u16 ,mut param_3: u16 )
-
-{
-  let mut uVar1: u16;
-
-  uVar1 = (param_1 >> 0x10);
-  pass1_1008_b544(param_3,(param_1 + 0x94),param_2);
-  DestroyWindow16((param_1 + 0x6));
-  return;
-}
 
 
 
-pub unsafe fn pass1_1038_7dac(param_1: *mut Struct903,mut param_2: u16 ) -> LRESULT
 
-{
-  let mut LVar1: LRESULT;
-
-  pass1_1040_78de();
-  LVar1 = send_dlg_item_msg_1038_844a(param_1);
-  return LVar1;
-}
-pub unsafe fn pass1_1038_7dc6(param_1: *mut u8,pstruct903_param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
-
-{
-  let mut bVar1: bool;
-  let mut LVar2: LRESULT;
-  let mut uVar3: u32;
-
-  bVar1 = false;
-  if (param_4 == 0x1854) {
-//    if (param_4 != 1) goto LAB_1038_7e8c;
-    send_dlg_item_msg_1038_8618s(param_1,pstruct903_param_2);
-  }
-  else {
-    if (param_4 < 0x18550000) {
-      if (param_4 == 0xeb) {
-        LVar2 = send_dlg_item_msg_1038_844a(pstruct903_param_2);
-        param_1 = (LVar2 >> 0x10);
-      }
-      else if (param_4 == 0xfb) {
-        LVar2 = send_dlg_item_msg_1038_7eac(pstruct903_param_2);
-        param_1 = (LVar2 >> 0x10);
-      }
-      else {
-        if (param_4 != s_vrpal_bmp_1050_183a + 0x7) {//
-// LAB_1038_7e77:
-          pass1_1040_b54a(param_1,pstruct903_param_2,param_3,param_4);
-          return;
-        }
-        msg_box_op_1038_81be(0x0,param_1,pstruct903_param_2);
-      }
-  // TODO: goto LAB_1038_7e8c;
-    }
-    if (param_4 == 0x1855) {
-//      if (param_4 != 1) goto LAB_1038_7e8c;
-      send_dlg_item_msg_1038_87b2(param_1,pstruct903_param_2);
-    }
-    else if (param_4 == 0x1856) {
-//      if (param_4 != 1) goto LAB_1038_7e8c;
-      pass1_1038_8810(pstruct903_param_2);
-    }
-    else if (param_4 == 0x1858) {
-      send_dlg_item_msg_1038_7fae(0x0,param_1,pstruct903_param_2);
-    }
-    else {
-//      if (param_4 != 0x1859) goto LAB_1038_7e77;
-      uVar3 = pass1_1038_801a(param_1,pstruct903_param_2);
-      param_1 = (uVar3 >> 0x10);
-    }
-  }
-  bVar1 = true;//
-// LAB_1038_7e8c:
-  if (bVar1) {
-    set_win_text_1038_8358(param_1,pstruct903_param_2);
-    enable_win_1038_806a(param_1,pstruct903_param_2);
-  }
-  return;
-}
 
 
 
