@@ -1,13 +1,13 @@
 use std::ptr::null_mut;
-use crate::block_1000::block_1000_0000::mem_op_1000_0a48;
-use crate::block_1000::block_1000_1000;
-use crate::block_1000::block_1000_1000::{mem_op_1000_179c, pass1_1000_1284};
-use crate::block_1008::block_1008_4000;
+use crate::unk::block_1000_0000::mem_op_1000_0a48;
+use crate::unk::block_1000_1000::{mem_op_1000_179c, pass1_1000_1284};
+use crate::unk::block_1008_4000;
 use crate::globals::{DAT_1050_1050, u16_1050_0002};
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_7::Struct7;
-use crate::utils::CONCAT22;
-use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16};
+use crate::unk::{block_1000_1000, block_1000_2000};
+use crate::utils::{CARRY2, CONCAT22};
+use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16, SegmentLimit};
 use crate::windef16::HGLOBAL16;
 
 // dvar6 = mem_op_1000_1532(param_1, 0x1050);
@@ -120,7 +120,7 @@ pub unsafe fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 
     return 0x0;
 }
 
-// WARNING: Unable to use type for symbol uVar3
+
 pub unsafe fn free_blocks_1000_15ce(param_1: *mut u16, mut param_2: u16) {
     let mut pu_var1: *mut u16;
     let mut u_var2: u16;
@@ -233,4 +233,63 @@ pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
         }
     }
     return;
+}
+
+pub unsafe fn mem_op_1000_1dfa(mut param_1: i16, param_2: u8, mut param_3: u16, mut param_4: u16) -> bool {
+    let mut uVar1: u32;
+    let mut uVar2: u16;
+
+    if ((param_2 & 0x4) == 0) {
+        uVar2 = (((-((param_2 & 0x2) == 0) >> 0x8) & 0xfe) + 0x92) << 0x8;
+    } else {
+        uVar2 = 0x1800;
+    }
+    if ((param_4 == 0)
+        || ((param_4 & 0xff00 & (((-((param_2 & 0x4) == 0) >> 0x8) & 0x82) + 0x18) << 0x8)
+            != uVar2))
+    {
+        return 0x1;
+    }
+    if (param_1 != 0) {
+        uVar1 = SegmentLimit(param_4);
+        if (CARRY2(param_3, param_1 - 1)) {
+            return 0x1;
+        }
+        if (uVar1 < param_3 + (param_1 - 1)) {
+            return 0x1;
+        }
+    }
+    return 0x0;
+}
+
+pub unsafe fn pass1_1000_21d2(
+    param_1: u8,
+    param_2: i32,
+    mut param_3: u16,
+    mut param_4: u16,
+    param_5: u8,
+) -> u16 {
+    let mut uVar1: u32;
+    let mut BVar2: bool;
+
+    BVar2 = mem_op_1000_1dfa(0x0, param_1, param_3, param_4);
+    if (BVar2 == 0) {
+        if ((param_1 & 0x4) == 0) {
+            uVar1 = SegmentLimit(param_4);
+            if ((uVar1 >> 0x10) & 1) {
+                if (param_2 == 0) {
+                    return 0x1;
+                }
+                if ((!CARRY4(param_3, param_2 - 1)) && (param_3 + (param_2 - 1) <= uVar1)) {
+                    return 0x1;
+                }
+            }
+        } else {
+            BVar2 = block_1000_2000::pass1_1000_22c0(param_2, _param_1, param_2, param_3, param_4);
+            if (BVar2 != 0) {
+                return 0x1;
+            }
+        }
+    }
+    return 0x0;
 }

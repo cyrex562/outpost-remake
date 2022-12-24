@@ -1,6 +1,6 @@
-use crate::block_1020::block_1020_d000::{pass1_1020_deac, pass1_1020_df10};
-use crate::block_1020::block_1020_e000::{pass1_1020_e4fa, pass1_1020_e846, pass1_1020_ee3a, pass1_1020_ef5e};
-use crate::block_1028::block_1028_0000::{pass1_1028_0138, pass1_1028_081e};
+use crate::unk::block_1020_d000::{pass1_1020_deac, pass1_1020_df10};
+use crate::unk::block_1020_e000::{pass1_1020_e4fa, pass1_1020_e846, pass1_1020_ee3a, pass1_1020_ef5e};
+use crate::unk::block_1028_0000::{pass1_1028_0138, pass1_1028_081e};
 
 pub unsafe fn pass1_1020_d7d8(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1028_b418(&param_1.address_offset_field_0x0);
@@ -180,7 +180,7 @@ pub unsafe fn pass1_1020_db86(
     let mut puVar6: *mut u16;
     let mut local_4: [u8; 0x2] = [0; 0x2];
 
-    uVar5 = pass1_1030_bcae(local_4, &DAT_1050_1050);
+    uVar5 = pass1_1030_bcae(local_4, 0x1050);
     uVar4 = (uVar5 >> 0x10);
     iVar1 = uVar5;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4);
@@ -190,7 +190,7 @@ pub unsafe fn pass1_1020_db86(
     puVar2 = local_4;
     pass1_1030_bcde(
         puVar2,
-        &DAT_1050_1050,
+        0x1050,
         uVar3 & 0xffff | uVar4 << 0x10,
         puVar6,
         param_5,
@@ -867,4 +867,3 @@ pub unsafe fn write_to_file_1028_0234(mut param_1: u32, mut param_2: u32) -> u16
     }
     return 0x0;
 }
-

@@ -1,5 +1,5 @@
-use crate::block_1018::block_1018_e000::{pass1_1018_e2a0, pass1_1018_e4f2, pass1_1018_e57a, pass1_1018_e64c, pass1_1018_e834, pass1_1018_e8bc, pass1_1018_e9de, pass1_1018_ec74};
-use crate::block_1020::block_1020_0000::{pass1_1020_01d8, pass1_1020_022c, pass1_1020_04f6, pass1_1020_05d6};
+use crate::unk::block_1018_e000::{pass1_1018_e2a0, pass1_1018_e4f2, pass1_1018_e57a, pass1_1018_e64c, pass1_1018_e834, pass1_1018_e8bc, pass1_1018_e9de, pass1_1018_ec74};
+use crate::unk::block_1020_0000::{pass1_1020_01d8, pass1_1020_022c, pass1_1020_04f6, pass1_1020_05d6};
 
 pub unsafe fn pass1_1018_d2a2(param_1: *mut astruct_29, param_2: u8) -> *mut astruct_29
 

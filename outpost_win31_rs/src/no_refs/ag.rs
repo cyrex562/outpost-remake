@@ -414,7 +414,7 @@ pub unsafe fn pass1_1028_c522(
     let mut uVar5: u32;
     let mut local_4: [u8; 0x2] = [0; 0x2];
 
-    uVar5 = pass1_1030_bcae(local_4, &DAT_1050_1050);
+    uVar5 = pass1_1030_bcae(local_4, 0x1050);
     uVar4 = (uVar5 >> 0x10);
     iVar1 = uVar5;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4);
@@ -423,7 +423,7 @@ pub unsafe fn pass1_1028_c522(
     puVar2 = local_4;
     pass1_1030_bcde(
         puVar2,
-        &DAT_1050_1050,
+        0x1050,
         uVar3 & 0xffff | uVar4 << 0x10,
         param_3,
         param_5,

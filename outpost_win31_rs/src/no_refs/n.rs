@@ -1,9 +1,9 @@
-use crate::block_1000::block_1000_1000::fn_ptr_1000_17ce;
-use crate::block_1018::block_1018_0000::pass1_1018_04de;
-use crate::block_1018::block_1018_1000::pass1_1018_1a04;
-use crate::block_1018::block_1018_2000::{pass1_1018_2076, pass1_1018_21f8, pass1_1018_2440, pass1_1018_2862, pass1_1018_2922};
-use crate::block_1018::block_1018_4000::{pass1_1018_4760, pass1_1018_4882};
-use crate::draw_ops::clenaup_win_ui_1018_4d22;
+use crate::unk::block_1000_1000::fn_ptr_1000_17ce;
+use crate::unk::block_1018_0000::pass1_1018_04de;
+use crate::unk::block_1018_1000::pass1_1018_1a04;
+use crate::unk::block_1018_2000::{pass1_1018_2076, pass1_1018_21f8, pass1_1018_2440, pass1_1018_2862, pass1_1018_2922};
+use crate::unk::block_1018_4000::{pass1_1018_4760, pass1_1018_4882};
+use crate::draw_ops::draw_e::clenaup_win_ui_1018_4d22;
 
 pub unsafe fn pass1_1010_ed22(mut param_1: u32, mut param_2: u32) {
     let mut uVar1: u16;
@@ -604,7 +604,7 @@ pub unsafe fn unk_win_ui_op_1018_4f18(
     pass1_1008_4d84(paVar9, &iVar6.field12_0xe, uStack10);
     rect = &local_12;
     HVar12 = HWND16_1050_0396;
-    GetClientRect16(rect, &DAT_1050_1050);
+    GetClientRect16(rect, 0x1050);
     uVar11 = 0;
     mem_op_1000_179c(0x1e, paVar9);
     uVar7 = paVar9 | rect;

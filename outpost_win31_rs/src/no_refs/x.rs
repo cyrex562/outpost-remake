@@ -1,8 +1,9 @@
-use crate::block_1020::block_1020_8000::{pass1_1020_8556, pass1_1020_8bae};
-use crate::block_1020::block_1020_9000::pass1_1020_915a;
-use crate::block_1020::block_1020_c000::{pass1_1020_c47a, pass1_1020_c6a4, pass1_1020_c6de, pass1_1020_cac2, pass1_1020_cefc};
-use crate::block_1020::block_1020_d000::pass1_1020_d194;
-use crate::draw_ops::{invalidate_rect_1020_8d90, palette_op_1020_92c4};
+use crate::unk::block_1020_8000::{pass1_1020_8556, pass1_1020_8bae};
+use crate::unk::block_1020_9000::pass1_1020_915a;
+use crate::unk::block_1020_c000::{pass1_1020_c47a, pass1_1020_c6a4, pass1_1020_c6de, pass1_1020_cac2, pass1_1020_cefc};
+use crate::unk::block_1020_d000::pass1_1020_d194;
+use crate::draw_ops::draw_f::invalidate_rect_1020_8d90;
+use crate::draw_ops::draw_c::palette_op_1020_92c4;
 
 pub unsafe fn pass1_1020_8a5e(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1020_8556(param_1);

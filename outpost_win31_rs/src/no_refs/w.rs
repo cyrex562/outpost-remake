@@ -1,8 +1,10 @@
-use crate::block_1020::block_1020_6000::{destroy_icon_1020_6bd2, pass1_1020_6466, pass1_1020_64d4, pass1_1020_6746};
-use crate::block_1020::block_1020_7000::{pass1_1020_75c4, pass1_1020_7824, pass1_1020_78ac};
-use crate::block_1020::block_1020_8000::{pass1_1020_808e, pass1_1020_8556};
-use crate::draw_ops::palette_op_1020_7270;
-use crate::win_ui::{cleanup_menu_ui_op_1020_795c, invalidate_rect_1020_735a};
+use crate::unk::block_1020_6000::{pass1_1020_6466, pass1_1020_64d4, pass1_1020_6746};
+use crate::unk::block_1020_7000::{pass1_1020_75c4, pass1_1020_7824, pass1_1020_78ac};
+use crate::unk::block_1020_8000::{pass1_1020_808e, pass1_1020_8556};
+use crate::draw_ops::draw_e::palette_op_1020_7270;
+use crate::draw_ops::draw_a::invalidate_rect_1020_735a;
+use crate::gui::cleanup::destroy_icon_1020_6bd2;
+use crate::gui::cleanup::cleanup_menu_ui_op_1020_795c;
 
 pub unsafe fn pass1_1020_679c(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1020_6466(param_1);
@@ -214,53 +216,6 @@ pub unsafe fn pass1_1020_8106(mut param_1: u32) {
 
     ppcVar1 = ((param_1 + 0x4) + 0x60);
     (**ppcVar1)();
-    return;
-}
-
-pub unsafe fn realize_palette_1020_8128(mut param_1: u32, mut param_2: i16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar2: u32;
-    let mut puVar3: *mut u8;
-    let mut puVar4: *mut u32;
-    let mut puVar5: *mut u32;
-    let mut extraout_DX: u16;
-    let mut iVar6: i16;
-    let mut uVar7: u16;
-    let mut local_12: [u8; 0x8] = [0; 0x8];
-    let mut hdc_10: HDC16;
-    let mut HStack8: HGDIOBJ16;
-    let mut puStack6: *mut u32;
-
-    if (param_2 != 0) {
-        uVar7 = (param_1 >> 0x10);
-        iVar6 = param_1;
-        uVar2 = (iVar6 + 0xe6);
-        puVar5 = (uVar2 + 0xa);
-        ppcVar1 = (*puVar5 + 0x18);
-        puStack6 = puVar5;
-        (**ppcVar1)();
-        HStack8 = puVar5;
-        UnrealizeObject16(HStack8);
-        uVar2 = (iVar6 + 0xe6);
-        hdc_10 = *(uVar2 + 0x14);
-        RealizePalette16(hdc_10);
-        pass1_1008_57a4(
-            CONCAT22(0x1050, local_12),
-            param_1 & 0xffff0000 | (iVar6 + 0xd2),
-        );
-        loop {
-            puVar3 = local_12;
-            pass1_1008_5b12(CONCAT22(0x1050, puVar3));
-            if ((extraout_DX | puVar3) == 0) {
-                break;
-            }
-            uVar2 = (puVar3 + 0x4);
-            uVar7 = (puVar3 + 0x6);
-            puVar4 = uVar2;
-            ppcVar1 = (*puVar4 + 0x90);
-            (**ppcVar1)(0x1008, puVar4, uVar7, 0x1, uVar2);
-        }
-    }
     return;
 }
 

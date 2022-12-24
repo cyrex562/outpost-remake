@@ -1,11 +1,20 @@
 use std::ptr::null_mut;
-use crate::block_1000::block_1000_0000::{call_fn_ptr_1000_0dc6, mem_op_1000_0a48};
-use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
-use crate::block_1008::{block_1008_4000, block_1008_7000};
+use std::os::raw::c_char;
+use crate::no_refs::i::pass1_1010_60cc;
+use crate::resources::load_string_1010_847e;
+use crate::unk::block_1000_0000::{call_fn_ptr_1000_0dc6, mem_op_1000_0a48};
+use crate::unk::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
 use crate::structs::struct_57::Struct57;
-use crate::utils::CONCAT22;
-use crate::winapi16::{_lclose16, _llseek16, _lopen16};
-use crate::windef16::HFILE16;
+use crate::structs::struct_72::Struct72;
+use crate::sys_ops::debug_print_1008_6048;
+use crate::unk::{block_1008_4000, block_1008_7000};
+use crate::unk::block_1000_3000::{str_op_1000_3da4, str_op_1000_3dbe, unk_str_op_1000_3d3e};
+use crate::unk::block_1000_4000::{pass1_1000_4906, pass1_1000_4f2e};
+use crate::unk::block_1008_6000::str_op_1008_60e8;
+use crate::unk::block_1010_2000::mixed_1010_20ba;
+use crate::utils::{CONCAT22, SUB42};
+use crate::winapi16::{_lclose16, _llseek16, _lopen16, GetOpenFileName16, GetSaveFileName16, LoadCursor16, MessageBeep16, MessageBox16, SetCursor16};
+use crate::windef16::{HCURSOR16, HFILE16, HWND16};
 
 pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
     let mut ppcVar1: *mut *mut code;
@@ -114,7 +123,7 @@ pub unsafe fn read_file_1008_49e8(
                 uVar1 = uVar3 & 0xffff0000 | uVar1;
                 struct_1.field8_0x16 = uVar1;
                 param_2 = 0x14;
-                param_1 = s_tile2_bmp_1050_1538;
+                param_1 = 0x1538;
                 mem_op_1000_179c(0x14, paVar7);
                 puVar5 = (paVar7 | uVar1);
                 extraout_DX = puVar5;
@@ -193,7 +202,7 @@ pub unsafe fn file_fn_1008_6e02(param_1: *mut astruct_802) -> BOOL16 {
             struct_1,
             uVar1,
             CONCAT22(0x1050, local_4),
-            &DAT_1050_1050,
+            0x1050,
         );
         if ((iVar1 != 0)
             && (
@@ -284,7 +293,7 @@ pub unsafe fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3:
             if ((uVar5 >> 0x10) != 0) {
                 uVar2 = pass1_1038_7b20(_PTR_LOOP_1050_5a64, param_3);
                 if (uVar2 != 0) {
-                    BVar1 = pass1_1020_a644(local_e, &DAT_1050_1050, param_3);
+                    BVar1 = pass1_1020_a644(local_e, 0x1050, param_3);
                     if (BVar1 != 0) {
                         return;
                     }
@@ -984,4 +993,265 @@ pub unsafe fn read_file_1030_4e70(
         }
     }
     return param_5;
+}
+
+pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
+    let mut BVar1: bool;
+    let mut uVar2: u16;
+    let mut in_DX: u16;
+    let mut HVar3: HWND16;
+    let mut uVar4: u16;
+    let mut pcVar5: *mut c_char;
+    let mut uVar6: u16;
+    let mut hwnd: HWND16;
+    let mut uStack16: u32;
+    let mut local_c: [u8; 0x6] = [0; 0x6];
+    let mut HStack6: HCURSOR16;
+    let mut HStack4: HCURSOR16;
+
+    HStack4 = LoadCursor16(0x7f02, 0x0);
+    HStack6 = SetCursor16(HStack4);
+    str_1008_6d8a(in_DX, CONCAT22(0x1050, local_c), param_2);
+    BVar1 = file_fn_1008_6e02(CONCAT22(0x1050, local_c));
+    uVar4 = (param_1 >> 0x10);
+    if (BVar1 == 0) {
+        SetCursor16(HStack6);
+        pcVar5 = load_string_1010_847e(_u16_1050_14cc, u16_1050_0310);
+        HVar3 = (pcVar5 >> 0x10);
+        uVar2 = str_op_1008_60e8(HVar3, pcVar5);
+        uStack16 = CONCAT22(HVar3, uVar2);
+        pcVar5 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
+        MessageBeep16(0x10);
+        MessageBox16(0x10, pcVar5, CONCAT22(HVar3, uVar2), (param_1 + 0x8));
+    } else {
+        (_u16_1050_5748 + 0x8) = 0;
+        SetCursor16(HStack6);
+        pcVar5 = load_string_1010_847e(_u16_1050_14cc, 0x6d3);
+        str_op_1008_60e8((pcVar5 >> 0x10), pcVar5);
+        pcVar5 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
+        uVar6 = 0;
+        MessageBeep16(0x0);
+        hwnd = (param_1 + 0x8);
+        HVar3 = hwnd;
+        MessageBox16(0x40, pcVar5, CONCAT22(hwnd, uVar6), hwnd);
+        uStack16 = CONCAT22(HVar3, hwnd);
+    }
+    fn_ptr_1000_17ce((uStack16 & 0xffff | HVar3 << 0x10));
+    close_file_1008_6dd0(CONCAT22(0x1050, local_c));
+    return;
+}
+
+
+pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3: i16) {
+    let mut uVar1: u32;
+    let mut iVar2: i16;
+    let mut puVar3: *mut u16;
+    let mut uVar4: u16;
+    let mut success: bool;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut in_register_0000000a: u16;
+    let mut unaff_SI: u16;
+    let mut uVar8: u16;
+    let mut pcVar9: *mut c_char;
+    let mut in_stack_0000f720: u16;
+    let mut in_stack_0000f844: u16;
+    let mut in_stack_0000f84a: u16;
+    let mut in_stack_0000f84e: u16;
+    let mut local_782: [u8; 0x104] = [0; 0x104];
+    //   let mut local_67e: [u16;0x4] = [0;0x4];
+    let local_67e: [u16; 4] = [0; 4];
+    let mut pcStack1654: *mut c_char;
+    let mut atype: u16;
+    let mut text: u16;
+    let mut pcStack1646: *mut c_char;
+    let mut local_666: [u8; 0x100] = [0; 0x100];
+    let mut pcStack1382: *mut c_char;
+    let mut ofn: SEGPTR;
+    let mut uStack1374: u16;
+    let mut pcStack1370: *mut c_char;
+    let mut uStack1368: u16;
+    let mut pcStack1354: *mut c_char;
+    let mut uStack1350: u32;
+    let mut puStack1346: *mut u8;
+    let mut uStack1344: u16;
+    let mut uStack1342: u32;
+    let mut pcStack1338: *mut c_char;
+    let mut uStack1336: u16;
+    let mut puStack1334: *mut u8;
+    let mut uStack1332: u16;
+    let mut uStack1330: u32;
+    let mut uStack1326: u16;
+    let mut pcStack1322: *mut c_char;
+    let mut uStack1320: u16;
+    let mut cStack1306: u8;
+    let mut acStack1305: [u8; 0x101] = [0; 0x101];
+    let mut uStack1048: u16;
+    let mut local_416: [u8; 0x8] = [0; 0x8];
+    let mut uStack1038: u16;
+    let mut local_40c: [u8; 0x102] = [0; 0x102];
+    let mut uStack778: u32;
+    let mut paStack774: *mut astruct_487;
+    let mut local_302: [u8; 0x100] = [0; 0x100];
+    let mut local_202: [u8; 0xff] = [0; 0xff];
+    let mut acStack259: [u8; 0x101] = [0; 0x101];
+
+    acStack259[1] = 0;
+    local_302[0] = 0;
+    local_202[0] = 0;
+    paStack774 = mixed_1010_20ba(
+        CONCAT22(in_register_0000000a, param_1),
+        _u16_1050_0ed0,
+        CONCAT22(unaff_SI, 0x2),
+        in_stack_0000f720,
+        in_stack_0000f844,
+        in_stack_0000f84a,
+        in_stack_0000f84e,
+    );
+    uVar8 = (paStack774 >> 0x10);
+    iVar2 = paStack774;
+    uStack778 = (iVar2 + 0x1a);
+    uVar5 = (iVar2 + 0x1c);
+    if ((uVar5 | uStack778) == 0) {
+        pcStack1646 = *(iVar2 + 0x64);
+        uVar5 = (iVar2 + 0x66);
+        if ((uVar5 | pcStack1646) != 0) {
+            pass1_1008_5784(
+                CONCAT22(0x1050, local_67e),
+                pcStack1646 & 0xffff | uVar5 << 0x10,
+            );
+            puVar3 = local_67e;
+            pass1_1008_5b12(CONCAT22(0x1050, puVar3));
+            pcStack1654 = CONCAT22(uVar5, puVar3);
+            if ((uVar5 | puVar3) != 0) {
+                uVar1 = (puVar3 + 2);
+                uStack778 = uVar1;
+                uVar5 = (uVar1 >> 0x10);
+                // TODO: goto LAB_1008_3206;
+            }
+        }
+    } else {
+        //
+        // LAB_1008_3206:
+        unk_str_op_1000_3d3e(CONCAT22(0x1050, acStack259 + 1), CONCAT22(uVar5, uStack778));
+    }
+    pass1_1000_5008(local_40c, 0x1050, 0x100);
+    uStack1038 = str_op_1000_3da4(CONCAT22(0x1050, local_40c));
+    if (local_40c[uStack1038 - 0x1] == '\\') {
+        local_40c[uStack1038 - 0x1] = 0;
+    }
+    uStack1038 = str_op_1000_3da4(CONCAT22(0x1050, acStack259 + 1));
+    if (acStack259[uStack1038] == '\\') {
+        acStack259[uStack1038] = '\0';
+    }
+    pass1_1000_4f2e();
+    uVar8 = (paStack774 >> 0x10);
+    uStack778 = (paStack774 + 0x12);
+    uVar5 = (paStack774 + 0x14);
+    if ((uVar5 | uStack778) != 0) {
+        unk_str_op_1000_3d3e(
+            CONCAT22(0x1050, local_202),
+            (uStack778 & 0xffff | uVar5 << 0x10),
+        );
+    }
+    local_416[0] = '\0';
+    pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x579);
+    unk_str_op_1000_3d3e(CONCAT22(0x1050, local_416), pcVar9);
+    uStack1048 = str_op_1000_3da4(CONCAT22(0x1050, local_416));
+    uStack1038 = uStack1048;
+    //   for (; -0x1 < uStack1048; uStack1048 -= 1)
+    while -1 < uStack1048 {
+        if (local_416[uStack1048] == '.') {
+            unk_str_op_1000_3d3e(
+                CONCAT22(0x1050, local_67e),
+                CONCAT22(0x1050, local_416 + uStack1048 + 1),
+            );
+            unk_str_op_1000_3d3e(CONCAT22(0x1050, local_416), CONCAT22(0x1050, local_67e));
+        }
+        uStack1048 -= 1;
+    }
+    acStack1305[1] = 0;
+    pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x74c);
+    uVar7 = (pcVar9 >> 0x10);
+    unk_str_op_1000_3d3e(CONCAT22(0x1050, acStack1305 + 1), pcVar9);
+    uStack1038 = str_op_1000_3da4(CONCAT22(0x1050, acStack1305 + 1));
+    cStack1306 = acStack1305[uStack1038];
+    uStack1048 = 0;
+    while (acStack1305[uStack1048 + 0x1] != '\0') {
+        if (acStack1305[uStack1048 + 0x1] == cStack1306) {
+            acStack1305[uStack1048 + 0x1] = '\0';
+        }
+        uStack1048 += 0x1;
+    }
+    pass1_1000_4906(CONCAT22(0x1050, &ofn), NULL, 0x48);
+    _ofn = 0x48;
+    uVar8 = (param_2 >> 0x10);
+    uStack1374 = (param_2 + 0x8);
+    pcStack1370 = acStack1305 + 1;
+    uStack1368 = 0x1050;
+    pcStack1354 = CONCAT22(0x1050, local_202);
+    puStack1346 = local_302;
+    uStack1344 = SUB42(0x1050, 0x0);
+    uStack1350 = 0x100;
+    uStack1342 = 0x100;
+    pcStack1338 = acStack259 + 1;
+    uStack1336 = SUB42(0x1050, 0x0);
+    pcStack1322 = local_416;
+    uStack1320 = SUB42(0x1050, 0x0);
+    pcStack1382 = null_mut();
+    local_666[0] = 0;
+    if (param_3 == 1) {
+        uStack1330 = 0x1804;
+        pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x74d);
+        uVar7 = (pcVar9 >> 0x10);
+        unk_str_op_1000_3d3e(CONCAT22(0x1050, local_666), pcVar9);
+        puStack1334 = local_666;
+        uStack1332 = SUB42(0x1050, 0x0);
+        success = GetOpenFileName16(CONCAT22(0x1050, &ofn));
+    } else {
+        if (param_3 != 0x2) {
+            debug_print_1008_6048(uVar7, s_Unsupported_FileStructType_in_Op_1050_01ca);
+            // TODO: goto LAB_1008_3461;
+        }
+        uStack1330 = 0x6;
+        pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x74e);
+        uVar7 = (pcVar9 >> 0x10);
+        unk_str_op_1000_3d3e(CONCAT22(0x1050, local_666), pcVar9);
+        puStack1334 = local_666;
+        uStack1332 = SUB42(0x1050, 0x0);
+        success = GetSaveFileName16(CONCAT22(0x1050, &ofn));
+    }
+    if (success != 0) {
+        pcStack1382 = pcStack1354;
+    } //
+      // LAB_1008_3461:
+    if (pcStack1382.is_null() == false) {
+        local_67e[0] = uStack1326;
+        if (uStack1326 < 0x0) {
+            pcStack1654 = load_string_1010_847e(_u16_1050_14cc, 0x3fd);
+            uVar6 = (pcStack1654 >> 0x10);
+            uVar4 = str_op_1008_60e8(uVar6, pcStack1654);
+            pcStack1654 = CONCAT22(uVar6, uVar4);
+            pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
+            text = (pcVar9 >> 0x10);
+            atype = SUB42(pcVar9, 0x0);
+            MessageBox16(0x10, pcVar9, pcStack1654, (param_2 + 0x8));
+            pcStack1382 = null_mut();
+            pcStack1646 = pcStack1654;
+            fn_ptr_1000_17ce(pcStack1654);
+        } else {
+            str_op_1000_3dbe(
+                CONCAT13(0x10, CONCAT12(0x50, local_782)),
+                pcStack1354,
+                uStack1326,
+            );
+            local_782[uStack1326] = '\0';
+            if (local_782[0] != '\0') {
+                pass1_1010_60cc(uVar7, paStack774, CONCAT22(0x1050, local_782));
+            }
+        }
+    }
+    pass1_1000_4f2e();
+    return;
 }

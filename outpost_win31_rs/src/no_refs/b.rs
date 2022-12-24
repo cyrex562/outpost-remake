@@ -43,7 +43,7 @@ pub unsafe fn window_op_1008_0af8(mut param_1: u16, struct_param_1: *mut StructA
         iVar8[0x1].field11_0x16 = paVar6;
     }
     fn_ptr_1 = (struct_param_1 + 0x14);
-    (**fn_ptr_1)(0x1000, struct_param_1, 0x0, 0x15a, &DAT_1050_1050);
+    (**fn_ptr_1)(0x1000, struct_param_1, 0x0, 0x15a, 0x1050);
     uVar9 = 0x1000;
     mem_op_1000_179c(0xec, paVar6);
     struct_20_v6 = CONCAT22(paVar6, HVar2);

@@ -135,7 +135,7 @@ pub unsafe fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: 
     iVar4 = pass1_1038_993a(param_2,param_3,param_4);
     if (-0x1 < iVar4) {
       hfile_param = (param_2 + 0x6);
-      UStack22 = GetDlgItemInt16(0x1,local_1a,&DAT_1050_1050,(iVar4 * 0xe + 0x5a72));
+      UStack22 = GetDlgItemInt16(0x1,local_1a,0x1050,(iVar4 * 0xe + 0x5a72));
       if (local_1a[0] != 0) {
         FUN_1010_2a32((param_2 + 0x98),CONCAT22((iVar4 * 0xe + 0x5a72),UStack22),hfile_param,
                       unaff_SI);
@@ -164,7 +164,7 @@ pub unsafe fn win_ui_op_1038_977a(param_1: *mut Struct57,mut param_2: i16,mut pa
 
   iStack8 = 0;
   uVar6 = (param_2 + 0x6);
-  uVar2 = GetDlgItemInt16(0x1,&local_4,&DAT_1050_1050,0xfa8);
+  uVar2 = GetDlgItemInt16(0x1,&local_4,0x1050,0xfa8);
   uStack6 = uVar2;
   if (uVar2 != 0) {
     mem_op_1000_179c(0xb4,param_1);
@@ -182,7 +182,7 @@ pub unsafe fn win_ui_op_1038_977a(param_1: *mut Struct57,mut param_2: i16,mut pa
     puStack12 = CONCAT22(uVar4,iVar2);
     pass1_1008_941a(CONCAT22(0x1050,local_10),0x1,0xc3);
     ppcVar1 = (*puStack12 + 0x6c);
-    iStack8 = (**ppcVar1)(0x1008,puStack12,(puStack12 >> 0x10),local_10,&DAT_1050_1050,uVar6,uVar2
+    iStack8 = (**ppcVar1)(0x1008,puStack12,(puStack12 >> 0x10),local_10,0x1050,uVar6,uVar2
                          );
   }
   if ((iStack8 == 1) || (uStack6 == 0)) {

@@ -1,7 +1,9 @@
-use crate::block_1040::block_1040_2000::pass1_1040_2a22;
-use crate::block_1040::block_1040_3000::pass1_1040_3506;
-use crate::win_ui::{dialog_item_ui_op_1040_3e08, send_dlg_item_msg_1040_3f12, set_win_pos_1040_331a};
-use crate::winapp::send_msg_1040_323c;
+use crate::unk::block_1040_2000::pass1_1040_2a22;
+use crate::unk::block_1040_3000::pass1_1040_3506;
+use crate::gui::dialog::dlg_a::send_dlg_item_msg_1040_3f12;
+use crate::gui::dialog::dlg_a::dialog_item_ui_op_1040_3e08;
+use crate::gui::window::set_win_pos_1040_331a;
+use crate::winapp::winapp_c::send_msg_1040_323c;
 
 
 pub unsafe fn pass1_1040_288e(mut param_1: u32)

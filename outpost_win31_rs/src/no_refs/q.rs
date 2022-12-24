@@ -1,5 +1,5 @@
-use crate::win_ui::destroy_window_1018_c518;
-use crate::draw_ops::draw_text_1018_c742;
+use crate::gui::cleanup::destroy_window_1018_c518;
+use crate::draw_ops::draw_a::draw_text_1018_c742;
 
 pub unsafe fn pass1_1018_8d66(param_1: *mut StructD, param_2: u8)
 

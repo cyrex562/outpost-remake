@@ -1,3 +1,5 @@
+use crate::structs::struct_874::Struct874;
+
 #[derive(Default,Debug,Clone)]
 pub struct Struct27 {
     pub field0_0x0: u8,
@@ -20,7 +22,7 @@ pub struct Struct27 {
     pub field17_0x11: u8,
     pub field18_0x12: u16,
     pub field19_0x14: u16,
-    pub field20_0x16: i16,
+    pub pstruct874_0x16: *mut Struct874,
     pub field21_0x18: u8,
     pub field22_0x19: u8,
     pub field23_0x1a: u16,
@@ -28,7 +30,7 @@ pub struct Struct27 {
     pub field25_0x1d: u8,
     pub field26_0x1e: u8,
     pub field27_0x1f: u8,
-    pub field28_0x20: u8,
+    pub field_0x20: u8,
     pub field29_0x21: u8,
     pub field30_0x22: u32,
     pub field31_0x26: u8,

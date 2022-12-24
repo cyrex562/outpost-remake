@@ -1,4 +1,4 @@
-use crate::block_1010::block_1010_e000::{pass1_1010_e58a, pass1_1010_e8d0, pass1_1010_e8f6, pass1_1010_ed22};
+use crate::unk::block_1010_e000::{pass1_1010_e58a, pass1_1010_e8d0, pass1_1010_e8f6, pass1_1010_ed22};
 
 pub unsafe fn pass1_1010_c58as(
     mut param_1: u16,

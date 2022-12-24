@@ -1,4 +1,4 @@
-use crate::block_1028::block_1028_6000::pass1_1028_6186;
+use crate::unk::block_1028_6000::pass1_1028_6186;
 
 pub unsafe fn pass1_1028_4af6(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1028_b418(&param_1.address_offset_field_0x0);
@@ -212,9 +212,9 @@ pub unsafe fn pass1_1028_4db2(
         uVar3 = (puStack6 >> 0x10);
         uStack10 = (puStack6 + 0x20);
         puVar8 = &local_c;
-        uVar9 = SUB42(&DAT_1050_1050, 0x0);
+        uVar9 = SUB42(0x1050, 0x0);
         piVar2 = &local_e;
-        uVar7 = SUB42(&DAT_1050_1050, 0x0);
+        uVar7 = SUB42(0x1050, 0x0);
         piVar6 = piVar2;
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack10);
         piStack18 = piVar2;
@@ -251,7 +251,7 @@ pub unsafe fn pass1_1028_4db2(
             0x0,
             0x62,
             &local_1c,
-            &DAT_1050_1050,
+            0x1050,
             uStack42,
             uStack10,
         );
@@ -331,9 +331,9 @@ pub unsafe fn pass1_1028_5128(param_1: u8, mut param_2: u16, param_3: *mut astru
     uVar2 = (puStack6 >> 0x10);
     uStack10 = (puStack6 + 0x20);
     puVar6 = &local_c;
-    uVar7 = SUB42(&DAT_1050_1050, 0x0);
+    uVar7 = SUB42(0x1050, 0x0);
     piVar1 = &local_e;
-    uVar5 = SUB42(&DAT_1050_1050, 0x0);
+    uVar5 = SUB42(0x1050, 0x0);
     piVar4 = piVar1;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack10);
     piStack18 = piVar1;
@@ -370,7 +370,7 @@ pub unsafe fn pass1_1028_5128(param_1: u8, mut param_2: u16, param_3: *mut astru
         0x0,
         0x6f,
         &local_1c,
-        &DAT_1050_1050,
+        0x1050,
         uStack42,
         uStack10,
     );

@@ -1,5 +1,5 @@
-use crate::block_1028::block_1028_3000::pass1_1028_388e;
-use crate::block_1028::block_1028_4000::{pass1_1028_4530, pass1_1028_478a};
+use crate::unk::block_1028_3000::pass1_1028_388e;
+use crate::unk::block_1028_4000::{pass1_1028_4530, pass1_1028_478a};
 
 pub unsafe fn pass1_1028_2e84(
     param_1: *mut StructD,

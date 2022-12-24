@@ -541,7 +541,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16) -> u16 {
             (unaff_BP -0x12) = 0;
         }
         unaff_DI = (unaff_BP -0x17);
-        unaff_ES = &DAT_1050_1050;
+        unaff_ES = 0x1050;
         pcVar9 = *(unaff_BP -0x8);
         pass1_1000_356e(uVar13, pcVar9, param_1);
         if (((*(unaff_BP -0x5) & 0x2) != 0) && (pcVar9.is_null() || (unaff_DI != '0'))) {
@@ -578,7 +578,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16) -> u16 {
         }
         if (cVar4 == 'c') {
             uVar7 = pass1_1000_34cf();
-            unaff_ES = &DAT_1050_1050;
+            unaff_ES = 0x1050;
             *(unaff_BP -0x216) = uVar7;
             unaff_DI = (unaff_BP -0x216);
             pcVar9 = 0x1;
@@ -586,7 +586,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16) -> u16 {
             uVar13 = pass1_1000_34e6(param_1);
             param_1 = (uVar13 >> 0x10);
             if ((unaff_DI.is_null()) && (unaff_ES == 0)) {
-                unaff_ES = &DAT_1050_1050;
+                unaff_ES = 0x1050;
                 unaff_DI = 0x6057;
                 pcVar9 = DAT_1050_605d;
             } else {
@@ -659,7 +659,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16) -> u16 {
                     (PTR_s_3_wav_1050_25cc_1050_6070)();
                     param_1 = extraout_DX_02;
                 }
-                unaff_ES = &DAT_1050_1050;
+                unaff_ES = 0x1050;
                 if (unaff_DI == '-') {
                     unaff_DI = (unaff_BP -0x215);
                     pbVar2 = (unaff_BP -0x5);
@@ -702,7 +702,7 @@ pub unsafe fn pass1_1000_31f7(mut param_1: u16) -> u16 {
                 *(unaff_BP -0x212) = 0x3a;
                 pcVar9 = 0x9;
             }
-            unaff_ES = &DAT_1050_1050;
+            unaff_ES = 0x1050;
             unaff_DI = (unaff_BP -0x216);
         }
     } //
@@ -781,7 +781,7 @@ pub unsafe fn pass1_1000_3bc0(mut param_1: i16, mut param_2: i16) {
         if (u_var5 != 0) {
             u_var4 = param_1 + 0x2 + u_var5;
             if (!CARRY2(param_1 + 0x2, u_var5)) {
-                uVar3 = pass1_1000_29dc(&DAT_1050_1050);
+                uVar3 = pass1_1000_29dc(0x1050);
                 u_var5 = &PTR_LOOP_1050_6066;
                 if (u_var5 == 0x1000) {
                     // TODO: goto LAB_1000_3c12;

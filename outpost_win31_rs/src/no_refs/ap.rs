@@ -1,6 +1,6 @@
-use crate::winapp::send_msg_1038_c228;
-use crate::block_1038::block_1038_e000::{pass1_1038_e16e, pass1_1038_e308, pass1_1038_e6f0, pass1_1038_e9ec, pass1_1038_ebd6};
-use crate::win_ui::set_win_pos_1038_c31a;
+use crate::winapp::winapp_c::send_msg_1038_c228;
+use crate::unk::block_1038_e000::{pass1_1038_e16e, pass1_1038_e308, pass1_1038_e6f0, pass1_1038_e9ec, pass1_1038_ebd6};
+use crate::gui::window::set_win_pos_1038_c31a;
 
 pub unsafe fn pass1_1038_d6c4(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
@@ -115,7 +115,7 @@ pub unsafe fn pass1_1038_e4bc(param_1: *mut u8, mut param_2: u16, mut param_3: u
                                              in_stack_0000ff8a, in_stack_0000ff90, in_stack_0000ff94);
                     pass1_1010_71d6(uVar5 + 0xc, (puVar9 >> 0x10), puVar9, 0x1,
                                     ((paVar6 & 0xff00) << 0x10 | CONCAT12(paVar6, uVar5 + 0xc)),
-                                    &DAT_1050_1050);
+                                    0x1050);
                     if (puStack22.is_null() == false) {
                         ppcVar1 = *puStack22;
                         (**ppcVar1)(0x1010, uVar4, paVar11, 1);

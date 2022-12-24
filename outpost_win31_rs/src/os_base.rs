@@ -1,6 +1,6 @@
 use std::ptr::null_mut;
-use crate::block_1000::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
-use crate::block_1000::block_1000_2000::mem_op_1000_21b6;
+use crate::unk::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
+use crate::unk::block_1000_2000::mem_op_1000_21b6;
 use crate::globals::{DAT_1050_1050, PTR_LOOP_1050_1000};
 
 pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
@@ -12,7 +12,7 @@ pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
     let mut puStack4: *mut u16;
     let mut uVar3: u16;
 
-    puStack4 =  &DAT_1050_1050;
+    puStack4 =  0x1050;
     if (( PTR_LOOP_1050_5f1c |  PTR_PTR_1050_5f1a) == 0) {
         pcStack6 = null_mut();
         puStack4 = null_mut();
@@ -30,7 +30,7 @@ pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
     }
     if (( puStack4 |  pcStack6) != 0) {
         BVar2 = msg_box_op_1000_1f24( &PTR_PTR_1050_5f1a,
-                                      &DAT_1050_1050,
+                                      0x1050,
                                      0x0);
         if (BVar2 == 0) {
             uVar2 = (*pcStack6)();

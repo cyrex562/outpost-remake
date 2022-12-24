@@ -1,20 +1,20 @@
 use std::os::raw::c_char;
 use std::ptr::null_mut;
 use crate::app_context::AppContext;
-use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
-use crate::block_1008::block_1008_3000::{pass1_1008_3bd6, pass1_1008_3e94};
-use crate::block_1008::block_1008_4000::{pass1_1008_4d84, struct_1008_4c58};
-use crate::block_1008::block_1008_5000::{pass1_1008_5fd8, win_1008_5c5c, win_1008_5c7c};
-use crate::block_1010::block_1010_2000::mixed_1010_20ba;
-use crate::win_ui::{destroy_win_1038_ef3a, enable_win_1040_060e, set_window_text_1018_6086};
-use crate::block_1030::block_1030_2000::{pass1_1030_2f1a, pass1_1030_2fac};
-use crate::block_1030::block_1030_5000::pass1_1030_532e;
-use crate::block_1030::block_1030_8000::{fn_ptr_1030_835a, pass1_1030_8334, pass1_1030_8344, pass1_1030_838e};
-use crate::block_1038::block_1038_a000::pass1_1038_af40;
-use crate::block_1038::block_1038_e000::{pass1_1038_e9ec, pass1_1038_ebd6};
-use crate::block_1040::block_1040_0000::pass1_1040_073a;
-use crate::winapp::post_win_msg_1040_7b3c;
-use crate::win_ui::{enable_window_1040_0acc, move_win_1040_826c, win_ui_op_1040_0558};
+use crate::unk::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
+use crate::unk::block_1008_3000::{pass1_1008_3bd6, pass1_1008_3e94};
+use crate::unk::block_1008_4000::{pass1_1008_4d84, struct_1008_4c58};
+use crate::unk::block_1008_5000::{pass1_1008_5fd8, win_1008_5c5c, win_1008_5c7c};
+use crate::unk::block_1010_2000::mixed_1010_20ba;
+use crate::gui::dialog::dlg_b::enable_win_1040_060e;
+use crate::unk::block_1030_2000::{pass1_1030_2f1a, pass1_1030_2fac};
+use crate::unk::block_1030_5000::pass1_1030_532e;
+use crate::unk::block_1030_8000::{fn_ptr_1030_835a, pass1_1030_8334, pass1_1030_8344, pass1_1030_838e};
+use crate::unk::block_1038_a000::pass1_1038_af40;
+use crate::unk::block_1038_e000::{pass1_1038_e9ec, pass1_1038_ebd6};
+use crate::unk::block_1040_0000::pass1_1040_073a;
+use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
+use crate::gui::window::win_e::{enable_window_1040_0acc, win_ui_op_1040_0558};
 use crate::globals::u32_1050_0004;
 use crate::resources::{load_string_1010_847e, load_string_1010_84e0};
 use crate::structs::struct_394::astruct_394;
@@ -22,7 +22,10 @@ use crate::structs::struct_57::Struct57;
 use crate::structs::struct_915::astruct_915;
 use crate::structs::struct_d::StructD;
 use crate::utils::{CONCAT11, CONCAT22, SUB42};
-use crate::win_ui::dialog_ui_fn_1040_78e2;
+use crate::gui::cleanup::destroy_win_1038_ef3a;
+use crate::gui::dialog::dialog_ui_fn_1040_78e2;
+use crate::gui::window::move_win_1040_826c;
+use crate::gui::window::win_d::set_window_text_1018_6086;
 use crate::winapi16::{DestroyWindow16, GetDlgItem16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
 use crate::windef16::{HCURSOR16, HWND16, LRESULT, WPARAM16};
 
@@ -102,9 +105,9 @@ pub unsafe fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u1
     uStack4 = (puVar2 >> 0x10);
     pass1_1010_6118(puVar2);
     piVar5 = &local_8;
-    uVar6 = SUB42(&DAT_1050_1050, 0x0);
+    uVar6 = SUB42(0x1050, 0x0);
     piVar3 = &local_a;
-    uVar4 = SUB42(&DAT_1050_1050, 0x0);
+    uVar4 = SUB42(0x1050, 0x0);
     puVar2 = mixed_1010_20ba(
         paVar1,
         _u16_1050_0ed0,

@@ -1,9 +1,13 @@
-use crate::block_1020::block_1020_0000::{draw_op_1020_041e, pass1_1020_022c, struct_1020_0baa};
-use crate::block_1020::block_1020_1000::{pass1_1020_1d8e, pass1_1020_1da8, pass1_1020_1eea};
-use crate::block_1020::block_1020_2000::{pass1_1020_2286, pass1_1020_239c, pass1_1020_2488};
-use crate::draw_ops::{draw_line_1020_229c, draw_op_1020_15de, unk_draw_op_1020_0c3e, win_ui_op_1020_150e, win_ui_palette_op_1020_0cd2};
+use crate::unk::block_1020_0000::{draw_op_1020_041e, pass1_1020_022c, struct_1020_0baa};
+use crate::unk::block_1020_1000::{pass1_1020_1d8e, pass1_1020_1da8, pass1_1020_1eea};
+use crate::unk::block_1020_2000::{pass1_1020_2286, pass1_1020_239c, pass1_1020_2488};
+use crate::draw_ops::draw_f::win_ui_palette_op_1020_0cd2;
+use crate::draw_ops::draw_c::draw_line_1020_229c;
+use crate::draw_ops::draw_e::{draw_op_1020_15de, unk_draw_op_1020_0c3e, win_ui_op_1020_150e};
 use crate::utils::CONCAT22;
-use crate::win_ui::{destroy_win_1020_1dea, destroy_win_1020_1e1e, send_win_msg_1020_08fe, unk_win_ui_op_1020_1418};
+use crate::winapp::winapp_d::unk_win_ui_op_1020_1418;
+use crate::gui::cleanup::{destroy_win_1020_1dea, destroy_win_1020_1e1e};
+use crate::winapp::winapp_d::send_win_msg_1020_08fe;
 use crate::windef16::{HDC16, HGDIOBJ16, HPEN16};
 
 pub unsafe fn pass1_1020_07aa(mut param_1: u16, param_2: *mut Struct19) {

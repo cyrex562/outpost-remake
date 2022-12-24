@@ -1,7 +1,7 @@
-use crate::block_1010::block_1010_9000::pass1_1010_9fa6;
-use crate::block_1010::block_1010_a000::pass1_1010_a5ca;
-use crate::block_1010::block_1010_b000::bad_1010_bf08;
-use crate::block_1010::block_1010_c000::pass1_1010_c28a;
+use crate::unk::block_1010_9000::pass1_1010_9fa6;
+use crate::unk::block_1010_a000::pass1_1010_a5ca;
+use crate::unk::block_1010_b000::bad_1010_bf08;
+use crate::unk::block_1010_c000::pass1_1010_c28a;
 
 pub unsafe fn pass1_1010_9f72(mut param_1: u32, mut param_2: i16) {
     let mut uVar1: u16;

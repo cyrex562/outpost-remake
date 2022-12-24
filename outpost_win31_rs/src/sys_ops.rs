@@ -1,18 +1,19 @@
 use std::ptr::null_mut;
 use std::os::raw::c_char;
-use crate::block_1000::block_1000_1000::{mem_op_1000_179c, msg_box_op_1000_1f24, pass1_1000_1f68};
-use crate::block_1000::block_1000_2000::{mem_op_1000_21b6, pass1_1000_25a8, pass1_1000_2913, poss_str_op_1000_28dc};
-use crate::block_1000::block_1000_3000::sys_1000_3f9c;
-use crate::block_1000::block_1000_4000;
-use crate::block_1000::block_1000_4000::pass1_1000_484c;
-use crate::block_1008::block_1008_4000::{palette_op_1008_4e08, pass1_1008_4772};
-use crate::block_1008::block_1008_7000::switch_1008_73ea;
-use crate::block_1010::block_1010_1000::pass1_1010_1f62;
-use crate::block_1010::block_1010_6000::pass1_1010_6ca2;
-use crate::block_1010::block_1010_7000::pass1_1010_715c;
-use crate::block_1010::block_1010_8000::pass1_1010_8170;
-use crate::block_1018::block_1018_4000::{pass1_1018_4dce, struct_op_1018_4cda};
+use crate::unk::block_1000_1000::{mem_op_1000_179c, msg_box_op_1000_1f24, pass1_1000_1f68};
+use crate::unk::block_1000_2000::{mem_op_1000_21b6, pass1_1000_25a8, pass1_1000_2913, poss_str_op_1000_28dc};
+use crate::unk::block_1000_3000::sys_1000_3f9c;
+use crate::unk::block_1000_4000;
+use crate::unk::block_1000_4000::pass1_1000_484c;
+use crate::unk::block_1008_4000::pass1_1008_4772;
+use crate::unk::block_1008_7000::switch_1008_73ea;
+use crate::unk::block_1010_1000::pass1_1010_1f62;
+use crate::unk::block_1010_6000::pass1_1010_6ca2;
+use crate::unk::block_1010_7000::pass1_1010_715c;
+use crate::unk::block_1010_8000::pass1_1010_8170;
+use crate::unk::block_1018_4000::{pass1_1018_4dce, struct_op_1018_4cda};
 use crate::dos_interrupt::swi;
+use crate::draw_ops::draw_a::palette_op_1008_4e08;
 use crate::file_ops::{read_file_1008_7dee, write_to_file_1008_7e1c};
 use crate::globals::{DAT_1050_1050, PTR_LOOP_1050_1000, PTR_LOOP_1050_63fe};
 use crate::structs::struct_57::Struct57;
@@ -57,7 +58,7 @@ pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
 
     if (PTR_LOOP_1050_02ec.is_null() == false) {
         if (DAT_1050_02ee == 0xffff) {
-            uVar1 = pass1_1000_3ec0(0x2f4, &DAT_1050_1050);
+            uVar1 = pass1_1000_3ec0(0x2f4, 0x1050);
             DAT_1050_02ee = ((param_1 | uVar1) != 0);
         }
         if (DAT_1050_02ee != 0) {
@@ -73,7 +74,7 @@ pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
                     _PTR_LOOP_1050_02f0,
                     (_PTR_LOOP_1050_02f0 >> 0x10),
                     0x2fd,
-                    &DAT_1050_1050,
+                    0x1050,
                 );
                 pass1_1000_2f48(_PTR_LOOP_1050_02f0);
             }
@@ -196,13 +197,13 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut
         s_general_1050_13b0,
     );
     if (**(param_2 + 0xe) != '\0') {
-        param_1 = &DAT_1050_1050;
+        param_1 = 0x1050;
         iVar8 = pass1_1000_475e((param_2 + 0xe), s_on_1050_13c4);
         if (iVar8 == 0) {
             (param_2 + 0x80) = 0x1;
         }
     }
-    param_1 = &DAT_1050_1050;
+    param_1 = 0x1050;
     GetPrivateProfileString16(
         *(param_2 + 0xa),
         0x100,
@@ -235,7 +236,7 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut
             (param_2 + 0x72) = 0;
         }
     }
-    param_1 = &DAT_1050_1050;
+    param_1 = 0x1050;
     GetPrivateProfileString16(
         *(param_2 + 0xa),
         0x100,
@@ -262,13 +263,13 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut
         s_general_1050_13b0,
     );
     if (**(param_2 + 0xe) != '\0') {
-        param_1 = s_tile2_bmp_1050_1538;
+        param_1 = 0x1538;
         iVar8 = pass1_1000_475e((param_2 + 0xe), s_off_1050_13c8);
         if (iVar8 == 0) {
             (param_2 + 0x20) = 0;
         }
     }
-    param_1 = &DAT_1050_1050;
+    param_1 = 0x1050;
     GetPrivateProfileString16(
         *(param_2 + 0xa),
         0x100,

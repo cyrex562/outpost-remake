@@ -1,5 +1,7 @@
-use crate::win_ui::pt_in_rect_op_1020_58ce;
-use crate::win_ui::{menu_ui_op_1020_5bf2, win_ui_op_1020_5de8, win_ui_op_1020_5e76};
+use crate::gui::window::win_c::pt_in_rect_op_1020_58ce;
+use crate::winapp::winapp_d::win_ui_op_1020_5de8;
+use crate::gui::menu::menu_ui_op_1020_5bf2;
+use crate::winapp::winapp_d::win_ui_op_1020_5e76;
 
 pub unsafe fn pass1_1020_51c6(mut param_1: u32, mut param_2: u16, mut param_3: u32) {
     let mut ppcVar1: *mut *mut code;

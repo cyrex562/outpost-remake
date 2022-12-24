@@ -129,8 +129,8 @@ pub unsafe fn pass1_1010_4c3e(
 
 
 // WARNING: This is an inlined function
-// WARNING: Unable to use type for symbol uVar2
-// WARNING: Unable to use type for symbol uVar1
+
+
 pub unsafe fn struct_1010_4d5c(
     param_1: *mut u8,
     param_2: *mut astruct_245,
@@ -686,7 +686,7 @@ pub unsafe fn pass1_1010_9348(mut param_1: u32, mut param_2: i16) {
     uVar2 = (param_1 >> 0x10);
     iVar1 = param_1;
     (iVar1 + 0x16) = param_2 * 0x8 + 0x3198;
-    (iVar1 + 0x18) = &DAT_1050_1050;
+    (iVar1 + 0x18) = 0x1050;
     (iVar1 + 0x12) = param_2;
     return;
 }

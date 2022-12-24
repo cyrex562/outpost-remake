@@ -249,7 +249,7 @@ pub unsafe fn pass1_1008_4426(param_1: *mut astruct_76) -> u32 {
 }
 
 
-// WARNING: Unable to use type for symbol uVar2
+
 pub unsafe fn set_di_bits_to_device_1008_45d6(
     param_1: *mut astruct_76,
     param_2: INT16,
@@ -303,7 +303,7 @@ pub unsafe fn set_di_bits_to_device_1008_45d6(
 }
 
 
-// WARNING: Unable to use type for symbol uVar1
+
 pub unsafe fn stretch_di_bits_1008_465a(param_1: *mut astruct_76, hdc_param_2: HDC16) {
     let mut x_src: i16;
     let mut y_src: i16;

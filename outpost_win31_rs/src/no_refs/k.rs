@@ -1,8 +1,8 @@
-use crate::block_1010::block_1010_8000::pass1_1010_878c;
-use crate::block_1010::block_1010_9000::pass1_1010_9f8c;
+use crate::unk::block_1010_8000::pass1_1010_878c;
+use crate::unk::block_1010_9000::pass1_1010_9f8c;
 use crate::resources::{load_string_1010_847e, load_string_1010_84e0};
 use crate::sys_ops::set_err_mode_1010_8b14;
-use crate::win_ui::msg_box_op_1010_8bb4;
+use crate::gui::msg_box::msg_box_op_1010_8bb4;
 
 pub unsafe fn pass1_1010_866c(
     mut param_1: u16,

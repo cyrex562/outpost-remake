@@ -174,7 +174,7 @@ pub unsafe fn pass1_1030_c52e(
             uStack6 = local_20;
             pass1_1028_c7b6(param_2, param_3, uVar9, param_4, param_6);
             if ((uStack8 != 0x4) && (uStack8 != 0)) {
-                uVar8 = pass1_1030_bcae(&local_20, &DAT_1050_1050);
+                uVar8 = pass1_1030_bcae(&local_20, 0x1050);
                 uVar6 = (uVar8 >> 0x10);
                 pass1_1028_dc52(CONCAT22(0x1050, &local_32), 0x1, 0x0, 0x400);
                 loop {
@@ -195,7 +195,7 @@ pub unsafe fn pass1_1030_c52e(
                     uStack16 = uVar7;
                     pass1_1030_bcde(
                         puVar4,
-                        &DAT_1050_1050,
+                        0x1050,
                         uVar5 & 0xffff | uVar7 << 0x10,
                         puVar10,
                         uVar8,

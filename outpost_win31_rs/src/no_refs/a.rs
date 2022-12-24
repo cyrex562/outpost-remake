@@ -5,7 +5,7 @@ pub unsafe fn dos3_calls_1000_5198(mut param_1: u16 ,
                          mut param_4: u16 ) -> u16
 {
     let mut pcVar1 =  swi(0x21);
-    (*pcVar1)( &DAT_1050_1050);
+    (*pcVar1)( 0x1050);
     pcVar1 =  swi(0x21);
     (*pcVar1)();
     pcVar1 =  swi(0x21);

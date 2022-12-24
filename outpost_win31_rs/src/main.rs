@@ -1,7 +1,7 @@
 // #include <stdio.h>
 
 use crate::app_context::AppContext;
-use crate::program_lifecycle::entry;
+use winapp::winapp_e::entry;
 
 mod block_1000;
 mod block_1008;
@@ -20,7 +20,7 @@ mod structs;
 mod winapi16;
 mod utils;
 mod mem_ops;
-mod win_ui;
+mod gui;
 mod string_defs;
 mod sys_ops;
 mod app_context;
@@ -36,6 +36,7 @@ mod draw_ops;
 mod os_base;
 mod winapp;
 mod sound_ops;
+mod error_handling;
 
 
 pub unsafe fn main()

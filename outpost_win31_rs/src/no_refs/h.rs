@@ -1,6 +1,6 @@
-use crate::block_1010::block_1010_4000::{pass1_1010_459e, pass1_1010_45d6};
-use crate::block_1010::block_1010_5000::{pass1_1010_519a, pass1_1010_533c, string_1010_5286};
-use crate::draw_ops::draw_op_1010_47d0;
+use crate::unk::block_1010_4000::{pass1_1010_459e, pass1_1010_45d6};
+use crate::unk::block_1010_5000::{pass1_1010_519a, pass1_1010_533c, string_1010_5286};
+use crate::draw_ops::draw_c::draw_op_1010_47d0;
 
 pub unsafe fn FUN_1010_9900(mut param_1: u16, mut param_2: u32, param_3: *mut u8) -> u16 {
     let mut uVar1: u32;

@@ -1,5 +1,5 @@
-use crate::block_1028::block_1028_1000::pass1_1028_1e14;
-use crate::block_1028::block_1028_2000::{pass1_1028_2042, pass1_1028_21ba, pass1_1028_2220, pass1_1028_297c, pass1_1028_2f18};
+use crate::unk::block_1028_1000::pass1_1028_1e14;
+use crate::unk::block_1028_2000::{pass1_1028_2042, pass1_1028_21ba, pass1_1028_2220, pass1_1028_297c, pass1_1028_2f18};
 
 pub unsafe fn pass1_1028_1b1e(mut param_1: u32) {
     (param_1 + 0x14) = 0x7;
@@ -160,7 +160,7 @@ pub unsafe fn pass1_1028_1da4(
     let mut uVar5: u32;
     let mut local_4: [u8; 0x2] = [0; 0x2];
 
-    uVar5 = pass1_1030_bcae(local_4, &DAT_1050_1050);
+    uVar5 = pass1_1030_bcae(local_4, 0x1050);
     uVar4 = (uVar5 >> 0x10);
     iVar1 = uVar5;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4);
@@ -169,7 +169,7 @@ pub unsafe fn pass1_1028_1da4(
     puVar2 = local_4;
     pass1_1030_bcde(
         puVar2,
-        &DAT_1050_1050,
+        0x1050,
         uVar3 & 0xffff | uVar4 << 0x10,
         param_3,
         param_5,
@@ -409,7 +409,7 @@ pub unsafe fn pass1_1028_23a8(
     let mut uVar5: u32;
     let mut local_4: [u8; 0x2] = [0; 0x2];
 
-    uVar5 = pass1_1030_bcae(local_4, &DAT_1050_1050);
+    uVar5 = pass1_1030_bcae(local_4, 0x1050);
     uVar4 = (uVar5 >> 0x10);
     iVar1 = uVar5;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4);
@@ -418,7 +418,7 @@ pub unsafe fn pass1_1028_23a8(
     puVar2 = local_4;
     pass1_1030_bcde(
         puVar2,
-        &DAT_1050_1050,
+        0x1050,
         uVar3 & 0xffff | uVar4 << 0x10,
         param_3,
         param_5,

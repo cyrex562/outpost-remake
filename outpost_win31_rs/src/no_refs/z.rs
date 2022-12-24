@@ -1,5 +1,5 @@
-use crate::block_1028::block_1028_0000::{pass1_1028_0138, pass1_1028_081e};
-use crate::block_1028::block_1028_1000::{pass1_1028_11de, pass1_1028_121e};
+use crate::unk::block_1028_0000::{pass1_1028_0138, pass1_1028_081e};
+use crate::unk::block_1028_1000::{pass1_1028_11de, pass1_1028_121e};
 
 pub unsafe fn pass1_1028_0374(mut param_1: i16, param_2: *mut u8, param_3: *mut astruct_373, param_4: *mut HFILE16)
 
@@ -515,7 +515,7 @@ pub unsafe fn pass1_1028_12be(param_1: *mut astruct_15, param_2: *mut u32) -> u1
 
     bVar4 = pass1_1028_11de(param_1);
     if (CONCAT11(extraout_AH, bVar4) == 0) {
-        paVar6 = pass1_1028_121e(&DAT_1050_1050, param_1);
+        paVar6 = pass1_1028_121e(0x1050, param_1);
         ppcVar3 = (paVar6 + 0x40);
         uVar5 = (**ppcVar3)();
         return uVar5;
@@ -561,14 +561,14 @@ pub unsafe fn pass1_1028_134a(param_1: *mut astruct_15) {
     if (BVar3 != 0) {
         plVar4 = &local_6;
         ppcVar2 = (param_1 + 0x40);
-        (**ppcVar2)(0x1008, param_1, plVar4, &DAT_1050_1050);
+        (**ppcVar2)(0x1008, param_1, plVar4, 0x1050);
         if (plVar4.is_null() == false) {
             piVar1 = (param_1 + 0x22);
             *piVar1 = *piVar1 + 1;
             return;
         }
         uStack10 = 0x1f4 - local_6;
-        paVar8 = pass1_1028_121e(&DAT_1050_1050, param_1);
+        paVar8 = pass1_1028_121e(0x1050, param_1);
         uVar5 = (paVar8 >> 0x10);
         uVar7 = SUB42(paVar8, 0x0);
         pass1_1028_b58e(paVar8);
@@ -870,9 +870,9 @@ pub unsafe fn pass1_1028_199a(mut param_1: i16, param_2: *mut astruct_15) {
         );
         uVar2 = (puStack26 + 0x20);
         puVar6 = &local_20;
-        uVar7 = SUB42(&DAT_1050_1050, 0x0);
+        uVar7 = SUB42(0x1050, 0x0);
         piStack36 = &local_22;
-        uVar5 = SUB42(&DAT_1050_1050, 0x0);
+        uVar5 = SUB42(0x1050, 0x0);
         piVar4 = piStack36;
         uStack30 = uVar2;
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar2);
@@ -898,7 +898,7 @@ pub unsafe fn pass1_1028_199a(mut param_1: i16, param_2: *mut astruct_15) {
             0x0,
             (-(local_16 == 0) & 0xffd3) + 0x60,
             &local_10,
-            &DAT_1050_1050,
+            0x1050,
             uStack42 & 0xffff | (uStack10 + 0x6) << 0x10,
             uStack30,
         );
@@ -917,7 +917,7 @@ pub unsafe fn pass1_1028_199a(mut param_1: i16, param_2: *mut astruct_15) {
             0x0,
             0x60,
             &local_10,
-            &DAT_1050_1050,
+            0x1050,
             uStack42,
             uStack30,
         );

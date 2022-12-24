@@ -1,15 +1,16 @@
-use crate::block_1000::block_1000_1000::fn_ptr_1000_17ce;
-use crate::block_1008::block_1008_4000::pass1_1008_4d72;
-use crate::block_1010::block_1010_2000::mixed_1010_20ba;
-use crate::block_1030::block_1030_7000::struct_op_1030_73a8;
-use crate::block_1040::block_1040_0000::pass1_1040_0c54;
-use crate::block_1040::block_1040_1000::{pass1_1040_1290, pass1_1040_1876, pass1_1040_1d24};
-use crate::block_1040::block_1040_2000::pass1_1040_205e;
-use crate::win_ui::{check_dialog_btn_1040_1b8a, dialog_ui_fn_1040_78e2};
+use crate::unk::block_1000_1000::fn_ptr_1000_17ce;
+use crate::unk::block_1008_4000::pass1_1008_4d72;
+use crate::unk::block_1010_2000::mixed_1010_20ba;
+use crate::unk::block_1030_7000::struct_op_1030_73a8;
+use crate::unk::block_1040_0000::pass1_1040_0c54;
+use crate::unk::block_1040_1000::{pass1_1040_1290, pass1_1040_1876, pass1_1040_1d24};
+use crate::unk::block_1040_2000::pass1_1040_205e;
+use crate::gui::dialog::dlg_a::check_dialog_btn_1040_1b8a;
 use crate::structs::struct_d::StructD;
 use crate::utils::{CONCAT11, CONCAT22};
+use crate::gui::dialog::dialog_ui_fn_1040_78e2;
 use crate::winapi16::{GetDlgItem16, GetStockObject16, GetWindowRect16, SetWindowPos16};
-use crate::winapp::send_msg_1040_1696;
+use crate::winapp::winapp_c::send_msg_1040_1696;
 use crate::windef16::{HGDIOBJ16, HWND16};
 
 pub unsafe fn pass1_1040_0d80() -> u16 {

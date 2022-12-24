@@ -1,11 +1,13 @@
-use crate::block_1040::block_1040_8000::{pass1_1040_869a, pass1_1040_8e82};
-use crate::block_1040::block_1040_9000::pass1_1040_9824;
-use crate::block_1040::block_1040_a000::{msg_box_ui_op_1040_ad66, pass1_1040_ace8};
-use crate::draw_ops::unk_draw_op_1040_b0f8;
-use crate::draw_ops::draw_op_1040_9948;
-use crate::program_lifecycle::free_proc_inst_1040_a294;
-use crate::win_ui::{msg_box_op_1040_a85a, win_ui_dlg_op_1040_a94a, win_ui_op_1040_ae04};
-use crate::winapp::win_msg_1040_a308;
+use crate::unk::block_1040_8000::{pass1_1040_869a, pass1_1040_8e82};
+use crate::unk::block_1040_9000::pass1_1040_9824;
+use crate::unk::block_1040_a000::{msg_box_ui_op_1040_ad66, pass1_1040_ace8};
+use crate::draw_ops::draw_e::unk_draw_op_1040_b0f8;
+use crate::draw_ops::draw_a::draw_op_1040_9948;
+use crate::winapp::free_proc_inst_1040_a294;
+use crate::resources::msg_box_op_1040_a85a;
+use crate::gui::dialog::dlg_a::win_ui_op_1040_ae04;
+use crate::gui::dialog::dlg_b::win_ui_dlg_op_1040_a94a;
+use crate::winapp::winapp_c::win_msg_1040_a308;
 use crate::windef16::RECT16;
 
 pub unsafe fn pass1_1040_89a4(param_1: *mut u8, param_2: *mut u32, param_3: *mut u16)

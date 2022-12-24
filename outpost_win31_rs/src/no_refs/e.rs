@@ -605,7 +605,7 @@ pub unsafe fn pass1_1008_ef76(param_1: *mut StructD, param_2: u8) -> *mut Struct
 
 
 pub unsafe fn pass1_1010_02a2(param_1: *mut u16, param_2: u8) -> *mut u16 {
-    pass1_1010_0052(param_1, &DAT_1050_1050);
+    pass1_1010_0052(param_1, 0x1050);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }

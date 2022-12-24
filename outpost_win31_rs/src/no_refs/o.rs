@@ -1,6 +1,7 @@
-use crate::block_1018::block_1018_5000::{pass1_1018_50ac, pass1_1018_5714, pass1_1018_58b6, pass1_1018_5b06, pass1_1018_5cc8};
-use crate::block_1018::block_1018_6000::{pass1_1018_642e, pass1_1018_6630, pass1_1018_673c, pass1_1018_6924, pass1_1018_69ac};
-use crate::draw_ops::{draw_line_1018_6444, draw_op_1018_6544};
+use crate::unk::block_1018_5000::{pass1_1018_50ac, pass1_1018_5714, pass1_1018_58b6, pass1_1018_5b06, pass1_1018_5cc8};
+use crate::unk::block_1018_6000::{pass1_1018_642e, pass1_1018_6630, pass1_1018_673c, pass1_1018_6924, pass1_1018_69ac};
+use crate::draw_ops::draw_c::draw_op_1018_6544;
+use crate::draw_ops::draw_b::draw_line_1018_6444;
 
 pub unsafe fn pass1_1018_567c(param_1: *mut u16, param_2: u8) -> *mut u16 {
     *param_1 = 0x389a;

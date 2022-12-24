@@ -1,8 +1,9 @@
-use crate::block_1040::block_1040_6000::pass1_1040_6862;
-use crate::winapp::create_window_1040_7620;
-use crate::draw_ops::get_sys_metrics_1040_8c66;
-use crate::win_ui::{destroy_win_1040_8b7e, dialog_ui_fn_1040_78e2};
-use crate::winapp::create_window_1040_8bea;
+use crate::unk::block_1040_6000::pass1_1040_6862;
+use crate::winapp::winapp_a::create_window_1040_7620;
+use crate::draw_ops::draw_f::get_sys_metrics_1040_8c66;
+use crate::gui::cleanup::destroy_win_1040_8b7e;
+use crate::gui::dialog::dialog_ui_fn_1040_78e2;
+use crate::winapp::winapp_a::create_window_1040_8bea;
 
 pub unsafe fn pass1_1040_6cac(mut param_1: u32)
 
@@ -240,122 +241,6 @@ pub unsafe fn FUN_1040_8266() -> u16
 
 {
     return 0x0;
-}
-
-
-pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
-
-{
-    let mut piVar1: *mut i16;
-    let mut uVar2: u32;
-    let mut iVar3: i16;
-    let mut uVar4: u16;
-    let mut uVar5: u16;
-    let mut in_EDX: u32;
-    let mut paVar6: *mut Struct57;
-    let mut puVar7: *mut u32;
-    let mut in_stack_0000fd88: u16;
-    let mut in_stack_0000fd8a: u16;
-    let mut in_stack_0000feac: u16;
-    let mut in_stack_0000feae: u16;
-    let mut in_stack_0000feb2: u16;
-    let mut in_stack_0000feb4: u16;
-    let mut in_stack_0000feb6: u16;
-    let mut in_stack_0000feb8: u16;
-    let mut uVar9: u16;
-    let mut uVar10: u16;
-    let mut uVar11: u16;
-    let mut in_stack_0000fee0: u16;
-    let mut in_stack_0000fee2: u16;
-    let mut local_104: [i16; 0x80] = [0; 0x80];
-    let mut uStack4: u16;
-    let mut uVar8: u16;
-    let mut paVar12: *mut Struct37;
-    let mut uVar12: *mut Struct37;
-
-    uVar5 = (in_EDX >> 0x10);
-    unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-    paVar12 = param_1;
-    uVar12 = (param_1 >> 0x10);
-    dialog_ui_fn_1040_78e2(param_1);
-    PTR_LOOP_1050_5df6 = (&paVar12.field1_0x4 + 2);
-    if (&paVar12.field_0x94 != 0) {
-        unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&paVar12.field_0x10)), *&paVar12.field_0x94);
-    }
-    get_sys_metrics_1040_8c66(param_1);
-    uStack4 = paVar12.field138_0x98 & 0xf;
-    if (uStack4 == 1) {
-        iVar3 = &paVar12[0x1].field_0x8 - 0xc4;
-        paVar6 = CONCAT22(uVar5, iVar3 >> 0xf);
-        paVar12[0x1].field_0xc = iVar3 / 0x2;
-        load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0xff, local_104,
-                              &DAT_1050_1050);
-        uVar2 = &paVar12[0x1].field_0xc;
-        create_window_1040_8bea(paVar12, uVar12, 0x1, 0x1, uVar2, (uVar2 >> 0x10), CONCAT22(0x1050, local_104));
-        piVar1 = &paVar12[0x1].field_0xc;
-        *piVar1 = *piVar1 + 0x6c;
-        load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0xff, local_104,
-                              &DAT_1050_1050);
-        uVar2 = &paVar12[0x1].field_0xc;
-        uVar10 = uVar2;
-        uVar11 = (uVar2 >> 0x10);
-        uVar9 = 0x2;
-    } else {
-        if (uStack4 != 0x4) {
-            iVar3 = &paVar12[0x1].field_0x8 - 0x58;
-            paVar6 = CONCAT22(uVar5, iVar3 >> 0xf);
-            paVar12[0x1].field_0xc = iVar3 / 0x2;
-            load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0xff, local_104,
-                                  &DAT_1050_1050);
-            uVar2 = &paVar12[0x1].field_0xc;
-            uVar10 = uVar2;
-            uVar11 = (uVar2 >> 0x10);
-            uVar5 = 0x1;
-            uVar9 = 0x1;
-            // TODO: goto LAB_1040_88a5;
-        }
-        iVar3 = &paVar12[0x1].field_0x8 - 0xc4;
-        paVar6 = CONCAT22(uVar5, iVar3 >> 0xf);
-        paVar12[0x1].field_0xc = iVar3 / 0x2;
-        load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0xff, local_104,
-                              &DAT_1050_1050);
-        uVar2 = &paVar12[0x1].field_0xc;
-        create_window_1040_8bea(paVar12, uVar12, 0x1, 0x6, uVar2, (uVar2 >> 0x10), CONCAT22(0x1050, local_104));
-        piVar1 = &paVar12[0x1].field_0xc;
-        *piVar1 = *piVar1 + 0x6c;
-        load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0xff, local_104,
-                              &DAT_1050_1050);
-        uVar2 = &paVar12[0x1].field_0xc;
-        uVar10 = uVar2;
-        uVar11 = (uVar2 >> 0x10);
-        uVar9 = 0x7;
-    }
-    uVar5 = 0;//
-// LAB_1040_88a5:
-    create_window_1040_8bea(paVar12, uVar12, uVar5, uVar9, uVar10, uVar11, CONCAT22(0x1050, local_104));
-    puVar7 = mixed_1010_20ba(paVar6, _u16_1050_0ed0, CONCAT22(in_stack_0000fee0, 0x48), in_stack_0000fd88,
-                             in_stack_0000feac, in_stack_0000feb2, in_stack_0000feb6);
-    uVar5 = (puVar7 >> 0x10);
-    local_104[0] = (puVar7 + 0xa);
-    uStack4 = (puVar7 + 0xc);
-    iVar3 = uStack4 - &paVar12[0x1].field_0xa;
-    paVar6 = (paVar6 & 0xffff0000 | (iVar3 >> 0xf));
-    SetWindowPos16(0x40, &paVar12[0x1].field_0xa, &paVar12[0x1].field_0x8, iVar3 / 0x2,
-                   (local_104[0] - &paVar12[0x1].field_0x8) / 0x2, 0x0, (&paVar12.field1_0x4 + 0x2),
-    );
-    PTR_LOOP_1050_5df4 = (&PTR_LOOP_1050_0000 + 1);
-    unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4);
-    destroy_win_1040_8b7e(param_1);
-    PTR_LOOP_1050_5df6 = null_mut();
-    if (&paVar12[0x1].field_0x10 != 0) {
-        puVar7 = mixed_1010_20ba(paVar6, _u16_1050_0ed0, CONCAT22(in_stack_0000fee2, 0x37), in_stack_0000fd8a,
-                                 in_stack_0000feae, in_stack_0000feb4, in_stack_0000feb8);
-        uVar4 = pass1_1008_ab54(puVar7);
-        if (uVar4 != 0) {
-            PostMessage16(0x0, 0xfc, 0x111, HWND16_1050_0396);
-        }
-    }
-    return PTR_LOOP_1050_5df8;
 }
 
 

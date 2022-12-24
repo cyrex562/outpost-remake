@@ -1,8 +1,8 @@
 use std::os::raw::c_char;
 use std::ptr::null_mut;
 use crate::app_context::AppContext;
-use crate::block_1000::block_1000_2000::pass1_1000_29b5;
-use crate::block_1000::block_1000_3000;
+use crate::unk::block_1000_2000::pass1_1000_29b5;
+use crate::unk::block_1000_3000;
 use crate::globals::DAT_1050_1050;
 use crate::utils::CARRY2;
 
@@ -178,7 +178,7 @@ pub unsafe fn dos3_call_1000_4f20(ctx: &mut AppContext,) -> u16 {
     let mut var3 = false;
     ctx.AH_REG = 0x39; // create subdirectory
     let mut result = swi(ctx, 0x21);
-    // uVar2 = (*pcVar1)(&DAT_1050_1050, unaff_BP + 1);
+    // uVar2 = (*pcVar1)(0x1050, unaff_BP + 1);
     if var3 {
         pass1_1000_29b5(var2);
         return 0xffff;
@@ -193,7 +193,7 @@ pub unsafe fn dos3call_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 
     // Change Current Directory
     ctx.AH_REG = 0x3b;
     let mut result = swi(ctx, 0x21);
-    // u_var5 = (*pc_var2)(&DAT_1050_1050, unaff_bp + 1);
+    // u_var5 = (*pc_var2)(0x1050, unaff_bp + 1);
     let mut u_var3 = u_var5;
     b_var3 = gu_var5 < 0x10;
     if b_var3 && u_var5 == 0x10 {

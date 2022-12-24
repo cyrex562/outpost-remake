@@ -209,7 +209,7 @@ pub unsafe fn pass1_1008_9fb2(
     let mut paVar12: *mut Struct57;
 
     uVar10 = CONCAT31(in_register_00000009, param_5);
-    (param_2 + 0x1008) = &DAT_1050_1050;
+    (param_2 + 0x1008) = 0x1050;
     uVar7 = param_4;
     uVar9 = param_1 + 0xeff0;
     bVar13 = param_1 < 0x1010 || uVar9 < uVar7;

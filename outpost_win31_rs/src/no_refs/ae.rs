@@ -783,7 +783,7 @@ pub unsafe fn pass1_1028_9600(param_1: *mut u8, mut param_2: u32) {
         local_6,
         (puVar1 >> 0x10),
         local_6,
-        &DAT_1050_1050,
+        0x1050,
         (param_2 + 0x11a),
     );
     return;

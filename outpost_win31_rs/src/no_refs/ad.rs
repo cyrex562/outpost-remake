@@ -1,5 +1,5 @@
-use crate::block_1028::block_1028_7000::{pass1_1028_75bc, pass1_1028_767e, pass1_1028_78b8, pass1_1028_7c4e, pass1_1028_7dfc, pass1_1028_7fb6};
-use crate::winapp::post_msg_1028_76da;
+use crate::unk::block_1028_7000::{pass1_1028_75bc, pass1_1028_767e, pass1_1028_78b8, pass1_1028_7c4e, pass1_1028_7dfc, pass1_1028_7fb6};
+use crate::winapp::winapp_b::post_msg_1028_76da;
 
 pub unsafe fn pass1_1028_6e60(param_1: u8, param_2: *mut astruct_97) -> *mut astruct_97 {
     struct_op_1028_d1dc(param_2, 0x32c7);
@@ -354,7 +354,7 @@ pub unsafe fn pass1_1028_6ff6(param_1: *mut StructD, mut param_2: u32, mut param
             in_stack_0000ff8e,
         );
         paVar8 = (paVar8 & 0xffff0000 | paVar12 >> 0x10);
-        pass1_1008_df4a(paVar12, unaff_DI, &DAT_1050_1050);
+        pass1_1008_df4a(paVar12, unaff_DI, 0x1050);
         paVar13 = mixed_1010_20ba(
             paVar8,
             _u16_1050_0ed0,

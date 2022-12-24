@@ -1,7 +1,7 @@
-use crate::block_1040::block_1040_5000::{pass1_1040_5cd6, pass1_1040_5d42, pass1_1040_5dc4, pass1_1040_5eaa};
-use crate::block_1040::block_1040_6000::pass1_1040_6470;
-use crate::win_ui::msg_box_ui_op_1040_64ca;
-use crate::winapp::create_window_1040_6eae;
+use crate::unk::block_1040_5000::{pass1_1040_5cd6, pass1_1040_5d42, pass1_1040_5dc4, pass1_1040_5eaa};
+use crate::unk::block_1040_6000::pass1_1040_6470;
+use crate::resources::msg_box_ui_op_1040_64ca;
+use crate::winapp::winapp_a::create_window_1040_6eae;
 
 
 pub unsafe fn pass1_1040_557c(param_1: *mut StructD, param_2: u8) -> *mut StructD

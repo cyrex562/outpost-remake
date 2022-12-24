@@ -55,7 +55,7 @@ pub unsafe fn pass1_1038_290e(mut param_1: u16 ,param_2: u8,mut param_3: u16 ) -
   if ((param_3 | param_1) != 0) {
     pass1_1038_4918(param_1,param_3 | param_1,CONCAT22(param_3,param_1));
   }
-  pass1_1038_7a76(_PTR_LOOP_1050_5a64,unaff_SI,unaff_DI,&DAT_1050_1050);
+  pass1_1038_7a76(_PTR_LOOP_1050_5a64,unaff_SI,unaff_DI,0x1050);
   return 0x1;
 }
 
@@ -767,7 +767,7 @@ pub unsafe fn pass1_1038_89f8(param_1: *mut Struct903,mut param_2: u16 ,mut para
       pass1_1040_b54a(param_4,param_1,param_2,param_3);
       return;
     }
-    msg_box_ui_op_1038_8a3a(0x0,param_4,param_1,&DAT_1050_1050);
+    msg_box_ui_op_1038_8a3a(0x0,param_4,param_1,0x1050);
   }
   return;
 }

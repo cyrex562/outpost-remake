@@ -1,5 +1,5 @@
-use crate::block_1010::block_1010_6000::{pass1_1010_6ca2, switch_1010_6646};
-use crate::block_1010::block_1010_7000::{pass1_1010_7818, ui_op_1010_79aa, unk_win_op_1010_7300};
+use crate::unk::block_1010_6000::{pass1_1010_6ca2, switch_1010_6646};
+use crate::unk::block_1010_7000::{pass1_1010_7818, ui_op_1010_79aa, unk_win_op_1010_7300};
 
 pub unsafe fn struct_1010_5f1e(mut param_1: u16, param_2: *mut astruct_73, param_3: *mut c_char) {
     let mut uVar1: u16;

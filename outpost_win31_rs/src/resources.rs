@@ -1,3 +1,13 @@
+use std::os::raw::c_char;
+use crate::globals::PTR_LOOP_1050_1040;
+use crate::structs::struct_57::Struct57;
+use crate::structs::struct_903::Struct903;
+use crate::unk::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
+use crate::unk::block_1000_3000::pass1_1000_3cea;
+use crate::unk::block_1040_b000::pass1_1040_b0bc;
+use crate::utils::CONCAT22;
+use crate::winapi16::MessageBox16;
+
 pub unsafe fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812) {
     let mut BVar1: bool;
     let mut h_rsrc: HRSRC16;
@@ -56,10 +66,10 @@ pub unsafe fn free_rsrc_1010_4b3e(param_1: *mut StructD) {
     param_1.address_offset_field_0x0 = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
     pstructd_1.address_offset_field_0x2 = 0x1010;
     if (pstructd_1.field_0x2a != 0) {
-        unaff_CS = SUB42(s_tile2_bmp_1050_1538, 0x0);
+        unaff_CS = SUB42(0x1538, 0x0);
         BVar6 = GlobalUnlock16(&pstructd_1.field_0x2a);
         if (BVar6 == 0) {
-            unaff_CS = SUB42(s_tile2_bmp_1050_1538, 0x0);
+            unaff_CS = SUB42(0x1538, 0x0);
             FreeResource16(&pstructd_1.field_0x2a);
         }
     }
@@ -167,4 +177,207 @@ pub unsafe fn load_string_1010_84e0(
         HINSTANCE16_1050_038c,
     );
     return;
+}
+
+
+pub unsafe fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
+
+{
+  let mut in_buf_len_5: i16;
+  let mut in_register_0000000a: u16;
+  let mut paVar1: *mut Struct57;
+  let mut uVar2: u16;
+  let mut msg_box_title: [u8;0x102] = [0;0x102];
+  let mut local_104: [u8;0x102] = [0;0x102];
+
+  paVar1 = CONCAT22(in_register_0000000a,param_2);
+  mem_op_1000_179c(0x1000,paVar1);
+  in_buf_len_5 = paVar1;
+  load_string_1010_84e0
+            (_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x3ff, msg_box_title, 0x1050);
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  // uVar2 = (param_3 >> 0x10);
+  MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
+               (param_3 + 0x6));
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
+               (param_3 + 0x6));
+  fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
+  return;
+}
+
+
+pub unsafe fn msg_box_op_1038_8dda(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
+
+{
+  let mut in_buf_len_5: i16;
+  let mut in_register_0000000a: u16;
+  let mut paVar1: *mut Struct57;
+  let mut uVar2: u16;
+  let mut local_206: [u8;0x102] = [0;0x102];
+  let mut local_104: [u8;0x102] = [0;0x102];
+
+  paVar1 = CONCAT22(in_register_0000000a,param_2);
+  mem_op_1000_179c(0x1000,paVar1);
+  in_buf_len_5 = paVar1;
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,0x1050);
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  uVar2 = (param_3 >> 0x10);
+  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
+               (param_3 + 0x6));
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
+               (param_3 + 0x6));
+  fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
+  return;
+}
+
+
+pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
+
+{
+  let mut in_buf_len_5: i16;
+  let mut in_register_0000000a: u16;
+  let mut paVar1: *mut Struct57;
+  let mut local_206: [u8;0x102] = [0;0x102];
+  let mut local_104: [u8;0x102] = [0;0x102];
+
+  paVar1 = CONCAT22(in_register_0000000a,param_2);
+  mem_op_1000_179c(0x1000,paVar1);
+  in_buf_len_5 = paVar1;
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,0x1050);
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
+               (param_3 + 0x6));
+  fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
+  return;
+}
+
+
+pub unsafe fn msg_box_op_1040_a85a(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
+
+{
+  let mut in_buf_len_5: i16;
+  let mut in_register_0000000a: u16;
+  let mut paVar1: *mut Struct57;
+  let mut local_206: [u8;0x102] = [0;0x102];
+  let mut local_104: [u8;0x102] = [0;0x102];
+
+  paVar1 = CONCAT22(in_register_0000000a,param_2);
+  mem_op_1000_179c(0x1000,paVar1);
+  in_buf_len_5 = paVar1;
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,0x1050);
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
+  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
+               (param_3 + 0x6));
+  fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
+  return;
+}
+
+
+pub unsafe fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903, mut param_4: u16 )
+
+{
+  let mut in_register_0000000a: u16;
+  let mut paVar1: *mut Struct57;
+  let mut local_20a: [u8;0x102] = [0;0x102];
+  let mut pcStack264: *mut c_char;
+  let mut sStack262: i16;
+  let mut local_104: [u8;0x102] = [0;0x102];
+
+  paVar1 = CONCAT22(in_register_0000000a,param_2);
+  mem_op_1000_179c(0x1000,paVar1);
+  sStack262 = paVar1;
+  pcStack264 = param_1;
+  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,sStack262);
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(sStack262,pcStack264),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
+  pass1_1000_3cea(CONCAT22(sStack262,pcStack264),CONCAT22(0x1050,local_104));
+  load_string_1010_84e0
+            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x101,local_20a,0x1050);
+  MessageBox16(0x0,CONCAT22(0x1050,local_20a),CONCAT22(sStack262,pcStack264),
+               (param_3 + 0x6));
+  fn_ptr_1000_17ce(CONCAT22(sStack262,pcStack264));
+  return;
+}
+
+
+pub unsafe fn pas1_1040_29c2(mut param_1: u16, mut param_2: u16, param_3: *mut Struct57, mut param_4: u32, mut param_5: u16) -> *mut Struct57
+
+{
+    let mut iVar1: *mut Struct57;
+    let mut uVar1: *mut Struct57;
+
+    pass1_1040_b0bc(param_3, param_4, CONCAT22(param_5, 0x157));
+    uVar1 = (param_3 >> 0x10);
+    iVar1 = param_3;
+    param_3.field0_0x0 = 0x2e26;
+    iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
+    load_string_1010_84ac(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x64b);
+    iVar1[0x1].field3_0x6 = param_1;
+    iVar1[0x1].field4_0x8 = param_2;
+    load_string_1010_84ac(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x64a);
+    iVar1[0x1].field5_0xa = param_1;
+    iVar1[0x1].field6_0xc = param_2;
+    return param_3;
 }

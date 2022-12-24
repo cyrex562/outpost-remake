@@ -1,8 +1,10 @@
-use crate::block_1020::block_1020_2000::{destroy_icon_1020_2c88, pass1_1020_2286, pass1_1020_239c, pass1_1020_2488, pass1_1020_2594, pass1_1020_27b0, pass1_1020_2838, pass1_1020_28fc};
-use crate::block_1020::block_1020_3000::pass1_1020_3c8c;
-use crate::draw_ops::{draw_line_1020_229c, load_draw_op_1020_2ede, mixed_draw_op_1020_3fa0};
+use crate::unk::block_1020_2000::{pass1_1020_2286, pass1_1020_239c, pass1_1020_2488, pass1_1020_2594, pass1_1020_27b0, pass1_1020_2838, pass1_1020_28fc};
+use crate::unk::block_1020_3000::pass1_1020_3c8c;
+use crate::draw_ops::draw_c::draw_line_1020_229c;
+use crate::draw_ops::draw_d::{load_draw_op_1020_2ede, mixed_draw_op_1020_3fa0};
 use crate::utils::CONCAT22;
-use crate::win_ui::destroy_window_1020_3b3e;
+use crate::gui::cleanup::destroy_icon_1020_2c88;
+use crate::gui::cleanup::destroy_window_1020_3b3e;
 use crate::windef16::{HDC16, HGDIOBJ16, HPEN16};
 
 pub unsafe fn pass1_1020_24f2(param_1: *mut StructD, param_2: u8) -> *mut StructD {

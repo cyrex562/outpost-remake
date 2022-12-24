@@ -263,7 +263,7 @@ pub unsafe fn string_1010_1722(mut param_1: u16, mut param_2: u16, mut param_3: 
         uVar1 = (pcVar2 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(0x1050, local_52), pcVar2);
         pcVar2 = CONCAT22(uVar1, local_52);
-        uVar3 = &DAT_1050_1050;
+        uVar3 = 0x1050;
     } else {
         pcVar2 = pass1_1038_4d28(*(param_1 + 0x2e));
         uVar3 = (pcVar2 >> 0x10);
@@ -756,7 +756,7 @@ pub unsafe fn pass1_1010_3d0a(mut param_1: i16, mut param_2: u16, mut param_3: i
 
 pub unsafe fn pass1_1010_3d38(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     param_1 = (param_1 & 0xffff0000 | (param_1 - 0xa));
-    pass1_1010_3bde(param_1, &DAT_1050_1050);
+    pass1_1010_3bde(param_1, 0x1050);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
@@ -764,7 +764,7 @@ pub unsafe fn pass1_1010_3d38(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 pub unsafe fn FUN_1010_3d44(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
-    pass1_1010_3bde(param_2, &DAT_1050_1050);
+    pass1_1010_3bde(param_2, 0x1050);
     if ((param_3 & 1) != 0) {
         fn_ptr_1000_17ce(param_2);
     }
@@ -773,7 +773,7 @@ pub unsafe fn FUN_1010_3d44(mut param_1: u16, param_2: *mut StructD, param_3: u8
 
 
 pub unsafe fn pass1_1010_3e06(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    pass1_1010_3dc8(param_1, &DAT_1050_1050);
+    pass1_1010_3dc8(param_1, 0x1050);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
