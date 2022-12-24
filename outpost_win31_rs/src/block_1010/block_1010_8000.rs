@@ -1,3 +1,4 @@
+use crate::sys_ops;
 
 pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     let mut uVar1: u16;
@@ -27,7 +28,7 @@ pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     }
     pass1_1000_3cea(CONCAT22(0x1050, local_106), puVar6);
     pass1_1000_3cea(CONCAT22(0x1050, local_106), CONCAT22(0x1050, local_306));
-    pcVar5 = set_err_mode_1010_8b14(param_1, CONCAT22(0x1050, local_106));
+    pcVar5 = sys_ops::set_err_mode_1010_8b14(param_1, CONCAT22(0x1050, local_106));
     uVar2 = (pcVar5 >> 0x10);
     if ((pcVar5 == local_106) && (uVar2 == &DAT_1050_1050)) {
         msg_box_op_1010_8bb4(uVar3, uVar4, pcVar5 & 0xffff | 0x10500000);
@@ -99,7 +100,7 @@ pub unsafe fn FUN_1010_830a(
     uVar9 = param_4;
     uVar10 = (param_4 >> 0x10);
     if ((iVar6 + 0x10) == 1) {
-        pcVar7 = set_err_mode_1010_8b14(param_4, (iVar6 + 0x12));
+        pcVar7 = sys_ops::set_err_mode_1010_8b14(param_4, (iVar6 + 0x12));
         paVar5 = (param_2 & 0xffff0000 | pcVar7 >> 0x10);
         iStack10 = pcVar7;
         iStack8 = (pcVar7 >> 0x10);
@@ -138,7 +139,7 @@ pub unsafe fn FUN_1010_830a(
         } else {
             iVar6 = param_5 * 0x10;
             if ((iVar6 + 0x10) == 0x3) {
-                uVar8 = set_err_mode_1010_8b14(param_4, (iVar6 + 0x12));
+                uVar8 = sys_ops::set_err_mode_1010_8b14(param_4, (iVar6 + 0x12));
                 local_2e.field1_0x2 = (uVar8 >> 0x10);
                 param_1 = uVar8;
                 uVar2 = 0x63f0;
@@ -149,7 +150,7 @@ pub unsafe fn FUN_1010_830a(
                 }
             } else {
                 //        if ((param_5 * 0x10 + 0x10) != 0x4) goto LAB_1010_8473;
-                uVar8 = set_err_mode_1010_8b14(param_4, (param_5 * 0x10 + 0x12));
+                uVar8 = sys_ops::set_err_mode_1010_8b14(param_4, (param_5 * 0x10 + 0x12));
                 param_1 = uVar8;
             }
         }
@@ -245,7 +246,7 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
         puVar2 = paVar3;
     } else {
         iVar4 = param_2 * 0x4;
-        paVar6 = set_err_mode_1010_8b14(param_1, (iVar4 + 0x172a));
+        paVar6 = sys_ops::set_err_mode_1010_8b14(param_1, (iVar4 + 0x172a));
         paVar3 = (paVar3 & 0xffff0000 | paVar6 >> 0x10);
         uVar4 = paVar6;
         uVar1 = (paVar6 >> 0x10);
@@ -264,37 +265,6 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
                                     // LAB_1010_8869:
     uVar6.field1662_0x680 = param_2;
     return;
-}
-
-
-
-pub unsafe fn set_err_mode_1010_8b14(mut param_1: u32, mut param_2: u32) -> u32 {
-    let mut mode: u16;
-    let mut uVar1: u16;
-    let mut uVar2: u16;
-    let mut uVar3: u16;
-    let mut lVar4: i32;
-    let mut local_a: [u8; 0x8] = [0; 0x8];
-
-    uVar3 = (param_1 >> 0x10);
-    pass1_1008_5784(CONCAT22(0x1050, local_a), (param_1 + 0xe84));
-    mode = SetErrorMode16(SEM_FAILCRITICALERRORS);
-    loop {
-        lVar4 = pass1_1008_5b12(CONCAT22(0x1050, local_a));
-        if (lVar4 == 0) {
-            SetErrorMode16(mode);
-            return param_2;
-        }
-        uVar1 = param_1 + 0xa82;
-        unk_str_op_1000_3d3e((param_1 & 0xffff0000 | uVar1), *(lVar4 + 0x4));
-        pass1_1000_3cea(param_1 & 0xffff0000 | uVar1, param_2);
-        uVar2 = dos3_call_1000_51aa(uVar1, uVar3, 1);
-        if uVar2 == 0 {
-            break;
-        }
-    }
-    SetErrorMode16(mode);
-    return param_1 & 0xffff0000 | uVar1;
 }
 
 

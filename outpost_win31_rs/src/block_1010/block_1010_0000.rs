@@ -55,15 +55,6 @@ pub unsafe fn pass1_1010_0052(param_1: *mut u16, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn enum_child_windows_1010_01be() {
-    if (PTR_LOOP_1050_0010.is_null()) {
-        let func = MakeProcInstance16(HINSTANCE16_1050_038c, win_ui_op_1010_0240);
-        EnumChildWindows1(0x0, func, func);
-        FreeProcInstance16(func);
-    }
-    return;
-}
-
 pub unsafe fn pass1_1010_01f8(mut param_1: u32, mut param_2: u32, mut param_3: i16) {
     let mut iVar1: i16;
     let mut iVar2: i16;

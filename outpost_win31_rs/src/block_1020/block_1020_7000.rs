@@ -1,5 +1,7 @@
 // WARNING: Unable to use type for symbol uVar3
 
+use crate::draw_ops;
+
 pub unsafe fn unk_win_ui_op_1020_717e(
     mut param_1: u16,
     mut param_2: u16,
@@ -270,7 +272,7 @@ pub unsafe fn struct_1020_7554(
     let mut in_stack_0000ffd4: u16;
 
     paVar2 = CONCAT22(in_register_0000000a, param_1);
-    unk_draw_op_1020_7f7a(param_2, 0x5, CONCAT22(param_4, param_3), param_5);
+    draw_ops::unk_draw_op_1020_7f7a(param_2, 0x5, CONCAT22(param_4, param_3), param_5);
     uVar3 = (param_2 >> 0x10);
     iVar2 = param_2;
     iVar2[0x1].field5_0xc = 0;
@@ -433,7 +435,7 @@ pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut
 
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0xa)), param_3);
     if (param_2 != 0) {
-        draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));
+        draw_ops::draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));
     }
     return;
 }
@@ -441,7 +443,7 @@ pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut
 pub unsafe fn pass1_1020_79e4(mut param_1: u32) {
     let mut in_DX: u16;
 
-    draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));
+    draw_ops::draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));
     return;
 }
 
@@ -535,200 +537,3 @@ pub unsafe fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut 
 
 // WARNING: Unable to use type for symbol puVar2
 // WARNING: Unable to use type for symbol iVar1
-
-pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE) {
-    let mut y_00: i16;
-    let mut str46_len: i16;
-    let mut x: i16;
-    let mut iVar3: i16;
-    let mut brush_handle_2: HGDIOBJ16;
-    let mut width: i16;
-    let mut iVar9: i16;
-    let mut puVar6: *mut u32;
-    let mut iVar5: i16;
-    let mut handle: HPEN16;
-    let mut string_1: *mut c_char;
-    let mut y: i16;
-    let mut extraout_DX: u16;
-    let mut iVar6: i16;
-    let mut struct_e_1: *mut StructE;
-    let mut iVar7: *mut astruct_781;
-    let mut uVar7: u16;
-    let mut uVar8: u16;
-    let mut DVar1: u32;
-    let mut rect: *mut RECT16;
-    let mut hdc: HDC16;
-    let mut iVar2: i16;
-    let mut string_46: *mut c_char;
-    let mut local_rect_1: i16;
-    let mut iStack18: i16;
-    let mut iStack16: i16;
-    let mut iStack14: i16;
-    let mut hpalette_12: HPALETTE16;
-    let mut paStack10: *mut astruct_13;
-    let mut win_hdc_1: HDC16;
-    let mut is_iconic: bool;
-    let mut puVar2: *mut u32;
-    let mut style: i16;
-    let mut iVar8: i16;
-    let mut iVar1: i16;
-    let mut fn_ptr_1: *mut *mut code;
-
-    uVar7 = (struct_e_param_1 >> 0x10);
-    struct_e_1 = struct_e_param_1;
-    is_iconic = IsIconic16(struct_e_1.hwnd16_field4_0x4);
-    if ((is_iconic == 0) || (PTR_LOOP_1050_0010.is_null() == false)) {
-        win_hdc_1 = GetWindowDC16(struct_e_1.hwnd16_field4_0x4);
-        paStack10 = (_PTR_LOOP_1050_4230 + 0xe);
-        hpalette_12 = palette_op_1008_4e08(&win_hdc_1, param_1, paStack10, CONCAT22(0x1050, &win_hdc_1));
-        GetWindowRect16(
-            CONCAT22(0x1050, &local_rect_1),
-            struct_e_1.hwnd16_field4_0x4,
-        );
-        x = (iStack16 - local_rect_1) - 0x1;
-        y = (iStack14 - iStack18) - 0x1;
-        iVar1 = struct_e_1.field12_0x12;
-        iVar3 = y;
-        if (is_iconic == 0) {
-            iVar3 = struct_e_1.field10_0xe - struct_e_1.field12_0x12;
-        }
-        rect = &DAT_1050_1050;
-        hdc = win_hdc_1;
-        iVar2 = y;
-        brush_handle_2 = GetStockObject16(BLACK_BRUSH);
-        FillRect16(brush_handle_2, rect, hdc);
-        puVar2 = struct_e_1.field5_0x6;
-        uVar8 = (puVar2 >> 0x10);
-        iVar7 = puVar2;
-        puVar6 = &iVar7.field_0xe0;
-        style = iVar7.field226_0xe2;
-        width = puVar6;
-        fn_ptr_1 = (*puVar6 + 0x24);
-        (**fn_ptr_1)(s_tile2_bmp_1050_1538, width, style, 0x0, 0x0, iVar2);
-        iVar5 = (-(puVar6 == 0) & 0x1e) + 0x25;
-        handle = CreatePen16(CONCAT22(0x100, iVar5), width, style);
-        brush_handle_2 = SelectObject16(handle, win_hdc_1);
-        MoveTo16(0x0, 0x0, win_hdc_1);
-        LineTo16(0x0, x, win_hdc_1);
-        LineTo16(y, x, win_hdc_1);
-        LineTo16(y, 0x0, win_hdc_1);
-        string_1 = LineTo16(0x0, 0x0, win_hdc_1);
-        if (is_iconic == 0) {
-            y_00 = struct_e_1.field10_0xe - struct_e_1.field12_0x12;
-            MoveTo16(y_00, 0x0, win_hdc_1);
-            string_1 = LineTo16(y_00, x, win_hdc_1);
-        }
-        fn_ptr_1 = (*struct_e_1.field5_0x6 + 0x18);
-        (**fn_ptr_1)(s_tile2_bmp_1050_1538);
-        string_46 = CONCAT22(extraout_DX, string_1);
-        if (*string_1 != '\0') {
-            SetBkColor16(0x0, win_hdc_1);
-            SetTextColor16(CONCAT22(0x100, iVar5), win_hdc_1);
-            str46_len = lstrlen16(string_46);
-            DVar1 = GetTextExtent16(
-                str46_len,
-                CONCAT13((extraout_DX >> 0x8), CONCAT12(extraout_DX, string_1)),
-                win_hdc_1,
-            );
-            iVar6 = (DVar1 >> 0x10);
-            if (is_iconic == 0) {
-                iVar9 = (iVar3 - iVar1) / 0x2 - iVar6 / 0x2;
-                iVar8 = x / 0x2 - DVar1 / 0x2;
-            } else {
-                iVar9 = y / 0x2 - iVar6 / 0x2;
-                iVar8 = 0x2;
-            }
-            TextOut16(
-                iVar9,
-                CONCAT22(extraout_DX, string_1),
-                iVar9,
-                iVar8,
-                win_hdc_1,
-            );
-        }
-        hpalette_12 = SelectPalette16(0x0, hpalette_12, win_hdc_1);
-        DeleteObject16(hpalette_12);
-        SelectObject16(brush_handle_2, win_hdc_1);
-        DeleteObject16(handle);
-        ReleaseDC16(win_hdc_1, struct_e_1.hwnd16_field4_0x4);
-    }
-    return;
-}
-
-
-
-pub unsafe fn unk_draw_op_1020_7f7a(
-    param_1: *mut astruct_20,
-    mut param_2: u16,
-    mut param_3: u32,
-    mut param_4: u16,
-) {
-    let mut HVar1: HGDIOBJ16;
-    let mut hcursor2: HCURSOR16;
-    let mut in_EDX: u32;
-    let mut uVar3: u16;
-    let mut paVar2: *mut Struct57;
-    let mut struct_1: *mut astruct_20;
-    let mut uVar4: u16;
-    let mut unaff_SS: u16;
-    let mut paVar4: *mut astruct_20;
-    let mut puVar5: *mut u32;
-    let mut in_stack_0000fe90: u16;
-    let mut in_stack_0000ffb4: u16;
-    let mut in_stack_0000ffba: u16;
-    let mut in_stack_0000ffbc: u16;
-    let mut in_stack_0000ffbe: u16;
-    let mut in_stack_0000ffe8: u16;
-    let mut uVar1: u16;
-
-    uVar3 = (in_EDX >> 0x10);
-    paVar4 = unk_draw_op_1008_61b2(
-        in_stack_0000ffbc,
-        param_1,
-        param_2,
-        param_3,
-        CONCAT22(param_4, param_3),
-    );
-    paVar2 = CONCAT22(uVar3, (paVar4 >> 0x10));
-    uVar4 = (param_1 >> 0x10);
-    struct_1 = param_1;
-    (struct_1 + 1).offset_0x0 = 0x389a;
-    struct_1[0x1].base_0x2 = 0x1008;
-    (struct_1 + 1).offset_0x0 = 0x3aa8;
-    struct_1[0x1].base_0x2 = 0x1008;
-    struct_1[0x1].field2_0x4 = 0;
-    struct_1[0x1].field3_0x8 = 0;
-    struct_1[0x1].field4_0xa = 0;
-    param_1.offset_0x0 = 0x82bc;
-    struct_1.base_0x2 = 0x1020;
-    (struct_1 + 1).offset_0x0 = 0x8358;
-    struct_1[0x1].base_0x2 = 0x1020;
-    unk_str_op_1000_3d3e(
-        (param_1 & 0xffff0000 | ZEXT24(&struct_1.field60_0x5b)),
-        s_VrMode_1050_4422,
-    );
-    HVar1 = GetStockObject16(HOLLOW_BRUSH);
-    struct_1.hgdiobj_field_0xc6 = HVar1;
-    hcursor2 = LoadCursor16(0x7f00, 0x0);
-    struct_1.hcursor_field_0xc4 = hcursor2;
-    struct_1.field150_0xc8 = 0x2028;
-    struct_1.field139_0xac = 0x47000000;
-    struct_1.field145_0xbc = (param_3 + 0x8);
-    puVar5 = mixed_1010_20ba(
-        paVar2,
-        _u16_1050_0ed0,
-        CONCAT22(in_stack_0000ffe8, 0x48),
-        in_stack_0000fe90,
-        in_stack_0000ffb4,
-        in_stack_0000ffba,
-        in_stack_0000ffbe,
-    );
-    uVar1 = (puVar5 >> 0x10);
-    struct_1.field141_0xb4 = 0;
-    struct_1.field142_0xb6 = 0;
-    struct_1.field143_0xb8 = (puVar5 + 0xa);
-    struct_1.field144_0xba = (puVar5 + 0xc);
-    struct_1.field151_0xca = param_3;
-    win_ui_reg_class_1008_96d2(param_1);
-    return;
-}

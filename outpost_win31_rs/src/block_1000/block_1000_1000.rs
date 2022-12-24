@@ -10,7 +10,7 @@ use crate::block_1000::block_1000_5000::pass1_1000_52be;
 use crate::mem_ops::mem_op_1000_1532;
 use crate::structs::struct_7::Struct7;
 use crate::structs::struct_d::StructD;
-use crate::sys_ops::_SHI_INVOKEERRORHANDLER1;
+use crate::os_base::_SHI_INVOKEERRORHANDLER1;
 use crate::winbase::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
 use crate::windef::HGLOBAL16;
 
@@ -169,37 +169,6 @@ pub unsafe fn mem_op_1000_14f2(
         }
     }
     return 0x0;
-}
-
-pub unsafe fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
-    let mut uVar1: u16;
-    let mut uVar3: u32;
-    let mut uStack12: u16;
-    let mut uStack10: u16;
-    let mut uStack8: u16;
-    let mut uVar2: u16;
-
-    uStack12 = 0;
-    uStack10 = 0;
-    uStack8 = 0x8;
-    if ((param_2 < 0x9) && (param_2 < 0x8 || (param_1 == 0))) {
-        while ((param_2 < uStack8) || (param_2 <= uStack8 && (param_1 <= uStack10))) {
-            loop {
-                uVar3 = GlobalDOSAlloc16(CONCAT22(uStack8, uStack10));
-                uVar1 = uVar3;
-                if (uVar1 == 0) {
-                    break;
-                }
-                // *NULL = 0;
-                u16_1050_0002 = uStack12;
-                uStack12 = uVar1;
-            }
-            uVar2 = uStack8 & 0x1;
-            uStack8 >>= 0x1;
-            uStack10 = uStack10 >> 0x1 | (uVar2 != 0) << 0xf;
-        }
-    }
-    return uStack12 << 0x10;
 }
 
 pub unsafe fn mem_op_1000_160a(param_1: *mut StructD) -> *const u8 {

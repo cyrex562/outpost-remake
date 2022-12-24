@@ -31,6 +31,10 @@ mod windef;
 mod dos_interrupt;
 mod file_ops;
 mod mem_address;
+mod resources;
+mod draw_ops;
+mod os_base;
+mod winapp;
 
 
 pub unsafe fn main()

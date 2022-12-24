@@ -166,65 +166,6 @@ pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
   return param_1;
 }
 
-pub unsafe fn unk_win_ui_op_1038_ac38(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,hdc_param_5: HDC16)
-
-{
-  let mut IVar1: i16;
-  let mut uVar3: u32;
-  let mut extraout_DX: u16;
-  let mut uVar6: u32;
-  let mut uVar4: u8;
-  let mut iVar1: *mut astruct_46;
-  let mut iVar2: *mut astruct_786;
-  let mut uVar2: u16;
-  let mut uVar5: u16;
-  let mut uVar1: u16;
-
-  GetStockObject16(BLACK_BRUSH);
-  if (_u16_1050_5b78 == 0) {
-    uVar6 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
-    uVar1 = (uVar6 >> 0x10);
-    iVar2 = uVar6;
-    _u16_1050_5b6c = CONCAT12(iVar2.field_0x3ec,CONCAT11(iVar2.field_0x3ed,iVar2.field_0x3ee));
-    _u16_1050_5b70 = CONCAT12(iVar2.field_0x3e4,CONCAT11(iVar2.field_0x3e5,iVar2.field_0x3e6));
-    _u16_1050_5b74 = CONCAT12(iVar2.field_0x3f8,CONCAT11(iVar2.field_0x3f9,iVar2.field_0x3fa));
-    _u16_1050_5b78 = CONCAT12(iVar2.field_0x94,CONCAT11(iVar2.field_0x95,iVar2.field_0x96));
-  }
-  if (param_4 < 0x4) {//
-// LAB_1038_acf0:
-    IVar1 = GetDlgCtrlID16(param_3);
-    if (IVar1 == 0xfd4) {
-      uVar2 = _u16_1050_5b70;
-      uVar5 = (_u16_1050_5b70 >> 0x10);
-  // TODO: goto LAB_1038_ad0e;
-    }
-    if (IVar1 != 0xfd5) {
-      if (IVar1 == 0xfd6) {
-        uVar2 = _u16_1050_5b6c;
-        uVar5 = (_u16_1050_5b6c >> 0x10);
-    // TODO: goto LAB_1038_ad0e;
-      }
-      if (IVar1 == 0xfd7) {
-        uVar2 = _u16_1050_5b74;
-        uVar5 = (_u16_1050_5b74 >> 0x10);
-    // TODO: goto LAB_1038_ad0e;
-      }
-    }
-  }
-  else if (param_4 != 0x4) {
-    if ((param_4 == 0x4) || (0x1 < param_4 - 0x5)) {
-      return;
-    }
-// TODO: goto LAB_1038_acf0;
-  }
-  uVar2 = _u16_1050_5b78;
-  uVar5 = (_u16_1050_5b78 >> 0x10);//
-// LAB_1038_ad0e:
-  SetTextColor16(CONCAT22(uVar5,uVar2),hdc_param_5);
-  SetBkColor16(0x1000000,hdc_param_5);
-  return;
-}
-
 
 pub unsafe fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 

@@ -1,35 +1,3 @@
-
-pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
-    let mut uVar1: u16;
-    let mut local_106: [u8; 0x100] = [0; 0x100];
-
-    if (PTR_LOOP_1050_02ec.is_null() == false) {
-        if (DAT_1050_02ee == 0xffff) {
-            uVar1 = pass1_1000_3ec0(0x2f4, &DAT_1050_1050);
-            DAT_1050_02ee = ((param_1 | uVar1) != 0);
-        }
-        if (DAT_1050_02ee != 0) {
-            wvsprintf16(
-                &stack0x0008,
-                CONCAT22(param_2, 0x1050),
-                CONCAT22(local_106, (param_2 >> 0x10)),
-            );
-            OutputDebugString16(CONCAT22(0x1050, local_106));
-            OutputDebugString16(s__1050_02fa);
-            if (_PTR_LOOP_1050_02f0 != 0) {
-                pass1_1000_2b5c(
-                    _PTR_LOOP_1050_02f0,
-                    (_PTR_LOOP_1050_02f0 >> 0x10),
-                    0x2fd,
-                    &DAT_1050_1050,
-                );
-                pass1_1000_2f48(_PTR_LOOP_1050_02f0);
-            }
-        }
-    }
-    return;
-}
-
 pub unsafe fn str_op_1008_60e8(mut param_1: u16, param_2: *mut c_char) -> u16 {
     let mut uVar1: u16;
     let mut in_register_0000000a: u16;

@@ -546,62 +546,6 @@ pub unsafe fn enable_window_1038_9cec(param_1: *mut u8,param_2: *mut Struct903,m
 }
 
 
-pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10,mut param_2: i16,mut param_3: u16 ,in_hdc_param_4: u16,mut param_5: u16 )
-
-{
-  let mut bVar1: bool;
-  let mut local_brush_handle: HBRUSH16;
-   let mut struct10_5: *mut astruct_10;
-   let mut struct10_5_hi: *mut astruct_10;
-  let mut uVar3: u32;
-  let mut uStack14: u16;
-  let mut puVar1: *mut u16;
-  let mut uVar2: u16;
-  let mut iVar2: *mut astruct_749;
-
-  struct10_5_hi = (in_struct_1 >> 0x10);
-  struct10_5 = in_struct_1;
-  if (struct10_5.brush_handle_field_0x8e == 0) {
-    local_brush_handle = CreateSolidBrush16(WHITE_BRUSH);
-    struct10_5.brush_handle_field_0x8e = local_brush_handle;
-  }
-  if (_u16_1050_5b64 == 0) {
-    uVar3 = pass1_1008_4d72((_PTR_LOOP_1050_4230 + 0xe));
-    uVar2 = (uVar3 >> 0x10);
-    iVar2 = uVar3;
-    _u16_1050_5b64 = CONCAT12(iVar2.field_0x94,CONCAT11(iVar2.field_0x95,iVar2.field_0x96));
-    u16_1050_5b68 = CONCAT11(iVar2.field_0x3e5,iVar2.field_0x3e6);
-    u16_1050_5b6a = iVar2.field996_0x3e4;
-  }
-  if (0x5 < param_3) {
-    if (param_3 != 0x6) {
-      return;
-    }
-    bVar1 = false;
-    // for (uStack14 = 0; puVar1 = &struct10_5.field295_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14;
-    //     uStack14 += 1)
-    uStack14 = 0;
-    puVar1 = struct10_5.fiel295_0x128;
-    while uStack14 <= *puvar1 && *puvar1 != uStack14
-
-        {
-      if ((&struct10_5.field_0x94 + uStack14 * 0x2) == param_2) {
-        bVar1 = true;
-        break;
-      }
-      uStack14 += 1;
-    }
-    if (bVar1) {
-      u16_1050_5b64 = u16_1050_5b68;
-      u16_1050_5b66 = u16_1050_5b6a;
-    }
-  }
-  SetTextColor16(CONCAT22(u16_1050_5b66,u16_1050_5b64),in_hdc_param_4);
-  SetBkColor16(0x1000000,in_hdc_param_4);
-  return;
-}
-
-
 pub unsafe fn pass1_1038_9ed4(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
