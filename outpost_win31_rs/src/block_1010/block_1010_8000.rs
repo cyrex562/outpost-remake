@@ -1,4 +1,4 @@
-use crate::sys_ops;
+use crate::{sys_ops, win_ui};
 
 pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     let mut uVar1: u16;
@@ -31,7 +31,7 @@ pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     pcVar5 = sys_ops::set_err_mode_1010_8b14(param_1, CONCAT22(0x1050, local_106));
     uVar2 = (pcVar5 >> 0x10);
     if ((pcVar5 == local_106) && (uVar2 == &DAT_1050_1050)) {
-        msg_box_op_1010_8bb4(uVar3, uVar4, pcVar5 & 0xffff | 0x10500000);
+        win_ui::msg_box_op_1010_8bb4(uVar3, uVar4, pcVar5 & 0xffff | 0x10500000);
     }
     fn_ptr_1000_17ce(*param_1);
     uVar1 = str_op_1008_60e8(uVar2, pcVar5);
@@ -106,7 +106,7 @@ pub unsafe fn FUN_1010_830a(
         iStack8 = (pcVar7 >> 0x10);
         uVar2 = 0x63f0;
         if (((iVar6 + 0x12) == iStack10) && ((iVar6 + 0x14) == iStack8)) {
-            msg_box_op_1010_8bb4(uVar9, uVar10, pcVar7);
+            win_ui::msg_box_op_1010_8bb4(uVar9, uVar10, pcVar7);
             return 0x0;
         }
         puVar2 = &local_2e;
@@ -145,7 +145,7 @@ pub unsafe fn FUN_1010_830a(
                 uVar2 = 0x63f0;
                 if (((iVar6 + 0x12) == param_1) && ((iVar6 + 0x14) == local_2e.field1_0x2)) {
                     local_2e.field0_0x0 = param_1;
-                    msg_box_op_1010_8bb4(uVar9, uVar10, uVar8);
+                    win_ui::msg_box_op_1010_8bb4(uVar9, uVar10, uVar8);
                     param_1 = local_2e.field0_0x0;
                 }
             } else {
@@ -159,52 +159,6 @@ pub unsafe fn FUN_1010_830a(
       // LAB_1010_8473:
     return uStack6;
 }
-
-pub unsafe fn load_string_1010_847e(mut param_1: u32, mut param_2: u16) -> *mut c_char {
-    LoadString16(
-        0x3ff,
-        (param_1 & 0xffff0000 | (param_1 + 0x682)),
-        param_2,
-        HINSTANCE16_1050_038c,
-    );
-    return (param_1 & 0xffff0000 | (param_1 + 0x682));
-}
-pub unsafe fn load_string_1010_84ac(mut param_1: i16, param_2: INT16, mut param_3: u16) {
-    let mut uVar1: u16;
-
-    uVar1 = param_2;
-    LoadString16(
-        0x3ff,
-        CONCAT22(param_2, param_1 + 0x682),
-        param_3,
-        HINSTANCE16_1050_038c,
-    );
-    str_op_1008_60e8(uVar1, CONCAT22(param_2, param_1 + 0x682));
-    return;
-}
-pub unsafe fn load_string_1010_84e0(
-    mut param_1: u16,
-    mut param_2: u16,
-    in_resc_id_3: u16,
-    in_buffer_4: *mut c_char,
-    in_buf_len_5: i16,
-) {
-    let mut in_stack_0000000e: u16;
-
-    LoadString16(
-        in_resc_id_3,
-        CONCAT22(in_buf_len_5, in_buffer_4),
-        in_stack_0000000e,
-        HINSTANCE16_1050_038c,
-    );
-    return;
-}
-
-
-
-
-
-
 
 
 pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
@@ -251,7 +205,7 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
         uVar4 = paVar6;
         uVar1 = (paVar6 >> 0x10);
         if (((iVar4 + 0x172a) == uVar4) && ((iVar4 + 0x172c) == uVar1)) {
-            msg_box_op_1010_8bb4(uVar6, uVar5, paVar6 & 0xffff | uVar1 << 0x10);
+            win_ui::msg_box_op_1010_8bb4(uVar6, uVar5, paVar6 & 0xffff | uVar1 << 0x10);
         }
         mem_op_1000_179c(0x8, paVar3);
         uVar1 = paVar3;
@@ -266,26 +220,6 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
     uVar6.field1662_0x680 = param_2;
     return;
 }
-
-
-pub unsafe fn msg_box_op_1010_8bb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
-    let mut pcVar1: *mut c_char;
-    let mut local_402: [u8; 0x400] = [0; 0x400];
-
-    pcVar1 = load_string_1010_847e(_u16_1050_14cc, 0x3fa);
-    unk_str_op_1000_3d3e(CONCAT22(0x1050, local_402), pcVar1);
-    pass1_1000_3cea(CONCAT22(0x1050, local_402), param_3);
-    pcVar1 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
-    MessageBox16(
-        0x1010,
-        pcVar1,
-        CONCAT22(0x1050, local_402),
-        HWND16_1050_0396,
-    );
-    PostMessage16(0x0, 0xee, 0x111, HWND16_1050_0396);
-    return;
-}
-
 
 
 pub unsafe fn pass1_1010_8c32(param_1: *mut Struct19, mut param_2: u16) -> u32 {

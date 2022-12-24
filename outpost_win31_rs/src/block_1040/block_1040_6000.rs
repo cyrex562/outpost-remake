@@ -55,46 +55,6 @@ pub unsafe fn pass1_1040_6470(param_1: *mut StructD)
 }
 
 
-
-
-pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char,mut param_2: u16 ,mut param_3: u32)
-
-{
-  let mut in_buf_len_5: i16;
-  let mut in_register_0000000a: u16;
-  let mut paVar1: *mut Struct57;
-  let mut local_206: [u8;0x102] = [0;0x102];
-  let mut local_104: [u8;0x102] = [0;0x102];
-
-  paVar1 = CONCAT22(in_register_0000000a,param_2);
-  mem_op_1000_179c(0x1000,paVar1);
-  in_buf_len_5 = paVar1;
-  load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x100,local_206,&DAT_1050_1050);
-  load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
-  load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
-  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
-  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  load_string_1010_84e0
-            (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,&DAT_1050_1050);
-  pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
-               (param_3 + 0x6));
-  fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
-  return;
-}
-
-
-
-
-
-
-
-
-
 pub unsafe fn pass1_1040_6826(param_1: *mut Struct57,mut param_2: u16 )
 
 {
@@ -132,35 +92,6 @@ pub unsafe fn pass1_1040_6862(param_1: *mut StructD)
 // WARNING: Unable to use type for symbol uVar2
 // WARNING: Unable to use type for symbol uVar18
 // WARNING: Unable to use type for symbol uVar19
-
-
-
-
-
-
-
-
-pub unsafe fn create_window_1040_6eae(mut param_1: u32,mut param_2: i16,pstruct_param_3: *mut astruct_859,mut param_4: u16 ,mut param_5: u16 )
-
-{
-   let mut pstruct_1: *mut astruct_859;
-  let mut uVar1: u16;
-  let mut window_name: *mut c_char;
-  let mut h_instance: HISTANCE16;
-
-  window_name = load_string_1010_847e(_u16_1050_14cc,param_4);
-  _h_instance = 0x50000009;
-  if (param_2 != 0) {
-    _h_instance = 0x50020009;
-  }
-  uVar1 = (pstruct_param_3 >> 0x10);
-  pstruct_1 = pstruct_param_3;
-  CreateWindow16(0x0,CONCAT22(param_5,HINSTANCE16_1050_038c),(param_1 + 0x6),
-                 pstruct_1.field4_0x6,pstruct_1.field3_0x4,pstruct_1.field2_0x2,pstruct_param_3,
-                 _h_instance,(_h_instance >> 0x10),window_name,s_button_1050_5d92);
-  return;
-}
-
 
 
 pub unsafe fn pass1_1040_6fb6(param_1: *mut Struct57,mut param_2: u16 )

@@ -1,3 +1,5 @@
+use crate::draw_ops;
+
 pub unsafe fn pass1_1020_01d8(
     param_1: *mut astruct_20,
     mut param_2: u16,
@@ -49,7 +51,7 @@ pub unsafe fn pass1_1020_022c(struct_param_1: *mut astruct_29) {
 
 
 pub unsafe fn draw_op_1020_041e(mut param_1: u32) {
-    fill_rect_1020_065e((param_1 + 0xe6));
+    draw_ops::fill_rect_1020_065e((param_1 + 0xe6));
     return;
 }
 
@@ -148,67 +150,6 @@ pub unsafe fn pass1_1020_05d6(param_1: *mut StructD) {
 }
 
 
-// WARNING: Unable to use type for symbol uVar2
-pub unsafe fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754) {
-    let mut uVar1: u32;
-    let mut struct754_var1: *mut astruct_754;
-    let mut uVar4: u16;
-    let mut rect_1: RECT16;
-    let mut iStack48: i16;
-    let mut iStack46: i16;
-    let mut brush_handle_1: HBRUSH16;
-    let mut palette_handle_var42: *mut HDC16;
-    let mut puStack40: *mut u32;
-    let mut hdc_var_24: HDC16;
-    let mut paintstruct_22: [u8; 0x20] = [0; 0x20];
-    let mut uVar3: u16;
-    let mut uVar2: u32;
-    let mut fn_ptr_1: *mut *mut code;
-
-    uVar4 = (astruct754_param_1 >> 0x10);
-    struct754_var1 = astruct754_param_1;
-    hdc_var_24 = BeginPaint16(CONCAT22(0x1050, paintstruct_22), &struct754_var1.field_0x4);
-    if (0x280 < struct754_var1.field7_0xa) {
-        brush_handle_1 = CreateSolidBrush16(0x210070b);
-        rect_1.x = 0;
-        rect_1.y = 0;
-        iStack48 = struct754_var1.field7_0xa - 0x1;
-        iStack46 = struct754_var1.field8_0xc - 0x1;
-        FillRect16(brush_handle_1, &rect_1, &DAT_1050_1050);
-        DeleteObject16(brush_handle_1);
-    }
-    uVar2 = struct754_var1.field6_0x6;
-    puStack40 = (uVar2 + 0xe);
-    palette_handle_var42 = &hdc_var_24;
-    uVar3 = puStack40;
-    uVar1 = *puStack40;
-    fn_ptr_1 = (uVar1 + 0x8);
-    (**fn_ptr_1)(
-        s_tile2_bmp_1050_1538,
-        uVar3,
-        (puStack40 >> 0x10),
-        palette_handle_var42,
-        &DAT_1050_1050,
-    );
-    fn_ptr_1 = (uVar1 + 0x4);
-    (**fn_ptr_1)(
-        s_tile2_bmp_1050_1538,
-        puStack40,
-        (puStack40 >> 0x10),
-        struct754_var1.field10_0x10,
-        struct754_var1.field9_0xe,
-        &hdc_var_24,
-        &DAT_1050_1050,
-        uVar3,
-    );
-    palette_handle_var42 = SelectPalette16(0x0, palette_handle_var42, hdc_var_24);
-    DeleteObject16(palette_handle_var42);
-    EndPaint16(CONCAT22(0x1050, paintstruct_22), &struct754_var1.field_0x4);
-    return;
-}
-
-
-
 pub unsafe fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut param_3: u32) {
     let mut iVar1: *mut astruct_20;
     let mut uVar1: u16;
@@ -225,53 +166,6 @@ pub unsafe fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut pa
     win_1008_5c5c(0x0, (paVar2 >> 0x10), _u16_1050_02a0, 0x1d4);
     return;
 }
-
-pub unsafe fn send_win_msg_1020_08fe(param_1: *mut astruct_63) {
-    let mut hwnd: HWND16;
-    let mut lVar1: i32;
-    let mut BVar2: bool;
-    let mut iVar2: *mut astruct_63;
-    let mut uVar2: *mut astruct_63;
-
-    uVar2 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    param_1.field0_0x0 = 0xb0e;
-    iVar2.field1_0x2 = 0x1020;
-    if (iVar2.field229_0xe8 != 0) {
-        lVar1 = iVar2.field229_0xe8;
-        hwnd = (lVar1 + 0x6);
-        BVar2 = IsWindow16(hwnd);
-        if (BVar2 != 0) {
-            SendMessage16(0x0, 0x1, 0x111, hwnd);
-        }
-        iVar2.field229_0xe8 = 0;
-    }
-    pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(&iVar2.field208_0xd2)));
-    param_1.field0_0x0 = 0x380a;
-    iVar2.field1_0x2 = 0x1008;
-    param_1.field0_0x0 = 0x389a;
-    iVar2.field1_0x2 = 0x1008;
-    return;
-}
-
-pub unsafe fn send_msg_1020_097e(mut param_1: u32) {
-    let mut uVar1: u32;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    if (((iVar2 + 0xea) | (iVar2 + 0xe8)) != 0) {
-        uVar1 = (iVar2 + 0xe8);
-        SendMessage16(0x0, 0x1, 0x111, (uVar1 + 0x6));
-        (iVar2 + 0xe8) = 0;
-    }
-    return;
-}
-
-
-
-
 
 
 pub unsafe fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3: u16) {
@@ -336,111 +230,6 @@ pub unsafe fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3:
         CONCAT22(uVar2, puVar4),
         CONCAT22(uVar6, puVar5),
     );
-    return;
-}
-
-// WARNING: Unable to use type for symbol uVar3
-pub unsafe fn unk_draw_op_1020_0c3e(param_1: *mut astruct_771) {
-    let mut puVar2: *mut u32;
-    let mut hpal: *mut HDC16;
-    let mut obj: HPALETTE16;
-    let mut struct_1: *mut astruct_771;
-    let mut iVar5: *mut astruct_842;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut uStack40: u16;
-    let mut local_24: HDC16;
-    let mut paintstruct_22: [u8; 0x20] = [0; 0x20];
-    let mut uVar3: u32;
-    let mut puVar1: *mut u32;
-    let mut uVar4: u32;
-    let mut fn_ptr_1: *mut *mut code;
-
-    uVar5 = (param_1 >> 0x10);
-    struct_1 = param_1;
-    local_24 = BeginPaint16(CONCAT22(0x1050, paintstruct_22), struct_1.hwnd_0x4);
-    uVar3 = struct_1.field5_0x6;
-    uVar6 = (uVar3 >> 0x10);
-    iVar5 = uVar3;
-    puVar2 = &iVar5.field_0xa;
-    uStack40 = puVar2;
-    if ((iVar5.field12_0xc | uStack40) != 0) {
-        hpal = &local_24;
-        uVar4 = *puVar2;
-        fn_ptr_1 = (uVar4 + 0x8);
-        (**fn_ptr_1)(
-            s_tile2_bmp_1050_1538,
-            uStack40,
-            (puVar2 >> 0x10),
-            hpal,
-            &DAT_1050_1050,
-        );
-        fn_ptr_1 = (uVar4 + 0x4);
-        (**fn_ptr_1)(
-            s_tile2_bmp_1050_1538,
-            puVar2,
-            struct_1.field7_0xc,
-            struct_1.field6_0xa,
-            &local_24,
-            &DAT_1050_1050,
-        );
-        obj = SelectPalette16(0x0, hpal, local_24);
-        DeleteObject16(obj);
-    }
-    EndPaint16(CONCAT22(0x1050, paintstruct_22), struct_1.hwnd_0x4);
-    return;
-}
-
-// WARNING: Unable to use type for symbol uVar4
-pub unsafe fn win_ui_palette_op_1020_0cd2(struct_param_1: *mut astruct_775) {
-    let mut puVar2: *mut u32;
-    let mut ppcVar3: *mut *mut code;
-    let mut uVar7: u16;
-    let mut hdc: HDC16;
-    let mut hpal: HDC16;
-    let mut hpal_00: HPALETTE16;
-    let mut UVar4: u16;
-    let mut extraout_DX: u16;
-    let mut uVar8: u16;
-    let mut struct_1: *mut astruct_775;
-    let mut iVar5: *mut astruct_774;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut hdc_00: HDC16;
-    let mut paStack10: *mut astruct_13;
-    let mut uStack6: u16;
-    let mut puVar1: *mut u32;
-    let mut uVar4: u32;
-
-    uVar5 = (struct_param_1 >> 0x10);
-    struct_1 = struct_param_1;
-    uVar4 = struct_1.field5_0x6;
-    uVar6 = (uVar4 >> 0x10);
-    iVar5 = uVar4;
-    puVar2 = &iVar5.field_0xa;
-    uStack6 = puVar2;
-    uVar7 = iVar5.field12_0xc | uStack6;
-    if (uVar7 != 0) {
-        ppcVar3 = (*puVar2 + 0x14);
-        (**ppcVar3)();
-        paStack10 = CONCAT22(extraout_DX, uVar7);
-        uVar8 = extraout_DX | uVar7;
-        if (uVar8 != 0) {
-            hdc = GetDC16(struct_1.field4_0x4);
-            hpal = hdc;
-            hdc_00 = hdc;
-            create_palette_1008_4e38(paStack10, uVar8);
-            hpal_00 = SelectPalette16(0x0, hpal, hdc_00);
-            UVar4 = RealizePalette16(hdc);
-            SelectPalette16(0x1, hpal_00, hdc);
-            DeleteObject16(hpal);
-            if (0x0 < UVar4) {
-                InvalidateRect16(0x1, NULL, 0x0);
-            }
-            ReleaseDC16(hdc, struct_1.field4_0x4);
-            return;
-        }
-    }
     return;
 }
 

@@ -300,27 +300,3 @@ pub unsafe fn pass1_1038_eeda(param_1: *mut StructD,param_2: *mut Struct57,mut p
   iVar1.field86_0x74 = 0x1;
   return;
 }
-
-
-
-
-pub unsafe fn destroy_win_1038_ef3a(param_1: *mut StructD)
-
-{
-  let mut uVar2: u32;
-  let mut iVar1: *mut StructD;
-  let mut uVar1: *mut StructD;
-
-  uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  param_1.address_offset_field_0x0 = 0x67c;
-  iVar1.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
-  if (&iVar1.field_0x96 != 0) {
-    uVar2 = &iVar1.field_0x96;
-    DestroyWindow16((uVar2 + 0x6));
-    iVar1.field_0x96 = 0;
-  }
-  pass1_1038_b6e0(_PTR_LOOP_1050_5b7c,&iVar1.field_0x6);
-  ui_cleanup_op_1040_782c(param_1);
-  return;
-}

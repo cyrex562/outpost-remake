@@ -2,7 +2,8 @@ use crate::block_1000::block_1000_1000::fn_ptr_1000_17ce;
 use crate::block_1018::block_1018_0000::pass1_1018_04de;
 use crate::block_1018::block_1018_1000::pass1_1018_1a04;
 use crate::block_1018::block_1018_2000::{pass1_1018_2076, pass1_1018_21f8, pass1_1018_2440, pass1_1018_2862, pass1_1018_2922};
-use crate::block_1018::block_1018_4000::{clenaup_win_ui_1018_4d22, pass1_1018_4760, pass1_1018_4882};
+use crate::block_1018::block_1018_4000::{pass1_1018_4760, pass1_1018_4882};
+use crate::draw_ops::clenaup_win_ui_1018_4d22;
 
 pub unsafe fn pass1_1010_ed22(mut param_1: u32, mut param_2: u32) {
     let mut uVar1: u16;
@@ -232,61 +233,6 @@ pub unsafe fn FUN_1018_0532(mut param_1: u16, param_2: *mut StructD, param_3: u8
     return param_2;
 }
 
-pub unsafe fn get_sys_metrics_1018_09a8(mut param_1: u16, mut param_2: u32) {
-    let mut uVar1: u32;
-    let mut IVar2: i16;
-    let mut IVar3: i16;
-    let mut in_register_0000000a: u16;
-    let mut paVar4: *mut Struct57;
-    let mut iVar5: i16;
-    let mut uVar6: u16;
-    let mut puVar7: *mut u32;
-    let mut in_stack_0000fe7c: u16;
-    let mut in_stack_0000ffa0: u16;
-    let mut in_stack_0000ffa6: u16;
-    let mut in_stack_0000ffaa: u16;
-    let mut piVar8: *mut i16;
-    let mut uVar9: u16;
-    let mut pcVar10: *mut c_char;
-    let mut local_a: i16;
-    let mut local_8: i16;
-    let mut iStack6: i16;
-    let mut IStack4: i16;
-
-    paVar4 = CONCAT22(in_register_0000000a, param_1);
-    IStack4 = GetSystemMetrics16(SM_CYCAPTION);
-    uVar6 = (param_2 >> 0x10);
-    iVar5 = param_2;
-    iStack6 = (iVar5 + 0x12) - 0x2;
-    pcVar10 = CONCAT22(0x1050, &local_8);
-    piVar8 = &local_a;
-    uVar9 = SUB42(&DAT_1050_1050, 0x0);
-    puVar7 = mixed_1010_20ba(
-        paVar4,
-        _u16_1050_0ed0,
-        CONCAT22(piVar8, 0x48),
-        in_stack_0000fe7c,
-        in_stack_0000ffa0,
-        in_stack_0000ffa6,
-        in_stack_0000ffaa,
-    );
-    pass1_1008_3e94(
-        (puVar7 & 0xffff0000 | (puVar7 + 0xe)),
-        CONCAT22(uVar9, piVar8),
-        pcVar10,
-    );
-    (iVar5 + 0x18) = iStack6 * IStack4 + local_8 + 0x146;
-    (iVar5 + 0x1a) = iStack6 * IStack4 + local_a + 0x9;
-    IVar2 = GetSystemMetrics16(SM_CXBORDER);
-    uVar1 = (iVar5 + 0x5a);
-    (iVar5 + 0x1c) = IVar2 * 0x2 + (uVar1 + 0x4);
-    IVar2 = GetSystemMetrics16(SM_CYCAPTION);
-    IVar3 = GetSystemMetrics16(SM_CYBORDER);
-    uVar1 = (iVar5 + 0x5a);
-    (iVar5 + 0x1e) = IVar3 + IVar2 + (uVar1 + 0x8);
-    return;
-}
-
 pub unsafe fn pass1_1018_0aa0(mut param_1: u32, mut param_2: u16) {
     let mut iVar1: i16;
     let mut uVar2: u16;
@@ -401,123 +347,6 @@ pub unsafe fn win_op_1018_294a(
     return;
 }
 
-pub unsafe fn mixed_sys_op_1018_2978(
-    mut param_1: u16,
-    mut param_2: u16,
-    param_3: *mut astruct_931,
-) {
-    let mut ppcVar1: *mut *mut code;
-    let mut puVar2: *mut u8;
-    let mut paVar2: *mut astruct_394;
-    let rect: *mut RECT16;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut uVar3: u16;
-    let mut uVar4: u16;
-    let mut uVar6: u16;
-    let mut in_register_0000000a: u16;
-    let mut paVar5: *mut Struct57;
-    let mut paVar7: *mut Struct57;
-    let mut iVar9: *mut astruct_931;
-    let mut uVar8: u16;
-    let mut uVar7: u16;
-    let mut uVar9: u16;
-    let mut HVar8: HWND16;
-    let mut paVar9: *mut astruct_394;
-    let mut local_3a: RECT16;
-    let mut iStack54: i16;
-    let mut iStack52: i16;
-    let mut uStack50: u32;
-    let mut puStack46: *mut u32;
-    let mut local_2a: astruct_394 = astruct_394::default();
-    let mut uStack6: u16;
-    let mut uStack4: u16;
-    let mut uVar10: u8;
-    let mut paVar6: *mut Struct57;
-
-    paVar5 = CONCAT22(in_register_0000000a, param_2);
-    pass1_1010_8096(_u16_1050_14cc, 1);
-    uStack4 = SUB42(paVar5, 0x0);
-    puVar2 = &local_2a;
-    uStack6 = param_1;
-    struct_op_1008_48fe(
-        paVar5,
-        CONCAT13(0x10, CONCAT12(0x50, puVar2)),
-        0x1,
-        CONCAT22(uStack4, param_1),
-    );
-    uVar7 = 0x1000;
-    mem_op_1000_179c(0x1e, paVar5);
-    uVar5 = paVar5 | puVar2;
-    paVar7 = (paVar5 & 0xffff0000);
-    paVar6 = (paVar7 | uVar5);
-    if (uVar5 == 0) {
-        paVar2 = null_mut();
-    } else {
-        paVar2 = &local_2a;
-        uVar7 = 0x1008;
-        struct_op_1008_3f92(CONCAT22(paVar5, puVar2), CONCAT22(0x1050, paVar2));
-        paVar7 = paVar6;
-    }
-    uVar3 = SUB42(paVar7, 0x0);
-    puStack46 = CONCAT22(uVar3, paVar2);
-    ppcVar1 = (*puStack46 + 0x14);
-    paVar9 = paVar2;
-    (**ppcVar1)(uVar7, paVar2, uVar3);
-    uStack50 = CONCAT22(paVar7, paVar2);
-    mem_op_1000_179c(0x14, paVar7);
-    uVar4 = paVar7 | paVar2;
-    paVar7 = (paVar7 & 0xffff0000);
-    paVar5 = (paVar7 | uVar4);
-    if (uVar4 == 0) {
-        paVar2 = null_mut();
-    } else {
-        struct_1008_4c58(paVar2);
-        paVar7 = paVar5;
-    }
-    uVar8 = (param_3 >> 0x10);
-    iVar9 = param_3;
-    iVar9.field12_0xe = paVar2;
-    (iVar9.field12_0xe + 0x2) = paVar7;
-    pass1_1008_4d84(paVar7, iVar9.field12_0xe, uStack50);
-    rect = &local_3a;
-    HVar8 = HWND16_1050_0396;
-    GetClientRect16(rect, &DAT_1050_1050);
-    uVar9 = 0x1000;
-    mem_op_1000_179c(0x1e, paVar7);
-    uVar6 = paVar7 | rect;
-    if (uVar6 == 0) {
-        iVar9.field10_0xa = 0;
-    } else {
-        iVar4 = (iStack52 - local_3a.y) + 1;
-        uVar9 = 0x1008;
-        pass1_1008_405c(
-            CONCAT22(paVar7, rect),
-            iVar9.field12_0xe,
-            iVar4,
-            (iStack54 - local_3a.x) + 1,
-        );
-        iVar9.field10_0xa = iVar4;
-        iVar9.field11_0xc = uVar6;
-    }
-    if (puStack46.is_null() == false) {
-        ppcVar1 = *puStack46;
-        (**ppcVar1)(
-            uVar9,
-            puStack46,
-            (puStack46 >> 0x10),
-            0x1,
-            HVar8,
-            paVar9,
-            uVar3,
-            puStack46,
-            puStack46,
-        );
-    }
-    close_file_1008_496c(CONCAT13(0x10, CONCAT12(0x50, &local_2a)));
-    return;
-}
-
 
 pub unsafe fn pass1_1018_2aa3() {
     pass1_1018_21f8();
@@ -562,55 +391,6 @@ pub unsafe fn pass1_1018_2ee4(param_1: *mut astruct_126, mut param_2: u16) {
     uVar3 = param_1 - 0x20;
     pass1_1018_31fa(uVar3, param_1, (param_1 & 0xffff0000 | uVar3));
     pass1_1010_1f62((param_1 & 0xffff0000 | uVar3), param_2);
-    return;
-}
-
-pub unsafe fn get_sys_metrics_1018_2f56(mut param_1: u32) {
-    let mut IVar1: i16;
-    let mut IVar2: i16;
-    let mut in_EDX: *mut Struct57;
-    let mut iVar3: i16;
-    let mut uVar4: u16;
-    let mut puVar5: *mut u32;
-    let mut uVar6: u32;
-    let mut in_stack_0000fe7c: u16;
-    let mut in_stack_0000ffa0: u16;
-    let mut in_stack_0000ffa6: u16;
-    let mut in_stack_0000ffaa: u16;
-    let mut piVar7: *mut i16;
-    let mut uVar8: u16;
-    let mut pcVar9: *mut c_char;
-    let mut local_6: i16;
-    let mut local_4: i16;
-
-    pcVar9 = CONCAT22(0x1050, &local_4);
-    piVar7 = &local_6;
-    uVar8 = SUB42(&DAT_1050_1050, 0x0);
-    puVar5 = mixed_1010_20ba(
-        in_EDX,
-        _u16_1050_0ed0,
-        CONCAT22(piVar7, 0x48),
-        in_stack_0000fe7c,
-        in_stack_0000ffa0,
-        in_stack_0000ffa6,
-        in_stack_0000ffaa,
-    );
-    pass1_1008_3e94(
-        (puVar5 & 0xffff0000 | (puVar5 + 0xe)),
-        CONCAT22(uVar8, piVar7),
-        pcVar9,
-    );
-    uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    uVar6 = pass1_1008_4772((iVar3 + 0x24));
-    uVar8 = (uVar6 >> 0x10);
-    (iVar3 + 0x18) = local_4 + 0xb5;
-    (iVar3 + 0x1a) = local_6 + 0x9;
-    IVar1 = GetSystemMetrics16(SM_CXBORDER);
-    (iVar3 + 0x1c) = IVar1 * 0x2 + (uVar6 + 0x4);
-    IVar1 = GetSystemMetrics16(SM_CYCAPTION);
-    IVar2 = GetSystemMetrics16(SM_CYBORDER);
-    (iVar3 + 0x1e) = IVar2 + IVar1 + (uVar6 + 0x8);
     return;
 }
 

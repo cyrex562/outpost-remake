@@ -2,7 +2,7 @@
 
 use std::os::raw::c_char;
 use std::ptr;
-use crate::windef::{HGLOBAL16, HINSTANCE16};
+use crate::windef16::{HGLOBAL16, HINSTANCE16};
 
 pub static mut     PTR_LOOP_1050_0000: u16 = 0;
 pub static mut          u16_1050_0002: u16 = 0;

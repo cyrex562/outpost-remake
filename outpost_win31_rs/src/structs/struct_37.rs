@@ -1,5 +1,5 @@
 use std::os::raw::c_char;
-use crate::windef::RECT16;
+use crate::windef16::RECT16;
 
 #[derive(Default,Debug,Clone)]
 pub struct Struct37 {

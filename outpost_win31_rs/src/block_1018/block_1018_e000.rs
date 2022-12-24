@@ -37,48 +37,6 @@ pub unsafe fn struct_1018_e100(param_1: *mut u8, param_2: *mut u16, mut param_3:
     return param_2;
 }
 
-// WARNING: Unable to use type for symbol uVar3
-pub unsafe fn delete_palette_1018_e16c(param_1: *mut astruct_795) {
-    let mut puVar2: *mut u32;
-    let mut hpal: *mut HDC16;
-    let mut hpalette_a: HPALETTE16;
-    let mut iVar5: *mut astruct_795;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut hwnd16_ss: u16;
-    let mut hdc_var24: HDC16;
-    let mut paintstruct_22: [u8; 0x20] = [0; 0x20];
-    let mut uVar4: u32;
-    let mut uVar3: u32;
-    let mut puVar3: *mut u32;
-    let mut puVar1: *mut u32;
-    let mut fn_ptr_1: *mut *mut code;
-
-    uVar5 = (param_1 >> 0x10);
-    iVar5 = param_1;
-    hdc_var24 = BeginPaint16(CONCAT22(0x1050, paintstruct_22), iVar5.hwnd_0x4);
-    uVar3 = iVar5.field5_0x6;
-    puVar2 = (uVar3 + 0xa);
-    hpal = &hdc_var24;
-    uVar6 = (puVar2 >> 0x10);
-    uVar4 = *puVar2;
-    fn_ptr_1 = (uVar4 + 0x8);
-    (**fn_ptr_1)(s_tile2_bmp_1050_1538, puVar2, uVar6, hpal, &DAT_1050_1050);
-    fn_ptr_1 = (uVar4 + 0x4);
-    (**fn_ptr_1)(
-        s_tile2_bmp_1050_1538,
-        puVar2,
-        uVar6,
-        0x0,
-        &hdc_var24,
-        &DAT_1050_1050,
-    );
-    hpalette_a = SelectPalette16(0x0, hpal, hdc_var24);
-    DeleteObject16(hpalette_a);
-    EndPaint16(CONCAT22(0x1050, paintstruct_22), iVar5.hwnd_0x4);
-    return;
-}
-
 
 pub unsafe fn pass1_1018_e230(
     mut param_1: u16,

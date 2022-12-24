@@ -17,7 +17,7 @@ mod func_ptrs;
 mod globals;
 mod prog_types;
 mod structs;
-mod winbase;
+mod winapi16;
 mod utils;
 mod mem_ops;
 mod win_ui;
@@ -27,7 +27,7 @@ mod app_context;
 mod no_refs;
 mod mem_container;
 mod unk;
-mod windef;
+mod windef16;
 mod dos_interrupt;
 mod file_ops;
 mod mem_address;
@@ -35,6 +35,7 @@ mod resources;
 mod draw_ops;
 mod os_base;
 mod winapp;
+mod sound_ops;
 
 
 pub unsafe fn main()

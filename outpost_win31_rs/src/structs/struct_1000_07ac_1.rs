@@ -3,7 +3,7 @@
 //
 
 use std::os::raw::c_char;
-use crate::windef::{HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HMENU16, HWND16};
+use crate::windef16::{HCURSOR16, HDC16, HFILE16, HGDIOBJ16, HMENU16, HWND16};
 
 pub struct Struct_1000_07ac_1 {
     pub field_0x0: u16,

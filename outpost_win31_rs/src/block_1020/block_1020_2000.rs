@@ -1,5 +1,6 @@
+use crate::draw_ops;
 use crate::utils::CONCAT22;
-use crate::windef::{COLORREF, DEVMODEA, HDC16, HGDIOBJ16, HPEN16};
+use crate::windef16::{COLORREF, DEVMODEA, HDC16, HGDIOBJ16, HPEN16};
 
 // WARNING: Inlined function: struct_1010_4d5c
 // WARNING: Unable to use type for symbol puVar4
@@ -17,47 +18,6 @@ pub unsafe fn pass1_1020_2286(
     return;
 }
 
-// WARNING: Unable to use type for symbol pIVar1
-// WARNING: Unable to use type for symbol uVar1
-pub unsafe fn draw_line_1020_229c(mut param_1: u32, mut param_2: u16) {
-    let mut uVar2: u32;
-    let mut x: i16;
-    let mut iVar3: i16;
-    let mut piVar4: *mut i16;
-    let mut uVar5: u16;
-    let mut uVar6: u16;
-    let mut x_00: u16;
-    let mut iStack10: i16;
-    let mut iVar1: i16;
-    let mut pIVar1: *mut INT16 = null_mut();
-    let mut uVar1: u32;
-
-    uVar5 = (param_1 >> 0x10);
-    uVar1 = (param_1 + 0x6);
-    iVar1 = (uVar1 + 0x30);
-    uVar2 = (param_1 + 0x6);
-    pIVar1 = (uVar2 + 0x1a);
-    MoveTo16(0x5, *pIVar1, param_2);
-    uVar6 = (pIVar1 >> 0x10);
-    iVar3 = pIVar1;
-    LineTo16(0x5, (iVar3 + iVar1 * 0x8 - 0x4), param_2);
-    for iStack10 in 0..iVar1 {
-        piVar4 = (iStack10 * 0x8 + iVar3);
-        x = (piVar4[0x2] - *piVar4 >> 1) + *piVar4;
-        MoveTo16(0x5, x, param_2);
-        LineTo16(0xa, x, param_2);
-    }
-    MoveTo16(0x5f, *pIVar1, param_2);
-    LineTo16(0x5f, (iVar3 + iVar1 * 0x8 - 0x4), param_2);
-    for iStack10 in 0..iVar1 {
-        piVar4 = (iStack10 * 0x8 + iVar3);
-        x_00 = param_2;
-        MoveTo16(0x5f, (piVar4[0x2] - *piVar4 >> 1) + *piVar4, param_2);
-        LineTo16(0x5a, x_00, param_2);
-    }
-    return;
-}
-
 pub unsafe fn pass1_1020_239c(mut param_1: u32, param_2: *mut i16) {
     let mut puVar1: *mut u16;
     let mut uVar2: u32;
@@ -70,7 +30,7 @@ pub unsafe fn pass1_1020_239c(mut param_1: u32, param_2: *mut i16) {
         puVar1 = pass1_1008_3e54(CONCAT22(0x1050, local_a), 0x0, 0x57, uStack4);
         uVar3 = (param_1 >> 0x10);
         uVar2 = pass1_1020_23f2((puVar1 >> 0x10), param_1, uVar3, CONCAT22(0x1050, local_a));
-        draw_polygon_1020_2474(param_1, uVar3, 0x3, uVar2, (uVar2 >> 0x10));
+        draw_ops::draw_polygon_1020_2474(param_1, uVar3, 0x3, uVar2, (uVar2 >> 0x10));
     }
     return;
 }
@@ -103,17 +63,6 @@ pub unsafe fn pass1_1020_23f2(
         piVar1[iStack18 * 0x2 + 0x1] = (iStack18 * 0x4 + 0x4272) + local_6;
     }
     return CONCAT22(uVar2, piVar1);
-}
-
-pub unsafe fn draw_polygon_1020_2474(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-    mut param_5: u16,
-) {
-    Polygon16(param_3, param_4, param_5);
-    return;
 }
 
 pub unsafe fn pass1_1020_2488(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
@@ -307,11 +256,6 @@ pub unsafe fn pass1_1020_28fc(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn post_win_msg_1020_291a(mut param_1: u32) {
-    PostMessage16(0x0, 0x0, 0x10, (param_1 + 0x8));
-    return;
-}
-
 pub unsafe fn pass1_1020_2936() {
     pass1_1020_79ae();
     return;
@@ -396,108 +340,3 @@ pub unsafe fn destroy_icon_1020_2c88(param_1: *mut astruct_869) {
 
 
 // WARNING: Unable to use type for symbol puVar2
-
-pub unsafe fn load_draw_op_1020_2ede(
-    param_1: *mut Struct57,
-    mut param_2: u16,
-    param_3: *mut astruct_40,
-    param_4: *mut StructA,
-    mut param_5: u16,
-) {
-    let mut hdc_dev_ctx_1: HDC16;
-    StructA * *ppSVar1;
-    let mut handle: HPEN16;
-    let mut pHVar2: *mut HDC16;
-    let mut h_null_brush: HGDIOBJ16;
-    let mut in_DX: *mut u8;
-    let mut struct_1: *mut astruct_40;
-    let mut unaff_DI: i16;
-    let mut uVar5: u16;
-    let mut unaff_SS: u16;
-    let mut puVar5: *mut u16;
-    let mut paVar3: *mut astruct_76;
-    let mut devmodea_ptr_var11: *mut DEVMODEA;
-    let mut in_stack_0000fe92: u16;
-    let mut in_stack_0000ffb6: u16;
-    let mut in_stack_0000ffbc: u16;
-    let mut in_stack_0000ffc0: u16;
-    let mut device: *mut c_char;
-    let mut driver: *mut c_char;
-    let mut in_stack_0000ffea: u16;
-    let mut puVar1: *mut u32;
-    let mut puVar2: u32;
-    let mut uVar10: COLORREF;
-    let mut output: LPCSTR = null_mut();
-    let mut fn_ptr_1: *mut *mut code;
-
-    get_sys_metrics_1020_7c1a(param_3, CONCAT22(param_5, param_4));
-    uVar5 = (param_3 >> 0x10);
-    struct_1 = param_3;
-    struct_1.field17_0x14 = 0;
-    struct_1.field20_0x18 = 0;
-    (&struct_1.field20_0x18 + 0x2) = 0;
-    struct_1.field21_0x1c = null_mut();
-    struct_1.field_0x1e = 0;
-    (&struct_1[0x1].field0_0x0 + 1) = 0;
-    param_3.field0_0x0 = 0x363c;
-    struct_1.field1_0x2 = 0x1020;
-    puVar5 = mixed_1010_20ba(
-        param_1,
-        _u16_1050_0ed0,
-        CONCAT22(param_2, param_4[0x1].field26_0x30),
-        in_stack_0000fe92,
-        in_stack_0000ffb6,
-        in_stack_0000ffbc,
-        in_stack_0000ffc0,
-    );
-    struct_1.field17_0x14 = puVar5;
-    struct_1.field_0x16 = (puVar5 >> 0x10);
-    fn_ptr_1 = (*&struct_1.field17_0x14 + 0x4);
-    (**fn_ptr_1)();
-    driver = s_dib_1050_42c2;
-    device = null_mut();
-    output = null_mut();
-    paVar3 = pass1_1018_0a50(&struct_1.field17_0x14);
-    devmodea_ptr_var11 = pass1_1008_4772(paVar3);
-    hdc_dev_ctx_1 = CreateDC16(devmodea_ptr_var11, output, device, driver);
-    *&struct_1.field20_0x18 = hdc_dev_ctx_1;
-    ppSVar1 = &struct_1.field20_0x18;
-    fn_ptr_1 = (paVar3 + 0x8);
-    (**fn_ptr_1)();
-    (&struct_1[0x1].field0_0x0 + 1) = ppSVar1;
-    puVar2 = &struct_1.field17_0x14;
-    handle = CreatePen16(*(puVar2 + 0x64), 0x1, 0x0);
-    (&struct_1.field20_0x18 + 0x2) = handle;
-    pHVar2 = SelectObject16(handle, *&struct_1.field20_0x18);
-    struct_1.field21_0x1c = pHVar2;
-    h_null_brush = GetStockObject16(HOLLOW_BRUSH);
-    h_null_brush = SelectObject16(h_null_brush, *&struct_1.field20_0x18);
-    struct_1.field_0x1e = h_null_brush;
-    return;
-}
-
-pub unsafe fn cleanup_win_ui_1020_2fea(in_struct_1: *mut StructD) {
-    let mut obj: HPALETTE16;
-    let mut struct_1: *mut StructD;
-    let mut var2: u16;
-    let mut unaff_SS: u16;
-
-    var2 = (in_struct_1 >> 0x10);
-    struct_1 = in_struct_1;
-    in_struct_1.address_offset_field_0x0 = 0x363c;
-    struct_1.address_offset_field_0x2 = 0x1020;
-    if (struct_1.field12_0x14 != 0) {
-        pass1_1010_1ea6(struct_1.field12_0x14, (in_struct_1 & 0xffff | var2 << 0x10));
-    }
-    SelectObject16(&struct_1.field_0x1c, struct_1.field13_0x18);
-    SelectObject16(&struct_1.field_0x1e, struct_1.field13_0x18);
-    DeleteObject16(struct_1.field14_0x1a);
-    obj = SelectPalette16(0x0, struct_1.field19_0x20, struct_1.field13_0x18);
-    DeleteObject16(obj);
-    DeleteDC16(struct_1.field13_0x18);
-    in_struct_1.address_offset_field_0x0 = 0x3ab0;
-    struct_1.address_offset_field_0x2 = 0x1008;
-    in_struct_1.address_offset_field_0x0 = 0x389a;
-    struct_1.address_offset_field_0x2 = 0x1008;
-    return;
-}

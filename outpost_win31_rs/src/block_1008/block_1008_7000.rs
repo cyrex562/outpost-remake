@@ -491,37 +491,3 @@ pub unsafe fn pass1_1008_7e4a(param_1: *mut c_char, mut param_2: u16, param_3: u
     }
     return 0x0;
 }
-
-pub unsafe fn unk_draw_op_1008_7f62(
-    param_1: *mut astruct_20,
-    param_2: u16,
-    param_3: u32,
-) -> *mut astruct_20 {
-    let mut HVar1: HGDIOBJ16;
-    let mut HVar2: HCURSOR16;
-    let mut iVar4: *mut astruct_20;
-    let mut uVar3: u16;
-    let mut uVar4: *mut astruct_20;
-    let mut iVar3: *mut astruct_20;
-
-    set_struct_1008_687a(param_1, param_3);
-    uVar3 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    iVar4.field164_0xde = param_2;
-    param_1.offset_0x0 = 0x8042;
-    iVar4.base_0x2 = 0x1008;
-    unk_str_op_1000_3d3e(
-        (param_1 & 0xffff0000 | ZEXT24(&iVar4.field60_0x5b)),
-        s_SOLChildPar_1050_0358,
-    );
-    HVar1 = GetStockObject16(HOLLOW_BRUSH);
-    iVar4.hgdiobj_field_0xc6 = HVar1;
-    HVar2 = LoadCursor16(0x7f00, 0x0);
-    iVar4.hcursor_field_0xc4 = HVar2;
-    iVar4.field150_0xc8 = 0x2008;
-    iVar4.field139_0xac = 0x44000000;
-    iVar4.field145_0xbc = (param_3 + 0x8);
-    iVar4.field151_0xca = iVar4.field164_0xde;
-    win_ui_reg_class_1008_96d2(param_1);
-    return param_1;
-}

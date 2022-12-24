@@ -4,7 +4,7 @@ use crate::block_1000::block_1000_2000::pass1_1000_29b5;
 use crate::dos_interrupt::swi;
 use crate::globals::PTR_LOOP_1050_5f48;
 use crate::utils::CARRY2;
-use crate::winbase::FatalAppExit16;
+use crate::winapi16::FatalAppExit16;
 
 pub unsafe fn pass1_1000_3024() {
     pass1_1000_3038(1);

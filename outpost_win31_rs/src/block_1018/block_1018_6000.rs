@@ -1,4 +1,4 @@
-
+use crate::win_ui;
 
 pub unsafe fn pass1_1018_642e(
     mut param_1: u16,
@@ -7,65 +7,6 @@ pub unsafe fn pass1_1018_642e(
     mut param_4: i16,
 ) {
     *param_3 = 0x64 - param_4 >> 0x1;
-    return;
-}
-
-// WARNING: Unable to use type for symbol uVar3
-// WARNING: Unable to use type for symbol x1
-// WARNING: Unable to use type for symbol uVar2
-pub unsafe fn draw_line_1018_6444(mut param_1: u32, hdc_param_2: HDC16) {
-    let mut iVar1: i16;
-    let mut x: i16;
-    let mut iVar4: *mut astruct_796;
-    let mut piVar5: *mut i16;
-    let mut piVar4: *mut i16;
-    let mut uVar6: u16;
-    let mut uVar7: u16;
-    let mut x_00: HDC16;
-    let mut iStack10: i16;
-    let mut uVar3: u32;
-    let mut x1: *mut INT16 = null_mut();
-    let mut uVar2: u32;
-
-    uVar6 = (param_1 >> 0x10);
-    uVar2 = (param_1 + 0x6);
-    iVar1 = (uVar2 + 0x30);
-    uVar3 = (param_1 + 0x6);
-    x1 = (uVar3 + 0x1a);
-    MoveTo16(0x5, *x1, hdc_param_2);
-    uVar7 = (x1 >> 0x10);
-    iVar4 = x1;
-    LineTo16(0x5, (iVar4 + iVar1 * 0x8 -0x4), hdc_param_2);
-    for iStack10 in 0..iVar1 {
-        piVar5 = (iVar4 + iStack10 * 0x8);
-        x = (piVar5[0x2] - *piVar5 >> 1) + *piVar5;
-        MoveTo16(0x5, x, hdc_param_2);
-        LineTo16(0xa, x, hdc_param_2);
-    }
-    MoveTo16(0x5f, *x1, hdc_param_2);
-    LineTo16(0x5f, (iVar4 + iVar1 * 0x8 -0x4), hdc_param_2);
-    for iStack10 in 0..iVar1 {
-        piVar4 = (iVar4 + iStack10 * 0x8);
-        x_00 = hdc_param_2;
-        MoveTo16(0x5f, (piVar4[0x2] - *piVar4 >> 1) + *piVar4, hdc_param_2);
-        LineTo16(0x5a, x_00, hdc_param_2);
-    }
-    return;
-}
-pub unsafe fn draw_op_1018_6544(mut param_1: u32, param_2: *mut i16) {
-    let mut puVar1: *mut u16;
-    let mut uVar2: u32;
-    let mut uVar3: u16;
-    let mut local_a: [u8; 0x6] = [0; 0x6];
-    let mut uStack4: u16;
-
-    if (param_2.is_null() == false) {
-        uStack4 = ((param_2 + 0x4) - *param_2 >> 1) + *param_2;
-        puVar1 = pass1_1008_3e54(CONCAT22(0x1050, local_a), 0x0, 0x57, uStack4);
-        uVar3 = (param_1 >> 0x10);
-        uVar2 = pass1_1018_659a((puVar1 >> 0x10), param_1, uVar3, CONCAT22(0x1050, local_a));
-        draw_polygon_1018_661c(param_1, uVar3, 0x3, uVar2, (uVar2 >> 0x10));
-    }
     return;
 }
 
@@ -98,16 +39,7 @@ pub unsafe fn pass1_1018_659a(
     }
     return CONCAT22(uVar2, piVar1);
 }
-pub unsafe fn draw_polygon_1018_661c(
-    mut param_1: u16,
-    mut param_2: u16,
-    count_param_3: u16,
-    mut param_4: u16,
-    mut param_5: u16,
-) {
-    Polygon16(count_param_3, param_4, param_5);
-    return;
-}
+
 pub unsafe fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruct_2) {
     let mut paVar1: *mut astruct_812;
     let mut uVar2: u32;
@@ -299,135 +231,6 @@ pub unsafe fn struct_op_1018_6a0e(
     (iVar1 + 0xe4) = 0;
     (iVar1 + 0xe6) = 0x1df027f;
     return param_1;
-}
-
-
-
-pub unsafe fn mixed_draw_op_1018_6a7a(
-    mut param_1: u16,
-    mut param_2: u16,
-    param_3: *mut astruct_28,
-) {
-    let mut uVar2: u16;
-    let mut in_register_0000000a: u16;
-    let mut paVar3: *mut Struct57;
-    let mut uVar1: u16;
-    let mut puVar4: *mut u32;
-    let mut in_stack_0000fe80: u16;
-    let mut in_stack_0000ffa4: u16;
-    let mut in_stack_0000ffaa: u16;
-    let mut in_stack_0000ffae: u16;
-    let mut in_stack_0000ffb0: u16;
-    let mut local_22: PAINTSTRUCT16 = PAINTSTRUCT16::default();
-    let mut in_stack_0000ffd8: u16;
-
-    paVar3 = CONCAT22(in_register_0000000a, param_1);
-    uVar1 = (param_3 >> 0x10);
-    BeginPaint16(CONCAT22(0x1050, &local_22), (param_3 + 0x8));
-    EndPaint16(CONCAT22(0x1050, &local_22), (param_3 + 0x8));
-    puVar4 = mixed_1010_20ba(
-        paVar3,
-        _u16_1050_0ed0,
-        CONCAT22(param_2, 0x2),
-        in_stack_0000fe80,
-        in_stack_0000ffa4,
-        in_stack_0000ffaa,
-        in_stack_0000ffae,
-    );
-    uVar2 = (puVar4 >> 0x10);
-    if ((puVar4 + 0x20) == 0) {
-        unk_destroy_window_op_1018_6bb6(param_3);
-        return;
-    }
-    mix_ui_op_1018_6adc(param_3, uVar2, in_stack_0000ffae, in_stack_0000ffb0);
-    return;
-}
-
-
-pub unsafe fn mix_ui_op_1018_6adc(
-    param_1: *mut astruct_28,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-) {
-    let mut iVar1: i16;
-    let mut iVar2: i16;
-    let mut uVar3: u16;
-    let mut in_register_0000000a: u16;
-    let mut paVar4: *mut Struct57;
-    let mut uVar6: u32;
-    let mut pstruct28_1: *mut astruct_28;
-    let mut uVar5: *mut astruct_28;
-    let mut uVar7: u16;
-    let mut puVar8: *mut u32;
-    let mut in_stack_0000fe86: u16;
-    let mut in_stack_0000ffaa: u16;
-    let mut in_stack_0000ffb0: u16;
-    let mut in_stack_0000ffb4: u16;
-
-    paVar4 = CONCAT22(in_register_0000000a, param_2);
-    puVar8 = mixed_1010_20ba(
-        paVar4,
-        _u16_1050_0ed0,
-        CONCAT22(param_3, 0x48),
-        in_stack_0000fe86,
-        in_stack_0000ffaa,
-        in_stack_0000ffb0,
-        in_stack_0000ffb4,
-    );
-    uVar6 = puVar8 >> 0x10;
-    uVar7 = (puVar8 >> 0x10);
-    iVar1 = (puVar8 + 0xa);
-    iVar2 = (puVar8 + 0xc);
-    uVar5 = (param_1 >> 0x10);
-    pstruct28_1 = param_1;
-    if (0x1 < iVar1 - pstruct28_1.field227_0xe6) {
-        uVar6 = (iVar1 >> 0xf);
-        pstruct28_1.field225_0xe2 = iVar1 / 0x2 - (pstruct28_1.field227_0xe6 + 1) / 0x2;
-    }
-    if (0x1 < iVar2 - pstruct28_1.field228_0xe8) {
-        uVar6 = (iVar2 >> 0xf);
-        pstruct28_1.field226_0xe4 = iVar2 / 0x2 - (pstruct28_1.field228_0xe8 + 1) / 0x2;
-    }
-    uVar6 = paVar4 & 0xffff0000 | uVar6;
-    uVar7 = SUB42(s_tile2_bmp_1050_1538, 0x0);
-    uVar3 = ShowCursor16(0x0);
-    if (pstruct28_1.field231_0xee != 0) {
-        uVar7 = 0x1008;
-        win_1008_5c5c(uVar3, uVar6, _u16_1050_02a0, pstruct28_1.field231_0xee);
-        pstruct28_1.hwnd_0xf0 = uVar3;
-    }
-    uVar7 = FUN_1010_830a(
-        uVar3,
-        uVar6,
-        uVar7,
-        _u16_1050_14cc,
-        pstruct28_1.field230_0xec,
-    );
-    mci_send_command_1008_53ae(CONCAT22(uVar6, uVar7), pstruct28_1.field8_0x8);
-    ShowCursor16(1);
-    unk_destroy_window_op_1018_6bb6(param_1);
-    return;
-}
-pub unsafe fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28) {
-    let mut BVar1: bool;
-    let mut struct_1: *mut astruct_28;
-    let mut uVar2: *mut astruct_28;
-
-    uVar2 = (param_1 >> 0x10);
-    struct_1 = param_1;
-    if (struct_1.field229_0xea != 0) {
-        PostMessage16(0x0, struct_1.field229_0xea, 0x111, HWND16_1050_0396);
-    }
-    PostMessage16(0x0, 0x79, 0x111, HWND16_1050_0396);
-    if (struct_1.hwnd_0xf0 != 0) {
-        BVar1 = IsWindow16(struct_1.hwnd_0xf0);
-        if (BVar1 != 0) {
-            DestroyWindow16(struct_1.hwnd_0xf0);
-            struct_1.hwnd_0xf0 = 0;
-        }
-    }
-    return;
 }
 
 

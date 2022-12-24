@@ -4,8 +4,8 @@ use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
 use crate::block_1008::{block_1008_4000, block_1008_7000};
 use crate::structs::struct_57::Struct57;
 use crate::utils::CONCAT22;
-use crate::winbase::{_lclose16, _llseek16, _lopen16};
-use crate::windef::HFILE16;
+use crate::winapi16::{_lclose16, _llseek16, _lopen16};
+use crate::windef16::HFILE16;
 
 pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
     let mut ppcVar1: *mut *mut code;

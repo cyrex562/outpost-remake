@@ -15,21 +15,22 @@ use std::os::raw::c_char;
 use crate::block_1000::block_1000_2000::{exit_op_1000_2950, fn_ptr_op_1000_2594, init_1000_23be, pass1_1000_25a8, pass1_1000_2913, pass1_1000_29dc, poss_str_op_1000_28dc};
 use crate::block_1000::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
 use crate::globals::{DAT_1050_5f82, DAT_1050_5f87, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_0000, PTR_LOOP_1050_5f48, PTR_LOOP_1050_5f4a, PTR_LOOP_1050_5f4e, PTR_LOOP_1050_5f50, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5f84, PTR_LOOP_1050_5fb8, PTR_LOOP_1050_5fc2, PTR_LOOP_1050_5fc4, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_63fe, REG_DI, REG_SI, u8_1050_5fc9, WIN_VERSION_1050_5f80};
-use crate::winbase::{FatalAppExit16, FatalExit, GetModuleFileName16, GetVersion16, InitApp16, InitTask16, LockSegment16, MakeProcInstance16, WaitEvent16};
+use crate::winapi16::{FatalAppExit16, FatalExit, GetModuleFileName16, GetVersion16, InitApp16, InitTask16, LockSegment16, MakeProcInstance16, WaitEvent16};
 use crate::utils::CONCAT22;
 use std::ptr;
 use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::block_1000::block_1000_2000;
 use crate::block_1010::block_1010_0000;
-use crate::block_1020::block_1020_1000::{destroy_win_1020_1dea, destroy_win_1020_1e1e, pass1_1020_1da8, pass1_1020_1eea};
+use crate::block_1020::block_1020_1000::{pass1_1020_1da8, pass1_1020_1eea};
 use crate::block_1040::block_1040_a000;
-use crate::dos_interrupt;
+use crate::{dos_interrupt, win_ui, winapp};
 use crate::dos_interrupt::{dos3_op_1000_256b, swi};
 use crate::mem_container::MemContainer;
 use crate::structs::struct_822::Struct822;
 use crate::structs::struct_825::Struct825;
 use crate::sys_ops::pass1_1000_27d6;
+use crate::win_ui::{destroy_win_1020_1dea, destroy_win_1020_1e1e};
 
 pub unsafe fn entry(
     ctx: &mut AppContext,
@@ -1043,7 +1044,7 @@ pub unsafe fn pass1_1000_25d2(
 
 pub unsafe fn enum_child_windows_1010_01be() {
     if (PTR_LOOP_1050_0010.is_null()) {
-        let func = MakeProcInstance16(HINSTANCE16_1050_038c, block_1010_0000::win_ui_op_1010_0240);
+        let func = MakeProcInstance16(HINSTANCE16_1050_038c, win_ui::win_ui_op_1010_0240);
         EnumChildWindows1(0x0, func, func);
         FreeProcInstance16(func);
     }
@@ -1430,7 +1431,7 @@ pub unsafe fn make_proc_inst_1040_a234(param_1: *mut u8, param_2: *mut u8, mut p
   CONCAT22(param_2,param_1) = 0xa4e8;
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   if (_PTR_LOOP_1050_5edc.is_null()) {
-    _PTR_LOOP_1050_5edc = MakeProcInstance16(HINSTANCE16_1050_038c, block_1040_a000::call_win_proc_1040_a40e);
+    _PTR_LOOP_1050_5edc = MakeProcInstance16(HINSTANCE16_1050_038c, winapp::call_win_proc_1040_a40e);
   }
   (param_1 + 0xc) = _PTR_LOOP_1050_5edc;
   PTR_LOOP_1050_5eda = PTR_LOOP_1050_5eda + 1;

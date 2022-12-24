@@ -7,8 +7,8 @@ use crate::globals::{DAT_1050_1050, u16_1050_0002};
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_7::Struct7;
 use crate::utils::CONCAT22;
-use crate::winbase::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16};
-use crate::windef::HGLOBAL16;
+use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16};
+use crate::windef16::HGLOBAL16;
 
 // dvar6 = mem_op_1000_1532(param_1, 0x1050);
 pub unsafe fn mem_op_1000_1532(a: *mut Struct7, b: u16) -> u32 {

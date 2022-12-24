@@ -1,7 +1,8 @@
-use crate::block_1020::block_1020_8000::{invalidate_rect_1020_8d90, pass1_1020_8556, pass1_1020_8bae};
-use crate::block_1020::block_1020_9000::{palette_op_1020_92c4, pass1_1020_915a};
+use crate::block_1020::block_1020_8000::{pass1_1020_8556, pass1_1020_8bae};
+use crate::block_1020::block_1020_9000::pass1_1020_915a;
 use crate::block_1020::block_1020_c000::{pass1_1020_c47a, pass1_1020_c6a4, pass1_1020_c6de, pass1_1020_cac2, pass1_1020_cefc};
 use crate::block_1020::block_1020_d000::pass1_1020_d194;
+use crate::draw_ops::{invalidate_rect_1020_8d90, palette_op_1020_92c4};
 
 pub unsafe fn pass1_1020_8a5e(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1020_8556(param_1);
@@ -127,43 +128,6 @@ pub unsafe fn pass1_1020_8e6c(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn invalidate_rect_1020_8fb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
-    let mut uVar1: u32;
-    let mut rect: *mut RECT16;
-    let mut uVar2: u32;
-    let mut extraout_DX: u16;
-    let mut hwnd: u16;
-    let mut iVar3: i16;
-    let mut uVar4: u16;
-    let mut iStack8: i16;
-
-    uVar4 = (param_3 >> 0x10);
-    iVar3 = param_3;
-    uVar1 = (iVar3 + 0xba);
-    if ((uVar1 + 0x1e) != 0) {
-        pass1_1018_2862((iVar3 + 0x16));
-        (iVar3 + 0xaa) = param_1;
-        (iVar3 + 0xac) = param_2;
-        if ((param_2 | (iVar3 + 0xaa)) != 0) {
-            uVar1 = (iVar3 + 0xaa);
-            iVar3 = (uVar1 + 0xa);
-            for iStack8 in 0..iVar3 {
-                uVar2 = iStack8;
-                empty_1008_8fc4();
-                rect = uVar2;
-                hwnd = extraout_DX | rect;
-                if (((hwnd != 0) && (0x9 < rect[0xb].y)) && (
-                    pass1_1008_8b20(uVar2 & 0xffff | extraout_DX << 0x10),
-                    (hwnd | rect) != 0,
-                )) {
-                    InvalidateRect16(0x0, rect, hwnd);
-                }
-            }
-        }
-    }
-    return;
-}
-
 pub unsafe fn pass1_1020_9068(mut param_1: u32, param_2: *mut u32, mut param_3: u32) {
     let mut iVar1: i16;
     let mut paVar2: *mut astruct_76;
@@ -231,31 +195,6 @@ pub unsafe fn pass1_1020_91de(param_1: *mut StructD, param_2: u8) -> *mut Struct
         fn_ptr_1000_17ce(param_1);
     }
     return param_1;
-}
-
-pub unsafe fn mix_draw_op_1020_9312(mut param_1: u32) {
-    let mut puVar1: *mut u32;
-    let mut ppcVar2: *mut *mut code;
-    let mut uVar3: u32;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut local_22: [u8; 0x20] = [0; 0x20];
-
-    uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    BeginPaint16(CONCAT22(0x1050, local_22), (iVar4 + 0x4));
-    uVar3 = (iVar4 + 0x6);
-    puVar1 = (uVar3 + 0xa);
-    ppcVar2 = (*puVar1 + 0x4);
-    (**ppcVar2)(
-        s_tile2_bmp_1050_1538,
-        puVar1,
-        (puVar1 >> 0x10),
-        0x0,
-        param_1 & 0xffff0000 | (iVar4 + 0xa),
-    );
-    EndPaint16(CONCAT22(0x1050, local_22), (iVar4 + 0x4));
-    return;
 }
 
 pub unsafe fn pass1_1020_96a2(param_1: *mut StructD, param_2: u8) -> *mut StructD {
@@ -895,5 +834,3 @@ pub unsafe fn pass1_1020_d6e6(mut param_1: i16, param_2: *mut astruct_15) {
     }
     return;
 }
-
-

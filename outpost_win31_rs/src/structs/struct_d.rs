@@ -1,4 +1,4 @@
-use crate::windef::{HDC16, HFILE16, HMENU16, HPALETTE16, HWND16};
+use crate::windef16::{HDC16, HFILE16, HMENU16, HPALETTE16, HWND16};
 
 pub struct StructD {
     pub address_offset_field_0x0: u16,

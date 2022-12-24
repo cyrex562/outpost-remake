@@ -121,40 +121,6 @@ pub unsafe fn pass1_1028_767e(mut param_1: i16, mut param_2: u16) {
 }
 
 
-pub unsafe fn post_msg_1028_76da() {
-    let mut lVar1: i32;
-    let mut uVar2: u16;
-    let mut in_EDX: *mut Struct57;
-    let mut puVar3: *mut u32;
-    let mut in_stack_0000fe8e: u16;
-    let mut in_stack_0000ffb2: u16;
-    let mut in_stack_0000ffb8: u16;
-    let mut in_stack_0000ffbc: u16;
-    let mut in_stack_0000ffe4: u32;
-    let mut uStack10: u16;
-    let mut uStack8: u16;
-
-    puVar3 = mixed_1010_20ba(
-        in_EDX,
-        _u16_1050_0ed0,
-        CONCAT22((in_stack_0000ffe4 >> 0x10), 0x2c),
-        in_stack_0000fe8e,
-        in_stack_0000ffb2,
-        in_stack_0000ffb8,
-        in_stack_0000ffbc,
-    );
-    uVar2 = (puVar3 >> 0x10);
-    lVar1 = (puVar3 + 0xc);
-    uStack8 = (lVar1 >> 0x10);
-    uStack10 = lVar1;
-    if (((uStack8 | uStack10) != 0) && (*_PTR_LOOP_1050_65e2 == lVar1)) {
-        PostMessage16(0x0, 0x106, 0x111, HWND16_1050_0396);
-        (puVar3 + 0xc) = 0;
-    }
-    return;
-}
-
-
 pub unsafe fn pass1_1028_7742(
     mut param_1: u16,
     mut param_2: u16,

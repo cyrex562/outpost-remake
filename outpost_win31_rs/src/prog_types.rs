@@ -4,7 +4,7 @@
 
 use std::ffi::c_void;
 use std::os::raw::c_char;
-use crate::windef::POINTL;
+use crate::windef16::POINTL;
 
 // typedef let mut BOOL16: u16;
 //LOGPALETTE;

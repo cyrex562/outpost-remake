@@ -1,3 +1,5 @@
+use crate::sys_ops;
+
 pub unsafe fn pass1_1008_9004(
     param_1: *mut astruct_78,
     mut param_2: u16,
@@ -139,46 +141,6 @@ pub unsafe fn struct_op_1008_9174(param_1: *mut Struct57, mut param_2: u32, mut 
     return;
 }
 
-
-
-pub unsafe fn pass1_1008_91ba(param_1: *mut astruct_3) -> *mut u16 {
-    let mut UVar1: u16;
-    let mut iVar2: *mut astruct_3;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    iVar2 = param_1;
-    param_1.field0_0x0 = 0x389a;
-    iVar2.field1_0x2 = 0x1008;
-    iVar2.field2_0x4 = 0;
-    set_struct_1008_574a((param_1 & 0xffff0000 | ZEXT24(iVar2 + 1)));
-    param_1.field0_0x0 = 0x9416;
-    iVar2.field1_0x2 = 0x1008;
-    _PTR_LOOP_1050_0388 = param_1;
-    UVar1 = SetTimer16(NULL, 0x1, 0x1, HWND16_1050_0396);
-    if (UVar1 == 0) {
-        fn_ptr_op_1000_24cd(1);
-    }
-    PTR_LOOP_1050_038a = (_PTR_LOOP_1050_0388 >> 0x10);
-    return &param_1.field0_0x0;
-}
-
-
-pub unsafe fn kill_timer_1008_921c(param_1: *mut u16) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    iVar1 = param_1;
-    *param_1 = 0x9416;
-    (iVar1 + 0x2) = 0x1008;
-    KillTimer16(0x1, HWND16_1050_0396);
-    _PTR_LOOP_1050_0388 = 0;
-    pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0x6)));
-    *param_1 = 0x389a;
-    (iVar1 + 0x2) = 0x1008;
-    return;
-}
 pub unsafe fn pass1_1008_9262(
     param_1: *mut Struct57,
     param_2: *mut Struct57,
@@ -281,7 +243,7 @@ pub unsafe fn pass1_1008_93c0(param_1: *mut u16, param_2: u8) -> *mut u16 {
 }
 
 pub unsafe fn pass1_1008_93ec(param_1: *mut StructD, param_2: u8) -> *mut StructD {
-    kill_timer_1008_921c(&param_1.address_offset_field_0x0);
+    sys_ops::kill_timer_1008_921c(&param_1.address_offset_field_0x0);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
     }
@@ -314,69 +276,6 @@ pub unsafe fn pass1_1008_9466(param_1: *mut u16) {
     return;
 }
 
-
-
-pub unsafe fn win_msg_op_1008_9498() -> WPARAM16 {
-    let mut BVar1: bool;
-    let mut IVar2: i16;
-    let mut local_msg_1: MSG16; //
-                                //
-                                // LAB_1008_949c:
-    BVar1 = GetMessage16(0x0, 0x0, 0x0, &local_msg_1);
-    if (BVar1 == 0) {
-        return local_msg_1.wparam;
-    }
-    //   if ((_u16_1050_5bc8 + 0x8) != 0) goto code_r0x100894cd;
-    //   goto LAB_1008_94dc;
-    // code_r0x100894cd:
-    BVar1 = IsDialogMessage16(&local_msg_1, &DAT_1050_1050);
-    if (BVar1 == 0) {
-        //
-        // LAB_1008_94dc:
-        if (PTR_LOOP_1050_0398.is_null() == false) {
-            IVar2 = TranslateAccelerator16(
-                &local_msg_1,
-                (HACCEL16) & DAT_1050_1050,
-                PTR_LOOP_1050_0398,
-            );
-            //   if (IVar2 != 0) goto LAB_1008_949c;
-        }
-        TranslateMessage16(&local_msg_1);
-        DispatchMessage16(&local_msg_1);
-    }
-    //   goto LAB_1008_949c;
-}
-
-
-pub unsafe fn unk_win_msg_op_1008_9510(param_1: *mut i16) {
-    let mut has_message: bool;
-    let mut IVar1: i16;
-    let mut local_14: MSG16; //
-                             //
-                             // LAB_1008_9578:
-    if (*param_1 != 0) {
-        has_message = GetMessage16(0x0, 0x0, 0x0, &local_14);
-        if (has_message != 0) {
-            //   if ((_u16_1050_5bc8 + 0x8) != 0) goto code_r0x10089538;
-            // TODO: goto LAB_1008_9547;
-        }
-    }
-    return;
-    // code_r0x10089538:
-    has_message = IsDialogMessage16(&local_14, &DAT_1050_1050);
-    if (has_message == 0) {
-        //
-        // LAB_1008_9547:
-        if (PTR_LOOP_1050_0398.is_null() == false) {
-            IVar1 =
-                TranslateAccelerator16(&local_14, (HACCEL16) & DAT_1050_1050, PTR_LOOP_1050_0398);
-            //   if (IVar1 != 0) goto LAB_1008_9578;
-        }
-        TranslateMessage16(&local_14);
-        DispatchMessage16(&local_14);
-    }
-    //   goto LAB_1008_9578;
-}
 pub unsafe fn set_struct_op_1008_9584(param_1: *mut astruct_20, mut param_2: u32) {
     let mut iVar1: *mut astruct_20;
     let mut uVar1: u16;
@@ -418,49 +317,6 @@ pub unsafe fn pass1_1008_9628(mut param_1: u32, mut param_2: u16) {
     return;
 }
 
-
-
-
-pub unsafe fn show_win_1008_96ae(mut param_1: u32, param_2: INT16) -> BOOL16 {
-    let mut BVar1: bool;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    if ((param_1 + 0x8) != 0) {
-        BVar1 = ShowWindow16(param_2, (param_1 + 0x8));
-        return BVar1;
-    }
-    return 0x0;
-}
-pub unsafe fn win_ui_reg_class_1008_96d2(param_1: *mut StructA) {
-    let mut BVar1: bool;
-    let mut AVar2: ATOM;
-    let mut wndclass: WNDCLASS16;
-
-    wndclass.lpsz_class_name = param_1 + 0x5b;
-    BVar1 = GetClassInfo16(
-        &wndclass,
-        CONCAT22(wndclass.lpsz_class_name, 0x1050),
-        param_1,
-    );
-    if (BVar1 == 0) {
-        wndclass.style = (param_1 + 0xc8);
-        wndclass.lpfn_wnd_proc = 0x5632;
-        wndclass.lpfn_wnd_proc = 0x1008;
-        wndclass._6_4_ = 0x40000;
-        wndclass.h_instance = HINSTANCE16_1050_038c;
-        wndclass.h_icon = (param_1 + 0xc2);
-        wndclass.h_cursor = (param_1 + 0xc4);
-        wndclass.hbr_background = (param_1 + 0xc6);
-        wndclass.lpsz_menu_name = 0;
-        wndclass.lpsz_class_name = param_1;
-        AVar2 = RegisterClass16(&wndclass);
-        if (AVar2 == 0) {
-            fn_ptr_op_1000_24cd(0x0);
-        }
-    }
-    return;
-}
 pub unsafe fn create_window_ex_1008_9760(in_struct_1: *mut StructA) {
     let mut window_handle: HWND16;
     let struct_1: *mut StructA;

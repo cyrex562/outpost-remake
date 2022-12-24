@@ -5,14 +5,15 @@ use crate::globals::{DAT_1050_1050, DAT_1050_5f30, PTR_LOOP_1050_000c, PTR_LOOP_
 use crate::utils::{CARRY2, CONCAT22};
 use std::os::raw::c_char;
 use std::ptr::null_mut;
-use crate::block_1000::block_1000_2000::{mem_op_1000_21b6, msg_box_op_1000_214c, ret_true_1000_2146};
+use crate::block_1000::block_1000_2000::{mem_op_1000_21b6, ret_true_1000_2146};
 use crate::block_1000::block_1000_5000::pass1_1000_52be;
 use crate::mem_ops::mem_op_1000_1532;
 use crate::structs::struct_7::Struct7;
 use crate::structs::struct_d::StructD;
 use crate::os_base::_SHI_INVOKEERRORHANDLER1;
-use crate::winbase::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
-use crate::windef::HGLOBAL16;
+use crate::win_ui::msg_box_op_1000_214c;
+use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
+use crate::windef16::HGLOBAL16;
 
 pub unsafe fn pass1_1000_1284(mut param_1: u32) -> u32 {
     let mut bVar1: u8;

@@ -81,7 +81,7 @@ pub unsafe fn pass1_1008_dc5a(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-// WARNING: Variable defined which should be unmapped: param_9
+
 pub unsafe fn pass1_1008_dc80(
     mut param_1: u16,
     mut param_2: i16,
@@ -601,92 +601,6 @@ pub unsafe fn pass1_1008_ef76(param_1: *mut StructD, param_2: u8) -> *mut Struct
         fn_ptr_1000_17ce(param_1);
     }
     return param_1;
-}
-
-pub unsafe fn set_window_placement_1010_0070(mut param_1: u32, mut param_2: i16, mut param_3: u16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut uVar2: u16;
-    let mut puVar3: *mut u32;
-    let mut lVar4: i32;
-    let mut uVar5: u16;
-    let mut local_18: [u8; 0x6] = [0; 0x6];
-    let mut IStack18: i16;
-    let mut iStack16: i16;
-    let mut IStack14: i16;
-    let mut IStack12: i16;
-    let mut IStack10: i16;
-    let mut IStack8: i16;
-    let mut uStack6: u16;
-    let mut uStack4: u16;
-
-    local_18 = 0x16;
-    local_18._2_4_ = 0;
-    IStack18 = 0;
-    iStack16 = 0;
-    IStack14 = 0;
-    IStack12 = 0;
-    IStack10 = 0;
-    IStack8 = 0;
-    uStack6 = 0;
-    uStack4 = 0;
-    uVar5 = param_3;
-    GetWindowPlacement16(local_18, &DAT_1050_1050);
-    if ((iStack16 == -1) || (param_2 != 0)) {
-        local_18._2_4_ = 0x50001;
-        lVar4 = GetWindowLong16(0x0, param_3);
-        uVar2 = (lVar4 >> 0x10);
-        puVar3 = (lVar4 + 0xe0);
-        ppcVar1 = (*puVar3 + 0x38);
-        (**ppcVar1)(s_tile2_bmp_1050_1538, puVar3, (lVar4 + 0xe2), uVar5);
-        pass1_1010_01f8(param_1, CONCAT22(0x1050, local_18), puVar3);
-        SetWindowPlacement16(local_18, &DAT_1050_1050);
-    }
-    return;
-}
-
-
-pub unsafe fn set_win_placement_1010_010e(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
-    let mut ppcVar1: *mut *mut code;
-    let mut iVar2: i16;
-    let mut piVar3: *mut i16;
-    let mut uVar4: u16;
-    let mut puVar5: *mut u32;
-    let mut extraout_DX: u16;
-    let mut lVar6: i32;
-    let mut uVar7: u16;
-    let mut local_18: WINDOWPLACEMENT16;
-    let mut iStack6: i16;
-    let mut iStack4: i16;
-
-    local_18.length = 0x16;
-    local_18.flags = 0;
-    local_18.show_cmd = 0;
-    local_18.pt_min_position.x = 0;
-    local_18.pt_min_position.y = 0;
-    local_18.pt_max_position.x = 0;
-    local_18.pt_max_position.y = 0;
-    local_18.rc_normal_position.x = 0;
-    local_18.rc_normal_position.y = 0;
-    iStack6 = 0;
-    iStack4 = 0;
-    uVar7 = param_3;
-    GetWindowPlacement16(&local_18, &DAT_1050_1050);
-    if (local_18.rc_normal_position.x == -1) {
-        lVar6 = GetWindowLong16(0x0, param_3);
-        uVar4 = (lVar6 >> 0x10);
-        puVar5 = (lVar6 + 0xe0);
-        ppcVar1 = (*puVar5 + 0x1c);
-        (**ppcVar1)(s_tile2_bmp_1050_1538, puVar5, (lVar6 + 0xe2), uVar7);
-        iVar2 = puVar5;
-        piVar3 = (puVar5 & 0xffff | extraout_DX << 0x10);
-        local_18.show_cmd = 0x9;
-        local_18.rc_normal_position.x = *piVar3;
-        local_18.rc_normal_position.y = (iVar2 + 2);
-        iStack6 = (iVar2 + 0x4) + *piVar3;
-        iStack4 = (iVar2 + 0x2) + (iVar2 + 0x6);
-        SetWindowPlacement16(&local_18, &DAT_1050_1050);
-    }
-    return;
 }
 
 

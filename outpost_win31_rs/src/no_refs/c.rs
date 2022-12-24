@@ -202,15 +202,6 @@ pub unsafe fn pass1_1008_3cd6(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-
-pub unsafe fn post_msg_1008_3d20(mut param_1: u32) {
-    let mut uVar1: u16;
-
-    uVar1 = (param_1 >> 0x10);
-    PostMessage16(0x0, (param_1 + 0xcc), 0x111, (param_1 + 0xbc));
-    return;
-}
-
 pub unsafe fn FUN_1008_3d40() {
     return;
 }
@@ -495,44 +486,6 @@ pub unsafe fn pass1_1008_507c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn def_win_proc_1008_5632(param_1: LPARAM,param_2: WPARAM,mut param_3: u16 ,param_4: HWND16)
-
-{
-  let mut ppcVar1: *mut *mut code;
-  let mut puStack6: *mut u32;
-  let mut uVar2: u16;
-
-  uVar2 = &DAT_1050_1050;
-  puStack6 = GetWindowLong16(0x0,param_4);
-  if (((puStack6 >> 0x10) | puStack6) == 0) {
-    if (param_3 != 1) {
-      DefWindowProc16(param_1,param_2,param_3,param_4);
-      return;
-    }
-    puStack6 = param_1;
-    SetWindowLong16(puStack6,0x0,param_4);
-    pass1_1008_9628(puStack6,param_4);
-  }
-  ppcVar1 = (*puStack6 + 0x1c);
-  (**ppcVar1)(s_tile2_bmp_1050_1538,puStack6,(puStack6 >> 0x10),param_1,param_2,param_3,uVar2);
-  return;
-}
-
-
-pub unsafe fn cleanup_palette_1008_56e2(mut param_1: u32,mut param_2: u32) -> BOOL16
-
-{
-  let mut hpalette_a: HPALETTE16;
-  let mut u16_a: u16;
-
-  u16_a = (param_1 >> 0x10);
-  hpalette_a = SelectPalette16(0x0,(param_1 + 0x4),*param_2);
-  (param_1 + 0x4) = hpalette_a;
-  DeleteObject16(hpalette_a);
-  return 0x1;
-}
-
-
 pub unsafe fn pass1_1008_570e(param_1: *mut u16,param_2: u8) -> *mut u16
 
 {
@@ -757,23 +710,6 @@ pub unsafe fn pass1_1008_5fa2(mut param_1: u32,param_2: u8) -> u32
     fn_ptr_1000_17ce(param_1);
   }
   return param_1;
-}
-
-
-pub unsafe fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
-    //   RECT16 rect_2e [0x2];
-    let mut rect_2e: [RECt16; 2] = [RECT16::default(); 2];
-    let mut hbrush_var38: HBRUSH16;
-    let mut hbrush_var36: HDC16;
-    let mut paintstruct_22: [u8; 0x20] = [0; 0x20];
-
-    hbrush_var36 = BeginPaint16(CONCAT22(0x1050, paintstruct_22), param_1.field8_0x8);
-    hbrush_var38 = CreateSolidBrush16(0x210070b);
-    GetClientRect16(rect_2e, &DAT_1050_1050);
-    FillRect16(hbrush_var38, rect_2e, &DAT_1050_1050);
-    EndPaint16(CONCAT22(0x1050, paintstruct_22), param_1.field8_0x8);
-    DeleteObject16(hbrush_var38);
-    return;
 }
 
 pub unsafe fn FUN_1008_6324() {

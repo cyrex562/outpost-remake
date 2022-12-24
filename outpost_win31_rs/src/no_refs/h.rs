@@ -1,5 +1,6 @@
-use crate::block_1010::block_1010_4000::{draw_op_1010_47d0, pass1_1010_459e, pass1_1010_45d6};
+use crate::block_1010::block_1010_4000::{pass1_1010_459e, pass1_1010_45d6};
 use crate::block_1010::block_1010_5000::{pass1_1010_519a, pass1_1010_533c, string_1010_5286};
+use crate::draw_ops::draw_op_1010_47d0;
 
 pub unsafe fn FUN_1010_9900(mut param_1: u16, mut param_2: u32, param_3: *mut u8) -> u16 {
     let mut uVar1: u32;
@@ -599,48 +600,6 @@ pub unsafe fn pass1_1010_4df0(mut param_1: u16, mut param_2: u32) {
     uVar1 = (param_2 + 0x26);
     pass1_1010_c1ba(param_1, uVar1, (uVar1 >> 0x10), (param_2 + 0x20));
     return;
-}
-
-
-pub unsafe fn pt_in_rect_1010_4e08(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
-    let mut piVar1: *mut i16;
-    let mut bVar2: bool;
-    let mut BVar3: bool;
-    let mut iVar4: i16;
-    let mut uVar5: u16;
-    let mut iStack12: i16;
-    let mut iStack10: i16;
-    let mut POPStack8: INT16;
-
-    PStack8 = CONCAT22(param_2, param_3);
-    uVar5 = (param_1 >> 0x10);
-    iVar4 = param_1;
-    (iVar4 + 0x22) = (iVar4 + 0x20);
-    bVar2 = false;
-    (iVar4 + 0x24) = 0;
-    iStack12 = 0;
-    iStack10 = 0;
-    loop {
-        piVar1 = (iVar4 + 0x30);
-        if (*piVar1 == iStack12 || *piVar1 < iStack12) {
-            //
-            // LAB_1010_4e67:
-            if (iStack10 != 0) {
-                (iVar4 + 0x20) = iStack10;
-            }
-            if (bVar2) {
-                return;
-            }
-            return;
-        }
-        BVar3 = PtInRect16(PStack8, ((iVar4 + 0x1a) + iStack12 * 0x8));
-        if (BVar3 != 0) {
-            iStack10 = iStack12;
-            bVar2 = true;
-            // TODO: goto LAB_1010_4e67;
-        }
-        iStack12 += 0x1;
-    }
 }
 
 

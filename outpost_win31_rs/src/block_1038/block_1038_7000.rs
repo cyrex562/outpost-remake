@@ -795,68 +795,6 @@ pub unsafe fn pass1_1038_7d5c(param_1: *mut StructD)
 }
 
 
-
-
-
-
-
-
-
-pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut Struct903) -> LRESULT
-
-{
-  let mut in_EDX: *mut Struct57;
-  let mut iVar1: i16;
-  let mut uVar2: u16;
-  let mut puVar3: *mut u32;
-  let mut l_param: *mut c_char;
-  let mut LVar4: LRESULT;
-  let mut in_stack_0000fe9a: u16;
-  let mut in_stack_0000ffbe: u16;
-  let mut in_stack_0000ffc4: u16;
-  let mut in_stack_0000ffc8: u16;
-  let mut in_stack_0000fff2: u16;
-
-  puVar3 = mixed_1010_20ba(in_EDX,_u16_1050_0ed0,CONCAT22(in_stack_0000fff2,0x30),in_stack_0000fe9a,
-                           in_stack_0000ffbe,in_stack_0000ffc4,in_stack_0000ffc8);
-  l_param = pass1_1010_375e(puVar3);
-  uVar2 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  pass1_1008_b1a6((iVar1 + 0x94),l_param);
-  SendDlgItemMessage16(0x0,0x0,0xb,0x1854,(iVar1 + 0x6));
-  LVar4 = SendDlgItemMessage16(0x0,0x0,0x409,0x1854,(iVar1 + 0x6));
-  if ((LVar4 != 0xffff) || ((LVar4 >> 0x10) != -1)) {
-    SendDlgItemMessage16(0x0,LVar4,0x403,0x1854,(iVar1 + 0x6));
-    SendDlgItemMessage16(l_param,0x0,0x401,0x1854,(iVar1 + 0x6));
-    SendDlgItemMessage16(0x0,0xffff,0x407,0x1854,(iVar1 + 0x6));
-    SendDlgItemMessage16(0x0,0x0,0x405,0x1855,(iVar1 + 0x6));
-    LVar4 = SendDlgItemMessage16(0x0,0x0,0x405,0x1856,(iVar1 + 0x6));
-    enable_win_1038_806a((LVar4 >> 0x10),param_1);
-  }
-  LVar4 = SendDlgItemMessage16(0x0,0x1,0xb,0x1854,(iVar1 + 0x6));
-  return LVar4;
-}
-pub unsafe fn send_dlg_item_msg_1038_7fae(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32)
-
-{
-  let mut iVar1: i16;
-  let mut uVar2: u16;
-  let mut LVar3: LRESULT;
-
-  uVar2 = (param_3 >> 0x10);
-  iVar1 = param_3;
-  pass1_1008_b146(param_1,param_2,(iVar1 + 0x94));
-  SendDlgItemMessage16(0x0,0xffff,0x407,0x1855,(iVar1 + 0x6));
-  LVar3 = SendDlgItemMessage16(0x0,0xffff,0x407,0x1856,(iVar1 + 0x6));
-  pass1_1008_b61a(LVar3,(LVar3 >> 0x10),(iVar1 + 0x94),0x0);
-  pass1_1008_b63a((iVar1 + 0x94),0x0);
-  return;
-}
-
-
-
-
-
 pub unsafe fn pass1_1038_801a(mut param_1: u16 ,param_2: *mut Struct903) -> u32
 
 {

@@ -1,5 +1,5 @@
 use std::os::raw::c_char;
-use crate::windef::{HCURSOR16, HGDIOBJ16, HWND16};
+use crate::windef16::{HCURSOR16, HGDIOBJ16, HWND16};
 
 pub struct StructA {
     pub field0_0x0: u16,

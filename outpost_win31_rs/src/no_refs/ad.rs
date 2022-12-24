@@ -1,4 +1,5 @@
-use crate::block_1028::block_1028_7000::{pass1_1028_75bc, pass1_1028_767e, pass1_1028_78b8, pass1_1028_7c4e, pass1_1028_7dfc, pass1_1028_7fb6, post_msg_1028_76da};
+use crate::block_1028::block_1028_7000::{pass1_1028_75bc, pass1_1028_767e, pass1_1028_78b8, pass1_1028_7c4e, pass1_1028_7dfc, pass1_1028_7fb6};
+use crate::winapp::post_msg_1028_76da;
 
 pub unsafe fn pass1_1028_6e60(param_1: u8, param_2: *mut astruct_97) -> *mut astruct_97 {
     struct_op_1028_d1dc(param_2, 0x32c7);

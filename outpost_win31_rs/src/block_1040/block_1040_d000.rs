@@ -1,23 +1,25 @@
 use crate::block_1000::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
 use crate::block_1000::block_1000_3000::pass1_1000_3cea;
 use crate::block_1010::block_1010_2000::mixed_1010_20ba;
-use crate::block_1010::block_1010_8000::{load_string_1010_84e0, pass1_1010_8ef2};
+use crate::block_1010::block_1010_8000::pass1_1010_8ef2;
 use crate::block_1010::block_1010_9000::{pass1_1010_9044, pass1_1010_9130, pass1_1010_91cc, pass1_1010_9210, struct_1010_9172};
 use crate::block_1010::block_1010_c000::pass1_1010_c3c2;
 use crate::block_1018::block_1018_5000::{pass1_1018_5732, pass1_1018_5742, pass1_1018_57d2};
 use crate::block_1030::block_1030_8000::pass1_1030_8344;
 use crate::block_1038::block_1038_a000::pass1_1038_af40;
 use crate::block_1038::block_1038_b000::pass1_1038_b6e0;
-use crate::block_1040::block_1040_b000::{pass1_1040_b54a, struct_1040_b082, unk_draw_op_1040_b0f8};
+use crate::block_1040::block_1040_b000::{pass1_1040_b54a, struct_1040_b082};
 use crate::block_1040::block_1040_c000::pass1_1040_ca74;
+use crate::draw_ops::unk_draw_op_1040_b0f8;
 use crate::globals::PTR_LOOP_1050_1040;
+use crate::resources::load_string_1010_84e0;
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_903::Struct903;
 use crate::structs::struct_d::StructD;
 use crate::utils::{CONCAT22, SUB42};
 use crate::win_ui;
-use crate::winbase::{EnableWindow16, GetDlgItem16, MessageBox16, PostMessage16, SendDlgItemMessage16};
-use crate::windef::{HWND16, LRESULT};
+use crate::winapi16::{EnableWindow16, GetDlgItem16, MessageBox16, PostMessage16, SendDlgItemMessage16};
+use crate::windef16::{HWND16, LRESULT};
 
 
 

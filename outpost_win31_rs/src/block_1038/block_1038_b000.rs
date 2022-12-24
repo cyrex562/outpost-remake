@@ -1,9 +1,9 @@
 use std::ffi::c_void;
 use crate::block_1010::block_1010_2000::mixed_1010_20ba;
-use crate::block_1040::block_1040_7000::get_sys_metrics_1040_7728;
+use crate::win_ui::get_sys_metrics_1040_7728;
 use crate::structs::struct_57::Struct57;
 use crate::utils::CONCAT22;
-use crate::winbase::ShowWindow16;
+use crate::winapi16::ShowWindow16;
 
 pub unsafe fn pass1_1038_b6e0(mut param_1: u16, mut param_2: u16)
 

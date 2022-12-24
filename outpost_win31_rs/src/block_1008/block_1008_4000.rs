@@ -8,15 +8,15 @@ use crate::block_1008::block_1008_5000::struct_op_1008_56b4;
 use crate::block_1008::block_1008_6000::str_op_1008_60e8;
 use crate::block_1010::block_1010_2000::mixed_1010_20ba;
 use crate::block_1010::block_1010_8000::FUN_1010_830a;
-use crate::file_ops;
+use crate::{draw_ops, file_ops};
 use crate::globals::DAT_1050_1050;
 use crate::structs::struct_288::astruct_288;
 use crate::structs::struct_394::astruct_394;
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_d::StructD;
 use crate::utils::CONCAT22;
-use crate::winbase::{_lclose16, _llseek16, _lopen16, CreateDC16, CreatePalette16, DeleteDC16, DeleteObject16, hmemcpy16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, TextOut16};
-use crate::windef::{COLORREF, HDC16, HFILE16, HPALETTE16, LOGPALETTE};
+use crate::winapi16::{_lclose16, _llseek16, _lopen16, CreateDC16, CreatePalette16, DeleteDC16, DeleteObject16, hmemcpy16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, TextOut16};
+use crate::windef16::{COLORREF, HDC16, HFILE16, HPALETTE16, LOGPALETTE};
 
 pub unsafe fn pass1_1008_4016(param_1: *mut astruct_76) {
     let mut iVar1: *mut astruct_76;
@@ -334,7 +334,7 @@ pub unsafe fn palette_op_1008_46e4(
     if (!bVar1) {
         return 0x0;
     }
-    create_palette_1008_4e38(&struct_var3.field5_0xa, (uVar3 >> 0x10));
+    draw_ops::create_palette_1008_4e38(&struct_var3.field5_0xa, (uVar3 >> 0x10));
     struct_var3.field7_0xe = uVar2;
     HVar2 = SelectPalette16(0x0, struct_var3.field7_0xe, *param_4);
     struct_var3.field2_0x4 = HVar2;
@@ -639,65 +639,11 @@ pub unsafe fn palette_op_1008_4e08(
 ) -> HPALETTE16 {
     let mut hdc_1: HDC16;
     hdc_1 = *phdc_param_2;
-    create_palette_1008_4e38(param_3, param_2);
+    draw_ops::create_palette_1008_4e38(param_3, param_2);
     SelectPalette16(0x0, hpal_param_2, hdc_1);
     hdc_1 = *phdc_param_2;
     RealizePalette16(hdc_1);
     return hdc_1;
-}
-
-// WARNING: Unable to use type for symbol uVar3
-pub unsafe fn create_palette_1008_4e38(in_struct_1: *mut astruct_13, mut param_2: u16) {
-    let mut piVar1: *mut i16;
-    let mut pLVar2: *mut LOGPALETTE;
-    let mut iVar3: i16;
-    let mut in_register_0000000a: u16;
-    let mut paVar4: *mut Struct57;
-    let mut local_struct_1: *mut astruct_13;
-    let mut iVar5: i16;
-    let mut uVar8: *mut astruct_13;
-    let mut uVar9: u16;
-    let mut uVar10: u16;
-    let mut iStack14: i16;
-    let mut UpuStack12: *mut c_char;
-    let mut UpuStack8: *mut c_char;
-    let mut uVar3: *mut LOGPALETTE;
-
-    paVar4 = CONCAT22(in_register_0000000a, param_2);
-    uVar8 = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
-    iVar3 = (local_struct_1.field9_0xc + 0x2) * 0x4;
-    if (local_struct_1.field10_0xe.is_null()) {
-        mem_op_1000_179c(iVar3, paVar4);
-        local_struct_1.field10_0xe = iVar3;
-        (&local_struct_1.field10_0xe + 0x2) = paVar4;
-        local_struct_1.field10_0xe.pal_version = 0x300;
-        uVar3 = local_struct_1.field10_0xe;
-        (uVar3 + 0x2) = local_struct_1.field9_0xc;
-        pLVar2 = local_struct_1.field10_0xe;
-        puStack8 = (pLVar2 & 0xffff0000 | (pLVar2 + 0x4));
-        puStack12 = local_struct_1.field4_0x4;
-        iStack14 = 0;
-        loop {
-            piVar1 = &local_struct_1.field9_0xc;
-            if (*piVar1 == iStack14 || *piVar1 < iStack14) {
-                break;
-            }
-            uVar9 = (puStack12 >> 0x10);
-            iVar3 = puStack12;
-            *puStack8 = (iVar3 + 2);
-            uVar10 = (puStack8 >> 0x10);
-            iVar5 = puStack8;
-            *(iVar5 + 1) = *(iVar3 + 1);
-            (iVar5 + 0x2) = *puStack12;
-            *(iVar5 + 0x3) = 0;
-            iStack14 += 0x1;
-            puStack8 = (puStack8 & 0xffff0000 | (iVar5 + 0x4));
-            puStack12 = (puStack12 & 0xffff0000 | (iVar3 + 0x4));
-        }
-    }
-    CreatePalette16(local_struct_1.field10_0xe);
-    return;
 }
 
 pub unsafe fn pass1_1008_5068(param_1: *mut astruct_76, param_2: *mut astruct_81) {

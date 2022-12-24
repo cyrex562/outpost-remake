@@ -1,4 +1,4 @@
-use crate::windef::HWND16;
+use crate::windef16::HWND16;
 
 
 
@@ -28,89 +28,6 @@ pub unsafe fn pass1_1038_a156(param_1: *mut StructD)
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
-
-
-
-
-
-pub unsafe fn unk_win_ui_op_1038_a18c(param_1: *mut Struct57,param_2: *mut StructB,mut param_3: u16 )
-
-{
-  let mut ppcVar1: *mut *mut code;
-  let mut puVar2: *mut u8;
-  let mut uVar3: u16;
-  let mut IVar4: i16;
-  let mut uVar5: u32;
-  let mut puVar6: *mut u16;
-  let mut in_stack_0000fe56: u16;
-  let mut in_stack_0000fe5c: u16;
-  let mut in_stack_0000ff7a: u16;
-  let mut in_stack_0000ff80: u16;
-  let mut in_stack_0000ff84: u16;
-  let mut in_stack_0000ff86: u16;
-  let mut in_stack_0000ff8a: u16;
-  let mut piVar7: *mut i16;
-  let mut uVar8: u8;
-  let mut uVar9: u8;
-  let mut local_2c: [i16;0x2] = [0;0x2];
-  let mut iStack40: i16;
-  let mut puStack36: *mut u32;
-  let mut iStack32: i16;
-  let mut uStack30: u16;
-  let mut local_1c: i16;
-  let mut local_1a: [u8;0x2] = [0;0x2];
-  let mut uStack24: u32;
-  let mut puStack20: *mut u32;
-  let mut local_10: i16;
-  let mut local_e: bool;
-  let mut local_c: [u8;0x6] = [0;0x6];
-  let mut puStack6: *mut u32;
-
-  puStack6 = mixed_1010_20ba(param_1,_u16_1050_0ed0,CONCAT22(param_3,0x27),in_stack_0000fe5c,
-                             in_stack_0000ff80,in_stack_0000ff86,in_stack_0000ff8a);
-  uVar5 = param_1 & 0xffff0000;
-  puVar6 = pass1_1008_3e38(CONCAT22(0x1050,local_c));
-  uVar5 = uVar5 & 0xffff0000 | puVar6 >> 0x10;
-  pass1_1008_3f62(CONCAT22(0x1050,local_c),
-                  (puStack6 & 0xffff0000 | (puStack6 + 0x52)));
-  puVar2 = local_c;
-  pass1_1008_3e94(CONCAT22(0x1050,puVar2),CONCAT22(0x1050,&local_10),CONCAT22(0x1050,&local_e));
-  uVar3 = FUN_1010_830a(puVar2,uVar5,0x1008,_u16_1050_14cc,0x1c0);
-  puStack20 = CONCAT22(uVar5,uVar3);
-  uStack24 = pass1_1008_4772(CONCAT22(uVar5,uVar3));
-  puVar2 = local_1a;
-  piVar7 = &local_1c;
-  uVar8 = 0x50;
-  uVar9 = 0x10;
-  puStack36 = mixed_1010_20ba((uVar5 & 0xffff0000 | uStack24 >> 0x10),_u16_1050_0ed0,
-                              CONCAT22(piVar7,0x48),in_stack_0000fe56,in_stack_0000ff7a,in_stack_0000ff80,
-                              in_stack_0000ff84);
-  pass1_1008_3e94((puStack36 & 0xffff0000 | (puStack36 + 0xe)),
-                  CONCAT13(uVar9,CONCAT12(uVar8,piVar7)),CONCAT22(0x1050,puVar2));
-  uVar3 = (puStack36 >> 0x10);
-  uStack30 = (puStack36 + 0xa);
-  iStack32 = (puStack36 + 0xc);
-  local_10 += (iStack32 * 0xa) / 0x258 + (uStack24 + 0x8) + local_1c;
-  GetWindowRect16(CONCAT22(0x1050,local_2c),(param_2 + 0x6));
-  IVar4 = GetSystemMetrics16(SM_CXSCREEN);
-  local_e = (IVar4 - (iStack40 - local_2c[0])) / 0x2;
-  move_win_1040_826c(param_2,local_10,local_e);
-  if (puStack20.is_null() == false) {
-    uVar3 = (puStack20 >> 0x10);
-    ppcVar1 = *puStack20;
-    (**ppcVar1)(&PTR_LOOP_1050_1040,puStack20,uVar3,0x1,uVar3);
-  }
-  return;
-}
-
-
-
-
-
-
-
-
-
 
 
 pub unsafe fn pass1_1038_a33c(param_1: *mut u16,mut param_2: u16 ) -> *mut u16
@@ -291,29 +208,6 @@ pub unsafe fn pass1_1038_abb0(param_1: *mut StructD)
   ui_cleanup_op_1040_782c(param_1);
   return;
 }
-pub unsafe fn set_win_pos_1038_abdc(param_1: *mut astruct_940)
-
-{
-  let mut hwnd: HWND16;
-  let mut iVar1: *mut astruct_940;
-  let mut uVar1: u16;
-  let mut in_stack_0000fff0: i16;
-  let mut local_a: i16;
-  let mut iStack8: i16;
-  let mut iStack6: i16;
-  let mut iStack4: i16;
-
-  uVar1 = (param_1 >> 0x10);
-  iVar1 = param_1;
-  GetWindowRect16(CONCAT22(0x1050,&local_a),iVar1.field6_0x6);
-  hwnd = GetDlgItem16(0xfd7,iVar1.field6_0x6);
-  GetWindowRect16(CONCAT22(0x1050,&stack0xffee),hwnd);
-  iStack6 -= local_a;
-  iStack4 = (in_stack_0000fff0 - iStack8) -0x2;
-  SetWindowPos16(0x6,iStack4,iStack6,0x0,0x0,0x0,iVar1.field6_0x6);
-  return;
-}
-
 
 
 // WARNING: Unable to use type for symbol uVar2

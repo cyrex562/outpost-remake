@@ -123,23 +123,6 @@ pub unsafe fn pass1_1028_e1ec(mut param_1: u32, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn send_msg_1028_e242(param_1: u32, mut param_2: i16) {
-    let mut puVar1: *mut u8;
-    let mut unaff_DI: i16;
-    let mut LVar2: LRESULT;
-
-    puVar1 = (*param_1 % 0x64);
-    if (*param_1 % 0x64 == 0) {
-        LVar2 = SendMessage16(0x0, 0x0, 0x41, HWND16_1050_0396);
-        puVar1 = (LVar2 >> 0x10);
-    }
-    *param_1 = *param_1 + 1;
-    if (param_2 != 0) {
-        pass1_1028_e28a(puVar1, unaff_DI, &DAT_1050_1050);
-    }
-    return;
-}
-
 /*
 Unable to decompile 'pass1_1028_e28a'
 Cause:

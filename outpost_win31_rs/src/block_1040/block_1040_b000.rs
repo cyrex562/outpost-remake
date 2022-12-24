@@ -31,119 +31,6 @@ pub unsafe fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_
 }
 
 
-
-
-
-pub unsafe fn unk_draw_op_1040_b0f8(mut param_1: u16 ,param_2: *mut StructD)
-
-{
-  let mut uVar1: u16;
-  let mut uVar2: u16;
-  let mut in_EDX: *mut Struct57;
-  let mut iVar3: *mut StructD;
-  let mut uVar3: u16;
-  let mut puVar3: *mut u32;
-  let mut in_stack_0000fe92: u16;
-  let mut in_stack_0000ffb6: u16;
-  let mut in_stack_0000ffbc: u16;
-  let mut in_stack_0000ffc0: u16;
-  let mut uStack22: u16;
-  let mut pcStack10: *mut c_char;
-  let mut in_stack_0000ffe8: u32;
-
-  uVar3 = (param_2 >> 0x10);
-  iVar3 = param_2;
-  param_2.address_offset_field_0x0 = 0xb772;
-  iVar3.address_offset_field_0x2 = &PTR_LOOP_1050_1040;
-  _param_1 = CONCAT22(uStack22,0x32);
-  puVar3 = mixed_1010_20ba(in_EDX,_u16_1050_0ed0,_param_1,in_stack_0000fe92,in_stack_0000ffb6,
-                           in_stack_0000ffbc,in_stack_0000ffc0);
-  pass1_1010_7b8c(puVar3,&iVar3.field_0x6);
-  if (&iVar3.field_0x8e != 0) {
-    DeleteObject16(&iVar3.field_0x8e);
-    iVar3.field_0x8e = 0;
-  }
-  uVar1 = &iVar3.field_0x90;
-  uVar2 = &iVar3.field_0x92;
-  pcStack10 = CONCAT22(uVar2,uVar1);
-  if ((uVar2 | uVar1) != 0) {
-    _param_1 = CONCAT22(uVar2,uVar1);
-    pass1_1040_a5d0(_param_1);
-    fn_ptr_1000_17ce(pcStack10);
-  }
-  ui_cleanup_op_1040_782c(param_2);
-  return;
-}
-
-
-
-
-
-
-
-pub unsafe fn unk_win_ui_op_1040_b230(mut param_1: u16 ,param_2: *mut StructB)
-
-{
-  let mut ppcVar1: *mut *mut code;
-  let mut cy_caption_1: i16;
-  let mut in_register_0000000a: u16;
-  let mut paVar2: *mut Struct57;
-  let mut uVar3: u16;
-  let mut in_stack_0000fe6e: u16;
-  let mut in_stack_0000ff92: u16;
-  let mut in_stack_0000ff98: u16;
-  let mut in_stack_0000ff9c: u16;
-  let mut piVar3: *mut i16;
-  let mut uVar4: u16;
-  let mut pcVar5: *mut c_char;
-  let mut local_1a: i16;
-  let mut iStack24: i16;
-  let mut iStack22: i16;
-  let mut iStack20: i16;
-  let mut iStack18: i16;
-  let mut iStack16: i16;
-  let mut iStack14: i16;
-  let mut iStack12: i16;
-  let mut puStack10: *mut u32;
-  let mut local_6: i16;
-  let mut local_4: i16;
-
-  paVar2 = CONCAT22(in_register_0000000a,param_1);
-  dialog_ui_fn_1040_78e2(param_2);
-  if (PTR_LOOP_1050_5ef8 == (&u32_1050_0004 + 1)) {
-    PTR_LOOP_1050_5ef8 = null_mut();
-  }
-  pcVar5 = CONCAT22(0x1050,&local_4);
-  piVar3 = &local_6;
-  uVar4 = SUB42(&DAT_1050_1050,0x0);
-  puStack10 = mixed_1010_20ba(paVar2,_u16_1050_0ed0,CONCAT22(piVar3,0x48),in_stack_0000fe6e,
-                              in_stack_0000ff92,in_stack_0000ff98,in_stack_0000ff9c);
-  pass1_1008_3e94((puStack10 & 0xffff0000 | (puStack10 + 0xe)),CONCAT22(uVar4,piVar3),
-                  pcVar5);
-  uVar3 = (puStack10 >> 0x10);
-  iStack12 = (puStack10 + 0xa);
-  iStack14 = (puStack10 + 0xc);
-  cy_caption_1 = GetSystemMetrics16(SM_CYCAPTION);
-  iStack16 = cy_caption_1 * PTR_LOOP_1050_5ef8 + 0xa;
-  PTR_LOOP_1050_5ef8 = PTR_LOOP_1050_5ef8 + 1;
-  iStack18 = iStack16 + local_6;
-  iStack16 += local_4;
-  uVar4 = (param_2 >> 0x10);
-  GetWindowRect16(CONCAT22(0x1050,&local_1a),(param_2 + 0x6));
-  if (iStack14 < (iStack20 - iStack24) + iStack18) {
-    iStack18 = -0x2 - ((iStack20 - iStack24) - iStack14);
-  }
-  if (iStack12 < (iStack22 - local_1a) + iStack16) {
-    iStack16 = -0x2 - ((iStack22 - local_1a) - iStack12);
-  }
-  SetWindowPos16(0x1,0x0,0x0,iStack18,iStack16,0x0,(param_2 + 0x6));
-  ppcVar1 = (param_2 + 0x6c);
-  (**ppcVar1)(s_tile2_bmp_1050_1538,param_2);
-  return;
-}
-
-
-
 pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16) -> u16
 
 {
@@ -164,45 +51,6 @@ pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
   }
   return uStack4;
 }
-
-
-
-
-pub unsafe fn pass1_1040_b45e(mut param_1: u32)
-
-{
-  let mut uVar1: u32;
-  let mut piVar2: *mut i16;
-  let mut iVar3: i16;
-  let mut uVar4: u16;
-  let mut iStack8: i16;
-  let mut puStack6: *mut u16;
-
-  uVar4 = (param_1 >> 0x10);
-  iVar3 = param_1;
-  if ((iVar3 + 0x90) != 0) {
-    uVar1 = (iVar3 + 0x90);
-    (uVar1 + 0x14) = (iVar3 + 0x6);
-    uVar1 = (iVar3 + 0x90);
-    puStack6 = (uVar1 + 2);
-    // for (iStack8 = 0; piVar2 = (iVar3 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2; iStack8 += 1)
-    iStack8 = 0;
-    piVar2 = iVar3 + 0x90;
-    while *piVar2 != iStack8 && iStack8 <= *piVar2
-    {
-      uVar1 = (puStack6 + 2);
-      SetDlgItemText16(CONCAT22(uVar1,*puStack6),(uVar1 >> 0x10),(iVar3 + 0x6));
-      puStack6 = (puStack6 & 0xffff0000 | (puStack6 + 0xa));
-      iStack8 += 1;
-    }
-  }
-  return;
-}
-
-
-
-
-
 
 
 pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
@@ -347,19 +195,6 @@ pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param
   }
   return;
 }
-pub unsafe fn destroy_window_1040_b726(mut param_1: u32,mut param_2: i16)
-
-{
-  let mut fn_ptr_1: *mut *mut code;
-
-  if (param_2 != 0) {
-    fn_ptr_1 = (param_1 + 0x78);
-    (**fn_ptr_1)();
-  }
-  DestroyWindow16((param_1 + 0x6));
-  return;
-}
-
 
 
 pub unsafe fn pass1_1040_b7ee(param_1: *mut Struct57,param_2: i32,mut param_3: u16 )

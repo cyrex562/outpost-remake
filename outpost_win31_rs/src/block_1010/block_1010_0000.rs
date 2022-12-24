@@ -1,4 +1,4 @@
-use crate::winbase::MakeProcInstance16;
+use crate::winapi16::MakeProcInstance16;
 
 pub unsafe fn pass1_1010_0000(param_1: *mut Struct19, mut param_2: u16) -> *mut Struct19 {
     let mut in_EDX: u32;
@@ -68,52 +68,6 @@ pub unsafe fn pass1_1010_01f8(mut param_1: u32, mut param_2: u32, mut param_3: i
     (param_2 + 0x6) = (param_3 * 0x4 + 0xe04) * 0x28 + (iVar2 + 0xdfa) + (param_1 + 0xa);
     (param_2 + 0x8) = (param_1 + 0xc) + iVar1;
     return;
-}
-
-
-
-pub unsafe fn win_ui_op_1010_0240(
-    mut param_1: u16,
-    mut param_2: u16,
-    mut param_3: u16,
-    mut param_4: u16,
-) -> BOOL16 {
-    let mut ppcVar1: *mut *mut code;
-    let mut BVar2: bool;
-    let mut WVar3: u16;
-    let mut in_register_0000000a: u16;
-    let mut paVar4: *mut Struct57;
-    let mut puVar5: *mut u32;
-    let mut in_stack_0000fea2: u16;
-    let mut in_stack_0000ffc6: u16;
-    let mut in_stack_0000ffcc: u16;
-    let mut in_stack_0000ffd0: u16;
-    let mut in_stack_0000fff8: u32;
-    let mut uVar6: u16;
-
-    uVar6 = (in_stack_0000fff8 >> 0x10);
-    paVar4 = CONCAT22(in_register_0000000a, param_1);
-    BVar2 = IsWindow16(param_4);
-    if (BVar2 != 0) {
-        WVar3 = GetWindowWord16(-0x6, param_4);
-        if (WVar3 == HINSTANCE16_1050_038c) {
-            BVar2 = IsIconic16(param_4);
-            if (BVar2 != 0) {
-                puVar5 = mixed_1010_20ba(
-                    paVar4,
-                    _u16_1050_0ed0,
-                    CONCAT22(uVar6, 0x45),
-                    in_stack_0000fea2,
-                    in_stack_0000ffc6,
-                    in_stack_0000ffcc,
-                    in_stack_0000ffd0,
-                );
-                ppcVar1 = ((puVar5 & 0xffff0000 | param_4) + 0x10);
-                (**ppcVar1)(s_tile2_bmp_1050_1538, puVar5, (puVar5 >> 0x10), 1);
-            }
-        }
-    }
-    return 0x1;
 }
 
 pub unsafe fn struct_1010_02e0(param_1: *mut Struct19, mut param_2: u16) {

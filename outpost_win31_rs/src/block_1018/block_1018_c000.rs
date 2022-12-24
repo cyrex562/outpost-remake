@@ -79,27 +79,6 @@ pub unsafe fn pass1_1018_c402(
     return;
 }
 
-pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29) {
-    let mut is_window: bool;
-    let mut pstruct_29_1: *mut astruct_29;
-    let mut pstruct_29_hi: *mut astruct_29;
-
-    pstruct_29_hi = (param_1 >> 0x10);
-    pstruct_29_1 = param_1;
-    param_1.field0_0x0 = 0xc8bc;
-    pstruct_29_1.field1_0x2 = 0x1018;
-    fn_ptr_1000_17ce(pstruct_29_1.field259_0x108);
-    if (pstruct_29_1.hwnd_0x112.is_null() == false) {
-        is_window = IsWindow16(pstruct_29_1.hwnd_0x112);
-        if (is_window != 0) {
-            DestroyWindow16(pstruct_29_1.hwnd_0x112);
-            pstruct_29_1.hwnd_0x112 = null_mut();
-        }
-    }
-    pass1_1020_022c(param_1);
-    return;
-}
-
 // WARNING: Unable to use type for symbol iVar2
 // WARNING: Unable to use type for symbol uVar3
 // WARNING: Unable to use type for symbol puVar3

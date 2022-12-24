@@ -96,3 +96,75 @@ pub unsafe fn free_rsrc_1010_4b3e(param_1: *mut StructD) {
     pass1_1010_1d80(param_1);
     return;
 }
+
+pub unsafe fn load_icon_1040_8b92(param_1: *mut Struct57)
+
+{
+  let mut bVar1: u8;
+  let mut HVar2: HICON16;
+  let mut uVar3: u16;
+  let mut uVar4: u16;
+
+  uVar3 = (param_1 >> 0x10);
+  bVar1 = *(param_1 + 0x98) & 0xf0;
+  if (bVar1 == 0x30) {
+    uVar4 = 0x7f03;
+  }
+  else if ((bVar1 == 0x10) || (bVar1 == 0x10)) {
+    uVar4 = 0x7f01;
+  }
+  else if ((bVar1 == 0x40) || (bVar1 == 0x40)) {
+    uVar4 = 0x7f04;
+  }
+  else {
+    if (bVar1 != 0x20) {
+      return;
+    }
+    uVar4 = 0x7f02;
+  }
+  HVar2 = LoadIcon16(uVar4,0x0);
+  (param_1 + 0x8e) = HVar2;
+  return;
+}
+
+pub unsafe fn load_string_1010_847e(mut param_1: u32, mut param_2: u16) -> *mut c_char {
+    LoadString16(
+        0x3ff,
+        (param_1 & 0xffff0000 | (param_1 + 0x682)),
+        param_2,
+        HINSTANCE16_1050_038c,
+    );
+    return (param_1 & 0xffff0000 | (param_1 + 0x682));
+}
+
+pub unsafe fn load_string_1010_84ac(mut param_1: i16, param_2: INT16, mut param_3: u16) {
+    let mut uVar1: u16;
+
+    uVar1 = param_2;
+    LoadString16(
+        0x3ff,
+        CONCAT22(param_2, param_1 + 0x682),
+        param_3,
+        HINSTANCE16_1050_038c,
+    );
+    str_op_1008_60e8(uVar1, CONCAT22(param_2, param_1 + 0x682));
+    return;
+}
+
+pub unsafe fn load_string_1010_84e0(
+    mut param_1: u16,
+    mut param_2: u16,
+    in_resc_id_3: u16,
+    in_buffer_4: *mut c_char,
+    in_buf_len_5: i16,
+) {
+    let mut in_stack_0000000e: u16;
+
+    LoadString16(
+        in_resc_id_3,
+        CONCAT22(in_buf_len_5, in_buffer_4),
+        in_stack_0000000e,
+        HINSTANCE16_1050_038c,
+    );
+    return;
+}

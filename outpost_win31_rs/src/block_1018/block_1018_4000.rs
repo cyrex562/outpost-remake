@@ -1,7 +1,7 @@
 use crate::{
     globals::{DAT_1050_4216, DAT_1050_422c},
 };
-use crate::windef::{DEVMODEA, HDC16};
+use crate::windef16::{DEVMODEA, HDC16};
 
 pub unsafe fn pass1_1018_427c(param_1: *mut astruct_263, mut param_2: u16, mut param_3: u16) {
     let mut uVar1: u16;
@@ -413,31 +413,6 @@ pub unsafe fn pass1_1018_4aaa(param_1: *mut u8, param_2: *mut Struct19, mut para
 }
 
 
-pub unsafe fn get_sys_metrics_1018_4b1e(
-    param_1: *mut Struct19,
-    mut param_2: u16,
-    mut param_3: u16,
-) -> *mut u16 {
-    let mut pstruct19_1: *mut Struct19;
-    let mut pstruct19_param_1_hi: *mut Struct19;
-
-    struct_op_1010_1d48(param_1, param_3);
-    pstruct19_param_1_hi = (param_1 >> 0x10);
-    pstruct19_1 = param_1;
-    pstruct19_1.field9_0x12 = param_2;
-    pstruct19_1.field10_0x14 = 0;
-    // 0x4c9e val
-    param_1.offset_0x0 = &PTR_LOOP_1050_4c9e;
-    pstruct19_1.segment_0x2 = 0x1018;
-    if (G_SM_CYCAPTION_1050_416c == 0) {
-        G_SM_CYCAPTION_1050_416c = GetSystemMetrics16(SM_CYCAPTION);
-        G_SM_CXBORDER_1050_416e = GetSystemMetrics16(SM_CXBORDER);
-        G_SM_CYBORDER_1050_4170 = GetSystemMetrics16(SM_CYBORDER);
-    }
-    return &param_1.offset_0x0;
-}
-
-
 pub unsafe fn pass1_1018_4b78(param_1: *mut Struct19) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
@@ -498,63 +473,6 @@ pub unsafe fn struct_op_1018_4cda(param_1: *mut Struct19, mut param_2: u16) {
 }
 
 
-pub unsafe fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD) {
-    let mut obj: HPALETTE16;
-    let mut local_struct_1: *mut StructD;
-    let mut uVar4: *mut StructD;
-    let mut uVar3: u16;
-    let mut unaff_SS: u16;
-    let mut uVar1: u16;
-    let mut uVar2: u16;
-    let mut puVar2: *mut u32;
-    let mut puVar1: *mut u32;
-    let mut fn_ptr_1: *mut *mut code;
-
-    uVar3 = 0x1018;
-    uVar4 = (in_struct_1 >> 0x10);
-    local_struct_1 = in_struct_1;
-    // just 0x5058
-    in_struct_1.address_offset_field_0x0 = s_SCInternalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
-    local_struct_1.address_offset_field_0x2 = 0x1018;
-    if (local_struct_1.field11_0x12 != 0) {
-        obj = SelectPalette16(
-            0x0,
-            local_struct_1.field14_0x1a,
-            local_struct_1.field11_0x12,
-        );
-        DeleteObject16(obj);
-        uVar3 = SUB42(s_tile2_bmp_1050_1538, 0x0);
-        DeleteDC16(local_struct_1.field11_0x12);
-    }
-    puVar1 = local_struct_1.field6_0xa;
-    uVar1 = local_struct_1.field7_0xc;
-    if ((uVar1 | puVar1) != 0) {
-        fn_ptr_1 = *puVar1;
-        (**fn_ptr_1)(uVar3, puVar1, uVar1, 1);
-    }
-    puVar2 = local_struct_1.field8_0xe;
-    uVar2 = &local_struct_1.field_0x10;
-    if ((uVar2 | puVar2) != 0) {
-        fn_ptr_1 = *puVar2;
-        (**fn_ptr_1)(uVar3, puVar2, uVar2, 1);
-    }
-    _PTR_LOOP_1050_4230 = 0;
-    pass1_1010_1d80(in_struct_1);
-    return;
-}
-
-pub unsafe fn get_dc_1018_4db0(param_1: *mut astruct_126, mut param_2: u16) {
-    let mut HVar1: HDC16;
-    let mut uVar2: u16;
-
-    uVar2 = (param_1 >> 0x10);
-    (param_1 + 0x16) = param_2;
-    HVar1 = GetDC16(param_2);
-    *(param_1 + 0x14) = HVar1;
-    return;
-}
-
-
 pub unsafe fn pass1_1018_4dce(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
@@ -587,47 +505,5 @@ pub unsafe fn pass1_1018_4dce(param_1: *mut u8, param_2: *mut Struct19, mut para
         (puVar3 + 0xa),
         (ppuVar4 >> 0x10),
     );
-    return;
-}
-
-pub unsafe fn create_dc_1018_4e04(
-    in_string_6: u16,
-    in_string_5: u16,
-    param_3: *mut astruct_8,
-    mut param_4: u16,
-    mut param_5: i16,
-    mut param_6: i16,
-) {
-    let mut hvar1: HDC16;
-    let mut p_hvar2: *mut HDC16;
-    let mut i_var4: *mut astruct_8;
-    let mut u_var3: u16;
-    let mut devmodea_init_data: *mut DEVMODEA;
-    let mut i_stack16: i16;
-    let mut fn_ptr_1: *mut *mut code;
-
-    u_var3 = (param_3 >> 0x10);
-    i_var4 = param_3;
-    fn_ptr_1 = (param_3 + 0x14);
-    (**fn_ptr_1)();
-    devmodea_init_data = pass1_1008_4772(i_var4.field10_0xa);
-    pass1_1008_43cc(i_var4.field10_0xa);
-    hvar1 = CreateDC16(devmodea_init_data, NULL, NULL, s_dib_1050_4234);
-    i_var4.field15_0x12 = hvar1;
-    p_hvar2 = &i_var4.field15_0x12;
-    fn_ptr_1 = (i_var4.field10_0xa + 0x8);
-    (**fn_ptr_1)();
-    i_var4.field22_0x1a = p_hvar2;
-    if ((DAT_1050_422e != 0) && (0x280 < param_6)) {
-        // for (iStack16 = 0; iStack16 < DAT_1050_4216 + 1; iStack16 += 1)
-        for iStack16 in 0..DAT_1050_4216 {
-            (&u16_1050_4172 + iStack16 * 0x2) = (((&u16_1050_4172 + i_stack16 * 0x2) * (param_6 + 1)) / 0x280);
-        }
-        // for (iStack16 = 0; iStack16 < DAT_1050_422c + 1; iStack16 += 1)
-        for iStack16 in 0..DAT_1050_422c {
-            (&u16_1050_419a + iStack16 * 0x2) = (((&u16_1050_419a + i_stack16 * 0x2) * (param_5 + 1)) / 0x1e0);
-        }
-    }
-    DAT_1050_422e = 0;
     return;
 }

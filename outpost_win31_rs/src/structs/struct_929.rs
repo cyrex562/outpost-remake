@@ -1,4 +1,4 @@
-use crate::windef::HWND16;
+use crate::windef16::HWND16;
 
 #[derive(Default,Debug,Clone)]
 pub struct Struct929 {

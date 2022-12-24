@@ -1,32 +1,3 @@
-pub unsafe fn set_window_text_1018_6066(
-    param_1: *mut astruct_937,
-    mut param_2: u16,
-    in_win_text_3: *mut c_char,
-    dialog_id_5: INT16,
-) {
-    let mut hwnd: HWND16;
-
-    hwnd = GetDlgItem16(dialog_id_5, param_1.hwnd_field_0x6);
-    SetWindowText16(in_win_text_3, hwnd);
-    return;
-}
-
-pub unsafe fn set_window_text_1018_6086(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
-    let mut hwnd_1: HWND16;
-    let mut uVar2: u16;
-
-    wsprintf16(&stack0xfff4, 0x42421050, CONCAT22(param_3, 0x1050));
-    uVar2 = (param_1 >> 0x10);
-    hwnd_1 = GetDlgItem16(0x1be, (param_1 + 0x6));
-    SetWindowText16(CONCAT22(0x1050, &stack0xfff4), hwnd_1);
-    wsprintf16(&stack0xfff4, 0x42451050, CONCAT22(param_2, 0x1050));
-    hwnd_1 = GetDlgItem16(0x1bf, (param_1 + 0x6));
-    SetWindowText16(CONCAT22(0x1050, &stack0xfff4), hwnd_1);
-    return;
-}
-
-
-
 pub unsafe fn pass1_1018_6198(
     param_1: *mut u8,
     param_2: *mut astruct_657,

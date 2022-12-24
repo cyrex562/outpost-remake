@@ -9,8 +9,7 @@ use crate::block_1010::block_1010_6000::{
     pass1_1010_60fa, pass1_1010_6118, pass1_1010_659a, pass1_1010_6604,
 };
 use crate::block_1010::block_1010_7000::pass1_1010_7b8c;
-use crate::block_1010::block_1010_8000::{load_string_1010_847e, load_string_1010_84e0};
-use crate::block_1018::block_1018_7000::set_window_text_1018_6086;
+use crate::win_ui::set_window_text_1018_6086;
 use crate::block_1030::block_1030_2000::{pass1_1030_2f1a, pass1_1030_2fac};
 use crate::block_1030::block_1030_5000::pass1_1030_532e;
 use crate::block_1030::block_1030_7000::struct_op_1030_73a8;
@@ -19,87 +18,24 @@ use crate::block_1030::block_1030_8000::{
 };
 use crate::block_1038::block_1038_a000::pass1_1038_af40;
 use crate::block_1038::block_1038_b000::pass1_1038_b6e0;
-use crate::block_1038::block_1038_e000::destroy_win_1038_ef3a;
-use crate::block_1040::block_1040_7000::{
-    dialog_ui_fn_1040_78e2, get_sys_metrics_1040_7728, post_win_msg_1040_7b3c,
-    ui_cleanup_op_1040_782c,
-};
-use crate::block_1040::block_1040_8000::move_win_1040_826c;
+use crate::win_ui::destroy_win_1038_ef3a;
+use crate::win_ui::get_sys_metrics_1040_7728;
+use crate::win_ui::move_win_1040_826c;
 use crate::block_1040::block_1040_a000::pass1_1040_a5d0;
 use crate::globals::u32_1050_0004;
 use crate::structs::struct_394::astruct_394;
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_915::astruct_915;
 use crate::structs::struct_d::StructD;
-use crate::winbase::{DestroyWindow16, GetDlgItem16, GetStockObject16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
+use crate::winapi16::{DestroyWindow16, GetDlgItem16, GetStockObject16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
 use crate::utils::{CONCAT11, CONCAT22, SUB42};
 use std::os::raw::c_char;
 use std::ptr::null_mut;
-use crate::windef::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
-
-
-
-
-
-pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_915) -> LRESULT {
-    let mut hwnd: HWND16;
-    let mut iVar2: i16;
-    let mut iVar3: *mut StructB;
-    let mut uVar3: u16;
-    let mut l_param: *mut c_char;
-    let mut LVar4: LRESULT;
-    let mut uVar5: u16;
-    let mut w_param: WPARAM16;
-    let mut msg: u16;
-    let mut id: i16;
-    let mut hwnd_00: LPVOID = null_mut();
-    let mut iVar1: *mut astruct_913;
-
-    uVar3 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    iVar1 = (param_2 * 0xe);
-    hwnd = GetDlgItem16((iVar1 + 0x5c64), iVar3.lpvoid_field_0x8);
-    iVar2 = pass1_1010_659a(&iVar3[0x7].field1_0x2, (iVar1 + 0x5c66));
-    if ((iVar2 == 0) && ((iVar1 + 0x5c66) != 0xa)) {
-        EnableWindow16(0x0, hwnd);
-        hwnd_00 = iVar3.lpvoid_field_0x8;
-        id = (param_2 * 0xe + 0x5c68);
-        uVar5 = 0x531;
-    } else {
-        EnableWindow16(0x1, hwnd);
-        hwnd_00 = iVar3.lpvoid_field_0x8;
-        id = (param_2 * 0xe + 0x5c68);
-        uVar5 = 0x649;
-    }
-    msg = 0xc;
-    w_param = 0;
-    l_param = load_string_1010_847e(_u16_1050_14cc, uVar5);
-    LVar4 = SendDlgItemMessage16(l_param, w_param, msg, id, hwnd_00);
-    return LVar4;
-}
-
-
-pub unsafe fn enable_win_1040_060e(mut param_1: u32, mut param_2: i16) {
-    let mut pIVar1: *mut INT16 = null_mut();
-    let mut hwnd: HWND16;
-    let mut iStack10: i16;
-    let mut pIStack8: *mut INT16 = null_mut();
-
-    pIStack8 = CONCAT22(0x1050, &stack0x000a);
-    iStack10 = param_2;
-    loop {
-        pIVar1 = pIStack8;
-        if (iStack10 == 0) {
-            break;
-        }
-        pIStack8 = (pIStack8 & 0xffff0000 | (pIStack8 + 0x2));
-        hwnd = GetDlgItem16(*pIVar1, (param_1 + 0x6));
-        EnableWindow16(0x0, hwnd);
-        iStack10 = iStack10 - 0x1;
-    }
-    return;
-}
-
+use crate::draw_ops::ui_cleanup_op_1040_782c;
+use crate::resources::{load_string_1010_847e, load_string_1010_84e0};
+use crate::win_ui::dialog_ui_fn_1040_78e2;
+use crate::winapp::post_win_msg_1040_7b3c;
+use crate::windef16::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
 
 
 pub unsafe fn pass1_1040_06e8(
@@ -153,35 +89,6 @@ pub unsafe fn pass1_1040_073a(param_1: *mut StructD) {
     ui_cleanup_op_1040_782c(param_1);
     return;
 }
-
-
-pub unsafe fn enable_window_1040_0acc(param_1: *mut StructC, enable_3: BOOL16) {
-    let mut BVar1: bool;
-    let mut HVar2: HWND16;
-    let mut iVar3: i16;
-    let mut uVar4: u16;
-
-    uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    BVar1 = IsWindow16((iVar3 + 0x6));
-    if (BVar1 != 0) {
-        HVar2 = GetDlgItem16(0x64, (iVar3 + 0x6));
-        BVar1 = IsWindow16(HVar2);
-        if (BVar1 != 0) {
-            EnableWindow16(enable_3, HVar2);
-            HVar2 = GetDlgItem16(0x74, (iVar3 + 0x6));
-            EnableWindow16(enable_3, HVar2);
-            HVar2 = GetDlgItem16(0x73, (iVar3 + 0x6));
-            EnableWindow16(enable_3, HVar2);
-            HVar2 = GetDlgItem16(0x6e, (iVar3 + 0x6));
-            EnableWindow16(enable_3, HVar2);
-            HVar2 = GetDlgItem16(0xee, (iVar3 + 0x6));
-            EnableWindow16(enable_3, HVar2);
-        }
-    }
-    return;
-}
-
 
 
 pub unsafe fn pass1_1040_0bfc(

@@ -11,7 +11,7 @@ use crate::block_1008::block_1008_7000::switch_1008_73ea;
 use crate::block_1008::block_1008_9000::{pass1_1008_9d36, struct_1008_9fd2};
 use crate::block_1008::block_1008_a000::{pass1_1008_aefe, pass1_1008_af94};
 use crate::block_1008::block_1008_c000::pass1_1008_c72a;
-use crate::block_1008::block_1008_d000::{pass1_1008_d72e, pass1_1008_d790, pass1_1008_d99e, struct_1008_dd4e, unk_draw_op_1008_da12};
+use crate::block_1008::block_1008_d000::{pass1_1008_d72e, pass1_1008_d790, pass1_1008_d99e, struct_1008_dd4e};
 use crate::block_1008::block_1008_e000::{pass1_1008_eabc, pass1_1008_eb2a, pass1_1008_ec10, struct_1008_ecb2};
 use crate::block_1010::block_1010_0000::{pass1_1010_0000, pass1_1010_0eac, struct_1010_02e0};
 use crate::block_1010::block_1010_1000::{pass1_1010_1146, pass1_1010_195e, pass1_1010_1b6e, pass1_1010_1d80, pass1_1010_1f62, struct_op_1010_1d48};
@@ -20,7 +20,7 @@ use crate::block_1010::block_1010_4000::pass1_1010_4a8a;
 use crate::block_1010::block_1010_5000::{pass1_1010_503e, struct_1010_50b2};
 use crate::block_1010::block_1010_6000::{pass1_1010_6700, pass1_1010_6abc, pass1_1010_6ca2, struct_1010_6326};
 use crate::block_1010::block_1010_7000::pass1_1010_715c;
-use crate::block_1010::block_1010_8000::{FUN_1010_830a, load_string_1010_84e0, pass1_1010_8170, pass1_1010_8c32};
+use crate::block_1010::block_1010_8000::{FUN_1010_830a, pass1_1010_8170, pass1_1010_8c32};
 use crate::block_1010::block_1010_9000::{pass1_1010_9298, struct_1010_95aa};
 use crate::block_1010::block_1010_a000::struct_1010_a1d8;
 use crate::block_1010::block_1010_e000::{pass1_1010_e964, struct_1010_e9e4};
@@ -28,18 +28,20 @@ use crate::block_1018::block_1018_0000::struct_1018_0570;
 use crate::block_1018::block_1018_1000::{pass1_1018_18b8, pass1_1018_1ff4};
 use crate::block_1018::block_1018_2000::{struct_1018_229c, struct_1018_2b10};
 use crate::block_1018::block_1018_3000::pass1_1018_331c;
-use crate::block_1018::block_1018_4000::{clenaup_win_ui_1018_4d22, pass1_1018_4aaa, pass1_1018_4dce, struct_op_1018_4cda};
+use crate::block_1018::block_1018_4000::{pass1_1018_4aaa, pass1_1018_4dce, struct_op_1018_4cda};
 use crate::block_1018::block_1018_5000::{pass1_1018_5070, pass1_1018_56e6};
 use crate::dos_interrupt::swi;
+use crate::draw_ops::{clenaup_win_ui_1018_4d22, unk_draw_op_1008_da12};
 use crate::file_ops::{read_file_1008_7dee, write_to_file_1008_7e1c};
+use crate::resources::load_string_1010_84e0;
 use crate::structs::struct_19::Struct19;
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_638::Struct638;
 use crate::structs::struct_d::StructD;
 use crate::sys_ops::win_sys_op_1010_5404;
 use crate::utils::{CONCAT11, CONCAT22, SUB42};
-use crate::winbase::{CreateDC16, DeleteDC16, DeleteObject16, DestroyWindow16, Rectangle16, SelectObject16, SelectPalette16, WritePrivateProfileString16};
-use crate::windef::{DEVMODEA, HDC16, HFILE16, HGDIOBJ16, HPALETTE16};
+use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, DestroyWindow16, Rectangle16, SelectObject16, SelectPalette16, WritePrivateProfileString16};
+use crate::windef16::{DEVMODEA, HDC16, HFILE16, HGDIOBJ16, HPALETTE16};
 
 pub unsafe fn pass1_1010_2024(param_1: *mut StructD) -> *mut StructD {
     let mut struct_1_hi: u16;
@@ -909,51 +911,6 @@ pub unsafe fn pass1_1010_2ee2(param_1: u32) {
     pass1_1010_1f62(param_1, 0x8);
     if ((iVar3 + 0x52) != 0) {
         return;
-    }
-    return;
-}
-
-// WARNING: Unable to use type for symbol uVar3
-pub unsafe fn unk_destroy_win_op_1010_2fa0(param_1: *mut astruct_873) {
-    astruct_872 * *ppaVar1;
-    let mut uVar2: u32;
-    let mut iVar3: *mut astruct_873;
-    let mut uVar4: u16;
-    let mut iStack4: *mut astruct_872;
-    let mut uVar3: u32;
-
-    uVar4 = (param_1 >> 0x10);
-    iVar3 = param_1;
-    iVar3.field39_0x28 = 0;
-    iStack4 = null_mut();
-    loop {
-        ppaVar1 = &iVar3.field22_0x16;
-        if (*ppaVar1 == iStack4 || *ppaVar1 < iStack4) {
-            break;
-        }
-        uVar3 = (&iVar3.field_0x2a + iStack4 * 0x4);
-        DestroyWindow16((uVar3 + 0x18));
-        iStack4 = iStack4 + 1;
-    }
-    iVar3.field22_0x16 = null_mut();
-    if ((iVar3.field82_0x54 | &iVar3.field_0x52) != 0) {
-        iStack4 = null_mut();
-        loop {
-            uVar2 = &iVar3.field_0x52;
-            if ((uVar2 + iStack4 * 0x4) != 0) {
-                uVar2 = &iVar3.field_0x52;
-                uVar2 = (uVar2 + iStack4 * 0x4);
-                DestroyWindow16((uVar2 + 0x18));
-                uVar2 = &iVar3.field_0x52;
-                (uVar2 + iStack4 * 0x4) = 0;
-            }
-            iStack4 = iStack4 + 1;
-            if iStack4 >= 0xa {
-                break;
-            }
-        }
-        fn_ptr_1000_17ce(*&iVar3.field_0x52);
-        iVar3.field_0x52 = 0;
     }
     return;
 }
