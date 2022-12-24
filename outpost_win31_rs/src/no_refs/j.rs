@@ -1,5 +1,6 @@
 use crate::block_1010::block_1010_7000::pass1_1010_7d7e;
-use crate::block_1010::block_1010_8000::{pass1_1010_866c, pass1_1010_878c, pass1_1010_887a, pass1_1010_89f0, set_err_mode_1010_8b14};
+use crate::block_1010::block_1010_8000::{pass1_1010_866c, pass1_1010_878c, pass1_1010_887a, pass1_1010_89f0};
+use crate::sys_ops::set_err_mode_1010_8b14;
 
 pub unsafe fn unk_win_op_1010_7300(
     param_1: *mut Struct57,

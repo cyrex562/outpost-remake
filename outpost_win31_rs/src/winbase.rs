@@ -1,19 +1,3 @@
-//
-#![allow(non_snake_case)]
-// Created by cyrex on 2022-05-22.
-//
-// //
-// // #ifndef OUTPOST_C_PROJ__SYS_API_H_
-// // #define OUTPOST_C_PROJ__SYS_API_H_
-//
-// #include "types.h"
-
-//
-// #endif //OUTPOST_C_PROJ__SYS_API_H_
-
-
-
-
 
 use std::ffi::c_void;
 use std::io::stdout;

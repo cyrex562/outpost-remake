@@ -3,7 +3,7 @@ use crate::block_1010::block_1010_0000::pass1_1010_038e;
 use crate::block_1010::block_1010_2000::mixed_1010_20ba;
 use crate::block_1010::block_1010_a000::pass1_1010_a5ca;
 use crate::block_1018::block_1018_5000::pass1_1018_5742;
-use crate::block_1040::block_1040_9000::draw_text_1040_94fc;
+use crate::draw_ops::draw_text_1040_94fc;
 use crate::block_1040::block_1040_b000::{destroy_window_1040_b726, pass1_1040_b316, pass1_1040_b54a, pass1_1040_bfde, struct_1040_bf3e, unk_draw_op_1040_b0f8};
 use crate::block_1040::block_1040_c000::{draw_line_1040_c302, draw_op_1040_c38e, pass1_1040_c5ac, pass1_1040_ca74};
 use crate::block_1040::block_1040_d000::pass1_1040_d1bc;

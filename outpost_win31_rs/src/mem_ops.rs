@@ -1,8 +1,13 @@
+use std::ptr::null_mut;
+use crate::block_1000::block_1000_0000::mem_op_1000_0a48;
 use crate::block_1000::block_1000_1000;
-use crate::globals::DAT_1050_1050;
+use crate::block_1000::block_1000_1000::{mem_op_1000_179c, pass1_1000_1284};
+use crate::block_1008::block_1008_4000;
+use crate::globals::{DAT_1050_1050, u16_1050_0002};
+use crate::structs::struct_57::Struct57;
 use crate::structs::struct_7::Struct7;
 use crate::utils::CONCAT22;
-use crate::winbase::{GLobalAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16};
+use crate::winbase::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16};
 use crate::windef::HGLOBAL16;
 
 // dvar6 = mem_op_1000_1532(param_1, 0x1050);
@@ -30,7 +35,7 @@ pub unsafe fn alloc_mem_1000_131c(mut param_1: u16, mut param_2: u32) {
     }
     if (param_1 & 0x4) != 0 {
         flags &= 0xfffd;
-        var2 = block_1000_1000::mem_op_1000_1558(param_2, param_2);
+        var2 = mem_op_1000_1558(param_2, param_2);
     }
 
     let mut i_stack6 = 0x1;
@@ -153,4 +158,79 @@ pub unsafe fn free_mem_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) ->
         return CONCAT22(uVar2, (HVar1 == 0));
     }
     return uVar2 << 0x10;
+}
+
+pub unsafe fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
+    let mut uVar1: u16;
+    let mut uVar3: u32;
+    let mut uStack12: u16;
+    let mut uStack10: u16;
+    let mut uStack8: u16;
+    let mut uVar2: u16;
+
+    uStack12 = 0;
+    uStack10 = 0;
+    uStack8 = 0x8;
+    if ((param_2 < 0x9) && (param_2 < 0x8 || (param_1 == 0))) {
+        while ((param_2 < uStack8) || (param_2 <= uStack8 && (param_1 <= uStack10))) {
+            loop {
+                uVar3 = GlobalDOSAlloc16(CONCAT22(uStack8, uStack10));
+                uVar1 = uVar3;
+                if (uVar1 == 0) {
+                    break;
+                }
+                // *NULL = 0;
+                u16_1050_0002 = uStack12;
+                uStack12 = uVar1;
+            }
+            uVar2 = uStack8 & 0x1;
+            uStack8 >>= 0x1;
+            uStack10 = uStack10 >> 0x1 | (uVar2 != 0) << 0xf;
+        }
+    }
+    return uStack12 << 0x10;
+}
+
+
+pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
+    let mut uVar1: u16;
+    let mut in_EDX: u32;
+    let mut uVar5: u16;
+    let mut uVar2: u32;
+    let mut iVar3: *mut astruct_826;
+    let mut uVar3: *mut astruct_827;
+    let mut uVar4: u16;
+    let mut count: u32;
+    // pub unsafe fn *dst;
+    let mut paStack14: *mut astruct_76;
+    let mut paVar2: *mut Struct57;
+
+    uVar5 = (in_EDX >> 0x10);
+    uVar4 = (param_2 >> 0x10);
+    iVar3 = param_2;
+    if (iVar3.pvoid32_0x6.is_null() == false) {
+        count = pass1_1000_1284(iVar3.pvoid32_0x6);
+        dst = mem_op_1000_0a48(0x1, count, (count >> 0x10), _PTR_LOOP_1050_5f2c);
+        uVar3 = dst;
+        uVar1 = (dst >> 0x10) | uVar3;
+        paVar2 = CONCAT22(uVar5, uVar1);
+        if (uVar1 != 0) {
+            hmemcpy16(count, iVar3.pvoid32_0x6, dst);
+            mem_op_1000_179c(0x1e, paVar2);
+            uVar2 = paVar2 | uVar3;
+            if (uVar2 == 0) {
+                uVar3 = null_mut();
+                uVar2 = 0;
+            } else {
+                block_1008_4000::pass1_1008_4016(CONCAT22(paVar2, uVar3));
+            }
+            paStack14 = CONCAT22(uVar2, uVar3);
+            uVar3.field6_0x6 = dst;
+            block_1008_4000::pass1_1008_47cc(CONCAT22(uVar2, uVar3));
+            block_1008_4000::pass1_1008_4834(paStack14);
+            uVar3.field25_0x1c = 0x1;
+            return;
+        }
+    }
+    return;
 }

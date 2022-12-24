@@ -10,7 +10,7 @@ use crate::globals::{DAT_1050_1050, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_000a, P
 use crate::mem_address::MemAddress;
 use crate::structs::struct_825::Struct825;
 use crate::structs::struct_d::StructD;
-use crate::sys_ops::___EXPORTEDSTUB;
+use crate::os_base::___EXPORTEDSTUB;
 use crate::utils::{CONCAT22, SUB42};
 use crate::winbase::{FatalAppExit16, FatalExit, GetModuleFileName16};
 use crate::windef::BOOL16;
@@ -105,113 +105,6 @@ pub unsafe fn pass1_1000_25a8() {
     pass1_1000_2913(0xfc);
     pass1_1000_2913(0xff);
     return;
-}
-
-pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
-    let mut piVar2: *mut i16;
-    let mut pcVar3: *mut c_char;
-    let mut cVar4: u8;
-    let mut pu_var5: *mut u16;
-    u16 * *ppuVar6;
-    let mut i_var7: i16;
-    let mut u_var7: u16;
-    let mut i_var8: i16;
-    let mut pu_var8: *mut u16;
-    let mut i_var9: i16;
-    let mut piVar9: *mut i16;
-    let mut piVar10: *mut i16;
-    let mut pcVar11: *mut c_char;
-    let mut piVar12: *mut i16;
-    let mut b_var13: bool;
-    let mut pu_var14: *mut u16;
-    let mut piVar1: *mut i16;
-    let mut pu_var4: *mut u16;
-    let mut piVar4: *mut i16;
-
-    let dos_env = GetDOSEnvironment16();
-    let pu_var7 = (dos_env >> 0x10);
-    if (dos_env != 0) {
-        pu_var7 = null_mut();
-    }
-    i_var9 = 0;
-    pcVar11 = null_mut();
-    i_var7 = -0x1;
-    if (pu_var7.is_null() == false) {
-        cVar4 = *NULL;
-        while (cVar4 != '\0') {
-            loop {
-                if (i_var7 == 0) {
-                    break;
-                }
-                i_var7 += -0x1;
-                pcVar3 = pcVar11;
-                pcVar11 = pcVar11 + 1;
-                if *pcVar3 == '\0' {
-                    break;
-                }
-            }
-            i_var9 += 0x1;
-            pcVar3 = pcVar11;
-            pcVar11 = pcVar11 + 1;
-            cVar4 = *pcVar3;
-        }
-    }
-    u_var7 = 0x9;
-    pu_var8 = pu_var7;
-    pu_var5 = exit_op_1000_2950(ctx, 0x9, pu_var7, (pcVar11 + 1) & 0xfffe);
-    pu_var14 = pu_var8;
-    ppuVar6 = exit_op_1000_2950(ctx, u_var7, pu_var8, (i_var9 + 1) * 0x4);
-    piVar9 = null_mut();
-    PTR_LOOP_1050_5fbe = ppuVar6;
-    PTR_LOOP_1050_5fc0 = pu_var8;
-    loop {
-        if (i_var9 == 0) {
-            *ppuVar6 = null_mut();
-            ppuVar6[0x1] = null_mut();
-            return;
-        }
-        b_var13 = *piVar9 == s__C_FILE_INFO__1050_5f5c;
-        if (b_var13) {
-            piVar12 = s__C_FILE_INFO__1050_5f5c;
-            i_var8 = 0x6;
-            piVar10 = piVar9;
-            loop {
-                if (i_var8 == 0) {
-                    break;
-                }
-                i_var8 += -0x1;
-                piVar4 = piVar12;
-                piVar12 = piVar12 + 1;
-                piVar1 = piVar10;
-                piVar10 = piVar10 + 1;
-                b_var13 = *piVar1 == *piVar4;
-                if b_var13 == false {
-                    break;
-                }
-            }
-            if (!b_var13) {
-                // TODO: goto LAB_1000_2867;
-            }
-        } else {
-            //
-            //            LAB_1000_2867:
-            *ppuVar6 = pu_var5;
-            ppuVar6[0x1] = pu_var14;
-            ppuVar6 = ppuVar6 + 2;
-        }
-        loop {
-            piVar2 = piVar9;
-            piVar9 = (piVar9 + 1);
-            cVar4 = piVar2;
-            pu_var4 = pu_var5;
-            pu_var5 = (pu_var5 + 1);
-            pu_var4 = cVar4;
-            if cVar4 == '\0' {
-                break;
-            }
-        }
-        i_var9 += -0x1;
-    }
 }
 
 pub unsafe fn pass1_1000_2913(mut param_1: u16) {

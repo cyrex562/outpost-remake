@@ -1,7 +1,9 @@
 use crate::block_1040::block_1040_8000::{pass1_1040_869a, pass1_1040_8e82};
-use crate::block_1040::block_1040_9000::{draw_op_1040_9948, pass1_1040_9824};
-use crate::block_1040::block_1040_a000::{free_proc_inst_1040_a294, msg_box_op_1040_a85a, msg_box_ui_op_1040_ad66, pass1_1040_ace8, win_msg_1040_a308, win_ui_dlg_op_1040_a94a, win_ui_op_1040_ae04};
+use crate::block_1040::block_1040_9000::pass1_1040_9824;
+use crate::block_1040::block_1040_a000::{msg_box_op_1040_a85a, msg_box_ui_op_1040_ad66, pass1_1040_ace8, win_msg_1040_a308, win_ui_dlg_op_1040_a94a, win_ui_op_1040_ae04};
 use crate::block_1040::block_1040_b000::unk_draw_op_1040_b0f8;
+use crate::draw_ops::draw_op_1040_9948;
+use crate::program_lifecycle::free_proc_inst_1040_a294;
 use crate::windef::RECT16;
 
 pub unsafe fn pass1_1040_89a4(param_1: *mut u8, param_2: *mut u32, param_3: *mut u16)
@@ -38,63 +40,6 @@ pub unsafe fn pass1_1040_89a4(param_1: *mut u8, param_2: *mut u32, param_3: *mut
     }
     ppcVar3 = (*param_2 + 0x74);
     (**ppcVar3)(uVar7, param_2);
-    return;
-}
-
-
-pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16, param_2: *mut astruct_765)
-
-{
-    let mut paVar1: *mut astruct_13;
-    let mut uVar6: u8;
-    let mut HVar7: HPALETTE16;
-    let mut handle: HANDLE16;
-    let mut extraout_var: u32;
-    let mut extraout_DX: u16;
-    let mut iVar10: *mut astruct_765;
-    let mut count: i16;
-    let mut uVar8: u32;
-    let mut color: COLORREF;
-    let mut color_00: u32;
-    let mut hdc_local_24: HDC16;
-    let mut paintstruct_22: PAINTSTRUCT16 = PAINTSTRUCT16::default();
-    let mut uVar1: u8;
-    let mut uVar2: u8;
-    let mut uVar3: u8;
-    let mut uVar4: LPCSTR;
-    let mut uVar5: u16;
-    let mut iVar2: *mut astruct_766;
-
-    count = (param_2 >> 0x10);
-    iVar10 = param_2;
-    hdc_local_24 = BeginPaint16(CONCAT22(0x1050, &paintstruct_22), iVar10.hwnd_field6_0x6);
-    paVar1 = (_PTR_LOOP_1050_4230 + 0xe);
-    HVar7 = palette_op_1008_4e08(&hdc_local_24, param_1, paVar1, CONCAT22(0x1050, &hdc_local_24));
-    uVar8 = pass1_1008_4d72(paVar1);
-    uVar5 = (uVar8 >> 0x10);
-    iVar2 = uVar8;
-    uVar1 = iVar2.field149_0x95;
-    uVar2 = iVar2.field150_0x96;
-    uVar3 = iVar2.field148_0x94;
-    DrawIcon16(iVar10.field141_0x8e, 0xa, 0x14, hdc_local_24);
-    color = SetBkColor16(0x0, hdc_local_24);
-    extraout_DX = (color >> 0x10);
-    uVar6 = SetTextColor16(CONCAT22(CONCAT11(0x2, uVar3), CONCAT11(uVar1, uVar2)), hdc_local_24);
-    color_00 = CONCAT31(extraout_var, uVar6) & 0xffff | extraout_DX << 0x10;
-    handle = GetProp16(s_hfont_1050_5dfa, iVar10.hwnd_field6_0x6);
-    if (handle != 0) {
-        SelectObject16(handle, hdc_local_24);
-    }
-    DrawText16(0x10, (param_2 & 0xffff0000 | ZEXT24(&iVar10.rect_0x9e)), -0x1,
-               iVar10.field142_0x90, hdc_local_24);
-    if (handle != 0) {
-        SelectObject16(hdc_local_24, hdc_local_24);
-    }
-    SetBkColor16(color, hdc_local_24);
-    SetTextColor16(color_00, hdc_local_24);
-    HVar7 = SelectPalette16(0x0, HVar7, hdc_local_24);
-    DeleteObject16(HVar7);
-    EndPaint16(CONCAT22(0x1050, &paintstruct_22), iVar10.hwnd_field6_0x6);
     return;
 }
 

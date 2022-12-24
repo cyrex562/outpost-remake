@@ -7,7 +7,7 @@ use crate::block_1010::block_1010_a000::pass1_1010_a5ca;
 use crate::block_1018::block_1018_5000::pass1_1018_50ea;
 use crate::block_1038::block_1038_a000::pass1_1038_af40;
 use crate::block_1038::block_1038_b000::pass1_1038_b6e0;
-use crate::block_1040::block_1040_9000::draw_text_1040_94fc;
+use crate::draw_ops::draw_text_1040_94fc;
 use crate::block_1040::block_1040_b000::{destroy_window_1040_b726, pass1_1040_b54a, struct_1040_b082, unk_draw_op_1040_b0f8};
 use crate::globals::PTR_LOOP_1050_1040;
 use crate::structs::struct_27::Struct27;
