@@ -174,13 +174,14 @@ pub fn swi(ctx: &mut AppContext, int_code: u16) -> InterruptResult {
     todo!()
 }
 
-pub unsafe fn dos3_call_1000_4f20(ctx: &mut AppContext,) -> u16 {
-    let mut func_ptr: *mut code;
-    let mut var2 = 0u16;
+pub unsafe fn dos_create_subdir_1000_4f20(ctx: &mut AppContext, subdir: *mut c_char) -> u16 {
     let mut var3 = false;
     ctx.AH_REG = 0x39; // create subdirectory
     let mut result = swi(ctx, 0x21);
     // uVar2 = (*pcVar1)(0x1050, unaff_BP + 1);
+    // TODO: marshal arguments; in this case 'subdir'
+    result.call(ctx);
+    // TODO: grab result; in this case uVar2
     if var3 {
         pass1_1000_29b5(var2);
         return 0xffff;
@@ -188,7 +189,7 @@ pub unsafe fn dos3_call_1000_4f20(ctx: &mut AppContext,) -> u16 {
     return 0x0;
 }
 
-pub unsafe fn dos3call_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 {
+pub unsafe fn dos_create_subdir_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 {
     let mut c_var1: c_char;
     let mut u_var5: *mut c_char = null_mut();
     let mut b_var3 = false;
@@ -196,16 +197,19 @@ pub unsafe fn dos3call_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 
     ctx.AH_REG = 0x3b;
     let mut result = swi(ctx, 0x21);
     // u_var5 = (*pc_var2)(0x1050, unaff_bp + 1);
+    // TODO: store param_1 as first argument to call
+    result.call(ctx);
+    // TODO: get result and load into u_var5
     let mut u_var3 = u_var5;
-    b_var3 = gu_var5 < 0x10;
-    if b_var3 && u_var5 == 0x10 {
+    b_var3 = *u_var5 < 0x10;
+    if b_var3 && *u_var5 == 0x10 {
         loop {
             c_var1 = *u_var5;
             u_var5 = u_var5 + 1;
-            if (c_var1 == '\0') {
+            if c_var1 == '\0' as c_char {
                 // TODO: goto LAB_1000_4f90;
             }
-            if !((c_var1 != '?') && (c_var1 != '*')) {
+            if !((c_var1 != '?' as c_char) && (c_var1 != '*' as c_char)) {
                 break;
             }
         }
@@ -213,19 +217,21 @@ pub unsafe fn dos3call_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 
                       //        LAB_1000_4f90:
         b_var3 = true;
     }
-    if (!b_var3) {
+    if !b_var3 {
         return 0x0;
     }
     pass1_1000_29b5(u_var3);
     return 0xffff;
 }
 
-pub unsafe fn dos3_call_1000_4f94(ctx: &mut AppContext) -> i16 {
+pub unsafe fn dos3_call_1000_4f94(ctx: &mut AppContext, p1: u8) -> i16 {
     // Get Default Drive
     ctx.AH_REG = 0x19;
     let result = swi(0x21);
+    // todo: load p1 into call arguments
+    result.call(ctx);
+    // todo: store result from call into bVar2
     //    bVar2 = (*pcVar1)(unaff_BP + 1);
-    // let b_var2: i16 = fn_ptr_1(unaff_BP + 1);
     // return b_var2 + 1;
     todo!()
 }
@@ -272,7 +278,7 @@ pub unsafe fn dos_set_interrupt_vector(ctx: &mut AppContext) {
 
 
 
-pub unsafe fn mixed_dos3_call_1000_3636(
+pub unsafe fn dos_move_file_ptr_1000_3636(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -282,17 +288,17 @@ pub unsafe fn mixed_dos3_call_1000_3636(
     let mut pbVar1: *mut u8;
     let mut pcVar2: *mut code;
     let mut u_var3: u16;
-    let mut unaff_bp: i16;
+    // let mut unaff_bp: i16;
     let mut i_var4: i16;
     let mut b_var5: bool;
     let mut u_var6: u32;
 
-    i_var4 = unaff_bp + 1;
-    if (((param_1 < u16_1050_5f8a) || (u16_1050_61ec == 0)) || (0x2 < param_1)) {
-        if ((u16_1050_6064 == 0) || ((param_3 & 0x8000) == 0)) {
+    i_var4 = param_1;
+    if ((param_1 < u16_1050_5f8a) || (u16_1050_61ec == 0)) || (0x2 < param_1) {
+        if (u16_1050_6064 == 0) || ((param_3 & 0x8000) == 0) {
             // TODO: goto LAB_1000_36e3;
         }
-        if (param_4 == 0) {
+        if param_4 == 0 {
             // TODO: goto LAB_1000_369b;
         }
         b_var5 = false;
@@ -304,10 +310,10 @@ pub unsafe fn mixed_dos3_call_1000_3636(
         if (b_var5) {
             // TODO: goto LAB_1000_299d;
         }
-        if ((param_4 & 0x2) == 0) {
-            if (-0x1 < ((u_var6 >> 0x10) + param_3 + CARRY2(u_var3, param_2))) {
+        if (param_4 & 0x2) == 0 {
+            if -0x1 < ((u_var6 >> 0x10) + param_3 + CARRY2(u_var3, param_2)) {
                 //
-                //                LAB_1000_36e3:
+                // LAB_1000_36e3:
                 bVar5 = false;
                 // mov file pointer
                 ctx.AH_REG = 0x42;
@@ -325,29 +331,29 @@ pub unsafe fn mixed_dos3_call_1000_3636(
             ctx.AH_REG = 0x42;
             let mut result = swi(ctx, 0x21);
             // u_var6 = (*pcVar2)();
-            if (-0x1 < ((u_var6 >> 0x10) + param_3 + CARRY2(u_var6, param_2))) {
+            if -0x1 < ((u_var6 >> 0x10) + param_3 + CARRY2(u_var6, param_2)) {
                 // TODO: goto LAB_1000_36e3;
             }
             // move file pointer
             ctx.AH_REG = 0x42;
             result = swi(ctx, 0x21);
             // (*pcVar2)();
-        } //
-          //        LAB_1000_369b:
+        }
+        // LAB_1000_369b:
         u_var3 = s_471_bmp_1050_1600;
     } else {
         u_var3 = 0x900;
     }
-    b_var5 = true; //
-                   //    LAB_1000_299d:
-    if (b_var5) {
+    b_var5 = true;
+    //    LAB_1000_299d:
+    if b_var5 {
         pass1_1000_29b5(u_var3);
     }
     todo!();
     return;
 }
 
-pub unsafe fn mixed_dos3_call_1000_370a(
+pub unsafe fn dos_file_io_1000_370a(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -381,7 +387,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
     uVar3 = param_1 & 0xff00;
     param_1 = uVar3 | param_5;
     uVar9 = 0;
-    if (((param_4 & 0x8000) == 0) && ((param_4 & 0x4000) != 0x0 || ((DAT_1050_6061 & 0x80) == 0))) {
+    if ((param_4 & 0x8000) == 0) && ((param_4 & 0x4000) != 0x0 || ((DAT_1050_6061 & 0x80) == 0)) {
         uVar9 = 0x80;
     }
     bVar10 = false;
@@ -407,7 +413,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
             if (bVar10) {
                 // TODO: goto LAB_1000_299d;
             }
-            if ((param_1 != '\0') || (uVar5 = uVar2, uVar8 = uStack14, (param_4 & 0x2) == 0)) {
+            if (param_1 != '\0') || (uVar5 = uVar2, uVar8 = uStack14, (param_4 & 0x2) == 0) {
                 // close file
                 ctx.AH_REG = 0x3e;
                 fn_ptr_1 = swi(ctx, 0x21);
@@ -422,7 +428,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
                 }
                 uVar5 = uVar2;
                 uVar8 = param_1;
-                if (((uVar10 & 0x100) == 0) && (uVar8 = param_1, (_param_5 & 1) != 0)) {
+                if ((uVar10 & 0x100) == 0) && (uVar8 = param_1, (_param_5 & 1) != 0) {
                     uVar7 = (uVar7 | 1);
                     bVar10 = false;
                     // get or set file attributes
@@ -432,29 +438,29 @@ pub unsafe fn mixed_dos3_call_1000_370a(
                     uVar2 = (*fn_ptr_1)();
                     uVar5 = uVar4;
                     uVar8 = uVar6;
-                    if (bVar10) {
+                    if bVar10 {
                         // TODO: goto LAB_1000_299d;
                     }
                 }
             } //
               //            LAB_1000_3973:
             bVar9 = uVar10;
-            if ((uVar10 & 0x40) == 0) {
+            if (uVar10 & 0x40) == 0 {
                 // get or set file attributes;
                 ctx.AH_REG = 0x43;
                 fn_ptr_1 = swi(0x21);
                 (*fn_ptr_1)();
                 bVar2 = 0;
-                if ((uVar7 & 1) != 0) {
+                if (uVar7 & 1) != 0 {
                     bVar2 = 0x10;
                 }
-                if ((param_4 & 0x8) != 0) {
+                if (param_4 & 0x8) != 0 {
                     bVar2 |= 0x20;
                 }
             } else {
                 bVar2 = 0;
             }
-            if (uVar5 < &u16_1050_5f8a) {
+            if uVar5 < &u16_1050_5f8a {
                 *(uVar5 + 0x5f90) = bVar2 | bVar9 | 0x1;
                 return uVar5;
             }
@@ -465,20 +471,20 @@ pub unsafe fn mixed_dos3_call_1000_370a(
             uVar2 = 0x1800;
         }
     } else {
-        if ((uVar7 & 0x500) != 0x500) {
+        if (uVar7 & 0x500) != 0x500 {
             uVar10 = CONCAT11(0x1, uVar9);
             // Io Device Control
             ctx.AH_REG = 0x44;
             fn_ptr_1 = swi(ctx, 0x21);
             (*fn_ptr_1)();
-            if ((extraout_DX & 0x80) != 0) {
+            if (extraout_DX & 0x80) != 0 {
                 uVar10 |= 0x40;
             }
             uVar5 = uVar2;
             uVar8 = param_1;
-            if ((uVar10 & 0x40) == 0) {
-                if ((param_4 & 0x200) == 0) {
-                    if (((uVar10 & 0x80) != 0) && ((param_4 & 0x2) != 0)) {
+            if (uVar10 & 0x40) == 0 {
+                if (param_4 & 0x200) == 0 {
+                    if ((uVar10 & 0x80) != 0) && ((param_4 & 0x2) != 0) {
                         // move file pointer
                             ctx.AH_REG = 0x42;
                         fn_ptr_1 =  swi(ctx, 0x21);
@@ -487,7 +493,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
                             ctx.AH_REG = 0x3f;
                         fn_ptr_2 =  swi(ctx, 0x21);
                         //iVar3 = (fn_ptr_2)();
-                        if ((iVar3 != 0) && (param_1 = (uVar3 >> 0x8), param_1 == '\x1a')) {
+                        if (iVar3 != 0) && (param_1 = (uVar3 >> 0x8), param_1 == '\x1a') {
 
                             // move file pointer
                             ctx.AH_REG = 0x42;
@@ -508,7 +514,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
                         uVar8 = uStack14;
                     }
                 } else {
-                    if ((param_4 & 0x3) == 0) {
+                    if (param_4 & 0x3) == 0 {
 
                         // close file
                         ctx.AH_REG = 0x3e;
@@ -533,7 +539,7 @@ pub unsafe fn mixed_dos3_call_1000_370a(
         }
         // close file
         ctx.AH_REG = 0x3e;
-        fn_ptr_1 = swi(0x21);
+        fn_ptr_1 = swi(ctx, 0x21);
         (*fn_ptr_1)();
         uVar2 = 0x1100;
     }

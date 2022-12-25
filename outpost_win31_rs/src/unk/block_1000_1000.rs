@@ -11,7 +11,7 @@ use crate::structs::struct_7::Struct7;
 use crate::structs::struct_d::StructD;
 use crate::os_base::_SHI_INVOKEERRORHANDLER1;
 use crate::unk::{block_1000_0000, block_1000_2000};
-use crate::error_handling::msg_box_op_1000_214c;
+use crate::error_handling::smart_heap_library_err_1000_214c;
 use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
 use crate::windef16::HGLOBAL16;
 
@@ -543,7 +543,7 @@ pub unsafe fn msg_box_op_1000_1f24(mut param_1: i16, mut param_2: u16, mut param
     let mut unaff_CS: u16;
 
     if (param_3 < (param_1 + 0xc)) {
-        msg_box_op_1000_214c(0x0, 0x0, 0xd940, &PTR_LOOP_1050_1040);
+        smart_heap_library_err_1000_214c(0x0, 0x0, 0xd940, &PTR_LOOP_1050_1040);
         return 0x1;
     }
     piVar1 = (param_1 + 0xc);
