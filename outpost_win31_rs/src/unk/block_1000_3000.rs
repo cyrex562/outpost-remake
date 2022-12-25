@@ -263,7 +263,7 @@ pub unsafe fn pass1_1000_35aa() -> *mut u16 {
     return puVar1;
 }
 
-// WARNING: Removing unreachable block (ram,0x10003622)
+
 
 pub unsafe fn dos3_call_op_1000_35fe(ctx: &mut AppContext, mut param_1: u16, mut param_2: i16) -> u16 {
     let mut var1: u16;
@@ -291,9 +291,9 @@ pub unsafe fn dos3_call_op_1000_35fe(ctx: &mut AppContext, mut param_1: u16, mut
 pub unsafe fn pass1_1000_39e1() {}
 
 // WARNING: Unable to track spacebase fully for stack
-// WARNING: Removing unreachable block (ram,0x10003afe)
-// WARNING: Removing unreachable block (ram,0x10003a40)
-// WARNING: Removing unreachable block (ram,0x10003b7e)
+
+
+
 
 
 pub unsafe fn mixed_dos3_call_1000_39f2(
@@ -531,7 +531,7 @@ pub unsafe fn mixed_dos3_call_1000_39f2(
 }
 
 // WARNING: Unable to track spacebase fully for stack
-// WARNING: Removing unreachable block (ram,0x10003afe)
+
 
 pub unsafe fn mixed_dos3_call_1000_3ad9(
     mut param_1: u16,

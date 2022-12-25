@@ -100,7 +100,7 @@ pub unsafe fn pass1_1008_7056(
 
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
-// WARNING: Removing unreachable block (ram,0x100871e6)
+
 
 
 pub unsafe fn pass1_1008_72a8(param_1: *mut u16, mut param_2: u16) -> *mut u16 {

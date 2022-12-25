@@ -5,6 +5,7 @@ use crate::unk::block_1000_2000::pass1_1000_29b5;
 use crate::unk::block_1000_3000::{str_op_1000_3da4, unk_str_op_1000_3d3e};
 use crate::unk::block_1000_4000::dos3_call_set_struct_1000_42de;
 use crate::dos_interrupt::{dos3_call_1000_4f94, swi};
+use crate::structs::struct_825::Struct825;
 use crate::utils::{CARRY2, CONCAT22, SUB42};
 
 pub unsafe fn pass1_1000_5008(mut param_1: u16,
@@ -90,7 +91,7 @@ pub unsafe fn pass1_1000_5026(
 
 
 
-// WARNING: Removing unreachable block (ram,0x10005167)
+
 
 pub unsafe fn dos3_call_1000_514e() -> u16
 {
@@ -112,7 +113,7 @@ pub unsafe fn dos3_call_1000_514e() -> u16
 
 
 
-// WARNING: Removing unreachable block (ram,0x1000518c)
+
 
 pub unsafe fn dos3_call_1000_5174() -> u16
 {
@@ -407,6 +408,11 @@ Unable to decompile 'pass1_1000_55b1'
 Cause:
 Low-level Error: Symbol $$undef00000007 extends beyond the end of the address space
 */
+
+pub fn pass1_1000_55b1(ctx: &mut AppContext, p1: *mut Struct825, p2: i16) -> u16 {
+    todo!()
+}
+
 pub unsafe fn pass1_1000_5586(param_1: code,
                      mut param_2: u16 ,
                      mut param_3: i16,
@@ -436,7 +442,7 @@ pub unsafe fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
 //                         0x1050,
 //                        0x0,
 //                         0x1050);
-pub unsafe fn dos3_call_1000_23ea( a: *mut u8, b: u16, c: u16, d: u16) {
+pub unsafe fn dos_get_interrupt_vector_1000_23ea(a: *mut u8, b: u16, c: u16, d: u16) {
     todo!()
     //                              **************************************************************
     //                              *                          FUNCTION                          *
@@ -455,7 +461,7 @@ pub unsafe fn dos3_call_1000_23ea( a: *mut u8, b: u16, c: u16, d: u16) {
     //        1000:23ef 8b ec           MOV        BP,SP
     //        1000:23f1 1e              PUSH       DS
     //        1000:23f2 8e d8           MOV        DS,AX
-    //        1000:23f4 b8 00 35        MOV        AX,0x3500
+    //        1000:23f4 b8 00 35        MOV        AX,0x3500 ; 0x35 --> get interrupt vector
     //        1000:23f7 2e f7 06        TEST       word ptr CS:[DAT_1000_22f6],0x1                  = 0088h
     //                  f6 22 01 00
     //        1000:23fe 74 07           JZ         LAB_1000_2407

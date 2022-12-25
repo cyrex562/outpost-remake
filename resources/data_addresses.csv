@@ -1,0 +1,7 @@
+segment,offset,type,length_bytes,name_desc,known_value
+0x1050,0x5fd2,u16,2,,
+0x1050,0x5fd4,u16,2,,
+0x1050,0x5fc2,u16,2,,
+0x1050,0x5fc4,u16,2,,
+0x1050,0x5f4c,HINSTANCE16,2,"main window hinstance",
+0x1050,0x6066,u16,2,,

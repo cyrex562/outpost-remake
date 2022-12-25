@@ -4,7 +4,7 @@ use crate::structs::struct_99::astruct_99;
 
 #[derive(Default,Debug,Clone)]
 pub struct MemContainer {
-    pub address: MemAddress
+    pub address: MemAddress,
     pub len: usize,
     pub ptr: *mut u8,
     pub buffer: Vec<u8>,
@@ -21,8 +21,17 @@ impl Default for MemContainer {
             data_type: MemContainerDataType::None
         }
     }
+
+}
+
+impl MemContainer {
+    pub fn store_u16(&mut self, in_val: u16) {
+        self.data_type = MemContainerDataType::U16;
+        todo!()
+    }
 }
 
 pub enum MemContainerDataType {
     None,
+    U16,
 }

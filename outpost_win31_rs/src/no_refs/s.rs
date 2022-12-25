@@ -6,7 +6,9 @@ use crate::draw_ops::draw_c::draw_line_1020_229c;
 use crate::draw_ops::draw_e::{draw_op_1020_15de, unk_draw_op_1020_0c3e, win_ui_op_1020_150e};
 use crate::utils::CONCAT22;
 use crate::winapp::winapp_d::unk_win_ui_op_1020_1418;
-use crate::gui::cleanup::{destroy_win_1020_1dea, destroy_win_1020_1e1e};
+use crate::gui::cleanup::{cleanup_ui_op_1020_1038, destroy_win_1020_1dea, destroy_win_1020_1e1e};
+use crate::gui::cursor::win_ui_cursor_op_1020_1294;
+use crate::gui::window::get_win_ui_info_op_1020_7a50;
 use crate::winapp::winapp_d::send_win_msg_1020_08fe;
 use crate::windef16::{HDC16, HGDIOBJ16, HPEN16};
 
@@ -141,12 +143,12 @@ pub unsafe fn pass1_1020_0e8e(
     mut param_5: i16,
     mut param_6: i16,
 ) {
-    let mut ppcVar1: *mut *mut code;
+    let mut ppc_var1: fn();
 
     win_ui_cursor_op_1020_1294(param_2, CONCAT22(param_4, param_3), param_5, param_6);
-    if (param_1 == 0) {
-        ppcVar1 = ((param_3 + 0x4) + 0x5c);
-        (**ppcVar1)();
+    if param_1 == 0 {
+        ppc_var1 = ((param_3 + 0x4) + 0x5c);
+        (**ppc_var1)();
     }
     return;
 }

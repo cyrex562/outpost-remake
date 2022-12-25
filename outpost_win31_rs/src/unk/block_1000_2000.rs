@@ -4,7 +4,7 @@ use std::ptr::null_mut;
 use crate::app_context::AppContext;
 use crate::{block_1000, mem_ops};
 use crate::unk::block_1000_1000::{mem_1000_167a, mem_op_1000_1b9a};
-use crate::unk::block_1000_5000::ret_op_1000_55ac;
+use crate::unk::block_1000_5000::{pass1_1000_55b1, ret_op_1000_55ac};
 use crate::dos_interrupt::swi;
 use crate::globals::{DAT_1050_1050, HINSTANCE16_1050_5f4c, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_1000, PTR_LOOP_1050_5f7e, PTR_LOOP_1050_5fd2, PTR_LOOP_1050_5fd4, PTR_LOOP_1050_6066, PTR_LOOP_1050_63fe, u8_1050_5fc9};
 use crate::mem_address::MemAddress;
@@ -64,7 +64,7 @@ pub unsafe fn empty_fn_1000_214a() {
     return;
 }
 
-// WARNING: Removing unreachable block (ram,0x1000234c)
+
 
 pub unsafe fn init_1000_23be(mut param_1: u16, mut param_2: u16) {
     init_op_1008_54aa(
@@ -102,38 +102,36 @@ pub unsafe fn fn_ptr_op_1000_2594(ctx: &mut AppContext) {
 
 //
 pub unsafe fn pass1_1000_25a8() {
-    pass1_1000_2913(0xfc);
-    pass1_1000_2913(0xff);
+    pass1_1000_2913(ctx, 0xfc);
+    pass1_1000_2913(ctx, 0xff);
     return;
 }
 
-pub unsafe fn pass1_1000_2913(mut param_1: u16) {
-    let mut pcVar1: *mut c_char;
-    let mut pcVar2: *mut c_char;
+pub unsafe fn pass1_1000_2913(ctx: &mut AppContext, mut param_1: u16) {
+    let mut pc_var1: *mut c_char;
+    let mut pc_var2: *mut c_char;
     let mut i_var3: i16;
-    let mut unaff_di: u16;
-    let mut unaff_es: u16;
-    let mut paVar4: *mut Struct825;
+    let mut pstruct825_1: *mut Struct825;
     let mut i_var5: i16;
 
     i_var5 = 0x1050;
-    if (u16_1050_61ec != 0) {
-        paVar4 = CONCAT22(unaff_di, param_1);
-        pcVar2 = poss_str_op_1000_28dc(paVar4);
-        if (pcVar2.is_null() == false) {
+    if u16_1050_61ec != 0 {
+        pstruct825_1 = CONCAT22(ctx.DI_REG, param_1);
+        pc_var2 = poss_str_op_1000_28dc(pstruct825_1);
+        if pc_var2.is_null() == false {
             i_var3 = -0x1;
             loop {
-                if (i_var3 == 0) {
+                if i_var3 == 0 {
                     break;
                 }
                 i_var3 += -0x1;
-                pcVar1 = pcVar2;
-                pcVar2 = pcVar2 + 1;
-                if *pcVar1 == '\0' {
+                pc_var1 = pc_var2;
+                pc_var2 = pc_var2 + 1;
+                if *pc_var1 == '\0' as c_char {
                     break;
                 }
             }
-            pass1_1000_55b1((paVar4 >> 0x10), i_var5);
+            pass1_1000_55b1(ctx, pstruct825_1, i_var5);
         }
     }
     return;

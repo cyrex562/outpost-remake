@@ -139,8 +139,8 @@ pub unsafe fn free_blocks_1000_15ce(param_1: *mut u16, mut param_2: u16) {
     return;
 }
 
-// WARNING: Removing unreachable block (ram,0x10004090)
-// WARNING: Removing unreachable block (ram,0x1000409a)
+
+
 pub unsafe fn free_mem_1000_407a(mut param_1: u16, mut param_2: u16) {
     GlobalFree16(DAT_1050_1050);
     return;

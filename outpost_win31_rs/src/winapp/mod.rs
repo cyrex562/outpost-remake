@@ -57,13 +57,13 @@ use crate::unk::block_1040_b000::{pass1_1040_bfde, struct_1040_bf3e};
 use crate::utils::{CONCAT11, CONCAT22, SUB42};
 use crate::{dos_interrupt, gui, program_lifecycle};
 use crate::app_context::AppContext;
-use crate::dos_interrupt::{dos3_op_1000_256b, swi};
+use crate::dos_interrupt::{dos_set_interrupt_vector, swi};
 use crate::gui::cleanup::{destroy_win_1020_1dea, destroy_win_1020_1e1e};
 use crate::gui::dialog::dialog_ui_fn_1040_78e2;
 use crate::gui::window::set_win_pos_1040_331a;
 use crate::structs::struct_825::Struct825;
 use crate::unk::block_1000_2000::{fn_ptr_op_1000_2594, init_1000_23be, pass1_1000_25a8, pass1_1000_2913, poss_str_op_1000_28dc};
-use crate::unk::block_1000_5000::{dos3_call_1000_23ea, ret_op_1000_55ac};
+use crate::unk::block_1000_5000::{dos_get_interrupt_vector_1000_23ea, ret_op_1000_55ac};
 use crate::unk::block_1020_1000::{pass1_1020_1da8, pass1_1020_1eea};
 use crate::winapi16::{CallWindowProc16, DestroyWindow16, DispatchMessage16, FatalAppExit16, FatalExit, GetClientRect16, GetDC16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetModuleFileName16, GetProp16, GetVersion16, GetWindowRect16, GetWindowText16, InitApp16, InitTask16, IsDialogMessage16, IsWindow16, LockSegment16, MakeProcInstance16, MessageBeep16, MessageBox16, PostMessage16, PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, TranslateAccelerator16, TranslateMessage16, WaitEvent16, WinHelp16};
 use crate::windef16::{HANDLE16, HCURSOR16, HDC16, HWND16, LPARAM, LRESULT, MSG16, POINT16, RECT16, WPARAM16};
@@ -110,7 +110,7 @@ pub unsafe fn pass1_1000_25d2(
     let mut paVar10 = (param_2 << 0x10);
     let mut offset7 = 0;
     pass1_1000_25a8();
-    pass1_1000_2913(offset7);
+    pass1_1000_2913(ctx, offset7);
     let mut string6 = poss_str_op_1000_28dc(paVar10);
     if string6.is_null() == false {
         offset7 = 0x9;

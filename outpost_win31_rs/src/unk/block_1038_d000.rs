@@ -119,8 +119,8 @@ pub unsafe fn pass1_1038_d7d0(param_1: *mut StructD)
 
 
 
-// WARNING: Removing unreachable block (ram,0x1038dad3)
-// WARNING: Removing unreachable block (ram,0x1038daea)
+
+
 pub unsafe fn pass1_1038_de20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: i16)
 
 {

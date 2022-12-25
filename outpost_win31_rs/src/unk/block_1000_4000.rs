@@ -66,7 +66,7 @@ pub unsafe fn pass1_1000_422a(mut param_1: i16, mut param_2: u16) -> i16 {
     return param_1;
 }
 
-// WARNING: Removing unreachable block (ram,0x10004311)
+
 pub unsafe fn dos3_call_set_struct_1000_42de(
     param_1: *mut astruct_811,
     param_2: *mut astruct_810,
@@ -116,9 +116,9 @@ pub unsafe fn dos3_call_set_struct_1000_42de(
     return;
 }
 
-// WARNING: Removing unreachable block (ram,0x1000438a)
-// WARNING: Removing unreachable block (ram,0x10004372)
-// WARNING: Removing unreachable block (ram,0x100043aa)
+
+
+
 pub unsafe fn dos3_call_op_1000_435c(
     mut param_1: u16,
     param_2: *mut u16,
@@ -1124,9 +1124,9 @@ Cause:
 Low-level Error: Symbol $$undef00000008 extends beyond the end of the address space
 */
 
-// WARNING: Removing unreachable block (ram,0x10004f47)
 
-// WARNING: Removing unreachable block (ram,0x10004f47)
+
+
 
 pub unsafe fn pass1_1000_4f2e() -> u16 {
     let mut pc_var1: *mut code;

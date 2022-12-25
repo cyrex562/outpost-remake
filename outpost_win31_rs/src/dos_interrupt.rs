@@ -166,6 +166,8 @@ impl InterruptResult {
             }
         }
     }
+
+    pub fn u32_call_result(&self) -> u32 {todo!()}
 }
 
 pub fn swi(ctx: &mut AppContext, int_code: u16) -> InterruptResult {
@@ -228,42 +230,48 @@ pub unsafe fn dos3_call_1000_4f94(ctx: &mut AppContext) -> i16 {
     todo!()
 }
 
-pub unsafe fn dos3_call_1000_4fbe(ctx: &mut AppContext, param_1: u8) -> u16 {
+pub unsafe fn dos_set_get_default_drive_1000_4fbe(ctx: &mut AppContext, dflt_drive_param_1: c_char) -> u16 {
     //    unaff_BP: i16;
     // set default drive
     ctx.AH_REG = 0xe;
     let result1 = swi(ctx,0x21);
-    // (fn_ptr_var1)(unaff_BP + 1);
+    // todo: marshal argument; in this cast dflt_drive_param_1
+    // (fn_ptr_var1)(dflt_drive_param_1);
+    result1.call(ctx);
+
     // get default drive
+    // let c_var2 = fn_ptr_var2();
     ctx.AH_REG = 0x19;
     let result2 = swi(ctx, 0x21);
-    // let c_var2 = fn_ptr_var2();
-    // let u_var3 = 0xffff;
+    result2.call(ctx);
+    let c_var2: c_char = 0;
+    // todo: get return value from argument; in this case a single char containing the drive letter/number
+    let mut u_var3 = 0xffffu16;
     // if (c_var2 + '\x01' == param_1) {
     //     u_var3 = 0;
     // }
-    // return u_var3;
+    if c_var2 + 0x1 == param_1 {
+        u_var3 = 0;
+    }
+    u_var3
 }
 
-// WARNING: Removing unreachable block (ram,0x10002589)
-pub unsafe fn dos3_op_1000_256b(ctx: &mut AppContext) {
-    // let mut pcVar1: *mut code;
 
+pub unsafe fn dos_set_interrupt_vector(ctx: &mut AppContext) {
     if PTR_LOOP_1050_6202.is_null() == false {
         (PTR_LOOP_1050_6200)();
     }
     // SetInterruptVector
     ctx.AH_REG = 0x25;
     let mut result = swi(ctx, 0x21);
-    // (*pcVar1)();
-    todo!()
+    result.call(ctx);
     return;
 }
 
-// WARNING: Removing unreachable block (ram,0x100036b5)
-// WARNING: Removing unreachable block (ram,0x10003681)
-// WARNING: Removing unreachable block (ram,0x100036f7)
-// WARNING: Removing unreachable block (ram,0x100036d8)
+
+
+
+
 pub unsafe fn mixed_dos3_call_1000_3636(
     ctx: &mut AppContext,
     mut param_1: u16,
