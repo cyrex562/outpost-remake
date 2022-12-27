@@ -36,7 +36,7 @@ use crate::winapp::winapp_a::create_window_1040_8bea;
 use crate::winapp::winapp_d;
 use crate::windef16::{HWND16, LPARAM, LRESULT, RECT16, WINDOWPLACEMENT16, WPARAM16};
 
-pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16, param_2: *mut StructB)
+pub fn win_ui_op_1038_a6f4(mut param_1: u16, param_2: *mut StructB)
 
 {
   let mut lp_string: u32;
@@ -79,7 +79,7 @@ pub unsafe fn win_ui_op_1038_a6f4(mut param_1: u16, param_2: *mut StructB)
 }
 
 
-pub unsafe fn FUN_1040_0f0c(mut param_1: u16, param_2: *mut StructB) {
+pub fn FUN_1040_0f0c(mut param_1: u16, param_2: *mut StructB) {
     let mut uVar1: u32;
     let mut in_AX: u16;
     let mut HVar2: HWND16;
@@ -174,7 +174,7 @@ pub unsafe fn FUN_1040_0f0c(mut param_1: u16, param_2: *mut StructB) {
     return;
 }
 
-pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM, wparam_param_2: WPARAM16, msg_param_3: u16, hwnd_param_4: HWND16,
+pub fn win_op_1040_9cde(lparam_param_1: LPARAM, wparam_param_2: WPARAM16, msg_param_3: u16, hwnd_param_4: HWND16,
                                mut param_5: u16, mut param_6: u16, mut param_7: u32)
 
 {
@@ -401,7 +401,7 @@ pub unsafe fn win_op_1040_9cde(lparam_param_1: LPARAM, wparam_param_2: WPARAM16,
 }
 
 
-pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
+pub fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
 
 {
     let mut piVar1: *mut i16;
@@ -517,7 +517,7 @@ pub unsafe fn win_ui_op_1040_8718(param_1: *mut Struct37) -> *mut u8
 }
 
 
-pub unsafe fn set_win_pos_1040_4ae4(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
+pub fn set_win_pos_1040_4ae4(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -619,7 +619,7 @@ pub unsafe fn set_win_pos_1040_4ae4(mut param_1: i16, mut param_2: u16, mut para
 }
 
 
-pub unsafe fn win_ui_op_1040_81fe(mut param_1: u32)
+pub fn win_ui_op_1040_81fe(mut param_1: u32)
 
 {
     SetSysModalWindow((param_1 + 0x6));
@@ -627,7 +627,7 @@ pub unsafe fn win_ui_op_1040_81fe(mut param_1: u32)
 }
 
 
-pub unsafe fn set_win_placement_1010_010e(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
+pub fn set_win_placement_1010_010e(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut iVar2: i16;
     let mut piVar3: *mut i16;
@@ -671,7 +671,7 @@ pub unsafe fn set_win_placement_1010_010e(mut param_1: u16, mut param_2: u16, mu
     return;
 }
 
-pub unsafe fn set_window_placement_1010_0070(mut param_1: u32, mut param_2: i16, mut param_3: u16) {
+pub fn set_window_placement_1010_0070(mut param_1: u32, mut param_2: i16, mut param_3: u16) {
     let mut ppc_var1: *mut *mut code;
     let mut u_var2: u16;
     let mut pu_var3: *mut u32;
@@ -713,7 +713,7 @@ pub unsafe fn set_window_placement_1010_0070(mut param_1: u32, mut param_2: i16,
 }
 
 
-pub unsafe fn window_op_1020_10a0(
+pub fn window_op_1020_10a0(
     param_1: *mut Struct57,
     param_2: *mut Struct57,
     struct_param_1: *mut StructA,
@@ -884,7 +884,7 @@ pub unsafe fn window_op_1020_10a0(
     return;
 }
 
-pub unsafe fn win_ui_op_1040_0000(
+pub fn win_ui_op_1040_0000(
     ctx: &mut AppContext,
     pstruct57_param_1: *mut Struct57,
     pstructb_param_2: *mut StructB,

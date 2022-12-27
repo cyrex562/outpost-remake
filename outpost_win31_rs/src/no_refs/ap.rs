@@ -2,7 +2,7 @@ use crate::winapp::winapp_c::send_msg_1038_c228;
 use crate::unk::block_1038_e000::{pass1_1038_e16e, pass1_1038_e308, pass1_1038_e6f0, pass1_1038_e9ec, pass1_1038_ebd6};
 use crate::gui::window::set_win_pos_1038_c31a;
 
-pub unsafe fn pass1_1038_d6c4(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_d6c4(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_d276(param_1);
@@ -13,7 +13,7 @@ pub unsafe fn pass1_1038_d6c4(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1038_e0ae(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_e0ae(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_d7d0(param_1);
@@ -23,13 +23,13 @@ pub unsafe fn pass1_1038_e0ae(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn FUN_1038_e23a()
+pub fn FUN_1038_e23a()
 
 {
     return;
 }
 
-pub unsafe fn pass1_1038_e23e(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_e23e(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_e16e(param_1);
@@ -40,7 +40,7 @@ pub unsafe fn pass1_1038_e23e(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1038_e4bc(param_1: *mut u8, mut param_2: u16, mut param_3: u32, mut param_4: u32)
+pub fn pass1_1038_e4bc(param_1: *mut u8, mut param_2: u16, mut param_3: u32, mut param_4: u32)
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -147,7 +147,7 @@ pub unsafe fn pass1_1038_e4bc(param_1: *mut u8, mut param_2: u16, mut param_3: u
 }
 
 
-pub unsafe fn pass1_1038_e608(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_e608(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_e308(param_1);
@@ -157,14 +157,14 @@ pub unsafe fn pass1_1038_e608(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn FUN_1038_e904()
+pub fn FUN_1038_e904()
 
 {
     return;
 }
 
 
-pub unsafe fn pass1_1038_e908(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_e908(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_e6f0(param_1);

@@ -24,7 +24,7 @@ use crate::winapp;
 use crate::winapp::{winapp_b, winapp_c};
 use crate::windef16::{HANDLE16, HWND16, LPARAM, LRESULT, RECT16, WPARAM16};
 
-pub unsafe fn unk_win_sys_op_1038_da68(param_1: *mut StructD, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
+pub fn unk_win_sys_op_1038_da68(param_1: *mut StructD, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -158,7 +158,7 @@ pub unsafe fn unk_win_sys_op_1038_da68(param_1: *mut StructD, mut param_2: i16, 
 }
 
 
-pub unsafe fn create_win_1040_20d4(mut param_1: u32, struct_b_param_2: *mut StructB, mut param_3: u16)
+pub fn create_win_1040_20d4(mut param_1: u32, struct_b_param_2: *mut StructB, mut param_3: u16)
 
 {
     let mut cx: i16;
@@ -208,7 +208,7 @@ pub unsafe fn create_win_1040_20d4(mut param_1: u32, struct_b_param_2: *mut Stru
 }
 
 
-pub unsafe fn call_win_proc_1038_d020
+pub fn call_win_proc_1038_d020
                (base_param_6: u16,win_handle_1: HWND16,mut param_3: u32,l_param: HWND16,hwnd_param_4: HWND16,
                win_handle_2: HWND16) -> i32
 
@@ -262,7 +262,7 @@ pub unsafe fn call_win_proc_1038_d020
   return var1;
 }
 
-pub unsafe fn reg_class_1040_98c0(mut param_1: u32)
+pub fn reg_class_1040_98c0(mut param_1: u32)
 
 {
   let mut BVar1: bool;
@@ -290,12 +290,12 @@ pub unsafe fn reg_class_1040_98c0(mut param_1: u32)
   return;
 }
 
-pub unsafe fn post_quit_msg_1008_3af4() {
+pub fn post_quit_msg_1008_3af4() {
     PostQuitMessage16(0x0);
     return;
 }
 
-pub unsafe fn win_sys_op_1008_84f2(
+pub fn win_sys_op_1008_84f2(
     lparam_param_1: LPARAM,
     wparam_param_2: WPARAM16,
     msg_param_3: u16,
@@ -430,7 +430,7 @@ pub unsafe fn win_sys_op_1008_84f2(
 }
 
 
-pub unsafe fn create_window_1040_8bea
+pub fn create_window_1040_8bea
                    (param_1: *mut Struct37,mut param_2: u16 ,mut param_3: i16,mut param_4: u16 ,param_5: INT16,param_6: INT16,param_7: *mut c_char) -> HANDLE16
 
 {
@@ -458,7 +458,7 @@ pub unsafe fn create_window_1040_8bea
 }
 
 
-pub unsafe fn create_window_1040_92dc(param_1: *mut Struct65)
+pub fn create_window_1040_92dc(param_1: *mut Struct65)
 
 {
   let mut hwnd: HWND16;
@@ -489,7 +489,7 @@ pub unsafe fn create_window_1040_92dc(param_1: *mut Struct65)
   return;
 }
 
-pub unsafe fn unk_win_msg_op_1008_0a3c(mut param_1: u32, mut param_2: u16) -> u16 {
+pub fn unk_win_msg_op_1008_0a3c(mut param_1: u32, mut param_2: u16) -> u16 {
     let mut BVar1: bool;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -509,7 +509,7 @@ pub unsafe fn unk_win_msg_op_1008_0a3c(mut param_1: u32, mut param_2: u16) -> u1
     return 0x1;
 }
 
-pub unsafe fn unk_win_op_1020_65cc(param_1: *mut astruct_60, mut param_2: i16) {
+pub fn unk_win_op_1020_65cc(param_1: *mut astruct_60, mut param_2: i16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u32;
     let mut BVar3: bool;
@@ -571,7 +571,7 @@ pub unsafe fn unk_win_op_1020_65cc(param_1: *mut astruct_60, mut param_2: i16) {
     return;
 }
 
-pub unsafe fn win_ui_op_1038_ea18(param_1: *mut StructB)
+pub fn win_ui_op_1038_ea18(param_1: *mut StructB)
 
 {
     let mut hwnd: HWND16;
@@ -596,7 +596,7 @@ pub unsafe fn win_ui_op_1038_ea18(param_1: *mut StructB)
 }
 
 
-pub unsafe fn create_window_1040_6eae(mut param_1: u32, mut param_2: i16, pstruct_param_3: *mut astruct_859, mut param_4: u16, mut param_5: u16 )
+pub fn create_window_1040_6eae(mut param_1: u32, mut param_2: i16, pstruct_param_3: *mut astruct_859, mut param_4: u16, mut param_5: u16 )
 
 {
    let mut pstruct_1: *mut astruct_859;
@@ -618,7 +618,7 @@ pub unsafe fn create_window_1040_6eae(mut param_1: u32, mut param_2: i16, pstruc
 }
 
 
-pub unsafe fn create_window_1040_7620(mut param_1: u32, mut param_2: i16, pstruct_param_3: *mut astruct_860, mut param_4: u16, mut param_5: u16 )
+pub fn create_window_1040_7620(mut param_1: u32, mut param_2: i16, pstruct_param_3: *mut astruct_860, mut param_4: u16, mut param_5: u16 )
 
 {
   let mut iVar1: *mut astruct_860;
@@ -639,7 +639,7 @@ pub unsafe fn create_window_1040_7620(mut param_1: u32, mut param_2: i16, pstruc
   return;
 }
 
-pub unsafe fn unk_win_op_1010_7300(
+pub fn unk_win_op_1010_7300(
     param_1: *mut Struct57,
     param_2: *mut Struct57,
     mut param_3: u32,
@@ -1001,7 +1001,7 @@ pub unsafe fn unk_win_op_1010_7300(
 }
 
 
-pub unsafe fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
+pub fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LPARAM, in_wparam_2: WPARAM16, mut param_5: u16, param_6: HWND16) -> LRESULT
 
 {
   let mut WVar1: u16;
@@ -1033,7 +1033,7 @@ pub unsafe fn win_proc_1008_5f44(mut param_1: u16, mut param_2: u16, param_3: LP
   return 0x0;
 }
 
-pub unsafe fn win_ui_op_1038_eaa2(param_1: *mut astruct_888, mut param_2: i16)
+pub fn win_ui_op_1038_eaa2(param_1: *mut astruct_888, mut param_2: i16)
 
 {
     let mut hwnd: HWND16;
@@ -1055,7 +1055,7 @@ pub unsafe fn win_ui_op_1038_eaa2(param_1: *mut astruct_888, mut param_2: i16)
 }
 
 
-pub unsafe fn win_msg_op_1040_13b2(param_1: *mut astruct_892, mut param_2: i16)
+pub fn win_msg_op_1040_13b2(param_1: *mut astruct_892, mut param_2: i16)
 
 {
     let mut HVar1: HWND16;
@@ -1164,7 +1164,7 @@ pub unsafe fn win_msg_op_1040_13b2(param_1: *mut astruct_892, mut param_2: i16)
     return;
 }
 
-pub unsafe fn destroy_window_1020_1d4a(mut param_1: u32, mut param_2: i16) {
+pub fn destroy_window_1020_1d4a(mut param_1: u32, mut param_2: i16) {
     let mut in_AX: u16;
     let mut BVar1: bool;
     let mut in_EDX: u32;

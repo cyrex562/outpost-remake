@@ -783,7 +783,7 @@ struct astruct_826 {
     pub field3_0x3: u8,
     pub field4_0x4: u8,
     pub field5_0x5: u8,
-// pub unsafe fn * pvoid32_0x6;
+// pub fn * pvoid32_0x6;
 }
 
 

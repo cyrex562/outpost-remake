@@ -8,7 +8,7 @@ use crate::gui::cleanup;
 use crate::winapi16::ShowCursor16;
 use crate::windef16::HWND16;
 
-pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut Struct27, param_2: *mut c_char, in_wnd_class: *mut WNDCLASS16 )
+pub fn win_ui_op_1008_5cfe(param_1: *mut Struct27, param_2: *mut c_char, in_wnd_class: *mut WNDCLASS16 )
 
 {
   let mut uVar1: u32;
@@ -85,7 +85,7 @@ pub unsafe fn win_ui_op_1008_5cfe(param_1: *mut Struct27, param_2: *mut c_char, 
   return;
 }
 
-pub unsafe fn mci_send_command_1008_53ae(mut param_1: u32, mut param_2: u16 )
+pub fn mci_send_command_1008_53ae(mut param_1: u32, mut param_2: u16 )
 
 {
   let mut DVar1: u32;
@@ -145,7 +145,7 @@ pub unsafe fn mci_send_command_1008_53ae(mut param_1: u32, mut param_2: u16 )
 }
 
 
-pub unsafe fn mix_ui_op_1018_6adc(
+pub fn mix_ui_op_1018_6adc(
     param_1: *mut astruct_28,
     mut param_2: u16,
     mut param_3: u16,

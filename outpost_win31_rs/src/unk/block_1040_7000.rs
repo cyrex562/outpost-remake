@@ -7,14 +7,14 @@
 
 
 
-pub unsafe fn pass1_1040_78de()
+pub fn pass1_1040_78de()
 
 {
   return;
 }
 
 
-pub unsafe fn pass1_1040_79c0(param_1: u32,param_2: *mut i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ) -> u16
+pub fn pass1_1040_79c0(param_1: u32,param_2: *mut i16,mut param_3: u16 ,mut param_4: u16 ,mut param_5: u16 ) -> u16
 
 {
   let mut ppcVar1: *mut *mut code;

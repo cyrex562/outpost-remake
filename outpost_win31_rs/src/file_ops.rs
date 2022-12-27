@@ -16,7 +16,7 @@ use crate::utils::{CONCAT22, SUB42};
 use crate::winapi16::{_lclose16, _llseek16, _lopen16, GetOpenFileName16, GetSaveFileName16, LoadCursor16, MessageBeep16, MessageBox16, SetCursor16};
 use crate::windef16::{HCURSOR16, HFILE16, HWND16};
 
-pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
+pub fn close_file_1008_496c(param_1: *mut astruct_803) {
     let mut ppcVar1: *mut *mut code;
     let mut iVar5: *mut astruct_803;
     let mut uVar2: u16;
@@ -46,7 +46,7 @@ pub unsafe fn close_file_1008_496c(param_1: *mut astruct_803) {
     return;
 }
 
-pub unsafe fn read_file_1008_49e8(
+pub fn read_file_1008_49e8(
     param_1: HFILE16,
     mut param_2: u16,
     struct_param_1: *mut astruct_81,
@@ -156,7 +156,7 @@ pub unsafe fn read_file_1008_49e8(
     return 0x0;
 }
 
-pub unsafe fn file_1008_4c26(param_1: *mut astruct_803, param_2: u8) -> *mut astruct_803 {
+pub fn file_1008_4c26(param_1: *mut astruct_803, param_2: u8) -> *mut astruct_803 {
     close_file_1008_496c(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -164,7 +164,7 @@ pub unsafe fn file_1008_4c26(param_1: *mut astruct_803, param_2: u8) -> *mut ast
     return param_1;
 }
 
-pub unsafe fn close_file_1008_6dd0(param_1: *mut StructD) {
+pub fn close_file_1008_6dd0(param_1: *mut StructD) {
     let mut struct_1: *mut StructD;
     let mut struct_1_hi: u16;
 
@@ -178,7 +178,7 @@ pub unsafe fn close_file_1008_6dd0(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn file_fn_1008_6e02(param_1: *mut astruct_802) -> BOOL16 {
+pub fn file_fn_1008_6e02(param_1: *mut astruct_802) -> BOOL16 {
     let mut var1: u16;
     let mut iVar1: i16;
     let mut iVar2: i16;
@@ -221,7 +221,7 @@ pub unsafe fn file_fn_1008_6e02(param_1: *mut astruct_802) -> BOOL16 {
     return 0x0;
 }
 
-pub unsafe fn read_file_1008_6e78(
+pub fn read_file_1008_6e78(
     param_1: *mut astruct_806,
     mut param_2: u16,
     in_string: u16,
@@ -270,7 +270,7 @@ pub unsafe fn read_file_1008_6e78(
 }
 
 
-pub unsafe fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
+pub fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
     let mut in_DX: *mut u8;
@@ -305,7 +305,7 @@ pub unsafe fn file_fn_1008_6eee(mut param_1: u16, mut param_2: u16, mut param_3:
 }
 
 
-pub unsafe fn read_file_1008_6f7a(
+pub fn read_file_1008_6f7a(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u32,
@@ -343,7 +343,7 @@ pub unsafe fn read_file_1008_6f7a(
     return;
 }
 
-pub unsafe fn write_to_file_1008_70a6(struct802_param_1: *mut astruct_802) -> u16 {
+pub fn write_to_file_1008_70a6(struct802_param_1: *mut astruct_802) -> u16 {
     let mut hfile_1: HFILE16;
     let mut uVar1: u16;
     let mut i16_var2: i16;
@@ -383,7 +383,7 @@ pub unsafe fn write_to_file_1008_70a6(struct802_param_1: *mut astruct_802) -> u1
     return 0x0;
 }
 
-pub unsafe fn read_file_1008_7146(
+pub fn read_file_1008_7146(
     mut param_1: u16,
     struct_param_1: *mut astruct_806,
     mut param_3: u16,
@@ -414,7 +414,7 @@ pub unsafe fn read_file_1008_7146(
     return 0x0;
 }
 
-pub unsafe fn read_file_1008_71a0(param_1: *mut astruct_806, mut param_2: u16) -> u16 {
+pub fn read_file_1008_71a0(param_1: *mut astruct_806, mut param_2: u16) -> u16 {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut iVar3: i32;
@@ -460,7 +460,7 @@ pub unsafe fn read_file_1008_71a0(param_1: *mut astruct_806, mut param_2: u16) -
     return uStack4;
 }
 
-pub unsafe fn file_fn_1008_726c(param_1: *mut astruct_802, mut param_2: u16) -> BOOL16 {
+pub fn file_fn_1008_726c(param_1: *mut astruct_802, mut param_2: u16) -> BOOL16 {
     let hfile_1: HFILE16;
 
     if (param_1.hfile_0x4 != 0xffff) {
@@ -475,7 +475,7 @@ pub unsafe fn file_fn_1008_726c(param_1: *mut astruct_802, mut param_2: u16) -> 
     return 0x1;
 }
 
-pub unsafe fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut param_3: u32) {
+pub fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut param_3: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut file_read_ok: bool;
     let mut uVar2: u16;
@@ -553,7 +553,7 @@ pub unsafe fn file_1008_7548(hfile_param: *mut HFILE16, param_2: *mut i32, mut p
     return;
 }
 
-pub unsafe fn file_1008_76e4(param_1: *mut Struct57, param_2: *mut HFILE16, param_3: *mut i32) {
+pub fn file_1008_76e4(param_1: *mut Struct57, param_2: *mut HFILE16, param_3: *mut i32) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut BVar3: bool;
@@ -598,7 +598,7 @@ pub unsafe fn file_1008_76e4(param_1: *mut Struct57, param_2: *mut HFILE16, para
     return;
 }
 
-pub unsafe fn file_1008_77cc(mut param_1: u16, mut param_2: u32, param_3: *mut i32) -> u16 {
+pub fn file_1008_77cc(mut param_1: u16, mut param_2: u32, param_3: *mut i32) -> u16 {
     let mut u_var1: u16;
     let mut bvar2: bool;
     let mut u_var3: u16;
@@ -647,7 +647,7 @@ pub unsafe fn file_1008_77cc(mut param_1: u16, mut param_2: u32, param_3: *mut i
     return 0x1;
 }
 
-pub unsafe fn write_to_file_1008_7954(param_1: u16, param_2: *mut u8, param_3: *mut u32) -> u16 {
+pub fn write_to_file_1008_7954(param_1: u16, param_2: *mut u8, param_3: *mut u32) -> u16 {
     let mut ppcVar1: *mut *mut code;
     let mut BVar2: bool;
     let mut uVar3: u32;
@@ -704,7 +704,7 @@ pub unsafe fn write_to_file_1008_7954(param_1: u16, param_2: *mut u8, param_3: *
     return uVar4;
 }
 
-pub unsafe fn write_to_file_1008_7a22(param_1: *mut u8, param_2: i32) {
+pub fn write_to_file_1008_7a22(param_1: *mut u8, param_2: i32) {
     let mut BVar1: bool;
     let mut in_stack_0000ffc6: HFILE16;
     let mut local_24: [u32; 0x2] = [0; 0x2];
@@ -763,7 +763,7 @@ pub unsafe fn write_to_file_1008_7a22(param_1: *mut u8, param_2: i32) {
     return;
 }
 
-pub unsafe fn write_to_file_1008_7b4c(param_1: *mut u8, param_2: *mut astruct_615) -> u16 {
+pub fn write_to_file_1008_7b4c(param_1: *mut u8, param_2: *mut astruct_615) -> u16 {
     let mut BVar1: bool;
     let mut in_stack_0000ffd4: HFILE16;
     let mut local_12: [u16; 0x3] = [0; 0x3];
@@ -795,7 +795,7 @@ pub unsafe fn write_to_file_1008_7b4c(param_1: *mut u8, param_2: *mut astruct_61
     return 0x0;
 }
 
-pub unsafe fn read_file_1008_7bc8(mut param_1: u32, param_2: *mut u16) -> BOOL16 {
+pub fn read_file_1008_7bc8(mut param_1: u32, param_2: *mut u16) -> BOOL16 {
     let mut BVar1: bool;
     let mut local_8: u16;
     let mut local_6: u32;
@@ -814,7 +814,7 @@ pub unsafe fn read_file_1008_7bc8(mut param_1: u32, param_2: *mut u16) -> BOOL16
     return 0x0;
 }
 
-pub unsafe fn read_file_1008_7c6e(param_1: HFILE16, mut param_2: u16, param_3: *mut c_char) {
+pub fn read_file_1008_7c6e(param_1: HFILE16, mut param_2: u16, param_3: *mut c_char) {
     let mut pcVar1: *mut c_char;
     let mut local_c: [u8; 0xa] = [0; 0xa];
 
@@ -831,7 +831,7 @@ pub unsafe fn read_file_1008_7c6e(param_1: HFILE16, mut param_2: u16, param_3: *
     return;
 }
 
-pub unsafe fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
+pub fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
     let mut uVar1: u16;
     let mut BVar2: bool;
     let mut in_stack_0000ffde: HFILE16;
@@ -853,7 +853,7 @@ pub unsafe fn write_to_file_1008_7cac(param_1: *mut u8) -> BOOL16 {
 
 
 
-pub unsafe fn read_file_1008_7cfe(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
+pub fn read_file_1008_7cfe(mut param_1: u16, mut param_2: u16, mut param_3: u16) {
     let mut bVar1: bool;
     let mut uVar2: u16;
     let mut iVar3: i32;
@@ -905,7 +905,7 @@ pub unsafe fn read_file_1008_7cfe(mut param_1: u16, mut param_2: u16, mut param_
     }
 }
 
-pub unsafe fn read_file_1008_7dee(
+pub fn read_file_1008_7dee(
     hfile_param_1: *mut HFILE16,
     buffer_param_2: *mut u8,
     count_param_3: u32,
@@ -919,7 +919,7 @@ pub unsafe fn read_file_1008_7dee(
     return 0x0;
 }
 
-pub unsafe fn write_to_file_1008_7e1c(
+pub fn write_to_file_1008_7e1c(
     buffer: *mut u8,
     count: u32,
     buf_to_write: *mut c_char,
@@ -942,7 +942,7 @@ pub unsafe fn write_to_file_1008_7e1c(
     return 0x1;
 }
 
-pub unsafe fn read_file_1030_4e70(
+pub fn read_file_1030_4e70(
     param_1: *mut astruct_117,
     param_2: *mut u32,
     param_3: *mut *mut u8,
@@ -995,7 +995,7 @@ pub unsafe fn read_file_1030_4e70(
     return param_5;
 }
 
-pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
+pub fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
     let mut BVar1: bool;
     let mut uVar2: u16;
     let mut in_DX: u16;
@@ -1042,7 +1042,7 @@ pub unsafe fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32)
 }
 
 
-pub unsafe fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3: i16) {
+pub fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3: i16) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut puVar3: *mut u16;

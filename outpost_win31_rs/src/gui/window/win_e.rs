@@ -37,7 +37,7 @@ use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::winapp::winapp_a::unk_win_op_1010_7300;
 use crate::windef16::{BOOL16, HCURSOR16, HWND16, LRESULT, RECT16, WPARAM16};
 
-pub unsafe fn enable_win_1040_32a8(mut param_1: u32)
+pub fn enable_win_1040_32a8(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -57,7 +57,7 @@ pub unsafe fn enable_win_1040_32a8(mut param_1: u32)
   return;
 }
 
-pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
+pub fn enable_win_1040_86dc(mut param_1: u32)
 
 {
   let mut HVar1: HWND16;
@@ -75,7 +75,7 @@ pub unsafe fn enable_win_1040_86dc(mut param_1: u32)
   return;
 }
 
-pub unsafe fn enable_win_1040_9234(mut param_1: u32, param_2: BOOL16)
+pub fn enable_win_1040_9234(mut param_1: u32, param_2: BOOL16)
 
 {
   let mut uVar1: u16;
@@ -87,7 +87,7 @@ pub unsafe fn enable_win_1040_9234(mut param_1: u32, param_2: BOOL16)
   return;
 }
 
-pub unsafe fn enable_win_1038_9a66(param_1: *mut u8, pstruct903_param_2: *mut Struct903, in_b_enable_3: u16, mut param_4: u32)
+pub fn enable_win_1038_9a66(param_1: *mut u8, pstruct903_param_2: *mut Struct903, in_b_enable_3: u16, mut param_4: u32)
 
 {
   let mut enable: bool;
@@ -110,7 +110,7 @@ pub unsafe fn enable_win_1038_9a66(param_1: *mut u8, pstruct903_param_2: *mut St
   return;
 }
 
-pub unsafe fn enable_win_1038_a8f8(param_1: *mut StructC, mut param_2: u16, param_3: TwoWords)
+pub fn enable_win_1038_a8f8(param_1: *mut StructC, mut param_2: u16, param_3: TwoWords)
 
 {
   let mut hwnd: HWND16;
@@ -133,7 +133,7 @@ pub unsafe fn enable_win_1038_a8f8(param_1: *mut StructC, mut param_2: u16, para
   return;
 }
 
-pub unsafe fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
+pub fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
 
 {
   let mut HVar1: HWND16;
@@ -180,7 +180,7 @@ pub unsafe fn win_ui_op_1038_c89c(struct_b_param_1: *mut StructB)
 }
 
 
-pub unsafe fn win_ui_op_1038_d2a2(param_1: *mut Struct57, struct_b_param_1: *mut StructB, mut param_3: u16 )
+pub fn win_ui_op_1038_d2a2(param_1: *mut Struct57, struct_b_param_1: *mut StructB, mut param_3: u16 )
 
 {
   let mut rect: *mut Struct57;
@@ -281,7 +281,7 @@ pub unsafe fn win_ui_op_1038_d2a2(param_1: *mut Struct57, struct_b_param_1: *mut
 }
 
 
-pub unsafe fn win_ui_op_1040_0170(
+pub fn win_ui_op_1040_0170(
     param_1: u8,
     mut param_2: u16,
     param_3: *mut StructD,
@@ -495,7 +495,7 @@ pub unsafe fn win_ui_op_1040_0170(
 }
 
 
-pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
+pub fn show_win_1040_2490(struct_b_param_1: *mut StructB)
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -518,7 +518,7 @@ pub unsafe fn show_win_1040_2490(struct_b_param_1: *mut StructB)
     return;
 }
 
-pub unsafe fn enable_win_1038_806a(mut param_1: u16, param_2: *mut astruct_902)
+pub fn enable_win_1038_806a(mut param_1: u16, param_2: *mut astruct_902)
 
 {
   let mut HVar1: HWND16;
@@ -556,7 +556,7 @@ pub unsafe fn enable_win_1038_806a(mut param_1: u16, param_2: *mut astruct_902)
   return;
 }
 
-pub unsafe fn enable_win_1038_c294(mut param_1: u32)
+pub fn enable_win_1038_c294(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -578,7 +578,7 @@ pub unsafe fn enable_win_1038_c294(mut param_1: u32)
 }
 
 
-pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_915) -> LRESULT {
+pub fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_915) -> LRESULT {
     let mut hwnd: HWND16;
     let mut iVar2: i16;
     let mut iVar3: *mut StructB;
@@ -616,7 +616,7 @@ pub unsafe fn win_ui_op_1040_0558(param_1: *mut StructB, param_2: *mut astruct_9
 }
 
 
-pub unsafe fn enable_window_1040_0acc(param_1: *mut StructC, enable_3: BOOL16) {
+pub fn enable_window_1040_0acc(param_1: *mut StructC, enable_3: BOOL16) {
     let mut BVar1: bool;
     let mut HVar2: HWND16;
     let mut iVar3: i16;
@@ -644,7 +644,7 @@ pub unsafe fn enable_window_1040_0acc(param_1: *mut StructC, enable_3: BOOL16) {
 }
 
 
-pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897, mut param_2: u16, mut param_3: u16, mut param_4: u32)
+pub fn win_ui_op_1040_6d1a(param_1: *mut astruct_897, mut param_2: u16, mut param_3: u16, mut param_4: u32)
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -724,7 +724,7 @@ pub unsafe fn win_ui_op_1040_6d1a(param_1: *mut astruct_897, mut param_2: u16, m
 }
 
 
-pub unsafe fn win_ui_op_1040_bbe2(param_1: *mut u8, param_2: HWND16, param_3: *mut astruct_900, mut param_4: u16, mut param_5: u16, mut param_6: u32)
+pub fn win_ui_op_1040_bbe2(param_1: *mut u8, param_2: HWND16, param_3: *mut astruct_900, mut param_4: u16, mut param_5: u16, mut param_6: u32)
 
 {
     let mut uVar2: u16;
@@ -875,7 +875,7 @@ pub unsafe fn win_ui_op_1040_bbe2(param_1: *mut u8, param_2: HWND16, param_3: *m
     return;
 }
 
-pub unsafe fn invalidate_rect_1040_c028(mut param_1: u32, mut param_2: i16)
+pub fn invalidate_rect_1040_c028(mut param_1: u32, mut param_2: i16)
 
 {
     let mut uVar1: u32;
@@ -973,7 +973,7 @@ pub unsafe fn invalidate_rect_1040_c028(mut param_1: u32, mut param_2: i16)
     return;
 }
 
-pub unsafe fn win_ui_op_1018_5e9a(mut param_1: u16, structb_param_1: *mut StructB) {
+pub fn win_ui_op_1018_5e9a(mut param_1: u16, structb_param_1: *mut StructB) {
     let mut ppcVar1: *mut *mut c_char;
     let mut pvVar2: LPVOID = null_mut();
     let mut IVar3: i16;

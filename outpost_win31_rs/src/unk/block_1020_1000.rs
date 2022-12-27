@@ -1,7 +1,7 @@
 use crate::gui;
 
 
-pub unsafe fn struct_1020_1738(param_1: *mut Struct57, mut param_2: u16, mut param_3: u32) {
+pub fn struct_1020_1738(param_1: *mut Struct57, mut param_2: u16, mut param_3: u32) {
     let mut iVar1: *mut Struct57;
     let mut uVar1: *mut Struct57;
 
@@ -19,14 +19,14 @@ pub unsafe fn struct_1020_1738(param_1: *mut Struct57, mut param_2: u16, mut par
 
 
 
-pub unsafe fn pass1_1020_1d8e(mut param_1: u32, mut param_2: u32) {
+pub fn pass1_1020_1d8e(mut param_1: u32, mut param_2: u32) {
     pt_in_rect_1010_4e08((param_1 + 0x8e), param_2, (param_2 >> 0x10));
     return;
 }
 
 
 
-pub unsafe fn pass1_1020_1da8(mut param_1: i16, mut param_2: u16, param_3: *mut StructB) -> u16 {
+pub fn pass1_1020_1da8(mut param_1: i16, mut param_2: u16, param_3: *mut StructB) -> u16 {
     let mut uVar2: u32;
     let mut struct_b_1: *mut StructB;
     let mut uVar3: u16;
@@ -48,7 +48,7 @@ pub unsafe fn pass1_1020_1da8(mut param_1: i16, mut param_2: u16, param_3: *mut 
     return 0x0;
 }
 
-pub unsafe fn pass1_1020_1e54(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1020_1e54(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     ui_cleanup_op_1040_782c(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -57,7 +57,7 @@ pub unsafe fn pass1_1020_1e54(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1020_1eea(
+pub fn pass1_1020_1eea(
     param_1: *mut u8,
     param_2: *mut astruct_663,
     param_3: *mut StructB,
@@ -114,7 +114,7 @@ pub unsafe fn pass1_1020_1eea(
     return;
 }
 
-pub unsafe fn pass1_1020_1f74(param_1: *mut StructD) {
+pub fn pass1_1020_1f74(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
 

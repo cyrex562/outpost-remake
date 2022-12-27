@@ -51,7 +51,7 @@ use std::os::raw::c_char;
 use std::ptr;
 use std::ptr::null_mut;
 
-pub unsafe fn pt_in_rect_1010_40f8(
+pub fn pt_in_rect_1010_40f8(
     param_1: *mut Struct57,
     mut param_2: u32,
     param_3: *mut POINT16,
@@ -143,7 +143,7 @@ pub unsafe fn pt_in_rect_1010_40f8(
     }
 }
 
-pub unsafe fn pt_in_rect_1018_1bda(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
+pub fn pt_in_rect_1018_1bda(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
     let mut piVar1: *mut i16;
     let mut uVar2: u16;
     let mut iVar3: i16;
@@ -198,7 +198,7 @@ pub unsafe fn pt_in_rect_1018_1bda(mut param_1: u32, mut param_2: u16, mut param
     return;
 }
 
-pub unsafe fn pt_in_rect_1020_5856(
+pub fn pt_in_rect_1020_5856(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u32,
@@ -232,7 +232,7 @@ pub unsafe fn pt_in_rect_1020_5856(
     return;
 }
 
-pub unsafe fn pt_in_rect_1010_4e08(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
+pub fn pt_in_rect_1010_4e08(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
     let mut piVar1: *mut i16;
     let mut bVar2: bool;
     let mut BVar3: bool;
@@ -273,7 +273,7 @@ pub unsafe fn pt_in_rect_1010_4e08(mut param_1: u32, mut param_2: u16, mut param
     }
 }
 
-pub unsafe fn pt_in_rect_1020_68fc(param_1: u32, mut param_2: u16, mut param_3: u16) {
+pub fn pt_in_rect_1020_68fc(param_1: u32, mut param_2: u16, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut BVar3: bool;
@@ -293,7 +293,7 @@ pub unsafe fn pt_in_rect_1020_68fc(param_1: u32, mut param_2: u16, mut param_3: 
     return;
 }
 
-pub unsafe fn win_msg_op_1008_9498() -> WPARAM16 {
+pub fn win_msg_op_1008_9498() -> WPARAM16 {
     let mut BVar1: bool;
     let mut IVar2: i16;
     let mut local_msg_1: MSG16; //
@@ -320,7 +320,7 @@ pub unsafe fn win_msg_op_1008_9498() -> WPARAM16 {
     //   goto LAB_1008_949c;
 }
 
-pub unsafe fn win_ui_op_1020_6ae6(
+pub fn win_ui_op_1020_6ae6(
     param_1: *mut astruct_877,
     mut param_2: u16,
     mut param_3: i16,
@@ -371,7 +371,7 @@ pub unsafe fn win_ui_op_1020_6ae6(
     return;
 }
 
-pub unsafe fn unk_win_ui_op_1038_8afe(mut param_1: u16, param_2: *mut astruct_50) {
+pub fn unk_win_ui_op_1038_8afe(mut param_1: u16, param_2: *mut astruct_50) {
     let mut uVar1: u32;
     let mut dlg_item: u16;
     let mut in_register_0000000a: u16;
@@ -396,7 +396,7 @@ pub unsafe fn unk_win_ui_op_1038_8afe(mut param_1: u16, param_2: *mut astruct_50
     return;
 }
 
-pub unsafe fn win_msg_op_1038_95fc(mut param_1: u16, mut param_2: u32) {
+pub fn win_msg_op_1038_95fc(mut param_1: u16, mut param_2: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut UVar3: u16;
@@ -506,7 +506,7 @@ pub unsafe fn win_msg_op_1038_95fc(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn win_ui_op_1008_1414(
+pub fn win_ui_op_1008_1414(
     mut param_1: u32,
     param_2: *mut astruct_20,
     mut param_3: u32,
@@ -649,7 +649,7 @@ pub unsafe fn win_ui_op_1008_1414(
     return;
 }
 
-pub unsafe fn win_ui_1040_b8d2(mut param_1: u16, param_2: *mut StructB) {
+pub fn win_ui_1040_b8d2(mut param_1: u16, param_2: *mut StructB) {
     let mut uVar1: u32;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -903,7 +903,7 @@ pub unsafe fn win_ui_1040_b8d2(mut param_1: u16, param_2: *mut StructB) {
     return;
 }
 
-pub unsafe fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823) {
+pub fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823) {
     let mut puVar1: *mut u16;
     let mut uVar6: u16;
     let mut iVar3: i16;
@@ -1119,7 +1119,7 @@ pub unsafe fn mixed_win_sys_op_1008_016e(param_1: *mut astruct_823) {
     return;
 }
 
-pub unsafe fn entry(
+pub fn entry(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -1235,7 +1235,7 @@ pub unsafe fn entry(
     }
 }
 
-pub unsafe fn dos_exit_program_1000_24db(ctx: &mut AppContext, mut exit_code: u16) {
+pub fn dos_exit_program_1000_24db(ctx: &mut AppContext, mut exit_code: u16) {
     //        1000:254c b4 4c           MOV        AH,0x4c
 
     u8_1050_5fc9 = 0;
@@ -1251,7 +1251,7 @@ pub unsafe fn dos_exit_program_1000_24db(ctx: &mut AppContext, mut exit_code: u1
 }
 
 // WARNING: Restarted to delay deadcode elimination for space: ram
-pub unsafe fn entry_1000_262c(ctx: &mut AppContext, param_1: u16, mut param_2: u16, mut param_3: u16) {
+pub fn entry_1000_262c(ctx: &mut AppContext, param_1: u16, mut param_2: u16, mut param_3: u16) {
     let mut var3: i16;
     let mut var4: u16;
     let mut var5: u16;
@@ -1567,7 +1567,7 @@ pub unsafe fn entry_1000_262c(ctx: &mut AppContext, param_1: u16, mut param_2: u
     }
 }
 
-pub unsafe fn exit_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
+pub fn exit_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
     let mut var2: i16;
     let mut var3: u16;
     let mut var4: u16;
@@ -1588,7 +1588,7 @@ pub unsafe fn exit_op_1000_24cd(ctx: &mut AppContext, mut param_1: u16) {
     result.call(ctx);
 }
 
-pub unsafe fn mixed_sys_op_1000_40af(
+pub fn mixed_sys_op_1000_40af(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,
@@ -1603,7 +1603,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
     let mut u_var8: u16;
     let mut i_var8: i16;
     let mut hglobal_7: HGLOBAL16;
-    // pub unsafe fn *SVar8;
+    // pub fn *SVar8;
     let mut ppa_var8: *mut *mut struct_824;
     let mut unaff_si: i16;
     let mut pi_var9: *mut i16;
@@ -1613,7 +1613,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
     let mut unaff_cs: u8;
     let mut unaff_ss: u16;
     let mut b_var12: bool;
-    // pub unsafe fn *pvVar13;
+    // pub fn *pvVar13;
     let mut pa_var14: *mut Struct825;
     let mut pu_var3: *mut u16;
     let mut u_var13: u8;
@@ -1750,7 +1750,7 @@ pub unsafe fn mixed_sys_op_1000_40af(
     }
 }
 
-pub unsafe fn exit_op_1000_2950(
+pub fn exit_op_1000_2950(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,

@@ -3,7 +3,7 @@ use crate::winapp::winapp_d::win_ui_op_1020_5de8;
 use crate::gui::menu::menu_ui_op_1020_5bf2;
 use crate::winapp::winapp_d::win_ui_op_1020_5e76;
 
-pub unsafe fn pass1_1020_51c6(mut param_1: u32, mut param_2: u16, mut param_3: u32) {
+pub fn pass1_1020_51c6(mut param_1: u32, mut param_2: u16, mut param_3: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut iVar2: i16;
     let mut in_DX: u16;
@@ -37,7 +37,7 @@ pub unsafe fn pass1_1020_51c6(mut param_1: u32, mut param_2: u16, mut param_3: u
 }
 
 
-pub unsafe fn pass1_1020_52de(mut param_1: u32) {
+pub fn pass1_1020_52de(mut param_1: u32) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -73,7 +73,7 @@ pub unsafe fn pass1_1020_52de(mut param_1: u32) {
     return;
 }
 
-pub unsafe fn pass1_1020_6208(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1020_6208(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     param_1 = (param_1 & 0xffff0000 | (param_1 - 0xe2));
     destroy_cursor_1020_42f4(param_1);
     if ((param_2 & 1) != 0) {
@@ -82,7 +82,7 @@ pub unsafe fn pass1_1020_6208(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn FUN_1020_6216(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
+pub fn FUN_1020_6216(mut param_1: u16, param_2: *mut StructD, param_3: u8) -> *mut StructD {
     destroy_cursor_1020_42f4(param_2);
     if ((param_3 & 1) != 0) {
         fn_ptr_1000_17ce(param_2);

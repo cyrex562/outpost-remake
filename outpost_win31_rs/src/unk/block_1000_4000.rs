@@ -1,7 +1,7 @@
 use crate::globals::DAT_1050_1050;
 use crate::winapi16::{GLobalAlloc16, GlobalFree16};
 
-pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
+pub fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
     let mut pu_var1: *mut u8;
 
     if ((param_1 < 0x0) || (PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e <= param_1)) {
@@ -24,7 +24,7 @@ pub unsafe fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
     return pu_var1;
 }
 
-pub unsafe fn pass1_1000_422a(mut param_1: i16, mut param_2: u16) -> i16 {
+pub fn pass1_1000_422a(mut param_1: i16, mut param_2: u16) -> i16 {
     let mut pu_var1: *mut u8;
     let mut pu_var2: *mut u8;
     let mut pu_var3: *mut u8;
@@ -67,7 +67,7 @@ pub unsafe fn pass1_1000_422a(mut param_1: i16, mut param_2: u16) -> i16 {
 }
 
 
-pub unsafe fn dos3_call_set_struct_1000_42de(
+pub fn dos3_call_set_struct_1000_42de(
     param_1: *mut astruct_811,
     param_2: *mut astruct_810,
     param_3: *mut u16,
@@ -119,7 +119,7 @@ pub unsafe fn dos3_call_set_struct_1000_42de(
 
 
 
-pub unsafe fn dos3_call_op_1000_435c(
+pub fn dos3_call_op_1000_435c(
     mut param_1: u16,
     param_2: *mut u16,
     mut param_3: u16,
@@ -172,7 +172,7 @@ pub unsafe fn dos3_call_op_1000_435c(
     return;
 }
 
-pub unsafe fn pass1_1000_43f0(param_1: u16) {
+pub fn pass1_1000_43f0(param_1: u16) {
     if (PTR_LOOP_1050_68b4.is_null()) {
         pass1_1000_440c(param_1);
         PTR_LOOP_1050_68b4 = PTR_LOOP_1050_68b4 + 1;
@@ -182,7 +182,7 @@ pub unsafe fn pass1_1000_43f0(param_1: u16) {
 
 
 
-pub unsafe fn pass1_1000_440c(mut param_1: u16) {
+pub fn pass1_1000_440c(mut param_1: u16) {
     let mut c_var1: u8;
     let mut pc_var2: *mut c_char;
     let mut u_var3: u16;
@@ -259,7 +259,7 @@ pub unsafe fn pass1_1000_440c(mut param_1: u16) {
     return;
 }
 
-pub unsafe fn pass1_1000_455a(mut param_1: u16, mut param_2: u16) -> u16 {
+pub fn pass1_1000_455a(mut param_1: u16, mut param_2: u16) -> u16 {
     let mut pi_var1: *mut i16;
     let mut i_var2: i16;
     let mut u_var3: u16;
@@ -308,7 +308,7 @@ pub unsafe fn pass1_1000_455a(mut param_1: u16, mut param_2: u16) -> u16 {
     return uvar5;
 }
 
-pub unsafe fn pass1_1000_462e(
+pub fn pass1_1000_462e(
     param_1: u16,
     mut param_2: u16,
     mut param_3: i16,
@@ -395,7 +395,7 @@ pub unsafe fn pass1_1000_462e(
     return i_stack26;
 }
 
-pub unsafe fn pass1_1000_472c(mut param_1: u32, param_2: u8) -> *mut c_char {
+pub fn pass1_1000_472c(mut param_1: u32, param_2: u8) -> *mut c_char {
     let mut pc_var1: *mut c_char;
     let mut u_var2: u16;
     let mut pc_var3: *mut c_char;
@@ -442,7 +442,7 @@ pub unsafe fn pass1_1000_472c(mut param_1: u32, param_2: u8) -> *mut c_char {
     return pc_var3 -0x1;
 }
 
-pub unsafe fn pass1_1000_475e(mut param_1: u32, mut param_2: u32) -> i16 {
+pub fn pass1_1000_475e(mut param_1: u32, mut param_2: u32) -> i16 {
     let mut pc_var1: *mut c_char;
     let mut c_var2: u8;
     let mut c_var3: u8;
@@ -484,7 +484,7 @@ pub unsafe fn pass1_1000_475e(mut param_1: u32, mut param_2: u32) -> i16 {
     return c_var3;
 }
 
-pub unsafe fn pass1_1000_47a4(mut param_1: u32, mut param_2: u32) -> u16 {
+pub fn pass1_1000_47a4(mut param_1: u32, mut param_2: u32) -> u16 {
     let mut pb_var1: *mut u8;
     let mut b_var2: u8;
     let mut pu_var3: *mut u16;
@@ -549,7 +549,7 @@ pub unsafe fn pass1_1000_47a4(mut param_1: u32, mut param_2: u32) -> u16 {
     return pbRam105061e4;
 }
 
-pub unsafe fn pass1_1000_484c(mut param_1: u32, mut param_2: u32, mut param_3: u16) -> u16 {
+pub fn pass1_1000_484c(mut param_1: u32, mut param_2: u32, mut param_3: u16) -> u16 {
     let mut pb_var1: *mut u8;
     let mut pb_var2: *mut u8;
     let mut i_var3: i16;
@@ -609,7 +609,7 @@ pub unsafe fn pass1_1000_484c(mut param_1: u32, mut param_2: u32, mut param_3: u
     }
 }
 
-pub unsafe fn pass1_1000_48a8(mut param_1: u32, mut param_2: u32, mut param_3: i16) -> u16 {
+pub fn pass1_1000_48a8(mut param_1: u32, mut param_2: u32, mut param_3: i16) -> u16 {
     let mut puVar1: *mut u16;
     let mut puVar2: *mut u16;
     let mut iVar3: i16;
@@ -665,7 +665,7 @@ pub unsafe fn pass1_1000_48a8(mut param_1: u32, mut param_2: u32, mut param_3: i
     return param_1;
 }
 
-pub unsafe fn pass1_1000_4906(
+pub fn pass1_1000_4906(
     param_1: *mut StructD,
     in_wnd_class: *mut WNDCLASS16,
     mut param_3: u16,
@@ -727,11 +727,11 @@ pub unsafe fn pass1_1000_4906(
     return param_1;
 }
 
-pub unsafe fn pass1_1000_49b2(mut param_1: u16) -> i16 {
+pub fn pass1_1000_49b2(mut param_1: u16) -> i16 {
     return (param_1 ^ param_1 >> 0xf) - (param_1 >> 0xf);
 }
 
-pub unsafe fn pass1_1000_49c6(
+pub fn pass1_1000_49c6(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -798,7 +798,7 @@ pub unsafe fn pass1_1000_49c6(
     }
     return uVar4;
 }
-pub unsafe fn pass1_1000_4aea(
+pub fn pass1_1000_4aea(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: i16,
@@ -955,7 +955,7 @@ pub unsafe fn pass1_1000_4aea(
     }
     // TODO: goto LAB_1000_4b81;
 }
-pub unsafe fn pass1_1000_4ceb(mut param_1: u16) {
+pub fn pass1_1000_4ceb(mut param_1: u16) {
     let mut pu_var1: *mut u8;
     let mut pu_var2: *mut u16;
     let mut u_var3: u8;
@@ -986,13 +986,13 @@ pub unsafe fn pass1_1000_4ceb(mut param_1: u16) {
     }
     return;
 }
-pub unsafe fn pass1_1000_4d0c(mut param_1: u16) {
+pub fn pass1_1000_4d0c(mut param_1: u16) {
     DAT_1050_61e8 = param_1;
     PTR_LOOP_1050_61ea = null_mut();
     return;
 }
 
-pub unsafe fn pass1_1000_4d24() -> u16 {
+pub fn pass1_1000_4d24() -> u16 {
     let mut u_var1: u32;
 
     u_var1 = pass1_1000_52be(
@@ -1005,7 +1005,7 @@ pub unsafe fn pass1_1000_4d24() -> u16 {
     DAT_1050_61e8 = (u_var1 + 0x269ec3);
     return PTR_LOOP_1050_61ea & 0x7fff;
 }
-pub unsafe fn str_1000_4d58(
+pub fn str_1000_4d58(
     in_string_1: *mut c_char,
     in_string_2: *mut c_char,
     mut param_3: u32,
@@ -1128,7 +1128,7 @@ Low-level Error: Symbol $$undef00000008 extends beyond the end of the address sp
 
 
 
-pub unsafe fn pass1_1000_4f2e() -> u16 {
+pub fn pass1_1000_4f2e() -> u16 {
     let mut pc_var1: *mut code;
     let mut u_var2: u16;
     let mut unaff_bp: i16;

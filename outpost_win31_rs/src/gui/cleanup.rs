@@ -25,7 +25,7 @@ use crate::gui::window::win_c;
 use crate::winapi16::{DestroyCursor16, DestroyIcon16, DestroyMenu16, DestroyWindow16, GetWindowWord16, IsDlgButtonChecked, IsWindow16, PostMessage16, SendMessage16};
 use crate::windef16::{BOOL16, HWND16};
 
-pub unsafe fn destroy_cursor_1020_42f4(param_1: *mut StructD) {
+pub fn destroy_cursor_1020_42f4(param_1: *mut StructD) {
     let mut struct_1: *mut StructD;
     let mut u_var1: u16;
 
@@ -44,7 +44,7 @@ pub unsafe fn destroy_cursor_1020_42f4(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28) {
+pub fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28) {
     let mut b_result: bool;
     let mut struct_1: *mut astruct_28;
     let mut u_var2: *mut astruct_28;
@@ -65,7 +65,7 @@ pub unsafe fn unk_destroy_window_op_1018_6bb6(param_1: *mut astruct_28) {
     return;
 }
 
-pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29) {
+pub fn destroy_window_1018_c518(param_1: *mut astruct_29) {
     let mut is_window: bool;
     let mut pstruct_29_1: *mut astruct_29;
     let mut pstruct_29_hi: *mut astruct_29;
@@ -86,7 +86,7 @@ pub unsafe fn destroy_window_1018_c518(param_1: *mut astruct_29) {
     return;
 }
 
-pub unsafe fn destroy_win_1020_1dea(
+pub fn destroy_win_1020_1dea(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -106,7 +106,7 @@ pub unsafe fn destroy_win_1020_1dea(
 }
 
 
-pub unsafe fn destroy_win_1040_5256(param_1: *mut astruct_34)
+pub fn destroy_win_1040_5256(param_1: *mut astruct_34)
 
 {
     let mut p_uvar1: *mut u32;
@@ -143,7 +143,7 @@ pub unsafe fn destroy_win_1040_5256(param_1: *mut astruct_34)
 }
 
 
-pub unsafe fn destroy_win_1040_bb78(param_1: *mut astruct_35)
+pub fn destroy_win_1040_bb78(param_1: *mut astruct_35)
 
 {
     let mut u_var1: u16;
@@ -179,7 +179,7 @@ pub unsafe fn destroy_win_1040_bb78(param_1: *mut astruct_35)
     return;
 }
 
-pub unsafe fn destroy_win_1008_628e(mut param_1: *mut Struct1000) {
+pub fn destroy_win_1008_628e(mut param_1: *mut Struct1000) {
     // fn_ptr_1 = ((param_1 + 0xd2) + 0x14);
     let mut fn_ptr_1: fn() = param_1.field_0xd2 + 0x14;
     // (**fn_ptr_1)();
@@ -191,7 +191,7 @@ pub unsafe fn destroy_win_1008_628e(mut param_1: *mut Struct1000) {
 }
 
 
-pub unsafe fn unk_destroy_win_op_1010_2fa0(pstruct_873_param_1: *mut Struct873) {
+pub fn unk_destroy_win_op_1010_2fa0(pstruct_873_param_1: *mut Struct873) {
     let mut pstruct873_1 = pstruct_873_param_1;
     pstruct873_1.field39_0x28 = 0;
     let mut pstruct872_2: *mut Struct872 = null_mut();
@@ -227,7 +227,7 @@ pub unsafe fn unk_destroy_win_op_1010_2fa0(pstruct_873_param_1: *mut Struct873) 
     return;
 }
 
-pub unsafe fn unk_destroy_win_op_1010_305a(
+pub fn unk_destroy_win_op_1010_305a(
     mut param_1: u16,
     param_2: *mut Struct27,
     mut param_3: i16,
@@ -331,7 +331,7 @@ pub unsafe fn unk_destroy_win_op_1010_305a(
     }
 }
 
-pub unsafe fn destroy_win_1020_1e1e(mut param_1: u16, mut param_2: u16, param_3: HWND16) -> u16 {
+pub fn destroy_win_1020_1e1e(mut param_1: u16, mut param_2: u16, param_3: HWND16) -> u16 {
     let mut BVar1: bool;
     let mut WVar2: u16;
 
@@ -345,7 +345,7 @@ pub unsafe fn destroy_win_1020_1e1e(mut param_1: u16, mut param_2: u16, param_3:
     return 0x1;
 }
 
-pub unsafe fn destroy_window_1020_8250(param_1: *mut astruct_879) {
+pub fn destroy_window_1020_8250(param_1: *mut astruct_879) {
     let mut BVar1: bool;
     let mut iVar2: *mut astruct_879;
     let mut uVar3: u16;
@@ -362,7 +362,7 @@ pub unsafe fn destroy_window_1020_8250(param_1: *mut astruct_879) {
     return;
 }
 
-pub unsafe fn destroy_window_1020_3b3e(param_1: *mut astruct_30) {
+pub fn destroy_window_1020_3b3e(param_1: *mut astruct_30) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -404,7 +404,7 @@ pub unsafe fn destroy_window_1020_3b3e(param_1: *mut astruct_30) {
 }
 
 
-pub unsafe fn destroy_win_1038_ef3a(param_1: *mut StructD)
+pub fn destroy_win_1038_ef3a(param_1: *mut StructD)
 
 {
   let mut uVar2: u32;
@@ -425,7 +425,7 @@ pub unsafe fn destroy_win_1038_ef3a(param_1: *mut StructD)
   return;
 }
 
-pub unsafe fn destroy_win_1040_7b98(mut param_1: u32)
+pub fn destroy_win_1040_7b98(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -438,14 +438,14 @@ pub unsafe fn destroy_win_1040_7b98(mut param_1: u32)
 }
 
 
-pub unsafe fn destroy_win_1040_8b7e(mut param_1: u32)
+pub fn destroy_win_1040_8b7e(mut param_1: u32)
 
 {
   DestroyWindow16((param_1 + 0x6));
   return;
 }
 
-pub unsafe fn destroy_window_1040_b726(mut param_1: u32, mut param_2: i16)
+pub fn destroy_window_1040_b726(mut param_1: u32, mut param_2: i16)
 
 {
   let mut fn_ptr_1: *mut *mut code;
@@ -458,7 +458,7 @@ pub unsafe fn destroy_window_1040_b726(mut param_1: u32, mut param_2: i16)
   return;
 }
 
-pub unsafe fn destroy_window_1038_7d88(mut param_1: u32, mut param_2: u16, mut param_3: u16 )
+pub fn destroy_window_1038_7d88(mut param_1: u32, mut param_2: u16, mut param_3: u16 )
 
 {
   let mut uVar1: u16;
@@ -469,7 +469,7 @@ pub unsafe fn destroy_window_1038_7d88(mut param_1: u32, mut param_2: u16, mut p
   return;
 }
 
-pub unsafe fn destroy_window_1038_a072(param_1: *mut astruct_880, mut param_2: u16, mut param_3: i16)
+pub fn destroy_window_1038_a072(param_1: *mut astruct_880, mut param_2: u16, mut param_3: i16)
 
 {
   if (param_3 != 0) {
@@ -478,13 +478,13 @@ pub unsafe fn destroy_window_1038_a072(param_1: *mut astruct_880, mut param_2: u
   return;
 }
 
-pub unsafe fn destroy_win_1008_9698(param_1: *mut astruct_871, mut param_2: u16) {
+pub fn destroy_win_1008_9698(param_1: *mut astruct_871, mut param_2: u16) {
     DestroyWindow16(param_1.hwnd_0x8);
     return;
 }
 
 
-pub unsafe fn destroy_window_1010_7b26(mut param_1: u16, mut param_2: u32, param_3: i32) -> u32 {
+pub fn destroy_window_1010_7b26(mut param_1: u16, mut param_2: u32, param_3: i32) -> u32 {
     let mut uVar1: u32;
     let mut uVar2: u16;
     let mut UpuVar2: *mut c_char;
@@ -518,7 +518,7 @@ pub unsafe fn destroy_window_1010_7b26(mut param_1: u16, mut param_2: u32, param
     return CONCAT22(uVar2, param_1);
 }
 
-pub unsafe fn destroy_win_1038_e1dc(param_1: *mut astruct_886, mut param_2: u16, mut param_3: i16)
+pub fn destroy_win_1038_e1dc(param_1: *mut astruct_886, mut param_2: u16, mut param_3: i16)
 
 {
     let mut UVar1: u16;
@@ -540,7 +540,7 @@ pub unsafe fn destroy_win_1038_e1dc(param_1: *mut astruct_886, mut param_2: u16,
     return;
 }
 
-pub unsafe fn cleanup_ui_op_1008_0618(param_1: *mut astruct_53) {
+pub fn cleanup_ui_op_1008_0618(param_1: *mut astruct_53) {
     let mut uVar1: u16;
     let mut ppcVar2: *mut *mut code;
     let mut in_EDX: u32;
@@ -573,7 +573,7 @@ pub unsafe fn cleanup_ui_op_1008_0618(param_1: *mut astruct_53) {
     return;
 }
 
-pub unsafe fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD) {
+pub fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD) {
     let mut local_struct_1: *mut StructD;
     let mut uVar1: *mut StructD;
 
@@ -593,7 +593,7 @@ pub unsafe fn cleanup_menu_ui_op_1020_795c(in_struct_1: *mut StructD) {
 }
 
 
-pub unsafe fn cleanup_ui_op_1020_1038(param_1: *mut astruct_868) {
+pub fn cleanup_ui_op_1020_1038(param_1: *mut astruct_868) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -618,7 +618,7 @@ pub unsafe fn cleanup_ui_op_1020_1038(param_1: *mut astruct_868) {
 }
 
 
-pub unsafe fn destroy_icon_1020_2c88(param_1: *mut astruct_869) {
+pub fn destroy_icon_1020_2c88(param_1: *mut astruct_869) {
     let mut ppcVar1: *mut *mut code;
     let mut struct_1: *mut astruct_869;
     let mut uVar3: u16;
@@ -643,7 +643,7 @@ pub unsafe fn destroy_icon_1020_2c88(param_1: *mut astruct_869) {
 }
 
 
-pub unsafe fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
+pub fn destroy_icon_1020_6bd2(param_1: *mut astruct_868, param_2: u8) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;

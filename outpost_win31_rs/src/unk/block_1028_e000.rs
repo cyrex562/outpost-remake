@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1028_e0a0(param_1: *mut u8, mut param_2: u32, mut param_3: u32) {
+pub fn pass1_1028_e0a0(param_1: *mut u8, mut param_2: u32, mut param_3: u32) {
     let mut uVar1: u32;
     let mut in_register_0000000a: u16;
     let mut in_stack_0000ff10: u16;
@@ -16,7 +16,7 @@ pub unsafe fn pass1_1028_e0a0(param_1: *mut u8, mut param_2: u32, mut param_3: u
     return;
 }
 
-pub unsafe fn pass1_1028_e0bc(
+pub fn pass1_1028_e0bc(
     param_1: u32,
     param_2: *mut Struct57,
     mut param_3: u32,
@@ -47,7 +47,7 @@ pub unsafe fn pass1_1028_e0bc(
 }
 
 
-pub unsafe fn pass1_1028_e100(param_1: *mut u8, mut param_2: u32, mut param_3: u16) {
+pub fn pass1_1028_e100(param_1: *mut u8, mut param_2: u32, mut param_3: u16) {
     let mut puVar1: *mut u32;
     let mut puVar2: *mut u32;
     let mut uVar4: *mut astruct_311;
@@ -95,7 +95,7 @@ pub unsafe fn pass1_1028_e100(param_1: *mut u8, mut param_2: u32, mut param_3: u
     return;
 }
 
-pub unsafe fn pass1_1028_e198(
+pub fn pass1_1028_e198(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u32,
@@ -108,11 +108,11 @@ pub unsafe fn pass1_1028_e198(
     return;
 }
 
-pub unsafe fn bad_1028_e1bc() {
+pub fn bad_1028_e1bc() {
     return;
 }
 
-pub unsafe fn pass1_1028_e1ec(mut param_1: u32, mut param_2: u32) {
+pub fn pass1_1028_e1ec(mut param_1: u32, mut param_2: u32) {
     if (param_2._3_1_ == '\0') {
         return;
     }
@@ -130,7 +130,7 @@ Low-level Error: Symbol $$undef00000009 extends beyond the end of the address sp
 */
 
 
-pub unsafe fn pass1_1028_e2ac(mut param_1: u32, mut param_2: u16) {
+pub fn pass1_1028_e2ac(mut param_1: u32, mut param_2: u16) {
     let mut uStack6: u32;
 
     uStack6 = (param_1 + (param_2 >> 0x8) * 0x4 + 0x2e);
@@ -138,7 +138,7 @@ pub unsafe fn pass1_1028_e2ac(mut param_1: u32, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn pass1_1028_e2e0(param_1: *mut Struct57, mut param_2: u32, param_3: u8) -> u32 {
+pub fn pass1_1028_e2e0(param_1: *mut Struct57, mut param_2: u32, param_3: u8) -> u32 {
     let mut iVar1: i16;
     let mut uVar2: u16;
     let mut uVar3: u32;
@@ -158,7 +158,7 @@ pub unsafe fn pass1_1028_e2e0(param_1: *mut Struct57, mut param_2: u32, param_3:
     return CONCAT22(uVar3, uVar2);
 }
 
-pub unsafe fn pass1_1028_e332(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
+pub fn pass1_1028_e332(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
     if ((param_3._1_1_ != 0) && (param_3._1_1_ < 0xa)) {
         pass1_1030_13f6(
             param_2,
@@ -170,7 +170,7 @@ pub unsafe fn pass1_1028_e332(mut param_1: u32, mut param_2: u16, mut param_3: u
     return;
 }
 
-pub unsafe fn pass1_1028_e372(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
+pub fn pass1_1028_e372(mut param_1: u32, mut param_2: u16, mut param_3: u16) {
     let mut paVar1: *mut astruct_291;
     let mut uVar2: u32;
     let mut uVar3: u32;
@@ -212,7 +212,7 @@ pub unsafe fn pass1_1028_e372(mut param_1: u32, mut param_2: u16, mut param_3: u
     return;
 }
 
-pub unsafe fn pass1_1028_e44a(mut param_1: u32, param_2: i32) {
+pub fn pass1_1028_e44a(mut param_1: u32, param_2: i32) {
     let mut paVar1: *mut astruct_291;
     let mut paVar2: *mut astruct_291;
     let mut uVar3: u32;
@@ -248,7 +248,7 @@ pub unsafe fn pass1_1028_e44a(mut param_1: u32, param_2: i32) {
     return;
 }
 
-pub unsafe fn pass1_1028_e4ec(param_1: *mut astruct_92) {
+pub fn pass1_1028_e4ec(param_1: *mut astruct_92) {
     let mut puVar1: *mut u32;
     let mut plVar2: *mut i32;
     let mut uVar3: u32;
@@ -294,7 +294,7 @@ pub unsafe fn pass1_1028_e4ec(param_1: *mut astruct_92) {
     return;
 }
 
-pub unsafe fn write_file_fn_1028_e56c(
+pub fn write_file_fn_1028_e56c(
     param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -362,7 +362,7 @@ pub unsafe fn write_file_fn_1028_e56c(
 
 
 // WARNING: Restarted to delay deadcode elimination for space: ram
-pub unsafe fn pass1_1028_e628(
+pub fn pass1_1028_e628(
     mut param_1: u32,
     mut param_2: u16,
     mut param_3: u16,
@@ -1125,7 +1125,7 @@ pub unsafe fn pass1_1028_e628(
 }
 
 
-pub unsafe fn pass1_1028_ebee(mut param_1: u16, param_2: *mut Struct57, mut param_3: u32) -> u32 {
+pub fn pass1_1028_ebee(mut param_1: u16, param_2: *mut Struct57, mut param_3: u32) -> u32 {
     let mut puVar1: *mut u8;
     let mut iVar2: i16;
     let mut uVar3: u16;

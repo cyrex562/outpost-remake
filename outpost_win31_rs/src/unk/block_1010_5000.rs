@@ -1,5 +1,5 @@
 
-pub unsafe fn pass1_1010_503e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
+pub fn pass1_1010_503e(param_1: *mut u8, param_2: *mut Struct19, mut param_3: u16) {
     struct_op_1018_4cda(param_2, param_3);
     // just 0x5099
     // 0x1010:509a = ptr to fn ptr in table
@@ -11,7 +11,7 @@ pub unsafe fn pass1_1010_503e(param_1: *mut u8, param_2: *mut Struct19, mut para
 }
 
 
-pub unsafe fn struct_1010_50b2(param_1: *mut Struct19, mut param_2: u16) {
+pub fn struct_1010_50b2(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xc) = 0;
@@ -28,7 +28,7 @@ pub unsafe fn struct_1010_50b2(param_1: *mut Struct19, mut param_2: u16) {
 
 
 
-pub unsafe fn pass1_1010_519a(param_1: *mut u8, mut param_2: u32, param_3: *mut c_char) {
+pub fn pass1_1010_519a(param_1: *mut u8, mut param_2: u32, param_3: *mut c_char) {
     let mut uVar1: u16;
     let mut uVar2: u32;
     let mut uVar3: u16;
@@ -82,7 +82,7 @@ pub unsafe fn pass1_1010_519a(param_1: *mut u8, mut param_2: u32, param_3: *mut 
 
 
 
-pub unsafe fn string_1010_5286(
+pub fn string_1010_5286(
     param_1: *mut c_char,
     mut param_2: u16,
     mut param_3: u16,

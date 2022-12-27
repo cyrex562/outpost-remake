@@ -29,7 +29,7 @@ use crate::winapp::winapp_c::send_msg_1020_097e;
 use crate::winapp::winapp_e;
 use crate::windef16::{HCURSOR16, WNDCLASS16};
 
-pub unsafe fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut astruct_20, mut param_3: u16, mut param_4: u16, mut param_5: u16 )
+pub fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut astruct_20, mut param_3: u16, mut param_4: u16, mut param_5: u16 )
 
 {
   let mut uVar1: u32;
@@ -73,7 +73,7 @@ pub unsafe fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut astruct_20, mu
 }
 
 
-pub unsafe fn win_ui_cursor_op_1008_2e9a
+pub fn win_ui_cursor_op_1008_2e9a
                (param_1: *mut Struct57,param_2: *mut Struct72,param_3: *mut WNDCLASS16 ,mut param_4: u16 ,mut param_5: u16 ,
                mut param_6: u16 )
 
@@ -151,7 +151,7 @@ pub unsafe fn win_ui_cursor_op_1008_2e9a
 }
 
 
-pub unsafe fn win_ui_cursor_op_1038_bc30(param_1: *mut StructC)
+pub fn win_ui_cursor_op_1038_bc30(param_1: *mut StructC)
 
 {
   let mut uVar1: u32;
@@ -174,7 +174,7 @@ pub unsafe fn win_ui_cursor_op_1038_bc30(param_1: *mut StructC)
 }
 
 
-pub unsafe fn win_ui_cursor_op_1008_06c0(
+pub fn win_ui_cursor_op_1008_06c0(
     param_1: u32,
     mut param_2: u32,
     mut param_3: u16,
@@ -275,7 +275,7 @@ pub unsafe fn win_ui_cursor_op_1008_06c0(
 }
 
 
-pub unsafe fn pass1_1020_6184(mut param_1: u32, mut param_2: u16) {
+pub fn pass1_1020_6184(mut param_1: u32, mut param_2: u16) {
     let mut HVar1: HCURSOR16;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -293,7 +293,7 @@ pub unsafe fn pass1_1020_6184(mut param_1: u32, mut param_2: u16) {
 }
 
 
-pub unsafe fn set_cursor_1020_5764(mut param_1: u32, mut param_2: i16) {
+pub fn set_cursor_1020_5764(mut param_1: u32, mut param_2: i16) {
     let mut uVar1: u16;
     let mut uVar2: u32;
     let mut HVar3: HCURSOR16;
@@ -358,7 +358,7 @@ pub unsafe fn set_cursor_1020_5764(mut param_1: u32, mut param_2: i16) {
     return;
 }
 
-pub unsafe fn win_ui_cursor_op_1020_522e(
+pub fn win_ui_cursor_op_1020_522e(
     mut param_1: u16,
     param_2: *mut astruct_52,
     mut param_3: u16,
@@ -427,7 +427,7 @@ pub unsafe fn win_ui_cursor_op_1020_522e(
 }
 
 
-pub unsafe fn FUN_1038_d8ae(param_1: *mut StructD, mut param_2: u16, struct_b_param_2: *mut StructB, mut param_4: u16, mut param_5: u16)
+pub fn FUN_1038_d8ae(param_1: *mut StructD, mut param_2: u16, struct_b_param_2: *mut StructB, mut param_4: u16, mut param_5: u16)
 
 {
     let mut pvVar1: LPVOID = null_mut();
@@ -521,7 +521,7 @@ pub unsafe fn FUN_1038_d8ae(param_1: *mut StructD, mut param_2: u16, struct_b_pa
     return;
 }
 
-pub unsafe fn win_ui_cursor_op_1020_1294(
+pub fn win_ui_cursor_op_1020_1294(
     mut param_1: u16,
     mut param_2: u32,
     mut param_3: i16,

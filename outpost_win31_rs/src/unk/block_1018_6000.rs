@@ -1,6 +1,6 @@
 use crate::gui;
 
-pub unsafe fn pass1_1018_642e(
+pub fn pass1_1018_642e(
     mut param_1: u16,
     mut param_2: u16,
     param_3: *mut i16,
@@ -10,7 +10,7 @@ pub unsafe fn pass1_1018_642e(
     return;
 }
 
-pub unsafe fn pass1_1018_659a(
+pub fn pass1_1018_659a(
     param_1: *mut u8,
     mut param_2: u16,
     mut param_3: u16,
@@ -40,7 +40,7 @@ pub unsafe fn pass1_1018_659a(
     return CONCAT22(uVar2, piVar1);
 }
 
-pub unsafe fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruct_2) {
+pub fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruct_2) {
     let mut paVar1: *mut astruct_812;
     let mut uVar2: u32;
     let mut dialog_id_5: u16;
@@ -80,7 +80,7 @@ pub unsafe fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruc
 
 
 
-pub unsafe fn struct_1018_66cc(
+pub fn struct_1018_66cc(
     mut param_1: u16,
     param_2: *mut astruct_20,
     mut param_3: u16,
@@ -125,7 +125,7 @@ pub unsafe fn struct_1018_66cc(
     (&iVar2[0x1].field2_0x4 + 0x2) = uVar1;
     return;
 }
-pub unsafe fn pass1_1018_673c(param_1: *mut StructD) {
+pub fn pass1_1018_673c(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
 
@@ -147,7 +147,7 @@ pub unsafe fn pass1_1018_673c(param_1: *mut StructD) {
 
 
 
-pub unsafe fn pass1_1018_6924(mut param_1: u16, param_2: *mut StructA, mut param_3: u16) {
+pub fn pass1_1018_6924(mut param_1: u16, param_2: *mut StructA, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar3: u16;
     let mut iVar4: i16;
@@ -189,7 +189,7 @@ pub unsafe fn pass1_1018_6924(mut param_1: u16, param_2: *mut StructA, mut param
     draw_op_1020_9364((param_2 & 0xffff | param_2 << 0x10));
     return;
 }
-pub unsafe fn pass1_1018_69ac(param_1: *mut StructD) {
+pub fn pass1_1018_69ac(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
 
@@ -204,7 +204,7 @@ pub unsafe fn pass1_1018_69ac(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn struct_op_1018_6a0e(
+pub fn struct_op_1018_6a0e(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u16,
@@ -234,7 +234,7 @@ pub unsafe fn struct_op_1018_6a0e(
 }
 
 
-pub unsafe fn struct_1018_6d02(
+pub fn struct_1018_6d02(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -245,7 +245,7 @@ pub unsafe fn struct_1018_6d02(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6d38(
+pub fn struct_1018_6d38(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -256,7 +256,7 @@ pub unsafe fn struct_1018_6d38(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6d6e(
+pub fn struct_1018_6d6e(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -267,7 +267,7 @@ pub unsafe fn struct_1018_6d6e(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6da4(
+pub fn struct_1018_6da4(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -278,7 +278,7 @@ pub unsafe fn struct_1018_6da4(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6dda(
+pub fn struct_1018_6dda(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -289,7 +289,7 @@ pub unsafe fn struct_1018_6dda(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6e10(
+pub fn struct_1018_6e10(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -300,7 +300,7 @@ pub unsafe fn struct_1018_6e10(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6e46(
+pub fn struct_1018_6e46(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -311,7 +311,7 @@ pub unsafe fn struct_1018_6e46(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6e7c(
+pub fn struct_1018_6e7c(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -322,7 +322,7 @@ pub unsafe fn struct_1018_6e7c(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6eb2(
+pub fn struct_1018_6eb2(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -333,7 +333,7 @@ pub unsafe fn struct_1018_6eb2(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6ee8(
+pub fn struct_1018_6ee8(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -344,7 +344,7 @@ pub unsafe fn struct_1018_6ee8(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6f1e(
+pub fn struct_1018_6f1e(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -355,7 +355,7 @@ pub unsafe fn struct_1018_6f1e(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6f54(
+pub fn struct_1018_6f54(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -366,7 +366,7 @@ pub unsafe fn struct_1018_6f54(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6f8a(
+pub fn struct_1018_6f8a(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -377,7 +377,7 @@ pub unsafe fn struct_1018_6f8a(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6fc0(
+pub fn struct_1018_6fc0(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -388,7 +388,7 @@ pub unsafe fn struct_1018_6fc0(
     return param_1;
 }
 
-pub unsafe fn struct_1018_6ff6(
+pub fn struct_1018_6ff6(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,

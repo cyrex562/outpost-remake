@@ -26,7 +26,7 @@ use crate::windef16::{HDC16, LRESULT};
 
 
 
-pub unsafe fn pass1_1040_c54a(param_1: *mut Struct65, mut param_2: u16, param_3: *mut u32, mut param_4: u16, mut param_5: u32)
+pub fn pass1_1040_c54a(param_1: *mut Struct65, mut param_2: u16, param_3: *mut u32, mut param_4: u16, mut param_5: u32)
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -56,7 +56,7 @@ pub unsafe fn pass1_1040_c54a(param_1: *mut Struct65, mut param_2: u16, param_3:
     return;
 }
 
-pub unsafe fn pass1_1040_c5ac(param_1: *mut StructD)
+pub fn pass1_1040_c5ac(param_1: *mut StructD)
 
 {
     let mut puVar1: *mut u32;
@@ -89,7 +89,7 @@ pub unsafe fn pass1_1040_c5ac(param_1: *mut StructD)
 }
 
 
-pub unsafe fn pass1_1040_c60e(param_1: *mut Struct65) -> u16
+pub fn pass1_1040_c60e(param_1: *mut Struct65) -> u16
 
 {
     let mut uVar1: u32;
@@ -105,7 +105,7 @@ pub unsafe fn pass1_1040_c60e(param_1: *mut Struct65) -> u16
 
 
 
-pub unsafe fn pass1_1040_c630(param_1: *mut Struct65, mut param_2: u32)
+pub fn pass1_1040_c630(param_1: *mut Struct65, mut param_2: u32)
 
 {
     let mut uVar1: u16;
@@ -156,7 +156,7 @@ pub unsafe fn pass1_1040_c630(param_1: *mut Struct65, mut param_2: u32)
 
 
 
-pub unsafe fn FUN_1040_c882()
+pub fn FUN_1040_c882()
 
 {
     return;
@@ -167,7 +167,7 @@ pub unsafe fn FUN_1040_c882()
 
 
 
-pub unsafe fn pass1_1040_ca16(param_1: *mut u8, param_2: *mut Struct57, mut param_3: u16)
+pub fn pass1_1040_ca16(param_1: *mut u8, param_2: *mut Struct57, mut param_3: u16)
 
 {
     let mut in_register_0000000a: u16;
@@ -200,7 +200,7 @@ pub unsafe fn pass1_1040_ca16(param_1: *mut u8, param_2: *mut Struct57, mut para
 
 
 
-pub unsafe fn pass1_1040_ca74(param_1: *mut StructD)
+pub fn pass1_1040_ca74(param_1: *mut StructD)
 
 {
     let mut uVar1: u16;

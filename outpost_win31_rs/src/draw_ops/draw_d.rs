@@ -20,7 +20,7 @@ use crate::utils::{CONCAT11, CONCAT22};
 use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, GetStockObject16, Rectangle16, SelectObject16, SelectPalette16, WritePrivateProfileString16};
 use crate::windef16::{COLORREF, DEVMODEA, HDC16, HFILE16, HGDIOBJ16, HPALETTE16, HPEN16, RECT16};
 
-pub unsafe fn load_draw_op_1020_2ede(
+pub fn load_draw_op_1020_2ede(
     param_1: *mut Struct57,
     mut param_2: u16,
     param_3: *mut astruct_40,
@@ -99,7 +99,7 @@ pub unsafe fn load_draw_op_1020_2ede(
     return;
 }
 
-pub unsafe fn cleanup_win_ui_1020_2fea(in_struct_1: *mut StructD) {
+pub fn cleanup_win_ui_1020_2fea(in_struct_1: *mut StructD) {
     let mut obj: HPALETTE16;
     let mut struct_1: *mut StructD;
     let mut var2: u16;
@@ -126,7 +126,7 @@ pub unsafe fn cleanup_win_ui_1020_2fea(in_struct_1: *mut StructD) {
 }
 
 
-pub unsafe fn win_ui_palette_op_1020_3e84(param_1: *mut StructD) {
+pub fn win_ui_palette_op_1020_3e84(param_1: *mut StructD) {
     let mut hdc: HDC16;
     let mut obj: HPALETTE16;
     let mut struct_v1: *mut StructD;
@@ -153,7 +153,7 @@ pub unsafe fn win_ui_palette_op_1020_3e84(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn mixed_draw_op_1020_3fa0(mut param_1: u32) {
+pub fn mixed_draw_op_1020_3fa0(mut param_1: u32) {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut code;
     let mut uVar3: u32;
@@ -205,7 +205,7 @@ pub unsafe fn mixed_draw_op_1020_3fa0(mut param_1: u32) {
     return;
 }
 
-pub unsafe fn draw_text_1040_8d14(param_1: *mut Struct37, hdc_param_2: HDC16)
+pub fn draw_text_1040_8d14(param_1: *mut Struct37, hdc_param_2: HDC16)
 
 {
   let mut in_string: LPCSTR;
@@ -242,7 +242,7 @@ pub unsafe fn draw_text_1040_8d14(param_1: *mut Struct37, hdc_param_2: HDC16)
   return;
 }
 
-pub unsafe fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
+pub fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
 
 {
     let mut handle: HPEN16;
@@ -288,7 +288,7 @@ pub unsafe fn unk_draw_op_1040_c226(struct_param_1: *mut astruct_772)
     return;
 }
 
-pub unsafe fn fn_xyz() {
+pub fn fn_xyz() {
     let mut piVar2: *mut i16;
     let mut uVar3_01: u32;
     let mut uVar6: u16;
@@ -492,7 +492,7 @@ pub unsafe fn fn_xyz() {
     return;
 }
 
-pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
+pub fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
     let mut piVar1: *mut i16;
     let mut uVar3: u32;
     let mut uVar6: u32;
@@ -701,7 +701,7 @@ pub unsafe fn unk_draw_op_1020_2020(param_1: *mut astruct_743) {
     return;
 }
 
-pub unsafe fn FUN_1010_2a32(
+pub fn FUN_1010_2a32(
     buffer_param_2: *mut u8,
     mut param_2: u32,
     hfile_param: *mut HFILE16,

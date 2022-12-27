@@ -38,7 +38,7 @@ use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::windef16::{HCURSOR16, HGDIOBJ16, HWND16, LRESULT, WPARAM16};
 
 
-pub unsafe fn pass1_1040_06e8(
+pub fn pass1_1040_06e8(
     param_1: *mut StructD,
     param_2: *mut Struct57,
     mut param_3: u32,
@@ -79,7 +79,7 @@ pub unsafe fn pass1_1040_06e8(
 }
 
 
-pub unsafe fn pass1_1040_073a(param_1: *mut StructD) {
+pub fn pass1_1040_073a(param_1: *mut StructD) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -91,7 +91,7 @@ pub unsafe fn pass1_1040_073a(param_1: *mut StructD) {
 }
 
 
-pub unsafe fn pass1_1040_0bfc(
+pub fn pass1_1040_0bfc(
     param_1: *mut StructD,
     param_2: *mut Struct57,
     mut param_3: u32,
@@ -131,7 +131,7 @@ pub unsafe fn pass1_1040_0bfc(
     iVar1.field86_0x74 = 0x1;
     return param_2;
 }
-pub unsafe fn pass1_1040_0c54(param_1: *mut StructD) {
+pub fn pass1_1040_0c54(param_1: *mut StructD) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -150,7 +150,7 @@ pub unsafe fn pass1_1040_0c54(param_1: *mut StructD) {
 
 
 
-pub unsafe fn pass1_1040_0e1c(
+pub fn pass1_1040_0e1c(
     param_1: *mut StructD,
     param_2: *mut Struct57,
     mut param_3: u16,
@@ -195,7 +195,7 @@ pub unsafe fn pass1_1040_0e1c(
 }
 
 
-pub unsafe fn pass1_1040_0e86(param_1: *mut StructD) {
+pub fn pass1_1040_0e86(param_1: *mut StructD) {
     let mut uVar1: u16;
     let mut pcVar2: *mut c_char;
     let mut uVar3: u16;

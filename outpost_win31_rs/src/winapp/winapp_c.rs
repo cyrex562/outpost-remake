@@ -24,7 +24,7 @@ use crate::winapi16::{CallWindowProc16, GetDlgItem16, MessageBox16, PostMessage1
 use crate::winapp::winapp_b;
 use crate::windef16::{HWND16, LPARAM, LRESULT, WPARAM16};
 
-pub unsafe fn win_help_op_1020_0ec4(mut param_1: u16, param_2: *mut u32, mut param_3: u16) {
+pub fn win_help_op_1020_0ec4(mut param_1: u16, param_2: *mut u32, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut cVar2: u8;
     let mut uVar3: u16;
@@ -143,7 +143,7 @@ pub unsafe fn win_help_op_1020_0ec4(mut param_1: u16, param_2: *mut u32, mut par
     return;
 }
 
-pub unsafe fn invalidate_rect_1020_2ae4(
+pub fn invalidate_rect_1020_2ae4(
     mut param_1: u16,
     param_2: *mut u32,
     mut param_3: u16,
@@ -264,7 +264,7 @@ pub unsafe fn invalidate_rect_1020_2ae4(
     return;
 }
 
-pub unsafe fn post_msg_1020_4394(mut param_1: u32, mut param_2: u16) {
+pub fn post_msg_1020_4394(mut param_1: u32, mut param_2: u16) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -290,7 +290,7 @@ pub unsafe fn post_msg_1020_4394(mut param_1: u32, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn post_win_msg_1020_7308(mut param_1: u32, mut param_2: u16) {
+pub fn post_win_msg_1020_7308(mut param_1: u32, mut param_2: u16) {
     let mut cVar1: u8;
     let mut uVar2: u16;
 
@@ -312,7 +312,7 @@ pub unsafe fn post_win_msg_1020_7308(mut param_1: u32, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn send_msg_1008_84ba(mut param_1: u16, mut param_2: u32) {
+pub fn send_msg_1008_84ba(mut param_1: u16, mut param_2: u32) {
     let mut iVar1: i16;
     let mut uVar2: u16;
     let mut WStack4: WPARAM16;
@@ -331,7 +331,7 @@ pub unsafe fn send_msg_1008_84ba(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn send_msg_1020_097e(mut param_1: u32) {
+pub fn send_msg_1020_097e(mut param_1: u32) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -346,7 +346,7 @@ pub unsafe fn send_msg_1020_097e(mut param_1: u32) {
     return;
 }
 
-pub unsafe fn send_msg_1028_e242(param_1: u32, mut param_2: i16) {
+pub fn send_msg_1028_e242(param_1: u32, mut param_2: i16) {
     let mut puVar1: *mut u8;
     let mut unaff_DI: i16;
     let mut LVar2: LRESULT;
@@ -364,7 +364,7 @@ pub unsafe fn send_msg_1028_e242(param_1: u32, mut param_2: i16) {
 }
 
 
-pub unsafe fn send_msg_1038_c228(mut param_1: u32) -> LRESULT
+pub fn send_msg_1038_c228(mut param_1: u32) -> LRESULT
 
 {
   let mut wparam: WPARAM16;
@@ -384,7 +384,7 @@ pub unsafe fn send_msg_1038_c228(mut param_1: u32) -> LRESULT
   return LVar3;
 }
 
-pub unsafe fn send_msg_1038_c374(mut param_1: u32, param_2: *mut u32, mut param_3: u16 )
+pub fn send_msg_1038_c374(mut param_1: u32, param_2: *mut u32, mut param_3: u16 )
 
 {
   let mut uVar1: u32;
@@ -430,7 +430,7 @@ pub unsafe fn send_msg_1038_c374(mut param_1: u32, param_2: *mut u32, mut param_
 }
 
 
-pub unsafe fn send_msg_1040_1696(param_1: *mut StructB, mut param_2: u16 )
+pub fn send_msg_1040_1696(param_1: *mut StructB, mut param_2: u16 )
 
 {
   let mut uVar1: u32;
@@ -476,7 +476,7 @@ pub unsafe fn send_msg_1040_1696(param_1: *mut StructB, mut param_2: u16 )
 }
 
 
-pub unsafe fn send_msg_1040_323c(mut param_1: u32) -> LRESULT
+pub fn send_msg_1040_323c(mut param_1: u32) -> LRESULT
 
 {
   let mut wparam: WPARAM16;
@@ -496,7 +496,7 @@ pub unsafe fn send_msg_1040_323c(mut param_1: u32) -> LRESULT
   return LVar3;
 }
 
-pub unsafe fn send_msg_1040_3374(mut param_1: u32, param_2: *mut u32, mut param_3: u16 )
+pub fn send_msg_1040_3374(mut param_1: u32, param_2: *mut u32, mut param_3: u16 )
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -540,7 +540,7 @@ pub unsafe fn send_msg_1040_3374(mut param_1: u32, param_2: *mut u32, mut param_
 }
 
 
-pub unsafe fn win_msg_1040_a308(param_1: *mut astruct_49, mut param_2: u16, mut param_3: u16, mut param_4: u16 ) -> u32
+pub fn win_msg_1040_a308(param_1: *mut astruct_49, mut param_2: u16, mut param_3: u16, mut param_4: u16 ) -> u32
 
 {
   let mut piVar1: *mut i16;
@@ -602,7 +602,7 @@ pub unsafe fn win_msg_1040_a308(param_1: *mut astruct_49, mut param_2: u16, mut 
 }
 
 
-pub unsafe fn call_win_proc_1040_a40e(mut param_1: u16, param_2: HWND16, mut param_3: u32, param_4: LPARAM) -> u32
+pub fn call_win_proc_1040_a40e(mut param_1: u16, param_2: HWND16, mut param_3: u32, param_4: LPARAM) -> u32
 
 {
   let mut func: LPVOID = null_mut();
@@ -647,7 +647,7 @@ pub unsafe fn call_win_proc_1040_a40e(mut param_1: u16, param_2: HWND16, mut par
 }
 
 
-pub unsafe fn send_msg_1040_4cb2(mut param_1: u16, mut param_2: u32) -> LRESULT
+pub fn send_msg_1040_4cb2(mut param_1: u16, mut param_2: u32) -> LRESULT
 
 {
     let mut uVar1: u8;
@@ -669,7 +669,7 @@ pub unsafe fn send_msg_1040_4cb2(mut param_1: u16, mut param_2: u32) -> LRESULT
     return LVar2;
 }
 
-pub unsafe fn pass1_1040_93e6(mut param_1: u32) -> LRESULT
+pub fn pass1_1040_93e6(mut param_1: u32) -> LRESULT
 
 {
     let mut uVar1: u16;
@@ -681,7 +681,7 @@ pub unsafe fn pass1_1040_93e6(mut param_1: u32) -> LRESULT
 }
 
 
-pub unsafe fn win_ui_op_1040_311a(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
+pub fn win_ui_op_1040_311a(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
 
 {
     let mut iVar1: i16;
@@ -737,7 +737,7 @@ pub unsafe fn win_ui_op_1040_311a(mut param_1: i16, mut param_2: u16, mut param_
     return;
 }
 
-pub unsafe fn send_msg_1008_9640(mut param_1: u32, mut param_2: u16) {
+pub fn send_msg_1008_9640(mut param_1: u32, mut param_2: u16) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -748,7 +748,7 @@ pub unsafe fn send_msg_1008_9640(mut param_1: u32, mut param_2: u16) {
 }
 
 
-pub unsafe fn send_msg_1010_7c42(mut param_1: u32) {
+pub fn send_msg_1010_7c42(mut param_1: u32) {
     let mut uVar1: u32;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -771,7 +771,7 @@ pub unsafe fn send_msg_1010_7c42(mut param_1: u32) {
     return;
 }
 
-pub unsafe fn send_msg_1020_29d8(
+pub fn send_msg_1020_29d8(
     mut param_1: u16,
     param_2: *mut Struct57,
     param_3: *mut astruct_69,
@@ -809,7 +809,7 @@ pub unsafe fn send_msg_1020_29d8(
 }
 
 
-pub unsafe fn win_help_1040_800c(mut param_1: u32)
+pub fn win_help_1040_800c(mut param_1: u32)
 
 {
     let mut in_AX: u16;
@@ -840,7 +840,7 @@ pub unsafe fn win_help_1040_800c(mut param_1: u32)
     return;
 }
 
-pub unsafe fn win_ui_op_1008_2b54(mut param_1: u16, mut param_2: u16, mut param_3: u32) -> i16
+pub fn win_ui_op_1008_2b54(mut param_1: u16, mut param_2: u16, mut param_3: u32) -> i16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -900,7 +900,7 @@ let mut local_56: [u8;0x50] = [0;0x50];
 }
 
 
-pub unsafe fn send_msg_1040_c85a(mut param_1: u32)
+pub fn send_msg_1040_c85a(mut param_1: u32)
 
 {
     _PTR_LOOP_1050_5efe = param_1;
@@ -909,7 +909,7 @@ pub unsafe fn send_msg_1040_c85a(mut param_1: u32)
 }
 
 
-pub unsafe fn message_box_op_1038_c672(param_1: u8, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
+pub fn message_box_op_1038_c672(param_1: u8, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
 
 {
   let mut uVar1: u16;
@@ -933,7 +933,7 @@ pub unsafe fn message_box_op_1038_c672(param_1: u8, mut param_2: i16, mut param_
   return;
 }
 
-pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
+pub fn msg_box_op_1038_c07a(mut param_1: i16, mut param_2: u16, mut param_3: u16, mut param_4: u32)
 
 {
     let mut iVar1: i16;
@@ -981,7 +981,7 @@ pub unsafe fn msg_box_op_1038_c07a(mut param_1: i16, mut param_2: u16, mut param
 }
 
 
-pub unsafe fn win_ui_op_1040_07dc(
+pub fn win_ui_op_1040_07dc(
     mut param_1: u16,
     pstruct_c_param_2: *mut StructC,
     mut param_3: u16,
@@ -1122,7 +1122,7 @@ pub unsafe fn win_ui_op_1040_07dc(
 }
 
 
-pub unsafe fn message_box_op_1040_37f0(mut param_1: u16, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
+pub fn message_box_op_1040_37f0(mut param_1: u16, mut param_2: i16, mut param_3: u16, mut param_4: u16, mut param_5: u32)
 
 {
     let mut uVar1: u16;

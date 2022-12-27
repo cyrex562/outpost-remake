@@ -29,14 +29,14 @@ use crate::gui::window::win_d::set_window_text_1018_6086;
 use crate::winapi16::{DestroyWindow16, GetDlgItem16, GetWindowRect16, MapDialogRect16, SetFocus16, SetWindowPos16, ShowWindow16};
 use crate::windef16::{HCURSOR16, HWND16, LRESULT, WPARAM16};
 
-pub unsafe fn FUN_1038_eb08()
+pub fn FUN_1038_eb08()
 
 {
     return;
 }
 
 
-pub unsafe fn pass1_1038_eb0c(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_eb0c(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_e9ec(param_1);
@@ -47,7 +47,7 @@ pub unsafe fn pass1_1038_eb0c(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1038_ee48(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1038_ee48(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1038_ebd6(param_1);
@@ -58,7 +58,7 @@ pub unsafe fn pass1_1038_ee48(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_0656(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1040_0656(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     destroy_win_1038_ef3a(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -67,7 +67,7 @@ pub unsafe fn pass1_1040_0656(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u16) {
+pub fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut puVar2: *mut u32;
@@ -128,7 +128,7 @@ pub unsafe fn show_win_1040_0766(struct_b_param_1: *mut StructB, mut param_2: u1
 }
 
 
-pub unsafe fn pass1_1040_0a1a(mut param_1: u32) {
+pub fn pass1_1040_0a1a(mut param_1: u32) {
     let mut uVar1: u16;
     let mut puVar2: *mut u32;
     let mut ppcVar3: *mut *mut code;
@@ -186,7 +186,7 @@ pub unsafe fn pass1_1040_0a1a(mut param_1: u32) {
 }
 
 
-pub unsafe fn pass1_1040_0b6a(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1040_0b6a(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     pass1_1040_073a(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);

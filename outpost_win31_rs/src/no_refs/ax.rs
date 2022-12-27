@@ -6,7 +6,7 @@ use crate::gui::window::set_win_pos_1040_331a;
 use crate::winapp::winapp_c::send_msg_1040_323c;
 
 
-pub unsafe fn pass1_1040_288e(mut param_1: u32)
+pub fn pass1_1040_288e(mut param_1: u32)
 
 {
     let mut uVar1: u16;
@@ -60,7 +60,7 @@ pub unsafe fn pass1_1040_288e(mut param_1: u32)
 }
 
 
-pub unsafe fn pass1_1040_2930(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_2930(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_2464(param_1);
@@ -71,7 +71,7 @@ pub unsafe fn pass1_1040_2930(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_2dac(mut param_1: u32)
+pub fn pass1_1040_2dac(mut param_1: u32)
 
 {
     let mut uVar1: u32;
@@ -89,7 +89,7 @@ pub unsafe fn pass1_1040_2dac(mut param_1: u32)
 }
 
 
-pub unsafe fn pass1_1040_2e00(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_2e00(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_2a22(param_1);
@@ -100,7 +100,7 @@ pub unsafe fn pass1_1040_2e00(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_2ea2(param_1: *mut StructD, param_2: *mut Struct57, mut param_3: u32, mut param_4: u16, mut param_5: u16, mut param_6: u16)
+pub fn pass1_1040_2ea2(param_1: *mut StructD, param_2: *mut Struct57, mut param_3: u32, mut param_4: u16, mut param_5: u16, mut param_6: u16)
 
 {
     let mut in_register_0000000a: u16;
@@ -133,7 +133,7 @@ pub unsafe fn pass1_1040_2ea2(param_1: *mut StructD, param_2: *mut Struct57, mut
 }
 
 
-pub unsafe fn pass1_1040_2f32(mut param_1: u16, mut param_2: u16, mut param_3: u16)
+pub fn pass1_1040_2f32(mut param_1: u16, mut param_2: u16, mut param_3: u16)
 
 {
     let mut in_register_0000000a: u16;
@@ -153,7 +153,7 @@ pub unsafe fn pass1_1040_2f32(mut param_1: u16, mut param_2: u16, mut param_3: u
 }
 
 
-pub unsafe fn pass1_1040_3410(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_3410(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_2f06(param_1);
@@ -164,7 +164,7 @@ pub unsafe fn pass1_1040_3410(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_3532(param_1: *mut u8, mut param_2: u16, mut param_3: u16)
+pub fn pass1_1040_3532(param_1: *mut u8, mut param_2: u16, mut param_3: u16)
 
 {
     let mut in_register_0000000a: u16;
@@ -184,7 +184,7 @@ pub unsafe fn pass1_1040_3532(param_1: *mut u8, mut param_2: u16, mut param_3: u
 }
 
 
-pub unsafe fn pass1_1040_38d4(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_38d4(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_3506(param_1);
@@ -195,7 +195,7 @@ pub unsafe fn pass1_1040_38d4(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_3a0e(param_1: *mut u8, mut param_2: u16, mut param_3: u16)
+pub fn pass1_1040_3a0e(param_1: *mut u8, mut param_2: u16, mut param_3: u16)
 
 {
     let mut in_register_0000000a: u16;

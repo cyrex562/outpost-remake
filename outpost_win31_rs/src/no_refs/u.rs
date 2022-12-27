@@ -1,8 +1,8 @@
-pub unsafe fn FUN_1020_3cb4() {
+pub fn FUN_1020_3cb4() {
     return;
 }
 
-pub unsafe fn pass1_1020_4064(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1020_4064(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     win_ui_palette_op_1020_3e84(param_1);
     if ((param_2 & 1) != 0) {
         fn_ptr_1000_17ce(param_1);
@@ -10,7 +10,7 @@ pub unsafe fn pass1_1020_4064(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn pass1_1020_4092(param_1: *mut u16) -> *mut u16 {
+pub fn pass1_1020_4092(param_1: *mut u16) -> *mut u16 {
     let mut iVar1: i16;
     let mut uVar2: u16;
 
@@ -26,7 +26,7 @@ pub unsafe fn pass1_1020_4092(param_1: *mut u16) -> *mut u16 {
     return param_1;
 }
 
-pub unsafe fn pass1_1020_434c(
+pub fn pass1_1020_434c(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,
@@ -53,7 +53,7 @@ pub unsafe fn pass1_1020_434c(
     return;
 }
 
-pub unsafe fn win_1020_43f6(
+pub fn win_1020_43f6(
     param_1: *mut Struct57,
     param_2: *mut StructA,
     mut param_3: u16,
@@ -105,7 +105,7 @@ pub unsafe fn win_1020_43f6(
 }
 
 
-pub unsafe fn pass1_1020_44b0(param_1: u32) {
+pub fn pass1_1020_44b0(param_1: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut iVar2: i16;
     let mut uVar3: u16;

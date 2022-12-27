@@ -32,7 +32,7 @@
 
 
 
-pub unsafe fn pass1_1038_0f8c(
+pub fn pass1_1038_0f8c(
     mut param_1: u16,
     mut param_2: u32,
     mut param_3: u16,

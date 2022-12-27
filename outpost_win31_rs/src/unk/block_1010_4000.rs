@@ -2,7 +2,7 @@ use crate::draw_ops;
 use crate::draw_ops::draw_c;
 
 
-pub unsafe fn pass1_1010_41d6(
+pub fn pass1_1010_41d6(
     param_1: *mut Struct57,
     param_2: *mut astruct_243,
     mut param_3: u32,
@@ -186,7 +186,7 @@ pub unsafe fn pass1_1010_41d6(
 
 
 
-pub unsafe fn pass1_1010_451a(param_1: *mut u8, mut param_2: u32) -> u32 {
+pub fn pass1_1010_451a(param_1: *mut u8, mut param_2: u32) -> u32 {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut in_register_0000000a: u16;
@@ -213,7 +213,7 @@ pub unsafe fn pass1_1010_451a(param_1: *mut u8, mut param_2: u32) -> u32 {
     return CONCAT22((uVar4 + 0x4), (uVar4 + 0x2));
 }
 
-pub unsafe fn pass1_1010_454a(mut param_1: u32) -> u32 {
+pub fn pass1_1010_454a(mut param_1: u32) -> u32 {
     let mut iVar1: i16;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -226,7 +226,7 @@ pub unsafe fn pass1_1010_454a(mut param_1: u32) -> u32 {
 
 
 
-pub unsafe fn pass1_1010_459e(param_1: *mut Struct27) {
+pub fn pass1_1010_459e(param_1: *mut Struct27) {
     let mut paVar1: *mut Struct57;
     let mut in_EDX: u32;
     let mut paVar2: *mut Struct57;
@@ -251,7 +251,7 @@ pub unsafe fn pass1_1010_459e(param_1: *mut Struct27) {
 }
 
 
-pub unsafe fn pass1_1010_45d6(param_1: i32) {
+pub fn pass1_1010_45d6(param_1: i32) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -297,7 +297,7 @@ pub unsafe fn pass1_1010_45d6(param_1: i32) {
 
 
 
-pub unsafe fn draw_1010_47ae(mut param_1: u32) {
+pub fn draw_1010_47ae(mut param_1: u32) {
     let mut uStack4: u16;
 
     uStack4 = 0;
@@ -312,7 +312,7 @@ pub unsafe fn draw_1010_47ae(mut param_1: u32) {
 
 
 
-pub unsafe fn pass1_1010_4a8a(
+pub fn pass1_1010_4a8a(
     mut param_1: u32,
     param_2: *mut Struct19,
     param_3: *mut Struct19,

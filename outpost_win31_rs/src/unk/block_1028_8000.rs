@@ -3,7 +3,7 @@
 
 
 
-pub unsafe fn pass1_1028_837e(param_1: *mut astruct_97) -> *mut astruct_97 {
+pub fn pass1_1028_837e(param_1: *mut astruct_97) -> *mut astruct_97 {
     struct_op_1028_d1dc(param_1, 0xf9f);
     param_1.offset_0x0 = 0x84ba;
     (param_1 + 0x2) = 0x1028;
@@ -15,7 +15,7 @@ pub unsafe fn pass1_1028_837e(param_1: *mut astruct_97) -> *mut astruct_97 {
 }
 
 
-pub unsafe fn pass1_1028_84ca(
+pub fn pass1_1028_84ca(
     param_1: *mut astruct_97,
     mut param_2: u32,
     mut param_3: u16,
@@ -54,7 +54,7 @@ pub unsafe fn pass1_1028_84ca(
 
 
 
-pub unsafe fn pass1_1028_8698(
+pub fn pass1_1028_8698(
     param_1: *mut astruct_97,
     mut param_2: u32,
     mut param_3: u32,
@@ -66,7 +66,7 @@ pub unsafe fn pass1_1028_8698(
 }
 
 
-pub unsafe fn pass1_1028_86c2(param_1: *mut StructD, mut param_2: u32) {
+pub fn pass1_1028_86c2(param_1: *mut StructD, mut param_2: u32) {
     let mut paVar1: *mut astruct_67;
     let mut in_stack_0000fe94: u16;
     let mut in_stack_0000ffb8: u16;
@@ -109,7 +109,7 @@ pub unsafe fn pass1_1028_86c2(param_1: *mut StructD, mut param_2: u32) {
 }
 
 
-pub unsafe fn struct_op_1028_87f0(
+pub fn struct_op_1028_87f0(
     param_1: *mut astruct_97,
     mut param_2: u16,
     mut param_3: u16,
@@ -144,7 +144,7 @@ pub unsafe fn struct_op_1028_87f0(
     );
     return;
 }
-pub unsafe fn struct_op_1028_8888(
+pub fn struct_op_1028_8888(
     param_1: *mut astruct_97,
     mut param_2: u16,
     mut param_3: u16,
@@ -184,7 +184,7 @@ pub unsafe fn struct_op_1028_8888(
 
 
 
-pub unsafe fn pass1_1028_8d9e(
+pub fn pass1_1028_8d9e(
     param_1: *mut astruct_97,
     mut param_2: u32,
     mut param_3: u32,
@@ -205,7 +205,7 @@ pub unsafe fn pass1_1028_8d9e(
     iVar1.segment_0x2 = 0x1028;
     return;
 }
-pub unsafe fn pass1_1028_8dec(param_1: *mut u16) {
+pub fn pass1_1028_8dec(param_1: *mut u16) {
     let mut iVar1: i16;
     let mut uVar2: u16;
 
@@ -226,7 +226,7 @@ pub unsafe fn pass1_1028_8dec(param_1: *mut u16) {
 
 
 
-pub unsafe fn pass1_1028_8fc0(
+pub fn pass1_1028_8fc0(
     param_1: *mut astruct_97,
     mut param_2: u32,
     mut param_3: u32,

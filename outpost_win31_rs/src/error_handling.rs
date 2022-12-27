@@ -4,7 +4,7 @@ use crate::winapp::fatal_app_exit_1000_3e9e;
 use crate::utils::CONCAT22;
 use crate::winapi16::{MessageBeep16, MessageBox16};
 
-pub unsafe fn smart_heap_library_err_1000_214c(
+pub fn smart_heap_library_err_1000_214c(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,

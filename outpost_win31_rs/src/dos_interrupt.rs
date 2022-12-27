@@ -174,7 +174,7 @@ pub fn swi(ctx: &mut AppContext, int_code: u16) -> InterruptResult {
     todo!()
 }
 
-pub unsafe fn dos_create_subdir_1000_4f20(ctx: &mut AppContext, subdir: *mut c_char) -> u16 {
+pub fn dos_create_subdir_1000_4f20(ctx: &mut AppContext, subdir: *mut c_char) -> u16 {
     let mut var3 = false;
     ctx.AH_REG = 0x39; // create subdirectory
     let mut result = swi(ctx, 0x21);
@@ -189,7 +189,7 @@ pub unsafe fn dos_create_subdir_1000_4f20(ctx: &mut AppContext, subdir: *mut c_c
     return 0x0;
 }
 
-pub unsafe fn dos_create_subdir_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 {
+pub fn dos_create_subdir_1000_4f54(ctx: &mut AppContext, mut param_1: u32) -> u16 {
     let mut c_var1: c_char;
     let mut u_var5: *mut c_char = null_mut();
     let mut b_var3 = false;
@@ -224,7 +224,7 @@ pub unsafe fn dos_create_subdir_1000_4f54(ctx: &mut AppContext, mut param_1: u32
     return 0xffff;
 }
 
-pub unsafe fn dos3_call_1000_4f94(ctx: &mut AppContext, p1: u8) -> i16 {
+pub fn dos3_call_1000_4f94(ctx: &mut AppContext, p1: u8) -> i16 {
     // Get Default Drive
     ctx.AH_REG = 0x19;
     let result = swi(0x21);
@@ -236,7 +236,7 @@ pub unsafe fn dos3_call_1000_4f94(ctx: &mut AppContext, p1: u8) -> i16 {
     todo!()
 }
 
-pub unsafe fn dos_set_get_default_drive_1000_4fbe(ctx: &mut AppContext, dflt_drive_param_1: c_char) -> u16 {
+pub fn dos_set_get_default_drive_1000_4fbe(ctx: &mut AppContext, dflt_drive_param_1: c_char) -> u16 {
     //    unaff_BP: i16;
     // set default drive
     ctx.AH_REG = 0xe;
@@ -263,7 +263,7 @@ pub unsafe fn dos_set_get_default_drive_1000_4fbe(ctx: &mut AppContext, dflt_dri
 }
 
 
-pub unsafe fn dos_set_interrupt_vector(ctx: &mut AppContext) {
+pub fn dos_set_interrupt_vector(ctx: &mut AppContext) {
     if PTR_LOOP_1050_6202.is_null() == false {
         (PTR_LOOP_1050_6200)();
     }
@@ -278,7 +278,7 @@ pub unsafe fn dos_set_interrupt_vector(ctx: &mut AppContext) {
 
 
 
-pub unsafe fn dos_move_file_ptr_1000_3636(
+pub fn dos_move_file_ptr_1000_3636(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -353,7 +353,7 @@ pub unsafe fn dos_move_file_ptr_1000_3636(
     return;
 }
 
-pub unsafe fn dos_file_io_1000_370a(
+pub fn dos_file_io_1000_370a(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,

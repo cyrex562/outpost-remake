@@ -1,6 +1,6 @@
 
 
-pub unsafe fn big_switch_1008_15d4(
+pub fn big_switch_1008_15d4(
     param_1: *mut astruct_20,
     param_2: *mut Struct72,
     param_3: i32,

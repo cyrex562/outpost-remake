@@ -23,7 +23,7 @@ use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, FatalAppExit16, Fa
 use crate::windef16::{DEVMODEA, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HPALETTE16};
 
 
-pub unsafe fn set_err_mode_1010_8b14(mut param_1: u32, mut param_2: u32) -> u32 {
+pub fn set_err_mode_1010_8b14(mut param_1: u32, mut param_2: u32) -> u32 {
     let mut mode: u16;
     let mut uVar1: u16;
     let mut uVar2: u16;
@@ -52,7 +52,7 @@ pub unsafe fn set_err_mode_1010_8b14(mut param_1: u32, mut param_2: u32) -> u32 
     return param_1 & 0xffff0000 | uVar1;
 }
 
-pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
+pub fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
     let mut uVar1: u16;
     let mut local_106: [u8; 0x100] = [0; 0x100];
 
@@ -84,7 +84,7 @@ pub unsafe fn debug_print_1008_6048(mut param_1: u16, param_2: *mut c_char) {
 }
 
 
-pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut param_3: u16) {
+pub fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut param_3: u16) {
     let mut piVar1: *mut i16;
     let mut ppuVar2: *mut *mut u16;
     let mut uVar3: u32;
@@ -465,7 +465,7 @@ pub unsafe fn win_sys_op_1010_5404(mut param_1: i16, param_2: *mut Struct19, mut
 }
 
 
-pub unsafe fn write_private_profile_str_1010_5b10(mut param_1: u16, param_2: *mut StructD) {
+pub fn write_private_profile_str_1010_5b10(mut param_1: u16, param_2: *mut StructD) {
     let mut puVar2: *mut u32;
     let mut ppcVar3: *mut *mut code;
     let mut uVar4: u16;
@@ -636,7 +636,7 @@ pub unsafe fn write_private_profile_str_1010_5b10(mut param_1: u16, param_2: *mu
 }
 
 
-pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut Struct19, mut param_2: i16)
+pub fn get_private_profile_string_1010_6132(param_1: *mut Struct19, mut param_2: i16)
 
 {
   let mut uVar2: u16;
@@ -690,7 +690,7 @@ pub unsafe fn get_private_profile_string_1010_6132(param_1: *mut Struct19, mut p
   return;
 }
 
-pub unsafe fn caseD_13(mut param_1: u32, mut param_2: i16)
+pub fn caseD_13(mut param_1: u32, mut param_2: i16)
 
 {
   let mut iVar1: *mut astruct_833;
@@ -707,7 +707,7 @@ pub unsafe fn caseD_13(mut param_1: u32, mut param_2: i16)
   return;
 }
 
-pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
+pub fn pass1_1000_27d6(mut param_1: u16) {
     let mut piVar2: *mut i16;
     let mut pcVar3: *mut c_char;
     let mut cVar4: u8;
@@ -815,7 +815,7 @@ pub unsafe fn pass1_1000_27d6(mut param_1: u16) {
 }
 
 
-pub unsafe fn pass1_1008_91ba(param_1: *mut astruct_3) -> *mut u16 {
+pub fn pass1_1008_91ba(param_1: *mut astruct_3) -> *mut u16 {
     let mut UVar1: u16;
     let mut iVar2: *mut astruct_3;
     let mut uVar2: u16;
@@ -838,7 +838,7 @@ pub unsafe fn pass1_1008_91ba(param_1: *mut astruct_3) -> *mut u16 {
 }
 
 
-pub unsafe fn kill_timer_1008_921c(param_1: *mut u16) {
+pub fn kill_timer_1008_921c(param_1: *mut u16) {
     let mut iVar1: i16;
     let mut uVar2: u16;
 

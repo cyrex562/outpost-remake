@@ -1,7 +1,7 @@
 use crate::draw_ops;
 use crate::draw_ops::draw_e;
 
-pub unsafe fn pass1_1020_01d8(
+pub fn pass1_1020_01d8(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u16,
@@ -23,7 +23,7 @@ pub unsafe fn pass1_1020_01d8(
     return;
 }
 
-pub unsafe fn pass1_1020_022c(struct_param_1: *mut astruct_29) {
+pub fn pass1_1020_022c(struct_param_1: *mut astruct_29) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -51,14 +51,14 @@ pub unsafe fn pass1_1020_022c(struct_param_1: *mut astruct_29) {
 
 
 
-pub unsafe fn draw_op_1020_041e(mut param_1: u32) {
+pub fn draw_op_1020_041e(mut param_1: u32) {
     draw_e::fill_rect_1020_065e((param_1 + 0xe6));
     return;
 }
 
 
 
-pub unsafe fn pass1_1020_04f6(param_1: *mut u8, param_2: *mut astruct_662, mut param_3: u16) {
+pub fn pass1_1020_04f6(param_1: *mut u8, param_2: *mut astruct_662, mut param_3: u16) {
     let mut ppcVar1: *mut *mut code;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -132,7 +132,7 @@ pub unsafe fn pass1_1020_04f6(param_1: *mut u8, param_2: *mut astruct_662, mut p
     return;
 }
 
-pub unsafe fn pass1_1020_05d6(param_1: *mut StructD) {
+pub fn pass1_1020_05d6(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
 
@@ -151,7 +151,7 @@ pub unsafe fn pass1_1020_05d6(param_1: *mut StructD) {
 }
 
 
-pub unsafe fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut param_3: u32) {
+pub fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut param_3: u32) {
     let mut iVar1: *mut astruct_20;
     let mut uVar1: u16;
     let mut paVar2: *mut astruct_20;
@@ -169,7 +169,7 @@ pub unsafe fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut pa
 }
 
 
-pub unsafe fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3: u16) {
+pub fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut iVar2: *mut Struct276;
@@ -234,7 +234,7 @@ pub unsafe fn struct_1020_0baa(param_1: *mut u8, param_2: *mut u16, mut param_3:
     return;
 }
 
-pub unsafe fn pass1_1020_0d82(param_1: *mut StructD, param_2: u8) -> *mut StructD {
+pub fn pass1_1020_0d82(param_1: *mut StructD, param_2: u8) -> *mut StructD {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -248,7 +248,7 @@ pub unsafe fn pass1_1020_0d82(param_1: *mut StructD, param_2: u8) -> *mut Struct
     return param_1;
 }
 
-pub unsafe fn pass1_1020_0dc4(
+pub fn pass1_1020_0dc4(
     param_1: *mut StructA,
     mut param_2: u16,
     mut param_3: u32,

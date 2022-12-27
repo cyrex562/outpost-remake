@@ -7,7 +7,7 @@
 
 
 
-pub unsafe fn pass1_1010_c320(
+pub fn pass1_1010_c320(
     param_1: *mut c_char,
     mut param_2: u16,
     mut param_3: u16,
@@ -57,7 +57,7 @@ pub unsafe fn pass1_1010_c320(
 
 
 
-pub unsafe fn pass1_1010_c7e2(mut param_1: u32, mut param_2: u32, param_3: *mut i16) {
+pub fn pass1_1010_c7e2(mut param_1: u32, mut param_2: u32, param_3: *mut i16) {
     let mut uVar1: u32;
     let mut pcVar2: *mut c_char;
     let mut in_DX: u16;
@@ -93,7 +93,7 @@ pub unsafe fn pass1_1010_c7e2(mut param_1: u32, mut param_2: u32, param_3: *mut 
 
 
 
-pub unsafe fn pass1_1010_c864(
+pub fn pass1_1010_c864(
     param_1: *mut c_char,
     mut param_2: u32,
     param_3: *mut u16,
@@ -294,7 +294,7 @@ pub unsafe fn pass1_1010_c864(
 
 
 
-pub unsafe fn pass1_1010_cc56(
+pub fn pass1_1010_cc56(
     mut param_1: u16,
     mut param_2: u32,
     mut param_3: u32,
@@ -437,7 +437,7 @@ pub unsafe fn pass1_1010_cc56(
 }
 
 
-pub unsafe fn pass1_1010_cf36(
+pub fn pass1_1010_cf36(
     mut param_1: u16,
     mut param_2: u32,
     mut param_3: u32,

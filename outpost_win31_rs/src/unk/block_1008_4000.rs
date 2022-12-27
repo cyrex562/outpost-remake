@@ -18,7 +18,7 @@ use crate::utils::CONCAT22;
 use crate::winapi16::{_lclose16, _llseek16, _lopen16, CreateDC16, CreatePalette16, DeleteDC16, DeleteObject16, hmemcpy16, RealizePalette16, SelectPalette16, SetBkColor16, SetTextColor16, TextOut16};
 use crate::windef16::{COLORREF, HDC16, HFILE16, HPALETTE16, LOGPALETTE};
 
-pub unsafe fn pass1_1008_4016(param_1: *mut astruct_76) {
+pub fn pass1_1008_4016(param_1: *mut astruct_76) {
     let mut iVar1: *mut astruct_76;
     let mut uVar1: u16;
 
@@ -39,7 +39,7 @@ pub unsafe fn pass1_1008_4016(param_1: *mut astruct_76) {
 }
 
 
-pub unsafe fn pass1_1008_405c(
+pub fn pass1_1008_405c(
     param_1: *mut astruct_76,
     mut param_2: u32,
     mut param_3: i16,
@@ -101,7 +101,7 @@ pub unsafe fn pass1_1008_405c(
     return;
 }
 
-pub unsafe fn pass1_1008_41bc(param_1: *mut astruct_288) {
+pub fn pass1_1008_41bc(param_1: *mut astruct_288) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -125,7 +125,7 @@ pub unsafe fn pass1_1008_41bc(param_1: *mut astruct_288) {
     iVar5.field2_0x2 = 0x1008;
     return;
 }
-pub unsafe fn struct_op_1008_4214(param_1: *mut astruct_76, param_2: *mut astruct_81) {
+pub fn struct_op_1008_4214(param_1: *mut astruct_76, param_2: *mut astruct_81) {
     let mut puVar1: *mut u32;
     let mut uVar2: u16;
     let mut ppcVar3: *mut *mut code;
@@ -151,7 +151,7 @@ pub unsafe fn struct_op_1008_4214(param_1: *mut astruct_76, param_2: *mut astruc
 }
 
 
-pub unsafe fn pass1_1008_431c(param_1: *mut astruct_76, param_2: u8) {
+pub fn pass1_1008_431c(param_1: *mut astruct_76, param_2: u8) {
     let mut puVar1: *mut u32;
     let mut uVar2: u32;
     let mut bVar3: bool;
@@ -194,7 +194,7 @@ pub unsafe fn pass1_1008_431c(param_1: *mut astruct_76, param_2: u8) {
     return;
 }
 
-pub unsafe fn pass1_1008_43cc(param_1: *mut astruct_76) -> u32 {
+pub fn pass1_1008_43cc(param_1: *mut astruct_76) -> u32 {
     let mut bVar1: bool;
     let mut iVar2: *mut astruct_76;
     let mut uVar2: u16;
@@ -219,7 +219,7 @@ pub unsafe fn pass1_1008_43cc(param_1: *mut astruct_76) -> u32 {
 }
 
 
-pub unsafe fn pass1_1008_4480(
+pub fn pass1_1008_4480(
     param_1: *mut astruct_76,
     param_2: *mut u16,
     param_3: *mut astruct_76,
@@ -276,7 +276,7 @@ pub unsafe fn pass1_1008_4480(
     return;
 }
 
-pub unsafe fn pass1_1008_4544(param_1: *mut astruct_76) {
+pub fn pass1_1008_4544(param_1: *mut astruct_76) {
     let mut bVar1: bool;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -300,7 +300,7 @@ pub unsafe fn pass1_1008_4544(param_1: *mut astruct_76) {
     return;
 }
 
-pub unsafe fn pass1_1008_4772(param_1: *mut astruct_76) -> u32 {
+pub fn pass1_1008_4772(param_1: *mut astruct_76) -> u32 {
     let mut bVar1: bool;
     let mut iVar2: *mut astruct_76;
     let mut uVar2: u16;
@@ -323,7 +323,7 @@ pub unsafe fn pass1_1008_4772(param_1: *mut astruct_76) -> u32 {
     }
     return CONCAT22((&iVar2.field8_0x10 + 0x2), &iVar2.field8_0x10);
 }
-pub unsafe fn pass1_1008_47cc(param_1: *mut astruct_76) {
+pub fn pass1_1008_47cc(param_1: *mut astruct_76) {
     let mut uVar1: u16;
     let mut uVar2: u32;
     let mut uVar3: u32;
@@ -352,7 +352,7 @@ pub unsafe fn pass1_1008_47cc(param_1: *mut astruct_76) {
     }
     return;
 }
-pub unsafe fn pass1_1008_4834(param_1: *mut astruct_76) {
+pub fn pass1_1008_4834(param_1: *mut astruct_76) {
     let mut ppcVar1: *mut *mut code;
     let mut puVar2: *mut u32;
     let mut uVar3: u32;
@@ -390,7 +390,7 @@ pub unsafe fn pass1_1008_4834(param_1: *mut astruct_76) {
 // WARNING: Instruction at (ram,0x10084942) overlaps instruction at (ram,0x10084941)
 //
 
-pub unsafe fn struct_op_1008_48fe(
+pub fn struct_op_1008_48fe(
     param_1: *mut Struct57,
     param_2: *mut astruct_81,
     mut param_3: u16,
@@ -427,7 +427,7 @@ pub unsafe fn struct_op_1008_48fe(
 
 
 
-pub unsafe fn pass1_1008_4b8e(param_1: *mut u8, param_2: *mut astruct_807) {
+pub fn pass1_1008_4b8e(param_1: *mut u8, param_2: *mut astruct_807) {
     let mut uVar1: u32;
     let mut in_register_0000000a: u16;
     let mut uVar2: u16;
@@ -475,7 +475,7 @@ pub unsafe fn pass1_1008_4b8e(param_1: *mut u8, param_2: *mut astruct_807) {
     return;
 }
 
-pub unsafe fn struct_1008_4c58(param_1: *mut astruct_394) {
+pub fn struct_1008_4c58(param_1: *mut astruct_394) {
     let mut iVar1: *mut astruct_394;
     let mut in_stack_00000006: u16;
 
@@ -490,7 +490,7 @@ pub unsafe fn struct_1008_4c58(param_1: *mut astruct_394) {
     return;
 }
 
-pub unsafe fn struct_op_1008_4c98(param_1: *mut astruct_76, mut param_2: u32, mut param_3: u16) {
+pub fn struct_op_1008_4c98(param_1: *mut astruct_76, mut param_2: u32, mut param_3: u16) {
     let mut iVar1: *mut astruct_76;
     let mut uVar1: u16;
 
@@ -507,7 +507,7 @@ pub unsafe fn struct_op_1008_4c98(param_1: *mut astruct_76, mut param_2: u32, mu
     return;
 }
 
-pub unsafe fn pass1_1008_4cdc(param_1: *mut astruct_454) {
+pub fn pass1_1008_4cdc(param_1: *mut astruct_454) {
     let mut iVar2: *mut astruct_454;
     let mut uVar1: u16;
 
@@ -524,7 +524,7 @@ pub unsafe fn pass1_1008_4cdc(param_1: *mut astruct_454) {
     return;
 }
 
-pub unsafe fn pass1_1008_4d26(
+pub fn pass1_1008_4d26(
     param_1: *mut astruct_650,
     param_2: *mut u16,
     mut param_3: i16,
@@ -555,13 +555,13 @@ pub unsafe fn pass1_1008_4d26(
     return 0x0;
 }
 
-pub unsafe fn pass1_1008_4d72(mut param_1: u32) -> u32 {
+pub fn pass1_1008_4d72(mut param_1: u32) -> u32 {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
     return CONCAT22((param_1 + 0x6), (param_1 + 0x4));
 }
-pub unsafe fn pass1_1008_4d84(param_1: *mut u8, param_2: *mut astruct_90, mut param_3: u32) {
+pub fn pass1_1008_4d84(param_1: *mut u8, param_2: *mut astruct_90, mut param_3: u32) {
     let mut iVar1: i16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
@@ -589,7 +589,7 @@ pub unsafe fn pass1_1008_4d84(param_1: *mut u8, param_2: *mut astruct_90, mut pa
     return;
 }
 
-pub unsafe fn pass1_1008_5068(param_1: *mut astruct_76, param_2: *mut astruct_81) {
+pub fn pass1_1008_5068(param_1: *mut astruct_76, param_2: *mut astruct_81) {
     struct_op_1008_4214(param_1, param_2);
     return;
 }

@@ -113,7 +113,7 @@ use crate::winapp::winapp_b::{post_msg_1020_55b0, unk_win_msg_op_1008_9510};
 use crate::winapp::winapp_c::send_msg_1020_097e;
 use crate::windef16::{ATOM, BOOL16, HANDLE16, HCURSOR16, HDC16, HICON16, HMENU16, HWND16, LPARAM, LRESULT, MSG16, POINT16, RECT16, WINDOWPLACEMENT16, WNDCLASS16, WPARAM16};
 
-pub unsafe fn get_sys_metrics_1018_1ea0(param_1: *mut Struct19) {
+pub fn get_sys_metrics_1018_1ea0(param_1: *mut Struct19) {
     let mut IVar1: i16;
     let mut IVar2: i16;
     let mut iVar3: *mut Struct19;
@@ -130,7 +130,7 @@ pub unsafe fn get_sys_metrics_1018_1ea0(param_1: *mut Struct19) {
 }
 
 
-pub unsafe fn get_sys_metrics_1018_4b1e(
+pub fn get_sys_metrics_1018_4b1e(
     param_1: *mut Struct19,
     mut param_2: u16,
     mut param_3: u16,
@@ -155,7 +155,7 @@ pub unsafe fn get_sys_metrics_1018_4b1e(
 }
 
 
-pub unsafe fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut StructA) {
+pub fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut StructA) {
     let mut IVar1: i16;
     let mut iVar3: *mut astruct_40;
     let mut uVar3: u16;
@@ -191,7 +191,7 @@ pub unsafe fn get_sys_metrics_1020_7c1a(param_1: *mut astruct_40, param_2: *mut 
 }
 
 
-pub unsafe fn get_sys_metrics_1040_7728(param_1: *mut Struct57, mut param_2: u16, mut param_3: u32, mut param_4: u16, mut param_5: u16 )
+pub fn get_sys_metrics_1040_7728(param_1: *mut Struct57, mut param_2: u16, mut param_3: u32, mut param_4: u16, mut param_5: u16 )
 
 {
   let mut IVar1: i16;
@@ -236,7 +236,7 @@ pub unsafe fn get_sys_metrics_1040_7728(param_1: *mut Struct57, mut param_2: u16
   return;
 }
 
-pub unsafe fn get_sys_metrics_1010_46f6(mut param_1: u32, param_2: *mut Struct57) {
+pub fn get_sys_metrics_1010_46f6(mut param_1: u32, param_2: *mut Struct57) {
     let mut IVar1: i16;
     let mut IVar2: i16;
     let mut iVar3: i16;
@@ -284,7 +284,7 @@ pub unsafe fn get_sys_metrics_1010_46f6(mut param_1: u32, param_2: *mut Struct57
     return;
 }
 
-pub unsafe fn get_sys_metrics_1018_09a8(mut param_1: u16, mut param_2: u32) {
+pub fn get_sys_metrics_1018_09a8(mut param_1: u16, mut param_2: u32) {
     let mut uVar1: u32;
     let mut IVar2: i16;
     let mut IVar3: i16;
@@ -339,7 +339,7 @@ pub unsafe fn get_sys_metrics_1018_09a8(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn get_sys_metrics_1018_2f56(mut param_1: u32) {
+pub fn get_sys_metrics_1018_2f56(mut param_1: u32) {
     let mut IVar1: i16;
     let mut IVar2: i16;
     let mut in_EDX: *mut Struct57;

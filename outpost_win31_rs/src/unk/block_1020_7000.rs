@@ -4,7 +4,7 @@ use crate::draw_ops;
 use crate::draw_ops::draw_a;
 
 
-pub unsafe fn struct_1020_7554(
+pub fn struct_1020_7554(
     mut param_1: u16,
     param_2: *mut astruct_20,
     mut param_3: u16,
@@ -50,7 +50,7 @@ pub unsafe fn struct_1020_7554(
     return;
 }
 
-pub unsafe fn pass1_1020_75c4(param_1: *mut StructD) {
+pub fn pass1_1020_75c4(param_1: *mut StructD) {
     let mut iVar1: *mut StructD;
     let mut uVar1: u16;
 
@@ -68,7 +68,7 @@ pub unsafe fn pass1_1020_75c4(param_1: *mut StructD) {
 
 
 
-pub unsafe fn pass1_1020_7824(
+pub fn pass1_1020_7824(
     mut param_1: u16,
     param_2: *mut astruct_666,
     mut param_3: u16,
@@ -121,7 +121,7 @@ pub unsafe fn pass1_1020_7824(
     return;
 }
 
-pub unsafe fn pass1_1020_78ac(param_1: *mut u16) {
+pub fn pass1_1020_78ac(param_1: *mut u16) {
     let mut iVar1: i16;
     let mut uVar1: u16;
 
@@ -137,7 +137,7 @@ pub unsafe fn pass1_1020_78ac(param_1: *mut u16) {
 }
 
 
-pub unsafe fn struct_1020_790e(
+pub fn struct_1020_790e(
     param_1: *mut u16,
     param_2: *mut c_char,
     mut param_3: u16,
@@ -159,11 +159,11 @@ pub unsafe fn struct_1020_790e(
     return;
 }
 
-pub unsafe fn pass1_1020_79ae() -> u16 {
+pub fn pass1_1020_79ae() -> u16 {
     return 0x1;
 }
 
-pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut c_char) {
+pub fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut c_char) {
     let mut in_DX: u16;
 
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0xa)), param_3);
@@ -173,7 +173,7 @@ pub unsafe fn string_1020_79b4(mut param_1: u32, mut param_2: i16, param_3: *mut
     return;
 }
 
-pub unsafe fn pass1_1020_79e4(mut param_1: u32) {
+pub fn pass1_1020_79e4(mut param_1: u32) {
     let mut in_DX: u16;
 
     draw_a::draw_op_1020_7cc8(in_DX, (param_1 + 0xe8));

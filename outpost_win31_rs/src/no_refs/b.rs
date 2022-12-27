@@ -1,5 +1,5 @@
 
-pub unsafe fn window_op_1008_0af8(mut param_1: u16, struct_param_1: *mut StructA) {
+pub fn window_op_1008_0af8(mut param_1: u16, struct_param_1: *mut StructA) {
     let pSVar1: *mut StructA;
     let mut HVar2: HWND16;
     let mut uVar3: u32;
@@ -94,7 +94,7 @@ pub unsafe fn window_op_1008_0af8(mut param_1: u16, struct_param_1: *mut StructA
     return;
 }
 
-pub unsafe fn caseD_aa() {
+pub fn caseD_aa() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -103,7 +103,7 @@ pub unsafe fn caseD_aa() {
     return;
 }
 
-pub unsafe fn caseD_ac() {
+pub fn caseD_ac() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -112,7 +112,7 @@ pub unsafe fn caseD_ac() {
     return;
 }
 
-pub unsafe fn caseD_ad() {
+pub fn caseD_ad() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -121,7 +121,7 @@ pub unsafe fn caseD_ad() {
     return;
 }
 
-pub unsafe fn caseD_ae() {
+pub fn caseD_ae() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;
@@ -130,7 +130,7 @@ pub unsafe fn caseD_ae() {
     return;
 }
 
-pub unsafe fn caseD_b1() {
+pub fn caseD_b1() {
     let mut in_DX: u16;
     let mut unaff_BP: i16;
     let mut in_stack_0000ffee: u16;

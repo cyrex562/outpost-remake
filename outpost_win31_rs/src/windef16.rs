@@ -106,7 +106,7 @@ pub struct WINDOWPLACEMENT16 {
 pub struct WNDCLASS16 {
     // let mut style: u16;
     pub sytle: u16,
-    // pub unsafe fn * lpfn_wnd_proc;
+    // pub fn * lpfn_wnd_proc;
     pub lpfn_wnd_proc: fn(u16, u16, LPARAM, WPARAM16, u16, HWND16) -> LRESULT,
     // cb_cls_extra: INT16;
     pub cb_cls_extra: i16,

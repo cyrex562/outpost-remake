@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1010_9298(
+pub fn pass1_1010_9298(
     param_1: *mut StructD,
     param_2: *mut Struct19,
     mut param_3: u16,
@@ -19,7 +19,7 @@ pub unsafe fn pass1_1010_9298(
     return param_2;
 }
 
-pub unsafe fn struct_1010_95aa(param_1: *mut Struct19, mut param_2: u16) {
+pub fn struct_1010_95aa(param_1: *mut Struct19, mut param_2: u16) {
     struct_op_1010_1d48(param_1, param_2);
     (param_1 + 0xa) = 0;
     (param_1 + 0xe) = 0;
@@ -34,7 +34,7 @@ pub unsafe fn struct_1010_95aa(param_1: *mut Struct19, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn pass1_1010_9fee(
+pub fn pass1_1010_9fee(
     param_1: *mut StructD,
     param_2: *mut astruct_252,
     mut param_3: u16,

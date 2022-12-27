@@ -8,7 +8,7 @@ use crate::dos_interrupt::{dos3_call_1000_4f94, swi};
 use crate::structs::struct_825::Struct825;
 use crate::utils::{CARRY2, CONCAT22, SUB42};
 
-pub unsafe fn pass1_1000_5008(mut param_1: u16,
+pub fn pass1_1000_5008(mut param_1: u16,
                               mut param_2: u16,
                               mut param_3: u16 )
 {
@@ -22,7 +22,7 @@ pub unsafe fn pass1_1000_5008(mut param_1: u16,
 
 
 
-pub unsafe fn pass1_1000_5026(
+pub fn pass1_1000_5026(
     ctx: &mut AppContext, mut param_1: i16,
     mut param_2: u16,
     mut param_3: u16,
@@ -93,7 +93,7 @@ pub unsafe fn pass1_1000_5026(
 
 
 
-pub unsafe fn dos3_call_1000_514e() -> u16
+pub fn dos3_call_1000_514e() -> u16
 {
     // let mut pc_var1: *mut code;
     // let mut u_var2: u16;
@@ -115,7 +115,7 @@ pub unsafe fn dos3_call_1000_514e() -> u16
 
 
 
-pub unsafe fn dos3_call_1000_5174() -> u16
+pub fn dos3_call_1000_5174() -> u16
 {
     // let mut pc_var1: *mut code;
     // let mut u_var2: u16;
@@ -132,7 +132,7 @@ pub unsafe fn dos3_call_1000_5174() -> u16
     return u_var2 & 0xff;
 }
 
-pub unsafe fn dos3_call_1000_51aa(mut param_1: u16 ,
+pub fn dos3_call_1000_51aa(mut param_1: u16 ,
                         mut param_2: u16 ,
                         mut param_3: u16 ) -> u16
 {
@@ -155,7 +155,7 @@ pub unsafe fn dos3_call_1000_51aa(mut param_1: u16 ,
     return u_stack000a & 0xff;
 }
 
-pub unsafe fn pass1_1000_52be(mut param_1: u16 ,
+pub fn pass1_1000_52be(mut param_1: u16 ,
                     mut param_2: u16 ,
                     mut param_3: u16 ,
                     mut param_4: u16 ) -> u32
@@ -167,7 +167,7 @@ pub unsafe fn pass1_1000_52be(mut param_1: u16 ,
         |  ( ( param_1 *  param_3 >> 0x10) + param_2 * param_3 + param_1 * param_4) << 0x10;
 }
 
-pub unsafe fn pass1_1000_52f0(mut param_1: u16 ,
+pub fn pass1_1000_52f0(mut param_1: u16 ,
                     mut param_2: u16 ,
                     mut param_3: u16 ,
                     mut param_4: u16 ) -> u32
@@ -245,7 +245,7 @@ pub unsafe fn pass1_1000_52f0(mut param_1: u16 ,
                     iVar5);
 }
 
-pub unsafe fn pass1_1000_5390(mut param_1: u32,
+pub fn pass1_1000_5390(mut param_1: u32,
                               mut param_3: u16,
                               mut param_4: *mut u8) -> u32
 {
@@ -292,7 +292,7 @@ pub unsafe fn pass1_1000_5390(mut param_1: u32,
                     iVar4);
 }
 
-pub unsafe fn pass1_1000_545a(mut param_1: u32,
+pub fn pass1_1000_545a(mut param_1: u32,
                     mut param_2: u32) -> i16
 {
     let mut pbVar1: *mut u8;
@@ -327,7 +327,7 @@ pub unsafe fn pass1_1000_545a(mut param_1: u32,
     return   bVar4;
 }
 
-pub unsafe fn pass1_1000_54a0(mut param_1: u32,
+pub fn pass1_1000_54a0(mut param_1: u32,
                      mut param_2: u16 ,
                      mut param_3: u16 ) -> *mut u16
 {
@@ -386,7 +386,7 @@ pub unsafe fn pass1_1000_54a0(mut param_1: u32,
     }
     return  param_1;
 }
-pub unsafe fn pass1_1000_54e8(param_1: *mut u8,
+pub fn pass1_1000_54e8(param_1: *mut u8,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -413,7 +413,7 @@ pub fn pass1_1000_55b1(ctx: &mut AppContext, p1: *mut Struct825, p2: i16) -> u16
     todo!()
 }
 
-pub unsafe fn pass1_1000_5586(param_1: code,
+pub fn pass1_1000_5586(param_1: code,
                      mut param_2: u16 ,
                      mut param_3: i16,
                      mut param_4: i16,
@@ -428,12 +428,12 @@ pub unsafe fn pass1_1000_5586(param_1: code,
     }
 }
 
-pub unsafe fn ret_op_1000_55ac() -> u32
+pub fn ret_op_1000_55ac() -> u32
 {
     todo!()
 }
 
-pub unsafe fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
+pub fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
     todo!()
 }
 
@@ -442,7 +442,7 @@ pub unsafe fn exit_1000_25f2(a: i16, b: i16, c: i16, d: i16) {
 //                         0x1050,
 //                        0x0,
 //                         0x1050);
-pub unsafe fn dos_get_interrupt_vector_1000_23ea(a: *mut u8, b: u16, c: u16, d: u16) {
+pub fn dos_get_interrupt_vector_1000_23ea(a: *mut u8, b: u16, c: u16, d: u16) {
     todo!()
     //                              **************************************************************
     //                              *                          FUNCTION                          *

@@ -2,7 +2,7 @@ use crate::{draw_ops, program_lifecycle, winapp};
 use crate::draw_ops::draw_a;
 use crate::windef16::RECT16;
 
-pub unsafe fn pass1_1040_9252(param_1: *mut Struct65)
+pub fn pass1_1040_9252(param_1: *mut Struct65)
 
 {
   let mut piVar1: *mut i16;
@@ -42,7 +42,7 @@ pub unsafe fn pass1_1040_9252(param_1: *mut Struct65)
   return;
 }
 
-pub unsafe fn pass1_1040_9618(param_1: *mut Struct65)
+pub fn pass1_1040_9618(param_1: *mut Struct65)
 
 {
   let mut uVar1: u16;
@@ -60,7 +60,7 @@ pub unsafe fn pass1_1040_9618(param_1: *mut Struct65)
 }
 
 
-pub unsafe fn pass1_1040_97da(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1040_97da(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   winapp::mix_win_ui_op_1040_911e(param_1);
@@ -69,7 +69,7 @@ pub unsafe fn pass1_1040_97da(param_1: *mut StructD,param_2: u8) -> *mut StructD
   }
   return param_1;
 }
-pub unsafe fn pass1_1040_9824(param_1: u32)
+pub fn pass1_1040_9824(param_1: u32)
 
 {
   let mut iVar1: i16;

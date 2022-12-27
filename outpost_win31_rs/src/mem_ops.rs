@@ -6,16 +6,17 @@ use crate::globals::{DAT_1050_1050, u16_1050_0002};
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_7::Struct7;
 use crate::unk::{block_1000_1000, block_1000_2000};
+use crate::unk::block_1000_2000::pass1_1000_22c0;
 use crate::utils::{CARRY2, CONCAT22};
 use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16, SegmentLimit};
 use crate::windef16::HGLOBAL16;
 
 // dvar6 = mem_op_1000_1532(param_1, 0x1050);
-pub unsafe fn mem_op_1000_1532(a: *mut Struct7, b: u16) -> u32 {
+pub fn mem_op_1000_1532(a: *mut Struct7, b: u16) -> u32 {
     todo!()
 }
 
-pub unsafe fn alloc_mem_1000_131c(mut param_1: u16, mut param_2: u32) {
+pub fn alloc_mem_1000_131c(mut param_1: u16, mut param_2: u32) {
     let mut handle: HGLOBAL16;
     let mut b_var1: bool;
     let mut u_stack10 = 0u16;
@@ -66,7 +67,7 @@ pub unsafe fn alloc_mem_1000_131c(mut param_1: u16, mut param_2: u32) {
     return;
 }
 
-pub unsafe fn realloc_1000_1408(mut param_1: *mut u8, mut re_alloc_size: u16, mut param_3: *mut Struct7, selector: u16) {
+pub fn realloc_1000_1408(mut param_1: *mut u8, mut re_alloc_size: u16, mut param_3: *mut Struct7, selector: u16) {
     let mut handle: HGLOBAL16 = 0xffff;
     let mut realloc_flags: u16;
     let mut global_handle_2: HGLOBAL16;
@@ -107,7 +108,7 @@ pub unsafe fn realloc_1000_1408(mut param_1: *mut u8, mut re_alloc_size: u16, mu
     return;
 }
 
-pub unsafe fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 {
+pub fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 {
     let mut mem_size: u32;
 
     // get handle to global memory
@@ -121,7 +122,7 @@ pub unsafe fn get_mem_sz_1000_1532(param_1: *mut Struct7, selector: i16) -> u32 
 }
 
 
-pub unsafe fn free_blocks_1000_15ce(param_1: *mut u16, mut param_2: u16) {
+pub fn free_blocks_1000_15ce(param_1: *mut u16, mut param_2: u16) {
     let mut pu_var1: *mut u16;
     let mut u_var2: u16;
     let mut pu_var2: *mut u16;
@@ -141,12 +142,12 @@ pub unsafe fn free_blocks_1000_15ce(param_1: *mut u16, mut param_2: u16) {
 
 
 
-pub unsafe fn free_mem_1000_407a(mut param_1: u16, mut param_2: u16) {
+pub fn free_mem_1000_407a(mut param_1: u16, mut param_2: u16) {
     GlobalFree16(DAT_1050_1050);
     return;
 }
 
-pub unsafe fn free_mem_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) -> i32 {
+pub fn free_mem_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) -> i32 {
     let mut HVar1: HGLOBAL16;
     let mut uVar2: u16;
     let mut DVar3: u32;
@@ -160,7 +161,7 @@ pub unsafe fn free_mem_1000_13ce(mut param_1: *mut Struct7, mut param_2: u16) ->
     return uVar2 << 0x10;
 }
 
-pub unsafe fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
+pub fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
     let mut uVar1: u16;
     let mut uVar3: u32;
     let mut uStack12: u16;
@@ -192,7 +193,7 @@ pub unsafe fn mem_op_1000_1558(mut param_1: u16, mut param_2: u16) -> i32 {
 }
 
 
-pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
+pub fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
     let mut uVar1: u16;
     let mut in_EDX: u32;
     let mut uVar5: u16;
@@ -201,7 +202,7 @@ pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
     let mut uVar3: *mut astruct_827;
     let mut uVar4: u16;
     let mut count: u32;
-    // pub unsafe fn *dst;
+    // pub fn *dst;
     let mut paStack14: *mut astruct_76;
     let mut paVar2: *mut Struct57;
 
@@ -235,61 +236,61 @@ pub unsafe fn memcpy_op_1008_4274(mut param_1: u16, param_2: *mut astruct_826) {
     return;
 }
 
-pub unsafe fn mem_op_1000_1dfa(mut param_1: i16, param_2: u8, mut param_3: u16, mut param_4: u16) -> bool {
-    let mut uVar1: u32;
-    let mut uVar2: u16;
+pub fn mem_op_1000_1dfa(mut param_1: i16, param_2: u8, mut param_3: u16, mut param_4: u16) -> bool {
+    let mut u32_var1: u32;
+    let mut u32_var2: u16;
 
-    if ((param_2 & 0x4) == 0) {
-        uVar2 = (((-((param_2 & 0x2) == 0) >> 0x8) & 0xfe) + 0x92) << 0x8;
+    if (param_2 & 0x4) == 0 {
+        u32_var2 = (((-((param_2 & 0x2) == 0) >> 0x8) & 0xfe) + 0x92) << 0x8;
     } else {
-        uVar2 = 0x1800;
+        u32_var2 = 0x1800;
     }
-    if ((param_4 == 0)
+    if (param_4 == 0)
         || ((param_4 & 0xff00 & (((-((param_2 & 0x4) == 0) >> 0x8) & 0x82) + 0x18) << 0x8)
-            != uVar2))
+            != u32_var2)
     {
-        return 0x1;
+        return true;
     }
-    if (param_1 != 0) {
-        uVar1 = SegmentLimit(param_4);
-        if (CARRY2(param_3, param_1 - 1)) {
-            return 0x1;
+    if param_1 != 0 {
+        u32_var1 = SegmentLimit(param_4);
+        if CARRY2(param_3, param_1 - 1) {
+            return true;
         }
-        if (uVar1 < param_3 + (param_1 - 1)) {
-            return 0x1;
+        if u32_var1 < param_3 + (param_1 - 1) {
+            return true;
         }
     }
-    return 0x0;
+    return false;
 }
 
-pub unsafe fn pass1_1000_21d2(
+pub fn pass1_1000_21d2(
     param_1: u8,
     param_2: i32,
     mut param_3: u16,
     mut param_4: u16,
     param_5: u8,
-) -> u16 {
-    let mut uVar1: u32;
-    let mut BVar2: bool;
+) -> bool {
+    let mut u_var1: u32;
+    let mut bvar2: bool;
 
-    BVar2 = mem_op_1000_1dfa(0x0, param_1, param_3, param_4);
-    if (BVar2 == 0) {
-        if ((param_1 & 0x4) == 0) {
-            uVar1 = SegmentLimit(param_4);
-            if ((uVar1 >> 0x10) & 1) {
-                if (param_2 == 0) {
-                    return 0x1;
+    bvar2 = mem_op_1000_1dfa(0x0, param_1, param_3, param_4);
+    if bvar2 == false {
+        if (param_1 & 0x4) == 0 {
+            u_var1 = SegmentLimit(param_4);
+            if (u_var1 >> 0x10) & 1 {
+                if param_2 == 0 {
+                    return true;
                 }
-                if ((!CARRY4(param_3, param_2 - 1)) && (param_3 + (param_2 - 1) <= uVar1)) {
-                    return 0x1;
+                if (!CARRY4(param_3, param_2 - 1)) && (param_3 + (param_2 - 1) <= u_var1) {
+                    return true;
                 }
             }
         } else {
-            BVar2 = block_1000_2000::pass1_1000_22c0(param_2, _param_1, param_2, param_3, param_4);
-            if (BVar2 != 0) {
-                return 0x1;
+            bvar2 = pass1_1000_22c0(param_2, _param_1, param_2, param_3, param_4);
+            if bvar2 != false {
+                return true;
             }
         }
     }
-    return 0x0;
+    return false;
 }

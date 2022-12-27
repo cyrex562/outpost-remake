@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1038_a80c(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_a80c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_a6c8(param_1);
@@ -9,7 +9,7 @@ pub unsafe fn pass1_1038_a80c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_a8cc(param_1);
@@ -20,7 +20,7 @@ pub unsafe fn pass1_1038_aaf0(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_abb0(param_1);
@@ -31,7 +31,7 @@ pub unsafe fn pass1_1038_ad4c(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn pass1_1038_ae28(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_ae28(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_ae08(param_1);
@@ -42,7 +42,7 @@ pub unsafe fn pass1_1038_ae28(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn pass1_1038_be76(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1038_be76(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_register_0000000a: u16;
@@ -65,7 +65,7 @@ pub unsafe fn pass1_1038_be76(param_1: *mut u8,mut param_2: u16 ,mut param_3: u3
 }
 
 
-pub unsafe fn pass1_1038_c410(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_c410(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_be4a(param_1);
@@ -76,7 +76,7 @@ pub unsafe fn pass1_1038_c410(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn pass1_1038_c52a(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1038_c52a(param_1: *mut u8,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut in_register_0000000a: u16;
@@ -99,7 +99,7 @@ pub unsafe fn pass1_1038_c52a(param_1: *mut u8,mut param_2: u16 ,mut param_3: u3
 }
 
 
-pub unsafe fn show_win_1038_c558(struct_b_param_1: *mut StructB)
+pub fn show_win_1038_c558(struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u16;
@@ -113,7 +113,7 @@ pub unsafe fn show_win_1038_c558(struct_b_param_1: *mut StructB)
 }
 
 
-pub unsafe fn pass1_1038_c726(StructD_32: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_c726(StructD_32: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_c4fe(StructD_32);
@@ -123,13 +123,13 @@ pub unsafe fn pass1_1038_c726(StructD_32: *mut StructD,param_2: u8) -> *mut Stru
   return StructD_32;
 }
 
-pub unsafe fn FUN_1038_ca42()
+pub fn FUN_1038_ca42()
 
 {
   return;
 }
 
-pub unsafe fn pass1_1038_ca46(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_ca46(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_c80a(param_1);
@@ -140,7 +140,7 @@ pub unsafe fn pass1_1038_ca46(param_1: *mut StructD,param_2: u8) -> *mut StructD
 }
 
 
-pub unsafe fn destroy_window_1038_cc00(param_1: *mut StructC,mut param_2: u16 ,mut param_3: u32,param_4: *mut u8)
+pub fn destroy_window_1038_cc00(param_1: *mut StructC,mut param_2: u16 ,mut param_3: u32,param_4: *mut u8)
 
 {
   let mut uVar1: u16;
@@ -185,7 +185,7 @@ pub unsafe fn destroy_window_1038_cc00(param_1: *mut StructC,mut param_2: u16 ,m
 }
 
 
-pub unsafe fn pass1_1038_cc74(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_cc74(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_cb30(param_1);
@@ -195,13 +195,13 @@ pub unsafe fn pass1_1038_cc74(param_1: *mut StructD,param_2: u8) -> *mut StructD
   return param_1;
 }
 
-pub unsafe fn FUN_1038_ced6()
+pub fn FUN_1038_ced6()
 
 {
   return;
 }
 
-pub unsafe fn pass1_1038_ceda(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_ceda(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   pass1_1038_cd5c(param_1);
@@ -211,7 +211,7 @@ pub unsafe fn pass1_1038_ceda(param_1: *mut StructD,param_2: u8) -> *mut StructD
   return param_1;
 }
 
-pub unsafe fn pass1_1038_d218(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1038_d218(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   free_proc_inst_1038_cfda(param_1);

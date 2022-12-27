@@ -36,7 +36,7 @@ use crate::winapi16::{CheckDlgButton16, CheckRadioButton16, DestroyWindow16, Ena
 use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::windef16::{HWND16, LRESULT, WPARAM16};
 
-pub unsafe fn win_sys_op_1038_a9fa(mut param_1: u32, mut param_2: i16)
+pub fn win_sys_op_1038_a9fa(mut param_1: u32, mut param_2: i16)
 
 {
   let mut hwnd: u16;
@@ -87,7 +87,7 @@ pub unsafe fn win_sys_op_1038_a9fa(mut param_1: u32, mut param_2: i16)
   return;
 }
 
-pub unsafe fn win_ui_op_1008_8214(
+pub fn win_ui_op_1008_8214(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -127,7 +127,7 @@ pub unsafe fn win_ui_op_1008_8214(
     return 0x1;
 }
 
-pub unsafe fn send_dlg_item_msg_1038_8d22(mut param_1: u32, param_2: u8)
+pub fn send_dlg_item_msg_1038_8d22(mut param_1: u32, param_2: u8)
 
 {
   let mut iVar1: i16;
@@ -150,7 +150,7 @@ pub unsafe fn send_dlg_item_msg_1038_8d22(mut param_1: u32, param_2: u8)
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_87b2(mut param_1: u16, param_2: *mut Struct903) -> u16
+pub fn send_dlg_item_msg_1038_87b2(mut param_1: u16, param_2: *mut Struct903) -> u16
 
 {
   let mut uVar1: u16;
@@ -173,7 +173,7 @@ pub unsafe fn send_dlg_item_msg_1038_87b2(mut param_1: u16, param_2: *mut Struct
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_8618s(mut param_1: u16, param_2: *mut Struct903) -> u16
+pub fn send_dlg_item_msg_1038_8618s(mut param_1: u16, param_2: *mut Struct903) -> u16
 
 {
   let mut in_AX: i16;
@@ -228,7 +228,7 @@ pub unsafe fn send_dlg_item_msg_1038_8618s(mut param_1: u16, param_2: *mut Struc
   return uVar1;
 }
 
-pub unsafe fn send_dlg_item_msg_1038_8400(mut param_1: u16, mut param_2: u16, mut param_3: u32, mut param_4: u16 )
+pub fn send_dlg_item_msg_1038_8400(mut param_1: u16, mut param_2: u16, mut param_3: u32, mut param_4: u16 )
 
 {
   let mut lVar1: i32;
@@ -243,7 +243,7 @@ pub unsafe fn send_dlg_item_msg_1038_8400(mut param_1: u16, mut param_2: u16, mu
   return;
 }
 
-pub unsafe fn send_dlg_item_msg_1038_8164(mut param_1: u16, mut param_2: u16, param_3: *mut u8, mut param_4: u16 ) -> u16
+pub fn send_dlg_item_msg_1038_8164(mut param_1: u16, mut param_2: u16, param_3: *mut u8, mut param_4: u16 ) -> u16
 
 {
   let mut LVar1: LRESULT;
@@ -258,7 +258,7 @@ pub unsafe fn send_dlg_item_msg_1038_8164(mut param_1: u16, mut param_2: u16, pa
   return 0x0;
 }
 
-pub unsafe fn send_dlg_item_msg_1038_7fae(mut param_1: u16, mut param_2: u16, mut param_3: u32)
+pub fn send_dlg_item_msg_1038_7fae(mut param_1: u16, mut param_2: u16, mut param_3: u32)
 
 {
   let mut iVar1: i16;
@@ -276,7 +276,7 @@ pub unsafe fn send_dlg_item_msg_1038_7fae(mut param_1: u16, mut param_2: u16, mu
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut Struct903) -> LRESULT
+pub fn send_dlg_item_msg_1038_7eac(param_1: *mut Struct903) -> LRESULT
 
 {
   let mut in_EDX: *mut Struct57;
@@ -312,7 +312,7 @@ pub unsafe fn send_dlg_item_msg_1038_7eac(param_1: *mut Struct903) -> LRESULT
 }
 
 
-pub unsafe fn unk_win_ui_op_1040_19ea(param_1: *mut astruct_32, mut param_2: i16, param_3: *mut u8)
+pub fn unk_win_ui_op_1040_19ea(param_1: *mut astruct_32, mut param_2: i16, param_3: *mut u8)
 
 {
     let mut pSVar1: *mut StructD;
@@ -347,7 +347,7 @@ pub unsafe fn unk_win_ui_op_1040_19ea(param_1: *mut astruct_32, mut param_2: i16
 }
 
 
-pub unsafe fn chk_is_dlg_btn_checked_1038_e7a0(param_1: *mut astruct_62, mut param_2: i16)
+pub fn chk_is_dlg_btn_checked_1038_e7a0(param_1: *mut astruct_62, mut param_2: i16)
 
 {
     let mut uVar1: u32;
@@ -416,7 +416,7 @@ pub unsafe fn chk_is_dlg_btn_checked_1038_e7a0(param_1: *mut astruct_62, mut par
     return;
 }
 
-pub unsafe fn check_dialog_btn_1040_1b8a(param_1: *mut StructC)
+pub fn check_dialog_btn_1040_1b8a(param_1: *mut StructC)
 
 {
   let mut check: u16;
@@ -439,7 +439,7 @@ pub unsafe fn check_dialog_btn_1040_1b8a(param_1: *mut StructC)
   return;
 }
 
-pub unsafe fn check_dlg_btn_checked_1038_cdd6(param_1: *mut astruct_61, mut param_2: i16)
+pub fn check_dlg_btn_checked_1038_cdd6(param_1: *mut astruct_61, mut param_2: i16)
 
 {
   let mut uVar1: u32;
@@ -500,7 +500,7 @@ pub unsafe fn check_dlg_btn_checked_1038_cdd6(param_1: *mut astruct_61, mut para
 }
 
 
-pub unsafe fn check_dialog_btn_1040_1afe(param_1: *mut StructB)
+pub fn check_dialog_btn_1040_1afe(param_1: *mut StructB)
 
 {
   let mut check: u16;
@@ -527,7 +527,7 @@ pub unsafe fn check_dialog_btn_1040_1afe(param_1: *mut StructB)
   return;
 }
 
-pub unsafe fn win_dlg_item_1040_2d48(mut param_1: u32)
+pub fn win_dlg_item_1040_2d48(mut param_1: u32)
 
 {
     let mut UVar1: u16;
@@ -544,7 +544,7 @@ pub unsafe fn win_dlg_item_1040_2d48(mut param_1: u32)
     return;
 }
 
-pub unsafe fn unk_win_ui_op_1040_3c64(mut param_1: u16, struct_c_param_1: *mut StructC, struct_c_param_2: *mut StructC, mut param_4: u16, mut param_5: u32)
+pub fn unk_win_ui_op_1040_3c64(mut param_1: u16, struct_c_param_1: *mut StructC, struct_c_param_2: *mut StructC, mut param_4: u16, mut param_5: u32)
 
 {
     let mut UVar1: u16;
@@ -593,7 +593,7 @@ pub unsafe fn unk_win_ui_op_1040_3c64(mut param_1: u16, struct_c_param_1: *mut S
 }
 
 
-pub unsafe fn win_dlg_op_1038_9294(mut param_1: u16, param_2: *mut StructB)
+pub fn win_dlg_op_1038_9294(mut param_1: u16, param_2: *mut StructB)
 
 {
   let mut UVar1: u16;
@@ -614,7 +614,7 @@ pub unsafe fn win_dlg_op_1038_9294(mut param_1: u16, param_2: *mut StructB)
 }
 
 
-pub unsafe fn unk_win_ui_op_1038_9820(param_1: *mut StructB, mut param_2: i16, mut param_3: i16, mut param_4: i16) -> i32
+pub fn unk_win_ui_op_1038_9820(param_1: *mut StructB, mut param_2: i16, mut param_3: i16, mut param_4: i16) -> i32
 
 {
   let mut puVar1: *mut u16;
@@ -648,7 +648,7 @@ pub unsafe fn unk_win_ui_op_1038_9820(param_1: *mut StructB, mut param_2: i16, m
 }
 
 
-pub unsafe fn pass1_1038_8966(mut param_1: u32, mut param_2: u16, mut param_3: u16, mut param_4: i16, mut param_5: u16 ) -> u16
+pub fn pass1_1038_8966(mut param_1: u32, mut param_2: u16, mut param_3: u16, mut param_4: i16, mut param_5: u16 ) -> u16
 
 {
   let mut piVar1: *mut i16;
@@ -683,7 +683,7 @@ pub unsafe fn pass1_1038_8966(mut param_1: u32, mut param_2: u16, mut param_3: u
   return 0x0;
 }
 
-pub unsafe fn send_dlg_item_msg_1040_3f12(struct_c_param_1: *mut StructC, struct_c_param_2: *mut StructC, mut param_3: u32)
+pub fn send_dlg_item_msg_1040_3f12(struct_c_param_1: *mut StructC, struct_c_param_2: *mut StructC, mut param_3: u32)
 
 {
   let mut puVar1: *mut u8;
@@ -708,7 +708,7 @@ pub unsafe fn send_dlg_item_msg_1040_3f12(struct_c_param_1: *mut StructC, struct
   return;
 }
 
-pub unsafe fn win_ui_dlg_op_1038_98b4(param_1: *mut StructB)
+pub fn win_ui_dlg_op_1038_98b4(param_1: *mut StructB)
 
 {
   let mut UVar1: u16;
@@ -738,7 +738,7 @@ pub unsafe fn win_ui_dlg_op_1038_98b4(param_1: *mut StructB)
   return;
 }
 
-pub unsafe fn dialog_item_ui_op_1040_3e08(struct_c_param_1: *mut StructC)
+pub fn dialog_item_ui_op_1040_3e08(struct_c_param_1: *mut StructC)
 
 {
   let mut uVar1: u16;
@@ -782,7 +782,7 @@ pub unsafe fn dialog_item_ui_op_1040_3e08(struct_c_param_1: *mut StructC)
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_8b58(param_1: *mut Struct903)
+pub fn send_dlg_item_msg_1038_8b58(param_1: *mut Struct903)
 
 {
   let mut uVar1: u32;
@@ -823,7 +823,7 @@ pub unsafe fn send_dlg_item_msg_1038_8b58(param_1: *mut Struct903)
 }
 
 
-pub unsafe fn pass1_1040_b45e(mut param_1: u32)
+pub fn pass1_1040_b45e(mut param_1: u32)
 
 {
   let mut uVar1: u32;
@@ -855,7 +855,7 @@ pub unsafe fn pass1_1040_b45e(mut param_1: u32)
 }
 
 
-pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16, mut param_2: u32)
+pub fn win_ui_op_1040_ae04(mut param_1: u16, mut param_2: u32)
 
 {
   let mut iVar1: i16;
@@ -930,7 +930,7 @@ pub unsafe fn win_ui_op_1040_ae04(mut param_1: u16, mut param_2: u32)
 }
 
 
-pub unsafe fn enable_window_1038_9cec(param_1: *mut u8, param_2: *mut Struct903, mut param_3: u16, mut param_4: u16, mut param_5: i16)
+pub fn enable_window_1038_9cec(param_1: *mut u8, param_2: *mut Struct903, mut param_3: u16, mut param_4: u16, mut param_5: i16)
 
 {
   let mut piVar1: *mut i16;

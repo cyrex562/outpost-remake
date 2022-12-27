@@ -1,5 +1,5 @@
 
-pub unsafe fn struct_1040_b082(param_1: *mut Struct57,mut param_2: u32)
+pub fn struct_1040_b082(param_1: *mut Struct57,mut param_2: u32)
 
 {
   let mut iVar1: *mut Struct57;
@@ -14,7 +14,7 @@ pub unsafe fn struct_1040_b082(param_1: *mut Struct57,mut param_2: u32)
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   return;
 }
-pub unsafe fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_3: u32)
+pub fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_3: u32)
 
 {
   let mut iVar1: *mut Struct57;
@@ -31,7 +31,7 @@ pub unsafe fn pass1_1040_b0bc(param_1: *mut Struct57,mut param_2: u32,mut param_
 }
 
 
-pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16) -> u16
+pub fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u16 ,mut param_5: i16) -> u16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -53,7 +53,7 @@ pub unsafe fn pass1_1040_b316(param_1: u32,mut param_2: u16 ,mut param_3: u16 ,m
 }
 
 
-pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
+pub fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param_3: u16 ,mut param_4: u32)
 
 {
   let mut pSVar1: *mut StructD;
@@ -197,7 +197,7 @@ pub unsafe fn pass1_1040_b54a(param_1: *mut u8,param_2: *mut Struct903,mut param
 }
 
 
-pub unsafe fn pass1_1040_b7ee(param_1: *mut Struct57,param_2: i32,mut param_3: u16 )
+pub fn pass1_1040_b7ee(param_1: *mut Struct57,param_2: i32,mut param_3: u16 )
 
 {
   let mut iVar1: *mut Struct57;
@@ -234,7 +234,7 @@ pub unsafe fn pass1_1040_b7ee(param_1: *mut Struct57,param_2: i32,mut param_3: u
 
 
 
-pub unsafe fn struct_1040_bf3e(param_1: *mut astruct_442,mut param_2: u16 ) -> *mut u16
+pub fn struct_1040_bf3e(param_1: *mut astruct_442,mut param_2: u16 ) -> *mut u16
 
 {
   let mut iVar1: *mut astruct_442;
@@ -254,7 +254,7 @@ pub unsafe fn struct_1040_bf3e(param_1: *mut astruct_442,mut param_2: u16 ) -> *
   iVar1.field1_0x2 = &PTR_LOOP_1050_1040;
   return &param_1.field0_0x0;
 }
-pub unsafe fn pass1_1040_bf92(param_1: *mut StructD)
+pub fn pass1_1040_bf92(param_1: *mut StructD)
 
 {
   let mut iVar1: *mut StructD;
@@ -272,7 +272,7 @@ pub unsafe fn pass1_1040_bf92(param_1: *mut StructD)
   iVar1.address_offset_field_0x2 = 0x1008;
   return;
 }
-pub unsafe fn pass1_1040_bfde(param_1: *mut c_void,param_2: *mut u32)
+pub fn pass1_1040_bfde(param_1: *mut c_void,param_2: *mut u32)
 
 {
   let mut ppcVar1: *mut *mut code;

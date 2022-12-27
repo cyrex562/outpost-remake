@@ -68,7 +68,7 @@ use crate::unk::block_1020_1000::{pass1_1020_1da8, pass1_1020_1eea};
 use crate::winapi16::{CallWindowProc16, DestroyWindow16, DispatchMessage16, FatalAppExit16, FatalExit, GetClientRect16, GetDC16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetModuleFileName16, GetProp16, GetVersion16, GetWindowRect16, GetWindowText16, InitApp16, InitTask16, IsDialogMessage16, IsWindow16, LockSegment16, MakeProcInstance16, MessageBeep16, MessageBox16, PostMessage16, PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, TranslateAccelerator16, TranslateMessage16, WaitEvent16, WinHelp16};
 use crate::windef16::{HANDLE16, HCURSOR16, HDC16, HWND16, LPARAM, LRESULT, MSG16, POINT16, RECT16, WPARAM16};
 
-pub unsafe fn pass1_1000_29dc(mut param_1: u16) -> u16 {
+pub fn pass1_1000_29dc(mut param_1: u16) -> u16 {
     if ___EXPORTEDSTUB != 0xb8 {
         return DAT_1050_1050;
     }
@@ -76,13 +76,13 @@ pub unsafe fn pass1_1000_29dc(mut param_1: u16) -> u16 {
 }
 
 
-pub unsafe fn fatal_app_exit_1000_3e9e() {
+pub fn fatal_app_exit_1000_3e9e() {
     FatalAppExit16(0x0, s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
     return;
 }
 
 
-pub unsafe fn pass1_1000_25d2(
+pub fn pass1_1000_25d2(
     mut param_1: i16,
     mut param_2: i16,
     fn_ptr_param_3: code2,
@@ -160,7 +160,7 @@ pub unsafe fn pass1_1000_25d2(
     }
 }
 
-pub unsafe fn enum_child_windows_1010_01be() {
+pub fn enum_child_windows_1010_01be() {
     if (PTR_LOOP_1050_0010.is_null()) {
         let func = MakeProcInstance16(HINSTANCE16_1050_038c, window::win_ui_op_1010_0240);
         EnumChildWindows1(0x0, func, func);
@@ -170,12 +170,12 @@ pub unsafe fn enum_child_windows_1010_01be() {
 }
 
 
-pub unsafe fn make_proc_inst_1038_cf6c(param_1: *mut u8, param_2: *mut astruct_831)
+pub fn make_proc_inst_1038_cf6c(param_1: *mut u8, param_2: *mut astruct_831)
 
 {
   let mut iVar1: *mut astruct_831;
   let mut uVar1: u16;
-// pub unsafe fn *pvVar1;
+// pub fn *pvVar1;
 
   uVar1 = (param_2 >> 0x10);
   iVar1 = param_2;
@@ -195,7 +195,7 @@ pub unsafe fn make_proc_inst_1038_cf6c(param_1: *mut u8, param_2: *mut astruct_8
   return;
 }
 
-pub unsafe fn mixed_ui_op_1020_179c(
+pub fn mixed_ui_op_1020_179c(
     mut param_1: u16,
     mut param_2: u16,
     structb_param_1: *mut StructB,
@@ -253,7 +253,7 @@ pub unsafe fn mixed_ui_op_1020_179c(
     let mut HStack70: HWND16;
     let mut uStack68: u32;
     let mut uStack64: u32;
-    // pub unsafe fn *pvStack60;
+    // pub fn *pvStack60;
     let mut uStack56: u16;
     let mut ppcStack54: *mut *mut c_char;
     let mut uStack50: u32;
@@ -464,7 +464,7 @@ pub unsafe fn mixed_ui_op_1020_179c(
 }
 
 
-pub unsafe fn mixed_struct_op_1040_8fb8
+pub fn mixed_struct_op_1040_8fb8
                (mut param_1: u32,param_2: *mut Struct65,mut param_3: u16 ,param_4: *mut c_char,mut param_5: u16 ,mut param_6: u16 ,mut param_7: u16 ,
                mut param_8: u16 ,mut param_9: u16 ,mut param_10: u16 )
 
@@ -542,7 +542,7 @@ pub unsafe fn mixed_struct_op_1040_8fb8
 }
 
 
-pub unsafe fn make_proc_inst_1040_a234(param_1: *mut u8, param_2: *mut u8, mut param_3: u16, mut param_4: u32)
+pub fn make_proc_inst_1040_a234(param_1: *mut u8, param_2: *mut u8, mut param_3: u16, mut param_4: u32)
 
 {
   block_1040_a000::pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
@@ -559,7 +559,7 @@ pub unsafe fn make_proc_inst_1040_a234(param_1: *mut u8, param_2: *mut u8, mut p
 }
 
 
-pub unsafe fn free_proc_inst_1038_cfda(param_1: *mut StructD)
+pub fn free_proc_inst_1038_cfda(param_1: *mut StructD)
 
 {
   let mut iVar1: *mut StructD;
@@ -578,7 +578,7 @@ pub unsafe fn free_proc_inst_1038_cfda(param_1: *mut StructD)
 }
 
 
-pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
+pub fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
 
 {
   let mut puVar3: *mut u32;
@@ -633,7 +633,7 @@ pub unsafe fn mix_win_ui_op_1040_911e(param_1: *mut StructD)
 }
 
 
-pub unsafe fn free_proc_inst_1040_a294(param_1: *mut StructD)
+pub fn free_proc_inst_1040_a294(param_1: *mut StructD)
 
 {
   let mut in_stack_0000ffde: u16;
@@ -650,7 +650,7 @@ pub unsafe fn free_proc_inst_1040_a294(param_1: *mut StructD)
 }
 
 
-pub unsafe fn mixed_win_op_1008_0c60(
+pub fn mixed_win_op_1008_0c60(
     mut param_1: u16,
     param_2: *mut StructD,
     mut param_3: u16,

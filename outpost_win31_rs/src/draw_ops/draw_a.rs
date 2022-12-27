@@ -4,56 +4,57 @@ use crate::draw_ops::draw_e;
 use crate::structs::struct_57::Struct57;
 use crate::unk::block_1000_1000::mem_op_1000_179c;
 use crate::unk::block_1000_3000::str_op_1000_3da4;
+use crate::unk::block_1008_3000::pass1_1008_3e94;
 use crate::unk::block_1008_4000;
 use crate::unk::block_1008_4000::{pass1_1008_4772, pass1_1008_4d72};
+use crate::unk::block_1010_2000::pass1_1010_2b66;
 use crate::unk::block_1010_8000::FUN_1010_830a;
 use crate::utils::{CONCAT11, CONCAT22};
 use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, GetStockObject16, InvalidateRect16, RealizePalette16, SelectObject16, SelectPalette16, SetBkColor16, SetTextColor16, TextOut16};
 use crate::winapp::winapp_b;
 use crate::windef16::{COLORREF, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, RECT16};
 
-pub unsafe fn invalidate_rect_1018_edd8(mut param_1: u32, mut param_2: i16) {
-    let mut iVar1: i16;
-    let mut uVar2: u16;
-    let mut uVar3: u32;
-    let mut local_16: RECT16;
-    let mut iStack18: i16;
-    let mut iStack16: i16;
-    let mut uStack14: u32;
-    let mut uStack10: u16;
-    let mut uStack8: u16;
-    let mut local_6: i16;
-    let mut local_4: i16;
+pub fn invalidate_rect_1018_edd8(mut param_1: u32, mut param_2: i16) {
+    let mut var1: i16;
+    let mut var2: u16;
+    let mut var3: u32;
+    let mut rect_var16: RECT16;
+    let mut var18: i16;
+    let mut var16: i16;
+    let mut var14: u32;
+    let mut var10: u16;
+    let mut var8: u16;
+    let mut var6: i16;
+    let mut var4: i16;
 
-    iVar1 = param_1;
-    uVar2 = (param_1 >> 0x10);
-    if (param_2 == 1) {
-        (iVar1 + 0x14) = 0;
+    var1 = param_1;
+    if param_2 == 1 {
+        (var1 + 0x14) = 0;
         return;
     }
-    if (param_2 != 0xc) {
+    if param_2 != 0xc {
         return;
     }
+
     pass1_1008_3e94(
-        (param_1 & 0xffff0000 | (iVar1 + 0x18)),
-        CONCAT22(0x1050, &local_6),
-        CONCAT22(0x1050, &local_4),
+        (var1 + 0x18),
+        var6,
+        var4,
     );
-    uVar3 = pass1_1010_2b66((iVar1 + 0x14));
-    uStack8 = (uVar3 >> 0x10);
-    uStack10 = uVar3;
-    uStack14 = pass1_1008_4772((uVar3 & 0xffff | uStack8 << 0x10));
-    uVar2 = (uStack14 >> 0x10);
-    local_16.x = local_4;
-    local_16.y = local_6;
-    iStack18 = local_4 + (uStack14 + 0x4);
-    iStack16 = local_6 + (uStack14 + 0x8);
-    InvalidateRect16(0x0, &local_16, 0x1050);
+
+    var3 = pass1_1010_2b66((var1 + 0x14));
+    var10 = var3;
+    var14 = pass1_1008_4772(var3);
+    rect_var16.x = var4;
+    rect_var16.y = var6;
+    var18 = var4 + (var14 + 0x4);
+    var16 = var6 + (var14 + 0x8);
+    InvalidateRect16(false, &mut rect_var16, 0);
     return;
 }
 
-pub unsafe fn invalidate_rect_1020_3080(mut param_1: u32, mut param_2: i16) {
-    if (param_2 == 1) {
+pub fn invalidate_rect_1020_3080(mut param_1: u32, mut param_2: i16) {
+    if param_2 == 1 {
         (param_1 + 0x14) = 0;
         return;
     }
@@ -64,7 +65,7 @@ pub unsafe fn invalidate_rect_1020_3080(mut param_1: u32, mut param_2: i16) {
     return;
 }
 
-pub unsafe fn invalidate_rect_1020_8fb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
+pub fn invalidate_rect_1020_8fb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
     let mut uVar1: u32;
     let mut rect: *mut RECT16;
     let mut uVar2: u32;
@@ -101,7 +102,7 @@ pub unsafe fn invalidate_rect_1020_8fb4(mut param_1: u16, mut param_2: u16, mut 
     return;
 }
 
-pub unsafe fn unk_draw_op_1008_80ee(param_1: *mut astruct_23) -> *mut astruct_23 {
+pub fn unk_draw_op_1008_80ee(param_1: *mut astruct_23) -> *mut astruct_23 {
     let mut HVar1: HCURSOR16;
     let mut HVar2: HGDIOBJ16;
     let mut iVar3: *mut astruct_23;
@@ -130,7 +131,7 @@ pub unsafe fn unk_draw_op_1008_80ee(param_1: *mut astruct_23) -> *mut astruct_23
 }
 
 
-pub unsafe fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16, mut param_3: u32) {
+pub fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16, mut param_3: u32) {
     let mut uVar1: u16;
     let mut paVar2: *mut Struct57;
     let mut iVar3: *mut astruct_53;
@@ -257,7 +258,7 @@ pub unsafe fn set_sys_color_1008_357e(param_1: *mut astruct_53, mut param_2: i16
     return;
 }
 
-pub unsafe fn palette_op_1008_46e4(
+pub fn palette_op_1008_46e4(
     mut param_1: u16,
     mut param_2: u16,
     param_3: *mut astruct_76,
@@ -299,7 +300,7 @@ pub unsafe fn palette_op_1008_46e4(
     return struct_var3.field2_0x4;
 }
 
-pub unsafe fn palette_op_1008_4e08(
+pub fn palette_op_1008_4e08(
     hpal_param_2: HPALETTE16,
     mut param_2: u16,
     param_3: *mut astruct_13,
@@ -314,7 +315,7 @@ pub unsafe fn palette_op_1008_4e08(
     return hdc_1;
 }
 
-pub unsafe fn realize_palette_1020_8128(mut param_1: u32, mut param_2: i16) {
+pub fn realize_palette_1020_8128(mut param_1: u32, mut param_2: i16) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u32;
     let mut puVar3: *mut u8;
@@ -361,7 +362,7 @@ pub unsafe fn realize_palette_1020_8128(mut param_1: u32, mut param_2: i16) {
     return;
 }
 
-pub unsafe fn invalidate_rect_1020_735a(mut param_1: u32) {
+pub fn invalidate_rect_1020_735a(mut param_1: u32) {
     let mut uVar1: u32;
 
     uVar1 = (param_1 + 0x1c);
@@ -369,7 +370,7 @@ pub unsafe fn invalidate_rect_1020_735a(mut param_1: u32) {
     return;
 }
 
-pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE) {
+pub fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE) {
     let mut y_00: i16;
     let mut str46_len: i16;
     let mut x: i16;
@@ -489,7 +490,7 @@ pub unsafe fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE
 }
 
 
-pub unsafe fn unk_draw_op_1020_7f7a(
+pub fn unk_draw_op_1020_7f7a(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -566,7 +567,7 @@ pub unsafe fn unk_draw_op_1020_7f7a(
 }
 
 
-pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
+pub fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
 
 {
   let mut is_iconic: bool;
@@ -673,7 +674,7 @@ pub unsafe fn draw_op_1040_7bb2(in_struct_1: *mut astruct_14)
 }
 
 
-pub unsafe fn set_text_bk_color_1040_7e5e(param_1: u32, mut param_2: u16, mut param_3: u16, param_4: HDC16) -> u32
+pub fn set_text_bk_color_1040_7e5e(param_1: u32, mut param_2: u16, mut param_3: u16, param_4: HDC16) -> u32
 
 {
   let mut HVar1: HGDIOBJ16;
@@ -724,7 +725,7 @@ pub unsafe fn set_text_bk_color_1040_7e5e(param_1: u32, mut param_2: u16, mut pa
 }
 
 
-pub unsafe fn file_and_draw_op_1008_4f20(
+pub fn file_and_draw_op_1008_4f20(
     param_1: *mut Struct57,
     param_2: *mut astruct_76,
     mut param_3: u32,
@@ -809,7 +810,7 @@ pub unsafe fn file_and_draw_op_1008_4f20(
 }
 
 
-pub unsafe fn draw_text_1018_c742(
+pub fn draw_text_1018_c742(
     mut param_1: u16,
     struct36_param_1: *mut astruct_36,
     hdc_2: HDC16,
@@ -876,7 +877,7 @@ pub unsafe fn draw_text_1018_c742(
 }
 
 
-pub unsafe fn draw_text_1040_94fc(struct_param_1: *mut Struct37, hdc_param_2: HDC16)
+pub fn draw_text_1040_94fc(struct_param_1: *mut Struct37, hdc_param_2: HDC16)
 
 {
    let mut struct_1: *mut Struct37;
@@ -898,7 +899,7 @@ pub unsafe fn draw_text_1040_94fc(struct_param_1: *mut Struct37, hdc_param_2: HD
   return;
 }
 
-pub unsafe fn draw_text_1040_9650(param_1: *mut Struct65)
+pub fn draw_text_1040_9650(param_1: *mut Struct65)
 
 {
   let mut hdc: HDC16;
@@ -910,7 +911,7 @@ pub unsafe fn draw_text_1040_9650(param_1: *mut Struct65)
   return;
 }
 
-pub unsafe fn draw_op_1040_9948(mut param_1: u16, param_2: *mut astruct_71)
+pub fn draw_op_1040_9948(mut param_1: u16, param_2: *mut astruct_71)
 
 {
   let mut hdc16_dev_ctx_1: HDC16;

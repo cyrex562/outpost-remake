@@ -1,6 +1,6 @@
 
 
-pub unsafe fn pass1_1028_90e6(param_1: *mut astruct_97, mut param_2: u16) -> *mut astruct_97 {
+pub fn pass1_1028_90e6(param_1: *mut astruct_97, mut param_2: u16) -> *mut astruct_97 {
     let mut uVar1: u16;
 
     struct_op_1028_d1dc(param_1, 0x1387);
@@ -14,7 +14,7 @@ pub unsafe fn pass1_1028_90e6(param_1: *mut astruct_97, mut param_2: u16) -> *mu
 
 
 
-pub unsafe fn struct_op_1028_933c(
+pub fn struct_op_1028_933c(
     param_1: *mut astruct_97,
     mut param_2: u16,
     mut param_3: u16,
@@ -62,7 +62,7 @@ pub unsafe fn struct_op_1028_933c(
 
 
 
-pub unsafe fn struct_1028_9c62(param_1: *mut astruct_97, mut param_2: u16) -> *mut astruct_97 {
+pub fn struct_1028_9c62(param_1: *mut astruct_97, mut param_2: u16) -> *mut astruct_97 {
     struct_op_1028_d1dc(param_1, param_2);
     (param_1 + 0x108) = param_2;
     param_1.offset_0x0 = 0x9eb6;

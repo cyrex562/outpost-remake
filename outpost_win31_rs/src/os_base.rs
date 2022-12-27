@@ -3,7 +3,7 @@ use crate::unk::block_1000_1000::{msg_box_op_1000_1f24, pass1_1000_1f68};
 use crate::unk::block_1000_2000::mem_op_1000_21b6;
 use crate::globals::{DAT_1050_1050, PTR_LOOP_1050_1000};
 
-pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
+pub fn _SHI_INVOKEERRORHANDLER1() -> u16
 {
     let mut iVar1: i16;
     let mut BVar2: bool;
@@ -47,7 +47,7 @@ pub unsafe fn _SHI_INVOKEERRORHANDLER1() -> u16
     return 0x0;
 }
 
-pub unsafe fn ___EXPORTEDSTUB() -> u16
+pub fn ___EXPORTEDSTUB() -> u16
 {
     return 0x0;
 }

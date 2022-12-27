@@ -1,6 +1,6 @@
 
 
-pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u32) {
+pub fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u32) {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut code;
     let mut BVar3: bool;
@@ -201,7 +201,7 @@ pub unsafe fn pass1_1030_9048(mut param_1: u32, mut param_2: i16, mut param_3: u
 
 
 
-pub unsafe fn pass1_1030_9296(
+pub fn pass1_1030_9296(
     mut param_1: u16,
     mut param_2: u32,
     param_3: *mut u32,
@@ -383,7 +383,7 @@ pub unsafe fn pass1_1030_9296(
 
 
 
-pub unsafe fn pass1_1030_951a(
+pub fn pass1_1030_951a(
     mut param_1: u16,
     mut param_2: u32,
     param_3: *mut u32,
@@ -718,7 +718,7 @@ pub unsafe fn pass1_1030_951a(
 }
 
 
-pub unsafe fn pass1_1030_9adc(
+pub fn pass1_1030_9adc(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -801,7 +801,7 @@ pub unsafe fn pass1_1030_9adc(
 }
 
 
-pub unsafe fn pass1_1030_9c1c(mut param_1: u32, param_2: *mut u32, mut param_3: u32) {
+pub fn pass1_1030_9c1c(mut param_1: u32, param_2: *mut u32, mut param_3: u32) {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -876,7 +876,7 @@ pub unsafe fn pass1_1030_9c1c(mut param_1: u32, param_2: *mut u32, mut param_3: 
 }
 
 
-pub unsafe fn pass1_1030_9d42(
+pub fn pass1_1030_9d42(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -969,7 +969,7 @@ pub unsafe fn pass1_1030_9d42(
 }
 
 
-pub unsafe fn pass1_1030_9ecc(param_1: u32, param_2: *mut astruct_424) {
+pub fn pass1_1030_9ecc(param_1: u32, param_2: *mut astruct_424) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -979,7 +979,7 @@ pub unsafe fn pass1_1030_9ecc(param_1: u32, param_2: *mut astruct_424) {
     return;
 }
 
-pub unsafe fn pass1_1030_9ef2(param_1: u32) -> u16 {
+pub fn pass1_1030_9ef2(param_1: u32) -> u16 {
     let mut iVar1: i16;
     let mut uVar2: u16;
     let mut in_AX: u16;
@@ -999,7 +999,7 @@ pub unsafe fn pass1_1030_9ef2(param_1: u32) -> u16 {
 }
 
 
-pub unsafe fn pass1_1030_9f40(param_1: u8, mut param_2: u32, mut param_3: u16) {
+pub fn pass1_1030_9f40(param_1: u8, mut param_2: u32, mut param_3: u16) {
     let mut uVar1: u16;
 
     uVar1 = pass1_1008_c646(_u16_1050_06e0, CONCAT22(param_3, (_u16_1050_06e0 >> 0x10)));
@@ -1007,14 +1007,14 @@ pub unsafe fn pass1_1030_9f40(param_1: u8, mut param_2: u32, mut param_3: u16) {
     pass1_1030_9f7a(param_2, uVar1);
     return;
 }
-pub unsafe fn pass1_1030_9f64(param_1: u32) {
+pub fn pass1_1030_9f64(param_1: u32) {
     (param_1 + 0x8) = 0;
     *param_1 = 0;
     return;
 }
 
 
-pub unsafe fn pass1_1030_9f7a(param_1: *mut u16, mut param_2: u16) {
+pub fn pass1_1030_9f7a(param_1: *mut u16, mut param_2: u16) {
     let mut uVar1: u32;
     let mut BVar2: bool;
     let mut puVar3: *mut u32;

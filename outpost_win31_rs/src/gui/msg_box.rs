@@ -7,7 +7,7 @@ use crate::unk::block_1000_3000::{pass1_1000_3cea, unk_str_op_1000_3d3e};
 use crate::utils::CONCAT22;
 use crate::winapi16::{MessageBox16, PostMessage16};
 
-pub unsafe fn msg_box_op_1040_d3d0(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
+pub fn msg_box_op_1040_d3d0(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
 
 {
     let mut in_buf_len_5: i16;
@@ -53,7 +53,7 @@ pub unsafe fn msg_box_op_1040_d3d0(param_1: *mut c_char, mut param_2: u16, mut p
 }
 
 
-pub unsafe fn msg_box_op_1040_cce4(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
+pub fn msg_box_op_1040_cce4(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
 
 {
   let mut in_buf_len_5: i16;
@@ -84,7 +84,7 @@ pub unsafe fn msg_box_op_1040_cce4(param_1: *mut c_char, mut param_2: u16, param
 }
 
 
-pub unsafe fn msg_box_op_1010_8bb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
+pub fn msg_box_op_1010_8bb4(mut param_1: u16, mut param_2: u16, mut param_3: u32) {
     let mut title_string: *mut c_char;
     let mut message: [u8; 0x400] = [0; 0x400];
 

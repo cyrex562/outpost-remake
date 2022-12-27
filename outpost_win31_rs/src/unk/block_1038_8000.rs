@@ -2,7 +2,7 @@ use crate::gui;
 use crate::gui::dialog;
 use crate::gui::dialog::dlg_a;
 
-pub unsafe fn pass1_1038_8810(mut param_1: u32)
+pub fn pass1_1038_8810(mut param_1: u32)
 
 {
   let mut uVar1: u16;
@@ -28,7 +28,7 @@ pub unsafe fn pass1_1038_8810(mut param_1: u32)
 
 
 
-pub unsafe fn pass1_1038_88f2(param_1: *mut Struct57,mut param_2: u16 )
+pub fn pass1_1038_88f2(param_1: *mut Struct57,mut param_2: u16 )
 
 {
   let mut iVar1: *mut Struct57;
@@ -50,7 +50,7 @@ pub unsafe fn pass1_1038_88f2(param_1: *mut Struct57,mut param_2: u16 )
 
 
 
-pub unsafe fn pass1_1038_893a(param_1: *mut StructD)
+pub fn pass1_1038_893a(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;
@@ -65,7 +65,7 @@ pub unsafe fn pass1_1038_893a(param_1: *mut StructD)
 }
 
 
-pub unsafe fn pass1_1038_8caa(param_1: *mut u8,param_2: *mut Struct57,mut param_3: u16 ) -> *mut Struct57
+pub fn pass1_1038_8caa(param_1: *mut u8,param_2: *mut Struct57,mut param_3: u16 ) -> *mut Struct57
 
 {
   let mut in_register_0000000a: u16;
@@ -96,7 +96,7 @@ pub unsafe fn pass1_1038_8caa(param_1: *mut u8,param_2: *mut Struct57,mut param_
 
 
 
-pub unsafe fn pass1_1038_8cf6(param_1: *mut StructD)
+pub fn pass1_1038_8cf6(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;

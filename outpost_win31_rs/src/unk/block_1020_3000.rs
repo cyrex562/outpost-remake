@@ -1,7 +1,7 @@
 use crate::{draw_ops, gui};
 use crate::gui::window;
 
-pub unsafe fn pass1_1020_3540(
+pub fn pass1_1020_3540(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -48,7 +48,7 @@ pub unsafe fn pass1_1020_3540(
 }
 
 
-pub unsafe fn struct_1020_3644(
+pub fn struct_1020_3644(
     mut param_1: u32,
     param_2: *mut StructA,
     mut param_3: u16,
@@ -104,7 +104,7 @@ pub unsafe fn struct_1020_3644(
 }
 
 
-pub unsafe fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
+pub fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u16) {
     let mut cVar1: u8;
     let mut iVar2: i16;
 
@@ -127,7 +127,7 @@ pub unsafe fn pass1_1020_3c32(mut param_1: i16, mut param_2: u16, mut param_3: u
     return;
 }
 
-pub unsafe fn pass1_1020_3c8c(mut param_1: u32, mut param_2: u32) {
+pub fn pass1_1020_3c8c(mut param_1: u32, mut param_2: u32) {
     pt_in_rect_1018_1bda((param_1 + 0xfa), param_2, (param_2 >> 0x10));
     return;
 }

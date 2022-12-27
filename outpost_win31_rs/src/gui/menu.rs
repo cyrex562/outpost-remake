@@ -18,7 +18,7 @@ use crate::winapi16::{CheckMenuItem16, ClientToScreen16, DeleteMenu16, EnableMen
 use crate::winapp::winapp_e;
 use crate::windef16::{BOOL16, HMENU16, HWND16, RECT16};
 
-pub unsafe fn menu_ui_op_1020_5bf2(
+pub fn menu_ui_op_1020_5bf2(
     param_1: *mut astruct_52,
     param_2: INT16,
     param_3: INT16,
@@ -103,7 +103,7 @@ pub unsafe fn menu_ui_op_1020_5bf2(
 }
 
 
-pub unsafe fn menu_ui_op_1008_09ba(param_1: *mut astruct_853, param_2: HWND16, param_3: *mut RECT16) {
+pub fn menu_ui_op_1008_09ba(param_1: *mut astruct_853, param_2: HWND16, param_3: *mut RECT16) {
     let mut HVar1: HMENU16;
     let mut iVar2: *mut astruct_853;
     let mut uVar2: u16;
@@ -129,7 +129,7 @@ pub unsafe fn menu_ui_op_1008_09ba(param_1: *mut astruct_853, param_2: HWND16, p
 }
 
 
-pub unsafe fn menu_ui_op_1040_7f86(param_1: *mut astruct_855)
+pub fn menu_ui_op_1040_7f86(param_1: *mut astruct_855)
 
 {
 //   HMENlet mut HVar1: u16;
@@ -158,7 +158,7 @@ pub unsafe fn menu_ui_op_1040_7f86(param_1: *mut astruct_855)
 }
 
 
-pub unsafe fn enable_menu_item_1020_6b9a(
+pub fn enable_menu_item_1020_6b9a(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -172,7 +172,7 @@ pub unsafe fn enable_menu_item_1020_6b9a(
     return;
 }
 
-pub unsafe fn win_ui_menu_op_1020_7ad2(
+pub fn win_ui_menu_op_1020_7ad2(
     param_1: *mut astruct_854,
     param_2: HWND16,
     param_3: *mut RECT16,
@@ -202,7 +202,7 @@ pub unsafe fn win_ui_menu_op_1020_7ad2(
     return;
 }
 
-pub unsafe fn mixed_menu_op_1020_44ec(
+pub fn mixed_menu_op_1020_44ec(
     param_1: *mut astruct_850,
     mut param_2: u16,
     mut param_3: i16,
@@ -441,7 +441,7 @@ pub unsafe fn mixed_menu_op_1020_44ec(
     return;
 }
 
-pub unsafe fn enable_menu_1020_1000(
+pub fn enable_menu_1020_1000(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -456,7 +456,7 @@ pub unsafe fn enable_menu_1020_1000(
 }
 
 
-pub unsafe fn enable_menu_item_1020_2c2a(
+pub fn enable_menu_item_1020_2c2a(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,

@@ -1,4 +1,4 @@
-pub unsafe fn struct_1010_a1d8(param_1: *mut Struct19, mut param_2: u16) {
+pub fn struct_1010_a1d8(param_1: *mut Struct19, mut param_2: u16) {
     let mut iVar1: i16;
     let mut ppcVar2: *mut *mut code;
     let mut in_EDX: u32;
@@ -65,7 +65,7 @@ pub unsafe fn struct_1010_a1d8(param_1: *mut Struct19, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn pass1_1010_a478(param_1: *mut StructD) {
+pub fn pass1_1010_a478(param_1: *mut StructD) {
     let mut puVar1: *mut u16;
     let mut uVar2: u16;
     let mut uVar3: *mut StructD;
@@ -103,7 +103,7 @@ pub unsafe fn pass1_1010_a478(param_1: *mut StructD) {
 }
 
 
-pub unsafe fn pass1_1010_a50c(
+pub fn pass1_1010_a50c(
     param_1: *mut astruct_20,
     param_2: *mut *mut u8,
     param_3: *mut StructD,
@@ -130,7 +130,7 @@ pub unsafe fn pass1_1010_a50c(
 }
 
 
-pub unsafe fn pass1_1010_a5ca(
+pub fn pass1_1010_a5ca(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -143,7 +143,7 @@ pub unsafe fn pass1_1010_a5ca(
 }
 
 
-pub unsafe fn pass1_1010_a69c(mut param_1: i16, mut param_2: u16, param_3: u32, mut param_4: u16) {
+pub fn pass1_1010_a69c(mut param_1: i16, mut param_2: u16, param_3: u32, mut param_4: u16) {
     let mut iVar1: i16;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -423,7 +423,7 @@ pub unsafe fn pass1_1010_a69c(mut param_1: i16, mut param_2: u16, param_3: u32, 
     //   goto switchD_1010_aaef_caseD_b;
 }
 
-pub unsafe fn pass1_1010_abd2(
+pub fn pass1_1010_abd2(
     param_1: *mut u8,
     mut param_2: u16,
     mut param_3: u16,
@@ -474,7 +474,7 @@ pub unsafe fn pass1_1010_abd2(
     return;
 }
 
-pub unsafe fn pass1_1010_ac62(
+pub fn pass1_1010_ac62(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -485,7 +485,7 @@ pub unsafe fn pass1_1010_ac62(
     return (param_1 + 0x116 + param_5 * 0x2);
 }
 
-pub unsafe fn pass1_1010_afde(mut param_1: u32, mut param_2: i16) {
+pub fn pass1_1010_afde(mut param_1: u32, mut param_2: i16) {
     let mut uVar1: u32;
     let mut uVar2: u32;
     let mut in_EDX: u32;

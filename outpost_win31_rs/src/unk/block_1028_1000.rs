@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1028_1024(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> i16 {
+pub fn pass1_1028_1024(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> i16 {
     let mut BVar1: bool;
     let mut puVar2: *mut u32;
     let mut uVar3: u16;
@@ -65,7 +65,7 @@ pub unsafe fn pass1_1028_1024(mut param_1: i16, mut param_2: u16, param_3: *mut 
 
 
 
-pub unsafe fn pass1_1028_1106(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> i16 {
+pub fn pass1_1028_1106(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> i16 {
     let mut BVar1: bool;
     let mut puVar2: *mut u32;
     let mut uVar3: u16;
@@ -128,7 +128,7 @@ pub unsafe fn pass1_1028_1106(mut param_1: i16, mut param_2: u16, param_3: *mut 
     return iStack24;
 }
 
-pub unsafe fn pass1_1028_11de(param_1: *mut astruct_15) -> bool {
+pub fn pass1_1028_11de(param_1: *mut astruct_15) -> bool {
     let mut uVar1: u32;
 
     uVar1 = pass1_1028_b58e(param_1);
@@ -138,7 +138,7 @@ pub unsafe fn pass1_1028_11de(param_1: *mut astruct_15) -> bool {
 
 
 
-pub unsafe fn pass1_1028_121e(mut param_1: u16, param_2: *mut astruct_15) -> *mut astruct_15 {
+pub fn pass1_1028_121e(mut param_1: u16, param_2: *mut astruct_15) -> *mut astruct_15 {
     let mut bVar1: bool;
     let mut extraout_AH: u8;
     let mut puVar2: *mut u32;
@@ -177,7 +177,7 @@ pub unsafe fn pass1_1028_121e(mut param_1: u16, param_2: *mut astruct_15) -> *mu
 
 
 
-pub unsafe fn pass1_1028_1416(mut param_1: u16, mut param_2: u32) -> i16 {
+pub fn pass1_1028_1416(mut param_1: u16, mut param_2: u32) -> i16 {
     let mut bVar1: bool;
     let mut extraout_AH: u8;
     let mut iVar2: i16;
@@ -197,7 +197,7 @@ pub unsafe fn pass1_1028_1416(mut param_1: u16, mut param_2: u32) -> i16 {
 
 
 
-pub unsafe fn pass1_1028_1556(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> u16 {
+pub fn pass1_1028_1556(mut param_1: i16, mut param_2: u16, param_3: *mut astruct_15) -> u16 {
     let mut iVar1: i16;
     let mut puVar2: *mut u32;
     let mut BVar3: bool;
@@ -265,7 +265,7 @@ pub unsafe fn pass1_1028_1556(mut param_1: i16, mut param_2: u16, param_3: *mut 
     return 0x0;
 }
 
-pub unsafe fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409 {
+pub fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409 {
     let mut paVar1: *mut astruct_409;
     let mut uVar2: *mut astruct_409;
     let mut uVar3: u16;
@@ -318,14 +318,14 @@ pub unsafe fn pass1_1028_1646(param_1: *mut astruct_409) -> *mut astruct_409 {
     return paVar1;
 }
 
-pub unsafe fn struct_1028_178c(param_1: *mut u16) -> *mut u16 {
+pub fn struct_1028_178c(param_1: *mut u16) -> *mut u16 {
     struct_1030_dc96(param_1);
     *param_1 = 0x1b54;
     (param_1 + 0x2) = 0x1028;
     return param_1;
 }
 
-pub unsafe fn pass1_1028_17ae(
+pub fn pass1_1028_17ae(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,
@@ -346,7 +346,7 @@ pub unsafe fn pass1_1028_17ae(
 
 
 
-pub unsafe fn struct_1028_1bbc(param_1: *mut astruct_180) -> *mut u16 {
+pub fn struct_1028_1bbc(param_1: *mut astruct_180) -> *mut u16 {
     let mut iVar1: *mut astruct_180;
     let mut uVar1: u16;
 
@@ -360,7 +360,7 @@ pub unsafe fn struct_1028_1bbc(param_1: *mut astruct_180) -> *mut u16 {
     return &param_1.field0_0x0;
 }
 
-pub unsafe fn pass1_1028_1be8(
+pub fn pass1_1028_1be8(
     mut param_1: u16,
     param_2: *mut astruct_12,
     mut param_3: i16,
@@ -374,7 +374,7 @@ pub unsafe fn pass1_1028_1be8(
     return &param_2.field0_0x0;
 }
 
-pub unsafe fn pass1_1028_1c1c() -> u16 {
+pub fn pass1_1028_1c1c() -> u16 {
     return 0x0;
 }
 
@@ -388,7 +388,7 @@ pub unsafe fn pass1_1028_1c1c() -> u16 {
 
 
 
-pub unsafe fn pass1_1028_1e14(
+pub fn pass1_1028_1e14(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -420,7 +420,7 @@ pub unsafe fn pass1_1028_1e14(
 
 
 
-pub unsafe fn struct_1028_1f56(param_1: *mut Struct57, param_2: *mut astruct_180) {
+pub fn struct_1028_1f56(param_1: *mut Struct57, param_2: *mut astruct_180) {
     let mut extraout_DX: u16;
     let mut uVar2: u16;
     let mut iVar3: *mut astruct_180;
@@ -448,7 +448,7 @@ pub unsafe fn struct_1028_1f56(param_1: *mut Struct57, param_2: *mut astruct_180
     (uVar1 + 0xa) = 0;
     return;
 }
-pub unsafe fn pass1_1028_1fc8(
+pub fn pass1_1028_1fc8(
     param_1: *mut u8,
     param_2: *mut astruct_12,
     mut param_3: i16,

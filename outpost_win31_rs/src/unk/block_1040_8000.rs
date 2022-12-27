@@ -23,7 +23,7 @@ Low-level Error: Symbol $$undef00000006 extends beyond the end of the address sp
 use crate::{draw_ops, resources};
 
 
-pub unsafe fn pass1_1040_83e6(param_1: *mut StructD,param_2: u8) -> *mut StructD
+pub fn pass1_1040_83e6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 {
   ui_cleanup_op_1040_782c(param_1);
@@ -35,7 +35,7 @@ pub unsafe fn pass1_1040_83e6(param_1: *mut StructD,param_2: u8) -> *mut StructD
 
 
 
-pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 ) -> *mut Struct57
+pub fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u16 ,param_4: *mut c_char,param_5: *mut c_char,mut param_6: u16 ) -> *mut Struct57
 
 {
   let mut uVar1: u16;
@@ -69,7 +69,7 @@ pub unsafe fn pass1_1040_8478(mut param_1: u16 ,param_2: *mut Struct57,mut param
 
 
 
-pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> i16
+pub fn string_1040_8520(mut param_1: u32,param_2: *mut Struct57,mut param_3: u16 ,mut param_4: u32,mut param_5: u32) -> i16
 
 {
   let mut uVar1: u32;
@@ -138,7 +138,7 @@ pub unsafe fn string_1040_8520(mut param_1: u32,param_2: *mut Struct57,mut param
   PTR_LOOP_1050_5df8 = null_mut();
   return iVar7;
 }
-pub unsafe fn pass1_1040_869a(param_1: *mut StructD)
+pub fn pass1_1040_869a(param_1: *mut StructD)
 
 {
   let mut iVar1: *mut StructD;
@@ -155,7 +155,7 @@ pub unsafe fn pass1_1040_869a(param_1: *mut StructD)
 }
 
 
-pub unsafe fn pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> *mut u16
+pub fn pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u16 ,mut param_4: u32) -> *mut u16
 
 {
   pass1_1040_b040(CONCAT22(param_2,param_1),CONCAT22(param_4,param_3),(param_4 >> 0x10));
@@ -163,7 +163,7 @@ pub unsafe fn pass1_1040_8e58(mut param_1: i16,mut param_2: u16 ,mut param_3: u1
   (param_1 + 0x2) = &PTR_LOOP_1050_1040;
   return CONCAT22(param_2,param_1);
 }
-pub unsafe fn pass1_1040_8e82(param_1: *mut StructD)
+pub fn pass1_1040_8e82(param_1: *mut StructD)
 
 {
   let mut in_stack_0000ffde: u16;

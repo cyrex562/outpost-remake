@@ -9,7 +9,7 @@ use crate::utils::{CONCAT22, SUB42};
 use crate::winapi16::GetClientRect16;
 use crate::windef16::{HWND16, RECT16};
 
-pub unsafe fn mixed_sys_op_1018_2978(
+pub fn mixed_sys_op_1018_2978(
     mut param_1: u16,
     mut param_2: u16,
     param_3: *mut astruct_931,

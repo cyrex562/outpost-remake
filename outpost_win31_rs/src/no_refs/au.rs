@@ -4,7 +4,7 @@ use crate::resources::msg_box_ui_op_1040_64ca;
 use crate::winapp::winapp_a::create_window_1040_6eae;
 
 
-pub unsafe fn pass1_1040_557c(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_557c(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_4f0a(param_1);
@@ -15,7 +15,7 @@ pub unsafe fn pass1_1040_557c(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_57d4(param_1: *mut u8, param_2: *mut StructB)
+pub fn pass1_1040_57d4(param_1: *mut u8, param_2: *mut StructB)
 
 {
     pass1_1040_5d42(param_2);
@@ -26,7 +26,7 @@ pub unsafe fn pass1_1040_57d4(param_1: *mut u8, param_2: *mut StructB)
 }
 
 
-pub unsafe fn pass1_1040_6360(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_6360(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     let mut in_stack_0000ffda: u16;
@@ -39,7 +39,7 @@ pub unsafe fn pass1_1040_6360(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_6794(param_1: *mut StructD, param_2: u8) -> *mut StructD
+pub fn pass1_1040_6794(param_1: *mut StructD, param_2: u8) -> *mut StructD
 
 {
     pass1_1040_6470(param_1);
@@ -50,7 +50,7 @@ pub unsafe fn pass1_1040_6794(param_1: *mut StructD, param_2: u8) -> *mut Struct
 }
 
 
-pub unsafe fn pass1_1040_68d2(param_1: u32, param_2: *mut i16, mut param_3: u16, mut param_4: u16, mut param_5: i16) -> u16
+pub fn pass1_1040_68d2(param_1: u32, param_2: *mut i16, mut param_3: u16, mut param_4: u16, mut param_5: i16) -> u16
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -72,7 +72,7 @@ pub unsafe fn pass1_1040_68d2(param_1: u32, param_2: *mut i16, mut param_3: u16,
 }
 
 
-pub unsafe fn pass1_1040_692e(param_1: u32)
+pub fn pass1_1040_692e(param_1: u32)
 
 {
     let mut ppcVar1: *mut *mut code;

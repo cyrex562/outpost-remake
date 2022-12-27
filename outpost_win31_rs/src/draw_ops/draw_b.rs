@@ -7,7 +7,7 @@ use crate::utils::{CONCAT11, CONCAT22};
 use crate::winapi16::{DeleteObject16, GetStockObject16, InvalidateRect16, Rectangle16, SelectObject16, SelectPalette16, SetBkColor16, SetTextColor16};
 use crate::windef16::{COLORREF, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, HWND16, RECT16};
 
-pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10, mut param_2: i16, mut param_3: u16, in_hdc_param_4: u16, mut param_5: u16 )
+pub fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10, mut param_2: i16, mut param_3: u16, in_hdc_param_4: u16, mut param_5: u16 )
 
 {
   let mut bVar1: bool;
@@ -62,7 +62,7 @@ pub unsafe fn draw_op_1038_9dcc(in_struct_1: *mut astruct_10, mut param_2: i16, 
   return;
 }
 
-pub unsafe fn unk_win_ui_op_1038_ac38(mut param_1: u16, mut param_2: u16, mut param_3: u16, mut param_4: u16, hdc_param_5: HDC16)
+pub fn unk_win_ui_op_1038_ac38(mut param_1: u16, mut param_2: u16, mut param_3: u16, mut param_4: u16, hdc_param_5: HDC16)
 
 {
   let mut IVar1: i16;
@@ -121,7 +121,7 @@ pub unsafe fn unk_win_ui_op_1038_ac38(mut param_1: u16, mut param_2: u16, mut pa
   return;
 }
 
-pub unsafe fn set_text_bk_color_1040_0cc0(
+pub fn set_text_bk_color_1040_0cc0(
     param_1: u32,
     mut param_2: u16,
     mut param_3: u16,
@@ -158,7 +158,7 @@ pub unsafe fn set_text_bk_color_1040_0cc0(
 }
 
 
-pub unsafe fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
+pub fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
 
 {
     let mut paVar1: *mut astruct_13;
@@ -222,7 +222,7 @@ pub unsafe fn mix_draw_op_1040_21d6(param_1: *mut astruct_763)
 }
 
 
-pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16, param_2: *mut astruct_765)
+pub fn mixed_draw_op_1040_8a06(mut param_1: u16, param_2: *mut astruct_765)
 
 {
     let mut paVar1: *mut astruct_13;
@@ -278,7 +278,7 @@ pub unsafe fn mixed_draw_op_1040_8a06(mut param_1: u16, param_2: *mut astruct_76
     return;
 }
 
-pub unsafe fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750, mut param_2: i16, mut param_3: u16, mut param_4: u16)
+pub fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750, mut param_2: i16, mut param_3: u16, mut param_4: u16)
 
 {
     let mut bVar1: bool;
@@ -332,7 +332,7 @@ pub unsafe fn draw_op_1040_a67e(struct750_param_1: *mut astruct_750, mut param_2
 }
 
 
-pub unsafe fn win_ui_op_1040_b372(mut param_1: u32, hwnd_param_2: HWND16, mut param_3: u16, hdc_param_4: HDC16)
+pub fn win_ui_op_1040_b372(mut param_1: u32, hwnd_param_2: HWND16, mut param_3: u16, hdc_param_4: HDC16)
 
 {
     let mut uVar1: u16;
@@ -384,7 +384,7 @@ pub unsafe fn win_ui_op_1040_b372(mut param_1: u32, hwnd_param_2: HWND16, mut pa
     return;
 }
 
-pub unsafe fn draw_ui_op_1040_27cc(param_1: *mut astruct_752, hwnd16_param_2: HWND16, mut param_3: u16, hdc_param_4: HDC16) -> u32
+pub fn draw_ui_op_1040_27cc(param_1: *mut astruct_752, hwnd16_param_2: HWND16, mut param_3: u16, hdc_param_4: HDC16) -> u32
 
 {
     let mut uVar1: u32;
@@ -439,7 +439,7 @@ pub unsafe fn draw_ui_op_1040_27cc(param_1: *mut astruct_752, hwnd16_param_2: HW
     return CONCAT22(0x1050, iVar3.brush_handle_field4_0x4);
 }
 
-pub unsafe fn draw_op_1020_7070(
+pub fn draw_op_1020_7070(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -461,7 +461,7 @@ pub unsafe fn draw_op_1020_7070(
     return hgdi_obj;
 }
 
-pub unsafe fn draw_polygon_1020_3602(
+pub fn draw_polygon_1020_3602(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -472,7 +472,7 @@ pub unsafe fn draw_polygon_1020_3602(
     return;
 }
 
-pub unsafe fn unk_draw_op_1020_3da4(
+pub fn unk_draw_op_1020_3da4(
     mut param_1: u16,
     mut param_2: u16,
     param_3: *mut astruct_24,
@@ -551,7 +551,7 @@ pub unsafe fn unk_draw_op_1020_3da4(
     return;
 }
 
-pub unsafe fn pass1_1020_3d08(
+pub fn pass1_1020_3d08(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -824,7 +824,7 @@ pub unsafe fn pass1_1020_3d08(
     }
 }
 
-pub unsafe fn validate_rect_1020_3f12(mut param_1: u32, mut param_2: i16) {
+pub fn validate_rect_1020_3f12(mut param_1: u32, mut param_2: i16) {
     let mut local_a: RECT16;
     let mut uStack6: u32;
 
@@ -848,7 +848,7 @@ pub unsafe fn validate_rect_1020_3f12(mut param_1: u32, mut param_2: i16) {
 }
 
 
-pub unsafe fn draw_op_1008_8288(
+pub fn draw_op_1008_8288(
     mut param_1: u16,
     mut param_2: u32,
     hdc16_param_1: HDC16,
@@ -968,7 +968,7 @@ pub unsafe fn draw_op_1008_8288(
 }
 
 
-pub unsafe fn draw_line_1018_6444(mut param_1: u32, hdc_param_2: HDC16) {
+pub fn draw_line_1018_6444(mut param_1: u32, hdc_param_2: HDC16) {
     let mut iVar1: i16;
     let mut x: i16;
     let mut iVar4: *mut astruct_796;

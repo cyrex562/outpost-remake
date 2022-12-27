@@ -1,7 +1,7 @@
 use crate::{sys_ops, gui};
 use crate::gui::msg_box;
 
-pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
+pub fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     let mut uVar1: u16;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -40,7 +40,7 @@ pub unsafe fn pass1_1010_8096(param_1: u32, mut param_2: i16) {
     (uVar3 + 0x2) = uVar2;
     return;
 }
-pub unsafe fn pass1_1010_8170(param_1: *mut u8, param_2: *mut astruct_87, mut param_3: i16) {
+pub fn pass1_1010_8170(param_1: *mut u8, param_2: *mut astruct_87, mut param_3: i16) {
     let mut iVar1: i16;
     let mut iVar2: i16;
     let mut iVar3: i16;
@@ -70,7 +70,7 @@ pub unsafe fn pass1_1010_8170(param_1: *mut u8, param_2: *mut astruct_87, mut pa
 
 
 
-pub unsafe fn FUN_1010_830a(
+pub fn FUN_1010_830a(
     mut param_1: u16,
     mut param_2: u32,
     mut param_3: u16,
@@ -162,7 +162,7 @@ pub unsafe fn FUN_1010_830a(
 }
 
 
-pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
+pub fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
     let mut uVar4: u16;
     let mut uVar1: u16;
     let mut puVar2: *mut u8;
@@ -223,7 +223,7 @@ pub unsafe fn pass1_1010_878c(param_1: *mut *mut astruct_87, mut param_2: i16) {
 }
 
 
-pub unsafe fn pass1_1010_8c32(param_1: *mut Struct19, mut param_2: u16) -> u32 {
+pub fn pass1_1010_8c32(param_1: *mut Struct19, mut param_2: u16) -> u32 {
     let mut in_EDX: u32;
     let mut uVar1: u16;
     let mut unaff_BP: u16;
@@ -260,7 +260,7 @@ pub unsafe fn pass1_1010_8c32(param_1: *mut Struct19, mut param_2: u16) -> u32 {
 
 
 
-pub unsafe fn pass1_1010_8ef2(
+pub fn pass1_1010_8ef2(
     param_1: *mut Struct57,
     param_2: *mut astruct_170,
     mut param_3: u16,

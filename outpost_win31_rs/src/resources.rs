@@ -8,7 +8,7 @@ use crate::unk::block_1040_b000::pass1_1040_b0bc;
 use crate::utils::CONCAT22;
 use crate::winapi16::MessageBox16;
 
-pub unsafe fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812) {
+pub fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812) {
     let mut BVar1: bool;
     let mut h_rsrc: HRSRC16;
     let mut handle: HGLOBAL16;
@@ -43,7 +43,7 @@ pub unsafe fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812) {
     return;
 }
 
-pub unsafe fn free_rsrc_1010_4b3e(param_1: *mut StructD) {
+pub fn free_rsrc_1010_4b3e(param_1: *mut StructD) {
     let mut puVar3: *mut u32;
     let mut uVar5: u32;
     let mut BVar6: bool;
@@ -107,7 +107,7 @@ pub unsafe fn free_rsrc_1010_4b3e(param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn load_icon_1040_8b92(param_1: *mut Struct57)
+pub fn load_icon_1040_8b92(param_1: *mut Struct57)
 
 {
   let mut bVar1: u8;
@@ -137,7 +137,7 @@ pub unsafe fn load_icon_1040_8b92(param_1: *mut Struct57)
   return;
 }
 
-pub unsafe fn load_string_1010_847e(mut param_1: u32, mut param_2: u16) -> *mut c_char {
+pub fn load_string_1010_847e(mut param_1: u32, mut param_2: u16) -> *mut c_char {
     LoadString16(
         0x3ff,
         (param_1 & 0xffff0000 | (param_1 + 0x682)),
@@ -147,7 +147,7 @@ pub unsafe fn load_string_1010_847e(mut param_1: u32, mut param_2: u16) -> *mut 
     return (param_1 & 0xffff0000 | (param_1 + 0x682));
 }
 
-pub unsafe fn load_string_1010_84ac(mut param_1: i16, param_2: INT16, mut param_3: u16) {
+pub fn load_string_1010_84ac(mut param_1: i16, param_2: INT16, mut param_3: u16) {
     let mut uVar1: u16;
 
     uVar1 = param_2;
@@ -161,7 +161,7 @@ pub unsafe fn load_string_1010_84ac(mut param_1: i16, param_2: INT16, mut param_
     return;
 }
 
-pub unsafe fn load_string_1010_84e0(
+pub fn load_string_1010_84e0(
     mut param_1: u16,
     mut param_2: u16,
     in_resc_id_3: u16,
@@ -180,7 +180,7 @@ pub unsafe fn load_string_1010_84e0(
 }
 
 
-pub unsafe fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
+pub fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
 
 {
   let mut in_buf_len_5: i16;
@@ -225,7 +225,7 @@ pub unsafe fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param
 }
 
 
-pub unsafe fn msg_box_op_1038_8dda(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
+pub fn msg_box_op_1038_8dda(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903)
 
 {
   let mut in_buf_len_5: i16;
@@ -270,7 +270,7 @@ pub unsafe fn msg_box_op_1038_8dda(param_1: *mut c_char, mut param_2: u16, param
 }
 
 
-pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
+pub fn msg_box_ui_op_1040_64ca(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
 
 {
   let mut in_buf_len_5: i16;
@@ -301,7 +301,7 @@ pub unsafe fn msg_box_ui_op_1040_64ca(param_1: *mut c_char, mut param_2: u16, mu
 }
 
 
-pub unsafe fn msg_box_op_1040_a85a(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
+pub fn msg_box_op_1040_a85a(param_1: *mut c_char, mut param_2: u16, mut param_3: u32)
 
 {
   let mut in_buf_len_5: i16;
@@ -332,7 +332,7 @@ pub unsafe fn msg_box_op_1040_a85a(param_1: *mut c_char, mut param_2: u16, mut p
 }
 
 
-pub unsafe fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903, mut param_4: u16 )
+pub fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char, mut param_2: u16, param_3: *mut Struct903, mut param_4: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -362,7 +362,7 @@ pub unsafe fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char, mut param_2: u16, pa
 }
 
 
-pub unsafe fn pas1_1040_29c2(mut param_1: u16, mut param_2: u16, param_3: *mut Struct57, mut param_4: u32, mut param_5: u16) -> *mut Struct57
+pub fn pas1_1040_29c2(mut param_1: u16, mut param_2: u16, param_3: *mut Struct57, mut param_4: u32, mut param_5: u16) -> *mut Struct57
 
 {
     let mut iVar1: *mut Struct57;

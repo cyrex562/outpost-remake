@@ -1,4 +1,4 @@
-pub unsafe fn switch_1030_0000(
+pub fn switch_1030_0000(
     mut param_1: u16,
     param_2: *mut Struct57,
     mut param_3: u16,
@@ -554,7 +554,7 @@ pub unsafe fn switch_1030_0000(
     return CONCAT22(uVar3, param_1);
 }
 
-pub unsafe fn switch_1030_07ac(
+pub fn switch_1030_07ac(
     param_1: *mut astruct_12,
     param_2: *mut astruct_12,
     mut param_3: u16,

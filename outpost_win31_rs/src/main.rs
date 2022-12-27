@@ -39,7 +39,7 @@ mod sound_ops;
 mod error_handling;
 
 
-pub unsafe fn main()
+pub fn main()
 {
 
     // printf("Hello, World!\n");

@@ -33,7 +33,7 @@ use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::winapp::winapp_a::{create_window_1040_6eae, create_window_1040_7620, win_proc_1008_5f44};
 use crate::windef16::{ATOM, BOOL16, HCURSOR16, HMENU16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16};
 
-pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57, param_2: *mut StructA)
+pub fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57, param_2: *mut StructA)
 
 {
   let mut u16_var3: u16;
@@ -121,7 +121,7 @@ pub unsafe fn win_ui_fn_1020_6e98(mut param_1: *mut Struct57, param_2: *mut Stru
   return;
 }
 
-pub unsafe fn show_win_1038_b634(mut param_1: *mut c_void)
+pub fn show_win_1038_b634(mut param_1: *mut c_void)
 
 {
   let mut var1: *mut c_void;
@@ -142,7 +142,7 @@ pub unsafe fn show_win_1038_b634(mut param_1: *mut c_void)
   return;
 }
 
-pub unsafe fn show_win_1038_b68a(param_1: *mut c_void)
+pub fn show_win_1038_b68a(param_1: *mut c_void)
 
 {
   let mut sub_struct: *mut c_void;
@@ -160,7 +160,7 @@ pub unsafe fn show_win_1038_b68a(param_1: *mut c_void)
   return;
 }
 
-pub unsafe fn ui_op_1008_2c4e(mut param_1: u16, mut param_2: u16, param_3: *mut Struct72, mut param_4: u16 )
+pub fn ui_op_1008_2c4e(mut param_1: u16, mut param_2: u16, param_3: *mut Struct72, mut param_4: u16 )
 
 {
   let mut uVar1: u32;
@@ -209,7 +209,7 @@ pub unsafe fn ui_op_1008_2c4e(mut param_1: u16, mut param_2: u16, param_3: *mut 
 }
 
 
-pub unsafe fn post_msg_1008_2d22(param_1: *mut Struct72)
+pub fn post_msg_1008_2d22(param_1: *mut Struct72)
 
 {
   let mut piVar1: *mut i16;
@@ -246,7 +246,7 @@ pub unsafe fn post_msg_1008_2d22(param_1: *mut Struct72)
 }
 
 
-pub unsafe fn bring_win_to_top_1038_b72e(mut param_1: u32, mut param_2: i16) -> BOOL16
+pub fn bring_win_to_top_1038_b72e(mut param_1: u32, mut param_2: i16) -> BOOL16
 
 {
   let mut hwnd: HWND16;
@@ -265,7 +265,7 @@ pub unsafe fn bring_win_to_top_1038_b72e(mut param_1: u32, mut param_2: i16) -> 
 }
 
 
-pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16, struct_b_param_1: *mut StructB)
+pub fn win_ui_op_1038_b81c(mut param_1: u16, struct_b_param_1: *mut StructB)
 
 {
   let mut uVar1: u32;
@@ -334,7 +334,7 @@ pub unsafe fn win_ui_op_1038_b81c(mut param_1: u16, struct_b_param_1: *mut Struc
   return;
 }
 
-pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD, param_2: *mut StructC, mut param_3: u32, mut param_4: u16, mut param_5: u16 ) -> u32
+pub fn win_ui_op_1038_b922(param_1: *mut StructD, param_2: *mut StructC, mut param_3: u32, mut param_4: u16, mut param_5: u16 ) -> u32
 
 {
   let mut piVar1: *mut i16;
@@ -497,7 +497,7 @@ pub unsafe fn win_ui_op_1038_b922(param_1: *mut StructD, param_2: *mut StructC, 
 }
 
 
-pub unsafe fn win_ui_op_1040_a784(param_1: u8, mut param_2: u16, mut param_3: i16, mut param_4: i16, mut param_5: u16, mut param_6: u32)
+pub fn win_ui_op_1040_a784(param_1: u8, mut param_2: u16, mut param_3: i16, mut param_4: i16, mut param_5: u16, mut param_6: u32)
 
 {
     let mut hwnd: HWND16;
@@ -530,7 +530,7 @@ pub unsafe fn win_ui_op_1040_a784(param_1: u8, mut param_2: u16, mut param_3: i1
     return;
 }
 
-pub unsafe fn create_window_1008_5e7e() ->HWND16
+pub fn create_window_1008_5e7e() ->HWND16
 {
   let mut var2: *mut c_char;
   let mut var3: bool;
@@ -589,7 +589,7 @@ pub unsafe fn create_window_1008_5e7e() ->HWND16
 }
 
 
-pub unsafe fn mixed_win_ui_op_1040_6942(param_1: *mut Struct57, mut param_2: u16, struct_b_param_1: *mut StructB, mut param_4: u16, mut param_5: u16)
+pub fn mixed_win_ui_op_1040_6942(param_1: *mut Struct57, mut param_2: u16, struct_b_param_1: *mut StructB, mut param_4: u16, mut param_5: u16)
 
 {
     let mut pvVar1: LPVOID = null_mut();
@@ -774,7 +774,7 @@ pub unsafe fn mixed_win_ui_op_1040_6942(param_1: *mut Struct57, mut param_2: u16
 }
 
 
-pub unsafe fn mixed_win_ui_op_1040_70b4(param_1: *mut Struct57, mut param_2: u16, struct_b_param_1: *mut StructB, mut param_4: u16, mut param_5: u16)
+pub fn mixed_win_ui_op_1040_70b4(param_1: *mut Struct57, mut param_2: u16, struct_b_param_1: *mut StructB, mut param_4: u16, mut param_5: u16)
 
 {
     let mut pvVar1: LPVOID = null_mut();

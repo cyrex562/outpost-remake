@@ -210,7 +210,7 @@ struct astruct_830 {
     pub field3_0x3: u8,
     pub field4_0x4: u8,
     pub field5_0x5: u8,
-// pub unsafe fn * field6_0x6;
+// pub fn * field6_0x6;
     pub field7_0xa: u8,
     pub field8_0xb: u8,
     pub field9_0xc: u8,

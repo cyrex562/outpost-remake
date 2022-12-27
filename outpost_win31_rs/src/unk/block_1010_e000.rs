@@ -12,7 +12,7 @@
 
 
 
-pub unsafe fn pass1_1010_e8f6(
+pub fn pass1_1010_e8f6(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
@@ -48,7 +48,7 @@ pub unsafe fn pass1_1010_e8f6(
 }
 
 
-pub unsafe fn pass1_1010_e964(mut param_1: u16) {
+pub fn pass1_1010_e964(mut param_1: u16) {
     let mut uVar1: u32;
     let mut uVar2: u16;
     let mut in_register_0000000a: u16;
@@ -76,7 +76,7 @@ pub unsafe fn pass1_1010_e964(mut param_1: u16) {
 }
 
 
-pub unsafe fn struct_1010_e9e4(param_1: *mut Struct19, mut param_2: u16) {
+pub fn struct_1010_e9e4(param_1: *mut Struct19, mut param_2: u16) {
     let mut puVar1: *mut u16;
     let mut uVar2: u16;
     let mut iVar3: i16;
@@ -159,7 +159,7 @@ pub unsafe fn struct_1010_e9e4(param_1: *mut Struct19, mut param_2: u16) {
 
 
 
-pub unsafe fn pass1_1010_ec40(
+pub fn pass1_1010_ec40(
     mut param_1: i16,
     mut param_2: u16,
     mut param_3: u16,

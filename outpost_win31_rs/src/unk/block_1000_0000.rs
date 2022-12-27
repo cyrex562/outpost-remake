@@ -22,7 +22,7 @@ use crate::structs::struct_99::astruct_99;
 use super::mem_op_1000_13ce;
 use crate::unk::block_1000_5000::pass1_1000_5390;
 
-pub unsafe fn mem_1000_0016(ctx: &mut AppContext, mut param_1: u32) -> u32 {
+pub fn mem_1000_0016(ctx: &mut AppContext, mut param_1: u32) -> u32 {
     let mut u_var1: u32;
     if (param_1 + 0x14) != -0x4153 {
         pass1_1000_1e61(ctx.CS_REG.clone(), 0xa, ptr::null_mut());
@@ -32,7 +32,7 @@ pub unsafe fn mem_1000_0016(ctx: &mut AppContext, mut param_1: u32) -> u32 {
     return u_var1;
 }
 
-pub unsafe fn goto_lab_1000_00f9(pstruct7_param_1: *mut Struct7) -> u32{
+pub fn goto_lab_1000_00f9(pstruct7_param_1: *mut Struct7) -> u32{
     // let mut pu8_var1 = pstruct7_param_1.field_0x1e.clone();
     // let mut pu16_var2 = pstruct7_param_1.field_0x1e as *mut u16;
     // let mut i16_var3 = (*pstruct7_param_1.field_0x20).clone();
@@ -42,7 +42,7 @@ pub unsafe fn goto_lab_1000_00f9(pstruct7_param_1: *mut Struct7) -> u32{
     return CONCAT22(a, b);
 }
 
-pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
+pub fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
     let mut pu16_var1: *mut u16;
     let mut u_var4: u32;
     let mut u_var5: u32;
@@ -92,7 +92,7 @@ pub unsafe fn mem_op_1000_0052(pstruct7_param_1: *mut Struct7) -> u32 {
     return goto_lab_1000_00f9(pstruct7_param_1);
 }
 
-pub unsafe fn pass1_1000_010c(
+pub fn pass1_1000_010c(
     ctx: &mut AppContext,
     mut param_1: i16,
     mut param_2: u16,
@@ -148,7 +148,7 @@ pub unsafe fn pass1_1000_010c(
     return u_stack6;
 }
 
-pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struct7) -> bool {
+pub fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struct7) -> bool {
     let mut bvar3: bool = false;
     let mut uvar4: u16 = 0;
     let mut u16_var5: u16 = 0;
@@ -242,7 +242,7 @@ pub unsafe fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struc
     return true;
 }
 
-pub unsafe fn mem_op_1000_0308(
+pub fn mem_op_1000_0308(
     ctx: &mut AppContext,
     mut param_1: i16,
     pstruct7_param_2: *mut Struct7,
@@ -273,7 +273,7 @@ pub unsafe fn mem_op_1000_0308(
     return pu8_var1;
 }
 
-pub unsafe fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: u16) {
+pub fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: u16) {
     let mut pu16_var1 = 0u16;
 
     if (param_1 + 0x4) == param_1 {
@@ -291,7 +291,7 @@ pub unsafe fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: u1
 }
 
 // TODO: this looks like its referring to a struct
-pub unsafe fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct100005b41) {
+pub fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct100005b41) {
     // *(param_2 + 0xa)
     param_2.field_0xa = 0x1;
     // *(param_2 + 0x8)
@@ -306,7 +306,7 @@ pub unsafe fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct100005b41) {
 
 
 
-pub unsafe fn pass1_1000_07ac(
+pub fn pass1_1000_07ac(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -325,7 +325,7 @@ pub unsafe fn pass1_1000_07ac(
     return;
 }
 
-pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut Struct7) -> u32 {
+pub fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut Struct7) -> u32 {
     // let mut pu8_var1: *mut u8;
     let mut pu8_var2: *mut u8;
     let mut u16_var3: u16;
@@ -407,7 +407,7 @@ pub unsafe fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut S
     }
 }
 
-pub unsafe fn mem_op_1000_03c6(
+pub fn mem_op_1000_03c6(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -483,7 +483,7 @@ pub unsafe fn mem_op_1000_03c6(
     return 0x0;
 }
 
-pub unsafe fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7) -> u32 {
+pub fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7) -> u32 {
     let mut u16_var10: u16;
     let mut b_var11: bool;
     let mut i32_var13 = 0i32;
@@ -531,7 +531,7 @@ unsafe fn lab_1000_0595(pstruct7_param_2: *mut Struct7, b_var11: &mut bool, mut 
     return u16_var9 << 0x10;
 }
 
-pub unsafe fn mem_op_1000_05e2(
+pub fn mem_op_1000_05e2(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -576,7 +576,7 @@ pub unsafe fn mem_op_1000_05e2(
     return 0x0;
 }
 
-pub unsafe fn mem_1000_0670(
+pub fn mem_1000_0670(
     ctx: &mut AppContext,
     mut param_1: u16,
     pstruct7_param_2: *mut Struct7,
@@ -651,7 +651,7 @@ pub unsafe fn mem_1000_0670(
     return 0x1;
 }
 
-pub unsafe fn pass1_1000_0782(
+pub fn pass1_1000_0782(
     ctx: &mut AppContext,
     mut param_1: *mut Struct7,
     mut param_2: u16,
@@ -665,7 +665,7 @@ pub unsafe fn pass1_1000_0782(
     return 0x1;
 }
 
-pub unsafe fn pass1_1000_07fc(ctx: &mut AppContext, mut param_1: u32) -> MemContainer {
+pub fn pass1_1000_07fc(ctx: &mut AppContext, mut param_1: u32) -> MemContainer {
     // let mut paVar1: *mut astruct_99;
     let mut container = MemContainer::default();
     if (param_1 + 0x14) != -0x4153 {
@@ -677,7 +677,7 @@ pub unsafe fn pass1_1000_07fc(ctx: &mut AppContext, mut param_1: u32) -> MemCont
     return container;
 }
 
-pub unsafe fn pass1_1000_093a(ctx: &mut AppContext, param_1: *mut Struct611) -> bool {
+pub fn pass1_1000_093a(ctx: &mut AppContext, param_1: *mut Struct611) -> bool {
     let mut piVar1: *mut u8;
 
     if PTR_LOOP_1050_000c != -0x352f {
@@ -697,7 +697,7 @@ pub unsafe fn pass1_1000_093a(ctx: &mut AppContext, param_1: *mut Struct611) -> 
     return true;
 }
 
-pub unsafe fn pass1_1000_09ca(mut param_1: i16, param_2: *mut u16) -> u16 {
+pub fn pass1_1000_09ca(mut param_1: i16, param_2: *mut u16) -> u16 {
     let mut puVar1 = param_2 + 0xa;
     let mut puVar4 = ((param_2 + (param_1 - puVar1) -0x6 & 0xfffc) + puVar1);
     *puVar4 = 0x1;
@@ -722,7 +722,7 @@ pub unsafe fn pass1_1000_09ca(mut param_1: i16, param_2: *mut u16) -> u16 {
     return *puVar1 & 0xfffc;
 }
 
-pub unsafe fn mem_op_1000_0a48(
+pub fn mem_op_1000_0a48(
     ctx: &mut AppContext,
     param_1: u8,
     mut param_2: u16,
@@ -772,7 +772,7 @@ pub unsafe fn mem_op_1000_0a48(
     return 0x0;
 }
 
-pub unsafe fn mem_op_1000_0b20(
+pub fn mem_op_1000_0b20(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut pstruct7_param_2: *mut Struct7,
@@ -836,7 +836,7 @@ pub unsafe fn mem_op_1000_0b20(
     }
 }
 
-pub unsafe fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> U32 {
+pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> U32 {
     let mut puVar1: *mut u16;
     let mut pbVar2: *mut u8;
     let mut piVar3: *mut i16;
@@ -939,7 +939,7 @@ pub unsafe fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u
     return 0x0;
 }
 
-pub unsafe fn call_fn_ptr_1000_0dc6(ctx: &mut AppContext, str_param_1: *mut c_char) -> bool {
+pub fn call_fn_ptr_1000_0dc6(ctx: &mut AppContext, str_param_1: *mut c_char) -> bool {
     if (PTR_LOOP_1050_000c.clone() & 0xfff8) != 0xcad0 {
         pass1_1000_1e61(ctx.CS_REG.clone(), 0xe, ptr::null_mut());
         return false;
@@ -949,7 +949,7 @@ pub unsafe fn call_fn_ptr_1000_0dc6(ctx: &mut AppContext, str_param_1: *mut c_ch
     return true;
 }
 
-pub unsafe fn pass1_1000_0e08(mut param_1: i16) -> u16 {
+pub fn pass1_1000_0e08(mut param_1: i16) -> u16 {
     let mut puVar1: *mut u16;
     let mut pbVar2: *mut u8;
     let mut uVar3: u16;
@@ -1008,7 +1008,7 @@ pub unsafe fn pass1_1000_0e08(mut param_1: i16) -> u16 {
     return uVar3;
 }
 
-pub unsafe fn pass1_1000_0ed4(
+pub fn pass1_1000_0ed4(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
@@ -1085,7 +1085,7 @@ pub unsafe fn pass1_1000_0ed4(
     return 0x0;
 }
 
-pub unsafe fn pass1_1000_0fb8(
+pub fn pass1_1000_0fb8(
     mut param_1: u16,
     mut param_2: i16,
     mut param_3: u16,
@@ -1187,7 +1187,7 @@ pub unsafe fn pass1_1000_0fb8(
     return uStack4;
 }
 
-pub unsafe fn pass1_1000_115c(mut param_1: i16, param_2: *mut u16) -> bool {
+pub fn pass1_1000_115c(mut param_1: i16, param_2: *mut u16) -> bool {
     let mut pbVar1: *mut u8;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;

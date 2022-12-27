@@ -20,7 +20,7 @@ use crate::gui::window::win_d;
 use crate::winapi16::{DestroyWindow16, EnableWindow16, GetDlgItem16, IsDlgButtonChecked, SendDlgItemMessage16, SetDlgItemInt16, SetDlgItemText16, SetWindowText16};
 use crate::windef16::{HWND16, LRESULT};
 
-pub unsafe fn win_ui_dlg_op_1040_a94a(mut param_1: u16, mut param_2: u32)
+pub fn win_ui_dlg_op_1040_a94a(mut param_1: u16, mut param_2: u32)
 
 {
   let mut piVar1: *mut i16;
@@ -134,7 +134,7 @@ pub unsafe fn win_ui_dlg_op_1040_a94a(mut param_1: u16, mut param_2: u32)
 }
 
 
-pub unsafe fn enable_win_1040_060e(mut param_1: u32, mut param_2: i16) {
+pub fn enable_win_1040_060e(mut param_1: u32, mut param_2: i16) {
     let mut pIVar1: *mut INT16 = null_mut();
     let mut hwnd: HWND16;
     let mut iStack10: i16;
@@ -156,7 +156,7 @@ pub unsafe fn enable_win_1040_060e(mut param_1: u32, mut param_2: i16) {
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_8f74(param_1: *mut Struct903) -> LRESULT
+pub fn send_dlg_item_msg_1038_8f74(param_1: *mut Struct903) -> LRESULT
 
 {
   let mut uVar1: u32;
@@ -203,7 +203,7 @@ pub unsafe fn send_dlg_item_msg_1038_8f74(param_1: *mut Struct903) -> LRESULT
 }
 
 
-pub unsafe fn send_dlg_item_msg_1038_844a(param_1: *mut Struct903) -> LRESULT
+pub fn send_dlg_item_msg_1038_844a(param_1: *mut Struct903) -> LRESULT
 
 {
   let mut hwnd: HWND16;
@@ -248,7 +248,7 @@ pub unsafe fn send_dlg_item_msg_1038_844a(param_1: *mut Struct903) -> LRESULT
   return LVar6;
 }
 
-pub unsafe fn unk_win_ui_op_1040_1d7a(param_1: *mut astruct_33, mut param_2: i16)
+pub fn unk_win_ui_op_1040_1d7a(param_1: *mut astruct_33, mut param_2: i16)
 
 {
     let mut UVar2: u16;

@@ -8,7 +8,7 @@ use crate::{draw_ops, gui};
 use crate::winapi16::{DeleteObject16, InvalidateRect16, RealizePalette16, SelectPalette16};
 use crate::windef16::{HDC16, HPALETTE16, HWND16, RECT16};
 
-pub unsafe fn invalidate_rect_1018_5d32(mut param_1: u32, mut param_2: i16) {
+pub fn invalidate_rect_1018_5d32(mut param_1: u32, mut param_2: i16) {
     let mut hwnd: HWND16;
 
     hwnd = (param_1 >> 0x10);
@@ -24,7 +24,7 @@ pub unsafe fn invalidate_rect_1018_5d32(mut param_1: u32, mut param_2: i16) {
 }
 
 
-pub unsafe fn invalidate_rect_1040_3ddc(in_struct_1: *mut StructC)
+pub fn invalidate_rect_1040_3ddc(in_struct_1: *mut StructC)
 
 {
   let mut rect: RECT16;
@@ -37,7 +37,7 @@ pub unsafe fn invalidate_rect_1040_3ddc(in_struct_1: *mut StructC)
 }
 
 
-pub unsafe fn invalidate_rect_1020_8d90(
+pub fn invalidate_rect_1020_8d90(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u32,
@@ -109,7 +109,7 @@ pub unsafe fn invalidate_rect_1020_8d90(
 }
 
 
-pub unsafe fn get_dc_op_1040_3d5e(param_1: *mut astruct_1) -> u16
+pub fn get_dc_op_1040_3d5e(param_1: *mut astruct_1) -> u16
 
 {
     let mut ppcVar1: *mut *mut code;
@@ -138,7 +138,7 @@ pub unsafe fn get_dc_op_1040_3d5e(param_1: *mut astruct_1) -> u16
 }
 
 
-pub unsafe fn call_fn_ptr_1038_9ffa(mut param_1: u32, pstruct_param_2: *mut astruct_733, mut param_3: u16 ) -> u16
+pub fn call_fn_ptr_1038_9ffa(mut param_1: u32, pstruct_param_2: *mut astruct_733, mut param_3: u16 ) -> u16
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -162,7 +162,7 @@ pub unsafe fn call_fn_ptr_1038_9ffa(mut param_1: u32, pstruct_param_2: *mut astr
   return 0x0;
 }
 
-pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut Struct37)
+pub fn get_sys_metrics_1040_8c66(param_1: *mut Struct37)
 
 {
   let mut piVar1: *mut i16;
@@ -202,7 +202,7 @@ pub unsafe fn get_sys_metrics_1040_8c66(param_1: *mut Struct37)
 }
 
 
-pub unsafe fn set_struct_op_1020_921c(
+pub fn set_struct_op_1020_921c(
     mut param_1: u16,
     pstructa_param_2: *mut StructA,
     mut param_3: u16,
@@ -258,7 +258,7 @@ pub unsafe fn set_struct_op_1020_921c(
     return;
 }
 
-pub unsafe fn unk_win_ui_op_1020_717e(
+pub fn unk_win_ui_op_1020_717e(
     mut param_1: u16,
     mut param_2: u16,
     param_3: *mut astruct_40,
@@ -354,7 +354,7 @@ pub unsafe fn unk_win_ui_op_1020_717e(
 }
 
 
-pub unsafe fn win_ui_palette_op_1020_0cd2(struct_param_1: *mut astruct_775) {
+pub fn win_ui_palette_op_1020_0cd2(struct_param_1: *mut astruct_775) {
     let mut puVar2: *mut u32;
     let mut ppcVar3: *mut *mut code;
     let mut uVar7: u16;

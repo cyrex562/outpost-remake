@@ -27,3 +27,4 @@ pub mod struct_873;
 pub mod struct_872;
 pub mod struct_65;
 pub mod struct_874;
+pub mod struct_1001;

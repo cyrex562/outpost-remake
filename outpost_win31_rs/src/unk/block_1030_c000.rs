@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1030_c09c(
+pub fn pass1_1030_c09c(
     mut param_1: u16,
     param_2: *mut astruct_12,
     mut param_3: i16,
@@ -22,7 +22,7 @@ pub unsafe fn pass1_1030_c09c(
 
 
 // WARNING: Restarted to delay deadcode elimination for space: stack
-pub unsafe fn pass1_1030_c652(param_1: *mut u8, mut param_2: u16) {
+pub fn pass1_1030_c652(param_1: *mut u8, mut param_2: u16) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut astruct_250;
     let mut in_stack_0000fea8: u16;
@@ -45,7 +45,7 @@ pub unsafe fn pass1_1030_c652(param_1: *mut u8, mut param_2: u16) {
 
 
 
-pub unsafe fn struct_1030_c6f6(param_1: *mut astruct_180) -> *mut astruct_180 {
+pub fn struct_1030_c6f6(param_1: *mut astruct_180) -> *mut astruct_180 {
     let mut uVar1: u16;
 
     struct_1028_b354(param_1);
@@ -56,7 +56,7 @@ pub unsafe fn struct_1030_c6f6(param_1: *mut astruct_180) -> *mut astruct_180 {
     return param_1;
 }
 
-pub unsafe fn pass1_1030_c71e(
+pub fn pass1_1030_c71e(
     mut param_1: u16,
     param_2: *mut astruct_12,
     mut param_3: i16,
@@ -80,7 +80,7 @@ pub unsafe fn pass1_1030_c71e(
 
 
 
-pub unsafe fn struct_1030_c9a8(param_1: *mut astruct_180) -> *mut astruct_180 {
+pub fn struct_1030_c9a8(param_1: *mut astruct_180) -> *mut astruct_180 {
     let mut iVar1: *mut astruct_180;
     let mut uVar1: u16;
 
@@ -94,7 +94,7 @@ pub unsafe fn struct_1030_c9a8(param_1: *mut astruct_180) -> *mut astruct_180 {
     return param_1;
 }
 
-pub unsafe fn pass1_1030_c9e4(
+pub fn pass1_1030_c9e4(
     mut param_1: u16,
     param_2: *mut astruct_12,
     mut param_3: i16,
@@ -111,7 +111,7 @@ pub unsafe fn pass1_1030_c9e4(
 
 
 
-pub unsafe fn pass1_1030_cbf0(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> u16 {
+pub fn pass1_1030_cbf0(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> u16 {
     let mut iVar1: *mut astruct_595;
     let mut iStack4: i16;
 
@@ -133,7 +133,7 @@ pub unsafe fn pass1_1030_cbf0(mut param_1: i16, mut param_2: u16, mut param_3: i
 
 
 
-pub unsafe fn pass1_1030_cc44(
+pub fn pass1_1030_cc44(
     mut param_1: i16,
     mut param_2: u16,
     mut param_3: i16,
@@ -260,7 +260,7 @@ pub unsafe fn pass1_1030_cc44(
     }
 }
 
-pub unsafe fn pass1_1030_cde8(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> i16 {
+pub fn pass1_1030_cde8(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> i16 {
     let mut iVar1: i16;
     let mut iStack4: i16;
 
@@ -280,7 +280,7 @@ pub unsafe fn pass1_1030_cde8(mut param_1: i16, mut param_2: u16, mut param_3: i
 
 
 
-pub unsafe fn pass1_1030_ce2e(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> i16 {
+pub fn pass1_1030_ce2e(mut param_1: i16, mut param_2: u16, mut param_3: i16) -> i16 {
     let mut iVar1: i16;
     let mut uStack6: u32;
 
@@ -294,7 +294,7 @@ pub unsafe fn pass1_1030_ce2e(mut param_1: i16, mut param_2: u16, mut param_3: i
     }
     return uStack6;
 }
-pub unsafe fn pass1_1030_ce72(
+pub fn pass1_1030_ce72(
     mut param_1: u32,
     mut param_2: i16,
     mut param_3: u32,
@@ -326,7 +326,7 @@ pub unsafe fn pass1_1030_ce72(
         iStack10 += 0x1;
     }
 }
-pub unsafe fn pass1_1030_cef8(
+pub fn pass1_1030_cef8(
     mut param_1: u32,
     mut param_2: u32,
     mut param_3: u16,
@@ -347,7 +347,7 @@ pub unsafe fn pass1_1030_cef8(
     return;
 }
 
-pub unsafe fn pass1_1030_cf3a(mut param_1: u32, mut param_2: i16) -> u16 {
+pub fn pass1_1030_cf3a(mut param_1: u32, mut param_2: i16) -> u16 {
     let mut iStack4: i16;
 
     iStack4 = 0;
@@ -362,7 +362,7 @@ pub unsafe fn pass1_1030_cf3a(mut param_1: u32, mut param_2: i16) -> u16 {
     }
     return 0x1;
 }
-pub unsafe fn pass1_1030_cf78(param_1: *mut astruct_15, mut param_2: u16) {
+pub fn pass1_1030_cf78(param_1: *mut astruct_15, mut param_2: u16) {
     let mut uVar1: u32;
     let mut extraout_DX: u16;
     let mut iVar3: *mut astruct_680;

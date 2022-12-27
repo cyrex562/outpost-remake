@@ -7,7 +7,7 @@ use crate::utils::CONCAT22;
 use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, GetStockObject16, SelectPalette16};
 use crate::windef16::{DEVMODEA, HDC16, HGDIOBJ16, HPALETTE16, HWND16, RECT16};
 
-pub unsafe fn create_dc_1018_4e04(
+pub fn create_dc_1018_4e04(
     in_string_6: u16,
     in_string_5: u16,
     param_3: *mut astruct_8,
@@ -50,7 +50,7 @@ pub unsafe fn create_dc_1018_4e04(
 }
 
 // l
-pub unsafe fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2: u16) {
+pub fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2: u16) {
     let mut hbrush: HBRUSH16;
     let mut local_paint_struct: [u8; 0x20] = [0; 0x20];
 
@@ -70,7 +70,7 @@ pub unsafe fn fill_rect_1008_39ac(in_win_handle_1: *mut astruct_930, mut param_2
 }
 
 
-pub unsafe fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754) {
+pub fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754) {
     let mut uVar1: u32;
     let mut struct754_var1: *mut astruct_754;
     let mut uVar4: u16;
@@ -128,7 +128,7 @@ pub unsafe fn fill_rect_1020_065e(astruct754_param_1: *mut astruct_754) {
     return;
 }
 
-pub unsafe fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
+pub fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
 
 {
    let mut struct_1: *mut astruct_14;
@@ -170,7 +170,7 @@ pub unsafe fn draw_op_1040_82ee(astruct14_param_1: *mut astruct_14)
 }
 
 
-pub unsafe fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
+pub fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
     //   RECT16 rect_2e [0x2];
     let mut rect_2e: [RECt16; 2] = [RECT16::default(); 2];
     let mut hbrush_var38: HBRUSH16;
@@ -186,7 +186,7 @@ pub unsafe fn fill_rect_1008_62c0(param_1: *mut astruct_838, mut param_2: u16) {
     return;
 }
 
-pub unsafe fn unk_draw_op_1018_c578(param_1: *mut Struct57, param_2: *mut astruct_36) {
+pub fn unk_draw_op_1018_c578(param_1: *mut Struct57, param_2: *mut astruct_36) {
     let mut paVar1: *mut astruct_76;
     let mut uVar2: u16;
     let mut uVar5: u16;
@@ -298,7 +298,7 @@ pub unsafe fn unk_draw_op_1018_c578(param_1: *mut Struct57, param_2: *mut astruc
     return;
 }
 
-pub unsafe fn unk_draw_op_1018_cda8(
+pub fn unk_draw_op_1018_cda8(
     param_1: *mut Struct57,
     mut param_2: u16,
     mut param_3: u16,
@@ -418,7 +418,7 @@ pub unsafe fn unk_draw_op_1018_cda8(
     return;
 }
 
-pub unsafe fn unk_draw_op_1018_cfc0(
+pub fn unk_draw_op_1018_cfc0(
     param_1: *mut Struct57,
     mut param_2: u16,
     struct36_param_1: *mut astruct_36,
@@ -534,7 +534,7 @@ pub unsafe fn unk_draw_op_1018_cfc0(
 }
 
 
-pub unsafe fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD) {
+pub fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD) {
     let mut obj: HPALETTE16;
     let mut local_struct_1: *mut StructD;
     let mut uVar4: *mut StructD;
@@ -580,7 +580,7 @@ pub unsafe fn clenaup_win_ui_1018_4d22(in_struct_1: *mut StructD) {
 }
 
 
-pub unsafe fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HDC16) {
+pub fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HDC16) {
     let mut uVar1: u16;
     let mut ppcVar2: *mut *mut code;
     let mut HVar3: HPALETTE16;
@@ -616,7 +616,7 @@ pub unsafe fn win_ui_op_1008_3c34(mut param_1: u32, param_2: u8, hdc_param_3: HD
 }
 
 
-pub unsafe fn delete_palette_1018_e16c(param_1: *mut astruct_795) {
+pub fn delete_palette_1018_e16c(param_1: *mut astruct_795) {
     let mut puVar2: *mut u32;
     let mut hpal: *mut HDC16;
     let mut hpalette_a: HPALETTE16;
@@ -658,7 +658,7 @@ pub unsafe fn delete_palette_1018_e16c(param_1: *mut astruct_795) {
 }
 
 
-pub unsafe fn unk_draw_op_1020_0c3e(param_1: *mut astruct_771) {
+pub fn unk_draw_op_1020_0c3e(param_1: *mut astruct_771) {
     let mut puVar2: *mut u32;
     let mut hpal: *mut HDC16;
     let mut obj: HPALETTE16;
@@ -710,7 +710,7 @@ pub unsafe fn unk_draw_op_1020_0c3e(param_1: *mut astruct_771) {
 }
 
 
-pub unsafe fn win_ui_op_1020_150e(param_1: *mut StructD) {
+pub fn win_ui_op_1020_150e(param_1: *mut StructD) {
     let mut obj: HPALETTE16;
     let mut iVar1: *mut StructD;
     let mut uVar2: u16;
@@ -736,7 +736,7 @@ pub unsafe fn win_ui_op_1020_150e(param_1: *mut StructD) {
 }
 
 
-pub unsafe fn draw_op_1020_15de(param_1: *mut astruct_779) {
+pub fn draw_op_1020_15de(param_1: *mut astruct_779) {
     let mut ppcVar1: *mut *mut code;
     let mut BVar2: bool;
     let mut iVar3: *mut astruct_779;
@@ -779,7 +779,7 @@ pub unsafe fn draw_op_1020_15de(param_1: *mut astruct_779) {
 }
 
 
-pub unsafe fn draw_op_1020_1674(param_1: *mut astruct_779) {
+pub fn draw_op_1020_1674(param_1: *mut astruct_779) {
     let mut hdc: HDC16;
     let mut struct_1: *mut astruct_779;
     let mut uVar2: u16;
@@ -820,7 +820,7 @@ pub unsafe fn draw_op_1020_1674(param_1: *mut astruct_779) {
 }
 
 
-pub unsafe fn palette_op_1020_7270(pstruct_param_1: *mut StructD) {
+pub fn palette_op_1020_7270(pstruct_param_1: *mut StructD) {
     let mut obj: HPALETTE16;
     let mut struct767_var1: *mut StructD;
     let mut uVar4: u16;
@@ -858,7 +858,7 @@ pub unsafe fn palette_op_1020_7270(pstruct_param_1: *mut StructD) {
     return;
 }
 
-pub unsafe fn ui_cleanup_op_1040_782c(param_1: *mut StructD)
+pub fn ui_cleanup_op_1040_782c(param_1: *mut StructD)
 
 {
   let mut puVar2: *mut u32;
@@ -896,7 +896,7 @@ pub unsafe fn ui_cleanup_op_1040_782c(param_1: *mut StructD)
 }
 
 
-pub unsafe fn unk_draw_op_1040_b0f8(mut param_1: u16, param_2: *mut StructD)
+pub fn unk_draw_op_1040_b0f8(mut param_1: u16, param_2: *mut StructD)
 
 {
   let mut uVar1: u16;
@@ -937,7 +937,7 @@ pub unsafe fn unk_draw_op_1040_b0f8(mut param_1: u16, param_2: *mut StructD)
   return;
 }
 
-pub unsafe fn win_prop_op_1038_d118(base_addr_param_4: u16, mut param_2: u32, mut param_3: u32, hwnd_param_3: HWND16)
+pub fn win_prop_op_1038_d118(base_addr_param_4: u16, mut param_2: u32, mut param_3: u32, hwnd_param_3: HWND16)
 
 {
   let mut uVar1: u32;

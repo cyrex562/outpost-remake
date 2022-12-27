@@ -1,7 +1,7 @@
 
 
 
-pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param_3: *mut *mut u8) {
+pub fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param_3: *mut *mut u8) {
     let mut iVar1: i16;
     let mut iVar3: i16;
     let mut in_register_0000000a: u16;
@@ -63,7 +63,7 @@ pub unsafe fn pass1_1020_915a(param_1: *mut u8, param_2: *mut astruct_669, param
 
 
 
-pub unsafe fn init_globals_1020_96d4() {
+pub fn init_globals_1020_96d4() {
     let mut puVar1: *mut u16;
     let mut iVar2: i16;
     let mut puVar3: *mut u16;

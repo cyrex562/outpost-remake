@@ -1,4 +1,4 @@
-pub unsafe fn pass1_1020_5d56(mut param_1: u16, param_2: *mut u32, mut param_3: u32) -> u16 {
+pub fn pass1_1020_5d56(mut param_1: u16, param_2: *mut u32, mut param_3: u32) -> u16 {
     let mut ppcVar1: *mut *mut code;
     let mut uVar2: u16;
     let mut uVar3: u16;

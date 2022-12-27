@@ -7,7 +7,7 @@ use crate::unk::block_1010_7000::pass1_1010_7efc;
 use crate::unk::block_1030_8000::pass1_1030_8210;
 use crate::unk::block_1038_a000::pass1_1038_af34;
 
-pub unsafe fn struct_op_1008_0000(param_1: *mut u16) {
+pub fn struct_op_1008_0000(param_1: *mut u16) {
     let mut i_var1: i16;
     let mut u_var2: u16;
 
@@ -23,7 +23,7 @@ pub unsafe fn struct_op_1008_0000(param_1: *mut u16) {
 }
 
 
-pub unsafe fn pass1_1008_0036(param_1: *mut u16) {
+pub fn pass1_1008_0036(param_1: *mut u16) {
     let mut pu_var1: *mut u32;
     let mut u_var2: u16;
     let mut pc_var3: *mut c_char;
@@ -88,7 +88,7 @@ pub unsafe fn pass1_1008_0036(param_1: *mut u16) {
 }
 
 
-pub unsafe fn pass1_1008_07d8(
+pub fn pass1_1008_07d8(
     mut param_1: u16,
     param_2: *mut Struct57,
     param_3: *mut Struct72,
@@ -124,7 +124,7 @@ pub unsafe fn pass1_1008_07d8(
 }
 
 
-pub unsafe fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut StructD) {
+pub fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut StructD) {
     let mut in_register_0000000a: u16;
     let mut paVar1: *mut Struct57;
     let mut uVar2: u32;
@@ -160,7 +160,7 @@ pub unsafe fn pass1_1008_087e(param_1: u8, mut param_2: u16, param_3: *mut Struc
     return;
 }
 
-pub unsafe fn caseD_a7(mut param_1: u16, mut param_2: u16) {
+pub fn caseD_a7(mut param_1: u16, mut param_2: u16) {
     let mut unaff_BP: i16;
     let mut uVar1: *mut Struct72;
 

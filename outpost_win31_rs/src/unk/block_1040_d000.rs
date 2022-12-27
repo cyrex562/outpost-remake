@@ -23,7 +23,7 @@ use crate::windef16::{HWND16, LRESULT};
 
 
 
-pub unsafe fn pass1_1040_d0f8(param_1: *mut Struct57, mut param_2: u16, mut param_3: u16, param_4: *mut StructD, mut param_5: u16,
+pub fn pass1_1040_d0f8(param_1: *mut Struct57, mut param_2: u16, mut param_3: u16, param_4: *mut StructD, mut param_5: u16,
                               mut param_6: u16, mut param_7: u16, mut param_8: u16, mut param_9: u16, mut param_10: u16,
                               mut param_11: u16, mut param_12: u16, mut param_13: u16)
 
@@ -66,7 +66,7 @@ pub unsafe fn pass1_1040_d0f8(param_1: *mut Struct57, mut param_2: u16, mut para
 
 
 
-pub unsafe fn pass1_1040_d1bc(param_1: *mut StructD)
+pub fn pass1_1040_d1bc(param_1: *mut StructD)
 
 {
     let mut puVar1: *mut u32;

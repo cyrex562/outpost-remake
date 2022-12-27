@@ -1,5 +1,5 @@
 
-pub unsafe fn pass1_1018_c402(
+pub fn pass1_1018_c402(
     mut param_1: u16,
     param_2: *mut astruct_20,
     mut param_3: u16,
@@ -84,7 +84,7 @@ pub unsafe fn pass1_1018_c402(
 
 
 
-pub unsafe fn pass1_1018_c958(
+pub fn pass1_1018_c958(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -115,7 +115,7 @@ pub unsafe fn pass1_1018_c958(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_c9a6(
+pub fn pass1_1018_c9a6(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -146,7 +146,7 @@ pub unsafe fn pass1_1018_c9a6(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_c9f4(
+pub fn pass1_1018_c9f4(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -181,7 +181,7 @@ pub unsafe fn pass1_1018_c9f4(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_ca48(
+pub fn pass1_1018_ca48(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -212,7 +212,7 @@ pub unsafe fn pass1_1018_ca48(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_ca96(
+pub fn pass1_1018_ca96(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -247,7 +247,7 @@ pub unsafe fn pass1_1018_ca96(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_caea(
+pub fn pass1_1018_caea(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -278,7 +278,7 @@ pub unsafe fn pass1_1018_caea(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cb38(
+pub fn pass1_1018_cb38(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -309,7 +309,7 @@ pub unsafe fn pass1_1018_cb38(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cb86(
+pub fn pass1_1018_cb86(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -344,7 +344,7 @@ pub unsafe fn pass1_1018_cb86(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cbda(
+pub fn pass1_1018_cbda(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -375,7 +375,7 @@ pub unsafe fn pass1_1018_cbda(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cc28(
+pub fn pass1_1018_cc28(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -406,7 +406,7 @@ pub unsafe fn pass1_1018_cc28(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cc76(
+pub fn pass1_1018_cc76(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -437,7 +437,7 @@ pub unsafe fn pass1_1018_cc76(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_ccc4(
+pub fn pass1_1018_ccc4(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -468,7 +468,7 @@ pub unsafe fn pass1_1018_ccc4(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cd12(
+pub fn pass1_1018_cd12(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -499,7 +499,7 @@ pub unsafe fn pass1_1018_cd12(
     return param_1;
 }
 
-pub unsafe fn pass1_1018_cd60(
+pub fn pass1_1018_cd60(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,
@@ -535,7 +535,7 @@ pub unsafe fn pass1_1018_cd60(
 
 
 
-pub unsafe fn pass1_1018_cf74(
+pub fn pass1_1018_cf74(
     param_1: *mut astruct_20,
     mut param_2: u16,
     mut param_3: u32,

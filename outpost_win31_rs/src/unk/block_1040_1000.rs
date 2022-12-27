@@ -9,7 +9,7 @@
 
 
 
-pub unsafe fn
+pub fn
 pass1_1040_123e(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 ) -> *mut Struct57
 
 {
@@ -41,7 +41,7 @@ pass1_1040_123e(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mu
 
 
 
-pub unsafe fn pass1_1040_1290(param_1: *mut StructD)
+pub fn pass1_1040_1290(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;
@@ -63,7 +63,7 @@ pub unsafe fn pass1_1040_1290(param_1: *mut StructD)
 
 
 
-pub unsafe fn pass1_1040_181c(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub fn pass1_1040_181c(mut param_1: u16 ,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -96,7 +96,7 @@ pub unsafe fn pass1_1040_181c(mut param_1: u16 ,param_2: *mut Struct57,mut param
 
 
 
-pub unsafe fn pass1_1040_1876(param_1: *mut StructD)
+pub fn pass1_1040_1876(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;
@@ -110,7 +110,7 @@ pub unsafe fn pass1_1040_1876(param_1: *mut StructD)
 }
 
 
-pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
+pub fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut Struct57,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: u16 )
 
 {
   let mut in_register_0000000a: u16;
@@ -149,7 +149,7 @@ pub unsafe fn pass1_1040_1cb4(param_1: *mut StructD,param_2: *mut Struct57,mut p
 
 
 
-pub unsafe fn pass1_1040_1d24(param_1: *mut StructD)
+pub fn pass1_1040_1d24(param_1: *mut StructD)
 
 {
   let mut uVar1: u16;
@@ -176,7 +176,7 @@ pub unsafe fn pass1_1040_1d24(param_1: *mut StructD)
 
 
 
-pub unsafe fn pass1_1040_1f5a(param_1: *mut Struct57,mut param_2: u16 ,mut param_3: u32)
+pub fn pass1_1040_1f5a(param_1: *mut Struct57,mut param_2: u16 ,mut param_3: u32)
 
 {
   let mut puVar1: *mut u16;
