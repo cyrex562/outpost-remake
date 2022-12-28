@@ -1,0 +1,2 @@
+struct Struct748 {
+}

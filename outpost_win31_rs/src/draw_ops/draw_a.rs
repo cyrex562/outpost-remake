@@ -15,7 +15,6 @@ use crate::winapp::winapp_b;
 use crate::windef16::{COLORREF, HDC16, HGDIOBJ16, HPALETTE16, HPEN16, RECT16};
 
 pub fn invalidate_rect_1018_edd8(mut param_1: u32, mut param_2: i16) {
-    let mut var1: i16;
     let mut var2: u16;
     let mut var3: u32;
     let mut rect_var16: RECT16;
@@ -27,9 +26,8 @@ pub fn invalidate_rect_1018_edd8(mut param_1: u32, mut param_2: i16) {
     let mut var6: i16;
     let mut var4: i16;
 
-    var1 = param_1;
     if param_2 == 1 {
-        (var1 + 0x14) = 0;
+        (param_1 + 0x14) = 0;
         return;
     }
     if param_2 != 0xc {
@@ -37,12 +35,12 @@ pub fn invalidate_rect_1018_edd8(mut param_1: u32, mut param_2: i16) {
     }
 
     pass1_1008_3e94(
-        (var1 + 0x18),
+        (param_1 + 0x18),
         var6,
         var4,
     );
 
-    var3 = pass1_1010_2b66((var1 + 0x14));
+    var3 = pass1_1010_2b66((param_1 + 0x14));
     var10 = var3;
     var14 = pass1_1008_4772(var3);
     rect_var16.x = var4;
