@@ -1,0 +1,15 @@
+struct StructE {
+    pub field0_0x0: u8,
+    pub field1_0x1: u8,
+    pub field2_0x2: u8,
+    pub field3_0x3: u8,
+    pub hwnd16_field4_0x4: HWND16,
+    pub field5_0x6: *mut u32,
+    pub field6_0xa: u8,
+    pub field7_0xb: u8,
+    pub field8_0xc: u8,
+    pub field9_0xd: u8,
+    pub field10_0xe: i16,
+    pub field11_0x10: u16,
+    pub field12_0x12: i16,
+}

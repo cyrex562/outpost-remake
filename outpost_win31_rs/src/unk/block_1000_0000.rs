@@ -7,14 +7,14 @@ use crate::globals::{
     u16_1050_0008, u32_1050_0004, u32_1050_0006,
 };
 use crate::mem_ops::{alloc_mem_1000_131c, free_mem_1000_13ce, mem_op_1000_1532, realloc_1000_1408};
-use crate::structs::struct_1000_07ac_1::Struct_1000_07ac_1;
+use crate::structs::struct_1003::Struct1003;
 use crate::utils::{CARRY2, CONCAT11, CONCAT22};
 use std::os::raw::c_char;
 use std::ptr;
 use std::ptr::null_mut;
 use crate::unk::block_1000_1000::{mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61};
 use crate::mem_container::MemContainer;
-use crate::structs::struct_1000_05b4_1::Struct100005b41;
+use crate::structs::struct_1002::Struct1002;
 use crate::structs::struct_611::Struct611;
 use crate::structs::struct_7::Struct7;
 use crate::structs::struct_99::astruct_99;
@@ -291,7 +291,7 @@ pub fn pass1_1000_0368(mut param_1: u16, mut param_2: u8, mut param_3: u16) {
 }
 
 // TODO: this looks like its referring to a struct
-pub fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct100005b41) {
+pub fn pass1_1000_05b4(param_1: u8, param_2: *mut Struct1002) {
     // *(param_2 + 0xa)
     param_2.field_0xa = 0x1;
     // *(param_2 + 0x8)
@@ -310,7 +310,7 @@ pub fn pass1_1000_07ac(
     ctx: &mut AppContext,
     mut param_1: u16,
     mut param_2: u16,
-    mut param_3: *mut Struct_1000_07ac_1,
+    mut param_3: *mut Struct1003,
 ) {
     let mut u16_var1 = (param_3.field_0x10.clone());
     (param_3.field_0x0e) = u16_var1;
@@ -522,7 +522,7 @@ pub fn mem_op_1000_0510(mut param_1: u16, pstruct7_param_2: *mut Struct7) -> u32
     return lab_1000_0595(pstruct7_param_2, &mut b_var11, i32_var13, &mut u16_var9, u16_var14);
 }
 
-unsafe fn lab_1000_0595(pstruct7_param_2: *mut Struct7, b_var11: &mut bool, mut i32_var13: i32, u16_var9: &mut u32, mut u16_var14: u16) -> u32{
+pub fn lab_1000_0595(pstruct7_param_2: *mut Struct7, b_var11: &mut bool, mut i32_var13: i32, u16_var9: &mut u32, mut u16_var14: u16) -> u32{
     if b_var11 {
         pstruct7_param_2.field_0xc = 0;
         i32_var13 = free_mem_1000_13ce(pstruct7_param_2, u16_var14);
@@ -655,7 +655,7 @@ pub fn pass1_1000_0782(
     ctx: &mut AppContext,
     mut param_1: *mut Struct7,
     mut param_2: u16,
-    mut param_3: *mut Struct_1000_07ac_1,
+    mut param_3: *mut Struct1003,
     mut param_4: u16,
 ) -> u16 {
     (param_3.field_0x0e) = 0;

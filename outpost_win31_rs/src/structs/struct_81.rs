@@ -1,0 +1,16 @@
+struct Struct81 {
+    pub field0_0x0: u16,
+    pub field1_0x2: u16,
+    pub field2_0x4: u32,
+    pub field3_0x8: u16,
+    pub field4_0xa: u16,
+    pub hfile_0xc: u16,
+    pub field6_0xe: u32,
+    pub field7_0x12: u32,
+    pub field8_0x16: u32,
+    pub buffer_0x1a: u32,
+    pub field10_0x1e: u16,
+    pub field11_0x20: u8,
+    pub field12_0x21: u8,
+    pub field13_0x22: u16,
+}
