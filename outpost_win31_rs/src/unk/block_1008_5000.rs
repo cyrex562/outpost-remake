@@ -1,4 +1,5 @@
 use crate::sound_ops;
+use crate::structs::struct_57::Struct57;
 use crate::windef16::{HWND16, LPARAM, LRESULT, WPARAM16};
 
 
@@ -483,7 +484,7 @@ pub fn pass1_1008_5c34(param_1: *mut c_char)
 
 
 
-pub fn win_1008_5c5c(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 )
+pub fn win_1008_5c5c(mut param_1: u16, mut param_2: &mut Struct57, mut param_3: u32, mut param_4: u16 )
 
 {
   pass1_1010_84f8(_u16_1050_14cc,param_4);

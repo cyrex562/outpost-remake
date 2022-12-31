@@ -426,9 +426,9 @@ pub fn pass1_1018_3710(mut param_1: u16, mut param_2: u16, param_3: *mut astruct
     let mut lVar9: i32;
     let mut local_12a: [u8; 0x118] = [0; 0x118];
     let mut uStack18: u32;
-    let mut paStack14: *mut astruct_203;
+    let mut paStack14: *mut Struct203;
     let mut uStack10: u32;
-    let mut paStack6: *mut astruct_203;
+    let mut paStack6: *mut Struct203;
 
     paStack6 = null_mut();
     uVar8 = (param_3 >> 0x10);
@@ -936,7 +936,7 @@ pub fn switch_1018_3ee6(
     let mut uVar7: u16;
     let mut in_register_0000000a: u16;
     let mut paVar8: *mut Struct57;
-    let mut paVar9: *mut astruct_203;
+    let mut paVar9: *mut Struct203;
     let mut lVar10: i32;
     let mut iVar11: i16;
     let mut paVar12: *mut astruct_263;
@@ -944,7 +944,7 @@ pub fn switch_1018_3ee6(
     let mut paVar14: *mut astruct_263;
     let mut uVar15: u16;
     let mut uStack26: u32;
-    let mut paStack22: *mut astruct_203;
+    let mut paStack22: *mut Struct203;
     let mut lStack18: i32;
     let mut lStack14: i32;
     let mut iStack10: i16;

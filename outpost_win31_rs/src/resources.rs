@@ -6,7 +6,7 @@ use crate::unk::block_1000_1000::{fn_ptr_1000_17ce, mem_op_1000_179c};
 use crate::unk::block_1000_3000::pass1_1000_3cea;
 use crate::unk::block_1040_b000::pass1_1040_b0bc;
 use crate::utils::CONCAT22;
-use crate::winapi16::MessageBox16;
+use crate::winapi16::WinAPI16_MessageBox16;
 
 pub fn find_n_load_rsrc_1010_4e9e(struct_param_1: *mut astruct_812) {
     let mut BVar1: bool;
@@ -209,8 +209,8 @@ pub fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param_3: *mu
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   // uVar2 = (param_3 >> 0x10);
-  MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
@@ -218,8 +218,8 @@ pub fn msg_box_op_1038_81be(param_1: *mut c_char, mut param_2: u16, param_3: *mu
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, msg_box_title), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
   return;
 }
@@ -257,14 +257,14 @@ pub fn msg_box_op_1038_8dda(param_1: *mut c_char, mut param_2: u16, param_3: *mu
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
   uVar2 = (param_3 >> 0x10);
-  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, local_206), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   load_string_1010_84e0(_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,param_1,in_buf_len_5);
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, local_206), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
   return;
 }
@@ -294,8 +294,8 @@ pub fn msg_box_ui_op_1040_64ca(param_1: *mut c_char, mut param_2: u16, mut param
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, local_206), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
   return;
 }
@@ -325,8 +325,8 @@ pub fn msg_box_op_1040_a85a(param_1: *mut c_char, mut param_2: u16, mut param_3:
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x3ff,local_104,0x1050);
   pass1_1000_3cea(CONCAT22(in_buf_len_5,param_1),CONCAT22(0x1050,local_104));
-  MessageBox16(0x0,CONCAT22(0x1050,local_206),CONCAT22(in_buf_len_5,param_1),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, local_206), CONCAT22(in_buf_len_5, param_1),
+                        (param_3 + 0x6));
   fn_ptr_1000_17ce(CONCAT22(in_buf_len_5,param_1));
   return;
 }
@@ -355,8 +355,8 @@ pub fn msg_box_ui_op_1038_8a3a(param_1: *mut c_char, mut param_2: u16, param_3: 
   pass1_1000_3cea(CONCAT22(sStack262,pcStack264),CONCAT22(0x1050,local_104));
   load_string_1010_84e0
             (_u16_1050_14cc,(_u16_1050_14cc >> 0x10),0x101,local_20a,0x1050);
-  MessageBox16(0x0,CONCAT22(0x1050,local_20a),CONCAT22(sStack262,pcStack264),
-               (param_3 + 0x6));
+  WinAPI16_MessageBox16(0x0, CONCAT22(0x1050, local_20a), CONCAT22(sStack262, pcStack264),
+                        (param_3 + 0x6));
   fn_ptr_1000_17ce(CONCAT22(sStack262,pcStack264));
   return;
 }

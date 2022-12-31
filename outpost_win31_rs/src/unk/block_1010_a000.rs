@@ -104,12 +104,12 @@ pub fn pass1_1010_a478(param_1: *mut StructD) {
 
 
 pub fn pass1_1010_a50c(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     param_2: *mut *mut u8,
     param_3: *mut StructD,
 ) {
     let mut iVar1: i16;
-    let mut struct_1: *mut astruct_20;
+    let mut struct_1: *mut Struct20;
     let mut local_8: u32;
     let mut iStack4: i16;
 

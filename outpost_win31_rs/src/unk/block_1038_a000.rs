@@ -1,3 +1,5 @@
+use crate::structs::struct_1007::Struct1007;
+use crate::structs::struct_d::StructD;
 use crate::windef16::HWND16;
 
 
@@ -278,7 +280,7 @@ pub fn pass1_1038_af34()
 
 
 
-pub fn pass1_1038_af40(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 ,mut param_5: i16) -> u32
+pub fn pass1_1038_af40(mut param_1: &mut Struct1007, mut param_2: &mut StructD, mut param_3: u32, mut param_4: u16, mut param_5: i16) -> u32
 
 {
   let mut ppcVar1: *mut *mut code;

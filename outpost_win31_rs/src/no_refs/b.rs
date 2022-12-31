@@ -14,7 +14,7 @@ pub fn window_op_1008_0af8(mut param_1: u16, struct_param_1: *mut StructA) {
     let mut uVar11: u16;
     let mut uVar12: u8;
     let mut uVar13: u16;
-    let mut struct_20_v6: *mut astruct_20;
+    let mut struct_20_v6: *mut Struct20;
     let mut paVar7: *mut Struct57;
     let mut fn_ptr_1: *mut *mut code;
 

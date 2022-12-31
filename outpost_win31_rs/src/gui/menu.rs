@@ -14,7 +14,7 @@ use crate::unk::block_1018_2000::pass1_1018_2504;
 use crate::unk::block_1020_b000::pass1_1020_bd80;
 use crate::unk::block_1030_7000::struct_op_1030_73a8;
 use crate::unk::block_1030_8000::{pass1_1030_8308, pass1_1030_8344};
-use crate::winapi16::{CheckMenuItem16, ClientToScreen16, DeleteMenu16, EnableMenuItem16, GetMenuState16, GetSubMenu16, InsertMenu16, LoadMenu16, ModifyMenu16, PostMessage16, PtInRect16, TrackPopupMenu16};
+use crate::winapi16::{CheckMenuItem16, ClientToScreen16, DeleteMenu16, EnableMenuItem16, GetMenuState16, GetSubMenu16, InsertMenu16, LoadMenu16, ModifyMenu16, PostMessage16, WinAPI16_PtInRect16, TrackPopupMenu16};
 use crate::winapp::winapp_e;
 use crate::windef16::{BOOL16, HMENU16, HWND16, RECT16};
 
@@ -47,7 +47,7 @@ pub fn menu_ui_op_1020_5bf2(
     if (uVar2 != 0) {
         uStack10 = pass1_1020_6498(iVar5.field243_0xf6, 0x2);
         in_DX = (uStack10 >> 0x10);
-        BVar3 = PtInRect16(CONCAT22(IStack4, local_6), uStack10);
+        BVar3 = WinAPI16_PtInRect16(CONCAT22(IStack4, local_6), uStack10);
         if (BVar3 != 0) {
             PostMessage16(0x0, 0x131, 0x111, HWND16_1050_0396);
             return 0x1;

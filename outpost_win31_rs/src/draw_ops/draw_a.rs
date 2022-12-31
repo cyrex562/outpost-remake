@@ -489,7 +489,7 @@ pub fn draw_op_1020_7cc8(mut param_1: u16, struct_e_param_1: *mut StructE) {
 
 
 pub fn unk_draw_op_1020_7f7a(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
     mut param_4: u16,
@@ -499,10 +499,10 @@ pub fn unk_draw_op_1020_7f7a(
     let mut in_EDX: u32;
     let mut uVar3: u16;
     let mut paVar2: *mut Struct57;
-    let mut struct_1: *mut astruct_20;
+    let mut struct_1: *mut Struct20;
     let mut uVar4: u16;
     let mut unaff_SS: u16;
-    let mut paVar4: *mut astruct_20;
+    let mut paVar4: *mut Struct20;
     let mut puVar5: *mut u32;
     let mut in_stack_0000fe90: u16;
     let mut in_stack_0000ffb4: u16;

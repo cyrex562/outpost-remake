@@ -65,7 +65,7 @@ use crate::structs::struct_825::Struct825;
 use crate::unk::block_1000_2000::{fn_ptr_op_1000_2594, init_1000_23be, pass1_1000_25a8, pass1_1000_2913, poss_str_op_1000_28dc};
 use crate::unk::block_1000_5000::{dos_get_interrupt_vector_1000_23ea, ret_op_1000_55ac};
 use crate::unk::block_1020_1000::{pass1_1020_1da8, pass1_1020_1eea};
-use crate::winapi16::{CallWindowProc16, DestroyWindow16, DispatchMessage16, FatalAppExit16, FatalExit, GetClientRect16, GetDC16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetModuleFileName16, GetProp16, GetVersion16, GetWindowRect16, GetWindowText16, InitApp16, InitTask16, IsDialogMessage16, IsWindow16, LockSegment16, MakeProcInstance16, MessageBeep16, MessageBox16, PostMessage16, PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, TranslateAccelerator16, TranslateMessage16, WaitEvent16, WinHelp16};
+use crate::winapi16::{CallWindowProc16, DestroyWindow16, DispatchMessage16, FatalAppExit16, FatalExit, GetClientRect16, GetDC16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetModuleFileName16, GetProp16, GetVersion16, GetWindowRect16, GetWindowText16, InitApp16, InitTask16, IsDialogMessage16, IsWindow16, LockSegment16, MakeProcInstance16, MessageBeep16, WinAPI16_MessageBox16, PostMessage16, WinAPI16_PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, TranslateAccelerator16, TranslateMessage16, WinAPI16_WaitEvent16, WinHelp16};
 use crate::windef16::{HANDLE16, HCURSOR16, HDC16, HWND16, LPARAM, LRESULT, MSG16, POINT16, RECT16, WPARAM16};
 
 pub fn pass1_1000_29dc(mut param_1: u16) -> u16 {
@@ -758,7 +758,7 @@ pub fn mixed_win_op_1008_0c60(
             }
             if (PTR_LOOP_1050_4fe8.is_null() == false) {
                 pcVar16 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
-                BVar4 = MessageBox16(
+                BVar4 = WinAPI16_MessageBox16(
                     0x10,
                     pcVar16,
                     s_You_may_not_run_a_turn__The_game_1050_0172,

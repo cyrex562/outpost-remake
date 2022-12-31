@@ -15,7 +15,7 @@ pub fn LockSegment16(a: HGLOBAL16) -> HGLOBAL16 {
     todo!()
 }
 
-pub fn WaitEvent16(a: HTASK16) -> bool {
+pub fn WinAPI16_WaitEvent16(a: HTASK16) -> bool {
     todo!()
 }
 
@@ -44,7 +44,7 @@ pub fn FatalExit() {
 }
 
 // HGLOBAL16 GLobalAlloc16(Dsize: u16, Uflags: INT16);
-pub fn GLobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
+pub fn GlobalAlloc16(size: u32, flags: u16) -> HGLOBAL16
 {
     todo!()
 }
@@ -251,7 +251,7 @@ pub fn SetDiBitsToDevice(coloruse: i16, info: *mut BITMAPINFO, bits: *mut c_void
 pub fn MoveToEx16(pt: *mut POINT16, y: i16, x: i16, hdc: HDC16) -> bool { todo!()}
 
 // MessageBox16: INT16(Utype: INT16, char * title, char * text, hwnd: HWND16);
-pub fn MessageBox16(msg_type: i16, title: *mut c_char, text: c_char, hwnd: HWND16) -> i16 { todo!()}
+pub fn WinAPI16_MessageBox16(msg_type: i16, title: *mut c_char, text: c_char, hwnd: HWND16) -> i16 { todo!()}
 
 // pub fn PostQuitMessage16(exit_code: INT16);
 pub fn PostQuitMessage16(exit_code: i16) {todo!()}
@@ -368,7 +368,7 @@ pub fn SetCursor16(hcursor: HCURSOR16) -> HCURSOR16 {todo!()}
 pub fn ShowCursor16(b_show: bool) -> i16 {todo!()}
 
 // BOOL16 PtInRect16(POpt: INT16, RECT16 * rect);
-pub fn PtInRect16(point: POINT16, rect: *mut RECT16) -> bool {todo!()}
+pub fn WinAPI16_PtInRect16(point: POINT16, rect: *mut RECT16) -> bool {todo!()}
 
 // i16 FillRect16(HBRUSH16 hbrush, RECT16 * rect, hdc: HDC16);
 pub fn FillRect16(hbrush: HBRUSH16, rect: *mut RECT16, hdc: HDC16) -> i16 {todo!()}

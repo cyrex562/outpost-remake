@@ -13,7 +13,7 @@ use crate::os_base::_SHI_INVOKEERRORHANDLER1;
 use crate::unk::{block_1000_0000, block_1000_2000};
 use crate::error_handling::smart_heap_library_err_1000_214c;
 use crate::structs::struct_57::Struct57;
-use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
+use crate::winapi16::{GlobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, SegmentLimit};
 use crate::windef16::HGLOBAL16;
 
 pub fn pass1_1000_1284(mut param_1: u32) -> u32 {

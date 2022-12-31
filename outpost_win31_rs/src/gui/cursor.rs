@@ -24,12 +24,12 @@ use crate::unk::block_1018_5000::pass1_1018_57e6;
 use crate::unk::block_1020_6000::pass1_1020_68de;
 use crate::gui::{dialog, menu, window};
 use crate::gui::window::{win_a, win_e};
-use crate::winapi16::{LoadCursor16, MapDialogRect16, MessageBox16, PostMessage16, ReleaseCapture16, SetCapture16, SetCursor16, SetWindowText16, ShowWindow16, UpdateWindow16};
+use crate::winapi16::{LoadCursor16, MapDialogRect16, WinAPI16_MessageBox16, PostMessage16, ReleaseCapture16, SetCapture16, SetCursor16, SetWindowText16, ShowWindow16, UpdateWindow16};
 use crate::winapp::winapp_c::send_msg_1020_097e;
 use crate::winapp::winapp_e;
 use crate::windef16::{HCURSOR16, WNDCLASS16};
 
-pub fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut astruct_20, mut param_3: u16, mut param_4: u16, mut param_5: u16 )
+pub fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut Struct20, mut param_3: u16, mut param_4: u16, mut param_5: u16 )
 
 {
   let mut uVar1: u32;
@@ -37,7 +37,7 @@ pub fn cursor_op_1008_2dcc(mut param_1: u16, param_2: *mut astruct_20, mut param
   let mut cursor_handle: HCURSOR16;
   let mut hcursor: HCURSOR16;
   let mut extraout_DX: u16;
-  let mut paVar3: *mut astruct_20;
+  let mut paVar3: *mut Struct20;
 
   cursor_handle = LoadCursor16(0x7f02,0x0);
   hcursor = SetCursor16(cursor_handle);
@@ -214,7 +214,7 @@ pub fn win_ui_cursor_op_1008_06c0(
             uVar5 = (param_1 >> 0x10);
             if (PTR_LOOP_1050_4fe8.is_null() == false) {
                 pcVar6 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
-                MessageBox16(
+                WinAPI16_MessageBox16(
                     0x10,
                     pcVar6,
                     s_You_may_not_run_a_turn__The_game_1050_00df,
@@ -561,11 +561,11 @@ pub fn win_ui_cursor_op_1020_1294(
         );
         local_6 -= local_10;
         iStack4 -= local_12;
-        hcursor = winapp_e::pt_in_rect_1010_40f8(
-            uVar3,
-            (iVar4 + 0xf2),
-            CONCAT22(0x1050, &local_6),
-            in_stack_0000ffc2,
+        hcursor = winapp_e::pt_in_rect_1010_40f8(,
+                                                 uVar3,
+                                                 (iVar4 + 0xf2),
+                                                 CONCAT22(0x1050, &local_6),
+                                                 in_stack_0000ffc2,
         );
         if (hcursor != 0xffff) {
             hcursor_00 = LoadCursor16(0x7f02, 0x0);

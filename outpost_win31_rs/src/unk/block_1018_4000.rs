@@ -223,8 +223,8 @@ pub fn pass1_1018_4608(mut param_1: u32, param_2: *mut c_char, param_3: *mut c_c
 }
 
 
-pub fn struct_1018_4720(param_1: *mut astruct_203, mut param_2: u32, mut param_3: u32) {
-    let mut iVar1: *mut astruct_203;
+pub fn struct_1018_4720(param_1: *mut Struct203, mut param_2: u32, mut param_3: u32) {
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -254,12 +254,12 @@ pub fn pass1_1018_4760(param_1: *mut StructD) {
 }
 
 pub fn struct_1018_4790(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u16,
-) -> *mut astruct_203 {
-    let mut iVar1: *mut astruct_203;
+) -> *mut Struct203 {
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -273,13 +273,13 @@ pub fn struct_1018_4790(
 }
 
 pub fn struct_1018_47c8(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u16,
     mut param_5: u32,
 ) {
-    let mut iVar1: *mut astruct_203;
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -294,12 +294,12 @@ pub fn struct_1018_47c8(
 }
 
 pub fn pass1_1018_4808(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u32,
 ) {
-    let mut iVar1: *mut astruct_203;
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -313,12 +313,12 @@ pub fn pass1_1018_4808(
 }
 
 pub fn struct_1018_4842(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u16,
-) -> *mut astruct_203 {
-    let mut iVar1: *mut astruct_203;
+) -> *mut Struct203 {
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -344,12 +344,12 @@ pub fn pass1_1018_4882(param_1: *mut StructD) {
 }
 
 pub fn struct_1018_48b0(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u16,
-) -> *mut astruct_203 {
-    let mut iVar1: *mut astruct_203;
+) -> *mut Struct203 {
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -363,12 +363,12 @@ pub fn struct_1018_48b0(
 }
 
 pub fn struct_1018_48e8(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u16,
 ) -> *mut u16 {
-    let mut iVar1: *mut astruct_203;
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);
@@ -382,12 +382,12 @@ pub fn struct_1018_48e8(
 }
 
 pub fn struct_1018_4920(
-    param_1: *mut astruct_203,
+    param_1: *mut Struct203,
     mut param_2: u32,
     mut param_3: u32,
     mut param_4: u32,
 ) {
-    let mut iVar1: *mut astruct_203;
+    let mut iVar1: *mut Struct203;
     let mut uVar1: u16;
 
     struct_1018_4720(param_1, param_2, param_3);

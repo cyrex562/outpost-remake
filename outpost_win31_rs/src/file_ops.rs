@@ -13,7 +13,7 @@ use crate::unk::block_1000_4000::{pass1_1000_4906, pass1_1000_4f2e};
 use crate::unk::block_1008_6000::str_op_1008_60e8;
 use crate::unk::block_1010_2000::mixed_1010_20ba;
 use crate::utils::{CONCAT22, SUB42};
-use crate::winapi16::{_lclose16, _llseek16, _lopen16, GetOpenFileName16, GetSaveFileName16, LoadCursor16, MessageBeep16, MessageBox16, SetCursor16};
+use crate::winapi16::{_lclose16, _llseek16, _lopen16, GetOpenFileName16, GetSaveFileName16, LoadCursor16, MessageBeep16, WinAPI16_MessageBox16, SetCursor16};
 use crate::windef16::{HCURSOR16, HFILE16, HWND16};
 
 pub fn close_file_1008_496c(param_1: *mut astruct_803) {
@@ -1022,7 +1022,7 @@ pub fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
         uStack16 = CONCAT22(HVar3, uVar2);
         pcVar5 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
         MessageBeep16(0x10);
-        MessageBox16(0x10, pcVar5, CONCAT22(HVar3, uVar2), (param_1 + 0x8));
+        WinAPI16_MessageBox16(0x10, pcVar5, CONCAT22(HVar3, uVar2), (param_1 + 0x8));
     } else {
         (_u16_1050_5748 + 0x8) = 0;
         SetCursor16(HStack6);
@@ -1033,7 +1033,7 @@ pub fn message_box_op_1008_12dc(param_1: *mut Struct72, mut param_2: u32) {
         MessageBeep16(0x0);
         hwnd = (param_1 + 0x8);
         HVar3 = hwnd;
-        MessageBox16(0x40, pcVar5, CONCAT22(hwnd, uVar6), hwnd);
+        WinAPI16_MessageBox16(0x40, pcVar5, CONCAT22(hwnd, uVar6), hwnd);
         uStack16 = CONCAT22(HVar3, hwnd);
     }
     fn_ptr_1000_17ce((uStack16 & 0xffff | HVar3 << 0x10));
@@ -1236,7 +1236,7 @@ pub fn save_file_1008_3178(mut param_1: u16, param_2: *mut Struct72, mut param_3
             pcVar9 = load_string_1010_847e(_u16_1050_14cc, 0x57b);
             text = (pcVar9 >> 0x10);
             atype = SUB42(pcVar9, 0x0);
-            MessageBox16(0x10, pcVar9, pcStack1654, (param_2 + 0x8));
+            WinAPI16_MessageBox16(0x10, pcVar9, pcStack1654, (param_2 + 0x8));
             pcStack1382 = null_mut();
             pcStack1646 = pcStack1654;
             fn_ptr_1000_17ce(pcStack1654);

@@ -41,7 +41,7 @@ pub fn pass1_1040_45e8(param_1: *mut u8, mut param_2: i16, mut param_3: u16, mut
     let mut iVar10: i16;
     let mut unaff_SI: u16;
     let mut uVar11: u16;
-    let mut paVar12: *mut astruct_20;
+    let mut paVar12: *mut Struct20;
     let mut in_stack_0000fe88: u16;
     let mut in_stack_0000ffac: u16;
     let mut in_stack_0000ffb2: u16;

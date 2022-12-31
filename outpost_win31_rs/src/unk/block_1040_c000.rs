@@ -19,7 +19,7 @@ use crate::structs::struct_d::StructD;
 use crate::utils::CONCAT22;
 use crate::gui;
 use crate::gui::cleanup::destroy_window_1040_b726;
-use crate::winapi16::{GetDlgItemInt16, MessageBox16, SetDlgItemInt16};
+use crate::winapi16::{GetDlgItemInt16, WinAPI16_MessageBox16, SetDlgItemInt16};
 use crate::windef16::{HDC16, LRESULT};
 
 

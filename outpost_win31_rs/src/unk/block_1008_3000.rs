@@ -157,8 +157,8 @@ pub fn pass1_1008_397a(param_1: *mut astruct_452) {
     return;
 }
 
-pub fn pass1_1008_3ab8(param_1: *mut astruct_20) -> *mut astruct_20 {
-    let mut iVar1: *mut astruct_20;
+pub fn pass1_1008_3ab8(param_1: *mut Struct20) -> *mut Struct20 {
+    let mut iVar1: *mut Struct20;
     let mut uVar1: u16;
 
     set_struct_1008_687a(param_1, 0x0);

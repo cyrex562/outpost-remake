@@ -2,7 +2,7 @@ use std::ffi::{CStr, CString};
 use crate::mem_address::MemAddress;
 use crate::winapp::fatal_app_exit_1000_3e9e;
 use crate::utils::CONCAT22;
-use crate::winapi16::{MessageBeep16, MessageBox16};
+use crate::winapi16::{MessageBeep16, WinAPI16_MessageBox16};
 
 pub fn smart_heap_library_err_1000_214c(
     mut param_1: u16,
@@ -23,7 +23,7 @@ pub fn smart_heap_library_err_1000_214c(
     let title_string = String::from("SmartHeap Library");
     let title_cstring = CString::from(title_string.into_bytes);
     loop {
-        i_var1 = MessageBox16(
+        i_var1 = WinAPI16_MessageBox16(
             msg_type as i16,
             title_cstring.into_raw(),
             text,

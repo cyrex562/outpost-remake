@@ -1,17 +1,10 @@
+use crate::app_context::AppContext;
+use crate::structs::struct_1007::Struct1007;
+use crate::structs::struct_d::StructD;
+use crate::unk::block_1010_0000::pass1_1010_038e;
+use crate::unk::block_1038_a000::pass1_1038_af40;
 
-
-
-
-
-
-
-
-
-
-
-
-
-pub fn pass1_1038_d242(param_1: *mut Struct57,mut param_2: u16 ) -> *mut Struct57
+pub fn pass1_1038_d242(param_1: *mut Struct57, mut param_2: u16 ) -> *mut Struct57
 
 {
   let mut uVar1: *mut Struct57;
@@ -121,7 +114,7 @@ pub fn pass1_1038_d7d0(param_1: *mut StructD)
 
 
 
-pub fn pass1_1038_de20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut param_4: u16 ,mut param_5: u16 ,mut param_6: i16)
+pub fn pass1_1038_de20(mut param_1: u16, mut param_2: &mut StructD, mut param_3: u32, mut param_4: u16, mut param_5: u16, mut param_6: u16)
 
 {
   let mut ppcVar1: *mut *mut code;
@@ -213,21 +206,12 @@ pub fn pass1_1038_de20(mut param_1: u16 ,mut param_2: u16 ,mut param_3: u32,mut 
 }
 
 
-
-
-
-pub fn pass1_1038_df5c(mut param_1: u16 ,mut param_2: u32) -> u32
+pub fn pass1_1038_df5c(ctx: &mut AppContext, mut pstructd_arg_1: &mut StructD, mut pstruct1007_arg_2: &mut Struct1007) -> u32
 
 {
-  let mut uVar1: u16;
-  let mut uVar2: u16;
-  let mut uVar3: u32;
-
-  uVar2 = (param_2 >> 0x10);
-  uVar1 = param_2;
-  pass1_1010_038e(uVar1 + 0x92,1);
-  uVar3 = pass1_1038_af40(uVar1,param_1,_PTR_LOOP_1050_5b7c,(uVar1 + 0x8),0x20);
-  return uVar3;
+    pass1_1010_038e(pstruct1007_arg_2.field_0x92, 1);
+    let result = pass1_1038_af40(pstruct1007_arg_2, pstructd_arg_1, ctx.globals._PTR_LOOP_1050_5b7c, (pstruct1007_arg_2.field_0x8), 0x20);
+    result
 }
 
 

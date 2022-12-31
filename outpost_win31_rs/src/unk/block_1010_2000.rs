@@ -360,7 +360,7 @@ pub fn mixed_1010_20ba(
             var8 = SUB42(var13, 0x0); //
                                          // LAB_1010_25bb:
             var18 = CONCAT22(var3, var8);
-            pass1_1010_1146(CONCAT22(var3, var8), 0x0);
+            pass1_1010_1146(CONCAT22(var3, var8), 0x0, );
         }
         // TODO: goto switchD_1010_2765_caseD_38;
         0x35 => {

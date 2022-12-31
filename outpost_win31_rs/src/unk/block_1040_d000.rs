@@ -18,7 +18,7 @@ use crate::structs::struct_903::Struct903;
 use crate::structs::struct_d::StructD;
 use crate::utils::{CONCAT22, SUB42};
 use crate::gui;
-use crate::winapi16::{EnableWindow16, GetDlgItem16, MessageBox16, PostMessage16, SendDlgItemMessage16};
+use crate::winapi16::{EnableWindow16, GetDlgItem16, WinAPI16_MessageBox16, PostMessage16, SendDlgItemMessage16};
 use crate::windef16::{HWND16, LRESULT};
 
 

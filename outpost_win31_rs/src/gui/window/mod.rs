@@ -74,7 +74,7 @@ use crate::unk::block_1040_9000::pass1_1040_9824;
 use crate::unk::block_1040_a000::{pass1_1040_a5d0, struct_1040_a598};
 use crate::gui::{cleanup, cursor, dialog};
 use crate::gui::dialog::{dlg_a, dlg_b};
-use crate::winapi16::{BringWindowToTop16, CheckDlgButton16, CheckRadioButton16, CreateWindow16, DefWindowProc16, DestroyWindow16, EnableWindow16, GetClassInfo16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetStockObject16, GetSystemMetrics16, GetWindowLong16, GetWindowPlacement16, GetWindowRect16, GetWindowText16, GetWindowWord16, InvalidateRect16, IsDlgButtonChecked, IsIconic16, IsWindow16, LoadCursor16, LoadIcon16, MapDialogRect16, MoveWindow16, OutputDebugString16, PostMessage16, PtInRect16, RegisterClass16, ReleaseCapture16, ScreenToClient16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetSysModalWindow, SetWindowLong16, SetWindowPlacement16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
+use crate::winapi16::{BringWindowToTop16, CheckDlgButton16, CheckRadioButton16, CreateWindow16, DefWindowProc16, DestroyWindow16, EnableWindow16, GetClassInfo16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetStockObject16, GetSystemMetrics16, GetWindowLong16, GetWindowPlacement16, GetWindowRect16, GetWindowText16, GetWindowWord16, InvalidateRect16, IsDlgButtonChecked, IsIconic16, IsWindow16, LoadCursor16, LoadIcon16, MapDialogRect16, MoveWindow16, OutputDebugString16, PostMessage16, WinAPI16_PtInRect16, RegisterClass16, ReleaseCapture16, ScreenToClient16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetSysModalWindow, SetWindowLong16, SetWindowPlacement16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
 use crate::winapp::winapp_a::{create_window_1040_6eae, create_window_1040_7620, create_window_1040_8bea, unk_win_op_1010_7300, win_proc_1008_5f44};
 use crate::winapp::winapp_b::{post_win_msg_1040_7b3c, unk_win_msg_op_1008_9510};
 use crate::winapp::winapp_c::{send_msg_1040_1696, send_msg_1040_3374};
@@ -283,8 +283,8 @@ pub fn unk_win_ui_op_1040_8158(param_1: u32, param_2: INT16, mut param_3: i16)
         if (iVar3 + 0x76) != 0 {
             ScreenToClient16(CONCAT22(0x1050, &stack0xfffa), (iVar3 + 0x6));
             GetSystemMetrics16(SM_CYCAPTION);
-            BVar2 = PtInRect16((param_1 & 0xffff0000 | ZEXT24((iVar3 + 0x82))),
-                               (iVar3 + 0x82));
+            BVar2 = WinAPI16_PtInRect16((param_1 & 0xffff0000 | ZEXT24((iVar3 + 0x82))),
+                                        (iVar3 + 0x82));
             if BVar2 != 0 {
                 ppcVar1 = (*param_1 + 0x14);
                 (**ppcVar1)(0x1538, iVar3);
@@ -862,7 +862,7 @@ pub fn win_ui_op_1040_5800(param_1: *mut u8, param_2: *mut astruct_18, mut param
     let mut local_14: [u8; 0x8] = [0; 0x8];
     let mut iStack12: i16;
     let mut pSStack10: *mut StructD;
-    let mut paStack6: *mut astruct_20;
+    let mut paStack6: *mut Struct20;
     let mut pSVar5: *mut StructD;
     let mut paVar9: *mut Struct57;
 

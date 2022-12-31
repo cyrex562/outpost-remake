@@ -158,7 +158,7 @@ pub fn pass1_1018_5292(param_1: *mut astruct_9, mut param_2: u32) {
     let mut pstruct9_v16: *mut astruct_9;
     let mut uVar16: u16;
     let mut uVar17: u16;
-    let mut paVar18: *mut astruct_203;
+    let mut paVar18: *mut Struct203;
     let mut puVar19: *mut u16;
     let mut uStack50: u16;
     let mut local_26: [u8; 0x8] = [0; 0x8];
@@ -507,7 +507,7 @@ pub fn pass1_1018_57e6(mut param_1: u32, param_2: i32, mut param_3: u16, mut par
 
 pub fn struct_1018_5840(
     param_1: *mut Struct57,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -517,9 +517,9 @@ pub fn struct_1018_5840(
     mut param_9: u16,
 ) {
     let mut uVar1: u16;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut unaff_BP: u16;
-    let mut uVar2: *mut astruct_20;
+    let mut uVar2: *mut Struct20;
     let mut puVar2: *mut u32;
 
     unk_draw_op_1020_7f7a(param_2, 0x6, CONCAT22(param_4, param_3), param_5);

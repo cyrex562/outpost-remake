@@ -28,7 +28,7 @@ use crate::utils::{CONCAT11, CONCAT22, SUB42};
 use crate::gui::{cursor, dialog, window};
 use crate::gui::dialog::dlg_b;
 use crate::gui::window::{win_c, win_e};
-use crate::winapi16::{BringWindowToTop16, CheckDlgButton16, CreateWindow16, DefWindowProc16, DestroyWindow16, EnableWindow16, GetClassInfo16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetStockObject16, GetWindowLong16, GetWindowRect16, InvalidateRect16, IsDlgButtonChecked, IsWindow16, LoadCursor16, OutputDebugString16, PostMessage16, PtInRect16, RegisterClass16, ReleaseCapture16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetCursor16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
+use crate::winapi16::{BringWindowToTop16, CheckDlgButton16, CreateWindow16, DefWindowProc16, DestroyWindow16, EnableWindow16, GetClassInfo16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetStockObject16, GetWindowLong16, GetWindowRect16, InvalidateRect16, IsDlgButtonChecked, IsWindow16, LoadCursor16, OutputDebugString16, PostMessage16, WinAPI16_PtInRect16, RegisterClass16, ReleaseCapture16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetCursor16, SetFocus16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
 use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::winapp::winapp_a::{create_window_1040_6eae, create_window_1040_7620, win_proc_1008_5f44};
 use crate::windef16::{ATOM, BOOL16, HCURSOR16, HMENU16, HWND16, LPARAM, LRESULT, RECT16, WNDCLASS16, WPARAM16};
@@ -166,11 +166,11 @@ pub fn ui_op_1008_2c4e(mut param_1: u16, mut param_2: u16, param_3: *mut Struct7
   let mut uVar1: u32;
   let mut hcursor_5: HCURSOR16;
   let mut uVar3: u16;
-  let mut paVar2: *mut astruct_20;
-  let mut uVar5: *mut astruct_20;
+  let mut paVar2: *mut Struct20;
+  let mut uVar5: *mut Struct20;
   let mut in_stack_0000fff8: u16;
   let mut uVar2: u32;
-  let mut ppaVar1: *mut astruct_20;
+  let mut ppaVar1: *mut Struct20;
   let mut fn_ptr_1: *mut *mut code;
 
   hcursor_5 = LoadCursor16(0x7f02,0x0);

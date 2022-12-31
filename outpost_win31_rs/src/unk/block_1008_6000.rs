@@ -325,9 +325,9 @@ pub fn memcpy_op_1008_676e(
 }
 
 
-pub fn set_struct_1008_687a(param_1: *mut astruct_20, mut param_2: u32) {
-    let mut iVar1: *mut astruct_20;
-    let mut uVar1: *mut astruct_20;
+pub fn set_struct_1008_687a(param_1: *mut Struct20, mut param_2: u32) {
+    let mut iVar1: *mut Struct20;
+    let mut uVar1: *mut Struct20;
 
     set_struct_op_1008_9584(param_1, param_2);
     uVar1 = (param_1 >> 0x10);

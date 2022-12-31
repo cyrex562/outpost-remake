@@ -40,7 +40,7 @@ pub fn struct_1018_e100(param_1: *mut u8, param_2: *mut u16, mut param_3: u16) -
 
 pub fn pass1_1018_e230(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -48,7 +48,7 @@ pub fn pass1_1018_e230(
     let mut uVar1: u16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut unaff_BP: u16;
     let mut uVar3: u16;
     let mut puVar4: *mut u32;
@@ -170,7 +170,7 @@ pub fn pass1_1018_e57a(param_1: *mut StructD) {
 
 pub fn pass1_1018_e5dc(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -178,7 +178,7 @@ pub fn pass1_1018_e5dc(
     let mut uVar1: u16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut unaff_BP: u16;
     let mut uVar3: u16;
     let mut puVar4: *mut u32;
@@ -289,14 +289,14 @@ pub fn pass1_1018_e8bc(param_1: *mut StructD) {
 
 pub fn pass1_1018_e91e(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
 ) {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut code;
-    let mut paVar3: *mut astruct_20;
+    let mut paVar3: *mut Struct20;
     let mut uVar4: u16;
     let mut in_register_0000000a: u16;
     let mut paVar5: *mut Struct57;
@@ -307,7 +307,7 @@ pub fn pass1_1018_e91e(
     let mut in_stack_0000ffd0: u16;
     let mut uVar7: u16;
     let mut in_stack_0000fffa: u16;
-    let mut iVar7: *mut astruct_20;
+    let mut iVar7: *mut Struct20;
 
     paVar5 = CONCAT22(in_register_0000000a, param_1);
     iVar7 = param_2;

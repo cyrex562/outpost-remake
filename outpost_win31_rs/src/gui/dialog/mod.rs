@@ -46,7 +46,7 @@ use crate::unk::block_1010_0000::pass1_1010_038e;
 use crate::unk::block_1010_3000::pass1_1010_375e;
 use crate::unk::block_1010_6000::pass1_1010_60a0;
 use crate::gui::{cleanup, window};
-use crate::winapi16::{CheckDlgButton16, CheckRadioButton16, CreateDialog16, DestroyWindow16, EnableWindow16, GetDlgCtrlID16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetWindowLong16, GetWindowText16, GetWindowWord16, InvalidateRect16, IsDialogMessage16, IsDlgButtonChecked, IsWindow16, MapDialogRect16, MessageBox16, PostMessage16, SendDlgItemMessage16, SendMessage16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetProp16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16};
+use crate::winapi16::{CheckDlgButton16, CheckRadioButton16, CreateDialog16, DestroyWindow16, EnableWindow16, GetDlgCtrlID16, GetDlgItem16, GetDlgItemInt16, GetMessage16, GetWindowLong16, GetWindowText16, GetWindowWord16, InvalidateRect16, IsDialogMessage16, IsDlgButtonChecked, IsWindow16, MapDialogRect16, WinAPI16_MessageBox16, PostMessage16, SendDlgItemMessage16, SendMessage16, SetDlgItemInt16, SetDlgItemText16, SetFocus16, SetProp16, SetWindowLong16, SetWindowPos16, SetWindowText16, ShowWindow16};
 use crate::winapp::winapp_c::send_msg_1038_c374;
 use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::windef16::{HANDLE16, HWND16, LRESULT, RECT16, WPARAM16};
@@ -205,19 +205,19 @@ pub fn win_ui_op_1040_cace(mut param_1: u16, mut param_2: u32)
     uVar8 = (_u16_1050_14cc >> 0x10);
     if ((uVar1 + 0x36) == 0) {
         load_string_1010_84e0(_u16_1050_14cc, uVar8, 0x3ff, local_108, 0x1050);
-        iVar3 = MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
-                             (uVar5 + 0x8));
+        iVar3 = WinAPI16_MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
+                                      (uVar5 + 0x8));
     } else {
         load_string_1010_84e0(_u16_1050_14cc, uVar8, 0x3ff, local_108, 0x1050);
-        iVar3 = MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
-                             (uVar5 + 0x8));
+        iVar3 = WinAPI16_MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
+                                      (uVar5 + 0x8));
     }
     bVar2 = iVar3 == 0x6;
     bVar7 = false;
     if ((!bVar2) && (uVar1 = (uVar5 + 0x94), (uVar1 + 0x34) < 1)) {
         load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x3ff, local_108, 0x1050);
-        IVar4 = MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
-                             (uVar5 + 0x8));
+        IVar4 = WinAPI16_MessageBox16(0x34, CONCAT22(0x1050, local_208), CONCAT22(0x1050, local_108),
+                                      (uVar5 + 0x8));
         bVar7 = IVar4 == 0x6;
         bVar2 = false;
     }

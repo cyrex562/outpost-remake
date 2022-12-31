@@ -6,7 +6,7 @@ use crate::draw_ops::draw_a;
 
 pub fn struct_1020_7554(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -14,7 +14,7 @@ pub fn struct_1020_7554(
     let mut uVar1: u16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut unaff_BP: u16;
     let mut uVar3: u16;
     let mut puVar4: *mut u32;

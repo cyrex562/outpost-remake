@@ -29,7 +29,7 @@ use crate::unk::block_1040_b000::pass1_1040_b54a;
 use crate::utils::{CONCAT11, CONCAT22};
 use crate::gui::{cleanup, dialog, window};
 use crate::gui::window::win_e;
-use crate::winapi16::{CheckDlgButton16, DefWindowProc16, EnableWindow16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetWindowLong16, GetWindowPlacement16, GetWindowRect16, InvalidateRect16, IsWindow16, LoadIcon16, MapDialogRect16, MoveWindow16, PostMessage16, PtInRect16, ReleaseCapture16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetFocus16, SetSysModalWindow, SetWindowLong16, SetWindowPlacement16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
+use crate::winapi16::{CheckDlgButton16, DefWindowProc16, EnableWindow16, GetClientRect16, GetCursorPos16, GetDlgCtrlID16, GetDlgItem16, GetNextDlgTabItem16, GetWindowLong16, GetWindowPlacement16, GetWindowRect16, InvalidateRect16, IsWindow16, LoadIcon16, MapDialogRect16, MoveWindow16, PostMessage16, WinAPI16_PtInRect16, ReleaseCapture16, SendDlgItemMessage16, SendMessage16, SetCapture16, SetFocus16, SetSysModalWindow, SetWindowLong16, SetWindowPlacement16, SetWindowPos16, SetWindowText16, ShowWindow16, UpdateWindow16};
 use crate::winapp;
 use crate::winapp::winapp_b::unk_win_msg_op_1008_9510;
 use crate::winapp::winapp_a::create_window_1040_8bea;
@@ -292,7 +292,7 @@ pub fn win_op_1040_9cde(lparam_param_1: LPARAM, wparam_param_2: WPARAM16, msg_pa
             }
             GetClientRect16(rect_a, 0x1050);
             iVar2 = (iVar3 + 0x4);
-            BVar5 = PtInRect16(lparam_param_1, rect_a);
+            BVar5 = WinAPI16_PtInRect16(lparam_param_1, rect_a);
             if (BVar5 == 0) {
                 pbVar1 = (iVar3 + 0x4);
                 *pbVar1 = *pbVar1 & 0xfd;
@@ -375,7 +375,7 @@ pub fn win_op_1040_9cde(lparam_param_1: LPARAM, wparam_param_2: WPARAM16, msg_pa
                 *pbVar1 = *pbVar1 & 0xfc;
                 InvalidateRect16(0x1, NULL, 0x0);
                 UpdateWindow16(hwnd_param_4);
-                BVar5 = PtInRect16(lparam_param_1, rect_a);
+                BVar5 = WinAPI16_PtInRect16(lparam_param_1, rect_a);
                 if (BVar5 == 0) {
                     return;
                 }
@@ -541,7 +541,7 @@ pub fn set_win_pos_1040_4ae4(mut param_1: i16, mut param_2: u16, mut param_3: u1
     let mut pSStack16: *mut StructD;
     let mut iStack12: i16;
     let mut pSStack10: *mut StructD;
-    let mut paStack6: *mut astruct_20;
+    let mut paStack6: *mut Struct20;
     let mut paVar7: *mut Struct57;
 
     if param_4 == 0xeb {

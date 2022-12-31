@@ -20,7 +20,7 @@ use crate::unk::block_1038_a000::pass1_1038_af40;
 use crate::unk::block_1040_4000::{pass1_1040_4d7e, pass1_1040_4dcc};
 use crate::unk::block_1040_8000::string_1040_8520;
 use crate::utils::{CONCAT22, SUB42};
-use crate::winapi16::{CallWindowProc16, GetDlgItem16, MessageBox16, PostMessage16, SendMessage16, SetFocus16, WinHelp16};
+use crate::winapi16::{CallWindowProc16, GetDlgItem16, WinAPI16_MessageBox16, PostMessage16, SendMessage16, SetFocus16, WinHelp16};
 use crate::winapp::winapp_b;
 use crate::windef16::{HWND16, LPARAM, LRESULT, WPARAM16};
 
@@ -865,8 +865,8 @@ let mut local_56: [u8;0x50] = [0;0x50];
     unk_str_op_1000_3d3e(CONCAT22(0x1050,local_56),pcVar8);
     pcVar8 = load_string_1010_847e(_u16_1050_14cc,0x57b);
     unk_str_op_1000_3d3e(CONCAT22(0x1050,local_a6),pcVar8);
-    iStack4 = MessageBox16(0x21,CONCAT13(0x10,CONCAT12(0x50,local_a6)),CONCAT22(0x1050,local_56),
-                           HWND16_1050_0396);
+    iStack4 = WinAPI16_MessageBox16(0x21, CONCAT13(0x10, CONCAT12(0x50, local_a6)), CONCAT22(0x1050, local_56),
+                                    HWND16_1050_0396);
   }
   else {
     uVar7 = 0x1000;
@@ -918,7 +918,7 @@ pub fn message_box_op_1038_c672(param_1: u8, mut param_2: i16, mut param_3: u16,
   uVar1 = (_u16_1050_14cc >> 0x10);
   if (param_5 == 0x17d) {
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,0x1050);
-    MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),(param_2 + 0x6));
+    WinAPI16_MessageBox16(0x30, *(param_2 + 0x92), CONCAT22(0x1050, local_404), (param_2 + 0x6));
   }
   else {
     if (param_5 != 0x17e) {
@@ -926,7 +926,7 @@ pub fn message_box_op_1038_c672(param_1: u8, mut param_2: i16, mut param_3: u16,
       return;
     }
     load_string_1010_84e0(_u16_1050_14cc,uVar1,0x3ff,local_404,0x1050);
-    MessageBox16(0x30,*(param_2 + 0x92),CONCAT22(0x1050,local_404),(param_2 + 0x6));
+    WinAPI16_MessageBox16(0x30, *(param_2 + 0x92), CONCAT22(0x1050, local_404), (param_2 + 0x6));
     pass1_1008_e164((param_2 + 0x8e));
   }
   PostMessage16(0x0,0x2,0x111,(param_2 + 0x6));
@@ -952,7 +952,7 @@ pub fn msg_box_op_1038_c07a(mut param_1: i16, mut param_2: u16, mut param_3: u16
         load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x200, local_40c, 0x1050);
         sys_1000_3f9c(CONCAT22(0x1050, local_70c), CONCAT22(0x1050, local_40c), param_1 + 0x19e);
         load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x100, local_50c, 0x1050);
-        MessageBox16(0x30, CONCAT22(0x1050, local_50c), CONCAT22(0x1050, local_70c), (param_1 + 0x6));
+        WinAPI16_MessageBox16(0x30, CONCAT22(0x1050, local_50c), CONCAT22(0x1050, local_70c), (param_1 + 0x6));
     } else {
         if (param_4 != 0x178) {
             if ((param_4 != 0x178) && (param_4 - 0x179 < 0x2)) {
@@ -969,7 +969,7 @@ pub fn msg_box_op_1038_c07a(mut param_1: i16, mut param_2: u16, mut param_3: u16
         if (iVar1 == 0) {
             load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x3ff, local_40c, 0x1050);
             load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x3ff, local_50c, 0x1050);
-            MessageBox16(0x30, CONCAT22(0x1050, local_50c), CONCAT22(0x1050, local_40c), (param_1 + 0x6),
+            WinAPI16_MessageBox16(0x30, CONCAT22(0x1050, local_50c), CONCAT22(0x1050, local_40c), (param_1 + 0x6),
             );
             return;
         }
@@ -1023,7 +1023,7 @@ pub fn win_ui_op_1040_07dc(
             local_806,
             0x1050,
         );
-        IVar2 = MessageBox16(
+        IVar2 = WinAPI16_MessageBox16(
             0x34,
             CONCAT13(0x10, CONCAT12(0x50, local_806)),
             CONCAT22(puVar4, puVar3),
@@ -1093,7 +1093,7 @@ pub fn win_ui_op_1040_07dc(
             local_806,
             0x1050,
         );
-        IVar2 = MessageBox16(
+        IVar2 = WinAPI16_MessageBox16(
             0x34,
             CONCAT13(0x10, CONCAT12(0x50, local_406)),
             CONCAT22(0x1050, local_806),
@@ -1148,7 +1148,7 @@ pub fn message_box_op_1040_37f0(mut param_1: u16, mut param_2: i16, mut param_3:
         uVar2 = (paStack6 >> 0x10);
         pcStack10 = *(paStack6 + 0x68);
         load_string_1010_84e0(_u16_1050_14cc, (_u16_1050_14cc >> 0x10), 0x3ff, local_40c, 0x1050);
-        uVar1 = MessageBox16(0x30, pcStack10, CONCAT22(0x1050, local_40c), (param_2 + 0x6));
+        uVar1 = WinAPI16_MessageBox16(0x30, pcStack10, CONCAT22(0x1050, local_40c), (param_2 + 0x6));
         pass1_1018_3710(uVar1, uVar2, (param_2 + 0x8e));
         PostMessage16(0x0, 0x2, 0x111, (param_2 + 0x6));
     } else {

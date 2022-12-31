@@ -669,15 +669,15 @@ pub fn pass1_1020_0734(param_1: *mut StructD, param_2: u8) -> *mut StructD {
 }
 
 pub fn struct_1020_0762(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u32,
     param_3: *mut u32,
     mut param_4: u16,
     mut param_5: u32,
     mut param_6: u32,
 ) {
-    let mut iVar1: *mut astruct_20;
-    let mut uVar1: *mut astruct_20;
+    let mut iVar1: *mut Struct20;
+    let mut uVar1: *mut Struct20;
 
     pass1_1020_01d8(
         param_1,

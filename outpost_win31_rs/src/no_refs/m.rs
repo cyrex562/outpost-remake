@@ -3,7 +3,7 @@ use crate::unk::block_1010_e000::{pass1_1010_e58a, pass1_1010_e8d0, pass1_1010_e
 pub fn pass1_1010_c58as(
     mut param_1: u16,
     mut param_2: u16,
-    param_3: *mut astruct_20,
+    param_3: *mut Struct20,
     mut param_4: u16,
     mut param_5: u32,
 ) {

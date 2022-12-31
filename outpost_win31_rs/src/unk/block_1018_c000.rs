@@ -1,7 +1,7 @@
 
 pub fn pass1_1018_c402(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -14,8 +14,8 @@ pub fn pass1_1018_c402(
     let mut puVar2: *mut u16;
     let mut in_register_0000000a: u16;
     let mut paVar3: *mut Struct57;
-    let mut iVar4: *mut astruct_20;
-    let mut uVar4: *mut astruct_20;
+    let mut iVar4: *mut Struct20;
+    let mut uVar4: *mut Struct20;
     let mut puVar4: *mut u32;
     let mut in_stack_0000fe8e: u16;
     let mut in_stack_0000ffb2: u16;
@@ -85,10 +85,10 @@ pub fn pass1_1018_c402(
 
 
 pub fn pass1_1018_c958(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -116,10 +116,10 @@ pub fn pass1_1018_c958(
 }
 
 pub fn pass1_1018_c9a6(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -147,10 +147,10 @@ pub fn pass1_1018_c9a6(
 }
 
 pub fn pass1_1018_c9f4(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut piVar1: *mut i16;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -182,10 +182,10 @@ pub fn pass1_1018_c9f4(
 }
 
 pub fn pass1_1018_ca48(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -213,10 +213,10 @@ pub fn pass1_1018_ca48(
 }
 
 pub fn pass1_1018_ca96(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut piVar1: *mut i16;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -248,10 +248,10 @@ pub fn pass1_1018_ca96(
 }
 
 pub fn pass1_1018_caea(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -279,10 +279,10 @@ pub fn pass1_1018_caea(
 }
 
 pub fn pass1_1018_cb38(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -310,10 +310,10 @@ pub fn pass1_1018_cb38(
 }
 
 pub fn pass1_1018_cb86(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut piVar1: *mut i16;
     let mut uVar2: u16;
     let mut uVar3: u16;
@@ -345,10 +345,10 @@ pub fn pass1_1018_cb86(
 }
 
 pub fn pass1_1018_cbda(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -376,10 +376,10 @@ pub fn pass1_1018_cbda(
 }
 
 pub fn pass1_1018_cc28(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut local_6: [u8; 0x4] = [0; 0x4];
@@ -407,10 +407,10 @@ pub fn pass1_1018_cc28(
 }
 
 pub fn pass1_1018_cc76(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -438,10 +438,10 @@ pub fn pass1_1018_cc76(
 }
 
 pub fn pass1_1018_ccc4(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -469,10 +469,10 @@ pub fn pass1_1018_ccc4(
 }
 
 pub fn pass1_1018_cd12(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -500,10 +500,10 @@ pub fn pass1_1018_cd12(
 }
 
 pub fn pass1_1018_cd60(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;
@@ -536,10 +536,10 @@ pub fn pass1_1018_cd60(
 
 
 pub fn pass1_1018_cf74(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut uVar1: u16;
     let mut puVar2: *mut u16;
     let mut uVar3: u16;

@@ -1,5 +1,5 @@
 use crate::globals::DAT_1050_1050;
-use crate::winapi16::{GLobalAlloc16, GlobalFree16};
+use crate::winapi16::{GlobalAlloc16, GlobalFree16};
 
 pub fn pass1_1000_400a(mut param_1: i16) -> *mut u8 {
     let mut pu_var1: *mut u8;
@@ -674,10 +674,10 @@ pub fn pass1_1000_4906(
     let mut u_var2: u8;
     let mut u_var3: u16;
     let mut u_var4: u16;
-    let mut struct_1: *mut astruct_20;
+    let mut struct_1: *mut Struct20;
     let mut u_var5: u16;
     let mut pu_var6: *mut u16;
-    let mut struct_1_hi: *mut astruct_20;
+    let mut struct_1_hi: *mut Struct20;
 
     if (param_3 != 0) {
         struct_1_hi = (param_1 >> 0x10);
@@ -801,7 +801,7 @@ pub fn pass1_1000_49c6(
 pub fn pass1_1000_4aea(
     mut param_1: u16,
     mut param_2: u16,
-    mut param_3: i16,
+    mut param_3: u16,
     mut param_4: u16,
     fn_ptr_param_5: code5,
 ) {

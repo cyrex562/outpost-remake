@@ -8,7 +8,7 @@ use crate::structs::struct_7::Struct7;
 use crate::unk::{block_1000_1000, block_1000_2000};
 use crate::unk::block_1000_2000::pass1_1000_22c0;
 use crate::utils::{CARRY2, CONCAT22};
-use crate::winapi16::{GLobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16, SegmentLimit};
+use crate::winapi16::{GlobalAlloc16, GlobalDOSAlloc16, GlobalDOSFree16, GlobalFree16, GlobalHandle16, GlobalLock16, GlobalPageLock16, GlobalPageUnlock16, GlobalReAlloc16, GlobalSize16, hmemcpy16, SegmentLimit};
 use crate::windef16::HGLOBAL16;
 
 // dvar6 = mem_op_1000_1532(param_1, 0x1050);
@@ -41,7 +41,7 @@ pub fn alloc_mem_1000_131c(mut param_1: u16, mut param_2: u32) {
 
     let mut i_stack6 = 0x1;
     loop {
-        handle = GLobalAlloc16(param_2 & 0xffff | param_2 << 0x10, flags);
+        handle = GlobalAlloc16(param_2 & 0xffff | param_2 << 0x10, flags);
         u_stack8 = (var2 >> 0x10) as u16;
         u_stack10 = var2 as u16;
         if handle != 0 {

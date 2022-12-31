@@ -27,7 +27,7 @@ use crate::unk::block_1040_b000::pass1_1040_b54a;
 use crate::utils::CONCAT22;
 use crate::gui::{cleanup, dialog, window};
 use crate::gui::window::win_e;
-use crate::winapi16::{BringWindowToTop16, DestroyWindow16, GetClientRect16, InvalidateRect16, LoadIcon16, MapDialogRect16, MoveWindow16, PostMessage16, PtInRect16, SetFocus16, ShowWindow16, UpdateWindow16};
+use crate::winapi16::{BringWindowToTop16, DestroyWindow16, GetClientRect16, InvalidateRect16, LoadIcon16, MapDialogRect16, MoveWindow16, PostMessage16, WinAPI16_PtInRect16, SetFocus16, ShowWindow16, UpdateWindow16};
 use crate::winapp;
 use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 use crate::winapp::winapp_b::unk_win_msg_op_1008_9510;
@@ -668,7 +668,7 @@ pub fn pt_in_rect_op_1020_58ce(
                 paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
                 for iStack26 in 0..0x4 {
                     paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
-                    BVar6 = PtInRect16(CONCAT22(uStack4, local_6), (iStack26 * 0x8 + uVar14));
+                    BVar6 = WinAPI16_PtInRect16(CONCAT22(uStack4, local_6), (iStack26 * 0x8 + uVar14));
                     if (BVar6 != 0) {
                         local_18[0] = 0;
                         uStack20 = 0;
@@ -758,7 +758,7 @@ pub fn pt_in_rect_op_1020_58ce(
         paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
         pRStack14 = uVar14;
         uStack12 = (uVar14 >> 0x10);
-        BVar6 = PtInRect16(CONCAT22(uStack4, local_6), pRStack14);
+        BVar6 = WinAPI16_PtInRect16(CONCAT22(uStack4, local_6), pRStack14);
         //    if (BVar6 == 0) goto LAB_1020_5a16;
         uStack18 = mixed_1010_20ba(
             paVar9,
@@ -806,7 +806,7 @@ pub fn pt_in_rect_op_1020_58ce(
         paVar9 = (paVar9 & 0xffff0000 | uVar14 >> 0x10);
         pRStack14 = uVar14;
         uStack12 = (uVar14 >> 0x10);
-        BVar6 = PtInRect16(CONCAT22(uStack4, local_6), pRStack14);
+        BVar6 = WinAPI16_PtInRect16(CONCAT22(uStack4, local_6), pRStack14);
         //    if (BVar6 == 0) goto LAB_1020_5942;
         wparam = 0x68;
     }

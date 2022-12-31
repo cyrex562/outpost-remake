@@ -1,26 +1,26 @@
 
 
 pub fn big_switch_1008_15d4(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     param_2: *mut Struct72,
     param_3: i32,
 ) {
     let mut var3: u16;
     let mut var2: *mut u8;
     let mut var4: u16;
-    let mut var5: *mut astruct_20;
+    let mut var5: *mut Struct20;
     let mut puVar1: *mut u8;
     let mut uVar3: u16;
     let mut in_edx: *mut Struct57;
     let mut uVar4: u32;
     let mut var6: u16;
-    let mut paVar2: *mut astruct_20;
+    let mut paVar2: *mut Struct20;
     let mut in_stack_0000fe78: u16;
     let mut in_stack_0000ff9c: u16;
     let mut in_stack_0000ffa2: u16;
     let mut in_stack_0000ffa6: u16;
     let mut uVar5: u16;
-    let mut paStack32: *mut astruct_20;
+    let mut paStack32: *mut Struct20;
     let mut local_e: [u8; 0x8] = [0; 0x8];
     let mut uStack6: u32;
     let mut uVar2: u32;

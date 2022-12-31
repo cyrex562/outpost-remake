@@ -1,5 +1,22 @@
+use crate::globals::PTR_LOOP_1050_1040;
+use crate::gui::cleanup::unk_destroy_win_op_1010_2fa0;
+use crate::gui::get_sys_metrics_1040_7728;
+use crate::gui::window::ui_op_1010_79aa;
+use crate::no_refs::j::pass1_1010_7d38;
+use crate::no_refs::l::pass1_1010_ad64;
+use crate::structs::struct_57::Struct57;
+use crate::structs::struct_903::Struct903;
+use crate::structs::struct_d::StructD;
+use crate::unk::block_1000_1000::fn_ptr_1000_17ce;
+use crate::unk::block_1010_1000::pass1_1010_1ea6;
+use crate::unk::block_1010_2000::{mixed_1010_20ba, pass1_1010_2ee2};
+use crate::unk::block_1040_7000::pass1_1040_79c0;
+use crate::unk::block_1040_a000::pass1_1040_a5d0;
+use crate::utils::CONCAT22;
+use crate::winapp::winapp_a::unk_win_op_1010_7300;
+use crate::winapp::winapp_b::post_win_msg_1040_7b3c;
 
-pub fn struct_1040_b082(param_1: *mut Struct57,mut param_2: u32)
+pub fn struct_1040_b082(param_1: *mut Struct57, mut param_2: u32)
 
 {
   let mut iVar1: *mut Struct57;

@@ -19,7 +19,7 @@ use crate::globals::{DAT_1050_1050, PTR_LOOP_1050_1000, PTR_LOOP_1050_63fe};
 use crate::structs::struct_57::Struct57;
 use crate::structs::struct_825::Struct825;
 use crate::utils::{CARRY2, CONCAT11, CONCAT22};
-use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, FatalAppExit16, FatalExit, GLobalAlloc16, GlobalFree16, GlobalUnlock16, Rectangle16, SelectObject16, SelectPalette16, WritePrivateProfileString16};
+use crate::winapi16::{CreateDC16, DeleteDC16, DeleteObject16, FatalAppExit16, FatalExit, GlobalAlloc16, GlobalFree16, GlobalUnlock16, Rectangle16, SelectObject16, SelectPalette16, WritePrivateProfileString16};
 use crate::windef16::{DEVMODEA, HDC16, HFILE16, HGDIOBJ16, HGLOBAL16, HPALETTE16};
 
 

@@ -406,7 +406,7 @@ pub fn file_1008_bb5e(
     let mut iVar3: *mut astruct_199;
     let mut BVar2: bool;
     let mut uVar3: *mut StructD;
-    let mut uVar4: *mut astruct_200;
+    let mut uVar4: *mut Struct200;
     let mut puVar3: *mut u8;
     let mut uVar5: u16;
     let mut uVar6: u16;
@@ -416,12 +416,12 @@ pub fn file_1008_bb5e(
     let mut paVar10: *mut Struct57;
     let mut uVar13: u16;
     let mut uVar14: u16;
-    let mut paStack286: *mut astruct_200;
+    let mut paStack286: *mut Struct200;
     let mut puStack284: *mut u32;
     let mut local_118: [u8; 0x100] = [0; 0x100];
     let mut local_18: [u16; 0x2] = [0; 0x2];
     let mut local_14: [u16; 0x2] = [0; 0x2];
-    let mut local_10: [*mut astruct_200; 0x4] = [null_mut(); 4];
+    let mut local_10: [*mut Struct200; 0x4] = [null_mut(); 4];
     let mut local_8: u32;
     let mut uVar12: *mut astruct_199;
     let mut uVar11: *mut astruct_199;

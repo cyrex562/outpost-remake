@@ -82,7 +82,7 @@ pub fn pass1_1018_6630(param_1: *mut c_char, pstruct_param_3: *mut astruct_2) {
 
 pub fn struct_1018_66cc(
     mut param_1: u16,
-    param_2: *mut astruct_20,
+    param_2: *mut Struct20,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
@@ -90,9 +90,9 @@ pub fn struct_1018_66cc(
     let mut uVar1: u16;
     let mut in_register_0000000a: u16;
     let mut paVar2: *mut Struct57;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut unaff_BP: u16;
-    let mut uVar2: *mut astruct_20;
+    let mut uVar2: *mut Struct20;
     let mut puVar3: *mut u32;
     let mut in_stack_0000fea6: u16;
     let mut in_stack_0000ffca: u16;
@@ -205,14 +205,14 @@ pub fn pass1_1018_69ac(param_1: *mut StructD) {
 }
 
 pub fn struct_op_1018_6a0e(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u16,
     mut param_6: u16,
     mut param_7: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut iVar1: i16;
     let mut uVar2: u16;
     let mut in_stack_0000ffd6: u16;
@@ -235,10 +235,10 @@ pub fn struct_op_1018_6a0e(
 
 
 pub fn struct_1018_6d02(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xb, 0x9c, 0x8b, param_2, param_3);
     param_1.offset_0x0 = 0xa27e;
     (param_1 + 0x2) = 0x1018;
@@ -246,10 +246,10 @@ pub fn struct_1018_6d02(
 }
 
 pub fn struct_1018_6d38(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xc, 0x9d, 0xd0, param_2, param_3);
     param_1.offset_0x0 = 0xb562;
     (param_1 + 0x2) = 0x1018;
@@ -257,10 +257,10 @@ pub fn struct_1018_6d38(
 }
 
 pub fn struct_1018_6d6e(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xd, 0x9e, 0xd1, param_2, param_3);
     param_1.offset_0x0 = 0x9822;
     (param_1 + 0x2) = 0x1018;
@@ -268,10 +268,10 @@ pub fn struct_1018_6d6e(
 }
 
 pub fn struct_1018_6da4(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xe, 0x9f, 0xd2, param_2, param_3);
     param_1.offset_0x0 = 0xab06;
     (param_1 + 0x2) = 0x1018;
@@ -279,10 +279,10 @@ pub fn struct_1018_6da4(
 }
 
 pub fn struct_1018_6dda(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0xf, 0xa0, 0xd4, param_2, param_3);
     param_1.offset_0x0 = 0xbdea;
     (param_1 + 0x2) = 0x1018;
@@ -290,10 +290,10 @@ pub fn struct_1018_6dda(
 }
 
 pub fn struct_1018_6e10(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x10, 0xa1, 0xda, param_2, param_3);
     param_1.offset_0x0 = 0xa0aa;
     (param_1 + 0x2) = 0x1018;
@@ -301,10 +301,10 @@ pub fn struct_1018_6e10(
 }
 
 pub fn struct_1018_6e46(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x11, 0xa2, 0xdc, param_2, param_3);
     param_1.offset_0x0 = 0xb38e;
     (param_1 + 0x2) = 0x1018;
@@ -312,10 +312,10 @@ pub fn struct_1018_6e46(
 }
 
 pub fn struct_1018_6e7c(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x12, 0xa3, 0xd3, param_2, param_3);
     param_1.offset_0x0 = 0x964e;
     (param_1 + 0x2) = 0x1018;
@@ -323,10 +323,10 @@ pub fn struct_1018_6e7c(
 }
 
 pub fn struct_1018_6eb2(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x13, 0xa4, 0xdb, param_2, param_3);
     param_1.offset_0x0 = 0xa932;
     (param_1 + 0x2) = 0x1018;
@@ -334,10 +334,10 @@ pub fn struct_1018_6eb2(
 }
 
 pub fn struct_1018_6ee8(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x14, 0xa5, 0xa5, param_2, param_3);
     param_1.offset_0x0 = 0xbc16;
     (param_1 + 0x2) = 0x1018;
@@ -345,10 +345,10 @@ pub fn struct_1018_6ee8(
 }
 
 pub fn struct_1018_6f1e(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x15, 0xa7, 0xb2, param_2, param_3);
     param_1.offset_0x0 = 0x9e3a;
     (param_1 + 0x2) = 0x1018;
@@ -356,10 +356,10 @@ pub fn struct_1018_6f1e(
 }
 
 pub fn struct_1018_6f54(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x16, 0xa8, 0x0, param_2, param_3);
     param_1.offset_0x0 = 0xb11e;
     (param_1 + 0x2) = 0x1018;
@@ -367,10 +367,10 @@ pub fn struct_1018_6f54(
 }
 
 pub fn struct_1018_6f8a(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x17, 0xaf, 0xc0, param_2, param_3);
     param_1.offset_0x0 = 0x93de;
     (param_1 + 0x2) = 0x1018;
@@ -378,10 +378,10 @@ pub fn struct_1018_6f8a(
 }
 
 pub fn struct_1018_6fc0(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x18, 0xb0, 0xc1, param_2, param_3);
     param_1.offset_0x0 = 0xa6c2;
     (param_1 + 0x2) = 0x1018;
@@ -389,10 +389,10 @@ pub fn struct_1018_6fc0(
 }
 
 pub fn struct_1018_6ff6(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     struct_op_1018_6a0e(param_1, 0x0, 0x19, 0xb1, 0x80, param_2, param_3);
     param_1.offset_0x0 = 0xb9a6;
     (param_1 + 0x2) = 0x1018;

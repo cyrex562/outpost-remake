@@ -2,7 +2,7 @@ use crate::draw_ops;
 use crate::draw_ops::draw_e;
 
 pub fn pass1_1020_01d8(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u16,
     mut param_3: u16,
     mut param_4: u16,
@@ -151,10 +151,10 @@ pub fn pass1_1020_05d6(param_1: *mut StructD) {
 }
 
 
-pub fn pass1_1020_08b6(param_1: *mut astruct_20, mut param_2: u16, mut param_3: u32) {
-    let mut iVar1: *mut astruct_20;
+pub fn pass1_1020_08b6(param_1: *mut Struct20, mut param_2: u16, mut param_3: u32) {
+    let mut iVar1: *mut Struct20;
     let mut uVar1: u16;
-    let mut paVar2: *mut astruct_20;
+    let mut paVar2: *mut Struct20;
     let mut in_stack_0000ffd6: u16;
 
     paVar2 = unk_draw_op_1008_61b2(in_stack_0000ffd6, param_1, 0x1, param_2, param_3);

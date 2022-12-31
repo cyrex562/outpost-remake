@@ -542,7 +542,7 @@ pub fn pass1_1008_cda2(param_1: *mut astruct_263, mut param_2: u32) {
     let mut puVar4: *mut u32;
     let mut uVar5: u16;
     let mut pcVar6: *mut c_char;
-    let mut puVar9: *mut astruct_206;
+    let mut puVar9: *mut Struct206;
     let mut uVar7: u32;
     let mut uVar8: u16;
     let mut uVar9: u16;
@@ -553,7 +553,7 @@ pub fn pass1_1008_cda2(param_1: *mut astruct_263, mut param_2: u32) {
     let mut uVar12: u16;
     let mut uVar13: u16;
     let mut uVar14: u8;
-    let mut paVar15: *mut astruct_203;
+    let mut paVar15: *mut Struct203;
     let mut local_2e: [u8; 0xa] = [0; 0xa];
     let mut uStack36: u16;
     let mut uStack34: u32;
@@ -561,7 +561,7 @@ pub fn pass1_1008_cda2(param_1: *mut astruct_263, mut param_2: u32) {
     let mut uStack26: u32;
     let mut puStack18: *mut u32;
     let mut uStack16: u16;
-    let mut paStack14: *mut astruct_203;
+    let mut paStack14: *mut Struct203;
     let mut uStack10: u16;
     let mut uStack8: u32;
     let mut iStack4: i16;
@@ -722,7 +722,7 @@ pub fn pass1_1008_cfa0(param_1: *mut astruct_263, mut param_2: u32) {
     let mut iVar15: *mut astruct_4;
     let mut uVar17: u16;
     let mut uVar18: u8;
-    let mut paVar19: *mut astruct_203;
+    let mut paVar19: *mut Struct203;
     let mut paVar15: *mut Struct57;
 
     uVar17 = (param_1 >> 0x10);

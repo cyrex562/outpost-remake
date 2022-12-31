@@ -366,14 +366,14 @@ pub fn unk_win_ui_op_1038_9bc8(mut param_1: u16, mut param_2: u16, mut param_3: 
   return;
 }
 
-pub fn set_struct_op_1008_0536(param_1: *mut astruct_20, mut param_2: u16) {
+pub fn set_struct_op_1008_0536(param_1: *mut Struct20, mut param_2: u16) {
     let mut hicon_1: HICON16;
     let mut hcursor_1: HCURSOR16;
     let mut hbrush_1: HGDIOBJ16;
     let mut in_EDX: u32;
     let mut uVar2: u16;
     let mut paVar1: *mut Struct57;
-    let mut paVar3: *mut astruct_20;
+    let mut paVar3: *mut Struct20;
     let mut puVar4: *mut u32;
     let mut in_stack_0000feac: u16;
     let mut in_stack_0000ffd0: u16;
@@ -438,21 +438,21 @@ pub fn unk_draw_op_1008_61b2(
     mut param_3: u16,
     mut param_4: u16,
     mut param_5: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut l_hgdiobj_1: HGDIOBJ16;
     let mut l_hcursor_1: HCURSOR16;
     let mut in_EDX: *mut Struct57;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut uVar2: u16;
     let mut l_struct_2: *mut u16;
     let mut in_stack_0000fe90: u16;
     let mut in_stack_0000ffb4: u16;
     let mut in_stack_0000ffba: u16;
     let mut in_stack_0000ffbe: u16;
-    let mut uVar5: *mut astruct_20;
+    let mut uVar5: *mut Struct20;
     let mut in_stack_0000ffe8: u16;
-    let mut iVar1: *mut astruct_20;
-    let mut iVar4: *mut astruct_20;
+    let mut iVar1: *mut Struct20;
+    let mut iVar4: *mut Struct20;
     let mut uVar1: *mut u16;
 
     block_1008_6000::set_struct_1008_687a(param_2, param_5);
@@ -493,16 +493,16 @@ pub fn unk_draw_op_1008_61b2(
 }
 
 pub fn unk_draw_op_1008_7f62(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     param_2: u16,
     param_3: u32,
-) -> *mut astruct_20 {
+) -> *mut Struct20 {
     let mut HVar1: HGDIOBJ16;
     let mut HVar2: HCURSOR16;
-    let mut iVar4: *mut astruct_20;
+    let mut iVar4: *mut Struct20;
     let mut uVar3: u16;
-    let mut uVar4: *mut astruct_20;
-    let mut iVar3: *mut astruct_20;
+    let mut uVar4: *mut Struct20;
+    let mut iVar3: *mut Struct20;
 
     set_struct_1008_687a(param_1, param_3);
     uVar3 = (param_1 >> 0x10);

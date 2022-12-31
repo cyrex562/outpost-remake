@@ -1,26 +1,29 @@
-use crate::app_context::AppContext;
-use crate::block_1000;
-use crate::unk::block_1000_1000;
-use crate::block_1000::{mem_op_1000_131c, mem_op_1000_1408, mem_op_1000_14f2, pass1_1000_1e61};
-use crate::globals::{
-    DAT_1050_5f30, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_000e, REG_CS, u16_1050_0002,
-    u16_1050_0008, u32_1050_0004, u32_1050_0006,
-};
-use crate::mem_ops::{alloc_mem_1000_131c, free_mem_1000_13ce, mem_op_1000_1532, realloc_1000_1408};
-use crate::structs::struct_1003::Struct1003;
-use crate::utils::{CARRY2, CONCAT11, CONCAT22};
 use std::os::raw::c_char;
 use std::ptr;
 use std::ptr::null_mut;
-use crate::unk::block_1000_1000::{mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61};
-use crate::mem_container::MemContainer;
-use crate::structs::struct_1002::Struct1002;
-use crate::structs::struct_611::Struct611;
-use crate::structs::struct_7::Struct7;
-use crate::structs::struct_99::astruct_99;
+use crate::{
+    structs::struct_7::Struct7,
+    structs::struct_611::Struct611,
+    structs::struct_1002::Struct1002,
+    mem_container::MemContainer,
+    unk::block_1000_1000::{mem_op_1000_14f2, pass1_1000_1284, pass1_1000_1e61},
+    utils::{CARRY2, CONCAT11, CONCAT22},
+    structs::struct_1003::Struct1003,
+    mem_ops::{alloc_mem_1000_131c, free_mem_1000_13ce, mem_op_1000_1532, realloc_1000_1408},
+    globals::{
+        DAT_1050_5f30, PTR_LOOP_1050_000a, PTR_LOOP_1050_000c, PTR_LOOP_1050_000e, u16_1050_0002,
+        u16_1050_0008, u32_1050_0004, u32_1050_0006,
+    },
+    block_1000::{mem_op_1000_131c, mem_op_1000_1408, mem_op_1000_14f2, pass1_1000_1e61},
+    unk::block_1000_1000,
+    block_1000,
+    app_context::AppContext,
+    structs::struct_99::astruct_99,
+    unk::block_1000_5000::pass1_1000_5390
+};
+use crate::structs::struct_1005::Struct1005;
 
 use super::mem_op_1000_13ce;
-use crate::unk::block_1000_5000::pass1_1000_5390;
 
 pub fn mem_1000_0016(ctx: &mut AppContext, mut param_1: u32) -> u32 {
     let mut u_var1: u32;
@@ -120,7 +123,8 @@ pub fn pass1_1000_010c(
         pass1_1000_1e61(ctx.CS_REG.clone(), uvar4, param_4);
         return 0xffff;
     }
-    DAT_1050_5f30 = 0x1;
+    // DAT_1050_5f30 = 0x1;
+    ctx.data_map.get_mut(&0x1050)?.get_mut(&0x5f30)?.store_u8(1);
     if param_1 == 0x1 {
         u_stack4 = 0x1;
         if (*param_4.field_0x18) == 0x0 {
@@ -131,7 +135,8 @@ pub fn pass1_1000_010c(
         u_stack4 = 0x2;
     } else {
         if param_1 != 0x4 {
-            DAT_1050_5f30 = 0x1;
+            // DAT_1050_5f30 = 0x1;
+            ctx.data_map.get_mut(&0x1050)?.get_mut(&0x5f30)?.store_u8(1);
             return 0xffff;
         }
         u_stack4 = 0;
@@ -140,7 +145,7 @@ pub fn pass1_1000_010c(
     uvar2 = mem_op_1000_03c6(ctx, 0x001a, 0x0, u_stack4, ptr::null_mut(), 0x0, 0);
     u_var1 = u_stack4.clone();
     while u_stack6 <= param_3 && ((u_stack6 < param_3 || (u_stack8 < param_2)) && ((uvar2.clone() | u_var1.clone()) != 0)) {
-        u_var1 = (0x00a1a);
+        u_var1 = 0x00a1a;
         b_var3 = CARRY2(u_stack8.clone(), u_var1);
         u_stack8 += u_var1.clone();
         u_stack6 += b_var3;
@@ -148,7 +153,7 @@ pub fn pass1_1000_010c(
     return u_stack6;
 }
 
-pub fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struct7) -> bool {
+pub fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: &mut Struct7) -> bool {
     let mut bvar3: bool = false;
     let mut uvar4: u16 = 0;
     let mut u16_var5: u16 = 0;
@@ -245,7 +250,7 @@ pub fn mem_op_1000_01b0(ctx: &mut AppContext, struct7_param_1: *mut Struct7) -> 
 pub fn mem_op_1000_0308(
     ctx: &mut AppContext,
     mut param_1: i16,
-    pstruct7_param_2: *mut Struct7,
+    pstruct7_param_2: &mut Struct7,
 ) -> *mut u8 {
     let mut pu8_var1: *mut u8;
     let mut pu8_var2: *mut u8;
@@ -325,7 +330,7 @@ pub fn pass1_1000_07ac(
     return;
 }
 
-pub fn mem_op_1000_0838(ctx: &mut AppContext, mut pstruct7_param1: *mut Struct7) -> u32 {
+pub fn mem_op_1000_0838(ctx: &mut AppContext, pstruct7_param1: &mut Struct7) -> u32 {
     // let mut pu8_var1: *mut u8;
     let mut pu8_var2: *mut u8;
     let mut u16_var3: u16;
@@ -412,7 +417,7 @@ pub fn mem_op_1000_03c6(
     mut param_1: u16,
     mut param_2: u16,
     mut param_3: u16,
-    mut struct7_param_4: *mut Struct7,
+    struct7_param_4: &mut Struct7,
     param_5: u8,
     mut param_6: u16,
 ) -> u16 {
@@ -448,11 +453,11 @@ pub fn mem_op_1000_03c6(
             if pu16_var5.is_null() == false {
                 pu16_var5[0x4] = pstruct7_var20.clone();
                 pu16_var5[0x5] = u16_var3;
-                PTR_LOOP_1050_000c = param_3.clone() | 0xcad0;
-                u16_1050_0002 = 0x1050;
-                u32_1050_0004 = pu_var5;
-                u32_1050_0006 = 0x1050;
-                PTR_LOOP_1050_000a = null_mut();
+                ctx.globals.PTR_LOOP_1050_000c = param_3.clone() | 0xcad0;
+                ctx.globals.u16_1050_0002 = 0x1050;
+                ctx.globals.u32_1050_0004 = pu_var5;
+                ctx.globals.u32_1050_0006 = 0x1050;
+                ctx.globals.PTR_LOOP_1050_000a = null_mut();
                 u16_var10 = 0x1050;
                 // TODO: dvar9 = mem_op_1000_1532(u_stack20, u_var3);
                 u16_var6 = u32_var9.clone() as u16;
@@ -836,7 +841,7 @@ pub fn mem_op_1000_0b20(
     }
 }
 
-pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> U32 {
+pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, param_3: &mut Struct1005) -> U32 {
     let mut puVar1: *mut u16;
     let mut pbVar2: *mut u8;
     let mut piVar3: *mut i16;
@@ -847,7 +852,7 @@ pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> 
     let mut uStack14: u16;
     let mut puStack8: *mut u16;
 
-    let mut puVar8 = (param_3 + 0xe);
+    let mut puVar8 = (param_3.field_0xe);
     let mut uStack6 = 0u16;
     puVar6 = puVar8;
     loop {
@@ -855,7 +860,7 @@ pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> 
             let mut uVar5 = *puVar6;
             if param_1 <= uVar5 {
                 uVar5 = (uVar5 & 0xfffc) - param_1;
-                puVar1 = (param_3 + 0x12);
+                puVar1 = (param_3.field_0x12);
                 puStack8 = puVar6;
                 if *puVar1 < uVar5 || *puVar1 == uVar5 {
                     uStack14 = param_1;
@@ -874,7 +879,7 @@ pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> 
                         puVar8 = (puVar6 + param_1);
                         (puVar8 + (uVar5 - 0x2)) = uVar5;
                         *puVar8 = uVar5 | 0x2;
-                        uVar5 = (param_3 + 0x10);
+                        uVar5 = (param_3.field_0x10);
                         puVar8[0x2] = uVar5;
                         puVar8[0x1] = (uVar5 + 2);
                         ((uVar5 + 0x2) + 0x4) = puVar8;
@@ -924,7 +929,7 @@ pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> 
             break;
         }
         uVar4 = param_3 as u32;
-        uVar9 = (uVar4 >> 0x10);
+        // uVar9 = (uVar4 >> 0x10);
         iVar7 = uVar4 as i16;
         if (iVar7 + 0x34) == 0 {
             break;
@@ -940,7 +945,7 @@ pub fn pass1_1000_0c32(mut param_1: u16, mut param_2: u16, mut param_3: u16) -> 
 }
 
 pub fn call_fn_ptr_1000_0dc6(ctx: &mut AppContext, str_param_1: *mut c_char) -> bool {
-    if (PTR_LOOP_1050_000c.clone() & 0xfff8) != 0xcad0 {
+    if (ctx.globals.PTR_LOOP_1050_000c & 0xfff8) != 0xcad0 {
         pass1_1000_1e61(ctx.CS_REG.clone(), 0xe, ptr::null_mut());
         return false;
     }

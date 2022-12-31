@@ -6,7 +6,7 @@ use crate::structs::struct_a::StructA;
 use crate::unk::block_1010_2000::mixed_1010_20ba;
 use crate::unk::block_1018_5000::pass1_1018_57e6;
 use crate::utils::{CONCAT22, SUB42};
-use crate::winapi16::{CallWindowProc16, GetClientRect16, GetDC16, GetProp16, GetWindowText16, IsWindow16, PostMessage16, PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetWindowLong16, SetWindowText16, WinHelp16};
+use crate::winapi16::{CallWindowProc16, GetClientRect16, GetDC16, GetProp16, GetWindowText16, IsWindow16, PostMessage16, WinAPI16_PtInRect16, ReleaseCapture16, SendMessage16, SetCapture16, SetCursor16, SetDlgItemText16, SetWindowLong16, SetWindowText16, WinHelp16};
 use crate::{gui, winapp};
 use crate::draw_ops::draw_a::palette_op_1008_4e08;
 use crate::gui::cursor;
@@ -1038,7 +1038,7 @@ pub fn call_win_proc_1040_9684(win_handle_1: HWND16, mut param_2: u16, w_param_1
       if (handle_1 == 0) {
         uVar2 = (var10 + 0x18);
         GetClientRect16(local_1a,0x1050);
-        bool_1 = PtInRect16(CONCAT22(param_2,win_handle_1),local_1a);
+        bool_1 = WinAPI16_PtInRect16(CONCAT22(param_2, win_handle_1), local_1a);
         if (bool_1 == 0) {
           return;
         }
@@ -1052,7 +1052,7 @@ pub fn call_win_proc_1040_9684(win_handle_1: HWND16, mut param_2: u16, w_param_1
       uVar2 = (handle_2 + 0x18);
       var4 = uVar1;
       GetClientRect16(local_1a,0x1050);
-      bool_1 = PtInRect16(CONCAT22(param_2,win_handle_1),local_1a);
+      bool_1 = WinAPI16_PtInRect16(CONCAT22(param_2, win_handle_1), local_1a);
       if (bool_1 == 0) {
         return;
       }

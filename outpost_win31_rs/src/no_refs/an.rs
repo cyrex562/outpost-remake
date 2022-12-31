@@ -60,7 +60,7 @@ pub fn draw_op_1038_92f6(param_1: *mut u8,mut param_2: u16 ,mut param_3: u16 ,mu
   let mut pSStack16: *mut StructD;
   let mut iStack12: i16;
   let mut pSStack10: *mut StructD;
-  let mut paStack6: *mut astruct_20;
+  let mut paStack6: *mut Struct20;
   let mut paVar8: *mut Struct57;
 
   paVar7 = CONCAT22(in_register_0000000a,param_1);

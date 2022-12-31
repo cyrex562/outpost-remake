@@ -1,4 +1,5 @@
-struct Struct20 {
+#[derive(Default,Debug,Clone)]
+pub struct Struct20 {
     pub offset_0x0: u16,
     pub base_0x2: u16,
     pub field2_0x4: u32,

@@ -35,7 +35,7 @@ pub fn pass1_1020_808e(param_1: *mut StructD) {
 
 
 
-pub fn pass1_1020_8360(param_1: *mut astruct_20) {
+pub fn pass1_1020_8360(param_1: *mut Struct20) {
     let mut uVar1: u32;
     let mut uVar2: u16;
     let mut in_EDX: u32;
@@ -48,7 +48,7 @@ pub fn pass1_1020_8360(param_1: *mut astruct_20) {
     let mut in_stack_0000ffc0: u16;
     let mut in_stack_0000ffc4: u16;
     let mut uVar6: u16;
-    let mut iVar4: *mut astruct_20;
+    let mut iVar4: *mut Struct20;
 
     uVar3 = (in_EDX >> 0x10);
     iVar4 = param_1;
@@ -87,13 +87,13 @@ pub fn pass1_1020_8360(param_1: *mut astruct_20) {
 
 
 
-pub fn struct_1020_847a(param_1: *mut astruct_20, mut param_2: i16) {
+pub fn struct_1020_847a(param_1: *mut Struct20, mut param_2: i16) {
     let mut uVar1: u16;
-    let mut paVar2: *mut astruct_20;
+    let mut paVar2: *mut Struct20;
     let mut in_EDX: u32;
     let mut uVar4: u16;
     let mut paVar3: *mut Struct57;
-    let mut iVar3: *mut astruct_20;
+    let mut iVar3: *mut Struct20;
     let mut unaff_SI: u16;
     let mut uVar5: u16;
     let mut puVar6: *mut u16;
@@ -215,9 +215,9 @@ pub fn pass1_1020_8712(
 
 
 
-pub fn pass1_1020_87c2(param_1: *mut astruct_20) {
+pub fn pass1_1020_87c2(param_1: *mut Struct20) {
     let mut uVar1: u32;
-    let mut iVar2: *mut astruct_20;
+    let mut iVar2: *mut Struct20;
     let mut in_EDX: i32;
     let mut uVar2: u16;
     let mut unaff_SI: u16;
@@ -306,7 +306,7 @@ pub fn pass1_1020_87c2(param_1: *mut astruct_20) {
 
 
 pub fn pass1_1020_8a9c(
-    param_1: *mut astruct_20,
+    param_1: *mut Struct20,
     mut param_2: u32,
     mut param_3: u16,
     mut param_4: u16,
@@ -329,8 +329,8 @@ pub fn pass1_1020_8a9c(
     let mut local_2a: [u8; 0x24] = [0; 0x24];
     let mut uStack6: u16;
     let mut uStack4: u16;
-    let mut iVar9: *mut astruct_20;
-    let mut uVar9: *mut astruct_20;
+    let mut iVar9: *mut Struct20;
+    let mut uVar9: *mut Struct20;
 
     uVar4 = (param_2 >> 0x10);
     iVar9 = param_1;
@@ -402,16 +402,16 @@ pub fn pass1_1020_8bae(param_1: *mut u16) {
 }
 
 
-pub fn pass1_1020_8eaa(param_1: *mut astruct_20, mut param_2: u32) {
+pub fn pass1_1020_8eaa(param_1: *mut Struct20, mut param_2: u32) {
     let mut puVar1: *mut u8;
     let mut paVar2: *mut Struct19;
     let mut uVar3: u16;
     let mut uVar5: u16;
     let mut paVar6: *mut Struct57;
-    let mut iVar4: *mut astruct_20;
+    let mut iVar4: *mut Struct20;
     let mut unaff_SI: u16;
     let mut unaff_DI: u16;
-    let mut uVar4: *mut astruct_20;
+    let mut uVar4: *mut Struct20;
     let mut puVar8: *mut u16;
     let mut puVar9: *mut u32;
     let mut in_stack_0000fe9a: u16;
