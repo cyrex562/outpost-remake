@@ -1,6 +1,7 @@
 #include "sys_ops_12.h"
 
 #include "types.h"
+#include "win_types.h"
 
 void pass1_1000_27d6(u16 *param_1)
 

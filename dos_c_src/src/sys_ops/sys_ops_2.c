@@ -354,7 +354,7 @@ void  pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 param_4, u16 pa
     i16          iStack56;
     u32          uStack10;
     u32          uStack6;
-    astruct_698 *iVar5;
+    Struct698 *iVar5;
 
     uVar12 = (param_1 >> 0x10);
     if((param_1 + 0xc) != 0xb)
@@ -382,7 +382,7 @@ void  pass1_1030_c2fa(u32 param_1, i16 param_2, u8 *param_3, u16 param_4, u16 pa
         iStack56 = 0x0;
         do
         {
-            iVar5                   = (astruct_698 *)(iStack56 * 0x2);
+            iVar5                   = (Struct698 *)(iStack56 * 0x2);
             (iVar5 + uVar4 + 0x174) = (iVar5 + uVar3 + 0x174);
             uVar7                   = (iVar5 + uVar3 + 0x180);
             uVar8                   = uVar7;

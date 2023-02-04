@@ -14,6 +14,7 @@
 #include "utils.h"
 #include "win_ops/win_ops_3.h"
 #include "winapi.h"
+#include "win_types.h"
 
 #include <fn_ptr_ops/fn_ptr_ops_6.h>
 #include <struct_ops/struct_ops_5.h>

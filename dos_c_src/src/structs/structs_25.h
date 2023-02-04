@@ -1,5 +1,5 @@
 
-typedef struct astruct_64 astruct_64, *Pastruct_64;
+typedef struct astruct_64 astruct_64;
 
 struct astruct_64
 {
@@ -254,7 +254,7 @@ struct astruct_64
     u16         field_0x116;
 };
 
-typedef struct astruct_223 astruct_223, *Pastruct_223;
+typedef struct astruct_223 astruct_223;
 
 struct astruct_223
 {
@@ -269,7 +269,7 @@ struct astruct_223
     u16        field_0x14;
 };
 
-typedef struct astruct_356 astruct_356, *Pastruct_356;
+typedef struct astruct_356 astruct_356;
 
 struct astruct_356
 {
@@ -290,7 +290,7 @@ struct astruct_356
     u16        field_0x1a;
 };
 
-typedef struct astruct_387 astruct_387, *Pastruct_387;
+typedef struct astruct_387 astruct_387;
 
 struct astruct_387
 {
@@ -349,7 +349,7 @@ struct astruct_387
     u32 *field_0x3e;
 };
 
-typedef struct astruct_134 astruct_134, *Pastruct_134;
+typedef struct astruct_134 astruct_134;
 
 struct astruct_134
 {
@@ -388,7 +388,7 @@ struct astruct_134
     i16       field_0x20;
 };
 
-typedef struct astruct_56 astruct_56, *Pastruct_56;
+typedef struct astruct_56 astruct_56;
 
 struct astruct_56
 {
@@ -403,7 +403,7 @@ struct astruct_56
     u16      field_0x12;
 };
 
-typedef struct astruct_330 astruct_330, *Pastruct_330;
+typedef struct astruct_330 astruct_330;
 
 struct astruct_330
 {
@@ -670,7 +670,7 @@ struct astruct_330
     u32 field_0x114;
 };
 
-typedef struct astruct_267 astruct_267, *Pastruct_267;
+typedef struct astruct_267 astruct_267;
 
 struct astruct_267
 {
@@ -903,7 +903,7 @@ struct astruct_267
     i16       field_0xe4;
 };
 
-typedef struct astruct_476 astruct_476, *Pastruct_476;
+typedef struct astruct_476 astruct_476;
 
 struct astruct_476
 {
@@ -948,7 +948,7 @@ struct astruct_476
     u32 field_0x28;
 };
 
-typedef struct astruct_210 astruct_210, *Pastruct_210;
+typedef struct astruct_210 astruct_210;
 
 struct astruct_210
 {
@@ -960,7 +960,7 @@ struct astruct_210
     u8        *field_0x10;
 };
 
-typedef struct astruct_249 astruct_249, *Pastruct_249;
+typedef struct astruct_249 astruct_249;
 
 struct astruct_249
 {
@@ -972,7 +972,7 @@ struct astruct_249
     u16         field_0x6;
 };
 
-typedef struct astruct_34 astruct_34, *Pastruct_34;
+typedef struct astruct_34 astruct_34;
 
 struct astruct_34
 {
@@ -1156,7 +1156,7 @@ struct astruct_34
     i16        field_0xb6;
 };
 
-typedef struct astruct_91 astruct_91, *Pastruct_91;
+typedef struct astruct_91 astruct_91;
 
 struct astruct_91
 {
@@ -1320,7 +1320,7 @@ struct astruct_91
     i16        field_0xa8;
 };
 
-typedef struct astruct_325 astruct_325, *Pastruct_325;
+typedef struct astruct_325 astruct_325;
 
 struct astruct_325
 {
@@ -1588,7 +1588,7 @@ struct astruct_325
     u32 field_0x114;
 };
 
-typedef struct astruct_432 astruct_432, *Pastruct_432;
+typedef struct astruct_432 astruct_432;
 
 struct astruct_432
 {
@@ -1739,7 +1739,7 @@ struct astruct_432
     u8       *field_0x9a;
 };
 
-typedef struct astruct_38 astruct_38, *Pastruct_38;
+typedef struct astruct_38 astruct_38;
 
 struct astruct_38
 {
@@ -1805,7 +1805,7 @@ struct astruct_38
     COLORREF  field_0x3c;
 };
 
-typedef struct astruct_129 astruct_129, *Pastruct_129;
+typedef struct astruct_129 astruct_129;
 
 struct astruct_129
 {

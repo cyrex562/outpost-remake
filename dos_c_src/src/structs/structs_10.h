@@ -1,6 +1,6 @@
 #include "types.h"
 
-typedef struct astruct_676 astruct_676, *Pastruct_676;
+typedef struct astruct_676 astruct_676;
 
 struct astruct_676
 {
@@ -215,7 +215,7 @@ struct astruct_676
     u8  field_0xd1;
 };
 
-typedef struct astruct_678 astruct_678, *Pastruct_678;
+typedef struct astruct_678 astruct_678;
 
 struct astruct_678
 {
@@ -246,7 +246,7 @@ struct astruct_678
     i16 field_0x1a;
 };
 
-typedef struct astruct_673 astruct_673, *Pastruct_673;
+typedef struct astruct_673 astruct_673;
 
 struct astruct_673
 {
@@ -461,7 +461,7 @@ struct astruct_673
     u8  field_0xd1;
 };
 
-typedef struct astruct_672 astruct_672, *Pastruct_672;
+typedef struct astruct_672 astruct_672;
 
 struct astruct_672
 {
@@ -676,7 +676,7 @@ struct astruct_672
     u8  field_0xd1;
 };
 
-typedef struct astruct_675 astruct_675, *Pastruct_675;
+typedef struct astruct_675 astruct_675;
 
 struct astruct_675
 {
@@ -891,7 +891,7 @@ struct astruct_675
     u8  field_0xd1;
 };
 
-typedef struct astruct_674 astruct_674, *Pastruct_674;
+typedef struct astruct_674 astruct_674;
 
 struct astruct_674
 {

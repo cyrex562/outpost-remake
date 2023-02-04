@@ -2,8 +2,8 @@
 // Created by cyrex on 3/2/2022.
 //
 
-#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT354_H_
-#define OUTPOST_1_SRC_STRUCTS_STRUCT354_H_
+#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_354_H_
+#define OUTPOST_1_SRC_STRUCTS_STRUCT_354_H_
 
 #include "types.h"
 
@@ -58,4 +58,4 @@ typedef struct astruct_354
     u8                *field_0x36;
 } astruct_354 ;
 
-#endif // OUTPOST_1_SRC_STRUCTS_STRUCT354_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCT_354_H_

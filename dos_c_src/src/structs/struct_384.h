@@ -2,8 +2,8 @@
 // Created by cyrex on 3/2/2022.
 //
 
-#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT384_H_
-#define OUTPOST_1_SRC_STRUCTS_STRUCT384_H_
+#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_384_H_
+#define OUTPOST_1_SRC_STRUCTS_STRUCT_384_H_
 
 #include "types.h"
 
@@ -20,4 +20,4 @@ typedef struct astruct_384
     i16       field_0xc;
 } astruct_384;
 
-#endif // OUTPOST_1_SRC_STRUCTS_STRUCT384_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCT_384_H_

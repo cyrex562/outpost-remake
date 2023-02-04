@@ -197,7 +197,7 @@ u16 pass1_1028_af08(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     u8          *puVar3;
     u8          *puVar4;
     u8          *puVar5;
-    astruct_693 *iVar6;
+    Struct693 *iVar6;
     u16          uVar6;
     u16         *puVar7;
     astruct_67  *paVar8;
@@ -232,7 +232,7 @@ u16 pass1_1028_af08(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 LAB_1028_af42:
     pass1_1008_612e(iStack10, iStack12, puVar3);
     uVar6              = (param_1 >> 0x10);
-    iVar6              = (astruct_693 *)param_1;
+    iVar6              = (Struct693 *)param_1;
     iVar6->field_0x114 = puVar3;
     paVar8             = (astruct_67 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x37, param_4, puVar4, param_3);
     uVar1              = iVar6->field_0x108;

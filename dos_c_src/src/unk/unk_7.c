@@ -1026,7 +1026,7 @@ void  pass1_1028_a28a(u16 param_1, u16 param_2, u32 param_3)
     u8          *puVar6;
     u8          *puVar7;
     u16          uVar8;
-    astruct_691 *iVar9;
+    Struct691 *iVar9;
     u16          uVar9;
     u32         *puVar10;
     u32  *puStack10;
@@ -1037,7 +1037,7 @@ void  pass1_1028_a28a(u16 param_1, u16 param_2, u32 param_3)
     pass1_1038_4d6e(param_3, puVar10, uVar2, puVar5);
     puStack10 = CONCAT22(puVar5, uVar2);
     uVar9     = (param_3 >> 0x10);
-    iVar9     = (astruct_691 *)param_3;
+    iVar9     = (Struct691 *)param_3;
     uVar4     = iVar9->field_0x1f6;
     ppcVar1   = (*puStack10 + 0x10);
     puVar6    = puVar5;

@@ -2,8 +2,8 @@
 // Created by cyrex on 3/2/2022.
 //
 
-#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT310_H_
-#define OUTPOST_1_SRC_STRUCTS_STRUCT310_H_
+#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_310_H_
+#define OUTPOST_1_SRC_STRUCTS_STRUCT_310_H_
 
 #include "types.h"
 
@@ -29,4 +29,4 @@ typedef struct astruct_310
     u8 field_0x1a;
 } astruct_310;
 
-#endif // OUTPOST_1_SRC_STRUCTS_STRUCT310_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCT_310_H_

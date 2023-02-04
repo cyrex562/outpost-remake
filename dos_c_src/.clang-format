@@ -35,7 +35,7 @@ BreakBeforeBraces: Allman
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
 # BreakInheritanceList: AfterComma
-ColumnLimit: 240
+ColumnLimit: 120
 ContinuationIndentWidth: 2
 DerivePointerAlignment: true
 FixNamespaceComments: true

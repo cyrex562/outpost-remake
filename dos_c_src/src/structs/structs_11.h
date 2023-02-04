@@ -1,7 +1,7 @@
 
 
 #include "struct_18.h"
-typedef struct astruct_426 astruct_426, *Pastruct_426;
+typedef struct astruct_426 astruct_426;
 
 struct astruct_426
 {
@@ -12,7 +12,7 @@ struct astruct_426
     u32 field_0x4;
 };
 
-typedef struct astruct_621 astruct_621, *Pastruct_621;
+typedef struct astruct_621 astruct_621;
 
 struct astruct_621
 {
@@ -26,7 +26,7 @@ struct astruct_621
     u16 field_0xc;
 };
 
-typedef struct astruct_624 astruct_624, *Pastruct_624;
+typedef struct astruct_624 astruct_624;
 
 
 struct astruct_624
@@ -193,7 +193,7 @@ struct astruct_624
     struct Struct18 *field_0xa6;
 };
 
-typedef struct astruct_385 astruct_385, *Pastruct_385;
+typedef struct astruct_385 astruct_385;
 
 struct astruct_385
 {
@@ -207,7 +207,7 @@ struct astruct_385
     u16 field_0xa;
 };
 
-typedef struct astruct_623 astruct_623, *Pastruct_623;
+typedef struct astruct_623 astruct_623;
 
 struct astruct_623
 {
@@ -221,7 +221,7 @@ struct astruct_623
     u16 field_0xc;
 };
 
-typedef struct astruct_132 astruct_132, *Pastruct_132;
+typedef struct astruct_132 astruct_132;
 
 struct astruct_132
 {
@@ -252,7 +252,7 @@ struct astruct_132
     i16        field_0x28;
 };
 
-typedef struct astruct_620 astruct_620, *Pastruct_620;
+typedef struct astruct_620 astruct_620;
 
 struct astruct_620
 {
@@ -266,7 +266,7 @@ struct astruct_620
     u16 field_0xc;
 };
 
-typedef struct astruct_629 astruct_629, *Pastruct_629;
+typedef struct astruct_629 astruct_629;
 
 struct astruct_629
 {
@@ -289,7 +289,7 @@ struct astruct_629
     u16        field_0x1e;
 };
 
-typedef struct astruct_31 astruct_31, *Pastruct_31;
+typedef struct astruct_31 astruct_31;
 
 struct astruct_31
 {
@@ -444,9 +444,9 @@ struct astruct_31
     long field_0x96;
 };
 
-typedef struct astruct_626 astruct_626, *Pastruct_626;
+typedef struct astruct_626 astruct_626;
 
-typedef struct astruct_76 astruct_76, *Pastruct_76;
+typedef struct astruct_76 astruct_76;
 
 struct astruct_626
 {

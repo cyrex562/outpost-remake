@@ -1590,12 +1590,12 @@ void  pass1_1030_326a(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
     u16          uVar1;
     u32          uVar2;
     u16          uVar3;
-    astruct_692 *iVar4;
+    Struct692 *iVar4;
     u16          uVar4;
     long         lStack6;
 
     uVar4 = (param_1 >> 0x10);
-    iVar4 = (astruct_692 *)param_1;
+    iVar4 = (Struct692 *)param_1;
     if(iVar4->field_0x1aa == 0x0)
     {
         iVar4->field_0x1aa = 0x1;

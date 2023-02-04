@@ -1,5 +1,5 @@
 
-typedef struct astruct_212 astruct_212, *Pastruct_212;
+typedef struct astruct_212 astruct_212;
 
 struct astruct_212
 {
@@ -12,7 +12,7 @@ struct astruct_212
     u16 field_0x12;
 };
 
-typedef struct astruct_10 astruct_10, *Pastruct_10;
+typedef struct astruct_10 astruct_10;
 
 struct astruct_10
 {
@@ -314,7 +314,7 @@ struct astruct_10
     u16       field_0x128;
 };
 
-typedef struct astruct_243 astruct_243, *Pastruct_243;
+typedef struct astruct_243 astruct_243;
 
 struct astruct_243
 {
@@ -433,7 +433,7 @@ struct astruct_243
     i16       field_0x74;
 };
 
-typedef struct astruct_376 astruct_376, *Pastruct_376;
+typedef struct astruct_376 astruct_376;
 
 struct astruct_376
 {
@@ -697,7 +697,7 @@ struct astruct_376
     u32 field_0x108;
 };
 
-typedef struct astruct_465 astruct_465, *Pastruct_465;
+typedef struct astruct_465 astruct_465;
 
 struct astruct_465
 {
@@ -1742,7 +1742,7 @@ struct astruct_465
     u16         field_0x412;
 };
 
-typedef struct astruct_123 astruct_123, *Pastruct_123;
+typedef struct astruct_123 astruct_123;
 
 struct astruct_123
 {
@@ -1752,7 +1752,7 @@ struct astruct_123
     u16       field_0x4;
 };
 
-typedef struct astruct_256 astruct_256, *Pastruct_256;
+typedef struct astruct_256 astruct_256;
 
 struct astruct_256
 {
@@ -1764,7 +1764,7 @@ struct astruct_256
     u8       *field_0x6;
 };
 
-typedef struct astruct_301 astruct_301, *Pastruct_301;
+typedef struct astruct_301 astruct_301;
 
 struct astruct_301
 {
@@ -1801,7 +1801,7 @@ struct astruct_301
     u32 *field_0x1e;
 };
 
-typedef struct astruct_291 astruct_291, *Pastruct_291;
+typedef struct astruct_291 astruct_291;
 
 struct astruct_291
 {
@@ -1821,7 +1821,7 @@ struct astruct_291
     u32       field_0x12;
 };
 
-typedef struct astruct_105 astruct_105, *Pastruct_105;
+typedef struct astruct_105 astruct_105;
 
 struct astruct_105
 {
@@ -1832,7 +1832,7 @@ struct astruct_105
     u16       field_0x4;
 };
 
-typedef struct astruct_421 astruct_421, *Pastruct_421;
+typedef struct astruct_421 astruct_421;
 
 struct astruct_421
 {

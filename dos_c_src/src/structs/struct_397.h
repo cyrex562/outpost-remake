@@ -2,8 +2,8 @@
 // Created by cyrex on 3/2/2022.
 //
 
-#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT397_H_
-#define OUTPOST_1_SRC_STRUCTS_STRUCT397_H_
+#ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_
+#define OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_
 
 #include "types.h"
 
@@ -46,4 +46,4 @@ typedef struct astruct_397
     long     *field_0x22;
 } astruct_397;
 
-#endif // OUTPOST_1_SRC_STRUCTS_STRUCT397_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_

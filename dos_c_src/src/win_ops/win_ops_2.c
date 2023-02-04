@@ -1743,14 +1743,14 @@ void  win_1020_75f0(u32 param_1, u16 param_2)
     u32          uVar4;
     u8          *puVar5;
     u8          *puVar6;
-    astruct_283 *iVar7;
+    Struct283 *iVar7;
     u16          uVar7;
     u16         *puVar8;
     u32  *puStack10;
     u8           local_6[0x4];
 
     uVar7 = (param_1 >> 0x10);
-    iVar7 = (astruct_283 *)param_1;
+    iVar7 = (Struct283 *)param_1;
     if(iVar7->field_0xee != 0x0)
     {
         ppcVar2 = (*iVar7->field_0xee + 0x8);

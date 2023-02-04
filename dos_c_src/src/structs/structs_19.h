@@ -1,6 +1,6 @@
 
 
-typedef struct astruct_530 astruct_530, *Pastruct_530;
+typedef struct astruct_530 astruct_530;
 
 struct astruct_530
 {
@@ -215,7 +215,7 @@ struct astruct_530
     u8  field_0xd1;
 };
 
-typedef struct astruct_532 astruct_532, *Pastruct_532;
+typedef struct astruct_532 astruct_532;
 
 struct astruct_532
 {
@@ -430,7 +430,7 @@ struct astruct_532
     u8  field_0xd1;
 };
 
-typedef struct astruct_531 astruct_531, *Pastruct_531;
+typedef struct astruct_531 astruct_531;
 
 struct astruct_531
 {
@@ -645,7 +645,7 @@ struct astruct_531
     u8  field_0xd1;
 };
 
-typedef struct astruct_538 astruct_538, *Pastruct_538;
+typedef struct astruct_538 astruct_538;
 
 struct astruct_538
 {
@@ -860,7 +860,7 @@ struct astruct_538
     u8  field_0xd1;
 };
 
-typedef struct astruct_537 astruct_537, *Pastruct_537;
+typedef struct astruct_537 astruct_537;
 
 struct astruct_537
 {
@@ -1075,7 +1075,7 @@ struct astruct_537
     u8  field_0xd1;
 };
 
-typedef struct astruct_539 astruct_539, *Pastruct_539;
+typedef struct astruct_539 astruct_539;
 
 struct astruct_539
 {
@@ -1290,7 +1290,7 @@ struct astruct_539
     u8  field_0xd1;
 };
 
-typedef struct astruct_391 astruct_391, *Pastruct_391;
+typedef struct astruct_391 astruct_391;
 
 struct astruct_391
 {
@@ -1303,7 +1303,7 @@ struct astruct_391
     u16 field_0x8;
 };
 
-typedef struct astruct_427 astruct_427, *Pastruct_427;
+typedef struct astruct_427 astruct_427;
 
 struct astruct_427
 {
@@ -1322,7 +1322,7 @@ struct astruct_427
     u32 *field_0xc;
 };
 
-typedef struct astruct_561 astruct_561, *Pastruct_561;
+typedef struct astruct_561 astruct_561;
 
 struct astruct_561
 {
@@ -1537,7 +1537,7 @@ struct astruct_561
     u8  field_0xd1;
 };
 
-typedef struct astruct_560 astruct_560, *Pastruct_560;
+typedef struct astruct_560 astruct_560;
 
 struct astruct_560
 {
@@ -1752,7 +1752,7 @@ struct astruct_560
     u8  field_0xd1;
 };
 
-typedef struct astruct_567 astruct_567, *Pastruct_567;
+typedef struct astruct_567 astruct_567;
 
 struct astruct_567
 {
@@ -1967,7 +1967,7 @@ struct astruct_567
     u8  field_0xd1;
 };
 
-typedef struct astruct_566 astruct_566, *Pastruct_566;
+typedef struct astruct_566 astruct_566;
 
 struct astruct_566
 {

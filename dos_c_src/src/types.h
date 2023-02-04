@@ -1,5 +1,6 @@
 #pragma once
 
+#include "win_types.h"
 typedef unsigned char      u8;
 typedef char               i8;
 typedef unsigned short     u16;
@@ -247,6 +248,8 @@ typedef struct _devicemodeA _devicemodeA, *P_devicemodeA;
 
 typedef struct _devicemodeA DEVMODEA;
 
+
+typedef struct _POINTL _POINTL;
 
 struct _POINTL
 {

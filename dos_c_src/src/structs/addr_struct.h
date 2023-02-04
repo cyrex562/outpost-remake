@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_ADDR_STRUCT_H_
 #define OUTPOST_1_SRC_STRUCTS_ADDR_STRUCT_H_
 
-#include "struct318.h"
+#include "struct_318.h"
 #include "types.h"
 typedef struct AddrStruct {
     u16 offset;

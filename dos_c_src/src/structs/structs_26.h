@@ -1,6 +1,6 @@
 
 
-typedef struct astruct_708 astruct_708, *Pastruct_708;
+typedef struct astruct_708 astruct_708;
 
 struct astruct_708
 {
@@ -151,7 +151,7 @@ struct astruct_708
     u32 field_0x96;
 };
 
-typedef struct astruct_182 astruct_182, *Pastruct_182;
+typedef struct astruct_182 astruct_182;
 
 struct astruct_182
 {
@@ -196,7 +196,7 @@ struct astruct_182
     i16       field_0x2a;
 };
 
-typedef struct astruct_489 astruct_489, *Pastruct_489;
+typedef struct astruct_489 astruct_489;
 
 struct astruct_489
 {

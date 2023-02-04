@@ -1476,12 +1476,12 @@ void  pass1_1028_b39e(u16 *param_1, i16 param_2, u32 param_3, u16 param_4)
 void  pass1_1028_9944(astruct_100 *param_1, u32 param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6)
 
 {
-    astruct_699 *iVar1;
+    Struct699 *iVar1;
     u16          uVar1;
 
     struct_op_1028_d1dc(param_5, param_6, param_1, 0x1387);
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_699 *)param_1;
+    iVar1              = (Struct699 *)param_1;
     iVar1->field_0x108 = param_4;
     iVar1->field_0x10c = param_3;
     iVar1->field_0x110 = param_2;

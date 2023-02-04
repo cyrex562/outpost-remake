@@ -5,6 +5,7 @@
 #include "structs/structs_1.h"
 #include "types.h"
 #include "utils.h"
+#include "struct_690.h"
 
 void  pass1_1010_927a(struct AddrStruct *param_1)
 
@@ -229,13 +230,13 @@ i16  pass1_1010_96d0(u32 param_1)
 {
     i16         *piVar1;
     i16          iVar2;
-    astruct_690 *iVar3;
+    struct Struct690 *iVar3;
     u16          uVar3;
     u32          uVar4;
     i16          iStack8;
 
     uVar3 = (param_1 >> 0x10);
-    iVar3 = (astruct_690 *)param_1;
+    iVar3 = (struct Struct690 *)param_1;
     if(iVar3->field_0x1a_addr_offset != 0x0)
     {
         if(0x0 < iVar3->field_0x1c_addr_base)
