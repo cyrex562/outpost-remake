@@ -31,4 +31,4 @@ file(GLOB cleanup_ops_h src/cleanup/*.h)
 
 include_directories(./src)
 
-add_executable(efs_cpp ${SOURCES} ${HEADERS} ${src_unk_c} ${src_unk_h} ${big_funcs_c} ${big_funcs_h} ${draw_ops_c} ${draw_ops_h} ${file_ops_c} ${file_ops_h} ${fn_ptr_ops_c} ${fn_ptr_ops_h} ${struct_ops_c} ${struct_ops_h} ${sys_ops_c} ${sys_ops_h} ${ui_ops_c} ${ui_ops_h} ${win_ops_c} ${win_ops_h} ${structs_h} ${bad_funcs_h} ${bad_funcs_c} ${cleanup_ops_c} ${cleanup_ops_h} src/win_types.h src/sys_types.h)
+add_executable(efs_cpp ${SOURCES} ${HEADERS} ${src_unk_c} ${src_unk_h} ${big_funcs_c} ${big_funcs_h} ${draw_ops_c} ${draw_ops_h} ${file_ops_c} ${file_ops_h} ${fn_ptr_ops_c} ${fn_ptr_ops_h} ${struct_ops_c} ${struct_ops_h} ${sys_ops_c} ${sys_ops_h} ${ui_ops_c} ${ui_ops_h} ${win_ops_c} ${win_ops_h} ${structs_h} ${bad_funcs_h} ${bad_funcs_c} ${cleanup_ops_c} ${cleanup_ops_h} src/win_types.h src/sys_types.h src/draw_ops/draw_ops_4.h)

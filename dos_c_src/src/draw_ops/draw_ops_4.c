@@ -1,4 +1,6 @@
 
+#include "structs/structs_16 .h"
+#include "types.h"
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
 {

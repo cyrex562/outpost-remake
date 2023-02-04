@@ -880,6 +880,8 @@ struct Globals
     int  PTR_LOOP_1050_4e2a;
     int  PTR_LOOP_1050_4e30;
     u32   _PTR_LOOP_1050_14cc;
+    u32 _PTR_LOOP_1050_4230;
+
 };
 
 typedef struct Globals Globals;
