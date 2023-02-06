@@ -6,12 +6,12 @@ void pass1_1020_04f6(u16 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 pa
     i16          iVar2;
     u16          uVar3;
     u8          *extraout_DX;
-    astruct_662 *iVar4;
+    Struct662 *iVar4;
     u16          uVar4;
     u16         *puVar5;
 
     uVar4                     = (param_1 >> 0x10);
-    iVar4                     = (astruct_662 *)param_1;
+    iVar4                     = (Struct662 *)param_1;
     *param_1                  = 0x389a;
     iVar4->field_0x2          = 0x1008;
     *param_1                  = 0x3aa8;
@@ -151,12 +151,12 @@ Struct57 *pass1_1018_5e26(Struct57 *param_1, u16 param_2)
 void pass1_1018_6198(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4, i16 param_5, u16 param_6)
 
 {
-    astruct_657 *iVar1;
+    Struct657 *iVar1;
     u16          uVar1;
     u16         *puVar2;
 
     uVar1             = (param_1 >> 0x10);
-    iVar1             = (astruct_657 *)param_1;
+    iVar1             = (Struct657 *)param_1;
     *param_1          = 0x389a;
     iVar1->field_0x2  = 0x1008;
     *param_1          = 0x3aa8;
@@ -1046,11 +1046,11 @@ void pass1_1018_270e(u32 param_1, i16 param_2, u16 param_3, u8 *param_4, i16 par
     i16          iVar3;
     u16          uVar4;
     u8          *extraout_DX;
-    astruct_655 *iVar5;
+    Struct655 *iVar5;
     u16          uVar5;
     u16         *puVar6;
 
-    iVar5 = (astruct_655 *)param_1;
+    iVar5 = (Struct655 *)param_1;
     uVar5 = (param_1 >> 0x10);
     if(param_2 == 0x0)
     {
@@ -1592,7 +1592,7 @@ void pass1_1018_1a8e(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     long         lVar1;
-    astruct_653 *iVar2;
+    Struct653 *iVar2;
     u16          uVar2;
     u16         *puVar3;
     i16         *piVar4;
@@ -1600,7 +1600,7 @@ void pass1_1018_1a8e(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     u32   uStack6;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_653 *)param_1;
+    iVar2 = (Struct653 *)param_1;
     if(iVar2->field_0x44 != 0x0)
     {
         if(iVar2->field_0x46 != 0x0)

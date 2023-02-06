@@ -1606,7 +1606,7 @@ void  pass1_1030_d00c(i16 param_1, u16 param_2, u16 param_3)
 {
     u32          uVar1;
     u16          extraout_DX;
-    astruct_696 *local_BX_40;
+    Struct696 *local_BX_40;
     i16          iVar2;
     i16          iStack4;
 
@@ -1631,7 +1631,7 @@ void  pass1_1030_d00c(i16 param_1, u16 param_2, u16 param_3)
     {
         pass1_1030_6e9c(uVar1 & 0xffff | extraout_DX << 0x10, 0x1, param_3);
     }
-    local_BX_40             = (astruct_696 *)(iStack4 * 0xc + param_1);
+    local_BX_40             = (Struct696 *)(iStack4 * 0xc + param_1);
     local_BX_40->field_0x20 = 0x0;
     local_BX_40->field_0x24 = 0x0;
     local_BX_40->field_0x26 = 0x0;

@@ -539,14 +539,14 @@ void  pass1_1028_0176(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
     code       **ppcVar3;
     u32          uVar4;
     u16          uVar5;
-    astruct_21  *paVar6;
+    Struct21  *paVar6;
     u32   uVar7;
     u16          uVar8;
     u16          uVar9;
-    astruct_306 *iVar9;
+    Struct306 *iVar9;
     astruct_298 *iVar8;
 
-    iVar9 = (astruct_306 *)param_1;
+    iVar9 = (Struct306 *)param_1;
     uVar8 = (param_1 >> 0x10);
     pass1_1028_b46e(param_1, param_2, param_4);
     puVar1 = iVar9->field_0x22;
@@ -1702,7 +1702,7 @@ void  pass1_1020_8eaa(u16 *param_1, u16 param_2)
     u16          uVar1;
     u16          uVar2;
     u8          *puVar3;
-    astruct_668 *iVar4;
+    Struct668 *iVar4;
     u16          uVar4;
     u16         *puVar5;
     astruct_43  *paVar6;
@@ -1710,7 +1710,7 @@ void  pass1_1020_8eaa(u16 *param_1, u16 param_2)
 
     struct_1020_847a(param_1, 0x25, param_2);
     uVar4              = (param_1 >> 0x10);
-    iVar4              = (astruct_668 *)param_1;
+    iVar4              = (Struct668 *)param_1;
     &iVar4->field_0x16 = 0x0;
     iVar4->field_0xaa  = 0x0;
     uVar1              = &iVar4->field_0xae;
@@ -1740,7 +1740,7 @@ void  pass1_1020_915a(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     i16          iVar1;
-    astruct_669 *iVar2;
+    Struct669 *iVar2;
     u16          uVar2;
     u16         *puVar3;
     astruct_43  *paVar4;
@@ -1749,7 +1749,7 @@ void  pass1_1020_915a(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     puVar3 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_4, param_2, param_3);
     iVar1  = (puVar3 + 0x1e);
     uVar2  = (param_1 >> 0x10);
-    iVar2  = (astruct_669 *)param_1;
+    iVar2  = (Struct669 *)param_1;
     if(iVar2->field_0xb8 != iVar1)
     {
         uStack12 = 0x1ce;
@@ -1830,9 +1830,9 @@ void  pass1_1020_8360(u16 *param_1, u16 param_2)
     u16          uVar2;
     u16         *puVar3;
     u16          uVar4;
-    astruct_667 *iVar4;
+    Struct667 *iVar4;
 
-    iVar4 = (astruct_667 *)param_1;
+    iVar4 = (Struct667 *)param_1;
     uVar4 = (param_1 >> 0x10);
     struct_1020_847a(param_1, 0x1, param_2);
     puVar3             = pass1_1008_3e38((param_1 & 0xffff0000 | &iVar4->field_0x16));
@@ -2051,12 +2051,12 @@ void  pass1_1020_1eea(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4, i16 p
 {
     code       **ppcVar1;
     u16          uVar2;
-    astruct_663 *iVar3;
+    Struct663 *iVar3;
     u16          uVar3;
     u16         *puVar4;
 
     uVar3                     = (param_1 >> 0x10);
-    iVar3                     = (astruct_663 *)param_1;
+    iVar3                     = (Struct663 *)param_1;
     *param_1                  = 0x389a;
     iVar3->field_0x2          = 0x1008;
     *param_1                  = 0x3aa8;
@@ -2143,12 +2143,12 @@ void  pass1_1020_294a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, i16 pa
 
 {
     u16          uVar1;
-    astruct_665 *iVar3;
+    Struct665 *iVar3;
     u16          uVar2;
     u16         *puVar3;
 
     uVar2             = (param_1 >> 0x10);
-    iVar3             = (astruct_665 *)param_1;
+    iVar3             = (Struct665 *)param_1;
     iVar3->field_0xfc = param_3;
     puVar3            = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, param_3, param_6, param_4, param_5);
     uVar1             = (puVar3 >> 0x10);

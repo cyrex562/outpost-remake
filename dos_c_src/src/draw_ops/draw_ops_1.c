@@ -1,24 +1,26 @@
-#include <stddef.h>
 #include "draw_ops_1.h"
+
 #include "../fn_ptr_defs.h"
-#include "globals.h"
-#include "structs/structs_11.h"
-#include "structs/structs_23.h"
-#include "structs/structs_31.h"
-#include "structs/structs_40.h"
-#include "structs/structs_45.h"
 #include "../types.h"
 #include "../ui_ops/ui_ops_1.h"
 #include "../unk/unk_11.h"
 #include "../unk/unk_17.h"
 #include "../unk/unk_18.h"
 #include "../utils.h"
-#include "structs/struct_18.h"
-#include "structs/struct_37.h"
-#include "structs/struct_380.h"
-#include "structs/struct_513.h"
-#include "structs/structs_16 .h"
 #include "draw_ops_4.h"
+#include "globals.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_0xx/struct_37.h"
+#include "structs/structs_11.h"
+#include "structs/structs_16 .h"
+#include "structs/structs_23.h"
+#include "structs/structs_31.h"
+#include "structs/structs_3xx/struct_380.h"
+#include "structs/structs_40.h"
+#include "structs/structs_45.h"
+#include "structs/structs_5xx/struct_513.h"
+
+#include <stddef.h>
 
 void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 

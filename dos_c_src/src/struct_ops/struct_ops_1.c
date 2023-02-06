@@ -1577,13 +1577,13 @@ void  pass1_1038_201a(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 pa
     long         lStack24;
     long         lStack20;
     u16          uStack10;
-    astruct_413 *uVar5;
+    Struct413 *uVar5;
 
     uVar17  = (param_3 >> 0x10);
     uVar15  = 0x1030;
     puVar16 = pass1_1030_6b16(param_3);
     uVar6   = (puVar16 >> 0x10);
-    uVar5   = (astruct_413 *)puVar16;
+    uVar5   = (Struct413 *)puVar16;
     if((uVar6 | uVar5) == 0x0)
     {
         return;

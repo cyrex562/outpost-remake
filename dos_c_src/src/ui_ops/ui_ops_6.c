@@ -200,7 +200,7 @@ Struct18 *pass1_1020_1e54(Struct18 *param_1, u8 param_2)
 void window_op_1020_2642(astruct *param_1)
 
 {
-    astruct_664 *in_AX;
+    Struct664 *in_AX;
     u8          *in_DX;
     u16          uVar1;
     i16          iVar2;
@@ -217,7 +217,7 @@ void window_op_1020_2642(astruct *param_1)
     if(uVar1 != 0x0)
     {
         pass1_1020_27b0(in_AX, in_DX, (iVar2 + 0x8), unaff_DI, unaff_SS);
-        *(astruct_664 **)(iVar2 + 0xee) = in_AX;
+        *(Struct664 **)(iVar2 + 0xee) = in_AX;
         *(iVar2 + 0xf0)                 = uVar1;
         return;
     }
@@ -1119,12 +1119,12 @@ void pass1_1018_2440(astruct_11 *param_1, u16 param_2)
     code       **ppcVar3;
     i16         *piVar4;
     u16          uVar6;
-    astruct_502 *uVar5;
+    Struct502 *uVar5;
     u16          uVar7;
     u16         *puStack6;
 
     uVar7             = (param_1 >> 0x10);
-    uVar5             = (astruct_502 *)param_1;
+    uVar5             = (Struct502 *)param_1;
     param_1           = 0x2ada;
     uVar5->field_0x2  = 0x1018;
     uVar5->field_0x1c_addr_base = s_fem132_wav_1050_2aec + 0x6;

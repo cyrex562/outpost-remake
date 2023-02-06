@@ -1789,7 +1789,7 @@ void  win_1020_75f0(u32 param_1, u16 param_2)
 void  window_op_1020_76aa(astruct *param_1)
 
 {
-    astruct_666 *in_AX;
+    Struct666 *in_AX;
     u8          *in_DX;
     u1632        uVar3;
     i16          iVar1;
@@ -1806,7 +1806,7 @@ void  window_op_1020_76aa(astruct *param_1)
     if(uVar3 != 0x0)
     {
         pass1_1020_7824(in_AX, in_DX, (iVar1 + 0x8), unaff_DI, unaff_SS);
-        *(astruct_666 **)(iVar1 + 0xee) = in_AX;
+        *(Struct666 **)(iVar1 + 0xee) = in_AX;
         *(u1632 *)(iVar1 + 0xf0)        = uVar3;
         return;
     }
@@ -2150,7 +2150,7 @@ void  struct_1020_3644(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
 {
     astruct_272 *iVar2;
     short        in_buf_len_5;
-    astruct_270 *iVar1;
+    Struct270 *iVar1;
 
     struct_1020_790e(param_1, 0x0, param_2, param_3, param_4);
     in_buf_len_5       = (short)(param_1 >> 0x10);

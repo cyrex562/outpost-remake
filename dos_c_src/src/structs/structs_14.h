@@ -1516,7 +1516,7 @@ struct astruct_20
     u16               field_0xca;
     u16               field_0xcc;
     u32               field_0xce;
-    struct astruct_21 field_0xd2;
+    struct Struct21 field_0xd2;
     u16               field_0xde;
     u16               field_0xe0;
 };

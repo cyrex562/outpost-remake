@@ -15,7 +15,7 @@ void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     i16         *piStack12;
     astruct_441 *iVar8;
     astruct_396 *iVar7;
-    astruct_439 *iVar6;
+    Struct439 *iVar6;
 
     iVar8 = (astruct_441 *)param_1;
     uVar7 = (param_1 >> 0x10);
@@ -1923,7 +1923,7 @@ void  pass1_1038_44d8(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 pa
     u16          extraout_DX;
     u16          uVar7;
     u16          uVar8;
-    astruct_697 *iVar9;
+    Struct697 *iVar9;
     i16          iVar10;
     u16          uVar11;
     u32         *puVar12;
@@ -1940,7 +1940,7 @@ void  pass1_1038_44d8(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 pa
     pass1_1038_53ba(CONCAT22(param_2, param_1), param_4);
     if((param_6 != 0x0) || (param_5 != 0x0))
     {
-        iVar9                     = (astruct_697 *)(param_4 * 0x4);
+        iVar9                     = (Struct697 *)(param_4 * 0x4);
         uVar2                     = (iVar9 + param_1 + 0x14e);
         iVar10                    = ((iVar9 + param_1 + 0x150) - (param_3 >> 0xf)) - (uVar2 < param_3);
         (iVar9 + param_1 + 0x14e) = uVar2 - param_3;

@@ -371,7 +371,7 @@ void pass1_1018_e5dc(u16 param_1, astruct_20 *param_2, u16 param_3, u16 param_4)
     return;
 }
 
-void pass1_1018_e834(astruct_660 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
+void pass1_1018_e834(Struct660 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
     code     **ppcVar1;
@@ -467,7 +467,7 @@ void pass1_1018_e91e(astruct_20 *param_1, u16 param_2, u16 param_3, u16 param_4)
     return;
 }
 
-void pass1_1018_ec74(astruct_661 *param_1, i16 param_2, u16 param_3, u16 param_4)
+void pass1_1018_ec74(Struct661 *param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
     u32  *puVar1;
@@ -480,7 +480,7 @@ void pass1_1018_ec74(astruct_661 *param_1, i16 param_2, u16 param_3, u16 param_4
     u32          uVar7;
     u16          uVar8;
     u16          uVar9;
-    astruct_661 *paVar10;
+    Struct661 *paVar10;
     i16          iVar11;
 
     set_struct_op_1020_921c(CONCAT22(param_2, param_1), param_3);

@@ -922,12 +922,12 @@ u16  pass1_1008_4d26(u32 param_1, u16 *param_2, i16 param_3)
     i16         *piVar1;
     u16          uVar2;
     long         lVar3;
-    astruct_650 *iVar5;
+    Struct650 *iVar5;
     astruct_649 *iVar4;
     u16          uVar4;
 
     uVar4 = (param_1 >> 0x10);
-    iVar5 = (astruct_650 *)param_1;
+    iVar5 = (Struct650 *)param_1;
     if(((iVar5->field_0x4 != 0x0) && (-0x1 < param_3)) && (piVar1 = &iVar5->field_0xc, *piVar1 != param_3 && param_3 <= *piVar1))
     {
         uVar2                         = (param_2 + 0x2);

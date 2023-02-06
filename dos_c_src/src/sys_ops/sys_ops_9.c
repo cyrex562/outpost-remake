@@ -2007,7 +2007,7 @@ void pass1_1008_c882(u32 param_1, u16 param_2)
     i16          unaff_DI;
     u16          uVar12;
     u16          uVar13;
-    astruct_21  *paVar14;
+    Struct21  *paVar14;
     u32   uVar15;
     u16         *puVar16;
     u32         *puVar17;

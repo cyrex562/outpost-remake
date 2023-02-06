@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_283_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_283_H_
 
-#include "struct_656.h"
-#include "struct_657.h"
+#include "structs/structs_6xx/struct_656.h"
+#include "structs/structs_6xx/struct_657.h"
 typedef struct Struct283 Struct283;
 struct Struct283
 {

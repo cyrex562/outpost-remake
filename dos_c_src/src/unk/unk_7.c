@@ -127,14 +127,14 @@ void  pass1_1028_bb96(u32 param_1, u32 *param_2, u16 param_3)
     u32         *puVar2;
     u32   uVar3;
     i16          iVar6;
-    astruct_296 *iVar5;
+    Struct296 *iVar5;
     astruct_297 *iVar4;
     u32         *puVar7;
     u16          uVar8;
     u16          uVar9;
 
     uVar8 = (param_1 >> 0x10);
-    iVar5 = (astruct_296 *)param_1;
+    iVar5 = (Struct296 *)param_1;
     if((iVar5->field_0x12 == 0x5) || (iVar5->field_0x12 == 0x6))
     {
         uVar3  = iVar5->field_0x14;

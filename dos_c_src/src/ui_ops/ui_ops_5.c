@@ -2327,15 +2327,15 @@ void  win_ui_op_1020_2cf0(astruct *param_1)
     return;
 }
 
-void  cleanup_win_ui_1020_2fea(astruct_12 *in_struct_1, HDC16 in_dc_handle_2)
+void  cleanup_win_ui_1020_2fea(Struct12 *in_struct_1, HDC16 in_dc_handle_2)
 
 {
-    astruct_12 *iVar1;
+    Struct12 *iVar1;
     u16         var2;
     u16         unaff_SS;
 
     var2                          = (in_struct_1 >> 0x10);
-    iVar1                         = (astruct_12 *)in_struct_1;
+    iVar1                         = (Struct12 *)in_struct_1;
     in_struct_1->offset_field_0x0 = 0x363c;
     iVar1->offset_field_0x2       = 0x1020;
     if(iVar1->field_0x14 != 0x0)
@@ -2359,7 +2359,7 @@ void  cleanup_win_ui_1020_2fea(astruct_12 *in_struct_1, HDC16 in_dc_handle_2)
 Struct18 * pass1_1020_3616(Struct18 *param_1, u8 param_2, u16 param_3)
 
 {
-    cleanup_win_ui_1020_2fea((astruct_12 *)param_1, param_3);
+    cleanup_win_ui_1020_2fea((Struct12 *)param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);

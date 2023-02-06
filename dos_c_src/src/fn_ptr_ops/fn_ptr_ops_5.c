@@ -980,10 +980,10 @@ void  pass1_1018_8b6e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8bb6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_546 *iVar1;
+    Struct546 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_546 *)param_1;
+    iVar1 = (Struct546 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);

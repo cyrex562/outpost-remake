@@ -295,13 +295,13 @@ void  pass1_1030_c1b2(u32 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 p
 
 {
     i16          iVar1;
-    astruct_695 *iVar2;
+    Struct695 *iVar2;
     u16          uVar2;
     u16         *puVar3;
 
     pass1_1028_be9e(param_1, param_3, param_4, &USHORT_1050_1028, param_5);
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_695 *)param_1;
+    iVar2 = (Struct695 *)param_1;
     if(iVar2->field_0x12 == 0x5)
     {
         if(iVar2->field_0xc == 0xb)
@@ -1247,12 +1247,12 @@ u16  pass1_1030_538a(u32 param_1, i16 param_2, u16 param_3)
 {
     u8          *puVar1;
     u16          uVar2;
-    astruct_694 *iVar4;
+    Struct694 *iVar4;
     u16          uVar3;
     u16         *puVar4;
 
     uVar3  = (param_1 >> 0x10);
-    iVar4  = (astruct_694 *)param_1;
+    iVar4  = (Struct694 *)param_1;
     puVar1 = (&iVar4->field_0x108 + 0x2);
     uVar2  = puVar1 >> 0x8;
     puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_3, puVar1, param_2);

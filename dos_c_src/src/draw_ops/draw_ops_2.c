@@ -434,7 +434,7 @@ void  struct_1020_7554(u16 param_1, astruct_20 *param_2, u16 param_3, u16 param_
     return;
 }
 
-void  pass1_1020_7824(astruct_666 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
+void  pass1_1020_7824(Struct666 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
     code     **ppcVar1;
@@ -2315,7 +2315,7 @@ void  struct_1020_2524(astruct_20 *param_1, u16 param_2, u16 param_3, u16 param_
     return;
 }
 
-void  pass1_1020_27b0(astruct_664 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
+void  pass1_1020_27b0(Struct664 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
     code     **ppcVar1;

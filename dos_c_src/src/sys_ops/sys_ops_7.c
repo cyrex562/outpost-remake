@@ -287,7 +287,7 @@ u16  pass1_1010_db2e(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u32 par
     astruct_493 *iVar2;
     i16          iVar3;
     u16          uVar4;
-    astruct_492 *iVar4;
+    Struct492 *iVar4;
     u16          uVar5;
     u16          uVar6;
     u16          uVar7;
@@ -303,7 +303,7 @@ u16  pass1_1010_db2e(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u32 par
     while(true)
     {
         uVar7 = (param_7 >> 0x10);
-        iVar4 = (astruct_492 *)param_7;
+        iVar4 = (Struct492 *)param_7;
         if(*param_7 - 0x1U < uStack94)
         {
             return uStack94;

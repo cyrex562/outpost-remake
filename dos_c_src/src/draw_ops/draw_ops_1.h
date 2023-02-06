@@ -8,8 +8,8 @@
 #include "../globals.h"
 #include "../structs/structs_11.h"
 #include "../structs/structs_31.h"
-#include "structs/struct_18.h"
-#include "structs/struct_37.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_0xx/struct_37.h"
 
 void pass1_1040_d1bc(Globals* globals, Struct18 *param_1);
 

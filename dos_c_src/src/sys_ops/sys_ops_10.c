@@ -603,7 +603,7 @@ void  pass1_1008_d3ae(u32 param_1)
     astruct_208 *iVar13;
     u16          uVar10;
     u16          uVar11;
-    astruct_21  *paVar12;
+    Struct21  *paVar12;
     u32          uVar13;
     u32   uVar14;
     u32          uVar15;
@@ -1731,14 +1731,14 @@ i16  pass1_1008_7056(u16 param_1, u16 param_2, u32 param_3, u8 *param_4, i16 par
 void  pass1_1008_5bdc(astruct_79 *param_1, i16 param_2, u16 param_3)
 
 {
-    astruct_651 *puVar1;
+    Struct651 *puVar1;
     u16          uVar1;
     astruct_79  *paVar2;
     u16         *puVar3;
 
     paVar2                       = struct_op_1010_1d48(param_1, 0x44);
     uVar1                        = (param_1 >> 0x10);
-    puVar1                       = (astruct_651 *)param_1;
+    puVar1                       = (Struct651 *)param_1;
     puVar1->field_0xa            = 0x0;
     &puVar1->field_0xc           = 0x0;
     puVar1->field_0x10           = 0x0;

@@ -381,7 +381,7 @@ void  pass1_1028_61c4(u32 param_1, u32 param_2, u16 param_3)
     u16          uVar2;
     code       **ppcVar3;
     u16          uVar4;
-    astruct_21  *paVar5;
+    Struct21  *paVar5;
     u32   uVar6;
     u16          uVar7;
     astruct_315 *iVar7;

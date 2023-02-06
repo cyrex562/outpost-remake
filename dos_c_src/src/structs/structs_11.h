@@ -1,6 +1,6 @@
 
 
-#include "struct_18.h"
+#include "structs/structs_0xx/struct_18.h"
 typedef struct astruct_426 astruct_426;
 
 struct astruct_426

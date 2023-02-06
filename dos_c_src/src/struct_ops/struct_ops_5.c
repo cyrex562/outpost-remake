@@ -1211,11 +1211,11 @@ u16 *struct_op_1008_56b4(astruct_76 *param_1)
 }
 
 
-void set_struct_1008_574a(astruct_21 *param_1)
+void set_struct_1008_574a(Struct21 *param_1)
 
 {
-    astruct_21 *iVar1;
-    astruct_21 *uVar1;
+    Struct21 *iVar1;
+    Struct21 *uVar1;
 
     uVar1              = (param_1 >> 0x10);
     iVar1              = param_1;

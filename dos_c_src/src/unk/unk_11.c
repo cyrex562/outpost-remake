@@ -120,13 +120,13 @@ void  pass1_1018_3d6c(u32 param_1)
     u16          uVar2;
     u8          *puVar3;
     u16          uVar4;
-    astruct_679 *iVar6;
+    Struct679 *iVar6;
     u16          uVar5;
     u32          uVar6;
     u32          uVar7;
 
     uVar5 = (param_1 >> 0x10);
-    iVar6 = (astruct_679 *)param_1;
+    iVar6 = (Struct679 *)param_1;
     uVar4 = iVar6->field_0x142;
     uVar2 = uVar4 + 0x1e;
     if(iVar6->field_0x144 + 0x1U == (uVar4 < 0xffe2))
@@ -1554,11 +1554,11 @@ void  pass1_1018_2862(u32 param_1)
 
 {
     long         lVar1;
-    astruct_654 *iVar2;
+    Struct654 *iVar2;
     u16          uVar2;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_654 *)param_1;
+    iVar2 = (Struct654 *)param_1;
     if(iVar2->field_0x20 == 0x0)
     {
         iVar2->field_0x26 = 0x0;

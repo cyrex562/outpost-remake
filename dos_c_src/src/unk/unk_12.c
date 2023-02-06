@@ -461,12 +461,12 @@ void  pass1_1010_7e40(u32 *param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     u32   uVar1;
-    astruct_652 *puVar2;
+    Struct652 *puVar2;
     u16          uVar2;
     u16         *puVar3;
 
     uVar2                = (param_1 >> 0x10);
-    puVar2               = (astruct_652 *)param_1;
+    puVar2               = (Struct652 *)param_1;
     *param_1             = 0x0;
     puVar2->field_0x67c  = 0x0;
     puVar2->field_0x680  = 0x0;
@@ -997,10 +997,10 @@ void  pass1_1010_5fb0(u32 param_1, u16 param_2, u32 *param_3, u16 param_4, i16 p
 
 {
     u16          uVar1;
-    astruct_656 *iVar1;
+    Struct656 *iVar1;
 
     uVar1             = (param_1 >> 0x10);
-    iVar1             = (astruct_656 *)(param_1 + param_5 * 0x8);
+    iVar1             = (Struct656 *)(param_1 + param_5 * 0x8);
     iVar1->field_0x22 = *param_3;
     iVar1->field_0x26 = param_3[0x1];
     return;
@@ -1886,7 +1886,7 @@ u32  pass1_1010_2e02(u32 param_1, i16 param_2)
 
 {
     u32   uVar1;
-    astruct_163 *iVar2;
+    Struct163 *iVar2;
     u16          uVar2;
 
     uVar2 = (param_1 >> 0x10);
@@ -1894,7 +1894,7 @@ u32  pass1_1010_2e02(u32 param_1, i16 param_2)
     {
         uVar1 = (param_1 + 0x5c);
         uVar2 = (uVar1 >> 0x10);
-        iVar2 = (astruct_163 *)uVar1;
+        iVar2 = (Struct163 *)uVar1;
         return CONCAT22((iVar2 + param_2 * 0x4 + 0x2), (iVar2 + param_2 * 0x4));
     }
     return 0x0;
