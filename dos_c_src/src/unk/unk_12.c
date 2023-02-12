@@ -607,7 +607,7 @@ void  pass1_1010_86de(u16 param_1, u16 param_2, u8 param_3, u32 param_4)
     long       lStack20;
     u32 uStack10;
 
-    uVar6    = pass1_1008_4772((astruct_76 *)param_4);
+    uVar6    = pass1_1008_4772((Struct76 *)param_4);
     uVar4    = (uVar6 >> 0x10);
     uStack10 = 0x0;
     do
@@ -667,8 +667,8 @@ void  pass1_1010_887a(astruct_87 **param_1, u32 param_2, i16 param_3, u16 param_
     u32  uStack24;
     u32         uStack20;
     u32         uStack16;
-    astruct_76 *paStack12;
-    astruct_76 *paStack8;
+    Struct76 *paStack12;
+    Struct76 *paStack8;
     u16         uStack4;
 
     uStack4 = param_3 - 0xa;
@@ -679,9 +679,9 @@ void  pass1_1010_887a(astruct_87 **param_1, u32 param_2, i16 param_3, u16 param_
         iVar5 = uStack4 * 0xa;
         uVar1 = uStack4;
         pass1_1008_6562((param_1 + 0x67c), CONCAT22((iVar5 + 0x3388), (iVar5 + 0x338a)), (iVar5 + 0x3386), uStack4, in_DX);
-        paStack8  = (astruct_76 *)CONCAT22(in_DX, uVar1);
+        paStack8  = (Struct76 *)CONCAT22(in_DX, uVar1);
         uVar6     = (param_2 >> 0x10);
-        paStack12 = *(astruct_76 **)(param_2 + 0x14);
+        paStack12 = *(Struct76 **)(param_2 + 0x14);
         uStack16  = pass1_1008_4772(paStack12);
         uStack20  = pass1_1008_4772(paStack8);
         puVar4    = (uStack20 >> 0x10);
@@ -1351,7 +1351,7 @@ void  pass1_1010_4c3e(u32 param_1, i16 param_2, i16 param_3, u8 *param_4, u16 pa
             if(*piVar1 == iStack14 || *piVar1 < iStack14)
                 break;
             uVar2    = (iVar3 + 0x12);
-            uVar8    = pass1_1008_4772(*(astruct_76 **)(uVar2 + iStack14 * 0x4));
+            uVar8    = pass1_1008_4772(*(Struct76 **)(uVar2 + iStack14 * 0x4));
             iStack4  = iStack4 + (-(iStack14 == 0x0) & 0x5) + 0x14 + (uVar8 + 0x4);
             iStack14 = iStack14 + 0x1;
         }

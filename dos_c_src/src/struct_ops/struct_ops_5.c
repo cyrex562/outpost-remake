@@ -53,7 +53,7 @@ void struct_1010_383a(u16 *param_1)
     return;
 }
 
-void struct_1010_3b7a(astruct_648 *param_1, u16 param_2, u16 param_3)
+void struct_1010_3b7a(Struct648 *param_1, u16 param_2, u16 param_3)
 
 {
     struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2, param_1), param_3);
@@ -629,7 +629,7 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     astruct_147 *iVar10;
     astruct_148 *iVar11;
     astruct_149 *iVar12;
-    astruct_150 *iVar2_00;
+    Struct150 *iVar2_00;
     astruct_151 *iVar2_01;
     astruct_152 *iVar2_02;
     astruct_153 *iVar2_03;
@@ -707,7 +707,7 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     iVar12->field_0x44   = &USHORT_1050_1050;
     (*param_1 + 0x46)    = 0x2;
     uVar13               = (*param_1 >> 0x10);
-    iVar2_00             = (astruct_150 *)*param_1;
+    iVar2_00             = (Struct150 *)*param_1;
     iVar2_00->field_0x48 = 0x71e;
     iVar2_00->field_0x4a = &USHORT_1050_1050;
     (*param_1 + 0x4c)    = 0x7;
@@ -1166,14 +1166,14 @@ void struct_1008_4c58(u16 *param_1)
 }
 
 
-void struct_op_1008_4c98(astruct_76 *param_1, u32 param_2, u16 param_3)
+void struct_op_1008_4c98(Struct76 *param_1, u32 param_2, u16 param_3)
 
 {
-    astruct_76 *iVar1;
+    Struct76 *iVar1;
     u16         uVar1;
 
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_76 *)param_1;
+    iVar1              = (Struct76 *)param_1;
     param_1->field_0x0 = 0x389a;
     iVar1->field_0x2   = 0x1008;
     *&iVar1->field_0x4 = param_2;
@@ -1186,7 +1186,7 @@ void struct_op_1008_4c98(astruct_76 *param_1, u32 param_2, u16 param_3)
 }
 
 
-void pass1_1008_5068(astruct_76 *param_1, astruct_83 *param_2)
+void pass1_1008_5068(Struct76 *param_1, astruct_83 *param_2)
 
 {
     struct_op_1008_4214(param_1, param_2);
@@ -1194,14 +1194,14 @@ void pass1_1008_5068(astruct_76 *param_1, astruct_83 *param_2)
 }
 
 
-u16 *struct_op_1008_56b4(astruct_76 *param_1)
+u16 *struct_op_1008_56b4(Struct76 *param_1)
 
 {
-    astruct_82 *iVar1;
+    Struct82 *iVar1;
     u16         uVar1;
 
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_82 *)param_1;
+    iVar1              = (Struct82 *)param_1;
     param_1->field_0x0 = 0x389a;
     iVar1->field_0x2   = 0x1008;
     iVar1->field_0x4   = 0x0;
@@ -1229,16 +1229,16 @@ void set_struct_1008_574a(Struct21 *param_1)
     return;
 }
 
-void struct_op_1008_3f92(astruct_76 *param_1, astruct_83 *param_2)
+void struct_op_1008_3f92(Struct76 *param_1, astruct_83 *param_2)
 
 {
     code      **ppcVar1;
-    astruct_76 *iVar2;
+    Struct76 *iVar2;
     u16         uVar2;
 
     struct_op_1008_56b4(param_1);
     uVar2                     = (param_1 >> 0x10);
-    iVar2                     = (astruct_76 *)param_1;
+    iVar2                     = (Struct76 *)param_1;
     &iVar2->field_0x6         = 0x0;
     (&iVar2->field_0x8 + 0x2) = 0x0;
     &iVar2->field_0xe         = 0x0;
@@ -1261,7 +1261,7 @@ void struct_op_1008_3f92(astruct_76 *param_1, astruct_83 *param_2)
 }
 
 
-void pass1_1008_4016(astruct_76 *param_1)
+void pass1_1008_4016(Struct76 *param_1)
 
 {
     i16 iVar1;
@@ -1283,7 +1283,7 @@ void pass1_1008_4016(astruct_76 *param_1)
 }
 
 
-void struct_op_1008_4214(astruct_76 *param_1, astruct_83 *param_2)
+void struct_op_1008_4214(Struct76 *param_1, astruct_83 *param_2)
 
 {
     u32        *puVar1;

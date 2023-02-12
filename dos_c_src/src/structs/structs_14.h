@@ -2045,7 +2045,7 @@ struct astruct_86
 {
     u16                field_0x0;
     u16                field_0x2;
-    struct astruct_76 *field_0x4;
+    struct Struct76 *field_0x4;
     u16                field_0x8;
     u16                field_0xa;
     i16                field_0xc;

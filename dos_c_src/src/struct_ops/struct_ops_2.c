@@ -1671,7 +1671,7 @@ void  pass1_1030_6c66(u32 param_1, i16 param_2, u32 param_3, u16 param_4, u8 *pa
     u16          extraout_DX;
     u8          *puVar6;
     astruct_386 *iVar7;
-    astruct_385 *iVar6;
+    Struct385 *iVar6;
     u16          unaff_SI;
     u16          unaff_DI;
     u16          uVar7;
@@ -1701,7 +1701,7 @@ void  pass1_1030_6c66(u32 param_1, i16 param_2, u32 param_3, u16 param_4, u8 *pa
     if(param_2 != 0x0)
     {
         uVar8 = (param_3 >> 0x10);
-        iVar6 = (astruct_385 *)param_3;
+        iVar6 = (Struct385 *)param_3;
         if(iVar6->field_0x6 != 0x0)
         {
             pass1_1030_6e9c(param_1, iVar6->field_0xa, iVar6->field_0x6);

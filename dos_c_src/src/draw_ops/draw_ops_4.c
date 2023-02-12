@@ -342,7 +342,7 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     LPCSTR      pCStack40;
     u8          local_26[0x24];
 
-    pass1_1008_4016((astruct_76 *)param_1);
+    pass1_1008_4016((Struct76 *)param_1);
     uVar4           = (param_1 >> 0x10);
     iVar3           = param_1;
     *(iVar3 + 0x1e) = param_4;
@@ -354,11 +354,11 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     uVar2           = (paVar5 >> 0x10);
     struct_op_1008_48fe((astruct_81 *)CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
     read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, uVar2);
-    pass1_1008_5068((astruct_76 *)param_1, (astruct_83 *)CONCAT22(param_5, local_26));
-    pass1_1008_47cc((astruct_76 *)param_1);
-    pass1_1008_4834((astruct_76 *)param_1);
+    pass1_1008_5068((Struct76 *)param_1, (astruct_83 *)CONCAT22(param_5, local_26));
+    pass1_1008_47cc((Struct76 *)param_1);
+    pass1_1008_4834((Struct76 *)param_1);
     init_data          = (DEVMODEA *)0x0;
-    uVar6              = pass1_1008_4772((astruct_76 *)param_1);
+    uVar6              = pass1_1008_4772((Struct76 *)param_1);
     output             = (uVar6 >> 0x10);
     pCStack42          = uVar6;
     pCStack40          = output;
@@ -408,7 +408,7 @@ void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
     iVar3 = param_1;
     if((iVar3 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)param_1);
+        pass1_1008_47cc((Struct76 *)param_1);
     }
     if(((iVar3 + 0x8) | (iVar3 + 0x6)) == 0x0)
     {
@@ -418,7 +418,7 @@ void  set_di_bits_to_device_1008_45d6(u32 param_1, HDC16 param_2)
     {
         if(((iVar3 + 0xc) | (iVar3 + 0xa)) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)param_1);
+            pass1_1008_4834((Struct76 *)param_1);
         }
         bVar2 = true;
     }
@@ -452,7 +452,7 @@ void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
     iVar3 = param_1;
     if((iVar3 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)param_1);
+        pass1_1008_47cc((Struct76 *)param_1);
     }
     if(((iVar3 + 0x8) | (iVar3 + 0x6)) == 0x0)
     {
@@ -462,7 +462,7 @@ void  stretch_di_bits_1008_465a(u32 param_1, HDC16 param_2)
     {
         if(((iVar3 + 0xc) | (iVar3 + 0xa)) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)param_1);
+            pass1_1008_4834((Struct76 *)param_1);
         }
         bVar2 = true;
     }
@@ -498,7 +498,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
     {
         uVar5._0_2_ = param_2;
         uVar5._2_2_ = param_3;
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar4 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar4 << 0x10));
         param_2 = uVar5;
         param_3 = uVar5._2_2_;
     }
@@ -511,7 +511,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
     {
         if((iVar3 + 0xa) == 0x0)
         {
-            uVar6 = pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar4 << 0x10));
+            uVar6 = pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar4 << 0x10));
         }
         bVar1 = true;
     }

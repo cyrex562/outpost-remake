@@ -2,10 +2,10 @@
 void  pass1_1018_7f0e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_671 *iVar1;
+    Struct671 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_671 *)param_1;
+    iVar1 = (Struct671 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -66,10 +66,10 @@ void  pass1_1018_7f9e(u16 *param_1, u8 param_2)
 void  pass1_1018_7fe6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_672 *iVar1;
+    Struct672 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_672 *)param_1;
+    iVar1 = (Struct672 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -364,10 +364,10 @@ void  pass1_1018_838e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_83d6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_673 *iVar1;
+    Struct673 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_673 *)param_1;
+    iVar1 = (Struct673 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -870,10 +870,10 @@ void  pass1_1018_8a06(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8a4e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_674 *iVar1;
+    Struct674 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_674 *)param_1;
+    iVar1 = (Struct674 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);

@@ -571,7 +571,7 @@ void  pass1_1018_2d22(u32 param_1, i16 *param_2, u16 *param_3, i16 param_4)
 
     *param_3 = 0x0;
     *param_2 = 0x0;
-    uVar1    = pass1_1008_4772(*(astruct_76 **)(param_1 + 0x24));
+    uVar1    = pass1_1008_4772(*(Struct76 **)(param_1 + 0x24));
     *param_2 = (uVar1 + 0x8) + -0x14;
     if(param_4 == 0xbb8)
     {
@@ -1732,7 +1732,7 @@ void  pass1_1018_0bf4(u16 param_1, i16 param_2, u32 param_3, i16 param_4)
         uVar5 = param_3._2_2_;
         pass1_1018_0dc6(param_3 & 0xffff0000 | uVar2, param_1);
         pass1_1018_10c4(param_1, uVar5, param_3 & 0xffff0000 | uVar2);
-        pass1_1018_1346(param_1, uVar5, (astruct_93 *)(param_3 & 0xffff0000 | uVar2));
+        pass1_1018_1346(param_1, uVar5, (Struct93 *)(param_3 & 0xffff0000 | uVar2));
     LAB_1018_0c71:
         (param_3 + 0x2c) = 0x0;
         lVar4            = (param_3 + 0x1c);
@@ -2177,8 +2177,8 @@ void  pass1_1018_0902(u32 *param_1, u32 param_2)
 {
     u32   uVar1;
     code       **ppcVar2;
-    astruct_76 **ppaVar3;
-    astruct_76 **ppaVar4;
+    Struct76 **ppaVar3;
+    Struct76 **ppaVar4;
     i16          iVar5;
     u16          uVar6;
     u32          uVar7;
@@ -2186,7 +2186,7 @@ void  pass1_1018_0902(u32 *param_1, u32 param_2)
     u32         *puVar9;
 
     puVar9  = (param_1 & 0xffff0000 | (param_1 + 0x28));
-    ppaVar3 = (astruct_76 **)(param_1 + 0x24);
+    ppaVar3 = (Struct76 **)(param_1 + 0x24);
     puVar8  = (param_1 & 0xffff0000 | ZEXT24(ppaVar3));
     uVar6   = param_1._2_2_;
     ppaVar4 = ppaVar3;

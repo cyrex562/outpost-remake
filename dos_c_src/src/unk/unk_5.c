@@ -397,11 +397,11 @@ void  pass1_1030_871e(long *param_1, u32 *param_2, u16 param_3, i16 param_4, u16
 
 {
     i16         *piVar1;
-    astruct_681 *iVar2;
+    Struct681 *iVar2;
     u16          uVar2;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_681 *)param_1;
+    iVar2 = (Struct681 *)param_1;
     if(*param_1 == 0x0)
     {
         pass1_1030_878c((long *)(param_1 & 0xffff | uVar2 << 0x10), param_4, param_5);
@@ -1519,7 +1519,7 @@ void  pass1_1030_5a80(u32 param_1, u32 param_2, u16 param_3)
 
     uVar2             = (param_1 >> 0x10);
     *(param_1 + 0x10) = param_2;
-    uVar3             = pass1_1008_4772(*(astruct_76 **)(param_2 + 0xe));
+    uVar3             = pass1_1008_4772(*(Struct76 **)(param_2 + 0xe));
     uStack4           = (uVar3 >> 0x10);
     iStack6           = uVar3;
     uStack10          = (iStack6 + 0x4);

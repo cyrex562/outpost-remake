@@ -1317,7 +1317,7 @@ void  pass1_1008_431c(u32 param_1, u8 param_2)
     iVar5 = param_1;
     if((iVar5 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar6 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar6 << 0x10));
     }
     if(((iVar5 + 0x8) | (iVar5 + 0x6)) == 0x0)
     {
@@ -1327,7 +1327,7 @@ void  pass1_1008_431c(u32 param_1, u8 param_2)
     {
         if(((iVar5 + 0xc) | (iVar5 + 0xa)) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar6 << 0x10));
+            pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar6 << 0x10));
         }
         bVar3 = true;
     }
@@ -1366,7 +1366,7 @@ u32  pass1_1008_43cc(u32 param_1)
     iVar2 = param_1;
     if((iVar2 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
     }
     if((iVar2 + 0x6) == 0x0)
     {
@@ -1376,7 +1376,7 @@ u32  pass1_1008_43cc(u32 param_1)
     {
         if((iVar2 + 0xa) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+            pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
         }
         bVar1 = true;
     }
@@ -1399,7 +1399,7 @@ u32  pass1_1008_4426(u32 param_1)
     iVar2 = param_1;
     if((iVar2 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
     }
     if((iVar2 + 0x6) == 0x0)
     {
@@ -1409,7 +1409,7 @@ u32  pass1_1008_4426(u32 param_1)
     {
         if((iVar2 + 0xa) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+            pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
         }
         bVar1 = true;
     }
@@ -1423,7 +1423,7 @@ u32  pass1_1008_4426(u32 param_1)
 
 // WARNING: Could not reconcile some variable overlaps
 
-void  pass1_1008_4480(u32 param_1, u16 *param_2, astruct_76 *param_3, u16 param_4)
+void  pass1_1008_4480(u32 param_1, u16 *param_2, Struct76 *param_3, u16 param_4)
 
 {
     i16   iVar1;
@@ -1481,7 +1481,7 @@ void  pass1_1008_4544(u32 param_1)
     iVar2 = param_1;
     if((iVar2 + 0x6) == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
     }
     if((iVar2 + 0x6) == 0x0)
     {
@@ -1491,7 +1491,7 @@ void  pass1_1008_4544(u32 param_1)
     {
         if((iVar2 + 0xa) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar3 << 0x10));
+            pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar3 << 0x10));
         }
         bVar1 = true;
     }
@@ -1503,18 +1503,18 @@ void  pass1_1008_4544(u32 param_1)
 }
 
 
-u32  pass1_1008_4772(astruct_76 *param_1)
+u32  pass1_1008_4772(Struct76 *param_1)
 
 {
     bool        bVar1;
-    astruct_76 *iVar2;
+    Struct76 *iVar2;
     u16         uVar2;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_76 *)param_1;
+    iVar2 = (Struct76 *)param_1;
     if(&iVar2->field_0x6 == 0x0)
     {
-        pass1_1008_47cc((astruct_76 *)(param_1 & 0xffff | uVar2 << 0x10));
+        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar2 << 0x10));
     }
     if(&iVar2->field_0x6 == 0x0)
     {
@@ -1524,7 +1524,7 @@ u32  pass1_1008_4772(astruct_76 *param_1)
     {
         if((&iVar2->field_0x8 + 0x2) == 0x0)
         {
-            pass1_1008_4834((astruct_76 *)(param_1 & 0xffff | uVar2 << 0x10));
+            pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar2 << 0x10));
         }
         bVar1 = true;
     }
@@ -1536,7 +1536,7 @@ u32  pass1_1008_4772(astruct_76 *param_1)
 }
 
 
-void  pass1_1008_47cc(astruct_76 *param_1)
+void  pass1_1008_47cc(Struct76 *param_1)
 
 {
     u32        uVar1;

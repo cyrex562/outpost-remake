@@ -1,5 +1,6 @@
 
 
+#include "struct_76.h"
 typedef struct astruct_350 astruct_350;
 
 struct astruct_350
@@ -1616,7 +1617,7 @@ struct astruct_111
     u16                field_0x6;
     u16                field_0x8;
     u16                field_0xa;
-    struct astruct_76 *field_0xc;
+    struct Struct76 *field_0xc;
 };
 
 typedef struct astruct_168 astruct_168;

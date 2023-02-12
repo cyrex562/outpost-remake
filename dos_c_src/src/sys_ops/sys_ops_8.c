@@ -555,7 +555,7 @@ LAB_1010_8869:
     return;
 }
 
-void  pass1_1010_6abc(astruct_635 *param_1, u16 param_2, u16 param_3)
+void  pass1_1010_6abc(Struct635 *param_1, u16 param_2, u16 param_3)
 
 {
     code      **ppcVar1;
@@ -1479,7 +1479,7 @@ void  get_sys_metrics_1010_46f6(u32 param_1)
     pass1_1008_3e94((puVar6 & 0xffff0000 | (puVar6 + 0xe)), puVar8, puVar9);
     uVar5          = (param_1 >> 0x10);
     iVar4          = param_1;
-    uVar7          = pass1_1008_4772(*(astruct_76 **)(iVar4 + 0x66));
+    uVar7          = pass1_1008_4772(*(Struct76 **)(iVar4 + 0x66));
     uVar1          = (uVar7 >> 0x10);
     (iVar4 + 0x18) = local_4 + 0x8;
     (iVar4 + 0x1a) = local_6 + 0x9;
@@ -1500,7 +1500,7 @@ void  pass1_1010_4a8a(astruct_637 *param_1, u16 param_2, u16 param_3, u16 param_
     u16        *puVar3;
 
     struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2, param_1), param_3);
-    param_1->field_0x16          = (astruct_76 *)0x0;
+    param_1->field_0x16          = (Struct76 *)0x0;
     param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e          = 0x0;
     param_1->field_0x20          = 0x1;
@@ -1807,7 +1807,7 @@ void  pass1_1010_394a(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *pa
     return;
 }
 
-u32  pass1_1010_3d82(astruct_628 *param_1, u16 param_2, u16 param_3, u16 param_4)
+u32  pass1_1010_3d82(Struct628 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     astruct_43 *paVar1;

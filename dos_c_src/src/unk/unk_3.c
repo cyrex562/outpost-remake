@@ -1567,7 +1567,7 @@ void  pass1_1030_cf78(u32 param_1, u16 param_2)
 {
     u32          uVar1;
     u16          extraout_DX;
-    astruct_680 *iVar3;
+    Struct680 *iVar3;
     u16          uVar2;
     i16          iStack4;
 
@@ -1593,7 +1593,7 @@ void  pass1_1030_cf78(u32 param_1, u16 param_2)
     {
         pass1_1030_6e9c(uVar1 & 0xffff | extraout_DX << 0x10, 0x1, param_2);
     }
-    iVar3             = (astruct_680 *)(iStack4 * 0xc + param_1);
+    iVar3             = (Struct680 *)(iStack4 * 0xc + param_1);
     iVar3->field_0x20 = 0x0;
     iVar3->field_0x24 = 0x0;
     iVar3->field_0x26 = 0x0;

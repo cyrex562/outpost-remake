@@ -9,6 +9,7 @@
 #include "../utils.h"
 #include "draw_ops_4.h"
 #include "globals.h"
+#include "struct_76.h"
 #include "structs/structs_0xx/struct_18.h"
 #include "structs/structs_0xx/struct_37.h"
 #include "structs/structs_11.h"
@@ -1306,7 +1307,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     u16         IVar9;
     u32           uVar10;
     astruct_43   *paVar11;
-    astruct_76   *paVar12;
+    Struct76   *paVar12;
     u16           uVar13;
     HDC16        *pHVar14;
     u16           uVar15;
@@ -1319,7 +1320,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     u16           uStack82;
     i16           iStack72;
     i16           iStack68;
-    astruct_76   *paStack54;
+    Struct76   *paStack54;
     HDC16         local_2c;
     PAi16STRUCT16 local_2a;
     RECT16        local_a[0x2];
@@ -1332,33 +1333,33 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     local_2c           = BeginPai1616((HWND16)s_tile2_bmp_1050_1538, &local_2a);
     uVar8              = 0x1008;
     b_force_background = palette_op_1008_4e08(*(astruct_13 **)(_PTR_LOOP_1050_4230 + 0xe), &local_2c, in_DX, 0x1008);
-    paStack54          = (astruct_76 *)0x0;
+    paStack54          = (Struct76 *)0x0;
     if((iVar6 + 0x98) != 0x0)
     {
-        paStack54 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, (iVar6 + 0x98), param_3);
+        paStack54 = (Struct76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, (iVar6 + 0x98), param_3);
         IVar9     = 0x1008;
         uVar10    = pass1_1008_4772(paStack54);
         if(((uVar10 >> 0x10) | uVar10) == 0x0)
         {
-            if(paStack54 != (astruct_76 *)0x0)
+            if(paStack54 != (Struct76 *)0x0)
             {
-                if(paStack54 != (astruct_76 *)0x0)
+                if(paStack54 != (Struct76 *)0x0)
                 {
                     ppcVar3 = paStack54;
                     (**ppcVar3)(0x1008, paStack54, (paStack54 >> 0x10), 0x1, uVar13);
                 }
             }
             IVar9     = 0x1010;
-            paStack54 = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x4d, param_3);
+            paStack54 = (Struct76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x4d, param_3);
         }
         uVar8 = SUB42(s_tile2_bmp_1050_1538, 0x0);
         GetSystemMetrics16(IVar9);
         ppcVar3 = (paStack54 + 0x4);
         (**ppcVar3)();
     }
-    if(paStack54 != (astruct_76 *)0x0)
+    if(paStack54 != (Struct76 *)0x0)
     {
-        if(paStack54 != (astruct_76 *)0x0)
+        if(paStack54 != (Struct76 *)0x0)
         {
             ppcVar3 = paStack54;
             (**ppcVar3)(uVar8, paStack54, (paStack54 >> 0x10), 0x1, uVar13, uVar21);
@@ -1387,7 +1388,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     }
     handle    = CreatePen16((u16)s_tile2_bmp_1050_1538, 0x25, 0x100);
     handle_00 = SelectObject16((HDC16)s_tile2_bmp_1050_1538, handle);
-    paVar12   = (astruct_76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x4f, param_3);
+    paVar12   = (Struct76 *)unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x4f, param_3);
     uVar21    = (paVar12 >> 0x10);
     uVar10    = pass1_1008_4772(paVar12);
     uVar13    = (uVar10 >> 0x10);
@@ -1418,9 +1419,9 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
         ppcVar3 = (paVar12 + 0x4);
         (**ppcVar3)(s_tile2_bmp_1050_1538, paVar12, uVar21, -(IVar9 + -0xc4), uVar13, iVar5, pHVar14, uVar15, HVar16, HVar17);
     }
-    if(paVar12 != (astruct_76 *)0x0)
+    if(paVar12 != (Struct76 *)0x0)
     {
-        if(paVar12 != (astruct_76 *)0x0)
+        if(paVar12 != (Struct76 *)0x0)
         {
             ppcVar3 = paVar12;
             (**ppcVar3)(s_tile2_bmp_1050_1538, paVar12, uVar21, 0x1, HVar16, HVar17, HVar18);
@@ -1545,11 +1546,11 @@ LAB_1040_286e:
 void pass1_1040_2a22(Struct18 *param_1)
 
 {
-    astruct_625 *iVar1;
+    Struct625 *iVar1;
     u16          uVar1;
 
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_625 *)param_1;
+    iVar1              = (Struct625 *)param_1;
     param_1->field_0x0 = 0x2e26;
     iVar1->field_0x2   = &PTR_LOOP_1050_1040;
     fn_ptr_1000_17ce(iVar1->field_0x94, 0x1000);

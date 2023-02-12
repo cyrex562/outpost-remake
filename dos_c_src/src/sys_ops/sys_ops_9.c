@@ -396,7 +396,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
         }
         else
         {
-            struct_1010_3b7a((astruct_648 *)paVar4, param_4, param_2);
+            struct_1010_3b7a((Struct648 *)paVar4, param_4, param_2);
         }
         break;
     case 0x2:
@@ -411,7 +411,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
         puVar3 = (param_4 | paVar4);
         if(puVar3 == 0x0)
             goto LAB_1010_2126;
-        struct_1010_a1d8((astruct_627 *)paVar4, param_4, param_2, param_3);
+        struct_1010_a1d8((Struct627 *)paVar4, param_4, param_2, param_3);
         break;
     case 0x4:
         mem_op_1000_179c(0x18a, param_4, 0x1000);
@@ -439,7 +439,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
         mem_op_1000_179c(0xe, param_4, 0x1000);
         if((param_4 | paVar4) == 0x0)
             goto LAB_1010_2126;
-        uVar11 = pass1_1010_3d82((astruct_628 *)paVar4, param_4, param_2, param_3);
+        uVar11 = pass1_1010_3d82((Struct628 *)paVar4, param_4, param_2, param_3);
         puVar3 = (uVar11 >> 0x10);
         paVar4 = (astruct_636 *)uVar11;
         break;
@@ -448,7 +448,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
         puVar3 = (param_4 | paVar4);
         if(puVar3 == 0x0)
             goto LAB_1010_2126;
-        struct_1010_95aa((astruct_629 *)paVar4, param_4, param_2);
+        struct_1010_95aa((Struct629 *)paVar4, param_4, param_2);
         break;
     case 0x9:
         mem_op_1000_179c(0x26, param_4, 0x1000);
@@ -613,7 +613,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
         puVar3 = (param_4 | paVar4);
         if(puVar3 == 0x0)
             goto LAB_1010_2126;
-        pass1_1010_6abc((astruct_635 *)paVar4, param_4, param_2);
+        pass1_1010_6abc((Struct635 *)paVar4, param_4, param_2);
         break;
     case 0x33:
         mem_op_1000_179c(0x72, param_4, 0x1000);

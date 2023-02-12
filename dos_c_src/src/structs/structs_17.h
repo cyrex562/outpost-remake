@@ -1186,7 +1186,7 @@ struct astruct_284
     u8                 field_0x35;
     u8                 field_0x36;
     u8                 field_0x37;
-    struct astruct_76 *field_0x38;
+    struct Struct76 *field_0x38;
 };
 
 typedef struct astruct_534 astruct_534;

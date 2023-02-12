@@ -803,7 +803,7 @@ void get_sys_metrics_1018_2f56(u32 param_1)
     pass1_1008_3e94((puVar6 & 0xffff0000 | (puVar6 + 0xe)), puVar8, puVar9);
     uVar5          = (param_1 >> 0x10);
     iVar4          = param_1;
-    uVar7          = pass1_1008_4772(*(astruct_76 **)(iVar4 + 0x24));
+    uVar7          = pass1_1008_4772(*(Struct76 **)(iVar4 + 0x24));
     uVar1          = (uVar7 >> 0x10);
     (iVar4 + 0x18) = local_4 + 0xb5;
     (iVar4 + 0x1a) = local_6 + 0x9;
@@ -1134,7 +1134,7 @@ void mixed_sys_op_1018_2978(u32 param_1, u16 param_2, u16 param_3)
     u16         uVar10;
     u16         uVar11;
     u8          uVar12;
-    astruct_76 *paStack62;
+    Struct76 *paStack62;
     RECT16      local_3a;
     i16         iStack54;
     i16         iStack52;
@@ -1159,7 +1159,7 @@ void mixed_sys_op_1018_2978(u32 param_1, u16 param_2, u16 param_3)
     {
         puVar3 = local_2a;
         uVar9  = 0x1008;
-        struct_op_1008_3f92((astruct_76 *)CONCAT22(in_DX, puVar2), (astruct_83 *)CONCAT22(param_3, puVar3));
+        struct_op_1008_3f92((Struct76 *)CONCAT22(in_DX, puVar2), (astruct_83 *)CONCAT22(param_3, puVar3));
     }
     puStack46 = CONCAT22(uVar5, puVar3);
     ppcVar1   = (*puStack46 + 0x14);
@@ -1188,7 +1188,7 @@ void mixed_sys_op_1018_2978(u32 param_1, u16 param_2, u16 param_3)
     uVar11 = 0x1e;
     uVar10 = 0x1000;
     mem_op_1000_179c(0x1e, puVar7, 0x1000);
-    paStack62 = (astruct_76 *)CONCAT22(puVar7, rect);
+    paStack62 = (Struct76 *)CONCAT22(puVar7, rect);
     uVar5     = puVar7 | rect;
     if(uVar5 == 0x0)
     {
@@ -1372,7 +1372,7 @@ void pass1_1018_1320(u32 param_1, u16 *param_2, u32 *param_3)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1018_1346(u16 param_1, u16 param_2, astruct_93 *param_3)
+void pass1_1018_1346(u16 param_1, u16 param_2, Struct93 *param_3)
 
 {
     code      **ppcVar1;
@@ -1386,7 +1386,7 @@ void pass1_1018_1346(u16 param_1, u16 param_2, astruct_93 *param_3)
     u16         extraout_DX_01;
     u16         uVar7;
     u16         extraout_DX_02;
-    astruct_93 *iVar9;
+    Struct93 *iVar9;
     u16         uVar8;
     u8          uVar9;
     u32        *puVar10;
@@ -1406,7 +1406,7 @@ void pass1_1018_1346(u16 param_1, u16 param_2, astruct_93 *param_3)
     u16         uStack4;
 
     uVar8   = (param_3 >> 0x10);
-    iVar9   = (astruct_93 *)param_3;
+    iVar9   = (Struct93 *)param_3;
     uStack4 = iVar9->field_0x8c;
     fn_ptr_1000_17ce((Struct18 *)iVar9->field_0x8e, 0x1000);
     iVar9->field_0x8c = 0x0;
@@ -1576,7 +1576,7 @@ void pass1_1018_18b8(u16 param_1, astruct_55 *param_2, u16 param_3)
     paVar3             = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x9a, param_1);
     iVar3->field_0x24  = paVar3;
     &iVar3->field_0x26 = (paVar3 >> 0x10);
-    uVar4              = pass1_1008_4772((astruct_76 *)(paVar3 & 0xffff0000 | iVar3->field_0x24));
+    uVar4              = pass1_1008_4772((Struct76 *)(paVar3 & 0xffff0000 | iVar3->field_0x24));
     uVar1              = (uVar4 >> 0x10);
     pass1_1000_4906((astruct_20 *)(param_2 & 0xffff0000 | &iVar3->field_0x32), 0x0, 0x8);
     iVar3->field_0x36 = (uVar4 + 0x4);

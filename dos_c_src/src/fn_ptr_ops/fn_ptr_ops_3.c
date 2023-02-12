@@ -1822,7 +1822,7 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
     u16          uVar9;
     u16          uVar10;
     i16          iVar11;
-    astruct_684 *iVar12;
+    Struct684 *iVar12;
     i16          iVar13;
     u16          uVar14;
     u8           uVar15;
@@ -1951,7 +1951,7 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
     uVar14   = SUB42(puStack18, 0x0);
     uVar16   = (puStack18 >> 0x10);
     uVar15   = (undefined)uVar10;
-    iVar12   = (astruct_684 *)*uStack34;
+    iVar12   = (Struct684 *)*uStack34;
     ppcVar3  = &iVar12->field_0x4;
     (**ppcVar3)();
     ppcVar3 = &iVar12->field_0x20;

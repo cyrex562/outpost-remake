@@ -165,7 +165,7 @@ void  pass1_1040_39e2(Struct18 *param_1)
 }
 
 
-void  show_win_1040_3ae8(astruct_1 *param_1, u16 param_2)
+void  show_win_1040_3ae8(Struct1 *param_1, u16 param_2)
 
 {
     dialog_ui_fn_1040_78e2(param_1, param_2);
@@ -341,7 +341,7 @@ void  pass1_1040_40e2(Struct18 *param_1)
 }
 
 
-void  win_ui_op_1040_410e(astruct_1 *param_1, u16 param_2, u8 *param_3)
+void  win_ui_op_1040_410e(Struct1 *param_1, u16 param_2, u8 *param_3)
 
 {
     u32 uVar1;
@@ -463,7 +463,7 @@ void  win_ui_op_1040_42b2(u32 param_1, i16 param_2, HWND16 param_3, WORD *param_
 }
 
 
-void  pass1_1040_477e(astruct_1 *param_1, u8 *param_2, u16 param_3, u16 param_4)
+void  pass1_1040_477e(Struct1 *param_1, u8 *param_2, u16 param_3, u16 param_4)
 
 {
     u8  *puVar1;
@@ -608,18 +608,18 @@ void  pass1_1040_2464(Struct18 *param_1)
 }
 
 
-void  show_win_1040_2490(astruct_1 *param_1, HWND16 param_2)
+void  show_win_1040_2490(Struct1 *param_1, HWND16 param_2)
 
 {
     code     **ppcVar1;
     u16        uVar2;
-    astruct_1 *iVar4;
+    Struct1 *iVar4;
     u16        uVar3;
     i16       *piVar4;
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
     uVar3 = (param_1 >> 0x10);
-    iVar4 = (astruct_1 *)param_1;
+    iVar4 = (Struct1 *)param_1;
     GetDlgItem16(param_2, 0xfb1);
     EnableWindow16((HWND16)s_tile2_bmp_1050_1538, 0x0);
     // WARNING: Load size is inaccurate
@@ -807,7 +807,7 @@ LAB_1040_27c0:
 }
 
 
-void  dlg_ui_op_1040_2a64(astruct_1 *param_1, u16 param_2, u16 param_3)
+void  dlg_ui_op_1040_2a64(Struct1 *param_1, u16 param_2, u16 param_3)
 
 {
     u32   uVar1;
@@ -1011,7 +1011,7 @@ void  pass1_1040_2f06(Struct18 *param_1)
 }
 
 
-void  show_win_1040_2f5a(astruct_1 *param_1, HWND16 param_2)
+void  show_win_1040_2f5a(Struct1 *param_1, HWND16 param_2)
 
 {
     dialog_ui_fn_1040_78e2(param_1, param_2);
@@ -1190,7 +1190,7 @@ void  pass1_1040_3506(Struct18 *param_1)
 }
 
 
-void  show_win_1040_355a(astruct_1 *param_1, HWND16 param_2)
+void  show_win_1040_355a(Struct1 *param_1, HWND16 param_2)
 
 {
     dialog_ui_fn_1040_78e2(param_1, param_2);
@@ -1320,7 +1320,7 @@ void  set_win_pos_1040_0f10(HWND16 param_1, u16 param_2, i16 param_3)
     u16       *puVar6;
     u16        check;
 
-    dialog_ui_fn_1040_78e2(*(astruct_1 **)(param_3 + 0x6), param_1);
+    dialog_ui_fn_1040_78e2(*(Struct1 **)(param_3 + 0x6), param_1);
     uVar2 = (param_3 + 0x6);
     uVar4 = (uVar2 >> 0x10);
     iVar3 = uVar2;
@@ -1401,7 +1401,7 @@ void  pass1_1040_1290(Struct18 *param_1)
 }
 
 
-void  win_ui_op_1040_12bc(astruct_1 *param_1, u16 param_2, u8 *param_3)
+void  win_ui_op_1040_12bc(Struct1 *param_1, u16 param_2, u8 *param_3)
 
 {
     u32 uVar1;
@@ -1610,7 +1610,7 @@ void  pass1_1040_1876(Struct18 *param_1)
 }
 
 
-void  show_win_1040_18a2(astruct_1 *param_1, HWND16 param_2, WORD *param_3)
+void  show_win_1040_18a2(Struct1 *param_1, HWND16 param_2, WORD *param_3)
 
 {
     u32 uVar1;
@@ -1800,7 +1800,7 @@ void  pass1_1040_1d24(Struct18 *param_1)
 }
 
 
-void  show_win_1040_1d50(astruct_1 *param_1, HWND16 param_2)
+void  show_win_1040_1d50(Struct1 *param_1, HWND16 param_2)
 
 {
     dialog_ui_fn_1040_78e2(param_1, param_2);
@@ -1878,11 +1878,11 @@ void  pass1_1040_205e(Struct18 *param_1)
     u32  *puVar1;
     u16          uVar2;
     code       **ppcVar3;
-    astruct_624 *iVar4;
+    Struct624 *iVar4;
     u16          uVar4;
 
     uVar4              = (param_1 >> 0x10);
-    iVar4              = (astruct_624 *)param_1;
+    iVar4              = (Struct624 *)param_1;
     param_1->field_0x0 = 0x237e;
     iVar4->field_0x2   = &PTR_LOOP_1050_1040;
     puVar1             = iVar4->field_0x8e;
@@ -1900,7 +1900,7 @@ void  pass1_1040_205e(Struct18 *param_1)
 }
 
 
-void  create_win_1040_20d4(u16 param_1, u16 param_2, u16 param_3, astruct_1 *param_4)
+void  create_win_1040_20d4(u16 param_1, u16 param_2, u16 param_3, Struct1 *param_4)
 
 {
     i16        y;
@@ -1926,7 +1926,7 @@ void  create_win_1040_20d4(u16 param_1, u16 param_2, u16 param_3, astruct_1 *par
     iStack8  = (iStack14 + 0xa);
     iStack10 = (iStack14 + 0xc);
     uVar1    = (param_4 >> 0x10);
-    uStack18 = pass1_1008_4772(*(astruct_76 **)(param_4 + 0x8e));
+    uStack18 = pass1_1008_4772(*(Struct76 **)(param_4 + 0x8e));
     y        = (uStack18 + 0x4);
     iStack4  = (iStack8 - y) / 0x2;
     uStack6  = 0x5;
@@ -1975,7 +1975,7 @@ void  win_ui_op_1038_ec1a(u16 param_1, i16 param_2)
     u16         *puVar10;
     u16         *puVar11;
 
-    dialog_ui_fn_1040_78e2(*(astruct_1 **)(param_2 + 0x6), &PTR_LOOP_1050_1040);
+    dialog_ui_fn_1040_78e2(*(Struct1 **)(param_2 + 0x6), &PTR_LOOP_1050_1040);
     puVar10            = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2b, param_1, in_DX, unaff_DI);
     globals->PTR_LOOP_1050_5f2e = (puVar10 >> 0x10);
     (param_2 + -0x4)   = puVar10;
@@ -2047,7 +2047,7 @@ void  win_ui_op_1038_ec1a(u16 param_1, i16 param_2)
         piVar1  = (param_2 + -0x8);
         *piVar1 = *piVar1 + 0x1;
     }
-    move_win_1040_826c(*(astruct_1 **)(param_2 + 0x6), -0x1, 0xffff);
+    move_win_1040_826c(*(Struct1 **)(param_2 + 0x6), -0x1, 0xffff);
     ShowWindow16((HWND16)&PTR_LOOP_1050_1040, 0x5);
     return;
 }

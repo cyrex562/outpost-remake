@@ -162,7 +162,7 @@ struct astruct_162
     undefined          field_0x5;
     undefined          field_0x6;
     undefined          field_0x7;
-    struct astruct_76 *field_0x8;
+    struct Struct76 *field_0x8;
     undefined          field_0xc;
     undefined          field_0xd;
     undefined          field_0xe;

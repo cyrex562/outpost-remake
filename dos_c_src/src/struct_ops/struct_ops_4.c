@@ -1711,16 +1711,16 @@ void  struct_1018_2b10(astruct_55 *param_1, u16 param_2, u16 param_3)
     astruct_43  *paVar6;
     u32          uVar7;
     u16          uVar8;
-    astruct_626 *uVar9;
+    Struct626 *uVar9;
 
-    uVar9                       = (astruct_626 *)param_1;
+    uVar9                       = (Struct626 *)param_1;
     uVar8                       = (param_1 >> 0x10);
     puVar5                      = get_sys_metrics_1018_4b1e(param_1, 0x1, param_2);
     uVar9->field_0x20           = 0x389a;
     uVar9->field_0x22           = 0x1008;
     uVar9->field_0x20           = 0x3aa8;
     uVar9->field_0x22           = 0x1008;
-    uVar9->field_0x24           = (astruct_76 *)0x0;
+    uVar9->field_0x24           = (Struct76 *)0x0;
     uVar9->field_0x174          = 0x0;
     uVar9->field_0x176          = 0x0;
     uVar9->field_0x178          = 0x0;
@@ -1894,7 +1894,7 @@ void  pass1_1010_e8f6(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
     return;
 }
 
-void  struct_1010_a1d8(astruct_627 *param_1, u16 param_2, u16 param_3, u16 param_4)
+void  struct_1010_a1d8(Struct627 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     i16         iVar1;
@@ -2012,7 +2012,7 @@ u16 * pass1_1010_9258(u16 *param_1)
     return param_1;
 }
 
-void  struct_1010_95aa(astruct_629 *param_1, u16 param_2, u16 param_3)
+void  struct_1010_95aa(Struct629 *param_1, u16 param_2, u16 param_3)
 
 {
     struct_op_1010_1d48((astruct_79 *)CONCAT22(param_2, param_1), param_3);

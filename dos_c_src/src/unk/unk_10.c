@@ -1296,7 +1296,7 @@ void  pass1_1020_86d8(u32 param_1)
 }
 
 
-void  pass1_1020_8712(u32 param_1, i16 *param_2, astruct_76 *param_3, u16 *param_4)
+void  pass1_1020_8712(u32 param_1, i16 *param_2, Struct76 *param_3, u16 *param_4)
 
 {
     u16 uVar1;
@@ -1379,7 +1379,7 @@ void  pass1_1020_9068(u32 *param_1, u8 *param_2, i16 param_3, u16 param_4)
     if(((iVar8 + 0xac) | (iVar8 + 0xaa)) != 0x0)
     {
         pass1_1020_915a(param_1 & 0xffff | uVar10 << 0x10, param_2, param_3, param_4);
-        pass1_1008_4480(uVar2, (param_1 & 0xffff0000 | (iVar8 + 0xae)), *(astruct_76 **)(iVar8 + 0xb4), param_4);
+        pass1_1008_4480(uVar2, (param_1 & 0xffff0000 | (iVar8 + 0xae)), *(Struct76 **)(iVar8 + 0xb4), param_4);
         ppcVar3 = (*param_1 + 0x10);
         (**ppcVar3)();
         uVar4 = (iVar8 + 0xaa);
@@ -1487,7 +1487,7 @@ void  pass1_1020_83f8(u32 param_1, u16 param_2)
     {
         uVar1 = (iVar3 + 0x1c);
         uVar2 = (iVar3 + 0x1c);
-        pass1_1008_4480(*(uVar1 + 0xa), (param_1 & 0xffff0000 | (iVar3 + 0x16)), *(astruct_76 **)(uVar2 + 0x2a), param_2);
+        pass1_1008_4480(*(uVar1 + 0xa), (param_1 & 0xffff0000 | (iVar3 + 0x16)), *(Struct76 **)(uVar2 + 0x2a), param_2);
     }
     return;
 }

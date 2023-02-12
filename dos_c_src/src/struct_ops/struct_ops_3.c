@@ -46,12 +46,12 @@ u32  pass1_1030_51f0(u32 param_1)
 void  pass1_1030_67cc(u16 *param_1)
 
 {
-    astruct_687 *iVar1;
+    Struct687 *iVar1;
     u16          uVar1;
 
     struct_1030_1628(param_1);
-    iVar1 = (astruct_687 *)param_1;
-    iVar1 = (astruct_687 *)&iVar1->field_0xc;
+    iVar1 = (Struct687 *)param_1;
+    iVar1 = (Struct687 *)&iVar1->field_0xc;
     pass1_1008_3e38((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1             = (param_1 >> 0x10);
     iVar1->field_0x12 = 0x0;
@@ -1390,12 +1390,12 @@ astruct_100 * pass1_1028_acb6(astruct_100 *param_1, u16 param_2, u8 param_3)
 void  pass1_1028_ae66(astruct_100 *param_1, u32 param_2, u32 param_3, u32 param_4, u16 param_5, u8 param_6)
 
 {
-    astruct_689 *iVar1;
+    Struct689 *iVar1;
     u16          uVar1;
 
     struct_op_1028_d1dc(param_5, param_6, param_1, 0x1387);
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_689 *)param_1;
+    iVar1              = (Struct689 *)param_1;
     iVar1->field_0x108 = param_4;
     iVar1->field_0x10c = param_3;
     iVar1->field_0x110 = param_2;
@@ -1708,12 +1708,12 @@ void  pass1_1028_68de(astruct_100 *param_1, u16 param_2, u32 param_3, u8 param_4
 void  pass1_1028_6af2(astruct_100 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 param_5)
 
 {
-    astruct_683 *iVar1;
+    Struct683 *iVar1;
     u16          uVar1;
 
     struct_op_1028_d1dc(param_4, param_5, param_1, 0x1387);
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_683 *)param_1;
+    iVar1              = (Struct683 *)param_1;
     iVar1->field_0x108 = param_3;
     iVar1->field_0x10c = param_2;
     param_1->field_0x0 = 0x6e50;

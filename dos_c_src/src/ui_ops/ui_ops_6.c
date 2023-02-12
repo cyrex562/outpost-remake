@@ -618,7 +618,7 @@ void pass1_1020_1780(u32 *param_1)
 }
 
 
-void mixed_ui_op_1020_179c(astruct_1 *param_1)
+void mixed_ui_op_1020_179c(Struct1 *param_1)
 
 {
     u32         uVar1;
@@ -817,7 +817,7 @@ void pass1_1018_5e5a(u16 *param_1)
     return;
 }
 
-void win_ui_op_1018_5e9a(astruct_1 *param_1, u16 param_2)
+void win_ui_op_1018_5e9a(Struct1 *param_1, u16 param_2)
 
 {
     u32    uVar1;
@@ -970,7 +970,7 @@ void unk_win_ui_op_1018_4f18(astruct_39 *param_1, u1616 param_2, u32 param_3)
     u16         uVar8;
     u16         uVar9;
     u16         unaff_SS;
-    astruct_76 *paStack22;
+    Struct76 *paStack22;
     RECT16      local_12;
     i16         iStack14;
     i16         iStack12;
@@ -1016,7 +1016,7 @@ void unk_win_ui_op_1018_4f18(astruct_39 *param_1, u1616 param_2, u32 param_3)
     GetClientRect16(0x1008, rect);
     uVar9 = 0x1000;
     mem_op_1000_179c(0x1e, puVar6, 0x1000);
-    paStack22 = (astruct_76 *)CONCAT22(puVar6, rect);
+    paStack22 = (Struct76 *)CONCAT22(puVar6, rect);
     uVar7     = puVar6 | rect;
     if(uVar7 == 0x0)
     {
@@ -1396,7 +1396,7 @@ astruct_43 *unk_io_op_1010_830a(u32 param_1, u16 param_2, u16 param_3)
         else
         {
             puVar2 = &local_2e;
-            struct_op_1008_3f92((astruct_76 *)(uStack10 & 0xffff0000 | ZEXT24(puVar1)), (astruct_83 *)CONCAT22(param_3, puVar2));
+            struct_op_1008_3f92((Struct76 *)(uStack10 & 0xffff0000 | ZEXT24(puVar1)), (astruct_83 *)CONCAT22(param_3, puVar2));
         }
         paStack6 = (astruct_43 *)CONCAT22(uVar3, puVar2);
         close_file_1008_496c(&local_2e, param_3);

@@ -444,7 +444,7 @@ void  pass1_1030_bcde(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 *p
 void  pass1_1030_bd74(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 param_5)
 
 {
-    astruct_670 *iVar1;
+    Struct670 *iVar1;
     i16          iVar2;
     u16          uVar3;
     u16          uVar4;
@@ -460,7 +460,7 @@ void  pass1_1030_bd74(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
     long         lStack6;
 
     uVar3    = (param_4 >> 0x10);
-    iVar1    = (astruct_670 *)param_4;
+    iVar1    = (Struct670 *)param_4;
     lStack6  = iVar1->field_0x8;
     uVar4    = (param_3 >> 0x10);
     iVar2    = param_3;

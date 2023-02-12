@@ -1,15 +1,17 @@
 #include "string_ops.h"
 
-#include "types.h"
-#include <structs/structs_45.h>
+#include "draw_ops/draw_ops_2.h"
+#include "fn_ptr_ops/fn_ptr_ops_7.h"
+#include "string_consts.h"
+#include "struct_385.h"
 #include "struct_ops/struct_ops_1.h"
 #include "struct_ops/struct_ops_5.h"
-#include "fn_ptr_ops/fn_ptr_ops_7.h"
-#include "utils.h"
-#include "string_consts.h"
-#include "winapi.h"
+#include "types.h"
 #include "unk/unk_11.h"
-#include "draw_ops/draw_ops_2.h"
+#include "utils.h"
+#include "winapi.h"
+
+#include <structs/structs_45.h>
 
 
 void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3)
@@ -89,7 +91,7 @@ void pass1_1040_5d42(Globals *globals, Struct382 *param_1)
 }
 
 
-void pass1_1038_4d3c(Struct385 *param_1, char *param_2, u16 param_3)
+void pass1_1038_4d3c(struct Struct385 *param_1, char *param_2, u16 param_3)
 
 {
     u16 u_var_1;

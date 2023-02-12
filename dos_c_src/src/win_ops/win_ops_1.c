@@ -521,7 +521,7 @@ u8 * win_ui_op_1040_8718(Struct37 *param_1, u16 param_2)
     unk_win_msg_op_1008_9510(&PTR_LOOP_1050_5df4, 0x1008, param_2);
     UVar10 = (u1632)param_1;
     uVar8  = (param_1 >> 0x10);
-    dialog_ui_fn_1040_78e2((astruct_1 *)param_1, 0x1008);
+    dialog_ui_fn_1040_78e2((Struct1 *)param_1, 0x1008);
     globals->PTR_LOOP_1050_5df6 = (UVar10 + 0x6);
     if((UVar10 + 0x94) != 0x0)
     {
@@ -1431,7 +1431,7 @@ u16  pass1_1040_4f28(u32 *param_1, i16 *param_2, u16 param_3, u16 param_4, i16 p
 }
 
 
-void  set_win_pos_1040_4f96(astruct_1 *param_1, u16 param_2, u16 param_3, u8 *param_4)
+void  set_win_pos_1040_4f96(Struct1 *param_1, u16 param_2, u16 param_3, u8 *param_4)
 
 {
     u32         *puVar1;

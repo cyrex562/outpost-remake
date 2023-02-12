@@ -353,7 +353,7 @@ void win_ui_op_1040_a784(i16 param_1, i16 param_2, u16 param_3, u32 param_4, u16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_win_ui_op_1040_b230(astruct_1 *param_1, u16 param_2, u16 param_3)
+void unk_win_ui_op_1040_b230(Struct1 *param_1, u16 param_2, u16 param_3)
 
 {
     code     **ppcVar1;
@@ -796,7 +796,7 @@ void destroy_win_1040_bb78(astruct_35 *param_1, HWND16 param_2)
 }
 
 
-void win_ui_1040_b8d2(astruct_1 *param_1, u16 param_2, u16 param_3, u16 param_4)
+void win_ui_1040_b8d2(Struct1 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     u32         *puVar1;
@@ -1870,7 +1870,7 @@ Struct18 *pass1_1040_83e6(Struct18 *param_1, u8 param_2, u16 param_3)
 }
 
 
-void move_win_1040_826c(astruct_1 *param_1, u16 param_2, BOOL16 param_3)
+void move_win_1040_826c(Struct1 *param_1, u16 param_2, BOOL16 param_3)
 
 {
     u16  IVar1;
@@ -2065,14 +2065,14 @@ u16 pass1_1040_79c0(u32 *param_1, i16 *param_2, u16 param_3, u16 param_4, u16 pa
 }
 
 
-void dialog_ui_fn_1040_78e2(astruct_1 *in_struct_1, HINSTANCE16 in_instance_handle)
+void dialog_ui_fn_1040_78e2(Struct1 *in_struct_1, HINSTANCE16 in_instance_handle)
 
 {
     code     **ppcVar1;
     LPCSTR     dlg_template;
     HWND16     dialog_handle;
-    astruct_1 *local_struct_1;
-    astruct_1 *local_string_1;
+    Struct1 *local_struct_1;
+    Struct1 *local_string_1;
     u16        uVar2;
     long       lVar3;
     u16        uVar4;
@@ -2085,8 +2085,8 @@ void dialog_ui_fn_1040_78e2(astruct_1 *in_struct_1, HINSTANCE16 in_instance_hand
     LPCSTR     local_string_2;
     LPCSTR     pCStack8;
 
-    local_string_1 = (astruct_1 *)(in_struct_1 >> 0x10);
-    local_struct_1 = (astruct_1 *)in_struct_1;
+    local_string_1 = (Struct1 *)(in_struct_1 >> 0x10);
+    local_struct_1 = (Struct1 *)in_struct_1;
     if(&local_struct_1->field_0xc == 0x0)
     {
         uVar2         = (_PTR_LOOP_1050_5bc8 >> 0x10);
@@ -2219,7 +2219,7 @@ void msg_box_ui_op_1040_64ca(u32 param_1, char *param_2, u8 *param_3, u16 param_
 }
 
 
-void show_win_1040_65ba(astruct_1 *param_1, u16 param_2)
+void show_win_1040_65ba(Struct1 *param_1, u16 param_2)
 
 {
     u32   uVar1;
@@ -2356,7 +2356,7 @@ void enable_win_1040_6880(u32 param_1, i16 param_2, HWND16 param_3)
 }
 
 
-void mixed_win_ui_op_1040_6942(astruct_1 *param_1, u16 param_2, u16 param_3)
+void mixed_win_ui_op_1040_6942(Struct1 *param_1, u16 param_2, u16 param_3)
 
 {
     u32          uVar1;
@@ -2550,7 +2550,7 @@ u16 pass1_1040_7044(u32 *param_1, i16 *param_2, u16 param_3, u16 param_4, i16 pa
 }
 
 
-void mixed_win_ui_op_1040_70b4(astruct_1 *param_1, u16 param_2, u16 param_3)
+void mixed_win_ui_op_1040_70b4(Struct1 *param_1, u16 param_2, u16 param_3)
 
 {
     u32          uVar1;
@@ -2697,7 +2697,7 @@ void mixed_win_ui_op_1040_70b4(astruct_1 *param_1, u16 param_2, u16 param_3)
 }
 
 
-void pass1_1040_57d4(astruct_1 *param_1, u8 *param_2, i16 param_3, u16 param_4, u16 param_5)
+void pass1_1040_57d4(Struct1 *param_1, u8 *param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
     pass1_1040_5d42(param_1);

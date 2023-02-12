@@ -496,7 +496,7 @@ void  pass1_1040_1f5a(Struct57 *param_1, u16 param_2, i16 param_3, u16 param_4)
     paVar3         = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x1cc, param_4);
     (iVar6 + 0x8e) = paVar3;
     (iVar6 + 0x90) = (paVar3 >> 0x10);
-    uVar4          = pass1_1008_4772((astruct_76 *)(paVar3 & 0xffff0000 | (iVar6 + 0x8e)));
+    uVar4          = pass1_1008_4772((Struct76 *)(paVar3 & 0xffff0000 | (iVar6 + 0x8e)));
     puVar2         = (uVar4 >> 0x10);
     puVar5         = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_4, puVar2, param_3);
     local_16       = CONCAT22((uVar4 + 0x8) + 0xa, 0xa);

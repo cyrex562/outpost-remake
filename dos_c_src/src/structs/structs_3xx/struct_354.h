@@ -26,7 +26,7 @@ typedef struct astruct_354
     u8          field_0xf;
     u8          field_0x10;
     u8          field_0x11;
-    struct astruct_76 *field_0x12;
+    struct Struct76 *field_0x12;
     u8          field_0x16;
     u8          field_0x17;
     u8          field_0x18;

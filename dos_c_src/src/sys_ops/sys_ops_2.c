@@ -1618,7 +1618,7 @@ void  pass1_1030_4782(u8 *param_1, u8 param_2, u8 *param_3, u16 param_4, u16 par
         iVar7             = piStack6;
         (iVar7 + 0x12)    = paVar11;
         (iVar7 + 0x14)    = (paVar11 >> 0x10);
-        uVar12            = pass1_1008_4772(*(astruct_76 **)(iVar7 + 0xe));
+        uVar12            = pass1_1008_4772(*(Struct76 **)(iVar7 + 0xe));
         uStack152         = (uVar12 >> 0x10);
         iStack154         = uVar12;
         iStack156         = (iStack154 + 0x4) + -0x1;
@@ -1870,7 +1870,7 @@ void  pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     i16         *piVar1;
-    astruct_678 *iVar2;
+    Struct678 *iVar2;
     u16          uVar2;
     astruct_67  *paVar3;
     u16          uVar4;
@@ -1881,7 +1881,7 @@ void  pass1_1030_2a2c(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     i16          iVar9;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_678 *)param_1;
+    iVar2 = (Struct678 *)param_1;
     if(0x0 < iVar2->field_0x18)
     {
         piVar1  = &iVar2->field_0x18;

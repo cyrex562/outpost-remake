@@ -846,7 +846,7 @@ void  pass1_1028_9624(u32 param_1, u16 param_2, u8 *param_3, u16 param_4, i16 pa
     u32          uVar7;
     u8          *extraout_DX;
     u16          extraout_DX_00;
-    astruct_688 *iVar9;
+    Struct688 *iVar9;
     u16          uVar8;
     u16          uVar9;
     u8          *puVar10;
@@ -873,7 +873,7 @@ void  pass1_1028_9624(u32 param_1, u16 param_2, u8 *param_3, u16 param_4, i16 pa
     u32  *puVar6;
 
     uVar8 = (param_1 >> 0x10);
-    iVar9 = (astruct_688 *)param_1;
+    iVar9 = (Struct688 *)param_1;
     uVar7 = iVar9->field_0x10c;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar7, (uVar7 >> 0x10));
     &iVar9->field_0x110         = param_2;

@@ -389,7 +389,7 @@ void pass1_1018_e2cc(u32 param_1, u1616 param_2)
 void window_op_1018_e384(astruct *param_1)
 
 {
-    astruct_659 *in_AX;
+    Struct659 *in_AX;
     u8          *in_DX;
     u16          uVar1;
     i16          iVar2;
@@ -406,7 +406,7 @@ void window_op_1018_e384(astruct *param_1)
     if(uVar1 != 0x0)
     {
         pass1_1018_e4f2(in_AX, in_DX, (iVar2 + 0x8), unaff_DI, unaff_SS);
-        *(astruct_659 **)(iVar2 + 0xee) = in_AX;
+        *(Struct659 **)(iVar2 + 0xee) = in_AX;
         *(iVar2 + 0xf0)                 = uVar1;
         return;
     }
@@ -515,7 +515,7 @@ void win_1018_598c(astruct *param_1, u16 param_2, u16 param_3)
     uVar1 = param_3 | param_2;
     if(uVar1 != 0x0)
     {
-        pass1_1018_5b06((astruct_132 *)param_2, param_3, iVar1->field_0x8, unaff_SS);
+        pass1_1018_5b06((Struct132 *)param_2, param_3, iVar1->field_0x8, unaff_SS);
         iVar1->field_0xee = param_2;
         iVar1->field_0xf0 = uVar1;
         return;
@@ -528,7 +528,7 @@ void win_1018_598c(astruct *param_1, u16 param_2, u16 param_3)
 void window_op_1018_67b6(astruct *param_1)
 
 {
-    astruct_658 *in_AX;
+    Struct658 *in_AX;
     u8          *in_DX;
     u16          uVar1;
     i16          iVar2;
@@ -545,7 +545,7 @@ void window_op_1018_67b6(astruct *param_1)
     if(uVar1 != 0x0)
     {
         pass1_1018_6924(in_AX, in_DX, (iVar2 + 0x8), unaff_DI, unaff_SS);
-        *(astruct_658 **)(iVar2 + 0xee) = in_AX;
+        *(Struct658 **)(iVar2 + 0xee) = in_AX;
         *(iVar2 + 0xf0)                 = uVar1;
         return;
     }

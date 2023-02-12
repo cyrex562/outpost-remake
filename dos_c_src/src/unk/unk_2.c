@@ -1179,7 +1179,7 @@ void  pass1_1038_6f5a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 pa
     u16          uStack8;
     u16          local_6;
     u16          uStack4;
-    astruct_623 *uVar3;
+    Struct623 *uVar3;
 
     uVar8 = (param_1 >> 0x10);
     iVar6 = param_1;
@@ -1197,7 +1197,7 @@ void  pass1_1038_6f5a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 pa
         }
         paStack16 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_68a2);
         uVar5     = (paStack16 >> 0x10);
-        uVar3     = (astruct_623 *)paStack16;
+        uVar3     = (Struct623 *)paStack16;
         if((uVar5 | uVar3) == 0x0)
         {
             paStack16 = (astruct_99 *)0x0;
@@ -2547,7 +2547,7 @@ void  pass1_1038_349e(u32 param_1, u32 param_2)
     u16          uVar4;
     u16          uVar5;
     u16          extraout_DX_00;
-    astruct_685 *iVar7;
+    Struct685 *iVar7;
     u16          uVar6;
     u32  *puVar7;
     u16          uVar8;
@@ -2556,7 +2556,7 @@ void  pass1_1038_349e(u32 param_1, u32 param_2)
     u32          uStack6;
 
     uVar6              = (param_1 >> 0x10);
-    iVar7              = (astruct_685 *)param_1;
+    iVar7              = (Struct685 *)param_1;
     iVar7->field_0x200 = param_2;
     pass1_1038_4d0e(param_1, 0x258);
     uVar3 = param_2;

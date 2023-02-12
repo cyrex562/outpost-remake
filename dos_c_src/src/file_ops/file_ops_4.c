@@ -8,7 +8,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     u16         extraout_DX;
     i16         iVar4;
     u16         uVar5;
-    astruct_76 *paStack42;
+    Struct76 *paStack42;
     u8          local_26[0x24];
 
     uVar5         = (param_1 >> 0x10);
@@ -18,7 +18,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     puVar2        = local_26;
     struct_op_1008_48fe((astruct_81 *)CONCAT22(param_3, puVar2), 0x1, param_2, param_4);
     mem_op_1000_179c(0x1e, param_4, 0x1000);
-    paStack42 = (astruct_76 *)CONCAT22(param_4, puVar2);
+    paStack42 = (Struct76 *)CONCAT22(param_4, puVar2);
     uVar3     = param_4 | puVar2;
     if(uVar3 == 0x0)
     {
@@ -161,7 +161,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 {
                     uVar4 = *(iVar7 + 0x12);
                     uVar4 = uVar4 & 0xffff0000 | (uVar4 + 0x28);
-                    struct_op_1008_4c98((astruct_76 *)(uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), uVar4, 0x100);
+                    struct_op_1008_4c98((Struct76 *)(uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), uVar4, 0x100);
                     (iVar7 + 0x4) = uVar4;
                     (iVar7 + 0x6) = extraout_DX;
                     puVar6        = extraout_DX;

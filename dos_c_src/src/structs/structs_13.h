@@ -682,7 +682,7 @@ struct astruct_637
     u8                 field_0x13;
     u8                 field_0x14;
     u8                 field_0x15;
-    struct astruct_76 *field_0x16;
+    struct Struct76 *field_0x16;
     u32         field_0x1a;
     u16                field_0x1e;
     u16                field_0x20;

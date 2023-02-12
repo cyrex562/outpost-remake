@@ -5,6 +5,7 @@
 #include "fn_ptr_ops_6.h"
 #include "fn_ptr_ops_7.h"
 #include "struct_18.h"
+#include "struct_31.h"
 #include "structs/structs_1.h"
 #include "structs/structs_11.h"
 #include "types.h"
@@ -316,7 +317,7 @@ Struct18 * pass1_1038_ee48(Struct18 *param_1, u8 param_2)
     return param_1;
 }
 
-astruct_31 * pass1_1040_0656(astruct_31 *param_1, u8 param_2)
+struct Struct31 * pass1_1040_0656(Struct31 *param_1, u8 param_2)
 
 {
     destroy_win_1038_ef3a(param_1, &PTR_LOOP_1050_1038);
