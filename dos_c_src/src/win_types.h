@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_WIN_TYPES_H_
 #define OUTPOST_1_SRC_WIN_TYPES_H_
 
+#include "outpost_int.h"
 #include "structs/structs_2.h"
-#include "types.h"
 typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAPINFOHEADER  *PtagBITMAPINFOHEADER;typedef struct tagBITMAPINFOHEADER{
         u32      biSize;
         long       biWidth;

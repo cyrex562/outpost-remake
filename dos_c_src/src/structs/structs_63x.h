@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_63X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_63X_H_
 
-#include "types.h"
+#include "outpost_int.h"
 typedef struct Struct633 Struct633;
 typedef struct Struct632 Struct632;
 typedef struct Struct634 Struct634;

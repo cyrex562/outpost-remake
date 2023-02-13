@@ -5,9 +5,9 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_1_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_1_H_
 
-#include "types.h"
-#include "structs_1.h"
 #include "globals.h"
+#include "outpost_int.h"
+#include "structs_1.h"
 
 void struct_1040_b082(Globals* globals, Struct57* param_1, u32 param_2);
 

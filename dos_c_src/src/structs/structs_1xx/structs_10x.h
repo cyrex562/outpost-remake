@@ -5,17 +5,22 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_10X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_10X_H_
 
+#include "outpost_int.h"
 #include "structs/structs_0xx/struct_21.h"
-#include "structs_1x.h"
-#include "structs_2x.h"
-#include "structs_4x.h"
-#include "structs_73x.h"
-#include "types.h"
+#include "structs/structs_0xx/structs_1x.h"
+#include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_0xx/structs_4x.h"
+#include "structs/structs_73x.h"
 typedef struct Struct102 Struct102;
 typedef struct Struct104 Struct104;
 typedef struct Struct100 Struct100;
 typedef struct Struct103 Struct103;
 typedef struct Struct101 Struct101;
+typedef struct Struct105 Struct105;
+typedef struct Struct106 Struct106;
+typedef struct Struct107 Struct107;
+typedef struct Struct109 Struct109;
+typedef struct Struct108 Struct108;
 struct Struct102
 {
     u8  field_0x0;
@@ -355,5 +360,68 @@ struct Struct101
     u16 field_0x4;
     u16 field_0x6;
     u8  field_0x8;
+};
+struct Struct105
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u16       field_0x4;
+};
+struct Struct106
+{
+    u8  field_0x0;
+    u8  field_0x1;
+    u8  field_0x2;
+    u8  field_0x3;
+    u8  field_0x4;
+    u8  field_0x5;
+    long       field_0x6;
+    u8  field_0xa;
+    u8  field_0xb;
+    u8  field_0xc;
+    u8  field_0xd;
+    u16        field_0xe;
+    u8 *field_0x10;
+    u8  field_0x12;
+    u8  field_0x13;
+    i16        field_0x14;
+    u16        field_0x16;
+    i16        field_0x18;
+};
+struct Struct107
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u8 field_0x4;
+    u8 field_0x5;
+    long      field_0x6;
+    u16       field_0xa;
+    u16       field_0xc;
+    u8 field_0xe;
+    u8 field_0xf;
+    u8 field_0x10;
+    u8 field_0x11;
+    u32       field_0x12;
+};
+struct Struct109
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    i16       field_0x2;
+    u8 field_0x4;
+    u8 field_0x5;
+    i16       field_0x6;
+    i16       field_0x8;
+    i16       field_0xa;
+    u32       field_0xc;
+    u16       field_0x10;
+    i16       field_0x12;
+};
+struct Struct108
+{
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_10X_H_

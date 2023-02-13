@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_WINAPI_H_
 #define OUTPOST_1_SRC_WINAPI_H_
 
-#include "types.h"
+#include "outpost_int.h"
 #include "win_types.h"
 
 typedef u32 (*swi_0x21_fn_ptr)(u16);

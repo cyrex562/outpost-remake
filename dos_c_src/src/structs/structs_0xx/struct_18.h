@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_18_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_18_H_
 
-#include "types.h"
+#include "outpost_int.h"
 
 typedef struct Struct18 Struct18;
 

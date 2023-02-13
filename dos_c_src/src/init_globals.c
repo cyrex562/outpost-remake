@@ -1,7 +1,8 @@
 
-#include "types.h"
-#include "globals.h"
 #include "init_globals.h"
+
+#include "globals.h"
+#include "outpost_int.h"
 
 void init_globals_1020_96d4(Globals *globals)
 

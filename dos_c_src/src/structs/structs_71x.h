@@ -5,13 +5,13 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_71X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_71X_H_
 
-#include "structs_10x.h"
+#include "outpost_int.h"
+#include "structs/structs_1xx/structs_10x.h"
 #include "structs_28x.h"
 #include "structs_49x.h"
 #include "structs_70x.h"
 #include "structs_72x.h"
 #include "structs_73x.h"
-#include "types.h"
 typedef struct Struct711 Struct711;
 typedef struct Struct712 Struct712;
 typedef struct Struct713 Struct713;

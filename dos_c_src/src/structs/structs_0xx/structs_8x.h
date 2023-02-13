@@ -5,10 +5,10 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCTS_8X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCTS_8X_H_
 
+#include "outpost_int.h"
 #include "structs/structs_0xx/struct_21.h"
 #include "structs_1x.h"
 #include "structs_2x.h"
-#include "types.h"
 typedef struct Struct88 Struct88;
 typedef struct Struct86 Struct86;
 typedef struct Struct87 Struct87;

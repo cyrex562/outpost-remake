@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_52X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_52X_H_
 
+#include "outpost_int.h"
 #include "structs/structs_0xx/struct_21.h"
-#include "types.h"
 typedef struct Struct528 Struct528;
 typedef struct Struct520 Struct520;
 typedef struct Struct523 Struct523;

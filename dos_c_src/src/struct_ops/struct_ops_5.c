@@ -1,12 +1,14 @@
 
+#include "struct_ops_5.h"
+
+#include "addr_struct.h"
+#include "globals.h"
+#include "outpost_int.h"
+#include "structs/structs_45.h"
+#include "unk/unk_6.h"
+#include "unk_5.h"
 #include "unk_6.h"
 #include "utils.h"
-#include "structs/structs_45.h"
-#include "globals.h"
-#include "unk_5.h"
-#include "struct_ops_5.h"
-#include "types.h"
-#include "unk/unk_6.h"
 
 
 u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3)

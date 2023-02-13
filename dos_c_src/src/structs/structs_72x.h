@@ -5,10 +5,10 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_24_H_STRUCTS_72X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_24_H_STRUCTS_72X_H_
 
-#include "structs_10x.h"
+#include "outpost_int.h"
+#include "structs/structs_1xx/structs_10x.h"
 #include "structs_70x.h"
 #include "structs_73x.h"
-#include "types.h"
 typedef struct Struct725 Struct725;
 typedef struct Struct726 Struct726;
 typedef struct Struct727 Struct727;

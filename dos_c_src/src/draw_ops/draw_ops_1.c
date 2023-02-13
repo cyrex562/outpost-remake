@@ -1,7 +1,7 @@
 #include "draw_ops_1.h"
 
 #include "../fn_ptr_defs.h"
-#include "../types.h"
+#include "../outpost_int.h"
 #include "../ui_ops/ui_ops_1.h"
 #include "../unk/unk_11.h"
 #include "../unk/unk_17.h"
@@ -21,6 +21,7 @@
 #include "structs/structs_45.h"
 #include "structs/structs_5xx/struct_513.h"
 #include "structs_1x .h"
+#include "structs_1x.h"
 #include "structs_38x.h"
 
 #include <stddef.h>

@@ -1,10 +1,10 @@
 #include "fn_ptr_ops_6.h"
 
-#include "types.h"
-#include "utils.h"
-#include "globals.h"
-#include "unk/unk_11.h"
 #include "fn_ptr_ops_7.h"
+#include "globals.h"
+#include "outpost_int.h"
+#include "unk/unk_11.h"
+#include "utils.h"
 
 #include <winapi.h>
 

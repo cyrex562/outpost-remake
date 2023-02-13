@@ -5,9 +5,9 @@
 #ifndef OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_6_H_
 #define OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_6_H_
 
-#include "types.h"
-#include "globals.h"
 #include "fn_ptr_defs.h"
+#include "globals.h"
+#include "outpost_int.h"
 #include "structs_1.h"
 
 void pass1_1000_24db(u16 param_1, u16 param_2, Globals* globals);

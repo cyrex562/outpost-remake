@@ -2,10 +2,10 @@
 
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
+#include "outpost_int.h"
 #include "string_consts.h"
 #include "struct_18.h"
 #include "structs/structs_11.h"
-#include "types.h"
 #include "unk/unk_12.h"
 #include "unk/unk_18.h"
 #include "utils.h"

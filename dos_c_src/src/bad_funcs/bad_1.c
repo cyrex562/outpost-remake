@@ -1,6 +1,6 @@
-#include "types.h"
-#include "unk/unk_6.h"
 #include "globals.h"
+#include "outpost_int.h"
+#include "unk/unk_6.h"
 
 void bad_1010_bf08(Globals* globals, u16 param_1, u16 param_2, u32 param_3)
 

@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_FN_PTR_DEFS_H_
 #define OUTPOST_1_SRC_FN_PTR_DEFS_H_
 
-#include "types.h"
+#include "outpost_int.h"
 
 typedef void (*fn_ptr_1)();
 

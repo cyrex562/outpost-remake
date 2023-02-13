@@ -2,10 +2,10 @@
 
 #include "addr_struct.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
-#include "structs/structs_1.h"
-#include "types.h"
-#include "utils.h"
+#include "outpost_int.h"
 #include "struct_690.h"
+#include "structs/structs_1.h"
+#include "utils.h"
 
 void  pass1_1010_927a(struct AddrStruct *param_1)
 

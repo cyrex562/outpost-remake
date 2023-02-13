@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_12_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_12_H_
 
-#include "types.h"
+#include "outpost_int.h"
 i16 *dos3_call_1000_23ea(u16 param_1, u16 param_2, i16 param_3, u16 param_4);
 
 void pass1_1000_27d6(u16 *param_1);

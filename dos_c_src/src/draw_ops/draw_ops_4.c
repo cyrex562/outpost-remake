@@ -1,7 +1,7 @@
 
+#include "outpost_int.h"
 #include "structs/structs_16 .h"
 #include "structs_1x .h"
-#include "types.h"
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
 {

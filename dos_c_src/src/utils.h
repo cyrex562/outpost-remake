@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_UTILS_H_
 #define OUTPOST_1_SRC_UTILS_H_
 
-#include "types.h"
+#include "outpost_int.h"
 
 u32 CONCAT22(u16 a, u16 b);
 

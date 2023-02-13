@@ -5,13 +5,42 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_48X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_48X_H_
 
-#include "structs_4x.h"
-#include "types.h"
+#include "outpost_int.h"
+#include "structs/structs_0xx/struct_76.h"
+#include "structs/structs_0xx/structs_1x.h"
+#include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_0xx/structs_3x.h"
+#include "structs/structs_0xx/structs_4x.h"
+#include "structs/structs_1xx/structs_11x.h"
+#include "structs/structs_1xx/structs_15x.h"
+#include "structs/structs_1xx/structs_16x.h"
+#include "structs/structs_1xx/structs_17x.h"
+#include "structs/structs_1xx/structs_18x.h"
+#include "structs/structs_1xx/structs_19x.h"
+#include "structs_30x.h"
+#include "structs_31x.h"
+#include "structs_35x.h"
+#include "structs_37x.h"
+#include "structs_38x.h"
+#include "structs_39x.h"
+#include "structs_40x.h"
+#include "structs_41x.h"
+#include "structs_43x.h"
+#include "structs_44x.h"
+#include "structs_45x.h"
+#include "structs_46x.h"
+#include "structs_47x.h"
+#include "structs_49x.h"
 typedef struct Struct488 Struct488;
 typedef struct Struct480 Struct480;
 typedef struct Struct489 Struct489;
 typedef struct Struct481 Struct481;
 typedef struct Struct482 Struct482;
+typedef struct Struct483 Struct483;
+typedef struct Struct484 Struct484;
+typedef struct Struct485 Struct485;
+typedef struct Struct486 Struct486;
+typedef struct Struct487 Struct487;
 struct Struct488
 {
     u8         field_0x0;
@@ -1853,5 +1882,289 @@ struct Struct482
     u16         field_0x2e;
     u16         field_0x30;
     long        field_0x32;
+};
+struct Struct483
+{
+    u8   field_0x0;
+    u8   field_0x1;
+    u8   field_0x2;
+    u8   field_0x3;
+    u32 *field_0x4;
+};
+struct Struct484
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u8 field_0x4;
+    u8 field_0x5;
+    u8 field_0x6;
+    u8 field_0x7;
+    u8 field_0x8;
+    u8 field_0x9;
+    u8 field_0xa;
+    u8 field_0xb;
+    u8 field_0xc;
+    u8 field_0xd;
+    u8 field_0xe;
+    u8 field_0xf;
+    u8 field_0x10;
+    u8 field_0x11;
+    u16       field_0x12;
+    u16       field_0x14;
+};
+struct Struct485
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u8 field_0x4;
+    u8 field_0x5;
+    u8 field_0x6;
+    u8 field_0x7;
+    u8 field_0x8;
+    u8 field_0x9;
+    u8 field_0xa;
+    u8 field_0xb;
+    u8 field_0xc;
+    u8 field_0xd;
+    u8 field_0xe;
+    u8 field_0xf;
+    u8 field_0x10;
+    u8 field_0x11;
+    u8 field_0x12;
+    u8 field_0x13;
+    u8 field_0x14;
+    u8 field_0x15;
+    u8 field_0x16;
+    u8 field_0x17;
+    u8 field_0x18;
+    u8 field_0x19;
+    u8 field_0x1a;
+    u8 field_0x1b;
+    u8 field_0x1c;
+    u8 field_0x1d;
+    u8 field_0x1e;
+    u8 field_0x1f;
+    u8 field_0x20;
+    u8 field_0x21;
+    u8 field_0x22;
+    u8 field_0x23;
+    u8 field_0x24;
+    u8 field_0x25;
+    u8 field_0x26;
+    u8 field_0x27;
+    u8 field_0x28;
+    u8 field_0x29;
+    u8 field_0x2a;
+    u8 field_0x2b;
+    u8 field_0x2c;
+    u8 field_0x2d;
+    u8 field_0x2e;
+    u8 field_0x2f;
+    u8 field_0x30;
+    u8 field_0x31;
+    u8 field_0x32;
+    u8 field_0x33;
+    u8 field_0x34;
+    u8 field_0x35;
+    u8 field_0x36;
+    u8 field_0x37;
+    u8 field_0x38;
+    u8 field_0x39;
+    u8 field_0x3a;
+    u8 field_0x3b;
+    u8 field_0x3c;
+    u8 field_0x3d;
+    u8 field_0x3e;
+    u8 field_0x3f;
+    u8 field_0x40;
+    u8 field_0x41;
+    u8 field_0x42;
+    u8 field_0x43;
+    u8 field_0x44;
+    u8 field_0x45;
+    u8 field_0x46;
+    u8 field_0x47;
+    u8 field_0x48;
+    u8 field_0x49;
+    u8 field_0x4a;
+    u8 field_0x4b;
+    u8 field_0x4c;
+    u8 field_0x4d;
+    u8 field_0x4e;
+    u8 field_0x4f;
+    u8 field_0x50;
+    u8 field_0x51;
+    u8 field_0x52;
+    u8 field_0x53;
+    u8 field_0x54;
+    u8 field_0x55;
+    u8 field_0x56;
+    u8 field_0x57;
+    u8 field_0x58;
+    u8 field_0x59;
+    u8 field_0x5a;
+    u8 field_0x5b;
+    u8 field_0x5c;
+    u8 field_0x5d;
+    u8 field_0x5e;
+    u8 field_0x5f;
+    u8 field_0x60;
+    u8 field_0x61;
+    u8 field_0x62;
+    u8 field_0x63;
+    u8 field_0x64;
+    u8 field_0x65;
+    u8 field_0x66;
+    u8 field_0x67;
+    u16       field_0x68;
+    u16       field_0x6a;
+};
+struct Struct486
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u8 field_0x4;
+    u8 field_0x5;
+    u8 field_0x6;
+    u8 field_0x7;
+    u8 field_0x8;
+    u8 field_0x9;
+    u8 field_0xa;
+    u8 field_0xb;
+    u8 field_0xc;
+    u8 field_0xd;
+    u8 field_0xe;
+    u8 field_0xf;
+    u8 field_0x10;
+    u8 field_0x11;
+    u8 field_0x12;
+    u8 field_0x13;
+    u8 field_0x14;
+    u8 field_0x15;
+    u8 field_0x16;
+    u8 field_0x17;
+    u8 field_0x18;
+    u8 field_0x19;
+    u8 field_0x1a;
+    u8 field_0x1b;
+    u8 field_0x1c;
+    u8 field_0x1d;
+    u8 field_0x1e;
+    u8 field_0x1f;
+    u8 field_0x20;
+    u8 field_0x21;
+    u8 field_0x22;
+    u8 field_0x23;
+    u8 field_0x24;
+    u8 field_0x25;
+    u8 field_0x26;
+    u8 field_0x27;
+    u8 field_0x28;
+    u8 field_0x29;
+    u8 field_0x2a;
+    u8 field_0x2b;
+    u8 field_0x2c;
+    u8 field_0x2d;
+    u8 field_0x2e;
+    u8 field_0x2f;
+    u8 field_0x30;
+    u8 field_0x31;
+    u8 field_0x32;
+    u8 field_0x33;
+    u8 field_0x34;
+    u8 field_0x35;
+    u8 field_0x36;
+    u8 field_0x37;
+    u8 field_0x38;
+    u8 field_0x39;
+    u8 field_0x3a;
+    u8 field_0x3b;
+    u8 field_0x3c;
+    u8 field_0x3d;
+    u8 field_0x3e;
+    u8 field_0x3f;
+    u8 field_0x40;
+    u8 field_0x41;
+    u8 field_0x42;
+    u8 field_0x43;
+    u8 field_0x44;
+    u8 field_0x45;
+    u8 field_0x46;
+    u8 field_0x47;
+    u8 field_0x48;
+    u8 field_0x49;
+    u8 field_0x4a;
+    u8 field_0x4b;
+    u8 field_0x4c;
+    u8 field_0x4d;
+    u8 field_0x4e;
+    u8 field_0x4f;
+    u8 field_0x50;
+    u8 field_0x51;
+    u8 field_0x52;
+    u8 field_0x53;
+    u8 field_0x54;
+    u8 field_0x55;
+    u8 field_0x56;
+    u8 field_0x57;
+    u8 field_0x58;
+    u8 field_0x59;
+    u8 field_0x5a;
+    u8 field_0x5b;
+    u8 field_0x5c;
+    u8 field_0x5d;
+    u8 field_0x5e;
+    u8 field_0x5f;
+    u8 field_0x60;
+    u8 field_0x61;
+    u8 field_0x62;
+    u8 field_0x63;
+    u8 field_0x64;
+    u8 field_0x65;
+    u8 field_0x66;
+    u8 field_0x67;
+    u8 field_0x68;
+    u8 field_0x69;
+    u8 field_0x6a;
+    u8 field_0x6b;
+    u16       field_0x6c;
+    u16       field_0x6e;
+};
+struct Struct487
+{
+    u8 field_0x0;
+    u8 field_0x1;
+    u8 field_0x2;
+    u8 field_0x3;
+    u8 field_0x4;
+    u8 field_0x5;
+    u8 field_0x6;
+    u8 field_0x7;
+    u8 field_0x8;
+    u8 field_0x9;
+    u8 field_0xa;
+    u8 field_0xb;
+    u8 field_0xc;
+    u8 field_0xd;
+    u8 field_0xe;
+    u8 field_0xf;
+    u8 field_0x10;
+    u8 field_0x11;
+    u8 field_0x12;
+    u8 field_0x13;
+    u8 field_0x14;
+    u8 field_0x15;
+    u8 field_0x16;
+    u8 field_0x17;
+    u8 field_0x18;
+    u8 field_0x19;
+    u16       field_0x1a;
+    u16       field_0x1c;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_48X_H_

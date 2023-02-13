@@ -5,8 +5,9 @@
 #ifndef OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 #define OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 
-#include "types.h"
+#include "addr_struct.h"
 #include "globals.h"
+#include "outpost_int.h"
 #include "structs/structs_45.h"
 
 u16 str_op_1008_60e8(char *param_1, u16 param_2);

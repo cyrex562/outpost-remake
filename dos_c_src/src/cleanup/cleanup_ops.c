@@ -2,9 +2,9 @@
 
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
+#include "outpost_int.h"
 #include "struct_18.h"
 #include "structs/structs_11.h"
-#include "types.h"
 #include "win_ops/win_ops_1.h"
 
 void pass1_1040_869a(Globals* globals, Struct18* param_1)

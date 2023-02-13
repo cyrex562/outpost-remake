@@ -4,7 +4,7 @@
 
 #include "winapi.h"
 
-#include "types.h"
+#include "outpost_int.h"
 #include "win_types.h"
 
 void InitTask16(struct CONTEXT *context)

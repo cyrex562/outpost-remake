@@ -2,15 +2,17 @@
 // Created by cyrex on 2/23/2022.
 //
 
-#include "structs_1.h"
-#include "fn_ptr_ops_1.h"
-#include <winapi.h>
-#include "unk/unk_11.h"
-#include "globals.h"
-#include "utils.h"
-#include "types.h"
-#include "fn_ptr_ops_6.h"
 #include "fn_ptr_ops_7.h"
+
+#include "fn_ptr_ops_1.h"
+#include "fn_ptr_ops_6.h"
+#include "globals.h"
+#include "outpost_int.h"
+#include "structs_1.h"
+#include "unk/unk_11.h"
+#include "utils.h"
+
+#include <winapi.h>
 void fn_ptr_1000_17ce(Struct18 *param_1, u16 param_2)
 
 {

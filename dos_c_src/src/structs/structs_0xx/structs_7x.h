@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_7X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_7X_H_
 
+#include "outpost_int.h"
 #include "structs/structs_0xx/struct_21.h"
-#include "types.h"
 typedef struct Struct75 Struct75;
 typedef struct Struct73 Struct73;
 typedef struct Struct74 Struct74;

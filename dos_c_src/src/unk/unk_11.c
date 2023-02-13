@@ -1,5 +1,6 @@
 #include "unk_11.h"
-#include "types.h"
+
+#include "outpost_int.h"
 #include "unk_12.h"
 #include "utils.h"
 

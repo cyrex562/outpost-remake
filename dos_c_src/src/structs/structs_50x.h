@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_21_H_STRUCTS_50X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_21_H_STRUCTS_50X_H_
 
-#include "types.h"
+#include "outpost_int.h"
 typedef struct Struct501 Struct501;
 typedef struct Struct500 Struct500;
 typedef struct Struct503 Struct503;

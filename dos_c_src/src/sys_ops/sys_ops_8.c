@@ -1,6 +1,7 @@
 #include "sys_ops_8.h"
-#include "types.h"
+
 #include "globals.h"
+#include "outpost_int.h"
 #include "utils.h"
 
 void pass1_1010_abd2(Globals *globals, u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 param_5, u16 param_6)

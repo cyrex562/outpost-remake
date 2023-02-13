@@ -1,6 +1,7 @@
 
-#include "types.h"
 #include "unk_6.h"
+
+#include "outpost_int.h"
 u32 * pass1_1030_3af6(u32 *param_1, u16 param_2, u16 param_3, u32 *param_4, u16 param_5)
 
 {

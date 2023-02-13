@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_
 
-#include "types.h"
+#include "outpost_int.h"
 
 typedef struct Struct397
 {

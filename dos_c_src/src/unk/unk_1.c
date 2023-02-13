@@ -1,6 +1,6 @@
-#include "types.h"
-#include "unk_10.h"
+#include "outpost_int.h"
 #include "structs_1.h"
+#include "unk_10.h"
 
 typedef struct struct_1040_d76e_1 {
   u16 field_0x94;

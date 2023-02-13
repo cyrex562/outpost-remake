@@ -1,13 +1,14 @@
 #include "string_ops.h"
 
+#include "addr_struct.h"
 #include "draw_ops/draw_ops_2.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
+#include "outpost_int.h"
 #include "string_consts.h"
 #include "struct_385.h"
 #include "struct_ops/struct_ops_1.h"
 #include "struct_ops/struct_ops_5.h"
 #include "structs_38x.h"
-#include "types.h"
 #include "unk/unk_11.h"
 #include "utils.h"
 #include "winapi.h"
@@ -15,7 +16,7 @@
 #include <structs/structs_45.h>
 
 
-void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3)
+void string_1040_a626(struct Struct381 *param_1, char *param_2, u16 param_3)
 
 {
     u16 uVar1;
@@ -42,7 +43,7 @@ char *pass1_1040_4dcc(u32 param_1, i16 param_2, u16 param_3)
 }
 
 
-void pass1_1040_5d42(Globals *globals, Struct382 *param_1)
+void pass1_1040_5d42(Globals *globals, struct Struct382 *param_1)
 
 {
     char char_var_1;

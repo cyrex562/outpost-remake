@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_3_H_STRUCTS_699_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_3_H_STRUCTS_699_H_
 
-#include "types.h"
+#include "outpost_int.h"
 
 typedef struct Struct699 Struct699;
 struct Struct699

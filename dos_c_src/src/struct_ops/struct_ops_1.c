@@ -1,14 +1,17 @@
+#include "addr_struct.h"
 #include "globals.h"
 #include "struct_ops_5.h"
+#include "structs_38x.h"
+#include "structs_44x.h"
 #include "structs_5x.h"
 #include "unk/unk_5.h"
 #include "utils.h"
 
+#include <outpost_int.h>
 #include <structs/structs_14.h>
 #include <structs/structs_37.h>
 #include <structs/structs_44.h>
 #include <structs/structs_45.h>
-#include <types.h>
 
 Struct442* struct_1040_bf3e(Globals* globals, Struct442 *param_1, u16 param_2)
 
@@ -156,7 +159,7 @@ void  pass1_1040_4e94(struct Struct57 *param_1, long param_2, u16 param_3)
 }
 
 
-Address2 pass1_1040_5d12(Globals *globals, Struct382 *param_1)
+Address2 pass1_1040_5d12(Globals *globals, struct Struct382 *param_1)
 
 {
     u16          u16_addr_offset_1;
