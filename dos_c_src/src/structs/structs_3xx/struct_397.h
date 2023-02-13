@@ -7,7 +7,7 @@
 
 #include "types.h"
 
-typedef struct astruct_397
+typedef struct Struct397
 {
     u8 field_0x0;
     u8 field_0x1;
@@ -44,6 +44,6 @@ typedef struct astruct_397
     u8 field_0x20;
     u8 field_0x21;
     long     *field_0x22;
-} astruct_397;
+} Struct397;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCT_397_H_

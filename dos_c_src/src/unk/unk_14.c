@@ -218,11 +218,11 @@ void  pass1_1008_6c90(u16 *param_1)
 u32 * pass1_1008_6cb4(u32 *param_1, u32 *param_2, u16 param_3, u32 *param_4, u16 param_5)
 
 {
-    astruct_362 *iVar1;
+    Struct362 *iVar1;
     u16          uVar1;
 
     uVar1            = (param_1 >> 0x10);
-    iVar1            = (astruct_362 *)param_1;
+    iVar1            = (Struct362 *)param_1;
     *param_1         = *param_4;
     iVar1->field_0x4 = (param_4 + 0x1);
     iVar1->field_0x6 = *param_2;
@@ -580,14 +580,14 @@ void  pass1_1008_58a6(u32 param_1, u32 param_2)
     i16         iVar4;
     u16         uVar5;
     u16         uVar6;
-    astruct_99 *paStack6;
+    Struct99 *paStack6;
 
     paStack6 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_029c);
     uVar3    = (paStack6 >> 0x10);
     uVar2    = paStack6;
     if((uVar3 | uVar2) == 0x0)
     {
-        paStack6 = (astruct_99 *)0x0;
+        paStack6 = (Struct99 *)0x0;
     }
     else
     {
@@ -598,7 +598,7 @@ void  pass1_1008_58a6(u32 param_1, u32 param_2)
         paStack6->field_0x0 = 0x5bc0;
         (uVar2 + 0x2)       = 0x1008;
     }
-    if(paStack6 == (astruct_99 *)0x0)
+    if(paStack6 == (Struct99 *)0x0)
     {
         return;
     }
@@ -607,7 +607,7 @@ void  pass1_1008_58a6(u32 param_1, u32 param_2)
     uVar6                         = (param_1 >> 0x10);
     iVar4                         = param_1;
     (paStack6 + 0x4)              = (iVar4 + 0x4);
-    *(astruct_99 **)(iVar4 + 0x4) = paStack6;
+    *(Struct99 **)(iVar4 + 0x4) = paStack6;
     piVar1                        = (iVar4 + 0x8);
     *piVar1                       = *piVar1 + 0x1;
     return;
@@ -626,7 +626,7 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
     i16         iVar5;
     u16         uVar6;
     u16         uVar7;
-    astruct_99 *paStack6;
+    Struct99 *paStack6;
 
     uVar6 = (param_1 >> 0x10);
     iVar5 = param_1;
@@ -641,7 +641,7 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
     uVar3    = paStack6;
     if((uVar4 | uVar3) == 0x0)
     {
-        paStack6 = (astruct_99 *)0x0;
+        paStack6 = (Struct99 *)0x0;
     }
     else
     {
@@ -652,7 +652,7 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
         paStack6->field_0x0 = 0x5bc0;
         (uVar3 + 0x2)       = 0x1008;
     }
-    if(paStack6 == (astruct_99 *)0x0)
+    if(paStack6 == (Struct99 *)0x0)
     {
         return;
     }
@@ -662,7 +662,7 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
         param_1 = (param_1 + 0x4);
         uVar7   = (param_1 >> 0x10);
     } while((param_1 + 0x4) != 0x0);
-    *(astruct_99 **)(param_1 + 0x4) = paStack6;
+    *(Struct99 **)(param_1 + 0x4) = paStack6;
     piVar1                          = (iVar5 + 0x8);
     *piVar1                         = *piVar1 + 0x1;
     return;
@@ -923,7 +923,7 @@ u16  pass1_1008_4d26(u32 param_1, u16 *param_2, i16 param_3)
     u16          uVar2;
     long         lVar3;
     Struct650 *iVar5;
-    astruct_649 *iVar4;
+    Struct649 *iVar4;
     u16          uVar4;
 
     uVar4 = (param_1 >> 0x10);
@@ -933,7 +933,7 @@ u16  pass1_1008_4d26(u32 param_1, u16 *param_2, i16 param_3)
         uVar2                         = (param_2 + 0x2);
         lVar3                         = iVar5->field_0x4;
         uVar4                         = (lVar3 >> 0x10);
-        iVar4                         = (astruct_649 *)lVar3;
+        iVar4                         = (Struct649 *)lVar3;
         (iVar4 + param_3 * 0x4)       = *param_2;
         (iVar4 + param_3 * 0x4 + 0x2) = uVar2;
         return 0x1;
@@ -952,15 +952,15 @@ u32  pass1_1008_4d72(u32 param_1)
 }
 
 
-void  pass1_1008_50c2(astruct_110 *param_1, u32 param_2, u32 param_3, u16 *param_4, u32 param_5)
+void  pass1_1008_50c2(Struct110 *param_1, u32 param_2, u32 param_3, u16 *param_4, u32 param_5)
 
 {
-    astruct_110 *iVar1;
+    Struct110 *iVar1;
     u16          uVar1;
 
     param_1->field_0x0 = *param_4;
     uVar1              = (param_1 >> 0x10);
-    iVar1              = (astruct_110 *)param_1;
+    iVar1              = (Struct110 *)param_1;
     iVar1->field_0x2   = (param_4 + 0x2);
     iVar1->field_0x4   = param_3;
     iVar1->field_0x8   = param_2;
@@ -1028,7 +1028,7 @@ void  pass1_1008_5236(u32 param_1)
     u16          uVar3;
     long         lVar4;
     i16          iVar5;
-    astruct_109 *iVar6;
+    Struct109 *iVar6;
     u16          uVar6;
     bool         bVar7;
     i16          iStack12;
@@ -1037,7 +1037,7 @@ void  pass1_1008_5236(u32 param_1)
     i16          iStack4;
 
     uVar6    = (param_1 >> 0x10);
-    iVar6    = (astruct_109 *)param_1;
+    iVar6    = (Struct109 *)param_1;
     iVar5    = iVar6->field_0x8;
     iVar2    = iVar6->field_0xa;
     lVar4    = CONCAT22(iVar2 - (iVar5 == 0x0), iVar5 + -0x1) * &iVar6->field_0x4;
@@ -1075,14 +1075,14 @@ void  pass1_1008_52fc(u16 *param_1)
     u16          uVar5;
     i16          iVar6;
     i16          iVar7;
-    astruct_111 *iVar8;
+    Struct111 *iVar8;
     u16          uVar8;
     u32          uVar9;
     u16          uStack14;
     i16          iStack12;
 
     uVar8  = (param_1 >> 0x10);
-    iVar8  = (astruct_111 *)param_1;
+    iVar8  = (Struct111 *)param_1;
     uVar9  = pass1_1008_4772(iVar8->field_0xc);
     uVar5  = (uVar9 >> 0x10);
     iVar7  = uVar9;
@@ -1347,7 +1347,7 @@ void  pass1_1008_431c(u32 param_1, u8 param_2)
             uVar4 = uStack6;
             pass1_1008_4544(param_1);
             uVar2 = (iVar5 + 0x10);
-            pass1_1000_4906((astruct_20 *)(uVar4 & 0xffff | uStack6._2_2_ << 0x10), param_2, (uVar2 + 0x4));
+            pass1_1000_4906((Struct20 *)(uVar4 & 0xffff | uStack6._2_2_ << 0x10), param_2, (uVar2 + 0x4));
             uStack6 = uStack6 + 0x1;
         }
     }
@@ -1700,11 +1700,11 @@ u16 * pass1_1008_392e(u16 *param_1, u16 param_2)
 void  pass1_1008_397a(u16 *param_1)
 
 {
-    astruct_452 *iVar1;
+    Struct452 *iVar1;
     u16          uVar1;
 
     uVar1            = (param_1 >> 0x10);
-    iVar1            = (astruct_452 *)param_1;
+    iVar1            = (Struct452 *)param_1;
     *param_1         = 0x3aa0;
     iVar1->field_0x2 = 0x1008;
     *param_1         = 0x3ab0;

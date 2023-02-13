@@ -48,7 +48,7 @@ void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_
 }
 
 
-void  win_ui_cursor_op_1008_2e9a(astruct_72 **param_1, u16 param_2)
+void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
 
 {
     u16        uVar1;
@@ -70,7 +70,7 @@ void  win_ui_cursor_op_1008_2e9a(astruct_72 **param_1, u16 param_2)
     char       local_102[0x100];
 
     local_102[0]    = '\0';
-    uStack262       = (astruct_73 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
+    uStack262       = (Struct73 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     uVar1           = (uStack262 >> 0x10);
     iVar2           = uStack262;
     UStack266       = *(iVar2 + 0x16);
@@ -354,7 +354,7 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  win_ui_op_1008_1414(astruct_72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6)
+void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6)
 
 {
     code     **ppcVar1;

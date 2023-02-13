@@ -1,17 +1,17 @@
 
 
-typedef struct astruct_453 astruct_453;
+typedef struct Struct453 Struct453;
 
-struct astruct_453
+struct Struct453
 {
     undefined field_0x0;
     undefined field_0x1;
     u16       field_0x2;
 };
 
-typedef struct astruct_377 astruct_377;
+typedef struct Struct377 Struct377;
 
-struct astruct_377
+struct Struct377
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -274,9 +274,9 @@ struct astruct_377
     u32 field_0x108;
 };
 
-typedef struct astruct_479 astruct_479;
+typedef struct Struct479 Struct479;
 
-struct astruct_479
+struct Struct479
 {
     undefined   field_0x0;
     undefined   field_0x1;
@@ -293,9 +293,9 @@ struct astruct_479
     u16         field_0x10;
 };
 
-typedef struct astruct_295 astruct_295;
+typedef struct Struct295 Struct295;
 
-struct astruct_295
+struct Struct295
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -320,9 +320,9 @@ struct astruct_295
     u32 field_0x14;
 };
 
-typedef struct astruct_294 astruct_294;
+typedef struct Struct294 Struct294;
 
-struct astruct_294
+struct Struct294
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -371,9 +371,9 @@ struct astruct_294
     u16        field_0x30;
 };
 
-typedef struct astruct_359 astruct_359;
+typedef struct Struct359 Struct359;
 
-struct astruct_359
+struct Struct359
 {
     undefined field_0x0;
     undefined field_0x1;
@@ -399,9 +399,9 @@ struct astruct_359
     u16       field_0x1c;
 };
 
-typedef struct astruct_293 astruct_293;
+typedef struct Struct293 Struct293;
 
-struct astruct_293
+struct Struct293
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -569,9 +569,9 @@ struct astruct_293
     u16        field_0xb2;
 };
 
-typedef struct astruct_292 astruct_292;
+typedef struct Struct292 Struct292;
 
-struct astruct_292
+struct Struct292
 {
     undefined field_0x0;
     undefined field_0x1;
@@ -611,9 +611,9 @@ struct astruct_292
     u16       field_0x24;
 };
 
-typedef struct astruct_14 astruct_14;
+typedef struct Struct14 Struct14;
 
-struct astruct_14
+struct Struct14
 {
     undefined field_0x0;
     undefined field_0x1;
@@ -736,9 +736,9 @@ struct astruct_14
     i16       field_0x80;
 };
 
-typedef struct astruct_302 astruct_302;
+typedef struct Struct302 Struct302;
 
-struct astruct_302
+struct Struct302
 {
     undefined   field_0x0;
     undefined   field_0x1;
@@ -1268,9 +1268,9 @@ struct astruct_302
     long        field_0x210;
 };
 
-typedef struct astruct_106 astruct_106;
+typedef struct Struct106 Struct106;
 
-struct astruct_106
+struct Struct106
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -1292,9 +1292,9 @@ struct astruct_106
     i16        field_0x18;
 };
 
-typedef struct astruct_466 astruct_466;
+typedef struct Struct466 Struct466;
 
-struct astruct_466
+struct Struct466
 {
     undefined field_0x0;
     undefined field_0x1;
@@ -1304,9 +1304,9 @@ struct astruct_466
     u16       field_0x6;
 };
 
-typedef struct astruct_262 astruct_262;
+typedef struct Struct262 Struct262;
 
-struct astruct_262
+struct Struct262
 {
     undefined   field_0x0;
     undefined   field_0x1;
@@ -1412,9 +1412,9 @@ struct astruct_262
     u16         field_0xa8;
 };
 
-typedef struct astruct_264 astruct_264;
+typedef struct Struct264 Struct264;
 
-struct astruct_264
+struct Struct264
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -1432,9 +1432,9 @@ struct astruct_264
     u16        field_0x12;
 };
 
-typedef struct astruct_263 astruct_263;
+typedef struct Struct263 Struct263;
 
-struct astruct_263
+struct Struct263
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -1712,9 +1712,9 @@ struct astruct_263
     u32        field_0x126;
 };
 
-typedef struct astruct_435 astruct_435;
+typedef struct Struct435 Struct435;
 
-struct astruct_435
+struct Struct435
 {
     undefined field_0x0;
     undefined field_0x1;
@@ -1861,17 +1861,17 @@ struct astruct_435
     i16       field_0x90;
 };
 
-typedef struct astruct_251 astruct_251;
+typedef struct Struct251 Struct251;
 
-struct astruct_251
+struct Struct251
 {
     long field_0x0;
     i16  field_0x4;
 };
 
-typedef struct astruct_250 astruct_250;
+typedef struct Struct250 Struct250;
 
-struct astruct_250
+struct Struct250
 {
     undefined   field_0x0;
     undefined   field_0x1;
@@ -1894,9 +1894,9 @@ struct astruct_250
     i16         field_0x18;
 };
 
-typedef struct astruct_259 astruct_259;
+typedef struct Struct259 Struct259;
 
-struct astruct_259
+struct Struct259
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -1910,9 +1910,9 @@ struct astruct_259
     u16        field_0x16;
 };
 
-typedef struct astruct_258 astruct_258;
+typedef struct Struct258 Struct258;
 
-struct astruct_258
+struct Struct258
 {
     undefined  field_0x0;
     undefined  field_0x1;
@@ -1927,22 +1927,22 @@ struct astruct_258
     u32 field_0xc;
 };
 
-typedef struct astruct_280 astruct_280;
+typedef struct Struct280 Struct280;
 
-struct astruct_280
+struct Struct280
 {
     undefined          field_0x0;
     undefined          field_0x1;
     u16                field_0x2;
     u16                field_0x4;
     i16                field_0x6;
-    struct astruct_20 *field_0x8;
-    struct astruct_20 *field_0xc;
+    struct Struct20 *field_0x8;
+    struct Struct20 *field_0xc;
 };
 
-typedef struct astruct_282 astruct_282;
+typedef struct Struct282 Struct282;
 
-struct astruct_282
+struct Struct282
 {
     undefined   field_0x0;
     undefined   field_0x1;

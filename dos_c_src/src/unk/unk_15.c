@@ -52,14 +52,14 @@ i16 pass1_1000_475e(u32 param_1, u32 param_2)
     char         cVar2;
     char         cVar3;
     u8           bVar4;
-    astruct_235 *bVar3;
-    astruct_236 *bVar5;
+    Struct235 *bVar3;
+    Struct236 *bVar5;
     char        *pcVar5;
     char        *pcVar6;
 
     pcVar6 = param_2;
     pcVar5 = param_1;
-    bVar5  = (astruct_236 *)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x20);
+    bVar5  = (Struct236 *)(s_You_may_not_run_a_turn__The_game_1050_00df + 0x20);
     do
     {
         do
@@ -71,13 +71,13 @@ i16 pass1_1000_475e(u32 param_1, u32 param_2)
             pcVar6 = pcVar6 + 0x1;
             cVar3  = *pcVar1;
             cVar2  = *pcVar5;
-            bVar5  = (astruct_236 *)CONCAT11(cVar2, cVar3);
+            bVar5  = (Struct236 *)CONCAT11(cVar2, cVar3);
             pcVar5 = pcVar5 + 0x1;
         } while(cVar2 == cVar3);
         bVar4       = cVar3 + 0xbfU + (-((u8)(cVar3 + 0xbfU) < 0x1a) & 0x20U) + 0x41;
         bVar3._0_1_ = cVar2 + 0xbf;
         bVar5._0_1_ = (u8)bVar3 + (-((u8)bVar3 < 0x1a) & 0x20U) + 0x41;
-        bVar5       = (astruct_236 *)CONCAT11(bVar4, (u8)bVar5);
+        bVar5       = (Struct236 *)CONCAT11(bVar4, (u8)bVar5);
     } while((u8)bVar5 == bVar4);
     cVar3 = ((u8)bVar5 < bVar4) * -0x2 + '\x01';
 LAB_1000_479d:
@@ -275,7 +275,7 @@ u16 pass1_1000_48a8(u32 param_1, u32 param_2, i16 param_3)
 }
 
 
-u16 *pass1_1000_4906(astruct_20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3)
+u16 *pass1_1000_4906(Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3)
 
 {
     u16 *puVar1;
@@ -886,7 +886,7 @@ i16 pass1_1000_422a(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
                 *piStack6                   = param_1;
                 (puVar1 + 0x2)              = param_2;
                 globals->PTR_LOOP_1050_6194 = puVar2;
-                pass1_1000_4906((astruct_20 *)CONCAT22(puVar4, puVar1 + 0x4), 0x0, 0x24);
+                pass1_1000_4906((Struct20 *)CONCAT22(puVar4, puVar1 + 0x4), 0x0, 0x24);
             }
             return param_1;
         }

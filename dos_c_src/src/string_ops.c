@@ -6,6 +6,7 @@
 #include "struct_385.h"
 #include "struct_ops/struct_ops_1.h"
 #include "struct_ops/struct_ops_5.h"
+#include "structs_38x.h"
 #include "types.h"
 #include "unk/unk_11.h"
 #include "utils.h"
@@ -105,7 +106,7 @@ void pass1_1038_4d3c(struct Struct385 *param_1, char *param_2, u16 param_3)
 }
 
 
-void pass1_1030_4dbc(Struct386 *param_1, u32 param_2, long param_3)
+void pass1_1030_4dbc(struct Struct386 *param_1, u32 param_2, long param_3)
 
 {
     long *plong_var_1;
@@ -1024,7 +1025,7 @@ void pass1_1010_6034(u32 param_1, u16 param_2)
     (iVar2 + 0x72) = 0x1;
     (iVar2 + 0x74) = 0x1;
     pass1_1010_60a0(param_1);
-    puVar1 = pass1_1000_4906((astruct_20 *)(param_1 & 0xffff0000 | (iVar2 + 0x22)), 0x0, 0x40);
+    puVar1 = pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | (iVar2 + 0x22)), 0x0, 0x40);
     load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
     *(u16 **)(iVar2 + 0x68) = puVar1;
     (iVar2 + 0x6a)          = param_2;
@@ -1086,38 +1087,38 @@ u16 pass1_1008_e2a4(u32 param_1, u32 param_2, u32 param_3)
 }
 
 
-void pass1_1008_e320(astruct_102 *param_1, u32 param_2, u32 param_3, u16 param_4)
+void pass1_1008_e320(Struct102 *param_1, u32 param_2, u32 param_3, u16 param_4)
 
 {
-    astruct_103 *paVar1;
-    astruct_103 *uVar2;
+    Struct103 *paVar1;
+    Struct103 *uVar2;
     u16          uVar3;
     u16          uVar4;
-    astruct_102 *iVar5;
-    astruct_102 *uVar6;
+    Struct102 *iVar5;
+    Struct102 *uVar6;
     char        *pcVar5;
     long         lVar6;
     u32          uVar7;
 
-    uVar6 = (astruct_102 *)(param_1 >> 0x10);
-    iVar5 = (astruct_102 *)param_1;
+    uVar6 = (Struct102 *)(param_1 >> 0x10);
+    iVar5 = (Struct102 *)param_1;
     fn_ptr_1000_17ce(&iVar5->field_0x1e, 0x1000);
     &iVar5->field_0x1e = 0x0;
     uVar7              = param_2;
     pcVar5             = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
     uVar4              = (pcVar5 >> 0x10);
-    uVar2              = (astruct_103 *)pass1_1000_3d7a(pcVar5, uVar7);
-    if((uVar2 != (astruct_103 *)0x0) && (uVar2 = (astruct_103 *)pass1_1000_3d7a(param_3, param_2), uVar2 != (astruct_103 *)0x0))
+    uVar2              = (Struct103 *)pass1_1000_3d7a(pcVar5, uVar7);
+    if((uVar2 != (Struct103 *)0x0) && (uVar2 = (Struct103 *)pass1_1000_3d7a(param_3, param_2), uVar2 != (Struct103 *)0x0))
     {
         lVar6 = pass1_1008_e8cc(param_4, param_1, param_2, param_3);
         uVar3 = (lVar6 >> 0x10);
-        uVar2 = (astruct_103 *)lVar6;
+        uVar2 = (Struct103 *)lVar6;
         uVar4 = uVar3 | uVar2;
         if((uVar4 != 0x0)
-           && (((paVar1 = (astruct_103 *)uVar2->field_0xc, uVar2 = paVar1, paVar1 != (astruct_103 *)0x0 && (uVar2 = (astruct_103 *)(&paVar1[-0x1].field_0xc + 0x1), uVar2 != (astruct_103 *)0x0))
-                && (uVar2 = (astruct_103 *)&paVar1[-0x1].field_0xc, uVar2 != (astruct_103 *)0x0))))
+           && (((paVar1 = (Struct103 *)uVar2->field_0xc, uVar2 = paVar1, paVar1 != (Struct103 *)0x0 && (uVar2 = (Struct103 *)(&paVar1[-0x1].field_0xc + 0x1), uVar2 != (Struct103 *)0x0))
+                && (uVar2 = (Struct103 *)&paVar1[-0x1].field_0xc, uVar2 != (Struct103 *)0x0))))
         {
-            uVar2 = (astruct_103 *)&paVar1[-0x1].field_0xb;
+            uVar2 = (Struct103 *)&paVar1[-0x1].field_0xb;
         }
     }
     load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
@@ -1126,7 +1127,7 @@ void pass1_1008_e320(astruct_102 *param_1, u32 param_2, u32 param_3, u16 param_4
     return;
 }
 
-void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *param_3)
+void load_str_and_spri16f_1008_b69c(Struct25 *param_1, WORD *param_2, u8 *param_3)
 
 {
     code      **ppcVar1;
@@ -1134,9 +1135,9 @@ void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *para
     u16         uVar2;
     u16         uVar3;
     u16         uVar4;
-    astruct_25 *iVar5;
+    Struct25 *iVar5;
     u16         uVar5;
-    astruct_26 *paVar6;
+    Struct26 *paVar6;
     u32  uVar7;
     i16         iStack516;
     char        local_202[0x100];
@@ -1145,24 +1146,24 @@ void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *para
     in_buffer_4 = local_202;
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, in_buffer_4, (short)param_2);
     uVar5 = (param_1 >> 0x10);
-    iVar5 = (astruct_25 *)param_1;
+    iVar5 = (Struct25 *)param_1;
     if(iVar5->field_0xa == 0x0)
     {
         mem_op_1000_179c(0xc, param_3, 0x1000);
         if((param_3 | in_buffer_4) == 0x0)
         {
-            paVar6 = (astruct_26 *)0x0;
+            paVar6 = (Struct26 *)0x0;
         }
         else
         {
-            paVar6 = (astruct_26 *)set_struct_1008_574a(CONCAT22(param_3, in_buffer_4));
+            paVar6 = (Struct26 *)set_struct_1008_574a(CONCAT22(param_3, in_buffer_4));
         }
         &iVar5->field_0xa         = paVar6;
         (&iVar5->field_0xa + 0x2) = (paVar6 >> 0x10);
         for(iStack516 = 0x1; iStack516 < 0x6; iStack516 = iStack516 + 0x1)
         {
             mem_op_1000_179c(0x12, (paVar6 >> 0x10), 0x1000);
-            if(paVar6 == (astruct_26 *)0x0)
+            if(paVar6 == (Struct26 *)0x0)
             {
                 uVar7 = 0x0;
             }
@@ -1177,7 +1178,7 @@ void load_str_and_spri16f_1008_b69c(astruct_25 *param_1, WORD *param_2, u8 *para
             (uVar7 + 0x4) = uVar2;
             (uVar7 + 0x6) = uVar4;
             ppcVar1       = (*iVar5->field_0xa + 0x8);
-            paVar6        = (astruct_26 *)(**ppcVar1)();
+            paVar6        = (Struct26 *)(**ppcVar1)();
         }
         iVar5->field_0x22 = 0x5;
     }
@@ -1208,7 +1209,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
     }
     else
     {
-        uVar6 = set_stuct_1008_b0bc((astruct_26 *)CONCAT22(param_3, param_4));
+        uVar6 = set_stuct_1008_b0bc((Struct26 *)CONCAT22(param_3, param_4));
     }
     uStack4 = (uVar6 >> 0x10);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_206, (short)param_2);
@@ -1271,15 +1272,15 @@ u32 *str_1008_6d8a(u32 *param_1, char *param_2, u16 param_3, u16 param_4, u8 par
 }
 
 
-void struct_op_1008_48fe(astruct_81 *param_1, u16 param_2, char *param_3, u16 param_4)
+void struct_op_1008_48fe(Struct81 *param_1, u16 param_2, char *param_3, u16 param_4)
 
 {
     u16         uVar1;
-    astruct_81 *iVar2;
+    Struct81 *iVar2;
     u16         uVar3;
 
     uVar3             = (param_1 >> 0x10);
-    iVar2             = (astruct_81 *)param_1;
+    iVar2             = (Struct81 *)param_1;
     param_1           = 0x389a;
     iVar2->field_0x2  = 0x1008;
     iVar2->field_0x4  = 0x0;

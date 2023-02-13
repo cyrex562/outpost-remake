@@ -6,8 +6,8 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_426_H_
 
 #include "structs/structs_0xx/struct_18.h"
-typedef struct astruct_426 astruct_426;
-struct astruct_426
+typedef struct Struct426 Struct426;
+struct Struct426
 {
     u8  field_0x0;
     u8  field_0x1;

@@ -22,6 +22,6 @@ BOOL16 call_fn_ptr_1000_0dc6(u16 param_1, u16 param_2, u16 param_3);
 
 void pass1_1010_3880(AddrStruct *param_1);
 
-void pass1_1010_2db2(astruct_473 *param_1, u16 param_2);
+void pass1_1010_2db2(Struct473 *param_1, u16 param_2);
 
 #endif // OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_6_H_

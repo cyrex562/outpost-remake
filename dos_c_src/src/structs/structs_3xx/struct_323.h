@@ -7,7 +7,7 @@
 
 #include "types.h"
 
-typedef struct astruct_323
+typedef struct Struct323
 {
     u8  field_0x0;
     u8  field_0x1;
@@ -276,6 +276,6 @@ typedef struct astruct_323
     u16        field_0x11c;
     u16        field_0x11e;
     u32 field_0x120;
-} astruct_323;
+} Struct323;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCT_323_H_

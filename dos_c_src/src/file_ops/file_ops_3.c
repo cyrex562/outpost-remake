@@ -137,7 +137,7 @@ void write_to_file_1010_6372(u32 param_1, u32 param_2, u16 param_3)
 
 {
     BOOL16       BVar1;
-    astruct_729 *iVar2;
+    Struct729 *iVar2;
     u16          uVar2;
     u16          uVar3;
     u16          uVar4;
@@ -148,7 +148,7 @@ void write_to_file_1010_6372(u32 param_1, u32 param_2, u16 param_3)
     if(BVar1 != 0x0)
     {
         uVar2       = (param_1 >> 0x10);
-        iVar2       = (astruct_729 *)param_1;
+        iVar2       = (Struct729 *)param_1;
         local_10[0] = iVar2->field_0xa;
         uVar3       = param_2;
         uVar4       = (param_2 >> 0x10);
@@ -283,7 +283,7 @@ void write_to_file_1010_6846(u32 param_1, u32 param_2, u16 param_3)
 void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 param_5)
 
 {
-    astruct_248 *iVar2;
+    Struct248 *iVar2;
     BOOL16       BVar1;
     i16          iVar3;
     u16          uVar4;
@@ -306,7 +306,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
         globals->PTR_LOOP_1050_0310 = 0x6d4;
         return;
     }
-    iVar2 = (astruct_248 *)param_1;
+    iVar2 = (Struct248 *)param_1;
     uVar7 = (param_1 >> 0x10);
     if(PTR_LOOP_1050_0312 < 0x2)
     {
@@ -685,10 +685,10 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
     u32  *puVar1;
     code       **ppcVar2;
     BOOL16       BVar3;
-    astruct_229 *uVar4;
+    Struct229 *uVar4;
     u16          uVar5;
     u8          *extraout_DX;
-    astruct_228 *iVar6;
+    Struct228 *iVar6;
     u16          uVar6;
     u16          uVar7;
     u16          uVar8;
@@ -697,8 +697,8 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
     u32  *puStack26;
     u32  *puStack22;
     u16          local_12[0x5];
-    astruct_229 *paStack8;
-    astruct_229 *local_6;
+    Struct229 *paStack8;
+    Struct229 *local_6;
     u16          uStack4;
 
     uVar7 = param_2;
@@ -713,10 +713,10 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
         BVar3 = read_file_1008_7dee(uVar7, uVar8, &local_6, 0x0, param_5, 0x2, 0x1008);
         if(BVar3 != 0x0)
         {
-            paStack8 = (astruct_229 *)0x0;
+            paStack8 = (Struct229 *)0x0;
             while(true)
             {
-                iVar6 = (astruct_228 *)param_1;
+                iVar6 = (Struct228 *)param_1;
                 uVar5 = (param_1 >> 0x10);
                 if(local_6 <= paStack8)
                     break;
@@ -751,7 +751,7 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 puVar1            = iVar6->field_0xa;
                 ppcVar2           = (*iVar6->field_0xa + 0x8);
                 (**ppcVar2)(0x8, puVar1, (puVar1 >> 0x10), puStack22, uVar6);
-                paStack8 = (astruct_229 *)&paStack8->field_0x1;
+                paStack8 = (Struct229 *)&paStack8->field_0x1;
                 param_4  = extraout_DX;
             }
             BVar3 = read_file_1008_7dee(uVar7, uVar8, &iVar6->field_0xe, 0x0, uVar5, 0x2, 0x1008);
@@ -1074,10 +1074,10 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
 {
     code       **ppcVar1;
     u16          uVar2;
-    astruct_199 *iVar3;
+    Struct199 *iVar3;
     BOOL16       BVar3;
     u16          uVar5;
-    astruct_200 *uVar4;
+    Struct200 *uVar4;
     u8          *puVar6;
     u16          uVar7;
     u8          *extraout_DX;
@@ -1090,12 +1090,12 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u16          uVar12;
     u16          uVar13;
     u16          uVar14;
-    astruct_200 *paStack286;
+    Struct200 *paStack286;
     u32  *puStack284;
     u8           local_118[0x100];
     u16          local_18[0x2];
     u16          local_14[0x2];
-    astruct_200 *local_10[0x4];
+    Struct200 *local_10[0x4];
     u32   local_8;
 
     if(PTR_LOOP_1050_0312 < 0x2)
@@ -1111,13 +1111,13 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     }
     else
     {
-        iVar3 = (astruct_199 *)param_1;
-        iVar3 = (astruct_199 *)&iVar3->field_0x22;
+        iVar3 = (Struct199 *)param_1;
+        iVar3 = (Struct199 *)&iVar3->field_0x22;
         uVar2 = (param_1 >> 0x10);
         BVar3 = read_file_1008_7dee(uVar11, uVar12, iVar3, 0x0, uVar2, 0x2, param_5);
         if((BVar3 != 0x0) && (uVar5 = read_file_1008_7dee(uVar11, uVar12, local_10, 0x0, param_6, 0x2, param_5), uVar5 != 0x0))
         {
-            if(local_10[0] == (astruct_200 *)0x0)
+            if(local_10[0] == (Struct200 *)0x0)
             {
                 return;
             }
@@ -1135,7 +1135,7 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
             }
             *&iVar3->field_0xa        = uVar5;
             (&iVar3->field_0xa + 0x2) = puVar8;
-            paStack286                = (astruct_200 *)0x0;
+            paStack286                = (Struct200 *)0x0;
             while(true)
             {
                 if(local_10[0] <= paStack286)
@@ -1147,12 +1147,12 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 mem_op_1000_179c(0x12, puVar8, 0x1000);
                 if((puVar8 | uVar4) == 0x0)
                 {
-                    uVar4 = (astruct_200 *)0x0;
+                    uVar4 = (Struct200 *)0x0;
                     uVar9 = 0x0;
                 }
                 else
                 {
-                    set_stuct_1008_b0bc((astruct_26 *)CONCAT22(puVar8, uVar4));
+                    set_stuct_1008_b0bc((Struct26 *)CONCAT22(puVar8, uVar4));
                     uVar9 = extraout_DX_01;
                 }
                 puStack284 = CONCAT22(uVar9, uVar4);
@@ -1170,7 +1170,7 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 uVar4->field_0xe = local_18[0];
                 ppcVar1          = (*iVar3->field_0xa + 0x8);
                 (**ppcVar1)();
-                paStack286 = (astruct_200 *)&paStack286->field_0x1;
+                paStack286 = (Struct200 *)&paStack286->field_0x1;
                 puVar8     = extraout_DX_00;
             }
             if(puStack284 != 0x0)

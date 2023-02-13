@@ -3,7 +3,7 @@ void  file_1038_774e(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
 
 {
     u16          uVar1;
-    astruct_307 *iVar2;
+    Struct307 *iVar2;
     BOOL16       BVar2;
     i16          iVar3;
     u16          uVar4;
@@ -17,8 +17,8 @@ void  file_1038_774e(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
     {
         return;
     }
-    iVar2  = (astruct_307 *)param_1;
-    iVar2  = (astruct_307 *)&iVar2->field_0x4;
+    iVar2  = (Struct307 *)param_1;
+    iVar2  = (Struct307 *)&iVar2->field_0x4;
     puVar5 = (param_1 & 0xffff0000 | ZEXT24(iVar2));
     pass1_1008_766e(param_2, puVar5, param_4, 0x1008, param_3);
     if(puVar5 != 0x0)
@@ -357,7 +357,7 @@ void  file_1038_6118(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u16          uVar5;
     u8          *puVar6;
     u8          *puVar7;
-    astruct_429 *iVar9;
+    Struct429 *iVar9;
     u16          uVar8;
     u16          uVar9;
     u16          uVar10;
@@ -379,7 +379,7 @@ void  file_1038_6118(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     if(puVar2 != 0x0)
     {
         uVar8            = (param_1 >> 0x10);
-        iVar9            = (astruct_429 *)param_1;
+        iVar9            = (Struct429 *)param_1;
         iVar9->field_0xc = local_6;
         uVar9            = param_2;
         uVar10           = (param_2 >> 0x10);
@@ -811,7 +811,7 @@ void  file_1030_b836(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
     u32  *puVar1;
     code       **ppcVar2;
     u16          uVar3;
-    astruct_401 *iVar4;
+    Struct401 *iVar4;
     BOOL16       BVar4;
     u16          uVar5;
     u16          uVar6;
@@ -826,8 +826,8 @@ void  file_1030_b836(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
     u16          local_12[0x7];
     u16          local_4;
 
-    iVar4  = (astruct_401 *)param_1;
-    iVar4  = (astruct_401 *)&iVar4->field_0x4;
+    iVar4  = (Struct401 *)param_1;
+    iVar4  = (Struct401 *)&iVar4->field_0x4;
     uVar3  = (param_1 >> 0x10);
     uVar9  = param_2;
     uVar10 = (param_2 >> 0x10);
@@ -884,7 +884,7 @@ void  pass1_1030_7418(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
 
 {
     u32          uVar1;
-    astruct_731 *iVar2;
+    Struct731 *iVar2;
     i16          iVar3;
     BOOL16       BVar4;
     u8          *puVar5;
@@ -907,8 +907,8 @@ void  pass1_1030_7418(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     {
         return;
     }
-    iVar2 = (astruct_731 *)param_1;
-    iVar2 = (astruct_731 *)&iVar2->field_0xc;
+    iVar2 = (Struct731 *)param_1;
+    iVar2 = (Struct731 *)&iVar2->field_0xc;
     iVar3 = write_to_file_1008_7b4c(param_2, param_1 & 0xffff0000 | ZEXT24(iVar2), 0x1008, param_4);
     if(iVar3 == 0x0)
     {
@@ -1115,7 +1115,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
 {
     long         lVar1;
     code       **ppcVar2;
-    astruct_387 *iVar3;
+    Struct387 *iVar3;
     BOOL16       BVar3;
     i16          iVar6;
     long        *plVar7;
@@ -1124,34 +1124,34 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u16          uVar9;
     u8          *puVar10;
     u16          extraout_DX_00;
-    astruct_389 *iVar4;
-    astruct_391 *iVar5;
+    Struct389 *iVar4;
+    Struct391 *iVar5;
     u16          uVar11;
     u16          uVar12;
     u16          uVar13;
     u16          uVar14;
     u16          local_56[0x2];
     u16          uStack82;
-    astruct_99  *paStack74;
+    Struct99  *paStack74;
     u16          local_46[0x2];
     u16          local_42[0x2];
     u32          local_3e[0x3];
-    astruct_99  *paStack50;
+    Struct99  *paStack50;
     u16          local_2e;
-    astruct_99  *paStack44;
+    Struct99  *paStack44;
     u16          local_28[0x2];
     u16          local_24[0x2];
     u16          local_20[0x9];
     u16          uStack14;
     u16          local_4;
-    astruct_388 *uVar5;
-    astruct_390 *uVar8;
+    Struct388 *uVar5;
+    Struct390 *uVar8;
 
     file_1030_1730(param_1, param_2);
     if(param_3 != 0x0)
     {
-        iVar3 = (astruct_387 *)param_1;
-        iVar3 = (astruct_387 *)&iVar3->field_0xc;
+        iVar3 = (Struct387 *)param_1;
+        iVar3 = (Struct387 *)&iVar3->field_0xc;
         BVar3 = read_file_1008_7bc8(param_2, (param_1 & 0xffff0000 | ZEXT24(iVar3)), 0x1008, param_5);
         if(BVar3 != 0x0)
         {
@@ -1198,11 +1198,11 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                         local_3e[0] = globals->_PTR_LOOP_1050_68a2;
                                         paStack50   = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_68a2);
                                         uVar9       = (paStack50 >> 0x10);
-                                        uVar5       = (astruct_388 *)paStack50;
+                                        uVar5       = (Struct388 *)paStack50;
                                         puVar10     = (uVar9 | uVar5);
                                         if(puVar10 == 0x0)
                                         {
-                                            paStack44 = (astruct_99 *)0x0;
+                                            paStack44 = (Struct99 *)0x0;
                                         }
                                         else
                                         {
@@ -1225,7 +1225,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                                        BVar3 == 0x0 || (BVar3 = read_file_1008_7dee(uVar13, uVar14, paStack44 + 0xc, 0x0, (paStack44 >> 0x10), 0x2, 0x1008), BVar3 == 0x0))))))
                                             goto LAB_1030_77be;
                                         uVar12           = (paStack44 >> 0x10);
-                                        iVar4            = (astruct_389 *)paStack44;
+                                        iVar4            = (Struct389 *)paStack44;
                                         iVar4->field_0x4 = local_28[0];
                                         iVar4->field_0x6 = local_24[0];
                                         iVar4->field_0x8 = local_2e;
@@ -1233,7 +1233,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                         {
                                             uVar9 = local_2e;
                                             mem_op_1000_179c(0xc, puVar10, 0x1000);
-                                            paStack50 = (astruct_99 *)CONCAT22(puVar10, uVar9);
+                                            paStack50 = (Struct99 *)CONCAT22(puVar10, uVar9);
                                             if((puVar10 | uVar9) == 0x0)
                                             {
                                                 iVar3->field_0x3a = 0x0;
@@ -1258,14 +1258,14 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                             {
                                                 return;
                                             }
-                                            paStack44 = (astruct_99 *)globals->PTR_LOOP_1050_68a2;
+                                            paStack44 = (Struct99 *)globals->PTR_LOOP_1050_68a2;
                                             paStack50 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_68a2);
                                             uVar9     = (paStack50 >> 0x10);
-                                            uVar8     = (astruct_390 *)paStack50;
+                                            uVar8     = (Struct390 *)paStack50;
                                             puVar10   = (uVar9 | uVar8);
                                             if(puVar10 == 0x0)
                                             {
-                                                paStack74 = (astruct_99 *)0x0;
+                                                paStack74 = (Struct99 *)0x0;
                                             }
                                             else
                                             {
@@ -1287,14 +1287,14 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                                     BVar3 == 0x0 || (BVar3 = read_file_1008_7dee(uVar13, uVar14, paStack74 + 0xc, 0x0, (paStack74 >> 0x10), 0x2, 0x1008), BVar3 == 0x0))))
                                                 break;
                                             uVar12           = (paStack74 >> 0x10);
-                                            iVar5            = (astruct_391 *)paStack74;
+                                            iVar5            = (Struct391 *)paStack74;
                                             iVar5->field_0x4 = local_46[0];
                                             iVar5->field_0x6 = local_42[0];
                                             iVar5->field_0x8 = local_3e[0];
                                             if(iVar3->field_0x3e == 0x0)
                                             {
                                                 mem_op_1000_179c(0xc, puVar10, 0x1000);
-                                                paStack50 = (astruct_99 *)CONCAT22(puVar10, local_3e[0]);
+                                                paStack50 = (Struct99 *)CONCAT22(puVar10, local_3e[0]);
                                                 if((puVar10 | local_3e[0]) == 0x0)
                                                 {
                                                     iVar3->field_0x3e = 0x0;
@@ -1723,7 +1723,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u16          uVar7;
     u32   uVar8;
     u8          *puVar9;
-    astruct_380 *iVar9;
+    Struct380 *iVar9;
     u16          uVar10;
     u8           in_AF;
     u16          uVar11;
@@ -1733,9 +1733,9 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     u8           local_408[0x400];
     u32   uStack8;
     i16          local_4;
-    astruct_381 *iVar12;
+    Struct381 *iVar12;
 
-    iVar12 = (astruct_381 *)param_1;
+    iVar12 = (Struct381 *)param_1;
     uVar12 = (param_1 >> 0x10);
     file_1030_19b4(param_1, param_2, param_3, param_4, param_5);
     if(param_3 != 0x0)
@@ -1783,7 +1783,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                     uVar7            = str_op_1008_60e8(CONCAT22(param_5, local_408), puVar9);
                     uVar8            = &iVar12->field_0x10;
                     uVar10           = (uVar8 >> 0x10);
-                    iVar9            = (astruct_380 *)uVar8;
+                    iVar9            = (Struct380 *)uVar8;
                     iVar9->field_0x4 = uVar7;
                     iVar9->field_0x6 = puVar9;
                     uVar8            = &iVar12->field_0x10;
@@ -1892,13 +1892,13 @@ void  read_file_1030_33f0(u32 param_1, u32 param_2)
 
 {
     u16          uVar1;
-    astruct_430 *iVar2;
+    Struct430 *iVar2;
     BOOL16       BVar2;
     u16          uVar3;
     u16          uVar4;
 
-    iVar2 = (astruct_430 *)param_1;
-    iVar2 = (astruct_430 *)&iVar2->field_0x4;
+    iVar2 = (Struct430 *)param_1;
+    iVar2 = (Struct430 *)&iVar2->field_0x4;
     uVar1 = (param_1 >> 0x10);
     uVar3 = param_2;
     uVar4 = (param_2 >> 0x10);

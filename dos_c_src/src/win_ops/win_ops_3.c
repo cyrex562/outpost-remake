@@ -1,5 +1,5 @@
 
-void window_op_1018_e6c6(astruct *param_1)
+void window_op_1018_e6c6(Struct0 *param_1)
 
 {
     Struct660 *in_AX;
@@ -86,7 +86,7 @@ void pass1_1018_ea66(u32 param_1, u16 param_2)
     return;
 }
 
-void window_op_1018_eada(astruct *param_1)
+void window_op_1018_eada(Struct0 *param_1)
 
 {
     Struct661 *in_AX;
@@ -177,14 +177,14 @@ void pass1_1020_02ae(u32 param_1)
     return;
 }
 
-void win_1020_0316(astruct *param_1, u8 *param_2, u16 param_3)
+void win_1020_0316(Struct0 *param_1, u8 *param_2, u16 param_3)
 
 {
     u32   uVar1;
     u16          uVar2;
     u8          *puVar3;
     u8          *puVar4;
-    astruct_273 *iVar1;
+    Struct273 *iVar1;
     i16          unaff_DI;
     u16          uVar5;
     u16         *puVar6;
@@ -193,7 +193,7 @@ void win_1020_0316(astruct *param_1, u8 *param_2, u16 param_3)
     puVar6            = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x1, param_3, param_2, unaff_DI);
     puVar3            = (puVar6 >> 0x10);
     uVar5             = (param_1 >> 0x10);
-    iVar1             = (astruct_273 *)param_1;
+    iVar1             = (Struct273 *)param_1;
     iVar1->field_0xe2 = puVar6;
     iVar1->field_0xe4 = puVar3;
     uVar1             = &iVar1->field_0xe2;
@@ -269,16 +269,16 @@ void post_win_msg_1020_061c(u32 param_1, i16 param_2, HWND16 param_3)
     return;
 }
 
-void pass1_1020_08b6(WNDCLASS16 *param_1, astruct_20 *param_2, u1616 param_3, u32 param_4)
+void pass1_1020_08b6(WNDCLASS16 *param_1, Struct20 *param_2, u1616 param_3, u32 param_4)
 
 {
-    astruct_20 *iVar1;
+    Struct20 *iVar1;
     u16         uVar1;
-    astruct_20 *paVar2;
+    Struct20 *paVar2;
 
     paVar2                        = unk_draw_op_1008_61b2(param_2, 0x1, param_3, param_4, (u1616)param_1);
     uVar1                         = (param_2 >> 0x10);
-    iVar1                         = (astruct_20 *)param_2;
+    iVar1                         = (Struct20 *)param_2;
     &iVar1[0x1].field_0x4         = 0x0;
     (&iVar1[0x1].field_0x4 + 0x2) = 0x0;
     param_2->field_0x0            = 0xb0e;
@@ -288,16 +288,16 @@ void pass1_1020_08b6(WNDCLASS16 *param_1, astruct_20 *param_2, u1616 param_3, u3
 }
 
 
-void win_1018_df40(astruct *param_1, u16 param_2, u8 *param_3, u16 param_4)
+void win_1018_df40(Struct0 *param_1, u16 param_2, u8 *param_3, u16 param_4)
 
 {
-    astruct_267 *iVar1;
+    Struct267 *iVar1;
     u16          uVar1;
     u16         *puVar2;
 
     create_window_ex_1008_9760(param_1, 0x1008);
     mem_op_1000_179c(0xa, param_3, 0x1000);
-    iVar1 = (astruct_267 *)param_1;
+    iVar1 = (Struct267 *)param_1;
     uVar1 = (param_1 >> 0x10);
     if((param_3 | param_2) != 0x0)
     {
@@ -343,14 +343,14 @@ void pass1_1018_e2cc(u32 param_1, u1616 param_2)
     u32          uVar4;
     u8          *puVar5;
     u8          *puVar6;
-    astruct_269 *iVar7;
+    Struct269 *iVar7;
     u16          uVar7;
     u16         *puVar8;
     u32  *puStack10;
     u8           local_6[0x4];
 
     uVar7 = (param_1 >> 0x10);
-    iVar7 = (astruct_269 *)param_1;
+    iVar7 = (Struct269 *)param_1;
     if(iVar7->field_0xee != 0x0)
     {
         ppcVar2 = (*iVar7->field_0xee + 0x8);
@@ -386,7 +386,7 @@ void pass1_1018_e2cc(u32 param_1, u1616 param_2)
     return;
 }
 
-void window_op_1018_e384(astruct *param_1)
+void window_op_1018_e384(Struct0 *param_1)
 
 {
     Struct659 *in_AX;
@@ -435,15 +435,15 @@ void pass1_1018_e3e8(u32 param_1)
     return;
 }
 
-void destroy_window_1018_c518(astruct_29 *param_1)
+void destroy_window_1018_c518(Struct29 *param_1)
 
 {
     BOOL16      BVar1;
-    astruct_29 *iVar2;
+    Struct29 *iVar2;
     u1616       uVar3;
 
     uVar3            = (u1616)(param_1 >> 0x10);
-    iVar2            = (astruct_29 *)param_1;
+    iVar2            = (Struct29 *)param_1;
     param_1          = 0xc8bc;
     iVar2->field_0x2 = 0x1018;
     fn_ptr_1000_17ce(&iVar2->field_0x108, 0x1000);
@@ -460,7 +460,7 @@ void destroy_window_1018_c518(astruct_29 *param_1)
     return;
 }
 
-astruct_29 *pass1_1018_c896(astruct_29 *param_1, u8 param_2)
+Struct29 *pass1_1018_c896(Struct29 *param_1, u8 param_2)
 
 {
     destroy_window_1018_c518(param_1);
@@ -470,16 +470,16 @@ astruct_29 *pass1_1018_c896(astruct_29 *param_1, u8 param_2)
     }
     return param_1;
 }
-void unk_destroy_window_op_1018_6bb6(astruct_28 *param_1, HWND16 param_2)
+void unk_destroy_window_op_1018_6bb6(Struct28 *param_1, HWND16 param_2)
 
 {
     BOOL16      BVar1;
-    astruct_28 *iVar2;
+    Struct28 *iVar2;
     u16         uVar2;
     HWND16      hwnd;
 
     uVar2 = (param_1 >> 0x10);
-    iVar2 = (astruct_28 *)param_1;
+    iVar2 = (Struct28 *)param_1;
     hwnd  = param_2;
     if(iVar2->field_0xea != 0x0)
     {
@@ -499,17 +499,17 @@ void unk_destroy_window_op_1018_6bb6(astruct_28 *param_1, HWND16 param_2)
     return;
 }
 
-void win_1018_598c(astruct *param_1, u16 param_2, u16 param_3)
+void win_1018_598c(Struct0 *param_1, u16 param_2, u16 param_3)
 
 {
     u16          uVar1;
-    astruct_131 *iVar1;
+    Struct131 *iVar1;
     u16          uVar2;
     u16          unaff_SS;
 
     create_window_ex_1008_9760(param_1, 0x1008);
     uVar2 = (param_1 >> 0x10);
-    iVar1 = (astruct_131 *)param_1;
+    iVar1 = (Struct131 *)param_1;
     get_dc_1018_4db0(iVar1->field_0xf2, iVar1->field_0x8, 0x1008);
     mem_op_1000_179c(0x2a, param_3, 0x1000);
     uVar1 = param_3 | param_2;
@@ -525,7 +525,7 @@ void win_1018_598c(astruct *param_1, u16 param_2, u16 param_3)
 }
 
 
-void window_op_1018_67b6(astruct *param_1)
+void window_op_1018_67b6(Struct0 *param_1)
 
 {
     Struct658 *in_AX;
@@ -581,7 +581,7 @@ void win_op_1018_294a(i16 param_1, u1616 param_2, u1616 param_3, u32 param_4, u1
     {
         (param_1 + 0x18) = 0x0;
     }
-    create_dc_1018_4e04((astruct_8 **)CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_, in_string_6, param_5);
+    create_dc_1018_4e04((Struct8 **)CONCAT22(param_2, param_1), param_3, param_4, param_4._2_2_, in_string_6, param_5);
     return;
 }
 
@@ -1135,7 +1135,7 @@ void unk_destroy_win_op_1010_2fa0(u32 param_1, HWND16 param_2)
     return;
 }
 
-void unk_destroy_win_op_1010_305a(astruct_27 *param_1, i16 param_2, astruct_65 *param_3, u1616 param_4)
+void unk_destroy_win_op_1010_305a(Struct27 *param_1, i16 param_2, Struct65 *param_3, u1616 param_4)
 
 {
     i16        *piVar1;
@@ -1143,9 +1143,9 @@ void unk_destroy_win_op_1010_305a(astruct_27 *param_1, i16 param_2, astruct_65 *
     long        lVar3;
     bool        bVar4;
     u16         uVar5;
-    astruct_27 *iVar4;
+    Struct27 *iVar4;
     i16         iVar6;
-    astruct_27 *uVar7;
+    Struct27 *uVar7;
     u16         uVar8;
     HWND16      hwnd;
     HWND16      hwnd_00;
@@ -1156,8 +1156,8 @@ void unk_destroy_win_op_1010_305a(astruct_27 *param_1, i16 param_2, astruct_65 *
 
     hwnd              = (HWND16)&PTR_LOOP_1050_1040;
     uVar5             = pass1_1040_c60e(param_3);
-    uVar7             = (astruct_27 *)(param_1 >> 0x10);
-    iVar4             = (astruct_27 *)param_1;
+    uVar7             = (Struct27 *)(param_1 >> 0x10);
+    iVar4             = (Struct27 *)param_1;
     iVar4->field_0x12 = uVar5;
     iVar4->field_0x14 = 0x0;
     iStack6           = 0x0;
@@ -1217,7 +1217,7 @@ void unk_destroy_win_op_1010_305a(astruct_27 *param_1, i16 param_2, astruct_65 *
                         uVar8 = (lVar3 >> 0x10);
                         iVar6 = lVar3;
                         hwnd  = hwnd_00;
-                        if(((iVar6 + iStack8 * 0x4) != 0x0) && (*(astruct_65 **)(iVar6 + iStack8 * 0x4) != param_3))
+                        if(((iVar6 + iStack8 * 0x4) != 0x0) && (*(Struct65 **)(iVar6 + iStack8 * 0x4) != param_3))
                         {
                             hwnd = (HWND16)s_tile2_bmp_1050_1538;
                             DestroyWindow16(hwnd_00);
@@ -1233,7 +1233,7 @@ void unk_destroy_win_op_1010_305a(astruct_27 *param_1, i16 param_2, astruct_65 *
             }
             return;
         }
-        if(*(astruct_65 **)(&iVar4->field_0x2a + iStack8 * 0x2) == param_3)
+        if(*(Struct65 **)(&iVar4->field_0x2a + iStack8 * 0x2) == param_3)
         {
             bVar4   = true;
             iStack6 = iStack8;
@@ -1254,7 +1254,7 @@ void pass1_1010_1656(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1616 p
     u16       *puVar6;
     u32        uVar7;
 
-    unk_destroy_win_op_1010_305a((astruct_27 *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
+    unk_destroy_win_op_1010_305a((Struct27 *)CONCAT22(param_2, param_1), param_3, param_4, param_5);
     if((param_1 + 0x16) == 0x3)
     {
         puVar6 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x32, param_8, param_6, param_7);
@@ -1505,7 +1505,7 @@ void send_msg_1008_9640(u32 param_1, u16 param_2, HWND16 param_3)
 }
 
 
-void win_ui_reg_class_1008_96d2(astruct_20 *param_1, HINSTANCE16 in_h_inst_2, WNDCLASS16 *in_wnd_class_3)
+void win_ui_reg_class_1008_96d2(Struct20 *param_1, HINSTANCE16 in_h_inst_2, WNDCLASS16 *in_wnd_class_3)
 
 {
     BOOL16     BVar1;
@@ -1546,16 +1546,16 @@ void win_ui_reg_class_1008_96d2(astruct_20 *param_1, HINSTANCE16 in_h_inst_2, WN
 }
 
 
-void create_window_ex_1008_9760(astruct *in_struct_1, u16 param_2)
+void create_window_ex_1008_9760(Struct0 *in_struct_1, u16 param_2)
 
 {
     u32 uVar1;
     HWND16     window_handle;
-    astruct   *struct_1;
+    Struct0   *struct_1;
     LPCSTR     class_name;
 
     class_name = (in_struct_1 >> 0x10);
-    struct_1   = (astruct *)in_struct_1;
+    struct_1   = (Struct0 *)in_struct_1;
     if(struct_1->field_0x8 == 0x0)
     {
         uVar1               = struct_1->field_0xac;
@@ -1863,7 +1863,7 @@ LRESULT  make_def_wnd_proc_1008_9ce6(u1616 param_1, u1616 param_2, u1616 in_msg_
 }
 
 
-void pass1_1008_9e5a(astruct_11 *param_1)
+void pass1_1008_9e5a(Struct11 *param_1)
 
 {
     u32  *puVar1;
@@ -1871,20 +1871,20 @@ void pass1_1008_9e5a(astruct_11 *param_1)
     code       **ppcVar3;
     u16         *puVar4;
     u16          uVar6;
-    astruct_464 *uVar5;
+    Struct464 *uVar5;
     u16          uVar7;
     u16         *puStack8;
     i16          iStack4;
 
     uVar7             = (param_1 >> 0x10);
-    uVar5             = (astruct_464 *)param_1;
+    uVar5             = (Struct464 *)param_1;
     param_1           = 0x9fb2;
     uVar5->field_0x2  = 0x1008;
     uVar5->field_0x1c_addr_base = 0x9fca;
     uVar5->field_0x1e = 0x1008;
     if(_PTR_LOOP_1050_0388 != 0x0)
     {
-        if(param_1 == (astruct_11 *)0x0)
+        if(param_1 == (Struct11 *)0x0)
         {
             puVar4 = 0x0;
             uVar6  = 0x0;
@@ -1908,7 +1908,7 @@ void pass1_1008_9e5a(astruct_11 *param_1)
         }
         iStack4 = iStack4 + 0x1;
     } while(iStack4 < 0xc);
-    if(param_1 == (astruct_11 *)0x0)
+    if(param_1 == (Struct11 *)0x0)
     {
         puVar4 = 0x0;
         uVar7  = 0x0;
@@ -1925,29 +1925,29 @@ void pass1_1008_9e5a(astruct_11 *param_1)
 }
 
 
-void  post_win_msg_1008_a0e4(astruct_67 *param_1, long param_2, i16 param_3, u16 param_4, u32 param_5, i16 param_6, HWND16 param_7, u16 param_8)
+void  post_win_msg_1008_a0e4(Struct67 *param_1, long param_2, i16 param_3, u16 param_4, u32 param_5, i16 param_6, HWND16 param_7, u16 param_8)
 
 {
     u32 *puVar1;
     code      **ppcVar2;
     u16         uVar3;
     bool        bVar4;
-    astruct_68 *puVar4;
-    astruct_66 *uVar5;
+    Struct68 *puVar4;
+    Struct66 *uVar5;
     u16         extraout_DX;
     u16         uVar7;
-    astruct_67 *iVar7;
-    astruct_67 *uVar6;
-    astruct_99 *paStack14;
+    Struct67 *iVar7;
+    Struct67 *uVar6;
+    Struct99 *paStack14;
     u8          local_a[0x8];
 
-    uVar6 = (astruct_67 *)(param_1 >> 0x10);
-    iVar7 = (astruct_67 *)param_1;
+    uVar6 = (Struct67 *)(param_1 >> 0x10);
+    iVar7 = (Struct67 *)param_1;
     pass1_1008_5784(CONCAT22(param_8, local_a), iVar7->field_0xa);
     bVar4 = false;
     do
     {
-        puVar4 = (astruct_68 *)local_a;
+        puVar4 = (Struct68 *)local_a;
         pass1_1008_5b12(puVar4, param_8);
         if((extraout_DX | puVar4) == 0x0)
             goto LAB_1008_a146;
@@ -1964,7 +1964,7 @@ LAB_1008_a146:
         uVar3     = paStack14;
         if((uVar7 | uVar3) == 0x0)
         {
-            paStack14 = (astruct_99 *)0x0;
+            paStack14 = (Struct99 *)0x0;
         }
         else
         {

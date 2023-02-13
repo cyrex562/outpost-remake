@@ -1,5 +1,6 @@
 
 #include "structs/structs_16 .h"
+#include "structs_1x .h"
 #include "types.h"
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
@@ -19,16 +20,16 @@ void  get_stock_obj_1008_9c56(u16 param_1)
 }
 
 
-astruct_23 * unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
+Struct23 * unk_draw_op_1008_80ee(Struct23 *param_1, u16 param_2)
 
 {
     HCURSOR16   HVar1;
     HGDIOBJ16   HVar2;
-    astruct_23 *iVar3;
-    astruct_23 *uVar3;
+    Struct23 *iVar3;
+    Struct23 *uVar3;
 
-    uVar3              = (astruct_23 *)(param_1 >> 0x10);
-    iVar3              = (astruct_23 *)param_1;
+    uVar3              = (Struct23 *)(param_1 >> 0x10);
+    iVar3              = (Struct23 *)param_1;
     param_1->field_0x0 = 0x389a;
     iVar3->field_0x2   = 0x1008;
     iVar3->field_0x54  = 0x0;
@@ -42,12 +43,12 @@ astruct_23 * unk_draw_op_1008_80ee(astruct_23 *param_1, u16 param_2)
     iVar3->field_0x58 = HVar1;
     HVar2             = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     iVar3->field_0x56 = HVar2;
-    pass1_1008_818c((astruct_23 *)(param_1 & 0xffff | ZEXT24(uVar3) << 0x10), s_tile2_bmp_1050_1538, param_2);
+    pass1_1008_818c((Struct23 *)(param_1 & 0xffff | ZEXT24(uVar3) << 0x10), s_tile2_bmp_1050_1538, param_2);
     return param_1;
 }
 
 
-void  pass1_1008_818c(astruct_23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3)
+void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3)
 
 {
     BOOL16     BVar1;
@@ -191,7 +192,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
 }
 
 
-astruct_20 * unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
+Struct20 * unk_draw_op_1008_61b2(Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
     HGDIOBJ16   l_hgdiobj_1;
@@ -200,13 +201,13 @@ astruct_20 * unk_draw_op_1008_61b2(astruct_20 *param_1, u16 param_2, u16 param_3
     u8         *puVar1;
     i16         unaff_DI;
     u16        *l_struct_2;
-    astruct_20 *uVar5;
-    astruct_20 *iVar1;
-    astruct_20 *iVar4;
+    Struct20 *uVar5;
+    Struct20 *iVar1;
+    Struct20 *iVar4;
     u16        *uVar1;
 
-    iVar1 = (astruct_20 *)param_1;
-    uVar5 = (astruct_20 *)(param_1 >> 0x10);
+    iVar1 = (Struct20 *)param_1;
+    uVar5 = (Struct20 *)(param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_4);
     iVar1->field_0xde  = param_2;
     iVar1->field_0xe0  = 0x0;
@@ -251,7 +252,7 @@ void  fill_rect_1008_62c0(HWND16 param_1)
 }
 
 
-HPALETTE16  palette_op_1008_4e08(astruct_13 *param_1, BOOL16 param_2, u16 param_3, HDC16 param_4)
+HPALETTE16  palette_op_1008_4e08(struct Struct13 *param_1, BOOL16 param_2, u16 param_3, HDC16 param_4)
 
 {
     HPALETTE16 HVar1;
@@ -264,13 +265,13 @@ HPALETTE16  palette_op_1008_4e08(astruct_13 *param_1, BOOL16 param_2, u16 param_
 
 // WARNING: Unable to use type for symbol uVar3
 
-void  create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
+void  create_palette_1008_4e38(struct Struct13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
 
 {
     i16        *piVar1;
     u16        *puVar2;
     u16         uVar4;
-    astruct_13 *local_struct_1;
+    struct Struct13 *local_struct_1;
     i16         iVar5;
     i16         iVar6;
     u16         uVar8;
@@ -282,7 +283,7 @@ void  create_palette_1008_4e38(astruct_13 *in_struct_1, LOGPALETTE *in_log_palet
     u16        *uVar3;
 
     uVar8          = (in_struct_1 >> 0x10);
-    local_struct_1 = (astruct_13 *)in_struct_1;
+    local_struct_1 = (struct Struct13 *)in_struct_1;
     uVar4          = (local_struct_1->field_0xc + 0x2) * 0x4;
     if(local_struct_1->field_0xe == 0x0)
     {
@@ -334,7 +335,7 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     LPCSTR      output;
     i16         iVar3;
     u16         uVar4;
-    astruct_43 *paVar5;
+    Struct43 *paVar5;
     u32         uVar6;
     DEVMODEA   *init_data;
     HDC16       local_2c;
@@ -352,9 +353,9 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     (iVar3 + 0x2)   = 0x1008;
     paVar5          = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x2, param_5);
     uVar2           = (paVar5 >> 0x10);
-    struct_op_1008_48fe((astruct_81 *)CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
+    struct_op_1008_48fe((Struct81 *)CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
     read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, uVar2);
-    pass1_1008_5068((Struct76 *)param_1, (astruct_83 *)CONCAT22(param_5, local_26));
+    pass1_1008_5068((Struct76 *)param_1, (Struct83 *)CONCAT22(param_5, local_26));
     pass1_1008_47cc((Struct76 *)param_1);
     pass1_1008_4834((Struct76 *)param_1);
     init_data          = (DEVMODEA *)0x0;
@@ -520,7 +521,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
     {
         return 0x0;
     }
-    create_palette_1008_4e38(*(astruct_13 **)(iVar3 + 0xa), param_4, (uVar6 >> 0x10));
+    create_palette_1008_4e38(*(struct Struct13 **)(iVar3 + 0xa), param_4, (uVar6 >> 0x10));
     (iVar3 + 0xe)                = uVar2;
     HVar2                        = SelectPalette16(param_4, 0x0, *(BOOL16 *)(iVar3 + 0xe));
     *(HPALETTE16 *)(iVar3 + 0x4) = HVar2;
@@ -535,9 +536,9 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 para
     u16         uVar1;
     COLORREF    colorref_var2;
     i16         iVar2;
-    astruct_53 *iVar3;
+    Struct53 *iVar3;
     i16         iVar4;
-    astruct_53 *uVar6;
+    Struct53 *uVar6;
     u16         uVar5;
     u16       count;
     u32  uVar7;
@@ -625,8 +626,8 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 para
     uStack60  = 0x8000;
     uStack56  = 0x8000;
     uStack48  = 0x8000;
-    uVar6     = (astruct_53 *)(param_1 >> 0x10);
-    iVar3     = (astruct_53 *)param_1;
+    uVar6     = (Struct53 *)(param_1 >> 0x10);
+    iVar3     = (Struct53 *)param_1;
     if(&iVar3->field_0xf8 == 0x0)
     {
         mem_op_1000_179c(0x54, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), 0x1000);
@@ -715,10 +716,10 @@ void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
     i16         iVar5;
     i16         unaff_DI;
     u16         uVar6;
-    astruct_20 *paVar7;
+    Struct20 *paVar7;
     u16        *puVar8;
 
-    paVar7                       = pass1_1008_3ab8((astruct_20 *)param_1);
+    paVar7                       = pass1_1008_3ab8((Struct20 *)param_1);
     puVar4                       = (paVar7 >> 0x10);
     uVar6                        = (param_1 >> 0x10);
     iVar5                        = param_1;

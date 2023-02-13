@@ -18,7 +18,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     DWORD       DVar11;
     u32        *puVar12;
     u32         uVar13;
-    astruct_20 *paVar14;
+    Struct20 *paVar14;
     CHAR        local_1be[0x80];
     CHAR        local_13e[0xac];
     CHAR        local_92[0x80];
@@ -142,7 +142,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     if(puVar7 != 0x0)
     {
         uVar10  = SUB42(&PTR_LOOP_1050_1038, 0x0);
-        paVar14 = pass1_1038_aeca((astruct_20 *)CONCAT22(puVar6, uVar4), param_2);
+        paVar14 = pass1_1038_aeca((Struct20 *)CONCAT22(puVar6, uVar4), param_2);
         puVar7  = (paVar14 >> 0x10);
         uVar4   = paVar14;
     }
@@ -172,7 +172,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     puStack16 = puVar6;
     if(puVar7 != 0x0)
     {
-        pass1_1008_5bdc((astruct_79 *)CONCAT22(puVar6, uVar4), unaff_DI, param_2);
+        pass1_1008_5bdc((Struct79 *)CONCAT22(puVar6, uVar4), unaff_DI, param_2);
     }
     if(_PTR_LOOP_1050_02a0 == 0x0)
     {
@@ -199,7 +199,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         debug_pri16_1008_6048(s_New_failed_in_Op__Op_1050_00b7, 0x1000, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
-    win_ui_reg_class_1008_96d2(*(astruct_20 **)(iVar3 + 0x4), 0x1000, param_2);
+    win_ui_reg_class_1008_96d2(*(Struct20 **)(iVar3 + 0x4), 0x1000, param_2);
     uVar5   = (iVar3 + 0x4);
     ppcVar1 = ((iVar3 + 0x4) + 0x8);
     (**ppcVar1)(0x1000, uVar5, (uVar5 >> 0x10));
@@ -256,7 +256,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
     i16          iVar6;
     u16          uVar7;
     u16          uVar8;
-    astruct_171 *puVar11;
+    Struct171 *puVar11;
     u16          uVar9;
     u16          uVar10;
     u16          uVar11;
@@ -293,7 +293,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
                     exit_1000_25f2(0x4b7b, param_9, param_7, -0x4, param_8, param_9, param_10);
                     return;
                 }
-                puVar11        = (astruct_171 *)&stack0xfff6;
+                puVar11        = (Struct171 *)&stack0xfff6;
                 lVar3          = (param_3 - 0x1) * param_4;
                 uVar11         = lVar3;
                 uStack14       = uVar11 + param_1;
@@ -301,7 +301,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
                 uStack18._0_2_ = param_1;
                 uStack18._2_2_ = param_2;
             LAB_1000_4b7d:
-                if(puVar11 <= (astruct_171 *)&uStack18)
+                if(puVar11 <= (Struct171 *)&uStack18)
                 {
                     return;
                 }

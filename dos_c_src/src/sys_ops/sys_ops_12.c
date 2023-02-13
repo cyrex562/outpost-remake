@@ -2407,17 +2407,17 @@ u16 mem_1000_0670(u16 param_1, i16 *param_2, u16 param_3, u32 *param_4, i16 para
 }
 
 
-astruct_99 * pass1_1000_07fc(u16 param_1, u32 param_2)
+Struct99 * pass1_1000_07fc(u16 param_1, u32 param_2)
 
 {
-    astruct_99 *paVar1;
+    Struct99 *paVar1;
 
     if((param_2 + 0x14) != -0x4153)
     {
         pass1_1000_1e61(param_1, 0xa, 0x0, 0x0);
-        return (astruct_99 *)0x0;
+        return (Struct99 *)0x0;
     }
-    paVar1 = (astruct_99 *)mem_op_1000_0838(0x0, param_1);
+    paVar1 = (Struct99 *)mem_op_1000_0838(0x0, param_1);
     return paVar1;
 }
 

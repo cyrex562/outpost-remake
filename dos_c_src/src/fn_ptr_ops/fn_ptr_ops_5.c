@@ -298,10 +298,10 @@ void  pass1_1018_82b6(u16 *param_1, u8 param_2)
 void  pass1_1018_82fe(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_517 *iVar1;
+    Struct517 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_517 *)param_1;
+    iVar1 = (Struct517 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -320,10 +320,10 @@ void  pass1_1018_82fe(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8346(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_518 *iVar1;
+    Struct518 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_518 *)param_1;
+    iVar1 = (Struct518 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -342,10 +342,10 @@ void  pass1_1018_8346(Struct18 *param_1, u8 param_2)
 void  pass1_1018_838e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_519 *iVar1;
+    Struct519 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_519 *)param_1;
+    iVar1 = (Struct519 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -386,10 +386,10 @@ void  pass1_1018_83d6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_841e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_520 *iVar1;
+    Struct520 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_520 *)param_1;
+    iVar1 = (Struct520 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -408,10 +408,10 @@ void  pass1_1018_841e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8466(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_521 *iVar1;
+    Struct521 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_521 *)param_1;
+    iVar1 = (Struct521 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -430,10 +430,10 @@ void  pass1_1018_8466(Struct18 *param_1, u8 param_2)
 void  pass1_1018_84ae(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_522 *iVar1;
+    Struct522 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_522 *)param_1;
+    iVar1 = (Struct522 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -452,10 +452,10 @@ void  pass1_1018_84ae(Struct18 *param_1, u8 param_2)
 void  pass1_1018_84f6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_523 *iVar1;
+    Struct523 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_523 *)param_1;
+    iVar1 = (Struct523 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -474,10 +474,10 @@ void  pass1_1018_84f6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_853e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_524 *iVar1;
+    Struct524 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_524 *)param_1;
+    iVar1 = (Struct524 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -496,10 +496,10 @@ void  pass1_1018_853e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8586(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_525 *iVar1;
+    Struct525 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_525 *)param_1;
+    iVar1 = (Struct525 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -518,10 +518,10 @@ void  pass1_1018_8586(Struct18 *param_1, u8 param_2)
 void  pass1_1018_85ce(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_526 *iVar1;
+    Struct526 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_526 *)param_1;
+    iVar1 = (Struct526 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -540,10 +540,10 @@ void  pass1_1018_85ce(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8616(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_527 *iVar1;
+    Struct527 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_527 *)param_1;
+    iVar1 = (Struct527 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -562,10 +562,10 @@ void  pass1_1018_8616(Struct18 *param_1, u8 param_2)
 void  pass1_1018_865e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_528 *iVar1;
+    Struct528 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_528 *)param_1;
+    iVar1 = (Struct528 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -584,10 +584,10 @@ void  pass1_1018_865e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_86a6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_529 *iVar1;
+    Struct529 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_529 *)param_1;
+    iVar1 = (Struct529 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -606,10 +606,10 @@ void  pass1_1018_86a6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_86ee(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_530 *iVar1;
+    Struct530 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_530 *)param_1;
+    iVar1 = (Struct530 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -628,10 +628,10 @@ void  pass1_1018_86ee(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8736(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_531 *iVar1;
+    Struct531 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_531 *)param_1;
+    iVar1 = (Struct531 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -650,10 +650,10 @@ void  pass1_1018_8736(Struct18 *param_1, u8 param_2)
 void  pass1_1018_877e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_532 *iVar1;
+    Struct532 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_532 *)param_1;
+    iVar1 = (Struct532 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -672,10 +672,10 @@ void  pass1_1018_877e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_87c6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_533 *iVar1;
+    Struct533 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_533 *)param_1;
+    iVar1 = (Struct533 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -694,10 +694,10 @@ void  pass1_1018_87c6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_880e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_534 *iVar1;
+    Struct534 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_534 *)param_1;
+    iVar1 = (Struct534 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -716,10 +716,10 @@ void  pass1_1018_880e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8856(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_535 *iVar1;
+    Struct535 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_535 *)param_1;
+    iVar1 = (Struct535 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -738,10 +738,10 @@ void  pass1_1018_8856(Struct18 *param_1, u8 param_2)
 void  pass1_1018_889e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_536 *iVar1;
+    Struct536 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_536 *)param_1;
+    iVar1 = (Struct536 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -760,10 +760,10 @@ void  pass1_1018_889e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_88e6(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_537 *iVar1;
+    Struct537 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_537 *)param_1;
+    iVar1 = (Struct537 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -782,10 +782,10 @@ void  pass1_1018_88e6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_892e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_538 *iVar1;
+    Struct538 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_538 *)param_1;
+    iVar1 = (Struct538 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -804,10 +804,10 @@ void  pass1_1018_892e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8976(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_539 *iVar1;
+    Struct539 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_539 *)param_1;
+    iVar1 = (Struct539 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -826,10 +826,10 @@ void  pass1_1018_8976(Struct18 *param_1, u8 param_2)
 void  pass1_1018_89be(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_540 *iVar1;
+    Struct540 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_540 *)param_1;
+    iVar1 = (Struct540 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -848,10 +848,10 @@ void  pass1_1018_89be(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8a06(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_541 *iVar1;
+    Struct541 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_541 *)param_1;
+    iVar1 = (Struct541 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -892,10 +892,10 @@ void  pass1_1018_8a4e(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8a96(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_542 *iVar1;
+    Struct542 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_542 *)param_1;
+    iVar1 = (Struct542 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -914,10 +914,10 @@ void  pass1_1018_8a96(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8ade(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_543 *iVar1;
+    Struct543 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_543 *)param_1;
+    iVar1 = (Struct543 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -936,10 +936,10 @@ void  pass1_1018_8ade(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8b26(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_544 *iVar1;
+    Struct544 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_544 *)param_1;
+    iVar1 = (Struct544 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -958,10 +958,10 @@ void  pass1_1018_8b26(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8b6e(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_545 *iVar1;
+    Struct545 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_545 *)param_1;
+    iVar1 = (Struct545 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -1002,10 +1002,10 @@ void  pass1_1018_8bb6(Struct18 *param_1, u8 param_2)
 void  pass1_1018_8bfe(Struct18 *param_1, u8 param_2)
 
 {
-    astruct_547 *iVar1;
+    Struct547 *iVar1;
     u16          uVar1;
 
-    iVar1 = (astruct_547 *)param_1;
+    iVar1 = (Struct547 *)param_1;
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
@@ -1023,10 +1023,10 @@ void  pass1_1018_8bfe(Struct18 *param_1, u8 param_2)
 void  pass1_1018_6c1e(u16 *param_1, u8 param_2)
 
 {
-    astruct_512 *uVar1;
+    Struct512 *uVar1;
     u16          uVar2;
 
-    uVar1 = (astruct_512 *)param_1;
+    uVar1 = (Struct512 *)param_1;
     uVar1 = uVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
     uVar2            = (param_1 >> 0x10);
@@ -1309,11 +1309,11 @@ void  pass1_1018_3cda(u32 *param_1, char *param_2, char *param_3)
     u16          uVar2;
     u16          extraout_DX;
     u16          uVar3;
-    astruct_506 *iVar5;
+    Struct506 *iVar5;
     u16          uVar4;
 
     uVar4   = (param_1 >> 0x10);
-    iVar5   = (astruct_506 *)param_1;
+    iVar5   = (Struct506 *)param_1;
     ppcVar1 = (*param_1 + 0x10);
     (**ppcVar1)();
     uVar3 = extraout_DX;
@@ -1342,11 +1342,11 @@ u16 * pass1_1018_46e6(u16 *param_1, u8 param_2, u16 param_3)
 void  pass1_1018_4760(u16 *param_1)
 
 {
-    astruct_507 *iVar2;
+    Struct507 *iVar2;
     u16          uVar1;
 
     uVar1            = (param_1 >> 0x10);
-    iVar2            = (astruct_507 *)param_1;
+    iVar2            = (Struct507 *)param_1;
     *param_1         = &PTR_LOOP_1050_4aa6;
     iVar2->field_0x2 = 0x1018;
     fn_ptr_1000_17ce((Struct18 *)iVar2->field_0x4, 0x1000);
@@ -1451,10 +1451,10 @@ u16 * pass1_1018_4a3e(u16 *param_1, u8 param_2)
     return param_1;
 }
 
-astruct_11 * pass1_1018_2aa8(astruct_11 *param_1, u8 param_2, u16 param_3)
+Struct11 * pass1_1018_2aa8(Struct11 *param_1, u8 param_2, u16 param_3)
 
 {
-    param_1 = (astruct_11 *)(param_1 & 0xffff0000 | (param_1 - 0x1c));
+    param_1 = (Struct11 *)(param_1 & 0xffff0000 | (param_1 - 0x1c));
     pass1_1018_2440(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
@@ -1480,12 +1480,12 @@ void  pass1_1018_2c60(u16 *param_1, u16 param_2)
     code       **ppcVar3;
     u16         *puVar4;
     u16          uVar5;
-    astruct_503 *uVar6;
+    Struct503 *uVar6;
     u16          uVar7;
     u16         *puStack6;
 
     uVar7             = (param_1 >> 0x10);
-    uVar6             = (astruct_503 *)param_1;
+    uVar6             = (Struct503 *)param_1;
     *param_1          = 0x32d8;
     uVar6->field_0x2  = 0x1018;
     uVar6->field_0x20 = 0x3314;
@@ -1532,11 +1532,11 @@ void  pass1_1018_30ca(u32 param_1, char *param_2, u16 param_3)
 
 {
     u16          uVar1;
-    astruct_504 *iVar3;
+    Struct504 *iVar3;
     u16          uVar2;
 
     uVar2 = (param_1 >> 0x10);
-    iVar3 = (astruct_504 *)param_1;
+    iVar3 = (Struct504 *)param_1;
     fn_ptr_1000_17ce(&iVar3->field_0x186, 0x1000);
     uVar1              = str_op_1008_60e8(param_2, param_3);
     iVar3->field_0x186 = uVar1;
@@ -1562,11 +1562,11 @@ void  pass1_1018_33b4(u16 *param_1, u16 param_2)
     u32  *puVar1;
     u16          uVar2;
     code       **ppcVar3;
-    astruct_505 *iVar5;
+    Struct505 *iVar5;
     u16          uVar4;
 
     uVar4            = (param_1 >> 0x10);
-    iVar5            = (astruct_505 *)param_1;
+    iVar5            = (Struct505 *)param_1;
     *param_1         = &PTR_LOOP_1050_470c;
     iVar5->field_0x2 = 0x1018;
     puVar1           = iVar5->field_0x136;
@@ -1630,7 +1630,7 @@ void  pass1_1018_0dc6(u32 param_1, u16 param_2)
     u8         *puVar7;
     u8         *puVar8;
     u16         uVar9;
-    astruct_91 *iVar13;
+    Struct91 *iVar13;
     u16         uVar10;
     u32  local_32;
     u16         uStack46;
@@ -1647,9 +1647,9 @@ void  pass1_1018_0dc6(u32 param_1, u16 param_2)
     u16         uStack6;
     i16         iStack4;
 
-    pass1_1028_dc52((astruct_92 *)CONCAT22(param_2, local_14), 0x1, 0x0, 0x400);
+    pass1_1028_dc52((Struct92 *)CONCAT22(param_2, local_14), 0x1, 0x0, 0x400);
     uVar10    = (param_1 >> 0x10);
-    iVar13    = (astruct_91 *)param_1;
+    iVar13    = (Struct91 *)param_1;
     paStack36 = (Struct18 *)iVar13->field_0x94;
     fn_ptr_1000_17ce(paStack36, 0x1000);
     paStack40 = (Struct18 *)iVar13->field_0x9a;
@@ -1784,12 +1784,12 @@ void  pass1_1018_1a04(u16 *param_1, u16 param_2)
     u16          uVar2;
     code       **ppcVar3;
     u16         *puVar4;
-    astruct_501 *iVar5;
+    Struct501 *iVar5;
     u16          uVar5;
     u16         *puStack14;
 
     uVar5             = (param_1 >> 0x10);
-    iVar5             = (astruct_501 *)param_1;
+    iVar5             = (Struct501 *)param_1;
     *param_1          = 0x1fb0;
     iVar5->field_0x2  = 0x1018;
     iVar5->field_0x20 = 0x1fec;
@@ -1840,12 +1840,12 @@ void  pass1_1010_eb66(u16 *param_1, u16 param_2)
     u16          uVar2;
     code       **ppcVar3;
     u16         *puVar4;
-    astruct_499 *iVar5;
+    Struct499 *iVar5;
     u16          uVar5;
     u16         *puStack14;
 
     uVar5            = (param_1 >> 0x10);
-    iVar5            = (astruct_499 *)param_1;
+    iVar5            = (Struct499 *)param_1;
     *param_1         = 0x558;
     iVar5->field_0x2 = 0x1018;
     iVar5->field_0xa = 0x568;
@@ -1881,7 +1881,7 @@ void  pass1_1010_ec84(u32 param_1, u16 param_2, u8 param_3)
     u8 local_10e[0x10c];
 
     pass1_1010_1f62(param_2, param_1, 0x14);
-    pass1_1030_532e((astruct_100 *)CONCAT22(param_2, local_10e), *(param_1 + 0x20), param_2, param_3);
+    pass1_1030_532e((Struct100 *)CONCAT22(param_2, local_10e), *(param_1 + 0x20), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, local_10e));
     return;
 }
@@ -1905,13 +1905,13 @@ void  pass1_1018_078e(u16 *param_1, u16 param_2)
     u16          uVar2;
     u16         *puVar3;
     u16          uVar4;
-    astruct_500 *uVar5;
+    Struct500 *uVar5;
     u16          uVar6;
     u16         *puStack26;
     Struct18  *paStack6;
 
     uVar6                                                  = (param_1 >> 0x10);
-    uVar5                                                  = (astruct_500 *)param_1;
+    uVar5                                                  = (Struct500 *)param_1;
     *param_1                                               = 0x1874;
     uVar5->field_0x2                                       = 0x1018;
     uVar5->field_0x20                                      = 0x18b0;

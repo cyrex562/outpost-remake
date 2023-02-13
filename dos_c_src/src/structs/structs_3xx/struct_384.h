@@ -7,7 +7,7 @@
 
 #include "types.h"
 
-typedef struct astruct_384
+typedef struct Struct384
 {
     u8 field_0x0;
     u8 field_0x1;
@@ -18,6 +18,6 @@ typedef struct astruct_384
     i16       field_0x8;
     i16       field_0xa;
     i16       field_0xc;
-} astruct_384;
+} Struct384;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCT_384_H_

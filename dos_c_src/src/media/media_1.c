@@ -62,7 +62,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
         {
             mciGetErrorString16(0x4001538, local_432, param_4);
         }
-        pass1_1000_4906((astruct_20 *)CONCAT22(param_4, &local_2e), 0x0, 0xc);
+        pass1_1000_4906((Struct20 *)CONCAT22(param_4, &local_2e), 0x0, 0xc);
         local_2e = param_2;
         uStack44 = 0x0;
         DVar1    = mciSendCommand16(0x1000, &local_2e, CONCAT22(0x2, param_4), 0x8060000);

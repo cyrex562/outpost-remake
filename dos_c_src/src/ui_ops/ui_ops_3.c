@@ -22,7 +22,7 @@ void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2)
 void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
 
 {
-    astruct_160 *rect;
+    Struct160 *rect;
     u16          uVar1;
     u16          uVar2;
     u16          uVar3;
@@ -44,7 +44,7 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
     u16          uStack14;
     i16          iStack12;
     i16          iStack10;
-    astruct_160 *paStack8;
+    Struct160 *paStack8;
     u16          uStack6;
     i16          iStack4;
 
@@ -67,14 +67,14 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
         uStack34 = (unaff_DI + 0x5c62);
         uStack32 = 0x1;
         uStack30 = 0x1;
-        rect     = (astruct_160 *)&local_24;
+        rect     = (Struct160 *)&local_24;
         MapDialogRect16(param_3, (RECT16 *)rect);
         param_3 = 0x1000;
         mem_op_1000_179c(0x42, param_2, 0x1000);
         uVar1 = param_2 | rect;
         if(uVar1 == 0x0)
         {
-            rect  = (astruct_160 *)0x0;
+            rect  = (Struct160 *)0x0;
             uVar1 = 0x0;
         }
         else
@@ -238,7 +238,7 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
         uStack26  = (puStack30 + 0x20);
         local_18  = LoadCursor16(0x1010, 0x7f02);
         local_16  = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
-        pass1_1030_532e((astruct_100 *)CONCAT22(param_6, local_12a), (long)uStack26 + 0x2000000, param_6, in_AF);
+        pass1_1030_532e((Struct100 *)CONCAT22(param_6, local_12a), (long)uStack26 + 0x2000000, param_6, in_AF);
         fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_6, local_12a));
         pass1_1030_838e(_PTR_LOOP_1050_5748, param_6, in_AF);
         pass1_1030_8334(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10));
@@ -605,7 +605,7 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
 {
     u32   uVar1;
     u16          uVar2;
-    astruct_160 *rect;
+    Struct160 *rect;
     u8          *in_DX;
     u8          *puVar3;
     u16          uVar4;
@@ -649,7 +649,7 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
         uStack32  = (puStack26 + 0x2);
         uStack30  = 0x1;
         uStack28  = 0x1;
-        rect      = (astruct_160 *)&local_22;
+        rect      = (Struct160 *)&local_22;
         MapDialogRect16(0x1010, (RECT16 *)rect);
         mem_op_1000_179c(0x42, puVar3, 0x1000);
         uVar4 = puVar3 | rect;
@@ -664,7 +664,7 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
             uVar1                                     = (iVar5 + 0x8e);
             uVar8                                     = (uVar1 >> 0x10);
             iVar6                                     = uVar1;
-            *(astruct_160 **)(iVar6 + iStack10 * 0x4) = rect;
+            *(Struct160 **)(iVar6 + iStack10 * 0x4) = rect;
             (iVar6 + iStack10 * 0x4 + 0x2)            = uVar4;
         }
         uVar1 = (iVar5 + 0x8e);
@@ -722,11 +722,11 @@ void  chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2)
 {
     u32  uVar1;
     u16         UVar2;
-    astruct_62 *iVar3;
+    Struct62 *iVar3;
     u16         uVar3;
     HWND16      unaff_CS;
 
-    iVar3 = (astruct_62 *)param_1;
+    iVar3 = (Struct62 *)param_1;
     uVar3 = (param_1 >> 0x10);
     if(param_2 == 0x0)
     {
@@ -970,10 +970,10 @@ void  show_win_1038_cb5c(Struct1 *param_1)
         puVar7 = puVar6;
         mem_op_1000_179c(0x42, puVar3, 0x1000);
         uVar4 = (puVar7 >> 0x10);
-        in_DX = uVar4 | (astruct_160 *)puVar7;
+        in_DX = uVar4 | (Struct160 *)puVar7;
         if(puVar7 != 0x0)
         {
-            pass1_1008_3bd6((astruct_160 *)puVar7, uVar4, 0x0, CONCAT22(*puVar6, (puVar6 + 0x2)), 0x101, 0xff0100, CONCAT22((param_1 + 0x6), (puVar6 + 0x4)), in_DX, unaff_SS);
+            pass1_1008_3bd6((Struct160 *)puVar7, uVar4, 0x0, CONCAT22(*puVar6, (puVar6 + 0x2)), 0x101, 0xff0100, CONCAT22((param_1 + 0x6), (puVar6 + 0x4)), in_DX, unaff_SS);
         }
     }
     win_1008_5c7c(_PTR_LOOP_1050_02a0, 0x90001, unaff_SS, uVar2, in_DX);
@@ -1074,10 +1074,10 @@ void  check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HWND16 param_3)
 {
     u32  uVar1;
     u16         UVar2;
-    astruct_61 *iVar3;
+    Struct61 *iVar3;
     u16         uVar3;
 
-    iVar3 = (astruct_61 *)param_1;
+    iVar3 = (Struct61 *)param_1;
     uVar3 = (param_1 >> 0x10);
     if(param_2 == 0x0)
     {
@@ -1160,7 +1160,7 @@ void  pass1_1038_d276(Struct18 *param_1)
 void  win_ui_op_1038_d2a2(Struct1 *param_1)
 
 {
-    astruct_160 *rect;
+    Struct160 *rect;
     i16          iVar1;
     BOOL16       BVar2;
     u8          *in_DX;
@@ -1196,14 +1196,14 @@ void  win_ui_op_1038_d2a2(Struct1 *param_1)
         uStack20 = (unaff_DI + 0x5c0e);
         uStack18 = 0x1;
         uStack16 = 0x1;
-        rect     = (astruct_160 *)&local_16;
+        rect     = (Struct160 *)&local_16;
         MapDialogRect16(hwnd, (RECT16 *)rect);
         hwnd_00 = 0x1000;
         mem_op_1000_179c(0x42, in_DX, 0x1000);
         puVar3 = (in_DX | rect);
         if(puVar3 == 0x0)
         {
-            rect  = (astruct_160 *)0x0;
+            rect  = (Struct160 *)0x0;
             in_DX = 0x0;
         }
         else
@@ -1410,7 +1410,7 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
     u32   uVar3;
     HCURSOR16    HVar4;
     u16          uVar5;
-    astruct_160 *rect;
+    Struct160 *rect;
     u8          *in_DX;
     u8          *puVar6;
     i16          iVar7;
@@ -1456,10 +1456,10 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
         (param_1 + -0x22) = (puVar10 + 0x2);
         (param_1 + -0x20) = 0x1;
         (param_1 + -0x1e) = 0x1;
-        rect              = (astruct_160 *)(param_1 + -0x24);
+        rect              = (Struct160 *)(param_1 + -0x24);
         MapDialogRect16(0x1010, (RECT16 *)rect);
         mem_op_1000_179c(0x42, puVar6, 0x1000);
-        *(astruct_160 **)(param_1 + -0x28) = rect;
+        *(Struct160 **)(param_1 + -0x28) = rect;
         (param_1 + -0x26)                  = puVar6;
         globals->PTR_LOOP_1050_5f2e                 = (puVar6 | rect);
         if(PTR_LOOP_1050_5f2e == 0x0)
@@ -1478,7 +1478,7 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
             uVar9                            = (uVar2 >> 0x10);
             iVar7                            = uVar2;
             iVar8                            = (param_1 + -0x8) * 0x4;
-            *(astruct_160 **)(iVar7 + iVar8) = rect;
+            *(Struct160 **)(iVar7 + iVar8) = rect;
             (iVar7 + iVar8 + 0x2)            = globals->PTR_LOOP_1050_5f2e;
         }
         uVar2 = (param_1 + 0x6);
@@ -1842,7 +1842,7 @@ void  win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3)
     HStack4 = LoadCursor16(param_2, 0x7f02);
     HStack6 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
     uVar1   = (param_1 + 0x8e);
-    pass1_1030_532e((astruct_100 *)CONCAT22(param_3, &local_112), (long)(uVar1 + 0xe) + 0x1000000, param_3, in_AF);
+    pass1_1030_532e((Struct100 *)CONCAT22(param_3, &local_112), (long)(uVar1 + 0xe) + 0x1000000, param_3, in_AF);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_3, &local_112));
     pass1_1030_838e(_PTR_LOOP_1050_5748, param_3, in_AF);
     local_112 = 0x389a;

@@ -16,7 +16,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     *param_1      = 0x0;
     (iVar4 + 0x4) = 0x0;
     puVar2        = local_26;
-    struct_op_1008_48fe((astruct_81 *)CONCAT22(param_3, puVar2), 0x1, param_2, param_4);
+    struct_op_1008_48fe((Struct81 *)CONCAT22(param_3, puVar2), 0x1, param_2, param_4);
     mem_op_1000_179c(0x1e, param_4, 0x1000);
     paStack42 = (Struct76 *)CONCAT22(param_4, puVar2);
     uVar3     = param_4 | puVar2;
@@ -27,7 +27,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     else
     {
         puVar2 = local_26;
-        struct_op_1008_3f92(paStack42, (astruct_83 *)CONCAT22(param_3, puVar2));
+        struct_op_1008_3f92(paStack42, (Struct83 *)CONCAT22(param_3, puVar2));
         param_1       = puVar2;
         (iVar4 + 0x2) = uVar3;
     }
@@ -311,7 +311,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         }
         uStack1048 = uStack1048 + 0x1;
     }
-    pass1_1000_4906((astruct_20 *)CONCAT22(param_3, &local_562), 0x0, 0x48);
+    pass1_1000_4906((Struct20 *)CONCAT22(param_3, &local_562), 0x0, 0x48);
     local_562    = 0x48;
     uStack1374   = (param_1 + 0x8);
     pcStack1370  = acStack1305 + 0x1;

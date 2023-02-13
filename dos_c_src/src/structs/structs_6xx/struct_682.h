@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_682_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_682_H_
 
-typedef struct astruct_682 astruct_682;
-struct astruct_682
+typedef struct Struct682 Struct682;
+struct Struct682
 {
     u8  field_0x0;
     u8  field_0x1;
