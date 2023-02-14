@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_12X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_12X_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_0xx/struct_76.h"
 #include "structs/structs_0xx/structs_4x.h"
 #include "structs/structs_0xx/structs_6x.h"
-#include "structs/structs_22x.h"
-#include "structs/structs_32x.h"
+#include "structs/structs_2xx/structs_22x.h"
+#include "structs/structs_3xx/structs_32x.h"
 typedef struct Struct128 Struct128;
 typedef struct Struct120 Struct120;
 typedef struct Struct129 Struct129;

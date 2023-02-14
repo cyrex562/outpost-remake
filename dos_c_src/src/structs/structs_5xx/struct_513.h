@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_23_H_STRUCT_513_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_23_H_STRUCT_513_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 
 typedef struct Struct513 Struct513;
 struct Struct513

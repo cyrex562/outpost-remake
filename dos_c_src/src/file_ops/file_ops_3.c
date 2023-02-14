@@ -1820,7 +1820,7 @@ void close_file_1008_6dd0(u32 *param_1, HFILE16 param_2)
 }
 
 
-BOOL16 file_fn_1008_6e02(u1632_t *param_1, LPCSTR in_string, u16 param_3)
+BOOL16 file_fn_1008_6e02(u32_t *param_1, LPCSTR in_string, u16 param_3)
 
 {
     i16    var1;
@@ -1852,7 +1852,7 @@ BOOL16 file_fn_1008_6e02(u1632_t *param_1, LPCSTR in_string, u16 param_3)
 }
 
 
-BOOL16 read_file_1008_6e78(u1632_t param_1, u16 param_2, LPCSTR in_string, u16 param_4)
+BOOL16 read_file_1008_6e78(u32_t param_1, u16 param_2, LPCSTR in_string, u16 param_4)
 
 {
     BOOL16 b_var1;
@@ -2107,7 +2107,7 @@ u16 read_file_1008_71a0(u32 param_1, u16 param_2)
 }
 
 
-BOOL16 file_fn_1008_726c(u1632_t param_1, u16 param_2, HFILE16 file_handle)
+BOOL16 file_fn_1008_726c(u32_t param_1, u16 param_2, HFILE16 file_handle)
 
 {
     HFILE16 HVar1;

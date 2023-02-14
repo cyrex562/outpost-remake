@@ -2,7 +2,7 @@
 #include "unk_5.h"
 
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "struct_ops_5.h"
 #include "structs/structs_45.h"
 #include "structs_30x.h"

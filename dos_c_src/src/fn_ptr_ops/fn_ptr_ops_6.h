@@ -7,7 +7,7 @@
 
 #include "fn_ptr_defs.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs_1.h"
 
 void pass1_1000_24db(u16 param_1, u16 param_2, Globals* globals);

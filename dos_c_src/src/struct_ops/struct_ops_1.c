@@ -7,7 +7,7 @@
 #include "unk/unk_5.h"
 #include "utils.h"
 
-#include <outpost_int.h>
+#include <op_int.h>
 #include <structs/structs_14.h>
 #include <structs/structs_37.h>
 #include <structs/structs_44.h>

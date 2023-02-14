@@ -4,7 +4,7 @@
 
 #include "utils.h"
 
-#include "outpost_int.h"
+#include "op_int.h"
 
 u32 CONCAT22(u16 a, u16 b) {
     return a << 16 | b;

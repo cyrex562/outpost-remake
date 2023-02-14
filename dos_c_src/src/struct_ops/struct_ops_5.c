@@ -3,7 +3,7 @@
 
 #include "addr_struct.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_45.h"
 #include "unk/unk_6.h"
 #include "unk_5.h"

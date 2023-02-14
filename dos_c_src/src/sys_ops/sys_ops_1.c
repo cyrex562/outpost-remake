@@ -2,7 +2,7 @@
 #include "sys_ops_1.h"
 
 #include "../globals.h"
-#include "../outpost_int.h"
+#include "../op_int.h"
 
 void struct_1040_b082(Globals *globals, Struct57 *param_1, u32 param_2)
 

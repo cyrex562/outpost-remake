@@ -987,7 +987,7 @@ void pass1_1000_440c(u16 param_1)
 }
 
 
-u16 pass1_1000_455a(u1632 param_1, u16 param_2)
+u16 pass1_1000_455a(u32 param_1, u16 param_2)
 
 {
     i16 *piVar1;
@@ -1097,7 +1097,7 @@ i16 pass1_1000_462e(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 para
     uStack18 = param_4;
     if(DAT_1050_61d2 != 0x0)
     {
-        UVar5 = pass1_1000_455a((u1632)local_16, param_8);
+        UVar5 = pass1_1000_455a((u32)local_16, param_8);
         if(UVar5 != 0x0)
         {
             iStack26 = iStack26 + -0xe10;

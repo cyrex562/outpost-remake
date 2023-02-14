@@ -1,6 +1,6 @@
 
 
-#include <outpost_int.h>
+#include <op_int.h>
 u16 * pass1_1008_941a(u16 *param_1, u16 param_2, u16 param_3)
 
 {

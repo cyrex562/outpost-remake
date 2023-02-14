@@ -269,14 +269,14 @@ void post_win_msg_1020_061c(u32 param_1, i16 param_2, HWND16 param_3)
     return;
 }
 
-void pass1_1020_08b6(WNDCLASS16 *param_1, Struct20 *param_2, u1616 param_3, u32 param_4)
+void pass1_1020_08b6(WNDCLASS16 *param_1, Struct20 *param_2, u16 param_3, u32 param_4)
 
 {
     Struct20 *iVar1;
     u16         uVar1;
     Struct20 *paVar2;
 
-    paVar2                        = unk_draw_op_1008_61b2(param_2, 0x1, param_3, param_4, (u1616)param_1);
+    paVar2                        = unk_draw_op_1008_61b2(param_2, 0x1, param_3, param_4, (u16)param_1);
     uVar1                         = (param_2 >> 0x10);
     iVar1                         = (Struct20 *)param_2;
     &iVar1[0x1].field_0x4         = 0x0;
@@ -334,7 +334,7 @@ void pass1_1018_df92(u32 param_1)
     return;
 }
 
-void pass1_1018_e2cc(u32 param_1, u1616 param_2)
+void pass1_1018_e2cc(u32 param_1, u16 param_2)
 
 {
     i16         *piVar1;
@@ -440,9 +440,9 @@ void destroy_window_1018_c518(Struct29 *param_1)
 {
     BOOL16      BVar1;
     Struct29 *iVar2;
-    u1616       uVar3;
+    u16       uVar3;
 
-    uVar3            = (u1616)(param_1 >> 0x10);
+    uVar3            = (u16)(param_1 >> 0x10);
     iVar2            = (Struct29 *)param_1;
     param_1          = 0xc8bc;
     iVar2->field_0x2 = 0x1018;
@@ -574,7 +574,7 @@ void pass1_1018_681a(u32 param_1)
     return;
 }
 
-void win_op_1018_294a(i16 param_1, u1616 param_2, u1616 param_3, u32 param_4, u1616 param_5, LPCSTR in_string_6)
+void win_op_1018_294a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, LPCSTR in_string_6)
 
 {
     if(((param_1 + 0x18) != 0x0) && (param_4._2_2_ == 0x280))
@@ -682,7 +682,7 @@ void pass1_1010_71b0(i16 param_1, u16 param_2)
 }
 
 
-void pass1_1010_71c2(u16 param_1, u16 param_2, i16 param_3, u1616 param_4)
+void pass1_1010_71c2(u16 param_1, u16 param_2, i16 param_3, u16 param_4)
 
 {
     u32        uVar1;
@@ -1135,7 +1135,7 @@ void unk_destroy_win_op_1010_2fa0(u32 param_1, HWND16 param_2)
     return;
 }
 
-void unk_destroy_win_op_1010_305a(Struct27 *param_1, i16 param_2, Struct65 *param_3, u1616 param_4)
+void unk_destroy_win_op_1010_305a(Struct27 *param_1, i16 param_2, Struct65 *param_3, u16 param_4)
 
 {
     i16        *piVar1;
@@ -1186,8 +1186,8 @@ void unk_destroy_win_op_1010_305a(Struct27 *param_1, i16 param_2, Struct65 *para
             else
             {
                 iVar6                             = iVar4->field_0x16;
-                (&iVar4->field_0x2a)[iVar6 * 0x2] = (u1616)param_3;
-                (&iVar4->field_0x2c)[iVar6 * 0x2] = (u1616)(param_3 >> 0x10);
+                (&iVar4->field_0x2a)[iVar6 * 0x2] = (u16)param_3;
+                (&iVar4->field_0x2c)[iVar6 * 0x2] = (u16)(param_3 >> 0x10);
                 iStack10                          = 0xa;
                 piVar1                            = &iVar4->field_0x16;
                 *piVar1                           = *piVar1 + 0x1;
@@ -1243,7 +1243,7 @@ void unk_destroy_win_op_1010_305a(Struct27 *param_1, i16 param_2, Struct65 *para
     } while(true);
 }
 
-void pass1_1010_1656(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1616 param_5, u8 *param_6, i16 param_7, u16 param_8)
+void pass1_1010_1656(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 *param_6, i16 param_7, u16 param_8)
 
 {
     u32 uVar1;
@@ -1589,16 +1589,16 @@ u32  unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *para
     u16    uVar3;
     i16    iVar4;
     u16    uVar5;
-    u1616  msg;
-    u1616  wparam;
+    u16  msg;
+    u16  wparam;
     u16    unaff_SS;
     u32    uVar6;
     u8     uVar7;
     u8     uVar8;
     char   cVar9;
 
-    msg    = (u1616)param_1;
-    wparam = (u1616)(param_1 >> 0x10);
+    msg    = (u16)param_1;
+    wparam = (u16)(param_1 >> 0x10);
     if(param_5 == 0x2b)
     {
         if(*param_2 == 0x4)
@@ -1678,7 +1678,7 @@ u32  unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *para
         {
             if((PTR_LOOP_1050_039a == 0x0) && (ppcVar1 = (*param_1 + 0x48), iVar4 = (**ppcVar1)(), iVar4 != 0x0))
             {
-                make_def_wnd_proc_1008_9ce6(msg, wparam, (u1616)param_2, param_3, CONCAT13(0x1, CONCAT12(cVar9, param_4)), param_6);
+                make_def_wnd_proc_1008_9ce6(msg, wparam, (u16)param_2, param_3, CONCAT13(0x1, CONCAT12(cVar9, param_4)), param_6);
             }
         }
         else
@@ -1715,7 +1715,7 @@ u32  unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *para
                 switchD_1008_9b30_caseD_4:
                     if((param_5 < 0x400) || (0x7ffe < param_5))
                     {
-                        uVar6 = make_def_wnd_proc_1008_9ce6(msg, wparam, (u1616)param_2, param_3, CONCAT22(param_5, param_4), param_6);
+                        uVar6 = make_def_wnd_proc_1008_9ce6(msg, wparam, (u16)param_2, param_3, CONCAT22(param_5, param_4), param_6);
                         return uVar6;
                     }
                     ppcVar1 = (*param_1 + 0x28);
@@ -1853,7 +1853,7 @@ LAB_1008_9a95:
     return uVar5;
 }
 
-LRESULT  make_def_wnd_proc_1008_9ce6(u1616 param_1, u1616 param_2, u1616 in_msg_3, WPARAM16 param_4, LPARAM param_5, HWND16 in_hwnd_5)
+LRESULT  make_def_wnd_proc_1008_9ce6(u16 param_1, u16 param_2, u16 in_msg_3, WPARAM16 param_4, LPARAM param_5, HWND16 in_hwnd_5)
 
 {
     LRESULT LVar1;
@@ -1992,7 +1992,7 @@ LAB_1008_a146:
 u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2)
 
 {
-    u1616 UVar1;
+    u16 UVar1;
     i16   iVar2;
     u16   uVar3;
 
@@ -2068,7 +2068,7 @@ void win_1008_5c9e(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, WNDCLASS
 }
 
 
-HWND16 create_window_1008_5e7e(u1616 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
+HWND16 create_window_1008_5e7e(u16 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
 
 {
     u32 *puVar1;
@@ -2132,7 +2132,7 @@ HWND16 create_window_1008_5e7e(u1616 in_stock_obj_id, WNDCLASS16 *in_wnd_class)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT make_def_win_proc_1008_5f44(u1616 param_1, WPARAM16 in_wparam_2, LPARAM param_3, HWND16 in_hwnd_4)
+LRESULT make_def_win_proc_1008_5f44(u16 param_1, WPARAM16 in_wparam_2, LPARAM param_3, HWND16 in_hwnd_4)
 
 {
     WORD        WVar1;

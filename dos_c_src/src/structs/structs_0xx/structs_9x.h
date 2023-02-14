@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_9X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_9X_H_
 
-#include "outpost_int.h"
-#include "structs/structs_22x.h"
+#include "op_int.h"
+#include "structs/structs_2xx/structs_22x.h"
 #include "structs_4x.h"
 #include "structs_6x.h"
 #include "windows_platform.h"

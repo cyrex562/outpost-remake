@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_37_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCT_37_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 typedef struct Struct37
 {
     u8 field_0x0;

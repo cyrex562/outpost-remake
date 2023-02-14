@@ -1,6 +1,6 @@
 #include "unk_2.h"
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "unk_17.h"
 
 void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)

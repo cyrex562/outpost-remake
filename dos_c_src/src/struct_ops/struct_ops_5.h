@@ -7,7 +7,7 @@
 
 #include "addr_struct.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_45.h"
 
 u16 str_op_1008_60e8(char *param_1, u16 param_2);

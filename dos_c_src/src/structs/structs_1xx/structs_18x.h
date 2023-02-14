@@ -5,15 +5,15 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_18X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_18X_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_0xx/structs_4x.h"
-#include "structs/structs_36x.h"
-#include "structs/structs_38x.h"
-#include "structs/structs_43x.h"
-#include "structs/structs_44x.h"
-#include "structs/structs_45x.h"
-#include "structs/structs_48x.h"
-#include "structs/structs_x.h"
+#include "structs/structs_0xx/structs_x.h"
+#include "structs/structs_3xx/structs_36x.h"
+#include "structs/structs_3xx/structs_38x.h"
+#include "structs/structs_4xx/structs_43x.h"
+#include "structs/structs_4xx/structs_44x.h"
+#include "structs/structs_4xx/structs_45x.h"
+#include "structs/structs_4xx/structs_48x.h"
 #include "structs_11x.h"
 #include "structs_16x.h"
 #include "windows_platform.h"

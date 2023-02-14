@@ -942,7 +942,7 @@ void pass1_1008_b63a(u32 param_1, u32 param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void load_string_1008_b65a(u32 param_1, LPSTR in_string_2, u32 param_3, u1616 param_4)
+void load_string_1008_b65a(u32 param_1, LPSTR in_string_2, u32 param_3, u16 param_4)
 
 {
     u16 unaff_SS;
@@ -1573,22 +1573,22 @@ void pass1_1008_9628(u32 param_1, u16 param_2)
 }
 
 
-LRESULT pass1_1008_9c16(u1616 param_1, u32 param_2, u32 param_3, HWND16 param_4)
+LRESULT pass1_1008_9c16(u16 param_1, u32 param_2, u32 param_3, HWND16 param_4)
 
 {
     LRESULT LVar1;
 
-    LVar1 = make_def_wnd_proc_1008_9ce6(param_1, (u1616)param_2, (u1616)(param_2 >> 0x10), (WPARAM16)param_3, CONCAT22(0x85, (param_3 >> 0x10)), param_4);
+    LVar1 = make_def_wnd_proc_1008_9ce6(param_1, (u16)param_2, (u16)(param_2 >> 0x10), (WPARAM16)param_3, CONCAT22(0x85, (param_3 >> 0x10)), param_4);
     return LVar1;
 }
 
 
-LRESULT pass1_1008_9c30(u1616 param_1, u32 param_2, u32 param_3, HWND16 param_4)
+LRESULT pass1_1008_9c30(u16 param_1, u32 param_2, u32 param_3, HWND16 param_4)
 
 {
     LRESULT LVar1;
 
-    LVar1 = make_def_wnd_proc_1008_9ce6(param_1, (u1616)param_2, (u1616)(param_2 >> 0x10), (WPARAM16)param_3, CONCAT22(0x86, (param_3 >> 0x10)), param_4);
+    LVar1 = make_def_wnd_proc_1008_9ce6(param_1, (u16)param_2, (u16)(param_2 >> 0x10), (WPARAM16)param_3, CONCAT22(0x86, (param_3 >> 0x10)), param_4);
     return LVar1;
 }
 

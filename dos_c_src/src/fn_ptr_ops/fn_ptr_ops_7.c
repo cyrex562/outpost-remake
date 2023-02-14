@@ -7,7 +7,7 @@
 #include "fn_ptr_ops_1.h"
 #include "fn_ptr_ops_6.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs_1.h"
 #include "unk/unk_11.h"
 #include "utils.h"

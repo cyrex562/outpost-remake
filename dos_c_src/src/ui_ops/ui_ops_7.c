@@ -321,7 +321,7 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
     HStack4 = LoadCursor16(param_3, 0x7f02);
     HStack6 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
     str_1008_6d8a(CONCAT22(param_4, local_c), param_2, in_DX, param_4, in_AF);
-    BVar1 = file_fn_1008_6e02((u1632_t *)CONCAT22(param_4, local_c), s_tile2_bmp_1050_1538, param_4);
+    BVar1 = file_fn_1008_6e02((u32_t *)CONCAT22(param_4, local_c), s_tile2_bmp_1050_1538, param_4);
     if(BVar1 == 0x0)
     {
         SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
@@ -391,7 +391,7 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
 
     puVar10 = str_1008_6d8a(CONCAT22(param_4, local_8), param_2, param_6, param_4, param_5);
     puVar6  = (puVar10 >> 0x10);
-    BVar2   = read_file_1008_6e78((u1632_t)local_8, param_4, param_3, param_4);
+    BVar2   = read_file_1008_6e78((u32_t)local_8, param_4, param_3, param_4);
     iVar15  = param_1;
     uVar9   = (param_1 >> 0x10);
     if(BVar2 == 0x0)

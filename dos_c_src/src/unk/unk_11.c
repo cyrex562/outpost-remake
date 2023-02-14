@@ -1,6 +1,6 @@
 #include "unk_11.h"
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "unk_12.h"
 #include "utils.h"
 

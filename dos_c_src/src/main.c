@@ -5,7 +5,7 @@
 
 #include "fn_ptr_defs.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "string_consts.h"
 #include "string_ops.h"
 #include "sys_ops/sys_ops_11.h"

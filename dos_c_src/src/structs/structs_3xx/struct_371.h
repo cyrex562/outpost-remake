@@ -7,7 +7,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_1_H_STRUCT371_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_1_H_STRUCT371_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 
 typedef struct Struct371
 {

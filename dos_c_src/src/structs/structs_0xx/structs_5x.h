@@ -5,9 +5,9 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_5X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_5X_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_0xx/struct_21.h"
-#include "structs/structs_22x.h"
+#include "structs/structs_2xx/structs_22x.h"
 #include "structs_1x.h"
 #include "structs_2x.h"
 #include "structs_6x.h"

@@ -49,7 +49,7 @@ void pass1_1010_28e6(Struct631 *param_1, u8 *param_2, u16 param_3, u8 *param_4, 
 u16 *unk_load_str_op_1010_2c34(void)
 
 {
-    u1616 *pUVar1;
+    u16 *pUVar1;
     u8    *in_DX;
     short  in_buf_len_5;
     i16    unaff_DI;

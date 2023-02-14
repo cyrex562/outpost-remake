@@ -5,13 +5,13 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_11X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_11X_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "structs/structs_0xx/struct_76.h"
 #include "structs/structs_0xx/structs_4x.h"
-#include "structs/structs_25x.h"
-#include "structs/structs_33x.h"
-#include "structs/structs_38x.h"
-#include "structs/structs_43x.h"
+#include "structs/structs_2xx/structs_25x.h"
+#include "structs/structs_3xx/structs_33x.h"
+#include "structs/structs_3xx/structs_38x.h"
+#include "structs/structs_4xx/structs_43x.h"
 #include "structs_13x.h"
 typedef struct Struct115 Struct115;
 typedef struct Struct116 Struct116;

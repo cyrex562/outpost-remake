@@ -1,7 +1,7 @@
 #include "draw_ops_1.h"
 
 #include "../fn_ptr_defs.h"
-#include "../outpost_int.h"
+#include "../op_int.h"
 #include "../ui_ops/ui_ops_1.h"
 #include "../unk/unk_11.h"
 #include "../unk/unk_17.h"
@@ -9,20 +9,12 @@
 #include "../utils.h"
 #include "draw_ops_4.h"
 #include "globals.h"
-#include "struct_76.h"
 #include "structs/structs_0xx/struct_18.h"
 #include "structs/structs_0xx/struct_37.h"
-#include "structs/structs_11.h"
-#include "structs/structs_16 .h"
-#include "structs/structs_23.h"
-#include "structs/structs_31.h"
 #include "structs/structs_3xx/struct_380.h"
 #include "structs/structs_40.h"
 #include "structs/structs_45.h"
 #include "structs/structs_5xx/struct_513.h"
-#include "structs_1x .h"
-#include "structs_1x.h"
-#include "structs_38x.h"
 
 #include <stddef.h>
 
@@ -213,10 +205,10 @@ void unk_draw_op_1040_c226(u32 param_1, HWND16 param_2, u16 param_3)
     i16           iStack40;
     RECT16       *pRStack38;
     HDC16         HStack36;
-    PAi16STRUCT16 local_22;
+    PAINTSTRUCT16 local_22;
 
     uVar2     = (param_1 >> 0x10);
-    HStack36  = BeginPai1616(param_2, &local_22);
+    HStack36  = BeginPaint16(param_2, &local_22);
     pRStack38 = (RECT16 *)CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, &local_32);
     uVar1      = (param_1 + 0x6);
@@ -235,7 +227,7 @@ void unk_draw_op_1040_c226(u32 param_1, HWND16 param_2, u16 param_3)
     draw_op_1040_c38e(param_1);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, handle_00);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_22);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_22);
     return;
 }
 
@@ -697,7 +689,7 @@ void draw_op_1040_9948(u16 param_1, u32 param_2, HWND16 param_3, RECT16 *param_4
     i16           iStack82;
     i16           iStack80;
     i16           iStack78;
-    PAi16STRUCT16 local_42;
+    PAINTSTRUCT16 local_42;
     u16           uStack34;
     u16           uStack32;
     HGDIOBJ16     HStack30;
@@ -723,7 +715,7 @@ void draw_op_1040_9948(u16 param_1, u32 param_2, HWND16 param_3, RECT16 *param_4
     iVar4    = (Struct71 *)param_2;
     uStack32 = iVar4->field_0x4 & 0x8;
     uStack34 = iVar4->field_0x56 & 0x1;
-    BeginPai1616(param_3, &local_42);
+    BeginPaint16(param_3, &local_42);
     mode = SetMapMode16((HDC16)s_tile2_bmp_1050_1538, 0x1);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, &local_12);
     iVar2    = (uStack14 >> 0x10);
@@ -848,7 +840,7 @@ void draw_op_1040_9948(u16 param_1, u32 param_2, HWND16 param_3, RECT16 *param_4
     SetMapMode16((HDC16)s_tile2_bmp_1050_1538, mode);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_42);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_42);
     return;
 }
 
@@ -869,10 +861,10 @@ void mixed_draw_op_1040_8a06(u32 param_1, HWND16 param_2, u16 param_3)
     u32           uVar5;
     HGDIOBJ16     HStack62;
     HDC16         local_24;
-    PAi16STRUCT16 local_22;
+    PAINTSTRUCT16 local_22;
 
     rect               = (RECT16 *)(param_1 >> 0x10);
-    local_24           = BeginPai1616(param_2, &local_22);
+    local_24           = BeginPaint16(param_2, &local_22);
     paVar3             = *(struct Struct13 **)(_PTR_LOOP_1050_4230 + 0xe);
     b_force_background = palette_op_1008_4e08(paVar3, &local_24, in_DX, 0x1008);
     uVar5              = pass1_1008_4d72(paVar3);
@@ -897,7 +889,7 @@ void mixed_draw_op_1040_8a06(u32 param_1, HWND16 param_2, u16 param_3)
     SetTextColor16((HDC16)s_tile2_bmp_1050_1538, color_00);
     SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, b_force_background);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_22);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_22);
     return;
 }
 
@@ -1324,7 +1316,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     i16           iStack68;
     Struct76   *paStack54;
     HDC16         local_2c;
-    PAi16STRUCT16 local_2a;
+    PAINTSTRUCT16 local_2a;
     RECT16        local_a[0x2];
 
     uVar7  = (param_1 >> 0x10);
@@ -1332,7 +1324,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     uVar21 = (iVar6 + 0x6);
     GetWindowRect16(param_2, local_a);
     uVar13             = (iVar6 + 0x6);
-    local_2c           = BeginPai1616((HWND16)s_tile2_bmp_1050_1538, &local_2a);
+    local_2c           = BeginPaint16((HWND16)s_tile2_bmp_1050_1538, &local_2a);
     uVar8              = 0x1008;
     b_force_background = palette_op_1008_4e08(*(struct Struct13 **)(_PTR_LOOP_1050_4230 + 0xe), &local_2c, in_DX, 0x1008);
     paStack54          = (Struct76 *)0x0;
@@ -1433,7 +1425,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, b_force_background);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_2a);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_2a);
     return;
 }
 
@@ -1581,12 +1573,12 @@ void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3)
     u16           uVar8;
     HGDIOBJ16     HStack62;
     HDC16         local_24;
-    PAi16STRUCT16 local_22;
+    PAINTSTRUCT16 local_22;
 
     rect               = (RECT16 *)(param_1 >> 0x10);
     iVar6              = param_1;
     uVar8              = (iVar6 + 0x6);
-    local_24           = BeginPai1616(param_2, &local_22);
+    local_24           = BeginPaint16(param_2, &local_22);
     paVar3             = *(struct Struct13 **)(_PTR_LOOP_1050_4230 + 0xe);
     b_force_background = palette_op_1008_4e08(paVar3, &local_24, in_DX, 0x1008);
     ppcVar4            = ((iVar6 + 0x8e) + 0x4);
@@ -1615,7 +1607,7 @@ void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3)
     SetTextColor16((HDC16)s_tile2_bmp_1050_1538, color_00);
     SelectPalette16((HDC16)s_tile2_bmp_1050_1538, 0x0, b_force_background);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_22);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_22);
     return;
 }
 

@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_WIN_OPS_WIN_OPS_3_H_
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_3_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 
 WPARAM16 win_msg_op_1008_9498(MSG *in_msg_1, MSG16 *in_msg_2);
 

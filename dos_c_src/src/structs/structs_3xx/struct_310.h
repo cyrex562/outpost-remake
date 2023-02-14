@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCT_310_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCT_310_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 
 typedef struct Struct310
 {

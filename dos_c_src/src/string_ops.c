@@ -3,7 +3,7 @@
 #include "addr_struct.h"
 #include "draw_ops/draw_ops_2.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "string_consts.h"
 #include "struct_385.h"
 #include "struct_ops/struct_ops_1.h"

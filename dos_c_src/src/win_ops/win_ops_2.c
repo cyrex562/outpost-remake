@@ -1791,7 +1791,7 @@ void  window_op_1020_76aa(Struct0 *param_1)
 {
     Struct666 *in_AX;
     u8          *in_DX;
-    u1632        uVar3;
+    u32        uVar3;
     i16          iVar1;
     i16          unaff_DI;
     u16          uVar2;
@@ -1807,7 +1807,7 @@ void  window_op_1020_76aa(Struct0 *param_1)
     {
         pass1_1020_7824(in_AX, in_DX, (iVar1 + 0x8), unaff_DI, unaff_SS);
         *(Struct666 **)(iVar1 + 0xee) = in_AX;
-        *(u1632 *)(iVar1 + 0xf0)        = uVar3;
+        *(u32 *)(iVar1 + 0xf0)        = uVar3;
         return;
     }
     (iVar1 + 0xee) = 0x0;

@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_WINAPI_H_
 #define OUTPOST_1_SRC_WINAPI_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "win_types.h"
 
 typedef u32 (*swi_0x21_fn_ptr)(u16);
@@ -101,8 +101,8 @@ i16 InitApp16(HINSTANCE16 h_instance);
 // BOOL16                      IsWindowEnabled16(HWND16 hwnd);
 // u16                       GetWindowText16(HWND16 hwnd, SEGPTR lp_string, u16 n_max_count);
 // BOOL16                      SetWindowText16(HWND16 hwnd, SEGPTR lp_string);
-// HDC16                       BeginPai1616(HWND16 hwnd, PAi16STRUCT16 *lps);
-// BOOL16                      EndPai1616(HWND16 hwnd, PAi16STRUCT16 *lps);
+// HDC16                       BeginPaint16(HWND16 hwnd, PAINTSTRUCT16 *lps);
+// BOOL16                      EndPaint16(HWND16 hwnd, PAINTSTRUCT16 *lps);
 // HWND16                      CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD style, u16 x, u16 y, u16 width, u16 height, HWND16 parent, HMENU16 hmenu, HINSTANCE16 instance, LPVOID data);
 // BOOL16                      ShowWindow16(HWND16 hwnd, u16 cmd);
 // BOOL16                      BringWindowToTop16(HWND16 hwnd);

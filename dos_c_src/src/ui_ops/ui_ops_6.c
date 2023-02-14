@@ -293,7 +293,7 @@ void win_ui_palette_op_1020_0cd2(u32 param_1, HWND16 param_2)
     HDC16       hdc;
     HDC16       b_force_background;
     HPALETTE16  b_force_background_00;
-    u1616       UVar6;
+    u16       UVar6;
     u16         extraout_DX;
     i16         iVar7;
     u16         uVar8;
@@ -517,7 +517,7 @@ Struct3 *pass1_1020_135e(Struct3 *param_1, u8 param_2, u16 param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_win_ui_op_1020_1418(Struct40 *param_1, u32 param_2, u1616 param_3)
+void unk_win_ui_op_1020_1418(Struct40 *param_1, u32 param_2, u16 param_3)
 
 {
     u32  uVar1;
@@ -953,7 +953,7 @@ Struct11 *pass1_1018_4ae0(Struct11 *param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-void unk_win_ui_op_1018_4f18(Struct39 *param_1, u1616 param_2, u32 param_3)
+void unk_win_ui_op_1018_4f18(Struct39 *param_1, u16 param_2, u32 param_3)
 
 {
     code      **ppcVar1;
@@ -1184,7 +1184,7 @@ void msg_box_op_1010_8bb4(u16 param_1, u16 param_2, u32 param_3, HINSTANCE16 par
     unk_str_op_1000_3d3e(CONCAT22(param_5, local_402), pcVar1);
     pass1_1000_3cea(CONCAT22(param_5, local_402), param_3);
     pcVar1 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
-    MessageBox16(0x1000, 0x1010, pcVar1, (u1616)(pcVar1 >> 0x10));
+    MessageBox16(0x1000, 0x1010, pcVar1, (u16)(pcVar1 >> 0x10));
     PostMessage16((HWND16)s_tile2_bmp_1050_1538, 0x0, 0x0, 0x11100ee);
     return;
 }
@@ -1279,17 +1279,17 @@ void show_window_1010_7ace(u32 param_1, u16 param_2)
 }
 
 
-u32 destroy_window_1010_7b26(u32 param_1, long param_2, u1616 param_3, u16 param_4)
+u32 destroy_window_1010_7b26(u32 param_1, long param_2, u16 param_3, u16 param_4)
 
 {
     u16   uVar1;
     u8   *puVar2;
     u16   extraout_DX;
     i16   iVar2;
-    u1616 uVar4;
+    u16 uVar4;
     u8    local_a[0x8];
 
-    uVar4 = (u1616)(param_1 >> 0x10);
+    uVar4 = (u16)(param_1 >> 0x10);
     iVar2 = param_1;
     uVar1 = *(iVar2 + 0x1e) | *(iVar2 + 0x1c);
     if(uVar1 != 0x0)

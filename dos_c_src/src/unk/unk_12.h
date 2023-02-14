@@ -6,7 +6,7 @@
 #define OUTPOST_1_SRC_UNK_UNK_12_H_
 
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 
 void  pass1_1010_1d80(u16 *param_1, u16 param_2);
 

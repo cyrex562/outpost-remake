@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_10_H_STRUCT_672_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_10_H_STRUCT_672_H_
 
-#include "outpost_int.h"
+#include "op_int.h"
 typedef struct Struct672 Struct672;
 struct Struct672
 {

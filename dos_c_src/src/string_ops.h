@@ -6,7 +6,7 @@
 #define OUTPOST_1_SRC_STRING_OPS_H_
 
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 
 void pass1_1000_2913(i16 param_1, u16 param_2, u16 param_3);
 

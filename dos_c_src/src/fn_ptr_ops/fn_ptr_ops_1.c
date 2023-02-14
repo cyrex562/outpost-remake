@@ -4,11 +4,7 @@
 #include "draw_ops/draw_ops_1.h"
 #include "fn_ptr_ops_6.h"
 #include "fn_ptr_ops_7.h"
-#include "outpost_int.h"
-#include "struct_18.h"
-#include "struct_31.h"
-#include "structs/structs_1.h"
-#include "structs/structs_11.h"
+#include "op_int.h"
 
 Struct18 *pass1_1040_d89e(Globals *globals, Struct18 *param_1, u8 param_2)
 
@@ -317,7 +313,7 @@ Struct18 * pass1_1038_ee48(Struct18 *param_1, u8 param_2)
     return param_1;
 }
 
-struct Struct31 * pass1_1040_0656(Struct31 *param_1, u8 param_2)
+Struct31 * pass1_1040_0656(Struct31 *param_1, u8 param_2)
 
 {
     destroy_win_1038_ef3a(param_1, &PTR_LOOP_1050_1038);
@@ -524,14 +520,14 @@ Struct18 * pass1_1038_a090(Struct18 *param_1, u8 param_2)
 }
 
 
-{
-    pass1_1038_a156(param_1);
-    if((param_2 & 0x1) != 0x0)
-    {
-        fn_ptr_1000_17ce(param_1, 0x1000);
-    }
-    return param_1;
-}
+//{
+//    pass1_1038_a156(param_1);
+//    if((param_2 & 0x1) != 0x0)
+//    {
+//        fn_ptr_1000_17ce(param_1, 0x1000);
+//    }
+//    return param_1;
+//}
 
 
 Struct18 * pass1_1038_a402(Struct18 *param_1, u8 param_2)

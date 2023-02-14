@@ -4,7 +4,7 @@
 
 #include "unk_17.h"
 
-#include "outpost_int.h"
+#include "op_int.h"
 #include "unk_2.h"
 void  pass1_1038_b6e0(u32 param_1, i16 param_2)
 

@@ -2,7 +2,7 @@
 
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
-#include "outpost_int.h"
+#include "op_int.h"
 #include "struct_18.h"
 #include "structs/structs_11.h"
 #include "win_ops/win_ops_1.h"

@@ -1,14 +1,13 @@
 
-#include "outpost_int.h"
-#include "structs/structs_16 .h"
-#include "structs_1x .h"
+#include "op_int.h"
+
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
 {
-    PAi16STRUCT16 local_22;
+    PAINTSTRUCT16 local_22;
 
-    BeginPai1616(param_1, &local_22);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_22);
+    BeginPaint16(param_1, &local_22);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_22);
     return;
 }
 
@@ -111,7 +110,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     u16           uStack66;
     u16           uStack64;
     u16           uStack62;
-    PAi16STRUCT16 local_3c;
+    PAINTSTRUCT16 local_3c;
     i16           local_1c;
     i16           iStack26;
     i16           iStack24;
@@ -126,7 +125,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     i16           iStack6;
     u16           uStack4;
 
-    HStack74 = BeginPai1616(param_3, &local_3c);
+    HStack74 = BeginPaint16(param_3, &local_3c);
     uStack4  = 0x0;
     HStack76 = CreatePen16((u16)s_tile2_bmp_1050_1538, (u16)_PTR_LOOP_1050_0368, (COLORREF)(_PTR_LOOP_1050_0368 >> 0x10));
     HStack78 = CreatePen16((u16)s_tile2_bmp_1050_1538, (u16)DAT_1050_0364, (COLORREF)(DAT_1050_0364 >> 0x10));
@@ -187,7 +186,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_3c);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_3c);
     return;
 }
 
@@ -240,13 +239,13 @@ void  fill_rect_1008_62c0(HWND16 param_1)
     RECT16        local_2e[0x2];
     RECT16       *pRStack38;
     HDC16         HStack36;
-    PAi16STRUCT16 local_22;
+    PAINTSTRUCT16 local_22;
 
-    HStack36  = BeginPai1616(param_1, &local_22);
+    HStack36  = BeginPaint16(param_1, &local_22);
     pRStack38 = (RECT16 *)CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, local_2e);
     FillRect16((HDC16)s_tile2_bmp_1050_1538, pRStack38, (HBRUSH16)local_2e);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_22);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_22);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     return;
 }
@@ -677,13 +676,13 @@ void  fill_rect_1008_39ac(HWND16 in_win_handle_1)
     RECT16        local_brush_handle[0x2];
     RECT16       *local_brush_handle_2;
     HDC16         HStack36;
-    PAi16STRUCT16 local_pai16_struct;
+    PAINTSTRUCT16 local_pai16_struct;
 
-    HStack36             = BeginPai1616(in_win_handle_1, &local_pai16_struct);
+    HStack36             = BeginPaint16(in_win_handle_1, &local_pai16_struct);
     local_brush_handle_2 = (RECT16 *)CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, local_brush_handle);
     FillRect16((HDC16)s_tile2_bmp_1050_1538, local_brush_handle_2, (HBRUSH16)local_brush_handle);
-    EndPai1616((HWND16)s_tile2_bmp_1050_1538, &local_pai16_struct);
+    EndPaint16((HWND16)s_tile2_bmp_1050_1538, &local_pai16_struct);
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
     return;
 }
