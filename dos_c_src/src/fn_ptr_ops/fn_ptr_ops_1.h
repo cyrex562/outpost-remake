@@ -138,4 +138,46 @@ Struct18 * pass1_1038_8850(Struct18 *param_1, u8 param_2);
 
 Struct18 * pass1_1038_64de(Struct18 *param_1, u8 param_2);
 
+void  pass1_1038_6912(u16 *param_1);
+
+void  pass1_1038_5a16(u16 param_1, u16 param_2, u32 param_3, u32 param_4);
+
+void  pass1_1038_5a96(u16 param_1, u16 param_2, u32 param_3, u32 param_4);
+
+void  pass1_1038_5b3c(u16 param_1, u16 param_2, u32 param_3, u32 param_4);
+
+void  pass1_1038_582c(u32 param_1, u32 param_2);
+
+void  pass1_1038_5860(u32 param_1, u16 param_2, u32 param_3, i16 param_4);
+
+void  pass1_1038_4918(u32 param_1, i16 param_2, u16 param_3, u16 param_4, u8 param_5);
+
+void  pass1_1038_3608(u32 param_1);
+
+void  pass1_1038_3efc(u16 param_1, u16 param_2, u32 param_3, u32 param_4, i16 param_5, u16 param_6);
+
+void  pass1_1038_3f38(u32 *param_1, u32 *param_2, u32 param_3, i16 param_4, u16 param_5);
+
+void  pass1_1038_3fca(u32 param_1, u16 param_2, u16 param_3);
+
+void  pass1_1038_42cc(u32 param_1, u16 param_2);
+
+void  pass1_1038_2306(u16 param_1, u16 param_2, u32 param_3);
+
+void  pass1_1038_24e8(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 param_5, u16 param_6);
+
+void  pass1_1038_26ee(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 param_5, u16 param_6);
+
+Struct18 * pass1_1038_29d2(Struct18 *param_1, u8 param_2);
+
+void  pass1_1038_2a5c(u16 *param_1);
+
+void  pass1_1038_2c82(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u32 param_5, u16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10)
+;
+
+
+
+
+
+
 #endif // OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_1_H_
