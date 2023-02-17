@@ -4,6 +4,7 @@
 #include "draw_ops/draw_ops_2.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "op_int.h"
+#include "op_winapi.h"
 #include "string_consts.h"
 #include "struct_385.h"
 #include "struct_ops/struct_ops_1.h"
@@ -11,7 +12,6 @@
 #include "structs_38x.h"
 #include "unk/unk_11.h"
 #include "utils.h"
-#include "winapi.h"
 
 #include <structs/structs_45.h>
 

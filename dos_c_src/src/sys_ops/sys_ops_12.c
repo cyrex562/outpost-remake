@@ -1,7 +1,7 @@
 #include "sys_ops_12.h"
 
 #include "op_int.h"
-#include "win_types.h"
+#include "op_win_def.h"
 
 void pass1_1000_27d6(u16 *param_1)
 

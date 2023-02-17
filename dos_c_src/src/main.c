@@ -6,6 +6,8 @@
 #include "fn_ptr_defs.h"
 #include "globals.h"
 #include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
 #include "string_consts.h"
 #include "string_ops.h"
 #include "sys_ops/sys_ops_11.h"
@@ -13,8 +15,6 @@
 #include "unk/unk_16.h"
 #include "utils.h"
 #include "win_ops/win_ops_3.h"
-#include "win_types.h"
-#include "winapi.h"
 
 #include <fn_ptr_ops/fn_ptr_ops_6.h>
 #include <struct_ops/struct_ops_5.h>

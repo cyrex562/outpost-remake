@@ -1,3 +1,400 @@
+//
+// Created by cyrex on 2/3/23.
+//
+
+#ifndef OUTPOST_1_SRC_OP_WIN_DEF_H_
+#define OUTPOST_1_SRC_OP_WIN_DEF_H_
+
+#include "op_int.h"
+#include "structs/structs_6xx/struct_656.h"
+#include "structs/structs_6xx/struct_657.h"
+
+
+typedef char *cstring;
+
+typedef u8 BYTE;
+
+typedef u16 HANDLE16;
+
+typedef HANDLE16 HCURSOR16;
+
+typedef struct PALETTEENTRY PALETTEENTRY, *PPALETTEENTRY;
+
+struct PALETTEENTRY
+{
+    BYTE pe_red;
+    BYTE pe_green;
+    BYTE pe_blue;
+    BYTE pe_flags;
+};
+
+typedef HANDLE16 HBRUSH16;
+
+typedef HANDLE16 HMENU16;
+
+typedef u16 WPARAM16;
+
+typedef HANDLE16 HWND16;
+
+typedef HANDLE16 HMODULE16;
+
+typedef HANDLE16 HACCEL16;
+
+typedef struct WINDOWPLACEMENT16 WINDOWPLACEMENT16, *PWINDOWPLACEMENT16;
+
+typedef struct POINT POINT, *PPOINT;
+
+typedef struct RECT16 RECT16, *PRECT16;
+
+struct RECT16
+{
+    i16 x;
+    i16 y;
+};
+
+struct POINT
+{
+    i16 x;
+    i16 y;
+};
+
+struct WINDOWPLACEMENT16
+{
+    u16           length;
+    u16           flags;
+    u16           show_cmd;
+    struct POINT  pt_min_position;
+    struct POINT  pt_max_position;
+    struct RECT16 rc_normal_position;
+};
+
+typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
+
+typedef void *LPVOID;
+
+typedef const void* LPCVOID;
+
+typedef HANDLE16 HICON16;
+
+typedef u32 SEGPTR;
+
+struct WNDCLASS16
+{
+    u16       style;
+    LPVOID    lpfn_wnd_proc;
+    i16       cb_cls_extra;
+    i16       cb_wnd_extra;
+    HANDLE16  h_instance;
+    HICON16   h_icon;
+    HCURSOR16 h_cursor;
+    HBRUSH16  hbr_background;
+    SEGPTR    lpsz_menu_name;
+    SEGPTR    lpsz_class_name;
+};
+
+typedef struct TwoWords TwoWords, *PTwoWords;
+
+struct TwoWords
+{
+    u16 a_0x0;
+    u16 b_0x2;
+};
+
+typedef u32 COLORREF;
+
+typedef HANDLE16 HDC16;
+
+typedef HANDLE16 HFILE16;
+
+typedef HANDLE16 HGLOBAL16;
+
+typedef HANDLE16 HPEN16;
+
+typedef u16 BOOL16;
+
+#define false 0
+#define true 1
+
+typedef HANDLE16 HGDIOBJ16;
+
+typedef struct LOGPALETTE LOGPALETTE, *PLOGPALETTE;
+
+typedef u16 WORD;
+
+struct LOGPALETTE
+{
+    WORD pal_version;
+    WORD pal_num_entries;
+};
+
+typedef struct MSG16 MSG16, *PMSG16;
+
+typedef long LONG_PTR;
+
+typedef LONG_PTR LPARAM;
+
+typedef u32 DWORD;
+
+struct MSG16
+{
+    HWND16       hwnd;
+    u16          message;
+    WPARAM16     wparam;
+    LPARAM       lparam;
+    DWORD        time;
+    struct POINT pt;
+};
+
+typedef struct BITMAPINFOHEADER BITMAPINFOHEADER, *PBITMAPINFOHEADER;
+
+typedef long LONG;
+
+struct BITMAPINFOHEADER
+{
+    DWORD bi_size;
+    LONG  bi_width;
+    LONG  bi_height;
+    WORD  bi_planes;
+    WORD  bi_bit_count;
+    DWORD bi_compression;
+    DWORD bi_size_image;
+    LONG  bi_x_pels_per_meter;
+    LONG  bi_y_pels_per_meter;
+    DWORD bi_clr_used;
+    DWORD bi_clr_important;
+};
+
+typedef HANDLE16 HINSTANCE16;
+
+typedef struct PAINTSTRUCT16 PAINTSTRUCT16, *PPAINTSTRUCT16;
+
+struct PAINTSTRUCT16
+{
+    HDC16         hdc;
+    BOOL16        f_erase;
+    struct RECT16 rc_pai16;
+    BOOL16        f_restore;
+    BOOL16        f_inc_update;
+    BYTE          rgb_reserved[16];
+};
+
+typedef struct BITMAPINFO BITMAPINFO, *PBITMAPINFO;
+
+typedef struct tagRGBQUAD tagRGBQUAD, *PtagRGBQUAD;
+
+typedef struct tagRGBQUAD RGBQUAD;
+
+struct tagRGBQUAD
+{
+    BYTE rgbBlue;
+    BYTE rgbGreen;
+    BYTE rgbRed;
+    BYTE rgbReserved;
+};
+
+struct BITMAPINFO
+{
+    BITMAPINFOHEADER bim_header;
+    RGBQUAD          bmi_colors;
+};
+
+
+typedef HANDLE16 HTASK16;
+
+typedef HANDLE16 HPALETTE16;
+
+typedef HANDLE16 HRSRC16;
+
+
+// WARNING! conflicting data type names: /RGBQUAD - /wingdi.h/RGBQUAD
+
+typedef struct tagMSG tagMSG, *PtagMSG;
+
+typedef struct tagMSG MSG;
+
+typedef struct HWND__ HWND__, *PHWND__;
+
+typedef struct HWND__ *HWND;
+
+typedef u16 u16_PTR;
+
+typedef u16_PTR WPARAM;
+
+typedef struct tagPOINT tagPOINT, *PtagPOINT;
+
+// typedef struct tagPOINT POINT;
+
+struct tagPOINT
+{
+    LONG x;
+    LONG y;
+};
+
+struct tagMSG
+{
+    HWND   hwnd;
+    u16    message;
+    WPARAM wParam;
+    LPARAM lParam;
+    DWORD  time;
+    POINT  pt;
+};
+
+struct HWND__
+{
+    i16 unused;
+};
+
+typedef struct _devicemodeA _devicemodeA, *P_devicemodeA;
+
+typedef struct _devicemodeA DEVMODEA;
+
+
+typedef struct _POINTL _POINTL;
+
+struct _POINTL
+{
+    LONG x;
+    LONG y;
+};
+
+struct CONTEXT
+{
+};
+
+typedef struct POINT16 POINT16;
+
+struct POINT16
+{
+    i16 x;
+    i16 y;
+};
+
+
+typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAPINFOHEADER  *PtagBITMAPINFOHEADER;typedef struct tagBITMAPINFOHEADER{
+        u32      biSize;
+        long       biWidth;
+        long       biHeight;
+        u16       biPlanes;
+        u16       biBitCount;
+        u32      biCompression;
+        u32      biSizeImage;
+        long       biXPelsPerMeter;
+        long       biYPelsPerMeter;
+        u32      biClrUsed;
+        u32      biClrImportant;
+} BITMAPINFOHEADER, FARtypedef struct _CONTEXT _CONTEXT ;typedef struct _CONTEXT  *P_CONTEXT;typedef struct _CONTEXT CONTEXT;typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA ;typedef struct _FLOATING_SAVE_AREA  *P_FLOATING_SAVE_AREA;typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;struct _devicemodeA
+{
+    u8             dmDeviceName[32];
+    u16             dmSpecVersion;
+    u16             dmDriverVersion;
+    u16             dmSize;
+    u16             dmDriverExtra;
+    u32            dmFields;
+    union Union655 field_0x2c;
+    short            dmColor;
+    short            dmDuplex;
+    short            dmYResolution;
+    short            dmTTOption;
+    short            dmCollate;
+    u8             dmFormName[32];
+    u16             dmLogPixels;
+    u32            dmBitsPerPel;
+    u32            dmPelsWidth;
+    u32            dmPelsHeight;
+    union Union658 field_0x74;
+    u32            dmDisplayFrequency;
+    u32            dmICMMethod;
+    u32            dmICMi16ent;
+    u32            dmMediaType;
+    u32            dmDitherType;
+    u32            dmReserved1;
+    u32            dmReserved2;
+    u32            dmPanningWidth;
+    u32            dmPanningHeight;
+};
+
+struct tagBITMAPINFOHEADER
+{
+    u32 biSize;
+    long  biWidth;
+    long  biHeight;
+    u16  biPlanes;
+    u16  biBitCount;
+    u32 biCompression;
+    u32 biSizeImage;
+    long  biXPelsPerMeter;
+    long  biYPelsPerMeter;
+    u32 biClrUsed;
+    u32 biClrImportant;
+};
+
+struct _FLOATING_SAVE_AREA
+{
+    u32 ControlWord;
+    u32 StatusWord;
+    u32 TagWord;
+    u32 ErrorOffset;
+    u32 ErrorSelector;
+    u32 DataOffset;
+    u32 DataSelector;
+    u8  RegisterArea[80];
+    u32 Cr0NpxState;
+};
+
+struct _CONTEXT
+{
+    u32              ContextFlags;
+    u32              Dr0;
+    u32              Dr1;
+    u32              Dr2;
+    u32              Dr3;
+    u32              Dr6;
+    u32              Dr7;
+    FLOATING_SAVE_AREA FloatSave;
+    u32              SegGs;
+    u32              SegFs;
+    u32              SegEs;
+    u32              SegDs;
+    u32              Edi;
+    u32              Esi;
+    u32              Ebx;
+    u32              Edx;
+    u32              Ecx;
+    u32              Eax;
+    u32              Ebp;
+    u32              Eip;
+    u32              SegCs;
+    u32              EFlags;
+    u32              Esp;
+    u32              SegSs;
+    u8               ExtendedRegisters[512];
+};
+
+typedef union Union655 Union655;
+
+union Union655
+{
+    Struct656 field0;
+    Struct657 field1;
+};
+
+typedef union Union658 Union658;
+
+union Union658
+{
+    DWORD dmDisplayFlags;
+    DWORD dmNup;
+};
+
+typedef u16 ATOM;
+
+typedef u32 LRESULT;
+
+typedef const char* LPCSTR;
+
+#endif // OUTPOST_1_SRC_OP_WIN_DEF_H_
+
 
 // BOOL DeleteFileA(LPCSTR lpFileName)
 //

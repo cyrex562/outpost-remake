@@ -1,12 +1,9 @@
 #include "op_int.h"
 #include "structs_1.h"
 #include "unk_10.h"
+#include "unk_1.h"
 
-typedef struct struct_1040_d76e_1 {
-  u16 field_0x94;
-  u16 *field_0x98;
-  u16 field_0x9c;
-} struct_1040_d76e_1;
+
 
 void  pass1_1040_d76e(struct_1040_d76e_1 *param_1)
 
