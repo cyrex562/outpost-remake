@@ -2,10 +2,13 @@
 // Created by cyrex on 2/22/2022.
 //
 
+#ifndef _OP_WINAPI_H_
+#define _OP_WINAPI_H_
+
 #include "op_int.h"
 #include "op_win_def.h"
 
-void InitTask16(struct CONTEXT *context);
+void InitTask16(CONTEXT *context);
 
 
 HGLOBAL16 LockSegment16(HGLOBAL16 handle);
@@ -14,10 +17,10 @@ HGLOBAL16 LockSegment16(HGLOBAL16 handle);
 DWORD GetVersion16(void);
 
 
-u16 swi(u8 opcode);
+void* swi(u8 opcode);
 
 
-u16 swi_0x21_fn_ptr swi_0x21();
+//u16 swi_0x21_fn_ptr swi_0x21();
 
 
 BOOL16 WaitEvent16(HTASK16 h_task);
@@ -40,22 +43,14 @@ u16 LoadString16(HINSTANCE16 instance, u16 resource_id, cstring buffer, u16 buf_
 
 
 // HGLOBAL16                   GLobalAlloc16(u16 flags, DWORD size);
-HGLOBAL16  GlobalAlloc16(u16 flags, DWORD size) {
-    // TODO: implement
-    return 0;
-}
+HGLOBAL16  GlobalAlloc16(u16 flags, DWORD size);
 
 // HGLOBAL16                   GlobalReAlloc16(HGLOBAL16 handle, DWORD size, u16 flags);
-HGLOBAL16 GlobalRealloc16(HGLOBAL16 handle, DWORD size, u16 flags) {
-    // TODO: implement
-    return 0;
-}
+HGLOBAL16 GlobalRealloc16(HGLOBAL16 handle, DWORD size, u16 flags);
 
 // HGLOBAL16                   GlobalFree16(HGLOBAL16 handle);
-HGLOBAL16 GlobalFree16(HGLOBAL16 handle) {
-    // TODO: implement
-    return 0;
-}
+HGLOBAL16 GlobalFree16(HGLOBAL16 handle);
+
 // SEGPTR                      WIN16_GlobalLock16(HGLOBAL16 handle);
 SEGPTR WIN16_GlobalLock16(HGLOBAL16 handle);
 
@@ -156,9 +151,7 @@ HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, u16 n_cmd_show);
 
 
 // void                        __WINFLAGS(void);
-void __WINFLAGS() {
-    // TODO: implement
-}
+void __WINFLAGS();
 
 // DWORD                       GlobalDOSAlloc16(DWORD size);
 DWORD GlobalDOSAlloc16(DWORD size);
@@ -762,3 +755,8 @@ BOOL16 GetOpenFileName16(SEGPTR ofn);
 
 // BOOL16                      GetSaveFileName16(SEGPTR ofn);
 BOOL16 GetSaveFileName156(SEGPTR ofn);
+
+
+SEGPTR SegmentLimit(SEGPTR in_val);
+
+#endif

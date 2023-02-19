@@ -28,3 +28,13 @@ u32 CONCAT12(u8 a, u16 b) {
 u32 SUB42(u32 a, u32 b) {
     return a - b;
 }
+
+u32 SBORROW2(u16 a, u16 b)
+{
+    return 0;
+}
+
+u32 CARRY2(u16 a, u16 b)
+{
+    return 0;
+}

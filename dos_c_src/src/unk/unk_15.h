@@ -5,8 +5,12 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_15_H_
 #define OUTPOST_1_SRC_UNK_UNK_15_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "structs/structs_0xx/structs_x.h"
 
-char *pass1_1000_472c(u32 param_1, char param_2);
+char *pass1_1000_472c(u32 param_1, u8 param_2);
 
 
 
@@ -49,9 +53,7 @@ u16 pass1_1000_49c6(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 para
 void pass1_1000_4ceb(u16 param_1, i16 param_2, i16 param_3, u16 param_4);
 
 
-
-
-void pass1_1000_4d0c(u16 param_1);
+void set_globals_1000_4d0c(Globals *globals, u16 param_1);
 
 
 
@@ -113,14 +115,10 @@ u16 pass1_1000_41e0(i16 param_1);
 i16 pass1_1000_422a(i16 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
+void pass1_1000_43f0(Globals *globals, u16 param_1, u16 param_2);
 
 
-void pass1_1000_43f0(u16 param_1, u16 param_2);
-
-
-
-
-void pass1_1000_440c(u16 param_1);
+void pass1_1000_440c(struct Globals *globals, unsigned short param_1);
 
 
 
@@ -128,9 +126,16 @@ void pass1_1000_440c(u16 param_1);
 u16 pass1_1000_455a(u32 param_1, u16 param_2);
 
 
-
-
-i16 pass1_1000_462e(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, i16 param_7, u16 param_8, u16 param_9);
+i16 pass1_1000_462e(Globals *globals,
+                    u16      param_1,
+                    i16      param_2,
+                    u16      param_3,
+                    u16      param_4,
+                    u16      param_5,
+                    i16      param_6,
+                    i16      param_7,
+                    u16      param_8,
+                    u16      param_9);
 
 
 

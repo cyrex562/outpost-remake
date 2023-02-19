@@ -5,9 +5,12 @@
 #include "op_winapi.h"
 
 #include "op_int.h"
-#include "windows_shim.h"
+#include "op_win_def.h"
 
-void InitTask16(struct CONTEXT *context)
+#include <stdarg.h>
+#include <stdbool.h>
+
+void InitTask16(CONTEXT *context)
 {
     // TODO: implement
 }
@@ -24,18 +27,18 @@ DWORD GetVersion16(void)
     return 0;
 }
 
-u16 swi(u8 opcode)
+void* swi(u8 opcode)
 {
     // TODO: implement
     return 0;
 }
 
-u16 swi_0x21_fn_ptr swi_0x21()
-{
-    // TODO: implement
-    swi_0x21_fn_ptr result = NULL;
-    return result;
-}
+//u16 swi_0x21_fn_ptr swi_0x21()
+//{
+//    // TODO: implement
+//    swi_0x21_fn_ptr result = NULL;
+//    return result;
+//}
 
 BOOL16 WaitEvent16(HTASK16 h_task)
 {
@@ -1253,4 +1256,9 @@ BOOL16 GetSaveFileName156(SEGPTR ofn)
 {
     // TODO: implement
     return false;
+}
+
+SEGPTR SegmentLimit(SEGPTR in_val)
+{
+    return 0;
 }

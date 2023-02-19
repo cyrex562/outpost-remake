@@ -3,11 +3,11 @@ void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
 
 {
     i16 iVar1;
-    u16 uVar2;
+    u16 u_var2;
     u16 unaff_SS;
 
     mciSendCommand16(param_3, 0x0, 0x0, 0x8040000);
-    uVar2 = (param_1 >> 0x10);
+    u_var2 = (param_1 >> 0x10);
     iVar1 = param_1;
     if(((iVar1 + 0xa) == 0x0) || ((iVar1 + 0xa) != param_2))
     {
@@ -19,7 +19,7 @@ void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
         (iVar1 + 0x10) = 0x0;
         iVar1          = 0x10;
     }
-    pass1_1010_1f62(unaff_SS, param_1 & 0xffff | uVar2 << 0x10, iVar1);
+    pass1_1010_1f62(unaff_SS, param_1 & 0xffff | u_var2 << 0x10, iVar1);
     return;
 }
 
@@ -43,7 +43,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
     u32 uStack14;
     u16        uStack10;
     u16        uStack8;
-    u16        uStack6;
+    u16        u_stack6;
 
     local_1e = 0x0;
     uStack22 = 0x28c;
@@ -52,7 +52,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
     uStack14 = 0x0;
     uStack10 = 0x0;
     uStack8  = 0x4000;
-    uStack6  = param_2;
+    u_stack6  = param_2;
     DVar1    = mciSendCommand16(param_3, &local_1e, CONCAT22(0x200, param_4), 0x8030003);
     uStack32 = (DVar1 >> 0x10);
     uStack34 = DVar1;

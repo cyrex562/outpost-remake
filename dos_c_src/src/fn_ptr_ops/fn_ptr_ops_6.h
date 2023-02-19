@@ -503,19 +503,15 @@ u16 *pass1_1008_04d2(u16 *param_1, u8 param_2);
 u16 *pass1_1008_04f8(u16 *param_1, u8 param_2, u16 param_3);
 
 
+void fn_ptr_op_1000_24cd(Globals *globals, u16 param_1, i16 param_2);
 
 
-void fn_ptr_op_1000_24cd(u16 param_1, i16 param_2);
-
-
-
-
-void pass1_1000_24db(u16 param_1, u16 param_2, Globals *globals);
+void pass1_1000_24db(Globals *globals, u16 param_1, u16 param_2);
 
 
 
 
-void fn_ptr_op_1000_2594(fn_ptr_1 *param_1, fn_ptr_1 *param_2);
+void fn_ptr_op_1000_2594(FnPtr1 *param_1, FnPtr1 *param_2);
 
 
 

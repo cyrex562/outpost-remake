@@ -5,6 +5,9 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_10_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_10_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "structs/structs_0xx/struct_76.h"
 
 void  pass1_1008_cbc4(u32 param_1, u32 param_2, u16 param_3);
 
@@ -193,9 +196,7 @@ u32  pass1_1008_0932(void);
 u16 dos3_call_1000_51aa(u16 param_1);
 
 
-
-
-i16 *pass1_1000_55b1(i16 param_1, u16 param_2, u16 param_3);
+i16 *pass1_1000_55b1(Globals *globals, i16 param_1, u16 param_2, u16 param_3);
 
 
 

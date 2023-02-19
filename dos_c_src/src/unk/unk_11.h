@@ -370,7 +370,7 @@ void  pass1_1018_169e(u32 param_1, u32 param_2, u16 param_3);
 
 
 
-// WARNING: Unable to use type for symbol uVar2
+// WARNING: Unable to use type for symbol u_var2
 
 void  pass1_1018_16b8(u32 param_1, u16 param_2, u32 param_3, u16 param_4);
 

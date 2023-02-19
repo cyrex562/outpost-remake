@@ -10,7 +10,7 @@ u16*  mixed_1010_20ba(u32 param_1,u16 param_2,u16 param_3,u8 *param_4,int param_
 
 {
   fn_ptr_1 **ppcVar1;
-  u16 uVar2;
+  u16 u_var2;
   u8 *puVar3;
   u8 *extraout_DX;
   Struct636 *paVar4;
@@ -21,15 +21,15 @@ u16*  mixed_1010_20ba(u32 param_1,u16 param_2,u16 param_3,u8 *param_4,int param_
   u16 *puVar9;
   u32 uVar10;
   u32 uVar11;
-  u16 *puStack6;
+  u16 *pu_stack6;
   
   pass1_1010_2816(param_1);
   paVar4 = (Struct636 *)(param_2 * 4);
   uVar6 = (u16)(param_1 >> 0x10);
   iVar5 = (int)param_1;
-  puStack6 = *(u16 **)((int)&paVar4->field_0x0 + iVar5);
-  if (puStack6 != (u16 *)0x0) {
-    return puStack6;
+  pu_stack6 = *(u16 **)((int)&paVar4->field_0x0 + iVar5);
+  if (pu_stack6 != (u16 *)0x0) {
+    return pu_stack6;
   }
   if (false) goto switchD_1010:2765_caseD_38;
   switch(param_2) {
@@ -214,7 +214,7 @@ LAB_1010_2126:
     paVar4 = (Struct636 *)puVar8;
     break;
   case 0x31:
-    uVar2 = 0x60;
+    u_var2 = 0x60;
     uVar7 = 0x1000;
     mem_op_1000_179c(0x60,param_4,0x1000);
     if ((u8 *)((uint)param_4 | (uint)paVar4) == (u8 *)0x0) {
@@ -240,13 +240,13 @@ LAB_1010_2680:
     mem_op_1000_179c(0x72,param_4,0x1000);
     if (((uint)param_4 | (uint)paVar4) == 0) {
 LAB_1010_25b8:
-      uVar2 = 0;
+      u_var2 = 0;
       uVar7 = 0;
     }
     else {
       uVar10 = pass1_1010_195e((Struct79 *)paVar4,(Struct79 *)param_4,param_2);
       uVar7 = (u16)((u32)uVar10 >> 0x10);
-      uVar2 = (u16)uVar10;
+      u_var2 = (u16)uVar10;
     }
     goto LAB_1010_25bb;
   case 0x34:
@@ -255,10 +255,10 @@ LAB_1010_25b8:
     uVar11 = pass1_1010_1b6e((Struct79 *)paVar4,(Struct79 *)param_4,param_2,param_3,
                              (u8 *)((uint)param_4 | (uint)paVar4));
     uVar7 = (u16)(uVar11 >> 0x10);
-    uVar2 = (u16)uVar11;
+    u_var2 = (u16)uVar11;
 LAB_1010_25bb:
-    puStack6 = (u16 *)CONCAT22(uVar7,uVar2);
-    pass1_1010_1146(CONCAT22(uVar7,uVar2),0,param_5,param_3);
+    pu_stack6 = (u16 *)CONCAT22(uVar7,u_var2);
+    pass1_1010_1146(CONCAT22(uVar7,u_var2),0,param_5,param_3);
     goto switchD_1010:2765_caseD_38;
   case 0x35:
     mem_op_1000_179c(0x14a,param_4,0x1000);
@@ -332,7 +332,7 @@ LAB_1010_25bb:
     pass1_1008_af94((Struct643 *)paVar4,(u16)param_4,param_2);
     break;
   case 0x41:
-    uVar2 = 0x60;
+    u_var2 = 0x60;
     mem_op_1000_179c(0x60,param_4,0x1000);
     if (((uint)param_4 | (uint)paVar4) == 0) goto LAB_1010_2680;
     uVar7 = 0x1008;
@@ -342,7 +342,7 @@ LAB_1010_2683:
     *(Struct636 **)(param_2 * 4 + iVar5) = paVar4;
     *(u8 **)(param_2 * 4 + iVar5 + 2) = puVar3;
     ppcVar1 = (fn_ptr_1 **)((int)*(u32 *)paVar4 + 0x10);
-    (**ppcVar1)(uVar7,paVar4,puVar3,uVar2);
+    (**ppcVar1)(uVar7,paVar4,puVar3,u_var2);
     break;
   case 0x42:
     mem_op_1000_179c(0xc,param_4,0x1000);
@@ -384,8 +384,8 @@ LAB_1010_2683:
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
     unk_draw_op_1008_da12((Struct19 *)paVar4,(u16)param_4,param_2);
   }
-  puStack6 = (u16 *)CONCAT22(puVar3,paVar4);
+  pu_stack6 = (u16 *)CONCAT22(puVar3,paVar4);
 switchD_1010:2765_caseD_38:
-  *(u16 **)(param_2 * 4 + iVar5) = puStack6;
-  return puStack6;
+  *(u16 **)(param_2 * 4 + iVar5) = pu_stack6;
+  return pu_stack6;
 }

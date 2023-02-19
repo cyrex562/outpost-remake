@@ -881,7 +881,36 @@ struct Globals
     int  PTR_LOOP_1050_4e30;
     u32   _PTR_LOOP_1050_14cc;
     u32 _PTR_LOOP_1050_4230;
-
+    u32 s_OpWnd__getKid__Unknown_target_mo_1050_01a3;
+    u16   PTR_LOOP_1050_5f6a;
+    u16   PTR_LOOP_1050_5f6c;
+    int   PTR_LOOP_1050_6202;
+    void **PTR_LOOP_1050_6200;
+    u8    *s__C_FILE_INFO__1050_5f5c;
+    int    PTR_LOOP_1050_61ec;
+    u16  **PTR_LOOP_1050_5fbe;
+    u16   *PTR_LOOP_1050_5fc0;
+    u16    uRam100029ed;
+    u8    *PTR_LOOP_1050_6066;
+    int    DAT_1050_61d2;
+    i16    DAT_1050_61ce;
+    int    PTR_LOOP_1050_68b4;
+    u16    PTR_LOOP_1050_61d0;
+    u32    _DAT_1050_61ce;
+    int    PTR_USHORT_1050_1050_1050_61de;
+    u16    PTR_PTR_DAT_1050_5350_1050_61d4_1050_61dc;
+    int   *_PTR_PTR_1050_61e0;
+    u16    DAT_1050_61e8;
+    int    PTR_LOOP_1050_61ea;
+    int    PTR_LOOP_1050_5f22;
+    int    PTR_LOOP_1050_5f1e;
+    int    PTR_LOOP_1050_5f20;
+    int     PTR_LOOP_1050_0002;
+    int     PTR_PTR_1050_5f1a;
+    int    PTR_LOOP_1050_5f1c;
+    int     PTR_PTR_1050_1f7e;
+    char* s_ABNORMAL_PROGRAM_TERMINATION_1050_6544;
+    id      PTR_LOOP_1050_5f26;
 };
 
 typedef struct Globals Globals;

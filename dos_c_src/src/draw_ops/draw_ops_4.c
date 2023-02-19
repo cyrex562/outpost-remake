@@ -106,10 +106,10 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     HDC16         HStack74;
     u16           uStack72;
     u16           uStack70;
-    u16           uStack68;
-    u16           uStack66;
-    u16           uStack64;
-    u16           uStack62;
+    u16           u_stack68;
+    u16           u_stack66;
+    u16           u_stack64;
+    u16           u_stack62;
     PAINTSTRUCT16 local_3c;
     i16           local_1c;
     i16           iStack26;
@@ -131,10 +131,10 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     HStack78 = CreatePen16((u16)s_tile2_bmp_1050_1538, (u16)DAT_1050_0364, (COLORREF)(DAT_1050_0364 >> 0x10));
     HStack80 = CreateSolidBrush16((COLORREF)s_tile2_bmp_1050_1538);
     GetClientRect16((HWND16)s_tile2_bmp_1050_1538, &local_58);
-    uStack62 = uStack84;
-    uStack64 = uStack82;
-    uStack66 = uStack84 >> 0x1;
-    uStack68 = uStack82 >> 0x1;
+    u_stack62 = uStack84;
+    u_stack64 = uStack82;
+    u_stack66 = uStack84 >> 0x1;
+    u_stack68 = uStack82 >> 0x1;
     uStack70 = uStack84 >> 0x2;
     uStack72 = uStack82 >> 0x2;
     HVar1    = GetStockObject16((u16)s_tile2_bmp_1050_1538);
@@ -142,14 +142,14 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     HVar2    = GetStockObject16((u16)s_tile2_bmp_1050_1538);
     HVar2    = SelectObject16((HDC16)s_tile2_bmp_1050_1538, HVar2);
     Rectangle16((HDC16)s_tile2_bmp_1050_1538, uStack82, uStack84, local_58.y, local_58.x);
-    MoveTo16((HDC16)s_tile2_bmp_1050_1538, uStack68, 0x0);
-    LineTo16((HDC16)s_tile2_bmp_1050_1538, uStack68, uStack62);
+    MoveTo16((HDC16)s_tile2_bmp_1050_1538, u_stack68, 0x0);
+    LineTo16((HDC16)s_tile2_bmp_1050_1538, u_stack68, u_stack62);
     uVar3 = (param_2 >> 0x10);
     if((*(u8 *)(param_2 + 0x4) & 0x4) != 0x0)
     {
         uStack4 = 0x1;
     }
-    local_10 = uStack66 + uStack4;
+    local_10 = u_stack66 + uStack4;
     iStack14 = uStack72 + uStack4 + -0x2;
     iStack12 = local_10 + -0x3;
     iStack10 = uStack72 + uStack4 + 0x1;
@@ -158,13 +158,13 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HStack76);
     if(uStack4 == 0x0)
     {
-        MoveTo16((HDC16)s_tile2_bmp_1050_1538, uStack68 - 0x2, 0x1);
+        MoveTo16((HDC16)s_tile2_bmp_1050_1538, u_stack68 - 0x2, 0x1);
         LineTo16((HDC16)s_tile2_bmp_1050_1538, 0x1, 0x1);
-        LineTo16((HDC16)s_tile2_bmp_1050_1538, 0x1, uStack62 - 0x1);
+        LineTo16((HDC16)s_tile2_bmp_1050_1538, 0x1, u_stack62 - 0x1);
     }
     uStack4  = ((*(u8 *)(param_2 + 0x4) & 0x8) != 0x0);
-    local_1c = uStack66 + uStack4;
-    iStack22 = (uStack64 - uStack72) + uStack4;
+    local_1c = u_stack66 + uStack4;
+    iStack22 = (u_stack64 - uStack72) + uStack4;
     iStack26 = iStack22 + 0x1;
     iStack24 = local_1c + -0x3;
     iStack22 = iStack22 + -0x2;
@@ -173,9 +173,9 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     if(uStack4 == 0x0)
     {
         MoveTo16((HDC16)s_tile2_bmp_1050_1538, uStack82 - 0x2, 0x1);
-        x = uStack68 + 0x1;
+        x = u_stack68 + 0x1;
         LineTo16((HDC16)s_tile2_bmp_1050_1538, x, 0x1);
-        LineTo16((HDC16)s_tile2_bmp_1050_1538, x, uStack62 - 0x1);
+        LineTo16((HDC16)s_tile2_bmp_1050_1538, x, u_stack62 - 0x1);
     }
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HStack78);
     SelectObject16((HDC16)s_tile2_bmp_1050_1538, HStack80);
@@ -267,8 +267,8 @@ HPALETTE16  palette_op_1008_4e08(struct Struct13 *param_1, BOOL16 param_2, u16 p
 void  create_palette_1008_4e38(struct Struct13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
 
 {
-    i16        *piVar1;
-    u16        *puVar2;
+    i16        *pi_var1;
+    u16        *pu_var2;
     u16         uVar4;
     struct Struct13 *local_struct_1;
     i16         iVar5;
@@ -293,14 +293,14 @@ void  create_palette_1008_4e38(struct Struct13 *in_struct_1, LOGPALETTE *in_log_
         *local_struct_1->field_0xe         = 0x300;
         uVar3                              = local_struct_1->field_0xe;
         (uVar3 + 0x2)                      = local_struct_1->field_0xc;
-        puVar2                             = local_struct_1->field_0xe;
-        puStack8                           = (puVar2 & 0xffff0000 | (puVar2 + 0x4));
+        pu_var2                             = local_struct_1->field_0xe;
+        puStack8                           = (pu_var2 & 0xffff0000 | (pu_var2 + 0x4));
         puStack12                          = local_struct_1->field_0x4;
         iStack14                           = 0x0;
         while(true)
         {
-            piVar1 = &local_struct_1->field_0xc;
-            if(*piVar1 == iStack14 || *piVar1 < iStack14)
+            pi_var1 = &local_struct_1->field_0xc;
+            if(*pi_var1 == iStack14 || *pi_var1 < iStack14)
                 break;
             uVar9          = (puStack12 >> 0x10);
             iVar5          = puStack12;
@@ -330,7 +330,7 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     COLORREF    color;
     COLORREF    color_00;
     u16         x;
-    u16         uVar2;
+    u16         u_var2;
     LPCSTR      output;
     i16         iVar3;
     u16         uVar4;
@@ -351,9 +351,9 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     *param_1        = s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x9;
     (iVar3 + 0x2)   = 0x1008;
     paVar5          = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x2, param_5);
-    uVar2           = (paVar5 >> 0x10);
-    struct_op_1008_48fe((Struct81 *)CONCAT22(param_5, local_26), 0x1, paVar5, uVar2);
-    read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, uVar2);
+    u_var2           = (paVar5 >> 0x10);
+    struct_op_1008_48fe((Struct81 *)CONCAT22(param_5, local_26), 0x1, paVar5, u_var2);
+    read_file_1008_49e8(CONCAT22(param_5, local_26), 0x1010, u_var2);
     pass1_1008_5068((Struct76 *)param_1, (Struct83 *)CONCAT22(param_5, local_26));
     pass1_1008_47cc((Struct76 *)param_1);
     pass1_1008_4834((Struct76 *)param_1);
@@ -383,9 +383,9 @@ BOOL16  cleanup_palette_1008_56e2(u32 param_1, HDC16 param_2)
 
 {
     HPALETTE16 HVar1;
-    u16        uVar2;
+    u16        u_var2;
 
-    uVar2                          = (param_1 >> 0x10);
+    u_var2                          = (param_1 >> 0x10);
     HVar1                          = SelectPalette16(param_2, 0x0, *(BOOL16 *)(param_1 + 0x4));
     *(HPALETTE16 *)(param_1 + 0x4) = HVar1;
     DeleteObject16((HGDIOBJ16)s_tile2_bmp_1050_1538);
@@ -485,7 +485,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
 
 {
     bool       bVar1;
-    u16        uVar2;
+    u16        u_var2;
     HPALETTE16 HVar2;
     i16        iVar3;
     u16        uVar4;
@@ -515,13 +515,13 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
         }
         bVar1 = true;
     }
-    uVar2 = uVar6;
+    u_var2 = uVar6;
     if(!bVar1)
     {
         return 0x0;
     }
     create_palette_1008_4e38(*(struct Struct13 **)(iVar3 + 0xa), param_4, (uVar6 >> 0x10));
-    (iVar3 + 0xe)                = uVar2;
+    (iVar3 + 0xe)                = u_var2;
     HVar2                        = SelectPalette16(param_4, 0x0, *(BOOL16 *)(iVar3 + 0xe));
     *(HPALETTE16 *)(iVar3 + 0x4) = HVar2;
     RealizePalette16((HDC16)s_tile2_bmp_1050_1538);
@@ -565,9 +565,9 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 para
     u16         uStack78;
     u32  uStack76;
     u32  uStack72;
-    u32  uStack68;
-    u32  uStack64;
-    u32  uStack60;
+    u32  u_stack68;
+    u32  u_stack64;
+    u32  u_stack60;
     u32  uStack56;
     u32  uStack52;
     u32  uStack48;
@@ -616,13 +616,13 @@ void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 para
     uStack78  = 0x0;
     uStack76  = 0x0;
     uStack72  = 0x0;
-    uStack68  = 0x0;
+    u_stack68  = 0x0;
     uStack52  = 0x0;
     uVar1     = 0x8000;
     uStack112 = 0x8000;
     uStack84  = 0x8000;
-    uStack64  = 0x8000;
-    uStack60  = 0x8000;
+    u_stack64  = 0x8000;
+    u_stack60  = 0x8000;
     uStack56  = 0x8000;
     uStack48  = 0x8000;
     uVar6     = (Struct53 *)(param_1 >> 0x10);

@@ -205,19 +205,13 @@ u16 str_op_1000_3da4(char *param_1);
 u8 str_op_1000_3dbe(char *param_1, char *param_2, u16 param_3);
 
 
+i16 pass1_1000_3ec0(Globals *globals, u16 param_1, u16 param_2);
 
 
-i16 pass1_1000_3ec0(u16 param_1, u16 param_2);
+char* poss_str_op_1000_28dc(Globals *globals, i16 param_1);
 
 
-
-
-cstring poss_str_op_1000_28dc(i16 param_1);
-
-
-
-
-void pass1_1000_2913(i16 param_1, u16 param_2, u16 param_3);
+void pass1_1000_2913(Globals *globals, i16 param_1, u16 param_2, u16 param_3);
 
 
 

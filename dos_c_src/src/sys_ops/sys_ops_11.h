@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../op_int.h"
+#include "globals.h"
 
 
 void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2);
@@ -74,9 +75,7 @@ u16 dos3_call_1000_5174(u16 param_1);
 u16 dos3_calls_1000_5198(i16 param_1);
 
 
-
-
-void fatal_app_exit_1000_3e9e(u16 app_exit_action);
+void fatal_app_exit_1000_3e9e(Globals *globals, u16 app_exit_action);
 
 
 
@@ -101,9 +100,7 @@ i16 *mixed_sys_op_1000_40af(u16 param_1, i16 param_2, u16 param_3, u16 param_4, 
 void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3);
 
 
-
-
-void dos3_call_op_1000_435c(u16 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
+void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
 
 
@@ -195,5 +192,4 @@ i16 *pass1_1000_25d2(i16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
 i16 *exit_1000_25f2(u16 param_1, u16 param_2, i16 param_3, i16 param_4, u16 param_5, u16 param_6, u16 param_7);
 
 
-
-void pass1_1000_262c(u8 *param_1, u8 *param_2, cstring param_3, HINSTANCE16 param_4);
+void pass1_1000_262c(Globals *globals, u8 *param_1, u8 *param_2, char *param_3, unsigned short param_4);

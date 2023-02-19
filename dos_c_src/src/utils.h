@@ -20,4 +20,8 @@ u32 SUB42(u32 a, u32 b);
 
 u32 CONCAT22(u16 a, u16 b);
 
+u32 SBORROW2(u16 a, u16 b);
+
+u32 CARRY2(u16 a, u16 b);
+
 #endif // OUTPOST_1_SRC_UTILS_H_

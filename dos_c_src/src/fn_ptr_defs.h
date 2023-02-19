@@ -7,12 +7,14 @@
 
 #include "op_int.h"
 
-typedef void (*fn_ptr_1)();
+typedef void (*FnPtr1)();
 
-typedef u32 (*fn_ptr_2)(u16);
+typedef u32 (*FnPtr2)(u16);
 
-typedef void(*fn_ptr_3)(u16, u16, u16, u16, u16);
+typedef void(*FnPtr3)(u16, u16, u16, u16, u16);
 
-typedef void (*fn_ptr_4)(u32*, u32*, u8);
+typedef void (*FnPtr4)(u32*, u32*, u8);
+
+typedef u16(*Int21GetDosVersInfo)(void* dos_vers_info);
 
 #endif // OUTPOST_1_SRC_FN_PTR_DEFS_H_

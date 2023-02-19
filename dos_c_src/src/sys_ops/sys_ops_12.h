@@ -5,13 +5,16 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_12_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_12_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "stdbool.h"
+#include "structs/structs_0xx/structs_9x.h"
 
-void pass1_1000_27d6(u16 *param_1);
+void pass1_1000_27d6(Globals *globals, u16 *param_1);
 
 
-
-
-u16 *pass1_1000_2950(i16 param_1, u16 param_2, u16 param_3, u16 param_4);
+u16 *pass1_1000_2950(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
 
@@ -56,7 +59,7 @@ BOOL16 mem_op_1000_1dfa(i16 param_1, u8 param_2, u16 param_3, u16 param_4);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 pass1_1000_1e61(u16 param_1, u16 param_2, u16 param_3, u16 param_4);
+u16 pass1_1000_1e61(Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
 
@@ -76,16 +79,17 @@ u16  pass1_1000_21d2(u8 param_1, long param_2, u16 param_3, u16 param_4, u8 para
 
 
 
-i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONTEXT *in_task_context, u16 param_7, i16 param_8);
+//i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONTEXT *in_task_context, u16 param_7, i16 param_8);
 
 
+i16 *interrupt_vector_op_1000_23ea(Globals *globals,
+                           u16 param_1, 
+                           u16 param_2, 
+                           i16 param_3, 
+                           u16 param_4);
 
 
-i16 *dos3_call_1000_23ea(u16 param_1, u16 param_2, i16 param_3, u16 param_4);
-
-
-
-void dos3_op_1000_256b(void);
+void set_interrupt_vector_1000_256b(Globals *globals);
 
 
 
@@ -134,9 +138,7 @@ BOOL16  mem_op_1000_14f2(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u16
 DWORD  mem_op_1000_1532(WORD param_1);
 
 
-
-
-long mem_op_1000_1558(u16 param_1, u16 param_2, u16 param_3);
+long mem_op_1000_1558(Globals *globals, u16 param_1, u16 param_2, u16 param_3);
 
 
 
@@ -180,7 +182,7 @@ u32  mem_op_1000_18ec(u16 param_1, u16 param_2, u16 param_3);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u32  mem_op_1000_1902(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6);
+u32 mem_op_1000_1902(Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6);
 
 
 
@@ -210,7 +212,7 @@ i16 mem_op_1000_0308(i16 param_1, i16 param_2);
 
 
 
-u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u168 param_7);
+u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u16 param_7);
 
 
 

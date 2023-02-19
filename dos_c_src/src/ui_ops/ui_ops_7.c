@@ -1,4 +1,17 @@
+#include "ui_ops_7.h"
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
+#include "sys_ops/sys_ops_11.h"
+#include "sys_ops/sys_ops_12.h"
+#include "utils.h"
+
+#include <stdbool.h>
+
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_hinstance)
 
 {
@@ -125,7 +138,7 @@ void  pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     u32        UVar1;
-    u16        uVar2;
+    u16        u_var2;
     i16        iVar3;
     u16        uVar4;
     u16        uStack266;
@@ -134,7 +147,7 @@ void  pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
 
     local_102[0] = '\0';
     uStack262    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_4, param_2, param_3);
-    uVar2        = (uStack262 >> 0x10);
+    u_var2        = (uStack262 >> 0x10);
     iVar3        = uStack262;
     UVar1        = *(iVar3 + 0x12);
     uVar4        = (iVar3 + 0x14);
@@ -307,7 +320,7 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
 
 {
     BOOL16    BVar1;
-    u16       uVar2;
+    u16       u_var2;
     u16       in_DX;
     u16       uVar3;
     u8        in_AF;
@@ -327,8 +340,8 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
         SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
         pcVar4   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar3    = (pcVar4 >> 0x10);
-        uVar2    = str_op_1008_60e8(pcVar4, uVar3);
-        uStack16 = CONCAT22(uVar3, uVar2);
+        u_var2    = str_op_1008_60e8(pcVar4, uVar3);
+        uStack16 = CONCAT22(uVar3, u_var2);
         pcVar4   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         MessageBeep16(0x1010);
         MessageBox16((HWND16)s_tile2_bmp_1050_1538, &PTR_LOOP_1050_0010, pcVar4, (pcVar4 >> 0x10));
@@ -339,8 +352,8 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
         SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
         pcVar4   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar3    = (pcVar4 >> 0x10);
-        uVar2    = str_op_1008_60e8(pcVar4, uVar3);
-        uStack36 = CONCAT22(uVar3, uVar2);
+        u_var2    = str_op_1008_60e8(pcVar4, uVar3);
+        uStack36 = CONCAT22(uVar3, u_var2);
         pcVar4   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         MessageBeep16(0x1010);
         MessageBox16((HWND16)s_tile2_bmp_1050_1538, 0x40, pcVar4, (pcVar4 >> 0x10));
@@ -454,7 +467,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
 
 {
     u32 *puVar1;
-    u16         uVar2;
+    u16         u_var2;
     Struct18 *paVar3;
     code      **ppcVar4;
     i16         iVar5;
@@ -484,11 +497,11 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
     DestroyIcon16(h_icon);
     (iVar5 + 0xc2) = 0x0;
     puVar1         = (iVar5 + 0xe0);
-    uVar2          = (iVar5 + 0xe2);
-    if((uVar2 | puVar1) != 0x0)
+    u_var2          = (iVar5 + 0xe2);
+    if((u_var2 | puVar1) != 0x0)
     {
         ppcVar4 = *puVar1;
-        (**ppcVar4)(s_tile2_bmp_1050_1538, puVar1, uVar2, 0x1, uVar7, uVar8);
+        (**ppcVar4)(s_tile2_bmp_1050_1538, puVar1, u_var2, 0x1, uVar7, uVar8);
     }
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar5 + 0xd2)));
     *param_1      = 0x380a;
@@ -505,7 +518,7 @@ void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 par
     code     **ppcVar1;
     u16        in_AX;
     u16        in_DX;
-    u8        *puVar2;
+    u8        *pu_var2;
     u8        *extraout_DX;
     i16        unaff_DI;
     u16        uVar3;
@@ -521,8 +534,8 @@ void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 par
     if(param_4 == 0x400)
     {
         pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
-        puVar2 = (in_DX | in_AX);
-        if(puVar2 != 0x0)
+        pu_var2 = (in_DX | in_AX);
+        if(pu_var2 != 0x0)
         {
             if(PTR_LOOP_1050_4fe8 != 0x0)
             {
@@ -535,7 +548,7 @@ void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 par
             pass1_1030_83ba(_PTR_LOOP_1050_5748, param_2, unaff_SS, in_AF);
             uVar3                       = (_PTR_LOOP_1050_5748 >> 0x10);
             (_PTR_LOOP_1050_5748 + 0x8) = 0x1;
-            uStack10                    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, unaff_SS, puVar2, unaff_DI);
+            uStack10                    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, unaff_SS, pu_var2, unaff_DI);
             pass1_1018_262e(uStack10);
             pass1_1030_8326();
             pcVar4 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
@@ -552,19 +565,19 @@ void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 par
 }
 
 
-BOOL16 msg_box_op_1000_1f24(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
+BOOL16 msg_box_op_1000_1f24(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    i16 *piVar1;
+    i16 *pi_var1;
     u16  unaff_CS;
 
     if(param_3 < (param_1 + 0xc))
     {
-        msg_box_op_1000_214c(0x0, 0x0, 0xd940, &PTR_LOOP_1050_1040, param_4);
+        msg_box_op_1000_214c(0x0, 0x0, 0xd940, &globals->PTR_LOOP_1050_1040, param_4);
         return 0x1;
     }
-    piVar1  = (param_1 + 0xc);
-    *piVar1 = *piVar1 + 0x1;
+    pi_var1  = (param_1 + 0xc);
+    *pi_var1 = *pi_var1 + 0x1;
     return 0x0;
 }
 
@@ -617,7 +630,7 @@ BOOL16  msg_box_op_1000_214c(u16 param_1, i16 param_2, u16 param_3, u16 param_4,
     MessageBeep16(param_5);
     do
     {
-        IVar1 = MessageBox16((HWND16)s_tile2_bmp_1050_1538, text, 0x1de8, 0x1000);
+        IVar1 = MessageBox16((HWND16)0x1538, text, 0x1de8, 0x1000);
         iVar2 = IVar1 + -0x1;
         if(iVar2 == 0x0)
         {
@@ -627,7 +640,7 @@ BOOL16  msg_box_op_1000_214c(u16 param_1, i16 param_2, u16 param_3, u16 param_4,
         {
             if(IVar1 == 0x3 || IVar1 + -0x2 < 0x1)
             {
-                fatal_app_exit_1000_3e9e(s_tile2_bmp_1050_1538);
+                fatal_app_exit_1000_3e9e(NULL, 0x1538);
                 return 0x0;
             }
             if(IVar1 == 0x4)
@@ -652,7 +665,8 @@ bool  mem_op_1000_21b6(u16 param_1, u16 param_2)
 
 {
     BOOL16 BVar1;
-
     BVar1 = mem_op_1000_1dfa(0x0, 0x4, param_1, param_2);
     return BVar1 == 0x0;
 }
+
+#pragma clang diagnostic pop

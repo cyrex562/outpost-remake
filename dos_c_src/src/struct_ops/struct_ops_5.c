@@ -140,7 +140,7 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
 
 {
     code       **ppcVar1;
-    u16          uVar2;
+    u16          u_var2;
     u8          *puVar3;
     u8          *puVar4;
     u32   uVar5;
@@ -184,9 +184,9 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
     }
     puVar7 = extraout_DX;
     pass1_1028_dc52((Struct92 *)CONCAT22(param_3, local_14), 0x1, 0x0, 0x700);
-    uVar2 = iVar8->field_0x68 * 0x18;
-    mem_op_1000_179c(uVar2, puVar7, 0x1000);
-    iVar8->field_0x60 = uVar2;
+    u_var2 = iVar8->field_0x68 * 0x18;
+    mem_op_1000_179c(u_var2, puVar7, 0x1000);
+    iVar8->field_0x60 = u_var2;
     iVar8->field_0x62 = puVar7;
     puStack28         = CONCAT22(puVar7, iVar8->field_0x60);
     uStack30          = iVar8->field_0x68;
@@ -235,9 +235,9 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
         puVar7             = extraout_DX_04;
     } while(uStack30 != 0x0);
 LAB_1010_10ca:
-    uVar2 = iVar8->field_0x68 << 0x2;
-    mem_op_1000_179c(uVar2, puVar7, 0x1000);
-    iVar8->field_0x64 = uVar2;
+    u_var2 = iVar8->field_0x68 << 0x2;
+    mem_op_1000_179c(u_var2, puVar7, 0x1000);
+    iVar8->field_0x64 = u_var2;
     iVar8->field_0x66 = puVar7;
     iStack32          = 0x0;
     uStack30          = 0x0;
@@ -303,7 +303,7 @@ void pass1_1008_ee14(u32 param_1, u16 param_2)
 
 {
     u8  *puVar1;
-    u16  uVar2;
+    u16  u_var2;
     i16  iVar3;
     u16  uVar4;
     u16 *puVar5;
@@ -314,11 +314,11 @@ void pass1_1008_ee14(u32 param_1, u16 param_2)
     if((iVar3 + 0x56) == 0x0)
     {
         puVar5 = struct_1008_ec72(CONCAT22(param_2, local_1c));
-        uVar2  = (puVar5 >> 0x10);
+        u_var2  = (puVar5 >> 0x10);
         puVar1 = local_1c;
         pass1_1010_398e(CONCAT22(param_2, puVar1), 0x0, 0x0, 0x0, puVar1);
         (iVar3 + 0x56) = puVar1;
-        (iVar3 + 0x58) = uVar2;
+        (iVar3 + 0x58) = u_var2;
         pass1_1008_ec94(CONCAT22(param_2, local_1c));
     }
     return;
@@ -473,7 +473,7 @@ void  pass1_1008_e05e(u32 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
 
 {
     i16  iVar1;
-    u16  uVar2;
+    u16  u_var2;
     u32  uVar3;
     u8   local_122[0x112];
     i16  iStack16;
@@ -484,7 +484,7 @@ void  pass1_1008_e05e(u32 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
     if(lStack6 != 0x0)
     {
         uVar3          = pass1_1030_8326();
-        uVar2          = (lStack6 >> 0x10);
+        u_var2          = (lStack6 >> 0x10);
         iVar1          = lStack6;
         (iVar1 + 0xe)  = uVar3;
         (iVar1 + 0x10) = (uVar3 >> 0x10);
@@ -1236,10 +1236,10 @@ void struct_op_1008_3f92(Struct76 *param_1, Struct83 *param_2)
 {
     code      **ppcVar1;
     Struct76 *iVar2;
-    u16         uVar2;
+    u16         u_var2;
 
     struct_op_1008_56b4(param_1);
-    uVar2                     = (param_1 >> 0x10);
+    u_var2                     = (param_1 >> 0x10);
     iVar2                     = (Struct76 *)param_1;
     &iVar2->field_0x6         = 0x0;
     (&iVar2->field_0x8 + 0x2) = 0x0;
@@ -1267,10 +1267,10 @@ void pass1_1008_4016(Struct76 *param_1)
 
 {
     i16 iVar1;
-    u16 uVar2;
+    u16 u_var2;
 
     struct_op_1008_56b4(param_1);
-    uVar2              = (param_1 >> 0x10);
+    u_var2              = (param_1 >> 0x10);
     iVar1              = param_1;
     (iVar1 + 0x6)      = 0x0;
     (iVar1 + 0xa)      = 0x0;
@@ -1289,7 +1289,7 @@ void struct_op_1008_4214(Struct76 *param_1, Struct83 *param_2)
 
 {
     u32        *puVar1;
-    u16         uVar2;
+    u16         u_var2;
     code      **ppcVar3;
     Struct83 *iVar4;
     Struct83 *uVar4;
@@ -1299,8 +1299,8 @@ void struct_op_1008_4214(Struct76 *param_1, Struct83 *param_2)
     (param_1 + 0x6)   = iVar4->field_0x1a_addr_offset;
     iVar4->field_0x1a_addr_offset = 0x0;
     puVar1            = iVar4->field_0x4;
-    uVar2             = iVar4->field_0x6;
-    if((uVar2 | puVar1) != 0x0)
+    u_var2             = iVar4->field_0x6;
+    if((u_var2 | puVar1) != 0x0)
     {
         ppcVar3 = *puVar1;
         (**ppcVar3)();
@@ -1318,10 +1318,10 @@ Struct20 *pass1_1008_3ab8(Struct20 *param_1)
 
 {
     i16 iVar1;
-    u16 uVar2;
+    u16 u_var2;
 
     set_struct_1008_687a(param_1, 0x0);
-    uVar2              = (param_1 >> 0x10);
+    u_var2              = (param_1 >> 0x10);
     iVar1              = param_1;
     (iVar1 + 0xde)     = 0x0;
     param_1->field_0x0 = 0x3b46;
@@ -1335,7 +1335,7 @@ void struct_op_1008_0000(u16 *param_1)
 
 {
     i16 iVar1;
-    u16 uVar2;
+    u16 u_var2;
 
     // Segment:    2
     // Offset:     000060e0
@@ -1347,7 +1347,7 @@ void struct_op_1008_0000(u16 *param_1)
     //     Preload
     //     Impure (Non-shareable)
     //
-    uVar2         = (param_1 >> 0x10);
+    u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
     *param_1      = 0x52a;
     (iVar1 + 0x2) = 0x1008;

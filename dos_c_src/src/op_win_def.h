@@ -2,6 +2,8 @@
 // Created by cyrex on 2/3/23.
 //
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #ifndef OUTPOST_1_SRC_OP_WIN_DEF_H_
 #define OUTPOST_1_SRC_OP_WIN_DEF_H_
 
@@ -9,6 +11,12 @@
 #include "structs/structs_6xx/struct_656.h"
 #include "structs/structs_6xx/struct_657.h"
 
+
+typedef long LONG_PTR;
+
+typedef LONG_PTR LPARAM;
+
+typedef u32 DWORD;
 
 typedef char *cstring;
 
@@ -20,13 +28,15 @@ typedef HANDLE16 HCURSOR16;
 
 typedef struct PALETTEENTRY PALETTEENTRY, *PPALETTEENTRY;
 
-struct PALETTEENTRY
-{
-    BYTE pe_red;
-    BYTE pe_green;
-    BYTE pe_blue;
-    BYTE pe_flags;
-};
+typedef union Union655 Union655;
+
+typedef u16 ATOM;
+
+typedef u32 LRESULT;
+
+typedef const char* LPCSTR;
+
+typedef char* LPSTR;
 
 typedef HANDLE16 HBRUSH16;
 
@@ -45,6 +55,18 @@ typedef struct WINDOWPLACEMENT16 WINDOWPLACEMENT16, *PWINDOWPLACEMENT16;
 typedef struct POINT POINT, *PPOINT;
 
 typedef struct RECT16 RECT16, *PRECT16;
+
+typedef union Union658 Union658;
+
+typedef struct TwoWords TwoWords, *PTwoWords;
+
+struct PALETTEENTRY
+{
+    BYTE pe_red;
+    BYTE pe_green;
+    BYTE pe_blue;
+    BYTE pe_flags;
+};
 
 struct RECT16
 {
@@ -68,11 +90,23 @@ struct WINDOWPLACEMENT16
     struct RECT16 rc_normal_position;
 };
 
+
+
+union Union658
+{
+    DWORD dmDisplayFlags;
+    DWORD dmNup;
+};
+
 typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
 
 typedef void *LPVOID;
 
+typedef void *PVOID;
+
 typedef const void* LPCVOID;
+
+typedef const void* PCVOID;
 
 typedef HANDLE16 HICON16;
 
@@ -92,7 +126,7 @@ struct WNDCLASS16
     SEGPTR    lpsz_class_name;
 };
 
-typedef struct TwoWords TwoWords, *PTwoWords;
+
 
 struct TwoWords
 {
@@ -112,8 +146,8 @@ typedef HANDLE16 HPEN16;
 
 typedef u16 BOOL16;
 
-#define false 0
-#define true 1
+//#define false 0
+//#define true 1
 
 typedef HANDLE16 HGDIOBJ16;
 
@@ -129,11 +163,6 @@ struct LOGPALETTE
 
 typedef struct MSG16 MSG16, *PMSG16;
 
-typedef long LONG_PTR;
-
-typedef LONG_PTR LPARAM;
-
-typedef u32 DWORD;
 
 struct MSG16
 {
@@ -230,6 +259,13 @@ struct tagPOINT
     LONG y;
 };
 
+union Union655
+{
+    Struct656 field0;
+    Struct657 field1;
+};
+
+
 struct tagMSG
 {
     HWND   hwnd;
@@ -271,7 +307,8 @@ struct POINT16
 };
 
 
-typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAPINFOHEADER  *PtagBITMAPINFOHEADER;typedef struct tagBITMAPINFOHEADER{
+typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;
+struct tagBITMAPINFOHEADER{
         u32      biSize;
         long       biWidth;
         long       biHeight;
@@ -283,7 +320,17 @@ typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAP
         long       biYPelsPerMeter;
         u32      biClrUsed;
         u32      biClrImportant;
-} BITMAPINFOHEADER, FARtypedef struct _CONTEXT _CONTEXT ;typedef struct _CONTEXT  *P_CONTEXT;typedef struct _CONTEXT CONTEXT;typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA ;typedef struct _FLOATING_SAVE_AREA  *P_FLOATING_SAVE_AREA;typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;struct _devicemodeA
+};
+
+  typedef struct _CONTEXT _CONTEXT ;
+  typedef struct _CONTEXT  *P_CONTEXT;
+  typedef struct _CONTEXT CONTEXT;
+  typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA ;
+  typedef struct _FLOATING_SAVE_AREA  *P_FLOATING_SAVE_AREA;
+  typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
+
+
+  struct _devicemodeA
 {
     u8             dmDeviceName[32];
     u16             dmSpecVersion;
@@ -291,7 +338,7 @@ typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAP
     u16             dmSize;
     u16             dmDriverExtra;
     u32            dmFields;
-    union Union655 field_0x2c;
+    Union655 field_0x2c;
     short            dmColor;
     short            dmDuplex;
     short            dmYResolution;
@@ -302,7 +349,7 @@ typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAP
     u32            dmBitsPerPel;
     u32            dmPelsWidth;
     u32            dmPelsHeight;
-    union Union658 field_0x74;
+    Union658 field_0x74;
     u32            dmDisplayFrequency;
     u32            dmICMMethod;
     u32            dmICMi16ent;
@@ -312,21 +359,6 @@ typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;typedef struct tagBITMAP
     u32            dmReserved2;
     u32            dmPanningWidth;
     u32            dmPanningHeight;
-};
-
-struct tagBITMAPINFOHEADER
-{
-    u32 biSize;
-    long  biWidth;
-    long  biHeight;
-    u16  biPlanes;
-    u16  biBitCount;
-    u32 biCompression;
-    u32 biSizeImage;
-    long  biXPelsPerMeter;
-    long  biYPelsPerMeter;
-    u32 biClrUsed;
-    u32 biClrImportant;
 };
 
 struct _FLOATING_SAVE_AREA
@@ -371,27 +403,6 @@ struct _CONTEXT
     u8               ExtendedRegisters[512];
 };
 
-typedef union Union655 Union655;
-
-union Union655
-{
-    Struct656 field0;
-    Struct657 field1;
-};
-
-typedef union Union658 Union658;
-
-union Union658
-{
-    DWORD dmDisplayFlags;
-    DWORD dmNup;
-};
-
-typedef u16 ATOM;
-
-typedef u32 LRESULT;
-
-typedef const char* LPCSTR;
 
 #endif // OUTPOST_1_SRC_OP_WIN_DEF_H_
 
@@ -1626,3 +1637,5 @@ typedef const char* LPCSTR;
 //    HVar1 = DirectDrawCreate(lp_guid, lp_lp_dd, p_unk_outer);
 //    return HVar1;
 //}
+
+#pragma clang diagnostic pop
