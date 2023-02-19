@@ -77,3 +77,11 @@ rs_sdl_app/target/
 outpost_win31_rs/target/
 
 Cargo.lock
+
+*.bkp
+
+*.lock
+
+*.lock~
+
+*.ps
