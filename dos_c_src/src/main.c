@@ -225,7 +225,7 @@ void init_op_1008_54aa(struct Globals *globals,
     globals->PTR_LOOP_1050_576a = var_4;
     var_3                       = str_op_1008_60e8(param_2, var_4);
     globals->PTR_LOOP_1050_0392 = CONCAT22(var_4, var_3);
-    mem_op_1000_179c(0xc, var_4, 0x1000);
+    mem_op_1000_179c(NULL, 0xc, var_4, 0x1000);
     if((var_4 | var_3) == 0x0)
     {
         var_3 = 0x0;

@@ -150,7 +150,7 @@ void pass1_1000_15ce(u16 *param_1, u16 param_2, WORD param_3);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u8 *mem_op_1000_160a(u16 param_1, u16 param_2);
+u8 *mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1);
 
 
 
@@ -195,14 +195,10 @@ u32  mem_1000_0016(u32 param_1, u16 param_2);
 u32 mem_op_1000_0052(u16 param_1, u16 param_2);
 
 
+u32 pass1_1000_010c(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u16 param_6);
 
 
-u32  pass1_1000_010c(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u16 param_6);
-
-
-
-
-bool mem_op_1000_01b0(u16 param_1, u16 param_2);
+bool mem_op_1000_01b0(Globals *globals, u16 param_1, u16 param_2);
 
 
 
@@ -210,9 +206,8 @@ bool mem_op_1000_01b0(u16 param_1, u16 param_2);
 i16 mem_op_1000_0308(i16 param_1, i16 param_2);
 
 
-
-
-u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u16 param_7);
+u32 mem_op_1000_03c6(
+  Globals *globals, u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u16 param_7);
 
 
 

@@ -1,16 +1,17 @@
 
 #include "struct_ops_5.h"
 
-#include "addr_struct.h"
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "globals.h"
 #include "op_int.h"
-#include "structs/structs_45.h"
+#include "string_ops.h"
+#include "unk/unk_15.h"
 #include "unk/unk_6.h"
-#include "unk_5.h"
-#include "unk_6.h"
 #include "utils.h"
 
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3)
 
 {
@@ -185,7 +186,7 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
     puVar7 = extraout_DX;
     pass1_1028_dc52((Struct92 *)CONCAT22(param_3, local_14), 0x1, 0x0, 0x700);
     u_var2 = iVar8->field_0x68 * 0x18;
-    mem_op_1000_179c(u_var2, puVar7, 0x1000);
+    mem_op_1000_179c(NULL, u_var2, puVar7, 0x1000);
     iVar8->field_0x60 = u_var2;
     iVar8->field_0x62 = puVar7;
     puStack28         = CONCAT22(puVar7, iVar8->field_0x60);
@@ -236,7 +237,7 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
     } while(uStack30 != 0x0);
 LAB_1010_10ca:
     u_var2 = iVar8->field_0x68 << 0x2;
-    mem_op_1000_179c(u_var2, puVar7, 0x1000);
+    mem_op_1000_179c(NULL, u_var2, puVar7, 0x1000);
     iVar8->field_0x64 = u_var2;
     iVar8->field_0x66 = puVar7;
     iStack32          = 0x0;
@@ -544,7 +545,7 @@ void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
         pass1_1008_e852(uVar11, uVar10, uVar11->field_0x1a_addr_offset, param_2, puVar5);
         paVar9 = paVar3;
         puVar7 = puVar6;
-        mem_op_1000_179c(0x14, puVar6, 0x1000);
+        mem_op_1000_179c(NULL, 0x14, puVar6, 0x1000);
         uVar8 = puVar7 | paVar9;
         if(uVar8 == 0x0)
         {
@@ -1137,7 +1138,7 @@ u16 str_op_1008_60e8(char *param_1, u16 param_2)
     {
         uVar1 = str_op_1000_3da4(param_1);
         uVar1 = uVar1 + 0x1;
-        mem_op_1000_179c(uVar1, param_2, 0x1000);
+        mem_op_1000_179c(NULL, uVar1, param_2, 0x1000);
         if((param_2 | uVar1) != 0x0)
         {
             unk_str_op_1000_3d3e(CONCAT22(param_2, uVar1), param_1);
@@ -1387,3 +1388,5 @@ Address2 struct_op_1030_73a8(Globals *globals, Struct383 *param_1)
     result.offset = param_1->field_0x1a_addr_offset;
     return result;
 }
+
+#pragma clang diagnostic pop

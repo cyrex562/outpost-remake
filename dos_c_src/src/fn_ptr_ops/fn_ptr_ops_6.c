@@ -85,7 +85,7 @@ void pass1_1010_9092(u32 param_1, u16 param_2, u16 param_3)
     u_stack6 = CONCAT22(dx_reg_1, param_2);
     uVar7   = 0xc;
     puVar3  = dx_reg_1;
-    mem_op_1000_179c(0xc, dx_reg_1, 0x1000);
+    mem_op_1000_179c(NULL, 0xc, dx_reg_1, 0x1000);
     puVar4 = (puVar3 | param_2);
     if(puVar4 == 0x0)
     {
@@ -1346,7 +1346,7 @@ void pass1_1008_766e(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u8 *pa
     {
         if(local_6 != 0x0)
         {
-            mem_op_1000_179c(0xc, param_5, 0x1000);
+            mem_op_1000_179c(NULL, 0xc, param_5, 0x1000);
             pu_var2 = (param_5 | puVar1);
             if(pu_var2 == 0x0)
             {
@@ -2016,7 +2016,7 @@ LAB_1000_1724:
 }
 
 
-void mem_op_1000_179c(u16 param_1, u8 *param_2, u16 param_3)
+void mem_op_1000_179c(Globals *globals, u16 param_1, u8 *param_2, u16 param_3)
 
 {
     u8 *puVar1;
@@ -2024,9 +2024,9 @@ void mem_op_1000_179c(u16 param_1, u8 *param_2, u16 param_3)
 
     puVar1 = globals->PTR_LOOP_1050_5f2c;
     pu_var2 = globals->PTR_LOOP_1050_5f2e;
-    if((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
+    if((globals->PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
     {
-        puVar1 = mem_op_1000_160a(param_2, param_3);
+        puVar1 = mem_op_1000_160a(NULL, param_3, param_2);
         pu_var2 = param_2;
     }
     fn_ptr_op_1000_1708(param_1, 0x0, 0x0, puVar1, pu_var2, param_3);

@@ -1546,7 +1546,7 @@ long  mem_op_1000_13ce(WORD param_1)
     u_var2 = (DVar3 >> 0x10);
     if(DVar3 != 0x0)
     {
-        HVar1 = GlobalFree16((HGLOBAL16)s_tile2_bmp_1050_1538);
+        HVar1 = GlobalFree16((HGLOBAL16)0x1538);
         return CONCAT22(u_var2, (HVar1 == 0x0));
     }
     return (long)(u_var2 << 0x10);
@@ -1582,11 +1582,11 @@ void  mem_op_1000_1408(u16 param_1, u16 param_2, u16 param_3, WORD param_4)
     {
         if((param_1 & 0x4) != 0x0)
         {
-            GlobalPageUnlock16((HGLOBAL16)s_tile2_bmp_1050_1538);
+            GlobalPageUnlock16((HGLOBAL16)0x1538);
         }
         do
         {
-            HVar1 = GlobalReAlloc16((HGLOBAL16)s_tile2_bmp_1050_1538, CONCAT22(param_2, uStack8), param_3);
+            HVar1 = GlobalRealloc16((HGLOBAL16)0x1538, CONCAT22(param_2, uStack8), param_3);
             if(HVar1 != 0x0)
                 break;
             uStack8  = uStack8 & 0xffcf;
@@ -1595,11 +1595,11 @@ void  mem_op_1000_1408(u16 param_1, u16 param_2, u16 param_3, WORD param_4)
         } while(bVar2);
         if((HVar1 != 0x0) && ((param_1 & 0x4) != 0x0))
         {
-            GlobalPageLock16((HGLOBAL16)s_tile2_bmp_1050_1538);
+            GlobalPageLock16((HGLOBAL16)0x1538);
         }
         if(HVar1 != 0x0)
         {
-            WIN16_GlobalLock16((HGLOBAL16)s_tile2_bmp_1050_1538);
+            WIN16_GlobalLock16((HGLOBAL16)0x1538);
             return;
         }
     }
@@ -1634,7 +1634,7 @@ DWORD  mem_op_1000_1532(WORD param_1)
     DVar1 = GlobalHandle16(param_1);
     if(DVar1 != 0x0)
     {
-        DVar1 = GlobalSize16((HGLOBAL16)s_tile2_bmp_1050_1538);
+        DVar1 = GlobalSize16((HGLOBAL16)0x1538);
         return DVar1;
     }
     return 0x0;
@@ -1700,7 +1700,7 @@ void pass1_1000_15ce(u16 *param_1, u16 param_2, WORD param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u8 *mem_op_1000_160a(u16 param_1, u16 param_2)
+u8 *mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1)
 
 {
     u8 *puVar1;
@@ -1710,21 +1710,21 @@ u8 *mem_op_1000_160a(u16 param_1, u16 param_2)
     {
         return puVar1;
     }
-    if((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
+    if((globals->PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
     {
-        DAT_1050_5f30                = 0x1;
-        DAT_1050_5f32                = 0x1;
-        globals->_PTR_LOOP_1050_5f2c = mem_op_1000_18ec(DAT_1050_5f46, param_1, param_2);
-        if(_PTR_LOOP_1050_5f2c != 0x0)
+        globals->DAT_1050_5f30                = 0x1;
+        globals->DAT_1050_5f32                = 0x1;
+        globals->_PTR_LOOP_1050_5f2c = mem_op_1000_18ec(globals->DAT_1050_5f46, param_1, param_2);
+        if(globals->_PTR_LOOP_1050_5f2c != 0x0)
         {
-            if(PTR_LOOP_1050_5f42 != 0x0)
+            if(globals->PTR_LOOP_1050_5f42 != 0x0)
             {
-                pass1_1000_1a54(PTR_LOOP_1050_5f42, globals->_PTR_LOOP_1050_5f2c, (_PTR_LOOP_1050_5f2c >> 0x10), param_2);
+                pass1_1000_1a54(globals->PTR_LOOP_1050_5f42, globals->_PTR_LOOP_1050_5f2c, (globals->_PTR_LOOP_1050_5f2c >> 0x10), param_2);
             }
-            globals->PTR_LOOP_1050_5f2e = (_PTR_LOOP_1050_5f2c >> 0x10);
-            if(DAT_1050_5f44 != 0xffff)
+            globals->PTR_LOOP_1050_5f2e = (globals->_PTR_LOOP_1050_5f2c >> 0x10);
+            if(globals->DAT_1050_5f44 != 0xffff)
             {
-                pass1_1000_1afe(DAT_1050_5f44, (u32)PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e);
+                pass1_1000_1afe(globals->DAT_1050_5f44, (u32)globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e);
             }
         }
     }
@@ -1741,7 +1741,7 @@ u16 mem_1000_167a(u16 param_1, u16 param_2, u16 param_3)
 
     if((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
     {
-        puVar1 = mem_op_1000_160a(param_3, param_2);
+        puVar1 = mem_op_1000_160a(NULL, param_2, param_3);
         if((param_3 | puVar1) == 0x0)
         {
             return 0x0;
@@ -1781,7 +1781,7 @@ u16 pass1_1000_180c(u16 param_1, u16 param_2, u16 param_3)
 
     if((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
     {
-        puVar1 = mem_op_1000_160a(param_2, param_3);
+        puVar1 = mem_op_1000_160a(NULL, param_3, param_2);
         if((param_2 | puVar1) == 0x0)
         {
             return 0x0;
@@ -1803,7 +1803,7 @@ u16 pass1_1000_183c(u16 param_1, u16 param_2, u16 param_3)
     {
         return 0x0;
     }
-    if(((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0) && (PTR_LOOP_1050_5f2c = mem_op_1000_160a(0x0, param_3), globals->PTR_LOOP_1050_5f2e = puVar1, (puVar1 | globals->PTR_LOOP_1050_5f2c) == 0x0))
+    if(((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0) && (PTR_LOOP_1050_5f2c = mem_op_1000_160a(NULL, param_3, 0x0), globals->PTR_LOOP_1050_5f2e = puVar1, (puVar1 | globals->PTR_LOOP_1050_5f2c) == 0x0))
     {
         return 0x0;
     }
@@ -1898,7 +1898,7 @@ u32 mem_op_1000_1902(Globals *globals, u16 param_1, u16 param_2, u16 param_3, u1
                 pUVar6 = pUVar1;
                 UVar5  = uVar3;
                 uVar8  = pass1_1000_52be(param_2, param_3, param_4, 0x0);
-                pass1_1000_010c(0x1, uVar8, (uVar8 >> 0x10), (u32)pUVar6, UVar5, param_5);
+                pass1_1000_010c(NULL, 0x1, uVar8, (uVar8 >> 0x10), (u32)pUVar6, UVar5, param_5);
             }
             return CONCAT22(uVar3, pUVar1);
         }
@@ -1981,7 +1981,7 @@ LAB_1000_00f9:
 }
 
 
-u32  pass1_1000_010c(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u16 param_6)
+u32 pass1_1000_010c(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u16 param_6)
 
 {
     u16   uVar1;
@@ -2004,7 +2004,7 @@ u32  pass1_1000_010c(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 par
         pass1_1000_1e61(NULL, param_6, UVar4, param_4, param_5);
         return 0xffff;
     }
-    DAT_1050_5f30 = 0x1;
+    globals->DAT_1050_5f30 = 0x1;
     if(param_1 == 0x1)
     {
         uStack4 = 0x1;
@@ -2024,15 +2024,16 @@ u32  pass1_1000_010c(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 par
         {
             if(param_1 != 0x4)
             {
-                DAT_1050_5f30 = 0x1;
+                globals->DAT_1050_5f30 = 0x1;
                 return 0xffff;
             }
             uStack4 = 0x0;
         }
     }
-    while((u_stack6 <= param_3 && (((u_stack6 < param_3 || (uStack8 < param_2)) && (uVar1 = uStack4, u_var2 = mem_op_1000_03c6((s_version__d__d_1050_0012 + 0x8), 0x0, uStack4, 0x0, param_6, 0x0, '\0'), (u_var2 | uVar1) != 0x0)))))
+    while((u_stack6 <= param_3 && (((u_stack6 < param_3 || (uStack8 < param_2)) && (uVar1 = uStack4, u_var2 = mem_op_1000_03c6(
+                      NULL, (globals->s_version__d__d_1050_0012 + 0x8), 0x0, uStack4, 0x0, param_6, 0x0, '\0'), (u_var2 | uVar1) != 0x0)))))
     {
-        uVar1   = (s_version__d__d_1050_0012 + 0x8);
+        uVar1   = (globals->s_version__d__d_1050_0012 + 0x8);
         bVar3   = CARRY2(uStack8, uVar1);
         uStack8 = uStack8 + uVar1;
         u_stack6 = u_stack6 + bVar3;
@@ -2041,7 +2042,7 @@ u32  pass1_1000_010c(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 par
 }
 
 
-bool mem_op_1000_01b0(u16 param_1, u16 param_2)
+bool mem_op_1000_01b0(Globals *globals, u16 param_1, u16 param_2)
 
 {
     u16   *puVar1;
@@ -2073,7 +2074,7 @@ bool mem_op_1000_01b0(u16 param_1, u16 param_2)
         uVar5 = DVar6;
         if(((DVar6 >> 0x10) != 0x0) || (0xffef < uVar5))
         {
-            pass1_1000_1e61(NULL, param_2, 0x8, param_1, &USHORT_1050_1050);
+            pass1_1000_1e61(NULL, param_2, 0x8, param_1, &globals->USHORT_1050_1050);
             return false;
         }
         if(0x1fff < uVar5)
@@ -2088,7 +2089,7 @@ bool mem_op_1000_01b0(u16 param_1, u16 param_2)
             {
                 DVar7 = 0xfff0;
             }
-            BVar3   = mem_op_1000_14f2((param_1 + 0x16) | 0x1000, DVar7, (DVar7 >> 0x10), param_1, &USHORT_1050_1050);
+            BVar3   = mem_op_1000_14f2((param_1 + 0x16) | 0x1000, DVar7, (DVar7 >> 0x10), param_1, &globals->USHORT_1050_1050);
             iStack4 = (DVar6 >> 0x10);
             u_stack6 = DVar6;
             if(BVar3 != 0x0)
@@ -2096,7 +2097,7 @@ bool mem_op_1000_01b0(u16 param_1, u16 param_2)
             uVar5 = uVar9 >> 0x1;
             if(uVar5 < 0xc)
             {
-                UVar4 = pass1_1000_1e61(NULL, param_2, 0x2, param_1, &USHORT_1050_1050);
+                UVar4 = pass1_1000_1e61(NULL, param_2, 0x2, param_1, &globals->USHORT_1050_1050);
                 if(UVar4 == 0x0)
                 {
                     return (bool)('\x01' - ((param_1 + 0xa) == 0x0));
@@ -2153,7 +2154,7 @@ i16 mem_op_1000_0308(i16 param_1, i16 param_2)
 
     if((param_2 + 0xa) == 0x0)
     {
-        bVar3 = mem_op_1000_01b0(param_2, unaff_CS);
+        bVar3 = mem_op_1000_01b0(NULL, param_2, unaff_CS);
         if(CONCAT11(extraout_AH, bVar3) == 0x0)
         {
             return 0x0;
@@ -2180,7 +2181,8 @@ i16 mem_op_1000_0308(i16 param_1, i16 param_2)
 }
 
 
-u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u168 param_7)
+u32 mem_op_1000_03c6(
+  Globals *globals, u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 param_5, u8 param_6, u16 param_7)
 
 {
     u16  *puVar1;
@@ -2221,13 +2223,13 @@ u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 par
             {
                 puVar5[0x4]             = uStack20;
                 puVar5[0x5]             = uVar3;
-                uVar9                   = &USHORT_1050_1050;
-                &PTR_LOOP_1050_000c     = param_3 | 0xcad0;
+                uVar9                   = globals->USHORT_1050_1050;
+                globals->PTR_LOOP_1050_000c     = param_3 | 0xcad0;
                 *(u32 *)0x0           = param_4;
-                &PTR_LOOP_1050_0002     = &USHORT_1050_1050;
-                *(u16 **)&DAT_1050_0004 = puVar5;
-                (&DAT_1050_0004 + 0x2)  = &USHORT_1050_1050;
-                &PTR_LOOP_1050_000a     = 0x0;
+                globals->PTR_LOOP_1050_0002     = globals->USHORT_1050_1050;
+                *(u16 **)globals->DAT_1050_0004 = puVar5;
+                (globals->DAT_1050_0004 + 0x2)  = globals->USHORT_1050_1050;
+                globals->PTR_LOOP_1050_000a     = 0x0;
                 DVar9                   = mem_op_1000_1532(param_5);
                 UVar6                   = DVar9;
                 if(param_3 == 0x1)
@@ -2260,7 +2262,7 @@ u32 mem_op_1000_03c6(u16 param_1, i16 param_2, u16 param_3, u32 param_4, u16 par
     }
     else
     {
-        pass1_1000_1e61(NULL, param_5, 0x7, param_4, &USHORT_1050_1050);
+        pass1_1000_1e61(NULL, param_5, 0x7, param_4, &globals->USHORT_1050_1050);
     }
     return 0x0;
 }
@@ -2339,7 +2341,7 @@ u32 mem_op_1000_05e2(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
         uVar3       = 0x3;
         UVar6._0_1_ = (undefined)param_3;
         UVar6._1_1_ = (u168)(param_3 >> 0x8);
-        UVar6._0_2_ = mem_op_1000_03c6(param_1 + 0x14, iVar2, 0x3, param_4, param_5, (undefined)UVar6, UVar6._1_1_);
+        UVar6._0_2_ = mem_op_1000_03c6(NULL, param_1 + 0x14, iVar2, 0x3, param_4, param_5, (undefined)UVar6, UVar6._1_1_);
         if(((u32)UVar6 | uVar3) != 0x0)
         {
             return CONCAT22((u32)UVar6, uVar3 + 0x14);
@@ -2503,7 +2505,7 @@ u32 mem_op_1000_0838(u16 param_1, u16 param_2)
         {
             u_stack6 = uVar5;
             uVar5   = 0x1;
-            UVar8   = mem_op_1000_03c6(u_stack6, 0x0, 0x1, param_1, param_2, 0x0, '\0');
+            UVar8   = mem_op_1000_03c6(NULL, u_stack6, 0x0, 0x1, param_1, param_2, 0x0, '\0');
             if((UVar8 | uVar5) != 0x0)
                 break;
             uVar5  = (param_1 + 0x1e);
@@ -2691,7 +2693,7 @@ u32 mem_op_1000_0b20(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
         if((((uStack20 & 0x2) == 0x0) || ((uStack20 & 0x40) != 0x0)) || ((param_2 + 0x32) == 0x0))
         {
         LAB_1000_0b9e:
-            if(((uStack20 & 0x10) != 0x0) || (uVar3 = u_var2, UVar6 = mem_op_1000_03c6((param_2 + 0x1a), 0x0, u_var2, param_2, param_4, 0x0, '\0'), (UVar6 | uVar3) == 0x0))
+            if(((uStack20 & 0x10) != 0x0) || (uVar3 = u_var2, UVar6 = mem_op_1000_03c6(NULL, (param_2 + 0x1a), 0x0, u_var2, param_2, param_4, 0x0, '\0'), (UVar6 | uVar3) == 0x0))
             {
                 if((uStack20 & 0x20) == 0x0)
                 {

@@ -458,7 +458,6 @@ void set_globals_1000_4d0c(Globals *globals, u16 param_1)
 {
     globals->DAT_1050_61e8               = param_1;
     globals->PTR_LOOP_1050_61ea = 0x0;
-    return;
 }
 
 

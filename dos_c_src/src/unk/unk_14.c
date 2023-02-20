@@ -8,6 +8,8 @@
 #include <stdbool.h>
 
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 u16 * pass1_1008_941a(u16 *param_1, u16 param_2, u16 param_3)
 
 {
@@ -2182,5 +2184,7 @@ void  pass1_1000_5586(u8 *param_1, u16 param_2, i16 param_3, i16 param_4, i16 pa
 u32 ret_op_1000_55ac(u16 a)
 
 {
-    return;
+    return 0;
 }
+
+#pragma clang diagnostic pop

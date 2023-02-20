@@ -911,6 +911,15 @@ struct Globals
     int     PTR_PTR_1050_1f7e;
     char* s_ABNORMAL_PROGRAM_TERMINATION_1050_6544;
     id      PTR_LOOP_1050_5f26;
+    int     DAT_1050_5f30;
+    int     s_version__d__d_1050_0012;
+    u8     *PTR_LOOP_1050_5f2c;
+    u8     *PTR_LOOP_1050_5f2e;
+    int     DAT_1050_5f32;
+    u32     _PTR_LOOP_1050_5f2c;
+    u16     DAT_1050_5f46;
+    int     PTR_LOOP_1050_5f42;
+    int     DAT_1050_5f44;
 };
 
 typedef struct Globals Globals;

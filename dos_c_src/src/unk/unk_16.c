@@ -572,7 +572,6 @@ void  pass1_1000_05b4(u8 param_1, i16 param_2)
     *(u8 *)(param_2 + 0x13) = -((param_1 & 0x2) != 0x0) & 0x2;
     (param_2 + 0x10)        = 0x0;
     (param_2 + 0xe)         = 0x0;
-    return;
 }
 
 
