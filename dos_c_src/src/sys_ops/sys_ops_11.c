@@ -2212,7 +2212,7 @@ void pass1_1000_262c(Globals *globals,
     IVar5                       = GetModuleFileName16(param_4, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x25), (u16)param_1);
     puStack4[IVar5]             = 0x0;
     iVar9                       = 0x1;
-    globals->PTR_LOOP_1050_5fb8 = (&PTR_LOOP_1050_0000 + 0x1);
+    globals->PTR_LOOP_1050_5fb8 = 0x1; //(&PTR_LOOP_1050_0000 + 0x1);
     pcVar11                     = (s_New_failed_in_Op__Op__DialogHand_1050_0073 + 0xe);
 LAB_1000_266c:
     do
@@ -2299,10 +2299,10 @@ LAB_1000_266c:
         } while(true);
     }
 LAB_1000_26e8:
-    pCStack2                    = &USHORT_1050_1050;
-    iVar9                       = -((PTR_LOOP_1050_5fb8 + (PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9 + 0x1) & 0xfffe);
+    pCStack2                    = &globals->USHORT_1050_1050;
+    iVar9                       = -((globals->PTR_LOOP_1050_5fb8 + (globals->PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9 + 0x1) & 0xfffe);
     globals->PTR_LOOP_1050_5fba = (&param_1 + iVar9);
-    pcVar13                     = (&param_1 + (PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9);
+    pcVar13                     = (&param_1 + (globals->PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9);
     globals->PTR_LOOP_1050_5fbc = param_3;
     (&pCStack2 + iVar9)         = param_3;
     puVar4                      = globals->PTR_LOOP_1050_5fc4;
@@ -2311,7 +2311,7 @@ LAB_1000_26e8:
     (&param_2 + iVar9)          = puVar4;
     ppcVar10                    = (char **)(&stack0x0004 + iVar9);
     (&pCStack2 + iVar9)         = &param_1 + iVar9;
-    (&puStack4 + iVar9)         = s_tile2_bmp_1050_1538;
+    (&puStack4 + iVar9)         = 0x1538;
     (&stack0xfffa + iVar9)      = 0x271f;
     uVar6                       = pass1_1000_29dc(param_3);
     uVar3                       = &PTR_LOOP_1050_5f7e;
@@ -2329,7 +2329,7 @@ LAB_1000_272e:
     if((cVar2 == '\r') || (cVar2 == '\0'))
     {
     LAB_1000_27c1:
-        (&pCStack2 + iVar9) = s_tile2_bmp_1050_1538;
+        (&pCStack2 + iVar9) = 0x1538;
         (&puStack4 + iVar9) = 0x27c5;
         uVar6               = pass1_1000_29dc(param_3);
         *ppcVar10           = 0x0;

@@ -1,0 +1,86 @@
+main
+main.style.fill: lightgreen
+
+main -> entry
+
+entry
+entry.style.fill: lightgreen
+
+entry -> InitTask16
+entry -> LockSegment16
+entry -> GetVersion16
+entry -> Int21GetDosVersInfo
+entry -> WaitEvent16
+entry -> InitApp16
+entry -> pass1_1000_24db
+entry -> interrupt_vector_op_1000_23ea
+entry -> pass1_1000_262c
+entry -> pass1_1000_27d6
+entry -> ret_op_1000_55ac
+entry -> init_1000_23be
+entry -> fn_ptr_op_1000_24cd
+entry -> pass1_1000_25a8
+entry -> pass1_1000_2913
+entry -> poss_str_op_1000_28dc
+entry -> FatalAppExit16
+entry -> FataExit
+
+pass1_1000_24db
+pass1_1000_24db.style.fill: lightgreen
+
+pass1_1000_24db -> fn_ptr_op_1000_2594
+pass1_1000_24db -> set_interrupt_vector_1000_256b
+pass1_1000_24db -> DosInt21DuplicateFileHandle
+
+interrupt_vector_op_1000_23ea
+interrupt_vector_op_1000_23ea -> DosInt21GetInterruptVector
+interrupt_vector_op_1000_23ea -> get_program_entry_point_1000_29dc
+interrupt_vector_op_1000_23ea -> pass1_1000_25a8
+interrupt_vector_op_1000_23ea -> pass1_1000_2913
+interrupt_vector_op_1000_23ea -> poss_str_op_1000_28dc
+interrupt_vector_op_1000_23ea.style.fill: lightgreen
+
+pass1_1000_262c
+pass1_1000_262c -> pass1_1000_2950
+pass1_1000_262c -> GetModuleFileName16
+pass1_1000_262c -> pass1_1000_29dc
+pass1_1000_262c.style.fill: lightgreen
+
+pass1_1000_27d6
+pass1_1000_27d6 -> GetDOSEnvironment16
+pass1_1000_27d6 -> pass1_1000_2950
+pass1_1000_27d6.style.fill: lightgreen
+
+ret_op_1000_55ac
+ret_op_1000_55ac.style.fill: lightgreen
+
+init_1000_23be
+init_1000_23be -> init_op_1008_54aa
+init_1000_23be.style.file: lightgreen
+
+fn_ptr_op_1000_24cd
+fn_ptr_op_1000_24cd -> fn_ptr_op_1000_2594
+fn_ptr_op_1000_24cd -> ret_op_1000_55ac
+fn_ptr_op_1000_24cd -> set_interrupt_vector_1000_256b
+fn_ptr_op_1000_24cd -> DosInt21TerminateProcWithRetCode
+fn_ptr_op_1000_24cd.style.file: lightgreen
+
+pass1_1000_25a8
+pass1_1000_25a8 -> pass1_1000_2913
+pass1_1000_25a8.style.file: lightgreen
+
+pass1_1000_2913
+
+poss_str_op_1000_28dc
+
+fn_ptr_op_1000_2594
+
+get_program_entry_point_1000_29dc
+
+pass1_1000_2950
+
+pass1_1000_29dc
+
+init_op_1008_54aa
+
+set_interrupt_vector_1000_256b

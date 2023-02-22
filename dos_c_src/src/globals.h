@@ -920,6 +920,11 @@ struct Globals
     u16     DAT_1050_5f46;
     int     PTR_LOOP_1050_5f42;
     int     DAT_1050_5f44;
+    u8     *PTR_LOOP_1050_5fd2;
+    u8     *PTR_LOOP_1050_5fd4;
+    u8     *PTR_LOOP_1050_5fc2;
+    u8     *PTR_LOOP_1050_5fc4;
+    id      PTR_LOOP_1050_5fb8;
 };
 
 typedef struct Globals Globals;
