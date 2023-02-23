@@ -925,6 +925,8 @@ struct Globals
     u8     *PTR_LOOP_1050_5fc2;
     u8     *PTR_LOOP_1050_5fc4;
     id      PTR_LOOP_1050_5fb8;
+    int     _PTR_LOOP_1050_5bc8;
+    int     PTR_LOOP_1050_0398;
 };
 
 typedef struct Globals Globals;

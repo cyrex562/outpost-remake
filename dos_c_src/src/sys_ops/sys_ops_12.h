@@ -153,9 +153,7 @@ void pass1_1000_15ce(u16 *param_1, u16 param_2, WORD param_3);
 u8 *mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1);
 
 
-
-
-u16 mem_1000_167a(u16 param_1, u16 param_2, u16 param_3);
+u16 mem_1000_167a(Globals *globals, u16 param_1, u16 param_2, u16 param_3);
 
 
 

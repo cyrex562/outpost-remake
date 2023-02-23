@@ -246,7 +246,8 @@ void init_op_1008_54aa(struct Globals *globals,
     fn_ptr_a = var_13 + 0x4;
     (**fn_ptr_a)(0x1000, var_3, var_5, 0, 0);
     var_9 = var_8;
-    win_msg_op_1008_9498(&globals->PTR_LOOP_1050_1000, param_8);
+//    &globals->PTR_LOOP_1050_1000
+    main_win_msg_loop_1008_9498(globals, 0x1000, param_8);
     if(var_12 != 0x0)
     {
         fn_ptr_a = var_13;

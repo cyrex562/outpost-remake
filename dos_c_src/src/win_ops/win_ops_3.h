@@ -6,6 +6,9 @@
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_3_H_
 
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
 void window_op_1018_e6c6(Struct0 *param_1);
 
 
@@ -171,7 +174,7 @@ void enum_child_windows_1010_01be(LPVOID param_1);
 void pass1_1008_aa28(u32 param_1, u16 param_2, WNDCLASS16 *param_3);
 
 
-WPARAM16 win_msg_op_1008_9498(MSG *in_msg_1, MSG16 *in_msg_2);
+unsigned short main_win_msg_loop_1008_9498(Globals *globals, u16 u16_arg1, u16 u16_arg2);
 
 
 

@@ -1,10 +1,14 @@
 main
 main.style.fill: lightgreen
+main.style.stroke: firebrick
+main.style.stroke-width: 3
 
 main -> entry
 
 entry
 entry.style.fill: lightgreen
+entry.style.stroke: firebrick
+entry.style.stroke-width: 3
 
 entry -> InitTask16
 entry -> LockSegment16
@@ -43,7 +47,7 @@ interrupt_vector_op_1000_23ea.style.fill: lightgreen
 pass1_1000_262c
 pass1_1000_262c -> pass1_1000_2950
 pass1_1000_262c -> GetModuleFileName16
-pass1_1000_262c -> pass1_1000_29dc
+pass1_1000_262c -> get_program_entry_point_1000_29dc
 pass1_1000_262c.style.fill: lightgreen
 
 pass1_1000_27d6
@@ -56,31 +60,142 @@ ret_op_1000_55ac.style.fill: lightgreen
 
 init_1000_23be
 init_1000_23be -> init_op_1008_54aa
-init_1000_23be.style.file: lightgreen
+init_1000_23be.style.fill: lightgreen
+init_1000_23be.style.stroke: firebrick
+init_1000_23be.style.stroke-width: 3
 
 fn_ptr_op_1000_24cd
 fn_ptr_op_1000_24cd -> fn_ptr_op_1000_2594
 fn_ptr_op_1000_24cd -> ret_op_1000_55ac
 fn_ptr_op_1000_24cd -> set_interrupt_vector_1000_256b
 fn_ptr_op_1000_24cd -> DosInt21TerminateProcWithRetCode
-fn_ptr_op_1000_24cd.style.file: lightgreen
+fn_ptr_op_1000_24cd.style.fill: lightgreen
 
 pass1_1000_25a8
 pass1_1000_25a8 -> pass1_1000_2913
-pass1_1000_25a8.style.file: lightgreen
+pass1_1000_25a8.style.fill: lightgreen
 
 pass1_1000_2913
+pass1_1000_2913 -> poss_str_op_1000_28dc
+pass1_1000_2913 -> pass1_1000_55b1
+pass1_1000_2913.style.fill: lightgreen
 
 poss_str_op_1000_28dc
+poss_str_op_1000_28dc.style.fill: lightgreen
 
 fn_ptr_op_1000_2594
+fn_ptr_op_1000_2594.style.fill: lightgreen
 
 get_program_entry_point_1000_29dc
+get_program_entry_point_1000_29dc.style.fill: lightgreen
 
 pass1_1000_2950
-
-pass1_1000_29dc
+pass1_1000_2950 -> mem_1000_167a
+pass1_1000_2950 -> pass1_1000_25a8
+pass1_1000_2950 -> pass1_1000_2913
+pass1_1000_2950 -> FatalAppExit16
+pass1_1000_2950 -> FatalExit
+pass1_1000_2950.style.fill: lightgreen
 
 init_op_1008_54aa
+init_op_1008_54aa -> get_date_time_op_1000_435c
+init_op_1008_54aa -> set_globals_1000_4d0c
+init_op_1008_54aa -> pass1_1000_1fea
+init_op_1008_54aa -> str_op_1008_60e8
+init_op_1008_54aa -> mem_op_1000_179c
+init_op_1008_54aa -> struct_op_1008_0000
+init_op_1008_54aa -> win_msg_op_1008_9498
+init_op_1008_54aa -> mem_op_1000_1b68
+init_op_1008_54aa.style.fill: lightgreen
+init_op_1008_54aa.style.stroke: firebrick
+init_op_1008_54aa.style.stroke-width: 3
 
 set_interrupt_vector_1000_256b
+set_interrupt_vector_1000_256b -> DosInt21SetInterruptVector
+set_interrupt_vector_1000_256b.style.fill: lightgreen
+
+pass1_1000_55b1
+pass1_1000_55b1 -> pass1_1000_25a8
+pass1_1000_55b1 -> pass1_1000_2913
+pass1_1000_55b1 -> poss_str_op_1000_28dc
+pass1_1000_55b1 -> FatalAppExit16
+pass1_1000_55b1 -> FatalExit
+pass1_1000_55b1.style.fill: lightgreen
+
+FatalAppExit16
+FatalAppExit16.style.fill: lightpink
+
+FatalExit
+FatalExit.style.fill: lightpink
+
+mem_1000_167a
+mem_1000_167a -> mem_op_1000_160a
+mem_1000_167a -> mem_op_1000_0a48
+mem_1000_167a.style.fill: lightgreen
+
+get_date_time_op_1000_435c
+get_date_time_op_1000_435c -> DosInt21GetDate
+get_date_time_op_1000_435c -> DosInt21GetTime
+get_date_time_op_1000_435c -> DosInt21GetDate
+get_date_time_op_1000_435c -> pass1_1000_462e
+get_date_time_op_1000_435c.style.fill: lightgreen
+
+set_globals_1000_4d0c
+set_globals_1000_4d0c.style.fill: lightgreen
+
+pass1_1000_1fea
+pass1_1000_1fea.style.fill: lightgreen
+
+str_op_1008_60e8 {
+    style : {
+        fill: lightgreen
+    }
+}
+str_op_1008_60e8 -> str_op_1000_3da4
+str_op_1008_60e8 -> mem_op_1000_179c
+str_op_1008_60e8 -> unk_str_op_1000_3d3e
+
+
+str_op_1000_3da4 {
+    style: {
+        fill: lightgreen
+    }
+}
+
+unk_str_op_1000_3d3e {
+    style: {
+        fill: lightgreen
+    }
+}
+
+mem_op_1000_179c {
+    style: {
+        fill: lightgreen
+    }
+}
+mem_op_1000_179c -> mem_op_1000_160a
+mem_op_1000_179c -> fn_ptr_op_1000_1708
+
+struct_op_1008_0000 {
+    style: {
+        fill: lightgreen
+    }
+}
+
+main_win_msg_loop_1008_9498
+
+mem_op_1000_1b68
+
+mem_op_1000_160a
+
+mem_op_1000_0a48
+
+pass1_1000_462e
+
+fn_ptr_op_1000_1708
+
+DosInt21GetDate
+DosInt21GetDate.style.fill: lemonchiffon
+
+DosInt21GetTime
+DosInt21GetTime.style.fill: lemonchiffon

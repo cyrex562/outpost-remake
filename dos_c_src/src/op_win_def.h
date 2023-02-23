@@ -161,18 +161,18 @@ struct LOGPALETTE
     WORD pal_num_entries;
 };
 
-typedef struct MSG16 MSG16, *PMSG16;
+//typedef struct MSG16 MSG16, *PMSG16;
 
 
-struct MSG16
-{
-    HWND16       hwnd;
-    u16          message;
-    WPARAM16     wparam;
-    LPARAM       lparam;
-    DWORD        time;
-    struct POINT pt;
-};
+//struct MSG16
+//{
+//    HWND16       hwnd;
+//    u16          message;
+//    WPARAM16     wparam;
+//    LPARAM       lparam;
+//    DWORD        time;
+//    struct POINT pt;
+//};
 
 typedef struct BITMAPINFOHEADER BITMAPINFOHEADER, *PBITMAPINFOHEADER;
 
@@ -402,6 +402,17 @@ struct _CONTEXT
     u32              SegSs;
     u8               ExtendedRegisters[512];
 };
+
+typedef struct
+{
+    HWND16    hwnd;
+    u16    message;
+    WPARAM16  wParam;
+    LPARAM    lParam;
+    DWORD     time;
+    POINT16   pt;
+} MSG16, *LPMSG16;
+
 
 
 #endif // OUTPOST_1_SRC_OP_WIN_DEF_H_

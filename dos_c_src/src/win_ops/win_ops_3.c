@@ -1,3 +1,8 @@
+#include "win_ops_3.h"
+#include "op_int.h"
+#include "op_winapi.h"
+#include "op_win_def.h"
+
 
 void window_op_1018_e6c6(Struct0 *param_1)
 
@@ -1416,38 +1421,61 @@ void pass1_1008_aa28(u32 param_1, u16 param_2, WNDCLASS16 *param_3)
     }
     return;
 }
-WPARAM16 win_msg_op_1008_9498(MSG *in_msg_1, MSG16 *in_msg_2)
+WPARAM16 main_win_msg_loop_1008_9498(Globals *globals, u16 u16_arg1, u16 u16_arg2)
 
 {
-    BOOL16 BVar1;
-    u16  IVar2;
-    MSG16  local_msg_1;
+    BOOL16 b_var1 = 0;
+    u16    u16_var2 = 0;
+    MSG16  local_msg = {};
 
 LAB_1008_949c:
-    BVar1 = GetMessage16(in_msg_1, 0x0, 0x0, 0x0);
-    if(BVar1 == 0x0)
+    // Retrieves a message from the calling thread's message queue. the function dispatches the incoming sent messages
+    // until a posted message is available for retrieval
+    // MSG* msg: pointer to a message structs that receives the message.
+    // HWND hwnd: handle to the window whose messages are to be retrieved. if null, retrieves messages for any window
+    // belonging to the current thread, and any messages on the current thread's message queue whose hwnd value is
+    // NULL. Will process both window and thread messages.
+    // UINT first: the value of the lowest message value to be retrieved, e.g. WM_KEYFIRST (0x0100) for the first
+    // keyhboard
+    // message, oir 0x0200 for the first mouse message. If zero, retrieves all available messages.
+    // UINT last: the value of the highest message value to be retrieved, e.g. WM_KEYLAST or WM_MOUSELAST. If set to
+    // zero,
+    // returns all available messages.
+    // returns BOOL; if the function receives a message other than WM_QUIT the return value is non-zero; if the
+    // function receives the WM_QUIT message, the return value is zero. If there is an error the function WILL return
+    // -1.
+    //
+
+    b_var1 = GetMessage16(&local_msg, 0x0, 0x0, 0x0);
+    // WM_QUIT received
+    if(b_var1 == 0x0)
     {
-        return local_msg_1.wparam;
+        // additional message information to go with WM_QUIT
+        return local_msg.wParam;
     }
-    if((_PTR_LOOP_1050_5bc8 + 0x8) != 0x0)
-        goto code_r0x100894cd;
-    goto LAB_1008_94dc;
-code_r0x100894cd:
-    in_msg_1 = s_tile2_bmp_1050_1538;
-    BVar1    = IsDialogMessage16((HWND16)s_tile2_bmp_1050_1538, &local_msg_1);
-    if(BVar1 == 0x0)
+    if((globals->_PTR_LOOP_1050_5bc8 + 0x8) != 0x0)
     {
-    LAB_1008_94dc:
-        if(PTR_LOOP_1050_0398 != 0x0)
+        goto LAB_1008_94cd;
+    }
+    goto LAB_1008_94dc;
+LAB_1008_94cd:
+    local_msg.hwnd = 0x1538;
+    // Window handle passed into function, used to determine if message received from get message was intended for the
+    // window.
+    b_var1   = IsDialogMessage16((HWND16)0x1538, &local_msg);
+    if(b_var1 == 0x0) // is the message meant for this weindow? and was the message processed?
+    {
+LAB_1008_94dc:
+        if(globals->PTR_LOOP_1050_0398 != 0x0)
         {
-            in_msg_1 = s_tile2_bmp_1050_1538;
-            IVar2    = TranslateAccelerator16((HWND16)s_tile2_bmp_1050_1538, (HACCEL16)&local_msg_1, in_msg_2);
-            if(IVar2 != 0x0)
+            local_msg.hwnd = 0x1538;
+            u16_var2 = TranslateAccelerator16((HWND16)0x1538, (HACCEL16)&local_msg, u16_arg2);
+            if(u16_var2 != 0x0)
                 goto LAB_1008_949c;
         }
-        TranslateMessage16(s_tile2_bmp_1050_1538);
-        in_msg_1 = s_tile2_bmp_1050_1538;
-        DispatchMessage16(s_tile2_bmp_1050_1538);
+        TranslateMessage16(0x1538);
+        u16_arg1 = 0x1538;
+        DispatchMessage16(0x1538);
     }
     goto LAB_1008_949c;
 }

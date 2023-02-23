@@ -142,7 +142,7 @@ u16 *pass1_1000_2950(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u1
     puVar4                      = globals->PTR_LOOP_1050_6066;
     globals->PTR_LOOP_1050_6066 = &globals->PTR_LOOP_1050_1000;
     uVar9                       = param_3;
-    puVar7                      = mem_1000_167a(in_AX, param_4, param_2);
+    puVar7                      = mem_1000_167a(NULL, in_AX, param_4, param_2);
     globals->PTR_LOOP_1050_6066 = puVar4;
     if((param_2 | puVar7) != 0x0)
     {
@@ -360,7 +360,7 @@ void mem_1000_2ce8(i16 *param_1, u16 param_2, u16 param_3)
     i16 *pi_var1;
     u16  u_var2;
 
-    u_var2 = mem_1000_167a(0x200, param_3, param_2);
+    u_var2 = mem_1000_167a(NULL, 0x200, param_3, param_2);
     if(param_2 == 0x0)
     {
         pi_var1        = param_1 + 0x5;
@@ -1733,13 +1733,13 @@ u8 *mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1)
 }
 
 
-u16 mem_1000_167a(u16 param_1, u16 param_2, u16 param_3)
+u16 mem_1000_167a(Globals *globals, u16 param_1, u16 param_2, u16 param_3)
 
 {
     u8  *puVar1;
     long lVar2;
 
-    if((PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
+    if((globals->PTR_LOOP_1050_5f2e | globals->PTR_LOOP_1050_5f2c) == 0x0)
     {
         puVar1 = mem_op_1000_160a(NULL, param_2, param_3);
         if((param_3 | puVar1) == 0x0)
@@ -1760,7 +1760,7 @@ u16 pass1_1000_16aa(u16 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 par
 
     if((param_2 | param_1) == 0x0)
     {
-        uVar1 = mem_1000_167a(param_3, param_5, param_4);
+        uVar1 = mem_1000_167a(NULL, param_3, param_5, param_4);
         return uVar1;
     }
     if(param_3 == 0x0)
