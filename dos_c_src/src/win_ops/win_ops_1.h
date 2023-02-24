@@ -6,8 +6,7 @@
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_1_H_
 
 
-
-
+#include "op_win_def.h"
 void  send_msg_1040_c85a(u32 param_1, HWND16 param_2);
 
 
@@ -23,9 +22,7 @@ Struct18 * pass1_1040_a4c2(Struct18 *param_1, u8 param_2, u16 param_3);
 u32  call_win_proc_1040_a40e(HWND16 param_1, u32 param_2, LPARAM param_3, u16 param_4, LPVOID param_5, u16 param_6);
 
 
-
-
-void  reg_class_1040_98c0(u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_class_3);
+ATOM reg_class_1040_98c0(Globals *globals, u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_class_3);
 
 
 

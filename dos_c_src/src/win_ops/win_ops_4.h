@@ -6,6 +6,7 @@
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_4_H_
 
 
+#include "op_int.h"
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
 

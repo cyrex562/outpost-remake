@@ -104,7 +104,7 @@ init_op_1008_54aa -> pass1_1000_1fea
 init_op_1008_54aa -> str_op_1008_60e8
 init_op_1008_54aa -> mem_op_1000_179c
 init_op_1008_54aa -> struct_op_1008_0000
-init_op_1008_54aa -> win_msg_op_1008_9498
+init_op_1008_54aa -> main_win_msg_loop_1008_9498
 init_op_1008_54aa -> mem_op_1000_1b68
 init_op_1008_54aa.style.fill: lightgreen
 init_op_1008_54aa.style.stroke: firebrick
@@ -182,7 +182,18 @@ struct_op_1008_0000 {
     }
 }
 
-main_win_msg_loop_1008_9498
+main_win_msg_loop_1008_9498 {
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+main_win_msg_loop_1008_9498 -> GetMessage16
+main_win_msg_loop_1008_9498 -> IsDialogMessage16
+main_win_msg_loop_1008_9498 -> TranslateAccelerator16
+main_win_msg_loop_1008_9498 -> DispatchMessage16
+
 
 mem_op_1000_1b68
 
@@ -199,3 +210,14 @@ DosInt21GetDate.style.fill: lemonchiffon
 
 DosInt21GetTime
 DosInt21GetTime.style.fill: lemonchiffon
+
+reg_class_1040_98c0 {
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+reg_class_1040_98c0 -> GetClassInfo16
+reg_class_1040_98c0 -> RegisterClass16
+reg_class_1040_98c0 -> fn_ptr_op_1000_24cd

@@ -174,7 +174,7 @@ void enum_child_windows_1010_01be(LPVOID param_1);
 void pass1_1008_aa28(u32 param_1, u16 param_2, WNDCLASS16 *param_3);
 
 
-unsigned short main_win_msg_loop_1008_9498(Globals *globals, u16 u16_arg1, u16 u16_arg2);
+WPARAM16 main_win_msg_loop_1008_9498(Globals *globals, u16 u16_arg1, u16 u16_arg2);
 
 
 
@@ -188,9 +188,10 @@ void unk_win_msg_op_1008_9510(i16 *param_1, MSG16 *param_2, MSG16 *param_3);
 void send_msg_1008_9640(u32 param_1, u16 param_2, HWND16 param_3);
 
 
-
-
-void win_ui_reg_class_1008_96d2(Struct20 *param_1, HINSTANCE16 in_h_inst_2, WNDCLASS16 *in_wnd_class_3);
+ATOM win_ui_reg_class_1008_96d2(Globals         *globals,
+                                struct Struct20 *param_1,
+                                HINSTANCE16      in_h_inst_2,
+                                WNDCLASS16      *in_wnd_class_3);
 
 
 

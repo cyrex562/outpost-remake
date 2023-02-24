@@ -14,8 +14,6 @@ void  get_stock_obj_1008_9c56(u16 param_1);
 
 Struct23 * unk_draw_op_1008_80ee(Struct23 *param_1, u16 param_2);
 
-void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3);
-
 void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3);
 
 Struct20 * unk_draw_op_1008_61b2(Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5);

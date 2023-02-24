@@ -1,4 +1,13 @@
 
+#include "win_ops_4.h"
+
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
+#include "string_consts.h"
+#include "structs/structs_0xx/structs_2x.h"
+void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3);
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
@@ -639,4 +648,43 @@ BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, 
     }
     ui_op_1008_2c4e(uVar9, struct_var15, uVar13, 0x1008);
     return param_3;
+}
+void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3)
+
+{
+    BOOL16     BVar1;
+    ATOM       AVar2;
+    u16        local_1c;
+    u16        uStack26;
+    u16        uStack24;
+    u32 uStack22;
+    u8        *puStack18;
+    u16        uStack16;
+    u16        uStack14;
+    u16        uStack12;
+    u32 uStack10;
+    i16        iStack6;
+    u16        uStack4;
+
+    iStack6 = param_1 + 0x4;
+    BVar1   = GetClassInfo16(param_2, (SEGPTR)&local_1c, param_3);
+    if(BVar1 == 0x0)
+    {
+        local_1c  = (param_1 + 0x54);
+        uStack26  = 0x84f2;
+        uStack24  = 0x1008;
+        uStack22  = 0x40000;
+        puStack18 = globals->PTR_LOOP_1050_038c;
+        uStack16  = 0x0;
+        uStack14  = (param_1 + 0x58);
+        uStack12  = (param_1 + 0x56);
+        uStack10  = 0x0;
+        uStack4   = param_1._2_2_;
+        AVar2     = RegisterClass16(s_tile2_bmp_1050_1538);
+        if(AVar2 == 0x0)
+        {
+            fn_ptr_op_1000_24cd(0x0, &stack0xfffe);
+        }
+    }
+    return;
 }

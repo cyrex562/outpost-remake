@@ -1,7 +1,9 @@
 #include "win_ops_3.h"
+
 #include "op_int.h"
-#include "op_winapi.h"
 #include "op_win_def.h"
+#include "op_winapi.h"
+#include "structs/structs_0xx/structs_2x.h"
 
 
 void window_op_1018_e6c6(Struct0 *param_1)
@@ -1425,7 +1427,7 @@ WPARAM16 main_win_msg_loop_1008_9498(Globals *globals, u16 u16_arg1, u16 u16_arg
 
 {
     BOOL16 b_var1 = 0;
-    u16    u16_var2 = 0;
+    u16    result    = 0;
     MSG16  local_msg = {};
 
 LAB_1008_949c:
@@ -1445,7 +1447,6 @@ LAB_1008_949c:
     // function receives the WM_QUIT message, the return value is zero. If there is an error the function WILL return
     // -1.
     //
-
     b_var1 = GetMessage16(&local_msg, 0x0, 0x0, 0x0);
     // WM_QUIT received
     if(b_var1 == 0x0)
@@ -1469,13 +1470,16 @@ LAB_1008_94dc:
         if(globals->PTR_LOOP_1050_0398 != 0x0)
         {
             local_msg.hwnd = 0x1538;
-            u16_var2 = TranslateAccelerator16((HWND16)0x1538, (HACCEL16)&local_msg, u16_arg2);
-            if(u16_var2 != 0x0)
+            // processes accelerator keys for menu commands, sends the WM_COMMAND or WM_SYSCOMMAND message directly to the specified window procedure.
+            result = TranslateAccelerator16((HWND16)0x1538, (HACCEL16)u16_arg2, &local_msg);
+            if(result != 0x0)
                 goto LAB_1008_949c;
         }
-        TranslateMessage16(0x1538);
+        // translates virtual-key messages into character messages. character messages are posted to the calling threads message queue to be read the next time the thread calls the getmessage or peekmessage function
+        b_var1 = TranslateMessage16(&local_msg);
         u16_arg1 = 0x1538;
-        DispatchMessage16(0x1538);
+        // dispatches a emssage to a window procedure;
+        LRESULT dispatch_result = DispatchMessage16(&local_msg);
     }
     goto LAB_1008_949c;
 }
@@ -1533,11 +1537,14 @@ void send_msg_1008_9640(u32 param_1, u16 param_2, HWND16 param_3)
 }
 
 
-void win_ui_reg_class_1008_96d2(Struct20 *param_1, HINSTANCE16 in_h_inst_2, WNDCLASS16 *in_wnd_class_3)
+ATOM win_ui_reg_class_1008_96d2(Globals    *globals,
+                                Struct20   *param_1,
+                                HINSTANCE16 in_h_inst_2,
+                                WNDCLASS16 *in_wnd_class_3)
 
 {
     BOOL16     BVar1;
-    ATOM       AVar2;
+    ATOM       atom_result;
     u16        name_1c;
     u16        uStack26;
     u16        uStack24;
@@ -1554,6 +1561,8 @@ void win_ui_reg_class_1008_96d2(Struct20 *param_1, HINSTANCE16 in_h_inst_2, WNDC
     BVar1   = GetClassInfo16(in_h_inst_2, (SEGPTR)&name_1c, in_wnd_class_3);
     if(BVar1 == 0x0)
     {
+        WNDCLASS16 wndclass = {};
+        // TODO: fill in fields
         name_1c   = (param_1 + 0xc8);
         uStack26  = 0x5632;
         uStack24  = 0x1008;
@@ -1564,13 +1573,15 @@ void win_ui_reg_class_1008_96d2(Struct20 *param_1, HINSTANCE16 in_h_inst_2, WNDC
         uStack12  = (param_1 + 0xc6);
         uStack10  = 0x0;
         uStack4   = param_1._2_2_;
-        AVar2     = RegisterClass16(s_tile2_bmp_1050_1538);
-        if(AVar2 == 0x0)
+        // s_tile2_bmp_1050_1538
+        atom_result = RegisterClass16(&wndclass);
+        if(atom_result == 0x0)
         {
+            // register class failed
             fn_ptr_op_1000_24cd(0x0, &stack0xfffe);
         }
     }
-    return;
+    return atom_result;
 }
 
 

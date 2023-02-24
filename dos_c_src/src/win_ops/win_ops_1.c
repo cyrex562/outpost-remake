@@ -1,5 +1,8 @@
-
-
+#include "win_ops_1.h"
+#include "globals.h"
+#include "op_win_def.h"
+#include "op_int.h"
+#include "op_winapi.h"
 
 void  send_msg_1040_c85a(u32 param_1, HWND16 param_2)
 
@@ -80,11 +83,11 @@ u32  call_win_proc_1040_a40e(HWND16 param_1, u32 param_2, LPARAM param_3, u16 pa
 }
 
 
-void  reg_class_1040_98c0(u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_class_3)
+ATOM reg_class_1040_98c0(Globals *globals, u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_class_3)
 
 {
     BOOL16     BVar1;
-    ATOM       AVar2;
+    ATOM       atom_result;
     u16        l_name;
     u16        uStack26;
     u16        uStack24;
@@ -101,23 +104,31 @@ void  reg_class_1040_98c0(u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_c
     BVar1   = GetClassInfo16(param_2, (SEGPTR)&l_name, in_wnd_class_3);
     if(BVar1 == 0x0)
     {
-        l_name    = (param_1 + 0x54);
+        WNDCLASS16 wndclass = {};
+        // l_name    = (param_1 + 0x54);
+        // TODO: arrange values below into fields for wndclass
+        wndclass.lpsz_class_name =(param_1 + 0x54);
         uStack26  = 0x9cde;
-        uStack24  = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uStack24  = globals->PTR_LOOP_1050_1040;
         uStack22  = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;
         uStack16  = 0x0;
         uStack14  = (param_1 + 0x58);
         uStack12  = (param_1 + 0x56);
         uStack10  = 0x0;
-        uStack4   = param_1._2_2_;
-        AVar2     = RegisterClass16(s_tile2_bmp_1050_1538);
-        if(AVar2 == 0x0)
+        uStack4   = param_1;
+
+
+        // registers a window class for subsequent use in calls to the createwindow or createwindowex func
+        // s_tile2_bmp_1050_1538
+        atom_result = RegisterClass16(&wndclass);
+        if(atom_result == 0x0)
         {
+            // register class failed
             fn_ptr_op_1000_24cd(0x0, &stack0xfffe);
         }
     }
-    return;
+    return atom_result;
 }
 
 
