@@ -1590,11 +1590,11 @@ void destroy_win_1040_8b7e(HWND16 param_1)
 }
 
 
-void load_icon_1040_8b92(u32 param_1, HINSTANCE16 param_2)
+void load_icon_1040_8b92(u32 param_1, HINSTANCE16 hinst_arg_2)
 
 {
     u8      bVar1;
-    HICON16 HVar2;
+    HICON16 icon_handle;
     u16     uVar3;
     LPCSTR  name;
 
@@ -1626,9 +1626,8 @@ void load_icon_1040_8b92(u32 param_1, HINSTANCE16 param_2)
             }
         }
     }
-    HVar2                        = LoadIcon16(param_2, name);
-    *(HICON16 *)(param_1 + 0x8e) = HVar2;
-    return;
+    icon_handle = LoadIcon16(hinst_arg_2, name);
+    *(HICON16 *)(param_1 + 0x8e) = icon_handle;
 }
 
 

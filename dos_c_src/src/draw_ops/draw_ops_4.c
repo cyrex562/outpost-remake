@@ -1,5 +1,11 @@
 
 #include "op_int.h"
+#include "op_winapi.h"
+#include "string_consts.h"
+#include "struct_ops/struct_ops_1.h"
+#include "structs/structs_0xx/structs_2x.h"
+#include "unk/unk_15.h"
+#include "unk/unk_18.h"
 #include "win_ops_4.h"
 
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
@@ -489,7 +495,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
 }
 
 
-void  set_sys_color_1008_357e(u32 param_1, i16 param_2, u16 in_index_3, u16 param_4)
+void  set_sys_color_1008_357e(Struct20 *param_1, i16 param_2, u16 in_index_3, u16 param_4)
 
 {
     u16         uVar1;
@@ -665,12 +671,12 @@ void  pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 pa
 }
 
 
-void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
+void set_struct_op_1008_0536(Globals *globals, Struct20 *param_1, HINSTANCE16 hinst_arg2, u16 param_3)
 
 {
-    HICON16     HVar1;
-    HCURSOR16   HVar2;
-    HGDIOBJ16   HVar3;
+    HICON16     icon_handle_1;
+    HCURSOR16   cursor_handle_1;
+    HGDIOBJ16   obj_handle_1;
     u8         *puVar4;
     i16         iVar5;
     i16         unaff_DI;
@@ -678,35 +684,37 @@ void  set_struct_op_1008_0536(u16 *param_1, HINSTANCE16 param_2, u16 param_3)
     Struct20 *paVar7;
     u16        *puVar8;
 
-    paVar7                       = pass1_1008_3ab8((Struct20 *)param_1);
-    puVar4                       = (paVar7 >> 0x10);
-    uVar6                        = (param_1 >> 0x10);
-    iVar5                        = param_1;
-    (iVar5 + 0xe0)               = 0x0;
-    (iVar5 + 0xe4)               = 0x0;
-    (iVar5 + 0xe8)               = 0x0;
-    (iVar5 + 0xec)               = 0x0;
-    (iVar5 + 0xee)               = 0x0;
-    (iVar5 + 0xf2)               = 0x0;
-    (iVar5 + 0xf4)               = 0x0;
-    (iVar5 + 0xf8)               = 0x0;
-    *param_1                     = 0x389e;
-    (iVar5 + 0x2)                = 0x1008;
-    (iVar5 + 0xc8)               = 0x2008;
-    (iVar5 + 0xac)               = 0x0;
-    (iVar5 + 0xae)               = 0x8700;
-    HVar1                        = LoadIcon16(param_2, 0xd4);
-    *(HICON16 *)(iVar5 + 0xc2)   = HVar1;
-    HVar2                        = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
-    *(HCURSOR16 *)(iVar5 + 0xc4) = HVar2;
-    HVar3                        = GetStockObject16((u16)s_tile2_bmp_1050_1538);
-    *(HGDIOBJ16 *)(iVar5 + 0xc6) = HVar3;
-    puVar8                       = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_3, puVar4, unaff_DI);
+    paVar7                       = pass1_1008_3ab8(param_1);
+//    puVar4                       = (paVar7 >> 0x10);
+//    uVar6                        = (param_1 >> 0x10);
+//    iVar5                        = param_1;
+    (param_1->field_0xe0)               = 0x0;
+    (param_1->field_0xe4)               = 0x0;
+    (param_1->field_0xe8)               = 0x0;
+    (param_1->field_0xec)               = 0x0;
+    (param_1->field_0xee)               = 0x0;
+    (param_1->field_0xf2)               = 0x0;
+    (param_1->field_0xf4)               = 0x0;
+    (param_1->field_0xf8)               = 0x0;
+    param_1->field_0x0                     = 0x389e;
+    (param_1->field_0x2)                = 0x1008;
+    (param_1->field_0xc8)               = 0x2008;
+    (param_1->field_0xac)               = 0x0;
+    (param_1->field_0xae)               = 0x8700;
+    // TODO: find proper Icon Name
+    icon_handle_1                  = LoadIcon16(hinst_arg2, 0xd4);
+    (param_1->field_0xc2)   = icon_handle_1;
+    // TODO figure out proper HINSTANCE ID
+    cursor_handle_1                = LoadCursor16((HINSTANCE16)s_tile2_bmp_1050_1538, 0x7f00);
+    (param_1->field_0xc4) = cursor_handle_1;
+    // TODO: set proper stock object ID
+    obj_handle_1                   = GetStockObject16((u16)s_tile2_bmp_1050_1538);
+    (param_1->field_0xc6) = obj_handle_1;
+    puVar8                       = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, param_3, puVar4, unaff_DI);
     puVar4                       = (puVar8 >> 0x10);
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (iVar5 + 0xa)), s_Outpost_1050_00d7);
-    puVar8         = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x32, param_3, puVar4, unaff_DI);
-    (iVar5 + 0xf4) = puVar8;
-    (iVar5 + 0xf6) = (puVar8 >> 0x10);
+    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0xa)), globals->s_Outpost_1050_00d7);
+    puVar8         = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x32, param_3, puVar4, unaff_DI);
+    (param_1->field_0xf4) = puVar8;
+    (param_1->field_0xf6) = (puVar8 >> 0x10);
     set_sys_color_1008_357e(param_1, 0x1, 0x1010, param_3);
-    return;
 }

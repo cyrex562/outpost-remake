@@ -213,7 +213,7 @@ void destroy_win_1040_8b7e(HWND16 param_1);
 
 
 
-void load_icon_1040_8b92(u32 param_1, HINSTANCE16 param_2);
+void load_icon_1040_8b92(u32 param_1, HINSTANCE16 hinst_arg_2);
 
 
 

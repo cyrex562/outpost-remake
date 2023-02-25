@@ -271,6 +271,11 @@ struct Struct0
     u8  field_0xc8;
     u8  field_0xc9;
     u16        field_0xca;
+    u16        field_0xfc;
+    u16       *field_0xf2;
+    u16        field_0xf4;
+    u16       *field_0xe0;
+    u16        field_0xe2;
 };
 struct Struct6
 {

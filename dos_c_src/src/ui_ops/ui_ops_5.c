@@ -1,3 +1,14 @@
+#include "draw_ops/draw_ops_2.h"
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
+#include "structs/structs_0xx/structs_x.h"
+#include "unk/unk_11.h"
+#include "unk/unk_14.h"
+#include "unk/unk_18.h"
+#include "win_ops/win_ops_3.h"
+
 void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3)
 
 {
@@ -2264,12 +2275,12 @@ BOOL16  enable_menu_item_1020_2c2a(HMENU16 param_1, i16 param_2)
     return BVar1;
 }
 
-void  win_ui_op_1020_2cf0(Struct0 *param_1)
+void win_ui_op_1020_2cf0(Globals *globals, Struct0 *param_1)
 
 {
     u32 uVar1;
-    code     **ppcVar2;
-    u16        uVar3;
+    void     **ppcVar2;
+    u16        icon_handle_1;
     BOOL16    *pBVar4;
     u8        *in_DX;
     u16        uVar5;
@@ -2277,7 +2288,7 @@ void  win_ui_op_1020_2cf0(Struct0 *param_1)
     u8        *puVar6;
     u16        uVar7;
     u16        extraout_DX_00;
-    i16        iVar8;
+//    i16        iVar8;
     i16        unaff_DI;
     u16        uVar9;
     u16        unaff_SS;
@@ -2286,45 +2297,44 @@ void  win_ui_op_1020_2cf0(Struct0 *param_1)
     u8        *puVar12;
 
     create_window_ex_1008_9760(param_1, 0x1008);
-    uVar9                      = (param_1 >> 0x10);
-    iVar8                      = param_1;
-    puVar10                    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, (iVar8 + 0xfc), unaff_SS, in_DX, unaff_DI);
+//    uVar9                      = (param_1 >> 0x10);
+//    iVar8                      = param_1;
+    puVar10                    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, (param_1->field_0xfc), unaff_SS, in_DX, unaff_DI);
     uVar5                      = (puVar10 >> 0x10);
-    (iVar8 + 0xf2)             = puVar10;
-    (iVar8 + 0xf4)             = uVar5;
-    (iVar8 + 0xe0)             = (iVar8 + 0xf2);
-    (iVar8 + 0xe2)             = uVar5;
+    (param_1->field_0xf2)             = puVar10;
+    (param_1->field_0xf4)             = uVar5;
+    (param_1->field_0xe0)             = (param_1->field_0xf2);
+    (param_1->field_0xe2)             = uVar5;
     puVar12                    = globals->PTR_LOOP_1050_038c;
-    uVar3                      = LoadIcon16(0x1010, s_SITEICON_1050_428d);
-    *(HICON16 *)(iVar8 + 0xc2) = uVar3;
-    uVar1                      = (iVar8 + 0xf2);
-    ppcVar2                    = ((iVar8 + 0xf2) + 0x30);
-    (**ppcVar2)(s_tile2_bmp_1050_1538, uVar1, (uVar1 >> 0x10), uVar3, puVar12);
+    icon_handle_1                     = LoadIcon16(0x1010, globals->s_SITEICON_1050_428d);
+    *(HICON16 *)(param_1 + 0xc2) = icon_handle_1;
+    uVar1                      = (param_1->field_0xf2);
+    ppcVar2                    = ((param_1->field_0xf2) + 0x30);
+    (**ppcVar2)(0x1538, uVar1, (uVar1 >> 0x10), icon_handle_1, puVar12);
     puVar6 = extraout_DX;
     mem_op_1000_179c(0x22, extraout_DX, 0x1000);
-    uVar7 = puVar6 | uVar3;
+    uVar7 = puVar6 | icon_handle_1;
     if(uVar7 == 0x0)
     {
-        (iVar8 + 0xf6) = 0x0;
+        (param_1 + 0xf6) = 0x0;
     }
     else
     {
-        load_draw_op_1020_2ede(CONCAT22(puVar6, uVar3), param_1, 0x1000);
-        (iVar8 + 0xf6) = uVar3;
-        (iVar8 + 0xf8) = uVar7;
+        load_draw_op_1020_2ede(CONCAT22(puVar6, icon_handle_1), param_1, 0x1000);
+        (param_1 + 0xf6) = icon_handle_1;
+        (param_1 + 0xf8) = uVar7;
     }
-    (iVar8 + 0xe8) = (iVar8 + 0xf6);
-    pass1_1018_0ac0(*(iVar8 + 0xf2), param_1 & 0xffff | uVar9 << 0x10);
-    uVar11  = pass1_1018_0b08(*(iVar8 + 0xf2));
+    (param_1 + 0xe8) = (param_1 + 0xf6);
+    pass1_1018_0ac0(*(param_1 + 0xf2), param_1 & 0xffff | uVar9 << 0x10);
+    uVar11  = pass1_1018_0b08(*(param_1 + 0xf2));
     pBVar4  = (BOOL16 *)uVar11;
     ppcVar2 = (param_1 + 0x14);
     (**ppcVar2)();
-    ppcVar2 = ((iVar8 + 0xf2) + 0x10);
+    ppcVar2 = ((param_1 + 0xf2) + 0x10);
     (**ppcVar2)();
     MoveWindow16(0x1018, 0x1, pBVar4[0x3], pBVar4[0x2], pBVar4[0x1], *pBVar4);
     pass1_1008_3e0e(param_1);
     UpdateWindow16(0x1008);
-    return;
 }
 
 void  cleanup_win_ui_1020_2fea(Struct12 *in_struct_1, HDC16 in_dc_handle_2)
