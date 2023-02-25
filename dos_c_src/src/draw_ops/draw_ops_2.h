@@ -79,7 +79,7 @@ Struct18 * pass1_1020_4064(Struct18 *param_1, u8 param_2);
 
 void  draw_rect_1020_40ce(u32 param_1, i16 param_2, i16 param_3, u16 param_4);
 
-void  unk_draw_op_1020_41c8(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void unk_draw_op_1020_41c8(struct Globals *globals, struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 void  destroy_cursor_1020_42f4(u16 *param_1, HMENU16 param_2);
 

@@ -213,6 +213,7 @@ char* poss_str_op_1000_28dc(Globals *globals, i16 param_1);
 
 void pass1_1000_2913(Globals *globals, i16 param_1, u16 param_2, u16 param_3);
 
+const char* get_rsrc_string(u32 arg_1);
 
 
 

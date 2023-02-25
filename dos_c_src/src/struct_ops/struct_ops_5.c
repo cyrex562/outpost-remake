@@ -140,7 +140,7 @@ void pass1_1010_0f24(Struct79 *param_1, Struct79 *param_2, u16 param_3, u8 *para
 void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          u_var2;
     u8          *puVar3;
     u8          *puVar4;
@@ -513,7 +513,7 @@ void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     Struct215 *uVar5;
     Struct215 *paVar3;
     Struct216 *paVar4;
@@ -1235,7 +1235,7 @@ void set_struct_1008_574a(Struct21 *param_1)
 void struct_op_1008_3f92(Struct76 *param_1, Struct83 *param_2)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     Struct76 *iVar2;
     u16         u_var2;
 
@@ -1291,7 +1291,7 @@ void struct_op_1008_4214(Struct76 *param_1, Struct83 *param_2)
 {
     u32        *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     Struct83 *iVar4;
     Struct83 *uVar4;
 

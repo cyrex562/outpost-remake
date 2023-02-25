@@ -2,7 +2,7 @@
 void realize_palette_1020_2992(u32 param_1, i16 param_2)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32 *pu_var2;
 
     if(param_2 != 0x0)
@@ -20,7 +20,7 @@ void realize_palette_1020_2992(u32 param_1, i16 param_2)
 void invalidate_rect_1020_2ae4(u32 *param_1, u16 param_2, HWND16 param_3, u16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     char        cVar2;
     i16         iVar3;
     u8         *in_DX;
@@ -135,7 +135,7 @@ void unk_draw_op_1020_0c3e(u32 param_1, HWND16 param_2)
 
 {
     u32   *puVar1;
-    code        **ppcVar2;
+    void **ppcVar2;
     u32    uVar3;
     HDC16        *b_force_background;
     i16           iVar4;
@@ -173,7 +173,7 @@ void realize_palette_1020_0e46(u32 param_1, i16 param_2, HGDIOBJ16 param_3)
 
 {
     u32 *puVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u32  uVar3;
     i16         iVar4;
     u16         uVar5;
@@ -205,7 +205,7 @@ void cleanup_ui_op_1020_1038(u32 param_1)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     u16         uVar5;
     HICON16     unaff_CS;
@@ -261,7 +261,7 @@ void draw_op_1020_15de(u32 param_1, HWND16 in_win_handle_2)
 
 {
     u32           uVar1;
-    code        **ppcVar2;
+    void **ppcVar2;
     BOOL16        BVar3;
     u16           uVar4;
     i16           iVar5;
@@ -307,7 +307,7 @@ void draw_op_1020_15de(u32 param_1, HWND16 in_win_handle_2)
 void draw_op_1020_1674(u32 param_1, u16 param_2)
 
 {
-    code  **ppcVar1;
+    void **ppcVar1;
     u16     u_var2;
     u16     local_1a;
     u16     uStack24;
@@ -374,7 +374,7 @@ void pass1_1018_e5dc(u16 param_1, Struct20 *param_2, u16 param_3, u16 param_4)
 void pass1_1018_e834(Struct660 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     i16        iVar3;
     u8        *extraout_DX;
@@ -422,7 +422,7 @@ void pass1_1018_e91e(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     u32         *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16         *puVar3;
     u8          *extraout_DX;
     u8          *puVar4;
@@ -471,7 +471,7 @@ void pass1_1018_ec74(Struct661 *param_1, i16 param_2, u16 param_3, u16 param_4)
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u32   uVar3;
     u16          uVar4;
     u8          *extraout_DX;
@@ -583,7 +583,7 @@ void invalidate_rect_1018_edd8(u32 param_1, i16 param_2, u16 param_3)
 void unk_draw_op_1020_0000(u32 param_1, HWND16 param_2, u16 param_3)
 
 {
-    code        **ppcVar1;
+    void **ppcVar1;
     u32    u_var2;
     i16           iVar3;
     i16           iVar4;
@@ -685,7 +685,7 @@ void draw_op_1020_041e(u32 param_1, u16 param_2)
 void fill_rect_1020_065e(u32 param_1, HWND16 in_win_handle_2)
 
 {
-    code        **ppcVar1;
+    void **ppcVar1;
     u32    u_var2;
     i16           iVar3;
     u16           uVar4;
@@ -769,7 +769,7 @@ void delete_palette_1018_e16c(u32 param_1, HWND16 param_2)
 
 {
     u32   *puVar1;
-    code        **ppcVar2;
+    void **ppcVar2;
     u32    uVar3;
     HDC16        *b_force_background;
     HDC16         local_24;
@@ -821,7 +821,7 @@ void pass1_1018_e230(u16 param_1, Struct20 *param_2, u16 param_3, u16 param_4)
 void pass1_1018_e4f2(Struct659 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     i16        iVar3;
     u8        *extraout_DX;
@@ -873,7 +873,7 @@ void unk_draw_op_1018_c578(Struct36 *param_1, u16 param_2)
     i16           iVar2;
     i16           iVar3;
     Struct76   *paVar4;
-    code        **ppcVar5;
+    void **ppcVar5;
     u32    uVar6;
     u16           uVar7;
     HDC16        *b_force_background;
@@ -1030,7 +1030,7 @@ void pass1_1018_5b06(Struct132 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u32         *puVar3;
     u16          uVar5;
     u32   uVar6;
@@ -1157,7 +1157,7 @@ void misc_draw_op_1018_5d6c(u32 param_1, HWND16 param_2)
 
 {
     u32   *puVar1;
-    code        **ppcVar2;
+    void **ppcVar2;
     u32    uVar3;
     i16           iVar4;
     u16           uVar5;
@@ -1206,7 +1206,7 @@ void unk_draw_op_1018_623e(u32 param_1, HWND16 param_2, u16 param_3)
 
 {
     i16          *pi_var1;
-    code        **ppcVar2;
+    void **ppcVar2;
     u32    uVar3;
     u32   *puVar4;
     u16           uVar5;
@@ -1430,7 +1430,7 @@ void struct_1018_66cc(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4)
 void pass1_1018_6924(Struct658 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     i16        iVar3;
     u8        *extraout_DX;
@@ -1500,7 +1500,7 @@ void clenaup_win_ui_1018_4d22(Struct11 *in_struct_1, HDC16 in_hdc_2)
 
 {
     u16         uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     Struct11 *local_struct_1;
     Struct11 *uVar4;
     u16         unaff_SS;
@@ -1554,7 +1554,7 @@ void get_dc_1018_4db0(u32 param_1, u16 param_2, HWND16 param_3)
 void create_dc_1018_4e04(Struct8 **param_1, u16 param_2, i16 param_3, i16 param_4, LPCSTR in_string_5, u16 in_string_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     Struct8 *p_var2;
     Struct9 *iVar4;
     u16        uVar3;
@@ -1708,7 +1708,7 @@ void draw_op_1010_47d0(u32 param_1, u16 param_2, u16 param_3, u16 in_style_3, u1
 {
     i16        *pi_var1;
     u32 *pu_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     HPALETTE16  b_force_background;
     HGDIOBJ16   handle;
@@ -1848,7 +1848,7 @@ i16 pt_in_rect_1010_40f8(u32 param_1, POi1616 *param_2, RECT16 *param_3)
 
 {
     i16        *pi_var1;
-    code      **ppcVar2;
+    void **ppcVar2;
     BOOL16      BVar3;
     u16         uVar4;
     u16         uVar5;
@@ -1929,7 +1929,7 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
     u8        bVar5;
     u16         uVar6;
     u16         uVar7;
-    code      **ppcVar8;
+    void **ppcVar8;
     code       *pcVar9;
     u16      *puVar10;
     u16         uVar11;

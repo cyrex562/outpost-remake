@@ -509,7 +509,7 @@ void  pass1_1010_debe(u32 param_1, u16 param_2, u16 *param_3, u32 *param_4, u32 
 void  pass1_1010_e58a(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     BOOL16      BVar3;
     u32 *puVar4;
@@ -1126,7 +1126,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
 {
     long       *plVar1;
     long        lVar2;
-    code      **ppcVar3;
+    void **ppcVar3;
     u32  uVar4;
     char       *pcVar5;
     u16         uVar6;
@@ -1743,7 +1743,7 @@ void  pass1_1010_d24a(u32 param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 pa
 void  pass1_1010_9fee(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u8 *param_5)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u8          *pu_var2;
     u8          *extraout_DX;
     Struct252 *iVar3;

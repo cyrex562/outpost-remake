@@ -478,7 +478,7 @@ u16  file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
 u16  write_file_fn_1028_e56c(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u8         *pu_var2;
     BOOL16      BVar3;
     u16       in_DX;
@@ -572,7 +572,7 @@ i16  read_file_1028_d7ba(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16
 u32  write_to_file_1028_dce2(u32 *param_1, u32 param_2, u16 param_3)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     BOOL16     BVar2;
     u8        *puVar3;
     u16      in_DX;
@@ -1213,7 +1213,7 @@ u16  pass1_1028_64d6(u32 param_1, u32 param_2, u16 param_3)
 void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     BOOL16      BVar3;
     u16         uVar4;
@@ -1482,7 +1482,7 @@ BOOL16  file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 p
 
 {
     u32 uVar1;
-    code     **ppcVar2;
+    void **ppcVar2;
     BOOL16     BVar3;
     u16        uVar4;
     u16        uVar5;
@@ -1721,7 +1721,7 @@ u16  write_to_file_1028_0234(u32 param_1, u32 param_2, u16 param_3)
 void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          uVar3;
     BOOL16       BVar4;
     u16          uVar5;

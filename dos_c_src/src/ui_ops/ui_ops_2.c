@@ -2,7 +2,7 @@
 void  win_ui_op_1040_5800(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     u16         uVar3;
     u16         uVar4;
@@ -494,7 +494,7 @@ void  pass1_1040_477e(Struct1 *param_1, u8 *param_2, u16 param_3, u16 param_4)
 void  set_win_pos_1040_4ae4(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     u16         uVar3;
     Struct18 *paVar4;
@@ -611,7 +611,7 @@ void  pass1_1040_2464(Struct18 *param_1)
 void  show_win_1040_2490(Struct1 *param_1, HWND16 param_2)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u16        u_var2;
     Struct1 *iVar4;
     u16        uVar3;
@@ -637,7 +637,7 @@ u32  win_ui_op_1040_2512(u32 *param_1, u32 param_2, u16 param_3, HWND16 param_4,
 
 {
     i16        *pi_var1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         uVar3;
     BOOL16      BVar4;
     i16         iVar5;
@@ -1437,7 +1437,7 @@ void  win_ui_op_1040_12bc(Struct1 *param_1, u16 param_2, u8 *param_3)
 void  win_msg_op_1040_13b2(u32 param_1, i16 param_2, HWND16 param_3, u16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     u16         uVar3;
     i16         iVar4;
@@ -1877,7 +1877,7 @@ void  pass1_1040_205e(Struct18 *param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     Struct624 *iVar4;
     u16          uVar4;
 

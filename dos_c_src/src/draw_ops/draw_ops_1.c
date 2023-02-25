@@ -154,7 +154,7 @@ void draw_op_1040_c74c(u32 *param_1, u32 param_2, u16 param_3)
 
 {
     u16        uVar1;
-    code     **ppcVar2;
+    void **ppcVar2;
     u32        uVar3;
     HPALETTE16 b_force_background;
     HGDIOBJ16  HVar4;
@@ -953,7 +953,7 @@ void pass1_1040_9252(u32 param_1, u16 param_2)
 void unk_draw_op_1040_9458(Struct17 *param_1, u8 param_2, u16 param_3, HDC16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32         u_var2;
     u16        *b_force_background;
     u16         uVar3;
@@ -1066,7 +1066,7 @@ void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2)
 u32 set_text_bk_color_1040_7e5e(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    code    **ppcVar1;
+    void **ppcVar1;
     i16       iVar2;
     HGDIOBJ16 HVar3;
     u16     IVar4;
@@ -1124,7 +1124,7 @@ LAB_1040_7f00:
 void draw_op_1040_7bb2(Struct14 *in_struct_1, HWND16 in_win_handle_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     BOOL16      BVar2;
     i16         y;
     i16         iVar3;
@@ -1286,7 +1286,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
 {
     u16          *puVar1;
     u32    u_var2;
-    code        **ppcVar3;
+    void **ppcVar3;
     u32    uVar4;
     HPALETTE16    b_force_background;
     i16           iVar5;
@@ -1433,7 +1433,7 @@ void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3)
 u16 get_dc_op_1040_3d5e(u32 param_1, HWND16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     i16         iVar2;
     u16         uVar3;
     Struct43 *paVar4;
@@ -1484,7 +1484,7 @@ Struct18 *pass1_1040_47fe(Struct18 *param_1, u8 param_2)
 u32 draw_ui_op_1040_27cc(u32 *param_1, u16 param_2, u16 param_3, COLORREF param_4)
 
 {
-    code   **ppcVar1;
+    void **ppcVar1;
     u16      u_var2;
     i16      iVar3;
     HBRUSH16 HVar4;
@@ -1560,7 +1560,7 @@ void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3)
     u8            uVar1;
     u8            u_var2;
     struct Struct13 *paVar3;
-    code        **ppcVar4;
+    void **ppcVar4;
     i16           iVar5;
     HPALETTE16    b_force_background;
     COLORREF      color;
@@ -1615,7 +1615,7 @@ void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3)
 u32 set_text_bk_color_1040_0cc0(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
-    code    **ppcVar1;
+    void **ppcVar1;
     i16       iVar2;
     HDC16     obj;
     HDC16     hdc;
@@ -1722,7 +1722,7 @@ void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF
 u16 call_fn_ptr_1038_9ffa(HWND16 win_handle, u16 param_2, Struct733 *struct_1, u16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     Struct43 *var_2;
     Struct43 *var_3;
     HDC16       dev_ctx;
@@ -1857,7 +1857,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
 
 {
     u32  uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         uVar3;
     i16         iVar4;
     Struct18 *paVar5;

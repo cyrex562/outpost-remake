@@ -376,7 +376,7 @@ void  show_win_1040_0766(Struct1 *param_1, u16 param_2)
 void  win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6, HWND16 param_7, u16 param_8)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16       IVar2;
     BOOL16      BVar3;
     u8         *puVar4;
@@ -1597,7 +1597,7 @@ void  win_ui_op_1038_b81c(Struct1 *param_1)
 {
     u32        uVar1;
     u32 u_var2;
-    code     **ppcVar3;
+    void **ppcVar3;
     u16        uVar4;
     BOOL16     win_enabled;
     u8        *in_DX;
@@ -1660,7 +1660,7 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
 
 {
     i16        *pi_var1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         UVar3;
     BOOL16      BVar4;
     u16         uVar5;

@@ -115,7 +115,7 @@ u16  pass1_1038_7b20(u32 *param_1, u32 param_2, u16 param_3)
 u16  read_file_1038_7c02(u32 *param_1, u32 param_2, u16 param_3, u16 param_4)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     BOOL16     BVar2;
     u16        uVar3;
     u16        uVar4;
@@ -809,7 +809,7 @@ void  file_1030_b836(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16          uVar3;
     Struct401 *iVar4;
     BOOL16       BVar4;
@@ -1114,7 +1114,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
 
 {
     long         lVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     Struct387 *iVar3;
     BOOL16       BVar3;
     i16          iVar6;

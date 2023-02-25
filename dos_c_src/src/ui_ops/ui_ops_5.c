@@ -12,7 +12,7 @@
 void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     BOOL16      BVar3;
     u16         uVar4;
@@ -264,7 +264,7 @@ u16  unk_destroy_win_op_1020_694c(u32 param_1, u16 param_2, HWND16 param_3, u16 
 void  win_ui_op_1020_6ae6(u32 *param_1, u16 param_2, i16 param_3, i16 param_4, HWND16 param_5, WPARAM16 param_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u8        *pu_var2;
     i16        iVar3;
     u16        uVar4;
@@ -455,7 +455,7 @@ void  unk_win_ui_op_1020_717e(u16 *param_1, u32 param_2, u16 param_3)
 
 {
     Struct13 *paVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u32  uVar3;
     HPALETTE16  HVar4;
     u32 *puVar5;
@@ -547,7 +547,7 @@ void  win_ui_cursor_op_1020_522e(Struct52 *param_1, u16 param_2, u16 param_3)
 
 {
     i16       iVar1;
-    code    **ppcVar2;
+    void **ppcVar2;
     BOOL16    BVar3;
     u8       *in_DX;
     i16       iVar4;
@@ -600,7 +600,7 @@ void  pass1_1020_52de(u32 param_1, u16 param_2)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     u16         uVar5;
     i16         iVar6;
@@ -647,7 +647,7 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
 {
     i16        *pi_var1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     u16         uVar4;
     u16         uVar5;
     u16         UVar6;
@@ -881,7 +881,7 @@ void  pt_in_rect_1020_5856(u32 param_1, POi1616 *param_2, u16 param_3)
 void  pt_in_rect_op_1020_58ce(u32 param_1, u16 param_2, u16 param_3, u8 param_4, RECT16 *param_5, u16 param_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     u16        uVar3;
     BOOL16     BVar4;
@@ -1239,7 +1239,7 @@ LAB_1020_5e62:
 void  win_ui_op_1020_5e76(u32 param_1, u16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     Struct57 *p_var2;
     u16        *puVar3;
     u8         *puVar4;
@@ -1703,7 +1703,7 @@ LAB_1020_464c:
 void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, HCURSOR16 param_5, WNDCLASS16 *param_6)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     HCURSOR16    HVar2;
     u8          *puVar3;
     i16          iVar4;
@@ -2381,7 +2381,7 @@ void  win_ui_op_1020_36f6(u32 param_1, i16 param_2, short param_3)
 
 {
     i16        iVar1;
-    code     **ppcVar2;
+    void **ppcVar2;
     u32 uVar3;
     char      *pcVar4;
     u16        uVar5;
@@ -2464,7 +2464,7 @@ void  pass1_1020_3898(Struct30 *param_1, u16 param_2)
 void  window_op_1020_38aa(Struct0 *param_1)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          u_var2;
     Struct160 *paVar3;
     u32   uVar4;

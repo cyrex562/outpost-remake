@@ -15,7 +15,7 @@
 void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16        *pu_var2;
     i16         iVar3;
     u16         uVar4;
@@ -262,7 +262,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
 
 {
     u16         *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     long         lVar3;
     u16          uVar4;
     i16          iVar5;

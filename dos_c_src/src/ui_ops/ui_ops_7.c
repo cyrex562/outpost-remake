@@ -16,7 +16,7 @@ void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_
 
 {
     u32 uVar1;
-    code     **ppcVar2;
+    void **ppcVar2;
     HCURSOR16  cursor_handle;
     HCURSOR16  HVar3;
     u16        in_DX;
@@ -370,7 +370,7 @@ void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u1
 void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     BOOL16     BVar2;
     u16        uVar3;
     i16        iVar4;
@@ -469,7 +469,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
     u32 *puVar1;
     u16         u_var2;
     Struct18 *paVar3;
-    code      **ppcVar4;
+    void **ppcVar4;
     i16         iVar5;
     u16         uVar6;
     u16         unaff_CS;
@@ -515,7 +515,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
 void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 param_4)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u16        in_AX;
     u16        in_DX;
     u8        *pu_var2;

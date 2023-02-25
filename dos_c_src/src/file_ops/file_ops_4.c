@@ -2,7 +2,7 @@
 void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u8         *pu_var2;
     u16         uVar3;
     u16         extraout_DX;
@@ -46,7 +46,7 @@ void  close_file_1008_496c(u16 *param_1)
     u32 *puVar1;
     u16         u_var2;
     u32  uVar3;
-    code      **ppcVar4;
+    void **ppcVar4;
     i16         iVar5;
     u16         uVar6;
 

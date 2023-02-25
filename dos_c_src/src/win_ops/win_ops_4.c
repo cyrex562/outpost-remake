@@ -7,11 +7,11 @@
 #include "op_winapi.h"
 #include "string_consts.h"
 #include "structs/structs_0xx/structs_2x.h"
-void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3);
+
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     HWND16      unaff_CS;
     u16         unaff_SS;
     u16         u_var2;
@@ -92,7 +92,7 @@ u16  unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 param_3)
 void  pass1_1008_0a92(u32 param_1, short param_2)
 
 {
-    code **ppcVar1;
+    void **ppcVar1;
     i16    iVar2;
     u16    uVar3;
 
@@ -123,7 +123,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
 {
     i16        *pi_var1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     u8         *puVar4;
     u32  uVar5;
     u8         *puVar6;
@@ -212,7 +212,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
 BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     HINSTANCE16 HVar2;
     BOOL16      BVar3;
     u8         *puVar4;

@@ -1703,7 +1703,7 @@ void  struct_1018_2b10(Struct55 *param_1, u16 param_2, u16 param_3)
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16         *puVar3;
     u16          uVar4;
     i16          unaff_DI;
@@ -1898,7 +1898,7 @@ void  struct_1010_a1d8(Struct627 *param_1, u16 param_2, u16 param_3, u16 param_4
 
 {
     i16         iVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     i16         unaff_DI;
     Struct79 *paVar3;
     u16        *puVar4;
@@ -1973,7 +1973,7 @@ void  struct_1010_9172(u32 param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     Struct249 *iVar4;
     u16          uVar4;
     Struct75  *paVar5;

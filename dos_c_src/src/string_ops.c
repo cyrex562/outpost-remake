@@ -22,6 +22,14 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+
+const char* get_rsrc_string(u32 arg_1)
+{
+    // TODO
+    return NULL;
+}
+
+
 void string_1040_a626(struct Struct381 *param_1, char *param_2, u16 param_3)
 
 {
@@ -648,7 +656,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
     i16        *piVar2;
     u16         uVar3;
     u16         uVar4;
-    code      **ppcVar5;
+    void **ppcVar5;
     u16         uVar6;
     u32 *puVar7;
     u16         uVar8;
@@ -1137,7 +1145,7 @@ void pass1_1008_e320(Struct102 *param_1, u32 param_2, u32 param_3, u16 param_4)
 void load_str_and_spri16f_1008_b69c(Struct25 *param_1, WORD *param_2, u8 *param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     char       *in_buffer_4;
     u16         u_var2;
     u16         uVar3;
@@ -1199,7 +1207,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
 
 {
     i16       *pi_var1;
-    code     **ppcVar2;
+    void **ppcVar2;
     u16        uVar3;
     i16        iVar4;
     u16        uVar5;

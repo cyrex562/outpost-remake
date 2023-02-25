@@ -354,7 +354,7 @@ void  pass1_1028_6186(u16 *param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     Struct603 *iVar4;
     u16          uVar4;
 
@@ -379,7 +379,7 @@ void  pass1_1028_61c4(u32 param_1, u32 param_2, u16 param_3)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     u16          uVar4;
     Struct21  *paVar5;
     u32   uVar6;
@@ -418,7 +418,7 @@ void  pass1_1028_6228(u32 param_1, u16 param_2, i16 param_3, i16 param_4, u16 pa
 {
     u16        uVar1;
     u16        u_var2;
-    code     **ppcVar3;
+    void **ppcVar3;
     i16        iVar4;
     u16        uVar5;
     i16        iVar6;
@@ -946,7 +946,7 @@ void  pass1_1028_0582(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4, u8 p
     u32       **ppuVar1;
     long       *plVar2;
     u32  uVar3;
-    code      **ppcVar4;
+    void **ppcVar4;
     u8         *puVar5;
     u16         uVar6;
     u16         uVar7;
@@ -1804,7 +1804,7 @@ Struct18 * pass1_1020_2868(Struct18 *param_1, u8 param_2, u16 param_3)
 void  pass1_1020_0abc(u32 param_1)
 
 {
-    code **ppcVar1;
+    void **ppcVar1;
     u16    u_var2;
 
     u_var2 = (param_1 >> 0x10);

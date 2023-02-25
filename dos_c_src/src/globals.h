@@ -933,6 +933,8 @@ struct Globals
     LPCSTR  s_TILEICON_1050_440c;
     char   *s_OPButton_1050_5ece;
     char   *s_VrMode_1050_4422;
+    LPCSTR  s_OpAccel_1050_43e8;
+    char   *s_MicroSpinControl_1050_0370;
 };
 
 typedef struct Globals Globals;

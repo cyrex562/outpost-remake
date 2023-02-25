@@ -88,7 +88,7 @@ void  post_win_msg_1040_0d5e(u16 param_1, u16 param_2, i16 param_3, HWND16 param
 void  unk_win_sys_op_1038_da68(i16 param_1, u16 param_2, u16 param_3, u32 param_4, WNDCLASS16 *param_5, u8 *param_6)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     u8         *puVar3;
     u8         *extraout_DX;
@@ -274,7 +274,7 @@ LAB_1038_dc37:
 void  post_win_msg_1038_dcb0(u32 param_1, u16 param_2, u8 *param_3, u16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     i16         iVar2;
     i16         iVar3;
     u8         *puVar4;
@@ -396,7 +396,7 @@ LAB_1038_e229:
 void  pass1_1038_e4bc(u16 param_1, u32 param_2, u32 param_3, u8 *param_4, i16 param_5, u16 param_6)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     u16         uVar3;
     u16         uVar4;
@@ -405,7 +405,7 @@ void  pass1_1038_e4bc(u16 param_1, u32 param_2, u32 param_3, u8 *param_4, i16 pa
     u16         extraout_DX;
     u8         *extraout_DX_00;
     u8         *puVar7;
-    code      **ppcVar8;
+    void **ppcVar8;
     u32        *puVar9;
     u16        *puVar10;
     u16         uVar11;
@@ -501,7 +501,7 @@ long  call_win_proc_1038_d020(HWND16 win_handle_1, u32 param_2, LPARAM l_param, 
     u32     *var6;
     long     var7;
     u16      var8;
-    code   **fn_ptr_1;
+    void **fn_ptr_1;
     u16      var2;
     u16      var3;
     u16      var4;
@@ -560,7 +560,7 @@ LAB_1038_d10e:
 void  win_prop_op_1038_d118(u32 param_1, u32 param_2, u16 param_3, u16 param_4, HWND16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32  u_var2;
     char        cVar3;
     HANDLE16    HVar4;
@@ -690,7 +690,7 @@ void  send_msg_1038_c374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
 
 {
     u32  uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         uVar3;
     u32         uVar4;
     u16         extraout_DX;
@@ -785,7 +785,7 @@ LRESULT  pass1_1038_8d7e(u32 param_1, u16 param_2)
 void  win_msg_op_1038_95fc(u32 param_1, u16 param_2)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     u16         UVar3;
     u16         UVar4;
@@ -889,7 +889,7 @@ void  win_msg_op_1038_95fc(u32 param_1, u16 param_2)
 void  win_ui_op_1038_977a(i16 param_1, u16 param_2, i16 param_3, u8 *param_4, HWND16 param_5, u16 param_6)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     i16         iVar3;
     u8         *puVar4;
@@ -1024,7 +1024,7 @@ void  pass1_1038_362e(u32 param_1)
 void  pass1_1038_095e(u16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *param_5, i16 param_6, u16 param_7)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     bool        bVar2;
     u16         uVar3;
     u8         *puVar4;
@@ -1751,7 +1751,7 @@ void  win_1020_75f0(u32 param_1, u16 param_2)
 
 {
     u16         *pUVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16          uVar3;
     u32          uVar4;
     u8          *puVar5;
@@ -1832,7 +1832,7 @@ void  post_win_msg_1020_79fc(Struct69 *param_1, u16 param_2, u16 param_3, i16 pa
 
 {
     u32 *puVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     i16         iVar3;
     Struct69 *iVar4;
     u16         uVar4;
@@ -1974,7 +1974,7 @@ LAB_1020_7310:
 u16  post_msg_1020_55b0(u32 param_1, u16 param_2)
 
 {
-    code  **ppcVar1;
+    void **ppcVar1;
     u16     u_var2;
     u8     *in_DX;
     u8     *puVar3;
@@ -2108,7 +2108,7 @@ void  post_msg_1020_4394(u32 param_1, u16 param_2, HWND16 param_3)
 void  win_1020_43f6(Struct0 *param_1, u8 *param_2, u16 param_3)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     i16          iVar2;
     u16          uVar3;
     u16          uVar4;
@@ -2188,7 +2188,7 @@ void  struct_1020_3644(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
 BOOL16  post_win_msg_1020_1ca4(u32 param_1)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         in_AX;
     i16         iVar2;
     u8         *in_DX;
@@ -2353,7 +2353,7 @@ void  pass1_1020_0a0c(u32 param_1)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     u16         uVar5;
 
@@ -2407,7 +2407,7 @@ void  pass1_1020_0dc4(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
 void  win_help_op_1020_0ec4(u32 *param_1, u16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     char        cVar2;
     u16         uVar3;
     u8         *in_DX;

@@ -12,7 +12,7 @@ void  begin_end_pai16_1008_97c8(HWND16 param_1);
 
 void  get_stock_obj_1008_9c56(u16 param_1);
 
-Struct23 * unk_draw_op_1008_80ee(Struct23 *param_1, u16 param_2);
+struct Struct23 *unk_draw_op_1008_80ee(Globals *globals, struct Struct23 *param_1, u16 param_2);
 
 void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3);
 

@@ -87,7 +87,7 @@ void  pass1_1030_afa6(u16 *param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     u32   uVar4;
     Struct614 *iVar5;
     u16          uVar5;
@@ -295,7 +295,7 @@ void  pass1_1030_b454(u32 param_1, u32 param_2, u16 param_3)
 
 {
     u32 *puVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u8         *puVar3;
     u16         extraout_DX;
     i16         iVar4;
@@ -497,7 +497,7 @@ void  pass1_1030_b936(Struct365 *param_1, u16 param_2, u16 param_3, u32 param_4,
 void  pass1_1030_9adc(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 param_5, u16 param_6)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     Struct99  *p_var2;
     u16          uVar4;
     u16          extraout_DX;
@@ -636,7 +636,7 @@ void  pass1_1030_9048(u16 param_1, u32 param_2, i16 param_3, u32 param_4)
 {
     i16         iVar1;
     u32         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     BOOL16      BVar4;
     u16         uVar5;
     u32         uVar6;
@@ -779,7 +779,7 @@ void  pass1_1030_9048(u16 param_1, u32 param_2, i16 param_3, u32 param_4)
 void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 param_5, u16 param_6)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          u_var2;
     u8          *puVar3;
     u16          in_register_00000002;
@@ -967,7 +967,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
 void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 param_5)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          uVar6;
     u16         *puVar7;
     u16          uVar8;
@@ -1571,7 +1571,7 @@ void  pass1_1030_86ec(Struct18 **param_1, u16 param_2)
 void  pass1_1030_6a2c(u32 param_1, long param_2, u16 param_3, u8 *param_4, u16 param_5)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     Struct384 *iVar2;
     u16          u_var2;
     Struct382 *iVar4;
@@ -1630,7 +1630,7 @@ u32  pass1_1030_6b16(u32 param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     u32   uVar4;
     Struct412 *iVar5;
     u16          uVar5;
@@ -1664,7 +1664,7 @@ void  pass1_1030_6c66(u32 param_1, i16 param_2, u32 param_3, u16 param_4, u8 *pa
 
 {
     u16          uVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16          uVar3;
     u16          uVar4;
     BOOL16       BVar5;

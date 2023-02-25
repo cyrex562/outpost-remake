@@ -465,7 +465,7 @@ void  pass1_1038_a156(Struct18 *param_1)
 void  unk_win_ui_op_1038_a18c(Struct1 *param_1, u16 param_2)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16       IVar2;
     u8         *in_DX;
     i16         unaff_DI;
@@ -1139,7 +1139,7 @@ void  unk_win_ui_op_1038_9bc8(Struct1 *param_1)
 
 {
     i16       *pi_var1;
-    code     **ppcVar2;
+    void **ppcVar2;
     i16        iVar3;
     u16      IVar4;
     HDC16      hdc;
@@ -2103,7 +2103,7 @@ void  pass1_1020_770e(u32 param_1)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     u16         uVar5;
 

@@ -31,7 +31,7 @@ u32  call_win_proc_1040_a40e(HWND16 param_1, u32 param_2, LPARAM param_3, u16 pa
 
 {
     u16         uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u32 *puVar4;
     WPARAM16    wparam;
     i16         iVar5;
@@ -617,7 +617,7 @@ void  pass1_1040_89a4(u32 *param_1, u16 *param_2, u8 *param_3, i16 param_4, WNDC
 {
     u16    uVar1;
     u16    u_var2;
-    code **ppcVar3;
+    void **ppcVar3;
     u16    uVar4;
     u16    uVar5;
     u16    uVar6;
@@ -760,7 +760,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
     u32 *puVar1;
     u16         u_var2;
     u32  uVar3;
-    code      **ppcVar4;
+    void **ppcVar4;
     i16         iVar5;
     u16         uVar6;
 
@@ -848,7 +848,7 @@ void win_ui_get_prop_op_1040_9566(i16 *param_1, HWND16 param_2)
 {
     u16         uVar1;
     i16         iVar2;
-    code      **ppcVar3;
+    void **ppcVar3;
     HANDLE16    HVar4;
     HANDLE16    HVar5;
     i16         iVar6;
@@ -915,7 +915,7 @@ void  call_win_proc_1040_9684(HWND16 win_handle_1, u16 param_2, WPARAM16 w_param
     u16        var7;
     u16        var8;
     u16        var9;
-    code     **fn_ptr_1;
+    void **fn_ptr_1;
     RECT16    *rect_1;
     u32 var3;
     u16        var5;
@@ -1062,7 +1062,7 @@ void  check_dialog_msg_1040_81b6(u32 param_1, HWND16 param_2)
 void  unk_win_ui_op_1040_8158(u32 *param_1, POi1616 param_2, i16 param_3, HWND16 param_4)
 
 {
-    code  **ppcVar1;
+    void **ppcVar1;
     u16   IVar2;
     BOOL16  BVar3;
     u32     uVar4;
@@ -1170,7 +1170,7 @@ void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     i16         iVar4;
     u16         uVar5;
     HGDIOBJ16   menu;
@@ -1263,7 +1263,7 @@ BOOL16  post_win_msg_1040_7f1c(u32 param_1, i16 param_2, HWND16 param_3)
 void  win_ui_op_1040_6d1a(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     u8        *in_DX;
     u16        unaff_SS;
@@ -1446,7 +1446,7 @@ void  set_win_pos_1040_4f96(Struct1 *param_1, u16 param_2, u16 param_3, u8 *para
 
 {
     u32         *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16          uVar3;
     u32          uVar4;
     Struct160 *paVar5;
@@ -1575,7 +1575,7 @@ void  destroy_win_1040_5256(Struct34 *param_1, HWND16 param_2)
 {
     u32        *pUVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     BOOL16      BVar4;
     Struct34 *iVar5;
     u16         uVar5;
@@ -1611,7 +1611,7 @@ void  destroy_win_1040_5256(Struct34 *param_1, HWND16 param_2)
 void  win_ui_op_1040_52c0(i16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND16 param_5, u16 param_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     BOOL16     BVar2;
     i16        iVar3;
     u16        uVar4;
@@ -1759,7 +1759,7 @@ LAB_1040_5417:
 void  enable_win_1040_5780(u32 *param_1)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     u16        uVar3;
     u8        *extraout_DX;
@@ -1904,7 +1904,7 @@ LRESULT  send_win_msg_1040_4a0a(Struct48 **param_1, HWND16 param_2)
 
 {
     i16        *pi_var1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u32  uVar3;
     u32  uVar4;
     u16         uVar5;
@@ -1981,7 +1981,7 @@ LRESULT  send_msg_1040_323c(u32 param_1, HWND16 param_2)
 void  send_msg_1040_3374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     u32         uVar3;
     u16         extraout_DX;

@@ -2,6 +2,7 @@
 #include "op_int.h"
 #include "op_winapi.h"
 #include "string_consts.h"
+#include "string_ops.h"
 #include "struct_ops/struct_ops_1.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "unk/unk_15.h"
@@ -26,7 +27,7 @@ void  get_stock_obj_1008_9c56(u16 param_1)
 }
 
 
-Struct23 * unk_draw_op_1008_80ee(Struct23 *param_1, u16 param_2)
+Struct23 *unk_draw_op_1008_80ee(Globals *globals, Struct23 *param_1, u16 param_2)
 
 {
     HCURSOR16   HVar1;
@@ -43,13 +44,13 @@ Struct23 * unk_draw_op_1008_80ee(Struct23 *param_1, u16 param_2)
     iVar3->field_0x58  = 0x0;
     param_1->field_0x0 = 0x87c8;
     iVar3->field_0x2   = 0x1008;
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar3->field_0x4)), s_MicroSpinControl_1050_0370);
+    unk_str_op_1000_3d3e(iVar3->field_0x4, globals->s_MicroSpinControl_1050_0370);
     iVar3->field_0x54 = 0x3;
-    HVar1             = LoadCursor16(0x1000, 0x7f00);
+    HVar1             = LoadCursor16(0x1000, get_rsrc_string(0x7f00));
     iVar3->field_0x58 = HVar1;
-    HVar2             = GetStockObject16((u16)0x1538);
+    HVar2             = GetStockObject16(0x1538);
     iVar3->field_0x56 = HVar2;
-    pass1_1008_818c((Struct23 *)(param_1 & 0xffff | ZEXT24(uVar3) << 0x10), 0x1538, param_2);
+    pass1_1008_818c(param_1, 0x1538, param_2);
     return param_1;
 }
 
@@ -658,7 +659,7 @@ void  pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 pa
 
 {
     u32 uVar1;
-    code     **ppcVar2;
+    void **ppcVar2;
 
     set_sys_color_1008_357e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     if((param_1 + 0xe8) != 0x0)

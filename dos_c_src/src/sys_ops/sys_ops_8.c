@@ -323,7 +323,7 @@ void  pass1_1010_9304(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *pa
 void  pass1_1010_9372(u32 *param_1, u16 param_2, i16 param_3, i16 param_4, i16 param_5)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     char       cVar2;
     u16        uVar3;
     u16        uVar4;
@@ -360,7 +360,7 @@ void  pass1_1010_9794(u32 param_1, u16 param_2)
 
 {
     i16          iVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u32  *puVar3;
     u16          uVar4;
     Struct251 *puVar5;
@@ -559,7 +559,7 @@ LAB_1010_8869:
 void  pass1_1010_6abc(Struct635 *param_1, u16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u8         *extraout_DX;
     i16         unaff_DI;
     u16         unaff_SS;
@@ -889,7 +889,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     u16       **ppu_var2;
     u32  uVar3;
     u32 *puVar4;
-    code      **ppcVar5;
+    void **ppcVar5;
     LPCSTR      pCVar6;
     i16         iVar7;
     u16         uVar8;
@@ -1230,7 +1230,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
     u32 *puVar1;
     u16         u_var2;
     u32  uVar3;
-    code      **ppcVar4;
+    void **ppcVar4;
     LPCSTR      pCVar5;
     u8         *in_DX;
     i16         iVar6;
@@ -1565,7 +1565,7 @@ void  pass1_1010_4f48(u32 param_1, u16 param_2)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     u32  *puVar4;
     u32   uVar5;
     Struct482 *iVar6;
@@ -1688,7 +1688,7 @@ void  pass1_1010_519a(u32 param_1, i16 *param_2, u8 *param_3, u16 param_4)
 void  pass1_1010_35a4(u32 *param_1, u32 param_2, u8 *param_3)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u32 u_var2;
     u16        uVar3;
     u32       *puVar4;

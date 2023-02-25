@@ -288,7 +288,7 @@ void  pass1_1020_ea20(u32 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 p
 
 {
     u16         uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         uVar3;
     char        cVar4;
     u32        *puVar5;
@@ -536,7 +536,7 @@ void  pass1_1028_0176(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     u32          uVar4;
     u16          uVar5;
     Struct21  *paVar6;
@@ -629,7 +629,7 @@ void  pass1_1020_cac2(u32 param_1, u8 *param_2, u16 param_3, u16 param_4, u16 pa
 
 {
     i16        *pi_var1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u8         *puVar3;
     u8         *puVar4;
     u16         uVar5;
@@ -831,7 +831,7 @@ void  pass1_1020_cefc(u32 param_1, i16 param_2, u16 param_3)
 void  pass1_1020_d194(u32 param_1, i16 param_2, u16 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         u_var2;
     u8         *puVar3;
     u16         uVar4;
@@ -1382,7 +1382,7 @@ void  pass1_1020_ac6e(u16 param_1, u8 param_2, u32 param_3, i16 param_4, i16 par
 void  pass1_1020_ad90(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 *param_5, u32 param_6)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16        *pu_var2;
     u8         *puVar3;
     i16         iVar4;
@@ -1888,7 +1888,7 @@ void  pass1_1020_62e0(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
 
 {
     u32 *puVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16        *puVar3;
     u32  uVar4;
     u8         *extraout_DX;
@@ -2049,7 +2049,7 @@ void  pass1_1020_3540(u16 param_1, u16 param_2, i16 param_3, u16 *param_4, u8 *p
 void  pass1_1020_1eea(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4, i16 param_5, u16 param_6)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          u_var2;
     Struct663 *iVar3;
     u16          uVar3;
@@ -2100,7 +2100,7 @@ void  pass1_1020_25c0(u32 param_1, u16 param_2, u16 param_3)
 
 {
     i16         *pi_var1;
-    code       **ppcVar2;
+    void **ppcVar2;
     u16          uVar3;
     u16          uVar4;
     Struct277 *iVar3;

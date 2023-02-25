@@ -683,7 +683,7 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
 
 {
     u32  *puVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     BOOL16       BVar3;
     Struct229 *uVar4;
     u16          uVar5;
@@ -871,7 +871,7 @@ void file_1008_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
 
 {
     u32  uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     BOOL16      BVar3;
     u16         uVar4;
     u8         *extraout_DX;
@@ -1072,7 +1072,7 @@ void pass1_1008_ba38(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
 void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5, u16 param_6)
 
 {
-    code       **ppcVar1;
+    void **ppcVar1;
     u16          u_var2;
     Struct199 *iVar3;
     BOOL16       BVar3;
@@ -1187,7 +1187,7 @@ void  file_1008_bb5e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
 void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     u16        u_var2;
     BOOL16     BVar3;
     u16        uVar4;
@@ -1259,7 +1259,7 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
 void file_1008_76e4(u32 param_1, long *param_2, u16 param_3, u16 param_4, u16 param_5)
 
 {
-    code **ppcVar1;
+    void **ppcVar1;
     u16    u_var2;
     BOOL16 BVar3;
     u16    extraout_DX;
@@ -1377,7 +1377,7 @@ u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16
 void  pass1_1008_7898(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, HFILE16 param_5, u16 param_6)
 
 {
-    code     **ppcVar1;
+    void **ppcVar1;
     BOOL16     BVar2;
     u16        extraout_DX;
     u16        uVar3;
@@ -1438,7 +1438,7 @@ void  pass1_1008_7898(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, HFILE
 u16  write_to_file_1008_7954(u32 param_1, u32 *param_2, u16 param_3, HFILE16 param_4, u16 param_5)
 
 {
-    code  **ppcVar1;
+    void **ppcVar1;
     BOOL16  BVar2;
     u32     uVar3;
     u16 extraout_DX;

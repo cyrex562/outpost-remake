@@ -7,7 +7,7 @@ void destroy_window_1020_3b3e(Struct30 *param_1, HWND16 param_2)
 
 {
     u32 *puVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u16         uVar3;
     Struct30 *paVar4;
     Struct30 *uVar5;
@@ -85,7 +85,7 @@ Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3)
 void enable_window_1020_1bd4(i16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     bool        bVar2;
     u16         in_AX;
     i16         iVar3;
@@ -235,7 +235,7 @@ void pass1_1020_26a6(u32 param_1)
 {
     u32 *puVar1;
     u16         u_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     u16         uVar4;
 
     uVar4  = (param_1 >> 0x10);
@@ -291,7 +291,7 @@ void win_ui_palette_op_1020_0cd2(u32 param_1, HWND16 param_2)
 {
     u16         uVar1;
     u32 *pu_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     u32  uVar4;
     u16         uVar5;
     HDC16       hdc;
@@ -374,7 +374,7 @@ void window_op_1020_10a0(Struct0 *param_1)
 
 {
     u32   uVar1;
-    code       **ppcVar2;
+    void **ppcVar2;
     Struct160 *in_AX;
     u16          uVar3;
     BOOL16      *pBVar4;
@@ -463,7 +463,7 @@ void window_op_1020_10a0(Struct0 *param_1)
 void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u16         in_AX;
     HCURSOR16   HVar2;
     HCURSOR16   HVar3;
@@ -526,7 +526,7 @@ void unk_win_ui_op_1020_1418(Struct40 *param_1, u32 param_2, u16 param_3)
 {
     u32  uVar1;
     Struct13 *p_var2;
-    code      **ppcVar3;
+    void **ppcVar3;
     HDC16      *pHVar4;
     u32 *puVar5;
     u8         *puVar6;
@@ -626,7 +626,7 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
 
 {
     u32         uVar1;
-    code      **ppcVar2;
+    void **ppcVar2;
     u32  uVar3;
     u16         uVar4;
     u16       IVar5;
@@ -960,7 +960,7 @@ Struct11 *pass1_1018_4ae0(Struct11 *param_1, u8 param_2, u16 param_3)
 void unk_win_ui_op_1018_4f18(Struct39 *param_1, u16 param_2, u32 param_3)
 
 {
-    code      **ppcVar1;
+    void **ppcVar1;
     u32 *pu_var2;
     RECT16     *rect;
     i16         iVar3;
@@ -1120,7 +1120,7 @@ void pass1_1018_2440(Struct11 *param_1, u16 param_2)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     i16         *piVar4;
     u16          uVar6;
     Struct502 *uVar5;
@@ -1552,7 +1552,7 @@ void pass1_1010_29c6(Struct11 *param_1)
 {
     u32  *puVar1;
     u16          u_var2;
-    code       **ppcVar3;
+    void **ppcVar3;
     Struct476 *iVar5;
     u16          uVar4;
 

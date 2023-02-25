@@ -44,6 +44,6 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3);
 BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6);
 
 
-
+void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3);
 
 #endif // OUTPOST_1_SRC_WIN_OPS_WIN_OPS_4_H_
