@@ -1,3 +1,7 @@
+#include "ui_ops_6.h"
+#include "op_int.h"
+#include "op_winapi.h"
+#include "op_win_def.h"
 
 void destroy_window_1020_3b3e(Struct30 *param_1, HWND16 param_2)
 
