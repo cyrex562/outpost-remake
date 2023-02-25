@@ -167,7 +167,7 @@ void  pass1_1008_6a4a(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u16 pa
             if((extraout_DX_00 | u_stack6) != 0x0)
             {
                 ppcVar1       = (**(u32 **)(u_stack6 + 0x4) + 0x10);
-                u_stack6._2_2_ = extraout_DX_00;
+                u_stack6 = extraout_DX_00;
                 (**ppcVar1)();
                 (iVar2 + 0xce) = (u_stack6 + 0x4);
                 return;
@@ -1356,7 +1356,7 @@ void  pass1_1008_431c(u32 param_1, u8 param_2)
             uVar4 = u_stack6;
             pass1_1008_4544(param_1);
             u_var2 = (iVar5 + 0x10);
-            pass1_1000_4906((Struct20 *)(uVar4 & 0xffff | u_stack6._2_2_ << 0x10), param_2, (u_var2 + 0x4));
+            pass1_1000_4906((Struct20 *)(uVar4 & 0xffff | u_stack6 << 0x10), param_2, (u_var2 + 0x4));
             u_stack6 = u_stack6 + 0x1;
         }
     }

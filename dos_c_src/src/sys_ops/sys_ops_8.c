@@ -970,7 +970,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     param_1->field_0xa = pCVar6;
     param_1->field_0xc = puVar12;
     pcVar18            = param_1->field_0xe;
-    pCVar6             = s_tile2_bmp_1050_1538;
+    pCVar6             = 0x1538;
     GetPrivateProfileString16(0x1008, param_1->field_0xa, puVar12, (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -986,7 +986,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = s_tile2_bmp_1050_1538;
+    pCVar16 = 0x1538;
     GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -999,7 +999,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = s_tile2_bmp_1050_1538;
+    pCVar6  = 0x1538;
     GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1012,7 +1012,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = s_tile2_bmp_1050_1538;
+    pCVar16 = 0x1538;
     GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1025,7 +1025,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = s_tile2_bmp_1050_1538;
+    pCVar6  = 0x1538;
     GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1038,7 +1038,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = s_tile2_bmp_1050_1538;
+    pCVar16 = 0x1538;
     GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1051,7 +1051,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = s_tile2_bmp_1050_1538;
+    pCVar6  = 0x1538;
     GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     puVar11 = puVar12;
     if(*param_1->field_0xe != '\0')
@@ -1069,7 +1069,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = s_tile2_bmp_1050_1538;
+    pCVar16 = 0x1538;
     GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1082,7 +1082,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar6  = s_tile2_bmp_1050_1538;
+    pCVar6  = 0x1538;
     GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1093,7 +1093,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    pCVar16 = s_tile2_bmp_1050_1538;
+    pCVar16 = 0x1538;
     GetPrivateProfileString16(pCVar6, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1104,7 +1104,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     pcVar18 = param_1->field_0xe;
     uVar3   = &param_1->field_0xa;
-    index   = (u16)s_tile2_bmp_1050_1538;
+    index   = (u16)0x1538;
     puVar9  = GetPrivateProfileString16(pCVar16, uVar3, (uVar3 >> 0x10), (s_You_may_not_run_a_turn__The_game_1050_00df + 0x21), pcVar18, (pcVar18 >> 0x10));
     if(*param_1->field_0xe != '\0')
     {
@@ -1115,7 +1115,7 @@ void  win_sys_op_1010_5404(Struct54 *param_1, u16 param_2, u16 param_3, u16 para
     }
     if(param_1->field_0x62 == 0x0)
     {
-        uVar15   = SUB42(s_tile2_bmp_1050_1538, 0x0);
+        uVar15   = SUB42(0x1538, 0x0);
         uStack46 = GetSystemMetrics16(index);
         iStack42 = 0x1;
         do
@@ -1259,7 +1259,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
     uVar3 = (iVar6 + 0xa);
     WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0xe));
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0xe));
     if((iVar6 + 0x1e) == 0x0)
     {
         pCVar5 = 0x13c8;
@@ -1269,7 +1269,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x74) == 0x0)
     {
         pCVar5 = 0x13c8;
@@ -1279,7 +1279,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x72) == 0x0)
     {
         pCVar5 = 0x13c8;
@@ -1289,7 +1289,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10), pCVar5);
     if((iVar6 + 0x20) == 0x0)
     {
         pCVar5 = 0x13c8;
@@ -1299,7 +1299,7 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xe);
     sys_1000_3f9c(uVar3, (uVar3 >> 0x10), 0x14a2, &USHORT_1050_1050, *(iVar6 + 0x76), &stack0xfffe, uVar7, 0x1000, unaff_SS, in_AF);
     uVar3 = (iVar6 + 0xa);
@@ -1313,13 +1313,13 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10), pCVar5);
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10), pCVar5);
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x1a));
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x1a));
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x68));
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x68));
     uVar3 = (iVar6 + 0xa);
-    WritePrivateProfileString16(s_tile2_bmp_1050_1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x6c));
+    WritePrivateProfileString16(0x1538, uVar3, (uVar3 >> 0x10),  * (iVar6 + 0x6c));
     iStack12 = 0x1;
     do
     {
@@ -1424,7 +1424,7 @@ void  switchD_1010: 2ab5 ::caseD_13(u32 param_1, i16 param_2)
     if(((((iVar2 + 0x22) != 0x0) || ((iVar2 + 0x24) != 0x0)) || ((iVar2 + 0x26) != 0x0)) || ((iVar2 + 0x28) != 0x0))
     {
         uVar1 = (param_1 + 0xe);
-        sys_1000_3f9c(uVar1, (uVar1 >> 0x10), s__d__d__d__d_1050_14ae, &USHORT_1050_1050, *(param_2 * 0x8 + param_1 + 0x22), &stack0xfffe, param_1._2_2_, 0x1000, unaff_SS, in_AF);
+        sys_1000_3f9c(uVar1, (uVar1 >> 0x10), s__d__d__d__d_1050_14ae, &USHORT_1050_1050, *(param_2 * 0x8 + param_1 + 0x22), &stack0xfffe, param_1, 0x1000, unaff_SS, in_AF);
         uVar1 = (param_1 + 0xa);
         WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar1, (uVar1 >> 0x10),  * (param_1 + 0xe));
     }
@@ -1486,8 +1486,8 @@ void  get_sys_metrics_1010_46f6(u32 param_1)
     (iVar4 + 0x1a) = local_6 + 0x9;
     IVar2          = GetSystemMetrics16(0x1008);
     (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-    IVar2          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
-    IVar3          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar2          = GetSystemMetrics16((u16)0x1538);
+    IVar3          = GetSystemMetrics16((u16)0x1538);
     (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar7 + 0x8);
     return;
 }
@@ -1949,7 +1949,7 @@ void  pass1_1010_41d6(u32 param_1, u32 param_2, u8 *param_3, u16 param_4, u8 par
             fn_ptr_1000_17ce(paStack34, 0x1000);
         }
         uStack24 = uStack24 + 0x1;
-        puVar9   = uStack20._2_2_;
+        puVar9   = uStack20;
     }
     for(iStack26 = 0x0; piVar2 = &iVar9->field_0x74, *piVar2 != iStack26 && iStack26 <= *piVar2; iStack26 = iStack26 + 0x1)
     {

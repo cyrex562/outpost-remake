@@ -452,11 +452,11 @@ LAB_1020_eb4e:
         uVar6          = uStack34._3_1_;
         if(uStack34._3_1_ != 0x0)
         {
-            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack8, uStack8._2_2_);
-            uStack50 = CONCAT22(uStack8._2_2_, uVar6);
-            fn_ptr_1030_7296(CONCAT22(uStack8._2_2_, uVar6));
+            pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack8, uStack8);
+            uStack50 = CONCAT22(uStack8, uVar6);
+            fn_ptr_1030_7296(CONCAT22(uStack8, uVar6));
             pass1_1030_730a(uStack50, uVar6, 0x1030, param_6);
-            puStack46 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_6, uStack8._2_2_, unaff_DI);
+            puStack46 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_6, uStack8, unaff_DI);
             pass1_1010_ec68(puStack46, uStack50, param_6);
             puStack42 = struct_op_1030_73a8(uStack50);
             puVar5    = puStack42;
@@ -1341,7 +1341,7 @@ void  pass1_1020_ac6e(u16 param_1, u8 param_2, u32 param_3, i16 param_4, i16 par
     pass1_1008_3eb4(CONCAT22(0x1048, uVar6), CONCAT22(param_1, &local_8), CONCAT22(param_1, &local_6), CONCAT22(param_1, &local_6 + 0x2));
     if(param_6 == 0x0)
     {
-        local_6 = local_6 & 0xffff | (local_6._2_2_ + param_5) << 0x10;
+        local_6 = local_6 & 0xffff | (local_6 + param_5) << 0x10;
     }
     else
     {
@@ -1353,7 +1353,7 @@ void  pass1_1020_ac6e(u16 param_1, u8 param_2, u32 param_3, i16 param_4, i16 par
         {
             if(param_6 == 0x2)
             {
-                local_6 = local_6 & 0xffff | (local_6._2_2_ - param_5) << 0x10;
+                local_6 = local_6 & 0xffff | (local_6 - param_5) << 0x10;
             }
         }
     }
@@ -1470,7 +1470,7 @@ void  pass1_1020_ad90(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 *p
         iStack68 = 0x0;
         for(uStack70 = uStack12; uStack70 <= iStack16; uStack70 = uStack70 + 0x1)
         {
-            for(puStack78 = uStack12._2_2_; puStack78 <= iStack14; puStack78 = (puStack78 + 0x1))
+            for(puStack78 = uStack12; puStack78 <= iStack14; puStack78 = (puStack78 + 0x1))
             {
                 ppcVar1  = (*pu_stack62 + 0x4);
                 iVar4    = iStack68;
@@ -1816,9 +1816,9 @@ void  get_sys_metrics_1020_7c1a(u16 *param_1, u32 param_2, u16 param_3)
     iVar3->field_0xa  = (param_2 + 0xe4);
     IVar1             = GetSystemMetrics16(param_3);
     iVar3->field_0xe  = IVar1;
-    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)0x1538);
     iVar3->field_0x10 = IVar1;
-    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)0x1538);
     iVar3->field_0x12 = IVar1;
     return;
 }

@@ -104,7 +104,7 @@ u16  pass1_1038_7b20(u32 *param_1, u32 param_2, u16 param_3)
                     return 0x0;
                 }
                 pass1_1038_75ca(uStack16, param_2, uStack16, param_3);
-                uStack16._2_2_ = (uStack16 >> 0x10);
+                uStack16 = (uStack16 >> 0x10);
             } while(uStack16 != 0x0);
         }
     }
@@ -249,7 +249,7 @@ void  pass1_1038_5e16(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 pa
                     BVar1         = write_to_file_1008_7e1c(uVar5, uVar6, &local_c, param_5, 0x2, 0x1008);
                     if(BVar1 != 0x0)
                     {
-                        local_c = CONCAT22(local_c._2_2_, (iVar3 + 0x1c));
+                        local_c = CONCAT22(local_c, (iVar3 + 0x1c));
                         BVar1   = write_to_file_1008_7e1c(uVar5, uVar6, &local_c, param_5, 0x2, 0x1008);
                         if(BVar1 != 0x0)
                         {
@@ -609,7 +609,7 @@ void  pass1_1030_d72e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
             break;
         iVar3          = iStack10 * 0xc + param_1;
         (iVar3 + 0x20) = local_8;
-        (iVar3 + 0x22) = local_8._2_2_;
+        (iVar3 + 0x22) = local_8;
         uVar1          = switch_1008_72bc(uVar4, uVar5, local_4);
         (iVar3 + 0x24) = uVar1;
         if(PTR_LOOP_1050_0312 < 0x2)
@@ -1548,7 +1548,7 @@ u16  read_file_1030_4e70(u32 param_1, u32 *param_2, u8 **param_3, long param_4, 
                 {
                     lStack56 = WIN16_hread(0x1000, (SEGPTR)*param_2, CONCAT22(*param_3, (*param_2 >> 0x10)));
                     uVar3    = (lStack56 >> 0x10);
-                    _lclose16((HFILE16)s_tile2_bmp_1050_1538);
+                    _lclose16((HFILE16)0x1538);
                     pbStack60 = *param_3;
                     while(lStack56 != 0x0)
                     {

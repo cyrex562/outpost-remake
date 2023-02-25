@@ -1142,14 +1142,14 @@ void  pass1_1030_62e4(u32 *param_1, u16 *param_2, long param_3, u16 param_4)
                     local_64[0]    = iStack44;
                     u_stack60._0_2_ = local_40;
                     uStack78       = u_stack60;
-                    uStack76       = local_40._2_2_;
+                    uStack76       = local_40;
                     uStack76._1_1_ = (local_40 >> 0x18);
                     if(uStack76._1_1_ == '\0')
                     {
                         u_stack60._0_2_ = 0x0;
-                        local_40._2_2_ = 0x0;
+                        local_40 = 0x0;
                     }
-                    uStack94 = CONCAT22(local_40._2_2_, u_stack60);
+                    uStack94 = CONCAT22(local_40, u_stack60);
                     ppcVar1  = (*param_1 + 0x8);
                     iStack44 = iStack44 + 0x1;
                     (**ppcVar1)();

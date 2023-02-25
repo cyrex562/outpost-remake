@@ -101,7 +101,7 @@ void pass1_1010_32f4(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4)
         iVar10->field_0x52 = (Struct65 *)0x0;
         iVar10->field_0x18 = 0x0;
     }
-    uVar8 = param_2._2_2_ | param_2;
+    uVar8 = param_2 | param_2;
     if((param_2 != 0x0) && (ppcVar5 = (*param_1 + 0x24), (**ppcVar5)(param_4, param_1, param_2), uVar8 != 0x0))
     {
         ppcVar5 = (*param_2 + 0x4);
@@ -1095,7 +1095,7 @@ LAB_1010_09db:
     }
     param_6 = (uStack10 >> 0x10);
 LAB_1010_0a36:
-    if((uStack10._2_2_ | uStack10) != 0x0)
+    if((uStack10 | uStack10) != 0x0)
     {
         uVar5 = str_op_1000_3da4(*param_4);
         uVar6 = str_op_1000_3da4(uStack10);
@@ -1186,12 +1186,12 @@ void pass1_1010_11c6(u32 param_1, u16 param_2, u8 *param_3)
         if(iVar7 != 0x0)
         {
             uStack10 = *puStack50;
-            uStack14 = uStack14 & 0xffff | (uStack14._2_2_ + 0x1) << 0x10;
+            uStack14 = uStack14 & 0xffff | (uStack14 + 0x1) << 0x10;
         }
         uStack14 = uStack14 & 0xffff0000 | (uStack14 + 0x1);
     }
-    iVar6->field_0x10 = uStack14._2_2_;
-    pu_var24           = struct_1010_38f8(CONCAT22(puVar11, iVar6), uStack14._2_2_, uStack14._2_2_, puVar12);
+    iVar6->field_0x10 = uStack14;
+    pu_var24           = struct_1010_38f8(CONCAT22(puVar11, iVar6), uStack14, uStack14, puVar12);
     puVar13           = (pu_var24 >> 0x10);
     iVar8             = 0x0;
     mem_op_1000_179c(0x400, puVar13, 0x1000);
@@ -1273,14 +1273,14 @@ void pass1_1010_11c6(u32 param_1, u16 param_2, u8 *param_3)
                 uVar15  = (pu_var24 >> 0x10);
                 u_var23  = SUB42(pu_var24, 0x0);
             }
-            (uStack14._2_2_ * 0x4 + iVar8)       = u_var23;
-            (uStack14._2_2_ * 0x4 + iVar8 + 0x2) = uVar15;
+            (uStack14 * 0x4 + iVar8)       = u_var23;
+            (uStack14 * 0x4 + iVar8 + 0x2) = uVar15;
             uVar5                                = iVar18->field_0x64;
             u_var23                               = (uVar5 >> 0x10);
             iVar21                               = uVar5;
             iStack42                             = iStack42 + 0x1;
-            uVar5                                = (uStack14._2_2_ * 0x4 + iVar8);
-            ppcVar3                              = ((uStack14._2_2_ * 0x4 + iVar8) + 0x1c);
+            uVar5                                = (uStack14 * 0x4 + iVar8);
+            ppcVar3                              = ((uStack14 * 0x4 + iVar8) + 0x1c);
             (**ppcVar3)(0x1000, uVar5, (uVar5 >> 0x10), iStack42, (iVar21 + iStack28 * 0x4) + (DAT_1050_0ecc * 0x6 + 0xebc) * 0x8, (iVar21 + iStack28 * 0x4 + 0x2));
             iStack40 = 0x0;
             puVar16  = extraout_DX_00;
@@ -1324,25 +1324,25 @@ void pass1_1010_11c6(u32 param_1, u16 param_2, u8 *param_3)
                 iStack40 = iStack40 + 0x1;
                 puVar16  = extraout_DX_01;
             }
-            uVar5          = (uStack14._2_2_ * 0x4 + iVar8);
+            uVar5          = (uStack14 * 0x4 + iVar8);
             (uVar5 + 0x10) = iStack40;
             uVar10         = iStack40 << 0x2;
             iVar21         = iVar7;
             puVar14        = puVar12;
-            pu_var24        = struct_1010_38f8(*(uStack14._2_2_ * 0x4 + iVar8), iStack40, uVar10, puVar16);
+            pu_var24        = struct_1010_38f8(*(uStack14 * 0x4 + iVar8), iStack40, uVar10, puVar16);
             puVar16        = (pu_var24 >> 0x10);
             pass1_1000_48a8(pu_var24, CONCAT22(puVar14, iVar21), uVar10);
             pass1_1000_4906(paStack38, 0x0, 0x400);
-            uStack14 = uStack14 & 0xffff | (uStack14._2_2_ + 0x1) << 0x10;
+            uStack14 = uStack14 & 0xffff | (uStack14 + 0x1) << 0x10;
         }
         uVar5          = iVar6->field_0x8;
         uVar5          = (uVar5 + uStack14 * 0x4);
-        (uVar5 + 0x10) = uStack14._2_2_;
-        uVar10         = uStack14._2_2_ << 0x2;
+        (uVar5 + 0x10) = uStack14;
+        uVar10         = uStack14 << 0x2;
         uVar5          = iVar6->field_0x8;
         iVar21         = iVar8;
         puVar14        = puVar13;
-        pu_var24        = struct_1010_38f8(*(uVar5 + uStack14 * 0x4), uStack14._2_2_, uVar10, puVar16);
+        pu_var24        = struct_1010_38f8(*(uVar5 + uStack14 * 0x4), uStack14, uVar10, puVar16);
         pass1_1000_48a8(pu_var24, CONCAT22(puVar14, iVar21), uVar10);
         pass1_1000_4906((Struct20 *)CONCAT22(puVar13, iVar8), 0x0, 0x400);
         uVar10 = uStack14 + 0x1;

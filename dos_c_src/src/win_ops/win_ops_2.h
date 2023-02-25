@@ -166,8 +166,7 @@ void  window_op_1020_76aa(Struct0 *param_1);
 void  post_win_msg_1020_79fc(Struct69 *param_1, u16 param_2, u16 param_3, i16 param_4, HWND16 param_5);
 
 
-
-void  window_op_1020_6c3a(Struct0 *param_1);
+void window_op_1020_6c3a(struct Globals *globals, struct Struct0 *param_1);
 
 
 

@@ -24,4 +24,6 @@ u32 SBORROW2(u16 a, u16 b);
 
 u32 CARRY2(u16 a, u16 b);
 
+u32 ZEXT24(u16 a);
+
 #endif // OUTPOST_1_SRC_UTILS_H_

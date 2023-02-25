@@ -947,7 +947,7 @@ void load_string_1008_b65a(u32 param_1, LPSTR in_string_2, u32 param_3, u16 para
 {
     u16 unaff_SS;
 
-    pass1_1008_b9ce(param_1, CONCAT22(param_4, param_3._2_2_), unaff_SS);
+    pass1_1008_b9ce(param_1, CONCAT22(param_4, param_3), unaff_SS);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, in_string_2, (short)param_3);
     return;
 }
@@ -1791,17 +1791,17 @@ void  pass1_1008_87cc(Struct86 *param_1, i16 param_2, i16 param_3, u16 param_4, 
     iVar5->field_0x1a_addr_offset = u_var2;
     mem_op_1000_179c(0x6, puVar5, 0x1000);
     paStack26      = (Struct18 *)CONCAT22(puVar5, u_var2);
-    uStack18._2_2_ = puVar5 | u_var2;
-    if(uStack18._2_2_ == 0x0)
+    uStack18 = puVar5 | u_var2;
+    if(uStack18 == 0x0)
     {
         &iVar5->field_0x8 = 0x0;
     }
     else
     {
         puVar9           = pass1_1008_ada2(CONCAT22(puVar5, u_var2), iVar5->field_0x2e);
-        uStack18._2_2_   = (puVar9 >> 0x10);
+        uStack18   = (puVar9 >> 0x10);
         iVar5->field_0x8 = puVar9;
-        iVar5->field_0xa = uStack18._2_2_;
+        iVar5->field_0xa = uStack18;
     }
     BVar3 = pass1_1008_aed8(*&iVar5->field_0x8);
     if(BVar3 == 0x0)
@@ -1817,7 +1817,7 @@ void  pass1_1008_87cc(Struct86 *param_1, i16 param_2, i16 param_3, u16 param_4, 
         pass1_1018_20ee(_PTR_LOOP_1050_0382, piVar4);
         uStack18._0_2_ = SUB42(piVar4, 0x0);
         pass1_1008_add2(*(u16 **)&iVar5->field_0x8);
-        uStack30 = pass1_1008_4772((Struct76 *)CONCAT22(uStack18._2_2_, uStack18));
+        uStack30 = pass1_1008_4772((Struct76 *)CONCAT22(uStack18, uStack18));
         pass1_1018_214e(_PTR_LOOP_1050_0382, (_PTR_LOOP_1050_0382 >> 0x10), (param_1 & 0xffff0000 | &iVar5->field_0x28), iVar5->field_0x2e);
         local_24 = &iVar5->field_0x1c_addr_base;
         uStack32 = iVar5->field_0x20;
@@ -2014,8 +2014,8 @@ void pass1_1008_9004(u32 param_1, u16 param_2, u16 param_3, u32 param_4)
     if((*puVar1 < param_4 || *puVar1 == param_4) || (iVar4->field_0x6 == 0x0))
     {
         pu_var2 = (&iVar4->field_0x12 + 0x2);
-        bVar6  = *pu_var2 < param_4._2_2_;
-        if((bVar6 || *pu_var2 == param_4._2_2_) && ((bVar6 || (puVar1 = &iVar4->field_0x12, *puVar1 < param_4 || *puVar1 == param_4))))
+        bVar6  = *pu_var2 < param_4;
+        if((bVar6 || *pu_var2 == param_4) && ((bVar6 || (puVar1 = &iVar4->field_0x12, *puVar1 < param_4 || *puVar1 == param_4))))
         {
             pass1_1008_909c(param_1 & 0xffff | uVar4 << 0x10, unaff_SS);
         }
@@ -2025,8 +2025,8 @@ void pass1_1008_9004(u32 param_1, u16 param_2, u16 param_3, u32 param_4)
             return;
         }
         pu_var2 = &iVar4->field_0xc;
-        bVar6  = *pu_var2 < param_4._2_2_;
-        if((bVar6 || *pu_var2 == param_4._2_2_) && ((bVar6 || (pu_var2 = &iVar4->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
+        bVar6  = *pu_var2 < param_4;
+        if((bVar6 || *pu_var2 == param_4) && ((bVar6 || (pu_var2 = &iVar4->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
         {
             iVar4->field_0xa = (param_4 + 0x1);
             iVar4->field_0xc = (param_4 + 0x1 >> 0x10);

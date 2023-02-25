@@ -41,7 +41,7 @@ void  pass1_1020_79e4(u32 param_1, u16 param_2, u16 param_3);
 
 void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3);
 
-void  unk_draw_op_1020_7f7a(Struct20 *param_1, u16 param_2, u32 param_3);
+void unk_draw_op_1020_7f7a(struct Globals *globals, struct Struct20 *param_1, u16 param_2, u32 param_3);
 
 void  realize_palette_1020_8128(u32 param_1, i16 param_2, HGDIOBJ16 param_3, u16 param_4);
 

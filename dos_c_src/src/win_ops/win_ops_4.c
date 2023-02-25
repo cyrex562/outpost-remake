@@ -23,15 +23,15 @@ void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 pa
     {
         if(param_4 != 0x1)
         {
-            DefWindowProc16((HWND16)s_tile2_bmp_1050_1538, param_1, param_2, CONCAT22(param_4, param_3));
+            DefWindowProc16((HWND16)0x1538, param_1, param_2, CONCAT22(param_4, param_3));
             return;
         }
         pu_stack6 = *param_1;
-        SetWindowLong16((HWND16)s_tile2_bmp_1050_1538, (u16)pu_stack6, pu_stack6 >> 0x10);
+        SetWindowLong16((HWND16)0x1538, (u16)pu_stack6, pu_stack6 >> 0x10);
         pass1_1008_9628(pu_stack6, param_5);
     }
     ppcVar1 = (*pu_stack6 + 0x1c);
-    (**ppcVar1)(s_tile2_bmp_1050_1538, pu_stack6, (pu_stack6 >> 0x10), param_1, param_2, param_3, param_4, u_var2);
+    (**ppcVar1)(0x1538, pu_stack6, (pu_stack6 >> 0x10), param_1, param_2, param_3, param_4, u_var2);
     return;
 }
 
@@ -81,7 +81,7 @@ u16  unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 param_3)
         BVar1 = IsIconic16(param_3);
         if(BVar1 == 0x0)
         {
-            PostMessage16((HWND16)s_tile2_bmp_1050_1538, 0x0, 0x0, 0x1110067);
+            PostMessage16((HWND16)0x1538, 0x0, 0x0, 0x1110067);
         }
         return 0x0;
     }
@@ -276,7 +276,7 @@ BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, 
             return BVar3;
         }
         HStack14 = LoadCursor16(0x1030, 0x7f02);
-        HStack16 = SetCursor16((HCURSOR16)s_tile2_bmp_1050_1538);
+        HStack16 = SetCursor16((HCURSOR16)0x1538);
         uStack20 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
         pass1_1018_262e(uStack20);
         pass1_1030_838e(_PTR_LOOP_1050_5748, param_5, in_AF);
@@ -289,7 +289,7 @@ BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, 
         (**ppcVar1)(0x1000, param_1, 0x0, 0x9c, param_5);
         puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);
         pass1_1008_a9ec(puVar8);
-        hwnd = (HWND16)s_tile2_bmp_1050_1538;
+        hwnd = (HWND16)0x1538;
         SetCursor16(0x1010);
         uVar13 = 0xfc;
         uVar10 = 0x111;
@@ -679,8 +679,8 @@ void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_
         uStack14  = (param_1 + 0x58);
         uStack12  = (param_1 + 0x56);
         uStack10  = 0x0;
-        uStack4   = param_1._2_2_;
-        AVar2     = RegisterClass16(s_tile2_bmp_1050_1538);
+        uStack4   = param_1;
+        AVar2     = RegisterClass16(0x1538);
         if(AVar2 == 0x0)
         {
             fn_ptr_op_1000_24cd(0x0, &stack0xfffe);

@@ -1750,7 +1750,7 @@ LAB_1018_0f74:
         goto LAB_1018_0ffc;
     iVar4    = &iVar13->field_0x94;
     u_stack6  = (&iVar13->field_0x94 + 0x2);
-    uStack28 = uStack28 & 0xffff | (uStack28._2_2_ + 0x1) << 0x10;
+    uStack28 = uStack28 & 0xffff | (uStack28 + 0x1) << 0x10;
     goto LAB_1018_0fe8;
 LAB_1018_0ffc:
     if((iVar13->field_0xa8 != 0x0) || (pass1_1008_dfa6(iVar13->field_0xa2, (uStack24 + 0x4), 0x4000001, param_2), u_stack6 = uVar9, puVar5 != 0x0))
@@ -1758,9 +1758,9 @@ LAB_1018_0ffc:
         iVar4          = &iVar13->field_0x9a;
         u_stack6        = (&iVar13->field_0x9a + 0x2);
         uStack28       = uStack28 & 0xffff0000 | (uStack28 + 0x1);
-        uStack28._2_2_ = uStack28;
+        uStack28 = uStack28;
     LAB_1018_0fe8:
-        pass1_1008_3f62(CONCAT22(u_stack6, iVar4 + uStack28._2_2_ * 0x6), CONCAT22(param_2, &local_32));
+        pass1_1008_3f62(CONCAT22(u_stack6, iVar4 + uStack28 * 0x6), CONCAT22(param_2, &local_32));
     }
     goto LAB_1018_0f74;
 }

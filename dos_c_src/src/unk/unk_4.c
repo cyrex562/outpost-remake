@@ -406,7 +406,7 @@ u32  pass1_1030_bcae(u16 param_1, u16 param_2)
 void  pass1_1030_bcbc(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 param_5, u32 param_6)
 
 {
-    pass1_1030_bcde(param_1, param_2, param_3, CONCAT22(param_4, param_3._2_2_), CONCAT22(param_5, param_4._2_2_), (param_6 + 0x4));
+    pass1_1030_bcde(param_1, param_2, param_3, CONCAT22(param_4, param_3), CONCAT22(param_5, param_4), (param_6 + 0x4));
     return;
 }
 
@@ -846,9 +846,9 @@ u32  pass1_1030_c8da(u32 param_1, u32 param_2, u32 param_3)
     u32 uVar1;
 
     uVar1 = 0x0;
-    if(param_3._2_2_ == 0x1)
+    if(param_3 == 0x1)
     {
-        (param_1 + 0x20) = param_2._2_2_;
+        (param_1 + 0x20) = param_2;
     }
     else
     {
@@ -1048,7 +1048,7 @@ void  pass1_1030_cc44(i16 param_1, u16 param_2, i16 param_3, u32 param_4, i16 pa
             return;
         }
         iVar8 = (Struct303 *)(iStack10 * 0xc + param_1);
-        if(((iVar8->field_0x28 == uStack8) && (iVar8->field_0x2a == uStack8._2_2_)) && (iVar8->field_0x24 == param_5))
+        if(((iVar8->field_0x28 == uStack8) && (iVar8->field_0x2a == uStack8)) && (iVar8->field_0x24 == param_5))
         {
             if(iVar8->field_0x26 == 0x4)
             {
@@ -1231,17 +1231,17 @@ void  pass1_1030_b142(u32 param_1, u32 param_2)
     uStack12 = 0x0;
     if(iVar2 == 0x18)
     {
-        uStack12._2_2_ = pass1_1028_1c1c();
+        uStack12 = pass1_1028_1c1c();
         uVar3          = (iVar1 + 0x22);
     }
     else
     {
         if(iVar2 != 0x3f)
             goto LAB_1030_b1a6;
-        uStack12._2_2_ = pass1_1028_20b0();
+        uStack12 = pass1_1028_20b0();
         uVar3          = (iVar1 + 0x24);
     }
-    uStack12 = CONCAT22(uStack12._2_2_, uVar3);
+    uStack12 = CONCAT22(uStack12, uVar3);
 LAB_1030_b1a6:
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
@@ -1749,7 +1749,7 @@ void  pass1_1030_a57e(u32 param_1, u16 *param_2, i16 param_3, i16 param_4, u16 p
                     pass1_1008_3f62(param_2, CONCAT22(param_5, &local_16));
                 }
                 puVar13 = uStack16;
-                if((uStack16._2_2_ | puVar13) != 0x0)
+                if((uStack16 | puVar13) != 0x0)
                 {
                     uVar17 = (uStack16 >> 0x10);
                     u_var20 = (undefined)(uStack16 >> 0x10);

@@ -38,3 +38,8 @@ u32 CARRY2(u16 a, u16 b)
 {
     return 0;
 }
+
+u32 ZEXT24(u16 a)
+{
+    return 0;
+}

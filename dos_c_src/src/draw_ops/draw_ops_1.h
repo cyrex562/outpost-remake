@@ -45,7 +45,7 @@ Struct18 *pass1_1040_abe2(Struct18 *param_1, u8 param_2);
 
 void draw_op_1040_a67e(u32 param_1, i16 param_2, u16 param_3, COLORREF param_4);
 
-u16 *unk_win_ui_op_1040_9854(u16 *param_1, u16 param_2);
+u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2);
 
 void draw_op_1040_9948(u16 param_1, u32 param_2, HWND16 param_3, RECT16 *param_4);
 

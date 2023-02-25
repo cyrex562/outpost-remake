@@ -746,7 +746,7 @@ void  pass1_1030_6e9c(u32 param_1, long param_2, i16 param_3)
                     ppcVar1 = (*iVar6->field_0x1e + 0x8);
                     (**ppcVar1)(&USHORT_1050_1028, iVar6->field_0x1e, 0x0, uStack10);
                 }
-                if((param_2._2_2_ | param_2) == 0x0)
+                if((param_2 | param_2) == 0x0)
                 {
                     return;
                 }
@@ -1807,7 +1807,7 @@ void  pass1_1030_375a(u32 param_1, i16 param_2, long param_3, u16 param_4)
             uVar8                 = (param_1 >> 0x10);
             (iVar6 + iVar7 + 0x4) = (iVar6 + iVar7 + 0x4) - lVar4;
             iVar2                 = (iVar6 + iVar7 + 0x6);
-            if((uStack18._2_2_ | uStack18) != 0x0)
+            if((uStack18 | uStack18) != 0x0)
             {
                 iVar1                 = (iVar6 + iVar7 + 0x4);
                 (iVar6 + iVar7 + 0x4) = iVar1 + -0x1;

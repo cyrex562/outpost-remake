@@ -561,12 +561,12 @@ void  pass1_1010_81f6(HINSTANCE16 param_1, u16 param_2, Struct87 **param_3, long
         }
     }
     u_var2 = (uStack10 >> 0x10);
-    uVar1 = param_3._2_2_;
+    uVar1 = param_3;
     if((param_5 * 0x4 + uStack10) == 0x0)
     {
         if((0x0 < param_5) && (param_5 < 0xa))
         {
-            pass1_1010_89f0(param_3, param_3._2_2_, uStack12, uStack10, param_1, param_2);
+            pass1_1010_89f0(param_3, param_3, uStack12, uStack10, param_1, param_2);
             return;
         }
         if(param_5 < 0xa)
@@ -579,11 +579,11 @@ void  pass1_1010_81f6(HINSTANCE16 param_1, u16 param_2, Struct87 **param_3, long
         }
         if((uStack10 + 0x14) == 0x0)
         {
-            pass1_1010_89f0(param_3, param_3._2_2_, uStack12, uStack10, param_1, param_2);
+            pass1_1010_89f0(param_3, param_3, uStack12, uStack10, param_1, param_2);
         }
         pass1_1010_887a(param_3, uStack10, param_5, param_1, param_2);
     }
-    pass1_1010_866c(uVar1, param_3, param_3._2_2_, uStack10, param_5);
+    pass1_1010_866c(uVar1, param_3, param_3, uStack10, param_5);
     return;
 }
 
@@ -714,7 +714,7 @@ void  pass1_1010_887a(Struct87 **param_1, u32 param_2, i16 param_3, u16 param_4,
         uStack28 = CONCAT22(uVar7, uVar1);
         pass1_1008_431c(CONCAT22(uVar7, uVar1), bVar8);
         uVar7    = (uStack16 >> 0x10);
-        uStack30 = (uStack24._2_2_ - (uStack16 + 0x4)) / 0x2;
+        uStack30 = (uStack24 - (uStack16 + 0x4)) / 0x2;
         uStack32 = uStack24 - (uStack16 + 0x8);
         pass1_1008_3e54(CONCAT22(param_5, local_26), 0x0, uStack32, uStack30);
         pass1_1008_4480(uStack28, CONCAT22(param_5, local_26), paStack12, param_5);
@@ -1114,7 +1114,7 @@ void  pass1_1010_459e(long param_1)
     else
     {
         uVar1  = param_1 + 0x20;
-        pu_var2 = param_1._2_2_;
+        pu_var2 = param_1;
     }
     pass1_1008_9262(_PTR_LOOP_1050_0388, (_PTR_LOOP_1050_0388 >> 0x10), 0x1f4, CONCAT22(pu_var2, uVar1), uVar1, pu_var2);
     (param_1 + 0x7e) = 0x1;
@@ -1658,7 +1658,7 @@ void  pass1_1010_3c9e(long param_1)
     else
     {
         uVar1  = param_1 + 0xa;
-        pu_var2 = param_1._2_2_;
+        pu_var2 = param_1;
     }
     pass1_1008_9262(_PTR_LOOP_1050_0388, (_PTR_LOOP_1050_0388 >> 0x10), (param_1 + 0x12), CONCAT22(pu_var2, uVar1), uVar1, pu_var2);
     return;
@@ -1683,7 +1683,7 @@ void  pass1_1010_3cd0(long param_1)
         else
         {
             iVar1 = param_1 + 0xa;
-            u_var2 = param_1._2_2_;
+            u_var2 = param_1;
         }
         pass1_1008_92b2(_PTR_LOOP_1050_0388, (param_1 + 0x12), CONCAT22(u_var2, iVar1));
     }

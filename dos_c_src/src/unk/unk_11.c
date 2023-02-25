@@ -729,7 +729,7 @@ void  pass1_1018_2ee4(u32 param_1, u16 param_2, u16 param_3)
     (param_1 + 0x15a) = (uVar1 + 0x24);
 LAB_1018_2f06:
     uVar3 = param_1 - 0x20;
-    pass1_1018_31fa(param_1 & 0xffff0000 | uVar3, uVar3, param_1._2_2_, param_3);
+    pass1_1018_31fa(param_1 & 0xffff0000 | uVar3, uVar3, param_1, param_3);
     pass1_1010_1f62(param_3, param_1 & 0xffff0000 | uVar3, param_2);
     return;
 }
@@ -1730,7 +1730,7 @@ void  pass1_1018_0bf4(u16 param_1, i16 param_2, u32 param_3, i16 param_4)
     case 0x5:
     case 0x6:
         u_var2 = param_3 - 0x20;
-        uVar5 = param_3._2_2_;
+        uVar5 = param_3;
         pass1_1018_0dc6(param_3 & 0xffff0000 | u_var2, param_1);
         pass1_1018_10c4(param_1, uVar5, param_3 & 0xffff0000 | u_var2);
         pass1_1018_1346(param_1, uVar5, (Struct93 *)(param_3 & 0xffff0000 | u_var2));
@@ -1853,7 +1853,7 @@ void  pass1_1018_161c(u16 param_1, u32 param_2, u16 *param_3, i16 param_4, i16 p
     u32 local_6;
 
     pass1_1008_3e94((param_2 & 0xffff0000 | (param_2 + 0x36)), CONCAT22(param_1, &local_6), CONCAT22(param_1, &local_6 + 0x2));
-    uVar1   = local_6._2_2_ + param_5 + -0x3;
+    uVar1   = local_6 + param_5 + -0x3;
     u_var2   = local_6 + param_4 + -0x3;
     local_6 = CONCAT22(uVar1, u_var2);
     pass1_1008_3e76(param_3, (param_2 + 0x44), u_var2, uVar1);
@@ -1900,19 +1900,19 @@ void  pass1_1018_16b8(u32 param_1, u16 param_2, u32 param_3, u16 param_4)
     u8         local_4[0x2];
     u32 u_var2;
 
-    if(param_3._2_2_ + -0x3 < 0x1)
+    if(param_3 + -0x3 < 0x1)
     {
         param_3 = CONCAT22(0x3, param_3);
     }
     if(param_3 + -0x3 < 0x1)
     {
-        param_3 = CONCAT22(param_3._2_2_, 0x3);
+        param_3 = CONCAT22(param_3, 0x3);
     }
     uVar7 = (param_1 >> 0x10);
     iVar6 = param_1;
     u_var2 = (iVar6 + 0x5a);
     iVar1 = (u_var2 + 0x4);
-    if(iVar1 <= param_3._2_2_ + 0x2)
+    if(iVar1 <= param_3 + 0x2)
     {
         param_3 = param_3 & 0xffff | (iVar1 - 0x3) << 0x10;
     }
@@ -2189,7 +2189,7 @@ void  pass1_1018_0902(u32 *param_1, u32 param_2)
     puVar9  = (param_1 & 0xffff0000 | (param_1 + 0x28));
     ppaVar3 = (Struct76 **)(param_1 + 0x24);
     puVar8  = (param_1 & 0xffff0000 | ZEXT24(ppaVar3));
-    uVar6   = param_1._2_2_;
+    uVar6   = param_1;
     ppaVar4 = ppaVar3;
     pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), param_2);
     pass1_1030_5a52(CONCAT22(uVar6, ppaVar4), puVar8, puVar9);
@@ -2203,7 +2203,7 @@ void  pass1_1018_0902(u32 *param_1, u32 param_2)
     (**ppcVar2)();
     *(param_1 + 0x3c) = param_2;
     uVar1             = (param_1 + 0x2c);
-    uVar7             = pass1_1010_ec18(uVar1, (uVar1 >> 0x10), param_2 & 0xffff0000 | (param_1 + 0x3c), param_2, param_2._2_2_);
+    uVar7             = pass1_1010_ec18(uVar1, (uVar1 >> 0x10), param_2 & 0xffff0000 | (param_1 + 0x3c), param_2, param_2);
     (param_1 + 0x7c)  = uVar7;
     (param_1 + 0x7e)  = (uVar7 >> 0x10);
     return;
@@ -2632,7 +2632,7 @@ void  pass1_1010_a50c(Struct20 *param_1, u32 param_2, u32 param_3)
     iVar2   = (Struct260 *)((param_3 + 0xa) * 0x6 + iVar1);
     local_8 = iVar2->field_0xe;
     iStack4 = iVar2->field_0x12;
-    (*(fn_ptr_1)local_8)(0x1000, iVar1 + iStack4, param_1._2_2_, param_2, param_3);
+    (*(fn_ptr_1)local_8)(0x1000, iVar1 + iStack4, param_1, param_2, param_3);
     return;
 }
 
@@ -2681,7 +2681,7 @@ void  pass1_1010_a5ec(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 pa
     u32 *puVar6;
     u32         u_stack6;
 
-    u_var2 = param_4._2_2_ | param_4;
+    u_var2 = param_4 | param_4;
     if(param_4 != 0x0)
     {
         pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), 0x8000001);

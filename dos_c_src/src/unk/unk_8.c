@@ -208,7 +208,7 @@ void  pass1_1028_40b8(u32 param_1, u16 param_2, u16 param_3)
     local_14  = (param_2 + 0xc);
     iStack8   = (param_2 + 0x10);
     puStack26 = &local_c;
-    uStack34  = CONCAT22(uStack34._2_2_, &local_14);
+    uStack34  = CONCAT22(uStack34, &local_14);
     iStack16  = iStack8 + 0x1;
     puVar7    = CONCAT22(param_3, local_2c);
     iStack14  = iStack16;
@@ -271,7 +271,7 @@ void  pass1_1028_41ea(u32 param_1, i16 param_2, u16 param_3)
     local_14  = (param_2 + 0xc);
     iStack8   = (param_2 + 0x10);
     puStack26 = &local_c;
-    uStack34  = CONCAT22(uStack34._2_2_, &local_14);
+    uStack34  = CONCAT22(uStack34, &local_14);
     iStack16  = iStack8 + 0x1;
     puVar7    = CONCAT22(param_3, local_2c);
     iStack14  = iStack16;
@@ -566,7 +566,7 @@ void  pass1_1028_4bf2(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     local_14  = (param_3 + 0xc);
     iStack8   = (param_3 + 0x10);
     puStack26 = &local_c;
-    uStack34  = CONCAT22(uStack34._2_2_, &local_14);
+    uStack34  = CONCAT22(uStack34, &local_14);
     iStack16  = iStack8 + 0x1;
     puVar6    = CONCAT22(param_4, local_2c);
     iStack14  = iStack16;
@@ -633,7 +633,7 @@ void  pass1_1028_4cd6(u32 param_1, i16 param_2, u16 param_3)
     local_14  = (param_2 + 0xc);
     iStack8   = (param_2 + 0x10);
     puStack26 = &local_c;
-    uStack34  = CONCAT22(uStack34._2_2_, &local_14);
+    uStack34  = CONCAT22(uStack34, &local_14);
     iStack16  = iStack8 + 0x1;
     puVar7    = CONCAT22(param_3, local_2c);
     iStack14  = iStack16;
@@ -1066,7 +1066,7 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u16 pa
             if(uVar5 != 0x0)
             {
                 pass1_1020_bb8a((long *)puStack10, 0x0, local_2c[0] << 0x10, param_5, param_6);
-                uVar5    = -(local_28._2_2_ + (local_28 != 0x0));
+                uVar5    = -(local_28 + (local_28 != 0x0));
                 uVar6    = uVar5;
                 uStack34 = CONCAT22(uVar5, -local_28);
                 pass1_1038_5694(uStack14, CONCAT22(uVar5, -local_28), local_2c[0]);
@@ -1154,9 +1154,9 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u16 pa
                     uVar5          = (iVar7 + 0x24);
                     qVar2          = (qword)(local_28 & 0xffff0000 | uVar5) / 0x3;
                     uStack52       = (long)qVar2;
-                    uStack52._2_2_ = (qVar2 >> 0x10);
+                    uStack52 = (qVar2 >> 0x10);
                     uVar3          = qVar2;
-                    uVar4          = uStack52._2_2_ * 0x3 + CARRY2(uVar3, uVar3) + CARRY2(uVar3 * 0x2, uVar3);
+                    uVar4          = uStack52 * 0x3 + CARRY2(uVar3, uVar3) + CARRY2(uVar3 * 0x2, uVar3);
                     uVar6          = uVar4;
                     param_4        = uVar5 + uVar3 * -0x3;
                     param_5        = ((iVar7 + 0x26) - uVar4) - (uVar5 < uVar3 * 0x3);
@@ -1168,9 +1168,9 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u16 pa
                         goto LAB_1028_3b14;
                     }
                 }
-                if(((uStack30._2_2_ | uStack30) != 0x0) && (iStack36 != 0x0))
+                if(((uStack30 | uStack30) != 0x0) && (iStack36 != 0x0))
                 {
-                    pass1_1020_bb70(*(long **)(iVar7 + 0x28), uStack30, CONCAT22(iStack36, uStack30._2_2_), param_5, param_4, param_6);
+                    pass1_1020_bb70(*(long **)(iVar7 + 0x28), uStack30, CONCAT22(iStack36, uStack30), param_5, param_4, param_6);
                 }
             }
         }
@@ -1454,11 +1454,11 @@ u16  pass1_1028_1cca(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u16 pa
         if(uVar1 == 0x0)
         {
             local_8._0_2_ = local_a + -0x1;
-            local_8._2_2_ = local_c;
+            local_8 = local_c;
             uVar1         = pass1_1028_1e14(u_var2, uVar3, 0x17, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
             if(uVar1 == 0x0)
             {
-                local_8 = CONCAT22(local_8._2_2_, local_a + 0x1);
+                local_8 = CONCAT22(local_8, local_a + 0x1);
                 uVar1   = pass1_1028_1e14(u_var2, uVar3, 0x17, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
                 if(uVar1 == 0x0)
                 {
@@ -1645,11 +1645,11 @@ i16  pass1_1028_2290(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u16 pa
         if(iVar1 == 0x0)
         {
             local_8._0_2_ = local_a + -0x1;
-            local_8._2_2_ = local_c;
+            local_8 = local_c;
             iVar1         = pass1_1028_2220(u_var2, uVar3, 0x17, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
             if(iVar1 == 0x0)
             {
-                local_8 = CONCAT22(local_8._2_2_, local_a + 0x1);
+                local_8 = CONCAT22(local_8, local_a + 0x1);
                 iVar1   = pass1_1028_2220(u_var2, uVar3, 0x17, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
                 if(iVar1 == 0x0)
                 {
@@ -1812,14 +1812,14 @@ u16  pass1_1028_2844(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u16 pa
                 if(u_var2 == 0x0)
                 {
                     local_8._0_2_ = local_a + -0x1;
-                    local_8._2_2_ = local_c;
+                    local_8 = local_c;
                     BVar1         = pass1_1028_c5a6(uVar3, uVar4, 0x7c, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
                     if(BVar1 == 0x0)
                     {
                         u_var2 = pass1_1028_297c(param_1, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
                         if(u_var2 == 0x0)
                         {
-                            local_8 = CONCAT22(local_8._2_2_, local_a + 0x1);
+                            local_8 = CONCAT22(local_8, local_a + 0x1);
                             BVar1   = pass1_1028_c5a6(uVar3, uVar4, 0x7c, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
                             if(BVar1 == 0x0)
                             {

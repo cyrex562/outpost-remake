@@ -498,20 +498,20 @@ void find_n_load_rsrc_1010_4e9e(u32 param_1, HGLOBAL16 param_2)
         HVar3 = param_2;
         if((iVar2 + 0x2a) != 0x0)
         {
-            HVar3 = (HGLOBAL16)s_tile2_bmp_1050_1538;
+            HVar3 = (HGLOBAL16)0x1538;
             BVar1 = GlobalUnlock16(param_2);
             if(BVar1 == 0x0)
             {
-                HVar3 = (HGLOBAL16)s_tile2_bmp_1050_1538;
-                FreeResource16((HGLOBAL16)s_tile2_bmp_1050_1538);
+                HVar3 = (HGLOBAL16)0x1538;
+                FreeResource16((HGLOBAL16)0x1538);
             }
         }
         h_rsrc                       = FindResource16(HVar3, &PTR_LOOP_1050_000a, 0x0);
-        HVar3                        = LoadResource16((HMODULE16)s_tile2_bmp_1050_1538, h_rsrc);
+        HVar3                        = LoadResource16((HMODULE16)0x1538, h_rsrc);
         *(HGLOBAL16 *)(iVar2 + 0x2a) = HVar3;
         if(HVar3 != 0x0)
         {
-            WIN16_LockResource16((HGLOBAL16)s_tile2_bmp_1050_1538);
+            WIN16_LockResource16((HGLOBAL16)0x1538);
             return;
         }
     }
@@ -1213,16 +1213,16 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
         uVar5 = local_6;
         if(local_6 < 0xc8)
         {
-            local_6._2_2_ = 0x0;
+            local_6 = 0x0;
             uVar5         = 0xc8;
         }
         uVar4    = uVar5;
-        uStack10 = uVar5 & 0xffff | ZEXT24(local_6._2_2_) << 0x10;
+        uStack10 = uVar5 & 0xffff | ZEXT24(local_6) << 0x10;
         if(*param_2 == 0x0)
         {
             param_3 = 0x1000;
-            mem_op_1000_179c(0x1e, local_6._2_2_, 0x1000);
-            uVar6 = local_6._2_2_ | uVar4;
+            mem_op_1000_179c(0x1e, local_6, 0x1000);
+            uVar6 = local_6 | uVar4;
             if(uVar6 == 0x0)
             {
                 *param_2 = 0x0;
@@ -1230,7 +1230,7 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
             else
             {
                 param_3 = 0x1020;
-                struct_1020_c444(CONCAT22(local_6._2_2_, uVar4), 0x64, uStack10);
+                struct_1020_c444(CONCAT22(local_6, uVar4), 0x64, uStack10);
                 *param_2         = uVar4;
                 *(param_2 + 0x2) = uVar6;
             }
@@ -1690,7 +1690,7 @@ void read_file_1008_7c6e(u16 param_1, u16 param_2, char *param_3, HFILE16 param_
             break;
         param_3 = (param_3 & 0xffff0000 | (param_3 + 0x1));
         *pcVar1 = local_c[0];
-        param_4 = (HFILE16)s_tile2_bmp_1050_1538;
+        param_4 = (HFILE16)0x1538;
     }
     *param_3 = '\0';
     return;
@@ -1741,8 +1741,8 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
     do
     {
         _llseek16(param_4, u_stack6 << 0x10, (u16)(u_stack6 >> 0x10));
-        param_4 = (u16)s_tile2_bmp_1050_1538;
-        lVar3   = WIN16_hread((HFILE16)s_tile2_bmp_1050_1538, 0x400, ZEXT24(local_406) << 0x10);
+        param_4 = (u16)0x1538;
+        lVar3   = WIN16_hread((HFILE16)0x1538, 0x400, ZEXT24(local_406) << 0x10);
         for(uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 = uStack1040 + 0x1)
         {
             if(local_406[uStack1040] == *_PTR_s_dcbSC_1050_0336_1050_033c)
@@ -1750,7 +1750,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 if(!bVar1)
                 {
                     bVar1   = true;
-                    u_stack6 = CONCAT22((u_stack6 >> 0x10) + uStack1040._2_2_ + CARRY2(u_stack6, uStack1040), u_stack6 + uStack1040);
+                    u_stack6 = CONCAT22((u_stack6 >> 0x10) + uStack1040 + CARRY2(u_stack6, uStack1040), u_stack6 + uStack1040);
                     break;
                 }
                 bVar1 = false;
@@ -1758,7 +1758,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 if(u_var2 != 0x0)
                 {
                     lVar3 = uStack1040 + u_stack6 + 0x7;
-                    _llseek16((HFILE16)s_tile2_bmp_1050_1538, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
+                    _llseek16((HFILE16)0x1538, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
                     return;
                 }
             }
@@ -1989,7 +1989,7 @@ u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
     pCVar4 = param_2;
     if((iVar2 + 0x4) != -0x1)
     {
-        pCVar4 = s_tile2_bmp_1050_1538;
+        pCVar4 = 0x1538;
         _lclose16((HFILE16)param_2);
         (iVar2 + 0x4) = 0xffff;
     }
@@ -2025,7 +2025,7 @@ BOOL16 read_file_1008_7146(i1632_t param_1, u16 param_2, LPCSTR param_3, u16 par
     path = param_3;
     if((param_1 + 0x4) != -0x1)
     {
-        path = s_tile2_bmp_1050_1538;
+        path = 0x1538;
         _lclose16((HFILE16)param_3);
         (param_1 + 0x4) = 0xffff;
     }

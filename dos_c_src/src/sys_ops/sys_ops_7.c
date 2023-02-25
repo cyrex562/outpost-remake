@@ -1169,34 +1169,34 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
     pass1_1010_c320(uVar16, uVar17, 0x0, *(iVar11 + 0x6), param_4);
     unk_str_op_1000_3d3e(CONCAT22(param_5, local_54), CONCAT22(param_4, uVar14));
     puStack98         = *(u16 **)(iVar11 + 0x2);
-    uStack404._2_2_   = (iVar11 + 0x4);
+    uStack404   = (iVar11 + 0x4);
     (puStack98 + 0x4) = *param_2;
-    string_1040_a626(puStack98, CONCAT22(param_5, local_54), uStack404._2_2_);
+    string_1040_a626(puStack98, CONCAT22(param_5, local_54), uStack404);
     iStack94 = 0x0;
     pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_f6), 0x0, 0x94);
     uStack404._0_2_ = pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_18a), 0x0, 0x94);
     uStack398       = 0x0;
     for(uStack400 = 0x1; uStack400 < 0x25; uStack400 = uStack400 + 0x1)
     {
-        uStack404       = (Struct18 *)pass1_1030_7c28(*(iVar11 + 0x6), uStack400, uStack404, uStack404._2_2_, param_5);
-        uStack404._2_2_ = (uStack404 >> 0x10) | uStack404;
+        uStack404       = (Struct18 *)pass1_1030_7c28(*(iVar11 + 0x6), uStack400, uStack404, uStack404, param_5);
+        uStack404 = (uStack404 >> 0x10) | uStack404;
         if(uStack404 != (Struct18 *)0x0)
         {
             pcVar5    = string_1020_c0d8(uStack400);
-            uStack408 = CONCAT22(uStack404._2_2_, pcVar5);
-            uVar9     = uStack404._2_2_ | pcVar5;
+            uStack408 = CONCAT22(uStack404, pcVar5);
+            uVar9     = uStack404 | pcVar5;
             if(uVar9 == 0x0)
             {
                 unk_str_op_1000_3d3e((&local_f6)[uStack398], s_Null_Ptr_1050_38e1);
             }
             else
             {
-                uVar6                               = str_op_1008_60e8(CONCAT22(uStack404._2_2_, pcVar5), uVar9);
+                uVar6                               = str_op_1008_60e8(CONCAT22(uStack404, pcVar5), uVar9);
                 (&local_f6 + uStack398)             = uVar6;
                 (&local_f6 + uStack398 * 0x4 + 0x2) = uVar9;
             }
             *(u16 **)(&local_18a + uStack398)    = uStack404;
-            (&local_18a + uStack398 * 0x4 + 0x2) = uStack404._2_2_;
+            (&local_18a + uStack398 * 0x4 + 0x2) = uStack404;
             uStack398                            = uStack398 + 0x1;
         }
     }
@@ -1231,10 +1231,10 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
             uVar4   = uStack404;
             ppcVar3 = (uVar4 + 0x10);
             (**ppcVar3)(uVar15, uStack404, (uStack404 >> 0x10));
-            if((extraout_DX < uStack398._2_2_) || ((extraout_DX <= uStack398._2_2_ && (uVar8 <= uStack398))))
+            if((extraout_DX < uStack398) || ((extraout_DX <= uStack398 && (uVar8 <= uStack398))))
                 break;
             ppcVar3 = (uVar4 + 0x4);
-            (**ppcVar3)(uVar15, uStack404, uStack398, uStack398._2_2_);
+            (**ppcVar3)(uVar15, uStack404, uStack398, uStack398);
             uVar9  = uVar8;
             uVar10 = extraout_DX_00 | uVar9;
             if(uVar10 != 0x0)
@@ -1357,8 +1357,8 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
     u_stack6 = uVar7;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar7, (uVar7 >> 0x10));
     uStack10        = uVar7 & 0xffff | param_4 << 0x10;
-    uStack324._2_2_ = param_4 | uVar7;
-    if(uStack324._2_2_ != 0x0)
+    uStack324 = param_4 | uVar7;
+    if(uStack324 != 0x0)
     {
         iStack14 = param_3;
         iStack18 = 0x0;
@@ -1374,20 +1374,20 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
             {
                 pcVar3    = string_1020_c0d8(uStack320);
                 uStack332 = uStack332 & 0xffff | ZEXT24(pcVar3) << 0x10;
-                uVar8     = uStack324._2_2_ | pcVar3;
-                uStack328 = uStack324._2_2_;
+                uVar8     = uStack324 | pcVar3;
+                uStack328 = uStack324;
                 if(uVar8 == 0x0)
                 {
                     unk_str_op_1000_3d3e((&local_aa)[uStack22], s_Null_Ptr_1050_38f3);
                 }
                 else
                 {
-                    uVar4                              = str_op_1008_60e8(CONCAT22(uStack324._2_2_, pcVar3), uVar8);
+                    uVar4                              = str_op_1008_60e8(CONCAT22(uStack324, pcVar3), uVar8);
                     (&local_aa + uStack22)             = uVar4;
                     (&local_aa + uStack22 * 0x4 + 0x2) = uVar8;
                 }
                 (&local_13e + uStack22)             = uStack324;
-                (&local_13e + uStack22 * 0x4 + 0x2) = uStack324._2_2_;
+                (&local_13e + uStack22 * 0x4 + 0x2) = uStack324;
                 uStack22                            = uStack22 + 0x1;
             }
         }
@@ -1413,13 +1413,13 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
         pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_aa), 0x0, 0x54);
         uVar4 = 0x1000;
         pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_1a0), 0x0, 0x54);
-        for(uStack332 = 0x10000; uStack332._2_2_ < 0x15; uStack332 = uStack332 & 0xffff | (uStack332._2_2_ + 0x1) << 0x10)
+        for(uStack332 = 0x10000; uStack332 < 0x15; uStack332 = uStack332 & 0xffff | (uStack332 + 0x1) << 0x10)
         {
-            if((&local_13e)[uStack332._2_2_] != 0x0)
+            if((&local_13e)[uStack332] != 0x0)
             {
-                pcVar3    = string_op_1020_c222(uStack332._2_2_);
-                uStack324 = CONCAT22(uStack324._2_2_, pcVar3);
-                uVar8     = uStack324._2_2_ | pcVar3;
+                pcVar3    = string_op_1020_c222(uStack332);
+                uStack324 = CONCAT22(uStack324, pcVar3);
+                uVar8     = uStack324 | pcVar3;
                 if(uVar8 == 0x0)
                 {
                     uVar4 = 0x1000;
@@ -1428,13 +1428,13 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
                 else
                 {
                     uVar4                               = 0x1008;
-                    uVar5                               = str_op_1008_60e8(CONCAT22(uStack324._2_2_, pcVar3), uVar8);
+                    uVar5                               = str_op_1008_60e8(CONCAT22(uStack324, pcVar3), uVar8);
                     (&local_aa + uStack332)             = uVar5;
                     (&local_aa + uStack332 * 0x4 + 0x2) = uVar8;
                 }
-                uStack324._2_2_                      = (&local_13e + uStack332._2_2_ * 0x4 + 0x2);
-                (&local_1a0 + uStack332)             = (&local_13e + uStack332._2_2_);
-                (&local_1a0 + uStack332 * 0x4 + 0x2) = uStack324._2_2_;
+                uStack324                      = (&local_13e + uStack332 * 0x4 + 0x2);
+                (&local_1a0 + uStack332)             = (&local_13e + uStack332);
+                (&local_1a0 + uStack332 * 0x4 + 0x2) = uStack324;
                 uStack332                            = uStack332 & 0xffff0000 | (uStack332 + 0x1);
             }
         }

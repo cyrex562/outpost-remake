@@ -46,7 +46,7 @@ u32 pass1_1018_dd1e(u16 param_1, u16 param_2, u8 *param_3, u16 param_4, u16 para
     u16 uVar1;
     u32 u_stack6;
 
-    pass1_1010_81f6(0x1010, param_1, globals->_PTR_LOOP_1050_14cc, 0x0, param_7._2_2_);
+    pass1_1010_81f6(0x1010, param_1, globals->_PTR_LOOP_1050_14cc, 0x0, param_7);
     u_stack6 = CONCAT22(param_3, param_2);
     mem_op_1000_179c(0x46, param_3, 0x1000);
     uVar1 = param_3 | param_2;
@@ -57,7 +57,7 @@ u32 pass1_1018_dd1e(u16 param_1, u16 param_2, u8 *param_3, u16 param_4, u16 para
     }
     else
     {
-        pass1_1008_87cc((Struct86 *)CONCAT22(param_3, param_2), param_6, param_7, param_7._2_2_, u_stack6, 0x0, param_1);
+        pass1_1008_87cc((Struct86 *)CONCAT22(param_3, param_2), param_6, param_7, param_7, u_stack6, 0x0, param_1);
     }
     pass1_1008_8bc6(param_1, uVar1, CONCAT22(uVar1, param_2));
     return CONCAT22(uVar1, param_2);
@@ -209,8 +209,8 @@ u16 *get_sys_metrics_1018_4b1e(Struct55 *param_1, u16 param_2, u16 param_3)
     if(PTR_LOOP_1050_416c == 0x0)
     {
         globals->PTR_LOOP_1050_416c = GetSystemMetrics16(0x1010);
-        globals->PTR_LOOP_1050_416e = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
-        globals->PTR_LOOP_1050_4170 = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+        globals->PTR_LOOP_1050_416e = GetSystemMetrics16((u16)0x1538);
+        globals->PTR_LOOP_1050_4170 = GetSystemMetrics16((u16)0x1538);
     }
     return &param_1->field_0x0;
 }
@@ -224,10 +224,10 @@ void pass1_1018_4b78(u32 *param_1, u16 param_2)
     u16        *puVar4;
     u32 *puVar5;
 
-    pu_var2 = param_1._2_2_;
+    pu_var2 = param_1;
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | ZEXT24((param_1 + 0xa))), 0x0, 0x8);
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | (param_1 + 0x18)), 0x0, 0x8);
-    puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_2, pu_var2, param_1._2_2_);
+    puVar4 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_2, pu_var2, param_1);
     puVar5 = pass1_1010_5f7a(puVar4, (puVar4 >> 0x10), 0x0, (param_1 + 0x12));
     uVar3  = (puVar5 >> 0x10);
     if((uVar3 | puVar5) != 0x0)
@@ -257,8 +257,8 @@ void pass1_1018_4c2c(u32 param_1, u32 *param_2, u16 param_3, u16 param_4)
 
     *(param_1 + 0xa) = *param_2;
     *(param_1 + 0xe) = param_2[0x1];
-    puVar1           = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_4, param_1._2_2_, param_1._2_2_);
-    pass1_1010_5fb0(puVar1, 0x0, (param_1 + 0xa), param_1._2_2_, (param_1 + 0x12));
+    puVar1           = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_4, param_1, param_1);
+    pass1_1010_5fb0(puVar1, 0x0, (param_1 + 0xa), param_1, (param_1 + 0x12));
     return;
 }
 void pass1_1018_4dce(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4)
@@ -809,8 +809,8 @@ void get_sys_metrics_1018_2f56(u32 param_1)
     (iVar4 + 0x1a) = local_6 + 0x9;
     IVar2          = GetSystemMetrics16(0x1008);
     (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar7 + 0x4);
-    IVar2          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
-    IVar3          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar2          = GetSystemMetrics16((u16)0x1538);
+    IVar3          = GetSystemMetrics16((u16)0x1538);
     (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar7 + 0x8);
     return;
 }
@@ -1000,8 +1000,8 @@ void get_sys_metrics_1018_1ea0(Struct55 *param_1, u16 param_2)
     uVar3             = (param_1 >> 0x10);
     iVar3             = (Struct55 *)param_1;
     iVar3->field_0x2e = IVar1 * 0x2 + iVar3->field_0x36;
-    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
-    IVar2             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)0x1538);
+    IVar2             = GetSystemMetrics16((u16)0x1538);
     iVar3->field_0x30 = IVar1 + iVar3->field_0x38 + IVar2;
     return;
 }
@@ -1452,7 +1452,7 @@ void pass1_1018_1346(u16 param_1, u16 param_2, Struct93 *param_3)
             }
         }
     }
-    if((uStack30._2_2_ | uStack30) != 0x0)
+    if((uStack30 | uStack30) != 0x0)
     {
         iVar9->field_0x8c = uStack30;
         uVar5             = uStack30 * 0x6;
@@ -2055,8 +2055,8 @@ void get_sys_metrics_1018_09a8(u32 param_1, u16 param_2)
     IVar2          = GetSystemMetrics16(0x1008);
     uVar1          = (iVar4 + 0x5a);
     (iVar4 + 0x1c) = IVar2 * 0x2 + (uVar1 + 0x4);
-    IVar2          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
-    IVar3          = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar2          = GetSystemMetrics16((u16)0x1538);
+    IVar3          = GetSystemMetrics16((u16)0x1538);
     uVar1          = (iVar4 + 0x5a);
     (iVar4 + 0x1e) = IVar3 + IVar2 + (uVar1 + 0x8);
     return;

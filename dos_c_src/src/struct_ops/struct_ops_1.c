@@ -1460,13 +1460,13 @@ void  pass1_1038_1d68(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
                         if(u_stack6 < uStack36)
                         {
                             uVar11         = u_stack6 & 0xffff;
-                            uStack36._2_2_ = u_stack6._2_2_;
+                            uStack36 = u_stack6;
                         }
-                        uVar12  = uStack36._2_2_ | uVar11;
+                        uVar12  = uStack36 | uVar11;
                         param_8 = uVar12;
                         if(uVar12 == 0x0)
                             break;
-                        uStack78 = ((uVar11 & 0xffff | uStack36._2_2_ << 0x10) / uVar8);
+                        uStack78 = ((uVar11 & 0xffff | uStack36 << 0x10) / uVar8);
                         if(uStack78 < uVar5)
                         {
                             pi_var1  = (puVar10 + 0xc);
@@ -2040,13 +2040,13 @@ void  pass1_1038_0f8c(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
                     if(u_stack6 < uStack36)
                     {
                         uVar9          = u_stack6 & 0xffff;
-                        uStack36._2_2_ = u_stack6._2_2_;
+                        uStack36 = u_stack6;
                     }
-                    uVar10  = uStack36._2_2_ | uVar9;
+                    uVar10  = uStack36 | uVar9;
                     param_6 = uVar10;
                     if(uVar10 == 0x0)
                         break;
-                    qVar7    = (qword)(uVar9 & 0xffff | uStack36._2_2_ << 0x10) / (qword)uVar6;
+                    qVar7    = (qword)(uVar9 & 0xffff | uStack36 << 0x10) / (qword)uVar6;
                     param_6  = qVar7 >> 0x10;
                     uStack76 = qVar7;
                     if(uStack76 == 0x0)
@@ -2202,15 +2202,15 @@ void  pass1_1030_ea50(u32 param_1, u32 param_2, u16 param_3, u16 param_4, u16 pa
         pass1_1020_bb16((iVar3 + 0x108), CONCAT22(param_5, &local_12), CONCAT22(param_5, &local_e), uStack10);
         if(u_stack6 < local_12)
         {
-            pass1_1030_7ddc(param_2, u_stack6, local_e, u_stack6, u_stack6._2_2_, param_3, param_4, param_5);
+            pass1_1030_7ddc(param_2, u_stack6, local_e, u_stack6, u_stack6, param_3, param_4, param_5);
             u_stack6 = 0x0;
         }
         else
         {
             u_stack6 = u_stack6 - local_12;
-            pass1_1030_7ddc(param_2, local_12, local_e, local_12, u_stack6._2_2_, param_3, param_4, param_5);
+            pass1_1030_7ddc(param_2, local_12, local_e, local_12, u_stack6, param_3, param_4, param_5);
         }
-        if((u_stack6._2_2_ | u_stack6) == 0x0)
+        if((u_stack6 | u_stack6) == 0x0)
             break;
         uStack10 = uStack10 + 0x1;
     }

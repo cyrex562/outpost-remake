@@ -112,7 +112,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
         h_file = param_2;
         if((iVar7 + 0xc) == -0x1)
         {
-            h_file                    = s_tile2_bmp_1050_1538;
+            h_file                    = 0x1538;
             HVar1                     = _lopen16(param_2, 0x0);
             *(HFILE16 *)(iVar7 + 0xc) = HVar1;
             if(HVar1 == 0xffff)
@@ -128,7 +128,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
             u_stack6 = uStack22;
             if(local_18 == &PTR_LOOP_1050_4d42)
             {
-                _llseek16((HFILE16)s_tile2_bmp_1050_1538, 0x0, 0x0);
+                _llseek16((HFILE16)0x1538, 0x0, 0x0);
                 lVar9          = mem_op_1000_0a48(0x1, u_stack6, (u_stack6 >> 0x10), globals->_PTR_LOOP_1050_5f2c, 0x1000);
                 puVar6         = (lVar9 >> 0x10);
                 (iVar7 + 0x1a) = lVar9;
@@ -141,7 +141,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 puVar5   = (lVar9 >> 0x10);
                 uStack10 = lVar9;
                 puStack8 = puVar5;
-                _lclose16((HFILE16)s_tile2_bmp_1050_1538);
+                _lclose16((HFILE16)0x1538);
                 (iVar7 + 0xc)   = 0xffff;
                 (iVar7 + 0x1e)  = 0x1;
                 (iVar7 + 0xe)   = (iVar7 + 0x1a);
@@ -174,7 +174,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 return puVar6;
             }
         }
-        _lclose16((HFILE16)s_tile2_bmp_1050_1538);
+        _lclose16((HFILE16)0x1538);
         (iVar7 + 0xc) = 0xffff;
     }
     return param_3;

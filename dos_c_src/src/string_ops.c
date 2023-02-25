@@ -1232,7 +1232,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
     (iStack6 + 0x4) = uVar3;
     (iStack6 + 0x6) = (uVar6 >> 0x10);
     ppcVar2         = ((iVar4 + 0xa) + 0x8);
-    (**ppcVar2)(s_tile2_bmp_1050_1538, (iVar4 + 0xa), iStack6, uStack4);
+    (**ppcVar2)(0x1538, (iVar4 + 0xa), iStack6, uStack4);
     return;
 }
 
@@ -1475,7 +1475,7 @@ void str_1000_4d58(char *in_string_1, char *in_string_2, u32 param_3, u32 param_
             {
                 uVar1 = 0xff;
             }
-            str_op_1000_3dbe((param_3 & 0xffff | param_3._2_2_ << 0x10), in_string_1, uVar1);
+            str_op_1000_3dbe((param_3 & 0xffff | param_3 << 0x10), in_string_1, uVar1);
             *(param_3 + uVar1) = 0x0;
         }
         in_string_1 = CONCAT22(u_stack6, uStack8);
@@ -1489,7 +1489,7 @@ void str_1000_4d58(char *in_string_1, char *in_string_2, u32 param_3, u32 param_
             {
                 uVar1 = 0xff;
             }
-            str_op_1000_3dbe((param_4 & 0xffff | param_4._2_2_ << 0x10), (in_string_1 & 0xffff | in_string_1._2_2_ << 0x10), uVar1);
+            str_op_1000_3dbe((param_4 & 0xffff | param_4 << 0x10), (in_string_1 & 0xffff | in_string_1 << 0x10), uVar1);
             *(param_4 + uVar1) = 0x0;
         }
         if(param_5 == 0x0)
@@ -1501,7 +1501,7 @@ void str_1000_4d58(char *in_string_1, char *in_string_2, u32 param_3, u32 param_
         {
             uVar1 = 0xff;
         }
-        str_op_1000_3dbe((param_5 & 0xffff | param_5._2_2_ << 0x10), CONCAT22(uStack10, uStack12), uVar1);
+        str_op_1000_3dbe((param_5 & 0xffff | param_5 << 0x10), CONCAT22(uStack10, uStack12), uVar1);
         *(param_5 + uVar1) = 0x0;
         return;
     }
@@ -1512,7 +1512,7 @@ void str_1000_4d58(char *in_string_1, char *in_string_2, u32 param_3, u32 param_
         {
             uVar1 = 0xff;
         }
-        str_op_1000_3dbe((param_4 & 0xffff | param_4._2_2_ << 0x10), (in_string_1 & 0xffff | in_string_1._2_2_ << 0x10), uVar1);
+        str_op_1000_3dbe((param_4 & 0xffff | param_4 << 0x10), (in_string_1 & 0xffff | in_string_1 << 0x10), uVar1);
         *(param_4 + uVar1) = 0x0;
     }
     if(param_5 != 0x0)

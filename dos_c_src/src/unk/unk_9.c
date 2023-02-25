@@ -57,7 +57,7 @@ void pass1_1028_0c84(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     u_var2    = pass1_1030_2fac(CONCAT22(uStack16, iStack18));
     local_1a = local_c;
     iStack22 = iStack8;
-    uStack36 = CONCAT22(uStack36._2_2_, &local_1a);
+    uStack36 = CONCAT22(uStack36, &local_1a);
     iStack14 = iStack14 + 0x1;
     uStack20 = u_var2;
     if(iStack14 <= u_var2)
@@ -146,7 +146,7 @@ void pass1_1028_0d9c(u32 param_1, i16 param_2, u16 param_3)
     pass1_1028_bab6(param_1, iStack18, extraout_DX);
     uStack20 = pass1_1030_2fac(CONCAT22(uStack16, iStack18));
     local_1a = local_c;
-    uStack36 = CONCAT22(uStack36._2_2_, &local_1a);
+    uStack36 = CONCAT22(uStack36, &local_1a);
     iStack22 = iStack14 + 0x1;
     if(iStack22 <= uStack20)
     {
@@ -497,12 +497,12 @@ void pass1_1028_134a(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
         for(iStack22 = 0x0; iStack22 < 0xa; iStack22 = iStack22 + 0x1)
         {
             uStack10._0_2_ = (iStack22 * 0x2 + 0x4fbe);
-            uStack10._2_2_ = (uStack10 >> 0xf);
+            uStack10 = (uStack10 >> 0xf);
             if(uStack10 < uStack10)
             {
             }
-            lStack26 = CONCAT22(uStack10._2_2_, uStack10);
-            pass1_1030_7ddc(uStack18, CONCAT13((uStack10._2_2_ >> 0x8), CONCAT12(uStack10._2_2_, uStack10)), iStack22 + 0x4, uStack10, uStack10._2_2_, param_2, param_3, param_4);
+            lStack26 = CONCAT22(uStack10, uStack10);
+            pass1_1030_7ddc(uStack18, CONCAT13((uStack10 >> 0x8), CONCAT12(uStack10, uStack10)), iStack22 + 0x4, uStack10, uStack10, param_2, param_3, param_4);
             uStack10 = uStack10 - lStack26;
             if(uStack10 < 0x1)
             {
@@ -1666,7 +1666,7 @@ void pass1_1020_e558(u32 param_1, i16 param_2, u16 param_3)
         iStack10 = pass1_1020_e4fa(param_1, uStack8);
         local_10 = (iStack6 + 0xc);
         uStack12 = (iStack6 + 0x10);
-        uStack24 = CONCAT22(uStack24._2_2_, &local_10);
+        uStack24 = CONCAT22(uStack24, &local_10);
         uVar4    = uStack4;
         pass1_1028_c8ee(param_3, uVar6, uVar7, (uVar6 + 0x24), CONCAT22(param_3, &local_10));
         puVar1 = &local_10;
@@ -1811,8 +1811,8 @@ void pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
     else
     {
         puVar1 = (uStack14 + 0xe);
-        bVar12 = *puVar1 < param_2._2_2_;
-        if((bVar12 || *puVar1 == param_2._2_2_) && ((bVar12 || (puVar1 = (uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
+        bVar12 = *puVar1 < param_2;
+        if((bVar12 || *puVar1 == param_2) && ((bVar12 || (puVar1 = (uStack14 + 0xc), *puVar1 < param_2 || *puVar1 == param_2))))
             goto LAB_1020_c92d;
         bVar12 = false;
         while(true)

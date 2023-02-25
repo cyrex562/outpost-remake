@@ -1397,7 +1397,7 @@ void  pass1_1028_a3ae(u16 param_1, u16 param_2, u32 param_3, long param_4, i16 p
     uVar4    = uStack18 * 0xa;
     uVar7    = (uStack16 * 0x5 + CARRY2(uStack18, uStack18) * 0x2 + CARRY2(uStack18 * 0x2, uStack18 * 0x2) + CARRY2(uStack18 * 0x4, uStack18)) * 0x2 + CARRY2(uStack18 * 0x5, uStack18 * 0x5);
     uStack22 = CONCAT22(uVar7, uVar4);
-    if((uVar7 <= uStack14._2_2_) && ((uVar7 < uStack14._2_2_ || (uVar4 < uStack14))))
+    if((uVar7 <= uStack14) && ((uVar7 < uStack14 || (uVar4 < uStack14))))
     {
         pass1_1028_ae66((Struct100 *)CONCAT22(param_6, &local_146), uStack14, CONCAT22(uVar7, uVar4), *(iVar9 + 0x4), param_6, param_7);
         fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_6, &local_146));
@@ -1864,9 +1864,9 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
     {
         uVar7 = (iVar11 + 0x114U);
         pass1_1028_e2ac(_PTR_LOOP_1050_65e2, 0x500);
-        puStack18 = (uVar7 & 0xffff | ZEXT24(u_stack6._2_2_) << 0x10);
+        puStack18 = (uVar7 & 0xffff | ZEXT24(u_stack6) << 0x10);
         uVar14    = 0x1030;
-        pass1_1030_61fe(_PTR_LOOP_1050_5740, uVar7 & 0xffff | ZEXT24(u_stack6._2_2_) << 0x10, param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10), iVar11 + 0x114U), (iVar11 + 0x108), uVar7, u_stack6._2_2_, param_3);
+        pass1_1030_61fe(_PTR_LOOP_1050_5740, uVar7 & 0xffff | ZEXT24(u_stack6) << 0x10, param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10), iVar11 + 0x114U), (iVar11 + 0x108), uVar7, u_stack6, param_3);
         uStack56 = 0x0;
         if(((iVar11 + 0x11a) == 0xa) || ((iVar11 + 0x11a) == 0x37))
         {
@@ -1877,18 +1877,18 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
             iVar5 = iVar11 + 0x114;
             pass1_1028_e2ac(_PTR_LOOP_1050_65e2, 0x400);
             (iVar11 + 0x10c) = iVar5;
-            (iVar11 + 0x10e) = u_stack6._2_2_;
-            puStack46        = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_3, u_stack6._2_2_, iVar13);
-            u_stack6._2_2_    = (puStack46 >> 0x10);
+            (iVar11 + 0x10e) = u_stack6;
+            puStack46        = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_3, u_stack6, iVar13);
+            u_stack6    = (puStack46 >> 0x10);
             uVar7            = puStack46 & 0xffff;
             uVar14           = 0x1018;
-            pass1_1018_0196(uVar7 | ZEXT24(u_stack6._2_2_) << 0x10, *(iVar11 + 0x10c), *(iVar11 + 0x108), uVar7, u_stack6._2_2_, param_3);
+            pass1_1018_0196(uVar7 | ZEXT24(u_stack6) << 0x10, *(iVar11 + 0x10c), *(iVar11 + 0x108), uVar7, u_stack6, param_3);
             iVar5 = uVar7;
             if((iVar11 + 0x110) != 0x0)
             {
                 u_var2 = (iVar11 + 0x10c);
                 pass1_1028_e1ec(_PTR_LOOP_1050_65e2, u_var2, (u_var2 >> 0x10));
-                uStack42         = CONCAT22(u_stack6._2_2_, iVar5);
+                uStack42         = CONCAT22(u_stack6, iVar5);
                 uVar7            = *(iVar11 + 0x110);
                 *(iVar5 + 0x200) = uVar7;
                 u_stack68         = uVar7;
@@ -1897,19 +1897,19 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
         u_stack6._0_2_ = uVar7;
         u_var2         = (iVar11 + 0x10c);
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, u_var2, (u_var2 >> 0x10));
-        puStack52 = CONCAT22(u_stack6._2_2_, u_stack6);
-        puVar8    = (u_stack6._2_2_ | u_stack6);
+        puStack52 = CONCAT22(u_stack6, u_stack6);
+        puVar8    = (u_stack6 | u_stack6);
         if(puVar8 != 0x0)
         {
             ppcVar3 = (*puStack52 + 0x8);
-            (**ppcVar3)(uVar14, u_stack6, u_stack6._2_2_, 0x0, puStack18, (puStack18 >> 0x10), 0x0);
+            (**ppcVar3)(uVar14, u_stack6, u_stack6, 0x0, puStack18, (puStack18 >> 0x10), 0x0);
             puVar8 = extraout_DX;
         }
     }
     else
     {
         puStack18 = u_stack6;
-        puVar8    = u_stack6._2_2_;
+        puVar8    = u_stack6;
     }
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, puStack18, (puStack18 >> 0x10));
     uStack22 = CONCAT22(puVar8, u_stack6);

@@ -116,9 +116,9 @@ void  get_sys_metrics_1040_7728(Struct57 *param_1, u16 param_2, u32 param_3, u16
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar2->field_0x82), 0x0, 0x8);
     IVar1             = GetSystemMetrics16(0x1000);
     iVar2->field_0x62 = IVar1;
-    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)0x1538);
     iVar2->field_0x64 = IVar1;
-    IVar1             = GetSystemMetrics16((u16)s_tile2_bmp_1050_1538);
+    IVar1             = GetSystemMetrics16((u16)0x1538);
     iVar2->field_0x66 = IVar1;
     return;
 }
@@ -197,7 +197,7 @@ void  pass1_1040_45e8(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *pa
     Struct20 *paVar10;
     i16        *piStack16;
 
-    if(param_4._2_2_ != 0xeb)
+    if(param_4 != 0xeb)
     {
         pass1_1040_b54a(param_1, param_2, param_3, param_4, param_5, param_6, param_7);
         return;
@@ -947,7 +947,7 @@ void  make_proc_inst_1038_cf6c(u16 *param_1, u8 *param_2, LPVOID param_3)
     pvVar1                   = MakeProcInstance16(param_3, globals->PTR_LOOP_1050_038c);
     *(LPVOID *)(iVar2 + 0x4) = pvVar1;
     (iVar2 + 0x6)            = param_2;
-    globals->PTR_LOOP_1050_5bcc       = MakeProcInstance16(s_tile2_bmp_1050_1538, globals->PTR_LOOP_1050_038c);
+    globals->PTR_LOOP_1050_5bcc       = MakeProcInstance16(0x1538, globals->PTR_LOOP_1050_038c);
     globals->PTR_LOOP_1050_5bce       = param_2;
     return;
 }
@@ -964,7 +964,7 @@ void  free_proc_inst_1038_cfda(u16 *param_1, LPVOID param_2)
     *param_1      = 0xd23e;
     (iVar1 + 0x2) = &PTR_LOOP_1050_1038;
     FreeProcInstance16(param_2);
-    FreeProcInstance16(s_tile2_bmp_1050_1538);
+    FreeProcInstance16(0x1538);
     (iVar1 + 0x4) = 0x0;
     *param_1      = 0x389a;
     (iVar1 + 0x2) = 0x1008;

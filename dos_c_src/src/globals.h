@@ -1,4 +1,5 @@
 #include "op_int.h"
+#include "op_win_def.h"
 
 struct Globals
 {
@@ -929,6 +930,9 @@ struct Globals
     int     PTR_LOOP_1050_0398;
     char   *s_Outpost_1050_00d7;
     LPCSTR  s_SITEICON_1050_428d;
+    LPCSTR  s_TILEICON_1050_440c;
+    char   *s_OPButton_1050_5ece;
+    char   *s_VrMode_1050_4422;
 };
 
 typedef struct Globals Globals;

@@ -416,8 +416,8 @@ void  pass1_1030_1358(u32 param_1, u16 param_2, u16 param_3, u32 param_4, u16 pa
     if((*puVar1 < param_4 || *puVar1 == param_4) || (iVar4->field_0x6 == 0x0))
     {
         pu_var2 = (&iVar4->field_0x12 + 0x2);
-        bVar8  = *pu_var2 < param_4._2_2_;
-        if((bVar8 || *pu_var2 == param_4._2_2_) && ((bVar8 || (puVar1 = &iVar4->field_0x12, puVar1 < param_4 || puVar1 == param_4))))
+        bVar8  = *pu_var2 < param_4;
+        if((bVar8 || *pu_var2 == param_4) && ((bVar8 || (puVar1 = &iVar4->field_0x12, puVar1 < param_4 || puVar1 == param_4))))
         {
             struct_1030_1550(param_1 & 0xffff | uVar6 << 0x10, param_5);
         }
@@ -431,8 +431,8 @@ void  pass1_1030_1358(u32 param_1, u16 param_2, u16 param_3, u32 param_4, u16 pa
             return;
         }
         pu_var2 = &iVar4->field_0xc;
-        bVar8  = *pu_var2 < param_4._2_2_;
-        if((bVar8 || *pu_var2 == param_4._2_2_) && ((bVar8 || (pu_var2 = &iVar4->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
+        bVar8  = *pu_var2 < param_4;
+        if((bVar8 || *pu_var2 == param_4) && ((bVar8 || (pu_var2 = &iVar4->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
         {
             iVar4->field_0xa = (param_4 + 0x1);
             iVar4->field_0xc = (param_4 + 0x1 >> 0x10);
@@ -465,8 +465,8 @@ void  pass1_1030_14b4(u32 param_1, u16 param_2, u16 param_3, u32 param_4, u16 pa
     if((*puVar1 < param_4 || *puVar1 == param_4) || (iVar5->field_0x6 == 0x0))
     {
         pu_var2 = (&iVar5->field_0x12 + 0x2);
-        bVar6  = *pu_var2 < param_4._2_2_;
-        if((bVar6 || *pu_var2 == param_4._2_2_) && ((bVar6 || (puVar1 = &iVar5->field_0x12, puVar1 < param_4 || puVar1 == param_4))))
+        bVar6  = *pu_var2 < param_4;
+        if((bVar6 || *pu_var2 == param_4) && ((bVar6 || (puVar1 = &iVar5->field_0x12, puVar1 < param_4 || puVar1 == param_4))))
         {
             struct_1030_1550(param_1 & 0xffff | uVar4 << 0x10, param_5);
         }
@@ -476,8 +476,8 @@ void  pass1_1030_14b4(u32 param_1, u16 param_2, u16 param_3, u32 param_4, u16 pa
             return;
         }
         pu_var2 = &iVar5->field_0xc;
-        bVar6  = *pu_var2 < param_4._2_2_;
-        if((bVar6 || *pu_var2 == param_4._2_2_) && ((bVar6 || (pu_var2 = &iVar5->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
+        bVar6  = *pu_var2 < param_4;
+        if((bVar6 || *pu_var2 == param_4) && ((bVar6 || (pu_var2 = &iVar5->field_0xa, *pu_var2 < param_4 || *pu_var2 == param_4))))
         {
             iVar5->field_0xa = (param_4 + 0x1);
             iVar5->field_0xc = (param_4 + 0x1 >> 0x10);
@@ -1246,9 +1246,9 @@ void  pass1_1028_c00a(u32 param_1, long param_2, i16 param_3, u16 param_4)
         uVar8 = struct_op_1030_73a8(CONCAT22(uVar5, uVar3));
         uVar9 = pass1_1028_6302(uVar8, param_4);
         uVar5 = (uVar9 >> 0x10);
-        if((param_2._2_2_ <= uVar5) && ((param_2._2_2_ < uVar5 || (param_2 <= uVar9))))
+        if((param_2 <= uVar5) && ((param_2 < uVar5 || (param_2 <= uVar9))))
         {
-            pass1_1028_6356(uVar8, 0x0, param_2, param_2._2_2_, param_4);
+            pass1_1028_6356(uVar8, 0x0, param_2, param_2, param_4);
             goto LAB_1028_c0d6;
         }
         pass1_1028_6356(uVar8, 0x0, uVar9, uVar5, param_4);
@@ -1310,12 +1310,12 @@ void  pass1_1028_c0f0(u32 param_1, long param_2, i16 param_3, u16 param_4, u16 p
             uVar9  = pass1_1028_6302(uVar9, param_6);
             puVar6 = (uVar9 >> 0x10);
             uVar5  = uVar9;
-            if((param_2._2_2_ <= puVar6) && ((param_2._2_2_ < puVar6 || (param_2 <= uVar5))))
+            if((param_2 <= puVar6) && ((param_2 < puVar6 || (param_2 <= uVar5))))
             {
                 param_2 = 0x0;
                 break;
             }
-            param_2 = CONCAT22(param_2._2_2_ + (-(param_2 < uVar5) - puVar6), param_2 - uVar5);
+            param_2 = CONCAT22(param_2 + (-(param_2 < uVar5) - puVar6), param_2 - uVar5);
         }
         if(puStack20 != 0x0)
         {

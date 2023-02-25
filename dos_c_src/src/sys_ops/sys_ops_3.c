@@ -1076,7 +1076,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
                     if((CONCAT11(uVar31, u_var29) + 0x34 + CONCAT11(uVar36, uVar35) * 0x4) == local_6)
                     {
                         puVar9   = (&PTR_LOOP_1050_0000 + 0x1);
-                        local_30 = CONCAT22(local_30._2_2_, 0x1);
+                        local_30 = CONCAT22(local_30, 0x1);
                         uVar35   = 0xd7;
                         uVar36   = 0x7b;
                         pass1_1008_612e(0x1, 0x64, 0x1);
