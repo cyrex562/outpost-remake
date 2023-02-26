@@ -8,7 +8,7 @@
 void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3);
 
 
-void  unk_win_ui_op_1020_67ce(Struct20 *in_struct_1, u16 param_2, u32 param_3);
+void unk_win_ui_op_1020_67ce(Globals *globals, Struct20 *in_struct_1, u16 param_2, u32 param_3);
 
 
 
@@ -71,8 +71,7 @@ void  pass1_1020_52de(u32 param_1, u16 param_2);
 void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *param_5);
 
 
-
-void  set_cursor_1020_5764(u32 param_1, i16 param_2, u16 param_3);
+void window_op_1020_5764(Globals *globals, u32 param_1, i16 param_2, u16 param_3);
 
 
 

@@ -1,7 +1,17 @@
 #include "ui_ops_6.h"
+
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "globals.h"
 #include "op_int.h"
-#include "op_winapi.h"
 #include "op_win_def.h"
+#include "op_winapi.h"
+#include "structs/structs_0xx/structs_3x.h"
+#include "ui_ops_1.h"
+#include "unk/unk_12.h"
+#include "utils.h"
+
+#include <stdbool.h>
+#include <stddef.h>
 
 void destroy_window_1020_3b3e(Struct30 *param_1, HWND16 param_2)
 
@@ -47,14 +57,12 @@ void destroy_window_1020_3b3e(Struct30 *param_1, HWND16 param_2)
         pass1_1010_1ea6(uVar5->field_0xfa, CONCAT22(paVar4, uVar3), unaff_SS);
     }
     uVar5->field_0xfa = 0x0;
-    return;
 }
 
 void pass1_1020_3c8c(u32 param_1, u32 param_2, u16 param_3)
 
 {
     pt_in_rect_1018_1bda(*(param_1 + 0xfa), param_2, (param_2 >> 0x10), param_3);
-    return;
 }
 
 Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3)
@@ -82,7 +90,7 @@ Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-void enable_window_1020_1bd4(i16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND16 param_5)
+void enable_window_1020_1bd4(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND16 param_5)
 
 {
     void **ppcVar1;
@@ -127,14 +135,13 @@ void enable_window_1020_1bd4(i16 param_1, u16 param_2, u16 param_3, u32 param_4,
         }
         else
         {
-            uVar5 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+            uVar5 = SUB42(&globals->PTR_LOOP_1050_1040, 0x0);
             iVar3 = string_1040_8520(CONCAT22(in_DX, in_AX), (param_1 + 0x6), 0x30, 0x2, 0x57b, 0x62a, puVar4, unaff_SS);
         }
         puStack12 = CONCAT22(puVar4, iVar3);
         ppcVar1   = (*puStack12 + 0x74);
         (**ppcVar1)(uVar5, iVar3, puVar4);
     }
-    return;
 }
 
 void set_win_tet_1020_1d2a(u16 param_1, u16 param_2, SEGPTR in_win_text_3, u16 param_4, u16 in_dlg_id_5, HWND16 in_hwnd_6)
@@ -350,13 +357,12 @@ void pass1_1020_0e8e(i16 param_1, u16 param_2, i16 param_3, i16 param_4, i16 par
 {
     fn_ptr_1 *ppcVar1;
 
-    win_ui_cursor_op_1020_1294(CONCAT22(param_2, param_1), param_3, param_4, param_6, param_7);
+    win_ui_cursor_op_1020_1294(NULL, CONCAT22(param_2, param_1), param_3, param_4, param_6, param_7);
     if(param_5 == 0x0)
     {
         ppcVar1 = ((param_1 + 0x4) + 0x5c);
         (**ppcVar1)();
     }
-    return;
 }
 
 void enable_menu_1020_1000(HMENU16 param_1, i16 param_2)
@@ -460,7 +466,7 @@ void window_op_1020_10a0(Struct0 *param_1)
     return;
 }
 
-void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param_4, u16 param_5)
+void win_ui_cursor_op_1020_1294(Globals *globals, u32 param_1, i16 param_2, i16 param_3, u16 param_4, u16 param_5)
 
 {
     void **ppcVar1;
@@ -477,7 +483,7 @@ void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param
     i16         local_6;
     i16         iStack4;
 
-    pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
+    pass1_1030_8344(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
     if((param_4 | in_AX) == 0x0)
     {
         local_6   = param_3;
@@ -503,7 +509,6 @@ void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param
             SetCursor16(0x1008);
         }
     }
-    return;
 }
 
 

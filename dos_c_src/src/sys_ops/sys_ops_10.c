@@ -5,7 +5,11 @@
 #include "op_win_def.h"
 #include "op_winapi.h"
 #include "string_ops.h"
+#include "struct_ops/struct_ops_1.h"
+#include "structs/structs_0xx/structs_2x.h"
+#include "unk/unk_15.h"
 #include "unk/unk_16.h"
+#include "win_ops/win_ops_3.h"
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -1583,7 +1587,7 @@ u16 * pass1_1008_7e98(u16 *param_1, u8 param_2)
 }
 
 
-Struct20 * unk_draw_op_1008_7f62(Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4)
+Struct20 *unk_draw_op_1008_7f62(Globals *globals, Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4)
 
 {
     HGDIOBJ16   HVar1;
@@ -1597,7 +1601,7 @@ Struct20 * unk_draw_op_1008_7f62(Struct20 *param_1, u16 param_2, u32 param_3, u1
     iVar3->field_0xde  = param_2;
     param_1->field_0x0 = 0x8042;
     iVar3->field_0x2   = 0x1008;
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar3->field_0x5b)), s_SOLChildPar_1050_0358);
+    unk_str_op_1000_3d3e(iVar3->field_0x5b, globals->s_SOLChildPar_1050_0358);
     HVar1                     = GetStockObject16(0x1000);
     iVar3->hgdiobj_field_0xc6 = HVar1;
     HVar2                     = LoadCursor16((HINSTANCE16)0x1538, 0x7f00);

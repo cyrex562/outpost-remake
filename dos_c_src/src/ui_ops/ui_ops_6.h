@@ -5,6 +5,12 @@
 #ifndef OUTPOST_1_SRC_UI_OPS_UI_OPS_6_H_
 #define OUTPOST_1_SRC_UI_OPS_UI_OPS_6_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_0xx/structs_3x.h"
+
 
 void destroy_window_1020_3b3e(Struct30 *param_1, HWND16 param_2);
 
@@ -17,8 +23,12 @@ void pass1_1020_3c8c(u32 param_1, u32 param_2, u16 param_3);
 Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3);
 
 
-
-void enable_window_1020_1bd4(i16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND16 param_5);
+void enable_window_1020_1bd4(Globals *globals,
+                             i16           param_1,
+                             u16  param_2,
+                             u16  param_3,
+                             u32    param_4,
+                             u16  param_5);
 
 
 
@@ -87,8 +97,12 @@ void enable_menu_1020_1000(HMENU16 param_1, i16 param_2);
 void window_op_1020_10a0(Struct0 *param_1);
 
 
-
-void win_ui_cursor_op_1020_1294(u32 param_1, i16 param_2, i16 param_3, u16 param_4, u16 param_5);
+void win_ui_cursor_op_1020_1294(struct Globals *globals,
+                                unsigned int    param_1,
+                                short           param_2,
+                                short           param_3,
+                                unsigned short  param_4,
+                                unsigned short  param_5);
 
 
 

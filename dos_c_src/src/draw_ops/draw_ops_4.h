@@ -16,7 +16,8 @@ struct Struct23 *unk_draw_op_1008_80ee(Globals *globals, struct Struct23 *param_
 
 void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3);
 
-Struct20 * unk_draw_op_1008_61b2(Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5);
+struct Struct20 *
+unk_draw_op_1008_61b2(Globals *globals, struct Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5);
 
 void  fill_rect_1008_62c0(HWND16 param_1);
 

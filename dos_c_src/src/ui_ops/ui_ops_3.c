@@ -1,3 +1,26 @@
+#include "ui_ops_3.h"
+
+#include "draw_ops/draw_ops_3.h"
+#include "fn_ptr_ops/fn_ptr_ops_3.h"
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
+#include "string_ops.h"
+#include "structs/structs_1xx/structs_10x.h"
+#include "sys_ops/sys_ops_12.h"
+#include "sys_ops/sys_ops_2.h"
+#include "sys_ops/sys_ops_9.h"
+#include "ui_ops_1.h"
+#include "unk/unk_12.h"
+#include "unk/unk_5.h"
+#include "unk/unk_6.h"
+#include "utils.h"
+#include "win_ops/win_ops_1.h"
+#include "win_ops/win_ops_2.h"
+#include "win_ops/win_ops_4.h"
+
+#include <stddef.h>
 
 void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2)
 
@@ -111,7 +134,8 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
     return;
 }
 
-void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, WNDCLASS16 *param_6)
+void win_ui_op_1040_0170(
+  Globals *globals, i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, WNDCLASS16 *param_6)
 
 {
     u16         uVar1;
@@ -149,31 +173,31 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
     switch(param_4)
     {
     case 0x167:
-        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &PTR_LOOP_1050_1040, param_6);
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16b);
+        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &globals->PTR_LOOP_1050_1040, param_6);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16((HWND16)0x1538, 0x1);
         iStack4 = 0x0;
         break;
     case 0x168:
-        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &PTR_LOOP_1050_1040, param_6);
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16b);
+        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &globals->PTR_LOOP_1050_1040, param_6);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16((HWND16)0x1538, 0x1);
         iStack4 = 0x1;
         break;
     case 0x169:
-        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &PTR_LOOP_1050_1040, param_6);
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16b);
+        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &globals->PTR_LOOP_1050_1040, param_6);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16((HWND16)0x1538, 0x1);
         iStack4 = 0x2;
         break;
     case 0x16a:
-        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &PTR_LOOP_1050_1040, param_6);
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16b);
+        enable_win_1040_060e(CONCAT22(param_2, param_1), 0x3, &globals->PTR_LOOP_1050_1040, param_6);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16b);
         EnableWindow16((HWND16)0x1538, 0x1);
         iStack4 = 0x3;
         break;
     case 0x16b:
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16b);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16b);
         uVar5 = SUB42(0x1538, 0x0);
         BVar2 = EnableWindow16((HWND16)0x1538, 0x0);
         if((param_1 + 0x92) != 0x3)
@@ -196,13 +220,13 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
         }
         goto LAB_1040_04da;
     case 0x16c:
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16d);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16d);
         EnableWindow16((HWND16)0x1538, 0x1);
         iStack4          = 0x5;
         (param_1 + 0x94) = 0x5;
         goto LAB_1040_04da;
     case 0x16d:
-        GetDlgItem16((HWND16)&PTR_LOOP_1050_1040, 0x16d);
+        GetDlgItem16((HWND16)&globals->PTR_LOOP_1050_1040, 0x16d);
         BVar2 = EnableWindow16((HWND16)0x1538, 0x0);
         uVar5 = 0x1008;
         win_1008_5c5c(param_6, BVar2, in_DX, globals->_PTR_LOOP_1050_02a0, 0x1de);
@@ -215,7 +239,7 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
             (param_1 + 0x94) = 0x8;
         }
         LVar7     = win_ui_op_1040_0558(CONCAT22(param_2, param_1), 0x5, uVar5);
-        puStack12 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x39, param_6, (LVar7 >> 0x10), unaff_DI);
+        puStack12 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x39, param_6, (LVar7 >> 0x10), unaff_DI);
         iVar3     = (puStack12 + 0x20);
         pHVar11   = &local_16;
         pHVar9    = &local_18;
@@ -225,7 +249,7 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
         iStack16  = iVar3;
         iStack14  = iVar4;
         iStack8   = iVar3;
-        pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(iVar4, iVar3));
+        pass1_1030_8344(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(iVar4, iVar3));
         uStack20 = CONCAT22(iVar4, iVar3);
         pass1_1030_2f1a(CONCAT22(iVar4, iVar3), CONCAT22(pWVar10, pHVar9), CONCAT22(pWVar12, pHVar11));
         in_DX    = ((local_18 - local_16) >> 0xf);
@@ -234,19 +258,19 @@ void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u1
         set_window_text_1018_6086(*(param_1 + 0x96), 0x1018, param_6);
         goto LAB_1040_04da;
     case 0x16e:
-        puStack30 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x39, param_6, in_DX, unaff_DI);
+        puStack30 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x39, param_6, in_DX, unaff_DI);
         uStack26  = (puStack30 + 0x20);
         local_18  = LoadCursor16(0x1010, 0x7f02);
         local_16  = SetCursor16((HCURSOR16)0x1538);
         pass1_1030_532e((Struct100 *)CONCAT22(param_6, local_12a), (long)uStack26 + 0x2000000, param_6, in_AF);
-        fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_6, local_12a));
-        pass1_1030_838e(_PTR_LOOP_1050_5748, param_6, in_AF);
-        pass1_1030_8334(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10));
+        fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_6, local_12a));
+        pass1_1030_838e(globals->_PTR_LOOP_1050_5748, param_6, in_AF);
+        pass1_1030_8334(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10));
         in_DX = extraout_DX;
         SetCursor16(0x1030);
         PostMessage16((HWND16)0x1538, 0x0, 0x0, 0x111007e);
         DestroyWindow16((HWND16)0x1538);
-        local_12a[0] = &u32_1008_389a;
+        local_12a[0] = &globals->u32_1008_389a;
         goto LAB_1040_04da;
     default:
         post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4, param_5);
@@ -259,13 +283,13 @@ LAB_1040_04da:
         uVar5   = (iStack4 * 0xe + 0x5c68);
         w_param = 0x0;
         uVar8   = 0xc;
-        pcVar6  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+        pcVar6  = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         LVar7   = SendDlgItemMessage16(0x1010, (u16)pcVar6, (pcVar6 >> 0x10), w_param, CONCAT22(uVar5, uVar8));
         in_DX   = (LVar7 >> 0x10);
     }
     if(iStack6 != 0x0)
     {
-        local_12a[0] = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_6, in_DX, unaff_DI);
+        local_12a[0] = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_6, in_DX, unaff_DI);
         uVar1        = (local_12a[0] + 0x20);
         puStack30    = (puStack30 & 0xffff0000 | uVar1);
         if(uVar1 != 0x0)
@@ -273,7 +297,6 @@ LAB_1040_04da:
             PostMessage16(0x1010, 0x0, 0x0, CONCAT22(0x111, iStack6));
         }
     }
-    return;
 }
 
 LRESULT  win_ui_op_1040_0558(u32 param_1, i16 param_2, HWND16 param_3)
@@ -1402,7 +1425,7 @@ void  pass1_1038_d7d0(Struct18 *param_1, u16 param_2)
 }
 
 
-void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
+void window_op_1038_d8b2(Globals *globals, i16 param_1, HINSTANCE16 param_2, u16 param_3)
 
 {
     i16         *pi_var1;
@@ -1420,16 +1443,16 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
     u16         *puVar10;
     u16         *puVar11;
 
-    HVar4                          = LoadCursor16(param_2, 0x7f02);
+    HVar4                          = LoadCursor16(param_2, get_rsrc_string(0x7f02));
     *(HCURSOR16 *)(param_1 + -0x2) = HVar4;
     HVar4                          = SetCursor16((HCURSOR16)0x1538);
     *(HCURSOR16 *)(param_1 + -0x4) = HVar4;
-    dialog_ui_fn_1040_78e2(*(Struct1 **)(param_1 + 0x6), &PTR_LOOP_1050_1040);
+    dialog_ui_fn_1040_78e2((param_1 + 0x6), &globals->PTR_LOOP_1050_1040);
     uVar5            = pass1_1010_0886();
     (param_1 + -0x6) = uVar5;
-    if(_PTR_LOOP_1050_5f2c == 0x0)
+    if(globals->_PTR_LOOP_1050_5f2c == 0x0)
     {
-        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(in_DX, 0x1000);
+        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(globals, in_DX, 0x1000);
         globals->PTR_LOOP_1050_5f2e = in_DX;
     }
     else
@@ -1462,7 +1485,7 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
         *(Struct160 **)(param_1 + -0x28) = rect;
         (param_1 + -0x26)                  = puVar6;
         globals->PTR_LOOP_1050_5f2e                 = (puVar6 | rect);
-        if(PTR_LOOP_1050_5f2e == 0x0)
+        if(globals->PTR_LOOP_1050_5f2e == 0x0)
         {
             u_var2                            = (param_1 + 0x6);
             u_var2                            = (u_var2 + 0x96);
@@ -1493,19 +1516,18 @@ void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3)
             u_var2          = (param_1 + -0x1c);
             uVar3          = (param_1 + 0x6);
             uVar3          = (uVar3 + 0x96);
-            enable_win_1040_9234(*(uVar3 + (param_1 + -0x8) * 0x4), *(BOOL16 *)(u_var2 + 0x6), &PTR_LOOP_1050_1040);
+            enable_win_1040_9234(*(uVar3 + (param_1 + -0x8) * 0x4), *(BOOL16 *)(u_var2 + 0x6), &globals->PTR_LOOP_1050_1040);
         }
         pi_var1  = (param_1 + -0x8);
         *pi_var1 = *pi_var1 + 0x1;
     }
-    puVar11          = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_3, globals->PTR_LOOP_1050_5f2e, unaff_DI);
+    puVar11          = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_3, globals->PTR_LOOP_1050_5f2e, unaff_DI);
     (param_1 + -0xc) = puVar11;
     (param_1 + -0xa) = (puVar11 >> 0x10);
     u_var2            = (param_1 + -0xc);
     SetWindowText16(0x1010, (SEGPTR) * (u_var2 + 0x68));
     ShowWindow16((HWND16)0x1538, 0x5);
     SetCursor16((HCURSOR16)0x1538);
-    return;
 }
 
 
@@ -1813,7 +1835,7 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
             HStack8 = (HWND16)uVar13;
         LAB_1038_bba2:
             param_5 = 0x1008;
-            win_ui_cursor_op_1038_bc30(param_1, 0x1008, param_6);
+            win_ui_cursor_op_1038_bc30(NULL, param_1, 0x1008, param_6);
             HStack8 = (HWND16)uVar13;
         }
         PostMessage16(param_5, 0x0, 0x0, 0x11100ce);
@@ -1829,7 +1851,7 @@ LAB_1038_bc26:
 }
 
 
-void  win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3)
+void win_ui_cursor_op_1038_bc30(Globals *globals, u32 param_1, HINSTANCE16 param_2, u16 param_3)
 
 {
     u32 uVar1;
@@ -1837,19 +1859,18 @@ void  win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3)
     u16        local_112;
     u16        uStack272;
     HCURSOR16  HStack6;
-    HCURSOR16  HStack4;
+    HCURSOR16  cursor_handle_1;
 
-    HStack4 = LoadCursor16(param_2, 0x7f02);
+    cursor_handle_1 = LoadCursor16(param_2, get_rsrc_string(0x7f02));
     HStack6 = SetCursor16((HCURSOR16)0x1538);
     uVar1   = (param_1 + 0x8e);
     pass1_1030_532e((Struct100 *)CONCAT22(param_3, &local_112), (long)(uVar1 + 0xe) + 0x1000000, param_3, in_AF);
-    fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_3, &local_112));
-    pass1_1030_838e(_PTR_LOOP_1050_5748, param_3, in_AF);
+    fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_3, &local_112));
+    pass1_1030_838e(globals->_PTR_LOOP_1050_5748, param_3, in_AF);
     local_112 = 0x389a;
     uStack272 = 0x1008;
-    pass1_1030_8334(_PTR_LOOP_1050_5748);
+    pass1_1030_8334(globals->_PTR_LOOP_1050_5748);
     SetCursor16(0x1030);
-    return;
 }
 
 

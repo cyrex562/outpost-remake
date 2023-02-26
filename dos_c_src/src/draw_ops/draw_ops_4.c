@@ -7,7 +7,8 @@
 #include "structs/structs_0xx/structs_2x.h"
 #include "unk/unk_15.h"
 #include "unk/unk_18.h"
-#include "win_ops_4.h"
+#include "win_ops/win_ops_3.h"
+#include "win_ops/win_ops_4.h"
 
 void  begin_end_pai16_1008_97c8(HWND16 param_1)
 
@@ -158,7 +159,7 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
 }
 
 
-Struct20 * unk_draw_op_1008_61b2(Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
+Struct20 *unk_draw_op_1008_61b2(Globals *globals, Struct20 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
 {
     HGDIOBJ16   l_hgdiobj_1;
@@ -167,35 +168,35 @@ Struct20 * unk_draw_op_1008_61b2(Struct20 *param_1, u16 param_2, u16 param_3, u3
     u8         *puVar1;
     i16         unaff_DI;
     u16        *l_struct_2;
-    Struct20 *uVar5;
-    Struct20 *iVar1;
+//    Struct20 *uVar5;
+//    Struct20 *iVar1;
     Struct20 *iVar4;
     u16        *uVar1;
 
-    iVar1 = (Struct20 *)param_1;
-    uVar5 = (Struct20 *)(param_1 >> 0x10);
+//    iVar1 = (Struct20 *)param_1;
+//    uVar5 = (Struct20 *)(param_1 >> 0x10);
     set_struct_1008_687a(param_1, param_4);
     iVar1->field_0xde  = param_2;
     iVar1->field_0xe0  = 0x0;
     param_1->field_0x0 = 0x6378;
     iVar1->field_0x2   = 0x1008;
     puVar1             = extraout_DX;
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&iVar1->field_0x5b)), s_DanBrotherton_1050_0302);
+    unk_str_op_1000_3d3e(iVar1->field_0x5b, globals->s_DanBrotherton_1050_0302);
     l_hgdiobj_1               = GetStockObject16(0x1000);
     iVar1->hgdiobj_field_0xc6 = l_hgdiobj_1;
-    l_hcursor_1               = LoadCursor16((HINSTANCE16)0x1538, 0x7f00);
+    l_hcursor_1               = LoadCursor16(0x1538, 0x7f00);
     iVar1->hcursor_field_0xc4 = l_hcursor_1;
     iVar1->field_0xc8         = 0x200b;
     iVar1->field_0xac         = 0x45000000;
     iVar1->field_0xbc         = (param_4 + 0x8);
-    l_struct_2                = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, param_5, puVar1, unaff_DI);
+    l_struct_2                = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, param_5, puVar1, unaff_DI);
     uVar1                     = (l_struct_2 >> 0x10);
     iVar1->field_0xb4         = 0x0;
     iVar1->field_0xb6         = 0x0;
     iVar1->field_0xb8         = (l_struct_2 + 0xa);
     iVar1->field_0xba         = (l_struct_2 + 0xc);
     iVar1->field_0xca         = param_3;
-    win_ui_reg_class_1008_96d2(param_1, 0x1010, param_5);
+    win_ui_reg_class_1008_96d2(globals, param_1, 0x1010, param_5);
     return param_1;
 }
 

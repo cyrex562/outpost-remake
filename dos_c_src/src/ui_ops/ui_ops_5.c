@@ -3,11 +3,18 @@
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
+#include "string_ops.h"
 #include "structs/structs_0xx/structs_x.h"
 #include "unk/unk_11.h"
 #include "unk/unk_14.h"
+#include "unk/unk_15.h"
 #include "unk/unk_18.h"
+#include "unk/unk_5.h"
+#include "utils.h"
+#include "win_ops/win_ops_2.h"
 #include "win_ops/win_ops_3.h"
+
+#include <stddef.h>
 
 void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3)
 
@@ -94,7 +101,7 @@ void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3)
     }
     return;
 }
-void  unk_win_ui_op_1020_67ce(Struct20 *in_struct_1, u16 param_2, u32 param_3)
+void unk_win_ui_op_1020_67ce(Globals *globals, Struct20 *in_struct_1, u16 param_2, u32 param_3)
 
 {
     HGDIOBJ16   HVar1;
@@ -103,25 +110,24 @@ void  unk_win_ui_op_1020_67ce(Struct20 *in_struct_1, u16 param_2, u32 param_3)
     Struct20 *uVar4;
     u16         unaff_SS;
 
-    struct_1020_790e(&in_struct_1->field_0x0, s_TPPOPMENU_1050_43fa, param_2, param_3, unaff_SS);
+    struct_1020_790e(&in_struct_1->field_0x0, globals->s_TPPOPMENU_1050_43fa, param_2, param_3, unaff_SS);
     uVar4                  = (Struct20 *)(in_struct_1 >> 0x10);
     iVar3                  = (Struct20 *)in_struct_1;
     iVar3[0x1].field_0x10  = 0x0;
     &iVar3[0x1].field_0x14 = 0x0;
     in_struct_1->field_0x0 = 0x70e6;
     iVar3->field_0x2       = 0x1020;
-    unk_str_op_1000_3d3e((in_struct_1 & 0xffff0000 | ZEXT24(&iVar3->field_0x5b)), s_VrMode2_1050_4404);
+    unk_str_op_1000_3d3e(&iVar3->field_0x5b, globals->s_VrMode2_1050_4404);
     HVar1                     = GetStockObject16(0x1000);
     iVar3->hgdiobj_field_0xc6 = HVar1;
-    HVar2                     = LoadCursor16((HINSTANCE16)0x1538, 0x7f00);
+    HVar2                     = LoadCursor16((HINSTANCE16)0x1538, get_rsrc_string(0x7f00));
     iVar3->hcursor_field_0xc4 = HVar2;
     iVar3->field_0xac         = 0x44c00000;
     iVar3->field_0xc8         = 0x2020;
     iVar3->field_0xbc         = (param_3 + 0x8);
     iVar3->field_0xca         = param_2;
-    win_ui_reg_class_1008_96d2(in_struct_1, 0x1008, unaff_SS);
+    win_ui_reg_class_1008_96d2(globals, in_struct_1, 0x1008, unaff_SS);
     window_op_1020_6c3a(in_struct_1);
-    return;
 }
 
 
@@ -686,7 +692,8 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
             {
                 pi_var1           = (iVar10 + 0xcc);
                 *pi_var1          = *pi_var1 + 0x1;
-                uVar14           = unk_win_ui_op_1020_67ce(CONCAT13((param_5 >> 0x8), CONCAT12(param_5, uVar7)), (iVar10 + 0xcc), param_1);
+                uVar14           = unk_win_ui_op_1020_67ce(
+                  NULL, CONCAT13((param_5 >> 0x8), CONCAT12(param_5, uVar7)), (iVar10 + 0xcc), param_1);
                 (iVar10 + 0xfe)  = uVar14;
                 (iVar10 + 0x100) = (uVar14 >> 0x10);
             }
@@ -785,10 +792,9 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
             return;
         }
     }
-    return;
 }
 
-void  set_cursor_1020_5764(u32 param_1, i16 param_2, u16 param_3)
+void window_op_1020_5764(Globals *globals, u32 param_1, i16 param_2, u16 param_3)
 
 {
     u16         uVar1;
@@ -804,14 +810,14 @@ void  set_cursor_1020_5764(u32 param_1, i16 param_2, u16 param_3)
     u32         uStack10;
     u16        *pu_stack6;
 
-    pu_stack6 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_3, in_DX, unaff_DI);
+    pu_stack6 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2f, param_3, in_DX, unaff_DI);
     uVar4    = (pu_stack6 >> 0x10);
     uStack10 = *(pu_stack6 + 0x20);
     uVar1    = (pu_stack6 + 0x22);
     if((uVar1 | uStack10) != 0x0)
     {
         h_instance = 0x1030;
-        pass1_1030_8308(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(param_3, &local_e), CONCAT13((param_3 >> 0x8), CONCAT12(param_3, local_c)), uStack10 & 0xffff | uVar1 << 0x10, &local_e, uVar1);
+        pass1_1030_8308(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(param_3, &local_e), CONCAT13((param_3 >> 0x8), CONCAT12(param_3, local_c)), uStack10 & 0xffff | uVar1 << 0x10, &local_e, uVar1);
         if(param_2 <= local_e)
         {
             uVar4 = (param_1 >> 0x10);
@@ -825,7 +831,7 @@ void  set_cursor_1020_5764(u32 param_1, i16 param_2, u16 param_3)
                 h_instance      = (HINSTANCE16)0x1538;
                 ReleaseCapture16();
             }
-            LoadCursor16(h_instance, 0x7f02);
+            LoadCursor16(h_instance, get_rsrc_string(0x7f02));
             SetCursor16((HCURSOR16)0x1538);
             hcursor = 0x1018;
             pass1_1018_017c(pu_stack6, param_2, param_3);
@@ -840,7 +846,6 @@ void  set_cursor_1020_5764(u32 param_1, i16 param_2, u16 param_3)
             SetCursor16(hcursor);
         }
     }
-    return;
 }
 
 void  pt_in_rect_1020_5856(u32 param_1, POi1616 *param_2, u16 param_3)
@@ -1792,7 +1797,7 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
             enum_child_windows_1010_01be(0x1010);
             return;
         }
-        set_cursor_1020_5764(param_1, iVar4, param_6);
+        window_op_1020_5764(NULL, param_1, iVar4, param_6);
         return;
     }
     if(param_2 == 0x132)

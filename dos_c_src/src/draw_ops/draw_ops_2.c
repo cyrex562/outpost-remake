@@ -12,6 +12,7 @@
 #include "win_ops/win_ops_3.h"
 
 #include <minwindef.h>
+#include <stddef.h>
 
 
 void  pass1_1038_9a48(Struct18 *param_1)
@@ -668,7 +669,7 @@ void unk_draw_op_1020_7f7a(Globals *globals, Struct20 *param_1, u16 param_2, u32
     u16        *puVar7;
     u16         in_stack_0000000e;
 
-    paVar6                     = unk_draw_op_1008_61b2(param_1, param_2, param_3, CONCAT22(in_stack_0000000e, param_3), unaff_SS);
+    paVar6                     = unk_draw_op_1008_61b2(NULL, param_1, param_2, param_3, CONCAT22(in_stack_0000000e, param_3), unaff_SS);
     puVar4                     = (paVar6 >> 0x10);
 //    uVar5                      = (param_1 >> 0x10);
 //    iVar4                      = param_1;
@@ -683,7 +684,7 @@ void unk_draw_op_1020_7f7a(Globals *globals, Struct20 *param_1, u16 param_2, u32
     param_1->field_0x2           = 0x1020;
     ((param_1 + 0x1))->field_0x0 = 0x8358;
     param_1[0x1].field_0x2       = 0x1020;
-    unk_str_op_1000_3d3e((param_1 & 0xffff0000 | ZEXT24(&param_1->field_0x5b)), globals->s_VrMode_1050_4422);
+    unk_str_op_1000_3d3e(param_1->field_0x5b, globals->s_VrMode_1050_4422);
     HVar2                     = GetStockObject16(0x1000);
     param_1->hgdiobj_field_0xc6 = HVar2;
     HVar3                     = LoadCursor16((HINSTANCE16)0x1538, 0x7f00);

@@ -6,6 +6,7 @@
 #define OUTPOST_1_SRC_UI_OPS_UI_OPS_3_H_
 
 
+#include "globals.h"
 void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2);
 
 
@@ -13,8 +14,13 @@ void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2);
 void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3);
 
 
-
-void  win_ui_op_1040_0170(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, WNDCLASS16 *param_6);
+void win_ui_op_1040_0170(Globals           *globals,
+                         short              param_1,
+                         unsigned short     param_2,
+                         unsigned short     param_3,
+                         unsigned int       param_4,
+                         unsigned short     param_5,
+                         struct WNDCLASS16 *param_6);
 
 
 
@@ -146,9 +152,7 @@ void  unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3, u32 param_4)
 void  pass1_1038_d7d0(Struct18 *param_1, u16 param_2);
 
 
-
-
-void  destroy_crsor_1038_d8b2(i16 param_1, HINSTANCE16 param_2, u16 param_3);
+void window_op_1038_d8b2(Globals *globals, i16 param_1, HINSTANCE16 param_2, u16 param_3);
 
 
 
@@ -181,9 +185,7 @@ void  win_ui_op_1038_b81c(Struct1 *param_1);
 u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HWND16 param_5, WNDCLASS16 *param_6);
 
 
-
-
-void  win_ui_cursor_op_1038_bc30(u32 param_1, HINSTANCE16 param_2, u16 param_3);
+void win_ui_cursor_op_1038_bc30(Globals *globals, u32 param_1, HINSTANCE16 param_2, u16 param_3);
 
 
 

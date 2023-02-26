@@ -276,7 +276,11 @@ window_op_1020_10a0 -> pass1_1010_459e
 window_op_1020_10a0 -> MoveWindow16
 window_op_1020_10a0 -> UpdateWindow16
 
-window_op_1020_6c3a
+window_op_1020_6c3a{
+    style : {
+        fill: lightgreen
+    }
+}
 window_op_1020_6c3a -> create_window_ex_1008_9760
 window_op_1020_6c3a -> mixed_1010_20ba
 window_op_1020_6c3a -> LoadIcon16
@@ -287,6 +291,11 @@ window_op_1020_6c3a -> unk_win_ui_op_1020_717e
 window_op_1020_6c3a -> MoveWindow16
 window_op_1020_6c3a -> UpdateWindow16
 
+unk_win_ui_op_1040_9854 {
+    style : {
+        fill: lightgreen
+    }
+}
 unk_win_ui_op_1040_9854 -> unk_str_op_1000_3d3e
 unk_win_ui_op_1040_9854 -> LoadCursor16
 unk_win_ui_op_1040_9854 -> GetStockObject16
@@ -294,16 +303,42 @@ unk_win_ui_op_1040_9854 -> reg_class_1040_98c0
 unk_win_ui_op_1040_9854 -> mixed_1010_20ba
 unk_win_ui_op_1040_9854 -> win_ui_reg_class_1008_96d2
 
+unk_draw_op_1020_41c8 {
+    style : {
+        fill: lightgreen
+    }
+}
 unk_draw_op_1020_41c8 -> unk_draw_op_1020_7f7a
 unk_draw_op_1020_41c8 -> LoadCursor16
 unk_draw_op_1020_41c8 -> LoadAccelerators16
 unk_draw_op_1020_41c8 -> mixed_1010_20ba
 
+unk_draw_op_1008_80ee {
+    style : {
+        fill: lightgreen
+    }
+}
 unk_draw_op_1008_80ee -> unk_str_op_1000_3d3e
 unk_draw_op_1008_80ee -> LoadCursor16
 unk_draw_op_1008_80ee -> GetStockObject16
+unk_draw_op_1008_80ee -> pass1_1008_818c
 
-unk_draw_op_1020_7f7a
+
+unk_draw_op_1020_7f7a{
+    style : {
+        fill: lightgreen
+    }
+}
+unk_draw_op_1020_7f7a -> unk_draw_op_1008_61b2
+unk_draw_op_1020_7f7a -> unk_str_op_1000_3d3e
+unk_draw_op_1020_7f7a -> GetStockObject16
+unk_draw_op_1020_7f7a -> LoadCursor16
+unk_draw_op_1020_7f7a -> mixed_1010_20ba
+unk_draw_op_1020_7f7a -> win_ui_reg_class_1008_96d2
+
+
+
+pass1_1008_818c
 
 pass1_1008_3ab8
 
@@ -348,3 +383,306 @@ pass1_1018_2d22
 unk_win_ui_op_1020_717e
 
 win_ui_reg_class_1008_96d2
+
+unk_draw_op_1008_61b2{
+    style : {
+        fill: lightgreen
+    }
+}
+unk_draw_op_1008_61b2 -> set_struct_1008_687a
+unk_draw_op_1008_61b2 -> unk_str_op_1000_3d3e
+unk_draw_op_1008_61b2 -> GetStockObject16
+unk_draw_op_1008_61b2 -> LoadCursor16
+unk_draw_op_1008_61b2 -> mixed_1010_20ba
+unk_draw_op_1008_61b2 -> win_ui_reg_class_1008_96d2
+
+unk_draw_op_1008_7f62{
+    style : {
+        fill: lightgreen
+    }
+}
+unk_draw_op_1008_7f62 -> set_struct_1008_687a
+unk_draw_op_1008_7f62 -> unk_str_op_1000_3d3e
+unk_draw_op_1008_7f62 -> GetStockObject16
+unk_draw_op_1008_7f62 -> LoadCursor16
+unk_draw_op_1008_7f62 -> win_ui_reg_class_1008_96d2
+
+win_ui_op_1040_0170{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+win_ui_op_1040_0170 -> enable_win_1040_060e
+win_ui_op_1040_0170 -> GetDlgItem16
+win_ui_op_1040_0170 -> EnableWindow16
+win_ui_op_1040_0170 -> win_1008_5c5c
+win_ui_op_1040_0170 -> pass1_1010_6604
+win_ui_op_1040_0170 -> win_ui_op_1040_0558
+win_ui_op_1040_0170 -> mixed_1010_20ba
+win_ui_op_1040_0170 -> pass1_1030_8344
+win_ui_op_1040_0170 -> pass1_1030_21fa
+win_ui_op_1040_0170 -> set_window_text_1018_6086
+win_ui_op_1040_0170 -> LoadCursor16
+win_ui_op_1040_0170 -> SetCursor16
+win_ui_op_1040_0170 -> pass1_1030_532e
+win_ui_op_1040_0170 -> fn_ptr_1030_835a
+win_ui_op_1040_0170 -> pass1_1030_838e
+win_ui_op_1040_0170 -> pass1_1030_8334
+win_ui_op_1040_0170 -> PostMessage16
+win_ui_op_1040_0170 -> DestroyWindow16
+win_ui_op_1040_0170 -> load_string_1010_847e
+win_ui_op_1040_0170 -> SendDlgItemMessage16
+
+window_op_1038_d8b2{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+window_op_1038_d8b2 -> LoadCursor16
+window_op_1038_d8b2 -> SetCursor16
+window_op_1038_d8b2 -> dialog_ui_fn_1040_78e2
+window_op_1038_d8b2 -> pass1_1010_0886
+window_op_1038_d8b2 -> mem_op_1000_160a
+window_op_1038_d8b2 -> fn_ptr_op_1000_1708
+window_op_1038_d8b2 -> pass1_1010_08e2
+window_op_1038_d8b2 -> MapDialogRect16
+window_op_1038_d8b2 -> mem_op_1000_179c
+window_op_1038_d8b2 -> pass1_1008_3db6
+window_op_1038_d8b2 -> enable_win_1040_9234
+window_op_1038_d8b2 -> mixed_1010_20ba
+window_op_1038_d8b2 -> SetWindowText16
+window_op_1038_d8b2 -> ShowWindow16
+window_op_1038_d8b2 -> SetCursor16
+
+win_ui_cursor_op_1038_bc30 {
+    style : {
+        fill: lightgreen
+    }
+}
+win_ui_cursor_op_1038_bc30 -> LoadCursor16
+win_ui_cursor_op_1038_bc30 -> SetCursor16
+win_ui_cursor_op_1038_bc30 -> pass1_1030_532e
+win_ui_cursor_op_1038_bc30 -> fn_ptr_1030_835a
+win_ui_cursor_op_1038_bc30 -> pass1_1030_838e
+win_ui_cursor_op_1038_bc30 -> pass1_1030_8334
+
+unk_win_ui_op_1020_67ce{
+    style : {
+        fill: lightgreen
+    }
+}
+unk_win_ui_op_1020_67ce -> struct_1020_790e
+unk_win_ui_op_1020_67ce -> unk_str_op_1000_3d3e
+unk_win_ui_op_1020_67ce -> GetStockObject16
+unk_win_ui_op_1020_67ce -> LoadCursor16
+unk_win_ui_op_1020_67ce -> win_ui_reg_class_1008_96d2
+unk_win_ui_op_1020_67ce -> window_op_1020_6c3a
+
+window_op_1020_5764{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+window_op_1020_5764 -> mixed_1010_20ba
+window_op_1020_5764 -> pass1_1030_8308
+window_op_1020_5764 -> SetCursor16
+window_op_1020_5764 -> ReleaseCapture16
+window_op_1020_5764 -> LoadCursor16
+window_op_1020_5764 -> pass1_1018_017c
+window_op_1020_5764 -> pass1_1020_68de
+window_op_1020_5764 -> PostMessage16
+window_op_1020_5764 -> SetCursor16
+
+win_ui_cursor_op_1020_1294{
+    style : {
+        fill: lightgreen
+    }
+}
+win_ui_cursor_op_1020_1294 -> pass1_1010_40cc
+win_ui_cursor_op_1020_1294 -> pass1_1008_3e94
+win_ui_cursor_op_1020_1294 -> pt_in_rect_1010_40f8
+win_ui_cursor_op_1020_1294 -> LoadCursor16
+win_ui_cursor_op_1020_1294 -> SetCursor16
+win_ui_cursor_op_1020_1294 -> pass1_1008_3e0e
+
+cursor_op_1008_2dcc{
+    style : {
+        fill: lightgreen
+    }
+}
+cursor_op_1008_2dcc -> LoadCursor16
+cursor_op_1008_2dcc -> SetCursor16
+cursor_op_1008_2dcc -> big_switch_1008_15d4
+cursor_op_1008_2dcc -> ui_op_1008_24ce
+
+win_ui_cursor_op_1008_2e9a{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+win_ui_cursor_op_1008_2e9a -> mixed_1010_20ba
+win_ui_cursor_op_1008_2e9a -> save_file_1008_3178
+win_ui_cursor_op_1008_2e9a -> PostMessage16
+win_ui_cursor_op_1008_2e9a -> unk_str_op_1000_3d3e
+win_ui_cursor_op_1008_2e9a -> str_1000_4d58
+win_ui_cursor_op_1008_2e9a -> pass1_1000_3cea
+win_ui_cursor_op_1008_2e9a -> struct_1010_5f1e
+win_ui_cursor_op_1008_2e9a -> send_msg_1020_097e
+win_ui_cursor_op_1008_2e9a -> UpdateWindow16
+win_ui_cursor_op_1008_2e9a -> LoadCursor16
+win_ui_cursor_op_1008_2e9a -> SetCursor16
+win_ui_cursor_op_1008_2e9a -> win_ui_op_1008_1414
+win_ui_cursor_op_1008_2e9a -> str_op_1000_3da4
+
+message_box_op_1008_12dc{
+    style : {
+        fill: lightgreen
+    }
+}
+message_box_op_1008_12dc -> LoadCursor16
+message_box_op_1008_12dc -> SetCursor16
+message_box_op_1008_12dc -> str_1008_6d8a
+message_box_op_1008_12dc -> file_fn_1008_6e02
+message_box_op_1008_12dc -> load_string_1010_847e
+message_box_op_1008_12dc -> str_op_1008_60e8
+message_box_op_1008_12dc -> MessageBeep16
+message_box_op_1008_12dc -> MessageBox16
+message_box_op_1008_12dc -> fn_ptr_1000_17ce
+message_box_op_1008_12dc -> close_file_1008_6dd0
+
+win_ui_cursor_op_1008_06c0{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+win_ui_cursor_op_1008_06c0 -> pass1_1030_8344
+win_ui_cursor_op_1008_06c0 -> load_string_1010_847e
+win_ui_cursor_op_1008_06c0 -> MessageBox16
+win_ui_cursor_op_1008_06c0 -> LoadCursor16
+win_ui_cursor_op_1008_06c0 -> SetCursor16
+win_ui_cursor_op_1008_06c0 -> pass1_1030_83ba
+win_ui_cursor_op_1008_06c0 -> mixed_1010_20ba
+win_ui_cursor_op_1008_06c0 -> pass1_1018_262e
+win_ui_cursor_op_1008_06c0 -> pass1_1030_8326
+win_ui_cursor_op_1008_06c0 -> sys_1000_3f9c
+win_ui_cursor_op_1008_06c0 -> pass1_1008_a9ec
+win_ui_cursor_op_1008_06c0 -> PostMessage16
+
+mixed_win_op_1008_0c60{
+    style : {
+        fill: lightgreen
+        stroke: firebrick
+        stroke-width: 3
+    }
+}
+mixed_win_op_1008_0c60 -> pass1_1008_07d8
+mixed_win_op_1008_0c60 -> win_ui_cursor_op_1008_2e9a
+mixed_win_op_1008_0c60 -> pass1_1008_3018
+mixed_win_op_1008_0c60 -> pass1_1008_30cc
+mixed_win_op_1008_0c60 -> win_ui_op_1008_2b54
+mixed_win_op_1008_0c60 -> pass1_1030_8344
+mixed_win_op_1008_0c60 -> load_string_1010_847e
+mixed_win_op_1008_0c60 -> MessageBox16
+mixed_win_op_1008_0c60 -> LoadCursor16
+mixed_win_op_1008_0c60 -> SetCursor16
+mixed_win_op_1008_0c60 -> pass1_1018_262e
+mixed_win_op_1008_0c60 -> pass1_1030_838e
+mixed_win_op_1008_0c60 -> pass1_1030_8326
+mixed_win_op_1008_0c60 -> sys_1000_3f9c
+mixed_win_op_1008_0c60 -> mixed_1010_20ba
+mixed_win_op_1008_0c60 -> pass1_1008_a9ec
+mixed_win_op_1008_0c60 -> unk_io_op_1010_830a
+mixed_win_op_1008_0c60 -> WinHelp16
+mixed_win_op_1008_0c60 -> pass1_1038_af40
+mixed_win_op_1008_0c60 -> WinExec16
+mixed_win_op_1008_0c60 -> post_msg_1008_2d22
+mixed_win_op_1008_0c60 -> pass1_1008_087e
+mixed_win_op_1008_0c60 -> cursor_op_1008_2dcc
+mixed_win_op_1008_0c60 -> win_1008_5c5c
+mixed_win_op_1008_0c60 -> SendMessage16
+mixed_win_op_1008_0c60 -> PostMessage16
+mixed_win_op_1008_0c60 -> ui_op_1008_2c4e
+
+pass1_1008_a9ec
+
+sys_1000_3f9c
+
+pass1_1030_8326
+
+pass1_1018_262e
+
+pass1_1030_83ba
+
+load_string_1010_847e
+
+file_fn_1008_6e02
+
+str_1008_6d8a
+
+win_ui_op_1008_1414
+
+send_msg_1020_097e
+
+struct_1010_5f1e
+
+str_1000_4d58
+
+pass1_1000_3cea
+
+win_ui_cursor_op_1008_2e9a
+
+win_ui_cursor_op_1008_2e9a
+
+pass1_1010_40cc
+
+pass1_1010_40cc
+
+pass1_1010_40cc
+
+pass1_1010_40cc
+
+pass1_1020_68de
+
+pass1_1018_017c
+
+ReleaseCapture16
+
+pass1_1030_8308
+
+dialog_ui_fn_1040_78e2
+
+pass1_1010_0886
+
+pass1_1010_08e2
+
+pass1_1008_3db6
+
+enable_win_1040_9234
+
+SetWindowText16
+
+ShowWindow16
+
+SetCursor16
+
+GetDlgItem16
+
+EnableWindow16
+
+PostMessage16
+
+DestroyWindow16
+
+SendDlgItemMessage16
+
+MapDialogRect16

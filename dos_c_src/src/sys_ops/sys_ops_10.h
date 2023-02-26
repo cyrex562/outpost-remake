@@ -83,9 +83,8 @@ u16  pass1_1008_7e4a(u16 param_1, u8 *param_2, u8 param_3, char *param_4, u16 pa
 u16 * pass1_1008_7e98(u16 *param_1, u8 param_2);
 
 
-
-
-Struct20 * unk_draw_op_1008_7f62(Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4);
+struct Struct20 *
+unk_draw_op_1008_7f62(Globals *globals, struct Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4);
 
 
 

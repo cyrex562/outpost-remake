@@ -7,6 +7,7 @@
 #include "op_winapi.h"
 #include "string_consts.h"
 #include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_0xx/structs_7x.h"
 
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
@@ -209,7 +210,8 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     return;
 }
 
-BOOL16  mixed_win_op_1008_0c60(Struct72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6)
+BOOL16 mixed_win_op_1008_0c60(
+  Struct72 **param_1, u16 param_2, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6, Globals *globals)
 
 {
     void **ppcVar1;

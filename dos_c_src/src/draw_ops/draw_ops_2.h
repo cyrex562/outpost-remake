@@ -5,7 +5,9 @@
 #ifndef OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_2_H_
 #define OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_2_H_
 
+#include "globals.h"
 #include "op_int.h"
+#include "structs/structs_0xx/structs_2x.h"
 
 void  string_1020_79b4(u16 param_1, u32 param_2, i16 param_3, char *param_4);
 
@@ -41,7 +43,7 @@ void  pass1_1020_79e4(u32 param_1, u16 param_2, u16 param_3);
 
 void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3);
 
-void unk_draw_op_1020_7f7a(struct Globals *globals, struct Struct20 *param_1, u16 param_2, u32 param_3);
+void unk_draw_op_1020_7f7a(Globals *globals, Struct20 *param_1, u16 param_2, u32 param_3);
 
 void  realize_palette_1020_8128(u32 param_1, i16 param_2, HGDIOBJ16 param_3, u16 param_4);
 

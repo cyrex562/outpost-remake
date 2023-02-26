@@ -935,6 +935,14 @@ struct Globals
     char   *s_VrMode_1050_4422;
     LPCSTR  s_OpAccel_1050_43e8;
     char   *s_MicroSpinControl_1050_0370;
+    char   *s_DanBrotherton_1050_0302;
+    id      _PTR_LOOP_1050_02a0;
+    u16     _PTR_LOOP_1050_5748;
+    u32     u32_1008_389a;
+    char   *s_VrMode2_1050_4404;
+    u32     s_TPPOPMENU_1050_43fa;
+    id      PTR_LOOP_1050_0010;
+    int     PTR_LOOP_1050_4fe8;
 };
 
 typedef struct Globals Globals;

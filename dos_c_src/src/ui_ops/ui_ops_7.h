@@ -5,6 +5,10 @@
 #ifndef OUTPOST_1_SRC_UI_OPS_UI_OPS_7_H_
 #define OUTPOST_1_SRC_UI_OPS_UI_OPS_7_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "structs/structs_0xx/structs_7x.h"
 
 void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_hinstance);
 
@@ -63,9 +67,8 @@ void  switchD_1008: 1091 ::caseD_b3(void);
 void  draw_op_1008_1230(HWND16 param_1);
 
 
-
-
-void  message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 param_3, u16 param_4);
+void message_box_op_1008_12dc(
+  unsigned int param_1, unsigned int param_2, unsigned short param_3, unsigned short param_4, struct Globals *globals);
 
 
 
@@ -79,9 +82,7 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
 void  cleanup_ui_op_1008_0618(u16 *param_1);
 
 
-
-
-void  win_ui_cursor_op_1008_06c0(u32 *param_1, u32 param_2, u16 param_3, i16 param_4);
+void win_ui_cursor_op_1008_06c0(Globals *globals, u32 *param_1, u32 param_2, u16 param_3, i16 param_4);
 
 
 BOOL16 msg_box_op_1000_1f24(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u16 param_4);
