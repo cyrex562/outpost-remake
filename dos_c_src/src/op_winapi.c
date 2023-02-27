@@ -321,7 +321,7 @@ COLORREF SetBkColor16(HDC16 hdc, COLORREF color)
     return 0;
 }
 
-// i1616_t                     SetMapMode16(HDC16 hdc, i1616_t mode);
+// i16                     SetMapMode16(HDC16 hdc, i16 mode);
 i16 SetMapMode16(HDC16 hdc, i16 mode)
 {
     // TODO: implement

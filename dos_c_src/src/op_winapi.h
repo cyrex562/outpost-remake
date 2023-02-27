@@ -185,7 +185,7 @@ long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count);
 COLORREF SetBkColor16(HDC16 hdc, COLORREF color);
 
 
-// i1616_t                     SetMapMode16(HDC16 hdc, i1616_t mode);
+// i16                     SetMapMode16(HDC16 hdc, i16 mode);
 i16 SetMapMode16(HDC16 hdc, i16 mode);
 
 

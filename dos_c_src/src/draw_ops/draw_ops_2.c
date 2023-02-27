@@ -1116,7 +1116,7 @@ void  unk_draw_op_1020_3da4(Struct24 *param_1, u32 param_2)
     u32 *puVar1;
     void **ppcVar2;
     u32  uVar3;
-    i1616_t     iVar4;
+    i16     iVar4;
     HGDIOBJ16   HVar5;
     HDC16      *pHVar6;
     u8         *in_DX;
@@ -1145,7 +1145,7 @@ void  unk_draw_op_1020_3da4(Struct24 *param_1, u32 param_2)
     (**ppcVar2)(0x1010, (iVar8 + 0x14), uVar7, 0x0, param_1);
     local_4                      = GetDC16(0x1010);
     iVar4                        = SetMapMode16((HDC16)0x1538, 0x1);
-    *(i1616_t *)(iVar8 + 0x1e)   = iVar4;
+    *(i16 *)(iVar8 + 0x1e)   = iVar4;
     HVar5                        = GetStockObject16((u16)0x1538);
     HVar5                        = SelectObject16((HDC16)0x1538, HVar5);
     *(HGDIOBJ16 *)(iVar8 + 0x18) = HVar5;
@@ -1826,7 +1826,7 @@ void  pass1_1020_3d08(u16 param_1,
     u8        bVar18;
     char        cVar19;
     HDC16       HVar14;
-    i1616_t     iVar15;
+    i16     iVar15;
     HGDIOBJ16   HVar16;
     u8         *puVar17;
     u16         u_var20;
@@ -1956,7 +1956,7 @@ void  pass1_1020_3d08(u16 param_1,
                 *(HDC16 *)(param_4 + -0x2)   = HVar14;
                 iVar15                       = SetMapMode16((HDC16)0x1538, 0x1);
                 uVar7                        = (param_4 + 0x6);
-                *(i1616_t *)(uVar7 + 0x1e)   = iVar15;
+                *(i16 *)(uVar7 + 0x1e)   = iVar15;
                 u_var28                       = (param_4 + -0x2);
                 HVar16                       = GetStockObject16((u16)0x1538);
                 HVar16                       = SelectObject16((HDC16)0x1538, HVar16);

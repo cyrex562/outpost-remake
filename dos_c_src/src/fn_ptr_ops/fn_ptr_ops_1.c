@@ -60,7 +60,7 @@ Struct18 *pass1_1040_d056(Globals *globals, Struct18 *param_1, u8 param_2)
 Struct18 *pass1_1040_af9e(Struct18 *param_1, u8 param_2)
 
 {
-    pass1_1040_ace8(param_1);
+    pass1_1040_ace8(NULL, param_1);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -109,7 +109,7 @@ Struct18 *pass1_1040_8db6(Struct18 *param_1, Globals *globals, u8 param_2)
 Struct18 *pass1_1040_8f16(Struct18 *param_1, u8 param_2)
 
 {
-    pass1_1040_8e82(param_1);
+    pass1_1040_8e82(NULL, param_1);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);
