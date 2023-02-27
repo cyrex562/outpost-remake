@@ -30,21 +30,21 @@ typedef struct Struct456 Struct456;
 typedef struct Struct455 Struct455;
 struct Struct457
 {
-    unsigned char   field_0x0;
-    unsigned char   field_0x1;
-    unsigned short  field_0x2;
-    unsigned char   field_0x4;
-    unsigned char   field_0x5;
-    unsigned char   field_0x6;
-    unsigned char   field_0x7;
-    unsigned char   field_0x8;
-    unsigned char   field_0x9;
-    unsigned char   field_0xa;
-    unsigned char   field_0xb;
-    unsigned char   field_0xc;
-    unsigned char   field_0xd;
-    unsigned char   field_0xe;
-    unsigned char   field_0xf;
+    u8   field_0x0;
+    u8   field_0x1;
+    u16  field_0x2;
+    u8   field_0x4;
+    u8   field_0x5;
+    u8   field_0x6;
+    u8   field_0x7;
+    u8   field_0x8;
+    u8   field_0x9;
+    u8   field_0xa;
+    u8   field_0xb;
+    u8   field_0xc;
+    u8   field_0xd;
+    u8   field_0xe;
+    u8   field_0xf;
     long field_0x10;
 };
 struct Struct458

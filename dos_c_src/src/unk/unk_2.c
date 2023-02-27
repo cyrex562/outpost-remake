@@ -1610,7 +1610,7 @@ void  pass1_1038_5464(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
     uVar4 = uStack10;
     pass1_1030_38f2(*(iVar6 + 0x1f6), 0x3, param_4);
     uVar3         = uVar4;
-    u_stack6._0_2_ = uVar3;
+    u_stack6 = uVar3;
     u_stack6 = uVar5;
     pass1_1030_38f2(*(iVar6 + 0x1f6), 0x4, param_4);
     u_stack6 = CONCAT22(u_stack6 + uVar5 + CARRY2(u_stack6, uVar3), u_stack6 + uVar3);
@@ -2180,7 +2180,7 @@ void  pass1_1038_4760(u32 param_1)
     ppcVar2   = (*puStack14 + 0x10);
     uVar4     = uVar3;
     (**ppcVar2)(0x1008, uVar3, puVar8);
-    uVar14  = (undefined)uVar6;
+    uVar14  = uVar6;
     puVar15 = puVar7;
     if((extraout_DX | uVar4) == 0x0)
     {

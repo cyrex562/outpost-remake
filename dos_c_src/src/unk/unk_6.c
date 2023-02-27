@@ -1371,7 +1371,7 @@ BOOL16  pass1_1028_c64a(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u16
         BVar1   = pass1_1028_c5a6(u_var2, uVar3, 0x7b, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
         if(BVar1 == 0x0)
         {
-            local_8._0_2_ = local_a + -0x1;
+            local_8 = local_a + -0x1;
             local_8 = local_c;
             BVar1         = pass1_1028_c5a6(u_var2, uVar3, 0x7c, CONCAT22(param_7, &local_8), param_6, &local_8, param_3, param_7);
             if(BVar1 == 0x0)

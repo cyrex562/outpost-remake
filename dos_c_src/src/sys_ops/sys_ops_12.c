@@ -440,7 +440,7 @@ LAB_1000_2d71:
         *param_5                    = 0x0;
         param_5[0x4]                = 0x0;
         param_5[0x3]                = 0x0;
-        uStack14                    = (undefined)uVar4;
+        uStack14                    = uVar4;
         *(param_5 + 0xb)            = uStack14;
         *(u8 *)(param_5 + 0x78)     = bStack8;
         param_5[0x2]                = 0x0;
@@ -2339,9 +2339,9 @@ u32 mem_op_1000_05e2(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     do
     {
         uVar3       = 0x3;
-        UVar6._0_1_ = (undefined)param_3;
+        UVar6._0_1_ = param_3;
         UVar6._1_1_ = (u168)(param_3 >> 0x8);
-        UVar6._0_2_ = mem_op_1000_03c6(NULL, param_1 + 0x14, iVar2, 0x3, param_4, param_5, (undefined)UVar6, UVar6._1_1_);
+        UVar6 = mem_op_1000_03c6(NULL, param_1 + 0x14, iVar2, 0x3, param_4, param_5, UVar6, UVar6._1_1_);
         if(((u32)UVar6 | uVar3) != 0x0)
         {
             return CONCAT22((u32)UVar6, uVar3 + 0x14);

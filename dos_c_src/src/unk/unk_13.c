@@ -1815,7 +1815,7 @@ void  pass1_1008_87cc(Struct86 *param_1, i16 param_2, i16 param_3, u16 param_4, 
     {
         piVar4 = *(i16 **)&iVar5->field_0x8;
         pass1_1018_20ee(_PTR_LOOP_1050_0382, piVar4);
-        uStack18._0_2_ = SUB42(piVar4, 0x0);
+        uStack18 = SUB42(piVar4, 0x0);
         pass1_1008_add2(*(u16 **)&iVar5->field_0x8);
         uStack30 = pass1_1008_4772((Struct76 *)CONCAT22(uStack18, uStack18));
         pass1_1018_214e(_PTR_LOOP_1050_0382, (_PTR_LOOP_1050_0382 >> 0x10), (param_1 & 0xffff0000 | &iVar5->field_0x28), iVar5->field_0x2e);

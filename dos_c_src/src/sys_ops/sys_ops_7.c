@@ -1174,7 +1174,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
     string_1040_a626(puStack98, CONCAT22(param_5, local_54), uStack404);
     iStack94 = 0x0;
     pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_f6), 0x0, 0x94);
-    uStack404._0_2_ = pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_18a), 0x0, 0x94);
+    uStack404 = pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_18a), 0x0, 0x94);
     uStack398       = 0x0;
     for(uStack400 = 0x1; uStack400 < 0x25; uStack400 = uStack400 + 0x1)
     {
@@ -1208,7 +1208,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
     uStack86 = pass1_1010_db2e(uVar16, uVar17, 0x1, CONCAT22(param_5, &local_f6), CONCAT22(param_5, &local_18a), param_2, param_3, param_5, param_6);
     while(uVar8 = uStack398 - 0x1, uStack398 != 0x0)
     {
-        uStack398._0_2_ = uVar8;
+        uStack398 = uVar8;
         paStack412      = (Struct18 *)(&local_f6)[uStack398];
         uStack404       = paStack412;
         uStack398       = uVar8;
@@ -1302,7 +1302,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
         }
         while(lVar2 = uStack398 + -0x1, uStack398 != 0x0)
         {
-            uStack398._0_2_ = lVar2;
+            uStack398 = lVar2;
             paStack412      = (Struct18 *)(&local_f6)[uStack398];
             uStack398       = lVar2;
             fn_ptr_1000_17ce(paStack412, 0x1000);
@@ -1398,7 +1398,7 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
         }
         uStack12 = pass1_1010_db2e(uVar9, uVar10, 0x1, CONCAT22(param_5, &local_aa), CONCAT22(param_5, &local_13e), param_2, param_3, param_5, param_6);
         pass1_1000_4906((Struct20 *)CONCAT22(param_5, &local_13e), 0x0, 0x54);
-        for(uStack332._0_2_ = 0x1; uStack332 < 0x15; uStack332._0_2_ = uStack332 + 0x1)
+        for(uStack332 = 0x1; uStack332 < 0x15; uStack332 = uStack332 + 0x1)
         {
             uStack326 = uStack332;
             if((uStack10 + 0x14e + uStack332 * 0x4) != 0x0)
@@ -1731,7 +1731,7 @@ void  pass1_1010_d24a(u32 param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 pa
         }
         while(lStack318 != 0x0)
         {
-            lStack318._0_2_ = (lStack318 + -0x1);
+            lStack318 = (lStack318 + -0x1);
             fn_ptr_1000_17ce((Struct18 *)(&local_a6)[lStack318], 0x1000);
             lStack318 = lStack318 + -0x1;
         }

@@ -297,7 +297,7 @@ void  post_win_msg_1038_dcb0(u32 param_1, u16 param_2, u8 *param_3, u16 param_4)
     puVar4         = (param_3 | param_2);
     iVar3          = param_1;
     uVar5          = (param_1 >> 0x10);
-    uStack16._0_2_ = param_2;
+    uStack16 = param_2;
     uStack16 = param_3;
     if(puVar4 == 0x0)
     {
@@ -1574,7 +1574,7 @@ void  pass1_1028_6ff6(u32 param_1, u16 param_2, i16 param_3, u16 param_4)
     u8         *pu_stack6;
     i16         iStack4;
 
-    uVar13 = (undefined)(param_4 >> 0x8);
+    uVar13 = (param_4 >> 0x8);
     pass1_1028_dc52((Struct92 *)CONCAT13(uVar13, CONCAT12(param_4, local_14)), 0x1, 0x0, 0x400);
     iStack26 = 0x1;
     iStack28 = 0x0;
@@ -2006,7 +2006,7 @@ u16  post_msg_1020_55b0(u32 param_1, u16 param_2)
     puStack12 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x37, param_2, puVar3, unaff_DI);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_10c, param_2);
     puVar5  = pass1_1008_9436(CONCAT22(param_2, local_112));
-    uVar8   = (undefined)(param_2 >> 0x8);
+    uVar8   = (param_2 >> 0x8);
     pcVar6  = pass1_1008_a8f4(puStack12, CONCAT13(uVar8, CONCAT12(param_2, &local_114)), CONCAT22(param_2, local_112), CONCAT22(param_2, &local_10e), (puVar5 >> 0x10), 0x1008, param_2, in_AF);
     u_var2   = pcVar6;
     puVar3  = ((pcVar6 >> 0x10) | u_var2);

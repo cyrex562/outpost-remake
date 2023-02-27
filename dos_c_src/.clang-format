@@ -18,6 +18,8 @@ AllowShortLambdasOnASingleLine: false
 AlwaysBreakBeforeMultilineStrings: false
 BinPackArguments: false
 BinPackParameters: false
+ExperimentalAutoDetectBinPacking: false
+AllowAllParametersOfDeclarationOnNextLine: false
 BitFieldColonSpacing: After
 BraceWrapping:
   AfterEnum: true
@@ -35,7 +37,7 @@ BreakBeforeBraces: Allman
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
 # BreakInheritanceList: AfterComma
-ColumnLimit: 120
+ColumnLimit: 90
 ContinuationIndentWidth: 2
 DerivePointerAlignment: true
 FixNamespaceComments: true

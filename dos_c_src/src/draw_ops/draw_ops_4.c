@@ -464,7 +464,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
     iVar3 = param_1;
     if((iVar3 + 0x6) == 0x0)
     {
-        uVar5._0_2_ = param_2;
+        uVar5 = param_2;
         uVar5 = param_3;
         pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar4 << 0x10));
         param_2 = uVar5;

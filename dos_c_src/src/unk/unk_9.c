@@ -496,7 +496,7 @@ void pass1_1028_134a(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
         uStack18 = CONCAT22(uVar5, uVar6);
         for(iStack22 = 0x0; iStack22 < 0xa; iStack22 = iStack22 + 0x1)
         {
-            uStack10._0_2_ = (iStack22 * 0x2 + 0x4fbe);
+            uStack10 = (iStack22 * 0x2 + 0x4fbe);
             uStack10 = (uStack10 >> 0xf);
             if(uStack10 < uStack10)
             {
@@ -1675,12 +1675,12 @@ void pass1_1020_e558(u32 param_1, i16 param_2, u16 param_3)
         uVar5          = (puVar1 + 0x2);
         bStack45       = (u8)(uStack24 >> 0x18);
         u_var2          = bStack45;
-        uStack20._0_2_ = uStack24;
+        uStack20 = uStack24;
         uStack20       = uStack24;
         if(bStack45 != 0x0)
         {
             pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack20, uVar5);
-            uStack20._0_2_ = (u_var2 + 0x14);
+            uStack20 = (u_var2 + 0x14);
         }
         uStack8        = uStack20;
         iVar3          = pass1_1020_e4fa(param_1, uStack20);

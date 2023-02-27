@@ -1278,7 +1278,7 @@ void pass1_1028_7c4e(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
             uVar5    = CONCAT22(iStack14, iStack16) % 0x14;
             if(uVar5 == 0x0)
             {
-                uVar10 = (undefined)(param_4 >> 0x8);
+                uVar10 = (param_4 >> 0x8);
                 pass1_1028_dc52((Struct92 *)CONCAT13(uVar10, CONCAT12(param_4, local_22)), 0x1, 0x0, 0x400);
                 while(true)
                 {
@@ -1400,7 +1400,7 @@ void pass1_1028_7dfc(u32 param_1, u8 *param_2, i16 param_3, u16 param_4, u8 para
             uVar5    = uStack12 % 0x14;
             if(uVar5 == 0x0)
             {
-                uVar10 = (undefined)(param_4 >> 0x8);
+                uVar10 = (param_4 >> 0x8);
                 pass1_1028_dc52((Struct92 *)CONCAT13(uVar10, CONCAT12(param_4, local_22)), 0x1, 0x0, 0x400);
                 while(true)
                 {
@@ -1511,7 +1511,7 @@ void pass1_1028_7fb6(u32 param_1, i16 param_2, u16 param_3, u8 param_4)
         uVar5    = u_stack6 % 0x32;
         if(uVar5 == 0x0)
         {
-            uVar10 = (undefined)(param_3 >> 0x8);
+            uVar10 = (param_3 >> 0x8);
             pass1_1028_dc52((Struct92 *)CONCAT13(uVar10, CONCAT12(param_3, local_1c)), 0x1, 0x0, 0x400);
             while(true)
             {

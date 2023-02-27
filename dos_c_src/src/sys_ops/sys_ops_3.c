@@ -690,7 +690,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
     {
         uVar37 = (param_1 >> 0x10);
         u_var20 = (Struct349 *)param_1;
-        uVar34 = (undefined)(param_9 >> 0x8);
+        uVar34 = (param_9 >> 0x8);
         switch(puVar17)
         {
         case0x0:
@@ -841,7 +841,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
             puStack30 = uVar13;
             uStack28  = (uVar13 >> 0x10);
             pass1_1028_e1ec(*&PTR_LOOP_1050_65e2, puStack30, uStack28);
-            puStack36 = CONCAT22(uVar13, puStack36._0_2_);
+            puStack36 = CONCAT22(uVar13, puStack36);
             if(CONCAT22(uStack28, puStack30) != 0x0)
             {
                 struct_1030_e4fa((Struct100 *)CONCAT22(param_9, &local_14c), CONCAT22(uStack28, puStack30), param_9, param_10);
@@ -1063,8 +1063,8 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
             if(0x2 < globals->PTR_LOOP_1050_13ae)
             {
                 pu_var25 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_9, (puStack10 >> 0x10), param_7);
-                uVar32  = (undefined)(pu_var25 >> 0x10);
-                uVar33  = (undefined)(pu_var25 >> 0x18);
+                uVar32  = (pu_var25 >> 0x10);
+                uVar33  = (pu_var25 >> 0x18);
                 uVar35  = 0x1;
                 uVar36  = 0x0;
                 u_var29  = pu_var25;
@@ -1149,10 +1149,10 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
                     }
                 LAB_1028_7ba0:
                     iVar14 = CONCAT11(uVar36, uVar35) + 0x1;
-                    uVar35 = (undefined)iVar14;
+                    uVar35 = iVar14;
                     u_var29 = u_var28;
                     uVar31 = uVar30;
-                    uVar36 = (undefined)(iVar14 >> 0x8);
+                    uVar36 = (iVar14 >> 0x8);
                 }
             }
             return;
@@ -1830,7 +1830,7 @@ void  pass1_1028_c3aa(u16 param_1, u16 param_2, u16 *param_3, u32 param_4, u32 p
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, param_4, (param_4 >> 0x10));
     uVar12 = *(iVar2 + 0x10);
     uVar15 = SUB41(param_3, 0x0);
-    uVar16 = (undefined)(param_3 >> 0x8);
+    uVar16 = (param_3 >> 0x8);
     uVar11 = (param_3 >> 0x10);
     puVar8 = puVar7;
     uVar19 = param_5;
@@ -1876,8 +1876,8 @@ void  pass1_1028_c3aa(u16 param_1, u16 param_2, u16 *param_3, u32 param_4, u32 p
                     globals->PTR_LOOP_1050_50cc = puStack24 + -0x1e;
                     return;
                 }
-                uVar15  = (undefined)param_5;
-                uVar16  = (undefined)(param_5 >> 0x8);
+                uVar15  = param_5;
+                uVar16  = (param_5 >> 0x8);
                 uVar12  = uStack36;
                 puVar13 = param_3;
                 uVar17  = (param_5 >> 0x10);

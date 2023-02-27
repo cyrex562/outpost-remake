@@ -41,6 +41,6 @@ void  fill_rect_1008_39ac(HWND16 in_win_handle_1);
 
 void  pass1_1008_0984(i16 param_1, u16 param_2, i16 param_3, u16 param_4, u16 param_5);
 
-void set_struct_op_1008_0536(Globals *globals, struct Struct20 *param_1, unsigned short hinst_arg2, u16 param_3);
+void set_struct_op_1008_0536(Globals *globals, struct Struct20 *param_1, u16 hinst_arg2, u16 param_3);
 
 #endif // OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_4_H_

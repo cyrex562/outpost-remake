@@ -100,7 +100,7 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
     iVar2           = uStack262;
     UStack266       = *(iVar2 + 0x16);
     uVar3           = (iVar2 + 0x18);
-    UStack266._0_2_ = uVar3 | UStack266;
+    UStack266 = uVar3 | UStack266;
     if(UStack266 == 0x0)
     {
         save_file_1008_3178(param_1, 0x1, param_2);
@@ -458,7 +458,7 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
     puStack34 = puVar6;
     puVar5    = pass1_1030_5b00(uStack20);
     uVar13    = SUB21(&local_2a, 0x0);
-    uVar14    = (undefined)(&local_2a >> 0x8);
+    uVar14    = (&local_2a >> 0x8);
     uVar3     = param_4;
     puVar12   = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, puVar5, param_4, puVar6, &iStack36);
     puVar6    = (puVar12 >> 0x10);

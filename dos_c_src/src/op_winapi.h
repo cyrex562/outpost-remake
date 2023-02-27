@@ -724,7 +724,7 @@ u16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist);
 
 
 
-// u16                       wvspri16f16(LPSTR buffer, LPCSTR spec, WORD *args);
+// u16                       wvsprintf16(LPSTR buffer, LPCSTR spec, WORD *args);
 u16 wvsprintf16(LPSTR buffer, LPCSTR spec, WORD *args);
 
 

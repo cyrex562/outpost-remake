@@ -241,11 +241,11 @@ void  pass1_1038_5e16(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 pa
             BVar1       = write_to_file_1008_7e1c(uVar5, uVar6, local_14, param_5, 0x4, 0x1008);
             if(BVar1 != 0x0)
             {
-                local_c._0_2_ = (iVar3 + 0x18);
+                local_c = (iVar3 + 0x18);
                 BVar1         = write_to_file_1008_7e1c(uVar5, uVar6, &local_c, param_5, 0x2, 0x1008);
                 if(BVar1 != 0x0)
                 {
-                    local_c._0_2_ = (iVar3 + 0x1a);
+                    local_c = (iVar3 + 0x1a);
                     BVar1         = write_to_file_1008_7e1c(uVar5, uVar6, &local_c, param_5, 0x2, 0x1008);
                     if(BVar1 != 0x0)
                     {

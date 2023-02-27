@@ -1721,7 +1721,7 @@ void  pass1_1038_19a0(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u8 pa
     (**ppcVar1)(0x1008, uVar3, puVar5);
     if((extraout_DX | uVar4) == 0x0)
     {
-        vspri16f_op_1030_840a(s_mineToSmelter__no_mines_1050_59df, 0x1030, param_4, 0x0);
+        vsprintf_op_1030_840a(s_mineToSmelter__no_mines_1050_59df, 0x1030, param_4, 0x0);
         if(puStack10 != 0x0)
         {
             ppcVar1 = ppcVar6;

@@ -335,7 +335,7 @@ BOOL16  pass1_1000_115c(i16 param_1, u16 *param_2)
         (puVar5[0x2] + 0x2) = puVar5[0x1];
         (puVar5[0x1] + 0x4) = puVar5[0x2];
         uStack4             = ((*puVar5 & 0xfffc) + uVar3) - uVar4;
-        if(uStack4 < s_version__d__d_1050_0012._0_2_)
+        if(uStack4 < s_version__d__d_1050_0012)
         {
             pu_var2  = param_2;
             *pu_var2 = *pu_var2 + (*puVar5 & 0xfffc);
@@ -347,7 +347,7 @@ BOOL16  pass1_1000_115c(i16 param_1, u16 *param_2)
     else
     {
         uStack4 = uVar3 - uVar4;
-        if(uStack4 < s_version__d__d_1050_0012._0_2_)
+        if(uStack4 < s_version__d__d_1050_0012)
         {
             return 0x1;
         }

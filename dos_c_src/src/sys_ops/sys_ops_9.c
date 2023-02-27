@@ -1687,7 +1687,7 @@ void unk_str_op_1008_d4f6(u32 param_1, u32 param_2)
         {
             u_var22 = 0x1018;
             struct_1018_47c8(CONCAT22(puVar18, uVar10), 0x0, CONCAT13((puVar14 >> 0x8), CONCAT12(puVar14, uVar12)), 0x0, 0x0);
-            uVar13 = (undefined)uVar19;
+            uVar13 = uVar19;
         }
         uVar3   = (iVar21 + 0xe);
         ppcVar4 = ((iVar21 + 0xe) + 0x4);

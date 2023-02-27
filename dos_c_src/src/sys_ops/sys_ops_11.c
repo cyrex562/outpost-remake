@@ -311,7 +311,7 @@ void pass1_1000_4aea(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u8 *par
                 uVar11         = lVar3;
                 uStack14       = uVar11 + param_1;
                 uVar11         = ((lVar3 >> 0x10) + CARRY2(uVar11, param_1)) * 0x100 + param_2;
-                uStack18._0_2_ = param_1;
+                uStack18 = param_1;
                 uStack18 = param_2;
             LAB_1000_4b7d:
                 if(puVar11 <= (Struct171 *)&uStack18)
@@ -393,7 +393,7 @@ LAB_1000_4c58:
     }
     else
     {
-        uStack18._0_2_ = uStack22;
+        uStack18 = uStack22;
         uStack18 = uVar14;
     }
     goto LAB_1000_4b81;

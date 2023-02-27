@@ -309,7 +309,7 @@ void  pass1_1030_8372(u32 **param_1, u32 param_2, u32 *param_3)
 }
 
 
-void vspri16f_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_4)
+void vsprintf_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_4)
 
 {
     LPCSTR pCVar1;
@@ -328,7 +328,7 @@ void vspri16f_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_
             globals->_PTR_LOOP_1050_5752 = CONCAT22(param_4, pCVar1);
             globals->PTR_LOOP_1050_5750  = (&PTR_LOOP_1050_0000 + 0x1);
         }
-        wvspri16f16(param_2, &stack0x0008, args);
+        wvsprintf16(param_2, &stack0x0008, args);
         pass1_1000_2b5c(_PTR_LOOP_1050_5752, (_PTR_LOOP_1050_5752 >> 0x10), 0x5763, &USHORT_1050_1050, unaff_ES, &stack0xfffe, 0x1000, param_3);
         pass1_1000_2f48(_PTR_LOOP_1050_5752, &stack0xfffe, unaff_ES, 0x1000, param_3, in_AF);
     }
@@ -1680,7 +1680,7 @@ void  pass1_1030_35a4(u32 param_1, long param_2, u8 *param_3, u16 param_4, u16 p
     u32 local_a;
     u32 u_stack6;
 
-    vspri16f_op_1030_840a(s_Pop_Leaving__ld_1050_516a, param_4, param_5, param_3);
+    vsprintf_op_1030_840a(s_Pop_Leaving__ld_1050_516a, param_4, param_5, param_3);
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
         globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_3, 0x1000);
@@ -1691,8 +1691,8 @@ void  pass1_1030_35a4(u32 param_1, long param_2, u8 *param_3, u16 param_4, u16 p
     }
     uVar5   = fn_ptr_op_1000_1708(0x16c, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, 0x1000);
     u_stack6 = CONCAT22(PTR_LOOP_1050_5f2e, uVar5);
-    uVar10  = (undefined)param_5;
-    uVar11  = (undefined)(param_5 >> 0x8);
+    uVar10  = param_5;
+    uVar11  = (param_5 >> 0x8);
     pass1_1030_3948(param_1, CONCAT22(param_5, local_c), CONCAT13(uVar11, CONCAT12(uVar10, &local_a)), 0x3);
     uVar7 = (&local_a + 0x2U);
     pass1_1030_3948(param_1, CONCAT22(param_5, &local_a + 0x2U), CONCAT13(uVar11, CONCAT12(uVar10, local_c)), 0x4);
@@ -1733,7 +1733,7 @@ void  pass1_1030_3694(u32 param_1, i16 param_2, long param_3, u8 *param_4, u16 p
     u32  uVar6;
     u8  *puVar7;
 
-    vspri16f_op_1030_840a(s_Pop_Leaving__ld_1050_517a, param_5, param_6, param_4);
+    vsprintf_op_1030_840a(s_Pop_Leaving__ld_1050_517a, param_5, param_6, param_4);
     if(_PTR_LOOP_1050_5f2c == 0x0)
     {
         globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_4, 0x1000);

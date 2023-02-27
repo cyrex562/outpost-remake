@@ -43,3 +43,8 @@ u32 ZEXT24(u16 a)
 {
     return 0;
 }
+
+u16 SUB21(u16 a)
+{
+    return 0;
+}

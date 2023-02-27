@@ -972,7 +972,7 @@ LAB_1010_7710:
     if(puStack10 != 0x0)
     {
         uVar18 = (puVar6 + 0x6);
-        uVar17 = (undefined)HVar11;
+        uVar17 = HVar11;
         HVar10 = (HWND16)0x1538;
         uVar4  = IsWindow16(HVar11);
         if(uVar4 != 0x0)
@@ -1301,7 +1301,7 @@ void set_window_placement_1010_0070(u32 param_1, i16 param_2, u16 param_3, HWND1
     u16         u_stack6;
     u16         uStack4;
 
-    local_18._0_2_ = 0x16;
+    local_18 = 0x16;
     local_18._2_4_ = 0x0;
     IStack18       = 0x0;
     iStack16       = 0x0;
@@ -1652,7 +1652,7 @@ u32  unk_win_op_1008_97f2(u32 *param_1, i16 *param_2, WPARAM16 param_3, u8 *para
         uVar5 = 0x1;
         goto LAB_1008_9a95;
     }
-    uVar8 = (undefined)(param_1 >> 0x10);
+    uVar8 = (param_1 >> 0x10);
     uVar7 = SUB41(param_1, 0x0);
     if(param_5 < 0x2c)
     {

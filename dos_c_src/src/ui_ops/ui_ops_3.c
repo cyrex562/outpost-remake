@@ -437,7 +437,7 @@ void  win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
     }
     else
     {
-        uVar9 = (undefined)(param_2 >> 0x8);
+        uVar9 = (param_2 >> 0x8);
         if(param_5 < 0x74)
         {
             if(param_5 == 0x6e)

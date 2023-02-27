@@ -943,6 +943,13 @@ struct Globals
     u32     s_TPPOPMENU_1050_43fa;
     id      PTR_LOOP_1050_0010;
     int     PTR_LOOP_1050_4fe8;
+    int     _PTR_LOOP_1050_5a64;
+    u32     _PTR_LOOP_1050_06e0;
+    id      USHORT_1050_1028;
+    u8     *PTR_LOOP_1050_13ae;
+    id      PTR_LOOP_1050_0000;
+    u32     _PTR_LOOP_1050_5740;
+    u32     s_truck_0x_08lx_unloaded__ld_of__s_1050_5798;
 };
 
 typedef struct Globals Globals;

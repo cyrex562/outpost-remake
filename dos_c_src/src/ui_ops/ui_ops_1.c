@@ -506,8 +506,8 @@ void pass1_1040_b54a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *par
                     uVar14 = (uVar3 >> 0x10);
                     uVar12 = 0x9;
                 }
-                uVar10 = (undefined)uVar8;
-                uVar11 = (undefined)(uVar8 >> 0x8);
+                uVar10 = uVar8;
+                uVar11 = (uVar8 >> 0x8);
             }
             else
             {

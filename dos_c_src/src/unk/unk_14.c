@@ -162,7 +162,7 @@ void  pass1_1008_6a4a(u32 param_1, i16 param_2, u16 param_3, i16 param_4, u16 pa
             ppcVar1 = ((iVar2 + 0xd2) + 0xc);
             (**ppcVar1)();
             uStack10      = 0x0;
-            u_stack6._0_2_ = local_e;
+            u_stack6 = local_e;
             pass1_1008_5b12();
             if((extraout_DX_00 | u_stack6) != 0x0)
             {
@@ -2106,7 +2106,7 @@ u16 *pass1_1000_54a0(u32 param_1, u16 param_2, u16 param_3)
             puVar7  = puVar7 + 0x1;
             *puVar1 = uVar3;
         }
-        for(uVar6 = ((uVar6 & 0x1) != 0x0); u_var2 = (undefined)(param_2 & 0xff), uVar6 != 0x0; uVar6 = uVar6 - 0x1)
+        for(uVar6 = ((uVar6 & 0x1) != 0x0); u_var2 = (param_2 & 0xff), uVar6 != 0x0; uVar6 = uVar6 - 0x1)
         {
             puVar1  = puVar7;
             puVar7  = (puVar7 + 0x1);

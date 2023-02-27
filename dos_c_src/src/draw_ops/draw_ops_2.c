@@ -2151,8 +2151,8 @@ void  unk_draw_op_1020_2020(u32 param_1, HWND16 param_2, u16 param_3)
         iVar12 = (puVar14 + -0x38);
         u_var2  = (puVar14 + -0x30);
         uVar15 = u_var2;
-        u_var20 = (undefined)(u_var2 >> 0x10);
-        u_var21 = (undefined)(u_var2 >> 0x18);
+        u_var20 = (u_var2 >> 0x10);
+        u_var21 = (u_var2 >> 0x18);
         u_var2  = (puVar14 + -0x44);
         uVar16 = (u_var2 >> 0x10);
         iVar13 = u_var2;

@@ -52,7 +52,7 @@ void set_globals_1000_1f68(Globals *globals);
 char * pass1_1000_1fd2(i16 param_1);
 
 
-unsigned short pass1_1000_1fea(Globals *globals);
+u16 pass1_1000_1fea(Globals *globals);
 
 
 

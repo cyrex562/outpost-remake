@@ -588,7 +588,7 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
         {
             uVar17 = 0x1018;
             pass1_1018_4808(CONCAT22(puVar14, uVar9), 0x0, uStack14 & 0xffff | ZEXT24(puVar13) << 0x10, 0x0);
-            uVar10 = (undefined)uVar15;
+            uVar10 = uVar15;
         }
         u_var2   = (iVar16 + 0x12);
         ppcVar3 = ((iVar16 + 0x12) + 0x4);
@@ -1815,7 +1815,7 @@ void debug_pri16_1008_6048(u32 param_1, LPSTR param_2, WORD *param_3)
         }
         if(DAT_1050_02ee != 0x0)
         {
-            wvspri16f16(param_2, &stack0x0008, args);
+            wvsprintf16(param_2, &stack0x0008, args);
             OutputDebugString16(0x1538);
             OutputDebugString16(0x1538);
             if(_PTR_LOOP_1050_02f0 != 0x0)

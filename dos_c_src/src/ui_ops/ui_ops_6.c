@@ -76,7 +76,7 @@ Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3)
     param_1 = (uVar1 >> 0x10);
     if(param_1 == (Struct3 *)0x0)
     {
-        param_1._0_2_ = 0x0;
+        param_1 = 0x0;
         param_1 = 0x0;
     }
     puStack10       = CONCAT22(param_1, param_1);
@@ -768,7 +768,7 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
         IVar5           = GetSystemMetrics16((u16)0x1538);
         uVar1           = uStack118 & 0xffff;
         uStack118       = uVar1 | (uStack118 - IVar5) << 0x10;
-        uStack118._0_2_ = (BOOL16)uVar1;
+        uStack118 = (BOOL16)uVar1;
         MoveWindow16((HWND16)0x1538, 0x0, iStack94, iStack98, uStack118 - IVar5, (BOOL16)uStack118);
     }
     else

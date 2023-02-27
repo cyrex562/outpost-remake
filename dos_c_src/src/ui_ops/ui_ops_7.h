@@ -68,7 +68,7 @@ void  draw_op_1008_1230(HWND16 param_1);
 
 
 void message_box_op_1008_12dc(
-  unsigned int param_1, unsigned int param_2, unsigned short param_3, unsigned short param_4, struct Globals *globals);
+  u32 param_1, u32 param_2, u16 param_3, u16 param_4, struct Globals *globals);
 
 
 

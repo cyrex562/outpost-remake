@@ -726,7 +726,7 @@ u16  pass1_1028_acec(u16 param_1, u16 param_2)
         if(param_1 == 0x0)
             break;
         pu_var2 = puVar1;
-        vspri16f_op_1030_840a(s_SCSetup__calcMe_clearing_colony_0_1050_512c, 0x1030, param_2, param_1);
+        vsprintf_op_1030_840a(s_SCSetup__calcMe_clearing_colony_0_1050_512c, 0x1030, param_2, param_1);
         if((puVar1 + 0x100) != 0x8000002)
         {
             pass1_1038_5464(CONCAT22(uVar3, puVar1), pu_var2, &PTR_LOOP_1050_1038, param_2);
@@ -1340,8 +1340,8 @@ void  pass1_1028_7742(u16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
         uVar8 = uStack20;
         pass1_1030_1d58(puStack14);
         uVar4  = uVar8;
-        uVar9  = (undefined)uVar8;
-        uVar10 = (undefined)(uVar8 >> 0x8);
+        uVar9  = uVar8;
+        uVar10 = (uVar8 >> 0x8);
         pass1_1028_b58e(param_4);
         puVar3 = local_16;
         uVar8  = CONCAT22(uVar6, CONCAT11(uVar10, uVar9));

@@ -53,17 +53,17 @@ struct Struct16
 };
 struct Struct13
 {
-    unsigned char   field_0x0;
-    unsigned char   field_0x1;
-    unsigned char   field_0x2;
-    unsigned char   field_0x3;
-    unsigned char  *field_0x4;
-    unsigned char   field_0x8;
-    unsigned char   field_0x9;
-    unsigned char   field_0xa;
-    unsigned char   field_0xb;
+    u8   field_0x0;
+    u8   field_0x1;
+    u8   field_0x2;
+    u8   field_0x3;
+    u8  *field_0x4;
+    u8   field_0x8;
+    u8   field_0x9;
+    u8   field_0xa;
+    u8   field_0xb;
     short           field_0xc;
-    unsigned short *field_0xe;
+    u16 *field_0xe;
 };
 struct Struct11
 {

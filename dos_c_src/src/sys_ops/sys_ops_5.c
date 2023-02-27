@@ -350,7 +350,7 @@ void  pass1_1020_ea20(u32 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 p
     uStack8        = uStack38;
     if(uStack38._3_1_ == 0x0)
         goto LAB_1020_eb4e;
-    uStack8._0_2_ = uStack38;
+    uStack8 = uStack38;
     pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uStack8, puStack56);
     uStack38 = CONCAT22(puStack56, uStack58);
     uStack34 = (uStack58 + 0x2e);
@@ -904,8 +904,8 @@ void  pass1_1020_d194(u32 param_1, i16 param_2, u16 param_3)
                     (**ppcVar1)(uVar11, uVar7, puVar9, 0x1, uVar18, puVar8, puStack34, puStack34);
                     return;
                 }
-                uVar15  = (undefined)u_var2;
-                uVar16  = (undefined)(u_var2 >> 0x8);
+                uVar15  = u_var2;
+                uVar16  = (u_var2 >> 0x8);
                 uVar6   = uStack38;
                 puVar17 = extraout_DX;
                 pass1_1030_1d58(puStack34);
@@ -1195,8 +1195,8 @@ void  pass1_1020_a89e(u16 param_1, u32 param_2, u32 *param_3, u16 param_4)
     puStack1218 = &local_14;
     puVar7      = &local_14;
     pass1_1008_3e94(CONCAT22(param_1, puVar7), CONCAT22(param_1, &local_18), CONCAT22(param_1, &local_16));
-    uVar10 = (undefined)param_1;
-    uVar11 = (undefined)(param_1 >> 0x8);
+    uVar10 = param_1;
+    uVar11 = (param_1 >> 0x8);
     pass1_1008_3e76(CONCAT13(uVar11, CONCAT12(uVar10, &local_14)), 0x0, local_18, local_16 + 0x2);
     struct_op_1028_8888(param_1, in_AF, (Struct100 *)CONCAT22(param_1, local_13c), 0x0, 0x7a, &local_14, param_1, 0x8000002, 0x4000002, uStack10);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_1, local_13c));

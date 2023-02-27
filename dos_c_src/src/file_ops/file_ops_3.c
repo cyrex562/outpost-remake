@@ -1769,7 +1769,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
             {
                 return;
             }
-            u_stack6._0_2_ = CONCAT11(u_stack6._1_1_ + 0x4, (undefined)u_stack6);
+            u_stack6 = CONCAT11(u_stack6._1_1_ + 0x4, u_stack6);
             u_stack6       = CONCAT22((u_stack6 >> 0x10) + (0xfb < u_stack6._1_1_), u_stack6);
         }
     } while(true);

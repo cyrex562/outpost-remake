@@ -34,8 +34,8 @@ typedef struct Struct380
 {
     void*   pv_field_42;
     u32 field_0x48;
-    unsigned short field_0x12;
-    unsigned char  field_0x3c;
+    u16 field_0x12;
+    u8  field_0x3c;
 
 } Struct380;
 typedef struct Struct389 Struct389;

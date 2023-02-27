@@ -255,7 +255,7 @@ u32  pass1_1030_b344(u32 param_1, u16 param_2)
         puVar1 = (puStack16 | puStack18);
         if(puVar1 == 0x0)
         {
-            local_8._0_2_ = local_a + -0x1;
+            local_8 = local_a + -0x1;
             local_8 = local_c;
             puStack18     = &local_8;
             pass1_1030_b2aa(param_1, CONCAT22(param_2, puStack18), 0x0, &stack0xfffe, param_2);
@@ -745,7 +745,7 @@ void  pass1_1030_9048(u16 param_1, u32 param_2, i16 param_3, u32 param_4)
         }
         uVar12  = (uStack12 >> 0x10);
         puVar10 = uStack12;
-        uVar16  = (undefined)(uStack12 >> 0x10);
+        uVar16  = (uStack12 >> 0x10);
         goto LAB_1030_90e6;
     case 0x7c:
     case 0x7d:
@@ -767,7 +767,7 @@ void  pass1_1030_9048(u16 param_1, u32 param_2, i16 param_3, u32 param_4)
     if((uStack12 | puVar10) != 0x0)
     {
         uVar12 = (uStack12 >> 0x10);
-        uVar16 = (undefined)(uStack12 >> 0x10);
+        uVar16 = (uStack12 >> 0x10);
     LAB_1030_90e6:
         ppcVar3 = *puVar10;
         (**ppcVar3)(0x1030, puVar10, uVar16, 0x1, uVar9, uVar11, uStack12, uStack12);
@@ -1246,7 +1246,7 @@ LAB_1030_97e8:
                     uVar4->field_0x2    = 0x1030;
                 }
                 uVar18  = SUB41(paStack6, 0x0);
-                uVar19  = (undefined)(paStack6 >> 0x10);
+                uVar19  = (paStack6 >> 0x10);
                 ppcVar1 = (*param_4 + 0x8);
                 puVar16 = param_4;
                 (**ppcVar1)();

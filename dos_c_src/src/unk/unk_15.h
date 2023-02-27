@@ -118,7 +118,7 @@ i16 pass1_1000_422a(i16 param_1, u16 param_2, u16 param_3, u16 param_4);
 void pass1_1000_43f0(Globals *globals, u16 param_1, u16 param_2);
 
 
-void pass1_1000_440c(struct Globals *globals, unsigned short param_1);
+void pass1_1000_440c(struct Globals *globals, u16 param_1);
 
 
 

@@ -5,9 +5,10 @@
 #ifndef OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_3_H_
 #define OUTPOST_1_SRC_FN_PTR_OPS_FN_PTR_OPS_3_H_
 
+#include "globals.h"
 void  pass1_1030_8a2c(u16 *param_1);
 
-void  pass1_1030_8210(u16 *param_1);
+void pass1_1030_8210(Globals *globals, u16 *param_1);
 
 void  fn_ptr_1030_835a(u32 **param_1, u32 *param_2);
 
@@ -21,7 +22,7 @@ void  fn_ptr_1030_84d0(u32 param_1);
 
 void  pass1_1030_8604(Struct18 **param_1);
 
-void  pass1_1030_878c(long *param_1, i16 param_2, u16 param_3);
+void pass1_1030_878c(Globals *globals, long *param_1, i16 param_2, u16 param_3);
 
 void  fn_ptr_1030_7296(u32 param_1);
 

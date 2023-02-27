@@ -1269,8 +1269,8 @@ void unk_draw_op_1018_623e(u32 param_1, HWND16 param_2, u16 param_3)
         iVar11 = (puVar13 + -0x38);
         uVar3  = (puVar13 + -0x30);
         uVar14 = uVar3;
-        uVar18 = (undefined)(uVar3 >> 0x10);
-        uVar19 = (undefined)(uVar3 >> 0x18);
+        uVar18 = (uVar3 >> 0x10);
+        uVar19 = (uVar3 >> 0x18);
         uVar3  = (puVar13 + -0x44);
         uVar15 = (uVar3 >> 0x10);
         iVar12 = uVar3;
@@ -1971,11 +1971,11 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
     u8          u_var28;
 
     puVar10 = __return_storage_ptr__;
-    u_var27  = (undefined)param_9;
-    u_var28  = (undefined)(param_9 >> 0x8);
+    u_var27  = param_9;
+    u_var28  = (param_9 >> 0x8);
     bVar22  = 0x0;
     u_var26  = 0x0;
-    u_var25  = (undefined)(param_4 >> 0x8);
+    u_var25  = (param_4 >> 0x8);
     if((param_6 + 0xec76 & 0x3) != 0x0)
         goto LAB_1010_2ad8;
     uVar11 = param_6 + 0xec76 >> 0x1;

@@ -1411,7 +1411,7 @@ void  pass1_1030_b9da(u32 param_1, u32 param_2, u32 param_3, u32 param_4, u16 pa
             puVar1  = &iVar7->field_0x12;
             *puVar1 = *puVar1 + param_4;
             string_1020_c0ca(uStack4);
-            vspri16f_op_1030_840a(s_truck_0x_08lx_loaded__ld_of__s_f_1050_576c, 0x1020, param_7, param_3);
+            vsprintf_op_1030_840a(s_truck_0x_08lx_loaded__ld_of__s_f_1050_576c, 0x1020, param_7, param_3);
             if(0x63 < iVar7->field_0x12)
                 break;
         }
@@ -1727,7 +1727,7 @@ void  pass1_1030_a57e(u32 param_1, u16 *param_2, i16 param_3, i16 param_4, u16 p
                     }
                     uVar17  = (uStack16 >> 0x10);
                     puVar13 = uStack16;
-                    u_var20  = (undefined)(uStack16 >> 0x10);
+                    u_var20  = (uStack16 >> 0x10);
                     goto LAB_1030_a6ea;
                 case 0x7c:
                 case 0x7d:
@@ -1752,7 +1752,7 @@ void  pass1_1030_a57e(u32 param_1, u16 *param_2, i16 param_3, i16 param_4, u16 p
                 if((uStack16 | puVar13) != 0x0)
                 {
                     uVar17 = (uStack16 >> 0x10);
-                    u_var20 = (undefined)(uStack16 >> 0x10);
+                    u_var20 = (uStack16 >> 0x10);
                 LAB_1030_a6ea:
                     ppcVar2 = *puVar13;
                     (**ppcVar2)(0x1008, puVar13, u_var20, 0x1, uVar11, uVar15, uStack16, uStack16);

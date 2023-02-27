@@ -38,12 +38,12 @@ typedef struct Struct131 Struct131;
 typedef struct Struct139 Struct139;
 struct Struct133
 {
-    unsigned char      field_0x0;
-    unsigned char      field_0x1;
-    unsigned char      field_0x2;
-    unsigned char      field_0x3;
-    unsigned int       field_0x4;
-    unsigned int       field_0x8;
+    u8      field_0x0;
+    u8      field_0x1;
+    u8      field_0x2;
+    u8      field_0x3;
+    u32       field_0x4;
+    u32       field_0x8;
 };
 struct Struct134
 {

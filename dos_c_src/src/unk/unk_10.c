@@ -1983,19 +1983,19 @@ void  pass1_1018_dd7c(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
             if(param_4 - 0x7 == 0x0)
             {
                 uStack20      = 0x6;
-                param_4._0_2_ = param_4 - 0x7;
+                param_4 = param_4 - 0x7;
             }
             else
             {
                 if(param_4 - 0x8 == 0x0)
                 {
                     uStack20      = 0x7;
-                    param_4._0_2_ = param_4 - 0x8;
+                    param_4 = param_4 - 0x8;
                 }
                 else
                 {
                     uStack20      = 0x8;
-                    param_4._0_2_ = param_4 - 0x9;
+                    param_4 = param_4 - 0x9;
                 }
             }
             uVar14 = 0x6;

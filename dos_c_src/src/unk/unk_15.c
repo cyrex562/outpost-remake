@@ -316,7 +316,7 @@ u16 *pass1_1000_4906(Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3)
             puVar7  = puVar7 + 0x1;
             *puVar1 = uVar3;
         }
-        for(uVar6 = ((uVar6 & 0x1) != 0x0); u_var2 = (undefined)(in_wnd_class & 0xff), uVar6 != 0x0; uVar6 = uVar6 - 0x1)
+        for(uVar6 = ((uVar6 & 0x1) != 0x0); u_var2 = (in_wnd_class & 0xff), uVar6 != 0x0; uVar6 = uVar6 - 0x1)
         {
             puVar1  = puVar7;
             puVar7  = (puVar7 + 0x1);

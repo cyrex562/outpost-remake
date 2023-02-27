@@ -16,10 +16,10 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3);
 
 void win_ui_op_1040_0170(Globals           *globals,
                          short              param_1,
-                         unsigned short     param_2,
-                         unsigned short     param_3,
-                         unsigned int       param_4,
-                         unsigned short     param_5,
+                         u16     param_2,
+                         u16     param_3,
+                         u32       param_4,
+                         u16     param_5,
                          struct WNDCLASS16 *param_6);
 
 

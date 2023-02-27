@@ -253,7 +253,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
             if((extraout_DX | puVar4) != 0x0)
             {
                 u_var2           = (puVar4 + 0x4);
-                uStack778._0_2_ = u_var2;
+                uStack778 = u_var2;
                 uVar10          = (u_var2 >> 0x10);
                 goto LAB_1008_3206;
             }

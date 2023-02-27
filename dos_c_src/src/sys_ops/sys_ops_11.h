@@ -192,4 +192,4 @@ i16 *pass1_1000_25d2(i16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
 i16 *exit_1000_25f2(u16 param_1, u16 param_2, i16 param_3, i16 param_4, u16 param_5, u16 param_6, u16 param_7);
 
 
-void pass1_1000_262c(Globals *globals, u8 *param_1, u8 *param_2, char *param_3, unsigned short param_4);
+void pass1_1000_262c(Globals *globals, u8 *param_1, u8 *param_2, char *param_3, u16 param_4);

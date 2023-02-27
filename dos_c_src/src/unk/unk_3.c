@@ -534,9 +534,9 @@ void  pass1_1038_3cc0(u32 param_1, u16 param_2, u8 *param_3, u16 param_4, u16 pa
                     goto LAB_1038_3e98;
                 }
                 uVar16 = SUB21(param_3, 0x0);
-                uVar17 = (undefined)(param_3 >> 0x8);
-                uVar14 = (undefined)uVar6;
-                uVar15 = (undefined)(uVar6 >> 0x8);
+                uVar17 = (param_3 >> 0x8);
+                uVar14 = uVar6;
+                uVar15 = (uVar6 >> 0x8);
                 puVar7 = extraout_DX_04;
             LAB_1038_3e67:
                 uVar10 = 0x1030;
@@ -563,10 +563,10 @@ void  pass1_1038_3cc0(u32 param_1, u16 param_2, u8 *param_3, u16 param_4, u16 pa
             if(uVar6 != 0x0)
             {
                 uVar16 = SUB21(param_3, 0x0);
-                uVar17 = (undefined)(param_3 >> 0x8);
+                uVar17 = (param_3 >> 0x8);
                 pass1_1028_b58e(uVar13);
-                uVar14  = (undefined)uVar12;
-                uVar15  = (undefined)(uVar12 >> 0x8);
+                uVar14  = uVar12;
+                uVar15  = (uVar12 >> 0x8);
                 param_3 = extraout_DX_03;
                 puVar7  = extraout_DX_03;
                 goto LAB_1038_3e67;

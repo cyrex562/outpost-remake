@@ -98,11 +98,11 @@ void window_op_1020_10a0(Struct0 *param_1);
 
 
 void win_ui_cursor_op_1020_1294(struct Globals *globals,
-                                unsigned int    param_1,
+                                u32    param_1,
                                 short           param_2,
                                 short           param_3,
-                                unsigned short  param_4,
-                                unsigned short  param_5);
+                                u16  param_4,
+                                u16  param_5);
 
 
 

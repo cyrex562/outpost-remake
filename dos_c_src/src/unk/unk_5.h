@@ -86,7 +86,7 @@ void  pass1_1030_8372(u32 **param_1, u32 param_2, u32 *param_3);
 
 
 
-void vspri16f_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_4);
+void vsprintf_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_4);
 
 
 
