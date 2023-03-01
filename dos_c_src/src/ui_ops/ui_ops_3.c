@@ -1811,7 +1811,7 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
             load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x50, local_464, (short)param_6);
             pcVar11 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             puVar6  = (pcVar11 >> 0x10);
-            uVar5   = wspri16f16(0x1010, local_414, &param_6->style);
+            uVar5   = wsprintf16(0x1010, local_414, &param_6->style);
             uVar9   = 0x1000;
             mem_op_1000_179c(0xb4, puVar6, 0x1000);
             if((puVar6 | uVar5) == 0x0)

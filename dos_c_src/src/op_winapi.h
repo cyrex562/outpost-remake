@@ -719,7 +719,7 @@ BOOL16 ModifyMenu16(HMENU16 hmenu, u16 pos, u16 flags, u16 id, SEGPTR data);
 BOOL16 TrackPopupMenu16(HMENU16 hmenu, u16 wflags, u16 x, u16 y, u16 n_reserved, HWND16 hwnd, RECT16* lp_rect);
 
 
-// u16                       wspri16f16(LPSTR buffer, LPCSTR spec, WORD *valist);
+// u16                       wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist);
 u16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist);
 
 
@@ -754,7 +754,7 @@ BOOL16 GetOpenFileName16(SEGPTR ofn);
 
 
 // BOOL16                      GetSaveFileName16(SEGPTR ofn);
-BOOL16 GetSaveFileName156(SEGPTR ofn);
+BOOL16 GetSaveFileName16(SEGPTR ofn);
 
 
 SEGPTR SegmentLimit(SEGPTR in_val);

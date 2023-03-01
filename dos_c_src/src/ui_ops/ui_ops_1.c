@@ -94,7 +94,7 @@ void win_ui_op_1040_ae04(u32 param_1, WORD *param_2)
             uVar5 = iStack280 * 0xc + iVar2;
             id    = string_op_1020_c222((uVar5 + 0x4));
             SetDlgItemText16(0x1020, (u16)id, lp_string);
-            wspri16f16(0x1538, local_102, param_2);
+            wsprintf16(0x1538, local_102, param_2);
             SetDlgItemText16((HWND16)0x1538, (u16)local_102, (SEGPTR)param_2);
             uVar10    = unk_load_str_op_1010_8c96(*(iVar4 + 0x98), CONCAT22(param_2, local_102), uVar9 & 0xffff0000 | uVar5, 0x1010, param_2);
             lp_string = (SEGPTR)uVar10;
@@ -1349,7 +1349,7 @@ void send_dlg_item_msg_1040_ce12(u16 param_1, u16 param_2, u32 param_3, u16 para
         lVar1 = pass1_1008_5b12(local_a, param_5);
         if(lVar1 == 0x0)
             break;
-        wspri16f16(0x1008, local_10a, param_5);
+        wsprintf16(0x1008, local_10a, param_5);
         SendDlgItemMessage16((HWND16)0x1538, (u16)local_10a, param_5, 0x0, CONCAT22(param_4, 0x401));
     }
     return;

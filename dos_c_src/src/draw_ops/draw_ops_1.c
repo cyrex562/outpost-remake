@@ -134,7 +134,7 @@ void palette_op_1040_c886(Globals *globals, u32 param_1, u8 param_2, u16 param_3
             u_var_5 = (globals->_PTR_LOOP_1050_4230 >> 0x10);
             u_var_1 = (globals->_PTR_LOOP_1050_4230 + 0x10);
             param_4 = 0x1008;
-            h_stack_4 = palette_op_1008_4e08((struct Struct13 *)CONCAT22(u_var_1, (globals->_PTR_LOOP_1050_4230 + 0xe)), param_3, u_var_1, 0x1008);
+            h_stack_4 = palette_op_1008_4e08((Struct13 *)CONCAT22(u_var_1, (globals->_PTR_LOOP_1050_4230 + 0xe)), param_3, u_var_1, 0x1008);
         }
         pu_stack_8 = (param_1 + 0x8);
         u_var_5  = (param_1 + 0xa);

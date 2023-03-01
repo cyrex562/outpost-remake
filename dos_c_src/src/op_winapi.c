@@ -1193,7 +1193,7 @@ BOOL16 TrackPopupMenu16(HMENU16 hmenu, u16 wflags, u16 x, u16 y, u16 n_reserved,
     return false;
 }
 
-// u16                       wspri16f16(LPSTR buffer, LPCSTR spec, WORD *valist);
+// u16                       wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist);
 u16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist)
 {
     // TODO: implement
@@ -1252,7 +1252,7 @@ BOOL16 GetOpenFileName16(SEGPTR ofn)
 }
 
 // BOOL16                      GetSaveFileName16(SEGPTR ofn);
-BOOL16 GetSaveFileName156(SEGPTR ofn)
+BOOL16 GetSaveFileName16(SEGPTR ofn)
 {
     // TODO: implement
     return false;

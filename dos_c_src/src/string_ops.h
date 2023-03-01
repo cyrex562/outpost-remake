@@ -65,8 +65,7 @@ cstring *string_op_1020_c2f8(Globals *globals, u16 param_1);
 void pass1_1020_6e52(Globals *globals, u16 param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5, i16 param_6);
 
 
-
-void spri16f_op_1018_34b6(u32 param_1, u8 param_2);
+void sprintf_op_1018_34b6(Globals *globals, u32 param_1, u8 param_2);
 
 
 

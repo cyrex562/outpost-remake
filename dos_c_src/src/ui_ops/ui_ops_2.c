@@ -197,12 +197,12 @@ void  win_ui_op_1040_3b1e(Struct2 *param_1, WORD *param_2)
     uVar5    = (param_1 >> 0x10);
     uVar4    = param_1;
     GetWindowText16(0x1010, 0x80, (u16)local_8c);
-    wspri16f16(0x1538, local_10e, param_2);
+    wsprintf16(0x1538, local_10e, param_2);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_10e);
     uVar3 = uVar5;
     pass1_1018_3d44(*(uVar4 + 0x8e), (param_1 & 0xffff0000 | (uVar4 + 0x92)), (param_1 & 0xffff0000 | (uVar4 + 0x96)));
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, local_10e, (short)param_2);
-    wspri16f16(0x1010, local_8c, param_2);
+    wsprintf16(0x1010, local_8c, param_2);
     SetDlgItemText16((HWND16)0x1538, (u16)local_8c, (SEGPTR)param_2);
     BVar1          = CheckRadioButton16((HWND16)0x1538, 0x188, 0x18d, 0x188);
     (uVar4 + 0xa0) = 0x188;
@@ -445,7 +445,7 @@ void  win_ui_op_1040_42b2(u32 param_1, i16 param_2, HWND16 param_3, WORD *param_
     }
     if(uVar3 < 0x0)
     {
-        wspri16f16(&globals->PTR_LOOP_1050_1000, local_54, param_4);
+        wsprintf16(&globals->PTR_LOOP_1050_1000, local_54, param_4);
         SendMessage16((HWND16)0x1538, local_54, (WPARAM16)param_4, 0xc0000);
         SetFocus16((HWND16)0x1538);
         SendMessage16((HWND16)0x1538, 0x0, 0xffff, 0x4010000);
@@ -1049,7 +1049,7 @@ void  win_dlg_op_1040_2f90(u32 param_1, WORD *param_2)
     uVar5    = (param_1 >> 0x10);
     iVar4    = param_1;
     GetWindowText16(0x1010, 0x80, (u16)local_8c);
-    wspri16f16(0x1538, local_10e, param_2);
+    wsprintf16(0x1538, local_10e, param_2);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_10e);
     HVar1                     = GetDlgItem16((HWND16)0x1538, 0x182);
     *(HWND16 *)(iVar4 + 0x92) = HVar1;
@@ -1228,26 +1228,26 @@ void  set_win_text_1040_3590(u32 param_1, WORD *param_2)
     uVar4       = (param_1 >> 0x10);
     iVar3       = param_1;
     GetWindowText16(0x1010, 0x80, (u16)local_50c);
-    wspri16f16(0x1538, local_58e, param_2);
+    wsprintf16(0x1538, local_58e, param_2);
     BStack1426 = SetWindowText16((HWND16)0x1538, (SEGPTR)local_58e);
-    spri16f_op_1018_34b6(*(iVar3 + 0x8e), (u8)BStack1426);
+    sprintf_op_1018_34b6(*(iVar3 + 0x8e), (u8)BStack1426);
     uStack1424 = u_var2;
     pass1_1018_3d44(*(iVar3 + 0x8e), CONCAT22(param_2, local_59a), CONCAT22(param_2, local_596));
     HVar1                     = GetDlgItem16(0x1018, 0x193);
     *(HWND16 *)(iVar3 + 0x98) = HVar1;
     EnableWindow16((HWND16)0x1538, 0x1);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
-    wspri16f16(0x1010, local_50c, param_2);
+    wsprintf16(0x1010, local_50c, param_2);
     GetDlgItem16((HWND16)0x1538, 0x195);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_50c);
     lp_string = GetDlgItem16((HWND16)0x1538, 0x196);
-    spri16f_op_1018_34b6(*(iVar3 + 0x8e), (u8)lp_string);
+    sprintf_op_1018_34b6(*(iVar3 + 0x8e), (u8)lp_string);
     SetWindowText16(0x1018, lp_string);
     GetDlgItem16((HWND16)0x1538, 0x197);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
     SetWindowText16(0x1010, (SEGPTR)local_404);
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
-    wspri16f16(0x1010, local_50c, param_2);
+    wsprintf16(0x1010, local_50c, param_2);
     GetDlgItem16((HWND16)0x1538, 0x198);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_50c);
     lp_string_00 = GetDlgItem16((HWND16)0x1538, 0x199);
@@ -1647,7 +1647,7 @@ void  show_win_1040_18a2(Struct1 *param_1, HWND16 param_2, WORD *param_3)
         }
         load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
         load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
-        wspri16f16(0x1010, local_304, param_3);
+        wsprintf16(0x1010, local_304, param_3);
         SetDlgItemText16((HWND16)0x1538, (u16)local_304, (SEGPTR)param_3);
         uVar1 = (param_1 + 0x8e);
         if((uVar1 + 0x82) == 0x0)
@@ -1660,7 +1660,7 @@ void  show_win_1040_18a2(Struct1 *param_1, HWND16 param_2, WORD *param_3)
         }
         load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
         load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
-        wspri16f16(0x1010, local_304, param_3);
+        wsprintf16(0x1010, local_304, param_3);
         param_2 = (HWND16)0x1538;
         SetDlgItemText16((HWND16)0x1538, (u16)local_304, (SEGPTR)param_3);
     }

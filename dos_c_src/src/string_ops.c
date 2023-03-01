@@ -12,6 +12,7 @@
 #include "structs_38x.h"
 #include "sys_ops/sys_ops_10.h"
 #include "unk/unk_11.h"
+#include "unk/unk_14.h"
 #include "unk/unk_15.h"
 #include "utils.h"
 
@@ -600,11 +601,11 @@ void pass1_1020_6e52(Globals *globals, u16 param_1, u16 param_2, u16 param_3, i1
     return;
 }
 
-void spri16f_op_1018_34b6(u32 param_1, u8 param_2)
+void sprintf_op_1018_34b6(Globals *globals, u32 param_1, u8 param_2)
 
 {
     i16        iVar1;
-    undefined3 in_register_00000001;
+    u16 in_register_00000001;
     u16        in_DX;
     i16        iVar2;
     WORD      *valist;
@@ -615,7 +616,7 @@ void spri16f_op_1018_34b6(u32 param_1, u8 param_2)
 
     valist = (WORD *)(param_1 >> 0x10);
     iVar2  = param_1;
-    uVar3  = switch_1018_3b9e(param_1, (iVar2 + 0x12e), CONCAT31(in_register_00000001, param_2), in_DX, unaff_SS);
+    uVar3  = switch_1018_3b9e(param_1, (iVar2 + 0x12e), param_2, in_DX, unaff_SS);
     iVar1  = (iVar2 + 0x12e);
     if(iVar1 == 0x188)
     {
@@ -634,15 +635,14 @@ void spri16f_op_1018_34b6(u32 param_1, u8 param_2)
         {
             if(iVar1 != 0x18c)
             {
-                load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, (iVar2 + 0x22), (short)valist);
+                load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (globals->_PTR_LOOP_1050_14cc >> 0x10), 0x100, (iVar2 + 0x22), (short)valist);
                 return;
             }
             buffer = 0x1008;
             pass1_1008_57f0(uVar3, (iVar2 + 0x130), unaff_SS);
         }
     }
-    wspri16f16(buffer, (iVar2 + 0x22), valist);
-    return;
+    wsprintf16(buffer, (iVar2 + 0x22), valist);
 }
 
 
@@ -713,7 +713,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
             *(uVar10 + 0x138) = uVar9;
             piVar2            = (uVar10 + 0x13a);
             *piVar2           = *piVar2 + 0x1;
-            wspri16f16(0x1030, (uVar10 + 0x22), valist);
+            wsprintf16(0x1030, (uVar10 + 0x22), valist);
             return;
         }
         *(uVar10 + 0x13e) = u_stack6;
@@ -1188,7 +1188,7 @@ void load_str_and_spri16f_1008_b69c(Struct25 *param_1, WORD *param_2, u8 *param_
             }
             uVar3 = (uVar7 >> 0x10);
             uVar4 = uVar3;
-            wspri16f16(&globals->PTR_LOOP_1050_1000, local_102, param_2);
+            wsprintf16(&globals->PTR_LOOP_1050_1000, local_102, param_2);
             u_var2         = str_op_1008_60e8(CONCAT22(param_2, local_102), uVar4);
             (uVar7 + 0x4) = u_var2;
             (uVar7 + 0x6) = uVar4;
@@ -1233,7 +1233,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
     iVar4   = param_1;
     pi_var1  = (iVar4 + 0x22);
     *pi_var1 = *pi_var1 + 0x1;
-    wspri16f16(0x1010, local_106, param_2);
+    wsprintf16(0x1010, local_106, param_2);
     iStack6         = uVar6;
     uVar3           = str_op_1008_60e8(CONCAT22(param_2, local_106), (uVar6 >> 0x10));
     iStack6         = uVar6;

@@ -1193,10 +1193,10 @@ void set_window_text_1018_6066(u16 param_1, u16 param_2, SEGPTR in_win_text_3, u
 void set_window_text_1018_6086(u32 param_1, LPSTR param_2, WORD *param_3)
 
 {
-    wspri16f16(param_2, &stack0xfff4, param_3);
+    wsprintf16(param_2, &stack0xfff4, param_3);
     GetDlgItem16((HWND16)0x1538, 0x1be);
     SetWindowText16((HWND16)0x1538, (SEGPTR)&stack0xfff4);
-    wspri16f16(0x1538, &stack0xfff4, param_3);
+    wsprintf16(0x1538, &stack0xfff4, param_3);
     GetDlgItem16((HWND16)0x1538, 0x1bf);
     SetWindowText16((HWND16)0x1538, (SEGPTR)&stack0xfff4);
     return;

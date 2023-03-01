@@ -175,7 +175,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                     pcVar10 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4 = (pcVar10 >> 0x10);
                     u_stack6 = SUB42(pcVar10, 0x0);
-                    IVar2   = wspri16f16(&USHORT_1050_1028, spec, valist);
+                    IVar2   = wsprintf16(&USHORT_1050_1028, spec, valist);
                     return CONCAT22(IVar2, uStack4);
                 }
                 break;
@@ -201,7 +201,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                     pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                     uStack4  = (pcVar10 >> 0x10);
                     u_stack6  = SUB42(pcVar10, 0x0);
-                    wspri16f16(&USHORT_1050_1028, spec, valist);
+                    wsprintf16(&USHORT_1050_1028, spec, valist);
                     goto LAB_1010_8def;
                 }
                 break;
@@ -238,7 +238,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
                 pcVar10  = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), (HINSTANCE16)&USHORT_1050_1028);
                 uStack4  = (pcVar10 >> 0x10);
                 u_stack6  = SUB42(pcVar10, 0x0);
-                wspri16f16(&USHORT_1050_1028, spec, valist);
+                wsprintf16(&USHORT_1050_1028, spec, valist);
             LAB_1010_8def:
                 fn_ptr_1000_17ce((Struct18 *)(uStack46 & 0xffff | ZEXT24(in_DX) << 0x10), 0x1000);
                 return CONCAT22(uStack46, in_DX);

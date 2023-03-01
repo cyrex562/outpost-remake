@@ -28,7 +28,7 @@ void  win_dlg_op_1038_bea4(u32 param_1, WORD *param_2)
     uVar6    = (param_1 >> 0x10);
     iVar5    = param_1;
     GetWindowText16(0x1010, 0x80, (u16)local_8c);
-    wspri16f16(0x1538, local_10e, param_2);
+    wsprintf16(0x1538, local_10e, param_2);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_10e);
     HVar2                     = GetDlgItem16((HWND16)0x1538, 0x179);
     *(HWND16 *)(iVar5 + 0x92) = HVar2;
@@ -229,11 +229,11 @@ void  win_dlg_op_1038_c58e(u32 param_1, WORD *param_2)
     uStack10 = (pu_stack6 + 0x68);
     iVar1    = param_1;
     GetWindowText16(0x1010, 0x80, (u16)local_40c);
-    wspri16f16(0x1538, local_80e, param_2);
+    wsprintf16(0x1538, local_80e, param_2);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_80e);
     pass1_1008_e038(*(iVar1 + 0x8e), (param_1 & 0xffff0000 | (iVar1 + 0x92)), (param_1 & 0xffff0000 | (iVar1 + 0x96)));
     load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x400, local_80e, (short)param_2);
-    wspri16f16(0x1010, local_40c, param_2);
+    wsprintf16(0x1010, local_40c, param_2);
     SetDlgItemText16((HWND16)0x1538, (u16)local_40c, (SEGPTR)param_2);
     return;
 }
@@ -1023,7 +1023,7 @@ LRESULT  send_dlg_item_msg_1038_8f74(u32 param_1, HWND16 param_2, WORD *param_3)
             lVar3 = pass1_1008_5b12(local_40c, param_3);
             if(lVar3 == 0x0)
                 break;
-            wspri16f16(0x1008, local_50c, param_3);
+            wsprintf16(0x1008, local_50c, param_3);
             SendDlgItemMessage16((HWND16)0x1538, (u16)local_50c, param_3, 0x0, 0x185b0401);
         }
         GetDlgItem16(0x1008, 0x1);
