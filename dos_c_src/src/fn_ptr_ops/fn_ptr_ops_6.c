@@ -635,9 +635,9 @@ void pass1_1010_3f00(u16 *param_1, u16 param_2)
 
     uVar5             = (param_1 >> 0x10);
     iVar5             = (Struct481 *)param_1;
-    *param_1          = &PTR_LOOP_1050_4a46;
+    *param_1          = 0x4a46; //&PTR_LOOP_1050_4a46;
     iVar5->field_0x2  = 0x1010;
-    iVar5->field_0x20 = &PTR_LOOP_1050_4a82;
+    iVar5->field_0x20 = 0x4a82; //&PTR_LOOP_1050_4a82;
     iVar5->field_0x22 = 0x1010;
     iStack4           = 0x0;
     do

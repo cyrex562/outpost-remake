@@ -15,7 +15,7 @@ void pass1_1010_28e6(Struct631 *param_1, u8 *param_2, u16 param_3, u8 *param_4, 
     param_1->field_0x22        = 0x0;
     param_1->field_0x24        = 0x0;
     param_1->field_0x26        = 0x0;
-    CONCAT22(param_2, param_1) = s_add16_wav_1050_2bdc + 0x8;
+    CONCAT22(param_2, param_1) = 0x2be4; // s_add16_wav_1050_2bdc + 0x8;
     param_1->field_0x2         = 0x1010;
     globals->PTR_LOOP_1050_4230         = param_1;
     globals->PTR_LOOP_1050_4232         = param_2;

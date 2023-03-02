@@ -128,7 +128,8 @@ void pass1_1010_0f24(Struct79 *param_1, Struct79 *param_2, u16 param_3, u8 *para
     (param_1 + 0xa)                 = 0x0;
     &param_1[0xa].field_0x4         = 0x0;
     (&param_1[0xa].field_0x4 + 0x2) = 0x0;
-    CONCAT22(param_2, param_1)      = s_648_bmp_1050_1919 + 0x1;
+//    CONCAT22(param_2, param_1)      = s_648_bmp_1050_1919 + 0x1;
+    param_1->field_0x1 = 0x191a;
     param_1->field_0x2              = 0x1010;
     puVar1                          = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_5, param_4, unaff_DI);
     (&param_1[0xa].field_0x4 + 0x2) = puVar1;

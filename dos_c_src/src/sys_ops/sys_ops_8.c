@@ -1513,7 +1513,7 @@ void  pass1_1010_4a8a(Struct637 *param_1, u16 param_2, u16 param_3, u16 param_4)
     param_1->field_0x2e          = 0x0;
     param_1->field_0x30          = 0x0;
     param_1->field_0x32          = 0x0;
-    CONCAT22(param_2, param_1)   = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
+    CONCAT22(param_2, param_1)   = 0x502a; // s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
     param_1->field_0x2           = 0x1010;
     p_var2                       = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x1b3, param_4);
     puVar1                       = (p_var2 >> 0x10);
@@ -1624,7 +1624,7 @@ void  pass1_1010_503e(i16 param_1, u16 param_2, u16 param_3, u8 *param_4, u16 pa
 
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
-    CONCAT22(param_2, param_1) = s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x1;
+    CONCAT22(param_2, param_1) = 0x509a; //s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x1;
     (param_1 + 0x2)            = 0x1010;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3, param_4, param_5);
     globals->_PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
@@ -1845,9 +1845,9 @@ void  pass1_1010_3e3c(Struct55 *param_1, u16 param_2, u16 param_3)
     iVar1->field_0x74  = 0x0;
     pass1_1008_3e54((param_1 & 0xffff0000 | &iVar1->field_0x76), 0x0, 0x3, 0x5);
     iVar1->field_0x7c  = 0x0;
-    param_1->field_0x0 = &PTR_LOOP_1050_4a46;
+    param_1->field_0x0 = 0x4a46; //&PTR_LOOP_1050_4a46;
     iVar1->field_0x2   = 0x1010;
-    iVar1->field_0x20  = &PTR_LOOP_1050_4a82;
+    iVar1->field_0x20  = 0x4a82; // &PTR_LOOP_1050_4a82;
     iVar1->field_0x22  = 0x1010;
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | &iVar1->field_0x26), 0x0, 0x40);
     p_var2            = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x1a1, param_3);
