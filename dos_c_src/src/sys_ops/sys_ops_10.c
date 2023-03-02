@@ -902,7 +902,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     uVar10   = (pu_stack6 >> 0x10);
     iVar9    = pu_stack6;
     uVar11   = 0x1008;
-    uVar14   = globals->_PTR_LOOP_1050_14cc;
+    uVar14   = globals->PCHAR_1050_14cc;
     uVar5    = (_PTR_LOOP_1050_14cc >> 0x10);
     switch((iVar9 + 0x4))
     {
@@ -913,7 +913,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     case 0x2:
         uVar1 = (iVar9 + 0x6);
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar1, (uVar1 >> 0x10));
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_106, param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_106, param_2);
         uVar3   = pu_stack6 >> 0x10;
         pcVar13 = pass1_1038_4d28(CONCAT13((uVar6 >> 0x8), CONCAT12(uVar6, iVar9)));
         uVar11  = 0x1000;
@@ -958,7 +958,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
         if((uVar8 + 0x418) == 0x0)
         {
             (uVar8 + 0x418) = 0x1;
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
             pcVar13 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             puVar7  = (pcVar13 >> 0x10);
             pass1_1000_3cea(param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe)), pcVar13);

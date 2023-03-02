@@ -1,3 +1,11 @@
+#include "ui_ops_2.h"
+
+#include "op_int.h"
+#include "op_win_def.h"
+#include "op_winapi.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_0xx/structs_2x.h"
+
 
 void  win_ui_op_1040_5800(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5)
 
@@ -129,7 +137,7 @@ void  message_box_op_1040_37f0(i16 param_1, u16 param_2, u16 param_3, u32 param_
         pu_stack6 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_6, in_DX, unaff_DI);
         u_var2    = (pu_stack6 >> 0x10);
         uStack10 = (pu_stack6 + 0x68);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_40c, param_6);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_40c, param_6);
         uVar1 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10), uStack10, (uStack10 >> 0x10));
         pass1_1018_3710((param_1 + 0x8e), param_6, uVar1, u_var2);
         PostMessage16(0x1018, 0x0, 0x0, 0x1110002);
@@ -201,7 +209,7 @@ void  win_ui_op_1040_3b1e(Struct2 *param_1, WORD *param_2)
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_10e);
     uVar3 = uVar5;
     pass1_1018_3d44(*(uVar4 + 0x8e), (param_1 & 0xffff0000 | (uVar4 + 0x92)), (param_1 & 0xffff0000 | (uVar4 + 0x96)));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, local_10e, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, local_10e, (short)param_2);
     wsprintf16(0x1010, local_8c, param_2);
     SetDlgItemText16((HWND16)0x1538, (u16)local_8c, (SEGPTR)param_2);
     BVar1          = CheckRadioButton16((HWND16)0x1538, 0x188, 0x18d, 0x188);
@@ -232,7 +240,7 @@ void  unk_win_ui_op_1040_3c64(i16 param_1, u16 param_2, u16 param_3, u32 param_4
     {
         LVar4 = SendDlgItemMessage16(param_5, 0x0, 0x0, 0x0, 0x1900409);
         u_var2 = (LVar4 >> 0x10);
-        UVar1 = GetDlgItemi1616((HWND16)0x1538, 0x0, (BOOL16 *)0x0, 0x0);
+        UVar1 = GetDlgItemInt16((HWND16)0x1538, 0x0, (BOOL16 *)0x0, 0x0);
         pass1_1018_36e6(*(param_1 + 0x8e), UVar1, LVar4, (param_1 + 0xa0));
         pass1_1038_af40(_PTR_LOOP_1050_5b7c, (param_1 + 0x8), 0x22, u_var2, param_1, &PTR_LOOP_1050_1038, unaff_SS);
         LVar4  = SendMessage16((HWND16)&PTR_LOOP_1050_1038, 0x0, 0x0, 0x1110002);
@@ -294,9 +302,9 @@ void  dialog_item_ui_op_1040_3e08(Struct2 *in_struct_1, u16 param_2)
         u_var2                      = pass1_1018_3ab2(local_struct_1->field_0x8e, LVar4, local_struct_1->field_0xa0, unaff_SS);
         local_struct_1->field_9e = u_var2;
     }
-    SetDlgItemi1616(HVar3, 0x0, local_struct_1->field_9c, 0x18e);
+    SetDlgItemInt16(HVar3, 0x0, local_struct_1->field_9c, 0x18e);
     HVar3 = (HWND16)0x1538;
-    SetDlgItemi1616((HWND16)0x1538, 0x0, local_struct_1->field_9e, 0x191);
+    SetDlgItemInt16((HWND16)0x1538, 0x0, local_struct_1->field_9e, 0x191);
     UVar1 = local_struct_1->field_0xa0;
     if(UVar1 - 0x188 < 0x6)
     {
@@ -986,13 +994,13 @@ void  win_dlg_item_1040_2d48(u32 param_1, HWND16 param_2, BOOL16 param_3)
     BOOL16 local_4;
 
     pass1_1040_b45e(param_1, param_2);
-    UVar1 = GetDlgItemi1616(param_2, 0x1, &local_4, param_3);
-    value = GetDlgItemi1616((HWND16)0x1538, 0x1, &local_4, param_3);
+    UVar1 = GetDlgItemInt16(param_2, 0x1, &local_4, param_3);
+    value = GetDlgItemInt16((HWND16)0x1538, 0x1, &local_4, param_3);
     if(UVar1 != 0x0)
     {
         value = value / UVar1;
     }
-    SetDlgItemi1616((HWND16)0x1538, 0x1, value, 0x165);
+    SetDlgItemInt16((HWND16)0x1538, 0x1, value, 0x165);
     return;
 }
 
@@ -1236,7 +1244,7 @@ void  set_win_text_1040_3590(u32 param_1, WORD *param_2)
     HVar1                     = GetDlgItem16(0x1018, 0x193);
     *(HWND16 *)(iVar3 + 0x98) = HVar1;
     EnableWindow16((HWND16)0x1538, 0x1);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
     wsprintf16(0x1010, local_50c, param_2);
     GetDlgItem16((HWND16)0x1538, 0x195);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_50c);
@@ -1244,9 +1252,9 @@ void  set_win_text_1040_3590(u32 param_1, WORD *param_2)
     sprintf_op_1018_34b6(*(iVar3 + 0x8e), (u8)lp_string);
     SetWindowText16(0x1018, lp_string);
     GetDlgItem16((HWND16)0x1538, 0x197);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
     SetWindowText16(0x1010, (SEGPTR)local_404);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
     wsprintf16(0x1010, local_50c, param_2);
     GetDlgItem16((HWND16)0x1538, 0x198);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_50c);
@@ -1254,10 +1262,10 @@ void  set_win_text_1040_3590(u32 param_1, WORD *param_2)
     unk_str_op_1018_35b0(*(iVar3 + 0x8e), param_2, lp_string_00);
     if((u_var2 | lp_string_00) == 0x0)
     {
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
         SetWindowText16(0x1010, (SEGPTR)local_404);
         GetDlgItem16((HWND16)0x1538, 0x19a);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_404, (short)param_2);
         SetWindowText16(0x1010, (SEGPTR)local_404);
         EnableWindow16((HWND16)0x1538, 0x0);
         return;
@@ -1358,7 +1366,7 @@ void  set_win_pos_1040_0f10(HWND16 param_1, u16 param_2, i16 param_3)
         }
         CheckDlgButton16(0x1030, 0x1, check);
     }
-    GetCursorPos16((POi1616 *)0x1538);
+    GetCursorPos16((POINT16 *)0x1538);
     GetWindowRect16((HWND16)0x1538, (RECT16 *)(param_3 + -0xc));
     iVar3             = (param_3 + -0x8) - (param_3 + -0xc);
     (param_3 + -0x12) = iVar3;
@@ -1645,8 +1653,8 @@ void  show_win_1040_18a2(Struct1 *param_1, HWND16 param_2, WORD *param_3)
                 }
             }
         }
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
         wsprintf16(0x1010, local_304, param_3);
         SetDlgItemText16((HWND16)0x1538, (u16)local_304, (SEGPTR)param_3);
         uVar1 = (param_1 + 0x8e);
@@ -1658,8 +1666,8 @@ void  show_win_1040_18a2(Struct1 *param_1, HWND16 param_2, WORD *param_3)
         {
             uStack4 = 0x626;
         }
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, (short)param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_204, (short)param_3);
         wsprintf16(0x1010, local_304, param_3);
         param_2 = (HWND16)0x1538;
         SetDlgItemText16((HWND16)0x1538, (u16)local_304, (SEGPTR)param_3);

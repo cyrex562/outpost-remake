@@ -125,7 +125,7 @@ void  check_dialog_msg_1040_81b6(u32 param_1, HWND16 param_2);
 
 
 
-void  unk_win_ui_op_1040_8158(u32 *param_1, POi1616 param_2, i16 param_3, HWND16 param_4);
+void  unk_win_ui_op_1040_8158(u32 *param_1, POINT16 param_2, i16 param_3, HWND16 param_4);
 
 
 

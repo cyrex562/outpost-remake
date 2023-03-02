@@ -213,7 +213,7 @@ BOOL16 Rectangle16(HDC16 hdc, u16 left, u16 top, u16 right, u16 bottom);
 BOOL16 TextOut16(HDC16 hdc, u16 x, u16 y, char *str, u16 count);
 
 
-// BOOL16                      Polygon16(HDC16 hdc, POi1616 *pt, u16 count);
+// BOOL16                      Polygon16(HDC16 hdc, POINT16 *pt, u16 count);
 BOOL16 Polygon16(HDC16 hdc, POINT16 *pt, u16 count);
 
 
@@ -256,7 +256,7 @@ HGDIOBJ16 GetStockObject16(u16 obj);
 
 
 // DWORD                       GetTextExtent16(HDC16 hdc, LPCSTR str, u16 count);
-DWORD GetTextExten16(HDC16 hdc, LPCSTR str, u16 count);
+DWORD GetTextExtent16(HDC16 hdc, LPCSTR str, u16 count);
 
 
 // BOOL16                      UnrealizeObject16(HGDIOBJ16 obj);
@@ -282,7 +282,7 @@ u16 StretchDIBits16(HDC16 hdc, u16 x_dst, u16 y_dst, u16 width_dst, u16 height_d
 u16 SetDIBitsToDevice(HDC16 hdc, u16 x_dest, u16 y_dest, u16 cx, u16 cy, u16 x_src, u16 y_src, u16 startscan, u16 lines, LPCVOID bits, BITMAPINFO *info, u16 coloruse);
 
 
-// BOOL16                      MoveToEx16(HDC16 hdc, u16 x, u16 y, POi1616 *pt);
+// BOOL16                      MoveToEx16(HDC16 hdc, u16 x, u16 y, POINT16 *pt);
 BOOL16 MoveToEx16(HDC16 hdc, u16 x, u16 y, POINT16 *pt);
 
 
@@ -304,7 +304,7 @@ BOOL16 KillTimer16(HWND16 hwnd, u16 id);
 
 
 
-// BOOL16                      GetCursorPos16(POi1616 *pt);
+// BOOL16                      GetCursorPos16(POINT16 *pt);
 BOOL16 GetCursorPos16(POINT16 *pt);
 
 
@@ -335,11 +335,11 @@ BOOL16 SetProp16(HWND16 hwnd, LPCSTR str, HANDLE16 handle);
 
 
 
-// void                        ClientToScreen16(HWND16 hwnd, POi1616 *lppnt);
+// void                        ClientToScreen16(HWND16 hwnd, POINT16 *lppnt);
 void ClientToScreen16(HWND16 hwnd, POINT16 *lppnt);
 
 
-// void                        ScreenToClient16(HWND16 hwnd, POi1616 *lppnt);
+// void                        ScreenToClient16(HWND16 hwnd, POINT16 *lppnt);
 void ScreenToClient16(HWND16 hwnd, POINT16 *lppnt);
 
 
@@ -443,7 +443,7 @@ u16 ShowCursor16(BOOL16 b_show);
 
 
 
-// BOOL16                      PtInRect16(RECT16 *rect, POi1616 pt);
+// BOOL16                      PtInRect16(RECT16 *rect, POINT16 pt);
 BOOL16 PtInRect16(RECT16 *rect, POINT16 pt);
 
 
@@ -485,11 +485,11 @@ HWND16 GetDlgItem16(HWND16 hwnd_dlg, u16 id);
 void SetDlgItemText16(HWND16 hwnd, u16 id, SEGPTR lp_string);
 
 
-// void                        SetDlgItemi1616(HWND16 hwnd, u16 id, u16 value, BOOL16 f_signed);
+// void                        SetDlgItemInt16(HWND16 hwnd, u16 id, u16 value, BOOL16 f_signed);
 void SetDlgItemInt16(HWND16 hwnd, u16 id, u16 value, BOOL16 f_signed);
 
 
-// u16                         GetDlgItemi1616(HWND16 hwnd, u16 id, BOOL16 *translated, BOOL16 f_signed);
+// u16                         GetDlgItemInt16(HWND16 hwnd, u16 id, BOOL16 *translated, BOOL16 f_signed);
 u16 GetDlgItemInt16(HWND16 hwnd, u16 id, BOOL16 *translated, BOOL16 f_signed);
 
 

@@ -147,8 +147,8 @@ void draw_op_1008_8288(u16 param_1, u32 param_2, HWND16 param_3)
     }
     SelectObject16((HDC16)0x1538, HStack78);
     SelectObject16((HDC16)0x1538, HStack80);
-    Polygon16((HDC16)0x1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_10);
-    Polygon16((HDC16)0x1538, (POi1616 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_1c);
+    Polygon16((HDC16)0x1538, (POINT16 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_10);
+    Polygon16((HDC16)0x1538, (POINT16 *)(&PTR_LOOP_1050_0002 + 0x1), (u16)&local_1c);
     SelectObject16((HDC16)0x1538, HVar2);
     SelectObject16((HDC16)0x1538, HVar1);
     DeleteObject16((HGDIOBJ16)0x1538);

@@ -285,7 +285,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
             }
             GetClientRect16((HWND16)0x1538, local_a);
             iVar2 = (iVar5 + 0x4);
-            BVar7 = PtInRect16((RECT16 *)0x1538, (POi1616)CONCAT22(param_2, param_1));
+            BVar7 = PtInRect16((RECT16 *)0x1538, (POINT16)CONCAT22(param_2, param_1));
             if(BVar7 == 0x0)
             {
                 pbVar1  = (u8 *)(iVar5 + 0x4);
@@ -386,7 +386,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                 *pbVar1 = *pbVar1 & 0xfc;
                 InvalidateRect16((HWND16)0x1538, (RECT16 *)(&PTR_LOOP_1050_0000 + 0x1), 0x0);
                 UpdateWindow16((HWND16)0x1538);
-                BVar7 = PtInRect16((RECT16 *)0x1538, (POi1616)CONCAT22(param_2, param_1));
+                BVar7 = PtInRect16((RECT16 *)0x1538, (POINT16)CONCAT22(param_2, param_1));
                 if(BVar7 == 0x0)
                 {
                     return;
@@ -544,11 +544,11 @@ u8 * win_ui_op_1040_8718(Struct37 *param_1, u16 param_2)
     if(uStack4 == 0x1)
     {
         (UVar10 + 0xae) = ((UVar10 + 0xaa) + -0xc4) / 0x2;
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
         create_window_1040_8bea(UVar10, uVar8, 0x1, 0x1, (UVar10 + 0xae));
         pi_var1  = (UVar10 + 0xae);
         *pi_var1 = *pi_var1 + 0x6c;
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
         uVar9 = (UVar10 + 0xae);
         uVar7 = 0x2;
     }
@@ -557,18 +557,18 @@ u8 * win_ui_op_1040_8718(Struct37 *param_1, u16 param_2)
         if(uStack4 != 0x4)
         {
             (UVar10 + 0xae) = ((UVar10 + 0xaa) + -0x58) / 0x2;
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
             uVar9 = (UVar10 + 0xae);
             uVar5 = 0x1;
             uVar7 = 0x1;
             goto LAB_1040_88a5;
         }
         (UVar10 + 0xae) = ((UVar10 + 0xaa) + -0xc4) / 0x2;
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
         create_window_1040_8bea(UVar10, uVar8, 0x1, 0x6, (UVar10 + 0xae));
         pi_var1  = (UVar10 + 0xae);
         *pi_var1 = *pi_var1 + 0x6c;
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0xff, local_104, param_2);
         uVar9 = (UVar10 + 0xae);
         uVar7 = 0x7;
     }
@@ -954,7 +954,7 @@ void  call_win_proc_1040_9684(HWND16 win_handle_1, u16 param_2, WPARAM16 w_param
                     GetClientRect16((HWND16)0x1538, local_1a);
                     rect_1 = local_1a;
                     var2   = CONCAT22(var5, param_6);
-                    bool_1 = PtInRect16((RECT16 *)0x1538, (POi1616)CONCAT13((param_2 >> 0x8), CONCAT12(param_2, win_handle_1)));
+                    bool_1 = PtInRect16((RECT16 *)0x1538, (POINT16)CONCAT13((param_2 >> 0x8), CONCAT12(param_2, win_handle_1)));
                     if(bool_1 == 0x0)
                     {
                         return;
@@ -972,7 +972,7 @@ void  call_win_proc_1040_9684(HWND16 win_handle_1, u16 param_2, WPARAM16 w_param
                     var4 = *(handle_2 + 0x18);
                     GetClientRect16((HWND16)0x1538, local_1a);
                     var3   = CONCAT22(param_6, local_1a);
-                    bool_1 = PtInRect16((RECT16 *)0x1538, (POi1616)CONCAT22(param_2, win_handle_1));
+                    bool_1 = PtInRect16((RECT16 *)0x1538, (POINT16)CONCAT22(param_2, win_handle_1));
                     if(bool_1 == 0x0)
                     {
                         return;
@@ -1059,7 +1059,7 @@ void  check_dialog_msg_1040_81b6(u32 param_1, HWND16 param_2)
 }
 
 
-void  unk_win_ui_op_1040_8158(u32 *param_1, POi1616 param_2, i16 param_3, HWND16 param_4)
+void  unk_win_ui_op_1040_8158(u32 *param_1, POINT16 param_2, i16 param_3, HWND16 param_4)
 
 {
     void **ppcVar1;
@@ -1069,7 +1069,7 @@ void  unk_win_ui_op_1040_8158(u32 *param_1, POi1616 param_2, i16 param_3, HWND16
     i16     iVar5;
     u16     uVar6;
     u16     uVar7;
-    POi1616 local_6;
+    POINT16 local_6;
 
     if(param_3 == 0x2)
     {
@@ -1082,7 +1082,7 @@ void  unk_win_ui_op_1040_8158(u32 *param_1, POi1616 param_2, i16 param_3, HWND16
             ScreenToClient16(param_4, &local_6);
             uVar7   = 0x4;
             IVar2   = GetSystemMetrics16((u16)0x1538);
-            local_6 = (POi1616)(local_6 & 0xffff | (local_6.y + IVar2) << 0x10);
+            local_6 = (POINT16)(local_6 & 0xffff | (local_6.y + IVar2) << 0x10);
             uVar4   = param_1 & 0xffff0000 | (iVar5 + 0x82);
             BVar3   = PtInRect16((RECT16 *)0x1538, local_6);
             if(BVar3 != 0x0)
@@ -1830,7 +1830,7 @@ LAB_1040_3a79:
     if(bVar2)
     {
         hwnd = (HWND16)0x1538;
-        SetDlgItemi1616(param_5, 0x0, (iVar3 + 0x9c), 0x18e);
+        SetDlgItemInt16(param_5, 0x0, (iVar3 + 0x9c), 0x18e);
     }
     hwnd_00 = hwnd;
     if(((iVar3 + 0x9c) != 0x0) && ((iVar3 + 0xa2) == 0x0))

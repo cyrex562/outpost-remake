@@ -1395,7 +1395,7 @@ void draw_op_1018_6544(u32 param_1, i16 *param_2, u16 param_3)
 void draw_polygon_1018_661c(u16 param_1, u16 param_2, u32 param_3, HDC16 param_4)
 
 {
-    Polygon16(param_4, (POi1616 *)param_3, (u16)(param_3 >> 0x10));
+    Polygon16(param_4, (POINT16 *)param_3, (u16)(param_3 >> 0x10));
     return;
 }
 
@@ -1806,9 +1806,9 @@ void pt_in_rect_1010_4e08(u32 param_1, u16 param_2, u16 param_3, RECT16 *param_4
     u16     uVar5;
     i16     iStack12;
     i16     iStack10;
-    POi1616 PStack8;
+    POINT16 PStack8;
 
-    PStack8        = (POi1616)CONCAT22(param_2, param_3);
+    PStack8        = (POINT16)CONCAT22(param_2, param_3);
     uVar5          = (param_1 >> 0x10);
     iVar4          = param_1;
     (iVar4 + 0x22) = (iVar4 + 0x20);
@@ -1844,7 +1844,7 @@ void pt_in_rect_1010_4e08(u32 param_1, u16 param_2, u16 param_3, RECT16 *param_4
     } while(true);
 }
 
-i16 pt_in_rect_1010_40f8(u32 param_1, POi1616 *param_2, RECT16 *param_3)
+i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3)
 
 {
     i16        *pi_var1;

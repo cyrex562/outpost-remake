@@ -386,7 +386,7 @@ cstring pass1_1020_bd80(Globals *globals, u16 param_1)
     default:
         break;
     }
-    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar1 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), 0x1010);
     return pcVar1;
 }
 
@@ -476,7 +476,7 @@ cstring string_1020_c0d8(Globals *globals, u16 param_1)
     default:
         break;
     }
-    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar1 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), 0x1010);
     return pcVar1;
 }
 
@@ -530,7 +530,7 @@ cstring *string_op_1020_c222(u16 param_1, Globals *globals)
         break;
     case 0x14:
     }
-    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar1 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), 0x1010);
     return pcVar1;
 }
 
@@ -576,7 +576,7 @@ cstring *string_op_1020_c2f8(Globals *globals, u16 param_1)
         break;
     case 0x10:
     }
-    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+    pcVar1 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), 0x1010);
     return pcVar1;
 }
 
@@ -590,7 +590,7 @@ void pass1_1020_6e52(Globals *globals, u16 param_1, u16 param_2, u16 param_3, i1
     uVar1 = param_3 | param_2;
     if(uVar1 == 0x0)
     {
-        pcVar2 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
+        pcVar2 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), 0x1010);
     }
     else
     {
@@ -635,7 +635,7 @@ void sprintf_op_1018_34b6(Globals *globals, u32 param_1, u8 param_2)
         {
             if(iVar1 != 0x18c)
             {
-                load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (globals->_PTR_LOOP_1050_14cc >> 0x10), 0x100, (iVar2 + 0x22), (short)valist);
+                load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (globals->PCHAR_1050_14cc >> 0x10), 0x100, (iVar2 + 0x22), (short)valist);
                 return;
             }
             buffer = 0x1008;
@@ -829,7 +829,7 @@ void load_str_1010_ddf6(u32 param_1, u32 param_2)
     default:
         goto switchD_1010_de53_caseD_9;
     }
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (param_1 + 0x13c), in_buf_len_5);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (param_1 + 0x13c), in_buf_len_5);
 switchD_1010_de53_caseD_9:
     return;
 }
@@ -841,7 +841,7 @@ void pass1_1010_de78(u32 param_1, u32 param_2)
     in_buf_len_5       = (short)(param_1 >> 0x10);
     *(param_1 + 0x13c) = 0x0;
     pass1_1030_809c(param_2);
-    load_string_1010_84e0(0x1030, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (param_1 + 0x13c), in_buf_len_5);
+    load_string_1010_84e0(0x1030, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (param_1 + 0x13c), in_buf_len_5);
     return;
 }
 
@@ -933,7 +933,7 @@ char *load_string_1010_9432(Globals *globals, HINSTANCE16 param_1)
 {
     char *pcVar1;
 
-    pcVar1 = load_string_1010_847e(globals->_PTR_LOOP_1050_14cc, (u16)(globals->_PTR_LOOP_1050_14cc >> 0x10), param_1);
+    pcVar1 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), param_1);
     return pcVar1;
 }
 
@@ -1159,7 +1159,7 @@ void load_str_and_spri16f_1008_b69c(Struct25 *param_1, WORD *param_2, u8 *param_
     CHAR        local_102[0x100];
 
     in_buffer_4 = local_202;
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, in_buffer_4, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, in_buffer_4, (short)param_2);
     uVar5 = (param_1 >> 0x10);
     iVar5 = (Struct25 *)param_1;
     if(iVar5->field_0xa == 0x0)
@@ -1227,7 +1227,7 @@ void load_str_and_spri16f_1008_b78a(u32 param_1, WORD *param_2, u8 *param_3, u16
         uVar6 = set_stuct_1008_b0bc((Struct26 *)CONCAT22(param_3, param_4));
     }
     uStack4 = (uVar6 >> 0x10);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_206, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_206, (short)param_2);
     iStack6 = uVar6;
     uVar5   = (param_1 >> 0x10);
     iVar4   = param_1;

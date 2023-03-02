@@ -1946,14 +1946,21 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
     {
         if(param_4 != 0xf9)
         {
-            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, &PTR_LOOP_1050_1040, param_6);
+            pass1_1040_b54a(NULL,
+                            param_1,
+                            param_2,
+                            param_3,
+                            param_4,
+                            in_DX,
+                            &PTR_LOOP_1050_1040,
+                            param_6);
             return;
         }
         iVar4 = pass1_1038_993a(param_1, param_2, param_3);
         if(-0x1 < iVar4)
         {
             uVar8    = (param_1 + 0x6);
-            UStack22 = GetDlgItemi1616(param_5, 0x1, local_1a, param_6);
+            UStack22 = GetDlgItemInt16(param_5, 0x1, local_1a, param_6);
             if(local_1a[0] != 0x0)
             {
                 uVar1 = (param_1 + 0x98);

@@ -2401,7 +2401,7 @@ void  pass1_1010_e1f4(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
     else
     {
     LAB_1010_e241:
-        load_string_1010_84e0(0x1008, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
+        load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
     }
     return;
 }

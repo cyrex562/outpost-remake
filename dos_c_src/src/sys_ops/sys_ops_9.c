@@ -59,7 +59,7 @@ u16 *unk_load_str_op_1010_2c34(void)
     pu_var2 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
     mem_op_1000_179c(0x80, (pu_var2 >> 0x10), 0x1000);
     in_buf_len_5 = (short)(pu_var2 >> 0x10);
-    load_string_1010_84e0(0x1000, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, pu_var2, in_buf_len_5);
+    load_string_1010_84e0(0x1000, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, pu_var2, in_buf_len_5);
     pUVar1 = pass1_1000_3cea(pu_var2, s__1050_11c8);
     pass1_1010_e964(in_buf_len_5, unaff_SS, unaff_DI);
     pass1_1000_3cea(pu_var2, CONCAT22(in_buf_len_5, pUVar1));

@@ -880,7 +880,7 @@ struct Globals
     int  PTR_LOOP_1050_4e24;
     int  PTR_LOOP_1050_4e2a;
     int  PTR_LOOP_1050_4e30;
-    u32   _PTR_LOOP_1050_14cc;
+    char*PCHAR_1050_14cc;
     u32 _PTR_LOOP_1050_4230;
     u32 s_OpWnd__getKid__Unknown_target_mo_1050_01a3;
     u16   PTR_LOOP_1050_5f6a;
@@ -955,6 +955,26 @@ struct Globals
     u16     PTR_LOOP_1050_5eec;
     id      PTR_LOOP_1050_5eee;
     int     _PTR_LOOP_1050_5df0;
+    id      _PTR_LOOP_1050_5e18;
+    HANDLE16 s_procHi_1050_5e46;
+    HANDLE16 s_procLo_1050_5e4d;
+    HANDLE16 s_thisHi_1050_5e54;
+    HANDLE16 s_thisLo_1050_5e5b;
+    int      DAT_1050_0ecc;
+    int      PTR_LOOP_1050_5df8;
+    id       _PTR_LOOP_1050_5bcc;
+    HANDLE16 s_thisLo_1050_5dcd;
+    HANDLE16 s_thisHi_1050_5dd4;
+    HANDLE16 s_procLo_1050_5ddb;
+    HANDLE16 s_procHi_1050_5de2;
+    id       _PTR_LOOP_1050_5f16;
+    int      s_New_failed_in_Op__Op_1050_0020;
+    id       _PTR_LOOP_1050_5a68;
+    int      s_vrpal_bmp_1050_183a;
+    int      s_Rebel_1050_4ffc;
+    u16      PTR_LOOP_1050_5ef8;
+    id       DAT_1050_0004;
+    unsigned int s_dibtext_bmp_1050_1844;
 };
 
 typedef struct Globals Globals;

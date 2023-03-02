@@ -88,9 +88,9 @@ void  msg_box_op_1038_c07a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u
     if(param_4 == 0x177)
     {
         pass1_1008_e05e(*(param_1 + 0x8e), 0x2, CONCAT22(param_2, param_1 + 0x19eU), CONCAT22(param_2, param_1 + 0x9e), param_5, in_AF);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x200, local_40c, param_5);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x200, local_40c, param_5);
         sys_1000_3f9c(local_70c, param_5, local_40c, param_5, param_1 + 0x19eU, &stack0xfffe, param_2, 0x1000, param_5, in_AF);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_50c, param_5);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_50c, param_5);
         hwnd = (HWND16)0x1538;
         MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10), local_50c, param_5);
     }
@@ -111,8 +111,8 @@ void  msg_box_op_1038_c07a(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u
         iVar1    = pass1_1008_e10c(*(param_1 + 0x8e), CONCAT22(param_2, param_1 + 0x19e), CONCAT22(param_2, param_1 + 0x9e), param_2, param_5);
         if(iVar1 == 0x0)
         {
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_40c, param_5);
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_50c, param_5);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_40c, param_5);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_50c, param_5);
             MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10), local_50c, param_5);
             return;
         }
@@ -232,7 +232,7 @@ void  win_dlg_op_1038_c58e(u32 param_1, WORD *param_2)
     wsprintf16(0x1538, local_80e, param_2);
     SetWindowText16((HWND16)0x1538, (SEGPTR)local_80e);
     pass1_1008_e038(*(iVar1 + 0x8e), (param_1 & 0xffff0000 | (iVar1 + 0x92)), (param_1 & 0xffff0000 | (iVar1 + 0x96)));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x400, local_80e, (short)param_2);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x400, local_80e, (short)param_2);
     wsprintf16(0x1010, local_40c, param_2);
     SetDlgItemText16((HWND16)0x1538, (u16)local_40c, (SEGPTR)param_2);
     return;
@@ -251,7 +251,7 @@ void  message_box_op_1038_c672(i16 param_1, u16 param_2, u16 param_3, u32 param_
     u_var2 = (_PTR_LOOP_1050_14cc >> 0x10);
     if(param_4 == 0x17d)
     {
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, u_var2, 0x3ff, local_404, param_5);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, u_var2, 0x3ff, local_404, param_5);
         uVar1 = (param_1 + 0x92);
         hwnd  = (HWND16)0x1538;
         MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10), uVar1, (uVar1 >> 0x10));
@@ -263,7 +263,7 @@ void  message_box_op_1038_c672(i16 param_1, u16 param_2, u16 param_3, u32 param_
             post_win_msg_1040_7b3c(CONCAT22(param_2, param_1), param_3, param_4, param_4, &PTR_LOOP_1050_1040);
             return;
         }
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, u_var2, 0x3ff, local_404, param_5);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, u_var2, 0x3ff, local_404, param_5);
         uVar1 = (param_1 + 0x92);
         MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x10), uVar1, (uVar1 >> 0x10));
         hwnd = 0x1008;
@@ -835,8 +835,8 @@ u16  pass1_1038_8966(u32 param_1, u16 param_2, u16 param_3, i16 param_4, HWND16 
 LAB_1038_89af:
     if(bVar2)
     {
-        SetDlgItemi1616(param_5, 0x0, (iVar3 + 0x9a), s_dibtext_bmp_1050_1844 + 0x9);
-        SetDlgItemi1616((HWND16)0x1538, 0x0, (iVar3 + 0x98), s_dibtext_bmp_1050_1844 + 0xb);
+        SetDlgItemInt16(param_5, 0x0, (iVar3 + 0x9a), s_dibtext_bmp_1050_1844 + 0x9);
+        SetDlgItemInt16((HWND16)0x1538, 0x0, (iVar3 + 0x98), s_dibtext_bmp_1050_1844 + 0xb);
     }
     return 0x0;
 }
@@ -881,12 +881,12 @@ void  msg_box_ui_op_1038_8a3a(u32 param_1, char *param_2, u8 *param_3, u16 param
     mem_op_1000_179c(0x1000, param_3, 0x1000);
     pcStack264 = param_2;
     puStack262 = param_3;
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(puStack262, pcStack264), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(puStack262, pcStack264), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x101, local_20a, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x101, local_20a, param_4);
     MessageBox16(0x1010, 0x0, local_20a, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(puStack262, pcStack264), 0x1000);
     return;
@@ -905,7 +905,7 @@ void  unk_win_ui_op_1038_8afe(Struct50 *param_1, HWND16 param_2, BOOL16 param_3)
 
     uVar4    = (Struct50 *)(param_1 >> 0x10);
     iVar4    = (Struct50 *)param_1;
-    dlg_item = GetDlgItemi1616(param_2, 0x0, &local_4, param_3);
+    dlg_item = GetDlgItemInt16(param_2, 0x0, &local_4, param_3);
     pass1_1030_6c1a(iVar4->field_0x94, dlg_item);
     uVar1 = iVar4->field_0x94;
     pass1_1038_387e(*(uVar1 + 0x2e), dlg_item, iVar4->field_9c, iVar4->field_0x94, in_DX);
@@ -939,12 +939,12 @@ void  send_dlg_item_msg_1038_8b58(u32 param_1, u16 param_2)
     uVar1          = (iVar5 + 0x94);
     (iVar5 + 0x9c) = (uVar1 + 0x32);
     (iVar5 + 0x9a) = (iVar5 + 0x9c);
-    SetDlgItemi1616((HWND16)0x1538, 0x0, (iVar5 + 0x9c), s_dibtext_bmp_1050_1844 + 0x9);
+    SetDlgItemInt16((HWND16)0x1538, 0x0, (iVar5 + 0x9c), s_dibtext_bmp_1050_1844 + 0x9);
     uVar1 = (iVar5 + 0x94);
     u_var2 = *(uVar1 + 0x2e);
     pass1_1038_3aa6(u_var2, u_var2, uVar4);
     (iVar5 + 0x98) = u_var2;
-    SetDlgItemi1616((HWND16)0x1538, 0x0, u_var2, s_dibtext_bmp_1050_1844 + 0xb);
+    SetDlgItemInt16((HWND16)0x1538, 0x0, u_var2, s_dibtext_bmp_1050_1844 + 0xb);
     return;
 }
 
@@ -976,21 +976,21 @@ void  msg_box_op_1038_8dda(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_104[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_206, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), 0x1000);
@@ -1031,7 +1031,7 @@ LRESULT  send_dlg_item_msg_1038_8f74(u32 param_1, HWND16 param_2, WORD *param_3)
     }
     else
     {
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, &local_404, (short)param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, &local_404, (short)param_3);
         SendDlgItemMessage16(0x1010, (u16)&local_404, param_3, 0x0, 0x185b0401);
         GetDlgItem16((HWND16)0x1538, 0x1);
         enable = 0x0;
@@ -1055,9 +1055,9 @@ void  win_dlg_op_1038_9294(Struct1 *param_1, u16 param_2)
 
     unk_win_ui_op_1040_b230(param_1, &PTR_LOOP_1050_1040, unaff_SS);
     uVar3            = (param_1 >> 0x10);
-    UVar1            = GetDlgItemi1616((HWND16)&PTR_LOOP_1050_1040, 0x1, &local_4, (BOOL16)unaff_SS);
+    UVar1            = GetDlgItemInt16((HWND16)&PTR_LOOP_1050_1040, 0x1, &local_4, (BOOL16)unaff_SS);
     (param_1 + 0x94) = UVar1;
-    u_var2            = GetDlgItemi1616((HWND16)0x1538, 0x1, &local_6, (BOOL16)unaff_SS);
+    u_var2            = GetDlgItemInt16((HWND16)0x1538, 0x1, &local_6, (BOOL16)unaff_SS);
     (param_1 + 0x96) = u_var2;
     win_ui_dlg_op_1038_98b4((Struct51 *)(param_1 & 0xffff | uVar3 << 0x10), 0x1538, unaff_SS);
     win_1008_5c7c(_PTR_LOOP_1050_02a0, 0x950001, unaff_SS, u_var2, in_DX);
@@ -1079,7 +1079,7 @@ BOOL16  send_dlg_item_i16_1038_94da(i16 param_1, u16 param_2, u16 param_3, u16 p
 
     iStack4 = 0x1;
     iStack8 = pass1_1038_993a(param_1, param_2, param_3);
-    if((-0x1 < iStack8) && (u_stack6 = GetDlgItemi1616(param_6, 0x1, &local_c, param_7), local_c != 0x0))
+    if((-0x1 < iStack8) && (u_stack6 = GetDlgItemInt16(param_6, 0x1, &local_c, param_7), local_c != 0x0))
     {
         if(param_5 == 0x0)
         {
@@ -1101,9 +1101,9 @@ BOOL16  send_dlg_item_i16_1038_94da(i16 param_1, u16 param_2, u16 param_3, u16 p
         SetFocus16((HWND16)0x1538);
         if((uStack10 != 0x0) && (lVar3 = unk_win_ui_op_1038_9820((Struct51 *)CONCAT22(param_2, param_1), 0x1, iStack4, 0x1538, param_7), lVar3 != 0x0))
         {
-            SetDlgItemi1616((HWND16)0x1538, 0x1, u_stack6, *(BOOL16 *)(iVar2 + 0x5a72));
-            SetDlgItemi1616((HWND16)0x1538, 0x1, (param_1 + 0x94), 0xfa9);
-            SetDlgItemi1616((HWND16)0x1538, 0x1, (param_1 + 0x96), 0xfa8);
+            SetDlgItemInt16((HWND16)0x1538, 0x1, u_stack6, *(BOOL16 *)(iVar2 + 0x5a72));
+            SetDlgItemInt16((HWND16)0x1538, 0x1, (param_1 + 0x94), 0xfa9);
+            SetDlgItemInt16((HWND16)0x1538, 0x1, (param_1 + 0x96), 0xfa8);
         }
     }
     return 0x1;
@@ -1430,21 +1430,21 @@ void  msg_box_op_1038_81be(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_104[0x102];
 
     mem_op_1000_179c(0x1000, param_3, 0x1000);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_206, param_4);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_206, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(0x1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), 0x1000);
@@ -1475,7 +1475,7 @@ void  set_win_text_1038_8358(u32 param_1, HWND16 param_2, u16 param_3)
     if(uStack8 == 0x0)
     {
         hwnd = 0x1010;
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_30a, param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_30a, param_3);
         lp_string = local_30a;
     }
     else
@@ -1484,7 +1484,7 @@ void  set_win_text_1038_8358(u32 param_1, HWND16 param_2, u16 param_3)
         if(u_var2 == 0x0)
         {
             hwnd = 0x1010;
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_208, param_3);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_208, param_3);
         }
         else
         {
@@ -1538,14 +1538,14 @@ LRESULT  send_dlg_item_msg_1038_844a(u32 param_1, HWND16 param_2, u16 param_3)
     u_stack6 = pass1_1008_b820(*(param_1 + 0x94), LVar4, (LVar4 >> 0x10));
     if(u_stack6 == 0x0)
     {
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_108, param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_108, param_3);
         SendDlgItemMessage16(0x1010, (u16)local_108, param_3, 0x0, 0x18540401);
         SendDlgItemMessage16((HWND16)0x1538, 0x0, 0x0, 0x1, 0x1854000b);
         SendDlgItemMessage16((HWND16)0x1538, 0x0, 0x0, 0x1, 0x1855000b);
         LVar4 = SendDlgItemMessage16((HWND16)0x1538, 0x0, 0x0, 0x1, 0x1856000b);
         u_var2 = (LVar4 >> 0x10);
         GetDlgItem16((HWND16)0x1538, 0x1857);
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_108, param_3);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_108, param_3);
         BVar1 = SetWindowText16(0x1010, (SEGPTR)local_108);
         return CONCAT22(u_var2, BVar1);
     }
@@ -2183,7 +2183,7 @@ void  win_ui_menu_op_1020_7ad2(u32 param_1, HWND16 param_2, RECT16 *param_3, HWN
     HMENU16 HVar1;
     i16     iVar2;
     u16     uVar3;
-    POi1616 local_6;
+    POINT16 local_6;
 
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;

@@ -552,7 +552,7 @@ void  pass1_1010_e58a(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 pa
     }
     if(uVar5 == 0x0)
     {
-        load_string_1010_84e0(0x1008, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
+        load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
     }
     else
     {
@@ -629,7 +629,7 @@ void  pass1_1010_e682(u32 param_1, u32 param_2, u16 param_3, u8 param_4)
                         uVar8 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uStack8, 0x1e);
                         if(uVar8 == 0x0)
                         {
-                            load_string_1010_84e0(0x1008, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar5 + 0x13c), (short)in_buf_len_5);
+                            load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar5 + 0x13c), (short)in_buf_len_5);
                             return;
                         }
                         pass1_1030_6ddc(param_2);
@@ -858,7 +858,7 @@ lobals starting with '_' overlap smaller symbols at the same address
         *pu_stack6 = '\0';
         return;
     }
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, pu_stack6, (short)(pu_stack6 >> 0x10));
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, pu_stack6, (short)(pu_stack6 >> 0x10));
     return;
 }
 
@@ -926,7 +926,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     }
     in_buffer_4  = pcStack6;
     in_buf_len_5 = (pcStack6 >> 0x10);
-    uVar7        = globals->_PTR_LOOP_1050_14cc;
+    uVar7        = globals->PCHAR_1050_14cc;
     uVar6        = (_PTR_LOOP_1050_14cc >> 0x10);
     switch(iVar1)
     {

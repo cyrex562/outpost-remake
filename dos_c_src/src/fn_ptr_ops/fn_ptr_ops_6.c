@@ -219,7 +219,7 @@ void pass1_1010_7efc(u32 *param_1, u16 param_2)
         }
     }
     fn_ptr_1000_17ce((Struct18 *)*param_1, 0x1000);
-    globals->_PTR_LOOP_1050_14cc = 0x0;
+    globals->PCHAR_1050_14cc = 0x0;
     return;
 }
 
@@ -1806,7 +1806,7 @@ void pass1_1008_0036(u16 *param_1, u16 param_2)
         param_2 = 0x1000;
         fn_ptr_1000_17ce(paVar3, 0x1000);
     }
-    paVar3 = globals->_PTR_LOOP_1050_14cc;
+    paVar3 = globals->PCHAR_1050_14cc;
     if(_PTR_LOOP_1050_14cc != (Struct18 *)0x0)
     {
         pass1_1010_7efc(_PTR_LOOP_1050_14cc, 0x1010);

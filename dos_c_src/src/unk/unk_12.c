@@ -478,7 +478,7 @@ void  pass1_1010_7e40(u32 *param_1, u8 *param_2, i16 param_3, u16 param_4)
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | &pu_var2->field_0x454), 0x0, 0x228);
     *&pu_var2->field_0x682 = 0x0;
     *&pu_var2->field_0xa82 = 0x0;
-    globals->_PTR_LOOP_1050_14cc   = param_1;
+    globals->PCHAR_1050_14cc = param_1;
     puVar3                = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_4, param_2, param_3);
     pu_var2->field_0xe88   = puVar3;
     pu_var2->field_0xe8a   = (puVar3 >> 0x10);

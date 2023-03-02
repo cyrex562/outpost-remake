@@ -75,7 +75,7 @@ void window_op_1020_5764(Globals *globals, u32 param_1, i16 param_2, u16 param_3
 
 
 
-void  pt_in_rect_1020_5856(u32 param_1, POi1616 *param_2, u16 param_3);
+void  pt_in_rect_1020_5856(u32 param_1, POINT16 *param_2, u16 param_3);
 
 
 
@@ -98,7 +98,7 @@ void  win_ui_op_1020_5de8(u32 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  win_ui_op_1020_5e76(u32 param_1, u16 param_2, u16 param_3);
+void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3);
 
 
 

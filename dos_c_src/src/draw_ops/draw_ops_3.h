@@ -111,7 +111,7 @@ void draw_op_1010_47d0(u32 param_1, u16 param_2, u16 param_3, u16 in_style_3, u1
 
 void pt_in_rect_1010_4e08(u32 param_1, u16 param_2, u16 param_3, RECT16 *param_4);
 
-i16 pt_in_rect_1010_40f8(u32 param_1, POi1616 *param_2, RECT16 *param_3);
+i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3);
 
 u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16 param_4, u16 param_5, u32 param_6, u16 param_7, u16 param_8, u16 param_9, u16 param_10);
 

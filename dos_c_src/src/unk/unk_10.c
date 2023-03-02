@@ -2000,7 +2000,7 @@ void  pass1_1018_dd7c(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
             }
             uVar14 = 0x6;
         }
-        pass1_1010_81f6(0x1010, param_6, globals->_PTR_LOOP_1050_14cc, 0x0, uVar14);
+        pass1_1010_81f6(0x1010, param_6, globals->PCHAR_1050_14cc, 0x0, uVar14);
         uVar5 = puVar8 | param_4;
         if((uVar5 != 0x0) && (puVar10 = puVar8, mem_op_1000_179c(0x46, puVar8, 0x1000), (puVar10 | uVar5) != 0x0))
         {
@@ -2037,7 +2037,7 @@ void  pass1_1018_dd7c(u16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 pa
             (**ppcVar3)(0x1030, uVar4, uVar9);
             puVar8 = extraout_DX;
             uVar7  = uVar6;
-            pass1_1010_81f6(0x1010, param_6, globals->_PTR_LOOP_1050_14cc, lStack32, uVar6);
+            pass1_1010_81f6(0x1010, param_6, globals->PCHAR_1050_14cc, lStack32, uVar6);
             puVar10 = puVar8;
             uVar14  = uVar7;
             mem_op_1000_179c(0x46, puVar8, 0x1000);

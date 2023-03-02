@@ -136,7 +136,15 @@ void enable_window_1020_1bd4(Globals *globals, i16 param_1, u16 param_2, u16 par
         else
         {
             uVar5 = SUB42(&globals->PTR_LOOP_1050_1040, 0x0);
-            iVar3 = string_1040_8520(CONCAT22(in_DX, in_AX), (param_1 + 0x6), 0x30, 0x2, 0x57b, 0x62a, puVar4, unaff_SS);
+            iVar3 = string_1040_8520(NULL,
+                                     CONCAT22(in_DX, in_AX),
+                                     (param_1 + 0x6),
+                                     0x30,
+                                     0x2,
+                                     0x57b,
+                                     0x62a,
+                                     puVar4,
+                                     unaff_SS);
         }
         puStack12 = CONCAT22(puVar4, iVar3);
         ppcVar1   = (*puStack12 + 0x74);
@@ -496,7 +504,7 @@ void win_ui_cursor_op_1020_1294(Globals *globals, u32 param_1, i16 param_2, i16 
         pass1_1008_3e94(puStack14, CONCAT22(param_5, &local_12), CONCAT22(param_5, &local_10));
         local_6 = local_6 - local_10;
         iStack4 = iStack4 - local_12;
-        iVar4   = pt_in_rect_1010_40f8(*(iVar4 + 0xf2), (POi1616 *)CONCAT22(param_5, &local_6), 0x1010);
+        iVar4   = pt_in_rect_1010_40f8(*(iVar4 + 0xf2), (POINT16 *)CONCAT22(param_5, &local_6), 0x1010);
         if(iVar4 != -0x1)
         {
             uVar6   = 0x0;
@@ -679,7 +687,7 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
     u16         uStack8;
     u16        *pu_stack6;
 
-    dialog_ui_fn_1040_78e2(param_1, &PTR_LOOP_1050_1040);
+    dialog_ui_fn_1040_78e2(NULL, param_1, &PTR_LOOP_1050_1040);
     uVar4    = 0x89;
     pu_stack6 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x9, unaff_SS, in_DX, unaff_DI);
     puVar7   = (pu_stack6 >> 0x10);
@@ -756,7 +764,7 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
         HStack102      = GetDlgItem16(0x1010, 0x175);
         if(uStack8 != 0x0)
         {
-            load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
+            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
             SetWindowText16(0x1010, (SEGPTR)local_178);
         }
         pvStack60 = MakeProcInstance16(0x1538, globals->PTR_LOOP_1050_038c);
@@ -796,14 +804,14 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
     }
     else
     {
-        load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
+        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_178, (short)unaff_SS);
         GetDlgItem16(0x1010, 0x175);
         SetWindowText16((HWND16)0x1538, (SEGPTR)local_178);
         in_resc_id_3 = local_178;
         in_buffer_4  = unaff_SS;
         unaff_SS     = 0x3fe;
     }
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), in_resc_id_3, in_buffer_4, (short)unaff_SS);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), in_resc_id_3, in_buffer_4, (short)unaff_SS);
     SetWindowText16(0x1010, (SEGPTR)local_178);
 LAB_1020_1b24:
     MoveWindow16((HWND16)0x1538, 0x0, (u16)uStack74, (u16)(uStack74 >> 0x10), u_stack68, (BOOL16)u_stack68);
@@ -851,7 +859,7 @@ void win_ui_op_1018_5e9a(Struct1 *param_1, u16 param_2)
     i16    iStack8;
     u16 *pIStack6;
 
-    dialog_ui_fn_1040_78e2(param_1, &PTR_LOOP_1050_1040);
+    dialog_ui_fn_1040_78e2(NULL, param_1, &PTR_LOOP_1050_1040);
     puVar11         = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x39, param_2, in_DX, unaff_DI);
     puVar5          = (puVar11 >> 0x10);
     uVar7           = puVar11;
@@ -1080,7 +1088,7 @@ void pt_in_rect_1018_1bda(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
     i16     iVar5;
     u16     uVar6;
     i16     iStack26;
-    POi1616 PStack24;
+    POINT16 PStack24;
     i16     local_14;
     i16     local_12;
     u16     uStack16;
@@ -1093,7 +1101,7 @@ void pt_in_rect_1018_1bda(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
     uStack14 = 0x0;
     iVar3    = param_1;
     pass1_1008_3e94((param_1 & 0xffff0000 | (iVar3 + 0x3a)), CONCAT22(param_4, &local_14), CONCAT22(param_4, &local_12));
-    PStack24 = (POi1616)CONCAT22(param_2, param_3);
+    PStack24 = (POINT16)CONCAT22(param_2, param_3);
     uStack16 = 0x0;
     iStack26 = 0x0;
     while(true)

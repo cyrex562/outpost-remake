@@ -948,7 +948,7 @@ void load_string_1008_b65a(u32 param_1, LPSTR in_string_2, u32 param_3, u16 para
     u16 unaff_SS;
 
     pass1_1008_b9ce(param_1, CONCAT22(param_4, param_3), unaff_SS);
-    load_string_1010_84e0(0x1010, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, in_string_2, (short)param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, in_string_2, (short)param_3);
     return;
 }
 

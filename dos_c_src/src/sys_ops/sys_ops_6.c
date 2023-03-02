@@ -46,7 +46,7 @@ u32 pass1_1018_dd1e(u16 param_1, u16 param_2, u8 *param_3, u16 param_4, u16 para
     u16 uVar1;
     u32 u_stack6;
 
-    pass1_1010_81f6(0x1010, param_1, globals->_PTR_LOOP_1050_14cc, 0x0, param_7);
+    pass1_1010_81f6(0x1010, param_1, globals->PCHAR_1050_14cc, 0x0, param_7);
     u_stack6 = CONCAT22(param_3, param_2);
     mem_op_1000_179c(0x46, param_3, 0x1000);
     uVar1 = param_3 | param_2;
@@ -693,7 +693,7 @@ void switch_1018_3ee6(u32 param_1, long param_2, i16 param_3, u16 param_4, u8 *p
                     goto LAB_1018_425e;
                 iVar1  = (iVar1 + 0x2);
                 uVar5  = iVar1 - 0x1;
-                iVar11 = globals->_PTR_LOOP_1050_14cc;
+                iVar11 = globals->PCHAR_1050_14cc;
                 IVar12 = (u16)(_PTR_LOOP_1050_14cc >> 0x10);
                 if(uVar5 == 0x0)
                 {

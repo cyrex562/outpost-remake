@@ -246,7 +246,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
         }
     }
 LAB_1010_8ea5:
-    load_string_1010_84e0(param_4, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, spec, (short)valist);
+    load_string_1010_84e0(param_4, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, spec, (short)valist);
 switchD_1010_8e11_caseD_4:
     return CONCAT22(uVar9, in_DX);
 }
@@ -875,7 +875,7 @@ u32  string_1010_5286(u16 param_1, u16 param_2, u32 param_3, char *param_4, u16 
     }
     in_buffer_4 = param_4;
     mem_op_1000_179c(0x80, in_buf_len_5, 0x1000);
-    load_string_1010_84e0(0x1000, globals->_PTR_LOOP_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, in_buffer_4, (short)in_buf_len_5);
+    load_string_1010_84e0(0x1000, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x80, in_buffer_4, (short)in_buf_len_5);
     pass1_1000_3cea(CONCAT22(in_buf_len_5, in_buffer_4), 0x105013ac);
     pcVar1 = pass1_1038_4d28(CONCAT22(param_5, param_4));
     pass1_1000_3cea(CONCAT22(in_buf_len_5, in_buffer_4), pcVar1);
