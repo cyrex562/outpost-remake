@@ -53,7 +53,6 @@ void struct_1010_383a(u16 *param_1)
     iVar1->field_0x14 = 0x0;
     *param_1          = 0x3b5e;
     iVar1->field_0x2  = 0x1010;
-    return;
 }
 
 void struct_1010_3b7a(Struct648 *param_1, u16 param_2, u16 param_3)
