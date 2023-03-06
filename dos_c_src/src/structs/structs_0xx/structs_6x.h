@@ -1092,11 +1092,11 @@ struct Struct65
     u8 field_0x11;
     u8 field_0x12;
     u8 field_0x13;
-    u8 field_0x14;
+    long field_0x14;
     u8 field_0x15;
     u8 field_0x16;
     u8 field_0x17;
-    u8 field_0x18;
+    HWND16 field_0x18;
     u8 field_0x19;
     u8 field_0x1a;
     u8 field_0x1b;
@@ -1106,6 +1106,9 @@ struct Struct65
     u16     field_0x20;
     u16     field_0x22;
     u16     field_0x24;
+    int       field_0x36;
+    int       field_0x26;
+    int       field_0x40;
 };
 struct Struct66
 {

@@ -672,7 +672,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
     i16          local_12;
     u16         *local_10;
     u16         *puStack14;
-    code        *pcStack12;
+    void *pcStack12;
     u16         *puStack10;
     u32  *local_6;
 

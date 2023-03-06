@@ -1930,7 +1930,7 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
     u16         uVar6;
     u16         uVar7;
     void **ppcVar8;
-    code       *pcVar9;
+    void *pcVar9;
     u16      *puVar10;
     u16         uVar11;
     HPALETTE16  b_force_background;

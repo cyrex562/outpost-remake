@@ -663,7 +663,7 @@ u16  _SHI_INVOKEERRORHANDLER1(void)
     BOOL16 BVar2;
     u16    u_var2;
     u16    unaff_CS;
-    code  *pcStack6;
+    void *pcStack6;
     u168  *puStack4;
     u16    uVar3;
 
@@ -791,7 +791,7 @@ i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONT
     u16       *puVar1;
     u16        u_var2;
     char      *pcVar3;
-    code      *pcVar4;
+    void *pcVar4;
     u16        uVar5;
     LPCSTR     str;
     u16       *puVar6;
@@ -827,6 +827,7 @@ i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONT
             globals->PTR_LOOP_1050_5f52     = (uVar11 >> 0x10);
             globals->PTR_LOOP_1050_5f84     = uVar11;
             globals->PTR_LOOP_1050_5f80     = CONCAT11(DVar10, (DVar10 >> 0x8));
+            // 0x3r0
             pcVar4                          = (FnPtr1)swi(0x21);
             uVar12                          = uVar11;
             uVar11                          = (*pcVar4)(uVar16);

@@ -1,8 +1,10 @@
 #include "win_ops_1.h"
+
 #include "globals.h"
-#include "op_win_def.h"
 #include "op_int.h"
+#include "op_win_def.h"
 #include "op_winapi.h"
+#include "structs/structs_0xx/structs_6x.h"
 
 void  send_msg_1040_c85a(u32 param_1, HWND16 param_2)
 
@@ -671,7 +673,15 @@ HANDLE16  create_window_1040_8bea(u32 param_1, u16 param_2, i16 param_3, u16 par
 }
 
 
-void  mixed_struct_op_1040_8fb8(u16 *param_1, u16 param_2, char *param_3, u16 param_4, u16 param_5, u16 param_6, u16 param_7, u16 param_8, u16 param_9, LPVOID param_10, u16 param_11)
+void mixed_struct_op_1040_8fb8(Struct65 *param_1,
+                               u16       param_2,
+                               char     *param_3,
+                               u16       param_4,
+                               u32       param_5,
+                               u32       param_6,
+                               u16       param_7,
+                               u16       param_8,
+                               u16       param_9)
 
 {
     u16         uVar1;

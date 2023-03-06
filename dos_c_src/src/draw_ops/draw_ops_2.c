@@ -1842,7 +1842,7 @@ void  pass1_1020_3d08(u16 param_1,
     bool        bVar30;
     bool        bVar31;
     u16        *puVar32;
-    code       *pcStack4;
+    void *pcStack4;
     u8        bVar11;
 
     uVar9    = CONCAT22(param_19, param_18);

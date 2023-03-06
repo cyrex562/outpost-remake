@@ -5,114 +5,114 @@
 | API Call | Category | Description |
 | -------- | -------- | ----------- |
 | GetSaveFileName16 | | |
-| InitTask
-| Swi
-| InitApp
-| FatalAppExit
-| LoadString
-| MakeProcInstance16
-| FindResource16
-| _lcreat16
-| _llseek16
-| _lopen16
-| DOS3Call
-| GetPrivateProfileString
-| WinExec16
-| Win16_Hread
-| _hwrite16
-| SetBkColor16
-| SetMapMode16
-| SetTextColor16
-| LineTo16
-| MoveTo16
-| Ellipse16
-| Rectangle16
-| TextOut16
-| Polygon16
-| Selectobject16
-| CreateDC16
-| CreatePen16
-| CreateSolidBrush16
-| GetCurrentPosition16
-| GetStockObject16
-| GetTextExtent16
-| CreatePalette16
-| StretchDIBits16
-| SetDIBitsToDevice16
-| MoveToEx16
-| PostQuitMessage16
-| MessageBox16
-| GetCursorPos16
-| SetFocus16
-| GetProp16
-| SetProp16
-| ClientToScreen16
-| ScreenToClient16
-| GetWindowRect16
-| GetWindowText16
-| SetWindowText16
-| BeginPaint16
-| CreateWindow16
-| ShowWindow16
-| BringWindowToTop16
-| EnumChildWindows16
-| MoveWindow16
-| RegisterClass16
-| GetDC16
-| GetWindow16
-| SetCursor16
-| ShowCursor16
-| PtInRect16
-| FillRect16
-| FrameRect16
-| DrawIcon16
-| DrawText16
-| CreateDialog16
-| SetDlgItemText16
-| GetDlgItemText16
-| GetDlgItem16
-| SetDlgItemInt16
-| GetDlgItemInt16
-| CheckRadioButton16
-| CheckDlgButton16
-| IsDlgButtonChecked16
-| SendDlgItemMessage16
-| MapDialogRect16
-| DefWindowProc16
-| GetMessage16
-| PostMessage16
-| SendMessage16
-| DispatchMessage16
-| CallWindowProc16
-| UpdateWindow16
-| InvalidateRect16
-| ValidateRect16
-| GetWindowWord16
-| SetWindowWord16
-| GetWindowLong16
-| SetWindowLong16
-| LoadMenu16
-| CheckMenuItem16
-| EnableMenuItem16
-| LoadCursor16
-| LoadIcon16
-| LoadAccelerators16
-| TranslateAccelerators16
-| GetSysColors16
-| SetSysColors16
-| GetNextDlgTabItem16
-| SetWindowPos16
-| GetMenuState16
-| GetDlgCtrlId16
-| SelectPalette16
-| RealizePalette16
-| GetWindowPlacement16
-| GetClassInfo16
-| InsertMenu16
-| ModifyMenu16
-| CreateWindowEx16
-| MciSendCommand16
-| GetOpenFileName16
+| InitTask | | |
+| Swi | | |
+| InitApp | | |
+| FatalAppExit | | |
+| LoadString | | |
+| MakeProcInstance16 | | |
+| FindResource16 | | |
+| _lcreat16 | | |
+| _llseek16 | | |
+| _lopen16 | | |
+| DOS3Call | | |
+| GetPrivateProfileString | | |
+| WinExec16 | | |
+| Win16_Hread | | |
+| _hwrite16 | | |
+| SetBkColor16 | | |
+| SetMapMode16 | | |
+| SetTextColor16 | | |
+| LineTo16 | | |
+| MoveTo16 | | |
+| Ellipse16 | | |
+| Rectangle16 | | |
+| TextOut16 | | |
+| Polygon16 | | |
+| Selectobject16 | | |
+| CreateDC16 | | |
+| CreatePen16 | | |
+| CreateSolidBrush16 | | |
+| GetCurrentPosition16 | | |
+| GetStockObject16 | | |
+| GetTextExtent16 | | |
+| CreatePalette16 | | |
+| StretchDIBits16 | | |
+| SetDIBitsToDevice16 | | |
+| MoveToEx16 | | |
+| PostQuitMessage16 | | |
+| MessageBox16 | | |
+| GetCursorPos16 | | |
+| SetFocus16 | | |
+| GetProp16 | | |
+| SetProp16 | | |
+| ClientToScreen16 | | |
+| ScreenToClient16 | | |
+| GetWindowRect16 | | |
+| GetWindowText16 | | |
+| SetWindowText16 | | |
+| BeginPaint16 | | |
+| CreateWindow16 | | |
+| ShowWindow16 | | |
+| BringWindowToTop16 | | |
+| EnumChildWindows16 | | |
+| MoveWindow16 | | |
+| RegisterClass16 | | |
+| GetDC16 | | |
+| GetWindow16 | | |
+| SetCursor16 | | |
+| ShowCursor16 | | |
+| PtInRect16 | | |
+| FillRect16 | | |
+| FrameRect16 | | |
+| DrawIcon16 | | |
+| DrawText16 | | |
+| CreateDialog16 | | |
+| SetDlgItemText16 | | |
+| GetDlgItemText16 | | |
+| GetDlgItem16 | | |
+| SetDlgItemInt16 | | |
+| GetDlgItemInt16 | | |
+| CheckRadioButton16 | | |
+| CheckDlgButton16 | | |
+| IsDlgButtonChecked16 | | |
+| SendDlgItemMessage16 | | |
+| MapDialogRect16 | | |
+| DefWindowProc16 | | |
+| GetMessage16 | | |
+| PostMessage16 | | |
+| SendMessage16 | | |
+| DispatchMessage16 | | |
+| CallWindowProc16 | | |
+| UpdateWindow16 | | |
+| InvalidateRect16 | | |
+| ValidateRect16 | | |
+| GetWindowWord16 | | |
+| SetWindowWord16 | | |
+| GetWindowLong16 | | |
+| SetWindowLong16 | | |
+| LoadMenu16 | | |
+| CheckMenuItem16 | | |
+| EnableMenuItem16 | | |
+| LoadCursor16 | | |
+| LoadIcon16 | | |
+| LoadAccelerators16 | | |
+| TranslateAccelerators16 | | |
+| GetSysColors16 | | |
+| SetSysColors16 | | |
+| GetNextDlgTabItem16 | | |
+| SetWindowPos16 | | |
+| GetMenuState16 | | |
+| GetDlgCtrlId16 | | |
+| SelectPalette16 | | |
+| RealizePalette16 | | |
+| GetWindowPlacement16 | | |
+| GetClassInfo16 | | |
+| InsertMenu16 | | |
+| ModifyMenu16 | | |
+| CreateWindowEx16 | | |
+| MciSendCommand16 | | |
+| GetOpenFileName16 | | |
 
 ## Address Tables
 
@@ -123,7 +123,18 @@
 - 1008:3aa8 -> pass1_1008_3a14
 - 1008:3ab0 -> pass1_1008_3a40
 - 1008:3b46 -> pass1_1008_3afe
-- 1008:3cfc -> pass1_1008_3cd6
+- 1008:3cfc -> pass1_1008_3cd6; start of table
+
+         1008:3cfc  d6  3c  08  10       addr    pass1_1008_3cd6
+         1008:3d00  52  92  40  10       addr    pass1_1040_9252
+         1008:3d04  dc  92  40  10       addr    create_window_1040_92dc
+         1008:3d08  22  94  40  10       addr    pass1_1040_9422
+         1008:3d0c  34  3c  08  10       addr    win_ui_op_1008_3c34
+         1008:3d10  fc  94  40  10       addr    draw_text_1040_94fc
+         1008:3d14  d2  3c  08  10       addr    FUN_1008_3cd2
+         1008:3d18  e6  93  40  10       addr    pass1_1040_93e6
+         1008:3d1c  04  94  40  10       addr    send_msg_1040_9404
+
 - 1008:3e38 -> pass1_1008_3e38
 - 1008:4f1c -> pass1_1008_4ef6
 - 1008:5632 -> def_win_proc_1008_5632

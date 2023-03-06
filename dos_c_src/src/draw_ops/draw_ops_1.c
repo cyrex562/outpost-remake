@@ -909,7 +909,7 @@ void pass1_1040_8e82(Globals *globals, Struct18 *param_1)
 }
 
 
-void pass1_1040_9252(Struct161 *param_1, u16 param_2)
+void pass1_1040_9252(Struct65 *param_1, u16 param_2)
 
 {
     i16         *pi_var1;

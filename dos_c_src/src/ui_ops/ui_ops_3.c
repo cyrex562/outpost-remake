@@ -103,7 +103,16 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
         else
         {
             param_3 = 0x1008;
-            pass1_1008_3bd6(rect, param_2, 0x1, CONCAT22(local_24, uStack34), 0x104, 0x1020103, CONCAT22((uVar5 + 0x6), (unaff_DI + 0x5c64)), uVar1, unaff_SS);
+            window_op_1008_3bd6(NULL,
+                                rect,
+                                param_2,
+                                0x1,
+                                CONCAT22(local_24, uStack34),
+                                0x104,
+                                0x1020103,
+                                CONCAT22((uVar5 + 0x6), (unaff_DI + 0x5c64)),
+                                uVar1,
+                                unaff_SS);
         }
         paStack8 = rect;
         u_stack6  = uVar1;
@@ -683,7 +692,16 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
         }
         else
         {
-            pass1_1008_3bd6(rect, puVar3, 0x0, CONCAT22(local_22, uStack32), 0x101, 0xff0100, CONCAT22((iVar5 + 0x6), (puStack26 + 0x4)), uVar4, unaff_SS);
+            window_op_1008_3bd6(NULL,
+                                rect,
+                                puVar3,
+                                0x0,
+                                CONCAT22(local_22, uStack32),
+                                0x101,
+                                0xff0100,
+                                CONCAT22((iVar5 + 0x6), (puStack26 + 0x4)),
+                                uVar4,
+                                unaff_SS);
             uVar1                                     = (iVar5 + 0x8e);
             uVar8                                     = (uVar1 >> 0x10);
             iVar6                                     = uVar1;
@@ -996,7 +1014,16 @@ void  show_win_1038_cb5c(Struct1 *param_1)
         in_DX = uVar4 | (Struct160 *)puVar7;
         if(puVar7 != 0x0)
         {
-            pass1_1008_3bd6((Struct160 *)puVar7, uVar4, 0x0, CONCAT22(*puVar6, (puVar6 + 0x2)), 0x101, 0xff0100, CONCAT22((param_1 + 0x6), (puVar6 + 0x4)), in_DX, unaff_SS);
+            window_op_1008_3bd6(NULL,
+                                (Struct160 *)puVar7,
+                                uVar4,
+                                0x0,
+                                CONCAT22(*puVar6, (puVar6 + 0x2)),
+                                0x101,
+                                0xff0100,
+                                CONCAT22((param_1 + 0x6), (puVar6 + 0x4)),
+                                in_DX,
+                                unaff_SS);
         }
     }
     win_1008_5c7c(_PTR_LOOP_1050_02a0, 0x90001, unaff_SS, u_var2, in_DX);
@@ -1232,7 +1259,16 @@ void  win_ui_op_1038_d2a2(Struct1 *param_1)
         else
         {
             hwnd_00 = 0x1008;
-            pass1_1008_3bd6(rect, in_DX, 0x1, CONCAT22(local_16, uStack20), 0x104, 0x1020103, CONCAT22((param_1 + 0x6), (unaff_DI + 0x5c10)), puVar3, unaff_SS);
+            window_op_1008_3bd6(NULL,
+                                rect,
+                                in_DX,
+                                0x1,
+                                CONCAT22(local_16, uStack20),
+                                0x104,
+                                0x1020103,
+                                CONCAT22((param_1 + 0x6), (unaff_DI + 0x5c10)),
+                                puVar3,
+                                unaff_SS);
             in_DX = puVar3;
         }
         uStack8 = CONCAT22(in_DX, rect);
@@ -1495,7 +1531,16 @@ void window_op_1038_d8b2(Globals *globals, i16 param_1, HINSTANCE16 param_2, u16
         {
             u_var2 = (param_1 + 0x6);
             uVar3 = (param_1 + -0x1c);
-            pass1_1008_3bd6(rect, (param_1 + -0x26), 0x0, CONCAT22((param_1 + -0x24), (param_1 + -0x22)), 0x101, 0xff0100, CONCAT22((u_var2 + 0x6), (uVar3 + 0x4)), globals->PTR_LOOP_1050_5f2e, param_3);
+            window_op_1008_3bd6(NULL,
+                                rect,
+                                (param_1 + -0x26),
+                                0x0,
+                                CONCAT22((param_1 + -0x24), (param_1 + -0x22)),
+                                0x101,
+                                0xff0100,
+                                CONCAT22((u_var2 + 0x6), (uVar3 + 0x4)),
+                                globals->PTR_LOOP_1050_5f2e,
+                                param_3);
             u_var2                            = (param_1 + 0x6);
             u_var2                            = (u_var2 + 0x96);
             uVar9                            = (u_var2 >> 0x10);

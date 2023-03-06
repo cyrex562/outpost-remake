@@ -261,12 +261,10 @@ void enable_window_1040_8ea0(u16 param_1, u16 param_2, u16 param_3, u32 param_4,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void create_window_1040_92dc(Globals *globals, u32 param_1, char *arg_class_name);
+void create_window_1040_92dc(Globals *globals, Struct65 *param_1, u16 param_2);
 
 
-
-
-void mov_update_win_1040_93aa(Struct65 *param_1, u16 param_2, u16 param_3, HWND16 param_4);
+void mov_update_win_1040_93aa(Struct65 *param_1, u32 param_2, u16 param_4);
 
 
 i16 string_1040_8520(Globals  *globals,

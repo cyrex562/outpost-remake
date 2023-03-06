@@ -65,7 +65,7 @@ void mixed_draw_op_1040_8a06(Globals *globals, u32 param_1, HWND16 param_2, u16 
 
 void pass1_1040_8e82(Globals *globals, Struct18 *param_1);
 
-void pass1_1040_9252(Struct161 *param_1, u16 param_2);
+void pass1_1040_9252(Struct65 *param_1, u16 param_2);
 
 void unk_draw_op_1040_9458(Struct17 *param_1, u8 param_2, u16 param_3, HDC16 param_4);
 

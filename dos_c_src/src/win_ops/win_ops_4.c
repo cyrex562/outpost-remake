@@ -1,6 +1,7 @@
 
 #include "win_ops_4.h"
 
+#include "draw_ops/draw_ops_1.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -8,6 +9,11 @@
 #include "string_consts.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "structs/structs_0xx/structs_7x.h"
+#include "ui_ops/ui_ops_1.h"
+#include "utils.h"
+#include "win_ops_1.h"
+
+#include <minwindef.h>
 
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5)
 
@@ -33,22 +39,31 @@ void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 pa
     }
     ppcVar1 = (*pu_stack6 + 0x1c);
     (**ppcVar1)(0x1538, pu_stack6, (pu_stack6 >> 0x10), param_1, param_2, param_3, param_4, u_var2);
-    return;
 }
 
 
-void  pass1_1008_3bd6(Struct160 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u32 param_6, u32 param_7, u16 param_8, u16 param_9)
+void window_op_1008_3bd6(Globals  *globals,
+                     Struct65 *param_1,
+                     u16       param_2,
+                     u16       param_3,
+                     u32       param_4,
+                     u16       param_5,
+                     u32       param_6,
+                     u32       param_7,
+                     u16       param_8,
+                     u16       param_9)
 
 {
-    mixed_struct_op_1040_8fb8(CONCAT22(param_2, param_1), param_3, 0x0, param_5, param_6, (param_6 >> 0x10), param_7, (param_7 >> 0x10), param_8, &PTR_LOOP_1050_1040, param_9);
-    CONCAT22(param_2, param_1) = 0x3cfc;
+    mixed_struct_op_1040_8fb8(
+      param_1, param_3, 0x0, param_5, param_6, param_7, param_8, 0x1040, param_9);
+    // 1008:3cfc = start of address table of functions; see doc.md
+    param_1->field_0x0 = 0x3cfc;
     param_1->field_0x2         = 0x1008;
     param_1->field_0x36        = 0x0;
     param_1->field_0x26        = 0x0;
-    pass1_1040_9252(CONCAT22(param_2, param_1), &PTR_LOOP_1050_1040);
-    create_window_1040_92dc(CONCAT22(param_2, param_1), &PTR_LOOP_1050_1040);
-    mov_update_win_1040_93aa((Struct65 *)CONCAT22(param_2, param_1), (u16)param_4, (param_4 >> 0x10), &PTR_LOOP_1050_1040);
-    return;
+    pass1_1040_9252(param_1, 0x1040);
+    create_window_1040_92dc(globals, param_1, 0x1040);
+    mov_update_win_1040_93aa(param_1, param_4, 0x1040);
 }
 
 
@@ -56,7 +71,6 @@ void  post_msg_1008_3d20(u32 param_1, HWND16 param_2)
 
 {
     PostMessage16(param_2, 0x0, 0x0, CONCAT22(0x111, (param_1 + 0xcc)));
-    return;
 }
 
 

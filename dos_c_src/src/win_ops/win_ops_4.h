@@ -16,9 +16,16 @@
 void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
 
-
-
-void  pass1_1008_3bd6(Struct160 *param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5, u32 param_6, u32 param_7, u16 param_8, u16 param_9);
+void window_op_1008_3bd6(Globals  *globals,
+                     Struct65 *param_1,
+                     u16       param_2,
+                     u16       param_3,
+                     u32       param_4,
+                     u16       param_5,
+                     u32       param_6,
+                     u32       param_7,
+                     u16       param_8,
+                     u16       param_9);
 
 
 

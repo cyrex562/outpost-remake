@@ -968,7 +968,7 @@ void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3)
 {
     u16        uVar1;
     u16        u_var2;
-    code      *pcVar3;
+    void *pcVar3;
     u16        uVar4;
     u16        uVar5;
     i16        iVar6;
@@ -1039,6 +1039,7 @@ void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16
     uVar9  = extraout_DX_00 >> 0x8;
     uVar8  = uVar3 & 0xff;
     uVar6  = uVar3 >> 0x8;
+    // Get Date
     fn_ptr_1 =swi(0x21);
     uVar7  = uVar6;
     ((DosInt21GetDate)fn_ptr_1)(0);
@@ -1067,7 +1068,6 @@ u16 dos3_call_op_1000_35fe(u16 param_1, i16 param_2)
     {
         bVar3  = false;
         // 0x3E
-
         fn_ptr_1 = swi(0x21);
         // typedef u16(*DosInt21ClosFileUsingHandle(u16 file_handle));
         u_var2  = (*(DosInt21ClosFileUsingHandle)fn_ptr_1)(param_2 + 0x1);
@@ -1373,7 +1373,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
 {
     u8        *pbVar1;
     u8        *pu_var2;
-    code      *pcVar3;
+    void *pcVar3;
     u16        uVar4;
     u8        *puVar5;
     i16       *piVar6;
@@ -1419,6 +1419,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
     if((param_1[0x5f90] & 0x20) != 0x0)
     {
         uVar19  = false;
+        // 0x42
         pcVar3  = swi(0x21);
         piVar6  = (*pcVar3)();
         param_5 = 0x1000;
@@ -1437,6 +1438,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
             if((bool)uVar19)
             {
                 uVar19 = 0x0;
+                // 0x040
                 pcVar3 = swi(0x21);
                 u_var25 = (*pcVar3)();
             }
@@ -1512,6 +1514,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
                     cVar24 = '\0';
                     cVar23 = '\x01';
                     cVar21 = '\x01';
+                    // 0x040
                     pcVar3 = swi(0x21);
                     piVar9 = (*pcVar3)(&USHORT_1050_1050, puVar10, puVar7);
                 }
@@ -1655,6 +1658,7 @@ u16 mixed_dos3_call_1000_3ad9(u16 param_1, i16 param_2, i16 param_3, i16 param_4
         cVar13 = '\0';
         cVar12 = '\x01';
         cVar11 = '\x01';
+        // 0x40
         pcVar3 = swi(0x21);
         piVar6 = (*pcVar3)(&USHORT_1050_1050);
     }

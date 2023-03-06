@@ -1242,7 +1242,7 @@ void pass1_1008_9fb2(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     u8         *pbVar2;
     u8          bVar3;
     u16         uVar4;
-    code       *pcVar5;
+    void *pcVar5;
     u8          bVar6;
     u16         uVar7;
     u16         uVar8;

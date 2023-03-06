@@ -12,6 +12,8 @@
 #include "win_ops_3.h"
 #include "win_ops_4.h"
 
+#include <minwindef.h>
+
 void  send_msg_1038_ed8a(u16 param_1, u32 param_2, u32 param_3, HWND16 param_4)
 
 {
@@ -1900,7 +1902,16 @@ void window_op_1020_6c3a(Globals *globals, Struct0 *param_1)
     if(puVar8 != 0x0)
     {
         uVar7 = (param_1 + 0x8);
-        pass1_1008_3bd6(paVar4, puVar9, 0x0, local_6, 0x0, 0x7c007d, CONCAT13((uVar7 >> 0x8), CONCAT12(uVar7, 0xbb8)), puVar8, unaff_SS);
+        window_op_1008_3bd6(NULL,
+                            paVar4,
+                            puVar9,
+                            0x0,
+                            local_6,
+                            0x0,
+                            0x7c007d,
+                            CONCAT13((uVar7 >> 0x8), CONCAT12(uVar7, 0xbb8)),
+                            puVar8,
+                            unaff_SS);
     }
     paVar4 = (Struct160 *)(&local_6 + 0x2);
     pass1_1018_2d22(*(param_1 + 0xf2), CONCAT22(unaff_SS, &local_6), CONCAT22(unaff_SS, paVar4), 0xbb9);
@@ -1908,7 +1919,16 @@ void window_op_1020_6c3a(Globals *globals, Struct0 *param_1)
     puVar9 = (puVar8 | paVar4);
     if(puVar9 != 0x0)
     {
-        pass1_1008_3bd6(paVar4, puVar8, 0x0, local_6, 0x0, 0x7e007f, CONCAT22((param_1 + 0x8), 0xbb9), puVar9, unaff_SS);
+        window_op_1008_3bd6(NULL,
+                            paVar4,
+                            puVar8,
+                            0x0,
+                            local_6,
+                            0x0,
+                            0x7e007f,
+                            CONCAT22((param_1 + 0x8), 0xbb9),
+                            puVar9,
+                            unaff_SS);
     }
     paVar4 = (Struct160 *)(&local_6 + 0x2);
     pass1_1018_2d22(*(param_1 + 0xf2), CONCAT22(unaff_SS, &local_6), CONCAT22(unaff_SS, paVar4), 0xbba);
@@ -1916,7 +1936,16 @@ void window_op_1020_6c3a(Globals *globals, Struct0 *param_1)
     puVar8 = (puVar9 | paVar4);
     if(puVar8 != 0x0)
     {
-        pass1_1008_3bd6(paVar4, puVar9, 0x0, local_6, 0x1b2, 0x1b001b1, CONCAT22((param_1 + 0x8), 0xbba), puVar8, unaff_SS);
+        window_op_1008_3bd6(NULL,
+                            paVar4,
+                            puVar9,
+                            0x0,
+                            local_6,
+                            0x1b2,
+                            0x1b001b1,
+                            CONCAT22((param_1 + 0x8), 0xbba),
+                            puVar8,
+                            unaff_SS);
     }
     mem_op_1000_179c(0x22, puVar8, 0x1000);
     uVar10 = puVar8 | paVar4;
