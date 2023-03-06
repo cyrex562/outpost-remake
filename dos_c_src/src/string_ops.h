@@ -120,9 +120,11 @@ char *load_string_1010_847e(cstring param_1_str_buf, u16 param_2_buf_len, HINSTA
 void load_string_1010_84ac(i16 param_1, u16 param_2, HINSTANCE16 param_3);
 
 
-
-
-void load_string_1010_84e0(HINSTANCE16 in_hinstance_5, u16 param_2, u16 param_3, u16 in_resc_id_3, char *in_buffer_4, short in_buf_len_5);
+void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
+                           u16         param_2,
+                           u16         in_resc_id_3,
+                           char       *in_buffer_4,
+                           short       in_buf_len_5);
 
 
 

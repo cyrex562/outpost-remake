@@ -1361,8 +1361,10 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
         }
         if(puVar4 == 0x6b6)
         {
-            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_aa, (short)unaff_SS);
-            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_1aa, (short)unaff_SS);
+            load_string_1010_84e0(
+              0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_aa, (short)unaff_SS);
+            load_string_1010_84e0(
+              0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_1aa, (short)unaff_SS);
             uVar6  = sys_1000_3f9c(local_2aa, unaff_SS, local_1aa, unaff_SS, globals->PTR_LOOP_1050_50cc, &stack0xfffe, uVar11, 0x1000, unaff_SS, in_AF);
             uVar12 = 0x1000;
             mem_op_1000_179c(0xb4, puVar7, 0x1000);
@@ -2491,7 +2493,7 @@ void  win_ui_op_1020_36f6(u32 param_1, i16 param_2, short param_3)
     pcVar4       = pass1_1000_472c(CONCAT22(param_3, local_406), ':');
     puStack1034  = CONCAT22(uVar6, pcVar4 + 0x2);
     *puStack1034 = 0x0;
-    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_406, param_3);
+    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_406, param_3);
     ppcVar2 = ((iVar7 + 0x18) + 0x18);
     (**ppcVar2)();
     uVar3 = (iVar7 + 0x8);

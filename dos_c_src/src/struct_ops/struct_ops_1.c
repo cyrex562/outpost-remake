@@ -1,6 +1,7 @@
 #include "addr_struct.h"
 #include "globals.h"
 #include "struct_ops_5.h"
+#include "structs/structs_0xx/structs_6x.h"
 #include "structs_38x.h"
 #include "structs_44x.h"
 #include "structs_5x.h"
@@ -13,7 +14,7 @@
 #include <structs/structs_44.h>
 #include <structs/structs_45.h>
 
-Struct442* struct_1040_bf3e(Globals* globals, Struct442 *param_1, u16 param_2)
+Struct442* struct_1040_bf3e(Globals* globals, Struct65 *param_1, u16 param_2)
 
 {
     //Struct442 *iVar1;

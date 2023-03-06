@@ -6,6 +6,8 @@
 #define OUTPOST_1_SRC_UNK_UNK_1_H_
 
 
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_1xx/structs_16x.h"
 typedef struct struct_1040_d76e_1 {
   u16 field_0x94;
   u16 *field_0x98;
@@ -57,7 +59,7 @@ void  pass1_1040_bf92(u16 *param_1, u16 param_2);
 
 
 
-void  pass1_1040_bfde(u32 param_1, u32 *param_2, u16 param_3);
+void  pass1_1040_bfde(Struct160 *param_1, Struct160 *param_2, u16 param_3);
 
 
 

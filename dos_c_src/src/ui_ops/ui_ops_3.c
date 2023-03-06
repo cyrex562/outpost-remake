@@ -431,7 +431,8 @@ void  win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
         puVar4     = pass1_1008_5fd8(param_8, param_6);
         uStack2060 = CONCAT22(param_6, puVar4);
         puVar5     = param_6;
-        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
+        load_string_1010_84e0(
+          0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_806, param_8);
         IVar2        = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14), local_806, param_8);
         local_406[0] = uStack2060;
         uVar6        = 0x1000;
@@ -491,8 +492,10 @@ void  win_ui_op_1040_07dc(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
             goto LAB_1040_09f9;
         }
         enable_window_1040_0acc(param_1, param_2, 0x0, param_7);
-        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_406, param_8);
-        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, local_806, param_8);
+        load_string_1010_84e0(
+          0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_406, param_8);
+        load_string_1010_84e0(
+          0x1010, globals->PCHAR_1050_14cc, 0x3ff, local_806, param_8);
         uVar6 = SUB42(0x1538, 0x0);
         IVar2 = MessageBox16(0x1010, (s_New_failed_in_Op__Op_1050_0020 + 0x14), local_406, param_8);
         if(IVar2 == 0x6)
@@ -1853,7 +1856,8 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
             iStack10 = (puStack16 * 0xc + 0x5b84) + -0x1;
             pass1_1008_612e(0x0, iStack10, iStack10);
             uStack20 = pass1_1018_1e78(*(iVar7 + 0x92), ((puStack16 * 0x6 + iStack10) * 0x2 + 0x5b86));
-            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x50, local_464, (short)param_6);
+            load_string_1010_84e0(
+              0x1010, globals->PCHAR_1050_14cc, 0x50, local_464, (short)param_6);
             pcVar11 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             puVar6  = (pcVar11 >> 0x10);
             uVar5   = wsprintf16(0x1010, local_414, &param_6->style);

@@ -219,7 +219,7 @@ void  pass1_1040_bf92(u16 *param_1, u16 param_2)
 }
 
 
-void  pass1_1040_bfde(u32 param_1, u32 *param_2, u16 param_3)
+void  pass1_1040_bfde(Struct160 *param_1, Struct160 *param_2, u16 param_3)
 
 {
     void **ppcVar1;

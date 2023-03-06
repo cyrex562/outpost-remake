@@ -908,13 +908,14 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     switch((iVar9 + 0x4))
     {
     case 0x1:
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd1;
         goto LAB_1008_a2b1;
     case 0x2:
         uVar1 = (iVar9 + 0x6);
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar1, (uVar1 >> 0x10));
-        load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x100, local_106, param_2);
+        load_string_1010_84e0(
+          0x1010, globals->PCHAR_1050_14cc, 0x100, local_106, param_2);
         uVar3   = pu_stack6 >> 0x10;
         pcVar13 = pass1_1038_4d28(CONCAT13((uVar6 >> 0x8), CONCAT12(uVar6, iVar9)));
         uVar11  = 0x1000;
@@ -923,7 +924,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     case 0x5:
         goto LAB_1008_a277;
     case 0x6:
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd4;
     LAB_1008_a2b1:
         uVar11   = 0x1010;
@@ -932,7 +933,7 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
     case 0x7:
     LAB_1008_a277:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         break;
     case 0x9:
         if((uVar8 + 0x416) == 0x0)
@@ -959,7 +960,11 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
         if((uVar8 + 0x418) == 0x0)
         {
             (uVar8 + 0x418) = 0x1;
-            load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+            load_string_1010_84e0(0x1010,
+                                  globals->PCHAR_1050_14cc,
+                                  0x3ff,
+                                  (uVar8 + 0xe),
+                                  (short)in_buf_len_5);
             pcVar13 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
             puVar7  = (pcVar13 >> 0x10);
             pass1_1000_3cea(param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe)), pcVar13);
@@ -975,32 +980,32 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
         goto LAB_1008_a35a;
     case 0x16:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x28;
         break;
     case 0x17:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2c;
         break;
     case 0x18:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2e;
         break;
     case 0x1b:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x30;
         break;
     case 0x1c:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x32;
         break;
     case 0x1f:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x34;
         break;
     case 0x21:
@@ -1014,41 +1019,41 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
         break;
     case 0x24:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2a;
         break;
     case 0x31:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x27;
         break;
     case 0x32:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x29;
         break;
     case 0x33:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2b;
         break;
     case 0x34:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2d;
         break;
     case 0x35:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x2f;
         break;
     case 0x36:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x31;
         break;
     case 0x37:
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         pcVar13 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1010);
         uVar11  = 0x1000;
         pass1_1000_3cea(param_4 & 0xffff0000 | ZEXT24((uVar8 + 0xe)), pcVar13);
@@ -1056,72 +1061,72 @@ void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *pa
         break;
     case 0x38:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x35;
         break;
     case 0x39:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x36;
         break;
     case 0x3a:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x37;
         break;
     case 0x3b:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x38;
         break;
     case 0x3c:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0x39;
         break;
     case 0x3d:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xce;
         break;
     case 0x3e:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xcf;
         break;
     case 0x3f:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd0;
         break;
     case 0x40:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd1;
         break;
     case 0x41:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd2;
         break;
     case 0x42:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd3;
         break;
     case 0x43:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd5;
         break;
     case 0x44:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd6;
         break;
     case 0x45:
         uVar11 = 0x1010;
-        load_string_1010_84e0(0x1010, uVar14, uVar5, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
+        load_string_1010_84e0(0x1010, uVar14, 0x3ff, (uVar8 + 0xe), (short)in_buf_len_5);
         *param_7 = 0xd7;
     }
     if(pu_stack6 != 0x0)

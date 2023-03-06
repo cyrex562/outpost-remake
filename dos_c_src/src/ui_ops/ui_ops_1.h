@@ -341,9 +341,9 @@ void enable_win_1040_6880(u32 param_1, i16 param_2, HWND16 param_3);
 
 
 void mixed_win_ui_op_1040_6942(Globals *globals,
-                               Struct1 *param_1,
+                               Struct1 *struct_arg1,
                                u16      param_2,
-                               u16      param_3);
+                               u16      hinst_arg3);
 
 
 

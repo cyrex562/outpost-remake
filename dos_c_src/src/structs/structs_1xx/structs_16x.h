@@ -833,7 +833,7 @@ struct Struct160
     u8  field_0x0;
     u8  field_0x1;
     u16        field_0x2;
-    u8  field_0x4;
+    void*  field_0x4; // function pointer
     u8  field_0x5;
     u8  field_0x6;
     u8  field_0x7;

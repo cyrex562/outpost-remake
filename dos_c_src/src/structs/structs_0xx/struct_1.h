@@ -150,5 +150,8 @@ struct Struct1
     u8          field_0x90;
     u8          field_0x91;
     u32 *field_0x92;
+    Struct65  *field_0x98;
+    u8         *field_0x9a;
+    Struct65  *field_0x94;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_1_H_
