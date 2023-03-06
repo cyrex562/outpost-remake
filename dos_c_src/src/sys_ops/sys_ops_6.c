@@ -204,7 +204,7 @@ u16 *get_sys_metrics_1018_4b1e(Struct55 *param_1, u16 param_2, u16 param_3)
     iVar1              = param_1;
     (iVar1 + 0x12)     = param_2;
     (iVar1 + 0x14)     = 0x0;
-    param_1->field_0x0 = &PTR_LOOP_1050_4c9e;
+    param_1->field_0x0 = 0x4c9e; // &PTR_LOOP_1050_4c9e;
     (iVar1 + 0x2)      = 0x1018;
     if(PTR_LOOP_1050_416c == 0x0)
     {

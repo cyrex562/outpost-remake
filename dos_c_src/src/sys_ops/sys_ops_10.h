@@ -192,7 +192,7 @@ u32  pass1_1008_0932(void);
 
 
 
-u16 dos3_call_1000_51aa(u16 param_1);
+u16 dos_int21_find_file_1000_51aa(u16 param_1);
 
 
 i16 *pass1_1000_55b1(Globals *globals, i16 param_1, u16 param_2, u16 param_3);

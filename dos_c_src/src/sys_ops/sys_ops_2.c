@@ -50,7 +50,6 @@ void  pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
         *puStack10        = 0xe4ea;
         (param_2 + 0x2)   = 0x1030;
     }
-    return;
 }
 
 
@@ -67,7 +66,6 @@ void  struct_1030_e4fa(Struct100 *param_1, u32 param_2, u16 param_3, u8 param_4)
     param_1->field_0x0 = 0xe62e;
     iVar1->field_0x2   = 0x1030;
     sys_1000_3f9c(&iVar1->field_0x8, puVar1, s_SCKillBldg__0x_08lx_1050_597c, &USHORT_1050_1050, iVar1->field_0x108, &stack0xfffe, puVar1, 0x1000, param_3, param_4);
-    return;
 }
 
 

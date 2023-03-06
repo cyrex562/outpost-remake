@@ -121,7 +121,7 @@ u16 * pass1_1030_560e(u16 *param_1)
     pass1_1008_3e38((param_1 & 0xffff0000 | (iVar1 + 0x14)));
     (iVar1 + 0x1a) = 0x0;
     (iVar1 + 0x1c) = 0x0;
-    *param_1       = s_procLo_1050_5bd0;
+    *param_1       = 0x5bd0; //s_procLo_1050_5bd0;
     (iVar1 + 0x2)  = 0x1030;
     return param_1;
 }
@@ -140,7 +140,7 @@ u16 * struct_1030_565a(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     pass1_1008_3e38((param_1 & 0xffff0000 | &iVar1->field_0x14));
     iVar1->field_0x1a_addr_offset = 0x0;
     iVar1->field_0x1c_addr_base = 0x0;
-    *param_1          = s_procLo_1050_5bd0;
+    *param_1          = 0x5bd0; // s_procLo_1050_5bd0;
     iVar1->field_0x2  = 0x1030;
     return param_1;
 }
@@ -378,7 +378,7 @@ void  struct_1030_11aa(u16 *param_1, long param_2, long param_3, u16 param_4)
     iVar1->field_0x12 = 0x0;
     iVar1->field_0x16 = param_2;
     iVar1->field_0x1a_addr_offset = 0x1;
-    *param_1          = s_462_bmp_1050_1620 + 0x4;
+    *param_1          = 0x1624; // s_462_bmp_1050_1620 + 0x4;
     iVar1->field_0x2  = 0x1030;
     if(iVar1->field_0xe == 0x0)
     {

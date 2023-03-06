@@ -868,7 +868,7 @@ void  pass1_1018_331c(Struct638 *param_1, u16 param_2, u16 param_3, u16 param_4,
     param_1->field_0x13c       = 0x0;
     param_1->field_0x13e       = 0x0;
     param_1->field_0x142       = 0x0;
-    CONCAT22(param_2, param_1) = &PTR_LOOP_1050_470c;
+    CONCAT22(param_2, param_1) = 0x470c; // &PTR_LOOP_1050_470c;
     param_1->field_0x2         = 0x1018;
     pu_var2                     = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3b, param_4, param_5, unaff_DI);
     uVar1                      = pu_var2;

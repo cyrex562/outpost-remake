@@ -6,6 +6,7 @@
 #include "op_win_def.h"
 #include "op_winapi.h"
 #include "unk/unk_15.h"
+#include "unk/unk_16.h"
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -464,16 +465,18 @@ i16 *pass1_1000_4f1a(i16 param_1, u16 param_2, u16 param_3)
 
 // WARNING: Removing unreachable block (ram,0x10004f47)
 
-u16 dos3_call_1000_4f20(u16 param_1)
+u16 create_subdirectory_1000_4f20(u16 param_1)
 
 {
-    code *pcVar1;
+    void *fn_ptr_1;
     u16   u_var2;
     bool  bVar3;
 
     bVar3  = false;
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    u_var2  = (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
+    // AH = 0x39
+    fn_ptr_1 = swi(0x21);
+    // typedef u8(*DosInt21CreateSubdirectory)(char* path);
+    u_var2  = ((DosInt21CreateSubdirectory)(fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
     if(bVar3)
     {
         pass1_1000_29b5(u_var2);
@@ -486,15 +489,17 @@ u16 dos3call_1000_4f54(u32 param_1, i16 param_2)
 
 {
     char       cVar1;
-    code      *pcVar2;
+    void      *fn_ptr_1;
     u16        uVar3;
     char      *pcVar4;
     bool       bVar5;
     u32 uVar6;
 
     bVar5  = false;
-    pcVar2 = (fn_ptr_1)swi(0x21);
-    uVar6  = (*pcVar2)(&USHORT_1050_1050, param_2 + 0x1);
+    // 0x3a
+    fn_ptr_1 = swi(0x21);
+    // typedef u8(*DosInt21RemoveSubdirectory(char* path));
+    uVar6  = ((DosInt21RemoveSubdirectory)fn_ptr_1)(&USHORT_1050_1050, param_2 + 0x1);
     pcVar4 = (uVar6 >> 0x10);
     uVar3  = uVar6;
     if((bVar5) && (bVar5 = uVar3 < 0x10, uVar3 == 0x10))
@@ -524,11 +529,10 @@ u16 dos3call_1000_4f54(u32 param_1, i16 param_2)
 i16 dos3_call_1000_4f94(u16 param_1)
 
 {
-    fn_ptr_1pcVar1;
-    u8 bVar2;
-
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    bVar2  = (*pcVar1)(param_1 + 0x1);
+    // AH = 0x19
+    void* fn_ptr_1 = swi(0x21);
+    /// typedef u8(*DosInt21GetDefaultDrive)();
+    u8 bVar2  = (*(DosInt21GetDefaultDrive)fn_ptr_1)(param_1 + 0x1);
     return bVar2 + 0x1;
 }
 
@@ -539,14 +543,18 @@ i16 dos3_call_1000_4f94(u16 param_1)
 u16 dos3_call_1000_4fbe(char param_1, i16 param_2)
 
 {
-    code *pcVar1;
+    void *fn_ptr_1;
     char  cVar2;
     u16   uVar3;
 
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)(param_2 + 0x1);
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    cVar2  = (*pcVar1)();
+    // AH = 0xe
+    fn_ptr_1 = swi(0x21);
+
+    (*fn_ptr_1)(param_2 + 0x1);
+
+    // AH = 0x19
+    fn_ptr_1 = swi(0x21);
+    cVar2  = (*fn_ptr_1)();
     uVar3  = 0xffff;
     if((cVar2 + '\x01') == param_1)
     {
@@ -635,16 +643,17 @@ void pass1_1000_5026(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 par
 u16 dos3_call_1000_514e(i16 param_1)
 
 {
-    code *pcVar1;
-    u16   u_var2;
+    void *pcVar1;
+    u16   result;
     bool  bVar3;
 
     bVar3  = false;
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    u_var2  = (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
+    // 0x41
+    pcVar1 = swi(0x21);
+    result = (*(DosInt21DeleteFile)pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
     if(bVar3)
     {
-        pass1_1000_29b5(u_var2);
+        pass1_1000_29b5(result);
         return 0xffff;
     }
     return 0x0;
@@ -661,7 +670,8 @@ u16 dos3_call_1000_5174(u16 param_1)
     bool bVar3;
 
     bVar3  = false;
-    pcVar1 = (fn_ptr_1)swi(0x21);
+    // 0x68
+    pcVar1 = swi(0x21);
     u_var2  = (*pcVar1)(param_1 + 0x1);
     if(!bVar3)
     {
@@ -680,19 +690,29 @@ u16 dos3_call_1000_5174(u16 param_1)
 u16 dos3_calls_1000_5198(i16 param_1)
 
 {
-    fn_ptr_1pcVar1;
+    void*fn_ptr_1;
     u16 u_var2;
     u8  bVar3;
 
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)();
+    // 0x2F
+    // typedef void (**DosInt21GetDiskTransferAddress)();
+    fn_ptr_1 = swi(0x21);
+    (*(DosInt21GetDiskTransferAddress)fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
+
+    // 0x1A
+    // typedef void(*DosInt21SetDiskTransferAddress(void* disk_transfer_address));
+    fn_ptr_1 = swi(0x21);
+    (*(DosInt21SetDiskTransferAddress)fn_ptr_1)();
     bVar3  = 0x0;
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    u_var2  = (*pcVar1)();
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)();
+
+    // 0x4E
+    // typedef u16(*DosInt21FindFirstMatchingFile)(u16 file_attributes, char* filespec, void** disk_transfer_address);
+    fn_ptr_1 = swi(0x21);
+    u_var2  = (*(DosInt21FindFirstMatchingFile)fn_ptr_1)();
+
+    // 0x1A
+    fn_ptr_1 = swi(0x21);
+    (*(DosInt21SetDiskTransferAddress)fn_ptr_1)();
     if((bVar3 & 0x1) == 0x0)
     {
         return 0x0;
@@ -706,7 +726,6 @@ void fatal_app_exit_1000_3e9e(Globals *globals, u16 app_exit_action)
 
 {
     FatalAppExit16(app_exit_action, globals->s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
-    return;
 }
 
 u16 sys_1000_3f9c(u8 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10)
@@ -969,7 +988,7 @@ void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3)
     u_var2           = *param_3;
     uVar9           = (param_3 + 0x6);
     bVar10          = false;
-    pcVar3          = (fn_ptr_1)swi(0x21);
+    pcVar3          = swi(0x21);
     uVar11          = (*pcVar3)();
     *param_3        = u_var2;
     (param_3 + 0x6) = uVar9;
@@ -986,7 +1005,6 @@ void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3)
         pass1_1000_29af(uVar11);
     }
     (iVar6 + 0xc) = bVar10;
-    return;
 }
 
 
@@ -1041,15 +1059,18 @@ void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16
 u16 dos3_call_op_1000_35fe(u16 param_1, i16 param_2)
 
 {
-    void *pcVar1;
+    void *fn_ptr_1;
     u16   u_var2;
     bool  bVar3;
 
     if(param_1 < DAT_1050_5f8a)
     {
         bVar3  = false;
-        pcVar1 = (fn_ptr_1)swi(0x21);
-        u_var2  = (*pcVar1)(param_2 + 0x1);
+        // 0x3E
+
+        fn_ptr_1 = swi(0x21);
+        // typedef u16(*DosInt21ClosFileUsingHandle(u16 file_handle));
+        u_var2  = (*(DosInt21ClosFileUsingHandle)fn_ptr_1)(param_2 + 0x1);
         if(!bVar3)
         {
             *(param_1 + 0x5f90) = 0x0;
@@ -1078,7 +1099,7 @@ void mixed_dos3_call_1000_3636(u16 param_1, u16 param_2, u16 param_3, u16 param_
 
 {
     u8        *pbVar1;
-    code      *pcVar2;
+    void      *fn_ptr_1;
     u16        uVar3;
     i16        iVar4;
     bool       bVar5;
@@ -1091,20 +1112,25 @@ void mixed_dos3_call_1000_3636(u16 param_1, u16 param_2, u16 param_3, u16 param_
         if(param_4 == 0x0)
             goto LAB_1000_369b;
         bVar5  = false;
-        pcVar2 = (fn_ptr_1)swi(0x21);
-        uVar6  = (*pcVar2)();
+        // 0x09
+        // typedef void(*DosInt21PrintString)(char* StringPointer);
+        fn_ptr_1 = swi(0x21);
+        uVar6  = (*(DosInt21PrintString)fn_ptr_1)();
         iVar4  = (uVar6 >> 0x10);
         uVar3  = uVar6;
         if(bVar5)
+        {
             goto LAB_1000_299d;
+        }
         if((param_4 & 0x2) == 0x0)
         {
             if(-0x1 < (iVar4 + param_3 + CARRY2(uVar3, param_2)))
             {
             LAB_1000_36e3:
                 bVar5  = false;
-                pcVar2 = (fn_ptr_1)swi(0x21);
-                uVar3  = (*pcVar2)();
+                // 0x42
+                fn_ptr_1 = swi(0x21);
+                uVar3  = (*fn_ptr_1)();
                 if(!bVar5)
                 {
                     pbVar1  = (u8 *)(param_1 + 0x5f90);
@@ -1116,12 +1142,16 @@ void mixed_dos3_call_1000_3636(u16 param_1, u16 param_2, u16 param_3, u16 param_
         }
         else
         {
-            pcVar2 = (fn_ptr_1)swi(0x21);
-            uVar6  = (*pcVar2)(iVar4);
+            // 0x42
+            fn_ptr_1 = swi(0x21);
+            uVar6  = (*fn_ptr_1)(iVar4);
             if(-0x1 < ((uVar6 >> 0x10) + param_3 + CARRY2(uVar6, param_2)))
+            {
                 goto LAB_1000_36e3;
-            pcVar2 = (fn_ptr_1)swi(0x21);
-            (*pcVar2)();
+            }
+            // 0x42
+            fn_ptr_1 = swi(0x21);
+            (*fn_ptr_1)();
         }
     LAB_1000_369b:
         uVar3 = s_471_bmp_1050_1600;
@@ -1136,7 +1166,6 @@ LAB_1000_299d:
     {
         pass1_1000_29b5(uVar3);
     }
-    return;
 }
 
 
@@ -1161,7 +1190,7 @@ LAB_1000_299d:
 u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4, u16 param_5, i16 param_6)
 
 {
-    code *pcVar1;
+    void *fn_ptr_1;
     u16   u_var2;
     i16   iVar3;
     u8    bVar4;
@@ -1182,9 +1211,11 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
     }
     uVar9  = SUB42(&USHORT_1050_1050, 0x0);
     bVar7  = false;
-    pcVar1 = (fn_ptr_1)swi(0x21);
+    // 3d
+    fn_ptr_1 = swi(0x21);
     uVar5  = param_3;
-    u_var2  = (*pcVar1)(bVar10, param_4, &USHORT_1050_1050, param_6 + 0x1);
+    // typedef u16(*DosInt21OpenFileUsingHandle2)(u8 mode, char* filename);
+    u_var2  = (*(DosInt21OpenFileUsingHandle2)fn_ptr_1)(bVar10, param_4, &USHORT_1050_1050, param_6 + 0x1);
     if(bVar7)
     {
         if((u_var2 == 0x2) && ((uVar5 & 0x100) != 0x0))
@@ -1198,17 +1229,22 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
             }
         LAB_1000_38e3:
             bVar8  = false;
-            pcVar1 = (fn_ptr_1)swi(0x21);
-            u_var2  = (*pcVar1)();
+            // 3C
+            fn_ptr_1 = swi(0x21);
+            // typedef u16(*DosInt21CreateFileWithHandle)(u16 file_attrib, char* path_name);
+            u_var2  = (*(DosInt21CreateFileWithHandle)fn_ptr_1)();
             if(bVar8)
                 goto LAB_1000_299d;
             if((param_4 != 0x0) || (uVar6 = u_var2, (param_3 & 0x2) == 0x0))
             {
-                pcVar1 = (fn_ptr_1)swi(0x21);
-                (*pcVar1)();
+                // 3E
+                fn_ptr_1 = swi(0x21);
+                // typedef u16(*DosInt21ClosFileUsingHandle)(u16 file_handle);
+                (*fn_ptr_1)();
                 bVar8  = false;
-                pcVar1 = (fn_ptr_1)swi(0x21);
-                u_var2  = (*pcVar1)();
+                // 3D
+                fn_ptr_1 = swi(0x21);
+                u_var2  = (*fn_ptr_1)();
                 if(bVar8)
                     goto LAB_1000_299d;
                 uVar6 = u_var2;
@@ -1216,8 +1252,9 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
                 {
                     uVar5  = (u8)((u8)uVar5 | 0x1);
                     bVar8  = false;
-                    pcVar1 = (fn_ptr_1)swi(0x21);
-                    u_var2  = (*pcVar1)();
+                    // 43
+                    fn_ptr_1 = swi(0x21);
+                    u_var2  = (*fn_ptr_1)();
                     if(bVar8)
                         goto LAB_1000_299d;
                 }
@@ -1225,8 +1262,9 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
         LAB_1000_3973:
             if((bVar10 & 0x40) == 0x0)
             {
-                pcVar1 = (fn_ptr_1)swi(0x21);
-                (*pcVar1)();
+                // 3E
+                fn_ptr_1 = swi(0x21);
+                (*fn_ptr_1)();
                 bVar4 = 0x0;
                 if((uVar5 & 0x1) != 0x0)
                 {
@@ -1246,8 +1284,9 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
                 *(u8 *)(uVar6 + 0x5f90) = bVar4 | bVar10 | 0x1;
                 return uVar6;
             }
-            pcVar1 = (fn_ptr_1)swi(0x21);
-            (*pcVar1)();
+            // 3E
+            fn_ptr_1 = swi(0x21);
+            (*fn_ptr_1)();
             u_var2 = 0x1800;
         }
     }
@@ -1256,8 +1295,9 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
         if((uVar5 & 0x500) != 0x500)
         {
             bVar7  = true;
-            pcVar1 = (fn_ptr_1)swi(0x21);
-            (*pcVar1)();
+            // 44
+            fn_ptr_1 = swi(0x21);
+            (*fn_ptr_1)();
             if((extraout_DX & 0x80) != 0x0)
             {
                 bVar10 = bVar10 | 0x40;
@@ -1269,20 +1309,25 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
                 {
                     if(((bVar10 & 0x80) != 0x0) && ((param_3 & 0x2) != 0x0))
                     {
-                        pcVar1 = (fn_ptr_1)swi(0x21);
-                        (*pcVar1)();
-                        pcVar1 = (fn_ptr_1)swi(0x21);
-                        iVar3  = (*pcVar1)();
+                        // 42
+                        fn_ptr_1 = swi(0x21);
+                        (*fn_ptr_1)();
+                        // 3f
+                        fn_ptr_1 = swi(0x21);
+                        iVar3  = (*fn_ptr_1)();
                         if((iVar3 != 0x0) && (local_5 == '\x1a'))
                         {
-                            pcVar1 = (fn_ptr_1)swi(0x21);
-                            (*pcVar1)();
-                            pcVar1 = (fn_ptr_1)swi(0x21);
-                            (*pcVar1)();
+                            // 42
+                            fn_ptr_1 = swi(0x21);
+                            (*fn_ptr_1)();
+                            // 40
+                            fn_ptr_1 = swi(0x21);
+                            (*fn_ptr_1)();
                         }
                         uVar5  = 0x0;
-                        pcVar1 = (fn_ptr_1)swi(0x21);
-                        (*pcVar1)();
+                        // 42
+                        fn_ptr_1 = swi(0x21);
+                        (*fn_ptr_1)();
                         uVar6 = u_var2;
                     }
                 }
@@ -1290,22 +1335,26 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
                 {
                     if((param_3 & 0x3) == 0x0)
                     {
-                        pcVar1 = (fn_ptr_1)swi(0x21);
-                        (*pcVar1)();
-                        pcVar1 = (fn_ptr_1)swi(0x21);
-                        (*pcVar1)();
+                        // 3e
+                        fn_ptr_1 = swi(0x21);
+                        (*fn_ptr_1)();
+                        // 43
+                        fn_ptr_1 = swi(0x21);
+                        (*fn_ptr_1)();
                         goto LAB_1000_38e3;
                     }
                     uVar5  = 0x0;
-                    pcVar1 = (fn_ptr_1)swi(0x21);
-                    (*pcVar1)();
+                    // 40
+                    fn_ptr_1 = swi(0x21);
+                    (*fn_ptr_1)();
                     uVar6 = u_var2;
                 }
             }
             goto LAB_1000_3973;
         }
-        pcVar1 = (fn_ptr_1)swi(0x21);
-        (*pcVar1)();
+        // 3E
+        fn_ptr_1 = swi(0x21);
+        (*fn_ptr_1)();
         u_var2 = 0x1100;
     }
     bVar8 = true;
@@ -1370,7 +1419,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
     if((param_1[0x5f90] & 0x20) != 0x0)
     {
         uVar19  = false;
-        pcVar3  = (fn_ptr_1)swi(0x21);
+        pcVar3  = swi(0x21);
         piVar6  = (*pcVar3)();
         param_5 = 0x1000;
         if((bool)uVar19)
@@ -1388,7 +1437,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
             if((bool)uVar19)
             {
                 uVar19 = 0x0;
-                pcVar3 = (fn_ptr_1)swi(0x21);
+                pcVar3 = swi(0x21);
                 u_var25 = (*pcVar3)();
             }
             else
@@ -1463,7 +1512,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
                     cVar24 = '\0';
                     cVar23 = '\x01';
                     cVar21 = '\x01';
-                    pcVar3 = (fn_ptr_1)swi(0x21);
+                    pcVar3 = swi(0x21);
                     piVar9 = (*pcVar3)(&USHORT_1050_1050, puVar10, puVar7);
                 }
                 else
@@ -1606,7 +1655,7 @@ u16 mixed_dos3_call_1000_3ad9(u16 param_1, i16 param_2, i16 param_3, i16 param_4
         cVar13 = '\0';
         cVar12 = '\x01';
         cVar11 = '\x01';
-        pcVar3 = (fn_ptr_1)swi(0x21);
+        pcVar3 = swi(0x21);
         piVar6 = (*pcVar3)(&USHORT_1050_1050);
     }
     else

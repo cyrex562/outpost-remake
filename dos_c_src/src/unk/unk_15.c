@@ -476,12 +476,12 @@ u16 pass1_1000_4d24(void)
 u16 pass1_1000_4f2e(u16 param_1)
 
 {
-    code *pcVar1;
+    void *pcVar1;
     u16   u_var2;
     bool  bVar3;
 
     bVar3  = false;
-    pcVar1 = (fn_ptr_1)swi(0x21);
+    pcVar1 = swi(0x21);
     u_var2  = (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
     if(bVar3)
     {

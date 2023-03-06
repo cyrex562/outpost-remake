@@ -389,3 +389,43 @@ switchD_1010:2765_caseD_38:
   *(u16 **)(param_2 * 4 + iVar5) = pu_stack6;
   return pu_stack6;
 }
+
+StructD * FUN_1008_9f8c(StructD *param_1,byte param_2)
+
+{
+  pass1_1008_9e5a(param_1);
+  if ((param_2 & 1) != 0) {
+    fn_ptr_1000_17ce((char *)param_1);
+  }
+  return param_1;
+}
+
+StructD * FUN_1018_2ab4(StructD *param_1,byte param_2)
+
+{
+  pass1_1018_2440(param_1);
+  if ((param_2 & 1) != 0) {
+    fn_ptr_1000_17ce((char *)param_1);
+  }
+  return param_1;
+}
+
+StructD * FUN_1018_e428(StructD *param_1,byte param_2)
+
+{
+  pass1_1018_e2a0(param_1);
+  if ((param_2 & 1) != 0) {
+    fn_ptr_1000_17ce((char *)param_1);
+  }
+  return param_1;
+}
+
+StructD * FUN_1020_775a(StructD *param_1,byte param_2)
+
+{
+  pass1_1020_75c4(param_1);
+  if ((param_2 & 1) != 0) {
+    fn_ptr_1000_17ce((char *)param_1);
+  }
+  return param_1;
+}

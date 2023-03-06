@@ -1,6 +1,7 @@
 
 #include "sys_ops_10.h"
 
+#include "op_dos_interrupts.h"
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
@@ -1261,7 +1262,7 @@ void pass1_1008_9fb2(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     uVar4              = param_5 + 0xeff0;
     bVar12             = param_5 < 0x1010 || uVar4 < uVar8;
     uVar7              = uVar4 - uVar8;
-    pcVar5             = (fn_ptr_1)swi(0x4);
+    pcVar5             = swi(0x4);
     if(SBORROW2(param_5, 0x1010) != SBORROW2(uVar4, uVar8))
     {
         (*pcVar5)();
@@ -2333,22 +2334,28 @@ u32  pass1_1008_0932(void)
 }
 
 
-u16 dos3_call_1000_51aa(u16 param_1)
+u16 dos_int21_find_file_1000_51aa(u16 param_1)
 
 {
-    fn_ptr_1pcVar1;
+    void* fn_ptr_1;
     u16 u_var2;
     u8  bVar3;
+    void* new_transfer_address = NULL;
 
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)();
+    // 0x2F Get Disk Transfer Address
+    fn_ptr_1 = swi(0x21);
+    ((DosInt21GetDiskTransferAddress)fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
+    // 0x1A
+    fn_ptr_1 = swi(0x21);
+    ((DosInt21SetDiskTransferAddress)fn_ptr_1)(new_transfer_address);
     bVar3  = 0x0;
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    u_var2  = (*pcVar1)();
-    pcVar1 = (fn_ptr_1)swi(0x21);
-    (*pcVar1)();
+    // 0x4E
+    fn_ptr_1 = swi(0x21);
+    // typedef u16(*DosInt21FindFirstMatchingFile)(u16 file_attributes, char* filespec, void** disk_transfer_address);
+    u_var2  = ((DosInt21FindFirstMatchingFile)fn_ptr_1)();
+    //  0x1A
+    fn_ptr_1 = swi(0x21);
+    (fn_ptr_1)();
     if((bVar3 & 0x1) == 0x0)
     {
         return 0x0;

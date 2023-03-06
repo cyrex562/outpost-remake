@@ -455,7 +455,7 @@ u16 * struct_1028_0954(u16 *param_1)
     iVar1             = (Struct185 *)param_1;
     iVar1->field_0x20 = 0x0;
     *param_1          = 0xada;
-    iVar1->field_0x2  = &USHORT_1050_1028;
+    iVar1->field_0x2  = 0x1028; // &USHORT_1050_1028;
     iVar1->field_0xe  = 0x4b;
     return param_1;
 }
@@ -1520,7 +1520,7 @@ void  struct_op_1018_4cda(i16 param_1, u16 param_2, u16 param_3)
     (param_1 + 0x16)           = 0x0;
     (param_1 + 0x18)           = 0x1;
     (param_1 + 0x1a)           = 0x0;
-    CONCAT22(param_2, param_1) = s_SCi16ernalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
+    CONCAT22(param_2, param_1) = 0x5058; // s_SCi16ernalPutBldg_site_0x_08lx__b_1050_5046 + 0x12;
     (param_1 + 0x2)            = 0x1018;
     return;
 }
@@ -1556,7 +1556,7 @@ void  pass1_1018_58b6(u16 *param_1)
 
     u_var2          = (param_1 >> 0x10);
     iVar1          = param_1;
-    *param_1       = s_Alloc__s_1050_5a5b + 0x7;
+    *param_1       = 0x5a62; //s_Alloc__s_1050_5a5b + 0x7;
     (iVar1 + 0x2)  = 0x1018;
     (iVar1 + 0xe2) = 0x5afe;
     (iVar1 + 0xe4) = 0x1018;
@@ -1577,7 +1577,7 @@ void  struct_1018_4720(u16 *param_1, u32 param_2, u32 param_3)
     iVar1->field_0x4 = param_3;
     iVar1->field_0x8 = param_2;
     iVar1->field_0xc = 0x0;
-    *param_1         = &PTR_LOOP_1050_4aa6;
+    *param_1         = 0x4aa6; &PTR_LOOP_1050_4aa6;
     iVar1->field_0x2 = 0x1018;
     return;
 }
@@ -1609,7 +1609,7 @@ void  struct_1018_47c8(u16 *param_1, u32 param_2, u32 param_3, u16 param_4, u32 
     iVar1             = (Struct264 *)param_1;
     iVar1->field_0xe  = param_5;
     iVar1->field_0x12 = param_4;
-    *param_1          = &PTR_LOOP_1050_4a9a;
+    *param_1          = 0x4a9a; //&PTR_LOOP_1050_4a9a;
     iVar1->field_0x2  = 0x1018;
     iVar1->field_0xc  = 0x2;
     return;
@@ -1626,7 +1626,7 @@ void  pass1_1018_4808(u16 *param_1, u32 param_2, u32 param_3, u32 param_4)
     u_var2          = (param_1 >> 0x10);
     iVar1          = param_1;
     *(iVar1 + 0xe) = param_4;
-    *param_1       = &PTR_LOOP_1050_4aa2;
+    *param_1       = 0x4aa2; &PTR_LOOP_1050_4aa2;
     (iVar1 + 0x2)  = 0x1018;
     (iVar1 + 0xc)  = 0x3;
     return;
@@ -1644,7 +1644,7 @@ u16 * struct_1018_4842(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     iVar1             = (Struct265 *)param_1;
     iVar1->field_0xe  = param_4;
     iVar1->field_0x10 = 0x0;
-    *param_1          = &PTR_LOOP_1050_4a8e;
+    *param_1          = 0x4a8e; &PTR_LOOP_1050_4a8e;
     iVar1->field_0x2  = 0x1018;
     iVar1->field_0xc  = 0x4;
     return param_1;
@@ -1660,7 +1660,7 @@ u16 * struct_1018_48b0(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     uVar1            = (param_1 >> 0x10);
     iVar1            = (Struct207 *)param_1;
     iVar1->field_0xe = param_4;
-    *param_1         = &PTR_LOOP_1050_4a96;
+    *param_1         = 0x4a96; // &PTR_LOOP_1050_4a96;
     iVar1->field_0x2 = 0x1018;
     iVar1->field_0xc = 0x5;
     return param_1;
@@ -1694,7 +1694,7 @@ void  struct_1018_4920(u16 *param_1, u32 param_2, u32 param_3, u32 param_4)
     uVar1            = (param_1 >> 0x10);
     iVar1            = (Struct203 *)param_1;
     iVar1->field_0xe = param_4;
-    *param_1         = &PTR_LOOP_1050_4a8a;
+    *param_1         = 0x4a8a; // &PTR_LOOP_1050_4a8a;
     iVar1->field_0x2 = 0x1018;
     iVar1->field_0xc = 0x7;
     return;
@@ -1787,7 +1787,7 @@ void  struct_1018_229c(Struct632 *param_1, u8 *param_2, u16 param_3, u8 *param_4
     &param_1->field_0x6e       = 0x0;
     CONCAT22(param_2, param_1) = 0x2ada;
     param_1->field_0x2         = 0x1018;
-    param_1->field_0x1c_addr_base        = s_fem132_wav_1050_2aec + 0x6;
+    param_1->field_0x1c_addr_base        = 0x2af2; // s_fem132_wav_1050_2aec + 0x6;
     param_1->field_0x1e        = 0x1018;
     globals->PTR_LOOP_1050_4230         = param_1;
     globals->PTR_LOOP_1050_4232         = param_2;

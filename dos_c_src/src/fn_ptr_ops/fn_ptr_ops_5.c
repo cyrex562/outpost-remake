@@ -1567,7 +1567,7 @@ void  pass1_1018_33b4(u16 *param_1, u16 param_2)
 
     uVar4            = (param_1 >> 0x10);
     iVar5            = (Struct505 *)param_1;
-    *param_1         = &PTR_LOOP_1050_470c;
+    *param_1         = 0x470c; //&PTR_LOOP_1050_470c;
     iVar5->field_0x2 = 0x1018;
     puVar1           = iVar5->field_0x136;
     u_var2            = iVar5->field_0x138;

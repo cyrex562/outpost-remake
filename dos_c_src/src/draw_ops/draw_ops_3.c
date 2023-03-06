@@ -2062,7 +2062,8 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
         uVar7   = param_8 + 0xeff0;
         bVar22  = param_8 < 0x1010 || uVar7 < uVar6;
         uVar12  = uVar7 - uVar6;
-        pcVar9  = (fn_ptr_1)swi(0x4);
+
+        pcVar9  = swi(0x4);
         if(SBORROW2(param_8, 0x1010) != SBORROW2(uVar7, uVar6))
         {
             (*pcVar9)();

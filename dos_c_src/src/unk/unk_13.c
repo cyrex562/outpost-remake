@@ -404,7 +404,7 @@ void  pass1_1008_dc80(u16 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 p
     char *pcVar1;
     u16   u_var2;
     u16   uVar3;
-    code *pcVar4;
+    void *pcVar4;
     u16   uVar5;
     char  cVar6;
     char  extraout_DL;
@@ -420,7 +420,7 @@ void  pass1_1008_dc80(u16 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 p
     uVar3  = param_5 + 0xeff0;
     bVar10 = param_5 < 0x1010 || uVar3 < u_var2;
     uVar5  = uVar3 - u_var2;
-    pcVar4 = (fn_ptr_1)swi(0x4);
+    pcVar4 = swi(0x4);
     if(SBORROW2(param_5, 0x1010) != SBORROW2(uVar3, u_var2))
     {
         (*pcVar4)();

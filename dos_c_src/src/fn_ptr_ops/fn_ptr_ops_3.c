@@ -521,7 +521,7 @@ void  pass1_1030_56b0(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    *param_1      = s_procLo_1050_5bd0;
+    *param_1      = 0x5bd0; // s_procLo_1050_5bd0;
     (iVar3 + 0x2) = 0x1030;
     p_var2        = (iVar3 + 0x10);
     uVar1         = (iVar3 + 0x12);
@@ -736,7 +736,7 @@ void  pass1_1030_1244(u16 *param_1)
 
     uVar9            = (param_1 >> 0x10);
     iVar6            = (Struct606 *)param_1;
-    *param_1         = s_462_bmp_1050_1620 + 0x4;
+    *param_1         = 0x1624; // s_462_bmp_1050_1620 + 0x4;
     iVar6->field_0x2 = 0x1030;
     if(iVar6->field_0x1a_addr_offset != 0x0)
     {

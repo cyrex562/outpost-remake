@@ -1144,7 +1144,7 @@ void pass1_1018_2440(Struct11 *param_1, u16 param_2)
     uVar5             = (Struct502 *)param_1;
     param_1           = 0x2ada;
     uVar5->field_0x2  = 0x1018;
-    uVar5->field_0x1c_addr_base = s_fem132_wav_1050_2aec + 0x6;
+    uVar5->field_0x1c_addr_base = 0x2af2;  // s_fem132_wav_1050_2aec + 0x6;
     uVar5->field_0x1e = 0x1018;
     if(_PTR_LOOP_1050_0388 != 0x0)
     {
