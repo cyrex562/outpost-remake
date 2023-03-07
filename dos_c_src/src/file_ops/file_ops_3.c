@@ -25,7 +25,7 @@ void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     //
     uVar8 = param_2;
     uVar7 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar8, uVar7, 0x2, 0x1008, param_5);
+    read_file_1008_7cfe(uVar8, uVar7, 0x2, SEG_1008, param_5);
     if(param_3 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d4;
@@ -34,10 +34,10 @@ void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
     {
         iVar5 = param_1;
         uVar4 = (param_1 >> 0x10);
-        BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x16, 0x0, uVar4, 0x4, 0x1008);
-        if((((BVar6 != 0x0) && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x1a, 0x0, uVar4, 0x4, 0x1008), BVar6 != 0x0)) && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x20, 0x0, uVar4, 0x4, 0x1008), BVar6 != 0x0))
-           && (((BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x24, 0x0, uVar4, 0x4, 0x1008), BVar6 != 0x0 && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x30, 0x0, uVar4, 0x2, 0x1008), BVar6 != 0x0))
-                && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x32, 0x0, uVar4, 0x2, 0x1008), BVar6 != 0x0))))
+        BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x16, 0x0, uVar4, 0x4, SEG_1008);
+        if((((BVar6 != 0x0) && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x1a, 0x0, uVar4, 0x4, SEG_1008), BVar6 != 0x0)) && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x20, 0x0, uVar4, 0x4, SEG_1008), BVar6 != 0x0))
+           && (((BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x24, 0x0, uVar4, 0x4, SEG_1008), BVar6 != 0x0 && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x30, 0x0, uVar4, 0x2, SEG_1008), BVar6 != 0x0))
+                && (BVar6 = read_file_1008_7dee(uVar8, uVar7, iVar5 + 0x32, 0x0, uVar4, 0x2, SEG_1008), BVar6 != 0x0))))
         {
             if((iVar5 + 0x30) != 0x0)
             {
@@ -56,7 +56,7 @@ void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 pass1_1008_3e38(CONCAT22(param_5, local_20));
                 for(iStack16 = 0x0; pi_var1 = (iVar5 + 0x30), *pi_var1 != iStack16 && iStack16 <= *pi_var1; iStack16 = iStack16 + 0x1)
                 {
-                    BVar6 = read_file_1008_7bc8(param_2, CONCAT22(param_5, local_20), 0x1008, param_5);
+                    BVar6 = read_file_1008_7bc8(param_2, CONCAT22(param_5, local_20), SEG_1008, param_5);
                     if(BVar6 == 0x0)
                     {
                         globals->PTR_LOOP_1050_0310 = 0x6d0;
@@ -152,31 +152,31 @@ void write_to_file_1010_6372(u32 param_1, u32 param_2, u16 param_3)
         local_10[0] = iVar2->field_0xa;
         uVar3       = param_2;
         uVar4       = (param_2 >> 0x10);
-        BVar1       = write_to_file_1008_7e1c(uVar3, uVar4, local_10, param_3, 0x4, 0x1008);
+        BVar1       = write_to_file_1008_7e1c(uVar3, uVar4, local_10, param_3, 0x4, SEG_1008);
         if(BVar1 != 0x0)
         {
             local_8 = iVar2->field_0xe;
-            BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+            BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
             if(BVar1 != 0x0)
             {
                 local_8 = iVar2->field_0x12;
-                BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+                BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                 if(BVar1 != 0x0)
                 {
                     local_8 = iVar2->field_0x16;
-                    BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+                    BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                     if(BVar1 != 0x0)
                     {
                         local_8 = iVar2->field_0x1a_addr_offset;
-                        BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+                        BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                         if(BVar1 != 0x0)
                         {
                             local_8 = iVar2->field_0x1e;
-                            BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+                            BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                             if(BVar1 != 0x0)
                             {
                                 local_8 = iVar2->field_0x22;
-                                BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, 0x1008);
+                                BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                                 if(BVar1 != 0x0)
                                 {
                                     return;
@@ -204,30 +204,30 @@ void pass1_1010_648a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
 
     uVar4 = param_2;
     uVar5 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar4, uVar5, 0x7, 0x1008, param_4);
+    read_file_1008_7cfe(uVar4, uVar5, 0x7, SEG_1008, param_4);
     if(param_3 != 0x0)
     {
         iVar2 = param_1;
         uVar1 = (param_1 >> 0x10);
-        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0xa, 0x0, uVar1, 0x4, 0x1008);
+        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0xa, 0x0, uVar1, 0x4, SEG_1008);
         if(BVar3 != 0x0)
         {
-            BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0xe, 0x0, uVar1, 0x4, 0x1008);
+            BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0xe, 0x0, uVar1, 0x4, SEG_1008);
             if(BVar3 != 0x0)
             {
-                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x12, 0x0, uVar1, 0x4, 0x1008);
+                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x12, 0x0, uVar1, 0x4, SEG_1008);
                 if(BVar3 != 0x0)
                 {
-                    BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x16, 0x0, uVar1, 0x4, 0x1008);
+                    BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x16, 0x0, uVar1, 0x4, SEG_1008);
                     if(BVar3 != 0x0)
                     {
-                        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x1a, 0x0, uVar1, 0x4, 0x1008);
+                        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x1a, 0x0, uVar1, 0x4, SEG_1008);
                         if(BVar3 != 0x0)
                         {
-                            BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x1e, 0x0, uVar1, 0x4, 0x1008);
+                            BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x1e, 0x0, uVar1, 0x4, SEG_1008);
                             if(BVar3 != 0x0)
                             {
-                                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x22, 0x0, uVar1, 0x4, 0x1008);
+                                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x22, 0x0, uVar1, 0x4, SEG_1008);
                                 if(BVar3 != 0x0)
                                 {
                                     return;
@@ -260,14 +260,14 @@ void write_to_file_1010_6846(u32 param_1, u32 param_2, u16 param_3)
         uVar1 = (param_1 >> 0x10);
         uVar4 = param_2;
         uVar5 = (param_2 >> 0x10);
-        BVar2 = write_to_file_1008_7e1c(uVar4, uVar5, iVar3 + 0xa, uVar1, 0x114, 0x1008);
+        BVar2 = write_to_file_1008_7e1c(uVar4, uVar5, iVar3 + 0xa, uVar1, 0x114, SEG_1008);
         if(BVar2 != 0x0)
         {
-            BVar2 = write_to_file_1008_7e1c(uVar4, uVar5, iVar3 + 0x11e, uVar1, 0x2a, 0x1008);
+            BVar2 = write_to_file_1008_7e1c(uVar4, uVar5, iVar3 + 0x11e, uVar1, 0x2a, SEG_1008);
             if(BVar2 != 0x0)
             {
                 local_c[0] = (iVar3 + 0x148);
-                BVar2      = write_to_file_1008_7e1c(uVar4, uVar5, local_c, param_3, 0x2, 0x1008);
+                BVar2      = write_to_file_1008_7e1c(uVar4, uVar5, local_c, param_3, 0x2, SEG_1008);
                 if(BVar2 != 0x0)
                 {
                     return;
@@ -300,7 +300,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
 
     uVar8  = param_2;
     uVar10 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar8, uVar10, 0x3, 0x1008, param_5);
+    read_file_1008_7cfe(uVar8, uVar10, 0x3, SEG_1008, param_5);
     if(param_3 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d4;
@@ -315,7 +315,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
         mem_op_1000_179c(0x102, param_4, 0x1000);
         paStack10 = (Struct18 *)CONCAT22(param_4, param_3);
         puVar6    = param_4;
-        BVar1     = read_file_1008_7dee(uVar8, uVar10, param_3, uVar4, param_4, SVar9, 0x1008);
+        BVar1     = read_file_1008_7dee(uVar8, uVar10, param_3, uVar4, param_4, SVar9, SEG_1008);
         paStack18 = paStack10;
         if(BVar1 == 0x0)
             goto LAB_1010_692c;
@@ -332,7 +332,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
     }
     else
     {
-        uVar4 = read_file_1008_7dee(uVar8, uVar10, &iVar2->field_0xa, 0x0, uVar7, 0x114, 0x1008);
+        uVar4 = read_file_1008_7dee(uVar8, uVar10, &iVar2->field_0xa, 0x0, uVar7, 0x114, SEG_1008);
         if(uVar4 == 0x0)
         {
             globals->PTR_LOOP_1050_0310 = 0x6d2;
@@ -345,7 +345,7 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
         SVar9 = 0x2a;
         mem_op_1000_179c(0x2a, param_4, 0x1000);
         paStack18 = (Struct18 *)CONCAT22(param_4, uVar4);
-        BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, 0x1008);
+        BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, SEG_1008);
         if(BVar1 == 0x0)
         {
         LAB_1010_692c:
@@ -364,14 +364,14 @@ void pass1_1010_68c6(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 par
     }
     else
     {
-        BVar1 = read_file_1008_7dee(uVar8, uVar10, &iVar2->field_0x11e, 0x0, uVar7, 0x2a, 0x1008);
+        BVar1 = read_file_1008_7dee(uVar8, uVar10, &iVar2->field_0x11e, 0x0, uVar7, 0x2a, SEG_1008);
         if(BVar1 == 0x0)
         {
             globals->PTR_LOOP_1050_0310 = 0x6d2;
             return;
         }
     }
-    BVar1 = read_file_1008_7dee(uVar8, uVar10, &local_6, 0x0, param_5, 0x2, 0x1008);
+    BVar1 = read_file_1008_7dee(uVar8, uVar10, &local_6, 0x0, param_5, 0x2, SEG_1008);
     if(BVar1 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d2;
@@ -397,19 +397,19 @@ u16 pass1_1010_5dc6(u32 param_1, u32 param_2, u16 param_3)
     {
         uVar3 = (param_1 >> 0x10);
         iVar2 = param_1;
-        BVar1 = pass1_1008_7c2a(param_2, (iVar2 + 0x68), 0x1008);
+        BVar1 = pass1_1008_7c2a(param_2, (iVar2 + 0x68), SEG_1008);
         if(BVar1 != 0x0)
         {
-            BVar1 = pass1_1008_7c2a(param_2, (iVar2 + 0x6c), 0x1008);
+            BVar1 = pass1_1008_7c2a(param_2, (iVar2 + 0x6c), SEG_1008);
             if(BVar1 != 0x0)
             {
                 local_c[0] = globals->PTR_LOOP_1050_13ae;
                 uVar4      = (param_2 >> 0x10);
-                BVar1      = write_to_file_1008_7e1c(param_2, uVar4, local_c, param_3, 0x2, 0x1008);
+                BVar1      = write_to_file_1008_7e1c(param_2, uVar4, local_c, param_3, 0x2, SEG_1008);
                 if(BVar1 != 0x0)
                 {
                     local_6[0] = (iVar2 + 0x82);
-                    BVar1      = write_to_file_1008_7e1c(param_2, uVar4, local_6, param_3, 0x2, 0x1008);
+                    BVar1      = write_to_file_1008_7e1c(param_2, uVar4, local_6, param_3, 0x2, SEG_1008);
                     if(BVar1 != 0x0)
                     {
                         return 0x1;
@@ -438,7 +438,7 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
 
     uVar6 = param_2;
     uVar7 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar6, uVar7, 0x4, 0x1008, param_5);
+    read_file_1008_7cfe(uVar6, uVar7, 0x4, SEG_1008, param_5);
     if(param_3 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d4;
@@ -446,7 +446,7 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
     else
     {
         puVar1 = local_402;
-        read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), 0x1008);
+        read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), SEG_1008);
         if(puVar1 != 0x0)
         {
             u_var2          = str_op_1008_60e8(CONCAT22(param_5, local_402), param_4);
@@ -455,13 +455,13 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
             (iVar4 + 0x68) = u_var2;
             (iVar4 + 0x6a) = param_4;
             puVar1         = local_402;
-            read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), 0x1008);
+            read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), SEG_1008);
             if(puVar1 != 0x0)
             {
                 u_var2          = str_op_1008_60e8(CONCAT22(param_5, local_402), param_4);
                 (iVar4 + 0x6c) = u_var2;
                 (iVar4 + 0x6e) = param_4;
-                BVar3          = read_file_1008_7dee(uVar6, uVar7, &local_404, 0x0, param_5, 0x2, 0x1008);
+                BVar3          = read_file_1008_7dee(uVar6, uVar7, &local_404, 0x0, param_5, 0x2, SEG_1008);
                 if(BVar3 != 0x0)
                 {
                     globals->PTR_LOOP_1050_13ae = local_404;
@@ -469,7 +469,7 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
                     {
                         return;
                     }
-                    BVar3 = read_file_1008_7dee(uVar6, uVar7, iVar4 + 0x82, 0x0, uVar5, 0x2, 0x1008);
+                    BVar3 = read_file_1008_7dee(uVar6, uVar7, iVar4 + 0x82, 0x0, uVar5, 0x2, SEG_1008);
                     if(BVar3 != 0x0)
                     {
                         return;
@@ -498,20 +498,20 @@ void find_n_load_rsrc_1010_4e9e(u32 param_1, HGLOBAL16 param_2)
         HVar3 = param_2;
         if((iVar2 + 0x2a) != 0x0)
         {
-            HVar3 = (HGLOBAL16)0x1538;
+            HVar3 = (HGLOBAL16)LAST_SEGMENT;
             BVar1 = GlobalUnlock16(param_2);
             if(BVar1 == 0x0)
             {
-                HVar3 = (HGLOBAL16)0x1538;
-                FreeResource16((HGLOBAL16)0x1538);
+                HVar3 = (HGLOBAL16)LAST_SEGMENT;
+                FreeResource16((HGLOBAL16)LAST_SEGMENT);
             }
         }
         h_rsrc                       = FindResource16(HVar3, &PTR_LOOP_1050_000a, 0x0);
-        HVar3                        = LoadResource16((HMODULE16)0x1538, h_rsrc);
+        HVar3                        = LoadResource16((HMODULE16)LAST_SEGMENT, h_rsrc);
         *(HGLOBAL16 *)(iVar2 + 0x2a) = HVar3;
         if(HVar3 != 0x0)
         {
-            WIN16_LockResource16((HGLOBAL16)0x1538);
+            WIN16_LockResource16((HGLOBAL16)LAST_SEGMENT);
             return;
         }
     }
@@ -530,7 +530,7 @@ void pass1_1010_404a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
 
     uVar4 = param_2;
     uVar5 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar4, uVar5, 0x5, 0x1008, param_4);
+    read_file_1008_7cfe(uVar4, uVar5, 0x5, SEG_1008, param_4);
     if(param_3 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d4;
@@ -539,13 +539,13 @@ void pass1_1010_404a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     {
         iVar2 = param_1;
         uVar1 = (param_1 >> 0x10);
-        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x24, 0x0, uVar1, 0x2, 0x1008);
+        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x24, 0x0, uVar1, 0x2, SEG_1008);
         if(BVar3 != 0x0)
         {
-            BVar3 = read_file_1008_7dee(uVar4, uVar5, &local_4, 0x0, param_4, 0x2, 0x1008);
+            BVar3 = read_file_1008_7dee(uVar4, uVar5, &local_4, 0x0, param_4, 0x2, SEG_1008);
             if(BVar3 != 0x0)
             {
-                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x7e, 0x0, uVar1, 0x2, 0x1008);
+                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x7e, 0x0, uVar1, 0x2, SEG_1008);
                 if(BVar3 != 0x0)
                 {
                     (iVar2 + 0x6a) = local_4;
@@ -597,7 +597,7 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
     local_1e[0] = u_stack6;
     uVar6       = param_2;
     uVar7       = (param_2 >> 0x10);
-    BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, 0x1008);
+    BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, SEG_1008);
     if(BVar2 != 0x0)
     {
         pass1_1008_5784(CONCAT22(param_3, local_e), *(iVar4 + 0xa));
@@ -609,14 +609,14 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
             if((extraout_DX | puVar3) == 0x0)
             {
                 local_22[0] = (iVar4 + 0xe);
-                BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_22, param_3, 0x2, 0x1008);
+                BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_22, param_3, 0x2, SEG_1008);
                 if(BVar2 == 0x0)
                 {
                     globals->PTR_LOOP_1050_0310 = 0x6d0;
                     return;
                 }
                 local_22[0] = (iVar4 + 0x10);
-                BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_22, param_3, 0x2, 0x1008);
+                BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_22, param_3, 0x2, SEG_1008);
                 if(BVar2 == 0x0)
                 {
                     globals->PTR_LOOP_1050_0310 = 0x6d0;
@@ -647,7 +647,7 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
                                 return;
                             }
                             local_1e[0] = (iStack4 * 0x8 + 0xea8);
-                            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, 0x1008);
+                            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, SEG_1008);
                             if(BVar2 == 0x0)
                                 break;
                             iStack4 = iStack4 + 0x1;
@@ -656,7 +656,7 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
                         return;
                     }
                     local_1e[0] = (iStack4 * 0x8 + 0xe28);
-                    BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, 0x1008);
+                    BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, SEG_1008);
                     if(BVar2 == 0x0)
                         break;
                     iStack4 = iStack4 + 0x1;
@@ -665,14 +665,14 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
                 return;
             }
             local_18[0] = (puVar3 + 0x4);
-            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_18, param_3, 0x2, 0x1008);
+            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_18, param_3, 0x2, SEG_1008);
             if(BVar2 == 0x0)
             {
                 globals->PTR_LOOP_1050_0310 = 0x6d0;
                 return;
             }
             local_2a[0] = (uStack18 + 0x6);
-            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_2a, param_3, 0x4, 0x1008);
+            BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_2a, param_3, 0x4, SEG_1008);
         } while(BVar2 != 0x0);
     }
     globals->PTR_LOOP_1050_0310 = 0x6d0;
@@ -703,14 +703,14 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
 
     uVar7 = param_2;
     uVar8 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar7, uVar8, 0x6, 0x1008, param_5);
+    read_file_1008_7cfe(uVar7, uVar8, 0x6, SEG_1008, param_5);
     if(param_3 == 0x0)
     {
         globals->PTR_LOOP_1050_0310 = 0x6d4;
     }
     else
     {
-        BVar3 = read_file_1008_7dee(uVar7, uVar8, &local_6, 0x0, param_5, 0x2, 0x1008);
+        BVar3 = read_file_1008_7dee(uVar7, uVar8, &local_6, 0x0, param_5, 0x2, SEG_1008);
         if(BVar3 != 0x0)
         {
             paStack8 = (Struct229 *)0x0;
@@ -730,19 +730,19 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 else
                 {
                     puStack26        = 0x389a;
-                    uVar4->field_0x2 = 0x1008;
+                    uVar4->field_0x2 = SEG_1008;
                     puStack26        = 0xea8;
-                    uVar4->field_0x2 = 0x1010;
+                    uVar4->field_0x2 = SEG_1010;
                     puStack22        = puStack26;
                 }
-                BVar3 = read_file_1008_7dee(uVar7, uVar8, local_12, 0x0, param_5, 0x2, 0x1008);
-                if((BVar3 == 0x0) || (BVar3 = read_file_1008_7dee(uVar7, uVar8, puStack22 + 0x6, 0x0, (puStack22 >> 0x10), 0x4, 0x1008), BVar3 == 0x0))
+                BVar3 = read_file_1008_7dee(uVar7, uVar8, local_12, 0x0, param_5, 0x2, SEG_1008);
+                if((BVar3 == 0x0) || (BVar3 = read_file_1008_7dee(uVar7, uVar8, puStack22 + 0x6, 0x0, (puStack22 >> 0x10), 0x4, SEG_1008), BVar3 == 0x0))
                 {
                     puStack26 = puStack22;
                     if(puStack22 != 0x0)
                     {
                         ppcVar2 = *puStack22;
-                        (**ppcVar2)(0x1008, puStack22, (puStack22 >> 0x10), 0x1);
+                        (**ppcVar2)(SEG_1008, puStack22, (puStack22 >> 0x10), 0x1);
                     }
                     goto LAB_1010_0cb1;
                 }
@@ -754,12 +754,12 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 paStack8 = (Struct229 *)&paStack8->field_0x1;
                 param_4  = extraout_DX;
             }
-            BVar3 = read_file_1008_7dee(uVar7, uVar8, &iVar6->field_0xe, 0x0, uVar5, 0x2, 0x1008);
-            if((BVar3 != 0x0) && (BVar3 = read_file_1008_7dee(uVar7, uVar8, &iVar6->field_0x10, 0x0, uVar5, 0x2, 0x1008), BVar3 != 0x0))
+            BVar3 = read_file_1008_7dee(uVar7, uVar8, &iVar6->field_0xe, 0x0, uVar5, 0x2, SEG_1008);
+            if((BVar3 != 0x0) && (BVar3 = read_file_1008_7dee(uVar7, uVar8, &iVar6->field_0x10, 0x0, uVar5, 0x2, SEG_1008), BVar3 != 0x0))
             {
                 for(uStack4 = 0x0; uStack4 < 0xa; uStack4 = uStack4 + 0x1)
                 {
-                    BVar3 = read_file_1008_7dee(uVar7, uVar8, local_2a, 0x0, param_5, 0x2, 0x1008);
+                    BVar3 = read_file_1008_7dee(uVar7, uVar8, local_2a, 0x0, param_5, 0x2, SEG_1008);
                     if(BVar3 == 0x0)
                         goto LAB_1010_0cb1;
                     uVar5 = uStack4;
@@ -775,7 +775,7 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                     uStack4 = 0x0;
                     do
                     {
-                        BVar3 = read_file_1008_7dee(uVar7, uVar8, local_2a, 0x0, param_5, 0x2, 0x1008);
+                        BVar3 = read_file_1008_7dee(uVar7, uVar8, local_2a, 0x0, param_5, 0x2, SEG_1008);
                         if(BVar3 == 0x0)
                             goto LAB_1010_0cb1;
                         (uStack4 * 0x8 + 0xea8) = local_2a[0];
@@ -1690,7 +1690,7 @@ void read_file_1008_7c6e(u16 param_1, u16 param_2, char *param_3, HFILE16 param_
             break;
         param_3 = (param_3 & 0xffff0000 | (param_3 + 0x1));
         *pcVar1 = local_c[0];
-        param_4 = (HFILE16)0x1538;
+        param_4 = (HFILE16)LAST_SEGMENT;
     }
     *param_3 = '\0';
     return;
@@ -1741,8 +1741,8 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
     do
     {
         _llseek16(param_4, u_stack6 << 0x10, (u16)(u_stack6 >> 0x10));
-        param_4 = (u16)0x1538;
-        lVar3   = WIN16_hread((HFILE16)0x1538, 0x400, ZEXT24(local_406) << 0x10);
+        param_4 = (u16)LAST_SEGMENT;
+        lVar3   = WIN16_hread((HFILE16)LAST_SEGMENT, 0x400, ZEXT24(local_406) << 0x10);
         for(uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 = uStack1040 + 0x1)
         {
             if(local_406[uStack1040] == *_PTR_s_dcbSC_1050_0336_1050_033c)
@@ -1758,7 +1758,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 if(u_var2 != 0x0)
                 {
                     lVar3 = uStack1040 + u_stack6 + 0x7;
-                    _llseek16((HFILE16)0x1538, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
+                    _llseek16((HFILE16)LAST_SEGMENT, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
                     return;
                 }
             }
@@ -1989,7 +1989,7 @@ u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
     pCVar4 = param_2;
     if((iVar2 + 0x4) != -0x1)
     {
-        pCVar4 = 0x1538;
+        pCVar4 = LAST_SEGMENT;
         _lclose16((HFILE16)param_2);
         (iVar2 + 0x4) = 0xffff;
     }
@@ -2025,7 +2025,7 @@ BOOL16 read_file_1008_7146(i1632_t param_1, u16 param_2, LPCSTR param_3, u16 par
     path = param_3;
     if((param_1 + 0x4) != -0x1)
     {
-        path = 0x1538;
+        path = LAST_SEGMENT;
         _lclose16((HFILE16)param_3);
         (param_1 + 0x4) = 0xffff;
     }
@@ -2047,7 +2047,7 @@ BOOL16 read_file_1008_7146(i1632_t param_1, u16 param_2, LPCSTR param_3, u16 par
 }
 
 
-// WARNING: Removing unreachable block (ram,0x100871e6)
+// WARNING: Removing unreachable block (ram,SEG_100871e6)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 u16 read_file_1008_71a0(u32 param_1, u16 param_2)

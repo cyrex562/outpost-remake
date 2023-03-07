@@ -6,6 +6,11 @@
 #define OUTPOST_1_SRC_UI_OPS_UI_OPS_2_H_
 
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_0xx/struct_18.h"
 
 void  win_ui_op_1040_5800(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 param_5);
 
@@ -220,14 +225,14 @@ void  unk_win_ui_op_1040_1d7a(Struct33 *param_1, i16 param_2, HWND16 param_3);
 void  pass1_1040_205e(Struct18 *param_1);
 
 
+void create_win_1040_20d4(Globals *globals,
+                          u16             param_1,
+                          u16             param_2,
+                          u16             param_3,
+                          Struct1        *param_4);
 
 
-void  create_win_1040_20d4(u16 param_1, u16 param_2, u16 param_3, Struct1 *param_4);
-
-
-
-
-void  pass1_1038_ebd6(Struct18 *param_1);
+void pass1_1038_ebd6(Globals *globals, Struct18 *param_1);
 
 
 

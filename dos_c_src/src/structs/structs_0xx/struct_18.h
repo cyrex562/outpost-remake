@@ -149,7 +149,7 @@ struct Struct18
     u8  field_0x8b;
     u8  field_0x8c;
     u8  field_0x8d;
-    i16 field_0x8e;
+    Struct18* field_0x8e;
     u16 field_0x90;
     u16 field_0x92;
     void*     field_9c; // u16

@@ -72,7 +72,7 @@ LAB_1008_162a:
         pass1_1020_08b6(param_3, p_stack32, (var3 + 0xcc), param_4);
         break;
     default:
-        debug_pri16_1008_6048(globals->s_OpWnd__getKid__Unknown_target_mo_1050_01a3, 0x1008, param_3);
+        debug_pri16_1008_6048(globals->s_OpWnd__getKid__Unknown_target_mo_1050_01a3, SEG_1008, param_3);
         int stack0xfffe = 0;
         fn_ptr_op_1000_24cd(NULL, 0x1, &stack0xfffe);
         goto LAB_1008_2b3a;

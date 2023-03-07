@@ -499,7 +499,7 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     uVar3            = (param_1 >> 0x10);
     iVar4            = (Struct354 *)param_1;
     *param_1         = 0x389a;
-    iVar4->field_0x2 = 0x1008;
+    iVar4->field_0x2 = SEG_1008;
     pass1_1030_84ae(param_1 & 0xffff0000 | &iVar4->field_0x4);
     iVar4->field_0x24 = param_3;
     puStack38         = (param_1 & 0xffff0000 | &iVar4->field_0x28);
@@ -1049,7 +1049,7 @@ void  pass1_1030_6522(u32 *param_1, u32 param_2, u32 param_3, u16 param_4)
                 }
             }
             ppcVar1 = (*param_1 + 0x10);
-            (**ppcVar1)(0x1008, *param_1);
+            (**ppcVar1)(SEG_1008, *param_1);
             if((extraout_DX_01 | uVar3) != 0x0)
             {
                 return;

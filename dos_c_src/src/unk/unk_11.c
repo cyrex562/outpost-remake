@@ -251,7 +251,7 @@ void  pass1_1018_3ea4(u32 param_1)
     if((u_var2 | puVar1) != 0x0)
     {
         ppcVar3 = *puVar1;
-        (**ppcVar3)(0x1008, puVar1, u_var2, 0x1);
+        (**ppcVar3)(SEG_1008, puVar1, u_var2, 0x1);
     }
     (iVar4 + 0x136) = 0x0;
     return;
@@ -599,7 +599,7 @@ void  pass1_1018_2d84(u16 param_1, u32 param_2)
 }
 
 
-void  pass1_1018_2d9a(u32 param_1)
+u16 pass1_1018_2d9a(u32 param_1)
 
 {
     i16       *pi_var1;
@@ -869,7 +869,7 @@ void  pass1_1018_331c(Struct638 *param_1, u16 param_2, u16 param_3, u16 param_4,
     param_1->field_0x13e       = 0x0;
     param_1->field_0x142       = 0x0;
     CONCAT22(param_2, param_1) = 0x470c; // &PTR_LOOP_1050_470c;
-    param_1->field_0x2         = 0x1018;
+    param_1->field_0x2         = SEG_1018;
     pu_var2                     = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3b, param_4, param_5, unaff_DI);
     uVar1                      = pu_var2;
     param_1->field_0x122       = uVar1;
@@ -1238,7 +1238,7 @@ void  pass1_1018_2076(u16 *param_1, u16 param_2)
 
     uVar1           = (param_1 >> 0x10);
     *param_1        = 0x21e8;
-    (param_1 + 0x2) = 0x1018;
+    (param_1 + 0x2) = SEG_1018;
     pass1_1018_209c(param_1 & 0xffff | uVar1 << 0x10);
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1319,7 +1319,7 @@ void  pass1_1018_216e(u32 param_1, u32 param_2, u16 param_3)
     for(; uStack8 <= uVar1; uStack8 = uStack8 + 0x1)
     {
         u_var2 = uVar1;
-        pass1_1010_8018(_PTR_LOOP_1050_14cc, uStack8, param_3, 0x1010);
+        pass1_1010_8018(_PTR_LOOP_1050_14cc, uStack8, param_3, SEG_1010);
         uVar3                            = (param_1 >> 0x10);
         (param_1 + uStack8 * 0x4 + 0x12) = u_var2;
         (param_1 + uStack8 * 0x4 + 0x14) = param_3;
@@ -2401,7 +2401,7 @@ void  pass1_1010_e1f4(u32 param_1, u32 param_2, u16 param_3, u16 param_4)
     else
     {
     LAB_1010_e241:
-        load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
+        load_string_1010_84e0(SEG_1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
     }
     return;
 }
@@ -2518,7 +2518,7 @@ void  pass1_1010_988c(u32 param_1, i16 param_2)
     } while((iVar3 + 0x4) != param_2);
     iVar4         = (iVar3 + 0x6) + -0x1;
     (iVar3 + 0x6) = iVar4;
-    if((iVar4 < 0x1) && (ppcVar1 = ((iVar6 + 0xe) + 0xc), (**ppcVar1)(0x1008, (iVar6 + 0xe), lVar8), u_var2 = (iVar6 + 0xe), (u_var2 + 0x8) == 0x0))
+    if((iVar4 < 0x1) && (ppcVar1 = ((iVar6 + 0xe) + 0xc), (**ppcVar1)(SEG_1008, (iVar6 + 0xe), lVar8), u_var2 = (iVar6 + 0xe), (u_var2 + 0x8) == 0x0))
     {
         (iVar6 + 0x16) = 0x1;
     }
@@ -2585,9 +2585,9 @@ void  pass1_1010_a478(u16 *param_1, u16 param_2)
     uVar4            = (param_1 >> 0x10);
     uVar3            = (Struct497 *)param_1;
     *param_1         = 0xe9cc;
-    uVar3->field_0x2 = 0x1010;
+    uVar3->field_0x2 = SEG_1010;
     uVar3->field_0xa = 0xe9dc;
-    uVar3->field_0xc = 0x1010;
+    uVar3->field_0xc = SEG_1010;
     if(uVar3->field_0x138 != 0x0)
     {
         if(param_1 == 0x0)
@@ -2614,7 +2614,7 @@ void  pass1_1010_a478(u16 *param_1, u16 param_2)
     }
     pu_stack6    = CONCAT22(uVar4, puVar1);
     *pu_stack6   = 0x389a;
-    puVar1[0x1] = 0x1008;
+    puVar1[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
 }
@@ -2902,7 +2902,7 @@ void  pass1_1010_8c78(u16 *param_1, u16 param_2)
 
 {
     *param_1        = 0x8ee2;
-    (param_1 + 0x2) = 0x1010;
+    (param_1 + 0x2) = SEG_1010;
     pass1_1010_1d80(param_1, param_2);
     return;
 }
@@ -2920,7 +2920,7 @@ void  pass1_1010_8f78(u16 *param_1)
     uVar4            = (param_1 >> 0x10);
     iVar4            = (Struct490 *)param_1;
     *param_1         = 0x9254;
-    iVar4->field_0x2 = 0x1010;
+    iVar4->field_0x2 = SEG_1010;
     puVar1           = iVar4->field_0x4;
     u_var2            = iVar4->field_0x6;
     if((u_var2 | puVar1) != 0x0)
@@ -2929,7 +2929,7 @@ void  pass1_1010_8f78(u16 *param_1)
         (**ppcVar3)();
     }
     *param_1         = 0x389a;
-    iVar4->field_0x2 = 0x1008;
+    iVar4->field_0x2 = SEG_1008;
     return;
 }
 

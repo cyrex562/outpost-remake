@@ -146,7 +146,7 @@ struct Struct1
     u8          field_0x8b;
     u8          field_0x8c;
     u8          field_0x8d;
-    u32        *field_0x8e;
+    Struct76        *field_0x8e;
     u8          field_0x90;
     u8          field_0x91;
     u32 *field_0x92;

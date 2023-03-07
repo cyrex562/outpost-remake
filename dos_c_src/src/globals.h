@@ -975,6 +975,13 @@ struct Globals
     u16      PTR_LOOP_1050_5ef8;
     id       DAT_1050_0004;
     unsigned int s_dibtext_bmp_1050_1844;
+    cstring      _PTR_LOOP_1050_14cc;
+    u16          PTR_LOOP_1050_0396;
 };
 
 typedef struct Globals Globals;
+
+static u16 LAST_SEGMENT = 0x1538;
+static u16 SEG_1018 = 0x1018;
+static u16 SEG_1010 = 0x1010;
+static u16 SEG_1008 = 0x1008;

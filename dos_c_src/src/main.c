@@ -86,7 +86,7 @@ i16 *entry(Globals *globals,
             globals->PTR_LOOP_1050_5f4c = param_4;
             globals->PTR_LOOP_1050_5f4e = param_2;
             globals->PTR_LOOP_1050_5f50 = param_5;
-            LockSegment16((HGLOBAL16)0x1538);
+            LockSegment16((HGLOBAL16)LAST_SEGMENT);
             globals->PTR_LOOP_1050_5f52 = (result >> 0x10);
             globals->PTR_LOOP_1050_5f84 = result;
             DVar10                      = GetVersion16();
@@ -106,12 +106,12 @@ i16 *entry(Globals *globals,
             globals->PTR_LOOP_1050_5f84 = result;
             pu8_var15                   = globals->PTR_LOOP_1050_5f4c;
             // initialize the app
-            param_8                     = InitApp16((HINSTANCE16)0x1538);
+            param_8                     = InitApp16((HINSTANCE16)LAST_SEGMENT);
             globals->PTR_LOOP_1050_5f84 = result;
             if(param_8 != 0)
                 break;
         }
-        in_task_context = (struct CONTEXT *)0x1538;
+        in_task_context = (struct CONTEXT *)LAST_SEGMENT;
         param_8         = CONCAT11((param_8 >> 8), 0xff);
         pass1_1000_24db(globals, param_8, 0);
         globals->PTR_LOOP_1050_5f84 = result;
@@ -119,7 +119,7 @@ i16 *entry(Globals *globals,
     // app init at this point?
     interrupt_vector_op_1000_23ea(NULL, param_2, param_5, 0, unaff_SS);
     globals->PTR_LOOP_1050_5f84 = result;
-    pass1_1000_262c(NULL, 0x238d, 0x1538, unaff_SS, 0x1538);
+    pass1_1000_262c(NULL, 0x238d, LAST_SEGMENT, unaff_SS, LAST_SEGMENT);
     globals->PTR_LOOP_1050_5f84 = result;
     pass1_1000_27d6(NULL, (int)(result >> 0x10));
     result = ret_op_1000_55ac(uVar5);
@@ -128,8 +128,8 @@ i16 *entry(Globals *globals,
     fn_ptr_op_1000_24cd(NULL, uVar5, 0);
     iVar14 = 0x15;
     iVar13 = 0x15;
-    pass1_1000_25a8(NULL, param_5, 0x1538);
-    pass1_1000_2913(NULL, iVar13, param_5, 0x1538);
+    pass1_1000_25a8(NULL, param_5, LAST_SEGMENT);
+    pass1_1000_2913(NULL, iVar13, param_5, LAST_SEGMENT);
     string_1 = poss_str_op_1000_28dc(NULL, iVar14);
     if(string_1 != 0x0)
     {
@@ -152,7 +152,7 @@ i16 *entry(Globals *globals,
         pcVar8[-1] = '\0';
     }
     // END OF APP EXECUTION
-    FatalAppExit16(0x1538, string_1);
+    FatalAppExit16(LAST_SEGMENT, string_1);
     FatalExit();
     puVar7 = &globals->PTR_LOOP_1050_63fe;
     do

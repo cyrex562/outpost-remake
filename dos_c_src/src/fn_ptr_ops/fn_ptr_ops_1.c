@@ -33,6 +33,7 @@
 #include "utils.h"
 
 #include <libzvbi.h>
+#include <minwindef.h>
 
 
 Struct18 *pass1_1040_d89e(Globals *globals, Struct18 *param_1, u8 param_2)
@@ -329,7 +330,7 @@ Struct18 *pass1_1040_1ec8(Struct18 *param_1, u8 param_2)
 Struct18 *pass1_1038_ee48(Struct18 *param_1, u8 param_2)
 
 {
-    pass1_1038_ebd6(param_1);
+    pass1_1038_ebd6(NULL, param_1);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -777,7 +778,7 @@ void pass1_1038_6912(Globals *globals, u16 *param_1)
         fn_ptr_1000_17ce(paStack10, 0x1000);
     }
     *param_1        = 0x389a;
-    (param_1 + 0x2) = 0x1008;
+    (param_1 + 0x2) = SEG_1008;
 }
 
 
@@ -1373,7 +1374,7 @@ void pass1_1038_42cc(Globals *globals, u32 param_1, u16 param_2)
     {
         return;
     }
-    uVar11  = 0x1008;
+    uVar11  = SEG_1008;
     puVar12 = pass1_1008_c6fa(globals->_PTR_LOOP_1050_06e0, 0x2d);
     puVar7  = (puVar12 >> 0x10);
     uVar4   = puVar12;
@@ -1381,7 +1382,7 @@ void pass1_1038_42cc(Globals *globals, u32 param_1, u16 param_2)
     puStack10 = CONCAT22(puVar7, uVar4);
     ppcVar1   = (*puStack10 + 0x10);
     uVar5     = uVar4;
-    (**ppcVar1)(0x1008, uVar4, puVar7);
+    (**ppcVar1)(SEG_1008, uVar4, puVar7);
     uStack18 = CONCAT22(extraout_DX, uVar5);
     bVar3    = false;
     uVar8    = extraout_DX;
@@ -1887,7 +1888,7 @@ Struct18 *pass1_1038_29d2(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = 0x389a;
-    (param_1 + 0x2)    = 0x1008;
+    (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -1924,7 +1925,7 @@ void pass1_1038_2a5c(Globals *globals, u16 *param_1)
         (**ppcVar3)();
     }
     *param_1      = 0x389a;
-    (iVar4 + 0x2) = 0x1008;
+    (iVar4 + 0x2) = SEG_1008;
 }
 
 
@@ -2130,7 +2131,7 @@ void pass1_1038_2c82(Globals *globals,
                       globals->_PTR_LOOP_1050_0ed0, uVar14, param_9, puVar13, param_7);
                     puVar9  = (puStack14 + 0x20);
                     ppcVar7 = (*puVar9 + 0x4);
-                    (**ppcVar7)(0x1010, puVar9, (puStack14 >> 0x10), 0x6);
+                    (**ppcVar7)(SEG_1010, puVar9, (puStack14 >> 0x10), 0x6);
                 }
             }
         }

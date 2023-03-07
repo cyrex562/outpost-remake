@@ -335,7 +335,7 @@ LAB_1010_25bb:
     u_var2 = 0x60;
     mem_op_1000_179c(0x60,param_4,0x1000);
     if (((uint)param_4 | (uint)paVar4) == 0) goto LAB_1010_2680;
-    uVar7 = 0x1008;
+    uVar7 = SEG_1008;
     struct_1008_ecb2((Struct221 *)paVar4,(u16)param_4,param_2);
     puVar3 = extraout_DX;
 LAB_1010_2683:

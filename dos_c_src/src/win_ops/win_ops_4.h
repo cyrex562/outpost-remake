@@ -13,7 +13,12 @@
 #include "structs/structs_1xx/structs_16x.h"
 
 
-void  def_win_proc_1008_5632(u32 *param_1, WPARAM16 param_2, u16 param_3, i16 param_4, u16 param_5);
+void def_win_proc_1008_5632(Globals *globals,
+                            u32     *param_1,
+                            WPARAM16 param_2,
+                            u16      param_3,
+                            i16      param_4,
+                            u16      param_5);
 
 
 void window_op_1008_3bd6(Globals  *globals,
@@ -43,9 +48,7 @@ void  post_quit_msg_1008_3af4(i16 exit_code);
 u16  unk_win_msg_op_1008_0a3c(u32 param_1, u16 param_2, HWND16 param_3);
 
 
-
-
-void  pass1_1008_0a92(u32 param_1, i16 param_2);
+void pass1_1008_0a92(Globals *globals, u32 param_1, short param_2);
 
 
 

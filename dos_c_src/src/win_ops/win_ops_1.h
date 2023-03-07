@@ -6,8 +6,16 @@
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_1_H_
 
 
+#include "globals.h"
+#include "op_int.h"
 #include "op_win_def.h"
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_0xx/struct_37.h"
+#include "structs/structs_0xx/structs_5x.h"
 #include "structs/structs_0xx/structs_6x.h"
+
+
 void  send_msg_1040_c85a(u32 param_1, HWND16 param_2);
 
 
@@ -65,9 +73,12 @@ void  pass1_1040_8978(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, WNDCL
 void  pass1_1040_89a4(u32 *param_1, u16 *param_2, u8 *param_3, i16 param_4, WNDCLASS16 *param_5);
 
 
-
-
-HANDLE16  create_window_1040_8bea(u32 param_1, u16 param_2, i16 param_3, u16 param_4, HMENU16 param_5);
+HANDLE16 create_window_1040_8bea(Globals *globals,
+                                 u32             param_1,
+                                 u16             param_2,
+                                 i16             param_3,
+                                 u16             param_4,
+                                 HMENU16  hmenu_arg5);
 
 
 void mixed_struct_op_1040_8fb8(Struct65 *param_1,
@@ -155,9 +166,12 @@ BOOL16  post_win_msg_1040_7b3c(u32 *param_1, u16 param_2, u16 param_3, i16 param
 void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2);
 
 
-
-
-void  create_window_1040_7620(u32 param_1, i16 param_2, HMENU16 *in_menu_handle, u16 param_4, u16 param_5);
+void create_window_1040_7620(Globals *globals,
+                             u32      param_1,
+                             i16      param_2,
+                             HMENU16 *in_menu_handle,
+                             u16      param_4,
+                             u16      param_5);
 
 
 
@@ -170,14 +184,19 @@ void  post_win_msg_1040_7f56(u32 param_1, char *param_2);
 BOOL16  post_win_msg_1040_7f1c(u32 param_1, i16 param_2, HWND16 param_3);
 
 
+void win_ui_op_1040_6d1a(Globals *globals,
+                         i16      param_1,
+                         u16      param_2,
+                         u16      param_3,
+                         u32      param_4);
 
 
-void  win_ui_op_1040_6d1a(i16 param_1, u16 param_2, u16 param_3, u32 param_4);
-
-
-
-
-void  create_window_1040_6eae(u32 param_1, i16 param_2, HMENU16 *in_menu_handle, u16 param_4, u16 param_5);
+void create_window_1040_6eae(Globals *globals,
+                             u32      param_1,
+                             i16      param_2,
+                             HMENU16 *in_menu_handle,
+                             u16      param_4,
+                             u16      param_5);
 
 
 

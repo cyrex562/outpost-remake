@@ -6,6 +6,7 @@
 #define OUTPOST_1_SRC_UNK_UNK_11_H_
 
 
+#include "op_int.h"
 u16  pass1_1018_5932(u32 param_1, u16 param_2, u16 param_3);
 
 
@@ -77,9 +78,7 @@ void  pass1_1018_2d22(u32 param_1, i16 *param_2, u16 *param_3, i16 param_4);
 void  pass1_1018_2d84(u16 param_1, u32 param_2);
 
 
-
-
-void  pass1_1018_2d9a(u32 param_1);
+u16 pass1_1018_2d9a(u32 param_1);
 
 
 

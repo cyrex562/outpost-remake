@@ -74,7 +74,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
         }
         local_32 = param_2;
         uStack48 = 0x0;
-        DVar1    = mciSendCommand16(0x1538, &local_32, CONCAT22(0x1, param_4), 0x8040000);
+        DVar1    = mciSendCommand16(LAST_SEGMENT, &local_32, CONCAT22(0x1, param_4), 0x8040000);
         uStack32 = (DVar1 >> 0x10);
         uStack34 = DVar1;
         if((uStack32 | uStack34) != 0x0)

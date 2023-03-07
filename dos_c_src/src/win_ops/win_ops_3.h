@@ -237,9 +237,8 @@ void send_msg_1008_84ba(u16 param_1, u32 param_2, HWND16 param_3);
 void win_1008_5c9e(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, WNDCLASS16 *param_5);
 
 
-
-
-HWND16 create_window_1008_5e7e(u16 in_stock_obj_id, WNDCLASS16 *in_wnd_class);
+HWND16
+create_window_1008_5e7e(Globals *globals, u16 in_stock_obj_id, WNDCLASS16 *in_wnd_class);
 
 
 

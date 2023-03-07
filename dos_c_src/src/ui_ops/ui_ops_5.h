@@ -5,6 +5,10 @@
 #ifndef OUTPOST_1_SRC_UI_OPS_SYS_OPS_5_H_
 #define OUTPOST_1_SRC_UI_OPS_SYS_OPS_5_H_
 
+#include "op_int.h"
+#include "op_win_def.h"
+#include "globals.h"
+
 void  unk_win_op_1020_65cc(Struct60 *param_1, i16 param_2, u16 param_3);
 
 
@@ -16,7 +20,11 @@ void unk_win_ui_op_1020_67ce(Globals *globals, Struct20 *in_struct_1, u16 param_
 void  pass1_1020_687c(u32 param_1, u16 param_2, u16 param_3);
 
 
-u16  unk_destroy_win_op_1020_694c(u32 param_1, u16 param_2, HWND16 param_3, u16 param_4);
+u16 unk_destroy_win_op_1020_694c(Globals *globals,
+                                 u32      param_1,
+                                 u16      param_2,
+                                 HWND16   param_3,
+                                 u16      param_4);
 
 
 

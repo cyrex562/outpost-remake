@@ -538,7 +538,7 @@ void  pass1_1010_e58a(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 pa
         }
         puVar8  = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x31, param_5, param_3, param_4);
         ppcVar1 = (*puVar8 + 0x14);
-        (**ppcVar1)(0x1008, puVar8, (puVar8 >> 0x10), puVar4, puVar4 >> 0xf);
+        (**ppcVar1)(SEG_1008, puVar8, (puVar8 >> 0x10), puVar4, puVar4 >> 0xf);
         uVar5 = extraout_DX_01 | puVar4;
         u_var2 = extraout_DX_01;
     }
@@ -546,18 +546,18 @@ void  pass1_1010_e58a(u32 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 pa
     {
         puVar8  = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x41, param_5, param_3, param_4);
         ppcVar1 = (*puVar8 + 0x14);
-        (**ppcVar1)(0x1008, puVar8, (puVar8 >> 0x10), puVar4, puVar4 >> 0xf);
+        (**ppcVar1)(SEG_1008, puVar8, (puVar8 >> 0x10), puVar4, puVar4 >> 0xf);
         uVar5 = extraout_DX | puVar4;
         u_var2 = extraout_DX;
     }
     if(uVar5 == 0x0)
     {
-        load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
+        load_string_1010_84e0(SEG_1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (iVar6 + 0x13c), in_buf_len_5);
     }
     else
     {
         ppcVar1 = (*puVar4 + 0x14);
-        (**ppcVar1)(0x1008, puVar4, u_var2);
+        (**ppcVar1)(SEG_1008, puVar4, u_var2);
         unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (iVar6 + 0x13c)), CONCAT22(extraout_DX_00, puVar4));
     }
     return;
@@ -629,7 +629,7 @@ void  pass1_1010_e682(u32 param_1, u32 param_2, u16 param_3, u8 param_4)
                         uVar8 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uStack8, 0x1e);
                         if(uVar8 == 0x0)
                         {
-                            load_string_1010_84e0(0x1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar5 + 0x13c), (short)in_buf_len_5);
+                            load_string_1010_84e0(SEG_1008, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, (uVar5 + 0x13c), (short)in_buf_len_5);
                             return;
                         }
                         pass1_1030_6ddc(param_2);
@@ -858,7 +858,7 @@ lobals starting with '_' overlap smaller symbols at the same address
         *pu_stack6 = '\0';
         return;
     }
-    load_string_1010_84e0(0x1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, pu_stack6, (short)(pu_stack6 >> 0x10));
+    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, pu_stack6, (short)(pu_stack6 >> 0x10));
     return;
 }
 
@@ -933,7 +933,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     default:
         break;
     case 0x6:
-        load_string_1010_84e0(0x1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
+        load_string_1010_84e0(SEG_1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
         uStack22 = str_op_1000_3da4(pcStack6);
         pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
         uVar7    = pcVar5;
@@ -943,7 +943,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     case 0x9:
         break;
     case 0x8:
-        load_string_1010_84e0(0x1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
+        load_string_1010_84e0(SEG_1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
         uStack22 = str_op_1000_3da4(pcStack6);
         pcVar5   = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), 0x1000);
         uVar7    = pcVar5;
@@ -952,7 +952,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
         sys_1000_3f9c((in_buffer_4 + uStack22), in_buf_len_5, uVar6, &USHORT_1050_1050, uVar7, &stack0xfffe, uVar3, 0x1000, param_1, param_2);
         return;
     }
-    load_string_1010_84e0(0x1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
+    load_string_1010_84e0(SEG_1010, uVar7, uVar6, 0x3ff, in_buffer_4, (short)in_buf_len_5);
     return;
 }
 
@@ -1274,7 +1274,7 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
                 }
                 else
                 {
-                    uVar6                               = 0x1008;
+                    uVar6                               = SEG_1008;
                     uVar7                               = str_op_1008_60e8(CONCAT22(uVar9, pcVar5), uVar10);
                     (&local_f6 + uStack398)             = uVar7;
                     (&local_f6 + uStack398 * 0x4 + 0x2) = uVar10;
@@ -1427,7 +1427,7 @@ void  pass1_1010_cc56(u32 param_1, u32 param_2, Struct104 *param_3, u16 param_4,
                 }
                 else
                 {
-                    uVar4                               = 0x1008;
+                    uVar4                               = SEG_1008;
                     uVar5                               = str_op_1008_60e8(CONCAT22(uStack324, pcVar3), uVar8);
                     (&local_aa + uStack332)             = uVar5;
                     (&local_aa + uStack332 * 0x4 + 0x2) = uVar8;
@@ -1783,9 +1783,9 @@ void  pass1_1010_9fee(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u8 *pa
     else
     {
         *puStack10      = 0x389a;
-        (param_4 + 0x2) = 0x1008;
+        (param_4 + 0x2) = SEG_1008;
         *puStack10      = 0xa1c4;
-        (param_4 + 0x2) = 0x1010;
+        (param_4 + 0x2) = SEG_1010;
         pu_stack6        = puStack10;
     }
     uVar4            = (pu_stack6 >> 0x10);
@@ -2067,9 +2067,9 @@ switchD_1010_aaef_caseD_b:
     u_var2  = pass1_1008_ab12(paVar6, puVar3, param_2);
     if(u_var2 != 0x0)
     {
-        post_win_msg_1008_a0e4(paVar6, 0x0, 0x0, 0x1, 0x0, u_var2, 0x1008, param_6);
+        post_win_msg_1008_a0e4(paVar6, 0x0, 0x0, 0x1, 0x0, u_var2, SEG_1008, param_6);
     }
-    post_win_msg_1008_a0e4(paVar6, 0x0, 0x0, 0x1, 0x0, 0x3d, 0x1008, param_6);
+    post_win_msg_1008_a0e4(paVar6, 0x0, 0x0, 0x1, 0x0, 0x3d, SEG_1008, param_6);
     uVar10 = 0x400;
     iVar1  = 0x6;
     uVar9  = 0x1;
