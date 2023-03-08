@@ -134,7 +134,7 @@ LAB_1008_162a:
             goto LAB_1008_169a;
         pi_var1  = (var3 + 0xcc);
         *pi_var1 = *pi_var1 + 0x1;
-        unk_draw_op_1020_41c8(p_stack32, (var3 + 0xcc), var3, 0x1020);
+        unk_draw_op_1020_41c8(p_stack32, (var3 + 0xcc), var3, SEG_1020);
         break;
     case 0x8:
         mem_op_1000_179c(NULL, 0xf6, var5, 0x1000);
@@ -144,7 +144,7 @@ LAB_1008_162a:
             goto LAB_1008_169a;
         pi_var1  = (var3 + 0xcc);
         *pi_var1 = *pi_var1 + 0x1;
-        pass1_1018_e5dc(param_3, p_stack32, (var3 + 0xcc), var3);
+        pass1_1018_e5dc(NULL, param_3, p_stack32, (var3 + 0xcc), var3);
         break;
     case 0x9:
         mem_op_1000_179c(NULL, 0xf6, var5, 0x1000);

@@ -985,3 +985,4 @@ static u16 LAST_SEGMENT = 0x1538;
 static u16 SEG_1018 = 0x1018;
 static u16 SEG_1010 = 0x1010;
 static u16 SEG_1008 = 0x1008;
+static u16 SEG_1020 = 0x1020;

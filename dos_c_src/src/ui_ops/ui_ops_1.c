@@ -119,7 +119,7 @@ void win_ui_op_1040_ae04(u32 param_1, WORD *param_2, Globals *globals)
         {
             uVar5 = iStack280 * 0xc + iVar2;
             id    = string_op_1020_c222((uVar5 + 0x4), globals);
-            SetDlgItemText16(0x1020, (u16)id, lp_string);
+            SetDlgItemText16(SEG_1020, (u16)id, lp_string);
             wsprintf16(LAST_SEGMENT, local_102, param_2);
             SetDlgItemText16((HWND16)LAST_SEGMENT, (u16)local_102, (SEGPTR)param_2);
             uVar10    = unk_load_str_op_1010_8c96(*(iVar4 + 0x98),
@@ -279,7 +279,7 @@ void win_ui_dlg_op_1040_a94a(Globals *globals, u32 param_1, u16 param_2)
                 }
                 else
                 {
-                    HVar14 = 0x1020;
+                    HVar14 = SEG_1020;
                     lVar17 = pass1_1020_bae6(u_var2,
                                              CONCAT22(uStack288, (u_var2 >> 0x10)),
                                              uVar7,
@@ -292,7 +292,7 @@ void win_ui_dlg_op_1040_a94a(Globals *globals, u32 param_1, u16 param_2)
                 if(bVar15)
                 {
                     pcVar5 = string_1020_c0d8(uStack288);
-                    SetDlgItemText16(0x1020, (u16)pcVar5, lp_string);
+                    SetDlgItemText16(SEG_1020, (u16)pcVar5, lp_string);
                     HVar14 = (HWND16)LAST_SEGMENT;
                     SetDlgItemInt16(
                       (HWND16)LAST_SEGMENT, 0x0, (value + uStack288 * 0x4), BStack278);
@@ -305,7 +305,7 @@ void win_ui_dlg_op_1040_a94a(Globals *globals, u32 param_1, u16 param_2)
                     {
                         pcVar5 = string_1020_c0d8(uStack288);
                         HVar14 = (HWND16)LAST_SEGMENT;
-                        SetDlgItemText16(0x1020, (u16)pcVar5, lp_string);
+                        SetDlgItemText16(SEG_1020, (u16)pcVar5, lp_string);
                     }
                     SetDlgItemInt16(HVar14, 0x0, uStack286, BStack278);
                     iVar11 = (iVar10 + 0xea);

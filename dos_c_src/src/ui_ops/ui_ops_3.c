@@ -109,7 +109,7 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
                                 0x1,
                                 CONCAT22(local_24, uStack34),
                                 0x104,
-                                0x1020103,
+                                SEG_1020103,
                                 CONCAT22((uVar5 + 0x6), (unaff_DI + 0x5c64)),
                                 uVar1,
                                 unaff_SS);
@@ -1268,7 +1268,7 @@ void  win_ui_op_1038_d2a2(Struct1 *param_1)
                                 0x1,
                                 CONCAT22(local_16, uStack20),
                                 0x104,
-                                0x1020103,
+                                SEG_1020103,
                                 CONCAT22((param_1 + 0x6), (unaff_DI + 0x5c10)),
                                 puVar3,
                                 unaff_SS);

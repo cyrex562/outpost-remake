@@ -482,7 +482,7 @@ void pass1_1038_1482(Globals *globals,
                                         CONCAT22(param_6, &local_6),
                                         param_3,
                                         &local_a,
-                                        0x1020);
+                                        SEG_1020);
                         uVar5    = uVar7;
                         uStack14 = uVar7 & 0xffff | ZEXT24(puVar9) << 0x10;
                         uVar10   = puVar9 | uVar5;
@@ -661,7 +661,7 @@ void pass1_1038_16f2(Globals *globals,
                                                 CONCAT22(param_8, &local_6),
                                                 param_3,
                                                 puVar7,
-                                                0x1020);
+                                                SEG_1020);
                                 uStack14 = CONCAT22(uVar9, puVar7);
                                 uVar13   = (uVar9 | puVar7);
                                 if((uVar9 | puVar7) == 0x0)
@@ -670,7 +670,7 @@ void pass1_1038_16f2(Globals *globals,
                                 }
                             }
                         }
-                        param_7 = 0x1020;
+                        param_7 = SEG_1020;
                         if((uStack42 == 0x0) || (local_a == 0x0))
                             break;
                         param_7 = &globals->USHORT_1050_1028;
@@ -1478,7 +1478,7 @@ void pass1_1030_bb0e(Globals *globals,
                     return;
                 }
                 string_1020_c0ca(uStack8);
-                vsprintf_op_1030_840a(globals->s_truck_0x_08lx_unloaded__ld_of__s_1050_5798, 0x1020, param_6, puVar5);
+                vsprintf_op_1030_840a(globals->s_truck_0x_08lx_unloaded__ld_of__s_1050_5798, SEG_1020, param_6, puVar5);
                 pass1_1020_bb8a((long *)paVar1, 0x0, uStack8 << 0x10, param_5, param_6);
             }
         }

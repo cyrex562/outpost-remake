@@ -1645,7 +1645,7 @@ void unk_str_op_1008_d4f6(u32 param_1, u32 param_2)
             {
                 pass1_1020_bd80(uVar9);
                 pWVar16 = valist;
-                wsprintf16(0x1020, (iVar21 + 0x22), valist);
+                wsprintf16(SEG_1020, (iVar21 + 0x22), valist);
                 uVar8   = str_op_1008_60e8((param_1 & 0xffff0000 | ZEXT24((iVar21 + 0x22))), pWVar16);
                 u_var22  = 0x1000;
                 pWVar17 = pWVar16;

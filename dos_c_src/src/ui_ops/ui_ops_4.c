@@ -2088,7 +2088,7 @@ void  set_struct_op_1020_921c(Struct42 *param_1, u16 param_2)
     iVar3->field_0x10  = 0x0;
     iVar3->field_0x12  = 0x0;
     param_1->field_0x0 = 0x96c8;
-    iVar3->field_0x2   = 0x1020;
+    iVar3->field_0x2   = SEG_1020;
     HVar1              = GetDC16(unaff_CS);
     iVar3->field_0xa   = HVar1;
     pUVar3             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
@@ -2130,7 +2130,7 @@ void  cleanup_menu_ui_op_1020_795c(Struct3 *in_struct_1, HMENU16 in_menu_handle_
     uVar1                                    = (Struct3 *)(in_struct_1 >> 0x10);
     local_struct_1                           = (Struct3 *)in_struct_1;
     in_struct_1->address_offset_field_0x0    = 0x7b86;
-    local_struct_1->address_offset_field_0x2 = 0x1020;
+    local_struct_1->address_offset_field_0x2 = SEG_1020;
     if(local_struct_1->field_0xec != 0x0)
     {
         DestroyMenu16(in_menu_handle_2);

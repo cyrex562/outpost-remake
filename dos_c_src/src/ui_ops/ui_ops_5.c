@@ -124,7 +124,7 @@ void unk_win_ui_op_1020_67ce(Globals *globals, Struct20 *in_struct_1, u16 param_
     iVar3[0x1].field_0x10  = 0x0;
     &iVar3[0x1].field_0x14 = 0x0;
     in_struct_1->field_0x0 = 0x70e6;
-    iVar3->field_0x2       = 0x1020;
+    iVar3->field_0x2       = SEG_1020;
     unk_str_op_1000_3d3e(&iVar3->field_0x5b, globals->s_VrMode2_1050_4404);
     HVar1                     = GetStockObject16(0x1000);
     iVar3->hgdiobj_field_0xc6 = HVar1;
@@ -499,7 +499,7 @@ void  unk_win_ui_op_1020_717e(u16 *param_1, u32 param_2, u16 param_3)
     (iVar8 + 0x1c)  = 0x0;
     (iVar8 + 0x20)  = 0x0;
     *param_1        = 0x754c;
-    (iVar8 + 0x2)   = 0x1020;
+    (iVar8 + 0x2)   = SEG_1020;
     puVar13         = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x4, param_3, in_DX, unaff_DI);
     uVar6           = (puVar13 >> 0x10);
     (iVar8 + 0x1c)  = puVar13;
@@ -2438,7 +2438,7 @@ void  cleanup_win_ui_1020_2fea(Struct12 *in_struct_1, HDC16 in_dc_handle_2)
     var2                          = (in_struct_1 >> 0x10);
     iVar1                         = (Struct12 *)in_struct_1;
     in_struct_1->offset_field_0x0 = 0x363c;
-    iVar1->offset_field_0x2       = 0x1020;
+    iVar1->offset_field_0x2       = SEG_1020;
     if(iVar1->field_0x14 != 0x0)
     {
         in_dc_handle_2 = SEG_1010;

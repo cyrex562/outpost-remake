@@ -621,7 +621,7 @@ void sprintf_op_1018_34b6(Globals *globals, u32 param_1, u8 param_2)
     if(iVar1 == 0x188)
     {
         lVar4  = pass1_1008_57f0(uVar3, (iVar2 + 0x130), unaff_SS);
-        buffer = 0x1020;
+        buffer = SEG_1020;
         string_1020_c0d8(globals, (lVar4 + 0xe));
     }
     else
@@ -884,7 +884,7 @@ char *string_op_1010_ada6(HINSTANCE16 param_1, u16 param_2, u16 param_3, u16 par
             goto LAB_1010_adee;
         pcVar1 = string_op_1020_c2f8(globals, param_5);
     }
-    param_1  = 0x1020;
+    param_1  = SEG_1020;
     pcStack6 = CONCAT22(param_2, pcVar1);
 LAB_1010_adee:
     if(pcStack6 == 0x0)

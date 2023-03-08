@@ -689,7 +689,7 @@ u16 *pass1_1020_e91e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
     (param_1 + 0x24)           = 0x0;
     CONCAT22(param_2, param_1) = 0xeef6;
-    (param_1 + 0x2)            = 0x1020;
+    (param_1 + 0x2)            = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -989,7 +989,7 @@ u16 *pass1_1020_d888(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xd8ec;
-    (param_1 + 0x2)            = 0x1020;
+    (param_1 + 0x2)            = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -1719,7 +1719,7 @@ u16 *pass1_1020_e81c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xe88e;
-    (param_1 + 0x2)            = 0x1020;
+    (param_1 + 0x2)            = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -1728,7 +1728,7 @@ void pass1_1020_e846(u16 *param_1)
 
 {
     *param_1        = 0xe88e;
-    (param_1 + 0x2) = 0x1020;
+    (param_1 + 0x2) = SEG_1020;
     pass1_1028_b418(param_1);
     return;
 }
@@ -1789,7 +1789,7 @@ void pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
         uVar5->field_0xe    = 0x0;
         uVar5->field_0xc    = 0x0;
         pu_stack6->field_0x0 = 0xc9e6;
-        uVar5->field_0x2    = 0x1020;
+        uVar5->field_0x2    = SEG_1020;
     }
     if(pu_stack6 == (Struct99 *)0x0)
     {
@@ -1865,7 +1865,7 @@ u16 *pass1_1020_ca0c(Struct179 *param_1, u16 param_2, i16 param_3, u32 param_4, 
 {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xcc7c;
-    param_1->field_0x2         = 0x1020;
+    param_1->field_0x2         = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -1918,7 +1918,7 @@ u16 *pass1_1020_cd06(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xcd7e;
-    (param_1 + 0x2)            = 0x1020;
+    (param_1 + 0x2)            = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -1944,7 +1944,7 @@ u16 *pass1_1020_ce08(Struct179 *param_1, u16 param_2, i16 param_3, u32 param_4, 
 {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xd004;
-    param_1->field_0x2         = 0x1020;
+    param_1->field_0x2         = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 
@@ -2003,7 +2003,7 @@ u16 *pass1_1020_d08e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     CONCAT22(param_2, param_1) = 0xd314;
-    (param_1 + 0x2)            = 0x1020;
+    (param_1 + 0x2)            = SEG_1020;
     return CONCAT22(param_2, param_1);
 }
 

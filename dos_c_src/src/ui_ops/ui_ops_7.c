@@ -136,8 +136,8 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
     if(local_102[0] != '\0')
     {
         uStack270 = *(param_1 + 0xe8);
-        send_msg_1020_097e(uStack270, 0x1020);
-        UpdateWindow16(0x1020);
+        send_msg_1020_097e(uStack270, SEG_1020);
+        UpdateWindow16(SEG_1020);
         HStack272 = LoadCursor16((HINSTANCE16)LAST_SEGMENT, 0x7f02);
         HStack274 = SetCursor16((HCURSOR16)LAST_SEGMENT);
         win_ui_op_1008_1414(param_1, CONCAT22(param_2, local_102), LAST_SEGMENT, param_2, in_AF, uVar3);

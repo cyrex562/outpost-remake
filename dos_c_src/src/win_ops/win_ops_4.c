@@ -199,7 +199,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     {
         pi_var1  = (iVar8 + 0xcc);
         *pi_var1 = *pi_var1 + 0x1;
-        uVar10  = 0x1020;
+        uVar10  = SEG_1020;
         pass1_1020_08b6(unaff_SS, paStack6, (iVar8 + 0xcc), param_1);
         (iVar8 + 0xe4) = puVar4;
         (iVar8 + 0xe6) = uVar7;

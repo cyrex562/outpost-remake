@@ -441,7 +441,7 @@ void  pass1_1040_9422(u32 *param_1)
 }
 
 
-void  pass1_1040_9618(u32 param_1)
+void  pass1_1040_9618(Struct65 *param_1)
 
 {
     u16          uVar1;

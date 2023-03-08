@@ -48,14 +48,7 @@ BOOL16 destroy_win_1020_1dea(HWND16 param_1);
 u16 destroy_win_1020_1e1e(HWND16 param_1);
 
 
-
-Struct18 *pass1_1020_1e54(Struct18 *param_1, u8 param_2);
-
-
-
-void window_op_1020_2642(Struct0 *param_1);
-
-
+Struct18 *pass1_1020_1e54(Globals *globals, Struct18 *param_1, u8 param_2);
 
 
 void pass1_1020_26a6(u32 param_1);
@@ -93,10 +86,6 @@ void pass1_1020_0e8e(i16 param_1, u16 param_2, i16 param_3, i16 param_4, i16 par
 void enable_menu_1020_1000(HMENU16 param_1, i16 param_2);
 
 
-
-void window_op_1020_10a0(Struct0 *param_1);
-
-
 void win_ui_cursor_op_1020_1294(struct Globals *globals,
                                 u32    param_1,
                                 short           param_2,
@@ -107,7 +96,7 @@ void win_ui_cursor_op_1020_1294(struct Globals *globals,
 
 
 
-Struct3 *pass1_1020_135e(Struct3 *param_1, u8 param_2, u16 param_3);
+Struct3 *pass1_1020_135e(Struct18 *param_1, u8 param_2, u16 param_3);
 
 
 

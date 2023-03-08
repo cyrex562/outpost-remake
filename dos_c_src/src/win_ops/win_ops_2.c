@@ -2204,9 +2204,9 @@ void  struct_1020_3644(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
     iVar2->field_0x10a = 0x0;
     iVar2->field_0x10e = 0x0;
     *param_1           = 0x3d08;
-    iVar2->field_0x2   = 0x1020;
+    iVar2->field_0x2   = SEG_1020;
     iVar2->field_0xf2  = 0x3d9c;
-    iVar2->field_0xf4  = 0x1020;
+    iVar2->field_0xf4  = SEG_1020;
     load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, &iVar2->field_0xa, in_buf_len_5);
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | &iVar2->field_0x5b), s_VrMode_1050_42ca);
     iVar2->field_0xac = 0x44c00000;
@@ -2318,7 +2318,7 @@ void  send_win_msg_1020_08fe(Struct63 *param_1, HWND16 param_2)
     u_var2            = (Struct63 *)(param_1 >> 0x10);
     iVar2            = (Struct63 *)param_1;
     param_1          = 0xb0e;
-    iVar2->field_0x2 = 0x1020;
+    iVar2->field_0x2 = SEG_1020;
     if(iVar2->field_0xe8 != 0x0)
     {
         BVar1 = IsWindow16(param_2);
@@ -2426,7 +2426,7 @@ void  pass1_1020_0dc4(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
     (iVar1 + 0xf6) = 0x0;
     (iVar1 + 0xfa) = 0x0;
     *param_1       = 0x1384;
-    (iVar1 + 0x2)  = 0x1020;
+    (iVar1 + 0x2)  = SEG_1020;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (iVar1 + 0x5b)), s_VrMode_1050_4260);
     (iVar1 + 0xac) = 0x44c00000;
     window_op_1020_10a0(param_1);
@@ -2474,7 +2474,7 @@ void  win_help_op_1020_0ec4(u32 *param_1, u16 param_2, u16 param_3)
         case 0x12c:
             uVar8 = 0xf020;
         }
-        PostMessage16(0x1020, 0x0, 0x0, CONCAT22(0x112, uVar8));
+        PostMessage16(SEG_1020, 0x0, 0x0, CONCAT22(0x112, uVar8));
         return;
     }
     if(param_2 == 0xf3)

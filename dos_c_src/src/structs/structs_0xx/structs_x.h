@@ -23,6 +23,7 @@
 #include "structs/structs_4xx/structs_45x.h"
 #include "structs/structs_4xx/structs_48x.h"
 #include "structs/structs_4xx/structs_49x.h"
+#include "structs/structs_6xx/struct_664.h"
 typedef struct Struct8 Struct8;
 typedef struct Struct7 Struct7;
 typedef struct Struct0 Struct0;
@@ -276,6 +277,8 @@ struct Struct0
     u16        field_0xf4;
     u16       *field_0xe0;
     u16        field_0xe2;
+    Struct664 **field_0xee;
+    int          field_0xf0;
 };
 struct Struct6
 {

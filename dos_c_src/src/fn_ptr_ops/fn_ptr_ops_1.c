@@ -664,7 +664,7 @@ void pass1_1038_927c(u32 *param_1)
 u32 pass1_1038_9ad0(u32 param_1, u8 param_2)
 
 {
-    pass1_1038_9a48((Struct18 *)param_1);
+    pass1_1038_9a48(NULL, (Struct18 *)param_1);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
@@ -726,7 +726,7 @@ void pass1_1038_7a5a(u32 *param_1)
 Struct18 *pass1_1038_8850(Struct18 *param_1, u8 param_2)
 
 {
-    pass1_1038_7d5c(param_1);
+    pass1_1038_7d5c(NULL, param_1);
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, 0x1000);
@@ -1498,7 +1498,7 @@ void pass1_1038_2306(Globals *globals, u16 param_1, u16 param_2, u32 param_3)
             {
                 uStack30 = switch_1020_c3b4(uVar9->field_0x6);
             LAB_1038_2385:
-                uVar13   = 0x1020;
+                uVar13   = SEG_1020;
                 uStack24 = (uVar9->field_0xa * uStack30);
             }
             uStack12 = 0x0;

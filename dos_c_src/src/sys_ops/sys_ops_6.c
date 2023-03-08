@@ -25,7 +25,7 @@ void pass1_1020_04f6(u16 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 pa
     iVar4->field_0xe          = 0x0;
     iVar4->field_0x10         = 0x0;
     *param_1                  = 0x75a;
-    iVar4->field_0x2          = 0x1020;
+    iVar4->field_0x2          = SEG_1020;
     puVar5                    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x1, param_5, param_3, param_4);
     uVar3                     = (puVar5 >> 0x10);
     &iVar4->field_0x6         = puVar5;

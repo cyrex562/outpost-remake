@@ -1411,7 +1411,7 @@ void  pass1_1030_b9da(u32 param_1, u32 param_2, u32 param_3, u32 param_4, u16 pa
             puVar1  = &iVar7->field_0x12;
             *puVar1 = *puVar1 + param_4;
             string_1020_c0ca(uStack4);
-            vsprintf_op_1030_840a(s_truck_0x_08lx_loaded__ld_of__s_f_1050_576c, 0x1020, param_7, param_3);
+            vsprintf_op_1030_840a(s_truck_0x_08lx_loaded__ld_of__s_f_1050_576c, SEG_1020, param_7, param_3);
             if(0x63 < iVar7->field_0x12)
                 break;
         }

@@ -8,16 +8,18 @@
 #include "globals.h"
 #include "op_int.h"
 #include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_6xx/struct_664.h"
+#include "structs/structs_6xx/struct_666.h"
 
 void  string_1020_79b4(u16 param_1, u32 param_2, i16 param_3, char *param_4);
 
-void  pass1_1038_9a48(Struct18 *param_1);
+void pass1_1038_9a48(Globals *globals, Struct18 *param_1);
 
-void  pass1_1038_7d5c(Struct18 *param_1);
+void pass1_1038_7d5c(Globals *globals, Struct18 *param_1);
 
-void  unk_draw_op_1018_cda8(Struct36 *param_1, u16 param_2);
+void unk_draw_op_1018_cda8(Globals *globals, Struct36 *param_1, u16 param_2);
 
-void  unk_draw_op_1018_cfc0(Struct36 *param_1, u16 param_2);
+void unk_draw_op_1018_cfc0(Globals *globals, Struct36 *param_1, u16 param_2);
 
 void  palette_op_1020_92c4(u16 *param_1, HDC16 param_2);
 

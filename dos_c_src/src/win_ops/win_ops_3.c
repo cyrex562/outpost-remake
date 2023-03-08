@@ -289,7 +289,7 @@ void pass1_1020_08b6(WNDCLASS16 *param_1, Struct20 *param_2, u16 param_3, u32 pa
     &iVar1[0x1].field_0x4         = 0x0;
     (&iVar1[0x1].field_0x4 + 0x2) = 0x0;
     param_2->field_0x0            = 0xb0e;
-    iVar1->field_0x2              = 0x1020;
+    iVar1->field_0x2              = SEG_1020;
     win_1008_5c5c(param_1, 0x0, (p_var2 >> 0x10), globals->_PTR_LOOP_1050_02a0, 0x1d4);
     return;
 }

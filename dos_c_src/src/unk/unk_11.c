@@ -1752,7 +1752,7 @@ void  pass1_1018_0bf4(u16 param_1, i16 param_2, u32 param_3, i16 param_4)
         uVar1 = (param_3 + 0xc);
         if((uVar1 + 0x20) != (param_3 + 0x1c))
         {
-            post_win_msg_1020_291a(0x1020);
+            post_win_msg_1020_291a(SEG_1020);
             return;
         }
         break;
@@ -2872,7 +2872,7 @@ void  pass1_1010_bf1e(u32 param_1, i16 *param_2, i16 param_3, u8 *param_4, u16 p
     }
     else
     {
-        pass1_1000_5586(0x4092, 0x1020, iStack4, 0x18, u_var2, param_4);
+        pass1_1000_5586(0x4092, SEG_1020, iStack4, 0x18, u_var2, param_4);
         (iVar4 + 0x2) = uStack40;
     }
     pass1_1028_dc52((Struct92 *)CONCAT22(param_5, local_16), 0x1, 0x0, 0x100);

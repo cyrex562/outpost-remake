@@ -5,17 +5,36 @@
 #ifndef OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_3_H_
 #define OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_3_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_win_def.h"
+#include "structs/structs_6xx/struct_660.h"
+#include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_6xx/struct_661.h"
+#include "structs/structs_6xx/struct_659.h"
+#include "structs/structs_1xx/struct_132.h"
+#include "structs/structs_6xx/struct_658.h"
+#include "structs/structs_0xx/structs_5x.h"
+
 void realize_palette_1020_2992(u32 param_1, i16 param_2);
 
-void invalidate_rect_1020_2ae4(u32 *param_1, u16 param_2, HWND16 param_3, u16 param_4);
+void invalidate_rect_1020_2ae4(Globals *globals,
+                               u32            *param_1,
+                               u16             param_2,
+                               u16             param_3,
+                               u16             param_4);
 
-void pass1_1020_0a52(u32 param_1, u16 param_2, u16 param_3, u16 param_4);
+void pass1_1020_0a52(Globals *globals,
+                     u32      param_1,
+                     u16      param_2,
+                     u16      param_3,
+                     u16      param_4);
 
 void unk_draw_op_1020_0c3e(u32 param_1, HWND16 param_2);
 
 void realize_palette_1020_0e46(u32 param_1, i16 param_2, HGDIOBJ16 param_3);
 
-void pass1_1020_1022(u32 param_1, u16 param_2);
+void pass1_1020_1022(u32 param_1, HANDLE16 param_2);
 
 void cleanup_ui_op_1020_1038(u32 param_1);
 
@@ -23,9 +42,13 @@ void invalidate_rect_1020_157c(u32 param_1, i16 param_2, HWND16 param_3);
 
 void draw_op_1020_15de(u32 param_1, HWND16 in_win_handle_2);
 
-void draw_op_1020_1674(u32 param_1, u16 param_2);
+void draw_op_1020_1674(Globals *globals, u32 param_1, u16 param_2);
 
-void pass1_1018_e5dc(u16 param_1, Struct20 *param_2, u16 param_3, u16 param_4);
+void pass1_1018_e5dc(Globals         *globals,
+                     u16              param_1,
+                     Struct20 *param_2,
+                     u16              param_3,
+                     u16              param_4);
 
 void pass1_1018_e834(Struct660 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 

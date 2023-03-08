@@ -1012,13 +1012,17 @@ void draw_text_1040_94fc(Globals *globals, Struct37 *param_1, HDC16 param_2)
 }
 
 
-void draw_text_1040_9650(u32 param_1, HWND16 param_2)
+void draw_text_1040_9650(Struct65 *param_1, HWND16 param_2)
 
 {
     HDC16 hdc;
 
     hdc = GetDC16(param_2);
-    DrawText16((HDC16)LAST_SEGMENT, 0x410, param_1 + 0x2e, (RECT16 *)(param_1 >> 0x10), 0xffff);
+    DrawText16((HDC16)LAST_SEGMENT,
+               str_from_rsrc(0x410),
+               param_1->field_0x2e,
+               (RECT16 *)param_1->field_0x0,
+               0xffff);
     ReleaseDC16((HWND16)LAST_SEGMENT, hdc);
 }
 

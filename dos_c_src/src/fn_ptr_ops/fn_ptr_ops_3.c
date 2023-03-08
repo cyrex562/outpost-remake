@@ -1036,7 +1036,7 @@ void  pass1_1028_d6b2(u32 param_1)
         if(puVar4 != 0x0)
         {
             ppcVar3 = *puVar4;
-            (**ppcVar3)(0x1020, uVar7, extraout_DX, 0x1);
+            (**ppcVar3)(SEG_1020, uVar7, extraout_DX, 0x1);
         }
     }
     return;

@@ -548,7 +548,7 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2)
         {
             puVar13 = ((uVar15 + 0x6) & 0xff);
             pass1_1020_bd80((uVar15 + 0xc));
-            wsprintf16(0x1020, (iVar16 + 0x22), valist);
+            wsprintf16(SEG_1020, (iVar16 + 0x22), valist);
             uVar7   = str_op_1008_60e8((param_1 & 0xffff0000 | (iVar16 + 0x22)), puVar13);
             uVar17  = 0x1000;
             puVar14 = puVar13;

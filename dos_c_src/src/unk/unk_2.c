@@ -1567,7 +1567,7 @@ void  pass1_1038_5464(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
             }
             for(uStack30 = 0x0; uStack30 < uStack28; uStack30 = uStack30 + 0x1)
             {
-                param_3 = 0x1020;
+                param_3 = SEG_1020;
                 pass1_1020_bb16(puStack26, CONCAT13((param_4 >> 0x8), CONCAT12(param_4, &local_2e)), CONCAT22(param_4, &local_2a), uStack30);
                 if(CONCAT22(uStack44, local_2e) != 0x0)
                 {
