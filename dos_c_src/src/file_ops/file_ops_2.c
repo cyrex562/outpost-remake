@@ -1252,7 +1252,7 @@ void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                 }
                 else
                 {
-                    paStack20->field_0x0 = 0x389a;
+                    paStack20->field_0x0 = addr_table_1008_380a[36];//0x389a;
                     (u_var2 + 0x2)        = SEG_1008;
                     (u_var2 + 0x4)        = 0x0;
                     (u_var2 + 0x6)        = 0x0;
@@ -1765,7 +1765,7 @@ void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                     }
                     else
                     {
-                        paStack20->field_0x0 = 0x389a;
+                        paStack20->field_0x0 = addr_table_1008_380a[36];//0x389a;
                         u_var2->field_0x2     = SEG_1008;
                         u_var2->field_0x4     = 0x0;
                         u_var2->field_0x6     = 0x0;

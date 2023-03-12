@@ -92,7 +92,7 @@ Struct3 *pass1_1020_3ca6(Struct3 *param_1, u8 param_2, u16 param_3)
         param_1 = 0x0;
     }
     puStack10       = CONCAT22(param_1, param_1);
-    *puStack10      = 0x389a;
+    *puStack10      = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2) = SEG_1008;
     cleanup_menu_ui_op_1020_795c(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
@@ -497,9 +497,9 @@ void win_ui_op_1020_150e(u16 *param_1, HDC16 param_2)
     HVar1                         = SelectPalette16(param_2, 0x0, *(BOOL16 *)(iVar2 + 0x1c));
     *(HPALETTE16 *)(iVar2 + 0x1c) = HVar1;
     DeleteObject16((HGDIOBJ16)LAST_SEGMENT);
-    *param_1      = 0x3ab0;
+    *param_1      = addr_table_1008_3aa0[4]; // 0x3ab0;
     (iVar2 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar2 + 0x2) = SEG_1008;
     return;
 }
@@ -1077,7 +1077,7 @@ void pass1_1018_2440(Struct11 *param_1, u16 param_2)
         piVar4 = &uVar5->field_0x1c_addr_base;
     }
     pu_stack6    = CONCAT22(uVar7, piVar4);
-    *pu_stack6   = 0x389a;
+    *pu_stack6   = addr_table_1008_380a[36]; // 0x389a
     piVar4[0x1] = SEG_1008;
     clenaup_win_ui_1018_4d22(param_1, param_2);
     return;

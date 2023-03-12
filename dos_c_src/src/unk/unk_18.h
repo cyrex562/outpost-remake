@@ -33,4 +33,6 @@ void win_ui_op_1008_5cfe(Globals *globals,
                          char           *string_arg_2,
                          WNDCLASS16     *wnd_class_arg3);
 
+void def_win_proc_1008_5632(LPARAM param_1,WPARAM param_2,u16 param_3,HWND16 param_4);
+
 #endif // OUTPOST_1_SRC_UNK_UNK_18_H_

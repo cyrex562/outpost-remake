@@ -1782,9 +1782,9 @@ void  pass1_1010_9fee(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u8 *pa
     }
     else
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_4 + 0x2) = SEG_1008;
-        *puStack10      = 0xa1c4;
+        *puStack10      = addr_table_1010_a1c4;//0xa1c4;
         (param_4 + 0x2) = SEG_1010;
         pu_stack6        = puStack10;
     }

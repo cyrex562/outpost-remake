@@ -202,7 +202,7 @@ u16  read_file_1038_7c02(u32 *param_1, u32 param_2, u16 param_3, u16 param_4)
                 uVar7   = (param_1 >> 0x10);
                 uVar9   = (param_1 + 0x4);
                 ppcVar1 = ((param_1 + 0x4) + 0x4);
-                (**ppcVar1)(0x1030, uVar9, (uVar9 >> 0x10), uVar3, puVar5, uVar10);
+                (**ppcVar1)(SEG_1030, uVar9, (uVar9 >> 0x10), uVar3, puVar5, uVar10);
                 param_4 = extraout_DX_00;
             }
             return 0x0;
@@ -1206,7 +1206,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                         }
                                         else
                                         {
-                                            paStack50->field_0x0 = 0x389a;
+                                            paStack50->field_0x0 = addr_table_1008_380a[36];//0x389a;
                                             uVar5->field_0x2     = SEG_1008;
                                             uVar5->field_0x4     = 0x0;
                                             uVar5->field_0x6     = 0x0;
@@ -1269,7 +1269,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                             }
                                             else
                                             {
-                                                paStack50->field_0x0 = 0x389a;
+                                                paStack50->field_0x0 = addr_table_1008_380a[36];//0x389a;
                                                 uVar8->field_0x2     = SEG_1008;
                                                 uVar8->field_0x4     = 0x0;
                                                 uVar8->field_0x6     = 0x0;
@@ -1618,7 +1618,7 @@ void  pass1_1030_5044(u32 param_1, u16 param_2, u16 param_3)
         }
         else
         {
-            pass1_1000_5586(0x51f0, 0x1030, uVar4, 0xae, uVar5, globals->PTR_LOOP_1050_5f2e);
+            pass1_1000_5586(0x51f0, SEG_1030, uVar4, 0xae, uVar5, globals->PTR_LOOP_1050_5f2e);
             *(uVar10 + 0x15c) = uStack28;
             uVar9             = uStack28;
         }

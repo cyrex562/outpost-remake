@@ -1,12 +1,16 @@
 
 #include "sys_ops_11.h"
 
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_dos_interrupts.h"
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
+#include "unk/unk_12.h"
+#include "unk/unk_14.h"
 #include "unk/unk_15.h"
 #include "unk/unk_16.h"
+#include "utils.h"
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -128,7 +132,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         puVar7 = (uVar13 >> 0x10);
         uVar4  = uVar13;
     }
-    if(_PTR_LOOP_1050_0ed0 == 0x0)
+    if(globals->_PTR_LOOP_1050_0ed0 == 0x0)
     {
         debug_pri16_1008_6048(s_New_failed_in_Op__Op_1050_0020, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -143,7 +147,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         uVar10 = SEG_1010;
         pass1_1010_7e40(CONCAT22(puVar7, uVar4), puVar6, unaff_DI, param_2);
     }
-    if(_PTR_LOOP_1050_14cc == 0x0)
+    if(globals->_PTR_LOOP_1050_14cc == 0x0)
     {
         debug_pri16_1008_6048(0x10500035, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -241,7 +245,7 @@ BOOL16  pass1_1008_07d8(u16 param_1, BOOL16 param_2, u8 *param_3, u16 param_4)
         u_var2 = param_3 | param_2;
         if(u_var2 != 0x0)
         {
-            uVar1 = 0x1030;
+            uVar1 = SEG_1030;
             struct_1030_8128(CONCAT22(param_3, param_2), u_var2, param_4);
         }
         if(_PTR_LOOP_1050_5748 == 0x0)

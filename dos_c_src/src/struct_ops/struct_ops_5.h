@@ -5,8 +5,11 @@
 #ifndef OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 #define OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 
+#include "globals.h"
 #include "structs/structs_0xx/structs_7x.h"
-u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3);
+#include "structs/structs_2xx/structs_22x.h"
+#include "structs/structs_6xx/structs_64x.h"
+Struct79 *pass1_1010_3702(Struct79 *param_1, u16 param_3);
 
 
 
@@ -14,26 +17,33 @@ u16 *pass1_1010_37d4(u16 *param_1);
 
 
 
-void struct_1010_383a(struct Struct223 *param_1);
+void struct_1010_383a(Struct223 *param_1);
 
 
 void struct_1010_3b7a(Struct79 *param_1, unsigned short param_3);
 
 
-
-u16 *pass1_1010_2bfc(Struct644 *param_1, u16 param_2, u16 param_3);
+Struct79 *pass1_1010_2bfc(Struct79 *param_1, u16 param_2, u16 param_3);
 
 
 
 Struct79 *struct_op_1010_1d48(Struct79 *param_1, u16 param_2);
 
 
+u32 pass1_1010_0eac(Globals *globals,
+                    u8      *param_1,
+                    u8      *param_2,
+                    u16      param_3,
+                    u8      *param_4,
+                    u16      param_5);
 
-u32 pass1_1010_0eac(u8 *param_1, u8 *param_2, u16 param_3, u8 *param_4, u16 param_5);
 
-
-
-void pass1_1010_0f24(Struct79 *param_1, Struct79 *param_2, u16 param_3, u8 *param_4, u16 param_5);
+void pass1_1010_0f24(Globals *globals,
+                     Struct79       *param_1,
+                     Struct79       *param_2,
+                     u16             param_3,
+                     u8             *param_4,
+                     u16             param_5);
 
 
 

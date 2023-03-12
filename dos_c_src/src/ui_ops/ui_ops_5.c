@@ -831,7 +831,7 @@ void window_op_1020_5764(Globals *globals, u32 param_1, i16 param_2, u16 param_3
     uVar1    = (pu_stack6 + 0x22);
     if((uVar1 | uStack10) != 0x0)
     {
-        h_instance = 0x1030;
+        h_instance = SEG_1030;
         pass1_1030_8308(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(param_3, &local_e), CONCAT13((param_3 >> 0x8), CONCAT12(param_3, local_c)), uStack10 & 0xffff | uVar1 << 0x10, &local_e, uVar1);
         if(param_2 <= local_e)
         {
@@ -839,7 +839,7 @@ void window_op_1020_5764(Globals *globals, u32 param_1, i16 param_2, u16 param_3
             iVar3 = param_1;
             if((iVar3 + 0xf4) != 0x1)
             {
-                SetCursor16(0x1030);
+                SetCursor16(SEG_1030);
                 (iVar3 + 0xee)  = 0x0;
                 (iVar3 + 0xf4)  = 0x1;
                 (iVar3 + 0x10c) = 0x0;
@@ -1667,7 +1667,7 @@ void  mixed_menu_op_1020_44ec(u32 param_1, u16 param_2, i16 param_3, HMENU16 par
             {
                 BVar4 = EnableMenuItem16(HVar12, 0x0, 0x202);
             }
-            HVar12 = 0x1030;
+            HVar12 = SEG_1030;
             pass1_1030_69cc(pcStack286, BVar4, uStack268, param_6);
             if(BVar4 == 0x0)
             {
@@ -1726,7 +1726,7 @@ LAB_1020_479e:
                 uVar6        = (puStack304 + 0x22);
                 if((uVar6 | uStack300) != 0x0)
                 {
-                    HVar12 = 0x1030;
+                    HVar12 = SEG_1030;
                     pass1_1030_8308(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), CONCAT22(param_6, local_134), CONCAT22(param_6, local_138), uStack300 & 0xffff | uVar6 << 0x10, local_134, uVar6);
                     local_138[0] = (puStack304 + 0x1e);
                 }
@@ -2480,9 +2480,9 @@ void  cleanup_win_ui_1020_2fea(Struct12 *in_struct_1, HDC16 in_dc_handle_2)
     SelectPalette16((HDC16)LAST_SEGMENT, 0x0, iVar1->field_0x20);
     DeleteObject16((HGDIOBJ16)LAST_SEGMENT);
     DeleteDC16((HDC16)LAST_SEGMENT);
-    in_struct_1->offset_field_0x0 = 0x3ab0;
+    in_struct_1->offset_field_0x0 = addr_table_1008_3aa0[4]; // 0x3ab0;
     iVar1->offset_field_0x2       = SEG_1008;
-    in_struct_1->offset_field_0x0 = 0x389a;
+    in_struct_1->offset_field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->offset_field_0x2       = SEG_1008;
     return;
 }

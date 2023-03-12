@@ -1061,18 +1061,18 @@ void palette_op_1020_7270(u16 *param_1, HDC16 param_2)
     HVar3 = SelectPalette16(param_2, 0x0, *(BOOL16 *)(iVar4 + 0x20));
     *(HPALETTE16 *)(iVar4 + 0x20) = HVar3;
     DeleteObject16((HGDIOBJ16)LAST_SEGMENT);
-    *param_1      = 0x3ab0;
+    *param_1      = addr_table_1008_3aa0[4];//0x3ab0;
     (iVar4 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36];//0x389a;
     (iVar4 + 0x2) = SEG_1008;
-    return;
 }
 
 void invalidate_rect_1020_735a(u32 param_1, HWND16 param_2)
 
 {
-    InvalidateRect16(param_2, (RECT16 *)0x0, (param_1 + 0x1c) + 0x16c);
-    return;
+    InvalidateRect16(param_2,
+                     (RECT16 *)0x0,
+                     (param_1 + 0x1c) + 0x16c);
 }
 
 
@@ -1247,11 +1247,10 @@ void win_ui_palette_op_1020_3e84(Struct16 *param_1)
     SelectPalette16((HDC16)LAST_SEGMENT, 0x0, iVar1->field_0x1c_addr_base);
     DeleteObject16((HGDIOBJ16)LAST_SEGMENT);
     SetMapMode16((HDC16)LAST_SEGMENT, iVar1->field_0x1e);
-    param_1          = 0x3ab0;
+    param_1->field_0x0          = addr_table_1008_3aa0[4];//0x3ab0;
     iVar1->field_0x2 = SEG_1008;
-    param_1          = 0x389a;
+    param_1->field_0x0          = addr_table_1008_380a[36];//0x389a;
     iVar1->field_0x2 = SEG_1008;
-    return;
 }
 
 
@@ -2484,7 +2483,7 @@ void pass1_1020_27b0(Struct664 *param_1,
 
     set_struct_op_1020_921c(CONCAT22(param_2, param_1), param_3);
     &param_1->field_0x14       = 0x0;
-    CONCAT22(param_2, param_1) = 0x288e;
+    param_1 =  0x288e;
     param_1->field_0x2         = SEG_1020;
     puVar5 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2a, param_5, extraout_DX, param_4);
     uVar4  = (puVar5 >> 0x10);

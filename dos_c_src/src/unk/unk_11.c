@@ -868,7 +868,7 @@ void  pass1_1018_331c(Struct638 *param_1, u16 param_2, u16 param_3, u16 param_4,
     param_1->field_0x13c       = 0x0;
     param_1->field_0x13e       = 0x0;
     param_1->field_0x142       = 0x0;
-    CONCAT22(param_2, param_1) = 0x470c; // &PTR_LOOP_1050_470c;
+    param_1 =  0x470c; // &PTR_LOOP_1050_470c;
     param_1->field_0x2         = SEG_1018;
     pu_var2                     = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3b, param_4, param_5, unaff_DI);
     uVar1                      = pu_var2;
@@ -2322,7 +2322,7 @@ void  pass1_1010_e15e(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
         uVar3 = uVar4;
         uVar5 = extraout_DX_00;
         pass1_1028_e1ec(_PTR_LOOP_1050_65e2, uVar3, extraout_DX_00);
-        param_4 = 0x1030;
+        param_4 = SEG_1030;
         pass1_1030_7c28(CONCAT13((uVar5 >> 0x8), CONCAT12(uVar5, uVar3)), 0x23, uVar3, uVar5, param_5);
     }
     if(puStack10 != 0x0)
@@ -2613,7 +2613,7 @@ void  pass1_1010_a478(u16 *param_1, u16 param_2)
         puVar1 = &uVar3->field_0xa;
     }
     pu_stack6    = CONCAT22(uVar4, puVar1);
-    *pu_stack6   = 0x389a;
+    *pu_stack6   = addr_table_1008_380a[36]; // 0x389a
     puVar1[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -2928,7 +2928,7 @@ void  pass1_1010_8f78(u16 *param_1)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar4->field_0x2 = SEG_1008;
     return;
 }

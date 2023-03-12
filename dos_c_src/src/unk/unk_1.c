@@ -211,9 +211,9 @@ void  pass1_1040_bf92(u16 *param_1, u16 param_2)
     iVar1->field_0x2 = &PTR_LOOP_1050_1040;
     pass1_1010_1ea6(iVar1->field_0x6, param_1 & 0xffff | uVar1 << 0x10, param_2);
     unk_destroy_win_op_1010_2fa0(iVar1->field_0x6, SEG_1010);
-    *param_1         = 0x3ab0;
+    *param_1         = addr_table_1008_3aa0[4]; // 0x3ab0;
     iVar1->field_0x2 = SEG_1008;
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2 = SEG_1008;
     return;
 }
@@ -364,7 +364,7 @@ void  pass1_1040_ac84(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, 
 u16 * pass1_1040_a204(u16 *param_1, u8 param_2)
 
 {
-    *param_1        = 0x389a;
+    *param_1        = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -414,9 +414,9 @@ u16 * pass1_1040_8e58(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
 
 {
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
-    CONCAT22(param_2, param_1) = 0x8f3c;
+    param_1 =  0x8f3c;
     (param_1 + 0x2)            = &PTR_LOOP_1050_1040;
-    return CONCAT22(param_2, param_1);
+    return param_1;
 }
 
 

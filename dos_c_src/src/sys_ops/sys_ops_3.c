@@ -796,7 +796,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
                     *(u_var20->field_0x11e + 0x20) = uVar5;
                 }
                 uVar19    = &u_var20->field_0x114;
-                uStackY78 = 0x1030;
+                uStackY78 = SEG_1030;
                 uStackY80 = 0x9788;
                 pass1_1028_e2ac(_PTR_LOOP_1050_65e2, 0x400);
                 &u_var20->field_0x10c                  = uVar19;
@@ -846,7 +846,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
             {
                 struct_1030_e4fa((Struct100 *)CONCAT22(param_9, &local_14c), CONCAT22(uStack28, puStack30), param_9, param_10);
                 fn_ptr_1030_835a((u32 **)&PTR_LOOP_1050_5748, CONCAT22(param_9, &local_14c));
-                local_14c  = 0x389a;
+                local_14c  = addr_table_1008_380a[36]; // 0x389a
                 uStackY330 = SEG_1008;
             }
             ppcVar7 = (*u_var20->field_0x11e + 0x4);
@@ -1113,7 +1113,7 @@ void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 pa
                             u_var29  = 0xc;
                             uVar31  = 0x7c;
                             fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_9, puVar17));
-                            local_154  = 0x389a;
+                            local_154  = addr_table_1008_380a[36]; // 0x389a
                             uStackY338 = SEG_1008;
                         }
                         uVar38 = 0x0;
@@ -2037,7 +2037,7 @@ void  pass1_1028_ccd0(u8 param_1, u16 param_2, u32 param_3, u16 *param_4)
                     }
                     struct_op_1028_87f0(param_2, param_1, (Struct97 *)CONCAT22(param_2, &local_178), 0x0, 0x0, uVar8, param_4, (param_4 >> 0x10), CONCAT22(uVar10, uVar9), CONCAT22(uVar12, uVar11));
                     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, &local_178));
-                    local_178 = 0x389a;
+                    local_178 = addr_table_1008_380a[36]; // 0x389a
                     uStack374 = SEG_1008;
                 }
             LAB_1028_ce2c:
@@ -2123,7 +2123,7 @@ Struct100 * struct_op_1028_d1dc(u16 param_1, u8 param_2, Struct100 *param_3, u16
 
     puVar1             = (param_3 >> 0x10);
     iVar1              = (Struct101 *)param_3;
-    param_3->field_0x0 = 0x389a;
+    param_3->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     iVar1->field_0x4   = param_4;
     iVar1->field_0x6   = 0x0;

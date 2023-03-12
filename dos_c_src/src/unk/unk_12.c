@@ -914,7 +914,7 @@ void  pass1_1010_6bb2(u16 *param_1, u16 param_2)
         iVar4 = uVar6 + 0xa;
     }
     puStack14     = CONCAT22(uVar7, iVar4);
-    *puStack14    = 0x389a;
+    *puStack14    = addr_table_1008_380a[36]; // 0x389a
     (iVar4 + 0x2) = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1606,7 +1606,7 @@ void  pass1_1010_3bde(u16 *param_1, u16 param_2)
         puVar4 = &iVar4->field_0xa;
     }
     puStack14   = CONCAT22(uVar5, puVar4);
-    *puStack14  = 0x389a;
+    *puStack14  = addr_table_1008_380a[36]; // 0x389a
     puVar4[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1865,7 +1865,7 @@ void  struct_1010_2cd2(Struct79 *param_1, Struct79 *param_2, u16 param_3, u16 pa
     ((Struct79 *)(param_1 + 0x9))->field_0x0 = 0x0;
     &param_1[0x9].field_0x4                    = 0x0;
     param_1[0x9].field_0x2                     = 0x0;
-    CONCAT22(param_2, param_1)                 = 0x36da;
+    param_1 =  0x36da;
     param_1->field_0x2                         = SEG_1010;
     piVar4                                     = &local_4;
     piVar3                                     = &local_6;
@@ -2237,7 +2237,7 @@ void  pass1_1010_1d80(u16 *param_1, u16 param_2)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar4->field_0x2 = SEG_1008;
     return;
 }

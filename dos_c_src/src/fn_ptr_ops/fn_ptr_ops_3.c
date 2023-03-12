@@ -31,7 +31,7 @@ void  pass1_1030_8a2c(u16 *param_1)
         iStack4 = iStack4 + 0x1;
     } while(iStack4 < 0x5);
     fn_ptr_1030_84d0(param_1 & 0xffff0000 | &iVar3->field_0x4);
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar3->field_0x2 = SEG_1008;
     return;
 }
@@ -488,7 +488,7 @@ void  pass1_1030_4f5a(u16 param_1, u16 param_2, u32 param_3)
 Struct18 * pass1_1030_5596(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -501,7 +501,7 @@ Struct18 * pass1_1030_5596(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_55c2(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -576,7 +576,7 @@ Struct18 * pass1_1030_310a(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_3ac6(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -709,7 +709,7 @@ void  pass1_1030_29e6(u16 *param_1)
 Struct18 * pass1_1030_117a(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -761,7 +761,7 @@ void  pass1_1030_1244(u16 *param_1)
         }
     }
     fn_ptr_1000_17ce(iVar6->field_0x6, SEG_1000);
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar6->field_0x2 = SEG_1008;
     return;
 }
@@ -924,63 +924,63 @@ void  struct_1028_d2b0(u32 *param_1, u16 param_2, u8 param_3)
 
     struct_1028_9c62(&local_10c, param_2, 0x3e80, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x3a98, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x36b0, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x32c8, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x2ee0, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x2af8, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x2710, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, s_noth_bmp_1050_2321 + 0x7, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x1f40, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x1b58, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x1770, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x1388, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0xfa0, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0xbb8, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     struct_1028_9c62(&local_10c, param_2, 0x3e8, param_2, param_3);
     fn_ptr_1028_d566(param_1, CONCAT22(param_2, &local_10c));
-    local_10c = 0x389a;
+    local_10c = addr_table_1008_380a[36]; // 0x389a
     uStack266 = SEG_1008;
     pass1_1028_d6b2(*param_1);
     return;
@@ -1399,7 +1399,7 @@ void  pass1_1028_a3ae(u16 param_1, u16 param_2, u32 param_3, long param_4, i16 p
         pass1_1028_ae66((Struct100 *)CONCAT22(param_6, &local_146), uStack14, CONCAT22(uVar7, uVar4), *(iVar9 + 0x4), param_6, param_7);
         fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_6, &local_146));
         uStack26  = uStack22;
-        local_146 = 0x389a;
+        local_146 = addr_table_1008_380a[36]; // 0x389a
         uStack324 = SEG_1008;
     }
     uStack26 = uStack26 + 0x9;
@@ -1411,7 +1411,7 @@ void  pass1_1028_a3ae(u16 param_1, u16 param_2, u32 param_3, long param_4, i16 p
 Struct18 * pass1_1028_a6ca(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1424,7 +1424,7 @@ Struct18 * pass1_1028_a6ca(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_a82a(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1437,7 +1437,7 @@ Struct18 * pass1_1028_a82a(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_a982(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1450,7 +1450,7 @@ Struct18 * pass1_1028_a982(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_aaf6(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1463,7 +1463,7 @@ Struct18 * pass1_1028_aaf6(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_ae2a(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1476,7 +1476,7 @@ Struct18 * pass1_1028_ae2a(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_b0a2(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1489,7 +1489,7 @@ Struct18 * pass1_1028_b0a2(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_b1c8(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1514,7 +1514,7 @@ Struct18 * pass1_1028_b316(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_9908(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1535,7 +1535,7 @@ void  pass1_1028_9992(u16 *param_1)
     *param_1      = 0x9c52;
     (iVar1 + 0x2) = &USHORT_1050_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     return;
 }
@@ -1558,7 +1558,7 @@ u16  pass1_1028_9ca0(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_acb6((Struct100 *)CONCAT22(param_2, param_1 + -0x108), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x108));
-    (param_1 + -0x108) = 0x389a;
+    (param_1 + -0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x106) = SEG_1008;
     return 0x1;
 }
@@ -1573,7 +1573,7 @@ u16  pass1_1028_9cca(i16 param_1, u16 param_2)
 
     pass1_1038_28d8((Struct100 *)CONCAT22(param_2, param_1 + -0x108), param_2, in_AF);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x108));
-    (param_1 + -0x108) = 0x389a;
+    (param_1 + -0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x106) = SEG_1008;
     return 0x1;
 }
@@ -1586,7 +1586,7 @@ u16  pass1_1028_9cd8(u16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_a866((Struct100 *)CONCAT22(param_2, param_1 - 0x108), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 - 0x108));
-    (param_1 - 0x108) = 0x389a;
+    (param_1 - 0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 - 0x106) = SEG_1008;
     return 0x1;
 }
@@ -1599,7 +1599,7 @@ u16  pass1_1028_9ce6(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_6e60((Struct100 *)CONCAT22(param_2, param_1 + -0x108), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x108));
-    (param_1 + -0x108) = 0x389a;
+    (param_1 + -0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x106) = SEG_1008;
     return 0x1;
 }
@@ -1612,7 +1612,7 @@ u16  pass1_1028_9cf4(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_ab32((Struct100 *)CONCAT22(param_2, param_1 + -0x108), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x108));
-    (param_1 + -0x108) = 0x389a;
+    (param_1 + -0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x106) = SEG_1008;
     return 0x1;
 }
@@ -1625,7 +1625,7 @@ u16  pass1_1028_9d02(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1030_e09e((Struct100 *)CONCAT22(param_2, param_1 + -0x108), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x108));
-    (param_1 + -0x108) = 0x389a;
+    (param_1 + -0x108) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x106) = SEG_1008;
     return 0x1;
 }
@@ -1638,7 +1638,7 @@ u16  pass1_1028_9d10(i16 param_1, i16 param_2, u16 param_3, u8 param_4)
 {
     pass1_1038_0ba6((Struct100 *)CONCAT22(param_3, param_1 + -0x220), param_2, param_3, param_4);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_3, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1653,7 +1653,7 @@ u16  pass1_1028_9d3a(u16 param_1, u16 param_2)
 
     pass1_1028_9ec6((Struct100 *)CONCAT22(param_2, param_1 - 0x220), param_2, in_AF);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 - 0x220));
-    (param_1 - 0x220) = 0x389a;
+    (param_1 - 0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 - 0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1666,7 +1666,7 @@ u16  pass1_1028_9d48(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1030_eb50((Struct100 *)CONCAT22(param_2, param_1 + -0x220), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1681,7 +1681,7 @@ u16  pass1_1028_9d56(i16 param_1, u16 param_2)
 
     pass1_1028_81aa((Struct100 *)CONCAT22(param_2, param_1 + -0x220), param_2, in_AF);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1694,7 +1694,7 @@ u16  pass1_1028_9d64(u16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_a9be((Struct100 *)CONCAT22(param_2, param_1 - 0x220), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 - 0x220));
-    (param_1 - 0x220) = 0x389a;
+    (param_1 - 0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 - 0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1707,7 +1707,7 @@ u16  pass1_1028_9d72(u16 param_1, u16 param_2)
 {
     pass1_1028_74ae(param_1 - 0x220, param_2);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 - 0x220));
-    (param_1 - 0x220) = 0x389a;
+    (param_1 - 0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 - 0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1720,7 +1720,7 @@ u16  pass1_1028_9d80(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1030_ecc2((Struct100 *)CONCAT22(param_2, param_1 + -0x220), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1733,7 +1733,7 @@ u16  pass1_1028_9d8e(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_a706((Struct100 *)CONCAT22(param_2, param_1 + -0x220), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1746,7 +1746,7 @@ u16  pass1_1028_9d9c(i16 param_1, u16 param_2, u8 param_3)
 {
     pass1_1028_6fc0((Struct100 *)CONCAT22(param_2, param_1 + -0x220), param_2, param_3);
     fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, param_1 + -0x220));
-    (param_1 + -0x220) = 0x389a;
+    (param_1 + -0x220) = addr_table_1008_380a[36]; // 0x389a
     (param_1 + -0x21e) = SEG_1008;
     return 0x1;
 }
@@ -1755,7 +1755,7 @@ u16  pass1_1028_9d9c(i16 param_1, u16 param_2, u8 param_3)
 Struct18 * pass1_1028_9e8a(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1768,7 +1768,7 @@ Struct18 * pass1_1028_9e8a(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_848e(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1781,7 +1781,7 @@ Struct18 * pass1_1028_848e(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_865c(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1794,7 +1794,7 @@ Struct18 * pass1_1028_865c(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_87b4(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1967,7 +1967,7 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
 Struct18 * pass1_1028_8d62(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1988,7 +1988,7 @@ void  pass1_1028_8dec(u16 *param_1)
     *param_1      = 0x8fb0;
     (iVar1 + 0x2) = &USHORT_1050_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     return;
 }
@@ -2009,7 +2009,7 @@ Struct18 * pass1_1028_8f8a(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_90aa(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -2022,7 +2022,7 @@ Struct18 * pass1_1028_90aa(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1028_9300(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {

@@ -777,7 +777,7 @@ void pass1_1038_6912(Globals *globals, u16 *param_1)
         fn_ptr_1020_ba7e(CONCAT22(u_var2, uVar1));
         fn_ptr_1000_17ce(paStack10, SEG_1000);
     }
-    *param_1        = 0x389a;
+    *param_1        = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2) = SEG_1008;
 }
 
@@ -1887,7 +1887,7 @@ void pass1_1038_26ee(Globals *globals,
 Struct18 *pass1_1038_29d2(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1924,7 +1924,7 @@ void pass1_1038_2a5c(Globals *globals, u16 *param_1)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar4 + 0x2) = SEG_1008;
 }
 

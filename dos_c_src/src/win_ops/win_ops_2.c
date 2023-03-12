@@ -1,9 +1,11 @@
 #include "win_ops_2.h"
 
+#include "address_tables/address_table_1.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
+#include "struct_ops/struct_ops_1.h"
 #include "structs/structs_0xx/structs_x.h"
 #include "sys_ops/sys_ops_9.h"
 #include "ui_ops/ui_ops_5.h"
@@ -850,7 +852,7 @@ void  win_msg_op_1038_95fc(u32 param_1, u16 param_2)
                 }
                 else
                 {
-                    *puStack24    = 0x389a;
+                    *puStack24    = addr_table_1008_380a[36]; // 0x389a
                     (UVar4 + 0x2) = SEG_1008;
                     *puStack24    = 0xa1c4;
                     (UVar4 + 0x2) = SEG_1010;
@@ -1144,7 +1146,7 @@ LAB_1038_0a1c:
             if(!bVar2)
             {
                 uVar9 = 0x28;
-                func_0x10285ca0(0x1030, uVar11, (uVar11 >> 0x10));
+                func_0x10285ca0(SEG_1030, uVar11, (uVar11 >> 0x10));
                 break;
             }
             uStack54 = uStack54 + 0x1;
@@ -1267,7 +1269,7 @@ void  pass1_1028_9a02(u32 param_1, i16 param_2, u16 param_3, u16 param_4, i16 pa
     u_stack6  = CONCAT22(param_3, param_2);
     uVar3    = *(param_2 + 0x1f6);
     uStack10 = uVar3;
-    pass1_1030_3694(uVar3, 0x0, (iVar6 + 0x110), param_3, 0x1030, param_4);
+    pass1_1030_3694(uVar3, 0x0, (iVar6 + 0x110), param_3, SEG_1030, param_4);
     uVar4           = uVar3;
     (iVar6 + 0x114) = uVar4;
     (iVar6 + 0x116) = param_3;
@@ -2196,9 +2198,9 @@ void  struct_1020_3644(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
     struct_1020_790e(param_1, 0x0, param_2, param_3, param_4);
     in_buf_len_5       = (short)(param_1 >> 0x10);
     iVar2              = (Struct272 *)param_1;
-    iVar2->field_0xf2  = 0x389a;
+    iVar2->field_0xf2  = addr_table_1008_380a[36]; // 0x389a
     iVar2->field_0xf4  = SEG_1008;
-    iVar2->field_0xf2  = 0x3aa8;
+    iVar2->field_0xf2  = addr_table_1008_3aa0[2];//0x3aa8;
     iVar2->field_0xf4  = SEG_1008;
     iVar2->field_0x100 = 0x0;
     iVar2->field_0x10a = 0x0;
@@ -2329,9 +2331,9 @@ void  send_win_msg_1020_08fe(Struct63 *param_1, HWND16 param_2)
         iVar2->field_0xe8 = 0x0;
     }
     pass1_1008_57c4((param_1 & 0xffff0000 | &iVar2->field_0xd2));
-    param_1          = 0x380a;
+    param_1          = addr_table_1008_380a; // 0x380a
     iVar2->field_0x2 = SEG_1008;
-    param_1          = 0x389a;
+    param_1          = addr_table_1008_380a[36]; // 0x389a
     iVar2->field_0x2 = SEG_1008;
     return;
 }

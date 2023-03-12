@@ -1,5 +1,6 @@
 #include "win_ops_3.h"
 
+#include "address_tables/address_table_1.h"
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
@@ -1004,7 +1005,7 @@ LAB_1010_7710:
             }
             else
             {
-                *puStack14     = 0x389a;
+                *puStack14     = addr_table_1008_380a[36]; // 0x389a
                 (uVar4 + 0x2)  = SEG_1008;
                 *(uVar4 + 0x4) = param_4;
                 (uVar4 + 0x8)  = puStack10;
@@ -1564,7 +1565,7 @@ ATOM win_ui_reg_class_1008_96d2(Globals    *globals,
         WNDCLASS16 wndclass = {};
         // TODO: fill in fields
         name_1c   = (param_1 + 0xc8);
-        uStack26  = 0x5632;
+        uStack26  = def_win_proc_1008_5632; //0x5632;
         uStack24  = SEG_1008;
         uStack22  = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;
@@ -1917,9 +1918,9 @@ void pass1_1008_9e5a(Struct11 *param_1)
 
     uVar7             = (param_1 >> 0x10);
     uVar5             = (Struct464 *)param_1;
-    param_1           = 0x9fb2;
+    param_1           = addr_table_1008_9fb2;//0x9fb2;
     uVar5->field_0x2  = SEG_1008;
-    uVar5->field_0x1c_addr_base = 0x9fca;
+    uVar5->field_0x1c_addr_base = addr_table_1008_9fb2[4];//0x9fca;
     uVar5->field_0x1e = SEG_1008;
     if(_PTR_LOOP_1050_0388 != 0x0)
     {
@@ -1957,7 +1958,7 @@ void pass1_1008_9e5a(Struct11 *param_1)
         puVar4 = &uVar5->field_0x1c_addr_base;
     }
     puStack8    = CONCAT22(uVar7, puVar4);
-    *puStack8   = 0x389a;
+    *puStack8   = addr_table_1008_380a[36]; // 0x389a
     puVar4[0x1] = SEG_1008;
     clenaup_win_ui_1018_4d22(param_1, SEG_1018);
     return;
@@ -2007,14 +2008,14 @@ LAB_1008_a146:
         }
         else
         {
-            paStack14->field_0x0 = 0x389a;
+            paStack14->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             (uVar3 + 0x2)        = SEG_1008;
             (uVar3 + 0x4)        = param_6;
             *(uVar3 + 0x6)       = param_5;
             (uVar3 + 0xa)        = param_4;
             (uVar3 + 0xc)        = param_3;
             (uVar3 + 0xe)        = param_2;
-            paStack14->field_0x0 = 0xad8e;
+            paStack14->field_0x0 = addr_table_1008_ad8a[1]//0xad8e;
             (uVar3 + 0x2)        = SEG_1008;
         }
         puVar1  = iVar7->field_0xa;
@@ -2037,11 +2038,11 @@ u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2)
 
     uVar3         = (param_1 >> 0x10);
     iVar2         = param_1;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar2 + 0x2) = SEG_1008;
     (iVar2 + 0x4) = 0x0;
     set_struct_1008_574a((param_1 & 0xffff0000 | (iVar2 + 0x6)));
-    *param_1                     = 0x9416;
+    *param_1                     = addr_table_1008_9412[1];//0x9416;
     (iVar2 + 0x2)                = SEG_1008;
     globals->_PTR_LOOP_1050_0388 = param_1;
     UVar1                        = SetTimer16(param_2, 0x0, 0x0, (&PTR_LOOP_1050_0000 + 0x1));
@@ -2062,12 +2063,12 @@ void kill_timer_1008_921c(u16 *param_1, HWND16 param_2)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    *param_1      = 0x9416;
+    *param_1      = addr_table_1008_9412[1];//0x9416;
     (iVar1 + 0x2) = SEG_1008;
     KillTimer16(param_2, 0x1);
     globals->_PTR_LOOP_1050_0388 = 0x0;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0x6)));
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     return;
 }
@@ -2145,7 +2146,7 @@ create_window_1008_5e7e(Globals *globals, u16 in_stock_obj_id, WNDCLASS16 *in_wn
     puVar6         = string_1;
     (puVar6 + 0x2) = (string_1 + 0x2);
     name           = 0x2000;
-    uStack42       = SUB42(&DAT_1050_5f44, 0x0);
+    uStack42       = make_def_win_proc_1008_5f44;//0x5f44;//SUB42(&DAT_1050_5f44, 0x0);
     uStack40       = SEG_1008;
     uStack36       = 0x2;
     puStack34      = globals->PTR_LOOP_1050_038c;

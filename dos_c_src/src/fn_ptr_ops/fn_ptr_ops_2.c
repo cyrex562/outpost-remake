@@ -118,7 +118,7 @@ void pass1_1038_11b0(Globals *globals,
         uVar3   = struct_op_1030_73a8(CONCAT22(param_5, u_var2));
         param_5 = param_5 & 0xffff0000 | uVar3 >> 0x10;
         u_var2   = uVar3;
-        pass1_1038_0f8c(param_1, (param_1 >> 0x10), param_2, uVar3, u_var2, param_5, 0x1030, param_6);
+        pass1_1038_0f8c(param_1, (param_1 >> 0x10), param_2, uVar3, u_var2, param_5, SEG_1030, param_6);
         if(u_var2 == 0x0)
             break;
         uStack10 = uStack10 + 0x1;
@@ -778,7 +778,7 @@ void  pass1_1038_1b3a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u16 p
 Struct18 * pass1_1038_1c02(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1014,7 +1014,7 @@ void pass1_1038_05d8(Globals *globals,
         param_5  = uVar4;
     } while(uVar4 == 0x0);
 LAB_1038_0668:
-    local_34 = 0x389a;
+    local_34 = addr_table_1008_380a[36]; // 0x389a
     uStack50 = SEG_1008;
     if((uStack22 | uStack22) == 0x0)
     {
@@ -1155,7 +1155,7 @@ LAB_1038_0841:
 Struct18 * pass1_1038_0b6a(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1182,7 +1182,7 @@ Struct18 * pass1_1030_e010(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_e282(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1195,7 +1195,7 @@ Struct18 * pass1_1030_e282(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_e4be(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1208,7 +1208,7 @@ Struct18 * pass1_1030_e4be(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_e602(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1221,7 +1221,7 @@ Struct18 * pass1_1030_e602(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_e75e(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1234,7 +1234,7 @@ Struct18 * pass1_1030_e75e(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_e864(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1291,7 +1291,7 @@ u16 pass1_1030_e8f8(Globals *globals,
 Struct18 * pass1_1030_eb14(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1304,7 +1304,7 @@ Struct18 * pass1_1030_eb14(Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1030_ec86(Struct18 *param_1, u8 param_2)
 
 {
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2)    = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1680,7 +1680,7 @@ void pass1_1030_a044(Globals *globals,
                     uVar7 = SUB42(&globals->USHORT_1050_1028, 0x0);
                     struct_op_1028_87f0(param_1, param_3, (Struct97 *)CONCAT22(param_1, &local_17e), 0x0, 0x0, uVar9, param_6, (param_6 >> 0x10), CONCAT22(uVar11, uVar10), param_7);
                     fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_1, &local_17e));
-                    local_17e = 0x389a;
+                    local_17e = addr_table_1008_380a[36]; // 0x389a
                     uStack380 = SEG_1008;
                 }
             LAB_1030_a1d0:

@@ -697,7 +697,7 @@ u32  pass1_1010_6700(Struct636 *param_1, u16 param_2, u16 param_3);
 
 
 
-void  struct_1010_50b2(Struct646 *param_1, u16 param_2, u16 param_3);
+void  struct_1010_50b2(Struct79 *param_1, u16 param_2, u16 param_3);
 
 
 

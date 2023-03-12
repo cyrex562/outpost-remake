@@ -1,5 +1,6 @@
 #include "ui_ops_7.h"
 
+#include "address_tables/address_table_1.h"
 #include "big_funcs/big_fn_1.h"
 #include "file_ops/file_ops_3.h"
 #include "file_ops/file_ops_4.h"
@@ -445,7 +446,7 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
     uStack24 = *(uVar5 + 0x10);
     iVar4    = (uStack24 + 0x2) + -0x1;
     ppcVar1  = ((iVar15 + 0xe8) + 0x4);
-    (**ppcVar1)(0x1030, (iVar15 + 0xe8), uStack16, (uStack16 >> 0x10), iVar4, 0x2);
+    (**ppcVar1)(SEG_1030, (iVar15 + 0xe8), uStack16, (uStack16 >> 0x10), iVar4, 0x2);
     puVar6 = extraout_DX;
     pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
     uStack28 = CONCAT22(puVar6, iVar4);
@@ -490,7 +491,7 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
 
     uVar6         = (param_1 >> 0x10);
     iVar5         = param_1;
-    *param_1      = 0x389e;
+    *param_1      = addr_table_1008_380a[36]//0x389e;
     (iVar5 + 0x2) = SEG_1008;
     set_sys_color_1008_357e(param_1, 0x0, unaff_CS, unaff_SS);
     paVar3 = (iVar5 + 0xf8);
@@ -514,9 +515,9 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
         (**ppcVar4)(LAST_SEGMENT, puVar1, u_var2, 0x1, uVar7, uVar8);
     }
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar5 + 0xd2)));
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar5 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }
@@ -553,7 +554,7 @@ void win_ui_cursor_op_1008_06c0(Globals *globals, u32 *param_1, u32 param_2, u16
                 MessageBox16(SEG_1010, &globals->PTR_LOOP_1050_0010, pcVar4, (pcVar4 >> 0x10));
                 return;
             }
-            HStack4 = LoadCursor16(0x1030, 0x7f02);
+            HStack4 = LoadCursor16(SEG_1030, 0x7f02);
             HStack6 = SetCursor16((HCURSOR16)LAST_SEGMENT);
             pass1_1030_83ba(globals->_PTR_LOOP_1050_5748, param_2, unaff_SS, in_AF);
             uVar3                       = (globals->_PTR_LOOP_1050_5748 >> 0x10);

@@ -253,9 +253,9 @@ void win_ui_dlg_op_1040_a94a(Globals *globals, u32 param_1, u16 param_2)
     value = local_102;
     SetDlgItemText16(SEG_1010, (u16)value, param_2);
     pass1_1030_6ddc(*(iVar10 + 0x94));
-    SetDlgItemInt16(0x1030, 0x0, value, 0x1f5);
+    SetDlgItemInt16(SEG_1030, 0x0, value, 0x1f5);
     pass1_1030_6e14(*(iVar10 + 0x94));
-    SetDlgItemInt16(0x1030, 0x0, value, 0x1f6);
+    SetDlgItemInt16(SEG_1030, 0x0, value, 0x1f6);
     if((iVar10 + 0x98) != 0x0)
     {
         HVar14 = SEG_1010;

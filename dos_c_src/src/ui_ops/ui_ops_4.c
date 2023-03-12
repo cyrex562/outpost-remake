@@ -801,7 +801,7 @@ Struct20 * pass1_1038_aeca(Struct20 *param_1, u16 param_2)
     pass1_1000_4906(param_1, 0x0, 0xac);
     unk_draw_op_1008_80ee((Struct23 *)CONCAT22(param_2, local_5c), param_2);
     unk_win_ui_op_1040_9854(CONCAT22(param_2, &local_b6), param_2);
-    local_b6  = 0x389a;
+    local_b6  = addr_table_1008_380a[36]; // 0x389a
     uStack180 = SEG_1008;
     pass1_1008_8168(CONCAT22(param_2, local_5c));
     return param_1;
@@ -2082,12 +2082,12 @@ void  set_struct_op_1020_921c(Struct7 *param_1, u16 param_2)
 
     uVar3              = (param_1 >> 0x10);
     iVar3              = param_1;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar3->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x3aa8;
+    param_1->field_0x0 = addr_table_1008_3aa0[2];//0x3aa8;
     iVar3->field_0x2   = SEG_1008;
     iVar3->field_0x4   = param_2;
-    param_1->field_0x0 = 0x3ab0;
+    param_1->field_0x0 = addr_table_1008_3aa0[4]; // 0x3ab0;
     iVar3->field_0x2   = SEG_1008;
     iVar3->field_0x6   = 0x0;
     iVar3->field_0xa   = 0x0;
@@ -2144,9 +2144,9 @@ void  cleanup_menu_ui_op_1020_795c(Struct3 *in_struct_1, HMENU16 in_menu_handle_
         DestroyMenu16(in_menu_handle_2);
     }
     pass1_1008_57c4((in_struct_1 & 0xffff0000 | &local_struct_1->field_0xd2));
-    in_struct_1->address_offset_field_0x0    = 0x380a;
+    in_struct_1->address_offset_field_0x0    = addr_table_1008_380a; // 0x380a
     local_struct_1->address_offset_field_0x2 = SEG_1008;
-    in_struct_1->address_offset_field_0x0    = 0x389a;
+    in_struct_1->address_offset_field_0x0    = addr_table_1008_380a[36]; // 0x389a
     local_struct_1->address_offset_field_0x2 = SEG_1008;
     return;
 }

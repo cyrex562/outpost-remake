@@ -8,6 +8,7 @@
 #include "fn_ptr_defs.h"
 #include "globals.h"
 #include "op_int.h"
+#include "structs/structs_4xx/structs_48x.h"
 
 
 u32 pass1_1010_8ebc(u32 param_1, u8 param_2);
@@ -98,7 +99,7 @@ void pass1_1010_60cc(u32 param_1, char *param_2, u16 param_3);
 
 
 
-void pass1_1010_62a4(u16 *param_1, u8 param_2);
+void pass1_1010_62a4(Struct488 *param_1, u8 param_2);
 
 
 Struct18 *pass1_1010_4994(u16 param_1, Struct18 *param_2, u8 param_3, u16 param_4);
@@ -153,7 +154,7 @@ u16 *pass1_1010_3e06(u16 *param_1, u8 param_2);
 
 
 
-void pass1_1010_3f00(u16 *param_1, u16 param_2);
+void pass1_1010_3f00(Struct481 *param_1, u16 param_2);
 
 
 

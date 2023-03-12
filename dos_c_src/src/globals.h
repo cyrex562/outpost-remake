@@ -990,6 +990,8 @@ struct Globals
     u32          _PTR_LOOP_1050_5b74;
     char        *s_waveaudio_1050_02a4;
     char        *s_sequencer_1050_02b3;
+    u8          *PTR_LOOP_1050_4230;
+    u8          *PTR_LOOP_1050_4232;
 };
 
 typedef struct Globals Globals;

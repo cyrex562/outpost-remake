@@ -9,9 +9,9 @@ void  pass1_1018_7f0e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -30,9 +30,9 @@ void  pass1_1018_7f56(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -51,9 +51,9 @@ void  pass1_1018_7f9e(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -73,9 +73,9 @@ void  pass1_1018_7fe6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -94,9 +94,9 @@ void  pass1_1018_802e(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -115,9 +115,9 @@ void  pass1_1018_8076(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -136,9 +136,9 @@ void  pass1_1018_80be(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -157,9 +157,9 @@ void  pass1_1018_8106(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -178,9 +178,9 @@ void  pass1_1018_814e(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -199,9 +199,9 @@ void  pass1_1018_8196(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -220,9 +220,9 @@ void  pass1_1018_81de(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -241,9 +241,9 @@ void  pass1_1018_8226(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -262,9 +262,9 @@ void  pass1_1018_826e(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -283,9 +283,9 @@ void  pass1_1018_82b6(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -305,9 +305,9 @@ void  pass1_1018_82fe(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -327,9 +327,9 @@ void  pass1_1018_8346(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -349,9 +349,9 @@ void  pass1_1018_838e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -371,9 +371,9 @@ void  pass1_1018_83d6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -393,9 +393,9 @@ void  pass1_1018_841e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -415,9 +415,9 @@ void  pass1_1018_8466(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -437,9 +437,9 @@ void  pass1_1018_84ae(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -459,9 +459,9 @@ void  pass1_1018_84f6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -481,9 +481,9 @@ void  pass1_1018_853e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -503,9 +503,9 @@ void  pass1_1018_8586(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -525,9 +525,9 @@ void  pass1_1018_85ce(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -547,9 +547,9 @@ void  pass1_1018_8616(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -569,9 +569,9 @@ void  pass1_1018_865e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -591,9 +591,9 @@ void  pass1_1018_86a6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -613,9 +613,9 @@ void  pass1_1018_86ee(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -635,9 +635,9 @@ void  pass1_1018_8736(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -657,9 +657,9 @@ void  pass1_1018_877e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -679,9 +679,9 @@ void  pass1_1018_87c6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -701,9 +701,9 @@ void  pass1_1018_880e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -723,9 +723,9 @@ void  pass1_1018_8856(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -745,9 +745,9 @@ void  pass1_1018_889e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -767,9 +767,9 @@ void  pass1_1018_88e6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -789,9 +789,9 @@ void  pass1_1018_892e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -811,9 +811,9 @@ void  pass1_1018_8976(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -833,9 +833,9 @@ void  pass1_1018_89be(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -855,9 +855,9 @@ void  pass1_1018_8a06(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -877,9 +877,9 @@ void  pass1_1018_8a4e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -899,9 +899,9 @@ void  pass1_1018_8a96(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -921,9 +921,9 @@ void  pass1_1018_8ade(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -943,9 +943,9 @@ void  pass1_1018_8b26(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -965,9 +965,9 @@ void  pass1_1018_8b6e(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -987,9 +987,9 @@ void  pass1_1018_8bb6(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1009,9 +1009,9 @@ void  pass1_1018_8bfe(Struct18 *param_1, u8 param_2)
     iVar1 = iVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(iVar1)));
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x380a;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     iVar1->field_0x2   = SEG_1008;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1030,9 +1030,9 @@ void  pass1_1018_6c1e(u16 *param_1, u8 param_2)
     uVar1 = uVar1 + 0x1;
     pass1_1008_57c4((param_1 & 0xffff0000 | ZEXT24(uVar1)));
     u_var2            = (param_1 >> 0x10);
-    *param_1         = 0x380a;
+    *param_1         = addr_table_1008_380a; // 0x380a
     uVar1->field_0x2 = SEG_1008;
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     uVar1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1050,9 +1050,9 @@ void  pass1_1018_7da6(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1071,9 +1071,9 @@ void  pass1_1018_7dee(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1092,9 +1092,9 @@ void  pass1_1018_7e36(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1113,9 +1113,9 @@ void  pass1_1018_7e7e(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1134,9 +1134,9 @@ void  pass1_1018_7ec6(u16 *param_1, u8 param_2)
     iVar1 = param_1;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0xd2)));
     u_var2         = (param_1 >> 0x10);
-    *param_1      = 0x380a;
+    *param_1      = addr_table_1008_380a; // 0x380a
     (iVar1 + 0x2) = SEG_1008;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1350,7 +1350,7 @@ void  pass1_1018_4760(u16 *param_1)
     *param_1         = &PTR_LOOP_1050_4aa6;
     iVar2->field_0x2 = SEG_1018;
     fn_ptr_1000_17ce((Struct18 *)iVar2->field_0x4, SEG_1000);
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar2->field_0x2 = SEG_1008;
     return;
 }
@@ -1522,7 +1522,7 @@ void  pass1_1018_2c60(u16 *param_1, u16 param_2)
         puVar4 = &uVar6->field_0x20;
     }
     pu_stack6    = CONCAT22(uVar7, puVar4);
-    *pu_stack6   = 0x389a;
+    *pu_stack6   = addr_table_1008_380a[36]; // 0x389a
     puVar4[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1812,7 +1812,7 @@ void  pass1_1018_1a04(u16 *param_1, u16 param_2)
         puVar4 = &iVar5->field_0x20;
     }
     puStack14   = CONCAT22(uVar5, puVar4);
-    *puStack14  = 0x389a;
+    *puStack14  = addr_table_1008_380a[36]; // 0x389a
     puVar4[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1869,7 +1869,7 @@ void  pass1_1010_eb66(u16 *param_1, u16 param_2)
         puVar4 = &iVar5->field_0xa;
     }
     puStack14   = CONCAT22(uVar5, puVar4);
-    *puStack14  = 0x389a;
+    *puStack14  = addr_table_1008_380a[36]; // 0x389a
     puVar4[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1974,7 +1974,7 @@ void  pass1_1018_078e(u16 *param_1, u16 param_2)
         puVar3 = &uVar5->field_0x20;
     }
     puStack26   = CONCAT22(uVar6, puVar3);
-    *puStack26  = 0x389a;
+    *puStack26  = addr_table_1008_380a[36]; // 0x389a
     puVar3[0x1] = SEG_1008;
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -1995,7 +1995,7 @@ u16 * pass1_1010_a172(u16 *param_1, u8 param_2, u16 param_3)
 u16 * pass1_1010_a198(u16 *param_1, u8 param_2)
 
 {
-    *param_1        = 0x389a;
+    *param_1        = addr_table_1008_380a[36]; // 0x389a
     (param_1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {

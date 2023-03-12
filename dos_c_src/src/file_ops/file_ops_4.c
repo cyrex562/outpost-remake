@@ -52,7 +52,7 @@ void  close_file_1008_496c(u16 *param_1)
 
     uVar6         = (param_1 >> 0x10);
     iVar5         = param_1;
-    *param_1      = &PTR_LOOP_1050_4c4c;
+    *param_1      = addr_table_1008_4c4c;//0x4c4c;//&PTR_LOOP_1050_4c4c;
     (iVar5 + 0x2) = SEG_1008;
     puVar1        = (iVar5 + 0x4);
     u_var2         = (iVar5 + 0x6);
@@ -71,7 +71,7 @@ void  close_file_1008_496c(u16 *param_1)
     {
         _lclose16(SEG_1000);
     }
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }

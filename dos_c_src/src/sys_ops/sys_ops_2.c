@@ -27,7 +27,7 @@ void  pass1_1030_e34e(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         iVar5           = (Struct403 *)param_1;
@@ -85,7 +85,7 @@ void  pass1_1030_e564(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         iVar5           = (Struct405 *)param_1;
@@ -126,7 +126,7 @@ void  pass1_1030_e6c2(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         iVar5           = (Struct406 *)param_1;
@@ -166,7 +166,7 @@ void  pass1_1030_e7d6(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         (param_2 + 0x4) = (param_1 + 0x4);
@@ -224,7 +224,7 @@ void  pass1_1030_e98e(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         iVar5           = (Struct407 *)param_1;
@@ -266,7 +266,7 @@ void  pass1_1030_ebf8(u32 param_1, u16 param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10      = 0x389a;
+        *puStack10      = addr_table_1008_380a[36]; // 0x389a
         (param_2 + 0x2) = SEG_1008;
         uVar6           = (param_1 >> 0x10);
         (param_2 + 0x4) = (param_1 + 0x4);
@@ -458,7 +458,7 @@ void  pass1_1030_ae6c(u16 *param_1)
 
     uVar4              = (param_1 >> 0x10);
     iVar4              = (Struct399 *)param_1;
-    *param_1           = 0x389a;
+    *param_1           = addr_table_1008_380a[36]; // 0x389a
     iVar4->field_0x2   = SEG_1008;
     iVar4->field_0x4   = 0x0;
     puVar5             = pass1_1008_3e38((param_1 & 0xffff0000 | &iVar4->field_0x8));
@@ -499,7 +499,7 @@ void  pass1_1030_aefa(u16 *param_1, u32 param_2)
 
     uVar5              = (param_1 >> 0x10);
     iVar5              = (Struct400 *)param_1;
-    *param_1           = 0x389a;
+    *param_1           = addr_table_1008_380a[36]; // 0x389a
     iVar5->field_0x2   = SEG_1008;
     iVar5->field_0x4   = 0x0;
     puVar6             = pass1_1008_3e38((param_1 & 0xffff0000 | &iVar5->field_0x8));
@@ -587,7 +587,7 @@ void  pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
                 }
                 else
                 {
-                    paStack6->field_0x0 = 0x389a;
+                    paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     (u_var2 + 0x2)       = SEG_1008;
                     (u_var2 + 0x4)       = iStack24;
                     paStack6->field_0x0 = 0x9ec8;
@@ -611,7 +611,7 @@ void  pass1_1030_9c1c(u32 param_1, u32 *param_2, u32 param_3)
             }
             else
             {
-                paStack6->field_0x0 = 0x389a;
+                paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                 (u_var2 + 0x2)       = SEG_1008;
                 (u_var2 + 0x4)       = iStack16;
                 paStack6->field_0x0 = 0x9ec8;
@@ -1198,7 +1198,7 @@ void  pass1_1030_5290(u32 param_1, Struct376 *param_2, u8 *param_3)
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0)
     {
-        *puStack10         = 0x389a;
+        *puStack10         = addr_table_1008_380a[36]; // 0x389a
         param_2->field_0x2 = SEG_1008;
         uVar6              = (param_1 >> 0x10);
         iVar5              = (Struct377 *)param_1;
@@ -1285,7 +1285,7 @@ void pass1_1030_54f8(Struct378 *param_1, u8 *param_2, u32 param_3)
     puStack10 = CONCAT22(param_2, param_1);
     if((param_2 | param_1) != 0x0)
     {
-        *puStack10         = 0x389a;
+        *puStack10         = addr_table_1008_380a[36]; // 0x389a
         param_1->field_0x2 = SEG_1008;
         uVar6              = (param_3 >> 0x10);
         iVar5              = (Struct379 *)param_3;
@@ -1363,7 +1363,7 @@ void  pass1_1030_314c(u16 *param_1, u32 param_2, u8 *param_3, u16 param_4)
 
     uVar1              = (param_1 >> 0x10);
     iVar1              = (Struct364 *)param_1;
-    *param_1           = 0x389a;
+    *param_1           = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2   = SEG_1008;
     iVar1->field_0x170 = 0x0;
     iVar1->field_0x1a4 = param_2;

@@ -1,5 +1,6 @@
 #include "win_ops_1.h"
 
+#include "address_tables/address_table_1.h"
 #include "globals.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -438,7 +439,7 @@ void  make_proc_inst_1040_a234(u8 *param_1, u8 *param_2, u16 param_3, u32 param_
     u16    in_DX;
 
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
-    CONCAT22(param_2, param_1) = 0xa4e8;
+    param_1 =  0xa4e8;
     (param_1 + 0x2)            = &PTR_LOOP_1050_1040;
     if(_PTR_LOOP_1050_5edc == 0x0)
     {
@@ -710,7 +711,7 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
 
     uVar5          = (param_1 >> 0x10);
     iVar4          = param_1;
-    *param_1       = 0x389a;
+    *param_1       = addr_table_1008_380a[36]; // 0x389a
     (iVar4 + 0x2)  = SEG_1008;
     (iVar4 + 0x4)  = 0x0;
     (iVar4 + 0x8)  = 0x0;
@@ -833,7 +834,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
         FreeProcInstance16(LAST_SEGMENT);
         globals->_PTR_LOOP_1050_5e18 = 0x0;
     }
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }
@@ -1231,7 +1232,7 @@ void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2)
     RemoveProp16((HWND16)LAST_SEGMENT, s_thisHi_1050_5db8);
     RemoveProp16((HWND16)LAST_SEGMENT, s_procLo_1050_5dbf);
     RemoveProp16((HWND16)LAST_SEGMENT, s_procHi_1050_5dc6);
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar4 + 0x2)      = SEG_1008;
     return;
 }

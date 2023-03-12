@@ -108,7 +108,7 @@ void  pass1_1030_afa6(u16 *param_1)
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar5->field_0x2 = SEG_1008;
     return;
 }
@@ -488,7 +488,7 @@ void  pass1_1030_b936(Struct365 *param_1, u16 param_2, u16 param_3, u32 param_4,
     pass1_1028_b22c(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1->field_0xe         = 0x0;
     param_1->field_0x12        = 0x0;
-    CONCAT22(param_2, param_1) = 0xbc0c;
+    param_1 =  0xbc0c;
     param_1->field_0x2         = 0x1030;
     return;
 }
@@ -521,11 +521,11 @@ void  pass1_1030_9adc(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
         else
         {
             iVar7               = (Struct121 *)paStack6;
-            paStack6->field_0x0 = 0x389a;
+            paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             iVar7->field_0x2    = SEG_1008;
             iVar7->field_0x4    = 0x77;
             paStack6->field_0x0 = 0x9ec8;
-            iVar7->field_0x2    = 0x1030;
+            iVar7->field_0x2    = SEG_1030;
             p_var2              = paStack6;
         }
         param_5 = p_var2;
@@ -547,7 +547,7 @@ void  pass1_1030_9adc(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
         else
         {
             iVar6               = (Struct119 *)paStack6;
-            paStack6->field_0x0 = 0x389a;
+            paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             iVar6->field_0x2    = SEG_1008;
             iVar6->field_0x4    = 0x78;
             paStack6->field_0x0 = 0x9ec8;
@@ -571,7 +571,7 @@ void  pass1_1030_9adc(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
         }
         else
         {
-            paStack6->field_0x0 = 0x389a;
+            paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             uVar3->field_0x2    = SEG_1008;
             uVar3->field_0x4    = 0x75;
             paStack6->field_0x0 = 0x9ec8;
@@ -829,7 +829,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
         else
         {
             iVar11               = (Struct116 *)paStack18;
-            paStack18->field_0x0 = 0x389a;
+            paStack18->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             iVar11->field_0x2    = SEG_1008;
             iVar11->field_0x4    = 0x73;
             paStack18->field_0x0 = 0x9ec8;
@@ -857,7 +857,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
         else
         {
             iVar10               = (Struct115 *)paStack18;
-            paStack18->field_0x0 = 0x389a;
+            paStack18->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             iVar10->field_0x2    = SEG_1008;
             iVar10->field_0x4    = 0x74;
             paStack18->field_0x0 = 0x9ec8;
@@ -885,7 +885,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
         else
         {
             iVar9                = (Struct114 *)paStack18;
-            paStack18->field_0x0 = 0x389a;
+            paStack18->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             iVar9->field_0x2     = SEG_1008;
             iVar9->field_0x4     = 0x75;
             paStack18->field_0x0 = 0x9ec8;
@@ -910,7 +910,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
         }
         else
         {
-            paStack18->field_0x0 = 0x389a;
+            paStack18->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             uVar5->field_0x2     = SEG_1008;
             uVar5->field_0x4     = 0x37;
             paStack18->field_0x0 = 0x9ec8;
@@ -948,7 +948,7 @@ void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 p
                 else
                 {
                     uStack26             = (uStack46 + 0x4);
-                    paStack18->field_0x0 = 0x389a;
+                    paStack18->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     (uVar7 + 0x2)        = SEG_1008;
                     (uVar7 + 0x4)        = uStack26;
                     paStack18->field_0x0 = 0x9ec8;
@@ -1046,7 +1046,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
                     else
                     {
                         uVar14              = (uStack46 + 0x4);
-                        paStack6->field_0x0 = 0x389a;
+                        paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                         (uVar6 + 0x2)       = SEG_1008;
                         (uVar6 + 0x4)       = uVar14;
                         paStack6->field_0x0 = 0x9ec8;
@@ -1075,7 +1075,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
                 }
                 else
                 {
-                    paStack6->field_0x0 = 0x389a;
+                    paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     (uVar6 + 0x2)       = SEG_1008;
                     (uVar6 + 0x4)       = iStack38;
                     paStack6->field_0x0 = 0x9ec8;
@@ -1096,7 +1096,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
             puVar12   = paStack58;
             if((uVar6 | puVar12) == 0x0)
                 goto LAB_1030_973e;
-            paStack58->field_0x0 = 0x389a;
+            paStack58->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             puVar12[0x1]         = SEG_1008;
             puVar12[0x2]         = 0x36;
             goto LAB_1030_9728;
@@ -1114,7 +1114,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
         }
         else
         {
-            paStack58->field_0x0 = 0x389a;
+            paStack58->field_0x0 = addr_table_1008_380a[36]; // 0x389a
             puVar12[0x1]         = SEG_1008;
             puVar12[0x2]         = 0x35;
         LAB_1030_9728:
@@ -1138,7 +1138,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
             puVar12   = paStack58;
             if((uVar6 | puVar12) != 0x0)
             {
-                paStack58->field_0x0 = 0x389a;
+                paStack58->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                 puVar12[0x1]         = SEG_1008;
                 puVar12[0x2]         = 0x27;
                 goto LAB_1030_9879;
@@ -1151,7 +1151,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
             puVar12   = paStack58;
             if((uVar6 | puVar12) != 0x0)
             {
-                paStack58->field_0x0 = 0x389a;
+                paStack58->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                 puVar12[0x1]         = SEG_1008;
                 puVar12[0x2]         = 0x26;
                 goto LAB_1030_9879;
@@ -1167,7 +1167,7 @@ void  pass1_1030_951a(u16 param_1, u16 param_2, u32 param_3, u32 *param_4, u32 p
         puVar12   = paStack58;
         if((uVar6 | puVar12) == 0x0)
             goto LAB_1030_97d0;
-        paStack58->field_0x0 = 0x389a;
+        paStack58->field_0x0 = addr_table_1008_380a[36]; // 0x389a
         puVar12[0x1]         = SEG_1008;
         puVar12[0x2]         = 0x25;
     LAB_1030_9879:
@@ -1221,7 +1221,7 @@ LAB_1030_97e8:
                 }
                 else
                 {
-                    paStack6->field_0x0 = 0x389a;
+                    paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     uVar5->field_0x2    = SEG_1008;
                     uVar5->field_0x4    = 0x4c;
                     paStack6->field_0x0 = 0x9ec8;
@@ -1239,7 +1239,7 @@ LAB_1030_97e8:
                 }
                 else
                 {
-                    paStack6->field_0x0 = 0x389a;
+                    paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     uVar4->field_0x2    = SEG_1008;
                     uVar4->field_0x4    = 0x4d;
                     paStack6->field_0x0 = 0x9ec8;
@@ -1261,7 +1261,7 @@ LAB_1030_97e8:
                 }
                 else
                 {
-                    paStack6->field_0x0 = 0x389a;
+                    paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                     uVar3->field_0x2    = SEG_1008;
                     uVar3->field_0x4    = 0x4e;
                     paStack6->field_0x0 = 0x9ec8;
@@ -1291,7 +1291,7 @@ LAB_1030_97e8:
             }
             else
             {
-                paStack6->field_0x0 = 0x389a;
+                paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
                 u_var2->field_0x2    = SEG_1008;
                 u_var2->field_0x4    = iStack20;
                 paStack6->field_0x0 = 0x9ec8;

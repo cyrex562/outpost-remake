@@ -1,4 +1,6 @@
 
+#include "address_tables/address_table_1.h"
+#include "globals.h"
 void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
 {
@@ -729,9 +731,9 @@ void file_1010_0c7c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 }
                 else
                 {
-                    puStack26        = 0x389a;
+                    puStack26        = addr_table_1008_380a[36];//0x389a;
                     uVar4->field_0x2 = SEG_1008;
-                    puStack26        = 0xea8;
+                    puStack26        = addr_table_1010_0ea8; //0x0ea8;
                     uVar4->field_0x2 = SEG_1010;
                     puStack22        = puStack26;
                 }
@@ -1287,7 +1289,7 @@ void file_1008_76e4(u32 param_1, long *param_2, u16 param_3, u16 param_4, u16 pa
             }
             else
             {
-                param_3 = 0x1030;
+                param_3 = SEG_1030;
                 struct_op_1030_1cd8(CONCAT22(param_5, u_var2), 0x5, local_6);
                 *param_2        = u_var2;
                 (param_2 + 0x2) = extraout_DX;

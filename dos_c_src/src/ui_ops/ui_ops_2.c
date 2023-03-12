@@ -1371,7 +1371,7 @@ void  set_win_pos_1040_0f10(HWND16 param_1, u16 param_2, i16 param_3)
         {
             check = 0x1c2;
         }
-        CheckDlgButton16(0x1030, 0x1, check);
+        CheckDlgButton16(SEG_1030, 0x1, check);
     }
     GetCursorPos16((POINT16 *)LAST_SEGMENT);
     GetWindowRect16((HWND16)LAST_SEGMENT, (RECT16 *)(param_3 + -0xc));

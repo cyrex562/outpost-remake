@@ -658,9 +658,13 @@ struct Struct78
 };
 struct Struct79
 {
-    u16 field_0x0;
+    void **field_0x0;
     u16 field_0x2;
     u32 field_0x4;
     u16 field_0x8;
+    int field_0xa;
+    int field_0x10;
+    int field_0xe;
+    int field_0xc;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_7X_H_

@@ -276,7 +276,7 @@ void win_ui_op_1040_0170(
         pass1_1030_838e(globals->_PTR_LOOP_1050_5748, param_6, in_AF);
         pass1_1030_8334(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10));
         in_DX = extraout_DX;
-        SetCursor16(0x1030);
+        SetCursor16(SEG_1030);
         PostMessage16((HWND16)LAST_SEGMENT, 0x0, 0x0, 0x111007e);
         DestroyWindow16((HWND16)LAST_SEGMENT);
         local_12a[0] = &globals->u32_1008_389a;
@@ -1916,10 +1916,10 @@ void win_ui_cursor_op_1038_bc30(Globals *globals, u32 param_1, HINSTANCE16 param
     pass1_1030_532e((Struct100 *)CONCAT22(param_3, &local_112), (long)(uVar1 + 0xe) + 0x1000000, param_3, in_AF);
     fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_3, &local_112));
     pass1_1030_838e(globals->_PTR_LOOP_1050_5748, param_3, in_AF);
-    local_112 = 0x389a;
+    local_112 = addr_table_1008_380a[36]; // 0x389a
     uStack272 = SEG_1008;
     pass1_1030_8334(globals->_PTR_LOOP_1050_5748);
-    SetCursor16(0x1030);
+    SetCursor16(SEG_1030);
 }
 
 

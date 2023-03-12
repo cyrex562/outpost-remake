@@ -51,6 +51,8 @@
 #include "win_ops/win_ops_4.h"
 #include "win_ops/win_ops_5.h"
 
+#include <stdint.h>
+
 // - 1008:389a
 void* addr_table_1008_380a[]
   = {pass1_1008_37aa,            // 1008:380a
@@ -535,9 +537,18 @@ void* addr_table_1010_02c8[] = {
   set_win_placement_1010_010e,    // 1010:02dc
 };
 
-// - 1010:191a
 // SEG_1010:0ea8
-void* addr_table_1010_0ea8[] = {
+void* addr_table_1010_0e98[] = {
+     pass1_1010_0e46, // 1010:0e98  46  0e  10  10       addr
+           pass1_1010_1df2, //  1010:0e9c  f2  1d  10  10       addr
+           pass1_1010_0ad2, // 1010:0ea0  d2  0a  10  10       addr
+            file_1010_0c7c, // 1010:0ea4  7c  0c  10  10       addr
+             pass1_1010_0e6c, // 1010:0ea8  6c  0e  10  10       addr
+
+};
+
+// - 1010:191a
+void* addr_table_1010_191a[] = {
   pass1_1010_18f4,  // 1010:191a
   pass1_1010_1df2,  // 1010:191e
   pass1_1010_1dce,  // 1010:1922
@@ -745,6 +756,11 @@ void* addr_table_1010_8ee2[] = {
 };
 
 // - 1010:9254 -> pass1_1010_922e
+
+void* addr_table_1010_9254[] = {
+  pass1_1010_922e, // 1010:9254
+};
+
 void* addr_table_1010_9566[] = {
   // - 1010:958e -> pass1_1010_951a
   pass1_1010_9540,              // 1010:9566
@@ -6587,10 +6603,67 @@ void* addr_table_1038_ae4e[] = {
   pass1_1038_884c,            // 1038:aec6 4c 88 38 10       addr
 };
 
-//void* addr_table_1020_7902[] = {
-//  pass1_1020_78dc,       // 1020:7902 dc 78 20 10       addr
-//  pass1_1008_3a10,       // 1020:7906 10 3a 08 10       addr
-//  mix_draw_op_1020_9312, // 1020:790a 12 93 20 10       addr
-//};
+// void* addr_table_1020_7902[] = {
+//   pass1_1020_78dc,       // 1020:7902 dc 78 20 10       addr
+//   pass1_1008_3a10,       // 1020:7906 10 3a 08 10       addr
+//   mix_draw_op_1020_9312, // 1020:790a 12 93 20 10       addr
+// };
+
+void* addr_table_1008_50a2[] = {
+  pass1_1008_507c,                 // 1008:50a2  7c  50  08  10       addr *
+  set_di_bits_to_device_1008_45d6, // 1008:50a6  d6  45  08  10       addr *
+  palette_op_1008_46e4,            // 1008:50aa  e4  46  08  10       addr *
+  cleanup_palette_1008_56e2,       // 1008:50ae  e2  56  08  10       addr *
+  stretch_di_bits_1008_465a,       // 1008:50b2  5a  46  08  10       addr *
+  pass1_1008_4426,                 // 1008:50b6  26  44  08  10       addr *
+  pass1_1008_48aa,                 // 1008:50ba  aa  48  08  10       addr *
+  memcpy_op_1008_4274,             // 1008:50be  74  42  08  10       addr *
+};
+
+void* addr_table_1008_573a[] = {
+  pass1_1008_570e,           // 1008:573a  0e  57  08  10       addr
+  pass1_1000_4f1a,           // 1008:573e  1a  4f  00  10       addr
+  pass1_1000_4f1a,           // 1008:5742  1a  4f  00  10       addr
+  cleanup_palette_1008_56e2, // 1008:5746  e2  56  08  10       addr
+};
+
+void* addr_table_1010_3b3e[] = {
+  pass1_1010_3af2, // 1010:3b3e  f2  3a  10  10       addr
+  pass1_1010_3a86, // 1010:3b42  86  3a  10  10       addr
+  pass1_1010_394a, // 1010:3b46  4a  39  10  10       addr
+  pass1_1010_3a94, // 1010:3b4a  94  3a  10  10       addr
+  NULL,            // FUN_1010_3aa6, // 1010:3b4e  a6  3a  10  10       addr
+  pass1_1010_3adc, // 1010:3b52  dc  3a  10  10       addr
+  NULL,            // FUN_1010_3abc, // 1010:3b56  bc  3a  10  10       addr
+  pass1_1010_3ac2, // 1010:3b5a  c2  3a  10  10       addr
+  pass1_1010_3b18, // 1010:3b5e  18  3b  10  10       addr
+  pass1_1010_3a86, // 1010:3b62  86  3a  10  10       addr
+  pass1_1010_394a, // 1010:3b66  4a  39  10  10       addr
+  pass1_1010_3a94, // 1010:3b6a  94  3a  10  10       addr
+  NULL,            // FUN_1010_3aa6, // 1010:3b6e  a6  3a  10  10       addr
+  pass1_1010_3aaa, // 1010:3b72  aa  3a  10  10       addr
+  NULL,            // FUN_1010_3abc, // 1010:3b76  bc  3a  10  10       addr
+  pass1_1010_62ec, // 1010:6312  ec  62  10  10       addr
+  pass1_1010_1df2, // 1010:6316  f2  1d  10  10       addr
+  pass1_1010_5dc6, // 1010:631a  c6  5d  10  10       addr
+  pass1_1010_5e56, // 1010:631e  56  5e  10  10       addr
+  pass1_1010_62a4, // 1010:6322  a4  62  10  10       addr
+};
+
+void* addr_table_1010_66f0[] = {
+  pass1_1010_66ca,         // 1010:66f0  ca  66  10  10       addr
+  pass1_1010_1df2,         // 1010:66f4  f2  1d  10  10       addr
+  write_to_file_1010_6372, // 1010:66f8  72  63  10  10       addr
+  pass1_1010_648a,         // 1010:66fc  8a  64  10  10       addr
+};
+
+void* addr_table_1010_0f0c[] = {
+  pass1_1010_0ee6,         // 1010:0f0c  e6  0e  10  10       addr
+  pass1_1010_1df2,         // 1010:0f10  f2  1d  10  10       addr
+  pass1_1010_1dce,         // 1010:0f14  ce  1d  10  10       addr
+  pass1_1010_1dd4,         // 1010:0f18  d4  1d  10  10       addr
+  create_dc_1018_4e04,     // 1010:0f1c  04  4e  18  10       addr
+  unk_win_ui_op_1018_4f18, // 1010:0f20  18  4f  18  10       addr
+};
 
 #endif // ADDRESS_TABLE_1_H_

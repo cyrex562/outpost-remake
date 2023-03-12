@@ -714,7 +714,7 @@ void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3)
             *(uVar10 + 0x138) = uVar9;
             piVar2            = (uVar10 + 0x13a);
             *piVar2           = *piVar2 + 0x1;
-            wsprintf16(0x1030, (uVar10 + 0x22), valist);
+            wsprintf16(SEG_1030, (uVar10 + 0x22), valist);
             return;
         }
         *(uVar10 + 0x13e) = u_stack6;
@@ -844,7 +844,7 @@ void pass1_1010_de78(u32 param_1, u32 param_2)
     *(param_1 + 0x13c) = 0x0;
     pass1_1030_809c(param_2);
     load_string_1010_84e0(
-      0x1030, globals->PCHAR_1050_14cc, 0x3ff, (param_1 + 0x13c), in_buf_len_5);
+      SEG_1030, globals->PCHAR_1050_14cc, 0x3ff, (param_1 + 0x13c), in_buf_len_5);
     return;
 }
 

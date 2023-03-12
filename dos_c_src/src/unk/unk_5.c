@@ -498,7 +498,7 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
 
     uVar3            = (param_1 >> 0x10);
     iVar4            = (Struct354 *)param_1;
-    *param_1         = 0x389a;
+    *param_1         = addr_table_1008_380a[36]; // 0x389a
     iVar4->field_0x2 = SEG_1008;
     pass1_1030_84ae(param_1 & 0xffff0000 | &iVar4->field_0x4);
     iVar4->field_0x24 = param_3;
@@ -506,7 +506,7 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     pass1_1008_6c90((param_1 & 0xffff0000 | &iVar4->field_0x28));
     &iVar4->field_0x34 = 0x0;
     *param_1           = 0x8e38;
-    iVar4->field_0x2   = 0x1030;
+    iVar4->field_0x2   = SEG_1030;
     struct_1030_8544((param_1 & 0xffff0000 | &iVar4->field_0x4), param_2);
     uVar4    = pass1_1008_4772(iVar4->field_0x12);
     uStack4  = (uVar4 >> 0x10);
@@ -825,7 +825,7 @@ u16 * pass1_1030_5d0a(u16 *param_1)
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x10) = 0x0;
     *param_1         = 0x613e;
-    (param_1 + 0x2)  = 0x1030;
+    (param_1 + 0x2)  = SEG_1030;
     return param_1;
 }
 
@@ -839,7 +839,7 @@ u16 * pass1_1030_5d3c(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x10) = 0x0;
     *param_1         = 0x613e;
-    (param_1 + 0x2)  = 0x1030;
+    (param_1 + 0x2)  = SEG_1030;
     return param_1;
 }
 
@@ -855,7 +855,7 @@ void  pass1_1030_5d78(u16 *param_1)
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
     *param_1      = 0x613e;
-    (iVar3 + 0x2) = 0x1030;
+    (iVar3 + 0x2) = SEG_1030;
     p_var2        = (iVar3 + 0x10);
     uVar1         = (iVar3 + 0x12);
     if((uVar1 | p_var2) != 0x0)

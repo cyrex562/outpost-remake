@@ -62,7 +62,7 @@ void window_op_1008_3bd6(Globals  *globals,
     mixed_struct_op_1040_8fb8(
       param_1, param_3, 0x0, param_5, param_6, param_7, param_8, 0x1040, param_9);
     // 1008:3cfc = start of address table of functions; see doc.md
-    param_1->field_0x0 = 0x3cfc;
+    param_1->field_0x0 = addr_table_1008_3cfc;//0x3cfc;
     param_1->field_0x2         = SEG_1008;
     param_1->field_0x36        = 0x0;
     param_1->field_0x26        = 0x0;
@@ -295,7 +295,7 @@ BOOL16 mixed_win_op_1008_0c60(
             BVar3  = MessageBox16(SEG_1010, &PTR_LOOP_1050_0010, pcVar7, (pcVar7 >> 0x10));
             return BVar3;
         }
-        HStack14 = LoadCursor16(0x1030, 0x7f02);
+        HStack14 = LoadCursor16(SEG_1030, 0x7f02);
         HStack16 = SetCursor16((HCURSOR16)LAST_SEGMENT);
         uStack20 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
         pass1_1018_262e(uStack20);
@@ -691,7 +691,7 @@ void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_
     if(BVar1 == 0x0)
     {
         local_1c  = (param_1 + 0x54);
-        uStack26  = 0x84f2;
+        uStack26  = addr_table_1008_84f2;//0x84f2;
         uStack24  = SEG_1008;
         uStack22  = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;

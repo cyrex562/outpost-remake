@@ -1,4 +1,5 @@
 
+#include "address_tables/address_table_1.h"
 #include "op_int.h"
 #include "op_winapi.h"
 #include "string_consts.h"
@@ -38,12 +39,12 @@ Struct23 *unk_draw_op_1008_80ee(Globals *globals, Struct23 *param_1, u16 param_2
 
     uVar3              = (Struct23 *)(param_1 >> 0x10);
     iVar3              = (Struct23 *)param_1;
-    param_1->field_0x0 = 0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36];//0x389a;
     iVar3->field_0x2   = SEG_1008;
     iVar3->field_0x54  = 0x0;
     iVar3->field_0x56  = 0x0;
     iVar3->field_0x58  = 0x0;
-    param_1->field_0x0 = 0x87c8;
+    param_1->field_0x0 = addr_table_1008_87c8;//0x87c8;
     iVar3->field_0x2   = SEG_1008;
     unk_str_op_1000_3d3e(iVar3->field_0x4, globals->s_MicroSpinControl_1050_0370);
     iVar3->field_0x54 = 0x3;
@@ -178,7 +179,7 @@ Struct20 *unk_draw_op_1008_61b2(Globals *globals, Struct20 *param_1, u16 param_2
     set_struct_1008_687a(param_1, param_4);
     iVar1->field_0xde  = param_2;
     iVar1->field_0xe0  = 0x0;
-    param_1->field_0x0 = 0x6378;
+    param_1->field_0x0 = addr_table_1008_6378;//0x6378;
     iVar1->field_0x2   = SEG_1008;
     puVar1             = extraout_DX;
     unk_str_op_1000_3d3e(iVar1->field_0x5b, globals->s_DanBrotherton_1050_0302);
@@ -317,7 +318,7 @@ void  file_and_draw_op_1008_4f20(u16 *param_1, u32 param_2, u16 param_3, u32 par
     *(iVar3 + 0x1e) = param_4;
     (iVar3 + 0x22)  = param_3;
     *(iVar3 + 0x24) = param_2;
-    *param_1        = s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x9;
+    *param_1        = addr_table_1008_50a2;//0x50a2; //s_SCi16ernalPutBldg2_site_0x_08lx__1050_5099 + 0x9;
     (iVar3 + 0x2)   = SEG_1008;
     paVar5          = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x2, param_5);
     u_var2           = (paVar5 >> 0x10);
@@ -699,7 +700,7 @@ void set_struct_op_1008_0536(Globals *globals, Struct20 *param_1, HINSTANCE16 hi
     (param_1->field_0xf2)               = 0x0;
     (param_1->field_0xf4)               = 0x0;
     (param_1->field_0xf8)               = 0x0;
-    param_1->field_0x0                     = 0x389e;
+    param_1->field_0x0                     = addr_table_1008_380a[37];//0x389e;
     (param_1->field_0x2)                = SEG_1008;
     (param_1->field_0xc8)               = 0x2008;
     (param_1->field_0xac)               = 0x0;

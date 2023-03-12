@@ -11,13 +11,15 @@
 #include "sys_ops/sys_ops_8.h"
 #include "unk/unk_12.h"
 #include "unk/unk_14.h"
+
+#include <stdint.h>
 void* addr_table_1008_051e[] = {
   pass1_1008_04f8,            // 1008:051e
   pass1_1008_049c,            // 1008:0522
   mixed_win_sys_op_1008_016e, // 1008:0526
   pass1_1008_04d2,            // 1008:052a
-//  LAB_1008_9494,              // 1008:052e
-//  LAB_1008_9490,              // 1008:0532
+NULL,//  LAB_1008_9494,              // 1008:052e
+NULL,//  LAB_1008_9490,              // 1008:0532
 };
 
 void* addr_table_1010_3b3e[] = {

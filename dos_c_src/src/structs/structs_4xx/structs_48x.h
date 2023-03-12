@@ -43,10 +43,10 @@ typedef struct Struct486 Struct486;
 typedef struct Struct487 Struct487;
 struct Struct488
 {
-    u8         field_0x0;
+    void**         field_0x0;
     u8         field_0x1;
     u16        field_0x2;
-    u32 field_0x4;
+    Struct18* field_0x4;
 };
 struct Struct480
 {

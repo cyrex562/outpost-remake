@@ -45,8 +45,8 @@ u32  pass1_1030_d942(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    CONCAT22(param_2, param_1) = 0xdc2e;
-    (param_1 + 0x2)            = 0x1030;
+    param_1 =  0xdc2e;
+    (param_1 + 0x2)            = SEG_1030;
     if((param_1 + 0xc) == 0x4c)
     {
         (param_1 + 0xe) = 0x43;
@@ -62,7 +62,7 @@ u32  pass1_1030_d942(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
             (param_1 + 0xe) = 0x45;
         }
     }
-    return CONCAT22(param_2, param_1);
+    return param_1;
 }
 
 
@@ -262,9 +262,9 @@ u16 * pass1_1030_dcc2(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
-    CONCAT22(param_2, param_1) = 0xe036;
-    (param_1 + 0x2)            = 0x1030;
-    return CONCAT22(param_2, param_1);
+    param_1 =  0xe036;
+    (param_1 + 0x2)            = SEG_1030;
+    return param_1;
 }
 
 
@@ -293,7 +293,7 @@ void  pass1_1030_dcf4(u16 *param_1, u16 param_2)
     uVar9            = (param_1 >> 0x10);
     iVar9            = (Struct596 *)param_1;
     *param_1         = 0xe036;
-    iVar9->field_0x2 = 0x1030;
+    iVar9->field_0x2 = SEG_1030;
     if(_PTR_LOOP_1050_65e2 != 0x0)
     {
         pass1_1028_b58e(param_1);
@@ -381,7 +381,7 @@ u16 * pass1_1030_bc24(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u32 pa
 {
     pass1_1028_b22c(CONCAT22(param_3, param_2), param_4, param_5, param_1);
     CONCAT22(param_3, param_2) = 0xbc96;
-    (param_2 + 0x2)            = 0x1030;
+    (param_2 + 0x2)            = SEG_1030;
     return CONCAT22(param_3, param_2);
 }
 
@@ -390,7 +390,7 @@ void  pass1_1030_bc4e(u16 *param_1)
 
 {
     *param_1        = 0xbc96;
-    (param_1 + 0x2) = 0x1030;
+    (param_1 + 0x2) = SEG_1030;
     pass1_1028_b260(param_1);
     return;
 }
@@ -399,7 +399,7 @@ void  pass1_1030_bc4e(u16 *param_1)
 u32  pass1_1030_bcae(u16 param_1, u16 param_2)
 
 {
-    return CONCAT22(param_2, param_1);
+    return param_1;
 }
 
 
@@ -485,9 +485,9 @@ u16 * pass1_1030_be56(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
-    CONCAT22(param_2, param_1) = 0xc006;
-    (param_1 + 0x2)            = 0x1030;
-    return CONCAT22(param_2, param_1);
+    param_1 =  0xc006;
+    (param_1 + 0x2)            = SEG_1030;
+    return param_1;
 }
 
 
@@ -617,8 +617,8 @@ void  pass1_1030_c09c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x24)           = 0x0;
-    CONCAT22(param_2, param_1) = 0xc68e;
-    (param_1 + 0x2)            = 0x1030;
+    param_1 =  0xc68e;
+    (param_1 + 0x2)            = SEG_1030;
     return;
 }
 
@@ -799,9 +799,9 @@ u16 * pass1_1030_c71e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
-    CONCAT22(param_2, param_1) = 0xc940;
-    (param_1 + 0x2)            = 0x1030;
-    return CONCAT22(param_2, param_1);
+    param_1 =  0xc940;
+    (param_1 + 0x2)            = SEG_1030;
+    return param_1;
 }
 
 
@@ -863,10 +863,10 @@ u32  pass1_1030_c9e4(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x98)           = 0x1;
-    CONCAT22(param_2, param_1) = 0xd88e;
-    (param_1 + 0x2)            = 0x1030;
+    param_1 =  0xd88e;
+    (param_1 + 0x2)            = SEG_1030;
     pass1_1000_4906((Struct20 *)CONCAT22(param_2, param_1 + 0x20), 0x0, 0x78);
-    return CONCAT22(param_2, param_1);
+    return param_1;
 }
 
 
@@ -1430,7 +1430,7 @@ u16 * pass1_1030_9e9c(u16 *param_1, u8 param_2)
     u16 uVar1;
 
     uVar1          = (param_1 >> 0x10);
-    *param_1       = 0x389a;
+    *param_1       = addr_table_1008_380a[36]; // 0x389a
     (param_1)[0x1] = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
@@ -1687,7 +1687,7 @@ void  pass1_1030_a57e(u32 param_1, u16 *param_2, i16 param_3, i16 param_4, u16 p
                 iVar12 = (uVar19 + 0xc);
                 if(0x5 < iVar12 - 0x7aU)
                     goto LAB_1030_a660;
-                uVar17 = 0x1030;
+                uVar17 = SEG_1030;
                 switch(iVar12)
                 {
                 default:
