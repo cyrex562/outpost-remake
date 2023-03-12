@@ -201,7 +201,7 @@ struct PAINTSTRUCT16
 {
     HDC16         hdc;
     BOOL16        f_erase;
-    struct RECT16 rc_pai16;
+    struct RECT16 rc_paint;
     BOOL16        f_restore;
     BOOL16        f_inc_update;
     BYTE          rgb_reserved[16];
@@ -324,7 +324,7 @@ struct tagBITMAPINFOHEADER{
 
   typedef struct _CONTEXT _CONTEXT ;
   typedef struct _CONTEXT  *P_CONTEXT;
-  typedef struct _CONTEXT CONTEXT;
+//   typedef struct _CONTEXT CONTEXT;
   typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA ;
   typedef struct _FLOATING_SAVE_AREA  *P_FLOATING_SAVE_AREA;
   typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;

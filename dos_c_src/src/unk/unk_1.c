@@ -56,7 +56,7 @@ void  pass1_1040_d0f8(Struct57 *param_1, u16 param_2)
     uVar1              = puVar3 | iVar5->field_9c;
     if(uVar1 == 0x0)
     {
-        mem_op_1000_179c(0xc, puVar3, 0x1000);
+        mem_op_1000_179c(0xc, puVar3, SEG_1000);
         puVar4 = (puVar3 | uVar1);
         if(puVar4 == 0x0)
         {
@@ -102,7 +102,7 @@ u16 * pass1_1040_c9cc(u16 *param_1, u8 param_2)
     pass1_1040_c5ac(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
     }
     return param_1;
 }
@@ -193,7 +193,7 @@ u32  pass1_1040_c518(u32 param_1, u8 param_2, u16 param_3)
     pass1_1040_bf92(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
     }
     return param_1;
 }
@@ -368,7 +368,7 @@ u16 * pass1_1040_a204(u16 *param_1, u8 param_2)
     (param_1 + 0x2) = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
     }
     return param_1;
 }
@@ -518,7 +518,7 @@ void  pass1_1040_807e(u32 param_1, u16 param_2, u16 param_3)
                 puVar6 = extraout_DX_00;
             }
         }
-        mem_op_1000_179c(0x14, puVar6, 0x1000);
+        mem_op_1000_179c(0x14, puVar6, SEG_1000);
         puVar7 = (puVar6 | puVar4);
         if(puVar7 == 0x0)
         {
@@ -908,8 +908,8 @@ void  pass1_1040_6470(Struct18 *param_1, u16 param_2)
         pass1_1010_1ea6(*&iVar1->field_0x92, (long)param_1, param_2);
     }
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, iVar1->field_0x6);
-    fn_ptr_1000_17ce(&iVar1->field_0x8e, 0x1000);
-    ui_cleanup_op_1040_782c(param_1, 0x1000);
+    fn_ptr_1000_17ce(&iVar1->field_0x8e, SEG_1000);
+    ui_cleanup_op_1040_782c(param_1, SEG_1000);
     return;
 }
 
@@ -920,7 +920,7 @@ Struct18 * pass1_1040_6794(Struct18 *param_1, u8 param_2, u16 param_3)
     pass1_1040_6470(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }

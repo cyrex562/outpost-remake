@@ -1757,6 +1757,7 @@ struct Struct81
     u8  field_0x20;
     u8  field_0x21;
     u16        field_0x22;
+    int        field_0x1a_addr_offset;
 };
 struct Struct83
 {

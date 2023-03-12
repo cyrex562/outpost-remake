@@ -6,12 +6,17 @@
 #define OUTPOST_1_SRC_UI_OPS_UI_OPS_4_H_
 
 
-void  win_dlg_op_1038_bea4(u32 param_1, WORD *param_2);
+#include "globals.h"
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_0xx/structs_x.h"
 
 
+void win_dlg_op_1038_bea4(Globals        *globals,
+                          unsigned int    param_1,
+                          unsigned short *param_2);
 
 
-void  show_win_1038_c044(Struct1 *param_1);
+void show_win_1038_c044(Globals *globals, Struct1 *param_1);
 
 
 
@@ -378,7 +383,7 @@ void  invalidate_rect_1020_8fb4(u32 param_1, u16 param_2);
 
 
 
-void  set_struct_op_1020_921c(Struct42 *param_1, u16 param_2);
+void  set_struct_op_1020_921c(Struct7 *param_1, u16 param_2);
 
 
 

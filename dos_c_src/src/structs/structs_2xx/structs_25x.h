@@ -5,9 +5,9 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_25X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_25X_H_
 
-#include "op_int.h"
-#include "structs/structs_0xx/struct_21.h"
-#include "structs/structs_0xx/struct_76.h"
+#include "../../op_int.h"
+#include "../structs_0xx/struct_21.h"
+#include "../structs_0xx/struct_76.h"
 typedef struct Struct252 Struct252;
 typedef struct Struct253 Struct253;
 typedef struct Struct254 Struct254;

@@ -22,7 +22,7 @@ void pass1_1010_1146(u32 param_1, u16 param_2, i16 param_3, u16 param_4)
     DAT_1050_0ecc = param_2;
     u_var2         = (param_1 >> 0x10);
     uVar1         = (param_1 + 0x66);
-    pass1_1000_4aea(*(param_1 + 0x64), uVar1, (uVar1 >> 0x10), 0x4, (s_dibtext_bmp_1050_1844 + 0x6), &stack0xfffe, param_3, u_var2, 0x1000, param_4);
+    pass1_1000_4aea(*(param_1 + 0x64), uVar1, (uVar1 >> 0x10), 0x4, (s_dibtext_bmp_1050_1844 + 0x6), &stack0xfffe, param_3, u_var2, SEG_1000, param_4);
     return;
 }
 
@@ -1326,7 +1326,7 @@ u16 *pass1_1008_ad0c(u16 *param_1, u8 param_2)
     (param_1)[0x1] = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
-        pass1_1000_093a(param_1, uVar1, 0x1000);
+        pass1_1000_093a(param_1, uVar1, SEG_1000);
     }
     return param_1;
 }
@@ -1789,7 +1789,7 @@ void  pass1_1008_87cc(Struct86 *param_1, i16 param_2, i16 param_3, u16 param_4, 
     iVar5->field_0x18 = iVar5->field_0x14 + 0x32;
     u_var2             = iVar5->field_0x16 + 0x19;
     iVar5->field_0x1a_addr_offset = u_var2;
-    mem_op_1000_179c(0x6, puVar5, 0x1000);
+    mem_op_1000_179c(0x6, puVar5, SEG_1000);
     paStack26      = (Struct18 *)CONCAT22(puVar5, u_var2);
     uStack18 = puVar5 | u_var2;
     if(uStack18 == 0x0)
@@ -1808,7 +1808,7 @@ void  pass1_1008_87cc(Struct86 *param_1, i16 param_2, i16 param_3, u16 param_4, 
     {
         paStack26 = &iVar5->field_0x8;
         uStack18  = paStack26;
-        fn_ptr_1000_17ce(paStack26, 0x1000);
+        fn_ptr_1000_17ce(paStack26, SEG_1000);
         &iVar5->field_0x8 = 0x0;
     }
     else
@@ -1916,7 +1916,7 @@ void pass1_1008_8c4e(u32 param_1, u32 param_2, u16 param_3)
     if(((iVar6 + 0xc) == 0x0) || ((iVar6 + 0xe) == 0x0))
     {
         puVar4 = puVar3;
-        mem_op_1000_179c(0x14, puVar3, 0x1000);
+        mem_op_1000_179c(0x14, puVar3, SEG_1000);
         paStack14 = (Struct110 *)CONCAT22(puVar4, uVar5);
         uVar5     = puVar4 | uVar5;
         if(uVar5 == 0x0)
@@ -1958,7 +1958,7 @@ void pass1_1008_8ce4(u32 param_1, u16 *param_2, u32 param_3, u16 param_4)
     pu_var2   = (puVar7 >> 0x10);
     puVar1   = local_10;
     pass1_1008_3f32(param_2, CONCAT22(param_4, puVar1));
-    mem_op_1000_179c(0x14, pu_var2, 0x1000);
+    mem_op_1000_179c(0x14, pu_var2, SEG_1000);
     uVar3 = pu_var2 | puVar1;
     if(uVar3 == 0x0)
     {

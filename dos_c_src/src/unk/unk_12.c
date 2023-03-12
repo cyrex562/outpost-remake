@@ -700,7 +700,7 @@ void  pass1_1010_887a(Struct87 **param_1, u32 param_2, i16 param_3, u16 param_4,
         uVar1    = uVar3;
         uStack24 = uVar3 & 0xffff | u_var2 << 0x10;
         bVar8    = 0x1e;
-        mem_op_1000_179c(NULL, 0x1e, puVar4, 0x1000);
+        mem_op_1000_179c(NULL, 0x1e, puVar4, SEG_1000);
         if((puVar4 | uVar1) == 0x0)
         {
             uVar1 = 0x0;
@@ -2097,7 +2097,7 @@ void  pass1_1010_1a06(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     uVar5  = (puVar8 >> 0x10);
     uVar3  = pass1_1010_7818(puVar8, param_2);
     uVar7  = (param_1 + 0x6e);
-    pcVar9 = string_op_1010_ada6(0x1000, uVar5, uVar7, (uVar7 >> 0x10), iVar2, uVar3);
+    pcVar9 = string_op_1010_ada6(SEG_1000, uVar5, uVar7, (uVar7 >> 0x10), iVar2, uVar3);
     str_op_1008_60e8(pcVar9, (pcVar9 >> 0x10));
     return;
 }

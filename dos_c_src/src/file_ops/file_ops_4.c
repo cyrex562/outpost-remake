@@ -17,7 +17,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     (iVar4 + 0x4) = 0x0;
     pu_var2        = local_26;
     struct_op_1008_48fe((Struct81 *)CONCAT22(param_3, pu_var2), 0x1, param_2, param_4);
-    mem_op_1000_179c(0x1e, param_4, 0x1000);
+    mem_op_1000_179c(0x1e, param_4, SEG_1000);
     paStack42 = (Struct76 *)CONCAT22(param_4, pu_var2);
     uVar3     = param_4 | pu_var2;
     if(uVar3 == 0x0)
@@ -61,15 +61,15 @@ void  close_file_1008_496c(u16 *param_1)
         ppcVar4 = *puVar1;
         (**ppcVar4)();
     }
-    fn_ptr_1000_17ce((iVar5 + 0x8), 0x1000);
+    fn_ptr_1000_17ce((iVar5 + 0x8), SEG_1000);
     if((iVar5 + 0x1a) != 0x0)
     {
         uVar3 = (iVar5 + 0x1a);
-        call_fn_ptr_1000_0dc6(uVar3, (uVar3 >> 0x10), 0x1000);
+        call_fn_ptr_1000_0dc6(uVar3, (uVar3 >> 0x10), SEG_1000);
     }
     if((iVar5 + 0xc) != -0x1)
     {
-        _lclose16(0x1000);
+        _lclose16(SEG_1000);
     }
     *param_1      = 0x389a;
     (iVar5 + 0x2) = SEG_1008;
@@ -129,7 +129,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
             if(local_18 == &PTR_LOOP_1050_4d42)
             {
                 _llseek16((HFILE16)LAST_SEGMENT, 0x0, 0x0);
-                lVar9          = mem_op_1000_0a48(0x1, u_stack6, (u_stack6 >> 0x10), globals->_PTR_LOOP_1050_5f2c, 0x1000);
+                lVar9          = mem_op_1000_0a48(0x1, u_stack6, (u_stack6 >> 0x10), globals->_PTR_LOOP_1050_5f2c, SEG_1000);
                 puVar6         = (lVar9 >> 0x10);
                 (iVar7 + 0x1a) = lVar9;
                 (iVar7 + 0x1c) = puVar6;
@@ -137,7 +137,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 {
                     return puVar6;
                 }
-                lVar9    = WIN16_hread(0x1000, (SEGPTR)u_stack6, CONCAT22((iVar7 + 0x1a), (u_stack6 >> 0x10)));
+                lVar9    = WIN16_hread(SEG_1000, (SEGPTR)u_stack6, CONCAT22((iVar7 + 0x1a), (u_stack6 >> 0x10)));
                 puVar5   = (lVar9 >> 0x10);
                 uStack10 = lVar9;
                 puStack8 = puVar5;
@@ -151,7 +151,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 *(iVar7 + 0x12) = uVar3 | iVar2 + 0xe;
                 uVar3           = uVar3 | iVar2 + 0x436;
                 *(iVar7 + 0x16) = uVar3;
-                mem_op_1000_179c(0x14, puVar5, 0x1000);
+                mem_op_1000_179c(0x14, puVar5, SEG_1000);
                 puVar6 = (puVar5 | uVar3);
                 if(puVar6 == 0x0)
                 {
@@ -187,7 +187,7 @@ u32  file_1008_4c26(u32 param_1, u8 param_2)
     close_file_1008_496c(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
     }
     return param_1;
 }
@@ -323,19 +323,19 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         pcVar9 = load_string_1010_847e(_PTR_LOOP_1050_14cc, in_buf_len_2, SEG_1010);
         uVar5  = (pcVar9 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_666), pcVar9);
-        BVar6 = GetOpenFileName16(0x1000);
+        BVar6 = GetOpenFileName16(SEG_1000);
     }
     else
     {
         if(param_2 != 0x2)
         {
-            debug_pri16_1008_6048(s_Unsupported_FileStructType_in_Op_1050_01ca, 0x1000, param_3);
+            debug_pri16_1008_6048(s_Unsupported_FileStructType_in_Op_1050_01ca, SEG_1000, param_3);
             goto LAB_1008_3461;
         }
         pcVar9 = load_string_1010_847e(_PTR_LOOP_1050_14cc, in_buf_len_2, SEG_1010);
         uVar5  = (pcVar9 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_666), pcVar9);
-        BVar6 = GetSaveFileName16(0x1000);
+        BVar6 = GetSaveFileName16(SEG_1000);
     }
     if(BVar6 != 0x0)
     {
@@ -356,7 +356,7 @@ LAB_1008_3461:
             MessageBox16(SEG_1010, &PTR_LOOP_1050_0010, pCStack1650, UStack1648);
             pcStack1382 = 0x0;
             paStack1646 = paStack1654;
-            fn_ptr_1000_17ce(paStack1654, 0x1000);
+            fn_ptr_1000_17ce(paStack1654, SEG_1000);
         }
         else
         {

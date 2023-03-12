@@ -561,7 +561,7 @@ struct Struct584
 };
 struct Struct587
 {
-    u8  field_0x0;
+    void **field_0x0;
     u8  field_0x1;
     u16 field_0x2;
     u8  field_0x4;

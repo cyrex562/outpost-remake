@@ -1,0 +1,12 @@
+//
+// Created by cyrex on 3/11/2023.
+//
+
+#ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_8XX_STRUCT_87X_H_
+#define OUTPOST_1_SRC_STRUCTS_STRUCTS_8XX_STRUCT_87X_H_
+
+typedef struct Struct871 {
+
+} Struct871;
+
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_8XX_STRUCT_87X_H_

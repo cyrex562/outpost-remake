@@ -411,7 +411,7 @@ BOOL16 EnumChildWindows16(HWND16 parent, LPVOID fun, LPARAM lparam);
 
 
 
-// BOOL16                      MoveWindow16(HWND16 hwnd, u16 x, u16 y, u16 cx, u16 cy, BOOL16 repai16);
+// BOOL16                      MoveWindow16(HWND16 hwnd, u16 x, u16 y, u16 cx, u16 cy, BOOL16 repaint);
 BOOL16 MoveWindow16(HWND16 hwnd, u16 x, u16 y, u16 cx, u16 cy, BOOL16 repaint);
 
 

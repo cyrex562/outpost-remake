@@ -153,7 +153,7 @@ char * pass1_1000_1fd2(i16 param_1)
     {
         return "Out of memory.  Please free some memory, then choose retry.";
     }
-    return CONCAT22(0x1000, param_1 * 0x17 + 0x1c7a);
+    return CONCAT22(SEG_1000, param_1 * 0x17 + 0x1c7a);
 }
 
 
@@ -454,7 +454,7 @@ u16  pass1_1000_1ab0(u16 param_1)
     {
         if(param_1 < 0x1001)
         {
-            return 0x1000;
+            return SEG_1000;
         }
         uVar1 = 0x2000;
         if(param_1 < 0x2001)

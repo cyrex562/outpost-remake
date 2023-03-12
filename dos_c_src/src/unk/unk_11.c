@@ -2632,7 +2632,7 @@ void  pass1_1010_a50c(Struct20 *param_1, u32 param_2, u32 param_3)
     iVar2   = (Struct260 *)((param_3 + 0xa) * 0x6 + iVar1);
     local_8 = iVar2->field_0xe;
     iStack4 = iVar2->field_0x12;
-    (*(fn_ptr_1)local_8)(0x1000, iVar1 + iStack4, param_1, param_2, param_3);
+    (*(fn_ptr_1)local_8)(SEG_1000, iVar1 + iStack4, param_1, param_2, param_3);
     return;
 }
 
@@ -2861,7 +2861,7 @@ void  pass1_1010_bf1e(u32 param_1, i16 *param_2, i16 param_3, u8 *param_4, u16 p
     iStack4  = param_3 + -0x1;
     *param_2 = iStack4;
     u_var2    = iStack4 * 0x18;
-    mem_op_1000_179c(u_var2, param_4, 0x1000);
+    mem_op_1000_179c(u_var2, param_4, SEG_1000);
     uStack40 = CONCAT22(param_4, u_var2);
     uStack32 = param_4 | u_var2;
     iVar4    = param_2;

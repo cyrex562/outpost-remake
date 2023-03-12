@@ -12,7 +12,7 @@ void pass1_1040_869a(Globals* globals, Struct18* param_1)
 {
     param_1->field_0x0 = 0x8ddc;
     param_1->field_0x2 = &globals->PTR_LOOP_1050_1040;
-    fn_ptr_1000_17ce((param_1->field_0x90), 0x1000);
-    fn_ptr_1000_17ce((param_1->field_0x94), 0x1000);
-    ui_cleanup_op_1040_782c(param_1, 0x1000);
+    fn_ptr_1000_17ce((param_1->field_0x90), SEG_1000);
+    fn_ptr_1000_17ce((param_1->field_0x94), SEG_1000);
+    ui_cleanup_op_1040_782c(param_1, SEG_1000);
 }

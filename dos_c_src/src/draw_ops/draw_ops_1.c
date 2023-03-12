@@ -7,6 +7,7 @@
 #include "../unk/unk_17.h"
 #include "../unk/unk_18.h"
 #include "../utils.h"
+#include "address_tables/address_table_1.h"
 #include "draw_ops_4.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
@@ -82,7 +83,8 @@ void pass1_1040_c94a(Globals *globals, Struct380 *pstruct_arg1,
 
     if((pstruct_arg1->field_0x48) != 0x0)
     {
-        pu16_var5  = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, param_3, param_4);
+        pu16_var5  = mixed_1010_20ba(
+          NULL, globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, param_3, param_4);
         //uVar4   = (puVar5 >> 0x10);
         pv_var_b   = pstruct_arg1->pv_field_42;
         u16_var_a   = (u16)(pv_var_b + 0x12);
@@ -460,28 +462,27 @@ void invalidate_rect_1040_c028(u32 param_1, i16 param_2, HWND16 param_3, RECT16 
     rect    = &local_a;
 LAB_1040_c19d:
     InvalidateRect16(param_3, rect, (BOOL16)param_4);
-    return;
 }
 
-Struct18 *pass1_1040_be94(Struct18 *param_1, u8 param_2)
+Struct18 *pass1_1040_be94(Globals *globals, Struct18 *param_1, u8 param_2)
 
 {
-    unk_draw_op_1040_b0f8(param_1);
+    unk_draw_op_1040_b0f8(globals, param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
 
 
-u32 pass1_1040_b74c(Struct18 *param_1, u8 param_2)
+Struct18 *pass1_1040_b74c(Struct18 *param_1, u8 param_2)
 
 {
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -576,7 +577,7 @@ Struct18 *pass1_1040_abe2(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -652,17 +653,17 @@ u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2)
     HCURSOR16 cursor_handle_1;
     HGDIOBJ16 obj_handle_1;
 //    i16       iVar3;
-    u16       uVar4;
+//    u16       uVar4;
 
-    uVar4         = (param_1 >> 0x10);
+//    uVar4         = (param_1 >> 0x10);
 //    iVar3         = param_1;
-    *param_1      = 0x389a;
+    *param_1      = addr_table_1008_380a[32] ;   //0x389a;
     (param_1 + 0x2) = SEG_1008;
     *param_1      = 0xa230;
     (param_1 + 0x2) = &globals->PTR_LOOP_1050_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals->s_OPButton_1050_5ece);
     (param_1 + 0x54)               = 0x3;
-    cursor_handle_1                = LoadCursor16(0x1000, 0x7f00);
+    cursor_handle_1                = LoadCursor16(SEG_1000, 0x7f00);
     *(HCURSOR16 *)(param_1 + 0x58) = cursor_handle_1;
     obj_handle_1                   = GetStockObject16((u16)LAST_SEGMENT);
     *(HGDIOBJ16 *)(param_1 + 0x56) = obj_handle_1;
@@ -746,7 +747,7 @@ void draw_op_1040_9948(u16 param_1, Struct71 *param_2, HWND16 param_3, RECT16 *p
             HStack30 = SelectObject16((HDC16)LAST_SEGMENT, iVar4->field_0x5a);
         }
         uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(&iVar4->field_0x6)));
-        DrawText16(0x1000, 0x400, (u16)&local_a, param_4, uVar3);
+        DrawText16(SEG_1000, 0x400, (u16)&local_a, param_4, uVar3);
         iStack8 = ((uStack14 - iStack4) + iStack8) / 0x2 + local_12.y;
         iStack4 = iStack4 + iStack8;
         local_a = ((uStack14 - iStack6) + local_a) / 0x2 + local_12.x;
@@ -826,7 +827,7 @@ void draw_op_1040_9948(u16 param_1, Struct71 *param_2, HWND16 param_3, RECT16 *p
             color_00 = SetTextColor16((HDC16)LAST_SEGMENT, (COLORREF)color);
             color_01 = SetBkColor16((HDC16)LAST_SEGMENT, 0x0);
             uVar3    = str_op_1000_3da4((param_2 & 0xffff0000 | &iVar4->field_0x6));
-            DrawText16(0x1000, (&globals->PTR_LOOP_1050_0000 + 0x1), (u16)&local_a, param_4, uVar3);
+            DrawText16(SEG_1000, (&globals->PTR_LOOP_1050_0000 + 0x1), (u16)&local_a, param_4, uVar3);
             SetTextColor16((HDC16)LAST_SEGMENT, color_00);
             SetBkColor16((HDC16)LAST_SEGMENT, color_01);
         }
@@ -837,7 +838,7 @@ void draw_op_1040_9948(u16 param_1, Struct71 *param_2, HWND16 param_3, RECT16 *p
             cy    = 0x0;
             x     = &iVar4->field_0x6;
             uVar3 = str_op_1000_3da4((param_2 & 0xffff0000 | ZEXT24(x)));
-            GrayString16(0x1000, iStack4 - iStack8, (iStack6 - local_a), CONCAT22(local_a, iStack8), uVar3, (u16)x, y, cx, cy);
+            GrayString16(SEG_1000, iStack4 - iStack8, (iStack6 - local_a), CONCAT22(local_a, iStack8), uVar3, (u16)x, y, cx, cy);
         }
         if(HStack30 != 0x0)
         {
@@ -909,7 +910,7 @@ void pass1_1040_8e82(Globals *globals, Struct18 *param_1)
 }
 
 
-void pass1_1040_9252(Struct65 *param_1, u16 param_2)
+void pass1_1040_9252(Struct65 *param_1)
 
 {
     i16         *pi_var1;
@@ -1239,7 +1240,7 @@ Struct18 *pass1_1040_767e(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1251,7 +1252,7 @@ Struct18 *pass1_1040_6360(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1273,7 +1274,7 @@ Struct18 *pass1_1040_4df2(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1483,7 +1484,7 @@ Struct18 *pass1_1040_47fe(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1555,8 +1556,8 @@ void pass1_1040_2a22(Struct18 *param_1)
     iVar1              = (Struct625 *)param_1;
     param_1->field_0x0 = 0x2e26;
     iVar1->field_0x2   = &PTR_LOOP_1050_1040;
-    fn_ptr_1000_17ce(iVar1->field_0x94, 0x1000);
-    fn_ptr_1000_17ce(iVar1->field_0x98, 0x1000);
+    fn_ptr_1000_17ce(iVar1->field_0x94, SEG_1000);
+    fn_ptr_1000_17ce(iVar1->field_0x98, SEG_1000);
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1620,7 +1621,11 @@ void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3)
 }
 
 
-u32 set_text_bk_color_1040_0cc0(u32 *param_1, u16 param_2, u16 param_3, u16 param_4)
+u32 set_text_bk_color_1040_0cc0(Globals *globals,
+                                u32     *param_1,
+                                u16      param_2,
+                                u16      param_3,
+                                u16      param_4)
 
 {
     void **ppcVar1;
@@ -1634,7 +1639,7 @@ u32 set_text_bk_color_1040_0cc0(u32 *param_1, u16 param_2, u16 param_3, u16 para
     uVar4   = 0x4;
     obj     = (HDC16)LAST_SEGMENT;
     HStack4 = GetStockObject16(param_4);
-    if(_PTR_LOOP_1050_5cd0 == 0x0)
+    if(globals->_PTR_LOOP_1050_5cd0 == 0x0)
     {
         ppcVar1                      = (*param_1 + 0x68);
         uVar3                        = (**ppcVar1)(LAST_SEGMENT, param_1, (param_1 + 0x6e), uVar4);
@@ -1660,13 +1665,18 @@ u32 set_text_bk_color_1040_0cc0(u32 *param_1, u16 param_2, u16 param_3, u16 para
             }
         }
     }
-    SetTextColor16(hdc, (COLORREF)_PTR_LOOP_1050_5cd0);
+    SetTextColor16(hdc, (COLORREF)globals->_PTR_LOOP_1050_5cd0);
     SetBkColor16((HDC16)LAST_SEGMENT, 0x0);
     return CONCAT22(0x1050, HStack4);
 }
 
 
-void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF in_colorref_4, u16 param_5)
+void draw_op_1038_9dcc(Globals  *globals,
+                       Struct10 *in_struct_1,
+                       i16       param_2,
+                       u16       param_3,
+                       COLORREF  in_colorref_4,
+                       u16       param_5)
 
 {
     u16        *puVar1;
@@ -1676,25 +1686,25 @@ void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF
     HBRUSH16    local_brush_handle;
     u32         uVar5;
     u16         extraout_DX;
-    Struct10 *local_struct_5;
-    Struct10 *var5;
+//    Struct10 *local_struct_5;
+//    Struct10 *var5;
     COLORREF    hdc;
     u32         uVar6;
     u16         uStack14;
 
-    var5           = (Struct10 *)(in_struct_1 >> 0x10);
-    local_struct_5 = (Struct10 *)in_struct_1;
+//    var5           = (Struct10 *)(in_struct_1 >> 0x10);
+//    local_struct_5 = (Struct10 *)in_struct_1;
     hdc            = in_colorref_4;
-    if(local_struct_5->brush_handle_field_0x8e == 0x0)
+    if(in_struct_1->brush_handle_field_0x8e == 0x0)
     {
         hdc                                     = (COLORREF)LAST_SEGMENT;
         local_brush_handle                      = CreateSolidBrush16(in_colorref_4);
-        local_struct_5->brush_handle_field_0x8e = local_brush_handle;
+        in_struct_1->brush_handle_field_0x8e = local_brush_handle;
     }
-    if(_PTR_LOOP_1050_5b64 == 0x0)
+    if(globals->_PTR_LOOP_1050_5b64 == 0x0)
     {
         hdc                          = SEG_1008;
-        uVar6                        = pass1_1008_4d72(*(_PTR_LOOP_1050_4230 + 0xe));
+        uVar6                        = pass1_1008_4d72(*(globals->PTR_LOOP_1050_423e));
         uVar3                        = (uVar6 >> 0x10);
         iVar4                        = uVar6;
         globals->_PTR_LOOP_1050_5b64 = CONCAT12(*(iVar4 + 0x94), CONCAT11(*(iVar4 + 0x95), *(iVar4 + 0x96)));
@@ -1708,9 +1718,9 @@ void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF
             return;
         }
         bVar2 = false;
-        for(uStack14 = 0x0; puVar1 = &local_struct_5->field_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 = uStack14 + 0x1)
+        for(uStack14 = 0x0; puVar1 = &in_struct_1->field_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 = uStack14 + 0x1)
         {
-            if((&local_struct_5->field_0x94 + uStack14 * 0x2) == param_2)
+            if((&in_struct_1->field_0x94 + uStack14 * 0x2) == param_2)
             {
                 bVar2 = true;
                 break;
@@ -1721,9 +1731,8 @@ void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF
             globals->PTR_LOOP_1050_5b64 = globals->PTR_LOOP_1050_5b68;
         }
     }
-    SetTextColor16(hdc, (COLORREF)PTR_LOOP_1050_5b64);
+    SetTextColor16(hdc, (COLORREF)globals->PTR_LOOP_1050_5b64);
     SetBkColor16((HDC16)LAST_SEGMENT, 0x0);
-    return;
 }
 
 
@@ -1751,7 +1760,7 @@ u16 call_fn_ptr_1038_9ffa(HWND16 win_handle, u16 param_2, Struct733 *struct_1, u
 }
 
 
-void unk_win_ui_op_1038_ac38(u16 param_1, u16 param_2)
+void unk_win_ui_op_1038_ac38(Globals *globals, u16 param_1, u16 param_2)
 
 {
     u16         uVar1;
@@ -1768,10 +1777,10 @@ void unk_win_ui_op_1038_ac38(u16 param_1, u16 param_2)
 
     hwnd = (HWND16)LAST_SEGMENT;
     GetStockObject16(param_1);
-    if(_PTR_LOOP_1050_5b78 == 0x0)
+    if(globals->_PTR_LOOP_1050_5b78 == 0x0)
     {
         hwnd                         = SEG_1008;
-        uVar5                        = pass1_1008_4d72(*(_PTR_LOOP_1050_4230 + 0xe));
+        uVar5                        = pass1_1008_4d72(*(globals->_PTR_LOOP_1050_423e));
         uVar1                        = (uVar5 >> 0x10);
         iVar2                        = uVar5;
         globals->_PTR_LOOP_1050_5b6c = CONCAT12(*(iVar2 + 0x3ec), CONCAT11(*(iVar2 + 0x3ed), *(iVar2 + 0x3ee)));
@@ -1786,19 +1795,19 @@ void unk_win_ui_op_1038_ac38(u16 param_1, u16 param_2)
         IVar3 = GetDlgCtrlID16(hwnd);
         if(IVar3 == 0xfd4)
         {
-            color = (COLORREF)_PTR_LOOP_1050_5b70;
+            color = (COLORREF)globals->_PTR_LOOP_1050_5b70;
             goto LAB_1038_ad0e;
         }
         if(IVar3 != 0xfd5)
         {
             if(IVar3 == 0xfd6)
             {
-                color = (COLORREF)_PTR_LOOP_1050_5b6c;
+                color = (COLORREF)globals->_PTR_LOOP_1050_5b6c;
                 goto LAB_1038_ad0e;
             }
             if(IVar3 == 0xfd7)
             {
-                color = (COLORREF)_PTR_LOOP_1050_5b74;
+                color = (COLORREF)globals->_PTR_LOOP_1050_5b74;
                 goto LAB_1038_ad0e;
             }
         }
@@ -1815,32 +1824,30 @@ void unk_win_ui_op_1038_ac38(u16 param_1, u16 param_2)
             goto LAB_1038_acf0;
         }
     }
-    color = (COLORREF)_PTR_LOOP_1050_5b78;
+    color = (COLORREF)globals->_PTR_LOOP_1050_5b78;
 LAB_1038_ad0e:
     SetTextColor16(hdc, color);
     SetBkColor16((HDC16)LAST_SEGMENT, 0x0);
-    return;
 }
 
 
-void pass1_1038_ae08(Struct18 *param_1)
+void pass1_1038_ae08(Globals *globals, Struct18 *param_1)
 
 {
-    param_1->field_0x0 = 0xae4e;
-    (param_1 + 0x2)    = &PTR_LOOP_1050_1038;
-    unk_draw_op_1040_b0f8(param_1);
-    return;
+    param_1->field_0x0 = addr_table_1038_ae4e; //0xae4e;
+    param_1->field_0x2 = SEG_1038;
+    unk_draw_op_1040_b0f8(globals, param_1);
 }
 
 
-void pass1_1038_893a(Struct18 *param_1)
+void pass1_1038_893a(Globals *globals, Struct18 *param_1)
 
 {
     u16 uVar1;
 
     uVar1              = (param_1 >> 0x10);
     param_1->field_0x0 = 0x8c2e;
-    (param_1 + 0x2)    = &PTR_LOOP_1050_1038;
+    (param_1 + 0x2)    = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     unk_draw_op_1040_b0f8(param_1);
     return;
@@ -1884,13 +1891,14 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
 
     if(param_4 == 0xeb)
     {
-        paStack6 = (Struct20 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+        paStack6 = (Struct20 *)mixed_1010_20ba(
+          NULL, _PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
         paVar5   = (param_1 + 0x90);
         if(paVar5 != (Struct18 *)0x0)
         {
             paStack10 = paVar5;
-            mem_op_1000_179c(0x18, puVar6, 0x1000);
+            mem_op_1000_179c(0x18, puVar6, SEG_1000);
             uVar3     = paVar5;
             paStack16 = (Struct18 *)(paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
             puVar7    = (puVar6 | uVar3);
@@ -1908,7 +1916,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
             (param_1 + 0x90) = 0x11;
             iStack12         = (param_1 + 0x90);
             uVar3            = iStack12 * 0xa + 0x2;
-            mem_op_1000_179c(uVar3, puVar7, 0x1000);
+            mem_op_1000_179c(uVar3, puVar7, SEG_1000);
             paStack16 = (Struct18 *)CONCAT22(puVar7, uVar3);
             if((puVar7 | uVar3) == 0x0)
             {
@@ -1939,8 +1947,8 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
             if(paStack10 != (Struct18 *)0x0)
             {
                 pass1_1040_a5d0(paStack10);
-                uVar8 = 0x1000;
-                fn_ptr_1000_17ce(paStack10, 0x1000);
+                uVar8 = SEG_1000;
+                fn_ptr_1000_17ce(paStack10, SEG_1000);
             }
             ppcVar2 = (CONCAT22(param_2, param_1) + 0x70);
             (**ppcVar2)(uVar8, param_1, param_2);
@@ -1982,7 +1990,7 @@ Struct18 *pass1_1038_997c(Struct18 *param_1, u8 param_2)
     unk_draw_op_1040_b0f8(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }

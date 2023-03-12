@@ -5204,97 +5204,1376 @@
 
 ### 1020
 
-- 1020:01cc -> pass1_1020_01a6
-- 1020:045a -> pass1_1020_0434
-- 1020:075a -> pass1_1020_0734
-- 1020:081a -> pass1_1020_07f4
-- 1020:0b0e -> pass1_1020_0ae8
-- 1020:0dbc -> pass1_1020_0d82
-- 1020:1384 -> pass1_1020_135e
-- 1020:1730 -> pass1_1020_170a
-- 1020:1e7a -> pass1_1020_1e54
-- 1020:2518 -> pass1_1020_24f2
+- 1020:01cc
+
+    1020:01cc a6 01 20 10       addr         pass1_1020_01a6
+    1020:01d0 d8 ed 18 10       addr         invalidate_rect_1018_edd8
+    1020:01d4 00 00 20 10       addr         unk_draw_op_1020_0000
+
+- 1020:045a
+
+    1020:045a 34 04 20 10       addr         pass1_1020_0434
+    1020:045e ea 68 08 10       addr         pass1_1008_68ea
+    1020:0462 16 03 20 10       addr         win_1020_0316
+    1020:0466 8c 02 20 10       addr         pass1_1020_028c
+    1020:046a 40 96 08 10       addr         send_msg_1008_9640
+    1020:046e 64 96 08 10       addr         set_win_text_1008_9664
+    1020:0472 2c 37 08 10       addr         pass1_1008_372c
+    1020:0476 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:047a 3c 37 08 10       addr         pass1_1008_373c
+    1020:047e 40 37 08 10       addr         pass1_1008_3740
+    1020:0482 44 37 08 10       addr         pass1_1008_3744
+    1020:0486 48 37 08 10       addr         pass1_1008_3748
+    1020:048a 4c 37 08 10       addr         pass1_1008_374c
+    1020:048e 1e 04 20 10       addr         draw_op_1020_041e
+    1020:0492 98 96 08 10       addr         destroy_win_1008_9698
+    1020:0496 50 37 08 10       addr         pass1_1008_3750
+    1020:049a 54 37 08 10       addr         pass1_1008_3754
+    1020:049e 60 9c 08 10       addr         pass1_1008_9c60
+    1020:04a2 58 37 08 10       addr         pass1_1008_3758
+    1020:04a6 24 63 08 10       addr         FUN_1008_6324
+    1020:04aa 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:04ae 62 37 08 10       addr         pass1_1008_3762
+    1020:04b2 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:04b6 b2 03 20 10       addr         post_msg_1020_03b2
+    1020:04ba d6 03 20 10       addr         post_msg_1020_03d6
+    1020:04be 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:04c2 fa 03 20 10       addr         post_msg_1020_03fa
+    1020:04c6 02 6b 08 10       addr         pass1_1008_6b02
+    1020:04ca 7a 37 08 10       addr         pass1_1008_377a
+    1020:04ce 52 9c 08 10       addr         pass1_1008_9c52
+    1020:04d2 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:04d6 16 9c 08 10       addr         pass1_1008_9c16
+    1020:04da 30 9c 08 10       addr         pass1_1008_9c30
+    1020:04de 86 9c 08 10       addr         pass1_1008_9c86
+    1020:04e2 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:04e6 e0 9c 08 10       addr         pass1_1008_9ce0
+    1020:04ea ae 02 20 10       addr         pass1_1020_02ae
+    1020:04ee 28 63 08 10       addr         FUN_1008_6328
+    1020:04f2 2c 63 08 10       addr         FUN_1008_632c
+
+- 1020:075a
+
+    1020:075a 34 07 20 10       addr         pass1_1020_0734
+    1020:075e 1c 06 20 10       addr         post_win_msg_1020_061c
+
+- 1020:081a
+
+    1020:081a f4 07 20 10       addr         pass1_1020_07f4
+    1020:081e ea 68 08 10       addr         pass1_1008_68ea
+    1020:0822 16 03 20 10       addr         win_1020_0316
+    1020:0826 8c 02 20 10       addr         pass1_1020_028c
+    1020:082a 40 96 08 10       addr         send_msg_1008_9640
+    1020:082e 64 96 08 10       addr         set_win_text_1008_9664
+    1020:0832 2c 37 08 10       addr         pass1_1008_372c
+    1020:0836 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:083a 3c 37 08 10       addr         pass1_1008_373c
+    1020:083e 40 37 08 10       addr         pass1_1008_3740
+    1020:0842 44 37 08 10       addr         pass1_1008_3744
+    1020:0846 48 37 08 10       addr         pass1_1008_3748
+    1020:084a 4c 37 08 10       addr         pass1_1008_374c
+    1020:084e aa 07 20 10       addr         pass1_1020_07aa
+    1020:0852 98 96 08 10       addr         destroy_win_1008_9698
+    1020:0856 50 37 08 10       addr         pass1_1008_3750
+    1020:085a 54 37 08 10       addr         pass1_1008_3754
+    1020:085e 60 9c 08 10       addr         pass1_1008_9c60
+    1020:0862 58 37 08 10       addr         pass1_1008_3758
+    1020:0866 24 63 08 10       addr         FUN_1008_6324
+    1020:086a 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:086e 62 37 08 10       addr         pass1_1008_3762
+    1020:0872 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:0876 b2 03 20 10       addr         post_msg_1020_03b2
+    1020:087a d6 03 20 10       addr         post_msg_1020_03d6
+    1020:087e 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:0882 fa 03 20 10       addr         post_msg_1020_03fa
+    1020:0886 02 6b 08 10       addr         pass1_1008_6b02
+    1020:088a 7a 37 08 10       addr         pass1_1008_377a
+    1020:088e 52 9c 08 10       addr         pass1_1008_9c52
+    1020:0892 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:0896 16 9c 08 10       addr         pass1_1008_9c16
+    1020:089a 30 9c 08 10       addr         pass1_1008_9c30
+    1020:089e 86 9c 08 10       addr         pass1_1008_9c86
+    1020:08a2 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:08a6 e0 9c 08 10       addr         pass1_1008_9ce0
+    1020:08aa ae 02 20 10       addr         pass1_1020_02ae
+    1020:08ae 28 63 08 10       addr         FUN_1008_6328
+    1020:08b2 2c 63 08 10       addr         FUN_1008_632c
+
+- 1020:0b0e
+
+    1020:0b0e e8 0a 20 10       addr         pass1_1020_0ae8
+    1020:0b12 ea 68 08 10       addr         pass1_1008_68ea
+    1020:0b16 ba 09 20 10       addr         win_1020_09ba
+    1020:0b1a c6 68 08 10       addr         pass1_1008_68c6
+    1020:0b1e 40 96 08 10       addr         send_msg_1008_9640
+    1020:0b22 64 96 08 10       addr         set_win_text_1008_9664
+    1020:0b26 2c 37 08 10       addr         pass1_1008_372c
+    1020:0b2a f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:0b2e 3c 37 08 10       addr         pass1_1008_373c
+    1020:0b32 40 37 08 10       addr         pass1_1008_3740
+    1020:0b36 44 37 08 10       addr         pass1_1008_3744
+    1020:0b3a 48 37 08 10       addr         pass1_1008_3748
+    1020:0b3e 4c 37 08 10       addr         pass1_1008_374c
+    1020:0b42 52 0a 20 10       addr         pass1_1020_0a52
+    1020:0b46 98 96 08 10       addr         destroy_win_1008_9698
+    1020:0b4a 50 37 08 10       addr         pass1_1008_3750
+    1020:0b4e bc 0a 20 10       addr         pass1_1020_0abc
+    1020:0b52 60 9c 08 10       addr         pass1_1008_9c60
+    1020:0b56 58 37 08 10       addr         pass1_1008_3758
+    1020:0b5a 24 63 08 10       addr         FUN_1008_6324
+    1020:0b5e 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:0b62 62 37 08 10       addr         pass1_1008_3762
+    1020:0b66 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:0b6a 66 37 08 10       addr         pass1_1008_3766
+    1020:0b6e 6a 37 08 10       addr         FUN_1008_376a
+    1020:0b72 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:0b76 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:0b7a 02 6b 08 10       addr         pass1_1008_6b02
+    1020:0b7e 7a 37 08 10       addr         pass1_1008_377a
+    1020:0b82 52 9c 08 10       addr         pass1_1008_9c52
+    1020:0b86 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:0b8a 16 9c 08 10       addr         pass1_1008_9c16
+    1020:0b8e 30 9c 08 10       addr         pass1_1008_9c30
+    1020:0b92 86 9c 08 10       addr         pass1_1008_9c86
+    1020:0b96 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:0b9a a6 0a 20 10       addr         pass1_1020_0aa6
+    1020:0b9e 0c 0a 20 10       addr         pass1_1020_0a0c
+    1020:0ba2 28 63 08 10       addr         FUN_1008_6328
+    1020:0ba6 2c 63 08 10       addr         FUN_1008_632c
+
+- 1020:0dbc
+
+    1020:0dbc 82 0d 20 10       addr         pass1_1020_0d82
+    1020:0dc0 10 3a 08 10       addr         pass1_1008_3a10
+
+- 1020:1384
+
+    1020:1384 5e 13 20 10       void *       pass1_1020_135e
+    1020:1388 ea 68 08 10       void *       pass1_1008_68ea
+    1020:138c a0 10 20 10       void *       window_op_1020_10a0
+    1020:1390 c6 68 08 10       void *       pass1_1008_68c6
+    1020:1394 40 96 08 10       void *       send_msg_1008_9640
+    1020:1398 b4 79 20 10       void *       string_1020_79b4
+    1020:139c 2c 37 08 10       void *       pass1_1008_372c
+    1020:13a0 f2 97 08 10       void *       unk_win_op_1008_97f2
+    1020:13a4 3c 37 08 10       void *       pass1_1008_373c
+    1020:13a8 40 37 08 10       void *       pass1_1008_3740
+    1020:13ac 44 37 08 10       void *       pass1_1008_3744
+    1020:13b0 48 37 08 10       void *       pass1_1008_3748
+    1020:13b4 4c 37 08 10       void *       pass1_1008_374c
+    1020:13b8 22 10 20 10       void *       pass1_1020_1022
+    1020:13bc 98 96 08 10       void *       destroy_win_1008_9698
+    1020:13c0 2c 0e 20 10       void *       pass1_1020_0e2c
+    1020:13c4 c4 0e 20 10       void *       win_help_op_1020_0ec4
+    1020:13c8 60 9c 08 10       void *       pass1_1008_9c60
+    1020:13cc ae 79 20 10       void *       pass1_1020_79ae
+    1020:13d0 00 10 20 10       void *       enable_menu_1020_1000
+    1020:13d4 4e 9c 08 10       void *       pass1_1008_9c4e
+    1020:13d8 62 37 08 10       void *       pass1_1008_3762
+    1020:13dc 4a 9c 08 10       void *       pass1_1008_9c4a
+    1020:13e0 8e 0e 20 10       void *       pass1_1020_0e8e
+    1020:13e4 d2 7a 20 10       void *       win_ui_menu_op_1020_7ad2
+    1020:13e8 4a 6a 08 10       void *       pass1_1008_6a4a
+    1020:13ec 2e 6b 08 10       void *       pass1_1008_6b2e
+    1020:13f0 02 6b 08 10       void *       pass1_1008_6b02
+    1020:13f4 7a 37 08 10       void *       pass1_1008_377a
+    1020:13f8 52 9c 08 10       void *       pass1_1008_9c52
+    1020:13fc 56 9c 08 10       void *       get_stock_obj_1008_9c56
+    1020:1400 e4 79 20 10       void *       pass1_1020_79e4
+    1020:1404 fc 79 20 10       void *       post_win_msg_1020_79fc
+    1020:1408 86 9c 08 10       void *       pass1_1008_9c86
+    1020:140c c4 9c 08 10       void *       pass1_1008_9cc4
+    1020:1410 e0 9c 08 10       void *       pass1_1008_9ce0
+    1020:1414 46 0e 20 10       void *       realize_palette_1020_0e46
+
+- 1020:1730
+
+    1020:1730 0a 17 20 10       void *       pass1_1020_170a
+    1020:1734 7c 15 20 10       void *       invalidate_rect_1020_157c
+
+- 1020:1e7a
+
+    1020:1e7a 54 1e 20 10       addr         pass1_1020_1e54
+    1020:1e7e 10 3a 08 10       addr         pass1_1008_3a10
+    1020:1e82 9c 17 20 10       addr         mixed_ui_op_1020_179c
+    1020:1e86 c0 79 40 10       addr         pass1_1040_79c0
+    1020:1e8a 3c 7b 40 10       addr         post_win_msg_1040_7b3c
+    1020:1e8e 4a 1d 20 10       addr         destroy_window_1020_1d4a
+    1020:1e92 56 7f 40 10       addr         post_win_msg_1040_7f56
+    1020:1e96 b2 7b 40 10       addr         draw_op_1040_7bb2
+    1020:1e9a 1c 7f 40 10       addr         post_win_msg_1040_7f1c
+    1020:1e9e 80 17 20 10       addr         pass1_1020_1780
+    1020:1ea2 86 7f 40 10       addr         menu_ui_op_1040_7f86
+    1020:1ea6 0c 80 40 10       addr         win_help_1040_800c
+    1020:1eaa 54 80 40 10       addr         pass1_1040_8054
+    1020:1eae 5e 7e 40 10       addr         set_text_bk_color_1040_7e5e
+    1020:1eb2 58 81 40 10       addr         unk_win_ui_op_1040_8158
+    1020:1eb6 b6 81 40 10       addr         check_dialog_msg_1040_81b6
+    1020:1eba fe 81 40 10       addr         win_ui_op_1040_81fe
+    1020:1ebe d4 1b 20 10       addr         enable_window_1020_1bd4
+    1020:1ec2 4a 82 40 10       addr         pass1_1040_824a
+    1020:1ec6 66 82 40 10       addr         FUN_1040_8266
+    1020:1eca de 78 40 10       addr         pass1_1040_78de
+    1020:1ece ee 60 18 10       addr         FUN_1018_60ee
+    1020:1ed2 f4 60 18 10       addr         FUN_1018_60f4
+    1020:1ed6 fa 60 18 10       addr         FUN_1018_60fa
+    1020:1eda b6 1b 20 10       addr         pass1_1020_1bb6
+    1020:1ede fe 60 18 10       addr         FUN_1018_60fe
+    1020:1ee2 7e 80 40 10       addr         pass1_1040_807e
+    1020:1ee6 68 1b 20 10       addr         pass1_1020_1b68
+
+- 1020:2518
+
+    1020:2518 f2 24 20 10       addr         pass1_1020_24f2
+    1020:251c b2 1f 20 10       addr         invalidate_rect_1020_1fb2
+    1020:2520 20 20 20 10       addr         unk_draw_op_1020_2020
+
 - 1020:270c -> FUN_1020_26e6
-- 1020:27a8 -> pass1_1020_26d8
-- 1020:288e -> pass1_1020_2868
+- 1020:27a8
+
+    1020:270c e6 26 20 10       addr         FUN_1020_26e6
+    1020:2710 ea 68 08 10       addr         pass1_1008_68ea
+    1020:2714 42 26 20 10       addr         window_op_1020_2642
+    1020:2718 c6 68 08 10       addr         pass1_1008_68c6
+    1020:271c 40 96 08 10       addr         send_msg_1008_9640
+    1020:2720 64 96 08 10       addr         set_win_text_1008_9664
+    1020:2724 2c 37 08 10       addr         pass1_1008_372c
+    1020:2728 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:272c 3c 37 08 10       addr         pass1_1008_373c
+    1020:2730 40 37 08 10       addr         pass1_1008_3740
+    1020:2734 44 37 08 10       addr         pass1_1008_3744
+    1020:2738 48 37 08 10       addr         pass1_1008_3748
+    1020:273c 4c 37 08 10       addr         pass1_1008_374c
+    1020:2740 c0 25 20 10       addr         pass1_1020_25c0
+    1020:2744 98 96 08 10       addr         destroy_win_1008_9698
+    1020:2748 50 82 20 10       addr         destroy_window_1020_8250
+    1020:274c 54 37 08 10       addr         pass1_1008_3754
+    1020:2750 60 9c 08 10       addr         pass1_1008_9c60
+    1020:2754 58 37 08 10       addr         pass1_1008_3758
+    1020:2758 24 63 08 10       addr         FUN_1008_6324
+    1020:275c 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:2760 62 37 08 10       addr         pass1_1008_3762
+    1020:2764 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:2768 66 37 08 10       addr         pass1_1008_3766
+    1020:276c 06 81 20 10       addr         pass1_1020_8106
+    1020:2770 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:2774 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:2778 02 6b 08 10       addr         pass1_1008_6b02
+    1020:277c 7a 37 08 10       addr         pass1_1008_377a
+    1020:2780 52 9c 08 10       addr         pass1_1008_9c52
+    1020:2784 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:2788 16 9c 08 10       addr         pass1_1008_9c16
+    1020:278c 30 9c 08 10       addr         pass1_1008_9c30
+    1020:2790 86 9c 08 10       addr         pass1_1008_9c86
+    1020:2794 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:2798 c0 81 20 10       addr         win_ui_palette_op_1020_81c0
+    1020:279c a6 26 20 10       addr         pass1_1020_26a6
+    1020:27a0 28 63 08 10       addr         FUN_1008_6328
+    1020:27a4 28 81 20 10       addr         realize_palette_1020_8128
+    1020:27a8 d8 26 20 10       addr         pass1_1020_26d8
+    1020:27ac 10 3a 08 10       addr         pass1_1008_3a10
+
+- 1020:288e
+
+    1020:288e 68 28 20 10       addr         pass1_1020_2868
+    1020:2892 10 3a 08 10       addr         pass1_1008_3a10
+    1020:2896 12 93 20 10       addr         mix_draw_op_1020_9312
+
 - 1020:2e4a -> pass1_1020_2e24
-- 1020:363c -> pass1_1020_3616
-- 1020:3d08 -> pass1_1020_3d08
-- 1020:3d9c -> INVALID
+
+    1020:2e4a 24 2e 20 10       addr         pass1_1020_2e24
+    1020:2e4e ea 68 08 10       addr         pass1_1008_68ea
+    1020:2e52 f0 2c 20 10       addr         win_ui_op_1020_2cf0
+    1020:2e56 46 2a 20 10       addr         pass1_1020_2a46
+    1020:2e5a 40 96 08 10       addr         send_msg_1008_9640
+    1020:2e5e b4 79 20 10       addr         string_1020_79b4
+    1020:2e62 2c 37 08 10       addr         pass1_1008_372c
+    1020:2e66 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:2e6a 3c 37 08 10       addr         pass1_1008_373c
+    1020:2e6e 40 37 08 10       addr         pass1_1008_3740
+    1020:2e72 44 37 08 10       addr         pass1_1008_3744
+    1020:2e76 48 37 08 10       addr         pass1_1008_3748
+    1020:2e7a 4c 37 08 10       addr         pass1_1008_374c
+    1020:2e7e 72 2c 20 10       addr         pass1_1020_2c72
+    1020:2e82 98 96 08 10       addr         destroy_win_1008_9698
+    1020:2e86 6a 2a 20 10       addr         pass1_1020_2a6a
+    1020:2e8a e4 2a 20 10       addr         invalidate_rect_1020_2ae4
+    1020:2e8e 60 9c 08 10       addr         pass1_1008_9c60
+    1020:2e92 36 29 20 10       addr         pass1_1020_2936
+    1020:2e96 2a 2c 20 10       addr         enable_menu_item_1020_2c2a
+    1020:2e9a 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:2e9e 62 37 08 10       addr         pass1_1008_3762
+    1020:2ea2 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:2ea6 ae 2a 20 10       addr         bring_window_to_top_1020_2aae
+    1020:2eaa d2 7a 20 10       addr         win_ui_menu_op_1020_7ad2
+    1020:2eae 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:2eb2 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:2eb6 02 6b 08 10       addr         pass1_1008_6b02
+    1020:2eba 7a 37 08 10       addr         pass1_1008_377a
+    1020:2ebe 52 9c 08 10       addr         pass1_1008_9c52
+    1020:2ec2 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:2ec6 e4 79 20 10       addr         pass1_1020_79e4
+    1020:2eca d8 29 20 10       addr         send_msg_1020_29d8
+    1020:2ece 86 9c 08 10       addr         pass1_1008_9c86
+    1020:2ed2 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:2ed6 e0 9c 08 10       addr         pass1_1008_9ce0
+    1020:2eda 92 29 20 10       addr         realize_palette_1020_2992
+
+- 1020:363c
+
+    1020:363c 16 36 20 10       addr         pass1_1020_3616
+    1020:3640 80 30 20 10       addr         invalidate_rect_1020_3080
+
+- 1020:3d08
+- 1020:3d9c -> pass1_1020_3ca6
+
+    1020:3d08 b8 3c 20 10       void *       FUN_1020_3cb8
+    1020:3d0c ea 68 08 10       void *       pass1_1008_68ea
+    1020:3d10 aa 38 20 10       void *       window_op_1020_38aa
+    1020:3d14 c6 68 08 10       void *       pass1_1008_68c6
+    1020:3d18 40 96 08 10       void *       send_msg_1008_9640
+    1020:3d1c b4 79 20 10       void *       string_1020_79b4
+    1020:3d20 2c 37 08 10       void *       pass1_1008_372c
+    1020:3d24 f2 97 08 10       void *       unk_win_op_1008_97f2
+    1020:3d28 3c 37 08 10       void *       pass1_1008_373c
+    1020:3d2c 40 37 08 10       void *       pass1_1008_3740
+    1020:3d30 44 37 08 10       void *       pass1_1008_3744
+    1020:3d34 48 37 08 10       void *       pass1_1008_3748
+    1020:3d38 4c 37 08 10       void *       pass1_1008_374c
+    1020:3d3c d6 3b 20 10       void *       pass1_1020_3bd6
+    1020:3d40 98 96 08 10       void *       destroy_win_1008_9698
+    1020:3d44 98 38 20 10       void *       pass1_1020_3898
+    1020:3d48 32 3c 20 10       void *       pass1_1020_3c32
+    1020:3d4c 60 9c 08 10       void *       pass1_1008_9c60
+    1020:3d50 ae 79 20 10       void *       pass1_1020_79ae
+    1020:3d54 5e 37 08 10       void *       pass1_1008_375e
+    1020:3d58 4e 9c 08 10       void *       pass1_1008_9c4e
+    1020:3d5c 62 37 08 10       void *       pass1_1008_3762
+    1020:3d60 4a 9c 08 10       void *       pass1_1008_9c4a
+    1020:3d64 74 3c 20 10       void *       pass1_1020_3c74
+    1020:3d68 d2 7a 20 10       void *       win_ui_menu_op_1020_7ad2
+    1020:3d6c 4a 6a 08 10       void *       pass1_1008_6a4a
+    1020:3d70 2e 6b 08 10       void *       pass1_1008_6b2e
+    1020:3d74 02 6b 08 10       void *       pass1_1008_6b02
+    1020:3d78 7a 37 08 10       void *       pass1_1008_377a
+    1020:3d7c 52 9c 08 10       void *       pass1_1008_9c52
+    1020:3d80 56 9c 08 10       void *       get_stock_obj_1008_9c56
+    1020:3d84 e4 79 20 10       void *       pass1_1020_79e4
+    1020:3d88 fc 79 20 10       void *       post_win_msg_1020_79fc
+    1020:3d8c 86 9c 08 10       void *       pass1_1008_9c86
+    1020:3d90 c4 9c 08 10       void *       pass1_1008_9cc4
+    1020:3d94 e0 9c 08 10       void *       pass1_1008_9ce0
+    1020:3d98 b4 3c 20 10       void *       FUN_1020_3cb4
+    1020:3d9c a6 3c 20 10       void *       pass1_1020_3ca6
+    1020:3da0 f6 36 20 10       void *       win_ui_op_1020_36f6
+
 - 1020:408a -> pass1_1020_4064
-- 1020:623c -> FUN_1020_6216
+
+    1020:408a 64 40 20 10       addr         pass1_1020_4064
+    1020:408e 12 3f 20 10       addr         validate_rect_1020_3f12
+
+- 1020:623c
 - 1020:62d8 -> pass1_1020_6208
-- 1020:67c2 -> pass1_1020_679c
-- 1020:70e6 -> pass1_1020_70c0
-- 1020:754c -> pass1_1020_7526
-- 1020:7780 -> pass1_1020_775a
+
+    1020:623c 16 62 20 10       addr         FUN_1020_6216
+    1020:6240 4c 43 20 10       addr         pass1_1020_434c
+    1020:6244 f6 43 20 10       addr         win_1020_43f6
+    1020:6248 c6 68 08 10       addr         pass1_1008_68c6
+    1020:624c 40 96 08 10       addr         send_msg_1008_9640
+    1020:6250 64 96 08 10       addr         set_win_text_1008_9664
+    1020:6254 2c 37 08 10       addr         pass1_1008_372c
+    1020:6258 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:625c 3c 37 08 10       addr         pass1_1008_373c
+    1020:6260 40 37 08 10       addr         pass1_1008_3740
+    1020:6264 44 37 08 10       addr         pass1_1008_3744
+    1020:6268 48 37 08 10       addr         pass1_1008_3748
+    1020:626c 4c 37 08 10       addr         pass1_1008_374c
+    1020:6270 b0 44 20 10       addr         pass1_1020_44b0
+    1020:6274 98 96 08 10       addr         destroy_win_1008_9698
+    1020:6278 50 82 20 10       addr         destroy_window_1020_8250
+    1020:627c 3c 49 20 10       addr         win_sys_op_1020_493c
+    1020:6280 60 9c 08 10       addr         pass1_1008_9c60
+    1020:6284 58 37 08 10       addr         pass1_1008_3758
+    1020:6288 ec 44 20 10       addr         mixed_menu_op_1020_44ec
+    1020:628c 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:6290 62 37 08 10       addr         pass1_1008_3762
+    1020:6294 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:6298 c6 51 20 10       addr         pass1_1020_51c6
+    1020:629c 2e 52 20 10       addr         win_ui_cursor_op_1020_522e
+    1020:62a0 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:62a4 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:62a8 02 6b 08 10       addr         pass1_1008_6b02
+    1020:62ac 7a 37 08 10       addr         pass1_1008_377a
+    1020:62b0 52 9c 08 10       addr         pass1_1008_9c52
+    1020:62b4 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:62b8 16 9c 08 10       addr         pass1_1008_9c16
+    1020:62bc 30 9c 08 10       addr         pass1_1008_9c30
+    1020:62c0 86 9c 08 10       addr         pass1_1008_9c86
+    1020:62c4 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:62c8 c0 81 20 10       addr         win_ui_palette_op_1020_81c0
+    1020:62cc de 52 20 10       addr         pass1_1020_52de
+    1020:62d0 28 63 08 10       addr         FUN_1008_6328
+    1020:62d4 28 81 20 10       addr         realize_palette_1020_8128
+    1020:62d8 08 62 20 10       addr         pass1_1020_6208
+    1020:62dc 94 43 20 10       addr         post_msg_1020_4394
+
+- 1020:67c2
+
+    1020:67c2 9c 67 20 10       addr         pass1_1020_679c
+    1020:67c6 cc 65 20 10       addr         unk_win_op_1020_65cc
+    1020:67ca 0c 65 20 10       addr         mix_draw_op_1020_650c
+
+- 1020:70e6
+
+    1020:70e6 c0 70 20 10       addr         pass1_1020_70c0
+    1020:70ea ea 68 08 10       addr         pass1_1008_68ea
+    1020:70ee 3a 6c 20 10       addr         window_op_1020_6c3a
+    1020:70f2 c6 68 08 10       addr         pass1_1008_68c6
+    1020:70f6 40 96 08 10       addr         send_msg_1008_9640
+    1020:70fa b4 79 20 10       addr         string_1020_79b4
+    1020:70fe 2c 37 08 10       addr         pass1_1008_372c
+    1020:7102 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:7106 3c 37 08 10       addr         pass1_1008_373c
+    1020:710a 40 37 08 10       addr         pass1_1008_3740
+    1020:710e 44 37 08 10       addr         pass1_1008_3744
+    1020:7112 48 37 08 10       addr         pass1_1008_3748
+    1020:7116 4c 37 08 10       addr         pass1_1008_374c
+    1020:711a bc 6b 20 10       addr         pass1_1020_6bbc
+    1020:711e 98 96 08 10       addr         destroy_win_1008_9698
+    1020:7122 7c 68 20 10       addr         pass1_1020_687c
+    1020:7126 4c 69 20 10       addr         unk_destroy_win_op_1020_694c
+    1020:712a e6 6a 20 10       addr         win_ui_op_1020_6ae6
+    1020:712e ae 79 20 10       addr         pass1_1020_79ae
+    1020:7132 9a 6b 20 10       addr         enable_menu_item_1020_6b9a
+    1020:7136 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:713a 62 37 08 10       addr         pass1_1008_3762
+    1020:713e 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:7142 fc 68 20 10       addr         pt_in_rect_1020_68fc
+    1020:7146 d2 7a 20 10       addr         win_ui_menu_op_1020_7ad2
+    1020:714a 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:714e 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:7152 02 6b 08 10       addr         pass1_1008_6b02
+    1020:7156 7a 37 08 10       addr         pass1_1008_377a
+    1020:715a 52 9c 08 10       addr         pass1_1008_9c52
+    1020:715e 70 70 20 10       addr         draw_op_1020_7070
+    1020:7162 e4 79 20 10       addr         pass1_1020_79e4
+    1020:7166 fc 79 20 10       addr         post_win_msg_1020_79fc
+    1020:716a 86 9c 08 10       addr         pass1_1008_9c86
+    1020:716e c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:7172 e0 9c 08 10       addr         pass1_1008_9ce0
+    1020:7176 96 68 20 10       addr         realize_palette_1020_6896
+    1020:717a 52 6e 20 10       addr         pass1_1020_6e52
+
+- 1020:754c
+
+    1020:754c 26 75 20 10       addr         pass1_1020_7526
+    1020:7550 08 73 20 10       addr         post_win_msg_1020_7308
+
+- 1020:7780
 - 1020:781c -> pass1_1020_774c
-- 1020:7902 -> pass1_1020_78dc
-- 1020:7b86 -> pass1_1020_7b60
-- 1020:7f72 -> pass1_1020_7f38
+
+    1020:7780 5a 77 20 10       void *       FUN_1020_775a
+    1020:7784 ea 68 08 10       void *       pass1_1008_68ea
+    1020:7788 aa 76 20 10       void *       window_op_1020_76aa
+    1020:778c c6 68 08 10       void *       pass1_1008_68c6
+    1020:7790 40 96 08 10       void *       send_msg_1008_9640
+    1020:7794 64 96 08 10       void *       set_win_text_1008_9664
+    1020:7798 2c 37 08 10       void *       pass1_1008_372c
+    1020:779c f2 97 08 10       void *       unk_win_op_1008_97f2
+    1020:77a0 3c 37 08 10       void *       pass1_1008_373c
+    1020:77a4 40 37 08 10       void *       pass1_1008_3740
+    1020:77a8 44 37 08 10       void *       pass1_1008_3744
+    1020:77ac 48 37 08 10       void *       pass1_1008_3748
+    1020:77b0 4c 37 08 10       void *       pass1_1008_374c
+    1020:77b4 f0 75 20 10       void *       win_1020_75f0
+    1020:77b8 98 96 08 10       void *       destroy_win_1008_9698
+    1020:77bc 50 82 20 10       void *       destroy_window_1020_8250
+    1020:77c0 54 37 08 10       void *       pass1_1008_3754
+    1020:77c4 60 9c 08 10       void *       pass1_1008_9c60
+    1020:77c8 58 37 08 10       void *       pass1_1008_3758
+    1020:77cc 24 63 08 10       void *       FUN_1008_6324
+    1020:77d0 4e 9c 08 10       void *       pass1_1008_9c4e
+    1020:77d4 62 37 08 10       void *       pass1_1008_3762
+    1020:77d8 4a 9c 08 10       void *       pass1_1008_9c4a
+    1020:77dc 66 37 08 10       void *       pass1_1008_3766
+    1020:77e0 06 81 20 10       void *       pass1_1020_8106
+    1020:77e4 4a 6a 08 10       void *       pass1_1008_6a4a
+    1020:77e8 2e 6b 08 10       void *       pass1_1008_6b2e
+    1020:77ec 02 6b 08 10       void *       pass1_1008_6b02
+    1020:77f0 7a 37 08 10       void *       pass1_1008_377a
+    1020:77f4 52 9c 08 10       void *       pass1_1008_9c52
+    1020:77f8 56 9c 08 10       void *       get_stock_obj_1008_9c56
+    1020:77fc 16 9c 08 10       void *       pass1_1008_9c16
+    1020:7800 30 9c 08 10       void *       pass1_1008_9c30
+    1020:7804 86 9c 08 10       void *       pass1_1008_9c86
+    1020:7808 c4 9c 08 10       void *       pass1_1008_9cc4
+    1020:780c c0 81 20 10       void *       win_ui_palette_op_1020_81c0
+    1020:7810 0e 77 20 10       void *       pass1_1020_770e
+    1020:7814 28 63 08 10       void *       FUN_1008_6328
+    1020:7818 28 81 20 10       void *       realize_palette_1020_8128
+    1020:781c 4c 77 20 10       void *       pass1_1020_774c
+    1020:7820 10 3a 08 10       void *       pass1_1008_3a10
+
+- 1020:7902
+
+    1020:7902 dc 78 20 10       addr         pass1_1020_78dc
+    1020:7906 10 3a 08 10       addr         pass1_1008_3a10
+    1020:790a 12 93 20 10       addr         mix_draw_op_1020_9312
+
+- 1020:7b86
+
+    1020:7b86 60 7b 20 10       addr         pass1_1020_7b60
+    1020:7b8a ea 68 08 10       addr         pass1_1008_68ea
+    1020:7b8e 60 97 08 10       addr         create_window_ex_1008_9760
+    1020:7b92 c6 68 08 10       addr         pass1_1008_68c6
+    1020:7b96 40 96 08 10       addr         send_msg_1008_9640
+    1020:7b9a b4 79 20 10       addr         string_1020_79b4
+    1020:7b9e 2c 37 08 10       addr         pass1_1008_372c
+    1020:7ba2 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:7ba6 3c 37 08 10       addr         pass1_1008_373c
+    1020:7baa 40 37 08 10       addr         pass1_1008_3740
+    1020:7bae 44 37 08 10       addr         pass1_1008_3744
+    1020:7bb2 48 37 08 10       addr         pass1_1008_3748
+    1020:7bb6 4c 37 08 10       addr         pass1_1008_374c
+    1020:7bba c8 97 08 10       addr         begin_end_paint_1008_97c8
+    1020:7bbe 98 96 08 10       addr         destroy_win_1008_9698
+    1020:7bc2 50 7a 20 10       addr         get_win_ui_info_op_1020_7a50
+    1020:7bc6 54 37 08 10       addr         pass1_1008_3754
+    1020:7bca 60 9c 08 10       addr         pass1_1008_9c60
+    1020:7bce ae 79 20 10       addr         pass1_1020_79ae
+    1020:7bd2 5e 37 08 10       addr         pass1_1008_375e
+    1020:7bd6 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:7bda 62 37 08 10       addr         pass1_1008_3762
+    1020:7bde 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:7be2 66 37 08 10       addr         pass1_1008_3766
+    1020:7be6 d2 7a 20 10       addr         win_ui_menu_op_1020_7ad2
+    1020:7bea 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:7bee 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:7bf2 02 6b 08 10       addr         pass1_1008_6b02
+    1020:7bf6 7a 37 08 10       addr         pass1_1008_377a
+    1020:7bfa 52 9c 08 10       addr         pass1_1008_9c52
+    1020:7bfe 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:7c02 e4 79 20 10       addr         pass1_1020_79e4
+    1020:7c06 fc 79 20 10       addr         post_win_msg_1020_79fc
+    1020:7c0a 86 9c 08 10       addr         pass1_1008_9c86
+    1020:7c0e c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:7c12 e0 9c 08 10       addr         pass1_1008_9ce0
+    1020:7c16 b4 3c 20 10       addr         FUN_1020_3cb4
+
+- 1020:7f72
+
+    1020:7f72 38 7f 20 10       addr         pass1_1020_7f38
+    1020:7f76 10 3a 08 10       addr         pass1_1008_3a10
+
 - 1020:82b6 -> INVALID
 - 1020:8358 -> pass1_1020_8288
-- 1020:8462 -> pass1_1020_843c
-- 1020:87aa -> pass1_1020_8784
-- 1020:8a84 -> pass1_1020_8a5e
-- 1020:8e92 -> pass1_1020_8e6c
-- 1020:9204 -> pass1_1020_91de
-- 1020:96c8 -> pass1_1020_96a2
-- 1020:ba36 -> pass1_1020_a644
-- 1020:c834 -> pass1_1020_c80e
-- 1020:c9e6 -> pass1_1020_c9ba
-- 1020:cc7c -> pass1_1020_cc56
-- 1020:cd7e -> pass1_1020_cd58
-- 1020:d004 -> pass1_1020_cfde
-- 1020:d314 -> pass1_1020_d2ee
-- 1020:d53e -> pass1_1020_d518
-- 1020:d7fe -> pass1_1020_d7d8
-- 1020:d8ec -> pass1_1020_d8c6
-- 1020:e792 -> pass1_1020_e76c
-- 1020:e88e -> pass1_1020_e868
-- 1020:eef6 -> pass1_1020_eed0
+
+    1020:82bc 96 82 20 10       addr         FUN_1020_8296
+    1020:82c0 ea 68 08 10       addr         pass1_1008_68ea
+    1020:82c4 60 97 08 10       addr         create_window_ex_1008_9760
+    1020:82c8 c6 68 08 10       addr         pass1_1008_68c6
+    1020:82cc 40 96 08 10       addr         send_msg_1008_9640
+    1020:82d0 64 96 08 10       addr         set_win_text_1008_9664
+    1020:82d4 2c 37 08 10       addr         pass1_1008_372c
+    1020:82d8 f2 97 08 10       addr         unk_win_op_1008_97f2
+    1020:82dc 3c 37 08 10       addr         pass1_1008_373c
+    1020:82e0 40 37 08 10       addr         pass1_1008_3740
+    1020:82e4 44 37 08 10       addr         pass1_1008_3744
+    1020:82e8 48 37 08 10       addr         pass1_1008_3748
+    1020:82ec 4c 37 08 10       addr         pass1_1008_374c
+    1020:82f0 c0 62 08 10       addr         fill_rect_1008_62c0
+    1020:82f4 98 96 08 10       addr         destroy_win_1008_9698
+    1020:82f8 50 82 20 10       addr         destroy_window_1020_8250
+    1020:82fc 54 37 08 10       addr         pass1_1008_3754
+    1020:8300 60 9c 08 10       addr         pass1_1008_9c60
+    1020:8304 58 37 08 10       addr         pass1_1008_3758
+    1020:8308 24 63 08 10       addr         FUN_1008_6324
+    1020:830c 4e 9c 08 10       addr         pass1_1008_9c4e
+    1020:8310 62 37 08 10       addr         pass1_1008_3762
+    1020:8314 4a 9c 08 10       addr         pass1_1008_9c4a
+    1020:8318 66 37 08 10       addr         pass1_1008_3766
+    1020:831c 06 81 20 10       addr         pass1_1020_8106
+    1020:8320 4a 6a 08 10       addr         pass1_1008_6a4a
+    1020:8324 2e 6b 08 10       addr         pass1_1008_6b2e
+    1020:8328 02 6b 08 10       addr         pass1_1008_6b02
+    1020:832c 7a 37 08 10       addr         pass1_1008_377a
+    1020:8330 52 9c 08 10       addr         pass1_1008_9c52
+    1020:8334 56 9c 08 10       addr         get_stock_obj_1008_9c56
+    1020:8338 16 9c 08 10       addr         pass1_1008_9c16
+    1020:833c 30 9c 08 10       addr         pass1_1008_9c30
+    1020:8340 86 9c 08 10       addr         pass1_1008_9c86
+    1020:8344 c4 9c 08 10       addr         pass1_1008_9cc4
+    1020:8348 c0 81 20 10       addr         win_ui_palette_op_1020_81c0
+    1020:834c 8e 62 08 10       addr         destroy_win_1008_628e
+    1020:8350 28 63 08 10       addr         FUN_1008_6328
+    1020:8354 28 81 20 10       addr         realize_palette_1020_8128
+    1020:8358 88 82 20 10       addr         pass1_1020_8288
+    1020:835c 10 3a 08 10       addr         pass1_1008_3a10
+
+- 1020:8462
+
+    1020:8462 3c 84 20 10       addr         pass1_1020_843c
+    1020:8466 38 84 20 10       addr         FUN_1020_8438
+    1020:846a f8 83 20 10       addr         pass1_1020_83f8
+    1020:846e d8 86 20 10       addr         pass1_1020_86d8
+    1020:8472 5a 86 20 10       addr         pass1_1020_865a
+    1020:8476 f6 85 20 10       addr         pass1_1020_85f6
+
+- 1020:87aa
+
+    1020:87aa 84 87 20 10       addr         pass1_1020_8784
+    1020:87ae 38 84 20 10       addr         FUN_1020_8438
+    1020:87b2 80 87 20 10       addr         FUN_1020_8780
+    1020:87b6 d8 86 20 10       addr         pass1_1020_86d8
+    1020:87ba 5a 86 20 10       addr         pass1_1020_865a
+    1020:87be f6 85 20 10       addr         pass1_1020_85f6
+
+- 1020:8a84
+
+    1020:8a84 5e 8a 20 10       addr         pass1_1020_8a5e
+    1020:8a88 38 84 20 10       addr         FUN_1020_8438
+    1020:8a8c 08 89 20 10       addr         pass1_1020_8908
+    1020:8a90 d8 86 20 10       addr         pass1_1020_86d8
+    1020:8a94 5a 86 20 10       addr         pass1_1020_865a
+    1020:8a98 f6 85 20 10       addr         pass1_1020_85f6
+
+- 1020:8e92
+
+    1020:8e92 6c 8e 20 10       addr         pass1_1020_8e6c
+    1020:8e96 38 84 20 10       addr         FUN_1020_8438
+    1020:8e9a cc 8b 20 10       addr         pass1_1020_8bcc
+    1020:8e9e d8 86 20 10       addr         pass1_1020_86d8
+    1020:8ea2 5a 86 20 10       addr         pass1_1020_865a
+    1020:8ea6 f6 85 20 10       addr         pass1_1020_85f6
+
+- 1020:9204
+
+    1020:9204 de 91 20 10       addr         pass1_1020_91de
+    1020:9208 b4 8f 20 10       addr         invalidate_rect_1020_8fb4
+    1020:920c 68 90 20 10       addr         pass1_1020_9068
+    1020:9210 d8 86 20 10       addr         pass1_1020_86d8
+    1020:9214 5a 86 20 10       addr         pass1_1020_865a
+    1020:9218 f6 85 20 10       addr         pass1_1020_85f6
+
+- 1020:96c8
+
+    1020:96c8 a2 96 20 10       addr         pass1_1020_96a2
+    1020:96cc 10 3a 08 10       addr         pass1_1008_3a10
+    1020:96d0 12 93 20 10       addr         mix_draw_op_1020_9312
+
+- 1020:ba36
+
+    1020:ba36 44 a6 20 10       void *       pass1_1020_a644
+    1020:ba3a 5e a6 20 10       void *       read_file_1020_a65e
+
+- 1020:c834
+
+    1020:c834 0e c8 20 10       addr         pass1_1020_c80e
+    1020:c838 4a c5 20 10       addr         pass1_1020_c54a
+    1020:c83c ae c5 20 10       addr         FUN_1020_c5ae
+    1020:c840 b4 c5 20 10       addr         FUN_1020_c5b4
+    1020:c844 38 c5 20 10       addr         pass1_1020_c538
+    1020:c848 ee 1e 30 10       addr         pass1_1030_1eee
+    1020:c84c 16 1f 30 10       addr         pass1_1030_1f16
+    1020:c850 94 c6 20 10       addr         pass1_1020_c694
+    1020:c854 3a c7 20 10       addr         pass1_1020_c73a
+    1020:c858 40 c6 20 10       addr         FUN_1020_c640
+    1020:c85c 44 c6 20 10       addr         pass1_1020_c644
+
+- 1020:c9e6
+
+    1020:c9e6 ba c9 20 10       addr         pass1_1020_c9ba
+
+- 1020:cc7c
+
+    1020:cc7c 56 cc 20 10       addr         pass1_1020_cc56
+    1020:cc80 56 bb 28 10       addr         pass1_1028_bb56
+    1020:cc84 8e 17 30 10       addr         FUN_1030_178e
+    1020:cc88 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:cc8c 1a b8 28 10       addr         file_1028_b81a
+    1020:cc90 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:cc94 36 ca 20 10       addr         pass1_1020_ca36
+    1020:cc98 d4 09 28 10       addr         pass1_1028_09d4
+    1020:cc9c 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:cca0 14 b5 28 10       addr         pass1_1028_b514
+    1020:cca4 2a be 28 10       addr         pass1_1028_be2a
+    1020:cca8 16 bf 28 10       addr         FUN_1028_bf16
+    1020:ccac 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:ccb0 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:ccb4 82 ca 20 10       addr         pass1_1020_ca82
+    1020:ccb8 22 bf 28 10       addr         pass1_1028_bf22
+    1020:ccbc f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:ccc0 02 bc 28 10       addr         pass1_1028_bc02
+    1020:ccc4 a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:ccc8 ca b5 28 10       addr         pass1_1028_b5ca
+    1020:cccc e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:ccd0 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:ccd4 6e b4 28 10       addr         pass1_1028_b46e
+    1020:ccd8 4a c6 28 10       addr         pass1_1028_c64a
+    1020:ccdc 22 c5 28 10       addr         pass1_1028_c522
+    1020:cce0 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:cd7e
+
+    1020:cd7e 58 cd 20 10       addr         pass1_1020_cd58
+    1020:cd82 56 bb 28 10       addr         pass1_1028_bb56
+    1020:cd86 8e 17 30 10       addr         FUN_1030_178e
+    1020:cd8a ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:cd8e 1a b8 28 10       addr         file_1028_b81a
+    1020:cd92 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:cd96 38 bd 28 10       addr         pass1_1028_bd38
+    1020:cd9a 90 bc 28 10       addr         pass1_1028_bc90
+    1020:cd9e 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:cda2 14 b5 28 10       addr         pass1_1028_b514
+    1020:cda6 2a be 28 10       addr         pass1_1028_be2a
+    1020:cdaa 16 bf 28 10       addr         FUN_1028_bf16
+    1020:cdae 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:cdb2 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:cdb6 9e be 28 10       addr         pass1_1028_be9e
+    1020:cdba 22 bf 28 10       addr         pass1_1028_bf22
+    1020:cdbe f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:cdc2 02 bc 28 10       addr         pass1_1028_bc02
+    1020:cdc6 a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:cdca ca b5 28 10       addr         pass1_1028_b5ca
+    1020:cdce 30 cd 20 10       addr         pass1_1020_cd30
+    1020:cdd2 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:cdd6 6e b4 28 10       addr         pass1_1028_b46e
+    1020:cdda 4a c6 28 10       addr         pass1_1028_c64a
+    1020:cdde 22 c5 28 10       addr         pass1_1028_c522
+    1020:cde2 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:d004
+
+    1020:d004 de cf 20 10       addr         pass1_1020_cfde
+    1020:d008 56 bb 28 10       addr         pass1_1028_bb56
+    1020:d00c 8e 17 30 10       addr         FUN_1030_178e
+    1020:d010 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:d014 1a b8 28 10       addr         file_1028_b81a
+    1020:d018 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:d01c 32 ce 20 10       addr         pass1_1020_ce32
+    1020:d020 d4 09 28 10       addr         pass1_1028_09d4
+    1020:d024 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:d028 14 b5 28 10       addr         pass1_1028_b514
+    1020:d02c 2a be 28 10       addr         pass1_1028_be2a
+    1020:d030 16 bf 28 10       addr         FUN_1028_bf16
+    1020:d034 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:d038 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:d03c 9e ce 20 10       addr         pass1_1020_ce9e
+    1020:d040 22 bf 28 10       addr         pass1_1028_bf22
+    1020:d044 f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:d048 02 bc 28 10       addr         pass1_1028_bc02
+    1020:d04c a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:d050 ca b5 28 10       addr         pass1_1028_b5ca
+    1020:d054 e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:d058 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:d05c 6e b4 28 10       addr         pass1_1028_b46e
+    1020:d060 4a c6 28 10       addr         pass1_1028_c64a
+    1020:d064 22 c5 28 10       addr         pass1_1028_c522
+    1020:d068 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:d314
+
+    1020:d314 ee d2 20 10       addr         pass1_1020_d2ee
+    1020:d318 56 bb 28 10       addr         pass1_1028_bb56
+    1020:d31c 8e 17 30 10       addr         FUN_1030_178e
+    1020:d320 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:d324 1a b8 28 10       addr         file_1028_b81a
+    1020:d328 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:d32c 38 bd 28 10       addr         pass1_1028_bd38
+    1020:d330 18 d1 20 10       addr         pass1_1020_d118
+    1020:d334 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:d338 14 b5 28 10       addr         pass1_1028_b514
+    1020:d33c b8 d0 20 10       addr         pass1_1020_d0b8
+    1020:d340 16 bf 28 10       addr         FUN_1028_bf16
+    1020:d344 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:d348 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:d34c 9e be 28 10       addr         pass1_1028_be9e
+    1020:d350 22 bf 28 10       addr         pass1_1028_bf22
+    1020:d354 f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:d358 02 bc 28 10       addr         pass1_1028_bc02
+    1020:d35c a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:d360 ca b5 28 10       addr         pass1_1028_b5ca
+    1020:d364 e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:d368 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:d36c 6e b4 28 10       addr         pass1_1028_b46e
+    1020:d370 4a c6 28 10       addr         pass1_1028_c64a
+    1020:d374 22 c5 28 10       addr         pass1_1028_c522
+    1020:d378 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:d53e
+
+    1020:d53e 18 d5 20 10       addr         pass1_1020_d518
+    1020:d542 56 bb 28 10       addr         pass1_1028_bb56
+    1020:d546 8e 17 30 10       addr         FUN_1030_178e
+    1020:d54a d4 d3 20 10       addr         write_to_file_1020_d3d4
+    1020:d54e 1a d4 20 10       addr         pass1_1020_d41a
+    1020:d552 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:d556 38 bd 28 10       addr         pass1_1028_bd38
+    1020:d55a 60 d4 20 10       addr         pass1_1020_d460
+    1020:d55e 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:d562 14 b5 28 10       addr         pass1_1028_b514
+    1020:d566 2a be 28 10       addr         pass1_1028_be2a
+    1020:d56a 16 bf 28 10       addr         FUN_1028_bf16
+    1020:d56e 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:d572 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:d576 9e be 28 10       addr         pass1_1028_be9e
+    1020:d57a 22 bf 28 10       addr         pass1_1028_bf22
+    1020:d57e f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:d582 02 bc 28 10       addr         pass1_1028_bc02
+    1020:d586 ca d4 20 10       addr         pass1_1020_d4ca
+    1020:d58a ca b5 28 10       addr         pass1_1028_b5ca
+    1020:d58e e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:d592 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:d596 6e b4 28 10       addr         pass1_1028_b46e
+    1020:d59a 4a c6 28 10       addr         pass1_1028_c64a
+    1020:d59e 22 c5 28 10       addr         pass1_1028_c522
+    1020:d5a2 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:d7fe
+
+    1020:d7fe d8 d7 20 10       addr         pass1_1020_d7d8
+    1020:d802 56 bb 28 10       addr         pass1_1028_bb56
+    1020:d806 8e 17 30 10       addr         FUN_1030_178e
+    1020:d80a ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:d80e 1a b8 28 10       addr         file_1028_b81a
+    1020:d812 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:d816 38 bd 28 10       addr         pass1_1028_bd38
+    1020:d81a 90 bc 28 10       addr         pass1_1028_bc90
+    1020:d81e 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:d822 e6 d6 20 10       addr         pass1_1020_d6e6
+    1020:d826 2a be 28 10       addr         pass1_1028_be2a
+    1020:d82a 16 bf 28 10       addr         FUN_1028_bf16
+    1020:d82e 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:d832 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:d836 9e be 28 10       addr         pass1_1028_be9e
+    1020:d83a 22 bf 28 10       addr         pass1_1028_bf22
+    1020:d83e f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:d842 02 bc 28 10       addr         pass1_1028_bc02
+    1020:d846 a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:d84a ca b5 28 10       addr         pass1_1028_b5ca
+    1020:d84e e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:d852 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:d856 f2 d5 20 10       addr         pass1_1020_d5f2
+    1020:d85a 4a c6 28 10       addr         pass1_1028_c64a
+    1020:d85e 22 c5 28 10       addr         pass1_1028_c522
+    1020:d862 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:d8ec
+
+    1020:d8ec c6 d8 20 10       addr         FUN_1020_d8c6
+    1020:d8f0 56 bb 28 10       addr         pass1_1028_bb56
+    1020:d8f4 8e 17 30 10       addr         FUN_1030_178e
+    1020:d8f8 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:d8fc 1a b8 28 10       addr         file_1028_b81a
+    1020:d900 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:d904 38 bd 28 10       addr         pass1_1028_bd38
+    1020:d908 90 bc 28 10       addr         pass1_1028_bc90
+    1020:d90c 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:d910 14 b5 28 10       addr         pass1_1028_b514
+    1020:d914 2a be 28 10       addr         pass1_1028_be2a
+    1020:d918 b2 d8 20 10       addr         FUN_1020_d8b2
+    1020:d91c b6 d8 20 10       addr         FUN_1020_d8b6
+    1020:d920 ba d8 20 10       addr         FUN_1020_d8ba
+    1020:d924 be d8 20 10       addr         FUN_1020_d8be
+    1020:d928 c2 d8 20 10       addr         FUN_1020_d8c2
+    1020:d92c f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:d930 02 bc 28 10       addr         pass1_1028_bc02
+    1020:d934 a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:d938 ca b5 28 10       addr         pass1_1028_b5ca
+    1020:d93c e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:d940 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:d944 6e b4 28 10       addr         pass1_1028_b46e
+    1020:d948 4a c6 28 10       addr         pass1_1028_c64a
+    1020:d94c 22 c5 28 10       addr         pass1_1028_c522
+    1020:d950 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:e792
+
+    1020:e792 6c e7 20 10       addr         pass1_1020_e76c
+    1020:e796 56 bb 28 10       addr         pass1_1028_bb56
+    1020:e79a 8e 17 30 10       addr         FUN_1030_178e
+    1020:e79e a4 e6 20 10       addr         write_to_file_1020_e6a4
+    1020:e7a2 0e e7 20 10       addr         pass1_1020_e70e
+    1020:e7a6 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:e7aa fa d9 20 10       addr         pass1_1020_d9fa
+    1020:e7ae 4e da 20 10       addr         pass1_1020_da4e
+    1020:e7b2 3c da 20 10       addr         pass1_1020_da3c
+    1020:e7b6 14 b5 28 10       addr         pass1_1028_b514
+    1020:e7ba 2a be 28 10       addr         pass1_1028_be2a
+    1020:e7be 16 bf 28 10       addr         FUN_1028_bf16
+    1020:e7c2 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:e7c6 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:e7ca 4c e4 20 10       addr         pass1_1020_e44c
+    1020:e7ce 58 e5 20 10       addr         pass1_1020_e558
+    1020:e7d2 f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:e7d6 02 bc 28 10       addr         pass1_1028_bc02
+    1020:e7da a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:e7de ca b5 28 10       addr         pass1_1028_b5ca
+    1020:e7e2 e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:e7e6 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:e7ea 6e b4 28 10       addr         pass1_1028_b46e
+    1020:e7ee 4a c6 28 10       addr         pass1_1028_c64a
+    1020:e7f2 86 db 20 10       addr         pass1_1020_db86
+    1020:e7f6 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:e88e
+
+    1020:e88e 68 e8 20 10       addr         pass1_1020_e868
+    1020:e892 56 bb 28 10       addr         pass1_1028_bb56
+    1020:e896 8e 17 30 10       addr         FUN_1030_178e
+    1020:e89a ec b5 28 10       addr         write_to_file_1028_b5ec
+    1020:e89e 1a b8 28 10       addr         file_1028_b81a
+    1020:e8a2 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:e8a6 38 bd 28 10       addr         pass1_1028_bd38
+    1020:e8aa 90 bc 28 10       addr         pass1_1028_bc90
+    1020:e8ae 7e bc 28 10       addr         pass1_1028_bc7e
+    1020:e8b2 14 b5 28 10       addr         pass1_1028_b514
+    1020:e8b6 2a be 28 10       addr         pass1_1028_be2a
+    1020:e8ba 16 bf 28 10       addr         FUN_1028_bf16
+    1020:e8be 64 e8 20 10       addr         FUN_1020_e864
+    1020:e8c2 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:e8c6 9e be 28 10       addr         pass1_1028_be9e
+    1020:e8ca 22 bf 28 10       addr         pass1_1028_bf22
+    1020:e8ce f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:e8d2 02 bc 28 10       addr         pass1_1028_bc02
+    1020:e8d6 a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:e8da ca b5 28 10       addr         pass1_1028_b5ca
+    1020:e8de e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:e8e2 ec b4 28 10       addr         FUN_1028_b4ec
+    1020:e8e6 6e b4 28 10       addr         pass1_1028_b46e
+    1020:e8ea 4a c6 28 10       addr         pass1_1028_c64a
+    1020:e8ee 22 c5 28 10       addr         pass1_1028_c522
+    1020:e8f2 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1020:eef6
+
+    1020:eef6 d0 ee 20 10       addr         pass1_1020_eed0
+    1020:eefa 56 bb 28 10       addr         pass1_1028_bb56
+    1020:eefe 8e 17 30 10       addr         FUN_1030_178e
+    1020:ef02 4e e9 20 10       addr         pass1_1020_e94e
+    1020:ef06 94 e9 20 10       addr         pass1_1020_e994
+    1020:ef0a 1c bc 28 10       addr         pass1_1028_bc1c
+    1020:ef0e d4 e9 20 10       addr         pass1_1020_e9d4
+    1020:ef12 20 ea 20 10       addr         pass1_1020_ea20
+    1020:ef16 0e ea 20 10       addr         pass1_1020_ea0e
+    1020:ef1a 14 b5 28 10       addr         pass1_1028_b514
+    1020:ef1e 2a be 28 10       addr         pass1_1028_be2a
+    1020:ef22 16 bf 28 10       addr         FUN_1028_bf16
+    1020:ef26 1a bf 28 10       addr         FUN_1028_bf1a
+    1020:ef2a 1e bf 28 10       addr         FUN_1028_bf1e
+    1020:ef2e 3c ed 20 10       addr         pass1_1020_ed3c
+    1020:ef32 b0 ec 20 10       addr         pass1_1020_ecb0
+    1020:ef36 f0 bb 28 10       addr         pass1_1028_bbf0
+    1020:ef3a 02 bc 28 10       addr         pass1_1028_bc02
+    1020:ef3e a8 b5 28 10       addr         pass1_1028_b5a8
+    1020:ef42 ca b5 28 10       addr         pass1_1028_b5ca
+    1020:ef46 e6 b4 28 10       addr         FUN_1028_b4e6
+    1020:ef4a ec b4 28 10       addr         FUN_1028_b4ec
+    1020:ef4e 6e b4 28 10       addr         pass1_1028_b46e
+    1020:ef52 4a c6 28 10       addr         pass1_1028_c64a
+    1020:ef56 22 c5 28 10       addr         pass1_1028_c522
+    1020:ef5a d2 ce 28 10       addr         pass1_1028_ced2
 
 ### 1028
 
-- 1028:0ada -> pass1_1028_0ab4
+- 1028:0ada
+
+    1028:0ada b4 0a 28 10       addr         pass1_1028_0ab4
+    1028:0ade 56 bb 28 10       addr         pass1_1028_bb56
+    1028:0ae2 8e 17 30 10       addr         FUN_1030_178e
+    1028:0ae6 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1028:0aea 1a b8 28 10       addr         file_1028_b81a
+    1028:0aee 1c bc 28 10       addr         pass1_1028_bc1c
+    1028:0af2 b8 09 28 10       addr         pass1_1028_09b8
+    1028:0af6 d4 09 28 10       addr         pass1_1028_09d4
+    1028:0afa 7e bc 28 10       addr         pass1_1028_bc7e
+    1028:0afe 14 b5 28 10       addr         pass1_1028_b514
+    1028:0b02 2a be 28 10       addr         pass1_1028_be2a
+    1028:0b06 16 bf 28 10       addr         FUN_1028_bf16
+    1028:0b0a 1a bf 28 10       addr         FUN_1028_bf1a
+    1028:0b0e 1e bf 28 10       addr         FUN_1028_bf1e
+    1028:0b12 9e be 28 10       addr         pass1_1028_be9e
+    1028:0b16 22 bf 28 10       addr         pass1_1028_bf22
+    1028:0b1a f0 bb 28 10       addr         pass1_1028_bbf0
+    1028:0b1e 02 bc 28 10       addr         pass1_1028_bc02
+    1028:0b22 a8 b5 28 10       addr         pass1_1028_b5a8
+    1028:0b26 ca b5 28 10       addr         pass1_1028_b5ca
+    1028:0b2a e6 b4 28 10       addr         FUN_1028_b4e6
+    1028:0b2e ec b4 28 10       addr         FUN_1028_b4ec
+    1028:0b32 6e b4 28 10       addr         pass1_1028_b46e
+    1028:0b36 4a c6 28 10       addr         pass1_1028_c64a
+    1028:0b3a 22 c5 28 10       addr         pass1_1028_c522
+    1028:0b3e d2 ce 28 10       addr         pass1_1028_ced2
 
 ### 1030
 
-- 1030:10b0 -> pass1_1030_10b0
+- 1030:10b0
 - 1030:1120 -> pass1_1030_1120
 - 1030:11a6 -> pass1_1030_117a
-- 1030:1624 -> pass1_1030_15fe
-- 1030:17ba -> pass1_1030_1794
-- 1030:1a16 -> pass1_1030_19f0
-- 1030:1cbc -> pass1_1030_1c96
-- 1030:2044 -> pass1_1030_201e
-- 1030:293c -> pass1_1030_2916
-- 1030:3130 -> pass1_1030_310a
-- 1030:3af2 -> pass1_1030_3ac6
-- 1030:55ee -> pass1_1030_55c2
+
+    1030:11a6 7a 11 30 10       addr         pass1_1030_117a
+
+- 1030:1624
+
+    1030:1624 fe 15 30 10       addr         pass1_1030_15fe
+
+- 1030:17ba
+
+    1030:17ba 94 17 30 10       addr         pass1_1030_1794
+    1030:17be 7a 17 30 10       addr         pass1_1030_177a
+    1030:17c2 8e 17 30 10       addr         FUN_1030_178e
+    1030:17c6 1a 4f 00 10       addr         pass1_1000_4f1a
+    1030:17ca 1a 4f 00 10       addr         pass1_1000_4f1a
+
+- 1030:1a16
+
+    1030:1a16 f0 19 30 10       addr         pass1_1030_19f0
+    1030:1a1a 7a 17 30 10       addr         pass1_1030_177a
+    1030:1a1e 8e 17 30 10       addr         FUN_1030_178e
+    1030:1a22 1a 4f 00 10       addr         pass1_1000_4f1a
+    1030:1a26 1a 4f 00 10       addr         pass1_1000_4f1a
+    1030:1a2a 72 19 30 10       addr         pass1_1030_1972
+    1030:1a2e f0 18 30 10       addr         pass1_1030_18f0
+
+- 1030:1cbc
+
+    1030:1cbc 96 1c 30 10       addr         pass1_1030_1c96
+    1030:1cc0 7a 17 30 10       addr         pass1_1030_177a
+    1030:1cc4 8e 17 30 10       addr         FUN_1030_178e
+    1030:1cc8 9c 1a 30 10       addr         pass1_1030_1a9c
+    1030:1ccc 18 1b 30 10       addr         file_1030_1b18
+    1030:1cd0 e2 1b 30 10       addr         pass1_1030_1be2
+    1030:1cd4 f0 18 30 10       addr         pass1_1030_18f0
+
+- 1030:2044
+
+    1030:2044 1e 20 30 10       addr         pass1_1030_201e
+    1030:2048 bc 1d 30 10       addr         pass1_1030_1dbc
+    1030:204c fc 1d 30 10       addr         pass1_1030_1dfc
+    1030:2050 96 1e 30 10       addr         pass1_1030_1e96
+    1030:2054 aa 1d 30 10       addr         pass1_1030_1daa
+    1030:2058 ee 1e 30 10       addr         pass1_1030_1eee
+    1030:205c 16 1f 30 10       addr         pass1_1030_1f16
+    1030:2060 6c 1f 30 10       addr         FUN_1030_1f6c
+    1030:2064 70 1f 30 10       addr         FUN_1030_1f70
+
+- 1030:293c
+
+    1030:293c 16 29 30 10       addr         pass1_1030_2916
+    1030:2940 7a 17 30 10       addr         pass1_1030_177a
+    1030:2944 8e 17 30 10       addr         FUN_1030_178e
+    1030:2948 7a 22 30 10       addr         pass1_1030_227a
+    1030:294c 2e 23 30 10       addr         pass1_1030_232e
+    1030:2950 72 19 30 10       addr         pass1_1030_1972
+    1030:2954 f0 18 30 10       addr         pass1_1030_18f0
+
+- 1030:3130
+
+    1030:3130 0a 31 30 10       addr         pass1_1030_310a
+    1030:3134 7a 17 30 10       addr         pass1_1030_177a
+    1030:3138 8e 17 30 10       addr         FUN_1030_178e
+    1030:313c ca 2a 30 10       addr         pass1_1030_2aca
+    1030:3140 8a 2c 30 10       addr         pass1_1030_2c8a
+    1030:3144 58 30 30 10       addr         pass1_1030_3058
+    1030:3148 f0 18 30 10       addr         pass1_1030_18f0
+
+- 1030:3af2
+
+    1030:3af2 c6 3a 30 10       addr         pass1_1030_3ac6
+
+- 1030:55ee
 - 1030:55fe -> pass1_1030_5596
-- 1030:5bd0 -> pass1_1030_5baa
-- 1030:613e -> pass1_1030_6118
-- 1030:8114 -> pass1_1030_80ee
-- 1030:8e38 -> pass1_1030_8e12
+
+    1030:55ee c2 55 30 10       addr         pass1_1030_55c2
+    1030:55f2 f4 53 30 10       addr         pass1_1030_53f4
+    1030:55f6 8a 53 30 10       addr         pass1_1030_538a
+    1030:55fa f8 54 30 10       addr         pass1_1030_54f8
+    1030:55fe 96 55 30 10       addr         pass1_1030_5596
+    1030:5602 60 52 30 10       addr         pass1_1030_5260
+    1030:5606 28 d2 28 10       addr         FUN_1028_d228
+    1030:560a 90 52 30 10       addr         pass1_1030_5290
+
+- 1030:5bd0
+
+    1030:5bd0 aa 5b 30 10       void *       pass1_1030_5baa
+    1030:5bd4 7a 17 30 10       void *       pass1_1030_177a
+    1030:5bd8 8e 17 30 10       void *       FUN_1030_178e
+    1030:5bdc f6 56 30 10       void *       pass1_1030_56f6
+    1030:5be0 1e 58 30 10       void *       file_1030_581e
+    1030:5be4 72 19 30 10       void *       pass1_1030_1972
+    1030:5be8 f0 18 30 10       void *       pass1_1030_18f0
+
+- 1030:613e
+
+    1030:613e 18 61 30 10       addr         pass1_1030_6118
+    1030:6142 7a 17 30 10       addr         pass1_1030_177a
+    1030:6146 8e 17 30 10       addr         FUN_1030_178e
+    1030:614a be 5d 30 10       addr         pass1_1030_5dbe
+    1030:614e 70 5e 30 10       addr         file_1030_5e70
+    1030:6152 f6 5f 30 10       addr         pass1_1030_5ff6
+    1030:6156 f0 18 30 10       addr         pass1_1030_18f0
+
+- 1030:8114
+
+    1030:8114 ee 80 30 10       addr         pass1_1030_80ee
+    1030:8118 7a 17 30 10       addr         pass1_1030_177a
+    1030:811c 8e 17 30 10       addr         FUN_1030_178e
+    1030:8120 18 74 30 10       addr         pass1_1030_7418
+    1030:8124 8c 77 30 10       addr         file_1030_778c
+
+- 1030:8e38
+
+    1030:8e38 12 8e 30 10       addr         pass1_1030_8e12
+
 - 1030:9788 -> INVALID
-- 1030:9ec8 -> pass1_1030_9e9c
-- 1030:b932 -> pass1_1030_b90c
-- 1030:bc0c -> pass1_1030_bbe6
-- 1030:bc96 -> pass1_1030_bc70
-- 1030:c006 -> pass1_1030_bfe0
-- 1030:c68e -> pass1_1030_c668
-- 1030:c940 -> pass1_1030_c91a
-- 1030:d88e -> pass1_1030_d868
-- 1030:dc2e -> pass1_1030_dc08
-- 1030:e036 -> pass1_1030_e010
-- 1030:e2ae -> pass1_1030_e282
-- 1030:e4ea -> pass1_1030_e4be
-- 1030:e62e -> pass1_1030_e602
-- 1030:e78a -> pass1_1030_e75e
-- 1030:e890 -> pass1_1030_e864
-- 1030:eb40 -> pass1_1030_eb14
-- 1030:ecb2 -> pass1_1030_ec86
+- 1030:9ec8
+
+    1030:9ec8 9c 9e 30 10       addr         pass1_1030_9e9c
+
+- 1030:b932
+
+    1030:b932 0c b9 30 10       addr         pass1_1030_b90c
+
+- 1030:bc0c
+
+    1030:bc0c e6 bb 30 10       addr         pass1_1030_bbe6
+    1030:bc10 7a 17 30 10       addr         pass1_1030_177a
+    1030:bc14 8e 17 30 10       addr         FUN_1030_178e
+    1030:bc18 82 b2 28 10       addr         FUN_1028_b282
+    1030:bc1c c8 b2 28 10       addr         pass1_1028_b2c8
+    1030:bc20 7e b2 28 10       addr         FUN_1028_b27e
+
+- 1030:bc96
+
+    1030:bc96 70 bc 30 10       addr         pass1_1030_bc70
+    1030:bc9a 7a 17 30 10       addr         pass1_1030_177a
+    1030:bc9e 8e 17 30 10       addr         FUN_1030_178e
+    1030:bca2 82 b2 28 10       addr         FUN_1028_b282
+    1030:bca6 c8 b2 28 10       addr         pass1_1028_b2c8
+    1030:bcaa 6c bc 30 10       addr         FUN_1030_bc6c
+
+- 1030:c006
+
+    1030:c006 e0 bf 30 10       addr         pass1_1030_bfe0
+    1030:c00a 56 bb 28 10       addr         pass1_1028_bb56
+    1030:c00e 8e 17 30 10       addr         FUN_1030_178e
+    1030:c012 ec b5 28 10       addr         write_to_file_1028_b5ec
+    1030:c016 1a b8 28 10       addr         file_1028_b81a
+    1030:c01a 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:c01e 38 bd 28 10       addr         pass1_1028_bd38
+    1030:c022 90 bc 28 10       addr         pass1_1028_bc90
+    1030:c026 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:c02a 14 b5 28 10       addr         pass1_1028_b514
+    1030:c02e 2a be 28 10       addr         pass1_1028_be2a
+    1030:c032 16 bf 28 10       addr         FUN_1028_bf16
+    1030:c036 6e bf 30 10       addr         pass1_1030_bf6e
+    1030:c03a 1e bf 28 10       addr         FUN_1028_bf1e
+    1030:c03e 9e be 28 10       addr         pass1_1028_be9e
+    1030:c042 80 be 30 10       addr         pass1_1030_be80
+    1030:c046 f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:c04a 02 bc 28 10       addr         pass1_1028_bc02
+    1030:c04e a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:c052 ca b5 28 10       addr         pass1_1028_b5ca
+    1030:c056 e6 b4 28 10       addr         FUN_1028_b4e6
+    1030:c05a ec b4 28 10       addr         FUN_1028_b4ec
+    1030:c05e 6e b4 28 10       addr         pass1_1028_b46e
+    1030:c062 4a c6 28 10       addr         pass1_1028_c64a
+    1030:c066 22 c5 28 10       addr         pass1_1028_c522
+    1030:c06a d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1030:c68e
+
+    1030:c68e 68 c6 30 10       addr         pass1_1030_c668
+    1030:c692 56 bb 28 10       addr         pass1_1028_bb56
+    1030:c696 8e 17 30 10       addr         FUN_1030_178e
+    1030:c69a 30 c2 30 10       addr         pass1_1030_c230
+    1030:c69e 9c c2 30 10       addr         pass1_1030_c29c
+    1030:c6a2 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:c6a6 fa c2 30 10       addr         pass1_1030_c2fa
+    1030:c6aa 2e c5 30 10       addr         pass1_1030_c52e
+    1030:c6ae 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:c6b2 14 b5 28 10       addr         pass1_1028_b514
+    1030:c6b6 2a be 28 10       addr         pass1_1028_be2a
+    1030:c6ba 16 bf 28 10       addr         FUN_1028_bf16
+    1030:c6be 0e c1 30 10       addr         pass1_1030_c10e
+    1030:c6c2 2e c1 30 10       addr         pass1_1030_c12e
+    1030:c6c6 b2 c1 30 10       addr         pass1_1030_c1b2
+    1030:c6ca 22 bf 28 10       addr         pass1_1028_bf22
+    1030:c6ce f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:c6d2 02 bc 28 10       addr         pass1_1028_bc02
+    1030:c6d6 a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:c6da ca b5 28 10       addr         pass1_1028_b5ca
+    1030:c6de ec c0 30 10       addr         pass1_1030_c0ec
+    1030:c6e2 d2 c0 30 10       addr         pass1_1030_c0d2
+    1030:c6e6 6e b4 28 10       addr         pass1_1028_b46e
+    1030:c6ea 4a c6 28 10       addr         pass1_1028_c64a
+    1030:c6ee 22 c5 28 10       addr         pass1_1028_c522
+    1030:c6f2 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1030:c940
+
+    1030:c940 1a c9 30 10       addr         pass1_1030_c91a
+    1030:c944 56 bb 28 10       addr         pass1_1028_bb56
+    1030:c948 da c8 30 10       addr         pass1_1030_c8da
+    1030:c94c 4e c8 30 10       addr         pass1_1030_c84e
+    1030:c950 94 c8 30 10       addr         pass1_1030_c894
+    1030:c954 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:c958 38 bd 28 10       addr         pass1_1028_bd38
+    1030:c95c 90 bc 28 10       addr         pass1_1028_bc90
+    1030:c960 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:c964 14 b5 28 10       addr         pass1_1028_b514
+    1030:c968 6c c7 30 10       addr         pass1_1030_c76c
+    1030:c96c 16 bf 28 10       addr         FUN_1028_bf16
+    1030:c970 b0 c7 30 10       addr         pass1_1030_c7b0
+    1030:c974 1e bf 28 10       addr         FUN_1028_bf1e
+    1030:c978 9e be 28 10       addr         pass1_1028_be9e
+    1030:c97c 22 bf 28 10       addr         pass1_1028_bf22
+    1030:c980 f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:c984 02 bc 28 10       addr         pass1_1028_bc02
+    1030:c988 a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:c98c ca b5 28 10       addr         pass1_1028_b5ca
+    1030:c990 e6 b4 28 10       addr         FUN_1028_b4e6
+    1030:c994 ec b4 28 10       addr         FUN_1028_b4ec
+    1030:c998 4e c7 30 10       addr         pass1_1030_c74e
+    1030:c99c 4a c6 28 10       addr         pass1_1028_c64a
+    1030:c9a0 22 c5 28 10       addr         pass1_1028_c522
+    1030:c9a4 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1030:d88e
+
+    1030:d88e 68 d8 30 10       addr         pass1_1030_d868
+    1030:d892 56 bb 28 10       addr         pass1_1028_bb56
+    1030:d896 8e 17 30 10       addr         FUN_1030_178e
+    1030:d89a 1c d6 30 10       addr         pass1_1030_d61c
+    1030:d89e 2e d7 30 10       addr         pass1_1030_d72e
+    1030:d8a2 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:d8a6 38 bd 28 10       addr         pass1_1028_bd38
+    1030:d8aa 90 bc 28 10       addr         pass1_1028_bc90
+    1030:d8ae 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:d8b2 14 b5 28 10       addr         pass1_1028_b514
+    1030:d8b6 2a be 28 10       addr         pass1_1028_be2a
+    1030:d8ba 16 bf 28 10       addr         FUN_1028_bf16
+    1030:d8be 6c d2 30 10       addr         pass1_1030_d26c
+    1030:d8c2 1e bf 28 10       addr         FUN_1028_bf1e
+    1030:d8c6 c2 ca 30 10       addr         pass1_1030_cac2
+    1030:d8ca 22 bf 28 10       addr         pass1_1028_bf22
+    1030:d8ce f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:d8d2 30 d2 30 10       addr         pass1_1030_d230
+    1030:d8d6 a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:d8da ca b5 28 10       addr         pass1_1028_b5ca
+    1030:d8de e6 b4 28 10       addr         FUN_1028_b4e6
+    1030:d8e2 ec b4 28 10       addr         FUN_1028_b4ec
+    1030:d8e6 26 ca 30 10       addr         pass1_1030_ca26
+    1030:d8ea 4a c6 28 10       addr         pass1_1028_c64a
+    1030:d8ee 22 c5 28 10       addr         pass1_1028_c522
+    1030:d8f2 d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1030:dc2e
+
+    1030:dc2e 08 dc 30 10       addr         pass1_1030_dc08
+    1030:dc32 56 bb 28 10       addr         pass1_1028_bb56
+    1030:dc36 8e 17 30 10       addr         FUN_1030_178e
+    1030:dc3a ec b5 28 10       addr         write_to_file_1028_b5ec
+    1030:dc3e 1a b8 28 10       addr         file_1028_b81a
+    1030:dc42 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:dc46 38 bd 28 10       addr         pass1_1028_bd38
+    1030:dc4a 90 bc 28 10       addr         pass1_1028_bc90
+    1030:dc4e 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:dc52 14 b5 28 10       addr         pass1_1028_b514
+    1030:dc56 78 db 30 10       addr         pass1_1030_db78
+    1030:dc5a 16 bf 28 10       addr         FUN_1028_bf16
+    1030:dc5e 1a bf 28 10       addr         FUN_1028_bf1a
+    1030:dc62 1e bf 28 10       addr         FUN_1028_bf1e
+    1030:dc66 94 d9 30 10       addr         pass1_1030_d994
+    1030:dc6a 22 bf 28 10       addr         pass1_1028_bf22
+    1030:dc6e f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:dc72 02 bc 28 10       addr         pass1_1028_bc02
+    1030:dc76 a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:dc7a ca b5 28 10       addr         pass1_1028_b5ca
+    1030:dc7e e6 b4 28 10       addr         FUN_1028_b4e6
+    1030:dc82 ec b4 28 10       addr         FUN_1028_b4ec
+    1030:dc86 6e b4 28 10       addr         pass1_1028_b46e
+    1030:dc8a 72 db 30 10       addr         pass1_1030_db72
+    1030:dc8e 92 db 30 10       addr         pass1_1030_db92
+    1030:dc92 02 dc 30 10       addr         pass1_1030_dc02
+
+- 1030:e036
+
+    1030:e036 10 e0 30 10       addr         pass1_1030_e010
+    1030:e03a 56 bb 28 10       addr         pass1_1028_bb56
+    1030:e03e 8e 17 30 10       addr         FUN_1030_178e
+    1030:e042 7c de 30 10       addr         pass1_1030_de7c
+    1030:e046 c4 de 30 10       addr         pass1_1030_dec4
+    1030:e04a 1c bc 28 10       addr         pass1_1028_bc1c
+    1030:e04e 0c df 30 10       addr         pass1_1030_df0c
+    1030:e052 90 bc 28 10       addr         pass1_1028_bc90
+    1030:e056 7e bc 28 10       addr         pass1_1028_bc7e
+    1030:e05a 14 b5 28 10       addr         pass1_1028_b514
+    1030:e05e 2a be 28 10       addr         pass1_1028_be2a
+    1030:e062 16 bf 28 10       addr         FUN_1028_bf16
+    1030:e066 1a bf 28 10       addr         FUN_1028_bf1a
+    1030:e06a 1e bf 28 10       addr         FUN_1028_bf1e
+    1030:e06e 9e be 28 10       addr         pass1_1028_be9e
+    1030:e072 22 bf 28 10       addr         pass1_1028_bf22
+    1030:e076 f0 bb 28 10       addr         pass1_1028_bbf0
+    1030:e07a 02 bc 28 10       addr         pass1_1028_bc02
+    1030:e07e a8 b5 28 10       addr         pass1_1028_b5a8
+    1030:e082 ca b5 28 10       addr         pass1_1028_b5ca
+    1030:e086 e6 b4 28 10       addr         FUN_1028_b4e6
+    1030:e08a ec b4 28 10       addr         FUN_1028_b4ec
+    1030:e08e 6e b4 28 10       addr         pass1_1028_b46e
+    1030:e092 4a c6 28 10       addr         pass1_1028_c64a
+    1030:e096 22 c5 28 10       addr         pass1_1028_c522
+    1030:e09a d2 ce 28 10       addr         pass1_1028_ced2
+
+- 1030:e2ae
+
+    1030:e2ae 82 e2 30 10       addr         pass1_1030_e282
+    1030:e2b2 d4 e0 30 10       addr         pass1_1030_e0d4
+    1030:e2b6 28 d2 28 10       addr         FUN_1028_d228
+    1030:e2ba f4 e1 30 10       addr         pass1_1030_e1f4
+
+- 1030:e4ea
+
+    1030:e4ea be e4 30 10       addr         pass1_1030_e4be
+    1030:e4ee 00 e3 30 10       addr         pass1_1030_e300
+    1030:e4f2 28 e3 30 10       addr         pass1_1030_e328
+    1030:e4f6 4e e3 30 10       addr         pass1_1030_e34e
+
+- 1030:e62e
+
+    1030:e62e 02 e6 30 10       addr         pass1_1030_e602
+    1030:e632 46 e5 30 10       addr         pass1_1030_e546
+    1030:e636 40 e5 30 10       addr         pass1_1030_e540
+    1030:e63a 64 e5 30 10       addr         pass1_1030_e564
+
+- 1030:e78a
+
+    1030:e78a 5e e7 30 10       addr         pass1_1030_e75e
+    1030:e78e 7c e6 30 10       addr         pass1_1030_e67c
+    1030:e792 28 d2 28 10       addr         FUN_1028_d228
+    1030:e796 c2 e6 30 10       addr         pass1_1030_e6c2
+
+- 1030:e890
+
+    1030:e890 64 e8 30 10       addr         pass1_1030_e864
+    1030:e894 d0 e7 30 10       addr         pass1_1030_e7d0
+    1030:e898 28 d2 28 10       addr         FUN_1028_d228
+    1030:e89c d6 e7 30 10       addr         pass1_1030_e7d6
+
+- 1030:eb40
+
+    1030:eb40 14 eb 30 10       addr         pass1_1030_eb14
+    1030:eb44 f8 e8 30 10       addr         pass1_1030_e8f8
+    1030:eb48 28 d2 28 10       addr         FUN_1028_d228
+    1030:eb4c 8e e9 30 10       addr         pass1_1030_e98e
+
+- 1030:ecb2
+
+    1030:ecb2 86 ec 30 10       addr         pass1_1030_ec86
+    1030:ecb6 86 eb 30 10       addr         pass1_1030_eb86
+    1030:ecba 28 d2 28 10       addr         FUN_1028_d228
+    1030:ecbe f8 eb 30 10       addr         pass1_1030_ebf8
 
 ### 1038
 
@@ -5302,8 +6581,73 @@ NONE
 
 ### 1040
 
-- 1040:d8c4 -> pass1_1040_d89e
-- 1040:d07c -> pass1_1040_d056
+- 1040:d8c4
+
+    1040:d8c4 9e d8 40 10       addr         pass1_1040_d89e
+    1040:d8c8 10 3a 08 10       addr         pass1_1008_3a10
+    1040:d8cc 30 b2 40 10       addr         unk_win_ui_op_1040_b230
+    1040:d8d0 16 b3 40 10       addr         pass1_1040_b316
+    1040:d8d4 ac d2 40 10       addr         win_ui_op_1040_d2ac
+    1040:d8d8 26 b7 40 10       addr         destroy_window_1040_b726
+    1040:d8dc 56 7f 40 10       addr         post_win_msg_1040_7f56
+    1040:d8e0 b2 7b 40 10       addr         draw_op_1040_7bb2
+    1040:d8e4 1c 7f 40 10       addr         post_win_msg_1040_7f1c
+    1040:d8e8 48 88 38 10       addr         pass1_1038_8848
+    1040:d8ec 86 7f 40 10       addr         menu_ui_op_1040_7f86
+    1040:d8f0 0c 80 40 10       addr         win_help_1040_800c
+    1040:d8f4 54 80 40 10       addr         pass1_1040_8054
+    1040:d8f8 72 b3 40 10       addr         win_ui_op_1040_b372
+    1040:d8fc 58 81 40 10       addr         unk_win_ui_op_1040_8158
+    1040:d900 b6 81 40 10       addr         check_dialog_msg_1040_81b6
+    1040:d904 fe 81 40 10       addr         win_ui_op_1040_81fe
+    1040:d908 ea 60 18 10       addr         FUN_1018_60ea
+    1040:d90c 4a 82 40 10       addr         pass1_1040_824a
+    1040:d910 66 82 40 10       addr         FUN_1040_8266
+    1040:d914 9c d2 40 10       addr         pass1_1040_d29c
+    1040:d918 ee 60 18 10       addr         FUN_1018_60ee
+    1040:d91c f4 60 18 10       addr         FUN_1018_60f4
+    1040:d920 c8 b4 40 10       addr         pass1_1040_b4c8
+    1040:d924 42 88 38 10       addr         FUN_1038_8842
+    1040:d928 fe 60 18 10       addr         FUN_1018_60fe
+    1040:d92c 7e 80 40 10       addr         pass1_1040_807e
+    1040:d930 3c b4 40 10       addr         show_win_1040_b43c
+    1040:d934 5e b4 40 10       addr         pass1_1040_b45e
+    1040:d938 7c b1 40 10       addr         pass1_1040_b17c
+    1040:d93c 6e d7 40 10       addr         pass1_1040_d76e
+
+- 1040:d07c
+
+    1040:d07c 56 d0 40 10       addr         pass1_1040_d056
+    1040:d080 10 3a 08 10       addr         pass1_1008_3a10
+    1040:d084 30 b2 40 10       addr         unk_win_ui_op_1040_b230
+    1040:d088 16 b3 40 10       addr         pass1_1040_b316
+    1040:d08c 8c cc 40 10       addr         pass1_1040_cc8c
+    1040:d090 a6 ca 40 10       addr         pass1_1040_caa6
+    1040:d094 56 7f 40 10       addr         post_win_msg_1040_7f56
+    1040:d098 b2 7b 40 10       addr         draw_op_1040_7bb2
+    1040:d09c 1c 7f 40 10       addr         post_win_msg_1040_7f1c
+    1040:d0a0 48 88 38 10       addr         pass1_1038_8848
+    1040:d0a4 86 7f 40 10       addr         menu_ui_op_1040_7f86
+    1040:d0a8 0c 80 40 10       addr         win_help_1040_800c
+    1040:d0ac 54 80 40 10       addr         pass1_1040_8054
+    1040:d0b0 72 b3 40 10       addr         win_ui_op_1040_b372
+    1040:d0b4 58 81 40 10       addr         unk_win_ui_op_1040_8158
+    1040:d0b8 b6 81 40 10       addr         check_dialog_msg_1040_81b6
+    1040:d0bc fe 81 40 10       addr         win_ui_op_1040_81fe
+    1040:d0c0 ea 60 18 10       addr         FUN_1018_60ea
+    1040:d0c4 4a 82 40 10       addr         pass1_1040_824a
+    1040:d0c8 66 82 40 10       addr         FUN_1040_8266
+    1040:d0cc 66 cc 40 10       addr         pass1_1040_cc66
+    1040:d0d0 ac cd 40 10       addr         pass1_1040_cdac
+    1040:d0d4 f4 60 18 10       addr         FUN_1018_60f4
+    1040:d0d8 c8 b4 40 10       addr         pass1_1040_b4c8
+    1040:d0dc 42 88 38 10       addr         FUN_1038_8842
+    1040:d0e0 fe 60 18 10       addr         FUN_1018_60fe
+    1040:d0e4 7e 80 40 10       addr         pass1_1040_807e
+    1040:d0e8 3c b4 40 10       addr         show_win_1040_b43c
+    1040:d0ec 5e b4 40 10       addr         pass1_1040_b45e
+    1040:d0f0 7c b1 40 10       addr         pass1_1040_b17c
+    1040:d0f4 ce ca 40 10       addr         win_ui_op_1040_cace
 
 ### 1048
 

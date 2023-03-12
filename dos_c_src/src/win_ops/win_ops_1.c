@@ -30,7 +30,7 @@ Struct18 * pass1_1040_a4c2(Struct18 *param_1, u8 param_2, u16 param_3)
     free_proc_inst_1040_a294(param_1, param_3);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce(param_1, 0x1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
@@ -225,7 +225,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                         unk_str_op_1000_3d3e((pi_var13 & 0xffff0000 | (iVar5 + 0x6)), (param_1 + 0x16));
                         if((*(u8 *)(param_1 + 0x12) & 0x1) != 0x0)
                         {
-                            SendMessage16(0x1000, 0x0, 0x0, CONCAT22(0x401, *pi_var13));
+                            SendMessage16(SEG_1000, 0x0, 0x0, CONCAT22(0x401, *pi_var13));
                         }
                         if(((param_1 + 0x14) & 0x800) == 0x0)
                         {
@@ -237,8 +237,8 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                     }
                     if(bVar16 == 0x2)
                     {
-                        fn_ptr_1000_17ce(paVar12, 0x1000);
-                        SetWindowLong16(0x1000, 0x0, 0x0);
+                        fn_ptr_1000_17ce(paVar12, SEG_1000);
+                        SetWindowLong16(SEG_1000, 0x0, 0x0);
                         return;
                     }
                     if(bVar16 != 0x7)
@@ -280,7 +280,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                         }
                         if(CONCAT22(param_2, param_1) != 0x0)
                         {
-                            HVar11 = 0x1000;
+                            HVar11 = SEG_1000;
                             unk_str_op_1000_3d3e((paVar12 & 0xffff0000 | (iVar5 + 0x6)), CONCAT22(param_2, param_1));
                         }
                     }
@@ -317,7 +317,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                 if(offset == 0x0)
                 {
                     uVar10 = 0x5e;
-                    mem_op_1000_179c(0x5e, puVar8, 0x1000);
+                    mem_op_1000_179c(0x5e, puVar8, SEG_1000);
                     uVar9 = puVar8 | offset;
                     if(uVar9 == 0x0)
                     {
@@ -328,7 +328,7 @@ void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, 
                     {
                         pass1_1040_9824(CONCAT22(puVar8, offset));
                     }
-                    SetWindowLong16(0x1000, offset, CONCAT22(uVar10, uVar9));
+                    SetWindowLong16(SEG_1000, offset, CONCAT22(uVar10, uVar9));
                     return;
                 }
                 if(param_4 == 0x87)
@@ -547,7 +547,7 @@ u8 * win_ui_op_1040_8718(Struct37 *param_1, u16 param_2)
     globals->PTR_LOOP_1050_5df6 = (UVar10 + 0x6);
     if((UVar10 + 0x94) != 0x0)
     {
-        uVar5 = 0x1000;
+        uVar5 = SEG_1000;
         unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (UVar10 + 0x10)), (UVar10 + 0x94));
     }
     get_sys_metrics_1040_8c66(param_1, uVar5);
@@ -819,9 +819,9 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
             (**ppcVar4)();
         }
     }
-    fn_ptr_1000_17ce((iVar5 + 0x4), 0x1000);
+    fn_ptr_1000_17ce((iVar5 + 0x4), SEG_1000);
     uVar3 = (iVar5 + 0x14);
-    SetWindowLong16(0x1000, (u16)uVar3, CONCAT22(0xfffc, (uVar3 >> 0x10)));
+    SetWindowLong16(SEG_1000, (u16)uVar3, CONCAT22(0xfffc, (uVar3 >> 0x10)));
     RemoveProp16((HWND16)LAST_SEGMENT, s_thisLo_1050_5e1c);
     RemoveProp16((HWND16)LAST_SEGMENT, s_thisHi_1050_5e23);
     RemoveProp16((HWND16)LAST_SEGMENT, s_procLo_1050_5e2a);
@@ -1026,7 +1026,7 @@ u16 * pass1_1040_97da(u16 *param_1, u8 param_2)
     mix_win_ui_op_1040_911e(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, 0x1000);
+        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1265,7 +1265,7 @@ void  post_win_msg_1040_7f56(u32 param_1, char *param_2)
 
 {
     unk_str_op_1000_3d3e(param_1, param_2);
-    PostMessage16(0x1000, 0x0, 0x0, 0x850000);
+    PostMessage16(SEG_1000, 0x0, 0x0, 0x850000);
 }
 
 
@@ -1514,7 +1514,7 @@ void  set_win_pos_1040_4f96(Struct1 *param_1, u16 param_2, u16 param_3, u8 *para
     ppcVar2                              = (*iVar11->field_0x98 + 0x10);
     (**ppcVar2)(SEG_1010, &iVar11->field_0x98, uVar14);
     puVar10 = extraout_DX;
-    mem_op_1000_179c(0xa, extraout_DX, 0x1000);
+    mem_op_1000_179c(0xa, extraout_DX, SEG_1000);
     puVar9 = (puVar10 | paVar5);
     if(puVar9 == 0x0)
     {
@@ -1529,45 +1529,45 @@ void  set_win_pos_1040_4f96(Struct1 *param_1, u16 param_2, u16 param_3, u8 *para
         (&iVar11->field_0x94 + 0x2)          = puVar9;
     }
     pass1_1040_bfde(iVar11->field_0x94, iVar11->field_0x98, param_3);
-    mem_op_1000_179c(0x42, puVar9, 0x1000);
+    mem_op_1000_179c(0x42, puVar9, SEG_1000);
     puVar10 = (puVar9 | paVar5);
     if(puVar10 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar9, 0x1, 0xa000a, 0x0, 0x800081, CONCAT22(iVar11->field_0x6, 0x10a), puVar10, param_3);
     }
-    mem_op_1000_179c(0x42, puVar10, 0x1000);
+    mem_op_1000_179c(0x42, puVar10, SEG_1000);
     puVar9 = (puVar10 | paVar5);
     if(puVar9 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar10, 0x1, 0xa0028, 0x0, 0x840085, CONCAT22(iVar11->field_0x6, 0x10b), puVar9, param_3);
     }
-    mem_op_1000_179c(0x42, puVar9, 0x1000);
+    mem_op_1000_179c(0x42, puVar9, SEG_1000);
     puVar10 = (puVar9 | paVar5);
     if(puVar10 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar9, 0x1, 0xa0046, 0x0, 0x860087, CONCAT22(iVar11->field_0x6, 0x10d), puVar10, param_3);
     }
-    mem_op_1000_179c(0x42, puVar10, 0x1000);
+    mem_op_1000_179c(0x42, puVar10, SEG_1000);
     puVar9 = (puVar10 | paVar5);
     if(puVar9 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar10, 0x1, 0xa0064, 0x0, 0x880089, CONCAT22(iVar11->field_0x6, 0x10e), puVar9, param_3);
     }
-    mem_op_1000_179c(0x42, puVar9, 0x1000);
+    mem_op_1000_179c(0x42, puVar9, SEG_1000);
     puVar10 = (puVar9 | paVar5);
     if(puVar10 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar9, 0x1, 0xa0082, 0x0, 0x820083, CONCAT22(iVar11->field_0x6, 0x10c), puVar10, param_3);
     }
-    mem_op_1000_179c(0x42, puVar10, 0x1000);
+    mem_op_1000_179c(0x42, puVar10, SEG_1000);
     puVar9 = (puVar10 | paVar5);
     if(puVar9 != 0x0)
     {
         pass1_1008_3bd6(paVar5, puVar10, 0x1, 0xa00d2, 0x0, 0x8a008b, CONCAT22(iVar11->field_0x6, 0xbbb), puVar9, param_3);
     }
     BVar16 = 0x42;
-    uVar14 = 0x1000;
-    mem_op_1000_179c(0x42, puVar9, 0x1000);
+    uVar14 = SEG_1000;
+    mem_op_1000_179c(0x42, puVar9, SEG_1000);
     puVar10 = (puVar9 | paVar5);
     if(puVar10 == 0x0)
     {
@@ -2053,8 +2053,8 @@ void  send_msg_1040_3374(u32 param_1, u32 *param_2, u16 param_3, HWND16 param_4)
         paVar7 = (Struct18 *)pass1_1018_3a7a(*(param_1 + 0x96), uVar3 & 0xffff | extraout_DX_00 << 0x10, uVar3, extraout_DX_00);
         uVar4  = param_3;
         LVar6  = SendMessage16(SEG_1018, paVar7, (WPARAM16)(paVar7 >> 0x10), 0x4030000);
-        uVar5  = 0x1000;
-        fn_ptr_1000_17ce(paVar7, 0x1000);
+        uVar5  = SEG_1000;
+        fn_ptr_1000_17ce(paVar7, SEG_1000);
         if(LVar6 == -0x1)
             break;
         if(LVar6 == -0x2)
@@ -2189,7 +2189,7 @@ void  send_msg_1040_1696(u32 param_1, u16 param_2, u16 param_3, HWND16 param_4)
         paVar8 = (Struct18 *)string_1010_5286(u_var2, (u_var2 >> 0x10), uVar1, uVar1, puVar5);
         LVar7  = SendMessage16(SEG_1010, paVar8, (WPARAM16)(paVar8 >> 0x10), CONCAT22(uVar11, uVar10));
         puVar5 = (LVar7 >> 0x10);
-        fn_ptr_1000_17ce(paVar8, 0x1000);
+        fn_ptr_1000_17ce(paVar8, SEG_1000);
     }
     uVar6  = 0x0;
     uVar10 = 0x40a;

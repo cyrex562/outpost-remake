@@ -637,10 +637,10 @@ u16 pass1_1000_1e61(Globals *globals, u16 param_1, u16 param_2, u16 param_3, u16
     {
         return 0x0;
     }
-    BVar2 = msg_box_op_1000_1f24(NULL, globals->PTR_PTR_1050_5f1a, globals->USHORT_1050_1050, 0x0, 0x1000);
+    BVar2 = msg_box_op_1000_1f24(NULL, globals->PTR_PTR_1050_5f1a, globals->USHORT_1050_1050, 0x0, SEG_1000);
     if(BVar2 == 0x0)
     {
-        UVar3 = (*pcStack6)(0x1000, &u_stack64);
+        UVar3 = (*pcStack6)(SEG_1000, &u_stack64);
     }
     else
     {
@@ -835,7 +835,7 @@ i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONT
             globals->PTR_LOOP_1050_5f84     = uVar12;
             globals->globals->DAT_1050_5f82 = CONCAT11(uVar11, (uVar11 >> 0x8));
             globals->DAT_1050_5f87          = 0x0;
-            WaitEvent16(0x1000);
+            WaitEvent16(SEG_1000);
             globals->PTR_LOOP_1050_5f84 = uVar11;
             puVar15                     = globals->PTR_LOOP_1050_5f4c;
             param_8                     = InitApp16((HINSTANCE16)LAST_SEGMENT);
@@ -961,13 +961,13 @@ i16 *interrupt_vector_op_1000_23ea(Globals *globals,
         uVar7   = globals->PTR_LOOP_1050_5f7e;
         bVar21  = false;
         ppcVar8 = globals->PTR_LOOP_1050_6200;
-        (**ppcVar8)(0x1000);
+        (**ppcVar8)(SEG_1000);
         if(bVar21)
         {
             iVar24 = 0x2;
             iVar23 = 0x2;
-            pass1_1000_25a8(NULL, uVar7, 0x1000);
-            pass1_1000_2913(NULL, iVar23, uVar7, 0x1000);
+            pass1_1000_25a8(NULL, uVar7, SEG_1000);
+            pass1_1000_2913(NULL, iVar23, uVar7, SEG_1000);
             str = poss_str_op_1000_28dc(NULL, iVar24);
             if(str != NULL)
             {
@@ -990,7 +990,7 @@ i16 *interrupt_vector_op_1000_23ea(Globals *globals,
                 pcVar20[-0x1] = '\0';
             }
             // Exit
-            FatalAppExit16(0x1000, str);
+            FatalAppExit16(SEG_1000, str);
             FatalExit();
             pi_var18 = &globals->PTR_LOOP_1050_63fe;
             do
@@ -1015,7 +1015,7 @@ i16 *interrupt_vector_op_1000_23ea(Globals *globals,
             } while(true);
         }
         ppcVar8 = globals->PTR_LOOP_1050_6200;
-        u_var22  = (ppcVar8)(0x1000);
+        u_var22  = (ppcVar8)(SEG_1000);
     }
     // this might just be the value 0x002c
     iVar23  = (globals->s_New_failed_in_Op__Op_1050_002c);
@@ -1501,7 +1501,7 @@ void  mem_op_1000_131c(u16 param_1, u16 param_2, i16 param_3, u16 param_4)
 
     lVar3   = CONCAT22(uStack8, uStack10);
     iStack6 = 0x1;
-    if(((param_1 & 0x1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2))))
+    if(((param_1 & SEG_1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2))))
     {
         param_2 = 0xfff0;
         param_3 = 0x0;
@@ -1566,7 +1566,7 @@ void  mem_op_1000_1408(u16 param_1, u16 param_2, u16 param_3, WORD param_4)
     DVar3    = GlobalHandle16(param_4);
     uStack8  = 0x32;
     iStack12 = 0x1;
-    if(((param_1 & 0x1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2))))
+    if(((param_1 & SEG_1000) != 0x0) && ((param_3 != 0x0 || (0xfff0 < param_2))))
     {
         param_2 = 0xfff0;
         param_3 = 0x0;
@@ -1615,7 +1615,7 @@ BOOL16  mem_op_1000_14f2(u16 param_1, u16 param_2, i16 param_3, u16 param_4, u16
     u16  in_DX;
     WORD unaff_CS;
 
-    if(((param_1 & 0x1000) != 0x0) || ((param_3 == 0x0 && (param_2 < 0xfff1))))
+    if(((param_1 & SEG_1000) != 0x0) || ((param_3 == 0x0 && (param_2 < 0xfff1))))
     {
         mem_op_1000_1408(param_1 & 0xfdff | 0x800, param_2, param_3, unaff_CS);
         if((in_DX | in_AX) != 0x0)
@@ -1848,7 +1848,7 @@ u32 mem_op_1000_1902(Globals *globals, u16 param_1, u16 param_2, u16 param_3, u1
     do
     {
         uVar3  = UVar5;
-        pUVar1 = (param_1 & 0xfffb | 0x1000);
+        pUVar1 = (param_1 & 0xfffb | SEG_1000);
         mem_op_1000_131c(pUVar1, 0x100, 0x0, param_5);
         UVar5 = uVar3 | pUVar1;
         if(UVar5 != 0x0)
@@ -2090,7 +2090,7 @@ bool mem_op_1000_01b0(Globals *globals, u16 param_1, u16 param_2)
             {
                 DVar7 = 0xfff0;
             }
-            BVar3   = mem_op_1000_14f2((param_1 + 0x16) | 0x1000, DVar7, (DVar7 >> 0x10), param_1, &globals->USHORT_1050_1050);
+            BVar3   = mem_op_1000_14f2((param_1 + 0x16) | SEG_1000, DVar7, (DVar7 >> 0x10), param_1, &globals->USHORT_1050_1050);
             iStack4 = (DVar6 >> 0x10);
             u_stack6 = DVar6;
             if(BVar3 != 0x0)
@@ -2213,7 +2213,7 @@ u32 mem_op_1000_03c6(
         }
         else
         {
-            uStack20 = 0x1000;
+            uStack20 = SEG_1000;
         }
         uStack20 = (param_4 + 0x16) | uStack20;
         mem_op_1000_131c(uStack20, param_1, param_2, param_5);
@@ -2715,7 +2715,7 @@ u32 mem_op_1000_0b20(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
         }
         else
         {
-            param_4 = 0x1000;
+            param_4 = SEG_1000;
             uVar3   = (**(param_2 + 0x32))();
             if(uVar3 < uVar5)
                 goto LAB_1000_0b9e;

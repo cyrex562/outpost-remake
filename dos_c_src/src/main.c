@@ -102,7 +102,7 @@ i16 *entry(Globals *globals,
             globals->DAT_1050_5f82      = CONCAT11(result, (result >> 8));
             globals->DAT_1050_5f87      = 0;
             // wait for something
-            WaitEvent16(0x1000);
+            WaitEvent16(SEG_1000);
             globals->PTR_LOOP_1050_5f84 = result;
             pu8_var15                   = globals->PTR_LOOP_1050_5f4c;
             // initialize the app
@@ -211,12 +211,12 @@ void init_op_1008_54aa(struct Globals *globals,
     get_date_time_op_1000_435c(NULL, 0x0, in_cx_reg, in_dx_reg, &var_14, param_8);
     set_globals_1000_4d0c(NULL, param_5);
     pass1_1000_1fea(NULL);
-    globals->PTR_LOOP_1050_03a0 = mem_op_1000_1902(NULL, 0x0, 0x32, 0x0, 0x12, 0x1000, in_dx_reg);
-    globals->PTR_LOOP_1050_029c = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0xc, 0x1000, (globals->PTR_LOOP_1050_03a0 >> 0x10));
-    globals->PTR_LOOP_1050_4fb8 = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0x10, 0x1000, (globals->PTR_LOOP_1050_029c >> 0x10));
-    globals->PTR_LOOP_1050_68a2 = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0xe, 0x1000, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
-    globals->PTR_LOOP_1050_5744 = mem_op_1000_1902(NULL, 0x0, 0x1f4, 0x0, 0x42, 0x1000, (globals->PTR_LOOP_1050_68a2 >> 0x10));
-    var_11                      = mem_op_1000_1902(NULL, 0x0, 0x32, 0x0, 0x6, 0x1000, (globals->PTR_LOOP_1050_5744 >> 0x10));
+    globals->PTR_LOOP_1050_03a0 = mem_op_1000_1902(NULL, 0x0, 0x32, 0x0, 0x12, SEG_1000, in_dx_reg);
+    globals->PTR_LOOP_1050_029c = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0xc, SEG_1000, (globals->PTR_LOOP_1050_03a0 >> 0x10));
+    globals->PTR_LOOP_1050_4fb8 = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0x10, SEG_1000, (globals->PTR_LOOP_1050_029c >> 0x10));
+    globals->PTR_LOOP_1050_68a2 = mem_op_1000_1902(NULL, 0x0, 0x64, 0x0, 0xe, SEG_1000, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
+    globals->PTR_LOOP_1050_5744 = mem_op_1000_1902(NULL, 0x0, 0x1f4, 0x0, 0x42, SEG_1000, (globals->PTR_LOOP_1050_68a2 >> 0x10));
+    var_11                      = mem_op_1000_1902(NULL, 0x0, 0x32, 0x0, 0x6, SEG_1000, (globals->PTR_LOOP_1050_5744 >> 0x10));
     var_4                       = (var_11 >> 0x10);
     globals->PTR_LOOP_1050_5768 = var_11;
     globals->PTR_LOOP_1050_038c = param_4;
@@ -225,7 +225,7 @@ void init_op_1008_54aa(struct Globals *globals,
     globals->PTR_LOOP_1050_576a = var_4;
     var_3                       = str_op_1008_60e8(param_2, var_4);
     globals->PTR_LOOP_1050_0392 = CONCAT22(var_4, var_3);
-    mem_op_1000_179c(NULL, 0xc, var_4, 0x1000);
+    mem_op_1000_179c(NULL, 0xc, var_4, SEG_1000);
     if((var_4 | var_3) == 0x0)
     {
         var_3 = 0x0;
@@ -240,25 +240,25 @@ void init_op_1008_54aa(struct Globals *globals,
     if(globals->PTR_LOOP_1050_0392 != 0x0)
     {
         fn_ptr_a = (*var_12 + 0x4);
-        (*fn_ptr_a)(0x1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
+        (*fn_ptr_a)(SEG_1000, var_3, var_5, globals->PTR_LOOP_1050_0392, (globals->PTR_LOOP_1050_0392 >> 0x10));
     }
     var_13   = *var_12;
     fn_ptr_a = var_13 + 0x4;
-    (**fn_ptr_a)(0x1000, var_3, var_5, 0, 0);
+    (**fn_ptr_a)(SEG_1000, var_3, var_5, 0, 0);
     var_9 = var_8;
 //    &globals->PTR_LOOP_1050_1000
-    main_win_msg_loop_1008_9498(globals, 0x1000, param_8);
+    main_win_msg_loop_1008_9498(globals, SEG_1000, param_8);
     if(var_12 != 0x0)
     {
         fn_ptr_a = var_13;
-        (*fn_ptr_a)(0x1000, var_3, var_5, 0x1, 0);
+        (*fn_ptr_a)(SEG_1000, var_3, var_5, 0x1, 0);
         var_9 = var_10;
     }
-    var_11 = mem_op_1000_1b68(var_9, 0x1000, globals->PTR_LOOP_1050_03a0, (globals->PTR_LOOP_1050_03a0 >> 0x10));
-    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_029c, (globals->PTR_LOOP_1050_029c >> 0x10));
-    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_4fb8, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
-    var_11 = mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_68a2, (globals->PTR_LOOP_1050_68a2 >> 0x10));
-    mem_op_1000_1b68((var_11 >> 0x10), 0x1000, globals->PTR_LOOP_1050_5744, (globals->PTR_LOOP_1050_5744 >> 0x10));
+    var_11 = mem_op_1000_1b68(var_9, SEG_1000, globals->PTR_LOOP_1050_03a0, (globals->PTR_LOOP_1050_03a0 >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), SEG_1000, globals->PTR_LOOP_1050_029c, (globals->PTR_LOOP_1050_029c >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), SEG_1000, globals->PTR_LOOP_1050_4fb8, (globals->PTR_LOOP_1050_4fb8 >> 0x10));
+    var_11 = mem_op_1000_1b68((var_11 >> 0x10), SEG_1000, globals->PTR_LOOP_1050_68a2, (globals->PTR_LOOP_1050_68a2 >> 0x10));
+    mem_op_1000_1b68((var_11 >> 0x10), SEG_1000, globals->PTR_LOOP_1050_5744, (globals->PTR_LOOP_1050_5744 >> 0x10));
 }
 
 

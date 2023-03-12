@@ -48,7 +48,7 @@ BOOL16  pass1_1008_7c2a(u32 param_1, char *param_2, HFILE16 param_3)
     if(param_2 != 0x0)
     {
         uVar1 = str_op_1000_3da4(param_2);
-        BVar2 = write_to_file_1008_7e1c(param_1, uVar3, param_2, (param_2 >> 0x10), (long)(uVar1 + 0x1), 0x1000);
+        BVar2 = write_to_file_1008_7e1c(param_1, uVar3, param_2, (param_2 >> 0x10), (long)(uVar1 + 0x1), SEG_1000);
         return BVar2;
     }
     write_to_file_1008_7e1c(param_1, uVar3, s_playerName_1050_148e + 0xc, &USHORT_1050_1050, 0x1, param_3);
@@ -591,7 +591,7 @@ void  pass1_1008_58a6(u32 param_1, u32 param_2)
     u16         uVar6;
     Struct99 *paStack6;
 
-    paStack6 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_029c);
+    paStack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_029c);
     uVar3    = (paStack6 >> 0x10);
     u_var2    = paStack6;
     if((uVar3 | u_var2) == 0x0)
@@ -645,7 +645,7 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
         (**ppcVar2)();
         return;
     }
-    paStack6 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_029c);
+    paStack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_029c);
     uVar4    = (paStack6 >> 0x10);
     uVar3    = paStack6;
     if((uVar4 | uVar3) == 0x0)
@@ -825,7 +825,7 @@ u16 * pass1_1008_5b6e(u16 *param_1, u8 param_2)
     (param_1)[0x1] = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
-        pass1_1000_093a(param_1, uVar1, 0x1000);
+        pass1_1000_093a(param_1, uVar1, SEG_1000);
     }
     return param_1;
 }
@@ -997,7 +997,7 @@ void  pass1_1008_5134(u32 param_1)
     uVar7          = (param_1 >> 0x10);
     iVar6          = param_1;
     lVar4          = (iVar6 + 0x4) * (iVar6 + 0x8);
-    lVar4          = mem_op_1000_0a48(0x1, lVar4, (lVar4 >> 0x10), globals->_PTR_LOOP_1050_5f2c, 0x1000);
+    lVar4          = mem_op_1000_0a48(0x1, lVar4, (lVar4 >> 0x10), globals->_PTR_LOOP_1050_5f2c, SEG_1000);
     uVar3          = (lVar4 >> 0x10);
     (iVar6 + 0x10) = lVar4;
     (iVar6 + 0x12) = uVar3;

@@ -8,7 +8,7 @@
 #include "op_int.h"
 HPALETTE16  palette_op_1008_4e08(struct Struct13 *param_1, BOOL16 param_2, u16 param_3, HDC16 param_4);
 
-void  begin_end_pai16_1008_97c8(HWND16 param_1);
+void  begin_end_paint_1008_97c8(HWND16 param_1);
 
 void  get_stock_obj_1008_9c56(u16 param_1);
 

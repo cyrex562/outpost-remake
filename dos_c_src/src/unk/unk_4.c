@@ -1370,7 +1370,7 @@ void  pass1_1030_b9da(u32 param_1, u32 param_2, u32 param_3, u32 param_4, u16 pa
     iVar7  = (Struct402 *)param_1;
     if(iVar7->field_0xe == (long *)0x0)
     {
-        mem_op_1000_179c(0xa, puVar3, 0x1000);
+        mem_op_1000_179c(0xa, puVar3, SEG_1000);
         uVar4   = puVar3 | param_4;
         param_3 = uVar4;
         if(uVar4 == 0x0)
@@ -1434,7 +1434,7 @@ u16 * pass1_1030_9e9c(u16 *param_1, u8 param_2)
     (param_1)[0x1] = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
-        pass1_1000_093a(param_1, uVar1, 0x1000);
+        pass1_1000_093a(param_1, uVar1, SEG_1000);
     }
     return param_1;
 }

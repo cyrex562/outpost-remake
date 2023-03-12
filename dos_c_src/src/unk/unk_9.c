@@ -217,7 +217,7 @@ void pass1_1028_0ea6(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
                 {
                     return;
                 }
-                fn_ptr_1000_17ce(iVar3->field_0x14, 0x1000);
+                fn_ptr_1000_17ce(iVar3->field_0x14, SEG_1000);
                 iVar3->field_0x14 = (Struct18 *)0x0;
             LAB_1028_0f0a:
                 iVar3->field_0x12 = 0x9;
@@ -1771,7 +1771,7 @@ void pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
     Struct99 *pu_stack6;
     Struct99 *uVar5;
 
-    pu_stack6 = pass1_1000_07fc(0x1000, globals->PTR_LOOP_1050_4fb8);
+    pu_stack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_4fb8);
     uVar6    = (pu_stack6 >> 0x10);
     uVar5    = (Struct99 *)pu_stack6;
     if((uVar6 | uVar5) == 0x0)
@@ -1855,7 +1855,7 @@ u16 *pass1_1020_c9ba(u16 *param_1, u8 param_2)
     (param_1)[0x1] = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
-        pass1_1000_093a(param_1, uVar1, 0x1000);
+        pass1_1000_093a(param_1, uVar1, SEG_1000);
     }
     return param_1;
 }

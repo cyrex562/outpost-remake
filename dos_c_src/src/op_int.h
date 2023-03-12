@@ -1,10 +1,13 @@
-#pragma once
+#ifndef _OP_INT_H_
+#define _OP_INT_H_
 
-typedef u8      u8;
+typedef unsigned char      u8;
 typedef char               i8;
-typedef u16     u16;
+typedef unsigned short     u16;
 typedef short              i16;
-typedef u32       u32;
+typedef unsigned int       u32;
 typedef int                i32;
 typedef unsigned long long u64;
 typedef long long          i64;
+
+#endif

@@ -490,7 +490,7 @@ void pass1_1008_3afe(u16 *param_1, u8 param_2);
 
 
 
-void pass1_1008_0036(u16 *param_1, u16 param_2);
+void pass1_1008_0036(struct Struct449 *param_1, u16 param_2);
 
 
 

@@ -5,16 +5,16 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_1X_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_1X_H_
 
-#include "op_int.h"
-#include "structs/structs_0xx/struct_21.h"
-#include "structs/structs_1xx/structs_11x.h"
-#include "structs/structs_1xx/structs_15x.h"
-#include "structs/structs_1xx/structs_16x.h"
-#include "structs/structs_1xx/structs_17x.h"
-#include "structs/structs_1xx/structs_18x.h"
-#include "structs/structs_3xx/structs_30x.h"
-#include "structs/structs_3xx/structs_38x.h"
-#include "structs/structs_4xx/structs_43x.h"
+#include "../../op_int.h"
+#include "../structs_0xx/struct_21.h"
+#include "../structs_1xx/structs_11x.h"
+#include "../structs_1xx/structs_15x.h"
+#include "../structs_1xx/structs_16x.h"
+#include "../structs_1xx/structs_17x.h"
+#include "../structs_1xx/structs_18x.h"
+#include "../structs_3xx/structs_30x.h"
+#include "../structs_3xx/structs_38x.h"
+#include "../structs_4xx/structs_43x.h"
 #include "structs_2x.h"
 #include "structs_3x.h"
 typedef struct Struct16 Struct16;

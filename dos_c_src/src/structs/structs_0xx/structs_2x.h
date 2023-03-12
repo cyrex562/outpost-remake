@@ -34,7 +34,7 @@ typedef struct Struct28 Struct28;
 
 struct Struct20
 {
-    u16               field_0x0;
+    void                **field_0x0;
     u16               field_0x2;
     u32               field_0x4;
     u16               field_0x8;
@@ -97,7 +97,7 @@ struct Struct20
     u8                field_0x58;
     u8                field_0x59;
     u8                field_0x5a;
-    u8                field_0x5b;
+    char*                field_0x5b;
     u8                field_0x5c;
     u8                field_0x5d;
     u8                field_0x5e;
@@ -207,6 +207,8 @@ struct Struct20
     HCURSOR16            *field_0xc4;
     HGDIOBJ16            *field_0xc6;
     u16                  *field_0xf6;
+    int                   field_0xe6;
+    void                 *field_0xe2;
 };
 
 
@@ -933,6 +935,7 @@ struct Struct27
     u8 field_0x50;
     u8 field_0x51;
     long      field_0x52;
+    int       field18_0x12;
 };
 struct Struct28
 {

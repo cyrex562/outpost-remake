@@ -48,7 +48,7 @@ struct Struct656
     u32 field_0x22;
     u32 field_0x26;
 };
-struct Struct656
+struct Struct6561
 {
     i16 dmOrientation;
     i16 dmPaperSize;

@@ -10,7 +10,8 @@
 #include "structs/structs_0xx/structs_1x.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "structs/structs_0xx/structs_4x.h"
-#include "structs/structs_7x/structs_73x.h"
+#include "structs/structs_7xx/structs_73x.h"
+
 typedef struct Struct102 Struct102;
 typedef struct Struct104 Struct104;
 typedef struct Struct100 Struct100;

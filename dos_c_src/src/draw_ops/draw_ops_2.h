@@ -8,10 +8,16 @@
 #include "globals.h"
 #include "op_int.h"
 #include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_2xx/structs_27x.h"
+#include "structs/structs_5xx/structs_58x.h"
 #include "structs/structs_6xx/struct_664.h"
 #include "structs/structs_6xx/struct_666.h"
 
-void  string_1020_79b4(u16 param_1, u32 param_2, i16 param_3, char *param_4);
+void string_1020_79b4(Globals *globals,
+                      u16      param_1,
+                      u32      param_2,
+                      i16      param_3,
+                      char    *param_4);
 
 void pass1_1038_9a48(Globals *globals, Struct18 *param_1);
 
@@ -21,7 +27,7 @@ void unk_draw_op_1018_cda8(Globals *globals, Struct36 *param_1, u16 param_2);
 
 void unk_draw_op_1018_cfc0(Globals *globals, Struct36 *param_1, u16 param_2);
 
-void  palette_op_1020_92c4(u16 *param_1, HDC16 param_2);
+void  palette_op_1020_92c4(Struct587 *param_1, HDC16 param_2);
 
 void  mix_draw_op_1020_9312(u32 param_1, HWND16 param_2);
 
@@ -31,19 +37,34 @@ Struct18 * pass1_1020_96a2(Struct18 *param_1, u8 param_2, u16 param_3);
 
 Struct18 * pass1_1020_7526(Struct18 *param_1, u8 param_2, u16 param_3);
 
-void  struct_1020_7554(u16 param_1, Struct20 *param_2, u16 param_3, u16 param_4);
+void struct_1020_7554(Globals  *globals,
+                      u16       param_1,
+                      Struct20 *param_2,
+                      u16       param_3,
+                      u16       param_4);
 
-void  pass1_1020_7824(Struct666 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
+void pass1_1020_7824(Globals   *globals,
+                     Struct7 *param_1,
+                     u16        param_3,
+                     i16        param_4,
+                     u16        param_5);
 
-void  pass1_1020_78ac(u16 *param_1, u16 param_2);
+void  pass1_1020_78ac(Struct587 *pstruct_arg1, u16 hdc_arg2);
 
-void  struct_1020_790e(u16 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5);
+void  struct_1020_790e(Struct271 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5);
 
-void  string_1020_79b4(u16 param_1, u32 param_2, i16 param_3, char *param_4);
+void string_1020_79b4(Globals *globals,
+                      u16      param_1,
+                      u32      param_2,
+                      i16      param_3,
+                      char    *param_4);
 
-void  pass1_1020_79e4(u32 param_1, u16 param_2, u16 param_3);
+void pass1_1020_79e4(Globals *globals, u32 param_1, u16 hwnd_arg2, u16 param_3);
 
-void  draw_op_1020_7cc8(u32 param_1, HWND16 in_win_handle_2, u16 param_3);
+void draw_op_1020_7cc8(Globals *globals,
+                       Struct6 *struct_arg1,
+                       HWND16   hwnd_arg2,
+                       u16      param_3);
 
 void unk_draw_op_1020_7f7a(Globals *globals, Struct20 *param_1, u16 param_2, u32 param_3);
 

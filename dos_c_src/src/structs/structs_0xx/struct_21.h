@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_21_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_21_H_
 
-#include "structs/structs_5xx/struct_546.h"
+#include "../structs_5xx/struct_546.h"
 typedef struct Struct21 Struct21;
 struct Struct21
 {

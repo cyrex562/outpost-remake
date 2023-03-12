@@ -5,6 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 #define OUTPOST_1_SRC_STRUCT_OPS_STRUCT_OPS_5_H_
 
+#include "structs/structs_0xx/structs_7x.h"
 u16 *pass1_1010_3702(i16 param_1, u16 param_2, u16 param_3);
 
 
@@ -13,11 +14,10 @@ u16 *pass1_1010_37d4(u16 *param_1);
 
 
 
-void struct_1010_383a(u16 *param_1);
+void struct_1010_383a(struct Struct223 *param_1);
 
 
-
-void struct_1010_3b7a(Struct648 *param_1, u16 param_2, u16 param_3);
+void struct_1010_3b7a(Struct79 *param_1, unsigned short param_3);
 
 
 

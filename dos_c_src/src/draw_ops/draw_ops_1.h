@@ -34,9 +34,9 @@ void draw_op_1040_c38e(u32 param_1);
 
 void invalidate_rect_1040_c028(u32 param_1, i16 param_2, HWND16 param_3, RECT16 *param_4);
 
-Struct18 *pass1_1040_be94(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_be94(Globals *globals, Struct18 *param_1, u8 param_2);
 
-u32 pass1_1040_b74c(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_b74c(Struct18 *param_1, u8 param_2);
 
 void draw_text_1040_94fc(Globals *globals, Struct37 *param_1, HDC16 param_2);
 
@@ -65,7 +65,7 @@ void mixed_draw_op_1040_8a06(Globals *globals, u32 param_1, HWND16 param_2, u16 
 
 void pass1_1040_8e82(Globals *globals, Struct18 *param_1);
 
-void pass1_1040_9252(Struct65 *param_1, u16 param_2);
+void pass1_1040_9252(Struct65 *param_1);
 
 void unk_draw_op_1040_9458(Struct17 *param_1, u8 param_2, u16 param_3, HDC16 param_4);
 
@@ -107,17 +107,26 @@ void pass1_1040_2a22(Struct18 *param_1);
 
 void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3);
 
-u32 set_text_bk_color_1040_0cc0(u32 *param_1, u16 param_2, u16 param_3, u16 param_4);
+u32 set_text_bk_color_1040_0cc0(Globals *globals,
+                                u32     *param_1,
+                                u16      param_2,
+                                u16      param_3,
+                                u16      param_4);
 
-void draw_op_1038_9dcc(Struct10 *in_struct_1, i16 param_2, u16 param_3, COLORREF in_colorref_4, u16 param_5);
+void draw_op_1038_9dcc(Globals  *globals,
+                       Struct10 *in_struct_1,
+                       i16       param_2,
+                       u16       param_3,
+                       COLORREF  in_colorref_4,
+                       u16       param_5);
 
 u16 call_fn_ptr_1038_9ffa(HWND16 win_handle, u16 param_2, Struct733 *struct_1, u16 param_4);
 
-void unk_win_ui_op_1038_ac38(u16 param_1, u16 param_2);
+void unk_win_ui_op_1038_ac38(Globals *globals, u16 param_1, u16 param_2);
 
-void pass1_1038_ae08(Struct18 *param_1);
+void pass1_1038_ae08(Globals *globals, Struct18 *param_1);
 
-void pass1_1038_893a(Struct18 *param_1);
+void pass1_1038_893a(Globals *globals, Struct18 *param_1);
 
 void pass1_1038_8cf6(Struct18 *param_1);
 
