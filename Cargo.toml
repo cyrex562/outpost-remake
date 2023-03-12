@@ -1,5 +1,0 @@
-[workspace]
-
-members = [
-    "outpost_win31_rs"
-]
