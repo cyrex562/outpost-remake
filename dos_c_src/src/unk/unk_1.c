@@ -1,8 +1,10 @@
-#include "op_int.h"
-#include "structs_1.h"
-#include "unk_10.h"
 #include "unk_1.h"
 
+#include "globals.h"
+#include "op_int.h"
+#include "structs_1.h"
+#include "ui_ops/ui_ops_6.h"
+#include "unk_10.h"
 
 
 void  pass1_1040_d76e(struct_1040_d76e_1 *param_1)
@@ -122,52 +124,53 @@ void  pass1_1040_c71e(u32 param_1, u16 param_2)
 }
 
 
-void  pass1_1040_c630(u32 *param_1, u16 param_2, u16 param_3)
+void pass1_1040_c630(Globals *globals, Struct165 *param_1, u16 param_2, u16 param_3)
 
 {
-    i16          iVar1;
+    i16    iVar1;
     void **ppcVar2;
-    u32   uVar3;
-    u32          uVar4;
-    Struct165 *iVar4;
-    u16          uVar5;
+    u32    uVar3;
+    u32    uVar4;
+    //    Struct165 *iVar4;
+    u16 uVar5;
 
     uVar5 = (param_1 >> 0x10);
-    iVar4 = (Struct165 *)param_1;
+    //    iVar4 = (Struct165 *)param_1;
     uVar3 = iVar4->pv_field_42;
     if((uVar3 + 0x12) != 0x71)
     {
-        iVar4->field_0x36 = 0x5;
-        iVar4->field_0x26 = 0x5;
-        iVar4->field_0x28 = 0x5;
-        iVar1             = iVar4->field_0x36;
-        iVar4->field_0x30 = iVar1;
-        iVar4->field_0x2e = iVar1;
-        if(PTR_LOOP_1050_5f02 == 0x0)
+        param_1->field_0x36 = 0x5;
+        param_1->field_0x26 = 0x5;
+        param_1->field_0x28 = 0x5;
+        iVar1               = param_1->field_0x36;
+        param_1->field_0x30 = iVar1;
+        param_1->field_0x2e = iVar1;
+        if(globals->PTR_LOOP_1050_5f02 == 0x0)
         {
-            globals->_PTR_LOOP_1050_5f04 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0xff, param_3);
-            param_2             = SEG_1010;
-            globals->_PTR_LOOP_1050_5f08 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x100, param_3);
+            globals->_PTR_LOOP_1050_5f04
+              = unk_io_op_1010_830a(globals->_PTR_LOOP_1050_14cc, 0xff, param_3);
+            param_2 = SEG_1010;
+            globals->_PTR_LOOP_1050_5f08
+              = unk_io_op_1010_830a(globals->_PTR_LOOP_1050_14cc, 0x100, param_3);
         }
         globals->PTR_LOOP_1050_5f02 = globals->PTR_LOOP_1050_5f02 + 0x1;
-        iVar4->field_0x8   = globals->_PTR_LOOP_1050_5f04;
-        iVar4->field_0xc   = globals->_PTR_LOOP_1050_5f08;
+        param_1->field_0x8          = globals->_PTR_LOOP_1050_5f04;
+        param_1->field_0xc          = globals->_PTR_LOOP_1050_5f08;
         pass1_1040_9618(param_1);
-        iVar4->field_0x20 = 0x0;
-        iVar4->field_0x1e = 0xc8;
-        iVar4->field_0x22 = 0xa0;
-        iVar4->field_0x24 = iVar4->field_0x2c + iVar4->field_0x36;
-        iVar4->field_0x2e = iVar4->field_0x36 * 0x3 + iVar4->field_0x2a;
-        iVar4->field_0x30 = iVar4->field_0x36;
-        iVar4->field_0x32 = iVar4->field_0x22 - iVar4->field_0x36;
-        iVar4->field_0x3c = 0x25;
-        uVar4             = *param_1;
-        ppcVar2           = (uVar4 + 0x4);
+        param_1->field_0x20 = 0x0;
+        param_1->field_0x1e = 0xc8;
+        param_1->field_0x22 = 0xa0;
+        param_1->field_0x24 = param_1->field_0x2c + param_1->field_0x36;
+        param_1->field_0x2e = param_1->field_0x36 * 0x3 + param_1->field_0x2a;
+        param_1->field_0x30 = param_1->field_0x36;
+        param_1->field_0x32 = param_1->field_0x22 - param_1->field_0x36;
+        param_1->field_0x3c = 0x25;
+        uVar4               = param_1->field_0x0;
+        ppcVar2             = (uVar4 + 0x4);
         (**ppcVar2)(param_2, param_1);
         ppcVar2 = (uVar4 + 0x8);
         (**ppcVar2)(param_2, param_1, uVar5);
     }
-    return;
 }
 
 

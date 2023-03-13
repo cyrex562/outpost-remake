@@ -1911,7 +1911,7 @@ void pass1_1028_45fe(u32 param_1, i16 param_2, u16 param_3)
                     u_var2->field_0x8     = 0x0;
                     u_var2->field_0xa     = 0x0;
                     u_var2->field_0xc     = 0x0;
-                    paStack30->field_0x0 = 0x56ce;
+                    paStack30->field_0x0 = addr_table_1018_56ce; // 0x56ce
                     u_var2->field_0x2     = SEG_1018;
                     paStack44            = paStack30;
                 }

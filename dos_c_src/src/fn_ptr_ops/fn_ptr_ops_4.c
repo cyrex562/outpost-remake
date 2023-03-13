@@ -1018,7 +1018,7 @@ void  pass1_1028_0582(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4, u8 p
                         (uVar6 + 0x8)        = 0x0;
                         (uVar6 + 0xa)        = 0x0;
                         (uVar6 + 0xc)        = 0x0;
-                        paStack38->field_0x0 = 0x56ce;
+                        paStack38->field_0x0 = addr_table_1018_56ce;//0x56ce;
                         (uVar6 + 0x2)        = SEG_1018;
                         paStack34            = paStack38;
                     }
@@ -1072,7 +1072,7 @@ void  pass1_1028_0582(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4, u8 p
                     (uVar6 + 0x8)        = 0x0;
                     (uVar6 + 0xa)        = 0x0;
                     (uVar6 + 0xc)        = 0x0;
-                    paStack38->field_0x0 = 0x56ce;
+                    paStack38->field_0x0 = addr_table_1018_56ce;//0x56ce;
                     (uVar6 + 0x2)        = SEG_1018;
                     paStack34            = paStack38;
                 }

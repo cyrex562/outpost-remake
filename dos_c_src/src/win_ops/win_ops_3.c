@@ -1009,7 +1009,7 @@ LAB_1010_7710:
                 (uVar4 + 0x2)  = SEG_1008;
                 *(uVar4 + 0x4) = param_4;
                 (uVar4 + 0x8)  = puStack10;
-                *puStack14     = 0x7e24;
+                *puStack14     = addr_table_1010_7e24;//0x7e24;
                 (uVar4 + 0x2)  = SEG_1010;
                 puStack20      = puStack14;
             }
@@ -1046,7 +1046,7 @@ void free_rsrc_1010_4b3e(u16 *param_1, HGLOBAL16 param_2)
 
     uVar10        = (param_1 >> 0x10);
     iVar8         = param_1;
-    *param_1      = s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
+    *param_1      = addr_table_1010_502a;//s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
     (iVar8 + 0x2) = SEG_1010;
     HVar12        = param_2;
     if((iVar8 + 0x2a) != 0x0)

@@ -1259,7 +1259,7 @@ void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                     (u_var2 + 0x8)        = 0x0;
                     (u_var2 + 0xa)        = 0x0;
                     (u_var2 + 0xc)        = 0x0;
-                    paStack20->field_0x0 = 0x56ce;
+                    paStack20->field_0x0 = addr_table_1018_56ce;//0x56ce;
                     (u_var2 + 0x2)        = SEG_1018;
                 }
                 BVar3 = read_file_1008_7dee(uVar7, uVar8, local_10, 0x0, param_5, 0x2, SEG_1008);
@@ -1772,7 +1772,7 @@ void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                         u_var2->field_0x8     = 0x0;
                         u_var2->field_0xa     = 0x0;
                         u_var2->field_0xc     = 0x0;
-                        paStack20->field_0x0 = 0x56ce;
+                        paStack20->field_0x0 = addr_table_1018_56ce;//0x56ce;
                         u_var2->field_0x2     = SEG_1018;
                     }
                     BVar4 = read_file_1008_7dee(uVar8, uVar9, local_10, 0x0, param_5, 0x2, SEG_1008);

@@ -72,8 +72,7 @@ u16 pass1_1008_ef38(u32 param_1);
 u16 pass1_1008_ef4a(void);
 
 
-
-u32 pass1_1010_0000(Struct645 *param_1, u16 param_2, u16 param_3, u16 param_4);
+Struct645 *pass1_1010_0000(Struct645 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
 

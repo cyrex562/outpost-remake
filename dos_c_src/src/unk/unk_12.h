@@ -6,11 +6,11 @@
 #define OUTPOST_1_SRC_UNK_UNK_12_H_
 
 
-void  pass1_1010_927a(struct AddrStruct *param_1);
+void  pass1_1010_927a(AddrStruct *param_1);
 
 
 
-void  pass1_1010_92e6(struct AddrStruct *param_1, u16 param_2);
+void  pass1_1010_92e6(AddrStruct *param_1, u16 param_2);
 
 
 
@@ -498,7 +498,7 @@ u8  pass1_1010_1c40(u32 param_1, u32 param_2);
 
 
 
-void  pass1_1010_1d80(u16 *param_1, u16 param_2);
+void  pass1_1010_1d80(struct Struct455 *param_1, u16 param_2);
 
 
 

@@ -8,6 +8,8 @@
 
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_1xx/structs_16x.h"
+#include "globals.h"
+
 typedef struct struct_1040_d76e_1 {
   u16 field_0x94;
   u16 *field_0x98;
@@ -37,9 +39,7 @@ u16 * pass1_1040_c9cc(u16 *param_1, u8 param_2);
 void  pass1_1040_c71e(u32 param_1, u16 param_2);
 
 
-
-
-void  pass1_1040_c630(u32 *param_1, u16 param_2, u16 param_3);
+void pass1_1040_c630(Globals *globals, Struct165 *param_1, u16 param_2, u16 param_3);
 
 
 

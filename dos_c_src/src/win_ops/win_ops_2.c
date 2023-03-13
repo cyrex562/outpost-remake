@@ -854,7 +854,7 @@ void  win_msg_op_1038_95fc(u32 param_1, u16 param_2)
                 {
                     *puStack24    = addr_table_1008_380a[36]; // 0x389a
                     (UVar4 + 0x2) = SEG_1008;
-                    *puStack24    = 0xa1c4;
+                    *puStack24    = addr_table_1010_a1c4;//0xa1c4;
                     (UVar4 + 0x2) = SEG_1010;
                     puStack30     = puStack24;
                 }

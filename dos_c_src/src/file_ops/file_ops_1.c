@@ -1213,7 +1213,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                             uVar5->field_0x8     = 0x0;
                                             uVar5->field_0xa     = 0x0;
                                             uVar5->field_0xc     = 0x0;
-                                            paStack50->field_0x0 = 0x56ce;
+                                            paStack50->field_0x0 = addr_table_1018_56ce;//0x56ce;
                                             uVar5->field_0x2     = SEG_1018;
                                             paStack44            = paStack50;
                                         }
@@ -1276,7 +1276,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                                                 uVar8->field_0x8     = 0x0;
                                                 uVar8->field_0xa     = 0x0;
                                                 uVar8->field_0xc     = 0x0;
-                                                paStack50->field_0x0 = 0x56ce;
+                                                paStack50->field_0x0 = addr_table_1018_56ce;//0x56ce;
                                                 uVar8->field_0x2     = SEG_1018;
                                                 paStack74            = paStack50;
                                             }

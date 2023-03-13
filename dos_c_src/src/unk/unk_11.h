@@ -622,7 +622,7 @@ void  pass1_1010_8c78(u16 *param_1, u16 param_2);
 
 
 
-void  pass1_1010_8f78(u16 *param_1);
+void  pass1_1010_8f78(struct Struct490 *pstruct_arg1);
 
 
 

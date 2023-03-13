@@ -121,7 +121,7 @@ struct Struct497
     u8 field_0x7;
     u8 field_0x8;
     u8 field_0x9;
-    u16       field_0xa;
+    void     *field_0xa;
     u16       field_0xc;
     u8 field_0xe;
     u8 field_0xf;
@@ -433,7 +433,7 @@ struct Struct498
 };
 struct Struct490
 {
-    u8   field_0x0;
+    void      **field_0x0;
     u8   field_0x1;
     u16         field_0x2;
     u32 *field_0x4;

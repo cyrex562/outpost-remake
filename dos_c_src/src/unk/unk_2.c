@@ -1214,7 +1214,7 @@ void  pass1_1038_6f5a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 pa
             uVar3->field_0x8     = 0x0;
             uVar3->field_0xa     = 0x0;
             uVar3->field_0xc     = 0x0;
-            paStack16->field_0x0 = 0x56ce;
+            paStack16->field_0x0 = addr_table_1018_56ce; // 0x56ce
             uVar3->field_0x2     = SEG_1018;
         }
         uVar9         = (paStack16 >> 0x10);

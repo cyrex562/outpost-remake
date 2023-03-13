@@ -1,8 +1,10 @@
 
 #include "address_tables/address_table_1.h"
 #include "globals.h"
+#include "struct_ops_3.h"
 #include "structs/structs_6xx/structs_63x.h"
 #include "structs/structs_6xx/structs_64x.h"
+#include "sys_ops/sys_ops_7.h"
 #include "unk/unk_15.h"
 u16 * struct_1028_406c(u16 *param_1)
 
@@ -672,7 +674,7 @@ Struct20 * struct_1018_6d02(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0xb, 0x9c, 0x8b, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa27e;
+    param_1->field_0x0 = addr_table_1018_93de[935];//0xa27e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -682,7 +684,7 @@ Struct20 * struct_1018_6d38(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0xc, 0x9d, 0xd0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb562;
+    param_1->field_0x0 = addr_table_1018_93de[2144];//0xb562;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -692,7 +694,7 @@ Struct20 * struct_1018_6d6e(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0xd, 0x9e, 0xd1, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x9822;
+    param_1->field_0x0 = addr_table_1018_93de[273];//0x9822;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -702,7 +704,7 @@ Struct20 * struct_1018_6da4(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0xe, 0x9f, 0xd2, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xab06;
+    param_1->field_0x0 = addr_table_1018_93de[1481];//0xab06;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -712,7 +714,7 @@ Struct20 * struct_1018_6dda(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0xf, 0xa0, 0xd4, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xbdea;
+    param_1->field_0x0 = addr_table_1018_93de[2690];//0xbdea;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -722,7 +724,7 @@ Struct20 * struct_1018_6e10(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x10, 0xa1, 0xda, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa0aa;
+    param_1->field_0x0 = addr_table_1018_93de[818];//0xa0aa;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -732,7 +734,7 @@ Struct20 * struct_1018_6e46(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x11, 0xa2, 0xdc, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb38e;
+    param_1->field_0x0 = addr_table_1018_93de[2027];//0xb38e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -742,7 +744,7 @@ Struct20 * struct_1018_6e7c(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x12, 0xa3, 0xd3, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x964e;
+    param_1->field_0x0 = addr_table_1018_93de[156];//0x964e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -752,7 +754,7 @@ Struct20 * struct_1018_6eb2(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x13, 0xa4, 0xdb, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa932;
+    param_1->field_0x0 = addr_table_1018_93de[1364]//0xa932;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -762,7 +764,7 @@ Struct20 * struct_1018_6ee8(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x14, 0xa5, 0xa5, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xbc16;
+    param_1->field_0x0 = addr_table_1018_93de[2573];//0xbc16;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -772,7 +774,7 @@ Struct20 * struct_1018_6f1e(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x15, 0xa7, 0xb2, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x9e3a;
+    param_1->field_0x0 = addr_table_1018_93de[662];//0x9e3a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -782,7 +784,7 @@ Struct20 * struct_1018_6f54(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x16, 0xa8, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb11e;
+    param_1->field_0x0 = addr_table_1018_93de[1871];//0xb11e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -792,7 +794,7 @@ Struct20 * struct_1018_6f8a(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x17, 0xaf, 0xc0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x93de;
+    param_1->field_0x0 = addr_table_1018_93de;//0x93de;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -802,7 +804,7 @@ Struct20 * struct_1018_6fc0(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x18, 0xb0, 0xc1, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa6c2;
+    param_1->field_0x0 = addr_table_1018_93de[1208];//0xa6c2;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -812,7 +814,7 @@ Struct20 * struct_1018_6ff6(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x19, 0xb1, 0x80, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb9a6;
+    param_1->field_0x0 = addr_table_1018_93de[2417];//0xb9a6;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -822,7 +824,7 @@ Struct20 * struct_1018_702c(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x1ec, 0x1a, 0xb2, 0xc3, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x9c66;
+    param_1->field_0x0 = addr_table_1018_93de[545];//0x9c66;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -832,7 +834,7 @@ Struct20 * struct_1018_7062(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1b, 0xb3, 0xc4, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xaf4a;
+    param_1->field_0x0 = addr_table_1018_93de[1754];//0xaf4a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -842,7 +844,7 @@ Struct20 * struct_1018_7098(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1c, 0xb4, 0xd8, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xc22e;
+    param_1->field_0x0 = addr_table_1018_93de[2963];//0xc22e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -852,7 +854,7 @@ Struct20 * struct_1018_70ce(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1d, 0xb5, 0x7b, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa4ee;
+    param_1->field_0x0 = addr_table_1018_93de[1091];//0xa4ee;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -862,7 +864,7 @@ Struct20 * struct_1018_7104(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1e, 0xb6, 0xd9, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb7d2;
+    param_1->field_0x0 = addr_table_1018_93de[2300];//0xb7d2;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -872,7 +874,7 @@ Struct20 * struct_1018_713a(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x1f, 0xb7, 0x7d, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x9a92;
+    param_1->field_0x0 = addr_table_1018_93de[429];//0x9a92;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -882,7 +884,7 @@ Struct20 * struct_1018_7170(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x21, 0xb9, 0xdd, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xad76;
+    param_1->field_0x0 = addr_table_1018_93de[1637];//0xad76;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -892,7 +894,7 @@ Struct20 * struct_1018_71a6(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x23, 0xd3, 0xd6, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb69a;
+    param_1->field_0x0 = addr_table_1018_93de[2222];//0xb69a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -902,7 +904,7 @@ Struct20 * struct_1018_71dc(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x1ed, 0x24, 0xd4, 0xd7, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x995a;
+    param_1->field_0x0 = addr_table_1018_93de[351];//0x995a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -912,7 +914,7 @@ Struct20 * struct_1018_7212(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x25, 0xe9, 0xee, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa452;
+    param_1->field_0x0 = addr_table_1018_93de[1052];//0xa452;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -922,7 +924,7 @@ Struct20 * struct_1018_7248(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x63, 0xa6, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xc05a;
+    param_1->field_0x0 = addr_table_1018_93de[2846];//0xc05a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -932,7 +934,7 @@ Struct20 * struct_1018_727e(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x64, 0xa9, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xa31a;
+    param_1->field_0x0 = addr_table_1018_93de[974];//0xa31a;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -942,7 +944,7 @@ Struct20 * struct_1018_72b4(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x65, 0xaa, 0xbb, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xb5fe;
+    param_1->field_0x0 = addr_table_1018_93de[2183];//0xb5fe;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -952,7 +954,7 @@ Struct20 * struct_1018_72ea(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x66, 0xab, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0x98be;
+    param_1->field_0x0 = addr_table_1018_93de[312];//0x98be;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -962,7 +964,7 @@ Struct20 * struct_1018_7320(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x67, 0xac, 0xbd, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xaba2;
+    param_1->field_0x0 = addr_table_1018_93de[1520];//0xaba2;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -972,7 +974,7 @@ Struct20 * struct_1018_7356(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x68, 0xad, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xbe86;
+    param_1->field_0x0 = addr_table_1018_93de[2729];//0xbe86;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -982,7 +984,7 @@ Struct20 * struct_1018_738c(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x69, 0xae, 0x0, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xac3e;
+    param_1->field_0x0 = addr_table_1018_93de[1559];//0xac3e;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -992,7 +994,7 @@ Struct20 * struct_1018_73c2(Struct20 *param_1, u16 param_2, u32 param_3, u16 par
 
 {
     struct_op_1018_6a0e(param_1, 0x0, 0x35, 0xba, 0x81, param_2, param_3, param_4);
-    param_1->field_0x0 = 0xbf22;
+    param_1->field_0x0 = addr_table_1018_93de[2768];//0xbf22;
     (param_1 + 0x2)    = SEG_1018;
     return param_1;
 }
@@ -1948,7 +1950,6 @@ void  struct_1010_a1d8(Struct627 *param_1, u16 param_2, u16 param_3, u16 param_4
     param_1->field_0x78 = 0x0;
     param_1->field_0x98 = pass1_1010_d710;
     param_1->field_9c   = 0x0;
-    return;
 }
 
 u16  pass1_1010_a5ac(u16 param_1, u16 param_2, u32 param_3)
@@ -2005,7 +2006,6 @@ void  struct_1010_9172(u32 param_1)
     }
     iVar4->field_0x4 = uVar6;
     iVar4->field_0x6 = (uVar6 >> 0x10);
-    return;
 }
 
 u16 * pass1_1010_9258(u16 *param_1)

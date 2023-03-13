@@ -8,13 +8,15 @@
 #include "globals.h"
 #include "op_int.h"
 #include "op_win_def.h"
-#include "structs/structs_6xx/struct_660.h"
 #include "structs/structs_0xx/structs_2x.h"
-#include "structs/structs_6xx/struct_661.h"
-#include "structs/structs_6xx/struct_659.h"
-#include "structs/structs_1xx/struct_132.h"
-#include "structs/structs_6xx/struct_658.h"
 #include "structs/structs_0xx/structs_5x.h"
+#include "structs/structs_1xx/struct_132.h"
+#include "structs/structs_5xx/structs_50x.h"
+#include "structs/structs_5xx/structs_57x.h"
+#include "structs/structs_6xx/struct_658.h"
+#include "structs/structs_6xx/struct_659.h"
+#include "structs/structs_6xx/struct_660.h"
+#include "structs/structs_6xx/struct_661.h"
 
 void realize_palette_1020_2992(u32 param_1, i16 param_2);
 
@@ -52,7 +54,7 @@ void pass1_1018_e5dc(Globals         *globals,
 
 void pass1_1018_e834(Struct660 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
-void pass1_1018_e8bc(u16 *param_1);
+void pass1_1018_e8bc(Struct577 *param_1);
 
 void pass1_1018_e91e(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
@@ -90,7 +92,7 @@ void draw_text_1018_c742(Struct36 *param_1, HDC16 param_2, RECT16 *param_3, u16 
 void pass1_1018_5b06(Struct132 *param_1, u16 param_2, u16 param_3, u16 param_4)
 ;
 
-void pass1_1018_5cc8(u16 *param_1, u16 param_2);
+void pass1_1018_5cc8(Struct508 *param_1, u16 param_2);
 
 void invalidate_rect_1018_5d32(u32 param_1, i16 param_2, HWND16 param_3);
 

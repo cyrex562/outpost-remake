@@ -1725,7 +1725,6 @@ void  unk_win_ui_op_1040_19ea(Struct32 *param_1, i16 param_2, HWND16 param_3)
         }
     }
     DestroyWindow16(param_3);
-    return;
 }
 
 
