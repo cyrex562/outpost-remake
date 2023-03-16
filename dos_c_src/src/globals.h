@@ -1007,4 +1007,4 @@ static u16 SEG_1030     = 0x1030;
 static u16 SEG_1038     = 0x1038;
 static u16 SEG_1040     = 0x1040;
 static u16 SEG_1048     = 0x1048;
-static u16 SEG_1050     = SEG_1050;
+static u16 SEG_1050     = 0x1050;

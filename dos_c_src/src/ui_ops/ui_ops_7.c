@@ -583,7 +583,7 @@ BOOL16 msg_box_op_1000_1f24(Globals *globals, i16 param_1, u16 param_2, u16 para
 
     if(param_3 < (param_1 + 0xc))
     {
-        msg_box_op_1000_214c(0x0, 0x0, 0xd940, &globals->PTR_LOOP_1050_1040, param_4);
+        msg_box_op_1000_214c(0x0, 0x0, 0xd940, &SEG_1040, param_4);
         return 0x1;
     }
     pi_var1  = (param_1 + 0xc);

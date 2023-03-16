@@ -2220,7 +2220,7 @@ i16  win_ui_op_1008_2b54(u16 param_1, u8 *param_2, u16 param_3)
         }
         else
         {
-            hwnd  = (HWND16)&PTR_LOOP_1050_1040;
+            hwnd  = (HWND16)SEG_1040;
             iVar3 = string_1040_8520(CONCAT22(param_2, param_1), globals->PTR_LOOP_1050_0396, 0x21, 0x2, 0x57b, 0x5f2, puVar4, param_3);
         }
         local_a6[0] = CONCAT22(puVar4, iVar3);

@@ -121,7 +121,7 @@ ATOM reg_class_1040_98c0(Globals *globals, u32 param_1, HINSTANCE16 param_2, WND
         // TODO: arrange values below into fields for wndclass
         wndclass.lpsz_class_name =(param_1 + 0x54);
         uStack26  = 0x9cde;
-        uStack24  = globals->PTR_LOOP_1050_1040;
+        uStack24  = SEG_1040;
         uStack22  = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;
         uStack16  = 0x0;
@@ -440,7 +440,7 @@ void  make_proc_inst_1040_a234(u8 *param_1, u8 *param_2, u16 param_3, u32 param_
 
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
     param_1 =  0xa4e8;
-    param_1->field_0x2 = &PTR_LOOP_1050_1040;
+    param_1->field_0x2 = SEG_1040;
     if(_PTR_LOOP_1050_5edc == 0x0)
     {
         pvVar1              = MakeProcInstance16(param_5, globals->PTR_LOOP_1050_038c);
@@ -460,7 +460,7 @@ void  free_proc_inst_1040_a294(Struct18 *param_1, u16 param_2)
 
 {
     param_1->field_0x0 = 0xa4e8;
-    param_1->field_0x2 = &PTR_LOOP_1050_1040;
+    param_1->field_0x2 = SEG_1040;
     globals->PTR_LOOP_1050_5eda = globals->PTR_LOOP_1050_5eda + -0x1;
     if(PTR_LOOP_1050_5eda == 0x0)
     {
@@ -728,7 +728,7 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
     (iVar4 + 0x3e) = 0x0;
     (iVar4 + 0x40) = param_2;
     param_1->field_0x0 = 0x9800;
-    (iVar4 + 0x2)  = &PTR_LOOP_1050_1040;
+    (iVar4 + 0x2)  = SEG_1040;
     uVar1          = (iVar4 + 0x36);
     (iVar4 + 0x28) = uVar1;
     (iVar4 + 0x26) = uVar1;
@@ -795,7 +795,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
     uVar6         = (param_1 >> 0x10);
     iVar5         = param_1;
     param_1->field_0x0 = 0x9800;
-    (iVar5 + 0x2) = &PTR_LOOP_1050_1040;
+    (iVar5 + 0x2) = SEG_1040;
     if((iVar5 + 0x38) != 0x0)
     {
         puVar1 = (iVar5 + 0x8);
@@ -1048,7 +1048,7 @@ Struct57 * pass1_1040_8478(Struct57 *param_1, u16 param_2, char *param_3, char *
     iVar2->field_0x9a = 0x0;
     iVar2->field_0xb2 = 0x0;
     param_1           = 0x8ddc;
-    iVar2->field_0x2  = &PTR_LOOP_1050_1040;
+    iVar2->field_0x2  = SEG_1040;
     iVar2->field_9e = 0x0;
     iVar2->field_0xa2 = 0x12c;
     uVar1             = str_op_1008_60e8(param_4, param_6);
@@ -1207,7 +1207,7 @@ void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2)
     uVar5              = (param_1 >> 0x10);
     iVar4              = param_1;
     param_1->field_0x0 = 0x840c;
-    (iVar4 + 0x2)      = &PTR_LOOP_1050_1040;
+    (iVar4 + 0x2)      = SEG_1040;
     puVar1             = (iVar4 + 0x70);
     u_var2              = (iVar4 + 0x72);
     if((u_var2 | puVar1) != 0x0)
@@ -1314,7 +1314,7 @@ void win_ui_op_1040_6d1a(Globals *globals,
         (**ppcVar1)();
         break;
     default:
-        pass1_1040_b54a(globals, param_1, param_2, param_3, param_4, in_DX, &globals->PTR_LOOP_1050_1040, unaff_SS);
+        pass1_1040_b54a(globals, param_1, param_2, param_3, param_4, in_DX, &SEG_1040, unaff_SS);
         return;
     case 0xfd:
         if(globals->DAT_1050_0ecc == 0x0)
@@ -1339,7 +1339,7 @@ void win_ui_op_1040_6d1a(Globals *globals,
     LAB_1040_6deb:
         u_var2   = (param_1 + 0x94);
         ppcVar1 = ((param_1 + 0x94) + 0x10);
-        (**ppcVar1)(&globals->PTR_LOOP_1050_1040, u_var2, (u_var2 >> 0x10));
+        (**ppcVar1)(&SEG_1040, u_var2, (u_var2 >> 0x10));
         pass1_1010_2ee2((param_1 + 0x94), unaff_SS, SEG_1010);
         PostMessage16(SEG_1010, 0x0, 0x0, 0x111010a);
         break;
@@ -1352,7 +1352,7 @@ void win_ui_op_1040_6d1a(Globals *globals,
         win_ui_op_1010_3202(*(param_1 + 0x94), iVar3, SEG_1010);
         break;
     case 0x10a:
-        GetClientRect16((HWND16)&globals->PTR_LOOP_1050_1040, &local_a);
+        GetClientRect16((HWND16)&SEG_1040, &local_a);
         u_var2     = (param_1 + 0x94);
         local_a.y = local_a.y + 0x3;
         local_a.x = (u_var2 + 0x1a) + -0x9;
@@ -1364,7 +1364,7 @@ void win_ui_op_1040_6d1a(Globals *globals,
         pass1_1010_2ee2((param_1 + 0x94), unaff_SS, SEG_1010);
         break;
     case 0x10c:
-        DestroyWindow16((HWND16)&globals->PTR_LOOP_1050_1040);
+        DestroyWindow16((HWND16)&SEG_1040);
     }
     return;
 }

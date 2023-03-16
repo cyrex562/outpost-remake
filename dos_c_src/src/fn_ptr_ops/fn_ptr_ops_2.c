@@ -1,6 +1,7 @@
 
 #include "fn_ptr_ops_2.h"
 
+#include "address_tables/address_table_1.h"
 #include "fn_ptr_ops_1.h"
 #include "fn_ptr_ops_3.h"
 #include "fn_ptr_ops_4.h"
@@ -56,8 +57,8 @@ void pass1_1038_33f8(Globals *globals, u16 *param_1)
 
     uVar5         = (param_1 >> 0x10);
     iVar4         = param_1;
-    param_1->field_0x0 = 0x6504;
-    (iVar4 + 0x2) = &globals->PTR_LOOP_1050_1038;
+    param_1->field_0x0 = addr_table_1038_6504;//0x6504;
+    (iVar4 + 0x2) = SEG_1038;
     puVar1        = (iVar4 + 0x14);
     u_var2         = (iVar4 + 0x16);
     if((u_var2 | puVar1) != 0x0)
@@ -586,7 +587,7 @@ void pass1_1038_16f2(Globals *globals,
             (**ppcVar2)(param_7, param_2, uStack22, (uStack22 >> 0x10));
             uVar5 = uVar15;
             pass1_1028_e1ec(globals->_PTR_LOOP_1050_65e2, uVar5, uVar10);
-            param_7 = 0x1030;
+            param_7 = SEG_1030;
             uVar15  = struct_op_1030_73a8(CONCAT22(uVar10, uVar5));
             uVar11  = (uVar15 >> 0x10);
             uVar9   = uVar15;
@@ -1420,8 +1421,8 @@ void  pass1_1030_b96c(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    param_1->field_0x0 = 0xbc0c;
-    (iVar3 + 0x2) = 0x1030;
+    param_1->field_0x0 = addr_table_1030_bc0c;// 0xbc0c;
+    (iVar3 + 0x2) = SEG_1030;
     p_var2        = (iVar3 + 0xe);
     uVar1         = (iVar3 + 0x10);
     if((uVar1 | p_var2) != 0x0)
@@ -1836,7 +1837,7 @@ void pass1_1030_a844(u32      param_1,
         puVar7   = iVar8->field_0xc;
         ppcVar3  = (*puVar7 + 0x10);
         pu_stack6 = puVar7;
-        (**ppcVar3)(&globals->PTR_LOOP_1050_1038, puVar7, (&iVar8->field_0xc + 0x2));
+        (**ppcVar3)(SEG_1038, puVar7, (&iVar8->field_0xc + 0x2));
         uStack10 = puVar7 & 0xffff | extraout_DX << 0x10;
         uVar15   = uVar8->field_0x4;
         lStack14 = (uVar15 + 0x8);
@@ -1997,7 +1998,7 @@ void  pass1_1030_aa18(u32 param_1, u16 *param_2, u16 param_3)
     iVar12 = (uVar19 + 0xc);
     if(0x5 < iVar12 - 0x7aU)
         goto LAB_1030_aadc;
-    uVar17 = 0x1030;
+    uVar17 = SEG_1030;
     switch(iVar12)
     {
     default:

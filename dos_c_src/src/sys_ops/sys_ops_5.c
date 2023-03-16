@@ -443,7 +443,7 @@ LAB_1020_eb4e:
     }
     else
     {
-        uVar8    = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8    = SUB42(SEG_1040, 0x0);
         iStack14 = string_1040_8520(CONCAT13((puStack56 >> 0x8), CONCAT12(puStack56, uStack58)), globals->PTR_LOOP_1050_0396, 0x24, 0x2, 0x57b, 0x5e8, puVar7, param_6);
     }
     puStack12 = CONCAT22(puVar7, iStack14);

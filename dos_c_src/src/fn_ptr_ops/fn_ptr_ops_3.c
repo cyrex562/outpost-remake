@@ -1,6 +1,8 @@
 #include "fn_ptr_ops_3.h"
 
+#include "address_tables/address_table_1.h"
 #include "fn_ptr_ops_4.h"
+#include "fn_ptr_ops_7.h"
 #include "op_int.h"
 #include "op_win_def.h"
 
@@ -16,8 +18,8 @@ void  pass1_1030_8a2c(u16 *param_1)
 
     uVar3            = (param_1 >> 0x10);
     iVar3            = (Struct613 *)param_1;
-    param_1->field_0x0 = 0x8e38;
-    iVar3->field_0x2 = 0x1030;
+    param_1->field_0x0 = addr_table_1030_8e38;// 0x8e38;
+    iVar3->field_0x2 = SEG_1030;
     iStack4          = 0x0;
     do
     {
@@ -373,8 +375,8 @@ void  pass1_1030_68dc(u16 *param_1, u16 param_2)
 
     uVar6            = (param_1 >> 0x10);
     iVar6            = (Struct611 *)param_1;
-    param_1->field_0x0 = 0x8114;
-    iVar6->field_0x2 = 0x1030;
+    param_1->field_0x0 = addr_table_1030_8114;// 0x8114;
+    iVar6->field_0x2 = SEG_1030;
     paVar4           = &iVar6->field_0x22;
     uVar1            = iVar6->field_0x24;
     if((uVar1 | paVar4) != 0x0)
@@ -521,8 +523,8 @@ void  pass1_1030_56b0(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    param_1->field_0x0 = 0x5bd0; // s_procLo_1050_5bd0;
-    (iVar3 + 0x2) = 0x1030;
+    param_1->field_0x0 = addr_table_1030_5bd0;// 0x5bd0; // s_procLo_1050_5bd0;
+    (iVar3 + 0x2) = SEG_1030;
     p_var2        = (iVar3 + 0x10);
     uVar1         = (iVar3 + 0x12);
     if((uVar1 | p_var2) != 0x0)
@@ -531,7 +533,6 @@ void  pass1_1030_56b0(u16 *param_1)
         fn_ptr_1000_17ce(p_var2, SEG_1000);
     }
     pass1_1030_18b2(param_1);
-    return;
 }
 
 
@@ -692,8 +693,8 @@ void  pass1_1030_29e6(u16 *param_1)
 
     uVar3            = (param_1 >> 0x10);
     iVar4            = (Struct607 *)param_1;
-    param_1->field_0x0 = 0x3130;
-    iVar4->field_0x2 = 0x1030;
+    param_1->field_0x0 = addr_table_1030_3130;// 0x3130;
+    iVar4->field_0x2 = SEG_1030;
     p_var2           = &iVar4->field_0x10;
     uVar1            = iVar4->field_0x12;
     if((uVar1 | p_var2) != 0x0)
@@ -702,7 +703,6 @@ void  pass1_1030_29e6(u16 *param_1)
         fn_ptr_1000_17ce(p_var2, SEG_1000);
     }
     pass1_1030_18b2(param_1);
-    return;
 }
 
 
@@ -736,8 +736,8 @@ void  pass1_1030_1244(u16 *param_1)
 
     uVar9            = (param_1 >> 0x10);
     iVar6            = (Struct606 *)param_1;
-    param_1->field_0x0 = 0x1624; // s_462_bmp_1050_1620 + 0x4;
-    iVar6->field_0x2 = 0x1030;
+    param_1->field_0x0 = addr_table_1030_1624;// 0x1624; // s_462_bmp_1050_1620 + 0x4;
+    iVar6->field_0x2 = SEG_1030;
     if(iVar6->field_0x1a_addr_offset != 0x0)
     {
         u_stack6 = 0x1;
@@ -1199,7 +1199,7 @@ void  pass1_1028_b418(u16 *param_1)
 
     uVar3         = (param_1 >> 0x10);
     iVar2         = param_1;
-    param_1->field_0x0 = 0xcf6a;
+    param_1->field_0x0 = addr_table_1028_cf6a;// 0xcf6a;
     (iVar2 + 0x2) = SEG_1028;
     iVar1         = (iVar2 + 0x12);
     if(((iVar1 == 0x4) || (iVar1 == 0x5)) || ((iVar1 == 0x6 && ((iVar1 = (iVar2 + 0x18), iVar1 == 0x4 || (iVar1 == 0x5))))))
@@ -1532,12 +1532,11 @@ void  pass1_1028_9992(u16 *param_1)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    param_1->field_0x0 = 0x9c52;
+    param_1->field_0x0 = addr_table_1028_9c52;// 0x9c52;
     (iVar1 + 0x2) = SEG_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
     *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
-    return;
 }
 
 
@@ -1862,7 +1861,7 @@ void  pass1_1028_8920(u32 param_1, u16 param_2, u16 param_3, u8 param_4)
         uVar7 = (iVar11 + 0x114U);
         pass1_1028_e2ac(globals->_PTR_LOOP_1050_65e2, 0x500);
         puStack18 = (uVar7 & 0xffff | ZEXT24(u_stack6) << 0x10);
-        uVar14    = 0x1030;
+        uVar14    = SEG_1030;
         pass1_1030_61fe(_PTR_LOOP_1050_5740, uVar7 & 0xffff | ZEXT24(u_stack6) << 0x10, param_1 & 0xff000000 | CONCAT12((param_1 >> 0x10), iVar11 + 0x114U), (iVar11 + 0x108), uVar7, u_stack6, param_3);
         uStack56 = 0x0;
         if(((iVar11 + 0x11a) == 0xa) || ((iVar11 + 0x11a) == 0x37))
@@ -1985,12 +1984,11 @@ void  pass1_1028_8dec(u16 *param_1)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    param_1->field_0x0 = 0x8fb0;
+    param_1->field_0x0 = addr_table_1028_8fb0; // 0x8fb0;
     (iVar1 + 0x2) = SEG_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
     *param_1      = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
-    return;
 }
 
 

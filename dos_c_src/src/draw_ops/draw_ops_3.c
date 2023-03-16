@@ -123,7 +123,7 @@ void invalidate_rect_1020_2ae4(Globals *globals,
                 puVar6 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x30, param_4, in_DX, unaff_DI);
                 uVar4  = (puVar6 >> 0x10);
                 pass1_1010_3770(puVar6, CONCAT22(uVar10, iVar3), uVar4);
-                pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c, (uVar5 + 0x8), 0x3, uVar4, uVar5, &globals->PTR_LOOP_1050_1038, param_4);
+                pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c, (uVar5 + 0x8), 0x3, uVar4, uVar5, SEG_1038, param_4);
                 return;
             }
             if(cVar2 == 'u')
@@ -1424,9 +1424,9 @@ void struct_1018_66cc(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4)
     iVar2                                    = (Struct20 *)param_1;
     &iVar2[0x1].field_0xc                    = 0x0;
     iVar2[0x1].field_0x10                    = 0x0;
-    param_1->field_0x0                       = 0x6880;
+    param_1->field_0x0                       = addr_table_1018_6880;
     iVar2->field_0x2                         = SEG_1018;
-    ((Struct20 *)(iVar2 + 0x1))->field_0x0 = 0x691c;
+    ((Struct20 *)(iVar2 + 0x1))->field_0x0 = addr_table_1018_6880[39];//0x691c
     iVar2[0x1].field_0x2                     = SEG_1018;
     pu_var2                                   = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0xb, param_4, extraout_DX, unaff_DI);
     uVar1                                    = (pu_var2 >> 0x10);
@@ -1449,7 +1449,7 @@ void pass1_1018_6924(Struct658 *param_1, u16 param_2, u16 param_3, i16 param_4, 
 
     set_struct_op_1020_921c(CONCAT22(param_2, param_1), param_3);
     &param_1->field_0x14       = 0x0;
-    param_1 =  0x6a02;
+    param_1 =  addr_table_1018_6a02;//0x6a02;
     param_1->field_0x2         = SEG_1018;
     puVar5                     = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0xb, param_5, extraout_DX, param_4);
     uVar4                      = (puVar5 >> 0x10);
@@ -1900,7 +1900,7 @@ i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3)
                     }
                     else
                     {
-                        uVar9 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+                        uVar9 = SUB42(SEG_1040, 0x0);
                         iVar6 = string_1040_8520(CONCAT22(puVar7, uVar5), globals->PTR_LOOP_1050_0396, 0x30, 0x2, 0x643, 0x645, puVar8, unaff_SS);
                     }
                     puStack16 = CONCAT22(puVar8, iVar6);

@@ -155,5 +155,6 @@ struct Struct18
     void*     field_9c; // u16
     u16 field_9e;
     Struct18 *field_0x94;
+    Struct18* field_0x98;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_18_H_

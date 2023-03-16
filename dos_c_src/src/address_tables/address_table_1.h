@@ -22,11 +22,13 @@
 #include "sys_ops/sys_ops_10.h"
 #include "sys_ops/sys_ops_2.h"
 #include "sys_ops/sys_ops_3.h"
+#include "sys_ops/sys_ops_4.h"
 #include "sys_ops/sys_ops_5.h"
 #include "sys_ops/sys_ops_6.h"
 #include "sys_ops/sys_ops_8.h"
 #include "sys_ops/sys_ops_9.h"
 #include "ui_ops/ui_ops_1.h"
+#include "ui_ops/ui_ops_2.h"
 #include "ui_ops/ui_ops_4.h"
 #include "ui_ops/ui_ops_5.h"
 #include "ui_ops/ui_ops_6.h"
@@ -539,11 +541,11 @@ void* addr_table_1010_02c8[] = {
 
 // SEG_1010:0ea8
 void* addr_table_1010_0e98[] = {
-     pass1_1010_0e46, // 1010:0e98  46  0e  10  10       addr
-           pass1_1010_1df2, //  1010:0e9c  f2  1d  10  10       addr
-           pass1_1010_0ad2, // 1010:0ea0  d2  0a  10  10       addr
-            file_1010_0c7c, // 1010:0ea4  7c  0c  10  10       addr
-             pass1_1010_0e6c, // 1010:0ea8  6c  0e  10  10       addr
+  pass1_1010_0e46, // 1010:0e98  46  0e  10  10       addr
+  pass1_1010_1df2, //  1010:0e9c  f2  1d  10  10       addr
+  pass1_1010_0ad2, // 1010:0ea0  d2  0a  10  10       addr
+  file_1010_0c7c,  // 1010:0ea4  7c  0c  10  10       addr
+  pass1_1010_0e6c, // 1010:0ea8  6c  0e  10  10       addr
 
 };
 
@@ -4231,7 +4233,7 @@ void* addr_table_1018_93de[] = {
   destroy_win_1008_628e,      // 1018:c3f6
   0,                          // FUN_1008_6328, // 1018:c3fa
   0,                          // FUN_1008_632c, // 1018:c3fe
-  pass1_1018_8b26,                           // 1018:9b2e *
+  pass1_1018_8b26,            // 1018:9b2e *
 };
 
 void* addr_table_1018_c8bc[] = {
@@ -5580,12 +5582,12 @@ void* addr_table_1020_7b86[] = {
 };
 
 void* addr_table_1020_7f72[] = {
-                                 pass1_1020_7f38, // 1020:7f72
-                                 pass1_1008_3a10, // 1020:7f76
+  pass1_1020_7f38, // 1020:7f72
+  pass1_1008_3a10, // 1020:7f76
 };
 
-  // - 1020:82b6 -> INVALID
-  void*addr_table_1020_82bc[] = {
+// - 1020:82b6 -> INVALID
+void* addr_table_1020_82bc[] = {
   0,                           // FUN_1020_8296, // 1020:82bc
   pass1_1008_68ea,             // 1020:82c0
   create_window_ex_1008_9760,  // 1020:82c4
@@ -6506,6 +6508,149 @@ void* addr_table_1038_ae4e[] = {
 //   mix_draw_op_1020_9312, // 1020:790a 12 93 20 10       addr
 // };
 
+void* addr_table_1040_8ddc[] = {
+  pass1_1040_8db6,             // 1040:8ddc
+  pass1_1008_3a10,             // 1040:8de0
+  dialog_ui_fn_1040_78e2,      // 1040:8de4
+  pass1_1040_79c0,             // 1040:8de8
+  pass1_1040_8b3c,             // 1040:8dec
+  destroy_win_1040_7b98,       // 1040:8df0
+  post_win_msg_1040_7f56,      // 1040:8df4
+  draw_op_1040_7bb2,           // 1040:8df8
+  post_win_msg_1040_7f1c,      // 1040:8dfc
+  destroy_win_1040_8212,       // 1040:8e00
+  menu_ui_op_1040_7f86,        // 1040:8e04
+  win_help_1040_800c,          // 1040:8e08
+  pass1_1040_8054,             // 1040:8e0c
+  set_text_bk_color_1040_7e5e, // 1040:8e10
+  unk_win_ui_op_1040_8158,     // 1040:8e14
+  check_dialog_msg_1040_81b6,  // 1040:8e18
+  win_ui_op_1040_81fe,         // 1040:8e1c
+  NULL,                        // FUN_1018_60ea, // 1040:8e20
+  pass1_1040_824a,             // 1040:8e24
+  NULL,                        // FUN_1040_8266, // 1040:8e28
+  pass1_1040_78de,             // 1040:8e2c
+  NULL,                        // FUN_1018_60ee, // 1040:8e30
+  NULL,                        // FUN_1018_60f4, // 1040:8e34
+  NULL,                        // FUN_1018_60fa, // 1040:8e38
+  mixed_draw_op_1040_8a06,     // 1040:8e3c
+  NULL,                        // FUN_1018_60fe, // 1040:8e40
+  pass1_1040_807e,             // 1040:8e44
+  pass1_1040_89a4,             // 1040:8e48
+  pass1_1040_8978,             // 1040:8e4c
+  win_ui_op_1040_8718,         // 1040:8e50
+  enable_win_1040_86dc,        // 1040:8e54
+};
+
+void* addr_table_1040_d07c[] = {
+  pass1_1040_d056,            // 1040:d07c
+  pass1_1008_3a10,            // 1040:d080
+  unk_win_ui_op_1040_b230,    // 1040:d084
+  pass1_1040_b316,            // 1040:d088
+  pass1_1040_cc8c,            // 1040:d08c
+  pass1_1040_caa6,            // 1040:d090
+  post_win_msg_1040_7f56,     // 1040:d094
+  draw_op_1040_7bb2,          // 1040:d098
+  post_win_msg_1040_7f1c,     // 1040:d09c
+  pass1_1038_8848,            // 1040:d0a0
+  menu_ui_op_1040_7f86,       // 1040:d0a4
+  win_help_1040_800c,         // 1040:d0a8
+  pass1_1040_8054,            // 1040:d0ac
+  win_ui_op_1040_b372,        // 1040:d0b0
+  unk_win_ui_op_1040_8158,    // 1040:d0b4
+  check_dialog_msg_1040_81b6, // 1040:d0b8
+  win_ui_op_1040_81fe,        // 1040:d0bc
+  NULL,                       // FUN_1018_60ea, // 1040:d0c0
+  pass1_1040_824a,            // 1040:d0c4
+  NULL,                       // FUN_1040_8266, // 1040:d0c8
+  pass1_1040_cc66,            // 1040:d0cc
+  pass1_1040_cdac,            // 1040:d0d0
+  NULL,                       // FUN_1018_60f4, // 1040:d0d4
+  pass1_1040_b4c8,            // 1040:d0d8
+  NULL,                       //  FUN_1038_8842, // 1040:d0dc
+  NULL,                       //  FUN_1018_60fe, // 1040:d0e0
+  pass1_1040_807e,            // 1040:d0e4
+  show_win_1040_b43c,         // 1040:d0e8
+  pass1_1040_b45e,            // 1040:d0ec
+  pass1_1040_b17c,            // 1040:d0f0
+  win_ui_op_1040_cace,        // 1040:d0f4
+
+};
+
+void* addr_table_1040_afc4[] = {
+  pass1_1040_af9e,            // 1040:afc4
+  pass1_1008_3a10,            // 1040:afc8
+  unk_win_ui_op_1040_b230,    // 1040:afcc
+  pass1_1040_b316,            // 1040:afd0
+  pass1_1040_ad24,            // 1040:afd4
+  destroy_window_1040_b726,   // 1040:afd8
+  post_win_msg_1040_7f56,     // 1040:afdc
+  draw_op_1040_7bb2,          // 1040:afe0
+  post_win_msg_1040_7f1c,     // 1040:afe4
+  pass1_1038_8848,            // 1040:afe8
+  menu_ui_op_1040_7f86,       // 1040:afec
+  win_help_1040_800c,         // 1040:aff0
+  pass1_1040_8054,            // 1040:aff4
+  win_ui_op_1040_b372,        // 1040:aff8
+  unk_win_ui_op_1040_8158,    // 1040:affc
+  check_dialog_msg_1040_81b6, // 1040:b000
+  win_ui_op_1040_81fe,        // 1040:b004
+  NULL,                       // FUN_1018_60ea, // 1040:b008
+  pass1_1040_824a,            // 1040:b00c
+  NULL,                       // FUN_1040_8266, // 1040:b010
+  pass1_1040_ad14,            // 1040:b014
+  NULL,                       // FUN_1018_60ee, // 1040:b018
+  NULL,                       // FUN_1018_60f4, // 1040:b01c
+  pass1_1040_b4c8,            // 1040:b020
+  NULL,                       // FUN_1038_8842, // 1040:b024
+  NULL,                       // FUN_1018_60fe, // 1040:b028
+  pass1_1040_807e,            // 1040:b02c
+  show_win_1040_b43c,         // 1040:b030
+  pass1_1040_b45e,            // 1040:b034
+  pass1_1040_b17c,            // 1040:b038
+  pass1_1038_884c,            // 1040:b03c
+
+};
+
+void* addr_table_1040_a230[] = {
+  pass1_1040_a204, // 1040:a230
+};
+
+void* addr_table_1040_d8b9[] = {
+  pass1_1040_d89e,            // 1040:d8c4
+  pass1_1008_3a10,            // 1040:d8c8
+  unk_win_ui_op_1040_b230,    // 1040:d8cc
+  pass1_1040_b316,            // 1040:d8d0
+  win_ui_op_1040_d2ac,        // 1040:d8d4
+  destroy_window_1040_b726,   // 1040:d8d8
+  post_win_msg_1040_7f56,     // 1040:d8dc
+  draw_op_1040_7bb2,          // 1040:d8e0
+  post_win_msg_1040_7f1c,     // 1040:d8e4
+  pass1_1038_8848,            // 1040:d8e8
+  menu_ui_op_1040_7f86,       // 1040:d8ec
+  win_help_1040_800c,         // 1040:d8f0
+  pass1_1040_8054,            // 1040:d8f4
+  win_ui_op_1040_b372,        // 1040:d8f8
+  unk_win_ui_op_1040_8158,    // 1040:d8fc
+  check_dialog_msg_1040_81b6, // 1040:d900
+  win_ui_op_1040_81fe,        // 1040:d904
+  NULL,                       // FUN_1018_60ea, // 1040:d908
+  pass1_1040_824a,            // 1040:d90c
+  NULL,                       // FUN_1040_8266, // 1040:d910
+  pass1_1040_d29c,            // 1040:d914
+  NULL,                       // FUN_1018_60ee, // 1040:d918
+  NULL,                       // FUN_1018_60f4, // 1040:d91c
+  pass1_1040_b4c8,            // 1040:d920
+  NULL,                       // FUN_1038_8842, // 1040:d924
+  NULL,                       // FUN_1018_60fe, // 1040:d928
+  pass1_1040_807e,            // 1040:d92c
+  show_win_1040_b43c,         // 1040:d930
+  pass1_1040_b45e,            // 1040:d934
+  pass1_1040_b17c,            // 1040:d938
+  pass1_1040_d76e,            // 1040:d93c
+
+};
+
 void* addr_table_1008_50a2[] = {
   pass1_1008_507c,                 // 1008:50a2  7c  50  08  10       addr *
   set_di_bits_to_device_1008_45d6, // 1008:50a6  d6  45  08  10       addr *
@@ -6563,6 +6708,348 @@ void* addr_table_1010_0f0c[] = {
   unk_win_ui_op_1018_4f18, // 1010:0f20  18  4f  18  10       addr
 };
 
+void* addr_table_1040_8f3c[] = {
+  pass1_1040_8f16,            // 1040:8f3c
+  pass1_1008_3a10,            // 1040:8f40
+  unk_win_ui_op_1040_b230,    // 1040:8f44
+  pass1_1040_b316,            // 1040:8f48
+  enable_window_1040_8ea0,    // 1040:8f4c
+  destroy_window_1040_b726,   // 1040:8f50
+  post_win_msg_1040_7f56,     // 1040:8f54
+  draw_op_1040_7bb2,          // 1040:8f58
+  post_win_msg_1040_7f1c,     // 1040:8f5c
+  pass1_1038_8848,            // 1040:8f60
+  menu_ui_op_1040_7f86,       // 1040:8f64
+  win_help_1040_800c,         // 1040:8f68
+  pass1_1040_8054,            // 1040:8f6c
+  win_ui_op_1040_b372,        // 1040:8f70
+  unk_win_ui_op_1040_8158,    // 1040:8f74
+  check_dialog_msg_1040_81b6, // 1040:8f78
+  win_ui_op_1040_81fe,        // 1040:8f7c
+  NULL,                       // FUN_1018_60ea, // 1040:8f80
+  pass1_1040_824a,            // 1040:8f84
+  NULL,                       // FUN_1040_8266, // 1040:8f88
+  pass1_1040_78de,            // 1040:8f8c
+  NULL,                       // FUN_1018_60ee, // 1040:8f90
+  NULL,                       // FUN_1018_60f4, // 1040:8f94
+  pass1_1040_b4c8,            // 1040:8f98
+  NULL,                       // FUN_1038_8842, // 1040:8f9c
+  NULL,                       // FUN_1018_60fe, // 1040:8fa0
+  pass1_1040_807e,            // 1040:8fa4
+  show_win_1040_b43c,         // 1040:8fa8
+  pass1_1040_b45e,            // 1040:8fac
+  pass1_1040_b17c,            // 1040:8fb0
+  pass1_1038_884c,            // 1040:8fb4
+
+};
+
+void* addr_table_1040_6f32[] = {
+  pass1_1040_6f0c,            // 1040:6f32
+  enable_win_1040_6880,       // 1040:6f36
+  mixed_win_ui_op_1040_6942,  // 1040:6f3a
+  pass1_1040_68d2,            // 1040:6f3e
+  pass1_1040_b54a,            // 1040:6f42
+  destroy_window_1040_b726,   // 1040:6f46
+  post_win_msg_1040_7f56,     // 1040:6f4a
+  draw_op_1040_7bb2,          // 1040:6f4e
+  post_win_msg_1040_7f1c,     // 1040:6f52
+  pass1_1040_692e,            // 1040:6f56
+  menu_ui_op_1040_7f86,       // 1040:6f5a
+  win_help_1040_800c,         // 1040:6f5e
+  pass1_1040_8054,            // 1040:6f62
+  win_ui_op_1040_b372,        // 1040:6f66
+  unk_win_ui_op_1040_8158,    // 1040:6f6a
+  check_dialog_msg_1040_81b6, // 1040:6f6e
+  win_ui_op_1040_81fe,        // 1040:6f72
+  NULL,                       // FUN_1018_60ea, // 1040:6f76
+  pass1_1040_824a,            // 1040:6f7a
+  NULL,                       // FUN_1040_8266, // 1040:6f7e
+  pass1_1040_78de,            // 1040:6f82
+  NULL,                       //  FUN_1018_60ee, // 1040:6f86
+  NULL,                       //  FUN_1018_60f4, // 1040:6f8a
+  pass1_1040_b4c8,            // 1040:6f8e
+  pass1_1040_6cfa,            // 1040:6f92
+  NULL,                       //  FUN_1018_60fe, // 1040:6f96
+  pass1_1040_807e,            // 1040:6f9a
+  show_win_1040_b43c,         // 1040:6f9e
+  pass1_1040_b45e,            // 1040:6fa2
+  pass1_1040_b17c,            // 1040:6fa6
+  pass1_1038_884c,            // 1040:6faa
+  pass1_1040_6cac,            // 1040:6fae
+  win_ui_op_1040_6d1a,        // 1040:6fb2
+
+};
+
+void* addr_table_1040_55a2[] = {
+  pass1_1040_557c,            // 1040:55a2
+  pass1_1008_3a10,            // 1040:55a6
+  set_win_pos_1040_4f96,      // 1040:55aa
+  pass1_1040_4f28,            // 1040:55ae
+  pass1_1040_b54a,            // 1040:55b2
+  destroy_window_1040_b726,   // 1040:55b6
+  post_win_msg_1040_7f56,     // 1040:55ba
+  draw_op_1040_7bb2,          // 1040:55be
+  post_win_msg_1040_7f1c,     // 1040:55c2
+  pass1_1040_4f82,            // 1040:55c6
+  menu_ui_op_1040_7f86,       // 1040:55ca
+  win_help_1040_800c,         // 1040:55ce
+  pass1_1040_8054,            // 1040:55d2
+  win_ui_op_1040_b372,        // 1040:55d6
+  unk_win_ui_op_1040_8158,    // 1040:55da
+  check_dialog_msg_1040_81b6, // 1040:55de
+  win_ui_op_1040_81fe,        // 1040:55e2
+  NULL,                       // FUN_1018_60ea, // 1040:55e6
+  pass1_1040_824a,            // 1040:55ea
+  NULL,                       //  FUN_1040_8266, // 1040:55ee
+  pass1_1040_78de,            // 1040:55f2
+  NULL,                       //  FUN_1018_60ee, // 1040:55f6
+  NULL,                       //  FUN_1018_60f4, // 1040:55fa
+  pass1_1040_b4c8,            // 1040:55fe
+  pass1_1040_5238,            // 1040:5602
+  NULL,                       //  FUN_1018_60fe, // 1040:5606
+  pass1_1040_807e,            // 1040:560a
+  show_win_1040_b43c,         // 1040:560e
+  pass1_1040_b45e,            // 1040:5612
+  pass1_1040_b17c,            // 1040:5616
+  pass1_1038_884c,            // 1040:561a
+  win_ui_op_1040_52c0,        // 1040:561e
+  destroy_win_1040_5256,      // 1040:5622
+
+};
+
+void* addr_table_1040_2e26[] = {
+  pass1_1040_2e00,            // 1040:2e26
+  pass1_1008_3a10,            // 1040:2e2a
+  dlg_ui_op_1040_2a64,        // 1040:2e2e
+  pass1_1040_b316,            // 1040:2e32
+  win_ui_op_1040_2bb2,        // 1040:2e36
+  destroy_window_1040_b726,   // 1040:2e3a
+  post_win_msg_1040_7f56,     // 1040:2e3e
+  draw_op_1040_7bb2,          // 1040:2e42
+  post_win_msg_1040_7f1c,     // 1040:2e46
+  pass1_1038_8848,            // 1040:2e4a
+  menu_ui_op_1040_7f86,       // 1040:2e4e
+  win_help_1040_800c,         // 1040:2e52
+  pass1_1040_8054,            // 1040:2e56
+  win_ui_op_1040_b372,        // 1040:2e5a
+  unk_win_ui_op_1040_8158,    // 1040:2e5e
+  check_dialog_msg_1040_81b6, // 1040:2e62
+  win_ui_op_1040_81fe,        // 1040:2e66
+  NULL,                       // FUN_1018_60ea, // 1040:2e6a
+  pass1_1040_824a,            // 1040:2e6e
+  NULL,                       // FUN_1040_8266, // 1040:2e72
+  pass1_1040_78de,            // 1040:2e76
+  NULL,                       //  FUN_1018_60ee, // 1040:2e7a
+  NULL,                       //  FUN_1018_60f4, // 1040:2e7e
+  pass1_1040_b4c8,            // 1040:2e82
+  NULL,                       //  FUN_1038_8842, // 1040:2e86
+  NULL,                       //   FUN_1018_60fe, // 1040:2e8a
+  pass1_1040_807e,            // 1040:2e8e
+  show_win_1040_b43c,         // 1040:2e92
+  win_dlg_item_1040_2d48,     // 1040:2e96
+  pass1_1040_b17c,            // 1040:2e9a
+  pass1_1040_2dac,            // 1040:2e9e
+};
+
+void* addr_table_1038_90c8[] = {
+  pass1_1038_90a2,             // 1038:90c8
+  pass1_1008_3a10,             // 1038:90cc
+  unk_win_ui_op_1040_b230,     // 1038:90d0
+  pass1_1040_b316,             // 1038:90d4
+  pass1_1038_8d98,             // 1038:90d8
+  destroy_window_1040_b726,    // 1038:90dc
+  post_win_msg_1040_7f56,      // 1038:90e0
+  draw_op_1040_7bb2,           // 1038:90e4
+  post_win_msg_1040_7f1c,      // 1038:90e8
+  pass1_1038_8848,             // 1038:90ec
+  menu_ui_op_1040_7f86,        // 1038:90f0
+  win_help_1040_800c,          // 1038:90f4
+  pass1_1040_8054,             // 1038:90f8
+  win_ui_op_1040_b372,         // 1038:90fc
+  unk_win_ui_op_1040_8158,     // 1038:9100
+  check_dialog_msg_1040_81b6,  // 1038:9104
+  win_ui_op_1040_81fe,         // 1038:9108
+  NULL,                        // FUN_1018_60ea, // 1038:910c
+  pass1_1040_824a,             // 1038:9110
+  NULL,                        // FUN_1040_8266, // 1038:9114
+  pass1_1038_8d7e,             // 1038:9118
+  NULL,                        // FUN_1018_60ee, // 1038:911c
+  NULL,                        //  FUN_1018_60f4, // 1038:9120
+  pass1_1040_b4c8,             // 1038:9124
+  NULL,                        //   FUN_1038_8842, // 1038:9128
+  NULL,                        //   FUN_1018_60fe, // 1038:912c
+  pass1_1040_807e,             // 1038:9130
+  show_win_1040_b43c,          // 1038:9134
+  pass1_1040_b45e,             // 1038:9138
+  pass1_1040_b17c,             // 1038:913c
+  send_dlg_item_msg_1038_8d22, // 1038:9140
+
+};
+
+void* addr_table_1038_78de[] = {
+  pass1_1038_78b8, // 1038:78de
+
+};
+
+void* addr_table_1038_309a[] = {
+  pass1_1038_3074, // 1038:309a
+  pass1_1038_2b2e, // 1038:309e
+  pass1_1038_2ac2, // 1038:30a2
+  pass1_1038_2b9a, // 1038:30a6
+
+};
+
+void* addr_table_1038_6504[] = {
+  pass1_1038_64de, // 1038:6504
+  pass1_1030_177a, // 1038:6508
+  pass1_1038_5860, // 1038:650c
+  pass1_1038_5e16, // 1038:6510
+  file_1038_6118,  // 1038:6514
+  pass1_1030_1972, // 1038:6518
+  pass1_1030_18f0, // 1038:651c
+
+};
+
+void* addr_table_1028_cf6a[] = {
+  pass1_1028_cf44,         // 1028:cf6a
+  pass1_1028_bb56,         // 1028:cf6e
+  NULL,                    // FUN_1030_178e, // 1028:cf72
+  write_to_file_1028_b5ec, // 1028:cf76
+  file_1028_b81a,          // 1028:cf7a
+  pass1_1028_bc1c,         // 1028:cf7e
+  pass1_1028_bd38,         // 1028:cf82
+  pass1_1028_bc90,         // 1028:cf86
+  pass1_1028_bc7e,         // 1028:cf8a
+  pass1_1028_b514,         // 1028:cf8e
+  pass1_1028_be2a,         // 1028:cf92
+  NULL,                    // FUN_1028_bf16, // 1028:cf96
+  NULL,                    // FUN_1028_bf1a, // 1028:cf9a
+  NULL,                    // FUN_1028_bf1e, // 1028:cf9e
+  pass1_1028_be9e,         // 1028:cfa2
+  pass1_1028_bf22,         // 1028:cfa6
+  pass1_1028_bbf0,         // 1028:cfaa
+  pass1_1028_bc02,         // 1028:cfae
+  pass1_1028_b5a8,         // 1028:cfb2
+  pass1_1028_b5ca,         // 1028:cfb6
+  NULL,                    // FUN_1028_b4e6, // 1028:cfba
+  NULL,                    // FUN_1028_b4ec, // 1028:cfbe
+  pass1_1028_b46e,         // 1028:cfc2
+  pass1_1028_c64a,         // 1028:cfc6
+  pass1_1028_c522,         // 1028:cfca
+  pass1_1028_ced2,         // 1028:cfce
+
+};
+
+void* addr_table_1028_9c52[] = {
+  pass1_1028_9c2c, // 1028:9c52
+  pass1_1028_99c4, // 1028:9c56
+  pass1_1028_9a02, // 1028:9c5a
+  pass1_1028_9b48, // 1028:9c5e
+
+};
+
+void* addr_table_1028_8fb0[] = {
+  pass1_1028_8f8a, // 1028:8fb0
+  pass1_1028_8e1e, // 1028:8fb4
+  pass1_1028_8e5c, // 1028:8fb8
+  pass1_1028_8ea6, // 1028:8fbc
+
+};
+
+void* addr_table_1028_6876[] = {
+  pass1_1028_6850, // 1028:6876
+  pass1_1028_bb56, // 1028:687a
+  NULL,            // FUN_1030_178e, // 1028:687e
+  pass1_1028_64d6, // 1028:6882
+  pass1_1028_65e2, // 1028:6886
+  pass1_1028_bc1c, // 1028:688a
+  pass1_1028_bd38, // 1028:688e
+  pass1_1028_bc90, // 1028:6892
+  pass1_1028_bc7e, // 1028:6896
+  pass1_1028_b514, // 1028:689a
+  pass1_1028_be2a, // 1028:689e
+  NULL,            // FUN_1028_bf16, // 1028:68a2
+  NULL,            // FUN_1028_bf1a, // 1028:68a6
+  NULL,            // FUN_1028_bf1e, // 1028:68aa
+  pass1_1028_be9e, // 1028:68ae
+  pass1_1028_bf22, // 1028:68b2
+  pass1_1028_6822, // 1028:68b6
+  pass1_1028_bc02, // 1028:68ba
+  pass1_1028_b5a8, // 1028:68be
+  pass1_1028_b5ca, // 1028:68c2
+  NULL,            // FUN_1028_b4e6, // 1028:68c6
+  NULL,            // FUN_1028_b4ec, // 1028:68ca
+  pass1_1028_61c4, // 1028:68ce
+  pass1_1028_c64a, // 1028:68d2
+  pass1_1028_c522, // 1028:68d6
+  pass1_1028_ced2, // 1028:68da
+
+};
+
+void* addr_table_1028_3e2c[] = {
+    pass1_1028_3e06, // 1028:3e2c
+    pass1_1028_bb56, // 1028:3e30
+    NULL, // FUN_1030_178e, // 1028:3e34
+    write_to_file_1028_3d0e, // 1028:3e38
+    pass1_1028_3d92, // 1028:3e3c
+    pass1_1028_bc1c, // 1028:3e40
+    pass1_1028_bd38, // 1028:3e44
+    pass1_1028_38d4, // 1028:3e48
+    pass1_1028_bc7e, // 1028:3e4c
+    pass1_1028_b514, // 1028:3e50
+    pass1_1028_be2a, // 1028:3e54
+  NULL, //  FUN_1028_bf16, // 1028:3e58
+    pass1_1028_3958, // 1028:3e5c
+  NULL, //   FUN_1028_bf1e, // 1028:3e60
+    pass1_1028_be9e, // 1028:3e64
+    pass1_1028_bf22, // 1028:3e68
+    pass1_1028_3c60, // 1028:3e6c
+    pass1_1028_bc02, // 1028:3e70
+    pass1_1028_b5a8, // 1028:3e74
+    pass1_1028_b5ca, // 1028:3e78
+  NULL, //  FUN_1028_b4e6, // 1028:3e7c
+  NULL, //   FUN_1028_b4ec, // 1028:3e80
+    pass1_1028_b46e, // 1028:3e84
+    pass1_1028_c64a, // 1028:3e88
+    pass1_1028_c522, // 1028:3e8c
+    pass1_1028_ced2, // 1028:3e90
+    
+};
+
+void *addr_table_1040_c53e[] = {
+    pass1_1028_3e06, // 1028:3e2c
+    pass1_1028_bb56, // 1028:3e30
+  NULL, // FUN_1030_178e, // 1028:3e34
+    write_to_file_1028_3d0e, // 1028:3e38
+    pass1_1028_3d92, // 1028:3e3c
+    pass1_1028_bc1c, // 1028:3e40
+    pass1_1028_bd38, // 1028:3e44
+    pass1_1028_38d4, // 1028:3e48
+    pass1_1028_bc7e, // 1028:3e4c
+    pass1_1028_b514, // 1028:3e50
+    pass1_1028_be2a, // 1028:3e54
+    NULL, // FUN_1028_bf16, // 1028:3e58
+    pass1_1028_3958, // 1028:3e5c
+  NULL, // FUN_1028_bf1e, // 1028:3e60
+    pass1_1028_be9e, // 1028:3e64
+    pass1_1028_bf22, // 1028:3e68
+    pass1_1028_3c60, // 1028:3e6c
+    pass1_1028_bc02, // 1028:3e70
+    pass1_1028_b5a8, // 1028:3e74
+    pass1_1028_b5ca, // 1028:3e78
+  NULL, // FUN_1028_b4e6, // 1028:3e7c
+  NULL, // FUN_1028_b4ec, // 1028:3e80
+    pass1_1028_b46e, // 1028:3e84
+    pass1_1028_c64a, // 1028:3e88
+    pass1_1028_c522, // 1028:3e8c
+    pass1_1028_ced2, // 1028:3e90
+    pass1_1040_c518, // 1040:c53e
+    invalidate_rect_1040_c028, // 1040:c542
+    unk_draw_op_1040_c226, // 1040:c546
+    
+};
+
+
 static void* data_1050_4430;
 static void* data_1050_4436;
 static void* data_1050_4454;
@@ -6577,7 +7064,7 @@ static void* data_1050_4470;
 static void* data_1050_448e;
 static void* data_1050_44ac;
 static void* data_1050_4496;
-
+static void* data_1050_44a4;
 
 
 #endif // ADDRESS_TABLE_1_H_

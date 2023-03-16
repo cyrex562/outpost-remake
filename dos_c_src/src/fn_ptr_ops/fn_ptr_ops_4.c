@@ -1,5 +1,6 @@
 
 #include "address_tables/address_table_1.h"
+#include "fn_ptr_ops_7.h"
 Struct18 * pass1_1028_7472(Struct18 *param_1, u8 param_2)
 
 {
@@ -361,7 +362,7 @@ void  pass1_1028_6186(u16 *param_1)
 
     uVar4            = (param_1 >> 0x10);
     iVar4            = (Struct603 *)param_1;
-    param_1->field_0x0 = 0x6876;
+    param_1->field_0x0 = addr_table_1028_6876;//0x6876;
     iVar4->field_0x2 = SEG_1028;
     puVar1           = iVar4->field_0x20;
     u_var2            = iVar4->field_0x22;
@@ -661,7 +662,7 @@ void  pass1_1028_388e(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    param_1->field_0x0 = 0x3e2c;
+    param_1->field_0x0 = addr_table_1028_3e2c; // 0x3e2c;
     (iVar3 + 0x2) = SEG_1028;
     p_var2        = (iVar3 + 0x28);
     uVar1         = (iVar3 + 0x2a);
@@ -671,7 +672,6 @@ void  pass1_1028_388e(u16 *param_1)
         fn_ptr_1000_17ce(p_var2, SEG_1000);
     }
     pass1_1028_b418(param_1);
-    return;
 }
 
 

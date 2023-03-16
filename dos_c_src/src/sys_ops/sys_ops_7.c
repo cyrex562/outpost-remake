@@ -1073,7 +1073,7 @@ void  pass1_1010_c58as(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u16 p
         else
         {
             *piStack26 = iStack16;
-            pass1_1000_5586(0xa564, &PTR_LOOP_1050_1040, iStack16, 0xa, u_var2 + 0x2, puVar5);
+            pass1_1000_5586(0xa564, SEG_1040, iStack16, 0xa, u_var2 + 0x2, puVar5);
             (uVar1 + 0x2) = u_var2 + 0x2;
             (uVar1 + 0x4) = puVar5;
         }

@@ -39,8 +39,8 @@ void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 
     //uVar4              = (param_1 >> 0x10);
     //iVar4              = (Struct513 *)param_1;
-    param_1->field_0x0 = 0xd8c4;
-    param_1->field_0x2 = 0x1040; // globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_d8c4;//0xd8c4;
+    param_1->field_0x2 = SEG_1040; // SEG_1040;
     pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c,
                     param_1->field_0x6);
     pvoid_var_a = param_1->field_9c;
@@ -49,7 +49,7 @@ void pass1_1040_d1bc(Globals* globals, Struct18 *param_1)
 if (pvoid_var_a != NULL)
 {
         fn_ptr_a = pvoid_var_a;
-        (fn_ptr_a)(&globals->PTR_LOOP_1050_1038, pvoid_var_a, 0x1);
+        (fn_ptr_a)(SEG_1038, pvoid_var_a, 0x1);
     }
     unk_draw_op_1040_b0f8(globals, param_1);
 }
@@ -59,8 +59,8 @@ void pass1_1040_ca74(Globals* globals, Struct18 *param_1)
 {
 //    u16 u16_var_1;
     //uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xd07c;
-    param_1->field_0x2 = 0x1040; //globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_d07c;//0xd07c;
+    param_1->field_0x2 = SEG_1040; //SEG_1040;
     pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c,
                     param_1->field_0x6);
     globals->PTR_LOOP_1050_5f10 = 0x0;
@@ -564,8 +564,8 @@ LAB_1040_b41a:
 void pass1_1040_ace8(Globals *globals, Struct18 *param_1)
 
 {
-    param_1->field_0x0 = 0xafc4;
-    (param_1->field_0x2)    = globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_afc4;//0xafc4;
+    (param_1->field_0x2)    = SEG_1040;
     pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c, (param_1->field_0x6));
     unk_draw_op_1040_b0f8(globals,param_1);
 }
@@ -659,8 +659,8 @@ u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2)
 //    iVar3         = param_1;
     *param_1      = addr_table_1008_380a[32] ;   //0x389a;
     param_1->field_0x2 = SEG_1008;
-    param_1->field_0x0 = 0xa230;
-    param_1->field_0x2 = &globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_a230;//0xa230;
+    param_1->field_0x2 = SEG_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals->s_OPButton_1050_5ece);
     (param_1 + 0x54)               = 0x3;
     cursor_handle_1                = LoadCursor16(SEG_1000, 0x7f00);
@@ -904,8 +904,8 @@ void mixed_draw_op_1040_8a06(Globals *globals, u32 param_1, HWND16 param_2, u16 
 void pass1_1040_8e82(Globals *globals, Struct18 *param_1)
 
 {
-    param_1->field_0x0 = 0x8f3c;
-    (param_1->field_0x2)    = &globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_8f3c;//0x8f3c;
+    (param_1->field_0x2)    = SEG_1040;
     unk_draw_op_1040_b0f8(globals, param_1);
 }
 
@@ -1261,8 +1261,8 @@ Struct18 *pass1_1040_6360(Struct18 *param_1, u8 param_2)
 void pass1_1040_6862(Struct18 *param_1)
 
 {
-    param_1->field_0x0 = 0x6f32;
-    param_1->field_0x2 = &PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_6f32;//0x6f32;
+    param_1->field_0x2 = SEG_1040;
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1283,8 +1283,8 @@ Struct18 *pass1_1040_4df2(Struct18 *param_1, u8 param_2)
 void pass1_1040_4f0a(Struct18 *param_1)
 
 {
-    param_1->field_0x0 = 0x55a2;
-    param_1->field_0x2 = &PTR_LOOP_1050_1040;
+    param_1->field_0x0 = addr_table_1040_55a2; // 0x55a2;
+    param_1->field_0x2 = SEG_1040;
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1549,15 +1549,15 @@ LAB_1040_286e:
 void pass1_1040_2a22(Struct18 *param_1)
 
 {
-    Struct625 *iVar1;
-    u16          uVar1;
-
-    uVar1              = (param_1 >> 0x10);
-    iVar1              = (Struct625 *)param_1;
-    param_1->field_0x0 = 0x2e26;
-    iVar1->field_0x2   = &PTR_LOOP_1050_1040;
-    fn_ptr_1000_17ce(iVar1->field_0x94, SEG_1000);
-    fn_ptr_1000_17ce(iVar1->field_0x98, SEG_1000);
+//    Struct625 *iVar1;
+//    u16          uVar1;
+//
+//    uVar1              = (param_1 >> 0x10);
+//    iVar1              = (Struct625 *)param_1;
+    param_1->field_0x0 = addr_table_1040_2e26; // 0x2e26;
+    param_1->field_0x2   = SEG_1040;
+    fn_ptr_1000_17ce(param_1->field_0x94, SEG_1000);
+    fn_ptr_1000_17ce(param_1->field_0x98, SEG_1000);
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1860,7 +1860,7 @@ void pass1_1038_8cf6(Struct18 *param_1)
     u16 uVar1;
 
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x90c8;
+    param_1->field_0x0 = addr_table_1038_90c8;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     unk_draw_op_1040_b0f8(param_1);
@@ -1926,7 +1926,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
             else
             {
                 paStack16 = iStack12;
-                pass1_1000_5586(0xa564, &PTR_LOOP_1050_1040, iStack12, 0xa, uVar3 + 0x2, puVar7);
+                pass1_1000_5586(0xa564, SEG_1040, iStack12, 0xa, uVar3 + 0x2, puVar7);
                 uVar1         = (param_1 + 0x90);
                 uVar8         = (uVar1 >> 0x10);
                 iVar4         = uVar1;
@@ -1964,7 +1964,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
                             param_3,
                             param_4,
                             in_DX,
-                            &PTR_LOOP_1050_1040,
+                            SEG_1040,
                             param_6);
             return;
         }

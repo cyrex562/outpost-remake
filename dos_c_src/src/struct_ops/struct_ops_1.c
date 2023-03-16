@@ -33,8 +33,8 @@ Struct442* struct_1040_bf3e(Globals* globals, Struct65 *param_1, u16 param_2)
     param_1->field_0x0         = addr_table_1008_3aa0[4]; // 0x3ab0;
     param_1->field_0x2         = SEG_1008;
     param_1->field_0x6         = 0x0;
-    param_1->field_0x0         = 0xc53e;
-    param_1->field_0x2 = SEG_1040;//&globals->PTR_LOOP_1050_1040;
+    param_1->field_0x0         = addr_table_1040_c53e;// 0xc53e;
+    param_1->field_0x2 = SEG_1040;//SEG_1040;
     return param_1;
 }
 
@@ -55,7 +55,7 @@ void pass1_1040_b7ee(Globals* globals, struct Struct57 *param_1, long param_2, u
     (param_1->field_0xb4) = 0x0;
     (param_1->field_0xb6) = 0x0;
     param_1->field_0x0        = 0xbeba;
-    (param_1->field_0x2)  = &globals->PTR_LOOP_1050_1040;
+    (param_1->field_0x2)  = SEG_1040;
     if(param_2 != 0x0)
     {
         uVar3          = (param_2 >> 0x10);
@@ -79,7 +79,7 @@ void pass1_1040_a640(Globals* globals, struct Struct57 *param_1, u32 param_2, u1
     (param_1->field_0x98)  = 0x0;
     (param_1->field_0xea)  = 0x0;
     param_1         = 0xac08;
-    (param_1->field_0x2)   = &globals->PTR_LOOP_1050_1040;
+    (param_1->field_0x2)   = SEG_1040;
     return;
 }
 
@@ -152,7 +152,7 @@ void  pass1_1040_4e94(struct Struct57 *param_1, long param_2, u16 param_3)
     (iVar1 + 0xb4) = 0x0;
     (iVar1 + 0xb6) = 0x0;
     param_1        = 0x55a2;
-    (iVar1 + 0x2)  = &PTR_LOOP_1050_1040;
+    (iVar1 + 0x2)  = SEG_1040;
     if(param_2 != 0x0)
     {
         uVar3          = (param_2 >> 0x10);
@@ -209,7 +209,7 @@ void  pass1_1040_3966(
     iVar1->field_0xa2  = 0x0;
     iVar1->field_0xa4  = 0x5;
     param_1            = 0x3ffc;
-    iVar1->field_0x2   = &PTR_LOOP_1050_1040;
+    iVar1->field_0x2   = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3c, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -227,7 +227,7 @@ struct Struct57 * pas1_1040_29c2(Struct57 *param_1, u32 param_2, u16 param_3, u1
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
     param_1       = 0x2e26;
-    (iVar1 + 0x2) = &PTR_LOOP_1050_1040;
+    (iVar1 + 0x2) = SEG_1040;
     load_string_1010_84ac(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
     (iVar1 + 0x94) = param_4;
     (iVar1 + 0x96) = param_5;

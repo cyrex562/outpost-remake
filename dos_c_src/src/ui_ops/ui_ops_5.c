@@ -1392,7 +1392,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
             }
             else
             {
-                uVar12    = SUB42(&PTR_LOOP_1050_1040, 0x0);
+                uVar12    = SUB42(SEG_1040, 0x0);
                 paStack38 = pass1_1040_8478(CONCAT22(puVar7, uVar6), 0x40, CONCAT13(uVar15, CONCAT12(unaff_SS, local_aa)), CONCAT22(unaff_SS, local_2aa), globals->PTR_LOOP_1050_0396, puVar7 | uVar6);
             }
             puVar8  = (paStack38 >> 0x10);
@@ -1442,7 +1442,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
             }
             else
             {
-                uVar12  = SUB42(&PTR_LOOP_1050_1040, 0x0);
+                uVar12  = SUB42(SEG_1040, 0x0);
                 puVar10 = string_1040_8520(NULL,
                                      CONCAT13((puVar7 >> 0x8), CONCAT12(puVar7, puVar4)),
                                      globals->PTR_LOOP_1050_0396,
@@ -2690,7 +2690,7 @@ void  window_op_1020_38aa(Struct0 *param_1)
     }
     else
     {
-        HVar9 = (HWND16)&PTR_LOOP_1050_1040;
+        HVar9 = (HWND16)SEG_1040;
         get_sys_metrics_1040_7728(CONCAT22(puVar7, uVar8), 0x1, 0x0, 0xfc0, (uVar11 + 0x8));
         (uVar11 + 0x10a) = uVar8;
         (uVar11 + 0x10c) = u_var2;

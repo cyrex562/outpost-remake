@@ -70,7 +70,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         }
         else
         {
-            uVar10 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+            uVar10 = SUB42(SEG_1040, 0x0);
             iVar3  = string_1040_8520(CONCAT22(puVar7, uVar4), 0x0, 0x10, 0x2, 0x5de, 0x5dd, puVar6, param_2);
         }
         puStack14 = CONCAT22(puVar6, iVar3);

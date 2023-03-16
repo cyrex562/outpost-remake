@@ -29,7 +29,7 @@ void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     iVar8->field_0x98 = 0x0;
     iVar8->field_9c   = 0x0;
     param_1           = 0x6386;
-    iVar8->field_0x2  = &PTR_LOOP_1050_1040;
+    iVar8->field_0x2  = SEG_1040;
     mem_op_1000_179c(0x18, param_4, SEG_1000);
     puVar3 = (param_4 | u_var2);
     if(puVar3 == 0x0)
@@ -55,7 +55,7 @@ void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     else
     {
         *piStack12 = iVar4;
-        pass1_1000_5586(0xa564, &PTR_LOOP_1050_1040, iVar4, 0xa, u_var2 + 0x2, puVar3);
+        pass1_1000_5586(0xa564, SEG_1040, iVar4, 0xa, u_var2 + 0x2, puVar3);
         pi_var1        = iVar8->field_0x90;
         uVar5         = (pi_var1 >> 0x10);
         iVar4         = pi_var1;
@@ -424,7 +424,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         uVar5 = param_4 | param_5;
         if(uVar5 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_181c(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, uVar5, param_7);
         paVar9 = CONCAT22(uVar5, param_5);
         break;
@@ -447,7 +447,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         uVar5 = param_4 | param_5;
         if(uVar5 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_23ea(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, param_7, uVar5);
         paVar9 = CONCAT22(uVar5, param_5);
         break;
@@ -455,7 +455,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         mem_op_1000_179c(0x92, param_4, SEG_1000);
         if((param_4 | param_5) == 0x0)
             goto LAB_1038_afa0;
-        uVar8  = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8  = SUB42(SEG_1040, 0x0);
         paVar9 = pass1_1040_06e8(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, (param_4 | param_5), param_7);
         break;
     case 0x7:
@@ -463,7 +463,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_4068(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -533,7 +533,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         mem_op_1000_179c(0x92, param_4, SEG_1000);
         if((param_4 | param_5) == 0x0)
             goto LAB_1038_afa0;
-        uVar8  = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8  = SUB42(SEG_1040, 0x0);
         paVar9 = pass1_1040_0bfc(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, (param_4 | param_5), unaff_DI, param_7);
         break;
     case 0x11:
@@ -541,7 +541,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_0e1c(CONCAT22(param_4, param_5), 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -564,7 +564,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         uVar5 = param_4 | param_5;
         if(uVar5 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_1f5a(CONCAT22(param_4, param_5), param_2, unaff_DI, param_7);
         paVar9 = CONCAT22(uVar5, param_5);
         break;
@@ -598,7 +598,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_1cb4(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -606,7 +606,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         mem_op_1000_179c(0x92, param_4, SEG_1000);
         if((param_4 | param_5) == 0x0)
             goto LAB_1038_afa0;
-        uVar8  = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8  = SUB42(SEG_1040, 0x0);
         paVar9 = pass1_1040_123e(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, (param_4 | param_5), unaff_DI, param_7);
         break;
     case 0x1b:
@@ -653,7 +653,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_2ea2(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -662,7 +662,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_3966(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -671,7 +671,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_34a2(CONCAT22(param_4, param_5), 0x0, 0x0, 0x0, param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -680,7 +680,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_ac84(CONCAT22(param_4, param_5), param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -689,7 +689,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_ca16(CONCAT22(param_4, param_5), param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
@@ -698,7 +698,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         uVar5 = param_4 | param_5;
         if(uVar5 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_d0f8(CONCAT22(param_4, param_5), param_2);
         paVar9 = CONCAT22(uVar5, param_5);
         break;
@@ -716,7 +716,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         puVar4 = (param_4 | param_5);
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
-        uVar8 = SUB42(&PTR_LOOP_1050_1040, 0x0);
+        uVar8 = SUB42(SEG_1040, 0x0);
         pass1_1040_6402(CONCAT22(param_4, param_5), param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;

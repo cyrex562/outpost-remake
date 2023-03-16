@@ -1000,7 +1000,7 @@ void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3)
         {
             uStack780 = 0x14ba;
         }
-        _uStack780 = CONCAT22(0x1050, uStack780);
+        _uStack780 = uStack780;
     }
     else
     {
@@ -1008,7 +1008,6 @@ void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3)
     }
     pass1_1000_3cea(CONCAT22(param_3, local_108), _uStack780);
     set_err_mode_1010_8b14(param_1, CONCAT22(param_3, local_108), param_3);
-    return;
 }
 
 void pass1_1010_85be(u32 param_1, i16 param_2, i16 param_3, u16 param_4)
@@ -1030,7 +1029,6 @@ void pass1_1010_85be(u32 param_1, i16 param_2, i16 param_3, u16 param_4)
         return;
     }
     set_err_mode_1010_8b14(param_1, *(param_3 * 0x4 + 0x2e34), param_4);
-    return;
 }
 
 void pass1_1010_6034(u32 param_1, u16 param_2)
