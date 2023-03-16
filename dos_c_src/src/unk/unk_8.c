@@ -349,7 +349,7 @@ void  pass1_1028_4530(u16 *param_1)
 
     uVar5         = (param_1 >> 0x10);
     iVar4         = param_1;
-    *param_1      = 0x4836;
+    param_1->field_0x0 = 0x4836;
     (iVar4 + 0x2) = SEG_1028;
     puVar1        = (iVar4 + 0x20);
     u_var2         = (iVar4 + 0x22);
@@ -1536,7 +1536,7 @@ void  pass1_1028_2042(u16 *param_1, u16 param_2)
 
     uVar5            = (param_1 >> 0x10);
     iVar5            = (Struct602 *)param_1;
-    *param_1         = 0x2572;
+    param_1->field_0x0 = 0x2572;
     iVar5->field_0x2 = SEG_1028;
     uVar4            = &iVar5->field_0x20;
     (uVar4 + 0xa)    = 0x1;

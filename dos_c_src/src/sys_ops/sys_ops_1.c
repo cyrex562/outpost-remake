@@ -941,7 +941,7 @@ void  make_proc_inst_1038_cf6c(u16 *param_1, u8 *param_2, LPVOID param_3)
     (iVar2 + 0x2)            = SEG_1008;
     (iVar2 + 0x4)            = 0x0;
     (iVar2 + 0x8)            = 0x0;
-    *param_1                 = 0xd23e;
+    param_1->field_0x0 = 0xd23e;
     (iVar2 + 0x2)            = 0x1038//&PTR_LOOP_1050_1038;
     globals->_PTR_LOOP_1050_5bc8      = param_1;
     pvVar1                   = MakeProcInstance16(param_3, globals->PTR_LOOP_1050_038c);
@@ -961,7 +961,7 @@ void  free_proc_inst_1038_cfda(u16 *param_1, LPVOID param_2)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    *param_1      = 0xd23e;
+    param_1->field_0x0 = 0xd23e;
     (iVar1 + 0x2) = SEG_1038;
     FreeProcInstance16(param_2);
     FreeProcInstance16(LAST_SEGMENT);
@@ -1216,7 +1216,7 @@ void  pass1_1038_9144(u16 *param_1, u16 param_2, u16 param_3)
     (iVar5 + 0x94) = 0x0;
     (iVar5 + 0x96) = 0x0;
     (iVar5 + 0x98) = 0x0;
-    *param_1       = 0x99a2;
+    param_1->field_0x0 = 0x99a2;
     (iVar5 + 0x2)  = SEG_1038;
     (iVar5 + 0x8a) = 0x27;
     puVar9         = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x28, param_3, in_DX, unaff_DI);
@@ -1584,7 +1584,7 @@ void  pass1_1038_30aa(u16 *param_1, u16 param_2)
     iVar5->field_0x214  = 0x0;
     iVar5->field_0x216  = 0x0;
     iVar5->field_0x21a  = 0x0;
-    *param_1            = 0x6504;
+    param_1->field_0x0 = 0x6504;
     iVar5->field_0x2    = SEG_1038;
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x26), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0xba), 0x0, 0x94);
@@ -1657,7 +1657,7 @@ void  pass1_1038_3222(u16 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 *p
     iVar5->field_0x214  = 0x0;
     iVar5->field_0x216  = 0x0;
     iVar5->field_0x21a  = 0x0;
-    *param_1            = 0x6504;
+    param_1->field_0x0 = 0x6504;
     iVar5->field_0x2    = SEG_1038;
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x26), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0xba), 0x0, 0x94);

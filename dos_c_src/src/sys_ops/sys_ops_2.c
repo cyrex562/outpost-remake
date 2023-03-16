@@ -466,7 +466,7 @@ void  pass1_1030_ae6c(u16 *param_1)
     u_var2              = 0x0;
     iVar4->field_0xe   = 0x0;
     &iVar4->field_0x10 = 0x0;
-    *param_1           = 0xb932;
+    param_1->field_0x0 = 0xb932;
     iVar4->field_0x2   = 0x1030;
     mem_op_1000_179c(0xc, puVar3, SEG_1000);
     if((puVar3 | u_var2) == 0x0)
@@ -506,7 +506,7 @@ void  pass1_1030_aefa(u16 *param_1, u32 param_2)
     puVar3             = (puVar6 >> 0x10);
     iVar5->field_0xe   = 0x0;
     &iVar5->field_0x10 = 0x0;
-    *param_1           = 0xb932;
+    param_1->field_0x0 = 0xb932;
     iVar5->field_0x2   = 0x1030;
     iVar5->field_0x4   = (param_2 + 0x4);
     puVar6             = (param_1 & 0xffff0000 | &iVar5->field_0x8);
@@ -1370,7 +1370,7 @@ void  pass1_1030_314c(u16 *param_1, u32 param_2, u8 *param_3, u16 param_4)
     iVar1->field_0x1a8 = 0x5;
     iVar1->field_0x1aa = 0x0;
     iVar1->field_0x1ae = 0x10;
-    *param_1           = 0x3af2;
+    param_1->field_0x0 = 0x3af2;
     iVar1->field_0x2   = 0x1030;
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | &iVar1->field_0x4), 0x0, 0x16c);
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | &iVar1->field_0x18c), 0x0, 0x18);
@@ -1923,7 +1923,7 @@ u16 * struct_1030_17ce(u16 *param_1, u32 param_2, u32 param_3)
     uVar3             = (param_1 >> 0x10);
     paVar1            = struct_1030_1628(param_1);
     &iVar3->field_0xc = 0x0;
-    *param_1          = 0x1a16;
+    param_1->field_0x0 = 0x1a16;
     iVar3->field_0x2  = 0x1030;
     if((param_3 != 0x0) || (param_2 != 0x0))
     {
@@ -1954,7 +1954,7 @@ u16 * pass1_1030_183c(u16 *param_1, u32 param_2, u32 param_3, u32 param_4, u32 p
     u_var2 = (param_1 >> 0x10);
     pass1_1030_165e(param_1, param_4, param_5, param_7);
     &iVar2->field_0xc = 0x0;
-    *param_1          = 0x1a16;
+    param_1->field_0x0 = 0x1a16;
     iVar2->field_0x2  = 0x1030;
     if((param_3 != 0x0) || (param_2 != 0x0))
     {

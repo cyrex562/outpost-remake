@@ -9,7 +9,7 @@ u16 * struct_1030_be34(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0xc006;
+    param_1->field_0x0 = 0xc006;
     param_1->field_0x2 = 0x1030;
     return param_1;
 }
@@ -26,7 +26,7 @@ void  struct_1030_c06e(u16 *param_1)
     iVar1             = (Struct188 *)param_1;
     iVar1->field_0x20 = 0x0;
     iVar1->field_0x24 = 0x0;
-    *param_1          = 0xc68e;
+    param_1->field_0x0 = 0xc68e;
     iVar1->field_0x2  = 0x1030;
     return;
 }
@@ -40,7 +40,7 @@ u16 * struct_1030_c6f6(u16 *param_1)
     struct_1028_b354(param_1);
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
-    *param_1         = 0xc940;
+    param_1->field_0x0 = 0xc940;
     param_1->field_0x2 = 0x1030;
     return param_1;
 }
@@ -56,7 +56,7 @@ u16 * struct_1030_c9a8(u16 *param_1)
     u_var2          = (param_1 >> 0x10);
     iVar1          = param_1;
     (iVar1 + 0x98) = 0x1;
-    *param_1       = 0xd88e;
+    param_1->field_0x0 = 0xd88e;
     (iVar1 + 0x2)  = 0x1030;
     pass1_1000_4906((Struct20 *)(param_1 & 0xffff0000 | (iVar1 + 0x20)), 0x0, 0x78);
     return param_1;
@@ -100,7 +100,7 @@ void  pass1_1030_afa6(u16 *param_1)
 
     uVar5            = (param_1 >> 0x10);
     iVar5            = (Struct614 *)param_1;
-    *param_1         = 0xb932;
+    param_1->field_0x0 = 0xb932;
     iVar5->field_0x2 = 0x1030;
     if(&iVar5->field_0x10 != 0x0)
     {

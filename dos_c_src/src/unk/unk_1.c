@@ -210,7 +210,7 @@ void  pass1_1040_bf92(u16 *param_1, u16 param_2)
 
     uVar1            = (param_1 >> 0x10);
     iVar1            = (Struct514 *)param_1;
-    *param_1         = 0xc53e;
+    param_1->field_0x0 = 0xc53e;
     iVar1->field_0x2 = &PTR_LOOP_1050_1040;
     pass1_1010_1ea6(iVar1->field_0x6, param_1 & 0xffff | uVar1 << 0x10, param_2);
     unk_destroy_win_op_1010_2fa0(iVar1->field_0x6, SEG_1010);

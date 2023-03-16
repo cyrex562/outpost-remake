@@ -6563,4 +6563,21 @@ void* addr_table_1010_0f0c[] = {
   unk_win_ui_op_1018_4f18, // 1010:0f20  18  4f  18  10       addr
 };
 
+static void* data_1050_4430;
+static void* data_1050_4436;
+static void* data_1050_4454;
+static void* data_1050_443c;
+static void* data_1050_4448;
+static void* data_1050_4464;
+static void* data_1050_4482;
+static void* data_1050_4488;
+static void* data_1050_446a;
+static void* data_1050_447a;
+static void* data_1050_4470;
+static void* data_1050_448e;
+static void* data_1050_44ac;
+static void* data_1050_4496;
+
+
+
 #endif // ADDRESS_TABLE_1_H_

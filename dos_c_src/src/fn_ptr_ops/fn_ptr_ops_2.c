@@ -56,7 +56,7 @@ void pass1_1038_33f8(Globals *globals, u16 *param_1)
 
     uVar5         = (param_1 >> 0x10);
     iVar4         = param_1;
-    *param_1      = 0x6504;
+    param_1->field_0x0 = 0x6504;
     (iVar4 + 0x2) = &globals->PTR_LOOP_1050_1038;
     puVar1        = (iVar4 + 0x14);
     u_var2         = (iVar4 + 0x16);
@@ -1420,7 +1420,7 @@ void  pass1_1030_b96c(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    *param_1      = 0xbc0c;
+    param_1->field_0x0 = 0xbc0c;
     (iVar3 + 0x2) = 0x1030;
     p_var2        = (iVar3 + 0xe);
     uVar1         = (iVar3 + 0x10);

@@ -676,7 +676,7 @@ void pass1_1040_c5ac(u16 *param_1)
 
     uVar5                       = (param_1 >> 0x10);
     iVar4                       = param_1;
-    *param_1                    = 0xc9f2;
+    param_1->field_0x0 = 0xc9f2;
     (iVar4 + 0x2)               = &PTR_LOOP_1050_1040;
     globals->PTR_LOOP_1050_5f02 = globals->PTR_LOOP_1050_5f02 + -0x1;
     if(PTR_LOOP_1050_5f02 == 0x0)
@@ -2397,18 +2397,18 @@ void dialog_ui_fn_1040_78e2(Globals    *globals,
                     (u16)globals->_PTR_LOOP_1050_5bcc,
                     CONCAT22(0xfffc, (globals->_PTR_LOOP_1050_5bcc >> 0x10)));
     u_var2 = &local_struct_1->field_0x6;
-    uVar10 = SUB42(&globals->USHORT_1050_1050, 0x0);
+    uVar10 = SUB42(0x1050, 0x0);
     SetProp16((HWND16)LAST_SEGMENT, local_struct_1, globals->s_thisLo_1050_5dcd);
     uVar9 = &local_struct_1->field_0x6;
-    uVar8 = SUB42(&globals->USHORT_1050_1050, 0x0);
+    uVar8 = SUB42(0x1050, 0x0);
     SetProp16((HWND16)LAST_SEGMENT, local_string_1, globals->s_thisHi_1050_5dd4);
     local_string_2 = lVar3;
     uVar7          = &local_struct_1->field_0x6;
-    uVar6          = SUB42(&globals->USHORT_1050_1050, 0x0);
+    uVar6          = SUB42(0x1050, 0x0);
     SetProp16((HWND16)LAST_SEGMENT, local_string_2, globals->s_procLo_1050_5ddb);
     pCStack8 = (lVar3 >> 0x10);
     uVar5    = &local_struct_1->field_0x6;
-    uVar4    = SUB42(&globals->USHORT_1050_1050, 0x0);
+    uVar4    = SUB42(0x1050, 0x0);
     SetProp16((HWND16)LAST_SEGMENT, pCStack8, globals->s_procHi_1050_5de2);
     ppcVar1 = (in_struct_1->field_0x0 + 0x50);
     (**ppcVar1)(

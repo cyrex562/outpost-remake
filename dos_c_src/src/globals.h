@@ -997,7 +997,7 @@ struct Globals
 typedef struct Globals Globals;
 
 static u16 LAST_SEGMENT = 0x1538;
-static u16 SEG_1000 = 0x1000;
+static u16 SEG_1000     = 0x1000;
 static u16 SEG_1018     = 0x1018;
 static u16 SEG_1010     = 0x1010;
 static u16 SEG_1008     = 0x1008;
@@ -1007,4 +1007,4 @@ static u16 SEG_1030     = 0x1030;
 static u16 SEG_1038     = 0x1038;
 static u16 SEG_1040     = 0x1040;
 static u16 SEG_1048     = 0x1048;
-static u16 SEG_1050     = 0x1050;
+static u16 SEG_1050     = SEG_1050;

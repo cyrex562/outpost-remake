@@ -2356,7 +2356,7 @@ LAB_1000_266c:
         } while(true);
     }
 LAB_1000_26e8:
-    pCStack2                    = &globals->USHORT_1050_1050;
+    pCStack2                    = SEG_1050;
     iVar9                       = -((globals->PTR_LOOP_1050_5fb8 + (globals->PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9 + 0x1) & 0xfffe);
     globals->PTR_LOOP_1050_5fba = (&param_1 + iVar9);
     pcVar13                     = (&param_1 + (globals->PTR_LOOP_1050_5fb8 + 0x1) * 0x4 + iVar9);

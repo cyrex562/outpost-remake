@@ -1420,7 +1420,7 @@ u16 * pass1_1028_b204(u16 *param_1)
     struct_1030_1628(param_1);
     uVar1           = (param_1 >> 0x10);
     (param_1 + 0xc) = 0x0;
-    *param_1        = 0xb33c;
+    param_1->field_0x0 = 0xb33c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1442,7 +1442,7 @@ void  struct_1028_b354(u16 *param_1)
     iVar1->field_0x18 = 0x0;
     iVar1->field_0x1a_addr_offset = 0x0;
     iVar1->field_0x1c_addr_base = 0x0;
-    *param_1          = 0xcf6a;
+    param_1->field_0x0 = 0xcf6a;
     iVar1->field_0x2  = SEG_1028;
     iVar1->field_0x16 = 0x0;
     iVar1->field_0x14 = 0x0;
@@ -1466,7 +1466,7 @@ void  pass1_1028_b39e(u16 *param_1, i16 param_2, u32 param_3, u16 param_4)
     iVar1->field_0x18 = 0x0;
     iVar1->field_0x1a_addr_offset = 0x0;
     iVar1->field_0x1c_addr_base = 0x0;
-    *param_1          = 0xcf6a;
+    param_1->field_0x0 = 0xcf6a;
     iVar1->field_0x2  = SEG_1028;
     pass1_1028_bf76(param_1 & 0xffff | uVar1 << 0x10, 0x0);
     iVar1->field_0x14 = 0x0;
@@ -1753,7 +1753,7 @@ u16 * struct_1028_50d8(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x5280;
+    param_1->field_0x0 = 0x5280;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1763,7 +1763,7 @@ u16 * struct_1028_52e8(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x535e;
+    param_1->field_0x0 = 0x535e;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1773,7 +1773,7 @@ u16 * struct_1028_53c6(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x54bc;
+    param_1->field_0x0 = 0x54bc;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1783,7 +1783,7 @@ u16 * pass1_1028_5524(u16 *param_1, u8 *param_2)
 
 {
     struct_1028_0068(param_1, param_2);
-    *param_1        = 0x55c8;
+    param_1->field_0x0 = 0x55c8;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1793,7 +1793,7 @@ u16 * struct_1028_5630(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x56ac;
+    param_1->field_0x0 = 0x56ac;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1803,7 +1803,7 @@ u16 * struct_1028_57a6(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x581c;
+    param_1->field_0x0 = 0x581c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1813,7 +1813,7 @@ u16 * pass1_1028_5884(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    *param_1        = 0x58fe;
+    param_1->field_0x0 = 0x58fe;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1958,7 +1958,7 @@ u16 * struct_1028_5ed8(u16 *param_1)
     struct_1028_b354(param_1);
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
-    *param_1         = 0x6054;
+    param_1->field_0x0 = 0x6054;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1975,7 +1975,7 @@ u16 * struct_1028_60bc(u16 *param_1, u16 param_2, u8 *param_3)
     u_var2 = (param_1 >> 0x10);
     struct_1028_b354(param_1);
     &iVar2->field_0x20 = 0x0;
-    *param_1           = 0x6876;
+    param_1->field_0x0 = 0x6876;
     iVar2->field_0x2   = SEG_1028;
     mem_op_1000_179c(0xc, param_3, SEG_1000);
     if((param_3 | param_2) == 0x0)

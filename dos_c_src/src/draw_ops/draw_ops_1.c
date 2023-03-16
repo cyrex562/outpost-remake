@@ -659,7 +659,7 @@ u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2)
 //    iVar3         = param_1;
     *param_1      = addr_table_1008_380a[32] ;   //0x389a;
     param_1->field_0x2 = SEG_1008;
-    *param_1      = 0xa230;
+    param_1->field_0x0 = 0xa230;
     param_1->field_0x2 = &globals->PTR_LOOP_1050_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals->s_OPButton_1050_5ece);
     (param_1 + 0x54)               = 0x3;

@@ -727,7 +727,7 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
     (iVar4 + 0x3c) = 0x2;
     (iVar4 + 0x3e) = 0x0;
     (iVar4 + 0x40) = param_2;
-    *param_1       = 0x9800;
+    param_1->field_0x0 = 0x9800;
     (iVar4 + 0x2)  = &PTR_LOOP_1050_1040;
     uVar1          = (iVar4 + 0x36);
     (iVar4 + 0x28) = uVar1;
@@ -794,7 +794,7 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
 
     uVar6         = (param_1 >> 0x10);
     iVar5         = param_1;
-    *param_1      = 0x9800;
+    param_1->field_0x0 = 0x9800;
     (iVar5 + 0x2) = &PTR_LOOP_1050_1040;
     if((iVar5 + 0x38) != 0x0)
     {

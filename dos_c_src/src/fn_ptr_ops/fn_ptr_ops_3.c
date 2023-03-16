@@ -16,7 +16,7 @@ void  pass1_1030_8a2c(u16 *param_1)
 
     uVar3            = (param_1 >> 0x10);
     iVar3            = (Struct613 *)param_1;
-    *param_1         = 0x8e38;
+    param_1->field_0x0 = 0x8e38;
     iVar3->field_0x2 = 0x1030;
     iStack4          = 0x0;
     do
@@ -373,7 +373,7 @@ void  pass1_1030_68dc(u16 *param_1, u16 param_2)
 
     uVar6            = (param_1 >> 0x10);
     iVar6            = (Struct611 *)param_1;
-    *param_1         = 0x8114;
+    param_1->field_0x0 = 0x8114;
     iVar6->field_0x2 = 0x1030;
     paVar4           = &iVar6->field_0x22;
     uVar1            = iVar6->field_0x24;
@@ -521,7 +521,7 @@ void  pass1_1030_56b0(u16 *param_1)
 
     uVar4         = (param_1 >> 0x10);
     iVar3         = param_1;
-    *param_1      = 0x5bd0; // s_procLo_1050_5bd0;
+    param_1->field_0x0 = 0x5bd0; // s_procLo_1050_5bd0;
     (iVar3 + 0x2) = 0x1030;
     p_var2        = (iVar3 + 0x10);
     uVar1         = (iVar3 + 0x12);
@@ -692,7 +692,7 @@ void  pass1_1030_29e6(u16 *param_1)
 
     uVar3            = (param_1 >> 0x10);
     iVar4            = (Struct607 *)param_1;
-    *param_1         = 0x3130;
+    param_1->field_0x0 = 0x3130;
     iVar4->field_0x2 = 0x1030;
     p_var2           = &iVar4->field_0x10;
     uVar1            = iVar4->field_0x12;
@@ -736,7 +736,7 @@ void  pass1_1030_1244(u16 *param_1)
 
     uVar9            = (param_1 >> 0x10);
     iVar6            = (Struct606 *)param_1;
-    *param_1         = 0x1624; // s_462_bmp_1050_1620 + 0x4;
+    param_1->field_0x0 = 0x1624; // s_462_bmp_1050_1620 + 0x4;
     iVar6->field_0x2 = 0x1030;
     if(iVar6->field_0x1a_addr_offset != 0x0)
     {
@@ -1199,7 +1199,7 @@ void  pass1_1028_b418(u16 *param_1)
 
     uVar3         = (param_1 >> 0x10);
     iVar2         = param_1;
-    *param_1      = 0xcf6a;
+    param_1->field_0x0 = 0xcf6a;
     (iVar2 + 0x2) = SEG_1028;
     iVar1         = (iVar2 + 0x12);
     if(((iVar1 == 0x4) || (iVar1 == 0x5)) || ((iVar1 == 0x6 && ((iVar1 = (iVar2 + 0x18), iVar1 == 0x4 || (iVar1 == 0x5))))))
@@ -1532,7 +1532,7 @@ void  pass1_1028_9992(u16 *param_1)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    *param_1      = 0x9c52;
+    param_1->field_0x0 = 0x9c52;
     (iVar1 + 0x2) = SEG_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
     *param_1      = addr_table_1008_380a[36]; // 0x389a
@@ -1985,7 +1985,7 @@ void  pass1_1028_8dec(u16 *param_1)
 
     u_var2         = (param_1 >> 0x10);
     iVar1         = param_1;
-    *param_1      = 0x8fb0;
+    param_1->field_0x0 = 0x8fb0;
     (iVar1 + 0x2) = SEG_1028;
     fn_ptr_1000_17ce((iVar1 + 0x114), SEG_1000);
     *param_1      = addr_table_1008_380a[36]; // 0x389a

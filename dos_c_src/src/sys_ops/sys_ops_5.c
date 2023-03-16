@@ -78,7 +78,7 @@ void  struct_1028_37a6(u16 *param_1, u8 *param_2, u16 param_3, u16 param_4)
     iVar3->field_0x20  = 0x0;
     iVar3->field_0x24  = 0x0;
     &iVar3->field_0x28 = 0x0;
-    *param_1           = 0x3e2c;
+    param_1->field_0x0 = 0x3e2c;
     iVar3->field_0x2   = SEG_1028;
     mem_op_1000_179c(0xa, param_2, SEG_1000);
     u_var2 = param_2 | uVar1;
@@ -140,7 +140,7 @@ void  struct_1028_1f56(u16 *param_1, u8 *param_2)
     u_var2              = 0x0;
     &iVar3->field_0x20 = 0x0;
     iVar3->field_0x24  = 0x0;
-    *param_1           = 0x2572;
+    param_1->field_0x0 = 0x2572;
     iVar3->field_0x2   = SEG_1028;
     mem_op_1000_179c(0xc, param_2, SEG_1000);
     if((param_2 | u_var2) == 0x0)

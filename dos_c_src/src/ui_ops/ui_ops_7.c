@@ -563,7 +563,7 @@ void win_ui_cursor_op_1008_06c0(Globals *globals, u32 *param_1, u32 param_2, u16
             pass1_1018_262e(uStack10);
             pass1_1030_8326();
             pcVar4 = load_string_1010_847e(globals->PCHAR_1050_14cc, (u16)(globals->PCHAR_1050_14cc >> 0x10), SEG_1010);
-            sys_1000_3f9c(local_5a, unaff_SS, 0x109, &globals->USHORT_1050_1050, pcVar4, &stack0xfffe, uVar3, SEG_1000, unaff_SS, in_AF);
+            sys_1000_3f9c(local_5a, unaff_SS, 0x109, 0x1050, pcVar4, &stack0xfffe, uVar3, SEG_1000, unaff_SS, in_AF);
             ppcVar1 = (*param_1 + 0x14);
             (**ppcVar1)(SEG_1000, param_1, (param_1 >> 0x10), 0x0, local_5a);
             puVar5 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x37, unaff_SS, extraout_DX, unaff_DI);

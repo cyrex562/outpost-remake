@@ -794,7 +794,7 @@ u16 * pass1_1028_b22c(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
     pass1_1030_165e(param_1, 0x6000000, param_3, param_4);
     uVar1           = (param_1 >> 0x10);
     (param_1 + 0xc) = param_2;
-    *param_1        = 0xb33c;
+    param_1->field_0x0 = 0xb33c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -803,7 +803,7 @@ u16 * pass1_1028_b22c(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
 void  pass1_1028_b260(u16 *param_1)
 
 {
-    *param_1        = 0xb33c;
+    param_1->field_0x0 = 0xb33c;
     param_1->field_0x2 = SEG_1028;
     pass1_1030_16b2(param_1);
     return;

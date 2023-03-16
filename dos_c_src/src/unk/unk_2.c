@@ -263,7 +263,7 @@ u16 * pass1_1038_a33c(u16 *param_1, u16 param_2)
 
     uVar1 = (param_1 >> 0x10);
     pass1_1038_a122(param_1, uVar1, 0x1, 0x0, CONCAT22(param_2, 0xfc7));
-    *param_1        = 0xa428;
+    param_1->field_0x0 = 0xa428;
     param_1->field_0x2 = SEG_1038;
     return param_1;
 }
@@ -290,7 +290,7 @@ u16 * pass1_1038_a494(u16 *param_1, u16 param_2)
 
     uVar1 = (param_1 >> 0x10);
     pass1_1038_a122(param_1, uVar1, 0x1, 0x0, CONCAT22(param_2, 0xfc8));
-    *param_1        = 0xa62e;
+    param_1->field_0x0 = 0xa62e;
     param_1->field_0x2 = SEG_1038;
     return param_1;
 }
@@ -317,7 +317,7 @@ u16 * pass1_1038_a69a(u16 *param_1, u16 param_2)
 
     uVar1 = (param_1 >> 0x10);
     pass1_1038_a122(param_1, uVar1, 0x1, 0x0, CONCAT22(param_2, 0xfc9));
-    *param_1        = 0xa832;
+    param_1->field_0x0 = 0xa832;
     param_1->field_0x2 = SEG_1038;
     return param_1;
 }
@@ -344,7 +344,7 @@ u16 * pass1_1038_a89e(u16 *param_1, u16 param_2)
 
     uVar1 = (param_1 >> 0x10);
     pass1_1038_a122(param_1, uVar1, 0x1, 0x0, CONCAT22(param_2, 0xfca));
-    *param_1        = 0xab16;
+    param_1->field_0x0 = 0xab16;
     param_1->field_0x2 = SEG_1038;
     return param_1;
 }

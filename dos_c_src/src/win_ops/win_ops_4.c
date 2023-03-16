@@ -30,7 +30,7 @@ void def_win_proc_1008_5632(Globals *globals,
     u16         u_var2;
     u32 *pu_stack6;
 
-    u_var2    = 0x1050;
+    u_var2    = SEG_1050;
     pu_stack6 = GetWindowLong16(unaff_CS, 0x0);
     if(((pu_stack6 >> 0x10) | pu_stack6) == 0x0)
     {
