@@ -33,7 +33,7 @@ u16 *pass1_1010_37d4(u16 *param_1)
     struct_1010_383a(param_1);
     (param_1 + 0x16) = 0x0;
     *param_1         = addr_table_1010_3b3e;//0x3b3e;
-    (param_1 + 0x2)  = SEG_1010;
+    param_1->field_0x2 = SEG_1010;
     return param_1;
 }
 
@@ -114,7 +114,7 @@ u32 pass1_1010_0eac(Globals *globals,
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
     param_1 =  0xf0c;
-    (param_1 + 0x2)             = SEG_1010;
+    param_1->field_0x2 = SEG_1010;
     globals->PTR_LOOP_1050_4230 = param_1;
     globals->PTR_LOOP_1050_4232 = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0xff, param_4, param_5);
@@ -236,7 +236,7 @@ void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
         iVar10->field_0xc = uStack36;
         ppcVar1           = &iVar9->field_0x3c;
         uVar5             = uStack36;
-        (**ppcVar1)(&USHORT_1050_1028, param_1, uStack24, puVar10, uVar11, puVar12, puVar3, uVar13);
+        (**ppcVar1)(SEG_1028, param_1, uStack24, puVar10, uVar11, puVar12, puVar3, uVar13);
         iVar10->field_0x10 = uVar5;
         iVar10->field_0x12 = extraout_DX_04;
         iVar10->field_0x14 = uStack36;
@@ -274,7 +274,7 @@ u16 *pass1_1008_eabc(i16 param_1, u16 param_2, u16 param_3)
     (param_1 + 0xa) = 0x0;
     pass1_1008_3e38(CONCAT22(param_2, param_1 + 0xc));
     param_1 =  addr_table_1008_eb1a;//0xeb1a;
-    (param_1 + 0x2)            = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     return param_1;
 }
 
@@ -286,7 +286,7 @@ void pass1_1008_eb2a(i16 param_1, u16 param_2, u16 param_3)
     (param_1 + 0xa)            = 0x0;
     (param_1 + 0xc)            = 0x0;
     param_1 =  addr_table_1008_ec00;//0xec00;
-    (param_1 + 0x2)            = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     return;
 }
 
@@ -296,7 +296,7 @@ u16 *pass1_1008_ec10(i16 param_1, u16 param_2, u16 param_3)
     struct_op_1010_1d48((Struct79 *)CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa)            = 0x0;
     param_1 =  addr_table_1008_ec62;//0xec62;
-    (param_1 + 0x2)            = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     return param_1;
 }
 
@@ -305,7 +305,7 @@ u16 *struct_1008_ec72(u16 *param_1)
 {
     struct_1010_383a(param_1);
     *param_1        = addr_table_1008_ef9c[10];//0xefc4;
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     return param_1;
 }
 
@@ -341,7 +341,7 @@ u16 *pass1_1008_d72e(i16 param_1, u16 param_2, u16 param_3)
     struct_op_1010_1d48((Struct79 *)CONCAT22(param_2, param_1), param_3);
     (param_1 + 0xa)            = 0x0;
     param_1 =  addr_table_1008_d780;//0xd780;
-    (param_1 + 0x2)            = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     return param_1;
 }
 
@@ -432,7 +432,7 @@ void pass1_1008_d99e(i16 param_1, u16 param_2, u16 param_3, u8 *param_4, u16 par
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
     param_1 =  addr_table_1008_d9fa;//0xd9fa;
-    (param_1 + 0x2)            = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x9a, param_4, param_5);
     globals->_PTR_LOOP_1050_4230 = CONCAT22(param_2, param_1);
     return;
@@ -659,7 +659,7 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     }
     uVar1                = fn_ptr_op_1000_1708(0x1aa, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, SEG_1000);
     param_1              = uVar1;
-    (param_1 + 0x2)      = globals->PTR_LOOP_1050_5f2e;
+    param_1->field_0x2 = globals->PTR_LOOP_1050_5f2e;
     uVar3                = (*param_1 >> 0x10);
     iVar2                = (Struct139 *)*param_1;
     iVar2->field_0x6     = 0x6e4;
@@ -1008,7 +1008,7 @@ u32 pass1_1008_aefe(u8 *param_1, u8 *param_2, u16 param_3, u8 *param_4, u16 para
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
     param_1 =  addr_table_1008_af7c;//0xaf7c;
-    (param_1 + 0x2)             = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     globals->PTR_LOOP_1050_4230 = param_1;
     globals->PTR_LOOP_1050_4232 = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3, param_4, param_5);

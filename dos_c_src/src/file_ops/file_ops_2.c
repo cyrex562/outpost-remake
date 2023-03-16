@@ -268,7 +268,7 @@ void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                 {
                     iVar14->field_0x16 = local_404;
                     iVar14->field_0x1a_addr_offset = local_406;
-                    puVar8             = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_5, puVar6, unaff_DI);
+                    puVar8             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2f, param_5, puVar6, unaff_DI);
                     pass1_1018_04a4(puVar8, iVar14->field_0x4);
                     pass1_1010_82f8(_PTR_LOOP_1050_14cc, *iVar14->field_0x10);
                     return;
@@ -1042,7 +1042,7 @@ void  file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u8 *par
         BVar1 = read_file_1008_7dee(uVar5, uVar8, puVar4, 0x0, uVar6, 0x2, SEG_1008);
         break;
     case 0x4:
-        uVar7           = pass1_1028_e0bc(_PTR_LOOP_1050_65e2, (puVar3 + 0x3), puVar3, param_5, param_4);
+        uVar7           = pass1_1028_e0bc(globals->_PTR_LOOP_1050_65e2, (puVar3 + 0x3), puVar3, param_5, param_4);
         puStack14       = (uVar7 >> 0x10);
         (puVar3 + 0x5)  = uVar7;
         (puVar3 + 0x16) = puStack14;
@@ -1057,7 +1057,7 @@ void  file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u8 *par
         break;
     case 0x5:
         puVar4 = puVar3;
-        pass1_1028_e100(_PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
+        pass1_1028_e100(globals->_PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
         (puVar3 + 0x5) = puVar4;
         (puVar3 + 0x16)         = param_5;
         puStack16               = ((puVar3 + 0x5) + 0xa4);
@@ -1103,7 +1103,7 @@ void  file_1028_b81a(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u8 *par
         goto switchD_1028_ba97_caseD_6;
     case 0x9:
         puVar4 = puVar3;
-        pass1_1028_e100(_PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
+        pass1_1028_e100(globals->_PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
         (puVar3 + 0x5) = puVar4;
         (puVar3 + 0x16)         = param_5;
         goto switchD_1028_ba97_caseD_6;
@@ -1537,7 +1537,7 @@ BOOL16  file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 p
             uVar8   = (param_1 >> 0x10);
             uVar1   = (param_1 + 0x20);
             ppcVar2 = ((param_1 + 0x20) + 0x8);
-            (**ppcVar2)(&PTR_LOOP_1050_1038, uVar1, (uVar1 >> 0x10), uVar4, puVar7, uVar10, uVar6);
+            (**ppcVar2)(SEG_1038, uVar1, (uVar1 >> 0x10), uVar4, puVar7, uVar10, uVar6);
             param_4 = extraout_DX;
         }
     }

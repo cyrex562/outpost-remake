@@ -658,9 +658,9 @@ u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2)
 //    uVar4         = (param_1 >> 0x10);
 //    iVar3         = param_1;
     *param_1      = addr_table_1008_380a[32] ;   //0x389a;
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     *param_1      = 0xa230;
-    (param_1 + 0x2) = &globals->PTR_LOOP_1050_1040;
+    param_1->field_0x2 = &globals->PTR_LOOP_1050_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals->s_OPButton_1050_5ece);
     (param_1 + 0x54)               = 0x3;
     cursor_handle_1                = LoadCursor16(SEG_1000, 0x7f00);
@@ -1262,7 +1262,7 @@ void pass1_1040_6862(Struct18 *param_1)
 
 {
     param_1->field_0x0 = 0x6f32;
-    (param_1 + 0x2)    = &PTR_LOOP_1050_1040;
+    param_1->field_0x2 = &PTR_LOOP_1050_1040;
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1284,7 +1284,7 @@ void pass1_1040_4f0a(Struct18 *param_1)
 
 {
     param_1->field_0x0 = 0x55a2;
-    (param_1 + 0x2)    = &PTR_LOOP_1050_1040;
+    param_1->field_0x2 = &PTR_LOOP_1050_1040;
     unk_draw_op_1040_b0f8(param_1);
     return;
 }
@@ -1846,8 +1846,8 @@ void pass1_1038_893a(Globals *globals, Struct18 *param_1)
     u16 uVar1;
 
     uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0x8c2e;
-    (param_1 + 0x2)    = SEG_1038;
+    param_1->field_0x0 = addr_table_1038_8c2e;//0x8c2e;
+    param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     unk_draw_op_1040_b0f8(param_1);
     return;
@@ -1861,7 +1861,7 @@ void pass1_1038_8cf6(Struct18 *param_1)
 
     uVar1              = (param_1 >> 0x10);
     param_1->field_0x0 = 0x90c8;
-    (param_1 + 0x2)    = &PTR_LOOP_1050_1038;
+    param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     unk_draw_op_1040_b0f8(param_1);
     return;
@@ -1892,7 +1892,7 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
     if(param_4 == 0xeb)
     {
         paStack6 = (Struct20 *)mixed_1010_20ba(
-          NULL, _PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+          NULL, globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
         paVar5   = (param_1 + 0x90);
         if(paVar5 != (Struct18 *)0x0)

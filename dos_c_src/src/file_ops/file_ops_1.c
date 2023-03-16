@@ -871,7 +871,7 @@ void  file_1030_b836(u32 param_1, u32 param_2, u8 *param_3, u16 param_4)
                     break;
                 puVar1  = iVar4->field_0x10;
                 ppcVar2 = (*iVar4->field_0x10 + 0x4);
-                (**ppcVar2)(&PTR_LOOP_1050_1038, puVar1, (puVar1 >> 0x10), uVar6, puVar8, uVar13, uVar5);
+                (**ppcVar2)(SEG_1038, puVar1, (puVar1 >> 0x10), uVar6, puVar8, uVar13, uVar5);
                 param_3 = extraout_DX;
             }
         }
@@ -1178,7 +1178,7 @@ void  file_1030_778c(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                             if(iVar3->field_0x2a != 0x0)
                             {
                                 lVar1 = iVar3->field_0x2a;
-                                pass1_1028_e1ec(_PTR_LOOP_1050_65e2, lVar1, (lVar1 >> 0x10));
+                                pass1_1028_e1ec(globals->_PTR_LOOP_1050_65e2, lVar1, (lVar1 >> 0x10));
                                 iVar3->field_0x2e = BVar3;
                                 iVar3->field_0x30 = param_4;
                             }
@@ -1488,7 +1488,7 @@ void  file_1030_5e70(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                     if((iVar9 + 0xa) == 0x0)
                     {
                     LAB_1030_5fb7:
-                        puVar11 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_5, puVar8, unaff_DI);
+                        puVar11 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2f, param_5, puVar8, unaff_DI);
                         pass1_1018_04ca(puVar11, *(iVar12 + 0x4));
                         return;
                     }
@@ -1766,7 +1766,7 @@ void  file_1030_581e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
         BVar5              = read_file_1008_7dee(uVar4, uVar11, &local_4, 0x0, param_5, 0x2, SEG_1008);
         if(BVar5 != 0x0)
         {
-            uVar8   = (_PTR_LOOP_1050_65e2 + 0x52);
+            uVar8   = (globals->_PTR_LOOP_1050_65e2 + 0x52);
             uStack8 = uVar8;
             pass1_1030_4782(param_5, in_AF, puVar9, uVar8, (uVar8 >> 0x10), 0x0, 0x1, local_4);
             iVar12->field_0x10 = uVar8;

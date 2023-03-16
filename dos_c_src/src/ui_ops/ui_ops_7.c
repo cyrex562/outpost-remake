@@ -96,7 +96,7 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
     char       local_102[0x100];
 
     local_102[0]    = '\0';
-    uStack262       = (Struct73 *)mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
+    uStack262       = (Struct73 *)mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     uVar1           = (uStack262 >> 0x10);
     iVar2           = uStack262;
     UStack266       = *(iVar2 + 0x16);
@@ -158,7 +158,7 @@ void  pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     char       local_102[0x100];
 
     local_102[0] = '\0';
-    uStack262    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_4, param_2, param_3);
+    uStack262    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_4, param_2, param_3);
     u_var2        = (uStack262 >> 0x10);
     iVar3        = uStack262;
     UVar1        = *(iVar3 + 0x12);
@@ -437,7 +437,7 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
     cursor_op_1008_2dcc(iVar15, uVar9, 0x8, param_3);
-    puStack12 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2f, param_4, puVar6, unaff_DI);
+    puStack12 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2f, param_4, puVar6, unaff_DI);
     uVar8     = (puStack12 >> 0x10);
     uVar5     = *(puStack12 + 0x20);
     uStack16  = uVar5;
@@ -461,14 +461,14 @@ void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 p
     uVar13    = SUB21(&local_2a, 0x0);
     uVar14    = (&local_2a >> 0x8);
     uVar3     = param_4;
-    puVar12   = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, puVar5, param_4, puVar6, &iStack36);
+    puVar12   = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, puVar5, param_4, puVar6, &iStack36);
     puVar6    = (puVar12 >> 0x10);
     pass1_1018_179e(puVar12, CONCAT22(uVar3, CONCAT11(uVar14, uVar13)), SEG_1018, param_4);
     uVar13  = 0x0;
     uVar14  = 0x4;
     iVar15  = 0x1b;
     uVar10  = 0x1;
-    puVar12 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2b, param_4, puVar6, &iStack36);
+    puVar12 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2b, param_4, puVar6, &iStack36);
     pass1_1010_043a(puVar12, CONCAT13(uVar14, CONCAT12(uVar13, uVar10)), iVar15, param_4);
     close_file_1008_6dd0(CONCAT22(param_4, local_8), SEG_1010);
     return;

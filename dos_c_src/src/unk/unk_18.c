@@ -479,7 +479,7 @@ void  pass1_1030_c7b0(ulong param_1)
       puVar5 = (uchar *)((ulong)uVar8 >> 0x10);
       uVar8 = *(undefined4 *)((int)uVar8 + 0x2e);
       uVar4 = *(u32 *)((int)uVar8 + 0x200);
-      pass1_1028_e1ec(_PTR_LOOP_1050_65e2,uVar4);
+      pass1_1028_e1ec(globals->_PTR_LOOP_1050_65e2,uVar4);
       uVar2 = uVar4 & 0xffff | ZEXT24(puVar5) << 0x10;
       BVar3 = pass1_1008_c6ae(_u16_1050_06e0,*(undefined2 *)(iVar6 + 0xc),0x11);
       pass1_1030_23e2(BVar3,puVar5,uVar2,BVar3,*(uint *)(iVar6 + 0x20));

@@ -2473,7 +2473,7 @@ u32 mem_op_1000_0838(u16 param_1, u16 param_2)
 
     piVar9   = *(i16 **)(param_1 + 0x2);
     piStack4 = piVar9;
-    if((param_1 + 0x2) == 0x0)
+    if(param_1->field_0x2 == 0x0)
         goto LAB_1000_085b;
     do
     {
@@ -2488,7 +2488,7 @@ u32 mem_op_1000_0838(u16 param_1, u16 param_2)
                     &PTR_LOOP_1050_000e      = *puVar4;
                     piVar2                   = &PTR_LOOP_1050_000a;
                     *piVar2                  = *piVar2 + 0x1;
-                    *(i16 **)(param_1 + 0x2) = piVar9;
+                    *(i16 **)param_1->field_0x2 = piVar9;
                     return CONCAT22(iVar3, puVar4);
                 }
                 *piVar9 = 0x0;

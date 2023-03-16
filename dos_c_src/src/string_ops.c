@@ -1291,7 +1291,7 @@ u32 *str_1008_6d8a(u32 *param_1, char *param_2, u16 param_3, u16 param_4, u8 par
     sys_1000_3f9c(0x65a0, &USHORT_1050_1050, globals->_PTR_s_SC_03d_1050_0314_1050_031c, (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10), 0x4, &stack0xfffe, u_var2, SEG_1000, param_4, param_5);
     uVar1           = str_op_1008_60e8(param_2, param_3);
     param_1         = uVar1;
-    (param_1 + 0x2) = param_3;
+    param_1->field_0x2 = param_3;
     return param_1;
 }
 

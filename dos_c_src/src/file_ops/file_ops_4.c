@@ -235,7 +235,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     acStack259[1] = 0x0;
     local_302     = 0x0;
     local_202[0]  = 0x0;
-    puStack774    = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
+    puStack774    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
     uVar8         = (puStack774 >> 0x10);
     iVar3         = puStack774;
     uStack778     = (iVar3 + 0x1a);

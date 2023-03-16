@@ -1913,7 +1913,7 @@ void file_fn_1008_6eee(u16 param_1, u16 param_2, u32 param_3)
         BVar1 = pass1_1030_5c1a(_PTR_LOOP_1050_5736, param_3, unaff_SS);
         if(BVar1 != 0x0)
         {
-            uVar3 = write_to_file_1028_dce2(_PTR_LOOP_1050_65e2, param_3, unaff_SS);
+            uVar3 = write_to_file_1028_dce2(globals->_PTR_LOOP_1050_65e2, param_3, unaff_SS);
             if((uVar3 >> 0x10) != 0x0)
             {
                 u_var2 = pass1_1038_7b20(_PTR_LOOP_1050_5a64, param_3, unaff_SS);
@@ -1957,7 +1957,7 @@ void read_file_1008_6f7a(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
         var5 = read_file_1030_5c52(_PTR_LOOP_1050_5736, param_3, var5, param_4);
         if(var5 != 0x0)
         {
-            read_file_1028_def2(_PTR_LOOP_1050_65e2, param_3, param_4, var5);
+            read_file_1028_def2(globals->_PTR_LOOP_1050_65e2, param_3, param_4, var5);
             if(var5 != 0x0)
             {
                 i_var3 = read_file_1038_7c02(_PTR_LOOP_1050_5a64, param_3, var5, uVar1);

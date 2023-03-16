@@ -779,7 +779,7 @@ Struct18 * pass1_1038_1c02(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1156,7 +1156,7 @@ Struct18 * pass1_1038_0b6a(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1183,7 +1183,7 @@ Struct18 * pass1_1030_e282(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1196,7 +1196,7 @@ Struct18 * pass1_1030_e4be(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1209,7 +1209,7 @@ Struct18 * pass1_1030_e602(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1222,7 +1222,7 @@ Struct18 * pass1_1030_e75e(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1235,7 +1235,7 @@ Struct18 * pass1_1030_e864(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1292,7 +1292,7 @@ Struct18 * pass1_1030_eb14(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);
@@ -1305,7 +1305,7 @@ Struct18 * pass1_1030_ec86(Struct18 *param_1, u8 param_2)
 
 {
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2)    = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce(param_1, SEG_1000);

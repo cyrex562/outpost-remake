@@ -159,7 +159,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     puStack16 = puVar6;
     if(puVar7 != 0x0)
     {
-        uVar10  = SUB42(&PTR_LOOP_1050_1038, 0x0);
+        uVar10  = SUB42(SEG_1038, 0x0);
         paVar14 = pass1_1038_aeca((Struct20 *)CONCAT22(puVar6, uVar4), param_2);
         puVar7  = (paVar14 >> 0x10);
         uVar4   = paVar14;
@@ -176,8 +176,8 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     puStack16 = puVar7;
     if(puVar6 != 0x0)
     {
-        uVar10 = SUB42(&PTR_LOOP_1050_1038, 0x0);
-        make_proc_inst_1038_cf6c(CONCAT22(puVar7, uVar4), puVar6, &PTR_LOOP_1050_1038);
+        uVar10 = SUB42(SEG_1038, 0x0);
+        make_proc_inst_1038_cf6c(CONCAT22(puVar7, uVar4), puVar6, SEG_1038);
     }
     if(_PTR_LOOP_1050_5bc8 == 0x0)
     {
@@ -253,9 +253,9 @@ BOOL16  pass1_1008_07d8(u16 param_1, BOOL16 param_2, u8 *param_3, u16 param_4)
             debug_pri16_1008_6048(s_New_failed_in_Op__Op__Simulator_1050_0110, uVar1, param_4);
             fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
         }
-        uVar3 = pass1_1028_e2e0(_PTR_LOOP_1050_65e2, u_var2, 0x8);
-        uVar3 = pass1_1028_e2e0(_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0x8);
-        pass1_1028_e2e0(_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0xff);
+        uVar3 = pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, u_var2, 0x8);
+        uVar3 = pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0x8);
+        pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0xff);
         pass1_1030_838e(_PTR_LOOP_1050_5748, param_4, in_AF);
         param_2 = pass1_1030_8334(_PTR_LOOP_1050_5748);
     }
@@ -1056,7 +1056,7 @@ void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16
     u_var2 = pass1_1000_462e(NULL, uVar3 - 0x7bc, uVar4 >> 0x8, uVar4 & 0xff, uVar7, uVar8, uVar9, &iStack2, param_5, uVar4);
     if(param_1 != 0x0)
     {
-        (param_1 + 0x2) = uVar4;
+        param_1->field_0x2 = uVar4;
         *param_1        = u_var2;
     }
 }

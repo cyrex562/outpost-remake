@@ -12,6 +12,7 @@
 #include "ui_ops/ui_ops_1.h"
 #include "utils.h"
 #include "win_ops_1.h"
+#include "win_ops_3.h"
 
 #include <minwindef.h>
 
@@ -297,7 +298,7 @@ BOOL16 mixed_win_op_1008_0c60(
         }
         HStack14 = LoadCursor16(SEG_1030, 0x7f02);
         HStack16 = SetCursor16((HCURSOR16)LAST_SEGMENT);
-        uStack20 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
+        uStack20 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
         pass1_1018_262e(uStack20);
         pass1_1030_838e(_PTR_LOOP_1050_5748, param_5, in_AF);
         uVar13                      = (_PTR_LOOP_1050_5748 >> 0x10);
@@ -307,7 +308,7 @@ BOOL16 mixed_win_op_1008_0c60(
         sys_1000_3f9c(local_64, param_5, 0x19c, &USHORT_1050_1050, pcVar7, &stack0xfffe, uVar13, SEG_1000, param_5, in_AF);
         ppcVar1 = (*param_1 + 0x14);
         (**ppcVar1)(SEG_1000, param_1, 0x0, 0x9c, param_5);
-        puVar8 = mixed_1010_20ba(_PTR_LOOP_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);
+        puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);
         pass1_1008_a9ec(puVar8);
         hwnd = (HWND16)LAST_SEGMENT;
         SetCursor16(SEG_1010);
@@ -333,7 +334,7 @@ BOOL16 mixed_win_op_1008_0c60(
     case 0x70:
         iVar11 = 0x1;
     LAB_1008_0cba:
-        uVar5 = pass1_1038_af40(_PTR_LOOP_1050_5b7c, (uVar9 + 0x8), iVar11, param_6, uVar9, &PTR_LOOP_1050_1038, param_5);
+        uVar5 = pass1_1038_af40(_PTR_LOOP_1050_5b7c, (uVar9 + 0x8), iVar11, param_6, uVar9, SEG_1038, param_5);
         return (BOOL16)uVar5;
     case 0x71:
         HVar2 = WinExec16(SEG_1008, 0x3);

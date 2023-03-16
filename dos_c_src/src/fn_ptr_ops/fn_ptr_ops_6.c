@@ -165,7 +165,7 @@ u16 *pass1_1010_7dd2(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -451,7 +451,7 @@ void pass1_1010_50f2(u16 *param_1, u16 param_2)
 
     uVar1           = (param_1 >> 0x10);
     *param_1        = addr_table_1010_53f4; //0x53f4;
-    (param_1 + 0x2) = SEG_1010;
+    param_1->field_0x2 = SEG_1010;
     fn_ptr_1000_17ce((param_1 + 0xc), SEG_1000);
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -757,7 +757,7 @@ u16 *pass1_1010_1fbe(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -793,7 +793,7 @@ u16 *pass1_1010_0e6c(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -939,7 +939,7 @@ void pass1_1008_dc2c(u16 *param_1, u16 param_2)
 
     uVar1           = (param_1 >> 0x10);
     *param_1        = pass1_1008_dc80;//0xdc80;
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     fn_ptr_1000_17ce((param_1 + 0x18), SEG_1000);
     pass1_1010_1d80(param_1, param_2);
     return;
@@ -964,7 +964,7 @@ u16 *pass1_1008_dd1e(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1060,7 +1060,7 @@ u16 *pass1_1008_ad38(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1143,7 +1143,7 @@ void pass1_1008_9466(u16 *param_1)
 
 {
     *param_1        = 0x52a;
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     fn_ptr_1000_17ce(globals->PTR_LOOP_1050_0392, SEG_1000);
     globals->PTR_LOOP_1050_0392 = (Struct18 *)0x0;
     return;
@@ -1154,7 +1154,7 @@ u16 *pass1_1008_9d02(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1305,7 +1305,7 @@ u16 *pass1_1008_93c0(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1581,7 +1581,7 @@ u16 *pass1_1008_570e(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1658,7 +1658,7 @@ u16 *pass1_1008_377e(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1703,7 +1703,7 @@ u16 *pass1_1008_3a14(u16 *param_1, u8 param_2)
 
 {
     *param_1        = addr_table_1008_380a[36]; // 0x389a
-    (param_1 + 0x2) = SEG_1008;
+    param_1->field_0x2 = SEG_1008;
     if((param_2 & 0x1) != 0x0)
     {
         fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
@@ -1797,9 +1797,9 @@ void pass1_1008_0036(Struct449 *param_1, u16 param_2)
         fn_ptr_1000_17ce(paVar3, SEG_1000);
     }
     paVar3 = globals->_PTR_LOOP_1050_0ed0;
-    if(_PTR_LOOP_1050_0ed0 != (Struct18 *)0x0)
+    if(globals->_PTR_LOOP_1050_0ed0 != (Struct18 *)0x0)
     {
-        pass1_1010_2050(_PTR_LOOP_1050_0ed0);
+        pass1_1010_2050(globals->_PTR_LOOP_1050_0ed0);
         param_2 = SEG_1000;
         fn_ptr_1000_17ce(paVar3, SEG_1000);
     }
