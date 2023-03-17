@@ -12,8 +12,8 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     u8          local_26[0x24];
 
     uVar5         = (param_1 >> 0x10);
-    iVar4         = param_1;
-    *param_1      = 0x0;
+    iVar4 = param_1;
+    param_1->field_0x0 = 0x0;
     (iVar4 + 0x4) = 0x0;
     pu_var2        = local_26;
     struct_op_1008_48fe((Struct81 *)CONCAT22(param_3, pu_var2), 0x1, param_2, param_4);
@@ -22,7 +22,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     uVar3     = param_4 | pu_var2;
     if(uVar3 == 0x0)
     {
-        *param_1 = 0x0;
+        param_1->field_0x0 = 0x0;
     }
     else
     {
@@ -40,38 +40,33 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 }
 
 
-void  close_file_1008_496c(u16 *param_1)
-
-{
+void  close_file_1008_496c(u16 *param_1) {
     u32 *puVar1;
-    u16         u_var2;
-    u32  uVar3;
+    u16 u_var2;
+    u32 uVar3;
     void **ppcVar4;
-    i16         iVar5;
-    u16         uVar6;
+    i16 iVar5;
+    u16 uVar6;
 
-    uVar6         = (param_1 >> 0x10);
-    iVar5         = param_1;
-    *param_1      = addr_table_1008_4c4c;//0x4c4c;//&PTR_LOOP_1050_4c4c;
+    uVar6 = (param_1 >> 0x10);
+    iVar5 = param_1;
+    param_1->field_0x0 = addr_table_1008_4c4c;//0x4c4c;//&PTR_LOOP_1050_4c4c;
     (iVar5 + 0x2) = SEG_1008;
-    puVar1        = (iVar5 + 0x4);
-    u_var2         = (iVar5 + 0x6);
-    if((u_var2 | puVar1) != 0x0)
-    {
+    puVar1 = (iVar5 + 0x4);
+    u_var2 = (iVar5 + 0x6);
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar4 = *puVar1;
         (**ppcVar4)();
     }
     fn_ptr_1000_17ce((iVar5 + 0x8), SEG_1000);
-    if((iVar5 + 0x1a) != 0x0)
-    {
+    if ((iVar5 + 0x1a) != 0x0) {
         uVar3 = (iVar5 + 0x1a);
         call_fn_ptr_1000_0dc6(uVar3, (uVar3 >> 0x10), SEG_1000);
     }
-    if((iVar5 + 0xc) != -0x1)
-    {
+    if ((iVar5 + 0xc) != -0x1) {
         _lclose16(SEG_1000);
     }
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }

@@ -535,14 +535,13 @@ void pass1_1018_ed98(u16 *param_1, u16 param_2)
 
 {
     Struct579 *iVar1;
-    u16          uVar1;
+    u16 uVar1;
 
-    uVar1            = (param_1 >> 0x10);
-    iVar1            = (Struct579 *)param_1;
-    *param_1         = addr_table_1020_01cc;//0x1cc;
+    uVar1 = (param_1 >> 0x10);
+    iVar1 = (Struct579 *) param_1;
+    param_1->field_0x0 = addr_table_1020_01cc;//0x1cc;
     iVar1->field_0x2 = SEG_1020;
-    if(iVar1->field_0x14 != 0x0)
-    {
+    if (iVar1->field_0x14 != 0x0) {
         pass1_1010_1ea6(iVar1->field_0x14, param_1 & 0xffff | uVar1 << 0x10, param_2);
         pass1_1010_1dda(iVar1->field_0x14);
     }
@@ -858,18 +857,15 @@ void pass1_1018_e4f2(Struct659 *param_1, u16 param_2, u16 param_3, i16 param_4, 
 }
 
 
-void pass1_1018_e57a(u16 *param_1)
-
-{
+void pass1_1018_e57a(u16 *param_1) {
     Struct575 *iVar1;
-    u16          uVar1;
+    u16 uVar1;
 
-    uVar1            = (param_1 >> 0x10);
-    iVar1            = (Struct575 *)param_1;
-    *param_1         = addr_table_1018_e5d0;//0xe5d0;
+    uVar1 = (param_1 >> 0x10);
+    iVar1 = (Struct575 *) param_1;
+    param_1->field_0x0 = addr_table_1018_e5d0;//0xe5d0;
     iVar1->field_0x2 = SEG_1018;
-    if(iVar1->field_0x14 != 0x0)
-    {
+    if (iVar1->field_0x14 != 0x0) {
         pass1_1010_1dda(iVar1->field_0x14);
     }
     palette_op_1020_92c4(param_1, SEG_1020);
@@ -1117,27 +1113,23 @@ void pass1_1018_5b06(Struct132 *param_1, u16 param_2, u16 param_3, u16 param_4)
     return;
 }
 
-void pass1_1018_5cc8(Struct508 *param_1, u16 param_2)
-
-{
-    u16          uVar1;
-    Struct18  *p_var2;
+void pass1_1018_5cc8(Struct508 *param_1, u16 param_2) {
+    u16 uVar1;
+    Struct18 *p_var2;
     Struct508 *iVar3;
-    u16          uVar3;
+    u16 uVar3;
 
-    uVar3            = (param_1 >> 0x10);
-    iVar3            = (Struct508 *)param_1;
-    *param_1         = addr_table_1018_5e1a;//0x5e1a; // &PTR_LOOP_1050_5e1a;
+    uVar3 = (param_1 >> 0x10);
+    iVar3 = (Struct508 *) param_1;
+    param_1->field_0x0 = addr_table_1018_5e1a;//0x5e1a; // &PTR_LOOP_1050_5e1a;
     iVar3->field_0x2 = SEG_1018;
-    p_var2           = &iVar3->field_0x18;
-    uVar1            = iVar3->field_0x1a_addr_offset;
-    if((uVar1 | p_var2) != 0x0)
-    {
+    p_var2 = &iVar3->field_0x18;
+    uVar1 = iVar3->field_0x1a_addr_offset;
+    if ((uVar1 | p_var2) != 0x0) {
         pass1_1008_5118(p_var2 & 0xffff | uVar1 << 0x10);
         fn_ptr_1000_17ce(p_var2, SEG_1000);
     }
-    if(iVar3->field_0x14 != 0x0)
-    {
+    if (iVar3->field_0x14 != 0x0) {
         pass1_1010_1ea6(iVar3->field_0x14, param_1 & 0xffff | uVar3 << 0x10, param_2);
         pass1_1010_1dda(iVar3->field_0x14);
     }
@@ -1467,18 +1459,15 @@ void pass1_1018_6924(Struct658 *param_1, u16 param_2, u16 param_3, i16 param_4, 
 }
 
 
-void pass1_1018_69ac(u16 *param_1)
-
-{
+void pass1_1018_69ac(u16 *param_1) {
     Struct511 *iVar1;
-    u16          uVar1;
+    u16 uVar1;
 
-    uVar1            = (param_1 >> 0x10);
-    iVar1            = (Struct511 *)param_1;
-    *param_1         = addr_table_1018_6a02;//0x6a02;
+    uVar1 = (param_1 >> 0x10);
+    iVar1 = (Struct511 *) param_1;
+    param_1->field_0x0 = addr_table_1018_6a02;//0x6a02;
     iVar1->field_0x2 = SEG_1018;
-    if(iVar1->field_0x14 != 0x0)
-    {
+    if (iVar1->field_0x14 != 0x0) {
         pass1_1010_1dda(iVar1->field_0x14);
     }
     palette_op_1020_92c4(param_1, SEG_1020);

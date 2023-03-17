@@ -376,7 +376,7 @@ void mem_1000_2ce8(i16 *param_1, u16 param_2, u16 param_3)
         param_1[0x79] = 0x200;
     }
     param_1[0x1] = param_2;
-    *param_1     = u_var2;
+    param_1->field_0x0 = u_var2;
     param_1[0x4] = param_2;
     param_1[0x3] = u_var2;
     param_1[0x2] = 0x0;
@@ -2553,8 +2553,8 @@ u16  pass1_1000_093a(i16 *param_1, u16 param_2, u16 param_3)
         pass1_1000_1e61(NULL, param_3, 0xe, 0x0, 0x0);
         return 0x0;
     }
-    *param_1 = &PTR_LOOP_1050_000e;
-    if(*param_1 == 0x0)
+    param_1->field_0x0 = &PTR_LOOP_1050_000e;
+    if(param_1->field_0x0 == 0x0)
     {
         &DAT_1050_0004 = 0x1;
     }
@@ -2575,7 +2575,7 @@ u8 *pass1_1000_09a0(u16 *param_1, u16 param_2)
     u8 *puVar1;
     u32 u_var2;
 
-    *param_1 = globals->PTR_LOOP_1050_000e;
+    param_1->field_0x0 = globals->PTR_LOOP_1050_000e;
     if(PTR_LOOP_1050_000e == 0x0)
     {
         *DAT_1050_0004 = 0x1;

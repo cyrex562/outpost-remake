@@ -119,16 +119,16 @@ ATOM reg_class_1040_98c0(Globals *globals, u32 param_1, HINSTANCE16 param_2, WND
         WNDCLASS16 wndclass = {};
         // l_name    = (param_1 + 0x54);
         // TODO: arrange values below into fields for wndclass
-        wndclass.lpsz_class_name =(param_1 + 0x54);
-        uStack26  = 0x9cde;
-        uStack24  = SEG_1040;
-        uStack22  = 0x40000;
+        wndclass.lpsz_class_name = (param_1 + 0x54);
+        uStack26 = win_op_1040_9cde;//0x9cde;
+        uStack24 = SEG_1040;
+        uStack22 = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;
-        uStack16  = 0x0;
-        uStack14  = (param_1 + 0x58);
-        uStack12  = (param_1 + 0x56);
-        uStack10  = 0x0;
-        uStack4   = param_1;
+        uStack16 = 0x0;
+        uStack14 = (param_1 + 0x58);
+        uStack12 = (param_1 + 0x56);
+        uStack10 = 0x0;
+        uStack4 = param_1;
 
 
         // registers a window class for subsequent use in calls to the createwindow or createwindowex func
@@ -450,25 +450,20 @@ void  make_proc_inst_1040_a234(u8 *param_1, u8 *param_2, u16 param_3, u32 param_
     globals->PTR_LOOP_1050_5eda = globals->PTR_LOOP_1050_5eda + 0x1;
     globals->PTR_LOOP_1050_5ee0 = param_1;
     globals->PTR_LOOP_1050_5ee2 = param_2;
-    return;
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  free_proc_inst_1040_a294(Struct18 *param_1, u16 param_2)
-
-{
-    param_1->field_0x0 = 0xa4e8;
+void  free_proc_inst_1040_a294(Struct18 *param_1, u16 param_2) {
+    param_1->field_0x0 = addr_table_1040_a4e8;//0xa4e8;
     param_1->field_0x2 = SEG_1040;
     globals->PTR_LOOP_1050_5eda = globals->PTR_LOOP_1050_5eda + -0x1;
-    if(PTR_LOOP_1050_5eda == 0x0)
-    {
+    if (PTR_LOOP_1050_5eda == 0x0) {
         FreeProcInstance16(param_2);
         globals->_PTR_LOOP_1050_5edc = 0x0;
     }
     unk_draw_op_1040_b0f8(param_1);
-    return;
 }
 
 
@@ -699,23 +694,21 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
                                u32       param_6,
                                u16       param_7,
                                u16       param_8,
-                               u16       param_9)
-
-{
-    u16         uVar1;
-    u16         u_var2;
-    LPVOID      pvVar3;
-    i16         iVar4;
-    u16         uVar5;
+                               u16       param_9) {
+    u16 uVar1;
+    u16 u_var2;
+    LPVOID pvVar3;
+    i16 iVar4;
+    u16 uVar5;
     Struct43 *paVar6;
 
-    uVar5          = (param_1 >> 0x10);
-    iVar4          = param_1;
-    *param_1       = addr_table_1008_380a[36]; // 0x389a
-    (iVar4 + 0x2)  = SEG_1008;
-    (iVar4 + 0x4)  = 0x0;
-    (iVar4 + 0x8)  = 0x0;
-    (iVar4 + 0xc)  = 0x0;
+    uVar5 = (param_1 >> 0x10);
+    iVar4 = param_1;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
+    (iVar4 + 0x2) = SEG_1008;
+    (iVar4 + 0x4) = 0x0;
+    (iVar4 + 0x8) = 0x0;
+    (iVar4 + 0xc) = 0x0;
     (iVar4 + 0x10) = 0x0;
     (iVar4 + 0x14) = 0x0;
     (iVar4 + 0x18) = 0x0;
@@ -727,17 +720,16 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
     (iVar4 + 0x3c) = 0x2;
     (iVar4 + 0x3e) = 0x0;
     (iVar4 + 0x40) = param_2;
-    param_1->field_0x0 = 0x9800;
-    (iVar4 + 0x2)  = SEG_1040;
-    uVar1          = (iVar4 + 0x36);
+    param_1->field_0x0 = addr_table_1040_9800;//0x9800;
+    (iVar4 + 0x2) = SEG_1040;
+    uVar1 = (iVar4 + 0x36);
     (iVar4 + 0x28) = uVar1;
     (iVar4 + 0x26) = uVar1;
     (iVar4 + 0x2c) = 0x0;
     (iVar4 + 0x2a) = 0x0;
-    if((param_6 != 0x0) && (param_5 != 0x0))
-    {
+    if ((param_6 != 0x0) && (param_5 != 0x0)) {
         (iVar4 + 0x38) = 0x1;
-        paVar6         = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, param_6, param_11);
+        paVar6 = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, param_6, param_11);
         (iVar4 + 0x8)  = paVar6;
         (iVar4 + 0xa)  = (paVar6 >> 0x10);
         param_10       = SEG_1010;
@@ -782,26 +774,22 @@ void mixed_struct_op_1040_8fb8(Struct65 *param_1,
 }
 
 
-void  mix_win_ui_op_1040_911e(u16 *param_1)
-
-{
-    u32 *puVar1;
-    u16         u_var2;
-    u32  uVar3;
+void  mix_win_ui_op_1040_911e(u16 *param_1) {
+    u32 * puVar1;
+    u16 u_var2;
+    u32 uVar3;
     void **ppcVar4;
-    i16         iVar5;
-    u16         uVar6;
+    i16 iVar5;
+    u16 uVar6;
 
-    uVar6         = (param_1 >> 0x10);
-    iVar5         = param_1;
-    param_1->field_0x0 = 0x9800;
+    uVar6 = (param_1 >> 0x10);
+    iVar5 = param_1;
+    param_1->field_0x0 = addr_table_1040_9800;//0x9800;
     (iVar5 + 0x2) = SEG_1040;
-    if((iVar5 + 0x38) != 0x0)
-    {
+    if ((iVar5 + 0x38) != 0x0) {
         puVar1 = (iVar5 + 0x8);
-        u_var2  = (iVar5 + 0xa);
-        if((u_var2 | puVar1) != 0x0)
-        {
+        u_var2 = (iVar5 + 0xa);
+        if ((u_var2 | puVar1) != 0x0) {
             ppcVar4 = *puVar1;
             (**ppcVar4)();
         }
@@ -824,17 +812,16 @@ void  mix_win_ui_op_1040_911e(u16 *param_1)
     uVar3 = (iVar5 + 0x14);
     SetWindowLong16(SEG_1000, (u16)uVar3, CONCAT22(0xfffc, (uVar3 >> 0x10)));
     RemoveProp16((HWND16)LAST_SEGMENT, s_thisLo_1050_5e1c);
-    RemoveProp16((HWND16)LAST_SEGMENT, s_thisHi_1050_5e23);
-    RemoveProp16((HWND16)LAST_SEGMENT, s_procLo_1050_5e2a);
-    RemoveProp16((HWND16)LAST_SEGMENT, s_procHi_1050_5e31);
-    RemoveProp16((HWND16)LAST_SEGMENT, 0x5e38);
+    RemoveProp16((HWND16) LAST_SEGMENT, s_thisHi_1050_5e23);
+    RemoveProp16((HWND16) LAST_SEGMENT, s_procLo_1050_5e2a);
+    RemoveProp16((HWND16) LAST_SEGMENT, s_procHi_1050_5e31);
+    RemoveProp16((HWND16) LAST_SEGMENT, 0x5e38);
     globals->PTR_LOOP_1050_5e16 = globals->PTR_LOOP_1050_5e16 + -0x1;
-    if(PTR_LOOP_1050_5e16 == 0x0)
-    {
+    if (PTR_LOOP_1050_5e16 == 0x0) {
         FreeProcInstance16(LAST_SEGMENT);
         globals->_PTR_LOOP_1050_5e18 = 0x0;
     }
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }
@@ -887,16 +874,14 @@ void win_ui_get_prop_op_1040_9566(i16 *param_1, HWND16 param_2)
 
     uVar7 = (param_1 >> 0x10);
     iVar6 = param_1;
-    if(*param_1 == 0x4)
-    {
-        uVar1     = (iVar6 + 0xc);
-        uVar9     = (iVar6 + 0xa);
-        HVar4     = GetProp16(param_2, s_thisHi_1050_5e6f);
-        uVar8     = (iVar6 + 0xa);
-        HVar5     = GetProp16((HWND16)LAST_SEGMENT, s_thisLo_1050_5e68);
+    if (param_1->field_0x0 == 0x4) {
+        uVar1 = (iVar6 + 0xc);
+        uVar9 = (iVar6 + 0xa);
+        HVar4 = GetProp16(param_2, s_thisHi_1050_5e6f);
+        uVar8 = (iVar6 + 0xa);
+        HVar5 = GetProp16((HWND16) LAST_SEGMENT, s_thisLo_1050_5e68);
         puStack12 = CONCAT22(HVar4, HVar5);
-        if((HVar4 | HVar5) != 0x0)
-        {
+        if ((HVar4 | HVar5) != 0x0) {
             iVar2 = (iVar6 + 0x6);
             if(iVar2 == 0x1)
             {
@@ -1038,23 +1023,23 @@ Struct57 * pass1_1040_8478(Struct57 *param_1, u16 param_2, char *param_3, char *
 {
     u16          uVar1;
     Struct712 *iVar2;
-    u16          u_var2;
+    u16 u_var2;
 
     get_sys_metrics_1040_7728(param_1, 0x1, 0x0, 0xfc3, param_5);
-    u_var2             = (param_1 >> 0x10);
-    iVar2             = (Struct712 *)param_1;
+    u_var2 = (param_1 >> 0x10);
+    iVar2 = (Struct712 *) param_1;
     iVar2->field_0x8e = 0x0;
     iVar2->field_0x98 = param_2;
     iVar2->field_0x9a = 0x0;
     iVar2->field_0xb2 = 0x0;
-    param_1           = 0x8ddc;
+    param_1 = addr_table_1040_8ddc;//0x8ddc;
     iVar2->fld2_segment = SEG_1040;
     iVar2->field_9e = 0x0;
     iVar2->field_0xa2 = 0x12c;
-    uVar1             = str_op_1008_60e8(param_4, param_6);
+    uVar1 = str_op_1008_60e8(param_4, param_6);
     iVar2->field_0x90 = uVar1;
     iVar2->field_0x92 = param_6;
-    uVar1             = str_op_1008_60e8(param_3, param_6);
+    uVar1 = str_op_1008_60e8(param_3, param_6);
     iVar2->field_0x94 = uVar1;
     iVar2->field_0x96 = param_6;
     load_icon_1040_8b92(param_1, SEG_1008);
@@ -1196,27 +1181,26 @@ BOOL16  post_win_msg_1040_7b3c(u32 *param_1, u16 param_2, u16 param_3, i16 param
 void  ui_cleanup_op_1040_782c(Struct18 *param_1, HGDIOBJ16 param_2)
 
 {
-    u32 *puVar1;
-    u16         u_var2;
+    u32 * puVar1;
+    u16 u_var2;
     void **ppcVar3;
-    i16         iVar4;
-    u16         uVar5;
-    HGDIOBJ16   menu;
-    HMENU16     hwnd;
+    i16 iVar4;
+    u16 uVar5;
+    HGDIOBJ16 menu;
+    HMENU16 hwnd;
 
-    uVar5              = (param_1 >> 0x10);
-    iVar4              = param_1;
-    param_1->field_0x0 = 0x840c;
-    (iVar4 + 0x2)      = SEG_1040;
-    puVar1             = (iVar4 + 0x70);
-    u_var2              = (iVar4 + 0x72);
-    if((u_var2 | puVar1) != 0x0)
-    {
+    uVar5 = (param_1 >> 0x10);
+    iVar4 = param_1;
+    param_1->field_0x0 = addr_table_1040_840c;//0x840c;
+    (iVar4 + 0x2) = SEG_1040;
+    puVar1 = (iVar4 + 0x70);
+    u_var2 = (iVar4 + 0x72);
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar3 = *puVar1;
         (**ppcVar3)(param_2, puVar1, u_var2, 0x1);
     }
     menu = param_2;
-    if((iVar4 + 0x4) != 0x0)
+    if ((iVar4 + 0x4) != 0x0)
     {
         menu = (HGDIOBJ16)LAST_SEGMENT;
         DeleteObject16(param_2);

@@ -1525,7 +1525,7 @@ void pass1_1030_9f7a(Globals *globals, u16 *param_1, u16 param_2, u16 param_3, u
         struct_op_1028_87f0(param_3, param_4, (Struct97 *)CONCAT22(param_3, local_130), 0x0, 0x0, param_2, &local_8, param_3, *(uVar1 + 0x4), uStack12);
         fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_3, local_130));
         pass1_1028_b58e(uStack16);
-        *param_1      = uStack16;
+        param_1->field_0x0 = uStack16;
         (uVar4 + 0x2) = extraout_DX;
         if(0x0 < iStack4)
         {
@@ -1773,7 +1773,7 @@ LAB_1030_a305:
         fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_4, local_134));
         uStack12 = uStack20;
         pass1_1028_b58e(uStack20);
-        *param_1      = uStack20;
+        param_1->field_0x0 = uStack20;
         (uVar4 + 0x2) = extraout_DX;
         if(0x0 < (puVar3 + 0x1))
         {

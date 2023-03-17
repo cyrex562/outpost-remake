@@ -691,18 +691,18 @@ void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_
     BVar1   = GetClassInfo16(param_2, (SEGPTR)&local_1c, param_3);
     if(BVar1 == 0x0)
     {
-        local_1c  = (param_1 + 0x54);
-        uStack26  = addr_table_1008_84f2;//0x84f2;
-        uStack24  = SEG_1008;
-        uStack22  = 0x40000;
+        local_1c = (param_1 + 0x54);
+        uStack26 = win_sys_op_1008_84f2;//0x84f2;
+        uStack24 = SEG_1008;
+        uStack22 = 0x40000;
         puStack18 = globals->PTR_LOOP_1050_038c;
-        uStack16  = 0x0;
-        uStack14  = (param_1 + 0x58);
-        uStack12  = (param_1 + 0x56);
-        uStack10  = 0x0;
-        uStack4   = param_1;
-        AVar2     = RegisterClass16(LAST_SEGMENT);
-        if(AVar2 == 0x0)
+        uStack16 = 0x0;
+        uStack14 = (param_1 + 0x58);
+        uStack12 = (param_1 + 0x56);
+        uStack10 = 0x0;
+        uStack4 = param_1;
+        AVar2 = RegisterClass16(LAST_SEGMENT);
+        if (AVar2 == 0x0)
         {
             fn_ptr_op_1000_24cd(0x0, &stack0xfffe);
         }

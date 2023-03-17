@@ -1035,27 +1035,25 @@ void free_rsrc_1010_4b3e(u16 *param_1, HGLOBAL16 param_2)
     u32 *puVar5;
     u32  uVar6;
     BOOL16      BVar7;
-    i16         iVar8;
-    i16         iVar9;
-    u16         uVar10;
-    u16         uVar11;
-    HGLOBAL16   HVar12;
-    u16         unaff_SS;
-    i16         iStack4;
+    i16 iVar8;
+    i16 iVar9;
+    u16 uVar10;
+    u16 uVar11;
+    HGLOBAL16 HVar12;
+    u16 unaff_SS;
+    i16 iStack4;
 
-    uVar10        = (param_1 >> 0x10);
-    iVar8         = param_1;
-    *param_1      = addr_table_1010_502a;//s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
+    uVar10 = (param_1 >> 0x10);
+    iVar8 = param_1;
+    param_1->field_0x0 = addr_table_1010_502a;//s_SCForceMorale__s_for_colony__08l_1050_5024 + 0x6;
     (iVar8 + 0x2) = SEG_1010;
-    HVar12        = param_2;
-    if((iVar8 + 0x2a) != 0x0)
-    {
-        HVar12 = (HGLOBAL16)LAST_SEGMENT;
-        BVar7  = GlobalUnlock16(param_2);
-        if(BVar7 == 0x0)
-        {
-            HVar12 = (HGLOBAL16)LAST_SEGMENT;
-            FreeResource16((HGLOBAL16)LAST_SEGMENT);
+    HVar12 = param_2;
+    if ((iVar8 + 0x2a) != 0x0) {
+        HVar12 = (HGLOBAL16) LAST_SEGMENT;
+        BVar7 = GlobalUnlock16(param_2);
+        if (BVar7 == 0x0) {
+            HVar12 = (HGLOBAL16) LAST_SEGMENT;
+            FreeResource16((HGLOBAL16) LAST_SEGMENT);
         }
     }
     (iVar8 + 0x2a) = 0x0;
@@ -2028,25 +2026,22 @@ LAB_1008_a146:
     return;
 }
 
-u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2)
-
-{
+u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2) {
     u16 UVar1;
-    i16   iVar2;
-    u16   uVar3;
+    i16 iVar2;
+    u16 uVar3;
 
-    uVar3         = (param_1 >> 0x10);
-    iVar2         = param_1;
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    uVar3 = (param_1 >> 0x10);
+    iVar2 = param_1;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar2 + 0x2) = SEG_1008;
     (iVar2 + 0x4) = 0x0;
     set_struct_1008_574a((param_1 & 0xffff0000 | (iVar2 + 0x6)));
-    *param_1                     = addr_table_1008_9412[1];//0x9416;
-    (iVar2 + 0x2)                = SEG_1008;
+    param_1->field_0x0 = addr_table_1008_9412[1];//0x9416;
+    (iVar2 + 0x2) = SEG_1008;
     globals->_PTR_LOOP_1050_0388 = param_1;
-    UVar1                        = SetTimer16(param_2, 0x0, 0x0, (&PTR_LOOP_1050_0000 + 0x1));
-    if(UVar1 == 0x0)
-    {
+    UVar1 = SetTimer16(param_2, 0x0, 0x0, (&PTR_LOOP_1050_0000 + 0x1));
+    if (UVar1 == 0x0) {
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
     globals->PTR_LOOP_1050_038a = (_PTR_LOOP_1050_0388 >> 0x10);
@@ -2054,20 +2049,18 @@ u16 *pass1_1008_91ba(u16 *param_1, HWND16 param_2)
 }
 
 
-void kill_timer_1008_921c(u16 *param_1, HWND16 param_2)
-
-{
+void kill_timer_1008_921c(u16 *param_1, HWND16 param_2) {
     i16 iVar1;
     u16 u_var2;
 
-    u_var2         = (param_1 >> 0x10);
-    iVar1         = param_1;
-    *param_1      = addr_table_1008_9412[1];//0x9416;
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    param_1->field_0x0 = addr_table_1008_9412[1];//0x9416;
     (iVar1 + 0x2) = SEG_1008;
     KillTimer16(param_2, 0x1);
     globals->_PTR_LOOP_1050_0388 = 0x0;
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar1 + 0x6)));
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar1 + 0x2) = SEG_1008;
     return;
 }

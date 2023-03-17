@@ -12,8 +12,8 @@ u32 * pass1_1030_3af6(u32 *param_1, u16 param_2, u16 param_3, u32 *param_4, u16 
     u16 u_var2;
 
     u_var2         = (param_1 >> 0x10);
-    iVar1         = param_1;
-    *param_1      = *param_4;
+    iVar1 = param_1;
+    param_1->field_0x0 = *param_4;
     (iVar1 + 0x4) = (param_4 + 0x1);
     (iVar1 + 0x6) = param_3;
     (iVar1 + 0x8) = param_2;
@@ -688,23 +688,20 @@ void  pass1_1030_177a(u32 param_1, u32 param_2)
 }
 
 
-void  pass1_1030_18b2(u16 *param_1)
-
-{
-    u32 *puVar1;
-    u16         u_var2;
+void  pass1_1030_18b2(u16 *param_1) {
+    u32 * puVar1;
+    u16 u_var2;
     void **ppcVar3;
-    i16         iVar4;
-    u16         uVar5;
+    i16 iVar4;
+    u16 uVar5;
 
-    uVar5         = (param_1 >> 0x10);
-    iVar4         = param_1;
-    *param_1      = addr_table_1030_1a16;//0x1a16;
+    uVar5 = (param_1 >> 0x10);
+    iVar4 = param_1;
+    param_1->field_0x0 = addr_table_1030_1a16;//0x1a16;
     (iVar4 + 0x2) = SEG_1030;
-    puVar1        = (iVar4 + 0xc);
-    u_var2         = (iVar4 + 0xe);
-    if((u_var2 | puVar1) != 0x0)
-    {
+    puVar1 = (iVar4 + 0xc);
+    u_var2 = (iVar4 + 0xe);
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
@@ -755,25 +752,21 @@ u16  pass1_1030_1972(void)
 }
 
 
-u16 * pass1_1030_1a32(u16 *param_1, u16 param_2, u8 *param_3)
-
-{
+u16 * pass1_1030_1a32(u16 *param_1, u16 param_2, u8 *param_3) {
     pass1_1030_183c(param_1, 0x1, 0x16, 0xff000000, 0x0, param_2, param_3);
     globals->PTR_LOOP_1050_5168 = (param_1 >> 0x10);
     globals->PTR_LOOP_1050_5166 = param_1;
     (globals->PTR_LOOP_1050_5166 + 0x10) = 0x0;
-    *param_1                    = addr_table_1030_1cbc;//0x1cbc;
-    (globals->PTR_LOOP_1050_5166 + 0x2)  = SEG_1030;
+    param_1->field_0x0 = addr_table_1030_1cbc;//0x1cbc;
+    (globals->PTR_LOOP_1050_5166 + 0x2) = SEG_1030;
     return param_1;
 }
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1030_1a74(u16 *param_1)
-
-{
-    *param_1                     = addr_table_1030_1cbc;//0x1cbc;
+void  pass1_1030_1a74(u16 *param_1) {
+    param_1->field_0x0 = addr_table_1030_1cbc;//0x1cbc;
     param_1->field_0x2 = SEG_1030;
     globals->_PTR_LOOP_1050_5166 = 0x0;
     pass1_1030_18b2(param_1);
@@ -1831,7 +1824,7 @@ Struct18 * pass1_1028_cf44(Struct18 *param_1, u8 param_2)
 void  pass1_1028_cfd2(u32 *param_1, u32 param_2)
 
 {
-    *param_1        = param_2;
+    param_1->field_0x0 = param_2;
     (param_1 + 0x4) = 0x0;
     return;
 }

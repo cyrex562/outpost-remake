@@ -1237,8 +1237,8 @@ void  pass1_1018_2076(u16 *param_1, u16 param_2)
 {
     u16 uVar1;
 
-    uVar1           = (param_1 >> 0x10);
-    *param_1        = addr_table_1018_21e8;//0x21e8;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1018_21e8;//0x21e8;
     param_1->field_0x2 = SEG_1018;
     pass1_1018_209c(param_1 & 0xffff | uVar1 << 0x10);
     pass1_1010_1d80(param_1, param_2);
@@ -2573,27 +2573,23 @@ u16  pass1_1010_9fa6(u16 param_1, u16 param_2, u32 param_3, i16 param_4, u16 par
     return 0x0;
 }
 
-void  pass1_1010_a478(u16 *param_1, u16 param_2)
-
-{
-    u16         *puVar1;
-    u16          u_var2;
+void  pass1_1010_a478(u16 *param_1, u16 param_2) {
+    u16 *puVar1;
+    u16 u_var2;
     Struct497 *uVar3;
-    u16          uVar4;
-    u16         *pu_stack6;
+    u16 uVar4;
+    u16 *pu_stack6;
 
-    uVar4            = (param_1 >> 0x10);
-    uVar3            = (Struct497 *)param_1;
-    *param_1         = addr_table_1010_e9cc; //0xe9cc;
+    uVar4 = (param_1 >> 0x10);
+    uVar3 = (Struct497 *) param_1;
+    param_1->field_0x0 = addr_table_1010_e9cc; //0xe9cc;
     uVar3->field_0x2 = SEG_1010;
     uVar3->field_0xa = addr_table_1010_e9cc[4];//0xe9dc;
     uVar3->field_0xc = SEG_1010;
-    if(uVar3->field_0x138 != 0x0)
-    {
-        if(param_1 == 0x0)
-        {
+    if (uVar3->field_0x138 != 0x0) {
+        if (param_1 == 0x0) {
             puVar1 = 0x0;
-            u_var2  = 0x0;
+            u_var2 = 0x0;
         }
         else
         {

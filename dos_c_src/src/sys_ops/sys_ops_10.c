@@ -1579,17 +1579,16 @@ u16 * pass1_1008_7e98(u16 *param_1, u8 param_2)
 
 {
     Struct460 *uVar1;
-    u16          u_var2;
+    u16 u_var2;
 
-    u_var2            = (param_1 >> 0x10);
-    uVar1            = (Struct460 *)param_1;
-    *param_1         = addr_table_1008_380a; // 0x380a
+    u_var2 = (param_1 >> 0x10);
+    uVar1 = (Struct460 *) param_1;
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     uVar1->field_0x2 = SEG_1008;
-    *param_1         = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     uVar1->field_0x2 = SEG_1008;
-    if((param_2 & 0x1) != 0x0)
-    {
-        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
+    if ((param_2 & 0x1) != 0x0) {
+        fn_ptr_1000_17ce((Struct18 *) param_1, SEG_1000);
     }
     return param_1;
 }
@@ -1849,8 +1848,7 @@ void  pass1_1008_64c8(u32 *param_1, u32 param_2, i16 param_3, u16 param_4, u8 *p
     i16 iStack8;
     u32 u_stack6;
 
-    if(*param_1 == 0x0)
-    {
+    if (param_1->field_0x0 == 0x0) {
         return;
     }
     mem_op_1000_179c(0x1e, param_5, SEG_1000);
@@ -1893,8 +1891,7 @@ void  pass1_1008_6562(u32 *param_1, u32 param_2, i16 param_3, u16 param_4, u8 *p
     i16 iStack8;
     u32 u_stack6;
 
-    if(*param_1 == 0x0)
-    {
+    if (param_1->field_0x0 == 0x0) {
         return;
     }
     mem_op_1000_179c(0x1e, param_5, SEG_1000);

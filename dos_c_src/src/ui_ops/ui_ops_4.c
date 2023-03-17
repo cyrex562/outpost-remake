@@ -186,8 +186,8 @@ void  pass1_1038_c4fe(Struct18 *param_1)
 {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xc74c;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_c74c;//0xc74c;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -283,13 +283,11 @@ void  message_box_op_1038_c672(i16 param_1, u16 param_2, u16 param_3, u32 param_
 }
 
 
-void  pass1_1038_c80a(Struct18 *param_1)
-
-{
+void  pass1_1038_c80a(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xca6c;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_ca6c;//0xca6c;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -426,13 +424,11 @@ void  enable_window_1038_9cec(i16 param_1, u16 param_2, u16 param_3, u16 param_4
 }
 
 
-void  pass1_1038_9fa4(Struct18 *param_1)
-
-{
+void  pass1_1038_9fa4(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xa0b6;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_a0b6;//0xa0b6;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -461,10 +457,8 @@ void  destroy_window_1038_a072(u16 param_1, u16 param_2, i16 param_3, HWND16 par
 }
 
 
-void  pass1_1038_a156(Struct18 *param_1)
-
-{
-    param_1->field_0x0 = 0xa2d0;
+void  pass1_1038_a156(Struct18 *param_1) {
+    param_1->field_0x0 = addr_table_1038_a2d0;//0xa2d0;
     param_1->field_0x2 = SEG_1038;
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
     return;
@@ -752,13 +746,11 @@ void  win_sys_op_1038_a9fa(u32 param_1, i16 param_2)
 }
 
 
-void  pass1_1038_abb0(Struct18 *param_1)
-
-{
+void  pass1_1038_abb0(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xad72;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_ad72;//0xad72;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -2086,24 +2078,24 @@ void  set_struct_op_1020_921c(Struct7 *param_1, u16 param_2)
     param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     iVar3->field_0x2   = SEG_1008;
     param_1->field_0x0 = addr_table_1008_3aa0[2];//0x3aa8;
-    iVar3->field_0x2   = SEG_1008;
-    iVar3->field_0x4   = param_2;
+    iVar3->field_0x2 = SEG_1008;
+    iVar3->field_0x4 = param_2;
     param_1->field_0x0 = addr_table_1008_3aa0[4]; // 0x3ab0;
-    iVar3->field_0x2   = SEG_1008;
-    iVar3->field_0x6   = 0x0;
-    iVar3->field_0xa   = 0x0;
-    iVar3->field_0xc   = 0x0;
-    iVar3->field_0xe   = 0x0;
-    iVar3->field_0x10  = 0x0;
-    iVar3->field_0x12  = 0x0;
-    param_1->field_0x0 = 0x96c8;
-    iVar3->field_0x2   = SEG_1020;
-    HVar1              = GetDC16(unaff_CS);
-    iVar3->field_0xa   = HVar1;
-    pUVar3             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
-    pUVar3       = (pUVar3 >> 0x10);
-    iVar3->field_0xc   = (pUVar3 + 0xa);
-    iVar3->field_0xe   = (pUVar3 + 0xc);
+    iVar3->field_0x2 = SEG_1008;
+    iVar3->field_0x6 = 0x0;
+    iVar3->field_0xa = 0x0;
+    iVar3->field_0xc = 0x0;
+    iVar3->field_0xe = 0x0;
+    iVar3->field_0x10 = 0x0;
+    iVar3->field_0x12 = 0x0;
+    param_1->field_0x0 = addr_table_1020_96c8;//0x96c8;
+    iVar3->field_0x2 = SEG_1020;
+    HVar1 = GetDC16(unaff_CS);
+    iVar3->field_0xa = HVar1;
+    pUVar3 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
+    pUVar3 = (pUVar3 >> 0x10);
+    iVar3->field_0xc = (pUVar3 + 0xa);
+    iVar3->field_0xe = (pUVar3 + 0xc);
 }
 
 void  pass1_1020_770e(u32 param_1)

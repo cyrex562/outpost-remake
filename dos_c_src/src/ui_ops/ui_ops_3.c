@@ -19,16 +19,16 @@
 #include "win_ops/win_ops_1.h"
 #include "win_ops/win_ops_2.h"
 #include "win_ops/win_ops_4.h"
+#include "address_tables/function_tables.h"
+#include "unk/unk_17.h"
 
 #include <stddef.h>
 
-void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2)
-
-{
+void destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2) {
     Struct31 *iVar1;
     Struct31 *uVar1;
 
-    uVar1            = (Struct31 *)(param_1 >> 0x10);
+    uVar1 = (Struct31 * )(param_1 >> 0x10);
     iVar1            = (Struct31 *)param_1;
     param_1          = 0x67c;
     iVar1->fld2_segment = SEG_1040;
@@ -596,13 +596,11 @@ void  pass1_1038_e03e(u32 param_1)
     return;
 }
 
-void  pass1_1038_e16e(Struct18 *param_1)
-
-{
+void  pass1_1038_e16e(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xe264;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_e264;//0xe264;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -616,23 +614,19 @@ void  check_radio_btn_show_win_1038_e19a(Struct1 *param_1)
     CheckRadioButton16((HWND16)SEG_1040, 0x1807, 0x1807, 0x1807);
     move_win_1040_826c(param_1, 0xc8, 0xc8);
     ShowWindow16((HWND16)SEG_1040, 0x5);
-    return;
 }
 
-void  pass1_1038_e308(Struct18 *param_1)
-
-{
+void  pass1_1038_e308(Struct18 *param_1) {
     i16 iVar1;
     u16 u_var2;
 
-    u_var2              = (param_1 >> 0x10);
-    iVar1              = param_1;
-    param_1->field_0x0 = 0xe62e;
-    (iVar1 + 0x2)      = SEG_1038;
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    param_1->field_0x0 = addr_table_1038_e62e;//0xe62e;
+    (iVar1 + 0x2) = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (iVar1 + 0x6));
     fn_ptr_1000_17ce((iVar1 + 0x8e), SEG_1000);
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
-    return;
 }
 
 void  win_ui_op_1038_e348(Struct1 *param_1)
@@ -724,13 +718,11 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
     return;
 }
 
-void  pass1_1038_e6f0(Struct18 *param_1)
-
-{
+void  pass1_1038_e6f0(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xe92e;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_e92e;//0xe92e;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -852,13 +844,11 @@ void  chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2)
     return;
 }
 
-void  pass1_1038_e9ec(Struct18 *param_1)
-
-{
+void  pass1_1038_e9ec(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xeb32;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_eb32;//0xeb32;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -975,13 +965,11 @@ void  win_dlg_op_1038_c95e(u32 param_1, i16 param_2)
     return;
 }
 
-void  pass1_1038_cb30(Struct18 *param_1)
-
-{
+void  pass1_1038_cb30(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xcc9a;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_cc9a;//0xcc9a;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -1093,13 +1081,11 @@ void  destroy_window_1038_cc00(i16 param_1, u16 param_2, u16 param_3, u32 param_
 }
 
 
-void  pass1_1038_cd5c(Struct18 *param_1)
-
-{
+void  pass1_1038_cd5c(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xcf00;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_cf00;//0xcf00;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -1196,13 +1182,11 @@ void  check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HWND16 param_3)
 }
 
 
-void  pass1_1038_d276(Struct18 *param_1)
-
-{
+void  pass1_1038_d276(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xd6ea;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_d6ea;//0xd6ea;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -1439,23 +1423,19 @@ void  unk_win_ui_op_1038_d400(u8 param_1, u16 param_2, u16 param_3, u32 param_4)
 }
 
 
-void  pass1_1038_d7d0(Struct18 *param_1, u16 param_2)
-
-{
+void  pass1_1038_d7d0(Struct18 *param_1, u16 param_2) {
     i16 iVar1;
     u16 u_var2;
 
-    u_var2              = (param_1 >> 0x10);
-    iVar1              = param_1;
-    param_1->field_0x0 = 0xe0d4;
-    (iVar1 + 0x2)      = SEG_1038;
-    if((iVar1 + 0x90) != 0x0)
-    {
-        pass1_1010_1ea6(_PTR_LOOP_1050_02a0, (long)param_1, param_2);
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    param_1->field_0x0 = addr_table_1038_e0d4;//0xe0d4;
+    (iVar1 + 0x2) = SEG_1038;
+    if ((iVar1 + 0x90) != 0x0) {
+        pass1_1010_1ea6(_PTR_LOOP_1050_02a0, (long) param_1, param_2);
     }
-    if((iVar1 + 0x92) != 0x0)
-    {
-        pass1_1010_1ea6(*(iVar1 + 0x92), (long)param_1, param_2);
+    if ((iVar1 + 0x92) != 0x0) {
+        pass1_1010_1ea6(*(iVar1 + 0x92), (long) param_1, param_2);
     }
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (iVar1 + 0x6));
     fn_ptr_1000_17ce((iVar1 + 0x96), SEG_1000);
@@ -1648,13 +1628,11 @@ BOOL16  bring_win_to_top_1038_b72e(u32 param_1, i16 param_2, HWND16 in_win_handl
 }
 
 
-void  pass1_1038_b7f0(Struct18 *param_1)
-
-{
+void  pass1_1038_b7f0(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xbd70;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_bd70;//0xbd70;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);
@@ -1923,13 +1901,11 @@ void win_ui_cursor_op_1038_bc30(Globals *globals, u32 param_1, HINSTANCE16 param
 }
 
 
-void  pass1_1038_be4a(Struct18 *param_1)
-
-{
+void  pass1_1038_be4a(Struct18 *param_1) {
     u16 uVar1;
 
-    uVar1              = (param_1 >> 0x10);
-    param_1->field_0x0 = 0xc436;
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1038_c436;//0xc436;
     param_1->field_0x2 = SEG_1038;
     pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     ui_cleanup_op_1040_782c(param_1, SEG_1040);

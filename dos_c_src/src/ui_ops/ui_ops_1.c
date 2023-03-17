@@ -30,6 +30,7 @@
 #include "win_ops/win_ops_1.h"
 #include "win_ops/win_ops_3.h"
 #include "win_ops/win_ops_4.h"
+#include "address_tables/function_tables.h"
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -46,7 +47,7 @@ void unk_draw_op_1040_b0f8(Globals *globals, Struct18 *param_1)
     u16      *pu16_var5;
     Struct18 *pstruct18_var6;
 
-    param_1->field_0x0 = 0xb772;
+    param_1->field_0x0 = addr_table_1040_b772;//0xb772;
     param_1->field_0x2 = SEG_1040;
     pu16_var5
       = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x32, u16_var3, pu8_var7, i16_var2);
@@ -676,7 +677,7 @@ void pass1_1040_c5ac(u16 *param_1)
 
     uVar5                       = (param_1 >> 0x10);
     iVar4                       = param_1;
-    param_1->field_0x0 = 0xc9f2;
+    param_1->field_0x0 = addr_table_1040_c9f2;//0xc9f2;
     (iVar4 + 0x2)               = SEG_1040;
     globals->PTR_LOOP_1050_5f02 = globals->PTR_LOOP_1050_5f02 + -0x1;
     if(PTR_LOOP_1050_5f02 == 0x0)
@@ -697,7 +698,6 @@ void pass1_1040_c5ac(u16 *param_1)
         }
     }
     mix_win_ui_op_1040_911e(param_1);
-    return;
 }
 
 
@@ -2094,7 +2094,7 @@ i16 string_1040_8520(Globals  *globals,
     iVar5->field_0x98 = param_3;
     iVar5->field_0x9a = 0x0;
     iVar5->field_0xb2 = 0x0;
-    param_1           = 0x8ddc;
+    param_1           = addr_table_1040_8ddc;//0x8ddc;
     iVar5->field_0x2  = SEG_1040;
     iVar5->field_9e   = 0x0;
     iVar5->field_0xa2 = 0x12c;

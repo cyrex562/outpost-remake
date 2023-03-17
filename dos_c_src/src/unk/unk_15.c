@@ -1381,8 +1381,8 @@ void unk_str_op_1000_3d3e(char *param_1, char *in_string_2)
         {
             puVar7     = puVar7 + 0x1;
             l_string_2 = l_string_2 + 0x1;
-            *param_1   = *in_string_2;
-            uVar6      = uVar6 - 0x1;
+            param_1->field_0x0 = *in_string_2;
+            uVar6 = uVar6 - 0x1;
         }
     }
     else
@@ -1496,8 +1496,8 @@ u16 pass1_1000_2fa4(i16 *param_1, u16 param_2, u16 param_3, u16 param_4, u8 para
             }
         }
     }
-    iVar3        = param_1[0x4];
-    *param_1     = param_1[0x3];
+    iVar3 = param_1[0x4];
+    param_1->field_0x0 = param_1[0x3];
     param_1[0x1] = iVar3;
     param_1[0x2] = 0x0;
     return uVar6;
