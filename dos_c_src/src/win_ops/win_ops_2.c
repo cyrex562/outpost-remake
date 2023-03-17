@@ -1227,7 +1227,7 @@ void  send_msg_1028_e242(u32 *param_1, i16 param_2, HWND16 param_3)
         LVar2  = SendMessage16(param_3, 0x0, 0x0, 0x410000);
         puVar1 = (LVar2 >> 0x10);
     }
-    *param_1 = *param_1 + 0x1;
+    param_1->field_0x0 = *param_1 + 0x1;
     if(param_2 != 0x0)
     {
         pass1_1028_e28a(puVar1, unaff_DI, unaff_SS);
@@ -2197,20 +2197,21 @@ void  struct_1020_3644(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
     Struct270 *iVar1;
 
     struct_1020_790e(param_1, 0x0, param_2, param_3, param_4);
-    in_buf_len_5       = (short)(param_1 >> 0x10);
-    iVar2              = (Struct272 *)param_1;
-    iVar2->field_0xf2  = addr_table_1008_380a[36]; // 0x389a
-    iVar2->field_0xf4  = SEG_1008;
-    iVar2->field_0xf2  = addr_table_1008_3aa0[2];//0x3aa8;
-    iVar2->field_0xf4  = SEG_1008;
+    in_buf_len_5 = (short) (param_1 >> 0x10);
+    iVar2 = (Struct272 *) param_1;
+    iVar2->field_0xf2 = addr_table_1008_380a[36]; // 0x389a
+    iVar2->field_0xf4 = SEG_1008;
+    iVar2->field_0xf2 = addr_table_1008_3aa0[2];//0x3aa8;
+    iVar2->field_0xf4 = SEG_1008;
     iVar2->field_0x100 = 0x0;
     iVar2->field_0x10a = 0x0;
     iVar2->field_0x10e = 0x0;
-    *param_1           = addr_table_1020_3d08;//0x3d08;
-    iVar2->field_0x2   = SEG_1020;
-    iVar2->field_0xf2  = addr_table_1020_3d08[37];//0x3d9c;
-    iVar2->field_0xf4  = SEG_1020;
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, &iVar2->field_0xa, in_buf_len_5);
+    param_1->field_0x0 = addr_table_1020_3d08;//0x3d08;
+    iVar2->field_0x2 = SEG_1020;
+    iVar2->field_0xf2 = addr_table_1020_3d08[37];//0x3d9c;
+    iVar2->field_0xf4 = SEG_1020;
+    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, (_PTR_LOOP_1050_14cc >> 0x10), 0x3ff, &iVar2->field_0xa,
+                          in_buf_len_5);
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | &iVar2->field_0x5b), s_VrMode_1050_42ca);
     iVar2->field_0xac = 0x44c00000;
     window_op_1020_38aa(param_1);
@@ -2415,20 +2416,18 @@ Struct63 * pass1_1020_0ae8(Struct63 *param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-void  pass1_1020_0dc4(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
-
-{
+void  pass1_1020_0dc4(u16 *param_1, u16 param_2, u32 param_3, u16 param_4) {
     i16 iVar1;
     u16 u_var2;
 
     struct_1020_790e(param_1, s_PCPOPMENU_1050_4256, param_2, param_3, param_4);
-    u_var2          = (param_1 >> 0x10);
-    iVar1          = param_1;
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
     (iVar1 + 0xf2) = 0x0;
     (iVar1 + 0xf6) = 0x0;
     (iVar1 + 0xfa) = 0x0;
-    *param_1       = addr_table_1020_1384;//0x1384;
-    (iVar1 + 0x2)  = SEG_1020;
+    param_1->field_0x0 = addr_table_1020_1384;//0x1384;
+    (iVar1 + 0x2) = SEG_1020;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (iVar1 + 0x5b)), s_VrMode_1050_4260);
     (iVar1 + 0xac) = 0x44c00000;
     window_op_1020_10a0(param_1);

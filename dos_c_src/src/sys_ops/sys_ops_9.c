@@ -1751,25 +1751,24 @@ void struct_1008_dd4e(Struct209 *param_1, u16 param_2, u16 param_3)
 void pass1_1008_ddca(u16 *param_1, u16 param_2)
 
 {
-    u32  *puVar1;
-    u16          u_var2;
+    u32 *puVar1;
+    u16 u_var2;
     void **ppcVar3;
     Struct471 *iVar5;
-    u16          uVar4;
+    u16 uVar4;
 
-    uVar4            = (param_1 >> 0x10);
-    iVar5            = (Struct471 *)param_1;
-    *param_1         = addr_table_1008_eaac;//0xeaac;
+    uVar4 = (param_1 >> 0x10);
+    iVar5 = (Struct471 *) param_1;
+    param_1->field_0x0 = addr_table_1008_eaac;//0xeaac;
     iVar5->fld2_segment = SEG_1008;
-    puVar1           = iVar5->field_0xe;
-    u_var2            = iVar5->field_0x10;
-    if((u_var2 | puVar1) != 0x0)
-    {
+    puVar1 = iVar5->field_0xe;
+    u_var2 = iVar5->field_0x10;
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
     puVar1 = iVar5->field_0x12;
-    u_var2  = iVar5->field_0x14;
+    u_var2 = iVar5->field_0x14;
     if((u_var2 | puVar1) != 0x0)
     {
         ppcVar3 = *puVar1;

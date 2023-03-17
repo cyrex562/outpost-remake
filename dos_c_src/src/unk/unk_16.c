@@ -126,9 +126,9 @@ void  pass1_1000_2cb0(u16 *param_1, u16 param_2)
         puVar1        = param_1 + 0x5;
         *(u8 *)puVar1 = *(u8 *)puVar1 & 0xf7;
         param_1[0x3]  = 0x0;
-        param_1[0x4]  = 0x0;
-        *param_1      = 0x0;
-        param_1[0x1]  = 0x0;
+        param_1[0x4] = 0x0;
+        param_1->field_0x0 = 0x0;
+        param_1[0x1] = 0x0;
         param_1[0x2]  = 0x0;
     }
     return;

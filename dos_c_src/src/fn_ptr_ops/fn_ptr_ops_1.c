@@ -770,15 +770,14 @@ void pass1_1038_6912(Globals *globals, u16 *param_1)
         ppcVar3 = *puVar4;
         (**ppcVar3)();
     }
-    uVar1     = (param_1 + 0xe);
-    u_var2    = (param_1 + 0x10);
-    paStack10 = (Struct18 *)CONCAT22(u_var2, uVar1);
-    if((u_var2 | uVar1) != 0x0)
-    {
+    uVar1 = (param_1 + 0xe);
+    u_var2 = (param_1 + 0x10);
+    paStack10 = (Struct18 *) CONCAT22(u_var2, uVar1);
+    if ((u_var2 | uVar1) != 0x0) {
         fn_ptr_1020_ba7e(CONCAT22(u_var2, uVar1));
         fn_ptr_1000_17ce(paStack10, SEG_1000);
     }
-    *param_1        = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     param_1->field_0x2 = SEG_1008;
 }
 
@@ -1920,12 +1919,11 @@ void pass1_1038_2a5c(Globals *globals, u16 *param_1)
     }
     puVar1 = (iVar4 + 0x110);
     u_var2 = (iVar4 + 0x112);
-    if((u_var2 | puVar1) != 0x0)
-    {
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar3 = *puVar1;
         (**ppcVar3)();
     }
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar4 + 0x2) = SEG_1008;
 }
 

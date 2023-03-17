@@ -832,7 +832,7 @@ void pass1_1020_ed3c(u32 param_1, i16 param_2, u16 param_3, u8 param_4)
 void pass1_1020_ef5e(u16 *param_1)
 
 {
-    *param_1        = 0x0;
+    param_1->field_0x0 = 0x0;
     param_1->field_0x2 = SEG_1028;
     pass1_1028_b418(param_1);
     return;
@@ -848,8 +848,8 @@ void pass1_1028_0138(u16 *param_1)
     u16         uVar5;
 
     uVar5         = (param_1 >> 0x10);
-    iVar4         = param_1;
-    *param_1      = 0x8ec;
+    iVar4 = param_1;
+    param_1->field_0x0 = 0x8ec;
     (iVar4 + 0x2) = SEG_1028;
     puVar1        = (iVar4 + 0x22);
     u_var2         = (iVar4 + 0x24);
@@ -1731,10 +1731,8 @@ u16 *pass1_1020_e81c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 }
 
 
-void pass1_1020_e846(u16 *param_1)
-
-{
-    *param_1        = addr_table_1020_e88e;//0xe88e;
+void pass1_1020_e846(u16 *param_1) {
+    param_1->field_0x0 = addr_table_1020_e88e;//0xe88e;
     param_1->field_0x2 = SEG_1020;
     pass1_1028_b418(param_1);
     return;
@@ -1785,18 +1783,17 @@ void pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
     {
         pu_stack6 = (Struct99 *)0x0;
     }
-    else
-    {
+    else {
         pu_stack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-        uVar5->field_0x2    = SEG_1008;
-        uVar5->field_0x4    = 0x0;
-        uVar5->field_0x8    = 0x0;
-        pu_stack6->field_0x0 = 0x5bc0;
-        uVar5->field_0x2    = SEG_1008;
-        uVar5->field_0xe    = 0x0;
-        uVar5->field_0xc    = 0x0;
+        uVar5->field_0x2 = SEG_1008;
+        uVar5->field_0x4 = 0x0;
+        uVar5->field_0x8 = 0x0;
+        pu_stack6->field_0x0 = addr_table_1008_5bc0;//0x5bc0;
+        uVar5->field_0x2 = SEG_1008;
+        uVar5->field_0xe = 0x0;
+        uVar5->field_0xc = 0x0;
         pu_stack6->field_0x0 = addr_table_1020_c9e6;//0xc9e6;
-        uVar5->field_0x2    = SEG_1020;
+        uVar5->field_0x2 = SEG_1020;
     }
     if(pu_stack6 == (Struct99 *)0x0)
     {
@@ -1852,16 +1849,13 @@ LAB_1020_c9ab:
 }
 
 
-u16 *pass1_1020_c9ba(u16 *param_1, u8 param_2)
-
-{
+u16 *pass1_1020_c9ba(u16 *param_1, u8 param_2) {
     u16 uVar1;
 
-    uVar1          = (param_1 >> 0x10);
-    *param_1       = addr_table_1008_380a[36]; // 0x389a
+    uVar1 = (param_1 >> 0x10);
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (param_1)[0x1] = SEG_1008;
-    if((param_2 & 0x1) != 0x0)
-    {
+    if ((param_2 & 0x1) != 0x0) {
         pass1_1000_093a(param_1, uVar1, SEG_1000);
     }
     return param_1;

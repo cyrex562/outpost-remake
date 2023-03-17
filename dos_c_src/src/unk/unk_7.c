@@ -10,10 +10,10 @@
 #include "unk_3.h"
 #include "unk_5.h"
 #include "unk_6.h"
+#include "address_tables/function_tables.h"
+#include "struct_ops/struct_ops_3.h"
 
-void  pass1_1028_b58e(u32 param_1)
-
-{
+void pass1_1028_b58e(u32 param_1) {
     u32 uVar1;
 
     uVar1 = (param_1 + 0x8);
@@ -776,34 +776,28 @@ void  pass1_1028_aec0(u32 param_1, i16 param_2, u16 param_3, u16 param_4)
 }
 
 
-Struct100 * pass1_1028_b0de(Struct100 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 param_5)
-
-{
+Struct100 * pass1_1028_b0de(Struct100 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 param_5) {
     pass1_1028_6af2(param_1, param_2, param_3, param_4, param_5);
-    param_1->field_0x0 = 0xb1f4;
+    param_1->field_0x0 = addr_table_1028_b1f4;//0xb1f4;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
 
 
-u16 * pass1_1028_b22c(u16 *param_1, u16 param_2, u32 param_3, u16 param_4)
-
-{
+u16 * pass1_1028_b22c(u16 *param_1, u16 param_2, u32 param_3, u16 param_4) {
     u16 uVar1;
 
     pass1_1030_165e(param_1, 0x6000000, param_3, param_4);
-    uVar1           = (param_1 >> 0x10);
+    uVar1 = (param_1 >> 0x10);
     (param_1 + 0xc) = param_2;
-    param_1->field_0x0 = 0xb33c;
+    param_1->field_0x0 = addr_table_1028_b33c;//0xb33c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
 
 
-void  pass1_1028_b260(u16 *param_1)
-
-{
-    param_1->field_0x0 = 0xb33c;
+void  pass1_1028_b260(u16 *param_1) {
+    param_1->field_0x0 = addr_table_1028_b33c;//0xb33c;
     param_1->field_0x2 = SEG_1028;
     pass1_1030_16b2(param_1);
     return;
@@ -1161,11 +1155,9 @@ u16  pass1_1028_853e(u32 param_1, u16 param_2, u16 param_3)
 }
 
 
-Struct100 * pass1_1028_8698(Struct100 *param_1, u32 param_2, u32 param_3, u8 param_4, u16 param_5)
-
-{
+Struct100 * pass1_1028_8698(Struct100 *param_1, u32 param_2, u32 param_3, u8 param_4, u16 param_5) {
     pass1_1028_6af2(param_1, param_2, param_3, param_5, param_4);
-    param_1->field_0x0 = 0x87e0;
+    param_1->field_0x0 = addr_table_1028_87e0;//0x87e0;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1207,11 +1199,9 @@ void  pass1_1028_8e5c(u32 param_1, i16 param_2, u8 *param_3, u16 param_4)
 }
 
 
-Struct100 * pass1_1028_8fc0(Struct100 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 param_5)
-
-{
+Struct100 * pass1_1028_8fc0(Struct100 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 param_5) {
     pass1_1028_6af2(param_1, param_2, param_3, param_4, param_5);
-    param_1->field_0x0 = 0x90d6;
+    param_1->field_0x0 = addr_table_1028_90d6;//0x90d6;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }

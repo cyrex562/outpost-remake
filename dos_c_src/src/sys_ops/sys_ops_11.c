@@ -11,6 +11,7 @@
 #include "unk/unk_15.h"
 #include "unk/unk_16.h"
 #include "utils.h"
+#include "sys_ops_12.h"
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -1057,7 +1058,7 @@ void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16
     if(param_1 != 0x0)
     {
         param_1->field_0x2 = uVar4;
-        *param_1        = u_var2;
+        param_1->field_0x0 = u_var2;
     }
 }
 
@@ -1935,9 +1936,9 @@ u16 pass1_1000_2e74(u16 *param_1, u16 param_2)
                     puVar4[0x1] = uVar3;
                 }
                 param_1[0x3]  = u_var2;
-                param_1[0x4]  = uVar3;
-                *param_1      = u_var2;
-                param_1[0x1]  = uVar3;
+                param_1[0x4] = uVar3;
+                param_1->field_0x0 = u_var2;
+                param_1[0x1] = uVar3;
                 param_1[0x2]  = 0x200;
                 param_1[0x79] = 0x200;
                 puVar1        = param_1 + 0x5;

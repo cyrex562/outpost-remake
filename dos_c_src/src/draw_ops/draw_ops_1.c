@@ -657,16 +657,16 @@ u16 *unk_win_ui_op_1040_9854(Globals *globals, u16 *param_1, u16 param_2)
 
 //    uVar4         = (param_1 >> 0x10);
 //    iVar3         = param_1;
-    *param_1      = addr_table_1008_380a[32] ;   //0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[32];   //0x389a;
     param_1->field_0x2 = SEG_1008;
     param_1->field_0x0 = addr_table_1040_a230;//0xa230;
     param_1->field_0x2 = SEG_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals->s_OPButton_1050_5ece);
-    (param_1 + 0x54)               = 0x3;
-    cursor_handle_1                = LoadCursor16(SEG_1000, 0x7f00);
-    *(HCURSOR16 *)(param_1 + 0x58) = cursor_handle_1;
-    obj_handle_1                   = GetStockObject16((u16)LAST_SEGMENT);
-    *(HGDIOBJ16 *)(param_1 + 0x56) = obj_handle_1;
+    (param_1 + 0x54) = 0x3;
+    cursor_handle_1 = LoadCursor16(SEG_1000, 0x7f00);
+    *(HCURSOR16 *) (param_1 + 0x58) = cursor_handle_1;
+    obj_handle_1 = GetStockObject16((u16) LAST_SEGMENT);
+    *(HGDIOBJ16 *) (param_1 + 0x56) = obj_handle_1;
     reg_class_1040_98c0(param_1 & 0xffff | uVar4 << 0x10, LAST_SEGMENT, param_2);
     return param_1;
 }

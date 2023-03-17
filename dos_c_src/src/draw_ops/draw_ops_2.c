@@ -853,14 +853,13 @@ void pass1_1020_6466(u16 *param_1, u16 param_2, u16 param_3)
 
 {
     Struct585 *iVar1;
-    u16        uVar1;
+    u16 uVar1;
 
-    uVar1            = (param_1 >> 0x10);
-    iVar1            = (Struct585 *)param_1;
-    *param_1         = addr_table_1020_67c2;//0x67c2;
+    uVar1 = (param_1 >> 0x10);
+    iVar1 = (Struct585 *) param_1;
+    param_1->field_0x0 = addr_table_1020_67c2;//0x67c2;
     iVar1->field_0x2 = SEG_1020;
-    if(iVar1->field_0x14 != 0x0)
-    {
+    if (iVar1->field_0x14 != 0x0) {
         param_2 = SEG_1010;
         pass1_1010_1ea6(iVar1->field_0x14, param_1 & 0xffff | uVar1 << 0x10, param_3);
     }
@@ -1032,38 +1031,36 @@ HGDIOBJ16 draw_op_1020_7070(u16 param_1, u16 param_2)
 void palette_op_1020_7270(u16 *param_1, HDC16 param_2)
 
 {
-    u16        uVar1;
-    u16        u_var2;
+    u16 uVar1;
+    u16 u_var2;
     HPALETTE16 HVar3;
-    i16        iVar4;
-    u16        uVar5;
-    u16        unaff_SS;
-    Struct18  *paStack8;
+    i16 iVar4;
+    u16 uVar5;
+    u16 unaff_SS;
+    Struct18 *paStack8;
 
-    uVar5         = (param_1 >> 0x10);
-    iVar4         = param_1;
-    *param_1      = addr_table_1020_754c;//0x754c;
+    uVar5 = (param_1 >> 0x10);
+    iVar4 = param_1;
+    param_1->field_0x0 = addr_table_1020_754c;//0x754c;
     (iVar4 + 0x2) = SEG_1020;
-    if((iVar4 + 0x1c) != 0x0)
-    {
+    if ((iVar4 + 0x1c) != 0x0) {
         param_2 = SEG_1010;
         pass1_1010_1ea6(*(iVar4 + 0x1c), param_1 & 0xffff | uVar5 << 0x10, unaff_SS);
     }
-    uVar1    = (iVar4 + 0x14);
-    u_var2   = (iVar4 + 0x16);
-    paStack8 = (Struct18 *)CONCAT22(u_var2, uVar1);
-    if((u_var2 | uVar1) != 0x0)
-    {
+    uVar1 = (iVar4 + 0x14);
+    u_var2 = (iVar4 + 0x16);
+    paStack8 = (Struct18 *) CONCAT22(u_var2, uVar1);
+    if ((u_var2 | uVar1) != 0x0) {
         pass1_1008_5118(CONCAT22(u_var2, uVar1));
         param_2 = SEG_1000;
         fn_ptr_1000_17ce(paStack8, SEG_1000);
     }
-    HVar3 = SelectPalette16(param_2, 0x0, *(BOOL16 *)(iVar4 + 0x20));
-    *(HPALETTE16 *)(iVar4 + 0x20) = HVar3;
-    DeleteObject16((HGDIOBJ16)LAST_SEGMENT);
-    *param_1      = addr_table_1008_3aa0[4];//0x3ab0;
+    HVar3 = SelectPalette16(param_2, 0x0, *(BOOL16 *) (iVar4 + 0x20));
+    *(HPALETTE16 *) (iVar4 + 0x20) = HVar3;
+    DeleteObject16((HGDIOBJ16) LAST_SEGMENT);
+    param_1->field_0x0 = addr_table_1008_3aa0[4];//0x3ab0;
     (iVar4 + 0x2) = SEG_1008;
-    *param_1      = addr_table_1008_380a[36];//0x389a;
+    param_1->field_0x0 = addr_table_1008_380a[36];//0x389a;
     (iVar4 + 0x2) = SEG_1008;
 }
 
@@ -1461,23 +1458,20 @@ void unk_draw_op_1020_41c8(Globals  *globals,
 }
 
 
-void destroy_cursor_1020_42f4(u16 *param_1, HMENU16 param_2)
-
-{
-    i16     iVar1;
-    u16     u_var2;
+void destroy_cursor_1020_42f4(u16 *param_1, HMENU16 param_2) {
+    i16 iVar1;
+    u16 u_var2;
     HMENU16 h_cursor;
 
-    u_var2         = (param_1 >> 0x10);
-    iVar1          = param_1;
-    *param_1       = addr_table_1020_623c;//0x623c;
-    (iVar1 + 0x2)  = SEG_1020;
+    u_var2 = (param_1 >> 0x10);
+    iVar1 = param_1;
+    param_1->field_0x0 = addr_table_1020_623c;//0x623c;
+    (iVar1 + 0x2) = SEG_1020;
     (iVar1 + 0xe2) = addr_table_1020_623c[39];//0x62d8;
     (iVar1 + 0xe4) = SEG_1020;
-    h_cursor       = param_2;
-    if((iVar1 + 0x106) != 0x0)
-    {
-        h_cursor = (HMENU16)LAST_SEGMENT;
+    h_cursor = param_2;
+    if ((iVar1 + 0x106) != 0x0) {
+        h_cursor = (HMENU16) LAST_SEGMENT;
         DestroyMenu16(param_2);
     }
     DestroyCursor16(h_cursor);
@@ -1541,24 +1535,24 @@ void load_draw_op_1020_2ede(u16 *param_1, u32 param_2, u16 param_3)
     u32       uVar10;
 
     get_sys_metrics_1020_7c1a(param_1, param_2, param_3);
-    uVar7          = (param_1 >> 0x10);
-    iVar6          = param_1;
+    uVar7 = (param_1 >> 0x10);
+    iVar6 = param_1;
     (iVar6 + 0x14) = 0x0;
     (iVar6 + 0x18) = 0x0;
     (iVar6 + 0x1a) = 0x0;
     (iVar6 + 0x1c) = 0x0;
     (iVar6 + 0x1e) = 0x0;
     (iVar6 + 0x20) = 0x0;
-    *param_1       = addr_table_1020_363c;//0x363c;
-    (iVar6 + 0x2)  = SEG_1020;
+    param_1->field_0x0 = addr_table_1020_363c;//0x363c;
+    (iVar6 + 0x2) = SEG_1020;
     puVar8
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, (param_2 + 0xfc), unaff_SS, in_DX, unaff_DI);
+            = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, (param_2 + 0xfc), unaff_SS, in_DX, unaff_DI);
     (iVar6 + 0x14) = puVar8;
     (iVar6 + 0x16) = (puVar8 >> 0x10);
-    uVar1          = (iVar6 + 0x14);
-    ppcVar2        = ((iVar6 + 0x14) + 0x4);
+    uVar1 = (iVar6 + 0x14);
+    ppcVar2 = ((iVar6 + 0x14) + 0x4);
     (**ppcVar2)(SEG_1010, uVar1, (uVar1 >> 0x10), 0x0, param_1);
-    paVar9 = (Struct76 *)pass1_1018_0a50(*(iVar6 + 0x14));
+    paVar9 = (Struct76 *) pass1_1018_0a50(*(iVar6 + 0x14));
     uVar10 = pass1_1008_4772(paVar9);
     HVar3  = CreateDC16(SEG_1008, uVar10, (uVar10 >> 0x10), (DEVMODEA *)0x0);
     *(HDC16 *)(iVar6 + 0x18) = HVar3;
@@ -2500,18 +2494,15 @@ void pass1_1020_27b0(Struct664 *param_1,
     return;
 }
 
-void pass1_1020_2838(u16 *param_1, u16 param_2)
-
-{
+void pass1_1020_2838(u16 *param_1, u16 param_2) {
     Struct584 *iVar1;
-    u16        uVar1;
+    u16 uVar1;
 
-    uVar1            = (param_1 >> 0x10);
-    iVar1            = (Struct584 *)param_1;
-    *param_1         = addr_table_1020_288e;//0x288e;
+    uVar1 = (param_1 >> 0x10);
+    iVar1 = (Struct584 *) param_1;
+    param_1->field_0x0 = addr_table_1020_288e;//0x288e;
     iVar1->field_0x2 = SEG_1020;
-    if(iVar1->field_0x14 != 0x0)
-    {
+    if (iVar1->field_0x14 != 0x0) {
         param_2 = SEG_1010;
         pass1_1010_1dda(iVar1->field_0x14);
     }

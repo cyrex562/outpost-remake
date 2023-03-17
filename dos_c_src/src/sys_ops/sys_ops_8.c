@@ -258,31 +258,28 @@ switchD_1010_8e11_caseD_4:
 void  pass1_1010_8ef2(u16 *param_1, u8 *param_2, u16 param_3)
 
 {
-    u16          uVar1;
-    u8          *pu_var2;
-    u8          *extraout_DX;
+    u16 uVar1;
+    u8 *pu_var2;
+    u8 *extraout_DX;
     Struct170 *iVar3;
-    i16          unaff_DI;
-    u16          uVar3;
-    u16         *puVar4;
+    i16 unaff_DI;
+    u16 uVar3;
+    u16 *puVar4;
 
-    uVar3             = (param_1 >> 0x10);
-    iVar3             = (Struct170 *)param_1;
-    *param_1          = addr_table_1008_380a[36]; // 0x389a
-    iVar3->field_0x2  = SEG_1008;
-    uVar1             = 0x0;
+    uVar3 = (param_1 >> 0x10);
+    iVar3 = (Struct170 *) param_1;
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
+    iVar3->field_0x2 = SEG_1008;
+    uVar1 = 0x0;
     &iVar3->field_0x4 = 0x0;
     &iVar3->field_0x8 = 0x0;
-    *param_1          = addr_table_1010_9254;//0x9254;
-    iVar3->field_0x2  = SEG_1010;
+    param_1->field_0x0 = addr_table_1010_9254;//0x9254;
+    iVar3->field_0x2 = SEG_1010;
     mem_op_1000_179c(0x18, param_2, SEG_1000);
     pu_var2 = (param_2 | uVar1);
-    if(pu_var2 == 0x0)
-    {
+    if (pu_var2 == 0x0) {
         &iVar3->field_0x4 = 0x0;
-    }
-    else
-    {
+    } else {
         struct_op_1030_1cd8(CONCAT22(param_2, uVar1), 0x5, 0x5);
         iVar3->field_0x4 = uVar1;
         iVar3->field_0x6 = extraout_DX;
@@ -1237,27 +1234,25 @@ void  write_private_profile_str_1010_5b10(u16 *param_1)
     void **ppcVar4;
     LPCSTR      pCVar5;
     u8         *in_DX;
-    i16         iVar6;
-    i16         unaff_DI;
-    u16         uVar7;
-    u16         unaff_SS;
-    u8          in_AF;
-    u16        *puVar8;
-    i16         iStack12;
+    i16 iVar6;
+    i16 unaff_DI;
+    u16 uVar7;
+    u16 unaff_SS;
+    u8 in_AF;
+    u16 *puVar8;
+    i16 iStack12;
 
-    uVar7         = (param_1 >> 0x10);
-    iVar6         = param_1;
-    *param_1      = addr_table_1010_6312;//0x6312;
+    uVar7 = (param_1 >> 0x10);
+    iVar6 = param_1;
+    param_1->field_0x0 = addr_table_1010_6312;//0x6312;
     (iVar6 + 0x2) = SEG_1010;
-    puVar8        = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
-    uVar3         = (iVar6 + 0xe);
-    sys_1000_3f9c(uVar3, (uVar3 >> 0x10), 0x149c, SEG_1050, (puVar8 + 0xa), &stack0xfffe, uVar7, SEG_1000, unaff_SS, in_AF);
-    if((iVar6 + 0x80) == 0x0)
-    {
+    puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, unaff_SS, in_DX, unaff_DI);
+    uVar3 = (iVar6 + 0xe);
+    sys_1000_3f9c(uVar3, (uVar3 >> 0x10), 0x149c, SEG_1050, (puVar8 + 0xa), &stack0xfffe, uVar7, SEG_1000, unaff_SS,
+                  in_AF);
+    if ((iVar6 + 0x80) == 0x0) {
         pCVar5 = 0x13c8;
-    }
-    else
-    {
+    } else {
         pCVar5 = 0x13c4;
     }
     uVar3 = (iVar6 + 0xa);

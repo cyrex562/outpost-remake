@@ -491,8 +491,8 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
 
     uVar6         = (param_1 >> 0x10);
     iVar5         = param_1;
-    *param_1      = addr_table_1008_380a[36]//0x389e;
-    (iVar5 + 0x2) = SEG_1008;
+    param_1->field_0x0 = addr_table_1008_380a[36]//0x389e;
+            (iVar5 + 0x2) = SEG_1008;
     set_sys_color_1008_357e(param_1, 0x0, unaff_CS, unaff_SS);
     paVar3 = (iVar5 + 0xf8);
     uVar8  = (paVar3 >> 0x10);
@@ -507,17 +507,16 @@ void  cleanup_ui_op_1008_0618(u16 *param_1)
     uVar7 = (iVar5 + 0xc2);
     DestroyIcon16(h_icon);
     (iVar5 + 0xc2) = 0x0;
-    puVar1         = (iVar5 + 0xe0);
-    u_var2          = (iVar5 + 0xe2);
-    if((u_var2 | puVar1) != 0x0)
-    {
+    puVar1 = (iVar5 + 0xe0);
+    u_var2 = (iVar5 + 0xe2);
+    if ((u_var2 | puVar1) != 0x0) {
         ppcVar4 = *puVar1;
         (**ppcVar4)(LAST_SEGMENT, puVar1, u_var2, 0x1, uVar7, uVar8);
     }
     pass1_1008_57c4((param_1 & 0xffff0000 | (iVar5 + 0xd2)));
-    *param_1      = addr_table_1008_380a; // 0x380a
+    param_1->field_0x0 = addr_table_1008_380a; // 0x380a
     (iVar5 + 0x2) = SEG_1008;
-    *param_1      = addr_table_1008_380a[36]; // 0x389a
+    param_1->field_0x0 = addr_table_1008_380a[36]; // 0x389a
     (iVar5 + 0x2) = SEG_1008;
     return;
 }
