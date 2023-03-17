@@ -16,7 +16,7 @@ void struct_1040_b082(Globals *globals, Struct57 *param_1, u32 param_2)
     param_1->field_0x8e = 0x0;
     param_1->field_0x90 = 0x0;
     param_1->field_0x1           = 0xb772;
-    param_1->field_0x2  = SEG_1040;
+    param_1->fld2_segment        = SEG_1040;
 }
 
 void  pass1_1040_b040(Struct57 *param_1, u32 param_2, u16 param_3)
@@ -66,7 +66,7 @@ void  pass1_1040_4068(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar2->field_0x92  = 0x0;
     iVar2->field_0x9a  = 0x0;
     param_1            = 0x4466;
-    iVar2->field_0x2   = SEG_1040;
+    iVar2->fld2_segment = SEG_1040;
     iVar2->field_0x76  = 0x1;
     puVar3             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_8, param_6, param_7);
     puVar1             = (puVar3 >> 0x10);
@@ -88,9 +88,9 @@ void  get_sys_metrics_1040_7728(Struct57 *param_1, u16 param_2, u32 param_3, u16
     u_var2             = (param_1 >> 0x10);
     iVar2             = param_1;
     param_1           = addr_table_1008_380a[36]; // 0x389a
-    iVar2->field_0x2  = SEG_1008;
+    iVar2->fld2_segment     = SEG_1008;
     param_1           = addr_table_1008_3aa0[2];//0x3aa8;
-    iVar2->field_0x2  = SEG_1008;
+    iVar2->fld2_segment     = SEG_1008;
     iVar2->field_0x4  = 0x0;
     iVar2->field_0x6  = 0x0;
     iVar2->field_0x8  = param_5;
@@ -110,7 +110,7 @@ void  get_sys_metrics_1040_7728(Struct57 *param_1, u16 param_2, u32 param_3, u16
     iVar2->field_0x8a = 0x0;
     iVar2->field_0x8c = 0x0;
     param_1           = 0x840c;
-    iVar2->field_0x2  = 0x1040//SEG_1040;
+    iVar2->fld2_segment     = 0x1040//SEG_1040;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | &iVar2->field_0x10), 0x10505db0);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar2->field_0x7a), 0x0, 0x8);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar2->field_0x82), 0x0, 0x8);
@@ -281,7 +281,7 @@ void  pass1_1040_48a0(Struct57 *param_1, u16 param_2, u32 param_3, u16 param_4, 
     iVar5                      = (Struct444 *)param_1;
     iVar5->field_0x94          = 0x0;
     param_1                    = &PTR_LOOP_1050_4e18;
-    iVar5->field_0x2           = SEG_1040;
+    iVar5->fld2_segment           = SEG_1040;
     puVar8                     = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, param_5, unaff_DI);
     puVar4                     = (puVar8 >> 0x10);
     uVar3                      = puVar8;
@@ -316,7 +316,7 @@ void  pass1_1040_48a0(Struct57 *param_1, u16 param_2, u32 param_3, u16 param_4, 
         piVar2           = iVar5->field_0x90;
         uVar7            = (piVar2 >> 0x10);
         iVar6            = (Struct445 *)piVar2;
-        iVar6->field_0x2 = uVar3 + 0x2;
+        iVar6->fld2_segment = uVar3 + 0x2;
         iVar6->field_0x4 = puVar5;
     }
     piVar2          = iVar5->field_0x90;
@@ -347,7 +347,7 @@ void  pass1_1040_23ea(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar2->field_0x92  = 0x0;
     iVar2->field_0x94  = 0x0;
     param_1            = 0x2956;
-    iVar2->field_0x2   = SEG_1040;
+    iVar2->fld2_segment = SEG_1040;
     iVar2->field_0x8a  = 0x26;
     puVar3             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x6, param_6, param_7, unaff_DI);
     iVar2->field_0x8e  = puVar3;
@@ -373,7 +373,7 @@ void  pass1_1040_2ea2(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar1->field_0x94  = 0x0;
     &iVar1->field_0x96 = 0x0;
     param_1            = 0x3436;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3c, param_8, param_6, param_7);
     iVar1->field_0x96  = pu_var2;
     iVar1->field_0x98  = (pu_var2 >> 0x10);
@@ -396,7 +396,7 @@ void  pass1_1040_34a2(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar1->field_0x96  = 0x0;
     iVar1->field_0x98  = 0x0;
     param_1            = s_Null_Ptr_1050_38f3 + 0x7;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3c, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -415,7 +415,7 @@ Struct57 * pass1_1040_123e(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
     iVar1              = (Struct717 *)param_1;
     &iVar1->field_0x8e = 0x0;
     param_1            = 0x17b0;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x46, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -437,7 +437,7 @@ void  pass1_1040_181c(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar1->field_0x92  = 0x0;
     iVar1->field_0x94  = 0x0;
     param_1            = 0x1c48;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_7, param_6, unaff_DI);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -458,7 +458,7 @@ void  pass1_1040_1cb4(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     &iVar2->field_0x8e = 0x0;
     &iVar2->field_0x92 = 0x0;
     param_1            = 0x1eee;
-    iVar2->field_0x2   = SEG_1040;
+    iVar2->fld2_segment = SEG_1040;
     puVar3             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_8, param_6, param_7);
     puVar1             = (puVar3 >> 0x10);
     iVar2->field_0x8e  = puVar3;
@@ -530,7 +530,7 @@ void  pass1_1038_eeda(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, 
     iVar1->field_0x92  = 0x0;
     iVar1->field_0x94  = 0x0;
     param_1            = 0x67c;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x9, param_5, param_3, param_4);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -634,7 +634,7 @@ Struct57 * pass1_1040_0bfc(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
     iVar1              = (Struct715 *)param_1;
     &iVar1->field_0x8e = 0x0;
     param_1            = 0xdb0;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x39, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -660,7 +660,7 @@ void  pass1_1040_0e1c(Struct57 *param_1, u16 param_2, u32 param_3, u16 param_4, 
     iVar1->field_0x96  = 0x0;
     iVar1->field_0x98  = param_2;
     param_1            = s_overflow_on_node__d_1050_11ca + 0x8;
-    iVar1->field_0x2   = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3a, param_7, param_5, param_6);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -816,7 +816,7 @@ Struct57 * pass1_1038_e140(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
 {
     get_sys_metrics_1040_7728(param_1, 0x1, param_2, 0xfc2, param_5);
     param_1         = 0xe264;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -829,7 +829,7 @@ Struct57 * pass1_1038_e2d0(Struct57 *param_1, u16 param_2)
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x8e) = 0x0;
     param_1          = 0xe62e;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -846,7 +846,7 @@ void  pass1_1038_e69a(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     &iVar1->field_0x8e = 0x0;
     iVar1->field_0x92  = 0x0;
     param_1            = 0xe92e;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x43, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -866,7 +866,7 @@ Struct57 * pass1_1038_e99a(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
     iVar1              = (Struct434 *)param_1;
     &iVar1->field_0x8e = 0x0;
     param_1            = 0xeb32;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x30, param_7, param_6, unaff_DI);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -882,7 +882,7 @@ Struct57 * pass1_1038_eb9e(Struct57 *param_1, u16 param_2)
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x8e) = 0x0;
     param_1          = 0xee6e;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -898,7 +898,7 @@ Struct57 * pass1_1038_cad8(Struct57 *param_1, u16 param_2, u8 *param_3, i16 para
     iVar1              = (Struct709 *)param_1;
     &iVar1->field_0x8e = 0x0;
     param_1            = 0xcc9a;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2c, param_5, param_3, param_4);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -920,7 +920,7 @@ void  pass1_1038_cd06(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     &iVar1->field_0x8e = 0x0;
     iVar1->field_0x92  = 0x0;
     param_1            = 0xcf00;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x42, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -980,7 +980,7 @@ Struct57 * pass1_1038_d242(Struct57 *param_1, u16 param_2)
     get_sys_metrics_1040_7728(param_1, 0x1, 0x0, 0x13e, param_2);
     uVar1            = (param_1 >> 0x10);
     param_1          = 0xd6ea;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     (param_1 + 0x74) = 0x1;
     return param_1;
 }
@@ -1002,7 +1002,7 @@ Struct57 * pass1_1038_d756(Struct57 *param_1, u16 param_2, u8 *param_3, i16 para
     iVar2->field_0x92          = 0x0;
     iVar2->field_0x96          = 0x0;
     param_1                    = 0xe0d4;
-    iVar2->field_0x2           = SEG_1038;
+    iVar2->fld2_segment         = SEG_1038;
     puVar3                     = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2b, param_5, param_3, param_4);
     &iVar2->field_0x92         = puVar3;
     (&iVar2->field_0x92 + 0x2) = (puVar3 >> 0x10);
@@ -1028,7 +1028,7 @@ void  pass1_1038_b772(Struct57 *param_1, u8 *param_2, i16 param_3, u16 param_4, 
     iVar2->field_0x96  = 0x1;
     iVar2->field_0x98  = 0x0;
     param_1            = 0xbd70;
-    iVar2->field_0x2   = SEG_1038;
+    iVar2->fld2_segment = SEG_1038;
     puVar3             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x36, param_4, param_2, param_3);
     puVar1             = (puVar3 >> 0x10);
     iVar2->field_0x8e  = puVar3;
@@ -1111,7 +1111,7 @@ void  pass1_1038_bddc(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar1->field_0x9a  = 0x0;
     iVar1->field_9c    = 0x0;
     param_1            = 0xc436;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3b, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -1133,7 +1133,7 @@ void  pass1_1038_c4a2(Struct57 *param_1, u32 param_2, u16 param_3, u16 param_4, 
     iVar1->field_0x92  = 0x0;
     iVar1->field_0x96  = 0x0;
     param_1            = 0xc74c;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3b, param_8, param_6, param_7);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -1154,7 +1154,7 @@ Struct57 * pass1_1038_c7b8(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
     iVar1              = (Struct435 *)param_1;
     &iVar1->field_0x8e = 0x0;
     param_1            = 0xca6c;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x5, param_7, param_6, unaff_DI);
     iVar1->field_0x8e  = pu_var2;
     iVar1->field_0x90  = (pu_var2 >> 0x10);
@@ -1167,7 +1167,7 @@ Struct57 * pass1_1038_9f76(Struct57 *param_1, u32 param_2, u16 param_3, u16 para
 {
     get_sys_metrics_1040_7728(param_1, 0x1, param_2, 0xfba, param_5);
     param_1         = 0xa0b6;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -1178,7 +1178,7 @@ u16 * pass1_1038_a122(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u32 pa
     get_sys_metrics_1040_7728(CONCAT22(param_2, param_1), param_3, param_4, param_5, (param_5 >> 0x10));
     (param_1 + 0x8e)           = 0x0;
     param_1 =  0xa2d0;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment      = SEG_1038;
     return param_1;
 }
 
@@ -1188,7 +1188,7 @@ Struct57 * pass1_1038_ab82(Struct57 *param_1, u16 param_2)
 {
     get_sys_metrics_1040_7728(param_1, 0x1, 0x0, 0xfd3, param_2);
     param_1         = 0xad72;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -1291,7 +1291,7 @@ void  pass1_1038_78e2(u32 *param_1, u8 *param_2)
     {
         set_struct_1008_574a(CONCAT22(param_2, uVar1));
         param_1          = uVar1;
-        iVar4->field_0x2 = extraout_DX;
+        iVar4->fld2_segment = extraout_DX;
         pu_var2           = extraout_DX;
     }
     mem_op_1000_179c(0xc, pu_var2, SEG_1000);
@@ -1351,7 +1351,7 @@ Struct57 * pass1_1038_7d10(Struct57 *param_1, u16 param_2, u8 *param_3, i16 para
     iVar1              = (Struct703 *)param_1;
     &iVar1->field_0x94 = 0x0;
     param_1            = 0x8876;
-    iVar1->field_0x2   = SEG_1038;
+    iVar1->fld2_segment   = SEG_1038;
     pu_var2             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x40, param_5, param_3, param_4);
     iVar1->field_0x94  = pu_var2;
     iVar1->field_0x96  = (pu_var2 >> 0x10);
@@ -1520,7 +1520,7 @@ void  pass1_1038_2b9a(u32 param_1, Struct422 *param_2, u8 *param_3)
     if((param_3 | param_2) != 0x0)
     {
         *puStack10         = addr_table_1008_380a[36]; // 0x389a
-        param_2->field_0x2 = SEG_1008;
+        param_2->fld2_segment = SEG_1008;
         param_2->field_0x4 = iVar5->field_0x4;
         puVar4             = &iVar5->field_0x8;
         puVar5             = &param_2->field_0x8;
@@ -1533,13 +1533,13 @@ void  pass1_1038_2b9a(u32 param_1, Struct422 *param_2, u8 *param_3)
             *pu_var2 = *puVar1;
         }
         *puStack10           = 0x6ad2;
-        param_2->field_0x2   = SEG_1028;
+        param_2->fld2_segment     = SEG_1028;
         param_2->field_0x108 = iVar5->field_0x108;
         param_2->field_0x10c = iVar5->field_0x10c;
         param_2->field_0x110 = iVar5->field_0x110;
         param_2->field_0x114 = iVar5->field_0x114;
         *puStack10           = 0x309a;
-        param_2->field_0x2   = SEG_1038;
+        param_2->fld2_segment     = SEG_1038;
     }
     iVar5->field_0x114 = 0x0;
     iVar5->field_0x110 = 0x0;
@@ -1585,7 +1585,7 @@ void  pass1_1038_30aa(u16 *param_1, u16 param_2)
     iVar5->field_0x216  = 0x0;
     iVar5->field_0x21a  = 0x0;
     param_1->field_0x0 = 0x6504;
-    iVar5->field_0x2    = SEG_1038;
+    iVar5->fld2_segment           = SEG_1038;
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x26), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0xba), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x14e), 0x0, 0x54);
@@ -1658,7 +1658,7 @@ void  pass1_1038_3222(u16 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 *p
     iVar5->field_0x216  = 0x0;
     iVar5->field_0x21a  = 0x0;
     param_1->field_0x0 = 0x6504;
-    iVar5->field_0x2    = SEG_1038;
+    iVar5->fld2_segment           = SEG_1038;
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x26), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0xba), 0x0, 0x94);
     pass1_1000_4906((param_1 & 0xffff0000 | &iVar5->field_0x14e), 0x0, 0x54);
@@ -1676,7 +1676,7 @@ void  pass1_1038_3222(u16 *param_1, u32 param_2, u32 param_3, u16 param_4, u8 *p
         iVar5->field_0x1f8 = uVar3;
     }
     pu_var2 = (iVar5->field_0x6 & 0xff);
-    sys_1000_3f9c(local_16, param_7, 0x5a1a, &USHORT_1050_1050, *&iVar5->field_0x4, &stack0xfffe, uVar5, SEG_1000, param_7, param_6);
+    sys_1000_3f9c(local_16, param_7, 0x5a1a, SEG_1050, *&iVar5->field_0x4, &stack0xfffe, uVar5, SEG_1000, param_7, param_6);
     uVar3              = str_op_1008_60e8(CONCAT22(param_7, local_16), pu_var2);
     iVar5->field_0x1fa = uVar3;
     iVar5->field_0x1fc = pu_var2;
@@ -1845,8 +1845,8 @@ Struct100 * pass1_1038_0ba6(Struct100 *param_1, i16 param_2, u16 param_3, u8 par
     u_var2               = (param_1 >> 0x10);
     iVar2               = (Struct701 *)param_1;
     &iVar2->field_0x108 = 0x0;
-    param_1->field_0x0  = 0x1c2e;
-    iVar2->field_0x2    = SEG_1038;
+    param_1->fld0_addr_table = 0x1c2e;
+    iVar2->fld2_segment  = SEG_1038;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | &iVar2->field_0x8), s_SCMove_1050_59d8);
     puVar4             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_3, puVar1, param_2);
     iVar2->field_0x108 = puVar4;

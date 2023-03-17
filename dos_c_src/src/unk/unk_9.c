@@ -1,6 +1,6 @@
 #include "unk_9.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -12,7 +12,7 @@ u16 *pass1_1028_0b64(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0xbbc;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -23,7 +23,7 @@ u16 *pass1_1028_0c50(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x22)           = 0x0;
     param_1 =  s_480_bmp_1050_1721 + 0x3;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -666,7 +666,7 @@ u16 *pass1_1028_17ae(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x1b54;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -697,7 +697,7 @@ u16 *pass1_1020_e91e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
     (param_1 + 0x24)           = 0x0;
     param_1 =  addr_table_1020_eef6;//0xeef6;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment      = SEG_1020;
     return param_1;
 }
 
@@ -996,7 +996,7 @@ u16 *pass1_1020_d888(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  addr_table_1020_d8ec;//0xd8ec;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment = SEG_1020;
     return param_1;
 }
 
@@ -1726,7 +1726,7 @@ u16 *pass1_1020_e81c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  addr_table_1020_e88e;//0xe88e;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment = SEG_1020;
     return param_1;
 }
 
@@ -1925,7 +1925,7 @@ u16 *pass1_1020_cd06(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  addr_table_1020_cd7e;//0xcd7e;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment = SEG_1020;
     return param_1;
 }
 
@@ -2010,7 +2010,7 @@ u16 *pass1_1020_d08e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  addr_table_1020_d314;//0xd314;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment = SEG_1020;
     return param_1;
 }
 

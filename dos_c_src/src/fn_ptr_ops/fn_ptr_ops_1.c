@@ -1,6 +1,6 @@
 #include "fn_ptr_ops_1.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "cleanup/cleanup_ops.h"
 #include "draw_ops/draw_ops_1.h"
 #include "draw_ops/draw_ops_2.h"

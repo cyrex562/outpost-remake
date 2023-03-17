@@ -1154,6 +1154,7 @@ struct Struct4
 typedef struct StructD
 {
 
+    void *address_offset_field_0x0;
 } StructD;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_X_H_

@@ -1,7 +1,8 @@
 
 #include "init_globals.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
+#include "data_tables.h"
 #include "globals.h"
 #include "op_int.h"
 

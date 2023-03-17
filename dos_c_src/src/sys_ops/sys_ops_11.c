@@ -480,7 +480,7 @@ u16 create_subdirectory_1000_4f20(u16 param_1)
     // AH = 0x39
     fn_ptr_1 = swi(0x21);
     // typedef u8(*DosInt21CreateSubdirectory)(char* path);
-    u_var2  = ((DosInt21CreateSubdirectory)(fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
+    u_var2  = ((DosInt21CreateSubdirectory)(fn_ptr_1)(SEG_1050, param_1 + 0x1);
     if(bVar3)
     {
         pass1_1000_29b5(u_var2);
@@ -503,7 +503,7 @@ u16 dos3call_1000_4f54(u32 param_1, i16 param_2)
     // 0x3a
     fn_ptr_1 = swi(0x21);
     // typedef u8(*DosInt21RemoveSubdirectory(char* path));
-    uVar6  = ((DosInt21RemoveSubdirectory)fn_ptr_1)(&USHORT_1050_1050, param_2 + 0x1);
+    uVar6  = ((DosInt21RemoveSubdirectory)fn_ptr_1)(SEG_1050, param_2 + 0x1);
     pcVar4 = (uVar6 >> 0x10);
     uVar3  = uVar6;
     if((bVar5) && (bVar5 = uVar3 < 0x10, uVar3 == 0x10))
@@ -589,7 +589,7 @@ void pass1_1000_5026(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 par
     i16  iStack2;
 
     iStack2    = param_5 + 0x1;
-    local_4    = SUB42(&USHORT_1050_1050, 0x0);
+    local_4    = SUB42(SEG_1050, 0x0);
     _uStack304 = CONCAT22(param_7, &local_108);
     if(param_1 == 0x0)
     {
@@ -654,7 +654,7 @@ u16 dos3_call_1000_514e(i16 param_1)
     bVar3  = false;
     // 0x41
     pcVar1 = swi(0x21);
-    result = (*(DosInt21DeleteFile)pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
+    result = (*(DosInt21DeleteFile)pcVar1)(SEG_1050, param_1 + 0x1);
     if(bVar3)
     {
         pass1_1000_29b5(result);
@@ -701,7 +701,7 @@ u16 dos3_calls_1000_5198(i16 param_1)
     // 0x2F
     // typedef void (**DosInt21GetDiskTransferAddress)();
     fn_ptr_1 = swi(0x21);
-    (*(DosInt21GetDiskTransferAddress)fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
+    (*(DosInt21GetDiskTransferAddress)fn_ptr_1)(SEG_1050, param_1 + 0x1);
 
     // 0x1A
     // typedef void(*DosInt21SetDiskTransferAddress(void* disk_transfer_address));
@@ -746,7 +746,7 @@ u16 sys_1000_3f9c(u8 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_
     globals->PTR_LOOP_1050_68b0       = param_2;
     _USHORT_1050_68a8                 = CONCAT22(param_2, param_1);
     globals->PTR_LOOP_1050_68ac       = 0x7fff;
-    u_var2                             = sys_1000_30b4(&USHORT_1050_68a8, &USHORT_1050_1050, (u8 *)CONCAT22(param_4, param_3), &iStack2, &USHORT_1050_68a8, param_7, param_8, param_9);
+    u_var2                             = sys_1000_30b4(&USHORT_1050_68a8, SEG_1050, (u8 *)CONCAT22(param_4, param_3), &iStack2, &USHORT_1050_68a8, param_7, param_8, param_9);
     puVar1                            = _USHORT_1050_68a8;
     globals->PTR_LOOP_1050_68ac       = globals->PTR_LOOP_1050_68ac + -0x1;
     if(PTR_LOOP_1050_68ac < 0x0)
@@ -1213,13 +1213,13 @@ u16 mixed_dos3_call_1000_370a(u16 param_1, u16 param_2, u16 param_3, u8 param_4,
     {
         bVar10 = 0x80;
     }
-    uVar9  = SUB42(&USHORT_1050_1050, 0x0);
+    uVar9  = SUB42(SEG_1050, 0x0);
     bVar7  = false;
     // 3d
     fn_ptr_1 = swi(0x21);
     uVar5  = param_3;
     // typedef u16(*DosInt21OpenFileUsingHandle2)(u8 mode, char* filename);
-    u_var2  = (*(DosInt21OpenFileUsingHandle2)fn_ptr_1)(bVar10, param_4, &USHORT_1050_1050, param_6 + 0x1);
+    u_var2  = (*(DosInt21OpenFileUsingHandle2)fn_ptr_1)(bVar10, param_4, SEG_1050, param_6 + 0x1);
     if(bVar7)
     {
         if((u_var2 == 0x2) && ((uVar5 & 0x100) != 0x0))
@@ -1520,7 +1520,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
                     cVar21 = '\x01';
                     // 0x040
                     pcVar3 = swi(0x21);
-                    piVar9 = (*pcVar3)(&USHORT_1050_1050, puVar10, puVar7);
+                    piVar9 = (*pcVar3)(SEG_1050, puVar10, puVar7);
                 }
                 else
                 {
@@ -1664,7 +1664,7 @@ u16 mixed_dos3_call_1000_3ad9(u16 param_1, i16 param_2, i16 param_3, i16 param_4
         cVar11 = '\x01';
         // 0x40
         pcVar3 = swi(0x21);
-        piVar6 = (*pcVar3)(&USHORT_1050_1050);
+        piVar6 = (*pcVar3)(SEG_1050);
     }
     else
     {
@@ -1978,7 +1978,7 @@ u16 pass1_1000_30a4(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 para
     puVar1           = puVar6 + -0x3794;
     *puVar1          = *puVar1 ^ param_2;
     (param_1 + -0x2) = param_4 + 0x1;
-    (param_1 + -0x4) = &USHORT_1050_1050;
+    (param_1 + -0x4) = SEG_1050;
     (param_1 + -0x6) = param_8;
     (param_1 + -0x8) = 0x30c5;
     exit_1000_25f2((param_1 + -0x8), (param_1 + -0x6), (param_1 + -0x4), 0x214, param_7, param_8, param_9);
@@ -2021,8 +2021,8 @@ u16 sys_1000_30b4(u16 param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_
     u16 uVar4;
 
     iVar3 = param_4 + 0x1;
-    uVar4 = SUB42(&USHORT_1050_1050, 0x0);
-    exit_1000_25f2(0x30c5, param_7, &USHORT_1050_1050, 0x214, param_6, param_7, param_8);
+    uVar4 = SUB42(SEG_1050, 0x0);
+    exit_1000_25f2(0x30c5, param_7, SEG_1050, 0x214, param_6, param_7, param_8);
     bVar1 = *param_3;
     if(bVar1 == 0x0)
     {

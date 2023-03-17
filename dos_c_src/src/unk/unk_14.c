@@ -2,7 +2,7 @@
 
 #include "unk_14.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_int.h"
 #include "structs/structs_0xx/structs_9x.h"
 #include "sys_ops/sys_ops_12.h"
@@ -54,7 +54,7 @@ BOOL16  pass1_1008_7c2a(u32 param_1, char *param_2, HFILE16 param_3)
         BVar2 = write_to_file_1008_7e1c(param_1, uVar3, param_2, (param_2 >> 0x10), (long)(uVar1 + 0x1), SEG_1000);
         return BVar2;
     }
-    write_to_file_1008_7e1c(param_1, uVar3, s_playerName_1050_148e + 0xc, &USHORT_1050_1050, 0x1, param_3);
+    write_to_file_1008_7e1c(param_1, uVar3, s_playerName_1050_148e + 0xc, SEG_1050, 0x1, param_3);
     return 0x1;
 }
 

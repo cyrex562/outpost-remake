@@ -4,7 +4,9 @@
 
 #include "unk_18.h"
 
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "media/media_1.h"
 #include "op_int.h"
 #include "op_winapi.h"
@@ -550,7 +552,7 @@ string_var14 = string_arg_2;
       return;
     }
     string_var13 = string_var8;
-    u32_var4  = mciSendCommand16(struct_var11->field_0x0,0x2200,0x803,0);
+    u32_var4  = mciSendCommand16(struct_var11->fld0_addr_table,0x2200,0x803,0);
     if (u32_var4 == 0) {
       if (i32_var9 == 0) {
           struct_arg_1->field18_0x12 = 1;
@@ -603,4 +605,15 @@ void def_win_proc_1008_5632(LPARAM param_1,WPARAM param_2,u16 param_3,HWND16 par
   (**ppcVar1)((int)s_tile2.bmp_1050_1538,(int)puStack6,(int)((ulong)puStack6 >> 0x10),param_1,
               param_2,param_3,uVar2);
   return;
+}
+
+StructD * pass1_1028_ac7a(StructD *param_1,u8 param_2)
+
+{
+  param_1->address_offset_field_0x0 = addr_table_1008_380a[36];//0x389a;
+  (param_1 + 2) = SEG_1008;
+  if ((param_2 & 1) != 0) {
+    fn_ptr_1000_17ce((char *)param_1);
+  }
+  return param_1;
 }

@@ -231,7 +231,7 @@ void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
             puVar8           = iVar14->field_0x10;
             uVar7            = (puVar8 >> 0x10);
             iVar7            = (Struct374 *)puVar8;
-            iVar7->field_0x2 = uVar5;
+            iVar7->fld2_segment = uVar5;
             iVar7->field_0x4 = puVar6;
             puVar8           = iVar14->field_0x10;
             BVar3            = read_file_1008_7bc8(param_2, (puVar8 & 0xffff0000 | (puVar8 + 0x6)), SEG_1008, param_5);
@@ -459,7 +459,7 @@ u16  file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
             piVar2           = iVar10->field_0x10;
             uVar8            = (piVar2 >> 0x10);
             iVar7            = (Struct368 *)piVar2;
-            iVar7->field_0x2 = uVar6;
+            iVar7->fld2_segment = uVar6;
             iVar7->field_0x4 = puVar7;
             piVar2           = iVar10->field_0x10;
             uVar1            = (piVar2 + 0x2);
@@ -1252,14 +1252,14 @@ void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                 }
                 else
                 {
-                    paStack20->field_0x0 = addr_table_1008_380a[36];//0x389a;
+                    paStack20->fld0_addr_table = addr_table_1008_380a[36];//0x389a;
                     (u_var2 + 0x2)        = SEG_1008;
                     (u_var2 + 0x4)        = 0x0;
                     (u_var2 + 0x6)        = 0x0;
                     (u_var2 + 0x8)        = 0x0;
                     (u_var2 + 0xa)        = 0x0;
                     (u_var2 + 0xc)        = 0x0;
-                    paStack20->field_0x0 = addr_table_1018_56ce;//0x56ce;
+                    paStack20->fld0_addr_table = addr_table_1018_56ce;//0x56ce;
                     (u_var2 + 0x2)        = SEG_1018;
                 }
                 BVar3 = read_file_1008_7dee(uVar7, uVar8, local_10, 0x0, param_5, 0x2, SEG_1008);
@@ -1606,7 +1606,7 @@ void  pass1_1028_14d8(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
             {
                 return;
             }
-            BVar2 = read_file_1008_7dee(uVar3, uVar4, &PTR_LOOP_1050_4fbc, 0x0, &USHORT_1050_1050, 0x2, SEG_1008);
+            BVar2 = read_file_1008_7dee(uVar3, uVar4, &PTR_LOOP_1050_4fbc, 0x0, SEG_1050, 0x2, SEG_1008);
             if(BVar2 != 0x0)
             {
                 return;
@@ -1765,15 +1765,15 @@ void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                     }
                     else
                     {
-                        paStack20->field_0x0 = addr_table_1008_380a[36];//0x389a;
-                        u_var2->field_0x2     = SEG_1008;
+                        paStack20->fld0_addr_table = addr_table_1008_380a[36];//0x389a;
+                        u_var2->fld2_segment       = SEG_1008;
                         u_var2->field_0x4     = 0x0;
                         u_var2->field_0x6     = 0x0;
                         u_var2->field_0x8     = 0x0;
                         u_var2->field_0xa     = 0x0;
                         u_var2->field_0xc     = 0x0;
-                        paStack20->field_0x0 = addr_table_1018_56ce;//0x56ce;
-                        u_var2->field_0x2     = SEG_1018;
+                        paStack20->fld0_addr_table = addr_table_1018_56ce;//0x56ce;
+                        u_var2->fld2_segment       = SEG_1018;
                     }
                     BVar4 = read_file_1008_7dee(uVar8, uVar9, local_10, 0x0, param_5, 0x2, SEG_1008);
                     if(BVar4 == 0x0)

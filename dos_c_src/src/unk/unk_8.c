@@ -47,7 +47,7 @@ u16 * pass1_1028_5e18(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_thisHi_1050_5e6f + 0x1;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -58,7 +58,7 @@ u16 * pass1_1028_5f00(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x6054;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -174,7 +174,7 @@ u16 * pass1_1028_408e(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x42ec;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -308,7 +308,7 @@ u16 * pass1_1028_4376(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x446a;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -333,7 +333,7 @@ u16 * pass1_1028_44fe(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x4836;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -349,7 +349,7 @@ void  pass1_1028_4530(u16 *param_1)
 
     uVar5         = (param_1 >> 0x10);
     iVar4         = param_1;
-    param_1->field_0x0 = 0x4836;
+    param_1->fld0_addr_table = 0x4836;
     (iVar4 + 0x2) = SEG_1028;
     puVar1        = (iVar4 + 0x20);
     u_var2         = (iVar4 + 0x22);
@@ -470,7 +470,7 @@ u16 * pass1_1028_48c0(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  &PTR_LOOP_1050_4942;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     (param_1 + 0xe)            = (param_1 + 0xc);
     (param_1 + 0x10)           = (param_1 + 0xc);
     return param_1;
@@ -490,7 +490,7 @@ u32  pass1_1028_49de(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x4b1c;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     pass1_1000_4906((Struct20 *)CONCAT22(param_2, param_1 + 0x20), 0x0, 0xa);
     return param_1;
 }
@@ -516,7 +516,7 @@ u16 * pass1_1028_4ba6(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_SCi16ernalPutBldg2_site_0x_08lx__1050_506f + 0x1;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -704,7 +704,7 @@ u16 * pass1_1028_2bfe(Struct179 *param_1, u16 param_2, i16 param_3, u32 param_4,
 {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x341c;
-    param_1->field_0x2         = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -883,7 +883,7 @@ u16 * pass1_1028_34a6(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
 {
     pass1_1028_00cc(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x34f6;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -893,7 +893,7 @@ u16 * pass1_1028_3580(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x3608;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -930,7 +930,7 @@ u16 * pass1_1028_3692(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
 {
     pass1_1028_3816(param_1, param_2, param_3, param_4, param_5, param_6, param_7);
     param_1 =  0x373e;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1261,7 +1261,7 @@ u32  pass1_1028_3ec8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 par
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x4004;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     pass1_1028_3fa2(CONCAT22(param_2, param_1));
     return param_1;
 }
@@ -1354,7 +1354,7 @@ u16 * pass1_1028_1be8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x22)           = 0x0;
     param_1 =  0x1eee;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -1536,8 +1536,8 @@ void  pass1_1028_2042(u16 *param_1, u16 param_2)
 
     uVar5            = (param_1 >> 0x10);
     iVar5            = (Struct602 *)param_1;
-    param_1->field_0x0 = 0x2572;
-    iVar5->field_0x2 = SEG_1028;
+    param_1->fld0_addr_table = 0x2572;
+    iVar5->fld2_segment = SEG_1028;
     uVar4            = &iVar5->field_0x20;
     (uVar4 + 0xa)    = 0x1;
     puVar1           = iVar5->field_0x20;
@@ -1719,7 +1719,7 @@ u16 * pass1_1028_25fc(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_fem16_wav_1050_2644 + 0x8;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1729,7 +1729,7 @@ u16 * pass1_1028_26d6(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x2788;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1771,7 +1771,7 @@ u16 * pass1_1028_2812(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x2a92;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     (param_1 + 0xe)            = (param_1 + 0xc);
     return param_1;
 }
@@ -1917,7 +1917,7 @@ u16 * pass1_1028_2b1c(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x2b74;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1928,7 +1928,7 @@ u16 * pass1_1028_0982(Struct179 *param_1, u16 param_2, i16 param_3, u32 param_4,
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1->field_0x20        = 0x0;
     param_1 =  0xada;
-    param_1->field_0x2         = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     param_1->field_0xe         = 0x4b;
     return param_1;
 }

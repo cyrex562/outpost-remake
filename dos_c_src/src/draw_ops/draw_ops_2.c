@@ -1,6 +1,6 @@
 #include "draw_ops_2.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "draw_ops_3.h"
 #include "draw_ops_4.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"

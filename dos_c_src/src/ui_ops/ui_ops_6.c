@@ -1,6 +1,6 @@
 #include "ui_ops_6.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "draw_ops/draw_ops_2.h"
 #include "draw_ops/draw_ops_3.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
@@ -1461,7 +1461,7 @@ void pass1_1010_29c6(Struct11 *param_1)
 //    iVar5            = (Struct476 *)param_1;
 
     param_1          = 0x2bec;//s_add16_wav_1050_2bdc + 0x8;
-    iVar5->field_0x2 = SEG_1010;
+    iVar5->fld2_segment = SEG_1010;
     if(&iVar5->field_0x1c_addr_base != 0x0)
     {
         pu32_var1 = *&iVar5->field_0x1c_addr_base;

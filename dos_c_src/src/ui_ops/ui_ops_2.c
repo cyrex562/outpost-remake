@@ -391,7 +391,7 @@ void  win_ui_op_1040_410e(Struct1 *param_1, u16 param_2, u8 *param_3)
     iVar3 = param_1;
     uVar1 = (iVar3 + 0x8e);
     uVar5 = (uVar1 >> 0x10);
-    sys_1000_3f9c(local_c, param_3, 0x5d38, &USHORT_1050_1050, *(uVar1 + 0x76), &stack0xfffe, uVar5, SEG_1000, param_3, in_AF);
+    sys_1000_3f9c(local_c, param_3, 0x5d38, SEG_1050, *(uVar1 + 0x76), &stack0xfffe, uVar5, SEG_1000, param_3, in_AF);
     HStack14 = GetDlgItem16(SEG_1000, 0xfb5);
     SendMessage16((HWND16)LAST_SEGMENT, local_c, (WPARAM16)param_3, 0xc0000);
     SetFocus16((HWND16)LAST_SEGMENT);
@@ -493,7 +493,7 @@ void  pass1_1040_477e(Struct1 *param_1, u8 *param_2, u16 param_3, u16 param_4)
     unk_win_ui_op_1040_b230(param_1, param_3, param_4);
     puVar5 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_4, param_2, unaff_DI);
     puVar3 = (puVar5 >> 0x10);
-    uVar7  = SUB42(&USHORT_1050_1050, 0x0);
+    uVar7  = SUB42(SEG_1050, 0x0);
     uVar6  = 0x5d68;
     puVar1 = pass1_1008_5fd8(param_4, puVar3);
     puVar4 = puVar3;
@@ -736,7 +736,7 @@ u32  win_ui_op_1040_2512(u32 *param_1, u32 param_2, u16 param_3, HWND16 param_4,
                 }
                 if((-0x1 < (iVar5 + 0x92)) && (uVar11 = (iVar5 + 0x8e), (iVar5 + 0x92) <= (uVar11 + 0x28)))
                 {
-                    sys_1000_3f9c(local_16, param_5, 0x5cf4, &USHORT_1050_1050, (iVar5 + 0x92), &stack0xfffe, uVar9, SEG_1000, param_5, in_AF);
+                    sys_1000_3f9c(local_16, param_5, 0x5cf4, SEG_1050, (iVar5 + 0x92), &stack0xfffe, uVar9, SEG_1000, param_5, in_AF);
                     SetDlgItemText16(SEG_1000, (u16)local_16, (SEGPTR)param_5);
                 }
                 goto LAB_1040_266d;
@@ -1430,7 +1430,7 @@ void  win_ui_op_1040_12bc(Struct1 *param_1, u16 param_2, u8 *param_3)
     dialog_ui_fn_1040_78e2(param_1, param_2);
     uVar1 = (param_1 + 0x8e);
     uVar3 = (uVar1 >> 0x10);
-    sys_1000_3f9c(local_54, param_3, 0x5cd4, &USHORT_1050_1050, (uVar1 + 0xa), &stack0xfffe, uVar3, SEG_1000, param_3, in_AF);
+    sys_1000_3f9c(local_54, param_3, 0x5cd4, SEG_1050, (uVar1 + 0xa), &stack0xfffe, uVar3, SEG_1000, param_3, in_AF);
     GetDlgItem16(SEG_1000, 0xfd2);
     SendMessage16((HWND16)LAST_SEGMENT, local_54, (WPARAM16)param_3, 0xc0000);
     SetFocus16((HWND16)LAST_SEGMENT);
@@ -1898,7 +1898,7 @@ void  pass1_1040_205e(Struct18 *param_1)
     uVar4              = (param_1 >> 0x10);
     iVar4              = (Struct624 *)param_1;
     param_1->field_0x0 = 0x237e;
-    iVar4->field_0x2   = SEG_1040;
+    iVar4->fld2_segment = SEG_1040;
     puVar1             = iVar4->field_0x8e;
     u_var2              = iVar4->field_0x90;
     if((u_var2 | puVar1) != 0x0)

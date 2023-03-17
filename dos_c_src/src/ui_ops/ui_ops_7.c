@@ -1,6 +1,6 @@
 #include "ui_ops_7.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "big_funcs/big_fn_1.h"
 #include "file_ops/file_ops_3.h"
 #include "file_ops/file_ops_4.h"

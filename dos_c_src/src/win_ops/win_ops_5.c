@@ -4,7 +4,7 @@
 
 #include "win_ops_5.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "draw_ops/draw_ops_1.h"
 #include "draw_ops/draw_ops_2.h"
 #include "draw_ops/draw_ops_3.h"

@@ -1,5 +1,5 @@
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_int.h"
 #include "op_winapi.h"
 #include "string_consts.h"
@@ -180,7 +180,7 @@ Struct20 *unk_draw_op_1008_61b2(Globals *globals, Struct20 *param_1, u16 param_2
     iVar1->field_0xde  = param_2;
     iVar1->field_0xe0  = 0x0;
     param_1->field_0x0 = addr_table_1008_6378;//0x6378;
-    iVar1->field_0x2   = SEG_1008;
+    iVar1->fld2_segment = SEG_1008;
     puVar1             = extraout_DX;
     unk_str_op_1000_3d3e(iVar1->field_0x5b, globals->s_DanBrotherton_1050_0302);
     l_hgdiobj_1               = GetStockObject16(SEG_1000);

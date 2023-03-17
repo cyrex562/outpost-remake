@@ -1,6 +1,6 @@
 #include "fn_ptr_ops_6.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "address_tables_2.h"
 #include "fn_ptr_ops_7.h"
 #include "globals.h"
@@ -1792,7 +1792,7 @@ void pass1_1008_0036(Struct449 *param_1, u16 param_2)
     globals->_PTR_LOOP_1050_0298 = 0x0;
     if(_PTR_LOOP_1050_5748 != (Struct18 *)0x0)
     {
-        pass1_1030_8210(&_PTR_LOOP_1050_5748->field_0x0);
+        pass1_1030_8210(&_PTR_LOOP_1050_5748->fld0_addr_table);
         param_2 = SEG_1000;
         fn_ptr_1000_17ce(paVar3, SEG_1000);
     }
@@ -1947,7 +1947,7 @@ BOOL16 call_fn_ptr_1000_0dc6(u16 param_1, u16 param_2, u16 param_3)
         pass1_1000_1e61(NULL, param_3, 0xe, 0x0, 0x0);
         return 0x0;
     }
-    (**0x8)(&USHORT_1050_1050);
+    (**0x8)(SEG_1050);
     return 0x1;
 }
 

@@ -1,6 +1,6 @@
 #include "ui_ops_4.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_int.h"
 #include "op_win_def.h"
 #include "op_winapi.h"
@@ -2008,7 +2008,7 @@ void  invalidate_rect_1020_8d90(u32 param_1, u16 param_2, u32 param_3, u16 param
         if((param_5 | u_stack6) != 0x0)
         {
             uStack4 = param_5;
-            sys_1000_3f9c(local_10, param_6, s__03ld_1050_442a, &USHORT_1050_1050, u_stack6, &stack0xfffe, uVar3, SEG_1000, param_6, in_AF);
+            sys_1000_3f9c(local_10, param_6, s__03ld_1050_442a, SEG_1050, u_stack6, &stack0xfffe, uVar3, SEG_1000, param_6, in_AF);
             uVar1 = (iVar2 + 0x22);
             file_and_draw_op_1008_4f20(CONCAT22(param_6, local_38), *(uVar1 + 0xe), 0x25, CONCAT22(param_6, local_10), param_6);
             pass1_1008_4480(param_3, (param_1 & 0xffff0000 | (iVar2 + 0x1c)), (Struct76 *)CONCAT22(param_6, local_38), param_6);

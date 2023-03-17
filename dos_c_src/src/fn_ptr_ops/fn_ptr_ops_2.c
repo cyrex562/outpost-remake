@@ -1,7 +1,7 @@
 
 #include "fn_ptr_ops_2.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops_1.h"
 #include "fn_ptr_ops_3.h"
 #include "fn_ptr_ops_4.h"

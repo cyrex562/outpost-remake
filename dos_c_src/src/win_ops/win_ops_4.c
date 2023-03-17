@@ -186,7 +186,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
         (iVar8 + 0xe2) = extraout_DX;
     }
     ppcVar3 = (param_1 + 0x14);
-    (**ppcVar3)(SEG_1000, param_1, 0x0, 0x15a, &USHORT_1050_1050);
+    (**ppcVar3)(SEG_1000, param_1, 0x0, 0x15a, SEG_1050);
     uVar10 = SEG_1000;
     puVar6 = extraout_DX_00;
     mem_op_1000_179c(0xec, extraout_DX_00, SEG_1000);
@@ -305,7 +305,7 @@ BOOL16 mixed_win_op_1008_0c60(
         (_PTR_LOOP_1050_5748 + 0x8) = 0x1;
         pass1_1030_8326();
         pcVar7 = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
-        sys_1000_3f9c(local_64, param_5, 0x19c, &USHORT_1050_1050, pcVar7, &stack0xfffe, uVar13, SEG_1000, param_5, in_AF);
+        sys_1000_3f9c(local_64, param_5, 0x19c, SEG_1050, pcVar7, &stack0xfffe, uVar13, SEG_1000, param_5, in_AF);
         ppcVar1 = (*param_1 + 0x14);
         (**ppcVar1)(SEG_1000, param_1, 0x0, 0x9c, param_5);
         puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);

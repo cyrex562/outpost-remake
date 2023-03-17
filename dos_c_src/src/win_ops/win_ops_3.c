@@ -1,6 +1,6 @@
 #include "win_ops_3.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -1609,7 +1609,7 @@ void create_window_ex_1008_9760(Struct0 *in_struct_1, u16 param_2)
                                                (HWND16)uVar1,
                                                (HMENU16)(uVar1 >> 0x10),
                                                0x39e,
-                                               &USHORT_1050_1050);
+                                               SEG_1050);
         struct_1->field_0x8 = window_handle;
     }
     if(struct_1->field_0x8 == 0x0)
@@ -2007,14 +2007,14 @@ LAB_1008_a146:
         }
         else
         {
-            paStack14->field_0x0 = addr_table_1008_380a[36]; // 0x389a
+            paStack14->fld0_addr_table = addr_table_1008_380a[36]; // 0x389a
             (uVar3 + 0x2)        = SEG_1008;
             (uVar3 + 0x4)        = param_6;
             *(uVar3 + 0x6)       = param_5;
             (uVar3 + 0xa)        = param_4;
             (uVar3 + 0xc)        = param_3;
             (uVar3 + 0xe)        = param_2;
-            paStack14->field_0x0 = addr_table_1008_ad8a[1]//0xad8e;
+            paStack14->fld0_addr_table = addr_table_1008_ad8a[1]//0xad8e;
             (uVar3 + 0x2)        = SEG_1008;
         }
         puVar1  = iVar7->field_0xa;

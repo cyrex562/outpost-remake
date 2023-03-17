@@ -1,6 +1,6 @@
 #include "draw_ops_3.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "draw_ops_2.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
@@ -2026,7 +2026,7 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
         iVar19                                   = param_5 * 0x4;
         (__return_storage_ptr__ + iVar19 + 0x26) = iVar15;
         (__return_storage_ptr__ + iVar19 + 0x28) = puVar17;
-        handle_00                                = (HGDIOBJ16)&USHORT_1050_1050;
+        handle_00                                = (HGDIOBJ16)SEG_1050;
         u_var24                                   = pass1_1008_4772(*(Struct76 **)(__return_storage_ptr__ + iVar19 + 0x26));
         puVar17                                  = (u_var24 >> 0x10);
         CreateDC16(SEG_1008, u_var24, puVar17, (DEVMODEA *)puVar17);
@@ -2112,7 +2112,7 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
         {
             uVar4    = (param_1 + 0xe);
             HStack30 = 0x627c;
-            sys_1000_3f9c(uVar4, (uVar4 >> 0x10), s__d__d__d__d_1050_14ae, &USHORT_1050_1050, *(__return_storage_ptr__ * 0x8 + param_1 + 0x22), &stack0xfffa, param_2, SEG_1000, unaff_SS, in_AF);
+            sys_1000_3f9c(uVar4, (uVar4 >> 0x10), s__d__d__d__d_1050_14ae, SEG_1050, *(__return_storage_ptr__ * 0x8 + param_1 + 0x22), &stack0xfffa, param_2, SEG_1000, unaff_SS, in_AF);
             uVar4    = (param_1 + 0xa);
             HStack30 = 0x62a0;
             WritePrivateProfileString16(&globals->PTR_LOOP_1050_1000, uVar4, (uVar4 >> 0x10),  * (param_1 + 0xe));

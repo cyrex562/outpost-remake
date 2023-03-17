@@ -16,7 +16,7 @@ void pass1_1010_28e6(Struct631 *param_1, u8 *param_2, u16 param_3, u8 *param_4, 
     param_1->field_0x24        = 0x0;
     param_1->field_0x26        = 0x0;
     param_1 =  addr_table_1010_2be4;//0x2be4; // s_add16_wav_1050_2bdc + 0x8;
-    param_1->field_0x2         = SEG_1010;
+    param_1->fld2_segment = SEG_1010;
     globals->PTR_LOOP_1050_4230         = param_1;
     globals->PTR_LOOP_1050_4232         = param_2;
     pass1_1018_4dce(CONCAT13((param_2 >> 0x8), CONCAT12(param_2, param_1)), 0x56, param_4, param_5);
@@ -282,10 +282,10 @@ u32 pass1_1010_195e(Struct79 *param_1, Struct79 *param_2, u16 param_3)
     pass1_1010_0f24(param_1, param_2, param_3, in_DX, unaff_SS);
     (param_1 + 0xb)                            = 0x0;
     param_1 =  addr_table_1010_1b2a;//0x1b2a;
-    param_1->field_0x2                         = SEG_1010;
+    param_1->fld2_segment                      = SEG_1010;
     puVar1                                     = mixed_1010_20ba(NULL, globals->_PTR_LOOP_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
-    ((Struct79 *)(param_1 + 0xb))->field_0x0 = puVar1;
-    param_1[0xb].field_0x2                     = (puVar1 >> 0x10);
+    ((Struct79 *)(param_1 + 0xb))->fld0_addr_table = puVar1;
+    param_1[0xb].fld2_segment                = (puVar1 >> 0x10);
     return param_1;
 }
 
@@ -298,10 +298,10 @@ u32 pass1_1010_1b6e(Struct79 *param_1, Struct79 *param_2, u16 param_3, u16 param
     pass1_1010_0f24(param_1, param_2, param_3, param_5, param_4);
     (param_1 + 0xb)                            = 0x0;
     param_1 =  addr_table_1010_1d04;//0x1d04;
-    param_1->field_0x2                         = SEG_1010;
+    param_1->fld2_segment                      = SEG_1010;
     puVar1                                     = mixed_1010_20ba(NULL, globals->_PTR_LOOP_1050_0ed0, 0x3, param_4, param_5, unaff_DI);
-    ((Struct79 *)(param_1 + 0xb))->field_0x0 = puVar1;
-    param_1[0xb].field_0x2                     = (puVar1 >> 0x10);
+    ((Struct79 *)(param_1 + 0xb))->fld0_addr_table = puVar1;
+    param_1[0xb].fld2_segment                = (puVar1 >> 0x10);
     return param_1;
 }
 
@@ -345,11 +345,11 @@ void pass1_1010_1df2(u32 param_1, u16 param_2, u32 param_3, u16 param_4, u16 par
     else
     {
         *puStack10       = addr_table_1008_380a[36]; // 0x389a
-        in_AX->field_0x2 = SEG_1008;
+        in_AX->fld2_segment    = SEG_1008;
         in_AX->field_0x4 = param_3;
         in_AX->field_0x8 = param_2;
         *puStack10       = addr_table_1010_2010;//0x2010;
-        in_AX->field_0x2 = SEG_1010;
+        in_AX->fld2_segment    = SEG_1010;
         pu_stack6         = puStack10;
     }
     ppcVar1 = (*iVar3->field_0x4 + 0x4);
@@ -378,7 +378,7 @@ u16 *mixed_1010_20ba(u32 param_1, u16 param_2, u16 param_3, u8 *param_4, i16 par
     paVar4   = (Struct636 *)(param_2 * 0x4);
     uVar6    = (param_1 >> 0x10);
     iVar5    = param_1;
-    pu_stack6 = *(u16 **)(&paVar4->field_0x0 + iVar5);
+    pu_stack6 = *(u16 **)(&paVar4->fld0_addr_table + iVar5);
     if(pu_stack6 != 0x0)
     {
         return pu_stack6;
@@ -853,9 +853,9 @@ void pass1_1010_043a(u32 param_1, long param_2, i16 param_3, u16 param_4)
             else
             {
                 *puStack18                 = addr_table_1008_380a[36]; // 0x389a
-                (&puVar3->field_0x0 + 0x2) = SEG_1008;
+                (&puVar3->fld0_addr_table + 0x2) = SEG_1008;
                 *puStack18                 = addr_table_1010_0e98[4];//0xea8;
-                (&puVar3->field_0x0 + 0x2) = SEG_1010;
+                (&puVar3->fld0_addr_table + 0x2) = SEG_1010;
                 puStack14                  = puStack18;
             }
             uVar5            = (puStack14 >> 0x10);
@@ -1475,7 +1475,7 @@ u32 struct_1008_ecb2(Struct221 *param_1, u16 param_2, u16 param_3)
 
     struct_1010_2cd2((Struct79 *)param_1, (Struct79 *)param_2, param_3, unaff_SS);
     param_1 =  addr_table_1008_ef9c;//0xef9c;
-    param_1->field_0x2         = SEG_1008;
+    param_1->fld2_segment = SEG_1008;
     mem_op_1000_179c(0x20c, in_DX, SEG_1000);
     param_1->field_0x5c = in_AX;
     param_1->field_0x5e = in_DX;
@@ -1552,7 +1552,7 @@ void struct_1010_02e0(Struct79 *param_1, Struct79 *param_2, u16 param_3)
     (&param_1[0x1].field_0x4 + 0x2) = 0x0;
     &param_1[0x2].field_0x4         = 0x0;
     param_1 = addr_table_1010_0e98 ;//0xe98;
-    param_1->field_0x2              = SEG_1010;
+    param_1->fld2_segment            = SEG_1010;
     mem_op_1000_179c(0xc, pu_var2, SEG_1000);
     if((pu_var2 | uVar1) == 0x0)
     {
@@ -1561,8 +1561,8 @@ void struct_1010_02e0(Struct79 *param_1, Struct79 *param_2, u16 param_3)
     else
     {
         set_struct_1008_574a(CONCAT22(pu_var2, uVar1));
-        ((Struct79 *)(param_1 + 0x1))->field_0x0 = uVar1;
-        param_1[0x1].field_0x2                     = extraout_DX;
+        ((Struct79 *)(param_1 + 0x1))->fld0_addr_table = uVar1;
+        param_1[0x1].fld2_segment                = extraout_DX;
     }
     return;
 }
@@ -1706,7 +1706,7 @@ void pass1_1008_d790(Struct647 *param_1, u16 param_2, u16 param_3, u16 param_4)
     &param_1->field_0xa        = 0x0;
     param_1->field_0xe         = 0x0;
     param_1 =  addr_table_1008_d98e;//0xd98e;
-    param_1->field_0x2         = SEG_1008;
+    param_1->fld2_segment      = SEG_1008;
     paVar1                     = unk_io_op_1010_830a(_PTR_LOOP_1050_14cc, 0x9b, param_4);
     param_1->field_0xa         = paVar1;
     param_1->field_0xc         = (paVar1 >> 0x10);
@@ -1732,7 +1732,7 @@ void struct_1008_dd4e(Struct209 *param_1, u16 param_2, u16 param_3)
     param_1->field_0x1a_addr_offset = 0x0;
     param_1->field_0x1e        = 0x0;
     param_1 =  addr_table_1008_eaac;//0xeaac;
-    param_1->field_0x2         = SEG_1008;
+    param_1->fld2_segment           = SEG_1008;
     mem_op_1000_179c(0xc, pu_var2, SEG_1000);
     if((pu_var2 | uVar1) == 0x0)
     {
@@ -1760,7 +1760,7 @@ void pass1_1008_ddca(u16 *param_1, u16 param_2)
     uVar4            = (param_1 >> 0x10);
     iVar5            = (Struct471 *)param_1;
     *param_1         = addr_table_1008_eaac;//0xeaac;
-    iVar5->field_0x2 = SEG_1008;
+    iVar5->fld2_segment = SEG_1008;
     puVar1           = iVar5->field_0xe;
     u_var2            = iVar5->field_0x10;
     if((u_var2 | puVar1) != 0x0)

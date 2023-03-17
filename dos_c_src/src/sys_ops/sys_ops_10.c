@@ -1,7 +1,7 @@
 
 #include "sys_ops_10.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_dos_interrupts.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -1264,7 +1264,7 @@ void pass1_1008_9fb2(u16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     bool        bVar14;
     Struct79 *paVar15;
 
-    (param_8 + SEG_1008) = &USHORT_1050_1050;
+    (param_8 + SEG_1008) = SEG_1050;
     uVar8              = param_10;
     uVar4              = param_5 + 0xeff0;
     bVar12             = param_5 < SEG_1010 || uVar4 < uVar8;
@@ -1564,7 +1564,7 @@ u16  pass1_1008_7e4a(u16 param_1, u8 *param_2, u8 param_3, char *param_4, u16 pa
 {
     u16 uVar1;
 
-    sys_1000_3f9c(&param_5, param_2, 0x347, &USHORT_1050_1050, globals->_PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, param_1, SEG_1000, param_2, param_3);
+    sys_1000_3f9c(&param_5, param_2, 0x347, SEG_1050, globals->_PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, param_1, SEG_1000, param_2, param_3);
     uVar1 = str_op_1000_3da4(CONCAT22(param_2, &param_5));
     uVar1 = pass1_1000_3de8(param_4, CONCAT22(param_2, &param_5), uVar1, param_5, param_6);
     if(uVar1 == 0x0)
@@ -1767,7 +1767,7 @@ void  pass1_1008_5bdc(Struct79 *param_1, i16 param_2, u16 param_3)
     puVar1->field_0x10           = 0x0;
     puVar1->field_0x12           = 0x0;
     param_1->field_0x0           = addr_table_1008_5fc8;//0x5fc8;
-    puVar1->field_0x2            = SEG_1008;
+    puVar1->fld2_segment         = SEG_1008;
     globals->_PTR_LOOP_1050_02a0 = param_1;
     puVar3                       = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_3, (p_var2 >> 0x10), param_2);
     puVar1->field_0xc            = puVar3;
@@ -1818,7 +1818,7 @@ void debug_pri16_1008_6048(u32 param_1, LPSTR param_2, WORD *param_3)
         if(DAT_1050_02ee == 0xffff)
         {
             param_2       = &globals->PTR_LOOP_1050_1000;
-            uVar1         = pass1_1000_3ec0(NULL, 0x2f4, &USHORT_1050_1050);
+            uVar1         = pass1_1000_3ec0(NULL, 0x2f4, SEG_1050);
             DAT_1050_02ee = ((in_DX | uVar1) != 0x0);
         }
         if(DAT_1050_02ee != 0x0)
@@ -1828,7 +1828,7 @@ void debug_pri16_1008_6048(u32 param_1, LPSTR param_2, WORD *param_3)
             OutputDebugString16(LAST_SEGMENT);
             if(_PTR_LOOP_1050_02f0 != 0x0)
             {
-                pass1_1000_2b5c(_PTR_LOOP_1050_02f0, (_PTR_LOOP_1050_02f0 >> 0x10), 0x2fd, &USHORT_1050_1050, unaff_ES, &stack0xfffe, SEG_1000, param_3);
+                pass1_1000_2b5c(_PTR_LOOP_1050_02f0, (_PTR_LOOP_1050_02f0 >> 0x10), 0x2fd, SEG_1050, unaff_ES, &stack0xfffe, SEG_1000, param_3);
                 pass1_1000_2f48(_PTR_LOOP_1050_02f0, &stack0xfffe, unaff_ES, SEG_1000, param_3, in_AF);
             }
         }
@@ -2351,7 +2351,7 @@ u16 dos_int21_find_file_1000_51aa(u16 param_1)
 
     // 0x2F Get Disk Transfer Address
     fn_ptr_1 = swi(0x21);
-    ((DosInt21GetDiskTransferAddress)fn_ptr_1)(&USHORT_1050_1050, param_1 + 0x1);
+    ((DosInt21GetDiskTransferAddress)fn_ptr_1)(SEG_1050, param_1 + 0x1);
     // 0x1A
     fn_ptr_1 = swi(0x21);
     ((DosInt21SetDiskTransferAddress)fn_ptr_1)(new_transfer_address);

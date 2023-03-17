@@ -1,5 +1,5 @@
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
 
@@ -1710,7 +1710,7 @@ BOOL16 write_to_file_1008_7cac(u32 param_1, u16 param_2)
     undefined1 in_AF;
     u8         local_c[0xa];
 
-    sys_1000_3f9c(local_c, param_2, 0x340, &USHORT_1050_1050, globals->_PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, unaff_ES, SEG_1000, param_2, in_AF);
+    sys_1000_3f9c(local_c, param_2, 0x340, SEG_1050, globals->_PTR_s_dcbSC_1050_0336_1050_033c, &stack0xfffe, unaff_ES, SEG_1000, param_2, in_AF);
     uVar1 = str_op_1000_3da4(CONCAT22(param_2, local_c));
     BVar2 = write_to_file_1008_7e1c(param_1, (param_1 >> 0x10), local_c, param_2, uVar1, SEG_1000);
     if(BVar2 == 0x0)
@@ -2004,7 +2004,7 @@ u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
     else
     {
         globals->PTR_LOOP_1050_0312 = &DAT_1050_0004;
-        sys_1000_3f9c(0x65a0, &USHORT_1050_1050, globals->_PTR_s_SC_03d_1050_0314_1050_031c, (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10), 0x4, &stack0xfffe, uVar3, SEG_1000, unaff_SS, in_AF);
+        sys_1000_3f9c(0x65a0, SEG_1050, globals->_PTR_s_SC_03d_1050_0314_1050_031c, (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10), 0x4, &stack0xfffe, uVar3, SEG_1000, unaff_SS, in_AF);
         pCVar4 = str_op_1000_3da4(0x105065a0);
         lVar5  = _hwrite16(SEG_1000, pCVar4, CONCAT22(0x65a0, pCVar4 >> 0xf));
         if(lVar5 == pCVar4)
@@ -2104,7 +2104,7 @@ u16 read_file_1008_71a0(u32 param_1, u16 param_2)
             uStack4            = 0x0;
         }
     }
-    sys_1000_3f9c(0x65a0, &USHORT_1050_1050, globals->_PTR_s_SC_03d_1050_0314_1050_031c, (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10), globals->PTR_LOOP_1050_0312, &stack0xfffe, (param_1 >> 0x10), SEG_1000, param_2, in_AF);
+    sys_1000_3f9c(0x65a0, SEG_1050, globals->_PTR_s_SC_03d_1050_0314_1050_031c, (_PTR_s_SC_03d_1050_0314_1050_031c >> 0x10), globals->PTR_LOOP_1050_0312, &stack0xfffe, (param_1 >> 0x10), SEG_1000, param_2, in_AF);
     return uStack4;
 }
 

@@ -31,7 +31,7 @@ void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2)
     uVar1            = (Struct31 *)(param_1 >> 0x10);
     iVar1            = (Struct31 *)param_1;
     param_1          = 0x67c;
-    iVar1->field_0x2 = SEG_1040;
+    iVar1->fld2_segment = SEG_1040;
     if(iVar1->field_0x96 != 0x0)
     {
         DestroyWindow16(param_2);

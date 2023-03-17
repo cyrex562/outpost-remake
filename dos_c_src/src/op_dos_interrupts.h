@@ -10,7 +10,7 @@
 // DS:DX = pointer to disk transfer address (DTA)
 // returns nothing
 // - specifies the disk transfer address to DOS
-// - DTA cannot overlap 64K segment boundary
+// - DTA cannot overlap 64K fld2_segment boundary
 // - offset 80h in the PSP is a 128 byte default DTA supplied
 //   by DOS upon program load
 // - use of the DTA provided by DOS will result in the loss

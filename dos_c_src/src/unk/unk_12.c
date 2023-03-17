@@ -1,7 +1,7 @@
 #include "unk_12.h"
 
 #include "addr_struct.h"
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_int.h"
 #include "struct_690.h"
@@ -35,7 +35,7 @@ void  pass1_1010_9348(u32 param_1, i16 param_2)
     u_var2                    = (param_1 >> 0x10);
     iVar1                    = param_1;
     (iVar1 + 0x16)           = param_2 * 0x8 + 0x3198;
-    (iVar1 + 0x18)           = &USHORT_1050_1050;
+    (iVar1 + 0x18)           = SEG_1050;
     (iVar1 + 0x12)           = param_2;
     return;
 }

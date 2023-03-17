@@ -1841,7 +1841,7 @@ u16 * pass1_1028_50fa(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x5280;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1851,7 +1851,7 @@ u16 * pass1_1028_530a(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x535e;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1861,7 +1861,7 @@ u16 * pass1_1028_53e8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x54bc;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1914,7 +1914,7 @@ u16 * pass1_1028_5546(i16 param_1, u16 param_2, u16 param_3, u32 param_4, u8 *pa
 {
     pass1_1028_00cc(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x55c8;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1947,7 +1947,7 @@ u16 * pass1_1028_5652(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x56ac;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1957,7 +1957,7 @@ u16 * pass1_1028_57c8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x581c;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1967,7 +1967,7 @@ u16 * pass1_1028_58a6(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x58fe;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1977,7 +1977,7 @@ u16 * pass1_1028_5988(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_mineToSmelter__no_mines_1050_59df + 0x1;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1987,7 +1987,7 @@ u16 * pass1_1028_5a6a(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_thisLo_1050_5bec;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -1997,6 +1997,6 @@ u16 * pass1_1028_5c76(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_static_1050_5d8b + 0x3;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment = SEG_1028;
     return param_1;
 }

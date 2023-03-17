@@ -1,6 +1,6 @@
 #include "unk_10.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_int.h"
 #include "struct_ops/struct_ops_3.h"
 #include "structs/structs_5xx/structs_59x.h"
@@ -73,7 +73,7 @@ u16 * pass1_1020_d5c8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 pa
 {
     pass1_1028_b39e(CONCAT22(param_2, param_1), param_3, param_4, param_5);
     param_1 =  addr_table_1020_d7fe;//0xd7fe;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment = SEG_1020;
     return param_1;
 }
 
@@ -1019,7 +1019,7 @@ void  pass1_1020_b2da(u16 param_1, u16 param_2, u16 param_3, i16 param_4, u16 *p
     {
         uStack20 = 0x4e6c;
     }
-    uStack18  = SUB42(&USHORT_1050_1050, 0x0);
+    uStack18  = SUB42(SEG_1050, 0x0);
     piStack16 = CONCAT22(0x1050, uStack20);
     do
     {
@@ -2328,14 +2328,14 @@ void  pass1_1018_50ea(u32 param_1, u16 param_2, u32 param_3)
     }
     else
     {
-        paStack6->field_0x0 = addr_table_1008_380a[36]; // 0x389a
+        paStack6->fld0_addr_table = addr_table_1008_380a[36]; // 0x389a
         (uVar4 + 0x2)       = SEG_1008;
         (uVar4 + 0x4)       = 0x0;
         (uVar4 + 0x6)       = 0x0;
         (uVar4 + 0x8)       = 0x0;
         (uVar4 + 0xa)       = 0x0;
         (uVar4 + 0xc)       = 0x0;
-        paStack6->field_0x0 = addr_table_1018_56ce; // 0x56ce
+        paStack6->fld0_addr_table = addr_table_1018_56ce; // 0x56ce
         (uVar4 + 0x2)       = SEG_1018;
     }
     uVar9         = (paStack6 >> 0x10);

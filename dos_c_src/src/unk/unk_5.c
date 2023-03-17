@@ -1,7 +1,7 @@
 
 #include "unk_5.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
 #include "op_int.h"
@@ -327,12 +327,12 @@ void vsprintf_op_1030_840a(u32 param_1, LPSTR param_2, WORD *param_3, u16 param_
         {
             param_2 = &globals->PTR_LOOP_1050_1000;
             pCVar1  = &stack0x0008;
-            pass1_1000_2b3c(s_simres_out_1050_5758, &USHORT_1050_1050, 0x5756, &USHORT_1050_1050, param_4, &stack0xfffe);
+            pass1_1000_2b3c(s_simres_out_1050_5758, SEG_1050, 0x5756, SEG_1050, param_4, &stack0xfffe);
             globals->_PTR_LOOP_1050_5752 = CONCAT22(param_4, pCVar1);
             globals->PTR_LOOP_1050_5750  = (&PTR_LOOP_1050_0000 + 0x1);
         }
         wvsprintf16(param_2, &stack0x0008, args);
-        pass1_1000_2b5c(_PTR_LOOP_1050_5752, (_PTR_LOOP_1050_5752 >> 0x10), 0x5763, &USHORT_1050_1050, unaff_ES, &stack0xfffe, SEG_1000, param_3);
+        pass1_1000_2b5c(_PTR_LOOP_1050_5752, (_PTR_LOOP_1050_5752 >> 0x10), 0x5763, SEG_1050, unaff_ES, &stack0xfffe, SEG_1000, param_3);
         pass1_1000_2f48(_PTR_LOOP_1050_5752, &stack0xfffe, unaff_ES, SEG_1000, param_3, in_AF);
     }
     return;
@@ -502,14 +502,14 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     uVar3            = (param_1 >> 0x10);
     iVar4            = (Struct354 *)param_1;
     *param_1         = addr_table_1008_380a[36]; // 0x389a
-    iVar4->field_0x2 = SEG_1008;
+    iVar4->fld2_segment = SEG_1008;
     pass1_1030_84ae(param_1 & 0xffff0000 | &iVar4->field_0x4);
     iVar4->field_0x24 = param_3;
     puStack38         = (param_1 & 0xffff0000 | &iVar4->field_0x28);
     pass1_1008_6c90((param_1 & 0xffff0000 | &iVar4->field_0x28));
     &iVar4->field_0x34 = 0x0;
     *param_1           = addr_table_1030_8e38;//0x8e38;
-    iVar4->field_0x2   = SEG_1030;
+    iVar4->fld2_segment = SEG_1030;
     struct_1030_8544((param_1 & 0xffff0000 | &iVar4->field_0x4), param_2);
     uVar4    = pass1_1008_4772(iVar4->field_0x12);
     uStack4  = (uVar4 >> 0x10);
@@ -531,13 +531,13 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
         pu_var2 = (puVar1 | uVar4);
         if(pu_var2 == 0x0)
         {
-            (&iVar4[0x1].field_0x0 + iStack34 * 0x4) = 0x0;
+            (&iVar4[0x1].fld0_addr_table + iStack34 * 0x4) = 0x0;
         }
         else
         {
             pass1_1030_85be((long *)(uVar4 & 0xffff | ZEXT24(puVar1) << 0x10), 0x19, 0x64, uVar3, param_4);
-            (&iVar4[0x1].field_0x0 + iStack34 * 0x4) = uVar4;
-            (&iVar4[0x1].field_0x2)[iStack34 * 0x2]  = pu_var2;
+            (&iVar4[0x1].fld0_addr_table + iStack34 * 0x4) = uVar4;
+            (&iVar4[0x1].fld2_segment)[iStack34 * 0x2]  = pu_var2;
         }
         puVar1 = pu_var2;
     }

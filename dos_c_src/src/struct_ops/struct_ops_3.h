@@ -185,12 +185,12 @@ u16 * pass1_1028_b204(u16 *param_1);
 
 
 
-void  struct_1028_b354(u16 *param_1);
+void  struct_1028_b354(struct Struct180 *struct_arg_1);
 
 
 
 
-void  pass1_1028_b39e(u16 *param_1, i16 param_2, u32 param_3, u16 param_4);
+void  pass1_1028_b39e(struct Struct173 *param_1, i16 param_2, u32 param_3, u16 param_4);
 
 
 

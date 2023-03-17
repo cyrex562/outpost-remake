@@ -1,6 +1,6 @@
 
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "structs/structs_0xx/structs_8x.h"
 void pass1_1010_0f76(u16 *param_1, u16 param_2)
 
@@ -178,7 +178,7 @@ void pass1_1008_ed62(u32 param_1, i16 param_2)
     u_var2          = (param_1 >> 0x10);
     iVar1          = param_1;
     (iVar1 + 0x16) = param_2 * 0x8 + 0xd5e;
-    (iVar1 + 0x18) = &USHORT_1050_1050;
+    (iVar1 + 0x18) = SEG_1050;
     (iVar1 + 0x12) = (param_2 * 0x8 + 0xd64);
     return;
 }

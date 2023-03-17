@@ -47,7 +47,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
 
     local_1e = 0x0;
     uStack22 = 0x28c;
-    uStack20 = SUB42(&USHORT_1050_1050, 0x0);
+    uStack20 = SUB42(SEG_1050, 0x0);
     uStack18 = param_1;
     uStack14 = 0x0;
     uStack10 = 0x0;

@@ -2,7 +2,8 @@
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 #include "struct_ops_3.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/data_tables.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
 #include "op_int.h"
@@ -82,7 +83,7 @@ void  pass1_1030_67cc(u16 *param_1)
     iVar1->field_0x40 = 0x0;
     iVar1->field_0x3e = 0x0;
     *param_1          = addr_table_1030_8114;//0x8114;
-    iVar1->field_0x2  = SEG_1030;
+    iVar1->fld2_segment           = SEG_1030;
     return;
 }
 
@@ -216,9 +217,9 @@ u32  struct_1030_4574(u32 param_1)
 
     uVar1             = (param_1 >> 0x10);
     iVar1             = (Struct159 *)param_1;
-    iVar1->field_0xc  = DAT_1050_518c;
-    iVar1->field_0xe  = 0x518e;
-    iVar1->field_0x10 = &USHORT_1050_1050;
+    iVar1->field_0xc  = data_1050_518c;
+    iVar1->field_0xe  = data_1050_518e;//0x518e;
+    iVar1->field_0x10 = SEG_1050;
     return param_1 & 0xffff0000 | ZEXT24(&iVar1->field_0xc);
 }
 
@@ -1133,12 +1134,12 @@ void  pass1_1028_dc52(Struct92 *param_1, i16 param_2, u16 param_3, u16 param_4)
     u_var2             = (param_1 >> 0x10);
     iVar2             = (Struct92 *)param_1;
     param_1           = addr_table_1008_380a[36]; // 0x389a
-    iVar2->field_0x2  = SEG_1008;
+    iVar2->fld2_segment     = SEG_1008;
     iVar2->field_0x4  = (globals->_PTR_LOOP_1050_65e2 + (param_4 >> 0x8) * 0x4 + 0xa);
     iVar2->field_0x8  = 0x1;
     iVar2->field_0x10 = param_2;
     param_1           = addr_table_1030_11a6;//0x11a6;
-    iVar2->field_0x2  = SEG_1030;
+    iVar2->fld2_segment     = SEG_1030;
     uVar1             = iVar2->field_0x4;
     iVar2->field_0xc  = (uVar1 + 0xa);
     if(param_2 == 0x0)
@@ -1341,7 +1342,7 @@ Struct100 * pass1_1028_a706(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0xbb7);
-    param_1->field_0x0 = 0xa856;
+    param_1->field_0x0 = addr_table_1028_a856;//0xa856;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCPrelimAlloc_1050_50f6);
     return param_1;
@@ -1352,7 +1353,7 @@ Struct100 * pass1_1028_a866(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x36af);
-    param_1->field_0x0 = 0xa9ae;
+    param_1->field_0x0 = addr_table_1028_a9ae;//0xa9ae;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCProdSched_1050_5104);
     return param_1;
@@ -1363,7 +1364,7 @@ Struct100 * pass1_1028_a9be(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x176f);
-    param_1->field_0x0 = 0xab22;
+    param_1->field_0x0 = addr_table_1028_ab22;//0xab22;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCPower_1050_5110);
     return param_1;
@@ -1374,7 +1375,7 @@ Struct100 * pass1_1028_ab32(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x2edf);
-    param_1->field_0x0 = 0xaca6;
+    param_1->field_0x0 = addr_table_1028_aca6;//0xaca6;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCRchSched_1050_5118);
     return param_1;
@@ -1385,7 +1386,7 @@ Struct100 * pass1_1028_acb6(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x3e7f);
-    param_1->field_0x0 = 0xae56;
+    param_1->field_0x0 = addr_table_1028_ae56;//0xae56;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCSetup_1050_5124);
     return param_1;
@@ -1405,8 +1406,8 @@ void  pass1_1028_ae66(Struct100 *param_1, u32 param_2, u32 param_3, u32 param_4,
     iVar1->field_0x10c = param_3;
     iVar1->field_0x110 = param_2;
     iVar1->field_0x114 = 0x0;
-    param_1->field_0x0 = 0xb0ce;
-    iVar1->field_0x2   = SEG_1028;
+    param_1->field_0x0 = addr_table_1028_b0ce;//0xb0ce;
+    iVar1->fld2_segment = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | &iVar1->field_0x8), s_SCStarve_1050_5156);
     return;
 }
@@ -1420,59 +1421,54 @@ u16 * pass1_1028_b204(u16 *param_1)
     struct_1030_1628(param_1);
     uVar1           = (param_1 >> 0x10);
     (param_1 + 0xc) = 0x0;
-    param_1->field_0x0 = 0xb33c;
+    param_1->addr_table = addr_table_1028_b33c;//0xb33c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
 
 
-void  struct_1028_b354(u16 *param_1)
+void  struct_1028_b354(Struct180 *struct_arg_1)
 
 {
-    Struct180 *iVar1;
-    u16          uVar1;
+    struct_1030_1628(struct_arg_1);
 
-    struct_1030_1628(param_1);
-    uVar1             = (param_1 >> 0x10);
-    iVar1             = (Struct180 *)param_1;
-    iVar1->field_0xc  = 0x0;
-    iVar1->field_0xe  = 0x0;
-    iVar1->field_0x10 = 0x0;
-    iVar1->field_0x12 = 0x0;
-    iVar1->field_0x18 = 0x0;
-    iVar1->field_0x1a_addr_offset = 0x0;
-    iVar1->field_0x1c_addr_base = 0x0;
-    param_1->field_0x0 = 0xcf6a;
-    iVar1->field_0x2  = SEG_1028;
-    iVar1->field_0x16 = 0x0;
-    iVar1->field_0x14 = 0x0;
-    return;
+    struct_arg_1->field_0xc  = 0x0;
+    struct_arg_1->field_0xe  = 0x0;
+    struct_arg_1->field_0x10 = 0x0;
+    struct_arg_1->field_0x12 = 0x0;
+    struct_arg_1->field_0x18 = 0x0;
+    struct_arg_1->field_0x1a_addr_offset = 0x0;
+    struct_arg_1->field_0x1c_addr_base = 0x0;
+    struct_arg_1->fld0_addr_table        = addr_table_1028_cf6a;//0xcf6a;
+    struct_arg_1->fld2_segment           = SEG_1028;
+    struct_arg_1->field_0x16 = 0x0;
+    struct_arg_1->field_0x14 = 0x0;
 }
 
 
-void  pass1_1028_b39e(u16 *param_1, i16 param_2, u32 param_3, u16 param_4)
+void  pass1_1028_b39e(Struct173 *param_1, i16 param_2, u32 param_3, u16 param_4)
 
 {
-    Struct173 *iVar1;
-    u16          uVar1;
+//    Struct173 *iVar1;
+//    u16          uVar1;
 
     pass1_1030_165e(param_1, 0x7000000, param_3, param_4);
-    uVar1             = (param_1 >> 0x10);
-    iVar1             = (Struct173 *)param_1;
-    iVar1->field_0xc  = param_2;
-    iVar1->field_0xe  = 0x42;
-    iVar1->field_0x10 = 0x0;
-    iVar1->field_0x12 = 0x0;
-    iVar1->field_0x18 = 0x0;
-    iVar1->field_0x1a_addr_offset = 0x0;
-    iVar1->field_0x1c_addr_base = 0x0;
-    param_1->field_0x0 = 0xcf6a;
-    iVar1->field_0x2  = SEG_1028;
+//    uVar1             = (param_1 >> 0x10);
+//    iVar1             = (Struct173 *)param_1;
+    param_1->field_0xc  = param_2;
+    param_1->field_0xe  = 0x42;
+    param_1->field_0x10 = 0x0;
+    param_1->field_0x12 = 0x0;
+    param_1->field_0x18 = 0x0;
+    param_1->field_0x1a_addr_offset = 0x0;
+    param_1->field_0x1c_addr_base = 0x0;
+    param_1->fld0_addr_table = addr_table_1028_cf6a;//0xcf6a;
+    param_1->fld2_segment           = SEG_1028;
     pass1_1028_bf76(param_1 & 0xffff | uVar1 << 0x10, 0x0);
-    iVar1->field_0x14 = 0x0;
-    if((0x4e < iVar1->field_0xc) && (iVar1->field_0xc < 0x70))
+    param_1->field_0x14 = 0x0;
+    if((0x4e < param_1->field_0xc) && (param_1->field_0xc < 0x70))
     {
-        iVar1->field_0xe = 0x6b;
+        param_1->field_0xe = 0x6b;
     }
     return;
 }
@@ -1491,8 +1487,8 @@ void  pass1_1028_9944(Struct100 *param_1, u32 param_2, u32 param_3, u32 param_4,
     iVar1->field_0x10c = param_3;
     iVar1->field_0x110 = param_2;
     iVar1->field_0x114 = 0x0;
-    param_1->field_0x0 = 0x9c52;
-    iVar1->field_0x2   = SEG_1028;
+    param_1->field_0x0 = addr_table_1028_9c52;//0x9c52;
+    iVar1->fld2_segment = SEG_1028;
     return;
 }
 
@@ -1502,8 +1498,8 @@ u16 * struct_1028_9c62(i16 param_1, u16 param_2, u16 param_3, u16 param_4, u8 pa
 {
     struct_op_1028_d1dc(param_4, param_5, (Struct100 *)CONCAT22(param_2, param_1), param_3);
     (param_1 + 0x108)          = param_3;
-    param_1 =  0x9eb6;
-    param_1->field_0x2 = SEG_1028;
+    param_1 =  addr_table_1028_9eb6;//0x9eb6;
+    param_1->fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -1512,7 +1508,7 @@ Struct100 * pass1_1028_9ec6(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, s_noth_bmp_1050_2321 + 0x6);
-    param_1->field_0x0 = 0xa6f6;
+    param_1->field_0x0 = addr_table_1028_a6f6;//0xa6f6;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), 0x105050f0);
     return param_1;
@@ -1523,7 +1519,7 @@ Struct100 * pass1_1028_837e(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0xf9f);
-    param_1->field_0x0 = 0x84ba;
+    param_1->field_0x0 = addr_table_1028_84ba;//0x84ba;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCFillResources_1050_500c);
     return param_1;
@@ -1549,9 +1545,9 @@ void  struct_op_1028_87f0(u16 param_1, u8 param_2, Struct97 *param_3, u16 param_
     iVar1->field_0x11e = param_4;
     iVar1->field_0x122 = 0x0;
     iVar1->field_0x120 = 0x0;
-    param_3            = 0x8d8e;
-    iVar1->field_0x2   = SEG_1028;
-    sys_1000_3f9c(&iVar1->field_0x8, puVar1, s_SCi16ernalPutBldg_site_0x_08lx__b_1050_5046, &USHORT_1050_1050, param_10, &stack0xfffe, puVar1, SEG_1000, param_1, param_2);
+    param_3            = addr_table_1028_8d8e;//0x8d8e;
+    iVar1->fld2_segment = SEG_1028;
+    sys_1000_3f9c(&iVar1->field_0x8, puVar1, s_SCi16ernalPutBldg_site_0x_08lx__b_1050_5046, SEG_1050, param_10, &stack0xfffe, puVar1, SEG_1000, param_1, param_2);
     return;
 }
 
@@ -1575,9 +1571,9 @@ void  struct_op_1028_8888(u16 param_1, u8 param_2, Struct100 *param_3, u16 param
     iVar1->field_0x11e = param_4;
     iVar1->field_0x122 = 0x0;
     iVar1->field_0x120 = 0x0;
-    param_3->field_0x0 = 0x8d8e;
+    param_3->field_0x0 = addr_table_1028_8d8e;//0x8d8e;
     iVar1->field_0x2   = SEG_1028;
-    sys_1000_3f9c(&iVar1->field_0x8, puVar1, s_SCi16ernalPutBldg2_site_0x_08lx__1050_506f, &USHORT_1050_1050, param_10, &stack0xfffe, puVar1, SEG_1000, param_1, param_2);
+    sys_1000_3f9c(&iVar1->field_0x8, puVar1, s_SCi16ernalPutBldg2_site_0x_08lx__1050_506f, SEG_1050, param_10, &stack0xfffe, puVar1, SEG_1000, param_1, param_2);
     return;
 }
 
@@ -1595,7 +1591,7 @@ void  pass1_1028_8d9e(Struct100 *param_1, u32 param_2, u32 param_3, u32 param_4,
     *(iVar1 + 0x10c)   = param_3;
     *(iVar1 + 0x110)   = param_2;
     (iVar1 + 0x114)    = 0x0;
-    param_1->field_0x0 = 0x8fb0;
+    param_1->field_0x0 = addr_table_1028_8fb0;//0x8fb0;
     (iVar1 + 0x2)      = SEG_1028;
     return;
 }
@@ -1609,7 +1605,7 @@ Struct100 * pass1_1028_90e6(Struct100 *param_1, u16 param_2, u16 param_3, u8 par
     struct_op_1028_d1dc(param_3, param_4, param_1, 0x1387);
     uVar1              = (param_1 >> 0x10);
     (param_1 + 0x108)  = param_2;
-    param_1->field_0x0 = 0x932c;
+    param_1->field_0x0 = addr_table_1028_932c;//0x932c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1621,7 +1617,7 @@ Struct100 * pass1_1028_74ae(Struct100 *param_1)
     u8  in_AF;
 
     struct_op_1028_d1dc(unaff_SS, in_AF, param_1, 0x1387);
-    param_1->field_0x0 = 0x819a;
+    param_1->field_0x0 = addr_table_1028_819a;//0x819a;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCEvent_1050_4ff4);
     return param_1;
@@ -1685,7 +1681,7 @@ Struct100 * pass1_1028_81aa(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x1b57);
-    param_1->field_0x0 = 0x836e;
+    param_1->field_0x0 = addr_table_1028_836e;//0x836e;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCFactory_1050_5002);
     return param_1;
@@ -1703,7 +1699,7 @@ void  pass1_1028_68de(Struct100 *param_1, u16 param_2, u32 param_3, u8 param_4, 
     iVar1              = param_1;
     *(iVar1 + 0x108)   = param_3;
     (iVar1 + 0x10c)    = param_2;
-    param_1->field_0x0 = 0x6ae2;
+    param_1->field_0x0 = addr_table_1028_6ad2[4];//0x6ae2;
     (iVar1 + 0x2)      = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (iVar1 + 0x8)), s_SCAddSpew_1050_4fd2);
     return;
@@ -1721,8 +1717,8 @@ void  pass1_1028_6af2(Struct100 *param_1, u32 param_2, u32 param_3, u16 param_4,
     iVar1              = (Struct683 *)param_1;
     iVar1->field_0x108 = param_3;
     iVar1->field_0x10c = param_2;
-    param_1->field_0x0 = 0x6e50;
-    iVar1->field_0x2   = SEG_1028;
+    param_1->field_0x0 = addr_table_1028_6e50;//0x6e50;
+    iVar1->fld2_segment = SEG_1028;
     return;
 }
 
@@ -1731,7 +1727,7 @@ Struct100 * pass1_1028_6e60(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x32c7);
-    param_1->field_0x0 = 0x6fb0;
+    param_1->field_0x0 = addr_table_1028_6fb0;//0x6fb0;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCConstruct_1050_4fdc);
     return param_1;
@@ -1742,7 +1738,7 @@ Struct100 * pass1_1028_6fc0(Struct100 *param_1, u16 param_2, u8 param_3)
 
 {
     struct_op_1028_d1dc(param_2, param_3, param_1, 0x3e7);
-    param_1->field_0x0 = 0x749e;
+    param_1->field_0x0 = addr_table_1028_749e;//0x749e;
     param_1->field_0x2 = SEG_1028;
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x8)), s_SCEndSim_1050_4fea);
     return param_1;
@@ -1753,7 +1749,7 @@ u16 * struct_1028_50d8(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x5280;
+    param_1->addr_table = addr_table_1028_5280;//0x5280;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1763,7 +1759,7 @@ u16 * struct_1028_52e8(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x535e;
+    param_1->addr_table = ;//0x535e;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1773,7 +1769,7 @@ u16 * struct_1028_53c6(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x54bc;
+    param_1->addr_table = 0x54bc;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1783,7 +1779,7 @@ u16 * pass1_1028_5524(u16 *param_1, u8 *param_2)
 
 {
     struct_1028_0068(param_1, param_2);
-    param_1->field_0x0 = 0x55c8;
+    param_1->addr_table = 0x55c8;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1793,7 +1789,7 @@ u16 * struct_1028_5630(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x56ac;
+    param_1->addr_table = 0x56ac;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1803,7 +1799,7 @@ u16 * struct_1028_57a6(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x581c;
+    param_1->addr_table = 0x581c;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1813,7 +1809,7 @@ u16 * pass1_1028_5884(u16 *param_1)
 
 {
     struct_1028_b354(param_1);
-    param_1->field_0x0 = 0x58fe;
+    param_1->addr_table = 0x58fe;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1958,7 +1954,7 @@ u16 * struct_1028_5ed8(u16 *param_1)
     struct_1028_b354(param_1);
     uVar1            = (param_1 >> 0x10);
     (param_1 + 0x20) = 0x0;
-    param_1->field_0x0 = 0x6054;
+    param_1->addr_table = 0x6054;
     param_1->field_0x2 = SEG_1028;
     return param_1;
 }
@@ -1975,7 +1971,7 @@ u16 * struct_1028_60bc(u16 *param_1, u16 param_2, u8 *param_3)
     u_var2 = (param_1 >> 0x10);
     struct_1028_b354(param_1);
     &iVar2->field_0x20 = 0x0;
-    param_1->field_0x0 = 0x6876;
+    param_1->addr_table = 0x6876;
     iVar2->field_0x2   = SEG_1028;
     mem_op_1000_179c(0xc, param_3, SEG_1000);
     if((param_3 | param_2) == 0x0)

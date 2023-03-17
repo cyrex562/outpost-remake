@@ -1,6 +1,6 @@
 #include "unk_2.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_int.h"
 #include "unk_17.h"
@@ -369,7 +369,7 @@ u16 * pass1_1038_adde(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
 {
     pass1_1038_9b72(param_1, param_2, param_3, param_4);
     param_1 =  0xae4e;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -779,7 +779,7 @@ u16 * pass1_1038_9a1e(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
 {
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
     param_1 =  0x9af6;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment = SEG_1038;
     return param_1;
 }
 
@@ -792,7 +792,7 @@ u32  pass1_1038_9b72(i16 param_1, u16 param_2, u16 param_3, u32 param_4)
     pass1_1040_b040(CONCAT22(param_2, param_1), CONCAT22(param_4, param_3), (param_4 >> 0x10));
     (param_1 + 0x128)          = 0x0;
     param_1 =  0x9efa;
-    param_1->field_0x2 = SEG_1038;
+    param_1->fld2_segment      = SEG_1038;
     iStack4                    = 0x0;
     do
     {
@@ -1207,15 +1207,15 @@ void  pass1_1038_6f5a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, u16 pa
         }
         else
         {
-            paStack16->field_0x0 = addr_table_1008_380a[36]; // 0x389a
-            uVar3->field_0x2     = SEG_1008;
+            paStack16->fld0_addr_table = addr_table_1008_380a[36]; // 0x389a
+            uVar3->fld2_segment       = SEG_1008;
             uVar3->field_0x4     = 0x0;
             uVar3->field_0x6     = 0x0;
             uVar3->field_0x8     = 0x0;
             uVar3->field_0xa     = 0x0;
             uVar3->field_0xc     = 0x0;
-            paStack16->field_0x0 = addr_table_1018_56ce; // 0x56ce
-            uVar3->field_0x2     = SEG_1018;
+            paStack16->fld0_addr_table = addr_table_1018_56ce; // 0x56ce
+            uVar3->fld2_segment       = SEG_1018;
         }
         uVar9         = (paStack16 >> 0x10);
         iVar7         = paStack16;

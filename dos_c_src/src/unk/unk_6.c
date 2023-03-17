@@ -1,7 +1,7 @@
 
 #include "unk_6.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_int.h"
 #include "struct_ops/struct_ops_3.h"
@@ -1624,9 +1624,9 @@ void  pass1_1028_c952(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
             {
                 for(uStack16 = 0x0; uStack16 < 0x25; uStack16 = uStack16 + 0x1)
                 {
-                    uStack30 = *(&uVar3->field_0x0 + uStack16 * 0x4);
+                    uStack30 = *(&uVar3->fld0_addr_table + uStack16 * 0x4);
                     paVar7   = (Struct600 *)uStack30;
-                    uVar10   = (&uVar3->field_0x2 + uStack16 * 0x4) | paVar7;
+                    uVar10   = (&uVar3->fld2_segment + uStack16 * 0x4) | paVar7;
                     if(uVar10 != 0x0)
                     {
                         uVar9 = uStack30;

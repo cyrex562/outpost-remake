@@ -1,6 +1,6 @@
 #include "win_ops_1.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -60,7 +60,7 @@ u32  call_win_proc_1040_a40e(HWND16 param_1, u32 param_2, LPARAM param_3, u16 pa
     {
         puVar4  = &PTR_LOOP_1050_5ee0;
         ppcVar2 = (*puVar4 + 0x34);
-        u_stack6 = (**ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), param_1, param_2, &USHORT_1050_1050);
+        u_stack6 = (**ppcVar2)(param_5, puVar4, (puVar4 >> 0x10), param_1, param_2, SEG_1050);
         param_4 = (u_stack6 >> 0x10);
     }
     else
@@ -948,7 +948,7 @@ void  call_win_proc_1040_9684(HWND16 win_handle_1, u16 param_2, WPARAM16 w_param
     u32 var3;
     u16        var5;
 
-    var9     = &USHORT_1050_1050;
+    var9     = SEG_1050;
     var8     = l_param_1;
     handle_1 = GetProp16(win_handle_2, s_procHi_1050_5e7d);
     var7     = l_param_1;
@@ -1048,7 +1048,7 @@ Struct57 * pass1_1040_8478(Struct57 *param_1, u16 param_2, char *param_3, char *
     iVar2->field_0x9a = 0x0;
     iVar2->field_0xb2 = 0x0;
     param_1           = 0x8ddc;
-    iVar2->field_0x2  = SEG_1040;
+    iVar2->fld2_segment = SEG_1040;
     iVar2->field_9e = 0x0;
     iVar2->field_0xa2 = 0x12c;
     uVar1             = str_op_1008_60e8(param_4, param_6);
@@ -1958,7 +1958,7 @@ LRESULT  send_win_msg_1040_4a0a(Struct48 **param_1, HWND16 param_2)
     uVar6   = (param_1 >> 0x10);
     iVar5   = (Struct48 *)param_1;
     ppcVar2 = (*param_1 + 0x74);
-    (**ppcVar2)(param_2, param_1, 0x5d6a, &USHORT_1050_1050);
+    (**ppcVar2)(param_2, param_1, 0x5d6a, SEG_1050);
     GetDlgItem16(param_2, 0x1770);
     SendMessage16((HWND16)LAST_SEGMENT, 0x0, 0x0, 0x40b0000);
     LVar7 = SendMessage16((HWND16)LAST_SEGMENT, 0x0, 0x0, 0xb0000);

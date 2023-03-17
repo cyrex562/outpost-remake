@@ -1,6 +1,6 @@
 #include "win_ops_2.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_int.h"
 #include "op_win_def.h"
@@ -512,7 +512,7 @@ long  call_win_proc_1038_d020(HWND16 win_handle_1, u32 param_2, LPARAM l_param, 
     u16      var4;
     WPARAM16 w_param;
 
-    var4     = SUB42(&USHORT_1050_1050, 0x0);
+    var4     = SUB42(SEG_1050, 0x0);
     var3     = l_param;
     handle_1 = GetProp16(win_handle_2, s_procHi_1050_5bd7);
     var2     = l_param;
@@ -575,7 +575,7 @@ void  win_prop_op_1038_d118(u32 param_1, u32 param_2, u16 param_3, u16 param_4, 
     u16         uVar8;
     u32 *pu_stack6;
 
-    uVar8    = SUB42(&USHORT_1050_1050, 0x0);
+    uVar8    = SUB42(SEG_1050, 0x0);
     uVar7    = param_3;
     HVar4    = GetProp16(param_5, s_thisHi_1050_5bf3);
     uVar6    = param_3;

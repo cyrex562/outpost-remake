@@ -167,9 +167,9 @@ struct Struct172
 };
 struct Struct173
 {
-    u8  field_0x0;
+    u8         fld0_addr_table;
     u8  field_0x1;
-    i16        field_0x2;
+    i16        fld2_segment;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;

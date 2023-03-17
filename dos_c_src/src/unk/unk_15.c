@@ -483,7 +483,7 @@ u16 pass1_1000_4f2e(u16 param_1)
     bVar3  = false;
     // dos3call arg passed in by field
     pcVar1 = swi(0x21);
-    u_var2  = (*pcVar1)(&USHORT_1050_1050, param_1 + 0x1);
+    u_var2  = (*pcVar1)(SEG_1050, param_1 + 0x1);
     if(bVar3)
     {
         pass1_1000_29b5(u_var2);

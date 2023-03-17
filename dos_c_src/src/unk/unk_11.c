@@ -1,6 +1,6 @@
 #include "unk_11.h"
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "op_int.h"
 #include "unk_12.h"
 #include "utils.h"
@@ -870,7 +870,7 @@ void  pass1_1018_331c(Struct638 *param_1, u16 param_2, u16 param_3, u16 param_4,
     param_1->field_0x13e       = 0x0;
     param_1->field_0x142       = 0x0;
     param_1 =  addr_table_1018_470c;//0x470c; // &PTR_LOOP_1050_470c;
-    param_1->field_0x2         = SEG_1018;
+    param_1->fld2_segment      = SEG_1018;
     pu_var2                     = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3b, param_4, param_5, unaff_DI);
     uVar1                      = pu_var2;
     param_1->field_0x122       = uVar1;

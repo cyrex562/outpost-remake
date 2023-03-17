@@ -1,5 +1,5 @@
 
-#include "address_tables/address_table_1.h"
+#include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_winapi.h"
 #include "structs/structs_6xx/struct_667.h"
@@ -79,7 +79,7 @@ void  struct_1028_37a6(u16 *param_1, u8 *param_2, u16 param_3, u16 param_4)
     iVar3->field_0x24  = 0x0;
     &iVar3->field_0x28 = 0x0;
     param_1->field_0x0 = 0x3e2c;
-    iVar3->field_0x2   = SEG_1028;
+    iVar3->fld2_segment = SEG_1028;
     mem_op_1000_179c(0xa, param_2, SEG_1000);
     u_var2 = param_2 | uVar1;
     if(u_var2 == 0x0)
@@ -108,7 +108,7 @@ void  pass1_1028_3816(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
     (param_1 + 0x24)           = 0x0;
     (param_1 + 0x28)           = 0x0;
     param_1 =  0x3e2c;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     mem_op_1000_179c(0xa, param_5, SEG_1000);
     u_var2 = param_5 | uVar1;
     if(u_var2 == 0x0)
@@ -171,7 +171,7 @@ void  pass1_1028_1fc8(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x24)           = 0x0;
     param_1 =  0x2572;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment       = SEG_1028;
     mem_op_1000_179c(0xc, param_5, SEG_1000);
     if((param_5 | u_var2) == 0x0)
     {
@@ -521,7 +521,7 @@ void  pass1_1028_00cc(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x22)           = 0x0;
     param_1 =  0x8ec;
-    param_1->field_0x2 = SEG_1028;
+    param_1->fld2_segment      = SEG_1028;
     mem_op_1000_179c(0xc, param_5, SEG_1000);
     if((param_5 | uVar1) == 0x0)
     {
@@ -915,7 +915,7 @@ void  pass1_1020_d194(u32 param_1, i16 param_2, u16 param_3)
                 pass1_1030_1d58(puStack34);
                 uVar5  = uVar6;
                 puVar3 = local_4;
-                uVar11 = 0x1030;
+                uVar11 = SEG_1030;
                 uVar19 = uVar10;
                 pass1_1030_bd74(puVar3, param_3, uVar6 & 0xffff | uVar10 << 0x10, CONCAT22(puVar17, CONCAT11(uVar16, uVar15)), param_3);
                 if((0x0 < puVar3) && (puVar3 < 0x1f))
@@ -1723,7 +1723,7 @@ void  pass1_1020_8eaa(u16 *param_1, u16 param_2)
     iVar4->field_0xb8  = 0xffff;
     &iVar4->field_0xba = 0x0;
     *param_1           = addr_table_1020_9204;//0x9204;
-    iVar4->field_0x2   = SEG_1020;
+    iVar4->fld2_segment = SEG_1020;
     puVar5             = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x29, param_2, (puVar5 >> 0x10), uVar4);
     u_var2              = (puVar5 >> 0x10);
     iVar4->field_0x16  = puVar5;
@@ -1909,7 +1909,7 @@ void  pass1_1020_62e0(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
     (param_1 + 0x14)           = 0x0;
     (param_1 + 0x2c)           = 0x0;
     param_1 =  addr_table_1020_67c2;//0x67c2;
-    param_1->field_0x2 = SEG_1020;
+    param_1->fld2_segment      = SEG_1020;
     puVar6                     = extraout_DX;
     puVar3                     = pass1_1000_4906((Struct20 *)CONCAT22(param_2, param_1 + 0x18), 0x0, 0x14);
     mem_op_1000_179c(0x3c, puVar6, SEG_1000);
@@ -2060,16 +2060,16 @@ void  pass1_1020_1eea(u16 *param_1, u32 param_2, u16 param_3, u8 *param_4, i16 p
     uVar3                     = (param_1 >> 0x10);
     iVar3                     = (Struct663 *)param_1;
     *param_1                  = addr_table_1008_380a[36]; // 0x389a
-    iVar3->field_0x2          = SEG_1008;
+    iVar3->fld2_segment            = SEG_1008;
     *param_1                  = addr_table_1008_3aa0[2];//0x3aa8;
-    iVar3->field_0x2          = SEG_1008;
+    iVar3->fld2_segment            = SEG_1008;
     iVar3->field_0x4          = param_3;
     *param_1                  = addr_table_1008_3aa0[4]; // 0x3ab0;
-    iVar3->field_0x2          = SEG_1008;
+    iVar3->fld2_segment            = SEG_1008;
     iVar3->field_0x6          = 0x0;
     iVar3->field_0xa          = param_2;
     *param_1                  = addr_table_1020_2518;//0x2518;
-    iVar3->field_0x2          = SEG_1020;
+    iVar3->fld2_segment            = SEG_1020;
     puVar4                    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x39, param_6, param_4, param_5);
     u_var2                     = (puVar4 >> 0x10);
     &iVar3->field_0x6         = puVar4;
