@@ -71,7 +71,7 @@ void unk_draw_op_1040_9458(Struct17 *param_1, u8 param_2, u16 param_3, HDC16 par
 
 void draw_text_1040_94fc(Globals *globals, Struct37 *param_1, HDC16 param_2);
 
-void draw_text_1040_9650(Struct65 *param_1, HWND16 param_2);
+void draw_text_1040_9650(Struct65 *pstruct_arg_1, HWND16 hwnd_arg_2);
 
 void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2);
 

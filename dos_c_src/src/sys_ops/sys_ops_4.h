@@ -5,6 +5,12 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_4_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_4_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_3xx/structs_33x.h"
+#include "structs/structs_6xx/struct_693.h"
+#include "structs/structs_3xx/struct_323.h"
 
 void pass1_1028_a79c(u32 param_1, u16 param_2, u8 *param_3);
 
@@ -31,32 +37,32 @@ void pass1_1028_ad9c(u32 param_1, Struct338 *param_2, u8 *param_3);
 
 
 
-u16 pass1_1028_af08(u32 param_1, u8 *param_2, i16 param_3, u16 param_4);
+u16 pass1_1028_af08(Struct693 *param_1, u8 *param_2, i16 param_3, u16 param_4);
 
 
 
 
-void pass1_1028_afce(u32 param_1, Struct339 *param_2, u8 *param_3);
+void pass1_1028_afce(Struct340 *param_1, Struct339 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_b108(u32 param_1, Struct341 *param_2, u8 *param_3);
+void pass1_1028_b108(Struct342 *param_1, Struct341 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_94e4(u32 param_1, Struct328 *param_2, u8 *param_3);
+void pass1_1028_94e4(Struct329 *param_1, Struct328 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_9b48(u32 param_1, Struct330 *param_2, u8 *param_3);
+void pass1_1028_9b48(Struct331 *param_1, Struct330 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_9dee(u32 param_1, Struct332 *param_2, u8 *param_3);
+void pass1_1028_9dee(Struct333 *param_1, Struct332 *param_2, u8 *param_3);
 
 
 
@@ -81,22 +87,22 @@ void pass1_1028_84ca(Struct100 *param_1, u32 param_2, u16 param_3, u16 param_4, 
 
 
 
-void pass1_1028_86f4(u32 param_1, Struct320 *param_2, u8 *param_3);
+void pass1_1028_86f4(Struct321 *param_1, Struct320 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_8c46(u32 param_1, Struct322 *param_2, u8 *param_3);
+void pass1_1028_8c46(Struct323 *param_1, Struct322 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_8ea6(u32 param_1, Struct324 *param_2, u8 *param_3);
+void pass1_1028_8ea6(Struct325 *param_1, Struct324 *param_2, u8 *param_3);
 
 
 
 
-void pass1_1028_8fea(u32 param_1, Struct326 *param_2, u8 *param_3);
+void pass1_1028_8fea(Struct327 *param_1, Struct326 *param_2, u8 *param_3);
 
 
 
@@ -144,7 +150,7 @@ void pass1_1028_82b4(u32 param_1, u16 param_2, u8 *param_3);
 
 
 
-void pass1_1028_69cc(u32 param_1, Struct317 *param_2, u8 *param_3);
+void pass1_1028_69cc(Struct316 *param_1, Struct317 *param_2, u8 *param_3);
 
 
 
@@ -181,7 +187,7 @@ void pass1_1028_43f6(u32 param_1, i16 param_2, u8 *param_3, u16 param_4, i16 par
 
 
 
-void pass1_1028_45fe(u32 param_1, i16 param_2, u16 param_3);
+void pass1_1028_45fe(Struct312 *param_1, i16 param_2, u16 param_3);
 
 
 

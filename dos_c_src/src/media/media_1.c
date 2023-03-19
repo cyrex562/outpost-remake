@@ -1,3 +1,13 @@
+#include "media_1.h"
+
+#include "globals.h"
+#include "op_int.h"
+#include "op_winapi.h"
+#include "op_windef.h"
+#include "struct_20.h"
+#include "unk/unk_12.h"
+#include "unk/unk_15.h"
+#include "utils.h"
 
 void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
 
@@ -28,7 +38,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
 
 {
     DWORD      DVar1;
-    CHAR       local_432[0x400];
+    char       local_432[0x400];
     u16        local_32;
     u16        uStack48;
     u16        local_2e;
@@ -62,7 +72,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
         {
             mciGetErrorString16(0x4001538, local_432, param_4);
         }
-        pass1_1000_4906((Struct20 *)CONCAT22(param_4, &local_2e), 0x0, 0xc);
+        pass1_1000_4906((struct Struct20 *)CONCAT22(param_4, &local_2e), 0x0, 0xc);
         local_2e = param_2;
         uStack44 = 0x0;
         DVar1    = mciSendCommand16(SEG_1000, &local_2e, CONCAT22(0x2, param_4), 0x8060000);

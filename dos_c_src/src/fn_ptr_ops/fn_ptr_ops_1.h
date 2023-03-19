@@ -7,11 +7,12 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/struct_18.h"
 #include "structs/structs_0xx/struct_31.h"
+#include "structs/structs_2xx/structs_25x.h"
 
-void pass1_1040_a5d0(Globals *globals, u32 param_1);
+void pass1_1040_a5d0(Globals *globals, Struct258 *param_1);
 
 Struct18 *pass1_1040_d89e(Globals *globals, Struct18 *param_1, u8 param_2);
 
@@ -21,9 +22,9 @@ Struct18 *pass1_1040_d056(Globals *globals, Struct18 *param_1, u8 param_2)
 Struct18 * pass1_1040_af9e(Struct18 *param_1, u8 param_2)
 ;
 
-void pass1_1040_a5d0(struct Globals *globals, u32 param_1);
+void pass1_1040_a5d0(Globals *globals, Struct258 *param_1);
 
-void  pass1_1040_a582(u32 *param_1)
+void  pass1_1040_a582(Struct18 *param_1)
 ;
 
 Struct18 *pass1_1040_8db6(Struct18 *param_1, Globals *globals, u8 param_2);

@@ -5,6 +5,11 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_4_H_
 #define OUTPOST_1_SRC_UNK_UNK_4_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_4xx/structs_40x.h"
+
 
 i16  pass1_1030_d56a(u32 param_1);
 
@@ -216,7 +221,7 @@ void  pass1_1030_b9b2(u32 param_1);
 
 
 
-void  pass1_1030_b9da(u32 param_1, u32 param_2, u32 param_3, u32 param_4, u16 param_5, u16 param_6, u16 param_7);
+void  pass1_1030_b9da(Struct402 *param_1, u32 param_2, u32 param_3, u32 param_4, u16 param_5, u16 param_6, u16 param_7);
 
 
 

@@ -377,4 +377,6 @@ typedef u16(*DosInt21OpenFileUsingHandle2)(u8 mode, char* filename);
 //	- if file already exists, it is truncated to zero bytes on opening
 typedef u16(*DosInt21CreateFileWithHandle)(u16 file_attrib, char* path_name);
 
+
+
 #endif // OUTPOST_1_SRC_OP_DOS_INTERRUPTS_H_

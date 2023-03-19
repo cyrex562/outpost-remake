@@ -1127,7 +1127,7 @@
     1018:615c  5e  7e  40  10       addr         set_text_bk_color_1040_7e5e
     1018:6160  58  81  40  10       addr         unk_win_ui_op_1040_8158
     1018:6164  b6  81  40  10       addr         check_dialog_msg_1040_81b6
-    1018:6168  fe  81  40  10       addr         win_ui_op_1040_81fe
+    1018:6168  fe  81  40  10       addr         set_sys_modal_window_1040_81fe
     1018:616c  ea  60  18  10       addr         FUN_1018_60ea
     1018:6170  4a  82  40  10       addr         pass1_1040_824a
     1018:6174  66  82  40  10       addr         FUN_1040_8266
@@ -5409,7 +5409,7 @@
     1020:1eae 5e 7e 40 10       addr         set_text_bk_color_1040_7e5e
     1020:1eb2 58 81 40 10       addr         unk_win_ui_op_1040_8158
     1020:1eb6 b6 81 40 10       addr         check_dialog_msg_1040_81b6
-    1020:1eba fe 81 40 10       addr         win_ui_op_1040_81fe
+    1020:1eba fe 81 40 10       addr         set_sys_modal_window_1040_81fe
     1020:1ebe d4 1b 20 10       addr         enable_window_1020_1bd4
     1020:1ec2 4a 82 40 10       addr         pass1_1040_824a
     1020:1ec6 66 82 40 10       addr         FUN_1040_8266
@@ -6599,7 +6599,7 @@ NONE
     1040:d8f8 72 b3 40 10       addr         win_ui_op_1040_b372
     1040:d8fc 58 81 40 10       addr         unk_win_ui_op_1040_8158
     1040:d900 b6 81 40 10       addr         check_dialog_msg_1040_81b6
-    1040:d904 fe 81 40 10       addr         win_ui_op_1040_81fe
+    1040:d904 fe 81 40 10       addr         set_sys_modal_window_1040_81fe
     1040:d908 ea 60 18 10       addr         FUN_1018_60ea
     1040:d90c 4a 82 40 10       addr         pass1_1040_824a
     1040:d910 66 82 40 10       addr         FUN_1040_8266
@@ -6633,7 +6633,7 @@ NONE
     1040:d0b0 72 b3 40 10       addr         win_ui_op_1040_b372
     1040:d0b4 58 81 40 10       addr         unk_win_ui_op_1040_8158
     1040:d0b8 b6 81 40 10       addr         check_dialog_msg_1040_81b6
-    1040:d0bc fe 81 40 10       addr         win_ui_op_1040_81fe
+    1040:d0bc fe 81 40 10       addr         set_sys_modal_window_1040_81fe
     1040:d0c0 ea 60 18 10       addr         FUN_1018_60ea
     1040:d0c4 4a 82 40 10       addr         pass1_1040_824a
     1040:d0c8 66 82 40 10       addr         FUN_1040_8266

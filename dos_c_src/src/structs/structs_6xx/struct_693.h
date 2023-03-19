@@ -5,8 +5,6 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_693_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_693_H_
 
-#include "struct_656.h"
-#include "struct_657.h"
 typedef struct Struct693 Struct693;
 struct Struct693
 {
@@ -285,4 +283,4 @@ struct Struct693
     u8  field_0x113;
     u8 *field_0x114;
 };
-#endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_693_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_693_H_

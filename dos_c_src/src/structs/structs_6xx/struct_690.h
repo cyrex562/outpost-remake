@@ -5,8 +5,8 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_690_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_690_H_
 
-#include "struct_656.h"
-#include "struct_657.h"
+#include "op_int.h"
+
 typedef struct Struct690 Struct690;
 struct Struct690
 {
@@ -40,4 +40,4 @@ struct Struct690
     i16 field_0x1c;
     i16 field_0x1e;
 };
-#endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_690_H_
+#endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_690_H_

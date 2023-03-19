@@ -7,7 +7,8 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/struct_43.h"
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_0xx/structs_3x.h"
 
@@ -86,7 +87,7 @@ void pass1_1020_0e8e(i16 param_1, u16 param_2, i16 param_3, i16 param_4, i16 par
 void enable_menu_1020_1000(HMENU16 param_1, i16 param_2);
 
 
-void win_ui_cursor_op_1020_1294(struct Globals *globals,
+void win_ui_cursor_op_1020_1294(Globals *globals,
                                 u32    param_1,
                                 short           param_2,
                                 short           param_3,
@@ -185,8 +186,7 @@ u32 destroy_window_1010_7b26(u32 param_1, long param_2, u16 param_3, u16 param_4
 void pass1_1010_8096(u32 *param_1, i16 param_2);
 
 
-
-Struct43 *unk_io_op_1010_830a(u32 param_1, u16 param_2, u16 param_3);
+struct Struct43 *unk_io_op_1010_830a(u32 param_1, u16 param_2, u16 param_3);
 
 
 

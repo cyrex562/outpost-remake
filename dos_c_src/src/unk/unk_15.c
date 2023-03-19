@@ -2,9 +2,11 @@
 
 #include "globals.h"
 #include "op_int.h"
+#include "op_windef.h"
 #include "stdarg.h"
 #include "stdbool.h"
 #include "string_ops.h"
+#include "struct_20.h"
 #include "unk_14.h"
 #include "utils.h"
 
@@ -286,7 +288,7 @@ u16 pass1_1000_48a8(u32 param_1, u32 param_2, i16 param_3)
 }
 
 
-u16 *pass1_1000_4906(Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3)
+u16 *pass1_1000_4906(struct Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3)
 
 {
     u16 *puVar1;
@@ -827,7 +829,7 @@ i16 pass1_1000_3f5c(i16 param_1, u16 param_2, u16 param_3, u16 param_4, u8 param
 
     iStack2 = param_1 + 0x1;
     iVar3   = 0x0;
-    if(PTR_LOOP_1050_61ec == 0x0)
+    if(globals->PTR_LOOP_1050_61ec == 0x0)
     {
         pu_var2 = &PTR_LOOP_1050_6210;
     }
@@ -851,10 +853,10 @@ u16 pass1_1000_41e0(i16 param_1)
 {
     i16 *piStack6;
 
-    piStack6 = CONCAT22(PTR_LOOP_1050_6192, globals->PTR_LOOP_1050_6190);
+    piStack6 = CONCAT22(globals->PTR_LOOP_1050_6192, globals->PTR_LOOP_1050_6190);
     while(true)
     {
-        if(PTR_LOOP_1050_6190 + (PTR_LOOP_1050_6194 & 0xfffc) <= piStack6)
+        if(globals->PTR_LOOP_1050_6190 + (globals->PTR_LOOP_1050_6194 & 0xfffc) <= piStack6)
         {
             return 0x0;
         }
@@ -876,28 +878,28 @@ i16 pass1_1000_422a(i16 param_1, u16 param_2, u16 param_3, u16 param_4)
     u8  *puVar4;
     i16 *piStack6;
 
-    piStack6 = CONCAT22(PTR_LOOP_1050_6192, globals->PTR_LOOP_1050_6190);
+    piStack6 = CONCAT22(globals->PTR_LOOP_1050_6192, globals->PTR_LOOP_1050_6190);
     while(true)
     {
-        if(PTR_LOOP_1050_6190 + (PTR_LOOP_1050_6194 & 0xfffc) <= piStack6)
+        if(globals->PTR_LOOP_1050_6190 + (globals->PTR_LOOP_1050_6194 & 0xfffc) <= piStack6)
         {
             pu_var2 = globals->PTR_LOOP_1050_6194 + 0x28;
             puVar4 = globals->PTR_LOOP_1050_6192;
-            puVar3 = pass1_1000_16aa(PTR_LOOP_1050_6190, globals->PTR_LOOP_1050_6192, pu_var2, globals->PTR_LOOP_1050_6192, param_3, param_4);
+            puVar3 = pass1_1000_16aa(globals->PTR_LOOP_1050_6190, globals->PTR_LOOP_1050_6192, pu_var2, globals->PTR_LOOP_1050_6192, param_3, param_4);
             if((puVar4 | puVar3) == 0x0)
             {
                 param_1 = 0x0;
             }
             else
             {
-                puVar1                      = puVar3 + (PTR_LOOP_1050_6194 & 0xfffc);
+                puVar1                      = puVar3 + (globals->PTR_LOOP_1050_6194 & 0xfffc);
                 piStack6                    = CONCAT22(puVar4, puVar1);
                 globals->PTR_LOOP_1050_6190 = puVar3;
                 globals->PTR_LOOP_1050_6192 = puVar4;
                 *piStack6                   = param_1;
                 (puVar1 + 0x2)              = param_2;
                 globals->PTR_LOOP_1050_6194 = pu_var2;
-                pass1_1000_4906((Struct20 *)CONCAT22(puVar4, puVar1 + 0x4), 0x0, 0x24);
+                pass1_1000_4906((struct Struct20 *)CONCAT22(puVar4, puVar1 + 0x4), 0x0, 0x24);
             }
             return param_1;
         }
@@ -935,7 +937,7 @@ void pass1_1000_440c(Globals *globals, u16 param_1)
     u16   uVar8;
     char *pcStack8;
 
-    uVar3    = pass1_1000_3ec0(NULL, 0x61ca, globals->USHORT_1050_1050);
+    uVar3    = pass1_1000_3ec0(NULL, 0x61ca, SEG_1050);
     pcStack8 = CONCAT22(param_1, uVar3);
     if(((param_1 | uVar3) != 0x0) && (globals->_DAT_1050_61ce = CONCAT22(globals->PTR_LOOP_1050_61d0, globals->DAT_1050_61ce), *pcStack8 != '\0'))
     {
@@ -1088,7 +1090,7 @@ i16 pass1_1000_462e(Globals *globals,
     u16        uVar13;
 
     iStack2 = param_7 + 0x1;
-    local_4 = globals->USHORT_1050_1050;
+    local_4 = SEG_1050;
     uVar8   = (param_2 * 0x2 + 0x61ae);
     if(((param_1 & 0x3) == 0x0) && (0x2 < param_2))
     {
@@ -1189,7 +1191,7 @@ u16 *pass1_1000_35aa(void)
     puVar1 = &PTR_LOOP_1050_6210;
     while(true)
     {
-        if(PTR_LOOP_1050_5ff0 < puVar1)
+        if(globals->PTR_LOOP_1050_5ff0 < puVar1)
         {
             return 0x0;
         }
@@ -1219,9 +1221,9 @@ i16 pass1_1000_3bac(void)
 {
     i16 iVar1;
 
-    if(PTR_LOOP_1050_5f48 < &stack0x0004)
+    if(globals->PTR_LOOP_1050_5f48 < &stack0x0004)
     {
-        iVar1 = -(PTR_LOOP_1050_5f48 - &stack0x0004);
+        iVar1 = -(globals->PTR_LOOP_1050_5f48 - &stack0x0004);
     }
     else
     {

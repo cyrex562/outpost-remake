@@ -22,10 +22,10 @@ void fn_ptr_1000_17ce(Struct18 *param_1, u16 param_2)
     }
     return;
 }
-void fn_ptr_1000_17ce(Struct18 *param_1,u16 param_2)
-
-{
-  if (param_1 != 0x0) {
-    call_fn_ptr_1000_0dc6(param_1,param_1,param_2);
-  }
-}
+//void fn_ptr_1000_17ce(Struct18 *param_1,u16 param_2)
+//
+//{
+//  if (param_1 != 0x0) {
+//    call_fn_ptr_1000_0dc6(param_1,param_1,param_2);
+//  }
+//}

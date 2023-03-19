@@ -6,7 +6,7 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_24_H_STRUCTS_29X_H_
 
 #include "op_int.h"
-#include "structs/structs_7x/structs_73x.h"
+
 typedef struct Struct297 Struct297;
 typedef struct Struct298 Struct298;
 typedef struct Struct290 Struct290;

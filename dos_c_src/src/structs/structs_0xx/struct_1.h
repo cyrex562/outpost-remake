@@ -20,7 +20,7 @@ struct Struct1
     u8          field_0xd;
     u8          field_0xe;
     u8          field_0xf;
-    undefined1  max_count_field_0x10; // Created by retype action
+    u8  max_count_field_0x10; // Created by retype action
     u8          field_0x11;
     u8          field_0x12;
     u8          field_0x13;

@@ -1110,6 +1110,15 @@ struct Struct65
     int       field_0x26;
     int       field_0x40;
     u16       field_0x2e;
+    u16        field_0x28;
+    u16       field_0x2c;
+    int        field_0x32;
+    u16        field_0x30;
+    int        field_0x38;
+    int        field_0x2a;
+    int        field_0x3e;
+    int        field_0x3c;
+    int        field_0x3a;
 };
 struct Struct66
 {

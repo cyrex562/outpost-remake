@@ -38,7 +38,7 @@ struct Struct604
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct Struct18 *field_0x14;
+    Struct18 *field_0x14;
     i16                field_0x18;
 };
 struct Struct600
@@ -320,7 +320,7 @@ struct Struct606
     u16                field_0x2;
     u8                 field_0x4;
     u8                 field_0x5;
-    struct Struct18 *field_0x6;
+    Struct18 *field_0x6;
     u32                field_0xa;
     u8                 field_0xe;
     u8                 field_0xf;

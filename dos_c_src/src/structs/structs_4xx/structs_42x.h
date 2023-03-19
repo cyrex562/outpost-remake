@@ -17,7 +17,7 @@
 #include "structs/structs_3xx/structs_31x.h"
 #include "structs/structs_3xx/structs_33x.h"
 #include "structs/structs_3xx/structs_37x.h"
-#include "structs/structs_7x/structs_73x.h"
+
 #include "structs_43x.h"
 #include "structs_45x.h"
 #include "structs_46x.h"
@@ -1134,6 +1134,8 @@ struct Struct429
     u8  field_0x214;
     u8  field_0x215;
     u8  field_0x216;
+    u16        field_0x1a_addr_offset;
+    u16        field_0x1c_addr_base;
 };
 struct Struct421
 {

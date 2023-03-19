@@ -8,7 +8,7 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_0xx/struct_18.h"
 #include "structs/structs_0xx/struct_37.h"
@@ -16,27 +16,32 @@
 #include "structs/structs_0xx/structs_6x.h"
 
 
-void  send_msg_1040_c85a(u32 param_1, HWND16 param_2);
-
-
-
-
 Struct18 * pass1_1040_a4c2(Struct18 *param_1, u8 param_2, u16 param_3);
 
-
+void win_1008_5c7c(Globals *globals, u16 param_1, u16 param_2, u32 param_3, u32 param_4);
 
 
 // WARNING: Unable to use type for symbol uVar5
 
-u32  call_win_proc_1040_a40e(HWND16 param_1, u32 param_2, LPARAM param_3, u16 param_4, LPVOID param_5, u16 param_6);
+u32 call_win_proc_1040_a40e(Globals *globals,
+                            HWND16   param_1,
+                            u32      param_2,
+                            LPARAM   param_3,
+                            u16      param_4,
+                            LPVOID   param_5,
+                            u16      param_6);
 
 
 ATOM reg_class_1040_98c0(Globals *globals, u32 param_1, HINSTANCE16 param_2, WNDCLASS16 *in_wnd_class_3);
 
 
-
-
-void  win_op_1040_9cde(u16 param_1, WPARAM16 param_2, i16 param_3, u32 param_4, HWND16 param_5, u16 param_6);
+void win_op_1040_9cde(Globals *globals,
+                      u16      param_1,
+                      WPARAM16 param_2,
+                      i16      param_3,
+                      u32      param_4,
+                      HWND16   param_5,
+                      u16      param_6);
 
 
 
@@ -68,9 +73,12 @@ u8 * win_ui_op_1040_8718(Struct37 *param_1, u16 param_2);
 void  pass1_1040_8978(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, WNDCLASS16 *param_5);
 
 
-
-
-void  pass1_1040_89a4(u32 *param_1, u16 *param_2, u8 *param_3, i16 param_4, WNDCLASS16 *param_5);
+void pass1_1040_89a4(Globals    *globals,
+                     u32        *param_1,
+                     u16        *param_2,
+                     u8         *param_3,
+                     i16         param_4,
+                     WNDCLASS16 *param_5);
 
 
 HANDLE16 create_window_1040_8bea(Globals *globals,
@@ -81,7 +89,8 @@ HANDLE16 create_window_1040_8bea(Globals *globals,
                                  HMENU16  hmenu_arg5);
 
 
-void mixed_struct_op_1040_8fb8(Struct65 *param_1,
+void mixed_struct_op_1040_8fb8(Globals  *globals,
+                               Struct65 *param_1,
                                u16       param_2,
                                char     *param_3,
                                u16       param_4,

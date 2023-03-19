@@ -167,7 +167,7 @@ struct Struct624
     u8                 field_0x9f;
     u8                 field_0xa0;
     u8                 field_0xa1;
-    struct Struct18 *field_0xa2;
-    struct Struct18 *field_0xa6;
+    Struct18 *field_0xa2;
+    Struct18 *field_0xa6;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_624_H_

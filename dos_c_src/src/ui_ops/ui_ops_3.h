@@ -7,6 +7,9 @@
 
 
 #include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+
 void  destroy_win_1038_ef3a(Struct31 *param_1, HWND16 param_2);
 
 
@@ -20,7 +23,7 @@ void win_ui_op_1040_0170(Globals           *globals,
                          u16     param_3,
                          u32       param_4,
                          u16     param_5,
-                         struct WNDCLASS16 *param_6);
+                         WNDCLASS16 *param_6);
 
 
 
@@ -84,7 +87,7 @@ void  unk_win_ui_op_1038_e71c(Struct1 *param_1, u16 param_2);
 
 
 
-void  chk_is_dlg_btn_checked_1038_e7a0(u32 param_1, i16 param_2);
+void  chk_is_dlg_btn_checked_1038_e7a0(Struct62 *param_1, i16 param_2);
 
 
 
@@ -129,7 +132,7 @@ void  destroy_window_1038_cd88(Struct1 *param_1);
 
 
 
-void  check_dlg_btn_checked_1038_cdd6(u32 param_1, i16 param_2, HWND16 param_3);
+void  check_dlg_btn_checked_1038_cdd6(Struct61 *param_1, i16 param_2, HWND16 param_3);
 
 
 

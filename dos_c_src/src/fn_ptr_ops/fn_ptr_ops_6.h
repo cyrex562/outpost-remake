@@ -8,6 +8,7 @@
 #include "fn_ptr_defs.h"
 #include "globals.h"
 #include "op_int.h"
+#include "structs/structs_0xx/structs_7x.h"
 #include "structs/structs_4xx/structs_48x.h"
 
 
@@ -20,7 +21,7 @@ void pass1_1010_9044(u32 param_1);
 
 
 
-void fn_ptr_1010_905e(u32 param_1, u32 param_2);
+void fn_ptr_1010_905e(Struct169 *param_1, u32 param_2);
 
 
 
@@ -51,12 +52,12 @@ u16 *pass1_1010_7dd2(u16 *param_1, u8 param_2);
 
 
 
-void pass1_1010_7efc(u32 *param_1, u16 param_2);
+void pass1_1010_7efc(Struct448 *param_1, u16 param_2);
 
 
 
 
-void pass1_1010_7fd6(u32 param_1);
+void pass1_1010_7fd6(Struct489 *param_1);
 
 
 
@@ -82,20 +83,20 @@ void struct_1010_5f1e(Struct73 *param_1, char *param_2, u16 param_3);
 
 
 
-void pass1_1010_5f4c(u32 param_1, char *param_2, u16 param_3);
+void pass1_1010_5f4c(Struct484 *param_1, char *param_2, u16 param_3);
 
 
 
-void pass1_1010_5fd8(u32 param_1, char *param_2, u16 param_3);
+void pass1_1010_5fd8(Struct485 *param_1, char *param_2, u16 param_3);
 
 
 
 
-void pass1_1010_6006(u32 param_1, char *param_2, u16 param_3);
+void pass1_1010_6006(Struct486 *param_1, char *param_2, u16 param_3);
 
 
 
-void pass1_1010_60cc(u32 param_1, char *param_2, u16 param_3);
+void pass1_1010_60cc(Struct487 *param_1, char *param_2, u16 param_3);
 
 
 
@@ -122,7 +123,7 @@ void pass1_1010_3730(u16 *param_1, u16 param_2);
 
 
 
-void pass1_1010_3770(u32 param_1, char *param_2, u16 param_3);
+void pass1_1010_3770(Struct477 *param_1, char *param_2, u16 param_3);
 
 
 
@@ -133,7 +134,7 @@ u16 *pass1_1010_379e(u16 *param_1, u8 param_2, u16 param_3);
 void pass1_1010_3800(u16 *param_1);
 
 
-void pass1_1010_3880(AddrStruct *param_1);
+void pass1_1010_3880(void *param_1);
 
 
 
@@ -308,9 +309,7 @@ u16 *pass1_1008_ad38(u16 *param_1, u8 param_2);
 u32 pass1_1008_ad64(u32 param_1, u8 param_2);
 
 
-
-
-u32 pass1_1008_af56(u32 param_1, u8 param_2);
+Struct11 *pass1_1008_af56(Struct11 *param_1, u8 param_2);
 
 
 
@@ -320,7 +319,7 @@ void pass1_1008_b08c(u16 *param_1);
 
 
 
-void pass1_1008_b1a6(u32 param_1, char *param_2);
+void pass1_1008_b1a6(Struct467 *param_1, char *param_2);
 
 
 
@@ -491,7 +490,7 @@ void pass1_1008_3afe(u16 *param_1, u8 param_2);
 
 
 
-void pass1_1008_0036(struct Struct449 *param_1, u16 param_2);
+void pass1_1008_0036(Struct449 *param_1, u16 param_2);
 
 
 

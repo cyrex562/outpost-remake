@@ -7,7 +7,8 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "structs/structs_0xx/structs_5x.h"
 #include "structs/structs_1xx/struct_132.h"
@@ -48,7 +49,7 @@ void draw_op_1020_1674(Globals *globals, u32 param_1, u16 param_2);
 
 void pass1_1018_e5dc(Globals         *globals,
                      u16              param_1,
-                     Struct20 *param_2,
+                     struct Struct20 *param_2,
                      u16              param_3,
                      u16              param_4);
 
@@ -56,7 +57,7 @@ void pass1_1018_e834(Struct660 *param_1, u16 param_2, u16 param_3, i16 param_4, 
 
 void pass1_1018_e8bc(Struct577 *param_1);
 
-void pass1_1018_e91e(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void pass1_1018_e91e(struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 void pass1_1018_ec74(Struct661 *param_1, i16 param_2, u16 param_3, u16 param_4);
 
@@ -66,7 +67,7 @@ void invalidate_rect_1018_edd8(u32 param_1, i16 param_2, u16 param_3);
 
 void unk_draw_op_1020_0000(u32 param_1, HWND16 param_2, u16 param_3);
 
-void pass1_1020_01d8(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6, u16 param_7, u32 param_8, u16 param_9)
+void pass1_1020_01d8(struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6, u16 param_7, u32 param_8, u16 param_9)
 ;
 
 void draw_op_1020_041e(u32 param_1, u16 param_2);
@@ -79,7 +80,7 @@ void pass1_1018_dfd4(u32 param_1, u8 *param_2, i16 param_3, u16 param_4, u16 par
 
 void delete_palette_1018_e16c(u32 param_1, HWND16 param_2);
 
-void pass1_1018_e230(u16 param_1, Struct20 *param_2, u16 param_3, u16 param_4);
+void pass1_1018_e230(u16 param_1, struct Struct20 *param_2, u16 param_3, u16 param_4);
 
 void pass1_1018_e4f2(Struct659 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
@@ -110,7 +111,7 @@ void draw_op_1018_6544(u32 param_1, i16 *param_2, u16 param_3);
 
 void draw_polygon_1018_661c(u16 param_1, u16 param_2, u32 param_3, HDC16 param_4);
 
-void struct_1018_66cc(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void struct_1018_66cc(struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 void pass1_1018_6924(Struct658 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 
@@ -122,9 +123,13 @@ void clenaup_win_ui_1018_4d22(Struct11 *in_struct_1, HDC16 in_hdc_2);
 
 void get_dc_1018_4db0(u32 param_1, u16 param_2, HWND16 param_3);
 
-void create_dc_1018_4e04(Struct8 **param_1, u16 param_2, i16 param_3, i16 param_4, LPCSTR in_string_5, u16 in_string_6);
+void create_dc_1018_4e04(Struct8 *param_1, u16 param_2, i16 param_3, i16 param_4, LPCSTR in_string_5, u16 in_string_6);
 
-void struct_1018_5840(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void struct_1018_5840(Globals  *globals,
+                      struct Struct20 *param_1,
+                      u16       param_2,
+                      u16       param_3,
+                      u16       param_4);
 
 void invalidate_rect_1018_58e2(Struct58 *param_1, i16 param_2, HWND16 param_3);
 

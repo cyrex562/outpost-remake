@@ -9,7 +9,7 @@
 #include "structs/structs_0xx/structs_4x.h"
 #include "structs/structs_1xx/structs_10x.h"
 #include "structs_73x.h"
-#include "windows_platform.h"
+
 typedef struct Struct707 Struct707;
 typedef struct Struct708 Struct708;
 typedef struct Struct700 Struct700;

@@ -1,3 +1,21 @@
+#include "file_ops_4.h"
+
+#include "fn_ptr_ops/fn_ptr_ops_6.h"
+#include "fn_ptr_ops/fn_ptr_ops_7.h"
+#include "globals.h"
+#include "op_int.h"
+#include "op_winapi.h"
+#include "op_windef.h"
+#include "string_ops.h"
+#include "struct_20.h"
+#include "struct_ops/struct_ops_5.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "sys_ops/sys_ops_10.h"
+#include "sys_ops/sys_ops_12.h"
+#include "sys_ops/sys_ops_9.h"
+#include "unk/unk_14.h"
+#include "unk/unk_15.h"
+#include "utils.h"
 
 void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 
@@ -40,7 +58,7 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
 }
 
 
-void  close_file_1008_496c(u16 *param_1) {
+void  close_file_1008_496c(Struct18 *param_1) {
     u32 *puVar1;
     u16 u_var2;
     u32 uVar3;
@@ -124,7 +142,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
             if(local_18 == &PTR_LOOP_1050_4d42)
             {
                 _llseek16((HFILE16)LAST_SEGMENT, 0x0, 0x0);
-                lVar9          = mem_op_1000_0a48(0x1, u_stack6, (u_stack6 >> 0x10), globals->_PTR_LOOP_1050_5f2c, SEG_1000);
+                lVar9          = mem_op_1000_0a48(0x1, u_stack6, (u_stack6 >> 0x10), globals->dat_1050_5f2c, SEG_1000);
                 puVar6         = (lVar9 >> 0x10);
                 (iVar7 + 0x1a) = lVar9;
                 (iVar7 + 0x1c) = puVar6;
@@ -176,18 +194,18 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
 }
 
 
-u32  file_1008_4c26(u32 param_1, u8 param_2)
+Struct18 *file_1008_4c26(Struct18 *param_1, u8 param_2)
 
 {
     close_file_1008_496c(param_1);
     if((param_2 & 0x1) != 0x0)
     {
-        fn_ptr_1000_17ce((Struct18 *)param_1, SEG_1000);
+        fn_ptr_1000_17ce(param_1, SEG_1000);
     }
     return param_1;
 }
 
-void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
+void save_file_1008_3178(Globals *globals, u32 param_1, i16 param_2, u16 param_3)
 
 {
     char        cVar1;
@@ -230,7 +248,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     acStack259[1] = 0x0;
     local_302     = 0x0;
     local_202[0]  = 0x0;
-    puStack774    = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
+    puStack774    = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
     uVar8         = (puStack774 >> 0x10);
     iVar3         = puStack774;
     uStack778     = (iVar3 + 0x1a);
@@ -279,7 +297,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_202), (uStack778 & 0xffff | uVar10 << 0x10));
     }
     local_416[0] = '\0';
-    pcVar9       = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
+    pcVar9       = load_string_1010_847e(globals->dat_1050_14cc, (u16)globals->dat_1050_14cc >> 0x10), SEG_1010);
     unk_str_op_1000_3d3e(CONCAT22(param_3, local_416), pcVar9);
     uStack1048 = str_op_1000_3da4(CONCAT22(param_3, local_416));
     uStack1038 = uStack1048;
@@ -292,7 +310,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
         }
     }
     acStack1305[1] = 0x0;
-    pcVar9         = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
+    pcVar9         = load_string_1010_847e(globals->dat_1050_14cc, (u16)globals->dat_1050_14cc >> 0x10), SEG_1010);
     uVar5          = (pcVar9 >> 0x10);
     unk_str_op_1000_3d3e(CONCAT22(param_3, acStack1305 + 0x1), pcVar9);
     uStack1038 = str_op_1000_3da4(CONCAT22(param_3, acStack1305 + 0x1));
@@ -312,10 +330,10 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
     pcStack1370  = acStack1305 + 0x1;
     pcStack1382  = 0x0;
     local_666[0] = 0x0;
-    in_buf_len_2 = (u16)(_PTR_LOOP_1050_14cc >> 0x10);
+    in_buf_len_2 = (u16)globals->dat_1050_14cc >> 0x10);
     if(param_2 == 0x1)
     {
-        pcVar9 = load_string_1010_847e(_PTR_LOOP_1050_14cc, in_buf_len_2, SEG_1010);
+        pcVar9 = load_string_1010_847e(globals->dat_1050_14cc, in_buf_len_2, SEG_1010);
         uVar5  = (pcVar9 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_666), pcVar9);
         BVar6 = GetOpenFileName16(SEG_1000);
@@ -327,7 +345,7 @@ void  save_file_1008_3178(u32 param_1, i16 param_2, u16 param_3)
             debug_pri16_1008_6048(s_Unsupported_FileStructType_in_Op_1050_01ca, SEG_1000, param_3);
             goto LAB_1008_3461;
         }
-        pcVar9 = load_string_1010_847e(_PTR_LOOP_1050_14cc, in_buf_len_2, SEG_1010);
+        pcVar9 = load_string_1010_847e(globals->dat_1050_14cc, in_buf_len_2, SEG_1010);
         uVar5  = (pcVar9 >> 0x10);
         unk_str_op_1000_3d3e(CONCAT22(param_3, local_666), pcVar9);
         BVar6 = GetSaveFileName16(SEG_1000);
@@ -341,11 +359,11 @@ LAB_1008_3461:
     {
         if(uStack1326 < 0x0)
         {
-            paStack1654 = (Struct18 *)load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
+            paStack1654 = (Struct18 *)load_string_1010_847e(globals->dat_1050_14cc, (u16)globals->dat_1050_14cc >> 0x10), SEG_1010);
             uVar7       = (paStack1654 >> 0x10);
             uVar5       = str_op_1008_60e8(paStack1654, uVar7);
             paStack1654 = (Struct18 *)CONCAT22(uVar7, uVar5);
-            pcVar9      = load_string_1010_847e(_PTR_LOOP_1050_14cc, (u16)(_PTR_LOOP_1050_14cc >> 0x10), SEG_1010);
+            pcVar9      = load_string_1010_847e(globals->dat_1050_14cc, (u16)globals->dat_1050_14cc >> 0x10), SEG_1010);
             UStack1648  = (pcVar9 >> 0x10);
             pCStack1650 = pcVar9;
             MessageBox16(SEG_1010, &PTR_LOOP_1050_0010, pCStack1650, UStack1648);
@@ -364,5 +382,4 @@ LAB_1008_3461:
         }
     }
     pass1_1000_4f2e(&stack0xfffe);
-    return;
 }

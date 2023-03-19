@@ -8,7 +8,7 @@
 #include "op_int.h"
 #include "structs/structs_1xx/structs_19x.h"
 #include "structs/structs_4xx/structs_49x.h"
-#include "structs/structs_7x/structs_72x.h"
+
 #include "structs_24x.h"
 typedef struct Struct284 Struct284;
 typedef struct Struct285 Struct285;
@@ -70,7 +70,7 @@ struct Struct284
     u8                 field_0x35;
     u8                 field_0x36;
     u8                 field_0x37;
-    struct Struct76 *field_0x38;
+    Struct76 *field_0x38;
 };
 struct Struct285
 {
@@ -192,8 +192,8 @@ struct Struct280
     u16                field_0x2;
     u16                field_0x4;
     i16                field_0x6;
-    struct Struct20 *field_0x8;
-    struct Struct20 *field_0xc;
+    Struct20 *field_0x8;
+    Struct20 *field_0xc;
 };
 struct Struct282
 {

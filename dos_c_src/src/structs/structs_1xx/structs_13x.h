@@ -21,7 +21,7 @@
 #include "structs/structs_4xx/structs_46x.h"
 #include "structs/structs_4xx/structs_48x.h"
 #include "structs/structs_4xx/structs_49x.h"
-#include "structs/structs_7x/structs_72x.h"
+
 #include "structs_14x.h"
 #include "structs_16x.h"
 #include "structs_17x.h"

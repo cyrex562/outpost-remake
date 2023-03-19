@@ -17,12 +17,12 @@
 #include "structs/structs_2xx/structs_28x.h"
 #include "structs/structs_4xx/structs_44x.h"
 #include "structs/structs_4xx/structs_49x.h"
-#include "structs/structs_7x/structs_72x.h"
+
 #include "structs_32x.h"
 #include "structs_34x.h"
 #include "structs_35x.h"
 #include "structs_37x.h"
-#include "windows_platform.h"
+
 typedef struct Struct337 Struct337;
 typedef struct Struct338 Struct338;
 typedef struct Struct330 Struct330;

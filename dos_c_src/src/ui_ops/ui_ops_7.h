@@ -7,8 +7,10 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/structs_7x.h"
+
+#include <stdbool.h>
 
 void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_hinstance);
 
@@ -29,37 +31,37 @@ void  menu_ui_op_1008_09ba(u32 param_1, HWND16 param_2, RECT16 *param_3, HWND16 
 
 
 
-void  switchD_1008: 1091 ::caseD_a7(void);
+void  switchD_1008_1091_caseD_a7(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_aa(void);
+void  switchD_1008_1091_caseD_aa(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_ac(void);
+void  switchD_1008_1091_caseD_ac(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_ad(void);
+void  switchD_1008_1091_caseD_ad(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_ae(void);
+void  switchD_1008_1091_caseD_ae(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_b1(void);
+void  switchD_1008_1091_caseD_b1(void);
 
 
 
 
-void  switchD_1008: 1091 ::caseD_b3(void);
+void  switchD_1008_1091_caseD_b3(void);
 
 
 
@@ -68,14 +70,20 @@ void  draw_op_1008_1230(HWND16 param_1);
 
 
 void message_box_op_1008_12dc(
-  u32 param_1, u32 param_2, u16 param_3, u16 param_4, struct Globals *globals);
+  u32 param_1, u32 param_2, u16             hinst_arg3, u16 param_4, Globals *globals);
 
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  win_ui_op_1008_1414(Struct72 **param_1, u32 param_2, LPCSTR param_3, u16 param_4, u8 param_5, u16 param_6);
+void win_ui_op_1008_1414(Globals   *globals,
+                         Struct72 **param_1,
+                         u32        param_2,
+                         LPCSTR     param_3,
+                         u16        param_4,
+                         u8         param_5,
+                         u16        param_6);
 
 
 

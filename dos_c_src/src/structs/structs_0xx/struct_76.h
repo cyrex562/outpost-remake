@@ -22,5 +22,9 @@ struct Struct76
     u8          field_0x19;
     i16         field_0x1a;
     u16         field_0x1c;
+    int         field_0xa;
+    u32         field_0x10;
+    u32         field_0x1e;
+    u16         field_0x22;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_76_H_

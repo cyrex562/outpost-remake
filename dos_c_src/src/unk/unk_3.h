@@ -5,13 +5,17 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_3_H_
 #define OUTPOST_1_SRC_UNK_UNK_3_H_
 
+#include "op_int.h"
+#include "op_windef.h"
+#include "globals.h"
+
 
 void  pass1_1038_3698(u32 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
 
 
-void  pass1_1038_387e(u32 param_1, i16 param_2, i16 param_3, u32 param_4, u16 param_5);
+void  pass1_1038_387e(Struct302 *param_1, i16 param_2, i16 param_3, u32 param_4, u16 param_5);
 
 
 

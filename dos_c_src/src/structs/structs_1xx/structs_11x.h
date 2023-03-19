@@ -230,7 +230,7 @@ struct Struct111
     u16                field_0x6;
     u16                field_0x8;
     u16                field_0xa;
-    struct Struct76 *field_0xc;
+    Struct76 *field_0xc;
 };
 struct Struct112
 {

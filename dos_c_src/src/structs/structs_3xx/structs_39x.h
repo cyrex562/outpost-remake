@@ -8,6 +8,7 @@
 #include "op_int.h"
 #include "structs/structs_0xx/structs_1x.h"
 #include "structs/structs_0xx/structs_2x.h"
+#include "structs/structs_0xx/structs_9x.h"
 #include "structs/structs_1xx/structs_11x.h"
 #include "structs/structs_1xx/structs_15x.h"
 #include "structs/structs_1xx/structs_16x.h"
@@ -25,7 +26,7 @@
 #include "structs_31x.h"
 #include "structs_35x.h"
 #include "structs_38x.h"
-#include "windows_platform.h"
+
 typedef struct Struct398 Struct398;
 typedef struct Struct399 Struct399;
 typedef struct Struct390 Struct390;
@@ -383,7 +384,7 @@ struct Struct393
     u8          field_0x6d;
     u8          field_0x6e;
     u8          field_0x6f;
-    struct Struct90 *field_0x70;
+    Struct90 *field_0x70;
 };
 struct Struct394
 {
@@ -513,7 +514,7 @@ struct Struct395
     u8          field_0x6d;
     u8          field_0x6e;
     u8          field_0x6f;
-    struct Struct90 *field_0x70;
+    Struct90 *field_0x70;
 };
 struct Struct396
 {

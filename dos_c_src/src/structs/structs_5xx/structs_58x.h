@@ -510,8 +510,8 @@ struct Struct588
     u8                 field_0x4;
     u8                 field_0x5;
     i16                field_0x6;
-    struct Struct18 *field_0x8;
-    struct Struct18 *field_0xc;
+    Struct18 *field_0x8;
+    Struct18 *field_0xc;
 };
 struct Struct585
 {

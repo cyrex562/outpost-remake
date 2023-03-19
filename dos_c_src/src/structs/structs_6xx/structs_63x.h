@@ -131,7 +131,7 @@ struct Struct633
 };
 struct Struct632
 {
-    u8         field_0x0;
+    void*         field_0x0;
     u8         field_0x1;
     u16        field_0x2;
     u8         field_0x4;
@@ -208,6 +208,7 @@ struct Struct632
     u8         field_0x6d;
     i16        field_0x6e;
     i16        field_0x70;
+    void      *field_0x1c_fn_ptr;
 };
 struct Struct634
 {
@@ -289,7 +290,7 @@ struct Struct637
     u8                 field_0x13;
     u8                 field_0x14;
     u8                 field_0x15;
-    struct Struct76 *field_0x16;
+    Struct76 *field_0x16;
     u32         field_0x1a;
     u16                field_0x1e;
     u16                field_0x20;

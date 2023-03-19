@@ -50,7 +50,7 @@ void unk_draw_op_1040_b0f8(Globals *globals, Struct18 *param_1)
     param_1->field_0x0 = addr_table_1040_b772;//0xb772;
     param_1->field_0x2 = SEG_1040;
     pu16_var5
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x32, u16_var3, pu8_var7, i16_var2);
+      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x32, u16_var3, pu8_var7, i16_var2);
     u16_var4 = SEG_1010;
     pass1_1010_7b8c(pu16_var5, param_1->field_0x6, u16_var3);
     if(param_1->field_0x8e != 0x0)
@@ -96,7 +96,7 @@ void win_ui_op_1040_ae04(u32 param_1, WORD *param_2, Globals *globals)
     i16    iStack280;
     char   local_102[0x100];
 
-    puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
+    puVar8 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
     uVar3  = (puVar8);
     uVar6  = (param_1);
     iVar4  = param_1;
@@ -135,9 +135,7 @@ void win_ui_op_1040_ae04(u32 param_1, WORD *param_2, Globals *globals)
     }
     if(!bVar1)
     {
-        pcVar11 = load_string_1010_847e(globals->PCHAR_1050_14cc,
-                                        (u16)(globals->PCHAR_1050_14cc >> 0x10),
-                                        SEG_1010);
+        pcVar11 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
         SetDlgItemText16(SEG_1010, (u16)pcVar11, (SEGPTR)(pcVar11 >> 0x10));
     }
 }
@@ -155,10 +153,10 @@ void msg_box_ui_op_1040_ad66(Globals *globals,
     char local_104[0x102];
 
     mem_op_1000_179c(globals, SEG_1000, param_3, SEG_1000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x100, local_206, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), SEG_1000);
@@ -232,7 +230,7 @@ void win_ui_dlg_op_1040_a94a(Globals *globals, u32 param_1, u16 param_2)
     u32    uVar7;
 
     puVar16
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
+      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
     puVar8 = (puVar16 >> 0x10);
     uVar4  = puVar16;
     uVar12 = (param_1 >> 0x10);
@@ -344,14 +342,14 @@ void msg_box_op_1040_a85a(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_104[0x102];
 
     mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x100, local_206, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), SEG_1000);
@@ -390,7 +388,7 @@ void win_ui_op_1040_a784(i16 param_1,
         if(param_4 == 0x1f7)
         {
             globals->_PTR_LOOP_1050_5ef0 = (param_1 + 0x94);
-            pass1_1038_af40(_PTR_LOOP_1050_5b7c,
+            pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c,
                             (param_1 + 0x8),
                             0x23,
                             param_5,
@@ -445,14 +443,14 @@ void unk_win_ui_op_1040_b230(Globals *globals, Struct1 *param_1, u16 param_2, u1
     i16    local_4;
 
     dialog_ui_fn_1040_78e2(NULL, param_1, param_2);
-    if(globals->PTR_LOOP_1050_5ef8 == (&globals->DAT_1050_0004 + 0x1))
+    if(globals->PTR_LOOP_1050_5ef8 == (&globals->dat_1050_0004 + 0x1))
     {
         globals->PTR_LOOP_1050_5ef8 = 0x0;
     }
     puVar5 = CONCAT22(param_3, &local_4);
     puVar4 = CONCAT22(param_3, &local_6);
     puStack10
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x48, param_3, in_DX, unaff_DI);
+      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x48, param_3, in_DX, unaff_DI);
     pass1_1008_3e94((puStack10 & 0xffff0000 | (puStack10 + 0xe)), puVar4, puVar5);
     uVar3                       = (puStack10 >> 0x10);
     iStack12                    = (puStack10 + 0xa);
@@ -520,7 +518,7 @@ void pass1_1040_b54a(Globals *globals,
         if(param_4 == 0xeb)
         {
             puVar9 = mixed_1010_20ba(
-              globals->_PTR_LOOP_1050_0ed0, 0x3, param_7, param_5, unaff_DI);
+              globals->u16_1050_0ed0, 0x3, param_7, param_5, unaff_DI);
             uVar7  = (puVar9 >> 0x10);
             paVar1 = (param_1 + 0x90);
             if(paVar1 != (Struct18 *)0x0)
@@ -557,7 +555,7 @@ void pass1_1040_b54a(Globals *globals,
             if(param_4 == 0x1790)
             {
                 puVar9 = mixed_1010_20ba(
-                  globals->_PTR_LOOP_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
+                  globals->u16_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
                 uVar3 = (param_1 + 0x90);
                 uVar3 = (uVar3 + 0x6);
                 iVar4 = pass1_1010_7d38(
@@ -596,7 +594,7 @@ void pass1_1040_b54a(Globals *globals,
                 if(param_4 == 0x1824)
                 {
                     puVar9 = mixed_1010_20ba(
-                      globals->_PTR_LOOP_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
+                      globals->u16_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
                     iVar6 = (Struct515 *)puVar9;
                     uVar3 = (param_1 + 0x90);
                     ui_op_1010_79aa(puVar9, 0xfc5, (uVar3 + 0x6), param_7);
@@ -625,7 +623,7 @@ void pass1_1040_b54a(Globals *globals,
                         return;
                     }
                     puVar9 = mixed_1010_20ba(
-                      globals->_PTR_LOOP_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
+                      globals->u16_1050_0ed0, 0x32, param_7, param_5, unaff_DI);
                     iVar6 = (Struct515 *)puVar9;
                     uVar3 = (param_1 + 0x90);
                     ui_op_1010_79aa(puVar9, 0xfb6, (uVar3 + 0x6), param_7);
@@ -680,7 +678,7 @@ void pass1_1040_c5ac(u16 *param_1)
     param_1->field_0x0 = addr_table_1040_c9f2;//0xc9f2;
     (iVar4 + 0x2)               = SEG_1040;
     globals->PTR_LOOP_1050_5f02 = globals->PTR_LOOP_1050_5f02 + -0x1;
-    if(PTR_LOOP_1050_5f02 == 0x0)
+    if(globals->PTR_LOOP_1050_5f02 == 0x0)
     {
         puVar1 = (iVar4 + 0x8);
         u_var2 = (iVar4 + 0xa);
@@ -742,7 +740,7 @@ void win_ui_op_1040_bbe2(i16    param_1,
                             (uVar10 >> 0x10),
                             0x0,
                             globals->_PTR_LOOP_1050_5efe,
-                            (_PTR_LOOP_1050_5efe >> 0x10));
+                            (globals->_PTR_LOOP_1050_5efe >> 0x10));
                 return;
             }
             if(param_4 == 0x10a)
@@ -766,7 +764,7 @@ void win_ui_op_1040_bbe2(i16    param_1,
             uVar10 = (param_1 + 0x98);
             uVar11 = (uVar10 + 0x12);
             uVar6  = uVar11;
-            puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+            puVar8 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
             uVar5  = (puVar8 >> 0x10);
             puVar9 = puVar8;
             pass1_1010_a5ca(puVar8, uVar5, uVar6, puVar8, uVar5);
@@ -807,7 +805,7 @@ void win_ui_op_1040_bbe2(i16    param_1,
                         if(BVar2 != 0x0)
                             goto LAB_1040_bd39;
                     }
-                    uVar10           = pass1_1038_af40(_PTR_LOOP_1050_5b7c,
+                    uVar10           = pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c,
                                              (param_1 + 0x6),
                                              0x1b,
                                              in_DX,
@@ -841,7 +839,7 @@ void win_ui_op_1040_bbe2(i16    param_1,
                   NULL, param_1, param_2, param_3, param_4, in_DX, param_5, param_6);
                 return;
             }
-            puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+            puVar8 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
             uVar6  = (puVar8 >> 0x10);
             uVar10 = (param_1 + 0xb0);
             uVar12 = uVar10;
@@ -927,7 +925,7 @@ void win_ui_1040_b8d2(Struct1 *param_1, u16 param_2, u16 param_3, u16 param_4)
     u16       *puVar13;
 
     dialog_ui_fn_1040_78e2(NULL, param_1, param_3);
-    puVar13 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x31, param_4, param_2, unaff_DI);
+    puVar13 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x31, param_4, param_2, unaff_DI);
     puVar9  = (puVar13 >> 0x10);
     paVar4  = (Struct160 *)puVar13;
     uVar12  = (param_1 >> 0x10);
@@ -1059,7 +1057,7 @@ void win_ui_1040_b8d2(Struct1 *param_1, u16 param_2, u16 param_3, u16 param_4)
                             puVar9,
                             param_4);
     }
-    puVar13 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_4, puVar9, unaff_DI);
+    puVar13 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_4, puVar9, unaff_DI);
     uVar10  = (puVar13 >> 0x10);
     u_var2  = puVar13;
     uVar11  = uVar10;
@@ -1181,7 +1179,7 @@ void pass1_1040_b4c8(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     uVar4 = (param_1 >> 0x10);
     if((param_1 + 0x90) != 0x0)
     {
-        puVar5 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x32, param_4, param_2, param_3);
+        puVar5 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x32, param_4, param_2, param_3);
         u_var2 = (param_1 + 0x90);
         iVar1  = (u_var2 + 0xa);
         iVar3  = iVar1 + -0x4;
@@ -1239,10 +1237,10 @@ void send_dlg_item_msg_1040_d20c(u32 param_1, long param_2, u16 param_3, u16 par
     {
         pass1_1010_9210(*(param_1 + 0x9c));
         enable_win_1040_d60e(param_1, SEG_1010);
-        pass1_1030_8344(_PTR_LOOP_1050_5748, (_PTR_LOOP_1050_5748 >> 0x10), param_2);
+        pass1_1030_8344(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), param_2);
         puVar4 = local_106;
         uVar5  = param_4;
-        puVar3 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_4, in_DX, unaff_DI);
+        puVar3 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_4, in_DX, unaff_DI);
         uVar1  = (puVar3 >> 0x10);
         pass1_1010_c3c2(puVar3,
                         uVar1,
@@ -1346,31 +1344,31 @@ void msg_box_op_1040_d3d0(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_104[0x102];
 
     mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x100, local_206, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), SEG_1000);
@@ -1440,7 +1438,7 @@ void send_ldg_item_msg_1040_d79c(u32 param_1, u16 param_2)
     char    local_106[0x100];
     u16    *pu_stack6;
 
-    pu_stack6 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
+    pu_stack6 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
     u_var2    = (pu_stack6 >> 0x10);
     uVar5     = (param_1 >> 0x10);
     iVar4     = param_1;
@@ -1504,7 +1502,7 @@ LRESULT send_dlg_msg_1040_cf1c(u32 param_1, u16 param_2)
     u8      local_106[0x100];
     u16    *pu_stack6;
 
-    pu_stack6 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
+    pu_stack6 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_2, in_DX, unaff_DI);
     uVar1     = (pu_stack6 >> 0x10);
     uVar3     = (param_1 >> 0x10);
     u_var2    = param_1;
@@ -1530,7 +1528,7 @@ LRESULT send_dlg_msg_1040_cf1c(u32 param_1, u16 param_2)
     else
     {
         load_string_1010_84e0(
-          SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_50c, param_2);
+          SEG_1010, globals->dat_1050_14cc, 0x3ff, local_50c, param_2);
         SendDlgItemMessage16(SEG_1010, (u16)local_50c, param_2, 0x0, 0x18420401);
         GetDlgItem16((HWND16)LAST_SEGMENT, 0x1);
         enable = 0x0;
@@ -1648,12 +1646,12 @@ void msg_box_op_1040_cce4(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     u16  uVar3;
 
     mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x100, local_206, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), SEG_1000);
@@ -1736,20 +1734,20 @@ void win_ui_op_1040_cace(Globals *globals, u32 param_1, HWND16 param_2, u16 para
         return;
     }
     pass1_1018_50ea(*(uVar5 + 0x98), u_stack6, *(uVar5 + 0x94));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_208, param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_208, param_3);
     uVar1 = (uVar5 + 0x94);
-    uVar8 = (globals->PCHAR_1050_14cc >> 0x10);
+    uVar8 = (globals->dat_1050_14cc >> 0x10);
     if((uVar1 + 0x36) == 0x0)
     {
         load_string_1010_84e0(
-          SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_108, param_3);
+          SEG_1010, globals->dat_1050_14cc, 0x3ff, local_108, param_3);
         iVar3 = MessageBox16(
           SEG_1010, (globals->s_New_failed_in_Op__Op_1050_0020 + 0x14), local_208, param_3);
     }
     else
     {
         load_string_1010_84e0(
-          SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_108, param_3);
+          SEG_1010, globals->dat_1050_14cc, 0x3ff, local_108, param_3);
         iVar3 = MessageBox16(
           SEG_1010, (globals->s_New_failed_in_Op__Op_1050_0020 + 0x14), local_208, param_3);
     }
@@ -1758,7 +1756,7 @@ void win_ui_op_1040_cace(Globals *globals, u32 param_1, HWND16 param_2, u16 para
     if((!bVar2) && (uVar1 = (uVar5 + 0x94), (uVar1 + 0x34) < 0x1))
     {
         load_string_1010_84e0(
-          SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_108, param_3);
+          SEG_1010, globals->dat_1050_14cc, 0x3ff, local_108, param_3);
         IVar4 = MessageBox16(
           SEG_1010, (globals->s_New_failed_in_Op__Op_1050_0020 + 0x14), local_208, param_3);
         bVar7 = IVar4 == 0x6;
@@ -1766,7 +1764,7 @@ void win_ui_op_1040_cace(Globals *globals, u32 param_1, HWND16 param_2, u16 para
     }
     if(bVar2)
     {
-        globals->_PTR_LOOP_1050_5f16 = (uVar5 + 0x94);
+        globals->dat_1050_5f16       = (uVar5 + 0x94);
         iVar3                        = 0x26;
     }
     else
@@ -1795,14 +1793,14 @@ void pass1_1040_caa6(u16 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 par
     i16  iVar2;
 
     iVar2  = 0x0;
-    puVar1 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2b, param_5, param_3, param_4);
+    puVar1 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2b, param_5, param_3, param_4);
     pass1_1010_038e(puVar1, iVar2, param_5);
     destroy_window_1040_b726(CONCAT22(param_2, param_1), (param_2 >> 0x10), SEG_1010);
     return;
 }
 
 
-void get_dlg_item_1040_a3d0(u32 param_1, HWND16 param_2)
+void get_dlg_item_1040_a3d0(Struct49 *param_1, HWND16 param_2)
 
 {
     long      lVar1;
@@ -1851,7 +1849,7 @@ void destroy_win_1040_8b7e(HWND16 param_1)
 }
 
 
-void load_icon_1040_8b92(u32 param_1, HINSTANCE16 hinst_arg_2)
+void load_icon_1040_8b92(Struct57 *param_1, HINSTANCE16 hinst_arg_2)
 
 {
     u8      bVar1;
@@ -2021,7 +2019,7 @@ void create_window_1040_92dc(Globals *globals, Struct65 *param_1)
     {
         window_handle_1            = CreateWindow16(param_2,
                                          NULL,
-                                         globals->PTR_LOOP_1050_038c,
+                                         globals->hinst_1050_038c,
                                          (param_1->field_0x1c),
                                          (param_1->field_0x1a),
                                          0x0,
@@ -2032,8 +2030,8 @@ void create_window_1040_92dc(Globals *globals, Struct65 *param_1)
                                          0x4000);
         param_1->field_0x18 = window_handle_1;
         l_var2                     = SetWindowLong16(window_handle_1,
-                                globals->_PTR_LOOP_1050_5e18,
-                                globals->_PTR_LOOP_1050_5e18);
+                                globals->dat_1050_5e18,
+                                globals->dat_1050_5e18);
 
         (param_1->field_0x14)            = l_var2;
         SetProp16(window_handle_1, l_var2, globals->s_procHi_1050_5e46);
@@ -2080,70 +2078,60 @@ i16 string_1040_8520(Globals  *globals,
     u32        UVar1;
     u16        u_var2;
     u16        uVar3;
-    Struct293 *iVar5;
-    u16        uVar4;
     u16        uVar5;
-    char      *pcVar6;
+    char      *string_6;
     i16        iStack22;
     i16        iStack16;
 
     get_sys_metrics_1040_7728(param_1, 0x1, 0x0, 0xfc3, param_2);
-    uVar4             = (param_1 >> 0x10);
-    iVar5             = (Struct293 *)param_1;
-    iVar5->field_0x8e = 0x0;
-    iVar5->field_0x98 = param_3;
-    iVar5->field_0x9a = 0x0;
-    iVar5->field_0xb2 = 0x0;
-    param_1           = addr_table_1040_8ddc;//0x8ddc;
-    iVar5->field_0x2  = SEG_1040;
-    iVar5->field_9e   = 0x0;
-    iVar5->field_0xa2 = 0x12c;
+    param_1->field_0x8e = 0x0;
+    param_1->field_0x98 = param_3;
+    param_1->field_0x9a = 0x0;
+    param_1->field_0xb2 = 0x0;
+    param_1->field_0x0           = addr_table_1040_8ddc;//0x8ddc;
+    param_1->field_0x2  = SEG_1040;
+    param_1->field_9e   = 0x0;
+    param_1->field_0xa2 = 0x12c;
     iStack16          = param_4;
     if(param_4 != 0x0)
     {
-        load_string_1010_84ac(globals->PCHAR_1050_14cc,
-                              (u16)(globals->PCHAR_1050_14cc >> 0x10),
-                              SEG_1010);
-        iVar5->field_0x94 = param_5;
-        iVar5->field_0x96 = param_7;
+        load_string_1010_84ac(globals->dat_1050_14cc, SEG_1010);
+        param_1->field_0x94 = param_5;
+        param_1->field_0x96 = param_7;
         iStack16          = param_4 + -0x1;
     }
     iStack22 = 0x0;
     while(iStack16 != 0x0)
     {
-        pcVar6   = load_string_1010_847e(globals->PCHAR_1050_14cc,
-                                       (u16)(globals->PCHAR_1050_14cc >> 0x10),
-                                       SEG_1010);
-        param_7  = (pcVar6 >> 0x10);
-        u_var2   = str_op_1000_3da4(pcVar6);
+        string_6 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
+        param_7  = (string_6 >> 0x10);
+        u_var2   = str_op_1000_3da4(string_6);
         iStack22 = iStack22 + u_var2;
         iStack16 = iStack16 + -0x1;
     }
     uVar3 = iStack22 + 0x1;
     uVar5 = SEG_1000;
     mem_op_1000_179c(uVar3, param_7, SEG_1000);
-    &iVar5->field_0x90         = uVar3;
-    (&iVar5->field_0x90 + 0x2) = param_7;
+    param_1->field_0x90         = uVar3;
+    (param_1->field_0x90 + 0x2) = param_7;
     iStack16                   = param_4 + -0x1;
     if(param_4 + -0x1 != 0x0)
     {
-        UVar1 = iVar5->field_0x90;
+        UVar1 = param_1->field_0x90;
         uVar5 = SEG_1010;
         load_string_1010_84e0(
-          SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, UVar1, (short)(UVar1 >> 0x10));
+          SEG_1010, globals->dat_1050_14cc, 0x3ff, UVar1, (short)(UVar1 >> 0x10));
         iStack16 = param_4 + -0x2;
     }
     while(iStack16 != 0x0)
     {
-        pcVar6 = load_string_1010_847e(globals->PCHAR_1050_14cc,
-                                       (u16)(globals->PCHAR_1050_14cc >> 0x10),
-                                       SEG_1010);
+        string_6 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
         uVar5  = SEG_1000;
-        pass1_1000_3cea(iVar5->field_0x90, pcVar6);
-        iStack16 = iStack16 + -0x1;
+        pass1_1000_3cea(param_1->field_0x90, string_6);
+        iStack16 -= 1;
     }
     load_icon_1040_8b92(param_1, uVar5);
-    globals->PTR_LOOP_1050_5df8 = 0x0;
+    globals->dat_1050_5df8 = 0x0;
     return iVar5;
 }
 
@@ -2208,7 +2196,7 @@ void destroy_win_1040_8212(u32 param_1, HWND16 param_2)
 }
 
 
-void win_ui_op_1040_81fe(HWND16 param_1)
+void set_sys_modal_window_1040_81fe(HWND16 param_1)
 
 {
     SetSysModalWindow(param_1);
@@ -2500,14 +2488,14 @@ void msg_box_ui_op_1040_64ca(u32 param_1, char *param_2, u8 *param_3, u16 param_
     char local_104[0x102];
 
     mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x100, local_206, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x100, local_206, param_4);
     load_string_1010_84e0(
-      SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, param_2, (short)param_3);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+      SEG_1010, globals->dat_1050_14cc, 0x3ff, param_2, (short)param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x3ff, local_104, param_4);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x3ff, local_104, param_4);
     pass1_1000_3cea(CONCAT22(param_3, param_2), CONCAT22(param_4, local_104));
     MessageBox16(SEG_1000, 0x0, local_206, param_4);
     fn_ptr_1000_17ce((Struct18 *)CONCAT22(param_3, param_2), SEG_1000);
@@ -2541,35 +2529,34 @@ void show_win_1040_65ba(Globals *globals, Struct1 *param_1, u16 param_2)
 
     dialog_ui_fn_1040_78e2(NULL, param_1, param_2);
     pu_stack6
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2b, unaff_SS, in_DX, unaff_DI);
-    globals->PTR_LOOP_1050_5f2e = (pu_stack6 >> 0x10);
+      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2b, unaff_SS, in_DX, unaff_DI);
+    globals->dat_1050_5f2e      = (pu_stack6 >> 0x10);
     uStack8                     = pass1_1010_0898();
-    if(globals->_PTR_LOOP_1050_5f2c == 0x0)
+    if(globals->dat_1050_5f2c == 0x0)
     {
-        globals->PTR_LOOP_1050_5f2c
-          = mem_op_1000_160a(globals->PTR_LOOP_1050_5f2e, SEG_1000);
+        globals->dat_1050_5f2c = mem_op_1000_160a(globals->dat_1050_5f2e, SEG_1000);
     }
     else
     {
     }
-    puStack26      = CONCAT22(globals->PTR_LOOP_1050_5f2e, globals->PTR_LOOP_1050_5f2c);
+    puStack26      = CONCAT22(globals->dat_1050_5f2e, globals->dat_1050_5f2c);
     hwnd           = SEG_1000;
     u_var2         = fn_ptr_op_1000_1708((uStack8 + 0x2) * 0x4,
                                  0x0,
                                  0x1,
-                                 globals->PTR_LOOP_1050_5f2c,
-                                 globals->PTR_LOOP_1050_5f2e,
+                                 globals->dat_1050_5f2c,
+                                 globals->dat_1050_5f2e,
                                  SEG_1000);
     uVar6          = (param_1 >> 0x10);
     iVar4          = param_1;
     (iVar4 + 0x8e) = u_var2;
-    (iVar4 + 0x90) = globals->PTR_LOOP_1050_5f2e;
+    (iVar4 + 0x90) = globals->dat_1050_5f2e;
     for(iStack10 = 0x1; iStack10 <= uStack8; iStack10 = iStack10 + 0x1)
     {
         puStack26 = pass1_1010_0946(pu_stack6,
                                     (pu_stack6 >> 0x10),
                                     iStack10,
-                                    globals->PTR_LOOP_1050_5f2e,
+                                    globals->dat_1050_5f2e,
                                     unaff_DI,
                                     unaff_SS);
         puVar3    = (puStack26 >> 0x10);
@@ -2581,8 +2568,8 @@ void show_win_1040_65ba(Globals *globals, Struct1 *param_1, u16 param_2)
         MapDialogRect16(SEG_1010, (RECT16 *)rect);
         hwnd = SEG_1000;
         mem_op_1000_179c(0x42, puVar3, SEG_1000);
-        globals->PTR_LOOP_1050_5f2e = (puVar3 | rect);
-        if(globals->PTR_LOOP_1050_5f2e == 0x0)
+        globals->dat_1050_5f2e = (puVar3 | rect);
+        if(globals->dat_1050_5f2e == 0x0)
         {
             uVar1                    = (iVar4 + 0x8e);
             (uVar1 + iStack10 * 0x4) = 0x0;
@@ -2598,13 +2585,13 @@ void show_win_1040_65ba(Globals *globals, Struct1 *param_1, u16 param_2)
                                 0x101,
                                 0xff0100,
                                 CONCAT22((iVar4 + 0x6), (puStack26 + 0x4)),
-                                globals->PTR_LOOP_1050_5f2e,
+                                globals->dat_1050_5f2e,
                                 unaff_SS);
             uVar1                                   = (iVar4 + 0x8e);
             uVar7                                   = (uVar1 >> 0x10);
             iVar5                                   = uVar1;
             *(Struct160 **)(iVar5 + iStack10 * 0x4) = rect;
-            (iVar5 + iStack10 * 0x4 + 0x2)          = globals->PTR_LOOP_1050_5f2e;
+            (iVar5 + iStack10 * 0x4 + 0x2)          = globals->dat_1050_5f2e;
         }
         uVar1 = (iVar4 + 0x8e);
         uVar7 = (uVar1 >> 0x10);
@@ -2722,7 +2709,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
     u8        *pu8_var28;
 
     dialog_ui_fn_1040_78e2(globals, struct_arg1, hinst_arg3);
-    pv_var17 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x33, param_2, u8_var9, i16_var14);
+    pv_var17 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x33, param_2, u8_var9, i16_var14);
 //    uVar14                         = (pv_var17 >> 0x10);
     pstruct65_var4 = (Struct65*)pv_var17;
 //    uVar12                         = (struct_arg1 >> 0x10);
@@ -2831,7 +2818,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
     pu8_var28        = u16_var13;
     enable_win_1040_9234(CONCAT22(u16_var13, pstruct65_var4), b_var20, hwnd_var16);
     hdc_var26 = GetDC16(hwnd_var16);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x50, string_var25, param_2);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x50, string_var25, param_2);
     string_var19 = string_var25;
     string_var5 = str_op_1000_3da4(CONCAT22(param_2, string_var19));
     u32_var18   = GetTextExtent16(SEG_1000, string_var5, (u16)string_var19);
@@ -2839,7 +2826,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
     u16_var23    = (u16)u32_var18;
     CreateWindow16(LAST_SEGMENT,
                    0x0,
-                   globals->PTR_LOOP_1050_038c,
+                   globals->hinst_1050_038c,
                    0x7cd,
                    (struct_arg1->field_0x6),
                    u16_var24,
@@ -2848,7 +2835,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
                    0x22,
                    0x0,
                    0x5000); // (globals->s_Rebel_1050_4ffc + 0x4)
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x50, string_var25, param_2);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x50, string_var25, param_2);
     string_var19 = string_var25;
     string_var5 = str_op_1000_3da4(CONCAT22(param_2, string_var19));
     u32_var18   = GetTextExtent16(SEG_1000, string_var5, (u16)string_var19);
@@ -2857,7 +2844,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
     ReleaseDC16((HWND16)LAST_SEGMENT, hdc_var26);
     CreateWindow16(LAST_SEGMENT,
                    0x0,
-                   globals->PTR_LOOP_1050_038c,
+                   globals->hinst_1050_038c,
                    0x7ce,
                    (struct_arg1->field_0x6),
                    u16_var24,
@@ -2887,7 +2874,7 @@ void mixed_win_ui_op_1040_6942(Globals *globals,
                    (iVar7 + 0xc),
                    (uVar1 | iVar7 + 0xa),
                    0x0);
-    globals->DAT_1050_0ecc = 0x0;
+    globals->dat_1050_0ecc = 0x0;
     u_var2                 = (struct_arg1 + 0x94);
     fn_ptr_var3            = ((struct_arg1 + 0x94) + 0x10);
     (**fn_ptr_var3)(LAST_SEGMENT, u_var2, (u_var2 >> 0x10), pv_var17, puVar6);
@@ -2986,7 +2973,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
 
     dialog_ui_fn_1040_78e2(NULL, param_1, param_2);
     puVar15
-      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x34, param_3, in_DX, unaff_DI);
+      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x34, param_3, in_DX, unaff_DI);
     uVar14                         = (puVar15 >> 0x10);
     paVar4                         = (Struct160 *)puVar15;
     uVar12                         = (param_1 >> 0x10);
@@ -3094,7 +3081,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
     puStack4 = uVar10;
     enable_win_1040_9234(CONCAT22(uVar10, paVar4), BVar18, hwnd);
     HStack8 = GetDC16(hwnd);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x50, local_58, param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x50, local_58, param_3);
     pcVar17  = local_58;
     pCVar5   = str_op_1000_3da4(CONCAT22(param_3, pcVar17));
     DVar16   = GetTextExtent16(SEG_1000, pCVar5, (u16)pcVar17);
@@ -3102,7 +3089,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
     IStack92 = (u16)DVar16;
     CreateWindow16(LAST_SEGMENT,
                    0x0,
-                   (globals->PTR_LOOP_1050_038c),
+                   (globals->hinst_1050_038c),
                    0x7cd,
                    (iVar11 + 0x6),
                    IStack90,
@@ -3111,7 +3098,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
                    0x22,
                    0x0,
                    0x5000);
-    load_string_1010_84e0(SEG_1010, globals->PCHAR_1050_14cc, 0x50, local_58, param_3);
+    load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, 0x50, local_58, param_3);
     pcVar17  = local_58;
     pCVar5   = str_op_1000_3da4(CONCAT22(param_3, pcVar17));
     DVar16   = GetTextExtent16(SEG_1000, pCVar5, (u16)pcVar17);
@@ -3120,7 +3107,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
     ReleaseDC16((HWND16)LAST_SEGMENT, HStack8);
     CreateWindow16(LAST_SEGMENT,
                    0x0,
-                   (globals->PTR_LOOP_1050_038c),
+                   (globals->hinst_1050_038c),
                    0x7ce,
                    (iVar11 + 0x6),
                    IStack90,
@@ -3150,7 +3137,7 @@ void mixed_win_ui_op_1040_70b4(Globals *globals,
                    (iVar7 + 0xc),
                    (uVar1 | iVar7 + 0xa),
                    0x0);
-    globals->DAT_1050_0ecc = 0x0;
+    globals->dat_1050_0ecc = 0x0;
     u_var2                 = (iVar11 + 0x94);
     ppcVar3                = ((iVar11 + 0x94) + 0x10);
     (**ppcVar3)(LAST_SEGMENT, u_var2, (u_var2 >> 0x10), uVar14, puVar6);

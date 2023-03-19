@@ -3,7 +3,10 @@
 #include "unk_14.h"
 
 #include "address_tables/function_tables.h"
+#include "globals.h"
 #include "op_int.h"
+#include "op_windef.h"
+#include "struct_20.h"
 #include "structs/structs_0xx/structs_9x.h"
 #include "sys_ops/sys_ops_12.h"
 #include "utils.h"
@@ -288,7 +291,7 @@ u16 * pass1_1008_72a8(u16 *param_1, u16 param_2)
 u16  switch_1008_72bc(u16 param_1, u16 param_2, u16 param_3)
 
 {
-    if(PTR_LOOP_1050_0312 < 0x2)
+    if(globals->dat_1050_0312 < 0x2)
     {
         switch(param_3)
         {
@@ -389,7 +392,7 @@ i16  switch_1008_73ea(u16 param_1, u16 param_2, i16 param_3)
     i16 iStack4;
 
     iStack4 = param_3;
-    if(PTR_LOOP_1050_0312 < 0x2)
+    if(globals->dat_1050_0312 < 0x2)
     {
         switch(param_3)
         {
@@ -920,7 +923,7 @@ u32  pass1_1008_4b5e(u32 *param_1)
 }
 
 
-u16  pass1_1008_4d26(u32 param_1, u16 *param_2, i16 param_3)
+u16  pass1_1008_4d26(Struct650 *param_1, u16 *param_2, i16 param_3)
 
 {
     i16         *pi_var1;
@@ -992,7 +995,7 @@ void  pass1_1008_5134(u32 param_1)
     uVar7          = (param_1 >> 0x10);
     iVar6          = param_1;
     lVar4          = (iVar6 + 0x4) * (iVar6 + 0x8);
-    lVar4          = mem_op_1000_0a48(0x1, lVar4, (lVar4 >> 0x10), globals->_PTR_LOOP_1050_5f2c, SEG_1000);
+    lVar4          = mem_op_1000_0a48(0x1, lVar4, (lVar4 >> 0x10), globals->dat_1050_5f2c, SEG_1000);
     uVar3          = (lVar4 >> 0x10);
     (iVar6 + 0x10) = lVar4;
     (iVar6 + 0x12) = uVar3;
@@ -1024,7 +1027,7 @@ void  pass1_1008_5134(u32 param_1)
 }
 
 
-void  pass1_1008_5236(u32 param_1)
+void  pass1_1008_5236(Struct109 *param_1)
 
 {
     u16         *puVar1;
@@ -1069,7 +1072,7 @@ void  pass1_1008_5236(u32 param_1)
 }
 
 
-void  pass1_1008_52fc(u16 *param_1)
+void  pass1_1008_52fc(Struct111 *param_1)
 
 {
     u16         *puVar1;

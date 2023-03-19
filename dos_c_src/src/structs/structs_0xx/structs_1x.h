@@ -26,7 +26,7 @@ typedef struct Struct17 Struct17;
 typedef struct Struct15 Struct15;
 struct Struct16
 {
-    u8         field_0x0;
+    void      *field_0x0;
     u8         field_0x1;
     u16        field_0x2;
     u8         field_0x4;
@@ -50,6 +50,8 @@ struct Struct16
     HGDIOBJ16  field_0x1a;
     BOOL16     field_0x1c;
     i16    field_0x1e;
+    BOOL16     field_0x1c_addr_base;
+    HGDIOBJ16  field_0x1a_addr_offset;
 };
 struct Struct13
 {

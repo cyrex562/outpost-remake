@@ -3,6 +3,9 @@
 #include "address_tables/function_tables.h"
 #include "globals.h"
 #include "op_int.h"
+#include "op_windef.h"
+#include "struct_20.h"
+#include "struct_ops_6.h"
 #include "unk_17.h"
 
 void  pass1_1040_5626(Struct57 *param_1, u32 param_2, u16 param_3, u8 *param_4)
@@ -101,7 +104,7 @@ u16  pass1_1040_5cd6(u32 param_1)
 }
 
 
-void  pass1_1040_5dc4(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
+void  pass1_1040_5dc4(Struct724 *param_1, u8 *param_2, i16 param_3, u16 param_4)
 
 {
     void **ppcVar1;
@@ -118,7 +121,7 @@ void  pass1_1040_5dc4(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     u16          uVar10;
     i16          iStack18;
 
-    puVar8 = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_4, param_2, param_3);
+    puVar8 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_4, param_2, param_3);
     puVar6 = (puVar8 >> 0x10);
     uVar3  = puVar8;
     uVar7  = (param_1 >> 0x10);
@@ -139,7 +142,7 @@ void  pass1_1040_5dc4(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
         {
             uVar10 = 0x41;
         }
-        puVar9  = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, uVar10, param_4, puVar6, param_3);
+        puVar9  = mixed_1010_20ba(globals->u16_1050_0ed0, uVar10, param_4, puVar6, param_3);
         uVar4   = iVar7->field_0x9a;
         ppcVar1 = (*puVar9 + 0x14);
         (**ppcVar1)(SEG_1010, puVar9, (puVar9 >> 0x10), uVar4, uVar4 >> 0xf);
@@ -237,7 +240,7 @@ u32  pass1_1038_df5c(u32 param_1, u16 param_2, u16 param_3)
     u_var2 = (param_1 >> 0x10);
     uVar1 = param_1;
     pass1_1010_038e(*(uVar1 + 0x92), 0x1, param_3);
-    uVar3 = pass1_1038_af40(_PTR_LOOP_1050_5b7c, (uVar1 + 0x8), 0x20, param_2, uVar1, SEG_1010, param_3);
+    uVar3 = pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c, (uVar1 + 0x8), 0x20, param_2, uVar1, SEG_1010, param_3);
     return uVar3;
 }
 
@@ -270,7 +273,7 @@ void  pass1_1038_a36a(Struct18 *param_1) {
     uVar1 = (param_1 >> 0x10);
     param_1->field_0x0 = addr_table_1038_a428;//0xa428;
     param_1->field_0x2 = SEG_1038;
-    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
+    pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     pass1_1038_a156(param_1);
     return;
 }
@@ -293,7 +296,7 @@ void  pass1_1038_a4c2(Struct18 *param_1) {
     uVar1 = (param_1 >> 0x10);
     param_1->field_0x0 = addr_table_1038_a62e;//0xa62e;
     param_1->field_0x2 = SEG_1038;
-    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
+    pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     pass1_1038_a156(param_1);
     return;
 }
@@ -316,7 +319,7 @@ void  pass1_1038_a6c8(Struct18 *param_1) {
     uVar1 = (param_1 >> 0x10);
     param_1->field_0x0 = addr_table_1038_a832;//0xa832;
     param_1->field_0x2 = SEG_1038;
-    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
+    pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     pass1_1038_a156(param_1);
     return;
 }
@@ -339,7 +342,7 @@ void  pass1_1038_a8cc(Struct18 *param_1) {
     uVar1 = (param_1 >> 0x10);
     param_1->field_0x0 = addr_table_1038_ab16;//0xab16;
     param_1->field_0x2 = SEG_1038;
-    pass1_1038_b6e0(_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
+    pass1_1038_b6e0(globals->_PTR_LOOP_1050_5b7c, (param_1 + 0x6));
     pass1_1038_a156(param_1);
     return;
 }
@@ -669,7 +672,8 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         if(puVar4 == 0x0)
             goto LAB_1038_afa0;
         uVar8 = SUB42(SEG_1040, 0x0);
-        pass1_1040_ca16(CONCAT22(param_4, param_5), param_2, puVar4, unaff_DI, param_7);
+        struct_op_1040_ca16(
+          NULL, CONCAT22(param_4, param_5), param_2, puVar4, unaff_DI, param_7);
         paVar9 = CONCAT22(puVar4, param_5);
         break;
     case 0x26:
@@ -678,7 +682,7 @@ u32  pass1_1038_af40(u32 param_1, u16 param_2, i16 param_3, u16 param_4, u16 par
         if(uVar5 == 0x0)
             goto LAB_1038_afa0;
         uVar8 = SUB42(SEG_1040, 0x0);
-        pass1_1040_d0f8(CONCAT22(param_4, param_5), param_2);
+        pass1_1040_d0f8(NULL, CONCAT22(param_4, param_5), param_2);
         paVar9 = CONCAT22(uVar5, param_5);
         break;
     case 0x27:
@@ -915,7 +919,7 @@ void  pass1_1038_6a0e(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
                     return;
                 }
                 uVar11 = struct_op_1030_73a8(u_stack6);
-                BVar4  = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, (uVar11 + 0xc), 0x40);
+                BVar4  = pass1_1008_c6ae(globals->dat_1050_06e0, (uVar11 + 0xc), 0x40);
                 if(BVar4 != 0x0)
                 {
                     (uVar8 + 0x28)  = 0x1;
@@ -1098,13 +1102,13 @@ u16  pass1_1038_6e1a(u16 param_1, u16 param_2, long *param_3)
     }
     else
     {
-        BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uVar3, 0x41);
+        BVar2 = pass1_1008_c6ae(globals->dat_1050_06e0, uVar3, 0x41);
         if(BVar2 != 0x0)
         {
             uStack4 = 0xa;
             goto switchD_1038_6eab_caseD_9;
         }
-        BVar2 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uVar3, 0x42);
+        BVar2 = pass1_1008_c6ae(globals->dat_1050_06e0, uVar3, 0x42);
         if((BVar2 != 0x0) || (uVar3 == 0x3f))
         {
             uStack4 = 0xb;
@@ -1261,7 +1265,7 @@ void  pass1_1038_50e0(u32 param_1, u16 param_2, u16 param_3)
         if(uVar5 != 0x0)
         {
             u_var2 = pass1_1030_6fa0(uVar8 & 0xffff | uVar4 << 0x10);
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var2, param_2);
+            BVar3 = pass1_1008_c6ae(globals->dat_1050_06e0, u_var2, param_2);
             if(BVar3 != 0x0)
             {
                 uVar8 = struct_op_1030_73a8(uVar8 & 0xffff | uVar4 << 0x10);
@@ -1856,7 +1860,7 @@ void  pass1_1038_43cc(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 pa
             (param_1 + iVar8 + 0x14e) = 0x0;
         }
         uVar10  = SEG_1008;
-        puVar11 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x1e);
+        puVar11 = pass1_1008_c6fa(globals->dat_1050_06e0, 0x1e);
         puVar6  = (puVar11 >> 0x10);
         u_var2   = puVar11;
         pass1_1038_4e78(u_var2, puVar6, CONCAT22(param_2, param_1), puVar11);
@@ -1932,7 +1936,7 @@ void  pass1_1038_44d8(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 pa
             (iVar9 + param_1 + 0x14e) = 0x0;
         }
         uVar11  = SEG_1008;
-        puVar12 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x1e);
+        puVar12 = pass1_1008_c6fa(globals->dat_1050_06e0, 0x1e);
         puVar6  = (puVar12 >> 0x10);
         u_var2   = puVar12;
         pass1_1038_4e78(u_var2, puVar6, CONCAT22(param_2, param_1), puVar12);
@@ -2018,7 +2022,7 @@ void  pass1_1038_45e4(u32 param_1, u16 param_2, i16 param_3, u16 param_4)
     }
     pi_var1  = (iVar12 + 0x24);
     *pi_var1 = *pi_var1 + iVar10;
-    puVar16 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x16);
+    puVar16 = pass1_1008_c6fa(globals->dat_1050_06e0, 0x16);
     puVar11 = (puVar16 >> 0x10);
     uVar7   = puVar16;
     pass1_1038_4d6e(param_1, puVar16, uVar7, puVar11);
@@ -2112,7 +2116,7 @@ void  pass1_1038_45e4(u32 param_1, u16 param_2, i16 param_3, u16 param_4)
 }
 
 
-void  pass1_1038_4760(u32 param_1)
+void  pass1_1038_4760(Struct700 *param_1)
 
 {
     u16         *puVar1;
@@ -2147,13 +2151,13 @@ void  pass1_1038_4760(u32 param_1)
     iVar10  = (Struct700 *)param_1;
     puVar1  = &iVar10->field_0x22;
     *puVar1 = *puVar1 + iVar10->field_0x20c;
-    puVar12 = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x26);
+    puVar12 = pass1_1008_c6fa(globals->dat_1050_06e0, 0x26);
     puVar7  = (puVar12 >> 0x10);
     uVar6   = puVar12;
     pass1_1038_4d6e(param_1, puVar12, uVar6, puVar7);
     puStack10 = CONCAT22(puVar7, uVar6);
     uVar11    = SEG_1008;
-    puVar12   = pass1_1008_c6fa(_PTR_LOOP_1050_06e0, 0x1a);
+    puVar12   = pass1_1008_c6fa(globals->dat_1050_06e0, 0x1a);
     puVar8    = (puVar12 >> 0x10);
     uVar3     = puVar12;
     pass1_1038_4d6e(param_1, puVar12, uVar3, puVar8);
@@ -2344,7 +2348,7 @@ void  pass1_1038_4c1a(u32 param_1, u16 param_2, u32 param_3, u16 param_4)
             pass1_1028_e1ec(globals->_PTR_LOOP_1050_65e2, u_var2, uVar5);
             uVar3   = pass1_1030_6fa0(CONCAT22(param_3, u_var2));
             param_4 = SEG_1008;
-            pass1_1008_c6ae(_PTR_LOOP_1050_06e0, uVar3, 0xe);
+            pass1_1008_c6ae(globals->dat_1050_06e0, uVar3, 0xe);
         }
     }
     return;
@@ -2411,7 +2415,7 @@ void  pass1_1038_4f54(u32 param_1, u16 param_2, u16 param_3)
         if(uVar6 != 0x0)
         {
             u_var2 = pass1_1030_6fa0(uVar4 & 0xffff | uVar5 << 0x10);
-            BVar3 = pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var2, param_2);
+            BVar3 = pass1_1008_c6ae(globals->dat_1050_06e0, u_var2, param_2);
             if(BVar3 != 0x0)
             {
                 return;
@@ -2511,7 +2515,7 @@ void  pass1_1038_5050(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
         if(uVar5 != 0x0)
         {
             u_var2 = pass1_1030_6fa0(uVar3 & 0xffff | uVar4 << 0x10);
-            pass1_1008_c6ae(_PTR_LOOP_1050_06e0, u_var2, param_2);
+            pass1_1008_c6ae(globals->dat_1050_06e0, u_var2, param_2);
         }
         uVar4 = uVar5;
     }
@@ -2519,7 +2523,7 @@ void  pass1_1038_5050(u32 param_1, u16 param_2, u16 param_3, u16 param_4)
 }
 
 
-void  pass1_1038_349e(u32 param_1, u32 param_2)
+void  pass1_1038_349e(Struct685 *param_1, u32 param_2)
 
 {
     void **ppcVar1;

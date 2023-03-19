@@ -7,6 +7,7 @@
 
 #include "globals.h"
 #include "op_int.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "structs/structs_2xx/structs_27x.h"
 #include "structs/structs_5xx/structs_58x.h"
@@ -39,7 +40,7 @@ Struct18 * pass1_1020_7526(Struct18 *param_1, u8 param_2, u16 param_3);
 
 void struct_1020_7554(Globals  *globals,
                       u16       param_1,
-                      Struct20 *param_2,
+                      struct Struct20 *param_2,
                       u16       param_3,
                       u16       param_4);
 
@@ -66,7 +67,8 @@ void draw_op_1020_7cc8(Globals *globals,
                        HWND16   hwnd_arg2,
                        u16      param_3);
 
-void unk_draw_op_1020_7f7a(Globals *globals, Struct20 *param_1, u16 param_2, u32 param_3);
+void unk_draw_op_1020_7f7a(Globals *globals,
+                           struct Struct20 *param_1, u16 param_2, u32 param_3);
 
 void  realize_palette_1020_8128(u32 param_1, i16 param_2, HGDIOBJ16 param_3, u16 param_4);
 
@@ -100,11 +102,12 @@ void  validate_rect_1020_3f12(u32 param_1, i16 param_2, HWND16 param_3);
 
 void  mixed_draw_op_1020_3fa0(u32 param_1, HWND16 param_2, u16 param_3);
 
-Struct18 * pass1_1020_4064(Struct18 *param_1, u8 param_2);
+Struct16 *pass1_1020_4064(Struct16 *param_1, u8 param_2);
 
 void  draw_rect_1020_40ce(u32 param_1, i16 param_2, i16 param_3, u16 param_4);
 
-void unk_draw_op_1020_41c8(struct Globals *globals, struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void unk_draw_op_1020_41c8(Globals *globals,
+                           struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 void  destroy_cursor_1020_42f4(u16 *param_1, HMENU16 param_2);
 
@@ -159,7 +162,7 @@ void  pass1_1020_239c(u32 param_1, i16 *param_2, u16 param_3);
 
 void  draw_polygon_1020_2474(u16 param_1, u16 param_2, u32 param_3, HDC16 param_4);
 
-void  struct_1020_2524(Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
+void  struct_1020_2524(struct Struct20 *param_1, u16 param_2, u16 param_3, u16 param_4);
 
 void  pass1_1020_27b0(Struct664 *param_1, u16 param_2, u16 param_3, i16 param_4, u16 param_5);
 

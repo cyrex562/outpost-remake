@@ -7,7 +7,8 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
+#include "struct_20.h"
 #include "structs/structs_0xx/structs_x.h"
 
 char *pass1_1000_472c(u32 param_1, u8 param_2);
@@ -35,7 +36,7 @@ u16 pass1_1000_48a8(u32 param_1, u32 param_2, i16 param_3);
 
 
 
-u16 *pass1_1000_4906(Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3);
+u16 *pass1_1000_4906(struct Struct20 *param_1, WNDCLASS16 *in_wnd_class, u16 param_3);
 
 
 
@@ -118,7 +119,7 @@ i16 pass1_1000_422a(i16 param_1, u16 param_2, u16 param_3, u16 param_4);
 void pass1_1000_43f0(Globals *globals, u16 param_1, u16 param_2);
 
 
-void pass1_1000_440c(struct Globals *globals, u16 param_1);
+void pass1_1000_440c(Globals *globals, u16 param_1);
 
 
 

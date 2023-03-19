@@ -3,13 +3,17 @@
 
 #include "address_tables/address_tables_2.h"
 #include "address_tables/function_tables.h"
-#include "address_tables_2.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "globals.h"
 #include "op_int.h"
+#include "op_windef.h"
 #include "string_ops.h"
+#include "struct_20.h"
+#include "struct_ops_3.h"
 #include "struct_ops_4.h"
+#include "structs/structs_2xx/structs_23x.h"
 #include "structs/structs_6xx/struct_648.h"
+#include "sys_ops/sys_ops_12.h"
 #include "unk/unk_15.h"
 #include "unk/unk_6.h"
 #include "utils.h"
@@ -115,8 +119,8 @@ u32 pass1_1010_0eac(Globals *globals,
     struct_op_1018_4cda(param_1, param_2, param_3);
     param_1 =  0xf0c;
     param_1->field_0x2 = SEG_1010;
-    globals->PTR_LOOP_1050_4230 = param_1;
-    globals->PTR_LOOP_1050_4232 = param_2;
+    globals->dat_1050_4230      = param_1;
+    globals->dat_1050_4232      = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0xff, param_4, param_5);
     return param_1;
 }
@@ -140,13 +144,13 @@ void pass1_1010_0f24(Globals  *globals,
 //    param_1 =  s_648_bmp_1050_1919 + 0x1;
     param_1->field_0x0 = addr_table_1010_191a;//0x191a;
     param_1->field_0x2              = SEG_1010;
-    puVar1                          = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x3, param_5, param_4, unaff_DI);
+    puVar1                          = mixed_1010_20ba(globals->u16_1050_0ed0, 0x3, param_5, param_4, unaff_DI);
     (&param_1[0xa].field_0x4 + 0x2) = puVar1;
     param_1[0xa].field_0x8          = (puVar1 >> 0x10);
 }
 
 
-void struct_1010_0f9c(u32 *param_1, u16 param_2, u16 param_3)
+void struct_1010_0f9c(Struct232 *param_1, u16 param_2, u16 param_3)
 
 {
     void **ppcVar1;
@@ -344,7 +348,7 @@ u16 *pass1_1008_d72e(i16 param_1, u16 param_2, u16 param_3)
 }
 
 
-void pass1_1008_d818(u32 param_1, i16 param_2)
+void pass1_1008_d818(Struct732 *param_1, i16 param_2)
 
 {
     Struct732 *iVar1;
@@ -507,12 +511,12 @@ LAB_1008_e0d3:
     if(iStack16 == 0x0)
     {
         struct_1030_e2be((Struct100 *)CONCAT22(param_5, local_122), 0x0, 0x0, 0x0, param_5, param_6);
-        fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_5, local_122));
+        fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_5, local_122));
     }
     return;
 }
 
-void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
+void pass1_1008_e164(Struct214 *param_1, u16 param_2, u8 param_3)
 
 {
     u32  *puVar1;
@@ -587,7 +591,7 @@ void pass1_1008_e164(u32 param_1, u16 param_2, u8 param_3)
     uVar12 = (lStack6 >> 0x10);
     struct_1030_e2be((Struct100 *)CONCAT22(param_2, local_118), 0x1, *(lStack6 + 0x8), *(lStack6 + 0x4), param_2, param_3);
     uVar13 = pass1_1030_8326();
-    pass1_1030_8372(_PTR_LOOP_1050_5748, uVar13 + 0x1, CONCAT22(param_2, local_118));
+    pass1_1030_8372(globals->_PTR_LOOP_1050_5748, uVar13 + 0x1, CONCAT22(param_2, local_118));
 }
 
 
@@ -643,17 +647,17 @@ void struct_1008_bde0(u32 *param_1, u8 *param_2)
     u16          uVar13;
 
     globals->_PTR_LOOP_1050_06e0 = param_1;
-    if(_PTR_LOOP_1050_5f2c == 0x0)
+    if(globals->_PTR_LOOP_1050_5f2c == 0x0)
     {
-        globals->PTR_LOOP_1050_5f2c = mem_op_1000_160a(param_2, SEG_1000);
-        globals->PTR_LOOP_1050_5f2e = param_2;
+        globals->dat_1050_5f2c      = mem_op_1000_160a(param_2, SEG_1000);
+        globals->dat_1050_5f2e      = param_2;
     }
     else
     {
     }
-    uVar1                = fn_ptr_op_1000_1708(0x1aa, 0x0, 0x1, globals->PTR_LOOP_1050_5f2c, globals->PTR_LOOP_1050_5f2e, SEG_1000);
+    uVar1                = fn_ptr_op_1000_1708(0x1aa, 0x0, 0x1, globals->dat_1050_5f2c, globals->dat_1050_5f2e, SEG_1000);
     param_1              = uVar1;
-    param_1->field_0x2 = globals->PTR_LOOP_1050_5f2e;
+    param_1->field_0x2 = globals->dat_1050_5f2e;
     uVar3                = (*param_1 >> 0x10);
     iVar2                = (Struct139 *)*param_1;
     iVar2->field_0x6     = 0x6e4;
@@ -1003,8 +1007,8 @@ u32 pass1_1008_aefe(u8 *param_1, u8 *param_2, u16 param_3, u8 *param_4, u16 para
     struct_op_1018_4cda(param_1, param_2, param_3);
     param_1 =  addr_table_1008_af7c;//0xaf7c;
     param_1->field_0x2 = SEG_1008;
-    globals->PTR_LOOP_1050_4230 = param_1;
-    globals->PTR_LOOP_1050_4232 = param_2;
+    globals->dat_1050_4230      = param_1;
+    globals->dat_1050_4232      = param_2;
     pass1_1018_4dce(CONCAT22(param_2, param_1), 0x1b3, param_4, param_5);
     return param_1;
 }
@@ -1027,14 +1031,14 @@ void pass1_1008_af94(Struct643 *param_1, u16 param_2, u16 param_3)
 }
 
 
-void set_struct_op_1008_9584(Struct20 *param_1, u32 param_2)
+void set_struct_op_1008_9584(struct Struct20 *param_1, u32 param_2)
 
 {
-    Struct20 *iVar1;
+    struct Struct20 *iVar1;
     u16         uVar1;
 
     uVar1                     = (param_1 >> 0x10);
-    iVar1                     = (Struct20 *)param_1;
+    iVar1                     = (struct Struct20 *)param_1;
     param_1->field_0x0        = addr_table_1008_380a[36]; // 0x389a
     iVar1->field_0x2          = SEG_1008;
     iVar1->field_0x4          = param_2;
@@ -1111,15 +1115,15 @@ void struct_op_1008_9174(Struct88 *param_1, u32 param_2, u32 param_3)
     return;
 }
 
-void set_struct_1008_687a(Struct20 *param_1, u32 param_2)
+void set_struct_1008_687a(struct Struct20 *param_1, u32 param_2)
 
 {
-    Struct20 *iVar1;
-    Struct20 *uVar1;
+    struct Struct20 *iVar1;
+    struct Struct20 *uVar1;
 
     set_struct_op_1008_9584(param_1, param_2);
-    uVar1             = (Struct20 *)(param_1 >> 0x10);
-    iVar1             = (Struct20 *)param_1;
+    uVar1             = (struct Struct20 *)(param_1 >> 0x10);
+    iVar1             = (struct Struct20 *)param_1;
     iVar1->field_0xcc = 0x0;
     iVar1->field_0xce = 0x0;
     set_struct_1008_574a((param_1 & 0xffff0000 | ZEXT24(&iVar1->field_0xd2)));
@@ -1129,7 +1133,7 @@ void set_struct_1008_687a(Struct20 *param_1, u32 param_2)
     return;
 }
 
-u16 str_op_1008_60e8(char *param_1, u16 param_2)
+u16 str_op_1008_60e8(char *param_1)
 
 {
     u16 uVar1;
@@ -1312,7 +1316,7 @@ void struct_op_1008_4214(Struct76 *param_1, Struct83 *param_2)
 }
 
 
-Struct20 *pass1_1008_3ab8(Struct20 *param_1)
+struct Struct20 *pass1_1008_3ab8(struct Struct20 *param_1)
 
 {
     i16 iVar1;
@@ -1355,13 +1359,13 @@ void struct_op_1008_0000(u16 *param_1)
     (iVar1 + 0x2) = SEG_1008;
     return;
 }
-Address2 struct_op_1030_73a8(Globals *globals, Struct383 *param_1)
+SegmentAddress struct_op_1030_73a8(Globals *globals, Struct383 *param_1)
 
 {
     Address1   address_1_var_1;
     u16        in_AX;
     u16        in_DX;
-    Address2 result;
+    SegmentAddress result;
     result.base = 0;
     result.offset = 0;
 //    i16        iVar2;

@@ -35,7 +35,7 @@
 #include "structs_37x.h"
 #include "structs_38x.h"
 #include "structs_39x.h"
-#include "windows_platform.h"
+
 typedef struct Struct324 Struct324;
 typedef struct Struct325 Struct325;
 typedef struct Struct326 Struct326;

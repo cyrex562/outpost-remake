@@ -5,6 +5,11 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_9_H_
 #define OUTPOST_1_SRC_UNK_UNK_9_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_5xx/structs_59x.h"
+
 
 u16 *pass1_1028_0b64(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u16 param_5);
 
@@ -34,7 +39,7 @@ void pass1_1028_0d9c(u32 param_1, i16 param_2, u16 param_3);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1028_0ea6(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5);
+void pass1_1028_0ea6(Struct597 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5);
 
 
 
@@ -88,7 +93,7 @@ u16 pass1_1028_1556(u32 param_1, i16 param_2, u16 param_3, u16 param_4);
 
 
 
-Struct409 *pass1_1028_1646(u32 param_1);
+Struct409 *pass1_1028_1646(Struct409 *param_1);
 
 
 

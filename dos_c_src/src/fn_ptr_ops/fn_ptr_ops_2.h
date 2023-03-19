@@ -7,8 +7,9 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_4xx/struct_426.h"
 
 Struct18 *pass1_1038_3074(Globals *globals, Struct18 *param_1, u8 param_2);
 
@@ -171,7 +172,7 @@ void pass1_1030_a278(Globals *globals,
                      u16  param_4,
                      u8   param_5);
 
-void pass1_1030_a844(u32    param_1,
+void pass1_1030_a844(Struct426 *param_1,
                      u16 *param_2,
                      i16           param_3,
                      i16           param_4,

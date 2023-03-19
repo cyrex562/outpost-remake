@@ -7,6 +7,9 @@
 
 
 #include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_0xx/structs_x.h"
 
@@ -152,9 +155,7 @@ void  pass1_1038_abb0(Struct18 *param_1);
 void  set_win_pos_1038_abdc(HWND16 param_1);
 
 
-
-
-Struct20 * pass1_1038_aeca(Struct20 *param_1, u16 param_2);
+struct Struct20 * pass1_1038_aeca(Struct20 *param_1, u16 param_2);
 
 
 
@@ -209,7 +210,7 @@ void  win_dlg_op_1038_9294(Struct1 *param_1, u16 param_2);
 
 
 
-BOOL16  send_dlg_item_i16_1038_94da(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 param_5, HWND16 param_6, BOOL16 param_7);
+BOOL16  send_dlg_item_int_1038_94da(i16 param_1, u16 param_2, u16 param_3, u16 param_4, i16 param_5, HWND16 param_6, BOOL16 param_7);
 
 
 
@@ -371,7 +372,7 @@ Struct29 * pass1_1018_d3ac(Struct29 *param_1, u8 param_2);
 
 
 
-void  pass1_1020_8bcc(u32 param_1, u16 param_2);
+void  pass1_1020_8bcc(Struct285 *param_1, u16 param_2);
 
 
 

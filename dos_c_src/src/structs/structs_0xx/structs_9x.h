@@ -9,7 +9,7 @@
 #include "structs/structs_2xx/structs_22x.h"
 #include "structs_4x.h"
 #include "structs_6x.h"
-#include "windows_platform.h"
+
 typedef struct Struct92 Struct92;
 typedef struct Struct91 Struct91;
 typedef struct Struct90 Struct90;

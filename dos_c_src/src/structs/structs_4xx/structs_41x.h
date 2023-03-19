@@ -27,7 +27,7 @@
 #include "structs_45x.h"
 #include "structs_47x.h"
 #include "structs_48x.h"
-#include "windows_platform.h"
+
 typedef struct Struct414 Struct414;
 typedef struct Struct415 Struct415;
 typedef struct Struct416 Struct416;

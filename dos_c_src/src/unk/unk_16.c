@@ -5,7 +5,8 @@
 #include "unk_16.h"
 
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
+#include "globals.h"
 #include "string_ops.h"
 #include "sys_ops/sys_ops_12.h"
 
@@ -105,7 +106,7 @@ void pass1_1000_2ba0(u16 param_1, u16 param_2, u16 param_3, u8 param_4)
 
 {
     pass1_1000_3024(param_1, param_2, param_3, param_4);
-    if(PTR_LOOP_1050_5fc9 != '\0')
+    if(globals->PTR_LOOP_1050_5fc9 != '\0')
     {
         pass1_1000_3f5c(&stack0xfffe, param_1, param_2, param_3, param_4);
     }
@@ -166,9 +167,9 @@ BOOL16 pass1_1000_1fea(Globals *globals)
     puVar1                      = globals->PTR_LOOP_1050_5f22 + 0x1;
     bVar2                       = globals->PTR_LOOP_1050_5f22 == 0x0;
     globals->PTR_LOOP_1050_5f22 = puVar1;
-    if((bVar2) && ((globals->PTR_LOOP_1050_5f20 | globals->PTR_LOOP_1050_5f1e) != 0x0))
+    if((bVar2) && ((globals->dat_1050_5f20 | globals->dat_1050_5f1e) != 0x0))
     {
-        globals->PTR_LOOP_1050_5f22 = &globals->PTR_LOOP_1050_0002;
+        globals->PTR_LOOP_1050_5f22 = &globals->dat_1050_0002;
     }
     return 0x1;
 }
@@ -371,9 +372,9 @@ BOOL16  pass1_1000_115c(i16 param_1, u16 *param_2)
     (uVar4 + param_2)                  = uStack4 | 0x2;
     iVar6                              = uVar4 + param_2;
     (iVar6 + 0x4)                      = globals->PTR_LOOP_1050_0010;
-    (iVar6 + 0x2)                      = (PTR_LOOP_1050_0010 + 0x2);
-    ((PTR_LOOP_1050_0010 + 0x2) + 0x4) = iVar6;
-    (PTR_LOOP_1050_0010 + 0x2)         = iVar6;
+    (iVar6 + 0x2)                      = (globals->PTR_LOOP_1050_0010 + 0x2);
+    ((globals->PTR_LOOP_1050_0010 + 0x2) + 0x4) = iVar6;
+    (globals->PTR_LOOP_1050_0010 + 0x2)         = iVar6;
     ((u8 *)(iVar6 + uStack4) + -0x2)   = uStack4;
     pbVar1                             = (u8 *)(iVar6 + uStack4);
     *pbVar1                            = *pbVar1 & 0xfd;
@@ -401,7 +402,7 @@ u16 pass1_1000_188e(u16 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 par
 
     if((param_2 | param_1) == 0x0)
     {
-        uVar1 = pass1_1000_180c(param_3, param_4, param_5);
+        uVar1 = pass1_1000_180c(NULL, param_3, param_4, param_5);
         return uVar1;
     }
     if(param_3 == 0x0)

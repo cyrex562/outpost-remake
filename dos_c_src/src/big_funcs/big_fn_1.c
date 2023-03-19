@@ -1,19 +1,24 @@
 
 #include "big_fn_1.h"
 
+#include "draw_ops/draw_ops_2.h"
 #include "draw_ops/draw_ops_3.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_int.h"
+#include "struct_20.h"
+#include "struct_ops/struct_ops_4.h"
 #include "structs/structs_0xx/structs_x.h"
 #include "sys_ops/sys_ops_10.h"
+#include "unk/unk_10.h"
 #include "unk/unk_14.h"
+#include "unk/unk_18.h"
 #include "utils.h"
 #include "win_ops/win_ops_3.h"
 
 #include <minwindef.h>
 
 void big_switch_1008_15d4(Globals *globals,
-                          u16 param_1,
+                          Struct20 *param_1,
                           u16 param_2,
                           u16 param_3,
                           u32 param_4,
@@ -29,7 +34,7 @@ void big_switch_1008_15d4(Globals *globals,
     Struct20 *p_stack32;
     u8          local_e[0x8];
     u32         u_stack6;
-    u32         u_var2;
+    Struct20*         u_var2;
     i32        *var_1;
     i16        *pi_var1;
 
@@ -114,7 +119,7 @@ LAB_1008_162a:
             goto LAB_1008_169a;
         pi_var1  = (var3 + 0xcc);
         *pi_var1 = *pi_var1 + 0x1;
-        struct_1018_5840(p_stack32, (var3 + 0xcc), var3, param_3);
+        struct_1018_5840(NULL, p_stack32, (var3 + 0xcc), var3, param_3);
         break;
     case 0x6:
         mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);

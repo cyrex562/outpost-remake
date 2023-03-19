@@ -7,12 +7,15 @@
 
 #include "globals.h"
 #include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/struct_76.h"
+#include "structs/structs_2xx/structs_20x.h"
 
-void  pass1_1008_cbc4(u32 param_1, u32 param_2, u16 param_3);
+void  pass1_1008_cbc4(Struct202 *param_1, u32 param_2, u16 param_3);
 
 
-void  pass1_1008_cda2(u32 param_1, u32 param_2, u16 param_3);
+void  pass1_1008_cda2(Struct205 *param_1, u32 param_2, u16 param_3);
 
 
 
@@ -26,16 +29,16 @@ void  unk_str_op_1008_d1c6(u32 param_1, u32 param_2);
 
 
 
-void  pass1_1008_d3ae(u32 param_1);
+void  pass1_1008_d3ae(Struct208 *param_1);
 
 
 
-void  pass1_1008_b200(u32 param_1, u16 param_2);
+void  pass1_1008_b200(Struct194 *param_1, u16 param_2);
 
 
 
 
-u32  pass1_1008_b38c(u32 param_1, u16 param_2, u8 *param_3);
+u32  pass1_1008_b38c(Struct196 *param_1, u16 param_2, u8 *param_3);
 
 
 
@@ -62,15 +65,14 @@ void  struct_1008_9fd2(Struct79 *param_1, Struct79 *param_2, u16 param_3);
 
 
 
-void  pass1_1008_8d8a(u32 param_1, Struct76 *param_2, u32 param_3);
+void  pass1_1008_8d8a(Struct112 *param_1, Struct76 *param_2, u32 param_3);
 
 
 
-void  pass1_1008_909c(u32 param_1, u16 param_2);
+void  pass1_1008_909c(Struct106 *param_1, u16 param_2);
 
 
-
-void  pass1_1008_9262(i16 param_1, u16 param_2, u32 param_3, u32 param_4, u16 param_5, u8 *param_6);
+void pass1_1008_9262(i16 param_1, u32 param_3, u32 param_4, u16 param_5, u8 *param_6);
 
 
 
@@ -84,7 +86,7 @@ u16 * pass1_1008_7e98(u16 *param_1, u8 param_2);
 
 
 struct Struct20 *
-unk_draw_op_1008_7f62(Globals *globals, struct Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4);
+unk_draw_op_1008_7f62(Globals *globals, Struct20 *param_1, u16 param_2, u32 param_3, u16 param_4);
 
 
 

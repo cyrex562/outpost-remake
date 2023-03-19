@@ -5,6 +5,10 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_8_H_
 #define OUTPOST_1_SRC_UNK_UNK_8_H_
 
+#include "op_int.h"
+#include "op_windef.h"
+#include "globals.h"
+
 
 void  pass1_1028_5b42(u32 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5);
 

@@ -8,7 +8,7 @@
 #include "op_int.h"
 #include "structs/structs_0xx/structs_4x.h"
 #include "structs_24x.h"
-#include "windows_platform.h"
+
 typedef struct Struct204 Struct204;
 typedef struct Struct205 Struct205;
 typedef struct Struct206 Struct206;

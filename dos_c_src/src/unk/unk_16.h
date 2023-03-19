@@ -6,7 +6,9 @@
 #define OUTPOST_1_SRC_UNK_UNK_16_H_
 
 #include "op_int.h"
+#include "op_windef.h"
 #include "globals.h"
+
 
 void pass1_1000_29af(u16 param_1);
 

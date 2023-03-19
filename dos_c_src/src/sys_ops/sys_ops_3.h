@@ -5,6 +5,11 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_3_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_3_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_1xx/structs_17x.h"
+
 
 void  pass1_1030_1be2(u32 param_1, u16 param_2, u8 *param_3);
 
@@ -21,7 +26,7 @@ u16 * switch_1030_07ac(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 p
 
 
 
-void  pass1_1028_e628(u32 param_1, u16 param_2, u16 param_3, i16 param_4, i16 param_5, u16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10);
+void  pass1_1028_e628(Struct349 *param_1, u16 param_2, u16 param_3, i16 param_4, i16 param_5, u16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10);
 
 
 

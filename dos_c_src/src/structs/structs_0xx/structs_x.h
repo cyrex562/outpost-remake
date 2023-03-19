@@ -52,13 +52,14 @@ struct Struct8
     u8    field_0x10;
     u8    field_0x11;
     HDC16 field_0x12;
-    u8    field_0x14;
+    void **field_0x14;
     u8    field_0x15;
     u8    field_0x16;
     u8    field_0x17;
     u8    field_0x18;
     u8    field_0x19;
     i16   field_0x1a;
+    Struct8 *field_0x1a_addr_offset;
 };
 struct Struct7
 {
@@ -317,14 +318,14 @@ struct Struct9
     u8              field_0xf;
     u8              field_0x10;
     u8              field_0x11;
-    struct Struct8 *field_0x12;
+    Struct8 *field_0x12;
     u8              field_0x14;
     u8              field_0x15;
     u8              field_0x16;
     u8              field_0x17;
     u8              field_0x18;
     u8              field_0x19;
-    struct Struct8 *field_0x1a;
+    Struct8 *field_0x1a;
 };
 struct Struct10
 {

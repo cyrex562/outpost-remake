@@ -1,60 +1,65 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #ifndef ADDRESS_TABLE_1_H_
 #define ADDRESS_TABLE_1_H_
 
-#include "../fn_ptr_ops/fn_ptr_ops_6.h"
-#include "../string_ops.h"
-#include "../sys_ops/sys_ops_11.h"
-#include "draw_ops/draw_ops_1.h"
-#include "draw_ops/draw_ops_2.h"
-#include "draw_ops/draw_ops_3.h"
-#include "draw_ops/draw_ops_4.h"
-#include "file_ops/file_ops_1.h"
-#include "file_ops/file_ops_2.h"
-#include "file_ops/file_ops_3.h"
-#include "file_ops/file_ops_4.h"
-#include "fn_ptr_ops/fn_ptr_ops_1.h"
-#include "fn_ptr_ops/fn_ptr_ops_2.h"
-#include "fn_ptr_ops/fn_ptr_ops_3.h"
-#include "fn_ptr_ops/fn_ptr_ops_4.h"
-#include "fn_ptr_ops/fn_ptr_ops_5.h"
-#include "struct_ops/struct_ops_1.h"
-#include "sys_ops/sys_ops_1.h"
-#include "sys_ops/sys_ops_10.h"
-#include "sys_ops/sys_ops_2.h"
-#include "sys_ops/sys_ops_3.h"
-#include "sys_ops/sys_ops_4.h"
-#include "sys_ops/sys_ops_5.h"
-#include "sys_ops/sys_ops_6.h"
-#include "sys_ops/sys_ops_8.h"
-#include "sys_ops/sys_ops_9.h"
-#include "ui_ops/ui_ops_1.h"
-#include "ui_ops/ui_ops_2.h"
-#include "ui_ops/ui_ops_4.h"
-#include "ui_ops/ui_ops_5.h"
-#include "ui_ops/ui_ops_6.h"
-#include "ui_ops/ui_ops_7.h"
-#include "unk/unk_1.h"
-#include "unk/unk_10.h"
-#include "unk/unk_11.h"
-#include "unk/unk_12.h"
-#include "unk/unk_13.h"
-#include "unk/unk_14.h"
-#include "unk/unk_18.h"
-#include "unk/unk_2.h"
-#include "unk/unk_3.h"
-#include "unk/unk_4.h"
-#include "unk/unk_6.h"
-#include "unk/unk_7.h"
-#include "unk/unk_8.h"
-#include "unk/unk_9.h"
-#include "win_ops/win_ops_1.h"
-#include "win_ops/win_ops_2.h"
-#include "win_ops/win_ops_3.h"
-#include "win_ops/win_ops_4.h"
-#include "win_ops/win_ops_5.h"
-#include "ui_ops/ui_ops_3.h"
+    #include "../fn_ptr_ops/fn_ptr_ops_6.h"
+    #include "../string_ops.h"
+    #include "../sys_ops/sys_ops_11.h"
+    #include "draw_ops/draw_ops_1.h"
+    #include "draw_ops/draw_ops_2.h"
+    #include "draw_ops/draw_ops_3.h"
+    #include "draw_ops/draw_ops_4.h"
+    #include "file_ops/file_ops_1.h"
+    #include "file_ops/file_ops_2.h"
+    #include "file_ops/file_ops_3.h"
+    #include "file_ops/file_ops_4.h"
+    #include "fn_ptr_ops/fn_ptr_ops_1.h"
+    #include "fn_ptr_ops/fn_ptr_ops_2.h"
+    #include "fn_ptr_ops/fn_ptr_ops_3.h"
+    #include "fn_ptr_ops/fn_ptr_ops_4.h"
+    #include "fn_ptr_ops/fn_ptr_ops_5.h"
+    #include "struct_ops/struct_ops_1.h"
+    #include "struct_ops/struct_ops_4.h"
+    #include "sys_ops/sys_ops_1.h"
+    #include "sys_ops/sys_ops_10.h"
+    #include "sys_ops/sys_ops_2.h"
+    #include "sys_ops/sys_ops_3.h"
+    #include "sys_ops/sys_ops_4.h"
+    #include "sys_ops/sys_ops_5.h"
+    #include "sys_ops/sys_ops_6.h"
+    #include "sys_ops/sys_ops_8.h"
+    #include "sys_ops/sys_ops_9.h"
+    #include "ui_ops/ui_ops_1.h"
+    #include "ui_ops/ui_ops_2.h"
+    #include "ui_ops/ui_ops_3.h"
+    #include "ui_ops/ui_ops_4.h"
+    #include "ui_ops/ui_ops_5.h"
+    #include "ui_ops/ui_ops_6.h"
+    #include "ui_ops/ui_ops_7.h"
+    #include "unk/unk_1.h"
+    #include "unk/unk_10.h"
+    #include "unk/unk_11.h"
+    #include "unk/unk_12.h"
+    #include "unk/unk_13.h"
+    #include "unk/unk_14.h"
+    #include "unk/unk_18.h"
+    #include "unk/unk_19.h"
+    #include "unk/unk_2.h"
+    #include "unk/unk_3.h"
+    #include "unk/unk_4.h"
+    #include "unk/unk_6.h"
+    #include "unk/unk_7.h"
+    #include "unk/unk_8.h"
+    #include "unk/unk_9.h"
+    #include "win_ops/win_msg_ops_1.h"
+    #include "win_ops/win_ops_1.h"
+    #include "win_ops/win_ops_2.h"
+    #include "win_ops/win_ops_3.h"
+    #include "win_ops/win_ops_4.h"
+    #include "win_ops/win_ops_5.h"
 
-#include <stdint.h>
+    #include <stdint.h>
 
 // - 1008:389a
 void *addr_table_1008_380a[]
@@ -1039,7 +1044,7 @@ void *addr_table_1018_6128[] = {
         set_text_bk_color_1040_7e5e, // 1018:615c
         unk_win_ui_op_1040_8158,     // 1018:6160
         check_dialog_msg_1040_81b6,  // 1018:6164
-        win_ui_op_1040_81fe,         // 1018:6168
+  set_sys_modal_window_1040_81fe,         // 1018:6168
         0,                           // FUN_1018_60ea, // 1018:616c
         pass1_1040_824a,             // 1018:6170
         0,                           // FUN_1040_8266, // 1018:6174
@@ -5231,7 +5236,7 @@ void *addr_table_1020_1e7a[] = {
         set_text_bk_color_1040_7e5e, // 1020:1eae
         unk_win_ui_op_1040_8158,     // 1020:1eb2
         check_dialog_msg_1040_81b6,  // 1020:1eb6
-        win_ui_op_1040_81fe,         // 1020:1eba
+  set_sys_modal_window_1040_81fe,         // 1020:1eba
         enable_window_1020_1bd4,     // 1020:1ebe
         pass1_1040_824a,             // 1020:1ec2
         0,                           // FUN_1040_8266, // 1020:1ec6
@@ -6409,7 +6414,7 @@ void *addr_table_1040_d8c4[] = {
         win_ui_op_1040_b372,        // 1040:d8f8
         unk_win_ui_op_1040_8158,    // 1040:d8fc
         check_dialog_msg_1040_81b6, // 1040:d900
-        win_ui_op_1040_81fe,        // 1040:d904
+  set_sys_modal_window_1040_81fe,        // 1040:d904
         0,                          // FUN_1018_60ea, // 1040:d908
         pass1_1040_824a,            // 1040:d90c
         0,                          // FUN_1040_8266, // 1040:d910
@@ -6443,7 +6448,7 @@ void *addr_table_1040_d07c[] = {
         win_ui_op_1040_b372,        // 1040:d0b0
         unk_win_ui_op_1040_8158,    // 1040:d0b4
         check_dialog_msg_1040_81b6, // 1040:d0b8
-        win_ui_op_1040_81fe,        // 1040:d0bc
+  set_sys_modal_window_1040_81fe,        // 1040:d0bc
         0,                          // FUN_1018_60ea, // 1040:d0c0
         pass1_1040_824a,            // 1040:d0c4
         0,                          // FUN_1040_8266, // 1040:d0c8
@@ -6486,7 +6491,7 @@ void *addr_table_1038_ae4e[] = {
         draw_op_1038_9dcc,          // 1038:ae82 cc 9d 38 10       addr
         unk_win_ui_op_1040_8158,    // 1038:ae86 58 81 40 10       addr
         check_dialog_msg_1040_81b6, // 1038:ae8a b6 81 40 10       addr
-        win_ui_op_1040_81fe,        // 1038:ae8e fe 81 40 10       addr
+  set_sys_modal_window_1040_81fe,        // 1038:ae8e fe 81 40 10       addr
         0,                          // FUN_1018_60ea, // 1038:ae92 ea 60 18 10       addr
         pass1_1040_824a,            // 1038:ae96 4a 82 40 10       addr
         0,                          // FUN_1040_8266 // 1038:ae9a 66 82 40 10       addr
@@ -6526,7 +6531,7 @@ void *addr_table_1040_8ddc[] = {
         set_text_bk_color_1040_7e5e, // 1040:8e10
         unk_win_ui_op_1040_8158,     // 1040:8e14
         check_dialog_msg_1040_81b6,  // 1040:8e18
-        win_ui_op_1040_81fe,         // 1040:8e1c
+  set_sys_modal_window_1040_81fe,         // 1040:8e1c
         NULL,                        // FUN_1018_60ea, // 1040:8e20
         pass1_1040_824a,             // 1040:8e24
         NULL,                        // FUN_1040_8266, // 1040:8e28
@@ -6543,40 +6548,40 @@ void *addr_table_1040_8ddc[] = {
         enable_win_1040_86dc,        // 1040:8e54
 };
 
-void *addr_table_1040_d07c[] = {
-        pass1_1040_d056,            // 1040:d07c
-        pass1_1008_3a10,            // 1040:d080
-        unk_win_ui_op_1040_b230,    // 1040:d084
-        pass1_1040_b316,            // 1040:d088
-        pass1_1040_cc8c,            // 1040:d08c
-        pass1_1040_caa6,            // 1040:d090
-        post_win_msg_1040_7f56,     // 1040:d094
-        draw_op_1040_7bb2,          // 1040:d098
-        post_win_msg_1040_7f1c,     // 1040:d09c
-        pass1_1038_8848,            // 1040:d0a0
-        menu_ui_op_1040_7f86,       // 1040:d0a4
-        win_help_1040_800c,         // 1040:d0a8
-        pass1_1040_8054,            // 1040:d0ac
-        win_ui_op_1040_b372,        // 1040:d0b0
-        unk_win_ui_op_1040_8158,    // 1040:d0b4
-        check_dialog_msg_1040_81b6, // 1040:d0b8
-        win_ui_op_1040_81fe,        // 1040:d0bc
-        NULL,                       // FUN_1018_60ea, // 1040:d0c0
-        pass1_1040_824a,            // 1040:d0c4
-        NULL,                       // FUN_1040_8266, // 1040:d0c8
-        pass1_1040_cc66,            // 1040:d0cc
-        pass1_1040_cdac,            // 1040:d0d0
-        NULL,                       // FUN_1018_60f4, // 1040:d0d4
-        pass1_1040_b4c8,            // 1040:d0d8
-        NULL,                       //  FUN_1038_8842, // 1040:d0dc
-        NULL,                       //  FUN_1018_60fe, // 1040:d0e0
-        pass1_1040_807e,            // 1040:d0e4
-        show_win_1040_b43c,         // 1040:d0e8
-        pass1_1040_b45e,            // 1040:d0ec
-        pass1_1040_b17c,            // 1040:d0f0
-        win_ui_op_1040_cace,        // 1040:d0f4
-
-};
+//void *addr_table_1040_d07c[] = {
+//        pass1_1040_d056,            // 1040:d07c
+//        pass1_1008_3a10,            // 1040:d080
+//        unk_win_ui_op_1040_b230,    // 1040:d084
+//        pass1_1040_b316,            // 1040:d088
+//        pass1_1040_cc8c,            // 1040:d08c
+//        pass1_1040_caa6,            // 1040:d090
+//        post_win_msg_1040_7f56,     // 1040:d094
+//        draw_op_1040_7bb2,          // 1040:d098
+//        post_win_msg_1040_7f1c,     // 1040:d09c
+//        pass1_1038_8848,            // 1040:d0a0
+//        menu_ui_op_1040_7f86,       // 1040:d0a4
+//        win_help_1040_800c,         // 1040:d0a8
+//        pass1_1040_8054,            // 1040:d0ac
+//        win_ui_op_1040_b372,        // 1040:d0b0
+//        unk_win_ui_op_1040_8158,    // 1040:d0b4
+//        check_dialog_msg_1040_81b6, // 1040:d0b8
+//  set_sys_modal_window_1040_81fe,        // 1040:d0bc
+//        NULL,                       // FUN_1018_60ea, // 1040:d0c0
+//        pass1_1040_824a,            // 1040:d0c4
+//        NULL,                       // FUN_1040_8266, // 1040:d0c8
+//        pass1_1040_cc66,            // 1040:d0cc
+//        pass1_1040_cdac,            // 1040:d0d0
+//        NULL,                       // FUN_1018_60f4, // 1040:d0d4
+//        pass1_1040_b4c8,            // 1040:d0d8
+//        NULL,                       //  FUN_1038_8842, // 1040:d0dc
+//        NULL,                       //  FUN_1018_60fe, // 1040:d0e0
+//        pass1_1040_807e,            // 1040:d0e4
+//        show_win_1040_b43c,         // 1040:d0e8
+//        pass1_1040_b45e,            // 1040:d0ec
+//        pass1_1040_b17c,            // 1040:d0f0
+//        win_ui_op_1040_cace,        // 1040:d0f4
+//
+//};
 
 void *addr_table_1040_afc4[] = {
         pass1_1040_af9e,            // 1040:afc4
@@ -6595,7 +6600,7 @@ void *addr_table_1040_afc4[] = {
         win_ui_op_1040_b372,        // 1040:aff8
         unk_win_ui_op_1040_8158,    // 1040:affc
         check_dialog_msg_1040_81b6, // 1040:b000
-        win_ui_op_1040_81fe,        // 1040:b004
+  set_sys_modal_window_1040_81fe,        // 1040:b004
         NULL,                       // FUN_1018_60ea, // 1040:b008
         pass1_1040_824a,            // 1040:b00c
         NULL,                       // FUN_1040_8266, // 1040:b010
@@ -6634,7 +6639,7 @@ void *addr_table_1040_d8b9[] = {
         win_ui_op_1040_b372,        // 1040:d8f8
         unk_win_ui_op_1040_8158,    // 1040:d8fc
         check_dialog_msg_1040_81b6, // 1040:d900
-        win_ui_op_1040_81fe,        // 1040:d904
+  set_sys_modal_window_1040_81fe,        // 1040:d904
         NULL,                       // FUN_1018_60ea, // 1040:d908
         pass1_1040_824a,            // 1040:d90c
         NULL,                       // FUN_1040_8266, // 1040:d910
@@ -6726,7 +6731,7 @@ void *addr_table_1040_8f3c[] = {
         win_ui_op_1040_b372,        // 1040:8f70
         unk_win_ui_op_1040_8158,    // 1040:8f74
         check_dialog_msg_1040_81b6, // 1040:8f78
-        win_ui_op_1040_81fe,        // 1040:8f7c
+  set_sys_modal_window_1040_81fe,        // 1040:8f7c
         NULL,                       // FUN_1018_60ea, // 1040:8f80
         pass1_1040_824a,            // 1040:8f84
         NULL,                       // FUN_1040_8266, // 1040:8f88
@@ -6761,7 +6766,7 @@ void *addr_table_1040_6f32[] = {
         win_ui_op_1040_b372,        // 1040:6f66
         unk_win_ui_op_1040_8158,    // 1040:6f6a
         check_dialog_msg_1040_81b6, // 1040:6f6e
-        win_ui_op_1040_81fe,        // 1040:6f72
+  set_sys_modal_window_1040_81fe,        // 1040:6f72
         NULL,                       // FUN_1018_60ea, // 1040:6f76
         pass1_1040_824a,            // 1040:6f7a
         NULL,                       // FUN_1040_8266, // 1040:6f7e
@@ -6798,7 +6803,7 @@ void *addr_table_1040_55a2[] = {
         win_ui_op_1040_b372,        // 1040:55d6
         unk_win_ui_op_1040_8158,    // 1040:55da
         check_dialog_msg_1040_81b6, // 1040:55de
-        win_ui_op_1040_81fe,        // 1040:55e2
+  set_sys_modal_window_1040_81fe,        // 1040:55e2
         NULL,                       // FUN_1018_60ea, // 1040:55e6
         pass1_1040_824a,            // 1040:55ea
         NULL,                       //  FUN_1040_8266, // 1040:55ee
@@ -6835,7 +6840,7 @@ void *addr_table_1040_2e26[] = {
         win_ui_op_1040_b372,        // 1040:2e5a
         unk_win_ui_op_1040_8158,    // 1040:2e5e
         check_dialog_msg_1040_81b6, // 1040:2e62
-        win_ui_op_1040_81fe,        // 1040:2e66
+  set_sys_modal_window_1040_81fe,        // 1040:2e66
         NULL,                       // FUN_1018_60ea, // 1040:2e6a
         pass1_1040_824a,            // 1040:2e6e
         NULL,                       // FUN_1040_8266, // 1040:2e72
@@ -6869,7 +6874,7 @@ void *addr_table_1038_90c8[] = {
         win_ui_op_1040_b372,         // 1038:90fc
         unk_win_ui_op_1040_8158,     // 1038:9100
         check_dialog_msg_1040_81b6,  // 1038:9104
-        win_ui_op_1040_81fe,         // 1038:9108
+  set_sys_modal_window_1040_81fe,         // 1038:9108
         NULL,                        // FUN_1018_60ea, // 1038:910c
         pass1_1040_824a,             // 1038:9110
         NULL,                        // FUN_1040_8266, // 1038:9114
@@ -6895,7 +6900,7 @@ void *addr_table_1038_78de[] = {
 void *addr_table_1038_29fe[] = {
         pass1_1038_29d2, // 1038:29fe
         pass1_1038_290e, // 1038:2a02
-        FUN_1028_d228, // 1038:2a06
+        NULL, // FUN_1028_d228, // 1038:2a06
         pass1_1038_2944, // 1038:2a0a
 
 };
@@ -7075,7 +7080,7 @@ void *addr_table_1040_beba[] = {
         win_ui_op_1040_b372,        // 1040:beee
         unk_win_ui_op_1040_8158,    // 1040:bef2
         check_dialog_msg_1040_81b6, // 1040:bef6
-        win_ui_op_1040_81fe,        // 1040:befa
+  set_sys_modal_window_1040_81fe,        // 1040:befa
         NULL,                       // FUN_1018_60ea, // 1040:befe
         pass1_1040_824a,            // 1040:bf02
         NULL,                       //  FUN_1040_8266, // 1040:bf06
@@ -7112,7 +7117,7 @@ void *addr_table_1040_ac08[] = {
         draw_op_1040_a67e,          // 1040:ac3c
         unk_win_ui_op_1040_8158,    // 1040:ac40
         check_dialog_msg_1040_81b6, // 1040:ac44
-        win_ui_op_1040_81fe,        // 1040:ac48
+  set_sys_modal_window_1040_81fe,        // 1040:ac48
         NULL,                       // FUN_1018_60ea, // 1040:ac4c
         pass1_1040_824a,            // 1040:ac50
         NULL,                       // FUN_1040_8266, // 1040:ac54
@@ -7147,7 +7152,7 @@ void *addr_table_1038_8c2e[] = {
         win_ui_op_1040_b372, // 1038:8c62
         unk_win_ui_op_1040_8158, // 1038:8c66
         check_dialog_msg_1040_81b6, // 1038:8c6a
-        win_ui_op_1040_81fe, // 1038:8c6e
+  set_sys_modal_window_1040_81fe, // 1038:8c6e
         NULL, // FUN_1018_60ea, // 1038:8c72
         pass1_1040_824a, // 1038:8c76
         NULL, //   FUN_1040_8266, // 1038:8c7a
@@ -7182,7 +7187,7 @@ void *addr_table_1040_3ffc[] = {
         set_text_bk_color_1040_7e5e, // 1040:4030
         unk_win_ui_op_1040_8158,     // 1040:4034
         check_dialog_msg_1040_81b6,  // 1040:4038
-        win_ui_op_1040_81fe,         // 1040:403c
+  set_sys_modal_window_1040_81fe,         // 1040:403c
         NULL,                        // FUN_1018_60ea, // 1040:4040
         pass1_1040_824a,             // 1040:4044
         NULL,                        // FUN_1040_8266, // 1040:4048
@@ -7209,7 +7214,7 @@ void *addr_table_1040_3ffc[] = {
         win_ui_op_1040_b372,         // 1040:55d6
         unk_win_ui_op_1040_8158,     // 1040:55da
         check_dialog_msg_1040_81b6,  // 1040:55de
-        win_ui_op_1040_81fe,         // 1040:55e2
+  set_sys_modal_window_1040_81fe,         // 1040:55e2
         NULL,                        //   FUN_1018_60ea, // 1040:55e6
         pass1_1040_824a,             // 1040:55ea
         NULL,                        //  FUN_1040_8266, // 1040:55ee
@@ -7239,7 +7244,7 @@ void *addr_table_1028_a856[] = {
 void *addr_table_1028_a9ae[] = {
         pass1_1028_a982, // 1028:a9ae
         pass1_1028_a89c, // 1028:a9b2
-        FUN_1028_d228, // 1028:a9b6
+        NULL, // FUN_1028_d228, // 1028:a9b6
         pass1_1028_a8f4, // 1028:a9ba
 
 };
@@ -7247,7 +7252,7 @@ void *addr_table_1028_a9ae[] = {
 void *addr_table_1028_ab22[] = {
         pass1_1028_aaf6, // 1028:ab22
         pass1_1028_a9f4, // 1028:ab26
-        FUN_1028_d228, // 1028:ab2a
+  NULL, // FUN_1028_d228, // 1028:ab2a
         pass1_1028_aa68, // 1028:ab2e
 
 };
@@ -7255,7 +7260,7 @@ void *addr_table_1028_ab22[] = {
 void *addr_table_1028_aca6[] = {
         pass1_1028_ac7a, // 1028:aca6
         pass1_1028_ab68, // 1028:acaa
-        FUN_1028_d228, // 1028:acae
+  NULL, // FUN_1028_d228, // 1028:acae
         pass1_1028_abec, // 1028:acb2
 
 };
@@ -7263,7 +7268,7 @@ void *addr_table_1028_aca6[] = {
 void *addr_table_1028_ae56[] = {
         pass1_1028_ae2a, // 1028:ae56
         pass1_1028_acec, // 1028:ae5a
-        FUN_1028_d228, // 1028:ae5e
+        NULL, // FUN_1028_d228, // 1028:ae5e
         pass1_1028_ad9c, // 1028:ae62
 
 };
@@ -7279,16 +7284,16 @@ void *addr_table_1028_b0ce[] = {
 void *addr_table_1028_b33c[] = {
         pass1_1028_b316, // 1028:b33c
         pass1_1030_177a, // 1028:b340
-        FUN_1030_178e, // 1028:b344
-        FUN_1028_b282, // 1028:b348
+        NULL, // FUN_1030_178e, // 1028:b344
+        NULL, // FUN_1028_b282, // 1028:b348
         pass1_1028_b2c8, // 1028:b34c
-        FUN_1028_b27e, // 1028:b350
+        NULL, // FUN_1028_b27e, // 1028:b350
 };
 
 void *addr_table_1028_9eb6[] = {
         pass1_1028_9e8a, // 1028:9eb6
         pass1_1028_9c90, // 1028:9eba
-        FUN_1028_d228, // 1028:9ebe
+        NULL, // FUN_1028_d228, // 1028:9ebe
         pass1_1028_9dee, // 1028:9ec2
 
 };
@@ -7296,7 +7301,7 @@ void *addr_table_1028_9eb6[] = {
 void *addr_table_1028_a6f6[] = {
         pass1_1028_a6ca, // 1028:a6f6
         pass1_1028_9efc, // 1028:a6fa
-        FUN_1028_d228, // 1028:a6fe
+        NULL, // FUN_1028_d228, // 1028:a6fe
         pass1_1028_a0fa, // 1028:a702
 
 };
@@ -7304,14 +7309,14 @@ void *addr_table_1028_a6f6[] = {
 void *addr_table_1028_84ba[] = {
         pass1_1028_848e, // 1028:84ba
         pass1_1028_83b4, // 1028:84be
-        FUN_1028_d228, // 1028:84c2
+        NULL, // FUN_1028_d228, // 1028:84c2
         pass1_1028_8400, // 1028:84c6
 
 };
 
 void *addr_table_1028_8d8e[] = {
         pass1_1028_8d62, // 1028:8d8e
-        FUN_1028_d222, // 1028:8d92
+        NULL, // FUN_1028_d222, // 1028:8d92
         pass1_1028_8920, // 1028:8d96
         pass1_1028_8c46, // 1028:8d9a
 
@@ -7320,7 +7325,7 @@ void *addr_table_1028_8d8e[] = {
 void *addr_table_1028_932c[] = {
         pass1_1028_9300, // 1028:932c
         pass1_1028_9114, // 1028:9330
-        FUN_1028_d228, // 1028:9334
+        NULL, // FUN_1028_d228, // 1028:9334
         pass1_1028_9264, // 1028:9338
 
 };
@@ -7328,7 +7333,7 @@ void *addr_table_1028_932c[] = {
 void *addr_table_1028_819a[] = {
         pass1_1028_816e, // 1028:819a
         pass1_1028_74e4, // 1028:819e
-        FUN_1028_d228, // 1028:81a2
+        NULL, // FUN_1028_d228, // 1028:81a2
         pass1_1028_752e, // 1028:81a6
 
 };
@@ -7336,26 +7341,26 @@ void *addr_table_1028_819a[] = {
 void *addr_table_1028_836e[] = {
         pass1_1028_8342, // 1028:836e
         pass1_1028_81e0, // 1028:8372
-        FUN_1028_d228, // 1028:8376
+        NULL, // FUN_1028_d228, // 1028:8376
         pass1_1028_82b4, // 1028:837a
 };
 
 
 void *addr_table_1028_6ad2[] = {
         pass1_1028_6aa6, // 1028:6ad2
-        FUN_1028_d222, // 1028:6ad6
-        FUN_1028_d228, // 1028:6ada
+        NULL, // FUN_1028_d222, // 1028:6ad6
+        NULL, // FUN_1028_d228, // 1028:6ada
         pass1_1000_4f1a, // 1028:6ade
         pass1_1028_6a7a, // 1028:6ae2
         pass1_1028_6926, // 1028:6ae6
-        FUN_1028_d228, // 1028:6aea
+        NULL, // FUN_1028_d228, // 1028:6aea
         pass1_1028_69cc, // 1028:6aee
 };
 
 void *addr_table_1028_6e50[] = {
         pass1_1028_6e24, // 1028:6e50
         pass1_1028_6b2c, // 1028:6e54
-        FUN_1028_d228, // 1028:6e58
+        NULL, // FUN_1028_d228, // 1028:6e58
         pass1_1000_4f1a, // 1028:6e5c
 
 };
@@ -7363,7 +7368,7 @@ void *addr_table_1028_6e50[] = {
 void *addr_table_1028_6fb0[] = {
         pass1_1028_6f84, // 1028:6fb0
         pass1_1028_6e96, // 1028:6fb4
-        FUN_1028_d228, // 1028:6fb8
+        NULL, // FUN_1028_d228, // 1028:6fb8
         pass1_1028_6ef6, // 1028:6fbc
 
 };
@@ -7371,7 +7376,7 @@ void *addr_table_1028_6fb0[] = {
 void *addr_table_1028_749e[] = {
         pass1_1028_7472, // 1028:749e
         pass1_1028_6ff6, // 1028:74a2
-        FUN_1028_d228, // 1028:74a6
+        NULL, // FUN_1028_d228, // 1028:74a6
         pass1_1028_737e, // 1028:74aa
 
 };
@@ -7379,7 +7384,7 @@ void *addr_table_1028_749e[] = {
 void *addr_table_1028_5280[] = {
         pass1_1028_525a, // 1028:5280
         pass1_1028_bb56, // 1028:5284
-        FUN_1030_178e, // 1028:5288
+        NULL, // FUN_1030_178e, // 1028:5288
         write_to_file_1028_b5ec, // 1028:528c
         file_1028_b81a, // 1028:5290
         pass1_1028_bc1c, // 1028:5294
@@ -7388,17 +7393,17 @@ void *addr_table_1028_5280[] = {
         pass1_1028_bc7e, // 1028:52a0
         pass1_1028_b514, // 1028:52a4
         pass1_1028_be2a, // 1028:52a8
-        FUN_1028_bf16, // 1028:52ac
-        FUN_1028_5124, // 1028:52b0
-        FUN_1028_bf1e, // 1028:52b4
+        NULL, // FUN_1028_bf16, // 1028:52ac
+        NULL, // FUN_1028_5124, // 1028:52b0
+        NULL, // FUN_1028_bf1e, // 1028:52b4
         pass1_1028_be9e, // 1028:52b8
         pass1_1028_bf22, // 1028:52bc
         pass1_1028_bbf0, // 1028:52c0
         pass1_1028_bc02, // 1028:52c4
         pass1_1028_b5a8, // 1028:52c8
         pass1_1028_b5ca, // 1028:52cc
-        FUN_1028_b4e6, // 1028:52d0
-        FUN_1028_b4ec, // 1028:52d4
+        NULL, // FUN_1028_b4e6, // 1028:52d0
+        NULL, // FUN_1028_b4ec, // 1028:52d4
         pass1_1028_b46e, // 1028:52d8
         pass1_1028_c64a, // 1028:52dc
         pass1_1028_c522, // 1028:52e0
@@ -7409,7 +7414,7 @@ void *addr_table_1028_5280[] = {
 void *addr_table_1028_54bc[] = {
         pass1_1028_5496, // 1028:54bc
         pass1_1028_bb56, // 1028:54c0
-        FUN_1030_178e, // 1028:54c4
+        NULL, // FUN_1030_178e, // 1028:54c4
         write_to_file_1028_b5ec, // 1028:54c8
         file_1028_b81a, // 1028:54cc
         pass1_1028_bc1c, // 1028:54d0
@@ -7418,17 +7423,17 @@ void *addr_table_1028_54bc[] = {
         pass1_1028_bc7e, // 1028:54dc
         pass1_1028_b514, // 1028:54e0
         pass1_1028_5412, // 1028:54e4
-        FUN_1028_bf16, // 1028:54e8
-        FUN_1028_bf1a, // 1028:54ec
-        FUN_1028_bf1e, // 1028:54f0
+        NULL, // FUN_1028_bf16, // 1028:54e8
+        NULL, // FUN_1028_bf1a, // 1028:54ec
+        NULL, // FUN_1028_bf1e, // 1028:54f0
         pass1_1028_be9e, // 1028:54f4
         pass1_1028_bf22, // 1028:54f8
         pass1_1028_bbf0, // 1028:54fc
         pass1_1028_bc02, // 1028:5500
         pass1_1028_b5a8, // 1028:5504
         pass1_1028_b5ca, // 1028:5508
-        FUN_1028_b4e6, // 1028:550c
-        FUN_1028_b4ec, // 1028:5510
+        NULL, // FUN_1028_b4e6, // 1028:550c
+        NULL, // FUN_1028_b4ec, // 1028:5510
         pass1_1028_b46e, // 1028:5514
         pass1_1028_c64a, // 1028:5518
         pass1_1028_c522, // 1028:551c
@@ -7436,9 +7441,9 @@ void *addr_table_1028_54bc[] = {
 };
 
 void *addr_table_1028_535e[] = {
-        FUN_1028_5338, // 1028:535e
+        NULL, // FUN_1028_5338, // 1028:535e
         pass1_1028_bb56, // 1028:5362
-        FUN_1030_178e, // 1028:5366
+        NULL, // FUN_1030_178e, // 1028:5366
         write_to_file_1028_b5ec, // 1028:536a
         file_1028_b81a, // 1028:536e
         pass1_1028_bc1c, // 1028:5372
@@ -7447,17 +7452,17 @@ void *addr_table_1028_535e[] = {
         pass1_1028_bc7e, // 1028:537e
         pass1_1028_b514, // 1028:5382
         pass1_1028_be2a, // 1028:5386
-        FUN_1028_bf16, // 1028:538a
-        FUN_1028_5334, // 1028:538e
-        FUN_1028_bf1e, // 1028:5392
+        NULL, // FUN_1028_bf16, // 1028:538a
+        NULL, // FUN_1028_5334, // 1028:538e
+        NULL, // FUN_1028_bf1e, // 1028:5392
         pass1_1028_be9e, // 1028:5396
         pass1_1028_bf22, // 1028:539a
         pass1_1028_bbf0, // 1028:539e
         pass1_1028_bc02, // 1028:53a2
         pass1_1028_b5a8, // 1028:53a6
         pass1_1028_b5ca, // 1028:53aa
-        FUN_1028_b4e6, // 1028:53ae
-        FUN_1028_b4ec, // 1028:53b2
+        NULL, // FUN_1028_b4e6, // 1028:53ae
+        NULL, // FUN_1028_b4ec, // 1028:53b2
         pass1_1028_b46e, // 1028:53b6
         pass1_1028_c64a, // 1028:53ba
         pass1_1028_c522, // 1028:53be
@@ -7467,7 +7472,7 @@ void *addr_table_1028_535e[] = {
 void *addr_table_1028_55c8[] = {
         pass1_1028_55a2, // 1028:55c8
         pass1_1028_bb56, // 1028:55cc
-        FUN_1030_178e, // 1028:55d0
+        NULL, // FUN_1030_178e, // 1028:55d0
         write_to_file_1028_0234, // 1028:55d4
         pass1_1028_0374, // 1028:55d8
         pass1_1028_bc1c, // 1028:55dc
@@ -7476,17 +7481,17 @@ void *addr_table_1028_55c8[] = {
         pass1_1028_bc7e, // 1028:55e8
         pass1_1028_b514, // 1028:55ec
         pass1_1028_01ec, // 1028:55f0
-        FUN_1028_bf16, // 1028:55f4
+        NULL, // FUN_1028_bf16, // 1028:55f4
         pass1_1028_0582, // 1028:55f8
-        FUN_1028_bf1e, // 1028:55fc
+        NULL, // FUN_1028_bf1e, // 1028:55fc
         pass1_1028_5570, // 1028:5600
         pass1_1028_bf22, // 1028:5604
         pass1_1028_04ee, // 1028:5608
         pass1_1028_bc02, // 1028:560c
         pass1_1028_b5a8, // 1028:5610
         pass1_1028_b5ca, // 1028:5614
-        FUN_1028_b4e6, // 1028:5618
-        FUN_1028_b4ec, // 1028:561c
+        NULL, // FUN_1028_b4e6, // 1028:5618
+        NULL, // FUN_1028_b4ec, // 1028:561c
         pass1_1028_0176, // 1028:5620
         pass1_1028_c64a, // 1028:5624
         pass1_1028_c522, // 1028:5628
@@ -7495,28 +7500,28 @@ void *addr_table_1028_55c8[] = {
 };
 
 void *addr_table_1028_56ac[] = {
-        FUN_1028_5686, // 1028:56ac
+        NULL, // FUN_1028_5686, // 1028:56ac
         pass1_1028_bb56, // 1028:56b0
-        FUN_1030_178e, // 1028:56b4
+        NULL, // FUN_1030_178e, // 1028:56b4
         write_to_file_1028_b5ec, // 1028:56b8
         file_1028_b81a, // 1028:56bc
         pass1_1028_bc1c, // 1028:56c0
         pass1_1028_bd38, // 1028:56c4
-        FUN_1028_567c, // 1028:56c8
+        NULL, // FUN_1028_567c, // 1028:56c8
         pass1_1028_bc7e, // 1028:56cc
         pass1_1028_b514, // 1028:56d0
         pass1_1028_be2a, // 1028:56d4
-        FUN_1028_bf16, // 1028:56d8
-        FUN_1028_bf1a, // 1028:56dc
-        FUN_1028_5682, // 1028:56e0
+        NULL, // FUN_1028_bf16, // 1028:56d8
+        NULL, // FUN_1028_bf1a, // 1028:56dc
+        NULL, // FUN_1028_5682, // 1028:56e0
         pass1_1028_be9e, // 1028:56e4
         pass1_1028_bf22, // 1028:56e8
         pass1_1028_bbf0, // 1028:56ec
         pass1_1028_bc02, // 1028:56f0
         pass1_1028_b5a8, // 1028:56f4
         pass1_1028_b5ca, // 1028:56f8
-        FUN_1028_b4e6, // 1028:56fc
-        FUN_1028_b4ec, // 1028:5700
+        NULL, // FUN_1028_b4e6, // 1028:56fc
+        NULL, // FUN_1028_b4ec, // 1028:5700
         pass1_1028_b46e, // 1028:5704
         pass1_1028_c64a, // 1028:5708
         pass1_1028_c522, // 1028:570c
@@ -7525,9 +7530,9 @@ void *addr_table_1028_56ac[] = {
 };
 
 void *addr_table_1028_581c[] = {
-        FUN_1028_57f6, // 1028:581c
+        NULL, // FUN_1028_57f6, // 1028:581c
         pass1_1028_bb56, // 1028:5820
-        FUN_1030_178e, // 1028:5824
+        NULL, // FUN_1030_178e, // 1028:5824
         write_to_file_1028_b5ec, // 1028:5828
         file_1028_b81a, // 1028:582c
         pass1_1028_bc1c, // 1028:5830
@@ -7536,17 +7541,17 @@ void *addr_table_1028_581c[] = {
         pass1_1028_bc7e, // 1028:583c
         pass1_1028_b514, // 1028:5840
         pass1_1028_be2a, // 1028:5844
-        FUN_1028_bf16, // 1028:5848
-        FUN_1028_57f2, // 1028:584c
-        FUN_1028_bf1e, // 1028:5850
+        NULL, // FUN_1028_bf16, // 1028:5848
+        NULL, // FUN_1028_57f2, // 1028:584c
+        NULL, // FUN_1028_bf1e, // 1028:5850
         pass1_1028_be9e, // 1028:5854
         pass1_1028_bf22, // 1028:5858
         pass1_1028_bbf0, // 1028:585c
         pass1_1028_bc02, // 1028:5860
         pass1_1028_b5a8, // 1028:5864
         pass1_1028_b5ca, // 1028:5868
-        FUN_1028_b4e6, // 1028:586c
-        FUN_1028_b4ec, // 1028:5870
+        NULL, // FUN_1028_b4e6, // 1028:586c
+        NULL, // FUN_1028_b4ec, // 1028:5870
         pass1_1028_b46e, // 1028:5874
         pass1_1028_c64a, // 1028:5878
         pass1_1028_c522, // 1028:587c
@@ -7554,9 +7559,9 @@ void *addr_table_1028_581c[] = {
 };
 
 void *addr_table_1028_58fe[] = {
-        FUN_1028_58d8, // 1028:58fe
+        NULL, // FUN_1028_58d8, // 1028:58fe
         pass1_1028_bb56, // 1028:5902
-        FUN_1030_178e, // 1028:5906
+        NULL, // FUN_1030_178e, // 1028:5906
         write_to_file_1028_b5ec, // 1028:590a
         file_1028_b81a, // 1028:590e
         pass1_1028_bc1c, // 1028:5912
@@ -7565,17 +7570,17 @@ void *addr_table_1028_58fe[] = {
         pass1_1028_bc7e, // 1028:591e
         pass1_1028_b514, // 1028:5922
         pass1_1028_be2a, // 1028:5926
-        FUN_1028_58d0, // 1028:592a
-        FUN_1028_58d4, // 1028:592e
-        FUN_1028_bf1e, // 1028:5932
+        NULL, // FUN_1028_58d0, // 1028:592a
+        NULL, // FUN_1028_58d4, // 1028:592e
+        NULL, // FUN_1028_bf1e, // 1028:5932
         pass1_1028_be9e, // 1028:5936
         pass1_1028_bf22, // 1028:593a
         pass1_1028_bbf0, // 1028:593e
         pass1_1028_bc02, // 1028:5942
         pass1_1028_b5a8, // 1028:5946
         pass1_1028_b5ca, // 1028:594a
-        FUN_1028_b4e6, // 1028:594e
-        FUN_1028_b4ec, // 1028:5952
+        NULL, // FUN_1028_b4e6, // 1028:594e
+        NULL, // FUN_1028_b4ec, // 1028:5952
         pass1_1028_b46e, // 1028:5956
         pass1_1028_c64a, // 1028:595a
         pass1_1028_c522, // 1028:595e
@@ -7583,9 +7588,9 @@ void *addr_table_1028_58fe[] = {
 };
 
 void *addr_table_1028_59e0[] = {
-        FUN_1028_59ba, // 1028:59e0
+        NULL, // FUN_1028_59ba, // 1028:59e0
         pass1_1028_bb56, // 1028:59e4
-        FUN_1030_178e, // 1028:59e8
+        NULL, // FUN_1030_178e, // 1028:59e8
         write_to_file_1028_b5ec, // 1028:59ec
         file_1028_b81a, // 1028:59f0
         pass1_1028_bc1c, // 1028:59f4
@@ -7594,27 +7599,27 @@ void *addr_table_1028_59e0[] = {
         pass1_1028_bc7e, // 1028:5a00
         pass1_1028_b514, // 1028:5a04
         pass1_1028_be2a, // 1028:5a08
-        FUN_1028_59b2, // 1028:5a0c
-        FUN_1028_59b6, // 1028:5a10
-        FUN_1028_bf1e, // 1028:5a14
+        NULL, // FUN_1028_59b2, // 1028:5a0c
+        NULL, // FUN_1028_59b6, // 1028:5a10
+        NULL, // FUN_1028_bf1e, // 1028:5a14
         pass1_1028_be9e, // 1028:5a18
         pass1_1028_bf22, // 1028:5a1c
         pass1_1028_bbf0, // 1028:5a20
         pass1_1028_bc02, // 1028:5a24
         pass1_1028_b5a8, // 1028:5a28
         pass1_1028_b5ca, // 1028:5a2c
-        FUN_1028_b4e6, // 1028:5a30
-        FUN_1028_b4ec, // 1028:5a34
+  NULL, //     FUN_1028_b4e6, // 1028:5a30
+  NULL, //      FUN_1028_b4ec, // 1028:5a34
         pass1_1028_b46e, // 1028:5a38
         pass1_1028_c64a, // 1028:5a3c
         pass1_1028_c522, // 1028:5a40
         pass1_1028_ced2, // 1028:5a44
 };
 
-vboid *addr_table_1028_5bec[] = {
+void *addr_table_1028_5bec[] = {
         pass1_1028_5bc6, // 1028:5bec
         pass1_1028_bb56, // 1028:5bf0
-        FUN_1030_178e, // 1028:5bf4
+        NULL, // FUN_1030_178e, // 1028:5bf4
         write_to_file_1028_b5ec, // 1028:5bf8
         file_1028_b81a, // 1028:5bfc
         pass1_1028_bc1c, // 1028:5c00
@@ -7623,17 +7628,17 @@ vboid *addr_table_1028_5bec[] = {
         pass1_1028_bc7e, // 1028:5c0c
         pass1_1028_b514, // 1028:5c10
         pass1_1028_5b42, // 1028:5c14
-        FUN_1028_bf16, // 1028:5c18
-        FUN_1028_bf1a, // 1028:5c1c
-        FUN_1028_bf1e, // 1028:5c20
+  NULL, // FUN_1028_bf16, // 1028:5c18
+  NULL, // FUN_1028_bf1a, // 1028:5c1c
+  NULL, //   FUN_1028_bf1e, // 1028:5c20
         pass1_1028_be9e, // 1028:5c24
         pass1_1028_bf22, // 1028:5c28
         pass1_1028_bbf0, // 1028:5c2c
         pass1_1028_bc02, // 1028:5c30
         pass1_1028_b5a8, // 1028:5c34
         pass1_1028_b5ca, // 1028:5c38
-        FUN_1028_b4e6, // 1028:5c3c
-        FUN_1028_b4ec, // 1028:5c40
+        NULL, // FUN_1028_b4e6, // 1028:5c3c
+        NULL, // FUN_1028_b4ec, // 1028:5c40
         pass1_1028_b46e, // 1028:5c44
         pass1_1028_c64a, // 1028:5c48
         pass1_1028_c522, // 1028:5c4c
@@ -7645,26 +7650,26 @@ vboid *addr_table_1028_5bec[] = {
 void *addr_table_1028_6054[] = {
         pass1_1028_602e, // 1028:6054
         pass1_1028_bb56, // 1028:6058
-        FUN_1030_178e, // 1028:605c
+        NULL, // FUN_1030_178e, // 1028:605c
         write_to_file_1028_5f82, // 1028:6060
-        FUN_1028_5fc8, // 1028:6064
+        NULL, // FUN_1028_5fc8, // 1028:6064
         pass1_1028_bc1c, // 1028:6068
         pass1_1028_bd38, // 1028:606c
         pass1_1028_bc90, // 1028:6070
         pass1_1028_bc7e, // 1028:6074
         pass1_1028_b514, // 1028:6078
         pass1_1028_6008, // 1028:607c
-        FUN_1028_bf16, // 1028:6080
-        FUN_1028_bf1a, // 1028:6084
-        FUN_1028_bf1e, // 1028:6088
-        FUN_1028_5f30, // 1028:608c
+        NULL, // FUN_1028_bf16, // 1028:6080
+        NULL, // FUN_1028_bf1a, // 1028:6084
+        NULL, // FUN_1028_bf1e, // 1028:6088
+        NULL, // FUN_1028_5f30, // 1028:608c
         pass1_1028_bf22, // 1028:6090
         pass1_1028_bbf0, // 1028:6094
         pass1_1028_bc02, // 1028:6098
         pass1_1028_b5a8, // 1028:609c
         pass1_1028_b5ca, // 1028:60a0
-        FUN_1028_b4e6, // 1028:60a4
-        FUN_1028_b4ec, // 1028:60a8
+        NULL, // FUN_1028_b4e6, // 1028:60a4
+        NULL, // FUN_1028_b4ec, // 1028:60a8
         pass1_1028_b46e, // 1028:60ac
         pass1_1028_c64a, // 1028:60b0
         pass1_1028_c522, // 1028:60b4
@@ -7672,9 +7677,9 @@ void *addr_table_1028_6054[] = {
 };
 
 void *addr_table_1028_42ec[] = {
-        FUN_1028_42c6, // 1028:42ec
+        NULL, // FUN_1028_42c6, // 1028:42ec
         pass1_1028_bb56, // 1028:42f0
-        FUN_1030_178e, // 1028:42f4
+        NULL, // FUN_1030_178e, // 1028:42f4
         write_to_file_1028_b5ec, // 1028:42f8
         file_1028_b81a, // 1028:42fc
         pass1_1028_bc1c, // 1028:4300
@@ -7683,17 +7688,17 @@ void *addr_table_1028_42ec[] = {
         pass1_1028_bc7e, // 1028:430c
         pass1_1028_41ea, // 1028:4310
         pass1_1028_be2a, // 1028:4314
-        FUN_1028_bf16, // 1028:4318
-        FUN_1028_42c2, // 1028:431c
-        FUN_1028_bf1e, // 1028:4320
+        NULL, // FUN_1028_bf16, // 1028:4318
+        NULL, // FUN_1028_42c2, // 1028:431c
+        NULL, // FUN_1028_bf1e, // 1028:4320
         pass1_1028_4194, // 1028:4324
         pass1_1028_bf22, // 1028:4328
         pass1_1028_bbf0, // 1028:432c
         pass1_1028_bc02, // 1028:4330
         pass1_1028_b5a8, // 1028:4334
         pass1_1028_b5ca, // 1028:4338
-        FUN_1028_b4e6, // 1028:433c
-        FUN_1028_b4ec, // 1028:4340
+        NULL, // FUN_1028_b4e6, // 1028:433c
+        NULL, // FUN_1028_b4ec, // 1028:4340
         pass1_1028_40b8, // 1028:4344
         pass1_1028_c64a, // 1028:4348
         pass1_1028_c522, // 1028:434c
@@ -7703,7 +7708,7 @@ void *addr_table_1028_42ec[] = {
 void *addr_table_1028_446a[] = {
         pass1_1028_4444, // 1028:446a
         pass1_1028_bb56, // 1028:446e
-        FUN_1030_178e, // 1028:4472
+        NULL, // FUN_1030_178e, // 1028:4472
         write_to_file_1028_b5ec, // 1028:4476
         file_1028_b81a, // 1028:447a
         pass1_1028_bc1c, // 1028:447e
@@ -7712,8 +7717,8 @@ void *addr_table_1028_446a[] = {
         pass1_1028_bc7e, // 1028:448a
         pass1_1028_b514, // 1028:448e
         pass1_1028_be2a, // 1028:4492
-        FUN_1028_bf16, // 1028:4496
-        FUN_1028_bf1a, // 1028:449a
+        NULL, // FUN_1028_bf16, // 1028:4496
+        NULL, // FUN_1028_bf1a, // 1028:449a
         pass1_1028_43f6, // 1028:449e
         pass1_1028_be9e, // 1028:44a2
         pass1_1028_bf22, // 1028:44a6
@@ -7721,7 +7726,7 @@ void *addr_table_1028_446a[] = {
         pass1_1028_bc02, // 1028:44ae
         pass1_1028_b5a8, // 1028:44b2
         pass1_1028_b5ca, // 1028:44b6
-        FUN_1028_b4e6, // 1028:44ba
+        NULL, // FUN_1028_b4e6, // 1028:44ba
         pass1_1028_43a0, // 1028:44be
         pass1_1028_b46e, // 1028:44c2
         pass1_1028_c64a, // 1028:44c6
@@ -7732,7 +7737,7 @@ void *addr_table_1028_446a[] = {
 void *addr_table_1028_4836[] = {
         pass1_1028_4810, // 1028:4836
         pass1_1028_bb56, // 1028:483a
-        FUN_1030_178e, // 1028:483e
+        NULL, // FUN_1030_178e, // 1028:483e
         write_to_file_1028_b5ec, // 1028:4842
         file_1028_b81a, // 1028:4846
         pass1_1028_bc1c, // 1028:484a
@@ -7741,17 +7746,17 @@ void *addr_table_1028_4836[] = {
         pass1_1028_bc7e, // 1028:4856
         pass1_1028_b514, // 1028:485a
         pass1_1028_be2a, // 1028:485e
-        FUN_1028_bf16, // 1028:4862
-        FUN_1028_bf1a, // 1028:4866
-        FUN_1028_bf1e, // 1028:486a
+        NULL, // FUN_1028_bf16, // 1028:4862
+        NULL, // FUN_1028_bf1a, // 1028:4866
+        NULL, // FUN_1028_bf1e, // 1028:486a
         pass1_1028_45b0, // 1028:486e
         pass1_1028_bf22, // 1028:4872
         pass1_1028_bbf0, // 1028:4876
         pass1_1028_4768, // 1028:487a
         pass1_1028_b5a8, // 1028:487e
         pass1_1028_b5ca, // 1028:4882
-        FUN_1028_b4e6, // 1028:4886
-        FUN_1028_b4ec, // 1028:488a
+        NULL, // FUN_1028_b4e6, // 1028:4886
+        NULL, // FUN_1028_b4ec, // 1028:488a
         pass1_1028_456e, // 1028:488e
         pass1_1028_c64a, // 1028:4892
         pass1_1028_c522, // 1028:4896
@@ -7759,9 +7764,9 @@ void *addr_table_1028_4836[] = {
 };
 
 void *addr_table_1028_4942[] = {
-        FUN_1028_491c, // 1028:4942
+        NULL, // FUN_1028_491c, // 1028:4942
         pass1_1028_bb56, // 1028:4946
-        FUN_1030_178e, // 1028:494a
+        NULL, // FUN_1030_178e, // 1028:494a
         write_to_file_1028_b5ec, // 1028:494e
         file_1028_b81a, // 1028:4952
         pass1_1028_bc1c, // 1028:4956
@@ -7769,18 +7774,18 @@ void *addr_table_1028_4942[] = {
         pass1_1028_bc90, // 1028:495e
         pass1_1028_48fa, // 1028:4962
         pass1_1028_b514, // 1028:4966
-        FUN_1028_490c, // 1028:496a
-        FUN_1028_4910, // 1028:496e
-        FUN_1028_4914, // 1028:4972
-        FUN_1028_bf1e, // 1028:4976
+        NULL, // FUN_1028_490c, // 1028:496a
+        NULL, // FUN_1028_4910, // 1028:496e
+        NULL, // FUN_1028_4914, // 1028:4972
+        NULL, // FUN_1028_bf1e, // 1028:4976
         pass1_1028_be9e, // 1028:497a
-        FUN_1028_4918, // 1028:497e
+        NULL, // FUN_1028_4918, // 1028:497e
         pass1_1028_bbf0, // 1028:4982
         pass1_1028_bc02, // 1028:4986
         pass1_1028_b5a8, // 1028:498a
         pass1_1028_b5ca, // 1028:498e
-        FUN_1028_b4e6, // 1028:4992
-        FUN_1028_b4ec, // 1028:4996
+        NULL, // FUN_1028_b4e6, // 1028:4992
+        NULL, // FUN_1028_b4ec, // 1028:4996
         pass1_1028_b46e, // 1028:499a
         pass1_1028_c64a, // 1028:499e
         pass1_1028_c522, // 1028:49a2
@@ -7791,7 +7796,7 @@ void *addr_table_1028_4942[] = {
 void *addr_table_1028_4b1c[] = {
         pass1_1028_4af6, // 1028:4b1c
         pass1_1028_bb56, // 1028:4b20
-        FUN_1030_178e, // 1028:4b24
+        NULL, // FUN_1030_178e, // 1028:4b24
         pass1_1028_4a1a, // 1028:4b28
         pass1_1028_4a5a, // 1028:4b2c
         pass1_1028_bc1c, // 1028:4b30
@@ -7800,17 +7805,17 @@ void *addr_table_1028_4b1c[] = {
         pass1_1028_bc7e, // 1028:4b3c
         pass1_1028_b514, // 1028:4b40
         pass1_1028_be2a, // 1028:4b44
-        FUN_1028_bf16, // 1028:4b48
+        NULL, // FUN_1028_bf16, // 1028:4b48
         pass1_1028_4aca, // 1028:4b4c
-        FUN_1028_bf1e, // 1028:4b50
+        NULL, // FUN_1028_bf1e, // 1028:4b50
         pass1_1028_be9e, // 1028:4b54
         pass1_1028_bf22, // 1028:4b58
         pass1_1028_bbf0, // 1028:4b5c
         pass1_1028_bc02, // 1028:4b60
         pass1_1028_b5a8, // 1028:4b64
         pass1_1028_b5ca, // 1028:4b68
-        FUN_1028_b4e6, // 1028:4b6c
-        FUN_1028_b4ec, // 1028:4b70
+        NULL, // FUN_1028_b4e6, // 1028:4b6c
+        NULL, // FUN_1028_b4ec, // 1028:4b70
         pass1_1028_b46e, // 1028:4b74
         pass1_1028_c64a, // 1028:4b78
         pass1_1028_c522, // 1028:4b7c
@@ -7820,7 +7825,7 @@ void *addr_table_1028_4b1c[] = {
 void *addr_table_1028_5070[] = {
         pass1_1028_504a, // 1028:5070
         pass1_1028_bb56, // 1028:5074
-        FUN_1030_178e, // 1028:5078
+        NULL, // FUN_1030_178e, // 1028:5078
         write_to_file_1028_b5ec, // 1028:507c
         file_1028_b81a, // 1028:5080
         pass1_1028_bc1c, // 1028:5084
@@ -7829,8 +7834,8 @@ void *addr_table_1028_5070[] = {
         pass1_1028_bc7e, // 1028:5090
         pass1_1028_4cd6, // 1028:5094
         pass1_1028_be2a, // 1028:5098
-        FUN_1028_bf16, // 1028:509c
-        FUN_1028_bf1a, // 1028:50a0
+        NULL, // FUN_1028_bf16, // 1028:509c
+        NULL, // FUN_1028_bf1a, // 1028:50a0
         pass1_1028_4f30, // 1028:50a4
         pass1_1028_be9e, // 1028:50a8
         pass1_1028_bf22, // 1028:50ac
@@ -7838,7 +7843,7 @@ void *addr_table_1028_5070[] = {
         pass1_1028_bc02, // 1028:50b4
         pass1_1028_b5a8, // 1028:50b8
         pass1_1028_b5ca, // 1028:50bc
-        FUN_1028_b4e6, // 1028:50c0
+        NULL, // FUN_1028_b4e6, // 1028:50c0
         pass1_1028_4bd0, // 1028:50c4
         pass1_1028_4bf2, // 1028:50c8
         pass1_1028_c64a, // 1028:50cc
@@ -7849,7 +7854,7 @@ void *addr_table_1028_5070[] = {
 void *addr_table_1028_34f6[] = {
         pass1_1028_34d0, // 1028:34f6
         pass1_1028_bb56, // 1028:34fa
-        FUN_1030_178e, // 1028:34fe
+        NULL, // FUN_1030_178e, // 1028:34fe
         write_to_file_1028_0234, // 1028:3502
         pass1_1028_0374, // 1028:3506
         pass1_1028_bc1c, // 1028:350a
@@ -7858,17 +7863,17 @@ void *addr_table_1028_34f6[] = {
         pass1_1028_bc7e, // 1028:3516
         pass1_1028_b514, // 1028:351a
         pass1_1028_01ec, // 1028:351e
-        FUN_1028_bf16, // 1028:3522
+        NULL, // FUN_1028_bf16, // 1028:3522
         pass1_1028_0582, // 1028:3526
-        FUN_1028_bf1e, // 1028:352a
+        NULL, // FUN_1028_bf1e, // 1028:352a
         pass1_1028_0550, // 1028:352e
         pass1_1028_bf22, // 1028:3532
         pass1_1028_04ee, // 1028:3536
         pass1_1028_bc02, // 1028:353a
         pass1_1028_b5a8, // 1028:353e
         pass1_1028_b5ca, // 1028:3542
-        FUN_1028_b4e6, // 1028:3546
-        FUN_1028_b4ec, // 1028:354a
+        NULL, // FUN_1028_b4e6, // 1028:3546
+        NULL, // FUN_1028_b4ec, // 1028:354a
         pass1_1028_0176, // 1028:354e
         pass1_1028_c64a, // 1028:3552
         pass1_1028_c522, // 1028:3556
@@ -7879,7 +7884,7 @@ void *addr_table_1028_34f6[] = {
 void *addr_table_1028_3608[] = {
         pass1_1028_35e2, // 1028:3608
         pass1_1028_bb56, // 1028:360c
-        FUN_1030_178e, // 1028:3610
+        NULL, // FUN_1030_178e, // 1028:3610
         write_to_file_1028_b5ec, // 1028:3614
         file_1028_b81a, // 1028:3618
         pass1_1028_bc1c, // 1028:361c
@@ -7888,8 +7893,8 @@ void *addr_table_1028_3608[] = {
         pass1_1028_bc7e, // 1028:3628
         pass1_1028_b514, // 1028:362c
         pass1_1028_be2a, // 1028:3630
-        FUN_1028_bf16, // 1028:3634
-        FUN_1028_bf1a, // 1028:3638
+        NULL, // FUN_1028_bf16, // 1028:3634
+        NULL, // FUN_1028_bf1a, // 1028:3638
         pass1_1028_35b0, // 1028:363c
         pass1_1028_be9e, // 1028:3640
         pass1_1028_bf22, // 1028:3644
@@ -7897,7 +7902,7 @@ void *addr_table_1028_3608[] = {
         pass1_1028_bc02, // 1028:364c
         pass1_1028_b5a8, // 1028:3650
         pass1_1028_b5ca, // 1028:3654
-        FUN_1028_b4e6, // 1028:3658
+        NULL, // FUN_1028_b4e6, // 1028:3658
         pass1_1028_35aa, // 1028:365c
         pass1_1028_b46e, // 1028:3660
         pass1_1028_c64a, // 1028:3664
@@ -7909,7 +7914,7 @@ void *addr_table_1028_3608[] = {
 void *addr_table_1028_373e[] = {
         pass1_1028_3718, // 1028:373e
         pass1_1028_bb56, // 1028:3742
-        FUN_1030_178e, // 1028:3746
+        NULL, // FUN_1030_178e, // 1028:3746
         write_to_file_1028_3d0e, // 1028:374a
         pass1_1028_3d92, // 1028:374e
         pass1_1028_bc1c, // 1028:3752
@@ -7918,17 +7923,17 @@ void *addr_table_1028_373e[] = {
         pass1_1028_bc7e, // 1028:375e
         pass1_1028_b514, // 1028:3762
         pass1_1028_be2a, // 1028:3766
-        FUN_1028_bf16, // 1028:376a
+        NULL, // FUN_1028_bf16, // 1028:376a
         pass1_1028_3958, // 1028:376e
-        FUN_1028_bf1e, // 1028:3772
+        NULL, // FUN_1028_bf1e, // 1028:3772
         pass1_1028_be9e, // 1028:3776
         pass1_1028_bf22, // 1028:377a
         pass1_1028_36bc, // 1028:377e
         pass1_1028_bc02, // 1028:3782
         pass1_1028_b5a8, // 1028:3786
         pass1_1028_b5ca, // 1028:378a
-        FUN_1028_b4e6, // 1028:378e
-        FUN_1028_b4ec, // 1028:3792
+        NULL, // FUN_1028_b4e6, // 1028:378e
+        NULL, // FUN_1028_b4ec, // 1028:3792
         pass1_1028_b46e, // 1028:3796
         pass1_1028_c64a, // 1028:379a
         pass1_1028_c522, // 1028:379e
@@ -7938,7 +7943,7 @@ void *addr_table_1028_373e[] = {
 void *addr_table_1028_4004[] = {
         pass1_1028_3fde, // 1028:4004
         pass1_1028_bb56, // 1028:4008
-        FUN_1030_178e, // 1028:400c
+        NULL, // FUN_1030_178e, // 1028:400c
         write_to_file_1028_b5ec, // 1028:4010
         file_1028_b81a, // 1028:4014
         pass1_1028_bc1c, // 1028:4018
@@ -7947,17 +7952,17 @@ void *addr_table_1028_4004[] = {
         pass1_1028_bc7e, // 1028:4024
         pass1_1028_b514, // 1028:4028
         pass1_1028_be2a, // 1028:402c
-        FUN_1028_bf16, // 1028:4030
+        NULL, // FUN_1028_bf16, // 1028:4030
         pass1_1028_3f04, // 1028:4034
-        FUN_1028_bf1e, // 1028:4038
+        NULL, // FUN_1028_bf1e, // 1028:4038
         pass1_1028_be9e, // 1028:403c
         pass1_1028_bf22, // 1028:4040
         pass1_1028_bbf0, // 1028:4044
         pass1_1028_bc02, // 1028:4048
         pass1_1028_b5a8, // 1028:404c
         pass1_1028_b5ca, // 1028:4050
-        FUN_1028_b4e6, // 1028:4054
-        FUN_1028_b4ec, // 1028:4058
+        NULL, // FUN_1028_b4e6, // 1028:4054
+        NULL, // FUN_1028_b4ec, // 1028:4058
         pass1_1028_b46e, // 1028:405c
         pass1_1028_c64a, // 1028:4060
         pass1_1028_c522, // 1028:4064
@@ -7967,7 +7972,7 @@ void *addr_table_1028_4004[] = {
 void *addr_table_1028_1eee[] = {
         pass1_1028_1ec8, // 1028:1eee
         pass1_1028_bb56, // 1028:1ef2
-        FUN_1030_178e, // 1028:1ef6
+        NULL, // FUN_1030_178e, // 1028:1ef6
         write_to_file_1028_b5ec, // 1028:1efa
         file_1028_b81a, // 1028:1efe
         pass1_1028_1c22, // 1028:1f02
@@ -7976,17 +7981,17 @@ void *addr_table_1028_1eee[] = {
         pass1_1028_bc7e, // 1028:1f0e
         pass1_1028_b514, // 1028:1f12
         pass1_1028_1c66, // 1028:1f16
-        FUN_1028_bf16, // 1028:1f1a
-        FUN_1028_bf1a, // 1028:1f1e
-        FUN_1028_bf1e, // 1028:1f22
+        NULL, // FUN_1028_bf16, // 1028:1f1a
+        NULL, // FUN_1028_bf1a, // 1028:1f1e
+        NULL, // FUN_1028_bf1e, // 1028:1f22
         pass1_1028_be9e, // 1028:1f26
         pass1_1028_bf22, // 1028:1f2a
         pass1_1028_bbf0, // 1028:1f2e
         pass1_1028_bc02, // 1028:1f32
         pass1_1028_b5a8, // 1028:1f36
         pass1_1028_b5ca, // 1028:1f3a
-        FUN_1028_b4e6, // 1028:1f3e
-        FUN_1028_b4ec, // 1028:1f42
+        NULL, // FUN_1028_b4e6, // 1028:1f3e
+        NULL, // FUN_1028_b4ec, // 1028:1f42
         pass1_1028_b46e, // 1028:1f46
         pass1_1028_1cca, // 1028:1f4a
         pass1_1028_1da4, // 1028:1f4e
@@ -7996,7 +8001,7 @@ void *addr_table_1028_1eee[] = {
 void *addr_table_1028_264c[] = {
         pass1_1028_2626, // 1028:264c
         pass1_1028_bb56, // 1028:2650
-        FUN_1030_178e, // 1028:2654
+        NULL, // FUN_1030_178e, // 1028:2654
         write_to_file_1028_b5ec, // 1028:2658
         file_1028_b81a, // 1028:265c
         pass1_1028_bc1c, // 1028:2660
@@ -8005,17 +8010,17 @@ void *addr_table_1028_264c[] = {
         pass1_1028_bc7e, // 1028:266c
         pass1_1028_b514, // 1028:2670
         pass1_1028_be2a, // 1028:2674
-        FUN_1028_bf16, // 1028:2678
-        FUN_1028_bf1a, // 1028:267c
-        FUN_1028_bf1e, // 1028:2680
+        NULL, // FUN_1028_bf16, // 1028:2678
+        NULL, // FUN_1028_bf1a, // 1028:267c
+        NULL, // FUN_1028_bf1e, // 1028:2680
         pass1_1028_be9e, // 1028:2684
         pass1_1028_bf22, // 1028:2688
         pass1_1028_bbf0, // 1028:268c
         pass1_1028_bc02, // 1028:2690
         pass1_1028_b5a8, // 1028:2694
         pass1_1028_b5ca, // 1028:2698
-        FUN_1028_b4e6, // 1028:269c
-        FUN_1028_b4ec, // 1028:26a0
+        NULL, // FUN_1028_b4e6, // 1028:269c
+        NULL, // FUN_1028_b4ec, // 1028:26a0
         pass1_1028_b46e, // 1028:26a4
         pass1_1028_c64a, // 1028:26a8
         pass1_1028_c522, // 1028:26ac
@@ -8025,7 +8030,7 @@ void *addr_table_1028_264c[] = {
 void *addr_table_1028_2788[] = {
         pass1_1028_2762, // 1028:2788
         pass1_1028_bb56, // 1028:278c
-        FUN_1030_178e, // 1028:2790
+        NULL, // FUN_1030_178e, // 1028:2790
         write_to_file_1028_b5ec, // 1028:2794
         file_1028_b81a, // 1028:2798
         pass1_1028_bc1c, // 1028:279c
@@ -8034,17 +8039,17 @@ void *addr_table_1028_2788[] = {
         pass1_1028_bc7e, // 1028:27a8
         pass1_1028_b514, // 1028:27ac
         pass1_1028_2700, // 1028:27b0
-        FUN_1028_bf16, // 1028:27b4
-        FUN_1028_bf1a, // 1028:27b8
-        FUN_1028_bf1e, // 1028:27bc
+        NULL, // FUN_1028_bf16, // 1028:27b4
+        NULL, // FUN_1028_bf1a, // 1028:27b8
+        NULL, // FUN_1028_bf1e, // 1028:27bc
         pass1_1028_272e, // 1028:27c0
         pass1_1028_bf22, // 1028:27c4
         pass1_1028_bbf0, // 1028:27c8
         pass1_1028_bc02, // 1028:27cc
         pass1_1028_b5a8, // 1028:27d0
         pass1_1028_b5ca, // 1028:27d4
-        FUN_1028_b4e6, // 1028:27d8
-        FUN_1028_b4ec, // 1028:27dc
+        NULL, // FUN_1028_b4e6, // 1028:27d8
+        NULL, // FUN_1028_b4ec, // 1028:27dc
         pass1_1028_b46e, // 1028:27e0
         pass1_1028_c64a, // 1028:27e4
         pass1_1028_c522, // 1028:27e8
@@ -8054,7 +8059,7 @@ void *addr_table_1028_2788[] = {
 void *addr_table_1028_2a92[] = {
         pass1_1028_2a6c, // 1028:2a92
         pass1_1028_bb56, // 1028:2a96
-        FUN_1030_178e, // 1028:2a9a
+        NULL, // FUN_1030_178e, // 1028:2a9a
         write_to_file_1028_b5ec, // 1028:2a9e
         file_1028_b81a, // 1028:2aa2
         pass1_1028_bc1c, // 1028:2aa6
@@ -8063,17 +8068,17 @@ void *addr_table_1028_2a92[] = {
         pass1_1028_bc7e, // 1028:2ab2
         pass1_1028_b514, // 1028:2ab6
         pass1_1028_be2a, // 1028:2aba
-        FUN_1028_bf16, // 1028:2abe
-        FUN_1028_bf1a, // 1028:2ac2
-        FUN_1028_bf1e, // 1028:2ac6
+        NULL, // FUN_1028_bf16, // 1028:2abe
+        NULL, // FUN_1028_bf1a, // 1028:2ac2
+        NULL, // FUN_1028_bf1e, // 1028:2ac6
         pass1_1028_be9e, // 1028:2aca
         pass1_1028_bf22, // 1028:2ace
         pass1_1028_bbf0, // 1028:2ad2
         pass1_1028_bc02, // 1028:2ad6
         pass1_1028_b5a8, // 1028:2ada
         pass1_1028_b5ca, // 1028:2ade
-        FUN_1028_b4e6, // 1028:2ae2
-        FUN_1028_b4ec, // 1028:2ae6
+        NULL, // FUN_1028_b4e6, // 1028:2ae2
+        NULL, // FUN_1028_b4ec, // 1028:2ae6
         pass1_1028_b46e, // 1028:2aea
         pass1_1028_2844, // 1028:2aee
         pass1_1028_c522, // 1028:2af2
@@ -8084,26 +8089,26 @@ void *addr_table_1028_2a92[] = {
 void *addr_table_1028_2b74[] = {
         pass1_1028_2b4e, // 1028:2b74
         pass1_1028_bb56, // 1028:2b78
-        FUN_1030_178e, // 1028:2b7c
+        NULL, // FUN_1030_178e, // 1028:2b7c
         pass1_1030_de7c, // 1028:2b80
         pass1_1030_dec4, // 1028:2b84
         pass1_1028_bc1c, // 1028:2b88
-        FUN_1028_2b46, // 1028:2b8c
+        NULL, // FUN_1028_2b46, // 1028:2b8c
         pass1_1028_bc90, // 1028:2b90
         pass1_1028_bc7e, // 1028:2b94
         pass1_1028_b514, // 1028:2b98
         pass1_1028_be2a, // 1028:2b9c
-        FUN_1028_bf16, // 1028:2ba0
-        FUN_1028_2b4a, // 1028:2ba4
-        FUN_1028_bf1e, // 1028:2ba8
+        NULL, // FUN_1028_bf16, // 1028:2ba0
+        NULL, // FUN_1028_2b4a, // 1028:2ba4
+        NULL, // FUN_1028_bf1e, // 1028:2ba8
         pass1_1028_be9e, // 1028:2bac
         pass1_1028_bf22, // 1028:2bb0
         pass1_1028_bbf0, // 1028:2bb4
         pass1_1028_bc02, // 1028:2bb8
         pass1_1028_b5a8, // 1028:2bbc
         pass1_1028_b5ca, // 1028:2bc0
-        FUN_1028_b4e6, // 1028:2bc4
-        FUN_1028_b4ec, // 1028:2bc8
+        NULL, // FUN_1028_b4e6, // 1028:2bc4
+        NULL, // FUN_1028_b4ec, // 1028:2bc8
         pass1_1028_b46e, // 1028:2bcc
         pass1_1028_c64a, // 1028:2bd0
         pass1_1028_c522, // 1028:2bd4
@@ -8114,7 +8119,7 @@ void *addr_table_1028_2b74[] = {
 void *addr_table_1028_341c[] = {
         pass1_1028_33f6, // 1028:341c
         pass1_1028_bb56, // 1028:3420
-        FUN_1030_178e, // 1028:3424
+        NULL, // FUN_1030_178e, // 1028:3424
         write_to_file_1028_b5ec, // 1028:3428
         file_1028_b81a, // 1028:342c
         pass1_1028_bc1c, // 1028:3430
@@ -8123,17 +8128,17 @@ void *addr_table_1028_341c[] = {
         pass1_1028_bc7e, // 1028:343c
         pass1_1028_b514, // 1028:3440
         pass1_1028_be2a, // 1028:3444
-        FUN_1028_bf16, // 1028:3448
-        FUN_1028_bf1a, // 1028:344c
-        FUN_1028_bf1e, // 1028:3450
+        NULL, // FUN_1028_bf16, // 1028:3448
+        NULL, // FUN_1028_bf1a, // 1028:344c
+        NULL, // FUN_1028_bf1e, // 1028:3450
         pass1_1028_2e40, // 1028:3454
         pass1_1028_bf22, // 1028:3458
         pass1_1028_bbf0, // 1028:345c
         pass1_1028_bc02, // 1028:3460
         pass1_1028_b5a8, // 1028:3464
         pass1_1028_b5ca, // 1028:3468
-        FUN_1028_b4e6, // 1028:346c
-        FUN_1028_b4ec, // 1028:3470
+  NULL, // FUN_1028_b4e6, // 1028:346c
+  NULL, // FUN_1028_b4ec, // 1028:3470
         pass1_1028_b46e, // 1028:3474
         pass1_1028_c64a, // 1028:3478
         pass1_1028_c522, // 1028:347c
@@ -8142,39 +8147,39 @@ void *addr_table_1028_341c[] = {
 };
 
 void *addr_table_1028_0bbc[] = {
-        1028:0bbc 96  0b  28  10    addr       pass1_1028_0b96
-        1028:0bc0 56  bb  28  10    addr       pass1_1028_bb56
-        1028:0bc4 8e  17  30  10    addr       FUN_1030_178e
-        1028:0bc8 ec  b5  28  10    addr       write_to_file_1028_b5ec
-        1028:0bcc 1a  b8  28  10    addr       file_1028_b81a
-        1028:0bd0 1c  bc  28  10    addr       pass1_1028_bc1c
-        1028:0bd4 38  bd  28  10    addr       pass1_1028_bd38
-        1028:0bd8 90  bc  28  10    addr       pass1_1028_bc90
-        1028:0bdc 7e  bc  28  10    addr       pass1_1028_bc7e
-        1028:0be0 14  b5  28  10    addr       pass1_1028_b514
-        1028:0be4 2a  be  28  10    addr       pass1_1028_be2a
-        1028:0be8 8e  0b  28  10    addr       FUN_1028_0b8e
-        1028:0bec 92  0b  28  10    addr       FUN_1028_0b92
-        1028:0bf0 1e  bf  28  10    addr       FUN_1028_bf1e
-        1028:0bf4 9e  be  28  10    addr       pass1_1028_be9e
-        1028:0bf8 22  bf  28  10    addr       pass1_1028_bf22
-        1028:0bfc f0  bb  28  10    addr       pass1_1028_bbf0
-        1028:0c00 02  bc  28  10    addr       pass1_1028_bc02
-        1028:0c04 a8  b5  28  10    addr       pass1_1028_b5a8
-        1028:0c08 ca  b5  28  10    addr       pass1_1028_b5ca
-        1028:0c0c e6  b4  28  10    addr       FUN_1028_b4e6
-        1028:0c10 ec  b4  28  10    addr       FUN_1028_b4ec
-        1028:0c14 6e  b4  28  10    addr       pass1_1028_b46e
-        1028:0c18 4a  c6  28  10    addr       pass1_1028_c64a
-        1028:0c1c 22  c5  28  10    addr       pass1_1028_c522
-        1028:0c20 d2  ce  28  10    addr       pass1_1028_ced2
+        pass1_1028_0b96, // 1028:0bbc
+        pass1_1028_bb56, // 1028:0bc0
+        NULL, // FUN_1030_178e, // 1028:0bc4
+        write_to_file_1028_b5ec, // 1028:0bc8
+        file_1028_b81a, // 1028:0bcc
+        pass1_1028_bc1c, // 1028:0bd0
+        pass1_1028_bd38, // 1028:0bd4
+        pass1_1028_bc90, // 1028:0bd8
+        pass1_1028_bc7e, // 1028:0bdc
+        pass1_1028_b514, // 1028:0be0
+        pass1_1028_be2a, // 1028:0be4
+        NULL, // FUN_1028_0b8e, // 1028:0be8
+        NULL, // FUN_1028_0b92, // 1028:0bec
+        NULL, // FUN_1028_bf1e, // 1028:0bf0
+        pass1_1028_be9e, // 1028:0bf4
+        pass1_1028_bf22, // 1028:0bf8
+        pass1_1028_bbf0, // 1028:0bfc
+        pass1_1028_bc02, // 1028:0c00
+        pass1_1028_b5a8, // 1028:0c04
+        pass1_1028_b5ca, // 1028:0c08
+        NULL, // FUN_1028_b4e6, // 1028:0c0c
+        NULL, // FUN_1028_b4ec, // 1028:0c10
+        pass1_1028_b46e, // 1028:0c14
+        pass1_1028_c64a, // 1028:0c18
+        pass1_1028_c522, // 1028:0c1c
+        pass1_1028_ced2, // 1028:0c20
 
 };
 
 void *addr_table_1028_1724[] = {
         pass1_1028_16fe, // 1028:1724
         pass1_1028_bb56, // 1028:1728
-        FUN_1030_178e, // 1028:172c
+        NULL, // FUN_1030_178e, // 1028:172c
         write_to_file_1028_1452, // 1028:1730
         pass1_1028_14d8, // 1028:1734
         pass1_1028_bc1c, // 1028:1738
@@ -8184,16 +8189,16 @@ void *addr_table_1028_1724[] = {
         pass1_1028_0d9c, // 1028:1748
         pass1_1028_0ea6, // 1028:174c
         pass1_1028_134a, // 1028:1750
-        FUN_1028_bf1a, // 1028:1754
-        FUN_1028_bf1e, // 1028:1758
+        NULL, // FUN_1028_bf1a, // 1028:1754
+        NULL, // FUN_1028_bf1e, // 1028:1758
         pass1_1028_0fa4, // 1028:175c
         pass1_1028_bf22, // 1028:1760
         pass1_1028_12be, // 1028:1764
         pass1_1028_bc02, // 1028:1768
         pass1_1028_b5a8, // 1028:176c
         pass1_1028_b5ca, // 1028:1770
-        FUN_1028_b4e6, // 1028:1774
-        FUN_1028_b4ec, // 1028:1778
+        NULL, // FUN_1028_b4e6, // 1028:1774
+        NULL, // FUN_1028_b4ec, // 1028:1778
         pass1_1028_0c84, // 1028:177c
         pass1_1028_c64a, // 1028:1780
         pass1_1028_c522, // 1028:1784
@@ -8204,7 +8209,7 @@ void *addr_table_1028_1724[] = {
 void *addr_table_1028_1b54[] = {
         pass1_1028_1b2e, // 1028:1b54
         pass1_1028_bb56, // 1028:1b58
-        FUN_1030_178e, // 1028:1b5c
+        NULL, // FUN_1030_178e, // 1028:1b5c
         pass1_1030_de7c, // 1028:1b60
         pass1_1030_dec4, // 1028:1b64
         pass1_1028_bc1c, // 1028:1b68
@@ -8213,17 +8218,17 @@ void *addr_table_1028_1b54[] = {
         pass1_1028_1812, // 1028:1b74
         pass1_1028_b514, // 1028:1b78
         pass1_1028_be2a, // 1028:1b7c
-        FUN_1028_bf16, // 1028:1b80
-        FUN_1028_bf1a, // 1028:1b84
-        FUN_1028_bf1e, // 1028:1b88
+        NULL, // FUN_1028_bf16, // 1028:1b80
+        NULL, // FUN_1028_bf1a, // 1028:1b84
+        NULL, // FUN_1028_bf1e, // 1028:1b88
         pass1_1028_199a, // 1028:1b8c
         pass1_1028_1b1e, // 1028:1b90
         pass1_1028_bbf0, // 1028:1b94
         pass1_1028_bc02, // 1028:1b98
         pass1_1028_b5a8, // 1028:1b9c
         pass1_1028_b5ca, // 1028:1ba0
-        FUN_1028_b4e6, // 1028:1ba4
-        FUN_1028_b4ec, // 1028:1ba8
+        NULL, // FUN_1028_b4e6, // 1028:1ba4
+        NULL, // FUN_1028_b4ec, // 1028:1ba8
         pass1_1028_b46e, // 1028:1bac
         pass1_1028_c64a, // 1028:1bb0
         pass1_1028_c522, // 1028:1bb4
@@ -8231,40 +8236,40 @@ void *addr_table_1028_1b54[] = {
 
 };
 
-void *addr_table_1028_0ada[] = {
-        pass1_1028_0ab4, // 1028:0ada
-        pass1_1028_bb56, // 1028:0ade
-        FUN_1030_178e, // 1028:0ae2
-        write_to_file_1028_b5ec, // 1028:0ae6
-        file_1028_b81a, // 1028:0aea
-        pass1_1028_bc1c, // 1028:0aee
-        pass1_1028_09b8, // 1028:0af2
-        pass1_1028_09d4, // 1028:0af6
-        pass1_1028_bc7e, // 1028:0afa
-        pass1_1028_b514, // 1028:0afe
-        pass1_1028_be2a, // 1028:0b02
-        FUN_1028_bf16, // 1028:0b06
-        FUN_1028_bf1a, // 1028:0b0a
-        FUN_1028_bf1e, // 1028:0b0e
-        pass1_1028_be9e, // 1028:0b12
-        pass1_1028_bf22, // 1028:0b16
-        pass1_1028_bbf0, // 1028:0b1a
-        pass1_1028_bc02, // 1028:0b1e
-        pass1_1028_b5a8, // 1028:0b22
-        pass1_1028_b5ca, // 1028:0b26
-        FUN_1028_b4e6, // 1028:0b2a
-        FUN_1028_b4ec, // 1028:0b2e
-        pass1_1028_b46e, // 1028:0b32
-        pass1_1028_c64a, // 1028:0b36
-        pass1_1028_c522, // 1028:0b3a
-        pass1_1028_ced2, // 1028:0b3e
-
-};
+//void *addr_table_1028_0ada[] = {
+//        pass1_1028_0ab4, // 1028:0ada
+//        pass1_1028_bb56, // 1028:0ade
+//        NULL, // FUN_1030_178e, // 1028:0ae2
+//        write_to_file_1028_b5ec, // 1028:0ae6
+//        file_1028_b81a, // 1028:0aea
+//        pass1_1028_bc1c, // 1028:0aee
+//        pass1_1028_09b8, // 1028:0af2
+//        pass1_1028_09d4, // 1028:0af6
+//        pass1_1028_bc7e, // 1028:0afa
+//        pass1_1028_b514, // 1028:0afe
+//        pass1_1028_be2a, // 1028:0b02
+//        NULL, // FUN_1028_bf16, // 1028:0b06
+//        NULL, // FUN_1028_bf1a, // 1028:0b0a
+//        NULL, // FUN_1028_bf1e, // 1028:0b0e
+//        pass1_1028_be9e, // 1028:0b12
+//        pass1_1028_bf22, // 1028:0b16
+//        pass1_1028_bbf0, // 1028:0b1a
+//        pass1_1028_bc02, // 1028:0b1e
+//        pass1_1028_b5a8, // 1028:0b22
+//        pass1_1028_b5ca, // 1028:0b26
+//        NULL, // FUN_1028_b4e6, // 1028:0b2a
+//        NULL, // FUN_1028_b4ec, // 1028:0b2e
+//        pass1_1028_b46e, // 1028:0b32
+//        pass1_1028_c64a, // 1028:0b36
+//        pass1_1028_c522, // 1028:0b3a
+//        pass1_1028_ced2, // 1028:0b3e
+//
+//};
 
 void *addr_table_1040_b772[] = {
         pass1_1028_0ab4, // 1028:0ada
         pass1_1028_bb56, // 1028:0ade
-        FUN_1030_178e, // 1028:0ae2
+        NULL, // FUN_1030_178e, // 1028:0ae2
         write_to_file_1028_b5ec, // 1028:0ae6
         file_1028_b81a, // 1028:0aea
         pass1_1028_bc1c, // 1028:0aee
@@ -8273,17 +8278,17 @@ void *addr_table_1040_b772[] = {
         pass1_1028_bc7e, // 1028:0afa
         pass1_1028_b514, // 1028:0afe
         pass1_1028_be2a, // 1028:0b02
-        FUN_1028_bf16, // 1028:0b06
-        FUN_1028_bf1a, // 1028:0b0a
-        FUN_1028_bf1e, // 1028:0b0e
+        NULL, // FUN_1028_bf16, // 1028:0b06
+        NULL, // FUN_1028_bf1a, // 1028:0b0a
+        NULL, // FUN_1028_bf1e, // 1028:0b0e
         pass1_1028_be9e, // 1028:0b12
         pass1_1028_bf22, // 1028:0b16
         pass1_1028_bbf0, // 1028:0b1a
         pass1_1028_bc02, // 1028:0b1e
         pass1_1028_b5a8, // 1028:0b22
         pass1_1028_b5ca, // 1028:0b26
-        FUN_1028_b4e6, // 1028:0b2a
-        FUN_1028_b4ec, // 1028:0b2e
+        NULL, // FUN_1028_b4e6, // 1028:0b2a
+        NULL, // FUN_1028_b4ec, // 1028:0b2e
         pass1_1028_b46e, // 1028:0b32
         pass1_1028_c64a, // 1028:0b36
         pass1_1028_c522, // 1028:0b3a
@@ -8304,16 +8309,16 @@ void *addr_table_1040_b772[] = {
         win_ui_op_1040_b372, // 1040:b7a6
         unk_win_ui_op_1040_8158, // 1040:b7aa
         check_dialog_msg_1040_81b6, // 1040:b7ae
-        win_ui_op_1040_81fe, // 1040:b7b2
-        FUN_1018_60ea, // 1040:b7b6
+  set_sys_modal_window_1040_81fe, // 1040:b7b2
+  NULL, // FUN_1018_60ea, // 1040:b7b6
         pass1_1040_824a, // 1040:b7ba
-        FUN_1040_8266, // 1040:b7be
+  NULL, //    FUN_1040_8266, // 1040:b7be
         pass1_1040_78de, // 1040:b7c2
-        FUN_1018_60ee, // 1040:b7c6
-        FUN_1018_60f4, // 1040:b7ca
+  NULL, //     FUN_1018_60ee, // 1040:b7c6
+  NULL, //     FUN_1018_60f4, // 1040:b7ca
         pass1_1040_b4c8, // 1040:b7ce
-        FUN_1038_8842, // 1040:b7d2
-        FUN_1018_60fe, // 1040:b7d6
+  NULL, //    FUN_1038_8842, // 1040:b7d2
+  NULL, //     FUN_1018_60fe, // 1040:b7d6
         pass1_1040_807e, // 1040:b7da
         show_win_1040_b43c, // 1040:b7de
         pass1_1040_b45e, // 1040:b7e2
@@ -8339,16 +8344,16 @@ void *addr_table_1040_4466[] = {
         set_text_bk_color_1040_7e5e, // 1040:449a
         unk_win_ui_op_1040_8158, // 1040:449e
         check_dialog_msg_1040_81b6, // 1040:44a2
-        win_ui_op_1040_81fe, // 1040:44a6
-        FUN_1018_60ea, // 1040:44aa
+  set_sys_modal_window_1040_81fe, // 1040:44a6
+  NULL, // FUN_1018_60ea, // 1040:44aa
         pass1_1040_824a, // 1040:44ae
-        FUN_1040_8266, // 1040:44b2
+  NULL, //    FUN_1040_8266, // 1040:44b2
         pass1_1040_78de, // 1040:44b6
-        FUN_1018_60ee, // 1040:44ba
-        FUN_1018_60f4, // 1040:44be
-        FUN_1018_60fa, // 1040:44c2
-        FUN_1038_a2a4, // 1040:44c6
-        FUN_1018_60fe, // 1040:44ca
+  NULL, //     FUN_1018_60ee, // 1040:44ba
+  NULL, //     FUN_1018_60f4, // 1040:44be
+  NULL, //    FUN_1018_60fa, // 1040:44c2
+  NULL, //     FUN_1038_a2a4, // 1040:44c6
+  NULL, //    FUN_1018_60fe, // 1040:44ca
         pass1_1040_807e, // 1040:44ce
 
 };
@@ -8370,16 +8375,16 @@ void *addr_table_1040_840c[] = {
         set_text_bk_color_1040_7e5e, // 1040:8440
         unk_win_ui_op_1040_8158, // 1040:8444
         check_dialog_msg_1040_81b6, // 1040:8448
-        win_ui_op_1040_81fe, // 1040:844c
-        FUN_1018_60ea, // 1040:8450
+  set_sys_modal_window_1040_81fe, // 1040:844c
+  NULL, // FUN_1018_60ea, // 1040:8450
         pass1_1040_824a, // 1040:8454
-        FUN_1040_8266, // 1040:8458
+  NULL, //    FUN_1040_8266, // 1040:8458
         pass1_1040_78de, // 1040:845c
-        FUN_1018_60ee, // 1040:8460
-        FUN_1018_60f4, // 1040:8464
-        FUN_1018_60fa, // 1040:8468
-        FUN_1038_a2a4, // 1040:846c
-        FUN_1018_60fe, // 1040:8470
+  NULL, //    FUN_1018_60ee, // 1040:8460
+  NULL, //    FUN_1018_60f4, // 1040:8464
+  NULL, //    FUN_1018_60fa, // 1040:8468
+  NULL, //    FUN_1038_a2a4, // 1040:846c
+  NULL, //     FUN_1018_60fe, // 1040:8470
         pass1_1040_807e, // 1040:8474
 
 };
@@ -8401,16 +8406,16 @@ void *addr_table_1040_4824[] = {
         win_ui_op_1040_b372, // 1040:4858
         unk_win_ui_op_1040_8158, // 1040:485c
         check_dialog_msg_1040_81b6, // 1040:4860
-        win_ui_op_1040_81fe, // 1040:4864
-        FUN_1018_60ea, // 1040:4868
+  set_sys_modal_window_1040_81fe, // 1040:4864
+  NULL, // FUN_1018_60ea, // 1040:4868
         pass1_1040_824a, // 1040:486c
-        FUN_1040_8266, // 1040:4870
+  NULL, //      FUN_1040_8266, // 1040:4870
         pass1_1040_4766, // 1040:4874
-        FUN_1018_60ee, // 1040:4878
-        FUN_1018_60f4, // 1040:487c
+  NULL, //    FUN_1018_60ee, // 1040:4878
+  NULL, //    FUN_1018_60f4, // 1040:487c
         pass1_1040_b4c8, // 1040:4880
-        FUN_1038_8842, // 1040:4884
-        FUN_1018_60fe, // 1040:4888
+  NULL, //    FUN_1038_8842, // 1040:4884
+  NULL, //    FUN_1018_60fe, // 1040:4888
         pass1_1040_807e, // 1040:488c
         show_win_1040_b43c, // 1040:4890
         pass1_1040_b45e, // 1040:4894
@@ -8435,16 +8440,16 @@ void *addr_table_1040_2956[] = {
         draw_ui_op_1040_27cc, // 1040:298a
         unk_win_ui_op_1040_8158, // 1040:298e
         check_dialog_msg_1040_81b6, // 1040:2992
-        win_ui_op_1040_81fe, // 1040:2996
-        FUN_1018_60ea, // 1040:299a
+  set_sys_modal_window_1040_81fe, // 1040:2996
+  NULL, // FUN_1018_60ea, // 1040:299a
         pass1_1040_824a, // 1040:299e
-        FUN_1040_8266, // 1040:29a2
+  NULL, //     FUN_1040_8266, // 1040:29a2
         pass1_1040_78de, // 1040:29a6
-        FUN_1018_60ee, // 1040:29aa
-        FUN_1018_60f4, // 1040:29ae
-        FUN_1018_60fa, // 1040:29b2
-        FUN_1038_a2a4, // 1040:29b6
-        FUN_1018_60fe, // 1040:29ba
+  NULL, //    FUN_1018_60ee, // 1040:29aa
+  NULL, //    FUN_1018_60f4, // 1040:29ae
+  NULL, //     FUN_1018_60fa, // 1040:29b2
+  NULL, //     FUN_1038_a2a4, // 1040:29b6
+  NULL, //      FUN_1018_60fe, // 1040:29ba
         pass1_1040_288e, // 1040:29be
 
 };
@@ -8466,16 +8471,16 @@ void *addr_table_1040_3436[] = {
         set_text_bk_color_1040_7e5e, // 1040:346a
         unk_win_ui_op_1040_8158, // 1040:346e
         check_dialog_msg_1040_81b6, // 1040:3472
-        win_ui_op_1040_81fe, // 1040:3476
-        FUN_1018_60ea, // 1040:347a
+  set_sys_modal_window_1040_81fe, // 1040:3476
+  NULL, // FUN_1018_60ea, // 1040:347a
         pass1_1040_824a, // 1040:347e
-        FUN_1040_8266, // 1040:3482
+  NULL, //     FUN_1040_8266, // 1040:3482
         win_dlg_op_1040_2f90, // 1040:3486
-        FUN_1018_60ee, // 1040:348a
-        FUN_1018_60f4, // 1040:348e
-        FUN_1018_60fa, // 1040:3492
-        FUN_1038_a2a4, // 1040:3496
-        FUN_1018_60fe, // 1040:349a
+  NULL, //    FUN_1018_60ee, // 1040:348a
+  NULL, //     FUN_1018_60f4, // 1040:348e
+  NULL, //    FUN_1018_60fa, // 1040:3492
+  NULL, //    FUN_1038_a2a4, // 1040:3496
+  NULL, //     FUN_1018_60fe, // 1040:349a
         pass1_1040_807e, // 1040:349e
 
 };
@@ -8497,16 +8502,16 @@ void *addr_table_1040_38fa[] = {
         set_text_bk_color_1040_7e5e, // 1040:392e
         unk_win_ui_op_1040_8158, // 1040:3932
         check_dialog_msg_1040_81b6, // 1040:3936
-        win_ui_op_1040_81fe, // 1040:393a
-        FUN_1018_60ea, // 1040:393e
+  set_sys_modal_window_1040_81fe, // 1040:393a
+  NULL, // FUN_1018_60ea, // 1040:393e
         pass1_1040_824a, // 1040:3942
-        FUN_1040_8266, // 1040:3946
+  NULL, //    FUN_1040_8266, // 1040:3946
         set_win_text_1040_3590, // 1040:394a
-        FUN_1018_60ee, // 1040:394e
-        FUN_1018_60f4, // 1040:3952
-        FUN_1018_60fa, // 1040:3956
-        FUN_1038_a2a4, // 1040:395a
-        FUN_1018_60fe, // 1040:395e
+  NULL, //    FUN_1018_60ee, // 1040:394e
+  NULL, // FUN_1018_60f4, // 1040:3952
+  NULL, // FUN_1018_60fa, // 1040:3956
+  NULL, // FUN_1038_a2a4, // 1040:395a
+  NULL, // FUN_1018_60fe, // 1040:395e
         pass1_1040_807e, // 1040:3962
 
 };
@@ -8521,23 +8526,23 @@ void *addr_table_1040_17b0[] = {
         post_win_msg_1040_7f56, // 1040:17c8
         draw_op_1040_7bb2, // 1040:17cc
         post_win_msg_1040_7f1c, // 1040:17d0
-        FUN_1040_1786, // 1040:17d4
+  NULL, // FUN_1040_1786, // 1040:17d4
         menu_ui_op_1040_7f86, // 1040:17d8
         win_help_1040_800c, // 1040:17dc
         pass1_1040_8054, // 1040:17e0
         set_text_bk_color_1040_7e5e, // 1040:17e4
         unk_win_ui_op_1040_8158, // 1040:17e8
         check_dialog_msg_1040_81b6, // 1040:17ec
-        win_ui_op_1040_81fe, // 1040:17f0
-        FUN_1018_60ea, // 1040:17f4
+  set_sys_modal_window_1040_81fe, // 1040:17f0
+  NULL, //   FUN_1018_60ea, // 1040:17f4
         pass1_1040_824a, // 1040:17f8
-        FUN_1040_8266, // 1040:17fc
+  NULL, //    FUN_1040_8266, // 1040:17fc
         pass1_1040_78de, // 1040:1800
-        FUN_1018_60ee, // 1040:1804
-        FUN_1018_60f4, // 1040:1808
-        FUN_1018_60fa, // 1040:180c
-        FUN_1038_a2a4, // 1040:1810
-        FUN_1018_60fe, // 1040:1814
+  NULL, //    FUN_1018_60ee, // 1040:1804
+  NULL, //    FUN_1018_60f4, // 1040:1808
+  NULL, //     FUN_1018_60fa, // 1040:180c
+  NULL, //      FUN_1038_a2a4, // 1040:1810
+  NULL, //   FUN_1018_60fe, // 1040:1814
         pass1_1040_807e, // 1040:1818
 
 };
@@ -8552,23 +8557,23 @@ void *addr_table_1040_1c48[] = {
         post_win_msg_1040_7f56, // 1040:1c60
         draw_op_1040_7bb2, // 1040:1c64
         post_win_msg_1040_7f1c, // 1040:1c68
-        FUN_1040_1c1e, // 1040:1c6c
+  NULL, //    FUN_1040_1c1e, // 1040:1c6c
         menu_ui_op_1040_7f86, // 1040:1c70
         win_help_1040_800c, // 1040:1c74
         pass1_1040_8054, // 1040:1c78
         set_text_bk_color_1040_7e5e, // 1040:1c7c
         unk_win_ui_op_1040_8158, // 1040:1c80
         check_dialog_msg_1040_81b6, // 1040:1c84
-        win_ui_op_1040_81fe, // 1040:1c88
-        FUN_1018_60ea, // 1040:1c8c
+  set_sys_modal_window_1040_81fe, // 1040:1c88
+  NULL, // FUN_1018_60ea, // 1040:1c8c
         pass1_1040_824a, // 1040:1c90
-        FUN_1040_8266, // 1040:1c94
+  NULL, //    FUN_1040_8266, // 1040:1c94
         pass1_1040_78de, // 1040:1c98
-        FUN_1018_60ee, // 1040:1c9c
-        FUN_1018_60f4, // 1040:1ca0
-        FUN_1018_60fa, // 1040:1ca4
-        FUN_1038_a2a4, // 1040:1ca8
-        FUN_1018_60fe, // 1040:1cac
+  NULL, //     FUN_1018_60ee, // 1040:1c9c
+  NULL, //     FUN_1018_60f4, // 1040:1ca0
+  NULL, //     FUN_1018_60fa, // 1040:1ca4
+  NULL, //     FUN_1038_a2a4, // 1040:1ca8
+  NULL, //     FUN_1018_60fe, // 1040:1cac
         pass1_1040_807e, // 1040:1cb0
 
 };
@@ -8583,23 +8588,23 @@ void *addr_table_1040_1eee[] = {
         post_win_msg_1040_7f56, // 1040:1f06
         draw_op_1040_7bb2, // 1040:1f0a
         post_win_msg_1040_7f1c, // 1040:1f0e
-        FUN_1040_1ec4, // 1040:1f12
+  NULL, //   FUN_1040_1ec4, // 1040:1f12
         menu_ui_op_1040_7f86, // 1040:1f16
         win_help_1040_800c, // 1040:1f1a
         pass1_1040_8054, // 1040:1f1e
         set_text_bk_color_1040_7e5e, // 1040:1f22
         unk_win_ui_op_1040_8158, // 1040:1f26
         check_dialog_msg_1040_81b6, // 1040:1f2a
-        win_ui_op_1040_81fe, // 1040:1f2e
-        FUN_1018_60ea, // 1040:1f32
+  set_sys_modal_window_1040_81fe, // 1040:1f2e
+  NULL, // FUN_1018_60ea, // 1040:1f32
         pass1_1040_824a, // 1040:1f36
-        FUN_1040_8266, // 1040:1f3a
+  NULL, //    FUN_1040_8266, // 1040:1f3a
         pass1_1040_78de, // 1040:1f3e
-        FUN_1018_60ee, // 1040:1f42
-        FUN_1018_60f4, // 1040:1f46
-        FUN_1018_60fa, // 1040:1f4a
-        FUN_1038_a2a4, // 1040:1f4e
-        FUN_1018_60fe, // 1040:1f52
+  NULL, //     FUN_1018_60ee, // 1040:1f42
+  NULL, //     FUN_1018_60f4, // 1040:1f46
+  NULL, //     FUN_1018_60fa, // 1040:1f4a
+  NULL, //     FUN_1038_a2a4, // 1040:1f4e
+  NULL, //      FUN_1018_60fe, // 1040:1f52
         pass1_1040_807e, // 1040:1f56
 
 };
@@ -8621,16 +8626,16 @@ void *addr_table_1040_237e[] = {
         set_text_bk_color_1040_7e5e, // 1040:23b2
         unk_win_ui_op_1040_8158, // 1040:23b6
         check_dialog_msg_1040_81b6, // 1040:23ba
-        win_ui_op_1040_81fe, // 1040:23be
-        FUN_1018_60ea, // 1040:23c2
+  set_sys_modal_window_1040_81fe, // 1040:23be
+  NULL, // FUN_1018_60ea, // 1040:23c2
         pass1_1040_824a, // 1040:23c6
-        FUN_1040_8266, // 1040:23ca
+  NULL, //    FUN_1040_8266, // 1040:23ca
         pass1_1040_78de, // 1040:23ce
-        FUN_1018_60ee, // 1040:23d2
-        FUN_1018_60f4, // 1040:23d6
-        FUN_1018_60fa, // 1040:23da
+  NULL, //     FUN_1018_60ee, // 1040:23d2
+  NULL, //      FUN_1018_60f4, // 1040:23d6
+  NULL, //      FUN_1018_60fa, // 1040:23da
         mix_draw_op_1040_21d6, // 1040:23de
-        FUN_1018_60fe, // 1040:23e2
+  NULL, //      FUN_1018_60fe, // 1040:23e2
         pass1_1040_807e, // 1040:23e6
 
 };
@@ -8645,23 +8650,23 @@ void *addr_table_1038_e264[] = {
         post_win_msg_1040_7f56, // 1038:e27c
         draw_op_1040_7bb2, // 1038:e280
         post_win_msg_1040_7f1c, // 1038:e284
-        FUN_1038_e23a, // 1038:e288
+  NULL, //      FUN_1038_e23a, // 1038:e288
         menu_ui_op_1040_7f86, // 1038:e28c
         win_help_1040_800c, // 1038:e290
         pass1_1040_8054, // 1038:e294
         set_text_bk_color_1040_7e5e, // 1038:e298
         unk_win_ui_op_1040_8158, // 1038:e29c
         check_dialog_msg_1040_81b6, // 1038:e2a0
-        win_ui_op_1040_81fe, // 1038:e2a4
-        FUN_1018_60ea, // 1038:e2a8
+  set_sys_modal_window_1040_81fe, // 1038:e2a4
+  NULL, //      FUN_1018_60ea, // 1038:e2a8
         pass1_1040_824a, // 1038:e2ac
-        FUN_1040_8266, // 1038:e2b0
+  NULL, //     FUN_1040_8266, // 1038:e2b0
         pass1_1040_78de, // 1038:e2b4
-        FUN_1018_60ee, // 1038:e2b8
-        FUN_1018_60f4, // 1038:e2bc
-        FUN_1018_60fa, // 1038:e2c0
-        FUN_1038_a2a4, // 1038:e2c4
-        FUN_1018_60fe, // 1038:e2c8
+  NULL, //     FUN_1018_60ee, // 1038:e2b8
+  NULL, //     FUN_1018_60f4, // 1038:e2bc
+  NULL, //    FUN_1018_60fa, // 1038:e2c0
+  NULL, //    FUN_1038_a2a4, // 1038:e2c4
+  NULL, //     FUN_1018_60fe, // 1038:e2c8
         pass1_1040_807e, // 1038:e2cc
 
 };
@@ -8683,16 +8688,16 @@ void *addr_table_1038_e62e[] = {
         set_text_bk_color_1040_7e5e, // 1038:e662
         unk_win_ui_op_1040_8158, // 1038:e666
         check_dialog_msg_1040_81b6, // 1038:e66a
-        win_ui_op_1040_81fe, // 1038:e66e
-        FUN_1018_60ea, // 1038:e672
+  set_sys_modal_window_1040_81fe, // 1038:e66e
+  NULL, // FUN_1018_60ea, // 1038:e672
         pass1_1040_824a, // 1038:e676
-        FUN_1040_8266, // 1038:e67a
+  NULL, //   FUN_1040_8266, // 1038:e67a
         pass1_1040_78de, // 1038:e67e
-        FUN_1018_60ee, // 1038:e682
-        FUN_1018_60f4, // 1038:e686
-        FUN_1018_60fa, // 1038:e68a
-        FUN_1038_a2a4, // 1038:e68e
-        FUN_1018_60fe, // 1038:e692
+  NULL, //     FUN_1018_60ee, // 1038:e682
+  NULL, //     FUN_1018_60f4, // 1038:e686
+  NULL, //     FUN_1018_60fa, // 1038:e68a
+  NULL, //   FUN_1038_a2a4, // 1038:e68e
+  NULL, //      FUN_1018_60fe, // 1038:e692
         pass1_1040_807e, // 1038:e696
 
 };
@@ -8707,23 +8712,23 @@ void *addr_table_1038_e92e[] = {
         post_win_msg_1040_7f56, // 1038:e946
         draw_op_1040_7bb2, // 1038:e94a
         post_win_msg_1040_7f1c, // 1038:e94e
-        FUN_1038_e904, // 1038:e952
+  NULL, //      FUN_1038_e904, // 1038:e952
         menu_ui_op_1040_7f86, // 1038:e956
         win_help_1040_800c, // 1038:e95a
         pass1_1040_8054, // 1038:e95e
         set_text_bk_color_1040_7e5e, // 1038:e962
         unk_win_ui_op_1040_8158, // 1038:e966
         check_dialog_msg_1040_81b6, // 1038:e96a
-        win_ui_op_1040_81fe, // 1038:e96e
-        FUN_1018_60ea, // 1038:e972
+  set_sys_modal_window_1040_81fe, // 1038:e96e
+  NULL, //   FUN_1018_60ea, // 1038:e972
         pass1_1040_824a, // 1038:e976
-        FUN_1040_8266, // 1038:e97a
+  NULL, //      FUN_1040_8266, // 1038:e97a
         pass1_1040_78de, // 1038:e97e
-        FUN_1018_60ee, // 1038:e982
-        FUN_1018_60f4, // 1038:e986
-        FUN_1018_60fa, // 1038:e98a
-        FUN_1038_a2a4, // 1038:e98e
-        FUN_1018_60fe, // 1038:e992
+  NULL, //     FUN_1018_60ee, // 1038:e982
+  NULL, //     FUN_1018_60f4, // 1038:e986
+  NULL, //     FUN_1018_60fa, // 1038:e98a
+  NULL, //     FUN_1038_a2a4, // 1038:e98e
+  NULL, //     FUN_1018_60fe, // 1038:e992
         pass1_1040_807e, // 1038:e996
 
 };
@@ -8738,23 +8743,23 @@ void *addr_table_1038_eb32[] = {
         post_win_msg_1040_7f56, // 1038:eb4a
         draw_op_1040_7bb2, // 1038:eb4e
         post_win_msg_1040_7f1c, // 1038:eb52
-        FUN_1038_eb08, // 1038:eb56
+  NULL, //       FUN_1038_eb08, // 1038:eb56
         menu_ui_op_1040_7f86, // 1038:eb5a
         win_help_1040_800c, // 1038:eb5e
         pass1_1040_8054, // 1038:eb62
         set_text_bk_color_1040_7e5e, // 1038:eb66
         unk_win_ui_op_1040_8158, // 1038:eb6a
         check_dialog_msg_1040_81b6, // 1038:eb6e
-        win_ui_op_1040_81fe, // 1038:eb72
-        FUN_1018_60ea, // 1038:eb76
+  set_sys_modal_window_1040_81fe, // 1038:eb72
+  NULL, //      FUN_1018_60ea, // 1038:eb76
         pass1_1040_824a, // 1038:eb7a
-        FUN_1040_8266, // 1038:eb7e
+  NULL, //    FUN_1040_8266, // 1038:eb7e
         pass1_1040_78de, // 1038:eb82
-        FUN_1018_60ee, // 1038:eb86
-        FUN_1018_60f4, // 1038:eb8a
-        FUN_1018_60fa, // 1038:eb8e
-        FUN_1038_a2a4, // 1038:eb92
-        FUN_1018_60fe, // 1038:eb96
+  NULL, //    FUN_1018_60ee, // 1038:eb86
+  NULL, //      FUN_1018_60f4, // 1038:eb8a
+  NULL, //   FUN_1018_60fa, // 1038:eb8e
+  NULL, //    FUN_1038_a2a4, // 1038:eb92
+  NULL, //    FUN_1018_60fe, // 1038:eb96
         pass1_1040_807e, // 1038:eb9a
 
 };
@@ -8762,7 +8767,7 @@ void *addr_table_1038_eb32[] = {
 void *addr_table_1038_ee6e[] = {
         pass1_1038_ee48, // 1038:ee6e
         pass1_1008_3a10, // 1038:ee72
-        FUN_1038_ec16, // 1038:ee76
+  NULL, //    FUN_1038_ec16, // 1038:ee76
         pass1_1040_79c0, // 1038:ee7a
         send_msg_1038_ed8a, // 1038:ee7e
         destroy_win_1040_7b98, // 1038:ee82
@@ -8776,16 +8781,16 @@ void *addr_table_1038_ee6e[] = {
         set_text_bk_color_1040_7e5e, // 1038:eea2
         unk_win_ui_op_1040_8158, // 1038:eea6
         check_dialog_msg_1040_81b6, // 1038:eeaa
-        win_ui_op_1040_81fe, // 1038:eeae
-        FUN_1018_60ea, // 1038:eeb2
+  set_sys_modal_window_1040_81fe, // 1038:eeae
+  NULL, // FUN_1018_60ea, // 1038:eeb2
         pass1_1040_824a, // 1038:eeb6
-        FUN_1040_8266, // 1038:eeba
+  NULL, //    FUN_1040_8266, // 1038:eeba
         pass1_1040_78de, // 1038:eebe
-        FUN_1018_60ee, // 1038:eec2
-        FUN_1018_60f4, // 1038:eec6
-        FUN_1018_60fa, // 1038:eeca
-        FUN_1038_a2a4, // 1038:eece
-        FUN_1018_60fe, // 1038:eed2
+  NULL, //    FUN_1018_60ee, // 1038:eec2
+  NULL, //    FUN_1018_60f4, // 1038:eec6
+  NULL, //   FUN_1018_60fa, // 1038:eeca
+  NULL, //    FUN_1038_a2a4, // 1038:eece
+  NULL, //     FUN_1018_60fe, // 1038:eed2
         pass1_1040_807e, // 1038:eed6
 
 };
@@ -8807,16 +8812,16 @@ void *addr_table_1038_cc9a[] = {
         set_text_bk_color_1040_7e5e, // 1038:ccce
         unk_win_ui_op_1040_8158, // 1038:ccd2
         check_dialog_msg_1040_81b6, // 1038:ccd6
-        win_ui_op_1040_81fe, // 1038:ccda
-        FUN_1018_60ea, // 1038:ccde
+  set_sys_modal_window_1040_81fe, // 1038:ccda
+  NULL, // FUN_1018_60ea, // 1038:ccde
         pass1_1040_824a, // 1038:cce2
-        FUN_1040_8266, // 1038:cce6
+  NULL, //    FUN_1040_8266, // 1038:cce6
         pass1_1040_78de, // 1038:ccea
-        FUN_1018_60ee, // 1038:ccee
-        FUN_1018_60f4, // 1038:ccf2
-        FUN_1018_60fa, // 1038:ccf6
-        FUN_1038_a2a4, // 1038:ccfa
-        FUN_1018_60fe, // 1038:ccfe
+  NULL, //    FUN_1018_60ee, // 1038:ccee
+  NULL, //   FUN_1018_60f4, // 1038:ccf2
+  NULL, //   FUN_1018_60fa, // 1038:ccf6
+  NULL, //    FUN_1038_a2a4, // 1038:ccfa
+  NULL, //     FUN_1018_60fe, // 1038:ccfe
         pass1_1040_807e, // 1038:cd02
 
 };
@@ -8831,23 +8836,23 @@ void *addr_table_1038_cf00[] = {
         post_win_msg_1040_7f56, // 1038:cf18
         draw_op_1040_7bb2, // 1038:cf1c
         post_win_msg_1040_7f1c, // 1038:cf20
-        FUN_1038_ced6, // 1038:cf24
+  NULL, //    FUN_1038_ced6, // 1038:cf24
         menu_ui_op_1040_7f86, // 1038:cf28
         win_help_1040_800c, // 1038:cf2c
         pass1_1040_8054, // 1038:cf30
         set_text_bk_color_1040_7e5e, // 1038:cf34
         unk_win_ui_op_1040_8158, // 1038:cf38
         check_dialog_msg_1040_81b6, // 1038:cf3c
-        win_ui_op_1040_81fe, // 1038:cf40
-        FUN_1018_60ea, // 1038:cf44
+  set_sys_modal_window_1040_81fe, // 1038:cf40
+  NULL, // FUN_1018_60ea, // 1038:cf44
         pass1_1040_824a, // 1038:cf48
-        FUN_1040_8266, // 1038:cf4c
+  NULL, //    FUN_1040_8266, // 1038:cf4c
         pass1_1040_78de, // 1038:cf50
-        FUN_1018_60ee, // 1038:cf54
-        FUN_1018_60f4, // 1038:cf58
-        FUN_1018_60fa, // 1038:cf5c
-        FUN_1038_a2a4, // 1038:cf60
-        FUN_1018_60fe, // 1038:cf64
+  NULL, //    FUN_1018_60ee, // 1038:cf54
+  NULL, //     FUN_1018_60f4, // 1038:cf58
+  NULL, //    FUN_1018_60fa, // 1038:cf5c
+        NULL, // FUN_1038_a2a4, // 1038:cf60
+        NULL, // FUN_1018_60fe, // 1038:cf64
         pass1_1040_807e, // 1038:cf68
 };
 
@@ -8872,16 +8877,16 @@ void *addr_table_1038_d6ea[] = {
         set_text_bk_color_1040_7e5e, // 1038:d71e
         unk_win_ui_op_1040_8158, // 1038:d722
         check_dialog_msg_1040_81b6, // 1038:d726
-        win_ui_op_1040_81fe, // 1038:d72a
-        FUN_1018_60ea, // 1038:d72e
+  set_sys_modal_window_1040_81fe, // 1038:d72a
+        NULL, // FUN_1018_60ea, // 1038:d72e
         pass1_1040_824a, // 1038:d732
-        FUN_1040_8266, // 1038:d736
+        NULL, // FUN_1040_8266, // 1038:d736
         pass1_1040_78de, // 1038:d73a
-        FUN_1018_60ee, // 1038:d73e
-        FUN_1018_60f4, // 1038:d742
-        FUN_1018_60fa, // 1038:d746
-        FUN_1038_a2a4, // 1038:d74a
-        FUN_1018_60fe, // 1038:d74e
+        NULL, // FUN_1018_60ee, // 1038:d73e
+        NULL, // FUN_1018_60f4, // 1038:d742
+        NULL, // FUN_1018_60fa, // 1038:d746
+        NULL, // FUN_1038_a2a4, // 1038:d74a
+        NULL, // FUN_1018_60fe, // 1038:d74e
         pass1_1040_807e, // 1038:d752
 
 };
@@ -8889,7 +8894,7 @@ void *addr_table_1038_d6ea[] = {
 void *addr_table_1038_e0d4[] = {
         pass1_1038_e0ae, // 1038:e0d4
         post_win_msg_1038_d840, // 1038:e0d8
-        FUN_1038_d8ae, // 1038:e0dc
+        NULL, // FUN_1038_d8ae, // 1038:e0dc
         pass1_1040_79c0, // 1038:e0e0
         unk_win_sys_op_1038_da68, // 1038:e0e4
         destroy_win_1040_7b98, // 1038:e0e8
@@ -8903,16 +8908,16 @@ void *addr_table_1038_e0d4[] = {
         set_text_bk_color_1040_7e5e, // 1038:e108
         unk_win_ui_op_1040_8158, // 1038:e10c
         check_dialog_msg_1040_81b6, // 1038:e110
-        win_ui_op_1040_81fe, // 1038:e114
-        FUN_1018_60ea, // 1038:e118
+  set_sys_modal_window_1040_81fe, // 1038:e114
+        NULL, // FUN_1018_60ea, // 1038:e118
         pass1_1040_824a, // 1038:e11c
-        FUN_1040_8266, // 1038:e120
+        NULL, // FUN_1040_8266, // 1038:e120
         pass1_1040_78de, // 1038:e124
-        FUN_1018_60ee, // 1038:e128
-        FUN_1018_60f4, // 1038:e12c
-        FUN_1018_60fa, // 1038:e130
-        FUN_1038_a2a4, // 1038:e134
-        FUN_1018_60fe, // 1038:e138
+        NULL, // FUN_1018_60ee, // 1038:e128
+        NULL, // FUN_1018_60f4, // 1038:e12c
+        NULL, // FUN_1018_60fa, // 1038:e130
+        NULL, // FUN_1038_a2a4, // 1038:e134
+        NULL, // FUN_1018_60fe, // 1038:e138
         pass1_1040_807e, // 1038:e13c
 
 };
@@ -8934,16 +8939,16 @@ void *addr_table_1038_bd70[] = {
         set_text_bk_color_1040_7e5e, // 1038:bda4
         unk_win_ui_op_1040_8158, // 1038:bda8
         check_dialog_msg_1040_81b6, // 1038:bdac
-        win_ui_op_1040_81fe, // 1038:bdb0
-        FUN_1018_60ea, // 1038:bdb4
+  set_sys_modal_window_1040_81fe, // 1038:bdb0
+        NULL, // FUN_1018_60ea, // 1038:bdb4
         pass1_1040_824a, // 1038:bdb8
-        FUN_1040_8266, // 1038:bdbc
+        NULL, // FUN_1040_8266, // 1038:bdbc
         pass1_1040_78de, // 1038:bdc0
-        FUN_1018_60ee, // 1038:bdc4
-        FUN_1018_60f4, // 1038:bdc8
-        FUN_1018_60fa, // 1038:bdcc
-        FUN_1038_a2a4, // 1038:bdd0
-        FUN_1018_60fe, // 1038:bdd4
+        NULL, // FUN_1018_60ee, // 1038:bdc4
+        NULL, // FUN_1018_60f4, // 1038:bdc8
+        NULL, // FUN_1018_60fa, // 1038:bdcc
+        NULL, // FUN_1038_a2a4, // 1038:bdd0
+        NULL, // FUN_1018_60fe, // 1038:bdd4
         pass1_1038_bca8, // 1038:bdd8
 };
 
@@ -8964,16 +8969,16 @@ void *addr_table_1038_c436[] = {
         set_text_bk_color_1040_7e5e, // 1038:c46a
         unk_win_ui_op_1040_8158, // 1038:c46e
         check_dialog_msg_1040_81b6, // 1038:c472
-        win_ui_op_1040_81fe, // 1038:c476
-        FUN_1018_60ea, // 1038:c47a
+  set_sys_modal_window_1040_81fe, // 1038:c476
+        NULL, // FUN_1018_60ea, // 1038:c47a
         pass1_1040_824a, // 1038:c47e
-        FUN_1040_8266, // 1038:c482
+        NULL, // FUN_1040_8266, // 1038:c482
         win_dlg_op_1038_bea4, // 1038:c486
-        FUN_1018_60ee, // 1038:c48a
-        FUN_1018_60f4, // 1038:c48e
-        FUN_1018_60fa, // 1038:c492
-        FUN_1038_a2a4, // 1038:c496
-        FUN_1018_60fe, // 1038:c49a
+        NULL, // FUN_1018_60ee, // 1038:c48a
+        NULL, // FUN_1018_60f4, // 1038:c48e
+        NULL, // FUN_1018_60fa, // 1038:c492
+        NULL, // FUN_1038_a2a4, // 1038:c496
+        NULL, // FUN_1018_60fe, // 1038:c49a
         pass1_1040_807e, // 1038:c49e
 };
 
@@ -8994,16 +8999,16 @@ void *addr_table_1038_c74c[] = {
         set_text_bk_color_1040_7e5e, // 1038:c780
         unk_win_ui_op_1040_8158, // 1038:c784
         check_dialog_msg_1040_81b6, // 1038:c788
-        win_ui_op_1040_81fe, // 1038:c78c
-        FUN_1018_60ea, // 1038:c790
+  set_sys_modal_window_1040_81fe, // 1038:c78c
+        NULL, // FUN_1018_60ea, // 1038:c790
         pass1_1040_824a, // 1038:c794
-        FUN_1040_8266, // 1038:c798
+        NULL, // FUN_1040_8266, // 1038:c798
         win_dlg_op_1038_c58e, // 1038:c79c
-        FUN_1018_60ee, // 1038:c7a0
-        FUN_1018_60f4, // 1038:c7a4
-        FUN_1018_60fa, // 1038:c7a8
-        FUN_1038_a2a4, // 1038:c7ac
-        FUN_1018_60fe, // 1038:c7b0
+        NULL, // FUN_1018_60ee, // 1038:c7a0
+        NULL, // FUN_1018_60f4, // 1038:c7a4
+        NULL, // FUN_1018_60fa, // 1038:c7a8
+        NULL, // FUN_1038_a2a4, // 1038:c7ac
+        NULL, // FUN_1018_60fe, // 1038:c7b0
         pass1_1040_807e, // 1038:c7b4
 };
 
@@ -9017,23 +9022,23 @@ void *addr_table_1038_ca6c[] = {
         post_win_msg_1040_7f56, // 1038:ca84
         draw_op_1040_7bb2, // 1038:ca88
         post_win_msg_1040_7f1c, // 1038:ca8c
-        FUN_1038_ca42, // 1038:ca90
+        NULL, // FUN_1038_ca42, // 1038:ca90
         menu_ui_op_1040_7f86, // 1038:ca94
         win_help_1040_800c, // 1038:ca98
         pass1_1040_8054, // 1038:ca9c
         set_text_bk_color_1040_7e5e, // 1038:caa0
         unk_win_ui_op_1040_8158, // 1038:caa4
         check_dialog_msg_1040_81b6, // 1038:caa8
-        win_ui_op_1040_81fe, // 1038:caac
-        FUN_1018_60ea, // 1038:cab0
+  set_sys_modal_window_1040_81fe, // 1038:caac
+        NULL, // FUN_1018_60ea, // 1038:cab0
         pass1_1040_824a, // 1038:cab4
-        FUN_1040_8266, // 1038:cab8
+        NULL, // FUN_1040_8266, // 1038:cab8
         pass1_1040_78de, // 1038:cabc
-        FUN_1018_60ee, // 1038:cac0
-        FUN_1018_60f4, // 1038:cac4
-        FUN_1018_60fa, // 1038:cac8
-        FUN_1038_a2a4, // 1038:cacc
-        FUN_1018_60fe, // 1038:cad0
+        NULL, // FUN_1018_60ee, // 1038:cac0
+        NULL, // FUN_1018_60f4, // 1038:cac4
+        NULL, // FUN_1018_60fa, // 1038:cac8
+        NULL, // FUN_1038_a2a4, // 1038:cacc
+        NULL, // FUN_1018_60fe, // 1038:cad0
         pass1_1040_807e, // 1038:cad4
 };
 
@@ -9054,16 +9059,16 @@ void *addr_table_1038_a2d0[] = {
         set_text_bk_color_1040_7e5e, // 1038:a304
         unk_win_ui_op_1040_8158, // 1038:a308
         check_dialog_msg_1040_81b6, // 1038:a30c
-        win_ui_op_1040_81fe, // 1038:a310
-        FUN_1018_60ea, // 1038:a314
+  set_sys_modal_window_1040_81fe, // 1038:a310
+        NULL, // FUN_1018_60ea, // 1038:a314
         pass1_1040_824a, // 1038:a318
-        FUN_1040_8266, // 1038:a31c
+        NULL, // FUN_1040_8266, // 1038:a31c
         pass1_1040_78de, // 1038:a320
-        FUN_1018_60ee, // 1038:a324
-        FUN_1018_60f4, // 1038:a328
-        FUN_1018_60fa, // 1038:a32c
-        FUN_1038_a2a4, // 1038:a330
-        FUN_1018_60fe, // 1038:a334
+        NULL, // FUN_1018_60ee, // 1038:a324
+        NULL, // FUN_1018_60f4, // 1038:a328
+        NULL, // FUN_1018_60fa, // 1038:a32c
+        NULL, // FUN_1038_a2a4, // 1038:a330
+        NULL, // FUN_1018_60fe, // 1038:a334
         pass1_1040_807e, // 1038:a338
 };
 
@@ -9084,16 +9089,16 @@ void *addr_table_1038_ad72[] = {
         unk_win_ui_op_1038_ac38, // 1038:ada6
         unk_win_ui_op_1040_8158, // 1038:adaa
         check_dialog_msg_1040_81b6, // 1038:adae
-        win_ui_op_1040_81fe, // 1038:adb2
-        FUN_1018_60ea, // 1038:adb6
+  set_sys_modal_window_1040_81fe, // 1038:adb2
+        NULL, // FUN_1018_60ea, // 1038:adb6
         pass1_1040_824a, // 1038:adba
-        FUN_1040_8266, // 1038:adbe
+        NULL, // FUN_1040_8266, // 1038:adbe
         pass1_1040_78de, // 1038:adc2
-        FUN_1018_60ee, // 1038:adc6
-        FUN_1018_60f4, // 1038:adca
-        FUN_1018_60fa, // 1038:adce
-        FUN_1038_a2a4, // 1038:add2
-        FUN_1018_60fe, // 1038:add6
+        NULL, // FUN_1018_60ee, // 1038:adc6
+        NULL, // FUN_1018_60f4, // 1038:adca
+        NULL, // FUN_1018_60fa, // 1038:adce
+        NULL, // FUN_1038_a2a4, // 1038:add2
+        NULL, // FUN_1018_60fe, // 1038:add6
         pass1_1040_807e, // 1038:adda
 };
 
@@ -9107,23 +9112,23 @@ void *addr_table_1038_a0b6[] = {
         post_win_msg_1040_7f56, // 1038:a0ce
         draw_op_1040_7bb2, // 1038:a0d2
         post_win_msg_1040_7f1c, // 1038:a0d6
-        FUN_1038_a08c, // 1038:a0da
+        NULL, // FUN_1038_a08c, // 1038:a0da
         menu_ui_op_1040_7f86, // 1038:a0de
         win_help_1040_800c, // 1038:a0e2
         pass1_1040_8054, // 1038:a0e6
         set_text_bk_color_1040_7e5e, // 1038:a0ea
         unk_win_ui_op_1040_8158, // 1038:a0ee
         check_dialog_msg_1040_81b6, // 1038:a0f2
-        win_ui_op_1040_81fe, // 1038:a0f6
-        FUN_1018_60ea, // 1038:a0fa
+  set_sys_modal_window_1040_81fe, // 1038:a0f6
+        NULL, // FUN_1018_60ea, // 1038:a0fa
         pass1_1040_824a, // 1038:a0fe
-        FUN_1040_8266, // 1038:a102
+        NULL, // FUN_1040_8266, // 1038:a102
         pass1_1040_78de, // 1038:a106
-        FUN_1018_60ee, // 1038:a10a
-        FUN_1018_60f4, // 1038:a10e
-        FUN_1018_60fa, // 1038:a112
+        NULL, // FUN_1018_60ee, // 1038:a10a
+        NULL, // FUN_1018_60f4, // 1038:a10e
+        NULL, // FUN_1018_60fa, // 1038:a112
         call_fn_ptr_1038_9ffa, // 1038:a116
-        FUN_1018_60fe, // 1038:a11a
+        NULL, // FUN_1018_60fe, // 1038:a11a
         pass1_1040_807e, // 1038:a11e
 };
 
@@ -9144,16 +9149,16 @@ void *addr_table_1038_99a2[] = {
         win_ui_op_1040_b372, // 1038:99d6
         unk_win_ui_op_1040_8158, // 1038:99da
         check_dialog_msg_1040_81b6, // 1038:99de
-        win_ui_op_1040_81fe, // 1038:99e2
-        FUN_1018_60ea, // 1038:99e6
+  set_sys_modal_window_1040_81fe, // 1038:99e2
+        NULL, // FUN_1018_60ea, // 1038:99e6
         pass1_1040_824a, // 1038:99ea
-        FUN_1040_8266, // 1038:99ee
+        NULL, // FUN_1040_8266, // 1038:99ee
         pass1_1038_927c, // 1038:99f2
         send_dlg_item_int_1038_94da, // 1038:99f6
-        FUN_1018_60f4, // 1038:99fa
+        NULL, // FUN_1018_60f4, // 1038:99fa
         pass1_1040_b4c8, // 1038:99fe
-        FUN_1038_8842, // 1038:9a02
-        FUN_1018_60fe, // 1038:9a06
+        NULL, // FUN_1038_8842, // 1038:9a02
+        NULL, // FUN_1018_60fe, // 1038:9a06
         pass1_1040_807e, // 1038:9a0a
         show_win_1040_b43c, // 1038:9a0e
         pass1_1040_b45e, // 1038:9a12
@@ -9179,16 +9184,16 @@ void *addr_table_1038_8876[] = {
         win_ui_op_1040_b372, // 1038:88aa
         unk_win_ui_op_1040_8158, // 1038:88ae
         check_dialog_msg_1040_81b6, // 1038:88b2
-        win_ui_op_1040_81fe, // 1038:88b6
-        FUN_1018_60ea, // 1038:88ba
+  set_sys_modal_window_1040_81fe, // 1038:88b6
+        NULL, // FUN_1018_60ea, // 1038:88ba
         pass1_1040_824a, // 1038:88be
-        FUN_1040_8266, // 1038:88c2
+        NULL, // FUN_1040_8266, // 1038:88c2
         pass1_1038_7dac, // 1038:88c6
-        FUN_1018_60ee, // 1038:88ca
-        FUN_1018_60f4, // 1038:88ce
+        NULL, // FUN_1018_60ee, // 1038:88ca
+        NULL, // FUN_1018_60f4, // 1038:88ce
         pass1_1040_b4c8, // 1038:88d2
-        FUN_1038_8842, // 1038:88d6
-        FUN_1018_60fe, // 1038:88da
+        NULL, // FUN_1038_8842, // 1038:88d6
+        NULL, // FUN_1018_60fe, // 1038:88da
         pass1_1040_807e, // 1038:88de
         show_win_1040_b43c, // 1038:88e2
         pass1_1040_b45e, // 1038:88e6
@@ -9199,7 +9204,7 @@ void *addr_table_1038_8876[] = {
 void *addr_table_1038_1c2e[] = {
         pass1_1038_1c02, // 1038:1c2e
         pass1_1038_0c00, // 1038:1c32
-        FUN_1028_d228, // 1038:1c36
+        NULL, // FUN_1028_d228, // 1038:1c36
         pass1_1038_0cf0, // 1038:1c3a
 };
 
@@ -9215,13 +9220,13 @@ void *addr_table_1028_d804[] = {
 void *addr_table_1028_b1f4[] = {
         pass1_1028_b1c8, // 1028:b1f4
         pass1_1028_6b2c, // 1028:b1f8
-        FUN_1028_d228, // 1028:b1fc
+        NULL, // FUN_1028_d228, // 1028:b1fc
         pass1_1028_b108, // 1028:b200
 };
 
 void *addr_table_1028_9934[] = {
         pass1_1028_9908, // 1028:9934
-        FUN_1028_d222, // 1028:9938
+        NULL, // FUN_1028_d222, // 1028:9938
         pass1_1028_93d4, // 1028:993c
         pass1_1028_94e4, // 1028:9940
 };
@@ -9229,28 +9234,28 @@ void *addr_table_1028_9934[] = {
 void *addr_table_1028_8688[] = {
         pass1_1028_865c, // 1028:8688
         pass1_1028_853e, // 1028:868c
-        FUN_1028_d228, // 1028:8690
+        NULL, // FUN_1028_d228, // 1028:8690
         pass1_1028_858c, // 1028:8694
 };
 
 void *addr_table_1028_87e0[] = {
         pass1_1028_87b4, // 1028:87e0
         pass1_1028_86c2, // 1028:87e4
-        FUN_1028_d228, // 1028:87e8
+        NULL, // FUN_1028_d228, // 1028:87e8
         pass1_1028_86f4, // 1028:87ec
 };
 
 void *addr_table_1028_90d6[] = {
         pass1_1028_90aa, // 1028:90d6
         pass1_1028_6b2c, // 1028:90da
-        FUN_1028_d228, // 1028:90de
+        NULL, // FUN_1028_d228, // 1028:90de
         pass1_1028_8fea, // 1028:90e2
 };
 
 void *addr_table_1028_2572[] = {
         pass1_1028_254c, // 1028:2572
         pass1_1028_bb56, // 1028:2576
-        FUN_1030_178e, // 1028:257a
+        NULL, // FUN_1030_178e, // 1028:257a
         pass1_1028_2418, // 1028:257e
         file_1028_24a2, // 1028:2582
         pass1_1028_bc1c, // 1028:2586
@@ -9259,17 +9264,17 @@ void *addr_table_1028_2572[] = {
         pass1_1028_bc7e, // 1028:2592
         pass1_1028_b514, // 1028:2596
         pass1_1028_be2a, // 1028:259a
-        FUN_1028_bf16, // 1028:259e
-        FUN_1028_bf1a, // 1028:25a2
-        FUN_1028_bf1e, // 1028:25a6
+        NULL, // FUN_1028_bf16, // 1028:259e
+        NULL, // FUN_1028_bf1a, // 1028:25a2
+        NULL, // FUN_1028_bf1e, // 1028:25a6
         pass1_1028_20b6, // 1028:25aa
         pass1_1028_bf22, // 1028:25ae
         pass1_1028_bbf0, // 1028:25b2
         pass1_1028_bc02, // 1028:25b6
         pass1_1028_b5a8, // 1028:25ba
         pass1_1028_b5ca, // 1028:25be
-        FUN_1028_b4e6, // 1028:25c2
-        FUN_1028_b4ec, // 1028:25c6
+        NULL, // FUN_1028_b4e6, // 1028:25c2
+        NULL, // FUN_1028_b4ec, // 1028:25c6
         pass1_1028_b46e, // 1028:25ca
         pass1_1028_2290, // 1028:25ce
         pass1_1028_23a8, // 1028:25d2
@@ -9284,9 +9289,9 @@ void *addr_table_1040_c9f2[] = {
         draw_op_1040_c74c, // 1040:c9fe
         palette_op_1040_c886, // 1040:ca02
         pass1_1040_c94a, // 1040:ca06
-        FUN_1008_3cd2, // 1040:ca0a
+  NULL, // FUN_1008_3cd2, // 1040:ca0a
         send_msg_1040_c85a, // 1040:ca0e
-        FUN_1040_c882, // 1040:ca12
+  NULL, //   FUN_1040_c882, // 1040:ca12
 
 };
 
@@ -9307,16 +9312,16 @@ void *addr_table_1040_67ba[] = {
         set_text_bk_color_1040_7e5e, // 1040:67ee
         unk_win_ui_op_1040_8158, // 1040:67f2
         check_dialog_msg_1040_81b6, // 1040:67f6
-        win_ui_op_1040_81fe, // 1040:67fa
-        FUN_1018_60ea, // 1040:67fe
+  set_sys_modal_window_1040_81fe, // 1040:67fa
+        NULL, // FUN_1018_60ea, // 1040:67fe
         pass1_1040_824a, // 1040:6802
-        FUN_1040_8266, // 1040:6806
+        NULL, // FUN_1040_8266, // 1040:6806
         pass1_1040_78de, // 1040:680a
-        FUN_1018_60ee, // 1040:680e
-        FUN_1018_60f4, // 1040:6812
-        FUN_1018_60fa, // 1040:6816
-        FUN_1038_a2a4, // 1040:681a
-        FUN_1018_60fe, // 1040:681e
+        NULL, // FUN_1018_60ee, // 1040:680e
+        NULL, // FUN_1018_60f4, // 1040:6812
+        NULL, // FUN_1018_60fa, // 1040:6816
+        NULL, // FUN_1038_a2a4, // 1040:681a
+        NULL, // FUN_1018_60fe, // 1040:681e
         pass1_1040_807e, // 1040:6822
 };
 
@@ -9337,16 +9342,16 @@ void *addr_table_1040_76a4[] = {
         win_ui_op_1040_b372, // 1040:76d8
         unk_win_ui_op_1040_8158, // 1040:76dc
         check_dialog_msg_1040_81b6, // 1040:76e0
-        win_ui_op_1040_81fe, // 1040:76e4
-        FUN_1018_60ea, // 1040:76e8
+  set_sys_modal_window_1040_81fe, // 1040:76e4
+        NULL, // FUN_1018_60ea, // 1040:76e8
         pass1_1040_824a, // 1040:76ec
-        FUN_1040_8266, // 1040:76f0
+        NULL, // FUN_1040_8266, // 1040:76f0
         pass1_1040_78de, // 1040:76f4
-        FUN_1018_60ee, // 1040:76f8
-        FUN_1018_60f4, // 1040:76fc
+        NULL, // FUN_1018_60ee, // 1040:76f8
+        NULL, // FUN_1018_60f4, // 1040:76fc
         pass1_1040_b4c8, // 1040:7700
         pass1_1040_746c, // 1040:7704
-        FUN_1018_60fe, // 1040:7708
+        NULL, // FUN_1018_60fe, // 1040:7708
         pass1_1040_807e, // 1040:770c
         show_win_1040_b43c, // 1040:7710
         pass1_1040_b45e, // 1040:7714
@@ -9374,16 +9379,16 @@ void *addr_table_1040_6386[] = {
         win_ui_op_1040_b372, // 1040:63ba
         unk_win_ui_op_1040_8158, // 1040:63be
         check_dialog_msg_1040_81b6, // 1040:63c2
-        win_ui_op_1040_81fe, // 1040:63c6
-        FUN_1018_60ea, // 1040:63ca
+  set_sys_modal_window_1040_81fe, // 1040:63c6
+        NULL, // FUN_1018_60ea, // 1040:63ca
         pass1_1040_824a, // 1040:63ce
-        FUN_1040_8266, // 1040:63d2
+        NULL, // FUN_1040_8266, // 1040:63d2
         enable_win_1040_5780, // 1040:63d6
-        FUN_1018_60ee, // 1040:63da
-        FUN_1018_60f4, // 1040:63de
+        NULL, // FUN_1018_60ee, // 1040:63da
+        NULL, // FUN_1018_60f4, // 1040:63de
         pass1_1040_b4c8, // 1040:63e2
         draw_op_1040_5a06, // 1040:63e6
-        FUN_1018_60fe, // 1040:63ea
+        NULL, // FUN_1018_60fe, // 1040:63ea
         pass1_1040_807e, // 1040:63ee
         show_win_1040_b43c, // 1040:63f2
         pass1_1040_b45e, // 1040:63f6
@@ -9408,16 +9413,16 @@ void *addr_table_1038_a428[] = {
         set_text_bk_color_1040_7e5e, // 1038:a45c
         unk_win_ui_op_1040_8158, // 1038:a460
         check_dialog_msg_1040_81b6, // 1038:a464
-        win_ui_op_1040_81fe, // 1038:a468
-        FUN_1018_60ea, // 1038:a46c
+  set_sys_modal_window_1040_81fe, // 1038:a468
+        NULL, // FUN_1018_60ea, // 1038:a46c
         pass1_1040_824a, // 1038:a470
-        FUN_1040_8266, // 1038:a474
+        NULL, // FUN_1040_8266, // 1038:a474
         pass1_1040_78de, // 1038:a478
-        FUN_1018_60ee, // 1038:a47c
-        FUN_1018_60f4, // 1038:a480
-        FUN_1018_60fa, // 1038:a484
-        FUN_1038_a2a4, // 1038:a488
-        FUN_1018_60fe, // 1038:a48c
+        NULL, // FUN_1018_60ee, // 1038:a47c
+        NULL, // FUN_1018_60f4, // 1038:a480
+        NULL, // FUN_1018_60fa, // 1038:a484
+        NULL, // FUN_1038_a2a4, // 1038:a488
+        NULL, // FUN_1018_60fe, // 1038:a48c
         pass1_1040_807e, // 1038:a490
 };
 
@@ -9438,16 +9443,16 @@ void *addr_table_1038_a62e[] = {
         set_text_bk_color_1040_7e5e, // 1038:a662
         unk_win_ui_op_1040_8158, // 1038:a666
         check_dialog_msg_1040_81b6, // 1038:a66a
-        win_ui_op_1040_81fe, // 1038:a66e
-        FUN_1018_60ea, // 1038:a672
+  set_sys_modal_window_1040_81fe, // 1038:a66e
+        NULL, // FUN_1018_60ea, // 1038:a672
         pass1_1040_824a, // 1038:a676
-        FUN_1040_8266, // 1038:a67a
+        NULL, // FUN_1040_8266, // 1038:a67a
         pass1_1040_78de, // 1038:a67e
-        FUN_1018_60ee, // 1038:a682
-        FUN_1018_60f4, // 1038:a686
-        FUN_1018_60fa, // 1038:a68a
-        FUN_1038_a2a4, // 1038:a68e
-        FUN_1018_60fe, // 1038:a692
+        NULL, // FUN_1018_60ee, // 1038:a682
+        NULL, // FUN_1018_60f4, // 1038:a686
+        NULL, // FUN_1018_60fa, // 1038:a68a
+        NULL, // FUN_1038_a2a4, // 1038:a68e
+        NULL, // FUN_1018_60fe, // 1038:a692
         pass1_1040_807e, // 1038:a696
 };
 
@@ -9468,16 +9473,16 @@ void *addr_table_1038_a832[] = {
         set_text_bk_color_1040_7e5e, // 1038:a866
         unk_win_ui_op_1040_8158, // 1038:a86a
         check_dialog_msg_1040_81b6, // 1038:a86e
-        win_ui_op_1040_81fe, // 1038:a872
-        FUN_1018_60ea, // 1038:a876
+  set_sys_modal_window_1040_81fe, // 1038:a872
+        NULL, // FUN_1018_60ea, // 1038:a876
         pass1_1040_824a, // 1038:a87a
-        FUN_1040_8266, // 1038:a87e
+        NULL, // FUN_1040_8266, // 1038:a87e
         pass1_1040_78de, // 1038:a882
-        FUN_1018_60ee, // 1038:a886
-        FUN_1018_60f4, // 1038:a88a
-        FUN_1018_60fa, // 1038:a88e
-        FUN_1038_a2a4, // 1038:a892
-        FUN_1018_60fe, // 1038:a896
+        NULL, // FUN_1018_60ee, // 1038:a886
+        NULL, // FUN_1018_60f4, // 1038:a88a
+        NULL, // FUN_1018_60fa, // 1038:a88e
+        NULL, // FUN_1038_a2a4, // 1038:a892
+        NULL, // FUN_1018_60fe, // 1038:a896
         pass1_1040_807e, // 1038:a89a
 
 };
@@ -9499,37 +9504,37 @@ void *addr_table_1038_ab16[] = {
         set_text_bk_color_1040_7e5e, // 1038:ab4a
         unk_win_ui_op_1040_8158, // 1038:ab4e
         check_dialog_msg_1040_81b6, // 1038:ab52
-        win_ui_op_1040_81fe, // 1038:ab56
-        FUN_1018_60ea, // 1038:ab5a
+  set_sys_modal_window_1040_81fe, // 1038:ab56
+        NULL, // FUN_1018_60ea, // 1038:ab5a
         pass1_1040_824a, // 1038:ab5e
-        FUN_1040_8266, // 1038:ab62
+        NULL, // FUN_1040_8266, // 1038:ab62
         pass1_1040_78de, // 1038:ab66
-        FUN_1018_60ee, // 1038:ab6a
-        FUN_1018_60f4, // 1038:ab6e
-        FUN_1018_60fa, // 1038:ab72
-        FUN_1038_a2a4, // 1038:ab76
-        FUN_1018_60fe, // 1038:ab7a
+        NULL, // FUN_1018_60ee, // 1038:ab6a
+        NULL, // FUN_1018_60f4, // 1038:ab6e
+        NULL, // FUN_1018_60fa, // 1038:ab72
+        NULL, // FUN_1038_a2a4, // 1038:ab76
+        NULL, // FUN_1018_60fe, // 1038:ab7a
         pass1_1040_807e, // 1038:ab7e
 };
 
-void *addr_table_1028_6ad2[] = {
-        pass1_1028_6aa6, // 1028:6ad2
-        FUN_1028_d222, // 1028:6ad6
-        FUN_1028_d228, // 1028:6ada
-        pass1_1000_4f1a, // 1028:6ade
-        pass1_1028_6a7a, // 1028:6ae2
-        pass1_1028_6926, // 1028:6ae6
-        FUN_1028_d228, // 1028:6aea
-        pass1_1028_69cc, // 1028:6aee
-};
+//void *addr_table_1028_6ad2[] = {
+//        pass1_1028_6aa6, // 1028:6ad2
+//        NULL, // FUN_1028_d222, // 1028:6ad6
+//        NULL, // FUN_1028_d228, // 1028:6ada
+//        pass1_1000_4f1a, // 1028:6ade
+//        pass1_1028_6a7a, // 1028:6ae2
+//        pass1_1028_6926, // 1028:6ae6
+//        NULL, // FUN_1028_d228, // 1028:6aea
+//        pass1_1028_69cc, // 1028:6aee
+//};
 
-void *addr_table_1028_b1f4[] = {
-        pass1_1028_b1c8, // 1028:b1f4
-        pass1_1028_6b2c, // 1028:b1f8
-        FUN_1028_d228, // 1028:b1fc
-        pass1_1028_b108, // 1028:b200
-
-};
+//void *addr_table_1028_b1f4[] = {
+//        pass1_1028_b1c8, // 1028:b1f4
+//        pass1_1028_6b2c, // 1028:b1f8
+//        NULL, // FUN_1028_d228, // 1028:b1fc
+//        pass1_1028_b108, // 1028:b200
+//
+//};
 
 void *addr_table_1040_a4e8[] = {
         pass1_1040_a4c2, // 1040:a4e8
@@ -9548,16 +9553,16 @@ void *addr_table_1040_a4e8[] = {
         win_ui_op_1040_b372, // 1040:a51c
         unk_win_ui_op_1040_8158, // 1040:a520
         check_dialog_msg_1040_81b6, // 1040:a524
-        win_ui_op_1040_81fe, // 1040:a528
-        FUN_1018_60ea, // 1040:a52c
+  set_sys_modal_window_1040_81fe, // 1040:a528
+        NULL, // FUN_1018_60ea, // 1040:a52c
         pass1_1040_824a, // 1040:a530
-        FUN_1040_8266, // 1040:a534
+        NULL, // FUN_1040_8266, // 1040:a534
         pass1_1040_78de, // 1040:a538
-        FUN_1018_60ee, // 1040:a53c
-        FUN_1018_60f4, // 1040:a540
+        NULL, // FUN_1018_60ee, // 1040:a53c
+        NULL, // FUN_1018_60f4, // 1040:a540
         pass1_1040_b4c8, // 1040:a544
-        FUN_1038_8842, // 1040:a548
-        FUN_1018_60fe, // 1040:a54c
+  NULL, //    FUN_1038_8842, // 1040:a548
+  NULL, //      FUN_1018_60fe, // 1040:a54c
         pass1_1040_807e, // 1040:a550
         show_win_1040_b43c, // 1040:a554
         get_dlg_item_1040_a3d0, // 1040:a558
@@ -9572,10 +9577,12 @@ void *addr_table_1040_9800[] = {
         pass1_1040_9422, // 1040:980c
         unk_draw_op_1040_9458, // 1040:9810
         draw_text_1040_94fc, // 1040:9814
-        FUN_1008_3cd2, // 1040:9818
+  NULL, // FUN_1008_3cd2, // 1040:9818
         pass1_1040_93e6, // 1040:981c
         send_msg_1040_9404, // 1040:9820
 
 };
 
 #endif // ADDRESS_TABLE_1_H_
+
+#pragma clang diagnostic pop

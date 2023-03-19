@@ -11,10 +11,10 @@
 #include "structs_1x.h"
 #include "structs_2x.h"
 #include "structs_6x.h"
-#include "windows_platform.h"
+
 typedef struct Struct57
 {
-    u8         field_0x0;
+    void     **field_0x0;
     u8         field_0x1;
     u16        field_0x2;
     u16        field_0x4;
@@ -139,6 +139,13 @@ typedef struct Struct57
     u16        field_0xb4;
     u16        field_0xb6;
 
+    u16 field_9c;
+    u16 field_0xa0;
+    u16 field_0x96;
+    u16 field_9e;
+    u16 field_0x9a;
+    int field_0xb2;
+    int field_0xa2;
 } Struct57;
 typedef struct Struct55 Struct55;
 typedef struct Struct51 Struct51;

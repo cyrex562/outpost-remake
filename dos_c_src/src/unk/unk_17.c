@@ -6,6 +6,9 @@
 
 #include "op_int.h"
 #include "unk_2.h"
+#include "op_windef.h"
+#include "globals.h"
+
 void  pass1_1038_b6e0(u32 param_1, i16 param_2)
 
 {

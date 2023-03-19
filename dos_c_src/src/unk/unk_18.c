@@ -11,6 +11,7 @@
 #include "op_int.h"
 #include "op_winapi.h"
 #include "string_ops.h"
+#include "struct_20.h"
 #include "struct_ops/struct_ops_1.h"
 #include "struct_ops/struct_ops_4.h"
 #include "structs/structs_0xx/structs_5x.h"
@@ -197,7 +198,7 @@ LAB_1010_2126:
     mem_op_1000_179c(0x72,param_4,SEG_1000);
     puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    struct_1018_229c((Struct632 *)struct_var4,param_4,param_2,puVar3,param_3);
+    struct_1018_229c(NULL, (Struct632 *)struct_var4, param_4, param_2, puVar3, param_3);
     break;
   case 0x2a:
     mem_op_1000_179c(0x1c,param_4,SEG_1000);
@@ -616,4 +617,84 @@ StructD * pass1_1028_ac7a(StructD *param_1,u8 param_2)
     fn_ptr_1000_17ce((char *)param_1);
   }
   return param_1;
+}
+
+void pass1_1038_75ca(int param_1,u32 param_2,u32 param_3)
+
+{
+  BOOL16 BVar1;
+  int iVar2;
+  int iVar3;
+  undefined2 uVar4;
+  HFILE16 in_stack_0000ffca;
+  undefined4 local_10 [2];
+  undefined4 local_8;
+
+  uVar4 = (undefined2)(param_2 >> 0x10);
+  iVar3 = (int)param_2;
+  pass1_1008_79f0(param_3,*(long *)(iVar3 + 4));
+  if (param_1 != 0) {
+    local_10[0] = *(undefined4 *)(iVar3 + 8);
+    BVar1 = write_to_file_1008_7e1c
+      ((u8 *)param_3,CONCAT22(0x1050,local_10),(char *)0x4,in_stack_0000ffca);
+    if (BVar1 != 0) {
+      write_to_file_1008_7a22(param_3,*(long *)(iVar3 + 0xe));
+      if (BVar1 != 0) {
+          local_8._0_2_ = *(undefined2 *)(iVar3 + 0xc);
+          BVar1 = write_to_file_1008_7e1c
+            ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffca);
+          if (BVar1 != 0) {
+              local_8._0_2_ = *(undefined2 *)(iVar3 + 0x12);
+              BVar1 = write_to_file_1008_7e1c
+                ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffca );
+              if (BVar1 != 0) {
+                  local_8 = CONCAT22(local_8._2_2_,*(undefined2 *)(iVar3 + 0x14));
+                  BVar1 = write_to_file_1008_7e1c
+                    ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffc a
+                    );
+                  if (BVar1 != 0) {
+                      local_8 = *(undefined4 *)(iVar3 + 0x16);
+                      BVar1 = write_to_file_1008_7e1c
+                        ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x4,
+                         in_stack_0000ffca);
+                      if (BVar1 != 0) {
+                          iVar2 = write_to_file_1008_7b4c
+                            (param_3,(astruct_615 *)
+                                        (param_2 & 0xffff0000 | (ulong)(iVar3 + 0x1a)));
+                          if (iVar2 != 0) {
+                              local_8 = *(ulong *)(iVar3 + 0x20);
+                              BVar1 = write_to_file_1008_7e1c
+                                ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x4,
+                                 in_stack_0000ffca);
+                              if (BVar1 != 0) {
+                                  local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x24);
+                                  BVar1 = write_to_file_1008_7e1c
+                                    ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                     in_stack_0000ffca);
+                                  if (BVar1 != 0) {
+                                      local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x26);
+                                      BVar1 = write_to_file_1008_7e1c
+                                        ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                         in_stack_0000ffca);
+                                      if (BVar1 != 0) {
+                                          local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x28);
+                                          BVar1 = write_to_file_1008_7e1c
+                                            ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                             in_stack_0000ffca);
+                                          if (BVar1 != 0) {
+                                              return;
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    }
+  }
+  u16_1050_0310 = 0x6d0;
+  return;
 }

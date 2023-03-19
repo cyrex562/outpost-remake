@@ -5,6 +5,17 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_8_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_8_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/structs_5x.h"
+#include "structs/structs_0xx/structs_7x.h"
+#include "structs/structs_0xx/structs_8x.h"
+#include "structs/structs_6xx/struct_628.h"
+#include "structs/structs_6xx/struct_635.h"
+#include "structs/structs_6xx/structs_63x.h"
+#include "structs/structs_6xx/structs_64x.h"
+
 
 void pass1_1010_abd2(Globals *globals, u16 param_1, u16 param_2, i16 param_3, u8 *param_4, i16 param_5, u16 param_6);
 
@@ -23,7 +34,7 @@ u32  unk_load_str_op_1010_8c96(u32 param_1, u32 param_2, u32 param_3, u16 param_
 
 
 
-void  pass1_1010_8ef2(u16 *param_1, u8 *param_2, u16 param_3);
+void  pass1_1010_8ef2(u32 param_1, u16 param_2, u16 param_3);
 
 
 
@@ -39,7 +50,7 @@ void  pass1_1010_9372(u32 *param_1, u16 param_2, i16 param_3, i16 param_4, i16 p
 
 
 
-void  pass1_1010_9794(u32 param_1, u16 param_2);
+void  pass1_1010_9794(Struct250 *param_1, u16 param_2);
 
 
 
@@ -79,7 +90,7 @@ void  get_private_profile_string_1010_6132(u32 param_1, i16 param_2, LPCSTR para
 
 
 
-void  switchD_1010: 2ab5 ::caseD_13(u32 param_1, i16 param_2);
+void  switchD_1010_2ab5_caseD_13(u32 param_1, i16 param_2);
 
 
 u16 * pass1_1010_62ec(u16 *param_1, u8 param_2);
@@ -98,11 +109,11 @@ void  pass1_1010_4a8a(Struct637 *param_1, u16 param_2, u16 param_3, u16 param_4)
 
 
 
-void  struct_1010_4d5c(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u8 *param_7);
+void  struct_1010_4d5c(Struct245 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u8 *param_7);
 
 
 
-void  pass1_1010_4f48(u32 param_1, u16 param_2);
+void  pass1_1010_4f48(Struct482 *param_1, u16 param_2);
 
 
 
@@ -115,7 +126,7 @@ void  pass1_1010_503e(i16 param_1, u16 param_2, u16 param_3, u8 *param_4, u16 pa
 
 
 
-void  pass1_1010_519a(u32 param_1, i16 *param_2, u8 *param_3, u16 param_4);
+void  pass1_1010_519a(Struct242 *param_1, i16 *param_2, u8 *param_3, u16 param_4);
 
 
 
@@ -127,7 +138,7 @@ void  pass1_1010_3680(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 pa
 
 
 
-u16 * struct_1010_38f8(u32 param_1, i16 param_2, u16 param_3, u8 *param_4);
+u16 * struct_1010_38f8(Struct240 *param_1, i16 param_2, u16 param_3, u8 *param_4);
 
 
 
@@ -143,7 +154,7 @@ void  pass1_1010_3e3c(Struct55 *param_1, u16 param_2, u16 param_3);
 
 
 
-void  pass1_1010_41d6(u32 param_1, u32 param_2, u8 *param_3, u16 param_4, u8 param_5);
+void  pass1_1010_41d6(Struct243 *param_1, u32 param_2, u8 *param_3, u16 param_4, u8 param_5);
 
 
 

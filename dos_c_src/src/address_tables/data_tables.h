@@ -58,27 +58,29 @@
 #include "win_ops/win_ops_5.h"
 
 #include <stdint.h>
-u8 data_1050_518c[] = {0,0x15};
-u8 data_1050_518e[] = {0,1};
-
-
-static void* data_1050_4430;
-static void* data_1050_4436;
-static void* data_1050_4454;
-static void* data_1050_443c;
-static void* data_1050_4448;
-static void *data_1050_4464;
-static void *data_1050_4482;
-static void *data_1050_4488;
-static void *data_1050_446a;
-static void *data_1050_447a;
-static void *data_1050_4470;
-static void *data_1050_448e;
-static void *data_1050_44ac;
-static void *data_1050_4496;
-static void *data_1050_44a4;
-
-u16 u16_data_1050_5d68 = 0x20; // 1050:5d68 20  00
-
+//u8 data_1050_518c[] = {0,0x15};
+//u8 data_1050_518e[] = {0,1};
+//
+////
+////static void* data_1050_4430;
+////static void* data_1050_4436;
+////static void* data_1050_4454;
+////static void* data_1050_443c;
+////static void* data_1050_4448;
+////static void *data_1050_4464;
+////static void *data_1050_4482;
+////static void *data_1050_4488;
+////static void *data_1050_446a;
+////static void *data_1050_447a;
+////static void *data_1050_4470;
+////static void *data_1050_448e;
+////static void *data_1050_44ac;
+////static void *data_1050_4496;
+////static void *data_1050_44a4;
+//
+//u16 u16_data_1050_5d68 = 0x20; // 1050:5d68 20  00
+//
+//static HINSTANCE16  globals->HINST_1050_5f4c = 0;
+//static u16 dat_1050_5f84 = 0;
 
 #endif // OUTPOST_1_SRC_ADDRESS_TABLES_DATA_TABLES_H_

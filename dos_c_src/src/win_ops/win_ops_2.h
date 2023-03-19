@@ -4,6 +4,10 @@
 
 #ifndef OUTPOST_1_SRC_WIN_OPS_WIN_OPS_2_H_
 #define OUTPOST_1_SRC_WIN_OPS_WIN_OPS_2_H_
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_2xx/struct_283.h"
 
 
 void  send_msg_1038_ed8a(u16 param_1, u32 param_2, u32 param_3, HWND16 param_4);
@@ -154,7 +158,7 @@ void  pass1_1028_6ff6(u32 param_1, u16 param_2, i16 param_3, u16 param_4);
 
 
 
-void  win_1020_75f0(u32 param_1, u16 param_2);
+void  win_1020_75f0(Struct283 *param_1, u16 param_2);
 
 
 
@@ -166,7 +170,7 @@ void  window_op_1020_76aa(Struct0 *param_1);
 void  post_win_msg_1020_79fc(Struct69 *param_1, u16 param_2, u16 param_3, i16 param_4, HWND16 param_5);
 
 
-void window_op_1020_6c3a(struct Globals *globals, struct Struct0 *param_1);
+void window_op_1020_6c3a(Globals *globals, Struct0 *param_1);
 
 
 

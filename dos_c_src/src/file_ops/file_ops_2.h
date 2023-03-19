@@ -5,25 +5,40 @@
 #ifndef OUTPOST_1_SRC_FILE_OPS_FILE_OPS_2_H_
 #define OUTPOST_1_SRC_FILE_OPS_FILE_OPS_2_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_3xx/structs_38x.h"
+
 void  pass1_1030_227a(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
 
 void  pass1_1030_232e(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5);
 
-void  pass1_1030_2aca(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
+void  pass1_1030_2aca(Struct730 *param_1, u32 param_2, u16 param_3, u16 param_4);
 
-void  pass1_1030_2c8a(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5);
+void pass1_1030_2c8a(Globals   *globals,
+                     Struct373 *param_1,
+                     u32        param_2,
+                     i16        param_3,
+                     u8        *param_4,
+                     u16        param_5);
 
 void  pass1_1030_16d6(u32 param_1, u32 param_2, u16 param_3);
 
 void  file_1030_1730(u32 param_1, u32 param_2);
 
-u16  pass1_1030_1978(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
+u16  pass1_1030_1978(Struct730 *param_1, u32 param_2, u16 param_3, u16 param_4);
 
-void  file_1030_19b4(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5);
+void  file_1030_19b4(Struct370 *param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5);
 
 u16  pass1_1030_1a9c(u32 param_1, u32 param_2, u16 param_3);
 
-u16  file_1030_1b18(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5);
+u16 file_1030_1b18(Globals   *globals,
+                   Struct370 *param_1,
+                   u32        param_2,
+                   i16        param_3,
+                   u8        *param_4,
+                   u16        param_5);
 
 u16  write_file_fn_1028_e56c(u16 param_1, u16 param_2, u32 param_3, u16 param_4);
 

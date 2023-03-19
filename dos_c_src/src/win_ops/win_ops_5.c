@@ -12,8 +12,8 @@
 #include "fn_ptr_ops/fn_ptr_ops_7.h"
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
 #include "op_winapi.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/structs_3x.h"
 #include "structs/structs_8xx/struct_87x.h"
 #include "sys_ops/sys_ops_6.h"
@@ -117,13 +117,13 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0,
                         0);
     }
-    puVar7                      = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2d, unaff_SS, puVar5, unaff_DI);
+    puVar7                      = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2d, unaff_SS, puVar5, unaff_DI);
     uVar9                       = (puVar7 >> 0x10);
     (iVar11 + 0xf2)             = puVar7;
     (iVar11 + 0xf4)             = uVar9;
     (iVar11 + 0xe0)             = (iVar11 + 0xf2);
     (iVar11 + 0xe2)             = uVar9;
-    puVar10                     = globals->PTR_LOOP_1050_038c;
+    puVar10                     = globals->hinst_1050_038c;
     uVar3                       = LoadIcon16(SEG_1010, s_PLNTICON_1050_4267);
     *(HANDLE16 *)(iVar11 + 0xc2) = uVar3;
     uVar1                       = (iVar11 + 0xf2);
@@ -138,12 +138,12 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
     }
     else
     {
-        unk_win_ui_op_1020_1418((struct Struct40 *)CONCAT22(puVar5, uVar3), param_1, unaff_SS);
+        unk_win_ui_op_1020_1418((Struct40 *)CONCAT22(puVar5, uVar3), param_1, unaff_SS);
         *(iVar11 + 0xf6) = uVar3;
         (iVar11 + 0xf8)  = puVar6;
     }
     (iVar11 + 0xe8) = (iVar11 + 0xf6);
-    puVar7          = mixed_1010_20ba(globals->_PTR_LOOP_1050_0ed0, 0x2f, unaff_SS, puVar6, unaff_DI);
+    puVar7          = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2f, unaff_SS, puVar6, unaff_DI);
     uVar8           = pass1_1018_04b8(puVar7);
     puVar5          = (uVar8 >> 0x10);
     pass1_1010_41d6(*(iVar11 + 0xf2), uVar8, puVar5, unaff_SS, in_AF);
@@ -228,9 +228,16 @@ void pass1_1008_3bd6(u32       param_1,
                      u16       param_14)
 
 {
-    mixed_struct_op_1040_8fb8
-      (param_1,param_2,param_4,(char *)0x0,param_6,
-       (u16)param_7,(u16)(param_7 >> 0x10),(u16)param_8,(u16)(param_8 >> 0x10),param_9);
+    mixed_struct_op_1040_8fb8(NULL,
+                              param_1,
+                              param_2,
+                              param_4,
+                              (char *)0x0,
+                              param_6,
+                              (u16)param_7,
+                              (u16)(param_7 >> 0x10),
+                              (u16)param_8,
+                              (u16)(param_8 >> 0x10));
     param_2->field_0x0 = addr_table_1008_3cfc; //0x3cfc;
     param_2->field1_0x2 = SEG_1008;
     param_2->field_0x36 = 0;

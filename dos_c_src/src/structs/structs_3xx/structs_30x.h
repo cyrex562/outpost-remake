@@ -69,6 +69,7 @@ struct Struct307
     u8 field_0x26;
     u8 field_0x27;
     u8 field_0x28;
+    u16       field_0x1a_addr_offset;
 };
 struct Struct308
 {

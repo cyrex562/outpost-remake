@@ -5,6 +5,14 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_5_H_
 #define OUTPOST_1_SRC_UNK_UNK_5_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_2xx/structs_29x.h"
+#include "structs/structs_3xx/structs_30x.h"
+#include "structs/structs_6xx/struct_681.h"
+#include "structs/structs_6xx/struct_692.h"
+
 
 void  bad_1030_8cd2(void);
 
@@ -36,7 +44,7 @@ u32  pass1_1030_7c28(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u16 par
 
 
 
-void  pass1_1030_7c50(u32 param_1, long param_2, i16 param_3, u16 param_4, u8 *param_5);
+void  pass1_1030_7c50(Struct305 *param_1, long param_2, i16 param_3, u16 param_4, u8 *param_5);
 
 
 
@@ -101,7 +109,7 @@ void  pass1_1030_8660(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, u16 p
 
 
 
-void  pass1_1030_871e(long *param_1, u32 *param_2, u16 param_3, i16 param_4, u16 param_5);
+void  pass1_1030_871e(Struct681 *param_1, u32 *param_2, u16 param_3, i16 param_4, u16 param_5);
 
 
 
@@ -151,7 +159,7 @@ u32  pass1_1030_6d4e(u32 param_1, u16 param_2, u16 param_3, u16 param_4);
 
 
 
-void  pass1_1030_6d80(u32 param_1, u32 param_2);
+void  pass1_1030_6d80(Struct299 *param_1, u32 param_2);
 
 
 
@@ -166,7 +174,7 @@ void  pass1_1030_6e14(u32 param_1);
 
 
 
-void  pass1_1030_6e9c(u32 param_1, long param_2, i16 param_3);
+void  pass1_1030_6e9c(Struct301 *param_1, long param_2, i16 param_3);
 
 
 
@@ -178,7 +186,7 @@ void  pass1_1030_6f5a(u32 param_1, u16 param_2);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1030_73ee(u32 param_1, u32 param_2, u16 param_3);
+void  pass1_1030_73ee(Struct294 *param_1, u32 param_2, u16 param_3);
 
 
 
@@ -349,7 +357,7 @@ void  pass1_1030_3258(u32 param_1, u16 param_2);
 
 
 
-void  pass1_1030_326a(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
+void  pass1_1030_326a(Struct692 *param_1, u32 param_2, u16 param_3, u16 param_4);
 
 
 

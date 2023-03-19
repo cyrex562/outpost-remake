@@ -7,7 +7,7 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_0xx/structs_3x.h"
 #include "structs/structs_0xx/structs_5x.h"

@@ -17,7 +17,7 @@
 #include "../structs_4xx/structs_43x.h"
 #include "../structs_4xx/structs_45x.h"
 #include "../structs_4xx/structs_48x.h"
-#include "../structs_7x/structs_73x.h"
+#include "structs/structs_0xx/struct_43.h"
 #include "structs_11x.h"
 #include "structs_18x.h"
 #include "structs_19x.h"
@@ -111,8 +111,8 @@ struct Struct165
     u8          field_0x5;
     u8          field_0x6;
     u8          field_0x7;
-    struct Struct43 *field_0x8;
-    struct Struct43 *field_0xc;
+    struct Struct43   *field_0x8;
+    struct Struct43   *field_0xc;
     u8          field_0x10;
     u8          field_0x11;
     u8          field_0x12;
@@ -228,7 +228,7 @@ struct Struct166
     u8          field_0x4f;
     u8          field_0x50;
     u8          field_0x51;
-    struct Struct65 *field_0x52;
+    Struct65 *field_0x52;
 };
 struct Struct167
 {
@@ -900,7 +900,7 @@ struct Struct162
     u8          field_0x5;
     u8          field_0x6;
     u8          field_0x7;
-    struct Struct76 *field_0x8;
+    Struct76 *field_0x8;
     u8          field_0xc;
     u8          field_0xd;
     u8          field_0xe;

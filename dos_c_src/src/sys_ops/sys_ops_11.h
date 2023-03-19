@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../op_int.h"
+#include "op_int.h"
+#include "op_windef.h"
 #include "globals.h"
 
 
@@ -78,8 +79,15 @@ u16 dos3_calls_1000_5198(i16 param_1);
 void fatal_app_exit_1000_3e9e(Globals *globals, u16 app_exit_action);
 
 
-
-u16 sys_1000_3f9c(u8 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10);
+u16 sys_1000_3f9c(u8 *param_1,
+                  u8 *param_2,
+                  u16 param_3,
+                  u16 param_5,
+                  i16 param_6,
+                  u16 param_7,
+                  u16 param_8,
+                  u16 param_9,
+                  u8  param_10);
 
 
 

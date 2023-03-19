@@ -5,6 +5,11 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_7_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_7_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_2xx/structs_25x.h"
+
 
 void  pass1_1010_d5ae(u8 *param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 param_5, i16 param_6);
 
@@ -98,7 +103,7 @@ void  pass1_1010_d24a(u32 param_1, u32 param_2, u16 *param_3, u8 *param_4, u8 pa
 
 
 
-void  pass1_1010_9fee(u32 param_1, u16 param_2, u16 param_3, u16 param_4, u8 *param_5);
+void  pass1_1010_9fee(Struct252 *param_1, u16 param_2, u16 param_3, u16 param_4, u8 *param_5);
 
 
 

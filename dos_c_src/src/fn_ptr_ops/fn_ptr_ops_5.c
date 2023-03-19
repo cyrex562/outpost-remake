@@ -1,3 +1,15 @@
+#include "fn_ptr_ops_5.h"
+
+#include "address_tables/function_tables.h"
+#include "fn_ptr_ops_7.h"
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "struct_ops/struct_ops_3.h"
+#include "struct_ops/struct_ops_4.h"
+#include "structs/structs_0xx/struct_18.h"
+#include "structs/structs_0xx/structs_9x.h"
+#include "unk/unk_14.h"
 
 void  pass1_1018_7f0e(Struct18 *param_1, u8 param_2)
 
@@ -1250,7 +1262,7 @@ u16 * pass1_1018_580a(u16 *param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-void  pass1_1018_3cda(u32 *param_1, char *param_2, char *param_3)
+void  pass1_1018_3cda(Struct506 *param_1, char *param_2, char *param_3)
 
 {
     void **ppcVar1;
@@ -1468,7 +1480,7 @@ void  pass1_1018_2c60(u16 *param_1, u16 param_2)
     return;
 }
 
-void  pass1_1018_30ca(u32 param_1, char *param_2, u16 param_3)
+void  pass1_1018_30ca(Struct504 *param_1, char *param_2, u16 param_3)
 
 {
     u16          uVar1;
@@ -1554,7 +1566,7 @@ u32  pass1_1018_21c2(u32 param_1, u8 param_2, u16 param_3)
     return param_1;
 }
 
-void  pass1_1018_0dc6(u32 param_1, u16 param_2)
+void  pass1_1018_0dc6(Struct91 *param_1, u16 param_2)
 
 {
     u16        *puVar1;
@@ -1817,7 +1829,7 @@ void  pass1_1010_ec84(u32 param_1, u16 param_2, u8 param_3)
 
     pass1_1010_1f62(param_2, param_1, 0x14);
     pass1_1030_532e((Struct100 *)CONCAT22(param_2, local_10e), *(param_1 + 0x20), param_2, param_3);
-    fn_ptr_1030_835a(_PTR_LOOP_1050_5748, CONCAT22(param_2, local_10e));
+    fn_ptr_1030_835a(globals->_PTR_LOOP_1050_5748, CONCAT22(param_2, local_10e));
     return;
 }
 
@@ -1852,9 +1864,9 @@ void  pass1_1018_078e(u16 *param_1, u16 param_2)
     uVar5->field_0x20 = addr_table_1018_1874[15];//0x18b0;
     uVar5->field_0x22 = SEG_1018;
     globals->PTR_LOOP_1050_3960 = globals->PTR_LOOP_1050_3960 + -0x1;
-    (_PTR_LOOP_1050_3962 + uVar5->field_0x12 * 0x2 + -0x4) = 0x0;
-    if (PTR_LOOP_1050_3960 == 0x0) {
-        fn_ptr_1000_17ce(_PTR_LOOP_1050_3962, SEG_1000);
+    (globals->_PTR_LOOP_1050_3962 + uVar5->field_0x12 * 0x2 + -0x4) = 0x0;
+    if (globals->PTR_LOOP_1050_3960 == 0x0) {
+        fn_ptr_1000_17ce(globals->_PTR_LOOP_1050_3962, SEG_1000);
         globals->_PTR_LOOP_1050_3962 = (Struct18 *) 0x0;
     }
     fn_ptr_1000_17ce((Struct18 *)uVar5->field_0x94, SEG_1000);

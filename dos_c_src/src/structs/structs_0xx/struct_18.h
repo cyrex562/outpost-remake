@@ -11,7 +11,7 @@ typedef struct Struct18 Struct18;
 
 struct Struct18
 {
-    u16 field_0x0;
+    void**    field_0x0;
     u16 field_0x2;
     u16 field_0x4;
     u16 field_0x6;

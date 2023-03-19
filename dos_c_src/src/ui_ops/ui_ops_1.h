@@ -8,7 +8,7 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "structs/structs_0xx/struct_1.h"
 #include "structs/structs_0xx/struct_18.h"
 #include "structs/structs_0xx/struct_37.h"
@@ -224,7 +224,7 @@ void pass1_1040_caa6(u16 param_1, u32 param_2, u8 *param_3, i16 param_4, u16 par
 
 
 
-void get_dlg_item_1040_a3d0(u32 param_1, HWND16 param_2);
+void get_dlg_item_1040_a3d0(Struct49 *param_1, HWND16 param_2);
 
 
 
@@ -239,7 +239,7 @@ void destroy_win_1040_8b7e(HWND16 param_1);
 
 
 
-void load_icon_1040_8b92(u32 param_1, HINSTANCE16 hinst_arg_2);
+void load_icon_1040_8b92(Struct57 *param_1, HINSTANCE16 hinst_arg_2);
 
 
 
@@ -295,7 +295,7 @@ void destroy_win_1040_8212(u32 param_1, HWND16 param_2);
 
 
 
-void win_ui_op_1040_81fe(HWND16 param_1);
+void set_sys_modal_window_1040_81fe(HWND16 param_1);
 
 
 

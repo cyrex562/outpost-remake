@@ -6,37 +6,30 @@
 #define OUTPOST_1_SRC_UNK_UNK_1_H_
 
 
-#include "structs/structs_0xx/struct_1.h"
-#include "structs/structs_1xx/structs_16x.h"
 #include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_0xx/struct_1.h"
+#include "structs/structs_0xx/structs_5x.h"
+#include "structs/structs_1xx/structs_16x.h"
+
 
 typedef struct struct_1040_d76e_1 {
   u16 field_0x94;
-  u16 *field_0x98;
+  u16 field_0x98;
   u16 field_0x9c;
 } struct_1040_d76e_1;
 
 void  pass1_1040_d76e(struct_1040_d76e_1 *param_1);
 
 
-
-
-void  pass1_1040_d0f8(Struct57 *param_1, u16 param_2);
-
-
-
-
-void  pass1_1040_ca16(Struct57 *param_1, u16 param_2, u8 *param_3, i16 param_4, u16 param_5);
-
-
+void pass1_1040_d0f8(Globals *globals, Struct57 *param_1, u16 param_2);
 
 
 u16 * pass1_1040_c9cc(u16 *param_1, u8 param_2);
 
 
-
-
-void  pass1_1040_c71e(u32 param_1, u16 param_2);
+void pass1_1040_c71e(Struct65 *param_1);
 
 
 void pass1_1040_c630(Globals *globals, Struct165 *param_1, u16 param_2, u16 param_3);
@@ -128,7 +121,7 @@ u16  pass1_1040_824a(u32 param_1, i16 param_2);
 
 
 
-void  pass1_1040_807e(u32 param_1, u16 param_2, u16 param_3);
+void  pass1_1040_807e(Struct395 *param_1, u16 param_2, u16 param_3);
 
 
 

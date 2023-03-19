@@ -8,10 +8,9 @@
 #include "op_int.h"
 #include "structs/structs_1xx/structs_10x.h"
 #include "structs/structs_1xx/structs_14x.h"
-#include "structs/structs_7x/structs_73x.h"
+
 typedef struct Struct48 Struct48;
 typedef struct Struct44 Struct44;
-typedef struct Struct43 Struct43;
 typedef struct Struct42 Struct42;
 typedef struct Struct40 Struct40;
 typedef struct Struct41 Struct41;
@@ -198,19 +197,6 @@ struct Struct44
     u16 field_0x1a;
     u16 field_0x1c;
     u16 field_0x1e;
-};
-struct Struct43
-{
-    u8  field_0x0;
-    u8  field_0x1;
-    u8  field_0x2;
-    u8  field_0x3;
-    u8 *fn_ptr_field_0x4;
-    u8 *field_0x6;
-    u8 *fn_ptr_field_0x8;
-    u8 *field_0xa;
-    u8 *fn_ptr_field_0xc;
-    u8 *field_0xe;
 };
 struct Struct42
 {

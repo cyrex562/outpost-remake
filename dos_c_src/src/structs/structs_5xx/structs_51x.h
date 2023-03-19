@@ -168,7 +168,7 @@ struct Struct516
     u8                 field_0x8b;
     u8                 field_0x8c;
     u8                 field_0x8d;
-    struct Struct18 *field_0x8e;
+    Struct18 *field_0x8e;
     u32                field_0x92;
 };
 struct Struct512

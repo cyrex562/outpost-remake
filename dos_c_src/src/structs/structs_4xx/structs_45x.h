@@ -13,7 +13,6 @@
 #include "structs/structs_1xx/structs_16x.h"
 #include "structs/structs_2xx/structs_28x.h"
 #include "structs/structs_3xx/structs_31x.h"
-#include "structs/structs_7x/structs_72x.h"
 #include "structs_43x.h"
 #include "structs_46x.h"
 #include "structs_48x.h"

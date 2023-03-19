@@ -5,6 +5,16 @@
 #ifndef OUTPOST_1_SRC_SYS_OPS_SYS_OPS_5_H_
 #define OUTPOST_1_SRC_SYS_OPS_SYS_OPS_5_H_
 
+#include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "structs/structs_1xx/structs_18x.h"
+#include "structs/structs_2xx/structs_27x.h"
+#include "structs/structs_3xx/struct_306.h"
+#include "structs/structs_6xx/struct_665.h"
+#include "structs/structs_6xx/struct_669.h"
+#include "structs/structs_0xx/structs_5x.h"
+
 
 void  pass1_1028_4aca(u32 param_1, u8 *param_2, i16 param_3, u16 param_4);
 
@@ -46,7 +56,7 @@ void  pass1_1020_ea20(u32 param_1, u16 *param_2, u32 param_3, u32 param_4, u16 p
 
 
 
-void  struct_1028_0068(u16 *param_1, u8 *param_2);
+void  struct_1028_0068(Struct183 *param_1, u8 *param_2);
 
 
 
@@ -55,7 +65,7 @@ void  pass1_1028_00cc(i16 param_1, u16 param_2, i16 param_3, u32 param_4, u8 *pa
 
 
 
-void  pass1_1028_0176(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
+void  pass1_1028_0176(Struct306 *param_1, u32 param_2, u16 param_3, u16 param_4);
 
 
 
@@ -148,7 +158,7 @@ void  pass1_1020_ad90(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 *p
 
 
 
-void  pass1_1020_87c2(u16 *param_1, u16 param_2, i16 param_3);
+void  pass1_1020_87c2(Struct281 *param_1, u16 param_2, i16 param_3);
 
 
 
@@ -164,7 +174,7 @@ void  pass1_1020_8eaa(u16 *param_1, u16 param_2);
 
 
 
-void  pass1_1020_915a(u32 param_1, u8 *param_2, i16 param_3, u16 param_4);
+void  pass1_1020_915a(Struct669 *param_1, u8 *param_2, i16 param_3, u16 param_4);
 
 
 
@@ -199,11 +209,11 @@ u32  pass1_1020_23f2(u16 param_1, u16 param_2, u16 *param_3, u8 *param_4, u16 pa
 
 
 
-void  pass1_1020_25c0(u32 param_1, u16 param_2, u16 param_3);
+void  pass1_1020_25c0(Struct277 *param_1, u16 param_2, u16 param_3);
 
 
 
-void  pass1_1020_294a(u32 param_1, u32 param_2, u16 param_3, u8 *param_4, i16 param_5, u16 param_6);
+void  pass1_1020_294a(Struct665 *param_1, u32 param_2, u16 param_3, u8 *param_4, i16 param_5, u16 param_6);
 
 
 

@@ -1,17 +1,19 @@
 
 #include "sys_ops_11.h"
 
+#include "address_tables/data_tables.h"
 #include "fn_ptr_ops/fn_ptr_ops_6.h"
 #include "op_dos_interrupts.h"
 #include "op_int.h"
-#include "op_win_def.h"
 #include "op_winapi.h"
+#include "op_windef.h"
+#include "struct_20.h"
+#include "sys_ops_12.h"
 #include "unk/unk_12.h"
 #include "unk/unk_14.h"
 #include "unk/unk_15.h"
 #include "unk/unk_16.h"
 #include "utils.h"
-#include "sys_ops_12.h"
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -87,7 +89,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         globals->PTR_LOOP_1050_0010 = (&PTR_LOOP_1050_0000 + 0x1);
     }
     LoadString16(instance, 0x80, local_92, param_2);
-    uVar4 = dos3_call_1000_51aa(&stack0xfffe);
+    uVar4 = dos_int21_find_file_1000_51aa(&stack0xfffe);
     if(uVar4 != 0x0)
     {
         LoadString16(SEG_1000, 0x80, local_13e, param_2);
@@ -133,7 +135,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         puVar7 = (uVar13 >> 0x10);
         uVar4  = uVar13;
     }
-    if(globals->_PTR_LOOP_1050_0ed0 == 0x0)
+    if(globals->u16_1050_0ed0 == 0x0)
     {
         debug_pri16_1008_6048(s_New_failed_in_Op__Op_1050_0020, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -148,7 +150,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         uVar10 = SEG_1010;
         pass1_1010_7e40(CONCAT22(puVar7, uVar4), puVar6, unaff_DI, param_2);
     }
-    if(globals->_PTR_LOOP_1050_14cc == 0x0)
+    if(globals->dat_1050_14cc == 0x0)
     {
         debug_pri16_1008_6048(0x10500035, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -165,7 +167,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         puVar7  = (paVar14 >> 0x10);
         uVar4   = paVar14;
     }
-    if(_PTR_LOOP_1050_5b7c == 0x0)
+    if(globals->_PTR_LOOP_1050_5b7c == 0x0)
     {
         debug_pri16_1008_6048(s_New_failed_in_Op__Op__DialogCtr_1050_0053, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -180,7 +182,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
         uVar10 = SUB42(SEG_1038, 0x0);
         make_proc_inst_1038_cf6c(CONCAT22(puVar7, uVar4), puVar6, SEG_1038);
     }
-    if(_PTR_LOOP_1050_5bc8 == 0x0)
+    if(globals->_PTR_LOOP_1050_5bc8 == 0x0)
     {
         debug_pri16_1008_6048(s_New_failed_in_Op__Op__DialogHand_1050_0073, uVar10, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -193,7 +195,7 @@ void  mixed_win_sys_op_1008_016e(u32 param_1, u16 param_2)
     {
         pass1_1008_5bdc((Struct79 *)CONCAT22(puVar6, uVar4), unaff_DI, param_2);
     }
-    if(_PTR_LOOP_1050_02a0 == 0x0)
+    if(globals->_PTR_LOOP_1050_02a0 == 0x0)
     {
         debug_pri16_1008_6048(s_New_failed_in_Op__Op__Simulator_1050_0097, SEG_1000, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -239,7 +241,7 @@ BOOL16  pass1_1008_07d8(u16 param_1, BOOL16 param_2, u8 *param_3, u16 param_4)
     u8  in_AF;
     u32 uVar3;
 
-    if(_PTR_LOOP_1050_5748 == 0x0)
+    if(globals->_PTR_LOOP_1050_5748 == 0x0)
     {
         uVar1 = SEG_1000;
         mem_op_1000_179c(0xa, param_3, SEG_1000);
@@ -249,7 +251,7 @@ BOOL16  pass1_1008_07d8(u16 param_1, BOOL16 param_2, u8 *param_3, u16 param_4)
             uVar1 = SEG_1030;
             struct_1030_8128(CONCAT22(param_3, param_2), u_var2, param_4);
         }
-        if(_PTR_LOOP_1050_5748 == 0x0)
+        if(globals->_PTR_LOOP_1050_5748 == 0x0)
         {
             debug_pri16_1008_6048(s_New_failed_in_Op__Op__Simulator_1050_0110, uVar1, param_4);
             fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
@@ -257,8 +259,8 @@ BOOL16  pass1_1008_07d8(u16 param_1, BOOL16 param_2, u8 *param_3, u16 param_4)
         uVar3 = pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, u_var2, 0x8);
         uVar3 = pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0x8);
         pass1_1028_e2e0(globals->_PTR_LOOP_1050_65e2, (uVar3 >> 0x10), 0xff);
-        pass1_1030_838e(_PTR_LOOP_1050_5748, param_4, in_AF);
-        param_2 = pass1_1030_8334(_PTR_LOOP_1050_5748);
+        pass1_1030_838e(globals->_PTR_LOOP_1050_5748, param_4, in_AF);
+        param_2 = pass1_1030_8334(globals->_PTR_LOOP_1050_5748);
     }
     return param_2;
 }
@@ -444,7 +446,7 @@ i16 *pass1_1000_4f1a(i16 param_1, u16 param_2, u16 param_3)
     }
     FatalAppExit16(param_3, str);
     FatalExit();
-    piVar4 = &globals->PTR_LOOP_1050_63fe;
+    piVar4 = &globals->u16_1050_63fe;
     do
     {
         pi_var1 = piVar4;
@@ -733,7 +735,15 @@ void fatal_app_exit_1000_3e9e(Globals *globals, u16 app_exit_action)
     FatalAppExit16(app_exit_action, globals->s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
 }
 
-u16 sys_1000_3f9c(u8 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_5, i16 param_6, u16 param_7, u16 param_8, u16 param_9, u8 param_10)
+u16 sys_1000_3f9c(u8 *param_1,
+                  u8 *param_2,
+                  u16 param_3,
+                  u16 param_5,
+                  i16 param_6,
+                  u16 param_7,
+                  u16 param_8,
+                  u16 param_9,
+                  u8  param_10)
 
 {
     u8 *puVar1;
@@ -750,7 +760,7 @@ u16 sys_1000_3f9c(u8 *param_1, u8 *param_2, u16 param_3, u16 param_4, u16 param_
     u_var2                             = sys_1000_30b4(&USHORT_1050_68a8, SEG_1050, (u8 *)CONCAT22(param_4, param_3), &iStack2, &USHORT_1050_68a8, param_7, param_8, param_9);
     puVar1                            = _USHORT_1050_68a8;
     globals->PTR_LOOP_1050_68ac       = globals->PTR_LOOP_1050_68ac + -0x1;
-    if(PTR_LOOP_1050_68ac < 0x0)
+    if(globals->PTR_LOOP_1050_68ac < 0x0)
     {
         mem_1000_2bb6(0x0, &USHORT_1050_68a8, &iStack2, param_7, param_8, param_9, param_10, param_2);
     }
@@ -770,14 +780,14 @@ u8 *pass1_1000_400a(i16 param_1, u16 param_2)
     i16 iStack2;
 
     iStack2 = param_2 + 0x1;
-    if((param_1 < 0x0) || (PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e <= param_1))
+    if((param_1 < 0x0) || (globals->PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e <= param_1))
     {
         globals->PTR_LOOP_1050_5f78 = &DAT_1050_0009;
         puVar1                      = 0xffff;
     }
     else
     {
-        if(((PTR_LOOP_1050_61ec == 0x0) || ((param_1 < DAT_1050_5f8a && (0x2 < param_1)))) && (0x31d < CONCAT11(DAT_1050_5f83, DAT_1050_5f82)))
+        if(((globals->PTR_LOOP_1050_61ec == 0x0) || ((param_1 < DAT_1050_5f8a && (0x2 < param_1)))) && (0x31d < CONCAT11(DAT_1050_5f83, DAT_1050_5f82)))
         {
             puVar1 = globals->PTR_LOOP_1050_5f88;
             if(((*(u8 *)(param_1 + 0x5f90) & 0x1) == 0x0) || (puVar1 = dos3_call_1000_5174(&iStack2), puVar1 != 0x0))
@@ -921,7 +931,7 @@ i16 *mixed_sys_op_1000_40af(u16 param_1, i16 param_2, u16 param_3, u16 param_4, 
             }
         }
     LAB_1000_41aa:
-        if((PTR_LOOP_1050_618e | globals->PTR_LOOP_1050_618c) == 0x0)
+        if((globals->PTR_LOOP_1050_618e | globals->PTR_LOOP_1050_618c) == 0x0)
         {
             return 0x0;
         }
@@ -945,7 +955,7 @@ i16 *mixed_sys_op_1000_40af(u16 param_1, i16 param_2, u16 param_3, u16 param_4, 
 LAB_1000_28cb:
     FatalAppExit16(LAST_SEGMENT, str);
     FatalExit();
-    puVar12 = &globals->PTR_LOOP_1050_63fe;
+    puVar12 = &globals->u16_1050_63fe;
     do
     {
         puVar1  = puVar12;
@@ -1034,7 +1044,7 @@ void get_date_time_op_1000_435c(Globals *globals, u16 *param_1, u16 param_2, u16
     // AH = 0x2A
     // Get Date
     fn_ptr_1 = swi(0x21);
-    ((DosInt21GetDate)fn_ptr_1)(globals->USHORT_1050_1050);
+    ((DosInt21GetDate)fn_ptr_1)(SEG_1050);
     // AH = 0x2C
     // Get Time
     fn_ptr_1 = swi(0x21);
@@ -1110,9 +1120,9 @@ void mixed_dos3_call_1000_3636(u16 param_1, u16 param_2, u16 param_3, u16 param_
     bool       bVar5;
     u32 uVar6;
 
-    if(((param_1 < DAT_1050_5f8a) || (PTR_LOOP_1050_61ec == 0x0)) || (0x2 < param_1))
+    if(((param_1 < DAT_1050_5f8a) || (globals->PTR_LOOP_1050_61ec == 0x0)) || (0x2 < param_1))
     {
-        if((PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0x0))
+        if((globals->PTR_LOOP_1050_6064 == 0x0) || ((param_3 & 0x8000) == 0x0))
             goto LAB_1000_36e3;
         if(param_4 == 0x0)
             goto LAB_1000_369b;
@@ -1410,7 +1420,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
     puVar5  = DAT_1050_5f8a;
     iStack2 = unaff_BP + 0x1;
     puVar7  = DAT_1050_5f8a;
-    if((PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals->PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1U)))
+    if((globals->PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals->PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1U)))
     {
         param_1 = DAT_1050_5f8a;
     }
@@ -1876,7 +1886,7 @@ u32 mixed_mem_op_1000_3c51(HGLOBAL16 param_1, HGLOBAL16 param_2, i16 param_3, u1
     }
     FatalAppExit16(param_5, str);
     FatalExit();
-    piVar5 = &globals->PTR_LOOP_1050_63fe;
+    piVar5 = &globals->u16_1050_63fe;
     do
     {
         pi_var1 = piVar5;
@@ -1915,7 +1925,7 @@ u16 pass1_1000_2e74(u16 *param_1, u16 param_2)
     u16 *puVar4;
     u16 *puVar5;
 
-    if(PTR_LOOP_1050_61ec != 0x0)
+    if(globals->PTR_LOOP_1050_61ec != 0x0)
     {
         puVar5 = param_1 + 0x78;
         puVar4 = 0x5ff2;
@@ -2128,7 +2138,7 @@ i16 *pass1_1000_25d2(i16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     }
     FatalAppExit16(param_4, str);
     FatalExit();
-    piVar6 = &globals->PTR_LOOP_1050_63fe;
+    piVar6 = &globals->u16_1050_63fe;
     do
     {
         piVar2 = piVar6;
@@ -2210,7 +2220,7 @@ i16 *exit_1000_25f2(u16 param_1, u16 param_2, i16 param_3, i16 param_4, u16 para
     }
     FatalAppExit16(param_6, str);
     FatalExit();
-    piVar5 = &globals->PTR_LOOP_1050_63fe;
+    piVar5 = &globals->u16_1050_63fe;
     do
     {
         piVar2 = piVar5;
@@ -2263,7 +2273,7 @@ void pass1_1000_262c(Globals *globals,
     globals->PTR_LOOP_1050_5fd4 = param_2;
     param_2                     = 0x263d;
     param_1                     = pass1_1000_2950(0x8, in_DX, unaff_ES, param_4);
-    pCStack2                    = globals->PTR_LOOP_1050_5f4c;
+    pCStack2                    = globals->hinst_1050_5f4c;
     puStack4                    = in_DX;
     globals->PTR_LOOP_1050_5fc2 = param_1;
     globals->PTR_LOOP_1050_5fc4 = in_DX;
@@ -2395,7 +2405,7 @@ LAB_1000_272e:
         // WARNING: Could not recover jumptable at 0x100027d2. Too many branches
         // WARNING: Treating indirect jump as call
         (*(fn_ptr_1) * &PTR_LOOP_1050_5fd2)();
-        globals->_PTR_LOOP_1050_5fc2 = CONCAT22(PTR_LOOP_1050_5fc4, globals->PTR_LOOP_1050_5fc2);
+        globals->_PTR_LOOP_1050_5fc2 = CONCAT22(globals->PTR_LOOP_1050_5fc4, globals->PTR_LOOP_1050_5fc2);
         return;
     }
     *ppcVar10     = pcVar13;

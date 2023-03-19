@@ -5,6 +5,9 @@
 #ifndef OUTPOST_1_SRC_UNK_UNK_13_H_
 #define OUTPOST_1_SRC_UNK_UNK_13_H_
 
+#include "op_int.h"
+#include "op_windef.h"
+#include "globals.h"
 
 
 void pass1_1010_0f76(u16 *param_1, u16 param_2);
@@ -23,7 +26,7 @@ void pass1_1008_e852(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 par
 
 
 
-long pass1_1008_e8cc(u16 param_1, u32 param_2, u32 param_3, u32 param_4);
+long pass1_1008_e8cc(u16 param_1, Struct102 *param_2, u32 param_3, u32 param_4);
 
 
 
@@ -159,7 +162,7 @@ void pass1_1008_caa0(u16 *param_1, u16 param_2);
 
 
 
-void pass1_1008_cac6(u32 param_1);
+void pass1_1008_cac6(Struct470 *param_1);
 
 
 
@@ -380,7 +383,7 @@ void pass1_1008_9f18(i16 param_1, u16 param_2, i16 param_3, u16 param_4);
 
 
 
-u32 pass1_1008_9f48(u32 param_1);
+u32 pass1_1008_9f48(Struct134 *param_1);
 
 
 
@@ -425,7 +428,7 @@ void empty_1008_8fc4(void);
 
 
 
-void pass1_1008_9004(u32 param_1, u16 param_2, u16 param_3, u32 param_4);
+void pass1_1008_9004(Struct107 *param_1, u16 param_2, u16 param_3, u32 param_4);
 
 
 

@@ -7,7 +7,7 @@
 
 #include "globals.h"
 #include "op_int.h"
-#include "op_win_def.h"
+#include "op_windef.h"
 #include "stdbool.h"
 #include "structs/structs_0xx/structs_9x.h"
 
@@ -101,7 +101,8 @@ u16 pass1_1000_0e08(i16 param_1, u16 param_2);
 
 
 
-long  pass1_1000_0ed4(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 *param_6, u16 param_7);
+long  pass1_1000_0ed4(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5,
+                     u16 param_6, u16 param_7);
 
 
 
@@ -150,25 +151,25 @@ void pass1_1000_15ce(u16 *param_1, u16 param_2, WORD param_3);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u8 *mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1);
+u16 mem_op_1000_160a(Globals *globals, u16 param_2, u16 param_1);
 
 
 u16 mem_1000_167a(Globals *globals, u16 param_1, u16 param_2, u16 param_3);
 
 
+u16 pass1_1000_16aa(Globals *globals,
+                    u16      param_1,
+                    u16      param_2,
+                    u16      param_3,
+                    u16      param_4,
+                    u16      param_5,
+                    u16      param_6);
 
 
-u16 pass1_1000_16aa(u16 *param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6);
+u16 pass1_1000_180c(Globals *globals, u16 param_1, u16 param_2, u16 param_3);
 
 
-
-
-u16 pass1_1000_180c(u16 param_1, u16 param_2, u16 param_3);
-
-
-
-
-u16 pass1_1000_183c(u16 param_1, u16 param_2, u16 param_3);
+long pass1_1000_183c(Globals *globals, u16 param_1, u16 param_2, u16 param_3);
 
 
 

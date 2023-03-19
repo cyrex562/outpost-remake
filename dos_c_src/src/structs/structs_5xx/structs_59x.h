@@ -24,7 +24,7 @@ struct Struct594
     u8                 field_0x0;
     u8                 field_0x1;
     u16                field_0x2;
-    struct Struct18 *field_0x4;
+    Struct18 *field_0x4;
 };
 struct Struct595
 {
@@ -294,7 +294,7 @@ struct Struct599
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct Struct18 *field_0x14;
+    Struct18 *field_0x14;
     i16                field_0x18;
 };
 struct Struct596
@@ -371,7 +371,7 @@ struct Struct597
     u8                 field_0x10;
     u8                 field_0x11;
     i16                field_0x12;
-    struct Struct18 *field_0x14;
+    Struct18 *field_0x14;
     u8                 field_0x18;
     u8                 field_0x19;
     u8                 field_0x1a;

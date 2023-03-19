@@ -155,7 +155,7 @@ struct Struct625
     u8                 field_0x91;
     u8                 field_0x92;
     u8                 field_0x93;
-    struct Struct18 *field_0x94;
-    struct Struct18 *field_0x98;
+    Struct18 *field_0x94;
+    Struct18 *field_0x98;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_625_H_

@@ -43,7 +43,7 @@ struct Struct626
     u8                 field_0x1f;
     u16                field_0x20;
     u16                field_0x22;
-    struct Struct76 *field_0x24;
+    Struct76 *field_0x24;
     u32         field_0x28;
     u8                 field_0x2c;
     u8                 field_0x2d;
