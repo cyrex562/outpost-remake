@@ -707,7 +707,7 @@ HWND16 CreateWindow16(LPCSTR class_name,
                       u16    width,
                       u16    height,
                       HWND16 parent,
-                      HMENU16,
+                      HMENU16 menu,
                       HINSTANCE16 instance,
                       LPVOID      data)
 {

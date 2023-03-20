@@ -424,5 +424,6 @@ struct Struct109
 };
 struct Struct108
 {
+    u8 field0;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_10X_H_

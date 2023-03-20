@@ -507,9 +507,11 @@ struct Struct243
 };
 struct Struct247
 {
+    u8 field_0;
 };
 struct Struct244
 {
+    u8 field_0;
 };
 struct Struct246
 {

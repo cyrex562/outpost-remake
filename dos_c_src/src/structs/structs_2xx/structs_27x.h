@@ -180,6 +180,7 @@ struct Struct724
 };
 struct Struct279
 {
+    u8 field0;
 };
 struct Struct271
 {

@@ -4,10 +4,12 @@
 
 #include "unk_17.h"
 
-#include "op_int.h"
-#include "unk_2.h"
-#include "op_windef.h"
 #include "globals.h"
+#include "op_int.h"
+#include "op_windef.h"
+#include "unk_2.h"
+
+#include <stdbool.h>
 
 void  pass1_1038_b6e0(u32 param_1, i16 param_2)
 
@@ -27,9 +29,12 @@ void  pass1_1038_b6e0(u32 param_1, i16 param_2)
         uVar3 = (param_1 >> 0x10);
         iVar2 = param_1;
         if((((uStack4 * 0x4 + iVar2 + 0x2) | (uStack4 * 0x4 + iVar2)) != 0x0) && (uVar1 = (uStack4 * 0x4 + iVar2), (uVar1 + 0x6) == param_2))
+        {
             break;
+        }
         uStack4 = uStack4 + 0x1;
     }
-    (uStack4 * 0x4 + iVar2) = 0x0;
+    // TODO
+//    (uStack4 * 0x4 + iVar2) = 0x0;
     return;
 }

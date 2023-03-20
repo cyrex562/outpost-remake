@@ -46,6 +46,7 @@ struct Struct176
 };
 struct Struct177
 {
+    u8 field0;
 };
 struct Struct178
 {

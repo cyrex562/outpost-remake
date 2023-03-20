@@ -308,6 +308,7 @@ struct Struct343
 };
 struct Struct344
 {
+    u8 field_0;
 };
 struct Struct345
 {
