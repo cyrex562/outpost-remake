@@ -583,13 +583,13 @@ void init_globals_1020_96d4(Globals *globals)
     globals->PTR_LOOP_1050_4ae8  = 0x0;
     globals->PTR_LOOP_1050_4aee  = 0x0;
     globals->PTR_LOOP_1050_4af4  = 0x0;
-    pu_var_3                     = 0x4af6;
-    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
-    {
-        pu_var_1  = pu_var_3;
-        pu_var_3  = pu_var_3 + 0x1;
-        *pu_var_1 = 0x0;
-    }
+//    pu_var_3                     = 0x4af6;
+//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
+//    {
+//        pu_var_1  = pu_var_3;
+//        pu_var_3  = pu_var_3 + 0x1;
+//        *pu_var_1 = 0x0;
+//    }
     globals->PTR_LOOP_1050_4b9c  = data_1050_4434;
     globals->_PTR_LOOP_1050_4b9e = 0x0;
     globals->_PTR_LOOP_1050_4ba4 = 0x0;
@@ -855,11 +855,11 @@ void init_globals_1020_96d4(Globals *globals)
     globals->PTR_LOOP_1050_4e24  = 0x0;
     globals->PTR_LOOP_1050_4e2a  = 0x0;
     globals->PTR_LOOP_1050_4e30  = 0x0;
-    pu_var_3                     = 0x4e32;
-    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
-    {
-        pu_var_1  = pu_var_3;
-        pu_var_3  = pu_var_3 + 0x1;
-        *pu_var_1 = 0x0;
-    }
+//    pu_var_3                     = 0x4e32;
+//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
+//    {
+//        pu_var_1  = pu_var_3;
+//        pu_var_3  = pu_var_3 + 0x1;
+//        *pu_var_1 = 0x0;
+//    }
 }

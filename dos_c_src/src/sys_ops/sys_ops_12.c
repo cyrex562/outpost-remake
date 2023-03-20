@@ -19,7 +19,7 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-void                     pass1_1000_27d6(Globals *globals, u16 *param_1)
+void                     pass1_1000_27d6(Globals *globals, u16 param_1)
 
 {
     i16   *pi_var1;
@@ -785,128 +785,138 @@ u16  pass1_1000_21d2(u8 param_1, long param_2, u16 param_3, u16 param_4, u8 para
     return 0x0;
 }
 
-
-i16 *entry(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, CONTEXT *in_task_context, u16 param_7, i16 param_8)
-
-{
-    u16       *puVar1;
-    u16        u_var2;
-    char      *pcVar3;
-    void *pcVar4;
-    u16        uVar5;
-    LPCSTR     str;
-    u16       *puVar6;
-    u16       *puVar7;
-    char      *pcVar8;
-    CHAR      *unaff_SS;
-    bool       bVar9;
-    DWORD      DVar10;
-    u32 uVar11;
-    u32 uVar12;
-    i16        iVar13;
-    i16        iVar14;
-    HINSTANCE16 hinst_var15 = 0;
-    u16        uVar16;
-
-    uVar11 = CONCAT22(param_7, u16_1050_5f84);
-    do
-    {
-        uVar16 = 0x0;
-        InitTask16(in_task_context);
-        u16_1050_5f84 = uVar11;
-        if((param_8 != 0x0) && (bVar9 = param_1 < 0xff00, param_1 = param_1 + 0x100, globals->U16_1050_5f7e = param_5, bVar9))
-        {
-            globals->u16_1050_5f48      = param_1;
-            globals->u16_1050_5f4a      = param_3;
-            globals->hinst_1050_5f4c    = param_4;
-            globals->u16_1050_5f4e      = param_2;
-            globals->u16_1050_5f50      = param_5;
-            LockSegment16((HGLOBAL16)LAST_SEGMENT);
-            globals->u16_1050_5f52          = (uVar11 >> 0x10);
-            u16_1050_5f84     = uVar11;
-            DVar10                          = GetVersion16();
-            globals->u16_1050_5f52          = (uVar11 >> 0x10);
-            u16_1050_5f84     = uVar11;
-            globals->u16_1050_5f80          = CONCAT11(DVar10, (DVar10 >> 0x8));
-            // 0x3r0
-            pcVar4                          = (FnPtr1)swi(0x21);
-            uVar12                          = uVar11;
-            uVar11                          = (*pcVar4)(uVar16);
-            globals->u16_1050_5f52          = (uVar12 >> 0x10);
-            u16_1050_5f84     = uVar12;
-            globals->globals->u8_1050_5f82  = CONCAT11(uVar11, (uVar11 >> 0x8));
-            globals->u8_1050_5f87           = 0x0;
-            WaitEvent16(SEG_1000);
-            u16_1050_5f84 = uVar11;
-            hinst_var15 = globals->hinst_1050_5f4c;//globals->PTR_LOOP_1050_5f4c;
-            param_8                     = InitApp16((HINSTANCE16)LAST_SEGMENT);
-            u16_1050_5f84 = uVar11;
-            if(param_8 != 0x0)
-                break;
-        }
-        in_task_context = (CONTEXT *)LAST_SEGMENT;
-        param_8         = CONCAT11((param_8 >> 0x8), 0xff);
-        pass1_1000_24db(NULL, param_8, 0x0);
-        u16_1050_5f84 = uVar11;
-    } while(true);
-    interrupt_vector_op_1000_23ea(NULL, param_2, param_5, 0x0, unaff_SS);
-    u16_1050_5f84 = uVar11;
-    pass1_1000_262c(0x238d, LAST_SEGMENT, unaff_SS, LAST_SEGMENT);
-    u16_1050_5f84 = uVar11;
-    pass1_1000_27d6(NULL, (uVar11 >> 0x10));
-    uVar11 = ret_op_1000_55ac(hinst_var15);
-    uVar5  = uVar11;
-    init_1000_23be(param_1, (uVar11 >> 0x10), unaff_SS);
-    fn_ptr_op_1000_24cd(NULL, uVar5, 0x0);
-    iVar14 = 0x15;
-    iVar13 = 0x15;
-    pass1_1000_25a8(NULL, param_5, LAST_SEGMENT);
-    pass1_1000_2913(NULL, iVar13, param_5, LAST_SEGMENT);
-    str = poss_str_op_1000_28dc(NULL, iVar14);
-    if(str != (PCHAR)0x0)
-    {
-        iVar13 = 0x9;
-        if(*str == 'M')
-        {
-            iVar13 = 0xf;
-        }
-        str    = str + iVar13;
-        iVar13 = 0x22;
-        pcVar8 = str;
-        do
-        {
-            if(iVar13 == 0x0)
-                break;
-            iVar13 = iVar13 + -0x1;
-            pcVar3 = pcVar8;
-            pcVar8 = pcVar8 + 0x1;
-        } while(*pcVar3 != '\r');
-        pcVar8[-0x1] = '\0';
-    }
-    FatalAppExit16(LAST_SEGMENT, str);
-    FatalExit();
-    puVar7 = &globals->u16_1050_63fe;
-    do
-    {
-        puVar1 = puVar7;
-        puVar7 = puVar7 + 0x1;
-        u_var2  = *puVar1;
-        puVar6 = puVar7;
-        if((u_var2 == uVar5) || (puVar6 = (u_var2 + 0x1), puVar6 == 0x0))
-        {
-            return puVar6;
-        }
-        iVar13 = -0x1;
-        do
-        {
-            if(iVar13 == 0x0)
-                break;
-            iVar13 = iVar13 + -0x1;
-            puVar1 = puVar7;
-            puVar7 = (puVar7 + 0x1);
-        } while(*puVar1 != '\0');
-    } while(true);
-}
+//
+//i16 *entry(Globals *globals,
+//           u16      param_1,
+//           u16      param_2,
+//           u16      param_3,
+//           u16      param_4,
+//           u16      param_5,
+//           CONTEXT *in_task_context,
+//           u16      param_7,
+//           i16      param_8)
+//
+//{
+//    u16       *puVar1;
+//    u16        u_var2;
+//    char      *pcVar3;
+//    void *pcVar4;
+//    u16        uVar5;
+//    LPCSTR     str;
+//    u16       *puVar6;
+//    u16       *puVar7;
+//    char      *pcVar8;
+//    CHAR      *unaff_SS;
+//    bool       bVar9;
+//    DWORD      DVar10;
+//    u32 uVar11;
+//    u32 uVar12;
+//    i16        iVar13;
+//    i16        iVar14;
+//    HINSTANCE16 hinst_var15 = 0;
+//    u16        uVar16;
+//
+//    uVar11 = CONCAT22(param_7, globals->dat_1050_5f84);
+//    do
+//    {
+//        uVar16 = 0x0;
+//        InitTask16(in_task_context);
+//        globals->dat_1050_5f84 = uVar11;
+//        if((param_8 != 0x0) && (bVar9 = param_1 < 0xff00, param_1 = param_1 + 0x100, globals->U16_1050_5f7e = param_5, bVar9))
+//        {
+//            globals->data_1050_5f48      = param_1;
+//            globals->data_1050_5f4a      = param_3;
+//            globals->hinst_1050_5f4c    = param_4;
+//            globals->data_1050_5f4e      = param_2;
+//            globals->data_1050_5f50      = param_5;
+//            LockSegment16((HGLOBAL16)LAST_SEGMENT);
+//            globals->data_1050_5f52          = (uVar11 >> 0x10);
+//            globals->data_1050_5f84     = uVar11;
+//            DVar10                          = GetVersion16();
+//            globals->data_1050_5f52          = (uVar11 >> 0x10);
+//            globals->data_1050_5f84     = uVar11;
+//            globals->data_1050_5f80          = CONCAT11(DVar10, (DVar10 >> 0x8));
+//            // 0x3r0
+//            pcVar4                          = (FnPtr1)swi(0x21);
+//            uVar12                          = uVar11;
+//            uVar11                          = (*pcVar4)(uVar16);
+//            globals->data_1050_5f52          = (uVar12 >> 0x10);
+//            globals->data_1050_5f84     = uVar12;
+//            globals->data_1050_5f82  = CONCAT11(uVar11, (uVar11 >> 0x8));
+//            globals->data_1050_5f87           = 0x0;
+//            WaitEvent16(SEG_1000);
+//            globals->data_1050_5f84 = uVar11;
+//            hinst_var15 = globals->hinst_1050_5f4c;//globals->PTR_LOOP_1050_5f4c;
+//            param_8                     = InitApp16((HINSTANCE16)LAST_SEGMENT);
+//            globals->data_1050_5f84 = uVar11;
+//            if(param_8 != 0x0)
+//            {
+//                break;
+//            }
+//        }
+//        in_task_context = (CONTEXT *)LAST_SEGMENT;
+//        param_8         = CONCAT11((param_8 >> 0x8), 0xff);
+//        pass1_1000_24db(NULL, param_8, 0x0);
+//        globals->data_1050_5f84 = uVar11;
+//    } while(true);
+//    interrupt_vector_op_1000_23ea(NULL, param_2, param_5, 0x0, unaff_SS);
+//    globals->data_1050_5f84 = uVar11;
+//    pass1_1000_262c(globals, 0x238d, LAST_SEGMENT, unaff_SS, LAST_SEGMENT);
+//    globals->data_1050_5f84 = uVar11;
+//    pass1_1000_27d6(NULL, (uVar11 >> 0x10));
+//    uVar11 = ret_op_1000_55ac(hinst_var15);
+//    uVar5  = uVar11;
+//    init_1000_23be(param_1, (uVar11 >> 0x10), unaff_SS);
+//    fn_ptr_op_1000_24cd(NULL, uVar5, 0x0);
+//    iVar14 = 0x15;
+//    iVar13 = 0x15;
+//    pass1_1000_25a8(NULL, param_5, LAST_SEGMENT);
+//    pass1_1000_2913(NULL, iVar13, param_5, LAST_SEGMENT);
+//    str = poss_str_op_1000_28dc(NULL, iVar14);
+//    if(str != (PCHAR)0x0)
+//    {
+//        iVar13 = 0x9;
+//        if(*str == 'M')
+//        {
+//            iVar13 = 0xf;
+//        }
+//        str    = str + iVar13;
+//        iVar13 = 0x22;
+//        pcVar8 = str;
+//        do
+//        {
+//            if(iVar13 == 0x0)
+//                break;
+//            iVar13 = iVar13 + -0x1;
+//            pcVar3 = pcVar8;
+//            pcVar8 = pcVar8 + 0x1;
+//        } while(*pcVar3 != '\r');
+//        pcVar8[-0x1] = '\0';
+//    }
+//    FatalAppExit16(LAST_SEGMENT, str);
+//    FatalExit();
+//    puVar7 = &globals->u16_1050_63fe;
+//    do
+//    {
+//        puVar1 = puVar7;
+//        puVar7 = puVar7 + 0x1;
+//        u_var2  = *puVar1;
+//        puVar6 = puVar7;
+//        if((u_var2 == uVar5) || (puVar6 = (u_var2 + 0x1), puVar6 == 0x0))
+//        {
+//            return puVar6;
+//        }
+//        iVar13 = -0x1;
+//        do
+//        {
+//            if(iVar13 == 0x0)
+//                break;
+//            iVar13 = iVar13 + -0x1;
+//            puVar1 = puVar7;
+//            puVar7 = (puVar7 + 0x1);
+//        } while(*puVar1 != '\0');
+//    } while(true);
+//}
 
 
 i16 *interrupt_vector_op_1000_23ea(Globals *globals,

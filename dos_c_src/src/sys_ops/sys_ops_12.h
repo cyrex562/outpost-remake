@@ -11,7 +11,7 @@
 #include "stdbool.h"
 #include "structs/structs_0xx/structs_9x.h"
 
-void pass1_1000_27d6(Globals *globals, u16 *param_1);
+void pass1_1000_27d6(Globals *globals, u16 param_1);
 
 
 u16 *pass1_1000_2950(Globals *globals, i16 param_1, u16 param_2, u16 param_3, u16 param_4);

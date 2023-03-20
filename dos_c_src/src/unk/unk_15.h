@@ -8,7 +8,7 @@
 #include "globals.h"
 #include "op_int.h"
 #include "op_windef.h"
-#include "struct_20.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/structs_x.h"
 
 char *pass1_1000_472c(u32 param_1, u8 param_2);
